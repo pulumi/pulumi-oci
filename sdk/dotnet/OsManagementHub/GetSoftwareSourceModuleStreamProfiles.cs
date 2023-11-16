@@ -171,7 +171,7 @@ namespace Pulumi.Oci.OsManagementHub
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The name of the module that contains the stream profile.
         /// </summary>
@@ -194,7 +194,7 @@ namespace Pulumi.Oci.OsManagementHub
         private GetSoftwareSourceModuleStreamProfilesResult(
             ImmutableArray<Outputs.GetSoftwareSourceModuleStreamProfilesFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? moduleName,
 

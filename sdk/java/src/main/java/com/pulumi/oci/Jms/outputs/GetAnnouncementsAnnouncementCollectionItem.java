@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAnnouncementsAnnouncementCollectionItem {
@@ -14,51 +16,51 @@ public final class GetAnnouncementsAnnouncementCollectionItem {
      * @return Unique id of the announcement
      * 
      */
-    private Integer key;
+    private @Nullable Integer key;
     /**
      * @return Summary text of the announcement
      * 
      */
-    private String summary;
+    private @Nullable String summary;
     /**
      * @return Date time on which the announcement was released
      * 
      */
-    private String timeReleased;
+    private @Nullable String timeReleased;
     /**
      * @return URL to the announcement web page
      * 
      */
-    private String url;
+    private @Nullable String url;
 
     private GetAnnouncementsAnnouncementCollectionItem() {}
     /**
      * @return Unique id of the announcement
      * 
      */
-    public Integer key() {
-        return this.key;
+    public Optional<Integer> key() {
+        return Optional.ofNullable(this.key);
     }
     /**
      * @return Summary text of the announcement
      * 
      */
-    public String summary() {
-        return this.summary;
+    public Optional<String> summary() {
+        return Optional.ofNullable(this.summary);
     }
     /**
      * @return Date time on which the announcement was released
      * 
      */
-    public String timeReleased() {
-        return this.timeReleased;
+    public Optional<String> timeReleased() {
+        return Optional.ofNullable(this.timeReleased);
     }
     /**
      * @return URL to the announcement web page
      * 
      */
-    public String url() {
-        return this.url;
+    public Optional<String> url() {
+        return Optional.ofNullable(this.url);
     }
 
     public static Builder builder() {
@@ -70,10 +72,10 @@ public final class GetAnnouncementsAnnouncementCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer key;
-        private String summary;
-        private String timeReleased;
-        private String url;
+        private @Nullable Integer key;
+        private @Nullable String summary;
+        private @Nullable String timeReleased;
+        private @Nullable String url;
         public Builder() {}
         public Builder(GetAnnouncementsAnnouncementCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -84,23 +86,23 @@ public final class GetAnnouncementsAnnouncementCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder key(Integer key) {
-            this.key = Objects.requireNonNull(key);
+        public Builder key(@Nullable Integer key) {
+            this.key = key;
             return this;
         }
         @CustomType.Setter
-        public Builder summary(String summary) {
-            this.summary = Objects.requireNonNull(summary);
+        public Builder summary(@Nullable String summary) {
+            this.summary = summary;
             return this;
         }
         @CustomType.Setter
-        public Builder timeReleased(String timeReleased) {
-            this.timeReleased = Objects.requireNonNull(timeReleased);
+        public Builder timeReleased(@Nullable String timeReleased) {
+            this.timeReleased = timeReleased;
             return this;
         }
         @CustomType.Setter
-        public Builder url(String url) {
-            this.url = Objects.requireNonNull(url);
+        public Builder url(@Nullable String url) {
+            this.url = url;
             return this;
         }
         public GetAnnouncementsAnnouncementCollectionItem build() {

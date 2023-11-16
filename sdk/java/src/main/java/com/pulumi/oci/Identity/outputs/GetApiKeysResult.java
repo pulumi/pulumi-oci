@@ -9,6 +9,7 @@ import com.pulumi.oci.Identity.outputs.GetApiKeysFilter;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -17,13 +18,13 @@ public final class GetApiKeysResult {
      * @return The list of api_keys.
      * 
      */
-    private List<GetApiKeysApiKey> apiKeys;
+    private @Nullable List<GetApiKeysApiKey> apiKeys;
     private @Nullable List<GetApiKeysFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The OCID of the user the key belongs to.
      * 
@@ -36,7 +37,7 @@ public final class GetApiKeysResult {
      * 
      */
     public List<GetApiKeysApiKey> apiKeys() {
-        return this.apiKeys;
+        return this.apiKeys == null ? List.of() : this.apiKeys;
     }
     public List<GetApiKeysFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -45,8 +46,8 @@ public final class GetApiKeysResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The OCID of the user the key belongs to.
@@ -65,9 +66,9 @@ public final class GetApiKeysResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetApiKeysApiKey> apiKeys;
+        private @Nullable List<GetApiKeysApiKey> apiKeys;
         private @Nullable List<GetApiKeysFilter> filters;
-        private String id;
+        private @Nullable String id;
         private String userId;
         public Builder() {}
         public Builder(GetApiKeysResult defaults) {
@@ -79,8 +80,8 @@ public final class GetApiKeysResult {
         }
 
         @CustomType.Setter
-        public Builder apiKeys(List<GetApiKeysApiKey> apiKeys) {
-            this.apiKeys = Objects.requireNonNull(apiKeys);
+        public Builder apiKeys(@Nullable List<GetApiKeysApiKey> apiKeys) {
+            this.apiKeys = apiKeys;
             return this;
         }
         public Builder apiKeys(GetApiKeysApiKey... apiKeys) {
@@ -95,8 +96,8 @@ public final class GetApiKeysResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

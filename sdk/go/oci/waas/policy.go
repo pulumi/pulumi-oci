@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Waas Policy resource in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
@@ -44,13 +43,13 @@ type Policy struct {
 	// (Updatable) An array of additional domains for the specified web application.
 	AdditionalDomains pulumi.StringArrayOutput `pulumi:"additionalDomains"`
 	// The CNAME record to add to your DNS configuration to route traffic for the domain, and all additional domains, through the WAF.
-	Cname pulumi.StringOutput `pulumi:"cname"`
+	Cname pulumi.StringPtrOutput `pulumi:"cname"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the WAAS policy.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name for the WAAS policy. The name can be changed and does not need to be unique.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) The domain for which the cookie is set, defaults to WAAS policy domain.
 	Domain pulumi.StringOutput `pulumi:"domain"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -60,13 +59,13 @@ type Policy struct {
 	// (Updatable) A map of host to origin for the web application. The key should be a customer friendly name for the host, ex. primary, secondary, etc.
 	Origins PolicyOriginArrayOutput `pulumi:"origins"`
 	// (Updatable) The configuration details for the WAAS policy.
-	PolicyConfig PolicyPolicyConfigOutput `pulumi:"policyConfig"`
+	PolicyConfig PolicyPolicyConfigPtrOutput `pulumi:"policyConfig"`
 	// The current lifecycle state of the WAAS policy.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The date and time the policy was created, expressed in RFC 3339 timestamp format.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// (Updatable) The Web Application Firewall configuration for the WAAS policy creation.
-	WafConfig PolicyWafConfigOutput `pulumi:"wafConfig"`
+	WafConfig PolicyWafConfigPtrOutput `pulumi:"wafConfig"`
 }
 
 // NewPolicy registers a new resource with the given unique name, arguments, and options.
@@ -236,12 +235,6 @@ func (i *Policy) ToPolicyOutputWithContext(ctx context.Context) PolicyOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyOutput)
 }
 
-func (i *Policy) ToOutput(ctx context.Context) pulumix.Output[*Policy] {
-	return pulumix.Output[*Policy]{
-		OutputState: i.ToPolicyOutputWithContext(ctx).OutputState,
-	}
-}
-
 // PolicyArrayInput is an input type that accepts PolicyArray and PolicyArrayOutput values.
 // You can construct a concrete instance of `PolicyArrayInput` via:
 //
@@ -265,12 +258,6 @@ func (i PolicyArray) ToPolicyArrayOutput() PolicyArrayOutput {
 
 func (i PolicyArray) ToPolicyArrayOutputWithContext(ctx context.Context) PolicyArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyArrayOutput)
-}
-
-func (i PolicyArray) ToOutput(ctx context.Context) pulumix.Output[[]*Policy] {
-	return pulumix.Output[[]*Policy]{
-		OutputState: i.ToPolicyArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // PolicyMapInput is an input type that accepts PolicyMap and PolicyMapOutput values.
@@ -298,12 +285,6 @@ func (i PolicyMap) ToPolicyMapOutputWithContext(ctx context.Context) PolicyMapOu
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyMapOutput)
 }
 
-func (i PolicyMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Policy] {
-	return pulumix.Output[map[string]*Policy]{
-		OutputState: i.ToPolicyMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type PolicyOutput struct{ *pulumi.OutputState }
 
 func (PolicyOutput) ElementType() reflect.Type {
@@ -318,20 +299,14 @@ func (o PolicyOutput) ToPolicyOutputWithContext(ctx context.Context) PolicyOutpu
 	return o
 }
 
-func (o PolicyOutput) ToOutput(ctx context.Context) pulumix.Output[*Policy] {
-	return pulumix.Output[*Policy]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) An array of additional domains for the specified web application.
 func (o PolicyOutput) AdditionalDomains() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *Policy) pulumi.StringArrayOutput { return v.AdditionalDomains }).(pulumi.StringArrayOutput)
 }
 
 // The CNAME record to add to your DNS configuration to route traffic for the domain, and all additional domains, through the WAF.
-func (o PolicyOutput) Cname() pulumi.StringOutput {
-	return o.ApplyT(func(v *Policy) pulumi.StringOutput { return v.Cname }).(pulumi.StringOutput)
+func (o PolicyOutput) Cname() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Policy) pulumi.StringPtrOutput { return v.Cname }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the WAAS policy.
@@ -345,8 +320,8 @@ func (o PolicyOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) A user-friendly name for the WAAS policy. The name can be changed and does not need to be unique.
-func (o PolicyOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *Policy) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o PolicyOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Policy) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The domain for which the cookie is set, defaults to WAAS policy domain.
@@ -370,23 +345,23 @@ func (o PolicyOutput) Origins() PolicyOriginArrayOutput {
 }
 
 // (Updatable) The configuration details for the WAAS policy.
-func (o PolicyOutput) PolicyConfig() PolicyPolicyConfigOutput {
-	return o.ApplyT(func(v *Policy) PolicyPolicyConfigOutput { return v.PolicyConfig }).(PolicyPolicyConfigOutput)
+func (o PolicyOutput) PolicyConfig() PolicyPolicyConfigPtrOutput {
+	return o.ApplyT(func(v *Policy) PolicyPolicyConfigPtrOutput { return v.PolicyConfig }).(PolicyPolicyConfigPtrOutput)
 }
 
 // The current lifecycle state of the WAAS policy.
-func (o PolicyOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *Policy) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o PolicyOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Policy) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the policy was created, expressed in RFC 3339 timestamp format.
-func (o PolicyOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Policy) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o PolicyOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Policy) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The Web Application Firewall configuration for the WAAS policy creation.
-func (o PolicyOutput) WafConfig() PolicyWafConfigOutput {
-	return o.ApplyT(func(v *Policy) PolicyWafConfigOutput { return v.WafConfig }).(PolicyWafConfigOutput)
+func (o PolicyOutput) WafConfig() PolicyWafConfigPtrOutput {
+	return o.ApplyT(func(v *Policy) PolicyWafConfigPtrOutput { return v.WafConfig }).(PolicyWafConfigPtrOutput)
 }
 
 type PolicyArrayOutput struct{ *pulumi.OutputState }
@@ -401,12 +376,6 @@ func (o PolicyArrayOutput) ToPolicyArrayOutput() PolicyArrayOutput {
 
 func (o PolicyArrayOutput) ToPolicyArrayOutputWithContext(ctx context.Context) PolicyArrayOutput {
 	return o
-}
-
-func (o PolicyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Policy] {
-	return pulumix.Output[[]*Policy]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PolicyArrayOutput) Index(i pulumi.IntInput) PolicyOutput {
@@ -427,12 +396,6 @@ func (o PolicyMapOutput) ToPolicyMapOutput() PolicyMapOutput {
 
 func (o PolicyMapOutput) ToPolicyMapOutputWithContext(ctx context.Context) PolicyMapOutput {
 	return o
-}
-
-func (o PolicyMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Policy] {
-	return pulumix.Output[map[string]*Policy]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PolicyMapOutput) MapIndex(k pulumi.StringInput) PolicyOutput {

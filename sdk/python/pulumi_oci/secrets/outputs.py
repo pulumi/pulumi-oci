@@ -18,29 +18,21 @@ __all__ = [
 @pulumi.output_type
 class GetSecretbundleSecretBundleContentResult(dict):
     def __init__(__self__, *,
-                 content: str,
-                 content_type: str):
-        """
-        :param str content: The base64-encoded content of the secret.
-        :param str content_type: The formatting type of the secret contents.
-        """
-        pulumi.set(__self__, "content", content)
-        pulumi.set(__self__, "content_type", content_type)
+                 content: Optional[str] = None,
+                 content_type: Optional[str] = None):
+        if content is not None:
+            pulumi.set(__self__, "content", content)
+        if content_type is not None:
+            pulumi.set(__self__, "content_type", content_type)
 
     @property
     @pulumi.getter
-    def content(self) -> str:
-        """
-        The base64-encoded content of the secret.
-        """
+    def content(self) -> Optional[str]:
         return pulumi.get(self, "content")
 
     @property
     @pulumi.getter(name="contentType")
-    def content_type(self) -> str:
-        """
-        The formatting type of the secret contents.
-        """
+    def content_type(self) -> Optional[str]:
         return pulumi.get(self, "content_type")
 
 
@@ -74,84 +66,61 @@ class GetSecretbundleVersionsFilterResult(dict):
 @pulumi.output_type
 class GetSecretbundleVersionsSecretBundleVersionResult(dict):
     def __init__(__self__, *,
-                 secret_id: str,
-                 stages: Sequence[str],
-                 time_created: str,
-                 time_of_deletion: str,
-                 time_of_expiry: str,
-                 version_name: str,
-                 version_number: str):
-        """
-        :param str secret_id: The OCID of the secret.
-        :param Sequence[str] stages: A list of possible rotation states for the secret bundle.
-        :param str time_created: The time when the secret bundle was created.
-        :param str time_of_deletion: An optional property indicating when to delete the secret version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-        :param str time_of_expiry: An optional property indicating when the secret version will expire, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-        :param str version_name: The version name of the secret bundle, as provided when the secret was created or last rotated.
-        :param str version_number: The version number of the secret.
-        """
-        pulumi.set(__self__, "secret_id", secret_id)
-        pulumi.set(__self__, "stages", stages)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_of_deletion", time_of_deletion)
-        pulumi.set(__self__, "time_of_expiry", time_of_expiry)
-        pulumi.set(__self__, "version_name", version_name)
-        pulumi.set(__self__, "version_number", version_number)
+                 secret_id: Optional[str] = None,
+                 stages: Optional[Sequence[str]] = None,
+                 time_created: Optional[str] = None,
+                 time_of_deletion: Optional[str] = None,
+                 time_of_expiry: Optional[str] = None,
+                 version_name: Optional[str] = None,
+                 version_number: Optional[str] = None):
+        if secret_id is not None:
+            pulumi.set(__self__, "secret_id", secret_id)
+        if stages is not None:
+            pulumi.set(__self__, "stages", stages)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_of_deletion is not None:
+            pulumi.set(__self__, "time_of_deletion", time_of_deletion)
+        if time_of_expiry is not None:
+            pulumi.set(__self__, "time_of_expiry", time_of_expiry)
+        if version_name is not None:
+            pulumi.set(__self__, "version_name", version_name)
+        if version_number is not None:
+            pulumi.set(__self__, "version_number", version_number)
 
     @property
     @pulumi.getter(name="secretId")
-    def secret_id(self) -> str:
-        """
-        The OCID of the secret.
-        """
+    def secret_id(self) -> Optional[str]:
         return pulumi.get(self, "secret_id")
 
     @property
     @pulumi.getter
-    def stages(self) -> Sequence[str]:
-        """
-        A list of possible rotation states for the secret bundle.
-        """
+    def stages(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "stages")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time when the secret bundle was created.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeOfDeletion")
-    def time_of_deletion(self) -> str:
-        """
-        An optional property indicating when to delete the secret version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-        """
+    def time_of_deletion(self) -> Optional[str]:
         return pulumi.get(self, "time_of_deletion")
 
     @property
     @pulumi.getter(name="timeOfExpiry")
-    def time_of_expiry(self) -> str:
-        """
-        An optional property indicating when the secret version will expire, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-        """
+    def time_of_expiry(self) -> Optional[str]:
         return pulumi.get(self, "time_of_expiry")
 
     @property
     @pulumi.getter(name="versionName")
-    def version_name(self) -> str:
-        """
-        The version name of the secret bundle, as provided when the secret was created or last rotated.
-        """
+    def version_name(self) -> Optional[str]:
         return pulumi.get(self, "version_name")
 
     @property
     @pulumi.getter(name="versionNumber")
-    def version_number(self) -> str:
-        """
-        The version number of the secret.
-        """
+    def version_number(self) -> Optional[str]:
         return pulumi.get(self, "version_number")
 
 

@@ -16,7 +16,7 @@ namespace Pulumi.Oci.AiDocument.Outputs
         /// <summary>
         /// Raw document data with Base64 encoding.
         /// </summary>
-        public readonly string Data;
+        public readonly string? Data;
         /// <summary>
         /// The list of ObjectLocations.
         /// </summary>
@@ -24,15 +24,15 @@ namespace Pulumi.Oci.AiDocument.Outputs
         /// <summary>
         /// The type of input location. The allowed values are:
         /// </summary>
-        public readonly string SourceType;
+        public readonly string? SourceType;
 
         [OutputConstructor]
         private GetProcessorJobInputLocationResult(
-            string data,
+            string? data,
 
             ImmutableArray<Outputs.GetProcessorJobInputLocationObjectLocationResult> objectLocations,
 
-            string sourceType)
+            string? sourceType)
         {
             Data = data;
             ObjectLocations = objectLocations;

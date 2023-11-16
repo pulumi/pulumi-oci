@@ -22,13 +22,6 @@ class KeyVersionArgs:
                  time_of_deletion: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a KeyVersion resource.
-        :param pulumi.Input[str] key_id: The OCID of the key.
-        :param pulumi.Input[str] management_endpoint: The service endpoint to perform management operations against. Management operations include 'Create,' 'Update,' 'List,' 'Get,' and 'Delete' operations. See Vault Management endpoint.
-        :param pulumi.Input[str] external_key_version_id: Key version ID associated with the external key.
-        :param pulumi.Input[str] time_of_deletion: (Updatable) An optional property for the deletion time of the key version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "key_id", key_id)
         pulumi.set(__self__, "management_endpoint", management_endpoint)
@@ -40,9 +33,6 @@ class KeyVersionArgs:
     @property
     @pulumi.getter(name="keyId")
     def key_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of the key.
-        """
         return pulumi.get(self, "key_id")
 
     @key_id.setter
@@ -52,9 +42,6 @@ class KeyVersionArgs:
     @property
     @pulumi.getter(name="managementEndpoint")
     def management_endpoint(self) -> pulumi.Input[str]:
-        """
-        The service endpoint to perform management operations against. Management operations include 'Create,' 'Update,' 'List,' 'Get,' and 'Delete' operations. See Vault Management endpoint.
-        """
         return pulumi.get(self, "management_endpoint")
 
     @management_endpoint.setter
@@ -64,9 +51,6 @@ class KeyVersionArgs:
     @property
     @pulumi.getter(name="externalKeyVersionId")
     def external_key_version_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        Key version ID associated with the external key.
-        """
         return pulumi.get(self, "external_key_version_id")
 
     @external_key_version_id.setter
@@ -76,12 +60,6 @@ class KeyVersionArgs:
     @property
     @pulumi.getter(name="timeOfDeletion")
     def time_of_deletion(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) An optional property for the deletion time of the key version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "time_of_deletion")
 
     @time_of_deletion.setter
@@ -109,22 +87,6 @@ class _KeyVersionState:
                  vault_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering KeyVersion resources.
-        :param pulumi.Input[str] compartment_id: The OCID of the compartment that contains this key version.
-        :param pulumi.Input[Sequence[pulumi.Input['KeyVersionExternalKeyReferenceDetailArgs']]] external_key_reference_details: Key reference data to be returned to the customer as a response.
-        :param pulumi.Input[str] external_key_version_id: Key version ID associated with the external key.
-        :param pulumi.Input[bool] is_primary: A Boolean value that indicates whether the KeyVersion belongs to primary Vault or replica Vault.
-        :param pulumi.Input[str] key_id: The OCID of the key.
-        :param pulumi.Input[str] management_endpoint: The service endpoint to perform management operations against. Management operations include 'Create,' 'Update,' 'List,' 'Get,' and 'Delete' operations. See Vault Management endpoint.
-        :param pulumi.Input[str] public_key: The public key in PEM format. (This value pertains only to RSA and ECDSA keys.)
-        :param pulumi.Input[Sequence[pulumi.Input['KeyVersionReplicaDetailArgs']]] replica_details: KeyVersion replica details
-        :param pulumi.Input[str] restored_from_key_version_id: The OCID of the key version from which this key version was restored.
-        :param pulumi.Input[str] state: The key version's current lifecycle state.  Example: `ENABLED`
-        :param pulumi.Input[str] time_created: The date and time this key version was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: "2018-04-03T21:10:29.600Z"
-        :param pulumi.Input[str] time_of_deletion: (Updatable) An optional property for the deletion time of the key version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] vault_id: The OCID of the vault that contains this key version.
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -160,9 +122,6 @@ class _KeyVersionState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the compartment that contains this key version.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -172,9 +131,6 @@ class _KeyVersionState:
     @property
     @pulumi.getter(name="externalKeyReferenceDetails")
     def external_key_reference_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['KeyVersionExternalKeyReferenceDetailArgs']]]]:
-        """
-        Key reference data to be returned to the customer as a response.
-        """
         return pulumi.get(self, "external_key_reference_details")
 
     @external_key_reference_details.setter
@@ -184,9 +140,6 @@ class _KeyVersionState:
     @property
     @pulumi.getter(name="externalKeyVersionId")
     def external_key_version_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        Key version ID associated with the external key.
-        """
         return pulumi.get(self, "external_key_version_id")
 
     @external_key_version_id.setter
@@ -196,9 +149,6 @@ class _KeyVersionState:
     @property
     @pulumi.getter(name="isPrimary")
     def is_primary(self) -> Optional[pulumi.Input[bool]]:
-        """
-        A Boolean value that indicates whether the KeyVersion belongs to primary Vault or replica Vault.
-        """
         return pulumi.get(self, "is_primary")
 
     @is_primary.setter
@@ -208,9 +158,6 @@ class _KeyVersionState:
     @property
     @pulumi.getter(name="keyId")
     def key_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the key.
-        """
         return pulumi.get(self, "key_id")
 
     @key_id.setter
@@ -229,9 +176,6 @@ class _KeyVersionState:
     @property
     @pulumi.getter(name="managementEndpoint")
     def management_endpoint(self) -> Optional[pulumi.Input[str]]:
-        """
-        The service endpoint to perform management operations against. Management operations include 'Create,' 'Update,' 'List,' 'Get,' and 'Delete' operations. See Vault Management endpoint.
-        """
         return pulumi.get(self, "management_endpoint")
 
     @management_endpoint.setter
@@ -241,9 +185,6 @@ class _KeyVersionState:
     @property
     @pulumi.getter(name="publicKey")
     def public_key(self) -> Optional[pulumi.Input[str]]:
-        """
-        The public key in PEM format. (This value pertains only to RSA and ECDSA keys.)
-        """
         return pulumi.get(self, "public_key")
 
     @public_key.setter
@@ -253,9 +194,6 @@ class _KeyVersionState:
     @property
     @pulumi.getter(name="replicaDetails")
     def replica_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['KeyVersionReplicaDetailArgs']]]]:
-        """
-        KeyVersion replica details
-        """
         return pulumi.get(self, "replica_details")
 
     @replica_details.setter
@@ -274,9 +212,6 @@ class _KeyVersionState:
     @property
     @pulumi.getter(name="restoredFromKeyVersionId")
     def restored_from_key_version_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the key version from which this key version was restored.
-        """
         return pulumi.get(self, "restored_from_key_version_id")
 
     @restored_from_key_version_id.setter
@@ -286,9 +221,6 @@ class _KeyVersionState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The key version's current lifecycle state.  Example: `ENABLED`
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -298,9 +230,6 @@ class _KeyVersionState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time this key version was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: "2018-04-03T21:10:29.600Z"
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -310,12 +239,6 @@ class _KeyVersionState:
     @property
     @pulumi.getter(name="timeOfDeletion")
     def time_of_deletion(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) An optional property for the deletion time of the key version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "time_of_deletion")
 
     @time_of_deletion.setter
@@ -325,9 +248,6 @@ class _KeyVersionState:
     @property
     @pulumi.getter(name="vaultId")
     def vault_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the vault that contains this key version.
-        """
         return pulumi.get(self, "vault_id")
 
     @vault_id.setter
@@ -346,33 +266,9 @@ class KeyVersion(pulumi.CustomResource):
                  time_of_deletion: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Key Version resource in Oracle Cloud Infrastructure Kms service.
-
-        Generates a new [KeyVersion](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/KeyVersion/) resource that provides new cryptographic
-        material for a master encryption key. The key must be in an `ENABLED` state to be rotated.
-
-        As a management operation, this call is subject to a Key Management limit that applies to the total number
-        of requests across all  management write operations. Key Management might throttle this call to reject an
-        otherwise valid request when the total rate of management write operations exceeds 10 requests per second
-        for a given tenancy.
-
-        ## Import
-
-        KeyVersions can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Kms/keyVersion:KeyVersion test_key_version "managementEndpoint/{managementEndpoint}/keys/{keyId}/keyVersions/{keyVersionId}"
-        ```
-
+        Create a KeyVersion resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] external_key_version_id: Key version ID associated with the external key.
-        :param pulumi.Input[str] key_id: The OCID of the key.
-        :param pulumi.Input[str] management_endpoint: The service endpoint to perform management operations against. Management operations include 'Create,' 'Update,' 'List,' 'Get,' and 'Delete' operations. See Vault Management endpoint.
-        :param pulumi.Input[str] time_of_deletion: (Updatable) An optional property for the deletion time of the key version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -381,24 +277,7 @@ class KeyVersion(pulumi.CustomResource):
                  args: KeyVersionArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Key Version resource in Oracle Cloud Infrastructure Kms service.
-
-        Generates a new [KeyVersion](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/KeyVersion/) resource that provides new cryptographic
-        material for a master encryption key. The key must be in an `ENABLED` state to be rotated.
-
-        As a management operation, this call is subject to a Key Management limit that applies to the total number
-        of requests across all  management write operations. Key Management might throttle this call to reject an
-        otherwise valid request when the total rate of management write operations exceeds 10 requests per second
-        for a given tenancy.
-
-        ## Import
-
-        KeyVersions can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Kms/keyVersion:KeyVersion test_key_version "managementEndpoint/{managementEndpoint}/keys/{keyId}/keyVersions/{keyVersionId}"
-        ```
-
+        Create a KeyVersion resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param KeyVersionArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -478,22 +357,6 @@ class KeyVersion(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: The OCID of the compartment that contains this key version.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['KeyVersionExternalKeyReferenceDetailArgs']]]] external_key_reference_details: Key reference data to be returned to the customer as a response.
-        :param pulumi.Input[str] external_key_version_id: Key version ID associated with the external key.
-        :param pulumi.Input[bool] is_primary: A Boolean value that indicates whether the KeyVersion belongs to primary Vault or replica Vault.
-        :param pulumi.Input[str] key_id: The OCID of the key.
-        :param pulumi.Input[str] management_endpoint: The service endpoint to perform management operations against. Management operations include 'Create,' 'Update,' 'List,' 'Get,' and 'Delete' operations. See Vault Management endpoint.
-        :param pulumi.Input[str] public_key: The public key in PEM format. (This value pertains only to RSA and ECDSA keys.)
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['KeyVersionReplicaDetailArgs']]]] replica_details: KeyVersion replica details
-        :param pulumi.Input[str] restored_from_key_version_id: The OCID of the key version from which this key version was restored.
-        :param pulumi.Input[str] state: The key version's current lifecycle state.  Example: `ENABLED`
-        :param pulumi.Input[str] time_created: The date and time this key version was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: "2018-04-03T21:10:29.600Z"
-        :param pulumi.Input[str] time_of_deletion: (Updatable) An optional property for the deletion time of the key version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] vault_id: The OCID of the vault that contains this key version.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -518,118 +381,76 @@ class KeyVersion(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the compartment that contains this key version.
-        """
+    def compartment_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="externalKeyReferenceDetails")
-    def external_key_reference_details(self) -> pulumi.Output[Sequence['outputs.KeyVersionExternalKeyReferenceDetail']]:
-        """
-        Key reference data to be returned to the customer as a response.
-        """
+    def external_key_reference_details(self) -> pulumi.Output[Optional[Sequence['outputs.KeyVersionExternalKeyReferenceDetail']]]:
         return pulumi.get(self, "external_key_reference_details")
 
     @property
     @pulumi.getter(name="externalKeyVersionId")
-    def external_key_version_id(self) -> pulumi.Output[str]:
-        """
-        Key version ID associated with the external key.
-        """
+    def external_key_version_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "external_key_version_id")
 
     @property
     @pulumi.getter(name="isPrimary")
-    def is_primary(self) -> pulumi.Output[bool]:
-        """
-        A Boolean value that indicates whether the KeyVersion belongs to primary Vault or replica Vault.
-        """
+    def is_primary(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_primary")
 
     @property
     @pulumi.getter(name="keyId")
     def key_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the key.
-        """
         return pulumi.get(self, "key_id")
 
     @property
     @pulumi.getter(name="keyVersionId")
-    def key_version_id(self) -> pulumi.Output[str]:
+    def key_version_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "key_version_id")
 
     @property
     @pulumi.getter(name="managementEndpoint")
     def management_endpoint(self) -> pulumi.Output[str]:
-        """
-        The service endpoint to perform management operations against. Management operations include 'Create,' 'Update,' 'List,' 'Get,' and 'Delete' operations. See Vault Management endpoint.
-        """
         return pulumi.get(self, "management_endpoint")
 
     @property
     @pulumi.getter(name="publicKey")
-    def public_key(self) -> pulumi.Output[str]:
-        """
-        The public key in PEM format. (This value pertains only to RSA and ECDSA keys.)
-        """
+    def public_key(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "public_key")
 
     @property
     @pulumi.getter(name="replicaDetails")
-    def replica_details(self) -> pulumi.Output[Sequence['outputs.KeyVersionReplicaDetail']]:
-        """
-        KeyVersion replica details
-        """
+    def replica_details(self) -> pulumi.Output[Optional[Sequence['outputs.KeyVersionReplicaDetail']]]:
         return pulumi.get(self, "replica_details")
 
     @property
     @pulumi.getter(name="restoredFromKeyId")
-    def restored_from_key_id(self) -> pulumi.Output[str]:
+    def restored_from_key_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "restored_from_key_id")
 
     @property
     @pulumi.getter(name="restoredFromKeyVersionId")
-    def restored_from_key_version_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the key version from which this key version was restored.
-        """
+    def restored_from_key_version_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "restored_from_key_version_id")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The key version's current lifecycle state.  Example: `ENABLED`
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The date and time this key version was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: "2018-04-03T21:10:29.600Z"
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeOfDeletion")
-    def time_of_deletion(self) -> pulumi.Output[str]:
-        """
-        (Updatable) An optional property for the deletion time of the key version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
+    def time_of_deletion(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_of_deletion")
 
     @property
     @pulumi.getter(name="vaultId")
-    def vault_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the vault that contains this key version.
-        """
+    def vault_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "vault_id")
 

@@ -110,36 +110,36 @@ namespace Pulumi.Oci.Kms
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The number of keys in this vault, across all compartments, excluding keys in a `DELETED` state.
         /// </summary>
-        public readonly int KeyCount;
+        public readonly int? KeyCount;
         /// <summary>
         /// The number of key versions in this vault, across all compartments, excluding key versions in a `DELETED` state.
         /// </summary>
-        public readonly int KeyVersionCount;
+        public readonly int? KeyVersionCount;
         /// <summary>
         /// The number of keys in this vault that persist on the server, across all compartments, excluding keys in a `DELETED` state.
         /// </summary>
-        public readonly int SoftwareKeyCount;
+        public readonly int? SoftwareKeyCount;
         /// <summary>
         /// The number of key versions in this vault that persist on the server, across all compartments, excluding key versions in a `DELETED` state.
         /// </summary>
-        public readonly int SoftwareKeyVersionCount;
+        public readonly int? SoftwareKeyVersionCount;
         public readonly string VaultId;
 
         [OutputConstructor]
         private GetVaultUsageResult(
-            string id,
+            string? id,
 
-            int keyCount,
+            int? keyCount,
 
-            int keyVersionCount,
+            int? keyVersionCount,
 
-            int softwareKeyCount,
+            int? softwareKeyCount,
 
-            int softwareKeyVersionCount,
+            int? softwareKeyVersionCount,
 
             string vaultId)
         {

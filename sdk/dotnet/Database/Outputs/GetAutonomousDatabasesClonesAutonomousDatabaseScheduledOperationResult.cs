@@ -20,19 +20,19 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// auto start time. value must be of ISO-8601 format "HH:mm"
         /// </summary>
-        public readonly string ScheduledStartTime;
+        public readonly string? ScheduledStartTime;
         /// <summary>
         /// auto stop time. value must be of ISO-8601 format "HH:mm"
         /// </summary>
-        public readonly string ScheduledStopTime;
+        public readonly string? ScheduledStopTime;
 
         [OutputConstructor]
         private GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationResult(
             ImmutableArray<Outputs.GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationDayOfWeekResult> dayOfWeeks,
 
-            string scheduledStartTime,
+            string? scheduledStartTime,
 
-            string scheduledStopTime)
+            string? scheduledStopTime)
         {
             DayOfWeeks = dayOfWeeks;
             ScheduledStartTime = scheduledStartTime;

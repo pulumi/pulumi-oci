@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Ccc Infrastructure resource in Oracle Cloud Infrastructure Compute Cloud At Customer service.
@@ -62,45 +61,45 @@ type LookupAtCustomerCccInfrastructureArgs struct {
 type LookupAtCustomerCccInfrastructureResult struct {
 	CccInfrastructureId string `pulumi:"cccInfrastructureId"`
 	// Schedule used for upgrades. If no schedule is associated with the infrastructure, it can be updated at any time.
-	CccUpgradeScheduleId string `pulumi:"cccUpgradeScheduleId"`
+	CccUpgradeScheduleId *string `pulumi:"cccUpgradeScheduleId"`
 	// The infrastructure compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// A message describing the current connection state in more detail.
-	ConnectionDetails string `pulumi:"connectionDetails"`
+	ConnectionDetails *string `pulumi:"connectionDetails"`
 	// The current connection state of the infrastructure. A user can only update it from REQUEST to READY or from any state back to REJECT. The system automatically handles the REJECT to REQUEST, READY to CONNECTED, or CONNECTED to DISCONNECTED transitions.
-	ConnectionState string `pulumi:"connectionState"`
+	ConnectionState *string `pulumi:"connectionState"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A mutable client-meaningful text description of the Compute Cloud@Customer infrastructure. Avoid entering confidential information.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// The name that will be used to display the Compute Cloud@Customer infrastructure in the Oracle Cloud Infrastructure console. Does not have to be unique and can be changed. Avoid entering confidential information.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The Compute Cloud@Customer infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This cannot be changed once created.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Inventory for a Compute Cloud@Customer infrastructure. This information cannot be updated and is from the infrastructure. The information will only be available after the connectionState is transitioned to CONNECTED.
 	InfrastructureInventories []GetAtCustomerCccInfrastructureInfrastructureInventory `pulumi:"infrastructureInventories"`
 	// Configuration information for the Compute Cloud@Customer infrastructure. This  network configuration information cannot be updated and is retrieved from the data center. The information will only be available after the connectionState is transitioned to CONNECTED.
 	InfrastructureNetworkConfigurations []GetAtCustomerCccInfrastructureInfrastructureNetworkConfiguration `pulumi:"infrastructureNetworkConfigurations"`
 	// A message describing the current lifecycle state in more detail. For example, this can be used to provide actionable information for a resource that is in a Failed state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Fingerprint of a Compute Cloud@Customer infrastructure in a data center generated during the initial connection to this resource. The fingerprint should be verified by the administrator when changing the connectionState from REQUEST to READY.
-	ProvisioningFingerprint string `pulumi:"provisioningFingerprint"`
+	ProvisioningFingerprint *string `pulumi:"provisioningFingerprint"`
 	// Code that is required for service personnel to connect a Compute Cloud@Customer infrastructure in a data center to this resource. This code will only be available when the connectionState is REJECT (usually at create time of the Compute Cloud@Customer infrastructure).
-	ProvisioningPin string `pulumi:"provisioningPin"`
+	ProvisioningPin *string `pulumi:"provisioningPin"`
 	// The Compute Cloud@Customer infrastructure short name. This cannot be changed once created. The short name is used to refer to the infrastructure in several contexts and is unique.
-	ShortName string `pulumi:"shortName"`
+	ShortName *string `pulumi:"shortName"`
 	// The current state of the Compute Cloud@Customer infrastructure.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network subnet that is used to communicate with Compute Cloud@Customer infrastructure.
-	SubnetId string `pulumi:"subnetId"`
+	SubnetId *string `pulumi:"subnetId"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// Compute Cloud@Customer infrastructure creation date and time, using an RFC3339 formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// Compute Cloud@Customer infrastructure updated date and time, using an RFC3339 formatted datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// Upgrade information that relates to a Compute Cloud@Customer infrastructure. This information cannot be updated.
 	UpgradeInformations []GetAtCustomerCccInfrastructureUpgradeInformation `pulumi:"upgradeInformations"`
 }
@@ -143,34 +142,28 @@ func (o LookupAtCustomerCccInfrastructureResultOutput) ToLookupAtCustomerCccInfr
 	return o
 }
 
-func (o LookupAtCustomerCccInfrastructureResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupAtCustomerCccInfrastructureResult] {
-	return pulumix.Output[LookupAtCustomerCccInfrastructureResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o LookupAtCustomerCccInfrastructureResultOutput) CccInfrastructureId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAtCustomerCccInfrastructureResult) string { return v.CccInfrastructureId }).(pulumi.StringOutput)
 }
 
 // Schedule used for upgrades. If no schedule is associated with the infrastructure, it can be updated at any time.
-func (o LookupAtCustomerCccInfrastructureResultOutput) CccUpgradeScheduleId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAtCustomerCccInfrastructureResult) string { return v.CccUpgradeScheduleId }).(pulumi.StringOutput)
+func (o LookupAtCustomerCccInfrastructureResultOutput) CccUpgradeScheduleId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAtCustomerCccInfrastructureResult) *string { return v.CccUpgradeScheduleId }).(pulumi.StringPtrOutput)
 }
 
 // The infrastructure compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-func (o LookupAtCustomerCccInfrastructureResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAtCustomerCccInfrastructureResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupAtCustomerCccInfrastructureResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAtCustomerCccInfrastructureResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current connection state in more detail.
-func (o LookupAtCustomerCccInfrastructureResultOutput) ConnectionDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAtCustomerCccInfrastructureResult) string { return v.ConnectionDetails }).(pulumi.StringOutput)
+func (o LookupAtCustomerCccInfrastructureResultOutput) ConnectionDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAtCustomerCccInfrastructureResult) *string { return v.ConnectionDetails }).(pulumi.StringPtrOutput)
 }
 
 // The current connection state of the infrastructure. A user can only update it from REQUEST to READY or from any state back to REJECT. The system automatically handles the REJECT to REQUEST, READY to CONNECTED, or CONNECTED to DISCONNECTED transitions.
-func (o LookupAtCustomerCccInfrastructureResultOutput) ConnectionState() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAtCustomerCccInfrastructureResult) string { return v.ConnectionState }).(pulumi.StringOutput)
+func (o LookupAtCustomerCccInfrastructureResultOutput) ConnectionState() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAtCustomerCccInfrastructureResult) *string { return v.ConnectionState }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -179,13 +172,13 @@ func (o LookupAtCustomerCccInfrastructureResultOutput) DefinedTags() pulumi.MapO
 }
 
 // A mutable client-meaningful text description of the Compute Cloud@Customer infrastructure. Avoid entering confidential information.
-func (o LookupAtCustomerCccInfrastructureResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAtCustomerCccInfrastructureResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupAtCustomerCccInfrastructureResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAtCustomerCccInfrastructureResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // The name that will be used to display the Compute Cloud@Customer infrastructure in the Oracle Cloud Infrastructure console. Does not have to be unique and can be changed. Avoid entering confidential information.
-func (o LookupAtCustomerCccInfrastructureResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAtCustomerCccInfrastructureResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupAtCustomerCccInfrastructureResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAtCustomerCccInfrastructureResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -194,8 +187,8 @@ func (o LookupAtCustomerCccInfrastructureResultOutput) FreeformTags() pulumi.Map
 }
 
 // The Compute Cloud@Customer infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This cannot be changed once created.
-func (o LookupAtCustomerCccInfrastructureResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAtCustomerCccInfrastructureResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupAtCustomerCccInfrastructureResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAtCustomerCccInfrastructureResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Inventory for a Compute Cloud@Customer infrastructure. This information cannot be updated and is from the infrastructure. The information will only be available after the connectionState is transitioned to CONNECTED.
@@ -213,33 +206,33 @@ func (o LookupAtCustomerCccInfrastructureResultOutput) InfrastructureNetworkConf
 }
 
 // A message describing the current lifecycle state in more detail. For example, this can be used to provide actionable information for a resource that is in a Failed state.
-func (o LookupAtCustomerCccInfrastructureResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAtCustomerCccInfrastructureResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupAtCustomerCccInfrastructureResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAtCustomerCccInfrastructureResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // Fingerprint of a Compute Cloud@Customer infrastructure in a data center generated during the initial connection to this resource. The fingerprint should be verified by the administrator when changing the connectionState from REQUEST to READY.
-func (o LookupAtCustomerCccInfrastructureResultOutput) ProvisioningFingerprint() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAtCustomerCccInfrastructureResult) string { return v.ProvisioningFingerprint }).(pulumi.StringOutput)
+func (o LookupAtCustomerCccInfrastructureResultOutput) ProvisioningFingerprint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAtCustomerCccInfrastructureResult) *string { return v.ProvisioningFingerprint }).(pulumi.StringPtrOutput)
 }
 
 // Code that is required for service personnel to connect a Compute Cloud@Customer infrastructure in a data center to this resource. This code will only be available when the connectionState is REJECT (usually at create time of the Compute Cloud@Customer infrastructure).
-func (o LookupAtCustomerCccInfrastructureResultOutput) ProvisioningPin() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAtCustomerCccInfrastructureResult) string { return v.ProvisioningPin }).(pulumi.StringOutput)
+func (o LookupAtCustomerCccInfrastructureResultOutput) ProvisioningPin() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAtCustomerCccInfrastructureResult) *string { return v.ProvisioningPin }).(pulumi.StringPtrOutput)
 }
 
 // The Compute Cloud@Customer infrastructure short name. This cannot be changed once created. The short name is used to refer to the infrastructure in several contexts and is unique.
-func (o LookupAtCustomerCccInfrastructureResultOutput) ShortName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAtCustomerCccInfrastructureResult) string { return v.ShortName }).(pulumi.StringOutput)
+func (o LookupAtCustomerCccInfrastructureResultOutput) ShortName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAtCustomerCccInfrastructureResult) *string { return v.ShortName }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the Compute Cloud@Customer infrastructure.
-func (o LookupAtCustomerCccInfrastructureResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAtCustomerCccInfrastructureResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupAtCustomerCccInfrastructureResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAtCustomerCccInfrastructureResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network subnet that is used to communicate with Compute Cloud@Customer infrastructure.
-func (o LookupAtCustomerCccInfrastructureResultOutput) SubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAtCustomerCccInfrastructureResult) string { return v.SubnetId }).(pulumi.StringOutput)
+func (o LookupAtCustomerCccInfrastructureResultOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAtCustomerCccInfrastructureResult) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -248,13 +241,13 @@ func (o LookupAtCustomerCccInfrastructureResultOutput) SystemTags() pulumi.MapOu
 }
 
 // Compute Cloud@Customer infrastructure creation date and time, using an RFC3339 formatted datetime string.
-func (o LookupAtCustomerCccInfrastructureResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAtCustomerCccInfrastructureResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupAtCustomerCccInfrastructureResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAtCustomerCccInfrastructureResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // Compute Cloud@Customer infrastructure updated date and time, using an RFC3339 formatted datetime string.
-func (o LookupAtCustomerCccInfrastructureResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAtCustomerCccInfrastructureResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupAtCustomerCccInfrastructureResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAtCustomerCccInfrastructureResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // Upgrade information that relates to a Compute Cloud@Customer infrastructure. This information cannot be updated.

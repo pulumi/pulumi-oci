@@ -16,10 +16,10 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// <summary>
         /// Unique identifier or OCID for listing a single resource by ID.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
 
         [OutputConstructor]
-        private GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildPipelineStagePredecessorCollectionItemResult(string id)
+        private GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildPipelineStagePredecessorCollectionItemResult(string? id)
         {
             Id = id;
         }

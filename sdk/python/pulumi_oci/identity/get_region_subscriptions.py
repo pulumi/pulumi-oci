@@ -44,7 +44,7 @@ class GetRegionSubscriptionsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -52,10 +52,7 @@ class GetRegionSubscriptionsResult:
 
     @property
     @pulumi.getter(name="regionSubscriptions")
-    def region_subscriptions(self) -> Sequence['outputs.GetRegionSubscriptionsRegionSubscriptionResult']:
-        """
-        The list of region_subscriptions.
-        """
+    def region_subscriptions(self) -> Optional[Sequence['outputs.GetRegionSubscriptionsRegionSubscriptionResult']]:
         return pulumi.get(self, "region_subscriptions")
 
     @property
@@ -80,21 +77,7 @@ def get_region_subscriptions(filters: Optional[Sequence[pulumi.InputType['GetReg
                              tenancy_id: Optional[str] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetRegionSubscriptionsResult:
     """
-    This data source provides the list of Region Subscriptions in Oracle Cloud Infrastructure Identity service.
-
-    Lists the region subscriptions for the specified tenancy.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_region_subscriptions = oci.Identity.get_region_subscriptions(tenancy_id=oci_identity_tenancy["test_tenancy"]["id"])
-    ```
-
-
-    :param str tenancy_id: The OCID of the tenancy.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -114,20 +97,6 @@ def get_region_subscriptions_output(filters: Optional[pulumi.Input[Optional[Sequ
                                     tenancy_id: Optional[pulumi.Input[str]] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRegionSubscriptionsResult]:
     """
-    This data source provides the list of Region Subscriptions in Oracle Cloud Infrastructure Identity service.
-
-    Lists the region subscriptions for the specified tenancy.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_region_subscriptions = oci.Identity.get_region_subscriptions(tenancy_id=oci_identity_tenancy["test_tenancy"]["id"])
-    ```
-
-
-    :param str tenancy_id: The OCID of the tenancy.
+    Use this data source to access information about an existing resource.
     """
     ...

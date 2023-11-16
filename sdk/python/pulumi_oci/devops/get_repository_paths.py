@@ -66,7 +66,7 @@ class GetRepositoryPathsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -89,10 +89,7 @@ class GetRepositoryPathsResult:
 
     @property
     @pulumi.getter(name="repositoryPathCollections")
-    def repository_path_collections(self) -> Sequence['outputs.GetRepositoryPathsRepositoryPathCollectionResult']:
-        """
-        The list of repository_path_collection.
-        """
+    def repository_path_collections(self) -> Optional[Sequence['outputs.GetRepositoryPathsRepositoryPathCollectionResult']]:
         return pulumi.get(self, "repository_path_collections")
 
 
@@ -120,29 +117,7 @@ def get_repository_paths(display_name: Optional[str] = None,
                          repository_id: Optional[str] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetRepositoryPathsResult:
     """
-    This data source provides the list of Repository Paths in Oracle Cloud Infrastructure Devops service.
-
-    Retrieves a list of files and directories in a repository.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_repository_paths = oci.DevOps.get_repository_paths(repository_id=oci_devops_repository["test_repository"]["id"],
-        display_name=var["repository_path_display_name"],
-        folder_path=var["repository_path_folder_path"],
-        paths_in_subtree=var["repository_path_paths_in_subtree"],
-        ref=var["repository_path_ref"])
-    ```
-
-
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str folder_path: The fully qualified path to the folder whose contents are returned, including the folder name. For example, /examples is a fully-qualified path to a folder named examples that was created off of the root directory (/) of a repository.
-    :param bool paths_in_subtree: Flag to determine if files must be retrived recursively. Flag is False by default.
-    :param str ref: The name of branch/tag or commit hash it points to. If names conflict, order of preference is commit > branch > tag. You can disambiguate with "heads/foobar" and "tags/foobar". If left blank repository's default branch will be used.
-    :param str repository_id: Unique repository identifier.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['displayName'] = display_name
@@ -174,28 +149,6 @@ def get_repository_paths_output(display_name: Optional[pulumi.Input[Optional[str
                                 repository_id: Optional[pulumi.Input[str]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRepositoryPathsResult]:
     """
-    This data source provides the list of Repository Paths in Oracle Cloud Infrastructure Devops service.
-
-    Retrieves a list of files and directories in a repository.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_repository_paths = oci.DevOps.get_repository_paths(repository_id=oci_devops_repository["test_repository"]["id"],
-        display_name=var["repository_path_display_name"],
-        folder_path=var["repository_path_folder_path"],
-        paths_in_subtree=var["repository_path_paths_in_subtree"],
-        ref=var["repository_path_ref"])
-    ```
-
-
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str folder_path: The fully qualified path to the folder whose contents are returned, including the folder name. For example, /examples is a fully-qualified path to a folder named examples that was created off of the root directory (/) of a repository.
-    :param bool paths_in_subtree: Flag to determine if files must be retrived recursively. Flag is False by default.
-    :param str ref: The name of branch/tag or commit hash it points to. If names conflict, order of preference is commit > branch > tag. You can disambiguate with "heads/foobar" and "tags/foobar". If left blank repository's default branch will be used.
-    :param str repository_id: Unique repository identifier.
+    Use this data source to access information about an existing resource.
     """
     ...

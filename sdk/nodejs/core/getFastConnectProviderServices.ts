@@ -56,12 +56,12 @@ export interface GetFastConnectProviderServicesResult {
     /**
      * The list of fast_connect_provider_services.
      */
-    readonly fastConnectProviderServices: outputs.Core.GetFastConnectProviderServicesFastConnectProviderService[];
+    readonly fastConnectProviderServices?: outputs.Core.GetFastConnectProviderServicesFastConnectProviderService[];
     readonly filters?: outputs.Core.GetFastConnectProviderServicesFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
 }
 /**
  * This data source provides the list of Fast Connect Provider Services in Oracle Cloud Infrastructure Core service.

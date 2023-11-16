@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Remote Peering Connection resource in Oracle Cloud Infrastructure Core service.
@@ -70,28 +69,28 @@ type RemotePeeringConnection struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG the RPC belongs to.
 	DrgId pulumi.StringOutput `pulumi:"drgId"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// Whether the VCN at the other end of the peering is in a different tenancy.  Example: `false`
-	IsCrossTenancyPeering pulumi.BoolOutput `pulumi:"isCrossTenancyPeering"`
+	IsCrossTenancyPeering pulumi.BoolPtrOutput `pulumi:"isCrossTenancyPeering"`
 	// The OCID of the RPC you want to peer with.
-	PeerId pulumi.StringOutput `pulumi:"peerId"`
+	PeerId pulumi.StringPtrOutput `pulumi:"peerId"`
 	// The name of the region that contains the RPC you want to peer with.  Example: `us-ashburn-1`
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	PeerRegionName pulumi.StringOutput `pulumi:"peerRegionName"`
+	PeerRegionName pulumi.StringPtrOutput `pulumi:"peerRegionName"`
 	// If this RPC is peered, this value is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the other RPC's tenancy.
-	PeerTenancyId pulumi.StringOutput `pulumi:"peerTenancyId"`
+	PeerTenancyId pulumi.StringPtrOutput `pulumi:"peerTenancyId"`
 	// Whether the RPC is peered with another RPC. `NEW` means the RPC has not yet been peered. `PENDING` means the peering is being established. `REVOKED` means the RPC at the other end of the peering has been deleted.
-	PeeringStatus pulumi.StringOutput `pulumi:"peeringStatus"`
+	PeeringStatus pulumi.StringPtrOutput `pulumi:"peeringStatus"`
 	// The RPC's current lifecycle state.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The date and time the RPC was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 }
 
 // NewRemotePeeringConnection registers a new resource with the given unique name, arguments, and options.
@@ -257,12 +256,6 @@ func (i *RemotePeeringConnection) ToRemotePeeringConnectionOutputWithContext(ctx
 	return pulumi.ToOutputWithContext(ctx, i).(RemotePeeringConnectionOutput)
 }
 
-func (i *RemotePeeringConnection) ToOutput(ctx context.Context) pulumix.Output[*RemotePeeringConnection] {
-	return pulumix.Output[*RemotePeeringConnection]{
-		OutputState: i.ToRemotePeeringConnectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // RemotePeeringConnectionArrayInput is an input type that accepts RemotePeeringConnectionArray and RemotePeeringConnectionArrayOutput values.
 // You can construct a concrete instance of `RemotePeeringConnectionArrayInput` via:
 //
@@ -286,12 +279,6 @@ func (i RemotePeeringConnectionArray) ToRemotePeeringConnectionArrayOutput() Rem
 
 func (i RemotePeeringConnectionArray) ToRemotePeeringConnectionArrayOutputWithContext(ctx context.Context) RemotePeeringConnectionArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(RemotePeeringConnectionArrayOutput)
-}
-
-func (i RemotePeeringConnectionArray) ToOutput(ctx context.Context) pulumix.Output[[]*RemotePeeringConnection] {
-	return pulumix.Output[[]*RemotePeeringConnection]{
-		OutputState: i.ToRemotePeeringConnectionArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // RemotePeeringConnectionMapInput is an input type that accepts RemotePeeringConnectionMap and RemotePeeringConnectionMapOutput values.
@@ -319,12 +306,6 @@ func (i RemotePeeringConnectionMap) ToRemotePeeringConnectionMapOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(RemotePeeringConnectionMapOutput)
 }
 
-func (i RemotePeeringConnectionMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*RemotePeeringConnection] {
-	return pulumix.Output[map[string]*RemotePeeringConnection]{
-		OutputState: i.ToRemotePeeringConnectionMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type RemotePeeringConnectionOutput struct{ *pulumi.OutputState }
 
 func (RemotePeeringConnectionOutput) ElementType() reflect.Type {
@@ -339,12 +320,6 @@ func (o RemotePeeringConnectionOutput) ToRemotePeeringConnectionOutputWithContex
 	return o
 }
 
-func (o RemotePeeringConnectionOutput) ToOutput(ctx context.Context) pulumix.Output[*RemotePeeringConnection] {
-	return pulumix.Output[*RemotePeeringConnection]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the RPC.
 func (o RemotePeeringConnectionOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *RemotePeeringConnection) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
@@ -356,8 +331,8 @@ func (o RemotePeeringConnectionOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-func (o RemotePeeringConnectionOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *RemotePeeringConnection) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o RemotePeeringConnectionOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RemotePeeringConnection) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG the RPC belongs to.
@@ -371,41 +346,41 @@ func (o RemotePeeringConnectionOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Whether the VCN at the other end of the peering is in a different tenancy.  Example: `false`
-func (o RemotePeeringConnectionOutput) IsCrossTenancyPeering() pulumi.BoolOutput {
-	return o.ApplyT(func(v *RemotePeeringConnection) pulumi.BoolOutput { return v.IsCrossTenancyPeering }).(pulumi.BoolOutput)
+func (o RemotePeeringConnectionOutput) IsCrossTenancyPeering() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *RemotePeeringConnection) pulumi.BoolPtrOutput { return v.IsCrossTenancyPeering }).(pulumi.BoolPtrOutput)
 }
 
 // The OCID of the RPC you want to peer with.
-func (o RemotePeeringConnectionOutput) PeerId() pulumi.StringOutput {
-	return o.ApplyT(func(v *RemotePeeringConnection) pulumi.StringOutput { return v.PeerId }).(pulumi.StringOutput)
+func (o RemotePeeringConnectionOutput) PeerId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RemotePeeringConnection) pulumi.StringPtrOutput { return v.PeerId }).(pulumi.StringPtrOutput)
 }
 
 // The name of the region that contains the RPC you want to peer with.  Example: `us-ashburn-1`
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o RemotePeeringConnectionOutput) PeerRegionName() pulumi.StringOutput {
-	return o.ApplyT(func(v *RemotePeeringConnection) pulumi.StringOutput { return v.PeerRegionName }).(pulumi.StringOutput)
+func (o RemotePeeringConnectionOutput) PeerRegionName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RemotePeeringConnection) pulumi.StringPtrOutput { return v.PeerRegionName }).(pulumi.StringPtrOutput)
 }
 
 // If this RPC is peered, this value is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the other RPC's tenancy.
-func (o RemotePeeringConnectionOutput) PeerTenancyId() pulumi.StringOutput {
-	return o.ApplyT(func(v *RemotePeeringConnection) pulumi.StringOutput { return v.PeerTenancyId }).(pulumi.StringOutput)
+func (o RemotePeeringConnectionOutput) PeerTenancyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RemotePeeringConnection) pulumi.StringPtrOutput { return v.PeerTenancyId }).(pulumi.StringPtrOutput)
 }
 
 // Whether the RPC is peered with another RPC. `NEW` means the RPC has not yet been peered. `PENDING` means the peering is being established. `REVOKED` means the RPC at the other end of the peering has been deleted.
-func (o RemotePeeringConnectionOutput) PeeringStatus() pulumi.StringOutput {
-	return o.ApplyT(func(v *RemotePeeringConnection) pulumi.StringOutput { return v.PeeringStatus }).(pulumi.StringOutput)
+func (o RemotePeeringConnectionOutput) PeeringStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RemotePeeringConnection) pulumi.StringPtrOutput { return v.PeeringStatus }).(pulumi.StringPtrOutput)
 }
 
 // The RPC's current lifecycle state.
-func (o RemotePeeringConnectionOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *RemotePeeringConnection) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o RemotePeeringConnectionOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RemotePeeringConnection) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the RPC was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-func (o RemotePeeringConnectionOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *RemotePeeringConnection) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o RemotePeeringConnectionOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RemotePeeringConnection) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 type RemotePeeringConnectionArrayOutput struct{ *pulumi.OutputState }
@@ -420,12 +395,6 @@ func (o RemotePeeringConnectionArrayOutput) ToRemotePeeringConnectionArrayOutput
 
 func (o RemotePeeringConnectionArrayOutput) ToRemotePeeringConnectionArrayOutputWithContext(ctx context.Context) RemotePeeringConnectionArrayOutput {
 	return o
-}
-
-func (o RemotePeeringConnectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*RemotePeeringConnection] {
-	return pulumix.Output[[]*RemotePeeringConnection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o RemotePeeringConnectionArrayOutput) Index(i pulumi.IntInput) RemotePeeringConnectionOutput {
@@ -446,12 +415,6 @@ func (o RemotePeeringConnectionMapOutput) ToRemotePeeringConnectionMapOutput() R
 
 func (o RemotePeeringConnectionMapOutput) ToRemotePeeringConnectionMapOutputWithContext(ctx context.Context) RemotePeeringConnectionMapOutput {
 	return o
-}
-
-func (o RemotePeeringConnectionMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*RemotePeeringConnection] {
-	return pulumix.Output[map[string]*RemotePeeringConnection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o RemotePeeringConnectionMapOutput) MapIndex(k pulumi.StringInput) RemotePeeringConnectionOutput {

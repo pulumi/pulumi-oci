@@ -9,6 +9,7 @@ import com.pulumi.oci.Core.outputs.GetServicesService;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -18,12 +19,12 @@ public final class GetServicesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of services.
      * 
      */
-    private List<GetServicesService> services;
+    private @Nullable List<GetServicesService> services;
 
     private GetServicesResult() {}
     public List<GetServicesFilter> filters() {
@@ -33,15 +34,15 @@ public final class GetServicesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of services.
      * 
      */
     public List<GetServicesService> services() {
-        return this.services;
+        return this.services == null ? List.of() : this.services;
     }
 
     public static Builder builder() {
@@ -54,8 +55,8 @@ public final class GetServicesResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetServicesFilter> filters;
-        private String id;
-        private List<GetServicesService> services;
+        private @Nullable String id;
+        private @Nullable List<GetServicesService> services;
         public Builder() {}
         public Builder(GetServicesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -73,13 +74,13 @@ public final class GetServicesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder services(List<GetServicesService> services) {
-            this.services = Objects.requireNonNull(services);
+        public Builder services(@Nullable List<GetServicesService> services) {
+            this.services = services;
             return this;
         }
         public Builder services(GetServicesService... services) {

@@ -9,6 +9,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDrgRouteDistributionStatementsDrgRouteDistributionStatement {
@@ -16,51 +18,51 @@ public final class GetDrgRouteDistributionStatementsDrgRouteDistributionStatemen
      * @return `ACCEPT` indicates the route should be imported or exported as-is.
      * 
      */
-    private String action;
+    private @Nullable String action;
     /**
      * @return The Oracle-assigned ID of the route distribution statement.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The action is applied only if all of the match criteria is met. If match type is MATCH_ALL, any input is considered a match.
      * 
      */
-    private List<GetDrgRouteDistributionStatementsDrgRouteDistributionStatementMatchCriteria> matchCriterias;
+    private @Nullable List<GetDrgRouteDistributionStatementsDrgRouteDistributionStatementMatchCriteria> matchCriterias;
     /**
      * @return This field specifies the priority of each statement in a route distribution. Priorities must be unique within a particular route distribution. The priority will be represented as a number between 0 and 65535 where a lower number indicates a higher priority. When a route is processed, statements are applied in the order defined by their priority. The first matching rule dictates the action that will be taken on the route.
      * 
      */
-    private Integer priority;
+    private @Nullable Integer priority;
 
     private GetDrgRouteDistributionStatementsDrgRouteDistributionStatement() {}
     /**
      * @return `ACCEPT` indicates the route should be imported or exported as-is.
      * 
      */
-    public String action() {
-        return this.action;
+    public Optional<String> action() {
+        return Optional.ofNullable(this.action);
     }
     /**
      * @return The Oracle-assigned ID of the route distribution statement.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The action is applied only if all of the match criteria is met. If match type is MATCH_ALL, any input is considered a match.
      * 
      */
     public List<GetDrgRouteDistributionStatementsDrgRouteDistributionStatementMatchCriteria> matchCriterias() {
-        return this.matchCriterias;
+        return this.matchCriterias == null ? List.of() : this.matchCriterias;
     }
     /**
      * @return This field specifies the priority of each statement in a route distribution. Priorities must be unique within a particular route distribution. The priority will be represented as a number between 0 and 65535 where a lower number indicates a higher priority. When a route is processed, statements are applied in the order defined by their priority. The first matching rule dictates the action that will be taken on the route.
      * 
      */
-    public Integer priority() {
-        return this.priority;
+    public Optional<Integer> priority() {
+        return Optional.ofNullable(this.priority);
     }
 
     public static Builder builder() {
@@ -72,10 +74,10 @@ public final class GetDrgRouteDistributionStatementsDrgRouteDistributionStatemen
     }
     @CustomType.Builder
     public static final class Builder {
-        private String action;
-        private String id;
-        private List<GetDrgRouteDistributionStatementsDrgRouteDistributionStatementMatchCriteria> matchCriterias;
-        private Integer priority;
+        private @Nullable String action;
+        private @Nullable String id;
+        private @Nullable List<GetDrgRouteDistributionStatementsDrgRouteDistributionStatementMatchCriteria> matchCriterias;
+        private @Nullable Integer priority;
         public Builder() {}
         public Builder(GetDrgRouteDistributionStatementsDrgRouteDistributionStatement defaults) {
     	      Objects.requireNonNull(defaults);
@@ -86,26 +88,26 @@ public final class GetDrgRouteDistributionStatementsDrgRouteDistributionStatemen
         }
 
         @CustomType.Setter
-        public Builder action(String action) {
-            this.action = Objects.requireNonNull(action);
+        public Builder action(@Nullable String action) {
+            this.action = action;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder matchCriterias(List<GetDrgRouteDistributionStatementsDrgRouteDistributionStatementMatchCriteria> matchCriterias) {
-            this.matchCriterias = Objects.requireNonNull(matchCriterias);
+        public Builder matchCriterias(@Nullable List<GetDrgRouteDistributionStatementsDrgRouteDistributionStatementMatchCriteria> matchCriterias) {
+            this.matchCriterias = matchCriterias;
             return this;
         }
         public Builder matchCriterias(GetDrgRouteDistributionStatementsDrgRouteDistributionStatementMatchCriteria... matchCriterias) {
             return matchCriterias(List.of(matchCriterias));
         }
         @CustomType.Setter
-        public Builder priority(Integer priority) {
-            this.priority = Objects.requireNonNull(priority);
+        public Builder priority(@Nullable Integer priority) {
+            this.priority = priority;
             return this;
         }
         public GetDrgRouteDistributionStatementsDrgRouteDistributionStatement build() {

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Rules in Oracle Cloud Infrastructure Events service.
@@ -72,7 +71,7 @@ type GetRulesResult struct {
 	DisplayName *string          `pulumi:"displayName"`
 	Filters     []GetRulesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of rules.
 	Rules []GetRulesRule `pulumi:"rules"`
 	// The current state of the rule.
@@ -122,12 +121,6 @@ func (o GetRulesResultOutput) ToGetRulesResultOutputWithContext(ctx context.Cont
 	return o
 }
 
-func (o GetRulesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetRulesResult] {
-	return pulumix.Output[GetRulesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this rule belongs.
 func (o GetRulesResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRulesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -143,8 +136,8 @@ func (o GetRulesResultOutput) Filters() GetRulesFilterArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetRulesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRulesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetRulesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRulesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of rules.

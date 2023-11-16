@@ -14,6 +14,7 @@ import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -75,14 +76,14 @@ public class NatGateway extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="blockTraffic", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> blockTraffic;
+    private Output</* @Nullable */ Boolean> blockTraffic;
 
     /**
      * @return (Updatable) Whether the NAT gateway blocks traffic through it. The default is `false`.  Example: `true`
      * 
      */
-    public Output<Boolean> blockTraffic() {
-        return this.blockTraffic;
+    public Output<Optional<Boolean>> blockTraffic() {
+        return Codegen.optional(this.blockTraffic);
     }
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the NAT gateway.
@@ -103,70 +104,70 @@ public class NatGateway extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * The IP address associated with the NAT gateway.
      * 
      */
     @Export(name="natIp", refs={String.class}, tree="[0]")
-    private Output<String> natIp;
+    private Output</* @Nullable */ String> natIp;
 
     /**
      * @return The IP address associated with the NAT gateway.
      * 
      */
-    public Output<String> natIp() {
-        return this.natIp;
+    public Output<Optional<String>> natIp() {
+        return Codegen.optional(this.natIp);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the public IP address associated with the NAT gateway.
      * 
      */
     @Export(name="publicIpId", refs={String.class}, tree="[0]")
-    private Output<String> publicIpId;
+    private Output</* @Nullable */ String> publicIpId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the public IP address associated with the NAT gateway.
      * 
      */
-    public Output<String> publicIpId() {
-        return this.publicIpId;
+    public Output<Optional<String>> publicIpId() {
+        return Codegen.optional(this.publicIpId);
     }
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table used by the NAT gateway.
@@ -175,7 +176,7 @@ public class NatGateway extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="routeTableId", refs={String.class}, tree="[0]")
-    private Output<String> routeTableId;
+    private Output</* @Nullable */ String> routeTableId;
 
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table used by the NAT gateway.
@@ -183,36 +184,36 @@ public class NatGateway extends com.pulumi.resources.CustomResource {
      * If you don&#39;t specify a route table here, the NAT gateway is created without an associated route table. The Networking service does NOT automatically associate the attached VCN&#39;s default route table with the NAT gateway.
      * 
      */
-    public Output<String> routeTableId() {
-        return this.routeTableId;
+    public Output<Optional<String>> routeTableId() {
+        return Codegen.optional(this.routeTableId);
     }
     /**
      * The NAT gateway&#39;s current state.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The NAT gateway&#39;s current state.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The date and time the NAT gateway was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the NAT gateway was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN the gateway belongs to.

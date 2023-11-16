@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Adm.Outputs
         /// <summary>
         /// Unique identifier for the pipeline or action created in the Verify stage.
         /// </summary>
-        public readonly string PipelineIdentifier;
+        public readonly string? PipelineIdentifier;
         /// <summary>
         /// The web link to the pipeline from the Verify stage.
         /// </summary>
-        public readonly string PipelineUrl;
+        public readonly string? PipelineUrl;
 
         [OutputConstructor]
         private GetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyResult(
-            string pipelineIdentifier,
+            string? pipelineIdentifier,
 
-            string pipelineUrl)
+            string? pipelineUrl)
         {
             PipelineIdentifier = pipelineIdentifier;
             PipelineUrl = pipelineUrl;

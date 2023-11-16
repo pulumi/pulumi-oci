@@ -106,11 +106,11 @@ namespace Pulumi.Oci.Blockchain
     public sealed class GetBlockchainPlatformResult
     {
         public readonly string BlockchainPlatformId;
-        public readonly string CaCertArchiveText;
+        public readonly string? CaCertArchiveText;
         /// <summary>
         /// Compartment Identifier
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Blockchain Platform component details.
         /// </summary>
@@ -118,24 +118,24 @@ namespace Pulumi.Oci.Blockchain
         /// <summary>
         /// Compute shape - STANDARD or ENTERPRISE_SMALL or ENTERPRISE_MEDIUM or ENTERPRISE_LARGE or ENTERPRISE_EXTRA_LARGE or ENTERPRISE_CUSTOM
         /// </summary>
-        public readonly string ComputeShape;
+        public readonly string? ComputeShape;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// Platform Instance Description
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// Platform Instance Display name, can be renamed
         /// </summary>
-        public readonly string DisplayName;
-        public readonly string FederatedUserId;
+        public readonly string? DisplayName;
+        public readonly string? FederatedUserId;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// List of OcpuUtilization for all hosts
         /// </summary>
@@ -143,36 +143,36 @@ namespace Pulumi.Oci.Blockchain
         /// <summary>
         /// unique identifier that is immutable on creation
         /// </summary>
-        public readonly string Id;
-        public readonly string IdcsAccessToken;
+        public readonly string? Id;
+        public readonly string? IdcsAccessToken;
         /// <summary>
         /// Bring your own license
         /// </summary>
-        public readonly bool IsByol;
+        public readonly bool? IsByol;
         /// <summary>
         /// True for multi-AD blockchain plaforms, false for single-AD
         /// </summary>
-        public readonly bool IsMultiAd;
+        public readonly bool? IsMultiAd;
         /// <summary>
         /// An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// Type of Load Balancer shape - LB_100_MBPS or LB_400_MBPS. Default is LB_100_MBPS.
         /// </summary>
-        public readonly string LoadBalancerShape;
+        public readonly string? LoadBalancerShape;
         /// <summary>
         /// Role of platform - FOUNDER or PARTICIPANT
         /// </summary>
-        public readonly string PlatformRole;
+        public readonly string? PlatformRole;
         /// <summary>
         /// Type of Platform shape - DEFAULT or CUSTOM
         /// </summary>
-        public readonly string PlatformShapeType;
+        public readonly string? PlatformShapeType;
         /// <summary>
         /// Platform Version
         /// </summary>
-        public readonly string PlatformVersion;
+        public readonly string? PlatformVersion;
         /// <summary>
         /// Number of replicas of service components like Rest Proxy, CA and Console
         /// </summary>
@@ -180,95 +180,95 @@ namespace Pulumi.Oci.Blockchain
         /// <summary>
         /// Service endpoint URL, valid post-provisioning
         /// </summary>
-        public readonly string ServiceEndpoint;
+        public readonly string? ServiceEndpoint;
         /// <summary>
         /// The version of the Platform Instance.
         /// </summary>
-        public readonly string ServiceVersion;
+        public readonly string? ServiceVersion;
         /// <summary>
         /// The current state of the Platform Instance.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// Storage size in TBs
         /// </summary>
-        public readonly double StorageSizeInTbs;
+        public readonly double? StorageSizeInTbs;
         /// <summary>
         /// Storage used in TBs
         /// </summary>
-        public readonly double StorageUsedInTbs;
+        public readonly double? StorageUsedInTbs;
         /// <summary>
         /// The time the the Platform Instance was created. An RFC3339 formatted datetime string
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The time the Platform Instance was updated. An RFC3339 formatted datetime string
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
         /// <summary>
         /// Number of total OCPUs allocated to the platform cluster
         /// </summary>
-        public readonly int TotalOcpuCapacity;
+        public readonly int? TotalOcpuCapacity;
 
         [OutputConstructor]
         private GetBlockchainPlatformResult(
             string blockchainPlatformId,
 
-            string caCertArchiveText,
+            string? caCertArchiveText,
 
-            string compartmentId,
+            string? compartmentId,
 
             ImmutableArray<Outputs.GetBlockchainPlatformComponentDetailResult> componentDetails,
 
-            string computeShape,
+            string? computeShape,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string description,
+            string? description,
 
-            string displayName,
+            string? displayName,
 
-            string federatedUserId,
+            string? federatedUserId,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
             ImmutableArray<Outputs.GetBlockchainPlatformHostOcpuUtilizationInfoResult> hostOcpuUtilizationInfos,
 
-            string id,
+            string? id,
 
-            string idcsAccessToken,
+            string? idcsAccessToken,
 
-            bool isByol,
+            bool? isByol,
 
-            bool isMultiAd,
+            bool? isMultiAd,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string loadBalancerShape,
+            string? loadBalancerShape,
 
-            string platformRole,
+            string? platformRole,
 
-            string platformShapeType,
+            string? platformShapeType,
 
-            string platformVersion,
+            string? platformVersion,
 
             ImmutableArray<Outputs.GetBlockchainPlatformReplicaResult> replicas,
 
-            string serviceEndpoint,
+            string? serviceEndpoint,
 
-            string serviceVersion,
+            string? serviceVersion,
 
-            string state,
+            string? state,
 
-            double storageSizeInTbs,
+            double? storageSizeInTbs,
 
-            double storageUsedInTbs,
+            double? storageUsedInTbs,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated,
+            string? timeUpdated,
 
-            int totalOcpuCapacity)
+            int? totalOcpuCapacity)
         {
             BlockchainPlatformId = blockchainPlatformId;
             CaCertArchiveText = caCertArchiveText;

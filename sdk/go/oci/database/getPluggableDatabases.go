@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Pluggable Databases in Oracle Cloud Infrastructure Database service.
@@ -74,7 +73,7 @@ type GetPluggableDatabasesResult struct {
 	DatabaseId    *string                       `pulumi:"databaseId"`
 	Filters       []GetPluggableDatabasesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The name for the pluggable database (PDB). The name is unique in the context of a [container database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/Database/). The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
 	PdbName *string `pulumi:"pdbName"`
 	// The list of pluggable_databases.
@@ -128,12 +127,6 @@ func (o GetPluggableDatabasesResultOutput) ToGetPluggableDatabasesResultOutputWi
 	return o
 }
 
-func (o GetPluggableDatabasesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetPluggableDatabasesResult] {
-	return pulumix.Output[GetPluggableDatabasesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 func (o GetPluggableDatabasesResultOutput) CompartmentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetPluggableDatabasesResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
@@ -148,8 +141,8 @@ func (o GetPluggableDatabasesResultOutput) Filters() GetPluggableDatabasesFilter
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetPluggableDatabasesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPluggableDatabasesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetPluggableDatabasesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPluggableDatabasesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The name for the pluggable database (PDB). The name is unique in the context of a [container database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/Database/). The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.

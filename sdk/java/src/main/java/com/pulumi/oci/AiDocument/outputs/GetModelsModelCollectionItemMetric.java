@@ -10,6 +10,8 @@ import com.pulumi.oci.AiDocument.outputs.GetModelsModelCollectionItemMetricOvera
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetModelsModelCollectionItemMetric {
@@ -17,22 +19,22 @@ public final class GetModelsModelCollectionItemMetric {
      * @return Summary of count of samples used during model training.
      * 
      */
-    private List<GetModelsModelCollectionItemMetricDatasetSummary> datasetSummaries;
+    private @Nullable List<GetModelsModelCollectionItemMetricDatasetSummary> datasetSummaries;
     /**
      * @return List of metrics entries per label.
      * 
      */
-    private List<GetModelsModelCollectionItemMetricLabelMetricsReport> labelMetricsReports;
+    private @Nullable List<GetModelsModelCollectionItemMetricLabelMetricsReport> labelMetricsReports;
     /**
      * @return The type of the Document model.
      * 
      */
-    private String modelType;
+    private @Nullable String modelType;
     /**
      * @return Overall Metrics report for Document Classification Model.
      * 
      */
-    private List<GetModelsModelCollectionItemMetricOverallMetricsReport> overallMetricsReports;
+    private @Nullable List<GetModelsModelCollectionItemMetricOverallMetricsReport> overallMetricsReports;
 
     private GetModelsModelCollectionItemMetric() {}
     /**
@@ -40,28 +42,28 @@ public final class GetModelsModelCollectionItemMetric {
      * 
      */
     public List<GetModelsModelCollectionItemMetricDatasetSummary> datasetSummaries() {
-        return this.datasetSummaries;
+        return this.datasetSummaries == null ? List.of() : this.datasetSummaries;
     }
     /**
      * @return List of metrics entries per label.
      * 
      */
     public List<GetModelsModelCollectionItemMetricLabelMetricsReport> labelMetricsReports() {
-        return this.labelMetricsReports;
+        return this.labelMetricsReports == null ? List.of() : this.labelMetricsReports;
     }
     /**
      * @return The type of the Document model.
      * 
      */
-    public String modelType() {
-        return this.modelType;
+    public Optional<String> modelType() {
+        return Optional.ofNullable(this.modelType);
     }
     /**
      * @return Overall Metrics report for Document Classification Model.
      * 
      */
     public List<GetModelsModelCollectionItemMetricOverallMetricsReport> overallMetricsReports() {
-        return this.overallMetricsReports;
+        return this.overallMetricsReports == null ? List.of() : this.overallMetricsReports;
     }
 
     public static Builder builder() {
@@ -73,10 +75,10 @@ public final class GetModelsModelCollectionItemMetric {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetModelsModelCollectionItemMetricDatasetSummary> datasetSummaries;
-        private List<GetModelsModelCollectionItemMetricLabelMetricsReport> labelMetricsReports;
-        private String modelType;
-        private List<GetModelsModelCollectionItemMetricOverallMetricsReport> overallMetricsReports;
+        private @Nullable List<GetModelsModelCollectionItemMetricDatasetSummary> datasetSummaries;
+        private @Nullable List<GetModelsModelCollectionItemMetricLabelMetricsReport> labelMetricsReports;
+        private @Nullable String modelType;
+        private @Nullable List<GetModelsModelCollectionItemMetricOverallMetricsReport> overallMetricsReports;
         public Builder() {}
         public Builder(GetModelsModelCollectionItemMetric defaults) {
     	      Objects.requireNonNull(defaults);
@@ -87,29 +89,29 @@ public final class GetModelsModelCollectionItemMetric {
         }
 
         @CustomType.Setter
-        public Builder datasetSummaries(List<GetModelsModelCollectionItemMetricDatasetSummary> datasetSummaries) {
-            this.datasetSummaries = Objects.requireNonNull(datasetSummaries);
+        public Builder datasetSummaries(@Nullable List<GetModelsModelCollectionItemMetricDatasetSummary> datasetSummaries) {
+            this.datasetSummaries = datasetSummaries;
             return this;
         }
         public Builder datasetSummaries(GetModelsModelCollectionItemMetricDatasetSummary... datasetSummaries) {
             return datasetSummaries(List.of(datasetSummaries));
         }
         @CustomType.Setter
-        public Builder labelMetricsReports(List<GetModelsModelCollectionItemMetricLabelMetricsReport> labelMetricsReports) {
-            this.labelMetricsReports = Objects.requireNonNull(labelMetricsReports);
+        public Builder labelMetricsReports(@Nullable List<GetModelsModelCollectionItemMetricLabelMetricsReport> labelMetricsReports) {
+            this.labelMetricsReports = labelMetricsReports;
             return this;
         }
         public Builder labelMetricsReports(GetModelsModelCollectionItemMetricLabelMetricsReport... labelMetricsReports) {
             return labelMetricsReports(List.of(labelMetricsReports));
         }
         @CustomType.Setter
-        public Builder modelType(String modelType) {
-            this.modelType = Objects.requireNonNull(modelType);
+        public Builder modelType(@Nullable String modelType) {
+            this.modelType = modelType;
             return this;
         }
         @CustomType.Setter
-        public Builder overallMetricsReports(List<GetModelsModelCollectionItemMetricOverallMetricsReport> overallMetricsReports) {
-            this.overallMetricsReports = Objects.requireNonNull(overallMetricsReports);
+        public Builder overallMetricsReports(@Nullable List<GetModelsModelCollectionItemMetricOverallMetricsReport> overallMetricsReports) {
+            this.overallMetricsReports = overallMetricsReports;
             return this;
         }
         public Builder overallMetricsReports(GetModelsModelCollectionItemMetricOverallMetricsReport... overallMetricsReports) {

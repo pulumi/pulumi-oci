@@ -34,12 +34,12 @@ public final class GetPingMonitorsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of ping_monitors.
      * 
      */
-    private List<GetPingMonitorsPingMonitor> pingMonitors;
+    private @Nullable List<GetPingMonitorsPingMonitor> pingMonitors;
 
     private GetPingMonitorsResult() {}
     /**
@@ -70,15 +70,15 @@ public final class GetPingMonitorsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of ping_monitors.
      * 
      */
     public List<GetPingMonitorsPingMonitor> pingMonitors() {
-        return this.pingMonitors;
+        return this.pingMonitors == null ? List.of() : this.pingMonitors;
     }
 
     public static Builder builder() {
@@ -94,8 +94,8 @@ public final class GetPingMonitorsResult {
         private @Nullable String displayName;
         private @Nullable List<GetPingMonitorsFilter> filters;
         private @Nullable String homeRegion;
-        private String id;
-        private List<GetPingMonitorsPingMonitor> pingMonitors;
+        private @Nullable String id;
+        private @Nullable List<GetPingMonitorsPingMonitor> pingMonitors;
         public Builder() {}
         public Builder(GetPingMonitorsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -131,13 +131,13 @@ public final class GetPingMonitorsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder pingMonitors(List<GetPingMonitorsPingMonitor> pingMonitors) {
-            this.pingMonitors = Objects.requireNonNull(pingMonitors);
+        public Builder pingMonitors(@Nullable List<GetPingMonitorsPingMonitor> pingMonitors) {
+            this.pingMonitors = pingMonitors;
             return this;
         }
         public Builder pingMonitors(GetPingMonitorsPingMonitor... pingMonitors) {

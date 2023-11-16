@@ -16,17 +16,17 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
         /// <summary>
         /// If isOverrideDns is true, then DNS settings will be overridden.
         /// </summary>
-        public readonly bool IsOverrideDns;
+        public readonly bool? IsOverrideDns;
         /// <summary>
         /// Attribute to override the DNS IP value. This value will be honored only if isOverrideDns is set to true.
         /// </summary>
-        public readonly string OverrideDnsIp;
+        public readonly string? OverrideDnsIp;
 
         [OutputConstructor]
         private GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationResult(
-            bool isOverrideDns,
+            bool? isOverrideDns,
 
-            string overrideDnsIp)
+            string? overrideDnsIp)
         {
             IsOverrideDns = isOverrideDns;
             OverrideDnsIp = overrideDnsIp;

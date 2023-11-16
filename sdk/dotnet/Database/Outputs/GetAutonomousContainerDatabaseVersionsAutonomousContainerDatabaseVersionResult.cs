@@ -16,7 +16,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// A URL that points to a detailed description of the Autonomous Container Database version.
         /// </summary>
-        public readonly string Details;
+        public readonly string? Details;
         /// <summary>
         /// The list of applications supported for the given version.
         /// </summary>
@@ -24,15 +24,15 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// A valid Oracle Database version for provisioning an Autonomous Container Database.
         /// </summary>
-        public readonly string Version;
+        public readonly string? Version;
 
         [OutputConstructor]
         private GetAutonomousContainerDatabaseVersionsAutonomousContainerDatabaseVersionResult(
-            string details,
+            string? details,
 
             ImmutableArray<Outputs.GetAutonomousContainerDatabaseVersionsAutonomousContainerDatabaseVersionSupportedAppResult> supportedApps,
 
-            string version)
+            string? version)
         {
             Details = details;
             SupportedApps = supportedApps;

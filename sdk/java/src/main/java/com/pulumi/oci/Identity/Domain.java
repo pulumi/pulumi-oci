@@ -16,6 +16,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -97,56 +98,56 @@ public class Domain extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="adminEmail", refs={String.class}, tree="[0]")
-    private Output<String> adminEmail;
+    private Output</* @Nullable */ String> adminEmail;
 
     /**
      * @return The admin email address
      * 
      */
-    public Output<String> adminEmail() {
-        return this.adminEmail;
+    public Output<Optional<String>> adminEmail() {
+        return Codegen.optional(this.adminEmail);
     }
     /**
      * The admin first name
      * 
      */
     @Export(name="adminFirstName", refs={String.class}, tree="[0]")
-    private Output<String> adminFirstName;
+    private Output</* @Nullable */ String> adminFirstName;
 
     /**
      * @return The admin first name
      * 
      */
-    public Output<String> adminFirstName() {
-        return this.adminFirstName;
+    public Output<Optional<String>> adminFirstName() {
+        return Codegen.optional(this.adminFirstName);
     }
     /**
      * The admin last name
      * 
      */
     @Export(name="adminLastName", refs={String.class}, tree="[0]")
-    private Output<String> adminLastName;
+    private Output</* @Nullable */ String> adminLastName;
 
     /**
      * @return The admin last name
      * 
      */
-    public Output<String> adminLastName() {
-        return this.adminLastName;
+    public Output<Optional<String>> adminLastName() {
+        return Codegen.optional(this.adminLastName);
     }
     /**
      * The admin user name
      * 
      */
     @Export(name="adminUserName", refs={String.class}, tree="[0]")
-    private Output<String> adminUserName;
+    private Output</* @Nullable */ String> adminUserName;
 
     /**
      * @return The admin user name
      * 
      */
-    public Output<String> adminUserName() {
-        return this.adminUserName;
+    public Output<Optional<String>> adminUserName() {
+        return Codegen.optional(this.adminUserName);
     }
     /**
      * (Updatable) The OCID of the Compartment where domain is created
@@ -167,14 +168,14 @@ public class Domain extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) Domain entity description
@@ -209,14 +210,14 @@ public class Domain extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * The region&#39;s name. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported region names.  Example: `us-phoenix-1`
@@ -237,56 +238,56 @@ public class Domain extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="homeRegionUrl", refs={String.class}, tree="[0]")
-    private Output<String> homeRegionUrl;
+    private Output</* @Nullable */ String> homeRegionUrl;
 
     /**
      * @return Region specific domain URL.
      * 
      */
-    public Output<String> homeRegionUrl() {
-        return this.homeRegionUrl;
+    public Output<Optional<String>> homeRegionUrl() {
+        return Codegen.optional(this.homeRegionUrl);
     }
     /**
      * (Updatable) Indicates whether domain is hidden on login screen or not.
      * 
      */
     @Export(name="isHiddenOnLogin", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isHiddenOnLogin;
+    private Output</* @Nullable */ Boolean> isHiddenOnLogin;
 
     /**
      * @return (Updatable) Indicates whether domain is hidden on login screen or not.
      * 
      */
-    public Output<Boolean> isHiddenOnLogin() {
-        return this.isHiddenOnLogin;
+    public Output<Optional<Boolean>> isHiddenOnLogin() {
+        return Codegen.optional(this.isHiddenOnLogin);
     }
     /**
      * Indicates if admin user created in IDCS stripe would like to receive notification like welcome email or not. Required field only if admin information is provided, otherwise optional.
      * 
      */
     @Export(name="isNotificationBypassed", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isNotificationBypassed;
+    private Output</* @Nullable */ Boolean> isNotificationBypassed;
 
     /**
      * @return Indicates if admin user created in IDCS stripe would like to receive notification like welcome email or not. Required field only if admin information is provided, otherwise optional.
      * 
      */
-    public Output<Boolean> isNotificationBypassed() {
-        return this.isNotificationBypassed;
+    public Output<Optional<Boolean>> isNotificationBypassed() {
+        return Codegen.optional(this.isNotificationBypassed);
     }
     /**
      * Optional field to indicate whether users in the domain are required to have a primary email address or not Defaults to true
      * 
      */
     @Export(name="isPrimaryEmailRequired", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isPrimaryEmailRequired;
+    private Output</* @Nullable */ Boolean> isPrimaryEmailRequired;
 
     /**
      * @return Optional field to indicate whether users in the domain are required to have a primary email address or not Defaults to true
      * 
      */
-    public Output<Boolean> isPrimaryEmailRequired() {
-        return this.isPrimaryEmailRequired;
+    public Output<Optional<Boolean>> isPrimaryEmailRequired() {
+        return Codegen.optional(this.isPrimaryEmailRequired);
     }
     /**
      * The License type of Domain
@@ -313,84 +314,84 @@ public class Domain extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return Any additional details about the current state of the Domain.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * The regions domain is replication to.
      * 
      */
     @Export(name="replicaRegions", refs={List.class,DomainReplicaRegion.class}, tree="[0,1]")
-    private Output<List<DomainReplicaRegion>> replicaRegions;
+    private Output</* @Nullable */ List<DomainReplicaRegion>> replicaRegions;
 
     /**
      * @return The regions domain is replication to.
      * 
      */
-    public Output<List<DomainReplicaRegion>> replicaRegions() {
-        return this.replicaRegions;
+    public Output<Optional<List<DomainReplicaRegion>>> replicaRegions() {
+        return Codegen.optional(this.replicaRegions);
     }
     /**
      * The current state.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * Date and time the domain was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return Date and time the domain was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The type of the domain.
      * 
      */
     @Export(name="type", refs={String.class}, tree="[0]")
-    private Output<String> type;
+    private Output</* @Nullable */ String> type;
 
     /**
      * @return The type of the domain.
      * 
      */
-    public Output<String> type() {
-        return this.type;
+    public Output<Optional<String>> type() {
+        return Codegen.optional(this.type);
     }
     /**
      * Region agnostic domain URL.
      * 
      */
     @Export(name="url", refs={String.class}, tree="[0]")
-    private Output<String> url;
+    private Output</* @Nullable */ String> url;
 
     /**
      * @return Region agnostic domain URL.
      * 
      */
-    public Output<String> url() {
-        return this.url;
+    public Output<Optional<String>> url() {
+        return Codegen.optional(this.url);
     }
 
     /**

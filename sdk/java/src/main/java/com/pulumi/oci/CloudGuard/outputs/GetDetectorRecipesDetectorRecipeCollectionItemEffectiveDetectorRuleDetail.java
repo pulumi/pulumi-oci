@@ -9,6 +9,8 @@ import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetail {
@@ -16,75 +18,75 @@ public final class GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetect
      * @return Base condition object
      * 
      */
-    private String condition;
+    private @Nullable String condition;
     /**
      * @return Configuration details
      * 
      */
-    private List<GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfiguration> configurations;
+    private @Nullable List<GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfiguration> configurations;
     /**
      * @return configuration allowed or not
      * 
      */
-    private Boolean isConfigurationAllowed;
+    private @Nullable Boolean isConfigurationAllowed;
     /**
      * @return Enables the control
      * 
      */
-    private Boolean isEnabled;
+    private @Nullable Boolean isEnabled;
     /**
      * @return user defined labels for a detector rule
      * 
      */
-    private List<String> labels;
+    private @Nullable List<String> labels;
     /**
      * @return The Risk Level
      * 
      */
-    private String riskLevel;
+    private @Nullable String riskLevel;
 
     private GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetail() {}
     /**
      * @return Base condition object
      * 
      */
-    public String condition() {
-        return this.condition;
+    public Optional<String> condition() {
+        return Optional.ofNullable(this.condition);
     }
     /**
      * @return Configuration details
      * 
      */
     public List<GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfiguration> configurations() {
-        return this.configurations;
+        return this.configurations == null ? List.of() : this.configurations;
     }
     /**
      * @return configuration allowed or not
      * 
      */
-    public Boolean isConfigurationAllowed() {
-        return this.isConfigurationAllowed;
+    public Optional<Boolean> isConfigurationAllowed() {
+        return Optional.ofNullable(this.isConfigurationAllowed);
     }
     /**
      * @return Enables the control
      * 
      */
-    public Boolean isEnabled() {
-        return this.isEnabled;
+    public Optional<Boolean> isEnabled() {
+        return Optional.ofNullable(this.isEnabled);
     }
     /**
      * @return user defined labels for a detector rule
      * 
      */
     public List<String> labels() {
-        return this.labels;
+        return this.labels == null ? List.of() : this.labels;
     }
     /**
      * @return The Risk Level
      * 
      */
-    public String riskLevel() {
-        return this.riskLevel;
+    public Optional<String> riskLevel() {
+        return Optional.ofNullable(this.riskLevel);
     }
 
     public static Builder builder() {
@@ -96,12 +98,12 @@ public final class GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetect
     }
     @CustomType.Builder
     public static final class Builder {
-        private String condition;
-        private List<GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfiguration> configurations;
-        private Boolean isConfigurationAllowed;
-        private Boolean isEnabled;
-        private List<String> labels;
-        private String riskLevel;
+        private @Nullable String condition;
+        private @Nullable List<GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfiguration> configurations;
+        private @Nullable Boolean isConfigurationAllowed;
+        private @Nullable Boolean isEnabled;
+        private @Nullable List<String> labels;
+        private @Nullable String riskLevel;
         public Builder() {}
         public Builder(GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -114,39 +116,39 @@ public final class GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetect
         }
 
         @CustomType.Setter
-        public Builder condition(String condition) {
-            this.condition = Objects.requireNonNull(condition);
+        public Builder condition(@Nullable String condition) {
+            this.condition = condition;
             return this;
         }
         @CustomType.Setter
-        public Builder configurations(List<GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfiguration> configurations) {
-            this.configurations = Objects.requireNonNull(configurations);
+        public Builder configurations(@Nullable List<GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfiguration> configurations) {
+            this.configurations = configurations;
             return this;
         }
         public Builder configurations(GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfiguration... configurations) {
             return configurations(List.of(configurations));
         }
         @CustomType.Setter
-        public Builder isConfigurationAllowed(Boolean isConfigurationAllowed) {
-            this.isConfigurationAllowed = Objects.requireNonNull(isConfigurationAllowed);
+        public Builder isConfigurationAllowed(@Nullable Boolean isConfigurationAllowed) {
+            this.isConfigurationAllowed = isConfigurationAllowed;
             return this;
         }
         @CustomType.Setter
-        public Builder isEnabled(Boolean isEnabled) {
-            this.isEnabled = Objects.requireNonNull(isEnabled);
+        public Builder isEnabled(@Nullable Boolean isEnabled) {
+            this.isEnabled = isEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder labels(List<String> labels) {
-            this.labels = Objects.requireNonNull(labels);
+        public Builder labels(@Nullable List<String> labels) {
+            this.labels = labels;
             return this;
         }
         public Builder labels(String... labels) {
             return labels(List.of(labels));
         }
         @CustomType.Setter
-        public Builder riskLevel(String riskLevel) {
-            this.riskLevel = Objects.requireNonNull(riskLevel);
+        public Builder riskLevel(@Nullable String riskLevel) {
+            this.riskLevel = riskLevel;
             return this;
         }
         public GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetail build() {

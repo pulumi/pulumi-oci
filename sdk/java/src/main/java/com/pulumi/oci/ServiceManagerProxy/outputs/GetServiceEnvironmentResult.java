@@ -9,6 +9,8 @@ import com.pulumi.oci.ServiceManagerProxy.outputs.GetServiceEnvironmentServiceEn
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetServiceEnvironmentResult {
@@ -21,33 +23,33 @@ public final class GetServiceEnvironmentResult {
      * @return The URL for the console.
      * 
      */
-    private String consoleUrl;
+    private @Nullable String consoleUrl;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Details for a service definition.
      * 
      */
-    private List<GetServiceEnvironmentServiceDefinition> serviceDefinitions;
+    private @Nullable List<GetServiceEnvironmentServiceDefinition> serviceDefinitions;
     /**
      * @return Array of service environment end points.
      * 
      */
-    private List<GetServiceEnvironmentServiceEnvironmentEndpoint> serviceEnvironmentEndpoints;
+    private @Nullable List<GetServiceEnvironmentServiceEnvironmentEndpoint> serviceEnvironmentEndpoints;
     private String serviceEnvironmentId;
     /**
      * @return Status of the entitlement registration for the service.
      * 
      */
-    private String status;
+    private @Nullable String status;
     /**
      * @return The unique subscription ID associated with the service environment ID.
      * 
      */
-    private String subscriptionId;
+    private @Nullable String subscriptionId;
 
     private GetServiceEnvironmentResult() {}
     /**
@@ -61,29 +63,29 @@ public final class GetServiceEnvironmentResult {
      * @return The URL for the console.
      * 
      */
-    public String consoleUrl() {
-        return this.consoleUrl;
+    public Optional<String> consoleUrl() {
+        return Optional.ofNullable(this.consoleUrl);
     }
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Details for a service definition.
      * 
      */
     public List<GetServiceEnvironmentServiceDefinition> serviceDefinitions() {
-        return this.serviceDefinitions;
+        return this.serviceDefinitions == null ? List.of() : this.serviceDefinitions;
     }
     /**
      * @return Array of service environment end points.
      * 
      */
     public List<GetServiceEnvironmentServiceEnvironmentEndpoint> serviceEnvironmentEndpoints() {
-        return this.serviceEnvironmentEndpoints;
+        return this.serviceEnvironmentEndpoints == null ? List.of() : this.serviceEnvironmentEndpoints;
     }
     public String serviceEnvironmentId() {
         return this.serviceEnvironmentId;
@@ -92,15 +94,15 @@ public final class GetServiceEnvironmentResult {
      * @return Status of the entitlement registration for the service.
      * 
      */
-    public String status() {
-        return this.status;
+    public Optional<String> status() {
+        return Optional.ofNullable(this.status);
     }
     /**
      * @return The unique subscription ID associated with the service environment ID.
      * 
      */
-    public String subscriptionId() {
-        return this.subscriptionId;
+    public Optional<String> subscriptionId() {
+        return Optional.ofNullable(this.subscriptionId);
     }
 
     public static Builder builder() {
@@ -113,13 +115,13 @@ public final class GetServiceEnvironmentResult {
     @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
-        private String consoleUrl;
-        private String id;
-        private List<GetServiceEnvironmentServiceDefinition> serviceDefinitions;
-        private List<GetServiceEnvironmentServiceEnvironmentEndpoint> serviceEnvironmentEndpoints;
+        private @Nullable String consoleUrl;
+        private @Nullable String id;
+        private @Nullable List<GetServiceEnvironmentServiceDefinition> serviceDefinitions;
+        private @Nullable List<GetServiceEnvironmentServiceEnvironmentEndpoint> serviceEnvironmentEndpoints;
         private String serviceEnvironmentId;
-        private String status;
-        private String subscriptionId;
+        private @Nullable String status;
+        private @Nullable String subscriptionId;
         public Builder() {}
         public Builder(GetServiceEnvironmentResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -139,26 +141,26 @@ public final class GetServiceEnvironmentResult {
             return this;
         }
         @CustomType.Setter
-        public Builder consoleUrl(String consoleUrl) {
-            this.consoleUrl = Objects.requireNonNull(consoleUrl);
+        public Builder consoleUrl(@Nullable String consoleUrl) {
+            this.consoleUrl = consoleUrl;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder serviceDefinitions(List<GetServiceEnvironmentServiceDefinition> serviceDefinitions) {
-            this.serviceDefinitions = Objects.requireNonNull(serviceDefinitions);
+        public Builder serviceDefinitions(@Nullable List<GetServiceEnvironmentServiceDefinition> serviceDefinitions) {
+            this.serviceDefinitions = serviceDefinitions;
             return this;
         }
         public Builder serviceDefinitions(GetServiceEnvironmentServiceDefinition... serviceDefinitions) {
             return serviceDefinitions(List.of(serviceDefinitions));
         }
         @CustomType.Setter
-        public Builder serviceEnvironmentEndpoints(List<GetServiceEnvironmentServiceEnvironmentEndpoint> serviceEnvironmentEndpoints) {
-            this.serviceEnvironmentEndpoints = Objects.requireNonNull(serviceEnvironmentEndpoints);
+        public Builder serviceEnvironmentEndpoints(@Nullable List<GetServiceEnvironmentServiceEnvironmentEndpoint> serviceEnvironmentEndpoints) {
+            this.serviceEnvironmentEndpoints = serviceEnvironmentEndpoints;
             return this;
         }
         public Builder serviceEnvironmentEndpoints(GetServiceEnvironmentServiceEnvironmentEndpoint... serviceEnvironmentEndpoints) {
@@ -170,13 +172,13 @@ public final class GetServiceEnvironmentResult {
             return this;
         }
         @CustomType.Setter
-        public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+        public Builder status(@Nullable String status) {
+            this.status = status;
             return this;
         }
         @CustomType.Setter
-        public Builder subscriptionId(String subscriptionId) {
-            this.subscriptionId = Objects.requireNonNull(subscriptionId);
+        public Builder subscriptionId(@Nullable String subscriptionId) {
+            this.subscriptionId = subscriptionId;
             return this;
         }
         public GetServiceEnvironmentResult build() {

@@ -13,56 +13,56 @@ namespace Pulumi.Oci.GoldenGate.Outputs
     [OutputType]
     public sealed class GetDeploymentsDeploymentCollectionItemOggDataResult
     {
-        public readonly string AdminPassword;
+        public readonly string? AdminPassword;
         /// <summary>
         /// The GoldenGate deployment console username.
         /// </summary>
-        public readonly string AdminUsername;
+        public readonly string? AdminUsername;
         /// <summary>
         /// A PEM-encoded SSL certificate.
         /// </summary>
-        public readonly string Certificate;
+        public readonly string? Certificate;
         /// <summary>
         /// The type of credential store for OGG.
         /// </summary>
-        public readonly string CredentialStore;
+        public readonly string? CredentialStore;
         /// <summary>
         /// The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
         /// </summary>
-        public readonly string DeploymentName;
+        public readonly string? DeploymentName;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
         /// </summary>
-        public readonly string IdentityDomainId;
-        public readonly string Key;
+        public readonly string? IdentityDomainId;
+        public readonly string? Key;
         /// <summary>
         /// Version of OGG
         /// </summary>
-        public readonly string OggVersion;
+        public readonly string? OggVersion;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment password is stored.
         /// </summary>
-        public readonly string PasswordSecretId;
+        public readonly string? PasswordSecretId;
 
         [OutputConstructor]
         private GetDeploymentsDeploymentCollectionItemOggDataResult(
-            string adminPassword,
+            string? adminPassword,
 
-            string adminUsername,
+            string? adminUsername,
 
-            string certificate,
+            string? certificate,
 
-            string credentialStore,
+            string? credentialStore,
 
-            string deploymentName,
+            string? deploymentName,
 
-            string identityDomainId,
+            string? identityDomainId,
 
-            string key,
+            string? key,
 
-            string oggVersion,
+            string? oggVersion,
 
-            string passwordSecretId)
+            string? passwordSecretId)
         {
             AdminPassword = adminPassword;
             AdminUsername = adminUsername;

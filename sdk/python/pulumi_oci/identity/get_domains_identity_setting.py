@@ -128,58 +128,37 @@ class GetDomainsIdentitySettingResult:
 
     @property
     @pulumi.getter(name="compartmentOcid")
-    def compartment_ocid(self) -> str:
-        """
-        Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
-        """
+    def compartment_ocid(self) -> Optional[str]:
         return pulumi.get(self, "compartment_ocid")
 
     @property
     @pulumi.getter(name="deleteInProgress")
-    def delete_in_progress(self) -> bool:
-        """
-        A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
-        """
+    def delete_in_progress(self) -> Optional[bool]:
         return pulumi.get(self, "delete_in_progress")
 
     @property
     @pulumi.getter(name="domainOcid")
-    def domain_ocid(self) -> str:
-        """
-        Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
-        """
+    def domain_ocid(self) -> Optional[str]:
         return pulumi.get(self, "domain_ocid")
 
     @property
     @pulumi.getter(name="emitLockedMessageWhenUserIsLocked")
-    def emit_locked_message_when_user_is_locked(self) -> bool:
-        """
-        Indicates whether to show the 'user-is-locked' message during authentication if the user is already locked. The default value is false, which tells the system to show a generic 'authentication-failure' message. This is the most secure behavior. If the option is set to true, the system shows a more detailed 'error-message' that says the user is locked. This is more helpful but is less secure, for example, because the difference in error-messages could be used to determine which usernames exist and which do not.
-        """
+    def emit_locked_message_when_user_is_locked(self) -> Optional[bool]:
         return pulumi.get(self, "emit_locked_message_when_user_is_locked")
 
     @property
     @pulumi.getter(name="externalId")
-    def external_id(self) -> str:
-        """
-        An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
-        """
+    def external_id(self) -> Optional[str]:
         return pulumi.get(self, "external_id")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="idcsCreatedBies")
-    def idcs_created_bies(self) -> Sequence['outputs.GetDomainsIdentitySettingIdcsCreatedByResult']:
-        """
-        The User or App who created the Resource
-        """
+    def idcs_created_bies(self) -> Optional[Sequence['outputs.GetDomainsIdentitySettingIdcsCreatedByResult']]:
         return pulumi.get(self, "idcs_created_bies")
 
     @property
@@ -189,26 +168,17 @@ class GetDomainsIdentitySettingResult:
 
     @property
     @pulumi.getter(name="idcsLastModifiedBies")
-    def idcs_last_modified_bies(self) -> Sequence['outputs.GetDomainsIdentitySettingIdcsLastModifiedByResult']:
-        """
-        The User or App who modified the Resource
-        """
+    def idcs_last_modified_bies(self) -> Optional[Sequence['outputs.GetDomainsIdentitySettingIdcsLastModifiedByResult']]:
         return pulumi.get(self, "idcs_last_modified_bies")
 
     @property
     @pulumi.getter(name="idcsLastUpgradedInRelease")
-    def idcs_last_upgraded_in_release(self) -> str:
-        """
-        The release number when the resource was upgraded.
-        """
+    def idcs_last_upgraded_in_release(self) -> Optional[str]:
         return pulumi.get(self, "idcs_last_upgraded_in_release")
 
     @property
     @pulumi.getter(name="idcsPreventedOperations")
-    def idcs_prevented_operations(self) -> Sequence[str]:
-        """
-        Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
-        """
+    def idcs_prevented_operations(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "idcs_prevented_operations")
 
     @property
@@ -218,58 +188,37 @@ class GetDomainsIdentitySettingResult:
 
     @property
     @pulumi.getter
-    def metas(self) -> Sequence['outputs.GetDomainsIdentitySettingMetaResult']:
-        """
-        A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
-        """
+    def metas(self) -> Optional[Sequence['outputs.GetDomainsIdentitySettingMetaResult']]:
         return pulumi.get(self, "metas")
 
     @property
     @pulumi.getter(name="myProfiles")
-    def my_profiles(self) -> Sequence['outputs.GetDomainsIdentitySettingMyProfileResult']:
-        """
-        Whether to allow users to update their own profile.
-        """
+    def my_profiles(self) -> Optional[Sequence['outputs.GetDomainsIdentitySettingMyProfileResult']]:
         return pulumi.get(self, "my_profiles")
 
     @property
     @pulumi.getter
-    def ocid(self) -> str:
-        """
-        Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
-        """
+    def ocid(self) -> Optional[str]:
         return pulumi.get(self, "ocid")
 
     @property
     @pulumi.getter(name="posixGids")
-    def posix_gids(self) -> Sequence['outputs.GetDomainsIdentitySettingPosixGidResult']:
-        """
-        A list of Posix Gid settings.
-        """
+    def posix_gids(self) -> Optional[Sequence['outputs.GetDomainsIdentitySettingPosixGidResult']]:
         return pulumi.get(self, "posix_gids")
 
     @property
     @pulumi.getter(name="posixUids")
-    def posix_uids(self) -> Sequence['outputs.GetDomainsIdentitySettingPosixUidResult']:
-        """
-        A list of Posix Uid settings.
-        """
+    def posix_uids(self) -> Optional[Sequence['outputs.GetDomainsIdentitySettingPosixUidResult']]:
         return pulumi.get(self, "posix_uids")
 
     @property
     @pulumi.getter(name="primaryEmailRequired")
-    def primary_email_required(self) -> bool:
-        """
-        Indicates whether the primary email is required.
-        """
+    def primary_email_required(self) -> Optional[bool]:
         return pulumi.get(self, "primary_email_required")
 
     @property
     @pulumi.getter(name="removeInvalidEmails")
-    def remove_invalid_emails(self) -> bool:
-        """
-        Indicates whether to remove non-RFC5322 compliant emails before creating a user.
-        """
+    def remove_invalid_emails(self) -> Optional[bool]:
         return pulumi.get(self, "remove_invalid_emails")
 
     @property
@@ -279,50 +228,32 @@ class GetDomainsIdentitySettingResult:
 
     @property
     @pulumi.getter(name="returnInactiveOverLockedMessage")
-    def return_inactive_over_locked_message(self) -> bool:
-        """
-        **Added In:** 2302092332
-        """
+    def return_inactive_over_locked_message(self) -> Optional[bool]:
         return pulumi.get(self, "return_inactive_over_locked_message")
 
     @property
     @pulumi.getter
-    def schemas(self) -> Sequence[str]:
-        """
-        REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
-        """
+    def schemas(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "schemas")
 
     @property
     @pulumi.getter
-    def tags(self) -> Sequence['outputs.GetDomainsIdentitySettingTagResult']:
-        """
-        A list of tags on this resource.
-        """
+    def tags(self) -> Optional[Sequence['outputs.GetDomainsIdentitySettingTagResult']]:
         return pulumi.get(self, "tags")
 
     @property
     @pulumi.getter(name="tenancyOcid")
-    def tenancy_ocid(self) -> str:
-        """
-        Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
-        """
+    def tenancy_ocid(self) -> Optional[str]:
         return pulumi.get(self, "tenancy_ocid")
 
     @property
     @pulumi.getter
-    def tokens(self) -> Sequence['outputs.GetDomainsIdentitySettingTokenResult']:
-        """
-        A list of tokens and their expiry length.
-        """
+    def tokens(self) -> Optional[Sequence['outputs.GetDomainsIdentitySettingTokenResult']]:
         return pulumi.get(self, "tokens")
 
     @property
     @pulumi.getter(name="userAllowedToSetRecoveryEmail")
-    def user_allowed_to_set_recovery_email(self) -> bool:
-        """
-        Indicates whether a user is allowed to change their own recovery email.
-        """
+    def user_allowed_to_set_recovery_email(self) -> Optional[bool]:
         return pulumi.get(self, "user_allowed_to_set_recovery_email")
 
 
@@ -371,31 +302,7 @@ def get_domains_identity_setting(attribute_sets: Optional[Sequence[str]] = None,
                                  resource_type_schema_version: Optional[str] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDomainsIdentitySettingResult:
     """
-    This data source provides details about a specific Identity Setting resource in Oracle Cloud Infrastructure Identity Domains service.
-
-    Get an Identity setting.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_identity_setting = oci.Identity.get_domains_identity_setting(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        identity_setting_id=oci_identity_domains_identity_setting["test_identity_setting"]["id"],
-        attribute_sets=["all"],
-        attributes="",
-        authorization=var["identity_setting_authorization"],
-        resource_type_schema_version=var["identity_setting_resource_type_schema_version"])
-    ```
-
-
-    :param Sequence[str] attribute_sets: A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
-    :param str attributes: A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
-    :param str authorization: The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
-    :param str idcs_endpoint: The basic endpoint for the identity domain
-    :param str identity_setting_id: ID of the resource
-    :param str resource_type_schema_version: An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['attributeSets'] = attribute_sets
@@ -448,30 +355,6 @@ def get_domains_identity_setting_output(attribute_sets: Optional[pulumi.Input[Op
                                         resource_type_schema_version: Optional[pulumi.Input[Optional[str]]] = None,
                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDomainsIdentitySettingResult]:
     """
-    This data source provides details about a specific Identity Setting resource in Oracle Cloud Infrastructure Identity Domains service.
-
-    Get an Identity setting.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_identity_setting = oci.Identity.get_domains_identity_setting(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        identity_setting_id=oci_identity_domains_identity_setting["test_identity_setting"]["id"],
-        attribute_sets=["all"],
-        attributes="",
-        authorization=var["identity_setting_authorization"],
-        resource_type_schema_version=var["identity_setting_resource_type_schema_version"])
-    ```
-
-
-    :param Sequence[str] attribute_sets: A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
-    :param str attributes: A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
-    :param str authorization: The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
-    :param str idcs_endpoint: The basic endpoint for the identity domain
-    :param str identity_setting_id: ID of the resource
-    :param str resource_type_schema_version: An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+    Use this data source to access information about an existing resource.
     """
     ...

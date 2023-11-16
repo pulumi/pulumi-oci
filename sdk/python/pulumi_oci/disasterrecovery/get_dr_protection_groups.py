@@ -55,25 +55,16 @@ class GetDrProtectionGroupsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment containing the DR protection group.  Example: `ocid1.compartment.oc1..uniqueID`
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        The display name of the DR protection group.  Example: `EBS PHX Group`
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="drProtectionGroupCollections")
-    def dr_protection_group_collections(self) -> Sequence['outputs.GetDrProtectionGroupsDrProtectionGroupCollectionResult']:
-        """
-        The list of dr_protection_group_collection.
-        """
+    def dr_protection_group_collections(self) -> Optional[Sequence['outputs.GetDrProtectionGroupsDrProtectionGroupCollectionResult']]:
         return pulumi.get(self, "dr_protection_group_collections")
 
     @property
@@ -88,7 +79,7 @@ class GetDrProtectionGroupsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -97,25 +88,16 @@ class GetDrProtectionGroupsResult:
     @property
     @pulumi.getter(name="lifecycleSubState")
     def lifecycle_sub_state(self) -> Optional[str]:
-        """
-        The current sub-state of the DR protection group.
-        """
         return pulumi.get(self, "lifecycle_sub_state")
 
     @property
     @pulumi.getter
     def role(self) -> Optional[str]:
-        """
-        The role of the DR protection group.
-        """
         return pulumi.get(self, "role")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the DR protection group.
-        """
         return pulumi.get(self, "state")
 
 
@@ -145,31 +127,7 @@ def get_dr_protection_groups(compartment_id: Optional[str] = None,
                              state: Optional[str] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDrProtectionGroupsResult:
     """
-    This data source provides the list of Dr Protection Groups in Oracle Cloud Infrastructure Disaster Recovery service.
-
-    Get a summary list of all DR protection groups in a compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_dr_protection_groups = oci.DisasterRecovery.get_dr_protection_groups(compartment_id=var["compartment_id"],
-        display_name=var["dr_protection_group_display_name"],
-        dr_protection_group_id=oci_disaster_recovery_dr_protection_group["test_dr_protection_group"]["id"],
-        lifecycle_sub_state=var["dr_protection_group_lifecycle_sub_state"],
-        role=var["dr_protection_group_role"],
-        state=var["dr_protection_group_state"])
-    ```
-
-
-    :param str compartment_id: The ID (OCID) of the compartment in which to list resources.  Example: `ocid1.compartment.oc1..uniqueID`
-    :param str display_name: A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
-    :param str dr_protection_group_id: The OCID of the DR protection group. Optional query param.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
-    :param str lifecycle_sub_state: A filter to return only DR protection groups that match the given lifecycle sub-state.
-    :param str role: The DR protection group Role.
-    :param str state: A filter to return only DR protection groups that match the given lifecycle state.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -204,30 +162,6 @@ def get_dr_protection_groups_output(compartment_id: Optional[pulumi.Input[str]] 
                                     state: Optional[pulumi.Input[Optional[str]]] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDrProtectionGroupsResult]:
     """
-    This data source provides the list of Dr Protection Groups in Oracle Cloud Infrastructure Disaster Recovery service.
-
-    Get a summary list of all DR protection groups in a compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_dr_protection_groups = oci.DisasterRecovery.get_dr_protection_groups(compartment_id=var["compartment_id"],
-        display_name=var["dr_protection_group_display_name"],
-        dr_protection_group_id=oci_disaster_recovery_dr_protection_group["test_dr_protection_group"]["id"],
-        lifecycle_sub_state=var["dr_protection_group_lifecycle_sub_state"],
-        role=var["dr_protection_group_role"],
-        state=var["dr_protection_group_state"])
-    ```
-
-
-    :param str compartment_id: The ID (OCID) of the compartment in which to list resources.  Example: `ocid1.compartment.oc1..uniqueID`
-    :param str display_name: A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
-    :param str dr_protection_group_id: The OCID of the DR protection group. Optional query param.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
-    :param str lifecycle_sub_state: A filter to return only DR protection groups that match the given lifecycle sub-state.
-    :param str role: The DR protection group Role.
-    :param str state: A filter to return only DR protection groups that match the given lifecycle state.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -42,7 +42,7 @@ namespace Pulumi.Oci.Identity
         /// * idcsValuePersistedInOtherAttribute: true
         /// </summary>
         [Output("assertionAttribute")]
-        public Output<string> AssertionAttribute { get; private set; } = null!;
+        public Output<string?> AssertionAttribute { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
@@ -70,7 +70,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("authnRequestBinding")]
-        public Output<string> AuthnRequestBinding { get; private set; } = null!;
+        public Output<string?> AuthnRequestBinding { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
@@ -92,7 +92,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("compartmentOcid")]
-        public Output<string> CompartmentOcid { get; private set; } = null!;
+        public Output<string?> CompartmentOcid { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Correlation policy
@@ -110,7 +110,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("correlationPolicy")]
-        public Output<Outputs.DomainsIdentityProviderCorrelationPolicy> CorrelationPolicy { get; private set; } = null!;
+        public Output<Outputs.DomainsIdentityProviderCorrelationPolicy?> CorrelationPolicy { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
@@ -126,7 +126,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("deleteInProgress")]
-        public Output<bool> DeleteInProgress { get; private set; } = null!;
+        public Output<bool?> DeleteInProgress { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Description
@@ -142,7 +142,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("description")]
-        public Output<string> Description { get; private set; } = null!;
+        public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
@@ -158,7 +158,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("domainOcid")]
-        public Output<string> DomainOcid { get; private set; } = null!;
+        public Output<string?> DomainOcid { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Set to true to indicate Partner enabled.
@@ -190,7 +190,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("encryptionCertificate")]
-        public Output<string> EncryptionCertificate { get; private set; } = null!;
+        public Output<string?> EncryptionCertificate { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
@@ -205,7 +205,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("externalId")]
-        public Output<string> ExternalId { get; private set; } = null!;
+        public Output<string?> ExternalId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Identity Provider Icon URL.
@@ -220,7 +220,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("iconUrl")]
-        public Output<string> IconUrl { get; private set; } = null!;
+        public Output<string?> IconUrl { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The User or App who created the Resource
@@ -270,7 +270,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("idcsLastUpgradedInRelease")]
-        public Output<string> IdcsLastUpgradedInRelease { get; private set; } = null!;
+        public Output<string?> IdcsLastUpgradedInRelease { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
@@ -301,7 +301,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("idpSsoUrl")]
-        public Output<string> IdpSsoUrl { get; private set; } = null!;
+        public Output<string?> IdpSsoUrl { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Set to true to include the signing certificate in the signature.
@@ -317,7 +317,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("includeSigningCertInSignature")]
-        public Output<bool> IncludeSigningCertInSignature { get; private set; } = null!;
+        public Output<bool?> IncludeSigningCertInSignature { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Refers to every group of which a JIT-provisioned User should be a member.  Just-in-Time user-provisioning applies this static list when jitUserProvGroupStaticListEnabled:true.
@@ -353,7 +353,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("jitUserProvAttributeUpdateEnabled")]
-        public Output<bool> JitUserProvAttributeUpdateEnabled { get; private set; } = null!;
+        public Output<bool?> JitUserProvAttributeUpdateEnabled { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Assertion To User Mapping
@@ -371,7 +371,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("jitUserProvAttributes")]
-        public Output<Outputs.DomainsIdentityProviderJitUserProvAttributes> JitUserProvAttributes { get; private set; } = null!;
+        public Output<Outputs.DomainsIdentityProviderJitUserProvAttributes?> JitUserProvAttributes { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Set to true to indicate JIT User Creation is enabled
@@ -389,7 +389,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("jitUserProvCreateUserEnabled")]
-        public Output<bool> JitUserProvCreateUserEnabled { get; private set; } = null!;
+        public Output<bool?> JitUserProvCreateUserEnabled { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Set to true to indicate JIT User Provisioning is enabled
@@ -407,7 +407,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("jitUserProvEnabled")]
-        public Output<bool> JitUserProvEnabled { get; private set; } = null!;
+        public Output<bool?> JitUserProvEnabled { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Set to true to indicate JIT User Provisioning Groups should be assigned based on assertion attribute
@@ -425,7 +425,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("jitUserProvGroupAssertionAttributeEnabled")]
-        public Output<bool> JitUserProvGroupAssertionAttributeEnabled { get; private set; } = null!;
+        public Output<bool?> JitUserProvGroupAssertionAttributeEnabled { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The default value is 'Overwrite', which tells Just-In-Time user-provisioning to replace any current group-assignments for a User with those assigned by assertions and/or those assigned statically. Specify 'Merge' if you want Just-In-Time user-provisioning to combine its group-assignments with those the user already has.
@@ -443,7 +443,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("jitUserProvGroupAssignmentMethod")]
-        public Output<string> JitUserProvGroupAssignmentMethod { get; private set; } = null!;
+        public Output<string?> JitUserProvGroupAssignmentMethod { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Property to indicate the mode of group mapping
@@ -461,7 +461,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("jitUserProvGroupMappingMode")]
-        public Output<string> JitUserProvGroupMappingMode { get; private set; } = null!;
+        public Output<string?> JitUserProvGroupMappingMode { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The list of mappings between the Identity Domain Group and the IDP group.
@@ -496,7 +496,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("jitUserProvGroupSamlAttributeName")]
-        public Output<string> JitUserProvGroupSamlAttributeName { get; private set; } = null!;
+        public Output<string?> JitUserProvGroupSamlAttributeName { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Set to true to indicate JIT User Provisioning Groups should be assigned from a static list
@@ -514,7 +514,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("jitUserProvGroupStaticListEnabled")]
-        public Output<bool> JitUserProvGroupStaticListEnabled { get; private set; } = null!;
+        public Output<bool?> JitUserProvGroupStaticListEnabled { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Set to true to indicate ignoring absence of group while provisioning
@@ -533,7 +533,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("jitUserProvIgnoreErrorOnAbsentGroups")]
-        public Output<bool> JitUserProvIgnoreErrorOnAbsentGroups { get; private set; } = null!;
+        public Output<bool?> JitUserProvIgnoreErrorOnAbsentGroups { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Records the notification timestamp for the IdP whose signing certificate is about to expire
@@ -551,7 +551,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("lastNotificationSentTime")]
-        public Output<string> LastNotificationSentTime { get; private set; } = null!;
+        public Output<string?> LastNotificationSentTime { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) HTTP binding to use for logout.
@@ -567,7 +567,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("logoutBinding")]
-        public Output<string> LogoutBinding { get; private set; } = null!;
+        public Output<string?> LogoutBinding { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Set to true to enable logout.
@@ -583,7 +583,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("logoutEnabled")]
-        public Output<bool> LogoutEnabled { get; private set; } = null!;
+        public Output<bool?> LogoutEnabled { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Logout request URL
@@ -599,7 +599,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("logoutRequestUrl")]
-        public Output<string> LogoutRequestUrl { get; private set; } = null!;
+        public Output<string?> LogoutRequestUrl { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Logout response URL
@@ -615,7 +615,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("logoutResponseUrl")]
-        public Output<string> LogoutResponseUrl { get; private set; } = null!;
+        public Output<string?> LogoutResponseUrl { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Metadata
@@ -631,7 +631,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("metadata")]
-        public Output<string> Metadata { get; private set; } = null!;
+        public Output<string?> Metadata { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
@@ -663,7 +663,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("nameIdFormat")]
-        public Output<string> NameIdFormat { get; private set; } = null!;
+        public Output<string?> NameIdFormat { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
@@ -679,7 +679,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: global
         /// </summary>
         [Output("ocid")]
-        public Output<string> Ocid { get; private set; } = null!;
+        public Output<string?> Ocid { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Unique name of the trusted Identity Provider.
@@ -711,7 +711,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: server
         /// </summary>
         [Output("partnerProviderId")]
-        public Output<string> PartnerProviderId { get; private set; } = null!;
+        public Output<string?> PartnerProviderId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) SAML SP authentication type.
@@ -747,7 +747,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("requireForceAuthn")]
-        public Output<bool> RequireForceAuthn { get; private set; } = null!;
+        public Output<bool?> RequireForceAuthn { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) SAML SP must accept encrypted assertion only.
@@ -765,7 +765,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("requiresEncryptedAssertion")]
-        public Output<bool> RequiresEncryptedAssertion { get; private set; } = null!;
+        public Output<bool?> RequiresEncryptedAssertion { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
@@ -789,7 +789,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("samlHoKrequired")]
-        public Output<bool> SamlHoKrequired { get; private set; } = null!;
+        public Output<bool?> SamlHoKrequired { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
@@ -823,7 +823,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: server
         /// </summary>
         [Output("serviceInstanceIdentifier")]
-        public Output<string> ServiceInstanceIdentifier { get; private set; } = null!;
+        public Output<string?> ServiceInstanceIdentifier { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Set to true to indicate whether to show IdP in login page or not.
@@ -839,7 +839,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("shownOnLoginPage")]
-        public Output<bool> ShownOnLoginPage { get; private set; } = null!;
+        public Output<bool?> ShownOnLoginPage { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Signature hash algorithm.
@@ -855,7 +855,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("signatureHashAlgorithm")]
-        public Output<string> SignatureHashAlgorithm { get; private set; } = null!;
+        public Output<string?> SignatureHashAlgorithm { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Signing certificate
@@ -871,7 +871,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("signingCertificate")]
-        public Output<string> SigningCertificate { get; private set; } = null!;
+        public Output<string?> SigningCertificate { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Succinct ID
@@ -887,7 +887,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: server
         /// </summary>
         [Output("succinctId")]
-        public Output<string> SuccinctId { get; private set; } = null!;
+        public Output<string?> SuccinctId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A list of tags on this resource.
@@ -919,7 +919,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("tenancyOcid")]
-        public Output<string> TenancyOcid { get; private set; } = null!;
+        public Output<string?> TenancyOcid { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The alternate Provider ID to be used as the Oracle Identity Cloud Service providerID (instead of the one in SamlSettings) when interacting with this IdP.
@@ -937,7 +937,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("tenantProviderId")]
-        public Output<string> TenantProviderId { get; private set; } = null!;
+        public Output<string?> TenantProviderId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Identity Provider Type
@@ -955,19 +955,19 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("type")]
-        public Output<string> Type { get; private set; } = null!;
+        public Output<string?> Type { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Social Identity Provider Extension Schema
         /// </summary>
         [Output("urnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider")]
-        public Output<Outputs.DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider> UrnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider { get; private set; } = null!;
+        public Output<Outputs.DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider?> UrnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) X509 Identity Provider Extension Schema
         /// </summary>
         [Output("urnietfparamsscimschemasoracleidcsextensionx509identityProvider")]
-        public Output<Outputs.DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProvider> Urnietfparamsscimschemasoracleidcsextensionx509identityProvider { get; private set; } = null!;
+        public Output<Outputs.DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProvider?> Urnietfparamsscimschemasoracleidcsextensionx509identityProvider { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) User mapping method.
@@ -986,7 +986,7 @@ namespace Pulumi.Oci.Identity
         /// * idcsValuePersistedInOtherAttribute: true
         /// </summary>
         [Output("userMappingMethod")]
-        public Output<string> UserMappingMethod { get; private set; } = null!;
+        public Output<string?> UserMappingMethod { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) This property specifies the userstore attribute value that must match the incoming assertion attribute value or the incoming nameid attribute value in order to identify the user during SSO.&lt;br&gt;You can construct the userMappingStoreAttribute value by specifying attributes from the Oracle Identity Cloud Service Core Users schema. For examples of how to construct the userMappingStoreAttribute value, see the &lt;b&gt;Example of a Request Body&lt;/b&gt; section of the Examples tab for the &lt;a href='./op-admin-v1-identityproviders-post.html'&gt;POST&lt;/a&gt; and &lt;a href='./op-admin-v1-identityproviders-id-put.html'&gt;PUT&lt;/a&gt; methods of the /IdentityProviders endpoint.
@@ -1009,7 +1009,7 @@ namespace Pulumi.Oci.Identity
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("userMappingStoreAttribute")]
-        public Output<string> UserMappingStoreAttribute { get; private set; } = null!;
+        public Output<string?> UserMappingStoreAttribute { get; private set; } = null!;
 
 
         /// <summary>

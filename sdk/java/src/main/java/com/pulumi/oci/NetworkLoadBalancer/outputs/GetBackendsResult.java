@@ -9,6 +9,7 @@ import com.pulumi.oci.NetworkLoadBalancer.outputs.GetBackendsFilter;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -17,14 +18,14 @@ public final class GetBackendsResult {
      * @return The list of backend_collection.
      * 
      */
-    private List<GetBackendsBackendCollection> backendCollections;
+    private @Nullable List<GetBackendsBackendCollection> backendCollections;
     private String backendSetName;
     private @Nullable List<GetBackendsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String networkLoadBalancerId;
 
     private GetBackendsResult() {}
@@ -33,7 +34,7 @@ public final class GetBackendsResult {
      * 
      */
     public List<GetBackendsBackendCollection> backendCollections() {
-        return this.backendCollections;
+        return this.backendCollections == null ? List.of() : this.backendCollections;
     }
     public String backendSetName() {
         return this.backendSetName;
@@ -45,8 +46,8 @@ public final class GetBackendsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String networkLoadBalancerId() {
         return this.networkLoadBalancerId;
@@ -61,10 +62,10 @@ public final class GetBackendsResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetBackendsBackendCollection> backendCollections;
+        private @Nullable List<GetBackendsBackendCollection> backendCollections;
         private String backendSetName;
         private @Nullable List<GetBackendsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private String networkLoadBalancerId;
         public Builder() {}
         public Builder(GetBackendsResult defaults) {
@@ -77,8 +78,8 @@ public final class GetBackendsResult {
         }
 
         @CustomType.Setter
-        public Builder backendCollections(List<GetBackendsBackendCollection> backendCollections) {
-            this.backendCollections = Objects.requireNonNull(backendCollections);
+        public Builder backendCollections(@Nullable List<GetBackendsBackendCollection> backendCollections) {
+            this.backendCollections = backendCollections;
             return this;
         }
         public Builder backendCollections(GetBackendsBackendCollection... backendCollections) {
@@ -98,8 +99,8 @@ public final class GetBackendsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

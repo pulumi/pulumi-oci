@@ -110,11 +110,11 @@ export interface GetImagesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of images.
      */
-    readonly images: outputs.Core.GetImagesImage[];
+    readonly images?: outputs.Core.GetImagesImage[];
     /**
      * The image's operating system.  Example: `Oracle Linux`
      */

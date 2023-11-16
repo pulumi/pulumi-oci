@@ -28,11 +28,11 @@ namespace Pulumi.Oci.NetworkFirewall.Outputs
         /// <summary>
         /// OCID of the Network Firewall Policy this application group belongs to.
         /// </summary>
-        public readonly string ParentResourceId;
+        public readonly string? ParentResourceId;
         /// <summary>
         /// Count of total applications in the given application group.
         /// </summary>
-        public readonly int TotalApps;
+        public readonly int? TotalApps;
 
         [OutputConstructor]
         private GetNetworkFirewallPolicyApplicationGroupsApplicationGroupSummaryCollectionItemResult(
@@ -42,9 +42,9 @@ namespace Pulumi.Oci.NetworkFirewall.Outputs
 
             string networkFirewallPolicyId,
 
-            string parentResourceId,
+            string? parentResourceId,
 
-            int totalApps)
+            int? totalApps)
         {
             Apps = apps;
             Name = name;

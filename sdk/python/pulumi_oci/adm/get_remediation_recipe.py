@@ -74,74 +74,47 @@ class GetRemediationRecipeResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The compartment Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the remediation recipe.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="detectConfigurations")
-    def detect_configurations(self) -> Sequence['outputs.GetRemediationRecipeDetectConfigurationResult']:
-        """
-        A configuration to define the constraints when detecting vulnerable dependencies.
-        """
+    def detect_configurations(self) -> Optional[Sequence['outputs.GetRemediationRecipeDetectConfigurationResult']]:
         return pulumi.get(self, "detect_configurations")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The name of the Remediation Recipe.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the remediation recipe.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isRunTriggeredOnKbChange")
-    def is_run_triggered_on_kb_change(self) -> bool:
-        """
-        Boolean indicating if a run should be automatically triggered once the Knowledge Base contents are updated.
-        """
+    def is_run_triggered_on_kb_change(self) -> Optional[bool]:
         return pulumi.get(self, "is_run_triggered_on_kb_change")
 
     @property
     @pulumi.getter(name="knowledgeBaseId")
-    def knowledge_base_id(self) -> str:
-        """
-        The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
-        """
+    def knowledge_base_id(self) -> Optional[str]:
         return pulumi.get(self, "knowledge_base_id")
 
     @property
     @pulumi.getter(name="networkConfigurations")
-    def network_configurations(self) -> Sequence['outputs.GetRemediationRecipeNetworkConfigurationResult']:
-        """
-        A network configuration defines the required network characteristics for an ADM remediation recipe. A network configuration is required if the build service is one of: GitHub Actions, GitLab Pipeline, or Jenkins Pipeline.
-        """
+    def network_configurations(self) -> Optional[Sequence['outputs.GetRemediationRecipeNetworkConfigurationResult']]:
         return pulumi.get(self, "network_configurations")
 
     @property
@@ -151,50 +124,32 @@ class GetRemediationRecipeResult:
 
     @property
     @pulumi.getter(name="scmConfigurations")
-    def scm_configurations(self) -> Sequence['outputs.GetRemediationRecipeScmConfigurationResult']:
-        """
-        A configuration for the Source Code Management tool/platform used by a remediation recipe.
-        """
+    def scm_configurations(self) -> Optional[Sequence['outputs.GetRemediationRecipeScmConfigurationResult']]:
         return pulumi.get(self, "scm_configurations")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current lifecycle state of the Remediation Recipe.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The creation date and time of the Remediation Recipe (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time the Remediation Recipe was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="verifyConfigurations")
-    def verify_configurations(self) -> Sequence['outputs.GetRemediationRecipeVerifyConfigurationResult']:
-        """
-        The Verify stage configuration specifies a build service to run a pipeline for the recommended code changes. The build pipeline will be initiated to ensure that there is no breaking change after the dependency versions have been updated in source to avoid vulnerabilities.
-        """
+    def verify_configurations(self) -> Optional[Sequence['outputs.GetRemediationRecipeVerifyConfigurationResult']]:
         return pulumi.get(self, "verify_configurations")
 
 
@@ -225,21 +180,7 @@ class AwaitableGetRemediationRecipeResult(GetRemediationRecipeResult):
 def get_remediation_recipe(remediation_recipe_id: Optional[str] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetRemediationRecipeResult:
     """
-    This data source provides details about a specific Remediation Recipe resource in Oracle Cloud Infrastructure Adm service.
-
-    Returns the details of the specified RemediationRecipe.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_remediation_recipe = oci.Adm.get_remediation_recipe(remediation_recipe_id=oci_adm_remediation_recipe["test_remediation_recipe"]["id"])
-    ```
-
-
-    :param str remediation_recipe_id: The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of a Remediation Recipe, as a URL path parameter.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['remediationRecipeId'] = remediation_recipe_id
@@ -269,20 +210,6 @@ def get_remediation_recipe(remediation_recipe_id: Optional[str] = None,
 def get_remediation_recipe_output(remediation_recipe_id: Optional[pulumi.Input[str]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRemediationRecipeResult]:
     """
-    This data source provides details about a specific Remediation Recipe resource in Oracle Cloud Infrastructure Adm service.
-
-    Returns the details of the specified RemediationRecipe.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_remediation_recipe = oci.Adm.get_remediation_recipe(remediation_recipe_id=oci_adm_remediation_recipe["test_remediation_recipe"]["id"])
-    ```
-
-
-    :param str remediation_recipe_id: The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of a Remediation Recipe, as a URL path parameter.
+    Use this data source to access information about an existing resource.
     """
     ...

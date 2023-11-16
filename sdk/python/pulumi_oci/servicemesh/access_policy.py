@@ -25,13 +25,6 @@ class AccessPolicyArgs:
                  name: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a AccessPolicy resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[str] mesh_id: The OCID of the service mesh in which this access policy is created.
-        :param pulumi.Input[Sequence[pulumi.Input['AccessPolicyRuleArgs']]] rules: (Updatable) List of applicable rules
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] name: A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "mesh_id", mesh_id)
@@ -48,9 +41,6 @@ class AccessPolicyArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -60,9 +50,6 @@ class AccessPolicyArgs:
     @property
     @pulumi.getter(name="meshId")
     def mesh_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of the service mesh in which this access policy is created.
-        """
         return pulumi.get(self, "mesh_id")
 
     @mesh_id.setter
@@ -72,9 +59,6 @@ class AccessPolicyArgs:
     @property
     @pulumi.getter
     def rules(self) -> pulumi.Input[Sequence[pulumi.Input['AccessPolicyRuleArgs']]]:
-        """
-        (Updatable) List of applicable rules
-        """
         return pulumi.get(self, "rules")
 
     @rules.setter
@@ -84,9 +68,6 @@ class AccessPolicyArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -96,9 +77,6 @@ class AccessPolicyArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -108,9 +86,6 @@ class AccessPolicyArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -120,9 +95,6 @@ class AccessPolicyArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -147,18 +119,6 @@ class _AccessPolicyState:
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering AccessPolicy resources.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-        :param pulumi.Input[str] mesh_id: The OCID of the service mesh in which this access policy is created.
-        :param pulumi.Input[str] name: A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
-        :param pulumi.Input[Sequence[pulumi.Input['AccessPolicyRuleArgs']]] rules: (Updatable) List of applicable rules
-        :param pulumi.Input[str] state: The current state of the Resource.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: The time when this resource was created in an RFC3339 formatted datetime string.
-        :param pulumi.Input[str] time_updated: The time when this resource was updated in an RFC3339 formatted datetime string.
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -188,9 +148,6 @@ class _AccessPolicyState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -200,9 +157,6 @@ class _AccessPolicyState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -212,9 +166,6 @@ class _AccessPolicyState:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -224,9 +175,6 @@ class _AccessPolicyState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -236,9 +184,6 @@ class _AccessPolicyState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -248,9 +193,6 @@ class _AccessPolicyState:
     @property
     @pulumi.getter(name="meshId")
     def mesh_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the service mesh in which this access policy is created.
-        """
         return pulumi.get(self, "mesh_id")
 
     @mesh_id.setter
@@ -260,9 +202,6 @@ class _AccessPolicyState:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -272,9 +211,6 @@ class _AccessPolicyState:
     @property
     @pulumi.getter
     def rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AccessPolicyRuleArgs']]]]:
-        """
-        (Updatable) List of applicable rules
-        """
         return pulumi.get(self, "rules")
 
     @rules.setter
@@ -284,9 +220,6 @@ class _AccessPolicyState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the Resource.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -296,9 +229,6 @@ class _AccessPolicyState:
     @property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
@@ -308,9 +238,6 @@ class _AccessPolicyState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time when this resource was created in an RFC3339 formatted datetime string.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -320,9 +247,6 @@ class _AccessPolicyState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time when this resource was updated in an RFC3339 formatted datetime string.
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -344,66 +268,9 @@ class AccessPolicy(pulumi.CustomResource):
                  rules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AccessPolicyRuleArgs']]]]] = None,
                  __props__=None):
         """
-        This resource provides the Access Policy resource in Oracle Cloud Infrastructure Service Mesh service.
-
-        Creates a new AccessPolicy.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_access_policy = oci.service_mesh.AccessPolicy("testAccessPolicy",
-            compartment_id=var["compartment_id"],
-            mesh_id=oci_service_mesh_mesh["test_mesh"]["id"],
-            rules=[oci.service_mesh.AccessPolicyRuleArgs(
-                action=var["access_policy_rules_action"],
-                destination=oci.service_mesh.AccessPolicyRuleDestinationArgs(
-                    type=var["access_policy_rules_destination_type"],
-                    hostnames=var["access_policy_rules_destination_hostnames"],
-                    ingress_gateway_id=oci_service_mesh_ingress_gateway["test_ingress_gateway"]["id"],
-                    ip_addresses=var["access_policy_rules_destination_ip_addresses"],
-                    ports=var["access_policy_rules_destination_ports"],
-                    protocol=var["access_policy_rules_destination_protocol"],
-                    virtual_service_id=oci_service_mesh_virtual_service["test_virtual_service"]["id"],
-                ),
-                source=oci.service_mesh.AccessPolicyRuleSourceArgs(
-                    type=var["access_policy_rules_source_type"],
-                    hostnames=var["access_policy_rules_source_hostnames"],
-                    ingress_gateway_id=oci_service_mesh_ingress_gateway["test_ingress_gateway"]["id"],
-                    ip_addresses=var["access_policy_rules_source_ip_addresses"],
-                    ports=var["access_policy_rules_source_ports"],
-                    protocol=var["access_policy_rules_source_protocol"],
-                    virtual_service_id=oci_service_mesh_virtual_service["test_virtual_service"]["id"],
-                ),
-            )],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            description=var["access_policy_description"],
-            freeform_tags={
-                "bar-key": "value",
-            })
-        ```
-
-        ## Import
-
-        AccessPolicies can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:ServiceMesh/accessPolicy:AccessPolicy test_access_policy "id"
-        ```
-
+        Create a AccessPolicy resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] mesh_id: The OCID of the service mesh in which this access policy is created.
-        :param pulumi.Input[str] name: A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AccessPolicyRuleArgs']]]] rules: (Updatable) List of applicable rules
         """
         ...
     @overload
@@ -412,57 +279,7 @@ class AccessPolicy(pulumi.CustomResource):
                  args: AccessPolicyArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Access Policy resource in Oracle Cloud Infrastructure Service Mesh service.
-
-        Creates a new AccessPolicy.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_access_policy = oci.service_mesh.AccessPolicy("testAccessPolicy",
-            compartment_id=var["compartment_id"],
-            mesh_id=oci_service_mesh_mesh["test_mesh"]["id"],
-            rules=[oci.service_mesh.AccessPolicyRuleArgs(
-                action=var["access_policy_rules_action"],
-                destination=oci.service_mesh.AccessPolicyRuleDestinationArgs(
-                    type=var["access_policy_rules_destination_type"],
-                    hostnames=var["access_policy_rules_destination_hostnames"],
-                    ingress_gateway_id=oci_service_mesh_ingress_gateway["test_ingress_gateway"]["id"],
-                    ip_addresses=var["access_policy_rules_destination_ip_addresses"],
-                    ports=var["access_policy_rules_destination_ports"],
-                    protocol=var["access_policy_rules_destination_protocol"],
-                    virtual_service_id=oci_service_mesh_virtual_service["test_virtual_service"]["id"],
-                ),
-                source=oci.service_mesh.AccessPolicyRuleSourceArgs(
-                    type=var["access_policy_rules_source_type"],
-                    hostnames=var["access_policy_rules_source_hostnames"],
-                    ingress_gateway_id=oci_service_mesh_ingress_gateway["test_ingress_gateway"]["id"],
-                    ip_addresses=var["access_policy_rules_source_ip_addresses"],
-                    ports=var["access_policy_rules_source_ports"],
-                    protocol=var["access_policy_rules_source_protocol"],
-                    virtual_service_id=oci_service_mesh_virtual_service["test_virtual_service"]["id"],
-                ),
-            )],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            description=var["access_policy_description"],
-            freeform_tags={
-                "bar-key": "value",
-            })
-        ```
-
-        ## Import
-
-        AccessPolicies can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:ServiceMesh/accessPolicy:AccessPolicy test_access_policy "id"
-        ```
-
+        Create a AccessPolicy resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param AccessPolicyArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -541,18 +358,6 @@ class AccessPolicy(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-        :param pulumi.Input[str] mesh_id: The OCID of the service mesh in which this access policy is created.
-        :param pulumi.Input[str] name: A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AccessPolicyRuleArgs']]]] rules: (Updatable) List of applicable rules
-        :param pulumi.Input[str] state: The current state of the Resource.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: The time when this resource was created in an RFC3339 formatted datetime string.
-        :param pulumi.Input[str] time_updated: The time when this resource was updated in an RFC3339 formatted datetime string.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -575,96 +380,60 @@ class AccessPolicy(pulumi.CustomResource):
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
-        """
+    def description(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="meshId")
     def mesh_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the service mesh in which this access policy is created.
-        """
         return pulumi.get(self, "mesh_id")
 
     @property
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
-        """
-        A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
     def rules(self) -> pulumi.Output[Sequence['outputs.AccessPolicyRule']]:
-        """
-        (Updatable) List of applicable rules
-        """
         return pulumi.get(self, "rules")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the Resource.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The time when this resource was created in an RFC3339 formatted datetime string.
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The time when this resource was updated in an RFC3339 formatted datetime string.
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Api Deployment Specification resource in Oracle Cloud Infrastructure API Gateway service.
@@ -61,7 +60,7 @@ type GetApiDeploymentSpecificationArgs struct {
 type GetApiDeploymentSpecificationResult struct {
 	ApiId string `pulumi:"apiId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Policies controlling the pushing of logs to Oracle Cloud Infrastructure Public Logging.
 	LoggingPolicies []GetApiDeploymentSpecificationLoggingPolicy `pulumi:"loggingPolicies"`
 	// Behavior applied to any requests received by the API on this route.
@@ -108,19 +107,13 @@ func (o GetApiDeploymentSpecificationResultOutput) ToGetApiDeploymentSpecificati
 	return o
 }
 
-func (o GetApiDeploymentSpecificationResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetApiDeploymentSpecificationResult] {
-	return pulumix.Output[GetApiDeploymentSpecificationResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetApiDeploymentSpecificationResultOutput) ApiId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetApiDeploymentSpecificationResult) string { return v.ApiId }).(pulumi.StringOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetApiDeploymentSpecificationResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetApiDeploymentSpecificationResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetApiDeploymentSpecificationResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetApiDeploymentSpecificationResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Policies controlling the pushing of logs to Oracle Cloud Infrastructure Public Logging.

@@ -22,16 +22,6 @@ class AiPrivateEndpointArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None):
         """
         The set of arguments for constructing a AiPrivateEndpoint resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment identifier.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] dns_zones: (Updatable) List of DNS zones to be used by the data assets. Example: custpvtsubnet.oraclevcn.com for data asset: db.custpvtsubnet.oraclevcn.com
-        :param pulumi.Input[str] subnet_id: The OCID of subnet to which the reverse connection is to be created. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) Display name of the private endpoint resource being created.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "dns_zones", dns_zones)
@@ -46,9 +36,6 @@ class AiPrivateEndpointArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Compartment identifier.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -58,9 +45,6 @@ class AiPrivateEndpointArgs:
     @property
     @pulumi.getter(name="dnsZones")
     def dns_zones(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
-        """
-        (Updatable) List of DNS zones to be used by the data assets. Example: custpvtsubnet.oraclevcn.com for data asset: db.custpvtsubnet.oraclevcn.com
-        """
         return pulumi.get(self, "dns_zones")
 
     @dns_zones.setter
@@ -70,13 +54,6 @@ class AiPrivateEndpointArgs:
     @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of subnet to which the reverse connection is to be created. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
@@ -86,9 +63,6 @@ class AiPrivateEndpointArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -98,9 +72,6 @@ class AiPrivateEndpointArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Display name of the private endpoint resource being created.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -110,9 +81,6 @@ class AiPrivateEndpointArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -137,22 +105,6 @@ class _AiPrivateEndpointState:
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering AiPrivateEndpoint resources.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] attached_data_assets: The list of dataAssets using the private reverse connection endpoint.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment identifier.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) Display name of the private endpoint resource being created.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] dns_zones: (Updatable) List of DNS zones to be used by the data assets. Example: custpvtsubnet.oraclevcn.com for data asset: db.custpvtsubnet.oraclevcn.com
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
-        :param pulumi.Input[str] state: The current state of the private endpoint resource.
-        :param pulumi.Input[str] subnet_id: The OCID of subnet to which the reverse connection is to be created. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: The time the private endpoint was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-        :param pulumi.Input[str] time_updated: The time the private endpoint was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
         """
         if attached_data_assets is not None:
             pulumi.set(__self__, "attached_data_assets", attached_data_assets)
@@ -182,9 +134,6 @@ class _AiPrivateEndpointState:
     @property
     @pulumi.getter(name="attachedDataAssets")
     def attached_data_assets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        The list of dataAssets using the private reverse connection endpoint.
-        """
         return pulumi.get(self, "attached_data_assets")
 
     @attached_data_assets.setter
@@ -194,9 +143,6 @@ class _AiPrivateEndpointState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Compartment identifier.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -206,9 +152,6 @@ class _AiPrivateEndpointState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -218,9 +161,6 @@ class _AiPrivateEndpointState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Display name of the private endpoint resource being created.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -230,9 +170,6 @@ class _AiPrivateEndpointState:
     @property
     @pulumi.getter(name="dnsZones")
     def dns_zones(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) List of DNS zones to be used by the data assets. Example: custpvtsubnet.oraclevcn.com for data asset: db.custpvtsubnet.oraclevcn.com
-        """
         return pulumi.get(self, "dns_zones")
 
     @dns_zones.setter
@@ -242,9 +179,6 @@ class _AiPrivateEndpointState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -254,9 +188,6 @@ class _AiPrivateEndpointState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -266,9 +197,6 @@ class _AiPrivateEndpointState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the private endpoint resource.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -278,13 +206,6 @@ class _AiPrivateEndpointState:
     @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of subnet to which the reverse connection is to be created. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
@@ -294,9 +215,6 @@ class _AiPrivateEndpointState:
     @property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
@@ -306,9 +224,6 @@ class _AiPrivateEndpointState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the private endpoint was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -318,9 +233,6 @@ class _AiPrivateEndpointState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the private endpoint was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -341,49 +253,9 @@ class AiPrivateEndpoint(pulumi.CustomResource):
                  subnet_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Ai Private Endpoint resource in Oracle Cloud Infrastructure Ai Anomaly Detection service.
-
-        Create a new private reverse connection endpoint.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_ai_private_endpoint = oci.ai_anomaly_detection.AiPrivateEndpoint("testAiPrivateEndpoint",
-            compartment_id=var["compartment_id"],
-            dns_zones=var["ai_private_endpoint_dns_zones"],
-            subnet_id=oci_core_subnet["test_subnet"]["id"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            display_name=var["ai_private_endpoint_display_name"],
-            freeform_tags={
-                "bar-key": "value",
-            })
-        ```
-
-        ## Import
-
-        AiPrivateEndpoints can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:AiAnomalyDetection/aiPrivateEndpoint:AiPrivateEndpoint test_ai_private_endpoint "id"
-        ```
-
+        Create a AiPrivateEndpoint resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment identifier.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) Display name of the private endpoint resource being created.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] dns_zones: (Updatable) List of DNS zones to be used by the data assets. Example: custpvtsubnet.oraclevcn.com for data asset: db.custpvtsubnet.oraclevcn.com
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] subnet_id: The OCID of subnet to which the reverse connection is to be created. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -392,37 +264,7 @@ class AiPrivateEndpoint(pulumi.CustomResource):
                  args: AiPrivateEndpointArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Ai Private Endpoint resource in Oracle Cloud Infrastructure Ai Anomaly Detection service.
-
-        Create a new private reverse connection endpoint.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_ai_private_endpoint = oci.ai_anomaly_detection.AiPrivateEndpoint("testAiPrivateEndpoint",
-            compartment_id=var["compartment_id"],
-            dns_zones=var["ai_private_endpoint_dns_zones"],
-            subnet_id=oci_core_subnet["test_subnet"]["id"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            display_name=var["ai_private_endpoint_display_name"],
-            freeform_tags={
-                "bar-key": "value",
-            })
-        ```
-
-        ## Import
-
-        AiPrivateEndpoints can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:AiAnomalyDetection/aiPrivateEndpoint:AiPrivateEndpoint test_ai_private_endpoint "id"
-        ```
-
+        Create a AiPrivateEndpoint resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param AiPrivateEndpointArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -500,22 +342,6 @@ class AiPrivateEndpoint(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] attached_data_assets: The list of dataAssets using the private reverse connection endpoint.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment identifier.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) Display name of the private endpoint resource being created.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] dns_zones: (Updatable) List of DNS zones to be used by the data assets. Example: custpvtsubnet.oraclevcn.com for data asset: db.custpvtsubnet.oraclevcn.com
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
-        :param pulumi.Input[str] state: The current state of the private endpoint resource.
-        :param pulumi.Input[str] subnet_id: The OCID of subnet to which the reverse connection is to be created. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: The time the private endpoint was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-        :param pulumi.Input[str] time_updated: The time the private endpoint was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -537,101 +363,61 @@ class AiPrivateEndpoint(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="attachedDataAssets")
-    def attached_data_assets(self) -> pulumi.Output[Sequence[str]]:
-        """
-        The list of dataAssets using the private reverse connection endpoint.
-        """
+    def attached_data_assets(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "attached_data_assets")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Compartment identifier.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Display name of the private endpoint resource being created.
-        """
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="dnsZones")
     def dns_zones(self) -> pulumi.Output[Sequence[str]]:
-        """
-        (Updatable) List of DNS zones to be used by the data assets. Example: custpvtsubnet.oraclevcn.com for data asset: db.custpvtsubnet.oraclevcn.com
-        """
         return pulumi.get(self, "dns_zones")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the private endpoint resource.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of subnet to which the reverse connection is to be created. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "subnet_id")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The time the private endpoint was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The time the private endpoint was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 

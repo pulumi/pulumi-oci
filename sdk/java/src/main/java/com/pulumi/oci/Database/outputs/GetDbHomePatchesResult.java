@@ -9,6 +9,7 @@ import com.pulumi.oci.Database.outputs.GetDbHomePatchesPatch;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -19,12 +20,12 @@ public final class GetDbHomePatchesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of patches.
      * 
      */
-    private List<GetDbHomePatchesPatch> patches;
+    private @Nullable List<GetDbHomePatchesPatch> patches;
 
     private GetDbHomePatchesResult() {}
     public String dbHomeId() {
@@ -37,15 +38,15 @@ public final class GetDbHomePatchesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of patches.
      * 
      */
     public List<GetDbHomePatchesPatch> patches() {
-        return this.patches;
+        return this.patches == null ? List.of() : this.patches;
     }
 
     public static Builder builder() {
@@ -59,8 +60,8 @@ public final class GetDbHomePatchesResult {
     public static final class Builder {
         private String dbHomeId;
         private @Nullable List<GetDbHomePatchesFilter> filters;
-        private String id;
-        private List<GetDbHomePatchesPatch> patches;
+        private @Nullable String id;
+        private @Nullable List<GetDbHomePatchesPatch> patches;
         public Builder() {}
         public Builder(GetDbHomePatchesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -84,13 +85,13 @@ public final class GetDbHomePatchesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder patches(List<GetDbHomePatchesPatch> patches) {
-            this.patches = Objects.requireNonNull(patches);
+        public Builder patches(@Nullable List<GetDbHomePatchesPatch> patches) {
+            this.patches = patches;
             return this;
         }
         public Builder patches(GetDbHomePatchesPatch... patches) {

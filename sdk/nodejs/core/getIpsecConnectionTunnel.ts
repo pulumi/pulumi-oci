@@ -53,57 +53,57 @@ export interface GetIpsecConnectionTunnelResult {
     /**
      * Information needed to establish a BGP Session on an interface.
      */
-    readonly bgpSessionInfos: outputs.Core.GetIpsecConnectionTunnelBgpSessionInfo[];
+    readonly bgpSessionInfos?: outputs.Core.GetIpsecConnectionTunnelBgpSessionInfo[];
     /**
      * The OCID of the compartment containing the tunnel.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * The IP address of Cpe headend.  Example: `129.146.17.50`
      */
-    readonly cpeIp: string;
+    readonly cpeIp?: string;
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Configuration information used by the encryption domain policy.
      */
-    readonly encryptionDomainConfigs: outputs.Core.GetIpsecConnectionTunnelEncryptionDomainConfig[];
+    readonly encryptionDomainConfigs?: outputs.Core.GetIpsecConnectionTunnelEncryptionDomainConfig[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Internet Key Exchange protocol version.
      */
-    readonly ikeVersion: string;
+    readonly ikeVersion?: string;
     readonly ipsecId: string;
     /**
      * the routing strategy used for this tunnel, either static route or BGP dynamic routing
      */
-    readonly routing: string;
+    readonly routing?: string;
     /**
      * The IPSec connection's tunnel's lifecycle state.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The tunnel's current state.
      */
-    readonly status: string;
+    readonly status?: string;
     /**
      * The date and time the IPSec connection tunnel was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * When the status of the tunnel last changed, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      */
-    readonly timeStatusUpdated: string;
+    readonly timeStatusUpdated?: string;
     readonly tunnelId: string;
     /**
      * The IP address of Oracle's VPN headend.  Example: `129.146.17.50`
      */
-    readonly vpnIp: string;
+    readonly vpnIp?: string;
 }
 /**
  * This data source provides details about a specific Ip Sec Connection Tunnel resource in Oracle Cloud Infrastructure Core service.

@@ -64,7 +64,7 @@ class GetBdsInstanceGetOsPatchResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -72,50 +72,32 @@ class GetBdsInstanceGetOsPatchResult:
 
     @property
     @pulumi.getter(name="minBdsVersion")
-    def min_bds_version(self) -> str:
-        """
-        Minimum BDS version required to install current OS patch.
-        """
+    def min_bds_version(self) -> Optional[str]:
         return pulumi.get(self, "min_bds_version")
 
     @property
     @pulumi.getter(name="minCompatibleOdhVersionMap")
-    def min_compatible_odh_version_map(self) -> Mapping[str, Any]:
-        """
-        Map of major ODH version to minimum ODH version required to install current OS patch. e.g. {ODH0.9: 0.9.1}
-        """
+    def min_compatible_odh_version_map(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "min_compatible_odh_version_map")
 
     @property
     @pulumi.getter(name="osPatchVersion")
     def os_patch_version(self) -> str:
-        """
-        Version of the os patch.
-        """
         return pulumi.get(self, "os_patch_version")
 
     @property
     @pulumi.getter(name="patchType")
-    def patch_type(self) -> str:
-        """
-        Type of a specific os patch. REGULAR means standard released os patches. CUSTOM means os patches with some customizations. EMERGENT means os patches with some emergency fixes that should be prioritized.
-        """
+    def patch_type(self) -> Optional[str]:
         return pulumi.get(self, "patch_type")
 
     @property
     @pulumi.getter(name="releaseDate")
-    def release_date(self) -> str:
-        """
-        Released date of the OS patch.
-        """
+    def release_date(self) -> Optional[str]:
         return pulumi.get(self, "release_date")
 
     @property
     @pulumi.getter(name="targetPackages")
-    def target_packages(self) -> Sequence['outputs.GetBdsInstanceGetOsPatchTargetPackageResult']:
-        """
-        List of summaries of individual target packages.
-        """
+    def target_packages(self) -> Optional[Sequence['outputs.GetBdsInstanceGetOsPatchTargetPackageResult']]:
         return pulumi.get(self, "target_packages")
 
 
@@ -141,23 +123,7 @@ def get_bds_instance_get_os_patch(bds_instance_id: Optional[str] = None,
                                   os_patch_version: Optional[str] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetBdsInstanceGetOsPatchResult:
     """
-    This data source provides the list of Bds Instance Get Os Patch in Oracle Cloud Infrastructure Big Data Service service.
-
-    Get the details of an os patch
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_bds_instance_get_os_patch = oci.BigDataService.get_bds_instance_get_os_patch(bds_instance_id=oci_bds_bds_instance["test_bds_instance"]["id"],
-        os_patch_version=var["bds_instance_get_os_patch_os_patch_version"])
-    ```
-
-
-    :param str bds_instance_id: The OCID of the cluster.
-    :param str os_patch_version: The version of the OS patch.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['bdsInstanceId'] = bds_instance_id
@@ -184,22 +150,6 @@ def get_bds_instance_get_os_patch_output(bds_instance_id: Optional[pulumi.Input[
                                          os_patch_version: Optional[pulumi.Input[str]] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBdsInstanceGetOsPatchResult]:
     """
-    This data source provides the list of Bds Instance Get Os Patch in Oracle Cloud Infrastructure Big Data Service service.
-
-    Get the details of an os patch
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_bds_instance_get_os_patch = oci.BigDataService.get_bds_instance_get_os_patch(bds_instance_id=oci_bds_bds_instance["test_bds_instance"]["id"],
-        os_patch_version=var["bds_instance_get_os_patch_os_patch_version"])
-    ```
-
-
-    :param str bds_instance_id: The OCID of the cluster.
-    :param str os_patch_version: The version of the OS patch.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -173,7 +173,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly bool? IsAllowedValuesIncluded;
         public readonly string ManagedDatabaseId;
         /// <summary>
@@ -188,7 +188,7 @@ namespace Pulumi.Oci.DatabaseManagement
 
             ImmutableArray<Outputs.GetManagedDatabasesDatabaseParametersFilterResult> filters,
 
-            string id,
+            string? id,
 
             bool? isAllowedValuesIncluded,
 

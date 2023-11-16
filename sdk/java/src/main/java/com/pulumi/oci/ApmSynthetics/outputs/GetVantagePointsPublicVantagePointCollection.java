@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.ApmSynthetics.outputs.GetVantagePointsPublicVantagePointCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetVantagePointsPublicVantagePointCollection {
@@ -14,7 +15,7 @@ public final class GetVantagePointsPublicVantagePointCollection {
      * @return List of PublicVantagePointSummary items.
      * 
      */
-    private List<GetVantagePointsPublicVantagePointCollectionItem> items;
+    private @Nullable List<GetVantagePointsPublicVantagePointCollectionItem> items;
 
     private GetVantagePointsPublicVantagePointCollection() {}
     /**
@@ -22,7 +23,7 @@ public final class GetVantagePointsPublicVantagePointCollection {
      * 
      */
     public List<GetVantagePointsPublicVantagePointCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetVantagePointsPublicVantagePointCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetVantagePointsPublicVantagePointCollectionItem> items;
+        private @Nullable List<GetVantagePointsPublicVantagePointCollectionItem> items;
         public Builder() {}
         public Builder(GetVantagePointsPublicVantagePointCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetVantagePointsPublicVantagePointCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetVantagePointsPublicVantagePointCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetVantagePointsPublicVantagePointCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetVantagePointsPublicVantagePointCollectionItem... items) {

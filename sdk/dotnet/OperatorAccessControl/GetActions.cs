@@ -170,7 +170,7 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Name of the property
         /// </summary>
@@ -191,7 +191,7 @@ namespace Pulumi.Oci.OperatorAccessControl
 
             ImmutableArray<Outputs.GetActionsFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? name,
 

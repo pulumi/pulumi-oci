@@ -10,6 +10,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetRemediationRunStageResult {
@@ -17,37 +19,37 @@ public final class GetRemediationRunStageResult {
      * @return The Oracle Cloud identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the vulnerability audit.
      * 
      */
-    private String auditId;
+    private @Nullable String auditId;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The next type of stage in the remediation run.
      * 
      */
-    private String nextStageType;
+    private @Nullable String nextStageType;
     /**
      * @return Pipeline properties which result from the run of the verify stage.
      * 
      */
-    private List<GetRemediationRunStagePipelineProperty> pipelineProperties;
+    private @Nullable List<GetRemediationRunStagePipelineProperty> pipelineProperties;
     /**
      * @return The previous type of stage in the remediation run.
      * 
      */
-    private String previousStageType;
+    private @Nullable String previousStageType;
     /**
      * @return Pull request properties from recommend stage of the remediation run.
      * 
      */
-    private List<GetRemediationRunStagePullRequestProperty> pullRequestProperties;
+    private @Nullable List<GetRemediationRunStagePullRequestProperty> pullRequestProperties;
     /**
      * @return Count of recommended application dependencies to update.
      * 
      */
-    private Integer recommendedUpdatesCount;
+    private @Nullable Integer recommendedUpdatesCount;
     /**
      * @return The Oracle Cloud identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the remediation run.
      * 
@@ -58,82 +60,82 @@ public final class GetRemediationRunStageResult {
      * @return The current status of a remediation run stage.
      * 
      */
-    private String status;
+    private @Nullable String status;
     /**
      * @return Information about the current step within the stage.
      * 
      */
-    private String summary;
+    private @Nullable String summary;
     /**
      * @return The creation date and time of the remediation run stage (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The date and time of the finish of the remediation run stage (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      * 
      */
-    private String timeFinished;
+    private @Nullable String timeFinished;
     /**
      * @return The date and time of the start of the remediation run stage (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      * 
      */
-    private String timeStarted;
+    private @Nullable String timeStarted;
     /**
      * @return The type of the remediation run stage.
      * 
      */
-    private String type;
+    private @Nullable String type;
 
     private GetRemediationRunStageResult() {}
     /**
      * @return The Oracle Cloud identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the vulnerability audit.
      * 
      */
-    public String auditId() {
-        return this.auditId;
+    public Optional<String> auditId() {
+        return Optional.ofNullable(this.auditId);
     }
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The next type of stage in the remediation run.
      * 
      */
-    public String nextStageType() {
-        return this.nextStageType;
+    public Optional<String> nextStageType() {
+        return Optional.ofNullable(this.nextStageType);
     }
     /**
      * @return Pipeline properties which result from the run of the verify stage.
      * 
      */
     public List<GetRemediationRunStagePipelineProperty> pipelineProperties() {
-        return this.pipelineProperties;
+        return this.pipelineProperties == null ? List.of() : this.pipelineProperties;
     }
     /**
      * @return The previous type of stage in the remediation run.
      * 
      */
-    public String previousStageType() {
-        return this.previousStageType;
+    public Optional<String> previousStageType() {
+        return Optional.ofNullable(this.previousStageType);
     }
     /**
      * @return Pull request properties from recommend stage of the remediation run.
      * 
      */
     public List<GetRemediationRunStagePullRequestProperty> pullRequestProperties() {
-        return this.pullRequestProperties;
+        return this.pullRequestProperties == null ? List.of() : this.pullRequestProperties;
     }
     /**
      * @return Count of recommended application dependencies to update.
      * 
      */
-    public Integer recommendedUpdatesCount() {
-        return this.recommendedUpdatesCount;
+    public Optional<Integer> recommendedUpdatesCount() {
+        return Optional.ofNullable(this.recommendedUpdatesCount);
     }
     /**
      * @return The Oracle Cloud identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the remediation run.
@@ -149,43 +151,43 @@ public final class GetRemediationRunStageResult {
      * @return The current status of a remediation run stage.
      * 
      */
-    public String status() {
-        return this.status;
+    public Optional<String> status() {
+        return Optional.ofNullable(this.status);
     }
     /**
      * @return Information about the current step within the stage.
      * 
      */
-    public String summary() {
-        return this.summary;
+    public Optional<String> summary() {
+        return Optional.ofNullable(this.summary);
     }
     /**
      * @return The creation date and time of the remediation run stage (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The date and time of the finish of the remediation run stage (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      * 
      */
-    public String timeFinished() {
-        return this.timeFinished;
+    public Optional<String> timeFinished() {
+        return Optional.ofNullable(this.timeFinished);
     }
     /**
      * @return The date and time of the start of the remediation run stage (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      * 
      */
-    public String timeStarted() {
-        return this.timeStarted;
+    public Optional<String> timeStarted() {
+        return Optional.ofNullable(this.timeStarted);
     }
     /**
      * @return The type of the remediation run stage.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
 
     public static Builder builder() {
@@ -197,21 +199,21 @@ public final class GetRemediationRunStageResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String auditId;
-        private String id;
-        private String nextStageType;
-        private List<GetRemediationRunStagePipelineProperty> pipelineProperties;
-        private String previousStageType;
-        private List<GetRemediationRunStagePullRequestProperty> pullRequestProperties;
-        private Integer recommendedUpdatesCount;
+        private @Nullable String auditId;
+        private @Nullable String id;
+        private @Nullable String nextStageType;
+        private @Nullable List<GetRemediationRunStagePipelineProperty> pipelineProperties;
+        private @Nullable String previousStageType;
+        private @Nullable List<GetRemediationRunStagePullRequestProperty> pullRequestProperties;
+        private @Nullable Integer recommendedUpdatesCount;
         private String remediationRunId;
         private String stageType;
-        private String status;
-        private String summary;
-        private String timeCreated;
-        private String timeFinished;
-        private String timeStarted;
-        private String type;
+        private @Nullable String status;
+        private @Nullable String summary;
+        private @Nullable String timeCreated;
+        private @Nullable String timeFinished;
+        private @Nullable String timeStarted;
+        private @Nullable String type;
         public Builder() {}
         public Builder(GetRemediationRunStageResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -233,44 +235,44 @@ public final class GetRemediationRunStageResult {
         }
 
         @CustomType.Setter
-        public Builder auditId(String auditId) {
-            this.auditId = Objects.requireNonNull(auditId);
+        public Builder auditId(@Nullable String auditId) {
+            this.auditId = auditId;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder nextStageType(String nextStageType) {
-            this.nextStageType = Objects.requireNonNull(nextStageType);
+        public Builder nextStageType(@Nullable String nextStageType) {
+            this.nextStageType = nextStageType;
             return this;
         }
         @CustomType.Setter
-        public Builder pipelineProperties(List<GetRemediationRunStagePipelineProperty> pipelineProperties) {
-            this.pipelineProperties = Objects.requireNonNull(pipelineProperties);
+        public Builder pipelineProperties(@Nullable List<GetRemediationRunStagePipelineProperty> pipelineProperties) {
+            this.pipelineProperties = pipelineProperties;
             return this;
         }
         public Builder pipelineProperties(GetRemediationRunStagePipelineProperty... pipelineProperties) {
             return pipelineProperties(List.of(pipelineProperties));
         }
         @CustomType.Setter
-        public Builder previousStageType(String previousStageType) {
-            this.previousStageType = Objects.requireNonNull(previousStageType);
+        public Builder previousStageType(@Nullable String previousStageType) {
+            this.previousStageType = previousStageType;
             return this;
         }
         @CustomType.Setter
-        public Builder pullRequestProperties(List<GetRemediationRunStagePullRequestProperty> pullRequestProperties) {
-            this.pullRequestProperties = Objects.requireNonNull(pullRequestProperties);
+        public Builder pullRequestProperties(@Nullable List<GetRemediationRunStagePullRequestProperty> pullRequestProperties) {
+            this.pullRequestProperties = pullRequestProperties;
             return this;
         }
         public Builder pullRequestProperties(GetRemediationRunStagePullRequestProperty... pullRequestProperties) {
             return pullRequestProperties(List.of(pullRequestProperties));
         }
         @CustomType.Setter
-        public Builder recommendedUpdatesCount(Integer recommendedUpdatesCount) {
-            this.recommendedUpdatesCount = Objects.requireNonNull(recommendedUpdatesCount);
+        public Builder recommendedUpdatesCount(@Nullable Integer recommendedUpdatesCount) {
+            this.recommendedUpdatesCount = recommendedUpdatesCount;
             return this;
         }
         @CustomType.Setter
@@ -284,33 +286,33 @@ public final class GetRemediationRunStageResult {
             return this;
         }
         @CustomType.Setter
-        public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+        public Builder status(@Nullable String status) {
+            this.status = status;
             return this;
         }
         @CustomType.Setter
-        public Builder summary(String summary) {
-            this.summary = Objects.requireNonNull(summary);
+        public Builder summary(@Nullable String summary) {
+            this.summary = summary;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeFinished(String timeFinished) {
-            this.timeFinished = Objects.requireNonNull(timeFinished);
+        public Builder timeFinished(@Nullable String timeFinished) {
+            this.timeFinished = timeFinished;
             return this;
         }
         @CustomType.Setter
-        public Builder timeStarted(String timeStarted) {
-            this.timeStarted = Objects.requireNonNull(timeStarted);
+        public Builder timeStarted(@Nullable String timeStarted) {
+            this.timeStarted = timeStarted;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         public GetRemediationRunStageResult build() {

@@ -8,6 +8,8 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetInstanceSourceDetailInstanceSourceImageFilterDetail {
@@ -15,51 +17,51 @@ public final class GetInstanceSourceDetailInstanceSourceImageFilterDetail {
      * @return The OCID of the compartment containing images to search
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Filter based on these defined tags. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    private Map<String,Object> definedTagsFilter;
+    private @Nullable Map<String,Object> definedTagsFilter;
     /**
      * @return The image&#39;s operating system.  Example: `Oracle Linux`
      * 
      */
-    private String operatingSystem;
+    private @Nullable String operatingSystem;
     /**
      * @return The image&#39;s operating system version.  Example: `7.2`
      * 
      */
-    private String operatingSystemVersion;
+    private @Nullable String operatingSystemVersion;
 
     private GetInstanceSourceDetailInstanceSourceImageFilterDetail() {}
     /**
      * @return The OCID of the compartment containing images to search
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Filter based on these defined tags. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
     public Map<String,Object> definedTagsFilter() {
-        return this.definedTagsFilter;
+        return this.definedTagsFilter == null ? Map.of() : this.definedTagsFilter;
     }
     /**
      * @return The image&#39;s operating system.  Example: `Oracle Linux`
      * 
      */
-    public String operatingSystem() {
-        return this.operatingSystem;
+    public Optional<String> operatingSystem() {
+        return Optional.ofNullable(this.operatingSystem);
     }
     /**
      * @return The image&#39;s operating system version.  Example: `7.2`
      * 
      */
-    public String operatingSystemVersion() {
-        return this.operatingSystemVersion;
+    public Optional<String> operatingSystemVersion() {
+        return Optional.ofNullable(this.operatingSystemVersion);
     }
 
     public static Builder builder() {
@@ -71,10 +73,10 @@ public final class GetInstanceSourceDetailInstanceSourceImageFilterDetail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private Map<String,Object> definedTagsFilter;
-        private String operatingSystem;
-        private String operatingSystemVersion;
+        private @Nullable String compartmentId;
+        private @Nullable Map<String,Object> definedTagsFilter;
+        private @Nullable String operatingSystem;
+        private @Nullable String operatingSystemVersion;
         public Builder() {}
         public Builder(GetInstanceSourceDetailInstanceSourceImageFilterDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -85,23 +87,23 @@ public final class GetInstanceSourceDetailInstanceSourceImageFilterDetail {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTagsFilter(Map<String,Object> definedTagsFilter) {
-            this.definedTagsFilter = Objects.requireNonNull(definedTagsFilter);
+        public Builder definedTagsFilter(@Nullable Map<String,Object> definedTagsFilter) {
+            this.definedTagsFilter = definedTagsFilter;
             return this;
         }
         @CustomType.Setter
-        public Builder operatingSystem(String operatingSystem) {
-            this.operatingSystem = Objects.requireNonNull(operatingSystem);
+        public Builder operatingSystem(@Nullable String operatingSystem) {
+            this.operatingSystem = operatingSystem;
             return this;
         }
         @CustomType.Setter
-        public Builder operatingSystemVersion(String operatingSystemVersion) {
-            this.operatingSystemVersion = Objects.requireNonNull(operatingSystemVersion);
+        public Builder operatingSystemVersion(@Nullable String operatingSystemVersion) {
+            this.operatingSystemVersion = operatingSystemVersion;
             return this;
         }
         public GetInstanceSourceDetailInstanceSourceImageFilterDetail build() {

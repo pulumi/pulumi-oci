@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Jms.Outputs
         /// <summary>
         /// Key size for the encryption algorithm. Allowed values: 256 for EC, 2048 for DH/DSA/RSA
         /// </summary>
-        public readonly int KeySize;
+        public readonly int? KeySize;
         /// <summary>
         /// The algorithm name.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
 
         [OutputConstructor]
         private GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarResult(
-            int keySize,
+            int? keySize,
 
-            string name)
+            string? name)
         {
             KeySize = keySize;
             Name = name;

@@ -17,6 +17,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -101,42 +102,42 @@ public class SoftwareSource extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="archType", refs={String.class}, tree="[0]")
-    private Output<String> archType;
+    private Output</* @Nullable */ String> archType;
 
     /**
      * @return The architecture type supported by the software source.
      * 
      */
-    public Output<String> archType() {
-        return this.archType;
+    public Output<Optional<String>> archType() {
+        return Codegen.optional(this.archType);
     }
     /**
      * Possible availabilities of a software source.
      * 
      */
     @Export(name="availability", refs={String.class}, tree="[0]")
-    private Output<String> availability;
+    private Output</* @Nullable */ String> availability;
 
     /**
      * @return Possible availabilities of a software source.
      * 
      */
-    public Output<String> availability() {
-        return this.availability;
+    public Output<Optional<String>> availability() {
+        return Codegen.optional(this.availability);
     }
     /**
      * The yum repository checksum type used by this software source.
      * 
      */
     @Export(name="checksumType", refs={String.class}, tree="[0]")
-    private Output<String> checksumType;
+    private Output</* @Nullable */ String> checksumType;
 
     /**
      * @return The yum repository checksum type used by this software source.
      * 
      */
-    public Output<String> checksumType() {
-        return this.checksumType;
+    public Output<Optional<String>> checksumType() {
+        return Codegen.optional(this.checksumType);
     }
     /**
      * (Updatable) The OCID of the tenancy containing the software source.
@@ -157,42 +158,42 @@ public class SoftwareSource extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="customSoftwareSourceFilter", refs={SoftwareSourceCustomSoftwareSourceFilter.class}, tree="[0]")
-    private Output<SoftwareSourceCustomSoftwareSourceFilter> customSoftwareSourceFilter;
+    private Output</* @Nullable */ SoftwareSourceCustomSoftwareSourceFilter> customSoftwareSourceFilter;
 
     /**
      * @return (Updatable) Used to apply filters to a VendorSoftwareSource to create/update CustomSoftwareSources.
      * 
      */
-    public Output<SoftwareSourceCustomSoftwareSourceFilter> customSoftwareSourceFilter() {
-        return this.customSoftwareSourceFilter;
+    public Output<Optional<SoftwareSourceCustomSoftwareSourceFilter>> customSoftwareSourceFilter() {
+        return Codegen.optional(this.customSoftwareSourceFilter);
     }
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) Information specified by the user about the software source.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
-    private Output<String> description;
+    private Output</* @Nullable */ String> description;
 
     /**
      * @return (Updatable) Information specified by the user about the software source.
      * 
      */
-    public Output<String> description() {
-        return this.description;
+    public Output<Optional<String>> description() {
+        return Codegen.optional(this.description);
     }
     /**
      * (Updatable) User friendly name.
@@ -213,112 +214,112 @@ public class SoftwareSource extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * Fingerprint of the GPG key for this software source.
      * 
      */
     @Export(name="gpgKeyFingerprint", refs={String.class}, tree="[0]")
-    private Output<String> gpgKeyFingerprint;
+    private Output</* @Nullable */ String> gpgKeyFingerprint;
 
     /**
      * @return Fingerprint of the GPG key for this software source.
      * 
      */
-    public Output<String> gpgKeyFingerprint() {
-        return this.gpgKeyFingerprint;
+    public Output<Optional<String>> gpgKeyFingerprint() {
+        return Codegen.optional(this.gpgKeyFingerprint);
     }
     /**
      * ID of the GPG key for this software source.
      * 
      */
     @Export(name="gpgKeyId", refs={String.class}, tree="[0]")
-    private Output<String> gpgKeyId;
+    private Output</* @Nullable */ String> gpgKeyId;
 
     /**
      * @return ID of the GPG key for this software source.
      * 
      */
-    public Output<String> gpgKeyId() {
-        return this.gpgKeyId;
+    public Output<Optional<String>> gpgKeyId() {
+        return Codegen.optional(this.gpgKeyId);
     }
     /**
      * URL of the GPG key for this software source.
      * 
      */
     @Export(name="gpgKeyUrl", refs={String.class}, tree="[0]")
-    private Output<String> gpgKeyUrl;
+    private Output</* @Nullable */ String> gpgKeyUrl;
 
     /**
      * @return URL of the GPG key for this software source.
      * 
      */
-    public Output<String> gpgKeyUrl() {
-        return this.gpgKeyUrl;
+    public Output<Optional<String>> gpgKeyUrl() {
+        return Codegen.optional(this.gpgKeyUrl);
     }
     /**
      * (Updatable) Indicates whether service should automatically update the custom software source for the user.
      * 
      */
     @Export(name="isAutomaticallyUpdated", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isAutomaticallyUpdated;
+    private Output</* @Nullable */ Boolean> isAutomaticallyUpdated;
 
     /**
      * @return (Updatable) Indicates whether service should automatically update the custom software source for the user.
      * 
      */
-    public Output<Boolean> isAutomaticallyUpdated() {
-        return this.isAutomaticallyUpdated;
+    public Output<Optional<Boolean>> isAutomaticallyUpdated() {
+        return Codegen.optional(this.isAutomaticallyUpdated);
     }
     /**
      * The OS family the software source belongs to.
      * 
      */
     @Export(name="osFamily", refs={String.class}, tree="[0]")
-    private Output<String> osFamily;
+    private Output</* @Nullable */ String> osFamily;
 
     /**
      * @return The OS family the software source belongs to.
      * 
      */
-    public Output<String> osFamily() {
-        return this.osFamily;
+    public Output<Optional<String>> osFamily() {
+        return Codegen.optional(this.osFamily);
     }
     /**
      * Number of packages.
      * 
      */
     @Export(name="packageCount", refs={String.class}, tree="[0]")
-    private Output<String> packageCount;
+    private Output</* @Nullable */ String> packageCount;
 
     /**
      * @return Number of packages.
      * 
      */
-    public Output<String> packageCount() {
-        return this.packageCount;
+    public Output<Optional<String>> packageCount() {
+        return Codegen.optional(this.packageCount);
     }
     /**
      * The Repo ID for the software source.
      * 
      */
     @Export(name="repoId", refs={String.class}, tree="[0]")
-    private Output<String> repoId;
+    private Output</* @Nullable */ String> repoId;
 
     /**
      * @return The Repo ID for the software source.
      * 
      */
-    public Output<String> repoId() {
-        return this.repoId;
+    public Output<Optional<String>> repoId() {
+        return Codegen.optional(this.repoId);
     }
     /**
      * (Updatable) Type of the software source.
@@ -339,84 +340,84 @@ public class SoftwareSource extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="softwareSourceVersion", refs={String.class}, tree="[0]")
-    private Output<String> softwareSourceVersion;
+    private Output</* @Nullable */ String> softwareSourceVersion;
 
     /**
      * @return The version to assign to this custom software source.
      * 
      */
-    public Output<String> softwareSourceVersion() {
-        return this.softwareSourceVersion;
+    public Output<Optional<String>> softwareSourceVersion() {
+        return Codegen.optional(this.softwareSourceVersion);
     }
     /**
      * The current state of the software source.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the software source.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> systemTags;
+    private Output</* @Nullable */ Map<String,Object>> systemTags;
 
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    public Output<Map<String,Object>> systemTags() {
-        return this.systemTags;
+    public Output<Optional<Map<String,Object>>> systemTags() {
+        return Codegen.optional(this.systemTags);
     }
     /**
      * The date and time the software source was created, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the software source was created, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * URL for the repository.
      * 
      */
     @Export(name="url", refs={String.class}, tree="[0]")
-    private Output<String> url;
+    private Output</* @Nullable */ String> url;
 
     /**
      * @return URL for the repository.
      * 
      */
-    public Output<String> url() {
-        return this.url;
+    public Output<Optional<String>> url() {
+        return Codegen.optional(this.url);
     }
     /**
      * Name of the vendor providing the software source.
      * 
      */
     @Export(name="vendorName", refs={String.class}, tree="[0]")
-    private Output<String> vendorName;
+    private Output</* @Nullable */ String> vendorName;
 
     /**
      * @return Name of the vendor providing the software source.
      * 
      */
-    public Output<String> vendorName() {
-        return this.vendorName;
+    public Output<Optional<String>> vendorName() {
+        return Codegen.optional(this.vendorName);
     }
     /**
      * (Updatable) List of vendor software sources.

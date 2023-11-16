@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Virtual Circuit resource in Oracle Cloud Infrastructure Core service.
@@ -112,63 +111,63 @@ type VirtualCircuit struct {
 	pulumi.CustomResourceState
 
 	// (Updatable) The provisioned data rate of the connection. To get a list of the available bandwidth levels (that is, shapes), see [ListFastConnectProviderServiceVirtualCircuitBandwidthShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderVirtualCircuitBandwidthShapes).  Example: `10 Gbps`
-	BandwidthShapeName pulumi.StringOutput `pulumi:"bandwidthShapeName"`
+	BandwidthShapeName pulumi.StringPtrOutput `pulumi:"bandwidthShapeName"`
 	// (Updatable) Set to `ENABLED` (the default) to activate the BGP session of the virtual circuit, set to `DISABLED` to deactivate the virtual circuit.
-	BgpAdminState pulumi.StringOutput `pulumi:"bgpAdminState"`
+	BgpAdminState pulumi.StringPtrOutput `pulumi:"bgpAdminState"`
 	// The state of the Ipv6 BGP session associated with the virtual circuit.
-	BgpIpv6sessionState pulumi.StringOutput `pulumi:"bgpIpv6sessionState"`
+	BgpIpv6sessionState pulumi.StringPtrOutput `pulumi:"bgpIpv6sessionState"`
 	// Deprecated. Instead use the information in [FastConnectProviderService](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/).
 	//
 	// Deprecated: The 'bgp_management' field has been deprecated. Please use the 'oci_core_fast_connect_provider_service' data source instead.
-	BgpManagement pulumi.StringOutput `pulumi:"bgpManagement"`
+	BgpManagement pulumi.StringPtrOutput `pulumi:"bgpManagement"`
 	// The state of the Ipv4 BGP session associated with the virtual circuit.
-	BgpSessionState pulumi.StringOutput `pulumi:"bgpSessionState"`
+	BgpSessionState pulumi.StringPtrOutput `pulumi:"bgpSessionState"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the virtual circuit.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Create a `CrossConnectMapping` for each cross-connect or cross-connect group this virtual circuit will run on.
 	CrossConnectMappings VirtualCircuitCrossConnectMappingArrayOutput `pulumi:"crossConnectMappings"`
 	// (Updatable) Your BGP ASN (either public or private). Provide this value only if there's a BGP session that goes from your edge router to Oracle. Otherwise, leave this empty or null. Can be a 2-byte or 4-byte ASN. Uses "asplain" format.  Example: `12345` (2-byte) or `1587232876` (4-byte)
-	CustomerAsn pulumi.StringOutput `pulumi:"customerAsn"`
+	CustomerAsn pulumi.StringPtrOutput `pulumi:"customerAsn"`
 	// (Updatable) Deprecated. Instead use `customerAsn`. If you specify values for both, the request will be rejected.
 	//
 	// Deprecated: The 'customer_bgp_asn' field has been deprecated. Please use 'customer_asn' instead.
-	CustomerBgpAsn pulumi.IntOutput `pulumi:"customerBgpAsn"`
+	CustomerBgpAsn pulumi.IntPtrOutput `pulumi:"customerBgpAsn"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// (Updatable) For private virtual circuits only. The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [dynamic routing gateway (DRG)](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Drg) that this virtual circuit uses.
-	GatewayId pulumi.StringOutput `pulumi:"gatewayId"`
+	GatewayId pulumi.StringPtrOutput `pulumi:"gatewayId"`
 	// (Updatable) The layer 3 IP MTU to use with this virtual circuit.
-	IpMtu pulumi.StringOutput `pulumi:"ipMtu"`
+	IpMtu pulumi.StringPtrOutput `pulumi:"ipMtu"`
 	// (Updatable) Set to `true` to enable BFD for IPv4 BGP peering, or set to `false` to disable BFD. If this is not set, the default is `false`.
-	IsBfdEnabled pulumi.BoolOutput `pulumi:"isBfdEnabled"`
+	IsBfdEnabled pulumi.BoolPtrOutput `pulumi:"isBfdEnabled"`
 	// (Updatable) Set to `true` for the virtual circuit to carry only encrypted traffic, or set to `false` for the virtual circuit to carry unencrypted traffic. If this is not set, the default is `false`.
-	IsTransportMode pulumi.BoolOutput `pulumi:"isTransportMode"`
+	IsTransportMode pulumi.BoolPtrOutput `pulumi:"isTransportMode"`
 	// The Oracle BGP ASN.
-	OracleBgpAsn pulumi.IntOutput `pulumi:"oracleBgpAsn"`
+	OracleBgpAsn pulumi.IntPtrOutput `pulumi:"oracleBgpAsn"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service offered by the provider (if you're connecting via a provider). To get a list of the available service offerings, see [ListFastConnectProviderServices](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderServices).
-	ProviderServiceId pulumi.StringOutput `pulumi:"providerServiceId"`
+	ProviderServiceId pulumi.StringPtrOutput `pulumi:"providerServiceId"`
 	// (Updatable) The service key name offered by the provider (if the customer is connecting via a provider).
-	ProviderServiceKeyName pulumi.StringOutput `pulumi:"providerServiceKeyName"`
+	ProviderServiceKeyName pulumi.StringPtrOutput `pulumi:"providerServiceKeyName"`
 	// The provider's state in relation to this virtual circuit (if the customer is connecting via a provider). ACTIVE means the provider has provisioned the virtual circuit from their end. INACTIVE means the provider has not yet provisioned the virtual circuit, or has de-provisioned it.
-	ProviderState pulumi.StringOutput `pulumi:"providerState"`
+	ProviderState pulumi.StringPtrOutput `pulumi:"providerState"`
 	// (Updatable) For a public virtual circuit. The public IP prefixes (CIDRs) the customer wants to advertise across the connection.
 	PublicPrefixes VirtualCircuitPublicPrefixArrayOutput `pulumi:"publicPrefixes"`
 	// Provider-supplied reference information about this virtual circuit (if the customer is connecting via a provider).
-	ReferenceComment pulumi.StringOutput `pulumi:"referenceComment"`
+	ReferenceComment pulumi.StringPtrOutput `pulumi:"referenceComment"`
 	// The Oracle Cloud Infrastructure region where this virtual circuit is located. Example: `phx`
-	Region pulumi.StringOutput `pulumi:"region"`
+	Region pulumi.StringPtrOutput `pulumi:"region"`
 	// (Updatable) The routing policy sets how routing information about the Oracle cloud is shared over a public virtual circuit. Policies available are: `ORACLE_SERVICE_NETWORK`, `REGIONAL`, `MARKET_LEVEL`, and `GLOBAL`. See [Route Filtering](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/routingonprem.htm#route_filtering) for details. By default, routing information is shared for all routes in the same market.
 	RoutingPolicies pulumi.StringArrayOutput `pulumi:"routingPolicies"`
 	// Provider service type.
-	ServiceType pulumi.StringOutput `pulumi:"serviceType"`
+	ServiceType pulumi.StringPtrOutput `pulumi:"serviceType"`
 	// The virtual circuit's current state. For information about the different states, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The date and time the virtual circuit was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The type of IP addresses used in this virtual circuit. PRIVATE means [RFC 1918](https://tools.ietf.org/html/rfc1918) addresses (10.0.0.0/8, 172.16/12, and 192.168/16).
 	//
 	// ** IMPORTANT **
@@ -463,12 +462,6 @@ func (i *VirtualCircuit) ToVirtualCircuitOutputWithContext(ctx context.Context) 
 	return pulumi.ToOutputWithContext(ctx, i).(VirtualCircuitOutput)
 }
 
-func (i *VirtualCircuit) ToOutput(ctx context.Context) pulumix.Output[*VirtualCircuit] {
-	return pulumix.Output[*VirtualCircuit]{
-		OutputState: i.ToVirtualCircuitOutputWithContext(ctx).OutputState,
-	}
-}
-
 // VirtualCircuitArrayInput is an input type that accepts VirtualCircuitArray and VirtualCircuitArrayOutput values.
 // You can construct a concrete instance of `VirtualCircuitArrayInput` via:
 //
@@ -492,12 +485,6 @@ func (i VirtualCircuitArray) ToVirtualCircuitArrayOutput() VirtualCircuitArrayOu
 
 func (i VirtualCircuitArray) ToVirtualCircuitArrayOutputWithContext(ctx context.Context) VirtualCircuitArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(VirtualCircuitArrayOutput)
-}
-
-func (i VirtualCircuitArray) ToOutput(ctx context.Context) pulumix.Output[[]*VirtualCircuit] {
-	return pulumix.Output[[]*VirtualCircuit]{
-		OutputState: i.ToVirtualCircuitArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // VirtualCircuitMapInput is an input type that accepts VirtualCircuitMap and VirtualCircuitMapOutput values.
@@ -525,12 +512,6 @@ func (i VirtualCircuitMap) ToVirtualCircuitMapOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(VirtualCircuitMapOutput)
 }
 
-func (i VirtualCircuitMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*VirtualCircuit] {
-	return pulumix.Output[map[string]*VirtualCircuit]{
-		OutputState: i.ToVirtualCircuitMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type VirtualCircuitOutput struct{ *pulumi.OutputState }
 
 func (VirtualCircuitOutput) ElementType() reflect.Type {
@@ -545,37 +526,31 @@ func (o VirtualCircuitOutput) ToVirtualCircuitOutputWithContext(ctx context.Cont
 	return o
 }
 
-func (o VirtualCircuitOutput) ToOutput(ctx context.Context) pulumix.Output[*VirtualCircuit] {
-	return pulumix.Output[*VirtualCircuit]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The provisioned data rate of the connection. To get a list of the available bandwidth levels (that is, shapes), see [ListFastConnectProviderServiceVirtualCircuitBandwidthShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderVirtualCircuitBandwidthShapes).  Example: `10 Gbps`
-func (o VirtualCircuitOutput) BandwidthShapeName() pulumi.StringOutput {
-	return o.ApplyT(func(v *VirtualCircuit) pulumi.StringOutput { return v.BandwidthShapeName }).(pulumi.StringOutput)
+func (o VirtualCircuitOutput) BandwidthShapeName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VirtualCircuit) pulumi.StringPtrOutput { return v.BandwidthShapeName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Set to `ENABLED` (the default) to activate the BGP session of the virtual circuit, set to `DISABLED` to deactivate the virtual circuit.
-func (o VirtualCircuitOutput) BgpAdminState() pulumi.StringOutput {
-	return o.ApplyT(func(v *VirtualCircuit) pulumi.StringOutput { return v.BgpAdminState }).(pulumi.StringOutput)
+func (o VirtualCircuitOutput) BgpAdminState() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VirtualCircuit) pulumi.StringPtrOutput { return v.BgpAdminState }).(pulumi.StringPtrOutput)
 }
 
 // The state of the Ipv6 BGP session associated with the virtual circuit.
-func (o VirtualCircuitOutput) BgpIpv6sessionState() pulumi.StringOutput {
-	return o.ApplyT(func(v *VirtualCircuit) pulumi.StringOutput { return v.BgpIpv6sessionState }).(pulumi.StringOutput)
+func (o VirtualCircuitOutput) BgpIpv6sessionState() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VirtualCircuit) pulumi.StringPtrOutput { return v.BgpIpv6sessionState }).(pulumi.StringPtrOutput)
 }
 
 // Deprecated. Instead use the information in [FastConnectProviderService](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/).
 //
 // Deprecated: The 'bgp_management' field has been deprecated. Please use the 'oci_core_fast_connect_provider_service' data source instead.
-func (o VirtualCircuitOutput) BgpManagement() pulumi.StringOutput {
-	return o.ApplyT(func(v *VirtualCircuit) pulumi.StringOutput { return v.BgpManagement }).(pulumi.StringOutput)
+func (o VirtualCircuitOutput) BgpManagement() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VirtualCircuit) pulumi.StringPtrOutput { return v.BgpManagement }).(pulumi.StringPtrOutput)
 }
 
 // The state of the Ipv4 BGP session associated with the virtual circuit.
-func (o VirtualCircuitOutput) BgpSessionState() pulumi.StringOutput {
-	return o.ApplyT(func(v *VirtualCircuit) pulumi.StringOutput { return v.BgpSessionState }).(pulumi.StringOutput)
+func (o VirtualCircuitOutput) BgpSessionState() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VirtualCircuit) pulumi.StringPtrOutput { return v.BgpSessionState }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the virtual circuit.
@@ -589,15 +564,15 @@ func (o VirtualCircuitOutput) CrossConnectMappings() VirtualCircuitCrossConnectM
 }
 
 // (Updatable) Your BGP ASN (either public or private). Provide this value only if there's a BGP session that goes from your edge router to Oracle. Otherwise, leave this empty or null. Can be a 2-byte or 4-byte ASN. Uses "asplain" format.  Example: `12345` (2-byte) or `1587232876` (4-byte)
-func (o VirtualCircuitOutput) CustomerAsn() pulumi.StringOutput {
-	return o.ApplyT(func(v *VirtualCircuit) pulumi.StringOutput { return v.CustomerAsn }).(pulumi.StringOutput)
+func (o VirtualCircuitOutput) CustomerAsn() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VirtualCircuit) pulumi.StringPtrOutput { return v.CustomerAsn }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Deprecated. Instead use `customerAsn`. If you specify values for both, the request will be rejected.
 //
 // Deprecated: The 'customer_bgp_asn' field has been deprecated. Please use 'customer_asn' instead.
-func (o VirtualCircuitOutput) CustomerBgpAsn() pulumi.IntOutput {
-	return o.ApplyT(func(v *VirtualCircuit) pulumi.IntOutput { return v.CustomerBgpAsn }).(pulumi.IntOutput)
+func (o VirtualCircuitOutput) CustomerBgpAsn() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *VirtualCircuit) pulumi.IntPtrOutput { return v.CustomerBgpAsn }).(pulumi.IntPtrOutput)
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -606,8 +581,8 @@ func (o VirtualCircuitOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-func (o VirtualCircuitOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *VirtualCircuit) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o VirtualCircuitOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VirtualCircuit) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -616,43 +591,43 @@ func (o VirtualCircuitOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // (Updatable) For private virtual circuits only. The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [dynamic routing gateway (DRG)](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Drg) that this virtual circuit uses.
-func (o VirtualCircuitOutput) GatewayId() pulumi.StringOutput {
-	return o.ApplyT(func(v *VirtualCircuit) pulumi.StringOutput { return v.GatewayId }).(pulumi.StringOutput)
+func (o VirtualCircuitOutput) GatewayId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VirtualCircuit) pulumi.StringPtrOutput { return v.GatewayId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The layer 3 IP MTU to use with this virtual circuit.
-func (o VirtualCircuitOutput) IpMtu() pulumi.StringOutput {
-	return o.ApplyT(func(v *VirtualCircuit) pulumi.StringOutput { return v.IpMtu }).(pulumi.StringOutput)
+func (o VirtualCircuitOutput) IpMtu() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VirtualCircuit) pulumi.StringPtrOutput { return v.IpMtu }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Set to `true` to enable BFD for IPv4 BGP peering, or set to `false` to disable BFD. If this is not set, the default is `false`.
-func (o VirtualCircuitOutput) IsBfdEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v *VirtualCircuit) pulumi.BoolOutput { return v.IsBfdEnabled }).(pulumi.BoolOutput)
+func (o VirtualCircuitOutput) IsBfdEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *VirtualCircuit) pulumi.BoolPtrOutput { return v.IsBfdEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) Set to `true` for the virtual circuit to carry only encrypted traffic, or set to `false` for the virtual circuit to carry unencrypted traffic. If this is not set, the default is `false`.
-func (o VirtualCircuitOutput) IsTransportMode() pulumi.BoolOutput {
-	return o.ApplyT(func(v *VirtualCircuit) pulumi.BoolOutput { return v.IsTransportMode }).(pulumi.BoolOutput)
+func (o VirtualCircuitOutput) IsTransportMode() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *VirtualCircuit) pulumi.BoolPtrOutput { return v.IsTransportMode }).(pulumi.BoolPtrOutput)
 }
 
 // The Oracle BGP ASN.
-func (o VirtualCircuitOutput) OracleBgpAsn() pulumi.IntOutput {
-	return o.ApplyT(func(v *VirtualCircuit) pulumi.IntOutput { return v.OracleBgpAsn }).(pulumi.IntOutput)
+func (o VirtualCircuitOutput) OracleBgpAsn() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *VirtualCircuit) pulumi.IntPtrOutput { return v.OracleBgpAsn }).(pulumi.IntPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service offered by the provider (if you're connecting via a provider). To get a list of the available service offerings, see [ListFastConnectProviderServices](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderServices).
-func (o VirtualCircuitOutput) ProviderServiceId() pulumi.StringOutput {
-	return o.ApplyT(func(v *VirtualCircuit) pulumi.StringOutput { return v.ProviderServiceId }).(pulumi.StringOutput)
+func (o VirtualCircuitOutput) ProviderServiceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VirtualCircuit) pulumi.StringPtrOutput { return v.ProviderServiceId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The service key name offered by the provider (if the customer is connecting via a provider).
-func (o VirtualCircuitOutput) ProviderServiceKeyName() pulumi.StringOutput {
-	return o.ApplyT(func(v *VirtualCircuit) pulumi.StringOutput { return v.ProviderServiceKeyName }).(pulumi.StringOutput)
+func (o VirtualCircuitOutput) ProviderServiceKeyName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VirtualCircuit) pulumi.StringPtrOutput { return v.ProviderServiceKeyName }).(pulumi.StringPtrOutput)
 }
 
 // The provider's state in relation to this virtual circuit (if the customer is connecting via a provider). ACTIVE means the provider has provisioned the virtual circuit from their end. INACTIVE means the provider has not yet provisioned the virtual circuit, or has de-provisioned it.
-func (o VirtualCircuitOutput) ProviderState() pulumi.StringOutput {
-	return o.ApplyT(func(v *VirtualCircuit) pulumi.StringOutput { return v.ProviderState }).(pulumi.StringOutput)
+func (o VirtualCircuitOutput) ProviderState() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VirtualCircuit) pulumi.StringPtrOutput { return v.ProviderState }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) For a public virtual circuit. The public IP prefixes (CIDRs) the customer wants to advertise across the connection.
@@ -661,13 +636,13 @@ func (o VirtualCircuitOutput) PublicPrefixes() VirtualCircuitPublicPrefixArrayOu
 }
 
 // Provider-supplied reference information about this virtual circuit (if the customer is connecting via a provider).
-func (o VirtualCircuitOutput) ReferenceComment() pulumi.StringOutput {
-	return o.ApplyT(func(v *VirtualCircuit) pulumi.StringOutput { return v.ReferenceComment }).(pulumi.StringOutput)
+func (o VirtualCircuitOutput) ReferenceComment() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VirtualCircuit) pulumi.StringPtrOutput { return v.ReferenceComment }).(pulumi.StringPtrOutput)
 }
 
 // The Oracle Cloud Infrastructure region where this virtual circuit is located. Example: `phx`
-func (o VirtualCircuitOutput) Region() pulumi.StringOutput {
-	return o.ApplyT(func(v *VirtualCircuit) pulumi.StringOutput { return v.Region }).(pulumi.StringOutput)
+func (o VirtualCircuitOutput) Region() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VirtualCircuit) pulumi.StringPtrOutput { return v.Region }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The routing policy sets how routing information about the Oracle cloud is shared over a public virtual circuit. Policies available are: `ORACLE_SERVICE_NETWORK`, `REGIONAL`, `MARKET_LEVEL`, and `GLOBAL`. See [Route Filtering](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/routingonprem.htm#route_filtering) for details. By default, routing information is shared for all routes in the same market.
@@ -676,18 +651,18 @@ func (o VirtualCircuitOutput) RoutingPolicies() pulumi.StringArrayOutput {
 }
 
 // Provider service type.
-func (o VirtualCircuitOutput) ServiceType() pulumi.StringOutput {
-	return o.ApplyT(func(v *VirtualCircuit) pulumi.StringOutput { return v.ServiceType }).(pulumi.StringOutput)
+func (o VirtualCircuitOutput) ServiceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VirtualCircuit) pulumi.StringPtrOutput { return v.ServiceType }).(pulumi.StringPtrOutput)
 }
 
 // The virtual circuit's current state. For information about the different states, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
-func (o VirtualCircuitOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *VirtualCircuit) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o VirtualCircuitOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VirtualCircuit) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the virtual circuit was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-func (o VirtualCircuitOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *VirtualCircuit) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o VirtualCircuitOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VirtualCircuit) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The type of IP addresses used in this virtual circuit. PRIVATE means [RFC 1918](https://tools.ietf.org/html/rfc1918) addresses (10.0.0.0/8, 172.16/12, and 192.168/16).
@@ -712,12 +687,6 @@ func (o VirtualCircuitArrayOutput) ToVirtualCircuitArrayOutputWithContext(ctx co
 	return o
 }
 
-func (o VirtualCircuitArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*VirtualCircuit] {
-	return pulumix.Output[[]*VirtualCircuit]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o VirtualCircuitArrayOutput) Index(i pulumi.IntInput) VirtualCircuitOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *VirtualCircuit {
 		return vs[0].([]*VirtualCircuit)[vs[1].(int)]
@@ -736,12 +705,6 @@ func (o VirtualCircuitMapOutput) ToVirtualCircuitMapOutput() VirtualCircuitMapOu
 
 func (o VirtualCircuitMapOutput) ToVirtualCircuitMapOutputWithContext(ctx context.Context) VirtualCircuitMapOutput {
 	return o
-}
-
-func (o VirtualCircuitMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*VirtualCircuit] {
-	return pulumix.Output[map[string]*VirtualCircuit]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o VirtualCircuitMapOutput) MapIndex(k pulumi.StringInput) VirtualCircuitOutput {

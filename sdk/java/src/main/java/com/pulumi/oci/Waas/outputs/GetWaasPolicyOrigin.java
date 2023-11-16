@@ -18,7 +18,7 @@ public final class GetWaasPolicyOrigin {
      * @return A list of HTTP headers to forward to your origin.
      * 
      */
-    private List<GetWaasPolicyOriginCustomHeader> customHeaders;
+    private @Nullable List<GetWaasPolicyOriginCustomHeader> customHeaders;
     /**
      * @return The HTTP port on the origin that the web application listens on. If unspecified, defaults to `80`. If `0` is specified - the origin is not used for HTTP traffic.
      * 
@@ -42,7 +42,7 @@ public final class GetWaasPolicyOrigin {
      * 
      */
     public List<GetWaasPolicyOriginCustomHeader> customHeaders() {
-        return this.customHeaders;
+        return this.customHeaders == null ? List.of() : this.customHeaders;
     }
     /**
      * @return The HTTP port on the origin that the web application listens on. If unspecified, defaults to `80`. If `0` is specified - the origin is not used for HTTP traffic.
@@ -78,7 +78,7 @@ public final class GetWaasPolicyOrigin {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetWaasPolicyOriginCustomHeader> customHeaders;
+        private @Nullable List<GetWaasPolicyOriginCustomHeader> customHeaders;
         private @Nullable Integer httpPort;
         private @Nullable Integer httpsPort;
         private String label;
@@ -94,8 +94,8 @@ public final class GetWaasPolicyOrigin {
         }
 
         @CustomType.Setter
-        public Builder customHeaders(List<GetWaasPolicyOriginCustomHeader> customHeaders) {
-            this.customHeaders = Objects.requireNonNull(customHeaders);
+        public Builder customHeaders(@Nullable List<GetWaasPolicyOriginCustomHeader> customHeaders) {
+            this.customHeaders = customHeaders;
             return this;
         }
         public Builder customHeaders(GetWaasPolicyOriginCustomHeader... customHeaders) {

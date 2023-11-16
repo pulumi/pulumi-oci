@@ -152,100 +152,100 @@ namespace Pulumi.Oci.DataCatalog
         /// <summary>
         /// OCID of the user who created the data asset.
         /// </summary>
-        public readonly string CreatedById;
+        public readonly string? CreatedById;
         public readonly string DataAssetKey;
         /// <summary>
         /// Detailed description of the data asset.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// A user-friendly display name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// External URI that can be used to reference the object. Format will differ based on the type of object.
         /// </summary>
-        public readonly string ExternalKey;
+        public readonly string? ExternalKey;
         public readonly ImmutableArray<string> Fields;
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Unique data asset key that is immutable.
         /// </summary>
-        public readonly string Key;
+        public readonly string? Key;
         /// <summary>
         /// A message describing the current state in more detail. An object not in ACTIVE state may have functional limitations, see service documentation for details.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// A map of maps that contains the properties which are specific to the asset type. Each data asset type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most data assets have required properties within the "default" category. Example: `{"properties": { "default": { "host": "host1", "port": "1521", "database": "orcl"}}}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> Properties;
+        public readonly ImmutableDictionary<string, object>? Properties;
         /// <summary>
         /// The current state of the data asset.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The date and time the data asset was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2019-03-25T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The last time that a harvest was performed on the data asset. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
         /// </summary>
-        public readonly string TimeHarvested;
+        public readonly string? TimeHarvested;
         /// <summary>
         /// The last time that any change was made to the data asset. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
         /// <summary>
         /// The key of the object type. Type key's can be found via the '/types' endpoint.
         /// </summary>
-        public readonly string TypeKey;
+        public readonly string? TypeKey;
         /// <summary>
         /// OCID of the user who last modified the data asset.
         /// </summary>
-        public readonly string UpdatedById;
+        public readonly string? UpdatedById;
         /// <summary>
         /// URI to the data asset instance in the API.
         /// </summary>
-        public readonly string Uri;
+        public readonly string? Uri;
 
         [OutputConstructor]
         private GetDataAssetResult(
             string catalogId,
 
-            string createdById,
+            string? createdById,
 
             string dataAssetKey,
 
-            string description,
+            string? description,
 
-            string displayName,
+            string? displayName,
 
-            string externalKey,
+            string? externalKey,
 
             ImmutableArray<string> fields,
 
-            string id,
+            string? id,
 
-            string key,
+            string? key,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            ImmutableDictionary<string, object> properties,
+            ImmutableDictionary<string, object>? properties,
 
-            string state,
+            string? state,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeHarvested,
+            string? timeHarvested,
 
-            string timeUpdated,
+            string? timeUpdated,
 
-            string typeKey,
+            string? typeKey,
 
-            string updatedById,
+            string? updatedById,
 
-            string uri)
+            string? uri)
         {
             CatalogId = catalogId;
             CreatedById = createdById;

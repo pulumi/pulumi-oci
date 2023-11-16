@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Monitored Resource Tasks in Oracle Cloud Infrastructure Stack Monitoring service.
@@ -67,7 +66,7 @@ type GetMonitoredResourceTasksResult struct {
 	CompartmentId string                            `pulumi:"compartmentId"`
 	Filters       []GetMonitoredResourceTasksFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of monitored_resource_tasks_collection.
 	MonitoredResourceTasksCollections []GetMonitoredResourceTasksMonitoredResourceTasksCollection `pulumi:"monitoredResourceTasksCollections"`
 	Status                            *string                                                     `pulumi:"status"`
@@ -114,12 +113,6 @@ func (o GetMonitoredResourceTasksResultOutput) ToGetMonitoredResourceTasksResult
 	return o
 }
 
-func (o GetMonitoredResourceTasksResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourceTasksResult] {
-	return pulumix.Output[GetMonitoredResourceTasksResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment identifier.
 func (o GetMonitoredResourceTasksResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitoredResourceTasksResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -130,8 +123,8 @@ func (o GetMonitoredResourceTasksResultOutput) Filters() GetMonitoredResourceTas
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetMonitoredResourceTasksResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMonitoredResourceTasksResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetMonitoredResourceTasksResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTasksResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of monitored_resource_tasks_collection.

@@ -6,6 +6,8 @@ package com.pulumi.oci.LoadBalancer.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetLoadBalancerRoutingPolicyRuleAction {
@@ -13,27 +15,27 @@ public final class GetLoadBalancerRoutingPolicyRuleAction {
      * @return Name of the backend set the listener will forward the traffic to.  Example: `backendSetForImages`
      * 
      */
-    private String backendSetName;
+    private @Nullable String backendSetName;
     /**
      * @return A unique name for the routing policy rule. Avoid entering confidential information.
      * 
      */
-    private String name;
+    private @Nullable String name;
 
     private GetLoadBalancerRoutingPolicyRuleAction() {}
     /**
      * @return Name of the backend set the listener will forward the traffic to.  Example: `backendSetForImages`
      * 
      */
-    public String backendSetName() {
-        return this.backendSetName;
+    public Optional<String> backendSetName() {
+        return Optional.ofNullable(this.backendSetName);
     }
     /**
      * @return A unique name for the routing policy rule. Avoid entering confidential information.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetLoadBalancerRoutingPolicyRuleAction {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String backendSetName;
-        private String name;
+        private @Nullable String backendSetName;
+        private @Nullable String name;
         public Builder() {}
         public Builder(GetLoadBalancerRoutingPolicyRuleAction defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetLoadBalancerRoutingPolicyRuleAction {
         }
 
         @CustomType.Setter
-        public Builder backendSetName(String backendSetName) {
-            this.backendSetName = Objects.requireNonNull(backendSetName);
+        public Builder backendSetName(@Nullable String backendSetName) {
+            this.backendSetName = backendSetName;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         public GetLoadBalancerRoutingPolicyRuleAction build() {

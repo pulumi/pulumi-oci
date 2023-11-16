@@ -52,33 +52,21 @@ class GetDatabaseToolsPrivateEndpointsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools private endpoint.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="databaseToolsPrivateEndpointCollections")
-    def database_tools_private_endpoint_collections(self) -> Sequence['outputs.GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionResult']:
-        """
-        The list of database_tools_private_endpoint_collection.
-        """
+    def database_tools_private_endpoint_collections(self) -> Optional[Sequence['outputs.GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionResult']]:
         return pulumi.get(self, "database_tools_private_endpoint_collections")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="endpointServiceId")
     def endpoint_service_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools Endpoint Service.
-        """
         return pulumi.get(self, "endpoint_service_id")
 
     @property
@@ -88,7 +76,7 @@ class GetDatabaseToolsPrivateEndpointsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -97,17 +85,11 @@ class GetDatabaseToolsPrivateEndpointsResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the Database Tools private endpoint.
-        """
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet that the private endpoint belongs to.
-        """
         return pulumi.get(self, "subnet_id")
 
 
@@ -135,29 +117,7 @@ def get_database_tools_private_endpoints(compartment_id: Optional[str] = None,
                                          subnet_id: Optional[str] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDatabaseToolsPrivateEndpointsResult:
     """
-    This data source provides the list of Database Tools Private Endpoints in Oracle Cloud Infrastructure Database Tools service.
-
-    Returns a list of Database Tools private endpoints.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_database_tools_private_endpoints = oci.DatabaseTools.get_database_tools_private_endpoints(compartment_id=var["compartment_id"],
-        display_name=var["database_tools_private_endpoint_display_name"],
-        endpoint_service_id=oci_core_service["test_service"]["id"],
-        state=var["database_tools_private_endpoint_state"],
-        subnet_id=oci_core_subnet["test_subnet"]["id"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire specified display name.
-    :param str endpoint_service_id: A filter to return only resources their `endpointServiceId` matches the specified `endpointServiceId`.
-    :param str state: A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
-    :param str subnet_id: A filter to return only resources their `subnetId` matches the specified `subnetId`.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -189,28 +149,6 @@ def get_database_tools_private_endpoints_output(compartment_id: Optional[pulumi.
                                                 subnet_id: Optional[pulumi.Input[Optional[str]]] = None,
                                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDatabaseToolsPrivateEndpointsResult]:
     """
-    This data source provides the list of Database Tools Private Endpoints in Oracle Cloud Infrastructure Database Tools service.
-
-    Returns a list of Database Tools private endpoints.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_database_tools_private_endpoints = oci.DatabaseTools.get_database_tools_private_endpoints(compartment_id=var["compartment_id"],
-        display_name=var["database_tools_private_endpoint_display_name"],
-        endpoint_service_id=oci_core_service["test_service"]["id"],
-        state=var["database_tools_private_endpoint_state"],
-        subnet_id=oci_core_subnet["test_subnet"]["id"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire specified display name.
-    :param str endpoint_service_id: A filter to return only resources their `endpointServiceId` matches the specified `endpointServiceId`.
-    :param str state: A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
-    :param str subnet_id: A filter to return only resources their `subnetId` matches the specified `subnetId`.
+    Use this data source to access information about an existing resource.
     """
     ...

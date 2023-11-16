@@ -6,6 +6,8 @@ package com.pulumi.oci.Core.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDedicatedVmHostInstanceShapesDedicatedVmHostInstanceShape {
@@ -13,27 +15,27 @@ public final class GetDedicatedVmHostInstanceShapesDedicatedVmHostInstanceShape 
      * @return The name of the availability domain.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    private String availabilityDomain;
+    private @Nullable String availabilityDomain;
     /**
      * @return The name of the virtual machine instance shapes that can be launched on a dedicated VM host.
      * 
      */
-    private String instanceShapeName;
+    private @Nullable String instanceShapeName;
 
     private GetDedicatedVmHostInstanceShapesDedicatedVmHostInstanceShape() {}
     /**
      * @return The name of the availability domain.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    public String availabilityDomain() {
-        return this.availabilityDomain;
+    public Optional<String> availabilityDomain() {
+        return Optional.ofNullable(this.availabilityDomain);
     }
     /**
      * @return The name of the virtual machine instance shapes that can be launched on a dedicated VM host.
      * 
      */
-    public String instanceShapeName() {
-        return this.instanceShapeName;
+    public Optional<String> instanceShapeName() {
+        return Optional.ofNullable(this.instanceShapeName);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetDedicatedVmHostInstanceShapesDedicatedVmHostInstanceShape 
     }
     @CustomType.Builder
     public static final class Builder {
-        private String availabilityDomain;
-        private String instanceShapeName;
+        private @Nullable String availabilityDomain;
+        private @Nullable String instanceShapeName;
         public Builder() {}
         public Builder(GetDedicatedVmHostInstanceShapesDedicatedVmHostInstanceShape defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetDedicatedVmHostInstanceShapesDedicatedVmHostInstanceShape 
         }
 
         @CustomType.Setter
-        public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+        public Builder availabilityDomain(@Nullable String availabilityDomain) {
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
-        public Builder instanceShapeName(String instanceShapeName) {
-            this.instanceShapeName = Objects.requireNonNull(instanceShapeName);
+        public Builder instanceShapeName(@Nullable String instanceShapeName) {
+            this.instanceShapeName = instanceShapeName;
             return this;
         }
         public GetDedicatedVmHostInstanceShapesDedicatedVmHostInstanceShape build() {

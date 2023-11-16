@@ -6,14 +6,16 @@ package com.pulumi.oci.Core.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetVirtualCircuitPublicPrefix {
-    private String cidrBlock;
+    private @Nullable String cidrBlock;
 
     private GetVirtualCircuitPublicPrefix() {}
-    public String cidrBlock() {
-        return this.cidrBlock;
+    public Optional<String> cidrBlock() {
+        return Optional.ofNullable(this.cidrBlock);
     }
 
     public static Builder builder() {
@@ -25,7 +27,7 @@ public final class GetVirtualCircuitPublicPrefix {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String cidrBlock;
+        private @Nullable String cidrBlock;
         public Builder() {}
         public Builder(GetVirtualCircuitPublicPrefix defaults) {
     	      Objects.requireNonNull(defaults);
@@ -33,8 +35,8 @@ public final class GetVirtualCircuitPublicPrefix {
         }
 
         @CustomType.Setter
-        public Builder cidrBlock(String cidrBlock) {
-            this.cidrBlock = Objects.requireNonNull(cidrBlock);
+        public Builder cidrBlock(@Nullable String cidrBlock) {
+            this.cidrBlock = cidrBlock;
             return this;
         }
         public GetVirtualCircuitPublicPrefix build() {

@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Schedule resource in Oracle Cloud Infrastructure Metering Computation service.
@@ -98,29 +97,29 @@ type Schedule struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) The description of the schedule.
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The unique name of the user-created schedule.
 	Name pulumi.StringOutput `pulumi:"name"`
 	// (Updatable) Specifies supported output file format.
-	OutputFileFormat pulumi.StringOutput `pulumi:"outputFileFormat"`
+	OutputFileFormat pulumi.StringPtrOutput `pulumi:"outputFileFormat"`
 	// The query properties.
-	QueryProperties ScheduleQueryPropertiesOutput `pulumi:"queryProperties"`
+	QueryProperties ScheduleQueryPropertiesPtrOutput `pulumi:"queryProperties"`
 	// (Updatable) The location where usage or cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
 	ResultLocation ScheduleResultLocationOutput `pulumi:"resultLocation"`
 	// The saved report id which can also be used to generate query.
-	SavedReportId pulumi.StringOutput `pulumi:"savedReportId"`
+	SavedReportId pulumi.StringPtrOutput `pulumi:"savedReportId"`
 	// Specifies the frequency according to when the schedule will be run,  in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
 	ScheduleRecurrences pulumi.StringOutput `pulumi:"scheduleRecurrences"`
 	// The schedule lifecycle state.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The date and time the schedule was created.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The date and time of the next job execution.
-	TimeNextRun pulumi.StringOutput `pulumi:"timeNextRun"`
+	TimeNextRun pulumi.StringPtrOutput `pulumi:"timeNextRun"`
 	// The date and time of the first time job execution.
 	//
 	// ** IMPORTANT **
@@ -325,12 +324,6 @@ func (i *Schedule) ToScheduleOutputWithContext(ctx context.Context) ScheduleOutp
 	return pulumi.ToOutputWithContext(ctx, i).(ScheduleOutput)
 }
 
-func (i *Schedule) ToOutput(ctx context.Context) pulumix.Output[*Schedule] {
-	return pulumix.Output[*Schedule]{
-		OutputState: i.ToScheduleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ScheduleArrayInput is an input type that accepts ScheduleArray and ScheduleArrayOutput values.
 // You can construct a concrete instance of `ScheduleArrayInput` via:
 //
@@ -354,12 +347,6 @@ func (i ScheduleArray) ToScheduleArrayOutput() ScheduleArrayOutput {
 
 func (i ScheduleArray) ToScheduleArrayOutputWithContext(ctx context.Context) ScheduleArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ScheduleArrayOutput)
-}
-
-func (i ScheduleArray) ToOutput(ctx context.Context) pulumix.Output[[]*Schedule] {
-	return pulumix.Output[[]*Schedule]{
-		OutputState: i.ToScheduleArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ScheduleMapInput is an input type that accepts ScheduleMap and ScheduleMapOutput values.
@@ -387,12 +374,6 @@ func (i ScheduleMap) ToScheduleMapOutputWithContext(ctx context.Context) Schedul
 	return pulumi.ToOutputWithContext(ctx, i).(ScheduleMapOutput)
 }
 
-func (i ScheduleMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Schedule] {
-	return pulumix.Output[map[string]*Schedule]{
-		OutputState: i.ToScheduleMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ScheduleOutput struct{ *pulumi.OutputState }
 
 func (ScheduleOutput) ElementType() reflect.Type {
@@ -407,12 +388,6 @@ func (o ScheduleOutput) ToScheduleOutputWithContext(ctx context.Context) Schedul
 	return o
 }
 
-func (o ScheduleOutput) ToOutput(ctx context.Context) pulumix.Output[*Schedule] {
-	return pulumix.Output[*Schedule]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The customer tenancy.
 func (o ScheduleOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Schedule) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
@@ -424,8 +399,8 @@ func (o ScheduleOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) The description of the schedule.
-func (o ScheduleOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *Schedule) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o ScheduleOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Schedule) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
@@ -439,13 +414,13 @@ func (o ScheduleOutput) Name() pulumi.StringOutput {
 }
 
 // (Updatable) Specifies supported output file format.
-func (o ScheduleOutput) OutputFileFormat() pulumi.StringOutput {
-	return o.ApplyT(func(v *Schedule) pulumi.StringOutput { return v.OutputFileFormat }).(pulumi.StringOutput)
+func (o ScheduleOutput) OutputFileFormat() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Schedule) pulumi.StringPtrOutput { return v.OutputFileFormat }).(pulumi.StringPtrOutput)
 }
 
 // The query properties.
-func (o ScheduleOutput) QueryProperties() ScheduleQueryPropertiesOutput {
-	return o.ApplyT(func(v *Schedule) ScheduleQueryPropertiesOutput { return v.QueryProperties }).(ScheduleQueryPropertiesOutput)
+func (o ScheduleOutput) QueryProperties() ScheduleQueryPropertiesPtrOutput {
+	return o.ApplyT(func(v *Schedule) ScheduleQueryPropertiesPtrOutput { return v.QueryProperties }).(ScheduleQueryPropertiesPtrOutput)
 }
 
 // (Updatable) The location where usage or cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
@@ -454,8 +429,8 @@ func (o ScheduleOutput) ResultLocation() ScheduleResultLocationOutput {
 }
 
 // The saved report id which can also be used to generate query.
-func (o ScheduleOutput) SavedReportId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Schedule) pulumi.StringOutput { return v.SavedReportId }).(pulumi.StringOutput)
+func (o ScheduleOutput) SavedReportId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Schedule) pulumi.StringPtrOutput { return v.SavedReportId }).(pulumi.StringPtrOutput)
 }
 
 // Specifies the frequency according to when the schedule will be run,  in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
@@ -464,8 +439,8 @@ func (o ScheduleOutput) ScheduleRecurrences() pulumi.StringOutput {
 }
 
 // The schedule lifecycle state.
-func (o ScheduleOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *Schedule) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o ScheduleOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Schedule) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -474,13 +449,13 @@ func (o ScheduleOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The date and time the schedule was created.
-func (o ScheduleOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Schedule) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o ScheduleOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Schedule) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time of the next job execution.
-func (o ScheduleOutput) TimeNextRun() pulumi.StringOutput {
-	return o.ApplyT(func(v *Schedule) pulumi.StringOutput { return v.TimeNextRun }).(pulumi.StringOutput)
+func (o ScheduleOutput) TimeNextRun() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Schedule) pulumi.StringPtrOutput { return v.TimeNextRun }).(pulumi.StringPtrOutput)
 }
 
 // The date and time of the first time job execution.
@@ -505,12 +480,6 @@ func (o ScheduleArrayOutput) ToScheduleArrayOutputWithContext(ctx context.Contex
 	return o
 }
 
-func (o ScheduleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Schedule] {
-	return pulumix.Output[[]*Schedule]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o ScheduleArrayOutput) Index(i pulumi.IntInput) ScheduleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *Schedule {
 		return vs[0].([]*Schedule)[vs[1].(int)]
@@ -529,12 +498,6 @@ func (o ScheduleMapOutput) ToScheduleMapOutput() ScheduleMapOutput {
 
 func (o ScheduleMapOutput) ToScheduleMapOutputWithContext(ctx context.Context) ScheduleMapOutput {
 	return o
-}
-
-func (o ScheduleMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Schedule] {
-	return pulumix.Output[map[string]*Schedule]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ScheduleMapOutput) MapIndex(k pulumi.StringInput) ScheduleOutput {

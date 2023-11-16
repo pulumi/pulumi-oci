@@ -47,106 +47,106 @@ export interface GetExadataInsightResult {
     /**
      * Compartment identifier of the Exadata insight resource
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * OPSI Enterprise Manager Bridge OCID
      */
-    readonly enterpriseManagerBridgeId: string;
+    readonly enterpriseManagerBridgeId?: string;
     /**
      * Enterprise Manager Entity Display Name
      */
-    readonly enterpriseManagerEntityDisplayName: string;
+    readonly enterpriseManagerEntityDisplayName?: string;
     /**
      * Enterprise Manager Entity Unique Identifier
      */
-    readonly enterpriseManagerEntityIdentifier: string;
+    readonly enterpriseManagerEntityIdentifier?: string;
     /**
      * Enterprise Manager Entity Name
      */
-    readonly enterpriseManagerEntityName: string;
+    readonly enterpriseManagerEntityName?: string;
     /**
      * Enterprise Manager Entity Type
      */
-    readonly enterpriseManagerEntityType: string;
+    readonly enterpriseManagerEntityType?: string;
     /**
      * Enterprise Manager Unique Identifier
      */
-    readonly enterpriseManagerIdentifier: string;
+    readonly enterpriseManagerIdentifier?: string;
     /**
      * Source of the Exadata system.
      */
-    readonly entitySource: string;
+    readonly entitySource?: string;
     /**
      * The user-friendly name for the Exadata system. The name does not have to be unique.
      */
-    readonly exadataDisplayName: string;
+    readonly exadataDisplayName?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
      */
-    readonly exadataInfraId: string;
+    readonly exadataInfraId?: string;
     /**
      * Oracle Cloud Infrastructure exadata infrastructure resource type
      */
-    readonly exadataInfraResourceType: string;
+    readonly exadataInfraResourceType?: string;
     readonly exadataInsightId: string;
     /**
      * The Exadata system name. If the Exadata systems managed by Enterprise Manager, the name is unique amongst the Exadata systems managed by the same Enterprise Manager.
      */
-    readonly exadataName: string;
+    readonly exadataName?: string;
     /**
      * Exadata rack type.
      */
-    readonly exadataRackType: string;
+    readonly exadataRackType?: string;
     /**
      * The shape of the Exadata Infrastructure.
      */
-    readonly exadataShape: string;
+    readonly exadataShape?: string;
     /**
      * Operations Insights internal representation of the the Exadata system type.
      */
-    readonly exadataType: string;
+    readonly exadataType?: string;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * Exadata insight identifier
      */
-    readonly id: string;
-    readonly isAutoSyncEnabled: boolean;
+    readonly id?: string;
+    readonly isAutoSyncEnabled?: boolean;
     /**
      * true if virtualization is used in the Exadata system
      */
-    readonly isVirtualizedExadata: boolean;
+    readonly isVirtualizedExadata?: boolean;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    readonly lifecycleDetails: string;
-    readonly memberVmClusterDetails: outputs.Opsi.GetExadataInsightMemberVmClusterDetail[];
+    readonly lifecycleDetails?: string;
+    readonly memberVmClusterDetails?: outputs.Opsi.GetExadataInsightMemberVmClusterDetail[];
     /**
      * The current state of the Exadata insight.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * Indicates the status of an Exadata insight in Operations Insights
      */
-    readonly status: string;
+    readonly status?: string;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * The time the the Exadata insight was first enabled. An RFC3339 formatted datetime string
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The time the Exadata insight was updated. An RFC3339 formatted datetime string
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific Exadata Insight resource in Oracle Cloud Infrastructure Opsi service.

@@ -16,17 +16,17 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// The current state of the SQL collection.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// A filter to return only items related to a specific target OCID.
         /// </summary>
-        public readonly string TargetId;
+        public readonly string? TargetId;
 
         [OutputConstructor]
         private GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimensionResult(
-            string state,
+            string? state,
 
-            string targetId)
+            string? targetId)
         {
             State = state;
             TargetId = targetId;

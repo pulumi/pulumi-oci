@@ -71,7 +71,7 @@ export class Peer extends pulumi.CustomResource {
     /**
      * peer alias
      */
-    public readonly alias!: pulumi.Output<string>;
+    public readonly alias!: pulumi.Output<string | undefined>;
     /**
      * Unique service identifier.
      */
@@ -79,7 +79,7 @@ export class Peer extends pulumi.CustomResource {
     /**
      * Host on which the Peer exists
      */
-    public /*out*/ readonly host!: pulumi.Output<string>;
+    public /*out*/ readonly host!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) OCPU allocation parameter
      */
@@ -87,7 +87,7 @@ export class Peer extends pulumi.CustomResource {
     /**
      * peer identifier
      */
-    public /*out*/ readonly peerKey!: pulumi.Output<string>;
+    public /*out*/ readonly peerKey!: pulumi.Output<string | undefined>;
     /**
      * Peer role
      *
@@ -99,7 +99,7 @@ export class Peer extends pulumi.CustomResource {
     /**
      * The current state of the peer.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
 
     /**
      * Create a Peer resource with the given unique name, arguments, and options.

@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud Exadata infrastructure.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Total unallocated autonomous data storage in the Cloud Autonomous VM Cluster in TBs.
         /// </summary>
-        public readonly double UnAllocatedAdbStorageInTbs;
+        public readonly double? UnAllocatedAdbStorageInTbs;
 
         [OutputConstructor]
         private GetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmClusterResult(
-            string id,
+            string? id,
 
-            double unAllocatedAdbStorageInTbs)
+            double? unAllocatedAdbStorageInTbs)
         {
             Id = id;
             UnAllocatedAdbStorageInTbs = unAllocatedAdbStorageInTbs;

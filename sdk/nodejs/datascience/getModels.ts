@@ -102,7 +102,7 @@ export interface GetModelsResult {
     /**
      * The list of models.
      */
-    readonly models: outputs.DataScience.GetModelsModel[];
+    readonly models?: outputs.DataScience.GetModelsModel[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project associated with the model.
      */

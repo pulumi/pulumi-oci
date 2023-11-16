@@ -14,13 +14,13 @@ namespace Pulumi.Oci.Core.Outputs
     public sealed class GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionResult
     {
         public readonly ImmutableArray<string> AllowedValues;
-        public readonly string DefaultValue;
+        public readonly string? DefaultValue;
 
         [OutputConstructor]
         private GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOptionResult(
             ImmutableArray<string> allowedValues,
 
-            string defaultValue)
+            string? defaultValue)
         {
             AllowedValues = allowedValues;
             DefaultValue = defaultValue;

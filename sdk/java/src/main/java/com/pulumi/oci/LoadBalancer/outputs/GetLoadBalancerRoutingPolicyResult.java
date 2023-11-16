@@ -8,6 +8,8 @@ import com.pulumi.oci.LoadBalancer.outputs.GetLoadBalancerRoutingPolicyRule;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetLoadBalancerRoutingPolicyResult {
@@ -15,32 +17,32 @@ public final class GetLoadBalancerRoutingPolicyResult {
      * @return The version of the language in which `condition` of `rules` are composed.
      * 
      */
-    private String conditionLanguageVersion;
-    private String id;
+    private @Nullable String conditionLanguageVersion;
+    private @Nullable String id;
     private String loadBalancerId;
     /**
      * @return A unique name for the routing policy rule. Avoid entering confidential information.
      * 
      */
-    private String name;
+    private @Nullable String name;
     private String routingPolicyName;
     /**
      * @return The ordered list of routing rules.
      * 
      */
-    private List<GetLoadBalancerRoutingPolicyRule> rules;
-    private String state;
+    private @Nullable List<GetLoadBalancerRoutingPolicyRule> rules;
+    private @Nullable String state;
 
     private GetLoadBalancerRoutingPolicyResult() {}
     /**
      * @return The version of the language in which `condition` of `rules` are composed.
      * 
      */
-    public String conditionLanguageVersion() {
-        return this.conditionLanguageVersion;
+    public Optional<String> conditionLanguageVersion() {
+        return Optional.ofNullable(this.conditionLanguageVersion);
     }
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String loadBalancerId() {
         return this.loadBalancerId;
@@ -49,8 +51,8 @@ public final class GetLoadBalancerRoutingPolicyResult {
      * @return A unique name for the routing policy rule. Avoid entering confidential information.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     public String routingPolicyName() {
         return this.routingPolicyName;
@@ -60,10 +62,10 @@ public final class GetLoadBalancerRoutingPolicyResult {
      * 
      */
     public List<GetLoadBalancerRoutingPolicyRule> rules() {
-        return this.rules;
+        return this.rules == null ? List.of() : this.rules;
     }
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
 
     public static Builder builder() {
@@ -75,13 +77,13 @@ public final class GetLoadBalancerRoutingPolicyResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String conditionLanguageVersion;
-        private String id;
+        private @Nullable String conditionLanguageVersion;
+        private @Nullable String id;
         private String loadBalancerId;
-        private String name;
+        private @Nullable String name;
         private String routingPolicyName;
-        private List<GetLoadBalancerRoutingPolicyRule> rules;
-        private String state;
+        private @Nullable List<GetLoadBalancerRoutingPolicyRule> rules;
+        private @Nullable String state;
         public Builder() {}
         public Builder(GetLoadBalancerRoutingPolicyResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -95,13 +97,13 @@ public final class GetLoadBalancerRoutingPolicyResult {
         }
 
         @CustomType.Setter
-        public Builder conditionLanguageVersion(String conditionLanguageVersion) {
-            this.conditionLanguageVersion = Objects.requireNonNull(conditionLanguageVersion);
+        public Builder conditionLanguageVersion(@Nullable String conditionLanguageVersion) {
+            this.conditionLanguageVersion = conditionLanguageVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -110,8 +112,8 @@ public final class GetLoadBalancerRoutingPolicyResult {
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
@@ -120,16 +122,16 @@ public final class GetLoadBalancerRoutingPolicyResult {
             return this;
         }
         @CustomType.Setter
-        public Builder rules(List<GetLoadBalancerRoutingPolicyRule> rules) {
-            this.rules = Objects.requireNonNull(rules);
+        public Builder rules(@Nullable List<GetLoadBalancerRoutingPolicyRule> rules) {
+            this.rules = rules;
             return this;
         }
         public Builder rules(GetLoadBalancerRoutingPolicyRule... rules) {
             return rules(List.of(rules));
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         public GetLoadBalancerRoutingPolicyResult build() {

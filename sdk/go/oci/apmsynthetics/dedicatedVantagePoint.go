@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Dedicated Vantage Point resource in Oracle Cloud Infrastructure Apm Synthetics service.
@@ -83,18 +82,18 @@ type DedicatedVantagePoint struct {
 	// Details of the monitor count per state. Example: `{ "total" : 5, "enabled" : 3 , "disabled" : 2, "invalid" : 0 }`
 	MonitorStatusCountMaps DedicatedVantagePointMonitorStatusCountMapArrayOutput `pulumi:"monitorStatusCountMaps"`
 	// Unique permanent name of the dedicated vantage point. This is the same as the displayName.
-	Name pulumi.StringOutput `pulumi:"name"`
+	Name pulumi.StringPtrOutput `pulumi:"name"`
 	// (Updatable) Name of the region.
 	Region pulumi.StringOutput `pulumi:"region"`
 	// (Updatable) Status of the dedicated vantage point.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	Status pulumi.StringOutput `pulumi:"status"`
+	Status pulumi.StringPtrOutput `pulumi:"status"`
 	// The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewDedicatedVantagePoint registers a new resource with the given unique name, arguments, and options.
@@ -262,12 +261,6 @@ func (i *DedicatedVantagePoint) ToDedicatedVantagePointOutputWithContext(ctx con
 	return pulumi.ToOutputWithContext(ctx, i).(DedicatedVantagePointOutput)
 }
 
-func (i *DedicatedVantagePoint) ToOutput(ctx context.Context) pulumix.Output[*DedicatedVantagePoint] {
-	return pulumix.Output[*DedicatedVantagePoint]{
-		OutputState: i.ToDedicatedVantagePointOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DedicatedVantagePointArrayInput is an input type that accepts DedicatedVantagePointArray and DedicatedVantagePointArrayOutput values.
 // You can construct a concrete instance of `DedicatedVantagePointArrayInput` via:
 //
@@ -291,12 +284,6 @@ func (i DedicatedVantagePointArray) ToDedicatedVantagePointArrayOutput() Dedicat
 
 func (i DedicatedVantagePointArray) ToDedicatedVantagePointArrayOutputWithContext(ctx context.Context) DedicatedVantagePointArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DedicatedVantagePointArrayOutput)
-}
-
-func (i DedicatedVantagePointArray) ToOutput(ctx context.Context) pulumix.Output[[]*DedicatedVantagePoint] {
-	return pulumix.Output[[]*DedicatedVantagePoint]{
-		OutputState: i.ToDedicatedVantagePointArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DedicatedVantagePointMapInput is an input type that accepts DedicatedVantagePointMap and DedicatedVantagePointMapOutput values.
@@ -324,12 +311,6 @@ func (i DedicatedVantagePointMap) ToDedicatedVantagePointMapOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(DedicatedVantagePointMapOutput)
 }
 
-func (i DedicatedVantagePointMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DedicatedVantagePoint] {
-	return pulumix.Output[map[string]*DedicatedVantagePoint]{
-		OutputState: i.ToDedicatedVantagePointMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DedicatedVantagePointOutput struct{ *pulumi.OutputState }
 
 func (DedicatedVantagePointOutput) ElementType() reflect.Type {
@@ -342,12 +323,6 @@ func (o DedicatedVantagePointOutput) ToDedicatedVantagePointOutput() DedicatedVa
 
 func (o DedicatedVantagePointOutput) ToDedicatedVantagePointOutputWithContext(ctx context.Context) DedicatedVantagePointOutput {
 	return o
-}
-
-func (o DedicatedVantagePointOutput) ToOutput(ctx context.Context) pulumix.Output[*DedicatedVantagePoint] {
-	return pulumix.Output[*DedicatedVantagePoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The APM domain ID the request is intended for.
@@ -383,8 +358,8 @@ func (o DedicatedVantagePointOutput) MonitorStatusCountMaps() DedicatedVantagePo
 }
 
 // Unique permanent name of the dedicated vantage point. This is the same as the displayName.
-func (o DedicatedVantagePointOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v *DedicatedVantagePoint) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
+func (o DedicatedVantagePointOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DedicatedVantagePoint) pulumi.StringPtrOutput { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Name of the region.
@@ -396,18 +371,18 @@ func (o DedicatedVantagePointOutput) Region() pulumi.StringOutput {
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o DedicatedVantagePointOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v *DedicatedVantagePoint) pulumi.StringOutput { return v.Status }).(pulumi.StringOutput)
+func (o DedicatedVantagePointOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DedicatedVantagePoint) pulumi.StringPtrOutput { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
-func (o DedicatedVantagePointOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *DedicatedVantagePoint) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o DedicatedVantagePointOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DedicatedVantagePoint) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
-func (o DedicatedVantagePointOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *DedicatedVantagePoint) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o DedicatedVantagePointOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DedicatedVantagePoint) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type DedicatedVantagePointArrayOutput struct{ *pulumi.OutputState }
@@ -422,12 +397,6 @@ func (o DedicatedVantagePointArrayOutput) ToDedicatedVantagePointArrayOutput() D
 
 func (o DedicatedVantagePointArrayOutput) ToDedicatedVantagePointArrayOutputWithContext(ctx context.Context) DedicatedVantagePointArrayOutput {
 	return o
-}
-
-func (o DedicatedVantagePointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DedicatedVantagePoint] {
-	return pulumix.Output[[]*DedicatedVantagePoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DedicatedVantagePointArrayOutput) Index(i pulumi.IntInput) DedicatedVantagePointOutput {
@@ -448,12 +417,6 @@ func (o DedicatedVantagePointMapOutput) ToDedicatedVantagePointMapOutput() Dedic
 
 func (o DedicatedVantagePointMapOutput) ToDedicatedVantagePointMapOutputWithContext(ctx context.Context) DedicatedVantagePointMapOutput {
 	return o
-}
-
-func (o DedicatedVantagePointMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DedicatedVantagePoint] {
-	return pulumix.Output[map[string]*DedicatedVantagePoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DedicatedVantagePointMapOutput) MapIndex(k pulumi.StringInput) DedicatedVantagePointOutput {

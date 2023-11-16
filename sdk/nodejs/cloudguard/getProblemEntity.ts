@@ -47,11 +47,11 @@ export interface GetProblemEntityResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * List of problem entities summaries related to a data source.
      */
-    readonly items: outputs.CloudGuard.GetProblemEntityItem[];
+    readonly items?: outputs.CloudGuard.GetProblemEntityItem[];
     /**
      * Attached problem id
      */

@@ -16,23 +16,23 @@ namespace Pulumi.Oci.Waas.Outputs
         /// <summary>
         /// The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
         /// </summary>
-        public readonly string Action;
+        public readonly string? Action;
         /// <summary>
         /// A header field name that conforms to RFC 7230.  Example: `example_header_name`
         /// </summary>
-        public readonly string Header;
+        public readonly string? Header;
         /// <summary>
         /// The value of the header.
         /// </summary>
-        public readonly string Value;
+        public readonly string? Value;
 
         [OutputConstructor]
         private GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulationResult(
-            string action,
+            string? action,
 
-            string header,
+            string? header,
 
-            string value)
+            string? value)
         {
             Action = action;
             Header = header;

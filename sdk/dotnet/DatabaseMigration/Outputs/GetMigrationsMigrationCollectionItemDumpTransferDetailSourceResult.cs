@@ -16,23 +16,23 @@ namespace Pulumi.Oci.DatabaseMigration.Outputs
         /// <summary>
         /// Type of dump transfer to use during migration in source or target host. Default kind is CURL
         /// </summary>
-        public readonly string Kind;
+        public readonly string? Kind;
         /// <summary>
         /// Path to the Oracle Cloud Infrastructure CLI installation in the node.
         /// </summary>
-        public readonly string OciHome;
+        public readonly string? OciHome;
         /// <summary>
         /// Directory path to Oracle Cloud Infrastructure SSL wallet location on Db server node.
         /// </summary>
-        public readonly string WalletLocation;
+        public readonly string? WalletLocation;
 
         [OutputConstructor]
         private GetMigrationsMigrationCollectionItemDumpTransferDetailSourceResult(
-            string kind,
+            string? kind,
 
-            string ociHome,
+            string? ociHome,
 
-            string walletLocation)
+            string? walletLocation)
         {
             Kind = kind;
             OciHome = ociHome;

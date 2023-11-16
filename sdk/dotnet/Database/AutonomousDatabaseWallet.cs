@@ -51,7 +51,7 @@ namespace Pulumi.Oci.Database
         /// content of the downloaded zipped wallet for the Autonomous Database. If `base64_encode_content` is set to `true`, then this content will be base64 encoded.
         /// </summary>
         [Output("content")]
-        public Output<string> Content { get; private set; } = null!;
+        public Output<string?> Content { get; private set; } = null!;
 
         /// <summary>
         /// The type of wallet to generate.

@@ -10,6 +10,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetCloudAutonomousVmClusterResourceUsageResult {
@@ -17,132 +19,132 @@ public final class GetCloudAutonomousVmClusterResourceUsageResult {
      * @return The data disk group size allocated for Autonomous Databases, in TBs.
      * 
      */
-    private Double autonomousDataStorageSizeInTbs;
+    private @Nullable Double autonomousDataStorageSizeInTbs;
     /**
      * @return List of Autonomous VM resource usages.
      * 
      */
-    private List<GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsage> autonomousVmResourceUsages;
+    private @Nullable List<GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsage> autonomousVmResourceUsages;
     /**
      * @return The data disk group size available for Autonomous Databases, in TBs.
      * 
      */
-    private Double availableAutonomousDataStorageSizeInTbs;
+    private @Nullable Double availableAutonomousDataStorageSizeInTbs;
     /**
      * @return The number of CPU cores available.
      * 
      */
-    private Double availableCpus;
+    private @Nullable Double availableCpus;
     private String cloudAutonomousVmClusterId;
     /**
      * @return The local node storage allocated in GBs.
      * 
      */
-    private Integer dbNodeStorageSizeInGbs;
+    private @Nullable Integer dbNodeStorageSizeInGbs;
     /**
      * @return The user-friendly name for the Autonomous VM cluster. The name does not need to be unique.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Total exadata storage allocated for the Autonomous VM Cluster. DATA + RECOVERY + SPARSE + any overhead in TBs.
      * 
      */
-    private Double exadataStorageInTbs;
+    private @Nullable Double exadataStorageInTbs;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The amount of memory (in GBs) to be enabled per each CPU core.
      * 
      */
-    private Integer memoryPerOracleComputeUnitInGbs;
+    private @Nullable Integer memoryPerOracleComputeUnitInGbs;
     /**
      * @return The memory allocated in GBs.
      * 
      */
-    private Integer memorySizeInGbs;
+    private @Nullable Integer memorySizeInGbs;
     /**
      * @return The number of non-provisionable Autonomous Container Databases in an Autonomous VM Cluster.
      * 
      */
-    private Integer nonProvisionableAutonomousContainerDatabases;
+    private @Nullable Integer nonProvisionableAutonomousContainerDatabases;
     /**
      * @return The number of provisionable Autonomous Container Databases in an Autonomous VM Cluster.
      * 
      */
-    private Integer provisionableAutonomousContainerDatabases;
+    private @Nullable Integer provisionableAutonomousContainerDatabases;
     /**
      * @return The number of provisioned Autonomous Container Databases in an Autonomous VM Cluster.
      * 
      */
-    private Integer provisionedAutonomousContainerDatabases;
+    private @Nullable Integer provisionedAutonomousContainerDatabases;
     /**
      * @return The number of CPUs provisioned in an Autonomous VM Cluster.
      * 
      */
-    private Double provisionedCpus;
+    private @Nullable Double provisionedCpus;
     /**
      * @return CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
      * 
      */
-    private Double reclaimableCpus;
+    private @Nullable Double reclaimableCpus;
     /**
      * @return The number of CPUs reserved in an Autonomous VM Cluster.
      * 
      */
-    private Double reservedCpus;
+    private @Nullable Double reservedCpus;
     /**
      * @return The total number of Autonomous Container Databases that can be created.
      * 
      */
-    private Integer totalContainerDatabases;
+    private @Nullable Integer totalContainerDatabases;
     /**
      * @return The number of CPU cores enabled on the Cloud Autonomous VM cluster.
      * 
      */
-    private Double totalCpus;
+    private @Nullable Double totalCpus;
     /**
      * @return The data disk group size used for Autonomous Databases, in TBs.
      * 
      */
-    private Double usedAutonomousDataStorageSizeInTbs;
+    private @Nullable Double usedAutonomousDataStorageSizeInTbs;
     /**
      * @return The number of CPU cores alloted to the Autonomous Container Databases in an Cloud Autonomous VM cluster.
      * 
      */
-    private Double usedCpus;
+    private @Nullable Double usedCpus;
 
     private GetCloudAutonomousVmClusterResourceUsageResult() {}
     /**
      * @return The data disk group size allocated for Autonomous Databases, in TBs.
      * 
      */
-    public Double autonomousDataStorageSizeInTbs() {
-        return this.autonomousDataStorageSizeInTbs;
+    public Optional<Double> autonomousDataStorageSizeInTbs() {
+        return Optional.ofNullable(this.autonomousDataStorageSizeInTbs);
     }
     /**
      * @return List of Autonomous VM resource usages.
      * 
      */
     public List<GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsage> autonomousVmResourceUsages() {
-        return this.autonomousVmResourceUsages;
+        return this.autonomousVmResourceUsages == null ? List.of() : this.autonomousVmResourceUsages;
     }
     /**
      * @return The data disk group size available for Autonomous Databases, in TBs.
      * 
      */
-    public Double availableAutonomousDataStorageSizeInTbs() {
-        return this.availableAutonomousDataStorageSizeInTbs;
+    public Optional<Double> availableAutonomousDataStorageSizeInTbs() {
+        return Optional.ofNullable(this.availableAutonomousDataStorageSizeInTbs);
     }
     /**
      * @return The number of CPU cores available.
      * 
      */
-    public Double availableCpus() {
-        return this.availableCpus;
+    public Optional<Double> availableCpus() {
+        return Optional.ofNullable(this.availableCpus);
     }
     public String cloudAutonomousVmClusterId() {
         return this.cloudAutonomousVmClusterId;
@@ -151,113 +153,113 @@ public final class GetCloudAutonomousVmClusterResourceUsageResult {
      * @return The local node storage allocated in GBs.
      * 
      */
-    public Integer dbNodeStorageSizeInGbs() {
-        return this.dbNodeStorageSizeInGbs;
+    public Optional<Integer> dbNodeStorageSizeInGbs() {
+        return Optional.ofNullable(this.dbNodeStorageSizeInGbs);
     }
     /**
      * @return The user-friendly name for the Autonomous VM cluster. The name does not need to be unique.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Total exadata storage allocated for the Autonomous VM Cluster. DATA + RECOVERY + SPARSE + any overhead in TBs.
      * 
      */
-    public Double exadataStorageInTbs() {
-        return this.exadataStorageInTbs;
+    public Optional<Double> exadataStorageInTbs() {
+        return Optional.ofNullable(this.exadataStorageInTbs);
     }
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The amount of memory (in GBs) to be enabled per each CPU core.
      * 
      */
-    public Integer memoryPerOracleComputeUnitInGbs() {
-        return this.memoryPerOracleComputeUnitInGbs;
+    public Optional<Integer> memoryPerOracleComputeUnitInGbs() {
+        return Optional.ofNullable(this.memoryPerOracleComputeUnitInGbs);
     }
     /**
      * @return The memory allocated in GBs.
      * 
      */
-    public Integer memorySizeInGbs() {
-        return this.memorySizeInGbs;
+    public Optional<Integer> memorySizeInGbs() {
+        return Optional.ofNullable(this.memorySizeInGbs);
     }
     /**
      * @return The number of non-provisionable Autonomous Container Databases in an Autonomous VM Cluster.
      * 
      */
-    public Integer nonProvisionableAutonomousContainerDatabases() {
-        return this.nonProvisionableAutonomousContainerDatabases;
+    public Optional<Integer> nonProvisionableAutonomousContainerDatabases() {
+        return Optional.ofNullable(this.nonProvisionableAutonomousContainerDatabases);
     }
     /**
      * @return The number of provisionable Autonomous Container Databases in an Autonomous VM Cluster.
      * 
      */
-    public Integer provisionableAutonomousContainerDatabases() {
-        return this.provisionableAutonomousContainerDatabases;
+    public Optional<Integer> provisionableAutonomousContainerDatabases() {
+        return Optional.ofNullable(this.provisionableAutonomousContainerDatabases);
     }
     /**
      * @return The number of provisioned Autonomous Container Databases in an Autonomous VM Cluster.
      * 
      */
-    public Integer provisionedAutonomousContainerDatabases() {
-        return this.provisionedAutonomousContainerDatabases;
+    public Optional<Integer> provisionedAutonomousContainerDatabases() {
+        return Optional.ofNullable(this.provisionedAutonomousContainerDatabases);
     }
     /**
      * @return The number of CPUs provisioned in an Autonomous VM Cluster.
      * 
      */
-    public Double provisionedCpus() {
-        return this.provisionedCpus;
+    public Optional<Double> provisionedCpus() {
+        return Optional.ofNullable(this.provisionedCpus);
     }
     /**
      * @return CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
      * 
      */
-    public Double reclaimableCpus() {
-        return this.reclaimableCpus;
+    public Optional<Double> reclaimableCpus() {
+        return Optional.ofNullable(this.reclaimableCpus);
     }
     /**
      * @return The number of CPUs reserved in an Autonomous VM Cluster.
      * 
      */
-    public Double reservedCpus() {
-        return this.reservedCpus;
+    public Optional<Double> reservedCpus() {
+        return Optional.ofNullable(this.reservedCpus);
     }
     /**
      * @return The total number of Autonomous Container Databases that can be created.
      * 
      */
-    public Integer totalContainerDatabases() {
-        return this.totalContainerDatabases;
+    public Optional<Integer> totalContainerDatabases() {
+        return Optional.ofNullable(this.totalContainerDatabases);
     }
     /**
      * @return The number of CPU cores enabled on the Cloud Autonomous VM cluster.
      * 
      */
-    public Double totalCpus() {
-        return this.totalCpus;
+    public Optional<Double> totalCpus() {
+        return Optional.ofNullable(this.totalCpus);
     }
     /**
      * @return The data disk group size used for Autonomous Databases, in TBs.
      * 
      */
-    public Double usedAutonomousDataStorageSizeInTbs() {
-        return this.usedAutonomousDataStorageSizeInTbs;
+    public Optional<Double> usedAutonomousDataStorageSizeInTbs() {
+        return Optional.ofNullable(this.usedAutonomousDataStorageSizeInTbs);
     }
     /**
      * @return The number of CPU cores alloted to the Autonomous Container Databases in an Cloud Autonomous VM cluster.
      * 
      */
-    public Double usedCpus() {
-        return this.usedCpus;
+    public Optional<Double> usedCpus() {
+        return Optional.ofNullable(this.usedCpus);
     }
 
     public static Builder builder() {
@@ -269,27 +271,27 @@ public final class GetCloudAutonomousVmClusterResourceUsageResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Double autonomousDataStorageSizeInTbs;
-        private List<GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsage> autonomousVmResourceUsages;
-        private Double availableAutonomousDataStorageSizeInTbs;
-        private Double availableCpus;
+        private @Nullable Double autonomousDataStorageSizeInTbs;
+        private @Nullable List<GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsage> autonomousVmResourceUsages;
+        private @Nullable Double availableAutonomousDataStorageSizeInTbs;
+        private @Nullable Double availableCpus;
         private String cloudAutonomousVmClusterId;
-        private Integer dbNodeStorageSizeInGbs;
-        private String displayName;
-        private Double exadataStorageInTbs;
-        private String id;
-        private Integer memoryPerOracleComputeUnitInGbs;
-        private Integer memorySizeInGbs;
-        private Integer nonProvisionableAutonomousContainerDatabases;
-        private Integer provisionableAutonomousContainerDatabases;
-        private Integer provisionedAutonomousContainerDatabases;
-        private Double provisionedCpus;
-        private Double reclaimableCpus;
-        private Double reservedCpus;
-        private Integer totalContainerDatabases;
-        private Double totalCpus;
-        private Double usedAutonomousDataStorageSizeInTbs;
-        private Double usedCpus;
+        private @Nullable Integer dbNodeStorageSizeInGbs;
+        private @Nullable String displayName;
+        private @Nullable Double exadataStorageInTbs;
+        private @Nullable String id;
+        private @Nullable Integer memoryPerOracleComputeUnitInGbs;
+        private @Nullable Integer memorySizeInGbs;
+        private @Nullable Integer nonProvisionableAutonomousContainerDatabases;
+        private @Nullable Integer provisionableAutonomousContainerDatabases;
+        private @Nullable Integer provisionedAutonomousContainerDatabases;
+        private @Nullable Double provisionedCpus;
+        private @Nullable Double reclaimableCpus;
+        private @Nullable Double reservedCpus;
+        private @Nullable Integer totalContainerDatabases;
+        private @Nullable Double totalCpus;
+        private @Nullable Double usedAutonomousDataStorageSizeInTbs;
+        private @Nullable Double usedCpus;
         public Builder() {}
         public Builder(GetCloudAutonomousVmClusterResourceUsageResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -317,26 +319,26 @@ public final class GetCloudAutonomousVmClusterResourceUsageResult {
         }
 
         @CustomType.Setter
-        public Builder autonomousDataStorageSizeInTbs(Double autonomousDataStorageSizeInTbs) {
-            this.autonomousDataStorageSizeInTbs = Objects.requireNonNull(autonomousDataStorageSizeInTbs);
+        public Builder autonomousDataStorageSizeInTbs(@Nullable Double autonomousDataStorageSizeInTbs) {
+            this.autonomousDataStorageSizeInTbs = autonomousDataStorageSizeInTbs;
             return this;
         }
         @CustomType.Setter
-        public Builder autonomousVmResourceUsages(List<GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsage> autonomousVmResourceUsages) {
-            this.autonomousVmResourceUsages = Objects.requireNonNull(autonomousVmResourceUsages);
+        public Builder autonomousVmResourceUsages(@Nullable List<GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsage> autonomousVmResourceUsages) {
+            this.autonomousVmResourceUsages = autonomousVmResourceUsages;
             return this;
         }
         public Builder autonomousVmResourceUsages(GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsage... autonomousVmResourceUsages) {
             return autonomousVmResourceUsages(List.of(autonomousVmResourceUsages));
         }
         @CustomType.Setter
-        public Builder availableAutonomousDataStorageSizeInTbs(Double availableAutonomousDataStorageSizeInTbs) {
-            this.availableAutonomousDataStorageSizeInTbs = Objects.requireNonNull(availableAutonomousDataStorageSizeInTbs);
+        public Builder availableAutonomousDataStorageSizeInTbs(@Nullable Double availableAutonomousDataStorageSizeInTbs) {
+            this.availableAutonomousDataStorageSizeInTbs = availableAutonomousDataStorageSizeInTbs;
             return this;
         }
         @CustomType.Setter
-        public Builder availableCpus(Double availableCpus) {
-            this.availableCpus = Objects.requireNonNull(availableCpus);
+        public Builder availableCpus(@Nullable Double availableCpus) {
+            this.availableCpus = availableCpus;
             return this;
         }
         @CustomType.Setter
@@ -345,83 +347,83 @@ public final class GetCloudAutonomousVmClusterResourceUsageResult {
             return this;
         }
         @CustomType.Setter
-        public Builder dbNodeStorageSizeInGbs(Integer dbNodeStorageSizeInGbs) {
-            this.dbNodeStorageSizeInGbs = Objects.requireNonNull(dbNodeStorageSizeInGbs);
+        public Builder dbNodeStorageSizeInGbs(@Nullable Integer dbNodeStorageSizeInGbs) {
+            this.dbNodeStorageSizeInGbs = dbNodeStorageSizeInGbs;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder exadataStorageInTbs(Double exadataStorageInTbs) {
-            this.exadataStorageInTbs = Objects.requireNonNull(exadataStorageInTbs);
+        public Builder exadataStorageInTbs(@Nullable Double exadataStorageInTbs) {
+            this.exadataStorageInTbs = exadataStorageInTbs;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder memoryPerOracleComputeUnitInGbs(Integer memoryPerOracleComputeUnitInGbs) {
-            this.memoryPerOracleComputeUnitInGbs = Objects.requireNonNull(memoryPerOracleComputeUnitInGbs);
+        public Builder memoryPerOracleComputeUnitInGbs(@Nullable Integer memoryPerOracleComputeUnitInGbs) {
+            this.memoryPerOracleComputeUnitInGbs = memoryPerOracleComputeUnitInGbs;
             return this;
         }
         @CustomType.Setter
-        public Builder memorySizeInGbs(Integer memorySizeInGbs) {
-            this.memorySizeInGbs = Objects.requireNonNull(memorySizeInGbs);
+        public Builder memorySizeInGbs(@Nullable Integer memorySizeInGbs) {
+            this.memorySizeInGbs = memorySizeInGbs;
             return this;
         }
         @CustomType.Setter
-        public Builder nonProvisionableAutonomousContainerDatabases(Integer nonProvisionableAutonomousContainerDatabases) {
-            this.nonProvisionableAutonomousContainerDatabases = Objects.requireNonNull(nonProvisionableAutonomousContainerDatabases);
+        public Builder nonProvisionableAutonomousContainerDatabases(@Nullable Integer nonProvisionableAutonomousContainerDatabases) {
+            this.nonProvisionableAutonomousContainerDatabases = nonProvisionableAutonomousContainerDatabases;
             return this;
         }
         @CustomType.Setter
-        public Builder provisionableAutonomousContainerDatabases(Integer provisionableAutonomousContainerDatabases) {
-            this.provisionableAutonomousContainerDatabases = Objects.requireNonNull(provisionableAutonomousContainerDatabases);
+        public Builder provisionableAutonomousContainerDatabases(@Nullable Integer provisionableAutonomousContainerDatabases) {
+            this.provisionableAutonomousContainerDatabases = provisionableAutonomousContainerDatabases;
             return this;
         }
         @CustomType.Setter
-        public Builder provisionedAutonomousContainerDatabases(Integer provisionedAutonomousContainerDatabases) {
-            this.provisionedAutonomousContainerDatabases = Objects.requireNonNull(provisionedAutonomousContainerDatabases);
+        public Builder provisionedAutonomousContainerDatabases(@Nullable Integer provisionedAutonomousContainerDatabases) {
+            this.provisionedAutonomousContainerDatabases = provisionedAutonomousContainerDatabases;
             return this;
         }
         @CustomType.Setter
-        public Builder provisionedCpus(Double provisionedCpus) {
-            this.provisionedCpus = Objects.requireNonNull(provisionedCpus);
+        public Builder provisionedCpus(@Nullable Double provisionedCpus) {
+            this.provisionedCpus = provisionedCpus;
             return this;
         }
         @CustomType.Setter
-        public Builder reclaimableCpus(Double reclaimableCpus) {
-            this.reclaimableCpus = Objects.requireNonNull(reclaimableCpus);
+        public Builder reclaimableCpus(@Nullable Double reclaimableCpus) {
+            this.reclaimableCpus = reclaimableCpus;
             return this;
         }
         @CustomType.Setter
-        public Builder reservedCpus(Double reservedCpus) {
-            this.reservedCpus = Objects.requireNonNull(reservedCpus);
+        public Builder reservedCpus(@Nullable Double reservedCpus) {
+            this.reservedCpus = reservedCpus;
             return this;
         }
         @CustomType.Setter
-        public Builder totalContainerDatabases(Integer totalContainerDatabases) {
-            this.totalContainerDatabases = Objects.requireNonNull(totalContainerDatabases);
+        public Builder totalContainerDatabases(@Nullable Integer totalContainerDatabases) {
+            this.totalContainerDatabases = totalContainerDatabases;
             return this;
         }
         @CustomType.Setter
-        public Builder totalCpus(Double totalCpus) {
-            this.totalCpus = Objects.requireNonNull(totalCpus);
+        public Builder totalCpus(@Nullable Double totalCpus) {
+            this.totalCpus = totalCpus;
             return this;
         }
         @CustomType.Setter
-        public Builder usedAutonomousDataStorageSizeInTbs(Double usedAutonomousDataStorageSizeInTbs) {
-            this.usedAutonomousDataStorageSizeInTbs = Objects.requireNonNull(usedAutonomousDataStorageSizeInTbs);
+        public Builder usedAutonomousDataStorageSizeInTbs(@Nullable Double usedAutonomousDataStorageSizeInTbs) {
+            this.usedAutonomousDataStorageSizeInTbs = usedAutonomousDataStorageSizeInTbs;
             return this;
         }
         @CustomType.Setter
-        public Builder usedCpus(Double usedCpus) {
-            this.usedCpus = Objects.requireNonNull(usedCpus);
+        public Builder usedCpus(@Nullable Double usedCpus) {
+            this.usedCpus = usedCpus;
             return this;
         }
         public GetCloudAutonomousVmClusterResourceUsageResult build() {

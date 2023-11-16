@@ -29,23 +29,12 @@ class FleetInventoryLogArgs:
     def __init__(__self__, *,
                  log_group_id: pulumi.Input[str],
                  log_id: pulumi.Input[str]):
-        """
-        :param pulumi.Input[str] log_group_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
-        :param pulumi.Input[str] log_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         pulumi.set(__self__, "log_group_id", log_group_id)
         pulumi.set(__self__, "log_id", log_id)
 
     @property
     @pulumi.getter(name="logGroupId")
     def log_group_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
-        """
         return pulumi.get(self, "log_group_id")
 
     @log_group_id.setter
@@ -55,13 +44,6 @@ class FleetInventoryLogArgs:
     @property
     @pulumi.getter(name="logId")
     def log_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "log_id")
 
     @log_id.setter
@@ -74,23 +56,12 @@ class FleetOperationLogArgs:
     def __init__(__self__, *,
                  log_group_id: pulumi.Input[str],
                  log_id: pulumi.Input[str]):
-        """
-        :param pulumi.Input[str] log_group_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
-        :param pulumi.Input[str] log_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         pulumi.set(__self__, "log_group_id", log_group_id)
         pulumi.set(__self__, "log_id", log_id)
 
     @property
     @pulumi.getter(name="logGroupId")
     def log_group_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
-        """
         return pulumi.get(self, "log_group_id")
 
     @log_group_id.setter
@@ -100,13 +71,6 @@ class FleetOperationLogArgs:
     @property
     @pulumi.getter(name="logId")
     def log_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "log_id")
 
     @log_id.setter
@@ -393,9 +357,6 @@ class GetInstallationSitesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The name of the operating system as provided by the Java system property os.name.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -404,9 +365,6 @@ class GetInstallationSitesFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The name of the operating system as provided by the Java system property os.name.
-        """
         return pulumi.get(self, "name")
 
     @name.setter

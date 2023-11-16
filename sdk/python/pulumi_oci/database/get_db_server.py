@@ -92,50 +92,32 @@ class GetDbServerResult:
 
     @property
     @pulumi.getter(name="autonomousVirtualMachineIds")
-    def autonomous_virtual_machine_ids(self) -> Sequence[str]:
-        """
-        The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Virtual Machines associated with the Db server.
-        """
+    def autonomous_virtual_machine_ids(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "autonomous_virtual_machine_ids")
 
     @property
     @pulumi.getter(name="autonomousVmClusterIds")
-    def autonomous_vm_cluster_ids(self) -> Sequence[str]:
-        """
-        The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous VM Clusters associated with the Db server.
-        """
+    def autonomous_vm_cluster_ids(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "autonomous_vm_cluster_ids")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="cpuCoreCount")
-    def cpu_core_count(self) -> int:
-        """
-        The number of CPU cores enabled on the Db server.
-        """
+    def cpu_core_count(self) -> Optional[int]:
         return pulumi.get(self, "cpu_core_count")
 
     @property
     @pulumi.getter(name="dbNodeIds")
-    def db_node_ids(self) -> Sequence[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db nodes associated with the Db server.
-        """
+    def db_node_ids(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "db_node_ids")
 
     @property
     @pulumi.getter(name="dbNodeStorageSizeInGbs")
-    def db_node_storage_size_in_gbs(self) -> int:
-        """
-        The allocated local node storage in GBs on the Db server.
-        """
+    def db_node_storage_size_in_gbs(self) -> Optional[int]:
         return pulumi.get(self, "db_node_storage_size_in_gbs")
 
     @property
@@ -145,47 +127,32 @@ class GetDbServerResult:
 
     @property
     @pulumi.getter(name="dbServerPatchingDetails")
-    def db_server_patching_details(self) -> Sequence['outputs.GetDbServerDbServerPatchingDetailResult']:
-        """
-        The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
-        """
+    def db_server_patching_details(self) -> Optional[Sequence['outputs.GetDbServerDbServerPatchingDetailResult']]:
         return pulumi.get(self, "db_server_patching_details")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The user-friendly name for the Db server. The name does not need to be unique.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="exadataInfrastructureId")
     def exadata_infrastructure_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
-        """
         return pulumi.get(self, "exadata_infrastructure_id")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -193,74 +160,47 @@ class GetDbServerResult:
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        Additional information about the current lifecycle state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="maxCpuCount")
-    def max_cpu_count(self) -> int:
-        """
-        The total number of CPU cores available.
-        """
+    def max_cpu_count(self) -> Optional[int]:
         return pulumi.get(self, "max_cpu_count")
 
     @property
     @pulumi.getter(name="maxDbNodeStorageInGbs")
-    def max_db_node_storage_in_gbs(self) -> int:
-        """
-        The total local node storage available in GBs.
-        """
+    def max_db_node_storage_in_gbs(self) -> Optional[int]:
         return pulumi.get(self, "max_db_node_storage_in_gbs")
 
     @property
     @pulumi.getter(name="maxMemoryInGbs")
-    def max_memory_in_gbs(self) -> int:
-        """
-        The total memory available in GBs.
-        """
+    def max_memory_in_gbs(self) -> Optional[int]:
         return pulumi.get(self, "max_memory_in_gbs")
 
     @property
     @pulumi.getter(name="memorySizeInGbs")
-    def memory_size_in_gbs(self) -> int:
-        """
-        The allocated memory in GBs on the Db server.
-        """
+    def memory_size_in_gbs(self) -> Optional[int]:
         return pulumi.get(self, "memory_size_in_gbs")
 
     @property
     @pulumi.getter
-    def shape(self) -> str:
-        """
-        The shape of the Db server. The shape determines the amount of CPU, storage, and memory resources available.
-        """
+    def shape(self) -> Optional[str]:
         return pulumi.get(self, "shape")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the Db server.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time that the Db Server was created.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="vmClusterIds")
-    def vm_cluster_ids(self) -> Sequence[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Clusters associated with the Db server.
-        """
+    def vm_cluster_ids(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "vm_cluster_ids")
 
 
@@ -298,23 +238,7 @@ def get_db_server(db_server_id: Optional[str] = None,
                   exadata_infrastructure_id: Optional[str] = None,
                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDbServerResult:
     """
-    This data source provides details about a specific Db Server resource in Oracle Cloud Infrastructure Database service.
-
-    Gets information about the Exadata Db server.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_db_server = oci.Database.get_db_server(db_server_id=oci_database_db_server["test_db_server"]["id"],
-        exadata_infrastructure_id=oci_database_exadata_infrastructure["test_exadata_infrastructure"]["id"])
-    ```
-
-
-    :param str db_server_id: The DB server [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str exadata_infrastructure_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ExadataInfrastructure.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['dbServerId'] = db_server_id
@@ -352,22 +276,6 @@ def get_db_server_output(db_server_id: Optional[pulumi.Input[str]] = None,
                          exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDbServerResult]:
     """
-    This data source provides details about a specific Db Server resource in Oracle Cloud Infrastructure Database service.
-
-    Gets information about the Exadata Db server.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_db_server = oci.Database.get_db_server(db_server_id=oci_database_db_server["test_db_server"]["id"],
-        exadata_infrastructure_id=oci_database_exadata_infrastructure["test_exadata_infrastructure"]["id"])
-    ```
-
-
-    :param str db_server_id: The DB server [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str exadata_infrastructure_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ExadataInfrastructure.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -108,43 +108,43 @@ namespace Pulumi.Oci.CloudGuard
         /// <summary>
         /// The category of security policy
         /// </summary>
-        public readonly string Category;
+        public readonly string? Category;
         /// <summary>
         /// The id of the security policy's compartment
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// The security policy's description
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// The security policy's full name
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// A shorter version of the security policy's name
         /// </summary>
-        public readonly string FriendlyName;
+        public readonly string? FriendlyName;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// A message describing the current state in more detail. For example, this can be used to provide actionable information for a resource in a `Failed` state.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// The owner of the security policy
         /// </summary>
-        public readonly string Owner;
+        public readonly string? Owner;
         public readonly string SecurityPolicyId;
         /// <summary>
         /// The list of services that the security policy protects
@@ -153,47 +153,47 @@ namespace Pulumi.Oci.CloudGuard
         /// <summary>
         /// The current state of the security policy
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The time the security policy was created. An RFC3339 formatted datetime string.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The time the security policy was last updated. An RFC3339 formatted datetime string.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
 
         [OutputConstructor]
         private GetSecurityPolicyResult(
-            string category,
+            string? category,
 
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string description,
+            string? description,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string friendlyName,
+            string? friendlyName,
 
-            string id,
+            string? id,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string owner,
+            string? owner,
 
             string securityPolicyId,
 
             ImmutableArray<string> services,
 
-            string state,
+            string? state,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated)
+            string? timeUpdated)
         {
             Category = category;
             CompartmentId = compartmentId;

@@ -72,106 +72,67 @@ class GetAwrHubResult:
 
     @property
     @pulumi.getter(name="awrMailboxUrl")
-    def awr_mailbox_url(self) -> str:
-        """
-        Mailbox URL required for AWR hub and AWR source setup.
-        """
+    def awr_mailbox_url(self) -> Optional[str]:
         return pulumi.get(self, "awr_mailbox_url")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        User-friedly name of AWR Hub that does not have to be unique.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        AWR Hub OCID
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="objectStorageBucketName")
-    def object_storage_bucket_name(self) -> str:
-        """
-        Object Storage Bucket Name
-        """
+    def object_storage_bucket_name(self) -> Optional[str]:
         return pulumi.get(self, "object_storage_bucket_name")
 
     @property
     @pulumi.getter(name="operationsInsightsWarehouseId")
-    def operations_insights_warehouse_id(self) -> str:
-        """
-        OPSI Warehouse OCID
-        """
+    def operations_insights_warehouse_id(self) -> Optional[str]:
         return pulumi.get(self, "operations_insights_warehouse_id")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        Possible lifecycle states
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time at which the resource was first created. An RFC3339 formatted datetime string
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time at which the resource was last updated. An RFC3339 formatted datetime string
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -200,21 +161,7 @@ class AwaitableGetAwrHubResult(GetAwrHubResult):
 def get_awr_hub(awr_hub_id: Optional[str] = None,
                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAwrHubResult:
     """
-    This data source provides details about a specific Awr Hub resource in Oracle Cloud Infrastructure Opsi service.
-
-    Gets details of an AWR hub.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_awr_hub = oci.Opsi.get_awr_hub(awr_hub_id=oci_opsi_awr_hub["test_awr_hub"]["id"])
-    ```
-
-
-    :param str awr_hub_id: Unique Awr Hub identifier
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['awrHubId'] = awr_hub_id
@@ -242,20 +189,6 @@ def get_awr_hub(awr_hub_id: Optional[str] = None,
 def get_awr_hub_output(awr_hub_id: Optional[pulumi.Input[str]] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAwrHubResult]:
     """
-    This data source provides details about a specific Awr Hub resource in Oracle Cloud Infrastructure Opsi service.
-
-    Gets details of an AWR hub.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_awr_hub = oci.Opsi.get_awr_hub(awr_hub_id=oci_opsi_awr_hub["test_awr_hub"]["id"])
-    ```
-
-
-    :param str awr_hub_id: Unique Awr Hub identifier
+    Use this data source to access information about an existing resource.
     """
     ...

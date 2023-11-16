@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Backends in Oracle Cloud Infrastructure Load Balancer service.
@@ -68,8 +67,8 @@ type GetBackendsResult struct {
 	BackendsetName string               `pulumi:"backendsetName"`
 	Filters        []GetBackendsFilter  `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id             string `pulumi:"id"`
-	LoadBalancerId string `pulumi:"loadBalancerId"`
+	Id             *string `pulumi:"id"`
+	LoadBalancerId string  `pulumi:"loadBalancerId"`
 }
 
 func GetBackendsOutput(ctx *pulumi.Context, args GetBackendsOutputArgs, opts ...pulumi.InvokeOption) GetBackendsResultOutput {
@@ -113,12 +112,6 @@ func (o GetBackendsResultOutput) ToGetBackendsResultOutputWithContext(ctx contex
 	return o
 }
 
-func (o GetBackendsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetBackendsResult] {
-	return pulumix.Output[GetBackendsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The list of backends.
 func (o GetBackendsResultOutput) Backends() GetBackendsBackendArrayOutput {
 	return o.ApplyT(func(v GetBackendsResult) []GetBackendsBackend { return v.Backends }).(GetBackendsBackendArrayOutput)
@@ -133,8 +126,8 @@ func (o GetBackendsResultOutput) Filters() GetBackendsFilterArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetBackendsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackendsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetBackendsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBackendsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetBackendsResultOutput) LoadBalancerId() pulumi.StringOutput {

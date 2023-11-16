@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -79,12 +78,6 @@ func (i BackendSetBackendArgs) ToBackendSetBackendOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(BackendSetBackendOutput)
 }
 
-func (i BackendSetBackendArgs) ToOutput(ctx context.Context) pulumix.Output[BackendSetBackend] {
-	return pulumix.Output[BackendSetBackend]{
-		OutputState: i.ToBackendSetBackendOutputWithContext(ctx).OutputState,
-	}
-}
-
 // BackendSetBackendArrayInput is an input type that accepts BackendSetBackendArray and BackendSetBackendArrayOutput values.
 // You can construct a concrete instance of `BackendSetBackendArrayInput` via:
 //
@@ -110,12 +103,6 @@ func (i BackendSetBackendArray) ToBackendSetBackendArrayOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(BackendSetBackendArrayOutput)
 }
 
-func (i BackendSetBackendArray) ToOutput(ctx context.Context) pulumix.Output[[]BackendSetBackend] {
-	return pulumix.Output[[]BackendSetBackend]{
-		OutputState: i.ToBackendSetBackendArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type BackendSetBackendOutput struct{ *pulumi.OutputState }
 
 func (BackendSetBackendOutput) ElementType() reflect.Type {
@@ -128,12 +115,6 @@ func (o BackendSetBackendOutput) ToBackendSetBackendOutput() BackendSetBackendOu
 
 func (o BackendSetBackendOutput) ToBackendSetBackendOutputWithContext(ctx context.Context) BackendSetBackendOutput {
 	return o
-}
-
-func (o BackendSetBackendOutput) ToOutput(ctx context.Context) pulumix.Output[BackendSetBackend] {
-	return pulumix.Output[BackendSetBackend]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Whether the load balancer should treat this server as a backup unit. If `true`, the load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "backup" fail the health check policy.
@@ -187,12 +168,6 @@ func (o BackendSetBackendArrayOutput) ToBackendSetBackendArrayOutput() BackendSe
 
 func (o BackendSetBackendArrayOutput) ToBackendSetBackendArrayOutputWithContext(ctx context.Context) BackendSetBackendArrayOutput {
 	return o
-}
-
-func (o BackendSetBackendArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]BackendSetBackend] {
-	return pulumix.Output[[]BackendSetBackend]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o BackendSetBackendArrayOutput) Index(i pulumi.IntInput) BackendSetBackendOutput {
@@ -278,12 +253,6 @@ func (i BackendSetHealthCheckerArgs) ToBackendSetHealthCheckerOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(BackendSetHealthCheckerOutput)
 }
 
-func (i BackendSetHealthCheckerArgs) ToOutput(ctx context.Context) pulumix.Output[BackendSetHealthChecker] {
-	return pulumix.Output[BackendSetHealthChecker]{
-		OutputState: i.ToBackendSetHealthCheckerOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i BackendSetHealthCheckerArgs) ToBackendSetHealthCheckerPtrOutput() BackendSetHealthCheckerPtrOutput {
 	return i.ToBackendSetHealthCheckerPtrOutputWithContext(context.Background())
 }
@@ -325,12 +294,6 @@ func (i *backendSetHealthCheckerPtrType) ToBackendSetHealthCheckerPtrOutputWithC
 	return pulumi.ToOutputWithContext(ctx, i).(BackendSetHealthCheckerPtrOutput)
 }
 
-func (i *backendSetHealthCheckerPtrType) ToOutput(ctx context.Context) pulumix.Output[*BackendSetHealthChecker] {
-	return pulumix.Output[*BackendSetHealthChecker]{
-		OutputState: i.ToBackendSetHealthCheckerPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type BackendSetHealthCheckerOutput struct{ *pulumi.OutputState }
 
 func (BackendSetHealthCheckerOutput) ElementType() reflect.Type {
@@ -353,12 +316,6 @@ func (o BackendSetHealthCheckerOutput) ToBackendSetHealthCheckerPtrOutputWithCon
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v BackendSetHealthChecker) *BackendSetHealthChecker {
 		return &v
 	}).(BackendSetHealthCheckerPtrOutput)
-}
-
-func (o BackendSetHealthCheckerOutput) ToOutput(ctx context.Context) pulumix.Output[BackendSetHealthChecker] {
-	return pulumix.Output[BackendSetHealthChecker]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The interval between health checks, in milliseconds.  Example: `10000`
@@ -424,12 +381,6 @@ func (o BackendSetHealthCheckerPtrOutput) ToBackendSetHealthCheckerPtrOutput() B
 
 func (o BackendSetHealthCheckerPtrOutput) ToBackendSetHealthCheckerPtrOutputWithContext(ctx context.Context) BackendSetHealthCheckerPtrOutput {
 	return o
-}
-
-func (o BackendSetHealthCheckerPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*BackendSetHealthChecker] {
-	return pulumix.Output[*BackendSetHealthChecker]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o BackendSetHealthCheckerPtrOutput) Elem() BackendSetHealthCheckerOutput {
@@ -643,12 +594,6 @@ func (i BackendSetLbCookieSessionPersistenceConfigurationArgs) ToBackendSetLbCoo
 	return pulumi.ToOutputWithContext(ctx, i).(BackendSetLbCookieSessionPersistenceConfigurationOutput)
 }
 
-func (i BackendSetLbCookieSessionPersistenceConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[BackendSetLbCookieSessionPersistenceConfiguration] {
-	return pulumix.Output[BackendSetLbCookieSessionPersistenceConfiguration]{
-		OutputState: i.ToBackendSetLbCookieSessionPersistenceConfigurationOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i BackendSetLbCookieSessionPersistenceConfigurationArgs) ToBackendSetLbCookieSessionPersistenceConfigurationPtrOutput() BackendSetLbCookieSessionPersistenceConfigurationPtrOutput {
 	return i.ToBackendSetLbCookieSessionPersistenceConfigurationPtrOutputWithContext(context.Background())
 }
@@ -690,12 +635,6 @@ func (i *backendSetLbCookieSessionPersistenceConfigurationPtrType) ToBackendSetL
 	return pulumi.ToOutputWithContext(ctx, i).(BackendSetLbCookieSessionPersistenceConfigurationPtrOutput)
 }
 
-func (i *backendSetLbCookieSessionPersistenceConfigurationPtrType) ToOutput(ctx context.Context) pulumix.Output[*BackendSetLbCookieSessionPersistenceConfiguration] {
-	return pulumix.Output[*BackendSetLbCookieSessionPersistenceConfiguration]{
-		OutputState: i.ToBackendSetLbCookieSessionPersistenceConfigurationPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type BackendSetLbCookieSessionPersistenceConfigurationOutput struct{ *pulumi.OutputState }
 
 func (BackendSetLbCookieSessionPersistenceConfigurationOutput) ElementType() reflect.Type {
@@ -718,12 +657,6 @@ func (o BackendSetLbCookieSessionPersistenceConfigurationOutput) ToBackendSetLbC
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v BackendSetLbCookieSessionPersistenceConfiguration) *BackendSetLbCookieSessionPersistenceConfiguration {
 		return &v
 	}).(BackendSetLbCookieSessionPersistenceConfigurationPtrOutput)
-}
-
-func (o BackendSetLbCookieSessionPersistenceConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[BackendSetLbCookieSessionPersistenceConfiguration] {
-	return pulumix.Output[BackendSetLbCookieSessionPersistenceConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The name of the cookie used to detect a session initiated by the backend server. Use '*' to specify that any cookie set by the backend causes the session to persist.  Example: `exampleCookie`
@@ -797,12 +730,6 @@ func (o BackendSetLbCookieSessionPersistenceConfigurationPtrOutput) ToBackendSet
 
 func (o BackendSetLbCookieSessionPersistenceConfigurationPtrOutput) ToBackendSetLbCookieSessionPersistenceConfigurationPtrOutputWithContext(ctx context.Context) BackendSetLbCookieSessionPersistenceConfigurationPtrOutput {
 	return o
-}
-
-func (o BackendSetLbCookieSessionPersistenceConfigurationPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*BackendSetLbCookieSessionPersistenceConfiguration] {
-	return pulumix.Output[*BackendSetLbCookieSessionPersistenceConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o BackendSetLbCookieSessionPersistenceConfigurationPtrOutput) Elem() BackendSetLbCookieSessionPersistenceConfigurationOutput {
@@ -946,12 +873,6 @@ func (i BackendSetSessionPersistenceConfigurationArgs) ToBackendSetSessionPersis
 	return pulumi.ToOutputWithContext(ctx, i).(BackendSetSessionPersistenceConfigurationOutput)
 }
 
-func (i BackendSetSessionPersistenceConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[BackendSetSessionPersistenceConfiguration] {
-	return pulumix.Output[BackendSetSessionPersistenceConfiguration]{
-		OutputState: i.ToBackendSetSessionPersistenceConfigurationOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i BackendSetSessionPersistenceConfigurationArgs) ToBackendSetSessionPersistenceConfigurationPtrOutput() BackendSetSessionPersistenceConfigurationPtrOutput {
 	return i.ToBackendSetSessionPersistenceConfigurationPtrOutputWithContext(context.Background())
 }
@@ -993,12 +914,6 @@ func (i *backendSetSessionPersistenceConfigurationPtrType) ToBackendSetSessionPe
 	return pulumi.ToOutputWithContext(ctx, i).(BackendSetSessionPersistenceConfigurationPtrOutput)
 }
 
-func (i *backendSetSessionPersistenceConfigurationPtrType) ToOutput(ctx context.Context) pulumix.Output[*BackendSetSessionPersistenceConfiguration] {
-	return pulumix.Output[*BackendSetSessionPersistenceConfiguration]{
-		OutputState: i.ToBackendSetSessionPersistenceConfigurationPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type BackendSetSessionPersistenceConfigurationOutput struct{ *pulumi.OutputState }
 
 func (BackendSetSessionPersistenceConfigurationOutput) ElementType() reflect.Type {
@@ -1023,12 +938,6 @@ func (o BackendSetSessionPersistenceConfigurationOutput) ToBackendSetSessionPers
 	}).(BackendSetSessionPersistenceConfigurationPtrOutput)
 }
 
-func (o BackendSetSessionPersistenceConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[BackendSetSessionPersistenceConfiguration] {
-	return pulumix.Output[BackendSetSessionPersistenceConfiguration]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The name of the cookie used to detect a session initiated by the backend server. Use '*' to specify that any cookie set by the backend causes the session to persist.  Example: `exampleCookie`
 func (o BackendSetSessionPersistenceConfigurationOutput) CookieName() pulumi.StringOutput {
 	return o.ApplyT(func(v BackendSetSessionPersistenceConfiguration) string { return v.CookieName }).(pulumi.StringOutput)
@@ -1051,12 +960,6 @@ func (o BackendSetSessionPersistenceConfigurationPtrOutput) ToBackendSetSessionP
 
 func (o BackendSetSessionPersistenceConfigurationPtrOutput) ToBackendSetSessionPersistenceConfigurationPtrOutputWithContext(ctx context.Context) BackendSetSessionPersistenceConfigurationPtrOutput {
 	return o
-}
-
-func (o BackendSetSessionPersistenceConfigurationPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*BackendSetSessionPersistenceConfiguration] {
-	return pulumix.Output[*BackendSetSessionPersistenceConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o BackendSetSessionPersistenceConfigurationPtrOutput) Elem() BackendSetSessionPersistenceConfigurationOutput {
@@ -1222,12 +1125,6 @@ func (i BackendSetSslConfigurationArgs) ToBackendSetSslConfigurationOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(BackendSetSslConfigurationOutput)
 }
 
-func (i BackendSetSslConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[BackendSetSslConfiguration] {
-	return pulumix.Output[BackendSetSslConfiguration]{
-		OutputState: i.ToBackendSetSslConfigurationOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i BackendSetSslConfigurationArgs) ToBackendSetSslConfigurationPtrOutput() BackendSetSslConfigurationPtrOutput {
 	return i.ToBackendSetSslConfigurationPtrOutputWithContext(context.Background())
 }
@@ -1269,12 +1166,6 @@ func (i *backendSetSslConfigurationPtrType) ToBackendSetSslConfigurationPtrOutpu
 	return pulumi.ToOutputWithContext(ctx, i).(BackendSetSslConfigurationPtrOutput)
 }
 
-func (i *backendSetSslConfigurationPtrType) ToOutput(ctx context.Context) pulumix.Output[*BackendSetSslConfiguration] {
-	return pulumix.Output[*BackendSetSslConfiguration]{
-		OutputState: i.ToBackendSetSslConfigurationPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type BackendSetSslConfigurationOutput struct{ *pulumi.OutputState }
 
 func (BackendSetSslConfigurationOutput) ElementType() reflect.Type {
@@ -1297,12 +1188,6 @@ func (o BackendSetSslConfigurationOutput) ToBackendSetSslConfigurationPtrOutputW
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v BackendSetSslConfiguration) *BackendSetSslConfiguration {
 		return &v
 	}).(BackendSetSslConfigurationPtrOutput)
-}
-
-func (o BackendSetSslConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[BackendSetSslConfiguration] {
-	return pulumix.Output[BackendSetSslConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Ids for Oracle Cloud Infrastructure certificates service certificates. Currently only a single Id may be passed.  Example: `[ocid1.certificate.oc1.us-ashburn-1.amaaaaaaav3bgsaa5o2q7rh5nfmkkukfkogasqhk6af2opufhjlqg7m6jqzq]`
@@ -1393,12 +1278,6 @@ func (o BackendSetSslConfigurationPtrOutput) ToBackendSetSslConfigurationPtrOutp
 
 func (o BackendSetSslConfigurationPtrOutput) ToBackendSetSslConfigurationPtrOutputWithContext(ctx context.Context) BackendSetSslConfigurationPtrOutput {
 	return o
-}
-
-func (o BackendSetSslConfigurationPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*BackendSetSslConfiguration] {
-	return pulumix.Output[*BackendSetSslConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o BackendSetSslConfigurationPtrOutput) Elem() BackendSetSslConfigurationOutput {
@@ -1572,12 +1451,6 @@ func (i ListenerConnectionConfigurationArgs) ToListenerConnectionConfigurationOu
 	return pulumi.ToOutputWithContext(ctx, i).(ListenerConnectionConfigurationOutput)
 }
 
-func (i ListenerConnectionConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[ListenerConnectionConfiguration] {
-	return pulumix.Output[ListenerConnectionConfiguration]{
-		OutputState: i.ToListenerConnectionConfigurationOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i ListenerConnectionConfigurationArgs) ToListenerConnectionConfigurationPtrOutput() ListenerConnectionConfigurationPtrOutput {
 	return i.ToListenerConnectionConfigurationPtrOutputWithContext(context.Background())
 }
@@ -1619,12 +1492,6 @@ func (i *listenerConnectionConfigurationPtrType) ToListenerConnectionConfigurati
 	return pulumi.ToOutputWithContext(ctx, i).(ListenerConnectionConfigurationPtrOutput)
 }
 
-func (i *listenerConnectionConfigurationPtrType) ToOutput(ctx context.Context) pulumix.Output[*ListenerConnectionConfiguration] {
-	return pulumix.Output[*ListenerConnectionConfiguration]{
-		OutputState: i.ToListenerConnectionConfigurationPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ListenerConnectionConfigurationOutput struct{ *pulumi.OutputState }
 
 func (ListenerConnectionConfigurationOutput) ElementType() reflect.Type {
@@ -1647,12 +1514,6 @@ func (o ListenerConnectionConfigurationOutput) ToListenerConnectionConfiguration
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v ListenerConnectionConfiguration) *ListenerConnectionConfiguration {
 		return &v
 	}).(ListenerConnectionConfigurationPtrOutput)
-}
-
-func (o ListenerConnectionConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[ListenerConnectionConfiguration] {
-	return pulumix.Output[ListenerConnectionConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The backend TCP Proxy Protocol version.  Example: `1`
@@ -1681,12 +1542,6 @@ func (o ListenerConnectionConfigurationPtrOutput) ToListenerConnectionConfigurat
 
 func (o ListenerConnectionConfigurationPtrOutput) ToListenerConnectionConfigurationPtrOutputWithContext(ctx context.Context) ListenerConnectionConfigurationPtrOutput {
 	return o
-}
-
-func (o ListenerConnectionConfigurationPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*ListenerConnectionConfiguration] {
-	return pulumix.Output[*ListenerConnectionConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ListenerConnectionConfigurationPtrOutput) Elem() ListenerConnectionConfigurationOutput {
@@ -1856,12 +1711,6 @@ func (i ListenerSslConfigurationArgs) ToListenerSslConfigurationOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(ListenerSslConfigurationOutput)
 }
 
-func (i ListenerSslConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[ListenerSslConfiguration] {
-	return pulumix.Output[ListenerSslConfiguration]{
-		OutputState: i.ToListenerSslConfigurationOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i ListenerSslConfigurationArgs) ToListenerSslConfigurationPtrOutput() ListenerSslConfigurationPtrOutput {
 	return i.ToListenerSslConfigurationPtrOutputWithContext(context.Background())
 }
@@ -1903,12 +1752,6 @@ func (i *listenerSslConfigurationPtrType) ToListenerSslConfigurationPtrOutputWit
 	return pulumi.ToOutputWithContext(ctx, i).(ListenerSslConfigurationPtrOutput)
 }
 
-func (i *listenerSslConfigurationPtrType) ToOutput(ctx context.Context) pulumix.Output[*ListenerSslConfiguration] {
-	return pulumix.Output[*ListenerSslConfiguration]{
-		OutputState: i.ToListenerSslConfigurationPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ListenerSslConfigurationOutput struct{ *pulumi.OutputState }
 
 func (ListenerSslConfigurationOutput) ElementType() reflect.Type {
@@ -1931,12 +1774,6 @@ func (o ListenerSslConfigurationOutput) ToListenerSslConfigurationPtrOutputWithC
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v ListenerSslConfiguration) *ListenerSslConfiguration {
 		return &v
 	}).(ListenerSslConfigurationPtrOutput)
-}
-
-func (o ListenerSslConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[ListenerSslConfiguration] {
-	return pulumix.Output[ListenerSslConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Ids for Oracle Cloud Infrastructure certificates service certificates. Currently only a single Id may be passed.  Example: `[ocid1.certificate.oc1.us-ashburn-1.amaaaaaaav3bgsaa5o2q7rh5nfmkkukfkogasqhk6af2opufhjlqg7m6jqzq]`
@@ -2027,12 +1864,6 @@ func (o ListenerSslConfigurationPtrOutput) ToListenerSslConfigurationPtrOutput()
 
 func (o ListenerSslConfigurationPtrOutput) ToListenerSslConfigurationPtrOutputWithContext(ctx context.Context) ListenerSslConfigurationPtrOutput {
 	return o
-}
-
-func (o ListenerSslConfigurationPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*ListenerSslConfiguration] {
-	return pulumix.Output[*ListenerSslConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ListenerSslConfigurationPtrOutput) Elem() ListenerSslConfigurationOutput {
@@ -2202,12 +2033,6 @@ func (i LoadBalancerIpAddressDetailArgs) ToLoadBalancerIpAddressDetailOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(LoadBalancerIpAddressDetailOutput)
 }
 
-func (i LoadBalancerIpAddressDetailArgs) ToOutput(ctx context.Context) pulumix.Output[LoadBalancerIpAddressDetail] {
-	return pulumix.Output[LoadBalancerIpAddressDetail]{
-		OutputState: i.ToLoadBalancerIpAddressDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // LoadBalancerIpAddressDetailArrayInput is an input type that accepts LoadBalancerIpAddressDetailArray and LoadBalancerIpAddressDetailArrayOutput values.
 // You can construct a concrete instance of `LoadBalancerIpAddressDetailArrayInput` via:
 //
@@ -2233,12 +2058,6 @@ func (i LoadBalancerIpAddressDetailArray) ToLoadBalancerIpAddressDetailArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(LoadBalancerIpAddressDetailArrayOutput)
 }
 
-func (i LoadBalancerIpAddressDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]LoadBalancerIpAddressDetail] {
-	return pulumix.Output[[]LoadBalancerIpAddressDetail]{
-		OutputState: i.ToLoadBalancerIpAddressDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type LoadBalancerIpAddressDetailOutput struct{ *pulumi.OutputState }
 
 func (LoadBalancerIpAddressDetailOutput) ElementType() reflect.Type {
@@ -2251,12 +2070,6 @@ func (o LoadBalancerIpAddressDetailOutput) ToLoadBalancerIpAddressDetailOutput()
 
 func (o LoadBalancerIpAddressDetailOutput) ToLoadBalancerIpAddressDetailOutputWithContext(ctx context.Context) LoadBalancerIpAddressDetailOutput {
 	return o
-}
-
-func (o LoadBalancerIpAddressDetailOutput) ToOutput(ctx context.Context) pulumix.Output[LoadBalancerIpAddressDetail] {
-	return pulumix.Output[LoadBalancerIpAddressDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // An IP address.  Example: `192.168.0.3`
@@ -2286,12 +2099,6 @@ func (o LoadBalancerIpAddressDetailArrayOutput) ToLoadBalancerIpAddressDetailArr
 
 func (o LoadBalancerIpAddressDetailArrayOutput) ToLoadBalancerIpAddressDetailArrayOutputWithContext(ctx context.Context) LoadBalancerIpAddressDetailArrayOutput {
 	return o
-}
-
-func (o LoadBalancerIpAddressDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]LoadBalancerIpAddressDetail] {
-	return pulumix.Output[[]LoadBalancerIpAddressDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LoadBalancerIpAddressDetailArrayOutput) Index(i pulumi.IntInput) LoadBalancerIpAddressDetailOutput {
@@ -2331,12 +2138,6 @@ func (i LoadBalancerIpAddressDetailReservedIpArgs) ToLoadBalancerIpAddressDetail
 	return pulumi.ToOutputWithContext(ctx, i).(LoadBalancerIpAddressDetailReservedIpOutput)
 }
 
-func (i LoadBalancerIpAddressDetailReservedIpArgs) ToOutput(ctx context.Context) pulumix.Output[LoadBalancerIpAddressDetailReservedIp] {
-	return pulumix.Output[LoadBalancerIpAddressDetailReservedIp]{
-		OutputState: i.ToLoadBalancerIpAddressDetailReservedIpOutputWithContext(ctx).OutputState,
-	}
-}
-
 // LoadBalancerIpAddressDetailReservedIpArrayInput is an input type that accepts LoadBalancerIpAddressDetailReservedIpArray and LoadBalancerIpAddressDetailReservedIpArrayOutput values.
 // You can construct a concrete instance of `LoadBalancerIpAddressDetailReservedIpArrayInput` via:
 //
@@ -2362,12 +2163,6 @@ func (i LoadBalancerIpAddressDetailReservedIpArray) ToLoadBalancerIpAddressDetai
 	return pulumi.ToOutputWithContext(ctx, i).(LoadBalancerIpAddressDetailReservedIpArrayOutput)
 }
 
-func (i LoadBalancerIpAddressDetailReservedIpArray) ToOutput(ctx context.Context) pulumix.Output[[]LoadBalancerIpAddressDetailReservedIp] {
-	return pulumix.Output[[]LoadBalancerIpAddressDetailReservedIp]{
-		OutputState: i.ToLoadBalancerIpAddressDetailReservedIpArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type LoadBalancerIpAddressDetailReservedIpOutput struct{ *pulumi.OutputState }
 
 func (LoadBalancerIpAddressDetailReservedIpOutput) ElementType() reflect.Type {
@@ -2380,12 +2175,6 @@ func (o LoadBalancerIpAddressDetailReservedIpOutput) ToLoadBalancerIpAddressDeta
 
 func (o LoadBalancerIpAddressDetailReservedIpOutput) ToLoadBalancerIpAddressDetailReservedIpOutputWithContext(ctx context.Context) LoadBalancerIpAddressDetailReservedIpOutput {
 	return o
-}
-
-func (o LoadBalancerIpAddressDetailReservedIpOutput) ToOutput(ctx context.Context) pulumix.Output[LoadBalancerIpAddressDetailReservedIp] {
-	return pulumix.Output[LoadBalancerIpAddressDetailReservedIp]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LoadBalancerIpAddressDetailReservedIpOutput) Id() pulumi.StringPtrOutput {
@@ -2404,12 +2193,6 @@ func (o LoadBalancerIpAddressDetailReservedIpArrayOutput) ToLoadBalancerIpAddres
 
 func (o LoadBalancerIpAddressDetailReservedIpArrayOutput) ToLoadBalancerIpAddressDetailReservedIpArrayOutputWithContext(ctx context.Context) LoadBalancerIpAddressDetailReservedIpArrayOutput {
 	return o
-}
-
-func (o LoadBalancerIpAddressDetailReservedIpArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]LoadBalancerIpAddressDetailReservedIp] {
-	return pulumix.Output[[]LoadBalancerIpAddressDetailReservedIp]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LoadBalancerIpAddressDetailReservedIpArrayOutput) Index(i pulumi.IntInput) LoadBalancerIpAddressDetailReservedIpOutput {
@@ -2449,12 +2232,6 @@ func (i LoadBalancerReservedIpArgs) ToLoadBalancerReservedIpOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(LoadBalancerReservedIpOutput)
 }
 
-func (i LoadBalancerReservedIpArgs) ToOutput(ctx context.Context) pulumix.Output[LoadBalancerReservedIp] {
-	return pulumix.Output[LoadBalancerReservedIp]{
-		OutputState: i.ToLoadBalancerReservedIpOutputWithContext(ctx).OutputState,
-	}
-}
-
 // LoadBalancerReservedIpArrayInput is an input type that accepts LoadBalancerReservedIpArray and LoadBalancerReservedIpArrayOutput values.
 // You can construct a concrete instance of `LoadBalancerReservedIpArrayInput` via:
 //
@@ -2480,12 +2257,6 @@ func (i LoadBalancerReservedIpArray) ToLoadBalancerReservedIpArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(LoadBalancerReservedIpArrayOutput)
 }
 
-func (i LoadBalancerReservedIpArray) ToOutput(ctx context.Context) pulumix.Output[[]LoadBalancerReservedIp] {
-	return pulumix.Output[[]LoadBalancerReservedIp]{
-		OutputState: i.ToLoadBalancerReservedIpArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type LoadBalancerReservedIpOutput struct{ *pulumi.OutputState }
 
 func (LoadBalancerReservedIpOutput) ElementType() reflect.Type {
@@ -2498,12 +2269,6 @@ func (o LoadBalancerReservedIpOutput) ToLoadBalancerReservedIpOutput() LoadBalan
 
 func (o LoadBalancerReservedIpOutput) ToLoadBalancerReservedIpOutputWithContext(ctx context.Context) LoadBalancerReservedIpOutput {
 	return o
-}
-
-func (o LoadBalancerReservedIpOutput) ToOutput(ctx context.Context) pulumix.Output[LoadBalancerReservedIp] {
-	return pulumix.Output[LoadBalancerReservedIp]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LoadBalancerReservedIpOutput) Id() pulumi.StringPtrOutput {
@@ -2522,12 +2287,6 @@ func (o LoadBalancerReservedIpArrayOutput) ToLoadBalancerReservedIpArrayOutput()
 
 func (o LoadBalancerReservedIpArrayOutput) ToLoadBalancerReservedIpArrayOutputWithContext(ctx context.Context) LoadBalancerReservedIpArrayOutput {
 	return o
-}
-
-func (o LoadBalancerReservedIpArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]LoadBalancerReservedIp] {
-	return pulumix.Output[[]LoadBalancerReservedIp]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LoadBalancerReservedIpArrayOutput) Index(i pulumi.IntInput) LoadBalancerReservedIpOutput {
@@ -2583,12 +2342,6 @@ func (i LoadBalancerRoutingPolicyRuleArgs) ToLoadBalancerRoutingPolicyRuleOutput
 	return pulumi.ToOutputWithContext(ctx, i).(LoadBalancerRoutingPolicyRuleOutput)
 }
 
-func (i LoadBalancerRoutingPolicyRuleArgs) ToOutput(ctx context.Context) pulumix.Output[LoadBalancerRoutingPolicyRule] {
-	return pulumix.Output[LoadBalancerRoutingPolicyRule]{
-		OutputState: i.ToLoadBalancerRoutingPolicyRuleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // LoadBalancerRoutingPolicyRuleArrayInput is an input type that accepts LoadBalancerRoutingPolicyRuleArray and LoadBalancerRoutingPolicyRuleArrayOutput values.
 // You can construct a concrete instance of `LoadBalancerRoutingPolicyRuleArrayInput` via:
 //
@@ -2614,12 +2367,6 @@ func (i LoadBalancerRoutingPolicyRuleArray) ToLoadBalancerRoutingPolicyRuleArray
 	return pulumi.ToOutputWithContext(ctx, i).(LoadBalancerRoutingPolicyRuleArrayOutput)
 }
 
-func (i LoadBalancerRoutingPolicyRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]LoadBalancerRoutingPolicyRule] {
-	return pulumix.Output[[]LoadBalancerRoutingPolicyRule]{
-		OutputState: i.ToLoadBalancerRoutingPolicyRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type LoadBalancerRoutingPolicyRuleOutput struct{ *pulumi.OutputState }
 
 func (LoadBalancerRoutingPolicyRuleOutput) ElementType() reflect.Type {
@@ -2632,12 +2379,6 @@ func (o LoadBalancerRoutingPolicyRuleOutput) ToLoadBalancerRoutingPolicyRuleOutp
 
 func (o LoadBalancerRoutingPolicyRuleOutput) ToLoadBalancerRoutingPolicyRuleOutputWithContext(ctx context.Context) LoadBalancerRoutingPolicyRuleOutput {
 	return o
-}
-
-func (o LoadBalancerRoutingPolicyRuleOutput) ToOutput(ctx context.Context) pulumix.Output[LoadBalancerRoutingPolicyRule] {
-	return pulumix.Output[LoadBalancerRoutingPolicyRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) A list of actions to be applied when conditions of the routing rule are met.
@@ -2670,12 +2411,6 @@ func (o LoadBalancerRoutingPolicyRuleArrayOutput) ToLoadBalancerRoutingPolicyRul
 
 func (o LoadBalancerRoutingPolicyRuleArrayOutput) ToLoadBalancerRoutingPolicyRuleArrayOutputWithContext(ctx context.Context) LoadBalancerRoutingPolicyRuleArrayOutput {
 	return o
-}
-
-func (o LoadBalancerRoutingPolicyRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]LoadBalancerRoutingPolicyRule] {
-	return pulumix.Output[[]LoadBalancerRoutingPolicyRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LoadBalancerRoutingPolicyRuleArrayOutput) Index(i pulumi.IntInput) LoadBalancerRoutingPolicyRuleOutput {
@@ -2727,12 +2462,6 @@ func (i LoadBalancerRoutingPolicyRuleActionArgs) ToLoadBalancerRoutingPolicyRule
 	return pulumi.ToOutputWithContext(ctx, i).(LoadBalancerRoutingPolicyRuleActionOutput)
 }
 
-func (i LoadBalancerRoutingPolicyRuleActionArgs) ToOutput(ctx context.Context) pulumix.Output[LoadBalancerRoutingPolicyRuleAction] {
-	return pulumix.Output[LoadBalancerRoutingPolicyRuleAction]{
-		OutputState: i.ToLoadBalancerRoutingPolicyRuleActionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // LoadBalancerRoutingPolicyRuleActionArrayInput is an input type that accepts LoadBalancerRoutingPolicyRuleActionArray and LoadBalancerRoutingPolicyRuleActionArrayOutput values.
 // You can construct a concrete instance of `LoadBalancerRoutingPolicyRuleActionArrayInput` via:
 //
@@ -2758,12 +2487,6 @@ func (i LoadBalancerRoutingPolicyRuleActionArray) ToLoadBalancerRoutingPolicyRul
 	return pulumi.ToOutputWithContext(ctx, i).(LoadBalancerRoutingPolicyRuleActionArrayOutput)
 }
 
-func (i LoadBalancerRoutingPolicyRuleActionArray) ToOutput(ctx context.Context) pulumix.Output[[]LoadBalancerRoutingPolicyRuleAction] {
-	return pulumix.Output[[]LoadBalancerRoutingPolicyRuleAction]{
-		OutputState: i.ToLoadBalancerRoutingPolicyRuleActionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type LoadBalancerRoutingPolicyRuleActionOutput struct{ *pulumi.OutputState }
 
 func (LoadBalancerRoutingPolicyRuleActionOutput) ElementType() reflect.Type {
@@ -2776,12 +2499,6 @@ func (o LoadBalancerRoutingPolicyRuleActionOutput) ToLoadBalancerRoutingPolicyRu
 
 func (o LoadBalancerRoutingPolicyRuleActionOutput) ToLoadBalancerRoutingPolicyRuleActionOutputWithContext(ctx context.Context) LoadBalancerRoutingPolicyRuleActionOutput {
 	return o
-}
-
-func (o LoadBalancerRoutingPolicyRuleActionOutput) ToOutput(ctx context.Context) pulumix.Output[LoadBalancerRoutingPolicyRuleAction] {
-	return pulumix.Output[LoadBalancerRoutingPolicyRuleAction]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Name of the backend set the listener will forward the traffic to.  Example: `backendSetForImages`
@@ -2809,12 +2526,6 @@ func (o LoadBalancerRoutingPolicyRuleActionArrayOutput) ToLoadBalancerRoutingPol
 
 func (o LoadBalancerRoutingPolicyRuleActionArrayOutput) ToLoadBalancerRoutingPolicyRuleActionArrayOutputWithContext(ctx context.Context) LoadBalancerRoutingPolicyRuleActionArrayOutput {
 	return o
-}
-
-func (o LoadBalancerRoutingPolicyRuleActionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]LoadBalancerRoutingPolicyRuleAction] {
-	return pulumix.Output[[]LoadBalancerRoutingPolicyRuleAction]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LoadBalancerRoutingPolicyRuleActionArrayOutput) Index(i pulumi.IntInput) LoadBalancerRoutingPolicyRuleActionOutput {
@@ -2868,12 +2579,6 @@ func (i LoadBalancerShapeDetailsArgs) ToLoadBalancerShapeDetailsOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(LoadBalancerShapeDetailsOutput)
 }
 
-func (i LoadBalancerShapeDetailsArgs) ToOutput(ctx context.Context) pulumix.Output[LoadBalancerShapeDetails] {
-	return pulumix.Output[LoadBalancerShapeDetails]{
-		OutputState: i.ToLoadBalancerShapeDetailsOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i LoadBalancerShapeDetailsArgs) ToLoadBalancerShapeDetailsPtrOutput() LoadBalancerShapeDetailsPtrOutput {
 	return i.ToLoadBalancerShapeDetailsPtrOutputWithContext(context.Background())
 }
@@ -2915,12 +2620,6 @@ func (i *loadBalancerShapeDetailsPtrType) ToLoadBalancerShapeDetailsPtrOutputWit
 	return pulumi.ToOutputWithContext(ctx, i).(LoadBalancerShapeDetailsPtrOutput)
 }
 
-func (i *loadBalancerShapeDetailsPtrType) ToOutput(ctx context.Context) pulumix.Output[*LoadBalancerShapeDetails] {
-	return pulumix.Output[*LoadBalancerShapeDetails]{
-		OutputState: i.ToLoadBalancerShapeDetailsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type LoadBalancerShapeDetailsOutput struct{ *pulumi.OutputState }
 
 func (LoadBalancerShapeDetailsOutput) ElementType() reflect.Type {
@@ -2943,12 +2642,6 @@ func (o LoadBalancerShapeDetailsOutput) ToLoadBalancerShapeDetailsPtrOutputWithC
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v LoadBalancerShapeDetails) *LoadBalancerShapeDetails {
 		return &v
 	}).(LoadBalancerShapeDetailsPtrOutput)
-}
-
-func (o LoadBalancerShapeDetailsOutput) ToOutput(ctx context.Context) pulumix.Output[LoadBalancerShapeDetails] {
-	return pulumix.Output[LoadBalancerShapeDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Bandwidth in Mbps that determines the maximum bandwidth (ingress plus egress) that the load balancer can achieve. This bandwidth cannot be always guaranteed. For a guaranteed bandwidth use the minimumBandwidthInMbps parameter.
@@ -2977,12 +2670,6 @@ func (o LoadBalancerShapeDetailsPtrOutput) ToLoadBalancerShapeDetailsPtrOutput()
 
 func (o LoadBalancerShapeDetailsPtrOutput) ToLoadBalancerShapeDetailsPtrOutputWithContext(ctx context.Context) LoadBalancerShapeDetailsPtrOutput {
 	return o
-}
-
-func (o LoadBalancerShapeDetailsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*LoadBalancerShapeDetails] {
-	return pulumix.Output[*LoadBalancerShapeDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LoadBalancerShapeDetailsPtrOutput) Elem() LoadBalancerShapeDetailsOutput {
@@ -3070,12 +2757,6 @@ func (i PathRouteSetPathRouteArgs) ToPathRouteSetPathRouteOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(PathRouteSetPathRouteOutput)
 }
 
-func (i PathRouteSetPathRouteArgs) ToOutput(ctx context.Context) pulumix.Output[PathRouteSetPathRoute] {
-	return pulumix.Output[PathRouteSetPathRoute]{
-		OutputState: i.ToPathRouteSetPathRouteOutputWithContext(ctx).OutputState,
-	}
-}
-
 // PathRouteSetPathRouteArrayInput is an input type that accepts PathRouteSetPathRouteArray and PathRouteSetPathRouteArrayOutput values.
 // You can construct a concrete instance of `PathRouteSetPathRouteArrayInput` via:
 //
@@ -3101,12 +2782,6 @@ func (i PathRouteSetPathRouteArray) ToPathRouteSetPathRouteArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(PathRouteSetPathRouteArrayOutput)
 }
 
-func (i PathRouteSetPathRouteArray) ToOutput(ctx context.Context) pulumix.Output[[]PathRouteSetPathRoute] {
-	return pulumix.Output[[]PathRouteSetPathRoute]{
-		OutputState: i.ToPathRouteSetPathRouteArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type PathRouteSetPathRouteOutput struct{ *pulumi.OutputState }
 
 func (PathRouteSetPathRouteOutput) ElementType() reflect.Type {
@@ -3119,12 +2794,6 @@ func (o PathRouteSetPathRouteOutput) ToPathRouteSetPathRouteOutput() PathRouteSe
 
 func (o PathRouteSetPathRouteOutput) ToPathRouteSetPathRouteOutputWithContext(ctx context.Context) PathRouteSetPathRouteOutput {
 	return o
-}
-
-func (o PathRouteSetPathRouteOutput) ToOutput(ctx context.Context) pulumix.Output[PathRouteSetPathRoute] {
-	return pulumix.Output[PathRouteSetPathRoute]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The name of the target backend set for requests where the incoming URI matches the specified path.  Example: `exampleBackendSet`
@@ -3159,12 +2828,6 @@ func (o PathRouteSetPathRouteArrayOutput) ToPathRouteSetPathRouteArrayOutput() P
 
 func (o PathRouteSetPathRouteArrayOutput) ToPathRouteSetPathRouteArrayOutputWithContext(ctx context.Context) PathRouteSetPathRouteArrayOutput {
 	return o
-}
-
-func (o PathRouteSetPathRouteArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]PathRouteSetPathRoute] {
-	return pulumix.Output[[]PathRouteSetPathRoute]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PathRouteSetPathRouteArrayOutput) Index(i pulumi.IntInput) PathRouteSetPathRouteOutput {
@@ -3224,12 +2887,6 @@ func (i PathRouteSetPathRoutePathMatchTypeArgs) ToPathRouteSetPathRoutePathMatch
 	return pulumi.ToOutputWithContext(ctx, i).(PathRouteSetPathRoutePathMatchTypeOutput)
 }
 
-func (i PathRouteSetPathRoutePathMatchTypeArgs) ToOutput(ctx context.Context) pulumix.Output[PathRouteSetPathRoutePathMatchType] {
-	return pulumix.Output[PathRouteSetPathRoutePathMatchType]{
-		OutputState: i.ToPathRouteSetPathRoutePathMatchTypeOutputWithContext(ctx).OutputState,
-	}
-}
-
 type PathRouteSetPathRoutePathMatchTypeOutput struct{ *pulumi.OutputState }
 
 func (PathRouteSetPathRoutePathMatchTypeOutput) ElementType() reflect.Type {
@@ -3242,12 +2899,6 @@ func (o PathRouteSetPathRoutePathMatchTypeOutput) ToPathRouteSetPathRoutePathMat
 
 func (o PathRouteSetPathRoutePathMatchTypeOutput) ToPathRouteSetPathRoutePathMatchTypeOutputWithContext(ctx context.Context) PathRouteSetPathRoutePathMatchTypeOutput {
 	return o
-}
-
-func (o PathRouteSetPathRoutePathMatchTypeOutput) ToOutput(ctx context.Context) pulumix.Output[PathRouteSetPathRoutePathMatchType] {
-	return pulumix.Output[PathRouteSetPathRoutePathMatchType]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Specifies how the load balancing service compares a [PathRoute](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/requests/PathRoute) object's `path` string against the incoming URI.
@@ -3457,12 +3108,6 @@ func (i RuleSetItemArgs) ToRuleSetItemOutputWithContext(ctx context.Context) Rul
 	return pulumi.ToOutputWithContext(ctx, i).(RuleSetItemOutput)
 }
 
-func (i RuleSetItemArgs) ToOutput(ctx context.Context) pulumix.Output[RuleSetItem] {
-	return pulumix.Output[RuleSetItem]{
-		OutputState: i.ToRuleSetItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // RuleSetItemArrayInput is an input type that accepts RuleSetItemArray and RuleSetItemArrayOutput values.
 // You can construct a concrete instance of `RuleSetItemArrayInput` via:
 //
@@ -3488,12 +3133,6 @@ func (i RuleSetItemArray) ToRuleSetItemArrayOutputWithContext(ctx context.Contex
 	return pulumi.ToOutputWithContext(ctx, i).(RuleSetItemArrayOutput)
 }
 
-func (i RuleSetItemArray) ToOutput(ctx context.Context) pulumix.Output[[]RuleSetItem] {
-	return pulumix.Output[[]RuleSetItem]{
-		OutputState: i.ToRuleSetItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type RuleSetItemOutput struct{ *pulumi.OutputState }
 
 func (RuleSetItemOutput) ElementType() reflect.Type {
@@ -3506,12 +3145,6 @@ func (o RuleSetItemOutput) ToRuleSetItemOutput() RuleSetItemOutput {
 
 func (o RuleSetItemOutput) ToRuleSetItemOutputWithContext(ctx context.Context) RuleSetItemOutput {
 	return o
-}
-
-func (o RuleSetItemOutput) ToOutput(ctx context.Context) pulumix.Output[RuleSetItem] {
-	return pulumix.Output[RuleSetItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The action can be one of these values: `ADD_HTTP_REQUEST_HEADER`, `ADD_HTTP_RESPONSE_HEADER`, `ALLOW`, `CONTROL_ACCESS_USING_HTTP_METHODS`, `EXTEND_HTTP_REQUEST_HEADER_VALUE`, `EXTEND_HTTP_RESPONSE_HEADER_VALUE`, `HTTP_HEADER`, `REDIRECT`, `REMOVE_HTTP_REQUEST_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
@@ -3649,12 +3282,6 @@ func (o RuleSetItemArrayOutput) ToRuleSetItemArrayOutputWithContext(ctx context.
 	return o
 }
 
-func (o RuleSetItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]RuleSetItem] {
-	return pulumix.Output[[]RuleSetItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o RuleSetItemArrayOutput) Index(i pulumi.IntInput) RuleSetItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) RuleSetItem {
 		return vs[0].([]RuleSetItem)[vs[1].(int)]
@@ -3716,12 +3343,6 @@ func (i RuleSetItemConditionArgs) ToRuleSetItemConditionOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(RuleSetItemConditionOutput)
 }
 
-func (i RuleSetItemConditionArgs) ToOutput(ctx context.Context) pulumix.Output[RuleSetItemCondition] {
-	return pulumix.Output[RuleSetItemCondition]{
-		OutputState: i.ToRuleSetItemConditionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // RuleSetItemConditionArrayInput is an input type that accepts RuleSetItemConditionArray and RuleSetItemConditionArrayOutput values.
 // You can construct a concrete instance of `RuleSetItemConditionArrayInput` via:
 //
@@ -3747,12 +3368,6 @@ func (i RuleSetItemConditionArray) ToRuleSetItemConditionArrayOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(RuleSetItemConditionArrayOutput)
 }
 
-func (i RuleSetItemConditionArray) ToOutput(ctx context.Context) pulumix.Output[[]RuleSetItemCondition] {
-	return pulumix.Output[[]RuleSetItemCondition]{
-		OutputState: i.ToRuleSetItemConditionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type RuleSetItemConditionOutput struct{ *pulumi.OutputState }
 
 func (RuleSetItemConditionOutput) ElementType() reflect.Type {
@@ -3765,12 +3380,6 @@ func (o RuleSetItemConditionOutput) ToRuleSetItemConditionOutput() RuleSetItemCo
 
 func (o RuleSetItemConditionOutput) ToRuleSetItemConditionOutputWithContext(ctx context.Context) RuleSetItemConditionOutput {
 	return o
-}
-
-func (o RuleSetItemConditionOutput) ToOutput(ctx context.Context) pulumix.Output[RuleSetItemCondition] {
-	return pulumix.Output[RuleSetItemCondition]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The attributeName can be one of these values: `PATH`, `SOURCE_IP_ADDRESS`, `SOURCE_VCN_ID`, `SOURCE_VCN_IP_ADDRESS`
@@ -3807,12 +3416,6 @@ func (o RuleSetItemConditionArrayOutput) ToRuleSetItemConditionArrayOutput() Rul
 
 func (o RuleSetItemConditionArrayOutput) ToRuleSetItemConditionArrayOutputWithContext(ctx context.Context) RuleSetItemConditionArrayOutput {
 	return o
-}
-
-func (o RuleSetItemConditionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]RuleSetItemCondition] {
-	return pulumix.Output[[]RuleSetItemCondition]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o RuleSetItemConditionArrayOutput) Index(i pulumi.IntInput) RuleSetItemConditionOutput {
@@ -3986,12 +3589,6 @@ func (i RuleSetItemRedirectUriArgs) ToRuleSetItemRedirectUriOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(RuleSetItemRedirectUriOutput)
 }
 
-func (i RuleSetItemRedirectUriArgs) ToOutput(ctx context.Context) pulumix.Output[RuleSetItemRedirectUri] {
-	return pulumix.Output[RuleSetItemRedirectUri]{
-		OutputState: i.ToRuleSetItemRedirectUriOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i RuleSetItemRedirectUriArgs) ToRuleSetItemRedirectUriPtrOutput() RuleSetItemRedirectUriPtrOutput {
 	return i.ToRuleSetItemRedirectUriPtrOutputWithContext(context.Background())
 }
@@ -4033,12 +3630,6 @@ func (i *ruleSetItemRedirectUriPtrType) ToRuleSetItemRedirectUriPtrOutputWithCon
 	return pulumi.ToOutputWithContext(ctx, i).(RuleSetItemRedirectUriPtrOutput)
 }
 
-func (i *ruleSetItemRedirectUriPtrType) ToOutput(ctx context.Context) pulumix.Output[*RuleSetItemRedirectUri] {
-	return pulumix.Output[*RuleSetItemRedirectUri]{
-		OutputState: i.ToRuleSetItemRedirectUriPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type RuleSetItemRedirectUriOutput struct{ *pulumi.OutputState }
 
 func (RuleSetItemRedirectUriOutput) ElementType() reflect.Type {
@@ -4061,12 +3652,6 @@ func (o RuleSetItemRedirectUriOutput) ToRuleSetItemRedirectUriPtrOutputWithConte
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v RuleSetItemRedirectUri) *RuleSetItemRedirectUri {
 		return &v
 	}).(RuleSetItemRedirectUriPtrOutput)
-}
-
-func (o RuleSetItemRedirectUriOutput) ToOutput(ctx context.Context) pulumix.Output[RuleSetItemRedirectUri] {
-	return pulumix.Output[RuleSetItemRedirectUri]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The valid domain name (hostname) or IP address to use in the redirect URI.
@@ -4164,12 +3749,6 @@ func (o RuleSetItemRedirectUriPtrOutput) ToRuleSetItemRedirectUriPtrOutput() Rul
 
 func (o RuleSetItemRedirectUriPtrOutput) ToRuleSetItemRedirectUriPtrOutputWithContext(ctx context.Context) RuleSetItemRedirectUriPtrOutput {
 	return o
-}
-
-func (o RuleSetItemRedirectUriPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*RuleSetItemRedirectUri] {
-	return pulumix.Output[*RuleSetItemRedirectUri]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o RuleSetItemRedirectUriPtrOutput) Elem() RuleSetItemRedirectUriOutput {
@@ -4292,13 +3871,13 @@ func (o RuleSetItemRedirectUriPtrOutput) Query() pulumi.StringPtrOutput {
 
 type GetBackendHealthHealthCheckResult struct {
 	// The result of the most recent health check.
-	HealthCheckStatus string `pulumi:"healthCheckStatus"`
+	HealthCheckStatus *string `pulumi:"healthCheckStatus"`
 	// The IP address of the health check status report provider. This identifier helps you differentiate same-subnet load balancers that report health check status.  Example: `10.0.0.7`
-	SourceIpAddress string `pulumi:"sourceIpAddress"`
+	SourceIpAddress *string `pulumi:"sourceIpAddress"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet hosting the load balancer that reported this health check status.
-	SubnetId string `pulumi:"subnetId"`
+	SubnetId *string `pulumi:"subnetId"`
 	// The date and time the data was retrieved, in the format defined by RFC3339.  Example: `2017-06-02T18:28:11+00:00`
-	Timestamp string `pulumi:"timestamp"`
+	Timestamp *string `pulumi:"timestamp"`
 }
 
 // GetBackendHealthHealthCheckResultInput is an input type that accepts GetBackendHealthHealthCheckResultArgs and GetBackendHealthHealthCheckResultOutput values.
@@ -4314,13 +3893,13 @@ type GetBackendHealthHealthCheckResultInput interface {
 
 type GetBackendHealthHealthCheckResultArgs struct {
 	// The result of the most recent health check.
-	HealthCheckStatus pulumi.StringInput `pulumi:"healthCheckStatus"`
+	HealthCheckStatus pulumi.StringPtrInput `pulumi:"healthCheckStatus"`
 	// The IP address of the health check status report provider. This identifier helps you differentiate same-subnet load balancers that report health check status.  Example: `10.0.0.7`
-	SourceIpAddress pulumi.StringInput `pulumi:"sourceIpAddress"`
+	SourceIpAddress pulumi.StringPtrInput `pulumi:"sourceIpAddress"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet hosting the load balancer that reported this health check status.
-	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
 	// The date and time the data was retrieved, in the format defined by RFC3339.  Example: `2017-06-02T18:28:11+00:00`
-	Timestamp pulumi.StringInput `pulumi:"timestamp"`
+	Timestamp pulumi.StringPtrInput `pulumi:"timestamp"`
 }
 
 func (GetBackendHealthHealthCheckResultArgs) ElementType() reflect.Type {
@@ -4333,12 +3912,6 @@ func (i GetBackendHealthHealthCheckResultArgs) ToGetBackendHealthHealthCheckResu
 
 func (i GetBackendHealthHealthCheckResultArgs) ToGetBackendHealthHealthCheckResultOutputWithContext(ctx context.Context) GetBackendHealthHealthCheckResultOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetBackendHealthHealthCheckResultOutput)
-}
-
-func (i GetBackendHealthHealthCheckResultArgs) ToOutput(ctx context.Context) pulumix.Output[GetBackendHealthHealthCheckResult] {
-	return pulumix.Output[GetBackendHealthHealthCheckResult]{
-		OutputState: i.ToGetBackendHealthHealthCheckResultOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetBackendHealthHealthCheckResultArrayInput is an input type that accepts GetBackendHealthHealthCheckResultArray and GetBackendHealthHealthCheckResultArrayOutput values.
@@ -4366,12 +3939,6 @@ func (i GetBackendHealthHealthCheckResultArray) ToGetBackendHealthHealthCheckRes
 	return pulumi.ToOutputWithContext(ctx, i).(GetBackendHealthHealthCheckResultArrayOutput)
 }
 
-func (i GetBackendHealthHealthCheckResultArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBackendHealthHealthCheckResult] {
-	return pulumix.Output[[]GetBackendHealthHealthCheckResult]{
-		OutputState: i.ToGetBackendHealthHealthCheckResultArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBackendHealthHealthCheckResultOutput struct{ *pulumi.OutputState }
 
 func (GetBackendHealthHealthCheckResultOutput) ElementType() reflect.Type {
@@ -4386,30 +3953,24 @@ func (o GetBackendHealthHealthCheckResultOutput) ToGetBackendHealthHealthCheckRe
 	return o
 }
 
-func (o GetBackendHealthHealthCheckResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetBackendHealthHealthCheckResult] {
-	return pulumix.Output[GetBackendHealthHealthCheckResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The result of the most recent health check.
-func (o GetBackendHealthHealthCheckResultOutput) HealthCheckStatus() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackendHealthHealthCheckResult) string { return v.HealthCheckStatus }).(pulumi.StringOutput)
+func (o GetBackendHealthHealthCheckResultOutput) HealthCheckStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBackendHealthHealthCheckResult) *string { return v.HealthCheckStatus }).(pulumi.StringPtrOutput)
 }
 
 // The IP address of the health check status report provider. This identifier helps you differentiate same-subnet load balancers that report health check status.  Example: `10.0.0.7`
-func (o GetBackendHealthHealthCheckResultOutput) SourceIpAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackendHealthHealthCheckResult) string { return v.SourceIpAddress }).(pulumi.StringOutput)
+func (o GetBackendHealthHealthCheckResultOutput) SourceIpAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBackendHealthHealthCheckResult) *string { return v.SourceIpAddress }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet hosting the load balancer that reported this health check status.
-func (o GetBackendHealthHealthCheckResultOutput) SubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackendHealthHealthCheckResult) string { return v.SubnetId }).(pulumi.StringOutput)
+func (o GetBackendHealthHealthCheckResultOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBackendHealthHealthCheckResult) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the data was retrieved, in the format defined by RFC3339.  Example: `2017-06-02T18:28:11+00:00`
-func (o GetBackendHealthHealthCheckResultOutput) Timestamp() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackendHealthHealthCheckResult) string { return v.Timestamp }).(pulumi.StringOutput)
+func (o GetBackendHealthHealthCheckResultOutput) Timestamp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBackendHealthHealthCheckResult) *string { return v.Timestamp }).(pulumi.StringPtrOutput)
 }
 
 type GetBackendHealthHealthCheckResultArrayOutput struct{ *pulumi.OutputState }
@@ -4426,12 +3987,6 @@ func (o GetBackendHealthHealthCheckResultArrayOutput) ToGetBackendHealthHealthCh
 	return o
 }
 
-func (o GetBackendHealthHealthCheckResultArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBackendHealthHealthCheckResult] {
-	return pulumix.Output[[]GetBackendHealthHealthCheckResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetBackendHealthHealthCheckResultArrayOutput) Index(i pulumi.IntInput) GetBackendHealthHealthCheckResultOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBackendHealthHealthCheckResult {
 		return vs[0].([]GetBackendHealthHealthCheckResult)[vs[1].(int)]
@@ -4442,20 +3997,20 @@ type GetBackendSetsBackendset struct {
 	Backends []GetBackendSetsBackendsetBackend `pulumi:"backends"`
 	// The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
 	HealthCheckers []GetBackendSetsBackendsetHealthChecker `pulumi:"healthCheckers"`
-	Id             string                                  `pulumi:"id"`
+	Id             *string                                 `pulumi:"id"`
 	// The configuration details for implementing load balancer cookie session persistence (LB cookie stickiness).
 	LbCookieSessionPersistenceConfigurations []GetBackendSetsBackendsetLbCookieSessionPersistenceConfiguration `pulumi:"lbCookieSessionPersistenceConfigurations"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer associated with the backend sets to retrieve.
-	LoadBalancerId string `pulumi:"loadBalancerId"`
+	LoadBalancerId *string `pulumi:"loadBalancerId"`
 	// A friendly name for the backend set. It must be unique and it cannot be changed.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The load balancer policy for the backend set. To get a list of available policies, use the [ListPolicies](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerPolicy/ListPolicies) operation.  Example: `LEAST_CONNECTIONS`
-	Policy string `pulumi:"policy"`
+	Policy *string `pulumi:"policy"`
 	// The configuration details for implementing session persistence based on a user-specified cookie name (application cookie stickiness).
 	SessionPersistenceConfigurations []GetBackendSetsBackendsetSessionPersistenceConfiguration `pulumi:"sessionPersistenceConfigurations"`
 	// A listener's SSL handling configuration.
 	SslConfigurations []GetBackendSetsBackendsetSslConfiguration `pulumi:"sslConfigurations"`
-	State             string                                     `pulumi:"state"`
+	State             *string                                    `pulumi:"state"`
 }
 
 // GetBackendSetsBackendsetInput is an input type that accepts GetBackendSetsBackendsetArgs and GetBackendSetsBackendsetOutput values.
@@ -4473,20 +4028,20 @@ type GetBackendSetsBackendsetArgs struct {
 	Backends GetBackendSetsBackendsetBackendArrayInput `pulumi:"backends"`
 	// The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
 	HealthCheckers GetBackendSetsBackendsetHealthCheckerArrayInput `pulumi:"healthCheckers"`
-	Id             pulumi.StringInput                              `pulumi:"id"`
+	Id             pulumi.StringPtrInput                           `pulumi:"id"`
 	// The configuration details for implementing load balancer cookie session persistence (LB cookie stickiness).
 	LbCookieSessionPersistenceConfigurations GetBackendSetsBackendsetLbCookieSessionPersistenceConfigurationArrayInput `pulumi:"lbCookieSessionPersistenceConfigurations"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer associated with the backend sets to retrieve.
-	LoadBalancerId pulumi.StringInput `pulumi:"loadBalancerId"`
+	LoadBalancerId pulumi.StringPtrInput `pulumi:"loadBalancerId"`
 	// A friendly name for the backend set. It must be unique and it cannot be changed.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// The load balancer policy for the backend set. To get a list of available policies, use the [ListPolicies](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerPolicy/ListPolicies) operation.  Example: `LEAST_CONNECTIONS`
-	Policy pulumi.StringInput `pulumi:"policy"`
+	Policy pulumi.StringPtrInput `pulumi:"policy"`
 	// The configuration details for implementing session persistence based on a user-specified cookie name (application cookie stickiness).
 	SessionPersistenceConfigurations GetBackendSetsBackendsetSessionPersistenceConfigurationArrayInput `pulumi:"sessionPersistenceConfigurations"`
 	// A listener's SSL handling configuration.
 	SslConfigurations GetBackendSetsBackendsetSslConfigurationArrayInput `pulumi:"sslConfigurations"`
-	State             pulumi.StringInput                                 `pulumi:"state"`
+	State             pulumi.StringPtrInput                              `pulumi:"state"`
 }
 
 func (GetBackendSetsBackendsetArgs) ElementType() reflect.Type {
@@ -4499,12 +4054,6 @@ func (i GetBackendSetsBackendsetArgs) ToGetBackendSetsBackendsetOutput() GetBack
 
 func (i GetBackendSetsBackendsetArgs) ToGetBackendSetsBackendsetOutputWithContext(ctx context.Context) GetBackendSetsBackendsetOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetBackendSetsBackendsetOutput)
-}
-
-func (i GetBackendSetsBackendsetArgs) ToOutput(ctx context.Context) pulumix.Output[GetBackendSetsBackendset] {
-	return pulumix.Output[GetBackendSetsBackendset]{
-		OutputState: i.ToGetBackendSetsBackendsetOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetBackendSetsBackendsetArrayInput is an input type that accepts GetBackendSetsBackendsetArray and GetBackendSetsBackendsetArrayOutput values.
@@ -4532,12 +4081,6 @@ func (i GetBackendSetsBackendsetArray) ToGetBackendSetsBackendsetArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetBackendSetsBackendsetArrayOutput)
 }
 
-func (i GetBackendSetsBackendsetArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBackendSetsBackendset] {
-	return pulumix.Output[[]GetBackendSetsBackendset]{
-		OutputState: i.ToGetBackendSetsBackendsetArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBackendSetsBackendsetOutput struct{ *pulumi.OutputState }
 
 func (GetBackendSetsBackendsetOutput) ElementType() reflect.Type {
@@ -4552,12 +4095,6 @@ func (o GetBackendSetsBackendsetOutput) ToGetBackendSetsBackendsetOutputWithCont
 	return o
 }
 
-func (o GetBackendSetsBackendsetOutput) ToOutput(ctx context.Context) pulumix.Output[GetBackendSetsBackendset] {
-	return pulumix.Output[GetBackendSetsBackendset]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetBackendSetsBackendsetOutput) Backends() GetBackendSetsBackendsetBackendArrayOutput {
 	return o.ApplyT(func(v GetBackendSetsBackendset) []GetBackendSetsBackendsetBackend { return v.Backends }).(GetBackendSetsBackendsetBackendArrayOutput)
 }
@@ -4567,8 +4104,8 @@ func (o GetBackendSetsBackendsetOutput) HealthCheckers() GetBackendSetsBackendse
 	return o.ApplyT(func(v GetBackendSetsBackendset) []GetBackendSetsBackendsetHealthChecker { return v.HealthCheckers }).(GetBackendSetsBackendsetHealthCheckerArrayOutput)
 }
 
-func (o GetBackendSetsBackendsetOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackendSetsBackendset) string { return v.Id }).(pulumi.StringOutput)
+func (o GetBackendSetsBackendsetOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBackendSetsBackendset) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The configuration details for implementing load balancer cookie session persistence (LB cookie stickiness).
@@ -4579,18 +4116,18 @@ func (o GetBackendSetsBackendsetOutput) LbCookieSessionPersistenceConfigurations
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer associated with the backend sets to retrieve.
-func (o GetBackendSetsBackendsetOutput) LoadBalancerId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackendSetsBackendset) string { return v.LoadBalancerId }).(pulumi.StringOutput)
+func (o GetBackendSetsBackendsetOutput) LoadBalancerId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBackendSetsBackendset) *string { return v.LoadBalancerId }).(pulumi.StringPtrOutput)
 }
 
 // A friendly name for the backend set. It must be unique and it cannot be changed.
-func (o GetBackendSetsBackendsetOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackendSetsBackendset) string { return v.Name }).(pulumi.StringOutput)
+func (o GetBackendSetsBackendsetOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBackendSetsBackendset) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The load balancer policy for the backend set. To get a list of available policies, use the [ListPolicies](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerPolicy/ListPolicies) operation.  Example: `LEAST_CONNECTIONS`
-func (o GetBackendSetsBackendsetOutput) Policy() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackendSetsBackendset) string { return v.Policy }).(pulumi.StringOutput)
+func (o GetBackendSetsBackendsetOutput) Policy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBackendSetsBackendset) *string { return v.Policy }).(pulumi.StringPtrOutput)
 }
 
 // The configuration details for implementing session persistence based on a user-specified cookie name (application cookie stickiness).
@@ -4607,8 +4144,8 @@ func (o GetBackendSetsBackendsetOutput) SslConfigurations() GetBackendSetsBacken
 	}).(GetBackendSetsBackendsetSslConfigurationArrayOutput)
 }
 
-func (o GetBackendSetsBackendsetOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackendSetsBackendset) string { return v.State }).(pulumi.StringOutput)
+func (o GetBackendSetsBackendsetOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBackendSetsBackendset) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 type GetBackendSetsBackendsetArrayOutput struct{ *pulumi.OutputState }
@@ -4625,12 +4162,6 @@ func (o GetBackendSetsBackendsetArrayOutput) ToGetBackendSetsBackendsetArrayOutp
 	return o
 }
 
-func (o GetBackendSetsBackendsetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBackendSetsBackendset] {
-	return pulumix.Output[[]GetBackendSetsBackendset]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetBackendSetsBackendsetArrayOutput) Index(i pulumi.IntInput) GetBackendSetsBackendsetOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBackendSetsBackendset {
 		return vs[0].([]GetBackendSetsBackendset)[vs[1].(int)]
@@ -4639,19 +4170,19 @@ func (o GetBackendSetsBackendsetArrayOutput) Index(i pulumi.IntInput) GetBackend
 
 type GetBackendSetsBackendsetBackend struct {
 	// Whether the load balancer should treat this server as a backup unit. If `true`, the load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "backup" fail the health check policy.
-	Backup bool `pulumi:"backup"`
+	Backup *bool `pulumi:"backup"`
 	// Whether the load balancer should drain this server. Servers marked "drain" receive no new incoming traffic.  Example: `false`
-	Drain bool `pulumi:"drain"`
+	Drain *bool `pulumi:"drain"`
 	// The IP address of the backend server.  Example: `10.0.0.3`
-	IpAddress string `pulumi:"ipAddress"`
+	IpAddress *string `pulumi:"ipAddress"`
 	// A friendly name for the backend set. It must be unique and it cannot be changed.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
-	Offline bool `pulumi:"offline"`
+	Offline *bool `pulumi:"offline"`
 	// The backend server port against which to run the health check. If the port is not specified, the load balancer uses the port information from the `Backend` object.  Example: `8080`
-	Port int `pulumi:"port"`
+	Port *int `pulumi:"port"`
 	// The load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives 3 times the number of new connections as a server weighted '1'. For more information on load balancing policies, see [How Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
-	Weight int `pulumi:"weight"`
+	Weight *int `pulumi:"weight"`
 }
 
 // GetBackendSetsBackendsetBackendInput is an input type that accepts GetBackendSetsBackendsetBackendArgs and GetBackendSetsBackendsetBackendOutput values.
@@ -4667,19 +4198,19 @@ type GetBackendSetsBackendsetBackendInput interface {
 
 type GetBackendSetsBackendsetBackendArgs struct {
 	// Whether the load balancer should treat this server as a backup unit. If `true`, the load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "backup" fail the health check policy.
-	Backup pulumi.BoolInput `pulumi:"backup"`
+	Backup pulumi.BoolPtrInput `pulumi:"backup"`
 	// Whether the load balancer should drain this server. Servers marked "drain" receive no new incoming traffic.  Example: `false`
-	Drain pulumi.BoolInput `pulumi:"drain"`
+	Drain pulumi.BoolPtrInput `pulumi:"drain"`
 	// The IP address of the backend server.  Example: `10.0.0.3`
-	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
+	IpAddress pulumi.StringPtrInput `pulumi:"ipAddress"`
 	// A friendly name for the backend set. It must be unique and it cannot be changed.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
-	Offline pulumi.BoolInput `pulumi:"offline"`
+	Offline pulumi.BoolPtrInput `pulumi:"offline"`
 	// The backend server port against which to run the health check. If the port is not specified, the load balancer uses the port information from the `Backend` object.  Example: `8080`
-	Port pulumi.IntInput `pulumi:"port"`
+	Port pulumi.IntPtrInput `pulumi:"port"`
 	// The load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives 3 times the number of new connections as a server weighted '1'. For more information on load balancing policies, see [How Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
-	Weight pulumi.IntInput `pulumi:"weight"`
+	Weight pulumi.IntPtrInput `pulumi:"weight"`
 }
 
 func (GetBackendSetsBackendsetBackendArgs) ElementType() reflect.Type {
@@ -4692,12 +4223,6 @@ func (i GetBackendSetsBackendsetBackendArgs) ToGetBackendSetsBackendsetBackendOu
 
 func (i GetBackendSetsBackendsetBackendArgs) ToGetBackendSetsBackendsetBackendOutputWithContext(ctx context.Context) GetBackendSetsBackendsetBackendOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetBackendSetsBackendsetBackendOutput)
-}
-
-func (i GetBackendSetsBackendsetBackendArgs) ToOutput(ctx context.Context) pulumix.Output[GetBackendSetsBackendsetBackend] {
-	return pulumix.Output[GetBackendSetsBackendsetBackend]{
-		OutputState: i.ToGetBackendSetsBackendsetBackendOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetBackendSetsBackendsetBackendArrayInput is an input type that accepts GetBackendSetsBackendsetBackendArray and GetBackendSetsBackendsetBackendArrayOutput values.
@@ -4725,12 +4250,6 @@ func (i GetBackendSetsBackendsetBackendArray) ToGetBackendSetsBackendsetBackendA
 	return pulumi.ToOutputWithContext(ctx, i).(GetBackendSetsBackendsetBackendArrayOutput)
 }
 
-func (i GetBackendSetsBackendsetBackendArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBackendSetsBackendsetBackend] {
-	return pulumix.Output[[]GetBackendSetsBackendsetBackend]{
-		OutputState: i.ToGetBackendSetsBackendsetBackendArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBackendSetsBackendsetBackendOutput struct{ *pulumi.OutputState }
 
 func (GetBackendSetsBackendsetBackendOutput) ElementType() reflect.Type {
@@ -4745,45 +4264,39 @@ func (o GetBackendSetsBackendsetBackendOutput) ToGetBackendSetsBackendsetBackend
 	return o
 }
 
-func (o GetBackendSetsBackendsetBackendOutput) ToOutput(ctx context.Context) pulumix.Output[GetBackendSetsBackendsetBackend] {
-	return pulumix.Output[GetBackendSetsBackendsetBackend]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Whether the load balancer should treat this server as a backup unit. If `true`, the load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "backup" fail the health check policy.
-func (o GetBackendSetsBackendsetBackendOutput) Backup() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetBackendSetsBackendsetBackend) bool { return v.Backup }).(pulumi.BoolOutput)
+func (o GetBackendSetsBackendsetBackendOutput) Backup() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetBackendSetsBackendsetBackend) *bool { return v.Backup }).(pulumi.BoolPtrOutput)
 }
 
 // Whether the load balancer should drain this server. Servers marked "drain" receive no new incoming traffic.  Example: `false`
-func (o GetBackendSetsBackendsetBackendOutput) Drain() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetBackendSetsBackendsetBackend) bool { return v.Drain }).(pulumi.BoolOutput)
+func (o GetBackendSetsBackendsetBackendOutput) Drain() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetBackendSetsBackendsetBackend) *bool { return v.Drain }).(pulumi.BoolPtrOutput)
 }
 
 // The IP address of the backend server.  Example: `10.0.0.3`
-func (o GetBackendSetsBackendsetBackendOutput) IpAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackendSetsBackendsetBackend) string { return v.IpAddress }).(pulumi.StringOutput)
+func (o GetBackendSetsBackendsetBackendOutput) IpAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBackendSetsBackendsetBackend) *string { return v.IpAddress }).(pulumi.StringPtrOutput)
 }
 
 // A friendly name for the backend set. It must be unique and it cannot be changed.
-func (o GetBackendSetsBackendsetBackendOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackendSetsBackendsetBackend) string { return v.Name }).(pulumi.StringOutput)
+func (o GetBackendSetsBackendsetBackendOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBackendSetsBackendsetBackend) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
-func (o GetBackendSetsBackendsetBackendOutput) Offline() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetBackendSetsBackendsetBackend) bool { return v.Offline }).(pulumi.BoolOutput)
+func (o GetBackendSetsBackendsetBackendOutput) Offline() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetBackendSetsBackendsetBackend) *bool { return v.Offline }).(pulumi.BoolPtrOutput)
 }
 
 // The backend server port against which to run the health check. If the port is not specified, the load balancer uses the port information from the `Backend` object.  Example: `8080`
-func (o GetBackendSetsBackendsetBackendOutput) Port() pulumi.IntOutput {
-	return o.ApplyT(func(v GetBackendSetsBackendsetBackend) int { return v.Port }).(pulumi.IntOutput)
+func (o GetBackendSetsBackendsetBackendOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetBackendSetsBackendsetBackend) *int { return v.Port }).(pulumi.IntPtrOutput)
 }
 
 // The load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives 3 times the number of new connections as a server weighted '1'. For more information on load balancing policies, see [How Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
-func (o GetBackendSetsBackendsetBackendOutput) Weight() pulumi.IntOutput {
-	return o.ApplyT(func(v GetBackendSetsBackendsetBackend) int { return v.Weight }).(pulumi.IntOutput)
+func (o GetBackendSetsBackendsetBackendOutput) Weight() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetBackendSetsBackendsetBackend) *int { return v.Weight }).(pulumi.IntPtrOutput)
 }
 
 type GetBackendSetsBackendsetBackendArrayOutput struct{ *pulumi.OutputState }
@@ -4800,12 +4313,6 @@ func (o GetBackendSetsBackendsetBackendArrayOutput) ToGetBackendSetsBackendsetBa
 	return o
 }
 
-func (o GetBackendSetsBackendsetBackendArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBackendSetsBackendsetBackend] {
-	return pulumix.Output[[]GetBackendSetsBackendsetBackend]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetBackendSetsBackendsetBackendArrayOutput) Index(i pulumi.IntInput) GetBackendSetsBackendsetBackendOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBackendSetsBackendsetBackend {
 		return vs[0].([]GetBackendSetsBackendsetBackend)[vs[1].(int)]
@@ -4814,23 +4321,23 @@ func (o GetBackendSetsBackendsetBackendArrayOutput) Index(i pulumi.IntInput) Get
 
 type GetBackendSetsBackendsetHealthChecker struct {
 	// The interval between health checks, in milliseconds. The default is 10000 (10 seconds).  Example: `10000`
-	IntervalMs int `pulumi:"intervalMs"`
+	IntervalMs *int `pulumi:"intervalMs"`
 	// Specifies if health checks should always be done using plain text instead of depending on whether or not the associated backend set is using SSL.
-	IsForcePlainText bool `pulumi:"isForcePlainText"`
+	IsForcePlainText *bool `pulumi:"isForcePlainText"`
 	// The backend server port against which to run the health check. If the port is not specified, the load balancer uses the port information from the `Backend` object.  Example: `8080`
-	Port int `pulumi:"port"`
+	Port *int `pulumi:"port"`
 	// The protocol the health check must use; either HTTP or TCP.  Example: `HTTP`
-	Protocol string `pulumi:"protocol"`
+	Protocol *string `pulumi:"protocol"`
 	// A regular expression for parsing the response body from the backend server.  Example: `^((?!false).|\s)*$`
-	ResponseBodyRegex string `pulumi:"responseBodyRegex"`
+	ResponseBodyRegex *string `pulumi:"responseBodyRegex"`
 	// The number of retries to attempt before a backend server is considered "unhealthy". This number also applies when recovering a server to the "healthy" state. Defaults to 3.  Example: `3`
-	Retries int `pulumi:"retries"`
+	Retries *int `pulumi:"retries"`
 	// The status code a healthy backend server should return. If you configure the health check policy to use the HTTP protocol, you can use common HTTP status codes such as "200".  Example: `200`
-	ReturnCode int `pulumi:"returnCode"`
+	ReturnCode *int `pulumi:"returnCode"`
 	// The maximum time, in milliseconds, to wait for a reply to a health check. A health check is successful only if a reply returns within this timeout period. Defaults to 3000 (3 seconds).  Example: `3000`
-	TimeoutInMillis int `pulumi:"timeoutInMillis"`
+	TimeoutInMillis *int `pulumi:"timeoutInMillis"`
 	// The path against which to run the health check.  Example: `/healthcheck`
-	UrlPath string `pulumi:"urlPath"`
+	UrlPath *string `pulumi:"urlPath"`
 }
 
 // GetBackendSetsBackendsetHealthCheckerInput is an input type that accepts GetBackendSetsBackendsetHealthCheckerArgs and GetBackendSetsBackendsetHealthCheckerOutput values.
@@ -4846,23 +4353,23 @@ type GetBackendSetsBackendsetHealthCheckerInput interface {
 
 type GetBackendSetsBackendsetHealthCheckerArgs struct {
 	// The interval between health checks, in milliseconds. The default is 10000 (10 seconds).  Example: `10000`
-	IntervalMs pulumi.IntInput `pulumi:"intervalMs"`
+	IntervalMs pulumi.IntPtrInput `pulumi:"intervalMs"`
 	// Specifies if health checks should always be done using plain text instead of depending on whether or not the associated backend set is using SSL.
-	IsForcePlainText pulumi.BoolInput `pulumi:"isForcePlainText"`
+	IsForcePlainText pulumi.BoolPtrInput `pulumi:"isForcePlainText"`
 	// The backend server port against which to run the health check. If the port is not specified, the load balancer uses the port information from the `Backend` object.  Example: `8080`
-	Port pulumi.IntInput `pulumi:"port"`
+	Port pulumi.IntPtrInput `pulumi:"port"`
 	// The protocol the health check must use; either HTTP or TCP.  Example: `HTTP`
-	Protocol pulumi.StringInput `pulumi:"protocol"`
+	Protocol pulumi.StringPtrInput `pulumi:"protocol"`
 	// A regular expression for parsing the response body from the backend server.  Example: `^((?!false).|\s)*$`
-	ResponseBodyRegex pulumi.StringInput `pulumi:"responseBodyRegex"`
+	ResponseBodyRegex pulumi.StringPtrInput `pulumi:"responseBodyRegex"`
 	// The number of retries to attempt before a backend server is considered "unhealthy". This number also applies when recovering a server to the "healthy" state. Defaults to 3.  Example: `3`
-	Retries pulumi.IntInput `pulumi:"retries"`
+	Retries pulumi.IntPtrInput `pulumi:"retries"`
 	// The status code a healthy backend server should return. If you configure the health check policy to use the HTTP protocol, you can use common HTTP status codes such as "200".  Example: `200`
-	ReturnCode pulumi.IntInput `pulumi:"returnCode"`
+	ReturnCode pulumi.IntPtrInput `pulumi:"returnCode"`
 	// The maximum time, in milliseconds, to wait for a reply to a health check. A health check is successful only if a reply returns within this timeout period. Defaults to 3000 (3 seconds).  Example: `3000`
-	TimeoutInMillis pulumi.IntInput `pulumi:"timeoutInMillis"`
+	TimeoutInMillis pulumi.IntPtrInput `pulumi:"timeoutInMillis"`
 	// The path against which to run the health check.  Example: `/healthcheck`
-	UrlPath pulumi.StringInput `pulumi:"urlPath"`
+	UrlPath pulumi.StringPtrInput `pulumi:"urlPath"`
 }
 
 func (GetBackendSetsBackendsetHealthCheckerArgs) ElementType() reflect.Type {
@@ -4875,12 +4382,6 @@ func (i GetBackendSetsBackendsetHealthCheckerArgs) ToGetBackendSetsBackendsetHea
 
 func (i GetBackendSetsBackendsetHealthCheckerArgs) ToGetBackendSetsBackendsetHealthCheckerOutputWithContext(ctx context.Context) GetBackendSetsBackendsetHealthCheckerOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetBackendSetsBackendsetHealthCheckerOutput)
-}
-
-func (i GetBackendSetsBackendsetHealthCheckerArgs) ToOutput(ctx context.Context) pulumix.Output[GetBackendSetsBackendsetHealthChecker] {
-	return pulumix.Output[GetBackendSetsBackendsetHealthChecker]{
-		OutputState: i.ToGetBackendSetsBackendsetHealthCheckerOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetBackendSetsBackendsetHealthCheckerArrayInput is an input type that accepts GetBackendSetsBackendsetHealthCheckerArray and GetBackendSetsBackendsetHealthCheckerArrayOutput values.
@@ -4908,12 +4409,6 @@ func (i GetBackendSetsBackendsetHealthCheckerArray) ToGetBackendSetsBackendsetHe
 	return pulumi.ToOutputWithContext(ctx, i).(GetBackendSetsBackendsetHealthCheckerArrayOutput)
 }
 
-func (i GetBackendSetsBackendsetHealthCheckerArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBackendSetsBackendsetHealthChecker] {
-	return pulumix.Output[[]GetBackendSetsBackendsetHealthChecker]{
-		OutputState: i.ToGetBackendSetsBackendsetHealthCheckerArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBackendSetsBackendsetHealthCheckerOutput struct{ *pulumi.OutputState }
 
 func (GetBackendSetsBackendsetHealthCheckerOutput) ElementType() reflect.Type {
@@ -4928,55 +4423,49 @@ func (o GetBackendSetsBackendsetHealthCheckerOutput) ToGetBackendSetsBackendsetH
 	return o
 }
 
-func (o GetBackendSetsBackendsetHealthCheckerOutput) ToOutput(ctx context.Context) pulumix.Output[GetBackendSetsBackendsetHealthChecker] {
-	return pulumix.Output[GetBackendSetsBackendsetHealthChecker]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The interval between health checks, in milliseconds. The default is 10000 (10 seconds).  Example: `10000`
-func (o GetBackendSetsBackendsetHealthCheckerOutput) IntervalMs() pulumi.IntOutput {
-	return o.ApplyT(func(v GetBackendSetsBackendsetHealthChecker) int { return v.IntervalMs }).(pulumi.IntOutput)
+func (o GetBackendSetsBackendsetHealthCheckerOutput) IntervalMs() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetBackendSetsBackendsetHealthChecker) *int { return v.IntervalMs }).(pulumi.IntPtrOutput)
 }
 
 // Specifies if health checks should always be done using plain text instead of depending on whether or not the associated backend set is using SSL.
-func (o GetBackendSetsBackendsetHealthCheckerOutput) IsForcePlainText() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetBackendSetsBackendsetHealthChecker) bool { return v.IsForcePlainText }).(pulumi.BoolOutput)
+func (o GetBackendSetsBackendsetHealthCheckerOutput) IsForcePlainText() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetBackendSetsBackendsetHealthChecker) *bool { return v.IsForcePlainText }).(pulumi.BoolPtrOutput)
 }
 
 // The backend server port against which to run the health check. If the port is not specified, the load balancer uses the port information from the `Backend` object.  Example: `8080`
-func (o GetBackendSetsBackendsetHealthCheckerOutput) Port() pulumi.IntOutput {
-	return o.ApplyT(func(v GetBackendSetsBackendsetHealthChecker) int { return v.Port }).(pulumi.IntOutput)
+func (o GetBackendSetsBackendsetHealthCheckerOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetBackendSetsBackendsetHealthChecker) *int { return v.Port }).(pulumi.IntPtrOutput)
 }
 
 // The protocol the health check must use; either HTTP or TCP.  Example: `HTTP`
-func (o GetBackendSetsBackendsetHealthCheckerOutput) Protocol() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackendSetsBackendsetHealthChecker) string { return v.Protocol }).(pulumi.StringOutput)
+func (o GetBackendSetsBackendsetHealthCheckerOutput) Protocol() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBackendSetsBackendsetHealthChecker) *string { return v.Protocol }).(pulumi.StringPtrOutput)
 }
 
 // A regular expression for parsing the response body from the backend server.  Example: `^((?!false).|\s)*$`
-func (o GetBackendSetsBackendsetHealthCheckerOutput) ResponseBodyRegex() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackendSetsBackendsetHealthChecker) string { return v.ResponseBodyRegex }).(pulumi.StringOutput)
+func (o GetBackendSetsBackendsetHealthCheckerOutput) ResponseBodyRegex() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBackendSetsBackendsetHealthChecker) *string { return v.ResponseBodyRegex }).(pulumi.StringPtrOutput)
 }
 
 // The number of retries to attempt before a backend server is considered "unhealthy". This number also applies when recovering a server to the "healthy" state. Defaults to 3.  Example: `3`
-func (o GetBackendSetsBackendsetHealthCheckerOutput) Retries() pulumi.IntOutput {
-	return o.ApplyT(func(v GetBackendSetsBackendsetHealthChecker) int { return v.Retries }).(pulumi.IntOutput)
+func (o GetBackendSetsBackendsetHealthCheckerOutput) Retries() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetBackendSetsBackendsetHealthChecker) *int { return v.Retries }).(pulumi.IntPtrOutput)
 }
 
 // The status code a healthy backend server should return. If you configure the health check policy to use the HTTP protocol, you can use common HTTP status codes such as "200".  Example: `200`
-func (o GetBackendSetsBackendsetHealthCheckerOutput) ReturnCode() pulumi.IntOutput {
-	return o.ApplyT(func(v GetBackendSetsBackendsetHealthChecker) int { return v.ReturnCode }).(pulumi.IntOutput)
+func (o GetBackendSetsBackendsetHealthCheckerOutput) ReturnCode() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetBackendSetsBackendsetHealthChecker) *int { return v.ReturnCode }).(pulumi.IntPtrOutput)
 }
 
 // The maximum time, in milliseconds, to wait for a reply to a health check. A health check is successful only if a reply returns within this timeout period. Defaults to 3000 (3 seconds).  Example: `3000`
-func (o GetBackendSetsBackendsetHealthCheckerOutput) TimeoutInMillis() pulumi.IntOutput {
-	return o.ApplyT(func(v GetBackendSetsBackendsetHealthChecker) int { return v.TimeoutInMillis }).(pulumi.IntOutput)
+func (o GetBackendSetsBackendsetHealthCheckerOutput) TimeoutInMillis() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetBackendSetsBackendsetHealthChecker) *int { return v.TimeoutInMillis }).(pulumi.IntPtrOutput)
 }
 
 // The path against which to run the health check.  Example: `/healthcheck`
-func (o GetBackendSetsBackendsetHealthCheckerOutput) UrlPath() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackendSetsBackendsetHealthChecker) string { return v.UrlPath }).(pulumi.StringOutput)
+func (o GetBackendSetsBackendsetHealthCheckerOutput) UrlPath() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBackendSetsBackendsetHealthChecker) *string { return v.UrlPath }).(pulumi.StringPtrOutput)
 }
 
 type GetBackendSetsBackendsetHealthCheckerArrayOutput struct{ *pulumi.OutputState }
@@ -4993,12 +4482,6 @@ func (o GetBackendSetsBackendsetHealthCheckerArrayOutput) ToGetBackendSetsBacken
 	return o
 }
 
-func (o GetBackendSetsBackendsetHealthCheckerArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBackendSetsBackendsetHealthChecker] {
-	return pulumix.Output[[]GetBackendSetsBackendsetHealthChecker]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetBackendSetsBackendsetHealthCheckerArrayOutput) Index(i pulumi.IntInput) GetBackendSetsBackendsetHealthCheckerOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBackendSetsBackendsetHealthChecker {
 		return vs[0].([]GetBackendSetsBackendsetHealthChecker)[vs[1].(int)]
@@ -5007,19 +4490,19 @@ func (o GetBackendSetsBackendsetHealthCheckerArrayOutput) Index(i pulumi.IntInpu
 
 type GetBackendSetsBackendsetLbCookieSessionPersistenceConfiguration struct {
 	// The name of the cookie used to detect a session initiated by the backend server. Use '*' to specify that any cookie set by the backend causes the session to persist.  Example: `exampleCookie`
-	CookieName string `pulumi:"cookieName"`
+	CookieName *string `pulumi:"cookieName"`
 	// Whether the load balancer is prevented from directing traffic from a persistent session client to a different backend server if the original server is unavailable. Defaults to false.  Example: `false`
-	DisableFallback bool `pulumi:"disableFallback"`
+	DisableFallback *bool `pulumi:"disableFallback"`
 	// The domain in which the cookie is valid. The `Set-cookie` header inserted by the load balancer contains a domain attribute with the specified value.
-	Domain string `pulumi:"domain"`
+	Domain *string `pulumi:"domain"`
 	// Whether the `Set-cookie` header should contain the `HttpOnly` attribute. If `true`, the `Set-cookie` header inserted by the load balancer contains the `HttpOnly` attribute, which limits the scope of the cookie to HTTP requests. This attribute directs the client or browser to omit the cookie when providing access to cookies through non-HTTP APIs. For example, it restricts the cookie from JavaScript channels.  Example: `true`
-	IsHttpOnly bool `pulumi:"isHttpOnly"`
+	IsHttpOnly *bool `pulumi:"isHttpOnly"`
 	// Whether the `Set-cookie` header should contain the `Secure` attribute. If `true`, the `Set-cookie` header inserted by the load balancer contains the `Secure` attribute, which directs the client or browser to send the cookie only using a secure protocol.
-	IsSecure bool `pulumi:"isSecure"`
+	IsSecure *bool `pulumi:"isSecure"`
 	// The amount of time the cookie remains valid. The `Set-cookie` header inserted by the load balancer contains a `Max-Age` attribute with the specified value.
-	MaxAgeInSeconds int `pulumi:"maxAgeInSeconds"`
+	MaxAgeInSeconds *int `pulumi:"maxAgeInSeconds"`
 	// The path in which the cookie is valid. The `Set-cookie header` inserted by the load balancer contains a `Path` attribute with the specified value.
-	Path string `pulumi:"path"`
+	Path *string `pulumi:"path"`
 }
 
 // GetBackendSetsBackendsetLbCookieSessionPersistenceConfigurationInput is an input type that accepts GetBackendSetsBackendsetLbCookieSessionPersistenceConfigurationArgs and GetBackendSetsBackendsetLbCookieSessionPersistenceConfigurationOutput values.
@@ -5035,19 +4518,19 @@ type GetBackendSetsBackendsetLbCookieSessionPersistenceConfigurationInput interf
 
 type GetBackendSetsBackendsetLbCookieSessionPersistenceConfigurationArgs struct {
 	// The name of the cookie used to detect a session initiated by the backend server. Use '*' to specify that any cookie set by the backend causes the session to persist.  Example: `exampleCookie`
-	CookieName pulumi.StringInput `pulumi:"cookieName"`
+	CookieName pulumi.StringPtrInput `pulumi:"cookieName"`
 	// Whether the load balancer is prevented from directing traffic from a persistent session client to a different backend server if the original server is unavailable. Defaults to false.  Example: `false`
-	DisableFallback pulumi.BoolInput `pulumi:"disableFallback"`
+	DisableFallback pulumi.BoolPtrInput `pulumi:"disableFallback"`
 	// The domain in which the cookie is valid. The `Set-cookie` header inserted by the load balancer contains a domain attribute with the specified value.
-	Domain pulumi.StringInput `pulumi:"domain"`
+	Domain pulumi.StringPtrInput `pulumi:"domain"`
 	// Whether the `Set-cookie` header should contain the `HttpOnly` attribute. If `true`, the `Set-cookie` header inserted by the load balancer contains the `HttpOnly` attribute, which limits the scope of the cookie to HTTP requests. This attribute directs the client or browser to omit the cookie when providing access to cookies through non-HTTP APIs. For example, it restricts the cookie from JavaScript channels.  Example: `true`
-	IsHttpOnly pulumi.BoolInput `pulumi:"isHttpOnly"`
+	IsHttpOnly pulumi.BoolPtrInput `pulumi:"isHttpOnly"`
 	// Whether the `Set-cookie` header should contain the `Secure` attribute. If `true`, the `Set-cookie` header inserted by the load balancer contains the `Secure` attribute, which directs the client or browser to send the cookie only using a secure protocol.
-	IsSecure pulumi.BoolInput `pulumi:"isSecure"`
+	IsSecure pulumi.BoolPtrInput `pulumi:"isSecure"`
 	// The amount of time the cookie remains valid. The `Set-cookie` header inserted by the load balancer contains a `Max-Age` attribute with the specified value.
-	MaxAgeInSeconds pulumi.IntInput `pulumi:"maxAgeInSeconds"`
+	MaxAgeInSeconds pulumi.IntPtrInput `pulumi:"maxAgeInSeconds"`
 	// The path in which the cookie is valid. The `Set-cookie header` inserted by the load balancer contains a `Path` attribute with the specified value.
-	Path pulumi.StringInput `pulumi:"path"`
+	Path pulumi.StringPtrInput `pulumi:"path"`
 }
 
 func (GetBackendSetsBackendsetLbCookieSessionPersistenceConfigurationArgs) ElementType() reflect.Type {
@@ -5060,12 +4543,6 @@ func (i GetBackendSetsBackendsetLbCookieSessionPersistenceConfigurationArgs) ToG
 
 func (i GetBackendSetsBackendsetLbCookieSessionPersistenceConfigurationArgs) ToGetBackendSetsBackendsetLbCookieSessionPersistenceConfigurationOutputWithContext(ctx context.Context) GetBackendSetsBackendsetLbCookieSessionPersistenceConfigurationOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetBackendSetsBackendsetLbCookieSessionPersistenceConfigurationOutput)
-}
-
-func (i GetBackendSetsBackendsetLbCookieSessionPersistenceConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetBackendSetsBackendsetLbCookieSessionPersistenceConfiguration] {
-	return pulumix.Output[GetBackendSetsBackendsetLbCookieSessionPersistenceConfiguration]{
-		OutputState: i.ToGetBackendSetsBackendsetLbCookieSessionPersistenceConfigurationOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetBackendSetsBackendsetLbCookieSessionPersistenceConfigurationArrayInput is an input type that accepts GetBackendSetsBackendsetLbCookieSessionPersistenceConfigurationArray and GetBackendSetsBackendsetLbCookieSessionPersistenceConfigurationArrayOutput values.
@@ -5093,12 +4570,6 @@ func (i GetBackendSetsBackendsetLbCookieSessionPersistenceConfigurationArray) To
 	return pulumi.ToOutputWithContext(ctx, i).(GetBackendSetsBackendsetLbCookieSessionPersistenceConfigurationArrayOutput)
 }
 
-func (i GetBackendSetsBackendsetLbCookieSessionPersistenceConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBackendSetsBackendsetLbCookieSessionPersistenceConfiguration] {
-	return pulumix.Output[[]GetBackendSetsBackendsetLbCookieSessionPersistenceConfiguration]{
-		OutputState: i.ToGetBackendSetsBackendsetLbCookieSessionPersistenceConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBackendSetsBackendsetLbCookieSessionPersistenceConfigurationOutput struct{ *pulumi.OutputState }
 
 func (GetBackendSetsBackendsetLbCookieSessionPersistenceConfigurationOutput) ElementType() reflect.Type {
@@ -5113,45 +4584,41 @@ func (o GetBackendSetsBackendsetLbCookieSessionPersistenceConfigurationOutput) T
 	return o
 }
 
-func (o GetBackendSetsBackendsetLbCookieSessionPersistenceConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetBackendSetsBackendsetLbCookieSessionPersistenceConfiguration] {
-	return pulumix.Output[GetBackendSetsBackendsetLbCookieSessionPersistenceConfiguration]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The name of the cookie used to detect a session initiated by the backend server. Use '*' to specify that any cookie set by the backend causes the session to persist.  Example: `exampleCookie`
-func (o GetBackendSetsBackendsetLbCookieSessionPersistenceConfigurationOutput) CookieName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackendSetsBackendsetLbCookieSessionPersistenceConfiguration) string { return v.CookieName }).(pulumi.StringOutput)
+func (o GetBackendSetsBackendsetLbCookieSessionPersistenceConfigurationOutput) CookieName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBackendSetsBackendsetLbCookieSessionPersistenceConfiguration) *string { return v.CookieName }).(pulumi.StringPtrOutput)
 }
 
 // Whether the load balancer is prevented from directing traffic from a persistent session client to a different backend server if the original server is unavailable. Defaults to false.  Example: `false`
-func (o GetBackendSetsBackendsetLbCookieSessionPersistenceConfigurationOutput) DisableFallback() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetBackendSetsBackendsetLbCookieSessionPersistenceConfiguration) bool { return v.DisableFallback }).(pulumi.BoolOutput)
+func (o GetBackendSetsBackendsetLbCookieSessionPersistenceConfigurationOutput) DisableFallback() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetBackendSetsBackendsetLbCookieSessionPersistenceConfiguration) *bool {
+		return v.DisableFallback
+	}).(pulumi.BoolPtrOutput)
 }
 
 // The domain in which the cookie is valid. The `Set-cookie` header inserted by the load balancer contains a domain attribute with the specified value.
-func (o GetBackendSetsBackendsetLbCookieSessionPersistenceConfigurationOutput) Domain() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackendSetsBackendsetLbCookieSessionPersistenceConfiguration) string { return v.Domain }).(pulumi.StringOutput)
+func (o GetBackendSetsBackendsetLbCookieSessionPersistenceConfigurationOutput) Domain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBackendSetsBackendsetLbCookieSessionPersistenceConfiguration) *string { return v.Domain }).(pulumi.StringPtrOutput)
 }
 
 // Whether the `Set-cookie` header should contain the `HttpOnly` attribute. If `true`, the `Set-cookie` header inserted by the load balancer contains the `HttpOnly` attribute, which limits the scope of the cookie to HTTP requests. This attribute directs the client or browser to omit the cookie when providing access to cookies through non-HTTP APIs. For example, it restricts the cookie from JavaScript channels.  Example: `true`
-func (o GetBackendSetsBackendsetLbCookieSessionPersistenceConfigurationOutput) IsHttpOnly() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetBackendSetsBackendsetLbCookieSessionPersistenceConfiguration) bool { return v.IsHttpOnly }).(pulumi.BoolOutput)
+func (o GetBackendSetsBackendsetLbCookieSessionPersistenceConfigurationOutput) IsHttpOnly() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetBackendSetsBackendsetLbCookieSessionPersistenceConfiguration) *bool { return v.IsHttpOnly }).(pulumi.BoolPtrOutput)
 }
 
 // Whether the `Set-cookie` header should contain the `Secure` attribute. If `true`, the `Set-cookie` header inserted by the load balancer contains the `Secure` attribute, which directs the client or browser to send the cookie only using a secure protocol.
-func (o GetBackendSetsBackendsetLbCookieSessionPersistenceConfigurationOutput) IsSecure() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetBackendSetsBackendsetLbCookieSessionPersistenceConfiguration) bool { return v.IsSecure }).(pulumi.BoolOutput)
+func (o GetBackendSetsBackendsetLbCookieSessionPersistenceConfigurationOutput) IsSecure() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetBackendSetsBackendsetLbCookieSessionPersistenceConfiguration) *bool { return v.IsSecure }).(pulumi.BoolPtrOutput)
 }
 
 // The amount of time the cookie remains valid. The `Set-cookie` header inserted by the load balancer contains a `Max-Age` attribute with the specified value.
-func (o GetBackendSetsBackendsetLbCookieSessionPersistenceConfigurationOutput) MaxAgeInSeconds() pulumi.IntOutput {
-	return o.ApplyT(func(v GetBackendSetsBackendsetLbCookieSessionPersistenceConfiguration) int { return v.MaxAgeInSeconds }).(pulumi.IntOutput)
+func (o GetBackendSetsBackendsetLbCookieSessionPersistenceConfigurationOutput) MaxAgeInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetBackendSetsBackendsetLbCookieSessionPersistenceConfiguration) *int { return v.MaxAgeInSeconds }).(pulumi.IntPtrOutput)
 }
 
 // The path in which the cookie is valid. The `Set-cookie header` inserted by the load balancer contains a `Path` attribute with the specified value.
-func (o GetBackendSetsBackendsetLbCookieSessionPersistenceConfigurationOutput) Path() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackendSetsBackendsetLbCookieSessionPersistenceConfiguration) string { return v.Path }).(pulumi.StringOutput)
+func (o GetBackendSetsBackendsetLbCookieSessionPersistenceConfigurationOutput) Path() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBackendSetsBackendsetLbCookieSessionPersistenceConfiguration) *string { return v.Path }).(pulumi.StringPtrOutput)
 }
 
 type GetBackendSetsBackendsetLbCookieSessionPersistenceConfigurationArrayOutput struct{ *pulumi.OutputState }
@@ -5168,12 +4635,6 @@ func (o GetBackendSetsBackendsetLbCookieSessionPersistenceConfigurationArrayOutp
 	return o
 }
 
-func (o GetBackendSetsBackendsetLbCookieSessionPersistenceConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBackendSetsBackendsetLbCookieSessionPersistenceConfiguration] {
-	return pulumix.Output[[]GetBackendSetsBackendsetLbCookieSessionPersistenceConfiguration]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetBackendSetsBackendsetLbCookieSessionPersistenceConfigurationArrayOutput) Index(i pulumi.IntInput) GetBackendSetsBackendsetLbCookieSessionPersistenceConfigurationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBackendSetsBackendsetLbCookieSessionPersistenceConfiguration {
 		return vs[0].([]GetBackendSetsBackendsetLbCookieSessionPersistenceConfiguration)[vs[1].(int)]
@@ -5182,9 +4643,9 @@ func (o GetBackendSetsBackendsetLbCookieSessionPersistenceConfigurationArrayOutp
 
 type GetBackendSetsBackendsetSessionPersistenceConfiguration struct {
 	// The name of the cookie used to detect a session initiated by the backend server. Use '*' to specify that any cookie set by the backend causes the session to persist.  Example: `exampleCookie`
-	CookieName string `pulumi:"cookieName"`
+	CookieName *string `pulumi:"cookieName"`
 	// Whether the load balancer is prevented from directing traffic from a persistent session client to a different backend server if the original server is unavailable. Defaults to false.  Example: `false`
-	DisableFallback bool `pulumi:"disableFallback"`
+	DisableFallback *bool `pulumi:"disableFallback"`
 }
 
 // GetBackendSetsBackendsetSessionPersistenceConfigurationInput is an input type that accepts GetBackendSetsBackendsetSessionPersistenceConfigurationArgs and GetBackendSetsBackendsetSessionPersistenceConfigurationOutput values.
@@ -5200,9 +4661,9 @@ type GetBackendSetsBackendsetSessionPersistenceConfigurationInput interface {
 
 type GetBackendSetsBackendsetSessionPersistenceConfigurationArgs struct {
 	// The name of the cookie used to detect a session initiated by the backend server. Use '*' to specify that any cookie set by the backend causes the session to persist.  Example: `exampleCookie`
-	CookieName pulumi.StringInput `pulumi:"cookieName"`
+	CookieName pulumi.StringPtrInput `pulumi:"cookieName"`
 	// Whether the load balancer is prevented from directing traffic from a persistent session client to a different backend server if the original server is unavailable. Defaults to false.  Example: `false`
-	DisableFallback pulumi.BoolInput `pulumi:"disableFallback"`
+	DisableFallback pulumi.BoolPtrInput `pulumi:"disableFallback"`
 }
 
 func (GetBackendSetsBackendsetSessionPersistenceConfigurationArgs) ElementType() reflect.Type {
@@ -5215,12 +4676,6 @@ func (i GetBackendSetsBackendsetSessionPersistenceConfigurationArgs) ToGetBacken
 
 func (i GetBackendSetsBackendsetSessionPersistenceConfigurationArgs) ToGetBackendSetsBackendsetSessionPersistenceConfigurationOutputWithContext(ctx context.Context) GetBackendSetsBackendsetSessionPersistenceConfigurationOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetBackendSetsBackendsetSessionPersistenceConfigurationOutput)
-}
-
-func (i GetBackendSetsBackendsetSessionPersistenceConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetBackendSetsBackendsetSessionPersistenceConfiguration] {
-	return pulumix.Output[GetBackendSetsBackendsetSessionPersistenceConfiguration]{
-		OutputState: i.ToGetBackendSetsBackendsetSessionPersistenceConfigurationOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetBackendSetsBackendsetSessionPersistenceConfigurationArrayInput is an input type that accepts GetBackendSetsBackendsetSessionPersistenceConfigurationArray and GetBackendSetsBackendsetSessionPersistenceConfigurationArrayOutput values.
@@ -5248,12 +4703,6 @@ func (i GetBackendSetsBackendsetSessionPersistenceConfigurationArray) ToGetBacke
 	return pulumi.ToOutputWithContext(ctx, i).(GetBackendSetsBackendsetSessionPersistenceConfigurationArrayOutput)
 }
 
-func (i GetBackendSetsBackendsetSessionPersistenceConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBackendSetsBackendsetSessionPersistenceConfiguration] {
-	return pulumix.Output[[]GetBackendSetsBackendsetSessionPersistenceConfiguration]{
-		OutputState: i.ToGetBackendSetsBackendsetSessionPersistenceConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBackendSetsBackendsetSessionPersistenceConfigurationOutput struct{ *pulumi.OutputState }
 
 func (GetBackendSetsBackendsetSessionPersistenceConfigurationOutput) ElementType() reflect.Type {
@@ -5268,20 +4717,14 @@ func (o GetBackendSetsBackendsetSessionPersistenceConfigurationOutput) ToGetBack
 	return o
 }
 
-func (o GetBackendSetsBackendsetSessionPersistenceConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetBackendSetsBackendsetSessionPersistenceConfiguration] {
-	return pulumix.Output[GetBackendSetsBackendsetSessionPersistenceConfiguration]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The name of the cookie used to detect a session initiated by the backend server. Use '*' to specify that any cookie set by the backend causes the session to persist.  Example: `exampleCookie`
-func (o GetBackendSetsBackendsetSessionPersistenceConfigurationOutput) CookieName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackendSetsBackendsetSessionPersistenceConfiguration) string { return v.CookieName }).(pulumi.StringOutput)
+func (o GetBackendSetsBackendsetSessionPersistenceConfigurationOutput) CookieName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBackendSetsBackendsetSessionPersistenceConfiguration) *string { return v.CookieName }).(pulumi.StringPtrOutput)
 }
 
 // Whether the load balancer is prevented from directing traffic from a persistent session client to a different backend server if the original server is unavailable. Defaults to false.  Example: `false`
-func (o GetBackendSetsBackendsetSessionPersistenceConfigurationOutput) DisableFallback() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetBackendSetsBackendsetSessionPersistenceConfiguration) bool { return v.DisableFallback }).(pulumi.BoolOutput)
+func (o GetBackendSetsBackendsetSessionPersistenceConfigurationOutput) DisableFallback() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetBackendSetsBackendsetSessionPersistenceConfiguration) *bool { return v.DisableFallback }).(pulumi.BoolPtrOutput)
 }
 
 type GetBackendSetsBackendsetSessionPersistenceConfigurationArrayOutput struct{ *pulumi.OutputState }
@@ -5298,12 +4741,6 @@ func (o GetBackendSetsBackendsetSessionPersistenceConfigurationArrayOutput) ToGe
 	return o
 }
 
-func (o GetBackendSetsBackendsetSessionPersistenceConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBackendSetsBackendsetSessionPersistenceConfiguration] {
-	return pulumix.Output[[]GetBackendSetsBackendsetSessionPersistenceConfiguration]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetBackendSetsBackendsetSessionPersistenceConfigurationArrayOutput) Index(i pulumi.IntInput) GetBackendSetsBackendsetSessionPersistenceConfigurationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBackendSetsBackendsetSessionPersistenceConfiguration {
 		return vs[0].([]GetBackendSetsBackendsetSessionPersistenceConfiguration)[vs[1].(int)]
@@ -5314,19 +4751,19 @@ type GetBackendSetsBackendsetSslConfiguration struct {
 	// Ids for Oracle Cloud Infrastructure certificates service certificates. Currently only a single Id may be passed.  Example: `[ocid1.certificate.oc1.us-ashburn-1.amaaaaaaav3bgsaa5o2q7rh5nfmkkukfkogasqhk6af2opufhjlqg7m6jqzq]`
 	CertificateIds []string `pulumi:"certificateIds"`
 	// A friendly name for the certificate bundle. It must be unique and it cannot be changed. Valid certificate bundle names include only alphanumeric characters, dashes, and underscores. Certificate bundle names cannot contain spaces. Avoid entering confidential information.  Example: `exampleCertificateBundle`
-	CertificateName string `pulumi:"certificateName"`
+	CertificateName *string `pulumi:"certificateName"`
 	// The name of the cipher suite to use for HTTPS or SSL connections.
-	CipherSuiteName string `pulumi:"cipherSuiteName"`
+	CipherSuiteName *string `pulumi:"cipherSuiteName"`
 	// A list of SSL protocols the load balancer must support for HTTPS or SSL connections.
 	Protocols []string `pulumi:"protocols"`
 	// When this attribute is set to ENABLED, the system gives preference to the server ciphers over the client ciphers.
-	ServerOrderPreference string `pulumi:"serverOrderPreference"`
+	ServerOrderPreference *string `pulumi:"serverOrderPreference"`
 	// Ids for Oracle Cloud Infrastructure certificates service CA or CA bundles for the load balancer to trust.  Example: `[ocid1.cabundle.oc1.us-ashburn-1.amaaaaaaav3bgsaagl4zzyqdop5i2vuwoqewdvauuw34llqa74otq2jdsfyq]`
 	TrustedCertificateAuthorityIds []string `pulumi:"trustedCertificateAuthorityIds"`
 	// The maximum depth for peer certificate chain verification.  Example: `3`
-	VerifyDepth int `pulumi:"verifyDepth"`
+	VerifyDepth *int `pulumi:"verifyDepth"`
 	// Whether the load balancer listener should verify peer certificates.  Example: `true`
-	VerifyPeerCertificate bool `pulumi:"verifyPeerCertificate"`
+	VerifyPeerCertificate *bool `pulumi:"verifyPeerCertificate"`
 }
 
 // GetBackendSetsBackendsetSslConfigurationInput is an input type that accepts GetBackendSetsBackendsetSslConfigurationArgs and GetBackendSetsBackendsetSslConfigurationOutput values.
@@ -5344,19 +4781,19 @@ type GetBackendSetsBackendsetSslConfigurationArgs struct {
 	// Ids for Oracle Cloud Infrastructure certificates service certificates. Currently only a single Id may be passed.  Example: `[ocid1.certificate.oc1.us-ashburn-1.amaaaaaaav3bgsaa5o2q7rh5nfmkkukfkogasqhk6af2opufhjlqg7m6jqzq]`
 	CertificateIds pulumi.StringArrayInput `pulumi:"certificateIds"`
 	// A friendly name for the certificate bundle. It must be unique and it cannot be changed. Valid certificate bundle names include only alphanumeric characters, dashes, and underscores. Certificate bundle names cannot contain spaces. Avoid entering confidential information.  Example: `exampleCertificateBundle`
-	CertificateName pulumi.StringInput `pulumi:"certificateName"`
+	CertificateName pulumi.StringPtrInput `pulumi:"certificateName"`
 	// The name of the cipher suite to use for HTTPS or SSL connections.
-	CipherSuiteName pulumi.StringInput `pulumi:"cipherSuiteName"`
+	CipherSuiteName pulumi.StringPtrInput `pulumi:"cipherSuiteName"`
 	// A list of SSL protocols the load balancer must support for HTTPS or SSL connections.
 	Protocols pulumi.StringArrayInput `pulumi:"protocols"`
 	// When this attribute is set to ENABLED, the system gives preference to the server ciphers over the client ciphers.
-	ServerOrderPreference pulumi.StringInput `pulumi:"serverOrderPreference"`
+	ServerOrderPreference pulumi.StringPtrInput `pulumi:"serverOrderPreference"`
 	// Ids for Oracle Cloud Infrastructure certificates service CA or CA bundles for the load balancer to trust.  Example: `[ocid1.cabundle.oc1.us-ashburn-1.amaaaaaaav3bgsaagl4zzyqdop5i2vuwoqewdvauuw34llqa74otq2jdsfyq]`
 	TrustedCertificateAuthorityIds pulumi.StringArrayInput `pulumi:"trustedCertificateAuthorityIds"`
 	// The maximum depth for peer certificate chain verification.  Example: `3`
-	VerifyDepth pulumi.IntInput `pulumi:"verifyDepth"`
+	VerifyDepth pulumi.IntPtrInput `pulumi:"verifyDepth"`
 	// Whether the load balancer listener should verify peer certificates.  Example: `true`
-	VerifyPeerCertificate pulumi.BoolInput `pulumi:"verifyPeerCertificate"`
+	VerifyPeerCertificate pulumi.BoolPtrInput `pulumi:"verifyPeerCertificate"`
 }
 
 func (GetBackendSetsBackendsetSslConfigurationArgs) ElementType() reflect.Type {
@@ -5369,12 +4806,6 @@ func (i GetBackendSetsBackendsetSslConfigurationArgs) ToGetBackendSetsBackendset
 
 func (i GetBackendSetsBackendsetSslConfigurationArgs) ToGetBackendSetsBackendsetSslConfigurationOutputWithContext(ctx context.Context) GetBackendSetsBackendsetSslConfigurationOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetBackendSetsBackendsetSslConfigurationOutput)
-}
-
-func (i GetBackendSetsBackendsetSslConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetBackendSetsBackendsetSslConfiguration] {
-	return pulumix.Output[GetBackendSetsBackendsetSslConfiguration]{
-		OutputState: i.ToGetBackendSetsBackendsetSslConfigurationOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetBackendSetsBackendsetSslConfigurationArrayInput is an input type that accepts GetBackendSetsBackendsetSslConfigurationArray and GetBackendSetsBackendsetSslConfigurationArrayOutput values.
@@ -5402,12 +4833,6 @@ func (i GetBackendSetsBackendsetSslConfigurationArray) ToGetBackendSetsBackendse
 	return pulumi.ToOutputWithContext(ctx, i).(GetBackendSetsBackendsetSslConfigurationArrayOutput)
 }
 
-func (i GetBackendSetsBackendsetSslConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBackendSetsBackendsetSslConfiguration] {
-	return pulumix.Output[[]GetBackendSetsBackendsetSslConfiguration]{
-		OutputState: i.ToGetBackendSetsBackendsetSslConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBackendSetsBackendsetSslConfigurationOutput struct{ *pulumi.OutputState }
 
 func (GetBackendSetsBackendsetSslConfigurationOutput) ElementType() reflect.Type {
@@ -5422,25 +4847,19 @@ func (o GetBackendSetsBackendsetSslConfigurationOutput) ToGetBackendSetsBackends
 	return o
 }
 
-func (o GetBackendSetsBackendsetSslConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetBackendSetsBackendsetSslConfiguration] {
-	return pulumix.Output[GetBackendSetsBackendsetSslConfiguration]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Ids for Oracle Cloud Infrastructure certificates service certificates. Currently only a single Id may be passed.  Example: `[ocid1.certificate.oc1.us-ashburn-1.amaaaaaaav3bgsaa5o2q7rh5nfmkkukfkogasqhk6af2opufhjlqg7m6jqzq]`
 func (o GetBackendSetsBackendsetSslConfigurationOutput) CertificateIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetBackendSetsBackendsetSslConfiguration) []string { return v.CertificateIds }).(pulumi.StringArrayOutput)
 }
 
 // A friendly name for the certificate bundle. It must be unique and it cannot be changed. Valid certificate bundle names include only alphanumeric characters, dashes, and underscores. Certificate bundle names cannot contain spaces. Avoid entering confidential information.  Example: `exampleCertificateBundle`
-func (o GetBackendSetsBackendsetSslConfigurationOutput) CertificateName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackendSetsBackendsetSslConfiguration) string { return v.CertificateName }).(pulumi.StringOutput)
+func (o GetBackendSetsBackendsetSslConfigurationOutput) CertificateName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBackendSetsBackendsetSslConfiguration) *string { return v.CertificateName }).(pulumi.StringPtrOutput)
 }
 
 // The name of the cipher suite to use for HTTPS or SSL connections.
-func (o GetBackendSetsBackendsetSslConfigurationOutput) CipherSuiteName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackendSetsBackendsetSslConfiguration) string { return v.CipherSuiteName }).(pulumi.StringOutput)
+func (o GetBackendSetsBackendsetSslConfigurationOutput) CipherSuiteName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBackendSetsBackendsetSslConfiguration) *string { return v.CipherSuiteName }).(pulumi.StringPtrOutput)
 }
 
 // A list of SSL protocols the load balancer must support for HTTPS or SSL connections.
@@ -5449,8 +4868,8 @@ func (o GetBackendSetsBackendsetSslConfigurationOutput) Protocols() pulumi.Strin
 }
 
 // When this attribute is set to ENABLED, the system gives preference to the server ciphers over the client ciphers.
-func (o GetBackendSetsBackendsetSslConfigurationOutput) ServerOrderPreference() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackendSetsBackendsetSslConfiguration) string { return v.ServerOrderPreference }).(pulumi.StringOutput)
+func (o GetBackendSetsBackendsetSslConfigurationOutput) ServerOrderPreference() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBackendSetsBackendsetSslConfiguration) *string { return v.ServerOrderPreference }).(pulumi.StringPtrOutput)
 }
 
 // Ids for Oracle Cloud Infrastructure certificates service CA or CA bundles for the load balancer to trust.  Example: `[ocid1.cabundle.oc1.us-ashburn-1.amaaaaaaav3bgsaagl4zzyqdop5i2vuwoqewdvauuw34llqa74otq2jdsfyq]`
@@ -5459,13 +4878,13 @@ func (o GetBackendSetsBackendsetSslConfigurationOutput) TrustedCertificateAuthor
 }
 
 // The maximum depth for peer certificate chain verification.  Example: `3`
-func (o GetBackendSetsBackendsetSslConfigurationOutput) VerifyDepth() pulumi.IntOutput {
-	return o.ApplyT(func(v GetBackendSetsBackendsetSslConfiguration) int { return v.VerifyDepth }).(pulumi.IntOutput)
+func (o GetBackendSetsBackendsetSslConfigurationOutput) VerifyDepth() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetBackendSetsBackendsetSslConfiguration) *int { return v.VerifyDepth }).(pulumi.IntPtrOutput)
 }
 
 // Whether the load balancer listener should verify peer certificates.  Example: `true`
-func (o GetBackendSetsBackendsetSslConfigurationOutput) VerifyPeerCertificate() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetBackendSetsBackendsetSslConfiguration) bool { return v.VerifyPeerCertificate }).(pulumi.BoolOutput)
+func (o GetBackendSetsBackendsetSslConfigurationOutput) VerifyPeerCertificate() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetBackendSetsBackendsetSslConfiguration) *bool { return v.VerifyPeerCertificate }).(pulumi.BoolPtrOutput)
 }
 
 type GetBackendSetsBackendsetSslConfigurationArrayOutput struct{ *pulumi.OutputState }
@@ -5480,12 +4899,6 @@ func (o GetBackendSetsBackendsetSslConfigurationArrayOutput) ToGetBackendSetsBac
 
 func (o GetBackendSetsBackendsetSslConfigurationArrayOutput) ToGetBackendSetsBackendsetSslConfigurationArrayOutputWithContext(ctx context.Context) GetBackendSetsBackendsetSslConfigurationArrayOutput {
 	return o
-}
-
-func (o GetBackendSetsBackendsetSslConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBackendSetsBackendsetSslConfiguration] {
-	return pulumix.Output[[]GetBackendSetsBackendsetSslConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetBackendSetsBackendsetSslConfigurationArrayOutput) Index(i pulumi.IntInput) GetBackendSetsBackendsetSslConfigurationOutput {
@@ -5531,12 +4944,6 @@ func (i GetBackendSetsFilterArgs) ToGetBackendSetsFilterOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GetBackendSetsFilterOutput)
 }
 
-func (i GetBackendSetsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetBackendSetsFilter] {
-	return pulumix.Output[GetBackendSetsFilter]{
-		OutputState: i.ToGetBackendSetsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetBackendSetsFilterArrayInput is an input type that accepts GetBackendSetsFilterArray and GetBackendSetsFilterArrayOutput values.
 // You can construct a concrete instance of `GetBackendSetsFilterArrayInput` via:
 //
@@ -5562,12 +4969,6 @@ func (i GetBackendSetsFilterArray) ToGetBackendSetsFilterArrayOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetBackendSetsFilterArrayOutput)
 }
 
-func (i GetBackendSetsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBackendSetsFilter] {
-	return pulumix.Output[[]GetBackendSetsFilter]{
-		OutputState: i.ToGetBackendSetsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBackendSetsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetBackendSetsFilterOutput) ElementType() reflect.Type {
@@ -5580,12 +4981,6 @@ func (o GetBackendSetsFilterOutput) ToGetBackendSetsFilterOutput() GetBackendSet
 
 func (o GetBackendSetsFilterOutput) ToGetBackendSetsFilterOutputWithContext(ctx context.Context) GetBackendSetsFilterOutput {
 	return o
-}
-
-func (o GetBackendSetsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetBackendSetsFilter] {
-	return pulumix.Output[GetBackendSetsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A friendly name for the backend set. It must be unique and it cannot be changed.
@@ -5615,12 +5010,6 @@ func (o GetBackendSetsFilterArrayOutput) ToGetBackendSetsFilterArrayOutputWithCo
 	return o
 }
 
-func (o GetBackendSetsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBackendSetsFilter] {
-	return pulumix.Output[[]GetBackendSetsFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetBackendSetsFilterArrayOutput) Index(i pulumi.IntInput) GetBackendSetsFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBackendSetsFilter {
 		return vs[0].([]GetBackendSetsFilter)[vs[1].(int)]
@@ -5633,20 +5022,20 @@ type GetBackendsBackend struct {
 	// Whether the load balancer should treat this server as a backup unit. If `true`, the load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "backup" fail the health check policy.
 	Backup *bool `pulumi:"backup"`
 	// Whether the load balancer should drain this server. Servers marked "drain" receive no new incoming traffic.  Example: `false`
-	Drain bool `pulumi:"drain"`
+	Drain *bool `pulumi:"drain"`
 	// The IP address of the backend server.  Example: `10.0.0.3`
 	IpAddress string `pulumi:"ipAddress"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer associated with the backend set and servers.
 	LoadBalancerId string `pulumi:"loadBalancerId"`
 	// A read-only field showing the IP address and port that uniquely identify this backend server in the backend set.  Example: `10.0.0.3:8080`
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
-	Offline bool `pulumi:"offline"`
+	Offline *bool `pulumi:"offline"`
 	// The communication port for the backend server.  Example: `8080`
-	Port  int    `pulumi:"port"`
-	State string `pulumi:"state"`
+	Port  int     `pulumi:"port"`
+	State *string `pulumi:"state"`
 	// The load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives 3 times the number of new connections as a server weighted '1'. For more information on load balancing policies, see [How Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
-	Weight int `pulumi:"weight"`
+	Weight *int `pulumi:"weight"`
 }
 
 // GetBackendsBackendInput is an input type that accepts GetBackendsBackendArgs and GetBackendsBackendOutput values.
@@ -5666,20 +5055,20 @@ type GetBackendsBackendArgs struct {
 	// Whether the load balancer should treat this server as a backup unit. If `true`, the load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "backup" fail the health check policy.
 	Backup pulumi.BoolPtrInput `pulumi:"backup"`
 	// Whether the load balancer should drain this server. Servers marked "drain" receive no new incoming traffic.  Example: `false`
-	Drain pulumi.BoolInput `pulumi:"drain"`
+	Drain pulumi.BoolPtrInput `pulumi:"drain"`
 	// The IP address of the backend server.  Example: `10.0.0.3`
 	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer associated with the backend set and servers.
 	LoadBalancerId pulumi.StringInput `pulumi:"loadBalancerId"`
 	// A read-only field showing the IP address and port that uniquely identify this backend server in the backend set.  Example: `10.0.0.3:8080`
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
-	Offline pulumi.BoolInput `pulumi:"offline"`
+	Offline pulumi.BoolPtrInput `pulumi:"offline"`
 	// The communication port for the backend server.  Example: `8080`
-	Port  pulumi.IntInput    `pulumi:"port"`
-	State pulumi.StringInput `pulumi:"state"`
+	Port  pulumi.IntInput       `pulumi:"port"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives 3 times the number of new connections as a server weighted '1'. For more information on load balancing policies, see [How Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
-	Weight pulumi.IntInput `pulumi:"weight"`
+	Weight pulumi.IntPtrInput `pulumi:"weight"`
 }
 
 func (GetBackendsBackendArgs) ElementType() reflect.Type {
@@ -5692,12 +5081,6 @@ func (i GetBackendsBackendArgs) ToGetBackendsBackendOutput() GetBackendsBackendO
 
 func (i GetBackendsBackendArgs) ToGetBackendsBackendOutputWithContext(ctx context.Context) GetBackendsBackendOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetBackendsBackendOutput)
-}
-
-func (i GetBackendsBackendArgs) ToOutput(ctx context.Context) pulumix.Output[GetBackendsBackend] {
-	return pulumix.Output[GetBackendsBackend]{
-		OutputState: i.ToGetBackendsBackendOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetBackendsBackendArrayInput is an input type that accepts GetBackendsBackendArray and GetBackendsBackendArrayOutput values.
@@ -5725,12 +5108,6 @@ func (i GetBackendsBackendArray) ToGetBackendsBackendArrayOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetBackendsBackendArrayOutput)
 }
 
-func (i GetBackendsBackendArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBackendsBackend] {
-	return pulumix.Output[[]GetBackendsBackend]{
-		OutputState: i.ToGetBackendsBackendArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBackendsBackendOutput struct{ *pulumi.OutputState }
 
 func (GetBackendsBackendOutput) ElementType() reflect.Type {
@@ -5745,12 +5122,6 @@ func (o GetBackendsBackendOutput) ToGetBackendsBackendOutputWithContext(ctx cont
 	return o
 }
 
-func (o GetBackendsBackendOutput) ToOutput(ctx context.Context) pulumix.Output[GetBackendsBackend] {
-	return pulumix.Output[GetBackendsBackend]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The name of the backend set associated with the backend servers.  Example: `exampleBackendSet`
 func (o GetBackendsBackendOutput) BackendsetName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBackendsBackend) string { return v.BackendsetName }).(pulumi.StringOutput)
@@ -5762,8 +5133,8 @@ func (o GetBackendsBackendOutput) Backup() pulumi.BoolPtrOutput {
 }
 
 // Whether the load balancer should drain this server. Servers marked "drain" receive no new incoming traffic.  Example: `false`
-func (o GetBackendsBackendOutput) Drain() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetBackendsBackend) bool { return v.Drain }).(pulumi.BoolOutput)
+func (o GetBackendsBackendOutput) Drain() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetBackendsBackend) *bool { return v.Drain }).(pulumi.BoolPtrOutput)
 }
 
 // The IP address of the backend server.  Example: `10.0.0.3`
@@ -5777,13 +5148,13 @@ func (o GetBackendsBackendOutput) LoadBalancerId() pulumi.StringOutput {
 }
 
 // A read-only field showing the IP address and port that uniquely identify this backend server in the backend set.  Example: `10.0.0.3:8080`
-func (o GetBackendsBackendOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackendsBackend) string { return v.Name }).(pulumi.StringOutput)
+func (o GetBackendsBackendOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBackendsBackend) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
-func (o GetBackendsBackendOutput) Offline() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetBackendsBackend) bool { return v.Offline }).(pulumi.BoolOutput)
+func (o GetBackendsBackendOutput) Offline() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetBackendsBackend) *bool { return v.Offline }).(pulumi.BoolPtrOutput)
 }
 
 // The communication port for the backend server.  Example: `8080`
@@ -5791,13 +5162,13 @@ func (o GetBackendsBackendOutput) Port() pulumi.IntOutput {
 	return o.ApplyT(func(v GetBackendsBackend) int { return v.Port }).(pulumi.IntOutput)
 }
 
-func (o GetBackendsBackendOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBackendsBackend) string { return v.State }).(pulumi.StringOutput)
+func (o GetBackendsBackendOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBackendsBackend) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives 3 times the number of new connections as a server weighted '1'. For more information on load balancing policies, see [How Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
-func (o GetBackendsBackendOutput) Weight() pulumi.IntOutput {
-	return o.ApplyT(func(v GetBackendsBackend) int { return v.Weight }).(pulumi.IntOutput)
+func (o GetBackendsBackendOutput) Weight() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetBackendsBackend) *int { return v.Weight }).(pulumi.IntPtrOutput)
 }
 
 type GetBackendsBackendArrayOutput struct{ *pulumi.OutputState }
@@ -5812,12 +5183,6 @@ func (o GetBackendsBackendArrayOutput) ToGetBackendsBackendArrayOutput() GetBack
 
 func (o GetBackendsBackendArrayOutput) ToGetBackendsBackendArrayOutputWithContext(ctx context.Context) GetBackendsBackendArrayOutput {
 	return o
-}
-
-func (o GetBackendsBackendArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBackendsBackend] {
-	return pulumix.Output[[]GetBackendsBackend]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetBackendsBackendArrayOutput) Index(i pulumi.IntInput) GetBackendsBackendOutput {
@@ -5863,12 +5228,6 @@ func (i GetBackendsFilterArgs) ToGetBackendsFilterOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(GetBackendsFilterOutput)
 }
 
-func (i GetBackendsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetBackendsFilter] {
-	return pulumix.Output[GetBackendsFilter]{
-		OutputState: i.ToGetBackendsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetBackendsFilterArrayInput is an input type that accepts GetBackendsFilterArray and GetBackendsFilterArrayOutput values.
 // You can construct a concrete instance of `GetBackendsFilterArrayInput` via:
 //
@@ -5894,12 +5253,6 @@ func (i GetBackendsFilterArray) ToGetBackendsFilterArrayOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GetBackendsFilterArrayOutput)
 }
 
-func (i GetBackendsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBackendsFilter] {
-	return pulumix.Output[[]GetBackendsFilter]{
-		OutputState: i.ToGetBackendsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBackendsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetBackendsFilterOutput) ElementType() reflect.Type {
@@ -5912,12 +5265,6 @@ func (o GetBackendsFilterOutput) ToGetBackendsFilterOutput() GetBackendsFilterOu
 
 func (o GetBackendsFilterOutput) ToGetBackendsFilterOutputWithContext(ctx context.Context) GetBackendsFilterOutput {
 	return o
-}
-
-func (o GetBackendsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetBackendsFilter] {
-	return pulumix.Output[GetBackendsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A read-only field showing the IP address and port that uniquely identify this backend server in the backend set.  Example: `10.0.0.3:8080`
@@ -5947,12 +5294,6 @@ func (o GetBackendsFilterArrayOutput) ToGetBackendsFilterArrayOutputWithContext(
 	return o
 }
 
-func (o GetBackendsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBackendsFilter] {
-	return pulumix.Output[[]GetBackendsFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetBackendsFilterArrayOutput) Index(i pulumi.IntInput) GetBackendsFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBackendsFilter {
 		return vs[0].([]GetBackendsFilter)[vs[1].(int)]
@@ -5961,16 +5302,16 @@ func (o GetBackendsFilterArrayOutput) Index(i pulumi.IntInput) GetBackendsFilter
 
 type GetCertificatesCertificate struct {
 	// The Certificate Authority certificate, or any interim certificate, that you received from your SSL certificate provider.
-	CaCertificate string `pulumi:"caCertificate"`
+	CaCertificate *string `pulumi:"caCertificate"`
 	// A friendly name for the certificate bundle. It must be unique and it cannot be changed. Valid certificate bundle names include only alphanumeric characters, dashes, and underscores. Certificate bundle names cannot contain spaces. Avoid entering confidential information.  Example: `exampleCertificateBundle`
 	CertificateName string `pulumi:"certificateName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer associated with the certificate bundles to be listed.
 	LoadBalancerId string  `pulumi:"loadBalancerId"`
 	Passphrase     *string `pulumi:"passphrase"`
-	PrivateKey     string  `pulumi:"privateKey"`
+	PrivateKey     *string `pulumi:"privateKey"`
 	// The public certificate, in PEM format, that you received from your SSL certificate provider.
-	PublicCertificate string `pulumi:"publicCertificate"`
-	State             string `pulumi:"state"`
+	PublicCertificate *string `pulumi:"publicCertificate"`
+	State             *string `pulumi:"state"`
 }
 
 // GetCertificatesCertificateInput is an input type that accepts GetCertificatesCertificateArgs and GetCertificatesCertificateOutput values.
@@ -5986,16 +5327,16 @@ type GetCertificatesCertificateInput interface {
 
 type GetCertificatesCertificateArgs struct {
 	// The Certificate Authority certificate, or any interim certificate, that you received from your SSL certificate provider.
-	CaCertificate pulumi.StringInput `pulumi:"caCertificate"`
+	CaCertificate pulumi.StringPtrInput `pulumi:"caCertificate"`
 	// A friendly name for the certificate bundle. It must be unique and it cannot be changed. Valid certificate bundle names include only alphanumeric characters, dashes, and underscores. Certificate bundle names cannot contain spaces. Avoid entering confidential information.  Example: `exampleCertificateBundle`
 	CertificateName pulumi.StringInput `pulumi:"certificateName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer associated with the certificate bundles to be listed.
 	LoadBalancerId pulumi.StringInput    `pulumi:"loadBalancerId"`
 	Passphrase     pulumi.StringPtrInput `pulumi:"passphrase"`
-	PrivateKey     pulumi.StringInput    `pulumi:"privateKey"`
+	PrivateKey     pulumi.StringPtrInput `pulumi:"privateKey"`
 	// The public certificate, in PEM format, that you received from your SSL certificate provider.
-	PublicCertificate pulumi.StringInput `pulumi:"publicCertificate"`
-	State             pulumi.StringInput `pulumi:"state"`
+	PublicCertificate pulumi.StringPtrInput `pulumi:"publicCertificate"`
+	State             pulumi.StringPtrInput `pulumi:"state"`
 }
 
 func (GetCertificatesCertificateArgs) ElementType() reflect.Type {
@@ -6008,12 +5349,6 @@ func (i GetCertificatesCertificateArgs) ToGetCertificatesCertificateOutput() Get
 
 func (i GetCertificatesCertificateArgs) ToGetCertificatesCertificateOutputWithContext(ctx context.Context) GetCertificatesCertificateOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificatesCertificateOutput)
-}
-
-func (i GetCertificatesCertificateArgs) ToOutput(ctx context.Context) pulumix.Output[GetCertificatesCertificate] {
-	return pulumix.Output[GetCertificatesCertificate]{
-		OutputState: i.ToGetCertificatesCertificateOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetCertificatesCertificateArrayInput is an input type that accepts GetCertificatesCertificateArray and GetCertificatesCertificateArrayOutput values.
@@ -6041,12 +5376,6 @@ func (i GetCertificatesCertificateArray) ToGetCertificatesCertificateArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificatesCertificateArrayOutput)
 }
 
-func (i GetCertificatesCertificateArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificatesCertificate] {
-	return pulumix.Output[[]GetCertificatesCertificate]{
-		OutputState: i.ToGetCertificatesCertificateArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCertificatesCertificateOutput struct{ *pulumi.OutputState }
 
 func (GetCertificatesCertificateOutput) ElementType() reflect.Type {
@@ -6061,15 +5390,9 @@ func (o GetCertificatesCertificateOutput) ToGetCertificatesCertificateOutputWith
 	return o
 }
 
-func (o GetCertificatesCertificateOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificatesCertificate] {
-	return pulumix.Output[GetCertificatesCertificate]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The Certificate Authority certificate, or any interim certificate, that you received from your SSL certificate provider.
-func (o GetCertificatesCertificateOutput) CaCertificate() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificate) string { return v.CaCertificate }).(pulumi.StringOutput)
+func (o GetCertificatesCertificateOutput) CaCertificate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificate) *string { return v.CaCertificate }).(pulumi.StringPtrOutput)
 }
 
 // A friendly name for the certificate bundle. It must be unique and it cannot be changed. Valid certificate bundle names include only alphanumeric characters, dashes, and underscores. Certificate bundle names cannot contain spaces. Avoid entering confidential information.  Example: `exampleCertificateBundle`
@@ -6086,17 +5409,17 @@ func (o GetCertificatesCertificateOutput) Passphrase() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetCertificatesCertificate) *string { return v.Passphrase }).(pulumi.StringPtrOutput)
 }
 
-func (o GetCertificatesCertificateOutput) PrivateKey() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificate) string { return v.PrivateKey }).(pulumi.StringOutput)
+func (o GetCertificatesCertificateOutput) PrivateKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificate) *string { return v.PrivateKey }).(pulumi.StringPtrOutput)
 }
 
 // The public certificate, in PEM format, that you received from your SSL certificate provider.
-func (o GetCertificatesCertificateOutput) PublicCertificate() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificate) string { return v.PublicCertificate }).(pulumi.StringOutput)
+func (o GetCertificatesCertificateOutput) PublicCertificate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificate) *string { return v.PublicCertificate }).(pulumi.StringPtrOutput)
 }
 
-func (o GetCertificatesCertificateOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificate) string { return v.State }).(pulumi.StringOutput)
+func (o GetCertificatesCertificateOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificate) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 type GetCertificatesCertificateArrayOutput struct{ *pulumi.OutputState }
@@ -6111,12 +5434,6 @@ func (o GetCertificatesCertificateArrayOutput) ToGetCertificatesCertificateArray
 
 func (o GetCertificatesCertificateArrayOutput) ToGetCertificatesCertificateArrayOutputWithContext(ctx context.Context) GetCertificatesCertificateArrayOutput {
 	return o
-}
-
-func (o GetCertificatesCertificateArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificatesCertificate] {
-	return pulumix.Output[[]GetCertificatesCertificate]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetCertificatesCertificateArrayOutput) Index(i pulumi.IntInput) GetCertificatesCertificateOutput {
@@ -6160,12 +5477,6 @@ func (i GetCertificatesFilterArgs) ToGetCertificatesFilterOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificatesFilterOutput)
 }
 
-func (i GetCertificatesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetCertificatesFilter] {
-	return pulumix.Output[GetCertificatesFilter]{
-		OutputState: i.ToGetCertificatesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetCertificatesFilterArrayInput is an input type that accepts GetCertificatesFilterArray and GetCertificatesFilterArrayOutput values.
 // You can construct a concrete instance of `GetCertificatesFilterArrayInput` via:
 //
@@ -6191,12 +5502,6 @@ func (i GetCertificatesFilterArray) ToGetCertificatesFilterArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificatesFilterArrayOutput)
 }
 
-func (i GetCertificatesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificatesFilter] {
-	return pulumix.Output[[]GetCertificatesFilter]{
-		OutputState: i.ToGetCertificatesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCertificatesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetCertificatesFilterOutput) ElementType() reflect.Type {
@@ -6209,12 +5514,6 @@ func (o GetCertificatesFilterOutput) ToGetCertificatesFilterOutput() GetCertific
 
 func (o GetCertificatesFilterOutput) ToGetCertificatesFilterOutputWithContext(ctx context.Context) GetCertificatesFilterOutput {
 	return o
-}
-
-func (o GetCertificatesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificatesFilter] {
-	return pulumix.Output[GetCertificatesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetCertificatesFilterOutput) Name() pulumi.StringOutput {
@@ -6241,12 +5540,6 @@ func (o GetCertificatesFilterArrayOutput) ToGetCertificatesFilterArrayOutput() G
 
 func (o GetCertificatesFilterArrayOutput) ToGetCertificatesFilterArrayOutputWithContext(ctx context.Context) GetCertificatesFilterArrayOutput {
 	return o
-}
-
-func (o GetCertificatesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificatesFilter] {
-	return pulumix.Output[[]GetCertificatesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetCertificatesFilterArrayOutput) Index(i pulumi.IntInput) GetCertificatesFilterOutput {
@@ -6292,12 +5585,6 @@ func (i GetHostnamesFilterArgs) ToGetHostnamesFilterOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetHostnamesFilterOutput)
 }
 
-func (i GetHostnamesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetHostnamesFilter] {
-	return pulumix.Output[GetHostnamesFilter]{
-		OutputState: i.ToGetHostnamesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetHostnamesFilterArrayInput is an input type that accepts GetHostnamesFilterArray and GetHostnamesFilterArrayOutput values.
 // You can construct a concrete instance of `GetHostnamesFilterArrayInput` via:
 //
@@ -6323,12 +5610,6 @@ func (i GetHostnamesFilterArray) ToGetHostnamesFilterArrayOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetHostnamesFilterArrayOutput)
 }
 
-func (i GetHostnamesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetHostnamesFilter] {
-	return pulumix.Output[[]GetHostnamesFilter]{
-		OutputState: i.ToGetHostnamesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetHostnamesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetHostnamesFilterOutput) ElementType() reflect.Type {
@@ -6341,12 +5622,6 @@ func (o GetHostnamesFilterOutput) ToGetHostnamesFilterOutput() GetHostnamesFilte
 
 func (o GetHostnamesFilterOutput) ToGetHostnamesFilterOutputWithContext(ctx context.Context) GetHostnamesFilterOutput {
 	return o
-}
-
-func (o GetHostnamesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetHostnamesFilter] {
-	return pulumix.Output[GetHostnamesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A friendly name for the hostname resource. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleHostname001`
@@ -6376,12 +5651,6 @@ func (o GetHostnamesFilterArrayOutput) ToGetHostnamesFilterArrayOutputWithContex
 	return o
 }
 
-func (o GetHostnamesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetHostnamesFilter] {
-	return pulumix.Output[[]GetHostnamesFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetHostnamesFilterArrayOutput) Index(i pulumi.IntInput) GetHostnamesFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetHostnamesFilter {
 		return vs[0].([]GetHostnamesFilter)[vs[1].(int)]
@@ -6394,8 +5663,8 @@ type GetHostnamesHostname struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer associated with the hostnames to retrieve.
 	LoadBalancerId string `pulumi:"loadBalancerId"`
 	// A friendly name for the hostname resource. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleHostname001`
-	Name  string `pulumi:"name"`
-	State string `pulumi:"state"`
+	Name  string  `pulumi:"name"`
+	State *string `pulumi:"state"`
 }
 
 // GetHostnamesHostnameInput is an input type that accepts GetHostnamesHostnameArgs and GetHostnamesHostnameOutput values.
@@ -6415,8 +5684,8 @@ type GetHostnamesHostnameArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer associated with the hostnames to retrieve.
 	LoadBalancerId pulumi.StringInput `pulumi:"loadBalancerId"`
 	// A friendly name for the hostname resource. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleHostname001`
-	Name  pulumi.StringInput `pulumi:"name"`
-	State pulumi.StringInput `pulumi:"state"`
+	Name  pulumi.StringInput    `pulumi:"name"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 }
 
 func (GetHostnamesHostnameArgs) ElementType() reflect.Type {
@@ -6429,12 +5698,6 @@ func (i GetHostnamesHostnameArgs) ToGetHostnamesHostnameOutput() GetHostnamesHos
 
 func (i GetHostnamesHostnameArgs) ToGetHostnamesHostnameOutputWithContext(ctx context.Context) GetHostnamesHostnameOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetHostnamesHostnameOutput)
-}
-
-func (i GetHostnamesHostnameArgs) ToOutput(ctx context.Context) pulumix.Output[GetHostnamesHostname] {
-	return pulumix.Output[GetHostnamesHostname]{
-		OutputState: i.ToGetHostnamesHostnameOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetHostnamesHostnameArrayInput is an input type that accepts GetHostnamesHostnameArray and GetHostnamesHostnameArrayOutput values.
@@ -6462,12 +5725,6 @@ func (i GetHostnamesHostnameArray) ToGetHostnamesHostnameArrayOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetHostnamesHostnameArrayOutput)
 }
 
-func (i GetHostnamesHostnameArray) ToOutput(ctx context.Context) pulumix.Output[[]GetHostnamesHostname] {
-	return pulumix.Output[[]GetHostnamesHostname]{
-		OutputState: i.ToGetHostnamesHostnameArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetHostnamesHostnameOutput struct{ *pulumi.OutputState }
 
 func (GetHostnamesHostnameOutput) ElementType() reflect.Type {
@@ -6480,12 +5737,6 @@ func (o GetHostnamesHostnameOutput) ToGetHostnamesHostnameOutput() GetHostnamesH
 
 func (o GetHostnamesHostnameOutput) ToGetHostnamesHostnameOutputWithContext(ctx context.Context) GetHostnamesHostnameOutput {
 	return o
-}
-
-func (o GetHostnamesHostnameOutput) ToOutput(ctx context.Context) pulumix.Output[GetHostnamesHostname] {
-	return pulumix.Output[GetHostnamesHostname]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A virtual hostname. For more information about virtual hostname string construction, see [Managing Request Routing](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/managingrequest.htm#routing).  Example: `app.example.com`
@@ -6503,8 +5754,8 @@ func (o GetHostnamesHostnameOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetHostnamesHostname) string { return v.Name }).(pulumi.StringOutput)
 }
 
-func (o GetHostnamesHostnameOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetHostnamesHostname) string { return v.State }).(pulumi.StringOutput)
+func (o GetHostnamesHostnameOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetHostnamesHostname) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 type GetHostnamesHostnameArrayOutput struct{ *pulumi.OutputState }
@@ -6519,12 +5770,6 @@ func (o GetHostnamesHostnameArrayOutput) ToGetHostnamesHostnameArrayOutput() Get
 
 func (o GetHostnamesHostnameArrayOutput) ToGetHostnamesHostnameArrayOutputWithContext(ctx context.Context) GetHostnamesHostnameArrayOutput {
 	return o
-}
-
-func (o GetHostnamesHostnameArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetHostnamesHostname] {
-	return pulumix.Output[[]GetHostnamesHostname]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetHostnamesHostnameArrayOutput) Index(i pulumi.IntInput) GetHostnamesHostnameOutput {
@@ -6570,12 +5815,6 @@ func (i GetListenerRulesFilterArgs) ToGetListenerRulesFilterOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetListenerRulesFilterOutput)
 }
 
-func (i GetListenerRulesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetListenerRulesFilter] {
-	return pulumix.Output[GetListenerRulesFilter]{
-		OutputState: i.ToGetListenerRulesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetListenerRulesFilterArrayInput is an input type that accepts GetListenerRulesFilterArray and GetListenerRulesFilterArrayOutput values.
 // You can construct a concrete instance of `GetListenerRulesFilterArrayInput` via:
 //
@@ -6601,12 +5840,6 @@ func (i GetListenerRulesFilterArray) ToGetListenerRulesFilterArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetListenerRulesFilterArrayOutput)
 }
 
-func (i GetListenerRulesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetListenerRulesFilter] {
-	return pulumix.Output[[]GetListenerRulesFilter]{
-		OutputState: i.ToGetListenerRulesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetListenerRulesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetListenerRulesFilterOutput) ElementType() reflect.Type {
@@ -6619,12 +5852,6 @@ func (o GetListenerRulesFilterOutput) ToGetListenerRulesFilterOutput() GetListen
 
 func (o GetListenerRulesFilterOutput) ToGetListenerRulesFilterOutputWithContext(ctx context.Context) GetListenerRulesFilterOutput {
 	return o
-}
-
-func (o GetListenerRulesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetListenerRulesFilter] {
-	return pulumix.Output[GetListenerRulesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The name of the rule set that the rule belongs to.
@@ -6654,12 +5881,6 @@ func (o GetListenerRulesFilterArrayOutput) ToGetListenerRulesFilterArrayOutputWi
 	return o
 }
 
-func (o GetListenerRulesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetListenerRulesFilter] {
-	return pulumix.Output[[]GetListenerRulesFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetListenerRulesFilterArrayOutput) Index(i pulumi.IntInput) GetListenerRulesFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetListenerRulesFilter {
 		return vs[0].([]GetListenerRulesFilter)[vs[1].(int)]
@@ -6668,10 +5889,10 @@ func (o GetListenerRulesFilterArrayOutput) Index(i pulumi.IntInput) GetListenerR
 
 type GetListenerRulesListenerRule struct {
 	// The name of the rule set that the rule belongs to.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// A rule object that applies to the listener.
 	Rules []GetListenerRulesListenerRuleRule `pulumi:"rules"`
-	State string                             `pulumi:"state"`
+	State *string                            `pulumi:"state"`
 }
 
 // GetListenerRulesListenerRuleInput is an input type that accepts GetListenerRulesListenerRuleArgs and GetListenerRulesListenerRuleOutput values.
@@ -6687,10 +5908,10 @@ type GetListenerRulesListenerRuleInput interface {
 
 type GetListenerRulesListenerRuleArgs struct {
 	// The name of the rule set that the rule belongs to.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// A rule object that applies to the listener.
 	Rules GetListenerRulesListenerRuleRuleArrayInput `pulumi:"rules"`
-	State pulumi.StringInput                         `pulumi:"state"`
+	State pulumi.StringPtrInput                      `pulumi:"state"`
 }
 
 func (GetListenerRulesListenerRuleArgs) ElementType() reflect.Type {
@@ -6703,12 +5924,6 @@ func (i GetListenerRulesListenerRuleArgs) ToGetListenerRulesListenerRuleOutput()
 
 func (i GetListenerRulesListenerRuleArgs) ToGetListenerRulesListenerRuleOutputWithContext(ctx context.Context) GetListenerRulesListenerRuleOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetListenerRulesListenerRuleOutput)
-}
-
-func (i GetListenerRulesListenerRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetListenerRulesListenerRule] {
-	return pulumix.Output[GetListenerRulesListenerRule]{
-		OutputState: i.ToGetListenerRulesListenerRuleOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetListenerRulesListenerRuleArrayInput is an input type that accepts GetListenerRulesListenerRuleArray and GetListenerRulesListenerRuleArrayOutput values.
@@ -6736,12 +5951,6 @@ func (i GetListenerRulesListenerRuleArray) ToGetListenerRulesListenerRuleArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetListenerRulesListenerRuleArrayOutput)
 }
 
-func (i GetListenerRulesListenerRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetListenerRulesListenerRule] {
-	return pulumix.Output[[]GetListenerRulesListenerRule]{
-		OutputState: i.ToGetListenerRulesListenerRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetListenerRulesListenerRuleOutput struct{ *pulumi.OutputState }
 
 func (GetListenerRulesListenerRuleOutput) ElementType() reflect.Type {
@@ -6756,15 +5965,9 @@ func (o GetListenerRulesListenerRuleOutput) ToGetListenerRulesListenerRuleOutput
 	return o
 }
 
-func (o GetListenerRulesListenerRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetListenerRulesListenerRule] {
-	return pulumix.Output[GetListenerRulesListenerRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The name of the rule set that the rule belongs to.
-func (o GetListenerRulesListenerRuleOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetListenerRulesListenerRule) string { return v.Name }).(pulumi.StringOutput)
+func (o GetListenerRulesListenerRuleOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetListenerRulesListenerRule) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // A rule object that applies to the listener.
@@ -6772,8 +5975,8 @@ func (o GetListenerRulesListenerRuleOutput) Rules() GetListenerRulesListenerRule
 	return o.ApplyT(func(v GetListenerRulesListenerRule) []GetListenerRulesListenerRuleRule { return v.Rules }).(GetListenerRulesListenerRuleRuleArrayOutput)
 }
 
-func (o GetListenerRulesListenerRuleOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetListenerRulesListenerRule) string { return v.State }).(pulumi.StringOutput)
+func (o GetListenerRulesListenerRuleOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetListenerRulesListenerRule) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 type GetListenerRulesListenerRuleArrayOutput struct{ *pulumi.OutputState }
@@ -6790,12 +5993,6 @@ func (o GetListenerRulesListenerRuleArrayOutput) ToGetListenerRulesListenerRuleA
 	return o
 }
 
-func (o GetListenerRulesListenerRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetListenerRulesListenerRule] {
-	return pulumix.Output[[]GetListenerRulesListenerRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetListenerRulesListenerRuleArrayOutput) Index(i pulumi.IntInput) GetListenerRulesListenerRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetListenerRulesListenerRule {
 		return vs[0].([]GetListenerRulesListenerRule)[vs[1].(int)]
@@ -6804,36 +6001,36 @@ func (o GetListenerRulesListenerRuleArrayOutput) Index(i pulumi.IntInput) GetLis
 
 type GetListenerRulesListenerRuleRule struct {
 	// The action can be one of these values: `ADD_HTTP_REQUEST_HEADER`, `ADD_HTTP_RESPONSE_HEADER`, `ALLOW`, `CONTROL_ACCESS_USING_HTTP_METHODS`, `EXTEND_HTTP_REQUEST_HEADER_VALUE`, `EXTEND_HTTP_RESPONSE_HEADER_VALUE`, `HTTP_HEADER`, `REDIRECT`, `REMOVE_HTTP_REQUEST_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
-	Action string `pulumi:"action"`
+	Action *string `pulumi:"action"`
 	// The list of HTTP methods allowed for this listener.
 	AllowedMethods []string `pulumi:"allowedMethods"`
 	// Indicates whether or not invalid characters in client header fields will be allowed. Valid names are composed of English letters, digits, hyphens and underscores. If "true", invalid characters are allowed in the HTTP header. If "false", invalid characters are not allowed in the HTTP header
-	AreInvalidCharactersAllowed bool                                        `pulumi:"areInvalidCharactersAllowed"`
+	AreInvalidCharactersAllowed *bool                                       `pulumi:"areInvalidCharactersAllowed"`
 	Conditions                  []GetListenerRulesListenerRuleRuleCondition `pulumi:"conditions"`
 	// A brief description of the access control rule. Avoid entering confidential information.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// A header name that conforms to RFC 7230.  Example: `exampleHeaderName`
-	Header string `pulumi:"header"`
+	Header *string `pulumi:"header"`
 	// The maximum size of each buffer used for reading http client request header. This value indicates the maximum size allowed for each buffer. The allowed values for buffer size are 8, 16, 32 and 64.
-	HttpLargeHeaderSizeInKb int `pulumi:"httpLargeHeaderSizeInKb"`
+	HttpLargeHeaderSizeInKb *int `pulumi:"httpLargeHeaderSizeInKb"`
 	// A string to prepend to the header value. The resulting header value must still conform to RFC 7230. With the following exceptions:
 	// *  value cannot contain `$`
 	// *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
-	Prefix string `pulumi:"prefix"`
+	Prefix *string `pulumi:"prefix"`
 	// An object that defines the redirect URI applied to the original request. The object property values compose the redirect URI.
 	RedirectUris []GetListenerRulesListenerRuleRuleRedirectUri `pulumi:"redirectUris"`
 	// The HTTP status code to return when the incoming request is redirected.
-	ResponseCode int `pulumi:"responseCode"`
+	ResponseCode *int `pulumi:"responseCode"`
 	// The HTTP status code to return when the requested HTTP method is not in the list of allowed methods. The associated status line returned with the code is mapped from the standard HTTP specification. The default value is `405 (Method Not Allowed)`.  Example: 403
-	StatusCode int `pulumi:"statusCode"`
+	StatusCode *int `pulumi:"statusCode"`
 	// A string to append to the header value. The resulting header value must still conform to RFC 7230. With the following exceptions:
 	// *  value cannot contain `$`
 	// *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
-	Suffix string `pulumi:"suffix"`
+	Suffix *string `pulumi:"suffix"`
 	// A header value that conforms to RFC 7230. With the following exceptions:
 	// *  value cannot contain `$`
 	// *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
-	Value string `pulumi:"value"`
+	Value *string `pulumi:"value"`
 }
 
 // GetListenerRulesListenerRuleRuleInput is an input type that accepts GetListenerRulesListenerRuleRuleArgs and GetListenerRulesListenerRuleRuleOutput values.
@@ -6849,36 +6046,36 @@ type GetListenerRulesListenerRuleRuleInput interface {
 
 type GetListenerRulesListenerRuleRuleArgs struct {
 	// The action can be one of these values: `ADD_HTTP_REQUEST_HEADER`, `ADD_HTTP_RESPONSE_HEADER`, `ALLOW`, `CONTROL_ACCESS_USING_HTTP_METHODS`, `EXTEND_HTTP_REQUEST_HEADER_VALUE`, `EXTEND_HTTP_RESPONSE_HEADER_VALUE`, `HTTP_HEADER`, `REDIRECT`, `REMOVE_HTTP_REQUEST_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
-	Action pulumi.StringInput `pulumi:"action"`
+	Action pulumi.StringPtrInput `pulumi:"action"`
 	// The list of HTTP methods allowed for this listener.
 	AllowedMethods pulumi.StringArrayInput `pulumi:"allowedMethods"`
 	// Indicates whether or not invalid characters in client header fields will be allowed. Valid names are composed of English letters, digits, hyphens and underscores. If "true", invalid characters are allowed in the HTTP header. If "false", invalid characters are not allowed in the HTTP header
-	AreInvalidCharactersAllowed pulumi.BoolInput                                    `pulumi:"areInvalidCharactersAllowed"`
+	AreInvalidCharactersAllowed pulumi.BoolPtrInput                                 `pulumi:"areInvalidCharactersAllowed"`
 	Conditions                  GetListenerRulesListenerRuleRuleConditionArrayInput `pulumi:"conditions"`
 	// A brief description of the access control rule. Avoid entering confidential information.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// A header name that conforms to RFC 7230.  Example: `exampleHeaderName`
-	Header pulumi.StringInput `pulumi:"header"`
+	Header pulumi.StringPtrInput `pulumi:"header"`
 	// The maximum size of each buffer used for reading http client request header. This value indicates the maximum size allowed for each buffer. The allowed values for buffer size are 8, 16, 32 and 64.
-	HttpLargeHeaderSizeInKb pulumi.IntInput `pulumi:"httpLargeHeaderSizeInKb"`
+	HttpLargeHeaderSizeInKb pulumi.IntPtrInput `pulumi:"httpLargeHeaderSizeInKb"`
 	// A string to prepend to the header value. The resulting header value must still conform to RFC 7230. With the following exceptions:
 	// *  value cannot contain `$`
 	// *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
-	Prefix pulumi.StringInput `pulumi:"prefix"`
+	Prefix pulumi.StringPtrInput `pulumi:"prefix"`
 	// An object that defines the redirect URI applied to the original request. The object property values compose the redirect URI.
 	RedirectUris GetListenerRulesListenerRuleRuleRedirectUriArrayInput `pulumi:"redirectUris"`
 	// The HTTP status code to return when the incoming request is redirected.
-	ResponseCode pulumi.IntInput `pulumi:"responseCode"`
+	ResponseCode pulumi.IntPtrInput `pulumi:"responseCode"`
 	// The HTTP status code to return when the requested HTTP method is not in the list of allowed methods. The associated status line returned with the code is mapped from the standard HTTP specification. The default value is `405 (Method Not Allowed)`.  Example: 403
-	StatusCode pulumi.IntInput `pulumi:"statusCode"`
+	StatusCode pulumi.IntPtrInput `pulumi:"statusCode"`
 	// A string to append to the header value. The resulting header value must still conform to RFC 7230. With the following exceptions:
 	// *  value cannot contain `$`
 	// *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
-	Suffix pulumi.StringInput `pulumi:"suffix"`
+	Suffix pulumi.StringPtrInput `pulumi:"suffix"`
 	// A header value that conforms to RFC 7230. With the following exceptions:
 	// *  value cannot contain `$`
 	// *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
-	Value pulumi.StringInput `pulumi:"value"`
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (GetListenerRulesListenerRuleRuleArgs) ElementType() reflect.Type {
@@ -6891,12 +6088,6 @@ func (i GetListenerRulesListenerRuleRuleArgs) ToGetListenerRulesListenerRuleRule
 
 func (i GetListenerRulesListenerRuleRuleArgs) ToGetListenerRulesListenerRuleRuleOutputWithContext(ctx context.Context) GetListenerRulesListenerRuleRuleOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetListenerRulesListenerRuleRuleOutput)
-}
-
-func (i GetListenerRulesListenerRuleRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetListenerRulesListenerRuleRule] {
-	return pulumix.Output[GetListenerRulesListenerRuleRule]{
-		OutputState: i.ToGetListenerRulesListenerRuleRuleOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetListenerRulesListenerRuleRuleArrayInput is an input type that accepts GetListenerRulesListenerRuleRuleArray and GetListenerRulesListenerRuleRuleArrayOutput values.
@@ -6924,12 +6115,6 @@ func (i GetListenerRulesListenerRuleRuleArray) ToGetListenerRulesListenerRuleRul
 	return pulumi.ToOutputWithContext(ctx, i).(GetListenerRulesListenerRuleRuleArrayOutput)
 }
 
-func (i GetListenerRulesListenerRuleRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetListenerRulesListenerRuleRule] {
-	return pulumix.Output[[]GetListenerRulesListenerRuleRule]{
-		OutputState: i.ToGetListenerRulesListenerRuleRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetListenerRulesListenerRuleRuleOutput struct{ *pulumi.OutputState }
 
 func (GetListenerRulesListenerRuleRuleOutput) ElementType() reflect.Type {
@@ -6944,15 +6129,9 @@ func (o GetListenerRulesListenerRuleRuleOutput) ToGetListenerRulesListenerRuleRu
 	return o
 }
 
-func (o GetListenerRulesListenerRuleRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetListenerRulesListenerRuleRule] {
-	return pulumix.Output[GetListenerRulesListenerRuleRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The action can be one of these values: `ADD_HTTP_REQUEST_HEADER`, `ADD_HTTP_RESPONSE_HEADER`, `ALLOW`, `CONTROL_ACCESS_USING_HTTP_METHODS`, `EXTEND_HTTP_REQUEST_HEADER_VALUE`, `EXTEND_HTTP_RESPONSE_HEADER_VALUE`, `HTTP_HEADER`, `REDIRECT`, `REMOVE_HTTP_REQUEST_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
-func (o GetListenerRulesListenerRuleRuleOutput) Action() pulumi.StringOutput {
-	return o.ApplyT(func(v GetListenerRulesListenerRuleRule) string { return v.Action }).(pulumi.StringOutput)
+func (o GetListenerRulesListenerRuleRuleOutput) Action() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetListenerRulesListenerRuleRule) *string { return v.Action }).(pulumi.StringPtrOutput)
 }
 
 // The list of HTTP methods allowed for this listener.
@@ -6961,8 +6140,8 @@ func (o GetListenerRulesListenerRuleRuleOutput) AllowedMethods() pulumi.StringAr
 }
 
 // Indicates whether or not invalid characters in client header fields will be allowed. Valid names are composed of English letters, digits, hyphens and underscores. If "true", invalid characters are allowed in the HTTP header. If "false", invalid characters are not allowed in the HTTP header
-func (o GetListenerRulesListenerRuleRuleOutput) AreInvalidCharactersAllowed() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetListenerRulesListenerRuleRule) bool { return v.AreInvalidCharactersAllowed }).(pulumi.BoolOutput)
+func (o GetListenerRulesListenerRuleRuleOutput) AreInvalidCharactersAllowed() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetListenerRulesListenerRuleRule) *bool { return v.AreInvalidCharactersAllowed }).(pulumi.BoolPtrOutput)
 }
 
 func (o GetListenerRulesListenerRuleRuleOutput) Conditions() GetListenerRulesListenerRuleRuleConditionArrayOutput {
@@ -6972,25 +6151,25 @@ func (o GetListenerRulesListenerRuleRuleOutput) Conditions() GetListenerRulesLis
 }
 
 // A brief description of the access control rule. Avoid entering confidential information.
-func (o GetListenerRulesListenerRuleRuleOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetListenerRulesListenerRuleRule) string { return v.Description }).(pulumi.StringOutput)
+func (o GetListenerRulesListenerRuleRuleOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetListenerRulesListenerRuleRule) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // A header name that conforms to RFC 7230.  Example: `exampleHeaderName`
-func (o GetListenerRulesListenerRuleRuleOutput) Header() pulumi.StringOutput {
-	return o.ApplyT(func(v GetListenerRulesListenerRuleRule) string { return v.Header }).(pulumi.StringOutput)
+func (o GetListenerRulesListenerRuleRuleOutput) Header() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetListenerRulesListenerRuleRule) *string { return v.Header }).(pulumi.StringPtrOutput)
 }
 
 // The maximum size of each buffer used for reading http client request header. This value indicates the maximum size allowed for each buffer. The allowed values for buffer size are 8, 16, 32 and 64.
-func (o GetListenerRulesListenerRuleRuleOutput) HttpLargeHeaderSizeInKb() pulumi.IntOutput {
-	return o.ApplyT(func(v GetListenerRulesListenerRuleRule) int { return v.HttpLargeHeaderSizeInKb }).(pulumi.IntOutput)
+func (o GetListenerRulesListenerRuleRuleOutput) HttpLargeHeaderSizeInKb() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetListenerRulesListenerRuleRule) *int { return v.HttpLargeHeaderSizeInKb }).(pulumi.IntPtrOutput)
 }
 
 // A string to prepend to the header value. The resulting header value must still conform to RFC 7230. With the following exceptions:
 // *  value cannot contain `$`
 // *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
-func (o GetListenerRulesListenerRuleRuleOutput) Prefix() pulumi.StringOutput {
-	return o.ApplyT(func(v GetListenerRulesListenerRuleRule) string { return v.Prefix }).(pulumi.StringOutput)
+func (o GetListenerRulesListenerRuleRuleOutput) Prefix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetListenerRulesListenerRuleRule) *string { return v.Prefix }).(pulumi.StringPtrOutput)
 }
 
 // An object that defines the redirect URI applied to the original request. The object property values compose the redirect URI.
@@ -7001,27 +6180,27 @@ func (o GetListenerRulesListenerRuleRuleOutput) RedirectUris() GetListenerRulesL
 }
 
 // The HTTP status code to return when the incoming request is redirected.
-func (o GetListenerRulesListenerRuleRuleOutput) ResponseCode() pulumi.IntOutput {
-	return o.ApplyT(func(v GetListenerRulesListenerRuleRule) int { return v.ResponseCode }).(pulumi.IntOutput)
+func (o GetListenerRulesListenerRuleRuleOutput) ResponseCode() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetListenerRulesListenerRuleRule) *int { return v.ResponseCode }).(pulumi.IntPtrOutput)
 }
 
 // The HTTP status code to return when the requested HTTP method is not in the list of allowed methods. The associated status line returned with the code is mapped from the standard HTTP specification. The default value is `405 (Method Not Allowed)`.  Example: 403
-func (o GetListenerRulesListenerRuleRuleOutput) StatusCode() pulumi.IntOutput {
-	return o.ApplyT(func(v GetListenerRulesListenerRuleRule) int { return v.StatusCode }).(pulumi.IntOutput)
+func (o GetListenerRulesListenerRuleRuleOutput) StatusCode() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetListenerRulesListenerRuleRule) *int { return v.StatusCode }).(pulumi.IntPtrOutput)
 }
 
 // A string to append to the header value. The resulting header value must still conform to RFC 7230. With the following exceptions:
 // *  value cannot contain `$`
 // *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
-func (o GetListenerRulesListenerRuleRuleOutput) Suffix() pulumi.StringOutput {
-	return o.ApplyT(func(v GetListenerRulesListenerRuleRule) string { return v.Suffix }).(pulumi.StringOutput)
+func (o GetListenerRulesListenerRuleRuleOutput) Suffix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetListenerRulesListenerRuleRule) *string { return v.Suffix }).(pulumi.StringPtrOutput)
 }
 
 // A header value that conforms to RFC 7230. With the following exceptions:
 // *  value cannot contain `$`
 // *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
-func (o GetListenerRulesListenerRuleRuleOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetListenerRulesListenerRuleRule) string { return v.Value }).(pulumi.StringOutput)
+func (o GetListenerRulesListenerRuleRuleOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetListenerRulesListenerRuleRule) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
 
 type GetListenerRulesListenerRuleRuleArrayOutput struct{ *pulumi.OutputState }
@@ -7038,12 +6217,6 @@ func (o GetListenerRulesListenerRuleRuleArrayOutput) ToGetListenerRulesListenerR
 	return o
 }
 
-func (o GetListenerRulesListenerRuleRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetListenerRulesListenerRuleRule] {
-	return pulumix.Output[[]GetListenerRulesListenerRuleRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetListenerRulesListenerRuleRuleArrayOutput) Index(i pulumi.IntInput) GetListenerRulesListenerRuleRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetListenerRulesListenerRuleRule {
 		return vs[0].([]GetListenerRulesListenerRuleRule)[vs[1].(int)]
@@ -7052,15 +6225,15 @@ func (o GetListenerRulesListenerRuleRuleArrayOutput) Index(i pulumi.IntInput) Ge
 
 type GetListenerRulesListenerRuleRuleCondition struct {
 	// The attributeName can be one of these values: `PATH`, `SOURCE_IP_ADDRESS`, `SOURCE_VCN_ID`, `SOURCE_VCN_IP_ADDRESS`
-	AttributeName string `pulumi:"attributeName"`
+	AttributeName *string `pulumi:"attributeName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the originating VCN that an incoming packet must match.
-	AttributeValue string `pulumi:"attributeValue"`
+	AttributeValue *string `pulumi:"attributeValue"`
 	// A string that specifies how to compare the PathMatchCondition object's `attributeValue` string to the incoming URI.
 	// *  **EXACT_MATCH** - The incoming URI path must exactly and completely match the `attributeValue` string.
 	// *  **FORCE_LONGEST_PREFIX_MATCH** - The system looks for the `attributeValue` string with the best, longest match of the beginning portion of the incoming URI path.
 	// *  **PREFIX_MATCH** - The beginning portion of the incoming URI path must exactly match the `attributeValue` string.
 	// *  **SUFFIX_MATCH** - The ending portion of the incoming URI path must exactly match the `attributeValue` string.
-	Operator string `pulumi:"operator"`
+	Operator *string `pulumi:"operator"`
 }
 
 // GetListenerRulesListenerRuleRuleConditionInput is an input type that accepts GetListenerRulesListenerRuleRuleConditionArgs and GetListenerRulesListenerRuleRuleConditionOutput values.
@@ -7076,15 +6249,15 @@ type GetListenerRulesListenerRuleRuleConditionInput interface {
 
 type GetListenerRulesListenerRuleRuleConditionArgs struct {
 	// The attributeName can be one of these values: `PATH`, `SOURCE_IP_ADDRESS`, `SOURCE_VCN_ID`, `SOURCE_VCN_IP_ADDRESS`
-	AttributeName pulumi.StringInput `pulumi:"attributeName"`
+	AttributeName pulumi.StringPtrInput `pulumi:"attributeName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the originating VCN that an incoming packet must match.
-	AttributeValue pulumi.StringInput `pulumi:"attributeValue"`
+	AttributeValue pulumi.StringPtrInput `pulumi:"attributeValue"`
 	// A string that specifies how to compare the PathMatchCondition object's `attributeValue` string to the incoming URI.
 	// *  **EXACT_MATCH** - The incoming URI path must exactly and completely match the `attributeValue` string.
 	// *  **FORCE_LONGEST_PREFIX_MATCH** - The system looks for the `attributeValue` string with the best, longest match of the beginning portion of the incoming URI path.
 	// *  **PREFIX_MATCH** - The beginning portion of the incoming URI path must exactly match the `attributeValue` string.
 	// *  **SUFFIX_MATCH** - The ending portion of the incoming URI path must exactly match the `attributeValue` string.
-	Operator pulumi.StringInput `pulumi:"operator"`
+	Operator pulumi.StringPtrInput `pulumi:"operator"`
 }
 
 func (GetListenerRulesListenerRuleRuleConditionArgs) ElementType() reflect.Type {
@@ -7097,12 +6270,6 @@ func (i GetListenerRulesListenerRuleRuleConditionArgs) ToGetListenerRulesListene
 
 func (i GetListenerRulesListenerRuleRuleConditionArgs) ToGetListenerRulesListenerRuleRuleConditionOutputWithContext(ctx context.Context) GetListenerRulesListenerRuleRuleConditionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetListenerRulesListenerRuleRuleConditionOutput)
-}
-
-func (i GetListenerRulesListenerRuleRuleConditionArgs) ToOutput(ctx context.Context) pulumix.Output[GetListenerRulesListenerRuleRuleCondition] {
-	return pulumix.Output[GetListenerRulesListenerRuleRuleCondition]{
-		OutputState: i.ToGetListenerRulesListenerRuleRuleConditionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetListenerRulesListenerRuleRuleConditionArrayInput is an input type that accepts GetListenerRulesListenerRuleRuleConditionArray and GetListenerRulesListenerRuleRuleConditionArrayOutput values.
@@ -7130,12 +6297,6 @@ func (i GetListenerRulesListenerRuleRuleConditionArray) ToGetListenerRulesListen
 	return pulumi.ToOutputWithContext(ctx, i).(GetListenerRulesListenerRuleRuleConditionArrayOutput)
 }
 
-func (i GetListenerRulesListenerRuleRuleConditionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetListenerRulesListenerRuleRuleCondition] {
-	return pulumix.Output[[]GetListenerRulesListenerRuleRuleCondition]{
-		OutputState: i.ToGetListenerRulesListenerRuleRuleConditionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetListenerRulesListenerRuleRuleConditionOutput struct{ *pulumi.OutputState }
 
 func (GetListenerRulesListenerRuleRuleConditionOutput) ElementType() reflect.Type {
@@ -7150,20 +6311,14 @@ func (o GetListenerRulesListenerRuleRuleConditionOutput) ToGetListenerRulesListe
 	return o
 }
 
-func (o GetListenerRulesListenerRuleRuleConditionOutput) ToOutput(ctx context.Context) pulumix.Output[GetListenerRulesListenerRuleRuleCondition] {
-	return pulumix.Output[GetListenerRulesListenerRuleRuleCondition]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The attributeName can be one of these values: `PATH`, `SOURCE_IP_ADDRESS`, `SOURCE_VCN_ID`, `SOURCE_VCN_IP_ADDRESS`
-func (o GetListenerRulesListenerRuleRuleConditionOutput) AttributeName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetListenerRulesListenerRuleRuleCondition) string { return v.AttributeName }).(pulumi.StringOutput)
+func (o GetListenerRulesListenerRuleRuleConditionOutput) AttributeName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetListenerRulesListenerRuleRuleCondition) *string { return v.AttributeName }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the originating VCN that an incoming packet must match.
-func (o GetListenerRulesListenerRuleRuleConditionOutput) AttributeValue() pulumi.StringOutput {
-	return o.ApplyT(func(v GetListenerRulesListenerRuleRuleCondition) string { return v.AttributeValue }).(pulumi.StringOutput)
+func (o GetListenerRulesListenerRuleRuleConditionOutput) AttributeValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetListenerRulesListenerRuleRuleCondition) *string { return v.AttributeValue }).(pulumi.StringPtrOutput)
 }
 
 // A string that specifies how to compare the PathMatchCondition object's `attributeValue` string to the incoming URI.
@@ -7171,8 +6326,8 @@ func (o GetListenerRulesListenerRuleRuleConditionOutput) AttributeValue() pulumi
 // *  **FORCE_LONGEST_PREFIX_MATCH** - The system looks for the `attributeValue` string with the best, longest match of the beginning portion of the incoming URI path.
 // *  **PREFIX_MATCH** - The beginning portion of the incoming URI path must exactly match the `attributeValue` string.
 // *  **SUFFIX_MATCH** - The ending portion of the incoming URI path must exactly match the `attributeValue` string.
-func (o GetListenerRulesListenerRuleRuleConditionOutput) Operator() pulumi.StringOutput {
-	return o.ApplyT(func(v GetListenerRulesListenerRuleRuleCondition) string { return v.Operator }).(pulumi.StringOutput)
+func (o GetListenerRulesListenerRuleRuleConditionOutput) Operator() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetListenerRulesListenerRuleRuleCondition) *string { return v.Operator }).(pulumi.StringPtrOutput)
 }
 
 type GetListenerRulesListenerRuleRuleConditionArrayOutput struct{ *pulumi.OutputState }
@@ -7189,12 +6344,6 @@ func (o GetListenerRulesListenerRuleRuleConditionArrayOutput) ToGetListenerRules
 	return o
 }
 
-func (o GetListenerRulesListenerRuleRuleConditionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetListenerRulesListenerRuleRuleCondition] {
-	return pulumix.Output[[]GetListenerRulesListenerRuleRuleCondition]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetListenerRulesListenerRuleRuleConditionArrayOutput) Index(i pulumi.IntInput) GetListenerRulesListenerRuleRuleConditionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetListenerRulesListenerRuleRuleCondition {
 		return vs[0].([]GetListenerRulesListenerRuleRuleCondition)[vs[1].(int)]
@@ -7203,15 +6352,15 @@ func (o GetListenerRulesListenerRuleRuleConditionArrayOutput) Index(i pulumi.Int
 
 type GetListenerRulesListenerRuleRuleRedirectUri struct {
 	// The valid domain name (hostname) or IP address to use in the redirect URI.
-	Host string `pulumi:"host"`
+	Host *string `pulumi:"host"`
 	// The HTTP URI path to use in the redirect URI.
-	Path string `pulumi:"path"`
+	Path *string `pulumi:"path"`
 	// The communication port to use in the redirect URI.
-	Port int `pulumi:"port"`
+	Port *int `pulumi:"port"`
 	// The HTTP protocol to use in the redirect URI.
-	Protocol string `pulumi:"protocol"`
+	Protocol *string `pulumi:"protocol"`
 	// The query string to use in the redirect URI.
-	Query string `pulumi:"query"`
+	Query *string `pulumi:"query"`
 }
 
 // GetListenerRulesListenerRuleRuleRedirectUriInput is an input type that accepts GetListenerRulesListenerRuleRuleRedirectUriArgs and GetListenerRulesListenerRuleRuleRedirectUriOutput values.
@@ -7227,15 +6376,15 @@ type GetListenerRulesListenerRuleRuleRedirectUriInput interface {
 
 type GetListenerRulesListenerRuleRuleRedirectUriArgs struct {
 	// The valid domain name (hostname) or IP address to use in the redirect URI.
-	Host pulumi.StringInput `pulumi:"host"`
+	Host pulumi.StringPtrInput `pulumi:"host"`
 	// The HTTP URI path to use in the redirect URI.
-	Path pulumi.StringInput `pulumi:"path"`
+	Path pulumi.StringPtrInput `pulumi:"path"`
 	// The communication port to use in the redirect URI.
-	Port pulumi.IntInput `pulumi:"port"`
+	Port pulumi.IntPtrInput `pulumi:"port"`
 	// The HTTP protocol to use in the redirect URI.
-	Protocol pulumi.StringInput `pulumi:"protocol"`
+	Protocol pulumi.StringPtrInput `pulumi:"protocol"`
 	// The query string to use in the redirect URI.
-	Query pulumi.StringInput `pulumi:"query"`
+	Query pulumi.StringPtrInput `pulumi:"query"`
 }
 
 func (GetListenerRulesListenerRuleRuleRedirectUriArgs) ElementType() reflect.Type {
@@ -7248,12 +6397,6 @@ func (i GetListenerRulesListenerRuleRuleRedirectUriArgs) ToGetListenerRulesListe
 
 func (i GetListenerRulesListenerRuleRuleRedirectUriArgs) ToGetListenerRulesListenerRuleRuleRedirectUriOutputWithContext(ctx context.Context) GetListenerRulesListenerRuleRuleRedirectUriOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetListenerRulesListenerRuleRuleRedirectUriOutput)
-}
-
-func (i GetListenerRulesListenerRuleRuleRedirectUriArgs) ToOutput(ctx context.Context) pulumix.Output[GetListenerRulesListenerRuleRuleRedirectUri] {
-	return pulumix.Output[GetListenerRulesListenerRuleRuleRedirectUri]{
-		OutputState: i.ToGetListenerRulesListenerRuleRuleRedirectUriOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetListenerRulesListenerRuleRuleRedirectUriArrayInput is an input type that accepts GetListenerRulesListenerRuleRuleRedirectUriArray and GetListenerRulesListenerRuleRuleRedirectUriArrayOutput values.
@@ -7281,12 +6424,6 @@ func (i GetListenerRulesListenerRuleRuleRedirectUriArray) ToGetListenerRulesList
 	return pulumi.ToOutputWithContext(ctx, i).(GetListenerRulesListenerRuleRuleRedirectUriArrayOutput)
 }
 
-func (i GetListenerRulesListenerRuleRuleRedirectUriArray) ToOutput(ctx context.Context) pulumix.Output[[]GetListenerRulesListenerRuleRuleRedirectUri] {
-	return pulumix.Output[[]GetListenerRulesListenerRuleRuleRedirectUri]{
-		OutputState: i.ToGetListenerRulesListenerRuleRuleRedirectUriArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetListenerRulesListenerRuleRuleRedirectUriOutput struct{ *pulumi.OutputState }
 
 func (GetListenerRulesListenerRuleRuleRedirectUriOutput) ElementType() reflect.Type {
@@ -7301,35 +6438,29 @@ func (o GetListenerRulesListenerRuleRuleRedirectUriOutput) ToGetListenerRulesLis
 	return o
 }
 
-func (o GetListenerRulesListenerRuleRuleRedirectUriOutput) ToOutput(ctx context.Context) pulumix.Output[GetListenerRulesListenerRuleRuleRedirectUri] {
-	return pulumix.Output[GetListenerRulesListenerRuleRuleRedirectUri]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The valid domain name (hostname) or IP address to use in the redirect URI.
-func (o GetListenerRulesListenerRuleRuleRedirectUriOutput) Host() pulumi.StringOutput {
-	return o.ApplyT(func(v GetListenerRulesListenerRuleRuleRedirectUri) string { return v.Host }).(pulumi.StringOutput)
+func (o GetListenerRulesListenerRuleRuleRedirectUriOutput) Host() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetListenerRulesListenerRuleRuleRedirectUri) *string { return v.Host }).(pulumi.StringPtrOutput)
 }
 
 // The HTTP URI path to use in the redirect URI.
-func (o GetListenerRulesListenerRuleRuleRedirectUriOutput) Path() pulumi.StringOutput {
-	return o.ApplyT(func(v GetListenerRulesListenerRuleRuleRedirectUri) string { return v.Path }).(pulumi.StringOutput)
+func (o GetListenerRulesListenerRuleRuleRedirectUriOutput) Path() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetListenerRulesListenerRuleRuleRedirectUri) *string { return v.Path }).(pulumi.StringPtrOutput)
 }
 
 // The communication port to use in the redirect URI.
-func (o GetListenerRulesListenerRuleRuleRedirectUriOutput) Port() pulumi.IntOutput {
-	return o.ApplyT(func(v GetListenerRulesListenerRuleRuleRedirectUri) int { return v.Port }).(pulumi.IntOutput)
+func (o GetListenerRulesListenerRuleRuleRedirectUriOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetListenerRulesListenerRuleRuleRedirectUri) *int { return v.Port }).(pulumi.IntPtrOutput)
 }
 
 // The HTTP protocol to use in the redirect URI.
-func (o GetListenerRulesListenerRuleRuleRedirectUriOutput) Protocol() pulumi.StringOutput {
-	return o.ApplyT(func(v GetListenerRulesListenerRuleRuleRedirectUri) string { return v.Protocol }).(pulumi.StringOutput)
+func (o GetListenerRulesListenerRuleRuleRedirectUriOutput) Protocol() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetListenerRulesListenerRuleRuleRedirectUri) *string { return v.Protocol }).(pulumi.StringPtrOutput)
 }
 
 // The query string to use in the redirect URI.
-func (o GetListenerRulesListenerRuleRuleRedirectUriOutput) Query() pulumi.StringOutput {
-	return o.ApplyT(func(v GetListenerRulesListenerRuleRuleRedirectUri) string { return v.Query }).(pulumi.StringOutput)
+func (o GetListenerRulesListenerRuleRuleRedirectUriOutput) Query() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetListenerRulesListenerRuleRuleRedirectUri) *string { return v.Query }).(pulumi.StringPtrOutput)
 }
 
 type GetListenerRulesListenerRuleRuleRedirectUriArrayOutput struct{ *pulumi.OutputState }
@@ -7344,12 +6475,6 @@ func (o GetListenerRulesListenerRuleRuleRedirectUriArrayOutput) ToGetListenerRul
 
 func (o GetListenerRulesListenerRuleRuleRedirectUriArrayOutput) ToGetListenerRulesListenerRuleRuleRedirectUriArrayOutputWithContext(ctx context.Context) GetListenerRulesListenerRuleRuleRedirectUriArrayOutput {
 	return o
-}
-
-func (o GetListenerRulesListenerRuleRuleRedirectUriArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetListenerRulesListenerRuleRuleRedirectUri] {
-	return pulumix.Output[[]GetListenerRulesListenerRuleRuleRedirectUri]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetListenerRulesListenerRuleRuleRedirectUriArrayOutput) Index(i pulumi.IntInput) GetListenerRulesListenerRuleRuleRedirectUriOutput {
@@ -7395,12 +6520,6 @@ func (i GetLoadBalancerRoutingPoliciesFilterArgs) ToGetLoadBalancerRoutingPolici
 	return pulumi.ToOutputWithContext(ctx, i).(GetLoadBalancerRoutingPoliciesFilterOutput)
 }
 
-func (i GetLoadBalancerRoutingPoliciesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetLoadBalancerRoutingPoliciesFilter] {
-	return pulumix.Output[GetLoadBalancerRoutingPoliciesFilter]{
-		OutputState: i.ToGetLoadBalancerRoutingPoliciesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetLoadBalancerRoutingPoliciesFilterArrayInput is an input type that accepts GetLoadBalancerRoutingPoliciesFilterArray and GetLoadBalancerRoutingPoliciesFilterArrayOutput values.
 // You can construct a concrete instance of `GetLoadBalancerRoutingPoliciesFilterArrayInput` via:
 //
@@ -7426,12 +6545,6 @@ func (i GetLoadBalancerRoutingPoliciesFilterArray) ToGetLoadBalancerRoutingPolic
 	return pulumi.ToOutputWithContext(ctx, i).(GetLoadBalancerRoutingPoliciesFilterArrayOutput)
 }
 
-func (i GetLoadBalancerRoutingPoliciesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLoadBalancerRoutingPoliciesFilter] {
-	return pulumix.Output[[]GetLoadBalancerRoutingPoliciesFilter]{
-		OutputState: i.ToGetLoadBalancerRoutingPoliciesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetLoadBalancerRoutingPoliciesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetLoadBalancerRoutingPoliciesFilterOutput) ElementType() reflect.Type {
@@ -7444,12 +6557,6 @@ func (o GetLoadBalancerRoutingPoliciesFilterOutput) ToGetLoadBalancerRoutingPoli
 
 func (o GetLoadBalancerRoutingPoliciesFilterOutput) ToGetLoadBalancerRoutingPoliciesFilterOutputWithContext(ctx context.Context) GetLoadBalancerRoutingPoliciesFilterOutput {
 	return o
-}
-
-func (o GetLoadBalancerRoutingPoliciesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetLoadBalancerRoutingPoliciesFilter] {
-	return pulumix.Output[GetLoadBalancerRoutingPoliciesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A unique name for the routing policy rule. Avoid entering confidential information.
@@ -7479,12 +6586,6 @@ func (o GetLoadBalancerRoutingPoliciesFilterArrayOutput) ToGetLoadBalancerRoutin
 	return o
 }
 
-func (o GetLoadBalancerRoutingPoliciesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLoadBalancerRoutingPoliciesFilter] {
-	return pulumix.Output[[]GetLoadBalancerRoutingPoliciesFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetLoadBalancerRoutingPoliciesFilterArrayOutput) Index(i pulumi.IntInput) GetLoadBalancerRoutingPoliciesFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLoadBalancerRoutingPoliciesFilter {
 		return vs[0].([]GetLoadBalancerRoutingPoliciesFilter)[vs[1].(int)]
@@ -7500,7 +6601,7 @@ type GetLoadBalancerRoutingPoliciesRoutingPolicy struct {
 	Name string `pulumi:"name"`
 	// The ordered list of routing rules.
 	Rules []GetLoadBalancerRoutingPoliciesRoutingPolicyRule `pulumi:"rules"`
-	State string                                            `pulumi:"state"`
+	State *string                                           `pulumi:"state"`
 }
 
 // GetLoadBalancerRoutingPoliciesRoutingPolicyInput is an input type that accepts GetLoadBalancerRoutingPoliciesRoutingPolicyArgs and GetLoadBalancerRoutingPoliciesRoutingPolicyOutput values.
@@ -7523,7 +6624,7 @@ type GetLoadBalancerRoutingPoliciesRoutingPolicyArgs struct {
 	Name pulumi.StringInput `pulumi:"name"`
 	// The ordered list of routing rules.
 	Rules GetLoadBalancerRoutingPoliciesRoutingPolicyRuleArrayInput `pulumi:"rules"`
-	State pulumi.StringInput                                        `pulumi:"state"`
+	State pulumi.StringPtrInput                                     `pulumi:"state"`
 }
 
 func (GetLoadBalancerRoutingPoliciesRoutingPolicyArgs) ElementType() reflect.Type {
@@ -7536,12 +6637,6 @@ func (i GetLoadBalancerRoutingPoliciesRoutingPolicyArgs) ToGetLoadBalancerRoutin
 
 func (i GetLoadBalancerRoutingPoliciesRoutingPolicyArgs) ToGetLoadBalancerRoutingPoliciesRoutingPolicyOutputWithContext(ctx context.Context) GetLoadBalancerRoutingPoliciesRoutingPolicyOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetLoadBalancerRoutingPoliciesRoutingPolicyOutput)
-}
-
-func (i GetLoadBalancerRoutingPoliciesRoutingPolicyArgs) ToOutput(ctx context.Context) pulumix.Output[GetLoadBalancerRoutingPoliciesRoutingPolicy] {
-	return pulumix.Output[GetLoadBalancerRoutingPoliciesRoutingPolicy]{
-		OutputState: i.ToGetLoadBalancerRoutingPoliciesRoutingPolicyOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetLoadBalancerRoutingPoliciesRoutingPolicyArrayInput is an input type that accepts GetLoadBalancerRoutingPoliciesRoutingPolicyArray and GetLoadBalancerRoutingPoliciesRoutingPolicyArrayOutput values.
@@ -7569,12 +6664,6 @@ func (i GetLoadBalancerRoutingPoliciesRoutingPolicyArray) ToGetLoadBalancerRouti
 	return pulumi.ToOutputWithContext(ctx, i).(GetLoadBalancerRoutingPoliciesRoutingPolicyArrayOutput)
 }
 
-func (i GetLoadBalancerRoutingPoliciesRoutingPolicyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLoadBalancerRoutingPoliciesRoutingPolicy] {
-	return pulumix.Output[[]GetLoadBalancerRoutingPoliciesRoutingPolicy]{
-		OutputState: i.ToGetLoadBalancerRoutingPoliciesRoutingPolicyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetLoadBalancerRoutingPoliciesRoutingPolicyOutput struct{ *pulumi.OutputState }
 
 func (GetLoadBalancerRoutingPoliciesRoutingPolicyOutput) ElementType() reflect.Type {
@@ -7587,12 +6676,6 @@ func (o GetLoadBalancerRoutingPoliciesRoutingPolicyOutput) ToGetLoadBalancerRout
 
 func (o GetLoadBalancerRoutingPoliciesRoutingPolicyOutput) ToGetLoadBalancerRoutingPoliciesRoutingPolicyOutputWithContext(ctx context.Context) GetLoadBalancerRoutingPoliciesRoutingPolicyOutput {
 	return o
-}
-
-func (o GetLoadBalancerRoutingPoliciesRoutingPolicyOutput) ToOutput(ctx context.Context) pulumix.Output[GetLoadBalancerRoutingPoliciesRoutingPolicy] {
-	return pulumix.Output[GetLoadBalancerRoutingPoliciesRoutingPolicy]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The version of the language in which `condition` of `rules` are composed.
@@ -7617,8 +6700,8 @@ func (o GetLoadBalancerRoutingPoliciesRoutingPolicyOutput) Rules() GetLoadBalanc
 	}).(GetLoadBalancerRoutingPoliciesRoutingPolicyRuleArrayOutput)
 }
 
-func (o GetLoadBalancerRoutingPoliciesRoutingPolicyOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLoadBalancerRoutingPoliciesRoutingPolicy) string { return v.State }).(pulumi.StringOutput)
+func (o GetLoadBalancerRoutingPoliciesRoutingPolicyOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLoadBalancerRoutingPoliciesRoutingPolicy) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 type GetLoadBalancerRoutingPoliciesRoutingPolicyArrayOutput struct{ *pulumi.OutputState }
@@ -7633,12 +6716,6 @@ func (o GetLoadBalancerRoutingPoliciesRoutingPolicyArrayOutput) ToGetLoadBalance
 
 func (o GetLoadBalancerRoutingPoliciesRoutingPolicyArrayOutput) ToGetLoadBalancerRoutingPoliciesRoutingPolicyArrayOutputWithContext(ctx context.Context) GetLoadBalancerRoutingPoliciesRoutingPolicyArrayOutput {
 	return o
-}
-
-func (o GetLoadBalancerRoutingPoliciesRoutingPolicyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLoadBalancerRoutingPoliciesRoutingPolicy] {
-	return pulumix.Output[[]GetLoadBalancerRoutingPoliciesRoutingPolicy]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetLoadBalancerRoutingPoliciesRoutingPolicyArrayOutput) Index(i pulumi.IntInput) GetLoadBalancerRoutingPoliciesRoutingPolicyOutput {
@@ -7688,12 +6765,6 @@ func (i GetLoadBalancerRoutingPoliciesRoutingPolicyRuleArgs) ToGetLoadBalancerRo
 	return pulumi.ToOutputWithContext(ctx, i).(GetLoadBalancerRoutingPoliciesRoutingPolicyRuleOutput)
 }
 
-func (i GetLoadBalancerRoutingPoliciesRoutingPolicyRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetLoadBalancerRoutingPoliciesRoutingPolicyRule] {
-	return pulumix.Output[GetLoadBalancerRoutingPoliciesRoutingPolicyRule]{
-		OutputState: i.ToGetLoadBalancerRoutingPoliciesRoutingPolicyRuleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetLoadBalancerRoutingPoliciesRoutingPolicyRuleArrayInput is an input type that accepts GetLoadBalancerRoutingPoliciesRoutingPolicyRuleArray and GetLoadBalancerRoutingPoliciesRoutingPolicyRuleArrayOutput values.
 // You can construct a concrete instance of `GetLoadBalancerRoutingPoliciesRoutingPolicyRuleArrayInput` via:
 //
@@ -7719,12 +6790,6 @@ func (i GetLoadBalancerRoutingPoliciesRoutingPolicyRuleArray) ToGetLoadBalancerR
 	return pulumi.ToOutputWithContext(ctx, i).(GetLoadBalancerRoutingPoliciesRoutingPolicyRuleArrayOutput)
 }
 
-func (i GetLoadBalancerRoutingPoliciesRoutingPolicyRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLoadBalancerRoutingPoliciesRoutingPolicyRule] {
-	return pulumix.Output[[]GetLoadBalancerRoutingPoliciesRoutingPolicyRule]{
-		OutputState: i.ToGetLoadBalancerRoutingPoliciesRoutingPolicyRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetLoadBalancerRoutingPoliciesRoutingPolicyRuleOutput struct{ *pulumi.OutputState }
 
 func (GetLoadBalancerRoutingPoliciesRoutingPolicyRuleOutput) ElementType() reflect.Type {
@@ -7737,12 +6802,6 @@ func (o GetLoadBalancerRoutingPoliciesRoutingPolicyRuleOutput) ToGetLoadBalancer
 
 func (o GetLoadBalancerRoutingPoliciesRoutingPolicyRuleOutput) ToGetLoadBalancerRoutingPoliciesRoutingPolicyRuleOutputWithContext(ctx context.Context) GetLoadBalancerRoutingPoliciesRoutingPolicyRuleOutput {
 	return o
-}
-
-func (o GetLoadBalancerRoutingPoliciesRoutingPolicyRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetLoadBalancerRoutingPoliciesRoutingPolicyRule] {
-	return pulumix.Output[GetLoadBalancerRoutingPoliciesRoutingPolicyRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A list of actions to be applied when conditions of the routing rule are met.
@@ -7774,12 +6833,6 @@ func (o GetLoadBalancerRoutingPoliciesRoutingPolicyRuleArrayOutput) ToGetLoadBal
 
 func (o GetLoadBalancerRoutingPoliciesRoutingPolicyRuleArrayOutput) ToGetLoadBalancerRoutingPoliciesRoutingPolicyRuleArrayOutputWithContext(ctx context.Context) GetLoadBalancerRoutingPoliciesRoutingPolicyRuleArrayOutput {
 	return o
-}
-
-func (o GetLoadBalancerRoutingPoliciesRoutingPolicyRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLoadBalancerRoutingPoliciesRoutingPolicyRule] {
-	return pulumix.Output[[]GetLoadBalancerRoutingPoliciesRoutingPolicyRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetLoadBalancerRoutingPoliciesRoutingPolicyRuleArrayOutput) Index(i pulumi.IntInput) GetLoadBalancerRoutingPoliciesRoutingPolicyRuleOutput {
@@ -7825,12 +6878,6 @@ func (i GetLoadBalancerRoutingPoliciesRoutingPolicyRuleActionArgs) ToGetLoadBala
 	return pulumi.ToOutputWithContext(ctx, i).(GetLoadBalancerRoutingPoliciesRoutingPolicyRuleActionOutput)
 }
 
-func (i GetLoadBalancerRoutingPoliciesRoutingPolicyRuleActionArgs) ToOutput(ctx context.Context) pulumix.Output[GetLoadBalancerRoutingPoliciesRoutingPolicyRuleAction] {
-	return pulumix.Output[GetLoadBalancerRoutingPoliciesRoutingPolicyRuleAction]{
-		OutputState: i.ToGetLoadBalancerRoutingPoliciesRoutingPolicyRuleActionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetLoadBalancerRoutingPoliciesRoutingPolicyRuleActionArrayInput is an input type that accepts GetLoadBalancerRoutingPoliciesRoutingPolicyRuleActionArray and GetLoadBalancerRoutingPoliciesRoutingPolicyRuleActionArrayOutput values.
 // You can construct a concrete instance of `GetLoadBalancerRoutingPoliciesRoutingPolicyRuleActionArrayInput` via:
 //
@@ -7856,12 +6903,6 @@ func (i GetLoadBalancerRoutingPoliciesRoutingPolicyRuleActionArray) ToGetLoadBal
 	return pulumi.ToOutputWithContext(ctx, i).(GetLoadBalancerRoutingPoliciesRoutingPolicyRuleActionArrayOutput)
 }
 
-func (i GetLoadBalancerRoutingPoliciesRoutingPolicyRuleActionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLoadBalancerRoutingPoliciesRoutingPolicyRuleAction] {
-	return pulumix.Output[[]GetLoadBalancerRoutingPoliciesRoutingPolicyRuleAction]{
-		OutputState: i.ToGetLoadBalancerRoutingPoliciesRoutingPolicyRuleActionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetLoadBalancerRoutingPoliciesRoutingPolicyRuleActionOutput struct{ *pulumi.OutputState }
 
 func (GetLoadBalancerRoutingPoliciesRoutingPolicyRuleActionOutput) ElementType() reflect.Type {
@@ -7874,12 +6915,6 @@ func (o GetLoadBalancerRoutingPoliciesRoutingPolicyRuleActionOutput) ToGetLoadBa
 
 func (o GetLoadBalancerRoutingPoliciesRoutingPolicyRuleActionOutput) ToGetLoadBalancerRoutingPoliciesRoutingPolicyRuleActionOutputWithContext(ctx context.Context) GetLoadBalancerRoutingPoliciesRoutingPolicyRuleActionOutput {
 	return o
-}
-
-func (o GetLoadBalancerRoutingPoliciesRoutingPolicyRuleActionOutput) ToOutput(ctx context.Context) pulumix.Output[GetLoadBalancerRoutingPoliciesRoutingPolicyRuleAction] {
-	return pulumix.Output[GetLoadBalancerRoutingPoliciesRoutingPolicyRuleAction]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Name of the backend set the listener will forward the traffic to.  Example: `backendSetForImages`
@@ -7906,12 +6941,6 @@ func (o GetLoadBalancerRoutingPoliciesRoutingPolicyRuleActionArrayOutput) ToGetL
 	return o
 }
 
-func (o GetLoadBalancerRoutingPoliciesRoutingPolicyRuleActionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLoadBalancerRoutingPoliciesRoutingPolicyRuleAction] {
-	return pulumix.Output[[]GetLoadBalancerRoutingPoliciesRoutingPolicyRuleAction]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetLoadBalancerRoutingPoliciesRoutingPolicyRuleActionArrayOutput) Index(i pulumi.IntInput) GetLoadBalancerRoutingPoliciesRoutingPolicyRuleActionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLoadBalancerRoutingPoliciesRoutingPolicyRuleAction {
 		return vs[0].([]GetLoadBalancerRoutingPoliciesRoutingPolicyRuleAction)[vs[1].(int)]
@@ -7922,9 +6951,9 @@ type GetLoadBalancerRoutingPolicyRule struct {
 	// A list of actions to be applied when conditions of the routing rule are met.
 	Actions []GetLoadBalancerRoutingPolicyRuleAction `pulumi:"actions"`
 	// A routing rule to evaluate defined conditions against the incoming HTTP request and perform an action.
-	Condition string `pulumi:"condition"`
+	Condition *string `pulumi:"condition"`
 	// A unique name for the routing policy rule. Avoid entering confidential information.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 }
 
 // GetLoadBalancerRoutingPolicyRuleInput is an input type that accepts GetLoadBalancerRoutingPolicyRuleArgs and GetLoadBalancerRoutingPolicyRuleOutput values.
@@ -7942,9 +6971,9 @@ type GetLoadBalancerRoutingPolicyRuleArgs struct {
 	// A list of actions to be applied when conditions of the routing rule are met.
 	Actions GetLoadBalancerRoutingPolicyRuleActionArrayInput `pulumi:"actions"`
 	// A routing rule to evaluate defined conditions against the incoming HTTP request and perform an action.
-	Condition pulumi.StringInput `pulumi:"condition"`
+	Condition pulumi.StringPtrInput `pulumi:"condition"`
 	// A unique name for the routing policy rule. Avoid entering confidential information.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 }
 
 func (GetLoadBalancerRoutingPolicyRuleArgs) ElementType() reflect.Type {
@@ -7957,12 +6986,6 @@ func (i GetLoadBalancerRoutingPolicyRuleArgs) ToGetLoadBalancerRoutingPolicyRule
 
 func (i GetLoadBalancerRoutingPolicyRuleArgs) ToGetLoadBalancerRoutingPolicyRuleOutputWithContext(ctx context.Context) GetLoadBalancerRoutingPolicyRuleOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetLoadBalancerRoutingPolicyRuleOutput)
-}
-
-func (i GetLoadBalancerRoutingPolicyRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetLoadBalancerRoutingPolicyRule] {
-	return pulumix.Output[GetLoadBalancerRoutingPolicyRule]{
-		OutputState: i.ToGetLoadBalancerRoutingPolicyRuleOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetLoadBalancerRoutingPolicyRuleArrayInput is an input type that accepts GetLoadBalancerRoutingPolicyRuleArray and GetLoadBalancerRoutingPolicyRuleArrayOutput values.
@@ -7990,12 +7013,6 @@ func (i GetLoadBalancerRoutingPolicyRuleArray) ToGetLoadBalancerRoutingPolicyRul
 	return pulumi.ToOutputWithContext(ctx, i).(GetLoadBalancerRoutingPolicyRuleArrayOutput)
 }
 
-func (i GetLoadBalancerRoutingPolicyRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLoadBalancerRoutingPolicyRule] {
-	return pulumix.Output[[]GetLoadBalancerRoutingPolicyRule]{
-		OutputState: i.ToGetLoadBalancerRoutingPolicyRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetLoadBalancerRoutingPolicyRuleOutput struct{ *pulumi.OutputState }
 
 func (GetLoadBalancerRoutingPolicyRuleOutput) ElementType() reflect.Type {
@@ -8010,25 +7027,19 @@ func (o GetLoadBalancerRoutingPolicyRuleOutput) ToGetLoadBalancerRoutingPolicyRu
 	return o
 }
 
-func (o GetLoadBalancerRoutingPolicyRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetLoadBalancerRoutingPolicyRule] {
-	return pulumix.Output[GetLoadBalancerRoutingPolicyRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A list of actions to be applied when conditions of the routing rule are met.
 func (o GetLoadBalancerRoutingPolicyRuleOutput) Actions() GetLoadBalancerRoutingPolicyRuleActionArrayOutput {
 	return o.ApplyT(func(v GetLoadBalancerRoutingPolicyRule) []GetLoadBalancerRoutingPolicyRuleAction { return v.Actions }).(GetLoadBalancerRoutingPolicyRuleActionArrayOutput)
 }
 
 // A routing rule to evaluate defined conditions against the incoming HTTP request and perform an action.
-func (o GetLoadBalancerRoutingPolicyRuleOutput) Condition() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLoadBalancerRoutingPolicyRule) string { return v.Condition }).(pulumi.StringOutput)
+func (o GetLoadBalancerRoutingPolicyRuleOutput) Condition() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLoadBalancerRoutingPolicyRule) *string { return v.Condition }).(pulumi.StringPtrOutput)
 }
 
 // A unique name for the routing policy rule. Avoid entering confidential information.
-func (o GetLoadBalancerRoutingPolicyRuleOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLoadBalancerRoutingPolicyRule) string { return v.Name }).(pulumi.StringOutput)
+func (o GetLoadBalancerRoutingPolicyRuleOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLoadBalancerRoutingPolicyRule) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 type GetLoadBalancerRoutingPolicyRuleArrayOutput struct{ *pulumi.OutputState }
@@ -8045,12 +7056,6 @@ func (o GetLoadBalancerRoutingPolicyRuleArrayOutput) ToGetLoadBalancerRoutingPol
 	return o
 }
 
-func (o GetLoadBalancerRoutingPolicyRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLoadBalancerRoutingPolicyRule] {
-	return pulumix.Output[[]GetLoadBalancerRoutingPolicyRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetLoadBalancerRoutingPolicyRuleArrayOutput) Index(i pulumi.IntInput) GetLoadBalancerRoutingPolicyRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLoadBalancerRoutingPolicyRule {
 		return vs[0].([]GetLoadBalancerRoutingPolicyRule)[vs[1].(int)]
@@ -8059,9 +7064,9 @@ func (o GetLoadBalancerRoutingPolicyRuleArrayOutput) Index(i pulumi.IntInput) Ge
 
 type GetLoadBalancerRoutingPolicyRuleAction struct {
 	// Name of the backend set the listener will forward the traffic to.  Example: `backendSetForImages`
-	BackendSetName string `pulumi:"backendSetName"`
+	BackendSetName *string `pulumi:"backendSetName"`
 	// A unique name for the routing policy rule. Avoid entering confidential information.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 }
 
 // GetLoadBalancerRoutingPolicyRuleActionInput is an input type that accepts GetLoadBalancerRoutingPolicyRuleActionArgs and GetLoadBalancerRoutingPolicyRuleActionOutput values.
@@ -8077,9 +7082,9 @@ type GetLoadBalancerRoutingPolicyRuleActionInput interface {
 
 type GetLoadBalancerRoutingPolicyRuleActionArgs struct {
 	// Name of the backend set the listener will forward the traffic to.  Example: `backendSetForImages`
-	BackendSetName pulumi.StringInput `pulumi:"backendSetName"`
+	BackendSetName pulumi.StringPtrInput `pulumi:"backendSetName"`
 	// A unique name for the routing policy rule. Avoid entering confidential information.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 }
 
 func (GetLoadBalancerRoutingPolicyRuleActionArgs) ElementType() reflect.Type {
@@ -8092,12 +7097,6 @@ func (i GetLoadBalancerRoutingPolicyRuleActionArgs) ToGetLoadBalancerRoutingPoli
 
 func (i GetLoadBalancerRoutingPolicyRuleActionArgs) ToGetLoadBalancerRoutingPolicyRuleActionOutputWithContext(ctx context.Context) GetLoadBalancerRoutingPolicyRuleActionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetLoadBalancerRoutingPolicyRuleActionOutput)
-}
-
-func (i GetLoadBalancerRoutingPolicyRuleActionArgs) ToOutput(ctx context.Context) pulumix.Output[GetLoadBalancerRoutingPolicyRuleAction] {
-	return pulumix.Output[GetLoadBalancerRoutingPolicyRuleAction]{
-		OutputState: i.ToGetLoadBalancerRoutingPolicyRuleActionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetLoadBalancerRoutingPolicyRuleActionArrayInput is an input type that accepts GetLoadBalancerRoutingPolicyRuleActionArray and GetLoadBalancerRoutingPolicyRuleActionArrayOutput values.
@@ -8125,12 +7124,6 @@ func (i GetLoadBalancerRoutingPolicyRuleActionArray) ToGetLoadBalancerRoutingPol
 	return pulumi.ToOutputWithContext(ctx, i).(GetLoadBalancerRoutingPolicyRuleActionArrayOutput)
 }
 
-func (i GetLoadBalancerRoutingPolicyRuleActionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLoadBalancerRoutingPolicyRuleAction] {
-	return pulumix.Output[[]GetLoadBalancerRoutingPolicyRuleAction]{
-		OutputState: i.ToGetLoadBalancerRoutingPolicyRuleActionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetLoadBalancerRoutingPolicyRuleActionOutput struct{ *pulumi.OutputState }
 
 func (GetLoadBalancerRoutingPolicyRuleActionOutput) ElementType() reflect.Type {
@@ -8145,20 +7138,14 @@ func (o GetLoadBalancerRoutingPolicyRuleActionOutput) ToGetLoadBalancerRoutingPo
 	return o
 }
 
-func (o GetLoadBalancerRoutingPolicyRuleActionOutput) ToOutput(ctx context.Context) pulumix.Output[GetLoadBalancerRoutingPolicyRuleAction] {
-	return pulumix.Output[GetLoadBalancerRoutingPolicyRuleAction]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Name of the backend set the listener will forward the traffic to.  Example: `backendSetForImages`
-func (o GetLoadBalancerRoutingPolicyRuleActionOutput) BackendSetName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLoadBalancerRoutingPolicyRuleAction) string { return v.BackendSetName }).(pulumi.StringOutput)
+func (o GetLoadBalancerRoutingPolicyRuleActionOutput) BackendSetName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLoadBalancerRoutingPolicyRuleAction) *string { return v.BackendSetName }).(pulumi.StringPtrOutput)
 }
 
 // A unique name for the routing policy rule. Avoid entering confidential information.
-func (o GetLoadBalancerRoutingPolicyRuleActionOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLoadBalancerRoutingPolicyRuleAction) string { return v.Name }).(pulumi.StringOutput)
+func (o GetLoadBalancerRoutingPolicyRuleActionOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLoadBalancerRoutingPolicyRuleAction) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 type GetLoadBalancerRoutingPolicyRuleActionArrayOutput struct{ *pulumi.OutputState }
@@ -8173,12 +7160,6 @@ func (o GetLoadBalancerRoutingPolicyRuleActionArrayOutput) ToGetLoadBalancerRout
 
 func (o GetLoadBalancerRoutingPolicyRuleActionArrayOutput) ToGetLoadBalancerRoutingPolicyRuleActionArrayOutputWithContext(ctx context.Context) GetLoadBalancerRoutingPolicyRuleActionArrayOutput {
 	return o
-}
-
-func (o GetLoadBalancerRoutingPolicyRuleActionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLoadBalancerRoutingPolicyRuleAction] {
-	return pulumix.Output[[]GetLoadBalancerRoutingPolicyRuleAction]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetLoadBalancerRoutingPolicyRuleActionArrayOutput) Index(i pulumi.IntInput) GetLoadBalancerRoutingPolicyRuleActionOutput {
@@ -8224,12 +7205,6 @@ func (i GetLoadBalancersFilterArgs) ToGetLoadBalancersFilterOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetLoadBalancersFilterOutput)
 }
 
-func (i GetLoadBalancersFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetLoadBalancersFilter] {
-	return pulumix.Output[GetLoadBalancersFilter]{
-		OutputState: i.ToGetLoadBalancersFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetLoadBalancersFilterArrayInput is an input type that accepts GetLoadBalancersFilterArray and GetLoadBalancersFilterArrayOutput values.
 // You can construct a concrete instance of `GetLoadBalancersFilterArrayInput` via:
 //
@@ -8255,12 +7230,6 @@ func (i GetLoadBalancersFilterArray) ToGetLoadBalancersFilterArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetLoadBalancersFilterArrayOutput)
 }
 
-func (i GetLoadBalancersFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLoadBalancersFilter] {
-	return pulumix.Output[[]GetLoadBalancersFilter]{
-		OutputState: i.ToGetLoadBalancersFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetLoadBalancersFilterOutput struct{ *pulumi.OutputState }
 
 func (GetLoadBalancersFilterOutput) ElementType() reflect.Type {
@@ -8273,12 +7242,6 @@ func (o GetLoadBalancersFilterOutput) ToGetLoadBalancersFilterOutput() GetLoadBa
 
 func (o GetLoadBalancersFilterOutput) ToGetLoadBalancersFilterOutputWithContext(ctx context.Context) GetLoadBalancersFilterOutput {
 	return o
-}
-
-func (o GetLoadBalancersFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetLoadBalancersFilter] {
-	return pulumix.Output[GetLoadBalancersFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A unique name for the routing policy rule. Avoid entering confidential information.
@@ -8308,12 +7271,6 @@ func (o GetLoadBalancersFilterArrayOutput) ToGetLoadBalancersFilterArrayOutputWi
 	return o
 }
 
-func (o GetLoadBalancersFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLoadBalancersFilter] {
-	return pulumix.Output[[]GetLoadBalancersFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetLoadBalancersFilterArrayOutput) Index(i pulumi.IntInput) GetLoadBalancersFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLoadBalancersFilter {
 		return vs[0].([]GetLoadBalancersFilter)[vs[1].(int)]
@@ -8322,39 +7279,39 @@ func (o GetLoadBalancersFilterArrayOutput) Index(i pulumi.IntInput) GetLoadBalan
 
 type GetLoadBalancersLoadBalancer struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the load balancers to list.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A filter to return only resources that match the given display name exactly.  Example: `exampleLoadBalancer`
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Ocid of the pre-created public IP. That should be attahed to this load balancer.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// An array of IP addresses.
 	IpAddressDetails []GetLoadBalancersLoadBalancerIpAddressDetail `pulumi:"ipAddressDetails"`
 	// An array of IP addresses. Deprecated: use ipAddressDetails instead.
 	//
 	// Deprecated: The 'ip_addresses' field has been deprecated. Please use 'ip_address_details' instead.
 	IpAddresses []string `pulumi:"ipAddresses"`
-	IpMode      string   `pulumi:"ipMode"`
+	IpMode      *string  `pulumi:"ipMode"`
 	// Whether the load balancer has a VCN-local (private) IP address.
-	IsPrivate bool `pulumi:"isPrivate"`
+	IsPrivate *bool `pulumi:"isPrivate"`
 	// An array of NSG [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the load balancer.
 	NetworkSecurityGroupIds []string                                 `pulumi:"networkSecurityGroupIds"`
 	ReservedIps             []GetLoadBalancersLoadBalancerReservedIp `pulumi:"reservedIps"`
 	// A template that determines the total pre-provisioned bandwidth (ingress plus egress). To get a list of available shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerShape/ListShapes) operation.  Example: `100Mbps`
-	Shape string `pulumi:"shape"`
+	Shape *string `pulumi:"shape"`
 	// The configuration details to update load balancer to a different shape.
 	ShapeDetails []GetLoadBalancersLoadBalancerShapeDetail `pulumi:"shapeDetails"`
 	// A filter to return only resources that match the given lifecycle state.  Example: `SUCCEEDED`
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// An array of subnet [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	SubnetIds []string `pulumi:"subnetIds"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The date and time the load balancer was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 }
 
 // GetLoadBalancersLoadBalancerInput is an input type that accepts GetLoadBalancersLoadBalancerArgs and GetLoadBalancersLoadBalancerOutput values.
@@ -8370,39 +7327,39 @@ type GetLoadBalancersLoadBalancerInput interface {
 
 type GetLoadBalancersLoadBalancerArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the load balancers to list.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the given display name exactly.  Example: `exampleLoadBalancer`
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// Ocid of the pre-created public IP. That should be attahed to this load balancer.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// An array of IP addresses.
 	IpAddressDetails GetLoadBalancersLoadBalancerIpAddressDetailArrayInput `pulumi:"ipAddressDetails"`
 	// An array of IP addresses. Deprecated: use ipAddressDetails instead.
 	//
 	// Deprecated: The 'ip_addresses' field has been deprecated. Please use 'ip_address_details' instead.
 	IpAddresses pulumi.StringArrayInput `pulumi:"ipAddresses"`
-	IpMode      pulumi.StringInput      `pulumi:"ipMode"`
+	IpMode      pulumi.StringPtrInput   `pulumi:"ipMode"`
 	// Whether the load balancer has a VCN-local (private) IP address.
-	IsPrivate pulumi.BoolInput `pulumi:"isPrivate"`
+	IsPrivate pulumi.BoolPtrInput `pulumi:"isPrivate"`
 	// An array of NSG [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the load balancer.
 	NetworkSecurityGroupIds pulumi.StringArrayInput                          `pulumi:"networkSecurityGroupIds"`
 	ReservedIps             GetLoadBalancersLoadBalancerReservedIpArrayInput `pulumi:"reservedIps"`
 	// A template that determines the total pre-provisioned bandwidth (ingress plus egress). To get a list of available shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerShape/ListShapes) operation.  Example: `100Mbps`
-	Shape pulumi.StringInput `pulumi:"shape"`
+	Shape pulumi.StringPtrInput `pulumi:"shape"`
 	// The configuration details to update load balancer to a different shape.
 	ShapeDetails GetLoadBalancersLoadBalancerShapeDetailArrayInput `pulumi:"shapeDetails"`
 	// A filter to return only resources that match the given lifecycle state.  Example: `SUCCEEDED`
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// An array of subnet [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	SubnetIds pulumi.StringArrayInput `pulumi:"subnetIds"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// The date and time the load balancer was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 }
 
 func (GetLoadBalancersLoadBalancerArgs) ElementType() reflect.Type {
@@ -8415,12 +7372,6 @@ func (i GetLoadBalancersLoadBalancerArgs) ToGetLoadBalancersLoadBalancerOutput()
 
 func (i GetLoadBalancersLoadBalancerArgs) ToGetLoadBalancersLoadBalancerOutputWithContext(ctx context.Context) GetLoadBalancersLoadBalancerOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetLoadBalancersLoadBalancerOutput)
-}
-
-func (i GetLoadBalancersLoadBalancerArgs) ToOutput(ctx context.Context) pulumix.Output[GetLoadBalancersLoadBalancer] {
-	return pulumix.Output[GetLoadBalancersLoadBalancer]{
-		OutputState: i.ToGetLoadBalancersLoadBalancerOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetLoadBalancersLoadBalancerArrayInput is an input type that accepts GetLoadBalancersLoadBalancerArray and GetLoadBalancersLoadBalancerArrayOutput values.
@@ -8448,12 +7399,6 @@ func (i GetLoadBalancersLoadBalancerArray) ToGetLoadBalancersLoadBalancerArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetLoadBalancersLoadBalancerArrayOutput)
 }
 
-func (i GetLoadBalancersLoadBalancerArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLoadBalancersLoadBalancer] {
-	return pulumix.Output[[]GetLoadBalancersLoadBalancer]{
-		OutputState: i.ToGetLoadBalancersLoadBalancerArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetLoadBalancersLoadBalancerOutput struct{ *pulumi.OutputState }
 
 func (GetLoadBalancersLoadBalancerOutput) ElementType() reflect.Type {
@@ -8468,15 +7413,9 @@ func (o GetLoadBalancersLoadBalancerOutput) ToGetLoadBalancersLoadBalancerOutput
 	return o
 }
 
-func (o GetLoadBalancersLoadBalancerOutput) ToOutput(ctx context.Context) pulumix.Output[GetLoadBalancersLoadBalancer] {
-	return pulumix.Output[GetLoadBalancersLoadBalancer]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the load balancers to list.
-func (o GetLoadBalancersLoadBalancerOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLoadBalancersLoadBalancer) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetLoadBalancersLoadBalancerOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLoadBalancersLoadBalancer) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -8485,8 +7424,8 @@ func (o GetLoadBalancersLoadBalancerOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // A filter to return only resources that match the given display name exactly.  Example: `exampleLoadBalancer`
-func (o GetLoadBalancersLoadBalancerOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLoadBalancersLoadBalancer) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetLoadBalancersLoadBalancerOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLoadBalancersLoadBalancer) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -8495,8 +7434,8 @@ func (o GetLoadBalancersLoadBalancerOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Ocid of the pre-created public IP. That should be attahed to this load balancer.
-func (o GetLoadBalancersLoadBalancerOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLoadBalancersLoadBalancer) string { return v.Id }).(pulumi.StringOutput)
+func (o GetLoadBalancersLoadBalancerOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLoadBalancersLoadBalancer) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // An array of IP addresses.
@@ -8513,13 +7452,13 @@ func (o GetLoadBalancersLoadBalancerOutput) IpAddresses() pulumi.StringArrayOutp
 	return o.ApplyT(func(v GetLoadBalancersLoadBalancer) []string { return v.IpAddresses }).(pulumi.StringArrayOutput)
 }
 
-func (o GetLoadBalancersLoadBalancerOutput) IpMode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLoadBalancersLoadBalancer) string { return v.IpMode }).(pulumi.StringOutput)
+func (o GetLoadBalancersLoadBalancerOutput) IpMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLoadBalancersLoadBalancer) *string { return v.IpMode }).(pulumi.StringPtrOutput)
 }
 
 // Whether the load balancer has a VCN-local (private) IP address.
-func (o GetLoadBalancersLoadBalancerOutput) IsPrivate() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetLoadBalancersLoadBalancer) bool { return v.IsPrivate }).(pulumi.BoolOutput)
+func (o GetLoadBalancersLoadBalancerOutput) IsPrivate() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetLoadBalancersLoadBalancer) *bool { return v.IsPrivate }).(pulumi.BoolPtrOutput)
 }
 
 // An array of NSG [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the load balancer.
@@ -8532,8 +7471,8 @@ func (o GetLoadBalancersLoadBalancerOutput) ReservedIps() GetLoadBalancersLoadBa
 }
 
 // A template that determines the total pre-provisioned bandwidth (ingress plus egress). To get a list of available shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerShape/ListShapes) operation.  Example: `100Mbps`
-func (o GetLoadBalancersLoadBalancerOutput) Shape() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLoadBalancersLoadBalancer) string { return v.Shape }).(pulumi.StringOutput)
+func (o GetLoadBalancersLoadBalancerOutput) Shape() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLoadBalancersLoadBalancer) *string { return v.Shape }).(pulumi.StringPtrOutput)
 }
 
 // The configuration details to update load balancer to a different shape.
@@ -8542,8 +7481,8 @@ func (o GetLoadBalancersLoadBalancerOutput) ShapeDetails() GetLoadBalancersLoadB
 }
 
 // A filter to return only resources that match the given lifecycle state.  Example: `SUCCEEDED`
-func (o GetLoadBalancersLoadBalancerOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLoadBalancersLoadBalancer) string { return v.State }).(pulumi.StringOutput)
+func (o GetLoadBalancersLoadBalancerOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLoadBalancersLoadBalancer) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // An array of subnet [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -8557,8 +7496,8 @@ func (o GetLoadBalancersLoadBalancerOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The date and time the load balancer was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-func (o GetLoadBalancersLoadBalancerOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLoadBalancersLoadBalancer) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetLoadBalancersLoadBalancerOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLoadBalancersLoadBalancer) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 type GetLoadBalancersLoadBalancerArrayOutput struct{ *pulumi.OutputState }
@@ -8575,12 +7514,6 @@ func (o GetLoadBalancersLoadBalancerArrayOutput) ToGetLoadBalancersLoadBalancerA
 	return o
 }
 
-func (o GetLoadBalancersLoadBalancerArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLoadBalancersLoadBalancer] {
-	return pulumix.Output[[]GetLoadBalancersLoadBalancer]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetLoadBalancersLoadBalancerArrayOutput) Index(i pulumi.IntInput) GetLoadBalancersLoadBalancerOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLoadBalancersLoadBalancer {
 		return vs[0].([]GetLoadBalancersLoadBalancer)[vs[1].(int)]
@@ -8589,9 +7522,9 @@ func (o GetLoadBalancersLoadBalancerArrayOutput) Index(i pulumi.IntInput) GetLoa
 
 type GetLoadBalancersLoadBalancerIpAddressDetail struct {
 	// An IP address.  Example: `192.168.0.3`
-	IpAddress string `pulumi:"ipAddress"`
+	IpAddress *string `pulumi:"ipAddress"`
 	// Whether the IP address is public or private.
-	IsPublic bool `pulumi:"isPublic"`
+	IsPublic *bool `pulumi:"isPublic"`
 	// Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
 	ReservedIps []GetLoadBalancersLoadBalancerIpAddressDetailReservedIp `pulumi:"reservedIps"`
 }
@@ -8609,9 +7542,9 @@ type GetLoadBalancersLoadBalancerIpAddressDetailInput interface {
 
 type GetLoadBalancersLoadBalancerIpAddressDetailArgs struct {
 	// An IP address.  Example: `192.168.0.3`
-	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
+	IpAddress pulumi.StringPtrInput `pulumi:"ipAddress"`
 	// Whether the IP address is public or private.
-	IsPublic pulumi.BoolInput `pulumi:"isPublic"`
+	IsPublic pulumi.BoolPtrInput `pulumi:"isPublic"`
 	// Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
 	ReservedIps GetLoadBalancersLoadBalancerIpAddressDetailReservedIpArrayInput `pulumi:"reservedIps"`
 }
@@ -8626,12 +7559,6 @@ func (i GetLoadBalancersLoadBalancerIpAddressDetailArgs) ToGetLoadBalancersLoadB
 
 func (i GetLoadBalancersLoadBalancerIpAddressDetailArgs) ToGetLoadBalancersLoadBalancerIpAddressDetailOutputWithContext(ctx context.Context) GetLoadBalancersLoadBalancerIpAddressDetailOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetLoadBalancersLoadBalancerIpAddressDetailOutput)
-}
-
-func (i GetLoadBalancersLoadBalancerIpAddressDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetLoadBalancersLoadBalancerIpAddressDetail] {
-	return pulumix.Output[GetLoadBalancersLoadBalancerIpAddressDetail]{
-		OutputState: i.ToGetLoadBalancersLoadBalancerIpAddressDetailOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetLoadBalancersLoadBalancerIpAddressDetailArrayInput is an input type that accepts GetLoadBalancersLoadBalancerIpAddressDetailArray and GetLoadBalancersLoadBalancerIpAddressDetailArrayOutput values.
@@ -8659,12 +7586,6 @@ func (i GetLoadBalancersLoadBalancerIpAddressDetailArray) ToGetLoadBalancersLoad
 	return pulumi.ToOutputWithContext(ctx, i).(GetLoadBalancersLoadBalancerIpAddressDetailArrayOutput)
 }
 
-func (i GetLoadBalancersLoadBalancerIpAddressDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLoadBalancersLoadBalancerIpAddressDetail] {
-	return pulumix.Output[[]GetLoadBalancersLoadBalancerIpAddressDetail]{
-		OutputState: i.ToGetLoadBalancersLoadBalancerIpAddressDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetLoadBalancersLoadBalancerIpAddressDetailOutput struct{ *pulumi.OutputState }
 
 func (GetLoadBalancersLoadBalancerIpAddressDetailOutput) ElementType() reflect.Type {
@@ -8679,20 +7600,14 @@ func (o GetLoadBalancersLoadBalancerIpAddressDetailOutput) ToGetLoadBalancersLoa
 	return o
 }
 
-func (o GetLoadBalancersLoadBalancerIpAddressDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetLoadBalancersLoadBalancerIpAddressDetail] {
-	return pulumix.Output[GetLoadBalancersLoadBalancerIpAddressDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 // An IP address.  Example: `192.168.0.3`
-func (o GetLoadBalancersLoadBalancerIpAddressDetailOutput) IpAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLoadBalancersLoadBalancerIpAddressDetail) string { return v.IpAddress }).(pulumi.StringOutput)
+func (o GetLoadBalancersLoadBalancerIpAddressDetailOutput) IpAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLoadBalancersLoadBalancerIpAddressDetail) *string { return v.IpAddress }).(pulumi.StringPtrOutput)
 }
 
 // Whether the IP address is public or private.
-func (o GetLoadBalancersLoadBalancerIpAddressDetailOutput) IsPublic() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetLoadBalancersLoadBalancerIpAddressDetail) bool { return v.IsPublic }).(pulumi.BoolOutput)
+func (o GetLoadBalancersLoadBalancerIpAddressDetailOutput) IsPublic() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetLoadBalancersLoadBalancerIpAddressDetail) *bool { return v.IsPublic }).(pulumi.BoolPtrOutput)
 }
 
 // Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
@@ -8716,12 +7631,6 @@ func (o GetLoadBalancersLoadBalancerIpAddressDetailArrayOutput) ToGetLoadBalance
 	return o
 }
 
-func (o GetLoadBalancersLoadBalancerIpAddressDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLoadBalancersLoadBalancerIpAddressDetail] {
-	return pulumix.Output[[]GetLoadBalancersLoadBalancerIpAddressDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetLoadBalancersLoadBalancerIpAddressDetailArrayOutput) Index(i pulumi.IntInput) GetLoadBalancersLoadBalancerIpAddressDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLoadBalancersLoadBalancerIpAddressDetail {
 		return vs[0].([]GetLoadBalancersLoadBalancerIpAddressDetail)[vs[1].(int)]
@@ -8730,7 +7639,7 @@ func (o GetLoadBalancersLoadBalancerIpAddressDetailArrayOutput) Index(i pulumi.I
 
 type GetLoadBalancersLoadBalancerIpAddressDetailReservedIp struct {
 	// Ocid of the pre-created public IP. That should be attahed to this load balancer.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 // GetLoadBalancersLoadBalancerIpAddressDetailReservedIpInput is an input type that accepts GetLoadBalancersLoadBalancerIpAddressDetailReservedIpArgs and GetLoadBalancersLoadBalancerIpAddressDetailReservedIpOutput values.
@@ -8746,7 +7655,7 @@ type GetLoadBalancersLoadBalancerIpAddressDetailReservedIpInput interface {
 
 type GetLoadBalancersLoadBalancerIpAddressDetailReservedIpArgs struct {
 	// Ocid of the pre-created public IP. That should be attahed to this load balancer.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 }
 
 func (GetLoadBalancersLoadBalancerIpAddressDetailReservedIpArgs) ElementType() reflect.Type {
@@ -8759,12 +7668,6 @@ func (i GetLoadBalancersLoadBalancerIpAddressDetailReservedIpArgs) ToGetLoadBala
 
 func (i GetLoadBalancersLoadBalancerIpAddressDetailReservedIpArgs) ToGetLoadBalancersLoadBalancerIpAddressDetailReservedIpOutputWithContext(ctx context.Context) GetLoadBalancersLoadBalancerIpAddressDetailReservedIpOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetLoadBalancersLoadBalancerIpAddressDetailReservedIpOutput)
-}
-
-func (i GetLoadBalancersLoadBalancerIpAddressDetailReservedIpArgs) ToOutput(ctx context.Context) pulumix.Output[GetLoadBalancersLoadBalancerIpAddressDetailReservedIp] {
-	return pulumix.Output[GetLoadBalancersLoadBalancerIpAddressDetailReservedIp]{
-		OutputState: i.ToGetLoadBalancersLoadBalancerIpAddressDetailReservedIpOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetLoadBalancersLoadBalancerIpAddressDetailReservedIpArrayInput is an input type that accepts GetLoadBalancersLoadBalancerIpAddressDetailReservedIpArray and GetLoadBalancersLoadBalancerIpAddressDetailReservedIpArrayOutput values.
@@ -8792,12 +7695,6 @@ func (i GetLoadBalancersLoadBalancerIpAddressDetailReservedIpArray) ToGetLoadBal
 	return pulumi.ToOutputWithContext(ctx, i).(GetLoadBalancersLoadBalancerIpAddressDetailReservedIpArrayOutput)
 }
 
-func (i GetLoadBalancersLoadBalancerIpAddressDetailReservedIpArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLoadBalancersLoadBalancerIpAddressDetailReservedIp] {
-	return pulumix.Output[[]GetLoadBalancersLoadBalancerIpAddressDetailReservedIp]{
-		OutputState: i.ToGetLoadBalancersLoadBalancerIpAddressDetailReservedIpArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetLoadBalancersLoadBalancerIpAddressDetailReservedIpOutput struct{ *pulumi.OutputState }
 
 func (GetLoadBalancersLoadBalancerIpAddressDetailReservedIpOutput) ElementType() reflect.Type {
@@ -8812,15 +7709,9 @@ func (o GetLoadBalancersLoadBalancerIpAddressDetailReservedIpOutput) ToGetLoadBa
 	return o
 }
 
-func (o GetLoadBalancersLoadBalancerIpAddressDetailReservedIpOutput) ToOutput(ctx context.Context) pulumix.Output[GetLoadBalancersLoadBalancerIpAddressDetailReservedIp] {
-	return pulumix.Output[GetLoadBalancersLoadBalancerIpAddressDetailReservedIp]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Ocid of the pre-created public IP. That should be attahed to this load balancer.
-func (o GetLoadBalancersLoadBalancerIpAddressDetailReservedIpOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLoadBalancersLoadBalancerIpAddressDetailReservedIp) string { return v.Id }).(pulumi.StringOutput)
+func (o GetLoadBalancersLoadBalancerIpAddressDetailReservedIpOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLoadBalancersLoadBalancerIpAddressDetailReservedIp) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 type GetLoadBalancersLoadBalancerIpAddressDetailReservedIpArrayOutput struct{ *pulumi.OutputState }
@@ -8837,12 +7728,6 @@ func (o GetLoadBalancersLoadBalancerIpAddressDetailReservedIpArrayOutput) ToGetL
 	return o
 }
 
-func (o GetLoadBalancersLoadBalancerIpAddressDetailReservedIpArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLoadBalancersLoadBalancerIpAddressDetailReservedIp] {
-	return pulumix.Output[[]GetLoadBalancersLoadBalancerIpAddressDetailReservedIp]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetLoadBalancersLoadBalancerIpAddressDetailReservedIpArrayOutput) Index(i pulumi.IntInput) GetLoadBalancersLoadBalancerIpAddressDetailReservedIpOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLoadBalancersLoadBalancerIpAddressDetailReservedIp {
 		return vs[0].([]GetLoadBalancersLoadBalancerIpAddressDetailReservedIp)[vs[1].(int)]
@@ -8851,7 +7736,7 @@ func (o GetLoadBalancersLoadBalancerIpAddressDetailReservedIpArrayOutput) Index(
 
 type GetLoadBalancersLoadBalancerReservedIp struct {
 	// Ocid of the pre-created public IP. That should be attahed to this load balancer.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 // GetLoadBalancersLoadBalancerReservedIpInput is an input type that accepts GetLoadBalancersLoadBalancerReservedIpArgs and GetLoadBalancersLoadBalancerReservedIpOutput values.
@@ -8867,7 +7752,7 @@ type GetLoadBalancersLoadBalancerReservedIpInput interface {
 
 type GetLoadBalancersLoadBalancerReservedIpArgs struct {
 	// Ocid of the pre-created public IP. That should be attahed to this load balancer.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 }
 
 func (GetLoadBalancersLoadBalancerReservedIpArgs) ElementType() reflect.Type {
@@ -8880,12 +7765,6 @@ func (i GetLoadBalancersLoadBalancerReservedIpArgs) ToGetLoadBalancersLoadBalanc
 
 func (i GetLoadBalancersLoadBalancerReservedIpArgs) ToGetLoadBalancersLoadBalancerReservedIpOutputWithContext(ctx context.Context) GetLoadBalancersLoadBalancerReservedIpOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetLoadBalancersLoadBalancerReservedIpOutput)
-}
-
-func (i GetLoadBalancersLoadBalancerReservedIpArgs) ToOutput(ctx context.Context) pulumix.Output[GetLoadBalancersLoadBalancerReservedIp] {
-	return pulumix.Output[GetLoadBalancersLoadBalancerReservedIp]{
-		OutputState: i.ToGetLoadBalancersLoadBalancerReservedIpOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetLoadBalancersLoadBalancerReservedIpArrayInput is an input type that accepts GetLoadBalancersLoadBalancerReservedIpArray and GetLoadBalancersLoadBalancerReservedIpArrayOutput values.
@@ -8913,12 +7792,6 @@ func (i GetLoadBalancersLoadBalancerReservedIpArray) ToGetLoadBalancersLoadBalan
 	return pulumi.ToOutputWithContext(ctx, i).(GetLoadBalancersLoadBalancerReservedIpArrayOutput)
 }
 
-func (i GetLoadBalancersLoadBalancerReservedIpArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLoadBalancersLoadBalancerReservedIp] {
-	return pulumix.Output[[]GetLoadBalancersLoadBalancerReservedIp]{
-		OutputState: i.ToGetLoadBalancersLoadBalancerReservedIpArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetLoadBalancersLoadBalancerReservedIpOutput struct{ *pulumi.OutputState }
 
 func (GetLoadBalancersLoadBalancerReservedIpOutput) ElementType() reflect.Type {
@@ -8933,15 +7806,9 @@ func (o GetLoadBalancersLoadBalancerReservedIpOutput) ToGetLoadBalancersLoadBala
 	return o
 }
 
-func (o GetLoadBalancersLoadBalancerReservedIpOutput) ToOutput(ctx context.Context) pulumix.Output[GetLoadBalancersLoadBalancerReservedIp] {
-	return pulumix.Output[GetLoadBalancersLoadBalancerReservedIp]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Ocid of the pre-created public IP. That should be attahed to this load balancer.
-func (o GetLoadBalancersLoadBalancerReservedIpOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLoadBalancersLoadBalancerReservedIp) string { return v.Id }).(pulumi.StringOutput)
+func (o GetLoadBalancersLoadBalancerReservedIpOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLoadBalancersLoadBalancerReservedIp) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 type GetLoadBalancersLoadBalancerReservedIpArrayOutput struct{ *pulumi.OutputState }
@@ -8958,12 +7825,6 @@ func (o GetLoadBalancersLoadBalancerReservedIpArrayOutput) ToGetLoadBalancersLoa
 	return o
 }
 
-func (o GetLoadBalancersLoadBalancerReservedIpArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLoadBalancersLoadBalancerReservedIp] {
-	return pulumix.Output[[]GetLoadBalancersLoadBalancerReservedIp]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetLoadBalancersLoadBalancerReservedIpArrayOutput) Index(i pulumi.IntInput) GetLoadBalancersLoadBalancerReservedIpOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLoadBalancersLoadBalancerReservedIp {
 		return vs[0].([]GetLoadBalancersLoadBalancerReservedIp)[vs[1].(int)]
@@ -8972,9 +7833,9 @@ func (o GetLoadBalancersLoadBalancerReservedIpArrayOutput) Index(i pulumi.IntInp
 
 type GetLoadBalancersLoadBalancerShapeDetail struct {
 	// Bandwidth in Mbps that determines the maximum bandwidth (ingress plus egress) that the load balancer can achieve. This bandwidth cannot be always guaranteed. For a guaranteed bandwidth use the minimumBandwidthInMbps parameter.
-	MaximumBandwidthInMbps int `pulumi:"maximumBandwidthInMbps"`
+	MaximumBandwidthInMbps *int `pulumi:"maximumBandwidthInMbps"`
 	// Bandwidth in Mbps that determines the total pre-provisioned bandwidth (ingress plus egress). The values must be between 0 and the maximumBandwidthInMbps in multiples of 10. The current allowed maximum value is defined in [Service Limits](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/servicelimits.htm).  Example: `150`
-	MinimumBandwidthInMbps int `pulumi:"minimumBandwidthInMbps"`
+	MinimumBandwidthInMbps *int `pulumi:"minimumBandwidthInMbps"`
 }
 
 // GetLoadBalancersLoadBalancerShapeDetailInput is an input type that accepts GetLoadBalancersLoadBalancerShapeDetailArgs and GetLoadBalancersLoadBalancerShapeDetailOutput values.
@@ -8990,9 +7851,9 @@ type GetLoadBalancersLoadBalancerShapeDetailInput interface {
 
 type GetLoadBalancersLoadBalancerShapeDetailArgs struct {
 	// Bandwidth in Mbps that determines the maximum bandwidth (ingress plus egress) that the load balancer can achieve. This bandwidth cannot be always guaranteed. For a guaranteed bandwidth use the minimumBandwidthInMbps parameter.
-	MaximumBandwidthInMbps pulumi.IntInput `pulumi:"maximumBandwidthInMbps"`
+	MaximumBandwidthInMbps pulumi.IntPtrInput `pulumi:"maximumBandwidthInMbps"`
 	// Bandwidth in Mbps that determines the total pre-provisioned bandwidth (ingress plus egress). The values must be between 0 and the maximumBandwidthInMbps in multiples of 10. The current allowed maximum value is defined in [Service Limits](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/servicelimits.htm).  Example: `150`
-	MinimumBandwidthInMbps pulumi.IntInput `pulumi:"minimumBandwidthInMbps"`
+	MinimumBandwidthInMbps pulumi.IntPtrInput `pulumi:"minimumBandwidthInMbps"`
 }
 
 func (GetLoadBalancersLoadBalancerShapeDetailArgs) ElementType() reflect.Type {
@@ -9005,12 +7866,6 @@ func (i GetLoadBalancersLoadBalancerShapeDetailArgs) ToGetLoadBalancersLoadBalan
 
 func (i GetLoadBalancersLoadBalancerShapeDetailArgs) ToGetLoadBalancersLoadBalancerShapeDetailOutputWithContext(ctx context.Context) GetLoadBalancersLoadBalancerShapeDetailOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetLoadBalancersLoadBalancerShapeDetailOutput)
-}
-
-func (i GetLoadBalancersLoadBalancerShapeDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetLoadBalancersLoadBalancerShapeDetail] {
-	return pulumix.Output[GetLoadBalancersLoadBalancerShapeDetail]{
-		OutputState: i.ToGetLoadBalancersLoadBalancerShapeDetailOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetLoadBalancersLoadBalancerShapeDetailArrayInput is an input type that accepts GetLoadBalancersLoadBalancerShapeDetailArray and GetLoadBalancersLoadBalancerShapeDetailArrayOutput values.
@@ -9038,12 +7893,6 @@ func (i GetLoadBalancersLoadBalancerShapeDetailArray) ToGetLoadBalancersLoadBala
 	return pulumi.ToOutputWithContext(ctx, i).(GetLoadBalancersLoadBalancerShapeDetailArrayOutput)
 }
 
-func (i GetLoadBalancersLoadBalancerShapeDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLoadBalancersLoadBalancerShapeDetail] {
-	return pulumix.Output[[]GetLoadBalancersLoadBalancerShapeDetail]{
-		OutputState: i.ToGetLoadBalancersLoadBalancerShapeDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetLoadBalancersLoadBalancerShapeDetailOutput struct{ *pulumi.OutputState }
 
 func (GetLoadBalancersLoadBalancerShapeDetailOutput) ElementType() reflect.Type {
@@ -9058,20 +7907,14 @@ func (o GetLoadBalancersLoadBalancerShapeDetailOutput) ToGetLoadBalancersLoadBal
 	return o
 }
 
-func (o GetLoadBalancersLoadBalancerShapeDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetLoadBalancersLoadBalancerShapeDetail] {
-	return pulumix.Output[GetLoadBalancersLoadBalancerShapeDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Bandwidth in Mbps that determines the maximum bandwidth (ingress plus egress) that the load balancer can achieve. This bandwidth cannot be always guaranteed. For a guaranteed bandwidth use the minimumBandwidthInMbps parameter.
-func (o GetLoadBalancersLoadBalancerShapeDetailOutput) MaximumBandwidthInMbps() pulumi.IntOutput {
-	return o.ApplyT(func(v GetLoadBalancersLoadBalancerShapeDetail) int { return v.MaximumBandwidthInMbps }).(pulumi.IntOutput)
+func (o GetLoadBalancersLoadBalancerShapeDetailOutput) MaximumBandwidthInMbps() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetLoadBalancersLoadBalancerShapeDetail) *int { return v.MaximumBandwidthInMbps }).(pulumi.IntPtrOutput)
 }
 
 // Bandwidth in Mbps that determines the total pre-provisioned bandwidth (ingress plus egress). The values must be between 0 and the maximumBandwidthInMbps in multiples of 10. The current allowed maximum value is defined in [Service Limits](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/servicelimits.htm).  Example: `150`
-func (o GetLoadBalancersLoadBalancerShapeDetailOutput) MinimumBandwidthInMbps() pulumi.IntOutput {
-	return o.ApplyT(func(v GetLoadBalancersLoadBalancerShapeDetail) int { return v.MinimumBandwidthInMbps }).(pulumi.IntOutput)
+func (o GetLoadBalancersLoadBalancerShapeDetailOutput) MinimumBandwidthInMbps() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetLoadBalancersLoadBalancerShapeDetail) *int { return v.MinimumBandwidthInMbps }).(pulumi.IntPtrOutput)
 }
 
 type GetLoadBalancersLoadBalancerShapeDetailArrayOutput struct{ *pulumi.OutputState }
@@ -9086,12 +7929,6 @@ func (o GetLoadBalancersLoadBalancerShapeDetailArrayOutput) ToGetLoadBalancersLo
 
 func (o GetLoadBalancersLoadBalancerShapeDetailArrayOutput) ToGetLoadBalancersLoadBalancerShapeDetailArrayOutputWithContext(ctx context.Context) GetLoadBalancersLoadBalancerShapeDetailArrayOutput {
 	return o
-}
-
-func (o GetLoadBalancersLoadBalancerShapeDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLoadBalancersLoadBalancerShapeDetail] {
-	return pulumix.Output[[]GetLoadBalancersLoadBalancerShapeDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetLoadBalancersLoadBalancerShapeDetailArrayOutput) Index(i pulumi.IntInput) GetLoadBalancersLoadBalancerShapeDetailOutput {
@@ -9137,12 +7974,6 @@ func (i GetPathRouteSetsFilterArgs) ToGetPathRouteSetsFilterOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetPathRouteSetsFilterOutput)
 }
 
-func (i GetPathRouteSetsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetPathRouteSetsFilter] {
-	return pulumix.Output[GetPathRouteSetsFilter]{
-		OutputState: i.ToGetPathRouteSetsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetPathRouteSetsFilterArrayInput is an input type that accepts GetPathRouteSetsFilterArray and GetPathRouteSetsFilterArrayOutput values.
 // You can construct a concrete instance of `GetPathRouteSetsFilterArrayInput` via:
 //
@@ -9168,12 +7999,6 @@ func (i GetPathRouteSetsFilterArray) ToGetPathRouteSetsFilterArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetPathRouteSetsFilterArrayOutput)
 }
 
-func (i GetPathRouteSetsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPathRouteSetsFilter] {
-	return pulumix.Output[[]GetPathRouteSetsFilter]{
-		OutputState: i.ToGetPathRouteSetsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetPathRouteSetsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetPathRouteSetsFilterOutput) ElementType() reflect.Type {
@@ -9186,12 +8011,6 @@ func (o GetPathRouteSetsFilterOutput) ToGetPathRouteSetsFilterOutput() GetPathRo
 
 func (o GetPathRouteSetsFilterOutput) ToGetPathRouteSetsFilterOutputWithContext(ctx context.Context) GetPathRouteSetsFilterOutput {
 	return o
-}
-
-func (o GetPathRouteSetsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetPathRouteSetsFilter] {
-	return pulumix.Output[GetPathRouteSetsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The unique name for this set of path route rules. Avoid entering confidential information.  Example: `examplePathRouteSet`
@@ -9221,12 +8040,6 @@ func (o GetPathRouteSetsFilterArrayOutput) ToGetPathRouteSetsFilterArrayOutputWi
 	return o
 }
 
-func (o GetPathRouteSetsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPathRouteSetsFilter] {
-	return pulumix.Output[[]GetPathRouteSetsFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetPathRouteSetsFilterArrayOutput) Index(i pulumi.IntInput) GetPathRouteSetsFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPathRouteSetsFilter {
 		return vs[0].([]GetPathRouteSetsFilter)[vs[1].(int)]
@@ -9240,7 +8053,7 @@ type GetPathRouteSetsPathRouteSet struct {
 	Name string `pulumi:"name"`
 	// The set of path route rules.
 	PathRoutes []GetPathRouteSetsPathRouteSetPathRoute `pulumi:"pathRoutes"`
-	State      string                                  `pulumi:"state"`
+	State      *string                                 `pulumi:"state"`
 }
 
 // GetPathRouteSetsPathRouteSetInput is an input type that accepts GetPathRouteSetsPathRouteSetArgs and GetPathRouteSetsPathRouteSetOutput values.
@@ -9261,7 +8074,7 @@ type GetPathRouteSetsPathRouteSetArgs struct {
 	Name pulumi.StringInput `pulumi:"name"`
 	// The set of path route rules.
 	PathRoutes GetPathRouteSetsPathRouteSetPathRouteArrayInput `pulumi:"pathRoutes"`
-	State      pulumi.StringInput                              `pulumi:"state"`
+	State      pulumi.StringPtrInput                           `pulumi:"state"`
 }
 
 func (GetPathRouteSetsPathRouteSetArgs) ElementType() reflect.Type {
@@ -9274,12 +8087,6 @@ func (i GetPathRouteSetsPathRouteSetArgs) ToGetPathRouteSetsPathRouteSetOutput()
 
 func (i GetPathRouteSetsPathRouteSetArgs) ToGetPathRouteSetsPathRouteSetOutputWithContext(ctx context.Context) GetPathRouteSetsPathRouteSetOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetPathRouteSetsPathRouteSetOutput)
-}
-
-func (i GetPathRouteSetsPathRouteSetArgs) ToOutput(ctx context.Context) pulumix.Output[GetPathRouteSetsPathRouteSet] {
-	return pulumix.Output[GetPathRouteSetsPathRouteSet]{
-		OutputState: i.ToGetPathRouteSetsPathRouteSetOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetPathRouteSetsPathRouteSetArrayInput is an input type that accepts GetPathRouteSetsPathRouteSetArray and GetPathRouteSetsPathRouteSetArrayOutput values.
@@ -9307,12 +8114,6 @@ func (i GetPathRouteSetsPathRouteSetArray) ToGetPathRouteSetsPathRouteSetArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetPathRouteSetsPathRouteSetArrayOutput)
 }
 
-func (i GetPathRouteSetsPathRouteSetArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPathRouteSetsPathRouteSet] {
-	return pulumix.Output[[]GetPathRouteSetsPathRouteSet]{
-		OutputState: i.ToGetPathRouteSetsPathRouteSetArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetPathRouteSetsPathRouteSetOutput struct{ *pulumi.OutputState }
 
 func (GetPathRouteSetsPathRouteSetOutput) ElementType() reflect.Type {
@@ -9325,12 +8126,6 @@ func (o GetPathRouteSetsPathRouteSetOutput) ToGetPathRouteSetsPathRouteSetOutput
 
 func (o GetPathRouteSetsPathRouteSetOutput) ToGetPathRouteSetsPathRouteSetOutputWithContext(ctx context.Context) GetPathRouteSetsPathRouteSetOutput {
 	return o
-}
-
-func (o GetPathRouteSetsPathRouteSetOutput) ToOutput(ctx context.Context) pulumix.Output[GetPathRouteSetsPathRouteSet] {
-	return pulumix.Output[GetPathRouteSetsPathRouteSet]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer associated with the path route sets to retrieve.
@@ -9348,8 +8143,8 @@ func (o GetPathRouteSetsPathRouteSetOutput) PathRoutes() GetPathRouteSetsPathRou
 	return o.ApplyT(func(v GetPathRouteSetsPathRouteSet) []GetPathRouteSetsPathRouteSetPathRoute { return v.PathRoutes }).(GetPathRouteSetsPathRouteSetPathRouteArrayOutput)
 }
 
-func (o GetPathRouteSetsPathRouteSetOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPathRouteSetsPathRouteSet) string { return v.State }).(pulumi.StringOutput)
+func (o GetPathRouteSetsPathRouteSetOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPathRouteSetsPathRouteSet) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 type GetPathRouteSetsPathRouteSetArrayOutput struct{ *pulumi.OutputState }
@@ -9364,12 +8159,6 @@ func (o GetPathRouteSetsPathRouteSetArrayOutput) ToGetPathRouteSetsPathRouteSetA
 
 func (o GetPathRouteSetsPathRouteSetArrayOutput) ToGetPathRouteSetsPathRouteSetArrayOutputWithContext(ctx context.Context) GetPathRouteSetsPathRouteSetArrayOutput {
 	return o
-}
-
-func (o GetPathRouteSetsPathRouteSetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPathRouteSetsPathRouteSet] {
-	return pulumix.Output[[]GetPathRouteSetsPathRouteSet]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetPathRouteSetsPathRouteSetArrayOutput) Index(i pulumi.IntInput) GetPathRouteSetsPathRouteSetOutput {
@@ -9425,12 +8214,6 @@ func (i GetPathRouteSetsPathRouteSetPathRouteArgs) ToGetPathRouteSetsPathRouteSe
 	return pulumi.ToOutputWithContext(ctx, i).(GetPathRouteSetsPathRouteSetPathRouteOutput)
 }
 
-func (i GetPathRouteSetsPathRouteSetPathRouteArgs) ToOutput(ctx context.Context) pulumix.Output[GetPathRouteSetsPathRouteSetPathRoute] {
-	return pulumix.Output[GetPathRouteSetsPathRouteSetPathRoute]{
-		OutputState: i.ToGetPathRouteSetsPathRouteSetPathRouteOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetPathRouteSetsPathRouteSetPathRouteArrayInput is an input type that accepts GetPathRouteSetsPathRouteSetPathRouteArray and GetPathRouteSetsPathRouteSetPathRouteArrayOutput values.
 // You can construct a concrete instance of `GetPathRouteSetsPathRouteSetPathRouteArrayInput` via:
 //
@@ -9456,12 +8239,6 @@ func (i GetPathRouteSetsPathRouteSetPathRouteArray) ToGetPathRouteSetsPathRouteS
 	return pulumi.ToOutputWithContext(ctx, i).(GetPathRouteSetsPathRouteSetPathRouteArrayOutput)
 }
 
-func (i GetPathRouteSetsPathRouteSetPathRouteArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPathRouteSetsPathRouteSetPathRoute] {
-	return pulumix.Output[[]GetPathRouteSetsPathRouteSetPathRoute]{
-		OutputState: i.ToGetPathRouteSetsPathRouteSetPathRouteArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetPathRouteSetsPathRouteSetPathRouteOutput struct{ *pulumi.OutputState }
 
 func (GetPathRouteSetsPathRouteSetPathRouteOutput) ElementType() reflect.Type {
@@ -9474,12 +8251,6 @@ func (o GetPathRouteSetsPathRouteSetPathRouteOutput) ToGetPathRouteSetsPathRoute
 
 func (o GetPathRouteSetsPathRouteSetPathRouteOutput) ToGetPathRouteSetsPathRouteSetPathRouteOutputWithContext(ctx context.Context) GetPathRouteSetsPathRouteSetPathRouteOutput {
 	return o
-}
-
-func (o GetPathRouteSetsPathRouteSetPathRouteOutput) ToOutput(ctx context.Context) pulumix.Output[GetPathRouteSetsPathRouteSetPathRoute] {
-	return pulumix.Output[GetPathRouteSetsPathRouteSetPathRoute]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The name of the target backend set for requests where the incoming URI matches the specified path.  Example: `exampleBackendSet`
@@ -9514,12 +8285,6 @@ func (o GetPathRouteSetsPathRouteSetPathRouteArrayOutput) ToGetPathRouteSetsPath
 
 func (o GetPathRouteSetsPathRouteSetPathRouteArrayOutput) ToGetPathRouteSetsPathRouteSetPathRouteArrayOutputWithContext(ctx context.Context) GetPathRouteSetsPathRouteSetPathRouteArrayOutput {
 	return o
-}
-
-func (o GetPathRouteSetsPathRouteSetPathRouteArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPathRouteSetsPathRouteSetPathRoute] {
-	return pulumix.Output[[]GetPathRouteSetsPathRouteSetPathRoute]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetPathRouteSetsPathRouteSetPathRouteArrayOutput) Index(i pulumi.IntInput) GetPathRouteSetsPathRouteSetPathRouteOutput {
@@ -9569,12 +8334,6 @@ func (i GetPathRouteSetsPathRouteSetPathRoutePathMatchTypeArgs) ToGetPathRouteSe
 	return pulumi.ToOutputWithContext(ctx, i).(GetPathRouteSetsPathRouteSetPathRoutePathMatchTypeOutput)
 }
 
-func (i GetPathRouteSetsPathRouteSetPathRoutePathMatchTypeArgs) ToOutput(ctx context.Context) pulumix.Output[GetPathRouteSetsPathRouteSetPathRoutePathMatchType] {
-	return pulumix.Output[GetPathRouteSetsPathRouteSetPathRoutePathMatchType]{
-		OutputState: i.ToGetPathRouteSetsPathRouteSetPathRoutePathMatchTypeOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetPathRouteSetsPathRouteSetPathRoutePathMatchTypeOutput struct{ *pulumi.OutputState }
 
 func (GetPathRouteSetsPathRouteSetPathRoutePathMatchTypeOutput) ElementType() reflect.Type {
@@ -9587,12 +8346,6 @@ func (o GetPathRouteSetsPathRouteSetPathRoutePathMatchTypeOutput) ToGetPathRoute
 
 func (o GetPathRouteSetsPathRouteSetPathRoutePathMatchTypeOutput) ToGetPathRouteSetsPathRouteSetPathRoutePathMatchTypeOutputWithContext(ctx context.Context) GetPathRouteSetsPathRouteSetPathRoutePathMatchTypeOutput {
 	return o
-}
-
-func (o GetPathRouteSetsPathRouteSetPathRoutePathMatchTypeOutput) ToOutput(ctx context.Context) pulumix.Output[GetPathRouteSetsPathRouteSetPathRoutePathMatchType] {
-	return pulumix.Output[GetPathRouteSetsPathRouteSetPathRoutePathMatchType]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Specifies how the load balancing service compares a [PathRoute](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/requests/PathRoute) object's `path` string against the incoming URI.
@@ -9641,12 +8394,6 @@ func (i GetPoliciesFilterArgs) ToGetPoliciesFilterOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(GetPoliciesFilterOutput)
 }
 
-func (i GetPoliciesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetPoliciesFilter] {
-	return pulumix.Output[GetPoliciesFilter]{
-		OutputState: i.ToGetPoliciesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetPoliciesFilterArrayInput is an input type that accepts GetPoliciesFilterArray and GetPoliciesFilterArrayOutput values.
 // You can construct a concrete instance of `GetPoliciesFilterArrayInput` via:
 //
@@ -9672,12 +8419,6 @@ func (i GetPoliciesFilterArray) ToGetPoliciesFilterArrayOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GetPoliciesFilterArrayOutput)
 }
 
-func (i GetPoliciesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPoliciesFilter] {
-	return pulumix.Output[[]GetPoliciesFilter]{
-		OutputState: i.ToGetPoliciesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetPoliciesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetPoliciesFilterOutput) ElementType() reflect.Type {
@@ -9690,12 +8431,6 @@ func (o GetPoliciesFilterOutput) ToGetPoliciesFilterOutput() GetPoliciesFilterOu
 
 func (o GetPoliciesFilterOutput) ToGetPoliciesFilterOutputWithContext(ctx context.Context) GetPoliciesFilterOutput {
 	return o
-}
-
-func (o GetPoliciesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetPoliciesFilter] {
-	return pulumix.Output[GetPoliciesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The name of a load balancing policy.  Example: 'LEAST_CONNECTIONS'
@@ -9725,12 +8460,6 @@ func (o GetPoliciesFilterArrayOutput) ToGetPoliciesFilterArrayOutputWithContext(
 	return o
 }
 
-func (o GetPoliciesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPoliciesFilter] {
-	return pulumix.Output[[]GetPoliciesFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetPoliciesFilterArrayOutput) Index(i pulumi.IntInput) GetPoliciesFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPoliciesFilter {
 		return vs[0].([]GetPoliciesFilter)[vs[1].(int)]
@@ -9739,7 +8468,7 @@ func (o GetPoliciesFilterArrayOutput) Index(i pulumi.IntInput) GetPoliciesFilter
 
 type GetPoliciesPolicy struct {
 	// The name of a load balancing policy.  Example: 'LEAST_CONNECTIONS'
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 }
 
 // GetPoliciesPolicyInput is an input type that accepts GetPoliciesPolicyArgs and GetPoliciesPolicyOutput values.
@@ -9755,7 +8484,7 @@ type GetPoliciesPolicyInput interface {
 
 type GetPoliciesPolicyArgs struct {
 	// The name of a load balancing policy.  Example: 'LEAST_CONNECTIONS'
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 }
 
 func (GetPoliciesPolicyArgs) ElementType() reflect.Type {
@@ -9768,12 +8497,6 @@ func (i GetPoliciesPolicyArgs) ToGetPoliciesPolicyOutput() GetPoliciesPolicyOutp
 
 func (i GetPoliciesPolicyArgs) ToGetPoliciesPolicyOutputWithContext(ctx context.Context) GetPoliciesPolicyOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetPoliciesPolicyOutput)
-}
-
-func (i GetPoliciesPolicyArgs) ToOutput(ctx context.Context) pulumix.Output[GetPoliciesPolicy] {
-	return pulumix.Output[GetPoliciesPolicy]{
-		OutputState: i.ToGetPoliciesPolicyOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetPoliciesPolicyArrayInput is an input type that accepts GetPoliciesPolicyArray and GetPoliciesPolicyArrayOutput values.
@@ -9801,12 +8524,6 @@ func (i GetPoliciesPolicyArray) ToGetPoliciesPolicyArrayOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GetPoliciesPolicyArrayOutput)
 }
 
-func (i GetPoliciesPolicyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPoliciesPolicy] {
-	return pulumix.Output[[]GetPoliciesPolicy]{
-		OutputState: i.ToGetPoliciesPolicyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetPoliciesPolicyOutput struct{ *pulumi.OutputState }
 
 func (GetPoliciesPolicyOutput) ElementType() reflect.Type {
@@ -9821,15 +8538,9 @@ func (o GetPoliciesPolicyOutput) ToGetPoliciesPolicyOutputWithContext(ctx contex
 	return o
 }
 
-func (o GetPoliciesPolicyOutput) ToOutput(ctx context.Context) pulumix.Output[GetPoliciesPolicy] {
-	return pulumix.Output[GetPoliciesPolicy]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The name of a load balancing policy.  Example: 'LEAST_CONNECTIONS'
-func (o GetPoliciesPolicyOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPoliciesPolicy) string { return v.Name }).(pulumi.StringOutput)
+func (o GetPoliciesPolicyOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPoliciesPolicy) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 type GetPoliciesPolicyArrayOutput struct{ *pulumi.OutputState }
@@ -9844,12 +8555,6 @@ func (o GetPoliciesPolicyArrayOutput) ToGetPoliciesPolicyArrayOutput() GetPolici
 
 func (o GetPoliciesPolicyArrayOutput) ToGetPoliciesPolicyArrayOutputWithContext(ctx context.Context) GetPoliciesPolicyArrayOutput {
 	return o
-}
-
-func (o GetPoliciesPolicyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPoliciesPolicy] {
-	return pulumix.Output[[]GetPoliciesPolicy]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetPoliciesPolicyArrayOutput) Index(i pulumi.IntInput) GetPoliciesPolicyOutput {
@@ -9895,12 +8600,6 @@ func (i GetProtocolsFilterArgs) ToGetProtocolsFilterOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetProtocolsFilterOutput)
 }
 
-func (i GetProtocolsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetProtocolsFilter] {
-	return pulumix.Output[GetProtocolsFilter]{
-		OutputState: i.ToGetProtocolsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetProtocolsFilterArrayInput is an input type that accepts GetProtocolsFilterArray and GetProtocolsFilterArrayOutput values.
 // You can construct a concrete instance of `GetProtocolsFilterArrayInput` via:
 //
@@ -9926,12 +8625,6 @@ func (i GetProtocolsFilterArray) ToGetProtocolsFilterArrayOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetProtocolsFilterArrayOutput)
 }
 
-func (i GetProtocolsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProtocolsFilter] {
-	return pulumix.Output[[]GetProtocolsFilter]{
-		OutputState: i.ToGetProtocolsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetProtocolsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetProtocolsFilterOutput) ElementType() reflect.Type {
@@ -9944,12 +8637,6 @@ func (o GetProtocolsFilterOutput) ToGetProtocolsFilterOutput() GetProtocolsFilte
 
 func (o GetProtocolsFilterOutput) ToGetProtocolsFilterOutputWithContext(ctx context.Context) GetProtocolsFilterOutput {
 	return o
-}
-
-func (o GetProtocolsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetProtocolsFilter] {
-	return pulumix.Output[GetProtocolsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The name of a protocol.  Example: 'HTTP'
@@ -9979,12 +8666,6 @@ func (o GetProtocolsFilterArrayOutput) ToGetProtocolsFilterArrayOutputWithContex
 	return o
 }
 
-func (o GetProtocolsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProtocolsFilter] {
-	return pulumix.Output[[]GetProtocolsFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetProtocolsFilterArrayOutput) Index(i pulumi.IntInput) GetProtocolsFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProtocolsFilter {
 		return vs[0].([]GetProtocolsFilter)[vs[1].(int)]
@@ -9993,7 +8674,7 @@ func (o GetProtocolsFilterArrayOutput) Index(i pulumi.IntInput) GetProtocolsFilt
 
 type GetProtocolsProtocol struct {
 	// The name of a protocol.  Example: 'HTTP'
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 }
 
 // GetProtocolsProtocolInput is an input type that accepts GetProtocolsProtocolArgs and GetProtocolsProtocolOutput values.
@@ -10009,7 +8690,7 @@ type GetProtocolsProtocolInput interface {
 
 type GetProtocolsProtocolArgs struct {
 	// The name of a protocol.  Example: 'HTTP'
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 }
 
 func (GetProtocolsProtocolArgs) ElementType() reflect.Type {
@@ -10022,12 +8703,6 @@ func (i GetProtocolsProtocolArgs) ToGetProtocolsProtocolOutput() GetProtocolsPro
 
 func (i GetProtocolsProtocolArgs) ToGetProtocolsProtocolOutputWithContext(ctx context.Context) GetProtocolsProtocolOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetProtocolsProtocolOutput)
-}
-
-func (i GetProtocolsProtocolArgs) ToOutput(ctx context.Context) pulumix.Output[GetProtocolsProtocol] {
-	return pulumix.Output[GetProtocolsProtocol]{
-		OutputState: i.ToGetProtocolsProtocolOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetProtocolsProtocolArrayInput is an input type that accepts GetProtocolsProtocolArray and GetProtocolsProtocolArrayOutput values.
@@ -10055,12 +8730,6 @@ func (i GetProtocolsProtocolArray) ToGetProtocolsProtocolArrayOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetProtocolsProtocolArrayOutput)
 }
 
-func (i GetProtocolsProtocolArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProtocolsProtocol] {
-	return pulumix.Output[[]GetProtocolsProtocol]{
-		OutputState: i.ToGetProtocolsProtocolArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetProtocolsProtocolOutput struct{ *pulumi.OutputState }
 
 func (GetProtocolsProtocolOutput) ElementType() reflect.Type {
@@ -10075,15 +8744,9 @@ func (o GetProtocolsProtocolOutput) ToGetProtocolsProtocolOutputWithContext(ctx 
 	return o
 }
 
-func (o GetProtocolsProtocolOutput) ToOutput(ctx context.Context) pulumix.Output[GetProtocolsProtocol] {
-	return pulumix.Output[GetProtocolsProtocol]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The name of a protocol.  Example: 'HTTP'
-func (o GetProtocolsProtocolOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProtocolsProtocol) string { return v.Name }).(pulumi.StringOutput)
+func (o GetProtocolsProtocolOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProtocolsProtocol) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 type GetProtocolsProtocolArrayOutput struct{ *pulumi.OutputState }
@@ -10100,12 +8763,6 @@ func (o GetProtocolsProtocolArrayOutput) ToGetProtocolsProtocolArrayOutputWithCo
 	return o
 }
 
-func (o GetProtocolsProtocolArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProtocolsProtocol] {
-	return pulumix.Output[[]GetProtocolsProtocol]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetProtocolsProtocolArrayOutput) Index(i pulumi.IntInput) GetProtocolsProtocolOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProtocolsProtocol {
 		return vs[0].([]GetProtocolsProtocol)[vs[1].(int)]
@@ -10114,36 +8771,36 @@ func (o GetProtocolsProtocolArrayOutput) Index(i pulumi.IntInput) GetProtocolsPr
 
 type GetRuleSetItem struct {
 	// The action can be one of these values: `ADD_HTTP_REQUEST_HEADER`, `ADD_HTTP_RESPONSE_HEADER`, `ALLOW`, `CONTROL_ACCESS_USING_HTTP_METHODS`, `EXTEND_HTTP_REQUEST_HEADER_VALUE`, `EXTEND_HTTP_RESPONSE_HEADER_VALUE`, `HTTP_HEADER`, `REDIRECT`, `REMOVE_HTTP_REQUEST_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
-	Action string `pulumi:"action"`
+	Action *string `pulumi:"action"`
 	// The list of HTTP methods allowed for this listener.
 	AllowedMethods []string `pulumi:"allowedMethods"`
 	// Indicates whether or not invalid characters in client header fields will be allowed. Valid names are composed of English letters, digits, hyphens and underscores. If "true", invalid characters are allowed in the HTTP header. If "false", invalid characters are not allowed in the HTTP header
-	AreInvalidCharactersAllowed bool                      `pulumi:"areInvalidCharactersAllowed"`
+	AreInvalidCharactersAllowed *bool                     `pulumi:"areInvalidCharactersAllowed"`
 	Conditions                  []GetRuleSetItemCondition `pulumi:"conditions"`
 	// A brief description of the access control rule. Avoid entering confidential information.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// A header name that conforms to RFC 7230.  Example: `exampleHeaderName`
-	Header string `pulumi:"header"`
+	Header *string `pulumi:"header"`
 	// The maximum size of each buffer used for reading http client request header. This value indicates the maximum size allowed for each buffer. The allowed values for buffer size are 8, 16, 32 and 64.
-	HttpLargeHeaderSizeInKb int `pulumi:"httpLargeHeaderSizeInKb"`
+	HttpLargeHeaderSizeInKb *int `pulumi:"httpLargeHeaderSizeInKb"`
 	// A string to prepend to the header value. The resulting header value must still conform to RFC 7230. With the following exceptions:
 	// *  value cannot contain `$`
 	// *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
-	Prefix string `pulumi:"prefix"`
+	Prefix *string `pulumi:"prefix"`
 	// An object that defines the redirect URI applied to the original request. The object property values compose the redirect URI.
 	RedirectUris []GetRuleSetItemRedirectUri `pulumi:"redirectUris"`
 	// The HTTP status code to return when the incoming request is redirected.
-	ResponseCode int `pulumi:"responseCode"`
+	ResponseCode *int `pulumi:"responseCode"`
 	// The HTTP status code to return when the requested HTTP method is not in the list of allowed methods. The associated status line returned with the code is mapped from the standard HTTP specification. The default value is `405 (Method Not Allowed)`.  Example: 403
-	StatusCode int `pulumi:"statusCode"`
+	StatusCode *int `pulumi:"statusCode"`
 	// A string to append to the header value. The resulting header value must still conform to RFC 7230. With the following exceptions:
 	// *  value cannot contain `$`
 	// *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
-	Suffix string `pulumi:"suffix"`
+	Suffix *string `pulumi:"suffix"`
 	// A header value that conforms to RFC 7230. With the following exceptions:
 	// *  value cannot contain `$`
 	// *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
-	Value string `pulumi:"value"`
+	Value *string `pulumi:"value"`
 }
 
 // GetRuleSetItemInput is an input type that accepts GetRuleSetItemArgs and GetRuleSetItemOutput values.
@@ -10159,36 +8816,36 @@ type GetRuleSetItemInput interface {
 
 type GetRuleSetItemArgs struct {
 	// The action can be one of these values: `ADD_HTTP_REQUEST_HEADER`, `ADD_HTTP_RESPONSE_HEADER`, `ALLOW`, `CONTROL_ACCESS_USING_HTTP_METHODS`, `EXTEND_HTTP_REQUEST_HEADER_VALUE`, `EXTEND_HTTP_RESPONSE_HEADER_VALUE`, `HTTP_HEADER`, `REDIRECT`, `REMOVE_HTTP_REQUEST_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
-	Action pulumi.StringInput `pulumi:"action"`
+	Action pulumi.StringPtrInput `pulumi:"action"`
 	// The list of HTTP methods allowed for this listener.
 	AllowedMethods pulumi.StringArrayInput `pulumi:"allowedMethods"`
 	// Indicates whether or not invalid characters in client header fields will be allowed. Valid names are composed of English letters, digits, hyphens and underscores. If "true", invalid characters are allowed in the HTTP header. If "false", invalid characters are not allowed in the HTTP header
-	AreInvalidCharactersAllowed pulumi.BoolInput                  `pulumi:"areInvalidCharactersAllowed"`
+	AreInvalidCharactersAllowed pulumi.BoolPtrInput               `pulumi:"areInvalidCharactersAllowed"`
 	Conditions                  GetRuleSetItemConditionArrayInput `pulumi:"conditions"`
 	// A brief description of the access control rule. Avoid entering confidential information.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// A header name that conforms to RFC 7230.  Example: `exampleHeaderName`
-	Header pulumi.StringInput `pulumi:"header"`
+	Header pulumi.StringPtrInput `pulumi:"header"`
 	// The maximum size of each buffer used for reading http client request header. This value indicates the maximum size allowed for each buffer. The allowed values for buffer size are 8, 16, 32 and 64.
-	HttpLargeHeaderSizeInKb pulumi.IntInput `pulumi:"httpLargeHeaderSizeInKb"`
+	HttpLargeHeaderSizeInKb pulumi.IntPtrInput `pulumi:"httpLargeHeaderSizeInKb"`
 	// A string to prepend to the header value. The resulting header value must still conform to RFC 7230. With the following exceptions:
 	// *  value cannot contain `$`
 	// *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
-	Prefix pulumi.StringInput `pulumi:"prefix"`
+	Prefix pulumi.StringPtrInput `pulumi:"prefix"`
 	// An object that defines the redirect URI applied to the original request. The object property values compose the redirect URI.
 	RedirectUris GetRuleSetItemRedirectUriArrayInput `pulumi:"redirectUris"`
 	// The HTTP status code to return when the incoming request is redirected.
-	ResponseCode pulumi.IntInput `pulumi:"responseCode"`
+	ResponseCode pulumi.IntPtrInput `pulumi:"responseCode"`
 	// The HTTP status code to return when the requested HTTP method is not in the list of allowed methods. The associated status line returned with the code is mapped from the standard HTTP specification. The default value is `405 (Method Not Allowed)`.  Example: 403
-	StatusCode pulumi.IntInput `pulumi:"statusCode"`
+	StatusCode pulumi.IntPtrInput `pulumi:"statusCode"`
 	// A string to append to the header value. The resulting header value must still conform to RFC 7230. With the following exceptions:
 	// *  value cannot contain `$`
 	// *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
-	Suffix pulumi.StringInput `pulumi:"suffix"`
+	Suffix pulumi.StringPtrInput `pulumi:"suffix"`
 	// A header value that conforms to RFC 7230. With the following exceptions:
 	// *  value cannot contain `$`
 	// *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
-	Value pulumi.StringInput `pulumi:"value"`
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (GetRuleSetItemArgs) ElementType() reflect.Type {
@@ -10201,12 +8858,6 @@ func (i GetRuleSetItemArgs) ToGetRuleSetItemOutput() GetRuleSetItemOutput {
 
 func (i GetRuleSetItemArgs) ToGetRuleSetItemOutputWithContext(ctx context.Context) GetRuleSetItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetRuleSetItemOutput)
-}
-
-func (i GetRuleSetItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetRuleSetItem] {
-	return pulumix.Output[GetRuleSetItem]{
-		OutputState: i.ToGetRuleSetItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetRuleSetItemArrayInput is an input type that accepts GetRuleSetItemArray and GetRuleSetItemArrayOutput values.
@@ -10234,12 +8885,6 @@ func (i GetRuleSetItemArray) ToGetRuleSetItemArrayOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(GetRuleSetItemArrayOutput)
 }
 
-func (i GetRuleSetItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRuleSetItem] {
-	return pulumix.Output[[]GetRuleSetItem]{
-		OutputState: i.ToGetRuleSetItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRuleSetItemOutput struct{ *pulumi.OutputState }
 
 func (GetRuleSetItemOutput) ElementType() reflect.Type {
@@ -10254,15 +8899,9 @@ func (o GetRuleSetItemOutput) ToGetRuleSetItemOutputWithContext(ctx context.Cont
 	return o
 }
 
-func (o GetRuleSetItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetRuleSetItem] {
-	return pulumix.Output[GetRuleSetItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The action can be one of these values: `ADD_HTTP_REQUEST_HEADER`, `ADD_HTTP_RESPONSE_HEADER`, `ALLOW`, `CONTROL_ACCESS_USING_HTTP_METHODS`, `EXTEND_HTTP_REQUEST_HEADER_VALUE`, `EXTEND_HTTP_RESPONSE_HEADER_VALUE`, `HTTP_HEADER`, `REDIRECT`, `REMOVE_HTTP_REQUEST_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
-func (o GetRuleSetItemOutput) Action() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRuleSetItem) string { return v.Action }).(pulumi.StringOutput)
+func (o GetRuleSetItemOutput) Action() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRuleSetItem) *string { return v.Action }).(pulumi.StringPtrOutput)
 }
 
 // The list of HTTP methods allowed for this listener.
@@ -10271,8 +8910,8 @@ func (o GetRuleSetItemOutput) AllowedMethods() pulumi.StringArrayOutput {
 }
 
 // Indicates whether or not invalid characters in client header fields will be allowed. Valid names are composed of English letters, digits, hyphens and underscores. If "true", invalid characters are allowed in the HTTP header. If "false", invalid characters are not allowed in the HTTP header
-func (o GetRuleSetItemOutput) AreInvalidCharactersAllowed() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetRuleSetItem) bool { return v.AreInvalidCharactersAllowed }).(pulumi.BoolOutput)
+func (o GetRuleSetItemOutput) AreInvalidCharactersAllowed() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetRuleSetItem) *bool { return v.AreInvalidCharactersAllowed }).(pulumi.BoolPtrOutput)
 }
 
 func (o GetRuleSetItemOutput) Conditions() GetRuleSetItemConditionArrayOutput {
@@ -10280,25 +8919,25 @@ func (o GetRuleSetItemOutput) Conditions() GetRuleSetItemConditionArrayOutput {
 }
 
 // A brief description of the access control rule. Avoid entering confidential information.
-func (o GetRuleSetItemOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRuleSetItem) string { return v.Description }).(pulumi.StringOutput)
+func (o GetRuleSetItemOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRuleSetItem) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // A header name that conforms to RFC 7230.  Example: `exampleHeaderName`
-func (o GetRuleSetItemOutput) Header() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRuleSetItem) string { return v.Header }).(pulumi.StringOutput)
+func (o GetRuleSetItemOutput) Header() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRuleSetItem) *string { return v.Header }).(pulumi.StringPtrOutput)
 }
 
 // The maximum size of each buffer used for reading http client request header. This value indicates the maximum size allowed for each buffer. The allowed values for buffer size are 8, 16, 32 and 64.
-func (o GetRuleSetItemOutput) HttpLargeHeaderSizeInKb() pulumi.IntOutput {
-	return o.ApplyT(func(v GetRuleSetItem) int { return v.HttpLargeHeaderSizeInKb }).(pulumi.IntOutput)
+func (o GetRuleSetItemOutput) HttpLargeHeaderSizeInKb() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetRuleSetItem) *int { return v.HttpLargeHeaderSizeInKb }).(pulumi.IntPtrOutput)
 }
 
 // A string to prepend to the header value. The resulting header value must still conform to RFC 7230. With the following exceptions:
 // *  value cannot contain `$`
 // *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
-func (o GetRuleSetItemOutput) Prefix() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRuleSetItem) string { return v.Prefix }).(pulumi.StringOutput)
+func (o GetRuleSetItemOutput) Prefix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRuleSetItem) *string { return v.Prefix }).(pulumi.StringPtrOutput)
 }
 
 // An object that defines the redirect URI applied to the original request. The object property values compose the redirect URI.
@@ -10307,27 +8946,27 @@ func (o GetRuleSetItemOutput) RedirectUris() GetRuleSetItemRedirectUriArrayOutpu
 }
 
 // The HTTP status code to return when the incoming request is redirected.
-func (o GetRuleSetItemOutput) ResponseCode() pulumi.IntOutput {
-	return o.ApplyT(func(v GetRuleSetItem) int { return v.ResponseCode }).(pulumi.IntOutput)
+func (o GetRuleSetItemOutput) ResponseCode() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetRuleSetItem) *int { return v.ResponseCode }).(pulumi.IntPtrOutput)
 }
 
 // The HTTP status code to return when the requested HTTP method is not in the list of allowed methods. The associated status line returned with the code is mapped from the standard HTTP specification. The default value is `405 (Method Not Allowed)`.  Example: 403
-func (o GetRuleSetItemOutput) StatusCode() pulumi.IntOutput {
-	return o.ApplyT(func(v GetRuleSetItem) int { return v.StatusCode }).(pulumi.IntOutput)
+func (o GetRuleSetItemOutput) StatusCode() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetRuleSetItem) *int { return v.StatusCode }).(pulumi.IntPtrOutput)
 }
 
 // A string to append to the header value. The resulting header value must still conform to RFC 7230. With the following exceptions:
 // *  value cannot contain `$`
 // *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
-func (o GetRuleSetItemOutput) Suffix() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRuleSetItem) string { return v.Suffix }).(pulumi.StringOutput)
+func (o GetRuleSetItemOutput) Suffix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRuleSetItem) *string { return v.Suffix }).(pulumi.StringPtrOutput)
 }
 
 // A header value that conforms to RFC 7230. With the following exceptions:
 // *  value cannot contain `$`
 // *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
-func (o GetRuleSetItemOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRuleSetItem) string { return v.Value }).(pulumi.StringOutput)
+func (o GetRuleSetItemOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRuleSetItem) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
 
 type GetRuleSetItemArrayOutput struct{ *pulumi.OutputState }
@@ -10344,12 +8983,6 @@ func (o GetRuleSetItemArrayOutput) ToGetRuleSetItemArrayOutputWithContext(ctx co
 	return o
 }
 
-func (o GetRuleSetItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRuleSetItem] {
-	return pulumix.Output[[]GetRuleSetItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetRuleSetItemArrayOutput) Index(i pulumi.IntInput) GetRuleSetItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRuleSetItem {
 		return vs[0].([]GetRuleSetItem)[vs[1].(int)]
@@ -10358,18 +8991,18 @@ func (o GetRuleSetItemArrayOutput) Index(i pulumi.IntInput) GetRuleSetItemOutput
 
 type GetRuleSetItemCondition struct {
 	// (Required) (Updatable) The attributeName can be one of these values: `PATH`, `SOURCE_IP_ADDRESS`, `SOURCE_VCN_ID`, `SOURCE_VCN_IP_ADDRESS`
-	AttributeName string `pulumi:"attributeName"`
+	AttributeName *string `pulumi:"attributeName"`
 	// (Required) (Updatable) Depends on `attributeName`:
 	// - when `attributeName` = `SOURCE_IP_ADDRESS` | IPv4 or IPv6 address range to which the source IP address of incoming packet would be matched against
 	// - when `attributeName` = `SOURCE_VCN_IP_ADDRESS` | IPv4 address range to which the original client IP address (in customer VCN) of incoming packet would be matched against
 	// - when `attributeName` = `SOURCE_VCN_ID` | OCID of the customer VCN to which the service gateway embedded VCN ID of incoming packet would be matched against
-	AttributeValue string `pulumi:"attributeValue"`
+	AttributeValue *string `pulumi:"attributeValue"`
 	// A string that specifies how to compare the PathMatchCondition object's `attributeValue` string to the incoming URI.
 	// *  **EXACT_MATCH** - The incoming URI path must exactly and completely match the `attributeValue` string.
 	// *  **FORCE_LONGEST_PREFIX_MATCH** - The system looks for the `attributeValue` string with the best, longest match of the beginning portion of the incoming URI path.
 	// *  **PREFIX_MATCH** - The beginning portion of the incoming URI path must exactly match the `attributeValue` string.
 	// *  **SUFFIX_MATCH** - The ending portion of the incoming URI path must exactly match the `attributeValue` string.
-	Operator string `pulumi:"operator"`
+	Operator *string `pulumi:"operator"`
 }
 
 // GetRuleSetItemConditionInput is an input type that accepts GetRuleSetItemConditionArgs and GetRuleSetItemConditionOutput values.
@@ -10385,18 +9018,18 @@ type GetRuleSetItemConditionInput interface {
 
 type GetRuleSetItemConditionArgs struct {
 	// (Required) (Updatable) The attributeName can be one of these values: `PATH`, `SOURCE_IP_ADDRESS`, `SOURCE_VCN_ID`, `SOURCE_VCN_IP_ADDRESS`
-	AttributeName pulumi.StringInput `pulumi:"attributeName"`
+	AttributeName pulumi.StringPtrInput `pulumi:"attributeName"`
 	// (Required) (Updatable) Depends on `attributeName`:
 	// - when `attributeName` = `SOURCE_IP_ADDRESS` | IPv4 or IPv6 address range to which the source IP address of incoming packet would be matched against
 	// - when `attributeName` = `SOURCE_VCN_IP_ADDRESS` | IPv4 address range to which the original client IP address (in customer VCN) of incoming packet would be matched against
 	// - when `attributeName` = `SOURCE_VCN_ID` | OCID of the customer VCN to which the service gateway embedded VCN ID of incoming packet would be matched against
-	AttributeValue pulumi.StringInput `pulumi:"attributeValue"`
+	AttributeValue pulumi.StringPtrInput `pulumi:"attributeValue"`
 	// A string that specifies how to compare the PathMatchCondition object's `attributeValue` string to the incoming URI.
 	// *  **EXACT_MATCH** - The incoming URI path must exactly and completely match the `attributeValue` string.
 	// *  **FORCE_LONGEST_PREFIX_MATCH** - The system looks for the `attributeValue` string with the best, longest match of the beginning portion of the incoming URI path.
 	// *  **PREFIX_MATCH** - The beginning portion of the incoming URI path must exactly match the `attributeValue` string.
 	// *  **SUFFIX_MATCH** - The ending portion of the incoming URI path must exactly match the `attributeValue` string.
-	Operator pulumi.StringInput `pulumi:"operator"`
+	Operator pulumi.StringPtrInput `pulumi:"operator"`
 }
 
 func (GetRuleSetItemConditionArgs) ElementType() reflect.Type {
@@ -10409,12 +9042,6 @@ func (i GetRuleSetItemConditionArgs) ToGetRuleSetItemConditionOutput() GetRuleSe
 
 func (i GetRuleSetItemConditionArgs) ToGetRuleSetItemConditionOutputWithContext(ctx context.Context) GetRuleSetItemConditionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetRuleSetItemConditionOutput)
-}
-
-func (i GetRuleSetItemConditionArgs) ToOutput(ctx context.Context) pulumix.Output[GetRuleSetItemCondition] {
-	return pulumix.Output[GetRuleSetItemCondition]{
-		OutputState: i.ToGetRuleSetItemConditionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetRuleSetItemConditionArrayInput is an input type that accepts GetRuleSetItemConditionArray and GetRuleSetItemConditionArrayOutput values.
@@ -10442,12 +9069,6 @@ func (i GetRuleSetItemConditionArray) ToGetRuleSetItemConditionArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetRuleSetItemConditionArrayOutput)
 }
 
-func (i GetRuleSetItemConditionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRuleSetItemCondition] {
-	return pulumix.Output[[]GetRuleSetItemCondition]{
-		OutputState: i.ToGetRuleSetItemConditionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRuleSetItemConditionOutput struct{ *pulumi.OutputState }
 
 func (GetRuleSetItemConditionOutput) ElementType() reflect.Type {
@@ -10462,23 +9083,17 @@ func (o GetRuleSetItemConditionOutput) ToGetRuleSetItemConditionOutputWithContex
 	return o
 }
 
-func (o GetRuleSetItemConditionOutput) ToOutput(ctx context.Context) pulumix.Output[GetRuleSetItemCondition] {
-	return pulumix.Output[GetRuleSetItemCondition]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Required) (Updatable) The attributeName can be one of these values: `PATH`, `SOURCE_IP_ADDRESS`, `SOURCE_VCN_ID`, `SOURCE_VCN_IP_ADDRESS`
-func (o GetRuleSetItemConditionOutput) AttributeName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRuleSetItemCondition) string { return v.AttributeName }).(pulumi.StringOutput)
+func (o GetRuleSetItemConditionOutput) AttributeName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRuleSetItemCondition) *string { return v.AttributeName }).(pulumi.StringPtrOutput)
 }
 
 // (Required) (Updatable) Depends on `attributeName`:
 // - when `attributeName` = `SOURCE_IP_ADDRESS` | IPv4 or IPv6 address range to which the source IP address of incoming packet would be matched against
 // - when `attributeName` = `SOURCE_VCN_IP_ADDRESS` | IPv4 address range to which the original client IP address (in customer VCN) of incoming packet would be matched against
 // - when `attributeName` = `SOURCE_VCN_ID` | OCID of the customer VCN to which the service gateway embedded VCN ID of incoming packet would be matched against
-func (o GetRuleSetItemConditionOutput) AttributeValue() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRuleSetItemCondition) string { return v.AttributeValue }).(pulumi.StringOutput)
+func (o GetRuleSetItemConditionOutput) AttributeValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRuleSetItemCondition) *string { return v.AttributeValue }).(pulumi.StringPtrOutput)
 }
 
 // A string that specifies how to compare the PathMatchCondition object's `attributeValue` string to the incoming URI.
@@ -10486,8 +9101,8 @@ func (o GetRuleSetItemConditionOutput) AttributeValue() pulumi.StringOutput {
 // *  **FORCE_LONGEST_PREFIX_MATCH** - The system looks for the `attributeValue` string with the best, longest match of the beginning portion of the incoming URI path.
 // *  **PREFIX_MATCH** - The beginning portion of the incoming URI path must exactly match the `attributeValue` string.
 // *  **SUFFIX_MATCH** - The ending portion of the incoming URI path must exactly match the `attributeValue` string.
-func (o GetRuleSetItemConditionOutput) Operator() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRuleSetItemCondition) string { return v.Operator }).(pulumi.StringOutput)
+func (o GetRuleSetItemConditionOutput) Operator() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRuleSetItemCondition) *string { return v.Operator }).(pulumi.StringPtrOutput)
 }
 
 type GetRuleSetItemConditionArrayOutput struct{ *pulumi.OutputState }
@@ -10504,12 +9119,6 @@ func (o GetRuleSetItemConditionArrayOutput) ToGetRuleSetItemConditionArrayOutput
 	return o
 }
 
-func (o GetRuleSetItemConditionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRuleSetItemCondition] {
-	return pulumix.Output[[]GetRuleSetItemCondition]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetRuleSetItemConditionArrayOutput) Index(i pulumi.IntInput) GetRuleSetItemConditionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRuleSetItemCondition {
 		return vs[0].([]GetRuleSetItemCondition)[vs[1].(int)]
@@ -10518,15 +9127,15 @@ func (o GetRuleSetItemConditionArrayOutput) Index(i pulumi.IntInput) GetRuleSetI
 
 type GetRuleSetItemRedirectUri struct {
 	// The valid domain name (hostname) or IP address to use in the redirect URI.
-	Host string `pulumi:"host"`
+	Host *string `pulumi:"host"`
 	// The HTTP URI path to use in the redirect URI.
-	Path string `pulumi:"path"`
+	Path *string `pulumi:"path"`
 	// The communication port to use in the redirect URI.
-	Port int `pulumi:"port"`
+	Port *int `pulumi:"port"`
 	// The HTTP protocol to use in the redirect URI.
-	Protocol string `pulumi:"protocol"`
+	Protocol *string `pulumi:"protocol"`
 	// The query string to use in the redirect URI.
-	Query string `pulumi:"query"`
+	Query *string `pulumi:"query"`
 }
 
 // GetRuleSetItemRedirectUriInput is an input type that accepts GetRuleSetItemRedirectUriArgs and GetRuleSetItemRedirectUriOutput values.
@@ -10542,15 +9151,15 @@ type GetRuleSetItemRedirectUriInput interface {
 
 type GetRuleSetItemRedirectUriArgs struct {
 	// The valid domain name (hostname) or IP address to use in the redirect URI.
-	Host pulumi.StringInput `pulumi:"host"`
+	Host pulumi.StringPtrInput `pulumi:"host"`
 	// The HTTP URI path to use in the redirect URI.
-	Path pulumi.StringInput `pulumi:"path"`
+	Path pulumi.StringPtrInput `pulumi:"path"`
 	// The communication port to use in the redirect URI.
-	Port pulumi.IntInput `pulumi:"port"`
+	Port pulumi.IntPtrInput `pulumi:"port"`
 	// The HTTP protocol to use in the redirect URI.
-	Protocol pulumi.StringInput `pulumi:"protocol"`
+	Protocol pulumi.StringPtrInput `pulumi:"protocol"`
 	// The query string to use in the redirect URI.
-	Query pulumi.StringInput `pulumi:"query"`
+	Query pulumi.StringPtrInput `pulumi:"query"`
 }
 
 func (GetRuleSetItemRedirectUriArgs) ElementType() reflect.Type {
@@ -10563,12 +9172,6 @@ func (i GetRuleSetItemRedirectUriArgs) ToGetRuleSetItemRedirectUriOutput() GetRu
 
 func (i GetRuleSetItemRedirectUriArgs) ToGetRuleSetItemRedirectUriOutputWithContext(ctx context.Context) GetRuleSetItemRedirectUriOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetRuleSetItemRedirectUriOutput)
-}
-
-func (i GetRuleSetItemRedirectUriArgs) ToOutput(ctx context.Context) pulumix.Output[GetRuleSetItemRedirectUri] {
-	return pulumix.Output[GetRuleSetItemRedirectUri]{
-		OutputState: i.ToGetRuleSetItemRedirectUriOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetRuleSetItemRedirectUriArrayInput is an input type that accepts GetRuleSetItemRedirectUriArray and GetRuleSetItemRedirectUriArrayOutput values.
@@ -10596,12 +9199,6 @@ func (i GetRuleSetItemRedirectUriArray) ToGetRuleSetItemRedirectUriArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetRuleSetItemRedirectUriArrayOutput)
 }
 
-func (i GetRuleSetItemRedirectUriArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRuleSetItemRedirectUri] {
-	return pulumix.Output[[]GetRuleSetItemRedirectUri]{
-		OutputState: i.ToGetRuleSetItemRedirectUriArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRuleSetItemRedirectUriOutput struct{ *pulumi.OutputState }
 
 func (GetRuleSetItemRedirectUriOutput) ElementType() reflect.Type {
@@ -10616,35 +9213,29 @@ func (o GetRuleSetItemRedirectUriOutput) ToGetRuleSetItemRedirectUriOutputWithCo
 	return o
 }
 
-func (o GetRuleSetItemRedirectUriOutput) ToOutput(ctx context.Context) pulumix.Output[GetRuleSetItemRedirectUri] {
-	return pulumix.Output[GetRuleSetItemRedirectUri]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The valid domain name (hostname) or IP address to use in the redirect URI.
-func (o GetRuleSetItemRedirectUriOutput) Host() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRuleSetItemRedirectUri) string { return v.Host }).(pulumi.StringOutput)
+func (o GetRuleSetItemRedirectUriOutput) Host() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRuleSetItemRedirectUri) *string { return v.Host }).(pulumi.StringPtrOutput)
 }
 
 // The HTTP URI path to use in the redirect URI.
-func (o GetRuleSetItemRedirectUriOutput) Path() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRuleSetItemRedirectUri) string { return v.Path }).(pulumi.StringOutput)
+func (o GetRuleSetItemRedirectUriOutput) Path() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRuleSetItemRedirectUri) *string { return v.Path }).(pulumi.StringPtrOutput)
 }
 
 // The communication port to use in the redirect URI.
-func (o GetRuleSetItemRedirectUriOutput) Port() pulumi.IntOutput {
-	return o.ApplyT(func(v GetRuleSetItemRedirectUri) int { return v.Port }).(pulumi.IntOutput)
+func (o GetRuleSetItemRedirectUriOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetRuleSetItemRedirectUri) *int { return v.Port }).(pulumi.IntPtrOutput)
 }
 
 // The HTTP protocol to use in the redirect URI.
-func (o GetRuleSetItemRedirectUriOutput) Protocol() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRuleSetItemRedirectUri) string { return v.Protocol }).(pulumi.StringOutput)
+func (o GetRuleSetItemRedirectUriOutput) Protocol() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRuleSetItemRedirectUri) *string { return v.Protocol }).(pulumi.StringPtrOutput)
 }
 
 // The query string to use in the redirect URI.
-func (o GetRuleSetItemRedirectUriOutput) Query() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRuleSetItemRedirectUri) string { return v.Query }).(pulumi.StringOutput)
+func (o GetRuleSetItemRedirectUriOutput) Query() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRuleSetItemRedirectUri) *string { return v.Query }).(pulumi.StringPtrOutput)
 }
 
 type GetRuleSetItemRedirectUriArrayOutput struct{ *pulumi.OutputState }
@@ -10659,12 +9250,6 @@ func (o GetRuleSetItemRedirectUriArrayOutput) ToGetRuleSetItemRedirectUriArrayOu
 
 func (o GetRuleSetItemRedirectUriArrayOutput) ToGetRuleSetItemRedirectUriArrayOutputWithContext(ctx context.Context) GetRuleSetItemRedirectUriArrayOutput {
 	return o
-}
-
-func (o GetRuleSetItemRedirectUriArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRuleSetItemRedirectUri] {
-	return pulumix.Output[[]GetRuleSetItemRedirectUri]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetRuleSetItemRedirectUriArrayOutput) Index(i pulumi.IntInput) GetRuleSetItemRedirectUriOutput {
@@ -10710,12 +9295,6 @@ func (i GetRuleSetsFilterArgs) ToGetRuleSetsFilterOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(GetRuleSetsFilterOutput)
 }
 
-func (i GetRuleSetsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetRuleSetsFilter] {
-	return pulumix.Output[GetRuleSetsFilter]{
-		OutputState: i.ToGetRuleSetsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetRuleSetsFilterArrayInput is an input type that accepts GetRuleSetsFilterArray and GetRuleSetsFilterArrayOutput values.
 // You can construct a concrete instance of `GetRuleSetsFilterArrayInput` via:
 //
@@ -10741,12 +9320,6 @@ func (i GetRuleSetsFilterArray) ToGetRuleSetsFilterArrayOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GetRuleSetsFilterArrayOutput)
 }
 
-func (i GetRuleSetsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRuleSetsFilter] {
-	return pulumix.Output[[]GetRuleSetsFilter]{
-		OutputState: i.ToGetRuleSetsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRuleSetsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetRuleSetsFilterOutput) ElementType() reflect.Type {
@@ -10759,12 +9332,6 @@ func (o GetRuleSetsFilterOutput) ToGetRuleSetsFilterOutput() GetRuleSetsFilterOu
 
 func (o GetRuleSetsFilterOutput) ToGetRuleSetsFilterOutputWithContext(ctx context.Context) GetRuleSetsFilterOutput {
 	return o
-}
-
-func (o GetRuleSetsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetRuleSetsFilter] {
-	return pulumix.Output[GetRuleSetsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The name for this set of rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleRuleSet`
@@ -10794,12 +9361,6 @@ func (o GetRuleSetsFilterArrayOutput) ToGetRuleSetsFilterArrayOutputWithContext(
 	return o
 }
 
-func (o GetRuleSetsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRuleSetsFilter] {
-	return pulumix.Output[[]GetRuleSetsFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetRuleSetsFilterArrayOutput) Index(i pulumi.IntInput) GetRuleSetsFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRuleSetsFilter {
 		return vs[0].([]GetRuleSetsFilter)[vs[1].(int)]
@@ -10807,14 +9368,14 @@ func (o GetRuleSetsFilterArrayOutput) Index(i pulumi.IntInput) GetRuleSetsFilter
 }
 
 type GetRuleSetsRuleSet struct {
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// An array of rules that compose the rule set.
 	Items []GetRuleSetsRuleSetItem `pulumi:"items"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the specified load balancer.
-	LoadBalancerId string `pulumi:"loadBalancerId"`
+	LoadBalancerId *string `pulumi:"loadBalancerId"`
 	// The name for this set of rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleRuleSet`
-	Name  string `pulumi:"name"`
-	State string `pulumi:"state"`
+	Name  *string `pulumi:"name"`
+	State *string `pulumi:"state"`
 }
 
 // GetRuleSetsRuleSetInput is an input type that accepts GetRuleSetsRuleSetArgs and GetRuleSetsRuleSetOutput values.
@@ -10829,14 +9390,14 @@ type GetRuleSetsRuleSetInput interface {
 }
 
 type GetRuleSetsRuleSetArgs struct {
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// An array of rules that compose the rule set.
 	Items GetRuleSetsRuleSetItemArrayInput `pulumi:"items"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the specified load balancer.
-	LoadBalancerId pulumi.StringInput `pulumi:"loadBalancerId"`
+	LoadBalancerId pulumi.StringPtrInput `pulumi:"loadBalancerId"`
 	// The name for this set of rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleRuleSet`
-	Name  pulumi.StringInput `pulumi:"name"`
-	State pulumi.StringInput `pulumi:"state"`
+	Name  pulumi.StringPtrInput `pulumi:"name"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 }
 
 func (GetRuleSetsRuleSetArgs) ElementType() reflect.Type {
@@ -10849,12 +9410,6 @@ func (i GetRuleSetsRuleSetArgs) ToGetRuleSetsRuleSetOutput() GetRuleSetsRuleSetO
 
 func (i GetRuleSetsRuleSetArgs) ToGetRuleSetsRuleSetOutputWithContext(ctx context.Context) GetRuleSetsRuleSetOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetRuleSetsRuleSetOutput)
-}
-
-func (i GetRuleSetsRuleSetArgs) ToOutput(ctx context.Context) pulumix.Output[GetRuleSetsRuleSet] {
-	return pulumix.Output[GetRuleSetsRuleSet]{
-		OutputState: i.ToGetRuleSetsRuleSetOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetRuleSetsRuleSetArrayInput is an input type that accepts GetRuleSetsRuleSetArray and GetRuleSetsRuleSetArrayOutput values.
@@ -10882,12 +9437,6 @@ func (i GetRuleSetsRuleSetArray) ToGetRuleSetsRuleSetArrayOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetRuleSetsRuleSetArrayOutput)
 }
 
-func (i GetRuleSetsRuleSetArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRuleSetsRuleSet] {
-	return pulumix.Output[[]GetRuleSetsRuleSet]{
-		OutputState: i.ToGetRuleSetsRuleSetArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRuleSetsRuleSetOutput struct{ *pulumi.OutputState }
 
 func (GetRuleSetsRuleSetOutput) ElementType() reflect.Type {
@@ -10902,14 +9451,8 @@ func (o GetRuleSetsRuleSetOutput) ToGetRuleSetsRuleSetOutputWithContext(ctx cont
 	return o
 }
 
-func (o GetRuleSetsRuleSetOutput) ToOutput(ctx context.Context) pulumix.Output[GetRuleSetsRuleSet] {
-	return pulumix.Output[GetRuleSetsRuleSet]{
-		OutputState: o.OutputState,
-	}
-}
-
-func (o GetRuleSetsRuleSetOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRuleSetsRuleSet) string { return v.Id }).(pulumi.StringOutput)
+func (o GetRuleSetsRuleSetOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRuleSetsRuleSet) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // An array of rules that compose the rule set.
@@ -10918,17 +9461,17 @@ func (o GetRuleSetsRuleSetOutput) Items() GetRuleSetsRuleSetItemArrayOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the specified load balancer.
-func (o GetRuleSetsRuleSetOutput) LoadBalancerId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRuleSetsRuleSet) string { return v.LoadBalancerId }).(pulumi.StringOutput)
+func (o GetRuleSetsRuleSetOutput) LoadBalancerId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRuleSetsRuleSet) *string { return v.LoadBalancerId }).(pulumi.StringPtrOutput)
 }
 
 // The name for this set of rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleRuleSet`
-func (o GetRuleSetsRuleSetOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRuleSetsRuleSet) string { return v.Name }).(pulumi.StringOutput)
+func (o GetRuleSetsRuleSetOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRuleSetsRuleSet) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
-func (o GetRuleSetsRuleSetOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRuleSetsRuleSet) string { return v.State }).(pulumi.StringOutput)
+func (o GetRuleSetsRuleSetOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRuleSetsRuleSet) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 type GetRuleSetsRuleSetArrayOutput struct{ *pulumi.OutputState }
@@ -10945,12 +9488,6 @@ func (o GetRuleSetsRuleSetArrayOutput) ToGetRuleSetsRuleSetArrayOutputWithContex
 	return o
 }
 
-func (o GetRuleSetsRuleSetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRuleSetsRuleSet] {
-	return pulumix.Output[[]GetRuleSetsRuleSet]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetRuleSetsRuleSetArrayOutput) Index(i pulumi.IntInput) GetRuleSetsRuleSetOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRuleSetsRuleSet {
 		return vs[0].([]GetRuleSetsRuleSet)[vs[1].(int)]
@@ -10959,36 +9496,36 @@ func (o GetRuleSetsRuleSetArrayOutput) Index(i pulumi.IntInput) GetRuleSetsRuleS
 
 type GetRuleSetsRuleSetItem struct {
 	// The action can be one of these values: `ADD_HTTP_REQUEST_HEADER`, `ADD_HTTP_RESPONSE_HEADER`, `ALLOW`, `CONTROL_ACCESS_USING_HTTP_METHODS`, `EXTEND_HTTP_REQUEST_HEADER_VALUE`, `EXTEND_HTTP_RESPONSE_HEADER_VALUE`, `HTTP_HEADER`, `REDIRECT`, `REMOVE_HTTP_REQUEST_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
-	Action string `pulumi:"action"`
+	Action *string `pulumi:"action"`
 	// The list of HTTP methods allowed for this listener.
 	AllowedMethods []string `pulumi:"allowedMethods"`
 	// Indicates whether or not invalid characters in client header fields will be allowed. Valid names are composed of English letters, digits, hyphens and underscores. If "true", invalid characters are allowed in the HTTP header. If "false", invalid characters are not allowed in the HTTP header
-	AreInvalidCharactersAllowed bool                              `pulumi:"areInvalidCharactersAllowed"`
+	AreInvalidCharactersAllowed *bool                             `pulumi:"areInvalidCharactersAllowed"`
 	Conditions                  []GetRuleSetsRuleSetItemCondition `pulumi:"conditions"`
 	// A brief description of the access control rule. Avoid entering confidential information.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// A header name that conforms to RFC 7230.  Example: `exampleHeaderName`
-	Header string `pulumi:"header"`
+	Header *string `pulumi:"header"`
 	// The maximum size of each buffer used for reading http client request header. This value indicates the maximum size allowed for each buffer. The allowed values for buffer size are 8, 16, 32 and 64.
-	HttpLargeHeaderSizeInKb int `pulumi:"httpLargeHeaderSizeInKb"`
+	HttpLargeHeaderSizeInKb *int `pulumi:"httpLargeHeaderSizeInKb"`
 	// A string to prepend to the header value. The resulting header value must still conform to RFC 7230. With the following exceptions:
 	// *  value cannot contain `$`
 	// *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
-	Prefix string `pulumi:"prefix"`
+	Prefix *string `pulumi:"prefix"`
 	// An object that defines the redirect URI applied to the original request. The object property values compose the redirect URI.
 	RedirectUris []GetRuleSetsRuleSetItemRedirectUri `pulumi:"redirectUris"`
 	// The HTTP status code to return when the incoming request is redirected.
-	ResponseCode int `pulumi:"responseCode"`
+	ResponseCode *int `pulumi:"responseCode"`
 	// The HTTP status code to return when the requested HTTP method is not in the list of allowed methods. The associated status line returned with the code is mapped from the standard HTTP specification. The default value is `405 (Method Not Allowed)`.  Example: 403
-	StatusCode int `pulumi:"statusCode"`
+	StatusCode *int `pulumi:"statusCode"`
 	// A string to append to the header value. The resulting header value must still conform to RFC 7230. With the following exceptions:
 	// *  value cannot contain `$`
 	// *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
-	Suffix string `pulumi:"suffix"`
+	Suffix *string `pulumi:"suffix"`
 	// A header value that conforms to RFC 7230. With the following exceptions:
 	// *  value cannot contain `$`
 	// *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
-	Value string `pulumi:"value"`
+	Value *string `pulumi:"value"`
 }
 
 // GetRuleSetsRuleSetItemInput is an input type that accepts GetRuleSetsRuleSetItemArgs and GetRuleSetsRuleSetItemOutput values.
@@ -11004,36 +9541,36 @@ type GetRuleSetsRuleSetItemInput interface {
 
 type GetRuleSetsRuleSetItemArgs struct {
 	// The action can be one of these values: `ADD_HTTP_REQUEST_HEADER`, `ADD_HTTP_RESPONSE_HEADER`, `ALLOW`, `CONTROL_ACCESS_USING_HTTP_METHODS`, `EXTEND_HTTP_REQUEST_HEADER_VALUE`, `EXTEND_HTTP_RESPONSE_HEADER_VALUE`, `HTTP_HEADER`, `REDIRECT`, `REMOVE_HTTP_REQUEST_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
-	Action pulumi.StringInput `pulumi:"action"`
+	Action pulumi.StringPtrInput `pulumi:"action"`
 	// The list of HTTP methods allowed for this listener.
 	AllowedMethods pulumi.StringArrayInput `pulumi:"allowedMethods"`
 	// Indicates whether or not invalid characters in client header fields will be allowed. Valid names are composed of English letters, digits, hyphens and underscores. If "true", invalid characters are allowed in the HTTP header. If "false", invalid characters are not allowed in the HTTP header
-	AreInvalidCharactersAllowed pulumi.BoolInput                          `pulumi:"areInvalidCharactersAllowed"`
+	AreInvalidCharactersAllowed pulumi.BoolPtrInput                       `pulumi:"areInvalidCharactersAllowed"`
 	Conditions                  GetRuleSetsRuleSetItemConditionArrayInput `pulumi:"conditions"`
 	// A brief description of the access control rule. Avoid entering confidential information.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// A header name that conforms to RFC 7230.  Example: `exampleHeaderName`
-	Header pulumi.StringInput `pulumi:"header"`
+	Header pulumi.StringPtrInput `pulumi:"header"`
 	// The maximum size of each buffer used for reading http client request header. This value indicates the maximum size allowed for each buffer. The allowed values for buffer size are 8, 16, 32 and 64.
-	HttpLargeHeaderSizeInKb pulumi.IntInput `pulumi:"httpLargeHeaderSizeInKb"`
+	HttpLargeHeaderSizeInKb pulumi.IntPtrInput `pulumi:"httpLargeHeaderSizeInKb"`
 	// A string to prepend to the header value. The resulting header value must still conform to RFC 7230. With the following exceptions:
 	// *  value cannot contain `$`
 	// *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
-	Prefix pulumi.StringInput `pulumi:"prefix"`
+	Prefix pulumi.StringPtrInput `pulumi:"prefix"`
 	// An object that defines the redirect URI applied to the original request. The object property values compose the redirect URI.
 	RedirectUris GetRuleSetsRuleSetItemRedirectUriArrayInput `pulumi:"redirectUris"`
 	// The HTTP status code to return when the incoming request is redirected.
-	ResponseCode pulumi.IntInput `pulumi:"responseCode"`
+	ResponseCode pulumi.IntPtrInput `pulumi:"responseCode"`
 	// The HTTP status code to return when the requested HTTP method is not in the list of allowed methods. The associated status line returned with the code is mapped from the standard HTTP specification. The default value is `405 (Method Not Allowed)`.  Example: 403
-	StatusCode pulumi.IntInput `pulumi:"statusCode"`
+	StatusCode pulumi.IntPtrInput `pulumi:"statusCode"`
 	// A string to append to the header value. The resulting header value must still conform to RFC 7230. With the following exceptions:
 	// *  value cannot contain `$`
 	// *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
-	Suffix pulumi.StringInput `pulumi:"suffix"`
+	Suffix pulumi.StringPtrInput `pulumi:"suffix"`
 	// A header value that conforms to RFC 7230. With the following exceptions:
 	// *  value cannot contain `$`
 	// *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
-	Value pulumi.StringInput `pulumi:"value"`
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (GetRuleSetsRuleSetItemArgs) ElementType() reflect.Type {
@@ -11046,12 +9583,6 @@ func (i GetRuleSetsRuleSetItemArgs) ToGetRuleSetsRuleSetItemOutput() GetRuleSets
 
 func (i GetRuleSetsRuleSetItemArgs) ToGetRuleSetsRuleSetItemOutputWithContext(ctx context.Context) GetRuleSetsRuleSetItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetRuleSetsRuleSetItemOutput)
-}
-
-func (i GetRuleSetsRuleSetItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetRuleSetsRuleSetItem] {
-	return pulumix.Output[GetRuleSetsRuleSetItem]{
-		OutputState: i.ToGetRuleSetsRuleSetItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetRuleSetsRuleSetItemArrayInput is an input type that accepts GetRuleSetsRuleSetItemArray and GetRuleSetsRuleSetItemArrayOutput values.
@@ -11079,12 +9610,6 @@ func (i GetRuleSetsRuleSetItemArray) ToGetRuleSetsRuleSetItemArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetRuleSetsRuleSetItemArrayOutput)
 }
 
-func (i GetRuleSetsRuleSetItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRuleSetsRuleSetItem] {
-	return pulumix.Output[[]GetRuleSetsRuleSetItem]{
-		OutputState: i.ToGetRuleSetsRuleSetItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRuleSetsRuleSetItemOutput struct{ *pulumi.OutputState }
 
 func (GetRuleSetsRuleSetItemOutput) ElementType() reflect.Type {
@@ -11099,15 +9624,9 @@ func (o GetRuleSetsRuleSetItemOutput) ToGetRuleSetsRuleSetItemOutputWithContext(
 	return o
 }
 
-func (o GetRuleSetsRuleSetItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetRuleSetsRuleSetItem] {
-	return pulumix.Output[GetRuleSetsRuleSetItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The action can be one of these values: `ADD_HTTP_REQUEST_HEADER`, `ADD_HTTP_RESPONSE_HEADER`, `ALLOW`, `CONTROL_ACCESS_USING_HTTP_METHODS`, `EXTEND_HTTP_REQUEST_HEADER_VALUE`, `EXTEND_HTTP_RESPONSE_HEADER_VALUE`, `HTTP_HEADER`, `REDIRECT`, `REMOVE_HTTP_REQUEST_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
-func (o GetRuleSetsRuleSetItemOutput) Action() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRuleSetsRuleSetItem) string { return v.Action }).(pulumi.StringOutput)
+func (o GetRuleSetsRuleSetItemOutput) Action() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRuleSetsRuleSetItem) *string { return v.Action }).(pulumi.StringPtrOutput)
 }
 
 // The list of HTTP methods allowed for this listener.
@@ -11116,8 +9635,8 @@ func (o GetRuleSetsRuleSetItemOutput) AllowedMethods() pulumi.StringArrayOutput 
 }
 
 // Indicates whether or not invalid characters in client header fields will be allowed. Valid names are composed of English letters, digits, hyphens and underscores. If "true", invalid characters are allowed in the HTTP header. If "false", invalid characters are not allowed in the HTTP header
-func (o GetRuleSetsRuleSetItemOutput) AreInvalidCharactersAllowed() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetRuleSetsRuleSetItem) bool { return v.AreInvalidCharactersAllowed }).(pulumi.BoolOutput)
+func (o GetRuleSetsRuleSetItemOutput) AreInvalidCharactersAllowed() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetRuleSetsRuleSetItem) *bool { return v.AreInvalidCharactersAllowed }).(pulumi.BoolPtrOutput)
 }
 
 func (o GetRuleSetsRuleSetItemOutput) Conditions() GetRuleSetsRuleSetItemConditionArrayOutput {
@@ -11125,25 +9644,25 @@ func (o GetRuleSetsRuleSetItemOutput) Conditions() GetRuleSetsRuleSetItemConditi
 }
 
 // A brief description of the access control rule. Avoid entering confidential information.
-func (o GetRuleSetsRuleSetItemOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRuleSetsRuleSetItem) string { return v.Description }).(pulumi.StringOutput)
+func (o GetRuleSetsRuleSetItemOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRuleSetsRuleSetItem) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // A header name that conforms to RFC 7230.  Example: `exampleHeaderName`
-func (o GetRuleSetsRuleSetItemOutput) Header() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRuleSetsRuleSetItem) string { return v.Header }).(pulumi.StringOutput)
+func (o GetRuleSetsRuleSetItemOutput) Header() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRuleSetsRuleSetItem) *string { return v.Header }).(pulumi.StringPtrOutput)
 }
 
 // The maximum size of each buffer used for reading http client request header. This value indicates the maximum size allowed for each buffer. The allowed values for buffer size are 8, 16, 32 and 64.
-func (o GetRuleSetsRuleSetItemOutput) HttpLargeHeaderSizeInKb() pulumi.IntOutput {
-	return o.ApplyT(func(v GetRuleSetsRuleSetItem) int { return v.HttpLargeHeaderSizeInKb }).(pulumi.IntOutput)
+func (o GetRuleSetsRuleSetItemOutput) HttpLargeHeaderSizeInKb() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetRuleSetsRuleSetItem) *int { return v.HttpLargeHeaderSizeInKb }).(pulumi.IntPtrOutput)
 }
 
 // A string to prepend to the header value. The resulting header value must still conform to RFC 7230. With the following exceptions:
 // *  value cannot contain `$`
 // *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
-func (o GetRuleSetsRuleSetItemOutput) Prefix() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRuleSetsRuleSetItem) string { return v.Prefix }).(pulumi.StringOutput)
+func (o GetRuleSetsRuleSetItemOutput) Prefix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRuleSetsRuleSetItem) *string { return v.Prefix }).(pulumi.StringPtrOutput)
 }
 
 // An object that defines the redirect URI applied to the original request. The object property values compose the redirect URI.
@@ -11152,27 +9671,27 @@ func (o GetRuleSetsRuleSetItemOutput) RedirectUris() GetRuleSetsRuleSetItemRedir
 }
 
 // The HTTP status code to return when the incoming request is redirected.
-func (o GetRuleSetsRuleSetItemOutput) ResponseCode() pulumi.IntOutput {
-	return o.ApplyT(func(v GetRuleSetsRuleSetItem) int { return v.ResponseCode }).(pulumi.IntOutput)
+func (o GetRuleSetsRuleSetItemOutput) ResponseCode() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetRuleSetsRuleSetItem) *int { return v.ResponseCode }).(pulumi.IntPtrOutput)
 }
 
 // The HTTP status code to return when the requested HTTP method is not in the list of allowed methods. The associated status line returned with the code is mapped from the standard HTTP specification. The default value is `405 (Method Not Allowed)`.  Example: 403
-func (o GetRuleSetsRuleSetItemOutput) StatusCode() pulumi.IntOutput {
-	return o.ApplyT(func(v GetRuleSetsRuleSetItem) int { return v.StatusCode }).(pulumi.IntOutput)
+func (o GetRuleSetsRuleSetItemOutput) StatusCode() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetRuleSetsRuleSetItem) *int { return v.StatusCode }).(pulumi.IntPtrOutput)
 }
 
 // A string to append to the header value. The resulting header value must still conform to RFC 7230. With the following exceptions:
 // *  value cannot contain `$`
 // *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
-func (o GetRuleSetsRuleSetItemOutput) Suffix() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRuleSetsRuleSetItem) string { return v.Suffix }).(pulumi.StringOutput)
+func (o GetRuleSetsRuleSetItemOutput) Suffix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRuleSetsRuleSetItem) *string { return v.Suffix }).(pulumi.StringPtrOutput)
 }
 
 // A header value that conforms to RFC 7230. With the following exceptions:
 // *  value cannot contain `$`
 // *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
-func (o GetRuleSetsRuleSetItemOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRuleSetsRuleSetItem) string { return v.Value }).(pulumi.StringOutput)
+func (o GetRuleSetsRuleSetItemOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRuleSetsRuleSetItem) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
 
 type GetRuleSetsRuleSetItemArrayOutput struct{ *pulumi.OutputState }
@@ -11189,12 +9708,6 @@ func (o GetRuleSetsRuleSetItemArrayOutput) ToGetRuleSetsRuleSetItemArrayOutputWi
 	return o
 }
 
-func (o GetRuleSetsRuleSetItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRuleSetsRuleSetItem] {
-	return pulumix.Output[[]GetRuleSetsRuleSetItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetRuleSetsRuleSetItemArrayOutput) Index(i pulumi.IntInput) GetRuleSetsRuleSetItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRuleSetsRuleSetItem {
 		return vs[0].([]GetRuleSetsRuleSetItem)[vs[1].(int)]
@@ -11203,18 +9716,18 @@ func (o GetRuleSetsRuleSetItemArrayOutput) Index(i pulumi.IntInput) GetRuleSetsR
 
 type GetRuleSetsRuleSetItemCondition struct {
 	// (Required) (Updatable) The attributeName can be one of these values: `PATH`, `SOURCE_IP_ADDRESS`, `SOURCE_VCN_ID`, `SOURCE_VCN_IP_ADDRESS`
-	AttributeName string `pulumi:"attributeName"`
+	AttributeName *string `pulumi:"attributeName"`
 	// (Required) (Updatable) Depends on `attributeName`:
 	// - when `attributeName` = `SOURCE_IP_ADDRESS` | IPv4 or IPv6 address range to which the source IP address of incoming packet would be matched against
 	// - when `attributeName` = `SOURCE_VCN_IP_ADDRESS` | IPv4 address range to which the original client IP address (in customer VCN) of incoming packet would be matched against
 	// - when `attributeName` = `SOURCE_VCN_ID` | OCID of the customer VCN to which the service gateway embedded VCN ID of incoming packet would be matched against
-	AttributeValue string `pulumi:"attributeValue"`
+	AttributeValue *string `pulumi:"attributeValue"`
 	// A string that specifies how to compare the PathMatchCondition object's `attributeValue` string to the incoming URI.
 	// *  **EXACT_MATCH** - The incoming URI path must exactly and completely match the `attributeValue` string.
 	// *  **FORCE_LONGEST_PREFIX_MATCH** - The system looks for the `attributeValue` string with the best, longest match of the beginning portion of the incoming URI path.
 	// *  **PREFIX_MATCH** - The beginning portion of the incoming URI path must exactly match the `attributeValue` string.
 	// *  **SUFFIX_MATCH** - The ending portion of the incoming URI path must exactly match the `attributeValue` string.
-	Operator string `pulumi:"operator"`
+	Operator *string `pulumi:"operator"`
 }
 
 // GetRuleSetsRuleSetItemConditionInput is an input type that accepts GetRuleSetsRuleSetItemConditionArgs and GetRuleSetsRuleSetItemConditionOutput values.
@@ -11230,18 +9743,18 @@ type GetRuleSetsRuleSetItemConditionInput interface {
 
 type GetRuleSetsRuleSetItemConditionArgs struct {
 	// (Required) (Updatable) The attributeName can be one of these values: `PATH`, `SOURCE_IP_ADDRESS`, `SOURCE_VCN_ID`, `SOURCE_VCN_IP_ADDRESS`
-	AttributeName pulumi.StringInput `pulumi:"attributeName"`
+	AttributeName pulumi.StringPtrInput `pulumi:"attributeName"`
 	// (Required) (Updatable) Depends on `attributeName`:
 	// - when `attributeName` = `SOURCE_IP_ADDRESS` | IPv4 or IPv6 address range to which the source IP address of incoming packet would be matched against
 	// - when `attributeName` = `SOURCE_VCN_IP_ADDRESS` | IPv4 address range to which the original client IP address (in customer VCN) of incoming packet would be matched against
 	// - when `attributeName` = `SOURCE_VCN_ID` | OCID of the customer VCN to which the service gateway embedded VCN ID of incoming packet would be matched against
-	AttributeValue pulumi.StringInput `pulumi:"attributeValue"`
+	AttributeValue pulumi.StringPtrInput `pulumi:"attributeValue"`
 	// A string that specifies how to compare the PathMatchCondition object's `attributeValue` string to the incoming URI.
 	// *  **EXACT_MATCH** - The incoming URI path must exactly and completely match the `attributeValue` string.
 	// *  **FORCE_LONGEST_PREFIX_MATCH** - The system looks for the `attributeValue` string with the best, longest match of the beginning portion of the incoming URI path.
 	// *  **PREFIX_MATCH** - The beginning portion of the incoming URI path must exactly match the `attributeValue` string.
 	// *  **SUFFIX_MATCH** - The ending portion of the incoming URI path must exactly match the `attributeValue` string.
-	Operator pulumi.StringInput `pulumi:"operator"`
+	Operator pulumi.StringPtrInput `pulumi:"operator"`
 }
 
 func (GetRuleSetsRuleSetItemConditionArgs) ElementType() reflect.Type {
@@ -11254,12 +9767,6 @@ func (i GetRuleSetsRuleSetItemConditionArgs) ToGetRuleSetsRuleSetItemConditionOu
 
 func (i GetRuleSetsRuleSetItemConditionArgs) ToGetRuleSetsRuleSetItemConditionOutputWithContext(ctx context.Context) GetRuleSetsRuleSetItemConditionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetRuleSetsRuleSetItemConditionOutput)
-}
-
-func (i GetRuleSetsRuleSetItemConditionArgs) ToOutput(ctx context.Context) pulumix.Output[GetRuleSetsRuleSetItemCondition] {
-	return pulumix.Output[GetRuleSetsRuleSetItemCondition]{
-		OutputState: i.ToGetRuleSetsRuleSetItemConditionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetRuleSetsRuleSetItemConditionArrayInput is an input type that accepts GetRuleSetsRuleSetItemConditionArray and GetRuleSetsRuleSetItemConditionArrayOutput values.
@@ -11287,12 +9794,6 @@ func (i GetRuleSetsRuleSetItemConditionArray) ToGetRuleSetsRuleSetItemConditionA
 	return pulumi.ToOutputWithContext(ctx, i).(GetRuleSetsRuleSetItemConditionArrayOutput)
 }
 
-func (i GetRuleSetsRuleSetItemConditionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRuleSetsRuleSetItemCondition] {
-	return pulumix.Output[[]GetRuleSetsRuleSetItemCondition]{
-		OutputState: i.ToGetRuleSetsRuleSetItemConditionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRuleSetsRuleSetItemConditionOutput struct{ *pulumi.OutputState }
 
 func (GetRuleSetsRuleSetItemConditionOutput) ElementType() reflect.Type {
@@ -11307,23 +9808,17 @@ func (o GetRuleSetsRuleSetItemConditionOutput) ToGetRuleSetsRuleSetItemCondition
 	return o
 }
 
-func (o GetRuleSetsRuleSetItemConditionOutput) ToOutput(ctx context.Context) pulumix.Output[GetRuleSetsRuleSetItemCondition] {
-	return pulumix.Output[GetRuleSetsRuleSetItemCondition]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Required) (Updatable) The attributeName can be one of these values: `PATH`, `SOURCE_IP_ADDRESS`, `SOURCE_VCN_ID`, `SOURCE_VCN_IP_ADDRESS`
-func (o GetRuleSetsRuleSetItemConditionOutput) AttributeName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRuleSetsRuleSetItemCondition) string { return v.AttributeName }).(pulumi.StringOutput)
+func (o GetRuleSetsRuleSetItemConditionOutput) AttributeName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRuleSetsRuleSetItemCondition) *string { return v.AttributeName }).(pulumi.StringPtrOutput)
 }
 
 // (Required) (Updatable) Depends on `attributeName`:
 // - when `attributeName` = `SOURCE_IP_ADDRESS` | IPv4 or IPv6 address range to which the source IP address of incoming packet would be matched against
 // - when `attributeName` = `SOURCE_VCN_IP_ADDRESS` | IPv4 address range to which the original client IP address (in customer VCN) of incoming packet would be matched against
 // - when `attributeName` = `SOURCE_VCN_ID` | OCID of the customer VCN to which the service gateway embedded VCN ID of incoming packet would be matched against
-func (o GetRuleSetsRuleSetItemConditionOutput) AttributeValue() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRuleSetsRuleSetItemCondition) string { return v.AttributeValue }).(pulumi.StringOutput)
+func (o GetRuleSetsRuleSetItemConditionOutput) AttributeValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRuleSetsRuleSetItemCondition) *string { return v.AttributeValue }).(pulumi.StringPtrOutput)
 }
 
 // A string that specifies how to compare the PathMatchCondition object's `attributeValue` string to the incoming URI.
@@ -11331,8 +9826,8 @@ func (o GetRuleSetsRuleSetItemConditionOutput) AttributeValue() pulumi.StringOut
 // *  **FORCE_LONGEST_PREFIX_MATCH** - The system looks for the `attributeValue` string with the best, longest match of the beginning portion of the incoming URI path.
 // *  **PREFIX_MATCH** - The beginning portion of the incoming URI path must exactly match the `attributeValue` string.
 // *  **SUFFIX_MATCH** - The ending portion of the incoming URI path must exactly match the `attributeValue` string.
-func (o GetRuleSetsRuleSetItemConditionOutput) Operator() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRuleSetsRuleSetItemCondition) string { return v.Operator }).(pulumi.StringOutput)
+func (o GetRuleSetsRuleSetItemConditionOutput) Operator() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRuleSetsRuleSetItemCondition) *string { return v.Operator }).(pulumi.StringPtrOutput)
 }
 
 type GetRuleSetsRuleSetItemConditionArrayOutput struct{ *pulumi.OutputState }
@@ -11349,12 +9844,6 @@ func (o GetRuleSetsRuleSetItemConditionArrayOutput) ToGetRuleSetsRuleSetItemCond
 	return o
 }
 
-func (o GetRuleSetsRuleSetItemConditionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRuleSetsRuleSetItemCondition] {
-	return pulumix.Output[[]GetRuleSetsRuleSetItemCondition]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetRuleSetsRuleSetItemConditionArrayOutput) Index(i pulumi.IntInput) GetRuleSetsRuleSetItemConditionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRuleSetsRuleSetItemCondition {
 		return vs[0].([]GetRuleSetsRuleSetItemCondition)[vs[1].(int)]
@@ -11363,15 +9852,15 @@ func (o GetRuleSetsRuleSetItemConditionArrayOutput) Index(i pulumi.IntInput) Get
 
 type GetRuleSetsRuleSetItemRedirectUri struct {
 	// The valid domain name (hostname) or IP address to use in the redirect URI.
-	Host string `pulumi:"host"`
+	Host *string `pulumi:"host"`
 	// The HTTP URI path to use in the redirect URI.
-	Path string `pulumi:"path"`
+	Path *string `pulumi:"path"`
 	// The communication port to use in the redirect URI.
-	Port int `pulumi:"port"`
+	Port *int `pulumi:"port"`
 	// The HTTP protocol to use in the redirect URI.
-	Protocol string `pulumi:"protocol"`
+	Protocol *string `pulumi:"protocol"`
 	// The query string to use in the redirect URI.
-	Query string `pulumi:"query"`
+	Query *string `pulumi:"query"`
 }
 
 // GetRuleSetsRuleSetItemRedirectUriInput is an input type that accepts GetRuleSetsRuleSetItemRedirectUriArgs and GetRuleSetsRuleSetItemRedirectUriOutput values.
@@ -11387,15 +9876,15 @@ type GetRuleSetsRuleSetItemRedirectUriInput interface {
 
 type GetRuleSetsRuleSetItemRedirectUriArgs struct {
 	// The valid domain name (hostname) or IP address to use in the redirect URI.
-	Host pulumi.StringInput `pulumi:"host"`
+	Host pulumi.StringPtrInput `pulumi:"host"`
 	// The HTTP URI path to use in the redirect URI.
-	Path pulumi.StringInput `pulumi:"path"`
+	Path pulumi.StringPtrInput `pulumi:"path"`
 	// The communication port to use in the redirect URI.
-	Port pulumi.IntInput `pulumi:"port"`
+	Port pulumi.IntPtrInput `pulumi:"port"`
 	// The HTTP protocol to use in the redirect URI.
-	Protocol pulumi.StringInput `pulumi:"protocol"`
+	Protocol pulumi.StringPtrInput `pulumi:"protocol"`
 	// The query string to use in the redirect URI.
-	Query pulumi.StringInput `pulumi:"query"`
+	Query pulumi.StringPtrInput `pulumi:"query"`
 }
 
 func (GetRuleSetsRuleSetItemRedirectUriArgs) ElementType() reflect.Type {
@@ -11408,12 +9897,6 @@ func (i GetRuleSetsRuleSetItemRedirectUriArgs) ToGetRuleSetsRuleSetItemRedirectU
 
 func (i GetRuleSetsRuleSetItemRedirectUriArgs) ToGetRuleSetsRuleSetItemRedirectUriOutputWithContext(ctx context.Context) GetRuleSetsRuleSetItemRedirectUriOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetRuleSetsRuleSetItemRedirectUriOutput)
-}
-
-func (i GetRuleSetsRuleSetItemRedirectUriArgs) ToOutput(ctx context.Context) pulumix.Output[GetRuleSetsRuleSetItemRedirectUri] {
-	return pulumix.Output[GetRuleSetsRuleSetItemRedirectUri]{
-		OutputState: i.ToGetRuleSetsRuleSetItemRedirectUriOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetRuleSetsRuleSetItemRedirectUriArrayInput is an input type that accepts GetRuleSetsRuleSetItemRedirectUriArray and GetRuleSetsRuleSetItemRedirectUriArrayOutput values.
@@ -11441,12 +9924,6 @@ func (i GetRuleSetsRuleSetItemRedirectUriArray) ToGetRuleSetsRuleSetItemRedirect
 	return pulumi.ToOutputWithContext(ctx, i).(GetRuleSetsRuleSetItemRedirectUriArrayOutput)
 }
 
-func (i GetRuleSetsRuleSetItemRedirectUriArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRuleSetsRuleSetItemRedirectUri] {
-	return pulumix.Output[[]GetRuleSetsRuleSetItemRedirectUri]{
-		OutputState: i.ToGetRuleSetsRuleSetItemRedirectUriArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRuleSetsRuleSetItemRedirectUriOutput struct{ *pulumi.OutputState }
 
 func (GetRuleSetsRuleSetItemRedirectUriOutput) ElementType() reflect.Type {
@@ -11461,35 +9938,29 @@ func (o GetRuleSetsRuleSetItemRedirectUriOutput) ToGetRuleSetsRuleSetItemRedirec
 	return o
 }
 
-func (o GetRuleSetsRuleSetItemRedirectUriOutput) ToOutput(ctx context.Context) pulumix.Output[GetRuleSetsRuleSetItemRedirectUri] {
-	return pulumix.Output[GetRuleSetsRuleSetItemRedirectUri]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The valid domain name (hostname) or IP address to use in the redirect URI.
-func (o GetRuleSetsRuleSetItemRedirectUriOutput) Host() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRuleSetsRuleSetItemRedirectUri) string { return v.Host }).(pulumi.StringOutput)
+func (o GetRuleSetsRuleSetItemRedirectUriOutput) Host() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRuleSetsRuleSetItemRedirectUri) *string { return v.Host }).(pulumi.StringPtrOutput)
 }
 
 // The HTTP URI path to use in the redirect URI.
-func (o GetRuleSetsRuleSetItemRedirectUriOutput) Path() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRuleSetsRuleSetItemRedirectUri) string { return v.Path }).(pulumi.StringOutput)
+func (o GetRuleSetsRuleSetItemRedirectUriOutput) Path() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRuleSetsRuleSetItemRedirectUri) *string { return v.Path }).(pulumi.StringPtrOutput)
 }
 
 // The communication port to use in the redirect URI.
-func (o GetRuleSetsRuleSetItemRedirectUriOutput) Port() pulumi.IntOutput {
-	return o.ApplyT(func(v GetRuleSetsRuleSetItemRedirectUri) int { return v.Port }).(pulumi.IntOutput)
+func (o GetRuleSetsRuleSetItemRedirectUriOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetRuleSetsRuleSetItemRedirectUri) *int { return v.Port }).(pulumi.IntPtrOutput)
 }
 
 // The HTTP protocol to use in the redirect URI.
-func (o GetRuleSetsRuleSetItemRedirectUriOutput) Protocol() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRuleSetsRuleSetItemRedirectUri) string { return v.Protocol }).(pulumi.StringOutput)
+func (o GetRuleSetsRuleSetItemRedirectUriOutput) Protocol() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRuleSetsRuleSetItemRedirectUri) *string { return v.Protocol }).(pulumi.StringPtrOutput)
 }
 
 // The query string to use in the redirect URI.
-func (o GetRuleSetsRuleSetItemRedirectUriOutput) Query() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRuleSetsRuleSetItemRedirectUri) string { return v.Query }).(pulumi.StringOutput)
+func (o GetRuleSetsRuleSetItemRedirectUriOutput) Query() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRuleSetsRuleSetItemRedirectUri) *string { return v.Query }).(pulumi.StringPtrOutput)
 }
 
 type GetRuleSetsRuleSetItemRedirectUriArrayOutput struct{ *pulumi.OutputState }
@@ -11504,12 +9975,6 @@ func (o GetRuleSetsRuleSetItemRedirectUriArrayOutput) ToGetRuleSetsRuleSetItemRe
 
 func (o GetRuleSetsRuleSetItemRedirectUriArrayOutput) ToGetRuleSetsRuleSetItemRedirectUriArrayOutputWithContext(ctx context.Context) GetRuleSetsRuleSetItemRedirectUriArrayOutput {
 	return o
-}
-
-func (o GetRuleSetsRuleSetItemRedirectUriArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRuleSetsRuleSetItemRedirectUri] {
-	return pulumix.Output[[]GetRuleSetsRuleSetItemRedirectUri]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetRuleSetsRuleSetItemRedirectUriArrayOutput) Index(i pulumi.IntInput) GetRuleSetsRuleSetItemRedirectUriOutput {
@@ -11555,12 +10020,6 @@ func (i GetShapesFilterArgs) ToGetShapesFilterOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetShapesFilterOutput)
 }
 
-func (i GetShapesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetShapesFilter] {
-	return pulumix.Output[GetShapesFilter]{
-		OutputState: i.ToGetShapesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetShapesFilterArrayInput is an input type that accepts GetShapesFilterArray and GetShapesFilterArrayOutput values.
 // You can construct a concrete instance of `GetShapesFilterArrayInput` via:
 //
@@ -11586,12 +10045,6 @@ func (i GetShapesFilterArray) ToGetShapesFilterArrayOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetShapesFilterArrayOutput)
 }
 
-func (i GetShapesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetShapesFilter] {
-	return pulumix.Output[[]GetShapesFilter]{
-		OutputState: i.ToGetShapesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetShapesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetShapesFilterOutput) ElementType() reflect.Type {
@@ -11604,12 +10057,6 @@ func (o GetShapesFilterOutput) ToGetShapesFilterOutput() GetShapesFilterOutput {
 
 func (o GetShapesFilterOutput) ToGetShapesFilterOutputWithContext(ctx context.Context) GetShapesFilterOutput {
 	return o
-}
-
-func (o GetShapesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetShapesFilter] {
-	return pulumix.Output[GetShapesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The name of the shape.  Example: `100Mbps`
@@ -11639,12 +10086,6 @@ func (o GetShapesFilterArrayOutput) ToGetShapesFilterArrayOutputWithContext(ctx 
 	return o
 }
 
-func (o GetShapesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetShapesFilter] {
-	return pulumix.Output[[]GetShapesFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetShapesFilterArrayOutput) Index(i pulumi.IntInput) GetShapesFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetShapesFilter {
 		return vs[0].([]GetShapesFilter)[vs[1].(int)]
@@ -11653,7 +10094,7 @@ func (o GetShapesFilterArrayOutput) Index(i pulumi.IntInput) GetShapesFilterOutp
 
 type GetShapesShape struct {
 	// The name of the shape.  Example: `100Mbps`
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 }
 
 // GetShapesShapeInput is an input type that accepts GetShapesShapeArgs and GetShapesShapeOutput values.
@@ -11669,7 +10110,7 @@ type GetShapesShapeInput interface {
 
 type GetShapesShapeArgs struct {
 	// The name of the shape.  Example: `100Mbps`
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 }
 
 func (GetShapesShapeArgs) ElementType() reflect.Type {
@@ -11682,12 +10123,6 @@ func (i GetShapesShapeArgs) ToGetShapesShapeOutput() GetShapesShapeOutput {
 
 func (i GetShapesShapeArgs) ToGetShapesShapeOutputWithContext(ctx context.Context) GetShapesShapeOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetShapesShapeOutput)
-}
-
-func (i GetShapesShapeArgs) ToOutput(ctx context.Context) pulumix.Output[GetShapesShape] {
-	return pulumix.Output[GetShapesShape]{
-		OutputState: i.ToGetShapesShapeOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetShapesShapeArrayInput is an input type that accepts GetShapesShapeArray and GetShapesShapeArrayOutput values.
@@ -11715,12 +10150,6 @@ func (i GetShapesShapeArray) ToGetShapesShapeArrayOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(GetShapesShapeArrayOutput)
 }
 
-func (i GetShapesShapeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetShapesShape] {
-	return pulumix.Output[[]GetShapesShape]{
-		OutputState: i.ToGetShapesShapeArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetShapesShapeOutput struct{ *pulumi.OutputState }
 
 func (GetShapesShapeOutput) ElementType() reflect.Type {
@@ -11735,15 +10164,9 @@ func (o GetShapesShapeOutput) ToGetShapesShapeOutputWithContext(ctx context.Cont
 	return o
 }
 
-func (o GetShapesShapeOutput) ToOutput(ctx context.Context) pulumix.Output[GetShapesShape] {
-	return pulumix.Output[GetShapesShape]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The name of the shape.  Example: `100Mbps`
-func (o GetShapesShapeOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetShapesShape) string { return v.Name }).(pulumi.StringOutput)
+func (o GetShapesShapeOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetShapesShape) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 type GetShapesShapeArrayOutput struct{ *pulumi.OutputState }
@@ -11758,12 +10181,6 @@ func (o GetShapesShapeArrayOutput) ToGetShapesShapeArrayOutput() GetShapesShapeA
 
 func (o GetShapesShapeArrayOutput) ToGetShapesShapeArrayOutputWithContext(ctx context.Context) GetShapesShapeArrayOutput {
 	return o
-}
-
-func (o GetShapesShapeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetShapesShape] {
-	return pulumix.Output[[]GetShapesShape]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetShapesShapeArrayOutput) Index(i pulumi.IntInput) GetShapesShapeOutput {
@@ -11809,12 +10226,6 @@ func (i GetSslCipherSuitesFilterArgs) ToGetSslCipherSuitesFilterOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetSslCipherSuitesFilterOutput)
 }
 
-func (i GetSslCipherSuitesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetSslCipherSuitesFilter] {
-	return pulumix.Output[GetSslCipherSuitesFilter]{
-		OutputState: i.ToGetSslCipherSuitesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetSslCipherSuitesFilterArrayInput is an input type that accepts GetSslCipherSuitesFilterArray and GetSslCipherSuitesFilterArrayOutput values.
 // You can construct a concrete instance of `GetSslCipherSuitesFilterArrayInput` via:
 //
@@ -11840,12 +10251,6 @@ func (i GetSslCipherSuitesFilterArray) ToGetSslCipherSuitesFilterArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetSslCipherSuitesFilterArrayOutput)
 }
 
-func (i GetSslCipherSuitesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSslCipherSuitesFilter] {
-	return pulumix.Output[[]GetSslCipherSuitesFilter]{
-		OutputState: i.ToGetSslCipherSuitesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSslCipherSuitesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetSslCipherSuitesFilterOutput) ElementType() reflect.Type {
@@ -11858,12 +10263,6 @@ func (o GetSslCipherSuitesFilterOutput) ToGetSslCipherSuitesFilterOutput() GetSs
 
 func (o GetSslCipherSuitesFilterOutput) ToGetSslCipherSuitesFilterOutputWithContext(ctx context.Context) GetSslCipherSuitesFilterOutput {
 	return o
-}
-
-func (o GetSslCipherSuitesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetSslCipherSuitesFilter] {
-	return pulumix.Output[GetSslCipherSuitesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A friendly name for the SSL cipher suite. It must be unique and it cannot be changed.
@@ -11893,12 +10292,6 @@ func (o GetSslCipherSuitesFilterArrayOutput) ToGetSslCipherSuitesFilterArrayOutp
 	return o
 }
 
-func (o GetSslCipherSuitesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSslCipherSuitesFilter] {
-	return pulumix.Output[[]GetSslCipherSuitesFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSslCipherSuitesFilterArrayOutput) Index(i pulumi.IntInput) GetSslCipherSuitesFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSslCipherSuitesFilter {
 		return vs[0].([]GetSslCipherSuitesFilter)[vs[1].(int)]
@@ -11911,8 +10304,8 @@ type GetSslCipherSuitesSslCipherSuite struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated load balancer.
 	LoadBalancerId string `pulumi:"loadBalancerId"`
 	// A friendly name for the SSL cipher suite. It must be unique and it cannot be changed.
-	Name  string `pulumi:"name"`
-	State string `pulumi:"state"`
+	Name  string  `pulumi:"name"`
+	State *string `pulumi:"state"`
 }
 
 // GetSslCipherSuitesSslCipherSuiteInput is an input type that accepts GetSslCipherSuitesSslCipherSuiteArgs and GetSslCipherSuitesSslCipherSuiteOutput values.
@@ -11932,8 +10325,8 @@ type GetSslCipherSuitesSslCipherSuiteArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated load balancer.
 	LoadBalancerId pulumi.StringInput `pulumi:"loadBalancerId"`
 	// A friendly name for the SSL cipher suite. It must be unique and it cannot be changed.
-	Name  pulumi.StringInput `pulumi:"name"`
-	State pulumi.StringInput `pulumi:"state"`
+	Name  pulumi.StringInput    `pulumi:"name"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 }
 
 func (GetSslCipherSuitesSslCipherSuiteArgs) ElementType() reflect.Type {
@@ -11946,12 +10339,6 @@ func (i GetSslCipherSuitesSslCipherSuiteArgs) ToGetSslCipherSuitesSslCipherSuite
 
 func (i GetSslCipherSuitesSslCipherSuiteArgs) ToGetSslCipherSuitesSslCipherSuiteOutputWithContext(ctx context.Context) GetSslCipherSuitesSslCipherSuiteOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSslCipherSuitesSslCipherSuiteOutput)
-}
-
-func (i GetSslCipherSuitesSslCipherSuiteArgs) ToOutput(ctx context.Context) pulumix.Output[GetSslCipherSuitesSslCipherSuite] {
-	return pulumix.Output[GetSslCipherSuitesSslCipherSuite]{
-		OutputState: i.ToGetSslCipherSuitesSslCipherSuiteOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSslCipherSuitesSslCipherSuiteArrayInput is an input type that accepts GetSslCipherSuitesSslCipherSuiteArray and GetSslCipherSuitesSslCipherSuiteArrayOutput values.
@@ -11979,12 +10366,6 @@ func (i GetSslCipherSuitesSslCipherSuiteArray) ToGetSslCipherSuitesSslCipherSuit
 	return pulumi.ToOutputWithContext(ctx, i).(GetSslCipherSuitesSslCipherSuiteArrayOutput)
 }
 
-func (i GetSslCipherSuitesSslCipherSuiteArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSslCipherSuitesSslCipherSuite] {
-	return pulumix.Output[[]GetSslCipherSuitesSslCipherSuite]{
-		OutputState: i.ToGetSslCipherSuitesSslCipherSuiteArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSslCipherSuitesSslCipherSuiteOutput struct{ *pulumi.OutputState }
 
 func (GetSslCipherSuitesSslCipherSuiteOutput) ElementType() reflect.Type {
@@ -11997,12 +10378,6 @@ func (o GetSslCipherSuitesSslCipherSuiteOutput) ToGetSslCipherSuitesSslCipherSui
 
 func (o GetSslCipherSuitesSslCipherSuiteOutput) ToGetSslCipherSuitesSslCipherSuiteOutputWithContext(ctx context.Context) GetSslCipherSuitesSslCipherSuiteOutput {
 	return o
-}
-
-func (o GetSslCipherSuitesSslCipherSuiteOutput) ToOutput(ctx context.Context) pulumix.Output[GetSslCipherSuitesSslCipherSuite] {
-	return pulumix.Output[GetSslCipherSuitesSslCipherSuite]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A list of SSL ciphers the load balancer must support for HTTPS or SSL connections.
@@ -12020,8 +10395,8 @@ func (o GetSslCipherSuitesSslCipherSuiteOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSslCipherSuitesSslCipherSuite) string { return v.Name }).(pulumi.StringOutput)
 }
 
-func (o GetSslCipherSuitesSslCipherSuiteOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSslCipherSuitesSslCipherSuite) string { return v.State }).(pulumi.StringOutput)
+func (o GetSslCipherSuitesSslCipherSuiteOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSslCipherSuitesSslCipherSuite) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 type GetSslCipherSuitesSslCipherSuiteArrayOutput struct{ *pulumi.OutputState }
@@ -12036,12 +10411,6 @@ func (o GetSslCipherSuitesSslCipherSuiteArrayOutput) ToGetSslCipherSuitesSslCiph
 
 func (o GetSslCipherSuitesSslCipherSuiteArrayOutput) ToGetSslCipherSuitesSslCipherSuiteArrayOutputWithContext(ctx context.Context) GetSslCipherSuitesSslCipherSuiteArrayOutput {
 	return o
-}
-
-func (o GetSslCipherSuitesSslCipherSuiteArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSslCipherSuitesSslCipherSuite] {
-	return pulumix.Output[[]GetSslCipherSuitesSslCipherSuite]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSslCipherSuitesSslCipherSuiteArrayOutput) Index(i pulumi.IntInput) GetSslCipherSuitesSslCipherSuiteOutput {

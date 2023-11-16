@@ -268,7 +268,7 @@ namespace Pulumi.Oci.GoldenGate
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Possible lifecycle states for connection.
         /// </summary>
@@ -296,7 +296,7 @@ namespace Pulumi.Oci.GoldenGate
 
             ImmutableArray<Outputs.GetConnectionsFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? state,
 

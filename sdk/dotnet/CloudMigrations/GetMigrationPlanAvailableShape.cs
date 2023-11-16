@@ -170,7 +170,7 @@ namespace Pulumi.Oci.CloudMigrations
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Available shapes list.
         /// </summary>
@@ -186,7 +186,7 @@ namespace Pulumi.Oci.CloudMigrations
 
             string? dvhHostId,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetMigrationPlanAvailableShapeItemResult> items,
 

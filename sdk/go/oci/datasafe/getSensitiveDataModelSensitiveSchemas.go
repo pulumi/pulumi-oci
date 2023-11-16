@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Sensitive Data Model Sensitive Schemas in Oracle Cloud Infrastructure Data Safe service.
@@ -65,7 +64,7 @@ type GetSensitiveDataModelSensitiveSchemasArgs struct {
 type GetSensitiveDataModelSensitiveSchemasResult struct {
 	Filters []GetSensitiveDataModelSensitiveSchemasFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The database schema that contains the sensitive column.
 	SchemaNames          []string `pulumi:"schemaNames"`
 	SensitiveDataModelId string   `pulumi:"sensitiveDataModelId"`
@@ -114,12 +113,6 @@ func (o GetSensitiveDataModelSensitiveSchemasResultOutput) ToGetSensitiveDataMod
 	return o
 }
 
-func (o GetSensitiveDataModelSensitiveSchemasResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetSensitiveDataModelSensitiveSchemasResult] {
-	return pulumix.Output[GetSensitiveDataModelSensitiveSchemasResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSensitiveDataModelSensitiveSchemasResultOutput) Filters() GetSensitiveDataModelSensitiveSchemasFilterArrayOutput {
 	return o.ApplyT(func(v GetSensitiveDataModelSensitiveSchemasResult) []GetSensitiveDataModelSensitiveSchemasFilter {
 		return v.Filters
@@ -127,8 +120,8 @@ func (o GetSensitiveDataModelSensitiveSchemasResultOutput) Filters() GetSensitiv
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetSensitiveDataModelSensitiveSchemasResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSensitiveDataModelSensitiveSchemasResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetSensitiveDataModelSensitiveSchemasResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSensitiveDataModelSensitiveSchemasResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The database schema that contains the sensitive column.

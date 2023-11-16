@@ -69,12 +69,12 @@ export interface GetManagementAgentImagesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly installType?: string;
     /**
      * The list of management_agent_images.
      */
-    readonly managementAgentImages: outputs.ManagementAgent.GetManagementAgentImagesManagementAgentImage[];
+    readonly managementAgentImages?: outputs.ManagementAgent.GetManagementAgentImagesManagementAgentImage[];
     readonly name?: string;
     /**
      * The current state of Management Agent Image

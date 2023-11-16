@@ -110,31 +110,31 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// The OCID of the tenancy containing the network source. The tenancy is the root compartment.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// The description you assign to the network source. Does not have to be unique, and it's changeable.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The OCID of the network source.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The detailed status of INACTIVE lifecycleState.
         /// </summary>
-        public readonly string InactiveState;
+        public readonly string? InactiveState;
         /// <summary>
         /// The name you assign to the network source during creation. The name must be unique across the tenancy and cannot be changed.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         public readonly string NetworkSourceId;
         /// <summary>
         /// A list of allowed public IP addresses and CIDR ranges.
@@ -147,11 +147,11 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// The network source object's current state. After creating a network source, make sure its `lifecycleState` changes from CREATING to ACTIVE before using it.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// Date and time the group was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// A list of allowed VCN OCID and IP range pairs. Example:`"vcnId": "ocid1.vcn.oc1.iad.aaaaaaaaexampleuniqueID", "ipRanges": [ "129.213.39.0/24" ]`
         /// </summary>
@@ -159,19 +159,19 @@ namespace Pulumi.Oci.Identity
 
         [OutputConstructor]
         private GetNetworkSourceResult(
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string description,
+            string? description,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            string inactiveState,
+            string? inactiveState,
 
-            string name,
+            string? name,
 
             string networkSourceId,
 
@@ -179,9 +179,9 @@ namespace Pulumi.Oci.Identity
 
             ImmutableArray<string> services,
 
-            string state,
+            string? state,
 
-            string timeCreated,
+            string? timeCreated,
 
             ImmutableArray<Outputs.GetNetworkSourceVirtualSourceListResult> virtualSourceLists)
         {

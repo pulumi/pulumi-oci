@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Fleet Advanced Feature Configuration resource in Oracle Cloud Infrastructure Jms service.
@@ -62,14 +61,14 @@ type GetFleetAdvancedFeatureConfigurationResult struct {
 	// AdvancedUsageTracking configuration
 	AdvancedUsageTrackings []GetFleetAdvancedFeatureConfigurationAdvancedUsageTracking `pulumi:"advancedUsageTrackings"`
 	// Bucket name required to store JFR and related data.
-	AnalyticBucketName string `pulumi:"analyticBucketName"`
+	AnalyticBucketName *string `pulumi:"analyticBucketName"`
 	// Namespace for the Fleet advanced feature.
-	AnalyticNamespace string `pulumi:"analyticNamespace"`
+	AnalyticNamespace *string `pulumi:"analyticNamespace"`
 	// CryptoEventAnalysis configuration
 	CryptoEventAnalyses []GetFleetAdvancedFeatureConfigurationCryptoEventAnalysis `pulumi:"cryptoEventAnalyses"`
 	FleetId             string                                                    `pulumi:"fleetId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// JavaMigrationAnalysis configuration
 	JavaMigrationAnalyses []GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysis `pulumi:"javaMigrationAnalyses"`
 	// JfrRecording configuration
@@ -79,7 +78,7 @@ type GetFleetAdvancedFeatureConfigurationResult struct {
 	// Performance tuning analysis configuration
 	PerformanceTuningAnalyses []GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysis `pulumi:"performanceTuningAnalyses"`
 	// The date and time of the last modification to the Fleet Agent Configuration (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-	TimeLastModified string `pulumi:"timeLastModified"`
+	TimeLastModified *string `pulumi:"timeLastModified"`
 }
 
 func GetFleetAdvancedFeatureConfigurationOutput(ctx *pulumi.Context, args GetFleetAdvancedFeatureConfigurationOutputArgs, opts ...pulumi.InvokeOption) GetFleetAdvancedFeatureConfigurationResultOutput {
@@ -120,12 +119,6 @@ func (o GetFleetAdvancedFeatureConfigurationResultOutput) ToGetFleetAdvancedFeat
 	return o
 }
 
-func (o GetFleetAdvancedFeatureConfigurationResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetFleetAdvancedFeatureConfigurationResult] {
-	return pulumix.Output[GetFleetAdvancedFeatureConfigurationResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // AdvancedUsageTracking configuration
 func (o GetFleetAdvancedFeatureConfigurationResultOutput) AdvancedUsageTrackings() GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingArrayOutput {
 	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationResult) []GetFleetAdvancedFeatureConfigurationAdvancedUsageTracking {
@@ -134,13 +127,13 @@ func (o GetFleetAdvancedFeatureConfigurationResultOutput) AdvancedUsageTrackings
 }
 
 // Bucket name required to store JFR and related data.
-func (o GetFleetAdvancedFeatureConfigurationResultOutput) AnalyticBucketName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationResult) string { return v.AnalyticBucketName }).(pulumi.StringOutput)
+func (o GetFleetAdvancedFeatureConfigurationResultOutput) AnalyticBucketName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationResult) *string { return v.AnalyticBucketName }).(pulumi.StringPtrOutput)
 }
 
 // Namespace for the Fleet advanced feature.
-func (o GetFleetAdvancedFeatureConfigurationResultOutput) AnalyticNamespace() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationResult) string { return v.AnalyticNamespace }).(pulumi.StringOutput)
+func (o GetFleetAdvancedFeatureConfigurationResultOutput) AnalyticNamespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationResult) *string { return v.AnalyticNamespace }).(pulumi.StringPtrOutput)
 }
 
 // CryptoEventAnalysis configuration
@@ -155,8 +148,8 @@ func (o GetFleetAdvancedFeatureConfigurationResultOutput) FleetId() pulumi.Strin
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetFleetAdvancedFeatureConfigurationResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetFleetAdvancedFeatureConfigurationResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // JavaMigrationAnalysis configuration
@@ -188,8 +181,8 @@ func (o GetFleetAdvancedFeatureConfigurationResultOutput) PerformanceTuningAnaly
 }
 
 // The date and time of the last modification to the Fleet Agent Configuration (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-func (o GetFleetAdvancedFeatureConfigurationResultOutput) TimeLastModified() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationResult) string { return v.TimeLastModified }).(pulumi.StringOutput)
+func (o GetFleetAdvancedFeatureConfigurationResultOutput) TimeLastModified() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationResult) *string { return v.TimeLastModified }).(pulumi.StringPtrOutput)
 }
 
 func init() {

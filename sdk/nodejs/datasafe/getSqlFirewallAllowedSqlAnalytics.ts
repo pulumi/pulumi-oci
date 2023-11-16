@@ -93,12 +93,12 @@ export interface GetSqlFirewallAllowedSqlAnalyticsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly scimQuery?: string;
     /**
      * The list of sql_firewall_allowed_sql_analytics_collection.
      */
-    readonly sqlFirewallAllowedSqlAnalyticsCollections: outputs.DataSafe.GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollection[];
+    readonly sqlFirewallAllowedSqlAnalyticsCollections?: outputs.DataSafe.GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollection[];
 }
 /**
  * This data source provides the list of Sql Firewall Allowed Sql Analytics in Oracle Cloud Infrastructure Data Safe service.

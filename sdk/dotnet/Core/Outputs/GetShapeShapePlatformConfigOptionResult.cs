@@ -22,7 +22,7 @@ namespace Pulumi.Oci.Core.Outputs
         public readonly ImmutableArray<Outputs.GetShapeShapePlatformConfigOptionSecureBootOptionResult> SecureBootOptions;
         public readonly ImmutableArray<Outputs.GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptionResult> SymmetricMultiThreadingOptions;
         public readonly ImmutableArray<Outputs.GetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionResult> TrustedPlatformModuleOptions;
-        public readonly string Type;
+        public readonly string? Type;
         public readonly ImmutableArray<Outputs.GetShapeShapePlatformConfigOptionVirtualInstructionsOptionResult> VirtualInstructionsOptions;
 
         [OutputConstructor]
@@ -45,7 +45,7 @@ namespace Pulumi.Oci.Core.Outputs
 
             ImmutableArray<Outputs.GetShapeShapePlatformConfigOptionTrustedPlatformModuleOptionResult> trustedPlatformModuleOptions,
 
-            string type,
+            string? type,
 
             ImmutableArray<Outputs.GetShapeShapePlatformConfigOptionVirtualInstructionsOptionResult> virtualInstructionsOptions)
         {

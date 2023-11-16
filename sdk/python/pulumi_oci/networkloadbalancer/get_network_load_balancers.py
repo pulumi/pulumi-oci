@@ -46,17 +46,11 @@ class GetNetworkLoadBalancersResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the network load balancer.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A user-friendly name, which does not have to be unique, and can be changed.  Example: `example_load_balancer`
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -66,7 +60,7 @@ class GetNetworkLoadBalancersResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -74,18 +68,12 @@ class GetNetworkLoadBalancersResult:
 
     @property
     @pulumi.getter(name="networkLoadBalancerCollections")
-    def network_load_balancer_collections(self) -> Sequence['outputs.GetNetworkLoadBalancersNetworkLoadBalancerCollectionResult']:
-        """
-        The list of network_load_balancer_collection.
-        """
+    def network_load_balancer_collections(self) -> Optional[Sequence['outputs.GetNetworkLoadBalancersNetworkLoadBalancerCollectionResult']]:
         return pulumi.get(self, "network_load_balancer_collections")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the network load balancer.
-        """
         return pulumi.get(self, "state")
 
 
@@ -109,25 +97,7 @@ def get_network_load_balancers(compartment_id: Optional[str] = None,
                                state: Optional[str] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNetworkLoadBalancersResult:
     """
-    This data source provides the list of Network Load Balancers in Oracle Cloud Infrastructure Network Load Balancer service.
-
-    Returns a list of network load balancers.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_network_load_balancers = oci.NetworkLoadBalancer.get_network_load_balancers(compartment_id=var["compartment_id"],
-        display_name=var["network_load_balancer_display_name"],
-        state=var["network_load_balancer_state"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the network load balancers to list.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str state: A filter to return only resources that match the given lifecycle state.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -153,24 +123,6 @@ def get_network_load_balancers_output(compartment_id: Optional[pulumi.Input[str]
                                       state: Optional[pulumi.Input[Optional[str]]] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNetworkLoadBalancersResult]:
     """
-    This data source provides the list of Network Load Balancers in Oracle Cloud Infrastructure Network Load Balancer service.
-
-    Returns a list of network load balancers.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_network_load_balancers = oci.NetworkLoadBalancer.get_network_load_balancers(compartment_id=var["compartment_id"],
-        display_name=var["network_load_balancer_display_name"],
-        state=var["network_load_balancer_state"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the network load balancers to list.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str state: A filter to return only resources that match the given lifecycle state.
+    Use this data source to access information about an existing resource.
     """
     ...

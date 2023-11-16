@@ -16,23 +16,23 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database connector.
         /// </summary>
-        public readonly string ConnectorId;
+        public readonly string? ConnectorId;
         /// <summary>
         /// The status of the Database Management service.
         /// </summary>
-        public readonly string DatabaseManagementStatus;
+        public readonly string? DatabaseManagementStatus;
         /// <summary>
         /// The Oracle license model that applies to the external database.
         /// </summary>
-        public readonly string LicenseModel;
+        public readonly string? LicenseModel;
 
         [OutputConstructor]
         private GetExternalDatabasesExternalDatabaseCollectionItemDbManagementConfigResult(
-            string connectorId,
+            string? connectorId,
 
-            string databaseManagementStatus,
+            string? databaseManagementStatus,
 
-            string licenseModel)
+            string? licenseModel)
         {
             ConnectorId = connectorId;
             DatabaseManagementStatus = databaseManagementStatus;

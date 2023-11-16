@@ -19,7 +19,7 @@ public final class GetAcceptedAgreementsResult {
      * @return The list of accepted_agreements.
      * 
      */
-    private List<GetAcceptedAgreementsAcceptedAgreement> acceptedAgreements;
+    private @Nullable List<GetAcceptedAgreementsAcceptedAgreement> acceptedAgreements;
     /**
      * @return The unique identifier for the compartment where the agreement was accepted.
      * 
@@ -35,7 +35,7 @@ public final class GetAcceptedAgreementsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The unique identifier for the listing associated with the agreement.
      * 
@@ -56,7 +56,7 @@ public final class GetAcceptedAgreementsResult {
      * 
      */
     public List<GetAcceptedAgreementsAcceptedAgreement> acceptedAgreements() {
-        return this.acceptedAgreements;
+        return this.acceptedAgreements == null ? List.of() : this.acceptedAgreements;
     }
     /**
      * @return The unique identifier for the compartment where the agreement was accepted.
@@ -79,8 +79,8 @@ public final class GetAcceptedAgreementsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The unique identifier for the listing associated with the agreement.
@@ -107,11 +107,11 @@ public final class GetAcceptedAgreementsResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String acceptedAgreementId;
-        private List<GetAcceptedAgreementsAcceptedAgreement> acceptedAgreements;
+        private @Nullable List<GetAcceptedAgreementsAcceptedAgreement> acceptedAgreements;
         private String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetAcceptedAgreementsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String listingId;
         private @Nullable String packageVersion;
         public Builder() {}
@@ -133,8 +133,8 @@ public final class GetAcceptedAgreementsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder acceptedAgreements(List<GetAcceptedAgreementsAcceptedAgreement> acceptedAgreements) {
-            this.acceptedAgreements = Objects.requireNonNull(acceptedAgreements);
+        public Builder acceptedAgreements(@Nullable List<GetAcceptedAgreementsAcceptedAgreement> acceptedAgreements) {
+            this.acceptedAgreements = acceptedAgreements;
             return this;
         }
         public Builder acceptedAgreements(GetAcceptedAgreementsAcceptedAgreement... acceptedAgreements) {
@@ -159,8 +159,8 @@ public final class GetAcceptedAgreementsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

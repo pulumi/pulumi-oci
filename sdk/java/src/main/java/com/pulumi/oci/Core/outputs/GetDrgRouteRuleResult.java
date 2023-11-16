@@ -9,6 +9,8 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDrgRouteRuleResult {
@@ -16,83 +18,83 @@ public final class GetDrgRouteRuleResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the DRG is in. The DRG route table is always in the same compartment as the DRG.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG the DRG that contains this route table.
      * 
      */
-    private String drgId;
+    private @Nullable String drgId;
     private String drgRouteTableId;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the import route distribution used to specify how incoming route advertisements from referenced attachments are inserted into the DRG route table.
      * 
      */
-    private String importDrgRouteDistributionId;
+    private @Nullable String importDrgRouteDistributionId;
     /**
      * @return If you want traffic to be routed using ECMP across your virtual circuits or IPSec tunnels to your on-premises network, enable ECMP on the DRG route table to which these attachments import routes.
      * 
      */
-    private Boolean isEcmpEnabled;
-    private Boolean removeImportTrigger;
+    private @Nullable Boolean isEcmpEnabled;
+    private @Nullable Boolean removeImportTrigger;
     /**
      * @return The DRG route table&#39;s current state.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The date and time the DRG route table was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
 
     private GetDrgRouteRuleResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the DRG is in. The DRG route table is always in the same compartment as the DRG.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG the DRG that contains this route table.
      * 
      */
-    public String drgId() {
-        return this.drgId;
+    public Optional<String> drgId() {
+        return Optional.ofNullable(this.drgId);
     }
     public String drgRouteTableId() {
         return this.drgRouteTableId;
@@ -102,45 +104,45 @@ public final class GetDrgRouteRuleResult {
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the import route distribution used to specify how incoming route advertisements from referenced attachments are inserted into the DRG route table.
      * 
      */
-    public String importDrgRouteDistributionId() {
-        return this.importDrgRouteDistributionId;
+    public Optional<String> importDrgRouteDistributionId() {
+        return Optional.ofNullable(this.importDrgRouteDistributionId);
     }
     /**
      * @return If you want traffic to be routed using ECMP across your virtual circuits or IPSec tunnels to your on-premises network, enable ECMP on the DRG route table to which these attachments import routes.
      * 
      */
-    public Boolean isEcmpEnabled() {
-        return this.isEcmpEnabled;
+    public Optional<Boolean> isEcmpEnabled() {
+        return Optional.ofNullable(this.isEcmpEnabled);
     }
-    public Boolean removeImportTrigger() {
-        return this.removeImportTrigger;
+    public Optional<Boolean> removeImportTrigger() {
+        return Optional.ofNullable(this.removeImportTrigger);
     }
     /**
      * @return The DRG route table&#39;s current state.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The date and time the DRG route table was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
 
     public static Builder builder() {
@@ -152,18 +154,18 @@ public final class GetDrgRouteRuleResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private Map<String,Object> definedTags;
-        private String displayName;
-        private String drgId;
+        private @Nullable String compartmentId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String displayName;
+        private @Nullable String drgId;
         private String drgRouteTableId;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private String importDrgRouteDistributionId;
-        private Boolean isEcmpEnabled;
-        private Boolean removeImportTrigger;
-        private String state;
-        private String timeCreated;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable String importDrgRouteDistributionId;
+        private @Nullable Boolean isEcmpEnabled;
+        private @Nullable Boolean removeImportTrigger;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
         public Builder() {}
         public Builder(GetDrgRouteRuleResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -182,23 +184,23 @@ public final class GetDrgRouteRuleResult {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder drgId(String drgId) {
-            this.drgId = Objects.requireNonNull(drgId);
+        public Builder drgId(@Nullable String drgId) {
+            this.drgId = drgId;
             return this;
         }
         @CustomType.Setter
@@ -207,38 +209,38 @@ public final class GetDrgRouteRuleResult {
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder importDrgRouteDistributionId(String importDrgRouteDistributionId) {
-            this.importDrgRouteDistributionId = Objects.requireNonNull(importDrgRouteDistributionId);
+        public Builder importDrgRouteDistributionId(@Nullable String importDrgRouteDistributionId) {
+            this.importDrgRouteDistributionId = importDrgRouteDistributionId;
             return this;
         }
         @CustomType.Setter
-        public Builder isEcmpEnabled(Boolean isEcmpEnabled) {
-            this.isEcmpEnabled = Objects.requireNonNull(isEcmpEnabled);
+        public Builder isEcmpEnabled(@Nullable Boolean isEcmpEnabled) {
+            this.isEcmpEnabled = isEcmpEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder removeImportTrigger(Boolean removeImportTrigger) {
-            this.removeImportTrigger = Objects.requireNonNull(removeImportTrigger);
+        public Builder removeImportTrigger(@Nullable Boolean removeImportTrigger) {
+            this.removeImportTrigger = removeImportTrigger;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetDrgRouteRuleResult build() {

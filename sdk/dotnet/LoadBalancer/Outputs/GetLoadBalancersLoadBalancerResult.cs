@@ -16,23 +16,23 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the load balancers to list.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// A filter to return only resources that match the given display name exactly.  Example: `example_load_balancer`
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// Ocid of the pre-created public IP. That should be attahed to this load balancer.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// An array of IP addresses.
         /// </summary>
@@ -41,11 +41,11 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
         /// An array of IP addresses. Deprecated: use ip_address_details instead.
         /// </summary>
         public readonly ImmutableArray<string> IpAddresses;
-        public readonly string IpMode;
+        public readonly string? IpMode;
         /// <summary>
         /// Whether the load balancer has a VCN-local (private) IP address.
         /// </summary>
-        public readonly bool IsPrivate;
+        public readonly bool? IsPrivate;
         /// <summary>
         /// An array of NSG [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the load balancer.
         /// </summary>
@@ -54,7 +54,7 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
         /// <summary>
         /// A template that determines the total pre-provisioned bandwidth (ingress plus egress). To get a list of available shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerShape/ListShapes) operation.  Example: `100Mbps`
         /// </summary>
-        public readonly string Shape;
+        public readonly string? Shape;
         /// <summary>
         /// The configuration details to update load balancer to a different shape.
         /// </summary>
@@ -62,7 +62,7 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
         /// <summary>
         /// A filter to return only resources that match the given lifecycle state.  Example: `SUCCEEDED`
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// An array of subnet [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
@@ -70,47 +70,47 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
         /// <summary>
         /// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, object>? SystemTags;
         /// <summary>
         /// The date and time the load balancer was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
 
         [OutputConstructor]
         private GetLoadBalancersLoadBalancerResult(
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetLoadBalancersLoadBalancerIpAddressDetailResult> ipAddressDetails,
 
             ImmutableArray<string> ipAddresses,
 
-            string ipMode,
+            string? ipMode,
 
-            bool isPrivate,
+            bool? isPrivate,
 
             ImmutableArray<string> networkSecurityGroupIds,
 
             ImmutableArray<Outputs.GetLoadBalancersLoadBalancerReservedIpResult> reservedIps,
 
-            string shape,
+            string? shape,
 
             ImmutableArray<Outputs.GetLoadBalancersLoadBalancerShapeDetailResult> shapeDetails,
 
-            string state,
+            string? state,
 
             ImmutableArray<string> subnetIds,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, object>? systemTags,
 
-            string timeCreated)
+            string? timeCreated)
         {
             CompartmentId = compartmentId;
             DefinedTags = definedTags;

@@ -45,15 +45,15 @@ export interface GetNamespaceResult {
     /**
      * The is the tenancy ID
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * This indicates if the tenancy is onboarded to Logging Analytics
      */
-    readonly isOnboarded: boolean;
+    readonly isOnboarded?: boolean;
     /**
      * This is the namespace name of a tenancy
      */

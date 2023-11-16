@@ -47,80 +47,80 @@ export interface GetVirtualNodePoolResult {
     /**
      * The cluster the virtual node pool is associated with. A virtual node pool can only be associated with one cluster.
      */
-    readonly clusterId: string;
+    readonly clusterId?: string;
     /**
      * Compartment of the virtual node pool.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * Display name of the virtual node pool. This is a non-unique value.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The OCID of the virtual node pool.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Initial labels that will be added to the Kubernetes Virtual Node object when it registers. This is the same as virtualNodePool resources.
      */
-    readonly initialVirtualNodeLabels: outputs.ContainerEngine.GetVirtualNodePoolInitialVirtualNodeLabel[];
+    readonly initialVirtualNodeLabels?: outputs.ContainerEngine.GetVirtualNodePoolInitialVirtualNodeLabel[];
     /**
      * The version of Kubernetes running on the nodes in the node pool.
      */
-    readonly kubernetesVersion: string;
+    readonly kubernetesVersion?: string;
     /**
      * Details about the state of the Virtual Node Pool.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * List of network security group IDs applied to the Pod VNIC.
      */
-    readonly nsgIds: string[];
+    readonly nsgIds?: string[];
     /**
      * The list of placement configurations which determines where Virtual Nodes will be provisioned across as it relates to the subnet and availability domains. The size attribute determines how many we evenly spread across these placement configurations
      */
-    readonly placementConfigurations: outputs.ContainerEngine.GetVirtualNodePoolPlacementConfiguration[];
+    readonly placementConfigurations?: outputs.ContainerEngine.GetVirtualNodePoolPlacementConfiguration[];
     /**
      * The pod configuration for pods run on virtual nodes of this virtual node pool.
      */
-    readonly podConfigurations: outputs.ContainerEngine.GetVirtualNodePoolPodConfiguration[];
+    readonly podConfigurations?: outputs.ContainerEngine.GetVirtualNodePoolPodConfiguration[];
     /**
      * The number of Virtual Nodes that should be in the Virtual Node Pool. The placement configurations determine where these virtual nodes are placed.
      */
-    readonly size: number;
+    readonly size?: number;
     /**
      * The state of the Virtual Node Pool.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * A taint is a collection of <key, value, effect>. These taints will be applied to the Virtual Nodes of this Virtual Node Pool for Kubernetes scheduling.
      */
-    readonly taints: outputs.ContainerEngine.GetVirtualNodePoolTaint[];
+    readonly taints?: outputs.ContainerEngine.GetVirtualNodePoolTaint[];
     /**
      * The time the virtual node pool was created.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The time the virtual node pool was updated.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
     readonly virtualNodePoolId: string;
     /**
      * The tags associated to the virtual nodes in this virtual node pool.
      */
-    readonly virtualNodeTags: outputs.ContainerEngine.GetVirtualNodePoolVirtualNodeTag[];
+    readonly virtualNodeTags?: outputs.ContainerEngine.GetVirtualNodePoolVirtualNodeTag[];
 }
 /**
  * This data source provides details about a specific Virtual Node Pool resource in Oracle Cloud Infrastructure Container Engine service.

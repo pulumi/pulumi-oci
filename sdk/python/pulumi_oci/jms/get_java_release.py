@@ -65,39 +65,27 @@ class GetJavaReleaseResult:
 
     @property
     @pulumi.getter(name="artifactContentTypes")
-    def artifact_content_types(self) -> Sequence[str]:
-        """
-        Artifact content types for the Java version.
-        """
+    def artifact_content_types(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "artifact_content_types")
 
     @property
     @pulumi.getter
-    def artifacts(self) -> Sequence['outputs.GetJavaReleaseArtifactResult']:
-        """
-        List of Java artifacts.
-        """
+    def artifacts(self) -> Optional[Sequence['outputs.GetJavaReleaseArtifactResult']]:
         return pulumi.get(self, "artifacts")
 
     @property
     @pulumi.getter(name="familyDetails")
-    def family_details(self) -> Sequence['outputs.GetJavaReleaseFamilyDetailResult']:
-        """
-        Metadata associated with a specific Java release family. A Java release family is typically a major version in the Java version identifier.
-        """
+    def family_details(self) -> Optional[Sequence['outputs.GetJavaReleaseFamilyDetailResult']]:
         return pulumi.get(self, "family_details")
 
     @property
     @pulumi.getter(name="familyVersion")
-    def family_version(self) -> str:
-        """
-        Java release family identifier.
-        """
+    def family_version(self) -> Optional[str]:
         return pulumi.get(self, "family_version")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -105,66 +93,42 @@ class GetJavaReleaseResult:
 
     @property
     @pulumi.getter(name="licenseDetails")
-    def license_details(self) -> Sequence['outputs.GetJavaReleaseLicenseDetailResult']:
-        """
-        Information about a license type for Java.
-        """
+    def license_details(self) -> Optional[Sequence['outputs.GetJavaReleaseLicenseDetailResult']]:
         return pulumi.get(self, "license_details")
 
     @property
     @pulumi.getter(name="licenseType")
-    def license_type(self) -> str:
-        """
-        License type for the Java version.
-        """
+    def license_type(self) -> Optional[str]:
         return pulumi.get(self, "license_type")
 
     @property
     @pulumi.getter(name="parentReleaseVersion")
-    def parent_release_version(self) -> str:
-        """
-        Parent Java release version identifier. This is applicable for BPR releases.
-        """
+    def parent_release_version(self) -> Optional[str]:
         return pulumi.get(self, "parent_release_version")
 
     @property
     @pulumi.getter(name="releaseDate")
-    def release_date(self) -> str:
-        """
-        The release date of the Java version (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-        """
+    def release_date(self) -> Optional[str]:
         return pulumi.get(self, "release_date")
 
     @property
     @pulumi.getter(name="releaseNotesUrl")
-    def release_notes_url(self) -> str:
-        """
-        Release notes associated with the Java version.
-        """
+    def release_notes_url(self) -> Optional[str]:
         return pulumi.get(self, "release_notes_url")
 
     @property
     @pulumi.getter(name="releaseType")
-    def release_type(self) -> str:
-        """
-        Release category of the Java version.
-        """
+    def release_type(self) -> Optional[str]:
         return pulumi.get(self, "release_type")
 
     @property
     @pulumi.getter(name="releaseVersion")
     def release_version(self) -> str:
-        """
-        Java release version identifier.
-        """
         return pulumi.get(self, "release_version")
 
     @property
     @pulumi.getter(name="securityStatus")
-    def security_status(self) -> str:
-        """
-        The security status of the Java version.
-        """
+    def security_status(self) -> Optional[str]:
         return pulumi.get(self, "security_status")
 
 
@@ -192,21 +156,7 @@ class AwaitableGetJavaReleaseResult(GetJavaReleaseResult):
 def get_java_release(release_version: Optional[str] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetJavaReleaseResult:
     """
-    This data source provides details about a specific Java Release resource in Oracle Cloud Infrastructure Jms service.
-
-    Returns detail of a Java release.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_java_release = oci.Jms.get_java_release(release_version=var["java_release_release_version"])
-    ```
-
-
-    :param str release_version: Unique Java release version identifier
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['releaseVersion'] = release_version
@@ -233,20 +183,6 @@ def get_java_release(release_version: Optional[str] = None,
 def get_java_release_output(release_version: Optional[pulumi.Input[str]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetJavaReleaseResult]:
     """
-    This data source provides details about a specific Java Release resource in Oracle Cloud Infrastructure Jms service.
-
-    Returns detail of a Java release.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_java_release = oci.Jms.get_java_release(release_version=var["java_release_release_version"])
-    ```
-
-
-    :param str release_version: Unique Java release version identifier
+    Use this data source to access information about an existing resource.
     """
     ...

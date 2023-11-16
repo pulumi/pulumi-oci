@@ -52,7 +52,7 @@ class GetSubscriptionsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -65,10 +65,7 @@ class GetSubscriptionsResult:
 
     @property
     @pulumi.getter(name="subscriptionCollections")
-    def subscription_collections(self) -> Sequence['outputs.GetSubscriptionsSubscriptionCollectionResult']:
-        """
-        The list of subscription_collection.
-        """
+    def subscription_collections(self) -> Optional[Sequence['outputs.GetSubscriptionsSubscriptionCollectionResult']]:
         return pulumi.get(self, "subscription_collections")
 
 
@@ -90,23 +87,7 @@ def get_subscriptions(compartment_id: Optional[str] = None,
                       osp_home_region: Optional[str] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSubscriptionsResult:
     """
-    This data source provides the list of Subscriptions in Oracle Cloud Infrastructure Osp Gateway service.
-
-    Get the subscription data for the compartment
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_subscriptions = oci.OspGateway.get_subscriptions(compartment_id=var["compartment_id"],
-        osp_home_region=var["subscription_osp_home_region"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str osp_home_region: The home region's public name of the logged in user.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -129,22 +110,6 @@ def get_subscriptions_output(compartment_id: Optional[pulumi.Input[str]] = None,
                              osp_home_region: Optional[pulumi.Input[str]] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSubscriptionsResult]:
     """
-    This data source provides the list of Subscriptions in Oracle Cloud Infrastructure Osp Gateway service.
-
-    Get the subscription data for the compartment
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_subscriptions = oci.OspGateway.get_subscriptions(compartment_id=var["compartment_id"],
-        osp_home_region=var["subscription_osp_home_region"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str osp_home_region: The home region's public name of the logged in user.
+    Use this data source to access information about an existing resource.
     """
     ...

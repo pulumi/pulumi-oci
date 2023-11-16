@@ -96,9 +96,6 @@ class GetUserAssessmentProfilesResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment that contains the user assessment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -123,7 +120,7 @@ class GetUserAssessmentProfilesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -142,9 +139,6 @@ class GetUserAssessmentProfilesResult:
     @property
     @pulumi.getter(name="isUserCreated")
     def is_user_created(self) -> Optional[bool]:
-        """
-        Represents if the profile is created by user.
-        """
         return pulumi.get(self, "is_user_created")
 
     @property
@@ -160,25 +154,16 @@ class GetUserAssessmentProfilesResult:
     @property
     @pulumi.getter(name="passwordVerificationFunction")
     def password_verification_function(self) -> Optional[str]:
-        """
-        Name of the PL/SQL that can be used for password verification.
-        """
         return pulumi.get(self, "password_verification_function")
 
     @property
     @pulumi.getter(name="profileName")
     def profile_name(self) -> Optional[str]:
-        """
-        The name of the profile.
-        """
         return pulumi.get(self, "profile_name")
 
     @property
     @pulumi.getter
-    def profiles(self) -> Sequence['outputs.GetUserAssessmentProfilesProfileResult']:
-        """
-        The list of profiles.
-        """
+    def profiles(self) -> Optional[Sequence['outputs.GetUserAssessmentProfilesProfileResult']]:
         return pulumi.get(self, "profiles")
 
     @property
@@ -194,17 +179,11 @@ class GetUserAssessmentProfilesResult:
     @property
     @pulumi.getter(name="targetId")
     def target_id(self) -> Optional[str]:
-        """
-        The OCID of the target database.
-        """
         return pulumi.get(self, "target_id")
 
     @property
     @pulumi.getter(name="userAssessmentId")
     def user_assessment_id(self) -> str:
-        """
-        The OCID of the latest user assessment corresponding to the target under consideration. A compartment  type assessment can also be passed to profiles from all the targets from the corresponding compartment.
-        """
         return pulumi.get(self, "user_assessment_id")
 
     @property
@@ -268,69 +247,7 @@ def get_user_assessment_profiles(access_level: Optional[str] = None,
                                  user_count_less_than: Optional[str] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetUserAssessmentProfilesResult:
     """
-    This data source provides the list of User Assessment Profiles in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets a list of user profiles containing the profile details along with the target id and user counts.
-
-    The ListProfiles operation returns only the profiles belonging to a certain target. If compartment type user assessment
-    id is provided, then profile information for all the targets belonging to the pertaining compartment is returned.
-    The list does not include any subcompartments of the compartment under consideration.
-
-    The parameter 'accessLevel' specifies whether to return only those compartments for which the requestor has
-    INSPECT permissions on at least one resource directly or indirectly (ACCESSIBLE) (the resource can be in a
-    subcompartment) or to return Not Authorized if Principal doesn't have access to even one of the child compartments.
-    This is valid only when 'compartmentIdInSubtree' is set to 'true'.
-
-    The parameter 'compartmentIdInSubtree' applies when you perform ListUserProfiles on the 'compartmentId' belonging
-    to the assessmentId passed and when it is set to true, the entire hierarchy of compartments can be returned.
-    To get a full list of all compartments and subcompartments in the tenancy (root compartment), set the parameter
-    'compartmentIdInSubtree' to true and 'accessLevel' to ACCESSIBLE.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_user_assessment_profiles = oci.DataSafe.get_user_assessment_profiles(compartment_id=var["compartment_id"],
-        user_assessment_id=oci_data_safe_user_assessment["test_user_assessment"]["id"],
-        access_level=var["user_assessment_profile_access_level"],
-        compartment_id_in_subtree=var["user_assessment_profile_compartment_id_in_subtree"],
-        failed_login_attempts_greater_than_or_equal=var["user_assessment_profile_failed_login_attempts_greater_than_or_equal"],
-        failed_login_attempts_less_than=var["user_assessment_profile_failed_login_attempts_less_than"],
-        inactive_account_time_greater_than_or_equal=var["user_assessment_profile_inactive_account_time_greater_than_or_equal"],
-        inactive_account_time_less_than=var["user_assessment_profile_inactive_account_time_less_than"],
-        is_user_created=var["user_assessment_profile_is_user_created"],
-        password_lock_time_greater_than_or_equal=var["user_assessment_profile_password_lock_time_greater_than_or_equal"],
-        password_lock_time_less_than=var["user_assessment_profile_password_lock_time_less_than"],
-        password_verification_function=var["user_assessment_profile_password_verification_function"],
-        profile_name=oci_optimizer_profile["test_profile"]["name"],
-        sessions_per_user_greater_than_or_equal=var["user_assessment_profile_sessions_per_user_greater_than_or_equal"],
-        sessions_per_user_less_than=var["user_assessment_profile_sessions_per_user_less_than"],
-        target_id=oci_cloud_guard_target["test_target"]["id"],
-        user_count_greater_than_or_equal=var["user_assessment_profile_user_count_greater_than_or_equal"],
-        user_count_less_than=var["user_assessment_profile_user_count_less_than"])
-    ```
-
-
-    :param str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
-    :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
-    :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
-    :param str failed_login_attempts_greater_than_or_equal: An optional filter to return the profiles having allow failed login attempts number greater than or equal to the provided value. String value is used for accommodating the "UNLIMITED" and "DEFAULT" values.
-    :param str failed_login_attempts_less_than: An optional filter to return the profiles having failed login attempts number less than the provided value. String value is used for accommodating the "UNLIMITED" and "DEFAULT" values.
-    :param str inactive_account_time_greater_than_or_equal: An optional filter to return the profiles allowing inactive account time in days greater than or equal to the provided value. String value is used for accommodating the "UNLIMITED" and "DEFAULT" values.
-    :param str inactive_account_time_less_than: An optional filter to return the profiles  allowing inactive account time in days less than the provided value. String value is used for accommodating the "UNLIMITED" and "DEFAULT" values.
-    :param bool is_user_created: An optional filter to return the user created profiles.
-    :param str password_lock_time_greater_than_or_equal: An optional filter to return the profiles having password lock number greater than or equal to the provided value. String value is used for accommodating the "UNLIMITED" and "DEFAULT" values.
-    :param str password_lock_time_less_than: An optional filter to return the profiles having password lock number less than the provided value. String value is used for accommodating the "UNLIMITED" and "DEFAULT" values.
-    :param str password_verification_function: An optional filter to filter the profiles based on password verification function.
-    :param str profile_name: A filter to return only items that match the specified profile name.
-    :param str sessions_per_user_greater_than_or_equal: An optional filter to return the profiles permitting the user to spawn multiple sessions having count. greater than or equal to the provided value. String value is used for accommodating the "UNLIMITED" and "DEFAULT" values.
-    :param str sessions_per_user_less_than: An optional filter to return the profiles permitting the user to spawn multiple sessions having count less than the provided value. String value is used for accommodating the "UNLIMITED" and "DEFAULT" values.
-    :param str target_id: A filter to return only items related to a specific target OCID.
-    :param str user_assessment_id: The OCID of the user assessment.
-    :param str user_count_greater_than_or_equal: An optional filter to return the profiles having user count greater than or equal to the provided value.
-    :param str user_count_less_than: An optional filter to return the profiles having user count less than the provided value.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['accessLevel'] = access_level
@@ -401,68 +318,6 @@ def get_user_assessment_profiles_output(access_level: Optional[pulumi.Input[Opti
                                         user_count_less_than: Optional[pulumi.Input[Optional[str]]] = None,
                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetUserAssessmentProfilesResult]:
     """
-    This data source provides the list of User Assessment Profiles in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets a list of user profiles containing the profile details along with the target id and user counts.
-
-    The ListProfiles operation returns only the profiles belonging to a certain target. If compartment type user assessment
-    id is provided, then profile information for all the targets belonging to the pertaining compartment is returned.
-    The list does not include any subcompartments of the compartment under consideration.
-
-    The parameter 'accessLevel' specifies whether to return only those compartments for which the requestor has
-    INSPECT permissions on at least one resource directly or indirectly (ACCESSIBLE) (the resource can be in a
-    subcompartment) or to return Not Authorized if Principal doesn't have access to even one of the child compartments.
-    This is valid only when 'compartmentIdInSubtree' is set to 'true'.
-
-    The parameter 'compartmentIdInSubtree' applies when you perform ListUserProfiles on the 'compartmentId' belonging
-    to the assessmentId passed and when it is set to true, the entire hierarchy of compartments can be returned.
-    To get a full list of all compartments and subcompartments in the tenancy (root compartment), set the parameter
-    'compartmentIdInSubtree' to true and 'accessLevel' to ACCESSIBLE.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_user_assessment_profiles = oci.DataSafe.get_user_assessment_profiles(compartment_id=var["compartment_id"],
-        user_assessment_id=oci_data_safe_user_assessment["test_user_assessment"]["id"],
-        access_level=var["user_assessment_profile_access_level"],
-        compartment_id_in_subtree=var["user_assessment_profile_compartment_id_in_subtree"],
-        failed_login_attempts_greater_than_or_equal=var["user_assessment_profile_failed_login_attempts_greater_than_or_equal"],
-        failed_login_attempts_less_than=var["user_assessment_profile_failed_login_attempts_less_than"],
-        inactive_account_time_greater_than_or_equal=var["user_assessment_profile_inactive_account_time_greater_than_or_equal"],
-        inactive_account_time_less_than=var["user_assessment_profile_inactive_account_time_less_than"],
-        is_user_created=var["user_assessment_profile_is_user_created"],
-        password_lock_time_greater_than_or_equal=var["user_assessment_profile_password_lock_time_greater_than_or_equal"],
-        password_lock_time_less_than=var["user_assessment_profile_password_lock_time_less_than"],
-        password_verification_function=var["user_assessment_profile_password_verification_function"],
-        profile_name=oci_optimizer_profile["test_profile"]["name"],
-        sessions_per_user_greater_than_or_equal=var["user_assessment_profile_sessions_per_user_greater_than_or_equal"],
-        sessions_per_user_less_than=var["user_assessment_profile_sessions_per_user_less_than"],
-        target_id=oci_cloud_guard_target["test_target"]["id"],
-        user_count_greater_than_or_equal=var["user_assessment_profile_user_count_greater_than_or_equal"],
-        user_count_less_than=var["user_assessment_profile_user_count_less_than"])
-    ```
-
-
-    :param str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
-    :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
-    :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
-    :param str failed_login_attempts_greater_than_or_equal: An optional filter to return the profiles having allow failed login attempts number greater than or equal to the provided value. String value is used for accommodating the "UNLIMITED" and "DEFAULT" values.
-    :param str failed_login_attempts_less_than: An optional filter to return the profiles having failed login attempts number less than the provided value. String value is used for accommodating the "UNLIMITED" and "DEFAULT" values.
-    :param str inactive_account_time_greater_than_or_equal: An optional filter to return the profiles allowing inactive account time in days greater than or equal to the provided value. String value is used for accommodating the "UNLIMITED" and "DEFAULT" values.
-    :param str inactive_account_time_less_than: An optional filter to return the profiles  allowing inactive account time in days less than the provided value. String value is used for accommodating the "UNLIMITED" and "DEFAULT" values.
-    :param bool is_user_created: An optional filter to return the user created profiles.
-    :param str password_lock_time_greater_than_or_equal: An optional filter to return the profiles having password lock number greater than or equal to the provided value. String value is used for accommodating the "UNLIMITED" and "DEFAULT" values.
-    :param str password_lock_time_less_than: An optional filter to return the profiles having password lock number less than the provided value. String value is used for accommodating the "UNLIMITED" and "DEFAULT" values.
-    :param str password_verification_function: An optional filter to filter the profiles based on password verification function.
-    :param str profile_name: A filter to return only items that match the specified profile name.
-    :param str sessions_per_user_greater_than_or_equal: An optional filter to return the profiles permitting the user to spawn multiple sessions having count. greater than or equal to the provided value. String value is used for accommodating the "UNLIMITED" and "DEFAULT" values.
-    :param str sessions_per_user_less_than: An optional filter to return the profiles permitting the user to spawn multiple sessions having count less than the provided value. String value is used for accommodating the "UNLIMITED" and "DEFAULT" values.
-    :param str target_id: A filter to return only items related to a specific target OCID.
-    :param str user_assessment_id: The OCID of the user assessment.
-    :param str user_count_greater_than_or_equal: An optional filter to return the profiles having user count greater than or equal to the provided value.
-    :param str user_count_less_than: An optional filter to return the profiles having user count less than the provided value.
+    Use this data source to access information about an existing resource.
     """
     ...

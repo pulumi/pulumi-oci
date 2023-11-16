@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.MediaServices.outputs.GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMediaWorkflowJobFactsMediaWorkflowJobFactCollection {
-    private List<GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItem> items;
+    private @Nullable List<GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItem> items;
 
     private GetMediaWorkflowJobFactsMediaWorkflowJobFactCollection() {}
     public List<GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetMediaWorkflowJobFactsMediaWorkflowJobFactCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItem> items;
+        private @Nullable List<GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItem> items;
         public Builder() {}
         public Builder(GetMediaWorkflowJobFactsMediaWorkflowJobFactCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetMediaWorkflowJobFactsMediaWorkflowJobFactCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItem... items) {

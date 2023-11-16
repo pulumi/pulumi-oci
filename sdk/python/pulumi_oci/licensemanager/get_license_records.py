@@ -44,7 +44,7 @@ class GetLicenseRecordsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -52,18 +52,12 @@ class GetLicenseRecordsResult:
 
     @property
     @pulumi.getter(name="licenseRecordCollections")
-    def license_record_collections(self) -> Sequence['outputs.GetLicenseRecordsLicenseRecordCollectionResult']:
-        """
-        The list of license_record_collection.
-        """
+    def license_record_collections(self) -> Optional[Sequence['outputs.GetLicenseRecordsLicenseRecordCollectionResult']]:
         return pulumi.get(self, "license_record_collections")
 
     @property
     @pulumi.getter(name="productLicenseId")
     def product_license_id(self) -> str:
-        """
-        The product license [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) with which the license record is associated.
-        """
         return pulumi.get(self, "product_license_id")
 
 
@@ -83,21 +77,7 @@ def get_license_records(filters: Optional[Sequence[pulumi.InputType['GetLicenseR
                         product_license_id: Optional[str] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetLicenseRecordsResult:
     """
-    This data source provides the list of License Records in Oracle Cloud Infrastructure License Manager service.
-
-    Retrieves all license records for a given product license ID.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_license_records = oci.LicenseManager.get_license_records(product_license_id=oci_license_manager_product_license["test_product_license"]["id"])
-    ```
-
-
-    :param str product_license_id: Unique product license identifier.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -117,20 +97,6 @@ def get_license_records_output(filters: Optional[pulumi.Input[Optional[Sequence[
                                product_license_id: Optional[pulumi.Input[str]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetLicenseRecordsResult]:
     """
-    This data source provides the list of License Records in Oracle Cloud Infrastructure License Manager service.
-
-    Retrieves all license records for a given product license ID.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_license_records = oci.LicenseManager.get_license_records(product_license_id=oci_license_manager_product_license["test_product_license"]["id"])
-    ```
-
-
-    :param str product_license_id: Unique product license identifier.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -126,28 +126,28 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// The name of the substitution column.
         /// </summary>
-        public readonly string ColumnName;
+        public readonly string? ColumnName;
         /// <summary>
         /// The data type of the masking column.
         /// </summary>
-        public readonly string DataType;
-        public readonly string Id;
+        public readonly string? DataType;
+        public readonly string? Id;
         /// <summary>
         /// Indicates whether data masking is enabled for the masking column.
         /// </summary>
-        public readonly bool IsMaskingEnabled;
+        public readonly bool? IsMaskingEnabled;
         /// <summary>
         /// The unique key that identifies the masking column. It's numeric and unique within a masking policy.
         /// </summary>
-        public readonly string Key;
+        public readonly string? Key;
         /// <summary>
         /// Details about the current state of the masking column.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// The group of the masking column. All the columns in a group are masked together to ensure  that the masked data across these columns continue to retain the same logical relationship.  For more details, check &lt;a href=https://docs.oracle.com/en/cloud/paas/data-safe/udscs/group-masking1.html#GUID-755056B9-9540-48C0-9491-262A44A85037&gt;Group Masking in the Data Safe documentation.&lt;/a&gt;
         /// </summary>
-        public readonly string MaskingColumnGroup;
+        public readonly string? MaskingColumnGroup;
         public readonly string MaskingColumnKey;
         /// <summary>
         /// An array of masking formats assigned to the masking column.
@@ -160,49 +160,49 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// The name of the object (table or editioning view) that contains the database column.
         /// </summary>
-        public readonly string Object;
+        public readonly string? Object;
         /// <summary>
         /// The type of the object that contains the database column.
         /// </summary>
-        public readonly string ObjectType;
+        public readonly string? ObjectType;
         /// <summary>
         /// The name of the schema that contains the database column.
         /// </summary>
-        public readonly string SchemaName;
+        public readonly string? SchemaName;
         /// <summary>
         /// The OCID of the sensitive type associated with the masking column.
         /// </summary>
-        public readonly string SensitiveTypeId;
+        public readonly string? SensitiveTypeId;
         /// <summary>
         /// The current state of the masking column.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The date and time the masking column was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The date and time the masking column was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
 
         [OutputConstructor]
         private GetMaskingPoliciesMaskingColumnResult(
             ImmutableArray<string> childColumns,
 
-            string columnName,
+            string? columnName,
 
-            string dataType,
+            string? dataType,
 
-            string id,
+            string? id,
 
-            bool isMaskingEnabled,
+            bool? isMaskingEnabled,
 
-            string key,
+            string? key,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string maskingColumnGroup,
+            string? maskingColumnGroup,
 
             string maskingColumnKey,
 
@@ -210,19 +210,19 @@ namespace Pulumi.Oci.DataSafe
 
             string maskingPolicyId,
 
-            string @object,
+            string? @object,
 
-            string objectType,
+            string? objectType,
 
-            string schemaName,
+            string? schemaName,
 
-            string sensitiveTypeId,
+            string? sensitiveTypeId,
 
-            string state,
+            string? state,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated)
+            string? timeUpdated)
         {
             ChildColumns = childColumns;
             ColumnName = columnName;

@@ -17,6 +17,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -91,14 +92,14 @@ public class RedisCluster extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
@@ -119,42 +120,42 @@ public class RedisCluster extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * A message describing the current state in more detail. For example, the message might provide actionable information for a resource in `FAILED` state.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return A message describing the current state in more detail. For example, the message might provide actionable information for a resource in `FAILED` state.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * The collection of Redis cluster nodes.
      * 
      */
     @Export(name="nodeCollections", refs={List.class,RedisClusterNodeCollection.class}, tree="[0,1]")
-    private Output<List<RedisClusterNodeCollection>> nodeCollections;
+    private Output</* @Nullable */ List<RedisClusterNodeCollection>> nodeCollections;
 
     /**
      * @return The collection of Redis cluster nodes.
      * 
      */
-    public Output<List<RedisClusterNodeCollection>> nodeCollections() {
-        return this.nodeCollections;
+    public Output<Optional<List<RedisClusterNodeCollection>>> nodeCollections() {
+        return Codegen.optional(this.nodeCollections);
     }
     /**
      * (Updatable) The number of nodes in the Redis cluster.
@@ -189,56 +190,56 @@ public class RedisCluster extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="primaryEndpointIpAddress", refs={String.class}, tree="[0]")
-    private Output<String> primaryEndpointIpAddress;
+    private Output</* @Nullable */ String> primaryEndpointIpAddress;
 
     /**
      * @return The private IP address of the API endpoint for the Redis cluster&#39;s primary node.
      * 
      */
-    public Output<String> primaryEndpointIpAddress() {
-        return this.primaryEndpointIpAddress;
+    public Output<Optional<String>> primaryEndpointIpAddress() {
+        return Codegen.optional(this.primaryEndpointIpAddress);
     }
     /**
      * The fully qualified domain name (FQDN) of the API endpoint for the Redis cluster&#39;s primary node.
      * 
      */
     @Export(name="primaryFqdn", refs={String.class}, tree="[0]")
-    private Output<String> primaryFqdn;
+    private Output</* @Nullable */ String> primaryFqdn;
 
     /**
      * @return The fully qualified domain name (FQDN) of the API endpoint for the Redis cluster&#39;s primary node.
      * 
      */
-    public Output<String> primaryFqdn() {
-        return this.primaryFqdn;
+    public Output<Optional<String>> primaryFqdn() {
+        return Codegen.optional(this.primaryFqdn);
     }
     /**
      * The private IP address of the API endpoint for the Redis cluster&#39;s replica nodes.
      * 
      */
     @Export(name="replicasEndpointIpAddress", refs={String.class}, tree="[0]")
-    private Output<String> replicasEndpointIpAddress;
+    private Output</* @Nullable */ String> replicasEndpointIpAddress;
 
     /**
      * @return The private IP address of the API endpoint for the Redis cluster&#39;s replica nodes.
      * 
      */
-    public Output<String> replicasEndpointIpAddress() {
-        return this.replicasEndpointIpAddress;
+    public Output<Optional<String>> replicasEndpointIpAddress() {
+        return Codegen.optional(this.replicasEndpointIpAddress);
     }
     /**
      * The fully qualified domain name (FQDN) of the API endpoint for the Redis cluster&#39;s replica nodes.
      * 
      */
     @Export(name="replicasFqdn", refs={String.class}, tree="[0]")
-    private Output<String> replicasFqdn;
+    private Output</* @Nullable */ String> replicasFqdn;
 
     /**
      * @return The fully qualified domain name (FQDN) of the API endpoint for the Redis cluster&#39;s replica nodes.
      * 
      */
-    public Output<String> replicasFqdn() {
-        return this.replicasFqdn;
+    public Output<Optional<String>> replicasFqdn() {
+        return Codegen.optional(this.replicasFqdn);
     }
     /**
      * The Redis version that the cluster is running.
@@ -259,14 +260,14 @@ public class RedisCluster extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the Redis cluster.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster&#39;s subnet.
@@ -293,42 +294,42 @@ public class RedisCluster extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> systemTags;
+    private Output</* @Nullable */ Map<String,Object>> systemTags;
 
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    public Output<Map<String,Object>> systemTags() {
-        return this.systemTags;
+    public Output<Optional<Map<String,Object>>> systemTags() {
+        return Codegen.optional(this.systemTags);
     }
     /**
      * The date and time the Redis cluster was created. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the Redis cluster was created. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The date and time the Redis cluster was updated. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The date and time the Redis cluster was updated. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
 
     /**

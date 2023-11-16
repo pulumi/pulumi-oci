@@ -11,6 +11,7 @@ import com.pulumi.oci.FileStorage.ExportSetArgs;
 import com.pulumi.oci.FileStorage.inputs.ExportSetState;
 import com.pulumi.oci.Utilities;
 import java.lang.String;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -63,56 +64,56 @@ public class ExportSet extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="availabilityDomain", refs={String.class}, tree="[0]")
-    private Output<String> availabilityDomain;
+    private Output</* @Nullable */ String> availabilityDomain;
 
     /**
      * @return The availability domain the export set is in. May be unset as a blank or NULL value.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    public Output<String> availabilityDomain() {
-        return this.availabilityDomain;
+    public Output<Optional<String>> availabilityDomain() {
+        return Codegen.optional(this.availabilityDomain);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the export set.
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
-    private Output<String> compartmentId;
+    private Output</* @Nullable */ String> compartmentId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the export set.
      * 
      */
-    public Output<String> compartmentId() {
-        return this.compartmentId;
+    public Output<Optional<String>> compartmentId() {
+        return Codegen.optional(this.compartmentId);
     }
     /**
      * (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My export set`
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My export set`
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     /**
      * (Updatable) Controls the maximum `tbytes`, `fbytes`, and `abytes`, values reported by `NFS FSSTAT` calls through any associated mount targets. This is an advanced feature. For most applications, use the default value. The `tbytes` value reported by `FSSTAT` will be `maxFsStatBytes`. The value of `fbytes` and `abytes` will be `maxFsStatBytes` minus the metered size of the file system. If the metered size is larger than `maxFsStatBytes`, then `fbytes` and `abytes` will both be &#39;0&#39;.
      * 
      */
     @Export(name="maxFsStatBytes", refs={String.class}, tree="[0]")
-    private Output<String> maxFsStatBytes;
+    private Output</* @Nullable */ String> maxFsStatBytes;
 
     /**
      * @return (Updatable) Controls the maximum `tbytes`, `fbytes`, and `abytes`, values reported by `NFS FSSTAT` calls through any associated mount targets. This is an advanced feature. For most applications, use the default value. The `tbytes` value reported by `FSSTAT` will be `maxFsStatBytes`. The value of `fbytes` and `abytes` will be `maxFsStatBytes` minus the metered size of the file system. If the metered size is larger than `maxFsStatBytes`, then `fbytes` and `abytes` will both be &#39;0&#39;.
      * 
      */
-    public Output<String> maxFsStatBytes() {
-        return this.maxFsStatBytes;
+    public Output<Optional<String>> maxFsStatBytes() {
+        return Codegen.optional(this.maxFsStatBytes);
     }
     /**
      * (Updatable) Controls the maximum `tfiles`, `ffiles`, and `afiles` values reported by `NFS FSSTAT` calls through any associated mount targets. This is an advanced feature. For most applications, use the default value. The `tfiles` value reported by `FSSTAT` will be `maxFsStatFiles`. The value of `ffiles` and `afiles` will be `maxFsStatFiles` minus the metered size of the file system. If the metered size is larger than `maxFsStatFiles`, then `ffiles` and `afiles` will both be &#39;0&#39;.
@@ -122,7 +123,7 @@ public class ExportSet extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="maxFsStatFiles", refs={String.class}, tree="[0]")
-    private Output<String> maxFsStatFiles;
+    private Output</* @Nullable */ String> maxFsStatFiles;
 
     /**
      * @return (Updatable) Controls the maximum `tfiles`, `ffiles`, and `afiles` values reported by `NFS FSSTAT` calls through any associated mount targets. This is an advanced feature. For most applications, use the default value. The `tfiles` value reported by `FSSTAT` will be `maxFsStatFiles`. The value of `ffiles` and `afiles` will be `maxFsStatFiles` minus the metered size of the file system. If the metered size is larger than `maxFsStatFiles`, then `ffiles` and `afiles` will both be &#39;0&#39;.
@@ -131,8 +132,8 @@ public class ExportSet extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> maxFsStatFiles() {
-        return this.maxFsStatFiles;
+    public Output<Optional<String>> maxFsStatFiles() {
+        return Codegen.optional(this.maxFsStatFiles);
     }
     /**
      * (Updatable) The OCID of the mount target that the export set is associated with
@@ -153,42 +154,42 @@ public class ExportSet extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the export set.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The date and time the export set was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the export set was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual cloud network (VCN) the export set is in.
      * 
      */
     @Export(name="vcnId", refs={String.class}, tree="[0]")
-    private Output<String> vcnId;
+    private Output</* @Nullable */ String> vcnId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual cloud network (VCN) the export set is in.
      * 
      */
-    public Output<String> vcnId() {
-        return this.vcnId;
+    public Output<Optional<String>> vcnId() {
+        return Codegen.optional(this.vcnId);
     }
 
     /**

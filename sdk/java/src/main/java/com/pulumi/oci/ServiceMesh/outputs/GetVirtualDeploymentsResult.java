@@ -39,7 +39,7 @@ public final class GetVirtualDeploymentsResult {
      * @return The list of virtual_deployment_collection.
      * 
      */
-    private List<GetVirtualDeploymentsVirtualDeploymentCollection> virtualDeploymentCollections;
+    private @Nullable List<GetVirtualDeploymentsVirtualDeploymentCollection> virtualDeploymentCollections;
     /**
      * @return The OCID of the virtual service in which this virtual deployment is created.
      * 
@@ -83,7 +83,7 @@ public final class GetVirtualDeploymentsResult {
      * 
      */
     public List<GetVirtualDeploymentsVirtualDeploymentCollection> virtualDeploymentCollections() {
-        return this.virtualDeploymentCollections;
+        return this.virtualDeploymentCollections == null ? List.of() : this.virtualDeploymentCollections;
     }
     /**
      * @return The OCID of the virtual service in which this virtual deployment is created.
@@ -107,7 +107,7 @@ public final class GetVirtualDeploymentsResult {
         private @Nullable String id;
         private @Nullable String name;
         private @Nullable String state;
-        private List<GetVirtualDeploymentsVirtualDeploymentCollection> virtualDeploymentCollections;
+        private @Nullable List<GetVirtualDeploymentsVirtualDeploymentCollection> virtualDeploymentCollections;
         private @Nullable String virtualServiceId;
         public Builder() {}
         public Builder(GetVirtualDeploymentsResult defaults) {
@@ -150,8 +150,8 @@ public final class GetVirtualDeploymentsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder virtualDeploymentCollections(List<GetVirtualDeploymentsVirtualDeploymentCollection> virtualDeploymentCollections) {
-            this.virtualDeploymentCollections = Objects.requireNonNull(virtualDeploymentCollections);
+        public Builder virtualDeploymentCollections(@Nullable List<GetVirtualDeploymentsVirtualDeploymentCollection> virtualDeploymentCollections) {
+            this.virtualDeploymentCollections = virtualDeploymentCollections;
             return this;
         }
         public Builder virtualDeploymentCollections(GetVirtualDeploymentsVirtualDeploymentCollection... virtualDeploymentCollections) {

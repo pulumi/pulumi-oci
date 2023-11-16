@@ -161,18 +161,12 @@ class GetDomainsMyDeviceResult:
 
     @property
     @pulumi.getter(name="additionalAttributes")
-    def additional_attributes(self) -> Sequence['outputs.GetDomainsMyDeviceAdditionalAttributeResult']:
-        """
-        Device additional attributes
-        """
+    def additional_attributes(self) -> Optional[Sequence['outputs.GetDomainsMyDeviceAdditionalAttributeResult']]:
         return pulumi.get(self, "additional_attributes")
 
     @property
     @pulumi.getter(name="appVersion")
-    def app_version(self) -> str:
-        """
-        Mobile Authenticator App Version
-        """
+    def app_version(self) -> Optional[str]:
         return pulumi.get(self, "app_version")
 
     @property
@@ -187,18 +181,12 @@ class GetDomainsMyDeviceResult:
 
     @property
     @pulumi.getter(name="authenticationFactors")
-    def authentication_factors(self) -> Sequence['outputs.GetDomainsMyDeviceAuthenticationFactorResult']:
-        """
-        Authentication Factors
-        """
+    def authentication_factors(self) -> Optional[Sequence['outputs.GetDomainsMyDeviceAuthenticationFactorResult']]:
         return pulumi.get(self, "authentication_factors")
 
     @property
     @pulumi.getter(name="authenticationMethod")
-    def authentication_method(self) -> str:
-        """
-        Authentication method used in device. For FIDO, it will contain SECURITY_KEY/WINDOWS_HELLO etc
-        """
+    def authentication_method(self) -> Optional[str]:
         return pulumi.get(self, "authentication_method")
 
     @property
@@ -208,87 +196,57 @@ class GetDomainsMyDeviceResult:
 
     @property
     @pulumi.getter(name="basePublicKey")
-    def base_public_key(self) -> str:
-        """
-        Device base public Key
-        """
+    def base_public_key(self) -> Optional[str]:
         return pulumi.get(self, "base_public_key")
 
     @property
     @pulumi.getter(name="compartmentOcid")
-    def compartment_ocid(self) -> str:
-        """
-        Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
-        """
+    def compartment_ocid(self) -> Optional[str]:
         return pulumi.get(self, "compartment_ocid")
 
     @property
     @pulumi.getter(name="countryCode")
-    def country_code(self) -> str:
-        """
-        Country code of user's Phone Number
-        """
+    def country_code(self) -> Optional[str]:
         return pulumi.get(self, "country_code")
 
     @property
     @pulumi.getter(name="deleteInProgress")
-    def delete_in_progress(self) -> bool:
-        """
-        A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
-        """
+    def delete_in_progress(self) -> Optional[bool]:
         return pulumi.get(self, "delete_in_progress")
 
     @property
     @pulumi.getter(name="deviceType")
-    def device_type(self) -> str:
-        """
-        Device hardware name/model
-        """
+    def device_type(self) -> Optional[str]:
         return pulumi.get(self, "device_type")
 
     @property
     @pulumi.getter(name="deviceUuid")
-    def device_uuid(self) -> str:
-        """
-        Unique id sent from device
-        """
+    def device_uuid(self) -> Optional[str]:
         return pulumi.get(self, "device_uuid")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        Device friendly display name
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="domainOcid")
-    def domain_ocid(self) -> str:
-        """
-        Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
-        """
+    def domain_ocid(self) -> Optional[str]:
         return pulumi.get(self, "domain_ocid")
 
     @property
     @pulumi.getter(name="expiresOn")
-    def expires_on(self) -> int:
-        """
-        Attribute added for replication log, it is not used by IDCS, just added as place holder
-        """
+    def expires_on(self) -> Optional[int]:
         return pulumi.get(self, "expires_on")
 
     @property
     @pulumi.getter(name="externalId")
-    def external_id(self) -> str:
-        """
-        An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued be the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
-        """
+    def external_id(self) -> Optional[str]:
         return pulumi.get(self, "external_id")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -296,10 +254,7 @@ class GetDomainsMyDeviceResult:
 
     @property
     @pulumi.getter(name="idcsCreatedBies")
-    def idcs_created_bies(self) -> Sequence['outputs.GetDomainsMyDeviceIdcsCreatedByResult']:
-        """
-        The User or App who created the Resource
-        """
+    def idcs_created_bies(self) -> Optional[Sequence['outputs.GetDomainsMyDeviceIdcsCreatedByResult']]:
         return pulumi.get(self, "idcs_created_bies")
 
     @property
@@ -309,66 +264,42 @@ class GetDomainsMyDeviceResult:
 
     @property
     @pulumi.getter(name="idcsLastModifiedBies")
-    def idcs_last_modified_bies(self) -> Sequence['outputs.GetDomainsMyDeviceIdcsLastModifiedByResult']:
-        """
-        The User or App who modified the Resource
-        """
+    def idcs_last_modified_bies(self) -> Optional[Sequence['outputs.GetDomainsMyDeviceIdcsLastModifiedByResult']]:
         return pulumi.get(self, "idcs_last_modified_bies")
 
     @property
     @pulumi.getter(name="idcsLastUpgradedInRelease")
-    def idcs_last_upgraded_in_release(self) -> str:
-        """
-        The release number when the resource was upgraded.
-        """
+    def idcs_last_upgraded_in_release(self) -> Optional[str]:
         return pulumi.get(self, "idcs_last_upgraded_in_release")
 
     @property
     @pulumi.getter(name="idcsPreventedOperations")
-    def idcs_prevented_operations(self) -> Sequence[str]:
-        """
-        Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
-        """
+    def idcs_prevented_operations(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "idcs_prevented_operations")
 
     @property
     @pulumi.getter(name="isAccRecEnabled")
-    def is_acc_rec_enabled(self) -> bool:
-        """
-        Flag that indicates whether the device is enrolled for account recovery
-        """
+    def is_acc_rec_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_acc_rec_enabled")
 
     @property
     @pulumi.getter(name="isCompliant")
-    def is_compliant(self) -> bool:
-        """
-        Device Compliance Status
-        """
+    def is_compliant(self) -> Optional[bool]:
         return pulumi.get(self, "is_compliant")
 
     @property
     @pulumi.getter(name="lastSyncTime")
-    def last_sync_time(self) -> str:
-        """
-        Last Sync time for device
-        """
+    def last_sync_time(self) -> Optional[str]:
         return pulumi.get(self, "last_sync_time")
 
     @property
     @pulumi.getter(name="lastValidatedTime")
-    def last_validated_time(self) -> str:
-        """
-        The most recent timestamp when the device was successfully validated using one time passcode
-        """
+    def last_validated_time(self) -> Optional[str]:
         return pulumi.get(self, "last_validated_time")
 
     @property
     @pulumi.getter
-    def metas(self) -> Sequence['outputs.GetDomainsMyDeviceMetaResult']:
-        """
-        A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
-        """
+    def metas(self) -> Optional[Sequence['outputs.GetDomainsMyDeviceMetaResult']]:
         return pulumi.get(self, "metas")
 
     @property
@@ -378,58 +309,37 @@ class GetDomainsMyDeviceResult:
 
     @property
     @pulumi.getter(name="nonCompliances")
-    def non_compliances(self) -> Sequence['outputs.GetDomainsMyDeviceNonComplianceResult']:
-        """
-        Device Non Compliances
-        """
+    def non_compliances(self) -> Optional[Sequence['outputs.GetDomainsMyDeviceNonComplianceResult']]:
         return pulumi.get(self, "non_compliances")
 
     @property
     @pulumi.getter
-    def ocid(self) -> str:
-        """
-        The OCID of the user
-        """
+    def ocid(self) -> Optional[str]:
         return pulumi.get(self, "ocid")
 
     @property
     @pulumi.getter(name="packageId")
-    def package_id(self) -> str:
-        """
-        Mobile Authenticator App Package Id
-        """
+    def package_id(self) -> Optional[str]:
         return pulumi.get(self, "package_id")
 
     @property
     @pulumi.getter(name="phoneNumber")
-    def phone_number(self) -> str:
-        """
-        User's Phone Number
-        """
+    def phone_number(self) -> Optional[str]:
         return pulumi.get(self, "phone_number")
 
     @property
     @pulumi.getter
-    def platform(self) -> str:
-        """
-        Device Platform
-        """
+    def platform(self) -> Optional[str]:
         return pulumi.get(self, "platform")
 
     @property
     @pulumi.getter(name="pushNotificationTargets")
-    def push_notification_targets(self) -> Sequence['outputs.GetDomainsMyDevicePushNotificationTargetResult']:
-        """
-        Push Notification target. Reference to Device notification related resource
-        """
+    def push_notification_targets(self) -> Optional[Sequence['outputs.GetDomainsMyDevicePushNotificationTargetResult']]:
         return pulumi.get(self, "push_notification_targets")
 
     @property
     @pulumi.getter
-    def reason(self) -> str:
-        """
-        Additional comments/reasons for the change in device status
-        """
+    def reason(self) -> Optional[str]:
         return pulumi.get(self, "reason")
 
     @property
@@ -439,66 +349,42 @@ class GetDomainsMyDeviceResult:
 
     @property
     @pulumi.getter
-    def schemas(self) -> Sequence[str]:
-        """
-        REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
-        """
+    def schemas(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "schemas")
 
     @property
     @pulumi.getter
-    def seed(self) -> str:
-        """
-        Attribute added for replication log, it is not used by IDCS, it is actual encrypted TOTP seed for the user
-        """
+    def seed(self) -> Optional[str]:
         return pulumi.get(self, "seed")
 
     @property
     @pulumi.getter(name="seedDekId")
-    def seed_dek_id(self) -> str:
-        """
-        Attribute added for replication log, it is not used by IDCS, the DEK that encrypts the specific seed for that user
-        """
+    def seed_dek_id(self) -> Optional[str]:
         return pulumi.get(self, "seed_dek_id")
 
     @property
     @pulumi.getter
-    def status(self) -> str:
-        """
-        Device Status
-        """
+    def status(self) -> Optional[str]:
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter
-    def tags(self) -> Sequence['outputs.GetDomainsMyDeviceTagResult']:
-        """
-        A list of tags on this resource.
-        """
+    def tags(self) -> Optional[Sequence['outputs.GetDomainsMyDeviceTagResult']]:
         return pulumi.get(self, "tags")
 
     @property
     @pulumi.getter(name="tenancyOcid")
-    def tenancy_ocid(self) -> str:
-        """
-        Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
-        """
+    def tenancy_ocid(self) -> Optional[str]:
         return pulumi.get(self, "tenancy_ocid")
 
     @property
     @pulumi.getter(name="thirdPartyFactors")
-    def third_party_factors(self) -> Sequence['outputs.GetDomainsMyDeviceThirdPartyFactorResult']:
-        """
-        User's third-party authentication factor details
-        """
+    def third_party_factors(self) -> Optional[Sequence['outputs.GetDomainsMyDeviceThirdPartyFactorResult']]:
         return pulumi.get(self, "third_party_factors")
 
     @property
     @pulumi.getter
-    def users(self) -> Sequence['outputs.GetDomainsMyDeviceUserResult']:
-        """
-        Device member
-        """
+    def users(self) -> Optional[Sequence['outputs.GetDomainsMyDeviceUserResult']]:
         return pulumi.get(self, "users")
 
 
@@ -563,31 +449,7 @@ def get_domains_my_device(attribute_sets: Optional[Sequence[str]] = None,
                           resource_type_schema_version: Optional[str] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDomainsMyDeviceResult:
     """
-    This data source provides details about a specific My Device resource in Oracle Cloud Infrastructure Identity Domains service.
-
-    Get a Device
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_my_device = oci.Identity.get_domains_my_device(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        my_device_id=oci_identity_domains_my_device["test_my_device"]["id"],
-        attribute_sets=[],
-        attributes="",
-        authorization=var["my_device_authorization"],
-        resource_type_schema_version=var["my_device_resource_type_schema_version"])
-    ```
-
-
-    :param Sequence[str] attribute_sets: A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
-    :param str attributes: A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
-    :param str authorization: The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
-    :param str idcs_endpoint: The basic endpoint for the identity domain
-    :param str my_device_id: ID of the resource
-    :param str resource_type_schema_version: An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['attributeSets'] = attribute_sets
@@ -656,30 +518,6 @@ def get_domains_my_device_output(attribute_sets: Optional[pulumi.Input[Optional[
                                  resource_type_schema_version: Optional[pulumi.Input[Optional[str]]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDomainsMyDeviceResult]:
     """
-    This data source provides details about a specific My Device resource in Oracle Cloud Infrastructure Identity Domains service.
-
-    Get a Device
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_my_device = oci.Identity.get_domains_my_device(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        my_device_id=oci_identity_domains_my_device["test_my_device"]["id"],
-        attribute_sets=[],
-        attributes="",
-        authorization=var["my_device_authorization"],
-        resource_type_schema_version=var["my_device_resource_type_schema_version"])
-    ```
-
-
-    :param Sequence[str] attribute_sets: A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
-    :param str attributes: A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
-    :param str authorization: The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
-    :param str idcs_endpoint: The basic endpoint for the identity domain
-    :param str my_device_id: ID of the resource
-    :param str resource_type_schema_version: An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+    Use this data source to access information about an existing resource.
     """
     ...

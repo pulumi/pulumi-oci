@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Virtual Service resource in Oracle Cloud Infrastructure Service Mesh service.
@@ -74,34 +73,34 @@ type VirtualService struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Routing policy for the virtual service.
-	DefaultRoutingPolicy VirtualServiceDefaultRoutingPolicyOutput `pulumi:"defaultRoutingPolicy"`
+	DefaultRoutingPolicy VirtualServiceDefaultRoutingPolicyPtrOutput `pulumi:"defaultRoutingPolicy"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// (Updatable) The DNS hostnames of the virtual service that is used by its callers. Wildcard hostnames are supported in the prefix form. Examples of valid hostnames are "www.example.com", "*.example.com", "*.com". Can be omitted if the virtual service will only have TCP virtual deployments.
 	Hosts pulumi.StringArrayOutput `pulumi:"hosts"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// The OCID of the service mesh in which this virtual service is created.
 	MeshId pulumi.StringOutput `pulumi:"meshId"`
 	// (Updatable) The mTLS authentication mode to use when receiving requests from other virtual services or ingress gateways within the mesh.
-	Mtls VirtualServiceMtlsOutput `pulumi:"mtls"`
+	Mtls VirtualServiceMtlsPtrOutput `pulumi:"mtls"`
 	// A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Name pulumi.StringOutput `pulumi:"name"`
 	// The current state of the Resource.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The time when this resource was created in an RFC3339 formatted datetime string.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The time when this resource was updated in an RFC3339 formatted datetime string.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewVirtualService registers a new resource with the given unique name, arguments, and options.
@@ -283,12 +282,6 @@ func (i *VirtualService) ToVirtualServiceOutputWithContext(ctx context.Context) 
 	return pulumi.ToOutputWithContext(ctx, i).(VirtualServiceOutput)
 }
 
-func (i *VirtualService) ToOutput(ctx context.Context) pulumix.Output[*VirtualService] {
-	return pulumix.Output[*VirtualService]{
-		OutputState: i.ToVirtualServiceOutputWithContext(ctx).OutputState,
-	}
-}
-
 // VirtualServiceArrayInput is an input type that accepts VirtualServiceArray and VirtualServiceArrayOutput values.
 // You can construct a concrete instance of `VirtualServiceArrayInput` via:
 //
@@ -312,12 +305,6 @@ func (i VirtualServiceArray) ToVirtualServiceArrayOutput() VirtualServiceArrayOu
 
 func (i VirtualServiceArray) ToVirtualServiceArrayOutputWithContext(ctx context.Context) VirtualServiceArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(VirtualServiceArrayOutput)
-}
-
-func (i VirtualServiceArray) ToOutput(ctx context.Context) pulumix.Output[[]*VirtualService] {
-	return pulumix.Output[[]*VirtualService]{
-		OutputState: i.ToVirtualServiceArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // VirtualServiceMapInput is an input type that accepts VirtualServiceMap and VirtualServiceMapOutput values.
@@ -345,12 +332,6 @@ func (i VirtualServiceMap) ToVirtualServiceMapOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(VirtualServiceMapOutput)
 }
 
-func (i VirtualServiceMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*VirtualService] {
-	return pulumix.Output[map[string]*VirtualService]{
-		OutputState: i.ToVirtualServiceMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type VirtualServiceOutput struct{ *pulumi.OutputState }
 
 func (VirtualServiceOutput) ElementType() reflect.Type {
@@ -365,20 +346,14 @@ func (o VirtualServiceOutput) ToVirtualServiceOutputWithContext(ctx context.Cont
 	return o
 }
 
-func (o VirtualServiceOutput) ToOutput(ctx context.Context) pulumix.Output[*VirtualService] {
-	return pulumix.Output[*VirtualService]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 func (o VirtualServiceOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *VirtualService) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
 // (Updatable) Routing policy for the virtual service.
-func (o VirtualServiceOutput) DefaultRoutingPolicy() VirtualServiceDefaultRoutingPolicyOutput {
-	return o.ApplyT(func(v *VirtualService) VirtualServiceDefaultRoutingPolicyOutput { return v.DefaultRoutingPolicy }).(VirtualServiceDefaultRoutingPolicyOutput)
+func (o VirtualServiceOutput) DefaultRoutingPolicy() VirtualServiceDefaultRoutingPolicyPtrOutput {
+	return o.ApplyT(func(v *VirtualService) VirtualServiceDefaultRoutingPolicyPtrOutput { return v.DefaultRoutingPolicy }).(VirtualServiceDefaultRoutingPolicyPtrOutput)
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -387,8 +362,8 @@ func (o VirtualServiceOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
-func (o VirtualServiceOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *VirtualService) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o VirtualServiceOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VirtualService) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -402,8 +377,8 @@ func (o VirtualServiceOutput) Hosts() pulumi.StringArrayOutput {
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-func (o VirtualServiceOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *VirtualService) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o VirtualServiceOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VirtualService) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the service mesh in which this virtual service is created.
@@ -412,8 +387,8 @@ func (o VirtualServiceOutput) MeshId() pulumi.StringOutput {
 }
 
 // (Updatable) The mTLS authentication mode to use when receiving requests from other virtual services or ingress gateways within the mesh.
-func (o VirtualServiceOutput) Mtls() VirtualServiceMtlsOutput {
-	return o.ApplyT(func(v *VirtualService) VirtualServiceMtlsOutput { return v.Mtls }).(VirtualServiceMtlsOutput)
+func (o VirtualServiceOutput) Mtls() VirtualServiceMtlsPtrOutput {
+	return o.ApplyT(func(v *VirtualService) VirtualServiceMtlsPtrOutput { return v.Mtls }).(VirtualServiceMtlsPtrOutput)
 }
 
 // A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
@@ -425,8 +400,8 @@ func (o VirtualServiceOutput) Name() pulumi.StringOutput {
 }
 
 // The current state of the Resource.
-func (o VirtualServiceOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *VirtualService) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o VirtualServiceOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VirtualService) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -435,13 +410,13 @@ func (o VirtualServiceOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time when this resource was created in an RFC3339 formatted datetime string.
-func (o VirtualServiceOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *VirtualService) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o VirtualServiceOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VirtualService) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time when this resource was updated in an RFC3339 formatted datetime string.
-func (o VirtualServiceOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *VirtualService) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o VirtualServiceOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VirtualService) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type VirtualServiceArrayOutput struct{ *pulumi.OutputState }
@@ -456,12 +431,6 @@ func (o VirtualServiceArrayOutput) ToVirtualServiceArrayOutput() VirtualServiceA
 
 func (o VirtualServiceArrayOutput) ToVirtualServiceArrayOutputWithContext(ctx context.Context) VirtualServiceArrayOutput {
 	return o
-}
-
-func (o VirtualServiceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*VirtualService] {
-	return pulumix.Output[[]*VirtualService]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o VirtualServiceArrayOutput) Index(i pulumi.IntInput) VirtualServiceOutput {
@@ -482,12 +451,6 @@ func (o VirtualServiceMapOutput) ToVirtualServiceMapOutput() VirtualServiceMapOu
 
 func (o VirtualServiceMapOutput) ToVirtualServiceMapOutputWithContext(ctx context.Context) VirtualServiceMapOutput {
 	return o
-}
-
-func (o VirtualServiceMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*VirtualService] {
-	return pulumix.Output[map[string]*VirtualService]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o VirtualServiceMapOutput) MapIndex(k pulumi.StringInput) VirtualServiceOutput {

@@ -16,23 +16,23 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// <summary>
         /// The OCID of the peer DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
         /// </summary>
-        public readonly string PeerId;
+        public readonly string? PeerId;
         /// <summary>
         /// The region of the peer DR protection group.  Example: `us-ashburn-1`
         /// </summary>
-        public readonly string PeerRegion;
+        public readonly string? PeerRegion;
         /// <summary>
         /// The DR protection group Role.
         /// </summary>
-        public readonly string Role;
+        public readonly string? Role;
 
         [OutputConstructor]
         private GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationResult(
-            string peerId,
+            string? peerId,
 
-            string peerRegion,
+            string? peerRegion,
 
-            string role)
+            string? role)
         {
             PeerId = peerId;
             PeerRegion = peerRegion;

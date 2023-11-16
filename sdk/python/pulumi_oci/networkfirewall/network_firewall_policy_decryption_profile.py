@@ -28,22 +28,6 @@ class NetworkFirewallPolicyDecryptionProfileArgs:
                  name: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a NetworkFirewallPolicyDecryptionProfile resource.
-        :param pulumi.Input[str] network_firewall_policy_id: Unique Network Firewall Policy identifier
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] type: Describes the type of decryption profile. The accepted values are - * SSL_FORWARD_PROXY * SSL_INBOUND_INSPECTION
-        :param pulumi.Input[bool] are_certificate_extensions_restricted: (Updatable) Whether to block sessions if the server's certificate uses extensions other than key usage and/or extended key usage.
-        :param pulumi.Input[bool] is_auto_include_alt_name: (Updatable) Whether to automatically append SAN to impersonating certificate if server certificate is missing SAN.
-        :param pulumi.Input[bool] is_expired_certificate_blocked: (Updatable) Whether to block sessions if server's certificate is expired.
-        :param pulumi.Input[bool] is_out_of_capacity_blocked: (Updatable) Whether to block sessions if the firewall is temporarily unable to decrypt their traffic.
-        :param pulumi.Input[bool] is_revocation_status_timeout_blocked: (Updatable) Whether to block sessions if the revocation status check for server's certificate does not succeed within the maximum allowed time (defaulting to 5 seconds).
-        :param pulumi.Input[bool] is_unknown_revocation_status_blocked: (Updatable) Whether to block sessions if the revocation status check for server's certificate results in "unknown".
-        :param pulumi.Input[bool] is_unsupported_cipher_blocked: (Updatable) Whether to block sessions if SSL cipher suite is not supported.
-        :param pulumi.Input[bool] is_unsupported_version_blocked: (Updatable) Whether to block sessions if SSL version is not supported.
-        :param pulumi.Input[bool] is_untrusted_issuer_blocked: (Updatable) Whether to block sessions if server's certificate is issued by an untrusted certificate authority (CA).
-        :param pulumi.Input[str] name: Name of the decryption profile.
         """
         pulumi.set(__self__, "network_firewall_policy_id", network_firewall_policy_id)
         pulumi.set(__self__, "type", type)
@@ -71,13 +55,6 @@ class NetworkFirewallPolicyDecryptionProfileArgs:
     @property
     @pulumi.getter(name="networkFirewallPolicyId")
     def network_firewall_policy_id(self) -> pulumi.Input[str]:
-        """
-        Unique Network Firewall Policy identifier
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "network_firewall_policy_id")
 
     @network_firewall_policy_id.setter
@@ -87,9 +64,6 @@ class NetworkFirewallPolicyDecryptionProfileArgs:
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
-        """
-        Describes the type of decryption profile. The accepted values are - * SSL_FORWARD_PROXY * SSL_INBOUND_INSPECTION
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -99,9 +73,6 @@ class NetworkFirewallPolicyDecryptionProfileArgs:
     @property
     @pulumi.getter(name="areCertificateExtensionsRestricted")
     def are_certificate_extensions_restricted(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Whether to block sessions if the server's certificate uses extensions other than key usage and/or extended key usage.
-        """
         return pulumi.get(self, "are_certificate_extensions_restricted")
 
     @are_certificate_extensions_restricted.setter
@@ -111,9 +82,6 @@ class NetworkFirewallPolicyDecryptionProfileArgs:
     @property
     @pulumi.getter(name="isAutoIncludeAltName")
     def is_auto_include_alt_name(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Whether to automatically append SAN to impersonating certificate if server certificate is missing SAN.
-        """
         return pulumi.get(self, "is_auto_include_alt_name")
 
     @is_auto_include_alt_name.setter
@@ -123,9 +91,6 @@ class NetworkFirewallPolicyDecryptionProfileArgs:
     @property
     @pulumi.getter(name="isExpiredCertificateBlocked")
     def is_expired_certificate_blocked(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Whether to block sessions if server's certificate is expired.
-        """
         return pulumi.get(self, "is_expired_certificate_blocked")
 
     @is_expired_certificate_blocked.setter
@@ -135,9 +100,6 @@ class NetworkFirewallPolicyDecryptionProfileArgs:
     @property
     @pulumi.getter(name="isOutOfCapacityBlocked")
     def is_out_of_capacity_blocked(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Whether to block sessions if the firewall is temporarily unable to decrypt their traffic.
-        """
         return pulumi.get(self, "is_out_of_capacity_blocked")
 
     @is_out_of_capacity_blocked.setter
@@ -147,9 +109,6 @@ class NetworkFirewallPolicyDecryptionProfileArgs:
     @property
     @pulumi.getter(name="isRevocationStatusTimeoutBlocked")
     def is_revocation_status_timeout_blocked(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Whether to block sessions if the revocation status check for server's certificate does not succeed within the maximum allowed time (defaulting to 5 seconds).
-        """
         return pulumi.get(self, "is_revocation_status_timeout_blocked")
 
     @is_revocation_status_timeout_blocked.setter
@@ -159,9 +118,6 @@ class NetworkFirewallPolicyDecryptionProfileArgs:
     @property
     @pulumi.getter(name="isUnknownRevocationStatusBlocked")
     def is_unknown_revocation_status_blocked(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Whether to block sessions if the revocation status check for server's certificate results in "unknown".
-        """
         return pulumi.get(self, "is_unknown_revocation_status_blocked")
 
     @is_unknown_revocation_status_blocked.setter
@@ -171,9 +127,6 @@ class NetworkFirewallPolicyDecryptionProfileArgs:
     @property
     @pulumi.getter(name="isUnsupportedCipherBlocked")
     def is_unsupported_cipher_blocked(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Whether to block sessions if SSL cipher suite is not supported.
-        """
         return pulumi.get(self, "is_unsupported_cipher_blocked")
 
     @is_unsupported_cipher_blocked.setter
@@ -183,9 +136,6 @@ class NetworkFirewallPolicyDecryptionProfileArgs:
     @property
     @pulumi.getter(name="isUnsupportedVersionBlocked")
     def is_unsupported_version_blocked(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Whether to block sessions if SSL version is not supported.
-        """
         return pulumi.get(self, "is_unsupported_version_blocked")
 
     @is_unsupported_version_blocked.setter
@@ -195,9 +145,6 @@ class NetworkFirewallPolicyDecryptionProfileArgs:
     @property
     @pulumi.getter(name="isUntrustedIssuerBlocked")
     def is_untrusted_issuer_blocked(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Whether to block sessions if server's certificate is issued by an untrusted certificate authority (CA).
-        """
         return pulumi.get(self, "is_untrusted_issuer_blocked")
 
     @is_untrusted_issuer_blocked.setter
@@ -207,9 +154,6 @@ class NetworkFirewallPolicyDecryptionProfileArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Name of the decryption profile.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -235,23 +179,6 @@ class _NetworkFirewallPolicyDecryptionProfileState:
                  type: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering NetworkFirewallPolicyDecryptionProfile resources.
-        :param pulumi.Input[bool] are_certificate_extensions_restricted: (Updatable) Whether to block sessions if the server's certificate uses extensions other than key usage and/or extended key usage.
-        :param pulumi.Input[bool] is_auto_include_alt_name: (Updatable) Whether to automatically append SAN to impersonating certificate if server certificate is missing SAN.
-        :param pulumi.Input[bool] is_expired_certificate_blocked: (Updatable) Whether to block sessions if server's certificate is expired.
-        :param pulumi.Input[bool] is_out_of_capacity_blocked: (Updatable) Whether to block sessions if the firewall is temporarily unable to decrypt their traffic.
-        :param pulumi.Input[bool] is_revocation_status_timeout_blocked: (Updatable) Whether to block sessions if the revocation status check for server's certificate does not succeed within the maximum allowed time (defaulting to 5 seconds).
-        :param pulumi.Input[bool] is_unknown_revocation_status_blocked: (Updatable) Whether to block sessions if the revocation status check for server's certificate results in "unknown".
-        :param pulumi.Input[bool] is_unsupported_cipher_blocked: (Updatable) Whether to block sessions if SSL cipher suite is not supported.
-        :param pulumi.Input[bool] is_unsupported_version_blocked: (Updatable) Whether to block sessions if SSL version is not supported.
-        :param pulumi.Input[bool] is_untrusted_issuer_blocked: (Updatable) Whether to block sessions if server's certificate is issued by an untrusted certificate authority (CA).
-        :param pulumi.Input[str] name: Name of the decryption profile.
-        :param pulumi.Input[str] network_firewall_policy_id: Unique Network Firewall Policy identifier
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] parent_resource_id: OCID of the Network Firewall Policy this decryption profile belongs to.
-        :param pulumi.Input[str] type: Describes the type of decryption profile. The accepted values are - * SSL_FORWARD_PROXY * SSL_INBOUND_INSPECTION
         """
         if are_certificate_extensions_restricted is not None:
             pulumi.set(__self__, "are_certificate_extensions_restricted", are_certificate_extensions_restricted)
@@ -283,9 +210,6 @@ class _NetworkFirewallPolicyDecryptionProfileState:
     @property
     @pulumi.getter(name="areCertificateExtensionsRestricted")
     def are_certificate_extensions_restricted(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Whether to block sessions if the server's certificate uses extensions other than key usage and/or extended key usage.
-        """
         return pulumi.get(self, "are_certificate_extensions_restricted")
 
     @are_certificate_extensions_restricted.setter
@@ -295,9 +219,6 @@ class _NetworkFirewallPolicyDecryptionProfileState:
     @property
     @pulumi.getter(name="isAutoIncludeAltName")
     def is_auto_include_alt_name(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Whether to automatically append SAN to impersonating certificate if server certificate is missing SAN.
-        """
         return pulumi.get(self, "is_auto_include_alt_name")
 
     @is_auto_include_alt_name.setter
@@ -307,9 +228,6 @@ class _NetworkFirewallPolicyDecryptionProfileState:
     @property
     @pulumi.getter(name="isExpiredCertificateBlocked")
     def is_expired_certificate_blocked(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Whether to block sessions if server's certificate is expired.
-        """
         return pulumi.get(self, "is_expired_certificate_blocked")
 
     @is_expired_certificate_blocked.setter
@@ -319,9 +237,6 @@ class _NetworkFirewallPolicyDecryptionProfileState:
     @property
     @pulumi.getter(name="isOutOfCapacityBlocked")
     def is_out_of_capacity_blocked(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Whether to block sessions if the firewall is temporarily unable to decrypt their traffic.
-        """
         return pulumi.get(self, "is_out_of_capacity_blocked")
 
     @is_out_of_capacity_blocked.setter
@@ -331,9 +246,6 @@ class _NetworkFirewallPolicyDecryptionProfileState:
     @property
     @pulumi.getter(name="isRevocationStatusTimeoutBlocked")
     def is_revocation_status_timeout_blocked(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Whether to block sessions if the revocation status check for server's certificate does not succeed within the maximum allowed time (defaulting to 5 seconds).
-        """
         return pulumi.get(self, "is_revocation_status_timeout_blocked")
 
     @is_revocation_status_timeout_blocked.setter
@@ -343,9 +255,6 @@ class _NetworkFirewallPolicyDecryptionProfileState:
     @property
     @pulumi.getter(name="isUnknownRevocationStatusBlocked")
     def is_unknown_revocation_status_blocked(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Whether to block sessions if the revocation status check for server's certificate results in "unknown".
-        """
         return pulumi.get(self, "is_unknown_revocation_status_blocked")
 
     @is_unknown_revocation_status_blocked.setter
@@ -355,9 +264,6 @@ class _NetworkFirewallPolicyDecryptionProfileState:
     @property
     @pulumi.getter(name="isUnsupportedCipherBlocked")
     def is_unsupported_cipher_blocked(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Whether to block sessions if SSL cipher suite is not supported.
-        """
         return pulumi.get(self, "is_unsupported_cipher_blocked")
 
     @is_unsupported_cipher_blocked.setter
@@ -367,9 +273,6 @@ class _NetworkFirewallPolicyDecryptionProfileState:
     @property
     @pulumi.getter(name="isUnsupportedVersionBlocked")
     def is_unsupported_version_blocked(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Whether to block sessions if SSL version is not supported.
-        """
         return pulumi.get(self, "is_unsupported_version_blocked")
 
     @is_unsupported_version_blocked.setter
@@ -379,9 +282,6 @@ class _NetworkFirewallPolicyDecryptionProfileState:
     @property
     @pulumi.getter(name="isUntrustedIssuerBlocked")
     def is_untrusted_issuer_blocked(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Whether to block sessions if server's certificate is issued by an untrusted certificate authority (CA).
-        """
         return pulumi.get(self, "is_untrusted_issuer_blocked")
 
     @is_untrusted_issuer_blocked.setter
@@ -391,9 +291,6 @@ class _NetworkFirewallPolicyDecryptionProfileState:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Name of the decryption profile.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -403,13 +300,6 @@ class _NetworkFirewallPolicyDecryptionProfileState:
     @property
     @pulumi.getter(name="networkFirewallPolicyId")
     def network_firewall_policy_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        Unique Network Firewall Policy identifier
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "network_firewall_policy_id")
 
     @network_firewall_policy_id.setter
@@ -419,9 +309,6 @@ class _NetworkFirewallPolicyDecryptionProfileState:
     @property
     @pulumi.getter(name="parentResourceId")
     def parent_resource_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        OCID of the Network Firewall Policy this decryption profile belongs to.
-        """
         return pulumi.get(self, "parent_resource_id")
 
     @parent_resource_id.setter
@@ -431,9 +318,6 @@ class _NetworkFirewallPolicyDecryptionProfileState:
     @property
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
-        """
-        Describes the type of decryption profile. The accepted values are - * SSL_FORWARD_PROXY * SSL_INBOUND_INSPECTION
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -460,56 +344,9 @@ class NetworkFirewallPolicyDecryptionProfile(pulumi.CustomResource):
                  type: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Network Firewall Policy Decryption Profile resource in Oracle Cloud Infrastructure Network Firewall service.
-
-        Creates a new Decryption Profile for the Network Firewall Policy.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_network_firewall_policy_decryption_profile = oci.network_firewall.NetworkFirewallPolicyDecryptionProfile("testNetworkFirewallPolicyDecryptionProfile",
-            network_firewall_policy_id=oci_network_firewall_network_firewall_policy["test_network_firewall_policy"]["id"],
-            type=var["network_firewall_policy_decryption_profile_type"],
-            are_certificate_extensions_restricted=var["network_firewall_policy_decryption_profile_are_certificate_extensions_restricted"],
-            is_auto_include_alt_name=var["network_firewall_policy_decryption_profile_is_auto_include_alt_name"],
-            is_expired_certificate_blocked=var["network_firewall_policy_decryption_profile_is_expired_certificate_blocked"],
-            is_out_of_capacity_blocked=var["network_firewall_policy_decryption_profile_is_out_of_capacity_blocked"],
-            is_revocation_status_timeout_blocked=var["network_firewall_policy_decryption_profile_is_revocation_status_timeout_blocked"],
-            is_unknown_revocation_status_blocked=var["network_firewall_policy_decryption_profile_is_unknown_revocation_status_blocked"],
-            is_unsupported_cipher_blocked=var["network_firewall_policy_decryption_profile_is_unsupported_cipher_blocked"],
-            is_unsupported_version_blocked=var["network_firewall_policy_decryption_profile_is_unsupported_version_blocked"],
-            is_untrusted_issuer_blocked=var["network_firewall_policy_decryption_profile_is_untrusted_issuer_blocked"])
-        ```
-
-        ## Import
-
-        NetworkFirewallPolicyDecryptionProfiles can be imported using the `name`, e.g.
-
-        ```sh
-         $ pulumi import oci:NetworkFirewall/networkFirewallPolicyDecryptionProfile:NetworkFirewallPolicyDecryptionProfile test_network_firewall_policy_decryption_profile "networkFirewallPolicies/{networkFirewallPolicyId}/decryptionProfiles/{decryptionProfileName}"
-        ```
-
+        Create a NetworkFirewallPolicyDecryptionProfile resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[bool] are_certificate_extensions_restricted: (Updatable) Whether to block sessions if the server's certificate uses extensions other than key usage and/or extended key usage.
-        :param pulumi.Input[bool] is_auto_include_alt_name: (Updatable) Whether to automatically append SAN to impersonating certificate if server certificate is missing SAN.
-        :param pulumi.Input[bool] is_expired_certificate_blocked: (Updatable) Whether to block sessions if server's certificate is expired.
-        :param pulumi.Input[bool] is_out_of_capacity_blocked: (Updatable) Whether to block sessions if the firewall is temporarily unable to decrypt their traffic.
-        :param pulumi.Input[bool] is_revocation_status_timeout_blocked: (Updatable) Whether to block sessions if the revocation status check for server's certificate does not succeed within the maximum allowed time (defaulting to 5 seconds).
-        :param pulumi.Input[bool] is_unknown_revocation_status_blocked: (Updatable) Whether to block sessions if the revocation status check for server's certificate results in "unknown".
-        :param pulumi.Input[bool] is_unsupported_cipher_blocked: (Updatable) Whether to block sessions if SSL cipher suite is not supported.
-        :param pulumi.Input[bool] is_unsupported_version_blocked: (Updatable) Whether to block sessions if SSL version is not supported.
-        :param pulumi.Input[bool] is_untrusted_issuer_blocked: (Updatable) Whether to block sessions if server's certificate is issued by an untrusted certificate authority (CA).
-        :param pulumi.Input[str] name: Name of the decryption profile.
-        :param pulumi.Input[str] network_firewall_policy_id: Unique Network Firewall Policy identifier
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] type: Describes the type of decryption profile. The accepted values are - * SSL_FORWARD_PROXY * SSL_INBOUND_INSPECTION
         """
         ...
     @overload
@@ -518,38 +355,7 @@ class NetworkFirewallPolicyDecryptionProfile(pulumi.CustomResource):
                  args: NetworkFirewallPolicyDecryptionProfileArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Network Firewall Policy Decryption Profile resource in Oracle Cloud Infrastructure Network Firewall service.
-
-        Creates a new Decryption Profile for the Network Firewall Policy.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_network_firewall_policy_decryption_profile = oci.network_firewall.NetworkFirewallPolicyDecryptionProfile("testNetworkFirewallPolicyDecryptionProfile",
-            network_firewall_policy_id=oci_network_firewall_network_firewall_policy["test_network_firewall_policy"]["id"],
-            type=var["network_firewall_policy_decryption_profile_type"],
-            are_certificate_extensions_restricted=var["network_firewall_policy_decryption_profile_are_certificate_extensions_restricted"],
-            is_auto_include_alt_name=var["network_firewall_policy_decryption_profile_is_auto_include_alt_name"],
-            is_expired_certificate_blocked=var["network_firewall_policy_decryption_profile_is_expired_certificate_blocked"],
-            is_out_of_capacity_blocked=var["network_firewall_policy_decryption_profile_is_out_of_capacity_blocked"],
-            is_revocation_status_timeout_blocked=var["network_firewall_policy_decryption_profile_is_revocation_status_timeout_blocked"],
-            is_unknown_revocation_status_blocked=var["network_firewall_policy_decryption_profile_is_unknown_revocation_status_blocked"],
-            is_unsupported_cipher_blocked=var["network_firewall_policy_decryption_profile_is_unsupported_cipher_blocked"],
-            is_unsupported_version_blocked=var["network_firewall_policy_decryption_profile_is_unsupported_version_blocked"],
-            is_untrusted_issuer_blocked=var["network_firewall_policy_decryption_profile_is_untrusted_issuer_blocked"])
-        ```
-
-        ## Import
-
-        NetworkFirewallPolicyDecryptionProfiles can be imported using the `name`, e.g.
-
-        ```sh
-         $ pulumi import oci:NetworkFirewall/networkFirewallPolicyDecryptionProfile:NetworkFirewallPolicyDecryptionProfile test_network_firewall_policy_decryption_profile "networkFirewallPolicies/{networkFirewallPolicyId}/decryptionProfiles/{decryptionProfileName}"
-        ```
-
+        Create a NetworkFirewallPolicyDecryptionProfile resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param NetworkFirewallPolicyDecryptionProfileArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -633,23 +439,6 @@ class NetworkFirewallPolicyDecryptionProfile(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[bool] are_certificate_extensions_restricted: (Updatable) Whether to block sessions if the server's certificate uses extensions other than key usage and/or extended key usage.
-        :param pulumi.Input[bool] is_auto_include_alt_name: (Updatable) Whether to automatically append SAN to impersonating certificate if server certificate is missing SAN.
-        :param pulumi.Input[bool] is_expired_certificate_blocked: (Updatable) Whether to block sessions if server's certificate is expired.
-        :param pulumi.Input[bool] is_out_of_capacity_blocked: (Updatable) Whether to block sessions if the firewall is temporarily unable to decrypt their traffic.
-        :param pulumi.Input[bool] is_revocation_status_timeout_blocked: (Updatable) Whether to block sessions if the revocation status check for server's certificate does not succeed within the maximum allowed time (defaulting to 5 seconds).
-        :param pulumi.Input[bool] is_unknown_revocation_status_blocked: (Updatable) Whether to block sessions if the revocation status check for server's certificate results in "unknown".
-        :param pulumi.Input[bool] is_unsupported_cipher_blocked: (Updatable) Whether to block sessions if SSL cipher suite is not supported.
-        :param pulumi.Input[bool] is_unsupported_version_blocked: (Updatable) Whether to block sessions if SSL version is not supported.
-        :param pulumi.Input[bool] is_untrusted_issuer_blocked: (Updatable) Whether to block sessions if server's certificate is issued by an untrusted certificate authority (CA).
-        :param pulumi.Input[str] name: Name of the decryption profile.
-        :param pulumi.Input[str] network_firewall_policy_id: Unique Network Firewall Policy identifier
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] parent_resource_id: OCID of the Network Firewall Policy this decryption profile belongs to.
-        :param pulumi.Input[str] type: Describes the type of decryption profile. The accepted values are - * SSL_FORWARD_PROXY * SSL_INBOUND_INSPECTION
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -672,109 +461,66 @@ class NetworkFirewallPolicyDecryptionProfile(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="areCertificateExtensionsRestricted")
-    def are_certificate_extensions_restricted(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) Whether to block sessions if the server's certificate uses extensions other than key usage and/or extended key usage.
-        """
+    def are_certificate_extensions_restricted(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "are_certificate_extensions_restricted")
 
     @property
     @pulumi.getter(name="isAutoIncludeAltName")
-    def is_auto_include_alt_name(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) Whether to automatically append SAN to impersonating certificate if server certificate is missing SAN.
-        """
+    def is_auto_include_alt_name(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_auto_include_alt_name")
 
     @property
     @pulumi.getter(name="isExpiredCertificateBlocked")
-    def is_expired_certificate_blocked(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) Whether to block sessions if server's certificate is expired.
-        """
+    def is_expired_certificate_blocked(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_expired_certificate_blocked")
 
     @property
     @pulumi.getter(name="isOutOfCapacityBlocked")
-    def is_out_of_capacity_blocked(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) Whether to block sessions if the firewall is temporarily unable to decrypt their traffic.
-        """
+    def is_out_of_capacity_blocked(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_out_of_capacity_blocked")
 
     @property
     @pulumi.getter(name="isRevocationStatusTimeoutBlocked")
-    def is_revocation_status_timeout_blocked(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) Whether to block sessions if the revocation status check for server's certificate does not succeed within the maximum allowed time (defaulting to 5 seconds).
-        """
+    def is_revocation_status_timeout_blocked(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_revocation_status_timeout_blocked")
 
     @property
     @pulumi.getter(name="isUnknownRevocationStatusBlocked")
-    def is_unknown_revocation_status_blocked(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) Whether to block sessions if the revocation status check for server's certificate results in "unknown".
-        """
+    def is_unknown_revocation_status_blocked(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_unknown_revocation_status_blocked")
 
     @property
     @pulumi.getter(name="isUnsupportedCipherBlocked")
-    def is_unsupported_cipher_blocked(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) Whether to block sessions if SSL cipher suite is not supported.
-        """
+    def is_unsupported_cipher_blocked(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_unsupported_cipher_blocked")
 
     @property
     @pulumi.getter(name="isUnsupportedVersionBlocked")
-    def is_unsupported_version_blocked(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) Whether to block sessions if SSL version is not supported.
-        """
+    def is_unsupported_version_blocked(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_unsupported_version_blocked")
 
     @property
     @pulumi.getter(name="isUntrustedIssuerBlocked")
-    def is_untrusted_issuer_blocked(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) Whether to block sessions if server's certificate is issued by an untrusted certificate authority (CA).
-        """
+    def is_untrusted_issuer_blocked(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_untrusted_issuer_blocked")
 
     @property
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
-        """
-        Name of the decryption profile.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="networkFirewallPolicyId")
     def network_firewall_policy_id(self) -> pulumi.Output[str]:
-        """
-        Unique Network Firewall Policy identifier
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "network_firewall_policy_id")
 
     @property
     @pulumi.getter(name="parentResourceId")
-    def parent_resource_id(self) -> pulumi.Output[str]:
-        """
-        OCID of the Network Firewall Policy this decryption profile belongs to.
-        """
+    def parent_resource_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "parent_resource_id")
 
     @property
     @pulumi.getter
     def type(self) -> pulumi.Output[str]:
-        """
-        Describes the type of decryption profile. The accepted values are - * SSL_FORWARD_PROXY * SSL_INBOUND_INSPECTION
-        """
         return pulumi.get(self, "type")
 

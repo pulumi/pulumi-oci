@@ -20,49 +20,49 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
         /// <summary>
         /// Request method.
         /// </summary>
-        public readonly string AuthRequestMethod;
+        public readonly string? AuthRequestMethod;
         /// <summary>
         /// Request post body.
         /// </summary>
-        public readonly string AuthRequestPostBody;
+        public readonly string? AuthRequestPostBody;
         /// <summary>
         /// Authentication token.
         /// </summary>
-        public readonly string AuthToken;
+        public readonly string? AuthToken;
         /// <summary>
         /// URL to get authentication token.
         /// </summary>
-        public readonly string AuthUrl;
+        public readonly string? AuthUrl;
         /// <summary>
         /// User name for authentication.
         /// </summary>
-        public readonly string AuthUserName;
+        public readonly string? AuthUserName;
         /// <summary>
         /// User password for authentication.
         /// </summary>
-        public readonly string AuthUserPassword;
+        public readonly string? AuthUserPassword;
         /// <summary>
         /// Request HTTP OAuth scheme.
         /// </summary>
-        public readonly string OauthScheme;
+        public readonly string? OauthScheme;
 
         [OutputConstructor]
         private GetMonitorConfigurationReqAuthenticationDetailResult(
             ImmutableArray<Outputs.GetMonitorConfigurationReqAuthenticationDetailAuthHeaderResult> authHeaders,
 
-            string authRequestMethod,
+            string? authRequestMethod,
 
-            string authRequestPostBody,
+            string? authRequestPostBody,
 
-            string authToken,
+            string? authToken,
 
-            string authUrl,
+            string? authUrl,
 
-            string authUserName,
+            string? authUserName,
 
-            string authUserPassword,
+            string? authUserPassword,
 
-            string oauthScheme)
+            string? oauthScheme)
         {
             AuthHeaders = authHeaders;
             AuthRequestMethod = authRequestMethod;

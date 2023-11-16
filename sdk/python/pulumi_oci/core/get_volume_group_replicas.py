@@ -49,25 +49,16 @@ class GetVolumeGroupReplicasResult:
     @property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> str:
-        """
-        The availability domain of the volume group replica.
-        """
         return pulumi.get(self, "availability_domain")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment that contains the volume group replica.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -77,7 +68,7 @@ class GetVolumeGroupReplicasResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -86,17 +77,11 @@ class GetVolumeGroupReplicasResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of a volume group.
-        """
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="volumeGroupReplicas")
-    def volume_group_replicas(self) -> Sequence['outputs.GetVolumeGroupReplicasVolumeGroupReplicaResult']:
-        """
-        The list of volume_group_replicas.
-        """
+    def volume_group_replicas(self) -> Optional[Sequence['outputs.GetVolumeGroupReplicasVolumeGroupReplicaResult']]:
         return pulumi.get(self, "volume_group_replicas")
 
 
@@ -122,28 +107,7 @@ def get_volume_group_replicas(availability_domain: Optional[str] = None,
                               state: Optional[str] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetVolumeGroupReplicasResult:
     """
-    This data source provides the list of Volume Group Replicas in Oracle Cloud Infrastructure Core service.
-
-    Lists the volume group replicas in the specified compartment. You can filter the results by volume group.
-    For more information, see [Volume Group Replication](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/volumegroupreplication.htm).
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_volume_group_replicas = oci.Core.get_volume_group_replicas(availability_domain=var["volume_group_replica_availability_domain"],
-        compartment_id=var["compartment_id"],
-        display_name=var["volume_group_replica_display_name"],
-        state=var["volume_group_replica_state"])
-    ```
-
-
-    :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str display_name: A filter to return only resources that match the given display name exactly.
-    :param str state: A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['availabilityDomain'] = availability_domain
@@ -172,27 +136,6 @@ def get_volume_group_replicas_output(availability_domain: Optional[pulumi.Input[
                                      state: Optional[pulumi.Input[Optional[str]]] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVolumeGroupReplicasResult]:
     """
-    This data source provides the list of Volume Group Replicas in Oracle Cloud Infrastructure Core service.
-
-    Lists the volume group replicas in the specified compartment. You can filter the results by volume group.
-    For more information, see [Volume Group Replication](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/volumegroupreplication.htm).
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_volume_group_replicas = oci.Core.get_volume_group_replicas(availability_domain=var["volume_group_replica_availability_domain"],
-        compartment_id=var["compartment_id"],
-        display_name=var["volume_group_replica_display_name"],
-        state=var["volume_group_replica_state"])
-    ```
-
-
-    :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str display_name: A filter to return only resources that match the given display name exactly.
-    :param str state: A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
+    Use this data source to access information about an existing resource.
     """
     ...

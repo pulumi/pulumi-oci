@@ -6,6 +6,8 @@ package com.pulumi.oci.Identity.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensionposixGroup {
@@ -13,15 +15,15 @@ public final class GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextens
      * @return Integer uniquely identifying a group in a POSIX administrative domain
      * 
      */
-    private Integer gidNumber;
+    private @Nullable Integer gidNumber;
 
     private GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensionposixGroup() {}
     /**
      * @return Integer uniquely identifying a group in a POSIX administrative domain
      * 
      */
-    public Integer gidNumber() {
-        return this.gidNumber;
+    public Optional<Integer> gidNumber() {
+        return Optional.ofNullable(this.gidNumber);
     }
 
     public static Builder builder() {
@@ -33,7 +35,7 @@ public final class GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextens
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer gidNumber;
+        private @Nullable Integer gidNumber;
         public Builder() {}
         public Builder(GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensionposixGroup defaults) {
     	      Objects.requireNonNull(defaults);
@@ -41,8 +43,8 @@ public final class GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextens
         }
 
         @CustomType.Setter
-        public Builder gidNumber(Integer gidNumber) {
-            this.gidNumber = Objects.requireNonNull(gidNumber);
+        public Builder gidNumber(@Nullable Integer gidNumber) {
+            this.gidNumber = gidNumber;
             return this;
         }
         public GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensionposixGroup build() {

@@ -10,6 +10,8 @@ import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetGuardTargetTargetDetectorRecipeDetectorRuleDetail {
@@ -17,32 +19,32 @@ public final class GetGuardTargetTargetDetectorRecipeDetectorRuleDetail {
      * @return Condition group corresponding to each compartment
      * 
      */
-    private List<GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConditionGroup> conditionGroups;
+    private @Nullable List<GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConditionGroup> conditionGroups;
     /**
      * @return ResponderRule configurations
      * 
      */
-    private List<GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfiguration> configurations;
+    private @Nullable List<GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfiguration> configurations;
     /**
      * @return configuration allowed or not
      * 
      */
-    private Boolean isConfigurationAllowed;
+    private @Nullable Boolean isConfigurationAllowed;
     /**
      * @return Identifies state for ResponderRule
      * 
      */
-    private Boolean isEnabled;
+    private @Nullable Boolean isEnabled;
     /**
      * @return user defined labels for a detector rule
      * 
      */
-    private List<String> labels;
+    private @Nullable List<String> labels;
     /**
      * @return The Risk Level
      * 
      */
-    private String riskLevel;
+    private @Nullable String riskLevel;
 
     private GetGuardTargetTargetDetectorRecipeDetectorRuleDetail() {}
     /**
@@ -50,42 +52,42 @@ public final class GetGuardTargetTargetDetectorRecipeDetectorRuleDetail {
      * 
      */
     public List<GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConditionGroup> conditionGroups() {
-        return this.conditionGroups;
+        return this.conditionGroups == null ? List.of() : this.conditionGroups;
     }
     /**
      * @return ResponderRule configurations
      * 
      */
     public List<GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfiguration> configurations() {
-        return this.configurations;
+        return this.configurations == null ? List.of() : this.configurations;
     }
     /**
      * @return configuration allowed or not
      * 
      */
-    public Boolean isConfigurationAllowed() {
-        return this.isConfigurationAllowed;
+    public Optional<Boolean> isConfigurationAllowed() {
+        return Optional.ofNullable(this.isConfigurationAllowed);
     }
     /**
      * @return Identifies state for ResponderRule
      * 
      */
-    public Boolean isEnabled() {
-        return this.isEnabled;
+    public Optional<Boolean> isEnabled() {
+        return Optional.ofNullable(this.isEnabled);
     }
     /**
      * @return user defined labels for a detector rule
      * 
      */
     public List<String> labels() {
-        return this.labels;
+        return this.labels == null ? List.of() : this.labels;
     }
     /**
      * @return The Risk Level
      * 
      */
-    public String riskLevel() {
-        return this.riskLevel;
+    public Optional<String> riskLevel() {
+        return Optional.ofNullable(this.riskLevel);
     }
 
     public static Builder builder() {
@@ -97,12 +99,12 @@ public final class GetGuardTargetTargetDetectorRecipeDetectorRuleDetail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConditionGroup> conditionGroups;
-        private List<GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfiguration> configurations;
-        private Boolean isConfigurationAllowed;
-        private Boolean isEnabled;
-        private List<String> labels;
-        private String riskLevel;
+        private @Nullable List<GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConditionGroup> conditionGroups;
+        private @Nullable List<GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfiguration> configurations;
+        private @Nullable Boolean isConfigurationAllowed;
+        private @Nullable Boolean isEnabled;
+        private @Nullable List<String> labels;
+        private @Nullable String riskLevel;
         public Builder() {}
         public Builder(GetGuardTargetTargetDetectorRecipeDetectorRuleDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -115,42 +117,42 @@ public final class GetGuardTargetTargetDetectorRecipeDetectorRuleDetail {
         }
 
         @CustomType.Setter
-        public Builder conditionGroups(List<GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConditionGroup> conditionGroups) {
-            this.conditionGroups = Objects.requireNonNull(conditionGroups);
+        public Builder conditionGroups(@Nullable List<GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConditionGroup> conditionGroups) {
+            this.conditionGroups = conditionGroups;
             return this;
         }
         public Builder conditionGroups(GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConditionGroup... conditionGroups) {
             return conditionGroups(List.of(conditionGroups));
         }
         @CustomType.Setter
-        public Builder configurations(List<GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfiguration> configurations) {
-            this.configurations = Objects.requireNonNull(configurations);
+        public Builder configurations(@Nullable List<GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfiguration> configurations) {
+            this.configurations = configurations;
             return this;
         }
         public Builder configurations(GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfiguration... configurations) {
             return configurations(List.of(configurations));
         }
         @CustomType.Setter
-        public Builder isConfigurationAllowed(Boolean isConfigurationAllowed) {
-            this.isConfigurationAllowed = Objects.requireNonNull(isConfigurationAllowed);
+        public Builder isConfigurationAllowed(@Nullable Boolean isConfigurationAllowed) {
+            this.isConfigurationAllowed = isConfigurationAllowed;
             return this;
         }
         @CustomType.Setter
-        public Builder isEnabled(Boolean isEnabled) {
-            this.isEnabled = Objects.requireNonNull(isEnabled);
+        public Builder isEnabled(@Nullable Boolean isEnabled) {
+            this.isEnabled = isEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder labels(List<String> labels) {
-            this.labels = Objects.requireNonNull(labels);
+        public Builder labels(@Nullable List<String> labels) {
+            this.labels = labels;
             return this;
         }
         public Builder labels(String... labels) {
             return labels(List.of(labels));
         }
         @CustomType.Setter
-        public Builder riskLevel(String riskLevel) {
-            this.riskLevel = Objects.requireNonNull(riskLevel);
+        public Builder riskLevel(@Nullable String riskLevel) {
+            this.riskLevel = riskLevel;
             return this;
         }
         public GetGuardTargetTargetDetectorRecipeDetectorRuleDetail build() {

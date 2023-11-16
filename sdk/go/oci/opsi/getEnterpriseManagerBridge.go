@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Enterprise Manager Bridge resource in Oracle Cloud Infrastructure Opsi service.
@@ -60,34 +59,34 @@ type LookupEnterpriseManagerBridgeArgs struct {
 // A collection of values returned by getEnterpriseManagerBridge.
 type LookupEnterpriseManagerBridgeResult struct {
 	// Compartment identifier of the Enterprise Manager bridge
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Description of Enterprise Manager Bridge
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// User-friedly name of Enterprise Manager Bridge that does not have to be unique.
-	DisplayName               string `pulumi:"displayName"`
-	EnterpriseManagerBridgeId string `pulumi:"enterpriseManagerBridgeId"`
+	DisplayName               *string `pulumi:"displayName"`
+	EnterpriseManagerBridgeId string  `pulumi:"enterpriseManagerBridgeId"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Enterprise Manager bridge identifier
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Object Storage Bucket Name
-	ObjectStorageBucketName string `pulumi:"objectStorageBucketName"`
+	ObjectStorageBucketName *string `pulumi:"objectStorageBucketName"`
 	// A message describing status of the object storage bucket of this resource. For example, it can be used to provide actionable information about the permission and content validity of the bucket.
-	ObjectStorageBucketStatusDetails string `pulumi:"objectStorageBucketStatusDetails"`
+	ObjectStorageBucketStatusDetails *string `pulumi:"objectStorageBucketStatusDetails"`
 	// Object Storage Namespace Name
-	ObjectStorageNamespaceName string `pulumi:"objectStorageNamespaceName"`
+	ObjectStorageNamespaceName *string `pulumi:"objectStorageNamespaceName"`
 	// The current state of the Enterprise Manager bridge.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time the the Enterprise Manager bridge was first created. An RFC3339 formatted datetime string
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the Enterprise Manager bridge was updated. An RFC3339 formatted datetime string
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func LookupEnterpriseManagerBridgeOutput(ctx *pulumi.Context, args LookupEnterpriseManagerBridgeOutputArgs, opts ...pulumi.InvokeOption) LookupEnterpriseManagerBridgeResultOutput {
@@ -128,15 +127,9 @@ func (o LookupEnterpriseManagerBridgeResultOutput) ToLookupEnterpriseManagerBrid
 	return o
 }
 
-func (o LookupEnterpriseManagerBridgeResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupEnterpriseManagerBridgeResult] {
-	return pulumix.Output[LookupEnterpriseManagerBridgeResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Compartment identifier of the Enterprise Manager bridge
-func (o LookupEnterpriseManagerBridgeResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupEnterpriseManagerBridgeResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupEnterpriseManagerBridgeResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupEnterpriseManagerBridgeResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -145,13 +138,13 @@ func (o LookupEnterpriseManagerBridgeResultOutput) DefinedTags() pulumi.MapOutpu
 }
 
 // Description of Enterprise Manager Bridge
-func (o LookupEnterpriseManagerBridgeResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupEnterpriseManagerBridgeResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupEnterpriseManagerBridgeResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupEnterpriseManagerBridgeResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // User-friedly name of Enterprise Manager Bridge that does not have to be unique.
-func (o LookupEnterpriseManagerBridgeResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupEnterpriseManagerBridgeResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupEnterpriseManagerBridgeResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupEnterpriseManagerBridgeResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupEnterpriseManagerBridgeResultOutput) EnterpriseManagerBridgeId() pulumi.StringOutput {
@@ -164,33 +157,33 @@ func (o LookupEnterpriseManagerBridgeResultOutput) FreeformTags() pulumi.MapOutp
 }
 
 // Enterprise Manager bridge identifier
-func (o LookupEnterpriseManagerBridgeResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupEnterpriseManagerBridgeResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupEnterpriseManagerBridgeResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupEnterpriseManagerBridgeResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o LookupEnterpriseManagerBridgeResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupEnterpriseManagerBridgeResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupEnterpriseManagerBridgeResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupEnterpriseManagerBridgeResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // Object Storage Bucket Name
-func (o LookupEnterpriseManagerBridgeResultOutput) ObjectStorageBucketName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupEnterpriseManagerBridgeResult) string { return v.ObjectStorageBucketName }).(pulumi.StringOutput)
+func (o LookupEnterpriseManagerBridgeResultOutput) ObjectStorageBucketName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupEnterpriseManagerBridgeResult) *string { return v.ObjectStorageBucketName }).(pulumi.StringPtrOutput)
 }
 
 // A message describing status of the object storage bucket of this resource. For example, it can be used to provide actionable information about the permission and content validity of the bucket.
-func (o LookupEnterpriseManagerBridgeResultOutput) ObjectStorageBucketStatusDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupEnterpriseManagerBridgeResult) string { return v.ObjectStorageBucketStatusDetails }).(pulumi.StringOutput)
+func (o LookupEnterpriseManagerBridgeResultOutput) ObjectStorageBucketStatusDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupEnterpriseManagerBridgeResult) *string { return v.ObjectStorageBucketStatusDetails }).(pulumi.StringPtrOutput)
 }
 
 // Object Storage Namespace Name
-func (o LookupEnterpriseManagerBridgeResultOutput) ObjectStorageNamespaceName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupEnterpriseManagerBridgeResult) string { return v.ObjectStorageNamespaceName }).(pulumi.StringOutput)
+func (o LookupEnterpriseManagerBridgeResultOutput) ObjectStorageNamespaceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupEnterpriseManagerBridgeResult) *string { return v.ObjectStorageNamespaceName }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the Enterprise Manager bridge.
-func (o LookupEnterpriseManagerBridgeResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupEnterpriseManagerBridgeResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupEnterpriseManagerBridgeResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupEnterpriseManagerBridgeResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -199,13 +192,13 @@ func (o LookupEnterpriseManagerBridgeResultOutput) SystemTags() pulumi.MapOutput
 }
 
 // The time the the Enterprise Manager bridge was first created. An RFC3339 formatted datetime string
-func (o LookupEnterpriseManagerBridgeResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupEnterpriseManagerBridgeResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupEnterpriseManagerBridgeResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupEnterpriseManagerBridgeResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the Enterprise Manager bridge was updated. An RFC3339 formatted datetime string
-func (o LookupEnterpriseManagerBridgeResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupEnterpriseManagerBridgeResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupEnterpriseManagerBridgeResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupEnterpriseManagerBridgeResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

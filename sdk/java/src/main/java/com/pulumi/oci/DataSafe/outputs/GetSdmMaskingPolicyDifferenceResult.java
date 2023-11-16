@@ -8,6 +8,8 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSdmMaskingPolicyDifferenceResult {
@@ -15,113 +17,113 @@ public final class GetSdmMaskingPolicyDifferenceResult {
      * @return The OCID of the compartment that contains the SDM masking policy difference.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return The type of the SDM masking policy difference. It defines the difference scope. NEW identifies new sensitive columns in the sensitive data model that are not in the masking policy. DELETED identifies columns that are present in the masking policy but have been deleted from the sensitive data model. MODIFIED identifies columns that are present in the sensitive data model as well as the masking policy but some of their attributes have been modified. ALL covers all the above three scenarios and reports new, deleted and modified columns.
      * 
      */
-    private String differenceType;
+    private @Nullable String differenceType;
     /**
      * @return The display name of the SDM masking policy difference.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The OCID of the SDM masking policy difference.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The OCID of the masking policy associated with the SDM masking policy difference.
      * 
      */
-    private String maskingPolicyId;
+    private @Nullable String maskingPolicyId;
     private String sdmMaskingPolicyDifferenceId;
     /**
      * @return The OCID of the sensitive data model associated with the SDM masking policy difference.
      * 
      */
-    private String sensitiveDataModelId;
+    private @Nullable String sensitiveDataModelId;
     /**
      * @return The current state of the SDM masking policy difference.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private @Nullable Map<String,Object> systemTags;
     /**
      * @return The date and time the SDM masking policy difference was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The date and time the SDM masking policy difference creation started, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    private String timeCreationStarted;
+    private @Nullable String timeCreationStarted;
 
     private GetSdmMaskingPolicyDifferenceResult() {}
     /**
      * @return The OCID of the compartment that contains the SDM masking policy difference.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return The type of the SDM masking policy difference. It defines the difference scope. NEW identifies new sensitive columns in the sensitive data model that are not in the masking policy. DELETED identifies columns that are present in the masking policy but have been deleted from the sensitive data model. MODIFIED identifies columns that are present in the sensitive data model as well as the masking policy but some of their attributes have been modified. ALL covers all the above three scenarios and reports new, deleted and modified columns.
      * 
      */
-    public String differenceType() {
-        return this.differenceType;
+    public Optional<String> differenceType() {
+        return Optional.ofNullable(this.differenceType);
     }
     /**
      * @return The display name of the SDM masking policy difference.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The OCID of the SDM masking policy difference.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The OCID of the masking policy associated with the SDM masking policy difference.
      * 
      */
-    public String maskingPolicyId() {
-        return this.maskingPolicyId;
+    public Optional<String> maskingPolicyId() {
+        return Optional.ofNullable(this.maskingPolicyId);
     }
     public String sdmMaskingPolicyDifferenceId() {
         return this.sdmMaskingPolicyDifferenceId;
@@ -130,36 +132,36 @@ public final class GetSdmMaskingPolicyDifferenceResult {
      * @return The OCID of the sensitive data model associated with the SDM masking policy difference.
      * 
      */
-    public String sensitiveDataModelId() {
-        return this.sensitiveDataModelId;
+    public Optional<String> sensitiveDataModelId() {
+        return Optional.ofNullable(this.sensitiveDataModelId);
     }
     /**
      * @return The current state of the SDM masking policy difference.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     public Map<String,Object> systemTags() {
-        return this.systemTags;
+        return this.systemTags == null ? Map.of() : this.systemTags;
     }
     /**
      * @return The date and time the SDM masking policy difference was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The date and time the SDM masking policy difference creation started, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    public String timeCreationStarted() {
-        return this.timeCreationStarted;
+    public Optional<String> timeCreationStarted() {
+        return Optional.ofNullable(this.timeCreationStarted);
     }
 
     public static Builder builder() {
@@ -171,19 +173,19 @@ public final class GetSdmMaskingPolicyDifferenceResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private Map<String,Object> definedTags;
-        private String differenceType;
-        private String displayName;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private String maskingPolicyId;
+        private @Nullable String compartmentId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String differenceType;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable String maskingPolicyId;
         private String sdmMaskingPolicyDifferenceId;
-        private String sensitiveDataModelId;
-        private String state;
-        private Map<String,Object> systemTags;
-        private String timeCreated;
-        private String timeCreationStarted;
+        private @Nullable String sensitiveDataModelId;
+        private @Nullable String state;
+        private @Nullable Map<String,Object> systemTags;
+        private @Nullable String timeCreated;
+        private @Nullable String timeCreationStarted;
         public Builder() {}
         public Builder(GetSdmMaskingPolicyDifferenceResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -203,38 +205,38 @@ public final class GetSdmMaskingPolicyDifferenceResult {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder differenceType(String differenceType) {
-            this.differenceType = Objects.requireNonNull(differenceType);
+        public Builder differenceType(@Nullable String differenceType) {
+            this.differenceType = differenceType;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder maskingPolicyId(String maskingPolicyId) {
-            this.maskingPolicyId = Objects.requireNonNull(maskingPolicyId);
+        public Builder maskingPolicyId(@Nullable String maskingPolicyId) {
+            this.maskingPolicyId = maskingPolicyId;
             return this;
         }
         @CustomType.Setter
@@ -243,28 +245,28 @@ public final class GetSdmMaskingPolicyDifferenceResult {
             return this;
         }
         @CustomType.Setter
-        public Builder sensitiveDataModelId(String sensitiveDataModelId) {
-            this.sensitiveDataModelId = Objects.requireNonNull(sensitiveDataModelId);
+        public Builder sensitiveDataModelId(@Nullable String sensitiveDataModelId) {
+            this.sensitiveDataModelId = sensitiveDataModelId;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+        public Builder systemTags(@Nullable Map<String,Object> systemTags) {
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreationStarted(String timeCreationStarted) {
-            this.timeCreationStarted = Objects.requireNonNull(timeCreationStarted);
+        public Builder timeCreationStarted(@Nullable String timeCreationStarted) {
+            this.timeCreationStarted = timeCreationStarted;
             return this;
         }
         public GetSdmMaskingPolicyDifferenceResult build() {

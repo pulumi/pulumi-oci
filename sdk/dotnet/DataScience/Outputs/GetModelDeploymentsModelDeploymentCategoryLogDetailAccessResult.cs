@@ -16,17 +16,17 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a log group to work with.
         /// </summary>
-        public readonly string LogGroupId;
+        public readonly string? LogGroupId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a log to work with.
         /// </summary>
-        public readonly string LogId;
+        public readonly string? LogId;
 
         [OutputConstructor]
         private GetModelDeploymentsModelDeploymentCategoryLogDetailAccessResult(
-            string logGroupId,
+            string? logGroupId,
 
-            string logId)
+            string? logId)
         {
             LogGroupId = logGroupId;
             LogId = logId;

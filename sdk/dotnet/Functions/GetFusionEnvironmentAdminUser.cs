@@ -108,13 +108,13 @@ namespace Pulumi.Oci.Functions
         /// <summary>
         /// Admin users email address
         /// </summary>
-        public readonly string EmailAddress;
+        public readonly string? EmailAddress;
         /// <summary>
         /// Admin users first name
         /// </summary>
-        public readonly string FirstName;
+        public readonly string? FirstName;
         public readonly string FusionEnvironmentId;
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// A page of AdminUserSummary objects.
         /// </summary>
@@ -122,30 +122,30 @@ namespace Pulumi.Oci.Functions
         /// <summary>
         /// Admin users last name
         /// </summary>
-        public readonly string LastName;
-        public readonly string Password;
+        public readonly string? LastName;
+        public readonly string? Password;
         /// <summary>
         /// Admin username
         /// </summary>
-        public readonly string Username;
+        public readonly string? Username;
 
         [OutputConstructor]
         private GetFusionEnvironmentAdminUserResult(
-            string emailAddress,
+            string? emailAddress,
 
-            string firstName,
+            string? firstName,
 
             string fusionEnvironmentId,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetFusionEnvironmentAdminUserItemResult> items,
 
-            string lastName,
+            string? lastName,
 
-            string password,
+            string? password,
 
-            string username)
+            string? username)
         {
             EmailAddress = emailAddress;
             FirstName = firstName;

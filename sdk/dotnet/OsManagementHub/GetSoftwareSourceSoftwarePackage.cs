@@ -124,15 +124,15 @@ namespace Pulumi.Oci.OsManagementHub
         /// <summary>
         /// The architecture for which this software was built
         /// </summary>
-        public readonly string Architecture;
+        public readonly string? Architecture;
         /// <summary>
         /// Checksum of the file.
         /// </summary>
-        public readonly string Checksum;
+        public readonly string? Checksum;
         /// <summary>
         /// Type of the checksum.
         /// </summary>
-        public readonly string ChecksumType;
+        public readonly string? ChecksumType;
         /// <summary>
         /// List of dependencies for the software package.
         /// </summary>
@@ -140,11 +140,11 @@ namespace Pulumi.Oci.OsManagementHub
         /// <summary>
         /// Software source description.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// Software source name.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// List of files for the software package.
         /// </summary>
@@ -152,23 +152,23 @@ namespace Pulumi.Oci.OsManagementHub
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Indicates whether this package is the latest version.
         /// </summary>
-        public readonly bool IsLatest;
+        public readonly bool? IsLatest;
         /// <summary>
         /// Date of the last update to the package.
         /// </summary>
-        public readonly string LastModifiedDate;
+        public readonly string? LastModifiedDate;
         /// <summary>
         /// Unique identifier for the package. NOTE - This is not an OCID.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// Size of the package in bytes.
         /// </summary>
-        public readonly string SizeInBytes;
+        public readonly string? SizeInBytes;
         public readonly string SoftwarePackageName;
         public readonly string SoftwareSourceId;
         /// <summary>
@@ -178,37 +178,37 @@ namespace Pulumi.Oci.OsManagementHub
         /// <summary>
         /// Type of the package.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
         /// <summary>
         /// Version of the package.
         /// </summary>
-        public readonly string Version;
+        public readonly string? Version;
 
         [OutputConstructor]
         private GetSoftwareSourceSoftwarePackageResult(
-            string architecture,
+            string? architecture,
 
-            string checksum,
+            string? checksum,
 
-            string checksumType,
+            string? checksumType,
 
             ImmutableArray<Outputs.GetSoftwareSourceSoftwarePackageDependencyResult> dependencies,
 
-            string description,
+            string? description,
 
-            string displayName,
+            string? displayName,
 
             ImmutableArray<Outputs.GetSoftwareSourceSoftwarePackageFileResult> files,
 
-            string id,
+            string? id,
 
-            bool isLatest,
+            bool? isLatest,
 
-            string lastModifiedDate,
+            string? lastModifiedDate,
 
-            string name,
+            string? name,
 
-            string sizeInBytes,
+            string? sizeInBytes,
 
             string softwarePackageName,
 
@@ -216,9 +216,9 @@ namespace Pulumi.Oci.OsManagementHub
 
             ImmutableArray<Outputs.GetSoftwareSourceSoftwarePackageSoftwareSourceResult> softwareSources,
 
-            string type,
+            string? type,
 
-            string version)
+            string? version)
         {
             Architecture = architecture;
             Checksum = checksum;

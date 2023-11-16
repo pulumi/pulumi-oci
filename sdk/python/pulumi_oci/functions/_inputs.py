@@ -36,10 +36,6 @@ class ApplicationImagePolicyConfigArgs:
     def __init__(__self__, *,
                  is_policy_enabled: pulumi.Input[bool],
                  key_details: Optional[pulumi.Input[Sequence[pulumi.Input['ApplicationImagePolicyConfigKeyDetailArgs']]]] = None):
-        """
-        :param pulumi.Input[bool] is_policy_enabled: (Updatable) Define if image signature verification policy is enabled for the application.
-        :param pulumi.Input[Sequence[pulumi.Input['ApplicationImagePolicyConfigKeyDetailArgs']]] key_details: (Updatable) A list of KMS key details.
-        """
         pulumi.set(__self__, "is_policy_enabled", is_policy_enabled)
         if key_details is not None:
             pulumi.set(__self__, "key_details", key_details)
@@ -47,9 +43,6 @@ class ApplicationImagePolicyConfigArgs:
     @property
     @pulumi.getter(name="isPolicyEnabled")
     def is_policy_enabled(self) -> pulumi.Input[bool]:
-        """
-        (Updatable) Define if image signature verification policy is enabled for the application.
-        """
         return pulumi.get(self, "is_policy_enabled")
 
     @is_policy_enabled.setter
@@ -59,9 +52,6 @@ class ApplicationImagePolicyConfigArgs:
     @property
     @pulumi.getter(name="keyDetails")
     def key_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ApplicationImagePolicyConfigKeyDetailArgs']]]]:
-        """
-        (Updatable) A list of KMS key details.
-        """
         return pulumi.get(self, "key_details")
 
     @key_details.setter
@@ -73,17 +63,11 @@ class ApplicationImagePolicyConfigArgs:
 class ApplicationImagePolicyConfigKeyDetailArgs:
     def __init__(__self__, *,
                  kms_key_id: pulumi.Input[str]):
-        """
-        :param pulumi.Input[str] kms_key_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the KMS key that will be used to verify the image signature.
-        """
         pulumi.set(__self__, "kms_key_id", kms_key_id)
 
     @property
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the KMS key that will be used to verify the image signature.
-        """
         return pulumi.get(self, "kms_key_id")
 
     @kms_key_id.setter
@@ -96,14 +80,6 @@ class ApplicationTraceConfigArgs:
     def __init__(__self__, *,
                  domain_id: Optional[pulumi.Input[str]] = None,
                  is_enabled: Optional[pulumi.Input[bool]] = None):
-        """
-        :param pulumi.Input[str] domain_id: (Updatable) The OCID of the collector (e.g. an APM Domain) trace events will be sent to.
-        :param pulumi.Input[bool] is_enabled: (Updatable) Define if tracing is enabled for the resource. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         if domain_id is not None:
             pulumi.set(__self__, "domain_id", domain_id)
         if is_enabled is not None:
@@ -112,9 +88,6 @@ class ApplicationTraceConfigArgs:
     @property
     @pulumi.getter(name="domainId")
     def domain_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the collector (e.g. an APM Domain) trace events will be sent to.
-        """
         return pulumi.get(self, "domain_id")
 
     @domain_id.setter
@@ -124,13 +97,6 @@ class ApplicationTraceConfigArgs:
     @property
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Define if tracing is enabled for the resource. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "is_enabled")
 
     @is_enabled.setter
@@ -143,10 +109,6 @@ class FunctionProvisionedConcurrencyConfigArgs:
     def __init__(__self__, *,
                  strategy: pulumi.Input[str],
                  count: Optional[pulumi.Input[int]] = None):
-        """
-        :param pulumi.Input[str] strategy: (Updatable) The strategy for provisioned concurrency to be used.
-        :param pulumi.Input[int] count: (Updatable) Configuration specifying a constant amount of provisioned concurrency.
-        """
         pulumi.set(__self__, "strategy", strategy)
         if count is not None:
             pulumi.set(__self__, "count", count)
@@ -154,9 +116,6 @@ class FunctionProvisionedConcurrencyConfigArgs:
     @property
     @pulumi.getter
     def strategy(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The strategy for provisioned concurrency to be used.
-        """
         return pulumi.get(self, "strategy")
 
     @strategy.setter
@@ -166,9 +125,6 @@ class FunctionProvisionedConcurrencyConfigArgs:
     @property
     @pulumi.getter
     def count(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Configuration specifying a constant amount of provisioned concurrency.
-        """
         return pulumi.get(self, "count")
 
     @count.setter
@@ -181,19 +137,12 @@ class FunctionSourceDetailsArgs:
     def __init__(__self__, *,
                  pbf_listing_id: pulumi.Input[str],
                  source_type: pulumi.Input[str]):
-        """
-        :param pulumi.Input[str] pbf_listing_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PbfListing this function is sourced from.
-        :param pulumi.Input[str] source_type: Type of the Function Source. Possible values: PRE_BUILT_FUNCTIONS.
-        """
         pulumi.set(__self__, "pbf_listing_id", pbf_listing_id)
         pulumi.set(__self__, "source_type", source_type)
 
     @property
     @pulumi.getter(name="pbfListingId")
     def pbf_listing_id(self) -> pulumi.Input[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PbfListing this function is sourced from.
-        """
         return pulumi.get(self, "pbf_listing_id")
 
     @pbf_listing_id.setter
@@ -203,9 +152,6 @@ class FunctionSourceDetailsArgs:
     @property
     @pulumi.getter(name="sourceType")
     def source_type(self) -> pulumi.Input[str]:
-        """
-        Type of the Function Source. Possible values: PRE_BUILT_FUNCTIONS.
-        """
         return pulumi.get(self, "source_type")
 
     @source_type.setter
@@ -217,26 +163,12 @@ class FunctionSourceDetailsArgs:
 class FunctionTraceConfigArgs:
     def __init__(__self__, *,
                  is_enabled: Optional[pulumi.Input[bool]] = None):
-        """
-        :param pulumi.Input[bool] is_enabled: (Updatable) Define if tracing is enabled for the resource. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         if is_enabled is not None:
             pulumi.set(__self__, "is_enabled", is_enabled)
 
     @property
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Define if tracing is enabled for the resource. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "is_enabled")
 
     @is_enabled.setter
@@ -640,9 +572,6 @@ class GetPbfListingTriggersFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: A filter to return only resources that match the service trigger source of a PBF.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -651,9 +580,6 @@ class GetPbfListingTriggersFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        A filter to return only resources that match the service trigger source of a PBF.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -685,9 +611,6 @@ class GetPbfListingVersionsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: Matches a PbfListingVersion based on a provided semantic version name for a PbfListingVersion.  Each PbfListingVersion name is unique with respect to its associated PbfListing.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -696,9 +619,6 @@ class GetPbfListingVersionsFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Matches a PbfListingVersion based on a provided semantic version name for a PbfListingVersion.  Each PbfListingVersion name is unique with respect to its associated PbfListing.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -730,9 +650,6 @@ class GetPbfListingsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: A filter to return only resources that match the entire PBF name given.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -741,9 +658,6 @@ class GetPbfListingsFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        A filter to return only resources that match the entire PBF name given.
-        """
         return pulumi.get(self, "name")
 
     @name.setter

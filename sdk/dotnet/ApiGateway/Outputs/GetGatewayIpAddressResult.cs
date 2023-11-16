@@ -16,10 +16,10 @@ namespace Pulumi.Oci.ApiGateway.Outputs
         /// <summary>
         /// An IP address.
         /// </summary>
-        public readonly string IpAddress;
+        public readonly string? IpAddress;
 
         [OutputConstructor]
-        private GetGatewayIpAddressResult(string ipAddress)
+        private GetGatewayIpAddressResult(string? ipAddress)
         {
             IpAddress = ipAddress;
         }

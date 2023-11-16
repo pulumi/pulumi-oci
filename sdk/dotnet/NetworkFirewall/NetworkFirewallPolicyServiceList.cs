@@ -60,7 +60,7 @@ namespace Pulumi.Oci.NetworkFirewall
         /// OCID of the Network Firewall Policy this serviceList belongs to.
         /// </summary>
         [Output("parentResourceId")]
-        public Output<string> ParentResourceId { get; private set; } = null!;
+        public Output<string?> ParentResourceId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Collection of service names. The services referenced in the service list must already be present in the policy before being used in the service list. 
@@ -76,7 +76,7 @@ namespace Pulumi.Oci.NetworkFirewall
         /// Count of total services in the given service List.
         /// </summary>
         [Output("totalServices")]
-        public Output<int> TotalServices { get; private set; } = null!;
+        public Output<int?> TotalServices { get; private set; } = null!;
 
 
         /// <summary>

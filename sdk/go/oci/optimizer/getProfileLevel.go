@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Profile Level resource in Oracle Cloud Infrastructure Optimizer service.
@@ -73,7 +72,7 @@ type GetProfileLevelResult struct {
 	CompartmentId          string `pulumi:"compartmentId"`
 	CompartmentIdInSubtree bool   `pulumi:"compartmentIdInSubtree"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A collection of profile levels.
 	Items []GetProfileLevelItem `pulumi:"items"`
 	// A unique name for the profile level.
@@ -128,12 +127,6 @@ func (o GetProfileLevelResultOutput) ToGetProfileLevelResultOutputWithContext(ct
 	return o
 }
 
-func (o GetProfileLevelResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetProfileLevelResult] {
-	return pulumix.Output[GetProfileLevelResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetProfileLevelResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetProfileLevelResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -143,8 +136,8 @@ func (o GetProfileLevelResultOutput) CompartmentIdInSubtree() pulumi.BoolOutput 
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetProfileLevelResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProfileLevelResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetProfileLevelResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProfileLevelResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A collection of profile levels.

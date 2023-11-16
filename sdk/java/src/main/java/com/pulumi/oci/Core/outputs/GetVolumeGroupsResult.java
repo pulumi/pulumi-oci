@@ -34,7 +34,7 @@ public final class GetVolumeGroupsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The current state of a volume group.
      * 
@@ -44,7 +44,7 @@ public final class GetVolumeGroupsResult {
      * @return The list of volume_groups.
      * 
      */
-    private List<GetVolumeGroupsVolumeGroup> volumeGroups;
+    private @Nullable List<GetVolumeGroupsVolumeGroup> volumeGroups;
 
     private GetVolumeGroupsResult() {}
     /**
@@ -75,8 +75,8 @@ public final class GetVolumeGroupsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The current state of a volume group.
@@ -90,7 +90,7 @@ public final class GetVolumeGroupsResult {
      * 
      */
     public List<GetVolumeGroupsVolumeGroup> volumeGroups() {
-        return this.volumeGroups;
+        return this.volumeGroups == null ? List.of() : this.volumeGroups;
     }
 
     public static Builder builder() {
@@ -106,9 +106,9 @@ public final class GetVolumeGroupsResult {
         private String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetVolumeGroupsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String state;
-        private List<GetVolumeGroupsVolumeGroup> volumeGroups;
+        private @Nullable List<GetVolumeGroupsVolumeGroup> volumeGroups;
         public Builder() {}
         public Builder(GetVolumeGroupsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -145,8 +145,8 @@ public final class GetVolumeGroupsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -155,8 +155,8 @@ public final class GetVolumeGroupsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder volumeGroups(List<GetVolumeGroupsVolumeGroup> volumeGroups) {
-            this.volumeGroups = Objects.requireNonNull(volumeGroups);
+        public Builder volumeGroups(@Nullable List<GetVolumeGroupsVolumeGroup> volumeGroups) {
+            this.volumeGroups = volumeGroups;
             return this;
         }
         public Builder volumeGroups(GetVolumeGroupsVolumeGroup... volumeGroups) {

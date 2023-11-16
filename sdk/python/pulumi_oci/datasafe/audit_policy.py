@@ -26,18 +26,6 @@ class AuditPolicyArgs:
                  retrieve_from_target_trigger: Optional[pulumi.Input[int]] = None):
         """
         The set of arguments for constructing a AuditPolicy resource.
-        :param pulumi.Input[str] audit_policy_id: Unique audit policy identifier.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment containing the audit policy.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) The description of the audit policy.
-        :param pulumi.Input[str] display_name: (Updatable) The display name of the audit policy. The name does not have to be unique, and it is changeable.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[int] provision_trigger: (Updatable) An optional property when incremented triggers Provision. Could be set to any integer value.
-        :param pulumi.Input[int] retrieve_from_target_trigger: (Updatable) An optional property when incremented triggers Retrieve From Target. Could be set to any integer value.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "audit_policy_id", audit_policy_id)
         if compartment_id is not None:
@@ -58,9 +46,6 @@ class AuditPolicyArgs:
     @property
     @pulumi.getter(name="auditPolicyId")
     def audit_policy_id(self) -> pulumi.Input[str]:
-        """
-        Unique audit policy identifier.
-        """
         return pulumi.get(self, "audit_policy_id")
 
     @audit_policy_id.setter
@@ -70,9 +55,6 @@ class AuditPolicyArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the compartment containing the audit policy.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -82,9 +64,6 @@ class AuditPolicyArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -94,9 +73,6 @@ class AuditPolicyArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The description of the audit policy.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -106,9 +82,6 @@ class AuditPolicyArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The display name of the audit policy. The name does not have to be unique, and it is changeable.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -118,9 +91,6 @@ class AuditPolicyArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -130,9 +100,6 @@ class AuditPolicyArgs:
     @property
     @pulumi.getter(name="provisionTrigger")
     def provision_trigger(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) An optional property when incremented triggers Provision. Could be set to any integer value.
-        """
         return pulumi.get(self, "provision_trigger")
 
     @provision_trigger.setter
@@ -142,13 +109,6 @@ class AuditPolicyArgs:
     @property
     @pulumi.getter(name="retrieveFromTargetTrigger")
     def retrieve_from_target_trigger(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) An optional property when incremented triggers Retrieve From Target. Could be set to any integer value.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "retrieve_from_target_trigger")
 
     @retrieve_from_target_trigger.setter
@@ -180,29 +140,6 @@ class _AuditPolicyState:
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering AuditPolicy resources.
-        :param pulumi.Input[Sequence[pulumi.Input['AuditPolicyAuditConditionArgs']]] audit_conditions: Lists the audit policy provisioning conditions for the target database.
-        :param pulumi.Input[str] audit_policy_id: Unique audit policy identifier.
-        :param pulumi.Input[Sequence[pulumi.Input['AuditPolicyAuditSpecificationArgs']]] audit_specifications: Represents all available audit policy specifications relevant for the target database. For more details on available audit polcies, refer to [documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827).
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment containing the audit policy.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) The description of the audit policy.
-        :param pulumi.Input[str] display_name: (Updatable) The display name of the audit policy. The name does not have to be unique, and it is changeable.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[bool] is_data_safe_service_account_excluded: Option provided to users at the target to indicate whether the Data Safe service account has to be excluded while provisioning the audit policies.
-        :param pulumi.Input[str] lifecycle_details: Details about the current state of the audit policy in Data Safe.
-        :param pulumi.Input[int] provision_trigger: (Updatable) An optional property when incremented triggers Provision. Could be set to any integer value.
-        :param pulumi.Input[int] retrieve_from_target_trigger: (Updatable) An optional property when incremented triggers Retrieve From Target. Could be set to any integer value.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] state: The current state of the audit policy.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] target_id: The OCID of the target for which the audit policy is created.
-        :param pulumi.Input[str] time_created: The time the the audit policy was created, in the format defined by RFC3339.
-        :param pulumi.Input[str] time_last_provisioned: Indicates the last provisioning time of audit policies on the target, in the format defined by RFC3339.
-        :param pulumi.Input[str] time_last_retrieved: The time when the audit policies was last retrieved from this target, in the format defined by RFC3339.
-        :param pulumi.Input[str] time_updated: The last date and time the audit policy was updated, in the format defined by RFC3339.
         """
         if audit_conditions is not None:
             pulumi.set(__self__, "audit_conditions", audit_conditions)
@@ -246,9 +183,6 @@ class _AuditPolicyState:
     @property
     @pulumi.getter(name="auditConditions")
     def audit_conditions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AuditPolicyAuditConditionArgs']]]]:
-        """
-        Lists the audit policy provisioning conditions for the target database.
-        """
         return pulumi.get(self, "audit_conditions")
 
     @audit_conditions.setter
@@ -258,9 +192,6 @@ class _AuditPolicyState:
     @property
     @pulumi.getter(name="auditPolicyId")
     def audit_policy_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        Unique audit policy identifier.
-        """
         return pulumi.get(self, "audit_policy_id")
 
     @audit_policy_id.setter
@@ -270,9 +201,6 @@ class _AuditPolicyState:
     @property
     @pulumi.getter(name="auditSpecifications")
     def audit_specifications(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AuditPolicyAuditSpecificationArgs']]]]:
-        """
-        Represents all available audit policy specifications relevant for the target database. For more details on available audit polcies, refer to [documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827).
-        """
         return pulumi.get(self, "audit_specifications")
 
     @audit_specifications.setter
@@ -282,9 +210,6 @@ class _AuditPolicyState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the compartment containing the audit policy.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -294,9 +219,6 @@ class _AuditPolicyState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -306,9 +228,6 @@ class _AuditPolicyState:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The description of the audit policy.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -318,9 +237,6 @@ class _AuditPolicyState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The display name of the audit policy. The name does not have to be unique, and it is changeable.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -330,9 +246,6 @@ class _AuditPolicyState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -342,9 +255,6 @@ class _AuditPolicyState:
     @property
     @pulumi.getter(name="isDataSafeServiceAccountExcluded")
     def is_data_safe_service_account_excluded(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Option provided to users at the target to indicate whether the Data Safe service account has to be excluded while provisioning the audit policies.
-        """
         return pulumi.get(self, "is_data_safe_service_account_excluded")
 
     @is_data_safe_service_account_excluded.setter
@@ -354,9 +264,6 @@ class _AuditPolicyState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        Details about the current state of the audit policy in Data Safe.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -366,9 +273,6 @@ class _AuditPolicyState:
     @property
     @pulumi.getter(name="provisionTrigger")
     def provision_trigger(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) An optional property when incremented triggers Provision. Could be set to any integer value.
-        """
         return pulumi.get(self, "provision_trigger")
 
     @provision_trigger.setter
@@ -378,13 +282,6 @@ class _AuditPolicyState:
     @property
     @pulumi.getter(name="retrieveFromTargetTrigger")
     def retrieve_from_target_trigger(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) An optional property when incremented triggers Retrieve From Target. Could be set to any integer value.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "retrieve_from_target_trigger")
 
     @retrieve_from_target_trigger.setter
@@ -394,9 +291,6 @@ class _AuditPolicyState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the audit policy.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -406,9 +300,6 @@ class _AuditPolicyState:
     @property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
@@ -418,9 +309,6 @@ class _AuditPolicyState:
     @property
     @pulumi.getter(name="targetId")
     def target_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the target for which the audit policy is created.
-        """
         return pulumi.get(self, "target_id")
 
     @target_id.setter
@@ -430,9 +318,6 @@ class _AuditPolicyState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the the audit policy was created, in the format defined by RFC3339.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -442,9 +327,6 @@ class _AuditPolicyState:
     @property
     @pulumi.getter(name="timeLastProvisioned")
     def time_last_provisioned(self) -> Optional[pulumi.Input[str]]:
-        """
-        Indicates the last provisioning time of audit policies on the target, in the format defined by RFC3339.
-        """
         return pulumi.get(self, "time_last_provisioned")
 
     @time_last_provisioned.setter
@@ -454,9 +336,6 @@ class _AuditPolicyState:
     @property
     @pulumi.getter(name="timeLastRetrieved")
     def time_last_retrieved(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time when the audit policies was last retrieved from this target, in the format defined by RFC3339.
-        """
         return pulumi.get(self, "time_last_retrieved")
 
     @time_last_retrieved.setter
@@ -466,9 +345,6 @@ class _AuditPolicyState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The last date and time the audit policy was updated, in the format defined by RFC3339.
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -491,32 +367,9 @@ class AuditPolicy(pulumi.CustomResource):
                  retrieve_from_target_trigger: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         """
-        This resource provides the Audit Policy resource in Oracle Cloud Infrastructure Data Safe service.
-
-        Updates the audit policy.
-
-        ## Import
-
-        AuditPolicies can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:DataSafe/auditPolicy:AuditPolicy test_audit_policy "id"
-        ```
-
+        Create a AuditPolicy resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] audit_policy_id: Unique audit policy identifier.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment containing the audit policy.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) The description of the audit policy.
-        :param pulumi.Input[str] display_name: (Updatable) The display name of the audit policy. The name does not have to be unique, and it is changeable.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[int] provision_trigger: (Updatable) An optional property when incremented triggers Provision. Could be set to any integer value.
-        :param pulumi.Input[int] retrieve_from_target_trigger: (Updatable) An optional property when incremented triggers Retrieve From Target. Could be set to any integer value.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -525,18 +378,7 @@ class AuditPolicy(pulumi.CustomResource):
                  args: AuditPolicyArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Audit Policy resource in Oracle Cloud Infrastructure Data Safe service.
-
-        Updates the audit policy.
-
-        ## Import
-
-        AuditPolicies can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:DataSafe/auditPolicy:AuditPolicy test_audit_policy "id"
-        ```
-
+        Create a AuditPolicy resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param AuditPolicyArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -626,29 +468,6 @@ class AuditPolicy(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AuditPolicyAuditConditionArgs']]]] audit_conditions: Lists the audit policy provisioning conditions for the target database.
-        :param pulumi.Input[str] audit_policy_id: Unique audit policy identifier.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AuditPolicyAuditSpecificationArgs']]]] audit_specifications: Represents all available audit policy specifications relevant for the target database. For more details on available audit polcies, refer to [documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827).
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment containing the audit policy.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) The description of the audit policy.
-        :param pulumi.Input[str] display_name: (Updatable) The display name of the audit policy. The name does not have to be unique, and it is changeable.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[bool] is_data_safe_service_account_excluded: Option provided to users at the target to indicate whether the Data Safe service account has to be excluded while provisioning the audit policies.
-        :param pulumi.Input[str] lifecycle_details: Details about the current state of the audit policy in Data Safe.
-        :param pulumi.Input[int] provision_trigger: (Updatable) An optional property when incremented triggers Provision. Could be set to any integer value.
-        :param pulumi.Input[int] retrieve_from_target_trigger: (Updatable) An optional property when incremented triggers Retrieve From Target. Could be set to any integer value.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] state: The current state of the audit policy.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] target_id: The OCID of the target for which the audit policy is created.
-        :param pulumi.Input[str] time_created: The time the the audit policy was created, in the format defined by RFC3339.
-        :param pulumi.Input[str] time_last_provisioned: Indicates the last provisioning time of audit policies on the target, in the format defined by RFC3339.
-        :param pulumi.Input[str] time_last_retrieved: The time when the audit policies was last retrieved from this target, in the format defined by RFC3339.
-        :param pulumi.Input[str] time_updated: The last date and time the audit policy was updated, in the format defined by RFC3339.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -677,157 +496,96 @@ class AuditPolicy(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="auditConditions")
-    def audit_conditions(self) -> pulumi.Output[Sequence['outputs.AuditPolicyAuditCondition']]:
-        """
-        Lists the audit policy provisioning conditions for the target database.
-        """
+    def audit_conditions(self) -> pulumi.Output[Optional[Sequence['outputs.AuditPolicyAuditCondition']]]:
         return pulumi.get(self, "audit_conditions")
 
     @property
     @pulumi.getter(name="auditPolicyId")
     def audit_policy_id(self) -> pulumi.Output[str]:
-        """
-        Unique audit policy identifier.
-        """
         return pulumi.get(self, "audit_policy_id")
 
     @property
     @pulumi.getter(name="auditSpecifications")
-    def audit_specifications(self) -> pulumi.Output[Sequence['outputs.AuditPolicyAuditSpecification']]:
-        """
-        Represents all available audit policy specifications relevant for the target database. For more details on available audit polcies, refer to [documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827).
-        """
+    def audit_specifications(self) -> pulumi.Output[Optional[Sequence['outputs.AuditPolicyAuditSpecification']]]:
         return pulumi.get(self, "audit_specifications")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The OCID of the compartment containing the audit policy.
-        """
+    def compartment_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The description of the audit policy.
-        """
+    def description(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The display name of the audit policy. The name does not have to be unique, and it is changeable.
-        """
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="isDataSafeServiceAccountExcluded")
-    def is_data_safe_service_account_excluded(self) -> pulumi.Output[bool]:
-        """
-        Option provided to users at the target to indicate whether the Data Safe service account has to be excluded while provisioning the audit policies.
-        """
+    def is_data_safe_service_account_excluded(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_data_safe_service_account_excluded")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        Details about the current state of the audit policy in Data Safe.
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="provisionTrigger")
     def provision_trigger(self) -> pulumi.Output[Optional[int]]:
-        """
-        (Updatable) An optional property when incremented triggers Provision. Could be set to any integer value.
-        """
         return pulumi.get(self, "provision_trigger")
 
     @property
     @pulumi.getter(name="retrieveFromTargetTrigger")
     def retrieve_from_target_trigger(self) -> pulumi.Output[Optional[int]]:
-        """
-        (Updatable) An optional property when incremented triggers Retrieve From Target. Could be set to any integer value.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "retrieve_from_target_trigger")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the audit policy.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="targetId")
-    def target_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the target for which the audit policy is created.
-        """
+    def target_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "target_id")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The time the the audit policy was created, in the format defined by RFC3339.
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeLastProvisioned")
-    def time_last_provisioned(self) -> pulumi.Output[str]:
-        """
-        Indicates the last provisioning time of audit policies on the target, in the format defined by RFC3339.
-        """
+    def time_last_provisioned(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_last_provisioned")
 
     @property
     @pulumi.getter(name="timeLastRetrieved")
-    def time_last_retrieved(self) -> pulumi.Output[str]:
-        """
-        The time when the audit policies was last retrieved from this target, in the format defined by RFC3339.
-        """
+    def time_last_retrieved(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_last_retrieved")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The last date and time the audit policy was updated, in the format defined by RFC3339.
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 

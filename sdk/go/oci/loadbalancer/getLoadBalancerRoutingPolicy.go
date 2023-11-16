@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Load Balancer Routing Policy resource in Oracle Cloud Infrastructure Load Balancer service.
@@ -63,15 +62,15 @@ type LookupLoadBalancerRoutingPolicyArgs struct {
 // A collection of values returned by getLoadBalancerRoutingPolicy.
 type LookupLoadBalancerRoutingPolicyResult struct {
 	// The version of the language in which `condition` of `rules` are composed.
-	ConditionLanguageVersion string `pulumi:"conditionLanguageVersion"`
-	Id                       string `pulumi:"id"`
-	LoadBalancerId           string `pulumi:"loadBalancerId"`
+	ConditionLanguageVersion *string `pulumi:"conditionLanguageVersion"`
+	Id                       *string `pulumi:"id"`
+	LoadBalancerId           string  `pulumi:"loadBalancerId"`
 	// A unique name for the routing policy rule. Avoid entering confidential information.
-	Name              string `pulumi:"name"`
-	RoutingPolicyName string `pulumi:"routingPolicyName"`
+	Name              *string `pulumi:"name"`
+	RoutingPolicyName string  `pulumi:"routingPolicyName"`
 	// The ordered list of routing rules.
 	Rules []GetLoadBalancerRoutingPolicyRule `pulumi:"rules"`
-	State string                             `pulumi:"state"`
+	State *string                            `pulumi:"state"`
 }
 
 func LookupLoadBalancerRoutingPolicyOutput(ctx *pulumi.Context, args LookupLoadBalancerRoutingPolicyOutputArgs, opts ...pulumi.InvokeOption) LookupLoadBalancerRoutingPolicyResultOutput {
@@ -114,19 +113,13 @@ func (o LookupLoadBalancerRoutingPolicyResultOutput) ToLookupLoadBalancerRouting
 	return o
 }
 
-func (o LookupLoadBalancerRoutingPolicyResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupLoadBalancerRoutingPolicyResult] {
-	return pulumix.Output[LookupLoadBalancerRoutingPolicyResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The version of the language in which `condition` of `rules` are composed.
-func (o LookupLoadBalancerRoutingPolicyResultOutput) ConditionLanguageVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupLoadBalancerRoutingPolicyResult) string { return v.ConditionLanguageVersion }).(pulumi.StringOutput)
+func (o LookupLoadBalancerRoutingPolicyResultOutput) ConditionLanguageVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupLoadBalancerRoutingPolicyResult) *string { return v.ConditionLanguageVersion }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupLoadBalancerRoutingPolicyResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupLoadBalancerRoutingPolicyResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupLoadBalancerRoutingPolicyResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupLoadBalancerRoutingPolicyResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupLoadBalancerRoutingPolicyResultOutput) LoadBalancerId() pulumi.StringOutput {
@@ -134,8 +127,8 @@ func (o LookupLoadBalancerRoutingPolicyResultOutput) LoadBalancerId() pulumi.Str
 }
 
 // A unique name for the routing policy rule. Avoid entering confidential information.
-func (o LookupLoadBalancerRoutingPolicyResultOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupLoadBalancerRoutingPolicyResult) string { return v.Name }).(pulumi.StringOutput)
+func (o LookupLoadBalancerRoutingPolicyResultOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupLoadBalancerRoutingPolicyResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupLoadBalancerRoutingPolicyResultOutput) RoutingPolicyName() pulumi.StringOutput {
@@ -147,8 +140,8 @@ func (o LookupLoadBalancerRoutingPolicyResultOutput) Rules() GetLoadBalancerRout
 	return o.ApplyT(func(v LookupLoadBalancerRoutingPolicyResult) []GetLoadBalancerRoutingPolicyRule { return v.Rules }).(GetLoadBalancerRoutingPolicyRuleArrayOutput)
 }
 
-func (o LookupLoadBalancerRoutingPolicyResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupLoadBalancerRoutingPolicyResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupLoadBalancerRoutingPolicyResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupLoadBalancerRoutingPolicyResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 func init() {

@@ -70,13 +70,13 @@ namespace Pulumi.Oci.NetworkFirewall
         /// OCID of the Network Firewall Policy this application group belongs to.
         /// </summary>
         [Output("parentResourceId")]
-        public Output<string> ParentResourceId { get; private set; } = null!;
+        public Output<string?> ParentResourceId { get; private set; } = null!;
 
         /// <summary>
         /// Count of total applications in the given application group.
         /// </summary>
         [Output("totalApps")]
-        public Output<int> TotalApps { get; private set; } = null!;
+        public Output<int?> TotalApps { get; private set; } = null!;
 
 
         /// <summary>

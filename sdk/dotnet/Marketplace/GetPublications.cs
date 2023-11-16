@@ -209,7 +209,7 @@ namespace Pulumi.Oci.Marketplace
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The publisher category to which the publication belongs. The publisher category informs where the listing appears for use.
         /// </summary>
@@ -231,7 +231,7 @@ namespace Pulumi.Oci.Marketplace
 
             ImmutableArray<Outputs.GetPublicationsFilterResult> filters,
 
-            string id,
+            string? id,
 
             string listingType,
 

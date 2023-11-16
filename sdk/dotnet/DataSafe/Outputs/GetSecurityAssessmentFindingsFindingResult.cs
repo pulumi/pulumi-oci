@@ -16,7 +16,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// The OCID of the assessment that generated this finding.
         /// </summary>
-        public readonly string AssessmentId;
+        public readonly string? AssessmentId;
         /// <summary>
         /// The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
         /// </summary>
@@ -24,7 +24,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// The unique finding key. This is a system-generated identifier. To get the finding key for a finding, use ListFindings.
         /// </summary>
-        public readonly string Key;
+        public readonly string? Key;
         /// <summary>
         /// An optional filter to return only findings that match the specified reference.
         /// </summary>
@@ -32,43 +32,43 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// The explanation of the issue in this finding. It explains the reason for the rule and, if a risk is reported, it may also explain the recommended actions for remediation.
         /// </summary>
-        public readonly string Remarks;
+        public readonly string? Remarks;
         /// <summary>
         /// A filter to return only findings of a particular risk level.
         /// </summary>
-        public readonly string Severity;
+        public readonly string? Severity;
         /// <summary>
         /// The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
         /// </summary>
-        public readonly string Summary;
+        public readonly string? Summary;
         /// <summary>
         /// The OCID of the target database.
         /// </summary>
-        public readonly string TargetId;
+        public readonly string? TargetId;
         /// <summary>
         /// The short title for the finding.
         /// </summary>
-        public readonly string Title;
+        public readonly string? Title;
 
         [OutputConstructor]
         private GetSecurityAssessmentFindingsFindingResult(
-            string assessmentId,
+            string? assessmentId,
 
             ImmutableArray<string> details,
 
-            string key,
+            string? key,
 
             ImmutableArray<Outputs.GetSecurityAssessmentFindingsFindingReferenceResult> references,
 
-            string remarks,
+            string? remarks,
 
-            string severity,
+            string? severity,
 
-            string summary,
+            string? summary,
 
-            string targetId,
+            string? targetId,
 
-            string title)
+            string? title)
         {
             AssessmentId = assessmentId;
             Details = details;

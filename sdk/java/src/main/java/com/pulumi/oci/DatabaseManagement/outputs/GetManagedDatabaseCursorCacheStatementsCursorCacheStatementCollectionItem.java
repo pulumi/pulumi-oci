@@ -6,6 +6,8 @@ package com.pulumi.oci.DatabaseManagement.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItem {
@@ -13,39 +15,39 @@ public final class GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCo
      * @return The name of the parsing schema.
      * 
      */
-    private String schema;
+    private @Nullable String schema;
     /**
      * @return The SQL statement identifier. Identifies a SQL statement in the cursor cache.
      * 
      */
-    private String sqlId;
+    private @Nullable String sqlId;
     /**
      * @return A filter to return all the SQL plan baselines that match the SQL text. By default, the search is case insensitive. To run an exact or case-sensitive search, double-quote the search string. You may also use the &#39;%&#39; symbol as a wildcard.
      * 
      */
-    private String sqlText;
+    private @Nullable String sqlText;
 
     private GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItem() {}
     /**
      * @return The name of the parsing schema.
      * 
      */
-    public String schema() {
-        return this.schema;
+    public Optional<String> schema() {
+        return Optional.ofNullable(this.schema);
     }
     /**
      * @return The SQL statement identifier. Identifies a SQL statement in the cursor cache.
      * 
      */
-    public String sqlId() {
-        return this.sqlId;
+    public Optional<String> sqlId() {
+        return Optional.ofNullable(this.sqlId);
     }
     /**
      * @return A filter to return all the SQL plan baselines that match the SQL text. By default, the search is case insensitive. To run an exact or case-sensitive search, double-quote the search string. You may also use the &#39;%&#39; symbol as a wildcard.
      * 
      */
-    public String sqlText() {
-        return this.sqlText;
+    public Optional<String> sqlText() {
+        return Optional.ofNullable(this.sqlText);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCo
     }
     @CustomType.Builder
     public static final class Builder {
-        private String schema;
-        private String sqlId;
-        private String sqlText;
+        private @Nullable String schema;
+        private @Nullable String sqlId;
+        private @Nullable String sqlText;
         public Builder() {}
         public Builder(GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCo
         }
 
         @CustomType.Setter
-        public Builder schema(String schema) {
-            this.schema = Objects.requireNonNull(schema);
+        public Builder schema(@Nullable String schema) {
+            this.schema = schema;
             return this;
         }
         @CustomType.Setter
-        public Builder sqlId(String sqlId) {
-            this.sqlId = Objects.requireNonNull(sqlId);
+        public Builder sqlId(@Nullable String sqlId) {
+            this.sqlId = sqlId;
             return this;
         }
         @CustomType.Setter
-        public Builder sqlText(String sqlText) {
-            this.sqlText = Objects.requireNonNull(sqlText);
+        public Builder sqlText(@Nullable String sqlText) {
+            this.sqlText = sqlText;
             return this;
         }
         public GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItem build() {

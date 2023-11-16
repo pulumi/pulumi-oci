@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Network Firewall Policy Application Group resource in Oracle Cloud Infrastructure Network Firewall service.
@@ -37,14 +36,14 @@ type LookupNetworkFirewallPolicyApplicationGroupArgs struct {
 type LookupNetworkFirewallPolicyApplicationGroupResult struct {
 	// List of apps in the group.
 	Apps []string `pulumi:"apps"`
-	Id   string   `pulumi:"id"`
+	Id   *string  `pulumi:"id"`
 	// Name of the application Group.
 	Name                    string `pulumi:"name"`
 	NetworkFirewallPolicyId string `pulumi:"networkFirewallPolicyId"`
 	// OCID of the Network Firewall Policy this application group belongs to.
-	ParentResourceId string `pulumi:"parentResourceId"`
+	ParentResourceId *string `pulumi:"parentResourceId"`
 	// Count of total applications in the given application group.
-	TotalApps int `pulumi:"totalApps"`
+	TotalApps *int `pulumi:"totalApps"`
 }
 
 func LookupNetworkFirewallPolicyApplicationGroupOutput(ctx *pulumi.Context, args LookupNetworkFirewallPolicyApplicationGroupOutputArgs, opts ...pulumi.InvokeOption) LookupNetworkFirewallPolicyApplicationGroupResultOutput {
@@ -87,19 +86,13 @@ func (o LookupNetworkFirewallPolicyApplicationGroupResultOutput) ToLookupNetwork
 	return o
 }
 
-func (o LookupNetworkFirewallPolicyApplicationGroupResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupNetworkFirewallPolicyApplicationGroupResult] {
-	return pulumix.Output[LookupNetworkFirewallPolicyApplicationGroupResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // List of apps in the group.
 func (o LookupNetworkFirewallPolicyApplicationGroupResultOutput) Apps() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupNetworkFirewallPolicyApplicationGroupResult) []string { return v.Apps }).(pulumi.StringArrayOutput)
 }
 
-func (o LookupNetworkFirewallPolicyApplicationGroupResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNetworkFirewallPolicyApplicationGroupResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupNetworkFirewallPolicyApplicationGroupResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNetworkFirewallPolicyApplicationGroupResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Name of the application Group.
@@ -112,13 +105,13 @@ func (o LookupNetworkFirewallPolicyApplicationGroupResultOutput) NetworkFirewall
 }
 
 // OCID of the Network Firewall Policy this application group belongs to.
-func (o LookupNetworkFirewallPolicyApplicationGroupResultOutput) ParentResourceId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNetworkFirewallPolicyApplicationGroupResult) string { return v.ParentResourceId }).(pulumi.StringOutput)
+func (o LookupNetworkFirewallPolicyApplicationGroupResultOutput) ParentResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNetworkFirewallPolicyApplicationGroupResult) *string { return v.ParentResourceId }).(pulumi.StringPtrOutput)
 }
 
 // Count of total applications in the given application group.
-func (o LookupNetworkFirewallPolicyApplicationGroupResultOutput) TotalApps() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupNetworkFirewallPolicyApplicationGroupResult) int { return v.TotalApps }).(pulumi.IntOutput)
+func (o LookupNetworkFirewallPolicyApplicationGroupResultOutput) TotalApps() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupNetworkFirewallPolicyApplicationGroupResult) *int { return v.TotalApps }).(pulumi.IntPtrOutput)
 }
 
 func init() {

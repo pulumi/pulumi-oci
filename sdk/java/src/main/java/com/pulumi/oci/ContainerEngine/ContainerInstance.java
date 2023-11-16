@@ -21,6 +21,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -201,28 +202,28 @@ public class ContainerInstance extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="containerCount", refs={Integer.class}, tree="[0]")
-    private Output<Integer> containerCount;
+    private Output</* @Nullable */ Integer> containerCount;
 
     /**
      * @return The number of containers on the container instance.
      * 
      */
-    public Output<Integer> containerCount() {
-        return this.containerCount;
+    public Output<Optional<Integer>> containerCount() {
+        return Codegen.optional(this.containerCount);
     }
     /**
      * Container restart policy
      * 
      */
     @Export(name="containerRestartPolicy", refs={String.class}, tree="[0]")
-    private Output<String> containerRestartPolicy;
+    private Output</* @Nullable */ String> containerRestartPolicy;
 
     /**
      * @return Container restart policy
      * 
      */
-    public Output<String> containerRestartPolicy() {
-        return this.containerRestartPolicy;
+    public Output<Optional<String>> containerRestartPolicy() {
+        return Codegen.optional(this.containerRestartPolicy);
     }
     /**
      * The containers to create on this container instance.
@@ -243,112 +244,112 @@ public class ContainerInstance extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`.
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * A user-friendly name for the VNIC. Does not have to be unique. Avoid entering confidential information.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return A user-friendly name for the VNIC. Does not have to be unique. Avoid entering confidential information.
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     /**
      * Allow customers to define DNS settings for containers. If this is not provided, the containers use the default DNS settings of the subnet.
      * 
      */
     @Export(name="dnsConfig", refs={ContainerInstanceDnsConfig.class}, tree="[0]")
-    private Output<ContainerInstanceDnsConfig> dnsConfig;
+    private Output</* @Nullable */ ContainerInstanceDnsConfig> dnsConfig;
 
     /**
      * @return Allow customers to define DNS settings for containers. If this is not provided, the containers use the default DNS settings of the subnet.
      * 
      */
-    public Output<ContainerInstanceDnsConfig> dnsConfig() {
-        return this.dnsConfig;
+    public Output<Optional<ContainerInstanceDnsConfig>> dnsConfig() {
+        return Codegen.optional(this.dnsConfig);
     }
     /**
      * The fault domain where the container instance runs.
      * 
      */
     @Export(name="faultDomain", refs={String.class}, tree="[0]")
-    private Output<String> faultDomain;
+    private Output</* @Nullable */ String> faultDomain;
 
     /**
      * @return The fault domain where the container instance runs.
      * 
      */
-    public Output<String> faultDomain() {
-        return this.faultDomain;
+    public Output<Optional<String>> faultDomain() {
+        return Codegen.optional(this.faultDomain);
     }
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
      * 
      */
     @Export(name="gracefulShutdownTimeoutInSeconds", refs={String.class}, tree="[0]")
-    private Output<String> gracefulShutdownTimeoutInSeconds;
+    private Output</* @Nullable */ String> gracefulShutdownTimeoutInSeconds;
 
     /**
      * @return The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
      * 
      */
-    public Output<String> gracefulShutdownTimeoutInSeconds() {
-        return this.gracefulShutdownTimeoutInSeconds;
+    public Output<Optional<String>> gracefulShutdownTimeoutInSeconds() {
+        return Codegen.optional(this.gracefulShutdownTimeoutInSeconds);
     }
     /**
      * The image pulls secrets so you can access private registry to pull container images.
      * 
      */
     @Export(name="imagePullSecrets", refs={List.class,ContainerInstanceImagePullSecret.class}, tree="[0,1]")
-    private Output<List<ContainerInstanceImagePullSecret>> imagePullSecrets;
+    private Output</* @Nullable */ List<ContainerInstanceImagePullSecret>> imagePullSecrets;
 
     /**
      * @return The image pulls secrets so you can access private registry to pull container images.
      * 
      */
-    public Output<List<ContainerInstanceImagePullSecret>> imagePullSecrets() {
-        return this.imagePullSecrets;
+    public Output<Optional<List<ContainerInstanceImagePullSecret>>> imagePullSecrets() {
+        return Codegen.optional(this.imagePullSecrets);
     }
     /**
      * A message that describes the current state of the container in more detail. Can be used to provide actionable information.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return A message that describes the current state of the container in more detail. Can be used to provide actionable information.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * The shape of the container instance. The shape determines the resources available to the container instance.
@@ -386,7 +387,7 @@ public class ContainerInstance extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`.
@@ -395,50 +396,50 @@ public class ContainerInstance extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`.
      * 
      */
     @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> systemTags;
+    private Output</* @Nullable */ Map<String,Object>> systemTags;
 
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`.
      * 
      */
-    public Output<Map<String,Object>> systemTags() {
-        return this.systemTags;
+    public Output<Optional<Map<String,Object>>> systemTags() {
+        return Codegen.optional(this.systemTags);
     }
     /**
      * The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
     /**
      * The networks available to containers on this container instance.
@@ -459,14 +460,14 @@ public class ContainerInstance extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="volumeCount", refs={Integer.class}, tree="[0]")
-    private Output<Integer> volumeCount;
+    private Output</* @Nullable */ Integer> volumeCount;
 
     /**
      * @return The number of volumes that are attached to the container instance.
      * 
      */
-    public Output<Integer> volumeCount() {
-        return this.volumeCount;
+    public Output<Optional<Integer>> volumeCount() {
+        return Codegen.optional(this.volumeCount);
     }
     /**
      * A volume is a directory with data that is accessible across multiple containers in a container instance.
@@ -475,7 +476,7 @@ public class ContainerInstance extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="volumes", refs={List.class,ContainerInstanceVolume.class}, tree="[0,1]")
-    private Output<List<ContainerInstanceVolume>> volumes;
+    private Output</* @Nullable */ List<ContainerInstanceVolume>> volumes;
 
     /**
      * @return A volume is a directory with data that is accessible across multiple containers in a container instance.
@@ -483,8 +484,8 @@ public class ContainerInstance extends com.pulumi.resources.CustomResource {
      * You can attach up to 32 volumes to single container instance.
      * 
      */
-    public Output<List<ContainerInstanceVolume>> volumes() {
-        return this.volumes;
+    public Output<Optional<List<ContainerInstanceVolume>>> volumes() {
+        return Codegen.optional(this.volumes);
     }
 
     /**

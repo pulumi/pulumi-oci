@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.CloudGuard.outputs.GetSecurityZonesSecurityZoneCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSecurityZonesSecurityZoneCollection {
-    private List<GetSecurityZonesSecurityZoneCollectionItem> items;
+    private @Nullable List<GetSecurityZonesSecurityZoneCollectionItem> items;
 
     private GetSecurityZonesSecurityZoneCollection() {}
     public List<GetSecurityZonesSecurityZoneCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetSecurityZonesSecurityZoneCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetSecurityZonesSecurityZoneCollectionItem> items;
+        private @Nullable List<GetSecurityZonesSecurityZoneCollectionItem> items;
         public Builder() {}
         public Builder(GetSecurityZonesSecurityZoneCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetSecurityZonesSecurityZoneCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetSecurityZonesSecurityZoneCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetSecurityZonesSecurityZoneCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetSecurityZonesSecurityZoneCollectionItem... items) {

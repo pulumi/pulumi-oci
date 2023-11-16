@@ -34,15 +34,15 @@ export class DefaultDhcpOptions extends pulumi.CustomResource {
         return obj['__pulumiType'] === DefaultDhcpOptions.__pulumiType;
     }
 
-    public readonly compartmentId!: pulumi.Output<string>;
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
-    public readonly displayName!: pulumi.Output<string>;
-    public readonly domainNameType!: pulumi.Output<string>;
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly compartmentId!: pulumi.Output<string | undefined>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
+    public readonly displayName!: pulumi.Output<string | undefined>;
+    public readonly domainNameType!: pulumi.Output<string | undefined>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     public readonly manageDefaultResourceId!: pulumi.Output<string>;
     public readonly options!: pulumi.Output<outputs.Core.DefaultDhcpOptionsOption[]>;
-    public /*out*/ readonly state!: pulumi.Output<string>;
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a DefaultDhcpOptions resource with the given unique name, arguments, and options.

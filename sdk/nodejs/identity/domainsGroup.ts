@@ -72,7 +72,7 @@ export class DomainsGroup extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly compartmentOcid!: pulumi.Output<string>;
+    public /*out*/ readonly compartmentOcid!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      *
@@ -86,7 +86,7 @@ export class DomainsGroup extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public /*out*/ readonly deleteInProgress!: pulumi.Output<boolean>;
+    public /*out*/ readonly deleteInProgress!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) The Group display name.
      *
@@ -116,7 +116,7 @@ export class DomainsGroup extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly domainOcid!: pulumi.Output<string>;
+    public /*out*/ readonly domainOcid!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
      *
@@ -130,7 +130,7 @@ export class DomainsGroup extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly externalId!: pulumi.Output<string>;
+    public readonly externalId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The User or App who created the Resource
      *
@@ -142,7 +142,7 @@ export class DomainsGroup extends pulumi.CustomResource {
      * * returned: default
      * * type: complex
      */
-    public /*out*/ readonly idcsCreatedBies!: pulumi.Output<outputs.Identity.DomainsGroupIdcsCreatedBy[]>;
+    public /*out*/ readonly idcsCreatedBies!: pulumi.Output<outputs.Identity.DomainsGroupIdcsCreatedBy[] | undefined>;
     /**
      * The basic endpoint for the identity domain
      */
@@ -158,7 +158,7 @@ export class DomainsGroup extends pulumi.CustomResource {
      * * returned: default
      * * type: complex
      */
-    public /*out*/ readonly idcsLastModifiedBies!: pulumi.Output<outputs.Identity.DomainsGroupIdcsLastModifiedBy[]>;
+    public /*out*/ readonly idcsLastModifiedBies!: pulumi.Output<outputs.Identity.DomainsGroupIdcsLastModifiedBy[] | undefined>;
     /**
      * (Updatable) The release number when the resource was upgraded.
      *
@@ -172,7 +172,7 @@ export class DomainsGroup extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly idcsLastUpgradedInRelease!: pulumi.Output<string>;
+    public /*out*/ readonly idcsLastUpgradedInRelease!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      *
@@ -185,7 +185,7 @@ export class DomainsGroup extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly idcsPreventedOperations!: pulumi.Output<string[]>;
+    public /*out*/ readonly idcsPreventedOperations!: pulumi.Output<string[] | undefined>;
     /**
      * (Updatable) The group members. <b>Important:</b> When requesting group members, a maximum of 10,000 members can be returned in a single request. If the response contains more than 10,000 members, the request will fail. Use 'startIndex' and 'count' to return members in pages instead of in a single response, for example: #attributes=members[startIndex=1%26count=10]. This REST API is SCIM compliant.
      *
@@ -202,7 +202,7 @@ export class DomainsGroup extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly members!: pulumi.Output<outputs.Identity.DomainsGroupMember[]>;
+    public readonly members!: pulumi.Output<outputs.Identity.DomainsGroupMember[] | undefined>;
     /**
      * (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      *
@@ -216,7 +216,7 @@ export class DomainsGroup extends pulumi.CustomResource {
      * * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
      * * type: complex
      */
-    public /*out*/ readonly metas!: pulumi.Output<outputs.Identity.DomainsGroupMeta[]>;
+    public /*out*/ readonly metas!: pulumi.Output<outputs.Identity.DomainsGroupMeta[] | undefined>;
     /**
      * (Updatable) A human readable name for the group as defined by the Service Consumer.
      *
@@ -232,7 +232,7 @@ export class DomainsGroup extends pulumi.CustomResource {
      * * returned: always
      * * type: string
      */
-    public readonly nonUniqueDisplayName!: pulumi.Output<string>;
+    public readonly nonUniqueDisplayName!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      *
@@ -246,7 +246,7 @@ export class DomainsGroup extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: global
      */
-    public readonly ocid!: pulumi.Output<string>;
+    public readonly ocid!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      */
@@ -278,7 +278,7 @@ export class DomainsGroup extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly tags!: pulumi.Output<outputs.Identity.DomainsGroupTag[]>;
+    public readonly tags!: pulumi.Output<outputs.Identity.DomainsGroupTag[] | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      *
@@ -292,31 +292,31 @@ export class DomainsGroup extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly tenancyOcid!: pulumi.Output<string>;
+    public /*out*/ readonly tenancyOcid!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Tags.
      */
-    public readonly urnietfparamsscimschemasoracleidcsextensionOciTags!: pulumi.Output<outputs.Identity.DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTags>;
+    public readonly urnietfparamsscimschemasoracleidcsextensionOciTags!: pulumi.Output<outputs.Identity.DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTags | undefined>;
     /**
      * (Updatable) Schema for Database Service  Resource
      */
-    public /*out*/ readonly urnietfparamsscimschemasoracleidcsextensiondbcsGroups!: pulumi.Output<outputs.Identity.DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroup[]>;
+    public /*out*/ readonly urnietfparamsscimschemasoracleidcsextensiondbcsGroups!: pulumi.Output<outputs.Identity.DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroup[] | undefined>;
     /**
      * (Updatable) Dynamic Group
      */
-    public readonly urnietfparamsscimschemasoracleidcsextensiondynamicGroup!: pulumi.Output<outputs.Identity.DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondynamicGroup>;
+    public readonly urnietfparamsscimschemasoracleidcsextensiondynamicGroup!: pulumi.Output<outputs.Identity.DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondynamicGroup | undefined>;
     /**
      * (Updatable) Oracle Identity Cloud Service Group
      */
-    public readonly urnietfparamsscimschemasoracleidcsextensiongroupGroup!: pulumi.Output<outputs.Identity.DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroup>;
+    public readonly urnietfparamsscimschemasoracleidcsextensiongroupGroup!: pulumi.Output<outputs.Identity.DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroup | undefined>;
     /**
      * (Updatable) POSIX Group extension
      */
-    public readonly urnietfparamsscimschemasoracleidcsextensionposixGroup!: pulumi.Output<outputs.Identity.DomainsGroupUrnietfparamsscimschemasoracleidcsextensionposixGroup>;
+    public readonly urnietfparamsscimschemasoracleidcsextensionposixGroup!: pulumi.Output<outputs.Identity.DomainsGroupUrnietfparamsscimschemasoracleidcsextensionposixGroup | undefined>;
     /**
      * (Updatable) Requestable Group
      */
-    public readonly urnietfparamsscimschemasoracleidcsextensionrequestableGroup!: pulumi.Output<outputs.Identity.DomainsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroup>;
+    public readonly urnietfparamsscimschemasoracleidcsextensionrequestableGroup!: pulumi.Output<outputs.Identity.DomainsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroup | undefined>;
 
     /**
      * Create a DomainsGroup resource with the given unique name, arguments, and options.

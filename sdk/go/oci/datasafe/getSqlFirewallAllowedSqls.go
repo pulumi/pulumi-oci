@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Sql Firewall Allowed Sqls in Oracle Cloud Infrastructure Data Safe service.
@@ -90,7 +89,7 @@ type GetSqlFirewallAllowedSqlsResult struct {
 	CompartmentIdInSubtree *bool                             `pulumi:"compartmentIdInSubtree"`
 	Filters                []GetSqlFirewallAllowedSqlsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id        string  `pulumi:"id"`
+	Id        *string `pulumi:"id"`
 	ScimQuery *string `pulumi:"scimQuery"`
 	// The list of sql_firewall_allowed_sql_collection.
 	SqlFirewallAllowedSqlCollections []GetSqlFirewallAllowedSqlsSqlFirewallAllowedSqlCollection `pulumi:"sqlFirewallAllowedSqlCollections"`
@@ -143,12 +142,6 @@ func (o GetSqlFirewallAllowedSqlsResultOutput) ToGetSqlFirewallAllowedSqlsResult
 	return o
 }
 
-func (o GetSqlFirewallAllowedSqlsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetSqlFirewallAllowedSqlsResult] {
-	return pulumix.Output[GetSqlFirewallAllowedSqlsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSqlFirewallAllowedSqlsResultOutput) AccessLevel() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetSqlFirewallAllowedSqlsResult) *string { return v.AccessLevel }).(pulumi.StringPtrOutput)
 }
@@ -167,8 +160,8 @@ func (o GetSqlFirewallAllowedSqlsResultOutput) Filters() GetSqlFirewallAllowedSq
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetSqlFirewallAllowedSqlsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSqlFirewallAllowedSqlsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetSqlFirewallAllowedSqlsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSqlFirewallAllowedSqlsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetSqlFirewallAllowedSqlsResultOutput) ScimQuery() pulumi.StringPtrOutput {

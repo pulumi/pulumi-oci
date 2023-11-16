@@ -27,13 +27,13 @@ public final class GetSqlFirewallViolationsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private @Nullable String scimQuery;
     /**
      * @return The list of sql_firewall_violations_collection.
      * 
      */
-    private List<GetSqlFirewallViolationsSqlFirewallViolationsCollection> sqlFirewallViolationsCollections;
+    private @Nullable List<GetSqlFirewallViolationsSqlFirewallViolationsCollection> sqlFirewallViolationsCollections;
 
     private GetSqlFirewallViolationsResult() {}
     public Optional<String> accessLevel() {
@@ -56,8 +56,8 @@ public final class GetSqlFirewallViolationsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public Optional<String> scimQuery() {
         return Optional.ofNullable(this.scimQuery);
@@ -67,7 +67,7 @@ public final class GetSqlFirewallViolationsResult {
      * 
      */
     public List<GetSqlFirewallViolationsSqlFirewallViolationsCollection> sqlFirewallViolationsCollections() {
-        return this.sqlFirewallViolationsCollections;
+        return this.sqlFirewallViolationsCollections == null ? List.of() : this.sqlFirewallViolationsCollections;
     }
 
     public static Builder builder() {
@@ -83,9 +83,9 @@ public final class GetSqlFirewallViolationsResult {
         private String compartmentId;
         private @Nullable Boolean compartmentIdInSubtree;
         private @Nullable List<GetSqlFirewallViolationsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String scimQuery;
-        private List<GetSqlFirewallViolationsSqlFirewallViolationsCollection> sqlFirewallViolationsCollections;
+        private @Nullable List<GetSqlFirewallViolationsSqlFirewallViolationsCollection> sqlFirewallViolationsCollections;
         public Builder() {}
         public Builder(GetSqlFirewallViolationsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -122,8 +122,8 @@ public final class GetSqlFirewallViolationsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -132,8 +132,8 @@ public final class GetSqlFirewallViolationsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder sqlFirewallViolationsCollections(List<GetSqlFirewallViolationsSqlFirewallViolationsCollection> sqlFirewallViolationsCollections) {
-            this.sqlFirewallViolationsCollections = Objects.requireNonNull(sqlFirewallViolationsCollections);
+        public Builder sqlFirewallViolationsCollections(@Nullable List<GetSqlFirewallViolationsSqlFirewallViolationsCollection> sqlFirewallViolationsCollections) {
+            this.sqlFirewallViolationsCollections = sqlFirewallViolationsCollections;
             return this;
         }
         public Builder sqlFirewallViolationsCollections(GetSqlFirewallViolationsSqlFirewallViolationsCollection... sqlFirewallViolationsCollections) {

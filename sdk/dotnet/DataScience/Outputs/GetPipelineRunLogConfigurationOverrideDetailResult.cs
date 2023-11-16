@@ -16,29 +16,29 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// <summary>
         /// If automatic on-behalf-of log object creation is enabled for pipeline runs.
         /// </summary>
-        public readonly bool EnableAutoLogCreation;
+        public readonly bool? EnableAutoLogCreation;
         /// <summary>
         /// If customer logging is enabled for pipeline.
         /// </summary>
-        public readonly bool EnableLogging;
+        public readonly bool? EnableLogging;
         /// <summary>
         /// The log group id for where log objects will be for pipeline runs.
         /// </summary>
-        public readonly string LogGroupId;
+        public readonly string? LogGroupId;
         /// <summary>
         /// The log id of the log object the pipeline run logs will be shipped to.
         /// </summary>
-        public readonly string LogId;
+        public readonly string? LogId;
 
         [OutputConstructor]
         private GetPipelineRunLogConfigurationOverrideDetailResult(
-            bool enableAutoLogCreation,
+            bool? enableAutoLogCreation,
 
-            bool enableLogging,
+            bool? enableLogging,
 
-            string logGroupId,
+            string? logGroupId,
 
-            string logId)
+            string? logId)
         {
             EnableAutoLogCreation = enableAutoLogCreation;
             EnableLogging = enableLogging;

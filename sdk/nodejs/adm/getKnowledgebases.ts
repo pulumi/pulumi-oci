@@ -82,7 +82,7 @@ export interface GetKnowledgebasesResult {
     /**
      * The list of knowledge_base_collection.
      */
-    readonly knowledgeBaseCollections: outputs.Adm.GetKnowledgebasesKnowledgeBaseCollection[];
+    readonly knowledgeBaseCollections?: outputs.Adm.GetKnowledgebasesKnowledgeBaseCollection[];
     /**
      * The current lifecycle state of the knowledge base.
      */

@@ -20,7 +20,7 @@ public final class GetAuditPoliciesResult {
      * @return The list of audit_policy_collection.
      * 
      */
-    private List<GetAuditPoliciesAuditPolicyCollection> auditPolicyCollections;
+    private @Nullable List<GetAuditPoliciesAuditPolicyCollection> auditPolicyCollections;
     private @Nullable String auditPolicyId;
     /**
      * @return The OCID of the compartment containing the audit policy.
@@ -38,7 +38,7 @@ public final class GetAuditPoliciesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The current state of the audit policy.
      * 
@@ -59,7 +59,7 @@ public final class GetAuditPoliciesResult {
      * 
      */
     public List<GetAuditPoliciesAuditPolicyCollection> auditPolicyCollections() {
-        return this.auditPolicyCollections;
+        return this.auditPolicyCollections == null ? List.of() : this.auditPolicyCollections;
     }
     public Optional<String> auditPolicyId() {
         return Optional.ofNullable(this.auditPolicyId);
@@ -88,8 +88,8 @@ public final class GetAuditPoliciesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The current state of the audit policy.
@@ -116,13 +116,13 @@ public final class GetAuditPoliciesResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String accessLevel;
-        private List<GetAuditPoliciesAuditPolicyCollection> auditPolicyCollections;
+        private @Nullable List<GetAuditPoliciesAuditPolicyCollection> auditPolicyCollections;
         private @Nullable String auditPolicyId;
         private String compartmentId;
         private @Nullable Boolean compartmentIdInSubtree;
         private @Nullable String displayName;
         private @Nullable List<GetAuditPoliciesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String state;
         private @Nullable String targetId;
         public Builder() {}
@@ -146,8 +146,8 @@ public final class GetAuditPoliciesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder auditPolicyCollections(List<GetAuditPoliciesAuditPolicyCollection> auditPolicyCollections) {
-            this.auditPolicyCollections = Objects.requireNonNull(auditPolicyCollections);
+        public Builder auditPolicyCollections(@Nullable List<GetAuditPoliciesAuditPolicyCollection> auditPolicyCollections) {
+            this.auditPolicyCollections = auditPolicyCollections;
             return this;
         }
         public Builder auditPolicyCollections(GetAuditPoliciesAuditPolicyCollection... auditPolicyCollections) {
@@ -182,8 +182,8 @@ public final class GetAuditPoliciesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

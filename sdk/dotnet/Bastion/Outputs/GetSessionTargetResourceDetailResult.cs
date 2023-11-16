@@ -16,47 +16,47 @@ namespace Pulumi.Oci.Bastion.Outputs
         /// <summary>
         /// The Bastion service recognizes three types of sessions, managed SSH sessions, SSH port forwarding sessions, and Dynamic SSH port forwarding sessions. Managed SSH sessions require that the target resource has an OpenSSH server and the Oracle Cloud Agent both running.
         /// </summary>
-        public readonly string SessionType;
+        public readonly string? SessionType;
         /// <summary>
         /// The display name of the target Compute instance that the session connects to.
         /// </summary>
-        public readonly string TargetResourceDisplayName;
+        public readonly string? TargetResourceDisplayName;
         /// <summary>
         /// The Fully Qualified Domain Name of the target resource that the session connects to.
         /// </summary>
-        public readonly string TargetResourceFqdn;
+        public readonly string? TargetResourceFqdn;
         /// <summary>
         /// The unique identifier (OCID) of the target resource (a Compute instance, for example) that the session connects to.
         /// </summary>
-        public readonly string TargetResourceId;
+        public readonly string? TargetResourceId;
         /// <summary>
         /// The name of the user on the target resource operating system that the session uses for the connection.
         /// </summary>
-        public readonly string TargetResourceOperatingSystemUserName;
+        public readonly string? TargetResourceOperatingSystemUserName;
         /// <summary>
         /// The port number to connect to on the target resource.
         /// </summary>
-        public readonly int TargetResourcePort;
+        public readonly int? TargetResourcePort;
         /// <summary>
         /// The private IP address of the target resource that the session connects to.
         /// </summary>
-        public readonly string TargetResourcePrivateIpAddress;
+        public readonly string? TargetResourcePrivateIpAddress;
 
         [OutputConstructor]
         private GetSessionTargetResourceDetailResult(
-            string sessionType,
+            string? sessionType,
 
-            string targetResourceDisplayName,
+            string? targetResourceDisplayName,
 
-            string targetResourceFqdn,
+            string? targetResourceFqdn,
 
-            string targetResourceId,
+            string? targetResourceId,
 
-            string targetResourceOperatingSystemUserName,
+            string? targetResourceOperatingSystemUserName,
 
-            int targetResourcePort,
+            int? targetResourcePort,
 
-            string targetResourcePrivateIpAddress)
+            string? targetResourcePrivateIpAddress)
         {
             SessionType = sessionType;
             TargetResourceDisplayName = targetResourceDisplayName;

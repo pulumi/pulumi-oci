@@ -55,7 +55,7 @@ export interface GetAppCatalogSubscriptionsResult {
     /**
      * The list of app_catalog_subscriptions.
      */
-    readonly appCatalogSubscriptions: outputs.Core.GetAppCatalogSubscriptionsAppCatalogSubscription[];
+    readonly appCatalogSubscriptions?: outputs.Core.GetAppCatalogSubscriptionsAppCatalogSubscription[];
     /**
      * The compartmentID of the subscription.
      */
@@ -64,7 +64,7 @@ export interface GetAppCatalogSubscriptionsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The ocid of the listing resource.
      */

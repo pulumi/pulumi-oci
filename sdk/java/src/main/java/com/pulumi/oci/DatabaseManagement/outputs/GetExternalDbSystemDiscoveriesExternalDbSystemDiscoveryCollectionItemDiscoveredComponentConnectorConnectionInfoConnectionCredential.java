@@ -6,6 +6,8 @@ package com.pulumi.oci.DatabaseManagement.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoConnectionCredential {
@@ -13,75 +15,75 @@ public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollec
      * @return The name of the credential information that used to connect to the DB system resource. The name should be in &#34;x.y&#34; format, where the length of &#34;x&#34; has a maximum of 64 characters, and length of &#34;y&#34; has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the &#34;.&#34; character that separates the &#34;x&#34; and &#34;y&#34; portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
      * 
      */
-    private String credentialName;
+    private @Nullable String credentialName;
     /**
      * @return The type of credential used to connect to the ASM instance.
      * 
      */
-    private String credentialType;
+    private @Nullable String credentialType;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
      * 
      */
-    private String passwordSecretId;
+    private @Nullable String passwordSecretId;
     /**
      * @return The role of the user connecting to the ASM instance.
      * 
      */
-    private String role;
+    private @Nullable String role;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
      * 
      */
-    private String sslSecretId;
+    private @Nullable String sslSecretId;
     /**
      * @return The user name used to connect to the ASM instance.
      * 
      */
-    private String userName;
+    private @Nullable String userName;
 
     private GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoConnectionCredential() {}
     /**
      * @return The name of the credential information that used to connect to the DB system resource. The name should be in &#34;x.y&#34; format, where the length of &#34;x&#34; has a maximum of 64 characters, and length of &#34;y&#34; has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the &#34;.&#34; character that separates the &#34;x&#34; and &#34;y&#34; portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
      * 
      */
-    public String credentialName() {
-        return this.credentialName;
+    public Optional<String> credentialName() {
+        return Optional.ofNullable(this.credentialName);
     }
     /**
      * @return The type of credential used to connect to the ASM instance.
      * 
      */
-    public String credentialType() {
-        return this.credentialType;
+    public Optional<String> credentialType() {
+        return Optional.ofNullable(this.credentialType);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
      * 
      */
-    public String passwordSecretId() {
-        return this.passwordSecretId;
+    public Optional<String> passwordSecretId() {
+        return Optional.ofNullable(this.passwordSecretId);
     }
     /**
      * @return The role of the user connecting to the ASM instance.
      * 
      */
-    public String role() {
-        return this.role;
+    public Optional<String> role() {
+        return Optional.ofNullable(this.role);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
      * 
      */
-    public String sslSecretId() {
-        return this.sslSecretId;
+    public Optional<String> sslSecretId() {
+        return Optional.ofNullable(this.sslSecretId);
     }
     /**
      * @return The user name used to connect to the ASM instance.
      * 
      */
-    public String userName() {
-        return this.userName;
+    public Optional<String> userName() {
+        return Optional.ofNullable(this.userName);
     }
 
     public static Builder builder() {
@@ -93,12 +95,12 @@ public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollec
     }
     @CustomType.Builder
     public static final class Builder {
-        private String credentialName;
-        private String credentialType;
-        private String passwordSecretId;
-        private String role;
-        private String sslSecretId;
-        private String userName;
+        private @Nullable String credentialName;
+        private @Nullable String credentialType;
+        private @Nullable String passwordSecretId;
+        private @Nullable String role;
+        private @Nullable String sslSecretId;
+        private @Nullable String userName;
         public Builder() {}
         public Builder(GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoConnectionCredential defaults) {
     	      Objects.requireNonNull(defaults);
@@ -111,33 +113,33 @@ public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollec
         }
 
         @CustomType.Setter
-        public Builder credentialName(String credentialName) {
-            this.credentialName = Objects.requireNonNull(credentialName);
+        public Builder credentialName(@Nullable String credentialName) {
+            this.credentialName = credentialName;
             return this;
         }
         @CustomType.Setter
-        public Builder credentialType(String credentialType) {
-            this.credentialType = Objects.requireNonNull(credentialType);
+        public Builder credentialType(@Nullable String credentialType) {
+            this.credentialType = credentialType;
             return this;
         }
         @CustomType.Setter
-        public Builder passwordSecretId(String passwordSecretId) {
-            this.passwordSecretId = Objects.requireNonNull(passwordSecretId);
+        public Builder passwordSecretId(@Nullable String passwordSecretId) {
+            this.passwordSecretId = passwordSecretId;
             return this;
         }
         @CustomType.Setter
-        public Builder role(String role) {
-            this.role = Objects.requireNonNull(role);
+        public Builder role(@Nullable String role) {
+            this.role = role;
             return this;
         }
         @CustomType.Setter
-        public Builder sslSecretId(String sslSecretId) {
-            this.sslSecretId = Objects.requireNonNull(sslSecretId);
+        public Builder sslSecretId(@Nullable String sslSecretId) {
+            this.sslSecretId = sslSecretId;
             return this;
         }
         @CustomType.Setter
-        public Builder userName(String userName) {
-            this.userName = Objects.requireNonNull(userName);
+        public Builder userName(@Nullable String userName) {
+            this.userName = userName;
             return this;
         }
         public GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoConnectionCredential build() {

@@ -16,107 +16,107 @@ namespace Pulumi.Oci.CloudMigrations.Outputs
         /// <summary>
         /// The availability domain in which to list resources.
         /// </summary>
-        public readonly string AvailabilityDomain;
+        public readonly string? AvailabilityDomain;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// Description of the GPUs.
         /// </summary>
-        public readonly string GpuDescription;
+        public readonly string? GpuDescription;
         /// <summary>
         /// Number of GPUs.
         /// </summary>
-        public readonly int Gpus;
+        public readonly int? Gpus;
         /// <summary>
         /// Description of local disks.
         /// </summary>
-        public readonly string LocalDiskDescription;
+        public readonly string? LocalDiskDescription;
         /// <summary>
         /// Number of local disks.
         /// </summary>
-        public readonly int LocalDisks;
+        public readonly int? LocalDisks;
         /// <summary>
         /// Total size of local disks for shape.
         /// </summary>
-        public readonly double LocalDisksTotalSizeInGbs;
+        public readonly double? LocalDisksTotalSizeInGbs;
         /// <summary>
         /// Maximum number of virtual network interfaces that can be attached.
         /// </summary>
-        public readonly int MaxVnicAttachments;
+        public readonly int? MaxVnicAttachments;
         /// <summary>
         /// Amount of memory for the shape.
         /// </summary>
-        public readonly double MemoryInGbs;
+        public readonly double? MemoryInGbs;
         /// <summary>
         /// Minimum CPUs required.
         /// </summary>
-        public readonly double MinTotalBaselineOcpusRequired;
+        public readonly double? MinTotalBaselineOcpusRequired;
         /// <summary>
         /// Shape bandwidth.
         /// </summary>
-        public readonly double NetworkingBandwidthInGbps;
+        public readonly double? NetworkingBandwidthInGbps;
         /// <summary>
         /// Number of CPUs.
         /// </summary>
-        public readonly double Ocpus;
+        public readonly double? Ocpus;
         /// <summary>
         /// Shape name and availability domain.  Used for pagination.
         /// </summary>
-        public readonly string PaginationToken;
+        public readonly string? PaginationToken;
         /// <summary>
         /// Description of the processor.
         /// </summary>
-        public readonly string ProcessorDescription;
+        public readonly string? ProcessorDescription;
         /// <summary>
         /// Name of the shape.
         /// </summary>
-        public readonly string Shape;
+        public readonly string? Shape;
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, object>? SystemTags;
 
         [OutputConstructor]
         private GetMigrationPlanAvailableShapesAvailableShapesCollectionItemResult(
-            string availabilityDomain,
+            string? availabilityDomain,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string gpuDescription,
+            string? gpuDescription,
 
-            int gpus,
+            int? gpus,
 
-            string localDiskDescription,
+            string? localDiskDescription,
 
-            int localDisks,
+            int? localDisks,
 
-            double localDisksTotalSizeInGbs,
+            double? localDisksTotalSizeInGbs,
 
-            int maxVnicAttachments,
+            int? maxVnicAttachments,
 
-            double memoryInGbs,
+            double? memoryInGbs,
 
-            double minTotalBaselineOcpusRequired,
+            double? minTotalBaselineOcpusRequired,
 
-            double networkingBandwidthInGbps,
+            double? networkingBandwidthInGbps,
 
-            double ocpus,
+            double? ocpus,
 
-            string paginationToken,
+            string? paginationToken,
 
-            string processorDescription,
+            string? processorDescription,
 
-            string shape,
+            string? shape,
 
-            ImmutableDictionary<string, object> systemTags)
+            ImmutableDictionary<string, object>? systemTags)
         {
             AvailabilityDomain = availabilityDomain;
             DefinedTags = definedTags;

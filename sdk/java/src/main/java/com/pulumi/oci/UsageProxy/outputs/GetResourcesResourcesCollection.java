@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.UsageProxy.outputs.GetResourcesResourcesCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetResourcesResourcesCollection {
@@ -14,7 +15,7 @@ public final class GetResourcesResourcesCollection {
      * @return The list of resource details for a service.
      * 
      */
-    private List<GetResourcesResourcesCollectionItem> items;
+    private @Nullable List<GetResourcesResourcesCollectionItem> items;
 
     private GetResourcesResourcesCollection() {}
     /**
@@ -22,7 +23,7 @@ public final class GetResourcesResourcesCollection {
      * 
      */
     public List<GetResourcesResourcesCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetResourcesResourcesCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetResourcesResourcesCollectionItem> items;
+        private @Nullable List<GetResourcesResourcesCollectionItem> items;
         public Builder() {}
         public Builder(GetResourcesResourcesCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetResourcesResourcesCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetResourcesResourcesCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetResourcesResourcesCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetResourcesResourcesCollectionItem... items) {

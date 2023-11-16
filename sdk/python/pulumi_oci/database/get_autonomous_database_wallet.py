@@ -56,10 +56,7 @@ class GetAutonomousDatabaseWalletResult:
 
     @property
     @pulumi.getter
-    def content(self) -> str:
-        """
-        content of the downloaded zipped wallet for the Autonomous Database. If `base64_encode_content` is set to `true`, then this content will be base64 encoded.
-        """
+    def content(self) -> Optional[str]:
         return pulumi.get(self, "content")
 
     @property
@@ -69,7 +66,7 @@ class GetAutonomousDatabaseWalletResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -101,30 +98,7 @@ def get_autonomous_database_wallet(autonomous_database_id: Optional[str] = None,
                                    password: Optional[str] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAutonomousDatabaseWalletResult:
     """
-    **Deprecated. Use Database.AutonomousDatabaseWallet instead.**
-
-    This data source provides details about a specific Autonomous Database Wallet resource in Oracle Cloud Infrastructure Database service.
-
-    Creates and downloads a wallet for the specified Autonomous Database.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_autonomous_database_wallet = oci.Database.get_autonomous_database_wallet(autonomous_database_id=oci_database_autonomous_database["test_autonomous_database"]["id"],
-        password=var["autonomous_database_wallet_password"],
-        base64_encode_content=False,
-        generate_type=var["autonomous_database_wallet_generate_type"])
-    ```
-
-
-    :param str autonomous_database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str generate_type: The type of wallet to generate.
-           
-           **Serverless instance usage:**
-    :param str password: The password to encrypt the keys inside the wallet. The password must be at least 8 characters long and must include at least 1 letter and either 1 numeric character or 1 special character.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['autonomousDatabaseId'] = autonomous_database_id
@@ -150,29 +124,6 @@ def get_autonomous_database_wallet_output(autonomous_database_id: Optional[pulum
                                           password: Optional[pulumi.Input[str]] = None,
                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAutonomousDatabaseWalletResult]:
     """
-    **Deprecated. Use Database.AutonomousDatabaseWallet instead.**
-
-    This data source provides details about a specific Autonomous Database Wallet resource in Oracle Cloud Infrastructure Database service.
-
-    Creates and downloads a wallet for the specified Autonomous Database.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_autonomous_database_wallet = oci.Database.get_autonomous_database_wallet(autonomous_database_id=oci_database_autonomous_database["test_autonomous_database"]["id"],
-        password=var["autonomous_database_wallet_password"],
-        base64_encode_content=False,
-        generate_type=var["autonomous_database_wallet_generate_type"])
-    ```
-
-
-    :param str autonomous_database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str generate_type: The type of wallet to generate.
-           
-           **Serverless instance usage:**
-    :param str password: The password to encrypt the keys inside the wallet. The password must be at least 8 characters long and must include at least 1 letter and either 1 numeric character or 1 special character.
+    Use this data source to access information about an existing resource.
     """
     ...

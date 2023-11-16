@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific View resource in Oracle Cloud Infrastructure DNS service.
@@ -65,26 +64,26 @@ type LookupViewArgs struct {
 // A collection of values returned by getView.
 type LookupViewResult struct {
 	// The OCID of the owning compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The display name of the view.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the view.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
-	IsProtected bool    `pulumi:"isProtected"`
+	IsProtected *bool   `pulumi:"isProtected"`
 	Scope       *string `pulumi:"scope"`
 	// The canonical absolute URL of the resource.
-	Self string `pulumi:"self"`
+	Self *string `pulumi:"self"`
 	// The current state of the resource.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-	TimeUpdated string  `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	ViewId      *string `pulumi:"viewId"`
 }
 
@@ -128,15 +127,9 @@ func (o LookupViewResultOutput) ToLookupViewResultOutputWithContext(ctx context.
 	return o
 }
 
-func (o LookupViewResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupViewResult] {
-	return pulumix.Output[LookupViewResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the owning compartment.
-func (o LookupViewResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupViewResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupViewResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupViewResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -145,8 +138,8 @@ func (o LookupViewResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // The display name of the view.
-func (o LookupViewResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupViewResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupViewResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupViewResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -155,13 +148,13 @@ func (o LookupViewResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The OCID of the view.
-func (o LookupViewResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupViewResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupViewResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupViewResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
-func (o LookupViewResultOutput) IsProtected() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupViewResult) bool { return v.IsProtected }).(pulumi.BoolOutput)
+func (o LookupViewResultOutput) IsProtected() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupViewResult) *bool { return v.IsProtected }).(pulumi.BoolPtrOutput)
 }
 
 func (o LookupViewResultOutput) Scope() pulumi.StringPtrOutput {
@@ -169,23 +162,23 @@ func (o LookupViewResultOutput) Scope() pulumi.StringPtrOutput {
 }
 
 // The canonical absolute URL of the resource.
-func (o LookupViewResultOutput) Self() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupViewResult) string { return v.Self }).(pulumi.StringOutput)
+func (o LookupViewResultOutput) Self() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupViewResult) *string { return v.Self }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the resource.
-func (o LookupViewResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupViewResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupViewResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupViewResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-func (o LookupViewResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupViewResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupViewResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupViewResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-func (o LookupViewResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupViewResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupViewResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupViewResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupViewResultOutput) ViewId() pulumi.StringPtrOutput {

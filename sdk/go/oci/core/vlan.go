@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Vlan resource in Oracle Cloud Infrastructure Core service.
@@ -75,7 +74,7 @@ type Vlan struct {
 	// To create an AD-specific VLAN, use this attribute to specify the availability domain. Resources created in this VLAN must be in that availability domain.
 	//
 	// Example: `Uocm:PHX-AD-1`
-	AvailabilityDomain pulumi.StringOutput `pulumi:"availabilityDomain"`
+	AvailabilityDomain pulumi.StringPtrOutput `pulumi:"availabilityDomain"`
 	// (Updatable) The range of IPv4 addresses that will be used for layer 3 communication with hosts outside the VLAN. The CIDR must maintain the following rules -
 	//
 	// a. The CIDR block is valid and correctly formatted. b. The new range is within one of the parent VCN ranges.
@@ -87,24 +86,24 @@ type Vlan struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// (Updatable) A list of the OCIDs of the network security groups (NSGs) to add all VNICs in the VLAN to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
 	NsgIds pulumi.StringArrayOutput `pulumi:"nsgIds"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the VLAN will use. If you don't provide a value, the VLAN uses the VCN's default route table.
-	RouteTableId pulumi.StringOutput `pulumi:"routeTableId"`
+	RouteTableId pulumi.StringPtrOutput `pulumi:"routeTableId"`
 	// The VLAN's current state.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The date and time the VLAN was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN to contain the VLAN.
 	VcnId pulumi.StringOutput `pulumi:"vcnId"`
 	// The IEEE 802.1Q VLAN tag for this VLAN. The value must be unique across all VLANs in the VCN. If you don't provide a value, Oracle assigns one. You cannot change the value later. VLAN tag 0 is reserved for use by Oracle.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	VlanTag pulumi.IntOutput `pulumi:"vlanTag"`
+	VlanTag pulumi.IntPtrOutput `pulumi:"vlanTag"`
 }
 
 // NewVlan registers a new resource with the given unique name, arguments, and options.
@@ -325,12 +324,6 @@ func (i *Vlan) ToVlanOutputWithContext(ctx context.Context) VlanOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(VlanOutput)
 }
 
-func (i *Vlan) ToOutput(ctx context.Context) pulumix.Output[*Vlan] {
-	return pulumix.Output[*Vlan]{
-		OutputState: i.ToVlanOutputWithContext(ctx).OutputState,
-	}
-}
-
 // VlanArrayInput is an input type that accepts VlanArray and VlanArrayOutput values.
 // You can construct a concrete instance of `VlanArrayInput` via:
 //
@@ -354,12 +347,6 @@ func (i VlanArray) ToVlanArrayOutput() VlanArrayOutput {
 
 func (i VlanArray) ToVlanArrayOutputWithContext(ctx context.Context) VlanArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(VlanArrayOutput)
-}
-
-func (i VlanArray) ToOutput(ctx context.Context) pulumix.Output[[]*Vlan] {
-	return pulumix.Output[[]*Vlan]{
-		OutputState: i.ToVlanArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // VlanMapInput is an input type that accepts VlanMap and VlanMapOutput values.
@@ -387,12 +374,6 @@ func (i VlanMap) ToVlanMapOutputWithContext(ctx context.Context) VlanMapOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(VlanMapOutput)
 }
 
-func (i VlanMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Vlan] {
-	return pulumix.Output[map[string]*Vlan]{
-		OutputState: i.ToVlanMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type VlanOutput struct{ *pulumi.OutputState }
 
 func (VlanOutput) ElementType() reflect.Type {
@@ -407,12 +388,6 @@ func (o VlanOutput) ToVlanOutputWithContext(ctx context.Context) VlanOutput {
 	return o
 }
 
-func (o VlanOutput) ToOutput(ctx context.Context) pulumix.Output[*Vlan] {
-	return pulumix.Output[*Vlan]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Controls whether the VLAN is regional or specific to an availability domain. A regional VLAN has the flexibility to implement failover across availability domains. Previously, all VLANs were AD-specific.
 //
 // To create a regional VLAN, omit this attribute. Resources created subsequently in this VLAN (such as a Compute instance) can be created in any availability domain in the region.
@@ -420,8 +395,8 @@ func (o VlanOutput) ToOutput(ctx context.Context) pulumix.Output[*Vlan] {
 // To create an AD-specific VLAN, use this attribute to specify the availability domain. Resources created in this VLAN must be in that availability domain.
 //
 // Example: `Uocm:PHX-AD-1`
-func (o VlanOutput) AvailabilityDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v *Vlan) pulumi.StringOutput { return v.AvailabilityDomain }).(pulumi.StringOutput)
+func (o VlanOutput) AvailabilityDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Vlan) pulumi.StringPtrOutput { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The range of IPv4 addresses that will be used for layer 3 communication with hosts outside the VLAN. The CIDR must maintain the following rules -
@@ -444,8 +419,8 @@ func (o VlanOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-func (o VlanOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *Vlan) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o VlanOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Vlan) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -459,18 +434,18 @@ func (o VlanOutput) NsgIds() pulumi.StringArrayOutput {
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the VLAN will use. If you don't provide a value, the VLAN uses the VCN's default route table.
-func (o VlanOutput) RouteTableId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Vlan) pulumi.StringOutput { return v.RouteTableId }).(pulumi.StringOutput)
+func (o VlanOutput) RouteTableId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Vlan) pulumi.StringPtrOutput { return v.RouteTableId }).(pulumi.StringPtrOutput)
 }
 
 // The VLAN's current state.
-func (o VlanOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *Vlan) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o VlanOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Vlan) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the VLAN was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-func (o VlanOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Vlan) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o VlanOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Vlan) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN to contain the VLAN.
@@ -482,8 +457,8 @@ func (o VlanOutput) VcnId() pulumi.StringOutput {
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o VlanOutput) VlanTag() pulumi.IntOutput {
-	return o.ApplyT(func(v *Vlan) pulumi.IntOutput { return v.VlanTag }).(pulumi.IntOutput)
+func (o VlanOutput) VlanTag() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *Vlan) pulumi.IntPtrOutput { return v.VlanTag }).(pulumi.IntPtrOutput)
 }
 
 type VlanArrayOutput struct{ *pulumi.OutputState }
@@ -498,12 +473,6 @@ func (o VlanArrayOutput) ToVlanArrayOutput() VlanArrayOutput {
 
 func (o VlanArrayOutput) ToVlanArrayOutputWithContext(ctx context.Context) VlanArrayOutput {
 	return o
-}
-
-func (o VlanArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Vlan] {
-	return pulumix.Output[[]*Vlan]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o VlanArrayOutput) Index(i pulumi.IntInput) VlanOutput {
@@ -524,12 +493,6 @@ func (o VlanMapOutput) ToVlanMapOutput() VlanMapOutput {
 
 func (o VlanMapOutput) ToVlanMapOutputWithContext(ctx context.Context) VlanMapOutput {
 	return o
-}
-
-func (o VlanMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Vlan] {
-	return pulumix.Output[map[string]*Vlan]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o VlanMapOutput) MapIndex(k pulumi.StringInput) VlanOutput {

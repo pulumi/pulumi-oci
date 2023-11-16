@@ -18,28 +18,28 @@ public final class GetLicenseMetricResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private @Nullable Boolean isCompartmentIdInSubtree;
     /**
      * @return Total number of license records that will expire within 90 days in a particular compartment.
      * 
      */
-    private Integer licenseRecordExpiringSoonCount;
+    private @Nullable Integer licenseRecordExpiringSoonCount;
     /**
      * @return Total number of BYOL instances in a particular compartment.
      * 
      */
-    private Integer totalByolInstanceCount;
+    private @Nullable Integer totalByolInstanceCount;
     /**
      * @return Total number of License Included (LI) instances in a particular compartment.
      * 
      */
-    private Integer totalLicenseIncludedInstanceCount;
+    private @Nullable Integer totalLicenseIncludedInstanceCount;
     /**
      * @return Total number of product licenses in a particular compartment.
      * 
      */
-    private Integer totalProductLicenseCount;
+    private @Nullable Integer totalProductLicenseCount;
 
     private GetLicenseMetricResult() {}
     public String compartmentId() {
@@ -49,8 +49,8 @@ public final class GetLicenseMetricResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public Optional<Boolean> isCompartmentIdInSubtree() {
         return Optional.ofNullable(this.isCompartmentIdInSubtree);
@@ -59,29 +59,29 @@ public final class GetLicenseMetricResult {
      * @return Total number of license records that will expire within 90 days in a particular compartment.
      * 
      */
-    public Integer licenseRecordExpiringSoonCount() {
-        return this.licenseRecordExpiringSoonCount;
+    public Optional<Integer> licenseRecordExpiringSoonCount() {
+        return Optional.ofNullable(this.licenseRecordExpiringSoonCount);
     }
     /**
      * @return Total number of BYOL instances in a particular compartment.
      * 
      */
-    public Integer totalByolInstanceCount() {
-        return this.totalByolInstanceCount;
+    public Optional<Integer> totalByolInstanceCount() {
+        return Optional.ofNullable(this.totalByolInstanceCount);
     }
     /**
      * @return Total number of License Included (LI) instances in a particular compartment.
      * 
      */
-    public Integer totalLicenseIncludedInstanceCount() {
-        return this.totalLicenseIncludedInstanceCount;
+    public Optional<Integer> totalLicenseIncludedInstanceCount() {
+        return Optional.ofNullable(this.totalLicenseIncludedInstanceCount);
     }
     /**
      * @return Total number of product licenses in a particular compartment.
      * 
      */
-    public Integer totalProductLicenseCount() {
-        return this.totalProductLicenseCount;
+    public Optional<Integer> totalProductLicenseCount() {
+        return Optional.ofNullable(this.totalProductLicenseCount);
     }
 
     public static Builder builder() {
@@ -94,12 +94,12 @@ public final class GetLicenseMetricResult {
     @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
-        private String id;
+        private @Nullable String id;
         private @Nullable Boolean isCompartmentIdInSubtree;
-        private Integer licenseRecordExpiringSoonCount;
-        private Integer totalByolInstanceCount;
-        private Integer totalLicenseIncludedInstanceCount;
-        private Integer totalProductLicenseCount;
+        private @Nullable Integer licenseRecordExpiringSoonCount;
+        private @Nullable Integer totalByolInstanceCount;
+        private @Nullable Integer totalLicenseIncludedInstanceCount;
+        private @Nullable Integer totalProductLicenseCount;
         public Builder() {}
         public Builder(GetLicenseMetricResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -118,8 +118,8 @@ public final class GetLicenseMetricResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -128,23 +128,23 @@ public final class GetLicenseMetricResult {
             return this;
         }
         @CustomType.Setter
-        public Builder licenseRecordExpiringSoonCount(Integer licenseRecordExpiringSoonCount) {
-            this.licenseRecordExpiringSoonCount = Objects.requireNonNull(licenseRecordExpiringSoonCount);
+        public Builder licenseRecordExpiringSoonCount(@Nullable Integer licenseRecordExpiringSoonCount) {
+            this.licenseRecordExpiringSoonCount = licenseRecordExpiringSoonCount;
             return this;
         }
         @CustomType.Setter
-        public Builder totalByolInstanceCount(Integer totalByolInstanceCount) {
-            this.totalByolInstanceCount = Objects.requireNonNull(totalByolInstanceCount);
+        public Builder totalByolInstanceCount(@Nullable Integer totalByolInstanceCount) {
+            this.totalByolInstanceCount = totalByolInstanceCount;
             return this;
         }
         @CustomType.Setter
-        public Builder totalLicenseIncludedInstanceCount(Integer totalLicenseIncludedInstanceCount) {
-            this.totalLicenseIncludedInstanceCount = Objects.requireNonNull(totalLicenseIncludedInstanceCount);
+        public Builder totalLicenseIncludedInstanceCount(@Nullable Integer totalLicenseIncludedInstanceCount) {
+            this.totalLicenseIncludedInstanceCount = totalLicenseIncludedInstanceCount;
             return this;
         }
         @CustomType.Setter
-        public Builder totalProductLicenseCount(Integer totalProductLicenseCount) {
-            this.totalProductLicenseCount = Objects.requireNonNull(totalProductLicenseCount);
+        public Builder totalProductLicenseCount(@Nullable Integer totalProductLicenseCount) {
+            this.totalProductLicenseCount = totalProductLicenseCount;
             return this;
         }
         public GetLicenseMetricResult build() {

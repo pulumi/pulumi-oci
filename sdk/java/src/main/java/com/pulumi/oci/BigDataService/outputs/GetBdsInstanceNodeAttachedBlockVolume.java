@@ -6,6 +6,8 @@ package com.pulumi.oci.BigDataService.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetBdsInstanceNodeAttachedBlockVolume {
@@ -13,27 +15,27 @@ public final class GetBdsInstanceNodeAttachedBlockVolume {
      * @return The OCID of the volume attachment.
      * 
      */
-    private String volumeAttachmentId;
+    private @Nullable String volumeAttachmentId;
     /**
      * @return The size of the volume in GBs.
      * 
      */
-    private String volumeSizeInGbs;
+    private @Nullable String volumeSizeInGbs;
 
     private GetBdsInstanceNodeAttachedBlockVolume() {}
     /**
      * @return The OCID of the volume attachment.
      * 
      */
-    public String volumeAttachmentId() {
-        return this.volumeAttachmentId;
+    public Optional<String> volumeAttachmentId() {
+        return Optional.ofNullable(this.volumeAttachmentId);
     }
     /**
      * @return The size of the volume in GBs.
      * 
      */
-    public String volumeSizeInGbs() {
-        return this.volumeSizeInGbs;
+    public Optional<String> volumeSizeInGbs() {
+        return Optional.ofNullable(this.volumeSizeInGbs);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetBdsInstanceNodeAttachedBlockVolume {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String volumeAttachmentId;
-        private String volumeSizeInGbs;
+        private @Nullable String volumeAttachmentId;
+        private @Nullable String volumeSizeInGbs;
         public Builder() {}
         public Builder(GetBdsInstanceNodeAttachedBlockVolume defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetBdsInstanceNodeAttachedBlockVolume {
         }
 
         @CustomType.Setter
-        public Builder volumeAttachmentId(String volumeAttachmentId) {
-            this.volumeAttachmentId = Objects.requireNonNull(volumeAttachmentId);
+        public Builder volumeAttachmentId(@Nullable String volumeAttachmentId) {
+            this.volumeAttachmentId = volumeAttachmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder volumeSizeInGbs(String volumeSizeInGbs) {
-            this.volumeSizeInGbs = Objects.requireNonNull(volumeSizeInGbs);
+        public Builder volumeSizeInGbs(@Nullable String volumeSizeInGbs) {
+            this.volumeSizeInGbs = volumeSizeInGbs;
             return this;
         }
         public GetBdsInstanceNodeAttachedBlockVolume build() {

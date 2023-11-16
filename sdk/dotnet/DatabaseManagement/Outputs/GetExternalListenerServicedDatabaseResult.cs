@@ -16,47 +16,47 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external database resides.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The subtype of Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
         /// </summary>
-        public readonly string DatabaseSubType;
+        public readonly string? DatabaseSubType;
         /// <summary>
         /// The type of Oracle Database installation.
         /// </summary>
-        public readonly string DatabaseType;
+        public readonly string? DatabaseType;
         /// <summary>
         /// The unique name of the external database.
         /// </summary>
-        public readonly string DbUniqueName;
+        public readonly string? DbUniqueName;
         /// <summary>
         /// The user-friendly name for the database. The name does not have to be unique.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Indicates whether the database is a Managed Database or not.
         /// </summary>
-        public readonly bool IsManaged;
+        public readonly bool? IsManaged;
 
         [OutputConstructor]
         private GetExternalListenerServicedDatabaseResult(
-            string compartmentId,
+            string? compartmentId,
 
-            string databaseSubType,
+            string? databaseSubType,
 
-            string databaseType,
+            string? databaseType,
 
-            string dbUniqueName,
+            string? dbUniqueName,
 
-            string displayName,
+            string? displayName,
 
-            string id,
+            string? id,
 
-            bool isManaged)
+            bool? isManaged)
         {
             CompartmentId = compartmentId;
             DatabaseSubType = databaseSubType;

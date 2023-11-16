@@ -85,7 +85,7 @@ export interface GetDataSafePrivateEndpointsResult {
     /**
      * The list of data_safe_private_endpoints.
      */
-    readonly dataSafePrivateEndpoints: outputs.DataSafe.GetDataSafePrivateEndpointsDataSafePrivateEndpoint[];
+    readonly dataSafePrivateEndpoints?: outputs.DataSafe.GetDataSafePrivateEndpointsDataSafePrivateEndpoint[];
     /**
      * The display name of the private endpoint.
      */
@@ -94,7 +94,7 @@ export interface GetDataSafePrivateEndpointsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The current state of the private endpoint.
      */

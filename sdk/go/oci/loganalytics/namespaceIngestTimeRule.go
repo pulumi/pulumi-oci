@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Namespace Ingest Time Rule resource in Oracle Cloud Infrastructure Log Analytics service.
@@ -96,25 +95,25 @@ type NamespaceIngestTimeRule struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) Description for this resource.
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) The ingest time rule display name.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags     pulumi.MapOutput    `pulumi:"freeformTags"`
-	IngestTimeRuleId pulumi.StringOutput `pulumi:"ingestTimeRuleId"`
+	FreeformTags     pulumi.MapOutput       `pulumi:"freeformTags"`
+	IngestTimeRuleId pulumi.StringPtrOutput `pulumi:"ingestTimeRuleId"`
 	// A flag indicating whether or not the ingest time rule is enabled.
-	IsEnabled pulumi.BoolOutput `pulumi:"isEnabled"`
+	IsEnabled pulumi.BoolPtrOutput `pulumi:"isEnabled"`
 	// The Logging Analytics namespace used for the request.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Namespace pulumi.StringOutput `pulumi:"namespace"`
 	// The current state of the ingest time rule.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The date and time the resource was created, in the format defined by RFC3339.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The date and time the resource was last updated, in the format defined by RFC3339.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewNamespaceIngestTimeRule registers a new resource with the given unique name, arguments, and options.
@@ -295,12 +294,6 @@ func (i *NamespaceIngestTimeRule) ToNamespaceIngestTimeRuleOutputWithContext(ctx
 	return pulumi.ToOutputWithContext(ctx, i).(NamespaceIngestTimeRuleOutput)
 }
 
-func (i *NamespaceIngestTimeRule) ToOutput(ctx context.Context) pulumix.Output[*NamespaceIngestTimeRule] {
-	return pulumix.Output[*NamespaceIngestTimeRule]{
-		OutputState: i.ToNamespaceIngestTimeRuleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // NamespaceIngestTimeRuleArrayInput is an input type that accepts NamespaceIngestTimeRuleArray and NamespaceIngestTimeRuleArrayOutput values.
 // You can construct a concrete instance of `NamespaceIngestTimeRuleArrayInput` via:
 //
@@ -324,12 +317,6 @@ func (i NamespaceIngestTimeRuleArray) ToNamespaceIngestTimeRuleArrayOutput() Nam
 
 func (i NamespaceIngestTimeRuleArray) ToNamespaceIngestTimeRuleArrayOutputWithContext(ctx context.Context) NamespaceIngestTimeRuleArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(NamespaceIngestTimeRuleArrayOutput)
-}
-
-func (i NamespaceIngestTimeRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]*NamespaceIngestTimeRule] {
-	return pulumix.Output[[]*NamespaceIngestTimeRule]{
-		OutputState: i.ToNamespaceIngestTimeRuleArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // NamespaceIngestTimeRuleMapInput is an input type that accepts NamespaceIngestTimeRuleMap and NamespaceIngestTimeRuleMapOutput values.
@@ -357,12 +344,6 @@ func (i NamespaceIngestTimeRuleMap) ToNamespaceIngestTimeRuleMapOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(NamespaceIngestTimeRuleMapOutput)
 }
 
-func (i NamespaceIngestTimeRuleMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*NamespaceIngestTimeRule] {
-	return pulumix.Output[map[string]*NamespaceIngestTimeRule]{
-		OutputState: i.ToNamespaceIngestTimeRuleMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type NamespaceIngestTimeRuleOutput struct{ *pulumi.OutputState }
 
 func (NamespaceIngestTimeRuleOutput) ElementType() reflect.Type {
@@ -375,12 +356,6 @@ func (o NamespaceIngestTimeRuleOutput) ToNamespaceIngestTimeRuleOutput() Namespa
 
 func (o NamespaceIngestTimeRuleOutput) ToNamespaceIngestTimeRuleOutputWithContext(ctx context.Context) NamespaceIngestTimeRuleOutput {
 	return o
-}
-
-func (o NamespaceIngestTimeRuleOutput) ToOutput(ctx context.Context) pulumix.Output[*NamespaceIngestTimeRule] {
-	return pulumix.Output[*NamespaceIngestTimeRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The action(s) to be performed if the ingest time rule condition(s) are satisfied.
@@ -404,8 +379,8 @@ func (o NamespaceIngestTimeRuleOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) Description for this resource.
-func (o NamespaceIngestTimeRuleOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *NamespaceIngestTimeRule) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o NamespaceIngestTimeRuleOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NamespaceIngestTimeRule) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The ingest time rule display name.
@@ -418,13 +393,13 @@ func (o NamespaceIngestTimeRuleOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *NamespaceIngestTimeRule) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-func (o NamespaceIngestTimeRuleOutput) IngestTimeRuleId() pulumi.StringOutput {
-	return o.ApplyT(func(v *NamespaceIngestTimeRule) pulumi.StringOutput { return v.IngestTimeRuleId }).(pulumi.StringOutput)
+func (o NamespaceIngestTimeRuleOutput) IngestTimeRuleId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NamespaceIngestTimeRule) pulumi.StringPtrOutput { return v.IngestTimeRuleId }).(pulumi.StringPtrOutput)
 }
 
 // A flag indicating whether or not the ingest time rule is enabled.
-func (o NamespaceIngestTimeRuleOutput) IsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v *NamespaceIngestTimeRule) pulumi.BoolOutput { return v.IsEnabled }).(pulumi.BoolOutput)
+func (o NamespaceIngestTimeRuleOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *NamespaceIngestTimeRule) pulumi.BoolPtrOutput { return v.IsEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // The Logging Analytics namespace used for the request.
@@ -436,18 +411,18 @@ func (o NamespaceIngestTimeRuleOutput) Namespace() pulumi.StringOutput {
 }
 
 // The current state of the ingest time rule.
-func (o NamespaceIngestTimeRuleOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *NamespaceIngestTimeRule) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o NamespaceIngestTimeRuleOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NamespaceIngestTimeRule) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was created, in the format defined by RFC3339.
-func (o NamespaceIngestTimeRuleOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *NamespaceIngestTimeRule) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o NamespaceIngestTimeRuleOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NamespaceIngestTimeRule) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was last updated, in the format defined by RFC3339.
-func (o NamespaceIngestTimeRuleOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *NamespaceIngestTimeRule) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o NamespaceIngestTimeRuleOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NamespaceIngestTimeRule) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type NamespaceIngestTimeRuleArrayOutput struct{ *pulumi.OutputState }
@@ -462,12 +437,6 @@ func (o NamespaceIngestTimeRuleArrayOutput) ToNamespaceIngestTimeRuleArrayOutput
 
 func (o NamespaceIngestTimeRuleArrayOutput) ToNamespaceIngestTimeRuleArrayOutputWithContext(ctx context.Context) NamespaceIngestTimeRuleArrayOutput {
 	return o
-}
-
-func (o NamespaceIngestTimeRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*NamespaceIngestTimeRule] {
-	return pulumix.Output[[]*NamespaceIngestTimeRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o NamespaceIngestTimeRuleArrayOutput) Index(i pulumi.IntInput) NamespaceIngestTimeRuleOutput {
@@ -488,12 +457,6 @@ func (o NamespaceIngestTimeRuleMapOutput) ToNamespaceIngestTimeRuleMapOutput() N
 
 func (o NamespaceIngestTimeRuleMapOutput) ToNamespaceIngestTimeRuleMapOutputWithContext(ctx context.Context) NamespaceIngestTimeRuleMapOutput {
 	return o
-}
-
-func (o NamespaceIngestTimeRuleMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*NamespaceIngestTimeRule] {
-	return pulumix.Output[map[string]*NamespaceIngestTimeRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o NamespaceIngestTimeRuleMapOutput) MapIndex(k pulumi.StringInput) NamespaceIngestTimeRuleOutput {

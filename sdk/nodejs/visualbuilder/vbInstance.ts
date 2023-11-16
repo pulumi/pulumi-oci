@@ -80,11 +80,11 @@ export class VbInstance extends pulumi.CustomResource {
     /**
      * (Updatable) A list of alternate custom endpoints to be used for the vb instance URL (contact Oracle for alternateCustomEndpoints availability for a specific instance).
      */
-    public readonly alternateCustomEndpoints!: pulumi.Output<outputs.VisualBuilder.VbInstanceAlternateCustomEndpoint[]>;
+    public readonly alternateCustomEndpoints!: pulumi.Output<outputs.VisualBuilder.VbInstanceAlternateCustomEndpoint[] | undefined>;
     /**
      * A list of associated attachments to other services
      */
-    public /*out*/ readonly attachments!: pulumi.Output<outputs.VisualBuilder.VbInstanceAttachment[]>;
+    public /*out*/ readonly attachments!: pulumi.Output<outputs.VisualBuilder.VbInstanceAttachment[] | undefined>;
     /**
      * (Updatable) Compartment Identifier.
      */
@@ -92,15 +92,15 @@ export class VbInstance extends pulumi.CustomResource {
     /**
      * Optional parameter specifying which entitlement to use for billing purposes. Only required if the account possesses more than one entitlement.
      */
-    public readonly consumptionModel!: pulumi.Output<string>;
+    public readonly consumptionModel!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Details for a custom endpoint for the vb instance (update).
      */
-    public readonly customEndpoint!: pulumi.Output<outputs.VisualBuilder.VbInstanceCustomEndpoint>;
+    public readonly customEndpoint!: pulumi.Output<outputs.VisualBuilder.VbInstanceCustomEndpoint | undefined>;
     /**
      * (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) Vb Instance Identifier.
      */
@@ -108,11 +108,11 @@ export class VbInstance extends pulumi.CustomResource {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * Information for IDCS access
      */
-    public /*out*/ readonly idcsInfos!: pulumi.Output<outputs.VisualBuilder.VbInstanceIdcsInfo[]>;
+    public /*out*/ readonly idcsInfos!: pulumi.Output<outputs.VisualBuilder.VbInstanceIdcsInfo[] | undefined>;
     /**
      * (Updatable) Encrypted IDCS Open ID token. This is required for pre-UCPIS cloud accounts, but not UCPIS, hence not a required parameter
      */
@@ -120,19 +120,19 @@ export class VbInstance extends pulumi.CustomResource {
     /**
      * The Vb Instance URL.
      */
-    public /*out*/ readonly instanceUrl!: pulumi.Output<string>;
+    public /*out*/ readonly instanceUrl!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Visual Builder is enabled or not.
      */
-    public readonly isVisualBuilderEnabled!: pulumi.Output<boolean>;
+    public readonly isVisualBuilderEnabled!: pulumi.Output<boolean | undefined>;
     /**
      * The NAT gateway IP address for the VB management VCN
      */
-    public /*out*/ readonly managementNatGatewayIp!: pulumi.Output<string>;
+    public /*out*/ readonly managementNatGatewayIp!: pulumi.Output<string | undefined>;
     /**
      * The Oracle Cloud ID (OCID) of the Visual Builder management VCN
      */
-    public /*out*/ readonly managementVcnId!: pulumi.Output<string>;
+    public /*out*/ readonly managementVcnId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The number of Nodes
      *
@@ -144,31 +144,31 @@ export class VbInstance extends pulumi.CustomResource {
     /**
      * The NAT gateway IP address for the VB service VCN
      */
-    public /*out*/ readonly serviceNatGatewayIp!: pulumi.Output<string>;
+    public /*out*/ readonly serviceNatGatewayIp!: pulumi.Output<string | undefined>;
     /**
      * The Oracle Cloud ID (OCID) of the Visual Builder service VCN
      */
-    public /*out*/ readonly serviceVcnId!: pulumi.Output<string>;
+    public /*out*/ readonly serviceVcnId!: pulumi.Output<string | undefined>;
     /**
      * The current state of the vb instance.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    public /*out*/ readonly stateMessage!: pulumi.Output<string>;
+    public /*out*/ readonly stateMessage!: pulumi.Output<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The time the the VbInstance was created. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The time the VbInstance was updated. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a VbInstance resource with the given unique name, arguments, and options.

@@ -108,32 +108,32 @@ namespace Pulumi.Oci.FileStorage
         /// <summary>
         /// The availability domain that the file system snapshot policy is in. May be unset using a blank or NULL value.  Example: `Uocm:PHX-AD-2`
         /// </summary>
-        public readonly string AvailabilityDomain;
+        public readonly string? AvailabilityDomain;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the file system snapshot policy.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My Filesystem Snapshot Policy`
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         public readonly string FilesystemSnapshotPolicyId;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The prefix to apply to all snapshots created by this policy.  Example: `acme`
         /// </summary>
-        public readonly string PolicyPrefix;
+        public readonly string? PolicyPrefix;
         /// <summary>
         /// The list of associated snapshot schedules. A maximum of 10 schedules can be associated with a policy.
         /// </summary>
@@ -141,35 +141,35 @@ namespace Pulumi.Oci.FileStorage
         /// <summary>
         /// The current state of this file system snapshot policy.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The date and time the file system snapshot policy was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
 
         [OutputConstructor]
         private GetFilesystemSnapshotPolicyResult(
-            string availabilityDomain,
+            string? availabilityDomain,
 
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string displayName,
+            string? displayName,
 
             string filesystemSnapshotPolicyId,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            string policyPrefix,
+            string? policyPrefix,
 
             ImmutableArray<Outputs.GetFilesystemSnapshotPolicyScheduleResult> schedules,
 
-            string state,
+            string? state,
 
-            string timeCreated)
+            string? timeCreated)
         {
             AvailabilityDomain = availabilityDomain;
             CompartmentId = compartmentId;

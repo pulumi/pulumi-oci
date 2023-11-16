@@ -13,6 +13,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetEventsAuditEventData {
@@ -20,72 +22,72 @@ public final class GetEventsAuditEventData {
      * @return A container object for attribues unique to the resource emitting the event.
      * 
      */
-    private Map<String,Object> additionalDetails;
+    private @Nullable Map<String,Object> additionalDetails;
     /**
      * @return The availability domain where the resource resides.
      * 
      */
-    private String availabilityDomain;
+    private @Nullable String availabilityDomain;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The name of the compartment. This value is the friendly name associated with compartmentId. This value can change, but the service logs the value that appeared at the time of the audit event.  Example: `CompartmentA`
      * 
      */
-    private String compartmentName;
+    private @Nullable String compartmentName;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return This value links multiple audit events that are part of the same API operation. For example,  a long running API operations that emit an event at the start and the end of an operation would use the same value in this field for both events.
      * 
      */
-    private String eventGroupingId;
+    private @Nullable String eventGroupingId;
     /**
      * @return Name of the API operation that generated this event.  Example: `GetInstance`
      * 
      */
-    private String eventName;
+    private @Nullable String eventName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name,  type, or namespace. Exists for cross-compatibility only. For more information,  see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return A container object for identity attributes.
      * 
      */
-    private List<GetEventsAuditEventDataIdentity> identities;
+    private @Nullable List<GetEventsAuditEventDataIdentity> identities;
     /**
      * @return A container object for request attributes.
      * 
      */
-    private List<GetEventsAuditEventDataRequest> requests;
+    private @Nullable List<GetEventsAuditEventDataRequest> requests;
     /**
      * @return An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) or some other ID for the resource emitting the event.
      * 
      */
-    private String resourceId;
+    private @Nullable String resourceId;
     /**
      * @return The name of the resource emitting the event.
      * 
      */
-    private String resourceName;
+    private @Nullable String resourceName;
     /**
      * @return A container object for response attributes.
      * 
      */
-    private List<GetEventsAuditEventDataResponse> responses;
+    private @Nullable List<GetEventsAuditEventDataResponse> responses;
     /**
      * @return A container object for state change attributes.
      * 
      */
-    private List<GetEventsAuditEventDataStateChange> stateChanges;
+    private @Nullable List<GetEventsAuditEventDataStateChange> stateChanges;
 
     private GetEventsAuditEventData() {}
     /**
@@ -93,98 +95,98 @@ public final class GetEventsAuditEventData {
      * 
      */
     public Map<String,Object> additionalDetails() {
-        return this.additionalDetails;
+        return this.additionalDetails == null ? Map.of() : this.additionalDetails;
     }
     /**
      * @return The availability domain where the resource resides.
      * 
      */
-    public String availabilityDomain() {
-        return this.availabilityDomain;
+    public Optional<String> availabilityDomain() {
+        return Optional.ofNullable(this.availabilityDomain);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The name of the compartment. This value is the friendly name associated with compartmentId. This value can change, but the service logs the value that appeared at the time of the audit event.  Example: `CompartmentA`
      * 
      */
-    public String compartmentName() {
-        return this.compartmentName;
+    public Optional<String> compartmentName() {
+        return Optional.ofNullable(this.compartmentName);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return This value links multiple audit events that are part of the same API operation. For example,  a long running API operations that emit an event at the start and the end of an operation would use the same value in this field for both events.
      * 
      */
-    public String eventGroupingId() {
-        return this.eventGroupingId;
+    public Optional<String> eventGroupingId() {
+        return Optional.ofNullable(this.eventGroupingId);
     }
     /**
      * @return Name of the API operation that generated this event.  Example: `GetInstance`
      * 
      */
-    public String eventName() {
-        return this.eventName;
+    public Optional<String> eventName() {
+        return Optional.ofNullable(this.eventName);
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name,  type, or namespace. Exists for cross-compatibility only. For more information,  see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return A container object for identity attributes.
      * 
      */
     public List<GetEventsAuditEventDataIdentity> identities() {
-        return this.identities;
+        return this.identities == null ? List.of() : this.identities;
     }
     /**
      * @return A container object for request attributes.
      * 
      */
     public List<GetEventsAuditEventDataRequest> requests() {
-        return this.requests;
+        return this.requests == null ? List.of() : this.requests;
     }
     /**
      * @return An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) or some other ID for the resource emitting the event.
      * 
      */
-    public String resourceId() {
-        return this.resourceId;
+    public Optional<String> resourceId() {
+        return Optional.ofNullable(this.resourceId);
     }
     /**
      * @return The name of the resource emitting the event.
      * 
      */
-    public String resourceName() {
-        return this.resourceName;
+    public Optional<String> resourceName() {
+        return Optional.ofNullable(this.resourceName);
     }
     /**
      * @return A container object for response attributes.
      * 
      */
     public List<GetEventsAuditEventDataResponse> responses() {
-        return this.responses;
+        return this.responses == null ? List.of() : this.responses;
     }
     /**
      * @return A container object for state change attributes.
      * 
      */
     public List<GetEventsAuditEventDataStateChange> stateChanges() {
-        return this.stateChanges;
+        return this.stateChanges == null ? List.of() : this.stateChanges;
     }
 
     public static Builder builder() {
@@ -196,20 +198,20 @@ public final class GetEventsAuditEventData {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Map<String,Object> additionalDetails;
-        private String availabilityDomain;
-        private String compartmentId;
-        private String compartmentName;
-        private Map<String,Object> definedTags;
-        private String eventGroupingId;
-        private String eventName;
-        private Map<String,Object> freeformTags;
-        private List<GetEventsAuditEventDataIdentity> identities;
-        private List<GetEventsAuditEventDataRequest> requests;
-        private String resourceId;
-        private String resourceName;
-        private List<GetEventsAuditEventDataResponse> responses;
-        private List<GetEventsAuditEventDataStateChange> stateChanges;
+        private @Nullable Map<String,Object> additionalDetails;
+        private @Nullable String availabilityDomain;
+        private @Nullable String compartmentId;
+        private @Nullable String compartmentName;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String eventGroupingId;
+        private @Nullable String eventName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable List<GetEventsAuditEventDataIdentity> identities;
+        private @Nullable List<GetEventsAuditEventDataRequest> requests;
+        private @Nullable String resourceId;
+        private @Nullable String resourceName;
+        private @Nullable List<GetEventsAuditEventDataResponse> responses;
+        private @Nullable List<GetEventsAuditEventDataStateChange> stateChanges;
         public Builder() {}
         public Builder(GetEventsAuditEventData defaults) {
     	      Objects.requireNonNull(defaults);
@@ -230,82 +232,82 @@ public final class GetEventsAuditEventData {
         }
 
         @CustomType.Setter
-        public Builder additionalDetails(Map<String,Object> additionalDetails) {
-            this.additionalDetails = Objects.requireNonNull(additionalDetails);
+        public Builder additionalDetails(@Nullable Map<String,Object> additionalDetails) {
+            this.additionalDetails = additionalDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+        public Builder availabilityDomain(@Nullable String availabilityDomain) {
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentName(String compartmentName) {
-            this.compartmentName = Objects.requireNonNull(compartmentName);
+        public Builder compartmentName(@Nullable String compartmentName) {
+            this.compartmentName = compartmentName;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder eventGroupingId(String eventGroupingId) {
-            this.eventGroupingId = Objects.requireNonNull(eventGroupingId);
+        public Builder eventGroupingId(@Nullable String eventGroupingId) {
+            this.eventGroupingId = eventGroupingId;
             return this;
         }
         @CustomType.Setter
-        public Builder eventName(String eventName) {
-            this.eventName = Objects.requireNonNull(eventName);
+        public Builder eventName(@Nullable String eventName) {
+            this.eventName = eventName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder identities(List<GetEventsAuditEventDataIdentity> identities) {
-            this.identities = Objects.requireNonNull(identities);
+        public Builder identities(@Nullable List<GetEventsAuditEventDataIdentity> identities) {
+            this.identities = identities;
             return this;
         }
         public Builder identities(GetEventsAuditEventDataIdentity... identities) {
             return identities(List.of(identities));
         }
         @CustomType.Setter
-        public Builder requests(List<GetEventsAuditEventDataRequest> requests) {
-            this.requests = Objects.requireNonNull(requests);
+        public Builder requests(@Nullable List<GetEventsAuditEventDataRequest> requests) {
+            this.requests = requests;
             return this;
         }
         public Builder requests(GetEventsAuditEventDataRequest... requests) {
             return requests(List.of(requests));
         }
         @CustomType.Setter
-        public Builder resourceId(String resourceId) {
-            this.resourceId = Objects.requireNonNull(resourceId);
+        public Builder resourceId(@Nullable String resourceId) {
+            this.resourceId = resourceId;
             return this;
         }
         @CustomType.Setter
-        public Builder resourceName(String resourceName) {
-            this.resourceName = Objects.requireNonNull(resourceName);
+        public Builder resourceName(@Nullable String resourceName) {
+            this.resourceName = resourceName;
             return this;
         }
         @CustomType.Setter
-        public Builder responses(List<GetEventsAuditEventDataResponse> responses) {
-            this.responses = Objects.requireNonNull(responses);
+        public Builder responses(@Nullable List<GetEventsAuditEventDataResponse> responses) {
+            this.responses = responses;
             return this;
         }
         public Builder responses(GetEventsAuditEventDataResponse... responses) {
             return responses(List.of(responses));
         }
         @CustomType.Setter
-        public Builder stateChanges(List<GetEventsAuditEventDataStateChange> stateChanges) {
-            this.stateChanges = Objects.requireNonNull(stateChanges);
+        public Builder stateChanges(@Nullable List<GetEventsAuditEventDataStateChange> stateChanges) {
+            this.stateChanges = stateChanges;
             return this;
         }
         public Builder stateChanges(GetEventsAuditEventDataStateChange... stateChanges) {

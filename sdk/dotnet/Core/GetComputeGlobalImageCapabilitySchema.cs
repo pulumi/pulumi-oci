@@ -108,50 +108,50 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// The OCID of the compartment containing the compute global image capability schema
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         public readonly string ComputeGlobalImageCapabilitySchemaId;
         /// <summary>
         /// The name of the global capabilities version resource that is considered the current version.
         /// </summary>
-        public readonly string CurrentVersionName;
+        public readonly string? CurrentVersionName;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The date and time the compute global image capability schema was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
 
         [OutputConstructor]
         private GetComputeGlobalImageCapabilitySchemaResult(
-            string compartmentId,
+            string? compartmentId,
 
             string computeGlobalImageCapabilitySchemaId,
 
-            string currentVersionName,
+            string? currentVersionName,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            string timeCreated)
+            string? timeCreated)
         {
             CompartmentId = compartmentId;
             ComputeGlobalImageCapabilitySchemaId = computeGlobalImageCapabilitySchemaId;

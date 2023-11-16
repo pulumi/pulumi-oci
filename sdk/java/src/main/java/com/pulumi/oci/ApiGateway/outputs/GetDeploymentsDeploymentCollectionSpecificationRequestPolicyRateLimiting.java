@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyRateLimiting {
@@ -14,27 +16,27 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyR
      * @return The maximum number of requests per second to allow.
      * 
      */
-    private Integer rateInRequestsPerSecond;
+    private @Nullable Integer rateInRequestsPerSecond;
     /**
      * @return The key used to group requests together.
      * 
      */
-    private String rateKey;
+    private @Nullable String rateKey;
 
     private GetDeploymentsDeploymentCollectionSpecificationRequestPolicyRateLimiting() {}
     /**
      * @return The maximum number of requests per second to allow.
      * 
      */
-    public Integer rateInRequestsPerSecond() {
-        return this.rateInRequestsPerSecond;
+    public Optional<Integer> rateInRequestsPerSecond() {
+        return Optional.ofNullable(this.rateInRequestsPerSecond);
     }
     /**
      * @return The key used to group requests together.
      * 
      */
-    public String rateKey() {
-        return this.rateKey;
+    public Optional<String> rateKey() {
+        return Optional.ofNullable(this.rateKey);
     }
 
     public static Builder builder() {
@@ -46,8 +48,8 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyR
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer rateInRequestsPerSecond;
-        private String rateKey;
+        private @Nullable Integer rateInRequestsPerSecond;
+        private @Nullable String rateKey;
         public Builder() {}
         public Builder(GetDeploymentsDeploymentCollectionSpecificationRequestPolicyRateLimiting defaults) {
     	      Objects.requireNonNull(defaults);
@@ -56,13 +58,13 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyR
         }
 
         @CustomType.Setter
-        public Builder rateInRequestsPerSecond(Integer rateInRequestsPerSecond) {
-            this.rateInRequestsPerSecond = Objects.requireNonNull(rateInRequestsPerSecond);
+        public Builder rateInRequestsPerSecond(@Nullable Integer rateInRequestsPerSecond) {
+            this.rateInRequestsPerSecond = rateInRequestsPerSecond;
             return this;
         }
         @CustomType.Setter
-        public Builder rateKey(String rateKey) {
-            this.rateKey = Objects.requireNonNull(rateKey);
+        public Builder rateKey(@Nullable String rateKey) {
+            this.rateKey = rateKey;
             return this;
         }
         public GetDeploymentsDeploymentCollectionSpecificationRequestPolicyRateLimiting build() {

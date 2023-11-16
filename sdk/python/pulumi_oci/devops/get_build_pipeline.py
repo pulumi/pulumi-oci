@@ -73,106 +73,67 @@ class GetBuildPipelineResult:
 
     @property
     @pulumi.getter(name="buildPipelineParameters")
-    def build_pipeline_parameters(self) -> Sequence['outputs.GetBuildPipelineBuildPipelineParameterResult']:
-        """
-        Specifies list of parameters present in a build pipeline. An UPDATE operation replaces the existing parameters list entirely.
-        """
+    def build_pipeline_parameters(self) -> Optional[Sequence['outputs.GetBuildPipelineBuildPipelineParameterResult']]:
         return pulumi.get(self, "build_pipeline_parameters")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment where the build pipeline is created.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Optional description about the build pipeline.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        Build pipeline display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        Unique identifier that is immutable on creation.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="projectId")
-    def project_id(self) -> str:
-        """
-        The OCID of the DevOps project.
-        """
+    def project_id(self) -> Optional[str]:
         return pulumi.get(self, "project_id")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the build pipeline.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the build pipeline was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the build pipeline was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -201,21 +162,7 @@ class AwaitableGetBuildPipelineResult(GetBuildPipelineResult):
 def get_build_pipeline(build_pipeline_id: Optional[str] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetBuildPipelineResult:
     """
-    This data source provides details about a specific Build Pipeline resource in Oracle Cloud Infrastructure Devops service.
-
-    Retrieves a build pipeline by identifier.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_build_pipeline = oci.DevOps.get_build_pipeline(build_pipeline_id=oci_devops_build_pipeline["test_build_pipeline"]["id"])
-    ```
-
-
-    :param str build_pipeline_id: Unique build pipeline identifier.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['buildPipelineId'] = build_pipeline_id
@@ -243,20 +190,6 @@ def get_build_pipeline(build_pipeline_id: Optional[str] = None,
 def get_build_pipeline_output(build_pipeline_id: Optional[pulumi.Input[str]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBuildPipelineResult]:
     """
-    This data source provides details about a specific Build Pipeline resource in Oracle Cloud Infrastructure Devops service.
-
-    Retrieves a build pipeline by identifier.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_build_pipeline = oci.DevOps.get_build_pipeline(build_pipeline_id=oci_devops_build_pipeline["test_build_pipeline"]["id"])
-    ```
-
-
-    :param str build_pipeline_id: Unique build pipeline identifier.
+    Use this data source to access information about an existing resource.
     """
     ...

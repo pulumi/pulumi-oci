@@ -52,9 +52,6 @@ class GetTargetDatabaseRolesResult:
     @property
     @pulumi.getter(name="authenticationType")
     def authentication_type(self) -> Optional[str]:
-        """
-        Type of authentication.
-        """
         return pulumi.get(self, "authentication_type")
 
     @property
@@ -64,7 +61,7 @@ class GetTargetDatabaseRolesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -73,9 +70,6 @@ class GetTargetDatabaseRolesResult:
     @property
     @pulumi.getter(name="isOracleMaintained")
     def is_oracle_maintained(self) -> Optional[bool]:
-        """
-        Is the role oracle maintained.
-        """
         return pulumi.get(self, "is_oracle_maintained")
 
     @property
@@ -86,17 +80,11 @@ class GetTargetDatabaseRolesResult:
     @property
     @pulumi.getter(name="roleNames")
     def role_names(self) -> Optional[Sequence[str]]:
-        """
-        The name of the role.
-        """
         return pulumi.get(self, "role_names")
 
     @property
     @pulumi.getter
-    def roles(self) -> Sequence['outputs.GetTargetDatabaseRolesRoleResult']:
-        """
-        The list of roles.
-        """
+    def roles(self) -> Optional[Sequence['outputs.GetTargetDatabaseRolesRoleResult']]:
         return pulumi.get(self, "roles")
 
     @property
@@ -129,29 +117,7 @@ def get_target_database_roles(authentication_type: Optional[str] = None,
                               target_database_id: Optional[str] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetTargetDatabaseRolesResult:
     """
-    This data source provides the list of Target Database Roles in Oracle Cloud Infrastructure Data Safe service.
-
-    Returns a list of role metadata objects.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_target_database_roles = oci.DataSafe.get_target_database_roles(target_database_id=oci_data_safe_target_database["test_target_database"]["id"],
-        authentication_type=var["target_database_role_authentication_type"],
-        is_oracle_maintained=var["target_database_role_is_oracle_maintained"],
-        role_names=var["target_database_role_role_name"],
-        role_name_contains=var["target_database_role_role_name_contains"])
-    ```
-
-
-    :param str authentication_type: A filter to return roles based on authentication type.
-    :param bool is_oracle_maintained: A filter to return roles based on whether they are maintained by oracle or not.
-    :param str role_name_contains: A filter to return only items if role name contains a specific string.
-    :param Sequence[str] role_names: A filter to return only a specific role based on role name.
-    :param str target_database_id: The OCID of the Data Safe target database.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['authenticationType'] = authentication_type
@@ -183,28 +149,6 @@ def get_target_database_roles_output(authentication_type: Optional[pulumi.Input[
                                      target_database_id: Optional[pulumi.Input[str]] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetTargetDatabaseRolesResult]:
     """
-    This data source provides the list of Target Database Roles in Oracle Cloud Infrastructure Data Safe service.
-
-    Returns a list of role metadata objects.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_target_database_roles = oci.DataSafe.get_target_database_roles(target_database_id=oci_data_safe_target_database["test_target_database"]["id"],
-        authentication_type=var["target_database_role_authentication_type"],
-        is_oracle_maintained=var["target_database_role_is_oracle_maintained"],
-        role_names=var["target_database_role_role_name"],
-        role_name_contains=var["target_database_role_role_name_contains"])
-    ```
-
-
-    :param str authentication_type: A filter to return roles based on authentication type.
-    :param bool is_oracle_maintained: A filter to return roles based on whether they are maintained by oracle or not.
-    :param str role_name_contains: A filter to return only items if role name contains a specific string.
-    :param Sequence[str] role_names: A filter to return only a specific role based on role name.
-    :param str target_database_id: The OCID of the Data Safe target database.
+    Use this data source to access information about an existing resource.
     """
     ...

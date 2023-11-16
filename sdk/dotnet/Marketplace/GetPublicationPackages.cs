@@ -153,7 +153,7 @@ namespace Pulumi.Oci.Marketplace
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The specified package's type.
         /// </summary>
@@ -169,7 +169,7 @@ namespace Pulumi.Oci.Marketplace
         private GetPublicationPackagesResult(
             ImmutableArray<Outputs.GetPublicationPackagesFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? packageType,
 

@@ -21,15 +21,6 @@ class AutonomousVmClusterSslCertificateManagementArgs:
                  certificate_id: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a AutonomousVmClusterSslCertificateManagement resource.
-        :param pulumi.Input[str] autonomous_vm_cluster_id: The autonomous VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[str] certificate_generation_type: Specify SYSTEM for using Oracle managed certificates. Specify BYOC when you want to bring your own certificate.
-        :param pulumi.Input[str] ca_bundle_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the certificate bundle.
-        :param pulumi.Input[str] certificate_authority_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the certificate authority.
-        :param pulumi.Input[str] certificate_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the certificate to use. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "autonomous_vm_cluster_id", autonomous_vm_cluster_id)
         pulumi.set(__self__, "certificate_generation_type", certificate_generation_type)
@@ -43,9 +34,6 @@ class AutonomousVmClusterSslCertificateManagementArgs:
     @property
     @pulumi.getter(name="autonomousVmClusterId")
     def autonomous_vm_cluster_id(self) -> pulumi.Input[str]:
-        """
-        The autonomous VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
         return pulumi.get(self, "autonomous_vm_cluster_id")
 
     @autonomous_vm_cluster_id.setter
@@ -55,9 +43,6 @@ class AutonomousVmClusterSslCertificateManagementArgs:
     @property
     @pulumi.getter(name="certificateGenerationType")
     def certificate_generation_type(self) -> pulumi.Input[str]:
-        """
-        Specify SYSTEM for using Oracle managed certificates. Specify BYOC when you want to bring your own certificate.
-        """
         return pulumi.get(self, "certificate_generation_type")
 
     @certificate_generation_type.setter
@@ -67,9 +52,6 @@ class AutonomousVmClusterSslCertificateManagementArgs:
     @property
     @pulumi.getter(name="caBundleId")
     def ca_bundle_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the certificate bundle.
-        """
         return pulumi.get(self, "ca_bundle_id")
 
     @ca_bundle_id.setter
@@ -79,9 +61,6 @@ class AutonomousVmClusterSslCertificateManagementArgs:
     @property
     @pulumi.getter(name="certificateAuthorityId")
     def certificate_authority_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the certificate authority.
-        """
         return pulumi.get(self, "certificate_authority_id")
 
     @certificate_authority_id.setter
@@ -91,13 +70,6 @@ class AutonomousVmClusterSslCertificateManagementArgs:
     @property
     @pulumi.getter(name="certificateId")
     def certificate_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the certificate to use. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "certificate_id")
 
     @certificate_id.setter
@@ -115,15 +87,6 @@ class _AutonomousVmClusterSslCertificateManagementState:
                  certificate_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering AutonomousVmClusterSslCertificateManagement resources.
-        :param pulumi.Input[str] autonomous_vm_cluster_id: The autonomous VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[str] ca_bundle_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the certificate bundle.
-        :param pulumi.Input[str] certificate_authority_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the certificate authority.
-        :param pulumi.Input[str] certificate_generation_type: Specify SYSTEM for using Oracle managed certificates. Specify BYOC when you want to bring your own certificate.
-        :param pulumi.Input[str] certificate_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the certificate to use. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if autonomous_vm_cluster_id is not None:
             pulumi.set(__self__, "autonomous_vm_cluster_id", autonomous_vm_cluster_id)
@@ -139,9 +102,6 @@ class _AutonomousVmClusterSslCertificateManagementState:
     @property
     @pulumi.getter(name="autonomousVmClusterId")
     def autonomous_vm_cluster_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The autonomous VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
         return pulumi.get(self, "autonomous_vm_cluster_id")
 
     @autonomous_vm_cluster_id.setter
@@ -151,9 +111,6 @@ class _AutonomousVmClusterSslCertificateManagementState:
     @property
     @pulumi.getter(name="caBundleId")
     def ca_bundle_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the certificate bundle.
-        """
         return pulumi.get(self, "ca_bundle_id")
 
     @ca_bundle_id.setter
@@ -163,9 +120,6 @@ class _AutonomousVmClusterSslCertificateManagementState:
     @property
     @pulumi.getter(name="certificateAuthorityId")
     def certificate_authority_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the certificate authority.
-        """
         return pulumi.get(self, "certificate_authority_id")
 
     @certificate_authority_id.setter
@@ -175,9 +129,6 @@ class _AutonomousVmClusterSslCertificateManagementState:
     @property
     @pulumi.getter(name="certificateGenerationType")
     def certificate_generation_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        Specify SYSTEM for using Oracle managed certificates. Specify BYOC when you want to bring your own certificate.
-        """
         return pulumi.get(self, "certificate_generation_type")
 
     @certificate_generation_type.setter
@@ -187,13 +138,6 @@ class _AutonomousVmClusterSslCertificateManagementState:
     @property
     @pulumi.getter(name="certificateId")
     def certificate_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the certificate to use. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "certificate_id")
 
     @certificate_id.setter
@@ -213,39 +157,9 @@ class AutonomousVmClusterSslCertificateManagement(pulumi.CustomResource):
                  certificate_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Autonomous Vm Cluster Ssl Certificate Management resource in Oracle Cloud Infrastructure Database service.
-
-        Rotates the SSL certificates for Autonomous Exadata VM cluster.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_autonomous_vm_cluster_ssl_certificate_management = oci.database.AutonomousVmClusterSslCertificateManagement("testAutonomousVmClusterSslCertificateManagement",
-            autonomous_vm_cluster_id=oci_database_autonomous_vm_cluster["test_autonomous_vm_cluster"]["id"],
-            certificate_generation_type=var["autonomous_vm_cluster_ssl_certificate_management_certificate_generation_type"],
-            ca_bundle_id=oci_certificates_management_ca_bundle["test_ca_bundle"]["id"],
-            certificate_authority_id=oci_certificates_management_certificate_authority["test_certificate_authority"]["id"],
-            certificate_id=oci_apigateway_certificate["test_certificate"]["id"])
-        ```
-
-        ## Import
-
-        Import is not supported for this resource.
-
+        Create a AutonomousVmClusterSslCertificateManagement resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] autonomous_vm_cluster_id: The autonomous VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[str] ca_bundle_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the certificate bundle.
-        :param pulumi.Input[str] certificate_authority_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the certificate authority.
-        :param pulumi.Input[str] certificate_generation_type: Specify SYSTEM for using Oracle managed certificates. Specify BYOC when you want to bring your own certificate.
-        :param pulumi.Input[str] certificate_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the certificate to use. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -254,28 +168,7 @@ class AutonomousVmClusterSslCertificateManagement(pulumi.CustomResource):
                  args: AutonomousVmClusterSslCertificateManagementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Autonomous Vm Cluster Ssl Certificate Management resource in Oracle Cloud Infrastructure Database service.
-
-        Rotates the SSL certificates for Autonomous Exadata VM cluster.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_autonomous_vm_cluster_ssl_certificate_management = oci.database.AutonomousVmClusterSslCertificateManagement("testAutonomousVmClusterSslCertificateManagement",
-            autonomous_vm_cluster_id=oci_database_autonomous_vm_cluster["test_autonomous_vm_cluster"]["id"],
-            certificate_generation_type=var["autonomous_vm_cluster_ssl_certificate_management_certificate_generation_type"],
-            ca_bundle_id=oci_certificates_management_ca_bundle["test_ca_bundle"]["id"],
-            certificate_authority_id=oci_certificates_management_certificate_authority["test_certificate_authority"]["id"],
-            certificate_id=oci_apigateway_certificate["test_certificate"]["id"])
-        ```
-
-        ## Import
-
-        Import is not supported for this resource.
-
+        Create a AutonomousVmClusterSslCertificateManagement resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param AutonomousVmClusterSslCertificateManagementArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -336,15 +229,6 @@ class AutonomousVmClusterSslCertificateManagement(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] autonomous_vm_cluster_id: The autonomous VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[str] ca_bundle_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the certificate bundle.
-        :param pulumi.Input[str] certificate_authority_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the certificate authority.
-        :param pulumi.Input[str] certificate_generation_type: Specify SYSTEM for using Oracle managed certificates. Specify BYOC when you want to bring your own certificate.
-        :param pulumi.Input[str] certificate_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the certificate to use. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -360,44 +244,25 @@ class AutonomousVmClusterSslCertificateManagement(pulumi.CustomResource):
     @property
     @pulumi.getter(name="autonomousVmClusterId")
     def autonomous_vm_cluster_id(self) -> pulumi.Output[str]:
-        """
-        The autonomous VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
         return pulumi.get(self, "autonomous_vm_cluster_id")
 
     @property
     @pulumi.getter(name="caBundleId")
-    def ca_bundle_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the certificate bundle.
-        """
+    def ca_bundle_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "ca_bundle_id")
 
     @property
     @pulumi.getter(name="certificateAuthorityId")
-    def certificate_authority_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the certificate authority.
-        """
+    def certificate_authority_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "certificate_authority_id")
 
     @property
     @pulumi.getter(name="certificateGenerationType")
     def certificate_generation_type(self) -> pulumi.Output[str]:
-        """
-        Specify SYSTEM for using Oracle managed certificates. Specify BYOC when you want to bring your own certificate.
-        """
         return pulumi.get(self, "certificate_generation_type")
 
     @property
     @pulumi.getter(name="certificateId")
-    def certificate_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the certificate to use. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
+    def certificate_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "certificate_id")
 

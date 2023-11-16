@@ -29,7 +29,7 @@ namespace Pulumi.Oci.DataSafe
         /// (Updatable) The OCID of the compartment containing the database security config.
         /// </summary>
         [Output("compartmentId")]
-        public Output<string> CompartmentId { get; private set; } = null!;
+        public Output<string?> CompartmentId { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the database security configuration resource.
@@ -41,31 +41,31 @@ namespace Pulumi.Oci.DataSafe
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The description of the security policy.
         /// </summary>
         [Output("description")]
-        public Output<string> Description { get; private set; } = null!;
+        public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The display name of the database security config. The name does not have to be unique, and it is changeable.
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// Details about the current state of the database security config in Data Safe.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
@@ -81,43 +81,43 @@ namespace Pulumi.Oci.DataSafe
         /// (Updatable) Details to update the SQL firewall config.
         /// </summary>
         [Output("sqlFirewallConfig")]
-        public Output<Outputs.DatabaseSecurityConfigSqlFirewallConfig> SqlFirewallConfig { get; private set; } = null!;
+        public Output<Outputs.DatabaseSecurityConfigSqlFirewallConfig?> SqlFirewallConfig { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the database security config.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
         [Output("systemTags")]
-        public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// The target OCID corresponding to the database security config.
         /// </summary>
         [Output("targetId")]
-        public Output<string> TargetId { get; private set; } = null!;
+        public Output<string?> TargetId { get; private set; } = null!;
 
         /// <summary>
         /// The time that the database security config was created, in the format defined by RFC3339.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The last date and time the database security config was refreshed, in the format defined by RFC3339.
         /// </summary>
         [Output("timeLastRefreshed")]
-        public Output<string> TimeLastRefreshed { get; private set; } = null!;
+        public Output<string?> TimeLastRefreshed { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the database security configuration was last updated, in the format defined by RFC3339.
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
 
         /// <summary>

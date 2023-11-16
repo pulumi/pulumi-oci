@@ -25,7 +25,7 @@ public final class GetWaasPoliciesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private @Nullable List<String> ids;
     private @Nullable List<String> states;
     private @Nullable String timeCreatedGreaterThanOrEqualTo;
@@ -34,7 +34,7 @@ public final class GetWaasPoliciesResult {
      * @return The list of waas_policies.
      * 
      */
-    private List<GetWaasPoliciesWaasPolicy> waasPolicies;
+    private @Nullable List<GetWaasPoliciesWaasPolicy> waasPolicies;
 
     private GetWaasPoliciesResult() {}
     /**
@@ -54,8 +54,8 @@ public final class GetWaasPoliciesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public List<String> ids() {
         return this.ids == null ? List.of() : this.ids;
@@ -74,7 +74,7 @@ public final class GetWaasPoliciesResult {
      * 
      */
     public List<GetWaasPoliciesWaasPolicy> waasPolicies() {
-        return this.waasPolicies;
+        return this.waasPolicies == null ? List.of() : this.waasPolicies;
     }
 
     public static Builder builder() {
@@ -89,12 +89,12 @@ public final class GetWaasPoliciesResult {
         private String compartmentId;
         private @Nullable List<String> displayNames;
         private @Nullable List<GetWaasPoliciesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable List<String> ids;
         private @Nullable List<String> states;
         private @Nullable String timeCreatedGreaterThanOrEqualTo;
         private @Nullable String timeCreatedLessThan;
-        private List<GetWaasPoliciesWaasPolicy> waasPolicies;
+        private @Nullable List<GetWaasPoliciesWaasPolicy> waasPolicies;
         public Builder() {}
         public Builder(GetWaasPoliciesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -131,8 +131,8 @@ public final class GetWaasPoliciesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -162,8 +162,8 @@ public final class GetWaasPoliciesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder waasPolicies(List<GetWaasPoliciesWaasPolicy> waasPolicies) {
-            this.waasPolicies = Objects.requireNonNull(waasPolicies);
+        public Builder waasPolicies(@Nullable List<GetWaasPoliciesWaasPolicy> waasPolicies) {
+            this.waasPolicies = waasPolicies;
             return this;
         }
         public Builder waasPolicies(GetWaasPoliciesWaasPolicy... waasPolicies) {

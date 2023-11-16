@@ -26,14 +26,6 @@ class ScriptArgs:
                  parameters: Optional[pulumi.Input[Sequence[pulumi.Input['ScriptParameterArgs']]]] = None):
         """
         The set of arguments for constructing a Script resource.
-        :param pulumi.Input[str] apm_domain_id: (Updatable) The APM domain ID the request is intended for.
-        :param pulumi.Input[str] content: (Updatable) The content of the script. It may contain custom-defined tags that can be used for setting dynamic parameters. The format to set dynamic parameters is: `<ORAP><ON>param name</ON><OV>param value</OV><OS>isParamValueSecret(true/false)</OS></ORAP>`. Param value and isParamValueSecret are optional, the default value for isParamValueSecret is false. Examples: With mandatory param name : `<ORAP><ON>param name</ON></ORAP>` With parameter name and value : `<ORAP><ON>param name</ON><OV>param value</OV></ORAP>` Note that the content is valid if it matches the given content type. For example, if the content type is SIDE, then the content should be in Side script format. If the content type is JS, then the content should be in JavaScript format.
-        :param pulumi.Input[str] content_type: (Updatable) Content type of script.
-        :param pulumi.Input[str] display_name: (Updatable) Unique name that can be edited. The name should not contain any confidential information.
-        :param pulumi.Input[str] content_file_name: (Updatable) File name of uploaded script content.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[Sequence[pulumi.Input['ScriptParameterArgs']]] parameters: (Updatable) List of script parameters. Example: `[{"paramName": "userid", "paramValue":"testuser", "isSecret": false}]`
         """
         pulumi.set(__self__, "apm_domain_id", apm_domain_id)
         pulumi.set(__self__, "content", content)
@@ -51,9 +43,6 @@ class ScriptArgs:
     @property
     @pulumi.getter(name="apmDomainId")
     def apm_domain_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The APM domain ID the request is intended for.
-        """
         return pulumi.get(self, "apm_domain_id")
 
     @apm_domain_id.setter
@@ -63,9 +52,6 @@ class ScriptArgs:
     @property
     @pulumi.getter
     def content(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The content of the script. It may contain custom-defined tags that can be used for setting dynamic parameters. The format to set dynamic parameters is: `<ORAP><ON>param name</ON><OV>param value</OV><OS>isParamValueSecret(true/false)</OS></ORAP>`. Param value and isParamValueSecret are optional, the default value for isParamValueSecret is false. Examples: With mandatory param name : `<ORAP><ON>param name</ON></ORAP>` With parameter name and value : `<ORAP><ON>param name</ON><OV>param value</OV></ORAP>` Note that the content is valid if it matches the given content type. For example, if the content type is SIDE, then the content should be in Side script format. If the content type is JS, then the content should be in JavaScript format.
-        """
         return pulumi.get(self, "content")
 
     @content.setter
@@ -75,9 +61,6 @@ class ScriptArgs:
     @property
     @pulumi.getter(name="contentType")
     def content_type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Content type of script.
-        """
         return pulumi.get(self, "content_type")
 
     @content_type.setter
@@ -87,9 +70,6 @@ class ScriptArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Unique name that can be edited. The name should not contain any confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -99,9 +79,6 @@ class ScriptArgs:
     @property
     @pulumi.getter(name="contentFileName")
     def content_file_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) File name of uploaded script content.
-        """
         return pulumi.get(self, "content_file_name")
 
     @content_file_name.setter
@@ -111,9 +88,6 @@ class ScriptArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -123,9 +97,6 @@ class ScriptArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -135,9 +106,6 @@ class ScriptArgs:
     @property
     @pulumi.getter
     def parameters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ScriptParameterArgs']]]]:
-        """
-        (Updatable) List of script parameters. Example: `[{"paramName": "userid", "paramValue":"testuser", "isSecret": false}]`
-        """
         return pulumi.get(self, "parameters")
 
     @parameters.setter
@@ -163,19 +131,6 @@ class _ScriptState:
                  time_uploaded: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering Script resources.
-        :param pulumi.Input[str] apm_domain_id: (Updatable) The APM domain ID the request is intended for.
-        :param pulumi.Input[str] content: (Updatable) The content of the script. It may contain custom-defined tags that can be used for setting dynamic parameters. The format to set dynamic parameters is: `<ORAP><ON>param name</ON><OV>param value</OV><OS>isParamValueSecret(true/false)</OS></ORAP>`. Param value and isParamValueSecret are optional, the default value for isParamValueSecret is false. Examples: With mandatory param name : `<ORAP><ON>param name</ON></ORAP>` With parameter name and value : `<ORAP><ON>param name</ON><OV>param value</OV></ORAP>` Note that the content is valid if it matches the given content type. For example, if the content type is SIDE, then the content should be in Side script format. If the content type is JS, then the content should be in JavaScript format.
-        :param pulumi.Input[str] content_file_name: (Updatable) File name of uploaded script content.
-        :param pulumi.Input[int] content_size_in_bytes: Size of the script content.
-        :param pulumi.Input[str] content_type: (Updatable) Content type of script.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) Unique name that can be edited. The name should not contain any confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[Sequence[pulumi.Input['ScriptMonitorStatusCountMapArgs']]] monitor_status_count_maps: Details of the monitor count per state. Example: `{ "total" : 5, "enabled" : 3 , "disabled" : 2, "invalid" : 0 }`
-        :param pulumi.Input[Sequence[pulumi.Input['ScriptParameterArgs']]] parameters: (Updatable) List of script parameters. Example: `[{"paramName": "userid", "paramValue":"testuser", "isSecret": false}]`
-        :param pulumi.Input[str] time_created: The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
-        :param pulumi.Input[str] time_updated: The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
-        :param pulumi.Input[str] time_uploaded: The time the script was uploaded.
         """
         if apm_domain_id is not None:
             pulumi.set(__self__, "apm_domain_id", apm_domain_id)
@@ -207,9 +162,6 @@ class _ScriptState:
     @property
     @pulumi.getter(name="apmDomainId")
     def apm_domain_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The APM domain ID the request is intended for.
-        """
         return pulumi.get(self, "apm_domain_id")
 
     @apm_domain_id.setter
@@ -219,9 +171,6 @@ class _ScriptState:
     @property
     @pulumi.getter
     def content(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The content of the script. It may contain custom-defined tags that can be used for setting dynamic parameters. The format to set dynamic parameters is: `<ORAP><ON>param name</ON><OV>param value</OV><OS>isParamValueSecret(true/false)</OS></ORAP>`. Param value and isParamValueSecret are optional, the default value for isParamValueSecret is false. Examples: With mandatory param name : `<ORAP><ON>param name</ON></ORAP>` With parameter name and value : `<ORAP><ON>param name</ON><OV>param value</OV></ORAP>` Note that the content is valid if it matches the given content type. For example, if the content type is SIDE, then the content should be in Side script format. If the content type is JS, then the content should be in JavaScript format.
-        """
         return pulumi.get(self, "content")
 
     @content.setter
@@ -231,9 +180,6 @@ class _ScriptState:
     @property
     @pulumi.getter(name="contentFileName")
     def content_file_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) File name of uploaded script content.
-        """
         return pulumi.get(self, "content_file_name")
 
     @content_file_name.setter
@@ -243,9 +189,6 @@ class _ScriptState:
     @property
     @pulumi.getter(name="contentSizeInBytes")
     def content_size_in_bytes(self) -> Optional[pulumi.Input[int]]:
-        """
-        Size of the script content.
-        """
         return pulumi.get(self, "content_size_in_bytes")
 
     @content_size_in_bytes.setter
@@ -255,9 +198,6 @@ class _ScriptState:
     @property
     @pulumi.getter(name="contentType")
     def content_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Content type of script.
-        """
         return pulumi.get(self, "content_type")
 
     @content_type.setter
@@ -267,9 +207,6 @@ class _ScriptState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -279,9 +216,6 @@ class _ScriptState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Unique name that can be edited. The name should not contain any confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -291,9 +225,6 @@ class _ScriptState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -303,9 +234,6 @@ class _ScriptState:
     @property
     @pulumi.getter(name="monitorStatusCountMaps")
     def monitor_status_count_maps(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ScriptMonitorStatusCountMapArgs']]]]:
-        """
-        Details of the monitor count per state. Example: `{ "total" : 5, "enabled" : 3 , "disabled" : 2, "invalid" : 0 }`
-        """
         return pulumi.get(self, "monitor_status_count_maps")
 
     @monitor_status_count_maps.setter
@@ -315,9 +243,6 @@ class _ScriptState:
     @property
     @pulumi.getter
     def parameters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ScriptParameterArgs']]]]:
-        """
-        (Updatable) List of script parameters. Example: `[{"paramName": "userid", "paramValue":"testuser", "isSecret": false}]`
-        """
         return pulumi.get(self, "parameters")
 
     @parameters.setter
@@ -327,9 +252,6 @@ class _ScriptState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -339,9 +261,6 @@ class _ScriptState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -351,9 +270,6 @@ class _ScriptState:
     @property
     @pulumi.getter(name="timeUploaded")
     def time_uploaded(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the script was uploaded.
-        """
         return pulumi.get(self, "time_uploaded")
 
     @time_uploaded.setter
@@ -376,53 +292,9 @@ class Script(pulumi.CustomResource):
                  parameters: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ScriptParameterArgs']]]]] = None,
                  __props__=None):
         """
-        This resource provides the Script resource in Oracle Cloud Infrastructure Apm Synthetics service.
-
-        Creates a new script.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_script = oci.apm_synthetics.Script("testScript",
-            apm_domain_id=oci_apm_synthetics_apm_domain["test_apm_domain"]["id"],
-            content=var["script_content"],
-            content_type=var["script_content_type"],
-            display_name=var["script_display_name"],
-            content_file_name=var["script_content_file_name"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            freeform_tags={
-                "bar-key": "value",
-            },
-            parameters=[oci.apm_synthetics.ScriptParameterArgs(
-                param_name=var["script_parameters_param_name"],
-                is_secret=var["script_parameters_is_secret"],
-                param_value=var["script_parameters_param_value"],
-            )])
-        ```
-
-        ## Import
-
-        Scripts can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:ApmSynthetics/script:Script test_script "scripts/{scriptId}/apmDomainId/{apmDomainId}"
-        ```
-
+        Create a Script resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] apm_domain_id: (Updatable) The APM domain ID the request is intended for.
-        :param pulumi.Input[str] content: (Updatable) The content of the script. It may contain custom-defined tags that can be used for setting dynamic parameters. The format to set dynamic parameters is: `<ORAP><ON>param name</ON><OV>param value</OV><OS>isParamValueSecret(true/false)</OS></ORAP>`. Param value and isParamValueSecret are optional, the default value for isParamValueSecret is false. Examples: With mandatory param name : `<ORAP><ON>param name</ON></ORAP>` With parameter name and value : `<ORAP><ON>param name</ON><OV>param value</OV></ORAP>` Note that the content is valid if it matches the given content type. For example, if the content type is SIDE, then the content should be in Side script format. If the content type is JS, then the content should be in JavaScript format.
-        :param pulumi.Input[str] content_file_name: (Updatable) File name of uploaded script content.
-        :param pulumi.Input[str] content_type: (Updatable) Content type of script.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) Unique name that can be edited. The name should not contain any confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ScriptParameterArgs']]]] parameters: (Updatable) List of script parameters. Example: `[{"paramName": "userid", "paramValue":"testuser", "isSecret": false}]`
         """
         ...
     @overload
@@ -431,43 +303,7 @@ class Script(pulumi.CustomResource):
                  args: ScriptArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Script resource in Oracle Cloud Infrastructure Apm Synthetics service.
-
-        Creates a new script.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_script = oci.apm_synthetics.Script("testScript",
-            apm_domain_id=oci_apm_synthetics_apm_domain["test_apm_domain"]["id"],
-            content=var["script_content"],
-            content_type=var["script_content_type"],
-            display_name=var["script_display_name"],
-            content_file_name=var["script_content_file_name"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            freeform_tags={
-                "bar-key": "value",
-            },
-            parameters=[oci.apm_synthetics.ScriptParameterArgs(
-                param_name=var["script_parameters_param_name"],
-                is_secret=var["script_parameters_is_secret"],
-                param_value=var["script_parameters_param_value"],
-            )])
-        ```
-
-        ## Import
-
-        Scripts can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:ApmSynthetics/script:Script test_script "scripts/{scriptId}/apmDomainId/{apmDomainId}"
-        ```
-
+        Create a Script resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param ScriptArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -551,19 +387,6 @@ class Script(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] apm_domain_id: (Updatable) The APM domain ID the request is intended for.
-        :param pulumi.Input[str] content: (Updatable) The content of the script. It may contain custom-defined tags that can be used for setting dynamic parameters. The format to set dynamic parameters is: `<ORAP><ON>param name</ON><OV>param value</OV><OS>isParamValueSecret(true/false)</OS></ORAP>`. Param value and isParamValueSecret are optional, the default value for isParamValueSecret is false. Examples: With mandatory param name : `<ORAP><ON>param name</ON></ORAP>` With parameter name and value : `<ORAP><ON>param name</ON><OV>param value</OV></ORAP>` Note that the content is valid if it matches the given content type. For example, if the content type is SIDE, then the content should be in Side script format. If the content type is JS, then the content should be in JavaScript format.
-        :param pulumi.Input[str] content_file_name: (Updatable) File name of uploaded script content.
-        :param pulumi.Input[int] content_size_in_bytes: Size of the script content.
-        :param pulumi.Input[str] content_type: (Updatable) Content type of script.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) Unique name that can be edited. The name should not contain any confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ScriptMonitorStatusCountMapArgs']]]] monitor_status_count_maps: Details of the monitor count per state. Example: `{ "total" : 5, "enabled" : 3 , "disabled" : 2, "invalid" : 0 }`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ScriptParameterArgs']]]] parameters: (Updatable) List of script parameters. Example: `[{"paramName": "userid", "paramValue":"testuser", "isSecret": false}]`
-        :param pulumi.Input[str] time_created: The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
-        :param pulumi.Input[str] time_updated: The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
-        :param pulumi.Input[str] time_uploaded: The time the script was uploaded.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -587,104 +410,65 @@ class Script(pulumi.CustomResource):
     @property
     @pulumi.getter(name="apmDomainId")
     def apm_domain_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The APM domain ID the request is intended for.
-        """
         return pulumi.get(self, "apm_domain_id")
 
     @property
     @pulumi.getter
     def content(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The content of the script. It may contain custom-defined tags that can be used for setting dynamic parameters. The format to set dynamic parameters is: `<ORAP><ON>param name</ON><OV>param value</OV><OS>isParamValueSecret(true/false)</OS></ORAP>`. Param value and isParamValueSecret are optional, the default value for isParamValueSecret is false. Examples: With mandatory param name : `<ORAP><ON>param name</ON></ORAP>` With parameter name and value : `<ORAP><ON>param name</ON><OV>param value</OV></ORAP>` Note that the content is valid if it matches the given content type. For example, if the content type is SIDE, then the content should be in Side script format. If the content type is JS, then the content should be in JavaScript format.
-        """
         return pulumi.get(self, "content")
 
     @property
     @pulumi.getter(name="contentFileName")
-    def content_file_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) File name of uploaded script content.
-        """
+    def content_file_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "content_file_name")
 
     @property
     @pulumi.getter(name="contentSizeInBytes")
-    def content_size_in_bytes(self) -> pulumi.Output[int]:
-        """
-        Size of the script content.
-        """
+    def content_size_in_bytes(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "content_size_in_bytes")
 
     @property
     @pulumi.getter(name="contentType")
     def content_type(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Content type of script.
-        """
         return pulumi.get(self, "content_type")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Unique name that can be edited. The name should not contain any confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="monitorStatusCountMaps")
-    def monitor_status_count_maps(self) -> pulumi.Output[Sequence['outputs.ScriptMonitorStatusCountMap']]:
-        """
-        Details of the monitor count per state. Example: `{ "total" : 5, "enabled" : 3 , "disabled" : 2, "invalid" : 0 }`
-        """
+    def monitor_status_count_maps(self) -> pulumi.Output[Optional[Sequence['outputs.ScriptMonitorStatusCountMap']]]:
         return pulumi.get(self, "monitor_status_count_maps")
 
     @property
     @pulumi.getter
-    def parameters(self) -> pulumi.Output[Sequence['outputs.ScriptParameter']]:
-        """
-        (Updatable) List of script parameters. Example: `[{"paramName": "userid", "paramValue":"testuser", "isSecret": false}]`
-        """
+    def parameters(self) -> pulumi.Output[Optional[Sequence['outputs.ScriptParameter']]]:
         return pulumi.get(self, "parameters")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="timeUploaded")
-    def time_uploaded(self) -> pulumi.Output[str]:
-        """
-        The time the script was uploaded.
-        """
+    def time_uploaded(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_uploaded")
 

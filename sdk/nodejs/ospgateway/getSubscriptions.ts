@@ -57,12 +57,12 @@ export interface GetSubscriptionsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly ospHomeRegion: string;
     /**
      * The list of subscription_collection.
      */
-    readonly subscriptionCollections: outputs.OspGateway.GetSubscriptionsSubscriptionCollection[];
+    readonly subscriptionCollections?: outputs.OspGateway.GetSubscriptionsSubscriptionCollection[];
 }
 /**
  * This data source provides the list of Subscriptions in Oracle Cloud Infrastructure Osp Gateway service.

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Exadata Infrastructure Un Allocated Resource resource in Oracle Cloud Infrastructure Database service.
@@ -66,18 +65,18 @@ type GetExadataInfrastructureUnAllocatedResourceResult struct {
 	AutonomousVmClusters []GetExadataInfrastructureUnAllocatedResourceAutonomousVmCluster `pulumi:"autonomousVmClusters"`
 	DbServers            []string                                                         `pulumi:"dbServers"`
 	// The user-friendly name for the Exadata Cloud@Customer infrastructure. The name does not need to be unique.
-	DisplayName             string `pulumi:"displayName"`
-	ExadataInfrastructureId string `pulumi:"exadataInfrastructureId"`
+	DisplayName             *string `pulumi:"displayName"`
+	ExadataInfrastructureId string  `pulumi:"exadataInfrastructureId"`
 	// Total unallocated exadata storage in the infrastructure in TBs.
-	ExadataStorageInTbs float64 `pulumi:"exadataStorageInTbs"`
+	ExadataStorageInTbs *float64 `pulumi:"exadataStorageInTbs"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The minimum amount of un allocated storage that is available across all nodes in the infrastructure.
-	LocalStorageInGbs int `pulumi:"localStorageInGbs"`
+	LocalStorageInGbs *int `pulumi:"localStorageInGbs"`
 	// The minimum amount of un allocated memory that is available across all nodes in the infrastructure.
-	MemoryInGbs int `pulumi:"memoryInGbs"`
+	MemoryInGbs *int `pulumi:"memoryInGbs"`
 	// The minimum amount of un allocated ocpus that is available across all nodes in the infrastructure.
-	Ocpus int `pulumi:"ocpus"`
+	Ocpus *int `pulumi:"ocpus"`
 }
 
 func GetExadataInfrastructureUnAllocatedResourceOutput(ctx *pulumi.Context, args GetExadataInfrastructureUnAllocatedResourceOutputArgs, opts ...pulumi.InvokeOption) GetExadataInfrastructureUnAllocatedResourceResultOutput {
@@ -120,12 +119,6 @@ func (o GetExadataInfrastructureUnAllocatedResourceResultOutput) ToGetExadataInf
 	return o
 }
 
-func (o GetExadataInfrastructureUnAllocatedResourceResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetExadataInfrastructureUnAllocatedResourceResult] {
-	return pulumix.Output[GetExadataInfrastructureUnAllocatedResourceResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The list of Autonomous VM Clusters on the Infra and their associated unallocated resources details
 func (o GetExadataInfrastructureUnAllocatedResourceResultOutput) AutonomousVmClusters() GetExadataInfrastructureUnAllocatedResourceAutonomousVmClusterArrayOutput {
 	return o.ApplyT(func(v GetExadataInfrastructureUnAllocatedResourceResult) []GetExadataInfrastructureUnAllocatedResourceAutonomousVmCluster {
@@ -138,8 +131,8 @@ func (o GetExadataInfrastructureUnAllocatedResourceResultOutput) DbServers() pul
 }
 
 // The user-friendly name for the Exadata Cloud@Customer infrastructure. The name does not need to be unique.
-func (o GetExadataInfrastructureUnAllocatedResourceResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExadataInfrastructureUnAllocatedResourceResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetExadataInfrastructureUnAllocatedResourceResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExadataInfrastructureUnAllocatedResourceResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 func (o GetExadataInfrastructureUnAllocatedResourceResultOutput) ExadataInfrastructureId() pulumi.StringOutput {
@@ -147,28 +140,28 @@ func (o GetExadataInfrastructureUnAllocatedResourceResultOutput) ExadataInfrastr
 }
 
 // Total unallocated exadata storage in the infrastructure in TBs.
-func (o GetExadataInfrastructureUnAllocatedResourceResultOutput) ExadataStorageInTbs() pulumi.Float64Output {
-	return o.ApplyT(func(v GetExadataInfrastructureUnAllocatedResourceResult) float64 { return v.ExadataStorageInTbs }).(pulumi.Float64Output)
+func (o GetExadataInfrastructureUnAllocatedResourceResultOutput) ExadataStorageInTbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetExadataInfrastructureUnAllocatedResourceResult) *float64 { return v.ExadataStorageInTbs }).(pulumi.Float64PtrOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetExadataInfrastructureUnAllocatedResourceResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExadataInfrastructureUnAllocatedResourceResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetExadataInfrastructureUnAllocatedResourceResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExadataInfrastructureUnAllocatedResourceResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The minimum amount of un allocated storage that is available across all nodes in the infrastructure.
-func (o GetExadataInfrastructureUnAllocatedResourceResultOutput) LocalStorageInGbs() pulumi.IntOutput {
-	return o.ApplyT(func(v GetExadataInfrastructureUnAllocatedResourceResult) int { return v.LocalStorageInGbs }).(pulumi.IntOutput)
+func (o GetExadataInfrastructureUnAllocatedResourceResultOutput) LocalStorageInGbs() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetExadataInfrastructureUnAllocatedResourceResult) *int { return v.LocalStorageInGbs }).(pulumi.IntPtrOutput)
 }
 
 // The minimum amount of un allocated memory that is available across all nodes in the infrastructure.
-func (o GetExadataInfrastructureUnAllocatedResourceResultOutput) MemoryInGbs() pulumi.IntOutput {
-	return o.ApplyT(func(v GetExadataInfrastructureUnAllocatedResourceResult) int { return v.MemoryInGbs }).(pulumi.IntOutput)
+func (o GetExadataInfrastructureUnAllocatedResourceResultOutput) MemoryInGbs() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetExadataInfrastructureUnAllocatedResourceResult) *int { return v.MemoryInGbs }).(pulumi.IntPtrOutput)
 }
 
 // The minimum amount of un allocated ocpus that is available across all nodes in the infrastructure.
-func (o GetExadataInfrastructureUnAllocatedResourceResultOutput) Ocpus() pulumi.IntOutput {
-	return o.ApplyT(func(v GetExadataInfrastructureUnAllocatedResourceResult) int { return v.Ocpus }).(pulumi.IntOutput)
+func (o GetExadataInfrastructureUnAllocatedResourceResultOutput) Ocpus() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetExadataInfrastructureUnAllocatedResourceResult) *int { return v.Ocpus }).(pulumi.IntPtrOutput)
 }
 
 func init() {

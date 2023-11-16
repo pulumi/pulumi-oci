@@ -24,12 +24,12 @@ public final class GetFleetJavaMigrationAnalysisResultsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of java_migration_analysis_result_collection.
      * 
      */
-    private List<GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollection> javaMigrationAnalysisResultCollections;
+    private @Nullable List<GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollection> javaMigrationAnalysisResultCollections;
     /**
      * @return The managed instance OCID.
      * 
@@ -53,15 +53,15 @@ public final class GetFleetJavaMigrationAnalysisResultsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of java_migration_analysis_result_collection.
      * 
      */
     public List<GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollection> javaMigrationAnalysisResultCollections() {
-        return this.javaMigrationAnalysisResultCollections;
+        return this.javaMigrationAnalysisResultCollections == null ? List.of() : this.javaMigrationAnalysisResultCollections;
     }
     /**
      * @return The managed instance OCID.
@@ -88,8 +88,8 @@ public final class GetFleetJavaMigrationAnalysisResultsResult {
     public static final class Builder {
         private @Nullable List<GetFleetJavaMigrationAnalysisResultsFilter> filters;
         private String fleetId;
-        private String id;
-        private List<GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollection> javaMigrationAnalysisResultCollections;
+        private @Nullable String id;
+        private @Nullable List<GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollection> javaMigrationAnalysisResultCollections;
         private @Nullable String managedInstanceId;
         private @Nullable String timeEnd;
         private @Nullable String timeStart;
@@ -119,13 +119,13 @@ public final class GetFleetJavaMigrationAnalysisResultsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder javaMigrationAnalysisResultCollections(List<GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollection> javaMigrationAnalysisResultCollections) {
-            this.javaMigrationAnalysisResultCollections = Objects.requireNonNull(javaMigrationAnalysisResultCollections);
+        public Builder javaMigrationAnalysisResultCollections(@Nullable List<GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollection> javaMigrationAnalysisResultCollections) {
+            this.javaMigrationAnalysisResultCollections = javaMigrationAnalysisResultCollections;
             return this;
         }
         public Builder javaMigrationAnalysisResultCollections(GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollection... javaMigrationAnalysisResultCollections) {

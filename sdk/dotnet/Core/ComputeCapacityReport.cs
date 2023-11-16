@@ -85,7 +85,7 @@ namespace Pulumi.Oci.Core
         /// The date and time the capacity report was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
 
         /// <summary>

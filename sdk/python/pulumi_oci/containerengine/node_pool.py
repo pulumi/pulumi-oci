@@ -37,29 +37,6 @@ class NodePoolArgs:
                  subnet_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         """
         The set of arguments for constructing a NodePool resource.
-        :param pulumi.Input[str] cluster_id: The OCID of the cluster to which this node pool is attached.
-        :param pulumi.Input[str] compartment_id: The OCID of the compartment in which the node pool exists.
-        :param pulumi.Input[str] node_shape: (Updatable) The name of the node shape of the nodes in the node pool.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input['NodePoolInitialNodeLabelArgs']]] initial_node_labels: (Updatable) A list of key/value pairs to add to nodes after they join the Kubernetes cluster.
-        :param pulumi.Input[str] kubernetes_version: (Updatable) The version of Kubernetes to install on the nodes in the node pool.
-        :param pulumi.Input[str] name: (Updatable) The name of the node pool. Avoid entering confidential information.
-        :param pulumi.Input['NodePoolNodeConfigDetailsArgs'] node_config_details: (Updatable) The configuration of nodes in the node pool. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.
-        :param pulumi.Input['NodePoolNodeEvictionNodePoolSettingsArgs'] node_eviction_node_pool_settings: (Updatable) Node Eviction Details configuration
-        :param pulumi.Input[str] node_image_id: Deprecated. see `nodeSource`. The OCID of the image running on the nodes in the node pool.
-        :param pulumi.Input[str] node_image_name: Deprecated. Use `nodeSourceDetails` instead. If you specify values for both, this value is ignored. The name of the image running on the nodes in the node pool. Cannot be used when `node_image_id` is specified.
-        :param pulumi.Input[Mapping[str, Any]] node_metadata: (Updatable) A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool on launch.
-        :param pulumi.Input['NodePoolNodePoolCyclingDetailsArgs'] node_pool_cycling_details: (Updatable) Node Pool Cycling Details
-        :param pulumi.Input['NodePoolNodeShapeConfigArgs'] node_shape_config: (Updatable) Specify the configuration of the shape to launch nodes in the node pool.
-        :param pulumi.Input['NodePoolNodeSourceDetailsArgs'] node_source_details: (Updatable) Specify the source to use to launch nodes in the node pool. Currently, image is the only supported source.
-        :param pulumi.Input[int] quantity_per_subnet: (Updatable) Optional, default to 1. The number of nodes to create in each subnet specified in subnetIds property. When used, subnetIds is required. This property is deprecated, use nodeConfigDetails instead.
-        :param pulumi.Input[str] ssh_public_key: (Updatable) The SSH public key on each node in the node pool on launch.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] subnet_ids: (Updatable) The OCIDs of the subnets in which to place nodes for this node pool. When used, quantityPerSubnet can be provided. This property is deprecated, use nodeConfigDetails. Exactly one of the subnetIds or nodeConfigDetails properties must be specified. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "cluster_id", cluster_id)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -106,9 +83,6 @@ class NodePoolArgs:
     @property
     @pulumi.getter(name="clusterId")
     def cluster_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of the cluster to which this node pool is attached.
-        """
         return pulumi.get(self, "cluster_id")
 
     @cluster_id.setter
@@ -118,9 +92,6 @@ class NodePoolArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of the compartment in which the node pool exists.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -130,9 +101,6 @@ class NodePoolArgs:
     @property
     @pulumi.getter(name="nodeShape")
     def node_shape(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The name of the node shape of the nodes in the node pool.
-        """
         return pulumi.get(self, "node_shape")
 
     @node_shape.setter
@@ -142,9 +110,6 @@ class NodePoolArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -154,9 +119,6 @@ class NodePoolArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -166,9 +128,6 @@ class NodePoolArgs:
     @property
     @pulumi.getter(name="initialNodeLabels")
     def initial_node_labels(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NodePoolInitialNodeLabelArgs']]]]:
-        """
-        (Updatable) A list of key/value pairs to add to nodes after they join the Kubernetes cluster.
-        """
         return pulumi.get(self, "initial_node_labels")
 
     @initial_node_labels.setter
@@ -178,9 +137,6 @@ class NodePoolArgs:
     @property
     @pulumi.getter(name="kubernetesVersion")
     def kubernetes_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The version of Kubernetes to install on the nodes in the node pool.
-        """
         return pulumi.get(self, "kubernetes_version")
 
     @kubernetes_version.setter
@@ -190,9 +146,6 @@ class NodePoolArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The name of the node pool. Avoid entering confidential information.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -202,9 +155,6 @@ class NodePoolArgs:
     @property
     @pulumi.getter(name="nodeConfigDetails")
     def node_config_details(self) -> Optional[pulumi.Input['NodePoolNodeConfigDetailsArgs']]:
-        """
-        (Updatable) The configuration of nodes in the node pool. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.
-        """
         return pulumi.get(self, "node_config_details")
 
     @node_config_details.setter
@@ -214,9 +164,6 @@ class NodePoolArgs:
     @property
     @pulumi.getter(name="nodeEvictionNodePoolSettings")
     def node_eviction_node_pool_settings(self) -> Optional[pulumi.Input['NodePoolNodeEvictionNodePoolSettingsArgs']]:
-        """
-        (Updatable) Node Eviction Details configuration
-        """
         return pulumi.get(self, "node_eviction_node_pool_settings")
 
     @node_eviction_node_pool_settings.setter
@@ -226,9 +173,6 @@ class NodePoolArgs:
     @property
     @pulumi.getter(name="nodeImageId")
     def node_image_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        Deprecated. see `nodeSource`. The OCID of the image running on the nodes in the node pool.
-        """
         warnings.warn("""The 'node_image_id' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used.""", DeprecationWarning)
         pulumi.log.warn("""node_image_id is deprecated: The 'node_image_id' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used.""")
 
@@ -241,9 +185,6 @@ class NodePoolArgs:
     @property
     @pulumi.getter(name="nodeImageName")
     def node_image_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Deprecated. Use `nodeSourceDetails` instead. If you specify values for both, this value is ignored. The name of the image running on the nodes in the node pool. Cannot be used when `node_image_id` is specified.
-        """
         warnings.warn("""The 'node_image_name' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used.""", DeprecationWarning)
         pulumi.log.warn("""node_image_name is deprecated: The 'node_image_name' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used.""")
 
@@ -256,9 +197,6 @@ class NodePoolArgs:
     @property
     @pulumi.getter(name="nodeMetadata")
     def node_metadata(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool on launch.
-        """
         return pulumi.get(self, "node_metadata")
 
     @node_metadata.setter
@@ -268,9 +206,6 @@ class NodePoolArgs:
     @property
     @pulumi.getter(name="nodePoolCyclingDetails")
     def node_pool_cycling_details(self) -> Optional[pulumi.Input['NodePoolNodePoolCyclingDetailsArgs']]:
-        """
-        (Updatable) Node Pool Cycling Details
-        """
         return pulumi.get(self, "node_pool_cycling_details")
 
     @node_pool_cycling_details.setter
@@ -280,9 +215,6 @@ class NodePoolArgs:
     @property
     @pulumi.getter(name="nodeShapeConfig")
     def node_shape_config(self) -> Optional[pulumi.Input['NodePoolNodeShapeConfigArgs']]:
-        """
-        (Updatable) Specify the configuration of the shape to launch nodes in the node pool.
-        """
         return pulumi.get(self, "node_shape_config")
 
     @node_shape_config.setter
@@ -292,9 +224,6 @@ class NodePoolArgs:
     @property
     @pulumi.getter(name="nodeSourceDetails")
     def node_source_details(self) -> Optional[pulumi.Input['NodePoolNodeSourceDetailsArgs']]:
-        """
-        (Updatable) Specify the source to use to launch nodes in the node pool. Currently, image is the only supported source.
-        """
         return pulumi.get(self, "node_source_details")
 
     @node_source_details.setter
@@ -304,9 +233,6 @@ class NodePoolArgs:
     @property
     @pulumi.getter(name="quantityPerSubnet")
     def quantity_per_subnet(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Optional, default to 1. The number of nodes to create in each subnet specified in subnetIds property. When used, subnetIds is required. This property is deprecated, use nodeConfigDetails instead.
-        """
         return pulumi.get(self, "quantity_per_subnet")
 
     @quantity_per_subnet.setter
@@ -316,9 +242,6 @@ class NodePoolArgs:
     @property
     @pulumi.getter(name="sshPublicKey")
     def ssh_public_key(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The SSH public key on each node in the node pool on launch.
-        """
         return pulumi.get(self, "ssh_public_key")
 
     @ssh_public_key.setter
@@ -328,13 +251,6 @@ class NodePoolArgs:
     @property
     @pulumi.getter(name="subnetIds")
     def subnet_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) The OCIDs of the subnets in which to place nodes for this node pool. When used, quantityPerSubnet can be provided. This property is deprecated, use nodeConfigDetails. Exactly one of the subnetIds or nodeConfigDetails properties must be specified. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "subnet_ids")
 
     @subnet_ids.setter
@@ -370,33 +286,6 @@ class _NodePoolState:
                  subnet_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         """
         Input properties used for looking up and filtering NodePool resources.
-        :param pulumi.Input[str] cluster_id: The OCID of the cluster to which this node pool is attached.
-        :param pulumi.Input[str] compartment_id: The OCID of the compartment in which the node pool exists.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input['NodePoolInitialNodeLabelArgs']]] initial_node_labels: (Updatable) A list of key/value pairs to add to nodes after they join the Kubernetes cluster.
-        :param pulumi.Input[str] kubernetes_version: (Updatable) The version of Kubernetes to install on the nodes in the node pool.
-        :param pulumi.Input[str] lifecycle_details: Details about the state of the node.
-        :param pulumi.Input[str] name: (Updatable) The name of the node pool. Avoid entering confidential information.
-        :param pulumi.Input['NodePoolNodeConfigDetailsArgs'] node_config_details: (Updatable) The configuration of nodes in the node pool. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.
-        :param pulumi.Input['NodePoolNodeEvictionNodePoolSettingsArgs'] node_eviction_node_pool_settings: (Updatable) Node Eviction Details configuration
-        :param pulumi.Input[str] node_image_id: Deprecated. see `nodeSource`. The OCID of the image running on the nodes in the node pool.
-        :param pulumi.Input[str] node_image_name: Deprecated. Use `nodeSourceDetails` instead. If you specify values for both, this value is ignored. The name of the image running on the nodes in the node pool. Cannot be used when `node_image_id` is specified.
-        :param pulumi.Input[Mapping[str, Any]] node_metadata: (Updatable) A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool on launch.
-        :param pulumi.Input['NodePoolNodePoolCyclingDetailsArgs'] node_pool_cycling_details: (Updatable) Node Pool Cycling Details
-        :param pulumi.Input[str] node_shape: (Updatable) The name of the node shape of the nodes in the node pool.
-        :param pulumi.Input['NodePoolNodeShapeConfigArgs'] node_shape_config: (Updatable) Specify the configuration of the shape to launch nodes in the node pool.
-        :param pulumi.Input['NodePoolNodeSourceDetailsArgs'] node_source_details: (Updatable) Specify the source to use to launch nodes in the node pool. Currently, image is the only supported source.
-        :param pulumi.Input[Sequence[pulumi.Input['NodePoolNodeSourceArgs']]] node_sources: Deprecated. see `nodeSourceDetails`. Source running on the nodes in the node pool.
-        :param pulumi.Input[Sequence[pulumi.Input['NodePoolNodeArgs']]] nodes: The nodes in the node pool.
-        :param pulumi.Input[int] quantity_per_subnet: (Updatable) Optional, default to 1. The number of nodes to create in each subnet specified in subnetIds property. When used, subnetIds is required. This property is deprecated, use nodeConfigDetails instead.
-        :param pulumi.Input[str] ssh_public_key: (Updatable) The SSH public key on each node in the node pool on launch.
-        :param pulumi.Input[str] state: The state of the nodepool.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] subnet_ids: (Updatable) The OCIDs of the subnets in which to place nodes for this node pool. When used, quantityPerSubnet can be provided. This property is deprecated, use nodeConfigDetails. Exactly one of the subnetIds or nodeConfigDetails properties must be specified. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if cluster_id is not None:
             pulumi.set(__self__, "cluster_id", cluster_id)
@@ -454,9 +343,6 @@ class _NodePoolState:
     @property
     @pulumi.getter(name="clusterId")
     def cluster_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the cluster to which this node pool is attached.
-        """
         return pulumi.get(self, "cluster_id")
 
     @cluster_id.setter
@@ -466,9 +352,6 @@ class _NodePoolState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the compartment in which the node pool exists.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -478,9 +361,6 @@ class _NodePoolState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -490,9 +370,6 @@ class _NodePoolState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -502,9 +379,6 @@ class _NodePoolState:
     @property
     @pulumi.getter(name="initialNodeLabels")
     def initial_node_labels(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NodePoolInitialNodeLabelArgs']]]]:
-        """
-        (Updatable) A list of key/value pairs to add to nodes after they join the Kubernetes cluster.
-        """
         return pulumi.get(self, "initial_node_labels")
 
     @initial_node_labels.setter
@@ -514,9 +388,6 @@ class _NodePoolState:
     @property
     @pulumi.getter(name="kubernetesVersion")
     def kubernetes_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The version of Kubernetes to install on the nodes in the node pool.
-        """
         return pulumi.get(self, "kubernetes_version")
 
     @kubernetes_version.setter
@@ -526,9 +397,6 @@ class _NodePoolState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        Details about the state of the node.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -538,9 +406,6 @@ class _NodePoolState:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The name of the node pool. Avoid entering confidential information.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -550,9 +415,6 @@ class _NodePoolState:
     @property
     @pulumi.getter(name="nodeConfigDetails")
     def node_config_details(self) -> Optional[pulumi.Input['NodePoolNodeConfigDetailsArgs']]:
-        """
-        (Updatable) The configuration of nodes in the node pool. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.
-        """
         return pulumi.get(self, "node_config_details")
 
     @node_config_details.setter
@@ -562,9 +424,6 @@ class _NodePoolState:
     @property
     @pulumi.getter(name="nodeEvictionNodePoolSettings")
     def node_eviction_node_pool_settings(self) -> Optional[pulumi.Input['NodePoolNodeEvictionNodePoolSettingsArgs']]:
-        """
-        (Updatable) Node Eviction Details configuration
-        """
         return pulumi.get(self, "node_eviction_node_pool_settings")
 
     @node_eviction_node_pool_settings.setter
@@ -574,9 +433,6 @@ class _NodePoolState:
     @property
     @pulumi.getter(name="nodeImageId")
     def node_image_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        Deprecated. see `nodeSource`. The OCID of the image running on the nodes in the node pool.
-        """
         warnings.warn("""The 'node_image_id' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used.""", DeprecationWarning)
         pulumi.log.warn("""node_image_id is deprecated: The 'node_image_id' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used.""")
 
@@ -589,9 +445,6 @@ class _NodePoolState:
     @property
     @pulumi.getter(name="nodeImageName")
     def node_image_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Deprecated. Use `nodeSourceDetails` instead. If you specify values for both, this value is ignored. The name of the image running on the nodes in the node pool. Cannot be used when `node_image_id` is specified.
-        """
         warnings.warn("""The 'node_image_name' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used.""", DeprecationWarning)
         pulumi.log.warn("""node_image_name is deprecated: The 'node_image_name' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used.""")
 
@@ -604,9 +457,6 @@ class _NodePoolState:
     @property
     @pulumi.getter(name="nodeMetadata")
     def node_metadata(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool on launch.
-        """
         return pulumi.get(self, "node_metadata")
 
     @node_metadata.setter
@@ -616,9 +466,6 @@ class _NodePoolState:
     @property
     @pulumi.getter(name="nodePoolCyclingDetails")
     def node_pool_cycling_details(self) -> Optional[pulumi.Input['NodePoolNodePoolCyclingDetailsArgs']]:
-        """
-        (Updatable) Node Pool Cycling Details
-        """
         return pulumi.get(self, "node_pool_cycling_details")
 
     @node_pool_cycling_details.setter
@@ -628,9 +475,6 @@ class _NodePoolState:
     @property
     @pulumi.getter(name="nodeShape")
     def node_shape(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The name of the node shape of the nodes in the node pool.
-        """
         return pulumi.get(self, "node_shape")
 
     @node_shape.setter
@@ -640,9 +484,6 @@ class _NodePoolState:
     @property
     @pulumi.getter(name="nodeShapeConfig")
     def node_shape_config(self) -> Optional[pulumi.Input['NodePoolNodeShapeConfigArgs']]:
-        """
-        (Updatable) Specify the configuration of the shape to launch nodes in the node pool.
-        """
         return pulumi.get(self, "node_shape_config")
 
     @node_shape_config.setter
@@ -652,9 +493,6 @@ class _NodePoolState:
     @property
     @pulumi.getter(name="nodeSourceDetails")
     def node_source_details(self) -> Optional[pulumi.Input['NodePoolNodeSourceDetailsArgs']]:
-        """
-        (Updatable) Specify the source to use to launch nodes in the node pool. Currently, image is the only supported source.
-        """
         return pulumi.get(self, "node_source_details")
 
     @node_source_details.setter
@@ -664,9 +502,6 @@ class _NodePoolState:
     @property
     @pulumi.getter(name="nodeSources")
     def node_sources(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NodePoolNodeSourceArgs']]]]:
-        """
-        Deprecated. see `nodeSourceDetails`. Source running on the nodes in the node pool.
-        """
         return pulumi.get(self, "node_sources")
 
     @node_sources.setter
@@ -676,9 +511,6 @@ class _NodePoolState:
     @property
     @pulumi.getter
     def nodes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NodePoolNodeArgs']]]]:
-        """
-        The nodes in the node pool.
-        """
         return pulumi.get(self, "nodes")
 
     @nodes.setter
@@ -688,9 +520,6 @@ class _NodePoolState:
     @property
     @pulumi.getter(name="quantityPerSubnet")
     def quantity_per_subnet(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Optional, default to 1. The number of nodes to create in each subnet specified in subnetIds property. When used, subnetIds is required. This property is deprecated, use nodeConfigDetails instead.
-        """
         return pulumi.get(self, "quantity_per_subnet")
 
     @quantity_per_subnet.setter
@@ -700,9 +529,6 @@ class _NodePoolState:
     @property
     @pulumi.getter(name="sshPublicKey")
     def ssh_public_key(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The SSH public key on each node in the node pool on launch.
-        """
         return pulumi.get(self, "ssh_public_key")
 
     @ssh_public_key.setter
@@ -712,9 +538,6 @@ class _NodePoolState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The state of the nodepool.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -724,13 +547,6 @@ class _NodePoolState:
     @property
     @pulumi.getter(name="subnetIds")
     def subnet_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) The OCIDs of the subnets in which to place nodes for this node pool. When used, quantityPerSubnet can be provided. This property is deprecated, use nodeConfigDetails. Exactly one of the subnetIds or nodeConfigDetails properties must be specified. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "subnet_ids")
 
     @subnet_ids.setter
@@ -764,119 +580,9 @@ class NodePool(pulumi.CustomResource):
                  subnet_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  __props__=None):
         """
-        This resource provides the Node Pool resource in Oracle Cloud Infrastructure Container Engine service.
-
-        Create a new node pool.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_node_pool = oci.container_engine.NodePool("testNodePool",
-            cluster_id=oci_containerengine_cluster["test_cluster"]["id"],
-            compartment_id=var["compartment_id"],
-            node_shape=var["node_pool_node_shape"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            freeform_tags={
-                "Department": "Finance",
-            },
-            initial_node_labels=[oci.container_engine.NodePoolInitialNodeLabelArgs(
-                key=var["node_pool_initial_node_labels_key"],
-                value=var["node_pool_initial_node_labels_value"],
-            )],
-            kubernetes_version=var["node_pool_kubernetes_version"],
-            node_config_details=oci.container_engine.NodePoolNodeConfigDetailsArgs(
-                placement_configs=[oci.container_engine.NodePoolNodeConfigDetailsPlacementConfigArgs(
-                    availability_domain=var["node_pool_node_config_details_placement_configs_availability_domain"],
-                    subnet_id=oci_core_subnet["test_subnet"]["id"],
-                    capacity_reservation_id=oci_containerengine_capacity_reservation["test_capacity_reservation"]["id"],
-                    fault_domains=var["node_pool_node_config_details_placement_configs_fault_domains"],
-                    preemptible_node_config=oci.container_engine.NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigArgs(
-                        preemption_action=oci.container_engine.NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionArgs(
-                            type=var["node_pool_node_config_details_placement_configs_preemptible_node_config_preemption_action_type"],
-                            is_preserve_boot_volume=var["node_pool_node_config_details_placement_configs_preemptible_node_config_preemption_action_is_preserve_boot_volume"],
-                        ),
-                    ),
-                )],
-                size=var["node_pool_node_config_details_size"],
-                is_pv_encryption_in_transit_enabled=var["node_pool_node_config_details_is_pv_encryption_in_transit_enabled"],
-                kms_key_id=oci_kms_key["test_key"]["id"],
-                node_pool_pod_network_option_details=oci.container_engine.NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsArgs(
-                    cni_type=var["node_pool_node_config_details_node_pool_pod_network_option_details_cni_type"],
-                    max_pods_per_node=var["node_pool_node_config_details_node_pool_pod_network_option_details_max_pods_per_node"],
-                    pod_nsg_ids=var["node_pool_node_config_details_node_pool_pod_network_option_details_pod_nsg_ids"],
-                    pod_subnet_ids=var["node_pool_node_config_details_node_pool_pod_network_option_details_pod_subnet_ids"],
-                ),
-                defined_tags={
-                    "Operations.CostCenter": "42",
-                },
-                freeform_tags={
-                    "Department": "Finance",
-                },
-                nsg_ids=var["node_pool_node_config_details_nsg_ids"],
-            ),
-            node_eviction_node_pool_settings=oci.container_engine.NodePoolNodeEvictionNodePoolSettingsArgs(
-                eviction_grace_duration=var["node_pool_node_eviction_node_pool_settings_eviction_grace_duration"],
-                is_force_delete_after_grace_duration=var["node_pool_node_eviction_node_pool_settings_is_force_delete_after_grace_duration"],
-            ),
-            node_image_name=oci_core_image["test_image"]["name"],
-            node_metadata=var["node_pool_node_metadata"],
-            node_pool_cycling_details=oci.container_engine.NodePoolNodePoolCyclingDetailsArgs(
-                is_node_cycling_enabled=var["node_pool_node_pool_cycling_details_is_node_cycling_enabled"],
-                maximum_surge=var["node_pool_node_pool_cycling_details_maximum_surge"],
-                maximum_unavailable=var["node_pool_node_pool_cycling_details_maximum_unavailable"],
-            ),
-            node_shape_config=oci.container_engine.NodePoolNodeShapeConfigArgs(
-                memory_in_gbs=var["node_pool_node_shape_config_memory_in_gbs"],
-                ocpus=var["node_pool_node_shape_config_ocpus"],
-            ),
-            node_source_details=oci.container_engine.NodePoolNodeSourceDetailsArgs(
-                image_id=oci_core_image["test_image"]["id"],
-                source_type=var["node_pool_node_source_details_source_type"],
-                boot_volume_size_in_gbs=var["node_pool_node_source_details_boot_volume_size_in_gbs"],
-            ),
-            quantity_per_subnet=var["node_pool_quantity_per_subnet"],
-            ssh_public_key=var["node_pool_ssh_public_key"],
-            subnet_ids=var["node_pool_subnet_ids"])
-        ```
-
-        ## Import
-
-        NodePools can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:ContainerEngine/nodePool:NodePool test_node_pool "id"
-        ```
-
+        Create a NodePool resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] cluster_id: The OCID of the cluster to which this node pool is attached.
-        :param pulumi.Input[str] compartment_id: The OCID of the compartment in which the node pool exists.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NodePoolInitialNodeLabelArgs']]]] initial_node_labels: (Updatable) A list of key/value pairs to add to nodes after they join the Kubernetes cluster.
-        :param pulumi.Input[str] kubernetes_version: (Updatable) The version of Kubernetes to install on the nodes in the node pool.
-        :param pulumi.Input[str] name: (Updatable) The name of the node pool. Avoid entering confidential information.
-        :param pulumi.Input[pulumi.InputType['NodePoolNodeConfigDetailsArgs']] node_config_details: (Updatable) The configuration of nodes in the node pool. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.
-        :param pulumi.Input[pulumi.InputType['NodePoolNodeEvictionNodePoolSettingsArgs']] node_eviction_node_pool_settings: (Updatable) Node Eviction Details configuration
-        :param pulumi.Input[str] node_image_id: Deprecated. see `nodeSource`. The OCID of the image running on the nodes in the node pool.
-        :param pulumi.Input[str] node_image_name: Deprecated. Use `nodeSourceDetails` instead. If you specify values for both, this value is ignored. The name of the image running on the nodes in the node pool. Cannot be used when `node_image_id` is specified.
-        :param pulumi.Input[Mapping[str, Any]] node_metadata: (Updatable) A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool on launch.
-        :param pulumi.Input[pulumi.InputType['NodePoolNodePoolCyclingDetailsArgs']] node_pool_cycling_details: (Updatable) Node Pool Cycling Details
-        :param pulumi.Input[str] node_shape: (Updatable) The name of the node shape of the nodes in the node pool.
-        :param pulumi.Input[pulumi.InputType['NodePoolNodeShapeConfigArgs']] node_shape_config: (Updatable) Specify the configuration of the shape to launch nodes in the node pool.
-        :param pulumi.Input[pulumi.InputType['NodePoolNodeSourceDetailsArgs']] node_source_details: (Updatable) Specify the source to use to launch nodes in the node pool. Currently, image is the only supported source.
-        :param pulumi.Input[int] quantity_per_subnet: (Updatable) Optional, default to 1. The number of nodes to create in each subnet specified in subnetIds property. When used, subnetIds is required. This property is deprecated, use nodeConfigDetails instead.
-        :param pulumi.Input[str] ssh_public_key: (Updatable) The SSH public key on each node in the node pool on launch.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] subnet_ids: (Updatable) The OCIDs of the subnets in which to place nodes for this node pool. When used, quantityPerSubnet can be provided. This property is deprecated, use nodeConfigDetails. Exactly one of the subnetIds or nodeConfigDetails properties must be specified. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -885,94 +591,7 @@ class NodePool(pulumi.CustomResource):
                  args: NodePoolArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Node Pool resource in Oracle Cloud Infrastructure Container Engine service.
-
-        Create a new node pool.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_node_pool = oci.container_engine.NodePool("testNodePool",
-            cluster_id=oci_containerengine_cluster["test_cluster"]["id"],
-            compartment_id=var["compartment_id"],
-            node_shape=var["node_pool_node_shape"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            freeform_tags={
-                "Department": "Finance",
-            },
-            initial_node_labels=[oci.container_engine.NodePoolInitialNodeLabelArgs(
-                key=var["node_pool_initial_node_labels_key"],
-                value=var["node_pool_initial_node_labels_value"],
-            )],
-            kubernetes_version=var["node_pool_kubernetes_version"],
-            node_config_details=oci.container_engine.NodePoolNodeConfigDetailsArgs(
-                placement_configs=[oci.container_engine.NodePoolNodeConfigDetailsPlacementConfigArgs(
-                    availability_domain=var["node_pool_node_config_details_placement_configs_availability_domain"],
-                    subnet_id=oci_core_subnet["test_subnet"]["id"],
-                    capacity_reservation_id=oci_containerengine_capacity_reservation["test_capacity_reservation"]["id"],
-                    fault_domains=var["node_pool_node_config_details_placement_configs_fault_domains"],
-                    preemptible_node_config=oci.container_engine.NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigArgs(
-                        preemption_action=oci.container_engine.NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionArgs(
-                            type=var["node_pool_node_config_details_placement_configs_preemptible_node_config_preemption_action_type"],
-                            is_preserve_boot_volume=var["node_pool_node_config_details_placement_configs_preemptible_node_config_preemption_action_is_preserve_boot_volume"],
-                        ),
-                    ),
-                )],
-                size=var["node_pool_node_config_details_size"],
-                is_pv_encryption_in_transit_enabled=var["node_pool_node_config_details_is_pv_encryption_in_transit_enabled"],
-                kms_key_id=oci_kms_key["test_key"]["id"],
-                node_pool_pod_network_option_details=oci.container_engine.NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsArgs(
-                    cni_type=var["node_pool_node_config_details_node_pool_pod_network_option_details_cni_type"],
-                    max_pods_per_node=var["node_pool_node_config_details_node_pool_pod_network_option_details_max_pods_per_node"],
-                    pod_nsg_ids=var["node_pool_node_config_details_node_pool_pod_network_option_details_pod_nsg_ids"],
-                    pod_subnet_ids=var["node_pool_node_config_details_node_pool_pod_network_option_details_pod_subnet_ids"],
-                ),
-                defined_tags={
-                    "Operations.CostCenter": "42",
-                },
-                freeform_tags={
-                    "Department": "Finance",
-                },
-                nsg_ids=var["node_pool_node_config_details_nsg_ids"],
-            ),
-            node_eviction_node_pool_settings=oci.container_engine.NodePoolNodeEvictionNodePoolSettingsArgs(
-                eviction_grace_duration=var["node_pool_node_eviction_node_pool_settings_eviction_grace_duration"],
-                is_force_delete_after_grace_duration=var["node_pool_node_eviction_node_pool_settings_is_force_delete_after_grace_duration"],
-            ),
-            node_image_name=oci_core_image["test_image"]["name"],
-            node_metadata=var["node_pool_node_metadata"],
-            node_pool_cycling_details=oci.container_engine.NodePoolNodePoolCyclingDetailsArgs(
-                is_node_cycling_enabled=var["node_pool_node_pool_cycling_details_is_node_cycling_enabled"],
-                maximum_surge=var["node_pool_node_pool_cycling_details_maximum_surge"],
-                maximum_unavailable=var["node_pool_node_pool_cycling_details_maximum_unavailable"],
-            ),
-            node_shape_config=oci.container_engine.NodePoolNodeShapeConfigArgs(
-                memory_in_gbs=var["node_pool_node_shape_config_memory_in_gbs"],
-                ocpus=var["node_pool_node_shape_config_ocpus"],
-            ),
-            node_source_details=oci.container_engine.NodePoolNodeSourceDetailsArgs(
-                image_id=oci_core_image["test_image"]["id"],
-                source_type=var["node_pool_node_source_details_source_type"],
-                boot_volume_size_in_gbs=var["node_pool_node_source_details_boot_volume_size_in_gbs"],
-            ),
-            quantity_per_subnet=var["node_pool_quantity_per_subnet"],
-            ssh_public_key=var["node_pool_ssh_public_key"],
-            subnet_ids=var["node_pool_subnet_ids"])
-        ```
-
-        ## Import
-
-        NodePools can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:ContainerEngine/nodePool:NodePool test_node_pool "id"
-        ```
-
+        Create a NodePool resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param NodePoolArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -1085,33 +704,6 @@ class NodePool(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] cluster_id: The OCID of the cluster to which this node pool is attached.
-        :param pulumi.Input[str] compartment_id: The OCID of the compartment in which the node pool exists.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NodePoolInitialNodeLabelArgs']]]] initial_node_labels: (Updatable) A list of key/value pairs to add to nodes after they join the Kubernetes cluster.
-        :param pulumi.Input[str] kubernetes_version: (Updatable) The version of Kubernetes to install on the nodes in the node pool.
-        :param pulumi.Input[str] lifecycle_details: Details about the state of the node.
-        :param pulumi.Input[str] name: (Updatable) The name of the node pool. Avoid entering confidential information.
-        :param pulumi.Input[pulumi.InputType['NodePoolNodeConfigDetailsArgs']] node_config_details: (Updatable) The configuration of nodes in the node pool. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.
-        :param pulumi.Input[pulumi.InputType['NodePoolNodeEvictionNodePoolSettingsArgs']] node_eviction_node_pool_settings: (Updatable) Node Eviction Details configuration
-        :param pulumi.Input[str] node_image_id: Deprecated. see `nodeSource`. The OCID of the image running on the nodes in the node pool.
-        :param pulumi.Input[str] node_image_name: Deprecated. Use `nodeSourceDetails` instead. If you specify values for both, this value is ignored. The name of the image running on the nodes in the node pool. Cannot be used when `node_image_id` is specified.
-        :param pulumi.Input[Mapping[str, Any]] node_metadata: (Updatable) A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool on launch.
-        :param pulumi.Input[pulumi.InputType['NodePoolNodePoolCyclingDetailsArgs']] node_pool_cycling_details: (Updatable) Node Pool Cycling Details
-        :param pulumi.Input[str] node_shape: (Updatable) The name of the node shape of the nodes in the node pool.
-        :param pulumi.Input[pulumi.InputType['NodePoolNodeShapeConfigArgs']] node_shape_config: (Updatable) Specify the configuration of the shape to launch nodes in the node pool.
-        :param pulumi.Input[pulumi.InputType['NodePoolNodeSourceDetailsArgs']] node_source_details: (Updatable) Specify the source to use to launch nodes in the node pool. Currently, image is the only supported source.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NodePoolNodeSourceArgs']]]] node_sources: Deprecated. see `nodeSourceDetails`. Source running on the nodes in the node pool.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NodePoolNodeArgs']]]] nodes: The nodes in the node pool.
-        :param pulumi.Input[int] quantity_per_subnet: (Updatable) Optional, default to 1. The number of nodes to create in each subnet specified in subnetIds property. When used, subnetIds is required. This property is deprecated, use nodeConfigDetails instead.
-        :param pulumi.Input[str] ssh_public_key: (Updatable) The SSH public key on each node in the node pool on launch.
-        :param pulumi.Input[str] state: The state of the nodepool.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] subnet_ids: (Updatable) The OCIDs of the subnets in which to place nodes for this node pool. When used, quantityPerSubnet can be provided. This property is deprecated, use nodeConfigDetails. Exactly one of the subnetIds or nodeConfigDetails properties must be specified. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -1145,89 +737,56 @@ class NodePool(pulumi.CustomResource):
     @property
     @pulumi.getter(name="clusterId")
     def cluster_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the cluster to which this node pool is attached.
-        """
         return pulumi.get(self, "cluster_id")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the compartment in which the node pool exists.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="initialNodeLabels")
-    def initial_node_labels(self) -> pulumi.Output[Sequence['outputs.NodePoolInitialNodeLabel']]:
-        """
-        (Updatable) A list of key/value pairs to add to nodes after they join the Kubernetes cluster.
-        """
+    def initial_node_labels(self) -> pulumi.Output[Optional[Sequence['outputs.NodePoolInitialNodeLabel']]]:
         return pulumi.get(self, "initial_node_labels")
 
     @property
     @pulumi.getter(name="kubernetesVersion")
-    def kubernetes_version(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The version of Kubernetes to install on the nodes in the node pool.
-        """
+    def kubernetes_version(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "kubernetes_version")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        Details about the state of the node.
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The name of the node pool. Avoid entering confidential information.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="nodeConfigDetails")
-    def node_config_details(self) -> pulumi.Output['outputs.NodePoolNodeConfigDetails']:
-        """
-        (Updatable) The configuration of nodes in the node pool. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.
-        """
+    def node_config_details(self) -> pulumi.Output[Optional['outputs.NodePoolNodeConfigDetails']]:
         return pulumi.get(self, "node_config_details")
 
     @property
     @pulumi.getter(name="nodeEvictionNodePoolSettings")
-    def node_eviction_node_pool_settings(self) -> pulumi.Output['outputs.NodePoolNodeEvictionNodePoolSettings']:
-        """
-        (Updatable) Node Eviction Details configuration
-        """
+    def node_eviction_node_pool_settings(self) -> pulumi.Output[Optional['outputs.NodePoolNodeEvictionNodePoolSettings']]:
         return pulumi.get(self, "node_eviction_node_pool_settings")
 
     @property
     @pulumi.getter(name="nodeImageId")
-    def node_image_id(self) -> pulumi.Output[str]:
-        """
-        Deprecated. see `nodeSource`. The OCID of the image running on the nodes in the node pool.
-        """
+    def node_image_id(self) -> pulumi.Output[Optional[str]]:
         warnings.warn("""The 'node_image_id' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used.""", DeprecationWarning)
         pulumi.log.warn("""node_image_id is deprecated: The 'node_image_id' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used.""")
 
@@ -1235,10 +794,7 @@ class NodePool(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="nodeImageName")
-    def node_image_name(self) -> pulumi.Output[str]:
-        """
-        Deprecated. Use `nodeSourceDetails` instead. If you specify values for both, this value is ignored. The name of the image running on the nodes in the node pool. Cannot be used when `node_image_id` is specified.
-        """
+    def node_image_name(self) -> pulumi.Output[Optional[str]]:
         warnings.warn("""The 'node_image_name' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used.""", DeprecationWarning)
         pulumi.log.warn("""node_image_name is deprecated: The 'node_image_name' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used.""")
 
@@ -1246,93 +802,56 @@ class NodePool(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="nodeMetadata")
-    def node_metadata(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool on launch.
-        """
+    def node_metadata(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "node_metadata")
 
     @property
     @pulumi.getter(name="nodePoolCyclingDetails")
-    def node_pool_cycling_details(self) -> pulumi.Output['outputs.NodePoolNodePoolCyclingDetails']:
-        """
-        (Updatable) Node Pool Cycling Details
-        """
+    def node_pool_cycling_details(self) -> pulumi.Output[Optional['outputs.NodePoolNodePoolCyclingDetails']]:
         return pulumi.get(self, "node_pool_cycling_details")
 
     @property
     @pulumi.getter(name="nodeShape")
     def node_shape(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The name of the node shape of the nodes in the node pool.
-        """
         return pulumi.get(self, "node_shape")
 
     @property
     @pulumi.getter(name="nodeShapeConfig")
-    def node_shape_config(self) -> pulumi.Output['outputs.NodePoolNodeShapeConfig']:
-        """
-        (Updatable) Specify the configuration of the shape to launch nodes in the node pool.
-        """
+    def node_shape_config(self) -> pulumi.Output[Optional['outputs.NodePoolNodeShapeConfig']]:
         return pulumi.get(self, "node_shape_config")
 
     @property
     @pulumi.getter(name="nodeSourceDetails")
-    def node_source_details(self) -> pulumi.Output['outputs.NodePoolNodeSourceDetails']:
-        """
-        (Updatable) Specify the source to use to launch nodes in the node pool. Currently, image is the only supported source.
-        """
+    def node_source_details(self) -> pulumi.Output[Optional['outputs.NodePoolNodeSourceDetails']]:
         return pulumi.get(self, "node_source_details")
 
     @property
     @pulumi.getter(name="nodeSources")
-    def node_sources(self) -> pulumi.Output[Sequence['outputs.NodePoolNodeSource']]:
-        """
-        Deprecated. see `nodeSourceDetails`. Source running on the nodes in the node pool.
-        """
+    def node_sources(self) -> pulumi.Output[Optional[Sequence['outputs.NodePoolNodeSource']]]:
         return pulumi.get(self, "node_sources")
 
     @property
     @pulumi.getter
-    def nodes(self) -> pulumi.Output[Sequence['outputs.NodePoolNode']]:
-        """
-        The nodes in the node pool.
-        """
+    def nodes(self) -> pulumi.Output[Optional[Sequence['outputs.NodePoolNode']]]:
         return pulumi.get(self, "nodes")
 
     @property
     @pulumi.getter(name="quantityPerSubnet")
-    def quantity_per_subnet(self) -> pulumi.Output[int]:
-        """
-        (Updatable) Optional, default to 1. The number of nodes to create in each subnet specified in subnetIds property. When used, subnetIds is required. This property is deprecated, use nodeConfigDetails instead.
-        """
+    def quantity_per_subnet(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "quantity_per_subnet")
 
     @property
     @pulumi.getter(name="sshPublicKey")
-    def ssh_public_key(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The SSH public key on each node in the node pool on launch.
-        """
+    def ssh_public_key(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "ssh_public_key")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The state of the nodepool.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="subnetIds")
-    def subnet_ids(self) -> pulumi.Output[Sequence[str]]:
-        """
-        (Updatable) The OCIDs of the subnets in which to place nodes for this node pool. When used, quantityPerSubnet can be provided. This property is deprecated, use nodeConfigDetails. Exactly one of the subnetIds or nodeConfigDetails properties must be specified. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
+    def subnet_ids(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "subnet_ids")
 

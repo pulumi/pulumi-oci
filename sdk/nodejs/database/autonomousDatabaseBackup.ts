@@ -68,55 +68,55 @@ export class AutonomousDatabaseBackup extends pulumi.CustomResource {
     /**
      * Backup destination details
      */
-    public readonly backupDestinationDetails!: pulumi.Output<outputs.Database.AutonomousDatabaseBackupBackupDestinationDetails>;
+    public readonly backupDestinationDetails!: pulumi.Output<outputs.Database.AutonomousDatabaseBackupBackupDestinationDetails | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    public /*out*/ readonly compartmentId!: pulumi.Output<string | undefined>;
     /**
      * The size of the database in terabytes at the time the backup was taken.
      */
-    public /*out*/ readonly databaseSizeInTbs!: pulumi.Output<number>;
+    public /*out*/ readonly databaseSizeInTbs!: pulumi.Output<number | undefined>;
     /**
      * A valid Oracle Database version for Autonomous Database.
      */
-    public /*out*/ readonly dbVersion!: pulumi.Output<string>;
+    public /*out*/ readonly dbVersion!: pulumi.Output<string | undefined>;
     /**
      * The user-friendly name for the backup. The name does not have to be unique.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    public readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * Indicates whether the backup is user-initiated or automatic.
      */
-    public /*out*/ readonly isAutomatic!: pulumi.Output<boolean>;
+    public /*out*/ readonly isAutomatic!: pulumi.Output<boolean | undefined>;
     /**
      * Indicates whether the backup is long-term
      */
-    public readonly isLongTermBackup!: pulumi.Output<boolean>;
+    public readonly isLongTermBackup!: pulumi.Output<boolean | undefined>;
     /**
      * Indicates whether the backup can be used to restore the associated Autonomous Database.
      */
-    public /*out*/ readonly isRestorable!: pulumi.Output<boolean>;
+    public /*out*/ readonly isRestorable!: pulumi.Output<boolean | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
      */
-    public /*out*/ readonly keyStoreId!: pulumi.Output<string>;
+    public /*out*/ readonly keyStoreId!: pulumi.Output<string | undefined>;
     /**
      * The wallet name for Oracle Key Vault.
      */
-    public /*out*/ readonly keyStoreWalletName!: pulumi.Output<string>;
+    public /*out*/ readonly keyStoreWalletName!: pulumi.Output<string | undefined>;
     /**
      * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      */
-    public /*out*/ readonly kmsKeyId!: pulumi.Output<string>;
+    public /*out*/ readonly kmsKeyId!: pulumi.Output<string | undefined>;
     /**
      * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
      */
-    public /*out*/ readonly kmsKeyVersionId!: pulumi.Output<string>;
+    public /*out*/ readonly kmsKeyVersionId!: pulumi.Output<string | undefined>;
     /**
      * Additional information about the current lifecycle state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Retention period, in days, for long-term backups
      *
@@ -124,35 +124,35 @@ export class AutonomousDatabaseBackup extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly retentionPeriodInDays!: pulumi.Output<number>;
+    public readonly retentionPeriodInDays!: pulumi.Output<number | undefined>;
     /**
      * The backup size in terrabytes (TB).
      */
-    public /*out*/ readonly sizeInTbs!: pulumi.Output<number>;
+    public /*out*/ readonly sizeInTbs!: pulumi.Output<number | undefined>;
     /**
      * The current state of the backup.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * Timestamp until when the backup will be available
      */
-    public /*out*/ readonly timeAvailableTill!: pulumi.Output<string>;
+    public /*out*/ readonly timeAvailableTill!: pulumi.Output<string | undefined>;
     /**
      * The date and time the backup completed.
      */
-    public /*out*/ readonly timeEnded!: pulumi.Output<string>;
+    public /*out*/ readonly timeEnded!: pulumi.Output<string | undefined>;
     /**
      * The date and time the backup started.
      */
-    public /*out*/ readonly timeStarted!: pulumi.Output<string>;
+    public /*out*/ readonly timeStarted!: pulumi.Output<string | undefined>;
     /**
      * The type of backup.
      */
-    public /*out*/ readonly type!: pulumi.Output<string>;
+    public /*out*/ readonly type!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      */
-    public /*out*/ readonly vaultId!: pulumi.Output<string>;
+    public /*out*/ readonly vaultId!: pulumi.Output<string | undefined>;
 
     /**
      * Create a AutonomousDatabaseBackup resource with the given unique name, arguments, and options.

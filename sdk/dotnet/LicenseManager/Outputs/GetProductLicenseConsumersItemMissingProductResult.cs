@@ -16,23 +16,23 @@ namespace Pulumi.Oci.LicenseManager.Outputs
         /// <summary>
         /// Product category base or option.
         /// </summary>
-        public readonly string Category;
+        public readonly string? Category;
         /// <summary>
         /// Units required for the missing product.
         /// </summary>
-        public readonly double Count;
+        public readonly double? Count;
         /// <summary>
         /// Name of the product.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
 
         [OutputConstructor]
         private GetProductLicenseConsumersItemMissingProductResult(
-            string category,
+            string? category,
 
-            double count,
+            double? count,
 
-            string name)
+            string? name)
         {
             Category = category;
             Count = count;

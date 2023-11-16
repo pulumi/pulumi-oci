@@ -16,29 +16,29 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
         /// <summary>
         /// Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
         /// </summary>
-        public readonly string DvpStackId;
+        public readonly string? DvpStackId;
         /// <summary>
         /// Type of stack.
         /// </summary>
-        public readonly string DvpStackType;
+        public readonly string? DvpStackType;
         /// <summary>
         /// Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
         /// </summary>
-        public readonly string DvpStreamId;
+        public readonly string? DvpStreamId;
         /// <summary>
         /// Version of the dedicated vantage point.
         /// </summary>
-        public readonly string DvpVersion;
+        public readonly string? DvpVersion;
 
         [OutputConstructor]
         private GetDedicatedVantagePointDvpStackDetailResult(
-            string dvpStackId,
+            string? dvpStackId,
 
-            string dvpStackType,
+            string? dvpStackType,
 
-            string dvpStreamId,
+            string? dvpStreamId,
 
-            string dvpVersion)
+            string? dvpVersion)
         {
             DvpStackId = dvpStackId;
             DvpStackType = dvpStackType;

@@ -16,35 +16,35 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// <summary>
         /// A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// The error mode for this step.
         /// </summary>
-        public readonly string ErrorMode;
+        public readonly string? ErrorMode;
         /// <summary>
         /// The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..uniqueID`
         /// </summary>
-        public readonly string GroupId;
+        public readonly string? GroupId;
         /// <summary>
         /// The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// A flag indicating whether this step should be enabled for execution.  Example: `true`
         /// </summary>
-        public readonly bool IsEnabled;
+        public readonly bool? IsEnabled;
         /// <summary>
         /// The OCID of the member associated with this step.  Example: `ocid1.database.oc1..uniqueID`
         /// </summary>
-        public readonly string MemberId;
+        public readonly string? MemberId;
         /// <summary>
         /// The timeout in seconds for executing this step.  Example: `600`
         /// </summary>
-        public readonly int Timeout;
+        public readonly int? Timeout;
         /// <summary>
         /// The type of the DR plan.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
         /// <summary>
         /// The details for a user-defined step in a DR plan.
         /// </summary>
@@ -52,21 +52,21 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
 
         [OutputConstructor]
         private GetDrPlansDrPlanCollectionItemPlanGroupStepResult(
-            string displayName,
+            string? displayName,
 
-            string errorMode,
+            string? errorMode,
 
-            string groupId,
+            string? groupId,
 
-            string id,
+            string? id,
 
-            bool isEnabled,
+            bool? isEnabled,
 
-            string memberId,
+            string? memberId,
 
-            int timeout,
+            int? timeout,
 
-            string type,
+            string? type,
 
             ImmutableArray<Outputs.GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepResult> userDefinedSteps)
         {

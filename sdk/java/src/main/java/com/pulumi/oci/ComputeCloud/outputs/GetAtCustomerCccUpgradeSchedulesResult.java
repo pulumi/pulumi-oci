@@ -20,7 +20,7 @@ public final class GetAtCustomerCccUpgradeSchedulesResult {
      * @return The list of ccc_upgrade_schedule_collection.
      * 
      */
-    private List<GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollection> cccUpgradeScheduleCollections;
+    private @Nullable List<GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollection> cccUpgradeScheduleCollections;
     private @Nullable String cccUpgradeScheduleId;
     /**
      * @return Compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Compute Cloud@Customer upgrade schedule.
@@ -39,7 +39,7 @@ public final class GetAtCustomerCccUpgradeSchedulesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Lifecycle state of the resource.
      * 
@@ -55,7 +55,7 @@ public final class GetAtCustomerCccUpgradeSchedulesResult {
      * 
      */
     public List<GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollection> cccUpgradeScheduleCollections() {
-        return this.cccUpgradeScheduleCollections;
+        return this.cccUpgradeScheduleCollections == null ? List.of() : this.cccUpgradeScheduleCollections;
     }
     public Optional<String> cccUpgradeScheduleId() {
         return Optional.ofNullable(this.cccUpgradeScheduleId);
@@ -87,8 +87,8 @@ public final class GetAtCustomerCccUpgradeSchedulesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Lifecycle state of the resource.
@@ -108,14 +108,14 @@ public final class GetAtCustomerCccUpgradeSchedulesResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String accessLevel;
-        private List<GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollection> cccUpgradeScheduleCollections;
+        private @Nullable List<GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollection> cccUpgradeScheduleCollections;
         private @Nullable String cccUpgradeScheduleId;
         private @Nullable String compartmentId;
         private @Nullable Boolean compartmentIdInSubtree;
         private @Nullable String displayName;
         private @Nullable String displayNameContains;
         private @Nullable List<GetAtCustomerCccUpgradeSchedulesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetAtCustomerCccUpgradeSchedulesResult defaults) {
@@ -138,8 +138,8 @@ public final class GetAtCustomerCccUpgradeSchedulesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder cccUpgradeScheduleCollections(List<GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollection> cccUpgradeScheduleCollections) {
-            this.cccUpgradeScheduleCollections = Objects.requireNonNull(cccUpgradeScheduleCollections);
+        public Builder cccUpgradeScheduleCollections(@Nullable List<GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollection> cccUpgradeScheduleCollections) {
+            this.cccUpgradeScheduleCollections = cccUpgradeScheduleCollections;
             return this;
         }
         public Builder cccUpgradeScheduleCollections(GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollection... cccUpgradeScheduleCollections) {
@@ -179,8 +179,8 @@ public final class GetAtCustomerCccUpgradeSchedulesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

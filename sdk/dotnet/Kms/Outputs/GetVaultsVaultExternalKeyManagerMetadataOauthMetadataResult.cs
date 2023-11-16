@@ -16,20 +16,20 @@ namespace Pulumi.Oci.Kms.Outputs
         /// <summary>
         /// ID of the client app created in IDP.
         /// </summary>
-        public readonly string ClientAppId;
-        public readonly string ClientAppSecret;
+        public readonly string? ClientAppId;
+        public readonly string? ClientAppSecret;
         /// <summary>
         /// Base URL of the IDCS account where confidential client app is created.
         /// </summary>
-        public readonly string IdcsAccountNameUrl;
+        public readonly string? IdcsAccountNameUrl;
 
         [OutputConstructor]
         private GetVaultsVaultExternalKeyManagerMetadataOauthMetadataResult(
-            string clientAppId,
+            string? clientAppId,
 
-            string clientAppSecret,
+            string? clientAppSecret,
 
-            string idcsAccountNameUrl)
+            string? idcsAccountNameUrl)
         {
             ClientAppId = clientAppId;
             ClientAppSecret = clientAppSecret;

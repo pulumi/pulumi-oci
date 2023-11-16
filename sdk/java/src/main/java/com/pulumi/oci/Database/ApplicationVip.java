@@ -13,6 +13,7 @@ import com.pulumi.oci.Utilities;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -84,56 +85,56 @@ public class ApplicationVip extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
-    private Output<String> compartmentId;
+    private Output</* @Nullable */ String> compartmentId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    public Output<String> compartmentId() {
-        return this.compartmentId;
+    public Output<Optional<String>> compartmentId() {
+        return Codegen.optional(this.compartmentId);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB node associated with the application virtual IP (VIP) address.
      * 
      */
     @Export(name="dbNodeId", refs={String.class}, tree="[0]")
-    private Output<String> dbNodeId;
+    private Output</* @Nullable */ String> dbNodeId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB node associated with the application virtual IP (VIP) address.
      * 
      */
-    public Output<String> dbNodeId() {
-        return this.dbNodeId;
+    public Output<Optional<String>> dbNodeId() {
+        return Codegen.optional(this.dbNodeId);
     }
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * The hostname of the application virtual IP (VIP) address.
@@ -154,42 +155,42 @@ public class ApplicationVip extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="ipAddress", refs={String.class}, tree="[0]")
-    private Output<String> ipAddress;
+    private Output</* @Nullable */ String> ipAddress;
 
     /**
      * @return The application virtual IP (VIP) address.
      * 
      */
-    public Output<String> ipAddress() {
-        return this.ipAddress;
+    public Output<Optional<String>> ipAddress() {
+        return Codegen.optional(this.ipAddress);
     }
     /**
      * Additional information about the current lifecycle state of the application virtual IP (VIP) address.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return Additional information about the current lifecycle state of the application virtual IP (VIP) address.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * The current lifecycle state of the application virtual IP (VIP) address.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current lifecycle state of the application virtual IP (VIP) address.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the application virtual IP (VIP) address.
@@ -216,14 +217,14 @@ public class ApplicationVip extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="timeAssigned", refs={String.class}, tree="[0]")
-    private Output<String> timeAssigned;
+    private Output</* @Nullable */ String> timeAssigned;
 
     /**
      * @return The date and time when the create operation for the application virtual IP (VIP) address completed.
      * 
      */
-    public Output<String> timeAssigned() {
-        return this.timeAssigned;
+    public Output<Optional<String>> timeAssigned() {
+        return Codegen.optional(this.timeAssigned);
     }
 
     /**

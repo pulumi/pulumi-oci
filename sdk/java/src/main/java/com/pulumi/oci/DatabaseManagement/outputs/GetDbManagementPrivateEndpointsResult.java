@@ -24,13 +24,13 @@ public final class GetDbManagementPrivateEndpointsResult {
      * @return The list of db_management_private_endpoint_collection.
      * 
      */
-    private List<GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollection> dbManagementPrivateEndpointCollections;
+    private @Nullable List<GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollection> dbManagementPrivateEndpointCollections;
     private @Nullable List<GetDbManagementPrivateEndpointsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Specifies whether the Database Management private endpoint can be used for Oracle Databases in a cluster.
      * 
@@ -65,7 +65,7 @@ public final class GetDbManagementPrivateEndpointsResult {
      * 
      */
     public List<GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollection> dbManagementPrivateEndpointCollections() {
-        return this.dbManagementPrivateEndpointCollections;
+        return this.dbManagementPrivateEndpointCollections == null ? List.of() : this.dbManagementPrivateEndpointCollections;
     }
     public List<GetDbManagementPrivateEndpointsFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -74,8 +74,8 @@ public final class GetDbManagementPrivateEndpointsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Specifies whether the Database Management private endpoint can be used for Oracle Databases in a cluster.
@@ -116,9 +116,9 @@ public final class GetDbManagementPrivateEndpointsResult {
     @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
-        private List<GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollection> dbManagementPrivateEndpointCollections;
+        private @Nullable List<GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollection> dbManagementPrivateEndpointCollections;
         private @Nullable List<GetDbManagementPrivateEndpointsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable Boolean isCluster;
         private @Nullable String name;
         private @Nullable String state;
@@ -142,8 +142,8 @@ public final class GetDbManagementPrivateEndpointsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder dbManagementPrivateEndpointCollections(List<GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollection> dbManagementPrivateEndpointCollections) {
-            this.dbManagementPrivateEndpointCollections = Objects.requireNonNull(dbManagementPrivateEndpointCollections);
+        public Builder dbManagementPrivateEndpointCollections(@Nullable List<GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollection> dbManagementPrivateEndpointCollections) {
+            this.dbManagementPrivateEndpointCollections = dbManagementPrivateEndpointCollections;
             return this;
         }
         public Builder dbManagementPrivateEndpointCollections(GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollection... dbManagementPrivateEndpointCollections) {
@@ -158,8 +158,8 @@ public final class GetDbManagementPrivateEndpointsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

@@ -16,53 +16,53 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// The OCID of the tenancy containing the `IdentityProvider`.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The OCID of the IAM Service group that is mapped to the IdP group.
         /// </summary>
-        public readonly string GroupId;
+        public readonly string? GroupId;
         /// <summary>
         /// The OCID of the `IdpGroupMapping`.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The OCID of the identity provider.
         /// </summary>
-        public readonly string IdentityProviderId;
+        public readonly string? IdentityProviderId;
         /// <summary>
         /// The name of the IdP group that is mapped to the IAM Service group.
         /// </summary>
-        public readonly string IdpGroupName;
+        public readonly string? IdpGroupName;
         /// <summary>
         /// The detailed status of INACTIVE lifecycleState.
         /// </summary>
-        public readonly string InactiveState;
+        public readonly string? InactiveState;
         /// <summary>
         /// The mapping's current state.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// Date and time the mapping was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
 
         [OutputConstructor]
         private GetIdpGroupMappingsIdpGroupMappingResult(
-            string compartmentId,
+            string? compartmentId,
 
-            string groupId,
+            string? groupId,
 
-            string id,
+            string? id,
 
-            string identityProviderId,
+            string? identityProviderId,
 
-            string idpGroupName,
+            string? idpGroupName,
 
-            string inactiveState,
+            string? inactiveState,
 
-            string state,
+            string? state,
 
-            string timeCreated)
+            string? timeCreated)
         {
             CompartmentId = compartmentId;
             GroupId = groupId;

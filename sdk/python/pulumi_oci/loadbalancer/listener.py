@@ -29,23 +29,6 @@ class ListenerArgs:
                  ssl_configuration: Optional[pulumi.Input['ListenerSslConfigurationArgs']] = None):
         """
         The set of arguments for constructing a Listener resource.
-        :param pulumi.Input[str] default_backend_set_name: (Updatable) The name of the associated backend set.  Example: `example_backend_set`
-        :param pulumi.Input[str] load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer on which to add a listener.
-        :param pulumi.Input[int] port: (Updatable) The communication port for the listener.  Example: `80`
-        :param pulumi.Input[str] protocol: (Updatable) The protocol on which the listener accepts connection requests. To get a list of valid protocols, use the [ListProtocols](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerProtocol/ListProtocols) operation.  Example: `HTTP`
-        :param pulumi.Input['ListenerConnectionConfigurationArgs'] connection_configuration: (Updatable) Configuration details for the connection between the client and backend servers.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] hostname_names: (Updatable) An array of hostname resource names.
-        :param pulumi.Input[str] name: A friendly name for the listener. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_listener`
-        :param pulumi.Input[str] path_route_set_name: (Updatable) Deprecated. Please use `routingPolicies` instead.
-               
-               The name of the set of path-based routing rules, [PathRouteSet](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/PathRouteSet/), applied to this listener's traffic.
-               
-               Example: `example_path_route_set`
-        :param pulumi.Input[str] routing_policy_name: (Updatable) The name of the routing policy applied to this listener's traffic.  Example: `example_routing_policy`
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] rule_set_names: (Updatable) The names of the [rule sets](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/RuleSet/) to apply to the listener.  Example: ["example_rule_set"]
-        :param pulumi.Input['ListenerSslConfigurationArgs'] ssl_configuration: (Updatable) The load balancer's SSL handling configuration details.
-               
-               **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
         """
         pulumi.set(__self__, "default_backend_set_name", default_backend_set_name)
         pulumi.set(__self__, "load_balancer_id", load_balancer_id)
@@ -69,9 +52,6 @@ class ListenerArgs:
     @property
     @pulumi.getter(name="defaultBackendSetName")
     def default_backend_set_name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The name of the associated backend set.  Example: `example_backend_set`
-        """
         return pulumi.get(self, "default_backend_set_name")
 
     @default_backend_set_name.setter
@@ -81,9 +61,6 @@ class ListenerArgs:
     @property
     @pulumi.getter(name="loadBalancerId")
     def load_balancer_id(self) -> pulumi.Input[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer on which to add a listener.
-        """
         return pulumi.get(self, "load_balancer_id")
 
     @load_balancer_id.setter
@@ -93,9 +70,6 @@ class ListenerArgs:
     @property
     @pulumi.getter
     def port(self) -> pulumi.Input[int]:
-        """
-        (Updatable) The communication port for the listener.  Example: `80`
-        """
         return pulumi.get(self, "port")
 
     @port.setter
@@ -105,9 +79,6 @@ class ListenerArgs:
     @property
     @pulumi.getter
     def protocol(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The protocol on which the listener accepts connection requests. To get a list of valid protocols, use the [ListProtocols](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerProtocol/ListProtocols) operation.  Example: `HTTP`
-        """
         return pulumi.get(self, "protocol")
 
     @protocol.setter
@@ -117,9 +88,6 @@ class ListenerArgs:
     @property
     @pulumi.getter(name="connectionConfiguration")
     def connection_configuration(self) -> Optional[pulumi.Input['ListenerConnectionConfigurationArgs']]:
-        """
-        (Updatable) Configuration details for the connection between the client and backend servers.
-        """
         return pulumi.get(self, "connection_configuration")
 
     @connection_configuration.setter
@@ -129,9 +97,6 @@ class ListenerArgs:
     @property
     @pulumi.getter(name="hostnameNames")
     def hostname_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) An array of hostname resource names.
-        """
         return pulumi.get(self, "hostname_names")
 
     @hostname_names.setter
@@ -141,9 +106,6 @@ class ListenerArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        A friendly name for the listener. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_listener`
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -153,13 +115,6 @@ class ListenerArgs:
     @property
     @pulumi.getter(name="pathRouteSetName")
     def path_route_set_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Deprecated. Please use `routingPolicies` instead.
-
-        The name of the set of path-based routing rules, [PathRouteSet](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/PathRouteSet/), applied to this listener's traffic.
-
-        Example: `example_path_route_set`
-        """
         return pulumi.get(self, "path_route_set_name")
 
     @path_route_set_name.setter
@@ -169,9 +124,6 @@ class ListenerArgs:
     @property
     @pulumi.getter(name="routingPolicyName")
     def routing_policy_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The name of the routing policy applied to this listener's traffic.  Example: `example_routing_policy`
-        """
         return pulumi.get(self, "routing_policy_name")
 
     @routing_policy_name.setter
@@ -181,9 +133,6 @@ class ListenerArgs:
     @property
     @pulumi.getter(name="ruleSetNames")
     def rule_set_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) The names of the [rule sets](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/RuleSet/) to apply to the listener.  Example: ["example_rule_set"]
-        """
         return pulumi.get(self, "rule_set_names")
 
     @rule_set_names.setter
@@ -193,11 +142,6 @@ class ListenerArgs:
     @property
     @pulumi.getter(name="sslConfiguration")
     def ssl_configuration(self) -> Optional[pulumi.Input['ListenerSslConfigurationArgs']]:
-        """
-        (Updatable) The load balancer's SSL handling configuration details.
-
-        **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
-        """
         return pulumi.get(self, "ssl_configuration")
 
     @ssl_configuration.setter
@@ -222,23 +166,6 @@ class _ListenerState:
                  state: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering Listener resources.
-        :param pulumi.Input['ListenerConnectionConfigurationArgs'] connection_configuration: (Updatable) Configuration details for the connection between the client and backend servers.
-        :param pulumi.Input[str] default_backend_set_name: (Updatable) The name of the associated backend set.  Example: `example_backend_set`
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] hostname_names: (Updatable) An array of hostname resource names.
-        :param pulumi.Input[str] load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer on which to add a listener.
-        :param pulumi.Input[str] name: A friendly name for the listener. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_listener`
-        :param pulumi.Input[str] path_route_set_name: (Updatable) Deprecated. Please use `routingPolicies` instead.
-               
-               The name of the set of path-based routing rules, [PathRouteSet](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/PathRouteSet/), applied to this listener's traffic.
-               
-               Example: `example_path_route_set`
-        :param pulumi.Input[int] port: (Updatable) The communication port for the listener.  Example: `80`
-        :param pulumi.Input[str] protocol: (Updatable) The protocol on which the listener accepts connection requests. To get a list of valid protocols, use the [ListProtocols](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerProtocol/ListProtocols) operation.  Example: `HTTP`
-        :param pulumi.Input[str] routing_policy_name: (Updatable) The name of the routing policy applied to this listener's traffic.  Example: `example_routing_policy`
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] rule_set_names: (Updatable) The names of the [rule sets](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/RuleSet/) to apply to the listener.  Example: ["example_rule_set"]
-        :param pulumi.Input['ListenerSslConfigurationArgs'] ssl_configuration: (Updatable) The load balancer's SSL handling configuration details.
-               
-               **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
         """
         if connection_configuration is not None:
             pulumi.set(__self__, "connection_configuration", connection_configuration)
@@ -268,9 +195,6 @@ class _ListenerState:
     @property
     @pulumi.getter(name="connectionConfiguration")
     def connection_configuration(self) -> Optional[pulumi.Input['ListenerConnectionConfigurationArgs']]:
-        """
-        (Updatable) Configuration details for the connection between the client and backend servers.
-        """
         return pulumi.get(self, "connection_configuration")
 
     @connection_configuration.setter
@@ -280,9 +204,6 @@ class _ListenerState:
     @property
     @pulumi.getter(name="defaultBackendSetName")
     def default_backend_set_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The name of the associated backend set.  Example: `example_backend_set`
-        """
         return pulumi.get(self, "default_backend_set_name")
 
     @default_backend_set_name.setter
@@ -292,9 +213,6 @@ class _ListenerState:
     @property
     @pulumi.getter(name="hostnameNames")
     def hostname_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) An array of hostname resource names.
-        """
         return pulumi.get(self, "hostname_names")
 
     @hostname_names.setter
@@ -304,9 +222,6 @@ class _ListenerState:
     @property
     @pulumi.getter(name="loadBalancerId")
     def load_balancer_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer on which to add a listener.
-        """
         return pulumi.get(self, "load_balancer_id")
 
     @load_balancer_id.setter
@@ -316,9 +231,6 @@ class _ListenerState:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        A friendly name for the listener. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_listener`
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -328,13 +240,6 @@ class _ListenerState:
     @property
     @pulumi.getter(name="pathRouteSetName")
     def path_route_set_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Deprecated. Please use `routingPolicies` instead.
-
-        The name of the set of path-based routing rules, [PathRouteSet](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/PathRouteSet/), applied to this listener's traffic.
-
-        Example: `example_path_route_set`
-        """
         return pulumi.get(self, "path_route_set_name")
 
     @path_route_set_name.setter
@@ -344,9 +249,6 @@ class _ListenerState:
     @property
     @pulumi.getter
     def port(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The communication port for the listener.  Example: `80`
-        """
         return pulumi.get(self, "port")
 
     @port.setter
@@ -356,9 +258,6 @@ class _ListenerState:
     @property
     @pulumi.getter
     def protocol(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The protocol on which the listener accepts connection requests. To get a list of valid protocols, use the [ListProtocols](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerProtocol/ListProtocols) operation.  Example: `HTTP`
-        """
         return pulumi.get(self, "protocol")
 
     @protocol.setter
@@ -368,9 +267,6 @@ class _ListenerState:
     @property
     @pulumi.getter(name="routingPolicyName")
     def routing_policy_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The name of the routing policy applied to this listener's traffic.  Example: `example_routing_policy`
-        """
         return pulumi.get(self, "routing_policy_name")
 
     @routing_policy_name.setter
@@ -380,9 +276,6 @@ class _ListenerState:
     @property
     @pulumi.getter(name="ruleSetNames")
     def rule_set_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) The names of the [rule sets](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/RuleSet/) to apply to the listener.  Example: ["example_rule_set"]
-        """
         return pulumi.get(self, "rule_set_names")
 
     @rule_set_names.setter
@@ -392,11 +285,6 @@ class _ListenerState:
     @property
     @pulumi.getter(name="sslConfiguration")
     def ssl_configuration(self) -> Optional[pulumi.Input['ListenerSslConfigurationArgs']]:
-        """
-        (Updatable) The load balancer's SSL handling configuration details.
-
-        **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
-        """
         return pulumi.get(self, "ssl_configuration")
 
     @ssl_configuration.setter
@@ -431,68 +319,9 @@ class Listener(pulumi.CustomResource):
                  ssl_configuration: Optional[pulumi.Input[pulumi.InputType['ListenerSslConfigurationArgs']]] = None,
                  __props__=None):
         """
-        This resource provides the Listener resource in Oracle Cloud Infrastructure Load Balancer service.
-
-        Adds a listener to a load balancer.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_listener = oci.load_balancer.Listener("testListener",
-            default_backend_set_name=oci_load_balancer_backend_set["test_backend_set"]["name"],
-            load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"],
-            port=var["listener_port"],
-            protocol=var["listener_protocol"],
-            connection_configuration=oci.load_balancer.ListenerConnectionConfigurationArgs(
-                idle_timeout_in_seconds=var["listener_connection_configuration_idle_timeout_in_seconds"],
-                backend_tcp_proxy_protocol_version=var["listener_connection_configuration_backend_tcp_proxy_protocol_version"],
-            ),
-            hostname_names=[oci_load_balancer_hostname["test_hostname"]["name"]],
-            path_route_set_name=oci_load_balancer_path_route_set["test_path_route_set"]["name"],
-            routing_policy_name=oci_load_balancer_load_balancer_routing_policy["test_load_balancer_routing_policy"]["name"],
-            rule_set_names=[oci_load_balancer_rule_set["test_rule_set"]["name"]],
-            ssl_configuration=oci.load_balancer.ListenerSslConfigurationArgs(
-                certificate_name=oci_load_balancer_certificate["test_certificate"]["name"],
-                certificate_ids=var["listener_ssl_configuration_certificate_ids"],
-                cipher_suite_name=var["listener_ssl_configuration_cipher_suite_name"],
-                protocols=var["listener_ssl_configuration_protocols"],
-                server_order_preference=var["listener_ssl_configuration_server_order_preference"],
-                trusted_certificate_authority_ids=var["listener_ssl_configuration_trusted_certificate_authority_ids"],
-                verify_depth=var["listener_ssl_configuration_verify_depth"],
-                verify_peer_certificate=var["listener_ssl_configuration_verify_peer_certificate"],
-            ))
-        ```
-
-        ## Import
-
-        Listeners can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:LoadBalancer/listener:Listener test_listener "loadBalancers/{loadBalancerId}/listeners/{listenerName}"
-        ```
-
+        Create a Listener resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['ListenerConnectionConfigurationArgs']] connection_configuration: (Updatable) Configuration details for the connection between the client and backend servers.
-        :param pulumi.Input[str] default_backend_set_name: (Updatable) The name of the associated backend set.  Example: `example_backend_set`
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] hostname_names: (Updatable) An array of hostname resource names.
-        :param pulumi.Input[str] load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer on which to add a listener.
-        :param pulumi.Input[str] name: A friendly name for the listener. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_listener`
-        :param pulumi.Input[str] path_route_set_name: (Updatable) Deprecated. Please use `routingPolicies` instead.
-               
-               The name of the set of path-based routing rules, [PathRouteSet](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/PathRouteSet/), applied to this listener's traffic.
-               
-               Example: `example_path_route_set`
-        :param pulumi.Input[int] port: (Updatable) The communication port for the listener.  Example: `80`
-        :param pulumi.Input[str] protocol: (Updatable) The protocol on which the listener accepts connection requests. To get a list of valid protocols, use the [ListProtocols](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerProtocol/ListProtocols) operation.  Example: `HTTP`
-        :param pulumi.Input[str] routing_policy_name: (Updatable) The name of the routing policy applied to this listener's traffic.  Example: `example_routing_policy`
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] rule_set_names: (Updatable) The names of the [rule sets](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/RuleSet/) to apply to the listener.  Example: ["example_rule_set"]
-        :param pulumi.Input[pulumi.InputType['ListenerSslConfigurationArgs']] ssl_configuration: (Updatable) The load balancer's SSL handling configuration details.
-               
-               **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
         """
         ...
     @overload
@@ -501,49 +330,7 @@ class Listener(pulumi.CustomResource):
                  args: ListenerArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Listener resource in Oracle Cloud Infrastructure Load Balancer service.
-
-        Adds a listener to a load balancer.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_listener = oci.load_balancer.Listener("testListener",
-            default_backend_set_name=oci_load_balancer_backend_set["test_backend_set"]["name"],
-            load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"],
-            port=var["listener_port"],
-            protocol=var["listener_protocol"],
-            connection_configuration=oci.load_balancer.ListenerConnectionConfigurationArgs(
-                idle_timeout_in_seconds=var["listener_connection_configuration_idle_timeout_in_seconds"],
-                backend_tcp_proxy_protocol_version=var["listener_connection_configuration_backend_tcp_proxy_protocol_version"],
-            ),
-            hostname_names=[oci_load_balancer_hostname["test_hostname"]["name"]],
-            path_route_set_name=oci_load_balancer_path_route_set["test_path_route_set"]["name"],
-            routing_policy_name=oci_load_balancer_load_balancer_routing_policy["test_load_balancer_routing_policy"]["name"],
-            rule_set_names=[oci_load_balancer_rule_set["test_rule_set"]["name"]],
-            ssl_configuration=oci.load_balancer.ListenerSslConfigurationArgs(
-                certificate_name=oci_load_balancer_certificate["test_certificate"]["name"],
-                certificate_ids=var["listener_ssl_configuration_certificate_ids"],
-                cipher_suite_name=var["listener_ssl_configuration_cipher_suite_name"],
-                protocols=var["listener_ssl_configuration_protocols"],
-                server_order_preference=var["listener_ssl_configuration_server_order_preference"],
-                trusted_certificate_authority_ids=var["listener_ssl_configuration_trusted_certificate_authority_ids"],
-                verify_depth=var["listener_ssl_configuration_verify_depth"],
-                verify_peer_certificate=var["listener_ssl_configuration_verify_peer_certificate"],
-            ))
-        ```
-
-        ## Import
-
-        Listeners can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:LoadBalancer/listener:Listener test_listener "loadBalancers/{loadBalancerId}/listeners/{listenerName}"
-        ```
-
+        Create a Listener resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param ListenerArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -628,23 +415,6 @@ class Listener(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['ListenerConnectionConfigurationArgs']] connection_configuration: (Updatable) Configuration details for the connection between the client and backend servers.
-        :param pulumi.Input[str] default_backend_set_name: (Updatable) The name of the associated backend set.  Example: `example_backend_set`
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] hostname_names: (Updatable) An array of hostname resource names.
-        :param pulumi.Input[str] load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer on which to add a listener.
-        :param pulumi.Input[str] name: A friendly name for the listener. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_listener`
-        :param pulumi.Input[str] path_route_set_name: (Updatable) Deprecated. Please use `routingPolicies` instead.
-               
-               The name of the set of path-based routing rules, [PathRouteSet](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/PathRouteSet/), applied to this listener's traffic.
-               
-               Example: `example_path_route_set`
-        :param pulumi.Input[int] port: (Updatable) The communication port for the listener.  Example: `80`
-        :param pulumi.Input[str] protocol: (Updatable) The protocol on which the listener accepts connection requests. To get a list of valid protocols, use the [ListProtocols](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerProtocol/ListProtocols) operation.  Example: `HTTP`
-        :param pulumi.Input[str] routing_policy_name: (Updatable) The name of the routing policy applied to this listener's traffic.  Example: `example_routing_policy`
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] rule_set_names: (Updatable) The names of the [rule sets](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/RuleSet/) to apply to the listener.  Example: ["example_rule_set"]
-        :param pulumi.Input[pulumi.InputType['ListenerSslConfigurationArgs']] ssl_configuration: (Updatable) The load balancer's SSL handling configuration details.
-               
-               **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -666,100 +436,61 @@ class Listener(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="connectionConfiguration")
-    def connection_configuration(self) -> pulumi.Output['outputs.ListenerConnectionConfiguration']:
-        """
-        (Updatable) Configuration details for the connection between the client and backend servers.
-        """
+    def connection_configuration(self) -> pulumi.Output[Optional['outputs.ListenerConnectionConfiguration']]:
         return pulumi.get(self, "connection_configuration")
 
     @property
     @pulumi.getter(name="defaultBackendSetName")
     def default_backend_set_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The name of the associated backend set.  Example: `example_backend_set`
-        """
         return pulumi.get(self, "default_backend_set_name")
 
     @property
     @pulumi.getter(name="hostnameNames")
-    def hostname_names(self) -> pulumi.Output[Sequence[str]]:
-        """
-        (Updatable) An array of hostname resource names.
-        """
+    def hostname_names(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "hostname_names")
 
     @property
     @pulumi.getter(name="loadBalancerId")
     def load_balancer_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer on which to add a listener.
-        """
         return pulumi.get(self, "load_balancer_id")
 
     @property
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
-        """
-        A friendly name for the listener. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_listener`
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="pathRouteSetName")
-    def path_route_set_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Deprecated. Please use `routingPolicies` instead.
-
-        The name of the set of path-based routing rules, [PathRouteSet](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/PathRouteSet/), applied to this listener's traffic.
-
-        Example: `example_path_route_set`
-        """
+    def path_route_set_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "path_route_set_name")
 
     @property
     @pulumi.getter
     def port(self) -> pulumi.Output[int]:
-        """
-        (Updatable) The communication port for the listener.  Example: `80`
-        """
         return pulumi.get(self, "port")
 
     @property
     @pulumi.getter
     def protocol(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The protocol on which the listener accepts connection requests. To get a list of valid protocols, use the [ListProtocols](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerProtocol/ListProtocols) operation.  Example: `HTTP`
-        """
         return pulumi.get(self, "protocol")
 
     @property
     @pulumi.getter(name="routingPolicyName")
-    def routing_policy_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The name of the routing policy applied to this listener's traffic.  Example: `example_routing_policy`
-        """
+    def routing_policy_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "routing_policy_name")
 
     @property
     @pulumi.getter(name="ruleSetNames")
-    def rule_set_names(self) -> pulumi.Output[Sequence[str]]:
-        """
-        (Updatable) The names of the [rule sets](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/RuleSet/) to apply to the listener.  Example: ["example_rule_set"]
-        """
+    def rule_set_names(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "rule_set_names")
 
     @property
     @pulumi.getter(name="sslConfiguration")
     def ssl_configuration(self) -> pulumi.Output[Optional['outputs.ListenerSslConfiguration']]:
-        """
-        (Updatable) The load balancer's SSL handling configuration details.
-
-        **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
-        """
         return pulumi.get(self, "ssl_configuration")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 

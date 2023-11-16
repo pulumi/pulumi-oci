@@ -16,17 +16,17 @@ namespace Pulumi.Oci.DataFlow.Outputs
         /// <summary>
         /// The compute shape of the nodes that the count is for.
         /// </summary>
-        public readonly string LogicalShape;
+        public readonly string? LogicalShape;
         /// <summary>
         /// The node count of this compute shape.
         /// </summary>
-        public readonly int PoolCount;
+        public readonly int? PoolCount;
 
         [OutputConstructor]
         private GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCountResult(
-            string logicalShape,
+            string? logicalShape,
 
-            int poolCount)
+            int? poolCount)
         {
             LogicalShape = logicalShape;
             PoolCount = poolCount;

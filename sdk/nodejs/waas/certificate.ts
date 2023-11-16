@@ -81,28 +81,28 @@ export class Certificate extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) A user-friendly name for the SSL certificate. The name can be changed and does not need to be unique.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    public readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * Additional attributes associated with users or public keys for managing relationships between Certificate Authorities.
      */
-    public /*out*/ readonly extensions!: pulumi.Output<outputs.Waas.CertificateExtension[]>;
+    public /*out*/ readonly extensions!: pulumi.Output<outputs.Waas.CertificateExtension[] | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * Set to `true` if the SSL certificate is self-signed.
      */
-    public readonly isTrustVerificationDisabled!: pulumi.Output<boolean>;
-    public /*out*/ readonly issuedBy!: pulumi.Output<string>;
+    public readonly isTrustVerificationDisabled!: pulumi.Output<boolean | undefined>;
+    public /*out*/ readonly issuedBy!: pulumi.Output<string | undefined>;
     /**
      * The issuer of the certificate.
      */
-    public /*out*/ readonly issuerNames!: pulumi.Output<outputs.Waas.CertificateIssuerName[]>;
+    public /*out*/ readonly issuerNames!: pulumi.Output<outputs.Waas.CertificateIssuerName[] | undefined>;
     /**
      * The private key of the SSL certificate.
      *
@@ -114,39 +114,39 @@ export class Certificate extends pulumi.CustomResource {
     /**
      * Information about the public key and the algorithm used by the public key.
      */
-    public /*out*/ readonly publicKeyInfos!: pulumi.Output<outputs.Waas.CertificatePublicKeyInfo[]>;
+    public /*out*/ readonly publicKeyInfos!: pulumi.Output<outputs.Waas.CertificatePublicKeyInfo[] | undefined>;
     /**
      * A unique, positive integer assigned by the Certificate Authority (CA). The issuer name and serial number identify a unique certificate.
      */
-    public /*out*/ readonly serialNumber!: pulumi.Output<string>;
+    public /*out*/ readonly serialNumber!: pulumi.Output<string | undefined>;
     /**
      * The identifier for the cryptographic algorithm used by the Certificate Authority (CA) to sign this certificate.
      */
-    public /*out*/ readonly signatureAlgorithm!: pulumi.Output<string>;
+    public /*out*/ readonly signatureAlgorithm!: pulumi.Output<string | undefined>;
     /**
      * The current lifecycle state of the SSL certificate.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The entity to be secured by the certificate.
      */
-    public /*out*/ readonly subjectNames!: pulumi.Output<outputs.Waas.CertificateSubjectName[]>;
+    public /*out*/ readonly subjectNames!: pulumi.Output<outputs.Waas.CertificateSubjectName[] | undefined>;
     /**
      * The date and time the certificate was created, expressed in RFC 3339 timestamp format.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The date and time the certificate will expire, expressed in RFC 3339 timestamp format.
      */
-    public /*out*/ readonly timeNotValidAfter!: pulumi.Output<string>;
+    public /*out*/ readonly timeNotValidAfter!: pulumi.Output<string | undefined>;
     /**
      * The date and time the certificate will become valid, expressed in RFC 3339 timestamp format.
      */
-    public /*out*/ readonly timeNotValidBefore!: pulumi.Output<string>;
+    public /*out*/ readonly timeNotValidBefore!: pulumi.Output<string | undefined>;
     /**
      * The version of the encoded certificate.
      */
-    public /*out*/ readonly version!: pulumi.Output<number>;
+    public /*out*/ readonly version!: pulumi.Output<number | undefined>;
 
     /**
      * Create a Certificate resource with the given unique name, arguments, and options.

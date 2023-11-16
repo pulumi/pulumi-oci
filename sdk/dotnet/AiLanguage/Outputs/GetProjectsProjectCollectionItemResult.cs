@@ -16,71 +16,71 @@ namespace Pulumi.Oci.AiLanguage.Outputs
         /// <summary>
         /// The ID of the compartment in which to list resources.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// A short description of a project.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// A filter to return only resources that match the entire display name given.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// Unique identifier OCID of the project
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// A message describing the current state in more detail.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// &lt;b&gt;Filter&lt;/b&gt; results by the specified lifecycle state. Must be a valid state for the resource type.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, object>? SystemTags;
         /// <summary>
         /// The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The date and time the resource was updated in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
 
         [OutputConstructor]
         private GetProjectsProjectCollectionItemResult(
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string description,
+            string? description,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string state,
+            string? state,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, object>? systemTags,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated)
+            string? timeUpdated)
         {
             CompartmentId = compartmentId;
             DefinedTags = definedTags;

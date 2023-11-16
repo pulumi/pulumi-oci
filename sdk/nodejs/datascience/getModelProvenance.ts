@@ -45,29 +45,29 @@ export interface GetModelProvenanceResult {
     /**
      * For model reproducibility purposes. Branch of the git repository associated with model training.
      */
-    readonly gitBranch: string;
+    readonly gitBranch?: string;
     /**
      * For model reproducibility purposes. Commit ID of the git repository associated with model training.
      */
-    readonly gitCommit: string;
-    readonly id: string;
+    readonly gitCommit?: string;
+    readonly id?: string;
     readonly modelId: string;
     /**
      * For model reproducibility purposes. URL of the git repository associated with model training.
      */
-    readonly repositoryUrl: string;
+    readonly repositoryUrl?: string;
     /**
      * For model reproducibility purposes. Path to model artifacts.
      */
-    readonly scriptDir: string;
+    readonly scriptDir?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a training session(Job or NotebookSession) in which the model was trained. It is used for model reproducibility purposes.
      */
-    readonly trainingId: string;
+    readonly trainingId?: string;
     /**
      * For model reproducibility purposes. Path to the python script or notebook in which the model was trained."
      */
-    readonly trainingScript: string;
+    readonly trainingScript?: string;
 }
 /**
  * This data source provides details about a specific Model Provenance resource in Oracle Cloud Infrastructure Data Science service.

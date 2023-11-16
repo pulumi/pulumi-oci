@@ -13,32 +13,32 @@ namespace Pulumi.Oci.Database.Outputs
     [OutputType]
     public sealed class GetDbHomeDatabaseDbBackupConfigResult
     {
-        public readonly bool AutoBackupEnabled;
-        public readonly string AutoBackupWindow;
-        public readonly string AutoFullBackupDay;
-        public readonly string AutoFullBackupWindow;
-        public readonly string BackupDeletionPolicy;
+        public readonly bool? AutoBackupEnabled;
+        public readonly string? AutoBackupWindow;
+        public readonly string? AutoFullBackupDay;
+        public readonly string? AutoFullBackupWindow;
+        public readonly string? BackupDeletionPolicy;
         public readonly ImmutableArray<Outputs.GetDbHomeDatabaseDbBackupConfigBackupDestinationDetailResult> BackupDestinationDetails;
-        public readonly int RecoveryWindowInDays;
-        public readonly bool RunImmediateFullBackup;
+        public readonly int? RecoveryWindowInDays;
+        public readonly bool? RunImmediateFullBackup;
 
         [OutputConstructor]
         private GetDbHomeDatabaseDbBackupConfigResult(
-            bool autoBackupEnabled,
+            bool? autoBackupEnabled,
 
-            string autoBackupWindow,
+            string? autoBackupWindow,
 
-            string autoFullBackupDay,
+            string? autoFullBackupDay,
 
-            string autoFullBackupWindow,
+            string? autoFullBackupWindow,
 
-            string backupDeletionPolicy,
+            string? backupDeletionPolicy,
 
             ImmutableArray<Outputs.GetDbHomeDatabaseDbBackupConfigBackupDestinationDetailResult> backupDestinationDetails,
 
-            int recoveryWindowInDays,
+            int? recoveryWindowInDays,
 
-            bool runImmediateFullBackup)
+            bool? runImmediateFullBackup)
         {
             AutoBackupEnabled = autoBackupEnabled;
             AutoBackupWindow = autoBackupWindow;

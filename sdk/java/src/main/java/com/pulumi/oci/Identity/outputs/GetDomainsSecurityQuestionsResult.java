@@ -22,31 +22,31 @@ public final class GetDomainsSecurityQuestionsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String idcsEndpoint;
-    private Integer itemsPerPage;
+    private @Nullable Integer itemsPerPage;
     private @Nullable String resourceTypeSchemaVersion;
     /**
      * @return REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      * 
      */
-    private List<String> schemas;
+    private @Nullable List<String> schemas;
     private @Nullable Integer securityQuestionCount;
     private @Nullable String securityQuestionFilter;
     /**
      * @return The list of security_questions.
      * 
      */
-    private List<GetDomainsSecurityQuestionsSecurityQuestion> securityQuestions;
+    private @Nullable List<GetDomainsSecurityQuestionsSecurityQuestion> securityQuestions;
     private @Nullable String sortBy;
     private @Nullable String sortOrder;
     private @Nullable Integer startIndex;
-    private Integer totalResults;
+    private @Nullable Integer totalResults;
     /**
      * @return This indicates if the question is a Custom Question added by the Security Admin.
      * 
      */
-    private String type;
+    private @Nullable String type;
 
     private GetDomainsSecurityQuestionsResult() {}
     public List<String> attributeSets() {
@@ -65,14 +65,14 @@ public final class GetDomainsSecurityQuestionsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String idcsEndpoint() {
         return this.idcsEndpoint;
     }
-    public Integer itemsPerPage() {
-        return this.itemsPerPage;
+    public Optional<Integer> itemsPerPage() {
+        return Optional.ofNullable(this.itemsPerPage);
     }
     public Optional<String> resourceTypeSchemaVersion() {
         return Optional.ofNullable(this.resourceTypeSchemaVersion);
@@ -82,7 +82,7 @@ public final class GetDomainsSecurityQuestionsResult {
      * 
      */
     public List<String> schemas() {
-        return this.schemas;
+        return this.schemas == null ? List.of() : this.schemas;
     }
     public Optional<Integer> securityQuestionCount() {
         return Optional.ofNullable(this.securityQuestionCount);
@@ -95,7 +95,7 @@ public final class GetDomainsSecurityQuestionsResult {
      * 
      */
     public List<GetDomainsSecurityQuestionsSecurityQuestion> securityQuestions() {
-        return this.securityQuestions;
+        return this.securityQuestions == null ? List.of() : this.securityQuestions;
     }
     public Optional<String> sortBy() {
         return Optional.ofNullable(this.sortBy);
@@ -106,15 +106,15 @@ public final class GetDomainsSecurityQuestionsResult {
     public Optional<Integer> startIndex() {
         return Optional.ofNullable(this.startIndex);
     }
-    public Integer totalResults() {
-        return this.totalResults;
+    public Optional<Integer> totalResults() {
+        return Optional.ofNullable(this.totalResults);
     }
     /**
      * @return This indicates if the question is a Custom Question added by the Security Admin.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
 
     public static Builder builder() {
@@ -130,19 +130,19 @@ public final class GetDomainsSecurityQuestionsResult {
         private @Nullable String attributes;
         private @Nullable String authorization;
         private @Nullable String compartmentId;
-        private String id;
+        private @Nullable String id;
         private String idcsEndpoint;
-        private Integer itemsPerPage;
+        private @Nullable Integer itemsPerPage;
         private @Nullable String resourceTypeSchemaVersion;
-        private List<String> schemas;
+        private @Nullable List<String> schemas;
         private @Nullable Integer securityQuestionCount;
         private @Nullable String securityQuestionFilter;
-        private List<GetDomainsSecurityQuestionsSecurityQuestion> securityQuestions;
+        private @Nullable List<GetDomainsSecurityQuestionsSecurityQuestion> securityQuestions;
         private @Nullable String sortBy;
         private @Nullable String sortOrder;
         private @Nullable Integer startIndex;
-        private Integer totalResults;
-        private String type;
+        private @Nullable Integer totalResults;
+        private @Nullable String type;
         public Builder() {}
         public Builder(GetDomainsSecurityQuestionsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -189,8 +189,8 @@ public final class GetDomainsSecurityQuestionsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -199,8 +199,8 @@ public final class GetDomainsSecurityQuestionsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder itemsPerPage(Integer itemsPerPage) {
-            this.itemsPerPage = Objects.requireNonNull(itemsPerPage);
+        public Builder itemsPerPage(@Nullable Integer itemsPerPage) {
+            this.itemsPerPage = itemsPerPage;
             return this;
         }
         @CustomType.Setter
@@ -209,8 +209,8 @@ public final class GetDomainsSecurityQuestionsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder schemas(List<String> schemas) {
-            this.schemas = Objects.requireNonNull(schemas);
+        public Builder schemas(@Nullable List<String> schemas) {
+            this.schemas = schemas;
             return this;
         }
         public Builder schemas(String... schemas) {
@@ -227,8 +227,8 @@ public final class GetDomainsSecurityQuestionsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder securityQuestions(List<GetDomainsSecurityQuestionsSecurityQuestion> securityQuestions) {
-            this.securityQuestions = Objects.requireNonNull(securityQuestions);
+        public Builder securityQuestions(@Nullable List<GetDomainsSecurityQuestionsSecurityQuestion> securityQuestions) {
+            this.securityQuestions = securityQuestions;
             return this;
         }
         public Builder securityQuestions(GetDomainsSecurityQuestionsSecurityQuestion... securityQuestions) {
@@ -250,13 +250,13 @@ public final class GetDomainsSecurityQuestionsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder totalResults(Integer totalResults) {
-            this.totalResults = Objects.requireNonNull(totalResults);
+        public Builder totalResults(@Nullable Integer totalResults) {
+            this.totalResults = totalResults;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         public GetDomainsSecurityQuestionsResult build() {

@@ -49,39 +49,27 @@ class GetLetterOfAuthorityResult:
 
     @property
     @pulumi.getter(name="authorizedEntityName")
-    def authorized_entity_name(self) -> str:
-        """
-        The name of the entity authorized by this Letter of Authority.
-        """
+    def authorized_entity_name(self) -> Optional[str]:
         return pulumi.get(self, "authorized_entity_name")
 
     @property
     @pulumi.getter(name="circuitType")
-    def circuit_type(self) -> str:
-        """
-        The type of cross-connect fiber, termination, and optical specification.
-        """
+    def circuit_type(self) -> Optional[str]:
         return pulumi.get(self, "circuit_type")
 
     @property
     @pulumi.getter(name="crossConnectId")
     def cross_connect_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect.
-        """
         return pulumi.get(self, "cross_connect_id")
 
     @property
     @pulumi.getter(name="facilityLocation")
-    def facility_location(self) -> str:
-        """
-        The address of the FastConnect location.
-        """
+    def facility_location(self) -> Optional[str]:
         return pulumi.get(self, "facility_location")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -89,26 +77,17 @@ class GetLetterOfAuthorityResult:
 
     @property
     @pulumi.getter(name="portName")
-    def port_name(self) -> str:
-        """
-        The meet-me room port for this cross-connect.
-        """
+    def port_name(self) -> Optional[str]:
         return pulumi.get(self, "port_name")
 
     @property
     @pulumi.getter(name="timeExpires")
-    def time_expires(self) -> str:
-        """
-        The date and time when the Letter of Authority expires, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
+    def time_expires(self) -> Optional[str]:
         return pulumi.get(self, "time_expires")
 
     @property
     @pulumi.getter(name="timeIssued")
-    def time_issued(self) -> str:
-        """
-        The date and time the Letter of Authority was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-        """
+    def time_issued(self) -> Optional[str]:
         return pulumi.get(self, "time_issued")
 
 
@@ -131,21 +110,7 @@ class AwaitableGetLetterOfAuthorityResult(GetLetterOfAuthorityResult):
 def get_letter_of_authority(cross_connect_id: Optional[str] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetLetterOfAuthorityResult:
     """
-    This data source provides details about a specific Letter Of Authority resource in Oracle Cloud Infrastructure Core service.
-
-    Gets the Letter of Authority for the specified cross-connect.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_letter_of_authority = oci.Core.get_letter_of_authority(cross_connect_id=oci_core_cross_connect["test_cross_connect"]["id"])
-    ```
-
-
-    :param str cross_connect_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['crossConnectId'] = cross_connect_id
@@ -167,20 +132,6 @@ def get_letter_of_authority(cross_connect_id: Optional[str] = None,
 def get_letter_of_authority_output(cross_connect_id: Optional[pulumi.Input[str]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetLetterOfAuthorityResult]:
     """
-    This data source provides details about a specific Letter Of Authority resource in Oracle Cloud Infrastructure Core service.
-
-    Gets the Letter of Authority for the specified cross-connect.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_letter_of_authority = oci.Core.get_letter_of_authority(cross_connect_id=oci_core_cross_connect["test_cross_connect"]["id"])
-    ```
-
-
-    :param str cross_connect_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -163,7 +163,7 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The virtual circuit's current state. For information about the different states, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
         /// </summary>
@@ -181,7 +181,7 @@ namespace Pulumi.Oci.Core
 
             ImmutableArray<Outputs.GetVirtualCircuitsFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? state,
 

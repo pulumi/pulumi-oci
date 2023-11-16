@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser {
@@ -14,51 +16,51 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSourceParserN
      * @return Specify the time field for the event time. If the event doesn&#39;t have this field, the current time is used.
      * 
      */
-    private String fieldTimeKey;
+    private @Nullable String fieldTimeKey;
     /**
      * @return If true, keep the time field in the record.
      * 
      */
-    private Boolean isKeepTimeKey;
+    private @Nullable Boolean isKeepTimeKey;
     /**
      * @return Process time value using the specified format.
      * 
      */
-    private String timeFormat;
+    private @Nullable String timeFormat;
     /**
      * @return JSON parser time type.
      * 
      */
-    private String timeType;
+    private @Nullable String timeType;
 
     private GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser() {}
     /**
      * @return Specify the time field for the event time. If the event doesn&#39;t have this field, the current time is used.
      * 
      */
-    public String fieldTimeKey() {
-        return this.fieldTimeKey;
+    public Optional<String> fieldTimeKey() {
+        return Optional.ofNullable(this.fieldTimeKey);
     }
     /**
      * @return If true, keep the time field in the record.
      * 
      */
-    public Boolean isKeepTimeKey() {
-        return this.isKeepTimeKey;
+    public Optional<Boolean> isKeepTimeKey() {
+        return Optional.ofNullable(this.isKeepTimeKey);
     }
     /**
      * @return Process time value using the specified format.
      * 
      */
-    public String timeFormat() {
-        return this.timeFormat;
+    public Optional<String> timeFormat() {
+        return Optional.ofNullable(this.timeFormat);
     }
     /**
      * @return JSON parser time type.
      * 
      */
-    public String timeType() {
-        return this.timeType;
+    public Optional<String> timeType() {
+        return Optional.ofNullable(this.timeType);
     }
 
     public static Builder builder() {
@@ -70,10 +72,10 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSourceParserN
     }
     @CustomType.Builder
     public static final class Builder {
-        private String fieldTimeKey;
-        private Boolean isKeepTimeKey;
-        private String timeFormat;
-        private String timeType;
+        private @Nullable String fieldTimeKey;
+        private @Nullable Boolean isKeepTimeKey;
+        private @Nullable String timeFormat;
+        private @Nullable String timeType;
         public Builder() {}
         public Builder(GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser defaults) {
     	      Objects.requireNonNull(defaults);
@@ -84,23 +86,23 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSourceParserN
         }
 
         @CustomType.Setter
-        public Builder fieldTimeKey(String fieldTimeKey) {
-            this.fieldTimeKey = Objects.requireNonNull(fieldTimeKey);
+        public Builder fieldTimeKey(@Nullable String fieldTimeKey) {
+            this.fieldTimeKey = fieldTimeKey;
             return this;
         }
         @CustomType.Setter
-        public Builder isKeepTimeKey(Boolean isKeepTimeKey) {
-            this.isKeepTimeKey = Objects.requireNonNull(isKeepTimeKey);
+        public Builder isKeepTimeKey(@Nullable Boolean isKeepTimeKey) {
+            this.isKeepTimeKey = isKeepTimeKey;
             return this;
         }
         @CustomType.Setter
-        public Builder timeFormat(String timeFormat) {
-            this.timeFormat = Objects.requireNonNull(timeFormat);
+        public Builder timeFormat(@Nullable String timeFormat) {
+            this.timeFormat = timeFormat;
             return this;
         }
         @CustomType.Setter
-        public Builder timeType(String timeType) {
-            this.timeType = Objects.requireNonNull(timeType);
+        public Builder timeType(@Nullable String timeType) {
+            this.timeType = timeType;
             return this;
         }
         public GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser build() {

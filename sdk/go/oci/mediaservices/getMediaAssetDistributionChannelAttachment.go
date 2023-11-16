@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Media Asset Distribution Channel Attachment resource in Oracle Cloud Infrastructure Media Services service.
@@ -36,20 +35,20 @@ type GetMediaAssetDistributionChannelAttachmentArgs struct {
 // A collection of values returned by getMediaAssetDistributionChannelAttachment.
 type GetMediaAssetDistributionChannelAttachmentResult struct {
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// OCID of associated Distribution Channel.
 	DistributionChannelId string `pulumi:"distributionChannelId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id           string `pulumi:"id"`
-	MediaAssetId string `pulumi:"mediaAssetId"`
+	Id           *string `pulumi:"id"`
+	MediaAssetId string  `pulumi:"mediaAssetId"`
 	// The ingest MediaWorkflowJob ID that created this attachment.
-	MediaWorkflowJobId string `pulumi:"mediaWorkflowJobId"`
+	MediaWorkflowJobId *string `pulumi:"mediaWorkflowJobId"`
 	// The identifier for the metadata.
-	MetadataRef string `pulumi:"metadataRef"`
+	MetadataRef *string `pulumi:"metadataRef"`
 	// Lifecycle state of the attachment.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Version of the attachment.
-	Version string `pulumi:"version"`
+	Version *string `pulumi:"version"`
 }
 
 func GetMediaAssetDistributionChannelAttachmentOutput(ctx *pulumi.Context, args GetMediaAssetDistributionChannelAttachmentOutputArgs, opts ...pulumi.InvokeOption) GetMediaAssetDistributionChannelAttachmentResultOutput {
@@ -92,15 +91,9 @@ func (o GetMediaAssetDistributionChannelAttachmentResultOutput) ToGetMediaAssetD
 	return o
 }
 
-func (o GetMediaAssetDistributionChannelAttachmentResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetMediaAssetDistributionChannelAttachmentResult] {
-	return pulumix.Output[GetMediaAssetDistributionChannelAttachmentResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-func (o GetMediaAssetDistributionChannelAttachmentResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaAssetDistributionChannelAttachmentResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetMediaAssetDistributionChannelAttachmentResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaAssetDistributionChannelAttachmentResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // OCID of associated Distribution Channel.
@@ -109,8 +102,8 @@ func (o GetMediaAssetDistributionChannelAttachmentResultOutput) DistributionChan
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetMediaAssetDistributionChannelAttachmentResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaAssetDistributionChannelAttachmentResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetMediaAssetDistributionChannelAttachmentResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaAssetDistributionChannelAttachmentResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetMediaAssetDistributionChannelAttachmentResultOutput) MediaAssetId() pulumi.StringOutput {
@@ -118,23 +111,23 @@ func (o GetMediaAssetDistributionChannelAttachmentResultOutput) MediaAssetId() p
 }
 
 // The ingest MediaWorkflowJob ID that created this attachment.
-func (o GetMediaAssetDistributionChannelAttachmentResultOutput) MediaWorkflowJobId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaAssetDistributionChannelAttachmentResult) string { return v.MediaWorkflowJobId }).(pulumi.StringOutput)
+func (o GetMediaAssetDistributionChannelAttachmentResultOutput) MediaWorkflowJobId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaAssetDistributionChannelAttachmentResult) *string { return v.MediaWorkflowJobId }).(pulumi.StringPtrOutput)
 }
 
 // The identifier for the metadata.
-func (o GetMediaAssetDistributionChannelAttachmentResultOutput) MetadataRef() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaAssetDistributionChannelAttachmentResult) string { return v.MetadataRef }).(pulumi.StringOutput)
+func (o GetMediaAssetDistributionChannelAttachmentResultOutput) MetadataRef() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaAssetDistributionChannelAttachmentResult) *string { return v.MetadataRef }).(pulumi.StringPtrOutput)
 }
 
 // Lifecycle state of the attachment.
-func (o GetMediaAssetDistributionChannelAttachmentResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaAssetDistributionChannelAttachmentResult) string { return v.State }).(pulumi.StringOutput)
+func (o GetMediaAssetDistributionChannelAttachmentResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaAssetDistributionChannelAttachmentResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Version of the attachment.
-func (o GetMediaAssetDistributionChannelAttachmentResultOutput) Version() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaAssetDistributionChannelAttachmentResult) string { return v.Version }).(pulumi.StringOutput)
+func (o GetMediaAssetDistributionChannelAttachmentResultOutput) Version() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaAssetDistributionChannelAttachmentResult) *string { return v.Version }).(pulumi.StringPtrOutput)
 }
 
 func init() {

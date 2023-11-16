@@ -62,11 +62,11 @@ export class Policy extends pulumi.CustomResource {
     /**
      * (Updatable) An array of additional domains for the specified web application.
      */
-    public readonly additionalDomains!: pulumi.Output<string[]>;
+    public readonly additionalDomains!: pulumi.Output<string[] | undefined>;
     /**
      * The CNAME record to add to your DNS configuration to route traffic for the domain, and all additional domains, through the WAF.
      */
-    public /*out*/ readonly cname!: pulumi.Output<string>;
+    public /*out*/ readonly cname!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the WAAS policy.
      */
@@ -74,11 +74,11 @@ export class Policy extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) A user-friendly name for the WAAS policy. The name can be changed and does not need to be unique.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    public readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The domain for which the cookie is set, defaults to WAAS policy domain.
      */
@@ -86,31 +86,31 @@ export class Policy extends pulumi.CustomResource {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) The map of origin groups and their keys used to associate origins to the `wafConfig`. Origin groups allow you to apply weights to groups of origins for load balancing purposes. Origins with higher weights will receive larger proportions of client requests. To add additional origins to your WAAS policy, update the `origins` field of a `UpdateWaasPolicy` request.
      */
-    public readonly originGroups!: pulumi.Output<outputs.Waas.PolicyOriginGroup[]>;
+    public readonly originGroups!: pulumi.Output<outputs.Waas.PolicyOriginGroup[] | undefined>;
     /**
      * (Updatable) A map of host to origin for the web application. The key should be a customer friendly name for the host, ex. primary, secondary, etc.
      */
-    public readonly origins!: pulumi.Output<outputs.Waas.PolicyOrigin[]>;
+    public readonly origins!: pulumi.Output<outputs.Waas.PolicyOrigin[] | undefined>;
     /**
      * (Updatable) The configuration details for the WAAS policy.
      */
-    public readonly policyConfig!: pulumi.Output<outputs.Waas.PolicyPolicyConfig>;
+    public readonly policyConfig!: pulumi.Output<outputs.Waas.PolicyPolicyConfig | undefined>;
     /**
      * The current lifecycle state of the WAAS policy.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The date and time the policy was created, expressed in RFC 3339 timestamp format.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The Web Application Firewall configuration for the WAAS policy creation.
      */
-    public readonly wafConfig!: pulumi.Output<outputs.Waas.PolicyWafConfig>;
+    public readonly wafConfig!: pulumi.Output<outputs.Waas.PolicyWafConfig | undefined>;
 
     /**
      * Create a Policy resource with the given unique name, arguments, and options.

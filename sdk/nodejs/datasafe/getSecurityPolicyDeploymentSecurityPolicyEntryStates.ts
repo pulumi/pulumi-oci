@@ -68,7 +68,7 @@ export interface GetSecurityPolicyDeploymentSecurityPolicyEntryStatesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The OCID of the security policy deployment associated.
      */
@@ -80,7 +80,7 @@ export interface GetSecurityPolicyDeploymentSecurityPolicyEntryStatesResult {
     /**
      * The list of security_policy_entry_state_collection.
      */
-    readonly securityPolicyEntryStateCollections: outputs.DataSafe.GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollection[];
+    readonly securityPolicyEntryStateCollections?: outputs.DataSafe.GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollection[];
 }
 /**
  * This data source provides the list of Security Policy Deployment Security Policy Entry States in Oracle Cloud Infrastructure Data Safe service.

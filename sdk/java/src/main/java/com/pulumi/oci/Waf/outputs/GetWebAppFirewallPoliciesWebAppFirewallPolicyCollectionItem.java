@@ -15,6 +15,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItem {
@@ -22,82 +24,82 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItem {
      * @return Predefined actions for use in multiple different rules. Not all actions are supported in every module. Some actions terminate further execution of modules and rules in a module and some do not. Actions names must be unique within this array.
      * 
      */
-    private List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemAction> actions;
+    private @Nullable List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemAction> actions;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return A filter to return only resources that match the entire display name given.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return A filter to return only the WebAppFirewallPolicy with the given [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in FAILED state.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return Module that allows inspection of HTTP request properties and to return a defined HTTP response. In this module, rules with the name &#39;Default Action&#39; are not allowed, since this name is reserved for default action logs.
      * 
      */
-    private List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControl> requestAccessControls;
+    private @Nullable List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControl> requestAccessControls;
     /**
      * @return Module that allows to enable OCI-managed protection capabilities for incoming HTTP requests.
      * 
      */
-    private List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtection> requestProtections;
+    private @Nullable List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtection> requestProtections;
     /**
      * @return Module that allows inspection of HTTP connection properties and to limit requests frequency for a given key.
      * 
      */
-    private List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimiting> requestRateLimitings;
+    private @Nullable List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimiting> requestRateLimitings;
     /**
      * @return Module that allows inspection of HTTP response properties and to return a defined HTTP response.
      * 
      */
-    private List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControl> responseAccessControls;
+    private @Nullable List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControl> responseAccessControls;
     /**
      * @return Module that allows to enable OCI-managed protection capabilities for HTTP responses.
      * 
      */
-    private List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtection> responseProtections;
+    private @Nullable List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtection> responseProtections;
     /**
      * @return A filter to return only resources that match the given lifecycleState.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private @Nullable Map<String,Object> systemTags;
     /**
      * @return The time the WebAppFirewallPolicy was created. An RFC3339 formatted datetime string.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The time the WebAppFirewallPolicy was updated. An RFC3339 formatted datetime string.
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
 
     private GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItem() {}
     /**
@@ -105,112 +107,112 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItem {
      * 
      */
     public List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemAction> actions() {
-        return this.actions;
+        return this.actions == null ? List.of() : this.actions;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return A filter to return only resources that match the entire display name given.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return A filter to return only the WebAppFirewallPolicy with the given [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in FAILED state.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return Module that allows inspection of HTTP request properties and to return a defined HTTP response. In this module, rules with the name &#39;Default Action&#39; are not allowed, since this name is reserved for default action logs.
      * 
      */
     public List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControl> requestAccessControls() {
-        return this.requestAccessControls;
+        return this.requestAccessControls == null ? List.of() : this.requestAccessControls;
     }
     /**
      * @return Module that allows to enable OCI-managed protection capabilities for incoming HTTP requests.
      * 
      */
     public List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtection> requestProtections() {
-        return this.requestProtections;
+        return this.requestProtections == null ? List.of() : this.requestProtections;
     }
     /**
      * @return Module that allows inspection of HTTP connection properties and to limit requests frequency for a given key.
      * 
      */
     public List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimiting> requestRateLimitings() {
-        return this.requestRateLimitings;
+        return this.requestRateLimitings == null ? List.of() : this.requestRateLimitings;
     }
     /**
      * @return Module that allows inspection of HTTP response properties and to return a defined HTTP response.
      * 
      */
     public List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControl> responseAccessControls() {
-        return this.responseAccessControls;
+        return this.responseAccessControls == null ? List.of() : this.responseAccessControls;
     }
     /**
      * @return Module that allows to enable OCI-managed protection capabilities for HTTP responses.
      * 
      */
     public List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtection> responseProtections() {
-        return this.responseProtections;
+        return this.responseProtections == null ? List.of() : this.responseProtections;
     }
     /**
      * @return A filter to return only resources that match the given lifecycleState.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     public Map<String,Object> systemTags() {
-        return this.systemTags;
+        return this.systemTags == null ? Map.of() : this.systemTags;
     }
     /**
      * @return The time the WebAppFirewallPolicy was created. An RFC3339 formatted datetime string.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The time the WebAppFirewallPolicy was updated. An RFC3339 formatted datetime string.
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
 
     public static Builder builder() {
@@ -222,22 +224,22 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemAction> actions;
-        private String compartmentId;
-        private Map<String,Object> definedTags;
-        private String displayName;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private String lifecycleDetails;
-        private List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControl> requestAccessControls;
-        private List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtection> requestProtections;
-        private List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimiting> requestRateLimitings;
-        private List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControl> responseAccessControls;
-        private List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtection> responseProtections;
-        private String state;
-        private Map<String,Object> systemTags;
-        private String timeCreated;
-        private String timeUpdated;
+        private @Nullable List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemAction> actions;
+        private @Nullable String compartmentId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable String lifecycleDetails;
+        private @Nullable List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControl> requestAccessControls;
+        private @Nullable List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtection> requestProtections;
+        private @Nullable List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimiting> requestRateLimitings;
+        private @Nullable List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControl> responseAccessControls;
+        private @Nullable List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtection> responseProtections;
+        private @Nullable String state;
+        private @Nullable Map<String,Object> systemTags;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
         public Builder() {}
         public Builder(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -260,101 +262,101 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder actions(List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemAction> actions) {
-            this.actions = Objects.requireNonNull(actions);
+        public Builder actions(@Nullable List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemAction> actions) {
+            this.actions = actions;
             return this;
         }
         public Builder actions(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemAction... actions) {
             return actions(List.of(actions));
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder requestAccessControls(List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControl> requestAccessControls) {
-            this.requestAccessControls = Objects.requireNonNull(requestAccessControls);
+        public Builder requestAccessControls(@Nullable List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControl> requestAccessControls) {
+            this.requestAccessControls = requestAccessControls;
             return this;
         }
         public Builder requestAccessControls(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControl... requestAccessControls) {
             return requestAccessControls(List.of(requestAccessControls));
         }
         @CustomType.Setter
-        public Builder requestProtections(List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtection> requestProtections) {
-            this.requestProtections = Objects.requireNonNull(requestProtections);
+        public Builder requestProtections(@Nullable List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtection> requestProtections) {
+            this.requestProtections = requestProtections;
             return this;
         }
         public Builder requestProtections(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtection... requestProtections) {
             return requestProtections(List.of(requestProtections));
         }
         @CustomType.Setter
-        public Builder requestRateLimitings(List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimiting> requestRateLimitings) {
-            this.requestRateLimitings = Objects.requireNonNull(requestRateLimitings);
+        public Builder requestRateLimitings(@Nullable List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimiting> requestRateLimitings) {
+            this.requestRateLimitings = requestRateLimitings;
             return this;
         }
         public Builder requestRateLimitings(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimiting... requestRateLimitings) {
             return requestRateLimitings(List.of(requestRateLimitings));
         }
         @CustomType.Setter
-        public Builder responseAccessControls(List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControl> responseAccessControls) {
-            this.responseAccessControls = Objects.requireNonNull(responseAccessControls);
+        public Builder responseAccessControls(@Nullable List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControl> responseAccessControls) {
+            this.responseAccessControls = responseAccessControls;
             return this;
         }
         public Builder responseAccessControls(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControl... responseAccessControls) {
             return responseAccessControls(List.of(responseAccessControls));
         }
         @CustomType.Setter
-        public Builder responseProtections(List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtection> responseProtections) {
-            this.responseProtections = Objects.requireNonNull(responseProtections);
+        public Builder responseProtections(@Nullable List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtection> responseProtections) {
+            this.responseProtections = responseProtections;
             return this;
         }
         public Builder responseProtections(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtection... responseProtections) {
             return responseProtections(List.of(responseProtections));
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+        public Builder systemTags(@Nullable Map<String,Object> systemTags) {
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItem build() {

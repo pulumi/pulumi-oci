@@ -70,7 +70,7 @@ class GetListJreUsageResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -78,26 +78,17 @@ class GetListJreUsageResult:
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetListJreUsageItemResult']:
-        """
-        A list of Java Runtimes.
-        """
+    def items(self) -> Optional[Sequence['outputs.GetListJreUsageItemResult']]:
         return pulumi.get(self, "items")
 
     @property
     @pulumi.getter(name="timeEnd")
     def time_end(self) -> Optional[str]:
-        """
-        Upper bound of the specified time period filter. JMS provides a view of the data that is _per day_. The query uses only the date element of the parameter.
-        """
         return pulumi.get(self, "time_end")
 
     @property
     @pulumi.getter(name="timeStart")
     def time_start(self) -> Optional[str]:
-        """
-        Lower bound of the specified time period filter. JMS provides a view of the data that is _per day_. The query uses only the date element of the parameter.
-        """
         return pulumi.get(self, "time_start")
 
 
@@ -125,31 +116,7 @@ def get_list_jre_usage(application_id: Optional[str] = None,
                        time_start: Optional[str] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetListJreUsageResult:
     """
-    This data source provides details about a specific List Jre Usage resource in Oracle Cloud Infrastructure Jms service.
-
-    List Java Runtime usage in a specified host filtered by query parameters.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_list_jre_usage = oci.Jms.get_list_jre_usage(application_id=oci_dataflow_application["test_application"]["id"],
-        application_name=oci_dataflow_application["test_application"]["name"],
-        compartment_id=var["compartment_id"],
-        host_id=oci_jms_host["test_host"]["id"],
-        time_end=var["list_jre_usage_time_end"],
-        time_start=var["list_jre_usage_time_start"])
-    ```
-
-
-    :param str application_id: The Fleet-unique identifier of the application.
-    :param str application_name: The name of the application.
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-    :param str host_id: The host [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
-    :param str time_end: The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-    :param str time_start: The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['applicationId'] = application_id
@@ -181,30 +148,6 @@ def get_list_jre_usage_output(application_id: Optional[pulumi.Input[Optional[str
                               time_start: Optional[pulumi.Input[Optional[str]]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetListJreUsageResult]:
     """
-    This data source provides details about a specific List Jre Usage resource in Oracle Cloud Infrastructure Jms service.
-
-    List Java Runtime usage in a specified host filtered by query parameters.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_list_jre_usage = oci.Jms.get_list_jre_usage(application_id=oci_dataflow_application["test_application"]["id"],
-        application_name=oci_dataflow_application["test_application"]["name"],
-        compartment_id=var["compartment_id"],
-        host_id=oci_jms_host["test_host"]["id"],
-        time_end=var["list_jre_usage_time_end"],
-        time_start=var["list_jre_usage_time_start"])
-    ```
-
-
-    :param str application_id: The Fleet-unique identifier of the application.
-    :param str application_name: The name of the application.
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-    :param str host_id: The host [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
-    :param str time_end: The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-    :param str time_start: The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+    Use this data source to access information about an existing resource.
     """
     ...

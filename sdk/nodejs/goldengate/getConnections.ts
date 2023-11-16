@@ -98,7 +98,7 @@ export interface GetConnectionsResult {
     /**
      * The list of connection_collection.
      */
-    readonly connectionCollections: outputs.GoldenGate.GetConnectionsConnectionCollection[];
+    readonly connectionCollections?: outputs.GoldenGate.GetConnectionsConnectionCollection[];
     /**
      * The connection type.
      */
@@ -111,7 +111,7 @@ export interface GetConnectionsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Possible lifecycle states for connection.
      */

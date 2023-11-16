@@ -16,47 +16,47 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// The device name.
         /// </summary>
-        public readonly string Device;
+        public readonly string? Device;
         /// <summary>
         /// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
         /// </summary>
-        public readonly bool IsPvEncryptionInTransitEnabled;
+        public readonly bool? IsPvEncryptionInTransitEnabled;
         /// <summary>
         /// Whether the attachment should be created in read-only mode.
         /// </summary>
-        public readonly bool IsReadOnly;
+        public readonly bool? IsReadOnly;
         /// <summary>
         /// Whether the attachment should be created in shareable mode. If an attachment is created in shareable mode, then other instances can attach the same volume, provided that they also create their attachments in shareable mode. Only certain volume types can be attached in shareable mode. Defaults to false if not specified.
         /// </summary>
-        public readonly bool IsShareable;
+        public readonly bool? IsShareable;
         /// <summary>
         /// The type of action to run when the instance is interrupted for eviction.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
         /// <summary>
         /// Whether to use CHAP authentication for the volume attachment. Defaults to false.
         /// </summary>
-        public readonly bool UseChap;
+        public readonly bool? UseChap;
 
         [OutputConstructor]
         private GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailResult(
-            string device,
+            string? device,
 
-            string displayName,
+            string? displayName,
 
-            bool isPvEncryptionInTransitEnabled,
+            bool? isPvEncryptionInTransitEnabled,
 
-            bool isReadOnly,
+            bool? isReadOnly,
 
-            bool isShareable,
+            bool? isShareable,
 
-            string type,
+            string? type,
 
-            bool useChap)
+            bool? useChap)
         {
             Device = device;
             DisplayName = displayName;

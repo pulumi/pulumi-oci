@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Maintenance Run resource in Oracle Cloud Infrastructure Database service.
@@ -64,68 +63,68 @@ type MaintenanceRun struct {
 	pulumi.CustomResourceState
 
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Maintenance Run.
-	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrOutput `pulumi:"compartmentId"`
 	// Extend current custom action timeout between the current database servers during waiting state, from 0 (zero) to 30 minutes.
-	CurrentCustomActionTimeoutInMins pulumi.IntOutput `pulumi:"currentCustomActionTimeoutInMins"`
+	CurrentCustomActionTimeoutInMins pulumi.IntPtrOutput `pulumi:"currentCustomActionTimeoutInMins"`
 	// The name of the current infrastruture component that is getting patched.
-	CurrentPatchingComponent pulumi.StringOutput `pulumi:"currentPatchingComponent"`
+	CurrentPatchingComponent pulumi.StringPtrOutput `pulumi:"currentPatchingComponent"`
 	// Determines the amount of time the system will wait before the start of each database server patching operation. Specify a number of minutes, from 15 to 120.
-	CustomActionTimeoutInMins pulumi.IntOutput `pulumi:"customActionTimeoutInMins"`
+	CustomActionTimeoutInMins pulumi.IntPtrOutput `pulumi:"customActionTimeoutInMins"`
 	// Description of the maintenance run.
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// The user-friendly name for the maintenance run.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// The estimated start time of the next infrastruture component patching operation.
-	EstimatedComponentPatchingStartTime pulumi.StringOutput `pulumi:"estimatedComponentPatchingStartTime"`
+	EstimatedComponentPatchingStartTime pulumi.StringPtrOutput `pulumi:"estimatedComponentPatchingStartTime"`
 	// The estimated total time required in minutes for all patching operations (database server, storage server, and network switch patching).
 	EstimatedPatchingTimes MaintenanceRunEstimatedPatchingTimeArrayOutput `pulumi:"estimatedPatchingTimes"`
 	// If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
-	IsCustomActionTimeoutEnabled pulumi.BoolOutput `pulumi:"isCustomActionTimeoutEnabled"`
+	IsCustomActionTimeoutEnabled pulumi.BoolPtrOutput `pulumi:"isCustomActionTimeoutEnabled"`
 	// Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
-	IsDstFileUpdateEnabled pulumi.BoolOutput `pulumi:"isDstFileUpdateEnabled"`
+	IsDstFileUpdateEnabled pulumi.BoolPtrOutput `pulumi:"isDstFileUpdateEnabled"`
 	// Additional information about the current lifecycle state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// Maintenance sub-type.
-	MaintenanceSubtype pulumi.StringOutput `pulumi:"maintenanceSubtype"`
+	MaintenanceSubtype pulumi.StringPtrOutput `pulumi:"maintenanceSubtype"`
 	// Maintenance type.
-	MaintenanceType pulumi.StringOutput `pulumi:"maintenanceType"`
+	MaintenanceType pulumi.StringPtrOutput `pulumi:"maintenanceType"`
 	// Contain the patch failure count.
-	PatchFailureCount pulumi.IntOutput `pulumi:"patchFailureCount"`
+	PatchFailureCount pulumi.IntPtrOutput `pulumi:"patchFailureCount"`
 	// The unique identifier of the patch. The identifier string includes the patch type, the Oracle Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle Database 19.9.0.0 that was released October 30, 2020.
-	PatchId pulumi.StringOutput `pulumi:"patchId"`
+	PatchId pulumi.StringPtrOutput `pulumi:"patchId"`
 	// Patch type, either "QUARTERLY" or "TIMEZONE".
 	PatchType pulumi.StringOutput `pulumi:"patchType"`
 	// The time when the patching operation ended.
-	PatchingEndTime pulumi.StringOutput `pulumi:"patchingEndTime"`
+	PatchingEndTime pulumi.StringPtrOutput `pulumi:"patchingEndTime"`
 	// (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
 	//
 	// *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
-	PatchingMode pulumi.StringOutput `pulumi:"patchingMode"`
+	PatchingMode pulumi.StringPtrOutput `pulumi:"patchingMode"`
 	// The time when the patching operation started.
-	PatchingStartTime pulumi.StringOutput `pulumi:"patchingStartTime"`
+	PatchingStartTime pulumi.StringPtrOutput `pulumi:"patchingStartTime"`
 	// The status of the patching operation.
-	PatchingStatus pulumi.StringOutput `pulumi:"patchingStatus"`
+	PatchingStatus pulumi.StringPtrOutput `pulumi:"patchingStatus"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance run for the Autonomous Data Guard association's peer container database.
-	PeerMaintenanceRunId pulumi.StringOutput `pulumi:"peerMaintenanceRunId"`
+	PeerMaintenanceRunId pulumi.StringPtrOutput `pulumi:"peerMaintenanceRunId"`
 	// The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The target software version for the database server patching operation.
-	TargetDbServerVersion pulumi.StringOutput `pulumi:"targetDbServerVersion"`
+	TargetDbServerVersion pulumi.StringPtrOutput `pulumi:"targetDbServerVersion"`
 	// The ID of the target resource for which the maintenance run should be created.
 	TargetResourceId pulumi.StringOutput `pulumi:"targetResourceId"`
 	// The type of the target resource on which the maintenance run occurs.
-	TargetResourceType pulumi.StringOutput `pulumi:"targetResourceType"`
+	TargetResourceType pulumi.StringPtrOutput `pulumi:"targetResourceType"`
 	// The target Cell version that is to be patched to.
-	TargetStorageServerVersion pulumi.StringOutput `pulumi:"targetStorageServerVersion"`
+	TargetStorageServerVersion pulumi.StringPtrOutput `pulumi:"targetStorageServerVersion"`
 	// The date and time the maintenance run was completed.
-	TimeEnded pulumi.StringOutput `pulumi:"timeEnded"`
+	TimeEnded pulumi.StringPtrOutput `pulumi:"timeEnded"`
 	// (Updatable) The date and time that update should be scheduled.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TimeScheduled pulumi.StringOutput `pulumi:"timeScheduled"`
 	// The date and time the maintenance run starts.
-	TimeStarted pulumi.StringOutput `pulumi:"timeStarted"`
+	TimeStarted pulumi.StringPtrOutput `pulumi:"timeStarted"`
 }
 
 // NewMaintenanceRun registers a new resource with the given unique name, arguments, and options.
@@ -366,12 +365,6 @@ func (i *MaintenanceRun) ToMaintenanceRunOutputWithContext(ctx context.Context) 
 	return pulumi.ToOutputWithContext(ctx, i).(MaintenanceRunOutput)
 }
 
-func (i *MaintenanceRun) ToOutput(ctx context.Context) pulumix.Output[*MaintenanceRun] {
-	return pulumix.Output[*MaintenanceRun]{
-		OutputState: i.ToMaintenanceRunOutputWithContext(ctx).OutputState,
-	}
-}
-
 // MaintenanceRunArrayInput is an input type that accepts MaintenanceRunArray and MaintenanceRunArrayOutput values.
 // You can construct a concrete instance of `MaintenanceRunArrayInput` via:
 //
@@ -395,12 +388,6 @@ func (i MaintenanceRunArray) ToMaintenanceRunArrayOutput() MaintenanceRunArrayOu
 
 func (i MaintenanceRunArray) ToMaintenanceRunArrayOutputWithContext(ctx context.Context) MaintenanceRunArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(MaintenanceRunArrayOutput)
-}
-
-func (i MaintenanceRunArray) ToOutput(ctx context.Context) pulumix.Output[[]*MaintenanceRun] {
-	return pulumix.Output[[]*MaintenanceRun]{
-		OutputState: i.ToMaintenanceRunArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // MaintenanceRunMapInput is an input type that accepts MaintenanceRunMap and MaintenanceRunMapOutput values.
@@ -428,12 +415,6 @@ func (i MaintenanceRunMap) ToMaintenanceRunMapOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(MaintenanceRunMapOutput)
 }
 
-func (i MaintenanceRunMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*MaintenanceRun] {
-	return pulumix.Output[map[string]*MaintenanceRun]{
-		OutputState: i.ToMaintenanceRunMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MaintenanceRunOutput struct{ *pulumi.OutputState }
 
 func (MaintenanceRunOutput) ElementType() reflect.Type {
@@ -448,45 +429,39 @@ func (o MaintenanceRunOutput) ToMaintenanceRunOutputWithContext(ctx context.Cont
 	return o
 }
 
-func (o MaintenanceRunOutput) ToOutput(ctx context.Context) pulumix.Output[*MaintenanceRun] {
-	return pulumix.Output[*MaintenanceRun]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Maintenance Run.
-func (o MaintenanceRunOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *MaintenanceRun) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
+func (o MaintenanceRunOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MaintenanceRun) pulumi.StringPtrOutput { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Extend current custom action timeout between the current database servers during waiting state, from 0 (zero) to 30 minutes.
-func (o MaintenanceRunOutput) CurrentCustomActionTimeoutInMins() pulumi.IntOutput {
-	return o.ApplyT(func(v *MaintenanceRun) pulumi.IntOutput { return v.CurrentCustomActionTimeoutInMins }).(pulumi.IntOutput)
+func (o MaintenanceRunOutput) CurrentCustomActionTimeoutInMins() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *MaintenanceRun) pulumi.IntPtrOutput { return v.CurrentCustomActionTimeoutInMins }).(pulumi.IntPtrOutput)
 }
 
 // The name of the current infrastruture component that is getting patched.
-func (o MaintenanceRunOutput) CurrentPatchingComponent() pulumi.StringOutput {
-	return o.ApplyT(func(v *MaintenanceRun) pulumi.StringOutput { return v.CurrentPatchingComponent }).(pulumi.StringOutput)
+func (o MaintenanceRunOutput) CurrentPatchingComponent() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MaintenanceRun) pulumi.StringPtrOutput { return v.CurrentPatchingComponent }).(pulumi.StringPtrOutput)
 }
 
 // Determines the amount of time the system will wait before the start of each database server patching operation. Specify a number of minutes, from 15 to 120.
-func (o MaintenanceRunOutput) CustomActionTimeoutInMins() pulumi.IntOutput {
-	return o.ApplyT(func(v *MaintenanceRun) pulumi.IntOutput { return v.CustomActionTimeoutInMins }).(pulumi.IntOutput)
+func (o MaintenanceRunOutput) CustomActionTimeoutInMins() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *MaintenanceRun) pulumi.IntPtrOutput { return v.CustomActionTimeoutInMins }).(pulumi.IntPtrOutput)
 }
 
 // Description of the maintenance run.
-func (o MaintenanceRunOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *MaintenanceRun) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o MaintenanceRunOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MaintenanceRun) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // The user-friendly name for the maintenance run.
-func (o MaintenanceRunOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *MaintenanceRun) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o MaintenanceRunOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MaintenanceRun) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The estimated start time of the next infrastruture component patching operation.
-func (o MaintenanceRunOutput) EstimatedComponentPatchingStartTime() pulumi.StringOutput {
-	return o.ApplyT(func(v *MaintenanceRun) pulumi.StringOutput { return v.EstimatedComponentPatchingStartTime }).(pulumi.StringOutput)
+func (o MaintenanceRunOutput) EstimatedComponentPatchingStartTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MaintenanceRun) pulumi.StringPtrOutput { return v.EstimatedComponentPatchingStartTime }).(pulumi.StringPtrOutput)
 }
 
 // The estimated total time required in minutes for all patching operations (database server, storage server, and network switch patching).
@@ -497,38 +472,38 @@ func (o MaintenanceRunOutput) EstimatedPatchingTimes() MaintenanceRunEstimatedPa
 }
 
 // If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
-func (o MaintenanceRunOutput) IsCustomActionTimeoutEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v *MaintenanceRun) pulumi.BoolOutput { return v.IsCustomActionTimeoutEnabled }).(pulumi.BoolOutput)
+func (o MaintenanceRunOutput) IsCustomActionTimeoutEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *MaintenanceRun) pulumi.BoolPtrOutput { return v.IsCustomActionTimeoutEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
-func (o MaintenanceRunOutput) IsDstFileUpdateEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v *MaintenanceRun) pulumi.BoolOutput { return v.IsDstFileUpdateEnabled }).(pulumi.BoolOutput)
+func (o MaintenanceRunOutput) IsDstFileUpdateEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *MaintenanceRun) pulumi.BoolPtrOutput { return v.IsDstFileUpdateEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // Additional information about the current lifecycle state.
-func (o MaintenanceRunOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *MaintenanceRun) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o MaintenanceRunOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MaintenanceRun) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // Maintenance sub-type.
-func (o MaintenanceRunOutput) MaintenanceSubtype() pulumi.StringOutput {
-	return o.ApplyT(func(v *MaintenanceRun) pulumi.StringOutput { return v.MaintenanceSubtype }).(pulumi.StringOutput)
+func (o MaintenanceRunOutput) MaintenanceSubtype() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MaintenanceRun) pulumi.StringPtrOutput { return v.MaintenanceSubtype }).(pulumi.StringPtrOutput)
 }
 
 // Maintenance type.
-func (o MaintenanceRunOutput) MaintenanceType() pulumi.StringOutput {
-	return o.ApplyT(func(v *MaintenanceRun) pulumi.StringOutput { return v.MaintenanceType }).(pulumi.StringOutput)
+func (o MaintenanceRunOutput) MaintenanceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MaintenanceRun) pulumi.StringPtrOutput { return v.MaintenanceType }).(pulumi.StringPtrOutput)
 }
 
 // Contain the patch failure count.
-func (o MaintenanceRunOutput) PatchFailureCount() pulumi.IntOutput {
-	return o.ApplyT(func(v *MaintenanceRun) pulumi.IntOutput { return v.PatchFailureCount }).(pulumi.IntOutput)
+func (o MaintenanceRunOutput) PatchFailureCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *MaintenanceRun) pulumi.IntPtrOutput { return v.PatchFailureCount }).(pulumi.IntPtrOutput)
 }
 
 // The unique identifier of the patch. The identifier string includes the patch type, the Oracle Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle Database 19.9.0.0 that was released October 30, 2020.
-func (o MaintenanceRunOutput) PatchId() pulumi.StringOutput {
-	return o.ApplyT(func(v *MaintenanceRun) pulumi.StringOutput { return v.PatchId }).(pulumi.StringOutput)
+func (o MaintenanceRunOutput) PatchId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MaintenanceRun) pulumi.StringPtrOutput { return v.PatchId }).(pulumi.StringPtrOutput)
 }
 
 // Patch type, either "QUARTERLY" or "TIMEZONE".
@@ -537,40 +512,40 @@ func (o MaintenanceRunOutput) PatchType() pulumi.StringOutput {
 }
 
 // The time when the patching operation ended.
-func (o MaintenanceRunOutput) PatchingEndTime() pulumi.StringOutput {
-	return o.ApplyT(func(v *MaintenanceRun) pulumi.StringOutput { return v.PatchingEndTime }).(pulumi.StringOutput)
+func (o MaintenanceRunOutput) PatchingEndTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MaintenanceRun) pulumi.StringPtrOutput { return v.PatchingEndTime }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
 //
 // *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
-func (o MaintenanceRunOutput) PatchingMode() pulumi.StringOutput {
-	return o.ApplyT(func(v *MaintenanceRun) pulumi.StringOutput { return v.PatchingMode }).(pulumi.StringOutput)
+func (o MaintenanceRunOutput) PatchingMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MaintenanceRun) pulumi.StringPtrOutput { return v.PatchingMode }).(pulumi.StringPtrOutput)
 }
 
 // The time when the patching operation started.
-func (o MaintenanceRunOutput) PatchingStartTime() pulumi.StringOutput {
-	return o.ApplyT(func(v *MaintenanceRun) pulumi.StringOutput { return v.PatchingStartTime }).(pulumi.StringOutput)
+func (o MaintenanceRunOutput) PatchingStartTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MaintenanceRun) pulumi.StringPtrOutput { return v.PatchingStartTime }).(pulumi.StringPtrOutput)
 }
 
 // The status of the patching operation.
-func (o MaintenanceRunOutput) PatchingStatus() pulumi.StringOutput {
-	return o.ApplyT(func(v *MaintenanceRun) pulumi.StringOutput { return v.PatchingStatus }).(pulumi.StringOutput)
+func (o MaintenanceRunOutput) PatchingStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MaintenanceRun) pulumi.StringPtrOutput { return v.PatchingStatus }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance run for the Autonomous Data Guard association's peer container database.
-func (o MaintenanceRunOutput) PeerMaintenanceRunId() pulumi.StringOutput {
-	return o.ApplyT(func(v *MaintenanceRun) pulumi.StringOutput { return v.PeerMaintenanceRunId }).(pulumi.StringOutput)
+func (o MaintenanceRunOutput) PeerMaintenanceRunId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MaintenanceRun) pulumi.StringPtrOutput { return v.PeerMaintenanceRunId }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
-func (o MaintenanceRunOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *MaintenanceRun) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o MaintenanceRunOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MaintenanceRun) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The target software version for the database server patching operation.
-func (o MaintenanceRunOutput) TargetDbServerVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v *MaintenanceRun) pulumi.StringOutput { return v.TargetDbServerVersion }).(pulumi.StringOutput)
+func (o MaintenanceRunOutput) TargetDbServerVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MaintenanceRun) pulumi.StringPtrOutput { return v.TargetDbServerVersion }).(pulumi.StringPtrOutput)
 }
 
 // The ID of the target resource for which the maintenance run should be created.
@@ -579,18 +554,18 @@ func (o MaintenanceRunOutput) TargetResourceId() pulumi.StringOutput {
 }
 
 // The type of the target resource on which the maintenance run occurs.
-func (o MaintenanceRunOutput) TargetResourceType() pulumi.StringOutput {
-	return o.ApplyT(func(v *MaintenanceRun) pulumi.StringOutput { return v.TargetResourceType }).(pulumi.StringOutput)
+func (o MaintenanceRunOutput) TargetResourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MaintenanceRun) pulumi.StringPtrOutput { return v.TargetResourceType }).(pulumi.StringPtrOutput)
 }
 
 // The target Cell version that is to be patched to.
-func (o MaintenanceRunOutput) TargetStorageServerVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v *MaintenanceRun) pulumi.StringOutput { return v.TargetStorageServerVersion }).(pulumi.StringOutput)
+func (o MaintenanceRunOutput) TargetStorageServerVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MaintenanceRun) pulumi.StringPtrOutput { return v.TargetStorageServerVersion }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the maintenance run was completed.
-func (o MaintenanceRunOutput) TimeEnded() pulumi.StringOutput {
-	return o.ApplyT(func(v *MaintenanceRun) pulumi.StringOutput { return v.TimeEnded }).(pulumi.StringOutput)
+func (o MaintenanceRunOutput) TimeEnded() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MaintenanceRun) pulumi.StringPtrOutput { return v.TimeEnded }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The date and time that update should be scheduled.
@@ -602,8 +577,8 @@ func (o MaintenanceRunOutput) TimeScheduled() pulumi.StringOutput {
 }
 
 // The date and time the maintenance run starts.
-func (o MaintenanceRunOutput) TimeStarted() pulumi.StringOutput {
-	return o.ApplyT(func(v *MaintenanceRun) pulumi.StringOutput { return v.TimeStarted }).(pulumi.StringOutput)
+func (o MaintenanceRunOutput) TimeStarted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MaintenanceRun) pulumi.StringPtrOutput { return v.TimeStarted }).(pulumi.StringPtrOutput)
 }
 
 type MaintenanceRunArrayOutput struct{ *pulumi.OutputState }
@@ -618,12 +593,6 @@ func (o MaintenanceRunArrayOutput) ToMaintenanceRunArrayOutput() MaintenanceRunA
 
 func (o MaintenanceRunArrayOutput) ToMaintenanceRunArrayOutputWithContext(ctx context.Context) MaintenanceRunArrayOutput {
 	return o
-}
-
-func (o MaintenanceRunArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*MaintenanceRun] {
-	return pulumix.Output[[]*MaintenanceRun]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MaintenanceRunArrayOutput) Index(i pulumi.IntInput) MaintenanceRunOutput {
@@ -644,12 +613,6 @@ func (o MaintenanceRunMapOutput) ToMaintenanceRunMapOutput() MaintenanceRunMapOu
 
 func (o MaintenanceRunMapOutput) ToMaintenanceRunMapOutputWithContext(ctx context.Context) MaintenanceRunMapOutput {
 	return o
-}
-
-func (o MaintenanceRunMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*MaintenanceRun] {
-	return pulumix.Output[map[string]*MaintenanceRun]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MaintenanceRunMapOutput) MapIndex(k pulumi.StringInput) MaintenanceRunOutput {

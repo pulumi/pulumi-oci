@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagementAgentsManagementAgentManagementAgentProperty {
@@ -14,39 +16,39 @@ public final class GetManagementAgentsManagementAgentManagementAgentProperty {
      * @return Name of the property
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return Unit for the property
      * 
      */
-    private String units;
+    private @Nullable String units;
     /**
      * @return Values of the property
      * 
      */
-    private List<String> values;
+    private @Nullable List<String> values;
 
     private GetManagementAgentsManagementAgentManagementAgentProperty() {}
     /**
      * @return Name of the property
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return Unit for the property
      * 
      */
-    public String units() {
-        return this.units;
+    public Optional<String> units() {
+        return Optional.ofNullable(this.units);
     }
     /**
      * @return Values of the property
      * 
      */
     public List<String> values() {
-        return this.values;
+        return this.values == null ? List.of() : this.values;
     }
 
     public static Builder builder() {
@@ -58,9 +60,9 @@ public final class GetManagementAgentsManagementAgentManagementAgentProperty {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String name;
-        private String units;
-        private List<String> values;
+        private @Nullable String name;
+        private @Nullable String units;
+        private @Nullable List<String> values;
         public Builder() {}
         public Builder(GetManagementAgentsManagementAgentManagementAgentProperty defaults) {
     	      Objects.requireNonNull(defaults);
@@ -70,18 +72,18 @@ public final class GetManagementAgentsManagementAgentManagementAgentProperty {
         }
 
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder units(String units) {
-            this.units = Objects.requireNonNull(units);
+        public Builder units(@Nullable String units) {
+            this.units = units;
             return this;
         }
         @CustomType.Setter
-        public Builder values(List<String> values) {
-            this.values = Objects.requireNonNull(values);
+        public Builder values(@Nullable List<String> values) {
+            this.values = values;
             return this;
         }
         public Builder values(String... values) {

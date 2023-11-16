@@ -106,79 +106,52 @@ class GetManagedDatabaseUserResult:
 
     @property
     @pulumi.getter(name="allShared")
-    def all_shared(self) -> str:
-        """
-        In a sharded database, indicates whether the user is created with shard DDL enabled (YES) or not (NO).
-        """
+    def all_shared(self) -> Optional[str]:
         return pulumi.get(self, "all_shared")
 
     @property
     @pulumi.getter
-    def authentication(self) -> str:
-        """
-        The authentication mechanism for the user.
-        """
+    def authentication(self) -> Optional[str]:
         return pulumi.get(self, "authentication")
 
     @property
     @pulumi.getter
-    def common(self) -> str:
-        """
-        Indicates whether a given user is common(Y) or local(N).
-        """
+    def common(self) -> Optional[str]:
         return pulumi.get(self, "common")
 
     @property
     @pulumi.getter(name="consumerGroup")
-    def consumer_group(self) -> str:
-        """
-        The initial resource consumer group for the User.
-        """
+    def consumer_group(self) -> Optional[str]:
         return pulumi.get(self, "consumer_group")
 
     @property
     @pulumi.getter(name="defaultCollation")
-    def default_collation(self) -> str:
-        """
-        The default collation for the user schema.
-        """
+    def default_collation(self) -> Optional[str]:
         return pulumi.get(self, "default_collation")
 
     @property
     @pulumi.getter(name="defaultTablespace")
-    def default_tablespace(self) -> str:
-        """
-        The default tablespace for data.
-        """
+    def default_tablespace(self) -> Optional[str]:
         return pulumi.get(self, "default_tablespace")
 
     @property
     @pulumi.getter(name="editionsEnabled")
-    def editions_enabled(self) -> str:
-        """
-        Indicates whether editions have been enabled for the corresponding user (Y) or not (N).
-        """
+    def editions_enabled(self) -> Optional[str]:
         return pulumi.get(self, "editions_enabled")
 
     @property
     @pulumi.getter(name="externalName")
-    def external_name(self) -> str:
-        """
-        The external name of the user.
-        """
+    def external_name(self) -> Optional[str]:
         return pulumi.get(self, "external_name")
 
     @property
     @pulumi.getter(name="externalShared")
-    def external_shared(self) -> str:
-        """
-        In a federated sharded database, indicates whether the user is an external shard user (YES) or not (NO).
-        """
+    def external_shared(self) -> Optional[str]:
         return pulumi.get(self, "external_shared")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -186,26 +159,17 @@ class GetManagedDatabaseUserResult:
 
     @property
     @pulumi.getter
-    def implicit(self) -> str:
-        """
-        Indicates whether the user is a common user created by an implicit application (YES) or not (NO).
-        """
+    def implicit(self) -> Optional[str]:
         return pulumi.get(self, "implicit")
 
     @property
     @pulumi.getter
-    def inherited(self) -> str:
-        """
-        Indicates whether the user definition is inherited from another container (YES) or not (NO).
-        """
+    def inherited(self) -> Optional[str]:
         return pulumi.get(self, "inherited")
 
     @property
     @pulumi.getter(name="localTempTablespace")
-    def local_temp_tablespace(self) -> str:
-        """
-        The default local temporary tablespace for the user.
-        """
+    def local_temp_tablespace(self) -> Optional[str]:
         return pulumi.get(self, "local_temp_tablespace")
 
     @property
@@ -215,98 +179,62 @@ class GetManagedDatabaseUserResult:
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The name of the User.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="oracleMaintained")
-    def oracle_maintained(self) -> str:
-        """
-        Indicates whether the user was created and is maintained by Oracle-supplied scripts (such as catalog.sql or catproc.sql).
-        """
+    def oracle_maintained(self) -> Optional[str]:
         return pulumi.get(self, "oracle_maintained")
 
     @property
     @pulumi.getter(name="passwordVersions")
-    def password_versions(self) -> str:
-        """
-        The list of existing versions of the password hashes (also known as "verifiers") for the account.
-        """
+    def password_versions(self) -> Optional[str]:
         return pulumi.get(self, "password_versions")
 
     @property
     @pulumi.getter
-    def profile(self) -> str:
-        """
-        The profile name of the user.
-        """
+    def profile(self) -> Optional[str]:
         return pulumi.get(self, "profile")
 
     @property
     @pulumi.getter(name="proxyConnect")
-    def proxy_connect(self) -> str:
-        """
-        Indicates whether a user can connect directly (N) or whether the account can only be proxied (Y) by users who have proxy privileges for this account (that is, by users who have been granted the "connect through" privilege for this account).
-        """
+    def proxy_connect(self) -> Optional[str]:
         return pulumi.get(self, "proxy_connect")
 
     @property
     @pulumi.getter
-    def status(self) -> str:
-        """
-        The status of the user account.
-        """
+    def status(self) -> Optional[str]:
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter(name="tempTablespace")
-    def temp_tablespace(self) -> str:
-        """
-        The name of the default tablespace for temporary tables or the name of a tablespace group.
-        """
+    def temp_tablespace(self) -> Optional[str]:
         return pulumi.get(self, "temp_tablespace")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the user was created.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeExpiring")
-    def time_expiring(self) -> str:
-        """
-        The date and time of the expiration of the user account.
-        """
+    def time_expiring(self) -> Optional[str]:
         return pulumi.get(self, "time_expiring")
 
     @property
     @pulumi.getter(name="timeLastLogin")
-    def time_last_login(self) -> str:
-        """
-        The date and time of the last user login. This column is not populated when a user connects to the database with administrative privileges, that is, AS { SYSASM | SYSBACKUP | SYSDBA | SYSDG | SYSOPER | SYSRAC | SYSKM }.
-        """
+    def time_last_login(self) -> Optional[str]:
         return pulumi.get(self, "time_last_login")
 
     @property
     @pulumi.getter(name="timeLocked")
-    def time_locked(self) -> str:
-        """
-        The date the account was locked, if the status of the account is LOCKED.
-        """
+    def time_locked(self) -> Optional[str]:
         return pulumi.get(self, "time_locked")
 
     @property
     @pulumi.getter(name="timePasswordChanged")
-    def time_password_changed(self) -> str:
-        """
-        The date and time when the user password was last set. This column is populated only when the value of the AUTHENTICATION_TYPE column is PASSWORD. Otherwise, this column is null.
-        """
+    def time_password_changed(self) -> Optional[str]:
         return pulumi.get(self, "time_password_changed")
 
     @property
@@ -354,23 +282,7 @@ def get_managed_database_user(managed_database_id: Optional[str] = None,
                               user_name: Optional[str] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagedDatabaseUserResult:
     """
-    This data source provides details about a specific Managed Database User resource in Oracle Cloud Infrastructure Database Management service.
-
-    Gets the details of the user specified by managedDatabaseId and userName.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_database_user = oci.DatabaseManagement.get_managed_database_user(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        user_name=oci_identity_user["test_user"]["name"])
-    ```
-
-
-    :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
-    :param str user_name: The name of the user whose details are to be viewed.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['managedDatabaseId'] = managed_database_id
@@ -413,22 +325,6 @@ def get_managed_database_user_output(managed_database_id: Optional[pulumi.Input[
                                      user_name: Optional[pulumi.Input[str]] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedDatabaseUserResult]:
     """
-    This data source provides details about a specific Managed Database User resource in Oracle Cloud Infrastructure Database Management service.
-
-    Gets the details of the user specified by managedDatabaseId and userName.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_database_user = oci.DatabaseManagement.get_managed_database_user(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        user_name=oci_identity_user["test_user"]["name"])
-    ```
-
-
-    :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
-    :param str user_name: The name of the user whose details are to be viewed.
+    Use this data source to access information about an existing resource.
     """
     ...

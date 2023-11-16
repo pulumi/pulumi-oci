@@ -22,9 +22,6 @@ class GetInstanceAgentPluginsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The plugin name
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -33,9 +30,6 @@ class GetInstanceAgentPluginsFilterResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The plugin name
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -52,102 +46,74 @@ class GetInstanceAgentPluginsFilterResult(dict):
 @pulumi.output_type
 class GetInstanceAgentPluginsInstanceAgentPluginResult(dict):
     def __init__(__self__, *,
-                 message: str,
-                 name: str,
-                 status: str,
-                 time_last_updated_utc: str):
-        """
-        :param str message: The optional message from the agent plugin
-        :param str name: The plugin name
-        :param str status: The plugin status
-        :param str time_last_updated_utc: The last update time of the plugin in UTC
-        """
-        pulumi.set(__self__, "message", message)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "time_last_updated_utc", time_last_updated_utc)
+                 message: Optional[str] = None,
+                 name: Optional[str] = None,
+                 status: Optional[str] = None,
+                 time_last_updated_utc: Optional[str] = None):
+        if message is not None:
+            pulumi.set(__self__, "message", message)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if time_last_updated_utc is not None:
+            pulumi.set(__self__, "time_last_updated_utc", time_last_updated_utc)
 
     @property
     @pulumi.getter
-    def message(self) -> str:
-        """
-        The optional message from the agent plugin
-        """
+    def message(self) -> Optional[str]:
         return pulumi.get(self, "message")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The plugin name
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def status(self) -> str:
-        """
-        The plugin status
-        """
+    def status(self) -> Optional[str]:
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter(name="timeLastUpdatedUtc")
-    def time_last_updated_utc(self) -> str:
-        """
-        The last update time of the plugin in UTC
-        """
+    def time_last_updated_utc(self) -> Optional[str]:
         return pulumi.get(self, "time_last_updated_utc")
 
 
 @pulumi.output_type
 class GetInstanceAvailablePluginAvailablePluginResult(dict):
     def __init__(__self__, *,
-                 is_enabled_by_default: bool,
-                 is_supported: bool,
-                 name: str,
-                 summary: str):
-        """
-        :param bool is_enabled_by_default: Is the plugin enabled or disabled by default
-        :param bool is_supported: Is the plugin supported or not
-        :param str name: The plugin name
-        :param str summary: A brief description of the plugin functionality
-        """
-        pulumi.set(__self__, "is_enabled_by_default", is_enabled_by_default)
-        pulumi.set(__self__, "is_supported", is_supported)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "summary", summary)
+                 is_enabled_by_default: Optional[bool] = None,
+                 is_supported: Optional[bool] = None,
+                 name: Optional[str] = None,
+                 summary: Optional[str] = None):
+        if is_enabled_by_default is not None:
+            pulumi.set(__self__, "is_enabled_by_default", is_enabled_by_default)
+        if is_supported is not None:
+            pulumi.set(__self__, "is_supported", is_supported)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if summary is not None:
+            pulumi.set(__self__, "summary", summary)
 
     @property
     @pulumi.getter(name="isEnabledByDefault")
-    def is_enabled_by_default(self) -> bool:
-        """
-        Is the plugin enabled or disabled by default
-        """
+    def is_enabled_by_default(self) -> Optional[bool]:
         return pulumi.get(self, "is_enabled_by_default")
 
     @property
     @pulumi.getter(name="isSupported")
-    def is_supported(self) -> bool:
-        """
-        Is the plugin supported or not
-        """
+    def is_supported(self) -> Optional[bool]:
         return pulumi.get(self, "is_supported")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The plugin name
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def summary(self) -> str:
-        """
-        A brief description of the plugin functionality
-        """
+    def summary(self) -> Optional[str]:
         return pulumi.get(self, "summary")
 
 
@@ -157,9 +123,6 @@ class GetInstanceAvailablePluginFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The plugin name
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -168,9 +131,6 @@ class GetInstanceAvailablePluginFilterResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The plugin name
-        """
         return pulumi.get(self, "name")
 
     @property

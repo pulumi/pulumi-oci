@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.CloudBridge.outputs.GetApplianceImagesApplianceImageCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetApplianceImagesApplianceImageCollection {
@@ -14,7 +15,7 @@ public final class GetApplianceImagesApplianceImageCollection {
      * @return List of appliance images.
      * 
      */
-    private List<GetApplianceImagesApplianceImageCollectionItem> items;
+    private @Nullable List<GetApplianceImagesApplianceImageCollectionItem> items;
 
     private GetApplianceImagesApplianceImageCollection() {}
     /**
@@ -22,7 +23,7 @@ public final class GetApplianceImagesApplianceImageCollection {
      * 
      */
     public List<GetApplianceImagesApplianceImageCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetApplianceImagesApplianceImageCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetApplianceImagesApplianceImageCollectionItem> items;
+        private @Nullable List<GetApplianceImagesApplianceImageCollectionItem> items;
         public Builder() {}
         public Builder(GetApplianceImagesApplianceImageCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetApplianceImagesApplianceImageCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetApplianceImagesApplianceImageCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetApplianceImagesApplianceImageCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetApplianceImagesApplianceImageCollectionItem... items) {

@@ -24,17 +24,6 @@ class MigrationAssetArgs:
                  replication_schedule_id: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a MigrationAsset resource.
-        :param pulumi.Input[str] availability_domain: Availability domain
-        :param pulumi.Input[str] inventory_asset_id: OCID of an asset for an inventory.
-        :param pulumi.Input[str] migration_id: OCID of the associated migration.
-        :param pulumi.Input[str] replication_compartment_id: Replication compartment identifier
-        :param pulumi.Input[str] snap_shot_bucket_name: Name of snapshot bucket
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. If empty, then source asset name will be used. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[str] replication_schedule_id: (Updatable) Replication schedule identifier
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "inventory_asset_id", inventory_asset_id)
@@ -51,9 +40,6 @@ class MigrationAssetArgs:
     @property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> pulumi.Input[str]:
-        """
-        Availability domain
-        """
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
@@ -63,9 +49,6 @@ class MigrationAssetArgs:
     @property
     @pulumi.getter(name="inventoryAssetId")
     def inventory_asset_id(self) -> pulumi.Input[str]:
-        """
-        OCID of an asset for an inventory.
-        """
         return pulumi.get(self, "inventory_asset_id")
 
     @inventory_asset_id.setter
@@ -75,9 +58,6 @@ class MigrationAssetArgs:
     @property
     @pulumi.getter(name="migrationId")
     def migration_id(self) -> pulumi.Input[str]:
-        """
-        OCID of the associated migration.
-        """
         return pulumi.get(self, "migration_id")
 
     @migration_id.setter
@@ -87,9 +67,6 @@ class MigrationAssetArgs:
     @property
     @pulumi.getter(name="replicationCompartmentId")
     def replication_compartment_id(self) -> pulumi.Input[str]:
-        """
-        Replication compartment identifier
-        """
         return pulumi.get(self, "replication_compartment_id")
 
     @replication_compartment_id.setter
@@ -99,13 +76,6 @@ class MigrationAssetArgs:
     @property
     @pulumi.getter(name="snapShotBucketName")
     def snap_shot_bucket_name(self) -> pulumi.Input[str]:
-        """
-        Name of snapshot bucket
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "snap_shot_bucket_name")
 
     @snap_shot_bucket_name.setter
@@ -115,9 +85,6 @@ class MigrationAssetArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly name. If empty, then source asset name will be used. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -136,9 +103,6 @@ class MigrationAssetArgs:
     @property
     @pulumi.getter(name="replicationScheduleId")
     def replication_schedule_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Replication schedule identifier
-        """
         return pulumi.get(self, "replication_schedule_id")
 
     @replication_schedule_id.setter
@@ -171,29 +135,6 @@ class _MigrationAssetState:
                  type: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering MigrationAsset resources.
-        :param pulumi.Input[str] availability_domain: Availability domain
-        :param pulumi.Input[str] compartment_id: Compartment Identifier
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] depended_on_bies: List of migration assets that depend on the asset.
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. If empty, then source asset name will be used. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[str] inventory_asset_id: OCID of an asset for an inventory.
-        :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[str] migration_id: OCID of the associated migration.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] notifications: List of notifications
-        :param pulumi.Input[str] parent_snapshot: The parent snapshot of the migration asset to be used by the replication task.
-        :param pulumi.Input[str] replication_compartment_id: Replication compartment identifier
-        :param pulumi.Input[str] replication_schedule_id: (Updatable) Replication schedule identifier
-        :param pulumi.Input[str] snap_shot_bucket_name: Name of snapshot bucket
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Mapping[str, Any]] snapshots: Key-value pair representing disks ID mapped to the OCIDs of replicated or hydration server volume snapshots. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] source_asset_id: OCID that is referenced to an asset for an inventory.
-        :param pulumi.Input[str] state: The current state of the migration asset.
-        :param pulumi.Input[str] tenancy_id: Tenancy identifier
-        :param pulumi.Input[str] time_created: The time when the migration asset was created. An RFC3339 formatted datetime string.
-        :param pulumi.Input[str] time_updated: The time when the migration asset was updated. An RFC3339 formatted datetime string.
-        :param pulumi.Input[str] type: The type of asset referenced for inventory.
         """
         if availability_domain is not None:
             pulumi.set(__self__, "availability_domain", availability_domain)
@@ -239,9 +180,6 @@ class _MigrationAssetState:
     @property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> Optional[pulumi.Input[str]]:
-        """
-        Availability domain
-        """
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
@@ -251,9 +189,6 @@ class _MigrationAssetState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        Compartment Identifier
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -263,9 +198,6 @@ class _MigrationAssetState:
     @property
     @pulumi.getter(name="dependedOnBies")
     def depended_on_bies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        List of migration assets that depend on the asset.
-        """
         return pulumi.get(self, "depended_on_bies")
 
     @depended_on_bies.setter
@@ -275,9 +207,6 @@ class _MigrationAssetState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly name. If empty, then source asset name will be used. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -287,9 +216,6 @@ class _MigrationAssetState:
     @property
     @pulumi.getter(name="inventoryAssetId")
     def inventory_asset_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        OCID of an asset for an inventory.
-        """
         return pulumi.get(self, "inventory_asset_id")
 
     @inventory_asset_id.setter
@@ -299,9 +225,6 @@ class _MigrationAssetState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -320,9 +243,6 @@ class _MigrationAssetState:
     @property
     @pulumi.getter(name="migrationId")
     def migration_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        OCID of the associated migration.
-        """
         return pulumi.get(self, "migration_id")
 
     @migration_id.setter
@@ -332,9 +252,6 @@ class _MigrationAssetState:
     @property
     @pulumi.getter
     def notifications(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        List of notifications
-        """
         return pulumi.get(self, "notifications")
 
     @notifications.setter
@@ -344,9 +261,6 @@ class _MigrationAssetState:
     @property
     @pulumi.getter(name="parentSnapshot")
     def parent_snapshot(self) -> Optional[pulumi.Input[str]]:
-        """
-        The parent snapshot of the migration asset to be used by the replication task.
-        """
         return pulumi.get(self, "parent_snapshot")
 
     @parent_snapshot.setter
@@ -356,9 +270,6 @@ class _MigrationAssetState:
     @property
     @pulumi.getter(name="replicationCompartmentId")
     def replication_compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        Replication compartment identifier
-        """
         return pulumi.get(self, "replication_compartment_id")
 
     @replication_compartment_id.setter
@@ -368,9 +279,6 @@ class _MigrationAssetState:
     @property
     @pulumi.getter(name="replicationScheduleId")
     def replication_schedule_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Replication schedule identifier
-        """
         return pulumi.get(self, "replication_schedule_id")
 
     @replication_schedule_id.setter
@@ -380,13 +288,6 @@ class _MigrationAssetState:
     @property
     @pulumi.getter(name="snapShotBucketName")
     def snap_shot_bucket_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Name of snapshot bucket
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "snap_shot_bucket_name")
 
     @snap_shot_bucket_name.setter
@@ -396,9 +297,6 @@ class _MigrationAssetState:
     @property
     @pulumi.getter
     def snapshots(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Key-value pair representing disks ID mapped to the OCIDs of replicated or hydration server volume snapshots. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "snapshots")
 
     @snapshots.setter
@@ -408,9 +306,6 @@ class _MigrationAssetState:
     @property
     @pulumi.getter(name="sourceAssetId")
     def source_asset_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        OCID that is referenced to an asset for an inventory.
-        """
         return pulumi.get(self, "source_asset_id")
 
     @source_asset_id.setter
@@ -420,9 +315,6 @@ class _MigrationAssetState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the migration asset.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -432,9 +324,6 @@ class _MigrationAssetState:
     @property
     @pulumi.getter(name="tenancyId")
     def tenancy_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        Tenancy identifier
-        """
         return pulumi.get(self, "tenancy_id")
 
     @tenancy_id.setter
@@ -444,9 +333,6 @@ class _MigrationAssetState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time when the migration asset was created. An RFC3339 formatted datetime string.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -456,9 +342,6 @@ class _MigrationAssetState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time when the migration asset was updated. An RFC3339 formatted datetime string.
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -468,9 +351,6 @@ class _MigrationAssetState:
     @property
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The type of asset referenced for inventory.
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -493,48 +373,9 @@ class MigrationAsset(pulumi.CustomResource):
                  snap_shot_bucket_name: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Migration Asset resource in Oracle Cloud Infrastructure Cloud Migrations service.
-
-        Creates a migration asset.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_migration_asset = oci.cloud_migrations.MigrationAsset("testMigrationAsset",
-            availability_domain=var["migration_asset_availability_domain"],
-            inventory_asset_id=oci_cloud_migrations_inventory_asset["test_inventory_asset"]["id"],
-            migration_id=oci_cloud_migrations_migration["test_migration"]["id"],
-            replication_compartment_id=oci_identity_compartment["test_compartment"]["id"],
-            snap_shot_bucket_name=oci_objectstorage_bucket["test_bucket"]["name"],
-            display_name=var["migration_asset_display_name"],
-            replication_schedule_id=oci_cloud_migrations_replication_schedule["test_replication_schedule"]["id"],
-            opts=pulumi.ResourceOptions(depends_on=var["migration_asset_depends_on"]))
-        ```
-
-        ## Import
-
-        MigrationAssets can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:CloudMigrations/migrationAsset:MigrationAsset test_migration_asset "id"
-        ```
-
+        Create a MigrationAsset resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] availability_domain: Availability domain
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. If empty, then source asset name will be used. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[str] inventory_asset_id: OCID of an asset for an inventory.
-        :param pulumi.Input[str] migration_id: OCID of the associated migration.
-        :param pulumi.Input[str] replication_compartment_id: Replication compartment identifier
-        :param pulumi.Input[str] replication_schedule_id: (Updatable) Replication schedule identifier
-        :param pulumi.Input[str] snap_shot_bucket_name: Name of snapshot bucket
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -543,35 +384,7 @@ class MigrationAsset(pulumi.CustomResource):
                  args: MigrationAssetArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Migration Asset resource in Oracle Cloud Infrastructure Cloud Migrations service.
-
-        Creates a migration asset.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_migration_asset = oci.cloud_migrations.MigrationAsset("testMigrationAsset",
-            availability_domain=var["migration_asset_availability_domain"],
-            inventory_asset_id=oci_cloud_migrations_inventory_asset["test_inventory_asset"]["id"],
-            migration_id=oci_cloud_migrations_migration["test_migration"]["id"],
-            replication_compartment_id=oci_identity_compartment["test_compartment"]["id"],
-            snap_shot_bucket_name=oci_objectstorage_bucket["test_bucket"]["name"],
-            display_name=var["migration_asset_display_name"],
-            replication_schedule_id=oci_cloud_migrations_replication_schedule["test_replication_schedule"]["id"],
-            opts=pulumi.ResourceOptions(depends_on=var["migration_asset_depends_on"]))
-        ```
-
-        ## Import
-
-        MigrationAssets can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:CloudMigrations/migrationAsset:MigrationAsset test_migration_asset "id"
-        ```
-
+        Create a MigrationAsset resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param MigrationAssetArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -671,29 +484,6 @@ class MigrationAsset(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] availability_domain: Availability domain
-        :param pulumi.Input[str] compartment_id: Compartment Identifier
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] depended_on_bies: List of migration assets that depend on the asset.
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. If empty, then source asset name will be used. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[str] inventory_asset_id: OCID of an asset for an inventory.
-        :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[str] migration_id: OCID of the associated migration.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] notifications: List of notifications
-        :param pulumi.Input[str] parent_snapshot: The parent snapshot of the migration asset to be used by the replication task.
-        :param pulumi.Input[str] replication_compartment_id: Replication compartment identifier
-        :param pulumi.Input[str] replication_schedule_id: (Updatable) Replication schedule identifier
-        :param pulumi.Input[str] snap_shot_bucket_name: Name of snapshot bucket
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Mapping[str, Any]] snapshots: Key-value pair representing disks ID mapped to the OCIDs of replicated or hydration server volume snapshots. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] source_asset_id: OCID that is referenced to an asset for an inventory.
-        :param pulumi.Input[str] state: The current state of the migration asset.
-        :param pulumi.Input[str] tenancy_id: Tenancy identifier
-        :param pulumi.Input[str] time_created: The time when the migration asset was created. An RFC3339 formatted datetime string.
-        :param pulumi.Input[str] time_updated: The time when the migration asset was updated. An RFC3339 formatted datetime string.
-        :param pulumi.Input[str] type: The type of asset referenced for inventory.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -724,161 +514,100 @@ class MigrationAsset(pulumi.CustomResource):
     @property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> pulumi.Output[str]:
-        """
-        Availability domain
-        """
         return pulumi.get(self, "availability_domain")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> pulumi.Output[str]:
-        """
-        Compartment Identifier
-        """
+    def compartment_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="dependedOnBies")
-    def depended_on_bies(self) -> pulumi.Output[Sequence[str]]:
-        """
-        List of migration assets that depend on the asset.
-        """
+    def depended_on_bies(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "depended_on_bies")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) A user-friendly name. If empty, then source asset name will be used. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="inventoryAssetId")
     def inventory_asset_id(self) -> pulumi.Output[str]:
-        """
-        OCID of an asset for an inventory.
-        """
         return pulumi.get(self, "inventory_asset_id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="migrationAssetDependsOns")
-    def migration_asset_depends_ons(self) -> pulumi.Output[Sequence[str]]:
+    def migration_asset_depends_ons(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "migration_asset_depends_ons")
 
     @property
     @pulumi.getter(name="migrationId")
     def migration_id(self) -> pulumi.Output[str]:
-        """
-        OCID of the associated migration.
-        """
         return pulumi.get(self, "migration_id")
 
     @property
     @pulumi.getter
-    def notifications(self) -> pulumi.Output[Sequence[str]]:
-        """
-        List of notifications
-        """
+    def notifications(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "notifications")
 
     @property
     @pulumi.getter(name="parentSnapshot")
-    def parent_snapshot(self) -> pulumi.Output[str]:
-        """
-        The parent snapshot of the migration asset to be used by the replication task.
-        """
+    def parent_snapshot(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "parent_snapshot")
 
     @property
     @pulumi.getter(name="replicationCompartmentId")
     def replication_compartment_id(self) -> pulumi.Output[str]:
-        """
-        Replication compartment identifier
-        """
         return pulumi.get(self, "replication_compartment_id")
 
     @property
     @pulumi.getter(name="replicationScheduleId")
-    def replication_schedule_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Replication schedule identifier
-        """
+    def replication_schedule_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "replication_schedule_id")
 
     @property
     @pulumi.getter(name="snapShotBucketName")
     def snap_shot_bucket_name(self) -> pulumi.Output[str]:
-        """
-        Name of snapshot bucket
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "snap_shot_bucket_name")
 
     @property
     @pulumi.getter
-    def snapshots(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        Key-value pair representing disks ID mapped to the OCIDs of replicated or hydration server volume snapshots. Example: `{"bar-key": "value"}`
-        """
+    def snapshots(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "snapshots")
 
     @property
     @pulumi.getter(name="sourceAssetId")
-    def source_asset_id(self) -> pulumi.Output[str]:
-        """
-        OCID that is referenced to an asset for an inventory.
-        """
+    def source_asset_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "source_asset_id")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the migration asset.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="tenancyId")
-    def tenancy_id(self) -> pulumi.Output[str]:
-        """
-        Tenancy identifier
-        """
+    def tenancy_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "tenancy_id")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The time when the migration asset was created. An RFC3339 formatted datetime string.
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The time when the migration asset was updated. An RFC3339 formatted datetime string.
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter
-    def type(self) -> pulumi.Output[str]:
-        """
-        The type of asset referenced for inventory.
-        """
+    def type(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "type")
 

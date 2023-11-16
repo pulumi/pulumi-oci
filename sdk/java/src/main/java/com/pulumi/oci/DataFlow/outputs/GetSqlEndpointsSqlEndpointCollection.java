@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DataFlow.outputs.GetSqlEndpointsSqlEndpointCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSqlEndpointsSqlEndpointCollection {
-    private List<GetSqlEndpointsSqlEndpointCollectionItem> items;
+    private @Nullable List<GetSqlEndpointsSqlEndpointCollectionItem> items;
 
     private GetSqlEndpointsSqlEndpointCollection() {}
     public List<GetSqlEndpointsSqlEndpointCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetSqlEndpointsSqlEndpointCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetSqlEndpointsSqlEndpointCollectionItem> items;
+        private @Nullable List<GetSqlEndpointsSqlEndpointCollectionItem> items;
         public Builder() {}
         public Builder(GetSqlEndpointsSqlEndpointCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetSqlEndpointsSqlEndpointCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetSqlEndpointsSqlEndpointCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetSqlEndpointsSqlEndpointCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetSqlEndpointsSqlEndpointCollectionItem... items) {

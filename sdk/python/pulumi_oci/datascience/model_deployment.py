@@ -27,19 +27,6 @@ class ModelDeploymentArgs:
                  state: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a ModelDeployment resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the model deployment.
-        :param pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsArgs'] model_deployment_configuration_details: (Updatable) The model deployment configuration details.
-        :param pulumi.Input[str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model deployment.
-        :param pulumi.Input['ModelDeploymentCategoryLogDetailsArgs'] category_log_details: (Updatable) The log details for each category.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) A short description of the model deployment.
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the resource. Does not have to be unique, and can be modified. Avoid entering confidential information. Example: `My ModelDeployment`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] state: (Updatable) The target state for the Model Deployment. Could be set to `ACTIVE` or `INACTIVE`. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "model_deployment_configuration_details", model_deployment_configuration_details)
@@ -60,9 +47,6 @@ class ModelDeploymentArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the model deployment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -72,9 +56,6 @@ class ModelDeploymentArgs:
     @property
     @pulumi.getter(name="modelDeploymentConfigurationDetails")
     def model_deployment_configuration_details(self) -> pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsArgs']:
-        """
-        (Updatable) The model deployment configuration details.
-        """
         return pulumi.get(self, "model_deployment_configuration_details")
 
     @model_deployment_configuration_details.setter
@@ -84,9 +65,6 @@ class ModelDeploymentArgs:
     @property
     @pulumi.getter(name="projectId")
     def project_id(self) -> pulumi.Input[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model deployment.
-        """
         return pulumi.get(self, "project_id")
 
     @project_id.setter
@@ -96,9 +74,6 @@ class ModelDeploymentArgs:
     @property
     @pulumi.getter(name="categoryLogDetails")
     def category_log_details(self) -> Optional[pulumi.Input['ModelDeploymentCategoryLogDetailsArgs']]:
-        """
-        (Updatable) The log details for each category.
-        """
         return pulumi.get(self, "category_log_details")
 
     @category_log_details.setter
@@ -108,9 +83,6 @@ class ModelDeploymentArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -120,9 +92,6 @@ class ModelDeploymentArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A short description of the model deployment.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -132,9 +101,6 @@ class ModelDeploymentArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly display name for the resource. Does not have to be unique, and can be modified. Avoid entering confidential information. Example: `My ModelDeployment`
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -144,9 +110,6 @@ class ModelDeploymentArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -156,13 +119,6 @@ class ModelDeploymentArgs:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The target state for the Model Deployment. Could be set to `ACTIVE` or `INACTIVE`. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -188,23 +144,6 @@ class _ModelDeploymentState:
                  time_created: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering ModelDeployment resources.
-        :param pulumi.Input['ModelDeploymentCategoryLogDetailsArgs'] category_log_details: (Updatable) The log details for each category.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the model deployment.
-        :param pulumi.Input[str] created_by: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the model deployment.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) A short description of the model deployment.
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the resource. Does not have to be unique, and can be modified. Avoid entering confidential information. Example: `My ModelDeployment`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] lifecycle_details: Details about the state of the model deployment.
-        :param pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsArgs'] model_deployment_configuration_details: (Updatable) The model deployment configuration details.
-        :param pulumi.Input[str] model_deployment_url: The URL to interact with the model deployment.
-        :param pulumi.Input[str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model deployment.
-        :param pulumi.Input[str] state: (Updatable) The target state for the Model Deployment. Could be set to `ACTIVE` or `INACTIVE`. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] time_created: The date and time the resource was created, in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
         """
         if category_log_details is not None:
             pulumi.set(__self__, "category_log_details", category_log_details)
@@ -236,9 +175,6 @@ class _ModelDeploymentState:
     @property
     @pulumi.getter(name="categoryLogDetails")
     def category_log_details(self) -> Optional[pulumi.Input['ModelDeploymentCategoryLogDetailsArgs']]:
-        """
-        (Updatable) The log details for each category.
-        """
         return pulumi.get(self, "category_log_details")
 
     @category_log_details.setter
@@ -248,9 +184,6 @@ class _ModelDeploymentState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the model deployment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -260,9 +193,6 @@ class _ModelDeploymentState:
     @property
     @pulumi.getter(name="createdBy")
     def created_by(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the model deployment.
-        """
         return pulumi.get(self, "created_by")
 
     @created_by.setter
@@ -272,9 +202,6 @@ class _ModelDeploymentState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -284,9 +211,6 @@ class _ModelDeploymentState:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A short description of the model deployment.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -296,9 +220,6 @@ class _ModelDeploymentState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly display name for the resource. Does not have to be unique, and can be modified. Avoid entering confidential information. Example: `My ModelDeployment`
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -308,9 +229,6 @@ class _ModelDeploymentState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -320,9 +238,6 @@ class _ModelDeploymentState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        Details about the state of the model deployment.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -332,9 +247,6 @@ class _ModelDeploymentState:
     @property
     @pulumi.getter(name="modelDeploymentConfigurationDetails")
     def model_deployment_configuration_details(self) -> Optional[pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsArgs']]:
-        """
-        (Updatable) The model deployment configuration details.
-        """
         return pulumi.get(self, "model_deployment_configuration_details")
 
     @model_deployment_configuration_details.setter
@@ -344,9 +256,6 @@ class _ModelDeploymentState:
     @property
     @pulumi.getter(name="modelDeploymentUrl")
     def model_deployment_url(self) -> Optional[pulumi.Input[str]]:
-        """
-        The URL to interact with the model deployment.
-        """
         return pulumi.get(self, "model_deployment_url")
 
     @model_deployment_url.setter
@@ -356,9 +265,6 @@ class _ModelDeploymentState:
     @property
     @pulumi.getter(name="projectId")
     def project_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model deployment.
-        """
         return pulumi.get(self, "project_id")
 
     @project_id.setter
@@ -368,13 +274,6 @@ class _ModelDeploymentState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The target state for the Model Deployment. Could be set to `ACTIVE` or `INACTIVE`. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -384,9 +283,6 @@ class _ModelDeploymentState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the resource was created, in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -410,90 +306,9 @@ class ModelDeployment(pulumi.CustomResource):
                  state: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Model Deployment resource in Oracle Cloud Infrastructure Datascience service.
-
-        Creates a new model deployment.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_model_deployment = oci.data_science.ModelDeployment("testModelDeployment",
-            compartment_id=var["compartment_id"],
-            model_deployment_configuration_details=oci.data_science.ModelDeploymentModelDeploymentConfigurationDetailsArgs(
-                deployment_type=var["model_deployment_model_deployment_configuration_details_deployment_type"],
-                model_configuration_details=oci.data_science.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsArgs(
-                    instance_configuration=oci.data_science.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationArgs(
-                        instance_shape_name=oci_core_shape["test_shape"]["name"],
-                        model_deployment_instance_shape_config_details=oci.data_science.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsArgs(
-                            memory_in_gbs=var["model_deployment_model_deployment_configuration_details_model_configuration_details_instance_configuration_model_deployment_instance_shape_config_details_memory_in_gbs"],
-                            ocpus=var["model_deployment_model_deployment_configuration_details_model_configuration_details_instance_configuration_model_deployment_instance_shape_config_details_ocpus"],
-                        ),
-                    ),
-                    model_id=oci_datascience_model["test_model"]["id"],
-                    bandwidth_mbps=var["model_deployment_model_deployment_configuration_details_model_configuration_details_bandwidth_mbps"],
-                    scaling_policy=oci.data_science.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyArgs(
-                        instance_count=var["model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_instance_count"],
-                        policy_type=var["model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_policy_type"],
-                    ),
-                ),
-                environment_configuration_details=oci.data_science.ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsArgs(
-                    environment_configuration_type=var["model_deployment_model_deployment_configuration_details_environment_configuration_details_environment_configuration_type"],
-                    cmds=var["model_deployment_model_deployment_configuration_details_environment_configuration_details_cmd"],
-                    entrypoints=var["model_deployment_model_deployment_configuration_details_environment_configuration_details_entrypoint"],
-                    environment_variables=var["model_deployment_model_deployment_configuration_details_environment_configuration_details_environment_variables"],
-                    health_check_port=var["model_deployment_model_deployment_configuration_details_environment_configuration_details_health_check_port"],
-                    image=var["model_deployment_model_deployment_configuration_details_environment_configuration_details_image"],
-                    image_digest=var["model_deployment_model_deployment_configuration_details_environment_configuration_details_image_digest"],
-                    server_port=var["model_deployment_model_deployment_configuration_details_environment_configuration_details_server_port"],
-                ),
-            ),
-            project_id=oci_datascience_project["test_project"]["id"],
-            category_log_details=oci.data_science.ModelDeploymentCategoryLogDetailsArgs(
-                access=oci.data_science.ModelDeploymentCategoryLogDetailsAccessArgs(
-                    log_group_id=oci_logging_log_group["test_log_group"]["id"],
-                    log_id=oci_logging_log["test_log"]["id"],
-                ),
-                predict=oci.data_science.ModelDeploymentCategoryLogDetailsPredictArgs(
-                    log_group_id=oci_logging_log_group["test_log_group"]["id"],
-                    log_id=oci_logging_log["test_log"]["id"],
-                ),
-            ),
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            description=var["model_deployment_description"],
-            display_name=var["model_deployment_display_name"],
-            freeform_tags={
-                "Department": "Finance",
-            })
-        ```
-
-        ## Import
-
-        ModelDeployments can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:DataScience/modelDeployment:ModelDeployment test_model_deployment "id"
-        ```
-
+        Create a ModelDeployment resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['ModelDeploymentCategoryLogDetailsArgs']] category_log_details: (Updatable) The log details for each category.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the model deployment.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) A short description of the model deployment.
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the resource. Does not have to be unique, and can be modified. Avoid entering confidential information. Example: `My ModelDeployment`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[pulumi.InputType['ModelDeploymentModelDeploymentConfigurationDetailsArgs']] model_deployment_configuration_details: (Updatable) The model deployment configuration details.
-        :param pulumi.Input[str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model deployment.
-        :param pulumi.Input[str] state: (Updatable) The target state for the Model Deployment. Could be set to `ACTIVE` or `INACTIVE`. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -502,75 +317,7 @@ class ModelDeployment(pulumi.CustomResource):
                  args: ModelDeploymentArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Model Deployment resource in Oracle Cloud Infrastructure Datascience service.
-
-        Creates a new model deployment.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_model_deployment = oci.data_science.ModelDeployment("testModelDeployment",
-            compartment_id=var["compartment_id"],
-            model_deployment_configuration_details=oci.data_science.ModelDeploymentModelDeploymentConfigurationDetailsArgs(
-                deployment_type=var["model_deployment_model_deployment_configuration_details_deployment_type"],
-                model_configuration_details=oci.data_science.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsArgs(
-                    instance_configuration=oci.data_science.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationArgs(
-                        instance_shape_name=oci_core_shape["test_shape"]["name"],
-                        model_deployment_instance_shape_config_details=oci.data_science.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsArgs(
-                            memory_in_gbs=var["model_deployment_model_deployment_configuration_details_model_configuration_details_instance_configuration_model_deployment_instance_shape_config_details_memory_in_gbs"],
-                            ocpus=var["model_deployment_model_deployment_configuration_details_model_configuration_details_instance_configuration_model_deployment_instance_shape_config_details_ocpus"],
-                        ),
-                    ),
-                    model_id=oci_datascience_model["test_model"]["id"],
-                    bandwidth_mbps=var["model_deployment_model_deployment_configuration_details_model_configuration_details_bandwidth_mbps"],
-                    scaling_policy=oci.data_science.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyArgs(
-                        instance_count=var["model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_instance_count"],
-                        policy_type=var["model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_policy_type"],
-                    ),
-                ),
-                environment_configuration_details=oci.data_science.ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsArgs(
-                    environment_configuration_type=var["model_deployment_model_deployment_configuration_details_environment_configuration_details_environment_configuration_type"],
-                    cmds=var["model_deployment_model_deployment_configuration_details_environment_configuration_details_cmd"],
-                    entrypoints=var["model_deployment_model_deployment_configuration_details_environment_configuration_details_entrypoint"],
-                    environment_variables=var["model_deployment_model_deployment_configuration_details_environment_configuration_details_environment_variables"],
-                    health_check_port=var["model_deployment_model_deployment_configuration_details_environment_configuration_details_health_check_port"],
-                    image=var["model_deployment_model_deployment_configuration_details_environment_configuration_details_image"],
-                    image_digest=var["model_deployment_model_deployment_configuration_details_environment_configuration_details_image_digest"],
-                    server_port=var["model_deployment_model_deployment_configuration_details_environment_configuration_details_server_port"],
-                ),
-            ),
-            project_id=oci_datascience_project["test_project"]["id"],
-            category_log_details=oci.data_science.ModelDeploymentCategoryLogDetailsArgs(
-                access=oci.data_science.ModelDeploymentCategoryLogDetailsAccessArgs(
-                    log_group_id=oci_logging_log_group["test_log_group"]["id"],
-                    log_id=oci_logging_log["test_log"]["id"],
-                ),
-                predict=oci.data_science.ModelDeploymentCategoryLogDetailsPredictArgs(
-                    log_group_id=oci_logging_log_group["test_log_group"]["id"],
-                    log_id=oci_logging_log["test_log"]["id"],
-                ),
-            ),
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            description=var["model_deployment_description"],
-            display_name=var["model_deployment_display_name"],
-            freeform_tags={
-                "Department": "Finance",
-            })
-        ```
-
-        ## Import
-
-        ModelDeployments can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:DataScience/modelDeployment:ModelDeployment test_model_deployment "id"
-        ```
-
+        Create a ModelDeployment resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param ModelDeploymentArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -653,23 +400,6 @@ class ModelDeployment(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['ModelDeploymentCategoryLogDetailsArgs']] category_log_details: (Updatable) The log details for each category.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the model deployment.
-        :param pulumi.Input[str] created_by: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the model deployment.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) A short description of the model deployment.
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the resource. Does not have to be unique, and can be modified. Avoid entering confidential information. Example: `My ModelDeployment`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] lifecycle_details: Details about the state of the model deployment.
-        :param pulumi.Input[pulumi.InputType['ModelDeploymentModelDeploymentConfigurationDetailsArgs']] model_deployment_configuration_details: (Updatable) The model deployment configuration details.
-        :param pulumi.Input[str] model_deployment_url: The URL to interact with the model deployment.
-        :param pulumi.Input[str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model deployment.
-        :param pulumi.Input[str] state: (Updatable) The target state for the Model Deployment. Could be set to `ACTIVE` or `INACTIVE`. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] time_created: The date and time the resource was created, in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -692,109 +422,66 @@ class ModelDeployment(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="categoryLogDetails")
-    def category_log_details(self) -> pulumi.Output['outputs.ModelDeploymentCategoryLogDetails']:
-        """
-        (Updatable) The log details for each category.
-        """
+    def category_log_details(self) -> pulumi.Output[Optional['outputs.ModelDeploymentCategoryLogDetails']]:
         return pulumi.get(self, "category_log_details")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the model deployment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="createdBy")
-    def created_by(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the model deployment.
-        """
+    def created_by(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "created_by")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> pulumi.Output[str]:
-        """
-        (Updatable) A short description of the model deployment.
-        """
+    def description(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) A user-friendly display name for the resource. Does not have to be unique, and can be modified. Avoid entering confidential information. Example: `My ModelDeployment`
-        """
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        Details about the state of the model deployment.
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="modelDeploymentConfigurationDetails")
     def model_deployment_configuration_details(self) -> pulumi.Output['outputs.ModelDeploymentModelDeploymentConfigurationDetails']:
-        """
-        (Updatable) The model deployment configuration details.
-        """
         return pulumi.get(self, "model_deployment_configuration_details")
 
     @property
     @pulumi.getter(name="modelDeploymentUrl")
-    def model_deployment_url(self) -> pulumi.Output[str]:
-        """
-        The URL to interact with the model deployment.
-        """
+    def model_deployment_url(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "model_deployment_url")
 
     @property
     @pulumi.getter(name="projectId")
     def project_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model deployment.
-        """
         return pulumi.get(self, "project_id")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The target state for the Model Deployment. Could be set to `ACTIVE` or `INACTIVE`. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The date and time the resource was created, in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 

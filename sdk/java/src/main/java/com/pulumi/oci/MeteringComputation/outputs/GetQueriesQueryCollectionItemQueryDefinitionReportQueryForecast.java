@@ -6,6 +6,8 @@ package com.pulumi.oci.MeteringComputation.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecast {
@@ -13,39 +15,39 @@ public final class GetQueriesQueryCollectionItemQueryDefinitionReportQueryForeca
      * @return BASIC uses the exponential smoothing (ETS) model to project future usage/costs based on history data. The basis for projections is a periodic set of equivalent historical days for which the projection is being made.
      * 
      */
-    private String forecastType;
+    private @Nullable String forecastType;
     /**
      * @return The forecast end time.
      * 
      */
-    private String timeForecastEnded;
+    private @Nullable String timeForecastEnded;
     /**
      * @return The forecast start time. Defaults to UTC-1 if not specified.
      * 
      */
-    private String timeForecastStarted;
+    private @Nullable String timeForecastStarted;
 
     private GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecast() {}
     /**
      * @return BASIC uses the exponential smoothing (ETS) model to project future usage/costs based on history data. The basis for projections is a periodic set of equivalent historical days for which the projection is being made.
      * 
      */
-    public String forecastType() {
-        return this.forecastType;
+    public Optional<String> forecastType() {
+        return Optional.ofNullable(this.forecastType);
     }
     /**
      * @return The forecast end time.
      * 
      */
-    public String timeForecastEnded() {
-        return this.timeForecastEnded;
+    public Optional<String> timeForecastEnded() {
+        return Optional.ofNullable(this.timeForecastEnded);
     }
     /**
      * @return The forecast start time. Defaults to UTC-1 if not specified.
      * 
      */
-    public String timeForecastStarted() {
-        return this.timeForecastStarted;
+    public Optional<String> timeForecastStarted() {
+        return Optional.ofNullable(this.timeForecastStarted);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetQueriesQueryCollectionItemQueryDefinitionReportQueryForeca
     }
     @CustomType.Builder
     public static final class Builder {
-        private String forecastType;
-        private String timeForecastEnded;
-        private String timeForecastStarted;
+        private @Nullable String forecastType;
+        private @Nullable String timeForecastEnded;
+        private @Nullable String timeForecastStarted;
         public Builder() {}
         public Builder(GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecast defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetQueriesQueryCollectionItemQueryDefinitionReportQueryForeca
         }
 
         @CustomType.Setter
-        public Builder forecastType(String forecastType) {
-            this.forecastType = Objects.requireNonNull(forecastType);
+        public Builder forecastType(@Nullable String forecastType) {
+            this.forecastType = forecastType;
             return this;
         }
         @CustomType.Setter
-        public Builder timeForecastEnded(String timeForecastEnded) {
-            this.timeForecastEnded = Objects.requireNonNull(timeForecastEnded);
+        public Builder timeForecastEnded(@Nullable String timeForecastEnded) {
+            this.timeForecastEnded = timeForecastEnded;
             return this;
         }
         @CustomType.Setter
-        public Builder timeForecastStarted(String timeForecastStarted) {
-            this.timeForecastStarted = Objects.requireNonNull(timeForecastStarted);
+        public Builder timeForecastStarted(@Nullable String timeForecastStarted) {
+            this.timeForecastStarted = timeForecastStarted;
             return this;
         }
         public GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecast build() {

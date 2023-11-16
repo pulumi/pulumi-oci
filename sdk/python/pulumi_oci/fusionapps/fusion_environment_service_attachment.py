@@ -20,14 +20,6 @@ class FusionEnvironmentServiceAttachmentArgs:
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None):
         """
         The set of arguments for constructing a FusionEnvironmentServiceAttachment resource.
-        :param pulumi.Input[str] fusion_environment_id: unique FusionEnvironment identifier
-        :param pulumi.Input[str] service_instance_id: The service instance OCID of the instance being attached
-        :param pulumi.Input[str] service_instance_type: Type of the ServiceInstance being attached.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         pulumi.set(__self__, "fusion_environment_id", fusion_environment_id)
         pulumi.set(__self__, "service_instance_id", service_instance_id)
@@ -38,9 +30,6 @@ class FusionEnvironmentServiceAttachmentArgs:
     @property
     @pulumi.getter(name="fusionEnvironmentId")
     def fusion_environment_id(self) -> pulumi.Input[str]:
-        """
-        unique FusionEnvironment identifier
-        """
         return pulumi.get(self, "fusion_environment_id")
 
     @fusion_environment_id.setter
@@ -50,9 +39,6 @@ class FusionEnvironmentServiceAttachmentArgs:
     @property
     @pulumi.getter(name="serviceInstanceId")
     def service_instance_id(self) -> pulumi.Input[str]:
-        """
-        The service instance OCID of the instance being attached
-        """
         return pulumi.get(self, "service_instance_id")
 
     @service_instance_id.setter
@@ -62,13 +48,6 @@ class FusionEnvironmentServiceAttachmentArgs:
     @property
     @pulumi.getter(name="serviceInstanceType")
     def service_instance_type(self) -> pulumi.Input[str]:
-        """
-        Type of the ServiceInstance being attached.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "service_instance_type")
 
     @service_instance_type.setter
@@ -78,9 +57,6 @@ class FusionEnvironmentServiceAttachmentArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -105,22 +81,6 @@ class _FusionEnvironmentServiceAttachmentState:
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering FusionEnvironmentServiceAttachment resources.
-        :param pulumi.Input[str] compartment_id: Compartment Identifier
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: Service Attachment Display name, can be renamed
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] fusion_environment_id: unique FusionEnvironment identifier
-        :param pulumi.Input[bool] is_sku_based: Whether this service is provisioned due to the customer being subscribed to a specific SKU
-        :param pulumi.Input[str] service_instance_id: The service instance OCID of the instance being attached
-        :param pulumi.Input[str] service_instance_type: Type of the ServiceInstance being attached.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] service_url: Public URL
-        :param pulumi.Input[str] state: The current state of the ServiceInstance.
-        :param pulumi.Input[str] time_created: The time the the ServiceInstance was created. An RFC3339 formatted datetime string
-        :param pulumi.Input[str] time_updated: The time the ServiceInstance was updated. An RFC3339 formatted datetime string
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -150,9 +110,6 @@ class _FusionEnvironmentServiceAttachmentState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        Compartment Identifier
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -162,9 +119,6 @@ class _FusionEnvironmentServiceAttachmentState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -174,9 +128,6 @@ class _FusionEnvironmentServiceAttachmentState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Service Attachment Display name, can be renamed
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -186,9 +137,6 @@ class _FusionEnvironmentServiceAttachmentState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -198,9 +146,6 @@ class _FusionEnvironmentServiceAttachmentState:
     @property
     @pulumi.getter(name="fusionEnvironmentId")
     def fusion_environment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        unique FusionEnvironment identifier
-        """
         return pulumi.get(self, "fusion_environment_id")
 
     @fusion_environment_id.setter
@@ -210,9 +155,6 @@ class _FusionEnvironmentServiceAttachmentState:
     @property
     @pulumi.getter(name="isSkuBased")
     def is_sku_based(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether this service is provisioned due to the customer being subscribed to a specific SKU
-        """
         return pulumi.get(self, "is_sku_based")
 
     @is_sku_based.setter
@@ -222,9 +164,6 @@ class _FusionEnvironmentServiceAttachmentState:
     @property
     @pulumi.getter(name="serviceInstanceId")
     def service_instance_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The service instance OCID of the instance being attached
-        """
         return pulumi.get(self, "service_instance_id")
 
     @service_instance_id.setter
@@ -234,13 +173,6 @@ class _FusionEnvironmentServiceAttachmentState:
     @property
     @pulumi.getter(name="serviceInstanceType")
     def service_instance_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        Type of the ServiceInstance being attached.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "service_instance_type")
 
     @service_instance_type.setter
@@ -250,9 +182,6 @@ class _FusionEnvironmentServiceAttachmentState:
     @property
     @pulumi.getter(name="serviceUrl")
     def service_url(self) -> Optional[pulumi.Input[str]]:
-        """
-        Public URL
-        """
         return pulumi.get(self, "service_url")
 
     @service_url.setter
@@ -262,9 +191,6 @@ class _FusionEnvironmentServiceAttachmentState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the ServiceInstance.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -274,9 +200,6 @@ class _FusionEnvironmentServiceAttachmentState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the the ServiceInstance was created. An RFC3339 formatted datetime string
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -286,9 +209,6 @@ class _FusionEnvironmentServiceAttachmentState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the ServiceInstance was updated. An RFC3339 formatted datetime string
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -307,40 +227,9 @@ class FusionEnvironmentServiceAttachment(pulumi.CustomResource):
                  service_instance_type: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Fusion Environment Service Attachment resource in Oracle Cloud Infrastructure Fusion Apps service.
-
-        Attaches a service instance to the fusion pod.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_fusion_environment_service_attachment = oci.fusion_apps.FusionEnvironmentServiceAttachment("testFusionEnvironmentServiceAttachment",
-            fusion_environment_id=oci_fusion_apps_fusion_environment["test_fusion_environment"]["id"],
-            service_instance_id=oci_core_instance["test_instance"]["id"],
-            service_instance_type=var["fusion_environment_service_attachment_service_instance_type"])
-        ```
-
-        ## Import
-
-        FusionEnvironmentServiceAttachments can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:FusionApps/fusionEnvironmentServiceAttachment:FusionEnvironmentServiceAttachment test_fusion_environment_service_attachment "fusionEnvironments/{fusionEnvironmentId}/serviceAttachments/{serviceAttachmentId}"
-        ```
-
+        Create a FusionEnvironmentServiceAttachment resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] fusion_environment_id: unique FusionEnvironment identifier
-        :param pulumi.Input[str] service_instance_id: The service instance OCID of the instance being attached
-        :param pulumi.Input[str] service_instance_type: Type of the ServiceInstance being attached.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -349,30 +238,7 @@ class FusionEnvironmentServiceAttachment(pulumi.CustomResource):
                  args: FusionEnvironmentServiceAttachmentArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Fusion Environment Service Attachment resource in Oracle Cloud Infrastructure Fusion Apps service.
-
-        Attaches a service instance to the fusion pod.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_fusion_environment_service_attachment = oci.fusion_apps.FusionEnvironmentServiceAttachment("testFusionEnvironmentServiceAttachment",
-            fusion_environment_id=oci_fusion_apps_fusion_environment["test_fusion_environment"]["id"],
-            service_instance_id=oci_core_instance["test_instance"]["id"],
-            service_instance_type=var["fusion_environment_service_attachment_service_instance_type"])
-        ```
-
-        ## Import
-
-        FusionEnvironmentServiceAttachments can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:FusionApps/fusionEnvironmentServiceAttachment:FusionEnvironmentServiceAttachment test_fusion_environment_service_attachment "fusionEnvironments/{fusionEnvironmentId}/serviceAttachments/{serviceAttachmentId}"
-        ```
-
+        Create a FusionEnvironmentServiceAttachment resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param FusionEnvironmentServiceAttachmentArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -448,22 +314,6 @@ class FusionEnvironmentServiceAttachment(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: Compartment Identifier
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: Service Attachment Display name, can be renamed
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] fusion_environment_id: unique FusionEnvironment identifier
-        :param pulumi.Input[bool] is_sku_based: Whether this service is provisioned due to the customer being subscribed to a specific SKU
-        :param pulumi.Input[str] service_instance_id: The service instance OCID of the instance being attached
-        :param pulumi.Input[str] service_instance_type: Type of the ServiceInstance being attached.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] service_url: Public URL
-        :param pulumi.Input[str] state: The current state of the ServiceInstance.
-        :param pulumi.Input[str] time_created: The time the the ServiceInstance was created. An RFC3339 formatted datetime string
-        :param pulumi.Input[str] time_updated: The time the ServiceInstance was updated. An RFC3339 formatted datetime string
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -485,101 +335,61 @@ class FusionEnvironmentServiceAttachment(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> pulumi.Output[str]:
-        """
-        Compartment Identifier
-        """
+    def compartment_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
-        """
-        Service Attachment Display name, can be renamed
-        """
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="fusionEnvironmentId")
     def fusion_environment_id(self) -> pulumi.Output[str]:
-        """
-        unique FusionEnvironment identifier
-        """
         return pulumi.get(self, "fusion_environment_id")
 
     @property
     @pulumi.getter(name="isSkuBased")
-    def is_sku_based(self) -> pulumi.Output[bool]:
-        """
-        Whether this service is provisioned due to the customer being subscribed to a specific SKU
-        """
+    def is_sku_based(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_sku_based")
 
     @property
     @pulumi.getter(name="serviceInstanceId")
     def service_instance_id(self) -> pulumi.Output[str]:
-        """
-        The service instance OCID of the instance being attached
-        """
         return pulumi.get(self, "service_instance_id")
 
     @property
     @pulumi.getter(name="serviceInstanceType")
     def service_instance_type(self) -> pulumi.Output[str]:
-        """
-        Type of the ServiceInstance being attached.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "service_instance_type")
 
     @property
     @pulumi.getter(name="serviceUrl")
-    def service_url(self) -> pulumi.Output[str]:
-        """
-        Public URL
-        """
+    def service_url(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "service_url")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the ServiceInstance.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The time the the ServiceInstance was created. An RFC3339 formatted datetime string
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The time the ServiceInstance was updated. An RFC3339 formatted datetime string
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 

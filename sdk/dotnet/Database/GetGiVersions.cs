@@ -144,7 +144,7 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string? Shape;
 
         [OutputConstructor]
@@ -155,7 +155,7 @@ namespace Pulumi.Oci.Database
 
             ImmutableArray<Outputs.GetGiVersionsGiVersionResult> giVersions,
 
-            string id,
+            string? id,
 
             string? shape)
         {

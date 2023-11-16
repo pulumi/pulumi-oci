@@ -65,12 +65,12 @@ export interface GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly managedDatabaseId: string;
     /**
      * The list of optimizer_statistics_advisor_executions_collection.
      */
-    readonly optimizerStatisticsAdvisorExecutionsCollections: outputs.DatabaseManagement.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollection[];
+    readonly optimizerStatisticsAdvisorExecutionsCollections?: outputs.DatabaseManagement.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollection[];
     readonly startTimeGreaterThanOrEqualTo?: string;
 }
 /**

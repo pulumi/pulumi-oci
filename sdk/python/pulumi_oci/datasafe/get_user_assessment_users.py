@@ -96,17 +96,11 @@ class GetUserAssessmentUsersResult:
     @property
     @pulumi.getter(name="accountStatus")
     def account_status(self) -> Optional[str]:
-        """
-        The status of the user account.
-        """
         return pulumi.get(self, "account_status")
 
     @property
     @pulumi.getter(name="authenticationType")
     def authentication_type(self) -> Optional[str]:
-        """
-        The user authentication method.
-        """
         return pulumi.get(self, "authentication_type")
 
     @property
@@ -121,7 +115,7 @@ class GetUserAssessmentUsersResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -130,9 +124,6 @@ class GetUserAssessmentUsersResult:
     @property
     @pulumi.getter(name="targetId")
     def target_id(self) -> Optional[str]:
-        """
-        The OCID of the target database.
-        """
         return pulumi.get(self, "target_id")
 
     @property
@@ -173,9 +164,6 @@ class GetUserAssessmentUsersResult:
     @property
     @pulumi.getter(name="userCategory")
     def user_category(self) -> Optional[str]:
-        """
-        The user category based on the privileges and other details of the user.
-        """
         return pulumi.get(self, "user_category")
 
     @property
@@ -186,17 +174,11 @@ class GetUserAssessmentUsersResult:
     @property
     @pulumi.getter(name="userName")
     def user_name(self) -> Optional[str]:
-        """
-        The database user name.
-        """
         return pulumi.get(self, "user_name")
 
     @property
     @pulumi.getter(name="userProfile")
     def user_profile(self) -> Optional[str]:
-        """
-        The user profile name.
-        """
         return pulumi.get(self, "user_profile")
 
     @property
@@ -211,10 +193,7 @@ class GetUserAssessmentUsersResult:
 
     @property
     @pulumi.getter
-    def users(self) -> Sequence['outputs.GetUserAssessmentUsersUserResult']:
-        """
-        The list of users.
-        """
+    def users(self) -> Optional[Sequence['outputs.GetUserAssessmentUsersUserResult']]:
         return pulumi.get(self, "users")
 
 
@@ -268,69 +247,7 @@ def get_user_assessment_users(access_level: Optional[str] = None,
                               user_type: Optional[str] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetUserAssessmentUsersResult:
     """
-    This data source provides the list of User Assessment Users in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets a list of users of the specified user assessment. The result contains the database user details for each user, such
-    as user type, account status, last login time, user creation time, authentication type, user profile, and the date and time
-    of the latest password change. It also contains the user category derived from these user details as well as privileges
-    granted to each user.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_user_assessment_users = oci.DataSafe.get_user_assessment_users(user_assessment_id=oci_data_safe_user_assessment["test_user_assessment"]["id"],
-        access_level=var["user_assessment_user_access_level"],
-        account_status=var["user_assessment_user_account_status"],
-        authentication_type=var["user_assessment_user_authentication_type"],
-        compartment_id_in_subtree=var["user_assessment_user_compartment_id_in_subtree"],
-        target_id=oci_cloud_guard_target["test_target"]["id"],
-        time_last_login_greater_than_or_equal_to=var["user_assessment_user_time_last_login_greater_than_or_equal_to"],
-        time_last_login_less_than=var["user_assessment_user_time_last_login_less_than"],
-        time_password_last_changed_greater_than_or_equal_to=var["user_assessment_user_time_password_last_changed_greater_than_or_equal_to"],
-        time_password_last_changed_less_than=var["user_assessment_user_time_password_last_changed_less_than"],
-        time_user_created_greater_than_or_equal_to=var["user_assessment_user_time_user_created_greater_than_or_equal_to"],
-        time_user_created_less_than=var["user_assessment_user_time_user_created_less_than"],
-        user_category=var["user_assessment_user_user_category"],
-        user_key=var["user_assessment_user_user_key"],
-        user_name=oci_identity_user["test_user"]["name"],
-        user_profile=var["user_assessment_user_user_profile"],
-        user_role=var["user_assessment_user_user_role"],
-        user_type=var["user_assessment_user_user_type"])
-    ```
-
-
-    :param str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
-    :param str account_status: A filter to return only items that match the specified account status.
-    :param str authentication_type: A filter to return only items that match the specified authentication type.
-    :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
-    :param str target_id: A filter to return only items related to a specific target OCID.
-    :param str time_last_login_greater_than_or_equal_to: A filter to return users whose last login time in the database is greater than or equal to the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-           
-           **Example:** 2016-12-19T16:39:57.600Z
-    :param str time_last_login_less_than: A filter to return users whose last login time in the database is less than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). **Example:** 2016-12-19T16:39:57.600Z
-    :param str time_password_last_changed_greater_than_or_equal_to: A filter to return users whose last password change in the database is greater than or equal to the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-           
-           **Example:** 2016-12-19T16:39:57.600Z
-    :param str time_password_last_changed_less_than: A filter to return users whose last password change in the database is less than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-           
-           **Example:** 2016-12-19T16:39:57.600Z
-    :param str time_user_created_greater_than_or_equal_to: A filter to return users whose creation time in the database is greater than or equal to the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). **Example:** 2016-12-19T16:39:57.600Z
-    :param str time_user_created_less_than: A filter to return users whose creation time in the database is less than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). **Example:** 2016-12-19T16:39:57.600Z
-    :param str user_assessment_id: The OCID of the user assessment.
-    :param str user_category: A filter to return only items that match the specified user category.
-    :param str user_key: A filter to return only items that match the specified user key.
-    :param str user_name: A filter to return only items that match the specified user name.
-    :param str user_profile: A filter to return only items that match the specified user profile.
-    :param str user_role: A filter to return only items that match the specified user role.
-    :param str user_type: A filter to return only items that match the specified user type. The possible values can be
-           * ADMIN_PRIVILEGED
-           * APPLICATION
-           * PRIVILEGED
-           * SCHEMA
-           * NON_PRIVILEGED as specified by '#/definitions/userTypes'.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['accessLevel'] = access_level
@@ -401,68 +318,6 @@ def get_user_assessment_users_output(access_level: Optional[pulumi.Input[Optiona
                                      user_type: Optional[pulumi.Input[Optional[str]]] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetUserAssessmentUsersResult]:
     """
-    This data source provides the list of User Assessment Users in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets a list of users of the specified user assessment. The result contains the database user details for each user, such
-    as user type, account status, last login time, user creation time, authentication type, user profile, and the date and time
-    of the latest password change. It also contains the user category derived from these user details as well as privileges
-    granted to each user.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_user_assessment_users = oci.DataSafe.get_user_assessment_users(user_assessment_id=oci_data_safe_user_assessment["test_user_assessment"]["id"],
-        access_level=var["user_assessment_user_access_level"],
-        account_status=var["user_assessment_user_account_status"],
-        authentication_type=var["user_assessment_user_authentication_type"],
-        compartment_id_in_subtree=var["user_assessment_user_compartment_id_in_subtree"],
-        target_id=oci_cloud_guard_target["test_target"]["id"],
-        time_last_login_greater_than_or_equal_to=var["user_assessment_user_time_last_login_greater_than_or_equal_to"],
-        time_last_login_less_than=var["user_assessment_user_time_last_login_less_than"],
-        time_password_last_changed_greater_than_or_equal_to=var["user_assessment_user_time_password_last_changed_greater_than_or_equal_to"],
-        time_password_last_changed_less_than=var["user_assessment_user_time_password_last_changed_less_than"],
-        time_user_created_greater_than_or_equal_to=var["user_assessment_user_time_user_created_greater_than_or_equal_to"],
-        time_user_created_less_than=var["user_assessment_user_time_user_created_less_than"],
-        user_category=var["user_assessment_user_user_category"],
-        user_key=var["user_assessment_user_user_key"],
-        user_name=oci_identity_user["test_user"]["name"],
-        user_profile=var["user_assessment_user_user_profile"],
-        user_role=var["user_assessment_user_user_role"],
-        user_type=var["user_assessment_user_user_type"])
-    ```
-
-
-    :param str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
-    :param str account_status: A filter to return only items that match the specified account status.
-    :param str authentication_type: A filter to return only items that match the specified authentication type.
-    :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
-    :param str target_id: A filter to return only items related to a specific target OCID.
-    :param str time_last_login_greater_than_or_equal_to: A filter to return users whose last login time in the database is greater than or equal to the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-           
-           **Example:** 2016-12-19T16:39:57.600Z
-    :param str time_last_login_less_than: A filter to return users whose last login time in the database is less than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). **Example:** 2016-12-19T16:39:57.600Z
-    :param str time_password_last_changed_greater_than_or_equal_to: A filter to return users whose last password change in the database is greater than or equal to the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-           
-           **Example:** 2016-12-19T16:39:57.600Z
-    :param str time_password_last_changed_less_than: A filter to return users whose last password change in the database is less than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-           
-           **Example:** 2016-12-19T16:39:57.600Z
-    :param str time_user_created_greater_than_or_equal_to: A filter to return users whose creation time in the database is greater than or equal to the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). **Example:** 2016-12-19T16:39:57.600Z
-    :param str time_user_created_less_than: A filter to return users whose creation time in the database is less than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). **Example:** 2016-12-19T16:39:57.600Z
-    :param str user_assessment_id: The OCID of the user assessment.
-    :param str user_category: A filter to return only items that match the specified user category.
-    :param str user_key: A filter to return only items that match the specified user key.
-    :param str user_name: A filter to return only items that match the specified user name.
-    :param str user_profile: A filter to return only items that match the specified user profile.
-    :param str user_role: A filter to return only items that match the specified user role.
-    :param str user_type: A filter to return only items that match the specified user type. The possible values can be
-           * ADMIN_PRIVILEGED
-           * APPLICATION
-           * PRIVILEGED
-           * SCHEMA
-           * NON_PRIVILEGED as specified by '#/definitions/userTypes'.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -102,7 +102,7 @@ export class Dataset extends pulumi.CustomResource {
     /**
      * A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
      */
-    public /*out*/ readonly additionalProperties!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly additionalProperties!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The annotation format name required for labeling records.
      */
@@ -122,27 +122,27 @@ export class Dataset extends pulumi.CustomResource {
     /**
      * (Updatable) The defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) A user provided description of the dataset
      */
-    public readonly description!: pulumi.Output<string>;
+    public readonly description!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) A user-friendly display name for the resource.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    public readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * Initial import dataset configuration. Allows user to create dataset from existing dataset files.
      */
-    public readonly initialImportDatasetConfiguration!: pulumi.Output<outputs.DataLabellingService.DatasetInitialImportDatasetConfiguration>;
+    public readonly initialImportDatasetConfiguration!: pulumi.Output<outputs.DataLabellingService.DatasetInitialImportDatasetConfiguration | undefined>;
     /**
      * The initial generate records configuration. It generates records from the dataset's source.
      */
-    public readonly initialRecordGenerationConfiguration!: pulumi.Output<outputs.DataLabellingService.DatasetInitialRecordGenerationConfiguration>;
+    public readonly initialRecordGenerationConfiguration!: pulumi.Output<outputs.DataLabellingService.DatasetInitialRecordGenerationConfiguration | undefined>;
     /**
      * An ordered collection of labels that are unique by name.
      */
@@ -154,27 +154,27 @@ export class Dataset extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly labelingInstructions!: pulumi.Output<string>;
+    public readonly labelingInstructions!: pulumi.Output<string | undefined>;
     /**
      * A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in FAILED or NEEDS_ATTENTION state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * The sub-state of the dataset. IMPORT_DATASET - The dataset is being imported.
      */
-    public /*out*/ readonly lifecycleSubstate!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleSubstate!: pulumi.Output<string | undefined>;
     /**
      * The state of a dataset. CREATING - The dataset is being created.  It will transition to ACTIVE when it is ready for labeling. ACTIVE   - The dataset is ready for labeling. UPDATING - The dataset is being updated.  It and its related resources may be unavailable for other updates until it returns to ACTIVE. NEEDS_ATTENTION - A dataset updation operation has failed due to validation or other errors and needs attention. DELETING - The dataset and its related resources are being deleted. DELETED  - The dataset has been deleted and is no longer available. FAILED   - The dataset has failed due to validation or other errors.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The date and time the resource was created, in the timestamp format defined by RFC3339.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The date and time the resource was last updated, in the timestamp format defined by RFC3339.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a Dataset resource with the given unique name, arguments, and options.

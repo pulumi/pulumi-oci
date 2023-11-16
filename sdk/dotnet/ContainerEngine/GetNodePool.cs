@@ -108,23 +108,23 @@ namespace Pulumi.Oci.ContainerEngine
         /// <summary>
         /// The OCID of the cluster to which this node pool is attached.
         /// </summary>
-        public readonly string ClusterId;
+        public readonly string? ClusterId;
         /// <summary>
         /// The OCID of the compartment in which the node pool exists.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The OCID of the compute instance backing this node.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// A list of key/value pairs to add to nodes after they join the Kubernetes cluster.
         /// </summary>
@@ -132,15 +132,15 @@ namespace Pulumi.Oci.ContainerEngine
         /// <summary>
         /// The version of Kubernetes this node is running.
         /// </summary>
-        public readonly string KubernetesVersion;
+        public readonly string? KubernetesVersion;
         /// <summary>
         /// Details about the state of the node.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// The name of the node.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The configuration of nodes in the node pool.
         /// </summary>
@@ -152,15 +152,15 @@ namespace Pulumi.Oci.ContainerEngine
         /// <summary>
         /// Deprecated. see `nodeSource`. The OCID of the image running on the nodes in the node pool.
         /// </summary>
-        public readonly string NodeImageId;
+        public readonly string? NodeImageId;
         /// <summary>
         /// Deprecated. see `nodeSource`. The name of the image running on the nodes in the node pool.
         /// </summary>
-        public readonly string NodeImageName;
+        public readonly string? NodeImageName;
         /// <summary>
         /// A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool on launch.
         /// </summary>
-        public readonly ImmutableDictionary<string, object> NodeMetadata;
+        public readonly ImmutableDictionary<string, object>? NodeMetadata;
         /// <summary>
         /// Node Pool Cycling Details
         /// </summary>
@@ -172,7 +172,7 @@ namespace Pulumi.Oci.ContainerEngine
         /// <summary>
         /// The name of the node shape of the nodes in the node pool.
         /// </summary>
-        public readonly string NodeShape;
+        public readonly string? NodeShape;
         /// <summary>
         /// The shape configuration of the nodes.
         /// </summary>
@@ -192,15 +192,15 @@ namespace Pulumi.Oci.ContainerEngine
         /// <summary>
         /// The number of nodes in each subnet.
         /// </summary>
-        public readonly int QuantityPerSubnet;
+        public readonly int? QuantityPerSubnet;
         /// <summary>
         /// The SSH public key on each node in the node pool on launch.
         /// </summary>
-        public readonly string SshPublicKey;
+        public readonly string? SshPublicKey;
         /// <summary>
         /// The state of the nodepool.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The OCIDs of the subnets in which to place nodes for this node pool.
         /// </summary>
@@ -208,39 +208,39 @@ namespace Pulumi.Oci.ContainerEngine
 
         [OutputConstructor]
         private GetNodePoolResult(
-            string clusterId,
+            string? clusterId,
 
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetNodePoolInitialNodeLabelResult> initialNodeLabels,
 
-            string kubernetesVersion,
+            string? kubernetesVersion,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string name,
+            string? name,
 
             ImmutableArray<Outputs.GetNodePoolNodeConfigDetailResult> nodeConfigDetails,
 
             ImmutableArray<Outputs.GetNodePoolNodeEvictionNodePoolSettingResult> nodeEvictionNodePoolSettings,
 
-            string nodeImageId,
+            string? nodeImageId,
 
-            string nodeImageName,
+            string? nodeImageName,
 
-            ImmutableDictionary<string, object> nodeMetadata,
+            ImmutableDictionary<string, object>? nodeMetadata,
 
             ImmutableArray<Outputs.GetNodePoolNodePoolCyclingDetailResult> nodePoolCyclingDetails,
 
             string nodePoolId,
 
-            string nodeShape,
+            string? nodeShape,
 
             ImmutableArray<Outputs.GetNodePoolNodeShapeConfigResult> nodeShapeConfigs,
 
@@ -250,11 +250,11 @@ namespace Pulumi.Oci.ContainerEngine
 
             ImmutableArray<Outputs.GetNodePoolNodeResult> nodes,
 
-            int quantityPerSubnet,
+            int? quantityPerSubnet,
 
-            string sshPublicKey,
+            string? sshPublicKey,
 
-            string state,
+            string? state,
 
             ImmutableArray<string> subnetIds)
         {

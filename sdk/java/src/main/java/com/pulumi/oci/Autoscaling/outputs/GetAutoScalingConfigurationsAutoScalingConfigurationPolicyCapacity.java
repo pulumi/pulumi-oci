@@ -6,6 +6,8 @@ package com.pulumi.oci.Autoscaling.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyCapacity {
@@ -13,39 +15,39 @@ public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyCap
      * @return For a threshold-based autoscaling policy, this value is the initial number of instances to launch in the instance pool immediately after autoscaling is enabled. After autoscaling retrieves performance metrics, the number of instances is automatically adjusted from this initial number to a number that is based on the limits that you set.
      * 
      */
-    private Integer initial;
+    private @Nullable Integer initial;
     /**
      * @return For a threshold-based autoscaling policy, this value is the maximum number of instances the instance pool is allowed to increase to (scale out).
      * 
      */
-    private Integer max;
+    private @Nullable Integer max;
     /**
      * @return For a threshold-based autoscaling policy, this value is the minimum number of instances the instance pool is allowed to decrease to (scale in).
      * 
      */
-    private Integer min;
+    private @Nullable Integer min;
 
     private GetAutoScalingConfigurationsAutoScalingConfigurationPolicyCapacity() {}
     /**
      * @return For a threshold-based autoscaling policy, this value is the initial number of instances to launch in the instance pool immediately after autoscaling is enabled. After autoscaling retrieves performance metrics, the number of instances is automatically adjusted from this initial number to a number that is based on the limits that you set.
      * 
      */
-    public Integer initial() {
-        return this.initial;
+    public Optional<Integer> initial() {
+        return Optional.ofNullable(this.initial);
     }
     /**
      * @return For a threshold-based autoscaling policy, this value is the maximum number of instances the instance pool is allowed to increase to (scale out).
      * 
      */
-    public Integer max() {
-        return this.max;
+    public Optional<Integer> max() {
+        return Optional.ofNullable(this.max);
     }
     /**
      * @return For a threshold-based autoscaling policy, this value is the minimum number of instances the instance pool is allowed to decrease to (scale in).
      * 
      */
-    public Integer min() {
-        return this.min;
+    public Optional<Integer> min() {
+        return Optional.ofNullable(this.min);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyCap
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer initial;
-        private Integer max;
-        private Integer min;
+        private @Nullable Integer initial;
+        private @Nullable Integer max;
+        private @Nullable Integer min;
         public Builder() {}
         public Builder(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyCapacity defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyCap
         }
 
         @CustomType.Setter
-        public Builder initial(Integer initial) {
-            this.initial = Objects.requireNonNull(initial);
+        public Builder initial(@Nullable Integer initial) {
+            this.initial = initial;
             return this;
         }
         @CustomType.Setter
-        public Builder max(Integer max) {
-            this.max = Objects.requireNonNull(max);
+        public Builder max(@Nullable Integer max) {
+            this.max = max;
             return this;
         }
         @CustomType.Setter
-        public Builder min(Integer min) {
-            this.min = Objects.requireNonNull(min);
+        public Builder min(@Nullable Integer min) {
+            this.min = min;
             return this;
         }
         public GetAutoScalingConfigurationsAutoScalingConfigurationPolicyCapacity build() {

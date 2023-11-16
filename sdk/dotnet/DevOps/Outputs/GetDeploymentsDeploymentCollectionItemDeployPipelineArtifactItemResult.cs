@@ -16,7 +16,7 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// <summary>
         /// The OCID of an artifact
         /// </summary>
-        public readonly string DeployArtifactId;
+        public readonly string? DeployArtifactId;
         /// <summary>
         /// List of stages.
         /// </summary>
@@ -24,15 +24,15 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// <summary>
         /// A filter to return only resources that match the entire display name given.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
 
         [OutputConstructor]
         private GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemResult(
-            string deployArtifactId,
+            string? deployArtifactId,
 
             ImmutableArray<Outputs.GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemDeployPipelineStageResult> deployPipelineStages,
 
-            string displayName)
+            string? displayName)
         {
             DeployArtifactId = deployArtifactId;
             DeployPipelineStages = deployPipelineStages;

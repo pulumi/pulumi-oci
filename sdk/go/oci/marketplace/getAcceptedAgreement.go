@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Accepted Agreement resource in Oracle Cloud Infrastructure Marketplace service.
@@ -61,24 +60,24 @@ type LookupAcceptedAgreementArgs struct {
 type LookupAcceptedAgreementResult struct {
 	AcceptedAgreementId string `pulumi:"acceptedAgreementId"`
 	// The unique identifier for the terms of use agreement itself.
-	AgreementId string `pulumi:"agreementId"`
+	AgreementId *string `pulumi:"agreementId"`
 	// The unique identifier for the compartment where the agreement was accepted.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A display name for the accepted agreement.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The unique identifier for the acceptance of the agreement within a specific compartment.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The unique identifier for the listing associated with the agreement.
-	ListingId string `pulumi:"listingId"`
+	ListingId *string `pulumi:"listingId"`
 	// The package version associated with the agreement.
-	PackageVersion string `pulumi:"packageVersion"`
-	Signature      string `pulumi:"signature"`
+	PackageVersion *string `pulumi:"packageVersion"`
+	Signature      *string `pulumi:"signature"`
 	// The time the agreement was accepted.
-	TimeAccepted string `pulumi:"timeAccepted"`
+	TimeAccepted *string `pulumi:"timeAccepted"`
 }
 
 func LookupAcceptedAgreementOutput(ctx *pulumi.Context, args LookupAcceptedAgreementOutputArgs, opts ...pulumi.InvokeOption) LookupAcceptedAgreementResultOutput {
@@ -119,24 +118,18 @@ func (o LookupAcceptedAgreementResultOutput) ToLookupAcceptedAgreementResultOutp
 	return o
 }
 
-func (o LookupAcceptedAgreementResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupAcceptedAgreementResult] {
-	return pulumix.Output[LookupAcceptedAgreementResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o LookupAcceptedAgreementResultOutput) AcceptedAgreementId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAcceptedAgreementResult) string { return v.AcceptedAgreementId }).(pulumi.StringOutput)
 }
 
 // The unique identifier for the terms of use agreement itself.
-func (o LookupAcceptedAgreementResultOutput) AgreementId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAcceptedAgreementResult) string { return v.AgreementId }).(pulumi.StringOutput)
+func (o LookupAcceptedAgreementResultOutput) AgreementId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAcceptedAgreementResult) *string { return v.AgreementId }).(pulumi.StringPtrOutput)
 }
 
 // The unique identifier for the compartment where the agreement was accepted.
-func (o LookupAcceptedAgreementResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAcceptedAgreementResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupAcceptedAgreementResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAcceptedAgreementResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -145,8 +138,8 @@ func (o LookupAcceptedAgreementResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // A display name for the accepted agreement.
-func (o LookupAcceptedAgreementResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAcceptedAgreementResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupAcceptedAgreementResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAcceptedAgreementResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -155,27 +148,27 @@ func (o LookupAcceptedAgreementResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The unique identifier for the acceptance of the agreement within a specific compartment.
-func (o LookupAcceptedAgreementResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAcceptedAgreementResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupAcceptedAgreementResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAcceptedAgreementResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The unique identifier for the listing associated with the agreement.
-func (o LookupAcceptedAgreementResultOutput) ListingId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAcceptedAgreementResult) string { return v.ListingId }).(pulumi.StringOutput)
+func (o LookupAcceptedAgreementResultOutput) ListingId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAcceptedAgreementResult) *string { return v.ListingId }).(pulumi.StringPtrOutput)
 }
 
 // The package version associated with the agreement.
-func (o LookupAcceptedAgreementResultOutput) PackageVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAcceptedAgreementResult) string { return v.PackageVersion }).(pulumi.StringOutput)
+func (o LookupAcceptedAgreementResultOutput) PackageVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAcceptedAgreementResult) *string { return v.PackageVersion }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupAcceptedAgreementResultOutput) Signature() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAcceptedAgreementResult) string { return v.Signature }).(pulumi.StringOutput)
+func (o LookupAcceptedAgreementResultOutput) Signature() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAcceptedAgreementResult) *string { return v.Signature }).(pulumi.StringPtrOutput)
 }
 
 // The time the agreement was accepted.
-func (o LookupAcceptedAgreementResultOutput) TimeAccepted() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAcceptedAgreementResult) string { return v.TimeAccepted }).(pulumi.StringOutput)
+func (o LookupAcceptedAgreementResultOutput) TimeAccepted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAcceptedAgreementResult) *string { return v.TimeAccepted }).(pulumi.StringPtrOutput)
 }
 
 func init() {

@@ -155,7 +155,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// A list of SQL Tuning Advisor recommendations.
         /// </summary>
@@ -171,7 +171,7 @@ namespace Pulumi.Oci.DatabaseManagement
         private GetManagedDatabaseSqlTuningAdvisorTasksRecommendationResult(
             string executionId,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetManagedDatabaseSqlTuningAdvisorTasksRecommendationItemResult> items,
 

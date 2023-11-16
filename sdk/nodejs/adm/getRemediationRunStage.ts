@@ -53,31 +53,31 @@ export interface GetRemediationRunStageResult {
     /**
      * The Oracle Cloud identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the vulnerability audit.
      */
-    readonly auditId: string;
+    readonly auditId?: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The next type of stage in the remediation run.
      */
-    readonly nextStageType: string;
+    readonly nextStageType?: string;
     /**
      * Pipeline properties which result from the run of the verify stage.
      */
-    readonly pipelineProperties: outputs.Adm.GetRemediationRunStagePipelineProperty[];
+    readonly pipelineProperties?: outputs.Adm.GetRemediationRunStagePipelineProperty[];
     /**
      * The previous type of stage in the remediation run.
      */
-    readonly previousStageType: string;
+    readonly previousStageType?: string;
     /**
      * Pull request properties from recommend stage of the remediation run.
      */
-    readonly pullRequestProperties: outputs.Adm.GetRemediationRunStagePullRequestProperty[];
+    readonly pullRequestProperties?: outputs.Adm.GetRemediationRunStagePullRequestProperty[];
     /**
      * Count of recommended application dependencies to update.
      */
-    readonly recommendedUpdatesCount: number;
+    readonly recommendedUpdatesCount?: number;
     /**
      * The Oracle Cloud identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the remediation run.
      */
@@ -86,27 +86,27 @@ export interface GetRemediationRunStageResult {
     /**
      * The current status of a remediation run stage.
      */
-    readonly status: string;
+    readonly status?: string;
     /**
      * Information about the current step within the stage.
      */
-    readonly summary: string;
+    readonly summary?: string;
     /**
      * The creation date and time of the remediation run stage (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The date and time of the finish of the remediation run stage (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
-    readonly timeFinished: string;
+    readonly timeFinished?: string;
     /**
      * The date and time of the start of the remediation run stage (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
-    readonly timeStarted: string;
+    readonly timeStarted?: string;
     /**
      * The type of the remediation run stage.
      */
-    readonly type: string;
+    readonly type?: string;
 }
 /**
  * This data source provides details about a specific Remediation Run Stage resource in Oracle Cloud Infrastructure Adm service.

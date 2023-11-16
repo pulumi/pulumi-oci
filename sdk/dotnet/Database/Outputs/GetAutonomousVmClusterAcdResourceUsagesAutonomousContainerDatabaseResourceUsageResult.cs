@@ -20,27 +20,27 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// CPUs / cores available for ADB provisioning or scaling in the Autonomous Container Database.
         /// </summary>
-        public readonly double AvailableCpus;
+        public readonly double? AvailableCpus;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// The user-friendly name for the Autonomous Container Database. The name does not need to be unique.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Largest provisionable ADB in the Autonomous Container Database.
         /// </summary>
-        public readonly double LargestProvisionableAutonomousDatabaseInCpus;
+        public readonly double? LargestProvisionableAutonomousDatabaseInCpus;
         /// <summary>
         /// Valid list of provisionable CPUs / cores for ADB creation.
         /// </summary>
@@ -48,45 +48,45 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// CPUs / cores assigned to ADBs in the Autonomous Container Database.
         /// </summary>
-        public readonly double ProvisionedCpus;
+        public readonly double? ProvisionedCpus;
         /// <summary>
         /// CPUs / cores reclaimable or released to cluster on Autonomous Container Database restart.
         /// </summary>
-        public readonly double ReclaimableCpus;
+        public readonly double? ReclaimableCpus;
         /// <summary>
         /// CPUs / cores reserved for scalability, resilliency and other overheads. This includes failover, autoscaling and idle instance overhead.
         /// </summary>
-        public readonly double ReservedCpus;
+        public readonly double? ReservedCpus;
         /// <summary>
         /// CPUs / cores assigned to the Autonomous Container Database. Sum of provisioned, reserved and reclaimable CPUs/ cores.
         /// </summary>
-        public readonly double UsedCpus;
+        public readonly double? UsedCpus;
 
         [OutputConstructor]
         private GetAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageResult(
             ImmutableArray<Outputs.GetAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageResult> autonomousContainerDatabaseVmUsages,
 
-            double availableCpus,
+            double? availableCpus,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            double largestProvisionableAutonomousDatabaseInCpus,
+            double? largestProvisionableAutonomousDatabaseInCpus,
 
             ImmutableArray<double> provisionableCpuses,
 
-            double provisionedCpus,
+            double? provisionedCpus,
 
-            double reclaimableCpus,
+            double? reclaimableCpus,
 
-            double reservedCpus,
+            double? reservedCpus,
 
-            double usedCpus)
+            double? usedCpus)
         {
             AutonomousContainerDatabaseVmUsages = autonomousContainerDatabaseVmUsages;
             AvailableCpus = availableCpus;

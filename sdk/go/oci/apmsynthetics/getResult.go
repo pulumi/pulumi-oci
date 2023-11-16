@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Result resource in Oracle Cloud Infrastructure Apm Synthetics service.
@@ -78,7 +77,7 @@ type GetResultResult struct {
 	// The specific point of time when the result of an execution is collected.
 	ExecutionTime string `pulumi:"executionTime"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitor.
 	MonitorId string `pulumi:"monitorId"`
 	// Type of result content. Example: Zip or Raw file.
@@ -139,12 +138,6 @@ func (o GetResultResultOutput) ToGetResultResultOutputWithContext(ctx context.Co
 	return o
 }
 
-func (o GetResultResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetResultResult] {
-	return pulumix.Output[GetResultResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetResultResultOutput) ApmDomainId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetResultResult) string { return v.ApmDomainId }).(pulumi.StringOutput)
 }
@@ -155,8 +148,8 @@ func (o GetResultResultOutput) ExecutionTime() pulumi.StringOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetResultResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResultResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetResultResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResultResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitor.

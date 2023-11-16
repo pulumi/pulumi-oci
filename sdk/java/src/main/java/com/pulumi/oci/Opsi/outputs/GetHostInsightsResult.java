@@ -36,7 +36,7 @@ public final class GetHostInsightsResult {
      * @return The list of host_insight_summary_collection.
      * 
      */
-    private List<GetHostInsightsHostInsightSummaryCollection> hostInsightSummaryCollections;
+    private @Nullable List<GetHostInsightsHostInsightSummaryCollection> hostInsightSummaryCollections;
     /**
      * @return Operations Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
      * 
@@ -91,7 +91,7 @@ public final class GetHostInsightsResult {
      * 
      */
     public List<GetHostInsightsHostInsightSummaryCollection> hostInsightSummaryCollections() {
-        return this.hostInsightSummaryCollections;
+        return this.hostInsightSummaryCollections == null ? List.of() : this.hostInsightSummaryCollections;
     }
     /**
      * @return Operations Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
@@ -136,7 +136,7 @@ public final class GetHostInsightsResult {
         private @Nullable String enterpriseManagerBridgeId;
         private @Nullable String exadataInsightId;
         private @Nullable List<GetHostInsightsFilter> filters;
-        private List<GetHostInsightsHostInsightSummaryCollection> hostInsightSummaryCollections;
+        private @Nullable List<GetHostInsightsHostInsightSummaryCollection> hostInsightSummaryCollections;
         private @Nullable List<String> hostTypes;
         private @Nullable String id;
         private @Nullable List<String> states;
@@ -185,8 +185,8 @@ public final class GetHostInsightsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder hostInsightSummaryCollections(List<GetHostInsightsHostInsightSummaryCollection> hostInsightSummaryCollections) {
-            this.hostInsightSummaryCollections = Objects.requireNonNull(hostInsightSummaryCollections);
+        public Builder hostInsightSummaryCollections(@Nullable List<GetHostInsightsHostInsightSummaryCollection> hostInsightSummaryCollections) {
+            this.hostInsightSummaryCollections = hostInsightSummaryCollections;
             return this;
         }
         public Builder hostInsightSummaryCollections(GetHostInsightsHostInsightSummaryCollection... hostInsightSummaryCollections) {

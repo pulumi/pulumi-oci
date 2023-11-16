@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// <summary>
         /// A link to a page describing the version.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// The specific version identifier
         /// </summary>
-        public readonly string Version;
+        public readonly string? Version;
 
         [OutputConstructor]
         private GetMysqlVersionVersionVersionResult(
-            string description,
+            string? description,
 
-            string version)
+            string? version)
         {
             Description = description;
             Version = version;

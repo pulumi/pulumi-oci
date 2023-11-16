@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetKeyStoresKeyStoreTypeDetail {
@@ -14,63 +16,63 @@ public final class GetKeyStoresKeyStoreTypeDetail {
      * @return The administrator username to connect to Oracle Key Vault
      * 
      */
-    private String adminUsername;
+    private @Nullable String adminUsername;
     /**
      * @return The list of Oracle Key Vault connection IP addresses.
      * 
      */
-    private List<String> connectionIps;
+    private @Nullable List<String> connectionIps;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      * 
      */
-    private String secretId;
+    private @Nullable String secretId;
     /**
      * @return The type of key store.
      * 
      */
-    private String type;
+    private @Nullable String type;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      * 
      */
-    private String vaultId;
+    private @Nullable String vaultId;
 
     private GetKeyStoresKeyStoreTypeDetail() {}
     /**
      * @return The administrator username to connect to Oracle Key Vault
      * 
      */
-    public String adminUsername() {
-        return this.adminUsername;
+    public Optional<String> adminUsername() {
+        return Optional.ofNullable(this.adminUsername);
     }
     /**
      * @return The list of Oracle Key Vault connection IP addresses.
      * 
      */
     public List<String> connectionIps() {
-        return this.connectionIps;
+        return this.connectionIps == null ? List.of() : this.connectionIps;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      * 
      */
-    public String secretId() {
-        return this.secretId;
+    public Optional<String> secretId() {
+        return Optional.ofNullable(this.secretId);
     }
     /**
      * @return The type of key store.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      * 
      */
-    public String vaultId() {
-        return this.vaultId;
+    public Optional<String> vaultId() {
+        return Optional.ofNullable(this.vaultId);
     }
 
     public static Builder builder() {
@@ -82,11 +84,11 @@ public final class GetKeyStoresKeyStoreTypeDetail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String adminUsername;
-        private List<String> connectionIps;
-        private String secretId;
-        private String type;
-        private String vaultId;
+        private @Nullable String adminUsername;
+        private @Nullable List<String> connectionIps;
+        private @Nullable String secretId;
+        private @Nullable String type;
+        private @Nullable String vaultId;
         public Builder() {}
         public Builder(GetKeyStoresKeyStoreTypeDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -98,31 +100,31 @@ public final class GetKeyStoresKeyStoreTypeDetail {
         }
 
         @CustomType.Setter
-        public Builder adminUsername(String adminUsername) {
-            this.adminUsername = Objects.requireNonNull(adminUsername);
+        public Builder adminUsername(@Nullable String adminUsername) {
+            this.adminUsername = adminUsername;
             return this;
         }
         @CustomType.Setter
-        public Builder connectionIps(List<String> connectionIps) {
-            this.connectionIps = Objects.requireNonNull(connectionIps);
+        public Builder connectionIps(@Nullable List<String> connectionIps) {
+            this.connectionIps = connectionIps;
             return this;
         }
         public Builder connectionIps(String... connectionIps) {
             return connectionIps(List.of(connectionIps));
         }
         @CustomType.Setter
-        public Builder secretId(String secretId) {
-            this.secretId = Objects.requireNonNull(secretId);
+        public Builder secretId(@Nullable String secretId) {
+            this.secretId = secretId;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         @CustomType.Setter
-        public Builder vaultId(String vaultId) {
-            this.vaultId = Objects.requireNonNull(vaultId);
+        public Builder vaultId(@Nullable String vaultId) {
+            this.vaultId = vaultId;
             return this;
         }
         public GetKeyStoresKeyStoreTypeDetail build() {

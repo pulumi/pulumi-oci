@@ -66,23 +66,17 @@ class GetAutonomousPatchResult:
 
     @property
     @pulumi.getter(name="autonomousPatchType")
-    def autonomous_patch_type(self) -> str:
-        """
-        Maintenance run type, either "QUARTERLY" or "TIMEZONE".
-        """
+    def autonomous_patch_type(self) -> Optional[str]:
         return pulumi.get(self, "autonomous_patch_type")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        The text describing this patch package.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -90,66 +84,42 @@ class GetAutonomousPatchResult:
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A descriptive text associated with the lifecycleState. Typically can contain additional displayable text.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="patchModel")
-    def patch_model(self) -> str:
-        """
-        Database patching model preference. See [My Oracle Support note 2285040.1](https://support.oracle.com/rs?type=doc&id=2285040.1) for information on the Release Update (RU) and Release Update Revision (RUR) patching models.
-        """
+    def patch_model(self) -> Optional[str]:
         return pulumi.get(self, "patch_model")
 
     @property
     @pulumi.getter
-    def quarter(self) -> str:
-        """
-        First month of the quarter in which the patch was released.
-        """
+    def quarter(self) -> Optional[str]:
         return pulumi.get(self, "quarter")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the patch as a result of lastAction.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeReleased")
-    def time_released(self) -> str:
-        """
-        The date and time that the patch was released.
-        """
+    def time_released(self) -> Optional[str]:
         return pulumi.get(self, "time_released")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        The type of patch. BUNDLE is one example.
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
     @property
     @pulumi.getter
-    def version(self) -> str:
-        """
-        The version of this patch package.
-        """
+    def version(self) -> Optional[str]:
         return pulumi.get(self, "version")
 
     @property
     @pulumi.getter
-    def year(self) -> str:
-        """
-        Year in which the patch was released.
-        """
+    def year(self) -> Optional[str]:
         return pulumi.get(self, "year")
 
 
@@ -176,21 +146,7 @@ class AwaitableGetAutonomousPatchResult(GetAutonomousPatchResult):
 def get_autonomous_patch(autonomous_patch_id: Optional[str] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAutonomousPatchResult:
     """
-    This data source provides details about a specific Autonomous Patch resource in Oracle Cloud Infrastructure Database service.
-
-    Gets information about a specific autonomous patch.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_autonomous_patch = oci.Database.get_autonomous_patch(autonomous_patch_id=oci_database_autonomous_patch["test_autonomous_patch"]["id"])
-    ```
-
-
-    :param str autonomous_patch_id: The autonomous patch [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['autonomousPatchId'] = autonomous_patch_id
@@ -216,20 +172,6 @@ def get_autonomous_patch(autonomous_patch_id: Optional[str] = None,
 def get_autonomous_patch_output(autonomous_patch_id: Optional[pulumi.Input[str]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAutonomousPatchResult]:
     """
-    This data source provides details about a specific Autonomous Patch resource in Oracle Cloud Infrastructure Database service.
-
-    Gets information about a specific autonomous patch.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_autonomous_patch = oci.Database.get_autonomous_patch(autonomous_patch_id=oci_database_autonomous_patch["test_autonomous_patch"]["id"])
-    ```
-
-
-    :param str autonomous_patch_id: The autonomous patch [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     ...

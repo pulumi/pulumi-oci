@@ -25,17 +25,6 @@ class DiscoveryJobArgs:
                  should_propagate_tags_to_discovered_resources: Optional[pulumi.Input[bool]] = None):
         """
         The set of arguments for constructing a DiscoveryJob resource.
-        :param pulumi.Input[str] compartment_id: The OCID of Compartment
-        :param pulumi.Input['DiscoveryJobDiscoveryDetailsArgs'] discovery_details: The request of DiscoveryJob Resource details.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] discovery_client: Client who submits discovery job.
-        :param pulumi.Input[str] discovery_type: Add option submits new discovery Job. Add with retry option to re-submit failed discovery job. Refresh option refreshes the existing discovered resources.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[bool] should_propagate_tags_to_discovered_resources: If this parameter set to true, the specified tags will be applied  to all resources discovered in the current request.  Default is true. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "discovery_details", discovery_details)
@@ -53,9 +42,6 @@ class DiscoveryJobArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of Compartment
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -65,9 +51,6 @@ class DiscoveryJobArgs:
     @property
     @pulumi.getter(name="discoveryDetails")
     def discovery_details(self) -> pulumi.Input['DiscoveryJobDiscoveryDetailsArgs']:
-        """
-        The request of DiscoveryJob Resource details.
-        """
         return pulumi.get(self, "discovery_details")
 
     @discovery_details.setter
@@ -77,9 +60,6 @@ class DiscoveryJobArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -89,9 +69,6 @@ class DiscoveryJobArgs:
     @property
     @pulumi.getter(name="discoveryClient")
     def discovery_client(self) -> Optional[pulumi.Input[str]]:
-        """
-        Client who submits discovery job.
-        """
         return pulumi.get(self, "discovery_client")
 
     @discovery_client.setter
@@ -101,9 +78,6 @@ class DiscoveryJobArgs:
     @property
     @pulumi.getter(name="discoveryType")
     def discovery_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        Add option submits new discovery Job. Add with retry option to re-submit failed discovery job. Refresh option refreshes the existing discovered resources.
-        """
         return pulumi.get(self, "discovery_type")
 
     @discovery_type.setter
@@ -113,9 +87,6 @@ class DiscoveryJobArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -125,13 +96,6 @@ class DiscoveryJobArgs:
     @property
     @pulumi.getter(name="shouldPropagateTagsToDiscoveredResources")
     def should_propagate_tags_to_discovered_resources(self) -> Optional[pulumi.Input[bool]]:
-        """
-        If this parameter set to true, the specified tags will be applied  to all resources discovered in the current request.  Default is true. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "should_propagate_tags_to_discovered_resources")
 
     @should_propagate_tags_to_discovered_resources.setter
@@ -158,24 +122,6 @@ class _DiscoveryJobState:
                  user_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering DiscoveryJob resources.
-        :param pulumi.Input[str] compartment_id: The OCID of Compartment
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] discovery_client: Client who submits discovery job.
-        :param pulumi.Input['DiscoveryJobDiscoveryDetailsArgs'] discovery_details: The request of DiscoveryJob Resource details.
-        :param pulumi.Input[str] discovery_type: Add option submits new discovery Job. Add with retry option to re-submit failed discovery job. Refresh option refreshes the existing discovered resources.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[bool] should_propagate_tags_to_discovered_resources: If this parameter set to true, the specified tags will be applied  to all resources discovered in the current request.  Default is true. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] state: The current state of the DiscoveryJob Resource.
-        :param pulumi.Input[str] status: Specifies the status of the discovery job
-        :param pulumi.Input[str] status_message: The short summary of the status of the discovery job
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] tenant_id: The OCID of Tenant
-        :param pulumi.Input[str] time_updated: The time the discovery Job was updated.
-        :param pulumi.Input[str] user_id: The OCID of user in which the job is submitted
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -209,9 +155,6 @@ class _DiscoveryJobState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of Compartment
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -221,9 +164,6 @@ class _DiscoveryJobState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -233,9 +173,6 @@ class _DiscoveryJobState:
     @property
     @pulumi.getter(name="discoveryClient")
     def discovery_client(self) -> Optional[pulumi.Input[str]]:
-        """
-        Client who submits discovery job.
-        """
         return pulumi.get(self, "discovery_client")
 
     @discovery_client.setter
@@ -245,9 +182,6 @@ class _DiscoveryJobState:
     @property
     @pulumi.getter(name="discoveryDetails")
     def discovery_details(self) -> Optional[pulumi.Input['DiscoveryJobDiscoveryDetailsArgs']]:
-        """
-        The request of DiscoveryJob Resource details.
-        """
         return pulumi.get(self, "discovery_details")
 
     @discovery_details.setter
@@ -257,9 +191,6 @@ class _DiscoveryJobState:
     @property
     @pulumi.getter(name="discoveryType")
     def discovery_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        Add option submits new discovery Job. Add with retry option to re-submit failed discovery job. Refresh option refreshes the existing discovered resources.
-        """
         return pulumi.get(self, "discovery_type")
 
     @discovery_type.setter
@@ -269,9 +200,6 @@ class _DiscoveryJobState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -281,13 +209,6 @@ class _DiscoveryJobState:
     @property
     @pulumi.getter(name="shouldPropagateTagsToDiscoveredResources")
     def should_propagate_tags_to_discovered_resources(self) -> Optional[pulumi.Input[bool]]:
-        """
-        If this parameter set to true, the specified tags will be applied  to all resources discovered in the current request.  Default is true. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "should_propagate_tags_to_discovered_resources")
 
     @should_propagate_tags_to_discovered_resources.setter
@@ -297,9 +218,6 @@ class _DiscoveryJobState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the DiscoveryJob Resource.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -309,9 +227,6 @@ class _DiscoveryJobState:
     @property
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[str]]:
-        """
-        Specifies the status of the discovery job
-        """
         return pulumi.get(self, "status")
 
     @status.setter
@@ -321,9 +236,6 @@ class _DiscoveryJobState:
     @property
     @pulumi.getter(name="statusMessage")
     def status_message(self) -> Optional[pulumi.Input[str]]:
-        """
-        The short summary of the status of the discovery job
-        """
         return pulumi.get(self, "status_message")
 
     @status_message.setter
@@ -333,9 +245,6 @@ class _DiscoveryJobState:
     @property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
@@ -345,9 +254,6 @@ class _DiscoveryJobState:
     @property
     @pulumi.getter(name="tenantId")
     def tenant_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of Tenant
-        """
         return pulumi.get(self, "tenant_id")
 
     @tenant_id.setter
@@ -357,9 +263,6 @@ class _DiscoveryJobState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the discovery Job was updated.
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -369,9 +272,6 @@ class _DiscoveryJobState:
     @property
     @pulumi.getter(name="userId")
     def user_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of user in which the job is submitted
-        """
         return pulumi.get(self, "user_id")
 
     @user_id.setter
@@ -393,71 +293,9 @@ class DiscoveryJob(pulumi.CustomResource):
                  should_propagate_tags_to_discovered_resources: Optional[pulumi.Input[bool]] = None,
                  __props__=None):
         """
-        This resource provides the Discovery Job resource in Oracle Cloud Infrastructure Stack Monitoring service.
-
-        API to create discovery Job and submit discovery Details to agent.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_discovery_job = oci.stack_monitoring.DiscoveryJob("testDiscoveryJob",
-            compartment_id=var["compartment_id"],
-            discovery_details=oci.stack_monitoring.DiscoveryJobDiscoveryDetailsArgs(
-                agent_id=var["management_agent_id"],
-                properties=oci.stack_monitoring.DiscoveryJobDiscoveryDetailsPropertiesArgs(
-                    properties_map=var["discovery_job_discovery_details_properties_properties_map"],
-                ),
-                resource_name=var["discovery_job_discovery_details_resource_name"],
-                resource_type=var["discovery_job_discovery_details_resource_type"],
-                credentials=oci.stack_monitoring.DiscoveryJobDiscoveryDetailsCredentialsArgs(
-                    items=[oci.stack_monitoring.DiscoveryJobDiscoveryDetailsCredentialsItemArgs(
-                        credential_name=var["discovery_job_discovery_details_credentials_items_credential_name"],
-                        credential_type=var["discovery_job_discovery_details_credentials_items_credential_type"],
-                        properties=oci.stack_monitoring.DiscoveryJobDiscoveryDetailsCredentialsItemPropertiesArgs(
-                            properties_map=var["discovery_job_discovery_details_credentials_items_properties_properties_map"],
-                        ),
-                    )],
-                ),
-                license=var["discovery_job_discovery_details_license"],
-                tags=oci.stack_monitoring.DiscoveryJobDiscoveryDetailsTagsArgs(
-                    properties_map=var["discovery_job_discovery_details_tags_properties_map"],
-                ),
-            ),
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            discovery_client=var["discovery_job_discovery_client"],
-            discovery_type=var["discovery_job_discovery_type"],
-            freeform_tags={
-                "bar-key": "value",
-            },
-            should_propagate_tags_to_discovered_resources=var["discovery_job_should_propagate_tags_to_discovered_resources"])
-        ```
-
-        ## Import
-
-        DiscoveryJobs can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:StackMonitoring/discoveryJob:DiscoveryJob test_discovery_job "id"
-        ```
-
+        Create a DiscoveryJob resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: The OCID of Compartment
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] discovery_client: Client who submits discovery job.
-        :param pulumi.Input[pulumi.InputType['DiscoveryJobDiscoveryDetailsArgs']] discovery_details: The request of DiscoveryJob Resource details.
-        :param pulumi.Input[str] discovery_type: Add option submits new discovery Job. Add with retry option to re-submit failed discovery job. Refresh option refreshes the existing discovered resources.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[bool] should_propagate_tags_to_discovered_resources: If this parameter set to true, the specified tags will be applied  to all resources discovered in the current request.  Default is true. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -466,58 +304,7 @@ class DiscoveryJob(pulumi.CustomResource):
                  args: DiscoveryJobArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Discovery Job resource in Oracle Cloud Infrastructure Stack Monitoring service.
-
-        API to create discovery Job and submit discovery Details to agent.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_discovery_job = oci.stack_monitoring.DiscoveryJob("testDiscoveryJob",
-            compartment_id=var["compartment_id"],
-            discovery_details=oci.stack_monitoring.DiscoveryJobDiscoveryDetailsArgs(
-                agent_id=var["management_agent_id"],
-                properties=oci.stack_monitoring.DiscoveryJobDiscoveryDetailsPropertiesArgs(
-                    properties_map=var["discovery_job_discovery_details_properties_properties_map"],
-                ),
-                resource_name=var["discovery_job_discovery_details_resource_name"],
-                resource_type=var["discovery_job_discovery_details_resource_type"],
-                credentials=oci.stack_monitoring.DiscoveryJobDiscoveryDetailsCredentialsArgs(
-                    items=[oci.stack_monitoring.DiscoveryJobDiscoveryDetailsCredentialsItemArgs(
-                        credential_name=var["discovery_job_discovery_details_credentials_items_credential_name"],
-                        credential_type=var["discovery_job_discovery_details_credentials_items_credential_type"],
-                        properties=oci.stack_monitoring.DiscoveryJobDiscoveryDetailsCredentialsItemPropertiesArgs(
-                            properties_map=var["discovery_job_discovery_details_credentials_items_properties_properties_map"],
-                        ),
-                    )],
-                ),
-                license=var["discovery_job_discovery_details_license"],
-                tags=oci.stack_monitoring.DiscoveryJobDiscoveryDetailsTagsArgs(
-                    properties_map=var["discovery_job_discovery_details_tags_properties_map"],
-                ),
-            ),
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            discovery_client=var["discovery_job_discovery_client"],
-            discovery_type=var["discovery_job_discovery_type"],
-            freeform_tags={
-                "bar-key": "value",
-            },
-            should_propagate_tags_to_discovered_resources=var["discovery_job_should_propagate_tags_to_discovered_resources"])
-        ```
-
-        ## Import
-
-        DiscoveryJobs can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:StackMonitoring/discoveryJob:DiscoveryJob test_discovery_job "id"
-        ```
-
+        Create a DiscoveryJob resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param DiscoveryJobArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -598,24 +385,6 @@ class DiscoveryJob(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: The OCID of Compartment
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] discovery_client: Client who submits discovery job.
-        :param pulumi.Input[pulumi.InputType['DiscoveryJobDiscoveryDetailsArgs']] discovery_details: The request of DiscoveryJob Resource details.
-        :param pulumi.Input[str] discovery_type: Add option submits new discovery Job. Add with retry option to re-submit failed discovery job. Refresh option refreshes the existing discovered resources.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[bool] should_propagate_tags_to_discovered_resources: If this parameter set to true, the specified tags will be applied  to all resources discovered in the current request.  Default is true. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] state: The current state of the DiscoveryJob Resource.
-        :param pulumi.Input[str] status: Specifies the status of the discovery job
-        :param pulumi.Input[str] status_message: The short summary of the status of the discovery job
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] tenant_id: The OCID of Tenant
-        :param pulumi.Input[str] time_updated: The time the discovery Job was updated.
-        :param pulumi.Input[str] user_id: The OCID of user in which the job is submitted
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -640,116 +409,70 @@ class DiscoveryJob(pulumi.CustomResource):
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of Compartment
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="discoveryClient")
-    def discovery_client(self) -> pulumi.Output[str]:
-        """
-        Client who submits discovery job.
-        """
+    def discovery_client(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "discovery_client")
 
     @property
     @pulumi.getter(name="discoveryDetails")
     def discovery_details(self) -> pulumi.Output['outputs.DiscoveryJobDiscoveryDetails']:
-        """
-        The request of DiscoveryJob Resource details.
-        """
         return pulumi.get(self, "discovery_details")
 
     @property
     @pulumi.getter(name="discoveryType")
     def discovery_type(self) -> pulumi.Output[Optional[str]]:
-        """
-        Add option submits new discovery Job. Add with retry option to re-submit failed discovery job. Refresh option refreshes the existing discovered resources.
-        """
         return pulumi.get(self, "discovery_type")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="shouldPropagateTagsToDiscoveredResources")
-    def should_propagate_tags_to_discovered_resources(self) -> pulumi.Output[bool]:
-        """
-        If this parameter set to true, the specified tags will be applied  to all resources discovered in the current request.  Default is true. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
+    def should_propagate_tags_to_discovered_resources(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "should_propagate_tags_to_discovered_resources")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the DiscoveryJob Resource.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter
-    def status(self) -> pulumi.Output[str]:
-        """
-        Specifies the status of the discovery job
-        """
+    def status(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter(name="statusMessage")
-    def status_message(self) -> pulumi.Output[str]:
-        """
-        The short summary of the status of the discovery job
-        """
+    def status_message(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "status_message")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="tenantId")
-    def tenant_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of Tenant
-        """
+    def tenant_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "tenant_id")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The time the discovery Job was updated.
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="userId")
-    def user_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of user in which the job is submitted
-        """
+    def user_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "user_id")
 

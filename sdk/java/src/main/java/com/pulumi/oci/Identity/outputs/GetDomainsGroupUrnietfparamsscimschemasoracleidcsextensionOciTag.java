@@ -9,6 +9,8 @@ import com.pulumi.oci.Identity.outputs.GetDomainsGroupUrnietfparamsscimschemasor
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTag {
@@ -16,17 +18,17 @@ public final class GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensionOci
      * @return Oracle Cloud Infrastructure Defined Tags
      * 
      */
-    private List<GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTag> definedTags;
+    private @Nullable List<GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTag> definedTags;
     /**
      * @return Oracle Cloud Infrastructure Freeform Tags
      * 
      */
-    private List<GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTag> freeformTags;
+    private @Nullable List<GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTag> freeformTags;
     /**
      * @return Oracle Cloud Infrastructure Tag slug
      * 
      */
-    private String tagSlug;
+    private @Nullable String tagSlug;
 
     private GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTag() {}
     /**
@@ -34,21 +36,21 @@ public final class GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensionOci
      * 
      */
     public List<GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTag> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? List.of() : this.definedTags;
     }
     /**
      * @return Oracle Cloud Infrastructure Freeform Tags
      * 
      */
     public List<GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTag> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? List.of() : this.freeformTags;
     }
     /**
      * @return Oracle Cloud Infrastructure Tag slug
      * 
      */
-    public String tagSlug() {
-        return this.tagSlug;
+    public Optional<String> tagSlug() {
+        return Optional.ofNullable(this.tagSlug);
     }
 
     public static Builder builder() {
@@ -60,9 +62,9 @@ public final class GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensionOci
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTag> definedTags;
-        private List<GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTag> freeformTags;
-        private String tagSlug;
+        private @Nullable List<GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTag> definedTags;
+        private @Nullable List<GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTag> freeformTags;
+        private @Nullable String tagSlug;
         public Builder() {}
         public Builder(GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTag defaults) {
     	      Objects.requireNonNull(defaults);
@@ -72,24 +74,24 @@ public final class GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensionOci
         }
 
         @CustomType.Setter
-        public Builder definedTags(List<GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTag> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable List<GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTag> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         public Builder definedTags(GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTag... definedTags) {
             return definedTags(List.of(definedTags));
         }
         @CustomType.Setter
-        public Builder freeformTags(List<GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTag> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable List<GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTag> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         public Builder freeformTags(GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTag... freeformTags) {
             return freeformTags(List.of(freeformTags));
         }
         @CustomType.Setter
-        public Builder tagSlug(String tagSlug) {
-            this.tagSlug = Objects.requireNonNull(tagSlug);
+        public Builder tagSlug(@Nullable String tagSlug) {
+            this.tagSlug = tagSlug;
             return this;
         }
         public GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTag build() {

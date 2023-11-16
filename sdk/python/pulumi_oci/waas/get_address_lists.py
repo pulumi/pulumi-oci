@@ -54,18 +54,12 @@ class GetAddressListsResult:
 
     @property
     @pulumi.getter(name="addressLists")
-    def address_lists(self) -> Sequence['outputs.GetAddressListsAddressListResult']:
-        """
-        The list of address_lists.
-        """
+    def address_lists(self) -> Optional[Sequence['outputs.GetAddressListsAddressListResult']]:
         return pulumi.get(self, "address_lists")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the address list's compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -75,7 +69,7 @@ class GetAddressListsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -133,31 +127,7 @@ def get_address_lists(compartment_id: Optional[str] = None,
                       time_created_less_than: Optional[str] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAddressListsResult:
     """
-    This data source provides the list of Address Lists in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
-
-    Gets a list of address lists that can be used in a WAAS policy.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_address_lists = oci.Waas.get_address_lists(compartment_id=var["compartment_id"],
-        ids=var["address_list_ids"],
-        names=var["address_list_names"],
-        states=var["address_list_states"],
-        time_created_greater_than_or_equal_to=var["address_list_time_created_greater_than_or_equal_to"],
-        time_created_less_than=var["address_list_time_created_less_than"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This number is generated when the compartment is created.
-    :param Sequence[str] ids: Filter address lists using a list of address lists OCIDs.
-    :param Sequence[str] names: Filter address lists using a list of names.
-    :param Sequence[str] states: Filter address lists using a list of lifecycle states.
-    :param str time_created_greater_than_or_equal_to: A filter that matches address lists created on or after the specified date-time.
-    :param str time_created_less_than: A filter that matches address lists created before the specified date-time.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -192,30 +162,6 @@ def get_address_lists_output(compartment_id: Optional[pulumi.Input[str]] = None,
                              time_created_less_than: Optional[pulumi.Input[Optional[str]]] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAddressListsResult]:
     """
-    This data source provides the list of Address Lists in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
-
-    Gets a list of address lists that can be used in a WAAS policy.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_address_lists = oci.Waas.get_address_lists(compartment_id=var["compartment_id"],
-        ids=var["address_list_ids"],
-        names=var["address_list_names"],
-        states=var["address_list_states"],
-        time_created_greater_than_or_equal_to=var["address_list_time_created_greater_than_or_equal_to"],
-        time_created_less_than=var["address_list_time_created_less_than"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This number is generated when the compartment is created.
-    :param Sequence[str] ids: Filter address lists using a list of address lists OCIDs.
-    :param Sequence[str] names: Filter address lists using a list of names.
-    :param Sequence[str] states: Filter address lists using a list of lifecycle states.
-    :param str time_created_greater_than_or_equal_to: A filter that matches address lists created on or after the specified date-time.
-    :param str time_created_less_than: A filter that matches address lists created before the specified date-time.
+    Use this data source to access information about an existing resource.
     """
     ...

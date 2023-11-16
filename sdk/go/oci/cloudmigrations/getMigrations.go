@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Migrations in Oracle Cloud Infrastructure Cloud Migrations service.
@@ -75,7 +74,7 @@ type GetMigrationsResult struct {
 	DisplayName *string               `pulumi:"displayName"`
 	Filters     []GetMigrationsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of migration_collection.
 	MigrationCollections []GetMigrationsMigrationCollection `pulumi:"migrationCollections"`
 	MigrationId          *string                            `pulumi:"migrationId"`
@@ -128,12 +127,6 @@ func (o GetMigrationsResultOutput) ToGetMigrationsResultOutputWithContext(ctx co
 	return o
 }
 
-func (o GetMigrationsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationsResult] {
-	return pulumix.Output[GetMigrationsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Compartment Identifier
 func (o GetMigrationsResultOutput) CompartmentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetMigrationsResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
@@ -149,8 +142,8 @@ func (o GetMigrationsResultOutput) Filters() GetMigrationsFilterArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetMigrationsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMigrationsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetMigrationsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMigrationsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of migration_collection.

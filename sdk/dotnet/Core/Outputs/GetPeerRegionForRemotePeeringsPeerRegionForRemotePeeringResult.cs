@@ -16,10 +16,10 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// The region's name.  Example: `us-phoenix-1`
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
 
         [OutputConstructor]
-        private GetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringResult(string name)
+        private GetPeerRegionForRemotePeeringsPeerRegionForRemotePeeringResult(string? name)
         {
             Name = name;
         }

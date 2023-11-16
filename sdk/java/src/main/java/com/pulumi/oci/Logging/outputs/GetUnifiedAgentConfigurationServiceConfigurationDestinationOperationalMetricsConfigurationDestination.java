@@ -6,6 +6,8 @@ package com.pulumi.oci.Logging.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationDestination {
@@ -13,15 +15,15 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationDestinationOp
      * @return The OCID of the compartment that the resource belongs to.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
 
     private GetUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationDestination() {}
     /**
      * @return The OCID of the compartment that the resource belongs to.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
 
     public static Builder builder() {
@@ -33,7 +35,7 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationDestinationOp
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
+        private @Nullable String compartmentId;
         public Builder() {}
         public Builder(GetUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationDestination defaults) {
     	      Objects.requireNonNull(defaults);
@@ -41,8 +43,8 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationDestinationOp
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         public GetUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationDestination build() {

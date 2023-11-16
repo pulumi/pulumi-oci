@@ -16,10 +16,10 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// <summary>
         /// The repository URL
         /// </summary>
-        public readonly string Url;
+        public readonly string? Url;
 
         [OutputConstructor]
-        private GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionResult(string url)
+        private GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionResult(string? url)
         {
             Url = url;
         }

@@ -58,11 +58,11 @@ export interface GetDbManagementPrivateEndpointAssociatedDatabaseResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * A list of databases using a Database Management private endpoint.
      */
-    readonly items: outputs.DatabaseManagement.GetDbManagementPrivateEndpointAssociatedDatabaseItem[];
+    readonly items?: outputs.DatabaseManagement.GetDbManagementPrivateEndpointAssociatedDatabaseItem[];
 }
 /**
  * This data source provides details about a specific Db Management Private Endpoint Associated Database resource in Oracle Cloud Infrastructure Database Management service.

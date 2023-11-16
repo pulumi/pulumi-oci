@@ -108,47 +108,47 @@ namespace Pulumi.Oci.DataScience
         /// <summary>
         /// For model reproducibility purposes. Branch of the git repository associated with model training.
         /// </summary>
-        public readonly string GitBranch;
+        public readonly string? GitBranch;
         /// <summary>
         /// For model reproducibility purposes. Commit ID of the git repository associated with model training.
         /// </summary>
-        public readonly string GitCommit;
-        public readonly string Id;
+        public readonly string? GitCommit;
+        public readonly string? Id;
         public readonly string ModelId;
         /// <summary>
         /// For model reproducibility purposes. URL of the git repository associated with model training.
         /// </summary>
-        public readonly string RepositoryUrl;
+        public readonly string? RepositoryUrl;
         /// <summary>
         /// For model reproducibility purposes. Path to model artifacts.
         /// </summary>
-        public readonly string ScriptDir;
+        public readonly string? ScriptDir;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a training session(Job or NotebookSession) in which the model was trained. It is used for model reproducibility purposes.
         /// </summary>
-        public readonly string TrainingId;
+        public readonly string? TrainingId;
         /// <summary>
         /// For model reproducibility purposes. Path to the python script or notebook in which the model was trained."
         /// </summary>
-        public readonly string TrainingScript;
+        public readonly string? TrainingScript;
 
         [OutputConstructor]
         private GetModelProvenanceResult(
-            string gitBranch,
+            string? gitBranch,
 
-            string gitCommit,
+            string? gitCommit,
 
-            string id,
+            string? id,
 
             string modelId,
 
-            string repositoryUrl,
+            string? repositoryUrl,
 
-            string scriptDir,
+            string? scriptDir,
 
-            string trainingId,
+            string? trainingId,
 
-            string trainingScript)
+            string? trainingScript)
         {
             GitBranch = gitBranch;
             GitCommit = gitCommit;

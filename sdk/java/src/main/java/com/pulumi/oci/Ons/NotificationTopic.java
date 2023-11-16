@@ -13,6 +13,7 @@ import com.pulumi.oci.Utilities;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -82,14 +83,14 @@ public class NotificationTopic extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="apiEndpoint", refs={String.class}, tree="[0]")
-    private Output<String> apiEndpoint;
+    private Output</* @Nullable */ String> apiEndpoint;
 
     /**
      * @return The endpoint for managing subscriptions or publishing messages to the topic.
      * 
      */
-    public Output<String> apiEndpoint() {
-        return this.apiEndpoint;
+    public Output<Optional<String>> apiEndpoint() {
+        return Codegen.optional(this.apiEndpoint);
     }
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the topic in.
@@ -110,56 +111,56 @@ public class NotificationTopic extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) The description of the topic being created. Avoid entering confidential information.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
-    private Output<String> description;
+    private Output</* @Nullable */ String> description;
 
     /**
      * @return (Updatable) The description of the topic being created. Avoid entering confidential information.
      * 
      */
-    public Output<String> description() {
-        return this.description;
+    public Output<Optional<String>> description() {
+        return Codegen.optional(this.description);
     }
     /**
      * For optimistic concurrency control. See `if-match`.
      * 
      */
     @Export(name="etag", refs={String.class}, tree="[0]")
-    private Output<String> etag;
+    private Output</* @Nullable */ String> etag;
 
     /**
      * @return For optimistic concurrency control. See `if-match`.
      * 
      */
-    public Output<String> etag() {
-        return this.etag;
+    public Output<Optional<String>> etag() {
+        return Codegen.optional(this.etag);
     }
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * The name of the topic being created. The topic name must be unique across the tenancy. Avoid entering confidential information.
@@ -186,56 +187,56 @@ public class NotificationTopic extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="shortTopicId", refs={String.class}, tree="[0]")
-    private Output<String> shortTopicId;
+    private Output</* @Nullable */ String> shortTopicId;
 
     /**
      * @return A unique short topic Id. This is used only for SMS subscriptions.
      * 
      */
-    public Output<String> shortTopicId() {
-        return this.shortTopicId;
+    public Output<Optional<String>> shortTopicId() {
+        return Codegen.optional(this.shortTopicId);
     }
     /**
      * The lifecycle state of the topic.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The lifecycle state of the topic.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The time the topic was created.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The time the topic was created.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
      * 
      */
     @Export(name="topicId", refs={String.class}, tree="[0]")
-    private Output<String> topicId;
+    private Output</* @Nullable */ String> topicId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
      * 
      */
-    public Output<String> topicId() {
-        return this.topicId;
+    public Output<Optional<String>> topicId() {
+        return Codegen.optional(this.topicId);
     }
 
     /**

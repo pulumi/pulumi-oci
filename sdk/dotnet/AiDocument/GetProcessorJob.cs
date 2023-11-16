@@ -110,15 +110,15 @@ namespace Pulumi.Oci.AiDocument
         /// <summary>
         /// The compartment identifier.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The display name of the processor job.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// The id of the processor job.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The location of the inputs.
         /// </summary>
@@ -126,7 +126,7 @@ namespace Pulumi.Oci.AiDocument
         /// <summary>
         /// The detailed status of FAILED state.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// The object storage location where to store analysis results.
         /// </summary>
@@ -134,7 +134,7 @@ namespace Pulumi.Oci.AiDocument
         /// <summary>
         /// How much progress the operation has made, compared to the total amount of work to be performed.
         /// </summary>
-        public readonly double PercentComplete;
+        public readonly double? PercentComplete;
         /// <summary>
         /// The configuration of a processor.
         /// </summary>
@@ -143,47 +143,47 @@ namespace Pulumi.Oci.AiDocument
         /// <summary>
         /// The current state of the processor job.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The job acceptance time.
         /// </summary>
-        public readonly string TimeAccepted;
+        public readonly string? TimeAccepted;
         /// <summary>
         /// The job finish time.
         /// </summary>
-        public readonly string TimeFinished;
+        public readonly string? TimeFinished;
         /// <summary>
         /// The job start time.
         /// </summary>
-        public readonly string TimeStarted;
+        public readonly string? TimeStarted;
 
         [OutputConstructor]
         private GetProcessorJobResult(
-            string compartmentId,
+            string? compartmentId,
 
-            string displayName,
+            string? displayName,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetProcessorJobInputLocationResult> inputLocations,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
             ImmutableArray<Outputs.GetProcessorJobOutputLocationResult> outputLocations,
 
-            double percentComplete,
+            double? percentComplete,
 
             ImmutableArray<Outputs.GetProcessorJobProcessorConfigResult> processorConfigs,
 
             string processorJobId,
 
-            string state,
+            string? state,
 
-            string timeAccepted,
+            string? timeAccepted,
 
-            string timeFinished,
+            string? timeFinished,
 
-            string timeStarted)
+            string? timeStarted)
         {
             CompartmentId = compartmentId;
             DisplayName = displayName;

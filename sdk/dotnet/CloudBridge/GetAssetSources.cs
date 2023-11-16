@@ -182,7 +182,7 @@ namespace Pulumi.Oci.CloudBridge
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The current state of the asset source.
         /// </summary>
@@ -200,7 +200,7 @@ namespace Pulumi.Oci.CloudBridge
 
             ImmutableArray<Outputs.GetAssetSourcesFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? state)
         {

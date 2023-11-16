@@ -10,6 +10,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetHeatWaveClusterResult {
@@ -17,48 +19,48 @@ public final class GetHeatWaveClusterResult {
      * @return A HeatWave node is a compute host that is part of a HeatWave cluster.
      * 
      */
-    private List<GetHeatWaveClusterClusterNode> clusterNodes;
+    private @Nullable List<GetHeatWaveClusterClusterNode> clusterNodes;
     /**
      * @return The number of analytics-processing compute instances, of the specified shape, in the HeatWave cluster.
      * 
      */
-    private Integer clusterSize;
+    private @Nullable Integer clusterSize;
     /**
      * @return The OCID of the parent DB System this HeatWave cluster is attached to.
      * 
      */
     private String dbSystemId;
-    private String id;
+    private @Nullable String id;
     /**
      * @return Lakehouse enabled status for the HeatWave cluster.
      * 
      */
-    private Boolean isLakehouseEnabled;
+    private @Nullable Boolean isLakehouseEnabled;
     /**
      * @return Additional information about the current lifecycleState.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return The shape determines resources to allocate to the HeatWave nodes - CPU cores, memory.
      * 
      */
-    private String shapeName;
+    private @Nullable String shapeName;
     /**
      * @return The current state of the HeatWave cluster.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The date and time the HeatWave cluster was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The time the HeatWave cluster was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
 
     private GetHeatWaveClusterResult() {}
     /**
@@ -66,14 +68,14 @@ public final class GetHeatWaveClusterResult {
      * 
      */
     public List<GetHeatWaveClusterClusterNode> clusterNodes() {
-        return this.clusterNodes;
+        return this.clusterNodes == null ? List.of() : this.clusterNodes;
     }
     /**
      * @return The number of analytics-processing compute instances, of the specified shape, in the HeatWave cluster.
      * 
      */
-    public Integer clusterSize() {
-        return this.clusterSize;
+    public Optional<Integer> clusterSize() {
+        return Optional.ofNullable(this.clusterSize);
     }
     /**
      * @return The OCID of the parent DB System this HeatWave cluster is attached to.
@@ -82,50 +84,50 @@ public final class GetHeatWaveClusterResult {
     public String dbSystemId() {
         return this.dbSystemId;
     }
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Lakehouse enabled status for the HeatWave cluster.
      * 
      */
-    public Boolean isLakehouseEnabled() {
-        return this.isLakehouseEnabled;
+    public Optional<Boolean> isLakehouseEnabled() {
+        return Optional.ofNullable(this.isLakehouseEnabled);
     }
     /**
      * @return Additional information about the current lifecycleState.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return The shape determines resources to allocate to the HeatWave nodes - CPU cores, memory.
      * 
      */
-    public String shapeName() {
-        return this.shapeName;
+    public Optional<String> shapeName() {
+        return Optional.ofNullable(this.shapeName);
     }
     /**
      * @return The current state of the HeatWave cluster.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The date and time the HeatWave cluster was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The time the HeatWave cluster was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
 
     public static Builder builder() {
@@ -137,16 +139,16 @@ public final class GetHeatWaveClusterResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetHeatWaveClusterClusterNode> clusterNodes;
-        private Integer clusterSize;
+        private @Nullable List<GetHeatWaveClusterClusterNode> clusterNodes;
+        private @Nullable Integer clusterSize;
         private String dbSystemId;
-        private String id;
-        private Boolean isLakehouseEnabled;
-        private String lifecycleDetails;
-        private String shapeName;
-        private String state;
-        private String timeCreated;
-        private String timeUpdated;
+        private @Nullable String id;
+        private @Nullable Boolean isLakehouseEnabled;
+        private @Nullable String lifecycleDetails;
+        private @Nullable String shapeName;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
         public Builder() {}
         public Builder(GetHeatWaveClusterResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -163,16 +165,16 @@ public final class GetHeatWaveClusterResult {
         }
 
         @CustomType.Setter
-        public Builder clusterNodes(List<GetHeatWaveClusterClusterNode> clusterNodes) {
-            this.clusterNodes = Objects.requireNonNull(clusterNodes);
+        public Builder clusterNodes(@Nullable List<GetHeatWaveClusterClusterNode> clusterNodes) {
+            this.clusterNodes = clusterNodes;
             return this;
         }
         public Builder clusterNodes(GetHeatWaveClusterClusterNode... clusterNodes) {
             return clusterNodes(List.of(clusterNodes));
         }
         @CustomType.Setter
-        public Builder clusterSize(Integer clusterSize) {
-            this.clusterSize = Objects.requireNonNull(clusterSize);
+        public Builder clusterSize(@Nullable Integer clusterSize) {
+            this.clusterSize = clusterSize;
             return this;
         }
         @CustomType.Setter
@@ -181,38 +183,38 @@ public final class GetHeatWaveClusterResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder isLakehouseEnabled(Boolean isLakehouseEnabled) {
-            this.isLakehouseEnabled = Objects.requireNonNull(isLakehouseEnabled);
+        public Builder isLakehouseEnabled(@Nullable Boolean isLakehouseEnabled) {
+            this.isLakehouseEnabled = isLakehouseEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder shapeName(String shapeName) {
-            this.shapeName = Objects.requireNonNull(shapeName);
+        public Builder shapeName(@Nullable String shapeName) {
+            this.shapeName = shapeName;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetHeatWaveClusterResult build() {

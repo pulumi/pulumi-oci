@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetLogAnalyticsUnprocessedDataBucketResult {
@@ -14,17 +16,17 @@ public final class GetLogAnalyticsUnprocessedDataBucketResult {
      * @return Name of the Object Storage bucket.
      * 
      */
-    private String bucket;
+    private @Nullable String bucket;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Flag that specifies if this configuration is enabled or not.
      * 
      */
-    private Boolean isEnabled;
+    private @Nullable Boolean isEnabled;
     /**
      * @return Object Storage namespace.
      * 
@@ -34,34 +36,34 @@ public final class GetLogAnalyticsUnprocessedDataBucketResult {
      * @return The time when this record is created. An RFC3339 formatted datetime string.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The latest time when this record is updated. An RFC3339 formatted datetime string.
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
 
     private GetLogAnalyticsUnprocessedDataBucketResult() {}
     /**
      * @return Name of the Object Storage bucket.
      * 
      */
-    public String bucket() {
-        return this.bucket;
+    public Optional<String> bucket() {
+        return Optional.ofNullable(this.bucket);
     }
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Flag that specifies if this configuration is enabled or not.
      * 
      */
-    public Boolean isEnabled() {
-        return this.isEnabled;
+    public Optional<Boolean> isEnabled() {
+        return Optional.ofNullable(this.isEnabled);
     }
     /**
      * @return Object Storage namespace.
@@ -74,15 +76,15 @@ public final class GetLogAnalyticsUnprocessedDataBucketResult {
      * @return The time when this record is created. An RFC3339 formatted datetime string.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The latest time when this record is updated. An RFC3339 formatted datetime string.
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
 
     public static Builder builder() {
@@ -94,12 +96,12 @@ public final class GetLogAnalyticsUnprocessedDataBucketResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String bucket;
-        private String id;
-        private Boolean isEnabled;
+        private @Nullable String bucket;
+        private @Nullable String id;
+        private @Nullable Boolean isEnabled;
         private String namespace;
-        private String timeCreated;
-        private String timeUpdated;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
         public Builder() {}
         public Builder(GetLogAnalyticsUnprocessedDataBucketResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -112,18 +114,18 @@ public final class GetLogAnalyticsUnprocessedDataBucketResult {
         }
 
         @CustomType.Setter
-        public Builder bucket(String bucket) {
-            this.bucket = Objects.requireNonNull(bucket);
+        public Builder bucket(@Nullable String bucket) {
+            this.bucket = bucket;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder isEnabled(Boolean isEnabled) {
-            this.isEnabled = Objects.requireNonNull(isEnabled);
+        public Builder isEnabled(@Nullable Boolean isEnabled) {
+            this.isEnabled = isEnabled;
             return this;
         }
         @CustomType.Setter
@@ -132,13 +134,13 @@ public final class GetLogAnalyticsUnprocessedDataBucketResult {
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetLogAnalyticsUnprocessedDataBucketResult build() {

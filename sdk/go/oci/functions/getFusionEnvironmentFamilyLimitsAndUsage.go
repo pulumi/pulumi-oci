@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Fusion Environment Family Limits And Usage resource in Oracle Cloud Infrastructure Fusion Apps service.
@@ -63,7 +62,7 @@ type GetFusionEnvironmentFamilyLimitsAndUsageResult struct {
 	DevelopmentLimitAndUsages []GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsage `pulumi:"developmentLimitAndUsages"`
 	FusionEnvironmentFamilyId string                                                             `pulumi:"fusionEnvironmentFamilyId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The limit and usage for a specific environment type, for example, production, development, or test.
 	ProductionLimitAndUsages []GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsage `pulumi:"productionLimitAndUsages"`
 	// The limit and usage for a specific environment type, for example, production, development, or test.
@@ -108,12 +107,6 @@ func (o GetFusionEnvironmentFamilyLimitsAndUsageResultOutput) ToGetFusionEnviron
 	return o
 }
 
-func (o GetFusionEnvironmentFamilyLimitsAndUsageResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentFamilyLimitsAndUsageResult] {
-	return pulumix.Output[GetFusionEnvironmentFamilyLimitsAndUsageResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The limit and usage for a specific environment type, for example, production, development, or test.
 func (o GetFusionEnvironmentFamilyLimitsAndUsageResultOutput) DevelopmentLimitAndUsages() GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageArrayOutput {
 	return o.ApplyT(func(v GetFusionEnvironmentFamilyLimitsAndUsageResult) []GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsage {
@@ -126,8 +119,8 @@ func (o GetFusionEnvironmentFamilyLimitsAndUsageResultOutput) FusionEnvironmentF
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetFusionEnvironmentFamilyLimitsAndUsageResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentFamilyLimitsAndUsageResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentFamilyLimitsAndUsageResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentFamilyLimitsAndUsageResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The limit and usage for a specific environment type, for example, production, development, or test.

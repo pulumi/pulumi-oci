@@ -48,12 +48,12 @@ class GetManagedInstanceEventReportResult:
 
     @property
     @pulumi.getter
-    def counts(self) -> int:
+    def counts(self) -> Optional[int]:
         return pulumi.get(self, "counts")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -95,27 +95,7 @@ def get_managed_instance_event_report(compartment_id: Optional[str] = None,
                                       managed_instance_id: Optional[str] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagedInstanceEventReportResult:
     """
-    This data source provides details about a specific Managed Instance Event Report resource in Oracle Cloud Infrastructure OS Management service.
-
-    Get summary information about events on this instance.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_instance_event_report = oci.OsManagement.get_managed_instance_event_report(compartment_id=var["compartment_id"],
-        managed_instance_id=oci_osmanagement_managed_instance["test_managed_instance"]["id"],
-        latest_timestamp_greater_than_or_equal_to=var["managed_instance_event_report_latest_timestamp_greater_than_or_equal_to"],
-        latest_timestamp_less_than=var["managed_instance_event_report_latest_timestamp_less_than"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str latest_timestamp_greater_than_or_equal_to: filter event occurrence. Selecting only those last occurred on or after given date in ISO 8601 format Example: 2017-07-14T02:40:00.000Z
-    :param str latest_timestamp_less_than: filter event occurrence. Selecting only those last occurred before given date in ISO 8601 format Example: 2017-07-14T02:40:00.000Z
-    :param str managed_instance_id: Instance Oracle Cloud identifier (ocid)
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -141,26 +121,6 @@ def get_managed_instance_event_report_output(compartment_id: Optional[pulumi.Inp
                                              managed_instance_id: Optional[pulumi.Input[str]] = None,
                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedInstanceEventReportResult]:
     """
-    This data source provides details about a specific Managed Instance Event Report resource in Oracle Cloud Infrastructure OS Management service.
-
-    Get summary information about events on this instance.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_instance_event_report = oci.OsManagement.get_managed_instance_event_report(compartment_id=var["compartment_id"],
-        managed_instance_id=oci_osmanagement_managed_instance["test_managed_instance"]["id"],
-        latest_timestamp_greater_than_or_equal_to=var["managed_instance_event_report_latest_timestamp_greater_than_or_equal_to"],
-        latest_timestamp_less_than=var["managed_instance_event_report_latest_timestamp_less_than"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str latest_timestamp_greater_than_or_equal_to: filter event occurrence. Selecting only those last occurred on or after given date in ISO 8601 format Example: 2017-07-14T02:40:00.000Z
-    :param str latest_timestamp_less_than: filter event occurrence. Selecting only those last occurred before given date in ISO 8601 format Example: 2017-07-14T02:40:00.000Z
-    :param str managed_instance_id: Instance Oracle Cloud identifier (ocid)
+    Use this data source to access information about an existing resource.
     """
     ...

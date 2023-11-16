@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Virtual Deployment resource in Oracle Cloud Infrastructure Service Mesh service.
@@ -79,31 +78,31 @@ type VirtualDeployment struct {
 	pulumi.CustomResourceState
 
 	// (Updatable) This configuration determines if logging is enabled and where the logs will be output.
-	AccessLogging VirtualDeploymentAccessLoggingOutput `pulumi:"accessLogging"`
+	AccessLogging VirtualDeploymentAccessLoggingPtrOutput `pulumi:"accessLogging"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// (Updatable) The listeners for the virtual deployment.
 	Listeners VirtualDeploymentListenerArrayOutput `pulumi:"listeners"`
 	// A user-friendly name. The name must be unique within the same virtual service and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
 	Name pulumi.StringOutput `pulumi:"name"`
 	// (Updatable) Service Discovery configuration for virtual deployments.
-	ServiceDiscovery VirtualDeploymentServiceDiscoveryOutput `pulumi:"serviceDiscovery"`
+	ServiceDiscovery VirtualDeploymentServiceDiscoveryPtrOutput `pulumi:"serviceDiscovery"`
 	// The current state of the Resource.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The time when this resource was created in an RFC3339 formatted datetime string.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The time when this resource was updated in an RFC3339 formatted datetime string.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 	// The OCID of the service mesh in which this access policy is created.
 	//
 	// ** IMPORTANT **
@@ -290,12 +289,6 @@ func (i *VirtualDeployment) ToVirtualDeploymentOutputWithContext(ctx context.Con
 	return pulumi.ToOutputWithContext(ctx, i).(VirtualDeploymentOutput)
 }
 
-func (i *VirtualDeployment) ToOutput(ctx context.Context) pulumix.Output[*VirtualDeployment] {
-	return pulumix.Output[*VirtualDeployment]{
-		OutputState: i.ToVirtualDeploymentOutputWithContext(ctx).OutputState,
-	}
-}
-
 // VirtualDeploymentArrayInput is an input type that accepts VirtualDeploymentArray and VirtualDeploymentArrayOutput values.
 // You can construct a concrete instance of `VirtualDeploymentArrayInput` via:
 //
@@ -319,12 +312,6 @@ func (i VirtualDeploymentArray) ToVirtualDeploymentArrayOutput() VirtualDeployme
 
 func (i VirtualDeploymentArray) ToVirtualDeploymentArrayOutputWithContext(ctx context.Context) VirtualDeploymentArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(VirtualDeploymentArrayOutput)
-}
-
-func (i VirtualDeploymentArray) ToOutput(ctx context.Context) pulumix.Output[[]*VirtualDeployment] {
-	return pulumix.Output[[]*VirtualDeployment]{
-		OutputState: i.ToVirtualDeploymentArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // VirtualDeploymentMapInput is an input type that accepts VirtualDeploymentMap and VirtualDeploymentMapOutput values.
@@ -352,12 +339,6 @@ func (i VirtualDeploymentMap) ToVirtualDeploymentMapOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(VirtualDeploymentMapOutput)
 }
 
-func (i VirtualDeploymentMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*VirtualDeployment] {
-	return pulumix.Output[map[string]*VirtualDeployment]{
-		OutputState: i.ToVirtualDeploymentMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type VirtualDeploymentOutput struct{ *pulumi.OutputState }
 
 func (VirtualDeploymentOutput) ElementType() reflect.Type {
@@ -372,15 +353,9 @@ func (o VirtualDeploymentOutput) ToVirtualDeploymentOutputWithContext(ctx contex
 	return o
 }
 
-func (o VirtualDeploymentOutput) ToOutput(ctx context.Context) pulumix.Output[*VirtualDeployment] {
-	return pulumix.Output[*VirtualDeployment]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) This configuration determines if logging is enabled and where the logs will be output.
-func (o VirtualDeploymentOutput) AccessLogging() VirtualDeploymentAccessLoggingOutput {
-	return o.ApplyT(func(v *VirtualDeployment) VirtualDeploymentAccessLoggingOutput { return v.AccessLogging }).(VirtualDeploymentAccessLoggingOutput)
+func (o VirtualDeploymentOutput) AccessLogging() VirtualDeploymentAccessLoggingPtrOutput {
+	return o.ApplyT(func(v *VirtualDeployment) VirtualDeploymentAccessLoggingPtrOutput { return v.AccessLogging }).(VirtualDeploymentAccessLoggingPtrOutput)
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -394,8 +369,8 @@ func (o VirtualDeploymentOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
-func (o VirtualDeploymentOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *VirtualDeployment) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o VirtualDeploymentOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VirtualDeployment) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -404,8 +379,8 @@ func (o VirtualDeploymentOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-func (o VirtualDeploymentOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *VirtualDeployment) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o VirtualDeploymentOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VirtualDeployment) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The listeners for the virtual deployment.
@@ -419,13 +394,13 @@ func (o VirtualDeploymentOutput) Name() pulumi.StringOutput {
 }
 
 // (Updatable) Service Discovery configuration for virtual deployments.
-func (o VirtualDeploymentOutput) ServiceDiscovery() VirtualDeploymentServiceDiscoveryOutput {
-	return o.ApplyT(func(v *VirtualDeployment) VirtualDeploymentServiceDiscoveryOutput { return v.ServiceDiscovery }).(VirtualDeploymentServiceDiscoveryOutput)
+func (o VirtualDeploymentOutput) ServiceDiscovery() VirtualDeploymentServiceDiscoveryPtrOutput {
+	return o.ApplyT(func(v *VirtualDeployment) VirtualDeploymentServiceDiscoveryPtrOutput { return v.ServiceDiscovery }).(VirtualDeploymentServiceDiscoveryPtrOutput)
 }
 
 // The current state of the Resource.
-func (o VirtualDeploymentOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *VirtualDeployment) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o VirtualDeploymentOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VirtualDeployment) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -434,13 +409,13 @@ func (o VirtualDeploymentOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time when this resource was created in an RFC3339 formatted datetime string.
-func (o VirtualDeploymentOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *VirtualDeployment) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o VirtualDeploymentOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VirtualDeployment) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time when this resource was updated in an RFC3339 formatted datetime string.
-func (o VirtualDeploymentOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *VirtualDeployment) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o VirtualDeploymentOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VirtualDeployment) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the service mesh in which this access policy is created.
@@ -465,12 +440,6 @@ func (o VirtualDeploymentArrayOutput) ToVirtualDeploymentArrayOutputWithContext(
 	return o
 }
 
-func (o VirtualDeploymentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*VirtualDeployment] {
-	return pulumix.Output[[]*VirtualDeployment]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o VirtualDeploymentArrayOutput) Index(i pulumi.IntInput) VirtualDeploymentOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *VirtualDeployment {
 		return vs[0].([]*VirtualDeployment)[vs[1].(int)]
@@ -489,12 +458,6 @@ func (o VirtualDeploymentMapOutput) ToVirtualDeploymentMapOutput() VirtualDeploy
 
 func (o VirtualDeploymentMapOutput) ToVirtualDeploymentMapOutputWithContext(ctx context.Context) VirtualDeploymentMapOutput {
 	return o
-}
-
-func (o VirtualDeploymentMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*VirtualDeployment] {
-	return pulumix.Output[map[string]*VirtualDeployment]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o VirtualDeploymentMapOutput) MapIndex(k pulumi.StringInput) VirtualDeploymentOutput {

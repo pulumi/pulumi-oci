@@ -16,17 +16,17 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// The category of different attention logs.
         /// </summary>
-        public readonly string Category;
+        public readonly string? Category;
         /// <summary>
         /// The count of attention logs with specific category.
         /// </summary>
-        public readonly int Count;
+        public readonly int? Count;
 
         [OutputConstructor]
         private GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollectionItemResult(
-            string category,
+            string? category,
 
-            int count)
+            int? count)
         {
             Category = category;
             Count = count;

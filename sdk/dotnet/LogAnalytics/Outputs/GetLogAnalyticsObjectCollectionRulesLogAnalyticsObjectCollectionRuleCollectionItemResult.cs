@@ -16,71 +16,71 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
         /// <summary>
         /// An optional character encoding to aid in detecting the character encoding of the contents of the objects while processing. It is recommended to set this value as ISO_8589_1 when configuring content of the objects having more numeric characters, and very few alphabets. For e.g. this applies when configuring VCN Flow Logs.
         /// </summary>
-        public readonly string CharEncoding;
+        public readonly string? CharEncoding;
         /// <summary>
         /// The type of collection. Supported collection types: LIVE, HISTORIC, HISTORIC_LIVE
         /// </summary>
-        public readonly string CollectionType;
+        public readonly string? CollectionType;
         /// <summary>
         /// The ID of the compartment in which to list resources.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// A string that describes the details of the rule. It does not have to be unique, and can be changed. Avoid entering confidential information.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// Logging Analytics entity OCID to associate the processed logs with.
         /// </summary>
-        public readonly string EntityId;
+        public readonly string? EntityId;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this rule.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Whether or not this rule is currently enabled.
         /// </summary>
-        public readonly bool IsEnabled;
+        public readonly bool? IsEnabled;
         /// <summary>
         /// A detailed status of the life cycle state.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// Logging Analytics Log group OCID to associate the processed logs with.
         /// </summary>
-        public readonly string LogGroupId;
+        public readonly string? LogGroupId;
         /// <summary>
         /// The logSet to be associated with the processed logs. The logSet feature can be used by customers with high volume of data  and this feature has to be enabled for a given tenancy prior to its usage. When logSetExtRegex value is provided, it will take precedence over this logSet value and logSet will be computed dynamically  using logSetKey and logSetExtRegex.
         /// </summary>
-        public readonly string LogSet;
+        public readonly string? LogSet;
         /// <summary>
         /// The regex to be applied against given logSetKey. Regex has to be in string escaped format.
         /// </summary>
-        public readonly string LogSetExtRegex;
+        public readonly string? LogSetExtRegex;
         /// <summary>
         /// An optional parameter to indicate from where the logSet to be extracted using logSetExtRegex. Default value is OBJECT_PATH (e.g. /n/&lt;namespace&gt;/b/&lt;bucketname&gt;/o/&lt;objectname&gt;).
         /// </summary>
-        public readonly string LogSetKey;
+        public readonly string? LogSetKey;
         /// <summary>
         /// Name of the Logging Analytics Source to use for the processing.
         /// </summary>
-        public readonly string LogSourceName;
+        public readonly string? LogSourceName;
         /// <summary>
         /// A filter to return rules only matching with this name.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The Logging Analytics namespace used for the request.
         /// </summary>
-        public readonly string Namespace;
+        public readonly string? Namespace;
         /// <summary>
         /// When the filters are provided, only the objects matching the filters are picked up for processing. The matchType supported is exact match and accommodates wildcard "*". For more information on filters, see [Event Filters](https://docs.oracle.com/en-us/iaas/Content/Events/Concepts/filterevents.htm).
         /// </summary>
@@ -88,11 +88,11 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
         /// <summary>
         /// Name of the Object Storage bucket.
         /// </summary>
-        public readonly string OsBucketName;
+        public readonly string? OsBucketName;
         /// <summary>
         /// Object Storage namespace.
         /// </summary>
-        public readonly string OsNamespace;
+        public readonly string? OsNamespace;
         /// <summary>
         /// Use this to override some property values which are defined at bucket level to the scope of object. Supported propeties for override are, logSourceName, charEncoding. Supported matchType for override are "contains".
         /// </summary>
@@ -100,83 +100,83 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
         /// <summary>
         /// The oldest time of the file in the bucket to consider for collection. Accepted values are: BEGINNING or CURRENT_TIME or RFC3339 formatted datetime string. When collectionType is LIVE, specifying pollSince value other than CURRENT_TIME will result in error.
         /// </summary>
-        public readonly string PollSince;
+        public readonly string? PollSince;
         /// <summary>
         /// The oldest time of the file in the bucket to consider for collection. Accepted values are: CURRENT_TIME or RFC3339 formatted datetime string. When collectionType is LIVE, specifying pollTill will result in error.
         /// </summary>
-        public readonly string PollTill;
+        public readonly string? PollTill;
         /// <summary>
         /// Lifecycle state filter.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The time when this rule was created. An RFC3339 formatted datetime string.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The time when this rule was last updated. An RFC3339 formatted datetime string.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
         /// <summary>
         /// Timezone to be used when processing log entries whose timestamps do not include an explicit timezone.  When this property is not specified, the timezone of the entity specified is used.  If the entity is also not specified or do not have a valid timezone then UTC is used.
         /// </summary>
-        public readonly string Timezone;
+        public readonly string? Timezone;
 
         [OutputConstructor]
         private GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemResult(
-            string charEncoding,
+            string? charEncoding,
 
-            string collectionType,
+            string? collectionType,
 
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string description,
+            string? description,
 
-            string entityId,
+            string? entityId,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            bool isEnabled,
+            bool? isEnabled,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string logGroupId,
+            string? logGroupId,
 
-            string logSet,
+            string? logSet,
 
-            string logSetExtRegex,
+            string? logSetExtRegex,
 
-            string logSetKey,
+            string? logSetKey,
 
-            string logSourceName,
+            string? logSourceName,
 
-            string name,
+            string? name,
 
-            string @namespace,
+            string? @namespace,
 
             ImmutableArray<string> objectNameFilters,
 
-            string osBucketName,
+            string? osBucketName,
 
-            string osNamespace,
+            string? osNamespace,
 
             ImmutableArray<Outputs.GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverrideResult> overrides,
 
-            string pollSince,
+            string? pollSince,
 
-            string pollTill,
+            string? pollTill,
 
-            string state,
+            string? state,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated,
+            string? timeUpdated,
 
-            string timezone)
+            string? timezone)
         {
             CharEncoding = charEncoding;
             CollectionType = collectionType;

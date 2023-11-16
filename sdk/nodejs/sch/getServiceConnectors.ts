@@ -70,11 +70,11 @@ export interface GetServiceConnectorsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of service_connector_collection.
      */
-    readonly serviceConnectorCollections: outputs.Sch.GetServiceConnectorsServiceConnectorCollection[];
+    readonly serviceConnectorCollections?: outputs.Sch.GetServiceConnectorsServiceConnectorCollection[];
     /**
      * The current state of the service connector.
      */

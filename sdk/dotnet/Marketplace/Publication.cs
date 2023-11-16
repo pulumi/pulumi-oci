@@ -93,13 +93,13 @@ namespace Pulumi.Oci.Marketplace
         /// (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// The model for upload data for images and icons.
@@ -123,7 +123,7 @@ namespace Pulumi.Oci.Marketplace
         /// (Updatable) A long description of the publication to use in the listing.
         /// </summary>
         [Output("longDescription")]
-        public Output<string> LongDescription { get; private set; } = null!;
+        public Output<string?> LongDescription { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The name of the contact.
@@ -141,7 +141,7 @@ namespace Pulumi.Oci.Marketplace
         /// The package's type.
         /// </summary>
         [Output("packageType")]
-        public Output<string> PackageType { get; private set; } = null!;
+        public Output<string?> PackageType { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A short description of the publication to use in the listing.
@@ -153,7 +153,7 @@ namespace Pulumi.Oci.Marketplace
         /// The lifecycle state of the publication.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Contact information for getting support from the publisher for the listing.
@@ -171,7 +171,7 @@ namespace Pulumi.Oci.Marketplace
         /// The date and time the publication was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
 
         /// <summary>

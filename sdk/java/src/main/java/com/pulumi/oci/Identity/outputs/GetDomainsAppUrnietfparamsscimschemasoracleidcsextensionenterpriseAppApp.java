@@ -10,6 +10,8 @@ import com.pulumi.oci.Identity.outputs.GetDomainsAppUrnietfparamsscimschemasorac
 import java.lang.Integer;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppApp {
@@ -17,63 +19,63 @@ public final class GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionenter
      * @return Allow Authz policy decision expiry time in seconds.
      * 
      */
-    private Integer allowAuthzDecisionTtl;
+    private @Nullable Integer allowAuthzDecisionTtl;
     /**
      * @return Allow Authz Policy.
      * 
      */
-    private List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppAllowAuthzPolicy> allowAuthzPolicies;
+    private @Nullable List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppAllowAuthzPolicy> allowAuthzPolicies;
     /**
      * @return A list of AppResources of this App.
      * 
      */
-    private List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppAppResource> appResources;
+    private @Nullable List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppAppResource> appResources;
     /**
      * @return Deny Authz policy decision expiry time in seconds.
      * 
      */
-    private Integer denyAuthzDecisionTtl;
+    private @Nullable Integer denyAuthzDecisionTtl;
     /**
      * @return Deny Authz Policy.
      * 
      */
-    private List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppDenyAuthzPolicy> denyAuthzPolicies;
+    private @Nullable List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppDenyAuthzPolicy> denyAuthzPolicies;
 
     private GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppApp() {}
     /**
      * @return Allow Authz policy decision expiry time in seconds.
      * 
      */
-    public Integer allowAuthzDecisionTtl() {
-        return this.allowAuthzDecisionTtl;
+    public Optional<Integer> allowAuthzDecisionTtl() {
+        return Optional.ofNullable(this.allowAuthzDecisionTtl);
     }
     /**
      * @return Allow Authz Policy.
      * 
      */
     public List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppAllowAuthzPolicy> allowAuthzPolicies() {
-        return this.allowAuthzPolicies;
+        return this.allowAuthzPolicies == null ? List.of() : this.allowAuthzPolicies;
     }
     /**
      * @return A list of AppResources of this App.
      * 
      */
     public List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppAppResource> appResources() {
-        return this.appResources;
+        return this.appResources == null ? List.of() : this.appResources;
     }
     /**
      * @return Deny Authz policy decision expiry time in seconds.
      * 
      */
-    public Integer denyAuthzDecisionTtl() {
-        return this.denyAuthzDecisionTtl;
+    public Optional<Integer> denyAuthzDecisionTtl() {
+        return Optional.ofNullable(this.denyAuthzDecisionTtl);
     }
     /**
      * @return Deny Authz Policy.
      * 
      */
     public List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppDenyAuthzPolicy> denyAuthzPolicies() {
-        return this.denyAuthzPolicies;
+        return this.denyAuthzPolicies == null ? List.of() : this.denyAuthzPolicies;
     }
 
     public static Builder builder() {
@@ -85,11 +87,11 @@ public final class GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionenter
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer allowAuthzDecisionTtl;
-        private List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppAllowAuthzPolicy> allowAuthzPolicies;
-        private List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppAppResource> appResources;
-        private Integer denyAuthzDecisionTtl;
-        private List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppDenyAuthzPolicy> denyAuthzPolicies;
+        private @Nullable Integer allowAuthzDecisionTtl;
+        private @Nullable List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppAllowAuthzPolicy> allowAuthzPolicies;
+        private @Nullable List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppAppResource> appResources;
+        private @Nullable Integer denyAuthzDecisionTtl;
+        private @Nullable List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppDenyAuthzPolicy> denyAuthzPolicies;
         public Builder() {}
         public Builder(GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppApp defaults) {
     	      Objects.requireNonNull(defaults);
@@ -101,34 +103,34 @@ public final class GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionenter
         }
 
         @CustomType.Setter
-        public Builder allowAuthzDecisionTtl(Integer allowAuthzDecisionTtl) {
-            this.allowAuthzDecisionTtl = Objects.requireNonNull(allowAuthzDecisionTtl);
+        public Builder allowAuthzDecisionTtl(@Nullable Integer allowAuthzDecisionTtl) {
+            this.allowAuthzDecisionTtl = allowAuthzDecisionTtl;
             return this;
         }
         @CustomType.Setter
-        public Builder allowAuthzPolicies(List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppAllowAuthzPolicy> allowAuthzPolicies) {
-            this.allowAuthzPolicies = Objects.requireNonNull(allowAuthzPolicies);
+        public Builder allowAuthzPolicies(@Nullable List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppAllowAuthzPolicy> allowAuthzPolicies) {
+            this.allowAuthzPolicies = allowAuthzPolicies;
             return this;
         }
         public Builder allowAuthzPolicies(GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppAllowAuthzPolicy... allowAuthzPolicies) {
             return allowAuthzPolicies(List.of(allowAuthzPolicies));
         }
         @CustomType.Setter
-        public Builder appResources(List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppAppResource> appResources) {
-            this.appResources = Objects.requireNonNull(appResources);
+        public Builder appResources(@Nullable List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppAppResource> appResources) {
+            this.appResources = appResources;
             return this;
         }
         public Builder appResources(GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppAppResource... appResources) {
             return appResources(List.of(appResources));
         }
         @CustomType.Setter
-        public Builder denyAuthzDecisionTtl(Integer denyAuthzDecisionTtl) {
-            this.denyAuthzDecisionTtl = Objects.requireNonNull(denyAuthzDecisionTtl);
+        public Builder denyAuthzDecisionTtl(@Nullable Integer denyAuthzDecisionTtl) {
+            this.denyAuthzDecisionTtl = denyAuthzDecisionTtl;
             return this;
         }
         @CustomType.Setter
-        public Builder denyAuthzPolicies(List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppDenyAuthzPolicy> denyAuthzPolicies) {
-            this.denyAuthzPolicies = Objects.requireNonNull(denyAuthzPolicies);
+        public Builder denyAuthzPolicies(@Nullable List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppDenyAuthzPolicy> denyAuthzPolicies) {
+            this.denyAuthzPolicies = denyAuthzPolicies;
             return this;
         }
         public Builder denyAuthzPolicies(GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppDenyAuthzPolicy... denyAuthzPolicies) {

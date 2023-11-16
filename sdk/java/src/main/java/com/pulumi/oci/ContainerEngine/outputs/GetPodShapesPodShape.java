@@ -10,6 +10,8 @@ import com.pulumi.oci.ContainerEngine.outputs.GetPodShapesPodShapeOcpuOption;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPodShapesPodShape {
@@ -17,27 +19,27 @@ public final class GetPodShapesPodShape {
      * @return ShapeMemoryOptions.
      * 
      */
-    private List<GetPodShapesPodShapeMemoryOption> memoryOptions;
+    private @Nullable List<GetPodShapesPodShapeMemoryOption> memoryOptions;
     /**
      * @return The name to filter on.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return ShapeNetworkBandwidthOptions.
      * 
      */
-    private List<GetPodShapesPodShapeNetworkBandwidthOption> networkBandwidthOptions;
+    private @Nullable List<GetPodShapesPodShapeNetworkBandwidthOption> networkBandwidthOptions;
     /**
      * @return Options for OCPU shape.
      * 
      */
-    private List<GetPodShapesPodShapeOcpuOption> ocpuOptions;
+    private @Nullable List<GetPodShapesPodShapeOcpuOption> ocpuOptions;
     /**
      * @return A short description of the VM&#39;s processor (CPU).
      * 
      */
-    private String processorDescription;
+    private @Nullable String processorDescription;
 
     private GetPodShapesPodShape() {}
     /**
@@ -45,35 +47,35 @@ public final class GetPodShapesPodShape {
      * 
      */
     public List<GetPodShapesPodShapeMemoryOption> memoryOptions() {
-        return this.memoryOptions;
+        return this.memoryOptions == null ? List.of() : this.memoryOptions;
     }
     /**
      * @return The name to filter on.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return ShapeNetworkBandwidthOptions.
      * 
      */
     public List<GetPodShapesPodShapeNetworkBandwidthOption> networkBandwidthOptions() {
-        return this.networkBandwidthOptions;
+        return this.networkBandwidthOptions == null ? List.of() : this.networkBandwidthOptions;
     }
     /**
      * @return Options for OCPU shape.
      * 
      */
     public List<GetPodShapesPodShapeOcpuOption> ocpuOptions() {
-        return this.ocpuOptions;
+        return this.ocpuOptions == null ? List.of() : this.ocpuOptions;
     }
     /**
      * @return A short description of the VM&#39;s processor (CPU).
      * 
      */
-    public String processorDescription() {
-        return this.processorDescription;
+    public Optional<String> processorDescription() {
+        return Optional.ofNullable(this.processorDescription);
     }
 
     public static Builder builder() {
@@ -85,11 +87,11 @@ public final class GetPodShapesPodShape {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetPodShapesPodShapeMemoryOption> memoryOptions;
-        private String name;
-        private List<GetPodShapesPodShapeNetworkBandwidthOption> networkBandwidthOptions;
-        private List<GetPodShapesPodShapeOcpuOption> ocpuOptions;
-        private String processorDescription;
+        private @Nullable List<GetPodShapesPodShapeMemoryOption> memoryOptions;
+        private @Nullable String name;
+        private @Nullable List<GetPodShapesPodShapeNetworkBandwidthOption> networkBandwidthOptions;
+        private @Nullable List<GetPodShapesPodShapeOcpuOption> ocpuOptions;
+        private @Nullable String processorDescription;
         public Builder() {}
         public Builder(GetPodShapesPodShape defaults) {
     	      Objects.requireNonNull(defaults);
@@ -101,37 +103,37 @@ public final class GetPodShapesPodShape {
         }
 
         @CustomType.Setter
-        public Builder memoryOptions(List<GetPodShapesPodShapeMemoryOption> memoryOptions) {
-            this.memoryOptions = Objects.requireNonNull(memoryOptions);
+        public Builder memoryOptions(@Nullable List<GetPodShapesPodShapeMemoryOption> memoryOptions) {
+            this.memoryOptions = memoryOptions;
             return this;
         }
         public Builder memoryOptions(GetPodShapesPodShapeMemoryOption... memoryOptions) {
             return memoryOptions(List.of(memoryOptions));
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder networkBandwidthOptions(List<GetPodShapesPodShapeNetworkBandwidthOption> networkBandwidthOptions) {
-            this.networkBandwidthOptions = Objects.requireNonNull(networkBandwidthOptions);
+        public Builder networkBandwidthOptions(@Nullable List<GetPodShapesPodShapeNetworkBandwidthOption> networkBandwidthOptions) {
+            this.networkBandwidthOptions = networkBandwidthOptions;
             return this;
         }
         public Builder networkBandwidthOptions(GetPodShapesPodShapeNetworkBandwidthOption... networkBandwidthOptions) {
             return networkBandwidthOptions(List.of(networkBandwidthOptions));
         }
         @CustomType.Setter
-        public Builder ocpuOptions(List<GetPodShapesPodShapeOcpuOption> ocpuOptions) {
-            this.ocpuOptions = Objects.requireNonNull(ocpuOptions);
+        public Builder ocpuOptions(@Nullable List<GetPodShapesPodShapeOcpuOption> ocpuOptions) {
+            this.ocpuOptions = ocpuOptions;
             return this;
         }
         public Builder ocpuOptions(GetPodShapesPodShapeOcpuOption... ocpuOptions) {
             return ocpuOptions(List.of(ocpuOptions));
         }
         @CustomType.Setter
-        public Builder processorDescription(String processorDescription) {
-            this.processorDescription = Objects.requireNonNull(processorDescription);
+        public Builder processorDescription(@Nullable String processorDescription) {
+            this.processorDescription = processorDescription;
             return this;
         }
         public GetPodShapesPodShape build() {

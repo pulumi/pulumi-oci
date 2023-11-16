@@ -16,17 +16,17 @@ namespace Pulumi.Oci.RecoveryMod.Outputs
         /// <summary>
         /// The recovery service subnet OCID.
         /// </summary>
-        public readonly string RecoveryServiceSubnetId;
+        public readonly string? RecoveryServiceSubnetId;
         /// <summary>
         /// A filter to return only the resources that match the specified lifecycle state.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
 
         [OutputConstructor]
         private GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnetResult(
-            string recoveryServiceSubnetId,
+            string? recoveryServiceSubnetId,
 
-            string state)
+            string? state)
         {
             RecoveryServiceSubnetId = recoveryServiceSubnetId;
             State = state;

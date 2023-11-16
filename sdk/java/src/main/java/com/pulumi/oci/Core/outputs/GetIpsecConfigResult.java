@@ -9,6 +9,7 @@ import com.pulumi.oci.Core.outputs.GetIpsecConfigTunnel;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -17,32 +18,32 @@ public final class GetIpsecConfigResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the IPSec connection.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     private @Nullable List<GetIpsecConfigFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String ipsecId;
     /**
      * @return The date and time the IPSec connection was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return Two [TunnelConfig](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/TunnelConfig/) objects.
      * 
      */
-    private List<GetIpsecConfigTunnel> tunnels;
+    private @Nullable List<GetIpsecConfigTunnel> tunnels;
 
     private GetIpsecConfigResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the IPSec connection.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     public List<GetIpsecConfigFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -51,8 +52,8 @@ public final class GetIpsecConfigResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String ipsecId() {
         return this.ipsecId;
@@ -61,15 +62,15 @@ public final class GetIpsecConfigResult {
      * @return The date and time the IPSec connection was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return Two [TunnelConfig](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/TunnelConfig/) objects.
      * 
      */
     public List<GetIpsecConfigTunnel> tunnels() {
-        return this.tunnels;
+        return this.tunnels == null ? List.of() : this.tunnels;
     }
 
     public static Builder builder() {
@@ -81,12 +82,12 @@ public final class GetIpsecConfigResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
+        private @Nullable String compartmentId;
         private @Nullable List<GetIpsecConfigFilter> filters;
-        private String id;
+        private @Nullable String id;
         private String ipsecId;
-        private String timeCreated;
-        private List<GetIpsecConfigTunnel> tunnels;
+        private @Nullable String timeCreated;
+        private @Nullable List<GetIpsecConfigTunnel> tunnels;
         public Builder() {}
         public Builder(GetIpsecConfigResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -99,8 +100,8 @@ public final class GetIpsecConfigResult {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
@@ -112,8 +113,8 @@ public final class GetIpsecConfigResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -122,13 +123,13 @@ public final class GetIpsecConfigResult {
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder tunnels(List<GetIpsecConfigTunnel> tunnels) {
-            this.tunnels = Objects.requireNonNull(tunnels);
+        public Builder tunnels(@Nullable List<GetIpsecConfigTunnel> tunnels) {
+            this.tunnels = tunnels;
             return this;
         }
         public Builder tunnels(GetIpsecConfigTunnel... tunnels) {

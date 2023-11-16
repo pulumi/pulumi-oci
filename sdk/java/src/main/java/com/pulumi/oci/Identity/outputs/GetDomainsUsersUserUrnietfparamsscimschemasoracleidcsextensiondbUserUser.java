@@ -9,6 +9,8 @@ import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUser {
@@ -16,27 +18,27 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
      * @return DB global roles to which the user is granted access.
      * 
      */
-    private List<String> dbGlobalRoles;
+    private @Nullable List<String> dbGlobalRoles;
     /**
      * @return DB domain level schema to which the user is granted access.
      * 
      */
-    private String domainLevelSchema;
+    private @Nullable String domainLevelSchema;
     /**
      * @return DB instance level schema to which the user is granted access.
      * 
      */
-    private String instanceLevelSchema;
+    private @Nullable String instanceLevelSchema;
     /**
      * @return If true, indicates this is a database user.
      * 
      */
-    private Boolean isDbUser;
+    private @Nullable Boolean isDbUser;
     /**
      * @return Password Verifiers for DB User.
      * 
      */
-    private List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifier> passwordVerifiers;
+    private @Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifier> passwordVerifiers;
 
     private GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUser() {}
     /**
@@ -44,35 +46,35 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
      * 
      */
     public List<String> dbGlobalRoles() {
-        return this.dbGlobalRoles;
+        return this.dbGlobalRoles == null ? List.of() : this.dbGlobalRoles;
     }
     /**
      * @return DB domain level schema to which the user is granted access.
      * 
      */
-    public String domainLevelSchema() {
-        return this.domainLevelSchema;
+    public Optional<String> domainLevelSchema() {
+        return Optional.ofNullable(this.domainLevelSchema);
     }
     /**
      * @return DB instance level schema to which the user is granted access.
      * 
      */
-    public String instanceLevelSchema() {
-        return this.instanceLevelSchema;
+    public Optional<String> instanceLevelSchema() {
+        return Optional.ofNullable(this.instanceLevelSchema);
     }
     /**
      * @return If true, indicates this is a database user.
      * 
      */
-    public Boolean isDbUser() {
-        return this.isDbUser;
+    public Optional<Boolean> isDbUser() {
+        return Optional.ofNullable(this.isDbUser);
     }
     /**
      * @return Password Verifiers for DB User.
      * 
      */
     public List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifier> passwordVerifiers() {
-        return this.passwordVerifiers;
+        return this.passwordVerifiers == null ? List.of() : this.passwordVerifiers;
     }
 
     public static Builder builder() {
@@ -84,11 +86,11 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> dbGlobalRoles;
-        private String domainLevelSchema;
-        private String instanceLevelSchema;
-        private Boolean isDbUser;
-        private List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifier> passwordVerifiers;
+        private @Nullable List<String> dbGlobalRoles;
+        private @Nullable String domainLevelSchema;
+        private @Nullable String instanceLevelSchema;
+        private @Nullable Boolean isDbUser;
+        private @Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifier> passwordVerifiers;
         public Builder() {}
         public Builder(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUser defaults) {
     	      Objects.requireNonNull(defaults);
@@ -100,31 +102,31 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
         }
 
         @CustomType.Setter
-        public Builder dbGlobalRoles(List<String> dbGlobalRoles) {
-            this.dbGlobalRoles = Objects.requireNonNull(dbGlobalRoles);
+        public Builder dbGlobalRoles(@Nullable List<String> dbGlobalRoles) {
+            this.dbGlobalRoles = dbGlobalRoles;
             return this;
         }
         public Builder dbGlobalRoles(String... dbGlobalRoles) {
             return dbGlobalRoles(List.of(dbGlobalRoles));
         }
         @CustomType.Setter
-        public Builder domainLevelSchema(String domainLevelSchema) {
-            this.domainLevelSchema = Objects.requireNonNull(domainLevelSchema);
+        public Builder domainLevelSchema(@Nullable String domainLevelSchema) {
+            this.domainLevelSchema = domainLevelSchema;
             return this;
         }
         @CustomType.Setter
-        public Builder instanceLevelSchema(String instanceLevelSchema) {
-            this.instanceLevelSchema = Objects.requireNonNull(instanceLevelSchema);
+        public Builder instanceLevelSchema(@Nullable String instanceLevelSchema) {
+            this.instanceLevelSchema = instanceLevelSchema;
             return this;
         }
         @CustomType.Setter
-        public Builder isDbUser(Boolean isDbUser) {
-            this.isDbUser = Objects.requireNonNull(isDbUser);
+        public Builder isDbUser(@Nullable Boolean isDbUser) {
+            this.isDbUser = isDbUser;
             return this;
         }
         @CustomType.Setter
-        public Builder passwordVerifiers(List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifier> passwordVerifiers) {
-            this.passwordVerifiers = Objects.requireNonNull(passwordVerifiers);
+        public Builder passwordVerifiers(@Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifier> passwordVerifiers) {
+            this.passwordVerifiers = passwordVerifiers;
             return this;
         }
         public Builder passwordVerifiers(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifier... passwordVerifiers) {

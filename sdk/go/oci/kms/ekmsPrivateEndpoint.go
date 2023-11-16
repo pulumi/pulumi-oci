@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Ekms Private Endpoint resource in Oracle Cloud Infrastructure Kms service.
@@ -79,22 +78,22 @@ type EkmsPrivateEndpoint struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// The port of the external key manager system
-	Port pulumi.IntOutput `pulumi:"port"`
+	Port pulumi.IntPtrOutput `pulumi:"port"`
 	// The IP address in the customer's VCN for the EKMS private endpoint. This is taken from subnet
-	PrivateEndpointIp pulumi.StringOutput `pulumi:"privateEndpointIp"`
+	PrivateEndpointIp pulumi.StringPtrOutput `pulumi:"privateEndpointIp"`
 	// The current state of the EKMS private endpoint resource.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The OCID of subnet in which the EKMS private endpoint is to be created
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubnetId pulumi.StringOutput `pulumi:"subnetId"`
 	// The time the EKMS private endpoint was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The time the EKMS private endpoint was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewEkmsPrivateEndpoint registers a new resource with the given unique name, arguments, and options.
@@ -277,12 +276,6 @@ func (i *EkmsPrivateEndpoint) ToEkmsPrivateEndpointOutputWithContext(ctx context
 	return pulumi.ToOutputWithContext(ctx, i).(EkmsPrivateEndpointOutput)
 }
 
-func (i *EkmsPrivateEndpoint) ToOutput(ctx context.Context) pulumix.Output[*EkmsPrivateEndpoint] {
-	return pulumix.Output[*EkmsPrivateEndpoint]{
-		OutputState: i.ToEkmsPrivateEndpointOutputWithContext(ctx).OutputState,
-	}
-}
-
 // EkmsPrivateEndpointArrayInput is an input type that accepts EkmsPrivateEndpointArray and EkmsPrivateEndpointArrayOutput values.
 // You can construct a concrete instance of `EkmsPrivateEndpointArrayInput` via:
 //
@@ -306,12 +299,6 @@ func (i EkmsPrivateEndpointArray) ToEkmsPrivateEndpointArrayOutput() EkmsPrivate
 
 func (i EkmsPrivateEndpointArray) ToEkmsPrivateEndpointArrayOutputWithContext(ctx context.Context) EkmsPrivateEndpointArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(EkmsPrivateEndpointArrayOutput)
-}
-
-func (i EkmsPrivateEndpointArray) ToOutput(ctx context.Context) pulumix.Output[[]*EkmsPrivateEndpoint] {
-	return pulumix.Output[[]*EkmsPrivateEndpoint]{
-		OutputState: i.ToEkmsPrivateEndpointArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // EkmsPrivateEndpointMapInput is an input type that accepts EkmsPrivateEndpointMap and EkmsPrivateEndpointMapOutput values.
@@ -339,12 +326,6 @@ func (i EkmsPrivateEndpointMap) ToEkmsPrivateEndpointMapOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(EkmsPrivateEndpointMapOutput)
 }
 
-func (i EkmsPrivateEndpointMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*EkmsPrivateEndpoint] {
-	return pulumix.Output[map[string]*EkmsPrivateEndpoint]{
-		OutputState: i.ToEkmsPrivateEndpointMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type EkmsPrivateEndpointOutput struct{ *pulumi.OutputState }
 
 func (EkmsPrivateEndpointOutput) ElementType() reflect.Type {
@@ -357,12 +338,6 @@ func (o EkmsPrivateEndpointOutput) ToEkmsPrivateEndpointOutput() EkmsPrivateEndp
 
 func (o EkmsPrivateEndpointOutput) ToEkmsPrivateEndpointOutputWithContext(ctx context.Context) EkmsPrivateEndpointOutput {
 	return o
-}
-
-func (o EkmsPrivateEndpointOutput) ToOutput(ctx context.Context) pulumix.Output[*EkmsPrivateEndpoint] {
-	return pulumix.Output[*EkmsPrivateEndpoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 // CABundle to validate TLS certificate of the external key manager system in PEM format
@@ -396,23 +371,23 @@ func (o EkmsPrivateEndpointOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
-func (o EkmsPrivateEndpointOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *EkmsPrivateEndpoint) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o EkmsPrivateEndpointOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *EkmsPrivateEndpoint) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The port of the external key manager system
-func (o EkmsPrivateEndpointOutput) Port() pulumi.IntOutput {
-	return o.ApplyT(func(v *EkmsPrivateEndpoint) pulumi.IntOutput { return v.Port }).(pulumi.IntOutput)
+func (o EkmsPrivateEndpointOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *EkmsPrivateEndpoint) pulumi.IntPtrOutput { return v.Port }).(pulumi.IntPtrOutput)
 }
 
 // The IP address in the customer's VCN for the EKMS private endpoint. This is taken from subnet
-func (o EkmsPrivateEndpointOutput) PrivateEndpointIp() pulumi.StringOutput {
-	return o.ApplyT(func(v *EkmsPrivateEndpoint) pulumi.StringOutput { return v.PrivateEndpointIp }).(pulumi.StringOutput)
+func (o EkmsPrivateEndpointOutput) PrivateEndpointIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *EkmsPrivateEndpoint) pulumi.StringPtrOutput { return v.PrivateEndpointIp }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the EKMS private endpoint resource.
-func (o EkmsPrivateEndpointOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *EkmsPrivateEndpoint) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o EkmsPrivateEndpointOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *EkmsPrivateEndpoint) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of subnet in which the EKMS private endpoint is to be created
@@ -424,13 +399,13 @@ func (o EkmsPrivateEndpointOutput) SubnetId() pulumi.StringOutput {
 }
 
 // The time the EKMS private endpoint was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-func (o EkmsPrivateEndpointOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *EkmsPrivateEndpoint) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o EkmsPrivateEndpointOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *EkmsPrivateEndpoint) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the EKMS private endpoint was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-func (o EkmsPrivateEndpointOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *EkmsPrivateEndpoint) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o EkmsPrivateEndpointOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *EkmsPrivateEndpoint) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type EkmsPrivateEndpointArrayOutput struct{ *pulumi.OutputState }
@@ -445,12 +420,6 @@ func (o EkmsPrivateEndpointArrayOutput) ToEkmsPrivateEndpointArrayOutput() EkmsP
 
 func (o EkmsPrivateEndpointArrayOutput) ToEkmsPrivateEndpointArrayOutputWithContext(ctx context.Context) EkmsPrivateEndpointArrayOutput {
 	return o
-}
-
-func (o EkmsPrivateEndpointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*EkmsPrivateEndpoint] {
-	return pulumix.Output[[]*EkmsPrivateEndpoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o EkmsPrivateEndpointArrayOutput) Index(i pulumi.IntInput) EkmsPrivateEndpointOutput {
@@ -471,12 +440,6 @@ func (o EkmsPrivateEndpointMapOutput) ToEkmsPrivateEndpointMapOutput() EkmsPriva
 
 func (o EkmsPrivateEndpointMapOutput) ToEkmsPrivateEndpointMapOutputWithContext(ctx context.Context) EkmsPrivateEndpointMapOutput {
 	return o
-}
-
-func (o EkmsPrivateEndpointMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*EkmsPrivateEndpoint] {
-	return pulumix.Output[map[string]*EkmsPrivateEndpoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o EkmsPrivateEndpointMapOutput) MapIndex(k pulumi.StringInput) EkmsPrivateEndpointOutput {

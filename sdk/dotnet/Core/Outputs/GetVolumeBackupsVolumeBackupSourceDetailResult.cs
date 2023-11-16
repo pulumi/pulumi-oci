@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// The OCID of the Vault service key which is the master encryption key for the volume backup. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
         /// </summary>
-        public readonly string KmsKeyId;
-        public readonly string Region;
-        public readonly string VolumeBackupId;
+        public readonly string? KmsKeyId;
+        public readonly string? Region;
+        public readonly string? VolumeBackupId;
 
         [OutputConstructor]
         private GetVolumeBackupsVolumeBackupSourceDetailResult(
-            string kmsKeyId,
+            string? kmsKeyId,
 
-            string region,
+            string? region,
 
-            string volumeBackupId)
+            string? volumeBackupId)
         {
             KmsKeyId = kmsKeyId;
             Region = region;

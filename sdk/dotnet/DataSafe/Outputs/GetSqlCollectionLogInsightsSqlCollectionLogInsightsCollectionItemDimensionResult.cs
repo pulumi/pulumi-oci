@@ -16,23 +16,23 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// The IP addresses for the SQL collection.
         /// </summary>
-        public readonly string ClientIp;
+        public readonly string? ClientIp;
         /// <summary>
         /// The operating system user names for the SQL collection.
         /// </summary>
-        public readonly string ClientOsUserName;
+        public readonly string? ClientOsUserName;
         /// <summary>
         /// The allowed client programs for the SQL collection.
         /// </summary>
-        public readonly string ClientProgram;
+        public readonly string? ClientProgram;
 
         [OutputConstructor]
         private GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimensionResult(
-            string clientIp,
+            string? clientIp,
 
-            string clientOsUserName,
+            string? clientOsUserName,
 
-            string clientProgram)
+            string? clientProgram)
         {
             ClientIp = clientIp;
             ClientOsUserName = clientOsUserName;

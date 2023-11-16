@@ -16,29 +16,29 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The name of the database.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The time when Database Management was enabled for the database.
         /// </summary>
-        public readonly string TimeRegistered;
+        public readonly string? TimeRegistered;
 
         [OutputConstructor]
         private GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollectionItemResult(
-            string compartmentId,
+            string? compartmentId,
 
-            string id,
+            string? id,
 
-            string name,
+            string? name,
 
-            string timeRegistered)
+            string? timeRegistered)
         {
             CompartmentId = compartmentId;
             Id = id;

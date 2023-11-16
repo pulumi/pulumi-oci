@@ -16,15 +16,15 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// FormFill Application Configuration CLOB which has to be maintained in Form-Fill APP for legacy code to do Form-Fill injection
         /// </summary>
-        public readonly string Configuration;
+        public readonly string? Configuration;
         /// <summary>
         /// Indicates how FormFill obtains the username and password of the account that FormFill will use to sign into the target App.
         /// </summary>
-        public readonly string FormCredMethod;
+        public readonly string? FormCredMethod;
         /// <summary>
         /// Credential Sharing Group to which this form-fill application belongs.
         /// </summary>
-        public readonly string FormCredentialSharingGroupId;
+        public readonly string? FormCredentialSharingGroupId;
         /// <summary>
         /// A list of application-formURLs that FormFill should match against any formUrl that the user-specifies when signing in to the target service.  Each item in the list also indicates how FormFill should interpret that formUrl.
         /// </summary>
@@ -32,43 +32,43 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// Type of the FormFill application like WebApplication, MainFrameApplication, WindowsApplication. Initially, we will support only WebApplication.
         /// </summary>
-        public readonly string FormType;
+        public readonly string? FormType;
         /// <summary>
         /// If true, indicates that system is allowed to show the password in plain-text for this account after re-authentication.
         /// </summary>
-        public readonly bool RevealPasswordOnForm;
+        public readonly bool? RevealPasswordOnForm;
         /// <summary>
         /// If true, indicates that each of the Form-Fill-related attributes that can be inherited from the template actually will be inherited from the template. If false, indicates that the AppTemplate disabled inheritance for these Form-Fill-related attributes.
         /// </summary>
-        public readonly bool SyncFromTemplate;
+        public readonly bool? SyncFromTemplate;
         /// <summary>
         /// Indicates the custom expression, which can combine concat and substring operations with literals and with any attribute of the Oracle Identity Cloud Service User
         /// </summary>
-        public readonly string UserNameFormExpression;
+        public readonly string? UserNameFormExpression;
         /// <summary>
         /// Format for generating a username.  This value can be Username or Email Address; any other value will be treated as a custom expression.  A custom expression may combine 'concat' and 'substring' operations with literals and with any attribute of the Oracle Identity Cloud Service user.
         /// </summary>
-        public readonly string UserNameFormTemplate;
+        public readonly string? UserNameFormTemplate;
 
         [OutputConstructor]
         private GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateResult(
-            string configuration,
+            string? configuration,
 
-            string formCredMethod,
+            string? formCredMethod,
 
-            string formCredentialSharingGroupId,
+            string? formCredentialSharingGroupId,
 
             ImmutableArray<Outputs.GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateFormFillUrlMatchResult> formFillUrlMatches,
 
-            string formType,
+            string? formType,
 
-            bool revealPasswordOnForm,
+            bool? revealPasswordOnForm,
 
-            bool syncFromTemplate,
+            bool? syncFromTemplate,
 
-            string userNameFormExpression,
+            string? userNameFormExpression,
 
-            string userNameFormTemplate)
+            string? userNameFormTemplate)
         {
             Configuration = configuration;
             FormCredMethod = formCredMethod;

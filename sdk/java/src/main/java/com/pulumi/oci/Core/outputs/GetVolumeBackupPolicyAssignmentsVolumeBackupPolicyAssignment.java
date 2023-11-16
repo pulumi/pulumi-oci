@@ -6,6 +6,8 @@ package com.pulumi.oci.Core.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignment {
@@ -13,51 +15,51 @@ public final class GetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignment 
      * @return The OCID of an asset (e.g. a volume).
      * 
      */
-    private String assetId;
+    private @Nullable String assetId;
     /**
      * @return The OCID of the volume backup policy assignment.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The OCID of the volume backup policy that has been assigned to the volume.
      * 
      */
-    private String policyId;
+    private @Nullable String policyId;
     /**
      * @return The date and time the volume backup policy was assigned to the volume. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
 
     private GetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignment() {}
     /**
      * @return The OCID of an asset (e.g. a volume).
      * 
      */
-    public String assetId() {
-        return this.assetId;
+    public Optional<String> assetId() {
+        return Optional.ofNullable(this.assetId);
     }
     /**
      * @return The OCID of the volume backup policy assignment.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The OCID of the volume backup policy that has been assigned to the volume.
      * 
      */
-    public String policyId() {
-        return this.policyId;
+    public Optional<String> policyId() {
+        return Optional.ofNullable(this.policyId);
     }
     /**
      * @return The date and time the volume backup policy was assigned to the volume. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
 
     public static Builder builder() {
@@ -69,10 +71,10 @@ public final class GetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignment 
     }
     @CustomType.Builder
     public static final class Builder {
-        private String assetId;
-        private String id;
-        private String policyId;
-        private String timeCreated;
+        private @Nullable String assetId;
+        private @Nullable String id;
+        private @Nullable String policyId;
+        private @Nullable String timeCreated;
         public Builder() {}
         public Builder(GetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignment defaults) {
     	      Objects.requireNonNull(defaults);
@@ -83,23 +85,23 @@ public final class GetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignment 
         }
 
         @CustomType.Setter
-        public Builder assetId(String assetId) {
-            this.assetId = Objects.requireNonNull(assetId);
+        public Builder assetId(@Nullable String assetId) {
+            this.assetId = assetId;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder policyId(String policyId) {
-            this.policyId = Objects.requireNonNull(policyId);
+        public Builder policyId(@Nullable String policyId) {
+            this.policyId = policyId;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignment build() {

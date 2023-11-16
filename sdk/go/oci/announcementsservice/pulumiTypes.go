@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -49,12 +48,6 @@ func (i AnnouncementSubscriptionFilterGroupsArgs) ToAnnouncementSubscriptionFilt
 
 func (i AnnouncementSubscriptionFilterGroupsArgs) ToAnnouncementSubscriptionFilterGroupsOutputWithContext(ctx context.Context) AnnouncementSubscriptionFilterGroupsOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AnnouncementSubscriptionFilterGroupsOutput)
-}
-
-func (i AnnouncementSubscriptionFilterGroupsArgs) ToOutput(ctx context.Context) pulumix.Output[AnnouncementSubscriptionFilterGroups] {
-	return pulumix.Output[AnnouncementSubscriptionFilterGroups]{
-		OutputState: i.ToAnnouncementSubscriptionFilterGroupsOutputWithContext(ctx).OutputState,
-	}
 }
 
 func (i AnnouncementSubscriptionFilterGroupsArgs) ToAnnouncementSubscriptionFilterGroupsPtrOutput() AnnouncementSubscriptionFilterGroupsPtrOutput {
@@ -98,12 +91,6 @@ func (i *announcementSubscriptionFilterGroupsPtrType) ToAnnouncementSubscription
 	return pulumi.ToOutputWithContext(ctx, i).(AnnouncementSubscriptionFilterGroupsPtrOutput)
 }
 
-func (i *announcementSubscriptionFilterGroupsPtrType) ToOutput(ctx context.Context) pulumix.Output[*AnnouncementSubscriptionFilterGroups] {
-	return pulumix.Output[*AnnouncementSubscriptionFilterGroups]{
-		OutputState: i.ToAnnouncementSubscriptionFilterGroupsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AnnouncementSubscriptionFilterGroupsOutput struct{ *pulumi.OutputState }
 
 func (AnnouncementSubscriptionFilterGroupsOutput) ElementType() reflect.Type {
@@ -126,12 +113,6 @@ func (o AnnouncementSubscriptionFilterGroupsOutput) ToAnnouncementSubscriptionFi
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v AnnouncementSubscriptionFilterGroups) *AnnouncementSubscriptionFilterGroups {
 		return &v
 	}).(AnnouncementSubscriptionFilterGroupsPtrOutput)
-}
-
-func (o AnnouncementSubscriptionFilterGroupsOutput) ToOutput(ctx context.Context) pulumix.Output[AnnouncementSubscriptionFilterGroups] {
-	return pulumix.Output[AnnouncementSubscriptionFilterGroups]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A list of filters against which the Announcements service matches announcements. You cannot have more than one of any given filter type within a filter group.
@@ -158,12 +139,6 @@ func (o AnnouncementSubscriptionFilterGroupsPtrOutput) ToAnnouncementSubscriptio
 
 func (o AnnouncementSubscriptionFilterGroupsPtrOutput) ToAnnouncementSubscriptionFilterGroupsPtrOutputWithContext(ctx context.Context) AnnouncementSubscriptionFilterGroupsPtrOutput {
 	return o
-}
-
-func (o AnnouncementSubscriptionFilterGroupsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*AnnouncementSubscriptionFilterGroups] {
-	return pulumix.Output[*AnnouncementSubscriptionFilterGroups]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AnnouncementSubscriptionFilterGroupsPtrOutput) Elem() AnnouncementSubscriptionFilterGroupsOutput {
@@ -233,12 +208,6 @@ func (i AnnouncementSubscriptionFilterGroupsFilterArgs) ToAnnouncementSubscripti
 	return pulumi.ToOutputWithContext(ctx, i).(AnnouncementSubscriptionFilterGroupsFilterOutput)
 }
 
-func (i AnnouncementSubscriptionFilterGroupsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[AnnouncementSubscriptionFilterGroupsFilter] {
-	return pulumix.Output[AnnouncementSubscriptionFilterGroupsFilter]{
-		OutputState: i.ToAnnouncementSubscriptionFilterGroupsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AnnouncementSubscriptionFilterGroupsFilterArrayInput is an input type that accepts AnnouncementSubscriptionFilterGroupsFilterArray and AnnouncementSubscriptionFilterGroupsFilterArrayOutput values.
 // You can construct a concrete instance of `AnnouncementSubscriptionFilterGroupsFilterArrayInput` via:
 //
@@ -264,12 +233,6 @@ func (i AnnouncementSubscriptionFilterGroupsFilterArray) ToAnnouncementSubscript
 	return pulumi.ToOutputWithContext(ctx, i).(AnnouncementSubscriptionFilterGroupsFilterArrayOutput)
 }
 
-func (i AnnouncementSubscriptionFilterGroupsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]AnnouncementSubscriptionFilterGroupsFilter] {
-	return pulumix.Output[[]AnnouncementSubscriptionFilterGroupsFilter]{
-		OutputState: i.ToAnnouncementSubscriptionFilterGroupsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AnnouncementSubscriptionFilterGroupsFilterOutput struct{ *pulumi.OutputState }
 
 func (AnnouncementSubscriptionFilterGroupsFilterOutput) ElementType() reflect.Type {
@@ -282,12 +245,6 @@ func (o AnnouncementSubscriptionFilterGroupsFilterOutput) ToAnnouncementSubscrip
 
 func (o AnnouncementSubscriptionFilterGroupsFilterOutput) ToAnnouncementSubscriptionFilterGroupsFilterOutputWithContext(ctx context.Context) AnnouncementSubscriptionFilterGroupsFilterOutput {
 	return o
-}
-
-func (o AnnouncementSubscriptionFilterGroupsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[AnnouncementSubscriptionFilterGroupsFilter] {
-	return pulumix.Output[AnnouncementSubscriptionFilterGroupsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The type of filter.
@@ -312,12 +269,6 @@ func (o AnnouncementSubscriptionFilterGroupsFilterArrayOutput) ToAnnouncementSub
 
 func (o AnnouncementSubscriptionFilterGroupsFilterArrayOutput) ToAnnouncementSubscriptionFilterGroupsFilterArrayOutputWithContext(ctx context.Context) AnnouncementSubscriptionFilterGroupsFilterArrayOutput {
 	return o
-}
-
-func (o AnnouncementSubscriptionFilterGroupsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]AnnouncementSubscriptionFilterGroupsFilter] {
-	return pulumix.Output[[]AnnouncementSubscriptionFilterGroupsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AnnouncementSubscriptionFilterGroupsFilterArrayOutput) Index(i pulumi.IntInput) AnnouncementSubscriptionFilterGroupsFilterOutput {
@@ -363,12 +314,6 @@ func (i AnnouncementSubscriptionsFilterGroupFilterArgs) ToAnnouncementSubscripti
 	return pulumi.ToOutputWithContext(ctx, i).(AnnouncementSubscriptionsFilterGroupFilterOutput)
 }
 
-func (i AnnouncementSubscriptionsFilterGroupFilterArgs) ToOutput(ctx context.Context) pulumix.Output[AnnouncementSubscriptionsFilterGroupFilter] {
-	return pulumix.Output[AnnouncementSubscriptionsFilterGroupFilter]{
-		OutputState: i.ToAnnouncementSubscriptionsFilterGroupFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AnnouncementSubscriptionsFilterGroupFilterArrayInput is an input type that accepts AnnouncementSubscriptionsFilterGroupFilterArray and AnnouncementSubscriptionsFilterGroupFilterArrayOutput values.
 // You can construct a concrete instance of `AnnouncementSubscriptionsFilterGroupFilterArrayInput` via:
 //
@@ -394,12 +339,6 @@ func (i AnnouncementSubscriptionsFilterGroupFilterArray) ToAnnouncementSubscript
 	return pulumi.ToOutputWithContext(ctx, i).(AnnouncementSubscriptionsFilterGroupFilterArrayOutput)
 }
 
-func (i AnnouncementSubscriptionsFilterGroupFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]AnnouncementSubscriptionsFilterGroupFilter] {
-	return pulumix.Output[[]AnnouncementSubscriptionsFilterGroupFilter]{
-		OutputState: i.ToAnnouncementSubscriptionsFilterGroupFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AnnouncementSubscriptionsFilterGroupFilterOutput struct{ *pulumi.OutputState }
 
 func (AnnouncementSubscriptionsFilterGroupFilterOutput) ElementType() reflect.Type {
@@ -412,12 +351,6 @@ func (o AnnouncementSubscriptionsFilterGroupFilterOutput) ToAnnouncementSubscrip
 
 func (o AnnouncementSubscriptionsFilterGroupFilterOutput) ToAnnouncementSubscriptionsFilterGroupFilterOutputWithContext(ctx context.Context) AnnouncementSubscriptionsFilterGroupFilterOutput {
 	return o
-}
-
-func (o AnnouncementSubscriptionsFilterGroupFilterOutput) ToOutput(ctx context.Context) pulumix.Output[AnnouncementSubscriptionsFilterGroupFilter] {
-	return pulumix.Output[AnnouncementSubscriptionsFilterGroupFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The type of filter.
@@ -444,12 +377,6 @@ func (o AnnouncementSubscriptionsFilterGroupFilterArrayOutput) ToAnnouncementSub
 	return o
 }
 
-func (o AnnouncementSubscriptionsFilterGroupFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]AnnouncementSubscriptionsFilterGroupFilter] {
-	return pulumix.Output[[]AnnouncementSubscriptionsFilterGroupFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o AnnouncementSubscriptionsFilterGroupFilterArrayOutput) Index(i pulumi.IntInput) AnnouncementSubscriptionsFilterGroupFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AnnouncementSubscriptionsFilterGroupFilter {
 		return vs[0].([]AnnouncementSubscriptionsFilterGroupFilter)[vs[1].(int)]
@@ -460,7 +387,7 @@ type GetAnnouncementSubscriptionFilterGroup struct {
 	// A list of filters against which the Announcements service matches announcements. You cannot have more than one of any given filter type within a filter group. You also cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group.
 	Filters []GetAnnouncementSubscriptionFilterGroupFilter `pulumi:"filters"`
 	// The name of the group. The name must be unique and it cannot be changed. Avoid entering confidential information.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 }
 
 // GetAnnouncementSubscriptionFilterGroupInput is an input type that accepts GetAnnouncementSubscriptionFilterGroupArgs and GetAnnouncementSubscriptionFilterGroupOutput values.
@@ -478,7 +405,7 @@ type GetAnnouncementSubscriptionFilterGroupArgs struct {
 	// A list of filters against which the Announcements service matches announcements. You cannot have more than one of any given filter type within a filter group. You also cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group.
 	Filters GetAnnouncementSubscriptionFilterGroupFilterArrayInput `pulumi:"filters"`
 	// The name of the group. The name must be unique and it cannot be changed. Avoid entering confidential information.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 }
 
 func (GetAnnouncementSubscriptionFilterGroupArgs) ElementType() reflect.Type {
@@ -491,12 +418,6 @@ func (i GetAnnouncementSubscriptionFilterGroupArgs) ToGetAnnouncementSubscriptio
 
 func (i GetAnnouncementSubscriptionFilterGroupArgs) ToGetAnnouncementSubscriptionFilterGroupOutputWithContext(ctx context.Context) GetAnnouncementSubscriptionFilterGroupOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAnnouncementSubscriptionFilterGroupOutput)
-}
-
-func (i GetAnnouncementSubscriptionFilterGroupArgs) ToOutput(ctx context.Context) pulumix.Output[GetAnnouncementSubscriptionFilterGroup] {
-	return pulumix.Output[GetAnnouncementSubscriptionFilterGroup]{
-		OutputState: i.ToGetAnnouncementSubscriptionFilterGroupOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAnnouncementSubscriptionFilterGroupArrayInput is an input type that accepts GetAnnouncementSubscriptionFilterGroupArray and GetAnnouncementSubscriptionFilterGroupArrayOutput values.
@@ -524,12 +445,6 @@ func (i GetAnnouncementSubscriptionFilterGroupArray) ToGetAnnouncementSubscripti
 	return pulumi.ToOutputWithContext(ctx, i).(GetAnnouncementSubscriptionFilterGroupArrayOutput)
 }
 
-func (i GetAnnouncementSubscriptionFilterGroupArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAnnouncementSubscriptionFilterGroup] {
-	return pulumix.Output[[]GetAnnouncementSubscriptionFilterGroup]{
-		OutputState: i.ToGetAnnouncementSubscriptionFilterGroupArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAnnouncementSubscriptionFilterGroupOutput struct{ *pulumi.OutputState }
 
 func (GetAnnouncementSubscriptionFilterGroupOutput) ElementType() reflect.Type {
@@ -544,12 +459,6 @@ func (o GetAnnouncementSubscriptionFilterGroupOutput) ToGetAnnouncementSubscript
 	return o
 }
 
-func (o GetAnnouncementSubscriptionFilterGroupOutput) ToOutput(ctx context.Context) pulumix.Output[GetAnnouncementSubscriptionFilterGroup] {
-	return pulumix.Output[GetAnnouncementSubscriptionFilterGroup]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A list of filters against which the Announcements service matches announcements. You cannot have more than one of any given filter type within a filter group. You also cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group.
 func (o GetAnnouncementSubscriptionFilterGroupOutput) Filters() GetAnnouncementSubscriptionFilterGroupFilterArrayOutput {
 	return o.ApplyT(func(v GetAnnouncementSubscriptionFilterGroup) []GetAnnouncementSubscriptionFilterGroupFilter {
@@ -558,8 +467,8 @@ func (o GetAnnouncementSubscriptionFilterGroupOutput) Filters() GetAnnouncementS
 }
 
 // The name of the group. The name must be unique and it cannot be changed. Avoid entering confidential information.
-func (o GetAnnouncementSubscriptionFilterGroupOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAnnouncementSubscriptionFilterGroup) string { return v.Name }).(pulumi.StringOutput)
+func (o GetAnnouncementSubscriptionFilterGroupOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAnnouncementSubscriptionFilterGroup) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 type GetAnnouncementSubscriptionFilterGroupArrayOutput struct{ *pulumi.OutputState }
@@ -576,12 +485,6 @@ func (o GetAnnouncementSubscriptionFilterGroupArrayOutput) ToGetAnnouncementSubs
 	return o
 }
 
-func (o GetAnnouncementSubscriptionFilterGroupArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAnnouncementSubscriptionFilterGroup] {
-	return pulumix.Output[[]GetAnnouncementSubscriptionFilterGroup]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAnnouncementSubscriptionFilterGroupArrayOutput) Index(i pulumi.IntInput) GetAnnouncementSubscriptionFilterGroupOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAnnouncementSubscriptionFilterGroup {
 		return vs[0].([]GetAnnouncementSubscriptionFilterGroup)[vs[1].(int)]
@@ -590,9 +493,9 @@ func (o GetAnnouncementSubscriptionFilterGroupArrayOutput) Index(i pulumi.IntInp
 
 type GetAnnouncementSubscriptionFilterGroupFilter struct {
 	// The type of filter.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 	// The value of the filter.
-	Value string `pulumi:"value"`
+	Value *string `pulumi:"value"`
 }
 
 // GetAnnouncementSubscriptionFilterGroupFilterInput is an input type that accepts GetAnnouncementSubscriptionFilterGroupFilterArgs and GetAnnouncementSubscriptionFilterGroupFilterOutput values.
@@ -608,9 +511,9 @@ type GetAnnouncementSubscriptionFilterGroupFilterInput interface {
 
 type GetAnnouncementSubscriptionFilterGroupFilterArgs struct {
 	// The type of filter.
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 	// The value of the filter.
-	Value pulumi.StringInput `pulumi:"value"`
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (GetAnnouncementSubscriptionFilterGroupFilterArgs) ElementType() reflect.Type {
@@ -623,12 +526,6 @@ func (i GetAnnouncementSubscriptionFilterGroupFilterArgs) ToGetAnnouncementSubsc
 
 func (i GetAnnouncementSubscriptionFilterGroupFilterArgs) ToGetAnnouncementSubscriptionFilterGroupFilterOutputWithContext(ctx context.Context) GetAnnouncementSubscriptionFilterGroupFilterOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAnnouncementSubscriptionFilterGroupFilterOutput)
-}
-
-func (i GetAnnouncementSubscriptionFilterGroupFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetAnnouncementSubscriptionFilterGroupFilter] {
-	return pulumix.Output[GetAnnouncementSubscriptionFilterGroupFilter]{
-		OutputState: i.ToGetAnnouncementSubscriptionFilterGroupFilterOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAnnouncementSubscriptionFilterGroupFilterArrayInput is an input type that accepts GetAnnouncementSubscriptionFilterGroupFilterArray and GetAnnouncementSubscriptionFilterGroupFilterArrayOutput values.
@@ -656,12 +553,6 @@ func (i GetAnnouncementSubscriptionFilterGroupFilterArray) ToGetAnnouncementSubs
 	return pulumi.ToOutputWithContext(ctx, i).(GetAnnouncementSubscriptionFilterGroupFilterArrayOutput)
 }
 
-func (i GetAnnouncementSubscriptionFilterGroupFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAnnouncementSubscriptionFilterGroupFilter] {
-	return pulumix.Output[[]GetAnnouncementSubscriptionFilterGroupFilter]{
-		OutputState: i.ToGetAnnouncementSubscriptionFilterGroupFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAnnouncementSubscriptionFilterGroupFilterOutput struct{ *pulumi.OutputState }
 
 func (GetAnnouncementSubscriptionFilterGroupFilterOutput) ElementType() reflect.Type {
@@ -676,20 +567,14 @@ func (o GetAnnouncementSubscriptionFilterGroupFilterOutput) ToGetAnnouncementSub
 	return o
 }
 
-func (o GetAnnouncementSubscriptionFilterGroupFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetAnnouncementSubscriptionFilterGroupFilter] {
-	return pulumix.Output[GetAnnouncementSubscriptionFilterGroupFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The type of filter.
-func (o GetAnnouncementSubscriptionFilterGroupFilterOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAnnouncementSubscriptionFilterGroupFilter) string { return v.Type }).(pulumi.StringOutput)
+func (o GetAnnouncementSubscriptionFilterGroupFilterOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAnnouncementSubscriptionFilterGroupFilter) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 // The value of the filter.
-func (o GetAnnouncementSubscriptionFilterGroupFilterOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAnnouncementSubscriptionFilterGroupFilter) string { return v.Value }).(pulumi.StringOutput)
+func (o GetAnnouncementSubscriptionFilterGroupFilterOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAnnouncementSubscriptionFilterGroupFilter) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
 
 type GetAnnouncementSubscriptionFilterGroupFilterArrayOutput struct{ *pulumi.OutputState }
@@ -704,12 +589,6 @@ func (o GetAnnouncementSubscriptionFilterGroupFilterArrayOutput) ToGetAnnounceme
 
 func (o GetAnnouncementSubscriptionFilterGroupFilterArrayOutput) ToGetAnnouncementSubscriptionFilterGroupFilterArrayOutputWithContext(ctx context.Context) GetAnnouncementSubscriptionFilterGroupFilterArrayOutput {
 	return o
-}
-
-func (o GetAnnouncementSubscriptionFilterGroupFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAnnouncementSubscriptionFilterGroupFilter] {
-	return pulumix.Output[[]GetAnnouncementSubscriptionFilterGroupFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAnnouncementSubscriptionFilterGroupFilterArrayOutput) Index(i pulumi.IntInput) GetAnnouncementSubscriptionFilterGroupFilterOutput {
@@ -749,12 +628,6 @@ func (i GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionArgs) ToGe
 	return pulumi.ToOutputWithContext(ctx, i).(GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionOutput)
 }
 
-func (i GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetAnnouncementSubscriptionsAnnouncementSubscriptionCollection] {
-	return pulumix.Output[GetAnnouncementSubscriptionsAnnouncementSubscriptionCollection]{
-		OutputState: i.ToGetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionArrayInput is an input type that accepts GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionArray and GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionArrayOutput values.
 // You can construct a concrete instance of `GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionArrayInput` via:
 //
@@ -780,12 +653,6 @@ func (i GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionArray) ToG
 	return pulumi.ToOutputWithContext(ctx, i).(GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionArrayOutput)
 }
 
-func (i GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAnnouncementSubscriptionsAnnouncementSubscriptionCollection] {
-	return pulumix.Output[[]GetAnnouncementSubscriptionsAnnouncementSubscriptionCollection]{
-		OutputState: i.ToGetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionOutput) ElementType() reflect.Type {
@@ -798,12 +665,6 @@ func (o GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionOutput) To
 
 func (o GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionOutput) ToGetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionOutputWithContext(ctx context.Context) GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionOutput {
 	return o
-}
-
-func (o GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetAnnouncementSubscriptionsAnnouncementSubscriptionCollection] {
-	return pulumix.Output[GetAnnouncementSubscriptionsAnnouncementSubscriptionCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionOutput) Items() GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemArrayOutput {
@@ -826,12 +687,6 @@ func (o GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionArrayOutpu
 	return o
 }
 
-func (o GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAnnouncementSubscriptionsAnnouncementSubscriptionCollection] {
-	return pulumix.Output[[]GetAnnouncementSubscriptionsAnnouncementSubscriptionCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionArrayOutput) Index(i pulumi.IntInput) GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAnnouncementSubscriptionsAnnouncementSubscriptionCollection {
 		return vs[0].([]GetAnnouncementSubscriptionsAnnouncementSubscriptionCollection)[vs[1].(int)]
@@ -840,35 +695,35 @@ func (o GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionArrayOutpu
 
 type GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItem struct {
 	// The OCID of the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A description of the announcement subscription. Avoid entering confidential information.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// A filter to return only resources that match the entire display name given.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// A list of filter groups for the announcement subscription. A filter group is a combination of multiple filters applied to announcements for matching purposes.
 	FilterGroups []GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroup `pulumi:"filterGroups"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the announcement subscription.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A message describing the current lifecycle state in more detail. For example, details might provide required or recommended actions for a resource in a Failed state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The OCID of the Notifications service topic that is the target for publishing announcements that match the configured announcement subscription.
-	OnsTopicId string `pulumi:"onsTopicId"`
+	OnsTopicId *string `pulumi:"onsTopicId"`
 	// (For announcement subscriptions with Oracle Fusion Applications configured as the service only) The language in which the user prefers to receive emailed announcements. Specify the preference with a value that uses the language tag format (x-obmcs-human-language). For example fr-FR.
-	PreferredLanguage string `pulumi:"preferredLanguage"`
+	PreferredLanguage *string `pulumi:"preferredLanguage"`
 	// The time zone that the user prefers for announcement time stamps. Specify the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example America/Los_Angeles.
-	PreferredTimeZone string `pulumi:"preferredTimeZone"`
+	PreferredTimeZone *string `pulumi:"preferredTimeZone"`
 	// A filter to return only announcement subscriptions that match the given lifecycle state.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The date and time that the announcement subscription was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time that the announcement subscription was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 // GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemInput is an input type that accepts GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemArgs and GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemOutput values.
@@ -884,35 +739,35 @@ type GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemInput int
 
 type GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemArgs struct {
 	// The OCID of the compartment.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A description of the announcement subscription. Avoid entering confidential information.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// A filter to return only resources that match the entire display name given.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// A list of filter groups for the announcement subscription. A filter group is a combination of multiple filters applied to announcements for matching purposes.
 	FilterGroups GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupArrayInput `pulumi:"filterGroups"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The OCID of the announcement subscription.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// A message describing the current lifecycle state in more detail. For example, details might provide required or recommended actions for a resource in a Failed state.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// The OCID of the Notifications service topic that is the target for publishing announcements that match the configured announcement subscription.
-	OnsTopicId pulumi.StringInput `pulumi:"onsTopicId"`
+	OnsTopicId pulumi.StringPtrInput `pulumi:"onsTopicId"`
 	// (For announcement subscriptions with Oracle Fusion Applications configured as the service only) The language in which the user prefers to receive emailed announcements. Specify the preference with a value that uses the language tag format (x-obmcs-human-language). For example fr-FR.
-	PreferredLanguage pulumi.StringInput `pulumi:"preferredLanguage"`
+	PreferredLanguage pulumi.StringPtrInput `pulumi:"preferredLanguage"`
 	// The time zone that the user prefers for announcement time stamps. Specify the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example America/Los_Angeles.
-	PreferredTimeZone pulumi.StringInput `pulumi:"preferredTimeZone"`
+	PreferredTimeZone pulumi.StringPtrInput `pulumi:"preferredTimeZone"`
 	// A filter to return only announcement subscriptions that match the given lifecycle state.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// The date and time that the announcement subscription was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The date and time that the announcement subscription was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 }
 
 func (GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemArgs) ElementType() reflect.Type {
@@ -925,12 +780,6 @@ func (i GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemArgs) 
 
 func (i GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemArgs) ToGetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemOutputWithContext(ctx context.Context) GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemOutput)
-}
-
-func (i GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItem] {
-	return pulumix.Output[GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItem]{
-		OutputState: i.ToGetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemArrayInput is an input type that accepts GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemArray and GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemArrayOutput values.
@@ -958,12 +807,6 @@ func (i GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemArray)
 	return pulumi.ToOutputWithContext(ctx, i).(GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemArrayOutput)
 }
 
-func (i GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItem] {
-	return pulumix.Output[[]GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItem]{
-		OutputState: i.ToGetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemOutput) ElementType() reflect.Type {
@@ -978,17 +821,11 @@ func (o GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemOutput
 	return o
 }
 
-func (o GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItem] {
-	return pulumix.Output[GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment.
-func (o GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItem) string {
+func (o GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItem) *string {
 		return v.CompartmentId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -999,17 +836,17 @@ func (o GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemOutput
 }
 
 // A description of the announcement subscription. Avoid entering confidential information.
-func (o GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItem) string {
+func (o GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItem) *string {
 		return v.Description
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only resources that match the entire display name given.
-func (o GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItem) string {
+func (o GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItem) *string {
 		return v.DisplayName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // A list of filter groups for the announcement subscription. A filter group is a combination of multiple filters applied to announcements for matching purposes.
@@ -1027,39 +864,41 @@ func (o GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemOutput
 }
 
 // The OCID of the announcement subscription.
-func (o GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current lifecycle state in more detail. For example, details might provide required or recommended actions for a resource in a Failed state.
-func (o GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItem) string {
+func (o GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItem) *string {
 		return v.LifecycleDetails
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the Notifications service topic that is the target for publishing announcements that match the configured announcement subscription.
-func (o GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemOutput) OnsTopicId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItem) string { return v.OnsTopicId }).(pulumi.StringOutput)
+func (o GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemOutput) OnsTopicId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItem) *string {
+		return v.OnsTopicId
+	}).(pulumi.StringPtrOutput)
 }
 
 // (For announcement subscriptions with Oracle Fusion Applications configured as the service only) The language in which the user prefers to receive emailed announcements. Specify the preference with a value that uses the language tag format (x-obmcs-human-language). For example fr-FR.
-func (o GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemOutput) PreferredLanguage() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItem) string {
+func (o GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemOutput) PreferredLanguage() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItem) *string {
 		return v.PreferredLanguage
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The time zone that the user prefers for announcement time stamps. Specify the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example America/Los_Angeles.
-func (o GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemOutput) PreferredTimeZone() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItem) string {
+func (o GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemOutput) PreferredTimeZone() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItem) *string {
 		return v.PreferredTimeZone
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only announcement subscriptions that match the given lifecycle state.
-func (o GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -1070,17 +909,17 @@ func (o GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemOutput
 }
 
 // The date and time that the announcement subscription was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-func (o GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItem) string {
+func (o GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItem) *string {
 		return v.TimeCreated
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The date and time that the announcement subscription was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-func (o GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItem) string {
+func (o GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItem) *string {
 		return v.TimeUpdated
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -1097,12 +936,6 @@ func (o GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemArrayO
 	return o
 }
 
-func (o GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItem] {
-	return pulumix.Output[[]GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemArrayOutput) Index(i pulumi.IntInput) GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItem {
 		return vs[0].([]GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItem)[vs[1].(int)]
@@ -1113,7 +946,7 @@ type GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGro
 	// A list of filters against which the Announcements service matches announcements. You cannot have more than one of any given filter type within a filter group. You also cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group.
 	Filters []GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupFilter `pulumi:"filters"`
 	// The name of the group. The name must be unique and it cannot be changed. Avoid entering confidential information.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 }
 
 // GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupInput is an input type that accepts GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupArgs and GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupOutput values.
@@ -1131,7 +964,7 @@ type GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGro
 	// A list of filters against which the Announcements service matches announcements. You cannot have more than one of any given filter type within a filter group. You also cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group.
 	Filters GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupFilterArrayInput `pulumi:"filters"`
 	// The name of the group. The name must be unique and it cannot be changed. Avoid entering confidential information.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 }
 
 func (GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupArgs) ElementType() reflect.Type {
@@ -1144,12 +977,6 @@ func (i GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilter
 
 func (i GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupArgs) ToGetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupOutputWithContext(ctx context.Context) GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupOutput)
-}
-
-func (i GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupArgs) ToOutput(ctx context.Context) pulumix.Output[GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroup] {
-	return pulumix.Output[GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroup]{
-		OutputState: i.ToGetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupArrayInput is an input type that accepts GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupArray and GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupArrayOutput values.
@@ -1177,12 +1004,6 @@ func (i GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilter
 	return pulumi.ToOutputWithContext(ctx, i).(GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupArrayOutput)
 }
 
-func (i GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroup] {
-	return pulumix.Output[[]GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroup]{
-		OutputState: i.ToGetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupOutput struct{ *pulumi.OutputState }
 
 func (GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupOutput) ElementType() reflect.Type {
@@ -1197,12 +1018,6 @@ func (o GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilter
 	return o
 }
 
-func (o GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupOutput) ToOutput(ctx context.Context) pulumix.Output[GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroup] {
-	return pulumix.Output[GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroup]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A list of filters against which the Announcements service matches announcements. You cannot have more than one of any given filter type within a filter group. You also cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group.
 func (o GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupOutput) Filters() GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupFilterArrayOutput {
 	return o.ApplyT(func(v GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroup) []GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupFilter {
@@ -1211,10 +1026,10 @@ func (o GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilter
 }
 
 // The name of the group. The name must be unique and it cannot be changed. Avoid entering confidential information.
-func (o GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroup) string {
+func (o GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroup) *string {
 		return v.Name
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupArrayOutput struct{ *pulumi.OutputState }
@@ -1231,12 +1046,6 @@ func (o GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilter
 	return o
 }
 
-func (o GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroup] {
-	return pulumix.Output[[]GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroup]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupArrayOutput) Index(i pulumi.IntInput) GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroup {
 		return vs[0].([]GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroup)[vs[1].(int)]
@@ -1245,9 +1054,9 @@ func (o GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilter
 
 type GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupFilter struct {
 	// The type of filter.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 	// The value of the filter.
-	Value string `pulumi:"value"`
+	Value *string `pulumi:"value"`
 }
 
 // GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupFilterInput is an input type that accepts GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupFilterArgs and GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupFilterOutput values.
@@ -1263,9 +1072,9 @@ type GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGro
 
 type GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupFilterArgs struct {
 	// The type of filter.
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 	// The value of the filter.
-	Value pulumi.StringInput `pulumi:"value"`
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupFilterArgs) ElementType() reflect.Type {
@@ -1278,12 +1087,6 @@ func (i GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilter
 
 func (i GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupFilterArgs) ToGetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupFilterOutputWithContext(ctx context.Context) GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupFilterOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupFilterOutput)
-}
-
-func (i GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupFilter] {
-	return pulumix.Output[GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupFilter]{
-		OutputState: i.ToGetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupFilterOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupFilterArrayInput is an input type that accepts GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupFilterArray and GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupFilterArrayOutput values.
@@ -1311,12 +1114,6 @@ func (i GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilter
 	return pulumi.ToOutputWithContext(ctx, i).(GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupFilterArrayOutput)
 }
 
-func (i GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupFilter] {
-	return pulumix.Output[[]GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupFilter]{
-		OutputState: i.ToGetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupFilterOutput struct{ *pulumi.OutputState }
 
 func (GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupFilterOutput) ElementType() reflect.Type {
@@ -1331,24 +1128,18 @@ func (o GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilter
 	return o
 }
 
-func (o GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupFilter] {
-	return pulumix.Output[GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The type of filter.
-func (o GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupFilterOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupFilter) string {
+func (o GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupFilterOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupFilter) *string {
 		return v.Type
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The value of the filter.
-func (o GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupFilterOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupFilter) string {
+func (o GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupFilterOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupFilter) *string {
 		return v.Value
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupFilterArrayOutput struct{ *pulumi.OutputState }
@@ -1363,12 +1154,6 @@ func (o GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilter
 
 func (o GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupFilterArrayOutput) ToGetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupFilterArrayOutputWithContext(ctx context.Context) GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupFilterArrayOutput {
 	return o
-}
-
-func (o GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupFilter] {
-	return pulumix.Output[[]GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupFilterArrayOutput) Index(i pulumi.IntInput) GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupFilterOutput {
@@ -1414,12 +1199,6 @@ func (i GetAnnouncementSubscriptionsFilterArgs) ToGetAnnouncementSubscriptionsFi
 	return pulumi.ToOutputWithContext(ctx, i).(GetAnnouncementSubscriptionsFilterOutput)
 }
 
-func (i GetAnnouncementSubscriptionsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetAnnouncementSubscriptionsFilter] {
-	return pulumix.Output[GetAnnouncementSubscriptionsFilter]{
-		OutputState: i.ToGetAnnouncementSubscriptionsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAnnouncementSubscriptionsFilterArrayInput is an input type that accepts GetAnnouncementSubscriptionsFilterArray and GetAnnouncementSubscriptionsFilterArrayOutput values.
 // You can construct a concrete instance of `GetAnnouncementSubscriptionsFilterArrayInput` via:
 //
@@ -1445,12 +1224,6 @@ func (i GetAnnouncementSubscriptionsFilterArray) ToGetAnnouncementSubscriptionsF
 	return pulumi.ToOutputWithContext(ctx, i).(GetAnnouncementSubscriptionsFilterArrayOutput)
 }
 
-func (i GetAnnouncementSubscriptionsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAnnouncementSubscriptionsFilter] {
-	return pulumix.Output[[]GetAnnouncementSubscriptionsFilter]{
-		OutputState: i.ToGetAnnouncementSubscriptionsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAnnouncementSubscriptionsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetAnnouncementSubscriptionsFilterOutput) ElementType() reflect.Type {
@@ -1463,12 +1236,6 @@ func (o GetAnnouncementSubscriptionsFilterOutput) ToGetAnnouncementSubscriptions
 
 func (o GetAnnouncementSubscriptionsFilterOutput) ToGetAnnouncementSubscriptionsFilterOutputWithContext(ctx context.Context) GetAnnouncementSubscriptionsFilterOutput {
 	return o
-}
-
-func (o GetAnnouncementSubscriptionsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetAnnouncementSubscriptionsFilter] {
-	return pulumix.Output[GetAnnouncementSubscriptionsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The name of the group. The name must be unique and it cannot be changed. Avoid entering confidential information.
@@ -1496,12 +1263,6 @@ func (o GetAnnouncementSubscriptionsFilterArrayOutput) ToGetAnnouncementSubscrip
 
 func (o GetAnnouncementSubscriptionsFilterArrayOutput) ToGetAnnouncementSubscriptionsFilterArrayOutputWithContext(ctx context.Context) GetAnnouncementSubscriptionsFilterArrayOutput {
 	return o
-}
-
-func (o GetAnnouncementSubscriptionsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAnnouncementSubscriptionsFilter] {
-	return pulumix.Output[[]GetAnnouncementSubscriptionsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAnnouncementSubscriptionsFilterArrayOutput) Index(i pulumi.IntInput) GetAnnouncementSubscriptionsFilterOutput {

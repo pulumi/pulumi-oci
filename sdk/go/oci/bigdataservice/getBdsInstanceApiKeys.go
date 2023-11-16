@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Bds Instance Api Key resource in Oracle Cloud Infrastructure Big Data Service service.
@@ -71,7 +70,7 @@ type GetBdsInstanceApiKeysResult struct {
 	DisplayName   *string                          `pulumi:"displayName"`
 	Filters       []GetBdsInstanceApiKeysFilter    `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The current status of the API key.
 	State *string `pulumi:"state"`
 	// The user OCID for which this API key was created.
@@ -122,12 +121,6 @@ func (o GetBdsInstanceApiKeysResultOutput) ToGetBdsInstanceApiKeysResultOutputWi
 	return o
 }
 
-func (o GetBdsInstanceApiKeysResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstanceApiKeysResult] {
-	return pulumix.Output[GetBdsInstanceApiKeysResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetBdsInstanceApiKeysResultOutput) BdsApiKeys() GetBdsInstanceApiKeysBdsApiKeyArrayOutput {
 	return o.ApplyT(func(v GetBdsInstanceApiKeysResult) []GetBdsInstanceApiKeysBdsApiKey { return v.BdsApiKeys }).(GetBdsInstanceApiKeysBdsApiKeyArrayOutput)
 }
@@ -145,8 +138,8 @@ func (o GetBdsInstanceApiKeysResultOutput) Filters() GetBdsInstanceApiKeysFilter
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetBdsInstanceApiKeysResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBdsInstanceApiKeysResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetBdsInstanceApiKeysResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBdsInstanceApiKeysResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The current status of the API key.

@@ -108,7 +108,7 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Credentials used to connect to the database. Currently only the `DETAILS` type is supported for creating MACS connector crendentials.
         /// </summary>
@@ -116,7 +116,7 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// The status of connectivity to the external database.
         /// </summary>
-        public readonly string ConnectionStatus;
+        public readonly string? ConnectionStatus;
         /// <summary>
         /// The Oracle Database connection string.
         /// </summary>
@@ -124,82 +124,82 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// The ID of the agent used for the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
         /// </summary>
-        public readonly string ConnectorAgentId;
+        public readonly string? ConnectorAgentId;
         /// <summary>
         /// The type of connector used by the external database resource.
         /// </summary>
-        public readonly string ConnectorType;
+        public readonly string? ConnectorType;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// The user-friendly name for the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails). The name does not have to be unique.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         public readonly string ExternalDatabaseConnectorId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database resource.
         /// </summary>
-        public readonly string ExternalDatabaseId;
+        public readonly string? ExternalDatabaseId;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Additional information about the current lifecycle state.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// The current lifecycle state of the external database connector resource.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The date and time the `connectionStatus` of this external connector was last updated.
         /// </summary>
-        public readonly string TimeConnectionStatusLastUpdated;
+        public readonly string? TimeConnectionStatusLastUpdated;
         /// <summary>
         /// The date and time the external connector was created.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
 
         [OutputConstructor]
         private GetExternalDatabaseConnectorResult(
-            string compartmentId,
+            string? compartmentId,
 
             ImmutableArray<Outputs.GetExternalDatabaseConnectorConnectionCredentialResult> connectionCredentials,
 
-            string connectionStatus,
+            string? connectionStatus,
 
             ImmutableArray<Outputs.GetExternalDatabaseConnectorConnectionStringResult> connectionStrings,
 
-            string connectorAgentId,
+            string? connectorAgentId,
 
-            string connectorType,
+            string? connectorType,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string displayName,
+            string? displayName,
 
             string externalDatabaseConnectorId,
 
-            string externalDatabaseId,
+            string? externalDatabaseId,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string state,
+            string? state,
 
-            string timeConnectionStatusLastUpdated,
+            string? timeConnectionStatusLastUpdated,
 
-            string timeCreated)
+            string? timeCreated)
         {
             CompartmentId = compartmentId;
             ConnectionCredentials = connectionCredentials;

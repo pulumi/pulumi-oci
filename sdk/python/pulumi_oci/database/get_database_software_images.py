@@ -55,25 +55,16 @@ class GetDatabaseSoftwareImagesResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="databaseSoftwareImages")
-    def database_software_images(self) -> Sequence['outputs.GetDatabaseSoftwareImagesDatabaseSoftwareImageResult']:
-        """
-        The list of database_software_images.
-        """
+    def database_software_images(self) -> Optional[Sequence['outputs.GetDatabaseSoftwareImagesDatabaseSoftwareImageResult']]:
         return pulumi.get(self, "database_software_images")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        The user-friendly name for the database software image. The name does not have to be unique.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -83,7 +74,7 @@ class GetDatabaseSoftwareImagesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -92,33 +83,21 @@ class GetDatabaseSoftwareImagesResult:
     @property
     @pulumi.getter(name="imageShapeFamily")
     def image_shape_family(self) -> Optional[str]:
-        """
-        To what shape the image is meant for.
-        """
         return pulumi.get(self, "image_shape_family")
 
     @property
     @pulumi.getter(name="imageType")
     def image_type(self) -> Optional[str]:
-        """
-        The type of software image. Can be grid or database.
-        """
         return pulumi.get(self, "image_type")
 
     @property
     @pulumi.getter(name="isUpgradeSupported")
     def is_upgrade_supported(self) -> Optional[bool]:
-        """
-        True if this Database software image is supported for Upgrade.
-        """
         return pulumi.get(self, "is_upgrade_supported")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the database software image.
-        """
         return pulumi.get(self, "state")
 
 
@@ -148,31 +127,7 @@ def get_database_software_images(compartment_id: Optional[str] = None,
                                  state: Optional[str] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDatabaseSoftwareImagesResult:
     """
-    This data source provides the list of Database Software Images in Oracle Cloud Infrastructure Database service.
-
-    Gets a list of the database software images in the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_database_software_images = oci.Database.get_database_software_images(compartment_id=var["compartment_id"],
-        display_name=var["database_software_image_display_name"],
-        image_shape_family=var["database_software_image_image_shape_family"],
-        image_type=var["database_software_image_image_type"],
-        is_upgrade_supported=var["database_software_image_is_upgrade_supported"],
-        state=var["database_software_image_state"])
-    ```
-
-
-    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
-    :param str image_shape_family: A filter to return only resources that match the given image shape family exactly.
-    :param str image_type: A filter to return only resources that match the given image type exactly.
-    :param bool is_upgrade_supported: If provided, filters the results to the set of database versions which are supported for Upgrade.
-    :param str state: A filter to return only resources that match the given lifecycle state exactly.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -207,30 +162,6 @@ def get_database_software_images_output(compartment_id: Optional[pulumi.Input[st
                                         state: Optional[pulumi.Input[Optional[str]]] = None,
                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDatabaseSoftwareImagesResult]:
     """
-    This data source provides the list of Database Software Images in Oracle Cloud Infrastructure Database service.
-
-    Gets a list of the database software images in the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_database_software_images = oci.Database.get_database_software_images(compartment_id=var["compartment_id"],
-        display_name=var["database_software_image_display_name"],
-        image_shape_family=var["database_software_image_image_shape_family"],
-        image_type=var["database_software_image_image_type"],
-        is_upgrade_supported=var["database_software_image_is_upgrade_supported"],
-        state=var["database_software_image_state"])
-    ```
-
-
-    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
-    :param str image_shape_family: A filter to return only resources that match the given image shape family exactly.
-    :param str image_type: A filter to return only resources that match the given image type exactly.
-    :param bool is_upgrade_supported: If provided, filters the results to the set of database versions which are supported for Upgrade.
-    :param str state: A filter to return only resources that match the given lifecycle state exactly.
+    Use this data source to access information about an existing resource.
     """
     ...

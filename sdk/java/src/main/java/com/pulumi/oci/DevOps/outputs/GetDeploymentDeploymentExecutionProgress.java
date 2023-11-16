@@ -8,6 +8,8 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDeploymentDeploymentExecutionProgress {
@@ -15,17 +17,17 @@ public final class GetDeploymentDeploymentExecutionProgress {
      * @return Map of stage OCIDs to deploy stage execution progress model.
      * 
      */
-    private Map<String,Object> deployStageExecutionProgress;
+    private @Nullable Map<String,Object> deployStageExecutionProgress;
     /**
      * @return Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * 
      */
-    private String timeFinished;
+    private @Nullable String timeFinished;
     /**
      * @return Time the deployment is started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * 
      */
-    private String timeStarted;
+    private @Nullable String timeStarted;
 
     private GetDeploymentDeploymentExecutionProgress() {}
     /**
@@ -33,21 +35,21 @@ public final class GetDeploymentDeploymentExecutionProgress {
      * 
      */
     public Map<String,Object> deployStageExecutionProgress() {
-        return this.deployStageExecutionProgress;
+        return this.deployStageExecutionProgress == null ? Map.of() : this.deployStageExecutionProgress;
     }
     /**
      * @return Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * 
      */
-    public String timeFinished() {
-        return this.timeFinished;
+    public Optional<String> timeFinished() {
+        return Optional.ofNullable(this.timeFinished);
     }
     /**
      * @return Time the deployment is started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * 
      */
-    public String timeStarted() {
-        return this.timeStarted;
+    public Optional<String> timeStarted() {
+        return Optional.ofNullable(this.timeStarted);
     }
 
     public static Builder builder() {
@@ -59,9 +61,9 @@ public final class GetDeploymentDeploymentExecutionProgress {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Map<String,Object> deployStageExecutionProgress;
-        private String timeFinished;
-        private String timeStarted;
+        private @Nullable Map<String,Object> deployStageExecutionProgress;
+        private @Nullable String timeFinished;
+        private @Nullable String timeStarted;
         public Builder() {}
         public Builder(GetDeploymentDeploymentExecutionProgress defaults) {
     	      Objects.requireNonNull(defaults);
@@ -71,18 +73,18 @@ public final class GetDeploymentDeploymentExecutionProgress {
         }
 
         @CustomType.Setter
-        public Builder deployStageExecutionProgress(Map<String,Object> deployStageExecutionProgress) {
-            this.deployStageExecutionProgress = Objects.requireNonNull(deployStageExecutionProgress);
+        public Builder deployStageExecutionProgress(@Nullable Map<String,Object> deployStageExecutionProgress) {
+            this.deployStageExecutionProgress = deployStageExecutionProgress;
             return this;
         }
         @CustomType.Setter
-        public Builder timeFinished(String timeFinished) {
-            this.timeFinished = Objects.requireNonNull(timeFinished);
+        public Builder timeFinished(@Nullable String timeFinished) {
+            this.timeFinished = timeFinished;
             return this;
         }
         @CustomType.Setter
-        public Builder timeStarted(String timeStarted) {
-            this.timeStarted = Objects.requireNonNull(timeStarted);
+        public Builder timeStarted(@Nullable String timeStarted) {
+            this.timeStarted = timeStarted;
             return this;
         }
         public GetDeploymentDeploymentExecutionProgress build() {

@@ -53,45 +53,27 @@ class GetNetworkFirewallPolicySecurityRuleResult:
 
     @property
     @pulumi.getter
-    def action(self) -> str:
-        """
-        Types of Action on the Traffic flow.
-        * ALLOW - Allows the traffic.
-        * DROP - Silently drops the traffic, e.g. without sending a TCP reset.
-        * REJECT - Rejects the traffic, sending a TCP reset to client and/or server as applicable.
-        * INSPECT - Inspects traffic for vulnerability as specified in `inspection`, which may result in rejection.
-        """
+    def action(self) -> Optional[str]:
         return pulumi.get(self, "action")
 
     @property
     @pulumi.getter
-    def conditions(self) -> Sequence['outputs.GetNetworkFirewallPolicySecurityRuleConditionResult']:
-        """
-        Criteria to evaluate against network traffic. A match occurs when at least one item in the array associated with each specified property corresponds with the relevant aspect of the traffic.
-        """
+    def conditions(self) -> Optional[Sequence['outputs.GetNetworkFirewallPolicySecurityRuleConditionResult']]:
         return pulumi.get(self, "conditions")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
-    def inspection(self) -> str:
-        """
-        Type of inspection to affect the Traffic flow. This is only applicable if action is INSPECT.
-        * INTRUSION_DETECTION - Intrusion Detection.
-        * INTRUSION_PREVENTION - Intrusion Detection and Prevention. Traffic classified as potentially malicious will be rejected as described in `type`.
-        """
+    def inspection(self) -> Optional[str]:
         return pulumi.get(self, "inspection")
 
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Name for the Security rule, must be unique within the policy.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -101,23 +83,17 @@ class GetNetworkFirewallPolicySecurityRuleResult:
 
     @property
     @pulumi.getter(name="parentResourceId")
-    def parent_resource_id(self) -> str:
-        """
-        OCID of the Network Firewall Policy this security rule belongs to.
-        """
+    def parent_resource_id(self) -> Optional[str]:
         return pulumi.get(self, "parent_resource_id")
 
     @property
     @pulumi.getter
-    def positions(self) -> Sequence['outputs.GetNetworkFirewallPolicySecurityRulePositionResult']:
-        """
-        An object which defines the position of the rule.
-        """
+    def positions(self) -> Optional[Sequence['outputs.GetNetworkFirewallPolicySecurityRulePositionResult']]:
         return pulumi.get(self, "positions")
 
     @property
     @pulumi.getter(name="priorityOrder")
-    def priority_order(self) -> str:
+    def priority_order(self) -> Optional[str]:
         return pulumi.get(self, "priority_order")
 
 
@@ -142,13 +118,7 @@ def get_network_firewall_policy_security_rule(name: Optional[str] = None,
                                               network_firewall_policy_id: Optional[str] = None,
                                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNetworkFirewallPolicySecurityRuleResult:
     """
-    This data source provides details about a specific Network Firewall Policy Security Rule resource in Oracle Cloud Infrastructure Network Firewall service.
-
-    Get Security Rule by the given name in the context of network firewall policy.
-
-
-    :param str name: Name for the Security rule, must be unique within the policy.
-    :param str network_firewall_policy_id: Unique Network Firewall Policy identifier
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['name'] = name
@@ -173,12 +143,6 @@ def get_network_firewall_policy_security_rule_output(name: Optional[pulumi.Input
                                                      network_firewall_policy_id: Optional[pulumi.Input[str]] = None,
                                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNetworkFirewallPolicySecurityRuleResult]:
     """
-    This data source provides details about a specific Network Firewall Policy Security Rule resource in Oracle Cloud Infrastructure Network Firewall service.
-
-    Get Security Rule by the given name in the context of network firewall policy.
-
-
-    :param str name: Name for the Security rule, must be unique within the policy.
-    :param str network_firewall_policy_id: Unique Network Firewall Policy identifier
+    Use this data source to access information about an existing resource.
     """
     ...

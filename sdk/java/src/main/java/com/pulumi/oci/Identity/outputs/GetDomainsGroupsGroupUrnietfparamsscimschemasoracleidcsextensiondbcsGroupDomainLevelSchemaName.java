@@ -6,6 +6,8 @@ package com.pulumi.oci.Identity.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupDomainLevelSchemaName {
@@ -13,27 +15,27 @@ public final class GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextens
      * @return DBCS Domain Name
      * 
      */
-    private String domainName;
+    private @Nullable String domainName;
     /**
      * @return The DBCS schema-name granted to this Group for the DB instance that &#39;dbInstanceId&#39; specifies.
      * 
      */
-    private String schemaName;
+    private @Nullable String schemaName;
 
     private GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupDomainLevelSchemaName() {}
     /**
      * @return DBCS Domain Name
      * 
      */
-    public String domainName() {
-        return this.domainName;
+    public Optional<String> domainName() {
+        return Optional.ofNullable(this.domainName);
     }
     /**
      * @return The DBCS schema-name granted to this Group for the DB instance that &#39;dbInstanceId&#39; specifies.
      * 
      */
-    public String schemaName() {
-        return this.schemaName;
+    public Optional<String> schemaName() {
+        return Optional.ofNullable(this.schemaName);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextens
     }
     @CustomType.Builder
     public static final class Builder {
-        private String domainName;
-        private String schemaName;
+        private @Nullable String domainName;
+        private @Nullable String schemaName;
         public Builder() {}
         public Builder(GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupDomainLevelSchemaName defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextens
         }
 
         @CustomType.Setter
-        public Builder domainName(String domainName) {
-            this.domainName = Objects.requireNonNull(domainName);
+        public Builder domainName(@Nullable String domainName) {
+            this.domainName = domainName;
             return this;
         }
         @CustomType.Setter
-        public Builder schemaName(String schemaName) {
-            this.schemaName = Objects.requireNonNull(schemaName);
+        public Builder schemaName(@Nullable String schemaName) {
+            this.schemaName = schemaName;
             return this;
         }
         public GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupDomainLevelSchemaName build() {

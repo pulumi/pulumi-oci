@@ -99,15 +99,15 @@ export class DataGuardAssociation extends pulumi.CustomResource {
     /**
      * The lag time between updates to the primary database and application of the redo data on the standby database, as computed by the reporting database.  Example: `9 seconds`
      */
-    public /*out*/ readonly applyLag!: pulumi.Output<string>;
+    public /*out*/ readonly applyLag!: pulumi.Output<string | undefined>;
     /**
      * The rate at which redo logs are synced between the associated databases.  Example: `180 Mb per second`
      */
-    public /*out*/ readonly applyRate!: pulumi.Output<string>;
+    public /*out*/ readonly applyRate!: pulumi.Output<string | undefined>;
     /**
      * The name of the availability domain that the standby database DB system will be located in. For example- "Uocm:PHX-AD-1".
      */
-    public readonly availabilityDomain!: pulumi.Output<string>;
+    public readonly availabilityDomain!: pulumi.Output<string | undefined>;
     /**
      * A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
      */
@@ -115,7 +115,7 @@ export class DataGuardAssociation extends pulumi.CustomResource {
     /**
      * The number of OCPU cores available for AMD-based virtual machine DB systems.
      */
-    public readonly cpuCoreCount!: pulumi.Output<number>;
+    public readonly cpuCoreCount!: pulumi.Output<number | undefined>;
     public readonly createAsync!: pulumi.Output<boolean | undefined>;
     /**
      * Specifies whether to create the peer database in an existing DB system or in a new DB system.
@@ -124,7 +124,7 @@ export class DataGuardAssociation extends pulumi.CustomResource {
     /**
      * Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
      */
-    public readonly dataCollectionOptions!: pulumi.Output<outputs.Database.DataGuardAssociationDataCollectionOptions>;
+    public readonly dataCollectionOptions!: pulumi.Output<outputs.Database.DataGuardAssociationDataCollectionOptions | undefined>;
     /**
      * (Updatable) A strong password for the `SYS`, `SYSTEM`, and `PDB Admin` users to apply during standby creation.
      *
@@ -165,7 +165,7 @@ export class DataGuardAssociation extends pulumi.CustomResource {
     /**
      * The user-friendly name of the DB system that will contain the the standby database. The display name does not have to be unique.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    public readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * A Fault Domain is a grouping of hardware and infrastructure within an availability domain. Fault Domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or maintenance that affects one Fault Domain does not affect DB systems in other Fault Domains.
      *
@@ -181,7 +181,7 @@ export class DataGuardAssociation extends pulumi.CustomResource {
     /**
      * The hostname for the DB node.
      */
-    public readonly hostname!: pulumi.Output<string>;
+    public readonly hostname!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) True if active Data Guard is enabled.
      */
@@ -193,7 +193,7 @@ export class DataGuardAssociation extends pulumi.CustomResource {
     /**
      * Additional information about the current lifecycleState, if available.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * The number of nodes to launch for the DB system of the standby in the Data Guard association. For a 2-node RAC virtual machine DB system, specify either 1 or 2. If you do not supply this parameter, the default is the node count of the primary DB system.
      */
@@ -206,19 +206,19 @@ export class DataGuardAssociation extends pulumi.CustomResource {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer database's Data Guard association.
      */
-    public /*out*/ readonly peerDataGuardAssociationId!: pulumi.Output<string>;
+    public /*out*/ readonly peerDataGuardAssociationId!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated peer database.
      */
-    public /*out*/ readonly peerDatabaseId!: pulumi.Output<string>;
+    public /*out*/ readonly peerDatabaseId!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB home in which to create the standby database. You must supply this value to create standby database with an existing DB home
      */
-    public readonly peerDbHomeId!: pulumi.Output<string>;
+    public readonly peerDbHomeId!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system in which to create the standby database. You must supply this value if creationType is `ExistingDbSystem`.
      */
-    public readonly peerDbSystemId!: pulumi.Output<string>;
+    public readonly peerDbSystemId!: pulumi.Output<string | undefined>;
     /**
      * Specifies the `DB_UNIQUE_NAME` of the peer database to be created.
      */
@@ -226,7 +226,7 @@ export class DataGuardAssociation extends pulumi.CustomResource {
     /**
      * The role of the peer database in this Data Guard association.
      */
-    public /*out*/ readonly peerRole!: pulumi.Output<string>;
+    public /*out*/ readonly peerRole!: pulumi.Output<string | undefined>;
     /**
      * Specifies a prefix for the `Oracle SID` of the database to be created.
      */
@@ -234,7 +234,7 @@ export class DataGuardAssociation extends pulumi.CustomResource {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster in which to create the standby database. You must supply this value if creationType is `ExistingVmCluster`.
      */
-    public readonly peerVmClusterId!: pulumi.Output<string>;
+    public readonly peerVmClusterId!: pulumi.Output<string | undefined>;
     /**
      * The IPv4 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv4 address from the subnet.
      */
@@ -248,32 +248,32 @@ export class DataGuardAssociation extends pulumi.CustomResource {
     /**
      * The role of the reporting database in this Data Guard association.
      */
-    public /*out*/ readonly role!: pulumi.Output<string>;
+    public /*out*/ readonly role!: pulumi.Output<string | undefined>;
     /**
      * The virtual machine DB system shape to launch for the standby database in the Data Guard association. The shape determines the number of CPU cores and the amount of memory available for the DB system. Only virtual machine shapes are valid options. If you do not supply this parameter, the default shape is the shape of the primary DB system.
      *
      * To get a list of all shapes, use the [ListDbSystemShapes](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbSystemShapeSummary/ListDbSystemShapes) operation.
      */
-    public readonly shape!: pulumi.Output<string>;
+    public readonly shape!: pulumi.Output<string | undefined>;
     /**
      * The current state of the Data Guard association.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The block storage volume performance level. Valid values are `BALANCED` and `HIGH_PERFORMANCE`. See [Block Volume Performance](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm) for more information.
      */
-    public readonly storageVolumePerformanceMode!: pulumi.Output<string>;
+    public readonly storageVolumePerformanceMode!: pulumi.Output<string | undefined>;
     /**
      * The OCID of the subnet the DB system is associated with. **Subnet Restrictions:**
      * * For 1- and 2-node RAC DB systems, do not use a subnet that overlaps with 192.168.16.16/28
      *
      * These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and backup subnet.
      */
-    public readonly subnetId!: pulumi.Output<string>;
+    public readonly subnetId!: pulumi.Output<string | undefined>;
     /**
      * The date and time the Data Guard association was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The time zone of the dataguard standby DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
      */

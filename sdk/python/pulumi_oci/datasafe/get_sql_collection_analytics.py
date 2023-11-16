@@ -85,7 +85,7 @@ class GetSqlCollectionAnalyticsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -93,26 +93,17 @@ class GetSqlCollectionAnalyticsResult:
 
     @property
     @pulumi.getter(name="sqlCollectionAnalyticsCollections")
-    def sql_collection_analytics_collections(self) -> Sequence['outputs.GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionResult']:
-        """
-        The list of sql_collection_analytics_collection.
-        """
+    def sql_collection_analytics_collections(self) -> Optional[Sequence['outputs.GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionResult']]:
         return pulumi.get(self, "sql_collection_analytics_collections")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the SQL collection.
-        """
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="targetId")
     def target_id(self) -> Optional[str]:
-        """
-        The OCID of the target corresponding to the security policy deployment.
-        """
         return pulumi.get(self, "target_id")
 
     @property
@@ -156,48 +147,7 @@ def get_sql_collection_analytics(access_level: Optional[str] = None,
                                  time_started: Optional[str] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSqlCollectionAnalyticsResult:
     """
-    This data source provides the list of Sql Collection Analytics in Oracle Cloud Infrastructure Data Safe service.
-
-    Retrieves a list of all SQL collection analytics in Data Safe.
-
-    The ListSqlCollectionAnalytics operation returns only the analytics for the SQL collections in the specified `compartmentId`.
-
-    The parameter `accessLevel` specifies whether to return only those compartments for which the
-    requestor has INSPECT permissions on at least one resource directly
-    or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
-    Principal doesn't have access to even one of the child compartments. This is valid only when
-    `compartmentIdInSubtree` is set to `true`.
-
-    The parameter `compartmentIdInSubtree` applies when you perform ListSqlCollections on the
-    `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
-    To get a full list of all compartments and subcompartments in the tenancy (root compartment),
-    set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_sql_collection_analytics = oci.DataSafe.get_sql_collection_analytics(compartment_id=var["compartment_id"],
-        access_level=var["sql_collection_analytic_access_level"],
-        compartment_id_in_subtree=var["sql_collection_analytic_compartment_id_in_subtree"],
-        group_bies=var["sql_collection_analytic_group_by"],
-        state=var["sql_collection_analytic_state"],
-        target_id=oci_cloud_guard_target["test_target"]["id"],
-        time_ended=var["sql_collection_analytic_time_ended"],
-        time_started=var["sql_collection_analytic_time_started"])
-    ```
-
-
-    :param str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
-    :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
-    :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
-    :param Sequence[str] group_bies: The group by parameter to summarize SQL collection aggregation.
-    :param str state: The current state of the SQL collection.
-    :param str target_id: A filter to return only items related to a specific target OCID.
-    :param str time_ended: An optional filter to return the stats of the SQL collection logs collected before the date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-    :param str time_started: An optional filter to return the stats of the SQL collection logs collected after the date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['accessLevel'] = access_level
@@ -238,47 +188,6 @@ def get_sql_collection_analytics_output(access_level: Optional[pulumi.Input[Opti
                                         time_started: Optional[pulumi.Input[Optional[str]]] = None,
                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSqlCollectionAnalyticsResult]:
     """
-    This data source provides the list of Sql Collection Analytics in Oracle Cloud Infrastructure Data Safe service.
-
-    Retrieves a list of all SQL collection analytics in Data Safe.
-
-    The ListSqlCollectionAnalytics operation returns only the analytics for the SQL collections in the specified `compartmentId`.
-
-    The parameter `accessLevel` specifies whether to return only those compartments for which the
-    requestor has INSPECT permissions on at least one resource directly
-    or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
-    Principal doesn't have access to even one of the child compartments. This is valid only when
-    `compartmentIdInSubtree` is set to `true`.
-
-    The parameter `compartmentIdInSubtree` applies when you perform ListSqlCollections on the
-    `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
-    To get a full list of all compartments and subcompartments in the tenancy (root compartment),
-    set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_sql_collection_analytics = oci.DataSafe.get_sql_collection_analytics(compartment_id=var["compartment_id"],
-        access_level=var["sql_collection_analytic_access_level"],
-        compartment_id_in_subtree=var["sql_collection_analytic_compartment_id_in_subtree"],
-        group_bies=var["sql_collection_analytic_group_by"],
-        state=var["sql_collection_analytic_state"],
-        target_id=oci_cloud_guard_target["test_target"]["id"],
-        time_ended=var["sql_collection_analytic_time_ended"],
-        time_started=var["sql_collection_analytic_time_started"])
-    ```
-
-
-    :param str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
-    :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
-    :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
-    :param Sequence[str] group_bies: The group by parameter to summarize SQL collection aggregation.
-    :param str state: The current state of the SQL collection.
-    :param str target_id: A filter to return only items related to a specific target OCID.
-    :param str time_ended: An optional filter to return the stats of the SQL collection logs collected before the date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-    :param str time_started: An optional filter to return the stats of the SQL collection logs collected after the date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+    Use this data source to access information about an existing resource.
     """
     ...

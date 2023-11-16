@@ -8,33 +8,35 @@ import com.pulumi.oci.LoadBalancer.outputs.GetRuleSetItem;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetRuleSetResult {
-    private String id;
+    private @Nullable String id;
     /**
      * @return An array of rules that compose the rule set.
      * 
      */
-    private List<GetRuleSetItem> items;
+    private @Nullable List<GetRuleSetItem> items;
     private String loadBalancerId;
     /**
      * @return The name for this set of rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_rule_set`
      * 
      */
     private String name;
-    private String state;
+    private @Nullable String state;
 
     private GetRuleSetResult() {}
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return An array of rules that compose the rule set.
      * 
      */
     public List<GetRuleSetItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
     public String loadBalancerId() {
         return this.loadBalancerId;
@@ -46,8 +48,8 @@ public final class GetRuleSetResult {
     public String name() {
         return this.name;
     }
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
 
     public static Builder builder() {
@@ -59,11 +61,11 @@ public final class GetRuleSetResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String id;
-        private List<GetRuleSetItem> items;
+        private @Nullable String id;
+        private @Nullable List<GetRuleSetItem> items;
         private String loadBalancerId;
         private String name;
-        private String state;
+        private @Nullable String state;
         public Builder() {}
         public Builder(GetRuleSetResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -75,13 +77,13 @@ public final class GetRuleSetResult {
         }
 
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder items(List<GetRuleSetItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetRuleSetItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetRuleSetItem... items) {
@@ -98,8 +100,8 @@ public final class GetRuleSetResult {
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         public GetRuleSetResult build() {

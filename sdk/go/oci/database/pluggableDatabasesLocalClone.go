@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Pluggable Databases Local Clone resource in Oracle Cloud Infrastructure Database service. Although pluggable databases(PDB) belong to a container database(CDB), there is no change to the parent(CDB) as a result of this operation.
@@ -57,25 +56,25 @@ type PluggableDatabasesLocalClone struct {
 	// The name for the pluggable database (PDB). The name is unique in the context of a [container database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/Database/). The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
 	ClonedPdbName pulumi.StringOutput `pulumi:"clonedPdbName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrOutput `pulumi:"compartmentId"`
 	// Connection strings to connect to an Oracle Pluggable Database.
 	ConnectionStrings PluggableDatabasesLocalCloneConnectionStringArrayOutput `pulumi:"connectionStrings"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CDB.
-	ContainerDatabaseId pulumi.StringOutput `pulumi:"containerDatabaseId"`
+	ContainerDatabaseId pulumi.StringPtrOutput `pulumi:"containerDatabaseId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The restricted mode of the pluggable database. If a pluggable database is opened in restricted mode, the user needs both create a session and have restricted session privileges to connect to it.
-	IsRestricted pulumi.BoolOutput `pulumi:"isRestricted"`
+	IsRestricted pulumi.BoolPtrOutput `pulumi:"isRestricted"`
 	// Detailed message for the lifecycle state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
-	OpenMode pulumi.StringOutput `pulumi:"openMode"`
+	OpenMode pulumi.StringPtrOutput `pulumi:"openMode"`
 	// A strong password for PDB Admin of the newly cloned PDB. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \#, or -.
-	PdbAdminPassword pulumi.StringOutput `pulumi:"pdbAdminPassword"`
+	PdbAdminPassword pulumi.StringPtrOutput `pulumi:"pdbAdminPassword"`
 	// The name for the pluggable database (PDB). The name is unique in the context of a [container database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/Database/). The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
-	PdbName pulumi.StringOutput `pulumi:"pdbName"`
+	PdbName pulumi.StringPtrOutput `pulumi:"pdbName"`
 	// Pluggable Database Node Level Details. Example: [{"nodeName" : "node1", "openMode" : "READ_WRITE"}, {"nodeName" : "node2", "openMode" : "READ_ONLY"}]
 	PdbNodeLevelDetails PluggableDatabasesLocalClonePdbNodeLevelDetailArrayOutput `pulumi:"pdbNodeLevelDetails"`
 	// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -85,16 +84,16 @@ type PluggableDatabasesLocalClone struct {
 	// Pluggable Database Refreshable Clone Configuration.
 	RefreshableCloneConfigs PluggableDatabasesLocalCloneRefreshableCloneConfigArrayOutput `pulumi:"refreshableCloneConfigs"`
 	// The locked mode of the pluggable database admin account. If false, the user needs to provide the PDB Admin Password to connect to it. If true, the pluggable database will be locked and user cannot login to it.
-	ShouldPdbAdminAccountBeLocked pulumi.BoolOutput `pulumi:"shouldPdbAdminAccountBeLocked"`
+	ShouldPdbAdminAccountBeLocked pulumi.BoolPtrOutput `pulumi:"shouldPdbAdminAccountBeLocked"`
 	// The current state of the pluggable database.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The existing TDE wallet password of the target CDB.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	TargetTdeWalletPassword pulumi.StringOutput `pulumi:"targetTdeWalletPassword"`
+	TargetTdeWalletPassword pulumi.StringPtrOutput `pulumi:"targetTdeWalletPassword"`
 	// The date and time the pluggable database was created.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 }
 
 // NewPluggableDatabasesLocalClone registers a new resource with the given unique name, arguments, and options.
@@ -291,12 +290,6 @@ func (i *PluggableDatabasesLocalClone) ToPluggableDatabasesLocalCloneOutputWithC
 	return pulumi.ToOutputWithContext(ctx, i).(PluggableDatabasesLocalCloneOutput)
 }
 
-func (i *PluggableDatabasesLocalClone) ToOutput(ctx context.Context) pulumix.Output[*PluggableDatabasesLocalClone] {
-	return pulumix.Output[*PluggableDatabasesLocalClone]{
-		OutputState: i.ToPluggableDatabasesLocalCloneOutputWithContext(ctx).OutputState,
-	}
-}
-
 // PluggableDatabasesLocalCloneArrayInput is an input type that accepts PluggableDatabasesLocalCloneArray and PluggableDatabasesLocalCloneArrayOutput values.
 // You can construct a concrete instance of `PluggableDatabasesLocalCloneArrayInput` via:
 //
@@ -320,12 +313,6 @@ func (i PluggableDatabasesLocalCloneArray) ToPluggableDatabasesLocalCloneArrayOu
 
 func (i PluggableDatabasesLocalCloneArray) ToPluggableDatabasesLocalCloneArrayOutputWithContext(ctx context.Context) PluggableDatabasesLocalCloneArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(PluggableDatabasesLocalCloneArrayOutput)
-}
-
-func (i PluggableDatabasesLocalCloneArray) ToOutput(ctx context.Context) pulumix.Output[[]*PluggableDatabasesLocalClone] {
-	return pulumix.Output[[]*PluggableDatabasesLocalClone]{
-		OutputState: i.ToPluggableDatabasesLocalCloneArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // PluggableDatabasesLocalCloneMapInput is an input type that accepts PluggableDatabasesLocalCloneMap and PluggableDatabasesLocalCloneMapOutput values.
@@ -353,12 +340,6 @@ func (i PluggableDatabasesLocalCloneMap) ToPluggableDatabasesLocalCloneMapOutput
 	return pulumi.ToOutputWithContext(ctx, i).(PluggableDatabasesLocalCloneMapOutput)
 }
 
-func (i PluggableDatabasesLocalCloneMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*PluggableDatabasesLocalClone] {
-	return pulumix.Output[map[string]*PluggableDatabasesLocalClone]{
-		OutputState: i.ToPluggableDatabasesLocalCloneMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type PluggableDatabasesLocalCloneOutput struct{ *pulumi.OutputState }
 
 func (PluggableDatabasesLocalCloneOutput) ElementType() reflect.Type {
@@ -373,20 +354,14 @@ func (o PluggableDatabasesLocalCloneOutput) ToPluggableDatabasesLocalCloneOutput
 	return o
 }
 
-func (o PluggableDatabasesLocalCloneOutput) ToOutput(ctx context.Context) pulumix.Output[*PluggableDatabasesLocalClone] {
-	return pulumix.Output[*PluggableDatabasesLocalClone]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The name for the pluggable database (PDB). The name is unique in the context of a [container database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/Database/). The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
 func (o PluggableDatabasesLocalCloneOutput) ClonedPdbName() pulumi.StringOutput {
 	return o.ApplyT(func(v *PluggableDatabasesLocalClone) pulumi.StringOutput { return v.ClonedPdbName }).(pulumi.StringOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-func (o PluggableDatabasesLocalCloneOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *PluggableDatabasesLocalClone) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
+func (o PluggableDatabasesLocalCloneOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PluggableDatabasesLocalClone) pulumi.StringPtrOutput { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Connection strings to connect to an Oracle Pluggable Database.
@@ -397,8 +372,8 @@ func (o PluggableDatabasesLocalCloneOutput) ConnectionStrings() PluggableDatabas
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CDB.
-func (o PluggableDatabasesLocalCloneOutput) ContainerDatabaseId() pulumi.StringOutput {
-	return o.ApplyT(func(v *PluggableDatabasesLocalClone) pulumi.StringOutput { return v.ContainerDatabaseId }).(pulumi.StringOutput)
+func (o PluggableDatabasesLocalCloneOutput) ContainerDatabaseId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PluggableDatabasesLocalClone) pulumi.StringPtrOutput { return v.ContainerDatabaseId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -412,28 +387,28 @@ func (o PluggableDatabasesLocalCloneOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The restricted mode of the pluggable database. If a pluggable database is opened in restricted mode, the user needs both create a session and have restricted session privileges to connect to it.
-func (o PluggableDatabasesLocalCloneOutput) IsRestricted() pulumi.BoolOutput {
-	return o.ApplyT(func(v *PluggableDatabasesLocalClone) pulumi.BoolOutput { return v.IsRestricted }).(pulumi.BoolOutput)
+func (o PluggableDatabasesLocalCloneOutput) IsRestricted() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *PluggableDatabasesLocalClone) pulumi.BoolPtrOutput { return v.IsRestricted }).(pulumi.BoolPtrOutput)
 }
 
 // Detailed message for the lifecycle state.
-func (o PluggableDatabasesLocalCloneOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *PluggableDatabasesLocalClone) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o PluggableDatabasesLocalCloneOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PluggableDatabasesLocalClone) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
-func (o PluggableDatabasesLocalCloneOutput) OpenMode() pulumi.StringOutput {
-	return o.ApplyT(func(v *PluggableDatabasesLocalClone) pulumi.StringOutput { return v.OpenMode }).(pulumi.StringOutput)
+func (o PluggableDatabasesLocalCloneOutput) OpenMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PluggableDatabasesLocalClone) pulumi.StringPtrOutput { return v.OpenMode }).(pulumi.StringPtrOutput)
 }
 
 // A strong password for PDB Admin of the newly cloned PDB. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \#, or -.
-func (o PluggableDatabasesLocalCloneOutput) PdbAdminPassword() pulumi.StringOutput {
-	return o.ApplyT(func(v *PluggableDatabasesLocalClone) pulumi.StringOutput { return v.PdbAdminPassword }).(pulumi.StringOutput)
+func (o PluggableDatabasesLocalCloneOutput) PdbAdminPassword() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PluggableDatabasesLocalClone) pulumi.StringPtrOutput { return v.PdbAdminPassword }).(pulumi.StringPtrOutput)
 }
 
 // The name for the pluggable database (PDB). The name is unique in the context of a [container database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/Database/). The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
-func (o PluggableDatabasesLocalCloneOutput) PdbName() pulumi.StringOutput {
-	return o.ApplyT(func(v *PluggableDatabasesLocalClone) pulumi.StringOutput { return v.PdbName }).(pulumi.StringOutput)
+func (o PluggableDatabasesLocalCloneOutput) PdbName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PluggableDatabasesLocalClone) pulumi.StringPtrOutput { return v.PdbName }).(pulumi.StringPtrOutput)
 }
 
 // Pluggable Database Node Level Details. Example: [{"nodeName" : "node1", "openMode" : "READ_WRITE"}, {"nodeName" : "node2", "openMode" : "READ_ONLY"}]
@@ -463,26 +438,26 @@ func (o PluggableDatabasesLocalCloneOutput) RefreshableCloneConfigs() PluggableD
 }
 
 // The locked mode of the pluggable database admin account. If false, the user needs to provide the PDB Admin Password to connect to it. If true, the pluggable database will be locked and user cannot login to it.
-func (o PluggableDatabasesLocalCloneOutput) ShouldPdbAdminAccountBeLocked() pulumi.BoolOutput {
-	return o.ApplyT(func(v *PluggableDatabasesLocalClone) pulumi.BoolOutput { return v.ShouldPdbAdminAccountBeLocked }).(pulumi.BoolOutput)
+func (o PluggableDatabasesLocalCloneOutput) ShouldPdbAdminAccountBeLocked() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *PluggableDatabasesLocalClone) pulumi.BoolPtrOutput { return v.ShouldPdbAdminAccountBeLocked }).(pulumi.BoolPtrOutput)
 }
 
 // The current state of the pluggable database.
-func (o PluggableDatabasesLocalCloneOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *PluggableDatabasesLocalClone) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o PluggableDatabasesLocalCloneOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PluggableDatabasesLocalClone) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The existing TDE wallet password of the target CDB.
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o PluggableDatabasesLocalCloneOutput) TargetTdeWalletPassword() pulumi.StringOutput {
-	return o.ApplyT(func(v *PluggableDatabasesLocalClone) pulumi.StringOutput { return v.TargetTdeWalletPassword }).(pulumi.StringOutput)
+func (o PluggableDatabasesLocalCloneOutput) TargetTdeWalletPassword() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PluggableDatabasesLocalClone) pulumi.StringPtrOutput { return v.TargetTdeWalletPassword }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the pluggable database was created.
-func (o PluggableDatabasesLocalCloneOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *PluggableDatabasesLocalClone) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o PluggableDatabasesLocalCloneOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PluggableDatabasesLocalClone) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 type PluggableDatabasesLocalCloneArrayOutput struct{ *pulumi.OutputState }
@@ -497,12 +472,6 @@ func (o PluggableDatabasesLocalCloneArrayOutput) ToPluggableDatabasesLocalCloneA
 
 func (o PluggableDatabasesLocalCloneArrayOutput) ToPluggableDatabasesLocalCloneArrayOutputWithContext(ctx context.Context) PluggableDatabasesLocalCloneArrayOutput {
 	return o
-}
-
-func (o PluggableDatabasesLocalCloneArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*PluggableDatabasesLocalClone] {
-	return pulumix.Output[[]*PluggableDatabasesLocalClone]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PluggableDatabasesLocalCloneArrayOutput) Index(i pulumi.IntInput) PluggableDatabasesLocalCloneOutput {
@@ -523,12 +492,6 @@ func (o PluggableDatabasesLocalCloneMapOutput) ToPluggableDatabasesLocalCloneMap
 
 func (o PluggableDatabasesLocalCloneMapOutput) ToPluggableDatabasesLocalCloneMapOutputWithContext(ctx context.Context) PluggableDatabasesLocalCloneMapOutput {
 	return o
-}
-
-func (o PluggableDatabasesLocalCloneMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*PluggableDatabasesLocalClone] {
-	return pulumix.Output[map[string]*PluggableDatabasesLocalClone]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PluggableDatabasesLocalCloneMapOutput) MapIndex(k pulumi.StringInput) PluggableDatabasesLocalCloneOutput {

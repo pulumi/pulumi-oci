@@ -47,15 +47,12 @@ class GetLoadBalancerRoutingPolicyResult:
 
     @property
     @pulumi.getter(name="conditionLanguageVersion")
-    def condition_language_version(self) -> str:
-        """
-        The version of the language in which `condition` of `rules` are composed.
-        """
+    def condition_language_version(self) -> Optional[str]:
         return pulumi.get(self, "condition_language_version")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
@@ -65,10 +62,7 @@ class GetLoadBalancerRoutingPolicyResult:
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        A unique name for the routing policy rule. Avoid entering confidential information.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
@@ -78,15 +72,12 @@ class GetLoadBalancerRoutingPolicyResult:
 
     @property
     @pulumi.getter
-    def rules(self) -> Sequence['outputs.GetLoadBalancerRoutingPolicyRuleResult']:
-        """
-        The ordered list of routing rules.
-        """
+    def rules(self) -> Optional[Sequence['outputs.GetLoadBalancerRoutingPolicyRuleResult']]:
         return pulumi.get(self, "rules")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
 
@@ -109,23 +100,7 @@ def get_load_balancer_routing_policy(load_balancer_id: Optional[str] = None,
                                      routing_policy_name: Optional[str] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetLoadBalancerRoutingPolicyResult:
     """
-    This data source provides details about a specific Load Balancer Routing Policy resource in Oracle Cloud Infrastructure Load Balancer service.
-
-    Gets the specified routing policy.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_load_balancer_routing_policy = oci.LoadBalancer.get_load_balancer_routing_policy(load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"],
-        routing_policy_name=oci_load_balancer_routing_policy["test_routing_policy"]["name"])
-    ```
-
-
-    :param str load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the specified load balancer.
-    :param str routing_policy_name: The name of the routing policy to retrieve.  Example: `example_routing_policy`
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['loadBalancerId'] = load_balancer_id
@@ -148,22 +123,6 @@ def get_load_balancer_routing_policy_output(load_balancer_id: Optional[pulumi.In
                                             routing_policy_name: Optional[pulumi.Input[str]] = None,
                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetLoadBalancerRoutingPolicyResult]:
     """
-    This data source provides details about a specific Load Balancer Routing Policy resource in Oracle Cloud Infrastructure Load Balancer service.
-
-    Gets the specified routing policy.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_load_balancer_routing_policy = oci.LoadBalancer.get_load_balancer_routing_policy(load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"],
-        routing_policy_name=oci_load_balancer_routing_policy["test_routing_policy"]["name"])
-    ```
-
-
-    :param str load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the specified load balancer.
-    :param str routing_policy_name: The name of the routing policy to retrieve.  Example: `example_routing_policy`
+    Use this data source to access information about an existing resource.
     """
     ...

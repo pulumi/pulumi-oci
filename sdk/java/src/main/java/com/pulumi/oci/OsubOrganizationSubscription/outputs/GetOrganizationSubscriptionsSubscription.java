@@ -8,6 +8,8 @@ import com.pulumi.oci.OsubOrganizationSubscription.outputs.GetOrganizationSubscr
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetOrganizationSubscriptionsSubscription {
@@ -15,42 +17,42 @@ public final class GetOrganizationSubscriptionsSubscription {
      * @return Currency details
      * 
      */
-    private List<GetOrganizationSubscriptionsSubscriptionCurrency> currencies;
+    private @Nullable List<GetOrganizationSubscriptionsSubscriptionCurrency> currencies;
     /**
      * @return SPM internal Subscription ID
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Customer friendly service name provided by PRG
      * 
      */
-    private String serviceName;
+    private @Nullable String serviceName;
     /**
      * @return Status of the plan
      * 
      */
-    private String status;
+    private @Nullable String status;
     /**
      * @return Represents the date when the last service of the subscription ends
      * 
      */
-    private String timeEnd;
+    private @Nullable String timeEnd;
     /**
      * @return Represents the date when the first service of the subscription was activated
      * 
      */
-    private String timeStart;
+    private @Nullable String timeStart;
     /**
      * @return Total aggregate TCLV of all lines for the subscription including expired, active, and signed
      * 
      */
-    private String totalValue;
+    private @Nullable String totalValue;
     /**
      * @return Subscription Type i.e. IAAS,SAAS,PAAS
      * 
      */
-    private String type;
+    private @Nullable String type;
 
     private GetOrganizationSubscriptionsSubscription() {}
     /**
@@ -58,56 +60,56 @@ public final class GetOrganizationSubscriptionsSubscription {
      * 
      */
     public List<GetOrganizationSubscriptionsSubscriptionCurrency> currencies() {
-        return this.currencies;
+        return this.currencies == null ? List.of() : this.currencies;
     }
     /**
      * @return SPM internal Subscription ID
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Customer friendly service name provided by PRG
      * 
      */
-    public String serviceName() {
-        return this.serviceName;
+    public Optional<String> serviceName() {
+        return Optional.ofNullable(this.serviceName);
     }
     /**
      * @return Status of the plan
      * 
      */
-    public String status() {
-        return this.status;
+    public Optional<String> status() {
+        return Optional.ofNullable(this.status);
     }
     /**
      * @return Represents the date when the last service of the subscription ends
      * 
      */
-    public String timeEnd() {
-        return this.timeEnd;
+    public Optional<String> timeEnd() {
+        return Optional.ofNullable(this.timeEnd);
     }
     /**
      * @return Represents the date when the first service of the subscription was activated
      * 
      */
-    public String timeStart() {
-        return this.timeStart;
+    public Optional<String> timeStart() {
+        return Optional.ofNullable(this.timeStart);
     }
     /**
      * @return Total aggregate TCLV of all lines for the subscription including expired, active, and signed
      * 
      */
-    public String totalValue() {
-        return this.totalValue;
+    public Optional<String> totalValue() {
+        return Optional.ofNullable(this.totalValue);
     }
     /**
      * @return Subscription Type i.e. IAAS,SAAS,PAAS
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
 
     public static Builder builder() {
@@ -119,14 +121,14 @@ public final class GetOrganizationSubscriptionsSubscription {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetOrganizationSubscriptionsSubscriptionCurrency> currencies;
-        private String id;
-        private String serviceName;
-        private String status;
-        private String timeEnd;
-        private String timeStart;
-        private String totalValue;
-        private String type;
+        private @Nullable List<GetOrganizationSubscriptionsSubscriptionCurrency> currencies;
+        private @Nullable String id;
+        private @Nullable String serviceName;
+        private @Nullable String status;
+        private @Nullable String timeEnd;
+        private @Nullable String timeStart;
+        private @Nullable String totalValue;
+        private @Nullable String type;
         public Builder() {}
         public Builder(GetOrganizationSubscriptionsSubscription defaults) {
     	      Objects.requireNonNull(defaults);
@@ -141,46 +143,46 @@ public final class GetOrganizationSubscriptionsSubscription {
         }
 
         @CustomType.Setter
-        public Builder currencies(List<GetOrganizationSubscriptionsSubscriptionCurrency> currencies) {
-            this.currencies = Objects.requireNonNull(currencies);
+        public Builder currencies(@Nullable List<GetOrganizationSubscriptionsSubscriptionCurrency> currencies) {
+            this.currencies = currencies;
             return this;
         }
         public Builder currencies(GetOrganizationSubscriptionsSubscriptionCurrency... currencies) {
             return currencies(List.of(currencies));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder serviceName(String serviceName) {
-            this.serviceName = Objects.requireNonNull(serviceName);
+        public Builder serviceName(@Nullable String serviceName) {
+            this.serviceName = serviceName;
             return this;
         }
         @CustomType.Setter
-        public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+        public Builder status(@Nullable String status) {
+            this.status = status;
             return this;
         }
         @CustomType.Setter
-        public Builder timeEnd(String timeEnd) {
-            this.timeEnd = Objects.requireNonNull(timeEnd);
+        public Builder timeEnd(@Nullable String timeEnd) {
+            this.timeEnd = timeEnd;
             return this;
         }
         @CustomType.Setter
-        public Builder timeStart(String timeStart) {
-            this.timeStart = Objects.requireNonNull(timeStart);
+        public Builder timeStart(@Nullable String timeStart) {
+            this.timeStart = timeStart;
             return this;
         }
         @CustomType.Setter
-        public Builder totalValue(String totalValue) {
-            this.totalValue = Objects.requireNonNull(totalValue);
+        public Builder totalValue(@Nullable String totalValue) {
+            this.totalValue = totalValue;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         public GetOrganizationSubscriptionsSubscription build() {

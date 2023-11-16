@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseRefreshableClonesRefreshableCloneCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAutonomousDatabaseRefreshableClonesRefreshableCloneCollection {
-    private List<GetAutonomousDatabaseRefreshableClonesRefreshableCloneCollectionItem> items;
+    private @Nullable List<GetAutonomousDatabaseRefreshableClonesRefreshableCloneCollectionItem> items;
 
     private GetAutonomousDatabaseRefreshableClonesRefreshableCloneCollection() {}
     public List<GetAutonomousDatabaseRefreshableClonesRefreshableCloneCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetAutonomousDatabaseRefreshableClonesRefreshableCloneCollect
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetAutonomousDatabaseRefreshableClonesRefreshableCloneCollectionItem> items;
+        private @Nullable List<GetAutonomousDatabaseRefreshableClonesRefreshableCloneCollectionItem> items;
         public Builder() {}
         public Builder(GetAutonomousDatabaseRefreshableClonesRefreshableCloneCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetAutonomousDatabaseRefreshableClonesRefreshableCloneCollect
         }
 
         @CustomType.Setter
-        public Builder items(List<GetAutonomousDatabaseRefreshableClonesRefreshableCloneCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetAutonomousDatabaseRefreshableClonesRefreshableCloneCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetAutonomousDatabaseRefreshableClonesRefreshableCloneCollectionItem... items) {

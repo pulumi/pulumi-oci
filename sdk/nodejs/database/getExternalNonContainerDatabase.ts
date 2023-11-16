@@ -47,84 +47,84 @@ export interface GetExternalNonContainerDatabaseResult {
     /**
      * The character set of the external database.
      */
-    readonly characterSet: string;
+    readonly characterSet?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * The Oracle Database configuration
      */
-    readonly databaseConfiguration: string;
+    readonly databaseConfiguration?: string;
     /**
      * The Oracle Database edition.
      */
-    readonly databaseEdition: string;
+    readonly databaseEdition?: string;
     /**
      * The configuration of the Database Management service.
      */
-    readonly databaseManagementConfigs: outputs.Database.GetExternalNonContainerDatabaseDatabaseManagementConfig[];
+    readonly databaseManagementConfigs?: outputs.Database.GetExternalNonContainerDatabaseDatabaseManagementConfig[];
     /**
      * The Oracle Database version.
      */
-    readonly databaseVersion: string;
+    readonly databaseVersion?: string;
     /**
      * The Oracle Database ID, which identifies an Oracle Database located outside of Oracle Cloud.
      */
-    readonly dbId: string;
+    readonly dbId?: string;
     /**
      * The database packs licensed for the external Oracle Database.
      */
-    readonly dbPacks: string;
+    readonly dbPacks?: string;
     /**
      * The `DB_UNIQUE_NAME` of the external database.
      */
-    readonly dbUniqueName: string;
+    readonly dbUniqueName?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * The user-friendly name for the external database. The name does not have to be unique.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     readonly externalNonContainerDatabaseId: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure external database resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Additional information about the current lifecycle state.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * The national character of the external database.
      */
-    readonly ncharacterSet: string;
+    readonly ncharacterSet?: string;
     /**
      * The configuration of Operations Insights for the external database
      */
-    readonly operationsInsightsConfigs: outputs.Database.GetExternalNonContainerDatabaseOperationsInsightsConfig[];
+    readonly operationsInsightsConfigs?: outputs.Database.GetExternalNonContainerDatabaseOperationsInsightsConfig[];
     /**
      * The configuration of Stack Monitoring for the external database.
      */
-    readonly stackMonitoringConfigs: outputs.Database.GetExternalNonContainerDatabaseStackMonitoringConfig[];
+    readonly stackMonitoringConfigs?: outputs.Database.GetExternalNonContainerDatabaseStackMonitoringConfig[];
     /**
      * The current state of the Oracle Cloud Infrastructure external database resource.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The date and time the database was created.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The time zone of the external database. It is a time zone offset (a character type in the format '[+|-]TZH:TZM') or a time zone region name, depending on how the time zone value was specified when the database was created / last altered.
      */
-    readonly timeZone: string;
+    readonly timeZone?: string;
 }
 /**
  * This data source provides details about a specific External Non Container Database resource in Oracle Cloud Infrastructure Database service.

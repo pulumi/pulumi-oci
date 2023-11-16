@@ -23,7 +23,7 @@ public final class GetDbServersResult {
      * @return The list of db_servers.
      * 
      */
-    private List<GetDbServersDbServer> dbServers;
+    private @Nullable List<GetDbServersDbServer> dbServers;
     /**
      * @return The user-friendly name for the Db server. The name does not need to be unique.
      * 
@@ -39,7 +39,7 @@ public final class GetDbServersResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The current state of the Db server.
      * 
@@ -59,7 +59,7 @@ public final class GetDbServersResult {
      * 
      */
     public List<GetDbServersDbServer> dbServers() {
-        return this.dbServers;
+        return this.dbServers == null ? List.of() : this.dbServers;
     }
     /**
      * @return The user-friendly name for the Db server. The name does not need to be unique.
@@ -82,8 +82,8 @@ public final class GetDbServersResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The current state of the Db server.
@@ -103,11 +103,11 @@ public final class GetDbServersResult {
     @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
-        private List<GetDbServersDbServer> dbServers;
+        private @Nullable List<GetDbServersDbServer> dbServers;
         private @Nullable String displayName;
         private String exadataInfrastructureId;
         private @Nullable List<GetDbServersFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetDbServersResult defaults) {
@@ -127,8 +127,8 @@ public final class GetDbServersResult {
             return this;
         }
         @CustomType.Setter
-        public Builder dbServers(List<GetDbServersDbServer> dbServers) {
-            this.dbServers = Objects.requireNonNull(dbServers);
+        public Builder dbServers(@Nullable List<GetDbServersDbServer> dbServers) {
+            this.dbServers = dbServers;
             return this;
         }
         public Builder dbServers(GetDbServersDbServer... dbServers) {
@@ -153,8 +153,8 @@ public final class GetDbServersResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

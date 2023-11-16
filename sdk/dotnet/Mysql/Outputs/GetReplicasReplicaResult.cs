@@ -16,67 +16,67 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// <summary>
         /// The name of the Availability Domain the read replica is located in.
         /// </summary>
-        public readonly string AvailabilityDomain;
+        public readonly string? AvailabilityDomain;
         /// <summary>
         /// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The requested Configuration instance.
         /// </summary>
-        public readonly string ConfigurationId;
+        public readonly string? ConfigurationId;
         /// <summary>
         /// The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
-        public readonly string DbSystemId;
+        public readonly string? DbSystemId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// User provided description of the read replica.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// A filter to return only the resource matching the given display name exactly.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// The name of the Fault Domain the read replica is located in.
         /// </summary>
-        public readonly string FaultDomain;
+        public readonly string? FaultDomain;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The OCID of the read replica.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The IP address the read replica is configured to listen on.
         /// </summary>
-        public readonly string IpAddress;
+        public readonly string? IpAddress;
         /// <summary>
         /// Specifies whether the read replica can be deleted. Set to true to prevent deletion, false (default) to allow. Note that if a read replica is delete protected it also prevents the entire DB System from being deleted. If the DB System is delete protected, read replicas can still be deleted individually if they are not delete  protected themselves.
         /// </summary>
-        public readonly bool IsDeleteProtected;
+        public readonly bool? IsDeleteProtected;
         /// <summary>
         /// A message describing the state of the read replica.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// The MySQL version to be used by the read replica.
         /// </summary>
-        public readonly string MysqlVersion;
+        public readonly string? MysqlVersion;
         /// <summary>
         /// The port the read replica is configured to listen on.
         /// </summary>
-        public readonly int Port;
+        public readonly int? Port;
         /// <summary>
         /// The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
         /// </summary>
-        public readonly int PortX;
+        public readonly int? PortX;
         /// <summary>
         /// By default a read replica inherits the MySQL version, shape, and configuration of the source DB system.  If you want to override any of these, provide values in the properties, mysqlVersion, shapeName,  and configurationId. If you set a property value to "", then the value is inherited from its  source DB system.
         /// </summary>
@@ -84,63 +84,63 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// <summary>
         /// The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
         /// </summary>
-        public readonly string ShapeName;
+        public readonly string? ShapeName;
         /// <summary>
         /// The LifecycleState of the read replica.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The date and time the read replica was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The time the read replica was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
 
         [OutputConstructor]
         private GetReplicasReplicaResult(
-            string availabilityDomain,
+            string? availabilityDomain,
 
-            string compartmentId,
+            string? compartmentId,
 
-            string configurationId,
+            string? configurationId,
 
-            string dbSystemId,
+            string? dbSystemId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string description,
+            string? description,
 
-            string displayName,
+            string? displayName,
 
-            string faultDomain,
+            string? faultDomain,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            string ipAddress,
+            string? ipAddress,
 
-            bool isDeleteProtected,
+            bool? isDeleteProtected,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string mysqlVersion,
+            string? mysqlVersion,
 
-            int port,
+            int? port,
 
-            int portX,
+            int? portX,
 
             ImmutableArray<Outputs.GetReplicasReplicaReplicaOverrideResult> replicaOverrides,
 
-            string shapeName,
+            string? shapeName,
 
-            string state,
+            string? state,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated)
+            string? timeUpdated)
         {
             AvailabilityDomain = availabilityDomain;
             CompartmentId = compartmentId;

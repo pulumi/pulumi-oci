@@ -55,35 +55,35 @@ export interface GetClusterWorkloadMappingResult {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The ocid of the workloadMapping.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The OCID of the mapped customer compartment.
      */
-    readonly mappedCompartmentId: string;
+    readonly mappedCompartmentId?: string;
     /**
      * The OCID of the mapped customer tenancy.
      */
-    readonly mappedTenancyId: string;
+    readonly mappedTenancyId?: string;
     /**
      * The namespace of the workloadMapping.
      */
-    readonly namespace: string;
+    readonly namespace?: string;
     /**
      * The state of the workloadMapping.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The time the cluster was created.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     readonly workloadMappingId: string;
 }
 /**

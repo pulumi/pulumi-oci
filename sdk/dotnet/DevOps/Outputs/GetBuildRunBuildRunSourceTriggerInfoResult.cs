@@ -20,13 +20,13 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// <summary>
         /// Build run display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
 
         [OutputConstructor]
         private GetBuildRunBuildRunSourceTriggerInfoResult(
             ImmutableArray<Outputs.GetBuildRunBuildRunSourceTriggerInfoActionResult> actions,
 
-            string displayName)
+            string? displayName)
         {
             Actions = actions;
             DisplayName = displayName;

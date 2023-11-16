@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Migration resource in Oracle Cloud Infrastructure Database Migration service.
@@ -209,62 +208,62 @@ type Migration struct {
 	pulumi.CustomResourceState
 
 	// (Updatable) Optional Pre-Migration advisor settings.
-	AdvisorSettings MigrationAdvisorSettingsOutput `pulumi:"advisorSettings"`
+	AdvisorSettings MigrationAdvisorSettingsPtrOutput `pulumi:"advisorSettings"`
 	// (Updatable) The OCID of the registered ODMS Agent. Only valid for Offline Logical Migrations.
-	AgentId pulumi.StringOutput `pulumi:"agentId"`
+	AgentId pulumi.StringPtrOutput `pulumi:"agentId"`
 	// (Updatable) OCID of the compartment where the secret containing the credentials will be created.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// OCID of the Secret in the Oracle Cloud Infrastructure vault containing the Migration credentials. Used to store GoldenGate administrator user credentials.
-	CredentialsSecretId pulumi.StringOutput `pulumi:"credentialsSecretId"`
+	CredentialsSecretId pulumi.StringPtrOutput `pulumi:"credentialsSecretId"`
 	// Database objects to exclude/include from migration in CSV format. The excludeObjects and includeObjects fields will be ignored if this field is not null.
-	CsvText pulumi.StringOutput `pulumi:"csvText"`
+	CsvText pulumi.StringPtrOutput `pulumi:"csvText"`
 	// (Updatable) Data Transfer Medium details for the Migration. If not specified, it will default to Database Link. Only one type of data transfer medium can be specified.
-	DataTransferMediumDetails   MigrationDataTransferMediumDetailsOutput   `pulumi:"dataTransferMediumDetails"`
-	DataTransferMediumDetailsV2 MigrationDataTransferMediumDetailsV2Output `pulumi:"dataTransferMediumDetailsV2"`
+	DataTransferMediumDetails   MigrationDataTransferMediumDetailsPtrOutput   `pulumi:"dataTransferMediumDetails"`
+	DataTransferMediumDetailsV2 MigrationDataTransferMediumDetailsV2PtrOutput `pulumi:"dataTransferMediumDetailsV2"`
 	// (Updatable) Optional settings for Data Pump Export and Import jobs
-	DatapumpSettings MigrationDatapumpSettingsOutput `pulumi:"datapumpSettings"`
+	DatapumpSettings MigrationDatapumpSettingsPtrOutput `pulumi:"datapumpSettings"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) Migration Display Name
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) Optional additional properties for dump transfer.
-	DumpTransferDetails MigrationDumpTransferDetailsOutput `pulumi:"dumpTransferDetails"`
+	DumpTransferDetails MigrationDumpTransferDetailsPtrOutput `pulumi:"dumpTransferDetails"`
 	// (Updatable) Database objects to exclude from migration, cannot be specified alongside 'includeObjects'
 	ExcludeObjects MigrationExcludeObjectArrayOutput `pulumi:"excludeObjects"`
 	// OCID of the current ODMS Job in execution for the Migration, if any.
-	ExecutingJobId pulumi.StringOutput `pulumi:"executingJobId"`
+	ExecutingJobId pulumi.StringPtrOutput `pulumi:"executingJobId"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// (Updatable) Details about Oracle GoldenGate Microservices. Required for online logical migration.
-	GoldenGateDetails MigrationGoldenGateDetailsOutput `pulumi:"goldenGateDetails"`
+	GoldenGateDetails MigrationGoldenGateDetailsPtrOutput `pulumi:"goldenGateDetails"`
 	// (Updatable) Details about Oracle GoldenGate GGS Deployment.
-	GoldenGateServiceDetails MigrationGoldenGateServiceDetailsOutput `pulumi:"goldenGateServiceDetails"`
+	GoldenGateServiceDetails MigrationGoldenGateServiceDetailsPtrOutput `pulumi:"goldenGateServiceDetails"`
 	// (Updatable) Database objects to include from migration, cannot be specified alongside 'excludeObjects'
 	IncludeObjects MigrationIncludeObjectArrayOutput `pulumi:"includeObjects"`
 	// Additional status related to the execution and current state of the Migration.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// (Updatable) The OCID of the Source Container Database Connection. Only used for Online migrations. Only Connections of type Non-Autonomous can be used as source container databases.
-	SourceContainerDatabaseConnectionId pulumi.StringOutput `pulumi:"sourceContainerDatabaseConnectionId"`
+	SourceContainerDatabaseConnectionId pulumi.StringPtrOutput `pulumi:"sourceContainerDatabaseConnectionId"`
 	// (Updatable) The OCID of the Source Database Connection.
 	SourceDatabaseConnectionId pulumi.StringOutput `pulumi:"sourceDatabaseConnectionId"`
 	// The current state of the Migration resource.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// (Updatable) The OCID of the Target Database Connection.
 	TargetDatabaseConnectionId pulumi.StringOutput `pulumi:"targetDatabaseConnectionId"`
 	// The time the Migration was created. An RFC3339 formatted datetime string.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The time of last Migration. An RFC3339 formatted datetime string.
-	TimeLastMigration pulumi.StringOutput `pulumi:"timeLastMigration"`
+	TimeLastMigration pulumi.StringPtrOutput `pulumi:"timeLastMigration"`
 	// The time of the last Migration details update. An RFC3339 formatted datetime string.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 	// (Updatable) Migration type.
 	Type pulumi.StringOutput `pulumi:"type"`
 	// (Updatable) Oracle Cloud Infrastructure Vault details to store migration and connection credentials secrets
-	VaultDetails MigrationVaultDetailsOutput `pulumi:"vaultDetails"`
+	VaultDetails MigrationVaultDetailsPtrOutput `pulumi:"vaultDetails"`
 	// Name of a migration phase. The Job will wait after executing this phase until the Resume Job endpoint is called.
-	WaitAfter pulumi.StringOutput `pulumi:"waitAfter"`
+	WaitAfter pulumi.StringPtrOutput `pulumi:"waitAfter"`
 }
 
 // NewMigration registers a new resource with the given unique name, arguments, and options.
@@ -540,12 +539,6 @@ func (i *Migration) ToMigrationOutputWithContext(ctx context.Context) MigrationO
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationOutput)
 }
 
-func (i *Migration) ToOutput(ctx context.Context) pulumix.Output[*Migration] {
-	return pulumix.Output[*Migration]{
-		OutputState: i.ToMigrationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // MigrationArrayInput is an input type that accepts MigrationArray and MigrationArrayOutput values.
 // You can construct a concrete instance of `MigrationArrayInput` via:
 //
@@ -569,12 +562,6 @@ func (i MigrationArray) ToMigrationArrayOutput() MigrationArrayOutput {
 
 func (i MigrationArray) ToMigrationArrayOutputWithContext(ctx context.Context) MigrationArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationArrayOutput)
-}
-
-func (i MigrationArray) ToOutput(ctx context.Context) pulumix.Output[[]*Migration] {
-	return pulumix.Output[[]*Migration]{
-		OutputState: i.ToMigrationArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // MigrationMapInput is an input type that accepts MigrationMap and MigrationMapOutput values.
@@ -602,12 +589,6 @@ func (i MigrationMap) ToMigrationMapOutputWithContext(ctx context.Context) Migra
 	return pulumi.ToOutputWithContext(ctx, i).(MigrationMapOutput)
 }
 
-func (i MigrationMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Migration] {
-	return pulumix.Output[map[string]*Migration]{
-		OutputState: i.ToMigrationMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MigrationOutput struct{ *pulumi.OutputState }
 
 func (MigrationOutput) ElementType() reflect.Type {
@@ -622,20 +603,14 @@ func (o MigrationOutput) ToMigrationOutputWithContext(ctx context.Context) Migra
 	return o
 }
 
-func (o MigrationOutput) ToOutput(ctx context.Context) pulumix.Output[*Migration] {
-	return pulumix.Output[*Migration]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) Optional Pre-Migration advisor settings.
-func (o MigrationOutput) AdvisorSettings() MigrationAdvisorSettingsOutput {
-	return o.ApplyT(func(v *Migration) MigrationAdvisorSettingsOutput { return v.AdvisorSettings }).(MigrationAdvisorSettingsOutput)
+func (o MigrationOutput) AdvisorSettings() MigrationAdvisorSettingsPtrOutput {
+	return o.ApplyT(func(v *Migration) MigrationAdvisorSettingsPtrOutput { return v.AdvisorSettings }).(MigrationAdvisorSettingsPtrOutput)
 }
 
 // (Updatable) The OCID of the registered ODMS Agent. Only valid for Offline Logical Migrations.
-func (o MigrationOutput) AgentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Migration) pulumi.StringOutput { return v.AgentId }).(pulumi.StringOutput)
+func (o MigrationOutput) AgentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Migration) pulumi.StringPtrOutput { return v.AgentId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) OCID of the compartment where the secret containing the credentials will be created.
@@ -644,27 +619,27 @@ func (o MigrationOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // OCID of the Secret in the Oracle Cloud Infrastructure vault containing the Migration credentials. Used to store GoldenGate administrator user credentials.
-func (o MigrationOutput) CredentialsSecretId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Migration) pulumi.StringOutput { return v.CredentialsSecretId }).(pulumi.StringOutput)
+func (o MigrationOutput) CredentialsSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Migration) pulumi.StringPtrOutput { return v.CredentialsSecretId }).(pulumi.StringPtrOutput)
 }
 
 // Database objects to exclude/include from migration in CSV format. The excludeObjects and includeObjects fields will be ignored if this field is not null.
-func (o MigrationOutput) CsvText() pulumi.StringOutput {
-	return o.ApplyT(func(v *Migration) pulumi.StringOutput { return v.CsvText }).(pulumi.StringOutput)
+func (o MigrationOutput) CsvText() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Migration) pulumi.StringPtrOutput { return v.CsvText }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Data Transfer Medium details for the Migration. If not specified, it will default to Database Link. Only one type of data transfer medium can be specified.
-func (o MigrationOutput) DataTransferMediumDetails() MigrationDataTransferMediumDetailsOutput {
-	return o.ApplyT(func(v *Migration) MigrationDataTransferMediumDetailsOutput { return v.DataTransferMediumDetails }).(MigrationDataTransferMediumDetailsOutput)
+func (o MigrationOutput) DataTransferMediumDetails() MigrationDataTransferMediumDetailsPtrOutput {
+	return o.ApplyT(func(v *Migration) MigrationDataTransferMediumDetailsPtrOutput { return v.DataTransferMediumDetails }).(MigrationDataTransferMediumDetailsPtrOutput)
 }
 
-func (o MigrationOutput) DataTransferMediumDetailsV2() MigrationDataTransferMediumDetailsV2Output {
-	return o.ApplyT(func(v *Migration) MigrationDataTransferMediumDetailsV2Output { return v.DataTransferMediumDetailsV2 }).(MigrationDataTransferMediumDetailsV2Output)
+func (o MigrationOutput) DataTransferMediumDetailsV2() MigrationDataTransferMediumDetailsV2PtrOutput {
+	return o.ApplyT(func(v *Migration) MigrationDataTransferMediumDetailsV2PtrOutput { return v.DataTransferMediumDetailsV2 }).(MigrationDataTransferMediumDetailsV2PtrOutput)
 }
 
 // (Updatable) Optional settings for Data Pump Export and Import jobs
-func (o MigrationOutput) DatapumpSettings() MigrationDatapumpSettingsOutput {
-	return o.ApplyT(func(v *Migration) MigrationDatapumpSettingsOutput { return v.DatapumpSettings }).(MigrationDatapumpSettingsOutput)
+func (o MigrationOutput) DatapumpSettings() MigrationDatapumpSettingsPtrOutput {
+	return o.ApplyT(func(v *Migration) MigrationDatapumpSettingsPtrOutput { return v.DatapumpSettings }).(MigrationDatapumpSettingsPtrOutput)
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -673,13 +648,13 @@ func (o MigrationOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) Migration Display Name
-func (o MigrationOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *Migration) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o MigrationOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Migration) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Optional additional properties for dump transfer.
-func (o MigrationOutput) DumpTransferDetails() MigrationDumpTransferDetailsOutput {
-	return o.ApplyT(func(v *Migration) MigrationDumpTransferDetailsOutput { return v.DumpTransferDetails }).(MigrationDumpTransferDetailsOutput)
+func (o MigrationOutput) DumpTransferDetails() MigrationDumpTransferDetailsPtrOutput {
+	return o.ApplyT(func(v *Migration) MigrationDumpTransferDetailsPtrOutput { return v.DumpTransferDetails }).(MigrationDumpTransferDetailsPtrOutput)
 }
 
 // (Updatable) Database objects to exclude from migration, cannot be specified alongside 'includeObjects'
@@ -688,8 +663,8 @@ func (o MigrationOutput) ExcludeObjects() MigrationExcludeObjectArrayOutput {
 }
 
 // OCID of the current ODMS Job in execution for the Migration, if any.
-func (o MigrationOutput) ExecutingJobId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Migration) pulumi.StringOutput { return v.ExecutingJobId }).(pulumi.StringOutput)
+func (o MigrationOutput) ExecutingJobId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Migration) pulumi.StringPtrOutput { return v.ExecutingJobId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -698,13 +673,13 @@ func (o MigrationOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // (Updatable) Details about Oracle GoldenGate Microservices. Required for online logical migration.
-func (o MigrationOutput) GoldenGateDetails() MigrationGoldenGateDetailsOutput {
-	return o.ApplyT(func(v *Migration) MigrationGoldenGateDetailsOutput { return v.GoldenGateDetails }).(MigrationGoldenGateDetailsOutput)
+func (o MigrationOutput) GoldenGateDetails() MigrationGoldenGateDetailsPtrOutput {
+	return o.ApplyT(func(v *Migration) MigrationGoldenGateDetailsPtrOutput { return v.GoldenGateDetails }).(MigrationGoldenGateDetailsPtrOutput)
 }
 
 // (Updatable) Details about Oracle GoldenGate GGS Deployment.
-func (o MigrationOutput) GoldenGateServiceDetails() MigrationGoldenGateServiceDetailsOutput {
-	return o.ApplyT(func(v *Migration) MigrationGoldenGateServiceDetailsOutput { return v.GoldenGateServiceDetails }).(MigrationGoldenGateServiceDetailsOutput)
+func (o MigrationOutput) GoldenGateServiceDetails() MigrationGoldenGateServiceDetailsPtrOutput {
+	return o.ApplyT(func(v *Migration) MigrationGoldenGateServiceDetailsPtrOutput { return v.GoldenGateServiceDetails }).(MigrationGoldenGateServiceDetailsPtrOutput)
 }
 
 // (Updatable) Database objects to include from migration, cannot be specified alongside 'excludeObjects'
@@ -713,13 +688,13 @@ func (o MigrationOutput) IncludeObjects() MigrationIncludeObjectArrayOutput {
 }
 
 // Additional status related to the execution and current state of the Migration.
-func (o MigrationOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *Migration) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o MigrationOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Migration) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The OCID of the Source Container Database Connection. Only used for Online migrations. Only Connections of type Non-Autonomous can be used as source container databases.
-func (o MigrationOutput) SourceContainerDatabaseConnectionId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Migration) pulumi.StringOutput { return v.SourceContainerDatabaseConnectionId }).(pulumi.StringOutput)
+func (o MigrationOutput) SourceContainerDatabaseConnectionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Migration) pulumi.StringPtrOutput { return v.SourceContainerDatabaseConnectionId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The OCID of the Source Database Connection.
@@ -728,8 +703,8 @@ func (o MigrationOutput) SourceDatabaseConnectionId() pulumi.StringOutput {
 }
 
 // The current state of the Migration resource.
-func (o MigrationOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *Migration) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o MigrationOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Migration) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -743,18 +718,18 @@ func (o MigrationOutput) TargetDatabaseConnectionId() pulumi.StringOutput {
 }
 
 // The time the Migration was created. An RFC3339 formatted datetime string.
-func (o MigrationOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Migration) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o MigrationOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Migration) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time of last Migration. An RFC3339 formatted datetime string.
-func (o MigrationOutput) TimeLastMigration() pulumi.StringOutput {
-	return o.ApplyT(func(v *Migration) pulumi.StringOutput { return v.TimeLastMigration }).(pulumi.StringOutput)
+func (o MigrationOutput) TimeLastMigration() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Migration) pulumi.StringPtrOutput { return v.TimeLastMigration }).(pulumi.StringPtrOutput)
 }
 
 // The time of the last Migration details update. An RFC3339 formatted datetime string.
-func (o MigrationOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Migration) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o MigrationOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Migration) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Migration type.
@@ -763,13 +738,13 @@ func (o MigrationOutput) Type() pulumi.StringOutput {
 }
 
 // (Updatable) Oracle Cloud Infrastructure Vault details to store migration and connection credentials secrets
-func (o MigrationOutput) VaultDetails() MigrationVaultDetailsOutput {
-	return o.ApplyT(func(v *Migration) MigrationVaultDetailsOutput { return v.VaultDetails }).(MigrationVaultDetailsOutput)
+func (o MigrationOutput) VaultDetails() MigrationVaultDetailsPtrOutput {
+	return o.ApplyT(func(v *Migration) MigrationVaultDetailsPtrOutput { return v.VaultDetails }).(MigrationVaultDetailsPtrOutput)
 }
 
 // Name of a migration phase. The Job will wait after executing this phase until the Resume Job endpoint is called.
-func (o MigrationOutput) WaitAfter() pulumi.StringOutput {
-	return o.ApplyT(func(v *Migration) pulumi.StringOutput { return v.WaitAfter }).(pulumi.StringOutput)
+func (o MigrationOutput) WaitAfter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Migration) pulumi.StringPtrOutput { return v.WaitAfter }).(pulumi.StringPtrOutput)
 }
 
 type MigrationArrayOutput struct{ *pulumi.OutputState }
@@ -784,12 +759,6 @@ func (o MigrationArrayOutput) ToMigrationArrayOutput() MigrationArrayOutput {
 
 func (o MigrationArrayOutput) ToMigrationArrayOutputWithContext(ctx context.Context) MigrationArrayOutput {
 	return o
-}
-
-func (o MigrationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Migration] {
-	return pulumix.Output[[]*Migration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MigrationArrayOutput) Index(i pulumi.IntInput) MigrationOutput {
@@ -810,12 +779,6 @@ func (o MigrationMapOutput) ToMigrationMapOutput() MigrationMapOutput {
 
 func (o MigrationMapOutput) ToMigrationMapOutputWithContext(ctx context.Context) MigrationMapOutput {
 	return o
-}
-
-func (o MigrationMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Migration] {
-	return pulumix.Output[map[string]*Migration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MigrationMapOutput) MapIndex(k pulumi.StringInput) MigrationOutput {

@@ -18,7 +18,7 @@ public final class GetAutonomousContainerDatabasesResult {
      * @return The list of autonomous_container_databases.
      * 
      */
-    private List<GetAutonomousContainerDatabasesAutonomousContainerDatabase> autonomousContainerDatabases;
+    private @Nullable List<GetAutonomousContainerDatabasesAutonomousContainerDatabase> autonomousContainerDatabases;
     /**
      * @return **No longer used.** For Autonomous Database on dedicated Exadata infrastructure, the container database is created within a specified `cloudAutonomousVmCluster`.
      * 
@@ -54,7 +54,7 @@ public final class GetAutonomousContainerDatabasesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The infrastructure type this resource belongs to.
      * 
@@ -77,7 +77,7 @@ public final class GetAutonomousContainerDatabasesResult {
      * 
      */
     public List<GetAutonomousContainerDatabasesAutonomousContainerDatabase> autonomousContainerDatabases() {
-        return this.autonomousContainerDatabases;
+        return this.autonomousContainerDatabases == null ? List.of() : this.autonomousContainerDatabases;
     }
     /**
      * @return **No longer used.** For Autonomous Database on dedicated Exadata infrastructure, the container database is created within a specified `cloudAutonomousVmCluster`.
@@ -128,8 +128,8 @@ public final class GetAutonomousContainerDatabasesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The infrastructure type this resource belongs to.
@@ -162,7 +162,7 @@ public final class GetAutonomousContainerDatabasesResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetAutonomousContainerDatabasesAutonomousContainerDatabase> autonomousContainerDatabases;
+        private @Nullable List<GetAutonomousContainerDatabasesAutonomousContainerDatabase> autonomousContainerDatabases;
         private @Nullable String autonomousExadataInfrastructureId;
         private @Nullable String autonomousVmClusterId;
         private @Nullable String availabilityDomain;
@@ -170,7 +170,7 @@ public final class GetAutonomousContainerDatabasesResult {
         private String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetAutonomousContainerDatabasesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String infrastructureType;
         private @Nullable String serviceLevelAgreementType;
         private @Nullable String state;
@@ -192,8 +192,8 @@ public final class GetAutonomousContainerDatabasesResult {
         }
 
         @CustomType.Setter
-        public Builder autonomousContainerDatabases(List<GetAutonomousContainerDatabasesAutonomousContainerDatabase> autonomousContainerDatabases) {
-            this.autonomousContainerDatabases = Objects.requireNonNull(autonomousContainerDatabases);
+        public Builder autonomousContainerDatabases(@Nullable List<GetAutonomousContainerDatabasesAutonomousContainerDatabase> autonomousContainerDatabases) {
+            this.autonomousContainerDatabases = autonomousContainerDatabases;
             return this;
         }
         public Builder autonomousContainerDatabases(GetAutonomousContainerDatabasesAutonomousContainerDatabase... autonomousContainerDatabases) {
@@ -238,8 +238,8 @@ public final class GetAutonomousContainerDatabasesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

@@ -47,112 +47,112 @@ export interface GetReportDefinitionResult {
     /**
      * Specifies the name of the category that this report belongs to.
      */
-    readonly category: string;
+    readonly category?: string;
     /**
      * An array of columnFilter objects. A columnFilter object stores all information about a column filter including field name, an operator, one or more expressions, if the filter is enabled, or if the filter is hidden.
      */
-    readonly columnFilters: outputs.DataSafe.GetReportDefinitionColumnFilter[];
+    readonly columnFilters?: outputs.DataSafe.GetReportDefinitionColumnFilter[];
     /**
      * An array of column objects in the order (left to right) displayed in the report. A column object stores all information about a column, including the name displayed on the UI, corresponding field name in the data source, data type of the column, and column visibility (if the column is visible to the user).
      */
-    readonly columnInfos: outputs.DataSafe.GetReportDefinitionColumnInfo[];
+    readonly columnInfos?: outputs.DataSafe.GetReportDefinitionColumnInfo[];
     /**
      * An array of column sorting objects. Each column sorting object stores the column name to be sorted and if the sorting is in ascending order; sorting is done by the first column in the array, then by the second column in the array, etc.
      */
-    readonly columnSortings: outputs.DataSafe.GetReportDefinitionColumnSorting[];
+    readonly columnSortings?: outputs.DataSafe.GetReportDefinitionColumnSorting[];
     /**
      * The OCID of the compartment containing the report definition.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * The list of the data protection regulations/standards used in the report that will help demonstrate compliance.
      */
-    readonly complianceStandards: string[];
+    readonly complianceStandards?: string[];
     /**
      * Specifies the name of a resource that provides data for the report. For example alerts, events.
      */
-    readonly dataSource: string;
+    readonly dataSource?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * A description of the report definition.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * Name of the report definition.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Specifies the order in which the summary must be displayed.
      */
-    readonly displayOrder: number;
+    readonly displayOrder?: number;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The OCID of the report definition.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Signifies whether the definition is seeded or user defined. Values can either be 'true' or 'false'.
      */
-    readonly isSeeded: boolean;
+    readonly isSeeded?: boolean;
     /**
      * The OCID of the parent report definition. In the case of seeded report definition, this is same as definition OCID.
      */
-    readonly parentId: string;
+    readonly parentId?: string;
     /**
      * The time span for the records in the report to be scheduled. <period-value><period> Allowed period strings - "H","D","M","Y" Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
      */
-    readonly recordTimeSpan: string;
+    readonly recordTimeSpan?: string;
     readonly reportDefinitionId: string;
     /**
      * The schedule to generate the report periodically in the specified format: <version-string>;<version-specific-schedule>
      */
-    readonly schedule: string;
+    readonly schedule?: string;
     /**
      * The OCID of the compartment in which the scheduled resource should be created.
      */
-    readonly scheduledReportCompartmentId: string;
+    readonly scheduledReportCompartmentId?: string;
     /**
      * Specifies the format of the report ( either XLS or PDF )
      */
-    readonly scheduledReportMimeType: string;
+    readonly scheduledReportMimeType?: string;
     /**
      * The name of the report to be scheduled.
      */
-    readonly scheduledReportName: string;
+    readonly scheduledReportName?: string;
     /**
      * Specifies the limit on the number of rows in the report.
      */
-    readonly scheduledReportRowLimit: number;
+    readonly scheduledReportRowLimit?: number;
     /**
      * Additional scim filters used to get the specific summary.
      */
-    readonly scimFilter: string;
+    readonly scimFilter?: string;
     /**
      * The current state of the report.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * An array of report summary objects in the order (left to right)  displayed in the report.  A  report summary object stores all information about summary of report to be displayed, including the name displayed on UI, the display order, corresponding group by and count of values, summary visibility (if the summary is visible to user).
      */
-    readonly summaries: outputs.DataSafe.GetReportDefinitionSummary[];
+    readonly summaries?: outputs.DataSafe.GetReportDefinitionSummary[];
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * Specifies the data and time the report definition was created.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The date and time the report definition was update.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific Report Definition resource in Oracle Cloud Infrastructure Data Safe service.

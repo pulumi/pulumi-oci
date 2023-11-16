@@ -8,6 +8,8 @@ import com.pulumi.oci.ContainerEngine.outputs.GetClustersClusterImagePolicyConfi
 import java.lang.Boolean;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetClustersClusterImagePolicyConfig {
@@ -15,27 +17,27 @@ public final class GetClustersClusterImagePolicyConfig {
      * @return Whether the image verification policy is enabled. Defaults to false. If set to true, the images will be verified against the policy at runtime.
      * 
      */
-    private Boolean isPolicyEnabled;
+    private @Nullable Boolean isPolicyEnabled;
     /**
      * @return A list of KMS key details.
      * 
      */
-    private List<GetClustersClusterImagePolicyConfigKeyDetail> keyDetails;
+    private @Nullable List<GetClustersClusterImagePolicyConfigKeyDetail> keyDetails;
 
     private GetClustersClusterImagePolicyConfig() {}
     /**
      * @return Whether the image verification policy is enabled. Defaults to false. If set to true, the images will be verified against the policy at runtime.
      * 
      */
-    public Boolean isPolicyEnabled() {
-        return this.isPolicyEnabled;
+    public Optional<Boolean> isPolicyEnabled() {
+        return Optional.ofNullable(this.isPolicyEnabled);
     }
     /**
      * @return A list of KMS key details.
      * 
      */
     public List<GetClustersClusterImagePolicyConfigKeyDetail> keyDetails() {
-        return this.keyDetails;
+        return this.keyDetails == null ? List.of() : this.keyDetails;
     }
 
     public static Builder builder() {
@@ -47,8 +49,8 @@ public final class GetClustersClusterImagePolicyConfig {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Boolean isPolicyEnabled;
-        private List<GetClustersClusterImagePolicyConfigKeyDetail> keyDetails;
+        private @Nullable Boolean isPolicyEnabled;
+        private @Nullable List<GetClustersClusterImagePolicyConfigKeyDetail> keyDetails;
         public Builder() {}
         public Builder(GetClustersClusterImagePolicyConfig defaults) {
     	      Objects.requireNonNull(defaults);
@@ -57,13 +59,13 @@ public final class GetClustersClusterImagePolicyConfig {
         }
 
         @CustomType.Setter
-        public Builder isPolicyEnabled(Boolean isPolicyEnabled) {
-            this.isPolicyEnabled = Objects.requireNonNull(isPolicyEnabled);
+        public Builder isPolicyEnabled(@Nullable Boolean isPolicyEnabled) {
+            this.isPolicyEnabled = isPolicyEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder keyDetails(List<GetClustersClusterImagePolicyConfigKeyDetail> keyDetails) {
-            this.keyDetails = Objects.requireNonNull(keyDetails);
+        public Builder keyDetails(@Nullable List<GetClustersClusterImagePolicyConfigKeyDetail> keyDetails) {
+            this.keyDetails = keyDetails;
             return this;
         }
         public Builder keyDetails(GetClustersClusterImagePolicyConfigKeyDetail... keyDetails) {

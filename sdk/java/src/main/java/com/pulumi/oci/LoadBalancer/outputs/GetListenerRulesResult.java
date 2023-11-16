@@ -9,6 +9,7 @@ import com.pulumi.oci.LoadBalancer.outputs.GetListenerRulesListenerRule;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -18,13 +19,13 @@ public final class GetListenerRulesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String listenerName;
     /**
      * @return The list of listener_rules.
      * 
      */
-    private List<GetListenerRulesListenerRule> listenerRules;
+    private @Nullable List<GetListenerRulesListenerRule> listenerRules;
     private String loadBalancerId;
 
     private GetListenerRulesResult() {}
@@ -35,8 +36,8 @@ public final class GetListenerRulesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String listenerName() {
         return this.listenerName;
@@ -46,7 +47,7 @@ public final class GetListenerRulesResult {
      * 
      */
     public List<GetListenerRulesListenerRule> listenerRules() {
-        return this.listenerRules;
+        return this.listenerRules == null ? List.of() : this.listenerRules;
     }
     public String loadBalancerId() {
         return this.loadBalancerId;
@@ -62,9 +63,9 @@ public final class GetListenerRulesResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetListenerRulesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private String listenerName;
-        private List<GetListenerRulesListenerRule> listenerRules;
+        private @Nullable List<GetListenerRulesListenerRule> listenerRules;
         private String loadBalancerId;
         public Builder() {}
         public Builder(GetListenerRulesResult defaults) {
@@ -85,8 +86,8 @@ public final class GetListenerRulesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -95,8 +96,8 @@ public final class GetListenerRulesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder listenerRules(List<GetListenerRulesListenerRule> listenerRules) {
-            this.listenerRules = Objects.requireNonNull(listenerRules);
+        public Builder listenerRules(@Nullable List<GetListenerRulesListenerRule> listenerRules) {
+            this.listenerRules = listenerRules;
             return this;
         }
         public Builder listenerRules(GetListenerRulesListenerRule... listenerRules) {

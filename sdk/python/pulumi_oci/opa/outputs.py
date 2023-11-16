@@ -52,14 +52,6 @@ class OpaInstanceAttachment(dict):
                  target_instance_url: Optional[str] = None,
                  target_role: Optional[str] = None,
                  target_service_type: Optional[str] = None):
-        """
-        :param bool is_implicit: * If role == `PARENT`, the attached instance was created by this service instance
-               * If role == `CHILD`, this instance was created from attached instance on behalf of a user
-        :param str target_id: The OCID of the target instance (which could be any other Oracle Cloud Infrastructure PaaS/SaaS resource), to which this instance is attached.
-        :param str target_instance_url: The dataplane instance URL of the attached instance
-        :param str target_role: The role of the target attachment.
-        :param str target_service_type: The type of the target instance, such as "FUSION".
-        """
         if is_implicit is not None:
             pulumi.set(__self__, "is_implicit", is_implicit)
         if target_id is not None:
@@ -74,106 +66,71 @@ class OpaInstanceAttachment(dict):
     @property
     @pulumi.getter(name="isImplicit")
     def is_implicit(self) -> Optional[bool]:
-        """
-        * If role == `PARENT`, the attached instance was created by this service instance
-        * If role == `CHILD`, this instance was created from attached instance on behalf of a user
-        """
         return pulumi.get(self, "is_implicit")
 
     @property
     @pulumi.getter(name="targetId")
     def target_id(self) -> Optional[str]:
-        """
-        The OCID of the target instance (which could be any other Oracle Cloud Infrastructure PaaS/SaaS resource), to which this instance is attached.
-        """
         return pulumi.get(self, "target_id")
 
     @property
     @pulumi.getter(name="targetInstanceUrl")
     def target_instance_url(self) -> Optional[str]:
-        """
-        The dataplane instance URL of the attached instance
-        """
         return pulumi.get(self, "target_instance_url")
 
     @property
     @pulumi.getter(name="targetRole")
     def target_role(self) -> Optional[str]:
-        """
-        The role of the target attachment.
-        """
         return pulumi.get(self, "target_role")
 
     @property
     @pulumi.getter(name="targetServiceType")
     def target_service_type(self) -> Optional[str]:
-        """
-        The type of the target instance, such as "FUSION".
-        """
         return pulumi.get(self, "target_service_type")
 
 
 @pulumi.output_type
 class GetOpaInstanceAttachmentResult(dict):
     def __init__(__self__, *,
-                 is_implicit: bool,
-                 target_id: str,
-                 target_instance_url: str,
-                 target_role: str,
-                 target_service_type: str):
-        """
-        :param bool is_implicit: * If role == `PARENT`, the attached instance was created by this service instance
-               * If role == `CHILD`, this instance was created from attached instance on behalf of a user
-        :param str target_id: The OCID of the target instance (which could be any other Oracle Cloud Infrastructure PaaS/SaaS resource), to which this instance is attached.
-        :param str target_instance_url: The dataplane instance URL of the attached instance
-        :param str target_role: The role of the target attachment.
-        :param str target_service_type: The type of the target instance, such as "FUSION".
-        """
-        pulumi.set(__self__, "is_implicit", is_implicit)
-        pulumi.set(__self__, "target_id", target_id)
-        pulumi.set(__self__, "target_instance_url", target_instance_url)
-        pulumi.set(__self__, "target_role", target_role)
-        pulumi.set(__self__, "target_service_type", target_service_type)
+                 is_implicit: Optional[bool] = None,
+                 target_id: Optional[str] = None,
+                 target_instance_url: Optional[str] = None,
+                 target_role: Optional[str] = None,
+                 target_service_type: Optional[str] = None):
+        if is_implicit is not None:
+            pulumi.set(__self__, "is_implicit", is_implicit)
+        if target_id is not None:
+            pulumi.set(__self__, "target_id", target_id)
+        if target_instance_url is not None:
+            pulumi.set(__self__, "target_instance_url", target_instance_url)
+        if target_role is not None:
+            pulumi.set(__self__, "target_role", target_role)
+        if target_service_type is not None:
+            pulumi.set(__self__, "target_service_type", target_service_type)
 
     @property
     @pulumi.getter(name="isImplicit")
-    def is_implicit(self) -> bool:
-        """
-        * If role == `PARENT`, the attached instance was created by this service instance
-        * If role == `CHILD`, this instance was created from attached instance on behalf of a user
-        """
+    def is_implicit(self) -> Optional[bool]:
         return pulumi.get(self, "is_implicit")
 
     @property
     @pulumi.getter(name="targetId")
-    def target_id(self) -> str:
-        """
-        The OCID of the target instance (which could be any other Oracle Cloud Infrastructure PaaS/SaaS resource), to which this instance is attached.
-        """
+    def target_id(self) -> Optional[str]:
         return pulumi.get(self, "target_id")
 
     @property
     @pulumi.getter(name="targetInstanceUrl")
-    def target_instance_url(self) -> str:
-        """
-        The dataplane instance URL of the attached instance
-        """
+    def target_instance_url(self) -> Optional[str]:
         return pulumi.get(self, "target_instance_url")
 
     @property
     @pulumi.getter(name="targetRole")
-    def target_role(self) -> str:
-        """
-        The role of the target attachment.
-        """
+    def target_role(self) -> Optional[str]:
         return pulumi.get(self, "target_role")
 
     @property
     @pulumi.getter(name="targetServiceType")
-    def target_service_type(self) -> str:
-        """
-        The type of the target instance, such as "FUSION".
-        """
+    def target_service_type(self) -> Optional[str]:
         return pulumi.get(self, "target_service_type")
 
 
@@ -207,310 +164,231 @@ class GetOpaInstancesFilterResult(dict):
 @pulumi.output_type
 class GetOpaInstancesOpaInstanceCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetOpaInstancesOpaInstanceCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetOpaInstancesOpaInstanceCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetOpaInstancesOpaInstanceCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetOpaInstancesOpaInstanceCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetOpaInstancesOpaInstanceCollectionItemResult(dict):
     def __init__(__self__, *,
-                 attachments: Sequence['outputs.GetOpaInstancesOpaInstanceCollectionItemAttachmentResult'],
-                 compartment_id: str,
-                 consumption_model: str,
-                 defined_tags: Mapping[str, Any],
-                 description: str,
-                 display_name: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 idcs_at: str,
-                 identity_app_display_name: str,
-                 identity_app_guid: str,
-                 identity_app_opc_service_instance_guid: str,
-                 identity_domain_url: str,
-                 instance_url: str,
-                 is_breakglass_enabled: bool,
-                 metering_type: str,
-                 shape_name: str,
-                 state: str,
-                 system_tags: Mapping[str, Any],
-                 time_created: str,
-                 time_updated: str):
-        """
-        :param Sequence['GetOpaInstancesOpaInstanceCollectionItemAttachmentArgs'] attachments: A list of associated attachments to other services
-        :param str compartment_id: The ID of the compartment in which to list resources.
-        :param str consumption_model: The entitlement used for billing purposes
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param str description: Description of the Process Automation instance.
-        :param str display_name: A filter to return only resources that match the entire display name given.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param str id: unique OpaInstance identifier
-        :param str identity_app_display_name: This property specifies the name of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this OPA instance for users within the identity domain.
-        :param str identity_app_guid: This property specifies the GUID of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user role mappings to grant access to this OPA instance for users within the identity domain.
-        :param str identity_app_opc_service_instance_guid: This property specifies the OPC Service Instance GUID of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this OPA instance for users within the identity domain.
-        :param str identity_domain_url: This property specifies the domain url of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this OPA instance for users within the identity domain.
-        :param str instance_url: OPA Instance URL
-        :param bool is_breakglass_enabled: indicates if breakGlass is enabled for the opa instance.
-        :param str metering_type: MeteringType Identifier
-        :param str shape_name: Shape of the instance.
-        :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param str time_created: The time when OpaInstance was created. An RFC3339 formatted datetime string
-        :param str time_updated: The time the OpaInstance was updated. An RFC3339 formatted datetime string
-        """
-        pulumi.set(__self__, "attachments", attachments)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "consumption_model", consumption_model)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "idcs_at", idcs_at)
-        pulumi.set(__self__, "identity_app_display_name", identity_app_display_name)
-        pulumi.set(__self__, "identity_app_guid", identity_app_guid)
-        pulumi.set(__self__, "identity_app_opc_service_instance_guid", identity_app_opc_service_instance_guid)
-        pulumi.set(__self__, "identity_domain_url", identity_domain_url)
-        pulumi.set(__self__, "instance_url", instance_url)
-        pulumi.set(__self__, "is_breakglass_enabled", is_breakglass_enabled)
-        pulumi.set(__self__, "metering_type", metering_type)
-        pulumi.set(__self__, "shape_name", shape_name)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+                 attachments: Optional[Sequence['outputs.GetOpaInstancesOpaInstanceCollectionItemAttachmentResult']] = None,
+                 compartment_id: Optional[str] = None,
+                 consumption_model: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 description: Optional[str] = None,
+                 display_name: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 idcs_at: Optional[str] = None,
+                 identity_app_display_name: Optional[str] = None,
+                 identity_app_guid: Optional[str] = None,
+                 identity_app_opc_service_instance_guid: Optional[str] = None,
+                 identity_domain_url: Optional[str] = None,
+                 instance_url: Optional[str] = None,
+                 is_breakglass_enabled: Optional[bool] = None,
+                 metering_type: Optional[str] = None,
+                 shape_name: Optional[str] = None,
+                 state: Optional[str] = None,
+                 system_tags: Optional[Mapping[str, Any]] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None):
+        if attachments is not None:
+            pulumi.set(__self__, "attachments", attachments)
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if consumption_model is not None:
+            pulumi.set(__self__, "consumption_model", consumption_model)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if idcs_at is not None:
+            pulumi.set(__self__, "idcs_at", idcs_at)
+        if identity_app_display_name is not None:
+            pulumi.set(__self__, "identity_app_display_name", identity_app_display_name)
+        if identity_app_guid is not None:
+            pulumi.set(__self__, "identity_app_guid", identity_app_guid)
+        if identity_app_opc_service_instance_guid is not None:
+            pulumi.set(__self__, "identity_app_opc_service_instance_guid", identity_app_opc_service_instance_guid)
+        if identity_domain_url is not None:
+            pulumi.set(__self__, "identity_domain_url", identity_domain_url)
+        if instance_url is not None:
+            pulumi.set(__self__, "instance_url", instance_url)
+        if is_breakglass_enabled is not None:
+            pulumi.set(__self__, "is_breakglass_enabled", is_breakglass_enabled)
+        if metering_type is not None:
+            pulumi.set(__self__, "metering_type", metering_type)
+        if shape_name is not None:
+            pulumi.set(__self__, "shape_name", shape_name)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter
-    def attachments(self) -> Sequence['outputs.GetOpaInstancesOpaInstanceCollectionItemAttachmentResult']:
-        """
-        A list of associated attachments to other services
-        """
+    def attachments(self) -> Optional[Sequence['outputs.GetOpaInstancesOpaInstanceCollectionItemAttachmentResult']]:
         return pulumi.get(self, "attachments")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The ID of the compartment in which to list resources.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="consumptionModel")
-    def consumption_model(self) -> str:
-        """
-        The entitlement used for billing purposes
-        """
+    def consumption_model(self) -> Optional[str]:
         return pulumi.get(self, "consumption_model")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Description of the Process Automation instance.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return only resources that match the entire display name given.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        unique OpaInstance identifier
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="idcsAt")
-    def idcs_at(self) -> str:
+    def idcs_at(self) -> Optional[str]:
         return pulumi.get(self, "idcs_at")
 
     @property
     @pulumi.getter(name="identityAppDisplayName")
-    def identity_app_display_name(self) -> str:
-        """
-        This property specifies the name of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this OPA instance for users within the identity domain.
-        """
+    def identity_app_display_name(self) -> Optional[str]:
         return pulumi.get(self, "identity_app_display_name")
 
     @property
     @pulumi.getter(name="identityAppGuid")
-    def identity_app_guid(self) -> str:
-        """
-        This property specifies the GUID of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user role mappings to grant access to this OPA instance for users within the identity domain.
-        """
+    def identity_app_guid(self) -> Optional[str]:
         return pulumi.get(self, "identity_app_guid")
 
     @property
     @pulumi.getter(name="identityAppOpcServiceInstanceGuid")
-    def identity_app_opc_service_instance_guid(self) -> str:
-        """
-        This property specifies the OPC Service Instance GUID of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this OPA instance for users within the identity domain.
-        """
+    def identity_app_opc_service_instance_guid(self) -> Optional[str]:
         return pulumi.get(self, "identity_app_opc_service_instance_guid")
 
     @property
     @pulumi.getter(name="identityDomainUrl")
-    def identity_domain_url(self) -> str:
-        """
-        This property specifies the domain url of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this OPA instance for users within the identity domain.
-        """
+    def identity_domain_url(self) -> Optional[str]:
         return pulumi.get(self, "identity_domain_url")
 
     @property
     @pulumi.getter(name="instanceUrl")
-    def instance_url(self) -> str:
-        """
-        OPA Instance URL
-        """
+    def instance_url(self) -> Optional[str]:
         return pulumi.get(self, "instance_url")
 
     @property
     @pulumi.getter(name="isBreakglassEnabled")
-    def is_breakglass_enabled(self) -> bool:
-        """
-        indicates if breakGlass is enabled for the opa instance.
-        """
+    def is_breakglass_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_breakglass_enabled")
 
     @property
     @pulumi.getter(name="meteringType")
-    def metering_type(self) -> str:
-        """
-        MeteringType Identifier
-        """
+    def metering_type(self) -> Optional[str]:
         return pulumi.get(self, "metering_type")
 
     @property
     @pulumi.getter(name="shapeName")
-    def shape_name(self) -> str:
-        """
-        Shape of the instance.
-        """
+    def shape_name(self) -> Optional[str]:
         return pulumi.get(self, "shape_name")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        A filter to return only resources their lifecycleState matches the given lifecycleState.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time when OpaInstance was created. An RFC3339 formatted datetime string
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the OpaInstance was updated. An RFC3339 formatted datetime string
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
 @pulumi.output_type
 class GetOpaInstancesOpaInstanceCollectionItemAttachmentResult(dict):
     def __init__(__self__, *,
-                 is_implicit: bool,
-                 target_id: str,
-                 target_instance_url: str,
-                 target_role: str,
-                 target_service_type: str):
-        """
-        :param bool is_implicit: * If role == `PARENT`, the attached instance was created by this service instance
-               * If role == `CHILD`, this instance was created from attached instance on behalf of a user
-        :param str target_id: The OCID of the target instance (which could be any other Oracle Cloud Infrastructure PaaS/SaaS resource), to which this instance is attached.
-        :param str target_instance_url: The dataplane instance URL of the attached instance
-        :param str target_role: The role of the target attachment.
-        :param str target_service_type: The type of the target instance, such as "FUSION".
-        """
-        pulumi.set(__self__, "is_implicit", is_implicit)
-        pulumi.set(__self__, "target_id", target_id)
-        pulumi.set(__self__, "target_instance_url", target_instance_url)
-        pulumi.set(__self__, "target_role", target_role)
-        pulumi.set(__self__, "target_service_type", target_service_type)
+                 is_implicit: Optional[bool] = None,
+                 target_id: Optional[str] = None,
+                 target_instance_url: Optional[str] = None,
+                 target_role: Optional[str] = None,
+                 target_service_type: Optional[str] = None):
+        if is_implicit is not None:
+            pulumi.set(__self__, "is_implicit", is_implicit)
+        if target_id is not None:
+            pulumi.set(__self__, "target_id", target_id)
+        if target_instance_url is not None:
+            pulumi.set(__self__, "target_instance_url", target_instance_url)
+        if target_role is not None:
+            pulumi.set(__self__, "target_role", target_role)
+        if target_service_type is not None:
+            pulumi.set(__self__, "target_service_type", target_service_type)
 
     @property
     @pulumi.getter(name="isImplicit")
-    def is_implicit(self) -> bool:
-        """
-        * If role == `PARENT`, the attached instance was created by this service instance
-        * If role == `CHILD`, this instance was created from attached instance on behalf of a user
-        """
+    def is_implicit(self) -> Optional[bool]:
         return pulumi.get(self, "is_implicit")
 
     @property
     @pulumi.getter(name="targetId")
-    def target_id(self) -> str:
-        """
-        The OCID of the target instance (which could be any other Oracle Cloud Infrastructure PaaS/SaaS resource), to which this instance is attached.
-        """
+    def target_id(self) -> Optional[str]:
         return pulumi.get(self, "target_id")
 
     @property
     @pulumi.getter(name="targetInstanceUrl")
-    def target_instance_url(self) -> str:
-        """
-        The dataplane instance URL of the attached instance
-        """
+    def target_instance_url(self) -> Optional[str]:
         return pulumi.get(self, "target_instance_url")
 
     @property
     @pulumi.getter(name="targetRole")
-    def target_role(self) -> str:
-        """
-        The role of the target attachment.
-        """
+    def target_role(self) -> Optional[str]:
         return pulumi.get(self, "target_role")
 
     @property
     @pulumi.getter(name="targetServiceType")
-    def target_service_type(self) -> str:
-        """
-        The type of the target instance, such as "FUSION".
-        """
+    def target_service_type(self) -> Optional[str]:
         return pulumi.get(self, "target_service_type")
 
 

@@ -10,6 +10,8 @@ import java.lang.Double;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetQueryQueryDefinition {
@@ -17,22 +19,22 @@ public final class GetQueryQueryDefinition {
      * @return The common fields for Cost Analysis UI rendering.
      * 
      */
-    private List<GetQueryQueryDefinitionCostAnalysisUi> costAnalysisUis;
+    private @Nullable List<GetQueryQueryDefinitionCostAnalysisUi> costAnalysisUis;
     /**
      * @return The query display name. Avoid entering confidential information.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return The request of the generated Cost Analysis report.
      * 
      */
-    private List<GetQueryQueryDefinitionReportQuery> reportQueries;
+    private @Nullable List<GetQueryQueryDefinitionReportQuery> reportQueries;
     /**
      * @return The saved query version.
      * 
      */
-    private Double version;
+    private @Nullable Double version;
 
     private GetQueryQueryDefinition() {}
     /**
@@ -40,28 +42,28 @@ public final class GetQueryQueryDefinition {
      * 
      */
     public List<GetQueryQueryDefinitionCostAnalysisUi> costAnalysisUis() {
-        return this.costAnalysisUis;
+        return this.costAnalysisUis == null ? List.of() : this.costAnalysisUis;
     }
     /**
      * @return The query display name. Avoid entering confidential information.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return The request of the generated Cost Analysis report.
      * 
      */
     public List<GetQueryQueryDefinitionReportQuery> reportQueries() {
-        return this.reportQueries;
+        return this.reportQueries == null ? List.of() : this.reportQueries;
     }
     /**
      * @return The saved query version.
      * 
      */
-    public Double version() {
-        return this.version;
+    public Optional<Double> version() {
+        return Optional.ofNullable(this.version);
     }
 
     public static Builder builder() {
@@ -73,10 +75,10 @@ public final class GetQueryQueryDefinition {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetQueryQueryDefinitionCostAnalysisUi> costAnalysisUis;
-        private String displayName;
-        private List<GetQueryQueryDefinitionReportQuery> reportQueries;
-        private Double version;
+        private @Nullable List<GetQueryQueryDefinitionCostAnalysisUi> costAnalysisUis;
+        private @Nullable String displayName;
+        private @Nullable List<GetQueryQueryDefinitionReportQuery> reportQueries;
+        private @Nullable Double version;
         public Builder() {}
         public Builder(GetQueryQueryDefinition defaults) {
     	      Objects.requireNonNull(defaults);
@@ -87,29 +89,29 @@ public final class GetQueryQueryDefinition {
         }
 
         @CustomType.Setter
-        public Builder costAnalysisUis(List<GetQueryQueryDefinitionCostAnalysisUi> costAnalysisUis) {
-            this.costAnalysisUis = Objects.requireNonNull(costAnalysisUis);
+        public Builder costAnalysisUis(@Nullable List<GetQueryQueryDefinitionCostAnalysisUi> costAnalysisUis) {
+            this.costAnalysisUis = costAnalysisUis;
             return this;
         }
         public Builder costAnalysisUis(GetQueryQueryDefinitionCostAnalysisUi... costAnalysisUis) {
             return costAnalysisUis(List.of(costAnalysisUis));
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder reportQueries(List<GetQueryQueryDefinitionReportQuery> reportQueries) {
-            this.reportQueries = Objects.requireNonNull(reportQueries);
+        public Builder reportQueries(@Nullable List<GetQueryQueryDefinitionReportQuery> reportQueries) {
+            this.reportQueries = reportQueries;
             return this;
         }
         public Builder reportQueries(GetQueryQueryDefinitionReportQuery... reportQueries) {
             return reportQueries(List.of(reportQueries));
         }
         @CustomType.Setter
-        public Builder version(Double version) {
-            this.version = Objects.requireNonNull(version);
+        public Builder version(@Nullable Double version) {
+            this.version = version;
             return this;
         }
         public GetQueryQueryDefinition build() {

@@ -8,6 +8,8 @@ import com.pulumi.oci.Database.outputs.GetExadataIormConfigDbPlan;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetExadataIormConfigResult {
@@ -15,24 +17,24 @@ public final class GetExadataIormConfigResult {
      * @return An array of IORM settings for all the database in the Exadata DB system.
      * 
      */
-    private List<GetExadataIormConfigDbPlan> dbPlans;
+    private @Nullable List<GetExadataIormConfigDbPlan> dbPlans;
     private String dbSystemId;
-    private String id;
+    private @Nullable String id;
     /**
      * @return Additional information about the current `lifecycleState`.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return The current value for the IORM objective. The default is `AUTO`.
      * 
      */
-    private String objective;
+    private @Nullable String objective;
     /**
      * @return The current state of IORM configuration for the Exadata DB system.
      * 
      */
-    private String state;
+    private @Nullable String state;
 
     private GetExadataIormConfigResult() {}
     /**
@@ -40,34 +42,34 @@ public final class GetExadataIormConfigResult {
      * 
      */
     public List<GetExadataIormConfigDbPlan> dbPlans() {
-        return this.dbPlans;
+        return this.dbPlans == null ? List.of() : this.dbPlans;
     }
     public String dbSystemId() {
         return this.dbSystemId;
     }
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Additional information about the current `lifecycleState`.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return The current value for the IORM objective. The default is `AUTO`.
      * 
      */
-    public String objective() {
-        return this.objective;
+    public Optional<String> objective() {
+        return Optional.ofNullable(this.objective);
     }
     /**
      * @return The current state of IORM configuration for the Exadata DB system.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
 
     public static Builder builder() {
@@ -79,12 +81,12 @@ public final class GetExadataIormConfigResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetExadataIormConfigDbPlan> dbPlans;
+        private @Nullable List<GetExadataIormConfigDbPlan> dbPlans;
         private String dbSystemId;
-        private String id;
-        private String lifecycleDetails;
-        private String objective;
-        private String state;
+        private @Nullable String id;
+        private @Nullable String lifecycleDetails;
+        private @Nullable String objective;
+        private @Nullable String state;
         public Builder() {}
         public Builder(GetExadataIormConfigResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -97,8 +99,8 @@ public final class GetExadataIormConfigResult {
         }
 
         @CustomType.Setter
-        public Builder dbPlans(List<GetExadataIormConfigDbPlan> dbPlans) {
-            this.dbPlans = Objects.requireNonNull(dbPlans);
+        public Builder dbPlans(@Nullable List<GetExadataIormConfigDbPlan> dbPlans) {
+            this.dbPlans = dbPlans;
             return this;
         }
         public Builder dbPlans(GetExadataIormConfigDbPlan... dbPlans) {
@@ -110,23 +112,23 @@ public final class GetExadataIormConfigResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder objective(String objective) {
-            this.objective = Objects.requireNonNull(objective);
+        public Builder objective(@Nullable String objective) {
+            this.objective = objective;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         public GetExadataIormConfigResult build() {

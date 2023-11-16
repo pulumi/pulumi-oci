@@ -24,16 +24,6 @@ class AtCustomerCccUpgradeScheduleArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None):
         """
         The set of arguments for constructing a AtCustomerCccUpgradeSchedule resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Compute Cloud@Customer Upgrade Schedule.
-        :param pulumi.Input[str] display_name: (Updatable) Compute Cloud@Customer upgrade schedule display name. Avoid entering confidential information.
-        :param pulumi.Input[Sequence[pulumi.Input['AtCustomerCccUpgradeScheduleEventArgs']]] events: (Updatable) List of preferred times for Compute Cloud@Customer infrastructure to be upgraded.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) A description of the Compute Cloud@Customer upgrade schedule time block.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}` 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "display_name", display_name)
@@ -48,9 +38,6 @@ class AtCustomerCccUpgradeScheduleArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Compute Cloud@Customer Upgrade Schedule.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -60,9 +47,6 @@ class AtCustomerCccUpgradeScheduleArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Compute Cloud@Customer upgrade schedule display name. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -72,9 +56,6 @@ class AtCustomerCccUpgradeScheduleArgs:
     @property
     @pulumi.getter
     def events(self) -> pulumi.Input[Sequence[pulumi.Input['AtCustomerCccUpgradeScheduleEventArgs']]]:
-        """
-        (Updatable) List of preferred times for Compute Cloud@Customer infrastructure to be upgraded.
-        """
         return pulumi.get(self, "events")
 
     @events.setter
@@ -84,9 +65,6 @@ class AtCustomerCccUpgradeScheduleArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -96,9 +74,6 @@ class AtCustomerCccUpgradeScheduleArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A description of the Compute Cloud@Customer upgrade schedule time block.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -108,13 +83,6 @@ class AtCustomerCccUpgradeScheduleArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}` 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -139,22 +107,6 @@ class _AtCustomerCccUpgradeScheduleState:
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering AtCustomerCccUpgradeSchedule resources.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Compute Cloud@Customer Upgrade Schedule.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) A description of the Compute Cloud@Customer upgrade schedule time block.
-        :param pulumi.Input[str] display_name: (Updatable) Compute Cloud@Customer upgrade schedule display name. Avoid entering confidential information.
-        :param pulumi.Input[Sequence[pulumi.Input['AtCustomerCccUpgradeScheduleEventArgs']]] events: (Updatable) List of preferred times for Compute Cloud@Customer infrastructure to be upgraded.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}` 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] infrastructure_ids: List of Compute Cloud@Customer infrastructure [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that are using this upgrade schedule.
-        :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, the message can be used to provide actionable information for a resource in a Failed state.
-        :param pulumi.Input[str] state: Lifecycle state of the resource.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: The time the upgrade schedule was created, using an RFC3339 formatted datetime string.
-        :param pulumi.Input[str] time_updated: The time the upgrade schedule was updated, using an RFC3339 formatted datetime string.
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -184,9 +136,6 @@ class _AtCustomerCccUpgradeScheduleState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Compute Cloud@Customer Upgrade Schedule.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -196,9 +145,6 @@ class _AtCustomerCccUpgradeScheduleState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -208,9 +154,6 @@ class _AtCustomerCccUpgradeScheduleState:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A description of the Compute Cloud@Customer upgrade schedule time block.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -220,9 +163,6 @@ class _AtCustomerCccUpgradeScheduleState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Compute Cloud@Customer upgrade schedule display name. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -232,9 +172,6 @@ class _AtCustomerCccUpgradeScheduleState:
     @property
     @pulumi.getter
     def events(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AtCustomerCccUpgradeScheduleEventArgs']]]]:
-        """
-        (Updatable) List of preferred times for Compute Cloud@Customer infrastructure to be upgraded.
-        """
         return pulumi.get(self, "events")
 
     @events.setter
@@ -244,13 +181,6 @@ class _AtCustomerCccUpgradeScheduleState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}` 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -260,9 +190,6 @@ class _AtCustomerCccUpgradeScheduleState:
     @property
     @pulumi.getter(name="infrastructureIds")
     def infrastructure_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        List of Compute Cloud@Customer infrastructure [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that are using this upgrade schedule.
-        """
         return pulumi.get(self, "infrastructure_ids")
 
     @infrastructure_ids.setter
@@ -272,9 +199,6 @@ class _AtCustomerCccUpgradeScheduleState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        A message describing the current state in more detail. For example, the message can be used to provide actionable information for a resource in a Failed state.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -284,9 +208,6 @@ class _AtCustomerCccUpgradeScheduleState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        Lifecycle state of the resource.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -296,9 +217,6 @@ class _AtCustomerCccUpgradeScheduleState:
     @property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
@@ -308,9 +226,6 @@ class _AtCustomerCccUpgradeScheduleState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the upgrade schedule was created, using an RFC3339 formatted datetime string.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -320,9 +235,6 @@ class _AtCustomerCccUpgradeScheduleState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the upgrade schedule was updated, using an RFC3339 formatted datetime string.
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -343,54 +255,9 @@ class AtCustomerCccUpgradeSchedule(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  __props__=None):
         """
-        This resource provides the Ccc Upgrade Schedule resource in Oracle Cloud Infrastructure Compute Cloud At Customer service.
-
-        Creates a new Compute Cloud@Customer upgrade schedule.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_ccc_upgrade_schedule = oci.compute_cloud.AtCustomerCccUpgradeSchedule("testCccUpgradeSchedule",
-            compartment_id=var["compartment_id"],
-            display_name=var["ccc_upgrade_schedule_display_name"],
-            events=[oci.compute_cloud.AtCustomerCccUpgradeScheduleEventArgs(
-                description=var["ccc_upgrade_schedule_events_description"],
-                schedule_event_duration=var["ccc_upgrade_schedule_events_schedule_event_duration"],
-                time_start=var["ccc_upgrade_schedule_events_time_start"],
-                schedule_event_recurrences=var["ccc_upgrade_schedule_events_schedule_event_recurrences"],
-            )],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            description=var["ccc_upgrade_schedule_description"],
-            freeform_tags={
-                "bar-key": "value",
-            })
-        ```
-
-        ## Import
-
-        CccUpgradeSchedules can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:ComputeCloud/atCustomerCccUpgradeSchedule:AtCustomerCccUpgradeSchedule test_ccc_upgrade_schedule "id"
-        ```
-
+        Create a AtCustomerCccUpgradeSchedule resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Compute Cloud@Customer Upgrade Schedule.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) A description of the Compute Cloud@Customer upgrade schedule time block.
-        :param pulumi.Input[str] display_name: (Updatable) Compute Cloud@Customer upgrade schedule display name. Avoid entering confidential information.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AtCustomerCccUpgradeScheduleEventArgs']]]] events: (Updatable) List of preferred times for Compute Cloud@Customer infrastructure to be upgraded.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}` 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -399,42 +266,7 @@ class AtCustomerCccUpgradeSchedule(pulumi.CustomResource):
                  args: AtCustomerCccUpgradeScheduleArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Ccc Upgrade Schedule resource in Oracle Cloud Infrastructure Compute Cloud At Customer service.
-
-        Creates a new Compute Cloud@Customer upgrade schedule.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_ccc_upgrade_schedule = oci.compute_cloud.AtCustomerCccUpgradeSchedule("testCccUpgradeSchedule",
-            compartment_id=var["compartment_id"],
-            display_name=var["ccc_upgrade_schedule_display_name"],
-            events=[oci.compute_cloud.AtCustomerCccUpgradeScheduleEventArgs(
-                description=var["ccc_upgrade_schedule_events_description"],
-                schedule_event_duration=var["ccc_upgrade_schedule_events_schedule_event_duration"],
-                time_start=var["ccc_upgrade_schedule_events_time_start"],
-                schedule_event_recurrences=var["ccc_upgrade_schedule_events_schedule_event_recurrences"],
-            )],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            description=var["ccc_upgrade_schedule_description"],
-            freeform_tags={
-                "bar-key": "value",
-            })
-        ```
-
-        ## Import
-
-        CccUpgradeSchedules can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:ComputeCloud/atCustomerCccUpgradeSchedule:AtCustomerCccUpgradeSchedule test_ccc_upgrade_schedule "id"
-        ```
-
+        Create a AtCustomerCccUpgradeSchedule resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param AtCustomerCccUpgradeScheduleArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -512,22 +344,6 @@ class AtCustomerCccUpgradeSchedule(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Compute Cloud@Customer Upgrade Schedule.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) A description of the Compute Cloud@Customer upgrade schedule time block.
-        :param pulumi.Input[str] display_name: (Updatable) Compute Cloud@Customer upgrade schedule display name. Avoid entering confidential information.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AtCustomerCccUpgradeScheduleEventArgs']]]] events: (Updatable) List of preferred times for Compute Cloud@Customer infrastructure to be upgraded.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}` 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] infrastructure_ids: List of Compute Cloud@Customer infrastructure [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that are using this upgrade schedule.
-        :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, the message can be used to provide actionable information for a resource in a Failed state.
-        :param pulumi.Input[str] state: Lifecycle state of the resource.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: The time the upgrade schedule was created, using an RFC3339 formatted datetime string.
-        :param pulumi.Input[str] time_updated: The time the upgrade schedule was updated, using an RFC3339 formatted datetime string.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -550,100 +366,60 @@ class AtCustomerCccUpgradeSchedule(pulumi.CustomResource):
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Compute Cloud@Customer Upgrade Schedule.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> pulumi.Output[str]:
-        """
-        (Updatable) A description of the Compute Cloud@Customer upgrade schedule time block.
-        """
+    def description(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Compute Cloud@Customer upgrade schedule display name. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
     def events(self) -> pulumi.Output[Sequence['outputs.AtCustomerCccUpgradeScheduleEvent']]:
-        """
-        (Updatable) List of preferred times for Compute Cloud@Customer infrastructure to be upgraded.
-        """
         return pulumi.get(self, "events")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}` 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="infrastructureIds")
-    def infrastructure_ids(self) -> pulumi.Output[Sequence[str]]:
-        """
-        List of Compute Cloud@Customer infrastructure [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that are using this upgrade schedule.
-        """
+    def infrastructure_ids(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "infrastructure_ids")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        A message describing the current state in more detail. For example, the message can be used to provide actionable information for a resource in a Failed state.
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        Lifecycle state of the resource.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The time the upgrade schedule was created, using an RFC3339 formatted datetime string.
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The time the upgrade schedule was updated, using an RFC3339 formatted datetime string.
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 

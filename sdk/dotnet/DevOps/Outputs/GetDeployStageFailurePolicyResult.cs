@@ -16,23 +16,23 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// <summary>
         /// The threshold count of failed instances in the group, which when reached or exceeded sets the stage as FAILED.
         /// </summary>
-        public readonly int FailureCount;
+        public readonly int? FailureCount;
         /// <summary>
         /// The failure percentage threshold, which when reached or exceeded sets the stage as FAILED. Percentage is computed as the ceiling value of the number of failed instances over the total count of the instances in the group.
         /// </summary>
-        public readonly int FailurePercentage;
+        public readonly int? FailurePercentage;
         /// <summary>
         /// The type of policy used for rolling out a deployment stage.
         /// </summary>
-        public readonly string PolicyType;
+        public readonly string? PolicyType;
 
         [OutputConstructor]
         private GetDeployStageFailurePolicyResult(
-            int failureCount,
+            int? failureCount,
 
-            int failurePercentage,
+            int? failurePercentage,
 
-            string policyType)
+            string? policyType)
         {
             FailureCount = failureCount;
             FailurePercentage = failurePercentage;

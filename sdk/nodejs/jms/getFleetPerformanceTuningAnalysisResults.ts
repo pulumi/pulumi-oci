@@ -82,7 +82,7 @@ export interface GetFleetPerformanceTuningAnalysisResultsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The managed instance OCID.
      */
@@ -90,7 +90,7 @@ export interface GetFleetPerformanceTuningAnalysisResultsResult {
     /**
      * The list of performance_tuning_analysis_result_collection.
      */
-    readonly performanceTuningAnalysisResultCollections: outputs.Jms.GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollection[];
+    readonly performanceTuningAnalysisResultCollections?: outputs.Jms.GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollection[];
     readonly timeEnd?: string;
     readonly timeStart?: string;
 }

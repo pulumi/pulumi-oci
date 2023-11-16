@@ -51,34 +51,22 @@ class GetAutonomousDatabaseBackupsResult:
 
     @property
     @pulumi.getter(name="autonomousDatabaseBackups")
-    def autonomous_database_backups(self) -> Sequence['outputs.GetAutonomousDatabaseBackupsAutonomousDatabaseBackupResult']:
-        """
-        The list of autonomous_database_backups.
-        """
+    def autonomous_database_backups(self) -> Optional[Sequence['outputs.GetAutonomousDatabaseBackupsAutonomousDatabaseBackupResult']]:
         return pulumi.get(self, "autonomous_database_backups")
 
     @property
     @pulumi.getter(name="autonomousDatabaseId")
     def autonomous_database_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database.
-        """
         return pulumi.get(self, "autonomous_database_id")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        The user-friendly name for the backup. The name does not have to be unique.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -88,7 +76,7 @@ class GetAutonomousDatabaseBackupsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -97,17 +85,11 @@ class GetAutonomousDatabaseBackupsResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the backup.
-        """
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter
     def type(self) -> Optional[str]:
-        """
-        The type of backup.
-        """
         return pulumi.get(self, "type")
 
 
@@ -135,29 +117,7 @@ def get_autonomous_database_backups(autonomous_database_id: Optional[str] = None
                                     type: Optional[str] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAutonomousDatabaseBackupsResult:
     """
-    This data source provides the list of Autonomous Database Backups in Oracle Cloud Infrastructure Database service.
-
-    Gets a list of Autonomous Database backups based on either the `autonomousDatabaseId` or `compartmentId` specified as a query parameter.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_autonomous_database_backups = oci.Database.get_autonomous_database_backups(autonomous_database_id=oci_database_autonomous_database["test_autonomous_database"]["id"],
-        compartment_id=var["compartment_id"],
-        display_name=var["autonomous_database_backup_display_name"],
-        state=var["autonomous_database_backup_state"],
-        type=var["autonomous_database_backup_type"])
-    ```
-
-
-    :param str autonomous_database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
-    :param str state: A filter to return only resources that match the given lifecycle state exactly.
-    :param str type: A filter to return only backups that matches with the given type of Backup.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['autonomousDatabaseId'] = autonomous_database_id
@@ -189,28 +149,6 @@ def get_autonomous_database_backups_output(autonomous_database_id: Optional[pulu
                                            type: Optional[pulumi.Input[Optional[str]]] = None,
                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAutonomousDatabaseBackupsResult]:
     """
-    This data source provides the list of Autonomous Database Backups in Oracle Cloud Infrastructure Database service.
-
-    Gets a list of Autonomous Database backups based on either the `autonomousDatabaseId` or `compartmentId` specified as a query parameter.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_autonomous_database_backups = oci.Database.get_autonomous_database_backups(autonomous_database_id=oci_database_autonomous_database["test_autonomous_database"]["id"],
-        compartment_id=var["compartment_id"],
-        display_name=var["autonomous_database_backup_display_name"],
-        state=var["autonomous_database_backup_state"],
-        type=var["autonomous_database_backup_type"])
-    ```
-
-
-    :param str autonomous_database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
-    :param str state: A filter to return only resources that match the given lifecycle state exactly.
-    :param str type: A filter to return only backups that matches with the given type of Backup.
+    Use this data source to access information about an existing resource.
     """
     ...

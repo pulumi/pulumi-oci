@@ -6,6 +6,8 @@ package com.pulumi.oci.Core.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetail {
@@ -13,27 +15,27 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailO
      * @return The OCID of the volume backup.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The type of action to run when the instance is interrupted for eviction.
      * 
      */
-    private String type;
+    private @Nullable String type;
 
     private GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetail() {}
     /**
      * @return The OCID of the volume backup.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The type of action to run when the instance is interrupted for eviction.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailO
     }
     @CustomType.Builder
     public static final class Builder {
-        private String id;
-        private String type;
+        private @Nullable String id;
+        private @Nullable String type;
         public Builder() {}
         public Builder(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailO
         }
 
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         public GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetail build() {

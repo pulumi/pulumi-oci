@@ -57,9 +57,6 @@ class GetCompartmentsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the parent compartment containing the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -69,10 +66,7 @@ class GetCompartmentsResult:
 
     @property
     @pulumi.getter
-    def compartments(self) -> Sequence['outputs.GetCompartmentsCompartmentResult']:
-        """
-        The list of compartments.
-        """
+    def compartments(self) -> Optional[Sequence['outputs.GetCompartmentsCompartmentResult']]:
         return pulumi.get(self, "compartments")
 
     @property
@@ -82,7 +76,7 @@ class GetCompartmentsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -91,17 +85,11 @@ class GetCompartmentsResult:
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        The name you assign to the compartment during creation. The name must be unique across all compartments in the parent. Avoid entering confidential information.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The compartment's current state.
-        """
         return pulumi.get(self, "state")
 
 
@@ -129,48 +117,7 @@ def get_compartments(access_level: Optional[str] = None,
                      state: Optional[str] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCompartmentsResult:
     """
-    This data source provides the list of Compartments in Oracle Cloud Infrastructure Identity service.
-
-    Lists the compartments in a specified compartment. The members of the list
-    returned depends on the values set for several parameters.
-
-    With the exception of the tenancy (root compartment), the ListCompartments operation
-    returns only the first-level child compartments in the parent compartment specified in
-    `compartmentId`. The list does not include any subcompartments of the child
-    compartments (grandchildren).
-
-    The parameter `accessLevel` specifies whether to return only those compartments for which the
-    requestor has INSPECT permissions on at least one resource directly
-    or indirectly (the resource can be in a subcompartment).
-
-    The parameter `compartmentIdInSubtree` applies only when you perform ListCompartments on the
-    tenancy (root compartment). When set to true, the entire hierarchy of compartments can be returned.
-    To get a full list of all compartments and subcompartments in the tenancy (root compartment),
-    set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ANY.
-
-    See [Where to Get the Tenancy's OCID and User's OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_compartments = oci.Identity.get_compartments(compartment_id=var["compartment_id"],
-        access_level=var["compartment_access_level"],
-        compartment_id_in_subtree=var["compartment_compartment_id_in_subtree"],
-        name=var["compartment_name"],
-        state=var["compartment_state"])
-    ```
-
-
-    :param str access_level: Valid values are `ANY` and `ACCESSIBLE`. Default is `ANY`. Setting this to `ACCESSIBLE` returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). For the compartments on which the user indirectly has INSPECT permissions, a restricted set of fields is returned.
-           
-           When set to `ANY` permissions are not checked.
-    :param str compartment_id: The OCID of the compartment (remember that the tenancy is simply the root compartment).
-    :param bool compartment_id_in_subtree: Default is false. Can only be set to true when performing ListCompartments on the tenancy (root compartment). When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the the setting of `accessLevel`.
-    :param str name: A filter to only return resources that match the given name exactly.
-    :param str state: A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['accessLevel'] = access_level
@@ -202,47 +149,6 @@ def get_compartments_output(access_level: Optional[pulumi.Input[Optional[str]]] 
                             state: Optional[pulumi.Input[Optional[str]]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCompartmentsResult]:
     """
-    This data source provides the list of Compartments in Oracle Cloud Infrastructure Identity service.
-
-    Lists the compartments in a specified compartment. The members of the list
-    returned depends on the values set for several parameters.
-
-    With the exception of the tenancy (root compartment), the ListCompartments operation
-    returns only the first-level child compartments in the parent compartment specified in
-    `compartmentId`. The list does not include any subcompartments of the child
-    compartments (grandchildren).
-
-    The parameter `accessLevel` specifies whether to return only those compartments for which the
-    requestor has INSPECT permissions on at least one resource directly
-    or indirectly (the resource can be in a subcompartment).
-
-    The parameter `compartmentIdInSubtree` applies only when you perform ListCompartments on the
-    tenancy (root compartment). When set to true, the entire hierarchy of compartments can be returned.
-    To get a full list of all compartments and subcompartments in the tenancy (root compartment),
-    set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ANY.
-
-    See [Where to Get the Tenancy's OCID and User's OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_compartments = oci.Identity.get_compartments(compartment_id=var["compartment_id"],
-        access_level=var["compartment_access_level"],
-        compartment_id_in_subtree=var["compartment_compartment_id_in_subtree"],
-        name=var["compartment_name"],
-        state=var["compartment_state"])
-    ```
-
-
-    :param str access_level: Valid values are `ANY` and `ACCESSIBLE`. Default is `ANY`. Setting this to `ACCESSIBLE` returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). For the compartments on which the user indirectly has INSPECT permissions, a restricted set of fields is returned.
-           
-           When set to `ANY` permissions are not checked.
-    :param str compartment_id: The OCID of the compartment (remember that the tenancy is simply the root compartment).
-    :param bool compartment_id_in_subtree: Default is false. Can only be set to true when performing ListCompartments on the tenancy (root compartment). When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the the setting of `accessLevel`.
-    :param str name: A filter to only return resources that match the given name exactly.
-    :param str state: A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
+    Use this data source to access information about an existing resource.
     """
     ...

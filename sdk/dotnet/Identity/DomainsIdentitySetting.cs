@@ -57,7 +57,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("compartmentOcid")]
-        public Output<string> CompartmentOcid { get; private set; } = null!;
+        public Output<string?> CompartmentOcid { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
@@ -73,7 +73,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("deleteInProgress")]
-        public Output<bool> DeleteInProgress { get; private set; } = null!;
+        public Output<bool?> DeleteInProgress { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
@@ -89,7 +89,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("domainOcid")]
-        public Output<string> DomainOcid { get; private set; } = null!;
+        public Output<string?> DomainOcid { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Indicates whether to show the 'user-is-locked' message during authentication if the user is already locked. The default value is false, which tells the system to show a generic 'authentication-failure' message. This is the most secure behavior. If the option is set to true, the system shows a more detailed 'error-message' that says the user is locked. This is more helpful but is less secure, for example, because the difference in error-messages could be used to determine which usernames exist and which do not.
@@ -106,7 +106,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("emitLockedMessageWhenUserIsLocked")]
-        public Output<bool> EmitLockedMessageWhenUserIsLocked { get; private set; } = null!;
+        public Output<bool?> EmitLockedMessageWhenUserIsLocked { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
@@ -121,7 +121,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("externalId")]
-        public Output<string> ExternalId { get; private set; } = null!;
+        public Output<string?> ExternalId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The User or App who created the Resource
@@ -171,7 +171,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("idcsLastUpgradedInRelease")]
-        public Output<string> IdcsLastUpgradedInRelease { get; private set; } = null!;
+        public Output<string?> IdcsLastUpgradedInRelease { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
@@ -223,7 +223,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("myProfile")]
-        public Output<Outputs.DomainsIdentitySettingMyProfile> MyProfile { get; private set; } = null!;
+        public Output<Outputs.DomainsIdentitySettingMyProfile?> MyProfile { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
@@ -239,7 +239,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: global
         /// </summary>
         [Output("ocid")]
-        public Output<string> Ocid { get; private set; } = null!;
+        public Output<string?> Ocid { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A list of Posix Gid settings.
@@ -254,7 +254,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("posixGid")]
-        public Output<Outputs.DomainsIdentitySettingPosixGid> PosixGid { get; private set; } = null!;
+        public Output<Outputs.DomainsIdentitySettingPosixGid?> PosixGid { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A list of Posix Uid settings.
@@ -269,7 +269,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("posixUid")]
-        public Output<Outputs.DomainsIdentitySettingPosixUid> PosixUid { get; private set; } = null!;
+        public Output<Outputs.DomainsIdentitySettingPosixUid?> PosixUid { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Indicates whether the primary email is required.
@@ -286,7 +286,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("primaryEmailRequired")]
-        public Output<bool> PrimaryEmailRequired { get; private set; } = null!;
+        public Output<bool?> PrimaryEmailRequired { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Indicates whether to remove non-RFC5322 compliant emails before creating a user.
@@ -303,7 +303,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("removeInvalidEmails")]
-        public Output<bool> RemoveInvalidEmails { get; private set; } = null!;
+        public Output<bool?> RemoveInvalidEmails { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
@@ -324,7 +324,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none Determines the PasswordAuthenticator API response when a user is both 'locked' and 'inactive.' If false (default), a 'locked' message is shown. If true, an 'inactive' message is shown.
         /// </summary>
         [Output("returnInactiveOverLockedMessage")]
-        public Output<bool> ReturnInactiveOverLockedMessage { get; private set; } = null!;
+        public Output<bool?> ReturnInactiveOverLockedMessage { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
@@ -372,7 +372,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("tenancyOcid")]
-        public Output<string> TenancyOcid { get; private set; } = null!;
+        public Output<string?> TenancyOcid { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A list of tokens and their expiry length.
@@ -405,7 +405,7 @@ namespace Pulumi.Oci.Identity
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("userAllowedToSetRecoveryEmail")]
-        public Output<bool> UserAllowedToSetRecoveryEmail { get; private set; } = null!;
+        public Output<bool?> UserAllowedToSetRecoveryEmail { get; private set; } = null!;
 
 
         /// <summary>

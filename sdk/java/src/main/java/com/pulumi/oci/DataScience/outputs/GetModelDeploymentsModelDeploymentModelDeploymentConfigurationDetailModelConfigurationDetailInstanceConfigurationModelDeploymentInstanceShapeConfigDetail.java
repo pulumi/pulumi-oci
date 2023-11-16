@@ -6,6 +6,8 @@ package com.pulumi.oci.DataScience.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Double;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetail {
@@ -13,27 +15,27 @@ public final class GetModelDeploymentsModelDeploymentModelDeploymentConfiguratio
      * @return A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 and 512 GB and VM.Optimized3.Flex memory range is between 6 and 256 GB.
      * 
      */
-    private Double memoryInGbs;
+    private @Nullable Double memoryInGbs;
     /**
      * @return A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 and 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
      * 
      */
-    private Double ocpus;
+    private @Nullable Double ocpus;
 
     private GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetail() {}
     /**
      * @return A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 and 512 GB and VM.Optimized3.Flex memory range is between 6 and 256 GB.
      * 
      */
-    public Double memoryInGbs() {
-        return this.memoryInGbs;
+    public Optional<Double> memoryInGbs() {
+        return Optional.ofNullable(this.memoryInGbs);
     }
     /**
      * @return A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 and 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
      * 
      */
-    public Double ocpus() {
-        return this.ocpus;
+    public Optional<Double> ocpus() {
+        return Optional.ofNullable(this.ocpus);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetModelDeploymentsModelDeploymentModelDeploymentConfiguratio
     }
     @CustomType.Builder
     public static final class Builder {
-        private Double memoryInGbs;
-        private Double ocpus;
+        private @Nullable Double memoryInGbs;
+        private @Nullable Double ocpus;
         public Builder() {}
         public Builder(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetModelDeploymentsModelDeploymentModelDeploymentConfiguratio
         }
 
         @CustomType.Setter
-        public Builder memoryInGbs(Double memoryInGbs) {
-            this.memoryInGbs = Objects.requireNonNull(memoryInGbs);
+        public Builder memoryInGbs(@Nullable Double memoryInGbs) {
+            this.memoryInGbs = memoryInGbs;
             return this;
         }
         @CustomType.Setter
-        public Builder ocpus(Double ocpus) {
-            this.ocpus = Objects.requireNonNull(ocpus);
+        public Builder ocpus(@Nullable Double ocpus) {
+            this.ocpus = ocpus;
             return this;
         }
         public GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetail build() {

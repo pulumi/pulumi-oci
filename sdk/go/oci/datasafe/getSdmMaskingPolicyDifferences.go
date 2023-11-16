@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Sdm Masking Policy Differences in Oracle Cloud Infrastructure Data Safe service.
@@ -86,7 +85,7 @@ type GetSdmMaskingPolicyDifferencesResult struct {
 	DisplayName *string                                `pulumi:"displayName"`
 	Filters     []GetSdmMaskingPolicyDifferencesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The OCID of the masking policy associated with the SDM masking policy difference.
 	MaskingPolicyId *string `pulumi:"maskingPolicyId"`
 	// The list of sdm_masking_policy_difference_collection.
@@ -148,12 +147,6 @@ func (o GetSdmMaskingPolicyDifferencesResultOutput) ToGetSdmMaskingPolicyDiffere
 	return o
 }
 
-func (o GetSdmMaskingPolicyDifferencesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetSdmMaskingPolicyDifferencesResult] {
-	return pulumix.Output[GetSdmMaskingPolicyDifferencesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment that contains the SDM masking policy difference.
 func (o GetSdmMaskingPolicyDifferencesResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSdmMaskingPolicyDifferencesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -177,8 +170,8 @@ func (o GetSdmMaskingPolicyDifferencesResultOutput) Filters() GetSdmMaskingPolic
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetSdmMaskingPolicyDifferencesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSdmMaskingPolicyDifferencesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetSdmMaskingPolicyDifferencesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSdmMaskingPolicyDifferencesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the masking policy associated with the SDM masking policy difference.

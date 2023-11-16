@@ -77,7 +77,7 @@ export interface GetDrPlansResult {
     /**
      * The list of dr_plan_collection.
      */
-    readonly drPlanCollections: outputs.DisasterRecovery.GetDrPlansDrPlanCollection[];
+    readonly drPlanCollections?: outputs.DisasterRecovery.GetDrPlansDrPlanCollection[];
     readonly drPlanId?: string;
     readonly drPlanType?: string;
     /**
@@ -88,7 +88,7 @@ export interface GetDrPlansResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The current state of the DR plan.
      */

@@ -29,7 +29,7 @@ public final class GetVlansResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The VLAN&#39;s current state.
      * 
@@ -44,7 +44,7 @@ public final class GetVlansResult {
      * @return The list of vlans.
      * 
      */
-    private List<GetVlansVlan> vlans;
+    private @Nullable List<GetVlansVlan> vlans;
 
     private GetVlansResult() {}
     /**
@@ -68,8 +68,8 @@ public final class GetVlansResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The VLAN&#39;s current state.
@@ -90,7 +90,7 @@ public final class GetVlansResult {
      * 
      */
     public List<GetVlansVlan> vlans() {
-        return this.vlans;
+        return this.vlans == null ? List.of() : this.vlans;
     }
 
     public static Builder builder() {
@@ -105,10 +105,10 @@ public final class GetVlansResult {
         private String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetVlansFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String state;
         private @Nullable String vcnId;
-        private List<GetVlansVlan> vlans;
+        private @Nullable List<GetVlansVlan> vlans;
         public Builder() {}
         public Builder(GetVlansResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -140,8 +140,8 @@ public final class GetVlansResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -155,8 +155,8 @@ public final class GetVlansResult {
             return this;
         }
         @CustomType.Setter
-        public Builder vlans(List<GetVlansVlan> vlans) {
-            this.vlans = Objects.requireNonNull(vlans);
+        public Builder vlans(@Nullable List<GetVlansVlan> vlans) {
+            this.vlans = vlans;
             return this;
         }
         public Builder vlans(GetVlansVlan... vlans) {

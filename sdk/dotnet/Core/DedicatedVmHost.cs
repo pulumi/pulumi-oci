@@ -80,13 +80,13 @@ namespace Pulumi.Oci.Core
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// The fault domain for the dedicated virtual machine host's assigned instances. For more information, see [Fault Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm#fault). If you do not specify the fault domain, the system selects one for you. To change the fault domain for a dedicated virtual machine host, delete it and create a new dedicated virtual machine host in the preferred fault domain.
@@ -96,7 +96,7 @@ namespace Pulumi.Oci.Core
         /// Example: `FAULT-DOMAIN-1`
         /// </summary>
         [Output("faultDomain")]
-        public Output<string> FaultDomain { get; private set; } = null!;
+        public Output<string?> FaultDomain { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
@@ -106,43 +106,43 @@ namespace Pulumi.Oci.Core
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// The current available memory of the dedicated VM host, in GBs.
         /// </summary>
         [Output("remainingMemoryInGbs")]
-        public Output<double> RemainingMemoryInGbs { get; private set; } = null!;
+        public Output<double?> RemainingMemoryInGbs { get; private set; } = null!;
 
         /// <summary>
         /// The current available OCPUs of the dedicated VM host.
         /// </summary>
         [Output("remainingOcpus")]
-        public Output<double> RemainingOcpus { get; private set; } = null!;
+        public Output<double?> RemainingOcpus { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the dedicated VM host.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the dedicated VM host was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The current total memory of the dedicated VM host, in GBs.
         /// </summary>
         [Output("totalMemoryInGbs")]
-        public Output<double> TotalMemoryInGbs { get; private set; } = null!;
+        public Output<double?> TotalMemoryInGbs { get; private set; } = null!;
 
         /// <summary>
         /// The current total OCPUs of the dedicated VM host.
         /// </summary>
         [Output("totalOcpus")]
-        public Output<double> TotalOcpus { get; private set; } = null!;
+        public Output<double?> TotalOcpus { get; private set; } = null!;
 
 
         /// <summary>

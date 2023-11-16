@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Smtp Credentials in Oracle Cloud Infrastructure Identity service.
@@ -63,7 +62,7 @@ type GetSmtpCredentialsArgs struct {
 type GetSmtpCredentialsResult struct {
 	Filters []GetSmtpCredentialsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of smtp_credentials.
 	SmtpCredentials []GetSmtpCredentialsSmtpCredential `pulumi:"smtpCredentials"`
 	// The OCID of the user the SMTP credential belongs to.
@@ -109,19 +108,13 @@ func (o GetSmtpCredentialsResultOutput) ToGetSmtpCredentialsResultOutputWithCont
 	return o
 }
 
-func (o GetSmtpCredentialsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetSmtpCredentialsResult] {
-	return pulumix.Output[GetSmtpCredentialsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSmtpCredentialsResultOutput) Filters() GetSmtpCredentialsFilterArrayOutput {
 	return o.ApplyT(func(v GetSmtpCredentialsResult) []GetSmtpCredentialsFilter { return v.Filters }).(GetSmtpCredentialsFilterArrayOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetSmtpCredentialsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSmtpCredentialsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetSmtpCredentialsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSmtpCredentialsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of smtp_credentials.

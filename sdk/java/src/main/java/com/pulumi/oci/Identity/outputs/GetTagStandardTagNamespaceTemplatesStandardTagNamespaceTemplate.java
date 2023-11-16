@@ -6,6 +6,8 @@ package com.pulumi.oci.Identity.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetTagStandardTagNamespaceTemplatesStandardTagNamespaceTemplate {
@@ -13,39 +15,39 @@ public final class GetTagStandardTagNamespaceTemplatesStandardTagNamespaceTempla
      * @return The default description of the tag namespace that users can use to create the tag namespace
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return The reserved name of this standard tag namespace
      * 
      */
-    private String standardTagNamespaceName;
+    private @Nullable String standardTagNamespaceName;
     /**
      * @return The status of the standard tag namespace
      * 
      */
-    private String status;
+    private @Nullable String status;
 
     private GetTagStandardTagNamespaceTemplatesStandardTagNamespaceTemplate() {}
     /**
      * @return The default description of the tag namespace that users can use to create the tag namespace
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return The reserved name of this standard tag namespace
      * 
      */
-    public String standardTagNamespaceName() {
-        return this.standardTagNamespaceName;
+    public Optional<String> standardTagNamespaceName() {
+        return Optional.ofNullable(this.standardTagNamespaceName);
     }
     /**
      * @return The status of the standard tag namespace
      * 
      */
-    public String status() {
-        return this.status;
+    public Optional<String> status() {
+        return Optional.ofNullable(this.status);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetTagStandardTagNamespaceTemplatesStandardTagNamespaceTempla
     }
     @CustomType.Builder
     public static final class Builder {
-        private String description;
-        private String standardTagNamespaceName;
-        private String status;
+        private @Nullable String description;
+        private @Nullable String standardTagNamespaceName;
+        private @Nullable String status;
         public Builder() {}
         public Builder(GetTagStandardTagNamespaceTemplatesStandardTagNamespaceTemplate defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetTagStandardTagNamespaceTemplatesStandardTagNamespaceTempla
         }
 
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder standardTagNamespaceName(String standardTagNamespaceName) {
-            this.standardTagNamespaceName = Objects.requireNonNull(standardTagNamespaceName);
+        public Builder standardTagNamespaceName(@Nullable String standardTagNamespaceName) {
+            this.standardTagNamespaceName = standardTagNamespaceName;
             return this;
         }
         @CustomType.Setter
-        public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+        public Builder status(@Nullable String status) {
+            this.status = status;
             return this;
         }
         public GetTagStandardTagNamespaceTemplatesStandardTagNamespaceTemplate build() {

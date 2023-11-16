@@ -110,23 +110,23 @@ namespace Pulumi.Oci.DatabaseManagement
         /// <summary>
         /// The additional details of the external listener defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> AdditionalDetails;
+        public readonly ImmutableDictionary<string, object>? AdditionalDetails;
         /// <summary>
         /// The directory that stores tracing and logging incidents when Automatic Diagnostic Repository (ADR) is enabled.
         /// </summary>
-        public readonly string AdrHomeDirectory;
+        public readonly string? AdrHomeDirectory;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external database resides.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The name of the external listener.
         /// </summary>
-        public readonly string ComponentName;
+        public readonly string? ComponentName;
         /// <summary>
         /// The user-friendly name for the database. The name does not have to be unique.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// The list of protocol addresses the listener is configured to listen on.
         /// </summary>
@@ -134,52 +134,52 @@ namespace Pulumi.Oci.DatabaseManagement
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
         /// </summary>
-        public readonly string ExternalConnectorId;
+        public readonly string? ExternalConnectorId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB home.
         /// </summary>
-        public readonly string ExternalDbHomeId;
+        public readonly string? ExternalDbHomeId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB node.
         /// </summary>
-        public readonly string ExternalDbNodeId;
+        public readonly string? ExternalDbNodeId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the listener is a part of.
         /// </summary>
-        public readonly string ExternalDbSystemId;
+        public readonly string? ExternalDbSystemId;
         public readonly string ExternalListenerId;
         /// <summary>
         /// The name of the host on which the external listener is running.
         /// </summary>
-        public readonly string HostName;
+        public readonly string? HostName;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Additional information about the current lifecycle state.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// The listener alias.
         /// </summary>
-        public readonly string ListenerAlias;
+        public readonly string? ListenerAlias;
         /// <summary>
         /// The location of the listener configuration file listener.ora.
         /// </summary>
-        public readonly string ListenerOraLocation;
+        public readonly string? ListenerOraLocation;
         /// <summary>
         /// The type of listener.
         /// </summary>
-        public readonly string ListenerType;
+        public readonly string? ListenerType;
         /// <summary>
         /// The destination directory of the listener log file.
         /// </summary>
-        public readonly string LogDirectory;
+        public readonly string? LogDirectory;
         /// <summary>
         /// The Oracle home location of the listener.
         /// </summary>
-        public readonly string OracleHome;
+        public readonly string? OracleHome;
         /// <summary>
         /// The list of ASMs that are serviced by the listener.
         /// </summary>
@@ -191,77 +191,77 @@ namespace Pulumi.Oci.DatabaseManagement
         /// <summary>
         /// The current lifecycle state of the external listener.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The date and time the external listener was created.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The date and time the external listener was last updated.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
         /// <summary>
         /// The destination directory of the listener trace file.
         /// </summary>
-        public readonly string TraceDirectory;
+        public readonly string? TraceDirectory;
         /// <summary>
         /// The listener version.
         /// </summary>
-        public readonly string Version;
+        public readonly string? Version;
 
         [OutputConstructor]
         private GetExternalListenerResult(
-            ImmutableDictionary<string, object> additionalDetails,
+            ImmutableDictionary<string, object>? additionalDetails,
 
-            string adrHomeDirectory,
+            string? adrHomeDirectory,
 
-            string compartmentId,
+            string? compartmentId,
 
-            string componentName,
+            string? componentName,
 
-            string displayName,
+            string? displayName,
 
             ImmutableArray<Outputs.GetExternalListenerEndpointResult> endpoints,
 
-            string externalConnectorId,
+            string? externalConnectorId,
 
-            string externalDbHomeId,
+            string? externalDbHomeId,
 
-            string externalDbNodeId,
+            string? externalDbNodeId,
 
-            string externalDbSystemId,
+            string? externalDbSystemId,
 
             string externalListenerId,
 
-            string hostName,
+            string? hostName,
 
-            string id,
+            string? id,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string listenerAlias,
+            string? listenerAlias,
 
-            string listenerOraLocation,
+            string? listenerOraLocation,
 
-            string listenerType,
+            string? listenerType,
 
-            string logDirectory,
+            string? logDirectory,
 
-            string oracleHome,
+            string? oracleHome,
 
             ImmutableArray<Outputs.GetExternalListenerServicedAsmResult> servicedAsms,
 
             ImmutableArray<Outputs.GetExternalListenerServicedDatabaseResult> servicedDatabases,
 
-            string state,
+            string? state,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated,
+            string? timeUpdated,
 
-            string traceDirectory,
+            string? traceDirectory,
 
-            string version)
+            string? version)
         {
             AdditionalDetails = additionalDetails;
             AdrHomeDirectory = adrHomeDirectory;

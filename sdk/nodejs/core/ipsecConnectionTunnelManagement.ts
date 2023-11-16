@@ -81,44 +81,44 @@ export class IpsecConnectionTunnelManagement extends pulumi.CustomResource {
     /**
      * The list of virtual circuit [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s over which your network can reach this tunnel.
      */
-    public /*out*/ readonly associatedVirtualCircuits!: pulumi.Output<string[]>;
+    public /*out*/ readonly associatedVirtualCircuits!: pulumi.Output<string[] | undefined>;
     /**
      * Information for establishing a BGP session for the IPSec tunnel. Required if the tunnel uses BGP dynamic routing.
      *
      * If the tunnel instead uses static routing, you may optionally provide this object and set an IP address for one or both ends of the IPSec tunnel for the purposes of troubleshooting or monitoring the tunnel.
      */
-    public readonly bgpSessionInfos!: pulumi.Output<outputs.Core.IpsecConnectionTunnelManagementBgpSessionInfo[]>;
+    public readonly bgpSessionInfos!: pulumi.Output<outputs.Core.IpsecConnectionTunnelManagementBgpSessionInfo[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the tunnel.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    public /*out*/ readonly compartmentId!: pulumi.Output<string | undefined>;
     /**
      * The IP address of the CPE device's VPN headend.  Example: `203.0.113.22`
      */
-    public /*out*/ readonly cpeIp!: pulumi.Output<string>;
+    public /*out*/ readonly cpeIp!: pulumi.Output<string | undefined>;
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    public readonly displayName!: pulumi.Output<string | undefined>;
     public readonly dpdConfigs!: pulumi.Output<outputs.Core.IpsecConnectionTunnelManagementDpdConfig[] | undefined>;
-    public /*out*/ readonly dpdMode!: pulumi.Output<string>;
-    public /*out*/ readonly dpdTimeoutInSec!: pulumi.Output<number>;
+    public /*out*/ readonly dpdMode!: pulumi.Output<string | undefined>;
+    public /*out*/ readonly dpdTimeoutInSec!: pulumi.Output<number | undefined>;
     /**
      * Configuration information used by the encryption domain policy. Required if the tunnel uses POLICY routing.
      */
-    public readonly encryptionDomainConfig!: pulumi.Output<outputs.Core.IpsecConnectionTunnelManagementEncryptionDomainConfig>;
+    public readonly encryptionDomainConfig!: pulumi.Output<outputs.Core.IpsecConnectionTunnelManagementEncryptionDomainConfig | undefined>;
     /**
      * Internet Key Exchange protocol version.
      */
-    public readonly ikeVersion!: pulumi.Output<string>;
+    public readonly ikeVersion!: pulumi.Output<string | undefined>;
     /**
      * The OCID of the IPSec connection.
      */
     public readonly ipsecId!: pulumi.Output<string>;
-    public /*out*/ readonly natTranslationEnabled!: pulumi.Output<string>;
-    public /*out*/ readonly oracleCanInitiate!: pulumi.Output<string>;
-    public /*out*/ readonly phaseOneDetails!: pulumi.Output<outputs.Core.IpsecConnectionTunnelManagementPhaseOneDetail[]>;
-    public /*out*/ readonly phaseTwoDetails!: pulumi.Output<outputs.Core.IpsecConnectionTunnelManagementPhaseTwoDetail[]>;
+    public /*out*/ readonly natTranslationEnabled!: pulumi.Output<string | undefined>;
+    public /*out*/ readonly oracleCanInitiate!: pulumi.Output<string | undefined>;
+    public /*out*/ readonly phaseOneDetails!: pulumi.Output<outputs.Core.IpsecConnectionTunnelManagementPhaseOneDetail[] | undefined>;
+    public /*out*/ readonly phaseTwoDetails!: pulumi.Output<outputs.Core.IpsecConnectionTunnelManagementPhaseTwoDetail[] | undefined>;
     /**
      * The type of routing to use for this tunnel (either BGP dynamic routing, STATIC routing or POLICY routing).
      */
@@ -126,23 +126,23 @@ export class IpsecConnectionTunnelManagement extends pulumi.CustomResource {
     /**
      * The shared secret (pre-shared key) to use for the IPSec tunnel. If you don't provide a value, Oracle generates a value for you. You can specify your own shared secret later if you like with [UpdateIPSecConnectionTunnelSharedSecret](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnelSharedSecret/UpdateIPSecConnectionTunnelSharedSecret).  Example: `EXAMPLEToUis6j1c.p8G.dVQxcmdfMO0yXMLi.lZTbYCMDGu4V8o`
      */
-    public readonly sharedSecret!: pulumi.Output<string>;
+    public readonly sharedSecret!: pulumi.Output<string | undefined>;
     /**
      * The IPSec connection's tunnel's lifecycle state.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The tunnel's current state.
      */
-    public /*out*/ readonly status!: pulumi.Output<string>;
+    public /*out*/ readonly status!: pulumi.Output<string | undefined>;
     /**
      * The date and time the IPSec connection tunnel was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * When the status of the tunnel last changed, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeStatusUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeStatusUpdated!: pulumi.Output<string | undefined>;
     /**
      * The OCID of the IPSec connection's tunnel.
      */
@@ -150,7 +150,7 @@ export class IpsecConnectionTunnelManagement extends pulumi.CustomResource {
     /**
      * The IP address of Oracle's VPN headend.  Example: `129.146.17.50`
      */
-    public /*out*/ readonly vpnIp!: pulumi.Output<string>;
+    public /*out*/ readonly vpnIp!: pulumi.Output<string | undefined>;
 
     /**
      * Create a IpsecConnectionTunnelManagement resource with the given unique name, arguments, and options.

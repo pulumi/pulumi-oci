@@ -6,6 +6,8 @@ package com.pulumi.oci.Artifacts.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetContainerImageVersion {
@@ -13,39 +15,39 @@ public final class GetContainerImageVersion {
      * @return The OCID of the user or principal that pushed the version.
      * 
      */
-    private String createdBy;
+    private @Nullable String createdBy;
     /**
      * @return The creation time of the version.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The version name.
      * 
      */
-    private String version;
+    private @Nullable String version;
 
     private GetContainerImageVersion() {}
     /**
      * @return The OCID of the user or principal that pushed the version.
      * 
      */
-    public String createdBy() {
-        return this.createdBy;
+    public Optional<String> createdBy() {
+        return Optional.ofNullable(this.createdBy);
     }
     /**
      * @return The creation time of the version.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The version name.
      * 
      */
-    public String version() {
-        return this.version;
+    public Optional<String> version() {
+        return Optional.ofNullable(this.version);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetContainerImageVersion {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String createdBy;
-        private String timeCreated;
-        private String version;
+        private @Nullable String createdBy;
+        private @Nullable String timeCreated;
+        private @Nullable String version;
         public Builder() {}
         public Builder(GetContainerImageVersion defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetContainerImageVersion {
         }
 
         @CustomType.Setter
-        public Builder createdBy(String createdBy) {
-            this.createdBy = Objects.requireNonNull(createdBy);
+        public Builder createdBy(@Nullable String createdBy) {
+            this.createdBy = createdBy;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder version(String version) {
-            this.version = Objects.requireNonNull(version);
+        public Builder version(@Nullable String version) {
+            this.version = version;
             return this;
         }
         public GetContainerImageVersion build() {

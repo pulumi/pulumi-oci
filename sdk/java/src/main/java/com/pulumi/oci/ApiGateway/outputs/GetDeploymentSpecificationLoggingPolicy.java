@@ -8,6 +8,7 @@ import com.pulumi.oci.ApiGateway.outputs.GetDeploymentSpecificationLoggingPolicy
 import com.pulumi.oci.ApiGateway.outputs.GetDeploymentSpecificationLoggingPolicyExecutionLog;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDeploymentSpecificationLoggingPolicy {
@@ -15,12 +16,12 @@ public final class GetDeploymentSpecificationLoggingPolicy {
      * @return Configures the logging policies for the access logs of an API Deployment.
      * 
      */
-    private List<GetDeploymentSpecificationLoggingPolicyAccessLog> accessLogs;
+    private @Nullable List<GetDeploymentSpecificationLoggingPolicyAccessLog> accessLogs;
     /**
      * @return Configures the logging policies for the execution logs of an API Deployment.
      * 
      */
-    private List<GetDeploymentSpecificationLoggingPolicyExecutionLog> executionLogs;
+    private @Nullable List<GetDeploymentSpecificationLoggingPolicyExecutionLog> executionLogs;
 
     private GetDeploymentSpecificationLoggingPolicy() {}
     /**
@@ -28,14 +29,14 @@ public final class GetDeploymentSpecificationLoggingPolicy {
      * 
      */
     public List<GetDeploymentSpecificationLoggingPolicyAccessLog> accessLogs() {
-        return this.accessLogs;
+        return this.accessLogs == null ? List.of() : this.accessLogs;
     }
     /**
      * @return Configures the logging policies for the execution logs of an API Deployment.
      * 
      */
     public List<GetDeploymentSpecificationLoggingPolicyExecutionLog> executionLogs() {
-        return this.executionLogs;
+        return this.executionLogs == null ? List.of() : this.executionLogs;
     }
 
     public static Builder builder() {
@@ -47,8 +48,8 @@ public final class GetDeploymentSpecificationLoggingPolicy {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetDeploymentSpecificationLoggingPolicyAccessLog> accessLogs;
-        private List<GetDeploymentSpecificationLoggingPolicyExecutionLog> executionLogs;
+        private @Nullable List<GetDeploymentSpecificationLoggingPolicyAccessLog> accessLogs;
+        private @Nullable List<GetDeploymentSpecificationLoggingPolicyExecutionLog> executionLogs;
         public Builder() {}
         public Builder(GetDeploymentSpecificationLoggingPolicy defaults) {
     	      Objects.requireNonNull(defaults);
@@ -57,16 +58,16 @@ public final class GetDeploymentSpecificationLoggingPolicy {
         }
 
         @CustomType.Setter
-        public Builder accessLogs(List<GetDeploymentSpecificationLoggingPolicyAccessLog> accessLogs) {
-            this.accessLogs = Objects.requireNonNull(accessLogs);
+        public Builder accessLogs(@Nullable List<GetDeploymentSpecificationLoggingPolicyAccessLog> accessLogs) {
+            this.accessLogs = accessLogs;
             return this;
         }
         public Builder accessLogs(GetDeploymentSpecificationLoggingPolicyAccessLog... accessLogs) {
             return accessLogs(List.of(accessLogs));
         }
         @CustomType.Setter
-        public Builder executionLogs(List<GetDeploymentSpecificationLoggingPolicyExecutionLog> executionLogs) {
-            this.executionLogs = Objects.requireNonNull(executionLogs);
+        public Builder executionLogs(@Nullable List<GetDeploymentSpecificationLoggingPolicyExecutionLog> executionLogs) {
+            this.executionLogs = executionLogs;
             return this;
         }
         public Builder executionLogs(GetDeploymentSpecificationLoggingPolicyExecutionLog... executionLogs) {

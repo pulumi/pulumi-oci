@@ -9,6 +9,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDetectionModelsModelCollectionItemModelTrainingDetail {
@@ -16,63 +18,63 @@ public final class GetDetectionModelsModelCollectionItemModelTrainingDetail {
      * @return User can choose specific algorithm for training.
      * 
      */
-    private String algorithmHint;
+    private @Nullable String algorithmHint;
     /**
      * @return The list of OCIDs of the data assets to train the model. The dataAssets have to be in the same project where the ai model would reside.
      * 
      */
-    private List<String> dataAssetIds;
+    private @Nullable List<String> dataAssetIds;
     /**
      * @return A target model accuracy metric user provides as their requirement
      * 
      */
-    private Double targetFap;
+    private @Nullable Double targetFap;
     /**
      * @return Fraction of total data that is used for training the model. The remaining is used for validation of the model.
      * 
      */
-    private Double trainingFraction;
+    private @Nullable Double trainingFraction;
     /**
      * @return Window size defined during training or deduced by the algorithm.
      * 
      */
-    private Integer windowSize;
+    private @Nullable Integer windowSize;
 
     private GetDetectionModelsModelCollectionItemModelTrainingDetail() {}
     /**
      * @return User can choose specific algorithm for training.
      * 
      */
-    public String algorithmHint() {
-        return this.algorithmHint;
+    public Optional<String> algorithmHint() {
+        return Optional.ofNullable(this.algorithmHint);
     }
     /**
      * @return The list of OCIDs of the data assets to train the model. The dataAssets have to be in the same project where the ai model would reside.
      * 
      */
     public List<String> dataAssetIds() {
-        return this.dataAssetIds;
+        return this.dataAssetIds == null ? List.of() : this.dataAssetIds;
     }
     /**
      * @return A target model accuracy metric user provides as their requirement
      * 
      */
-    public Double targetFap() {
-        return this.targetFap;
+    public Optional<Double> targetFap() {
+        return Optional.ofNullable(this.targetFap);
     }
     /**
      * @return Fraction of total data that is used for training the model. The remaining is used for validation of the model.
      * 
      */
-    public Double trainingFraction() {
-        return this.trainingFraction;
+    public Optional<Double> trainingFraction() {
+        return Optional.ofNullable(this.trainingFraction);
     }
     /**
      * @return Window size defined during training or deduced by the algorithm.
      * 
      */
-    public Integer windowSize() {
-        return this.windowSize;
+    public Optional<Integer> windowSize() {
+        return Optional.ofNullable(this.windowSize);
     }
 
     public static Builder builder() {
@@ -84,11 +86,11 @@ public final class GetDetectionModelsModelCollectionItemModelTrainingDetail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String algorithmHint;
-        private List<String> dataAssetIds;
-        private Double targetFap;
-        private Double trainingFraction;
-        private Integer windowSize;
+        private @Nullable String algorithmHint;
+        private @Nullable List<String> dataAssetIds;
+        private @Nullable Double targetFap;
+        private @Nullable Double trainingFraction;
+        private @Nullable Integer windowSize;
         public Builder() {}
         public Builder(GetDetectionModelsModelCollectionItemModelTrainingDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -100,31 +102,31 @@ public final class GetDetectionModelsModelCollectionItemModelTrainingDetail {
         }
 
         @CustomType.Setter
-        public Builder algorithmHint(String algorithmHint) {
-            this.algorithmHint = Objects.requireNonNull(algorithmHint);
+        public Builder algorithmHint(@Nullable String algorithmHint) {
+            this.algorithmHint = algorithmHint;
             return this;
         }
         @CustomType.Setter
-        public Builder dataAssetIds(List<String> dataAssetIds) {
-            this.dataAssetIds = Objects.requireNonNull(dataAssetIds);
+        public Builder dataAssetIds(@Nullable List<String> dataAssetIds) {
+            this.dataAssetIds = dataAssetIds;
             return this;
         }
         public Builder dataAssetIds(String... dataAssetIds) {
             return dataAssetIds(List.of(dataAssetIds));
         }
         @CustomType.Setter
-        public Builder targetFap(Double targetFap) {
-            this.targetFap = Objects.requireNonNull(targetFap);
+        public Builder targetFap(@Nullable Double targetFap) {
+            this.targetFap = targetFap;
             return this;
         }
         @CustomType.Setter
-        public Builder trainingFraction(Double trainingFraction) {
-            this.trainingFraction = Objects.requireNonNull(trainingFraction);
+        public Builder trainingFraction(@Nullable Double trainingFraction) {
+            this.trainingFraction = trainingFraction;
             return this;
         }
         @CustomType.Setter
-        public Builder windowSize(Integer windowSize) {
-            this.windowSize = Objects.requireNonNull(windowSize);
+        public Builder windowSize(@Nullable Integer windowSize) {
+            this.windowSize = windowSize;
             return this;
         }
         public GetDetectionModelsModelCollectionItemModelTrainingDetail build() {

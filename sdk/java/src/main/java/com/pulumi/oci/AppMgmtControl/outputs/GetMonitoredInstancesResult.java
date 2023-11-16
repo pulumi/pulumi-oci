@@ -29,12 +29,12 @@ public final class GetMonitoredInstancesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of monitored_instance_collection.
      * 
      */
-    private List<GetMonitoredInstancesMonitoredInstanceCollection> monitoredInstanceCollections;
+    private @Nullable List<GetMonitoredInstancesMonitoredInstanceCollection> monitoredInstanceCollections;
 
     private GetMonitoredInstancesResult() {}
     /**
@@ -58,15 +58,15 @@ public final class GetMonitoredInstancesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of monitored_instance_collection.
      * 
      */
     public List<GetMonitoredInstancesMonitoredInstanceCollection> monitoredInstanceCollections() {
-        return this.monitoredInstanceCollections;
+        return this.monitoredInstanceCollections == null ? List.of() : this.monitoredInstanceCollections;
     }
 
     public static Builder builder() {
@@ -81,8 +81,8 @@ public final class GetMonitoredInstancesResult {
         private String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetMonitoredInstancesFilter> filters;
-        private String id;
-        private List<GetMonitoredInstancesMonitoredInstanceCollection> monitoredInstanceCollections;
+        private @Nullable String id;
+        private @Nullable List<GetMonitoredInstancesMonitoredInstanceCollection> monitoredInstanceCollections;
         public Builder() {}
         public Builder(GetMonitoredInstancesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -112,13 +112,13 @@ public final class GetMonitoredInstancesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder monitoredInstanceCollections(List<GetMonitoredInstancesMonitoredInstanceCollection> monitoredInstanceCollections) {
-            this.monitoredInstanceCollections = Objects.requireNonNull(monitoredInstanceCollections);
+        public Builder monitoredInstanceCollections(@Nullable List<GetMonitoredInstancesMonitoredInstanceCollection> monitoredInstanceCollections) {
+            this.monitoredInstanceCollections = monitoredInstanceCollections;
             return this;
         }
         public Builder monitoredInstanceCollections(GetMonitoredInstancesMonitoredInstanceCollection... monitoredInstanceCollections) {

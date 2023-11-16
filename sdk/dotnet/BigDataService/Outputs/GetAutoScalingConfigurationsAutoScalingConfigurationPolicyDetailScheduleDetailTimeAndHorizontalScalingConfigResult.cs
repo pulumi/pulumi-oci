@@ -13,14 +13,14 @@ namespace Pulumi.Oci.BigDataService.Outputs
     [OutputType]
     public sealed class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigResult
     {
-        public readonly int TargetNodeCount;
-        public readonly string TimeRecurrence;
+        public readonly int? TargetNodeCount;
+        public readonly string? TimeRecurrence;
 
         [OutputConstructor]
         private GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfigResult(
-            int targetNodeCount,
+            int? targetNodeCount,
 
-            string timeRecurrence)
+            string? timeRecurrence)
         {
             TargetNodeCount = targetNodeCount;
             TimeRecurrence = timeRecurrence;

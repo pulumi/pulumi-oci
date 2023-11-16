@@ -16,43 +16,43 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// <summary>
         /// Addon group info, a namespace concept that groups addons with similar functionalities.
         /// </summary>
-        public readonly string AddonGroup;
+        public readonly string? AddonGroup;
         /// <summary>
         /// Addon definition schema version to validate addon.
         /// </summary>
-        public readonly string AddonSchemaVersion;
+        public readonly string? AddonSchemaVersion;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// Information about the addon version.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// Is it an essential addon for cluster operation or not.
         /// </summary>
-        public readonly bool IsEssential;
+        public readonly bool? IsEssential;
         /// <summary>
         /// Name of the addon and it would be unique.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The life cycle state of the addon.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, object>? SystemTags;
         /// <summary>
         /// The time the work request was created.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The resources this work request affects.
         /// </summary>
@@ -60,25 +60,25 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
 
         [OutputConstructor]
         private GetAddonOptionsAddonOptionResult(
-            string addonGroup,
+            string? addonGroup,
 
-            string addonSchemaVersion,
+            string? addonSchemaVersion,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string description,
+            string? description,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            bool isEssential,
+            bool? isEssential,
 
-            string name,
+            string? name,
 
-            string state,
+            string? state,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, object>? systemTags,
 
-            string timeCreated,
+            string? timeCreated,
 
             ImmutableArray<Outputs.GetAddonOptionsAddonOptionVersionResult> versions)
         {

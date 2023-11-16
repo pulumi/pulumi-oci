@@ -24,7 +24,7 @@ public final class GetTablesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Human-friendly table name, immutable.
      * 
@@ -39,7 +39,7 @@ public final class GetTablesResult {
      * @return The list of table_collection.
      * 
      */
-    private List<GetTablesTableCollection> tableCollections;
+    private @Nullable List<GetTablesTableCollection> tableCollections;
 
     private GetTablesResult() {}
     /**
@@ -56,8 +56,8 @@ public final class GetTablesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Human-friendly table name, immutable.
@@ -78,7 +78,7 @@ public final class GetTablesResult {
      * 
      */
     public List<GetTablesTableCollection> tableCollections() {
-        return this.tableCollections;
+        return this.tableCollections == null ? List.of() : this.tableCollections;
     }
 
     public static Builder builder() {
@@ -92,10 +92,10 @@ public final class GetTablesResult {
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetTablesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String name;
         private @Nullable String state;
-        private List<GetTablesTableCollection> tableCollections;
+        private @Nullable List<GetTablesTableCollection> tableCollections;
         public Builder() {}
         public Builder(GetTablesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -121,8 +121,8 @@ public final class GetTablesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -136,8 +136,8 @@ public final class GetTablesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder tableCollections(List<GetTablesTableCollection> tableCollections) {
-            this.tableCollections = Objects.requireNonNull(tableCollections);
+        public Builder tableCollections(@Nullable List<GetTablesTableCollection> tableCollections) {
+            this.tableCollections = tableCollections;
             return this;
         }
         public Builder tableCollections(GetTablesTableCollection... tableCollections) {

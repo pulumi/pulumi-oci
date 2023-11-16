@@ -108,24 +108,24 @@ namespace Pulumi.Oci.DatabaseManagement
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         public readonly string DbManagementPrivateEndpointId;
         /// <summary>
         /// The description of the Database Management private endpoint.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Specifies whether the Database Management private endpoint can be used for Oracle Databases in a cluster.
         /// </summary>
-        public readonly bool IsCluster;
+        public readonly bool? IsCluster;
         /// <summary>
         /// The display name of the Database Management private endpoint.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The OCIDs of the Network Security Groups to which the Database Management private endpoint belongs.
         /// </summary>
@@ -133,49 +133,49 @@ namespace Pulumi.Oci.DatabaseManagement
         /// <summary>
         /// The IP addresses assigned to the Database Management private endpoint.
         /// </summary>
-        public readonly string PrivateIp;
+        public readonly string? PrivateIp;
         /// <summary>
         /// The current lifecycle state of the Database Management private endpoint.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
         /// </summary>
-        public readonly string SubnetId;
+        public readonly string? SubnetId;
         /// <summary>
         /// The date and time the Database Managament private endpoint was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
         /// </summary>
-        public readonly string VcnId;
+        public readonly string? VcnId;
 
         [OutputConstructor]
         private GetDbManagementPrivateEndpointResult(
-            string compartmentId,
+            string? compartmentId,
 
             string dbManagementPrivateEndpointId,
 
-            string description,
+            string? description,
 
-            string id,
+            string? id,
 
-            bool isCluster,
+            bool? isCluster,
 
-            string name,
+            string? name,
 
             ImmutableArray<string> nsgIds,
 
-            string privateIp,
+            string? privateIp,
 
-            string state,
+            string? state,
 
-            string subnetId,
+            string? subnetId,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string vcnId)
+            string? vcnId)
         {
             CompartmentId = compartmentId;
             DbManagementPrivateEndpointId = dbManagementPrivateEndpointId;

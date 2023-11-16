@@ -16,15 +16,15 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// <summary>
         /// Data source event comments
         /// </summary>
-        public readonly string Comments;
+        public readonly string? Comments;
         /// <summary>
         /// DataSource OCID
         /// </summary>
-        public readonly string DataSourceId;
+        public readonly string? DataSourceId;
         /// <summary>
         /// Data source event date time
         /// </summary>
-        public readonly string EventDate;
+        public readonly string? EventDate;
         /// <summary>
         /// Event info of a data source.
         /// </summary>
@@ -32,31 +32,31 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// <summary>
         /// A filter to return only resource their region matches the given region.
         /// </summary>
-        public readonly string Region;
+        public readonly string? Region;
         /// <summary>
         /// Current data source event info status
         /// </summary>
-        public readonly string Status;
+        public readonly string? Status;
         /// <summary>
         /// Data source event created time
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
 
         [OutputConstructor]
         private GetDataSourceEventItemResult(
-            string comments,
+            string? comments,
 
-            string dataSourceId,
+            string? dataSourceId,
 
-            string eventDate,
+            string? eventDate,
 
             ImmutableArray<Outputs.GetDataSourceEventItemEventInfoResult> eventInfos,
 
-            string region,
+            string? region,
 
-            string status,
+            string? status,
 
-            string timeCreated)
+            string? timeCreated)
         {
             Comments = comments;
             DataSourceId = dataSourceId;

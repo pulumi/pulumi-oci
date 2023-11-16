@@ -16,10 +16,10 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// A filter to return only items related to specific schema name.
         /// </summary>
-        public readonly string SchemaName;
+        public readonly string? SchemaName;
 
         [OutputConstructor]
-        private GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemResult(string schemaName)
+        private GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemResult(string? schemaName)
         {
             SchemaName = schemaName;
         }

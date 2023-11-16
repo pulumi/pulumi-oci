@@ -16,17 +16,17 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// <summary>
         /// A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
         /// </summary>
-        public readonly double MemoryInGbs;
+        public readonly double? MemoryInGbs;
         /// <summary>
         /// A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
         /// </summary>
-        public readonly double Ocpus;
+        public readonly double? Ocpus;
 
         [OutputConstructor]
         private GetPipelineStepDetailStepInfrastructureConfigurationDetailShapeConfigDetailResult(
-            double memoryInGbs,
+            double? memoryInGbs,
 
-            double ocpus)
+            double? ocpus)
         {
             MemoryInGbs = memoryInGbs;
             Ocpus = ocpus;

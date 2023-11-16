@@ -46,9 +46,6 @@ class GetLogSavedSearchesResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment that the resource belongs to.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -58,7 +55,7 @@ class GetLogSavedSearchesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -71,18 +68,12 @@ class GetLogSavedSearchesResult:
 
     @property
     @pulumi.getter(name="logSavedSearchSummaryCollections")
-    def log_saved_search_summary_collections(self) -> Sequence['outputs.GetLogSavedSearchesLogSavedSearchSummaryCollectionResult']:
-        """
-        The list of log_saved_search_summary_collection.
-        """
+    def log_saved_search_summary_collections(self) -> Optional[Sequence['outputs.GetLogSavedSearchesLogSavedSearchSummaryCollectionResult']]:
         return pulumi.get(self, "log_saved_search_summary_collections")
 
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        The user-friendly display name. This must be unique within the enclosing resource, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "name")
 
 
@@ -106,25 +97,7 @@ def get_log_saved_searches(compartment_id: Optional[str] = None,
                            name: Optional[str] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetLogSavedSearchesResult:
     """
-    This data source provides the list of Log Saved Searches in Oracle Cloud Infrastructure Logging service.
-
-    Lists LogSavedSearches for this compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_log_saved_searches = oci.Logging.get_log_saved_searches(compartment_id=var["compartment_id"],
-        log_saved_search_id=oci_logging_log_saved_search["test_log_saved_search"]["id"],
-        name=var["log_saved_search_name"])
-    ```
-
-
-    :param str compartment_id: Compartment OCID to list resources in. See compartmentIdInSubtree for nested compartments traversal.
-    :param str log_saved_search_id: OCID of the LogSavedSearch.
-    :param str name: Resource name.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -150,24 +123,6 @@ def get_log_saved_searches_output(compartment_id: Optional[pulumi.Input[str]] = 
                                   name: Optional[pulumi.Input[Optional[str]]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetLogSavedSearchesResult]:
     """
-    This data source provides the list of Log Saved Searches in Oracle Cloud Infrastructure Logging service.
-
-    Lists LogSavedSearches for this compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_log_saved_searches = oci.Logging.get_log_saved_searches(compartment_id=var["compartment_id"],
-        log_saved_search_id=oci_logging_log_saved_search["test_log_saved_search"]["id"],
-        name=var["log_saved_search_name"])
-    ```
-
-
-    :param str compartment_id: Compartment OCID to list resources in. See compartmentIdInSubtree for nested compartments traversal.
-    :param str log_saved_search_id: OCID of the LogSavedSearch.
-    :param str name: Resource name.
+    Use this data source to access information about an existing resource.
     """
     ...

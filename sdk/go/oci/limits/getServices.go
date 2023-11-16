@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Services in Oracle Cloud Infrastructure Limits service.
@@ -64,7 +63,7 @@ type GetServicesResult struct {
 	CompartmentId string              `pulumi:"compartmentId"`
 	Filters       []GetServicesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of services.
 	Services []GetServicesService `pulumi:"services"`
 }
@@ -108,12 +107,6 @@ func (o GetServicesResultOutput) ToGetServicesResultOutputWithContext(ctx contex
 	return o
 }
 
-func (o GetServicesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetServicesResult] {
-	return pulumix.Output[GetServicesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetServicesResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServicesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -123,8 +116,8 @@ func (o GetServicesResultOutput) Filters() GetServicesFilterArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetServicesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetServicesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetServicesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServicesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of services.

@@ -16,23 +16,23 @@ namespace Pulumi.Oci.ServiceManagerProxy.Outputs
         /// <summary>
         /// Description of the environment link
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// Service environment endpoint type.
         /// </summary>
-        public readonly string EnvironmentType;
+        public readonly string? EnvironmentType;
         /// <summary>
         /// Service environment instance URL.
         /// </summary>
-        public readonly string Url;
+        public readonly string? Url;
 
         [OutputConstructor]
         private GetServiceEnvironmentServiceEnvironmentEndpointResult(
-            string description,
+            string? description,
 
-            string environmentType,
+            string? environmentType,
 
-            string url)
+            string? url)
         {
             Description = description;
             EnvironmentType = environmentType;

@@ -16,11 +16,11 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// <summary>
         /// The name of the availability domain in which this node is placed.
         /// </summary>
-        public readonly string AvailabilityDomain;
+        public readonly string? AvailabilityDomain;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// An error that may be associated with the node.
         /// </summary>
@@ -28,77 +28,77 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// <summary>
         /// The fault domain of this node.
         /// </summary>
-        public readonly string FaultDomain;
+        public readonly string? FaultDomain;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The OCID of the compute instance backing this node.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The version of Kubernetes this node is running.
         /// </summary>
-        public readonly string KubernetesVersion;
+        public readonly string? KubernetesVersion;
         /// <summary>
         /// Details about the state of the node.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// The name of the node.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The OCID of the node pool.
         /// </summary>
-        public readonly string NodePoolId;
+        public readonly string? NodePoolId;
         /// <summary>
         /// The private IP address of this node.
         /// </summary>
-        public readonly string PrivateIp;
+        public readonly string? PrivateIp;
         /// <summary>
         /// The public IP address of this node.
         /// </summary>
-        public readonly string PublicIp;
+        public readonly string? PublicIp;
         /// <summary>
         /// The state of the nodepool.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The OCID of the subnet in which this node is placed.
         /// </summary>
-        public readonly string SubnetId;
+        public readonly string? SubnetId;
 
         [OutputConstructor]
         private GetNodePoolNodeResult(
-            string availabilityDomain,
+            string? availabilityDomain,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
             ImmutableArray<Outputs.GetNodePoolNodeErrorResult> errors,
 
-            string faultDomain,
+            string? faultDomain,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            string kubernetesVersion,
+            string? kubernetesVersion,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string name,
+            string? name,
 
-            string nodePoolId,
+            string? nodePoolId,
 
-            string privateIp,
+            string? privateIp,
 
-            string publicIp,
+            string? publicIp,
 
-            string state,
+            string? state,
 
-            string subnetId)
+            string? subnetId)
         {
             AvailabilityDomain = availabilityDomain;
             DefinedTags = definedTags;

@@ -87,7 +87,7 @@ export interface GetAtCustomerCccUpgradeSchedulesResult {
     /**
      * The list of ccc_upgrade_schedule_collection.
      */
-    readonly cccUpgradeScheduleCollections: outputs.ComputeCloud.GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollection[];
+    readonly cccUpgradeScheduleCollections?: outputs.ComputeCloud.GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollection[];
     readonly cccUpgradeScheduleId?: string;
     /**
      * Compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Compute Cloud@Customer upgrade schedule.
@@ -103,7 +103,7 @@ export interface GetAtCustomerCccUpgradeSchedulesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Lifecycle state of the resource.
      */

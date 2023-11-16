@@ -43,17 +43,17 @@ export interface GetUiPasswordArgs {
  * A collection of values returned by getUiPassword.
  */
 export interface GetUiPasswordResult {
-    readonly id: string;
-    readonly inactiveStatus: string;
-    readonly password: string;
+    readonly id?: string;
+    readonly inactiveStatus?: string;
+    readonly password?: string;
     /**
      * The password's current state.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * Date and time the password was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The OCID of the user.
      */

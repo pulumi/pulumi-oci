@@ -16,35 +16,35 @@ namespace Pulumi.Oci.VnMonitoring.Outputs
         /// <summary>
         /// The destination port to use in a `PathAnalyzerTest` resource.
         /// </summary>
-        public readonly int DestinationPort;
+        public readonly int? DestinationPort;
         /// <summary>
         /// The [ICMP](https://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml) code.
         /// </summary>
-        public readonly int IcmpCode;
+        public readonly int? IcmpCode;
         /// <summary>
         /// The [ICMP](https://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml) type.
         /// </summary>
-        public readonly int IcmpType;
+        public readonly int? IcmpType;
         /// <summary>
         /// The source port to use in a `PathAnalyzerTest` resource.
         /// </summary>
-        public readonly int SourcePort;
+        public readonly int? SourcePort;
         /// <summary>
         /// The type of the `Endpoint`.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
 
         [OutputConstructor]
         private GetPathAnalyzerTestProtocolParameterResult(
-            int destinationPort,
+            int? destinationPort,
 
-            int icmpCode,
+            int? icmpCode,
 
-            int icmpType,
+            int? icmpType,
 
-            int sourcePort,
+            int? sourcePort,
 
-            string type)
+            string? type)
         {
             DestinationPort = destinationPort;
             IcmpCode = icmpCode;

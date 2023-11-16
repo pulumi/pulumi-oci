@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DataIntegration.outputs.GetWorkspaceFolderMetadataCountStatisticObjectTypeCountList;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetWorkspaceFolderMetadataCountStatistic {
@@ -14,7 +15,7 @@ public final class GetWorkspaceFolderMetadataCountStatistic {
      * @return The array of statistics.
      * 
      */
-    private List<GetWorkspaceFolderMetadataCountStatisticObjectTypeCountList> objectTypeCountLists;
+    private @Nullable List<GetWorkspaceFolderMetadataCountStatisticObjectTypeCountList> objectTypeCountLists;
 
     private GetWorkspaceFolderMetadataCountStatistic() {}
     /**
@@ -22,7 +23,7 @@ public final class GetWorkspaceFolderMetadataCountStatistic {
      * 
      */
     public List<GetWorkspaceFolderMetadataCountStatisticObjectTypeCountList> objectTypeCountLists() {
-        return this.objectTypeCountLists;
+        return this.objectTypeCountLists == null ? List.of() : this.objectTypeCountLists;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetWorkspaceFolderMetadataCountStatistic {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetWorkspaceFolderMetadataCountStatisticObjectTypeCountList> objectTypeCountLists;
+        private @Nullable List<GetWorkspaceFolderMetadataCountStatisticObjectTypeCountList> objectTypeCountLists;
         public Builder() {}
         public Builder(GetWorkspaceFolderMetadataCountStatistic defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetWorkspaceFolderMetadataCountStatistic {
         }
 
         @CustomType.Setter
-        public Builder objectTypeCountLists(List<GetWorkspaceFolderMetadataCountStatisticObjectTypeCountList> objectTypeCountLists) {
-            this.objectTypeCountLists = Objects.requireNonNull(objectTypeCountLists);
+        public Builder objectTypeCountLists(@Nullable List<GetWorkspaceFolderMetadataCountStatisticObjectTypeCountList> objectTypeCountLists) {
+            this.objectTypeCountLists = objectTypeCountLists;
             return this;
         }
         public Builder objectTypeCountLists(GetWorkspaceFolderMetadataCountStatisticObjectTypeCountList... objectTypeCountLists) {

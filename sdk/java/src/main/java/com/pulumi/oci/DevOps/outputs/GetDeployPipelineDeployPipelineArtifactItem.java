@@ -8,6 +8,8 @@ import com.pulumi.oci.DevOps.outputs.GetDeployPipelineDeployPipelineArtifactItem
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDeployPipelineDeployPipelineArtifactItem {
@@ -15,39 +17,39 @@ public final class GetDeployPipelineDeployPipelineArtifactItem {
      * @return The OCID of an artifact
      * 
      */
-    private String deployArtifactId;
+    private @Nullable String deployArtifactId;
     /**
      * @return List of stages.
      * 
      */
-    private List<GetDeployPipelineDeployPipelineArtifactItemDeployPipelineStage> deployPipelineStages;
+    private @Nullable List<GetDeployPipelineDeployPipelineArtifactItemDeployPipelineStage> deployPipelineStages;
     /**
      * @return Deployment pipeline display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
 
     private GetDeployPipelineDeployPipelineArtifactItem() {}
     /**
      * @return The OCID of an artifact
      * 
      */
-    public String deployArtifactId() {
-        return this.deployArtifactId;
+    public Optional<String> deployArtifactId() {
+        return Optional.ofNullable(this.deployArtifactId);
     }
     /**
      * @return List of stages.
      * 
      */
     public List<GetDeployPipelineDeployPipelineArtifactItemDeployPipelineStage> deployPipelineStages() {
-        return this.deployPipelineStages;
+        return this.deployPipelineStages == null ? List.of() : this.deployPipelineStages;
     }
     /**
      * @return Deployment pipeline display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
 
     public static Builder builder() {
@@ -59,9 +61,9 @@ public final class GetDeployPipelineDeployPipelineArtifactItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String deployArtifactId;
-        private List<GetDeployPipelineDeployPipelineArtifactItemDeployPipelineStage> deployPipelineStages;
-        private String displayName;
+        private @Nullable String deployArtifactId;
+        private @Nullable List<GetDeployPipelineDeployPipelineArtifactItemDeployPipelineStage> deployPipelineStages;
+        private @Nullable String displayName;
         public Builder() {}
         public Builder(GetDeployPipelineDeployPipelineArtifactItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -71,21 +73,21 @@ public final class GetDeployPipelineDeployPipelineArtifactItem {
         }
 
         @CustomType.Setter
-        public Builder deployArtifactId(String deployArtifactId) {
-            this.deployArtifactId = Objects.requireNonNull(deployArtifactId);
+        public Builder deployArtifactId(@Nullable String deployArtifactId) {
+            this.deployArtifactId = deployArtifactId;
             return this;
         }
         @CustomType.Setter
-        public Builder deployPipelineStages(List<GetDeployPipelineDeployPipelineArtifactItemDeployPipelineStage> deployPipelineStages) {
-            this.deployPipelineStages = Objects.requireNonNull(deployPipelineStages);
+        public Builder deployPipelineStages(@Nullable List<GetDeployPipelineDeployPipelineArtifactItemDeployPipelineStage> deployPipelineStages) {
+            this.deployPipelineStages = deployPipelineStages;
             return this;
         }
         public Builder deployPipelineStages(GetDeployPipelineDeployPipelineArtifactItemDeployPipelineStage... deployPipelineStages) {
             return deployPipelineStages(List.of(deployPipelineStages));
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         public GetDeployPipelineDeployPipelineArtifactItem build() {

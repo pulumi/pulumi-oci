@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Query resource in Oracle Cloud Infrastructure Metering Computation service.
@@ -60,9 +59,9 @@ type LookupQueryArgs struct {
 // A collection of values returned by getQuery.
 type LookupQueryResult struct {
 	// The compartment OCID.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The query OCID.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The common fields for queries.
 	QueryDefinitions []GetQueryQueryDefinition `pulumi:"queryDefinitions"`
 	QueryId          string                    `pulumi:"queryId"`
@@ -106,20 +105,14 @@ func (o LookupQueryResultOutput) ToLookupQueryResultOutputWithContext(ctx contex
 	return o
 }
 
-func (o LookupQueryResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupQueryResult] {
-	return pulumix.Output[LookupQueryResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The compartment OCID.
-func (o LookupQueryResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupQueryResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupQueryResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupQueryResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The query OCID.
-func (o LookupQueryResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupQueryResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupQueryResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupQueryResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The common fields for queries.

@@ -17,6 +17,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
@@ -24,481 +26,481 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
      * @return The Autonomous Exadata Infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    private String autonomousExadataInfrastructureId;
+    private @Nullable String autonomousExadataInfrastructureId;
     /**
      * @return The Autonomous VM Cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    private String autonomousVmClusterId;
+    private @Nullable String autonomousVmClusterId;
     /**
      * @return A filter to return only resources that match the given availability domain exactly.
      * 
      */
-    private String availabilityDomain;
+    private @Nullable String availabilityDomain;
     /**
      * @return Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.&lt;br&gt; For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
      * 
      */
-    private Double availableCpus;
+    private @Nullable Double availableCpus;
     /**
      * @return Backup options for the Autonomous Container Database.
      * 
      */
-    private List<GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupConfig> backupConfigs;
+    private @Nullable List<GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupConfig> backupConfigs;
     /**
      * @return The cloud Autonomous VM Cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    private String cloudAutonomousVmClusterId;
+    private @Nullable String cloudAutonomousVmClusterId;
     /**
      * @return The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The compute model of the Autonomous VM Cluster.
      * 
      */
-    private String computeModel;
+    private @Nullable String computeModel;
     /**
      * @return The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
      * 
      */
-    private String dbName;
-    private String dbUniqueName;
+    private @Nullable String dbName;
+    private @Nullable String dbUniqueName;
     /**
      * @return Oracle Database version of the Autonomous Container Database.
      * 
      */
-    private String dbVersion;
+    private @Nullable String dbVersion;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return A filter to return only resources that match the entire display name given. The match is not case sensitive.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return DST Time Zone File version of the Autonomous Container Database.
      * 
      */
-    private String dstFileVersion;
-    private Integer fastStartFailOverLagLimitInSeconds;
+    private @Nullable String dstFileVersion;
+    private @Nullable Integer fastStartFailOverLagLimitInSeconds;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return A filter to return only resources that match the given Infrastructure Type.
      * 
      */
-    private String infrastructureType;
-    private Boolean isAutomaticFailoverEnabled;
+    private @Nullable String infrastructureType;
+    private @Nullable Boolean isAutomaticFailoverEnabled;
     /**
      * @return Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
      * 
      */
-    private Boolean isDstFileUpdateEnabled;
+    private @Nullable Boolean isDstFileUpdateEnabled;
     /**
      * @return Key History Entry.
      * 
      */
-    private List<GetAutonomousContainerDatabasesAutonomousContainerDatabaseKeyHistoryEntry> keyHistoryEntries;
+    private @Nullable List<GetAutonomousContainerDatabasesAutonomousContainerDatabaseKeyHistoryEntry> keyHistoryEntries;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
      * 
      */
-    private String keyStoreId;
+    private @Nullable String keyStoreId;
     /**
      * @return The wallet name for Oracle Key Vault.
      * 
      */
-    private String keyStoreWalletName;
+    private @Nullable String keyStoreWalletName;
     /**
      * @return The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      * 
      */
-    private String kmsKeyId;
+    private @Nullable String kmsKeyId;
     /**
      * @return The largest Autonomous Database (CPU) that can be created in a new Autonomous Container Database.
      * 
      */
-    private Double largestProvisionableAutonomousDatabaseInCpus;
+    private @Nullable Double largestProvisionableAutonomousDatabaseInCpus;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
      * 
      */
-    private String lastMaintenanceRunId;
+    private @Nullable String lastMaintenanceRunId;
     /**
      * @return Additional information about the current lifecycle state.
      * 
      */
-    private String lifecycleDetails;
-    private List<GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetail> maintenanceWindowDetails;
+    private @Nullable String lifecycleDetails;
+    private @Nullable List<GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetail> maintenanceWindowDetails;
     /**
      * @return The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
      * 
      */
-    private List<GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindow> maintenanceWindows;
+    private @Nullable List<GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindow> maintenanceWindows;
     /**
      * @return The amount of memory (in GBs) enabled per OCPU or ECPU in the Autonomous VM Cluster.
      * 
      */
-    private Integer memoryPerOracleComputeUnitInGbs;
+    private @Nullable Integer memoryPerOracleComputeUnitInGbs;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
      * 
      */
-    private String nextMaintenanceRunId;
+    private @Nullable String nextMaintenanceRunId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch applied on the system.
      * 
      */
-    private String patchId;
+    private @Nullable String patchId;
     /**
      * @return Database patch model preference.
      * 
      */
-    private String patchModel;
-    private List<GetAutonomousContainerDatabasesAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfig> peerAutonomousContainerDatabaseBackupConfigs;
-    private String peerAutonomousContainerDatabaseCompartmentId;
-    private String peerAutonomousContainerDatabaseDisplayName;
-    private String peerAutonomousExadataInfrastructureId;
-    private String peerAutonomousVmClusterId;
-    private String peerCloudAutonomousVmClusterId;
-    private String peerDbUniqueName;
-    private String protectionMode;
+    private @Nullable String patchModel;
+    private @Nullable List<GetAutonomousContainerDatabasesAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfig> peerAutonomousContainerDatabaseBackupConfigs;
+    private @Nullable String peerAutonomousContainerDatabaseCompartmentId;
+    private @Nullable String peerAutonomousContainerDatabaseDisplayName;
+    private @Nullable String peerAutonomousExadataInfrastructureId;
+    private @Nullable String peerAutonomousVmClusterId;
+    private @Nullable String peerCloudAutonomousVmClusterId;
+    private @Nullable String peerDbUniqueName;
+    private @Nullable String protectionMode;
     /**
      * @return An array of CPU values that can be used to successfully provision a single Autonomous Database.\ For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model.
      * 
      */
-    private List<Double> provisionableCpuses;
+    private @Nullable List<Double> provisionableCpuses;
     /**
      * @return The number of CPUs provisioned in an Autonomous Container Database.
      * 
      */
-    private Double provisionedCpus;
+    private @Nullable Double provisionedCpus;
     /**
      * @return For Autonomous Databases on Dedicated Exadata Infrastructure:
      * * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
      * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model.
      * 
      */
-    private Double reclaimableCpus;
+    private @Nullable Double reclaimableCpus;
     /**
      * @return The number of CPUs reserved in an Autonomous Container Database.
      * 
      */
-    private Double reservedCpus;
+    private @Nullable Double reservedCpus;
     /**
      * @return The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
      * 
      */
-    private String role;
-    private Boolean rotateKeyTrigger;
+    private @Nullable String role;
+    private @Nullable Boolean rotateKeyTrigger;
     /**
      * @return A filter to return only resources that match the given service level agreement type exactly.
      * 
      */
-    private String serviceLevelAgreementType;
+    private @Nullable String serviceLevelAgreementType;
     /**
      * @return The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database.
      * 
      */
-    private Integer standbyMaintenanceBufferInDays;
+    private @Nullable Integer standbyMaintenanceBufferInDays;
     /**
      * @return A filter to return only resources that match the given lifecycle state exactly.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The date and time the Autonomous Container Database was created.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The date and time the Autonomous Container Database will be reverted to Standby from Snapshot Standby.
      * 
      */
-    private String timeSnapshotStandbyRevert;
+    private @Nullable String timeSnapshotStandbyRevert;
     /**
      * @return The number of CPUs allocated to the Autonomous VM cluster.&lt;br&gt; For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model.
      * 
      */
-    private Integer totalCpus;
+    private @Nullable Integer totalCpus;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      * 
      */
-    private String vaultId;
+    private @Nullable String vaultId;
     /**
      * @return The next maintenance version preference.
      * 
      */
-    private String versionPreference;
+    private @Nullable String versionPreference;
 
     private GetAutonomousContainerDatabasesAutonomousContainerDatabase() {}
     /**
      * @return The Autonomous Exadata Infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    public String autonomousExadataInfrastructureId() {
-        return this.autonomousExadataInfrastructureId;
+    public Optional<String> autonomousExadataInfrastructureId() {
+        return Optional.ofNullable(this.autonomousExadataInfrastructureId);
     }
     /**
      * @return The Autonomous VM Cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    public String autonomousVmClusterId() {
-        return this.autonomousVmClusterId;
+    public Optional<String> autonomousVmClusterId() {
+        return Optional.ofNullable(this.autonomousVmClusterId);
     }
     /**
      * @return A filter to return only resources that match the given availability domain exactly.
      * 
      */
-    public String availabilityDomain() {
-        return this.availabilityDomain;
+    public Optional<String> availabilityDomain() {
+        return Optional.ofNullable(this.availabilityDomain);
     }
     /**
      * @return Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.&lt;br&gt; For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
      * 
      */
-    public Double availableCpus() {
-        return this.availableCpus;
+    public Optional<Double> availableCpus() {
+        return Optional.ofNullable(this.availableCpus);
     }
     /**
      * @return Backup options for the Autonomous Container Database.
      * 
      */
     public List<GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupConfig> backupConfigs() {
-        return this.backupConfigs;
+        return this.backupConfigs == null ? List.of() : this.backupConfigs;
     }
     /**
      * @return The cloud Autonomous VM Cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    public String cloudAutonomousVmClusterId() {
-        return this.cloudAutonomousVmClusterId;
+    public Optional<String> cloudAutonomousVmClusterId() {
+        return Optional.ofNullable(this.cloudAutonomousVmClusterId);
     }
     /**
      * @return The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The compute model of the Autonomous VM Cluster.
      * 
      */
-    public String computeModel() {
-        return this.computeModel;
+    public Optional<String> computeModel() {
+        return Optional.ofNullable(this.computeModel);
     }
     /**
      * @return The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
      * 
      */
-    public String dbName() {
-        return this.dbName;
+    public Optional<String> dbName() {
+        return Optional.ofNullable(this.dbName);
     }
-    public String dbUniqueName() {
-        return this.dbUniqueName;
+    public Optional<String> dbUniqueName() {
+        return Optional.ofNullable(this.dbUniqueName);
     }
     /**
      * @return Oracle Database version of the Autonomous Container Database.
      * 
      */
-    public String dbVersion() {
-        return this.dbVersion;
+    public Optional<String> dbVersion() {
+        return Optional.ofNullable(this.dbVersion);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return A filter to return only resources that match the entire display name given. The match is not case sensitive.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return DST Time Zone File version of the Autonomous Container Database.
      * 
      */
-    public String dstFileVersion() {
-        return this.dstFileVersion;
+    public Optional<String> dstFileVersion() {
+        return Optional.ofNullable(this.dstFileVersion);
     }
-    public Integer fastStartFailOverLagLimitInSeconds() {
-        return this.fastStartFailOverLagLimitInSeconds;
+    public Optional<Integer> fastStartFailOverLagLimitInSeconds() {
+        return Optional.ofNullable(this.fastStartFailOverLagLimitInSeconds);
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return A filter to return only resources that match the given Infrastructure Type.
      * 
      */
-    public String infrastructureType() {
-        return this.infrastructureType;
+    public Optional<String> infrastructureType() {
+        return Optional.ofNullable(this.infrastructureType);
     }
-    public Boolean isAutomaticFailoverEnabled() {
-        return this.isAutomaticFailoverEnabled;
+    public Optional<Boolean> isAutomaticFailoverEnabled() {
+        return Optional.ofNullable(this.isAutomaticFailoverEnabled);
     }
     /**
      * @return Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
      * 
      */
-    public Boolean isDstFileUpdateEnabled() {
-        return this.isDstFileUpdateEnabled;
+    public Optional<Boolean> isDstFileUpdateEnabled() {
+        return Optional.ofNullable(this.isDstFileUpdateEnabled);
     }
     /**
      * @return Key History Entry.
      * 
      */
     public List<GetAutonomousContainerDatabasesAutonomousContainerDatabaseKeyHistoryEntry> keyHistoryEntries() {
-        return this.keyHistoryEntries;
+        return this.keyHistoryEntries == null ? List.of() : this.keyHistoryEntries;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
      * 
      */
-    public String keyStoreId() {
-        return this.keyStoreId;
+    public Optional<String> keyStoreId() {
+        return Optional.ofNullable(this.keyStoreId);
     }
     /**
      * @return The wallet name for Oracle Key Vault.
      * 
      */
-    public String keyStoreWalletName() {
-        return this.keyStoreWalletName;
+    public Optional<String> keyStoreWalletName() {
+        return Optional.ofNullable(this.keyStoreWalletName);
     }
     /**
      * @return The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      * 
      */
-    public String kmsKeyId() {
-        return this.kmsKeyId;
+    public Optional<String> kmsKeyId() {
+        return Optional.ofNullable(this.kmsKeyId);
     }
     /**
      * @return The largest Autonomous Database (CPU) that can be created in a new Autonomous Container Database.
      * 
      */
-    public Double largestProvisionableAutonomousDatabaseInCpus() {
-        return this.largestProvisionableAutonomousDatabaseInCpus;
+    public Optional<Double> largestProvisionableAutonomousDatabaseInCpus() {
+        return Optional.ofNullable(this.largestProvisionableAutonomousDatabaseInCpus);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
      * 
      */
-    public String lastMaintenanceRunId() {
-        return this.lastMaintenanceRunId;
+    public Optional<String> lastMaintenanceRunId() {
+        return Optional.ofNullable(this.lastMaintenanceRunId);
     }
     /**
      * @return Additional information about the current lifecycle state.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     public List<GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetail> maintenanceWindowDetails() {
-        return this.maintenanceWindowDetails;
+        return this.maintenanceWindowDetails == null ? List.of() : this.maintenanceWindowDetails;
     }
     /**
      * @return The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
      * 
      */
     public List<GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindow> maintenanceWindows() {
-        return this.maintenanceWindows;
+        return this.maintenanceWindows == null ? List.of() : this.maintenanceWindows;
     }
     /**
      * @return The amount of memory (in GBs) enabled per OCPU or ECPU in the Autonomous VM Cluster.
      * 
      */
-    public Integer memoryPerOracleComputeUnitInGbs() {
-        return this.memoryPerOracleComputeUnitInGbs;
+    public Optional<Integer> memoryPerOracleComputeUnitInGbs() {
+        return Optional.ofNullable(this.memoryPerOracleComputeUnitInGbs);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
      * 
      */
-    public String nextMaintenanceRunId() {
-        return this.nextMaintenanceRunId;
+    public Optional<String> nextMaintenanceRunId() {
+        return Optional.ofNullable(this.nextMaintenanceRunId);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch applied on the system.
      * 
      */
-    public String patchId() {
-        return this.patchId;
+    public Optional<String> patchId() {
+        return Optional.ofNullable(this.patchId);
     }
     /**
      * @return Database patch model preference.
      * 
      */
-    public String patchModel() {
-        return this.patchModel;
+    public Optional<String> patchModel() {
+        return Optional.ofNullable(this.patchModel);
     }
     public List<GetAutonomousContainerDatabasesAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfig> peerAutonomousContainerDatabaseBackupConfigs() {
-        return this.peerAutonomousContainerDatabaseBackupConfigs;
+        return this.peerAutonomousContainerDatabaseBackupConfigs == null ? List.of() : this.peerAutonomousContainerDatabaseBackupConfigs;
     }
-    public String peerAutonomousContainerDatabaseCompartmentId() {
-        return this.peerAutonomousContainerDatabaseCompartmentId;
+    public Optional<String> peerAutonomousContainerDatabaseCompartmentId() {
+        return Optional.ofNullable(this.peerAutonomousContainerDatabaseCompartmentId);
     }
-    public String peerAutonomousContainerDatabaseDisplayName() {
-        return this.peerAutonomousContainerDatabaseDisplayName;
+    public Optional<String> peerAutonomousContainerDatabaseDisplayName() {
+        return Optional.ofNullable(this.peerAutonomousContainerDatabaseDisplayName);
     }
-    public String peerAutonomousExadataInfrastructureId() {
-        return this.peerAutonomousExadataInfrastructureId;
+    public Optional<String> peerAutonomousExadataInfrastructureId() {
+        return Optional.ofNullable(this.peerAutonomousExadataInfrastructureId);
     }
-    public String peerAutonomousVmClusterId() {
-        return this.peerAutonomousVmClusterId;
+    public Optional<String> peerAutonomousVmClusterId() {
+        return Optional.ofNullable(this.peerAutonomousVmClusterId);
     }
-    public String peerCloudAutonomousVmClusterId() {
-        return this.peerCloudAutonomousVmClusterId;
+    public Optional<String> peerCloudAutonomousVmClusterId() {
+        return Optional.ofNullable(this.peerCloudAutonomousVmClusterId);
     }
-    public String peerDbUniqueName() {
-        return this.peerDbUniqueName;
+    public Optional<String> peerDbUniqueName() {
+        return Optional.ofNullable(this.peerDbUniqueName);
     }
-    public String protectionMode() {
-        return this.protectionMode;
+    public Optional<String> protectionMode() {
+        return Optional.ofNullable(this.protectionMode);
     }
     /**
      * @return An array of CPU values that can be used to successfully provision a single Autonomous Database.\ For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model.
      * 
      */
     public List<Double> provisionableCpuses() {
-        return this.provisionableCpuses;
+        return this.provisionableCpuses == null ? List.of() : this.provisionableCpuses;
     }
     /**
      * @return The number of CPUs provisioned in an Autonomous Container Database.
      * 
      */
-    public Double provisionedCpus() {
-        return this.provisionedCpus;
+    public Optional<Double> provisionedCpus() {
+        return Optional.ofNullable(this.provisionedCpus);
     }
     /**
      * @return For Autonomous Databases on Dedicated Exadata Infrastructure:
@@ -506,81 +508,81 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
      * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model.
      * 
      */
-    public Double reclaimableCpus() {
-        return this.reclaimableCpus;
+    public Optional<Double> reclaimableCpus() {
+        return Optional.ofNullable(this.reclaimableCpus);
     }
     /**
      * @return The number of CPUs reserved in an Autonomous Container Database.
      * 
      */
-    public Double reservedCpus() {
-        return this.reservedCpus;
+    public Optional<Double> reservedCpus() {
+        return Optional.ofNullable(this.reservedCpus);
     }
     /**
      * @return The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
      * 
      */
-    public String role() {
-        return this.role;
+    public Optional<String> role() {
+        return Optional.ofNullable(this.role);
     }
-    public Boolean rotateKeyTrigger() {
-        return this.rotateKeyTrigger;
+    public Optional<Boolean> rotateKeyTrigger() {
+        return Optional.ofNullable(this.rotateKeyTrigger);
     }
     /**
      * @return A filter to return only resources that match the given service level agreement type exactly.
      * 
      */
-    public String serviceLevelAgreementType() {
-        return this.serviceLevelAgreementType;
+    public Optional<String> serviceLevelAgreementType() {
+        return Optional.ofNullable(this.serviceLevelAgreementType);
     }
     /**
      * @return The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database.
      * 
      */
-    public Integer standbyMaintenanceBufferInDays() {
-        return this.standbyMaintenanceBufferInDays;
+    public Optional<Integer> standbyMaintenanceBufferInDays() {
+        return Optional.ofNullable(this.standbyMaintenanceBufferInDays);
     }
     /**
      * @return A filter to return only resources that match the given lifecycle state exactly.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The date and time the Autonomous Container Database was created.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The date and time the Autonomous Container Database will be reverted to Standby from Snapshot Standby.
      * 
      */
-    public String timeSnapshotStandbyRevert() {
-        return this.timeSnapshotStandbyRevert;
+    public Optional<String> timeSnapshotStandbyRevert() {
+        return Optional.ofNullable(this.timeSnapshotStandbyRevert);
     }
     /**
      * @return The number of CPUs allocated to the Autonomous VM cluster.&lt;br&gt; For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model.
      * 
      */
-    public Integer totalCpus() {
-        return this.totalCpus;
+    public Optional<Integer> totalCpus() {
+        return Optional.ofNullable(this.totalCpus);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      * 
      */
-    public String vaultId() {
-        return this.vaultId;
+    public Optional<String> vaultId() {
+        return Optional.ofNullable(this.vaultId);
     }
     /**
      * @return The next maintenance version preference.
      * 
      */
-    public String versionPreference() {
-        return this.versionPreference;
+    public Optional<String> versionPreference() {
+        return Optional.ofNullable(this.versionPreference);
     }
 
     public static Builder builder() {
@@ -592,61 +594,61 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String autonomousExadataInfrastructureId;
-        private String autonomousVmClusterId;
-        private String availabilityDomain;
-        private Double availableCpus;
-        private List<GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupConfig> backupConfigs;
-        private String cloudAutonomousVmClusterId;
-        private String compartmentId;
-        private String computeModel;
-        private String dbName;
-        private String dbUniqueName;
-        private String dbVersion;
-        private Map<String,Object> definedTags;
-        private String displayName;
-        private String dstFileVersion;
-        private Integer fastStartFailOverLagLimitInSeconds;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private String infrastructureType;
-        private Boolean isAutomaticFailoverEnabled;
-        private Boolean isDstFileUpdateEnabled;
-        private List<GetAutonomousContainerDatabasesAutonomousContainerDatabaseKeyHistoryEntry> keyHistoryEntries;
-        private String keyStoreId;
-        private String keyStoreWalletName;
-        private String kmsKeyId;
-        private Double largestProvisionableAutonomousDatabaseInCpus;
-        private String lastMaintenanceRunId;
-        private String lifecycleDetails;
-        private List<GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetail> maintenanceWindowDetails;
-        private List<GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindow> maintenanceWindows;
-        private Integer memoryPerOracleComputeUnitInGbs;
-        private String nextMaintenanceRunId;
-        private String patchId;
-        private String patchModel;
-        private List<GetAutonomousContainerDatabasesAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfig> peerAutonomousContainerDatabaseBackupConfigs;
-        private String peerAutonomousContainerDatabaseCompartmentId;
-        private String peerAutonomousContainerDatabaseDisplayName;
-        private String peerAutonomousExadataInfrastructureId;
-        private String peerAutonomousVmClusterId;
-        private String peerCloudAutonomousVmClusterId;
-        private String peerDbUniqueName;
-        private String protectionMode;
-        private List<Double> provisionableCpuses;
-        private Double provisionedCpus;
-        private Double reclaimableCpus;
-        private Double reservedCpus;
-        private String role;
-        private Boolean rotateKeyTrigger;
-        private String serviceLevelAgreementType;
-        private Integer standbyMaintenanceBufferInDays;
-        private String state;
-        private String timeCreated;
-        private String timeSnapshotStandbyRevert;
-        private Integer totalCpus;
-        private String vaultId;
-        private String versionPreference;
+        private @Nullable String autonomousExadataInfrastructureId;
+        private @Nullable String autonomousVmClusterId;
+        private @Nullable String availabilityDomain;
+        private @Nullable Double availableCpus;
+        private @Nullable List<GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupConfig> backupConfigs;
+        private @Nullable String cloudAutonomousVmClusterId;
+        private @Nullable String compartmentId;
+        private @Nullable String computeModel;
+        private @Nullable String dbName;
+        private @Nullable String dbUniqueName;
+        private @Nullable String dbVersion;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String displayName;
+        private @Nullable String dstFileVersion;
+        private @Nullable Integer fastStartFailOverLagLimitInSeconds;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable String infrastructureType;
+        private @Nullable Boolean isAutomaticFailoverEnabled;
+        private @Nullable Boolean isDstFileUpdateEnabled;
+        private @Nullable List<GetAutonomousContainerDatabasesAutonomousContainerDatabaseKeyHistoryEntry> keyHistoryEntries;
+        private @Nullable String keyStoreId;
+        private @Nullable String keyStoreWalletName;
+        private @Nullable String kmsKeyId;
+        private @Nullable Double largestProvisionableAutonomousDatabaseInCpus;
+        private @Nullable String lastMaintenanceRunId;
+        private @Nullable String lifecycleDetails;
+        private @Nullable List<GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetail> maintenanceWindowDetails;
+        private @Nullable List<GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindow> maintenanceWindows;
+        private @Nullable Integer memoryPerOracleComputeUnitInGbs;
+        private @Nullable String nextMaintenanceRunId;
+        private @Nullable String patchId;
+        private @Nullable String patchModel;
+        private @Nullable List<GetAutonomousContainerDatabasesAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfig> peerAutonomousContainerDatabaseBackupConfigs;
+        private @Nullable String peerAutonomousContainerDatabaseCompartmentId;
+        private @Nullable String peerAutonomousContainerDatabaseDisplayName;
+        private @Nullable String peerAutonomousExadataInfrastructureId;
+        private @Nullable String peerAutonomousVmClusterId;
+        private @Nullable String peerCloudAutonomousVmClusterId;
+        private @Nullable String peerDbUniqueName;
+        private @Nullable String protectionMode;
+        private @Nullable List<Double> provisionableCpuses;
+        private @Nullable Double provisionedCpus;
+        private @Nullable Double reclaimableCpus;
+        private @Nullable Double reservedCpus;
+        private @Nullable String role;
+        private @Nullable Boolean rotateKeyTrigger;
+        private @Nullable String serviceLevelAgreementType;
+        private @Nullable Integer standbyMaintenanceBufferInDays;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
+        private @Nullable String timeSnapshotStandbyRevert;
+        private @Nullable Integer totalCpus;
+        private @Nullable String vaultId;
+        private @Nullable String versionPreference;
         public Builder() {}
         public Builder(GetAutonomousContainerDatabasesAutonomousContainerDatabase defaults) {
     	      Objects.requireNonNull(defaults);
@@ -708,296 +710,296 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
         }
 
         @CustomType.Setter
-        public Builder autonomousExadataInfrastructureId(String autonomousExadataInfrastructureId) {
-            this.autonomousExadataInfrastructureId = Objects.requireNonNull(autonomousExadataInfrastructureId);
+        public Builder autonomousExadataInfrastructureId(@Nullable String autonomousExadataInfrastructureId) {
+            this.autonomousExadataInfrastructureId = autonomousExadataInfrastructureId;
             return this;
         }
         @CustomType.Setter
-        public Builder autonomousVmClusterId(String autonomousVmClusterId) {
-            this.autonomousVmClusterId = Objects.requireNonNull(autonomousVmClusterId);
+        public Builder autonomousVmClusterId(@Nullable String autonomousVmClusterId) {
+            this.autonomousVmClusterId = autonomousVmClusterId;
             return this;
         }
         @CustomType.Setter
-        public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+        public Builder availabilityDomain(@Nullable String availabilityDomain) {
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
-        public Builder availableCpus(Double availableCpus) {
-            this.availableCpus = Objects.requireNonNull(availableCpus);
+        public Builder availableCpus(@Nullable Double availableCpus) {
+            this.availableCpus = availableCpus;
             return this;
         }
         @CustomType.Setter
-        public Builder backupConfigs(List<GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupConfig> backupConfigs) {
-            this.backupConfigs = Objects.requireNonNull(backupConfigs);
+        public Builder backupConfigs(@Nullable List<GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupConfig> backupConfigs) {
+            this.backupConfigs = backupConfigs;
             return this;
         }
         public Builder backupConfigs(GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupConfig... backupConfigs) {
             return backupConfigs(List.of(backupConfigs));
         }
         @CustomType.Setter
-        public Builder cloudAutonomousVmClusterId(String cloudAutonomousVmClusterId) {
-            this.cloudAutonomousVmClusterId = Objects.requireNonNull(cloudAutonomousVmClusterId);
+        public Builder cloudAutonomousVmClusterId(@Nullable String cloudAutonomousVmClusterId) {
+            this.cloudAutonomousVmClusterId = cloudAutonomousVmClusterId;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder computeModel(String computeModel) {
-            this.computeModel = Objects.requireNonNull(computeModel);
+        public Builder computeModel(@Nullable String computeModel) {
+            this.computeModel = computeModel;
             return this;
         }
         @CustomType.Setter
-        public Builder dbName(String dbName) {
-            this.dbName = Objects.requireNonNull(dbName);
+        public Builder dbName(@Nullable String dbName) {
+            this.dbName = dbName;
             return this;
         }
         @CustomType.Setter
-        public Builder dbUniqueName(String dbUniqueName) {
-            this.dbUniqueName = Objects.requireNonNull(dbUniqueName);
+        public Builder dbUniqueName(@Nullable String dbUniqueName) {
+            this.dbUniqueName = dbUniqueName;
             return this;
         }
         @CustomType.Setter
-        public Builder dbVersion(String dbVersion) {
-            this.dbVersion = Objects.requireNonNull(dbVersion);
+        public Builder dbVersion(@Nullable String dbVersion) {
+            this.dbVersion = dbVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder dstFileVersion(String dstFileVersion) {
-            this.dstFileVersion = Objects.requireNonNull(dstFileVersion);
+        public Builder dstFileVersion(@Nullable String dstFileVersion) {
+            this.dstFileVersion = dstFileVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder fastStartFailOverLagLimitInSeconds(Integer fastStartFailOverLagLimitInSeconds) {
-            this.fastStartFailOverLagLimitInSeconds = Objects.requireNonNull(fastStartFailOverLagLimitInSeconds);
+        public Builder fastStartFailOverLagLimitInSeconds(@Nullable Integer fastStartFailOverLagLimitInSeconds) {
+            this.fastStartFailOverLagLimitInSeconds = fastStartFailOverLagLimitInSeconds;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder infrastructureType(String infrastructureType) {
-            this.infrastructureType = Objects.requireNonNull(infrastructureType);
+        public Builder infrastructureType(@Nullable String infrastructureType) {
+            this.infrastructureType = infrastructureType;
             return this;
         }
         @CustomType.Setter
-        public Builder isAutomaticFailoverEnabled(Boolean isAutomaticFailoverEnabled) {
-            this.isAutomaticFailoverEnabled = Objects.requireNonNull(isAutomaticFailoverEnabled);
+        public Builder isAutomaticFailoverEnabled(@Nullable Boolean isAutomaticFailoverEnabled) {
+            this.isAutomaticFailoverEnabled = isAutomaticFailoverEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder isDstFileUpdateEnabled(Boolean isDstFileUpdateEnabled) {
-            this.isDstFileUpdateEnabled = Objects.requireNonNull(isDstFileUpdateEnabled);
+        public Builder isDstFileUpdateEnabled(@Nullable Boolean isDstFileUpdateEnabled) {
+            this.isDstFileUpdateEnabled = isDstFileUpdateEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder keyHistoryEntries(List<GetAutonomousContainerDatabasesAutonomousContainerDatabaseKeyHistoryEntry> keyHistoryEntries) {
-            this.keyHistoryEntries = Objects.requireNonNull(keyHistoryEntries);
+        public Builder keyHistoryEntries(@Nullable List<GetAutonomousContainerDatabasesAutonomousContainerDatabaseKeyHistoryEntry> keyHistoryEntries) {
+            this.keyHistoryEntries = keyHistoryEntries;
             return this;
         }
         public Builder keyHistoryEntries(GetAutonomousContainerDatabasesAutonomousContainerDatabaseKeyHistoryEntry... keyHistoryEntries) {
             return keyHistoryEntries(List.of(keyHistoryEntries));
         }
         @CustomType.Setter
-        public Builder keyStoreId(String keyStoreId) {
-            this.keyStoreId = Objects.requireNonNull(keyStoreId);
+        public Builder keyStoreId(@Nullable String keyStoreId) {
+            this.keyStoreId = keyStoreId;
             return this;
         }
         @CustomType.Setter
-        public Builder keyStoreWalletName(String keyStoreWalletName) {
-            this.keyStoreWalletName = Objects.requireNonNull(keyStoreWalletName);
+        public Builder keyStoreWalletName(@Nullable String keyStoreWalletName) {
+            this.keyStoreWalletName = keyStoreWalletName;
             return this;
         }
         @CustomType.Setter
-        public Builder kmsKeyId(String kmsKeyId) {
-            this.kmsKeyId = Objects.requireNonNull(kmsKeyId);
+        public Builder kmsKeyId(@Nullable String kmsKeyId) {
+            this.kmsKeyId = kmsKeyId;
             return this;
         }
         @CustomType.Setter
-        public Builder largestProvisionableAutonomousDatabaseInCpus(Double largestProvisionableAutonomousDatabaseInCpus) {
-            this.largestProvisionableAutonomousDatabaseInCpus = Objects.requireNonNull(largestProvisionableAutonomousDatabaseInCpus);
+        public Builder largestProvisionableAutonomousDatabaseInCpus(@Nullable Double largestProvisionableAutonomousDatabaseInCpus) {
+            this.largestProvisionableAutonomousDatabaseInCpus = largestProvisionableAutonomousDatabaseInCpus;
             return this;
         }
         @CustomType.Setter
-        public Builder lastMaintenanceRunId(String lastMaintenanceRunId) {
-            this.lastMaintenanceRunId = Objects.requireNonNull(lastMaintenanceRunId);
+        public Builder lastMaintenanceRunId(@Nullable String lastMaintenanceRunId) {
+            this.lastMaintenanceRunId = lastMaintenanceRunId;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder maintenanceWindowDetails(List<GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetail> maintenanceWindowDetails) {
-            this.maintenanceWindowDetails = Objects.requireNonNull(maintenanceWindowDetails);
+        public Builder maintenanceWindowDetails(@Nullable List<GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetail> maintenanceWindowDetails) {
+            this.maintenanceWindowDetails = maintenanceWindowDetails;
             return this;
         }
         public Builder maintenanceWindowDetails(GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetail... maintenanceWindowDetails) {
             return maintenanceWindowDetails(List.of(maintenanceWindowDetails));
         }
         @CustomType.Setter
-        public Builder maintenanceWindows(List<GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindow> maintenanceWindows) {
-            this.maintenanceWindows = Objects.requireNonNull(maintenanceWindows);
+        public Builder maintenanceWindows(@Nullable List<GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindow> maintenanceWindows) {
+            this.maintenanceWindows = maintenanceWindows;
             return this;
         }
         public Builder maintenanceWindows(GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindow... maintenanceWindows) {
             return maintenanceWindows(List.of(maintenanceWindows));
         }
         @CustomType.Setter
-        public Builder memoryPerOracleComputeUnitInGbs(Integer memoryPerOracleComputeUnitInGbs) {
-            this.memoryPerOracleComputeUnitInGbs = Objects.requireNonNull(memoryPerOracleComputeUnitInGbs);
+        public Builder memoryPerOracleComputeUnitInGbs(@Nullable Integer memoryPerOracleComputeUnitInGbs) {
+            this.memoryPerOracleComputeUnitInGbs = memoryPerOracleComputeUnitInGbs;
             return this;
         }
         @CustomType.Setter
-        public Builder nextMaintenanceRunId(String nextMaintenanceRunId) {
-            this.nextMaintenanceRunId = Objects.requireNonNull(nextMaintenanceRunId);
+        public Builder nextMaintenanceRunId(@Nullable String nextMaintenanceRunId) {
+            this.nextMaintenanceRunId = nextMaintenanceRunId;
             return this;
         }
         @CustomType.Setter
-        public Builder patchId(String patchId) {
-            this.patchId = Objects.requireNonNull(patchId);
+        public Builder patchId(@Nullable String patchId) {
+            this.patchId = patchId;
             return this;
         }
         @CustomType.Setter
-        public Builder patchModel(String patchModel) {
-            this.patchModel = Objects.requireNonNull(patchModel);
+        public Builder patchModel(@Nullable String patchModel) {
+            this.patchModel = patchModel;
             return this;
         }
         @CustomType.Setter
-        public Builder peerAutonomousContainerDatabaseBackupConfigs(List<GetAutonomousContainerDatabasesAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfig> peerAutonomousContainerDatabaseBackupConfigs) {
-            this.peerAutonomousContainerDatabaseBackupConfigs = Objects.requireNonNull(peerAutonomousContainerDatabaseBackupConfigs);
+        public Builder peerAutonomousContainerDatabaseBackupConfigs(@Nullable List<GetAutonomousContainerDatabasesAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfig> peerAutonomousContainerDatabaseBackupConfigs) {
+            this.peerAutonomousContainerDatabaseBackupConfigs = peerAutonomousContainerDatabaseBackupConfigs;
             return this;
         }
         public Builder peerAutonomousContainerDatabaseBackupConfigs(GetAutonomousContainerDatabasesAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfig... peerAutonomousContainerDatabaseBackupConfigs) {
             return peerAutonomousContainerDatabaseBackupConfigs(List.of(peerAutonomousContainerDatabaseBackupConfigs));
         }
         @CustomType.Setter
-        public Builder peerAutonomousContainerDatabaseCompartmentId(String peerAutonomousContainerDatabaseCompartmentId) {
-            this.peerAutonomousContainerDatabaseCompartmentId = Objects.requireNonNull(peerAutonomousContainerDatabaseCompartmentId);
+        public Builder peerAutonomousContainerDatabaseCompartmentId(@Nullable String peerAutonomousContainerDatabaseCompartmentId) {
+            this.peerAutonomousContainerDatabaseCompartmentId = peerAutonomousContainerDatabaseCompartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder peerAutonomousContainerDatabaseDisplayName(String peerAutonomousContainerDatabaseDisplayName) {
-            this.peerAutonomousContainerDatabaseDisplayName = Objects.requireNonNull(peerAutonomousContainerDatabaseDisplayName);
+        public Builder peerAutonomousContainerDatabaseDisplayName(@Nullable String peerAutonomousContainerDatabaseDisplayName) {
+            this.peerAutonomousContainerDatabaseDisplayName = peerAutonomousContainerDatabaseDisplayName;
             return this;
         }
         @CustomType.Setter
-        public Builder peerAutonomousExadataInfrastructureId(String peerAutonomousExadataInfrastructureId) {
-            this.peerAutonomousExadataInfrastructureId = Objects.requireNonNull(peerAutonomousExadataInfrastructureId);
+        public Builder peerAutonomousExadataInfrastructureId(@Nullable String peerAutonomousExadataInfrastructureId) {
+            this.peerAutonomousExadataInfrastructureId = peerAutonomousExadataInfrastructureId;
             return this;
         }
         @CustomType.Setter
-        public Builder peerAutonomousVmClusterId(String peerAutonomousVmClusterId) {
-            this.peerAutonomousVmClusterId = Objects.requireNonNull(peerAutonomousVmClusterId);
+        public Builder peerAutonomousVmClusterId(@Nullable String peerAutonomousVmClusterId) {
+            this.peerAutonomousVmClusterId = peerAutonomousVmClusterId;
             return this;
         }
         @CustomType.Setter
-        public Builder peerCloudAutonomousVmClusterId(String peerCloudAutonomousVmClusterId) {
-            this.peerCloudAutonomousVmClusterId = Objects.requireNonNull(peerCloudAutonomousVmClusterId);
+        public Builder peerCloudAutonomousVmClusterId(@Nullable String peerCloudAutonomousVmClusterId) {
+            this.peerCloudAutonomousVmClusterId = peerCloudAutonomousVmClusterId;
             return this;
         }
         @CustomType.Setter
-        public Builder peerDbUniqueName(String peerDbUniqueName) {
-            this.peerDbUniqueName = Objects.requireNonNull(peerDbUniqueName);
+        public Builder peerDbUniqueName(@Nullable String peerDbUniqueName) {
+            this.peerDbUniqueName = peerDbUniqueName;
             return this;
         }
         @CustomType.Setter
-        public Builder protectionMode(String protectionMode) {
-            this.protectionMode = Objects.requireNonNull(protectionMode);
+        public Builder protectionMode(@Nullable String protectionMode) {
+            this.protectionMode = protectionMode;
             return this;
         }
         @CustomType.Setter
-        public Builder provisionableCpuses(List<Double> provisionableCpuses) {
-            this.provisionableCpuses = Objects.requireNonNull(provisionableCpuses);
+        public Builder provisionableCpuses(@Nullable List<Double> provisionableCpuses) {
+            this.provisionableCpuses = provisionableCpuses;
             return this;
         }
         public Builder provisionableCpuses(Double... provisionableCpuses) {
             return provisionableCpuses(List.of(provisionableCpuses));
         }
         @CustomType.Setter
-        public Builder provisionedCpus(Double provisionedCpus) {
-            this.provisionedCpus = Objects.requireNonNull(provisionedCpus);
+        public Builder provisionedCpus(@Nullable Double provisionedCpus) {
+            this.provisionedCpus = provisionedCpus;
             return this;
         }
         @CustomType.Setter
-        public Builder reclaimableCpus(Double reclaimableCpus) {
-            this.reclaimableCpus = Objects.requireNonNull(reclaimableCpus);
+        public Builder reclaimableCpus(@Nullable Double reclaimableCpus) {
+            this.reclaimableCpus = reclaimableCpus;
             return this;
         }
         @CustomType.Setter
-        public Builder reservedCpus(Double reservedCpus) {
-            this.reservedCpus = Objects.requireNonNull(reservedCpus);
+        public Builder reservedCpus(@Nullable Double reservedCpus) {
+            this.reservedCpus = reservedCpus;
             return this;
         }
         @CustomType.Setter
-        public Builder role(String role) {
-            this.role = Objects.requireNonNull(role);
+        public Builder role(@Nullable String role) {
+            this.role = role;
             return this;
         }
         @CustomType.Setter
-        public Builder rotateKeyTrigger(Boolean rotateKeyTrigger) {
-            this.rotateKeyTrigger = Objects.requireNonNull(rotateKeyTrigger);
+        public Builder rotateKeyTrigger(@Nullable Boolean rotateKeyTrigger) {
+            this.rotateKeyTrigger = rotateKeyTrigger;
             return this;
         }
         @CustomType.Setter
-        public Builder serviceLevelAgreementType(String serviceLevelAgreementType) {
-            this.serviceLevelAgreementType = Objects.requireNonNull(serviceLevelAgreementType);
+        public Builder serviceLevelAgreementType(@Nullable String serviceLevelAgreementType) {
+            this.serviceLevelAgreementType = serviceLevelAgreementType;
             return this;
         }
         @CustomType.Setter
-        public Builder standbyMaintenanceBufferInDays(Integer standbyMaintenanceBufferInDays) {
-            this.standbyMaintenanceBufferInDays = Objects.requireNonNull(standbyMaintenanceBufferInDays);
+        public Builder standbyMaintenanceBufferInDays(@Nullable Integer standbyMaintenanceBufferInDays) {
+            this.standbyMaintenanceBufferInDays = standbyMaintenanceBufferInDays;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeSnapshotStandbyRevert(String timeSnapshotStandbyRevert) {
-            this.timeSnapshotStandbyRevert = Objects.requireNonNull(timeSnapshotStandbyRevert);
+        public Builder timeSnapshotStandbyRevert(@Nullable String timeSnapshotStandbyRevert) {
+            this.timeSnapshotStandbyRevert = timeSnapshotStandbyRevert;
             return this;
         }
         @CustomType.Setter
-        public Builder totalCpus(Integer totalCpus) {
-            this.totalCpus = Objects.requireNonNull(totalCpus);
+        public Builder totalCpus(@Nullable Integer totalCpus) {
+            this.totalCpus = totalCpus;
             return this;
         }
         @CustomType.Setter
-        public Builder vaultId(String vaultId) {
-            this.vaultId = Objects.requireNonNull(vaultId);
+        public Builder vaultId(@Nullable String vaultId) {
+            this.vaultId = vaultId;
             return this;
         }
         @CustomType.Setter
-        public Builder versionPreference(String versionPreference) {
-            this.versionPreference = Objects.requireNonNull(versionPreference);
+        public Builder versionPreference(@Nullable String versionPreference) {
+            this.versionPreference = versionPreference;
             return this;
         }
         public GetAutonomousContainerDatabasesAutonomousContainerDatabase build() {

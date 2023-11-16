@@ -50,12 +50,12 @@ export interface GetLoadBalancerRoutingPoliciesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly loadBalancerId: string;
     /**
      * The list of routing_policies.
      */
-    readonly routingPolicies: outputs.LoadBalancer.GetLoadBalancerRoutingPoliciesRoutingPolicy[];
+    readonly routingPolicies?: outputs.LoadBalancer.GetLoadBalancerRoutingPoliciesRoutingPolicy[];
 }
 /**
  * This data source provides the list of Load Balancer Routing Policies in Oracle Cloud Infrastructure Load Balancer service.

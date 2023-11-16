@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetModelTypeResult {
@@ -14,33 +16,33 @@ public final class GetModelTypeResult {
      * @return Model information capabilities related to version
      * 
      */
-    private String capabilities;
+    private @Nullable String capabilities;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String modelType;
     /**
      * @return Model versions available for this model type
      * 
      */
-    private List<String> versions;
+    private @Nullable List<String> versions;
 
     private GetModelTypeResult() {}
     /**
      * @return Model information capabilities related to version
      * 
      */
-    public String capabilities() {
-        return this.capabilities;
+    public Optional<String> capabilities() {
+        return Optional.ofNullable(this.capabilities);
     }
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String modelType() {
         return this.modelType;
@@ -50,7 +52,7 @@ public final class GetModelTypeResult {
      * 
      */
     public List<String> versions() {
-        return this.versions;
+        return this.versions == null ? List.of() : this.versions;
     }
 
     public static Builder builder() {
@@ -62,10 +64,10 @@ public final class GetModelTypeResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String capabilities;
-        private String id;
+        private @Nullable String capabilities;
+        private @Nullable String id;
         private String modelType;
-        private List<String> versions;
+        private @Nullable List<String> versions;
         public Builder() {}
         public Builder(GetModelTypeResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -76,13 +78,13 @@ public final class GetModelTypeResult {
         }
 
         @CustomType.Setter
-        public Builder capabilities(String capabilities) {
-            this.capabilities = Objects.requireNonNull(capabilities);
+        public Builder capabilities(@Nullable String capabilities) {
+            this.capabilities = capabilities;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -91,8 +93,8 @@ public final class GetModelTypeResult {
             return this;
         }
         @CustomType.Setter
-        public Builder versions(List<String> versions) {
-            this.versions = Objects.requireNonNull(versions);
+        public Builder versions(@Nullable List<String> versions) {
+            this.versions = versions;
             return this;
         }
         public Builder versions(String... versions) {

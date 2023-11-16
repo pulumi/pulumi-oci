@@ -79,11 +79,11 @@ export interface GetJavaReleasesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of java_release_collection.
      */
-    readonly javaReleaseCollections: outputs.Jms.GetJavaReleasesJavaReleaseCollection[];
+    readonly javaReleaseCollections?: outputs.Jms.GetJavaReleasesJavaReleaseCollection[];
     readonly jreSecurityStatus?: string;
     /**
      * License type for the Java version.

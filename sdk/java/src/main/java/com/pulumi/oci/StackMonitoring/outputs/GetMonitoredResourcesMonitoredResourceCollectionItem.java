@@ -15,266 +15,268 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMonitoredResourcesMonitoredResourceCollectionItem {
-    private List<GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAlias> additionalAliases;
-    private List<GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredential> additionalCredentials;
+    private @Nullable List<GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAlias> additionalAliases;
+    private @Nullable List<GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredential> additionalCredentials;
     /**
      * @return Monitored Resource Alias Credential Details
      * 
      */
-    private List<GetMonitoredResourcesMonitoredResourceCollectionItemAlias> aliases;
+    private @Nullable List<GetMonitoredResourcesMonitoredResourceCollectionItemAlias> aliases;
     /**
      * @return The ID of the compartment in which data is listed.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Monitored Resource Credential Details.
      * 
      */
-    private List<GetMonitoredResourcesMonitoredResourceCollectionItemCredential> credentials;
+    private @Nullable List<GetMonitoredResourcesMonitoredResourceCollectionItemCredential> credentials;
     /**
      * @return Connection details for the database.
      * 
      */
-    private List<GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetail> databaseConnectionDetails;
+    private @Nullable List<GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetail> databaseConnectionDetails;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return Monitored resource display name.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return The external resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). External resource is any Oracle Cloud Infrastructure resource which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
      * 
      */
-    private String externalId;
-    private String externalResourceId;
+    private @Nullable String externalId;
+    private @Nullable String externalResourceId;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return Monitored resource host name.
      * 
      */
-    private String hostName;
+    private @Nullable String hostName;
     /**
      * @return Monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    private String id;
-    private String license;
+    private @Nullable String id;
+    private @Nullable String license;
     /**
      * @return Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    private String managementAgentId;
+    private @Nullable String managementAgentId;
     /**
      * @return A filter to return resources that match exact resource name.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return List of monitored resource properties.
      * 
      */
-    private List<GetMonitoredResourcesMonitoredResourceCollectionItemProperty> properties;
+    private @Nullable List<GetMonitoredResourcesMonitoredResourceCollectionItemProperty> properties;
     /**
      * @return Time zone in the form of tz database canonical zone ID.
      * 
      */
-    private String resourceTimeZone;
+    private @Nullable String resourceTimeZone;
     /**
      * @return Lifecycle state of the monitored resource.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private @Nullable Map<String,Object> systemTags;
     /**
      * @return Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    private String tenantId;
+    private @Nullable String tenantId;
     /**
      * @return The date and time when the monitored resource was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The date and time when the monitored resource was last updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
     /**
      * @return Monitored Resource Type.
      * 
      */
-    private String type;
+    private @Nullable String type;
 
     private GetMonitoredResourcesMonitoredResourceCollectionItem() {}
     public List<GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAlias> additionalAliases() {
-        return this.additionalAliases;
+        return this.additionalAliases == null ? List.of() : this.additionalAliases;
     }
     public List<GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredential> additionalCredentials() {
-        return this.additionalCredentials;
+        return this.additionalCredentials == null ? List.of() : this.additionalCredentials;
     }
     /**
      * @return Monitored Resource Alias Credential Details
      * 
      */
     public List<GetMonitoredResourcesMonitoredResourceCollectionItemAlias> aliases() {
-        return this.aliases;
+        return this.aliases == null ? List.of() : this.aliases;
     }
     /**
      * @return The ID of the compartment in which data is listed.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Monitored Resource Credential Details.
      * 
      */
     public List<GetMonitoredResourcesMonitoredResourceCollectionItemCredential> credentials() {
-        return this.credentials;
+        return this.credentials == null ? List.of() : this.credentials;
     }
     /**
      * @return Connection details for the database.
      * 
      */
     public List<GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetail> databaseConnectionDetails() {
-        return this.databaseConnectionDetails;
+        return this.databaseConnectionDetails == null ? List.of() : this.databaseConnectionDetails;
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return Monitored resource display name.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return The external resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). External resource is any Oracle Cloud Infrastructure resource which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
      * 
      */
-    public String externalId() {
-        return this.externalId;
+    public Optional<String> externalId() {
+        return Optional.ofNullable(this.externalId);
     }
-    public String externalResourceId() {
-        return this.externalResourceId;
+    public Optional<String> externalResourceId() {
+        return Optional.ofNullable(this.externalResourceId);
     }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return Monitored resource host name.
      * 
      */
-    public String hostName() {
-        return this.hostName;
+    public Optional<String> hostName() {
+        return Optional.ofNullable(this.hostName);
     }
     /**
      * @return Monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
-    public String license() {
-        return this.license;
+    public Optional<String> license() {
+        return Optional.ofNullable(this.license);
     }
     /**
      * @return Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    public String managementAgentId() {
-        return this.managementAgentId;
+    public Optional<String> managementAgentId() {
+        return Optional.ofNullable(this.managementAgentId);
     }
     /**
      * @return A filter to return resources that match exact resource name.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return List of monitored resource properties.
      * 
      */
     public List<GetMonitoredResourcesMonitoredResourceCollectionItemProperty> properties() {
-        return this.properties;
+        return this.properties == null ? List.of() : this.properties;
     }
     /**
      * @return Time zone in the form of tz database canonical zone ID.
      * 
      */
-    public String resourceTimeZone() {
-        return this.resourceTimeZone;
+    public Optional<String> resourceTimeZone() {
+        return Optional.ofNullable(this.resourceTimeZone);
     }
     /**
      * @return Lifecycle state of the monitored resource.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     public Map<String,Object> systemTags() {
-        return this.systemTags;
+        return this.systemTags == null ? Map.of() : this.systemTags;
     }
     /**
      * @return Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    public String tenantId() {
-        return this.tenantId;
+    public Optional<String> tenantId() {
+        return Optional.ofNullable(this.tenantId);
     }
     /**
      * @return The date and time when the monitored resource was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The date and time when the monitored resource was last updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
     /**
      * @return Monitored Resource Type.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
 
     public static Builder builder() {
@@ -286,30 +288,30 @@ public final class GetMonitoredResourcesMonitoredResourceCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAlias> additionalAliases;
-        private List<GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredential> additionalCredentials;
-        private List<GetMonitoredResourcesMonitoredResourceCollectionItemAlias> aliases;
-        private String compartmentId;
-        private List<GetMonitoredResourcesMonitoredResourceCollectionItemCredential> credentials;
-        private List<GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetail> databaseConnectionDetails;
-        private Map<String,Object> definedTags;
-        private String displayName;
-        private String externalId;
-        private String externalResourceId;
-        private Map<String,Object> freeformTags;
-        private String hostName;
-        private String id;
-        private String license;
-        private String managementAgentId;
-        private String name;
-        private List<GetMonitoredResourcesMonitoredResourceCollectionItemProperty> properties;
-        private String resourceTimeZone;
-        private String state;
-        private Map<String,Object> systemTags;
-        private String tenantId;
-        private String timeCreated;
-        private String timeUpdated;
-        private String type;
+        private @Nullable List<GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAlias> additionalAliases;
+        private @Nullable List<GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredential> additionalCredentials;
+        private @Nullable List<GetMonitoredResourcesMonitoredResourceCollectionItemAlias> aliases;
+        private @Nullable String compartmentId;
+        private @Nullable List<GetMonitoredResourcesMonitoredResourceCollectionItemCredential> credentials;
+        private @Nullable List<GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetail> databaseConnectionDetails;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String displayName;
+        private @Nullable String externalId;
+        private @Nullable String externalResourceId;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String hostName;
+        private @Nullable String id;
+        private @Nullable String license;
+        private @Nullable String managementAgentId;
+        private @Nullable String name;
+        private @Nullable List<GetMonitoredResourcesMonitoredResourceCollectionItemProperty> properties;
+        private @Nullable String resourceTimeZone;
+        private @Nullable String state;
+        private @Nullable Map<String,Object> systemTags;
+        private @Nullable String tenantId;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
+        private @Nullable String type;
         public Builder() {}
         public Builder(GetMonitoredResourcesMonitoredResourceCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -340,141 +342,141 @@ public final class GetMonitoredResourcesMonitoredResourceCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder additionalAliases(List<GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAlias> additionalAliases) {
-            this.additionalAliases = Objects.requireNonNull(additionalAliases);
+        public Builder additionalAliases(@Nullable List<GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAlias> additionalAliases) {
+            this.additionalAliases = additionalAliases;
             return this;
         }
         public Builder additionalAliases(GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAlias... additionalAliases) {
             return additionalAliases(List.of(additionalAliases));
         }
         @CustomType.Setter
-        public Builder additionalCredentials(List<GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredential> additionalCredentials) {
-            this.additionalCredentials = Objects.requireNonNull(additionalCredentials);
+        public Builder additionalCredentials(@Nullable List<GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredential> additionalCredentials) {
+            this.additionalCredentials = additionalCredentials;
             return this;
         }
         public Builder additionalCredentials(GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredential... additionalCredentials) {
             return additionalCredentials(List.of(additionalCredentials));
         }
         @CustomType.Setter
-        public Builder aliases(List<GetMonitoredResourcesMonitoredResourceCollectionItemAlias> aliases) {
-            this.aliases = Objects.requireNonNull(aliases);
+        public Builder aliases(@Nullable List<GetMonitoredResourcesMonitoredResourceCollectionItemAlias> aliases) {
+            this.aliases = aliases;
             return this;
         }
         public Builder aliases(GetMonitoredResourcesMonitoredResourceCollectionItemAlias... aliases) {
             return aliases(List.of(aliases));
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder credentials(List<GetMonitoredResourcesMonitoredResourceCollectionItemCredential> credentials) {
-            this.credentials = Objects.requireNonNull(credentials);
+        public Builder credentials(@Nullable List<GetMonitoredResourcesMonitoredResourceCollectionItemCredential> credentials) {
+            this.credentials = credentials;
             return this;
         }
         public Builder credentials(GetMonitoredResourcesMonitoredResourceCollectionItemCredential... credentials) {
             return credentials(List.of(credentials));
         }
         @CustomType.Setter
-        public Builder databaseConnectionDetails(List<GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetail> databaseConnectionDetails) {
-            this.databaseConnectionDetails = Objects.requireNonNull(databaseConnectionDetails);
+        public Builder databaseConnectionDetails(@Nullable List<GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetail> databaseConnectionDetails) {
+            this.databaseConnectionDetails = databaseConnectionDetails;
             return this;
         }
         public Builder databaseConnectionDetails(GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetail... databaseConnectionDetails) {
             return databaseConnectionDetails(List.of(databaseConnectionDetails));
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder externalId(String externalId) {
-            this.externalId = Objects.requireNonNull(externalId);
+        public Builder externalId(@Nullable String externalId) {
+            this.externalId = externalId;
             return this;
         }
         @CustomType.Setter
-        public Builder externalResourceId(String externalResourceId) {
-            this.externalResourceId = Objects.requireNonNull(externalResourceId);
+        public Builder externalResourceId(@Nullable String externalResourceId) {
+            this.externalResourceId = externalResourceId;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder hostName(String hostName) {
-            this.hostName = Objects.requireNonNull(hostName);
+        public Builder hostName(@Nullable String hostName) {
+            this.hostName = hostName;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder license(String license) {
-            this.license = Objects.requireNonNull(license);
+        public Builder license(@Nullable String license) {
+            this.license = license;
             return this;
         }
         @CustomType.Setter
-        public Builder managementAgentId(String managementAgentId) {
-            this.managementAgentId = Objects.requireNonNull(managementAgentId);
+        public Builder managementAgentId(@Nullable String managementAgentId) {
+            this.managementAgentId = managementAgentId;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder properties(List<GetMonitoredResourcesMonitoredResourceCollectionItemProperty> properties) {
-            this.properties = Objects.requireNonNull(properties);
+        public Builder properties(@Nullable List<GetMonitoredResourcesMonitoredResourceCollectionItemProperty> properties) {
+            this.properties = properties;
             return this;
         }
         public Builder properties(GetMonitoredResourcesMonitoredResourceCollectionItemProperty... properties) {
             return properties(List.of(properties));
         }
         @CustomType.Setter
-        public Builder resourceTimeZone(String resourceTimeZone) {
-            this.resourceTimeZone = Objects.requireNonNull(resourceTimeZone);
+        public Builder resourceTimeZone(@Nullable String resourceTimeZone) {
+            this.resourceTimeZone = resourceTimeZone;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+        public Builder systemTags(@Nullable Map<String,Object> systemTags) {
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
-        public Builder tenantId(String tenantId) {
-            this.tenantId = Objects.requireNonNull(tenantId);
+        public Builder tenantId(@Nullable String tenantId) {
+            this.tenantId = tenantId;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         public GetMonitoredResourcesMonitoredResourceCollectionItem build() {

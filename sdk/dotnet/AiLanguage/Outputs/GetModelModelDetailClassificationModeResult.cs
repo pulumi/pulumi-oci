@@ -16,17 +16,17 @@ namespace Pulumi.Oci.AiLanguage.Outputs
         /// <summary>
         /// classification Modes
         /// </summary>
-        public readonly string ClassificationMode;
+        public readonly string? ClassificationMode;
         /// <summary>
         /// For pre trained models this will identify model type version used for model creation For custom identifying the model by model id is difficult. This param provides ease of use for end customer. &lt;&lt;service&gt;&gt;::&lt;&lt;service-name&gt;&gt;_&lt;&lt;model-type-version&gt;&gt;::&lt;&lt;custom model on which this training has to be done&gt;&gt; ex: ai-lang::NER_V1::CUSTOM-V0
         /// </summary>
-        public readonly string Version;
+        public readonly string? Version;
 
         [OutputConstructor]
         private GetModelModelDetailClassificationModeResult(
-            string classificationMode,
+            string? classificationMode,
 
-            string version)
+            string? version)
         {
             ClassificationMode = classificationMode;
             Version = version;

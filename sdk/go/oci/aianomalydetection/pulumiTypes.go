@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -123,12 +122,6 @@ func (i DataAssetDataSourceDetailsArgs) ToDataAssetDataSourceDetailsOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(DataAssetDataSourceDetailsOutput)
 }
 
-func (i DataAssetDataSourceDetailsArgs) ToOutput(ctx context.Context) pulumix.Output[DataAssetDataSourceDetails] {
-	return pulumix.Output[DataAssetDataSourceDetails]{
-		OutputState: i.ToDataAssetDataSourceDetailsOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i DataAssetDataSourceDetailsArgs) ToDataAssetDataSourceDetailsPtrOutput() DataAssetDataSourceDetailsPtrOutput {
 	return i.ToDataAssetDataSourceDetailsPtrOutputWithContext(context.Background())
 }
@@ -170,12 +163,6 @@ func (i *dataAssetDataSourceDetailsPtrType) ToDataAssetDataSourceDetailsPtrOutpu
 	return pulumi.ToOutputWithContext(ctx, i).(DataAssetDataSourceDetailsPtrOutput)
 }
 
-func (i *dataAssetDataSourceDetailsPtrType) ToOutput(ctx context.Context) pulumix.Output[*DataAssetDataSourceDetails] {
-	return pulumix.Output[*DataAssetDataSourceDetails]{
-		OutputState: i.ToDataAssetDataSourceDetailsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DataAssetDataSourceDetailsOutput struct{ *pulumi.OutputState }
 
 func (DataAssetDataSourceDetailsOutput) ElementType() reflect.Type {
@@ -198,12 +185,6 @@ func (o DataAssetDataSourceDetailsOutput) ToDataAssetDataSourceDetailsPtrOutputW
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v DataAssetDataSourceDetails) *DataAssetDataSourceDetails {
 		return &v
 	}).(DataAssetDataSourceDetailsPtrOutput)
-}
-
-func (o DataAssetDataSourceDetailsOutput) ToOutput(ctx context.Context) pulumix.Output[DataAssetDataSourceDetails] {
-	return pulumix.Output[DataAssetDataSourceDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 // atp db password Secret Id
@@ -320,12 +301,6 @@ func (o DataAssetDataSourceDetailsPtrOutput) ToDataAssetDataSourceDetailsPtrOutp
 
 func (o DataAssetDataSourceDetailsPtrOutput) ToDataAssetDataSourceDetailsPtrOutputWithContext(ctx context.Context) DataAssetDataSourceDetailsPtrOutput {
 	return o
-}
-
-func (o DataAssetDataSourceDetailsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*DataAssetDataSourceDetails] {
-	return pulumix.Output[*DataAssetDataSourceDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DataAssetDataSourceDetailsPtrOutput) Elem() DataAssetDataSourceDetailsOutput {
@@ -587,12 +562,6 @@ func (i DataAssetDataSourceDetailsVersionSpecificDetailsArgs) ToDataAssetDataSou
 	return pulumi.ToOutputWithContext(ctx, i).(DataAssetDataSourceDetailsVersionSpecificDetailsOutput)
 }
 
-func (i DataAssetDataSourceDetailsVersionSpecificDetailsArgs) ToOutput(ctx context.Context) pulumix.Output[DataAssetDataSourceDetailsVersionSpecificDetails] {
-	return pulumix.Output[DataAssetDataSourceDetailsVersionSpecificDetails]{
-		OutputState: i.ToDataAssetDataSourceDetailsVersionSpecificDetailsOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i DataAssetDataSourceDetailsVersionSpecificDetailsArgs) ToDataAssetDataSourceDetailsVersionSpecificDetailsPtrOutput() DataAssetDataSourceDetailsVersionSpecificDetailsPtrOutput {
 	return i.ToDataAssetDataSourceDetailsVersionSpecificDetailsPtrOutputWithContext(context.Background())
 }
@@ -634,12 +603,6 @@ func (i *dataAssetDataSourceDetailsVersionSpecificDetailsPtrType) ToDataAssetDat
 	return pulumi.ToOutputWithContext(ctx, i).(DataAssetDataSourceDetailsVersionSpecificDetailsPtrOutput)
 }
 
-func (i *dataAssetDataSourceDetailsVersionSpecificDetailsPtrType) ToOutput(ctx context.Context) pulumix.Output[*DataAssetDataSourceDetailsVersionSpecificDetails] {
-	return pulumix.Output[*DataAssetDataSourceDetailsVersionSpecificDetails]{
-		OutputState: i.ToDataAssetDataSourceDetailsVersionSpecificDetailsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DataAssetDataSourceDetailsVersionSpecificDetailsOutput struct{ *pulumi.OutputState }
 
 func (DataAssetDataSourceDetailsVersionSpecificDetailsOutput) ElementType() reflect.Type {
@@ -662,12 +625,6 @@ func (o DataAssetDataSourceDetailsVersionSpecificDetailsOutput) ToDataAssetDataS
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v DataAssetDataSourceDetailsVersionSpecificDetails) *DataAssetDataSourceDetailsVersionSpecificDetails {
 		return &v
 	}).(DataAssetDataSourceDetailsVersionSpecificDetailsPtrOutput)
-}
-
-func (o DataAssetDataSourceDetailsVersionSpecificDetailsOutput) ToOutput(ctx context.Context) pulumix.Output[DataAssetDataSourceDetailsVersionSpecificDetails] {
-	return pulumix.Output[DataAssetDataSourceDetailsVersionSpecificDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Bucket Name for influx connection
@@ -707,12 +664,6 @@ func (o DataAssetDataSourceDetailsVersionSpecificDetailsPtrOutput) ToDataAssetDa
 
 func (o DataAssetDataSourceDetailsVersionSpecificDetailsPtrOutput) ToDataAssetDataSourceDetailsVersionSpecificDetailsPtrOutputWithContext(ctx context.Context) DataAssetDataSourceDetailsVersionSpecificDetailsPtrOutput {
 	return o
-}
-
-func (o DataAssetDataSourceDetailsVersionSpecificDetailsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*DataAssetDataSourceDetailsVersionSpecificDetails] {
-	return pulumix.Output[*DataAssetDataSourceDetailsVersionSpecificDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DataAssetDataSourceDetailsVersionSpecificDetailsPtrOutput) Elem() DataAssetDataSourceDetailsVersionSpecificDetailsOutput {
@@ -828,12 +779,6 @@ func (i DetectAnomalyJobInputDetailsArgs) ToDetectAnomalyJobInputDetailsOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(DetectAnomalyJobInputDetailsOutput)
 }
 
-func (i DetectAnomalyJobInputDetailsArgs) ToOutput(ctx context.Context) pulumix.Output[DetectAnomalyJobInputDetails] {
-	return pulumix.Output[DetectAnomalyJobInputDetails]{
-		OutputState: i.ToDetectAnomalyJobInputDetailsOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i DetectAnomalyJobInputDetailsArgs) ToDetectAnomalyJobInputDetailsPtrOutput() DetectAnomalyJobInputDetailsPtrOutput {
 	return i.ToDetectAnomalyJobInputDetailsPtrOutputWithContext(context.Background())
 }
@@ -875,12 +820,6 @@ func (i *detectAnomalyJobInputDetailsPtrType) ToDetectAnomalyJobInputDetailsPtrO
 	return pulumi.ToOutputWithContext(ctx, i).(DetectAnomalyJobInputDetailsPtrOutput)
 }
 
-func (i *detectAnomalyJobInputDetailsPtrType) ToOutput(ctx context.Context) pulumix.Output[*DetectAnomalyJobInputDetails] {
-	return pulumix.Output[*DetectAnomalyJobInputDetails]{
-		OutputState: i.ToDetectAnomalyJobInputDetailsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DetectAnomalyJobInputDetailsOutput struct{ *pulumi.OutputState }
 
 func (DetectAnomalyJobInputDetailsOutput) ElementType() reflect.Type {
@@ -903,12 +842,6 @@ func (o DetectAnomalyJobInputDetailsOutput) ToDetectAnomalyJobInputDetailsPtrOut
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v DetectAnomalyJobInputDetails) *DetectAnomalyJobInputDetails {
 		return &v
 	}).(DetectAnomalyJobInputDetailsPtrOutput)
-}
-
-func (o DetectAnomalyJobInputDetailsOutput) ToOutput(ctx context.Context) pulumix.Output[DetectAnomalyJobInputDetails] {
-	return pulumix.Output[DetectAnomalyJobInputDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DetectAnomalyJobInputDetailsOutput) Content() pulumi.StringPtrOutput {
@@ -958,12 +891,6 @@ func (o DetectAnomalyJobInputDetailsPtrOutput) ToDetectAnomalyJobInputDetailsPtr
 
 func (o DetectAnomalyJobInputDetailsPtrOutput) ToDetectAnomalyJobInputDetailsPtrOutputWithContext(ctx context.Context) DetectAnomalyJobInputDetailsPtrOutput {
 	return o
-}
-
-func (o DetectAnomalyJobInputDetailsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*DetectAnomalyJobInputDetails] {
-	return pulumix.Output[*DetectAnomalyJobInputDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DetectAnomalyJobInputDetailsPtrOutput) Elem() DetectAnomalyJobInputDetailsOutput {
@@ -1081,12 +1008,6 @@ func (i DetectAnomalyJobInputDetailsDataArgs) ToDetectAnomalyJobInputDetailsData
 	return pulumi.ToOutputWithContext(ctx, i).(DetectAnomalyJobInputDetailsDataOutput)
 }
 
-func (i DetectAnomalyJobInputDetailsDataArgs) ToOutput(ctx context.Context) pulumix.Output[DetectAnomalyJobInputDetailsData] {
-	return pulumix.Output[DetectAnomalyJobInputDetailsData]{
-		OutputState: i.ToDetectAnomalyJobInputDetailsDataOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DetectAnomalyJobInputDetailsDataArrayInput is an input type that accepts DetectAnomalyJobInputDetailsDataArray and DetectAnomalyJobInputDetailsDataArrayOutput values.
 // You can construct a concrete instance of `DetectAnomalyJobInputDetailsDataArrayInput` via:
 //
@@ -1112,12 +1033,6 @@ func (i DetectAnomalyJobInputDetailsDataArray) ToDetectAnomalyJobInputDetailsDat
 	return pulumi.ToOutputWithContext(ctx, i).(DetectAnomalyJobInputDetailsDataArrayOutput)
 }
 
-func (i DetectAnomalyJobInputDetailsDataArray) ToOutput(ctx context.Context) pulumix.Output[[]DetectAnomalyJobInputDetailsData] {
-	return pulumix.Output[[]DetectAnomalyJobInputDetailsData]{
-		OutputState: i.ToDetectAnomalyJobInputDetailsDataArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DetectAnomalyJobInputDetailsDataOutput struct{ *pulumi.OutputState }
 
 func (DetectAnomalyJobInputDetailsDataOutput) ElementType() reflect.Type {
@@ -1130,12 +1045,6 @@ func (o DetectAnomalyJobInputDetailsDataOutput) ToDetectAnomalyJobInputDetailsDa
 
 func (o DetectAnomalyJobInputDetailsDataOutput) ToDetectAnomalyJobInputDetailsDataOutputWithContext(ctx context.Context) DetectAnomalyJobInputDetailsDataOutput {
 	return o
-}
-
-func (o DetectAnomalyJobInputDetailsDataOutput) ToOutput(ctx context.Context) pulumix.Output[DetectAnomalyJobInputDetailsData] {
-	return pulumix.Output[DetectAnomalyJobInputDetailsData]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Nullable string representing timestamp.
@@ -1160,12 +1069,6 @@ func (o DetectAnomalyJobInputDetailsDataArrayOutput) ToDetectAnomalyJobInputDeta
 
 func (o DetectAnomalyJobInputDetailsDataArrayOutput) ToDetectAnomalyJobInputDetailsDataArrayOutputWithContext(ctx context.Context) DetectAnomalyJobInputDetailsDataArrayOutput {
 	return o
-}
-
-func (o DetectAnomalyJobInputDetailsDataArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]DetectAnomalyJobInputDetailsData] {
-	return pulumix.Output[[]DetectAnomalyJobInputDetailsData]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DetectAnomalyJobInputDetailsDataArrayOutput) Index(i pulumi.IntInput) DetectAnomalyJobInputDetailsDataOutput {
@@ -1215,12 +1118,6 @@ func (i DetectAnomalyJobInputDetailsObjectLocationArgs) ToDetectAnomalyJobInputD
 	return pulumi.ToOutputWithContext(ctx, i).(DetectAnomalyJobInputDetailsObjectLocationOutput)
 }
 
-func (i DetectAnomalyJobInputDetailsObjectLocationArgs) ToOutput(ctx context.Context) pulumix.Output[DetectAnomalyJobInputDetailsObjectLocation] {
-	return pulumix.Output[DetectAnomalyJobInputDetailsObjectLocation]{
-		OutputState: i.ToDetectAnomalyJobInputDetailsObjectLocationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DetectAnomalyJobInputDetailsObjectLocationArrayInput is an input type that accepts DetectAnomalyJobInputDetailsObjectLocationArray and DetectAnomalyJobInputDetailsObjectLocationArrayOutput values.
 // You can construct a concrete instance of `DetectAnomalyJobInputDetailsObjectLocationArrayInput` via:
 //
@@ -1246,12 +1143,6 @@ func (i DetectAnomalyJobInputDetailsObjectLocationArray) ToDetectAnomalyJobInput
 	return pulumi.ToOutputWithContext(ctx, i).(DetectAnomalyJobInputDetailsObjectLocationArrayOutput)
 }
 
-func (i DetectAnomalyJobInputDetailsObjectLocationArray) ToOutput(ctx context.Context) pulumix.Output[[]DetectAnomalyJobInputDetailsObjectLocation] {
-	return pulumix.Output[[]DetectAnomalyJobInputDetailsObjectLocation]{
-		OutputState: i.ToDetectAnomalyJobInputDetailsObjectLocationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DetectAnomalyJobInputDetailsObjectLocationOutput struct{ *pulumi.OutputState }
 
 func (DetectAnomalyJobInputDetailsObjectLocationOutput) ElementType() reflect.Type {
@@ -1264,12 +1155,6 @@ func (o DetectAnomalyJobInputDetailsObjectLocationOutput) ToDetectAnomalyJobInpu
 
 func (o DetectAnomalyJobInputDetailsObjectLocationOutput) ToDetectAnomalyJobInputDetailsObjectLocationOutputWithContext(ctx context.Context) DetectAnomalyJobInputDetailsObjectLocationOutput {
 	return o
-}
-
-func (o DetectAnomalyJobInputDetailsObjectLocationOutput) ToOutput(ctx context.Context) pulumix.Output[DetectAnomalyJobInputDetailsObjectLocation] {
-	return pulumix.Output[DetectAnomalyJobInputDetailsObjectLocation]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Object Storage bucket name.
@@ -1299,12 +1184,6 @@ func (o DetectAnomalyJobInputDetailsObjectLocationArrayOutput) ToDetectAnomalyJo
 
 func (o DetectAnomalyJobInputDetailsObjectLocationArrayOutput) ToDetectAnomalyJobInputDetailsObjectLocationArrayOutputWithContext(ctx context.Context) DetectAnomalyJobInputDetailsObjectLocationArrayOutput {
 	return o
-}
-
-func (o DetectAnomalyJobInputDetailsObjectLocationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]DetectAnomalyJobInputDetailsObjectLocation] {
-	return pulumix.Output[[]DetectAnomalyJobInputDetailsObjectLocation]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DetectAnomalyJobInputDetailsObjectLocationArrayOutput) Index(i pulumi.IntInput) DetectAnomalyJobInputDetailsObjectLocationOutput {
@@ -1358,12 +1237,6 @@ func (i DetectAnomalyJobOutputDetailsArgs) ToDetectAnomalyJobOutputDetailsOutput
 	return pulumi.ToOutputWithContext(ctx, i).(DetectAnomalyJobOutputDetailsOutput)
 }
 
-func (i DetectAnomalyJobOutputDetailsArgs) ToOutput(ctx context.Context) pulumix.Output[DetectAnomalyJobOutputDetails] {
-	return pulumix.Output[DetectAnomalyJobOutputDetails]{
-		OutputState: i.ToDetectAnomalyJobOutputDetailsOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i DetectAnomalyJobOutputDetailsArgs) ToDetectAnomalyJobOutputDetailsPtrOutput() DetectAnomalyJobOutputDetailsPtrOutput {
 	return i.ToDetectAnomalyJobOutputDetailsPtrOutputWithContext(context.Background())
 }
@@ -1405,12 +1278,6 @@ func (i *detectAnomalyJobOutputDetailsPtrType) ToDetectAnomalyJobOutputDetailsPt
 	return pulumi.ToOutputWithContext(ctx, i).(DetectAnomalyJobOutputDetailsPtrOutput)
 }
 
-func (i *detectAnomalyJobOutputDetailsPtrType) ToOutput(ctx context.Context) pulumix.Output[*DetectAnomalyJobOutputDetails] {
-	return pulumix.Output[*DetectAnomalyJobOutputDetails]{
-		OutputState: i.ToDetectAnomalyJobOutputDetailsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DetectAnomalyJobOutputDetailsOutput struct{ *pulumi.OutputState }
 
 func (DetectAnomalyJobOutputDetailsOutput) ElementType() reflect.Type {
@@ -1433,12 +1300,6 @@ func (o DetectAnomalyJobOutputDetailsOutput) ToDetectAnomalyJobOutputDetailsPtrO
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v DetectAnomalyJobOutputDetails) *DetectAnomalyJobOutputDetails {
 		return &v
 	}).(DetectAnomalyJobOutputDetailsPtrOutput)
-}
-
-func (o DetectAnomalyJobOutputDetailsOutput) ToOutput(ctx context.Context) pulumix.Output[DetectAnomalyJobOutputDetails] {
-	return pulumix.Output[DetectAnomalyJobOutputDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Object Storage bucket name.
@@ -1473,12 +1334,6 @@ func (o DetectAnomalyJobOutputDetailsPtrOutput) ToDetectAnomalyJobOutputDetailsP
 
 func (o DetectAnomalyJobOutputDetailsPtrOutput) ToDetectAnomalyJobOutputDetailsPtrOutputWithContext(ctx context.Context) DetectAnomalyJobOutputDetailsPtrOutput {
 	return o
-}
-
-func (o DetectAnomalyJobOutputDetailsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*DetectAnomalyJobOutputDetails] {
-	return pulumix.Output[*DetectAnomalyJobOutputDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DetectAnomalyJobOutputDetailsPtrOutput) Elem() DetectAnomalyJobOutputDetailsOutput {
@@ -1580,12 +1435,6 @@ func (i ModelModelTrainingDetailsArgs) ToModelModelTrainingDetailsOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(ModelModelTrainingDetailsOutput)
 }
 
-func (i ModelModelTrainingDetailsArgs) ToOutput(ctx context.Context) pulumix.Output[ModelModelTrainingDetails] {
-	return pulumix.Output[ModelModelTrainingDetails]{
-		OutputState: i.ToModelModelTrainingDetailsOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i ModelModelTrainingDetailsArgs) ToModelModelTrainingDetailsPtrOutput() ModelModelTrainingDetailsPtrOutput {
 	return i.ToModelModelTrainingDetailsPtrOutputWithContext(context.Background())
 }
@@ -1627,12 +1476,6 @@ func (i *modelModelTrainingDetailsPtrType) ToModelModelTrainingDetailsPtrOutputW
 	return pulumi.ToOutputWithContext(ctx, i).(ModelModelTrainingDetailsPtrOutput)
 }
 
-func (i *modelModelTrainingDetailsPtrType) ToOutput(ctx context.Context) pulumix.Output[*ModelModelTrainingDetails] {
-	return pulumix.Output[*ModelModelTrainingDetails]{
-		OutputState: i.ToModelModelTrainingDetailsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ModelModelTrainingDetailsOutput struct{ *pulumi.OutputState }
 
 func (ModelModelTrainingDetailsOutput) ElementType() reflect.Type {
@@ -1655,12 +1498,6 @@ func (o ModelModelTrainingDetailsOutput) ToModelModelTrainingDetailsPtrOutputWit
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v ModelModelTrainingDetails) *ModelModelTrainingDetails {
 		return &v
 	}).(ModelModelTrainingDetailsPtrOutput)
-}
-
-func (o ModelModelTrainingDetailsOutput) ToOutput(ctx context.Context) pulumix.Output[ModelModelTrainingDetails] {
-	return pulumix.Output[ModelModelTrainingDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 // User can choose specific algorithm for training.
@@ -1700,12 +1537,6 @@ func (o ModelModelTrainingDetailsPtrOutput) ToModelModelTrainingDetailsPtrOutput
 
 func (o ModelModelTrainingDetailsPtrOutput) ToModelModelTrainingDetailsPtrOutputWithContext(ctx context.Context) ModelModelTrainingDetailsPtrOutput {
 	return o
-}
-
-func (o ModelModelTrainingDetailsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*ModelModelTrainingDetails] {
-	return pulumix.Output[*ModelModelTrainingDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ModelModelTrainingDetailsPtrOutput) Elem() ModelModelTrainingDetailsOutput {
@@ -1831,12 +1662,6 @@ func (i ModelModelTrainingResultArgs) ToModelModelTrainingResultOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(ModelModelTrainingResultOutput)
 }
 
-func (i ModelModelTrainingResultArgs) ToOutput(ctx context.Context) pulumix.Output[ModelModelTrainingResult] {
-	return pulumix.Output[ModelModelTrainingResult]{
-		OutputState: i.ToModelModelTrainingResultOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ModelModelTrainingResultArrayInput is an input type that accepts ModelModelTrainingResultArray and ModelModelTrainingResultArrayOutput values.
 // You can construct a concrete instance of `ModelModelTrainingResultArrayInput` via:
 //
@@ -1862,12 +1687,6 @@ func (i ModelModelTrainingResultArray) ToModelModelTrainingResultArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(ModelModelTrainingResultArrayOutput)
 }
 
-func (i ModelModelTrainingResultArray) ToOutput(ctx context.Context) pulumix.Output[[]ModelModelTrainingResult] {
-	return pulumix.Output[[]ModelModelTrainingResult]{
-		OutputState: i.ToModelModelTrainingResultArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ModelModelTrainingResultOutput struct{ *pulumi.OutputState }
 
 func (ModelModelTrainingResultOutput) ElementType() reflect.Type {
@@ -1880,12 +1699,6 @@ func (o ModelModelTrainingResultOutput) ToModelModelTrainingResultOutput() Model
 
 func (o ModelModelTrainingResultOutput) ToModelModelTrainingResultOutputWithContext(ctx context.Context) ModelModelTrainingResultOutput {
 	return o
-}
-
-func (o ModelModelTrainingResultOutput) ToOutput(ctx context.Context) pulumix.Output[ModelModelTrainingResult] {
-	return pulumix.Output[ModelModelTrainingResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Accuracy metric for a signal.
@@ -1951,12 +1764,6 @@ func (o ModelModelTrainingResultArrayOutput) ToModelModelTrainingResultArrayOutp
 	return o
 }
 
-func (o ModelModelTrainingResultArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ModelModelTrainingResult] {
-	return pulumix.Output[[]ModelModelTrainingResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o ModelModelTrainingResultArrayOutput) Index(i pulumi.IntInput) ModelModelTrainingResultOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ModelModelTrainingResult {
 		return vs[0].([]ModelModelTrainingResult)[vs[1].(int)]
@@ -2008,12 +1815,6 @@ func (i ModelModelTrainingResultRowReductionDetailArgs) ToModelModelTrainingResu
 	return pulumi.ToOutputWithContext(ctx, i).(ModelModelTrainingResultRowReductionDetailOutput)
 }
 
-func (i ModelModelTrainingResultRowReductionDetailArgs) ToOutput(ctx context.Context) pulumix.Output[ModelModelTrainingResultRowReductionDetail] {
-	return pulumix.Output[ModelModelTrainingResultRowReductionDetail]{
-		OutputState: i.ToModelModelTrainingResultRowReductionDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ModelModelTrainingResultRowReductionDetailArrayInput is an input type that accepts ModelModelTrainingResultRowReductionDetailArray and ModelModelTrainingResultRowReductionDetailArrayOutput values.
 // You can construct a concrete instance of `ModelModelTrainingResultRowReductionDetailArrayInput` via:
 //
@@ -2039,12 +1840,6 @@ func (i ModelModelTrainingResultRowReductionDetailArray) ToModelModelTrainingRes
 	return pulumi.ToOutputWithContext(ctx, i).(ModelModelTrainingResultRowReductionDetailArrayOutput)
 }
 
-func (i ModelModelTrainingResultRowReductionDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]ModelModelTrainingResultRowReductionDetail] {
-	return pulumix.Output[[]ModelModelTrainingResultRowReductionDetail]{
-		OutputState: i.ToModelModelTrainingResultRowReductionDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ModelModelTrainingResultRowReductionDetailOutput struct{ *pulumi.OutputState }
 
 func (ModelModelTrainingResultRowReductionDetailOutput) ElementType() reflect.Type {
@@ -2057,12 +1852,6 @@ func (o ModelModelTrainingResultRowReductionDetailOutput) ToModelModelTrainingRe
 
 func (o ModelModelTrainingResultRowReductionDetailOutput) ToModelModelTrainingResultRowReductionDetailOutputWithContext(ctx context.Context) ModelModelTrainingResultRowReductionDetailOutput {
 	return o
-}
-
-func (o ModelModelTrainingResultRowReductionDetailOutput) ToOutput(ctx context.Context) pulumix.Output[ModelModelTrainingResultRowReductionDetail] {
-	return pulumix.Output[ModelModelTrainingResultRowReductionDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A boolean value to indicate if row reduction is applied
@@ -2094,12 +1883,6 @@ func (o ModelModelTrainingResultRowReductionDetailArrayOutput) ToModelModelTrain
 
 func (o ModelModelTrainingResultRowReductionDetailArrayOutput) ToModelModelTrainingResultRowReductionDetailArrayOutputWithContext(ctx context.Context) ModelModelTrainingResultRowReductionDetailArrayOutput {
 	return o
-}
-
-func (o ModelModelTrainingResultRowReductionDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ModelModelTrainingResultRowReductionDetail] {
-	return pulumix.Output[[]ModelModelTrainingResultRowReductionDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ModelModelTrainingResultRowReductionDetailArrayOutput) Index(i pulumi.IntInput) ModelModelTrainingResultRowReductionDetailOutput {
@@ -2179,12 +1962,6 @@ func (i ModelModelTrainingResultSignalDetailArgs) ToModelModelTrainingResultSign
 	return pulumi.ToOutputWithContext(ctx, i).(ModelModelTrainingResultSignalDetailOutput)
 }
 
-func (i ModelModelTrainingResultSignalDetailArgs) ToOutput(ctx context.Context) pulumix.Output[ModelModelTrainingResultSignalDetail] {
-	return pulumix.Output[ModelModelTrainingResultSignalDetail]{
-		OutputState: i.ToModelModelTrainingResultSignalDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ModelModelTrainingResultSignalDetailArrayInput is an input type that accepts ModelModelTrainingResultSignalDetailArray and ModelModelTrainingResultSignalDetailArrayOutput values.
 // You can construct a concrete instance of `ModelModelTrainingResultSignalDetailArrayInput` via:
 //
@@ -2210,12 +1987,6 @@ func (i ModelModelTrainingResultSignalDetailArray) ToModelModelTrainingResultSig
 	return pulumi.ToOutputWithContext(ctx, i).(ModelModelTrainingResultSignalDetailArrayOutput)
 }
 
-func (i ModelModelTrainingResultSignalDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]ModelModelTrainingResultSignalDetail] {
-	return pulumix.Output[[]ModelModelTrainingResultSignalDetail]{
-		OutputState: i.ToModelModelTrainingResultSignalDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ModelModelTrainingResultSignalDetailOutput struct{ *pulumi.OutputState }
 
 func (ModelModelTrainingResultSignalDetailOutput) ElementType() reflect.Type {
@@ -2228,12 +1999,6 @@ func (o ModelModelTrainingResultSignalDetailOutput) ToModelModelTrainingResultSi
 
 func (o ModelModelTrainingResultSignalDetailOutput) ToModelModelTrainingResultSignalDetailOutputWithContext(ctx context.Context) ModelModelTrainingResultSignalDetailOutput {
 	return o
-}
-
-func (o ModelModelTrainingResultSignalDetailOutput) ToOutput(ctx context.Context) pulumix.Output[ModelModelTrainingResultSignalDetail] {
-	return pulumix.Output[ModelModelTrainingResultSignalDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // detailed information for a signal.
@@ -2298,12 +2063,6 @@ func (o ModelModelTrainingResultSignalDetailArrayOutput) ToModelModelTrainingRes
 	return o
 }
 
-func (o ModelModelTrainingResultSignalDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ModelModelTrainingResultSignalDetail] {
-	return pulumix.Output[[]ModelModelTrainingResultSignalDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o ModelModelTrainingResultSignalDetailArrayOutput) Index(i pulumi.IntInput) ModelModelTrainingResultSignalDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ModelModelTrainingResultSignalDetail {
 		return vs[0].([]ModelModelTrainingResultSignalDetail)[vs[1].(int)]
@@ -2341,12 +2100,6 @@ func (i GetAiPrivateEndpointsAiPrivateEndpointCollectionArgs) ToGetAiPrivateEndp
 	return pulumi.ToOutputWithContext(ctx, i).(GetAiPrivateEndpointsAiPrivateEndpointCollectionOutput)
 }
 
-func (i GetAiPrivateEndpointsAiPrivateEndpointCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetAiPrivateEndpointsAiPrivateEndpointCollection] {
-	return pulumix.Output[GetAiPrivateEndpointsAiPrivateEndpointCollection]{
-		OutputState: i.ToGetAiPrivateEndpointsAiPrivateEndpointCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAiPrivateEndpointsAiPrivateEndpointCollectionArrayInput is an input type that accepts GetAiPrivateEndpointsAiPrivateEndpointCollectionArray and GetAiPrivateEndpointsAiPrivateEndpointCollectionArrayOutput values.
 // You can construct a concrete instance of `GetAiPrivateEndpointsAiPrivateEndpointCollectionArrayInput` via:
 //
@@ -2372,12 +2125,6 @@ func (i GetAiPrivateEndpointsAiPrivateEndpointCollectionArray) ToGetAiPrivateEnd
 	return pulumi.ToOutputWithContext(ctx, i).(GetAiPrivateEndpointsAiPrivateEndpointCollectionArrayOutput)
 }
 
-func (i GetAiPrivateEndpointsAiPrivateEndpointCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAiPrivateEndpointsAiPrivateEndpointCollection] {
-	return pulumix.Output[[]GetAiPrivateEndpointsAiPrivateEndpointCollection]{
-		OutputState: i.ToGetAiPrivateEndpointsAiPrivateEndpointCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAiPrivateEndpointsAiPrivateEndpointCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetAiPrivateEndpointsAiPrivateEndpointCollectionOutput) ElementType() reflect.Type {
@@ -2390,12 +2137,6 @@ func (o GetAiPrivateEndpointsAiPrivateEndpointCollectionOutput) ToGetAiPrivateEn
 
 func (o GetAiPrivateEndpointsAiPrivateEndpointCollectionOutput) ToGetAiPrivateEndpointsAiPrivateEndpointCollectionOutputWithContext(ctx context.Context) GetAiPrivateEndpointsAiPrivateEndpointCollectionOutput {
 	return o
-}
-
-func (o GetAiPrivateEndpointsAiPrivateEndpointCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetAiPrivateEndpointsAiPrivateEndpointCollection] {
-	return pulumix.Output[GetAiPrivateEndpointsAiPrivateEndpointCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAiPrivateEndpointsAiPrivateEndpointCollectionOutput) Items() GetAiPrivateEndpointsAiPrivateEndpointCollectionItemArrayOutput {
@@ -2418,12 +2159,6 @@ func (o GetAiPrivateEndpointsAiPrivateEndpointCollectionArrayOutput) ToGetAiPriv
 	return o
 }
 
-func (o GetAiPrivateEndpointsAiPrivateEndpointCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAiPrivateEndpointsAiPrivateEndpointCollection] {
-	return pulumix.Output[[]GetAiPrivateEndpointsAiPrivateEndpointCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAiPrivateEndpointsAiPrivateEndpointCollectionArrayOutput) Index(i pulumi.IntInput) GetAiPrivateEndpointsAiPrivateEndpointCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAiPrivateEndpointsAiPrivateEndpointCollection {
 		return vs[0].([]GetAiPrivateEndpointsAiPrivateEndpointCollection)[vs[1].(int)]
@@ -2434,29 +2169,29 @@ type GetAiPrivateEndpointsAiPrivateEndpointCollectionItem struct {
 	// The list of dataAssets using the private reverse connection endpoint.
 	AttachedDataAssets []string `pulumi:"attachedDataAssets"`
 	// The ID of the compartment in which to list resources.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// List of DNS zones to be used by the data assets. Example: custpvtsubnet.oraclevcn.com for data asset: db.custpvtsubnet.oraclevcn.com
 	DnsZones []string `pulumi:"dnsZones"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// unique AiPrivateEndpoint identifier
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Subnet Identifier
-	SubnetId string `pulumi:"subnetId"`
+	SubnetId *string `pulumi:"subnetId"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time the private endpoint was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the private endpoint was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 // GetAiPrivateEndpointsAiPrivateEndpointCollectionItemInput is an input type that accepts GetAiPrivateEndpointsAiPrivateEndpointCollectionItemArgs and GetAiPrivateEndpointsAiPrivateEndpointCollectionItemOutput values.
@@ -2474,29 +2209,29 @@ type GetAiPrivateEndpointsAiPrivateEndpointCollectionItemArgs struct {
 	// The list of dataAssets using the private reverse connection endpoint.
 	AttachedDataAssets pulumi.StringArrayInput `pulumi:"attachedDataAssets"`
 	// The ID of the compartment in which to list resources.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// List of DNS zones to be used by the data assets. Example: custpvtsubnet.oraclevcn.com for data asset: db.custpvtsubnet.oraclevcn.com
 	DnsZones pulumi.StringArrayInput `pulumi:"dnsZones"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// unique AiPrivateEndpoint identifier
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// Subnet Identifier
-	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// The time the private endpoint was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The time the private endpoint was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 }
 
 func (GetAiPrivateEndpointsAiPrivateEndpointCollectionItemArgs) ElementType() reflect.Type {
@@ -2509,12 +2244,6 @@ func (i GetAiPrivateEndpointsAiPrivateEndpointCollectionItemArgs) ToGetAiPrivate
 
 func (i GetAiPrivateEndpointsAiPrivateEndpointCollectionItemArgs) ToGetAiPrivateEndpointsAiPrivateEndpointCollectionItemOutputWithContext(ctx context.Context) GetAiPrivateEndpointsAiPrivateEndpointCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAiPrivateEndpointsAiPrivateEndpointCollectionItemOutput)
-}
-
-func (i GetAiPrivateEndpointsAiPrivateEndpointCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetAiPrivateEndpointsAiPrivateEndpointCollectionItem] {
-	return pulumix.Output[GetAiPrivateEndpointsAiPrivateEndpointCollectionItem]{
-		OutputState: i.ToGetAiPrivateEndpointsAiPrivateEndpointCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAiPrivateEndpointsAiPrivateEndpointCollectionItemArrayInput is an input type that accepts GetAiPrivateEndpointsAiPrivateEndpointCollectionItemArray and GetAiPrivateEndpointsAiPrivateEndpointCollectionItemArrayOutput values.
@@ -2542,12 +2271,6 @@ func (i GetAiPrivateEndpointsAiPrivateEndpointCollectionItemArray) ToGetAiPrivat
 	return pulumi.ToOutputWithContext(ctx, i).(GetAiPrivateEndpointsAiPrivateEndpointCollectionItemArrayOutput)
 }
 
-func (i GetAiPrivateEndpointsAiPrivateEndpointCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAiPrivateEndpointsAiPrivateEndpointCollectionItem] {
-	return pulumix.Output[[]GetAiPrivateEndpointsAiPrivateEndpointCollectionItem]{
-		OutputState: i.ToGetAiPrivateEndpointsAiPrivateEndpointCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAiPrivateEndpointsAiPrivateEndpointCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetAiPrivateEndpointsAiPrivateEndpointCollectionItemOutput) ElementType() reflect.Type {
@@ -2562,20 +2285,14 @@ func (o GetAiPrivateEndpointsAiPrivateEndpointCollectionItemOutput) ToGetAiPriva
 	return o
 }
 
-func (o GetAiPrivateEndpointsAiPrivateEndpointCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetAiPrivateEndpointsAiPrivateEndpointCollectionItem] {
-	return pulumix.Output[GetAiPrivateEndpointsAiPrivateEndpointCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The list of dataAssets using the private reverse connection endpoint.
 func (o GetAiPrivateEndpointsAiPrivateEndpointCollectionItemOutput) AttachedDataAssets() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetAiPrivateEndpointsAiPrivateEndpointCollectionItem) []string { return v.AttachedDataAssets }).(pulumi.StringArrayOutput)
 }
 
 // The ID of the compartment in which to list resources.
-func (o GetAiPrivateEndpointsAiPrivateEndpointCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAiPrivateEndpointsAiPrivateEndpointCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetAiPrivateEndpointsAiPrivateEndpointCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAiPrivateEndpointsAiPrivateEndpointCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -2586,8 +2303,8 @@ func (o GetAiPrivateEndpointsAiPrivateEndpointCollectionItemOutput) DefinedTags(
 }
 
 // A filter to return only resources that match the entire display name given.
-func (o GetAiPrivateEndpointsAiPrivateEndpointCollectionItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAiPrivateEndpointsAiPrivateEndpointCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetAiPrivateEndpointsAiPrivateEndpointCollectionItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAiPrivateEndpointsAiPrivateEndpointCollectionItem) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // List of DNS zones to be used by the data assets. Example: custpvtsubnet.oraclevcn.com for data asset: db.custpvtsubnet.oraclevcn.com
@@ -2603,23 +2320,23 @@ func (o GetAiPrivateEndpointsAiPrivateEndpointCollectionItemOutput) FreeformTags
 }
 
 // unique AiPrivateEndpoint identifier
-func (o GetAiPrivateEndpointsAiPrivateEndpointCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAiPrivateEndpointsAiPrivateEndpointCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetAiPrivateEndpointsAiPrivateEndpointCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAiPrivateEndpointsAiPrivateEndpointCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
-func (o GetAiPrivateEndpointsAiPrivateEndpointCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAiPrivateEndpointsAiPrivateEndpointCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetAiPrivateEndpointsAiPrivateEndpointCollectionItemOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAiPrivateEndpointsAiPrivateEndpointCollectionItem) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
-func (o GetAiPrivateEndpointsAiPrivateEndpointCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAiPrivateEndpointsAiPrivateEndpointCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetAiPrivateEndpointsAiPrivateEndpointCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAiPrivateEndpointsAiPrivateEndpointCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Subnet Identifier
-func (o GetAiPrivateEndpointsAiPrivateEndpointCollectionItemOutput) SubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAiPrivateEndpointsAiPrivateEndpointCollectionItem) string { return v.SubnetId }).(pulumi.StringOutput)
+func (o GetAiPrivateEndpointsAiPrivateEndpointCollectionItemOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAiPrivateEndpointsAiPrivateEndpointCollectionItem) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -2630,13 +2347,13 @@ func (o GetAiPrivateEndpointsAiPrivateEndpointCollectionItemOutput) SystemTags()
 }
 
 // The time the private endpoint was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-func (o GetAiPrivateEndpointsAiPrivateEndpointCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAiPrivateEndpointsAiPrivateEndpointCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetAiPrivateEndpointsAiPrivateEndpointCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAiPrivateEndpointsAiPrivateEndpointCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the private endpoint was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-func (o GetAiPrivateEndpointsAiPrivateEndpointCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAiPrivateEndpointsAiPrivateEndpointCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetAiPrivateEndpointsAiPrivateEndpointCollectionItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAiPrivateEndpointsAiPrivateEndpointCollectionItem) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type GetAiPrivateEndpointsAiPrivateEndpointCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -2651,12 +2368,6 @@ func (o GetAiPrivateEndpointsAiPrivateEndpointCollectionItemArrayOutput) ToGetAi
 
 func (o GetAiPrivateEndpointsAiPrivateEndpointCollectionItemArrayOutput) ToGetAiPrivateEndpointsAiPrivateEndpointCollectionItemArrayOutputWithContext(ctx context.Context) GetAiPrivateEndpointsAiPrivateEndpointCollectionItemArrayOutput {
 	return o
-}
-
-func (o GetAiPrivateEndpointsAiPrivateEndpointCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAiPrivateEndpointsAiPrivateEndpointCollectionItem] {
-	return pulumix.Output[[]GetAiPrivateEndpointsAiPrivateEndpointCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAiPrivateEndpointsAiPrivateEndpointCollectionItemArrayOutput) Index(i pulumi.IntInput) GetAiPrivateEndpointsAiPrivateEndpointCollectionItemOutput {
@@ -2700,12 +2411,6 @@ func (i GetAiPrivateEndpointsFilterArgs) ToGetAiPrivateEndpointsFilterOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetAiPrivateEndpointsFilterOutput)
 }
 
-func (i GetAiPrivateEndpointsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetAiPrivateEndpointsFilter] {
-	return pulumix.Output[GetAiPrivateEndpointsFilter]{
-		OutputState: i.ToGetAiPrivateEndpointsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAiPrivateEndpointsFilterArrayInput is an input type that accepts GetAiPrivateEndpointsFilterArray and GetAiPrivateEndpointsFilterArrayOutput values.
 // You can construct a concrete instance of `GetAiPrivateEndpointsFilterArrayInput` via:
 //
@@ -2731,12 +2436,6 @@ func (i GetAiPrivateEndpointsFilterArray) ToGetAiPrivateEndpointsFilterArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetAiPrivateEndpointsFilterArrayOutput)
 }
 
-func (i GetAiPrivateEndpointsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAiPrivateEndpointsFilter] {
-	return pulumix.Output[[]GetAiPrivateEndpointsFilter]{
-		OutputState: i.ToGetAiPrivateEndpointsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAiPrivateEndpointsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetAiPrivateEndpointsFilterOutput) ElementType() reflect.Type {
@@ -2749,12 +2448,6 @@ func (o GetAiPrivateEndpointsFilterOutput) ToGetAiPrivateEndpointsFilterOutput()
 
 func (o GetAiPrivateEndpointsFilterOutput) ToGetAiPrivateEndpointsFilterOutputWithContext(ctx context.Context) GetAiPrivateEndpointsFilterOutput {
 	return o
-}
-
-func (o GetAiPrivateEndpointsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetAiPrivateEndpointsFilter] {
-	return pulumix.Output[GetAiPrivateEndpointsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAiPrivateEndpointsFilterOutput) Name() pulumi.StringOutput {
@@ -2783,12 +2476,6 @@ func (o GetAiPrivateEndpointsFilterArrayOutput) ToGetAiPrivateEndpointsFilterArr
 	return o
 }
 
-func (o GetAiPrivateEndpointsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAiPrivateEndpointsFilter] {
-	return pulumix.Output[[]GetAiPrivateEndpointsFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAiPrivateEndpointsFilterArrayOutput) Index(i pulumi.IntInput) GetAiPrivateEndpointsFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAiPrivateEndpointsFilter {
 		return vs[0].([]GetAiPrivateEndpointsFilter)[vs[1].(int)]
@@ -2796,13 +2483,13 @@ func (o GetAiPrivateEndpointsFilterArrayOutput) Index(i pulumi.IntInput) GetAiPr
 }
 
 type GetDetectAnomalyJobInputDetail struct {
-	Content     string                               `pulumi:"content"`
-	ContentType string                               `pulumi:"contentType"`
+	Content     *string                              `pulumi:"content"`
+	ContentType *string                              `pulumi:"contentType"`
 	Datas       []GetDetectAnomalyJobInputDetailData `pulumi:"datas"`
 	// The type of input location Allowed values are:
-	InputType string `pulumi:"inputType"`
+	InputType *string `pulumi:"inputType"`
 	// Inline input details.
-	Message string `pulumi:"message"`
+	Message *string `pulumi:"message"`
 	// List of ObjectLocations.
 	ObjectLocations []GetDetectAnomalyJobInputDetailObjectLocation `pulumi:"objectLocations"`
 	SignalNames     []string                                       `pulumi:"signalNames"`
@@ -2820,13 +2507,13 @@ type GetDetectAnomalyJobInputDetailInput interface {
 }
 
 type GetDetectAnomalyJobInputDetailArgs struct {
-	Content     pulumi.StringInput                           `pulumi:"content"`
-	ContentType pulumi.StringInput                           `pulumi:"contentType"`
+	Content     pulumi.StringPtrInput                        `pulumi:"content"`
+	ContentType pulumi.StringPtrInput                        `pulumi:"contentType"`
 	Datas       GetDetectAnomalyJobInputDetailDataArrayInput `pulumi:"datas"`
 	// The type of input location Allowed values are:
-	InputType pulumi.StringInput `pulumi:"inputType"`
+	InputType pulumi.StringPtrInput `pulumi:"inputType"`
 	// Inline input details.
-	Message pulumi.StringInput `pulumi:"message"`
+	Message pulumi.StringPtrInput `pulumi:"message"`
 	// List of ObjectLocations.
 	ObjectLocations GetDetectAnomalyJobInputDetailObjectLocationArrayInput `pulumi:"objectLocations"`
 	SignalNames     pulumi.StringArrayInput                                `pulumi:"signalNames"`
@@ -2842,12 +2529,6 @@ func (i GetDetectAnomalyJobInputDetailArgs) ToGetDetectAnomalyJobInputDetailOutp
 
 func (i GetDetectAnomalyJobInputDetailArgs) ToGetDetectAnomalyJobInputDetailOutputWithContext(ctx context.Context) GetDetectAnomalyJobInputDetailOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectAnomalyJobInputDetailOutput)
-}
-
-func (i GetDetectAnomalyJobInputDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectAnomalyJobInputDetail] {
-	return pulumix.Output[GetDetectAnomalyJobInputDetail]{
-		OutputState: i.ToGetDetectAnomalyJobInputDetailOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetDetectAnomalyJobInputDetailArrayInput is an input type that accepts GetDetectAnomalyJobInputDetailArray and GetDetectAnomalyJobInputDetailArrayOutput values.
@@ -2875,12 +2556,6 @@ func (i GetDetectAnomalyJobInputDetailArray) ToGetDetectAnomalyJobInputDetailArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectAnomalyJobInputDetailArrayOutput)
 }
 
-func (i GetDetectAnomalyJobInputDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectAnomalyJobInputDetail] {
-	return pulumix.Output[[]GetDetectAnomalyJobInputDetail]{
-		OutputState: i.ToGetDetectAnomalyJobInputDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectAnomalyJobInputDetailOutput struct{ *pulumi.OutputState }
 
 func (GetDetectAnomalyJobInputDetailOutput) ElementType() reflect.Type {
@@ -2895,18 +2570,12 @@ func (o GetDetectAnomalyJobInputDetailOutput) ToGetDetectAnomalyJobInputDetailOu
 	return o
 }
 
-func (o GetDetectAnomalyJobInputDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectAnomalyJobInputDetail] {
-	return pulumix.Output[GetDetectAnomalyJobInputDetail]{
-		OutputState: o.OutputState,
-	}
+func (o GetDetectAnomalyJobInputDetailOutput) Content() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectAnomalyJobInputDetail) *string { return v.Content }).(pulumi.StringPtrOutput)
 }
 
-func (o GetDetectAnomalyJobInputDetailOutput) Content() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectAnomalyJobInputDetail) string { return v.Content }).(pulumi.StringOutput)
-}
-
-func (o GetDetectAnomalyJobInputDetailOutput) ContentType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectAnomalyJobInputDetail) string { return v.ContentType }).(pulumi.StringOutput)
+func (o GetDetectAnomalyJobInputDetailOutput) ContentType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectAnomalyJobInputDetail) *string { return v.ContentType }).(pulumi.StringPtrOutput)
 }
 
 func (o GetDetectAnomalyJobInputDetailOutput) Datas() GetDetectAnomalyJobInputDetailDataArrayOutput {
@@ -2914,13 +2583,13 @@ func (o GetDetectAnomalyJobInputDetailOutput) Datas() GetDetectAnomalyJobInputDe
 }
 
 // The type of input location Allowed values are:
-func (o GetDetectAnomalyJobInputDetailOutput) InputType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectAnomalyJobInputDetail) string { return v.InputType }).(pulumi.StringOutput)
+func (o GetDetectAnomalyJobInputDetailOutput) InputType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectAnomalyJobInputDetail) *string { return v.InputType }).(pulumi.StringPtrOutput)
 }
 
 // Inline input details.
-func (o GetDetectAnomalyJobInputDetailOutput) Message() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectAnomalyJobInputDetail) string { return v.Message }).(pulumi.StringOutput)
+func (o GetDetectAnomalyJobInputDetailOutput) Message() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectAnomalyJobInputDetail) *string { return v.Message }).(pulumi.StringPtrOutput)
 }
 
 // List of ObjectLocations.
@@ -2948,12 +2617,6 @@ func (o GetDetectAnomalyJobInputDetailArrayOutput) ToGetDetectAnomalyJobInputDet
 	return o
 }
 
-func (o GetDetectAnomalyJobInputDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectAnomalyJobInputDetail] {
-	return pulumix.Output[[]GetDetectAnomalyJobInputDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDetectAnomalyJobInputDetailArrayOutput) Index(i pulumi.IntInput) GetDetectAnomalyJobInputDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDetectAnomalyJobInputDetail {
 		return vs[0].([]GetDetectAnomalyJobInputDetail)[vs[1].(int)]
@@ -2961,7 +2624,7 @@ func (o GetDetectAnomalyJobInputDetailArrayOutput) Index(i pulumi.IntInput) GetD
 }
 
 type GetDetectAnomalyJobInputDetailData struct {
-	Timestamp string    `pulumi:"timestamp"`
+	Timestamp *string   `pulumi:"timestamp"`
 	Values    []float64 `pulumi:"values"`
 }
 
@@ -2977,7 +2640,7 @@ type GetDetectAnomalyJobInputDetailDataInput interface {
 }
 
 type GetDetectAnomalyJobInputDetailDataArgs struct {
-	Timestamp pulumi.StringInput       `pulumi:"timestamp"`
+	Timestamp pulumi.StringPtrInput    `pulumi:"timestamp"`
 	Values    pulumi.Float64ArrayInput `pulumi:"values"`
 }
 
@@ -2991,12 +2654,6 @@ func (i GetDetectAnomalyJobInputDetailDataArgs) ToGetDetectAnomalyJobInputDetail
 
 func (i GetDetectAnomalyJobInputDetailDataArgs) ToGetDetectAnomalyJobInputDetailDataOutputWithContext(ctx context.Context) GetDetectAnomalyJobInputDetailDataOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectAnomalyJobInputDetailDataOutput)
-}
-
-func (i GetDetectAnomalyJobInputDetailDataArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectAnomalyJobInputDetailData] {
-	return pulumix.Output[GetDetectAnomalyJobInputDetailData]{
-		OutputState: i.ToGetDetectAnomalyJobInputDetailDataOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetDetectAnomalyJobInputDetailDataArrayInput is an input type that accepts GetDetectAnomalyJobInputDetailDataArray and GetDetectAnomalyJobInputDetailDataArrayOutput values.
@@ -3024,12 +2681,6 @@ func (i GetDetectAnomalyJobInputDetailDataArray) ToGetDetectAnomalyJobInputDetai
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectAnomalyJobInputDetailDataArrayOutput)
 }
 
-func (i GetDetectAnomalyJobInputDetailDataArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectAnomalyJobInputDetailData] {
-	return pulumix.Output[[]GetDetectAnomalyJobInputDetailData]{
-		OutputState: i.ToGetDetectAnomalyJobInputDetailDataArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectAnomalyJobInputDetailDataOutput struct{ *pulumi.OutputState }
 
 func (GetDetectAnomalyJobInputDetailDataOutput) ElementType() reflect.Type {
@@ -3044,14 +2695,8 @@ func (o GetDetectAnomalyJobInputDetailDataOutput) ToGetDetectAnomalyJobInputDeta
 	return o
 }
 
-func (o GetDetectAnomalyJobInputDetailDataOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectAnomalyJobInputDetailData] {
-	return pulumix.Output[GetDetectAnomalyJobInputDetailData]{
-		OutputState: o.OutputState,
-	}
-}
-
-func (o GetDetectAnomalyJobInputDetailDataOutput) Timestamp() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectAnomalyJobInputDetailData) string { return v.Timestamp }).(pulumi.StringOutput)
+func (o GetDetectAnomalyJobInputDetailDataOutput) Timestamp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectAnomalyJobInputDetailData) *string { return v.Timestamp }).(pulumi.StringPtrOutput)
 }
 
 func (o GetDetectAnomalyJobInputDetailDataOutput) Values() pulumi.Float64ArrayOutput {
@@ -3072,12 +2717,6 @@ func (o GetDetectAnomalyJobInputDetailDataArrayOutput) ToGetDetectAnomalyJobInpu
 	return o
 }
 
-func (o GetDetectAnomalyJobInputDetailDataArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectAnomalyJobInputDetailData] {
-	return pulumix.Output[[]GetDetectAnomalyJobInputDetailData]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDetectAnomalyJobInputDetailDataArrayOutput) Index(i pulumi.IntInput) GetDetectAnomalyJobInputDetailDataOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDetectAnomalyJobInputDetailData {
 		return vs[0].([]GetDetectAnomalyJobInputDetailData)[vs[1].(int)]
@@ -3086,11 +2725,11 @@ func (o GetDetectAnomalyJobInputDetailDataArrayOutput) Index(i pulumi.IntInput) 
 
 type GetDetectAnomalyJobInputDetailObjectLocation struct {
 	// Object Storage bucket name.
-	Bucket string `pulumi:"bucket"`
+	Bucket *string `pulumi:"bucket"`
 	// Object Storage namespace.
-	Namespace string `pulumi:"namespace"`
+	Namespace *string `pulumi:"namespace"`
 	// Object Storage object name.
-	Object string `pulumi:"object"`
+	Object *string `pulumi:"object"`
 }
 
 // GetDetectAnomalyJobInputDetailObjectLocationInput is an input type that accepts GetDetectAnomalyJobInputDetailObjectLocationArgs and GetDetectAnomalyJobInputDetailObjectLocationOutput values.
@@ -3106,11 +2745,11 @@ type GetDetectAnomalyJobInputDetailObjectLocationInput interface {
 
 type GetDetectAnomalyJobInputDetailObjectLocationArgs struct {
 	// Object Storage bucket name.
-	Bucket pulumi.StringInput `pulumi:"bucket"`
+	Bucket pulumi.StringPtrInput `pulumi:"bucket"`
 	// Object Storage namespace.
-	Namespace pulumi.StringInput `pulumi:"namespace"`
+	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
 	// Object Storage object name.
-	Object pulumi.StringInput `pulumi:"object"`
+	Object pulumi.StringPtrInput `pulumi:"object"`
 }
 
 func (GetDetectAnomalyJobInputDetailObjectLocationArgs) ElementType() reflect.Type {
@@ -3123,12 +2762,6 @@ func (i GetDetectAnomalyJobInputDetailObjectLocationArgs) ToGetDetectAnomalyJobI
 
 func (i GetDetectAnomalyJobInputDetailObjectLocationArgs) ToGetDetectAnomalyJobInputDetailObjectLocationOutputWithContext(ctx context.Context) GetDetectAnomalyJobInputDetailObjectLocationOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectAnomalyJobInputDetailObjectLocationOutput)
-}
-
-func (i GetDetectAnomalyJobInputDetailObjectLocationArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectAnomalyJobInputDetailObjectLocation] {
-	return pulumix.Output[GetDetectAnomalyJobInputDetailObjectLocation]{
-		OutputState: i.ToGetDetectAnomalyJobInputDetailObjectLocationOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetDetectAnomalyJobInputDetailObjectLocationArrayInput is an input type that accepts GetDetectAnomalyJobInputDetailObjectLocationArray and GetDetectAnomalyJobInputDetailObjectLocationArrayOutput values.
@@ -3156,12 +2789,6 @@ func (i GetDetectAnomalyJobInputDetailObjectLocationArray) ToGetDetectAnomalyJob
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectAnomalyJobInputDetailObjectLocationArrayOutput)
 }
 
-func (i GetDetectAnomalyJobInputDetailObjectLocationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectAnomalyJobInputDetailObjectLocation] {
-	return pulumix.Output[[]GetDetectAnomalyJobInputDetailObjectLocation]{
-		OutputState: i.ToGetDetectAnomalyJobInputDetailObjectLocationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectAnomalyJobInputDetailObjectLocationOutput struct{ *pulumi.OutputState }
 
 func (GetDetectAnomalyJobInputDetailObjectLocationOutput) ElementType() reflect.Type {
@@ -3176,25 +2803,19 @@ func (o GetDetectAnomalyJobInputDetailObjectLocationOutput) ToGetDetectAnomalyJo
 	return o
 }
 
-func (o GetDetectAnomalyJobInputDetailObjectLocationOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectAnomalyJobInputDetailObjectLocation] {
-	return pulumix.Output[GetDetectAnomalyJobInputDetailObjectLocation]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Object Storage bucket name.
-func (o GetDetectAnomalyJobInputDetailObjectLocationOutput) Bucket() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectAnomalyJobInputDetailObjectLocation) string { return v.Bucket }).(pulumi.StringOutput)
+func (o GetDetectAnomalyJobInputDetailObjectLocationOutput) Bucket() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectAnomalyJobInputDetailObjectLocation) *string { return v.Bucket }).(pulumi.StringPtrOutput)
 }
 
 // Object Storage namespace.
-func (o GetDetectAnomalyJobInputDetailObjectLocationOutput) Namespace() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectAnomalyJobInputDetailObjectLocation) string { return v.Namespace }).(pulumi.StringOutput)
+func (o GetDetectAnomalyJobInputDetailObjectLocationOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectAnomalyJobInputDetailObjectLocation) *string { return v.Namespace }).(pulumi.StringPtrOutput)
 }
 
 // Object Storage object name.
-func (o GetDetectAnomalyJobInputDetailObjectLocationOutput) Object() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectAnomalyJobInputDetailObjectLocation) string { return v.Object }).(pulumi.StringOutput)
+func (o GetDetectAnomalyJobInputDetailObjectLocationOutput) Object() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectAnomalyJobInputDetailObjectLocation) *string { return v.Object }).(pulumi.StringPtrOutput)
 }
 
 type GetDetectAnomalyJobInputDetailObjectLocationArrayOutput struct{ *pulumi.OutputState }
@@ -3211,12 +2832,6 @@ func (o GetDetectAnomalyJobInputDetailObjectLocationArrayOutput) ToGetDetectAnom
 	return o
 }
 
-func (o GetDetectAnomalyJobInputDetailObjectLocationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectAnomalyJobInputDetailObjectLocation] {
-	return pulumix.Output[[]GetDetectAnomalyJobInputDetailObjectLocation]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDetectAnomalyJobInputDetailObjectLocationArrayOutput) Index(i pulumi.IntInput) GetDetectAnomalyJobInputDetailObjectLocationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDetectAnomalyJobInputDetailObjectLocation {
 		return vs[0].([]GetDetectAnomalyJobInputDetailObjectLocation)[vs[1].(int)]
@@ -3225,13 +2840,13 @@ func (o GetDetectAnomalyJobInputDetailObjectLocationArrayOutput) Index(i pulumi.
 
 type GetDetectAnomalyJobOutputDetail struct {
 	// Object Storage bucket name.
-	Bucket string `pulumi:"bucket"`
+	Bucket *string `pulumi:"bucket"`
 	// Object Storage namespace.
-	Namespace string `pulumi:"namespace"`
+	Namespace *string `pulumi:"namespace"`
 	// The type of output location Allowed values are:
-	OutputType string `pulumi:"outputType"`
+	OutputType *string `pulumi:"outputType"`
 	// Object Storage folder name.
-	Prefix string `pulumi:"prefix"`
+	Prefix *string `pulumi:"prefix"`
 }
 
 // GetDetectAnomalyJobOutputDetailInput is an input type that accepts GetDetectAnomalyJobOutputDetailArgs and GetDetectAnomalyJobOutputDetailOutput values.
@@ -3247,13 +2862,13 @@ type GetDetectAnomalyJobOutputDetailInput interface {
 
 type GetDetectAnomalyJobOutputDetailArgs struct {
 	// Object Storage bucket name.
-	Bucket pulumi.StringInput `pulumi:"bucket"`
+	Bucket pulumi.StringPtrInput `pulumi:"bucket"`
 	// Object Storage namespace.
-	Namespace pulumi.StringInput `pulumi:"namespace"`
+	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
 	// The type of output location Allowed values are:
-	OutputType pulumi.StringInput `pulumi:"outputType"`
+	OutputType pulumi.StringPtrInput `pulumi:"outputType"`
 	// Object Storage folder name.
-	Prefix pulumi.StringInput `pulumi:"prefix"`
+	Prefix pulumi.StringPtrInput `pulumi:"prefix"`
 }
 
 func (GetDetectAnomalyJobOutputDetailArgs) ElementType() reflect.Type {
@@ -3266,12 +2881,6 @@ func (i GetDetectAnomalyJobOutputDetailArgs) ToGetDetectAnomalyJobOutputDetailOu
 
 func (i GetDetectAnomalyJobOutputDetailArgs) ToGetDetectAnomalyJobOutputDetailOutputWithContext(ctx context.Context) GetDetectAnomalyJobOutputDetailOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectAnomalyJobOutputDetailOutput)
-}
-
-func (i GetDetectAnomalyJobOutputDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectAnomalyJobOutputDetail] {
-	return pulumix.Output[GetDetectAnomalyJobOutputDetail]{
-		OutputState: i.ToGetDetectAnomalyJobOutputDetailOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetDetectAnomalyJobOutputDetailArrayInput is an input type that accepts GetDetectAnomalyJobOutputDetailArray and GetDetectAnomalyJobOutputDetailArrayOutput values.
@@ -3299,12 +2908,6 @@ func (i GetDetectAnomalyJobOutputDetailArray) ToGetDetectAnomalyJobOutputDetailA
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectAnomalyJobOutputDetailArrayOutput)
 }
 
-func (i GetDetectAnomalyJobOutputDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectAnomalyJobOutputDetail] {
-	return pulumix.Output[[]GetDetectAnomalyJobOutputDetail]{
-		OutputState: i.ToGetDetectAnomalyJobOutputDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectAnomalyJobOutputDetailOutput struct{ *pulumi.OutputState }
 
 func (GetDetectAnomalyJobOutputDetailOutput) ElementType() reflect.Type {
@@ -3319,30 +2922,24 @@ func (o GetDetectAnomalyJobOutputDetailOutput) ToGetDetectAnomalyJobOutputDetail
 	return o
 }
 
-func (o GetDetectAnomalyJobOutputDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectAnomalyJobOutputDetail] {
-	return pulumix.Output[GetDetectAnomalyJobOutputDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Object Storage bucket name.
-func (o GetDetectAnomalyJobOutputDetailOutput) Bucket() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectAnomalyJobOutputDetail) string { return v.Bucket }).(pulumi.StringOutput)
+func (o GetDetectAnomalyJobOutputDetailOutput) Bucket() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectAnomalyJobOutputDetail) *string { return v.Bucket }).(pulumi.StringPtrOutput)
 }
 
 // Object Storage namespace.
-func (o GetDetectAnomalyJobOutputDetailOutput) Namespace() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectAnomalyJobOutputDetail) string { return v.Namespace }).(pulumi.StringOutput)
+func (o GetDetectAnomalyJobOutputDetailOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectAnomalyJobOutputDetail) *string { return v.Namespace }).(pulumi.StringPtrOutput)
 }
 
 // The type of output location Allowed values are:
-func (o GetDetectAnomalyJobOutputDetailOutput) OutputType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectAnomalyJobOutputDetail) string { return v.OutputType }).(pulumi.StringOutput)
+func (o GetDetectAnomalyJobOutputDetailOutput) OutputType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectAnomalyJobOutputDetail) *string { return v.OutputType }).(pulumi.StringPtrOutput)
 }
 
 // Object Storage folder name.
-func (o GetDetectAnomalyJobOutputDetailOutput) Prefix() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectAnomalyJobOutputDetail) string { return v.Prefix }).(pulumi.StringOutput)
+func (o GetDetectAnomalyJobOutputDetailOutput) Prefix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectAnomalyJobOutputDetail) *string { return v.Prefix }).(pulumi.StringPtrOutput)
 }
 
 type GetDetectAnomalyJobOutputDetailArrayOutput struct{ *pulumi.OutputState }
@@ -3357,12 +2954,6 @@ func (o GetDetectAnomalyJobOutputDetailArrayOutput) ToGetDetectAnomalyJobOutputD
 
 func (o GetDetectAnomalyJobOutputDetailArrayOutput) ToGetDetectAnomalyJobOutputDetailArrayOutputWithContext(ctx context.Context) GetDetectAnomalyJobOutputDetailArrayOutput {
 	return o
-}
-
-func (o GetDetectAnomalyJobOutputDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectAnomalyJobOutputDetail] {
-	return pulumix.Output[[]GetDetectAnomalyJobOutputDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDetectAnomalyJobOutputDetailArrayOutput) Index(i pulumi.IntInput) GetDetectAnomalyJobOutputDetailOutput {
@@ -3402,12 +2993,6 @@ func (i GetDetectAnomalyJobsDetectAnomalyJobCollectionArgs) ToGetDetectAnomalyJo
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectAnomalyJobsDetectAnomalyJobCollectionOutput)
 }
 
-func (i GetDetectAnomalyJobsDetectAnomalyJobCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectAnomalyJobsDetectAnomalyJobCollection] {
-	return pulumix.Output[GetDetectAnomalyJobsDetectAnomalyJobCollection]{
-		OutputState: i.ToGetDetectAnomalyJobsDetectAnomalyJobCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDetectAnomalyJobsDetectAnomalyJobCollectionArrayInput is an input type that accepts GetDetectAnomalyJobsDetectAnomalyJobCollectionArray and GetDetectAnomalyJobsDetectAnomalyJobCollectionArrayOutput values.
 // You can construct a concrete instance of `GetDetectAnomalyJobsDetectAnomalyJobCollectionArrayInput` via:
 //
@@ -3433,12 +3018,6 @@ func (i GetDetectAnomalyJobsDetectAnomalyJobCollectionArray) ToGetDetectAnomalyJ
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectAnomalyJobsDetectAnomalyJobCollectionArrayOutput)
 }
 
-func (i GetDetectAnomalyJobsDetectAnomalyJobCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectAnomalyJobsDetectAnomalyJobCollection] {
-	return pulumix.Output[[]GetDetectAnomalyJobsDetectAnomalyJobCollection]{
-		OutputState: i.ToGetDetectAnomalyJobsDetectAnomalyJobCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectAnomalyJobsDetectAnomalyJobCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetDetectAnomalyJobsDetectAnomalyJobCollectionOutput) ElementType() reflect.Type {
@@ -3451,12 +3030,6 @@ func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionOutput) ToGetDetectAnomaly
 
 func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionOutput) ToGetDetectAnomalyJobsDetectAnomalyJobCollectionOutputWithContext(ctx context.Context) GetDetectAnomalyJobsDetectAnomalyJobCollectionOutput {
 	return o
-}
-
-func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectAnomalyJobsDetectAnomalyJobCollection] {
-	return pulumix.Output[GetDetectAnomalyJobsDetectAnomalyJobCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionOutput) Items() GetDetectAnomalyJobsDetectAnomalyJobCollectionItemArrayOutput {
@@ -3479,12 +3052,6 @@ func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionArrayOutput) ToGetDetectAn
 	return o
 }
 
-func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectAnomalyJobsDetectAnomalyJobCollection] {
-	return pulumix.Output[[]GetDetectAnomalyJobsDetectAnomalyJobCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionArrayOutput) Index(i pulumi.IntInput) GetDetectAnomalyJobsDetectAnomalyJobCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDetectAnomalyJobsDetectAnomalyJobCollection {
 		return vs[0].([]GetDetectAnomalyJobsDetectAnomalyJobCollection)[vs[1].(int)]
@@ -3493,39 +3060,39 @@ func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionArrayOutput) Index(i pulum
 
 type GetDetectAnomalyJobsDetectAnomalyJobCollectionItem struct {
 	// The ID of the compartment in which to list resources.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Detect anomaly job description.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// A filter to return only resources that match the entire display name given.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Id of the job.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Input details for detect anomaly job.
 	InputDetails []GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetail `pulumi:"inputDetails"`
 	// The current state details of the batch document job.
-	LifecycleStateDetails string `pulumi:"lifecycleStateDetails"`
+	LifecycleStateDetails *string `pulumi:"lifecycleStateDetails"`
 	// The ID of the trained model for which to list the resources.
-	ModelId string `pulumi:"modelId"`
+	ModelId *string `pulumi:"modelId"`
 	// Output details for detect anomaly job.
 	OutputDetails []GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetail `pulumi:"outputDetails"`
 	// The ID of the project for which to list the objects.
-	ProjectId string `pulumi:"projectId"`
+	ProjectId *string `pulumi:"projectId"`
 	// The value that customer can adjust to control the sensitivity of anomaly detection
-	Sensitivity float64 `pulumi:"sensitivity"`
+	Sensitivity *float64 `pulumi:"sensitivity"`
 	// <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// Job accepted time
-	TimeAccepted string `pulumi:"timeAccepted"`
+	TimeAccepted *string `pulumi:"timeAccepted"`
 	// Job finished time
-	TimeFinished string `pulumi:"timeFinished"`
+	TimeFinished *string `pulumi:"timeFinished"`
 	// Job started time
-	TimeStarted string `pulumi:"timeStarted"`
+	TimeStarted *string `pulumi:"timeStarted"`
 }
 
 // GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInput is an input type that accepts GetDetectAnomalyJobsDetectAnomalyJobCollectionItemArgs and GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutput values.
@@ -3541,39 +3108,39 @@ type GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInput interface {
 
 type GetDetectAnomalyJobsDetectAnomalyJobCollectionItemArgs struct {
 	// The ID of the compartment in which to list resources.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// Detect anomaly job description.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// A filter to return only resources that match the entire display name given.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// Id of the job.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Input details for detect anomaly job.
 	InputDetails GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailArrayInput `pulumi:"inputDetails"`
 	// The current state details of the batch document job.
-	LifecycleStateDetails pulumi.StringInput `pulumi:"lifecycleStateDetails"`
+	LifecycleStateDetails pulumi.StringPtrInput `pulumi:"lifecycleStateDetails"`
 	// The ID of the trained model for which to list the resources.
-	ModelId pulumi.StringInput `pulumi:"modelId"`
+	ModelId pulumi.StringPtrInput `pulumi:"modelId"`
 	// Output details for detect anomaly job.
 	OutputDetails GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetailArrayInput `pulumi:"outputDetails"`
 	// The ID of the project for which to list the objects.
-	ProjectId pulumi.StringInput `pulumi:"projectId"`
+	ProjectId pulumi.StringPtrInput `pulumi:"projectId"`
 	// The value that customer can adjust to control the sensitivity of anomaly detection
-	Sensitivity pulumi.Float64Input `pulumi:"sensitivity"`
+	Sensitivity pulumi.Float64PtrInput `pulumi:"sensitivity"`
 	// <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// Job accepted time
-	TimeAccepted pulumi.StringInput `pulumi:"timeAccepted"`
+	TimeAccepted pulumi.StringPtrInput `pulumi:"timeAccepted"`
 	// Job finished time
-	TimeFinished pulumi.StringInput `pulumi:"timeFinished"`
+	TimeFinished pulumi.StringPtrInput `pulumi:"timeFinished"`
 	// Job started time
-	TimeStarted pulumi.StringInput `pulumi:"timeStarted"`
+	TimeStarted pulumi.StringPtrInput `pulumi:"timeStarted"`
 }
 
 func (GetDetectAnomalyJobsDetectAnomalyJobCollectionItemArgs) ElementType() reflect.Type {
@@ -3586,12 +3153,6 @@ func (i GetDetectAnomalyJobsDetectAnomalyJobCollectionItemArgs) ToGetDetectAnoma
 
 func (i GetDetectAnomalyJobsDetectAnomalyJobCollectionItemArgs) ToGetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputWithContext(ctx context.Context) GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutput)
-}
-
-func (i GetDetectAnomalyJobsDetectAnomalyJobCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectAnomalyJobsDetectAnomalyJobCollectionItem] {
-	return pulumix.Output[GetDetectAnomalyJobsDetectAnomalyJobCollectionItem]{
-		OutputState: i.ToGetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetDetectAnomalyJobsDetectAnomalyJobCollectionItemArrayInput is an input type that accepts GetDetectAnomalyJobsDetectAnomalyJobCollectionItemArray and GetDetectAnomalyJobsDetectAnomalyJobCollectionItemArrayOutput values.
@@ -3619,12 +3180,6 @@ func (i GetDetectAnomalyJobsDetectAnomalyJobCollectionItemArray) ToGetDetectAnom
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectAnomalyJobsDetectAnomalyJobCollectionItemArrayOutput)
 }
 
-func (i GetDetectAnomalyJobsDetectAnomalyJobCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectAnomalyJobsDetectAnomalyJobCollectionItem] {
-	return pulumix.Output[[]GetDetectAnomalyJobsDetectAnomalyJobCollectionItem]{
-		OutputState: i.ToGetDetectAnomalyJobsDetectAnomalyJobCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutput) ElementType() reflect.Type {
@@ -3639,15 +3194,9 @@ func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutput) ToGetDetectAno
 	return o
 }
 
-func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectAnomalyJobsDetectAnomalyJobCollectionItem] {
-	return pulumix.Output[GetDetectAnomalyJobsDetectAnomalyJobCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The ID of the compartment in which to list resources.
-func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectAnomalyJobsDetectAnomalyJobCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectAnomalyJobsDetectAnomalyJobCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -3658,13 +3207,13 @@ func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutput) DefinedTags() 
 }
 
 // Detect anomaly job description.
-func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectAnomalyJobsDetectAnomalyJobCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectAnomalyJobsDetectAnomalyJobCollectionItem) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only resources that match the entire display name given.
-func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectAnomalyJobsDetectAnomalyJobCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectAnomalyJobsDetectAnomalyJobCollectionItem) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -3675,8 +3224,8 @@ func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutput) FreeformTags()
 }
 
 // Id of the job.
-func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectAnomalyJobsDetectAnomalyJobCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectAnomalyJobsDetectAnomalyJobCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Input details for detect anomaly job.
@@ -3687,13 +3236,13 @@ func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutput) InputDetails()
 }
 
 // The current state details of the batch document job.
-func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutput) LifecycleStateDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectAnomalyJobsDetectAnomalyJobCollectionItem) string { return v.LifecycleStateDetails }).(pulumi.StringOutput)
+func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutput) LifecycleStateDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectAnomalyJobsDetectAnomalyJobCollectionItem) *string { return v.LifecycleStateDetails }).(pulumi.StringPtrOutput)
 }
 
 // The ID of the trained model for which to list the resources.
-func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutput) ModelId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectAnomalyJobsDetectAnomalyJobCollectionItem) string { return v.ModelId }).(pulumi.StringOutput)
+func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutput) ModelId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectAnomalyJobsDetectAnomalyJobCollectionItem) *string { return v.ModelId }).(pulumi.StringPtrOutput)
 }
 
 // Output details for detect anomaly job.
@@ -3704,18 +3253,18 @@ func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutput) OutputDetails(
 }
 
 // The ID of the project for which to list the objects.
-func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutput) ProjectId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectAnomalyJobsDetectAnomalyJobCollectionItem) string { return v.ProjectId }).(pulumi.StringOutput)
+func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutput) ProjectId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectAnomalyJobsDetectAnomalyJobCollectionItem) *string { return v.ProjectId }).(pulumi.StringPtrOutput)
 }
 
 // The value that customer can adjust to control the sensitivity of anomaly detection
-func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutput) Sensitivity() pulumi.Float64Output {
-	return o.ApplyT(func(v GetDetectAnomalyJobsDetectAnomalyJobCollectionItem) float64 { return v.Sensitivity }).(pulumi.Float64Output)
+func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutput) Sensitivity() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetDetectAnomalyJobsDetectAnomalyJobCollectionItem) *float64 { return v.Sensitivity }).(pulumi.Float64PtrOutput)
 }
 
 // <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
-func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectAnomalyJobsDetectAnomalyJobCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectAnomalyJobsDetectAnomalyJobCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -3724,18 +3273,18 @@ func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutput) SystemTags() p
 }
 
 // Job accepted time
-func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutput) TimeAccepted() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectAnomalyJobsDetectAnomalyJobCollectionItem) string { return v.TimeAccepted }).(pulumi.StringOutput)
+func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutput) TimeAccepted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectAnomalyJobsDetectAnomalyJobCollectionItem) *string { return v.TimeAccepted }).(pulumi.StringPtrOutput)
 }
 
 // Job finished time
-func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutput) TimeFinished() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectAnomalyJobsDetectAnomalyJobCollectionItem) string { return v.TimeFinished }).(pulumi.StringOutput)
+func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutput) TimeFinished() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectAnomalyJobsDetectAnomalyJobCollectionItem) *string { return v.TimeFinished }).(pulumi.StringPtrOutput)
 }
 
 // Job started time
-func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutput) TimeStarted() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectAnomalyJobsDetectAnomalyJobCollectionItem) string { return v.TimeStarted }).(pulumi.StringOutput)
+func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutput) TimeStarted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectAnomalyJobsDetectAnomalyJobCollectionItem) *string { return v.TimeStarted }).(pulumi.StringPtrOutput)
 }
 
 type GetDetectAnomalyJobsDetectAnomalyJobCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -3752,12 +3301,6 @@ func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemArrayOutput) ToGetDete
 	return o
 }
 
-func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectAnomalyJobsDetectAnomalyJobCollectionItem] {
-	return pulumix.Output[[]GetDetectAnomalyJobsDetectAnomalyJobCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemArrayOutput) Index(i pulumi.IntInput) GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDetectAnomalyJobsDetectAnomalyJobCollectionItem {
 		return vs[0].([]GetDetectAnomalyJobsDetectAnomalyJobCollectionItem)[vs[1].(int)]
@@ -3765,13 +3308,13 @@ func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemArrayOutput) Index(i p
 }
 
 type GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetail struct {
-	Content     string                                                              `pulumi:"content"`
-	ContentType string                                                              `pulumi:"contentType"`
+	Content     *string                                                             `pulumi:"content"`
+	ContentType *string                                                             `pulumi:"contentType"`
 	Datas       []GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailData `pulumi:"datas"`
 	// The type of input location Allowed values are:
-	InputType string `pulumi:"inputType"`
+	InputType *string `pulumi:"inputType"`
 	// Inline input details.
-	Message string `pulumi:"message"`
+	Message *string `pulumi:"message"`
 	// List of ObjectLocations.
 	ObjectLocations []GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocation `pulumi:"objectLocations"`
 	SignalNames     []string                                                                      `pulumi:"signalNames"`
@@ -3789,13 +3332,13 @@ type GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailInput interfac
 }
 
 type GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailArgs struct {
-	Content     pulumi.StringInput                                                          `pulumi:"content"`
-	ContentType pulumi.StringInput                                                          `pulumi:"contentType"`
+	Content     pulumi.StringPtrInput                                                       `pulumi:"content"`
+	ContentType pulumi.StringPtrInput                                                       `pulumi:"contentType"`
 	Datas       GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailDataArrayInput `pulumi:"datas"`
 	// The type of input location Allowed values are:
-	InputType pulumi.StringInput `pulumi:"inputType"`
+	InputType pulumi.StringPtrInput `pulumi:"inputType"`
 	// Inline input details.
-	Message pulumi.StringInput `pulumi:"message"`
+	Message pulumi.StringPtrInput `pulumi:"message"`
 	// List of ObjectLocations.
 	ObjectLocations GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocationArrayInput `pulumi:"objectLocations"`
 	SignalNames     pulumi.StringArrayInput                                                               `pulumi:"signalNames"`
@@ -3811,12 +3354,6 @@ func (i GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailArgs) ToGet
 
 func (i GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailArgs) ToGetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailOutputWithContext(ctx context.Context) GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailOutput)
-}
-
-func (i GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetail] {
-	return pulumix.Output[GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetail]{
-		OutputState: i.ToGetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailArrayInput is an input type that accepts GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailArray and GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailArrayOutput values.
@@ -3844,12 +3381,6 @@ func (i GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailArray) ToGe
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailArrayOutput)
 }
 
-func (i GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetail] {
-	return pulumix.Output[[]GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetail]{
-		OutputState: i.ToGetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailOutput struct{ *pulumi.OutputState }
 
 func (GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailOutput) ElementType() reflect.Type {
@@ -3864,18 +3395,12 @@ func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailOutput) ToG
 	return o
 }
 
-func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetail] {
-	return pulumix.Output[GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetail]{
-		OutputState: o.OutputState,
-	}
+func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailOutput) Content() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetail) *string { return v.Content }).(pulumi.StringPtrOutput)
 }
 
-func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailOutput) Content() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetail) string { return v.Content }).(pulumi.StringOutput)
-}
-
-func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailOutput) ContentType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetail) string { return v.ContentType }).(pulumi.StringOutput)
+func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailOutput) ContentType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetail) *string { return v.ContentType }).(pulumi.StringPtrOutput)
 }
 
 func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailOutput) Datas() GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailDataArrayOutput {
@@ -3885,13 +3410,13 @@ func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailOutput) Dat
 }
 
 // The type of input location Allowed values are:
-func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailOutput) InputType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetail) string { return v.InputType }).(pulumi.StringOutput)
+func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailOutput) InputType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetail) *string { return v.InputType }).(pulumi.StringPtrOutput)
 }
 
 // Inline input details.
-func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailOutput) Message() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetail) string { return v.Message }).(pulumi.StringOutput)
+func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailOutput) Message() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetail) *string { return v.Message }).(pulumi.StringPtrOutput)
 }
 
 // List of ObjectLocations.
@@ -3919,12 +3444,6 @@ func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailArrayOutput
 	return o
 }
 
-func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetail] {
-	return pulumix.Output[[]GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailArrayOutput) Index(i pulumi.IntInput) GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetail {
 		return vs[0].([]GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetail)[vs[1].(int)]
@@ -3932,7 +3451,7 @@ func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailArrayOutput
 }
 
 type GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailData struct {
-	Timestamp string    `pulumi:"timestamp"`
+	Timestamp *string   `pulumi:"timestamp"`
 	Values    []float64 `pulumi:"values"`
 }
 
@@ -3948,7 +3467,7 @@ type GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailDataInput inte
 }
 
 type GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailDataArgs struct {
-	Timestamp pulumi.StringInput       `pulumi:"timestamp"`
+	Timestamp pulumi.StringPtrInput    `pulumi:"timestamp"`
 	Values    pulumi.Float64ArrayInput `pulumi:"values"`
 }
 
@@ -3962,12 +3481,6 @@ func (i GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailDataArgs) T
 
 func (i GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailDataArgs) ToGetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailDataOutputWithContext(ctx context.Context) GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailDataOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailDataOutput)
-}
-
-func (i GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailDataArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailData] {
-	return pulumix.Output[GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailData]{
-		OutputState: i.ToGetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailDataOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailDataArrayInput is an input type that accepts GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailDataArray and GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailDataArrayOutput values.
@@ -3995,12 +3508,6 @@ func (i GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailDataArray) 
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailDataArrayOutput)
 }
 
-func (i GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailDataArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailData] {
-	return pulumix.Output[[]GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailData]{
-		OutputState: i.ToGetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailDataArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailDataOutput struct{ *pulumi.OutputState }
 
 func (GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailDataOutput) ElementType() reflect.Type {
@@ -4015,14 +3522,8 @@ func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailDataOutput)
 	return o
 }
 
-func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailDataOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailData] {
-	return pulumix.Output[GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailData]{
-		OutputState: o.OutputState,
-	}
-}
-
-func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailDataOutput) Timestamp() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailData) string { return v.Timestamp }).(pulumi.StringOutput)
+func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailDataOutput) Timestamp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailData) *string { return v.Timestamp }).(pulumi.StringPtrOutput)
 }
 
 func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailDataOutput) Values() pulumi.Float64ArrayOutput {
@@ -4043,12 +3544,6 @@ func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailDataArrayOu
 	return o
 }
 
-func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailDataArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailData] {
-	return pulumix.Output[[]GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailData]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailDataArrayOutput) Index(i pulumi.IntInput) GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailDataOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailData {
 		return vs[0].([]GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailData)[vs[1].(int)]
@@ -4057,11 +3552,11 @@ func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailDataArrayOu
 
 type GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocation struct {
 	// Object Storage bucket name.
-	Bucket string `pulumi:"bucket"`
+	Bucket *string `pulumi:"bucket"`
 	// Object Storage namespace.
-	Namespace string `pulumi:"namespace"`
+	Namespace *string `pulumi:"namespace"`
 	// Object Storage object name.
-	Object string `pulumi:"object"`
+	Object *string `pulumi:"object"`
 }
 
 // GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocationInput is an input type that accepts GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocationArgs and GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocationOutput values.
@@ -4077,11 +3572,11 @@ type GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocation
 
 type GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocationArgs struct {
 	// Object Storage bucket name.
-	Bucket pulumi.StringInput `pulumi:"bucket"`
+	Bucket pulumi.StringPtrInput `pulumi:"bucket"`
 	// Object Storage namespace.
-	Namespace pulumi.StringInput `pulumi:"namespace"`
+	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
 	// Object Storage object name.
-	Object pulumi.StringInput `pulumi:"object"`
+	Object pulumi.StringPtrInput `pulumi:"object"`
 }
 
 func (GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocationArgs) ElementType() reflect.Type {
@@ -4094,12 +3589,6 @@ func (i GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocat
 
 func (i GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocationArgs) ToGetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocationOutputWithContext(ctx context.Context) GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocationOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocationOutput)
-}
-
-func (i GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocationArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocation] {
-	return pulumix.Output[GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocation]{
-		OutputState: i.ToGetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocationOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocationArrayInput is an input type that accepts GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocationArray and GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocationArrayOutput values.
@@ -4127,12 +3616,6 @@ func (i GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocat
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocationArrayOutput)
 }
 
-func (i GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocation] {
-	return pulumix.Output[[]GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocation]{
-		OutputState: i.ToGetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocationOutput struct{ *pulumi.OutputState }
 
 func (GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocationOutput) ElementType() reflect.Type {
@@ -4147,31 +3630,25 @@ func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocat
 	return o
 }
 
-func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocationOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocation] {
-	return pulumix.Output[GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocation]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Object Storage bucket name.
-func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocationOutput) Bucket() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocation) string {
+func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocationOutput) Bucket() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocation) *string {
 		return v.Bucket
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Object Storage namespace.
-func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocationOutput) Namespace() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocation) string {
+func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocationOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocation) *string {
 		return v.Namespace
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Object Storage object name.
-func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocationOutput) Object() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocation) string {
+func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocationOutput) Object() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocation) *string {
 		return v.Object
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocationArrayOutput struct{ *pulumi.OutputState }
@@ -4188,12 +3665,6 @@ func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocat
 	return o
 }
 
-func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocation] {
-	return pulumix.Output[[]GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocation]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocationArrayOutput) Index(i pulumi.IntInput) GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocation {
 		return vs[0].([]GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocation)[vs[1].(int)]
@@ -4202,13 +3673,13 @@ func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocat
 
 type GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetail struct {
 	// Object Storage bucket name.
-	Bucket string `pulumi:"bucket"`
+	Bucket *string `pulumi:"bucket"`
 	// Object Storage namespace.
-	Namespace string `pulumi:"namespace"`
+	Namespace *string `pulumi:"namespace"`
 	// The type of output location Allowed values are:
-	OutputType string `pulumi:"outputType"`
+	OutputType *string `pulumi:"outputType"`
 	// Object Storage folder name.
-	Prefix string `pulumi:"prefix"`
+	Prefix *string `pulumi:"prefix"`
 }
 
 // GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetailInput is an input type that accepts GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetailArgs and GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetailOutput values.
@@ -4224,13 +3695,13 @@ type GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetailInput interfa
 
 type GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetailArgs struct {
 	// Object Storage bucket name.
-	Bucket pulumi.StringInput `pulumi:"bucket"`
+	Bucket pulumi.StringPtrInput `pulumi:"bucket"`
 	// Object Storage namespace.
-	Namespace pulumi.StringInput `pulumi:"namespace"`
+	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
 	// The type of output location Allowed values are:
-	OutputType pulumi.StringInput `pulumi:"outputType"`
+	OutputType pulumi.StringPtrInput `pulumi:"outputType"`
 	// Object Storage folder name.
-	Prefix pulumi.StringInput `pulumi:"prefix"`
+	Prefix pulumi.StringPtrInput `pulumi:"prefix"`
 }
 
 func (GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetailArgs) ElementType() reflect.Type {
@@ -4243,12 +3714,6 @@ func (i GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetailArgs) ToGe
 
 func (i GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetailArgs) ToGetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetailOutputWithContext(ctx context.Context) GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetailOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetailOutput)
-}
-
-func (i GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetail] {
-	return pulumix.Output[GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetail]{
-		OutputState: i.ToGetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetailOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetailArrayInput is an input type that accepts GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetailArray and GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetailArrayOutput values.
@@ -4276,12 +3741,6 @@ func (i GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetailArray) ToG
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetailArrayOutput)
 }
 
-func (i GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetail] {
-	return pulumix.Output[[]GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetail]{
-		OutputState: i.ToGetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetailOutput struct{ *pulumi.OutputState }
 
 func (GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetailOutput) ElementType() reflect.Type {
@@ -4296,30 +3755,24 @@ func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetailOutput) To
 	return o
 }
 
-func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetail] {
-	return pulumix.Output[GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Object Storage bucket name.
-func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetailOutput) Bucket() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetail) string { return v.Bucket }).(pulumi.StringOutput)
+func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetailOutput) Bucket() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetail) *string { return v.Bucket }).(pulumi.StringPtrOutput)
 }
 
 // Object Storage namespace.
-func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetailOutput) Namespace() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetail) string { return v.Namespace }).(pulumi.StringOutput)
+func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetailOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetail) *string { return v.Namespace }).(pulumi.StringPtrOutput)
 }
 
 // The type of output location Allowed values are:
-func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetailOutput) OutputType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetail) string { return v.OutputType }).(pulumi.StringOutput)
+func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetailOutput) OutputType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetail) *string { return v.OutputType }).(pulumi.StringPtrOutput)
 }
 
 // Object Storage folder name.
-func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetailOutput) Prefix() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetail) string { return v.Prefix }).(pulumi.StringOutput)
+func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetailOutput) Prefix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetail) *string { return v.Prefix }).(pulumi.StringPtrOutput)
 }
 
 type GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetailArrayOutput struct{ *pulumi.OutputState }
@@ -4334,12 +3787,6 @@ func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetailArrayOutpu
 
 func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetailArrayOutput) ToGetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetailArrayOutputWithContext(ctx context.Context) GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetailArrayOutput {
 	return o
-}
-
-func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetail] {
-	return pulumix.Output[[]GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetailArrayOutput) Index(i pulumi.IntInput) GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetailOutput {
@@ -4383,12 +3830,6 @@ func (i GetDetectAnomalyJobsFilterArgs) ToGetDetectAnomalyJobsFilterOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectAnomalyJobsFilterOutput)
 }
 
-func (i GetDetectAnomalyJobsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectAnomalyJobsFilter] {
-	return pulumix.Output[GetDetectAnomalyJobsFilter]{
-		OutputState: i.ToGetDetectAnomalyJobsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDetectAnomalyJobsFilterArrayInput is an input type that accepts GetDetectAnomalyJobsFilterArray and GetDetectAnomalyJobsFilterArrayOutput values.
 // You can construct a concrete instance of `GetDetectAnomalyJobsFilterArrayInput` via:
 //
@@ -4414,12 +3855,6 @@ func (i GetDetectAnomalyJobsFilterArray) ToGetDetectAnomalyJobsFilterArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectAnomalyJobsFilterArrayOutput)
 }
 
-func (i GetDetectAnomalyJobsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectAnomalyJobsFilter] {
-	return pulumix.Output[[]GetDetectAnomalyJobsFilter]{
-		OutputState: i.ToGetDetectAnomalyJobsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectAnomalyJobsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetDetectAnomalyJobsFilterOutput) ElementType() reflect.Type {
@@ -4432,12 +3867,6 @@ func (o GetDetectAnomalyJobsFilterOutput) ToGetDetectAnomalyJobsFilterOutput() G
 
 func (o GetDetectAnomalyJobsFilterOutput) ToGetDetectAnomalyJobsFilterOutputWithContext(ctx context.Context) GetDetectAnomalyJobsFilterOutput {
 	return o
-}
-
-func (o GetDetectAnomalyJobsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectAnomalyJobsFilter] {
-	return pulumix.Output[GetDetectAnomalyJobsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDetectAnomalyJobsFilterOutput) Name() pulumi.StringOutput {
@@ -4466,12 +3895,6 @@ func (o GetDetectAnomalyJobsFilterArrayOutput) ToGetDetectAnomalyJobsFilterArray
 	return o
 }
 
-func (o GetDetectAnomalyJobsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectAnomalyJobsFilter] {
-	return pulumix.Output[[]GetDetectAnomalyJobsFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDetectAnomalyJobsFilterArrayOutput) Index(i pulumi.IntInput) GetDetectAnomalyJobsFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDetectAnomalyJobsFilter {
 		return vs[0].([]GetDetectAnomalyJobsFilter)[vs[1].(int)]
@@ -4480,45 +3903,45 @@ func (o GetDetectAnomalyJobsFilterArrayOutput) Index(i pulumi.IntInput) GetDetec
 
 type GetDetectionDataAssetDataSourceDetail struct {
 	// atp db password Secret Id
-	AtpPasswordSecretId string `pulumi:"atpPasswordSecretId"`
+	AtpPasswordSecretId *string `pulumi:"atpPasswordSecretId"`
 	// atp db user name
-	AtpUserName string `pulumi:"atpUserName"`
+	AtpUserName *string `pulumi:"atpUserName"`
 	// Bucket Name for influx connection
-	Bucket string `pulumi:"bucket"`
+	Bucket *string `pulumi:"bucket"`
 	// OCID of the secret containing the containers certificates of ATP wallet
-	CwalletFileSecretId string `pulumi:"cwalletFileSecretId"`
+	CwalletFileSecretId *string `pulumi:"cwalletFileSecretId"`
 	// Data source type where actually data asset is being stored
-	DataSourceType string `pulumi:"dataSourceType"`
+	DataSourceType *string `pulumi:"dataSourceType"`
 	// DB Name for influx connection
-	DatabaseName string `pulumi:"databaseName"`
+	DatabaseName *string `pulumi:"databaseName"`
 	// OCID of the secret containing the PDB'S certificates of ATP wallet
-	EwalletFileSecretId string `pulumi:"ewalletFileSecretId"`
+	EwalletFileSecretId *string `pulumi:"ewalletFileSecretId"`
 	// OCID of the secret containing Keystore.jks file of the ATP wallet
-	KeyStoreFileSecretId string `pulumi:"keyStoreFileSecretId"`
+	KeyStoreFileSecretId *string `pulumi:"keyStoreFileSecretId"`
 	// Measurement name for influx
-	MeasurementName string `pulumi:"measurementName"`
+	MeasurementName *string `pulumi:"measurementName"`
 	// Object storage namespace
-	Namespace string `pulumi:"namespace"`
+	Namespace *string `pulumi:"namespace"`
 	// File name
-	Object string `pulumi:"object"`
+	Object *string `pulumi:"object"`
 	// OCID of the secret that contains jdbc properties file of ATP wallet
-	OjdbcFileSecretId string `pulumi:"ojdbcFileSecretId"`
+	OjdbcFileSecretId *string `pulumi:"ojdbcFileSecretId"`
 	// Password Secret Id for the influx connection
-	PasswordSecretId string `pulumi:"passwordSecretId"`
+	PasswordSecretId *string `pulumi:"passwordSecretId"`
 	// atp database table name
-	TableName string `pulumi:"tableName"`
+	TableName *string `pulumi:"tableName"`
 	// OCID of the secret that contains the tnsnames file of ATP wallet
-	TnsnamesFileSecretId string `pulumi:"tnsnamesFileSecretId"`
+	TnsnamesFileSecretId *string `pulumi:"tnsnamesFileSecretId"`
 	// OCID of the secret containing truststore.jks file of the ATP wallet
-	TruststoreFileSecretId string `pulumi:"truststoreFileSecretId"`
+	TruststoreFileSecretId *string `pulumi:"truststoreFileSecretId"`
 	// public IP address and port to influx DB
-	Url string `pulumi:"url"`
+	Url *string `pulumi:"url"`
 	// Username for connection to Influx
-	UserName string `pulumi:"userName"`
+	UserName *string `pulumi:"userName"`
 	// Possible data sources
 	VersionSpecificDetails []GetDetectionDataAssetDataSourceDetailVersionSpecificDetail `pulumi:"versionSpecificDetails"`
 	// wallet password Secret ID in String format
-	WalletPasswordSecretId string `pulumi:"walletPasswordSecretId"`
+	WalletPasswordSecretId *string `pulumi:"walletPasswordSecretId"`
 }
 
 // GetDetectionDataAssetDataSourceDetailInput is an input type that accepts GetDetectionDataAssetDataSourceDetailArgs and GetDetectionDataAssetDataSourceDetailOutput values.
@@ -4534,45 +3957,45 @@ type GetDetectionDataAssetDataSourceDetailInput interface {
 
 type GetDetectionDataAssetDataSourceDetailArgs struct {
 	// atp db password Secret Id
-	AtpPasswordSecretId pulumi.StringInput `pulumi:"atpPasswordSecretId"`
+	AtpPasswordSecretId pulumi.StringPtrInput `pulumi:"atpPasswordSecretId"`
 	// atp db user name
-	AtpUserName pulumi.StringInput `pulumi:"atpUserName"`
+	AtpUserName pulumi.StringPtrInput `pulumi:"atpUserName"`
 	// Bucket Name for influx connection
-	Bucket pulumi.StringInput `pulumi:"bucket"`
+	Bucket pulumi.StringPtrInput `pulumi:"bucket"`
 	// OCID of the secret containing the containers certificates of ATP wallet
-	CwalletFileSecretId pulumi.StringInput `pulumi:"cwalletFileSecretId"`
+	CwalletFileSecretId pulumi.StringPtrInput `pulumi:"cwalletFileSecretId"`
 	// Data source type where actually data asset is being stored
-	DataSourceType pulumi.StringInput `pulumi:"dataSourceType"`
+	DataSourceType pulumi.StringPtrInput `pulumi:"dataSourceType"`
 	// DB Name for influx connection
-	DatabaseName pulumi.StringInput `pulumi:"databaseName"`
+	DatabaseName pulumi.StringPtrInput `pulumi:"databaseName"`
 	// OCID of the secret containing the PDB'S certificates of ATP wallet
-	EwalletFileSecretId pulumi.StringInput `pulumi:"ewalletFileSecretId"`
+	EwalletFileSecretId pulumi.StringPtrInput `pulumi:"ewalletFileSecretId"`
 	// OCID of the secret containing Keystore.jks file of the ATP wallet
-	KeyStoreFileSecretId pulumi.StringInput `pulumi:"keyStoreFileSecretId"`
+	KeyStoreFileSecretId pulumi.StringPtrInput `pulumi:"keyStoreFileSecretId"`
 	// Measurement name for influx
-	MeasurementName pulumi.StringInput `pulumi:"measurementName"`
+	MeasurementName pulumi.StringPtrInput `pulumi:"measurementName"`
 	// Object storage namespace
-	Namespace pulumi.StringInput `pulumi:"namespace"`
+	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
 	// File name
-	Object pulumi.StringInput `pulumi:"object"`
+	Object pulumi.StringPtrInput `pulumi:"object"`
 	// OCID of the secret that contains jdbc properties file of ATP wallet
-	OjdbcFileSecretId pulumi.StringInput `pulumi:"ojdbcFileSecretId"`
+	OjdbcFileSecretId pulumi.StringPtrInput `pulumi:"ojdbcFileSecretId"`
 	// Password Secret Id for the influx connection
-	PasswordSecretId pulumi.StringInput `pulumi:"passwordSecretId"`
+	PasswordSecretId pulumi.StringPtrInput `pulumi:"passwordSecretId"`
 	// atp database table name
-	TableName pulumi.StringInput `pulumi:"tableName"`
+	TableName pulumi.StringPtrInput `pulumi:"tableName"`
 	// OCID of the secret that contains the tnsnames file of ATP wallet
-	TnsnamesFileSecretId pulumi.StringInput `pulumi:"tnsnamesFileSecretId"`
+	TnsnamesFileSecretId pulumi.StringPtrInput `pulumi:"tnsnamesFileSecretId"`
 	// OCID of the secret containing truststore.jks file of the ATP wallet
-	TruststoreFileSecretId pulumi.StringInput `pulumi:"truststoreFileSecretId"`
+	TruststoreFileSecretId pulumi.StringPtrInput `pulumi:"truststoreFileSecretId"`
 	// public IP address and port to influx DB
-	Url pulumi.StringInput `pulumi:"url"`
+	Url pulumi.StringPtrInput `pulumi:"url"`
 	// Username for connection to Influx
-	UserName pulumi.StringInput `pulumi:"userName"`
+	UserName pulumi.StringPtrInput `pulumi:"userName"`
 	// Possible data sources
 	VersionSpecificDetails GetDetectionDataAssetDataSourceDetailVersionSpecificDetailArrayInput `pulumi:"versionSpecificDetails"`
 	// wallet password Secret ID in String format
-	WalletPasswordSecretId pulumi.StringInput `pulumi:"walletPasswordSecretId"`
+	WalletPasswordSecretId pulumi.StringPtrInput `pulumi:"walletPasswordSecretId"`
 }
 
 func (GetDetectionDataAssetDataSourceDetailArgs) ElementType() reflect.Type {
@@ -4585,12 +4008,6 @@ func (i GetDetectionDataAssetDataSourceDetailArgs) ToGetDetectionDataAssetDataSo
 
 func (i GetDetectionDataAssetDataSourceDetailArgs) ToGetDetectionDataAssetDataSourceDetailOutputWithContext(ctx context.Context) GetDetectionDataAssetDataSourceDetailOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectionDataAssetDataSourceDetailOutput)
-}
-
-func (i GetDetectionDataAssetDataSourceDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectionDataAssetDataSourceDetail] {
-	return pulumix.Output[GetDetectionDataAssetDataSourceDetail]{
-		OutputState: i.ToGetDetectionDataAssetDataSourceDetailOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetDetectionDataAssetDataSourceDetailArrayInput is an input type that accepts GetDetectionDataAssetDataSourceDetailArray and GetDetectionDataAssetDataSourceDetailArrayOutput values.
@@ -4618,12 +4035,6 @@ func (i GetDetectionDataAssetDataSourceDetailArray) ToGetDetectionDataAssetDataS
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectionDataAssetDataSourceDetailArrayOutput)
 }
 
-func (i GetDetectionDataAssetDataSourceDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectionDataAssetDataSourceDetail] {
-	return pulumix.Output[[]GetDetectionDataAssetDataSourceDetail]{
-		OutputState: i.ToGetDetectionDataAssetDataSourceDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectionDataAssetDataSourceDetailOutput struct{ *pulumi.OutputState }
 
 func (GetDetectionDataAssetDataSourceDetailOutput) ElementType() reflect.Type {
@@ -4638,100 +4049,94 @@ func (o GetDetectionDataAssetDataSourceDetailOutput) ToGetDetectionDataAssetData
 	return o
 }
 
-func (o GetDetectionDataAssetDataSourceDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectionDataAssetDataSourceDetail] {
-	return pulumix.Output[GetDetectionDataAssetDataSourceDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 // atp db password Secret Id
-func (o GetDetectionDataAssetDataSourceDetailOutput) AtpPasswordSecretId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionDataAssetDataSourceDetail) string { return v.AtpPasswordSecretId }).(pulumi.StringOutput)
+func (o GetDetectionDataAssetDataSourceDetailOutput) AtpPasswordSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionDataAssetDataSourceDetail) *string { return v.AtpPasswordSecretId }).(pulumi.StringPtrOutput)
 }
 
 // atp db user name
-func (o GetDetectionDataAssetDataSourceDetailOutput) AtpUserName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionDataAssetDataSourceDetail) string { return v.AtpUserName }).(pulumi.StringOutput)
+func (o GetDetectionDataAssetDataSourceDetailOutput) AtpUserName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionDataAssetDataSourceDetail) *string { return v.AtpUserName }).(pulumi.StringPtrOutput)
 }
 
 // Bucket Name for influx connection
-func (o GetDetectionDataAssetDataSourceDetailOutput) Bucket() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionDataAssetDataSourceDetail) string { return v.Bucket }).(pulumi.StringOutput)
+func (o GetDetectionDataAssetDataSourceDetailOutput) Bucket() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionDataAssetDataSourceDetail) *string { return v.Bucket }).(pulumi.StringPtrOutput)
 }
 
 // OCID of the secret containing the containers certificates of ATP wallet
-func (o GetDetectionDataAssetDataSourceDetailOutput) CwalletFileSecretId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionDataAssetDataSourceDetail) string { return v.CwalletFileSecretId }).(pulumi.StringOutput)
+func (o GetDetectionDataAssetDataSourceDetailOutput) CwalletFileSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionDataAssetDataSourceDetail) *string { return v.CwalletFileSecretId }).(pulumi.StringPtrOutput)
 }
 
 // Data source type where actually data asset is being stored
-func (o GetDetectionDataAssetDataSourceDetailOutput) DataSourceType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionDataAssetDataSourceDetail) string { return v.DataSourceType }).(pulumi.StringOutput)
+func (o GetDetectionDataAssetDataSourceDetailOutput) DataSourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionDataAssetDataSourceDetail) *string { return v.DataSourceType }).(pulumi.StringPtrOutput)
 }
 
 // DB Name for influx connection
-func (o GetDetectionDataAssetDataSourceDetailOutput) DatabaseName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionDataAssetDataSourceDetail) string { return v.DatabaseName }).(pulumi.StringOutput)
+func (o GetDetectionDataAssetDataSourceDetailOutput) DatabaseName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionDataAssetDataSourceDetail) *string { return v.DatabaseName }).(pulumi.StringPtrOutput)
 }
 
 // OCID of the secret containing the PDB'S certificates of ATP wallet
-func (o GetDetectionDataAssetDataSourceDetailOutput) EwalletFileSecretId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionDataAssetDataSourceDetail) string { return v.EwalletFileSecretId }).(pulumi.StringOutput)
+func (o GetDetectionDataAssetDataSourceDetailOutput) EwalletFileSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionDataAssetDataSourceDetail) *string { return v.EwalletFileSecretId }).(pulumi.StringPtrOutput)
 }
 
 // OCID of the secret containing Keystore.jks file of the ATP wallet
-func (o GetDetectionDataAssetDataSourceDetailOutput) KeyStoreFileSecretId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionDataAssetDataSourceDetail) string { return v.KeyStoreFileSecretId }).(pulumi.StringOutput)
+func (o GetDetectionDataAssetDataSourceDetailOutput) KeyStoreFileSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionDataAssetDataSourceDetail) *string { return v.KeyStoreFileSecretId }).(pulumi.StringPtrOutput)
 }
 
 // Measurement name for influx
-func (o GetDetectionDataAssetDataSourceDetailOutput) MeasurementName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionDataAssetDataSourceDetail) string { return v.MeasurementName }).(pulumi.StringOutput)
+func (o GetDetectionDataAssetDataSourceDetailOutput) MeasurementName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionDataAssetDataSourceDetail) *string { return v.MeasurementName }).(pulumi.StringPtrOutput)
 }
 
 // Object storage namespace
-func (o GetDetectionDataAssetDataSourceDetailOutput) Namespace() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionDataAssetDataSourceDetail) string { return v.Namespace }).(pulumi.StringOutput)
+func (o GetDetectionDataAssetDataSourceDetailOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionDataAssetDataSourceDetail) *string { return v.Namespace }).(pulumi.StringPtrOutput)
 }
 
 // File name
-func (o GetDetectionDataAssetDataSourceDetailOutput) Object() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionDataAssetDataSourceDetail) string { return v.Object }).(pulumi.StringOutput)
+func (o GetDetectionDataAssetDataSourceDetailOutput) Object() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionDataAssetDataSourceDetail) *string { return v.Object }).(pulumi.StringPtrOutput)
 }
 
 // OCID of the secret that contains jdbc properties file of ATP wallet
-func (o GetDetectionDataAssetDataSourceDetailOutput) OjdbcFileSecretId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionDataAssetDataSourceDetail) string { return v.OjdbcFileSecretId }).(pulumi.StringOutput)
+func (o GetDetectionDataAssetDataSourceDetailOutput) OjdbcFileSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionDataAssetDataSourceDetail) *string { return v.OjdbcFileSecretId }).(pulumi.StringPtrOutput)
 }
 
 // Password Secret Id for the influx connection
-func (o GetDetectionDataAssetDataSourceDetailOutput) PasswordSecretId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionDataAssetDataSourceDetail) string { return v.PasswordSecretId }).(pulumi.StringOutput)
+func (o GetDetectionDataAssetDataSourceDetailOutput) PasswordSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionDataAssetDataSourceDetail) *string { return v.PasswordSecretId }).(pulumi.StringPtrOutput)
 }
 
 // atp database table name
-func (o GetDetectionDataAssetDataSourceDetailOutput) TableName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionDataAssetDataSourceDetail) string { return v.TableName }).(pulumi.StringOutput)
+func (o GetDetectionDataAssetDataSourceDetailOutput) TableName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionDataAssetDataSourceDetail) *string { return v.TableName }).(pulumi.StringPtrOutput)
 }
 
 // OCID of the secret that contains the tnsnames file of ATP wallet
-func (o GetDetectionDataAssetDataSourceDetailOutput) TnsnamesFileSecretId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionDataAssetDataSourceDetail) string { return v.TnsnamesFileSecretId }).(pulumi.StringOutput)
+func (o GetDetectionDataAssetDataSourceDetailOutput) TnsnamesFileSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionDataAssetDataSourceDetail) *string { return v.TnsnamesFileSecretId }).(pulumi.StringPtrOutput)
 }
 
 // OCID of the secret containing truststore.jks file of the ATP wallet
-func (o GetDetectionDataAssetDataSourceDetailOutput) TruststoreFileSecretId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionDataAssetDataSourceDetail) string { return v.TruststoreFileSecretId }).(pulumi.StringOutput)
+func (o GetDetectionDataAssetDataSourceDetailOutput) TruststoreFileSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionDataAssetDataSourceDetail) *string { return v.TruststoreFileSecretId }).(pulumi.StringPtrOutput)
 }
 
 // public IP address and port to influx DB
-func (o GetDetectionDataAssetDataSourceDetailOutput) Url() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionDataAssetDataSourceDetail) string { return v.Url }).(pulumi.StringOutput)
+func (o GetDetectionDataAssetDataSourceDetailOutput) Url() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionDataAssetDataSourceDetail) *string { return v.Url }).(pulumi.StringPtrOutput)
 }
 
 // Username for connection to Influx
-func (o GetDetectionDataAssetDataSourceDetailOutput) UserName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionDataAssetDataSourceDetail) string { return v.UserName }).(pulumi.StringOutput)
+func (o GetDetectionDataAssetDataSourceDetailOutput) UserName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionDataAssetDataSourceDetail) *string { return v.UserName }).(pulumi.StringPtrOutput)
 }
 
 // Possible data sources
@@ -4742,8 +4147,8 @@ func (o GetDetectionDataAssetDataSourceDetailOutput) VersionSpecificDetails() Ge
 }
 
 // wallet password Secret ID in String format
-func (o GetDetectionDataAssetDataSourceDetailOutput) WalletPasswordSecretId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionDataAssetDataSourceDetail) string { return v.WalletPasswordSecretId }).(pulumi.StringOutput)
+func (o GetDetectionDataAssetDataSourceDetailOutput) WalletPasswordSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionDataAssetDataSourceDetail) *string { return v.WalletPasswordSecretId }).(pulumi.StringPtrOutput)
 }
 
 type GetDetectionDataAssetDataSourceDetailArrayOutput struct{ *pulumi.OutputState }
@@ -4760,12 +4165,6 @@ func (o GetDetectionDataAssetDataSourceDetailArrayOutput) ToGetDetectionDataAsse
 	return o
 }
 
-func (o GetDetectionDataAssetDataSourceDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectionDataAssetDataSourceDetail] {
-	return pulumix.Output[[]GetDetectionDataAssetDataSourceDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDetectionDataAssetDataSourceDetailArrayOutput) Index(i pulumi.IntInput) GetDetectionDataAssetDataSourceDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDetectionDataAssetDataSourceDetail {
 		return vs[0].([]GetDetectionDataAssetDataSourceDetail)[vs[1].(int)]
@@ -4774,15 +4173,15 @@ func (o GetDetectionDataAssetDataSourceDetailArrayOutput) Index(i pulumi.IntInpu
 
 type GetDetectionDataAssetDataSourceDetailVersionSpecificDetail struct {
 	// Bucket Name for influx connection
-	Bucket string `pulumi:"bucket"`
+	Bucket *string `pulumi:"bucket"`
 	// DB Name for influx connection
-	DatabaseName string `pulumi:"databaseName"`
+	DatabaseName *string `pulumi:"databaseName"`
 	// Data source type where actually data asset is being stored
-	InfluxVersion string `pulumi:"influxVersion"`
+	InfluxVersion *string `pulumi:"influxVersion"`
 	// Org name for the influx db
-	OrganizationName string `pulumi:"organizationName"`
+	OrganizationName *string `pulumi:"organizationName"`
 	// retention policy is how long the bucket would last
-	RetentionPolicyName string `pulumi:"retentionPolicyName"`
+	RetentionPolicyName *string `pulumi:"retentionPolicyName"`
 }
 
 // GetDetectionDataAssetDataSourceDetailVersionSpecificDetailInput is an input type that accepts GetDetectionDataAssetDataSourceDetailVersionSpecificDetailArgs and GetDetectionDataAssetDataSourceDetailVersionSpecificDetailOutput values.
@@ -4798,15 +4197,15 @@ type GetDetectionDataAssetDataSourceDetailVersionSpecificDetailInput interface {
 
 type GetDetectionDataAssetDataSourceDetailVersionSpecificDetailArgs struct {
 	// Bucket Name for influx connection
-	Bucket pulumi.StringInput `pulumi:"bucket"`
+	Bucket pulumi.StringPtrInput `pulumi:"bucket"`
 	// DB Name for influx connection
-	DatabaseName pulumi.StringInput `pulumi:"databaseName"`
+	DatabaseName pulumi.StringPtrInput `pulumi:"databaseName"`
 	// Data source type where actually data asset is being stored
-	InfluxVersion pulumi.StringInput `pulumi:"influxVersion"`
+	InfluxVersion pulumi.StringPtrInput `pulumi:"influxVersion"`
 	// Org name for the influx db
-	OrganizationName pulumi.StringInput `pulumi:"organizationName"`
+	OrganizationName pulumi.StringPtrInput `pulumi:"organizationName"`
 	// retention policy is how long the bucket would last
-	RetentionPolicyName pulumi.StringInput `pulumi:"retentionPolicyName"`
+	RetentionPolicyName pulumi.StringPtrInput `pulumi:"retentionPolicyName"`
 }
 
 func (GetDetectionDataAssetDataSourceDetailVersionSpecificDetailArgs) ElementType() reflect.Type {
@@ -4819,12 +4218,6 @@ func (i GetDetectionDataAssetDataSourceDetailVersionSpecificDetailArgs) ToGetDet
 
 func (i GetDetectionDataAssetDataSourceDetailVersionSpecificDetailArgs) ToGetDetectionDataAssetDataSourceDetailVersionSpecificDetailOutputWithContext(ctx context.Context) GetDetectionDataAssetDataSourceDetailVersionSpecificDetailOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectionDataAssetDataSourceDetailVersionSpecificDetailOutput)
-}
-
-func (i GetDetectionDataAssetDataSourceDetailVersionSpecificDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectionDataAssetDataSourceDetailVersionSpecificDetail] {
-	return pulumix.Output[GetDetectionDataAssetDataSourceDetailVersionSpecificDetail]{
-		OutputState: i.ToGetDetectionDataAssetDataSourceDetailVersionSpecificDetailOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetDetectionDataAssetDataSourceDetailVersionSpecificDetailArrayInput is an input type that accepts GetDetectionDataAssetDataSourceDetailVersionSpecificDetailArray and GetDetectionDataAssetDataSourceDetailVersionSpecificDetailArrayOutput values.
@@ -4852,12 +4245,6 @@ func (i GetDetectionDataAssetDataSourceDetailVersionSpecificDetailArray) ToGetDe
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectionDataAssetDataSourceDetailVersionSpecificDetailArrayOutput)
 }
 
-func (i GetDetectionDataAssetDataSourceDetailVersionSpecificDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectionDataAssetDataSourceDetailVersionSpecificDetail] {
-	return pulumix.Output[[]GetDetectionDataAssetDataSourceDetailVersionSpecificDetail]{
-		OutputState: i.ToGetDetectionDataAssetDataSourceDetailVersionSpecificDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectionDataAssetDataSourceDetailVersionSpecificDetailOutput struct{ *pulumi.OutputState }
 
 func (GetDetectionDataAssetDataSourceDetailVersionSpecificDetailOutput) ElementType() reflect.Type {
@@ -4872,37 +4259,31 @@ func (o GetDetectionDataAssetDataSourceDetailVersionSpecificDetailOutput) ToGetD
 	return o
 }
 
-func (o GetDetectionDataAssetDataSourceDetailVersionSpecificDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectionDataAssetDataSourceDetailVersionSpecificDetail] {
-	return pulumix.Output[GetDetectionDataAssetDataSourceDetailVersionSpecificDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Bucket Name for influx connection
-func (o GetDetectionDataAssetDataSourceDetailVersionSpecificDetailOutput) Bucket() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionDataAssetDataSourceDetailVersionSpecificDetail) string { return v.Bucket }).(pulumi.StringOutput)
+func (o GetDetectionDataAssetDataSourceDetailVersionSpecificDetailOutput) Bucket() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionDataAssetDataSourceDetailVersionSpecificDetail) *string { return v.Bucket }).(pulumi.StringPtrOutput)
 }
 
 // DB Name for influx connection
-func (o GetDetectionDataAssetDataSourceDetailVersionSpecificDetailOutput) DatabaseName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionDataAssetDataSourceDetailVersionSpecificDetail) string { return v.DatabaseName }).(pulumi.StringOutput)
+func (o GetDetectionDataAssetDataSourceDetailVersionSpecificDetailOutput) DatabaseName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionDataAssetDataSourceDetailVersionSpecificDetail) *string { return v.DatabaseName }).(pulumi.StringPtrOutput)
 }
 
 // Data source type where actually data asset is being stored
-func (o GetDetectionDataAssetDataSourceDetailVersionSpecificDetailOutput) InfluxVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionDataAssetDataSourceDetailVersionSpecificDetail) string { return v.InfluxVersion }).(pulumi.StringOutput)
+func (o GetDetectionDataAssetDataSourceDetailVersionSpecificDetailOutput) InfluxVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionDataAssetDataSourceDetailVersionSpecificDetail) *string { return v.InfluxVersion }).(pulumi.StringPtrOutput)
 }
 
 // Org name for the influx db
-func (o GetDetectionDataAssetDataSourceDetailVersionSpecificDetailOutput) OrganizationName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionDataAssetDataSourceDetailVersionSpecificDetail) string { return v.OrganizationName }).(pulumi.StringOutput)
+func (o GetDetectionDataAssetDataSourceDetailVersionSpecificDetailOutput) OrganizationName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionDataAssetDataSourceDetailVersionSpecificDetail) *string { return v.OrganizationName }).(pulumi.StringPtrOutput)
 }
 
 // retention policy is how long the bucket would last
-func (o GetDetectionDataAssetDataSourceDetailVersionSpecificDetailOutput) RetentionPolicyName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionDataAssetDataSourceDetailVersionSpecificDetail) string {
+func (o GetDetectionDataAssetDataSourceDetailVersionSpecificDetailOutput) RetentionPolicyName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionDataAssetDataSourceDetailVersionSpecificDetail) *string {
 		return v.RetentionPolicyName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetDetectionDataAssetDataSourceDetailVersionSpecificDetailArrayOutput struct{ *pulumi.OutputState }
@@ -4917,12 +4298,6 @@ func (o GetDetectionDataAssetDataSourceDetailVersionSpecificDetailArrayOutput) T
 
 func (o GetDetectionDataAssetDataSourceDetailVersionSpecificDetailArrayOutput) ToGetDetectionDataAssetDataSourceDetailVersionSpecificDetailArrayOutputWithContext(ctx context.Context) GetDetectionDataAssetDataSourceDetailVersionSpecificDetailArrayOutput {
 	return o
-}
-
-func (o GetDetectionDataAssetDataSourceDetailVersionSpecificDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectionDataAssetDataSourceDetailVersionSpecificDetail] {
-	return pulumix.Output[[]GetDetectionDataAssetDataSourceDetailVersionSpecificDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDetectionDataAssetDataSourceDetailVersionSpecificDetailArrayOutput) Index(i pulumi.IntInput) GetDetectionDataAssetDataSourceDetailVersionSpecificDetailOutput {
@@ -4962,12 +4337,6 @@ func (i GetDetectionDataAssetsDataAssetCollectionArgs) ToGetDetectionDataAssetsD
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectionDataAssetsDataAssetCollectionOutput)
 }
 
-func (i GetDetectionDataAssetsDataAssetCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectionDataAssetsDataAssetCollection] {
-	return pulumix.Output[GetDetectionDataAssetsDataAssetCollection]{
-		OutputState: i.ToGetDetectionDataAssetsDataAssetCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDetectionDataAssetsDataAssetCollectionArrayInput is an input type that accepts GetDetectionDataAssetsDataAssetCollectionArray and GetDetectionDataAssetsDataAssetCollectionArrayOutput values.
 // You can construct a concrete instance of `GetDetectionDataAssetsDataAssetCollectionArrayInput` via:
 //
@@ -4993,12 +4362,6 @@ func (i GetDetectionDataAssetsDataAssetCollectionArray) ToGetDetectionDataAssets
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectionDataAssetsDataAssetCollectionArrayOutput)
 }
 
-func (i GetDetectionDataAssetsDataAssetCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectionDataAssetsDataAssetCollection] {
-	return pulumix.Output[[]GetDetectionDataAssetsDataAssetCollection]{
-		OutputState: i.ToGetDetectionDataAssetsDataAssetCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectionDataAssetsDataAssetCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetDetectionDataAssetsDataAssetCollectionOutput) ElementType() reflect.Type {
@@ -5011,12 +4374,6 @@ func (o GetDetectionDataAssetsDataAssetCollectionOutput) ToGetDetectionDataAsset
 
 func (o GetDetectionDataAssetsDataAssetCollectionOutput) ToGetDetectionDataAssetsDataAssetCollectionOutputWithContext(ctx context.Context) GetDetectionDataAssetsDataAssetCollectionOutput {
 	return o
-}
-
-func (o GetDetectionDataAssetsDataAssetCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectionDataAssetsDataAssetCollection] {
-	return pulumix.Output[GetDetectionDataAssetsDataAssetCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDetectionDataAssetsDataAssetCollectionOutput) Items() GetDetectionDataAssetsDataAssetCollectionItemArrayOutput {
@@ -5039,12 +4396,6 @@ func (o GetDetectionDataAssetsDataAssetCollectionArrayOutput) ToGetDetectionData
 	return o
 }
 
-func (o GetDetectionDataAssetsDataAssetCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectionDataAssetsDataAssetCollection] {
-	return pulumix.Output[[]GetDetectionDataAssetsDataAssetCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDetectionDataAssetsDataAssetCollectionArrayOutput) Index(i pulumi.IntInput) GetDetectionDataAssetsDataAssetCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDetectionDataAssetsDataAssetCollection {
 		return vs[0].([]GetDetectionDataAssetsDataAssetCollection)[vs[1].(int)]
@@ -5053,31 +4404,31 @@ func (o GetDetectionDataAssetsDataAssetCollectionArrayOutput) Index(i pulumi.Int
 
 type GetDetectionDataAssetsDataAssetCollectionItem struct {
 	// The ID of the compartment in which to list resources.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Possible data sources
 	DataSourceDetails []GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail `pulumi:"dataSourceDetails"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A short description of the data asset.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// A filter to return only resources that match the entire display name given.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The Unique Oracle ID (OCID) that is immutable on creation.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// OCID of Private Endpoint.
-	PrivateEndpointId string `pulumi:"privateEndpointId"`
+	PrivateEndpointId *string `pulumi:"privateEndpointId"`
 	// The ID of the project for which to list the objects.
-	ProjectId string `pulumi:"projectId"`
+	ProjectId *string `pulumi:"projectId"`
 	// <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time the the DataAsset was created. An RFC3339 formatted datetime string
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the the DataAsset was updated. An RFC3339 formatted datetime string
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 // GetDetectionDataAssetsDataAssetCollectionItemInput is an input type that accepts GetDetectionDataAssetsDataAssetCollectionItemArgs and GetDetectionDataAssetsDataAssetCollectionItemOutput values.
@@ -5093,31 +4444,31 @@ type GetDetectionDataAssetsDataAssetCollectionItemInput interface {
 
 type GetDetectionDataAssetsDataAssetCollectionItemArgs struct {
 	// The ID of the compartment in which to list resources.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Possible data sources
 	DataSourceDetails GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailArrayInput `pulumi:"dataSourceDetails"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A short description of the data asset.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// A filter to return only resources that match the entire display name given.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The Unique Oracle ID (OCID) that is immutable on creation.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// OCID of Private Endpoint.
-	PrivateEndpointId pulumi.StringInput `pulumi:"privateEndpointId"`
+	PrivateEndpointId pulumi.StringPtrInput `pulumi:"privateEndpointId"`
 	// The ID of the project for which to list the objects.
-	ProjectId pulumi.StringInput `pulumi:"projectId"`
+	ProjectId pulumi.StringPtrInput `pulumi:"projectId"`
 	// <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// The time the the DataAsset was created. An RFC3339 formatted datetime string
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The time the the DataAsset was updated. An RFC3339 formatted datetime string
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 }
 
 func (GetDetectionDataAssetsDataAssetCollectionItemArgs) ElementType() reflect.Type {
@@ -5130,12 +4481,6 @@ func (i GetDetectionDataAssetsDataAssetCollectionItemArgs) ToGetDetectionDataAss
 
 func (i GetDetectionDataAssetsDataAssetCollectionItemArgs) ToGetDetectionDataAssetsDataAssetCollectionItemOutputWithContext(ctx context.Context) GetDetectionDataAssetsDataAssetCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectionDataAssetsDataAssetCollectionItemOutput)
-}
-
-func (i GetDetectionDataAssetsDataAssetCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectionDataAssetsDataAssetCollectionItem] {
-	return pulumix.Output[GetDetectionDataAssetsDataAssetCollectionItem]{
-		OutputState: i.ToGetDetectionDataAssetsDataAssetCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetDetectionDataAssetsDataAssetCollectionItemArrayInput is an input type that accepts GetDetectionDataAssetsDataAssetCollectionItemArray and GetDetectionDataAssetsDataAssetCollectionItemArrayOutput values.
@@ -5163,12 +4508,6 @@ func (i GetDetectionDataAssetsDataAssetCollectionItemArray) ToGetDetectionDataAs
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectionDataAssetsDataAssetCollectionItemArrayOutput)
 }
 
-func (i GetDetectionDataAssetsDataAssetCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectionDataAssetsDataAssetCollectionItem] {
-	return pulumix.Output[[]GetDetectionDataAssetsDataAssetCollectionItem]{
-		OutputState: i.ToGetDetectionDataAssetsDataAssetCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectionDataAssetsDataAssetCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetDetectionDataAssetsDataAssetCollectionItemOutput) ElementType() reflect.Type {
@@ -5183,15 +4522,9 @@ func (o GetDetectionDataAssetsDataAssetCollectionItemOutput) ToGetDetectionDataA
 	return o
 }
 
-func (o GetDetectionDataAssetsDataAssetCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectionDataAssetsDataAssetCollectionItem] {
-	return pulumix.Output[GetDetectionDataAssetsDataAssetCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The ID of the compartment in which to list resources.
-func (o GetDetectionDataAssetsDataAssetCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionDataAssetsDataAssetCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetDetectionDataAssetsDataAssetCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionDataAssetsDataAssetCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Possible data sources
@@ -5207,13 +4540,13 @@ func (o GetDetectionDataAssetsDataAssetCollectionItemOutput) DefinedTags() pulum
 }
 
 // A short description of the data asset.
-func (o GetDetectionDataAssetsDataAssetCollectionItemOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionDataAssetsDataAssetCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+func (o GetDetectionDataAssetsDataAssetCollectionItemOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionDataAssetsDataAssetCollectionItem) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only resources that match the entire display name given.
-func (o GetDetectionDataAssetsDataAssetCollectionItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionDataAssetsDataAssetCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetDetectionDataAssetsDataAssetCollectionItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionDataAssetsDataAssetCollectionItem) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -5222,23 +4555,23 @@ func (o GetDetectionDataAssetsDataAssetCollectionItemOutput) FreeformTags() pulu
 }
 
 // The Unique Oracle ID (OCID) that is immutable on creation.
-func (o GetDetectionDataAssetsDataAssetCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionDataAssetsDataAssetCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDetectionDataAssetsDataAssetCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionDataAssetsDataAssetCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // OCID of Private Endpoint.
-func (o GetDetectionDataAssetsDataAssetCollectionItemOutput) PrivateEndpointId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionDataAssetsDataAssetCollectionItem) string { return v.PrivateEndpointId }).(pulumi.StringOutput)
+func (o GetDetectionDataAssetsDataAssetCollectionItemOutput) PrivateEndpointId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionDataAssetsDataAssetCollectionItem) *string { return v.PrivateEndpointId }).(pulumi.StringPtrOutput)
 }
 
 // The ID of the project for which to list the objects.
-func (o GetDetectionDataAssetsDataAssetCollectionItemOutput) ProjectId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionDataAssetsDataAssetCollectionItem) string { return v.ProjectId }).(pulumi.StringOutput)
+func (o GetDetectionDataAssetsDataAssetCollectionItemOutput) ProjectId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionDataAssetsDataAssetCollectionItem) *string { return v.ProjectId }).(pulumi.StringPtrOutput)
 }
 
 // <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
-func (o GetDetectionDataAssetsDataAssetCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionDataAssetsDataAssetCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetDetectionDataAssetsDataAssetCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionDataAssetsDataAssetCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -5247,13 +4580,13 @@ func (o GetDetectionDataAssetsDataAssetCollectionItemOutput) SystemTags() pulumi
 }
 
 // The time the the DataAsset was created. An RFC3339 formatted datetime string
-func (o GetDetectionDataAssetsDataAssetCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionDataAssetsDataAssetCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetDetectionDataAssetsDataAssetCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionDataAssetsDataAssetCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the the DataAsset was updated. An RFC3339 formatted datetime string
-func (o GetDetectionDataAssetsDataAssetCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionDataAssetsDataAssetCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetDetectionDataAssetsDataAssetCollectionItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionDataAssetsDataAssetCollectionItem) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type GetDetectionDataAssetsDataAssetCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -5270,12 +4603,6 @@ func (o GetDetectionDataAssetsDataAssetCollectionItemArrayOutput) ToGetDetection
 	return o
 }
 
-func (o GetDetectionDataAssetsDataAssetCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectionDataAssetsDataAssetCollectionItem] {
-	return pulumix.Output[[]GetDetectionDataAssetsDataAssetCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDetectionDataAssetsDataAssetCollectionItemArrayOutput) Index(i pulumi.IntInput) GetDetectionDataAssetsDataAssetCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDetectionDataAssetsDataAssetCollectionItem {
 		return vs[0].([]GetDetectionDataAssetsDataAssetCollectionItem)[vs[1].(int)]
@@ -5284,45 +4611,45 @@ func (o GetDetectionDataAssetsDataAssetCollectionItemArrayOutput) Index(i pulumi
 
 type GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail struct {
 	// atp db password Secret Id
-	AtpPasswordSecretId string `pulumi:"atpPasswordSecretId"`
+	AtpPasswordSecretId *string `pulumi:"atpPasswordSecretId"`
 	// atp db user name
-	AtpUserName string `pulumi:"atpUserName"`
+	AtpUserName *string `pulumi:"atpUserName"`
 	// Bucket Name for influx connection
-	Bucket string `pulumi:"bucket"`
+	Bucket *string `pulumi:"bucket"`
 	// OCID of the secret containing the containers certificates of ATP wallet
-	CwalletFileSecretId string `pulumi:"cwalletFileSecretId"`
+	CwalletFileSecretId *string `pulumi:"cwalletFileSecretId"`
 	// Data source type where actually data asset is being stored
-	DataSourceType string `pulumi:"dataSourceType"`
+	DataSourceType *string `pulumi:"dataSourceType"`
 	// DB Name for influx connection
-	DatabaseName string `pulumi:"databaseName"`
+	DatabaseName *string `pulumi:"databaseName"`
 	// OCID of the secret containing the PDB'S certificates of ATP wallet
-	EwalletFileSecretId string `pulumi:"ewalletFileSecretId"`
+	EwalletFileSecretId *string `pulumi:"ewalletFileSecretId"`
 	// OCID of the secret containing Keystore.jks file of the ATP wallet
-	KeyStoreFileSecretId string `pulumi:"keyStoreFileSecretId"`
+	KeyStoreFileSecretId *string `pulumi:"keyStoreFileSecretId"`
 	// Measurement name for influx
-	MeasurementName string `pulumi:"measurementName"`
+	MeasurementName *string `pulumi:"measurementName"`
 	// Object storage namespace
-	Namespace string `pulumi:"namespace"`
+	Namespace *string `pulumi:"namespace"`
 	// File name
-	Object string `pulumi:"object"`
+	Object *string `pulumi:"object"`
 	// OCID of the secret that contains jdbc properties file of ATP wallet
-	OjdbcFileSecretId string `pulumi:"ojdbcFileSecretId"`
+	OjdbcFileSecretId *string `pulumi:"ojdbcFileSecretId"`
 	// Password Secret Id for the influx connection
-	PasswordSecretId string `pulumi:"passwordSecretId"`
+	PasswordSecretId *string `pulumi:"passwordSecretId"`
 	// atp database table name
-	TableName string `pulumi:"tableName"`
+	TableName *string `pulumi:"tableName"`
 	// OCID of the secret that contains the tnsnames file of ATP wallet
-	TnsnamesFileSecretId string `pulumi:"tnsnamesFileSecretId"`
+	TnsnamesFileSecretId *string `pulumi:"tnsnamesFileSecretId"`
 	// OCID of the secret containing truststore.jks file of the ATP wallet
-	TruststoreFileSecretId string `pulumi:"truststoreFileSecretId"`
+	TruststoreFileSecretId *string `pulumi:"truststoreFileSecretId"`
 	// public IP address and port to influx DB
-	Url string `pulumi:"url"`
+	Url *string `pulumi:"url"`
 	// Username for connection to Influx
-	UserName string `pulumi:"userName"`
+	UserName *string `pulumi:"userName"`
 	// Possible data sources
 	VersionSpecificDetails []GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetail `pulumi:"versionSpecificDetails"`
 	// wallet password Secret ID in String format
-	WalletPasswordSecretId string `pulumi:"walletPasswordSecretId"`
+	WalletPasswordSecretId *string `pulumi:"walletPasswordSecretId"`
 }
 
 // GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailInput is an input type that accepts GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailArgs and GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailOutput values.
@@ -5338,45 +4665,45 @@ type GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailInput interfac
 
 type GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailArgs struct {
 	// atp db password Secret Id
-	AtpPasswordSecretId pulumi.StringInput `pulumi:"atpPasswordSecretId"`
+	AtpPasswordSecretId pulumi.StringPtrInput `pulumi:"atpPasswordSecretId"`
 	// atp db user name
-	AtpUserName pulumi.StringInput `pulumi:"atpUserName"`
+	AtpUserName pulumi.StringPtrInput `pulumi:"atpUserName"`
 	// Bucket Name for influx connection
-	Bucket pulumi.StringInput `pulumi:"bucket"`
+	Bucket pulumi.StringPtrInput `pulumi:"bucket"`
 	// OCID of the secret containing the containers certificates of ATP wallet
-	CwalletFileSecretId pulumi.StringInput `pulumi:"cwalletFileSecretId"`
+	CwalletFileSecretId pulumi.StringPtrInput `pulumi:"cwalletFileSecretId"`
 	// Data source type where actually data asset is being stored
-	DataSourceType pulumi.StringInput `pulumi:"dataSourceType"`
+	DataSourceType pulumi.StringPtrInput `pulumi:"dataSourceType"`
 	// DB Name for influx connection
-	DatabaseName pulumi.StringInput `pulumi:"databaseName"`
+	DatabaseName pulumi.StringPtrInput `pulumi:"databaseName"`
 	// OCID of the secret containing the PDB'S certificates of ATP wallet
-	EwalletFileSecretId pulumi.StringInput `pulumi:"ewalletFileSecretId"`
+	EwalletFileSecretId pulumi.StringPtrInput `pulumi:"ewalletFileSecretId"`
 	// OCID of the secret containing Keystore.jks file of the ATP wallet
-	KeyStoreFileSecretId pulumi.StringInput `pulumi:"keyStoreFileSecretId"`
+	KeyStoreFileSecretId pulumi.StringPtrInput `pulumi:"keyStoreFileSecretId"`
 	// Measurement name for influx
-	MeasurementName pulumi.StringInput `pulumi:"measurementName"`
+	MeasurementName pulumi.StringPtrInput `pulumi:"measurementName"`
 	// Object storage namespace
-	Namespace pulumi.StringInput `pulumi:"namespace"`
+	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
 	// File name
-	Object pulumi.StringInput `pulumi:"object"`
+	Object pulumi.StringPtrInput `pulumi:"object"`
 	// OCID of the secret that contains jdbc properties file of ATP wallet
-	OjdbcFileSecretId pulumi.StringInput `pulumi:"ojdbcFileSecretId"`
+	OjdbcFileSecretId pulumi.StringPtrInput `pulumi:"ojdbcFileSecretId"`
 	// Password Secret Id for the influx connection
-	PasswordSecretId pulumi.StringInput `pulumi:"passwordSecretId"`
+	PasswordSecretId pulumi.StringPtrInput `pulumi:"passwordSecretId"`
 	// atp database table name
-	TableName pulumi.StringInput `pulumi:"tableName"`
+	TableName pulumi.StringPtrInput `pulumi:"tableName"`
 	// OCID of the secret that contains the tnsnames file of ATP wallet
-	TnsnamesFileSecretId pulumi.StringInput `pulumi:"tnsnamesFileSecretId"`
+	TnsnamesFileSecretId pulumi.StringPtrInput `pulumi:"tnsnamesFileSecretId"`
 	// OCID of the secret containing truststore.jks file of the ATP wallet
-	TruststoreFileSecretId pulumi.StringInput `pulumi:"truststoreFileSecretId"`
+	TruststoreFileSecretId pulumi.StringPtrInput `pulumi:"truststoreFileSecretId"`
 	// public IP address and port to influx DB
-	Url pulumi.StringInput `pulumi:"url"`
+	Url pulumi.StringPtrInput `pulumi:"url"`
 	// Username for connection to Influx
-	UserName pulumi.StringInput `pulumi:"userName"`
+	UserName pulumi.StringPtrInput `pulumi:"userName"`
 	// Possible data sources
 	VersionSpecificDetails GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetailArrayInput `pulumi:"versionSpecificDetails"`
 	// wallet password Secret ID in String format
-	WalletPasswordSecretId pulumi.StringInput `pulumi:"walletPasswordSecretId"`
+	WalletPasswordSecretId pulumi.StringPtrInput `pulumi:"walletPasswordSecretId"`
 }
 
 func (GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailArgs) ElementType() reflect.Type {
@@ -5389,12 +4716,6 @@ func (i GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailArgs) ToGet
 
 func (i GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailArgs) ToGetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailOutputWithContext(ctx context.Context) GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailOutput)
-}
-
-func (i GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail] {
-	return pulumix.Output[GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail]{
-		OutputState: i.ToGetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailArrayInput is an input type that accepts GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailArray and GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailArrayOutput values.
@@ -5422,12 +4743,6 @@ func (i GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailArray) ToGe
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailArrayOutput)
 }
 
-func (i GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail] {
-	return pulumix.Output[[]GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail]{
-		OutputState: i.ToGetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailOutput struct{ *pulumi.OutputState }
 
 func (GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailOutput) ElementType() reflect.Type {
@@ -5442,116 +4757,112 @@ func (o GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailOutput) ToG
 	return o
 }
 
-func (o GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail] {
-	return pulumix.Output[GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 // atp db password Secret Id
-func (o GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailOutput) AtpPasswordSecretId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail) string {
+func (o GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailOutput) AtpPasswordSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail) *string {
 		return v.AtpPasswordSecretId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // atp db user name
-func (o GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailOutput) AtpUserName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail) string { return v.AtpUserName }).(pulumi.StringOutput)
+func (o GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailOutput) AtpUserName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail) *string { return v.AtpUserName }).(pulumi.StringPtrOutput)
 }
 
 // Bucket Name for influx connection
-func (o GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailOutput) Bucket() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail) string { return v.Bucket }).(pulumi.StringOutput)
+func (o GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailOutput) Bucket() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail) *string { return v.Bucket }).(pulumi.StringPtrOutput)
 }
 
 // OCID of the secret containing the containers certificates of ATP wallet
-func (o GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailOutput) CwalletFileSecretId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail) string {
+func (o GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailOutput) CwalletFileSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail) *string {
 		return v.CwalletFileSecretId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Data source type where actually data asset is being stored
-func (o GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailOutput) DataSourceType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail) string { return v.DataSourceType }).(pulumi.StringOutput)
+func (o GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailOutput) DataSourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail) *string { return v.DataSourceType }).(pulumi.StringPtrOutput)
 }
 
 // DB Name for influx connection
-func (o GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailOutput) DatabaseName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail) string { return v.DatabaseName }).(pulumi.StringOutput)
+func (o GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailOutput) DatabaseName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail) *string { return v.DatabaseName }).(pulumi.StringPtrOutput)
 }
 
 // OCID of the secret containing the PDB'S certificates of ATP wallet
-func (o GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailOutput) EwalletFileSecretId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail) string {
+func (o GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailOutput) EwalletFileSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail) *string {
 		return v.EwalletFileSecretId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // OCID of the secret containing Keystore.jks file of the ATP wallet
-func (o GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailOutput) KeyStoreFileSecretId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail) string {
+func (o GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailOutput) KeyStoreFileSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail) *string {
 		return v.KeyStoreFileSecretId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Measurement name for influx
-func (o GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailOutput) MeasurementName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail) string { return v.MeasurementName }).(pulumi.StringOutput)
+func (o GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailOutput) MeasurementName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail) *string {
+		return v.MeasurementName
+	}).(pulumi.StringPtrOutput)
 }
 
 // Object storage namespace
-func (o GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailOutput) Namespace() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail) string { return v.Namespace }).(pulumi.StringOutput)
+func (o GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail) *string { return v.Namespace }).(pulumi.StringPtrOutput)
 }
 
 // File name
-func (o GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailOutput) Object() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail) string { return v.Object }).(pulumi.StringOutput)
+func (o GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailOutput) Object() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail) *string { return v.Object }).(pulumi.StringPtrOutput)
 }
 
 // OCID of the secret that contains jdbc properties file of ATP wallet
-func (o GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailOutput) OjdbcFileSecretId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail) string {
+func (o GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailOutput) OjdbcFileSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail) *string {
 		return v.OjdbcFileSecretId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Password Secret Id for the influx connection
-func (o GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailOutput) PasswordSecretId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail) string {
+func (o GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailOutput) PasswordSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail) *string {
 		return v.PasswordSecretId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // atp database table name
-func (o GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailOutput) TableName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail) string { return v.TableName }).(pulumi.StringOutput)
+func (o GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailOutput) TableName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail) *string { return v.TableName }).(pulumi.StringPtrOutput)
 }
 
 // OCID of the secret that contains the tnsnames file of ATP wallet
-func (o GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailOutput) TnsnamesFileSecretId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail) string {
+func (o GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailOutput) TnsnamesFileSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail) *string {
 		return v.TnsnamesFileSecretId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // OCID of the secret containing truststore.jks file of the ATP wallet
-func (o GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailOutput) TruststoreFileSecretId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail) string {
+func (o GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailOutput) TruststoreFileSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail) *string {
 		return v.TruststoreFileSecretId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // public IP address and port to influx DB
-func (o GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailOutput) Url() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail) string { return v.Url }).(pulumi.StringOutput)
+func (o GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailOutput) Url() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail) *string { return v.Url }).(pulumi.StringPtrOutput)
 }
 
 // Username for connection to Influx
-func (o GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailOutput) UserName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail) string { return v.UserName }).(pulumi.StringOutput)
+func (o GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailOutput) UserName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail) *string { return v.UserName }).(pulumi.StringPtrOutput)
 }
 
 // Possible data sources
@@ -5562,10 +4873,10 @@ func (o GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailOutput) Ver
 }
 
 // wallet password Secret ID in String format
-func (o GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailOutput) WalletPasswordSecretId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail) string {
+func (o GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailOutput) WalletPasswordSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail) *string {
 		return v.WalletPasswordSecretId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailArrayOutput struct{ *pulumi.OutputState }
@@ -5582,12 +4893,6 @@ func (o GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailArrayOutput
 	return o
 }
 
-func (o GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail] {
-	return pulumix.Output[[]GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailArrayOutput) Index(i pulumi.IntInput) GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail {
 		return vs[0].([]GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail)[vs[1].(int)]
@@ -5596,15 +4901,15 @@ func (o GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailArrayOutput
 
 type GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetail struct {
 	// Bucket Name for influx connection
-	Bucket string `pulumi:"bucket"`
+	Bucket *string `pulumi:"bucket"`
 	// DB Name for influx connection
-	DatabaseName string `pulumi:"databaseName"`
+	DatabaseName *string `pulumi:"databaseName"`
 	// Data source type where actually data asset is being stored
-	InfluxVersion string `pulumi:"influxVersion"`
+	InfluxVersion *string `pulumi:"influxVersion"`
 	// Org name for the influx db
-	OrganizationName string `pulumi:"organizationName"`
+	OrganizationName *string `pulumi:"organizationName"`
 	// retention policy is how long the bucket would last
-	RetentionPolicyName string `pulumi:"retentionPolicyName"`
+	RetentionPolicyName *string `pulumi:"retentionPolicyName"`
 }
 
 // GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetailInput is an input type that accepts GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetailArgs and GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetailOutput values.
@@ -5620,15 +4925,15 @@ type GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecifi
 
 type GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetailArgs struct {
 	// Bucket Name for influx connection
-	Bucket pulumi.StringInput `pulumi:"bucket"`
+	Bucket pulumi.StringPtrInput `pulumi:"bucket"`
 	// DB Name for influx connection
-	DatabaseName pulumi.StringInput `pulumi:"databaseName"`
+	DatabaseName pulumi.StringPtrInput `pulumi:"databaseName"`
 	// Data source type where actually data asset is being stored
-	InfluxVersion pulumi.StringInput `pulumi:"influxVersion"`
+	InfluxVersion pulumi.StringPtrInput `pulumi:"influxVersion"`
 	// Org name for the influx db
-	OrganizationName pulumi.StringInput `pulumi:"organizationName"`
+	OrganizationName pulumi.StringPtrInput `pulumi:"organizationName"`
 	// retention policy is how long the bucket would last
-	RetentionPolicyName pulumi.StringInput `pulumi:"retentionPolicyName"`
+	RetentionPolicyName pulumi.StringPtrInput `pulumi:"retentionPolicyName"`
 }
 
 func (GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetailArgs) ElementType() reflect.Type {
@@ -5641,12 +4946,6 @@ func (i GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpec
 
 func (i GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetailArgs) ToGetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetailOutputWithContext(ctx context.Context) GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetailOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetailOutput)
-}
-
-func (i GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetail] {
-	return pulumix.Output[GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetail]{
-		OutputState: i.ToGetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetailOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetailArrayInput is an input type that accepts GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetailArray and GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetailArrayOutput values.
@@ -5674,12 +4973,6 @@ func (i GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpec
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetailArrayOutput)
 }
 
-func (i GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetail] {
-	return pulumix.Output[[]GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetail]{
-		OutputState: i.ToGetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetailOutput struct{ *pulumi.OutputState }
 
 func (GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetailOutput) ElementType() reflect.Type {
@@ -5694,45 +4987,39 @@ func (o GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpec
 	return o
 }
 
-func (o GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetail] {
-	return pulumix.Output[GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Bucket Name for influx connection
-func (o GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetailOutput) Bucket() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetail) string {
+func (o GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetailOutput) Bucket() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetail) *string {
 		return v.Bucket
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // DB Name for influx connection
-func (o GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetailOutput) DatabaseName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetail) string {
+func (o GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetailOutput) DatabaseName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetail) *string {
 		return v.DatabaseName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Data source type where actually data asset is being stored
-func (o GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetailOutput) InfluxVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetail) string {
+func (o GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetailOutput) InfluxVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetail) *string {
 		return v.InfluxVersion
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Org name for the influx db
-func (o GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetailOutput) OrganizationName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetail) string {
+func (o GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetailOutput) OrganizationName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetail) *string {
 		return v.OrganizationName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // retention policy is how long the bucket would last
-func (o GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetailOutput) RetentionPolicyName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetail) string {
+func (o GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetailOutput) RetentionPolicyName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetail) *string {
 		return v.RetentionPolicyName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetailArrayOutput struct{ *pulumi.OutputState }
@@ -5747,12 +5034,6 @@ func (o GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpec
 
 func (o GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetailArrayOutput) ToGetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetailArrayOutputWithContext(ctx context.Context) GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetailArrayOutput {
 	return o
-}
-
-func (o GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetail] {
-	return pulumix.Output[[]GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetailArrayOutput) Index(i pulumi.IntInput) GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetailOutput {
@@ -5796,12 +5077,6 @@ func (i GetDetectionDataAssetsFilterArgs) ToGetDetectionDataAssetsFilterOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectionDataAssetsFilterOutput)
 }
 
-func (i GetDetectionDataAssetsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectionDataAssetsFilter] {
-	return pulumix.Output[GetDetectionDataAssetsFilter]{
-		OutputState: i.ToGetDetectionDataAssetsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDetectionDataAssetsFilterArrayInput is an input type that accepts GetDetectionDataAssetsFilterArray and GetDetectionDataAssetsFilterArrayOutput values.
 // You can construct a concrete instance of `GetDetectionDataAssetsFilterArrayInput` via:
 //
@@ -5827,12 +5102,6 @@ func (i GetDetectionDataAssetsFilterArray) ToGetDetectionDataAssetsFilterArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectionDataAssetsFilterArrayOutput)
 }
 
-func (i GetDetectionDataAssetsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectionDataAssetsFilter] {
-	return pulumix.Output[[]GetDetectionDataAssetsFilter]{
-		OutputState: i.ToGetDetectionDataAssetsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectionDataAssetsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetDetectionDataAssetsFilterOutput) ElementType() reflect.Type {
@@ -5845,12 +5114,6 @@ func (o GetDetectionDataAssetsFilterOutput) ToGetDetectionDataAssetsFilterOutput
 
 func (o GetDetectionDataAssetsFilterOutput) ToGetDetectionDataAssetsFilterOutputWithContext(ctx context.Context) GetDetectionDataAssetsFilterOutput {
 	return o
-}
-
-func (o GetDetectionDataAssetsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectionDataAssetsFilter] {
-	return pulumix.Output[GetDetectionDataAssetsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDetectionDataAssetsFilterOutput) Name() pulumi.StringOutput {
@@ -5879,12 +5142,6 @@ func (o GetDetectionDataAssetsFilterArrayOutput) ToGetDetectionDataAssetsFilterA
 	return o
 }
 
-func (o GetDetectionDataAssetsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectionDataAssetsFilter] {
-	return pulumix.Output[[]GetDetectionDataAssetsFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDetectionDataAssetsFilterArrayOutput) Index(i pulumi.IntInput) GetDetectionDataAssetsFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDetectionDataAssetsFilter {
 		return vs[0].([]GetDetectionDataAssetsFilter)[vs[1].(int)]
@@ -5893,15 +5150,15 @@ func (o GetDetectionDataAssetsFilterArrayOutput) Index(i pulumi.IntInput) GetDet
 
 type GetDetectionModelModelTrainingDetail struct {
 	// User can choose specific algorithm for training.
-	AlgorithmHint string `pulumi:"algorithmHint"`
+	AlgorithmHint *string `pulumi:"algorithmHint"`
 	// The list of OCIDs of the data assets to train the model. The dataAssets have to be in the same project where the ai model would reside.
 	DataAssetIds []string `pulumi:"dataAssetIds"`
 	// A target model accuracy metric user provides as their requirement
-	TargetFap float64 `pulumi:"targetFap"`
+	TargetFap *float64 `pulumi:"targetFap"`
 	// Fraction of total data that is used for training the model. The remaining is used for validation of the model.
-	TrainingFraction float64 `pulumi:"trainingFraction"`
+	TrainingFraction *float64 `pulumi:"trainingFraction"`
 	// Window size defined during training or deduced by the algorithm.
-	WindowSize int `pulumi:"windowSize"`
+	WindowSize *int `pulumi:"windowSize"`
 }
 
 // GetDetectionModelModelTrainingDetailInput is an input type that accepts GetDetectionModelModelTrainingDetailArgs and GetDetectionModelModelTrainingDetailOutput values.
@@ -5917,15 +5174,15 @@ type GetDetectionModelModelTrainingDetailInput interface {
 
 type GetDetectionModelModelTrainingDetailArgs struct {
 	// User can choose specific algorithm for training.
-	AlgorithmHint pulumi.StringInput `pulumi:"algorithmHint"`
+	AlgorithmHint pulumi.StringPtrInput `pulumi:"algorithmHint"`
 	// The list of OCIDs of the data assets to train the model. The dataAssets have to be in the same project where the ai model would reside.
 	DataAssetIds pulumi.StringArrayInput `pulumi:"dataAssetIds"`
 	// A target model accuracy metric user provides as their requirement
-	TargetFap pulumi.Float64Input `pulumi:"targetFap"`
+	TargetFap pulumi.Float64PtrInput `pulumi:"targetFap"`
 	// Fraction of total data that is used for training the model. The remaining is used for validation of the model.
-	TrainingFraction pulumi.Float64Input `pulumi:"trainingFraction"`
+	TrainingFraction pulumi.Float64PtrInput `pulumi:"trainingFraction"`
 	// Window size defined during training or deduced by the algorithm.
-	WindowSize pulumi.IntInput `pulumi:"windowSize"`
+	WindowSize pulumi.IntPtrInput `pulumi:"windowSize"`
 }
 
 func (GetDetectionModelModelTrainingDetailArgs) ElementType() reflect.Type {
@@ -5938,12 +5195,6 @@ func (i GetDetectionModelModelTrainingDetailArgs) ToGetDetectionModelModelTraini
 
 func (i GetDetectionModelModelTrainingDetailArgs) ToGetDetectionModelModelTrainingDetailOutputWithContext(ctx context.Context) GetDetectionModelModelTrainingDetailOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectionModelModelTrainingDetailOutput)
-}
-
-func (i GetDetectionModelModelTrainingDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectionModelModelTrainingDetail] {
-	return pulumix.Output[GetDetectionModelModelTrainingDetail]{
-		OutputState: i.ToGetDetectionModelModelTrainingDetailOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetDetectionModelModelTrainingDetailArrayInput is an input type that accepts GetDetectionModelModelTrainingDetailArray and GetDetectionModelModelTrainingDetailArrayOutput values.
@@ -5971,12 +5222,6 @@ func (i GetDetectionModelModelTrainingDetailArray) ToGetDetectionModelModelTrain
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectionModelModelTrainingDetailArrayOutput)
 }
 
-func (i GetDetectionModelModelTrainingDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectionModelModelTrainingDetail] {
-	return pulumix.Output[[]GetDetectionModelModelTrainingDetail]{
-		OutputState: i.ToGetDetectionModelModelTrainingDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectionModelModelTrainingDetailOutput struct{ *pulumi.OutputState }
 
 func (GetDetectionModelModelTrainingDetailOutput) ElementType() reflect.Type {
@@ -5991,15 +5236,9 @@ func (o GetDetectionModelModelTrainingDetailOutput) ToGetDetectionModelModelTrai
 	return o
 }
 
-func (o GetDetectionModelModelTrainingDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectionModelModelTrainingDetail] {
-	return pulumix.Output[GetDetectionModelModelTrainingDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 // User can choose specific algorithm for training.
-func (o GetDetectionModelModelTrainingDetailOutput) AlgorithmHint() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionModelModelTrainingDetail) string { return v.AlgorithmHint }).(pulumi.StringOutput)
+func (o GetDetectionModelModelTrainingDetailOutput) AlgorithmHint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionModelModelTrainingDetail) *string { return v.AlgorithmHint }).(pulumi.StringPtrOutput)
 }
 
 // The list of OCIDs of the data assets to train the model. The dataAssets have to be in the same project where the ai model would reside.
@@ -6008,18 +5247,18 @@ func (o GetDetectionModelModelTrainingDetailOutput) DataAssetIds() pulumi.String
 }
 
 // A target model accuracy metric user provides as their requirement
-func (o GetDetectionModelModelTrainingDetailOutput) TargetFap() pulumi.Float64Output {
-	return o.ApplyT(func(v GetDetectionModelModelTrainingDetail) float64 { return v.TargetFap }).(pulumi.Float64Output)
+func (o GetDetectionModelModelTrainingDetailOutput) TargetFap() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetDetectionModelModelTrainingDetail) *float64 { return v.TargetFap }).(pulumi.Float64PtrOutput)
 }
 
 // Fraction of total data that is used for training the model. The remaining is used for validation of the model.
-func (o GetDetectionModelModelTrainingDetailOutput) TrainingFraction() pulumi.Float64Output {
-	return o.ApplyT(func(v GetDetectionModelModelTrainingDetail) float64 { return v.TrainingFraction }).(pulumi.Float64Output)
+func (o GetDetectionModelModelTrainingDetailOutput) TrainingFraction() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetDetectionModelModelTrainingDetail) *float64 { return v.TrainingFraction }).(pulumi.Float64PtrOutput)
 }
 
 // Window size defined during training or deduced by the algorithm.
-func (o GetDetectionModelModelTrainingDetailOutput) WindowSize() pulumi.IntOutput {
-	return o.ApplyT(func(v GetDetectionModelModelTrainingDetail) int { return v.WindowSize }).(pulumi.IntOutput)
+func (o GetDetectionModelModelTrainingDetailOutput) WindowSize() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetDetectionModelModelTrainingDetail) *int { return v.WindowSize }).(pulumi.IntPtrOutput)
 }
 
 type GetDetectionModelModelTrainingDetailArrayOutput struct{ *pulumi.OutputState }
@@ -6036,12 +5275,6 @@ func (o GetDetectionModelModelTrainingDetailArrayOutput) ToGetDetectionModelMode
 	return o
 }
 
-func (o GetDetectionModelModelTrainingDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectionModelModelTrainingDetail] {
-	return pulumix.Output[[]GetDetectionModelModelTrainingDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDetectionModelModelTrainingDetailArrayOutput) Index(i pulumi.IntInput) GetDetectionModelModelTrainingDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDetectionModelModelTrainingDetail {
 		return vs[0].([]GetDetectionModelModelTrainingDetail)[vs[1].(int)]
@@ -6050,22 +5283,22 @@ func (o GetDetectionModelModelTrainingDetailArrayOutput) Index(i pulumi.IntInput
 
 type GetDetectionModelModelTrainingResult struct {
 	// Accuracy metric for a signal.
-	Fap float64 `pulumi:"fap"`
+	Fap *float64 `pulumi:"fap"`
 	// A boolean value to indicate if train goal/targetFap is achieved for trained model
-	IsTrainingGoalAchieved bool    `pulumi:"isTrainingGoalAchieved"`
-	Mae                    float64 `pulumi:"mae"`
-	MaxInferenceSyncRows   int     `pulumi:"maxInferenceSyncRows"`
+	IsTrainingGoalAchieved *bool    `pulumi:"isTrainingGoalAchieved"`
+	Mae                    *float64 `pulumi:"mae"`
+	MaxInferenceSyncRows   *int     `pulumi:"maxInferenceSyncRows"`
 	// The model accuracy metric on timestamp level.
-	MultivariateFap float64 `pulumi:"multivariateFap"`
-	Rmse            float64 `pulumi:"rmse"`
+	MultivariateFap *float64 `pulumi:"multivariateFap"`
+	Rmse            *float64 `pulumi:"rmse"`
 	// Information regarding how/what row reduction methods will be applied. If this property is not present or is null, then it means row reduction is not applied.
 	RowReductionDetails []GetDetectionModelModelTrainingResultRowReductionDetail `pulumi:"rowReductionDetails"`
 	// The list of signal details.
 	SignalDetails []GetDetectionModelModelTrainingResultSignalDetail `pulumi:"signalDetails"`
 	// A warning message to explain the reason when targetFap cannot be achieved for trained model
-	Warning string `pulumi:"warning"`
+	Warning *string `pulumi:"warning"`
 	// Window size defined during training or deduced by the algorithm.
-	WindowSize int `pulumi:"windowSize"`
+	WindowSize *int `pulumi:"windowSize"`
 }
 
 // GetDetectionModelModelTrainingResultInput is an input type that accepts GetDetectionModelModelTrainingResultArgs and GetDetectionModelModelTrainingResultOutput values.
@@ -6081,22 +5314,22 @@ type GetDetectionModelModelTrainingResultInput interface {
 
 type GetDetectionModelModelTrainingResultArgs struct {
 	// Accuracy metric for a signal.
-	Fap pulumi.Float64Input `pulumi:"fap"`
+	Fap pulumi.Float64PtrInput `pulumi:"fap"`
 	// A boolean value to indicate if train goal/targetFap is achieved for trained model
-	IsTrainingGoalAchieved pulumi.BoolInput    `pulumi:"isTrainingGoalAchieved"`
-	Mae                    pulumi.Float64Input `pulumi:"mae"`
-	MaxInferenceSyncRows   pulumi.IntInput     `pulumi:"maxInferenceSyncRows"`
+	IsTrainingGoalAchieved pulumi.BoolPtrInput    `pulumi:"isTrainingGoalAchieved"`
+	Mae                    pulumi.Float64PtrInput `pulumi:"mae"`
+	MaxInferenceSyncRows   pulumi.IntPtrInput     `pulumi:"maxInferenceSyncRows"`
 	// The model accuracy metric on timestamp level.
-	MultivariateFap pulumi.Float64Input `pulumi:"multivariateFap"`
-	Rmse            pulumi.Float64Input `pulumi:"rmse"`
+	MultivariateFap pulumi.Float64PtrInput `pulumi:"multivariateFap"`
+	Rmse            pulumi.Float64PtrInput `pulumi:"rmse"`
 	// Information regarding how/what row reduction methods will be applied. If this property is not present or is null, then it means row reduction is not applied.
 	RowReductionDetails GetDetectionModelModelTrainingResultRowReductionDetailArrayInput `pulumi:"rowReductionDetails"`
 	// The list of signal details.
 	SignalDetails GetDetectionModelModelTrainingResultSignalDetailArrayInput `pulumi:"signalDetails"`
 	// A warning message to explain the reason when targetFap cannot be achieved for trained model
-	Warning pulumi.StringInput `pulumi:"warning"`
+	Warning pulumi.StringPtrInput `pulumi:"warning"`
 	// Window size defined during training or deduced by the algorithm.
-	WindowSize pulumi.IntInput `pulumi:"windowSize"`
+	WindowSize pulumi.IntPtrInput `pulumi:"windowSize"`
 }
 
 func (GetDetectionModelModelTrainingResultArgs) ElementType() reflect.Type {
@@ -6109,12 +5342,6 @@ func (i GetDetectionModelModelTrainingResultArgs) ToGetDetectionModelModelTraini
 
 func (i GetDetectionModelModelTrainingResultArgs) ToGetDetectionModelModelTrainingResultOutputWithContext(ctx context.Context) GetDetectionModelModelTrainingResultOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectionModelModelTrainingResultOutput)
-}
-
-func (i GetDetectionModelModelTrainingResultArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectionModelModelTrainingResult] {
-	return pulumix.Output[GetDetectionModelModelTrainingResult]{
-		OutputState: i.ToGetDetectionModelModelTrainingResultOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetDetectionModelModelTrainingResultArrayInput is an input type that accepts GetDetectionModelModelTrainingResultArray and GetDetectionModelModelTrainingResultArrayOutput values.
@@ -6142,12 +5369,6 @@ func (i GetDetectionModelModelTrainingResultArray) ToGetDetectionModelModelTrain
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectionModelModelTrainingResultArrayOutput)
 }
 
-func (i GetDetectionModelModelTrainingResultArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectionModelModelTrainingResult] {
-	return pulumix.Output[[]GetDetectionModelModelTrainingResult]{
-		OutputState: i.ToGetDetectionModelModelTrainingResultArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectionModelModelTrainingResultOutput struct{ *pulumi.OutputState }
 
 func (GetDetectionModelModelTrainingResultOutput) ElementType() reflect.Type {
@@ -6162,37 +5383,31 @@ func (o GetDetectionModelModelTrainingResultOutput) ToGetDetectionModelModelTrai
 	return o
 }
 
-func (o GetDetectionModelModelTrainingResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectionModelModelTrainingResult] {
-	return pulumix.Output[GetDetectionModelModelTrainingResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Accuracy metric for a signal.
-func (o GetDetectionModelModelTrainingResultOutput) Fap() pulumi.Float64Output {
-	return o.ApplyT(func(v GetDetectionModelModelTrainingResult) float64 { return v.Fap }).(pulumi.Float64Output)
+func (o GetDetectionModelModelTrainingResultOutput) Fap() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetDetectionModelModelTrainingResult) *float64 { return v.Fap }).(pulumi.Float64PtrOutput)
 }
 
 // A boolean value to indicate if train goal/targetFap is achieved for trained model
-func (o GetDetectionModelModelTrainingResultOutput) IsTrainingGoalAchieved() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetDetectionModelModelTrainingResult) bool { return v.IsTrainingGoalAchieved }).(pulumi.BoolOutput)
+func (o GetDetectionModelModelTrainingResultOutput) IsTrainingGoalAchieved() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDetectionModelModelTrainingResult) *bool { return v.IsTrainingGoalAchieved }).(pulumi.BoolPtrOutput)
 }
 
-func (o GetDetectionModelModelTrainingResultOutput) Mae() pulumi.Float64Output {
-	return o.ApplyT(func(v GetDetectionModelModelTrainingResult) float64 { return v.Mae }).(pulumi.Float64Output)
+func (o GetDetectionModelModelTrainingResultOutput) Mae() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetDetectionModelModelTrainingResult) *float64 { return v.Mae }).(pulumi.Float64PtrOutput)
 }
 
-func (o GetDetectionModelModelTrainingResultOutput) MaxInferenceSyncRows() pulumi.IntOutput {
-	return o.ApplyT(func(v GetDetectionModelModelTrainingResult) int { return v.MaxInferenceSyncRows }).(pulumi.IntOutput)
+func (o GetDetectionModelModelTrainingResultOutput) MaxInferenceSyncRows() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetDetectionModelModelTrainingResult) *int { return v.MaxInferenceSyncRows }).(pulumi.IntPtrOutput)
 }
 
 // The model accuracy metric on timestamp level.
-func (o GetDetectionModelModelTrainingResultOutput) MultivariateFap() pulumi.Float64Output {
-	return o.ApplyT(func(v GetDetectionModelModelTrainingResult) float64 { return v.MultivariateFap }).(pulumi.Float64Output)
+func (o GetDetectionModelModelTrainingResultOutput) MultivariateFap() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetDetectionModelModelTrainingResult) *float64 { return v.MultivariateFap }).(pulumi.Float64PtrOutput)
 }
 
-func (o GetDetectionModelModelTrainingResultOutput) Rmse() pulumi.Float64Output {
-	return o.ApplyT(func(v GetDetectionModelModelTrainingResult) float64 { return v.Rmse }).(pulumi.Float64Output)
+func (o GetDetectionModelModelTrainingResultOutput) Rmse() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetDetectionModelModelTrainingResult) *float64 { return v.Rmse }).(pulumi.Float64PtrOutput)
 }
 
 // Information regarding how/what row reduction methods will be applied. If this property is not present or is null, then it means row reduction is not applied.
@@ -6210,13 +5425,13 @@ func (o GetDetectionModelModelTrainingResultOutput) SignalDetails() GetDetection
 }
 
 // A warning message to explain the reason when targetFap cannot be achieved for trained model
-func (o GetDetectionModelModelTrainingResultOutput) Warning() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionModelModelTrainingResult) string { return v.Warning }).(pulumi.StringOutput)
+func (o GetDetectionModelModelTrainingResultOutput) Warning() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionModelModelTrainingResult) *string { return v.Warning }).(pulumi.StringPtrOutput)
 }
 
 // Window size defined during training or deduced by the algorithm.
-func (o GetDetectionModelModelTrainingResultOutput) WindowSize() pulumi.IntOutput {
-	return o.ApplyT(func(v GetDetectionModelModelTrainingResult) int { return v.WindowSize }).(pulumi.IntOutput)
+func (o GetDetectionModelModelTrainingResultOutput) WindowSize() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetDetectionModelModelTrainingResult) *int { return v.WindowSize }).(pulumi.IntPtrOutput)
 }
 
 type GetDetectionModelModelTrainingResultArrayOutput struct{ *pulumi.OutputState }
@@ -6233,12 +5448,6 @@ func (o GetDetectionModelModelTrainingResultArrayOutput) ToGetDetectionModelMode
 	return o
 }
 
-func (o GetDetectionModelModelTrainingResultArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectionModelModelTrainingResult] {
-	return pulumix.Output[[]GetDetectionModelModelTrainingResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDetectionModelModelTrainingResultArrayOutput) Index(i pulumi.IntInput) GetDetectionModelModelTrainingResultOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDetectionModelModelTrainingResult {
 		return vs[0].([]GetDetectionModelModelTrainingResult)[vs[1].(int)]
@@ -6247,13 +5456,13 @@ func (o GetDetectionModelModelTrainingResultArrayOutput) Index(i pulumi.IntInput
 
 type GetDetectionModelModelTrainingResultRowReductionDetail struct {
 	// A boolean value to indicate if row reduction is applied
-	IsReductionEnabled bool `pulumi:"isReductionEnabled"`
+	IsReductionEnabled *bool `pulumi:"isReductionEnabled"`
 	// Method for row reduction:
 	// * DELETE_ROW - delete rows with equal intervals
 	// * AVERAGE_ROW - average multiple rows to one row
-	ReductionMethod string `pulumi:"reductionMethod"`
+	ReductionMethod *string `pulumi:"reductionMethod"`
 	// A percentage to reduce data size down to on top of original data
-	ReductionPercentage float64 `pulumi:"reductionPercentage"`
+	ReductionPercentage *float64 `pulumi:"reductionPercentage"`
 }
 
 // GetDetectionModelModelTrainingResultRowReductionDetailInput is an input type that accepts GetDetectionModelModelTrainingResultRowReductionDetailArgs and GetDetectionModelModelTrainingResultRowReductionDetailOutput values.
@@ -6269,13 +5478,13 @@ type GetDetectionModelModelTrainingResultRowReductionDetailInput interface {
 
 type GetDetectionModelModelTrainingResultRowReductionDetailArgs struct {
 	// A boolean value to indicate if row reduction is applied
-	IsReductionEnabled pulumi.BoolInput `pulumi:"isReductionEnabled"`
+	IsReductionEnabled pulumi.BoolPtrInput `pulumi:"isReductionEnabled"`
 	// Method for row reduction:
 	// * DELETE_ROW - delete rows with equal intervals
 	// * AVERAGE_ROW - average multiple rows to one row
-	ReductionMethod pulumi.StringInput `pulumi:"reductionMethod"`
+	ReductionMethod pulumi.StringPtrInput `pulumi:"reductionMethod"`
 	// A percentage to reduce data size down to on top of original data
-	ReductionPercentage pulumi.Float64Input `pulumi:"reductionPercentage"`
+	ReductionPercentage pulumi.Float64PtrInput `pulumi:"reductionPercentage"`
 }
 
 func (GetDetectionModelModelTrainingResultRowReductionDetailArgs) ElementType() reflect.Type {
@@ -6288,12 +5497,6 @@ func (i GetDetectionModelModelTrainingResultRowReductionDetailArgs) ToGetDetecti
 
 func (i GetDetectionModelModelTrainingResultRowReductionDetailArgs) ToGetDetectionModelModelTrainingResultRowReductionDetailOutputWithContext(ctx context.Context) GetDetectionModelModelTrainingResultRowReductionDetailOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectionModelModelTrainingResultRowReductionDetailOutput)
-}
-
-func (i GetDetectionModelModelTrainingResultRowReductionDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectionModelModelTrainingResultRowReductionDetail] {
-	return pulumix.Output[GetDetectionModelModelTrainingResultRowReductionDetail]{
-		OutputState: i.ToGetDetectionModelModelTrainingResultRowReductionDetailOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetDetectionModelModelTrainingResultRowReductionDetailArrayInput is an input type that accepts GetDetectionModelModelTrainingResultRowReductionDetailArray and GetDetectionModelModelTrainingResultRowReductionDetailArrayOutput values.
@@ -6321,12 +5524,6 @@ func (i GetDetectionModelModelTrainingResultRowReductionDetailArray) ToGetDetect
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectionModelModelTrainingResultRowReductionDetailArrayOutput)
 }
 
-func (i GetDetectionModelModelTrainingResultRowReductionDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectionModelModelTrainingResultRowReductionDetail] {
-	return pulumix.Output[[]GetDetectionModelModelTrainingResultRowReductionDetail]{
-		OutputState: i.ToGetDetectionModelModelTrainingResultRowReductionDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectionModelModelTrainingResultRowReductionDetailOutput struct{ *pulumi.OutputState }
 
 func (GetDetectionModelModelTrainingResultRowReductionDetailOutput) ElementType() reflect.Type {
@@ -6341,27 +5538,21 @@ func (o GetDetectionModelModelTrainingResultRowReductionDetailOutput) ToGetDetec
 	return o
 }
 
-func (o GetDetectionModelModelTrainingResultRowReductionDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectionModelModelTrainingResultRowReductionDetail] {
-	return pulumix.Output[GetDetectionModelModelTrainingResultRowReductionDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A boolean value to indicate if row reduction is applied
-func (o GetDetectionModelModelTrainingResultRowReductionDetailOutput) IsReductionEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetDetectionModelModelTrainingResultRowReductionDetail) bool { return v.IsReductionEnabled }).(pulumi.BoolOutput)
+func (o GetDetectionModelModelTrainingResultRowReductionDetailOutput) IsReductionEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDetectionModelModelTrainingResultRowReductionDetail) *bool { return v.IsReductionEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // Method for row reduction:
 // * DELETE_ROW - delete rows with equal intervals
 // * AVERAGE_ROW - average multiple rows to one row
-func (o GetDetectionModelModelTrainingResultRowReductionDetailOutput) ReductionMethod() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionModelModelTrainingResultRowReductionDetail) string { return v.ReductionMethod }).(pulumi.StringOutput)
+func (o GetDetectionModelModelTrainingResultRowReductionDetailOutput) ReductionMethod() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionModelModelTrainingResultRowReductionDetail) *string { return v.ReductionMethod }).(pulumi.StringPtrOutput)
 }
 
 // A percentage to reduce data size down to on top of original data
-func (o GetDetectionModelModelTrainingResultRowReductionDetailOutput) ReductionPercentage() pulumi.Float64Output {
-	return o.ApplyT(func(v GetDetectionModelModelTrainingResultRowReductionDetail) float64 { return v.ReductionPercentage }).(pulumi.Float64Output)
+func (o GetDetectionModelModelTrainingResultRowReductionDetailOutput) ReductionPercentage() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetDetectionModelModelTrainingResultRowReductionDetail) *float64 { return v.ReductionPercentage }).(pulumi.Float64PtrOutput)
 }
 
 type GetDetectionModelModelTrainingResultRowReductionDetailArrayOutput struct{ *pulumi.OutputState }
@@ -6378,12 +5569,6 @@ func (o GetDetectionModelModelTrainingResultRowReductionDetailArrayOutput) ToGet
 	return o
 }
 
-func (o GetDetectionModelModelTrainingResultRowReductionDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectionModelModelTrainingResultRowReductionDetail] {
-	return pulumix.Output[[]GetDetectionModelModelTrainingResultRowReductionDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDetectionModelModelTrainingResultRowReductionDetailArrayOutput) Index(i pulumi.IntInput) GetDetectionModelModelTrainingResultRowReductionDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDetectionModelModelTrainingResultRowReductionDetail {
 		return vs[0].([]GetDetectionModelModelTrainingResultRowReductionDetail)[vs[1].(int)]
@@ -6392,26 +5577,26 @@ func (o GetDetectionModelModelTrainingResultRowReductionDetailArrayOutput) Index
 
 type GetDetectionModelModelTrainingResultSignalDetail struct {
 	// detailed information for a signal.
-	Details string `pulumi:"details"`
+	Details *string `pulumi:"details"`
 	// Accuracy metric for a signal.
-	Fap float64 `pulumi:"fap"`
+	Fap *float64 `pulumi:"fap"`
 	// A boolean value to indicate if a signal is quantized or not.
-	IsQuantized bool `pulumi:"isQuantized"`
+	IsQuantized *bool `pulumi:"isQuantized"`
 	// Max value within a signal.
-	Max float64 `pulumi:"max"`
+	Max *float64 `pulumi:"max"`
 	// Min value within a signal.
-	Min float64 `pulumi:"min"`
+	Min *float64 `pulumi:"min"`
 	// The ratio of missing values in a signal filled/imputed by the IDP algorithm.
-	MviRatio float64 `pulumi:"mviRatio"`
+	MviRatio *float64 `pulumi:"mviRatio"`
 	// The name of a signal.
-	SignalName string `pulumi:"signalName"`
+	SignalName *string `pulumi:"signalName"`
 	// Status of the signal:
 	// * ACCEPTED - the signal is used for training the model
 	// * DROPPED - the signal does not meet requirement, and is dropped before training the model.
 	// * OTHER - placeholder for other status
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 	// Standard deviation of values within a signal.
-	Std float64 `pulumi:"std"`
+	Std *float64 `pulumi:"std"`
 }
 
 // GetDetectionModelModelTrainingResultSignalDetailInput is an input type that accepts GetDetectionModelModelTrainingResultSignalDetailArgs and GetDetectionModelModelTrainingResultSignalDetailOutput values.
@@ -6427,26 +5612,26 @@ type GetDetectionModelModelTrainingResultSignalDetailInput interface {
 
 type GetDetectionModelModelTrainingResultSignalDetailArgs struct {
 	// detailed information for a signal.
-	Details pulumi.StringInput `pulumi:"details"`
+	Details pulumi.StringPtrInput `pulumi:"details"`
 	// Accuracy metric for a signal.
-	Fap pulumi.Float64Input `pulumi:"fap"`
+	Fap pulumi.Float64PtrInput `pulumi:"fap"`
 	// A boolean value to indicate if a signal is quantized or not.
-	IsQuantized pulumi.BoolInput `pulumi:"isQuantized"`
+	IsQuantized pulumi.BoolPtrInput `pulumi:"isQuantized"`
 	// Max value within a signal.
-	Max pulumi.Float64Input `pulumi:"max"`
+	Max pulumi.Float64PtrInput `pulumi:"max"`
 	// Min value within a signal.
-	Min pulumi.Float64Input `pulumi:"min"`
+	Min pulumi.Float64PtrInput `pulumi:"min"`
 	// The ratio of missing values in a signal filled/imputed by the IDP algorithm.
-	MviRatio pulumi.Float64Input `pulumi:"mviRatio"`
+	MviRatio pulumi.Float64PtrInput `pulumi:"mviRatio"`
 	// The name of a signal.
-	SignalName pulumi.StringInput `pulumi:"signalName"`
+	SignalName pulumi.StringPtrInput `pulumi:"signalName"`
 	// Status of the signal:
 	// * ACCEPTED - the signal is used for training the model
 	// * DROPPED - the signal does not meet requirement, and is dropped before training the model.
 	// * OTHER - placeholder for other status
-	Status pulumi.StringInput `pulumi:"status"`
+	Status pulumi.StringPtrInput `pulumi:"status"`
 	// Standard deviation of values within a signal.
-	Std pulumi.Float64Input `pulumi:"std"`
+	Std pulumi.Float64PtrInput `pulumi:"std"`
 }
 
 func (GetDetectionModelModelTrainingResultSignalDetailArgs) ElementType() reflect.Type {
@@ -6459,12 +5644,6 @@ func (i GetDetectionModelModelTrainingResultSignalDetailArgs) ToGetDetectionMode
 
 func (i GetDetectionModelModelTrainingResultSignalDetailArgs) ToGetDetectionModelModelTrainingResultSignalDetailOutputWithContext(ctx context.Context) GetDetectionModelModelTrainingResultSignalDetailOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectionModelModelTrainingResultSignalDetailOutput)
-}
-
-func (i GetDetectionModelModelTrainingResultSignalDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectionModelModelTrainingResultSignalDetail] {
-	return pulumix.Output[GetDetectionModelModelTrainingResultSignalDetail]{
-		OutputState: i.ToGetDetectionModelModelTrainingResultSignalDetailOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetDetectionModelModelTrainingResultSignalDetailArrayInput is an input type that accepts GetDetectionModelModelTrainingResultSignalDetailArray and GetDetectionModelModelTrainingResultSignalDetailArrayOutput values.
@@ -6492,12 +5671,6 @@ func (i GetDetectionModelModelTrainingResultSignalDetailArray) ToGetDetectionMod
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectionModelModelTrainingResultSignalDetailArrayOutput)
 }
 
-func (i GetDetectionModelModelTrainingResultSignalDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectionModelModelTrainingResultSignalDetail] {
-	return pulumix.Output[[]GetDetectionModelModelTrainingResultSignalDetail]{
-		OutputState: i.ToGetDetectionModelModelTrainingResultSignalDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectionModelModelTrainingResultSignalDetailOutput struct{ *pulumi.OutputState }
 
 func (GetDetectionModelModelTrainingResultSignalDetailOutput) ElementType() reflect.Type {
@@ -6512,58 +5685,52 @@ func (o GetDetectionModelModelTrainingResultSignalDetailOutput) ToGetDetectionMo
 	return o
 }
 
-func (o GetDetectionModelModelTrainingResultSignalDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectionModelModelTrainingResultSignalDetail] {
-	return pulumix.Output[GetDetectionModelModelTrainingResultSignalDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 // detailed information for a signal.
-func (o GetDetectionModelModelTrainingResultSignalDetailOutput) Details() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionModelModelTrainingResultSignalDetail) string { return v.Details }).(pulumi.StringOutput)
+func (o GetDetectionModelModelTrainingResultSignalDetailOutput) Details() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionModelModelTrainingResultSignalDetail) *string { return v.Details }).(pulumi.StringPtrOutput)
 }
 
 // Accuracy metric for a signal.
-func (o GetDetectionModelModelTrainingResultSignalDetailOutput) Fap() pulumi.Float64Output {
-	return o.ApplyT(func(v GetDetectionModelModelTrainingResultSignalDetail) float64 { return v.Fap }).(pulumi.Float64Output)
+func (o GetDetectionModelModelTrainingResultSignalDetailOutput) Fap() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetDetectionModelModelTrainingResultSignalDetail) *float64 { return v.Fap }).(pulumi.Float64PtrOutput)
 }
 
 // A boolean value to indicate if a signal is quantized or not.
-func (o GetDetectionModelModelTrainingResultSignalDetailOutput) IsQuantized() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetDetectionModelModelTrainingResultSignalDetail) bool { return v.IsQuantized }).(pulumi.BoolOutput)
+func (o GetDetectionModelModelTrainingResultSignalDetailOutput) IsQuantized() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDetectionModelModelTrainingResultSignalDetail) *bool { return v.IsQuantized }).(pulumi.BoolPtrOutput)
 }
 
 // Max value within a signal.
-func (o GetDetectionModelModelTrainingResultSignalDetailOutput) Max() pulumi.Float64Output {
-	return o.ApplyT(func(v GetDetectionModelModelTrainingResultSignalDetail) float64 { return v.Max }).(pulumi.Float64Output)
+func (o GetDetectionModelModelTrainingResultSignalDetailOutput) Max() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetDetectionModelModelTrainingResultSignalDetail) *float64 { return v.Max }).(pulumi.Float64PtrOutput)
 }
 
 // Min value within a signal.
-func (o GetDetectionModelModelTrainingResultSignalDetailOutput) Min() pulumi.Float64Output {
-	return o.ApplyT(func(v GetDetectionModelModelTrainingResultSignalDetail) float64 { return v.Min }).(pulumi.Float64Output)
+func (o GetDetectionModelModelTrainingResultSignalDetailOutput) Min() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetDetectionModelModelTrainingResultSignalDetail) *float64 { return v.Min }).(pulumi.Float64PtrOutput)
 }
 
 // The ratio of missing values in a signal filled/imputed by the IDP algorithm.
-func (o GetDetectionModelModelTrainingResultSignalDetailOutput) MviRatio() pulumi.Float64Output {
-	return o.ApplyT(func(v GetDetectionModelModelTrainingResultSignalDetail) float64 { return v.MviRatio }).(pulumi.Float64Output)
+func (o GetDetectionModelModelTrainingResultSignalDetailOutput) MviRatio() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetDetectionModelModelTrainingResultSignalDetail) *float64 { return v.MviRatio }).(pulumi.Float64PtrOutput)
 }
 
 // The name of a signal.
-func (o GetDetectionModelModelTrainingResultSignalDetailOutput) SignalName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionModelModelTrainingResultSignalDetail) string { return v.SignalName }).(pulumi.StringOutput)
+func (o GetDetectionModelModelTrainingResultSignalDetailOutput) SignalName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionModelModelTrainingResultSignalDetail) *string { return v.SignalName }).(pulumi.StringPtrOutput)
 }
 
 // Status of the signal:
 // * ACCEPTED - the signal is used for training the model
 // * DROPPED - the signal does not meet requirement, and is dropped before training the model.
 // * OTHER - placeholder for other status
-func (o GetDetectionModelModelTrainingResultSignalDetailOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionModelModelTrainingResultSignalDetail) string { return v.Status }).(pulumi.StringOutput)
+func (o GetDetectionModelModelTrainingResultSignalDetailOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionModelModelTrainingResultSignalDetail) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // Standard deviation of values within a signal.
-func (o GetDetectionModelModelTrainingResultSignalDetailOutput) Std() pulumi.Float64Output {
-	return o.ApplyT(func(v GetDetectionModelModelTrainingResultSignalDetail) float64 { return v.Std }).(pulumi.Float64Output)
+func (o GetDetectionModelModelTrainingResultSignalDetailOutput) Std() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetDetectionModelModelTrainingResultSignalDetail) *float64 { return v.Std }).(pulumi.Float64PtrOutput)
 }
 
 type GetDetectionModelModelTrainingResultSignalDetailArrayOutput struct{ *pulumi.OutputState }
@@ -6578,12 +5745,6 @@ func (o GetDetectionModelModelTrainingResultSignalDetailArrayOutput) ToGetDetect
 
 func (o GetDetectionModelModelTrainingResultSignalDetailArrayOutput) ToGetDetectionModelModelTrainingResultSignalDetailArrayOutputWithContext(ctx context.Context) GetDetectionModelModelTrainingResultSignalDetailArrayOutput {
 	return o
-}
-
-func (o GetDetectionModelModelTrainingResultSignalDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectionModelModelTrainingResultSignalDetail] {
-	return pulumix.Output[[]GetDetectionModelModelTrainingResultSignalDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDetectionModelModelTrainingResultSignalDetailArrayOutput) Index(i pulumi.IntInput) GetDetectionModelModelTrainingResultSignalDetailOutput {
@@ -6627,12 +5788,6 @@ func (i GetDetectionModelsFilterArgs) ToGetDetectionModelsFilterOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectionModelsFilterOutput)
 }
 
-func (i GetDetectionModelsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectionModelsFilter] {
-	return pulumix.Output[GetDetectionModelsFilter]{
-		OutputState: i.ToGetDetectionModelsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDetectionModelsFilterArrayInput is an input type that accepts GetDetectionModelsFilterArray and GetDetectionModelsFilterArrayOutput values.
 // You can construct a concrete instance of `GetDetectionModelsFilterArrayInput` via:
 //
@@ -6658,12 +5813,6 @@ func (i GetDetectionModelsFilterArray) ToGetDetectionModelsFilterArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectionModelsFilterArrayOutput)
 }
 
-func (i GetDetectionModelsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectionModelsFilter] {
-	return pulumix.Output[[]GetDetectionModelsFilter]{
-		OutputState: i.ToGetDetectionModelsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectionModelsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetDetectionModelsFilterOutput) ElementType() reflect.Type {
@@ -6676,12 +5825,6 @@ func (o GetDetectionModelsFilterOutput) ToGetDetectionModelsFilterOutput() GetDe
 
 func (o GetDetectionModelsFilterOutput) ToGetDetectionModelsFilterOutputWithContext(ctx context.Context) GetDetectionModelsFilterOutput {
 	return o
-}
-
-func (o GetDetectionModelsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectionModelsFilter] {
-	return pulumix.Output[GetDetectionModelsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDetectionModelsFilterOutput) Name() pulumi.StringOutput {
@@ -6708,12 +5851,6 @@ func (o GetDetectionModelsFilterArrayOutput) ToGetDetectionModelsFilterArrayOutp
 
 func (o GetDetectionModelsFilterArrayOutput) ToGetDetectionModelsFilterArrayOutputWithContext(ctx context.Context) GetDetectionModelsFilterArrayOutput {
 	return o
-}
-
-func (o GetDetectionModelsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectionModelsFilter] {
-	return pulumix.Output[[]GetDetectionModelsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDetectionModelsFilterArrayOutput) Index(i pulumi.IntInput) GetDetectionModelsFilterOutput {
@@ -6753,12 +5890,6 @@ func (i GetDetectionModelsModelCollectionArgs) ToGetDetectionModelsModelCollecti
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectionModelsModelCollectionOutput)
 }
 
-func (i GetDetectionModelsModelCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectionModelsModelCollection] {
-	return pulumix.Output[GetDetectionModelsModelCollection]{
-		OutputState: i.ToGetDetectionModelsModelCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDetectionModelsModelCollectionArrayInput is an input type that accepts GetDetectionModelsModelCollectionArray and GetDetectionModelsModelCollectionArrayOutput values.
 // You can construct a concrete instance of `GetDetectionModelsModelCollectionArrayInput` via:
 //
@@ -6784,12 +5915,6 @@ func (i GetDetectionModelsModelCollectionArray) ToGetDetectionModelsModelCollect
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectionModelsModelCollectionArrayOutput)
 }
 
-func (i GetDetectionModelsModelCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectionModelsModelCollection] {
-	return pulumix.Output[[]GetDetectionModelsModelCollection]{
-		OutputState: i.ToGetDetectionModelsModelCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectionModelsModelCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetDetectionModelsModelCollectionOutput) ElementType() reflect.Type {
@@ -6802,12 +5927,6 @@ func (o GetDetectionModelsModelCollectionOutput) ToGetDetectionModelsModelCollec
 
 func (o GetDetectionModelsModelCollectionOutput) ToGetDetectionModelsModelCollectionOutputWithContext(ctx context.Context) GetDetectionModelsModelCollectionOutput {
 	return o
-}
-
-func (o GetDetectionModelsModelCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectionModelsModelCollection] {
-	return pulumix.Output[GetDetectionModelsModelCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDetectionModelsModelCollectionOutput) Items() GetDetectionModelsModelCollectionItemArrayOutput {
@@ -6828,12 +5947,6 @@ func (o GetDetectionModelsModelCollectionArrayOutput) ToGetDetectionModelsModelC
 	return o
 }
 
-func (o GetDetectionModelsModelCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectionModelsModelCollection] {
-	return pulumix.Output[[]GetDetectionModelsModelCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDetectionModelsModelCollectionArrayOutput) Index(i pulumi.IntInput) GetDetectionModelsModelCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDetectionModelsModelCollection {
 		return vs[0].([]GetDetectionModelsModelCollection)[vs[1].(int)]
@@ -6842,33 +5955,33 @@ func (o GetDetectionModelsModelCollectionArrayOutput) Index(i pulumi.IntInput) G
 
 type GetDetectionModelsModelCollectionItem struct {
 	// The ID of the compartment in which to list resources.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A short description of the Model.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// A filter to return only resources that match the entire display name given.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the model that is immutable on creation.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Specifies the details of the MSET model during the create call.
 	ModelTrainingDetails []GetDetectionModelsModelCollectionItemModelTrainingDetail `pulumi:"modelTrainingDetails"`
 	// Specifies the details for an Anomaly Detection model trained with MSET.
 	ModelTrainingResults []GetDetectionModelsModelCollectionItemModelTrainingResult `pulumi:"modelTrainingResults"`
 	// The ID of the project for which to list the objects.
-	ProjectId string `pulumi:"projectId"`
+	ProjectId *string `pulumi:"projectId"`
 	// <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time the the Model was created. An RFC3339 formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the Model was updated. An RFC3339 formatted datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 // GetDetectionModelsModelCollectionItemInput is an input type that accepts GetDetectionModelsModelCollectionItemArgs and GetDetectionModelsModelCollectionItemOutput values.
@@ -6884,33 +5997,33 @@ type GetDetectionModelsModelCollectionItemInput interface {
 
 type GetDetectionModelsModelCollectionItemArgs struct {
 	// The ID of the compartment in which to list resources.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A short description of the Model.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// A filter to return only resources that match the entire display name given.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The OCID of the model that is immutable on creation.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// Specifies the details of the MSET model during the create call.
 	ModelTrainingDetails GetDetectionModelsModelCollectionItemModelTrainingDetailArrayInput `pulumi:"modelTrainingDetails"`
 	// Specifies the details for an Anomaly Detection model trained with MSET.
 	ModelTrainingResults GetDetectionModelsModelCollectionItemModelTrainingResultArrayInput `pulumi:"modelTrainingResults"`
 	// The ID of the project for which to list the objects.
-	ProjectId pulumi.StringInput `pulumi:"projectId"`
+	ProjectId pulumi.StringPtrInput `pulumi:"projectId"`
 	// <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// The time the the Model was created. An RFC3339 formatted datetime string.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The time the Model was updated. An RFC3339 formatted datetime string.
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 }
 
 func (GetDetectionModelsModelCollectionItemArgs) ElementType() reflect.Type {
@@ -6923,12 +6036,6 @@ func (i GetDetectionModelsModelCollectionItemArgs) ToGetDetectionModelsModelColl
 
 func (i GetDetectionModelsModelCollectionItemArgs) ToGetDetectionModelsModelCollectionItemOutputWithContext(ctx context.Context) GetDetectionModelsModelCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectionModelsModelCollectionItemOutput)
-}
-
-func (i GetDetectionModelsModelCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectionModelsModelCollectionItem] {
-	return pulumix.Output[GetDetectionModelsModelCollectionItem]{
-		OutputState: i.ToGetDetectionModelsModelCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetDetectionModelsModelCollectionItemArrayInput is an input type that accepts GetDetectionModelsModelCollectionItemArray and GetDetectionModelsModelCollectionItemArrayOutput values.
@@ -6956,12 +6063,6 @@ func (i GetDetectionModelsModelCollectionItemArray) ToGetDetectionModelsModelCol
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectionModelsModelCollectionItemArrayOutput)
 }
 
-func (i GetDetectionModelsModelCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectionModelsModelCollectionItem] {
-	return pulumix.Output[[]GetDetectionModelsModelCollectionItem]{
-		OutputState: i.ToGetDetectionModelsModelCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectionModelsModelCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetDetectionModelsModelCollectionItemOutput) ElementType() reflect.Type {
@@ -6976,15 +6077,9 @@ func (o GetDetectionModelsModelCollectionItemOutput) ToGetDetectionModelsModelCo
 	return o
 }
 
-func (o GetDetectionModelsModelCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectionModelsModelCollectionItem] {
-	return pulumix.Output[GetDetectionModelsModelCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The ID of the compartment in which to list resources.
-func (o GetDetectionModelsModelCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionModelsModelCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetDetectionModelsModelCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionModelsModelCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -6993,13 +6088,13 @@ func (o GetDetectionModelsModelCollectionItemOutput) DefinedTags() pulumi.MapOut
 }
 
 // A short description of the Model.
-func (o GetDetectionModelsModelCollectionItemOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionModelsModelCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+func (o GetDetectionModelsModelCollectionItemOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionModelsModelCollectionItem) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only resources that match the entire display name given.
-func (o GetDetectionModelsModelCollectionItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionModelsModelCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetDetectionModelsModelCollectionItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionModelsModelCollectionItem) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -7008,13 +6103,13 @@ func (o GetDetectionModelsModelCollectionItemOutput) FreeformTags() pulumi.MapOu
 }
 
 // The OCID of the model that is immutable on creation.
-func (o GetDetectionModelsModelCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionModelsModelCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDetectionModelsModelCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionModelsModelCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o GetDetectionModelsModelCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionModelsModelCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetDetectionModelsModelCollectionItemOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionModelsModelCollectionItem) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // Specifies the details of the MSET model during the create call.
@@ -7032,13 +6127,13 @@ func (o GetDetectionModelsModelCollectionItemOutput) ModelTrainingResults() GetD
 }
 
 // The ID of the project for which to list the objects.
-func (o GetDetectionModelsModelCollectionItemOutput) ProjectId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionModelsModelCollectionItem) string { return v.ProjectId }).(pulumi.StringOutput)
+func (o GetDetectionModelsModelCollectionItemOutput) ProjectId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionModelsModelCollectionItem) *string { return v.ProjectId }).(pulumi.StringPtrOutput)
 }
 
 // <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
-func (o GetDetectionModelsModelCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionModelsModelCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetDetectionModelsModelCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionModelsModelCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -7047,13 +6142,13 @@ func (o GetDetectionModelsModelCollectionItemOutput) SystemTags() pulumi.MapOutp
 }
 
 // The time the the Model was created. An RFC3339 formatted datetime string.
-func (o GetDetectionModelsModelCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionModelsModelCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetDetectionModelsModelCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionModelsModelCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the Model was updated. An RFC3339 formatted datetime string.
-func (o GetDetectionModelsModelCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionModelsModelCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetDetectionModelsModelCollectionItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionModelsModelCollectionItem) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type GetDetectionModelsModelCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -7070,12 +6165,6 @@ func (o GetDetectionModelsModelCollectionItemArrayOutput) ToGetDetectionModelsMo
 	return o
 }
 
-func (o GetDetectionModelsModelCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectionModelsModelCollectionItem] {
-	return pulumix.Output[[]GetDetectionModelsModelCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDetectionModelsModelCollectionItemArrayOutput) Index(i pulumi.IntInput) GetDetectionModelsModelCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDetectionModelsModelCollectionItem {
 		return vs[0].([]GetDetectionModelsModelCollectionItem)[vs[1].(int)]
@@ -7084,15 +6173,15 @@ func (o GetDetectionModelsModelCollectionItemArrayOutput) Index(i pulumi.IntInpu
 
 type GetDetectionModelsModelCollectionItemModelTrainingDetail struct {
 	// User can choose specific algorithm for training.
-	AlgorithmHint string `pulumi:"algorithmHint"`
+	AlgorithmHint *string `pulumi:"algorithmHint"`
 	// The list of OCIDs of the data assets to train the model. The dataAssets have to be in the same project where the ai model would reside.
 	DataAssetIds []string `pulumi:"dataAssetIds"`
 	// A target model accuracy metric user provides as their requirement
-	TargetFap float64 `pulumi:"targetFap"`
+	TargetFap *float64 `pulumi:"targetFap"`
 	// Fraction of total data that is used for training the model. The remaining is used for validation of the model.
-	TrainingFraction float64 `pulumi:"trainingFraction"`
+	TrainingFraction *float64 `pulumi:"trainingFraction"`
 	// Window size defined during training or deduced by the algorithm.
-	WindowSize int `pulumi:"windowSize"`
+	WindowSize *int `pulumi:"windowSize"`
 }
 
 // GetDetectionModelsModelCollectionItemModelTrainingDetailInput is an input type that accepts GetDetectionModelsModelCollectionItemModelTrainingDetailArgs and GetDetectionModelsModelCollectionItemModelTrainingDetailOutput values.
@@ -7108,15 +6197,15 @@ type GetDetectionModelsModelCollectionItemModelTrainingDetailInput interface {
 
 type GetDetectionModelsModelCollectionItemModelTrainingDetailArgs struct {
 	// User can choose specific algorithm for training.
-	AlgorithmHint pulumi.StringInput `pulumi:"algorithmHint"`
+	AlgorithmHint pulumi.StringPtrInput `pulumi:"algorithmHint"`
 	// The list of OCIDs of the data assets to train the model. The dataAssets have to be in the same project where the ai model would reside.
 	DataAssetIds pulumi.StringArrayInput `pulumi:"dataAssetIds"`
 	// A target model accuracy metric user provides as their requirement
-	TargetFap pulumi.Float64Input `pulumi:"targetFap"`
+	TargetFap pulumi.Float64PtrInput `pulumi:"targetFap"`
 	// Fraction of total data that is used for training the model. The remaining is used for validation of the model.
-	TrainingFraction pulumi.Float64Input `pulumi:"trainingFraction"`
+	TrainingFraction pulumi.Float64PtrInput `pulumi:"trainingFraction"`
 	// Window size defined during training or deduced by the algorithm.
-	WindowSize pulumi.IntInput `pulumi:"windowSize"`
+	WindowSize pulumi.IntPtrInput `pulumi:"windowSize"`
 }
 
 func (GetDetectionModelsModelCollectionItemModelTrainingDetailArgs) ElementType() reflect.Type {
@@ -7129,12 +6218,6 @@ func (i GetDetectionModelsModelCollectionItemModelTrainingDetailArgs) ToGetDetec
 
 func (i GetDetectionModelsModelCollectionItemModelTrainingDetailArgs) ToGetDetectionModelsModelCollectionItemModelTrainingDetailOutputWithContext(ctx context.Context) GetDetectionModelsModelCollectionItemModelTrainingDetailOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectionModelsModelCollectionItemModelTrainingDetailOutput)
-}
-
-func (i GetDetectionModelsModelCollectionItemModelTrainingDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectionModelsModelCollectionItemModelTrainingDetail] {
-	return pulumix.Output[GetDetectionModelsModelCollectionItemModelTrainingDetail]{
-		OutputState: i.ToGetDetectionModelsModelCollectionItemModelTrainingDetailOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetDetectionModelsModelCollectionItemModelTrainingDetailArrayInput is an input type that accepts GetDetectionModelsModelCollectionItemModelTrainingDetailArray and GetDetectionModelsModelCollectionItemModelTrainingDetailArrayOutput values.
@@ -7162,12 +6245,6 @@ func (i GetDetectionModelsModelCollectionItemModelTrainingDetailArray) ToGetDete
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectionModelsModelCollectionItemModelTrainingDetailArrayOutput)
 }
 
-func (i GetDetectionModelsModelCollectionItemModelTrainingDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectionModelsModelCollectionItemModelTrainingDetail] {
-	return pulumix.Output[[]GetDetectionModelsModelCollectionItemModelTrainingDetail]{
-		OutputState: i.ToGetDetectionModelsModelCollectionItemModelTrainingDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectionModelsModelCollectionItemModelTrainingDetailOutput struct{ *pulumi.OutputState }
 
 func (GetDetectionModelsModelCollectionItemModelTrainingDetailOutput) ElementType() reflect.Type {
@@ -7182,15 +6259,9 @@ func (o GetDetectionModelsModelCollectionItemModelTrainingDetailOutput) ToGetDet
 	return o
 }
 
-func (o GetDetectionModelsModelCollectionItemModelTrainingDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectionModelsModelCollectionItemModelTrainingDetail] {
-	return pulumix.Output[GetDetectionModelsModelCollectionItemModelTrainingDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 // User can choose specific algorithm for training.
-func (o GetDetectionModelsModelCollectionItemModelTrainingDetailOutput) AlgorithmHint() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionModelsModelCollectionItemModelTrainingDetail) string { return v.AlgorithmHint }).(pulumi.StringOutput)
+func (o GetDetectionModelsModelCollectionItemModelTrainingDetailOutput) AlgorithmHint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionModelsModelCollectionItemModelTrainingDetail) *string { return v.AlgorithmHint }).(pulumi.StringPtrOutput)
 }
 
 // The list of OCIDs of the data assets to train the model. The dataAssets have to be in the same project where the ai model would reside.
@@ -7199,18 +6270,18 @@ func (o GetDetectionModelsModelCollectionItemModelTrainingDetailOutput) DataAsse
 }
 
 // A target model accuracy metric user provides as their requirement
-func (o GetDetectionModelsModelCollectionItemModelTrainingDetailOutput) TargetFap() pulumi.Float64Output {
-	return o.ApplyT(func(v GetDetectionModelsModelCollectionItemModelTrainingDetail) float64 { return v.TargetFap }).(pulumi.Float64Output)
+func (o GetDetectionModelsModelCollectionItemModelTrainingDetailOutput) TargetFap() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetDetectionModelsModelCollectionItemModelTrainingDetail) *float64 { return v.TargetFap }).(pulumi.Float64PtrOutput)
 }
 
 // Fraction of total data that is used for training the model. The remaining is used for validation of the model.
-func (o GetDetectionModelsModelCollectionItemModelTrainingDetailOutput) TrainingFraction() pulumi.Float64Output {
-	return o.ApplyT(func(v GetDetectionModelsModelCollectionItemModelTrainingDetail) float64 { return v.TrainingFraction }).(pulumi.Float64Output)
+func (o GetDetectionModelsModelCollectionItemModelTrainingDetailOutput) TrainingFraction() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetDetectionModelsModelCollectionItemModelTrainingDetail) *float64 { return v.TrainingFraction }).(pulumi.Float64PtrOutput)
 }
 
 // Window size defined during training or deduced by the algorithm.
-func (o GetDetectionModelsModelCollectionItemModelTrainingDetailOutput) WindowSize() pulumi.IntOutput {
-	return o.ApplyT(func(v GetDetectionModelsModelCollectionItemModelTrainingDetail) int { return v.WindowSize }).(pulumi.IntOutput)
+func (o GetDetectionModelsModelCollectionItemModelTrainingDetailOutput) WindowSize() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetDetectionModelsModelCollectionItemModelTrainingDetail) *int { return v.WindowSize }).(pulumi.IntPtrOutput)
 }
 
 type GetDetectionModelsModelCollectionItemModelTrainingDetailArrayOutput struct{ *pulumi.OutputState }
@@ -7227,12 +6298,6 @@ func (o GetDetectionModelsModelCollectionItemModelTrainingDetailArrayOutput) ToG
 	return o
 }
 
-func (o GetDetectionModelsModelCollectionItemModelTrainingDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectionModelsModelCollectionItemModelTrainingDetail] {
-	return pulumix.Output[[]GetDetectionModelsModelCollectionItemModelTrainingDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDetectionModelsModelCollectionItemModelTrainingDetailArrayOutput) Index(i pulumi.IntInput) GetDetectionModelsModelCollectionItemModelTrainingDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDetectionModelsModelCollectionItemModelTrainingDetail {
 		return vs[0].([]GetDetectionModelsModelCollectionItemModelTrainingDetail)[vs[1].(int)]
@@ -7241,22 +6306,22 @@ func (o GetDetectionModelsModelCollectionItemModelTrainingDetailArrayOutput) Ind
 
 type GetDetectionModelsModelCollectionItemModelTrainingResult struct {
 	// Accuracy metric for a signal.
-	Fap float64 `pulumi:"fap"`
+	Fap *float64 `pulumi:"fap"`
 	// A boolean value to indicate if train goal/targetFap is achieved for trained model
-	IsTrainingGoalAchieved bool    `pulumi:"isTrainingGoalAchieved"`
-	Mae                    float64 `pulumi:"mae"`
-	MaxInferenceSyncRows   int     `pulumi:"maxInferenceSyncRows"`
+	IsTrainingGoalAchieved *bool    `pulumi:"isTrainingGoalAchieved"`
+	Mae                    *float64 `pulumi:"mae"`
+	MaxInferenceSyncRows   *int     `pulumi:"maxInferenceSyncRows"`
 	// The model accuracy metric on timestamp level.
-	MultivariateFap float64 `pulumi:"multivariateFap"`
-	Rmse            float64 `pulumi:"rmse"`
+	MultivariateFap *float64 `pulumi:"multivariateFap"`
+	Rmse            *float64 `pulumi:"rmse"`
 	// Information regarding how/what row reduction methods will be applied. If this property is not present or is null, then it means row reduction is not applied.
 	RowReductionDetails []GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetail `pulumi:"rowReductionDetails"`
 	// The list of signal details.
 	SignalDetails []GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetail `pulumi:"signalDetails"`
 	// A warning message to explain the reason when targetFap cannot be achieved for trained model
-	Warning string `pulumi:"warning"`
+	Warning *string `pulumi:"warning"`
 	// Window size defined during training or deduced by the algorithm.
-	WindowSize int `pulumi:"windowSize"`
+	WindowSize *int `pulumi:"windowSize"`
 }
 
 // GetDetectionModelsModelCollectionItemModelTrainingResultInput is an input type that accepts GetDetectionModelsModelCollectionItemModelTrainingResultArgs and GetDetectionModelsModelCollectionItemModelTrainingResultOutput values.
@@ -7272,22 +6337,22 @@ type GetDetectionModelsModelCollectionItemModelTrainingResultInput interface {
 
 type GetDetectionModelsModelCollectionItemModelTrainingResultArgs struct {
 	// Accuracy metric for a signal.
-	Fap pulumi.Float64Input `pulumi:"fap"`
+	Fap pulumi.Float64PtrInput `pulumi:"fap"`
 	// A boolean value to indicate if train goal/targetFap is achieved for trained model
-	IsTrainingGoalAchieved pulumi.BoolInput    `pulumi:"isTrainingGoalAchieved"`
-	Mae                    pulumi.Float64Input `pulumi:"mae"`
-	MaxInferenceSyncRows   pulumi.IntInput     `pulumi:"maxInferenceSyncRows"`
+	IsTrainingGoalAchieved pulumi.BoolPtrInput    `pulumi:"isTrainingGoalAchieved"`
+	Mae                    pulumi.Float64PtrInput `pulumi:"mae"`
+	MaxInferenceSyncRows   pulumi.IntPtrInput     `pulumi:"maxInferenceSyncRows"`
 	// The model accuracy metric on timestamp level.
-	MultivariateFap pulumi.Float64Input `pulumi:"multivariateFap"`
-	Rmse            pulumi.Float64Input `pulumi:"rmse"`
+	MultivariateFap pulumi.Float64PtrInput `pulumi:"multivariateFap"`
+	Rmse            pulumi.Float64PtrInput `pulumi:"rmse"`
 	// Information regarding how/what row reduction methods will be applied. If this property is not present or is null, then it means row reduction is not applied.
 	RowReductionDetails GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetailArrayInput `pulumi:"rowReductionDetails"`
 	// The list of signal details.
 	SignalDetails GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailArrayInput `pulumi:"signalDetails"`
 	// A warning message to explain the reason when targetFap cannot be achieved for trained model
-	Warning pulumi.StringInput `pulumi:"warning"`
+	Warning pulumi.StringPtrInput `pulumi:"warning"`
 	// Window size defined during training or deduced by the algorithm.
-	WindowSize pulumi.IntInput `pulumi:"windowSize"`
+	WindowSize pulumi.IntPtrInput `pulumi:"windowSize"`
 }
 
 func (GetDetectionModelsModelCollectionItemModelTrainingResultArgs) ElementType() reflect.Type {
@@ -7300,12 +6365,6 @@ func (i GetDetectionModelsModelCollectionItemModelTrainingResultArgs) ToGetDetec
 
 func (i GetDetectionModelsModelCollectionItemModelTrainingResultArgs) ToGetDetectionModelsModelCollectionItemModelTrainingResultOutputWithContext(ctx context.Context) GetDetectionModelsModelCollectionItemModelTrainingResultOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectionModelsModelCollectionItemModelTrainingResultOutput)
-}
-
-func (i GetDetectionModelsModelCollectionItemModelTrainingResultArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectionModelsModelCollectionItemModelTrainingResult] {
-	return pulumix.Output[GetDetectionModelsModelCollectionItemModelTrainingResult]{
-		OutputState: i.ToGetDetectionModelsModelCollectionItemModelTrainingResultOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetDetectionModelsModelCollectionItemModelTrainingResultArrayInput is an input type that accepts GetDetectionModelsModelCollectionItemModelTrainingResultArray and GetDetectionModelsModelCollectionItemModelTrainingResultArrayOutput values.
@@ -7333,12 +6392,6 @@ func (i GetDetectionModelsModelCollectionItemModelTrainingResultArray) ToGetDete
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectionModelsModelCollectionItemModelTrainingResultArrayOutput)
 }
 
-func (i GetDetectionModelsModelCollectionItemModelTrainingResultArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectionModelsModelCollectionItemModelTrainingResult] {
-	return pulumix.Output[[]GetDetectionModelsModelCollectionItemModelTrainingResult]{
-		OutputState: i.ToGetDetectionModelsModelCollectionItemModelTrainingResultArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectionModelsModelCollectionItemModelTrainingResultOutput struct{ *pulumi.OutputState }
 
 func (GetDetectionModelsModelCollectionItemModelTrainingResultOutput) ElementType() reflect.Type {
@@ -7353,37 +6406,33 @@ func (o GetDetectionModelsModelCollectionItemModelTrainingResultOutput) ToGetDet
 	return o
 }
 
-func (o GetDetectionModelsModelCollectionItemModelTrainingResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectionModelsModelCollectionItemModelTrainingResult] {
-	return pulumix.Output[GetDetectionModelsModelCollectionItemModelTrainingResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Accuracy metric for a signal.
-func (o GetDetectionModelsModelCollectionItemModelTrainingResultOutput) Fap() pulumi.Float64Output {
-	return o.ApplyT(func(v GetDetectionModelsModelCollectionItemModelTrainingResult) float64 { return v.Fap }).(pulumi.Float64Output)
+func (o GetDetectionModelsModelCollectionItemModelTrainingResultOutput) Fap() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetDetectionModelsModelCollectionItemModelTrainingResult) *float64 { return v.Fap }).(pulumi.Float64PtrOutput)
 }
 
 // A boolean value to indicate if train goal/targetFap is achieved for trained model
-func (o GetDetectionModelsModelCollectionItemModelTrainingResultOutput) IsTrainingGoalAchieved() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetDetectionModelsModelCollectionItemModelTrainingResult) bool { return v.IsTrainingGoalAchieved }).(pulumi.BoolOutput)
+func (o GetDetectionModelsModelCollectionItemModelTrainingResultOutput) IsTrainingGoalAchieved() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDetectionModelsModelCollectionItemModelTrainingResult) *bool {
+		return v.IsTrainingGoalAchieved
+	}).(pulumi.BoolPtrOutput)
 }
 
-func (o GetDetectionModelsModelCollectionItemModelTrainingResultOutput) Mae() pulumi.Float64Output {
-	return o.ApplyT(func(v GetDetectionModelsModelCollectionItemModelTrainingResult) float64 { return v.Mae }).(pulumi.Float64Output)
+func (o GetDetectionModelsModelCollectionItemModelTrainingResultOutput) Mae() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetDetectionModelsModelCollectionItemModelTrainingResult) *float64 { return v.Mae }).(pulumi.Float64PtrOutput)
 }
 
-func (o GetDetectionModelsModelCollectionItemModelTrainingResultOutput) MaxInferenceSyncRows() pulumi.IntOutput {
-	return o.ApplyT(func(v GetDetectionModelsModelCollectionItemModelTrainingResult) int { return v.MaxInferenceSyncRows }).(pulumi.IntOutput)
+func (o GetDetectionModelsModelCollectionItemModelTrainingResultOutput) MaxInferenceSyncRows() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetDetectionModelsModelCollectionItemModelTrainingResult) *int { return v.MaxInferenceSyncRows }).(pulumi.IntPtrOutput)
 }
 
 // The model accuracy metric on timestamp level.
-func (o GetDetectionModelsModelCollectionItemModelTrainingResultOutput) MultivariateFap() pulumi.Float64Output {
-	return o.ApplyT(func(v GetDetectionModelsModelCollectionItemModelTrainingResult) float64 { return v.MultivariateFap }).(pulumi.Float64Output)
+func (o GetDetectionModelsModelCollectionItemModelTrainingResultOutput) MultivariateFap() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetDetectionModelsModelCollectionItemModelTrainingResult) *float64 { return v.MultivariateFap }).(pulumi.Float64PtrOutput)
 }
 
-func (o GetDetectionModelsModelCollectionItemModelTrainingResultOutput) Rmse() pulumi.Float64Output {
-	return o.ApplyT(func(v GetDetectionModelsModelCollectionItemModelTrainingResult) float64 { return v.Rmse }).(pulumi.Float64Output)
+func (o GetDetectionModelsModelCollectionItemModelTrainingResultOutput) Rmse() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetDetectionModelsModelCollectionItemModelTrainingResult) *float64 { return v.Rmse }).(pulumi.Float64PtrOutput)
 }
 
 // Information regarding how/what row reduction methods will be applied. If this property is not present or is null, then it means row reduction is not applied.
@@ -7401,13 +6450,13 @@ func (o GetDetectionModelsModelCollectionItemModelTrainingResultOutput) SignalDe
 }
 
 // A warning message to explain the reason when targetFap cannot be achieved for trained model
-func (o GetDetectionModelsModelCollectionItemModelTrainingResultOutput) Warning() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionModelsModelCollectionItemModelTrainingResult) string { return v.Warning }).(pulumi.StringOutput)
+func (o GetDetectionModelsModelCollectionItemModelTrainingResultOutput) Warning() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionModelsModelCollectionItemModelTrainingResult) *string { return v.Warning }).(pulumi.StringPtrOutput)
 }
 
 // Window size defined during training or deduced by the algorithm.
-func (o GetDetectionModelsModelCollectionItemModelTrainingResultOutput) WindowSize() pulumi.IntOutput {
-	return o.ApplyT(func(v GetDetectionModelsModelCollectionItemModelTrainingResult) int { return v.WindowSize }).(pulumi.IntOutput)
+func (o GetDetectionModelsModelCollectionItemModelTrainingResultOutput) WindowSize() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetDetectionModelsModelCollectionItemModelTrainingResult) *int { return v.WindowSize }).(pulumi.IntPtrOutput)
 }
 
 type GetDetectionModelsModelCollectionItemModelTrainingResultArrayOutput struct{ *pulumi.OutputState }
@@ -7424,12 +6473,6 @@ func (o GetDetectionModelsModelCollectionItemModelTrainingResultArrayOutput) ToG
 	return o
 }
 
-func (o GetDetectionModelsModelCollectionItemModelTrainingResultArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectionModelsModelCollectionItemModelTrainingResult] {
-	return pulumix.Output[[]GetDetectionModelsModelCollectionItemModelTrainingResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDetectionModelsModelCollectionItemModelTrainingResultArrayOutput) Index(i pulumi.IntInput) GetDetectionModelsModelCollectionItemModelTrainingResultOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDetectionModelsModelCollectionItemModelTrainingResult {
 		return vs[0].([]GetDetectionModelsModelCollectionItemModelTrainingResult)[vs[1].(int)]
@@ -7438,13 +6481,13 @@ func (o GetDetectionModelsModelCollectionItemModelTrainingResultArrayOutput) Ind
 
 type GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetail struct {
 	// A boolean value to indicate if row reduction is applied
-	IsReductionEnabled bool `pulumi:"isReductionEnabled"`
+	IsReductionEnabled *bool `pulumi:"isReductionEnabled"`
 	// Method for row reduction:
 	// * DELETE_ROW - delete rows with equal intervals
 	// * AVERAGE_ROW - average multiple rows to one row
-	ReductionMethod string `pulumi:"reductionMethod"`
+	ReductionMethod *string `pulumi:"reductionMethod"`
 	// A percentage to reduce data size down to on top of original data
-	ReductionPercentage float64 `pulumi:"reductionPercentage"`
+	ReductionPercentage *float64 `pulumi:"reductionPercentage"`
 }
 
 // GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetailInput is an input type that accepts GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetailArgs and GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetailOutput values.
@@ -7460,13 +6503,13 @@ type GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetailI
 
 type GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetailArgs struct {
 	// A boolean value to indicate if row reduction is applied
-	IsReductionEnabled pulumi.BoolInput `pulumi:"isReductionEnabled"`
+	IsReductionEnabled pulumi.BoolPtrInput `pulumi:"isReductionEnabled"`
 	// Method for row reduction:
 	// * DELETE_ROW - delete rows with equal intervals
 	// * AVERAGE_ROW - average multiple rows to one row
-	ReductionMethod pulumi.StringInput `pulumi:"reductionMethod"`
+	ReductionMethod pulumi.StringPtrInput `pulumi:"reductionMethod"`
 	// A percentage to reduce data size down to on top of original data
-	ReductionPercentage pulumi.Float64Input `pulumi:"reductionPercentage"`
+	ReductionPercentage pulumi.Float64PtrInput `pulumi:"reductionPercentage"`
 }
 
 func (GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetailArgs) ElementType() reflect.Type {
@@ -7479,12 +6522,6 @@ func (i GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDeta
 
 func (i GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetailArgs) ToGetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetailOutputWithContext(ctx context.Context) GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetailOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetailOutput)
-}
-
-func (i GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetail] {
-	return pulumix.Output[GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetail]{
-		OutputState: i.ToGetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetailOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetailArrayInput is an input type that accepts GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetailArray and GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetailArrayOutput values.
@@ -7512,12 +6549,6 @@ func (i GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDeta
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetailArrayOutput)
 }
 
-func (i GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetail] {
-	return pulumix.Output[[]GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetail]{
-		OutputState: i.ToGetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetailOutput struct{ *pulumi.OutputState }
 
 func (GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetailOutput) ElementType() reflect.Type {
@@ -7532,33 +6563,27 @@ func (o GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDeta
 	return o
 }
 
-func (o GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetail] {
-	return pulumix.Output[GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A boolean value to indicate if row reduction is applied
-func (o GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetailOutput) IsReductionEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetail) bool {
+func (o GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetailOutput) IsReductionEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetail) *bool {
 		return v.IsReductionEnabled
-	}).(pulumi.BoolOutput)
+	}).(pulumi.BoolPtrOutput)
 }
 
 // Method for row reduction:
 // * DELETE_ROW - delete rows with equal intervals
 // * AVERAGE_ROW - average multiple rows to one row
-func (o GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetailOutput) ReductionMethod() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetail) string {
+func (o GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetailOutput) ReductionMethod() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetail) *string {
 		return v.ReductionMethod
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // A percentage to reduce data size down to on top of original data
-func (o GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetailOutput) ReductionPercentage() pulumi.Float64Output {
-	return o.ApplyT(func(v GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetail) float64 {
+func (o GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetailOutput) ReductionPercentage() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetail) *float64 {
 		return v.ReductionPercentage
-	}).(pulumi.Float64Output)
+	}).(pulumi.Float64PtrOutput)
 }
 
 type GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetailArrayOutput struct{ *pulumi.OutputState }
@@ -7575,12 +6600,6 @@ func (o GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDeta
 	return o
 }
 
-func (o GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetail] {
-	return pulumix.Output[[]GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetailArrayOutput) Index(i pulumi.IntInput) GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetail {
 		return vs[0].([]GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetail)[vs[1].(int)]
@@ -7589,26 +6608,26 @@ func (o GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDeta
 
 type GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetail struct {
 	// detailed information for a signal.
-	Details string `pulumi:"details"`
+	Details *string `pulumi:"details"`
 	// Accuracy metric for a signal.
-	Fap float64 `pulumi:"fap"`
+	Fap *float64 `pulumi:"fap"`
 	// A boolean value to indicate if a signal is quantized or not.
-	IsQuantized bool `pulumi:"isQuantized"`
+	IsQuantized *bool `pulumi:"isQuantized"`
 	// Max value within a signal.
-	Max float64 `pulumi:"max"`
+	Max *float64 `pulumi:"max"`
 	// Min value within a signal.
-	Min float64 `pulumi:"min"`
+	Min *float64 `pulumi:"min"`
 	// The ratio of missing values in a signal filled/imputed by the IDP algorithm.
-	MviRatio float64 `pulumi:"mviRatio"`
+	MviRatio *float64 `pulumi:"mviRatio"`
 	// The name of a signal.
-	SignalName string `pulumi:"signalName"`
+	SignalName *string `pulumi:"signalName"`
 	// Status of the signal:
 	// * ACCEPTED - the signal is used for training the model
 	// * DROPPED - the signal does not meet requirement, and is dropped before training the model.
 	// * OTHER - placeholder for other status
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 	// Standard deviation of values within a signal.
-	Std float64 `pulumi:"std"`
+	Std *float64 `pulumi:"std"`
 }
 
 // GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailInput is an input type that accepts GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailArgs and GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailOutput values.
@@ -7624,26 +6643,26 @@ type GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailInput i
 
 type GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailArgs struct {
 	// detailed information for a signal.
-	Details pulumi.StringInput `pulumi:"details"`
+	Details pulumi.StringPtrInput `pulumi:"details"`
 	// Accuracy metric for a signal.
-	Fap pulumi.Float64Input `pulumi:"fap"`
+	Fap pulumi.Float64PtrInput `pulumi:"fap"`
 	// A boolean value to indicate if a signal is quantized or not.
-	IsQuantized pulumi.BoolInput `pulumi:"isQuantized"`
+	IsQuantized pulumi.BoolPtrInput `pulumi:"isQuantized"`
 	// Max value within a signal.
-	Max pulumi.Float64Input `pulumi:"max"`
+	Max pulumi.Float64PtrInput `pulumi:"max"`
 	// Min value within a signal.
-	Min pulumi.Float64Input `pulumi:"min"`
+	Min pulumi.Float64PtrInput `pulumi:"min"`
 	// The ratio of missing values in a signal filled/imputed by the IDP algorithm.
-	MviRatio pulumi.Float64Input `pulumi:"mviRatio"`
+	MviRatio pulumi.Float64PtrInput `pulumi:"mviRatio"`
 	// The name of a signal.
-	SignalName pulumi.StringInput `pulumi:"signalName"`
+	SignalName pulumi.StringPtrInput `pulumi:"signalName"`
 	// Status of the signal:
 	// * ACCEPTED - the signal is used for training the model
 	// * DROPPED - the signal does not meet requirement, and is dropped before training the model.
 	// * OTHER - placeholder for other status
-	Status pulumi.StringInput `pulumi:"status"`
+	Status pulumi.StringPtrInput `pulumi:"status"`
 	// Standard deviation of values within a signal.
-	Std pulumi.Float64Input `pulumi:"std"`
+	Std pulumi.Float64PtrInput `pulumi:"std"`
 }
 
 func (GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailArgs) ElementType() reflect.Type {
@@ -7656,12 +6675,6 @@ func (i GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailArgs
 
 func (i GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailArgs) ToGetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailOutputWithContext(ctx context.Context) GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailOutput)
-}
-
-func (i GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetail] {
-	return pulumix.Output[GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetail]{
-		OutputState: i.ToGetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailArrayInput is an input type that accepts GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailArray and GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailArrayOutput values.
@@ -7689,12 +6702,6 @@ func (i GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailArra
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailArrayOutput)
 }
 
-func (i GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetail] {
-	return pulumix.Output[[]GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetail]{
-		OutputState: i.ToGetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailOutput struct{ *pulumi.OutputState }
 
 func (GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailOutput) ElementType() reflect.Type {
@@ -7709,64 +6716,58 @@ func (o GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailOutp
 	return o
 }
 
-func (o GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetail] {
-	return pulumix.Output[GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 // detailed information for a signal.
-func (o GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailOutput) Details() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetail) string { return v.Details }).(pulumi.StringOutput)
+func (o GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailOutput) Details() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetail) *string { return v.Details }).(pulumi.StringPtrOutput)
 }
 
 // Accuracy metric for a signal.
-func (o GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailOutput) Fap() pulumi.Float64Output {
-	return o.ApplyT(func(v GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetail) float64 { return v.Fap }).(pulumi.Float64Output)
+func (o GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailOutput) Fap() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetail) *float64 { return v.Fap }).(pulumi.Float64PtrOutput)
 }
 
 // A boolean value to indicate if a signal is quantized or not.
-func (o GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailOutput) IsQuantized() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetail) bool {
+func (o GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailOutput) IsQuantized() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetail) *bool {
 		return v.IsQuantized
-	}).(pulumi.BoolOutput)
+	}).(pulumi.BoolPtrOutput)
 }
 
 // Max value within a signal.
-func (o GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailOutput) Max() pulumi.Float64Output {
-	return o.ApplyT(func(v GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetail) float64 { return v.Max }).(pulumi.Float64Output)
+func (o GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailOutput) Max() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetail) *float64 { return v.Max }).(pulumi.Float64PtrOutput)
 }
 
 // Min value within a signal.
-func (o GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailOutput) Min() pulumi.Float64Output {
-	return o.ApplyT(func(v GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetail) float64 { return v.Min }).(pulumi.Float64Output)
+func (o GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailOutput) Min() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetail) *float64 { return v.Min }).(pulumi.Float64PtrOutput)
 }
 
 // The ratio of missing values in a signal filled/imputed by the IDP algorithm.
-func (o GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailOutput) MviRatio() pulumi.Float64Output {
-	return o.ApplyT(func(v GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetail) float64 {
+func (o GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailOutput) MviRatio() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetail) *float64 {
 		return v.MviRatio
-	}).(pulumi.Float64Output)
+	}).(pulumi.Float64PtrOutput)
 }
 
 // The name of a signal.
-func (o GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailOutput) SignalName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetail) string {
+func (o GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailOutput) SignalName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetail) *string {
 		return v.SignalName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Status of the signal:
 // * ACCEPTED - the signal is used for training the model
 // * DROPPED - the signal does not meet requirement, and is dropped before training the model.
 // * OTHER - placeholder for other status
-func (o GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetail) string { return v.Status }).(pulumi.StringOutput)
+func (o GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetail) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // Standard deviation of values within a signal.
-func (o GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailOutput) Std() pulumi.Float64Output {
-	return o.ApplyT(func(v GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetail) float64 { return v.Std }).(pulumi.Float64Output)
+func (o GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailOutput) Std() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetail) *float64 { return v.Std }).(pulumi.Float64PtrOutput)
 }
 
 type GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailArrayOutput struct{ *pulumi.OutputState }
@@ -7781,12 +6782,6 @@ func (o GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailArra
 
 func (o GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailArrayOutput) ToGetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailArrayOutputWithContext(ctx context.Context) GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailArrayOutput {
 	return o
-}
-
-func (o GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetail] {
-	return pulumix.Output[[]GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailArrayOutput) Index(i pulumi.IntInput) GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailOutput {
@@ -7830,12 +6825,6 @@ func (i GetDetectionProjectsFilterArgs) ToGetDetectionProjectsFilterOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectionProjectsFilterOutput)
 }
 
-func (i GetDetectionProjectsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectionProjectsFilter] {
-	return pulumix.Output[GetDetectionProjectsFilter]{
-		OutputState: i.ToGetDetectionProjectsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDetectionProjectsFilterArrayInput is an input type that accepts GetDetectionProjectsFilterArray and GetDetectionProjectsFilterArrayOutput values.
 // You can construct a concrete instance of `GetDetectionProjectsFilterArrayInput` via:
 //
@@ -7861,12 +6850,6 @@ func (i GetDetectionProjectsFilterArray) ToGetDetectionProjectsFilterArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectionProjectsFilterArrayOutput)
 }
 
-func (i GetDetectionProjectsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectionProjectsFilter] {
-	return pulumix.Output[[]GetDetectionProjectsFilter]{
-		OutputState: i.ToGetDetectionProjectsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectionProjectsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetDetectionProjectsFilterOutput) ElementType() reflect.Type {
@@ -7879,12 +6862,6 @@ func (o GetDetectionProjectsFilterOutput) ToGetDetectionProjectsFilterOutput() G
 
 func (o GetDetectionProjectsFilterOutput) ToGetDetectionProjectsFilterOutputWithContext(ctx context.Context) GetDetectionProjectsFilterOutput {
 	return o
-}
-
-func (o GetDetectionProjectsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectionProjectsFilter] {
-	return pulumix.Output[GetDetectionProjectsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDetectionProjectsFilterOutput) Name() pulumi.StringOutput {
@@ -7911,12 +6888,6 @@ func (o GetDetectionProjectsFilterArrayOutput) ToGetDetectionProjectsFilterArray
 
 func (o GetDetectionProjectsFilterArrayOutput) ToGetDetectionProjectsFilterArrayOutputWithContext(ctx context.Context) GetDetectionProjectsFilterArrayOutput {
 	return o
-}
-
-func (o GetDetectionProjectsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectionProjectsFilter] {
-	return pulumix.Output[[]GetDetectionProjectsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDetectionProjectsFilterArrayOutput) Index(i pulumi.IntInput) GetDetectionProjectsFilterOutput {
@@ -7956,12 +6927,6 @@ func (i GetDetectionProjectsProjectCollectionArgs) ToGetDetectionProjectsProject
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectionProjectsProjectCollectionOutput)
 }
 
-func (i GetDetectionProjectsProjectCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectionProjectsProjectCollection] {
-	return pulumix.Output[GetDetectionProjectsProjectCollection]{
-		OutputState: i.ToGetDetectionProjectsProjectCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDetectionProjectsProjectCollectionArrayInput is an input type that accepts GetDetectionProjectsProjectCollectionArray and GetDetectionProjectsProjectCollectionArrayOutput values.
 // You can construct a concrete instance of `GetDetectionProjectsProjectCollectionArrayInput` via:
 //
@@ -7987,12 +6952,6 @@ func (i GetDetectionProjectsProjectCollectionArray) ToGetDetectionProjectsProjec
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectionProjectsProjectCollectionArrayOutput)
 }
 
-func (i GetDetectionProjectsProjectCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectionProjectsProjectCollection] {
-	return pulumix.Output[[]GetDetectionProjectsProjectCollection]{
-		OutputState: i.ToGetDetectionProjectsProjectCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectionProjectsProjectCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetDetectionProjectsProjectCollectionOutput) ElementType() reflect.Type {
@@ -8005,12 +6964,6 @@ func (o GetDetectionProjectsProjectCollectionOutput) ToGetDetectionProjectsProje
 
 func (o GetDetectionProjectsProjectCollectionOutput) ToGetDetectionProjectsProjectCollectionOutputWithContext(ctx context.Context) GetDetectionProjectsProjectCollectionOutput {
 	return o
-}
-
-func (o GetDetectionProjectsProjectCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectionProjectsProjectCollection] {
-	return pulumix.Output[GetDetectionProjectsProjectCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDetectionProjectsProjectCollectionOutput) Items() GetDetectionProjectsProjectCollectionItemArrayOutput {
@@ -8033,12 +6986,6 @@ func (o GetDetectionProjectsProjectCollectionArrayOutput) ToGetDetectionProjects
 	return o
 }
 
-func (o GetDetectionProjectsProjectCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectionProjectsProjectCollection] {
-	return pulumix.Output[[]GetDetectionProjectsProjectCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDetectionProjectsProjectCollectionArrayOutput) Index(i pulumi.IntInput) GetDetectionProjectsProjectCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDetectionProjectsProjectCollection {
 		return vs[0].([]GetDetectionProjectsProjectCollection)[vs[1].(int)]
@@ -8047,25 +6994,25 @@ func (o GetDetectionProjectsProjectCollectionArrayOutput) Index(i pulumi.IntInpu
 
 type GetDetectionProjectsProjectCollectionItem struct {
 	// The ID of the compartment in which to list resources.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A short description of the project.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// A filter to return only resources that match the entire display name given.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the project that is immutable on creation.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the resource was updated in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 // GetDetectionProjectsProjectCollectionItemInput is an input type that accepts GetDetectionProjectsProjectCollectionItemArgs and GetDetectionProjectsProjectCollectionItemOutput values.
@@ -8081,25 +7028,25 @@ type GetDetectionProjectsProjectCollectionItemInput interface {
 
 type GetDetectionProjectsProjectCollectionItemArgs struct {
 	// The ID of the compartment in which to list resources.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A short description of the project.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// A filter to return only resources that match the entire display name given.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The OCID of the project that is immutable on creation.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The date and time the resource was updated in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 }
 
 func (GetDetectionProjectsProjectCollectionItemArgs) ElementType() reflect.Type {
@@ -8112,12 +7059,6 @@ func (i GetDetectionProjectsProjectCollectionItemArgs) ToGetDetectionProjectsPro
 
 func (i GetDetectionProjectsProjectCollectionItemArgs) ToGetDetectionProjectsProjectCollectionItemOutputWithContext(ctx context.Context) GetDetectionProjectsProjectCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectionProjectsProjectCollectionItemOutput)
-}
-
-func (i GetDetectionProjectsProjectCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetDetectionProjectsProjectCollectionItem] {
-	return pulumix.Output[GetDetectionProjectsProjectCollectionItem]{
-		OutputState: i.ToGetDetectionProjectsProjectCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetDetectionProjectsProjectCollectionItemArrayInput is an input type that accepts GetDetectionProjectsProjectCollectionItemArray and GetDetectionProjectsProjectCollectionItemArrayOutput values.
@@ -8145,12 +7086,6 @@ func (i GetDetectionProjectsProjectCollectionItemArray) ToGetDetectionProjectsPr
 	return pulumi.ToOutputWithContext(ctx, i).(GetDetectionProjectsProjectCollectionItemArrayOutput)
 }
 
-func (i GetDetectionProjectsProjectCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectionProjectsProjectCollectionItem] {
-	return pulumix.Output[[]GetDetectionProjectsProjectCollectionItem]{
-		OutputState: i.ToGetDetectionProjectsProjectCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDetectionProjectsProjectCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetDetectionProjectsProjectCollectionItemOutput) ElementType() reflect.Type {
@@ -8165,15 +7100,9 @@ func (o GetDetectionProjectsProjectCollectionItemOutput) ToGetDetectionProjectsP
 	return o
 }
 
-func (o GetDetectionProjectsProjectCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectionProjectsProjectCollectionItem] {
-	return pulumix.Output[GetDetectionProjectsProjectCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The ID of the compartment in which to list resources.
-func (o GetDetectionProjectsProjectCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionProjectsProjectCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetDetectionProjectsProjectCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionProjectsProjectCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -8182,13 +7111,13 @@ func (o GetDetectionProjectsProjectCollectionItemOutput) DefinedTags() pulumi.Ma
 }
 
 // A short description of the project.
-func (o GetDetectionProjectsProjectCollectionItemOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionProjectsProjectCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+func (o GetDetectionProjectsProjectCollectionItemOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionProjectsProjectCollectionItem) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only resources that match the entire display name given.
-func (o GetDetectionProjectsProjectCollectionItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionProjectsProjectCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetDetectionProjectsProjectCollectionItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionProjectsProjectCollectionItem) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -8197,13 +7126,13 @@ func (o GetDetectionProjectsProjectCollectionItemOutput) FreeformTags() pulumi.M
 }
 
 // The OCID of the project that is immutable on creation.
-func (o GetDetectionProjectsProjectCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionProjectsProjectCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDetectionProjectsProjectCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionProjectsProjectCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
-func (o GetDetectionProjectsProjectCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionProjectsProjectCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetDetectionProjectsProjectCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionProjectsProjectCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -8212,13 +7141,13 @@ func (o GetDetectionProjectsProjectCollectionItemOutput) SystemTags() pulumi.Map
 }
 
 // The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-func (o GetDetectionProjectsProjectCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionProjectsProjectCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetDetectionProjectsProjectCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionProjectsProjectCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was updated in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-func (o GetDetectionProjectsProjectCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionProjectsProjectCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetDetectionProjectsProjectCollectionItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionProjectsProjectCollectionItem) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type GetDetectionProjectsProjectCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -8233,12 +7162,6 @@ func (o GetDetectionProjectsProjectCollectionItemArrayOutput) ToGetDetectionProj
 
 func (o GetDetectionProjectsProjectCollectionItemArrayOutput) ToGetDetectionProjectsProjectCollectionItemArrayOutputWithContext(ctx context.Context) GetDetectionProjectsProjectCollectionItemArrayOutput {
 	return o
-}
-
-func (o GetDetectionProjectsProjectCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDetectionProjectsProjectCollectionItem] {
-	return pulumix.Output[[]GetDetectionProjectsProjectCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDetectionProjectsProjectCollectionItemArrayOutput) Index(i pulumi.IntInput) GetDetectionProjectsProjectCollectionItemOutput {

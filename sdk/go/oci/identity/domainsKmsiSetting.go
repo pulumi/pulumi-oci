@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Kmsi Setting resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -46,7 +45,7 @@ type DomainsKmsiSetting struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	CompartmentOcid pulumi.StringOutput `pulumi:"compartmentOcid"`
+	CompartmentOcid pulumi.StringPtrOutput `pulumi:"compartmentOcid"`
 	// (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
 	//
 	// **SCIM++ Properties:**
@@ -58,7 +57,7 @@ type DomainsKmsiSetting struct {
 	// * returned: default
 	// * type: boolean
 	// * uniqueness: none
-	DeleteInProgress pulumi.BoolOutput `pulumi:"deleteInProgress"`
+	DeleteInProgress pulumi.BoolPtrOutput `pulumi:"deleteInProgress"`
 	// (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
 	//
 	// **SCIM++ Properties:**
@@ -70,7 +69,7 @@ type DomainsKmsiSetting struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	DomainOcid pulumi.StringOutput `pulumi:"domainOcid"`
+	DomainOcid pulumi.StringPtrOutput `pulumi:"domainOcid"`
 	// (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
 	//
 	// **SCIM++ Properties:**
@@ -81,7 +80,7 @@ type DomainsKmsiSetting struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	ExternalId pulumi.StringOutput `pulumi:"externalId"`
+	ExternalId pulumi.StringPtrOutput `pulumi:"externalId"`
 	// (Updatable) The User or App who created the Resource
 	//
 	// **SCIM++ Properties:**
@@ -115,7 +114,7 @@ type DomainsKmsiSetting struct {
 	// * returned: request
 	// * type: string
 	// * uniqueness: none
-	IdcsLastUpgradedInRelease pulumi.StringOutput `pulumi:"idcsLastUpgradedInRelease"`
+	IdcsLastUpgradedInRelease pulumi.StringPtrOutput `pulumi:"idcsLastUpgradedInRelease"`
 	// (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
 	//
 	// **SCIM++ Properties:**
@@ -137,7 +136,7 @@ type DomainsKmsiSetting struct {
 	// * returned: default
 	// * type: boolean
 	// * uniqueness: none
-	KmsiFeatureEnabled pulumi.BoolOutput `pulumi:"kmsiFeatureEnabled"`
+	KmsiFeatureEnabled pulumi.BoolPtrOutput `pulumi:"kmsiFeatureEnabled"`
 	// (Updatable) Identifier represents KMSI to be prompted to user or not.
 	//
 	// **SCIM++ Properties:**
@@ -148,7 +147,7 @@ type DomainsKmsiSetting struct {
 	// * returned: default
 	// * type: boolean
 	// * uniqueness: none
-	KmsiPromptEnabled pulumi.BoolOutput `pulumi:"kmsiPromptEnabled"`
+	KmsiPromptEnabled pulumi.BoolPtrOutput `pulumi:"kmsiPromptEnabled"`
 	// ID of the resource
 	KmsiSettingId pulumi.StringOutput `pulumi:"kmsiSettingId"`
 	// (Updatable) Timestamp of when the KmsiSettings was enabled last time.
@@ -164,7 +163,7 @@ type DomainsKmsiSetting struct {
 	// * returned: default
 	// * type: dateTime
 	// * uniqueness: none
-	LastEnabledOn pulumi.StringOutput `pulumi:"lastEnabledOn"`
+	LastEnabledOn pulumi.StringPtrOutput `pulumi:"lastEnabledOn"`
 	// (Updatable) Identifier represents duration in days within which kmsi token must be used.
 	//
 	// **SCIM++ Properties:**
@@ -177,7 +176,7 @@ type DomainsKmsiSetting struct {
 	// * idcsMaxValue: 365
 	// * idcsMinValue: 1
 	// * uniqueness: none
-	LastUsedValidityInDays pulumi.IntOutput `pulumi:"lastUsedValidityInDays"`
+	LastUsedValidityInDays pulumi.IntPtrOutput `pulumi:"lastUsedValidityInDays"`
 	// (Updatable) Identifier represents maximum KMSI sessions allowed in the system.
 	//
 	// **SCIM++ Properties:**
@@ -190,7 +189,7 @@ type DomainsKmsiSetting struct {
 	// * idcsMaxValue: 10
 	// * idcsMinValue: 1
 	// * uniqueness: none
-	MaxAllowedSessions pulumi.IntOutput `pulumi:"maxAllowedSessions"`
+	MaxAllowedSessions pulumi.IntPtrOutput `pulumi:"maxAllowedSessions"`
 	// (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
 	//
 	// **SCIM++ Properties:**
@@ -214,7 +213,7 @@ type DomainsKmsiSetting struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: global
-	Ocid pulumi.StringOutput `pulumi:"ocid"`
+	Ocid pulumi.StringPtrOutput `pulumi:"ocid"`
 	// (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
 	ResourceTypeSchemaVersion pulumi.StringPtrOutput `pulumi:"resourceTypeSchemaVersion"`
 	// (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
@@ -252,7 +251,7 @@ type DomainsKmsiSetting struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	TenancyOcid pulumi.StringOutput `pulumi:"tenancyOcid"`
+	TenancyOcid pulumi.StringPtrOutput `pulumi:"tenancyOcid"`
 	// (Updatable) Identifier represents validity duration in days.
 	//
 	// **SCIM++ Properties:**
@@ -265,7 +264,7 @@ type DomainsKmsiSetting struct {
 	// * idcsMaxValue: 1100
 	// * idcsMinValue: 1
 	// * uniqueness: none
-	TokenValidityInDays pulumi.IntOutput `pulumi:"tokenValidityInDays"`
+	TokenValidityInDays pulumi.IntPtrOutput `pulumi:"tokenValidityInDays"`
 	// (Updatable) Identifier represents whether user is prompted for ToU or not.
 	//
 	// **SCIM++ Properties:**
@@ -279,7 +278,7 @@ type DomainsKmsiSetting struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	TouPromptDisabled pulumi.BoolOutput `pulumi:"touPromptDisabled"`
+	TouPromptDisabled pulumi.BoolPtrOutput `pulumi:"touPromptDisabled"`
 }
 
 // NewDomainsKmsiSetting registers a new resource with the given unique name, arguments, and options.
@@ -1158,12 +1157,6 @@ func (i *DomainsKmsiSetting) ToDomainsKmsiSettingOutputWithContext(ctx context.C
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsKmsiSettingOutput)
 }
 
-func (i *DomainsKmsiSetting) ToOutput(ctx context.Context) pulumix.Output[*DomainsKmsiSetting] {
-	return pulumix.Output[*DomainsKmsiSetting]{
-		OutputState: i.ToDomainsKmsiSettingOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DomainsKmsiSettingArrayInput is an input type that accepts DomainsKmsiSettingArray and DomainsKmsiSettingArrayOutput values.
 // You can construct a concrete instance of `DomainsKmsiSettingArrayInput` via:
 //
@@ -1187,12 +1180,6 @@ func (i DomainsKmsiSettingArray) ToDomainsKmsiSettingArrayOutput() DomainsKmsiSe
 
 func (i DomainsKmsiSettingArray) ToDomainsKmsiSettingArrayOutputWithContext(ctx context.Context) DomainsKmsiSettingArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsKmsiSettingArrayOutput)
-}
-
-func (i DomainsKmsiSettingArray) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsKmsiSetting] {
-	return pulumix.Output[[]*DomainsKmsiSetting]{
-		OutputState: i.ToDomainsKmsiSettingArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DomainsKmsiSettingMapInput is an input type that accepts DomainsKmsiSettingMap and DomainsKmsiSettingMapOutput values.
@@ -1220,12 +1207,6 @@ func (i DomainsKmsiSettingMap) ToDomainsKmsiSettingMapOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsKmsiSettingMapOutput)
 }
 
-func (i DomainsKmsiSettingMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsKmsiSetting] {
-	return pulumix.Output[map[string]*DomainsKmsiSetting]{
-		OutputState: i.ToDomainsKmsiSettingMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DomainsKmsiSettingOutput struct{ *pulumi.OutputState }
 
 func (DomainsKmsiSettingOutput) ElementType() reflect.Type {
@@ -1238,12 +1219,6 @@ func (o DomainsKmsiSettingOutput) ToDomainsKmsiSettingOutput() DomainsKmsiSettin
 
 func (o DomainsKmsiSettingOutput) ToDomainsKmsiSettingOutputWithContext(ctx context.Context) DomainsKmsiSettingOutput {
 	return o
-}
-
-func (o DomainsKmsiSettingOutput) ToOutput(ctx context.Context) pulumix.Output[*DomainsKmsiSetting] {
-	return pulumix.Output[*DomainsKmsiSetting]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
@@ -1272,8 +1247,8 @@ func (o DomainsKmsiSettingOutput) Authorization() pulumi.StringPtrOutput {
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsKmsiSettingOutput) CompartmentOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsKmsiSetting) pulumi.StringOutput { return v.CompartmentOcid }).(pulumi.StringOutput)
+func (o DomainsKmsiSettingOutput) CompartmentOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsKmsiSetting) pulumi.StringPtrOutput { return v.CompartmentOcid }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
@@ -1287,8 +1262,8 @@ func (o DomainsKmsiSettingOutput) CompartmentOcid() pulumi.StringOutput {
 // * returned: default
 // * type: boolean
 // * uniqueness: none
-func (o DomainsKmsiSettingOutput) DeleteInProgress() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DomainsKmsiSetting) pulumi.BoolOutput { return v.DeleteInProgress }).(pulumi.BoolOutput)
+func (o DomainsKmsiSettingOutput) DeleteInProgress() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DomainsKmsiSetting) pulumi.BoolPtrOutput { return v.DeleteInProgress }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
@@ -1302,8 +1277,8 @@ func (o DomainsKmsiSettingOutput) DeleteInProgress() pulumi.BoolOutput {
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsKmsiSettingOutput) DomainOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsKmsiSetting) pulumi.StringOutput { return v.DomainOcid }).(pulumi.StringOutput)
+func (o DomainsKmsiSettingOutput) DomainOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsKmsiSetting) pulumi.StringPtrOutput { return v.DomainOcid }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
@@ -1316,8 +1291,8 @@ func (o DomainsKmsiSettingOutput) DomainOcid() pulumi.StringOutput {
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsKmsiSettingOutput) ExternalId() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsKmsiSetting) pulumi.StringOutput { return v.ExternalId }).(pulumi.StringOutput)
+func (o DomainsKmsiSettingOutput) ExternalId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsKmsiSetting) pulumi.StringPtrOutput { return v.ExternalId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The User or App who created the Resource
@@ -1364,8 +1339,8 @@ func (o DomainsKmsiSettingOutput) IdcsLastModifiedBies() DomainsKmsiSettingIdcsL
 // * returned: request
 // * type: string
 // * uniqueness: none
-func (o DomainsKmsiSettingOutput) IdcsLastUpgradedInRelease() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsKmsiSetting) pulumi.StringOutput { return v.IdcsLastUpgradedInRelease }).(pulumi.StringOutput)
+func (o DomainsKmsiSettingOutput) IdcsLastUpgradedInRelease() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsKmsiSetting) pulumi.StringPtrOutput { return v.IdcsLastUpgradedInRelease }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
@@ -1392,8 +1367,8 @@ func (o DomainsKmsiSettingOutput) IdcsPreventedOperations() pulumi.StringArrayOu
 // * returned: default
 // * type: boolean
 // * uniqueness: none
-func (o DomainsKmsiSettingOutput) KmsiFeatureEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DomainsKmsiSetting) pulumi.BoolOutput { return v.KmsiFeatureEnabled }).(pulumi.BoolOutput)
+func (o DomainsKmsiSettingOutput) KmsiFeatureEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DomainsKmsiSetting) pulumi.BoolPtrOutput { return v.KmsiFeatureEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) Identifier represents KMSI to be prompted to user or not.
@@ -1406,8 +1381,8 @@ func (o DomainsKmsiSettingOutput) KmsiFeatureEnabled() pulumi.BoolOutput {
 // * returned: default
 // * type: boolean
 // * uniqueness: none
-func (o DomainsKmsiSettingOutput) KmsiPromptEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DomainsKmsiSetting) pulumi.BoolOutput { return v.KmsiPromptEnabled }).(pulumi.BoolOutput)
+func (o DomainsKmsiSettingOutput) KmsiPromptEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DomainsKmsiSetting) pulumi.BoolPtrOutput { return v.KmsiPromptEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // ID of the resource
@@ -1428,8 +1403,8 @@ func (o DomainsKmsiSettingOutput) KmsiSettingId() pulumi.StringOutput {
 // * returned: default
 // * type: dateTime
 // * uniqueness: none
-func (o DomainsKmsiSettingOutput) LastEnabledOn() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsKmsiSetting) pulumi.StringOutput { return v.LastEnabledOn }).(pulumi.StringOutput)
+func (o DomainsKmsiSettingOutput) LastEnabledOn() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsKmsiSetting) pulumi.StringPtrOutput { return v.LastEnabledOn }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Identifier represents duration in days within which kmsi token must be used.
@@ -1444,8 +1419,8 @@ func (o DomainsKmsiSettingOutput) LastEnabledOn() pulumi.StringOutput {
 // * idcsMaxValue: 365
 // * idcsMinValue: 1
 // * uniqueness: none
-func (o DomainsKmsiSettingOutput) LastUsedValidityInDays() pulumi.IntOutput {
-	return o.ApplyT(func(v *DomainsKmsiSetting) pulumi.IntOutput { return v.LastUsedValidityInDays }).(pulumi.IntOutput)
+func (o DomainsKmsiSettingOutput) LastUsedValidityInDays() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DomainsKmsiSetting) pulumi.IntPtrOutput { return v.LastUsedValidityInDays }).(pulumi.IntPtrOutput)
 }
 
 // (Updatable) Identifier represents maximum KMSI sessions allowed in the system.
@@ -1460,8 +1435,8 @@ func (o DomainsKmsiSettingOutput) LastUsedValidityInDays() pulumi.IntOutput {
 // * idcsMaxValue: 10
 // * idcsMinValue: 1
 // * uniqueness: none
-func (o DomainsKmsiSettingOutput) MaxAllowedSessions() pulumi.IntOutput {
-	return o.ApplyT(func(v *DomainsKmsiSetting) pulumi.IntOutput { return v.MaxAllowedSessions }).(pulumi.IntOutput)
+func (o DomainsKmsiSettingOutput) MaxAllowedSessions() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DomainsKmsiSetting) pulumi.IntPtrOutput { return v.MaxAllowedSessions }).(pulumi.IntPtrOutput)
 }
 
 // (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
@@ -1490,8 +1465,8 @@ func (o DomainsKmsiSettingOutput) Metas() DomainsKmsiSettingMetaArrayOutput {
 // * returned: default
 // * type: string
 // * uniqueness: global
-func (o DomainsKmsiSettingOutput) Ocid() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsKmsiSetting) pulumi.StringOutput { return v.Ocid }).(pulumi.StringOutput)
+func (o DomainsKmsiSettingOutput) Ocid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsKmsiSetting) pulumi.StringPtrOutput { return v.Ocid }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
@@ -1540,8 +1515,8 @@ func (o DomainsKmsiSettingOutput) Tags() DomainsKmsiSettingTagArrayOutput {
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsKmsiSettingOutput) TenancyOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsKmsiSetting) pulumi.StringOutput { return v.TenancyOcid }).(pulumi.StringOutput)
+func (o DomainsKmsiSettingOutput) TenancyOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsKmsiSetting) pulumi.StringPtrOutput { return v.TenancyOcid }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Identifier represents validity duration in days.
@@ -1556,8 +1531,8 @@ func (o DomainsKmsiSettingOutput) TenancyOcid() pulumi.StringOutput {
 // * idcsMaxValue: 1100
 // * idcsMinValue: 1
 // * uniqueness: none
-func (o DomainsKmsiSettingOutput) TokenValidityInDays() pulumi.IntOutput {
-	return o.ApplyT(func(v *DomainsKmsiSetting) pulumi.IntOutput { return v.TokenValidityInDays }).(pulumi.IntOutput)
+func (o DomainsKmsiSettingOutput) TokenValidityInDays() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DomainsKmsiSetting) pulumi.IntPtrOutput { return v.TokenValidityInDays }).(pulumi.IntPtrOutput)
 }
 
 // (Updatable) Identifier represents whether user is prompted for ToU or not.
@@ -1573,8 +1548,8 @@ func (o DomainsKmsiSettingOutput) TokenValidityInDays() pulumi.IntOutput {
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o DomainsKmsiSettingOutput) TouPromptDisabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DomainsKmsiSetting) pulumi.BoolOutput { return v.TouPromptDisabled }).(pulumi.BoolOutput)
+func (o DomainsKmsiSettingOutput) TouPromptDisabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DomainsKmsiSetting) pulumi.BoolPtrOutput { return v.TouPromptDisabled }).(pulumi.BoolPtrOutput)
 }
 
 type DomainsKmsiSettingArrayOutput struct{ *pulumi.OutputState }
@@ -1589,12 +1564,6 @@ func (o DomainsKmsiSettingArrayOutput) ToDomainsKmsiSettingArrayOutput() Domains
 
 func (o DomainsKmsiSettingArrayOutput) ToDomainsKmsiSettingArrayOutputWithContext(ctx context.Context) DomainsKmsiSettingArrayOutput {
 	return o
-}
-
-func (o DomainsKmsiSettingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsKmsiSetting] {
-	return pulumix.Output[[]*DomainsKmsiSetting]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DomainsKmsiSettingArrayOutput) Index(i pulumi.IntInput) DomainsKmsiSettingOutput {
@@ -1615,12 +1584,6 @@ func (o DomainsKmsiSettingMapOutput) ToDomainsKmsiSettingMapOutput() DomainsKmsi
 
 func (o DomainsKmsiSettingMapOutput) ToDomainsKmsiSettingMapOutputWithContext(ctx context.Context) DomainsKmsiSettingMapOutput {
 	return o
-}
-
-func (o DomainsKmsiSettingMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsKmsiSetting] {
-	return pulumix.Output[map[string]*DomainsKmsiSetting]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DomainsKmsiSettingMapOutput) MapIndex(k pulumi.StringInput) DomainsKmsiSettingOutput {

@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetUsagePlanEntitlementQuota {
@@ -14,51 +16,51 @@ public final class GetUsagePlanEntitlementQuota {
      * @return What the usage plan will do when a quota is breached: `REJECT` will allow no further requests `ALLOW` will continue to allow further requests
      * 
      */
-    private String operationOnBreach;
+    private @Nullable String operationOnBreach;
     /**
      * @return The policy that controls when quotas will reset. Example: `CALENDAR`
      * 
      */
-    private String resetPolicy;
+    private @Nullable String resetPolicy;
     /**
      * @return The unit of time over which rate limits are calculated. Example: `SECOND`
      * 
      */
-    private String unit;
+    private @Nullable String unit;
     /**
      * @return The number of requests that can be made per time period.
      * 
      */
-    private Integer value;
+    private @Nullable Integer value;
 
     private GetUsagePlanEntitlementQuota() {}
     /**
      * @return What the usage plan will do when a quota is breached: `REJECT` will allow no further requests `ALLOW` will continue to allow further requests
      * 
      */
-    public String operationOnBreach() {
-        return this.operationOnBreach;
+    public Optional<String> operationOnBreach() {
+        return Optional.ofNullable(this.operationOnBreach);
     }
     /**
      * @return The policy that controls when quotas will reset. Example: `CALENDAR`
      * 
      */
-    public String resetPolicy() {
-        return this.resetPolicy;
+    public Optional<String> resetPolicy() {
+        return Optional.ofNullable(this.resetPolicy);
     }
     /**
      * @return The unit of time over which rate limits are calculated. Example: `SECOND`
      * 
      */
-    public String unit() {
-        return this.unit;
+    public Optional<String> unit() {
+        return Optional.ofNullable(this.unit);
     }
     /**
      * @return The number of requests that can be made per time period.
      * 
      */
-    public Integer value() {
-        return this.value;
+    public Optional<Integer> value() {
+        return Optional.ofNullable(this.value);
     }
 
     public static Builder builder() {
@@ -70,10 +72,10 @@ public final class GetUsagePlanEntitlementQuota {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String operationOnBreach;
-        private String resetPolicy;
-        private String unit;
-        private Integer value;
+        private @Nullable String operationOnBreach;
+        private @Nullable String resetPolicy;
+        private @Nullable String unit;
+        private @Nullable Integer value;
         public Builder() {}
         public Builder(GetUsagePlanEntitlementQuota defaults) {
     	      Objects.requireNonNull(defaults);
@@ -84,23 +86,23 @@ public final class GetUsagePlanEntitlementQuota {
         }
 
         @CustomType.Setter
-        public Builder operationOnBreach(String operationOnBreach) {
-            this.operationOnBreach = Objects.requireNonNull(operationOnBreach);
+        public Builder operationOnBreach(@Nullable String operationOnBreach) {
+            this.operationOnBreach = operationOnBreach;
             return this;
         }
         @CustomType.Setter
-        public Builder resetPolicy(String resetPolicy) {
-            this.resetPolicy = Objects.requireNonNull(resetPolicy);
+        public Builder resetPolicy(@Nullable String resetPolicy) {
+            this.resetPolicy = resetPolicy;
             return this;
         }
         @CustomType.Setter
-        public Builder unit(String unit) {
-            this.unit = Objects.requireNonNull(unit);
+        public Builder unit(@Nullable String unit) {
+            this.unit = unit;
             return this;
         }
         @CustomType.Setter
-        public Builder value(Integer value) {
-            this.value = Objects.requireNonNull(value);
+        public Builder value(@Nullable Integer value) {
+            this.value = value;
             return this;
         }
         public GetUsagePlanEntitlementQuota build() {

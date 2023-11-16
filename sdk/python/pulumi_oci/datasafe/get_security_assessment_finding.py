@@ -74,12 +74,12 @@ class GetSecurityAssessmentFindingResult:
 
     @property
     @pulumi.getter
-    def findings(self) -> Sequence['outputs.GetSecurityAssessmentFindingFindingResult']:
+    def findings(self) -> Optional[Sequence['outputs.GetSecurityAssessmentFindingFindingResult']]:
         return pulumi.get(self, "findings")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """

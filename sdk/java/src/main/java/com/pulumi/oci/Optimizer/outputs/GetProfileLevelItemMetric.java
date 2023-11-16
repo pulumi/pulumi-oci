@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Double;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetProfileLevelItemMetric {
@@ -14,51 +16,51 @@ public final class GetProfileLevelItemMetric {
      * @return Optional. A filter that returns results that match the name specified.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return The name of the statistic (e.g., `p95`).
      * 
      */
-    private String statistic;
+    private @Nullable String statistic;
     /**
      * @return Optional. The metric value that the recommendation will target.
      * 
      */
-    private Double target;
+    private @Nullable Double target;
     /**
      * @return The threshold that must be crossed for the recommendation to appear.
      * 
      */
-    private Double threshold;
+    private @Nullable Double threshold;
 
     private GetProfileLevelItemMetric() {}
     /**
      * @return Optional. A filter that returns results that match the name specified.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return The name of the statistic (e.g., `p95`).
      * 
      */
-    public String statistic() {
-        return this.statistic;
+    public Optional<String> statistic() {
+        return Optional.ofNullable(this.statistic);
     }
     /**
      * @return Optional. The metric value that the recommendation will target.
      * 
      */
-    public Double target() {
-        return this.target;
+    public Optional<Double> target() {
+        return Optional.ofNullable(this.target);
     }
     /**
      * @return The threshold that must be crossed for the recommendation to appear.
      * 
      */
-    public Double threshold() {
-        return this.threshold;
+    public Optional<Double> threshold() {
+        return Optional.ofNullable(this.threshold);
     }
 
     public static Builder builder() {
@@ -70,10 +72,10 @@ public final class GetProfileLevelItemMetric {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String name;
-        private String statistic;
-        private Double target;
-        private Double threshold;
+        private @Nullable String name;
+        private @Nullable String statistic;
+        private @Nullable Double target;
+        private @Nullable Double threshold;
         public Builder() {}
         public Builder(GetProfileLevelItemMetric defaults) {
     	      Objects.requireNonNull(defaults);
@@ -84,23 +86,23 @@ public final class GetProfileLevelItemMetric {
         }
 
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder statistic(String statistic) {
-            this.statistic = Objects.requireNonNull(statistic);
+        public Builder statistic(@Nullable String statistic) {
+            this.statistic = statistic;
             return this;
         }
         @CustomType.Setter
-        public Builder target(Double target) {
-            this.target = Objects.requireNonNull(target);
+        public Builder target(@Nullable Double target) {
+            this.target = target;
             return this;
         }
         @CustomType.Setter
-        public Builder threshold(Double threshold) {
-            this.threshold = Objects.requireNonNull(threshold);
+        public Builder threshold(@Nullable Double threshold) {
+            this.threshold = threshold;
             return this;
         }
         public GetProfileLevelItemMetric build() {

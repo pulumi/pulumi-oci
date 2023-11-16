@@ -21,9 +21,6 @@ class AuthenticationPolicyArgs:
                  password_policy: Optional[pulumi.Input['AuthenticationPolicyPasswordPolicyArgs']] = None):
         """
         The set of arguments for constructing a AuthenticationPolicy resource.
-        :param pulumi.Input[str] compartment_id: The OCID of the compartment.
-        :param pulumi.Input['AuthenticationPolicyNetworkPolicyArgs'] network_policy: (Updatable) Network policy, Consists of a list of Network Source ids.
-        :param pulumi.Input['AuthenticationPolicyPasswordPolicyArgs'] password_policy: (Updatable) Password policy, currently set for the given compartment.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         if network_policy is not None:
@@ -34,9 +31,6 @@ class AuthenticationPolicyArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -46,9 +40,6 @@ class AuthenticationPolicyArgs:
     @property
     @pulumi.getter(name="networkPolicy")
     def network_policy(self) -> Optional[pulumi.Input['AuthenticationPolicyNetworkPolicyArgs']]:
-        """
-        (Updatable) Network policy, Consists of a list of Network Source ids.
-        """
         return pulumi.get(self, "network_policy")
 
     @network_policy.setter
@@ -58,9 +49,6 @@ class AuthenticationPolicyArgs:
     @property
     @pulumi.getter(name="passwordPolicy")
     def password_policy(self) -> Optional[pulumi.Input['AuthenticationPolicyPasswordPolicyArgs']]:
-        """
-        (Updatable) Password policy, currently set for the given compartment.
-        """
         return pulumi.get(self, "password_policy")
 
     @password_policy.setter
@@ -76,9 +64,6 @@ class _AuthenticationPolicyState:
                  password_policy: Optional[pulumi.Input['AuthenticationPolicyPasswordPolicyArgs']] = None):
         """
         Input properties used for looking up and filtering AuthenticationPolicy resources.
-        :param pulumi.Input[str] compartment_id: The OCID of the compartment.
-        :param pulumi.Input['AuthenticationPolicyNetworkPolicyArgs'] network_policy: (Updatable) Network policy, Consists of a list of Network Source ids.
-        :param pulumi.Input['AuthenticationPolicyPasswordPolicyArgs'] password_policy: (Updatable) Password policy, currently set for the given compartment.
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -90,9 +75,6 @@ class _AuthenticationPolicyState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -102,9 +84,6 @@ class _AuthenticationPolicyState:
     @property
     @pulumi.getter(name="networkPolicy")
     def network_policy(self) -> Optional[pulumi.Input['AuthenticationPolicyNetworkPolicyArgs']]:
-        """
-        (Updatable) Network policy, Consists of a list of Network Source ids.
-        """
         return pulumi.get(self, "network_policy")
 
     @network_policy.setter
@@ -114,9 +93,6 @@ class _AuthenticationPolicyState:
     @property
     @pulumi.getter(name="passwordPolicy")
     def password_policy(self) -> Optional[pulumi.Input['AuthenticationPolicyPasswordPolicyArgs']]:
-        """
-        (Updatable) Password policy, currently set for the given compartment.
-        """
         return pulumi.get(self, "password_policy")
 
     @password_policy.setter
@@ -134,44 +110,9 @@ class AuthenticationPolicy(pulumi.CustomResource):
                  password_policy: Optional[pulumi.Input[pulumi.InputType['AuthenticationPolicyPasswordPolicyArgs']]] = None,
                  __props__=None):
         """
-        This resource provides the Authentication Policy resource in Oracle Cloud Infrastructure Identity service.
-
-        Updates authentication policy for the specified tenancy
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_authentication_policy = oci.identity.AuthenticationPolicy("testAuthenticationPolicy",
-            compartment_id=var["tenancy_ocid"],
-            network_policy=oci.identity.AuthenticationPolicyNetworkPolicyArgs(
-                network_source_ids=var["authentication_policy_network_policy_network_source_ids"],
-            ),
-            password_policy=oci.identity.AuthenticationPolicyPasswordPolicyArgs(
-                is_lowercase_characters_required=var["authentication_policy_password_policy_is_lowercase_characters_required"],
-                is_numeric_characters_required=var["authentication_policy_password_policy_is_numeric_characters_required"],
-                is_special_characters_required=var["authentication_policy_password_policy_is_special_characters_required"],
-                is_uppercase_characters_required=var["authentication_policy_password_policy_is_uppercase_characters_required"],
-                is_username_containment_allowed=var["authentication_policy_password_policy_is_username_containment_allowed"],
-                minimum_password_length=var["authentication_policy_password_policy_minimum_password_length"],
-            ))
-        ```
-
-        ## Import
-
-        AuthenticationPolicies can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Identity/authenticationPolicy:AuthenticationPolicy test_authentication_policy "authenticationPolicies/{compartmentId}"
-        ```
-
+        Create a AuthenticationPolicy resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: The OCID of the compartment.
-        :param pulumi.Input[pulumi.InputType['AuthenticationPolicyNetworkPolicyArgs']] network_policy: (Updatable) Network policy, Consists of a list of Network Source ids.
-        :param pulumi.Input[pulumi.InputType['AuthenticationPolicyPasswordPolicyArgs']] password_policy: (Updatable) Password policy, currently set for the given compartment.
         """
         ...
     @overload
@@ -180,39 +121,7 @@ class AuthenticationPolicy(pulumi.CustomResource):
                  args: AuthenticationPolicyArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Authentication Policy resource in Oracle Cloud Infrastructure Identity service.
-
-        Updates authentication policy for the specified tenancy
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_authentication_policy = oci.identity.AuthenticationPolicy("testAuthenticationPolicy",
-            compartment_id=var["tenancy_ocid"],
-            network_policy=oci.identity.AuthenticationPolicyNetworkPolicyArgs(
-                network_source_ids=var["authentication_policy_network_policy_network_source_ids"],
-            ),
-            password_policy=oci.identity.AuthenticationPolicyPasswordPolicyArgs(
-                is_lowercase_characters_required=var["authentication_policy_password_policy_is_lowercase_characters_required"],
-                is_numeric_characters_required=var["authentication_policy_password_policy_is_numeric_characters_required"],
-                is_special_characters_required=var["authentication_policy_password_policy_is_special_characters_required"],
-                is_uppercase_characters_required=var["authentication_policy_password_policy_is_uppercase_characters_required"],
-                is_username_containment_allowed=var["authentication_policy_password_policy_is_username_containment_allowed"],
-                minimum_password_length=var["authentication_policy_password_policy_minimum_password_length"],
-            ))
-        ```
-
-        ## Import
-
-        AuthenticationPolicies can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Identity/authenticationPolicy:AuthenticationPolicy test_authentication_policy "authenticationPolicies/{compartmentId}"
-        ```
-
+        Create a AuthenticationPolicy resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param AuthenticationPolicyArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -265,9 +174,6 @@ class AuthenticationPolicy(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: The OCID of the compartment.
-        :param pulumi.Input[pulumi.InputType['AuthenticationPolicyNetworkPolicyArgs']] network_policy: (Updatable) Network policy, Consists of a list of Network Source ids.
-        :param pulumi.Input[pulumi.InputType['AuthenticationPolicyPasswordPolicyArgs']] password_policy: (Updatable) Password policy, currently set for the given compartment.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -281,24 +187,15 @@ class AuthenticationPolicy(pulumi.CustomResource):
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="networkPolicy")
-    def network_policy(self) -> pulumi.Output['outputs.AuthenticationPolicyNetworkPolicy']:
-        """
-        (Updatable) Network policy, Consists of a list of Network Source ids.
-        """
+    def network_policy(self) -> pulumi.Output[Optional['outputs.AuthenticationPolicyNetworkPolicy']]:
         return pulumi.get(self, "network_policy")
 
     @property
     @pulumi.getter(name="passwordPolicy")
-    def password_policy(self) -> pulumi.Output['outputs.AuthenticationPolicyPasswordPolicy']:
-        """
-        (Updatable) Password policy, currently set for the given compartment.
-        """
+    def password_policy(self) -> pulumi.Output[Optional['outputs.AuthenticationPolicyPasswordPolicy']]:
         return pulumi.get(self, "password_policy")
 

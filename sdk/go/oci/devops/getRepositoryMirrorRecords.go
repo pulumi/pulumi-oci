@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Repository Mirror Records in Oracle Cloud Infrastructure Devops service.
@@ -62,8 +61,8 @@ type GetRepositoryMirrorRecordsArgs struct {
 type GetRepositoryMirrorRecordsResult struct {
 	Filters []GetRepositoryMirrorRecordsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id           string `pulumi:"id"`
-	RepositoryId string `pulumi:"repositoryId"`
+	Id           *string `pulumi:"id"`
+	RepositoryId string  `pulumi:"repositoryId"`
 	// The list of repository_mirror_record_collection.
 	RepositoryMirrorRecordCollections []GetRepositoryMirrorRecordsRepositoryMirrorRecordCollection `pulumi:"repositoryMirrorRecordCollections"`
 }
@@ -107,19 +106,13 @@ func (o GetRepositoryMirrorRecordsResultOutput) ToGetRepositoryMirrorRecordsResu
 	return o
 }
 
-func (o GetRepositoryMirrorRecordsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetRepositoryMirrorRecordsResult] {
-	return pulumix.Output[GetRepositoryMirrorRecordsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetRepositoryMirrorRecordsResultOutput) Filters() GetRepositoryMirrorRecordsFilterArrayOutput {
 	return o.ApplyT(func(v GetRepositoryMirrorRecordsResult) []GetRepositoryMirrorRecordsFilter { return v.Filters }).(GetRepositoryMirrorRecordsFilterArrayOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetRepositoryMirrorRecordsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRepositoryMirrorRecordsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetRepositoryMirrorRecordsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRepositoryMirrorRecordsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetRepositoryMirrorRecordsResultOutput) RepositoryId() pulumi.StringOutput {

@@ -8,6 +8,8 @@ import com.pulumi.oci.Opsi.outputs.GetImportableComputeEntitiesItem;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetImportableComputeEntitiesResult {
@@ -20,12 +22,12 @@ public final class GetImportableComputeEntitiesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Array of importable compute entity objects.
      * 
      */
-    private List<GetImportableComputeEntitiesItem> items;
+    private @Nullable List<GetImportableComputeEntitiesItem> items;
 
     private GetImportableComputeEntitiesResult() {}
     /**
@@ -39,15 +41,15 @@ public final class GetImportableComputeEntitiesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Array of importable compute entity objects.
      * 
      */
     public List<GetImportableComputeEntitiesItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -60,8 +62,8 @@ public final class GetImportableComputeEntitiesResult {
     @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
-        private String id;
-        private List<GetImportableComputeEntitiesItem> items;
+        private @Nullable String id;
+        private @Nullable List<GetImportableComputeEntitiesItem> items;
         public Builder() {}
         public Builder(GetImportableComputeEntitiesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -76,13 +78,13 @@ public final class GetImportableComputeEntitiesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder items(List<GetImportableComputeEntitiesItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetImportableComputeEntitiesItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetImportableComputeEntitiesItem... items) {

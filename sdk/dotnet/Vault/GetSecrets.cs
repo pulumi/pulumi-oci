@@ -171,7 +171,7 @@ namespace Pulumi.Oci.Vault
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string? Name;
         /// <summary>
         /// The list of secrets.
@@ -192,7 +192,7 @@ namespace Pulumi.Oci.Vault
 
             ImmutableArray<Outputs.GetSecretsFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? name,
 

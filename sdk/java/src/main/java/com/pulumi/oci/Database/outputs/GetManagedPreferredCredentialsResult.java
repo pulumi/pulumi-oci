@@ -9,6 +9,7 @@ import com.pulumi.oci.Database.outputs.GetManagedPreferredCredentialsPreferredCr
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -18,13 +19,13 @@ public final class GetManagedPreferredCredentialsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String managedDatabaseId;
     /**
      * @return The list of preferred_credential_collection.
      * 
      */
-    private List<GetManagedPreferredCredentialsPreferredCredentialCollection> preferredCredentialCollections;
+    private @Nullable List<GetManagedPreferredCredentialsPreferredCredentialCollection> preferredCredentialCollections;
 
     private GetManagedPreferredCredentialsResult() {}
     public List<GetManagedPreferredCredentialsFilter> filters() {
@@ -34,8 +35,8 @@ public final class GetManagedPreferredCredentialsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String managedDatabaseId() {
         return this.managedDatabaseId;
@@ -45,7 +46,7 @@ public final class GetManagedPreferredCredentialsResult {
      * 
      */
     public List<GetManagedPreferredCredentialsPreferredCredentialCollection> preferredCredentialCollections() {
-        return this.preferredCredentialCollections;
+        return this.preferredCredentialCollections == null ? List.of() : this.preferredCredentialCollections;
     }
 
     public static Builder builder() {
@@ -58,9 +59,9 @@ public final class GetManagedPreferredCredentialsResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetManagedPreferredCredentialsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private String managedDatabaseId;
-        private List<GetManagedPreferredCredentialsPreferredCredentialCollection> preferredCredentialCollections;
+        private @Nullable List<GetManagedPreferredCredentialsPreferredCredentialCollection> preferredCredentialCollections;
         public Builder() {}
         public Builder(GetManagedPreferredCredentialsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -79,8 +80,8 @@ public final class GetManagedPreferredCredentialsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -89,8 +90,8 @@ public final class GetManagedPreferredCredentialsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder preferredCredentialCollections(List<GetManagedPreferredCredentialsPreferredCredentialCollection> preferredCredentialCollections) {
-            this.preferredCredentialCollections = Objects.requireNonNull(preferredCredentialCollections);
+        public Builder preferredCredentialCollections(@Nullable List<GetManagedPreferredCredentialsPreferredCredentialCollection> preferredCredentialCollections) {
+            this.preferredCredentialCollections = preferredCredentialCollections;
             return this;
         }
         public Builder preferredCredentialCollections(GetManagedPreferredCredentialsPreferredCredentialCollection... preferredCredentialCollections) {

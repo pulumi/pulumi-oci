@@ -16,17 +16,17 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// <summary>
         /// The total amount of memory available to the notebook session instance, in gigabytes.
         /// </summary>
-        public readonly double MemoryInGbs;
+        public readonly double? MemoryInGbs;
         /// <summary>
         /// The total number of OCPUs available to the notebook session instance.
         /// </summary>
-        public readonly double Ocpus;
+        public readonly double? Ocpus;
 
         [OutputConstructor]
         private GetNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailResult(
-            double memoryInGbs,
+            double? memoryInGbs,
 
-            double ocpus)
+            double? ocpus)
         {
             MemoryInGbs = memoryInGbs;
             Ocpus = ocpus;

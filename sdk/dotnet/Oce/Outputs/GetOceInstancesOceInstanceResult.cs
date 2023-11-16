@@ -20,160 +20,160 @@ namespace Pulumi.Oci.Oce.Outputs
         /// <summary>
         /// Admin Email for Notification
         /// </summary>
-        public readonly string AdminEmail;
+        public readonly string? AdminEmail;
         /// <summary>
         /// The ID of the compartment in which to list resources.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// OceInstance description, can be updated
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// disaster recovery paired ragion name
         /// </summary>
-        public readonly string DrRegion;
+        public readonly string? DrRegion;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// Unique GUID identifier that is immutable on creation
         /// </summary>
-        public readonly string Guid;
+        public readonly string? Guid;
         /// <summary>
         /// Unique identifier that is immutable on creation
         /// </summary>
-        public readonly string Id;
-        public readonly string IdcsAccessToken;
+        public readonly string? Id;
+        public readonly string? IdcsAccessToken;
         /// <summary>
         /// IDCS Tenancy Identifier
         /// </summary>
-        public readonly string IdcsTenancy;
+        public readonly string? IdcsTenancy;
         /// <summary>
         /// Flag indicating whether the instance access is private or public
         /// </summary>
-        public readonly string InstanceAccessType;
+        public readonly string? InstanceAccessType;
         /// <summary>
         /// Flag indicating whether the instance license is new cloud or bring your own license
         /// </summary>
-        public readonly string InstanceLicenseType;
+        public readonly string? InstanceLicenseType;
         /// <summary>
         /// Instance type based on its usage
         /// </summary>
-        public readonly string InstanceUsageType;
+        public readonly string? InstanceUsageType;
         /// <summary>
         /// Details of the current state of the instance lifecycle
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// OceInstance Name
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// Object Storage Namespace of tenancy
         /// </summary>
-        public readonly string ObjectStorageNamespace;
+        public readonly string? ObjectStorageNamespace;
         /// <summary>
         /// SERVICE data. Example: `{"service": {"IDCS": "value"}}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> Service;
+        public readonly ImmutableDictionary<string, object>? Service;
         /// <summary>
         /// Filter results on lifecycleState.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
-        public readonly string StateMessage;
+        public readonly string? StateMessage;
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, object>? SystemTags;
         /// <summary>
         /// The ID of the tenancy in which to list resources.
         /// </summary>
-        public readonly string TenancyId;
+        public readonly string? TenancyId;
         /// <summary>
         /// Tenancy Name
         /// </summary>
-        public readonly string TenancyName;
+        public readonly string? TenancyName;
         /// <summary>
         /// The time the the OceInstance was created. An RFC3339 formatted datetime string
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The time the OceInstance was updated. An RFC3339 formatted datetime string
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
         /// <summary>
         /// Upgrade schedule type representing service to be upgraded immediately whenever latest version is released or delay upgrade of the service to previous released version
         /// </summary>
-        public readonly string UpgradeSchedule;
+        public readonly string? UpgradeSchedule;
         /// <summary>
         /// Web Application Firewall(WAF) primary domain
         /// </summary>
-        public readonly string WafPrimaryDomain;
+        public readonly string? WafPrimaryDomain;
 
         [OutputConstructor]
         private GetOceInstancesOceInstanceResult(
             ImmutableArray<string> addOnFeatures,
 
-            string adminEmail,
+            string? adminEmail,
 
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string description,
+            string? description,
 
-            string drRegion,
+            string? drRegion,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string guid,
+            string? guid,
 
-            string id,
+            string? id,
 
-            string idcsAccessToken,
+            string? idcsAccessToken,
 
-            string idcsTenancy,
+            string? idcsTenancy,
 
-            string instanceAccessType,
+            string? instanceAccessType,
 
-            string instanceLicenseType,
+            string? instanceLicenseType,
 
-            string instanceUsageType,
+            string? instanceUsageType,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string name,
+            string? name,
 
-            string objectStorageNamespace,
+            string? objectStorageNamespace,
 
-            ImmutableDictionary<string, object> service,
+            ImmutableDictionary<string, object>? service,
 
-            string state,
+            string? state,
 
-            string stateMessage,
+            string? stateMessage,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, object>? systemTags,
 
-            string tenancyId,
+            string? tenancyId,
 
-            string tenancyName,
+            string? tenancyName,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated,
+            string? timeUpdated,
 
-            string upgradeSchedule,
+            string? upgradeSchedule,
 
-            string wafPrimaryDomain)
+            string? wafPrimaryDomain)
         {
             AddOnFeatures = addOnFeatures;
             AdminEmail = adminEmail;

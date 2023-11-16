@@ -9,6 +9,8 @@ import java.lang.Double;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetInvoicesInvoiceLineItem {
@@ -16,47 +18,47 @@ public final class GetInvoicesInvoiceLineItem {
      * @return Currency details model
      * 
      */
-    private List<GetInvoicesInvoiceLineItemCurrency> currencies;
+    private @Nullable List<GetInvoicesInvoiceLineItemCurrency> currencies;
     /**
      * @return Unit price of the ordered product
      * 
      */
-    private Double netUnitPrice;
+    private @Nullable Double netUnitPrice;
     /**
      * @return Product of the item
      * 
      */
-    private String orderNo;
+    private @Nullable String orderNo;
     /**
      * @return Part number
      * 
      */
-    private String partNumber;
+    private @Nullable String partNumber;
     /**
      * @return Product of the item
      * 
      */
-    private String product;
+    private @Nullable String product;
     /**
      * @return Quantity of the ordered product
      * 
      */
-    private Double quantity;
+    private @Nullable Double quantity;
     /**
      * @return End date
      * 
      */
-    private String timeEnd;
+    private @Nullable String timeEnd;
     /**
      * @return Start date
      * 
      */
-    private String timeStart;
+    private @Nullable String timeStart;
     /**
      * @return Total price of the ordered product (Net unit price x quantity)
      * 
      */
-    private Double totalPrice;
+    private @Nullable Double totalPrice;
 
     private GetInvoicesInvoiceLineItem() {}
     /**
@@ -64,63 +66,63 @@ public final class GetInvoicesInvoiceLineItem {
      * 
      */
     public List<GetInvoicesInvoiceLineItemCurrency> currencies() {
-        return this.currencies;
+        return this.currencies == null ? List.of() : this.currencies;
     }
     /**
      * @return Unit price of the ordered product
      * 
      */
-    public Double netUnitPrice() {
-        return this.netUnitPrice;
+    public Optional<Double> netUnitPrice() {
+        return Optional.ofNullable(this.netUnitPrice);
     }
     /**
      * @return Product of the item
      * 
      */
-    public String orderNo() {
-        return this.orderNo;
+    public Optional<String> orderNo() {
+        return Optional.ofNullable(this.orderNo);
     }
     /**
      * @return Part number
      * 
      */
-    public String partNumber() {
-        return this.partNumber;
+    public Optional<String> partNumber() {
+        return Optional.ofNullable(this.partNumber);
     }
     /**
      * @return Product of the item
      * 
      */
-    public String product() {
-        return this.product;
+    public Optional<String> product() {
+        return Optional.ofNullable(this.product);
     }
     /**
      * @return Quantity of the ordered product
      * 
      */
-    public Double quantity() {
-        return this.quantity;
+    public Optional<Double> quantity() {
+        return Optional.ofNullable(this.quantity);
     }
     /**
      * @return End date
      * 
      */
-    public String timeEnd() {
-        return this.timeEnd;
+    public Optional<String> timeEnd() {
+        return Optional.ofNullable(this.timeEnd);
     }
     /**
      * @return Start date
      * 
      */
-    public String timeStart() {
-        return this.timeStart;
+    public Optional<String> timeStart() {
+        return Optional.ofNullable(this.timeStart);
     }
     /**
      * @return Total price of the ordered product (Net unit price x quantity)
      * 
      */
-    public Double totalPrice() {
-        return this.totalPrice;
+    public Optional<Double> totalPrice() {
+        return Optional.ofNullable(this.totalPrice);
     }
 
     public static Builder builder() {
@@ -132,15 +134,15 @@ public final class GetInvoicesInvoiceLineItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetInvoicesInvoiceLineItemCurrency> currencies;
-        private Double netUnitPrice;
-        private String orderNo;
-        private String partNumber;
-        private String product;
-        private Double quantity;
-        private String timeEnd;
-        private String timeStart;
-        private Double totalPrice;
+        private @Nullable List<GetInvoicesInvoiceLineItemCurrency> currencies;
+        private @Nullable Double netUnitPrice;
+        private @Nullable String orderNo;
+        private @Nullable String partNumber;
+        private @Nullable String product;
+        private @Nullable Double quantity;
+        private @Nullable String timeEnd;
+        private @Nullable String timeStart;
+        private @Nullable Double totalPrice;
         public Builder() {}
         public Builder(GetInvoicesInvoiceLineItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -156,51 +158,51 @@ public final class GetInvoicesInvoiceLineItem {
         }
 
         @CustomType.Setter
-        public Builder currencies(List<GetInvoicesInvoiceLineItemCurrency> currencies) {
-            this.currencies = Objects.requireNonNull(currencies);
+        public Builder currencies(@Nullable List<GetInvoicesInvoiceLineItemCurrency> currencies) {
+            this.currencies = currencies;
             return this;
         }
         public Builder currencies(GetInvoicesInvoiceLineItemCurrency... currencies) {
             return currencies(List.of(currencies));
         }
         @CustomType.Setter
-        public Builder netUnitPrice(Double netUnitPrice) {
-            this.netUnitPrice = Objects.requireNonNull(netUnitPrice);
+        public Builder netUnitPrice(@Nullable Double netUnitPrice) {
+            this.netUnitPrice = netUnitPrice;
             return this;
         }
         @CustomType.Setter
-        public Builder orderNo(String orderNo) {
-            this.orderNo = Objects.requireNonNull(orderNo);
+        public Builder orderNo(@Nullable String orderNo) {
+            this.orderNo = orderNo;
             return this;
         }
         @CustomType.Setter
-        public Builder partNumber(String partNumber) {
-            this.partNumber = Objects.requireNonNull(partNumber);
+        public Builder partNumber(@Nullable String partNumber) {
+            this.partNumber = partNumber;
             return this;
         }
         @CustomType.Setter
-        public Builder product(String product) {
-            this.product = Objects.requireNonNull(product);
+        public Builder product(@Nullable String product) {
+            this.product = product;
             return this;
         }
         @CustomType.Setter
-        public Builder quantity(Double quantity) {
-            this.quantity = Objects.requireNonNull(quantity);
+        public Builder quantity(@Nullable Double quantity) {
+            this.quantity = quantity;
             return this;
         }
         @CustomType.Setter
-        public Builder timeEnd(String timeEnd) {
-            this.timeEnd = Objects.requireNonNull(timeEnd);
+        public Builder timeEnd(@Nullable String timeEnd) {
+            this.timeEnd = timeEnd;
             return this;
         }
         @CustomType.Setter
-        public Builder timeStart(String timeStart) {
-            this.timeStart = Objects.requireNonNull(timeStart);
+        public Builder timeStart(@Nullable String timeStart) {
+            this.timeStart = timeStart;
             return this;
         }
         @CustomType.Setter
-        public Builder totalPrice(Double totalPrice) {
-            this.totalPrice = Objects.requireNonNull(totalPrice);
+        public Builder totalPrice(@Nullable Double totalPrice) {
+            this.totalPrice = totalPrice;
             return this;
         }
         public GetInvoicesInvoiceLineItem build() {

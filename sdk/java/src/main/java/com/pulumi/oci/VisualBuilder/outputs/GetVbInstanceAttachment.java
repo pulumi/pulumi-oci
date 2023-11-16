@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetVbInstanceAttachment {
@@ -15,27 +17,27 @@ public final class GetVbInstanceAttachment {
      * * If role == `CHILD`, this instance was created from attached instance on behalf of a user
      * 
      */
-    private Boolean isImplicit;
+    private @Nullable Boolean isImplicit;
     /**
      * @return The OCID of the target instance (which could be any other Oracle Cloud Infrastructure PaaS/SaaS resource), to which this instance is attached.
      * 
      */
-    private String targetId;
+    private @Nullable String targetId;
     /**
      * @return The dataplane instance URL of the attached instance
      * 
      */
-    private String targetInstanceUrl;
+    private @Nullable String targetInstanceUrl;
     /**
      * @return The role of the target attachment.
      * 
      */
-    private String targetRole;
+    private @Nullable String targetRole;
     /**
      * @return The type of the target instance, such as &#34;FUSION&#34;.
      * 
      */
-    private String targetServiceType;
+    private @Nullable String targetServiceType;
 
     private GetVbInstanceAttachment() {}
     /**
@@ -43,36 +45,36 @@ public final class GetVbInstanceAttachment {
      * * If role == `CHILD`, this instance was created from attached instance on behalf of a user
      * 
      */
-    public Boolean isImplicit() {
-        return this.isImplicit;
+    public Optional<Boolean> isImplicit() {
+        return Optional.ofNullable(this.isImplicit);
     }
     /**
      * @return The OCID of the target instance (which could be any other Oracle Cloud Infrastructure PaaS/SaaS resource), to which this instance is attached.
      * 
      */
-    public String targetId() {
-        return this.targetId;
+    public Optional<String> targetId() {
+        return Optional.ofNullable(this.targetId);
     }
     /**
      * @return The dataplane instance URL of the attached instance
      * 
      */
-    public String targetInstanceUrl() {
-        return this.targetInstanceUrl;
+    public Optional<String> targetInstanceUrl() {
+        return Optional.ofNullable(this.targetInstanceUrl);
     }
     /**
      * @return The role of the target attachment.
      * 
      */
-    public String targetRole() {
-        return this.targetRole;
+    public Optional<String> targetRole() {
+        return Optional.ofNullable(this.targetRole);
     }
     /**
      * @return The type of the target instance, such as &#34;FUSION&#34;.
      * 
      */
-    public String targetServiceType() {
-        return this.targetServiceType;
+    public Optional<String> targetServiceType() {
+        return Optional.ofNullable(this.targetServiceType);
     }
 
     public static Builder builder() {
@@ -84,11 +86,11 @@ public final class GetVbInstanceAttachment {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Boolean isImplicit;
-        private String targetId;
-        private String targetInstanceUrl;
-        private String targetRole;
-        private String targetServiceType;
+        private @Nullable Boolean isImplicit;
+        private @Nullable String targetId;
+        private @Nullable String targetInstanceUrl;
+        private @Nullable String targetRole;
+        private @Nullable String targetServiceType;
         public Builder() {}
         public Builder(GetVbInstanceAttachment defaults) {
     	      Objects.requireNonNull(defaults);
@@ -100,28 +102,28 @@ public final class GetVbInstanceAttachment {
         }
 
         @CustomType.Setter
-        public Builder isImplicit(Boolean isImplicit) {
-            this.isImplicit = Objects.requireNonNull(isImplicit);
+        public Builder isImplicit(@Nullable Boolean isImplicit) {
+            this.isImplicit = isImplicit;
             return this;
         }
         @CustomType.Setter
-        public Builder targetId(String targetId) {
-            this.targetId = Objects.requireNonNull(targetId);
+        public Builder targetId(@Nullable String targetId) {
+            this.targetId = targetId;
             return this;
         }
         @CustomType.Setter
-        public Builder targetInstanceUrl(String targetInstanceUrl) {
-            this.targetInstanceUrl = Objects.requireNonNull(targetInstanceUrl);
+        public Builder targetInstanceUrl(@Nullable String targetInstanceUrl) {
+            this.targetInstanceUrl = targetInstanceUrl;
             return this;
         }
         @CustomType.Setter
-        public Builder targetRole(String targetRole) {
-            this.targetRole = Objects.requireNonNull(targetRole);
+        public Builder targetRole(@Nullable String targetRole) {
+            this.targetRole = targetRole;
             return this;
         }
         @CustomType.Setter
-        public Builder targetServiceType(String targetServiceType) {
-            this.targetServiceType = Objects.requireNonNull(targetServiceType);
+        public Builder targetServiceType(@Nullable String targetServiceType) {
+            this.targetServiceType = targetServiceType;
             return this;
         }
         public GetVbInstanceAttachment build() {

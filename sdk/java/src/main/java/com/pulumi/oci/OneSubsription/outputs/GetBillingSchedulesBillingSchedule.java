@@ -8,6 +8,8 @@ import com.pulumi.oci.OneSubsription.outputs.GetBillingSchedulesBillingScheduleP
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetBillingSchedulesBillingSchedule {
@@ -15,159 +17,159 @@ public final class GetBillingSchedulesBillingSchedule {
      * @return Billing schedule line net amount
      * 
      */
-    private String amount;
+    private @Nullable String amount;
     /**
      * @return Indicates the associated AR Customer transaction id a unique identifier existing on AR.
      * 
      */
-    private String arCustomerTransactionId;
+    private @Nullable String arCustomerTransactionId;
     /**
      * @return Indicates the associated AR Invoice Number
      * 
      */
-    private String arInvoiceNumber;
+    private @Nullable String arInvoiceNumber;
     /**
      * @return Billing frequency
      * 
      */
-    private String billingFrequency;
+    private @Nullable String billingFrequency;
     /**
      * @return Billing schedule invoice status
      * 
      */
-    private String invoiceStatus;
+    private @Nullable String invoiceStatus;
     /**
      * @return Billing schedule net unit price
      * 
      */
-    private String netUnitPrice;
+    private @Nullable String netUnitPrice;
     /**
      * @return Order number associated with the Subscribed Service
      * 
      */
-    private String orderNumber;
+    private @Nullable String orderNumber;
     /**
      * @return Product description
      * 
      */
-    private List<GetBillingSchedulesBillingScheduleProduct> products;
+    private @Nullable List<GetBillingSchedulesBillingScheduleProduct> products;
     /**
      * @return Billing schedule quantity
      * 
      */
-    private String quantity;
+    private @Nullable String quantity;
     /**
      * @return This param is used to get only the billing schedules for a particular Subscribed Service
      * 
      */
-    private String subscribedServiceId;
+    private @Nullable String subscribedServiceId;
     /**
      * @return Billing schedule end date
      * 
      */
-    private String timeEnd;
+    private @Nullable String timeEnd;
     /**
      * @return Billing schedule invoicing date
      * 
      */
-    private String timeInvoicing;
+    private @Nullable String timeInvoicing;
     /**
      * @return Billing schedule start date
      * 
      */
-    private String timeStart;
+    private @Nullable String timeStart;
 
     private GetBillingSchedulesBillingSchedule() {}
     /**
      * @return Billing schedule line net amount
      * 
      */
-    public String amount() {
-        return this.amount;
+    public Optional<String> amount() {
+        return Optional.ofNullable(this.amount);
     }
     /**
      * @return Indicates the associated AR Customer transaction id a unique identifier existing on AR.
      * 
      */
-    public String arCustomerTransactionId() {
-        return this.arCustomerTransactionId;
+    public Optional<String> arCustomerTransactionId() {
+        return Optional.ofNullable(this.arCustomerTransactionId);
     }
     /**
      * @return Indicates the associated AR Invoice Number
      * 
      */
-    public String arInvoiceNumber() {
-        return this.arInvoiceNumber;
+    public Optional<String> arInvoiceNumber() {
+        return Optional.ofNullable(this.arInvoiceNumber);
     }
     /**
      * @return Billing frequency
      * 
      */
-    public String billingFrequency() {
-        return this.billingFrequency;
+    public Optional<String> billingFrequency() {
+        return Optional.ofNullable(this.billingFrequency);
     }
     /**
      * @return Billing schedule invoice status
      * 
      */
-    public String invoiceStatus() {
-        return this.invoiceStatus;
+    public Optional<String> invoiceStatus() {
+        return Optional.ofNullable(this.invoiceStatus);
     }
     /**
      * @return Billing schedule net unit price
      * 
      */
-    public String netUnitPrice() {
-        return this.netUnitPrice;
+    public Optional<String> netUnitPrice() {
+        return Optional.ofNullable(this.netUnitPrice);
     }
     /**
      * @return Order number associated with the Subscribed Service
      * 
      */
-    public String orderNumber() {
-        return this.orderNumber;
+    public Optional<String> orderNumber() {
+        return Optional.ofNullable(this.orderNumber);
     }
     /**
      * @return Product description
      * 
      */
     public List<GetBillingSchedulesBillingScheduleProduct> products() {
-        return this.products;
+        return this.products == null ? List.of() : this.products;
     }
     /**
      * @return Billing schedule quantity
      * 
      */
-    public String quantity() {
-        return this.quantity;
+    public Optional<String> quantity() {
+        return Optional.ofNullable(this.quantity);
     }
     /**
      * @return This param is used to get only the billing schedules for a particular Subscribed Service
      * 
      */
-    public String subscribedServiceId() {
-        return this.subscribedServiceId;
+    public Optional<String> subscribedServiceId() {
+        return Optional.ofNullable(this.subscribedServiceId);
     }
     /**
      * @return Billing schedule end date
      * 
      */
-    public String timeEnd() {
-        return this.timeEnd;
+    public Optional<String> timeEnd() {
+        return Optional.ofNullable(this.timeEnd);
     }
     /**
      * @return Billing schedule invoicing date
      * 
      */
-    public String timeInvoicing() {
-        return this.timeInvoicing;
+    public Optional<String> timeInvoicing() {
+        return Optional.ofNullable(this.timeInvoicing);
     }
     /**
      * @return Billing schedule start date
      * 
      */
-    public String timeStart() {
-        return this.timeStart;
+    public Optional<String> timeStart() {
+        return Optional.ofNullable(this.timeStart);
     }
 
     public static Builder builder() {
@@ -179,19 +181,19 @@ public final class GetBillingSchedulesBillingSchedule {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String amount;
-        private String arCustomerTransactionId;
-        private String arInvoiceNumber;
-        private String billingFrequency;
-        private String invoiceStatus;
-        private String netUnitPrice;
-        private String orderNumber;
-        private List<GetBillingSchedulesBillingScheduleProduct> products;
-        private String quantity;
-        private String subscribedServiceId;
-        private String timeEnd;
-        private String timeInvoicing;
-        private String timeStart;
+        private @Nullable String amount;
+        private @Nullable String arCustomerTransactionId;
+        private @Nullable String arInvoiceNumber;
+        private @Nullable String billingFrequency;
+        private @Nullable String invoiceStatus;
+        private @Nullable String netUnitPrice;
+        private @Nullable String orderNumber;
+        private @Nullable List<GetBillingSchedulesBillingScheduleProduct> products;
+        private @Nullable String quantity;
+        private @Nullable String subscribedServiceId;
+        private @Nullable String timeEnd;
+        private @Nullable String timeInvoicing;
+        private @Nullable String timeStart;
         public Builder() {}
         public Builder(GetBillingSchedulesBillingSchedule defaults) {
     	      Objects.requireNonNull(defaults);
@@ -211,71 +213,71 @@ public final class GetBillingSchedulesBillingSchedule {
         }
 
         @CustomType.Setter
-        public Builder amount(String amount) {
-            this.amount = Objects.requireNonNull(amount);
+        public Builder amount(@Nullable String amount) {
+            this.amount = amount;
             return this;
         }
         @CustomType.Setter
-        public Builder arCustomerTransactionId(String arCustomerTransactionId) {
-            this.arCustomerTransactionId = Objects.requireNonNull(arCustomerTransactionId);
+        public Builder arCustomerTransactionId(@Nullable String arCustomerTransactionId) {
+            this.arCustomerTransactionId = arCustomerTransactionId;
             return this;
         }
         @CustomType.Setter
-        public Builder arInvoiceNumber(String arInvoiceNumber) {
-            this.arInvoiceNumber = Objects.requireNonNull(arInvoiceNumber);
+        public Builder arInvoiceNumber(@Nullable String arInvoiceNumber) {
+            this.arInvoiceNumber = arInvoiceNumber;
             return this;
         }
         @CustomType.Setter
-        public Builder billingFrequency(String billingFrequency) {
-            this.billingFrequency = Objects.requireNonNull(billingFrequency);
+        public Builder billingFrequency(@Nullable String billingFrequency) {
+            this.billingFrequency = billingFrequency;
             return this;
         }
         @CustomType.Setter
-        public Builder invoiceStatus(String invoiceStatus) {
-            this.invoiceStatus = Objects.requireNonNull(invoiceStatus);
+        public Builder invoiceStatus(@Nullable String invoiceStatus) {
+            this.invoiceStatus = invoiceStatus;
             return this;
         }
         @CustomType.Setter
-        public Builder netUnitPrice(String netUnitPrice) {
-            this.netUnitPrice = Objects.requireNonNull(netUnitPrice);
+        public Builder netUnitPrice(@Nullable String netUnitPrice) {
+            this.netUnitPrice = netUnitPrice;
             return this;
         }
         @CustomType.Setter
-        public Builder orderNumber(String orderNumber) {
-            this.orderNumber = Objects.requireNonNull(orderNumber);
+        public Builder orderNumber(@Nullable String orderNumber) {
+            this.orderNumber = orderNumber;
             return this;
         }
         @CustomType.Setter
-        public Builder products(List<GetBillingSchedulesBillingScheduleProduct> products) {
-            this.products = Objects.requireNonNull(products);
+        public Builder products(@Nullable List<GetBillingSchedulesBillingScheduleProduct> products) {
+            this.products = products;
             return this;
         }
         public Builder products(GetBillingSchedulesBillingScheduleProduct... products) {
             return products(List.of(products));
         }
         @CustomType.Setter
-        public Builder quantity(String quantity) {
-            this.quantity = Objects.requireNonNull(quantity);
+        public Builder quantity(@Nullable String quantity) {
+            this.quantity = quantity;
             return this;
         }
         @CustomType.Setter
-        public Builder subscribedServiceId(String subscribedServiceId) {
-            this.subscribedServiceId = Objects.requireNonNull(subscribedServiceId);
+        public Builder subscribedServiceId(@Nullable String subscribedServiceId) {
+            this.subscribedServiceId = subscribedServiceId;
             return this;
         }
         @CustomType.Setter
-        public Builder timeEnd(String timeEnd) {
-            this.timeEnd = Objects.requireNonNull(timeEnd);
+        public Builder timeEnd(@Nullable String timeEnd) {
+            this.timeEnd = timeEnd;
             return this;
         }
         @CustomType.Setter
-        public Builder timeInvoicing(String timeInvoicing) {
-            this.timeInvoicing = Objects.requireNonNull(timeInvoicing);
+        public Builder timeInvoicing(@Nullable String timeInvoicing) {
+            this.timeInvoicing = timeInvoicing;
             return this;
         }
         @CustomType.Setter
-        public Builder timeStart(String timeStart) {
-            this.timeStart = Objects.requireNonNull(timeStart);
+        public Builder timeStart(@Nullable String timeStart) {
+            this.timeStart = timeStart;
             return this;
         }
         public GetBillingSchedulesBillingSchedule build() {

@@ -16,10 +16,10 @@ namespace Pulumi.Oci.ServiceMesh.Outputs
         /// <summary>
         /// Unique Mesh identifier.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
 
         [OutputConstructor]
-        private GetMeshesMeshCollectionItemCertificateAuthorityResult(string id)
+        private GetMeshesMeshCollectionItemCertificateAuthorityResult(string? id)
         {
             Id = id;
         }

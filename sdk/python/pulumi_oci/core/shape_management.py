@@ -19,9 +19,6 @@ class ShapeManagementArgs:
                  shape_name: pulumi.Input[str]):
         """
         The set of arguments for constructing a ShapeManagement resource.
-        :param pulumi.Input[str] compartment_id: The OCID of the compartment containing the image.
-        :param pulumi.Input[str] image_id: The OCID of the Image to which the shape should be added.
-        :param pulumi.Input[str] shape_name: The compatible shape that is to be added to the compatible shapes list for the image.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "image_id", image_id)
@@ -30,9 +27,6 @@ class ShapeManagementArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of the compartment containing the image.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -42,9 +36,6 @@ class ShapeManagementArgs:
     @property
     @pulumi.getter(name="imageId")
     def image_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of the Image to which the shape should be added.
-        """
         return pulumi.get(self, "image_id")
 
     @image_id.setter
@@ -54,9 +45,6 @@ class ShapeManagementArgs:
     @property
     @pulumi.getter(name="shapeName")
     def shape_name(self) -> pulumi.Input[str]:
-        """
-        The compatible shape that is to be added to the compatible shapes list for the image.
-        """
         return pulumi.get(self, "shape_name")
 
     @shape_name.setter
@@ -72,9 +60,6 @@ class _ShapeManagementState:
                  shape_name: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering ShapeManagement resources.
-        :param pulumi.Input[str] compartment_id: The OCID of the compartment containing the image.
-        :param pulumi.Input[str] image_id: The OCID of the Image to which the shape should be added.
-        :param pulumi.Input[str] shape_name: The compatible shape that is to be added to the compatible shapes list for the image.
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -86,9 +71,6 @@ class _ShapeManagementState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the compartment containing the image.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -98,9 +80,6 @@ class _ShapeManagementState:
     @property
     @pulumi.getter(name="imageId")
     def image_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the Image to which the shape should be added.
-        """
         return pulumi.get(self, "image_id")
 
     @image_id.setter
@@ -110,9 +89,6 @@ class _ShapeManagementState:
     @property
     @pulumi.getter(name="shapeName")
     def shape_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The compatible shape that is to be added to the compatible shapes list for the image.
-        """
         return pulumi.get(self, "shape_name")
 
     @shape_name.setter
@@ -130,15 +106,9 @@ class ShapeManagement(pulumi.CustomResource):
                  shape_name: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Shape Management resource in Oracle Cloud Infrastructure Core service.
-
-        Add/Remove the specified shape from the compatible shapes list for the image.
-
+        Create a ShapeManagement resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: The OCID of the compartment containing the image.
-        :param pulumi.Input[str] image_id: The OCID of the Image to which the shape should be added.
-        :param pulumi.Input[str] shape_name: The compatible shape that is to be added to the compatible shapes list for the image.
         """
         ...
     @overload
@@ -147,10 +117,7 @@ class ShapeManagement(pulumi.CustomResource):
                  args: ShapeManagementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Shape Management resource in Oracle Cloud Infrastructure Core service.
-
-        Add/Remove the specified shape from the compatible shapes list for the image.
-
+        Create a ShapeManagement resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param ShapeManagementArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -207,9 +174,6 @@ class ShapeManagement(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: The OCID of the compartment containing the image.
-        :param pulumi.Input[str] image_id: The OCID of the Image to which the shape should be added.
-        :param pulumi.Input[str] shape_name: The compatible shape that is to be added to the compatible shapes list for the image.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -223,24 +187,15 @@ class ShapeManagement(pulumi.CustomResource):
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the compartment containing the image.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="imageId")
     def image_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the Image to which the shape should be added.
-        """
         return pulumi.get(self, "image_id")
 
     @property
     @pulumi.getter(name="shapeName")
     def shape_name(self) -> pulumi.Output[str]:
-        """
-        The compatible shape that is to be added to the compatible shapes list for the image.
-        """
         return pulumi.get(self, "shape_name")
 

@@ -19,7 +19,7 @@ public final class GetManagedDatabaseUserProxiedForUsersResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String managedDatabaseId;
     /**
      * @return The name of a proxy user or the name of the client user.
@@ -30,7 +30,7 @@ public final class GetManagedDatabaseUserProxiedForUsersResult {
      * @return The list of proxied_for_user_collection.
      * 
      */
-    private List<GetManagedDatabaseUserProxiedForUsersProxiedForUserCollection> proxiedForUserCollections;
+    private @Nullable List<GetManagedDatabaseUserProxiedForUsersProxiedForUserCollection> proxiedForUserCollections;
     private String userName;
 
     private GetManagedDatabaseUserProxiedForUsersResult() {}
@@ -41,8 +41,8 @@ public final class GetManagedDatabaseUserProxiedForUsersResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String managedDatabaseId() {
         return this.managedDatabaseId;
@@ -59,7 +59,7 @@ public final class GetManagedDatabaseUserProxiedForUsersResult {
      * 
      */
     public List<GetManagedDatabaseUserProxiedForUsersProxiedForUserCollection> proxiedForUserCollections() {
-        return this.proxiedForUserCollections;
+        return this.proxiedForUserCollections == null ? List.of() : this.proxiedForUserCollections;
     }
     public String userName() {
         return this.userName;
@@ -75,10 +75,10 @@ public final class GetManagedDatabaseUserProxiedForUsersResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetManagedDatabaseUserProxiedForUsersFilter> filters;
-        private String id;
+        private @Nullable String id;
         private String managedDatabaseId;
         private @Nullable String name;
-        private List<GetManagedDatabaseUserProxiedForUsersProxiedForUserCollection> proxiedForUserCollections;
+        private @Nullable List<GetManagedDatabaseUserProxiedForUsersProxiedForUserCollection> proxiedForUserCollections;
         private String userName;
         public Builder() {}
         public Builder(GetManagedDatabaseUserProxiedForUsersResult defaults) {
@@ -100,8 +100,8 @@ public final class GetManagedDatabaseUserProxiedForUsersResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -115,8 +115,8 @@ public final class GetManagedDatabaseUserProxiedForUsersResult {
             return this;
         }
         @CustomType.Setter
-        public Builder proxiedForUserCollections(List<GetManagedDatabaseUserProxiedForUsersProxiedForUserCollection> proxiedForUserCollections) {
-            this.proxiedForUserCollections = Objects.requireNonNull(proxiedForUserCollections);
+        public Builder proxiedForUserCollections(@Nullable List<GetManagedDatabaseUserProxiedForUsersProxiedForUserCollection> proxiedForUserCollections) {
+            this.proxiedForUserCollections = proxiedForUserCollections;
             return this;
         }
         public Builder proxiedForUserCollections(GetManagedDatabaseUserProxiedForUsersProxiedForUserCollection... proxiedForUserCollections) {

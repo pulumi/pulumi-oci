@@ -108,33 +108,33 @@ export interface GetObjectResult {
      * The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
      */
     readonly bucket: string;
-    readonly cacheControl: string;
+    readonly cacheControl?: string;
     /**
      * The object to upload to the object store.
      */
-    readonly content: string;
-    readonly contentDisposition: string;
+    readonly content?: string;
+    readonly contentDisposition?: string;
     /**
      * The content encoding of the object.
      */
-    readonly contentEncoding: string;
+    readonly contentEncoding?: string;
     /**
      * The content language of the object.
      */
-    readonly contentLanguage: string;
+    readonly contentLanguage?: string;
     /**
      * The content length of the body.
      */
-    readonly contentLength: string;
+    readonly contentLength?: string;
     readonly contentLengthLimit?: number;
     /**
      * The base-64 encoded MD5 hash of the body.
      */
-    readonly contentMd5: string;
+    readonly contentMd5?: string;
     /**
      * The content type of the object.  Defaults to 'application/octet-stream' if not overridden during the PutObject call.
      */
-    readonly contentType: string;
+    readonly contentType?: string;
     readonly httpResponseCacheControl?: string;
     readonly httpResponseContentDisposition?: string;
     readonly httpResponseContentEncoding?: string;
@@ -144,11 +144,11 @@ export interface GetObjectResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Optional user-defined metadata key and value. Note: Metadata keys are case-insensitive and all returned keys will be lower case.
      */
-    readonly metadata: {[key: string]: any};
+    readonly metadata?: {[key: string]: any};
     /**
      * The top-level namespace used for the request.
      */
@@ -160,8 +160,8 @@ export interface GetObjectResult {
     /**
      * The storage tier that the object is stored in.
      */
-    readonly storageTier: string;
-    readonly versionId: string;
+    readonly storageTier?: string;
+    readonly versionId?: string;
 }
 /**
  * This data source provides details about a specific Object resource in Oracle Cloud Infrastructure Object Storage service.

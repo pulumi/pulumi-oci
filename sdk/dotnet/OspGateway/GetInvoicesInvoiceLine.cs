@@ -137,7 +137,7 @@ namespace Pulumi.Oci.OspGateway
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string InternalInvoiceId;
         /// <summary>
         /// Invoice line list elements
@@ -149,7 +149,7 @@ namespace Pulumi.Oci.OspGateway
         private GetInvoicesInvoiceLineResult(
             string compartmentId,
 
-            string id,
+            string? id,
 
             string internalInvoiceId,
 

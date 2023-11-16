@@ -98,34 +98,22 @@ class GetConnectionResult:
 
     @property
     @pulumi.getter(name="adminCredentials")
-    def admin_credentials(self) -> Sequence['outputs.GetConnectionAdminCredentialResult']:
-        """
-        Database Administrator Credentials details.
-        """
+    def admin_credentials(self) -> Optional[Sequence['outputs.GetConnectionAdminCredentialResult']]:
         return pulumi.get(self, "admin_credentials")
 
     @property
     @pulumi.getter(name="certificateTdn")
-    def certificate_tdn(self) -> str:
-        """
-        This name is the distinguished name used while creating the certificate on target database.
-        """
+    def certificate_tdn(self) -> Optional[str]:
         return pulumi.get(self, "certificate_tdn")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        OCID of the compartment where the secret containing the credentials will be created.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="connectDescriptors")
-    def connect_descriptors(self) -> Sequence['outputs.GetConnectionConnectDescriptorResult']:
-        """
-        Connect Descriptor details.
-        """
+    def connect_descriptors(self) -> Optional[Sequence['outputs.GetConnectionConnectDescriptorResult']]:
         return pulumi.get(self, "connect_descriptors")
 
     @property
@@ -135,148 +123,97 @@ class GetConnectionResult:
 
     @property
     @pulumi.getter(name="credentialsSecretId")
-    def credentials_secret_id(self) -> str:
-        """
-        OCID of the Secret in the Oracle Cloud Infrastructure vault containing the Database Connection credentials.
-        """
+    def credentials_secret_id(self) -> Optional[str]:
         return pulumi.get(self, "credentials_secret_id")
 
     @property
     @pulumi.getter(name="databaseId")
-    def database_id(self) -> str:
-        """
-        The OCID of the cloud database.
-        """
+    def database_id(self) -> Optional[str]:
         return pulumi.get(self, "database_id")
 
     @property
     @pulumi.getter(name="databaseType")
-    def database_type(self) -> str:
-        """
-        Database connection type.
-        """
+    def database_type(self) -> Optional[str]:
         return pulumi.get(self, "database_type")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        Database Connection display name identifier.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a previously created Private Endpoint.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="nsgIds")
-    def nsg_ids(self) -> Sequence[str]:
-        """
-        An array of Network Security Group OCIDs used to define network access for Connections.
-        """
+    def nsg_ids(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "nsg_ids")
 
     @property
     @pulumi.getter(name="privateEndpoints")
-    def private_endpoints(self) -> Sequence['outputs.GetConnectionPrivateEndpointResult']:
-        """
-        Oracle Cloud Infrastructure Private Endpoint configuration details.
-        """
+    def private_endpoints(self) -> Optional[Sequence['outputs.GetConnectionPrivateEndpointResult']]:
         return pulumi.get(self, "private_endpoints")
 
     @property
     @pulumi.getter(name="replicationCredentials")
-    def replication_credentials(self) -> Sequence['outputs.GetConnectionReplicationCredentialResult']:
-        """
-        Database Administrator Credentials details.
-        """
+    def replication_credentials(self) -> Optional[Sequence['outputs.GetConnectionReplicationCredentialResult']]:
         return pulumi.get(self, "replication_credentials")
 
     @property
     @pulumi.getter(name="sshDetails")
-    def ssh_details(self) -> Sequence['outputs.GetConnectionSshDetailResult']:
-        """
-        Details of the SSH key that will be used.
-        """
+    def ssh_details(self) -> Optional[Sequence['outputs.GetConnectionSshDetailResult']]:
         return pulumi.get(self, "ssh_details")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the Connection resource.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the Connection resource was created. An RFC3339 formatted datetime string.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time of the last Connection resource details update. An RFC3339 formatted datetime string.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="tlsKeystore")
-    def tls_keystore(self) -> str:
+    def tls_keystore(self) -> Optional[str]:
         return pulumi.get(self, "tls_keystore")
 
     @property
     @pulumi.getter(name="tlsWallet")
-    def tls_wallet(self) -> str:
+    def tls_wallet(self) -> Optional[str]:
         return pulumi.get(self, "tls_wallet")
 
     @property
     @pulumi.getter(name="vaultDetails")
-    def vault_details(self) -> Sequence['outputs.GetConnectionVaultDetailResult']:
-        """
-        Oracle Cloud Infrastructure Vault details to store migration and connection credentials secrets
-        """
+    def vault_details(self) -> Optional[Sequence['outputs.GetConnectionVaultDetailResult']]:
         return pulumi.get(self, "vault_details")
 
 
@@ -315,21 +252,7 @@ class AwaitableGetConnectionResult(GetConnectionResult):
 def get_connection(connection_id: Optional[str] = None,
                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetConnectionResult:
     """
-    This data source provides details about a specific Connection resource in Oracle Cloud Infrastructure Database Migration service.
-
-    Display Database Connection details.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_connection = oci.DatabaseMigration.get_connection(connection_id=oci_database_migration_connection["test_connection"]["id"])
-    ```
-
-
-    :param str connection_id: The OCID of the database connection
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['connectionId'] = connection_id
@@ -367,20 +290,6 @@ def get_connection(connection_id: Optional[str] = None,
 def get_connection_output(connection_id: Optional[pulumi.Input[str]] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetConnectionResult]:
     """
-    This data source provides details about a specific Connection resource in Oracle Cloud Infrastructure Database Migration service.
-
-    Display Database Connection details.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_connection = oci.DatabaseMigration.get_connection(connection_id=oci_database_migration_connection["test_connection"]["id"])
-    ```
-
-
-    :param str connection_id: The OCID of the database connection
+    Use this data source to access information about an existing resource.
     """
     ...

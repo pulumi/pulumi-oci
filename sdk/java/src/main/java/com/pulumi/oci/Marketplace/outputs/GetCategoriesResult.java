@@ -18,14 +18,14 @@ public final class GetCategoriesResult {
      * @return The list of categories.
      * 
      */
-    private List<GetCategoriesCategory> categories;
+    private @Nullable List<GetCategoriesCategory> categories;
     private @Nullable String compartmentId;
     private @Nullable List<GetCategoriesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
 
     private GetCategoriesResult() {}
     /**
@@ -33,7 +33,7 @@ public final class GetCategoriesResult {
      * 
      */
     public List<GetCategoriesCategory> categories() {
-        return this.categories;
+        return this.categories == null ? List.of() : this.categories;
     }
     public Optional<String> compartmentId() {
         return Optional.ofNullable(this.compartmentId);
@@ -45,8 +45,8 @@ public final class GetCategoriesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
 
     public static Builder builder() {
@@ -58,10 +58,10 @@ public final class GetCategoriesResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetCategoriesCategory> categories;
+        private @Nullable List<GetCategoriesCategory> categories;
         private @Nullable String compartmentId;
         private @Nullable List<GetCategoriesFilter> filters;
-        private String id;
+        private @Nullable String id;
         public Builder() {}
         public Builder(GetCategoriesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -72,8 +72,8 @@ public final class GetCategoriesResult {
         }
 
         @CustomType.Setter
-        public Builder categories(List<GetCategoriesCategory> categories) {
-            this.categories = Objects.requireNonNull(categories);
+        public Builder categories(@Nullable List<GetCategoriesCategory> categories) {
+            this.categories = categories;
             return this;
         }
         public Builder categories(GetCategoriesCategory... categories) {
@@ -93,8 +93,8 @@ public final class GetCategoriesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         public GetCategoriesResult build() {

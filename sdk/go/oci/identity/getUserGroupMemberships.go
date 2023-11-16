@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of User Group Memberships in Oracle Cloud Infrastructure Identity service.
@@ -81,7 +80,7 @@ type GetUserGroupMembershipsResult struct {
 	// The OCID of the group.
 	GroupId *string `pulumi:"groupId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of memberships.
 	Memberships []GetUserGroupMembershipsMembership `pulumi:"memberships"`
 	// The OCID of the user.
@@ -131,12 +130,6 @@ func (o GetUserGroupMembershipsResultOutput) ToGetUserGroupMembershipsResultOutp
 	return o
 }
 
-func (o GetUserGroupMembershipsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetUserGroupMembershipsResult] {
-	return pulumix.Output[GetUserGroupMembershipsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the tenancy containing the user, group, and membership object.
 func (o GetUserGroupMembershipsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUserGroupMembershipsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -152,8 +145,8 @@ func (o GetUserGroupMembershipsResultOutput) GroupId() pulumi.StringPtrOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetUserGroupMembershipsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetUserGroupMembershipsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetUserGroupMembershipsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetUserGroupMembershipsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of memberships.

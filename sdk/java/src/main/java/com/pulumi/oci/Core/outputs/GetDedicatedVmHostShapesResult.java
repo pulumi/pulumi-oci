@@ -24,13 +24,13 @@ public final class GetDedicatedVmHostShapesResult {
      * @return The list of dedicated_vm_host_shapes.
      * 
      */
-    private List<GetDedicatedVmHostShapesDedicatedVmHostShape> dedicatedVmHostShapes;
+    private @Nullable List<GetDedicatedVmHostShapesDedicatedVmHostShape> dedicatedVmHostShapes;
     private @Nullable List<GetDedicatedVmHostShapesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private @Nullable String instanceShapeName;
 
     private GetDedicatedVmHostShapesResult() {}
@@ -49,7 +49,7 @@ public final class GetDedicatedVmHostShapesResult {
      * 
      */
     public List<GetDedicatedVmHostShapesDedicatedVmHostShape> dedicatedVmHostShapes() {
-        return this.dedicatedVmHostShapes;
+        return this.dedicatedVmHostShapes == null ? List.of() : this.dedicatedVmHostShapes;
     }
     public List<GetDedicatedVmHostShapesFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -58,8 +58,8 @@ public final class GetDedicatedVmHostShapesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public Optional<String> instanceShapeName() {
         return Optional.ofNullable(this.instanceShapeName);
@@ -76,9 +76,9 @@ public final class GetDedicatedVmHostShapesResult {
     public static final class Builder {
         private @Nullable String availabilityDomain;
         private String compartmentId;
-        private List<GetDedicatedVmHostShapesDedicatedVmHostShape> dedicatedVmHostShapes;
+        private @Nullable List<GetDedicatedVmHostShapesDedicatedVmHostShape> dedicatedVmHostShapes;
         private @Nullable List<GetDedicatedVmHostShapesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String instanceShapeName;
         public Builder() {}
         public Builder(GetDedicatedVmHostShapesResult defaults) {
@@ -102,8 +102,8 @@ public final class GetDedicatedVmHostShapesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder dedicatedVmHostShapes(List<GetDedicatedVmHostShapesDedicatedVmHostShape> dedicatedVmHostShapes) {
-            this.dedicatedVmHostShapes = Objects.requireNonNull(dedicatedVmHostShapes);
+        public Builder dedicatedVmHostShapes(@Nullable List<GetDedicatedVmHostShapesDedicatedVmHostShape> dedicatedVmHostShapes) {
+            this.dedicatedVmHostShapes = dedicatedVmHostShapes;
             return this;
         }
         public Builder dedicatedVmHostShapes(GetDedicatedVmHostShapesDedicatedVmHostShape... dedicatedVmHostShapes) {
@@ -118,8 +118,8 @@ public final class GetDedicatedVmHostShapesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

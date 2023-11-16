@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Log Analytics Category resource in Oracle Cloud Infrastructure Log Analytics service.
@@ -63,18 +62,18 @@ type GetLogAnalyticsCategoryArgs struct {
 // A collection of values returned by getLogAnalyticsCategory.
 type GetLogAnalyticsCategoryResult struct {
 	// The category description.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// The category display name.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The system flag. A value of false denotes a user-created category. A value of true denotes an Oracle-defined category.
-	IsSystem bool `pulumi:"isSystem"`
+	IsSystem *bool `pulumi:"isSystem"`
 	// The unique name that identifies the category.
 	Name      string `pulumi:"name"`
 	Namespace string `pulumi:"namespace"`
 	// The category type. Values include "PRODUCT", "TIER", "VENDOR" and "GENERIC".
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 }
 
 func GetLogAnalyticsCategoryOutput(ctx *pulumi.Context, args GetLogAnalyticsCategoryOutputArgs, opts ...pulumi.InvokeOption) GetLogAnalyticsCategoryResultOutput {
@@ -117,30 +116,24 @@ func (o GetLogAnalyticsCategoryResultOutput) ToGetLogAnalyticsCategoryResultOutp
 	return o
 }
 
-func (o GetLogAnalyticsCategoryResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsCategoryResult] {
-	return pulumix.Output[GetLogAnalyticsCategoryResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The category description.
-func (o GetLogAnalyticsCategoryResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsCategoryResult) string { return v.Description }).(pulumi.StringOutput)
+func (o GetLogAnalyticsCategoryResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsCategoryResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // The category display name.
-func (o GetLogAnalyticsCategoryResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsCategoryResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetLogAnalyticsCategoryResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsCategoryResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetLogAnalyticsCategoryResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsCategoryResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetLogAnalyticsCategoryResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsCategoryResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The system flag. A value of false denotes a user-created category. A value of true denotes an Oracle-defined category.
-func (o GetLogAnalyticsCategoryResultOutput) IsSystem() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetLogAnalyticsCategoryResult) bool { return v.IsSystem }).(pulumi.BoolOutput)
+func (o GetLogAnalyticsCategoryResultOutput) IsSystem() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsCategoryResult) *bool { return v.IsSystem }).(pulumi.BoolPtrOutput)
 }
 
 // The unique name that identifies the category.
@@ -153,8 +146,8 @@ func (o GetLogAnalyticsCategoryResultOutput) Namespace() pulumi.StringOutput {
 }
 
 // The category type. Values include "PRODUCT", "TIER", "VENDOR" and "GENERIC".
-func (o GetLogAnalyticsCategoryResultOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsCategoryResult) string { return v.Type }).(pulumi.StringOutput)
+func (o GetLogAnalyticsCategoryResultOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsCategoryResult) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 func init() {

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Tag Namespaces in Oracle Cloud Infrastructure Identity service.
@@ -70,8 +69,8 @@ type GetTagNamespacesResult struct {
 	CompartmentId string                   `pulumi:"compartmentId"`
 	Filters       []GetTagNamespacesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                     string `pulumi:"id"`
-	IncludeSubcompartments *bool  `pulumi:"includeSubcompartments"`
+	Id                     *string `pulumi:"id"`
+	IncludeSubcompartments *bool   `pulumi:"includeSubcompartments"`
 	// The tagnamespace's current state. After creating a tagnamespace, make sure its `lifecycleState` is ACTIVE before using it. After retiring a tagnamespace, make sure its `lifecycleState` is INACTIVE before using it.
 	State *string `pulumi:"state"`
 	// The list of tag_namespaces.
@@ -121,12 +120,6 @@ func (o GetTagNamespacesResultOutput) ToGetTagNamespacesResultOutputWithContext(
 	return o
 }
 
-func (o GetTagNamespacesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetTagNamespacesResult] {
-	return pulumix.Output[GetTagNamespacesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment that contains the tag namespace.
 func (o GetTagNamespacesResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTagNamespacesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -137,8 +130,8 @@ func (o GetTagNamespacesResultOutput) Filters() GetTagNamespacesFilterArrayOutpu
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetTagNamespacesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTagNamespacesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetTagNamespacesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTagNamespacesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetTagNamespacesResultOutput) IncludeSubcompartments() pulumi.BoolPtrOutput {

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Managed Database Sql Plan Baseline resource in Oracle Cloud Infrastructure Database Management service.
@@ -63,40 +62,40 @@ type GetManagedDatabaseSqlPlanBaselineArgs struct {
 // A collection of values returned by getManagedDatabaseSqlPlanBaseline.
 type GetManagedDatabaseSqlPlanBaselineResult struct {
 	// Indicates whether the plan baseline is accepted (`YES`) or not (`NO`).
-	Accepted string `pulumi:"accepted"`
+	Accepted *string `pulumi:"accepted"`
 	// The application action.
-	Action string `pulumi:"action"`
+	Action *string `pulumi:"action"`
 	// Indicates whether a plan that is automatically captured by SQL plan management is marked adaptive or not.
-	Adaptive string `pulumi:"adaptive"`
+	Adaptive *string `pulumi:"adaptive"`
 	// Indicates whether the plan baseline is auto-purged (`YES`) or not (`NO`).
-	AutoPurge string `pulumi:"autoPurge"`
+	AutoPurge *string `pulumi:"autoPurge"`
 	// Indicates whether the plan baseline is enabled (`YES`) or disabled (`NO`).
-	Enabled string `pulumi:"enabled"`
+	Enabled *string `pulumi:"enabled"`
 	// The execution plan for the SQL statement.
-	ExecutionPlan string `pulumi:"executionPlan"`
+	ExecutionPlan *string `pulumi:"executionPlan"`
 	// Indicates whether the plan baseline is fixed (`YES`) or not (`NO`).
-	Fixed string `pulumi:"fixed"`
+	Fixed *string `pulumi:"fixed"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                string `pulumi:"id"`
-	ManagedDatabaseId string `pulumi:"managedDatabaseId"`
+	Id                *string `pulumi:"id"`
+	ManagedDatabaseId string  `pulumi:"managedDatabaseId"`
 	// The application module name.
-	Module string `pulumi:"module"`
+	Module *string `pulumi:"module"`
 	// The origin of the SQL plan baseline.
-	Origin string `pulumi:"origin"`
+	Origin *string `pulumi:"origin"`
 	// The unique plan identifier.
 	PlanName string `pulumi:"planName"`
 	// Indicates whether the optimizer was able to reproduce the plan (`YES`) or not (`NO`). The value is set to `YES` when a plan is initially added to the plan baseline.
-	Reproduced string `pulumi:"reproduced"`
+	Reproduced *string `pulumi:"reproduced"`
 	// The unique SQL identifier.
-	SqlHandle string `pulumi:"sqlHandle"`
+	SqlHandle *string `pulumi:"sqlHandle"`
 	// The SQL text.
-	SqlText string `pulumi:"sqlText"`
+	SqlText *string `pulumi:"sqlText"`
 	// The date and time when the plan baseline was created.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time when the plan baseline was last executed.
-	TimeLastExecuted string `pulumi:"timeLastExecuted"`
+	TimeLastExecuted *string `pulumi:"timeLastExecuted"`
 	// The date and time when the plan baseline was last modified.
-	TimeLastModified string `pulumi:"timeLastModified"`
+	TimeLastModified *string `pulumi:"timeLastModified"`
 }
 
 func GetManagedDatabaseSqlPlanBaselineOutput(ctx *pulumi.Context, args GetManagedDatabaseSqlPlanBaselineOutputArgs, opts ...pulumi.InvokeOption) GetManagedDatabaseSqlPlanBaselineResultOutput {
@@ -139,50 +138,44 @@ func (o GetManagedDatabaseSqlPlanBaselineResultOutput) ToGetManagedDatabaseSqlPl
 	return o
 }
 
-func (o GetManagedDatabaseSqlPlanBaselineResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedDatabaseSqlPlanBaselineResult] {
-	return pulumix.Output[GetManagedDatabaseSqlPlanBaselineResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Indicates whether the plan baseline is accepted (`YES`) or not (`NO`).
-func (o GetManagedDatabaseSqlPlanBaselineResultOutput) Accepted() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselineResult) string { return v.Accepted }).(pulumi.StringOutput)
+func (o GetManagedDatabaseSqlPlanBaselineResultOutput) Accepted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselineResult) *string { return v.Accepted }).(pulumi.StringPtrOutput)
 }
 
 // The application action.
-func (o GetManagedDatabaseSqlPlanBaselineResultOutput) Action() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselineResult) string { return v.Action }).(pulumi.StringOutput)
+func (o GetManagedDatabaseSqlPlanBaselineResultOutput) Action() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselineResult) *string { return v.Action }).(pulumi.StringPtrOutput)
 }
 
 // Indicates whether a plan that is automatically captured by SQL plan management is marked adaptive or not.
-func (o GetManagedDatabaseSqlPlanBaselineResultOutput) Adaptive() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselineResult) string { return v.Adaptive }).(pulumi.StringOutput)
+func (o GetManagedDatabaseSqlPlanBaselineResultOutput) Adaptive() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselineResult) *string { return v.Adaptive }).(pulumi.StringPtrOutput)
 }
 
 // Indicates whether the plan baseline is auto-purged (`YES`) or not (`NO`).
-func (o GetManagedDatabaseSqlPlanBaselineResultOutput) AutoPurge() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselineResult) string { return v.AutoPurge }).(pulumi.StringOutput)
+func (o GetManagedDatabaseSqlPlanBaselineResultOutput) AutoPurge() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselineResult) *string { return v.AutoPurge }).(pulumi.StringPtrOutput)
 }
 
 // Indicates whether the plan baseline is enabled (`YES`) or disabled (`NO`).
-func (o GetManagedDatabaseSqlPlanBaselineResultOutput) Enabled() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselineResult) string { return v.Enabled }).(pulumi.StringOutput)
+func (o GetManagedDatabaseSqlPlanBaselineResultOutput) Enabled() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselineResult) *string { return v.Enabled }).(pulumi.StringPtrOutput)
 }
 
 // The execution plan for the SQL statement.
-func (o GetManagedDatabaseSqlPlanBaselineResultOutput) ExecutionPlan() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselineResult) string { return v.ExecutionPlan }).(pulumi.StringOutput)
+func (o GetManagedDatabaseSqlPlanBaselineResultOutput) ExecutionPlan() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselineResult) *string { return v.ExecutionPlan }).(pulumi.StringPtrOutput)
 }
 
 // Indicates whether the plan baseline is fixed (`YES`) or not (`NO`).
-func (o GetManagedDatabaseSqlPlanBaselineResultOutput) Fixed() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselineResult) string { return v.Fixed }).(pulumi.StringOutput)
+func (o GetManagedDatabaseSqlPlanBaselineResultOutput) Fixed() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselineResult) *string { return v.Fixed }).(pulumi.StringPtrOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetManagedDatabaseSqlPlanBaselineResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselineResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetManagedDatabaseSqlPlanBaselineResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselineResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetManagedDatabaseSqlPlanBaselineResultOutput) ManagedDatabaseId() pulumi.StringOutput {
@@ -190,13 +183,13 @@ func (o GetManagedDatabaseSqlPlanBaselineResultOutput) ManagedDatabaseId() pulum
 }
 
 // The application module name.
-func (o GetManagedDatabaseSqlPlanBaselineResultOutput) Module() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselineResult) string { return v.Module }).(pulumi.StringOutput)
+func (o GetManagedDatabaseSqlPlanBaselineResultOutput) Module() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselineResult) *string { return v.Module }).(pulumi.StringPtrOutput)
 }
 
 // The origin of the SQL plan baseline.
-func (o GetManagedDatabaseSqlPlanBaselineResultOutput) Origin() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselineResult) string { return v.Origin }).(pulumi.StringOutput)
+func (o GetManagedDatabaseSqlPlanBaselineResultOutput) Origin() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselineResult) *string { return v.Origin }).(pulumi.StringPtrOutput)
 }
 
 // The unique plan identifier.
@@ -205,33 +198,33 @@ func (o GetManagedDatabaseSqlPlanBaselineResultOutput) PlanName() pulumi.StringO
 }
 
 // Indicates whether the optimizer was able to reproduce the plan (`YES`) or not (`NO`). The value is set to `YES` when a plan is initially added to the plan baseline.
-func (o GetManagedDatabaseSqlPlanBaselineResultOutput) Reproduced() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselineResult) string { return v.Reproduced }).(pulumi.StringOutput)
+func (o GetManagedDatabaseSqlPlanBaselineResultOutput) Reproduced() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselineResult) *string { return v.Reproduced }).(pulumi.StringPtrOutput)
 }
 
 // The unique SQL identifier.
-func (o GetManagedDatabaseSqlPlanBaselineResultOutput) SqlHandle() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselineResult) string { return v.SqlHandle }).(pulumi.StringOutput)
+func (o GetManagedDatabaseSqlPlanBaselineResultOutput) SqlHandle() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselineResult) *string { return v.SqlHandle }).(pulumi.StringPtrOutput)
 }
 
 // The SQL text.
-func (o GetManagedDatabaseSqlPlanBaselineResultOutput) SqlText() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselineResult) string { return v.SqlText }).(pulumi.StringOutput)
+func (o GetManagedDatabaseSqlPlanBaselineResultOutput) SqlText() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselineResult) *string { return v.SqlText }).(pulumi.StringPtrOutput)
 }
 
 // The date and time when the plan baseline was created.
-func (o GetManagedDatabaseSqlPlanBaselineResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselineResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetManagedDatabaseSqlPlanBaselineResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselineResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time when the plan baseline was last executed.
-func (o GetManagedDatabaseSqlPlanBaselineResultOutput) TimeLastExecuted() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselineResult) string { return v.TimeLastExecuted }).(pulumi.StringOutput)
+func (o GetManagedDatabaseSqlPlanBaselineResultOutput) TimeLastExecuted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselineResult) *string { return v.TimeLastExecuted }).(pulumi.StringPtrOutput)
 }
 
 // The date and time when the plan baseline was last modified.
-func (o GetManagedDatabaseSqlPlanBaselineResultOutput) TimeLastModified() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselineResult) string { return v.TimeLastModified }).(pulumi.StringOutput)
+func (o GetManagedDatabaseSqlPlanBaselineResultOutput) TimeLastModified() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselineResult) *string { return v.TimeLastModified }).(pulumi.StringPtrOutput)
 }
 
 func init() {

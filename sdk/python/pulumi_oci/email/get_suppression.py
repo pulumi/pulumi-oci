@@ -55,58 +55,37 @@ class GetSuppressionResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment to contain the suppression. Since suppressions are at the customer level, this must be the tenancy OCID.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="emailAddress")
-    def email_address(self) -> str:
-        """
-        The email address of the suppression.
-        """
+    def email_address(self) -> Optional[str]:
         return pulumi.get(self, "email_address")
 
     @property
     @pulumi.getter(name="errorDetail")
-    def error_detail(self) -> str:
-        """
-        The specific error message returned by a system that resulted in the suppression. This message is usually an SMTP error code with additional descriptive text. Not provided for all types of suppressions.
-        """
+    def error_detail(self) -> Optional[str]:
         return pulumi.get(self, "error_detail")
 
     @property
     @pulumi.getter(name="errorSource")
-    def error_source(self) -> str:
-        """
-        DNS name of the source of the error that caused the suppression. Will be set to either the remote-mta or reporting-mta field from a delivery status notification (RFC 3464) when available. Not provided for all types of suppressions, and not always known.
-        """
+    def error_source(self) -> Optional[str]:
         return pulumi.get(self, "error_source")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The unique OCID of the suppression.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="messageId")
-    def message_id(self) -> str:
-        """
-        The value of the Message-ID header from the email that triggered a suppression. This value is as defined in RFC 5322 section 3.6.4, excluding angle-brackets. Not provided for all types of suppressions.
-        """
+    def message_id(self) -> Optional[str]:
         return pulumi.get(self, "message_id")
 
     @property
     @pulumi.getter
-    def reason(self) -> str:
-        """
-        The reason that the email address was suppressed. For more information on the types of bounces, see [Suppression List](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
-        """
+    def reason(self) -> Optional[str]:
         return pulumi.get(self, "reason")
 
     @property
@@ -116,18 +95,12 @@ class GetSuppressionResult:
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time a recipient's email address was added to the suppression list, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeLastSuppressed")
-    def time_last_suppressed(self) -> str:
-        """
-        The last date and time the suppression prevented submission in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
-        """
+    def time_last_suppressed(self) -> Optional[str]:
         return pulumi.get(self, "time_last_suppressed")
 
 
@@ -152,22 +125,7 @@ class AwaitableGetSuppressionResult(GetSuppressionResult):
 def get_suppression(suppression_id: Optional[str] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSuppressionResult:
     """
-    This data source provides details about a specific Suppression resource in Oracle Cloud Infrastructure Email service.
-
-    Gets the details of a suppressed recipient email address for a given
-    `suppressionId`. Each suppression is given a unique OCID.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_suppression = oci.Email.get_suppression(suppression_id=oci_email_suppression["test_suppression"]["id"])
-    ```
-
-
-    :param str suppression_id: The unique OCID of the suppression.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['suppressionId'] = suppression_id
@@ -191,21 +149,6 @@ def get_suppression(suppression_id: Optional[str] = None,
 def get_suppression_output(suppression_id: Optional[pulumi.Input[str]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSuppressionResult]:
     """
-    This data source provides details about a specific Suppression resource in Oracle Cloud Infrastructure Email service.
-
-    Gets the details of a suppressed recipient email address for a given
-    `suppressionId`. Each suppression is given a unique OCID.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_suppression = oci.Email.get_suppression(suppression_id=oci_email_suppression["test_suppression"]["id"])
-    ```
-
-
-    :param str suppression_id: The unique OCID of the suppression.
+    Use this data source to access information about an existing resource.
     """
     ...

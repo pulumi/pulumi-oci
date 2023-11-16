@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Inventory resource in Oracle Cloud Infrastructure Cloud Bridge service.
@@ -60,26 +59,26 @@ type LookupInventoryArgs struct {
 // A collection of values returned by getInventory.
 type LookupInventoryResult struct {
 	// The OCID of the tenantId.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Inventory display name.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Inventory OCID.
-	Id          string `pulumi:"id"`
-	InventoryId string `pulumi:"inventoryId"`
+	Id          *string `pulumi:"id"`
+	InventoryId string  `pulumi:"inventoryId"`
 	// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The current state of the inventory.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time when the inventory was created. An RFC3339 formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time when the inventory was updated. An RFC3339 formatted datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func LookupInventoryOutput(ctx *pulumi.Context, args LookupInventoryOutputArgs, opts ...pulumi.InvokeOption) LookupInventoryResultOutput {
@@ -120,15 +119,9 @@ func (o LookupInventoryResultOutput) ToLookupInventoryResultOutputWithContext(ct
 	return o
 }
 
-func (o LookupInventoryResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupInventoryResult] {
-	return pulumix.Output[LookupInventoryResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the tenantId.
-func (o LookupInventoryResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupInventoryResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupInventoryResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupInventoryResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -137,8 +130,8 @@ func (o LookupInventoryResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // Inventory display name.
-func (o LookupInventoryResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupInventoryResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupInventoryResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupInventoryResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -147,8 +140,8 @@ func (o LookupInventoryResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Inventory OCID.
-func (o LookupInventoryResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupInventoryResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupInventoryResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupInventoryResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupInventoryResultOutput) InventoryId() pulumi.StringOutput {
@@ -156,13 +149,13 @@ func (o LookupInventoryResultOutput) InventoryId() pulumi.StringOutput {
 }
 
 // A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
-func (o LookupInventoryResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupInventoryResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupInventoryResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupInventoryResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the inventory.
-func (o LookupInventoryResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupInventoryResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupInventoryResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupInventoryResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
@@ -171,13 +164,13 @@ func (o LookupInventoryResultOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time when the inventory was created. An RFC3339 formatted datetime string.
-func (o LookupInventoryResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupInventoryResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupInventoryResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupInventoryResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time when the inventory was updated. An RFC3339 formatted datetime string.
-func (o LookupInventoryResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupInventoryResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupInventoryResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupInventoryResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

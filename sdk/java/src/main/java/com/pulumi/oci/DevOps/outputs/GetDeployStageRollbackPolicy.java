@@ -6,6 +6,8 @@ package com.pulumi.oci.DevOps.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDeployStageRollbackPolicy {
@@ -13,15 +15,15 @@ public final class GetDeployStageRollbackPolicy {
      * @return The type of policy used for rolling out a deployment stage.
      * 
      */
-    private String policyType;
+    private @Nullable String policyType;
 
     private GetDeployStageRollbackPolicy() {}
     /**
      * @return The type of policy used for rolling out a deployment stage.
      * 
      */
-    public String policyType() {
-        return this.policyType;
+    public Optional<String> policyType() {
+        return Optional.ofNullable(this.policyType);
     }
 
     public static Builder builder() {
@@ -33,7 +35,7 @@ public final class GetDeployStageRollbackPolicy {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String policyType;
+        private @Nullable String policyType;
         public Builder() {}
         public Builder(GetDeployStageRollbackPolicy defaults) {
     	      Objects.requireNonNull(defaults);
@@ -41,8 +43,8 @@ public final class GetDeployStageRollbackPolicy {
         }
 
         @CustomType.Setter
-        public Builder policyType(String policyType) {
-            this.policyType = Objects.requireNonNull(policyType);
+        public Builder policyType(@Nullable String policyType) {
+            this.policyType = policyType;
             return this;
         }
         public GetDeployStageRollbackPolicy build() {

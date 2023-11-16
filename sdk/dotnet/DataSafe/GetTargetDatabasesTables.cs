@@ -207,7 +207,7 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string? SchemaNameContains;
         /// <summary>
         /// Name of the schema.
@@ -228,7 +228,7 @@ namespace Pulumi.Oci.DataSafe
         private GetTargetDatabasesTablesResult(
             ImmutableArray<Outputs.GetTargetDatabasesTablesFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? schemaNameContains,
 

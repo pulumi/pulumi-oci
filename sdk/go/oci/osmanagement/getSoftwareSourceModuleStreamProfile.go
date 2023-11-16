@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Software Source Module Stream Profile resource in Oracle Cloud Infrastructure OS Management service.
@@ -69,11 +68,11 @@ type GetSoftwareSourceModuleStreamProfileArgs struct {
 // A collection of values returned by getSoftwareSourceModuleStreamProfile.
 type GetSoftwareSourceModuleStreamProfileResult struct {
 	// A description of the contents of the module stream profile
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Indicates if this profile is the default for its module stream.
-	IsDefault bool `pulumi:"isDefault"`
+	IsDefault *bool `pulumi:"isDefault"`
 	// The name of the module that contains the stream profile
 	ModuleName string `pulumi:"moduleName"`
 	// A list of packages that constitute the profile.  Each element in the list is the name of a package.  The name is suitable to use as an argument to other OS Management APIs that interact directly with packages.
@@ -129,25 +128,19 @@ func (o GetSoftwareSourceModuleStreamProfileResultOutput) ToGetSoftwareSourceMod
 	return o
 }
 
-func (o GetSoftwareSourceModuleStreamProfileResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourceModuleStreamProfileResult] {
-	return pulumix.Output[GetSoftwareSourceModuleStreamProfileResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A description of the contents of the module stream profile
-func (o GetSoftwareSourceModuleStreamProfileResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourceModuleStreamProfileResult) string { return v.Description }).(pulumi.StringOutput)
+func (o GetSoftwareSourceModuleStreamProfileResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourceModuleStreamProfileResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetSoftwareSourceModuleStreamProfileResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourceModuleStreamProfileResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetSoftwareSourceModuleStreamProfileResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourceModuleStreamProfileResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Indicates if this profile is the default for its module stream.
-func (o GetSoftwareSourceModuleStreamProfileResultOutput) IsDefault() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSoftwareSourceModuleStreamProfileResult) bool { return v.IsDefault }).(pulumi.BoolOutput)
+func (o GetSoftwareSourceModuleStreamProfileResultOutput) IsDefault() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourceModuleStreamProfileResult) *bool { return v.IsDefault }).(pulumi.BoolPtrOutput)
 }
 
 // The name of the module that contains the stream profile

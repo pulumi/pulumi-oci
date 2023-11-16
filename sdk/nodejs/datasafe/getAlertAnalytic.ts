@@ -104,11 +104,11 @@ export interface GetAlertAnalyticResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The aggregated data point items.
      */
-    readonly items: outputs.DataSafe.GetAlertAnalyticItem[];
+    readonly items?: outputs.DataSafe.GetAlertAnalyticItem[];
     readonly queryTimeZone?: string;
     readonly scimQuery?: string;
     readonly summaryFields?: string[];

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Shapes in Oracle Cloud Infrastructure Core service.
@@ -71,7 +70,7 @@ type GetShapesResult struct {
 	CompartmentId      string            `pulumi:"compartmentId"`
 	Filters            []GetShapesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id      string  `pulumi:"id"`
+	Id      *string `pulumi:"id"`
 	ImageId *string `pulumi:"imageId"`
 	// The list of shapes.
 	Shapes []GetShapesShape `pulumi:"shapes"`
@@ -120,12 +119,6 @@ func (o GetShapesResultOutput) ToGetShapesResultOutputWithContext(ctx context.Co
 	return o
 }
 
-func (o GetShapesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetShapesResult] {
-	return pulumix.Output[GetShapesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetShapesResultOutput) AvailabilityDomain() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetShapesResult) *string { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
 }
@@ -139,8 +132,8 @@ func (o GetShapesResultOutput) Filters() GetShapesFilterArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetShapesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetShapesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetShapesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetShapesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetShapesResultOutput) ImageId() pulumi.StringPtrOutput {

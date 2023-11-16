@@ -87,11 +87,11 @@ export interface GetAuditTrailAnalyticResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Array of audit trail aggregration data.
      */
-    readonly items: outputs.DataSafe.GetAuditTrailAnalyticItem[];
+    readonly items?: outputs.DataSafe.GetAuditTrailAnalyticItem[];
     /**
      * The OCID of the Data Safe target for which the audit trail is created.
      */

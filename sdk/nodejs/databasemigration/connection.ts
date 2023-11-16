@@ -109,7 +109,7 @@ export class Connection extends pulumi.CustomResource {
     /**
      * (Updatable) This name is the distinguished name used while creating the certificate on target database. Requires a TLS wallet to be specified. Not required for source container database connections.
      */
-    public readonly certificateTdn!: pulumi.Output<string>;
+    public readonly certificateTdn!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) OCID of the compartment where the secret containing the credentials will be created.
      */
@@ -117,15 +117,15 @@ export class Connection extends pulumi.CustomResource {
     /**
      * (Updatable) Connect Descriptor details. Required for Manual and UserManagerOci connection types. If a Private Endpoint was specified for the Connection, the host should contain a valid IP address.
      */
-    public readonly connectDescriptor!: pulumi.Output<outputs.DatabaseMigration.ConnectionConnectDescriptor>;
+    public readonly connectDescriptor!: pulumi.Output<outputs.DatabaseMigration.ConnectionConnectDescriptor | undefined>;
     /**
      * OCID of the Secret in the Oracle Cloud Infrastructure vault containing the Database Connection credentials.
      */
-    public /*out*/ readonly credentialsSecretId!: pulumi.Output<string>;
+    public /*out*/ readonly credentialsSecretId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The OCID of the cloud database. Required if the database connection type is Autonomous.
      */
-    public readonly databaseId!: pulumi.Output<string>;
+    public readonly databaseId!: pulumi.Output<string | undefined>;
     /**
      * Database connection type.
      */
@@ -133,59 +133,59 @@ export class Connection extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) Database Connection display name identifier.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    public readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) An array of Network Security Group OCIDs used to define network access for Connections.
      */
-    public readonly nsgIds!: pulumi.Output<string[]>;
+    public readonly nsgIds!: pulumi.Output<string[] | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Private Endpoint configuration details. Not required for source container database connections, it will default to the specified Source Database Connection Private Endpoint.
      */
-    public readonly privateEndpoint!: pulumi.Output<outputs.DatabaseMigration.ConnectionPrivateEndpoint>;
+    public readonly privateEndpoint!: pulumi.Output<outputs.DatabaseMigration.ConnectionPrivateEndpoint | undefined>;
     /**
      * (Updatable) Database Administrator Credentials details.
      */
-    public readonly replicationCredentials!: pulumi.Output<outputs.DatabaseMigration.ConnectionReplicationCredentials>;
+    public readonly replicationCredentials!: pulumi.Output<outputs.DatabaseMigration.ConnectionReplicationCredentials | undefined>;
     /**
      * (Updatable) Details of the SSH key that will be used. Required for source database Manual and UserManagerOci connection types. Not required for source container database connections.
      */
-    public readonly sshDetails!: pulumi.Output<outputs.DatabaseMigration.ConnectionSshDetails>;
+    public readonly sshDetails!: pulumi.Output<outputs.DatabaseMigration.ConnectionSshDetails | undefined>;
     /**
      * The current state of the Connection resource.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The time the Connection resource was created. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The time of the last Connection resource details update. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) keystore.jks file contents; base64 encoded String. Requires a TLS wallet to be specified. Not required for source container database connections.
      */
-    public readonly tlsKeystore!: pulumi.Output<string>;
+    public readonly tlsKeystore!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) cwallet.sso containing containing the TCPS/SSL certificate; base64 encoded String. Not required for source container database connections.
      */
-    public readonly tlsWallet!: pulumi.Output<string>;
+    public readonly tlsWallet!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Vault details to store migration and connection credentials secrets
      */

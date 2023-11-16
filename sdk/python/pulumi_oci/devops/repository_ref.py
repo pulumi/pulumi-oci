@@ -21,15 +21,6 @@ class RepositoryRefArgs:
                  object_id: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a RepositoryRef resource.
-        :param pulumi.Input[str] ref_name: A filter to return only resources that match the given reference name.
-        :param pulumi.Input[str] ref_type: (Updatable) The type of reference (BRANCH or TAG).
-        :param pulumi.Input[str] repository_id: Unique repository identifier.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] commit_id: (Updatable) Commit ID pointed to by the new branch.
-        :param pulumi.Input[str] object_id: (Updatable) SHA-1 hash value of the object pointed to by the tag.
         """
         pulumi.set(__self__, "ref_name", ref_name)
         pulumi.set(__self__, "ref_type", ref_type)
@@ -42,9 +33,6 @@ class RepositoryRefArgs:
     @property
     @pulumi.getter(name="refName")
     def ref_name(self) -> pulumi.Input[str]:
-        """
-        A filter to return only resources that match the given reference name.
-        """
         return pulumi.get(self, "ref_name")
 
     @ref_name.setter
@@ -54,9 +42,6 @@ class RepositoryRefArgs:
     @property
     @pulumi.getter(name="refType")
     def ref_type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The type of reference (BRANCH or TAG).
-        """
         return pulumi.get(self, "ref_type")
 
     @ref_type.setter
@@ -66,13 +51,6 @@ class RepositoryRefArgs:
     @property
     @pulumi.getter(name="repositoryId")
     def repository_id(self) -> pulumi.Input[str]:
-        """
-        Unique repository identifier.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "repository_id")
 
     @repository_id.setter
@@ -82,9 +60,6 @@ class RepositoryRefArgs:
     @property
     @pulumi.getter(name="commitId")
     def commit_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Commit ID pointed to by the new branch.
-        """
         return pulumi.get(self, "commit_id")
 
     @commit_id.setter
@@ -94,9 +69,6 @@ class RepositoryRefArgs:
     @property
     @pulumi.getter(name="objectId")
     def object_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) SHA-1 hash value of the object pointed to by the tag.
-        """
         return pulumi.get(self, "object_id")
 
     @object_id.setter
@@ -117,18 +89,6 @@ class _RepositoryRefState:
                  repository_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering RepositoryRef resources.
-        :param pulumi.Input[str] commit_id: (Updatable) Commit ID pointed to by the new branch.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] full_ref_name: Unique full reference name inside a repository.
-        :param pulumi.Input[str] object_id: (Updatable) SHA-1 hash value of the object pointed to by the tag.
-        :param pulumi.Input[str] ref_name: A filter to return only resources that match the given reference name.
-        :param pulumi.Input[str] ref_type: (Updatable) The type of reference (BRANCH or TAG).
-        :param pulumi.Input[str] repository_id: Unique repository identifier.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if commit_id is not None:
             pulumi.set(__self__, "commit_id", commit_id)
@@ -150,9 +110,6 @@ class _RepositoryRefState:
     @property
     @pulumi.getter(name="commitId")
     def commit_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Commit ID pointed to by the new branch.
-        """
         return pulumi.get(self, "commit_id")
 
     @commit_id.setter
@@ -162,9 +119,6 @@ class _RepositoryRefState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -174,9 +128,6 @@ class _RepositoryRefState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -186,9 +137,6 @@ class _RepositoryRefState:
     @property
     @pulumi.getter(name="fullRefName")
     def full_ref_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Unique full reference name inside a repository.
-        """
         return pulumi.get(self, "full_ref_name")
 
     @full_ref_name.setter
@@ -198,9 +146,6 @@ class _RepositoryRefState:
     @property
     @pulumi.getter(name="objectId")
     def object_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) SHA-1 hash value of the object pointed to by the tag.
-        """
         return pulumi.get(self, "object_id")
 
     @object_id.setter
@@ -210,9 +155,6 @@ class _RepositoryRefState:
     @property
     @pulumi.getter(name="refName")
     def ref_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        A filter to return only resources that match the given reference name.
-        """
         return pulumi.get(self, "ref_name")
 
     @ref_name.setter
@@ -222,9 +164,6 @@ class _RepositoryRefState:
     @property
     @pulumi.getter(name="refType")
     def ref_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The type of reference (BRANCH or TAG).
-        """
         return pulumi.get(self, "ref_type")
 
     @ref_type.setter
@@ -234,13 +173,6 @@ class _RepositoryRefState:
     @property
     @pulumi.getter(name="repositoryId")
     def repository_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        Unique repository identifier.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "repository_id")
 
     @repository_id.setter
@@ -260,43 +192,9 @@ class RepositoryRef(pulumi.CustomResource):
                  repository_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Repository Ref resource in Oracle Cloud Infrastructure Devops service.
-
-        Creates a new reference or updates an existing one.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_repository_ref = oci.dev_ops.RepositoryRef("testRepositoryRef",
-            ref_name=var["repository_ref_ref_name"],
-            ref_type=var["repository_ref_ref_type"],
-            repository_id=oci_devops_repository["test_repository"]["id"],
-            commit_id=oci_devops_commit["test_commit"]["id"],
-            object_id=oci_objectstorage_object["test_object"]["id"])
-        ```
-
-        ## Import
-
-        RepositoryRefs can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:DevOps/repositoryRef:RepositoryRef test_repository_ref "repositories/{repositoryId}/refs/{refName}"
-        ```
-
+        Create a RepositoryRef resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] commit_id: (Updatable) Commit ID pointed to by the new branch.
-        :param pulumi.Input[str] object_id: (Updatable) SHA-1 hash value of the object pointed to by the tag.
-        :param pulumi.Input[str] ref_name: A filter to return only resources that match the given reference name.
-        :param pulumi.Input[str] ref_type: (Updatable) The type of reference (BRANCH or TAG).
-        :param pulumi.Input[str] repository_id: Unique repository identifier.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -305,32 +203,7 @@ class RepositoryRef(pulumi.CustomResource):
                  args: RepositoryRefArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Repository Ref resource in Oracle Cloud Infrastructure Devops service.
-
-        Creates a new reference or updates an existing one.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_repository_ref = oci.dev_ops.RepositoryRef("testRepositoryRef",
-            ref_name=var["repository_ref_ref_name"],
-            ref_type=var["repository_ref_ref_type"],
-            repository_id=oci_devops_repository["test_repository"]["id"],
-            commit_id=oci_devops_commit["test_commit"]["id"],
-            object_id=oci_objectstorage_object["test_object"]["id"])
-        ```
-
-        ## Import
-
-        RepositoryRefs can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:DevOps/repositoryRef:RepositoryRef test_repository_ref "repositories/{repositoryId}/refs/{refName}"
-        ```
-
+        Create a RepositoryRef resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param RepositoryRefArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -399,18 +272,6 @@ class RepositoryRef(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] commit_id: (Updatable) Commit ID pointed to by the new branch.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] full_ref_name: Unique full reference name inside a repository.
-        :param pulumi.Input[str] object_id: (Updatable) SHA-1 hash value of the object pointed to by the tag.
-        :param pulumi.Input[str] ref_name: A filter to return only resources that match the given reference name.
-        :param pulumi.Input[str] ref_type: (Updatable) The type of reference (BRANCH or TAG).
-        :param pulumi.Input[str] repository_id: Unique repository identifier.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -428,69 +289,41 @@ class RepositoryRef(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="commitId")
-    def commit_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Commit ID pointed to by the new branch.
-        """
+    def commit_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "commit_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="fullRefName")
-    def full_ref_name(self) -> pulumi.Output[str]:
-        """
-        Unique full reference name inside a repository.
-        """
+    def full_ref_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "full_ref_name")
 
     @property
     @pulumi.getter(name="objectId")
-    def object_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) SHA-1 hash value of the object pointed to by the tag.
-        """
+    def object_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "object_id")
 
     @property
     @pulumi.getter(name="refName")
     def ref_name(self) -> pulumi.Output[str]:
-        """
-        A filter to return only resources that match the given reference name.
-        """
         return pulumi.get(self, "ref_name")
 
     @property
     @pulumi.getter(name="refType")
     def ref_type(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The type of reference (BRANCH or TAG).
-        """
         return pulumi.get(self, "ref_type")
 
     @property
     @pulumi.getter(name="repositoryId")
     def repository_id(self) -> pulumi.Output[str]:
-        """
-        Unique repository identifier.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "repository_id")
 

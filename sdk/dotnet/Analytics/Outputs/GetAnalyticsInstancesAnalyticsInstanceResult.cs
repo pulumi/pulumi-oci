@@ -20,44 +20,44 @@ namespace Pulumi.Oci.Analytics.Outputs
         /// <summary>
         /// The OCID of the compartment.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// Description of the vanity url.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// Email address receiving notifications.
         /// </summary>
-        public readonly string EmailNotification;
+        public readonly string? EmailNotification;
         /// <summary>
         /// A filter to only return resources matching the feature set. Values are case-insensitive.
         /// </summary>
-        public readonly string FeatureSet;
+        public readonly string? FeatureSet;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The Virtual Cloud Network OCID.
         /// </summary>
-        public readonly string Id;
-        public readonly string IdcsAccessToken;
+        public readonly string? Id;
+        public readonly string? IdcsAccessToken;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
         /// </summary>
-        public readonly string KmsKeyId;
+        public readonly string? KmsKeyId;
         /// <summary>
         /// The license used for the service.
         /// </summary>
-        public readonly string LicenseType;
+        public readonly string? LicenseType;
         /// <summary>
         /// A filter to return only resources that match the given name exactly.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// Base representation of a network endpoint.
         /// </summary>
@@ -65,55 +65,55 @@ namespace Pulumi.Oci.Analytics.Outputs
         /// <summary>
         /// URL of the Analytics service.
         /// </summary>
-        public readonly string ServiceUrl;
+        public readonly string? ServiceUrl;
         /// <summary>
         /// A filter to only return resources matching the lifecycle state. The state value is case-insensitive.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The date and time the instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The date and time the instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events do not influence it.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
 
         [OutputConstructor]
         private GetAnalyticsInstancesAnalyticsInstanceResult(
             ImmutableArray<Outputs.GetAnalyticsInstancesAnalyticsInstanceCapacityResult> capacities,
 
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string description,
+            string? description,
 
-            string emailNotification,
+            string? emailNotification,
 
-            string featureSet,
+            string? featureSet,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            string idcsAccessToken,
+            string? idcsAccessToken,
 
-            string kmsKeyId,
+            string? kmsKeyId,
 
-            string licenseType,
+            string? licenseType,
 
-            string name,
+            string? name,
 
             ImmutableArray<Outputs.GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailResult> networkEndpointDetails,
 
-            string serviceUrl,
+            string? serviceUrl,
 
-            string state,
+            string? state,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated)
+            string? timeUpdated)
         {
             Capacities = capacities;
             CompartmentId = compartmentId;

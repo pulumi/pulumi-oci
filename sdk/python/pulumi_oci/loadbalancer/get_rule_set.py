@@ -41,15 +41,12 @@ class GetRuleSetResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetRuleSetItemResult']:
-        """
-        An array of rules that compose the rule set.
-        """
+    def items(self) -> Optional[Sequence['outputs.GetRuleSetItemResult']]:
         return pulumi.get(self, "items")
 
     @property
@@ -60,14 +57,11 @@ class GetRuleSetResult:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The name for this set of rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_rule_set`
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
 
@@ -88,23 +82,7 @@ def get_rule_set(load_balancer_id: Optional[str] = None,
                  name: Optional[str] = None,
                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetRuleSetResult:
     """
-    This data source provides details about a specific Rule Set resource in Oracle Cloud Infrastructure Load Balancer service.
-
-    Gets the specified set of rules.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_rule_set = oci.LoadBalancer.get_rule_set(load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"],
-        name=var["rule_set_name"])
-    ```
-
-
-    :param str load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the specified load balancer.
-    :param str name: The name of the rule set to retrieve.  Example: `example_rule_set`
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['loadBalancerId'] = load_balancer_id
@@ -125,22 +103,6 @@ def get_rule_set_output(load_balancer_id: Optional[pulumi.Input[str]] = None,
                         name: Optional[pulumi.Input[str]] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRuleSetResult]:
     """
-    This data source provides details about a specific Rule Set resource in Oracle Cloud Infrastructure Load Balancer service.
-
-    Gets the specified set of rules.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_rule_set = oci.LoadBalancer.get_rule_set(load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"],
-        name=var["rule_set_name"])
-    ```
-
-
-    :param str load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the specified load balancer.
-    :param str name: The name of the rule set to retrieve.  Example: `example_rule_set`
+    Use this data source to access information about an existing resource.
     """
     ...

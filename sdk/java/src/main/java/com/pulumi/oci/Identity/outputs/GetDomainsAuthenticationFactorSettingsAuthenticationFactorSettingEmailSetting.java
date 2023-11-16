@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingEmailSetting {
@@ -14,27 +16,27 @@ public final class GetDomainsAuthenticationFactorSettingsAuthenticationFactorSet
      * @return Custom redirect Url which will be used in email link
      * 
      */
-    private String emailLinkCustomUrl;
+    private @Nullable String emailLinkCustomUrl;
     /**
      * @return Specifies whether Email link is enabled or not.
      * 
      */
-    private Boolean emailLinkEnabled;
+    private @Nullable Boolean emailLinkEnabled;
 
     private GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingEmailSetting() {}
     /**
      * @return Custom redirect Url which will be used in email link
      * 
      */
-    public String emailLinkCustomUrl() {
-        return this.emailLinkCustomUrl;
+    public Optional<String> emailLinkCustomUrl() {
+        return Optional.ofNullable(this.emailLinkCustomUrl);
     }
     /**
      * @return Specifies whether Email link is enabled or not.
      * 
      */
-    public Boolean emailLinkEnabled() {
-        return this.emailLinkEnabled;
+    public Optional<Boolean> emailLinkEnabled() {
+        return Optional.ofNullable(this.emailLinkEnabled);
     }
 
     public static Builder builder() {
@@ -46,8 +48,8 @@ public final class GetDomainsAuthenticationFactorSettingsAuthenticationFactorSet
     }
     @CustomType.Builder
     public static final class Builder {
-        private String emailLinkCustomUrl;
-        private Boolean emailLinkEnabled;
+        private @Nullable String emailLinkCustomUrl;
+        private @Nullable Boolean emailLinkEnabled;
         public Builder() {}
         public Builder(GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingEmailSetting defaults) {
     	      Objects.requireNonNull(defaults);
@@ -56,13 +58,13 @@ public final class GetDomainsAuthenticationFactorSettingsAuthenticationFactorSet
         }
 
         @CustomType.Setter
-        public Builder emailLinkCustomUrl(String emailLinkCustomUrl) {
-            this.emailLinkCustomUrl = Objects.requireNonNull(emailLinkCustomUrl);
+        public Builder emailLinkCustomUrl(@Nullable String emailLinkCustomUrl) {
+            this.emailLinkCustomUrl = emailLinkCustomUrl;
             return this;
         }
         @CustomType.Setter
-        public Builder emailLinkEnabled(Boolean emailLinkEnabled) {
-            this.emailLinkEnabled = Objects.requireNonNull(emailLinkEnabled);
+        public Builder emailLinkEnabled(@Nullable Boolean emailLinkEnabled) {
+            this.emailLinkEnabled = emailLinkEnabled;
             return this;
         }
         public GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingEmailSetting build() {

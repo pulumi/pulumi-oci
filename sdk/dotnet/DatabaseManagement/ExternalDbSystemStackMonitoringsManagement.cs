@@ -59,13 +59,13 @@ namespace Pulumi.Oci.DatabaseManagement
         /// The status of the associated service.
         /// </summary>
         [Output("isEnabled")]
-        public Output<bool> IsEnabled { get; private set; } = null!;
+        public Output<bool?> IsEnabled { get; private set; } = null!;
 
         /// <summary>
         /// The associated service-specific inputs in JSON string format, which Database Management can identify.
         /// </summary>
         [Output("metadata")]
-        public Output<string> Metadata { get; private set; } = null!;
+        public Output<string?> Metadata { get; private set; } = null!;
 
 
         /// <summary>

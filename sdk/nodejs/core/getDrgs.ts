@@ -53,12 +53,12 @@ export interface GetDrgsResult {
     /**
      * The list of drgs.
      */
-    readonly drgs: outputs.Core.GetDrgsDrg[];
+    readonly drgs?: outputs.Core.GetDrgsDrg[];
     readonly filters?: outputs.Core.GetDrgsFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
 }
 /**
  * This data source provides the list of Drgs in Oracle Cloud Infrastructure Core service.

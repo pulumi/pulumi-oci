@@ -16,31 +16,31 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Extend current custom action timeout between the current database servers during waiting state, from 0 (zero) to 30 minutes.
         /// </summary>
-        public readonly int CurrentCustomActionTimeoutInMins;
+        public readonly int? CurrentCustomActionTimeoutInMins;
         /// <summary>
         /// The name of the current infrastruture component that is getting patched.
         /// </summary>
-        public readonly string CurrentPatchingComponent;
+        public readonly string? CurrentPatchingComponent;
         /// <summary>
         /// Determines the amount of time the system will wait before the start of each database server patching operation. Specify a number of minutes, from 15 to 120.
         /// </summary>
-        public readonly int CustomActionTimeoutInMins;
+        public readonly int? CustomActionTimeoutInMins;
         /// <summary>
         /// Description of the maintenance run.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// The user-friendly name for the maintenance run.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// The estimated start time of the next infrastruture component patching operation.
         /// </summary>
-        public readonly string EstimatedComponentPatchingStartTime;
+        public readonly string? EstimatedComponentPatchingStartTime;
         /// <summary>
         /// The estimated total time required in minutes for all patching operations (database server, storage server, and network switch patching).
         /// </summary>
@@ -48,147 +48,147 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// The OCID of the maintenance run.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
         /// </summary>
-        public readonly bool IsCustomActionTimeoutEnabled;
+        public readonly bool? IsCustomActionTimeoutEnabled;
         /// <summary>
         /// Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
         /// </summary>
-        public readonly bool IsDstFileUpdateEnabled;
+        public readonly bool? IsDstFileUpdateEnabled;
         /// <summary>
         /// Additional information about the current lifecycle state.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// Maintenance sub-type.
         /// </summary>
-        public readonly string MaintenanceSubtype;
+        public readonly string? MaintenanceSubtype;
         /// <summary>
         /// The maintenance type.
         /// </summary>
-        public readonly string MaintenanceType;
+        public readonly string? MaintenanceType;
         /// <summary>
         /// Contain the patch failure count.
         /// </summary>
-        public readonly int PatchFailureCount;
+        public readonly int? PatchFailureCount;
         /// <summary>
         /// The unique identifier of the patch. The identifier string includes the patch type, the Oracle Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle Database 19.9.0.0 that was released October 30, 2020.
         /// </summary>
-        public readonly string PatchId;
+        public readonly string? PatchId;
         /// <summary>
         /// The time when the patching operation ended.
         /// </summary>
-        public readonly string PatchingEndTime;
+        public readonly string? PatchingEndTime;
         /// <summary>
         /// Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
         /// </summary>
-        public readonly string PatchingMode;
+        public readonly string? PatchingMode;
         /// <summary>
         /// The time when the patching operation started.
         /// </summary>
-        public readonly string PatchingStartTime;
+        public readonly string? PatchingStartTime;
         /// <summary>
         /// The status of the patching operation.
         /// </summary>
-        public readonly string PatchingStatus;
+        public readonly string? PatchingStatus;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance run for the Autonomous Data Guard association's peer container database.
         /// </summary>
-        public readonly string PeerMaintenanceRunId;
+        public readonly string? PeerMaintenanceRunId;
         /// <summary>
         /// The state of the maintenance run history.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The target software version for the database server patching operation.
         /// </summary>
-        public readonly string TargetDbServerVersion;
+        public readonly string? TargetDbServerVersion;
         /// <summary>
         /// The target resource ID.
         /// </summary>
-        public readonly string TargetResourceId;
+        public readonly string? TargetResourceId;
         /// <summary>
         /// The type of the target resource.
         /// </summary>
-        public readonly string TargetResourceType;
+        public readonly string? TargetResourceType;
         /// <summary>
         /// The target Cell version that is to be patched to.
         /// </summary>
-        public readonly string TargetStorageServerVersion;
+        public readonly string? TargetStorageServerVersion;
         /// <summary>
         /// The date and time the maintenance run was completed.
         /// </summary>
-        public readonly string TimeEnded;
+        public readonly string? TimeEnded;
         /// <summary>
         /// The date and time the maintenance run is scheduled to occur.
         /// </summary>
-        public readonly string TimeScheduled;
+        public readonly string? TimeScheduled;
         /// <summary>
         /// The date and time the maintenance run starts.
         /// </summary>
-        public readonly string TimeStarted;
+        public readonly string? TimeStarted;
 
         [OutputConstructor]
         private GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailResult(
-            string compartmentId,
+            string? compartmentId,
 
-            int currentCustomActionTimeoutInMins,
+            int? currentCustomActionTimeoutInMins,
 
-            string currentPatchingComponent,
+            string? currentPatchingComponent,
 
-            int customActionTimeoutInMins,
+            int? customActionTimeoutInMins,
 
-            string description,
+            string? description,
 
-            string displayName,
+            string? displayName,
 
-            string estimatedComponentPatchingStartTime,
+            string? estimatedComponentPatchingStartTime,
 
             ImmutableArray<Outputs.GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryMaintenanceRunDetailEstimatedPatchingTimeResult> estimatedPatchingTimes,
 
-            string id,
+            string? id,
 
-            bool isCustomActionTimeoutEnabled,
+            bool? isCustomActionTimeoutEnabled,
 
-            bool isDstFileUpdateEnabled,
+            bool? isDstFileUpdateEnabled,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string maintenanceSubtype,
+            string? maintenanceSubtype,
 
-            string maintenanceType,
+            string? maintenanceType,
 
-            int patchFailureCount,
+            int? patchFailureCount,
 
-            string patchId,
+            string? patchId,
 
-            string patchingEndTime,
+            string? patchingEndTime,
 
-            string patchingMode,
+            string? patchingMode,
 
-            string patchingStartTime,
+            string? patchingStartTime,
 
-            string patchingStatus,
+            string? patchingStatus,
 
-            string peerMaintenanceRunId,
+            string? peerMaintenanceRunId,
 
-            string state,
+            string? state,
 
-            string targetDbServerVersion,
+            string? targetDbServerVersion,
 
-            string targetResourceId,
+            string? targetResourceId,
 
-            string targetResourceType,
+            string? targetResourceType,
 
-            string targetStorageServerVersion,
+            string? targetStorageServerVersion,
 
-            string timeEnded,
+            string? timeEnded,
 
-            string timeScheduled,
+            string? timeScheduled,
 
-            string timeStarted)
+            string? timeStarted)
         {
             CompartmentId = compartmentId;
             CurrentCustomActionTimeoutInMins = currentCustomActionTimeoutInMins;

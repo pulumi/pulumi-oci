@@ -29,7 +29,7 @@ public final class GetVmClusterRecommendedNetworkResult {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return The user-friendly name for the Exadata Cloud@Customer VM cluster network. The name does not need to be unique.
      * 
@@ -39,30 +39,30 @@ public final class GetVmClusterRecommendedNetworkResult {
      * @return The list of DNS server IP addresses. Maximum of 3 allowed.
      * 
      */
-    private List<String> dns;
+    private @Nullable List<String> dns;
     private @Nullable Integer drScanListenerPortTcp;
     /**
      * @return The SCAN details for DR network
      * 
      */
-    private List<GetVmClusterRecommendedNetworkDrScan> drScans;
+    private @Nullable List<GetVmClusterRecommendedNetworkDrScan> drScans;
     private String exadataInfrastructureId;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private List<GetVmClusterRecommendedNetworkNetwork> networks;
     /**
      * @return The list of NTP server IP addresses. Maximum of 3 allowed.
      * 
      */
-    private List<String> ntps;
+    private @Nullable List<String> ntps;
     /**
      * @return The SCAN TCPIP port. Default is 1521.
      * 
@@ -77,12 +77,12 @@ public final class GetVmClusterRecommendedNetworkResult {
      * @return The SCAN details.
      * 
      */
-    private List<GetVmClusterRecommendedNetworkScan> scans;
+    private @Nullable List<GetVmClusterRecommendedNetworkScan> scans;
     /**
      * @return Details of the client and backup networks.
      * 
      */
-    private List<GetVmClusterRecommendedNetworkVmNetwork> vmNetworks;
+    private @Nullable List<GetVmClusterRecommendedNetworkVmNetwork> vmNetworks;
 
     private GetVmClusterRecommendedNetworkResult() {}
     /**
@@ -100,7 +100,7 @@ public final class GetVmClusterRecommendedNetworkResult {
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return The user-friendly name for the Exadata Cloud@Customer VM cluster network. The name does not need to be unique.
@@ -114,7 +114,7 @@ public final class GetVmClusterRecommendedNetworkResult {
      * 
      */
     public List<String> dns() {
-        return this.dns;
+        return this.dns == null ? List.of() : this.dns;
     }
     public Optional<Integer> drScanListenerPortTcp() {
         return Optional.ofNullable(this.drScanListenerPortTcp);
@@ -124,7 +124,7 @@ public final class GetVmClusterRecommendedNetworkResult {
      * 
      */
     public List<GetVmClusterRecommendedNetworkDrScan> drScans() {
-        return this.drScans;
+        return this.drScans == null ? List.of() : this.drScans;
     }
     public String exadataInfrastructureId() {
         return this.exadataInfrastructureId;
@@ -134,14 +134,14 @@ public final class GetVmClusterRecommendedNetworkResult {
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public List<GetVmClusterRecommendedNetworkNetwork> networks() {
         return this.networks;
@@ -151,7 +151,7 @@ public final class GetVmClusterRecommendedNetworkResult {
      * 
      */
     public List<String> ntps() {
-        return this.ntps;
+        return this.ntps == null ? List.of() : this.ntps;
     }
     /**
      * @return The SCAN TCPIP port. Default is 1521.
@@ -172,14 +172,14 @@ public final class GetVmClusterRecommendedNetworkResult {
      * 
      */
     public List<GetVmClusterRecommendedNetworkScan> scans() {
-        return this.scans;
+        return this.scans == null ? List.of() : this.scans;
     }
     /**
      * @return Details of the client and backup networks.
      * 
      */
     public List<GetVmClusterRecommendedNetworkVmNetwork> vmNetworks() {
-        return this.vmNetworks;
+        return this.vmNetworks == null ? List.of() : this.vmNetworks;
     }
 
     public static Builder builder() {
@@ -193,20 +193,20 @@ public final class GetVmClusterRecommendedNetworkResult {
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<String> dbServers;
-        private Map<String,Object> definedTags;
+        private @Nullable Map<String,Object> definedTags;
         private String displayName;
-        private List<String> dns;
+        private @Nullable List<String> dns;
         private @Nullable Integer drScanListenerPortTcp;
-        private List<GetVmClusterRecommendedNetworkDrScan> drScans;
+        private @Nullable List<GetVmClusterRecommendedNetworkDrScan> drScans;
         private String exadataInfrastructureId;
-        private Map<String,Object> freeformTags;
-        private String id;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
         private List<GetVmClusterRecommendedNetworkNetwork> networks;
-        private List<String> ntps;
+        private @Nullable List<String> ntps;
         private @Nullable Integer scanListenerPortTcp;
         private @Nullable Integer scanListenerPortTcpSsl;
-        private List<GetVmClusterRecommendedNetworkScan> scans;
-        private List<GetVmClusterRecommendedNetworkVmNetwork> vmNetworks;
+        private @Nullable List<GetVmClusterRecommendedNetworkScan> scans;
+        private @Nullable List<GetVmClusterRecommendedNetworkVmNetwork> vmNetworks;
         public Builder() {}
         public Builder(GetVmClusterRecommendedNetworkResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -242,8 +242,8 @@ public final class GetVmClusterRecommendedNetworkResult {
             return dbServers(List.of(dbServers));
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
@@ -252,8 +252,8 @@ public final class GetVmClusterRecommendedNetworkResult {
             return this;
         }
         @CustomType.Setter
-        public Builder dns(List<String> dns) {
-            this.dns = Objects.requireNonNull(dns);
+        public Builder dns(@Nullable List<String> dns) {
+            this.dns = dns;
             return this;
         }
         public Builder dns(String... dns) {
@@ -265,8 +265,8 @@ public final class GetVmClusterRecommendedNetworkResult {
             return this;
         }
         @CustomType.Setter
-        public Builder drScans(List<GetVmClusterRecommendedNetworkDrScan> drScans) {
-            this.drScans = Objects.requireNonNull(drScans);
+        public Builder drScans(@Nullable List<GetVmClusterRecommendedNetworkDrScan> drScans) {
+            this.drScans = drScans;
             return this;
         }
         public Builder drScans(GetVmClusterRecommendedNetworkDrScan... drScans) {
@@ -278,13 +278,13 @@ public final class GetVmClusterRecommendedNetworkResult {
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -296,8 +296,8 @@ public final class GetVmClusterRecommendedNetworkResult {
             return networks(List.of(networks));
         }
         @CustomType.Setter
-        public Builder ntps(List<String> ntps) {
-            this.ntps = Objects.requireNonNull(ntps);
+        public Builder ntps(@Nullable List<String> ntps) {
+            this.ntps = ntps;
             return this;
         }
         public Builder ntps(String... ntps) {
@@ -314,16 +314,16 @@ public final class GetVmClusterRecommendedNetworkResult {
             return this;
         }
         @CustomType.Setter
-        public Builder scans(List<GetVmClusterRecommendedNetworkScan> scans) {
-            this.scans = Objects.requireNonNull(scans);
+        public Builder scans(@Nullable List<GetVmClusterRecommendedNetworkScan> scans) {
+            this.scans = scans;
             return this;
         }
         public Builder scans(GetVmClusterRecommendedNetworkScan... scans) {
             return scans(List.of(scans));
         }
         @CustomType.Setter
-        public Builder vmNetworks(List<GetVmClusterRecommendedNetworkVmNetwork> vmNetworks) {
-            this.vmNetworks = Objects.requireNonNull(vmNetworks);
+        public Builder vmNetworks(@Nullable List<GetVmClusterRecommendedNetworkVmNetwork> vmNetworks) {
+            this.vmNetworks = vmNetworks;
             return this;
         }
         public Builder vmNetworks(GetVmClusterRecommendedNetworkVmNetwork... vmNetworks) {

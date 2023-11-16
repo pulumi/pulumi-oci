@@ -76,12 +76,12 @@ export interface GetFusionEnvironmentFamiliesResult {
     /**
      * The list of fusion_environment_family_collection.
      */
-    readonly fusionEnvironmentFamilyCollections: outputs.Functions.GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollection[];
+    readonly fusionEnvironmentFamilyCollections?: outputs.Functions.GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollection[];
     readonly fusionEnvironmentFamilyId?: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The current state of the FusionEnvironmentFamily.
      */

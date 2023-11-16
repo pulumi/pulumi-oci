@@ -8,6 +8,8 @@ import com.pulumi.oci.ObjectStorage.outputs.GetBucketRetentionRuleDuration;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetBucketRetentionRule {
@@ -15,67 +17,67 @@ public final class GetBucketRetentionRule {
      * @return User specified name for the retention rule.
      * 
      */
-    private String displayName;
-    private List<GetBucketRetentionRuleDuration> durations;
+    private @Nullable String displayName;
+    private @Nullable List<GetBucketRetentionRuleDuration> durations;
     /**
      * @return Unique identifier for the retention rule.
      * 
      */
-    private String retentionRuleId;
+    private @Nullable String retentionRuleId;
     /**
      * @return The date and time the bucket was created, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The date and time that the retention rule was modified as per [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    private String timeModified;
+    private @Nullable String timeModified;
     /**
      * @return The date and time as per [RFC 3339](https://tools.ietf.org/html/rfc3339) after which this rule becomes locked. and can only be deleted by deleting the bucket.
      * 
      */
-    private String timeRuleLocked;
+    private @Nullable String timeRuleLocked;
 
     private GetBucketRetentionRule() {}
     /**
      * @return User specified name for the retention rule.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     public List<GetBucketRetentionRuleDuration> durations() {
-        return this.durations;
+        return this.durations == null ? List.of() : this.durations;
     }
     /**
      * @return Unique identifier for the retention rule.
      * 
      */
-    public String retentionRuleId() {
-        return this.retentionRuleId;
+    public Optional<String> retentionRuleId() {
+        return Optional.ofNullable(this.retentionRuleId);
     }
     /**
      * @return The date and time the bucket was created, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The date and time that the retention rule was modified as per [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    public String timeModified() {
-        return this.timeModified;
+    public Optional<String> timeModified() {
+        return Optional.ofNullable(this.timeModified);
     }
     /**
      * @return The date and time as per [RFC 3339](https://tools.ietf.org/html/rfc3339) after which this rule becomes locked. and can only be deleted by deleting the bucket.
      * 
      */
-    public String timeRuleLocked() {
-        return this.timeRuleLocked;
+    public Optional<String> timeRuleLocked() {
+        return Optional.ofNullable(this.timeRuleLocked);
     }
 
     public static Builder builder() {
@@ -87,12 +89,12 @@ public final class GetBucketRetentionRule {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String displayName;
-        private List<GetBucketRetentionRuleDuration> durations;
-        private String retentionRuleId;
-        private String timeCreated;
-        private String timeModified;
-        private String timeRuleLocked;
+        private @Nullable String displayName;
+        private @Nullable List<GetBucketRetentionRuleDuration> durations;
+        private @Nullable String retentionRuleId;
+        private @Nullable String timeCreated;
+        private @Nullable String timeModified;
+        private @Nullable String timeRuleLocked;
         public Builder() {}
         public Builder(GetBucketRetentionRule defaults) {
     	      Objects.requireNonNull(defaults);
@@ -105,36 +107,36 @@ public final class GetBucketRetentionRule {
         }
 
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder durations(List<GetBucketRetentionRuleDuration> durations) {
-            this.durations = Objects.requireNonNull(durations);
+        public Builder durations(@Nullable List<GetBucketRetentionRuleDuration> durations) {
+            this.durations = durations;
             return this;
         }
         public Builder durations(GetBucketRetentionRuleDuration... durations) {
             return durations(List.of(durations));
         }
         @CustomType.Setter
-        public Builder retentionRuleId(String retentionRuleId) {
-            this.retentionRuleId = Objects.requireNonNull(retentionRuleId);
+        public Builder retentionRuleId(@Nullable String retentionRuleId) {
+            this.retentionRuleId = retentionRuleId;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeModified(String timeModified) {
-            this.timeModified = Objects.requireNonNull(timeModified);
+        public Builder timeModified(@Nullable String timeModified) {
+            this.timeModified = timeModified;
             return this;
         }
         @CustomType.Setter
-        public Builder timeRuleLocked(String timeRuleLocked) {
-            this.timeRuleLocked = Objects.requireNonNull(timeRuleLocked);
+        public Builder timeRuleLocked(@Nullable String timeRuleLocked) {
+            this.timeRuleLocked = timeRuleLocked;
             return this;
         }
         public GetBucketRetentionRule build() {

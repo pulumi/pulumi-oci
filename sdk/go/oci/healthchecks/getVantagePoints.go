@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Vantage Points in Oracle Cloud Infrastructure Health Checks service.
@@ -69,7 +68,7 @@ type GetVantagePointsResult struct {
 	// The list of health_checks_vantage_points.
 	HealthChecksVantagePoints []GetVantagePointsHealthChecksVantagePoint `pulumi:"healthChecksVantagePoints"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The unique, permanent name for the vantage point.
 	Name *string `pulumi:"name"`
 }
@@ -115,12 +114,6 @@ func (o GetVantagePointsResultOutput) ToGetVantagePointsResultOutputWithContext(
 	return o
 }
 
-func (o GetVantagePointsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetVantagePointsResult] {
-	return pulumix.Output[GetVantagePointsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The display name for the vantage point. Display names are determined by the best information available and may change over time.
 func (o GetVantagePointsResultOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetVantagePointsResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
@@ -138,8 +131,8 @@ func (o GetVantagePointsResultOutput) HealthChecksVantagePoints() GetVantagePoin
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetVantagePointsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVantagePointsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetVantagePointsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVantagePointsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The unique, permanent name for the vantage point.

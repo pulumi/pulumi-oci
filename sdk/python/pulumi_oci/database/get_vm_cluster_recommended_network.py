@@ -76,9 +76,6 @@ class GetVmClusterRecommendedNetworkResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -88,26 +85,17 @@ class GetVmClusterRecommendedNetworkResult:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
-        """
-        The user-friendly name for the Exadata Cloud@Customer VM cluster network. The name does not need to be unique.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
-    def dns(self) -> Sequence[str]:
-        """
-        The list of DNS server IP addresses. Maximum of 3 allowed.
-        """
+    def dns(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "dns")
 
     @property
@@ -117,10 +105,7 @@ class GetVmClusterRecommendedNetworkResult:
 
     @property
     @pulumi.getter(name="drScans")
-    def dr_scans(self) -> Sequence['outputs.GetVmClusterRecommendedNetworkDrScanResult']:
-        """
-        The SCAN details for DR network
-        """
+    def dr_scans(self) -> Optional[Sequence['outputs.GetVmClusterRecommendedNetworkDrScanResult']]:
         return pulumi.get(self, "dr_scans")
 
     @property
@@ -130,15 +115,12 @@ class GetVmClusterRecommendedNetworkResult:
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -151,42 +133,27 @@ class GetVmClusterRecommendedNetworkResult:
 
     @property
     @pulumi.getter
-    def ntps(self) -> Sequence[str]:
-        """
-        The list of NTP server IP addresses. Maximum of 3 allowed.
-        """
+    def ntps(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "ntps")
 
     @property
     @pulumi.getter(name="scanListenerPortTcp")
     def scan_listener_port_tcp(self) -> Optional[int]:
-        """
-        The SCAN TCPIP port. Default is 1521.
-        """
         return pulumi.get(self, "scan_listener_port_tcp")
 
     @property
     @pulumi.getter(name="scanListenerPortTcpSsl")
     def scan_listener_port_tcp_ssl(self) -> Optional[int]:
-        """
-        The SCAN TCPIP SSL port. Default is 2484.
-        """
         return pulumi.get(self, "scan_listener_port_tcp_ssl")
 
     @property
     @pulumi.getter
-    def scans(self) -> Sequence['outputs.GetVmClusterRecommendedNetworkScanResult']:
-        """
-        The SCAN details.
-        """
+    def scans(self) -> Optional[Sequence['outputs.GetVmClusterRecommendedNetworkScanResult']]:
         return pulumi.get(self, "scans")
 
     @property
     @pulumi.getter(name="vmNetworks")
-    def vm_networks(self) -> Sequence['outputs.GetVmClusterRecommendedNetworkVmNetworkResult']:
-        """
-        Details of the client and backup networks.
-        """
+    def vm_networks(self) -> Optional[Sequence['outputs.GetVmClusterRecommendedNetworkVmNetworkResult']]:
         return pulumi.get(self, "vm_networks")
 
 
@@ -228,23 +195,7 @@ def get_vm_cluster_recommended_network(compartment_id: Optional[str] = None,
                                        scan_listener_port_tcp_ssl: Optional[int] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetVmClusterRecommendedNetworkResult:
     """
-    This data source provides details about a specific Vm Cluster Recommended Network resource in Oracle Cloud Infrastructure Database service.
-
-    Generates a recommended Cloud@Customer VM cluster network configuration.
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param Sequence[str] db_servers: The list of Db server Ids to configure network.
-    :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-    :param str display_name: The user-friendly name for the VM cluster network. The name does not need to be unique.
-    :param Sequence[str] dns: The list of DNS server IP addresses. Maximum of 3 allowed.
-    :param int dr_scan_listener_port_tcp: The DR SCAN TCPIP port. Default is 1521.
-    :param str exadata_infrastructure_id: The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-    :param Sequence[pulumi.InputType['GetVmClusterRecommendedNetworkNetworkArgs']] networks: List of parameters for generation of the client and backup networks.
-    :param Sequence[str] ntps: The list of NTP server IP addresses. Maximum of 3 allowed.
-    :param int scan_listener_port_tcp: The SCAN TCPIP port. Default is 1521.
-    :param int scan_listener_port_tcp_ssl: The SCAN TCPIP SSL port. Default is 2484.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -296,22 +247,6 @@ def get_vm_cluster_recommended_network_output(compartment_id: Optional[pulumi.In
                                               scan_listener_port_tcp_ssl: Optional[pulumi.Input[Optional[int]]] = None,
                                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVmClusterRecommendedNetworkResult]:
     """
-    This data source provides details about a specific Vm Cluster Recommended Network resource in Oracle Cloud Infrastructure Database service.
-
-    Generates a recommended Cloud@Customer VM cluster network configuration.
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param Sequence[str] db_servers: The list of Db server Ids to configure network.
-    :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-    :param str display_name: The user-friendly name for the VM cluster network. The name does not need to be unique.
-    :param Sequence[str] dns: The list of DNS server IP addresses. Maximum of 3 allowed.
-    :param int dr_scan_listener_port_tcp: The DR SCAN TCPIP port. Default is 1521.
-    :param str exadata_infrastructure_id: The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-    :param Sequence[pulumi.InputType['GetVmClusterRecommendedNetworkNetworkArgs']] networks: List of parameters for generation of the client and backup networks.
-    :param Sequence[str] ntps: The list of NTP server IP addresses. Maximum of 3 allowed.
-    :param int scan_listener_port_tcp: The SCAN TCPIP port. Default is 1521.
-    :param int scan_listener_port_tcp_ssl: The SCAN TCPIP SSL port. Default is 2484.
+    Use this data source to access information about an existing resource.
     """
     ...

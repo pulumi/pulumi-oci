@@ -91,23 +91,23 @@ export class JobRun extends pulumi.CustomResource {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the job run.
      */
-    public /*out*/ readonly createdBy!: pulumi.Output<string>;
+    public /*out*/ readonly createdBy!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) A user-friendly display name for the resource.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    public readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The job configuration details
      */
-    public readonly jobConfigurationOverrideDetails!: pulumi.Output<outputs.DataScience.JobRunJobConfigurationOverrideDetails>;
+    public readonly jobConfigurationOverrideDetails!: pulumi.Output<outputs.DataScience.JobRunJobConfigurationOverrideDetails | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job to create a run for.
      */
@@ -115,23 +115,23 @@ export class JobRun extends pulumi.CustomResource {
     /**
      * The job infrastructure configuration details (shape, block storage, etc.)
      */
-    public /*out*/ readonly jobInfrastructureConfigurationDetails!: pulumi.Output<outputs.DataScience.JobRunJobInfrastructureConfigurationDetail[]>;
+    public /*out*/ readonly jobInfrastructureConfigurationDetails!: pulumi.Output<outputs.DataScience.JobRunJobInfrastructureConfigurationDetail[] | undefined>;
     /**
      * Logging configuration for resource.
      */
-    public readonly jobLogConfigurationOverrideDetails!: pulumi.Output<outputs.DataScience.JobRunJobLogConfigurationOverrideDetails>;
+    public readonly jobLogConfigurationOverrideDetails!: pulumi.Output<outputs.DataScience.JobRunJobLogConfigurationOverrideDetails | undefined>;
     /**
      * Collection of JobStorageMountConfigurationDetails.
      */
-    public /*out*/ readonly jobStorageMountConfigurationDetailsLists!: pulumi.Output<outputs.DataScience.JobRunJobStorageMountConfigurationDetailsList[]>;
+    public /*out*/ readonly jobStorageMountConfigurationDetailsLists!: pulumi.Output<outputs.DataScience.JobRunJobStorageMountConfigurationDetailsList[] | undefined>;
     /**
      * Details of the state of the job run.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * Customer logging details for job run.
      */
-    public /*out*/ readonly logDetails!: pulumi.Output<outputs.DataScience.JobRunLogDetail[]>;
+    public /*out*/ readonly logDetails!: pulumi.Output<outputs.DataScience.JobRunLogDetail[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
      *
@@ -143,19 +143,19 @@ export class JobRun extends pulumi.CustomResource {
     /**
      * The state of the job run.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The date and time the job run was accepted in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    public /*out*/ readonly timeAccepted!: pulumi.Output<string>;
+    public /*out*/ readonly timeAccepted!: pulumi.Output<string | undefined>;
     /**
      * The date and time the job run request was finished in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    public /*out*/ readonly timeFinished!: pulumi.Output<string>;
+    public /*out*/ readonly timeFinished!: pulumi.Output<string | undefined>;
     /**
      * The date and time the job run request was started in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    public /*out*/ readonly timeStarted!: pulumi.Output<string>;
+    public /*out*/ readonly timeStarted!: pulumi.Output<string | undefined>;
 
     /**
      * Create a JobRun resource with the given unique name, arguments, and options.

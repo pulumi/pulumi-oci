@@ -76,11 +76,11 @@ export class OperationsInsightsPrivateEndpoint extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) The description of the private endpoint.
      */
-    public readonly description!: pulumi.Output<string>;
+    public readonly description!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The display name for the private endpoint. It is changeable.
      */
@@ -88,7 +88,7 @@ export class OperationsInsightsPrivateEndpoint extends pulumi.CustomResource {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The flag to identify if private endpoint is used for rac database or not
      */
@@ -96,23 +96,23 @@ export class OperationsInsightsPrivateEndpoint extends pulumi.CustomResource {
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups that the private endpoint belongs to.
      */
-    public readonly nsgIds!: pulumi.Output<string[]>;
+    public readonly nsgIds!: pulumi.Output<string[] | undefined>;
     /**
      * A message describing the status of the private endpoint connection of this resource. For example, it can be used to provide actionable information about the validity of the private endpoint connection.
      */
-    public readonly privateEndpointStatusDetails!: pulumi.Output<string>;
+    public readonly privateEndpointStatusDetails!: pulumi.Output<string | undefined>;
     /**
      * The private IP addresses assigned to the private endpoint. All IP addresses will be concatenated if it is RAC DBs.
      */
-    public /*out*/ readonly privateIp!: pulumi.Output<string>;
+    public /*out*/ readonly privateIp!: pulumi.Output<string | undefined>;
     /**
      * The current state of the private endpoint.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The Subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Private service accessed database.
      */
@@ -120,11 +120,11 @@ export class OperationsInsightsPrivateEndpoint extends pulumi.CustomResource {
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The date and time the private endpoint was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The VCN [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Private service accessed database.
      *

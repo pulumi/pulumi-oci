@@ -24,7 +24,7 @@ public final class GetPrivateApplicationPackagesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The specified package&#39;s type.
      * 
@@ -39,7 +39,7 @@ public final class GetPrivateApplicationPackagesResult {
      * @return The list of private_application_package_collection.
      * 
      */
-    private List<GetPrivateApplicationPackagesPrivateApplicationPackageCollection> privateApplicationPackageCollections;
+    private @Nullable List<GetPrivateApplicationPackagesPrivateApplicationPackageCollection> privateApplicationPackageCollections;
     private @Nullable String privateApplicationPackageId;
 
     private GetPrivateApplicationPackagesResult() {}
@@ -57,8 +57,8 @@ public final class GetPrivateApplicationPackagesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The specified package&#39;s type.
@@ -79,7 +79,7 @@ public final class GetPrivateApplicationPackagesResult {
      * 
      */
     public List<GetPrivateApplicationPackagesPrivateApplicationPackageCollection> privateApplicationPackageCollections() {
-        return this.privateApplicationPackageCollections;
+        return this.privateApplicationPackageCollections == null ? List.of() : this.privateApplicationPackageCollections;
     }
     public Optional<String> privateApplicationPackageId() {
         return Optional.ofNullable(this.privateApplicationPackageId);
@@ -96,10 +96,10 @@ public final class GetPrivateApplicationPackagesResult {
     public static final class Builder {
         private @Nullable String displayName;
         private @Nullable List<GetPrivateApplicationPackagesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable List<String> packageTypes;
         private String privateApplicationId;
-        private List<GetPrivateApplicationPackagesPrivateApplicationPackageCollection> privateApplicationPackageCollections;
+        private @Nullable List<GetPrivateApplicationPackagesPrivateApplicationPackageCollection> privateApplicationPackageCollections;
         private @Nullable String privateApplicationPackageId;
         public Builder() {}
         public Builder(GetPrivateApplicationPackagesResult defaults) {
@@ -127,8 +127,8 @@ public final class GetPrivateApplicationPackagesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -145,8 +145,8 @@ public final class GetPrivateApplicationPackagesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder privateApplicationPackageCollections(List<GetPrivateApplicationPackagesPrivateApplicationPackageCollection> privateApplicationPackageCollections) {
-            this.privateApplicationPackageCollections = Objects.requireNonNull(privateApplicationPackageCollections);
+        public Builder privateApplicationPackageCollections(@Nullable List<GetPrivateApplicationPackagesPrivateApplicationPackageCollection> privateApplicationPackageCollections) {
+            this.privateApplicationPackageCollections = privateApplicationPackageCollections;
             return this;
         }
         public Builder privateApplicationPackageCollections(GetPrivateApplicationPackagesPrivateApplicationPackageCollection... privateApplicationPackageCollections) {

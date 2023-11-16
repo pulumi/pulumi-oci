@@ -64,11 +64,11 @@ export interface GetMonitoredInstancesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of monitored_instance_collection.
      */
-    readonly monitoredInstanceCollections: outputs.AppMgmtControl.GetMonitoredInstancesMonitoredInstanceCollection[];
+    readonly monitoredInstanceCollections?: outputs.AppMgmtControl.GetMonitoredInstancesMonitoredInstanceCollection[];
 }
 /**
  * This data source provides the list of Monitored Instances in Oracle Cloud Infrastructure Appmgmt Control service.

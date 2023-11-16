@@ -6,6 +6,8 @@ package com.pulumi.oci.Mysql.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMysqlConfigurationsConfigurationInitVariable {
@@ -13,15 +15,15 @@ public final class GetMysqlConfigurationsConfigurationInitVariable {
      * @return Represents the MySQL server system variable lower_case_table_names (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names).
      * 
      */
-    private String lowerCaseTableNames;
+    private @Nullable String lowerCaseTableNames;
 
     private GetMysqlConfigurationsConfigurationInitVariable() {}
     /**
      * @return Represents the MySQL server system variable lower_case_table_names (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names).
      * 
      */
-    public String lowerCaseTableNames() {
-        return this.lowerCaseTableNames;
+    public Optional<String> lowerCaseTableNames() {
+        return Optional.ofNullable(this.lowerCaseTableNames);
     }
 
     public static Builder builder() {
@@ -33,7 +35,7 @@ public final class GetMysqlConfigurationsConfigurationInitVariable {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String lowerCaseTableNames;
+        private @Nullable String lowerCaseTableNames;
         public Builder() {}
         public Builder(GetMysqlConfigurationsConfigurationInitVariable defaults) {
     	      Objects.requireNonNull(defaults);
@@ -41,8 +43,8 @@ public final class GetMysqlConfigurationsConfigurationInitVariable {
         }
 
         @CustomType.Setter
-        public Builder lowerCaseTableNames(String lowerCaseTableNames) {
-            this.lowerCaseTableNames = Objects.requireNonNull(lowerCaseTableNames);
+        public Builder lowerCaseTableNames(@Nullable String lowerCaseTableNames) {
+            this.lowerCaseTableNames = lowerCaseTableNames;
             return this;
         }
         public GetMysqlConfigurationsConfigurationInitVariable build() {

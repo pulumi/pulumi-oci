@@ -6,6 +6,8 @@ package com.pulumi.oci.Identity.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsAuthenticationFactorSettingThirdPartyFactor {
@@ -13,15 +15,15 @@ public final class GetDomainsAuthenticationFactorSettingThirdPartyFactor {
      * @return To enable Duo Security factor
      * 
      */
-    private Boolean duoSecurity;
+    private @Nullable Boolean duoSecurity;
 
     private GetDomainsAuthenticationFactorSettingThirdPartyFactor() {}
     /**
      * @return To enable Duo Security factor
      * 
      */
-    public Boolean duoSecurity() {
-        return this.duoSecurity;
+    public Optional<Boolean> duoSecurity() {
+        return Optional.ofNullable(this.duoSecurity);
     }
 
     public static Builder builder() {
@@ -33,7 +35,7 @@ public final class GetDomainsAuthenticationFactorSettingThirdPartyFactor {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Boolean duoSecurity;
+        private @Nullable Boolean duoSecurity;
         public Builder() {}
         public Builder(GetDomainsAuthenticationFactorSettingThirdPartyFactor defaults) {
     	      Objects.requireNonNull(defaults);
@@ -41,8 +43,8 @@ public final class GetDomainsAuthenticationFactorSettingThirdPartyFactor {
         }
 
         @CustomType.Setter
-        public Builder duoSecurity(Boolean duoSecurity) {
-            this.duoSecurity = Objects.requireNonNull(duoSecurity);
+        public Builder duoSecurity(@Nullable Boolean duoSecurity) {
+            this.duoSecurity = duoSecurity;
             return this;
         }
         public GetDomainsAuthenticationFactorSettingThirdPartyFactor build() {

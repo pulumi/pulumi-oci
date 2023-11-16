@@ -78,7 +78,7 @@ export class Instance extends pulumi.CustomResource {
     /**
      * (Updatable) a list of add-on features for the ocm instance
      */
-    public readonly addOnFeatures!: pulumi.Output<string[]>;
+    public readonly addOnFeatures!: pulumi.Output<string[] | undefined>;
     /**
      * Admin Email for Notification
      */
@@ -90,23 +90,23 @@ export class Instance extends pulumi.CustomResource {
     /**
      * (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) OceInstance description
      */
-    public readonly description!: pulumi.Output<string>;
+    public readonly description!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) disaster recovery paired ragion name
      */
-    public readonly drRegion!: pulumi.Output<string>;
+    public readonly drRegion!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * Unique GUID identifier that is immutable on creation
      */
-    public /*out*/ readonly guid!: pulumi.Output<string>;
+    public /*out*/ readonly guid!: pulumi.Output<string | undefined>;
     /**
      * Identity Cloud Service access token identifying a stripe and service administrator user
      */
@@ -114,23 +114,23 @@ export class Instance extends pulumi.CustomResource {
     /**
      * IDCS Tenancy Identifier
      */
-    public /*out*/ readonly idcsTenancy!: pulumi.Output<string>;
+    public /*out*/ readonly idcsTenancy!: pulumi.Output<string | undefined>;
     /**
      * Flag indicating whether the instance access is private or public
      */
-    public readonly instanceAccessType!: pulumi.Output<string>;
+    public readonly instanceAccessType!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Flag indicating whether the instance license is new cloud or bring your own license
      */
-    public readonly instanceLicenseType!: pulumi.Output<string>;
+    public readonly instanceLicenseType!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Instance type based on its usage
      */
-    public readonly instanceUsageType!: pulumi.Output<string>;
+    public readonly instanceUsageType!: pulumi.Output<string | undefined>;
     /**
      * Details of the current state of the instance lifecycle
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * OceInstance Name
      */
@@ -142,19 +142,19 @@ export class Instance extends pulumi.CustomResource {
     /**
      * SERVICE data. Example: `{"service": {"IDCS": "value"}}`
      */
-    public /*out*/ readonly service!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly service!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The current state of the instance lifecycle.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    public /*out*/ readonly stateMessage!: pulumi.Output<string>;
+    public /*out*/ readonly stateMessage!: pulumi.Output<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * Tenancy Identifier
      */
@@ -166,15 +166,15 @@ export class Instance extends pulumi.CustomResource {
     /**
      * The time the the OceInstance was created. An RFC3339 formatted datetime string
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The time the OceInstance was updated. An RFC3339 formatted datetime string
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
     /**
      * Upgrade schedule type representing service to be upgraded immediately whenever latest version is released or delay upgrade of the service to previous released version
      */
-    public readonly upgradeSchedule!: pulumi.Output<string>;
+    public readonly upgradeSchedule!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Web Application Firewall(WAF) primary domain
      *
@@ -182,7 +182,7 @@ export class Instance extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly wafPrimaryDomain!: pulumi.Output<string>;
+    public readonly wafPrimaryDomain!: pulumi.Output<string | undefined>;
 
     /**
      * Create a Instance resource with the given unique name, arguments, and options.

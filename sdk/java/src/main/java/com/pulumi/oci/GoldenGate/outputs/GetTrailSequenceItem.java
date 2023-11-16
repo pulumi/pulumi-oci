@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Double;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetTrailSequenceItem {
@@ -14,51 +16,51 @@ public final class GetTrailSequenceItem {
      * @return A filter to return only the resources that match the entire &#39;displayName&#39; given.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Sequence Id
      * 
      */
-    private String sequenceId;
+    private @Nullable String sequenceId;
     /**
      * @return The size of the backup stored in object storage (in bytes)
      * 
      */
-    private Double sizeInBytes;
+    private @Nullable Double sizeInBytes;
     /**
      * @return The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
-    private String timeLastUpdated;
+    private @Nullable String timeLastUpdated;
 
     private GetTrailSequenceItem() {}
     /**
      * @return A filter to return only the resources that match the entire &#39;displayName&#39; given.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Sequence Id
      * 
      */
-    public String sequenceId() {
-        return this.sequenceId;
+    public Optional<String> sequenceId() {
+        return Optional.ofNullable(this.sequenceId);
     }
     /**
      * @return The size of the backup stored in object storage (in bytes)
      * 
      */
-    public Double sizeInBytes() {
-        return this.sizeInBytes;
+    public Optional<Double> sizeInBytes() {
+        return Optional.ofNullable(this.sizeInBytes);
     }
     /**
      * @return The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
-    public String timeLastUpdated() {
-        return this.timeLastUpdated;
+    public Optional<String> timeLastUpdated() {
+        return Optional.ofNullable(this.timeLastUpdated);
     }
 
     public static Builder builder() {
@@ -70,10 +72,10 @@ public final class GetTrailSequenceItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String displayName;
-        private String sequenceId;
-        private Double sizeInBytes;
-        private String timeLastUpdated;
+        private @Nullable String displayName;
+        private @Nullable String sequenceId;
+        private @Nullable Double sizeInBytes;
+        private @Nullable String timeLastUpdated;
         public Builder() {}
         public Builder(GetTrailSequenceItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -84,23 +86,23 @@ public final class GetTrailSequenceItem {
         }
 
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder sequenceId(String sequenceId) {
-            this.sequenceId = Objects.requireNonNull(sequenceId);
+        public Builder sequenceId(@Nullable String sequenceId) {
+            this.sequenceId = sequenceId;
             return this;
         }
         @CustomType.Setter
-        public Builder sizeInBytes(Double sizeInBytes) {
-            this.sizeInBytes = Objects.requireNonNull(sizeInBytes);
+        public Builder sizeInBytes(@Nullable Double sizeInBytes) {
+            this.sizeInBytes = sizeInBytes;
             return this;
         }
         @CustomType.Setter
-        public Builder timeLastUpdated(String timeLastUpdated) {
-            this.timeLastUpdated = Objects.requireNonNull(timeLastUpdated);
+        public Builder timeLastUpdated(@Nullable String timeLastUpdated) {
+            this.timeLastUpdated = timeLastUpdated;
             return this;
         }
         public GetTrailSequenceItem build() {

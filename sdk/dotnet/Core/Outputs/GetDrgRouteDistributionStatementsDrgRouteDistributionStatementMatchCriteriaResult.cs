@@ -16,23 +16,23 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// The type of the network resource to be included in this match. A match for a network type implies that all DRG attachments of that type insert routes into the table.
         /// </summary>
-        public readonly string AttachmentType;
+        public readonly string? AttachmentType;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG attachment.
         /// </summary>
-        public readonly string DrgAttachmentId;
+        public readonly string? DrgAttachmentId;
         /// <summary>
         /// The type of the match criteria for a route distribution statement.
         /// </summary>
-        public readonly string MatchType;
+        public readonly string? MatchType;
 
         [OutputConstructor]
         private GetDrgRouteDistributionStatementsDrgRouteDistributionStatementMatchCriteriaResult(
-            string attachmentType,
+            string? attachmentType,
 
-            string drgAttachmentId,
+            string? drgAttachmentId,
 
-            string matchType)
+            string? matchType)
         {
             AttachmentType = attachmentType;
             DrgAttachmentId = drgAttachmentId;

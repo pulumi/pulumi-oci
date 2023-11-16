@@ -16,17 +16,17 @@ namespace Pulumi.Oci.ApmTraces.Outputs
         /// <summary>
         /// Key that specifies the tag name.
         /// </summary>
-        public readonly string TagName;
+        public readonly string? TagName;
         /// <summary>
         /// Value associated with the tag key.
         /// </summary>
-        public readonly string TagValue;
+        public readonly string? TagValue;
 
         [OutputConstructor]
         private GetTraceSpanTagResult(
-            string tagName,
+            string? tagName,
 
-            string tagValue)
+            string? tagValue)
         {
             TagName = tagName;
             TagValue = tagValue;

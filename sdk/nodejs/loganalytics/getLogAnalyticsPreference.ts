@@ -47,11 +47,11 @@ export interface GetLogAnalyticsPreferenceResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * An array of tenant preferences.
      */
-    readonly items: outputs.LogAnalytics.GetLogAnalyticsPreferenceItem[];
+    readonly items?: outputs.LogAnalytics.GetLogAnalyticsPreferenceItem[];
     readonly namespace: string;
 }
 /**

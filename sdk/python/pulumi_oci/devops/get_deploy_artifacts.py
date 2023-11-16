@@ -49,25 +49,16 @@ class GetDeployArtifactsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
-        """
-        The OCID of a compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="deployArtifactCollections")
-    def deploy_artifact_collections(self) -> Sequence['outputs.GetDeployArtifactsDeployArtifactCollectionResult']:
-        """
-        The list of deploy_artifact_collection.
-        """
+    def deploy_artifact_collections(self) -> Optional[Sequence['outputs.GetDeployArtifactsDeployArtifactCollectionResult']]:
         return pulumi.get(self, "deploy_artifact_collections")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        Deployment artifact identifier, which can be renamed and is not necessarily unique. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -78,25 +69,16 @@ class GetDeployArtifactsResult:
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        Unique identifier that is immutable on creation.
-        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="projectId")
     def project_id(self) -> Optional[str]:
-        """
-        The OCID of a project.
-        """
         return pulumi.get(self, "project_id")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        Current state of the deployment artifact.
-        """
         return pulumi.get(self, "state")
 
 
@@ -123,29 +105,7 @@ def get_deploy_artifacts(compartment_id: Optional[str] = None,
                          state: Optional[str] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDeployArtifactsResult:
     """
-    This data source provides the list of Deploy Artifacts in Oracle Cloud Infrastructure Devops service.
-
-    Returns a list of deployment artifacts.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_deploy_artifacts = oci.DevOps.get_deploy_artifacts(compartment_id=var["compartment_id"],
-        display_name=var["deploy_artifact_display_name"],
-        id=var["deploy_artifact_id"],
-        project_id=oci_devops_project["test_project"]["id"],
-        state=var["deploy_artifact_state"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str id: Unique identifier or OCID for listing a single resource by ID.
-    :param str project_id: unique project identifier
-    :param str state: A filter to return only DeployArtifacts that matches the given lifecycleState.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -176,28 +136,6 @@ def get_deploy_artifacts_output(compartment_id: Optional[pulumi.Input[Optional[s
                                 state: Optional[pulumi.Input[Optional[str]]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDeployArtifactsResult]:
     """
-    This data source provides the list of Deploy Artifacts in Oracle Cloud Infrastructure Devops service.
-
-    Returns a list of deployment artifacts.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_deploy_artifacts = oci.DevOps.get_deploy_artifacts(compartment_id=var["compartment_id"],
-        display_name=var["deploy_artifact_display_name"],
-        id=var["deploy_artifact_id"],
-        project_id=oci_devops_project["test_project"]["id"],
-        state=var["deploy_artifact_state"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str id: Unique identifier or OCID for listing a single resource by ID.
-    :param str project_id: unique project identifier
-    :param str state: A filter to return only DeployArtifacts that matches the given lifecycleState.
+    Use this data source to access information about an existing resource.
     """
     ...

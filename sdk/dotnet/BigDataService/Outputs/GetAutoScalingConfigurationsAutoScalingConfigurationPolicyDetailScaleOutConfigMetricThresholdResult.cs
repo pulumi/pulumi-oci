@@ -13,17 +13,17 @@ namespace Pulumi.Oci.BigDataService.Outputs
     [OutputType]
     public sealed class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdResult
     {
-        public readonly int DurationInMinutes;
-        public readonly string Operator;
-        public readonly int Value;
+        public readonly int? DurationInMinutes;
+        public readonly string? Operator;
+        public readonly int? Value;
 
         [OutputConstructor]
         private GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleOutConfigMetricThresholdResult(
-            int durationInMinutes,
+            int? durationInMinutes,
 
-            string @operator,
+            string? @operator,
 
-            int value)
+            int? value)
         {
             DurationInMinutes = durationInMinutes;
             Operator = @operator;

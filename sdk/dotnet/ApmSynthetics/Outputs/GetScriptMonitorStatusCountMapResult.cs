@@ -16,29 +16,29 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
         /// <summary>
         /// Number of disabled monitors using the script.
         /// </summary>
-        public readonly int Disabled;
+        public readonly int? Disabled;
         /// <summary>
         /// Number of enabled monitors using the script.
         /// </summary>
-        public readonly int Enabled;
+        public readonly int? Enabled;
         /// <summary>
         /// Number of invalid monitors using the script.
         /// </summary>
-        public readonly int Invalid;
+        public readonly int? Invalid;
         /// <summary>
         /// Total number of monitors using the script.
         /// </summary>
-        public readonly int Total;
+        public readonly int? Total;
 
         [OutputConstructor]
         private GetScriptMonitorStatusCountMapResult(
-            int disabled,
+            int? disabled,
 
-            int enabled,
+            int? enabled,
 
-            int invalid,
+            int? invalid,
 
-            int total)
+            int? total)
         {
             Disabled = disabled;
             Enabled = enabled;

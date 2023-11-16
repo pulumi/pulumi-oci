@@ -9,6 +9,7 @@ import com.pulumi.oci.Secrets.outputs.GetSecretbundleVersionsSecretBundleVersion
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -18,12 +19,12 @@ public final class GetSecretbundleVersionsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of secret_bundle_versions.
      * 
      */
-    private List<GetSecretbundleVersionsSecretBundleVersion> secretBundleVersions;
+    private @Nullable List<GetSecretbundleVersionsSecretBundleVersion> secretBundleVersions;
     /**
      * @return The OCID of the secret.
      * 
@@ -38,15 +39,15 @@ public final class GetSecretbundleVersionsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of secret_bundle_versions.
      * 
      */
     public List<GetSecretbundleVersionsSecretBundleVersion> secretBundleVersions() {
-        return this.secretBundleVersions;
+        return this.secretBundleVersions == null ? List.of() : this.secretBundleVersions;
     }
     /**
      * @return The OCID of the secret.
@@ -66,8 +67,8 @@ public final class GetSecretbundleVersionsResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetSecretbundleVersionsFilter> filters;
-        private String id;
-        private List<GetSecretbundleVersionsSecretBundleVersion> secretBundleVersions;
+        private @Nullable String id;
+        private @Nullable List<GetSecretbundleVersionsSecretBundleVersion> secretBundleVersions;
         private String secretId;
         public Builder() {}
         public Builder(GetSecretbundleVersionsResult defaults) {
@@ -87,13 +88,13 @@ public final class GetSecretbundleVersionsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder secretBundleVersions(List<GetSecretbundleVersionsSecretBundleVersion> secretBundleVersions) {
-            this.secretBundleVersions = Objects.requireNonNull(secretBundleVersions);
+        public Builder secretBundleVersions(@Nullable List<GetSecretbundleVersionsSecretBundleVersion> secretBundleVersions) {
+            this.secretBundleVersions = secretBundleVersions;
             return this;
         }
         public Builder secretBundleVersions(GetSecretbundleVersionsSecretBundleVersion... secretBundleVersions) {

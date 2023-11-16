@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.ContainerEngine.outputs.GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionAction;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig {
@@ -14,7 +15,7 @@ public final class GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibl
      * @return The action to run when the preemptible node is interrupted for eviction.
      * 
      */
-    private List<GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionAction> preemptionActions;
+    private @Nullable List<GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionAction> preemptionActions;
 
     private GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig() {}
     /**
@@ -22,7 +23,7 @@ public final class GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibl
      * 
      */
     public List<GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionAction> preemptionActions() {
-        return this.preemptionActions;
+        return this.preemptionActions == null ? List.of() : this.preemptionActions;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibl
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionAction> preemptionActions;
+        private @Nullable List<GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionAction> preemptionActions;
         public Builder() {}
         public Builder(GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibl
         }
 
         @CustomType.Setter
-        public Builder preemptionActions(List<GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionAction> preemptionActions) {
-            this.preemptionActions = Objects.requireNonNull(preemptionActions);
+        public Builder preemptionActions(@Nullable List<GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionAction> preemptionActions) {
+            this.preemptionActions = preemptionActions;
             return this;
         }
         public Builder preemptionActions(GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionAction... preemptionActions) {

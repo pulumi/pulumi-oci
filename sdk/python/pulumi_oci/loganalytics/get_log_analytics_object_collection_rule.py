@@ -110,82 +110,52 @@ class GetLogAnalyticsObjectCollectionRuleResult:
 
     @property
     @pulumi.getter(name="charEncoding")
-    def char_encoding(self) -> str:
-        """
-        An optional character encoding to aid in detecting the character encoding of the contents of the objects while processing. It is recommended to set this value as ISO_8589_1 when configuring content of the objects having more numeric characters, and very few alphabets. For e.g. this applies when configuring VCN Flow Logs.
-        """
+    def char_encoding(self) -> Optional[str]:
         return pulumi.get(self, "char_encoding")
 
     @property
     @pulumi.getter(name="collectionType")
-    def collection_type(self) -> str:
-        """
-        The type of collection. Supported collection types: LIVE, HISTORIC, HISTORIC_LIVE
-        """
+    def collection_type(self) -> Optional[str]:
         return pulumi.get(self, "collection_type")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this rule belongs.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        A string that describes the details of the rule. It does not have to be unique, and can be changed. Avoid entering confidential information.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="entityId")
-    def entity_id(self) -> str:
-        """
-        Logging Analytics entity OCID to associate the processed logs with.
-        """
+    def entity_id(self) -> Optional[str]:
         return pulumi.get(self, "entity_id")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this rule.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isEnabled")
-    def is_enabled(self) -> bool:
-        """
-        Whether or not this rule is currently enabled.
-        """
+    def is_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_enabled")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A detailed status of the life cycle state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
@@ -195,50 +165,32 @@ class GetLogAnalyticsObjectCollectionRuleResult:
 
     @property
     @pulumi.getter(name="logGroupId")
-    def log_group_id(self) -> str:
-        """
-        Logging Analytics Log group OCID to associate the processed logs with.
-        """
+    def log_group_id(self) -> Optional[str]:
         return pulumi.get(self, "log_group_id")
 
     @property
     @pulumi.getter(name="logSet")
-    def log_set(self) -> str:
-        """
-        The logSet to be associated with the processed logs. The logSet feature can be used by customers with high volume of data  and this feature has to be enabled for a given tenancy prior to its usage. When logSetExtRegex value is provided, it will take precedence over this logSet value and logSet will be computed dynamically  using logSetKey and logSetExtRegex.
-        """
+    def log_set(self) -> Optional[str]:
         return pulumi.get(self, "log_set")
 
     @property
     @pulumi.getter(name="logSetExtRegex")
-    def log_set_ext_regex(self) -> str:
-        """
-        The regex to be applied against given logSetKey. Regex has to be in string escaped format.
-        """
+    def log_set_ext_regex(self) -> Optional[str]:
         return pulumi.get(self, "log_set_ext_regex")
 
     @property
     @pulumi.getter(name="logSetKey")
-    def log_set_key(self) -> str:
-        """
-        An optional parameter to indicate from where the logSet to be extracted using logSetExtRegex. Default value is OBJECT_PATH (e.g. /n/<namespace>/b/<bucketname>/o/<objectname>).
-        """
+    def log_set_key(self) -> Optional[str]:
         return pulumi.get(self, "log_set_key")
 
     @property
     @pulumi.getter(name="logSourceName")
-    def log_source_name(self) -> str:
-        """
-        Name of the Logging Analytics Source to use for the processing.
-        """
+    def log_source_name(self) -> Optional[str]:
         return pulumi.get(self, "log_source_name")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        A unique name to the rule. The name must be unique, within the tenancy, and cannot be changed.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
@@ -248,82 +200,52 @@ class GetLogAnalyticsObjectCollectionRuleResult:
 
     @property
     @pulumi.getter(name="objectNameFilters")
-    def object_name_filters(self) -> Sequence[str]:
-        """
-        When the filters are provided, only the objects matching the filters are picked up for processing. The matchType supported is exact match and accommodates wildcard "*". For more information on filters, see [Event Filters](https://docs.oracle.com/en-us/iaas/Content/Events/Concepts/filterevents.htm).
-        """
+    def object_name_filters(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "object_name_filters")
 
     @property
     @pulumi.getter(name="osBucketName")
-    def os_bucket_name(self) -> str:
-        """
-        Name of the Object Storage bucket.
-        """
+    def os_bucket_name(self) -> Optional[str]:
         return pulumi.get(self, "os_bucket_name")
 
     @property
     @pulumi.getter(name="osNamespace")
-    def os_namespace(self) -> str:
-        """
-        Object Storage namespace.
-        """
+    def os_namespace(self) -> Optional[str]:
         return pulumi.get(self, "os_namespace")
 
     @property
     @pulumi.getter
-    def overrides(self) -> Sequence['outputs.GetLogAnalyticsObjectCollectionRuleOverrideResult']:
-        """
-        Use this to override some property values which are defined at bucket level to the scope of object. Supported propeties for override are, logSourceName, charEncoding. Supported matchType for override are "contains".
-        """
+    def overrides(self) -> Optional[Sequence['outputs.GetLogAnalyticsObjectCollectionRuleOverrideResult']]:
         return pulumi.get(self, "overrides")
 
     @property
     @pulumi.getter(name="pollSince")
-    def poll_since(self) -> str:
-        """
-        The oldest time of the file in the bucket to consider for collection. Accepted values are: BEGINNING or CURRENT_TIME or RFC3339 formatted datetime string. When collectionType is LIVE, specifying pollSince value other than CURRENT_TIME will result in error.
-        """
+    def poll_since(self) -> Optional[str]:
         return pulumi.get(self, "poll_since")
 
     @property
     @pulumi.getter(name="pollTill")
-    def poll_till(self) -> str:
-        """
-        The oldest time of the file in the bucket to consider for collection. Accepted values are: CURRENT_TIME or RFC3339 formatted datetime string. When collectionType is LIVE, specifying pollTill will result in error.
-        """
+    def poll_till(self) -> Optional[str]:
         return pulumi.get(self, "poll_till")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the rule.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time when this rule was created. An RFC3339 formatted datetime string.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time when this rule was last updated. An RFC3339 formatted datetime string.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter
-    def timezone(self) -> str:
-        """
-        Timezone to be used when processing log entries whose timestamps do not include an explicit timezone.  When this property is not specified, the timezone of the entity specified is used.  If the entity is also not specified or do not have a valid timezone then UTC is used.
-        """
+    def timezone(self) -> Optional[str]:
         return pulumi.get(self, "timezone")
 
 
@@ -367,23 +289,7 @@ def get_log_analytics_object_collection_rule(log_analytics_object_collection_rul
                                              namespace: Optional[str] = None,
                                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetLogAnalyticsObjectCollectionRuleResult:
     """
-    This data source provides details about a specific Log Analytics Object Collection Rule resource in Oracle Cloud Infrastructure Log Analytics service.
-
-    Gets a configured object storage based collection rule by given id
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_log_analytics_object_collection_rule = oci.LogAnalytics.get_log_analytics_object_collection_rule(log_analytics_object_collection_rule_id=oci_log_analytics_log_analytics_object_collection_rule["test_log_analytics_object_collection_rule"]["id"],
-        namespace=var["log_analytics_object_collection_rule_namespace"])
-    ```
-
-
-    :param str log_analytics_object_collection_rule_id: The Logging Analytics Object Collection Rule [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-    :param str namespace: The Logging Analytics namespace used for the request.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['logAnalyticsObjectCollectionRuleId'] = log_analytics_object_collection_rule_id
@@ -427,22 +333,6 @@ def get_log_analytics_object_collection_rule_output(log_analytics_object_collect
                                                     namespace: Optional[pulumi.Input[str]] = None,
                                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetLogAnalyticsObjectCollectionRuleResult]:
     """
-    This data source provides details about a specific Log Analytics Object Collection Rule resource in Oracle Cloud Infrastructure Log Analytics service.
-
-    Gets a configured object storage based collection rule by given id
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_log_analytics_object_collection_rule = oci.LogAnalytics.get_log_analytics_object_collection_rule(log_analytics_object_collection_rule_id=oci_log_analytics_log_analytics_object_collection_rule["test_log_analytics_object_collection_rule"]["id"],
-        namespace=var["log_analytics_object_collection_rule_namespace"])
-    ```
-
-
-    :param str log_analytics_object_collection_rule_id: The Logging Analytics Object Collection Rule [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-    :param str namespace: The Logging Analytics namespace used for the request.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Mesh resource in Oracle Cloud Infrastructure Service Mesh service.
@@ -78,23 +77,23 @@ type Mesh struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) A user-friendly name. The name does not have to be unique and can be changed after creation. Avoid entering confidential information.  Example: `My new resource`
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// (Updatable) Sets a minimum level of mTLS authentication for all virtual services within the mesh.
-	Mtls MeshMtlsOutput `pulumi:"mtls"`
+	Mtls MeshMtlsPtrOutput `pulumi:"mtls"`
 	// The current state of the Resource.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The time when this resource was created in an RFC3339 formatted datetime string.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The time when this resource was updated in an RFC3339 formatted datetime string.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewMesh registers a new resource with the given unique name, arguments, and options.
@@ -251,12 +250,6 @@ func (i *Mesh) ToMeshOutputWithContext(ctx context.Context) MeshOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(MeshOutput)
 }
 
-func (i *Mesh) ToOutput(ctx context.Context) pulumix.Output[*Mesh] {
-	return pulumix.Output[*Mesh]{
-		OutputState: i.ToMeshOutputWithContext(ctx).OutputState,
-	}
-}
-
 // MeshArrayInput is an input type that accepts MeshArray and MeshArrayOutput values.
 // You can construct a concrete instance of `MeshArrayInput` via:
 //
@@ -280,12 +273,6 @@ func (i MeshArray) ToMeshArrayOutput() MeshArrayOutput {
 
 func (i MeshArray) ToMeshArrayOutputWithContext(ctx context.Context) MeshArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(MeshArrayOutput)
-}
-
-func (i MeshArray) ToOutput(ctx context.Context) pulumix.Output[[]*Mesh] {
-	return pulumix.Output[[]*Mesh]{
-		OutputState: i.ToMeshArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // MeshMapInput is an input type that accepts MeshMap and MeshMapOutput values.
@@ -313,12 +300,6 @@ func (i MeshMap) ToMeshMapOutputWithContext(ctx context.Context) MeshMapOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(MeshMapOutput)
 }
 
-func (i MeshMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Mesh] {
-	return pulumix.Output[map[string]*Mesh]{
-		OutputState: i.ToMeshMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MeshOutput struct{ *pulumi.OutputState }
 
 func (MeshOutput) ElementType() reflect.Type {
@@ -331,12 +312,6 @@ func (o MeshOutput) ToMeshOutput() MeshOutput {
 
 func (o MeshOutput) ToMeshOutputWithContext(ctx context.Context) MeshOutput {
 	return o
-}
-
-func (o MeshOutput) ToOutput(ctx context.Context) pulumix.Output[*Mesh] {
-	return pulumix.Output[*Mesh]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the certificate authority resource OCID to use for creating leaf certificates.
@@ -355,8 +330,8 @@ func (o MeshOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
-func (o MeshOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *Mesh) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o MeshOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Mesh) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A user-friendly name. The name does not have to be unique and can be changed after creation. Avoid entering confidential information.  Example: `My new resource`
@@ -370,18 +345,18 @@ func (o MeshOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-func (o MeshOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *Mesh) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o MeshOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Mesh) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Sets a minimum level of mTLS authentication for all virtual services within the mesh.
-func (o MeshOutput) Mtls() MeshMtlsOutput {
-	return o.ApplyT(func(v *Mesh) MeshMtlsOutput { return v.Mtls }).(MeshMtlsOutput)
+func (o MeshOutput) Mtls() MeshMtlsPtrOutput {
+	return o.ApplyT(func(v *Mesh) MeshMtlsPtrOutput { return v.Mtls }).(MeshMtlsPtrOutput)
 }
 
 // The current state of the Resource.
-func (o MeshOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *Mesh) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o MeshOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Mesh) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -390,13 +365,13 @@ func (o MeshOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time when this resource was created in an RFC3339 formatted datetime string.
-func (o MeshOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Mesh) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o MeshOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Mesh) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time when this resource was updated in an RFC3339 formatted datetime string.
-func (o MeshOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Mesh) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o MeshOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Mesh) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type MeshArrayOutput struct{ *pulumi.OutputState }
@@ -411,12 +386,6 @@ func (o MeshArrayOutput) ToMeshArrayOutput() MeshArrayOutput {
 
 func (o MeshArrayOutput) ToMeshArrayOutputWithContext(ctx context.Context) MeshArrayOutput {
 	return o
-}
-
-func (o MeshArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Mesh] {
-	return pulumix.Output[[]*Mesh]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MeshArrayOutput) Index(i pulumi.IntInput) MeshOutput {
@@ -437,12 +406,6 @@ func (o MeshMapOutput) ToMeshMapOutput() MeshMapOutput {
 
 func (o MeshMapOutput) ToMeshMapOutputWithContext(ctx context.Context) MeshMapOutput {
 	return o
-}
-
-func (o MeshMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Mesh] {
-	return pulumix.Output[map[string]*Mesh]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MeshMapOutput) MapIndex(k pulumi.StringInput) MeshOutput {

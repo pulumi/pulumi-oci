@@ -8,6 +8,8 @@ import com.pulumi.oci.ContainerEngine.outputs.GetNodePoolNodeConfigDetailPlaceme
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetNodePoolNodeConfigDetailPlacementConfig {
@@ -15,63 +17,63 @@ public final class GetNodePoolNodeConfigDetailPlacementConfig {
      * @return The name of the availability domain in which this node is placed.
      * 
      */
-    private String availabilityDomain;
+    private @Nullable String availabilityDomain;
     /**
      * @return The OCID of the compute capacity reservation in which to place the compute instance.
      * 
      */
-    private String capacityReservationId;
+    private @Nullable String capacityReservationId;
     /**
      * @return A list of fault domains in which to place nodes.
      * 
      */
-    private List<String> faultDomains;
+    private @Nullable List<String> faultDomains;
     /**
      * @return Configuration options for preemptible nodes.
      * 
      */
-    private List<GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig> preemptibleNodeConfigs;
+    private @Nullable List<GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig> preemptibleNodeConfigs;
     /**
      * @return The OCID of the subnet in which this node is placed.
      * 
      */
-    private String subnetId;
+    private @Nullable String subnetId;
 
     private GetNodePoolNodeConfigDetailPlacementConfig() {}
     /**
      * @return The name of the availability domain in which this node is placed.
      * 
      */
-    public String availabilityDomain() {
-        return this.availabilityDomain;
+    public Optional<String> availabilityDomain() {
+        return Optional.ofNullable(this.availabilityDomain);
     }
     /**
      * @return The OCID of the compute capacity reservation in which to place the compute instance.
      * 
      */
-    public String capacityReservationId() {
-        return this.capacityReservationId;
+    public Optional<String> capacityReservationId() {
+        return Optional.ofNullable(this.capacityReservationId);
     }
     /**
      * @return A list of fault domains in which to place nodes.
      * 
      */
     public List<String> faultDomains() {
-        return this.faultDomains;
+        return this.faultDomains == null ? List.of() : this.faultDomains;
     }
     /**
      * @return Configuration options for preemptible nodes.
      * 
      */
     public List<GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig> preemptibleNodeConfigs() {
-        return this.preemptibleNodeConfigs;
+        return this.preemptibleNodeConfigs == null ? List.of() : this.preemptibleNodeConfigs;
     }
     /**
      * @return The OCID of the subnet in which this node is placed.
      * 
      */
-    public String subnetId() {
-        return this.subnetId;
+    public Optional<String> subnetId() {
+        return Optional.ofNullable(this.subnetId);
     }
 
     public static Builder builder() {
@@ -83,11 +85,11 @@ public final class GetNodePoolNodeConfigDetailPlacementConfig {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String availabilityDomain;
-        private String capacityReservationId;
-        private List<String> faultDomains;
-        private List<GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig> preemptibleNodeConfigs;
-        private String subnetId;
+        private @Nullable String availabilityDomain;
+        private @Nullable String capacityReservationId;
+        private @Nullable List<String> faultDomains;
+        private @Nullable List<GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig> preemptibleNodeConfigs;
+        private @Nullable String subnetId;
         public Builder() {}
         public Builder(GetNodePoolNodeConfigDetailPlacementConfig defaults) {
     	      Objects.requireNonNull(defaults);
@@ -99,34 +101,34 @@ public final class GetNodePoolNodeConfigDetailPlacementConfig {
         }
 
         @CustomType.Setter
-        public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+        public Builder availabilityDomain(@Nullable String availabilityDomain) {
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
-        public Builder capacityReservationId(String capacityReservationId) {
-            this.capacityReservationId = Objects.requireNonNull(capacityReservationId);
+        public Builder capacityReservationId(@Nullable String capacityReservationId) {
+            this.capacityReservationId = capacityReservationId;
             return this;
         }
         @CustomType.Setter
-        public Builder faultDomains(List<String> faultDomains) {
-            this.faultDomains = Objects.requireNonNull(faultDomains);
+        public Builder faultDomains(@Nullable List<String> faultDomains) {
+            this.faultDomains = faultDomains;
             return this;
         }
         public Builder faultDomains(String... faultDomains) {
             return faultDomains(List.of(faultDomains));
         }
         @CustomType.Setter
-        public Builder preemptibleNodeConfigs(List<GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig> preemptibleNodeConfigs) {
-            this.preemptibleNodeConfigs = Objects.requireNonNull(preemptibleNodeConfigs);
+        public Builder preemptibleNodeConfigs(@Nullable List<GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig> preemptibleNodeConfigs) {
+            this.preemptibleNodeConfigs = preemptibleNodeConfigs;
             return this;
         }
         public Builder preemptibleNodeConfigs(GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig... preemptibleNodeConfigs) {
             return preemptibleNodeConfigs(List.of(preemptibleNodeConfigs));
         }
         @CustomType.Setter
-        public Builder subnetId(String subnetId) {
-            this.subnetId = Objects.requireNonNull(subnetId);
+        public Builder subnetId(@Nullable String subnetId) {
+            this.subnetId = subnetId;
             return this;
         }
         public GetNodePoolNodeConfigDetailPlacementConfig build() {

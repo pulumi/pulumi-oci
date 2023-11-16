@@ -6,6 +6,8 @@ package com.pulumi.oci.DatabaseManagement.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedDatabaseOptimizerStatisticsCollectionOperationTask {
@@ -13,63 +15,63 @@ public final class GetManagedDatabaseOptimizerStatisticsCollectionOperationTask 
      * @return The status of the Optimizer Statistics Collection task.
      * 
      */
-    private String status;
+    private @Nullable String status;
     /**
      * @return The name of the target object for which statistics are gathered.
      * 
      */
-    private String target;
+    private @Nullable String target;
     /**
      * @return The type of target object.
      * 
      */
-    private String targetType;
+    private @Nullable String targetType;
     /**
      * @return The end time of the Optimizer Statistics Collection task.
      * 
      */
-    private String timeEnd;
+    private @Nullable String timeEnd;
     /**
      * @return The start time of the Optimizer Statistics Collection task.
      * 
      */
-    private String timeStart;
+    private @Nullable String timeStart;
 
     private GetManagedDatabaseOptimizerStatisticsCollectionOperationTask() {}
     /**
      * @return The status of the Optimizer Statistics Collection task.
      * 
      */
-    public String status() {
-        return this.status;
+    public Optional<String> status() {
+        return Optional.ofNullable(this.status);
     }
     /**
      * @return The name of the target object for which statistics are gathered.
      * 
      */
-    public String target() {
-        return this.target;
+    public Optional<String> target() {
+        return Optional.ofNullable(this.target);
     }
     /**
      * @return The type of target object.
      * 
      */
-    public String targetType() {
-        return this.targetType;
+    public Optional<String> targetType() {
+        return Optional.ofNullable(this.targetType);
     }
     /**
      * @return The end time of the Optimizer Statistics Collection task.
      * 
      */
-    public String timeEnd() {
-        return this.timeEnd;
+    public Optional<String> timeEnd() {
+        return Optional.ofNullable(this.timeEnd);
     }
     /**
      * @return The start time of the Optimizer Statistics Collection task.
      * 
      */
-    public String timeStart() {
-        return this.timeStart;
+    public Optional<String> timeStart() {
+        return Optional.ofNullable(this.timeStart);
     }
 
     public static Builder builder() {
@@ -81,11 +83,11 @@ public final class GetManagedDatabaseOptimizerStatisticsCollectionOperationTask 
     }
     @CustomType.Builder
     public static final class Builder {
-        private String status;
-        private String target;
-        private String targetType;
-        private String timeEnd;
-        private String timeStart;
+        private @Nullable String status;
+        private @Nullable String target;
+        private @Nullable String targetType;
+        private @Nullable String timeEnd;
+        private @Nullable String timeStart;
         public Builder() {}
         public Builder(GetManagedDatabaseOptimizerStatisticsCollectionOperationTask defaults) {
     	      Objects.requireNonNull(defaults);
@@ -97,28 +99,28 @@ public final class GetManagedDatabaseOptimizerStatisticsCollectionOperationTask 
         }
 
         @CustomType.Setter
-        public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+        public Builder status(@Nullable String status) {
+            this.status = status;
             return this;
         }
         @CustomType.Setter
-        public Builder target(String target) {
-            this.target = Objects.requireNonNull(target);
+        public Builder target(@Nullable String target) {
+            this.target = target;
             return this;
         }
         @CustomType.Setter
-        public Builder targetType(String targetType) {
-            this.targetType = Objects.requireNonNull(targetType);
+        public Builder targetType(@Nullable String targetType) {
+            this.targetType = targetType;
             return this;
         }
         @CustomType.Setter
-        public Builder timeEnd(String timeEnd) {
-            this.timeEnd = Objects.requireNonNull(timeEnd);
+        public Builder timeEnd(@Nullable String timeEnd) {
+            this.timeEnd = timeEnd;
             return this;
         }
         @CustomType.Setter
-        public Builder timeStart(String timeStart) {
-            this.timeStart = Objects.requireNonNull(timeStart);
+        public Builder timeStart(@Nullable String timeStart) {
+            this.timeStart = timeStart;
             return this;
         }
         public GetManagedDatabaseOptimizerStatisticsCollectionOperationTask build() {

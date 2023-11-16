@@ -8,6 +8,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetExternalAsmConfigurationInitParameter {
@@ -15,75 +17,75 @@ public final class GetExternalAsmConfigurationInitParameter {
      * @return The user-friendly name for the ASM instance. The name does not have to be unique.
      * 
      */
-    private String asmInstanceDisplayName;
+    private @Nullable String asmInstanceDisplayName;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external ASM instance.
      * 
      */
-    private String asmInstanceId;
+    private @Nullable String asmInstanceId;
     /**
      * @return The list of disk group names that an ASM instance mounts at startup or when the `ALTER DISKGROUP ALL MOUNT` statement is issued.
      * 
      */
-    private List<String> autoMountDiskGroups;
+    private @Nullable List<String> autoMountDiskGroups;
     /**
      * @return An operating system-dependent value used to limit the set of disks considered for discovery.
      * 
      */
-    private String diskDiscoveryPath;
+    private @Nullable String diskDiscoveryPath;
     /**
      * @return The list of failure groups that contain preferred read disks.
      * 
      */
-    private List<String> preferredReadFailureGroups;
+    private @Nullable List<String> preferredReadFailureGroups;
     /**
      * @return The maximum power on an ASM instance for disk rebalancing.
      * 
      */
-    private Integer rebalancePower;
+    private @Nullable Integer rebalancePower;
 
     private GetExternalAsmConfigurationInitParameter() {}
     /**
      * @return The user-friendly name for the ASM instance. The name does not have to be unique.
      * 
      */
-    public String asmInstanceDisplayName() {
-        return this.asmInstanceDisplayName;
+    public Optional<String> asmInstanceDisplayName() {
+        return Optional.ofNullable(this.asmInstanceDisplayName);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external ASM instance.
      * 
      */
-    public String asmInstanceId() {
-        return this.asmInstanceId;
+    public Optional<String> asmInstanceId() {
+        return Optional.ofNullable(this.asmInstanceId);
     }
     /**
      * @return The list of disk group names that an ASM instance mounts at startup or when the `ALTER DISKGROUP ALL MOUNT` statement is issued.
      * 
      */
     public List<String> autoMountDiskGroups() {
-        return this.autoMountDiskGroups;
+        return this.autoMountDiskGroups == null ? List.of() : this.autoMountDiskGroups;
     }
     /**
      * @return An operating system-dependent value used to limit the set of disks considered for discovery.
      * 
      */
-    public String diskDiscoveryPath() {
-        return this.diskDiscoveryPath;
+    public Optional<String> diskDiscoveryPath() {
+        return Optional.ofNullable(this.diskDiscoveryPath);
     }
     /**
      * @return The list of failure groups that contain preferred read disks.
      * 
      */
     public List<String> preferredReadFailureGroups() {
-        return this.preferredReadFailureGroups;
+        return this.preferredReadFailureGroups == null ? List.of() : this.preferredReadFailureGroups;
     }
     /**
      * @return The maximum power on an ASM instance for disk rebalancing.
      * 
      */
-    public Integer rebalancePower() {
-        return this.rebalancePower;
+    public Optional<Integer> rebalancePower() {
+        return Optional.ofNullable(this.rebalancePower);
     }
 
     public static Builder builder() {
@@ -95,12 +97,12 @@ public final class GetExternalAsmConfigurationInitParameter {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String asmInstanceDisplayName;
-        private String asmInstanceId;
-        private List<String> autoMountDiskGroups;
-        private String diskDiscoveryPath;
-        private List<String> preferredReadFailureGroups;
-        private Integer rebalancePower;
+        private @Nullable String asmInstanceDisplayName;
+        private @Nullable String asmInstanceId;
+        private @Nullable List<String> autoMountDiskGroups;
+        private @Nullable String diskDiscoveryPath;
+        private @Nullable List<String> preferredReadFailureGroups;
+        private @Nullable Integer rebalancePower;
         public Builder() {}
         public Builder(GetExternalAsmConfigurationInitParameter defaults) {
     	      Objects.requireNonNull(defaults);
@@ -113,39 +115,39 @@ public final class GetExternalAsmConfigurationInitParameter {
         }
 
         @CustomType.Setter
-        public Builder asmInstanceDisplayName(String asmInstanceDisplayName) {
-            this.asmInstanceDisplayName = Objects.requireNonNull(asmInstanceDisplayName);
+        public Builder asmInstanceDisplayName(@Nullable String asmInstanceDisplayName) {
+            this.asmInstanceDisplayName = asmInstanceDisplayName;
             return this;
         }
         @CustomType.Setter
-        public Builder asmInstanceId(String asmInstanceId) {
-            this.asmInstanceId = Objects.requireNonNull(asmInstanceId);
+        public Builder asmInstanceId(@Nullable String asmInstanceId) {
+            this.asmInstanceId = asmInstanceId;
             return this;
         }
         @CustomType.Setter
-        public Builder autoMountDiskGroups(List<String> autoMountDiskGroups) {
-            this.autoMountDiskGroups = Objects.requireNonNull(autoMountDiskGroups);
+        public Builder autoMountDiskGroups(@Nullable List<String> autoMountDiskGroups) {
+            this.autoMountDiskGroups = autoMountDiskGroups;
             return this;
         }
         public Builder autoMountDiskGroups(String... autoMountDiskGroups) {
             return autoMountDiskGroups(List.of(autoMountDiskGroups));
         }
         @CustomType.Setter
-        public Builder diskDiscoveryPath(String diskDiscoveryPath) {
-            this.diskDiscoveryPath = Objects.requireNonNull(diskDiscoveryPath);
+        public Builder diskDiscoveryPath(@Nullable String diskDiscoveryPath) {
+            this.diskDiscoveryPath = diskDiscoveryPath;
             return this;
         }
         @CustomType.Setter
-        public Builder preferredReadFailureGroups(List<String> preferredReadFailureGroups) {
-            this.preferredReadFailureGroups = Objects.requireNonNull(preferredReadFailureGroups);
+        public Builder preferredReadFailureGroups(@Nullable List<String> preferredReadFailureGroups) {
+            this.preferredReadFailureGroups = preferredReadFailureGroups;
             return this;
         }
         public Builder preferredReadFailureGroups(String... preferredReadFailureGroups) {
             return preferredReadFailureGroups(List.of(preferredReadFailureGroups));
         }
         @CustomType.Setter
-        public Builder rebalancePower(Integer rebalancePower) {
-            this.rebalancePower = Objects.requireNonNull(rebalancePower);
+        public Builder rebalancePower(@Nullable Integer rebalancePower) {
+            this.rebalancePower = rebalancePower;
             return this;
         }
         public GetExternalAsmConfigurationInitParameter build() {

@@ -6,6 +6,8 @@ package com.pulumi.oci.Sch.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetric {
@@ -13,15 +15,15 @@ public final class GetServiceConnectorsServiceConnectorCollectionItemSourceMonit
      * @return The type descriminator.
      * 
      */
-    private String kind;
+    private @Nullable String kind;
 
     private GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetric() {}
     /**
      * @return The type descriminator.
      * 
      */
-    public String kind() {
-        return this.kind;
+    public Optional<String> kind() {
+        return Optional.ofNullable(this.kind);
     }
 
     public static Builder builder() {
@@ -33,7 +35,7 @@ public final class GetServiceConnectorsServiceConnectorCollectionItemSourceMonit
     }
     @CustomType.Builder
     public static final class Builder {
-        private String kind;
+        private @Nullable String kind;
         public Builder() {}
         public Builder(GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetric defaults) {
     	      Objects.requireNonNull(defaults);
@@ -41,8 +43,8 @@ public final class GetServiceConnectorsServiceConnectorCollectionItemSourceMonit
         }
 
         @CustomType.Setter
-        public Builder kind(String kind) {
-            this.kind = Objects.requireNonNull(kind);
+        public Builder kind(@Nullable String kind) {
+            this.kind = kind;
             return this;
         }
         public GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetric build() {

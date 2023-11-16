@@ -50,7 +50,7 @@ export class ListingResourceVersionAgreement extends pulumi.CustomResource {
     /**
      * EULA link
      */
-    public /*out*/ readonly eulaLink!: pulumi.Output<string>;
+    public /*out*/ readonly eulaLink!: pulumi.Output<string | undefined>;
     /**
      * The OCID of the listing.
      */
@@ -62,15 +62,15 @@ export class ListingResourceVersionAgreement extends pulumi.CustomResource {
     /**
      * Oracle TOU link
      */
-    public /*out*/ readonly oracleTermsOfUseLink!: pulumi.Output<string>;
+    public /*out*/ readonly oracleTermsOfUseLink!: pulumi.Output<string | undefined>;
     /**
      * A generated signature for this agreement retrieval operation which should be used in the create subscription call.
      */
-    public /*out*/ readonly signature!: pulumi.Output<string>;
+    public /*out*/ readonly signature!: pulumi.Output<string | undefined>;
     /**
      * Date and time the agreements were retrieved, in RFC3339 format. Example: `2018-03-20T12:32:53.532Z`
      */
-    public /*out*/ readonly timeRetrieved!: pulumi.Output<string>;
+    public /*out*/ readonly timeRetrieved!: pulumi.Output<string | undefined>;
 
     /**
      * Create a ListingResourceVersionAgreement resource with the given unique name, arguments, and options.

@@ -8,6 +8,8 @@ import com.pulumi.oci.LogAnalytics.outputs.GetNamespaceIngestTimeRuleConditionAd
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetNamespaceIngestTimeRuleCondition {
@@ -15,27 +17,27 @@ public final class GetNamespaceIngestTimeRuleCondition {
      * @return Optional additional condition(s) to be evaluated.
      * 
      */
-    private List<GetNamespaceIngestTimeRuleConditionAdditionalCondition> additionalConditions;
+    private @Nullable List<GetNamespaceIngestTimeRuleConditionAdditionalCondition> additionalConditions;
     /**
      * @return The field name to be evaluated.
      * 
      */
-    private String fieldName;
+    private @Nullable String fieldName;
     /**
      * @return The operator to be used for evaluating the field.
      * 
      */
-    private String fieldOperator;
+    private @Nullable String fieldOperator;
     /**
      * @return The field value to be evaluated.
      * 
      */
-    private String fieldValue;
+    private @Nullable String fieldValue;
     /**
      * @return Discriminator.
      * 
      */
-    private String kind;
+    private @Nullable String kind;
 
     private GetNamespaceIngestTimeRuleCondition() {}
     /**
@@ -43,35 +45,35 @@ public final class GetNamespaceIngestTimeRuleCondition {
      * 
      */
     public List<GetNamespaceIngestTimeRuleConditionAdditionalCondition> additionalConditions() {
-        return this.additionalConditions;
+        return this.additionalConditions == null ? List.of() : this.additionalConditions;
     }
     /**
      * @return The field name to be evaluated.
      * 
      */
-    public String fieldName() {
-        return this.fieldName;
+    public Optional<String> fieldName() {
+        return Optional.ofNullable(this.fieldName);
     }
     /**
      * @return The operator to be used for evaluating the field.
      * 
      */
-    public String fieldOperator() {
-        return this.fieldOperator;
+    public Optional<String> fieldOperator() {
+        return Optional.ofNullable(this.fieldOperator);
     }
     /**
      * @return The field value to be evaluated.
      * 
      */
-    public String fieldValue() {
-        return this.fieldValue;
+    public Optional<String> fieldValue() {
+        return Optional.ofNullable(this.fieldValue);
     }
     /**
      * @return Discriminator.
      * 
      */
-    public String kind() {
-        return this.kind;
+    public Optional<String> kind() {
+        return Optional.ofNullable(this.kind);
     }
 
     public static Builder builder() {
@@ -83,11 +85,11 @@ public final class GetNamespaceIngestTimeRuleCondition {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetNamespaceIngestTimeRuleConditionAdditionalCondition> additionalConditions;
-        private String fieldName;
-        private String fieldOperator;
-        private String fieldValue;
-        private String kind;
+        private @Nullable List<GetNamespaceIngestTimeRuleConditionAdditionalCondition> additionalConditions;
+        private @Nullable String fieldName;
+        private @Nullable String fieldOperator;
+        private @Nullable String fieldValue;
+        private @Nullable String kind;
         public Builder() {}
         public Builder(GetNamespaceIngestTimeRuleCondition defaults) {
     	      Objects.requireNonNull(defaults);
@@ -99,31 +101,31 @@ public final class GetNamespaceIngestTimeRuleCondition {
         }
 
         @CustomType.Setter
-        public Builder additionalConditions(List<GetNamespaceIngestTimeRuleConditionAdditionalCondition> additionalConditions) {
-            this.additionalConditions = Objects.requireNonNull(additionalConditions);
+        public Builder additionalConditions(@Nullable List<GetNamespaceIngestTimeRuleConditionAdditionalCondition> additionalConditions) {
+            this.additionalConditions = additionalConditions;
             return this;
         }
         public Builder additionalConditions(GetNamespaceIngestTimeRuleConditionAdditionalCondition... additionalConditions) {
             return additionalConditions(List.of(additionalConditions));
         }
         @CustomType.Setter
-        public Builder fieldName(String fieldName) {
-            this.fieldName = Objects.requireNonNull(fieldName);
+        public Builder fieldName(@Nullable String fieldName) {
+            this.fieldName = fieldName;
             return this;
         }
         @CustomType.Setter
-        public Builder fieldOperator(String fieldOperator) {
-            this.fieldOperator = Objects.requireNonNull(fieldOperator);
+        public Builder fieldOperator(@Nullable String fieldOperator) {
+            this.fieldOperator = fieldOperator;
             return this;
         }
         @CustomType.Setter
-        public Builder fieldValue(String fieldValue) {
-            this.fieldValue = Objects.requireNonNull(fieldValue);
+        public Builder fieldValue(@Nullable String fieldValue) {
+            this.fieldValue = fieldValue;
             return this;
         }
         @CustomType.Setter
-        public Builder kind(String kind) {
-            this.kind = Objects.requireNonNull(kind);
+        public Builder kind(@Nullable String kind) {
+            this.kind = kind;
             return this;
         }
         public GetNamespaceIngestTimeRuleCondition build() {

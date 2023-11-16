@@ -9,6 +9,7 @@ import com.pulumi.oci.ContainerEngine.outputs.GetClusterWorkloadMappingsWorkload
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -23,12 +24,12 @@ public final class GetClusterWorkloadMappingsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of workload_mappings.
      * 
      */
-    private List<GetClusterWorkloadMappingsWorkloadMapping> workloadMappings;
+    private @Nullable List<GetClusterWorkloadMappingsWorkloadMapping> workloadMappings;
 
     private GetClusterWorkloadMappingsResult() {}
     /**
@@ -45,15 +46,15 @@ public final class GetClusterWorkloadMappingsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of workload_mappings.
      * 
      */
     public List<GetClusterWorkloadMappingsWorkloadMapping> workloadMappings() {
-        return this.workloadMappings;
+        return this.workloadMappings == null ? List.of() : this.workloadMappings;
     }
 
     public static Builder builder() {
@@ -67,8 +68,8 @@ public final class GetClusterWorkloadMappingsResult {
     public static final class Builder {
         private String clusterId;
         private @Nullable List<GetClusterWorkloadMappingsFilter> filters;
-        private String id;
-        private List<GetClusterWorkloadMappingsWorkloadMapping> workloadMappings;
+        private @Nullable String id;
+        private @Nullable List<GetClusterWorkloadMappingsWorkloadMapping> workloadMappings;
         public Builder() {}
         public Builder(GetClusterWorkloadMappingsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -92,13 +93,13 @@ public final class GetClusterWorkloadMappingsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder workloadMappings(List<GetClusterWorkloadMappingsWorkloadMapping> workloadMappings) {
-            this.workloadMappings = Objects.requireNonNull(workloadMappings);
+        public Builder workloadMappings(@Nullable List<GetClusterWorkloadMappingsWorkloadMapping> workloadMappings) {
+            this.workloadMappings = workloadMappings;
             return this;
         }
         public Builder workloadMappings(GetClusterWorkloadMappingsWorkloadMapping... workloadMappings) {

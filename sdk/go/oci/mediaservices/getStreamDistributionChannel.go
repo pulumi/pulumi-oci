@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Stream Distribution Channel resource in Oracle Cloud Infrastructure Media Services service.
@@ -60,26 +59,26 @@ type LookupStreamDistributionChannelArgs struct {
 // A collection of values returned by getStreamDistributionChannel.
 type LookupStreamDistributionChannelResult struct {
 	// Compartment Identifier.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Stream Distribution Channel display name. Avoid entering confidential information.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Unique domain name of the Distribution Channel.
-	DomainName string `pulumi:"domainName"`
+	DomainName *string `pulumi:"domainName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Unique identifier that is immutable on creation.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The current state of the Stream Distribution Channel.
-	State                       string `pulumi:"state"`
-	StreamDistributionChannelId string `pulumi:"streamDistributionChannelId"`
+	State                       *string `pulumi:"state"`
+	StreamDistributionChannelId string  `pulumi:"streamDistributionChannelId"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time when the Stream Distribution Channel was created. An RFC3339 formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time when the Stream Distribution Channel was updated. An RFC3339 formatted datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func LookupStreamDistributionChannelOutput(ctx *pulumi.Context, args LookupStreamDistributionChannelOutputArgs, opts ...pulumi.InvokeOption) LookupStreamDistributionChannelResultOutput {
@@ -120,15 +119,9 @@ func (o LookupStreamDistributionChannelResultOutput) ToLookupStreamDistributionC
 	return o
 }
 
-func (o LookupStreamDistributionChannelResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupStreamDistributionChannelResult] {
-	return pulumix.Output[LookupStreamDistributionChannelResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Compartment Identifier.
-func (o LookupStreamDistributionChannelResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupStreamDistributionChannelResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupStreamDistributionChannelResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupStreamDistributionChannelResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -137,13 +130,13 @@ func (o LookupStreamDistributionChannelResultOutput) DefinedTags() pulumi.MapOut
 }
 
 // Stream Distribution Channel display name. Avoid entering confidential information.
-func (o LookupStreamDistributionChannelResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupStreamDistributionChannelResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupStreamDistributionChannelResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupStreamDistributionChannelResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Unique domain name of the Distribution Channel.
-func (o LookupStreamDistributionChannelResultOutput) DomainName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupStreamDistributionChannelResult) string { return v.DomainName }).(pulumi.StringOutput)
+func (o LookupStreamDistributionChannelResultOutput) DomainName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupStreamDistributionChannelResult) *string { return v.DomainName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -152,13 +145,13 @@ func (o LookupStreamDistributionChannelResultOutput) FreeformTags() pulumi.MapOu
 }
 
 // Unique identifier that is immutable on creation.
-func (o LookupStreamDistributionChannelResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupStreamDistributionChannelResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupStreamDistributionChannelResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupStreamDistributionChannelResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the Stream Distribution Channel.
-func (o LookupStreamDistributionChannelResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupStreamDistributionChannelResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupStreamDistributionChannelResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupStreamDistributionChannelResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupStreamDistributionChannelResultOutput) StreamDistributionChannelId() pulumi.StringOutput {
@@ -171,13 +164,13 @@ func (o LookupStreamDistributionChannelResultOutput) SystemTags() pulumi.MapOutp
 }
 
 // The time when the Stream Distribution Channel was created. An RFC3339 formatted datetime string.
-func (o LookupStreamDistributionChannelResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupStreamDistributionChannelResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupStreamDistributionChannelResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupStreamDistributionChannelResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time when the Stream Distribution Channel was updated. An RFC3339 formatted datetime string.
-func (o LookupStreamDistributionChannelResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupStreamDistributionChannelResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupStreamDistributionChannelResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupStreamDistributionChannelResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

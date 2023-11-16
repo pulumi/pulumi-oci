@@ -126,7 +126,7 @@ namespace Pulumi.Oci.Core
         /// If the parameter is provided, instances will only be placed within the HPC island and list of network blocks  that you specify. If a list of network blocks are missing or not provided, the instances will be placed in any  HPC blocks in the HPC island that you specify. If the values of HPC island or network block that you provide are  not valid, an error is returned.
         /// </summary>
         [Output("clusterConfiguration")]
-        public Output<Outputs.ClusterNetworkClusterConfiguration> ClusterConfiguration { get; private set; } = null!;
+        public Output<Outputs.ClusterNetworkClusterConfiguration?> ClusterConfiguration { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
@@ -138,25 +138,25 @@ namespace Pulumi.Oci.Core
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC island.
         /// </summary>
         [Output("hpcIslandId")]
-        public Output<string> HpcIslandId { get; private set; } = null!;
+        public Output<string?> HpcIslandId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The data to create the instance pools in the cluster network.
@@ -182,19 +182,19 @@ namespace Pulumi.Oci.Core
         /// The current state of the cluster network.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the resource was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the resource was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
 
         /// <summary>

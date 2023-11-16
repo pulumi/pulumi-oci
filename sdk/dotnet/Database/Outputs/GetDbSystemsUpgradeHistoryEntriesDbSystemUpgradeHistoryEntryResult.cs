@@ -16,59 +16,59 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// The operating system upgrade action.
         /// </summary>
-        public readonly string Action;
+        public readonly string? Action;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the upgrade history entry.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// A descriptive text associated with the lifecycleState. Typically contains additional displayable text.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// A valid Oracle Grid Infrastructure (GI) software version.
         /// </summary>
-        public readonly string NewGiVersion;
+        public readonly string? NewGiVersion;
         /// <summary>
         /// A valid Oracle Grid Infrastructure (GI) software version.
         /// </summary>
-        public readonly string OldGiVersion;
+        public readonly string? OldGiVersion;
         /// <summary>
         /// The retention period, in days, for the snapshot that allows you to perform a rollback of the upgrade operation. After this number of days passes, you cannot roll back the upgrade.
         /// </summary>
-        public readonly int SnapshotRetentionPeriodInDays;
+        public readonly int? SnapshotRetentionPeriodInDays;
         /// <summary>
         /// A filter to return only upgrade history entries that match the given lifecycle state exactly.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The date and time when the upgrade action completed
         /// </summary>
-        public readonly string TimeEnded;
+        public readonly string? TimeEnded;
         /// <summary>
         /// The date and time when the upgrade action started.
         /// </summary>
-        public readonly string TimeStarted;
+        public readonly string? TimeStarted;
 
         [OutputConstructor]
         private GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryResult(
-            string action,
+            string? action,
 
-            string id,
+            string? id,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string newGiVersion,
+            string? newGiVersion,
 
-            string oldGiVersion,
+            string? oldGiVersion,
 
-            int snapshotRetentionPeriodInDays,
+            int? snapshotRetentionPeriodInDays,
 
-            string state,
+            string? state,
 
-            string timeEnded,
+            string? timeEnded,
 
-            string timeStarted)
+            string? timeStarted)
         {
             Action = action;
             Id = id;

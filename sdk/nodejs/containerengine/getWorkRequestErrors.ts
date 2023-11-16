@@ -57,11 +57,11 @@ export interface GetWorkRequestErrorsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of work_request_errors.
      */
-    readonly workRequestErrors: outputs.ContainerEngine.GetWorkRequestErrorsWorkRequestError[];
+    readonly workRequestErrors?: outputs.ContainerEngine.GetWorkRequestErrorsWorkRequestError[];
     readonly workRequestId: string;
 }
 /**

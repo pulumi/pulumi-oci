@@ -42,10 +42,7 @@ class GetCloudAutonomousVmClusterAcdResourceUsagesResult:
 
     @property
     @pulumi.getter(name="autonomousContainerDatabaseResourceUsages")
-    def autonomous_container_database_resource_usages(self) -> Sequence['outputs.GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageResult']:
-        """
-        The list of autonomous_container_database_resource_usages.
-        """
+    def autonomous_container_database_resource_usages(self) -> Optional[Sequence['outputs.GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageResult']]:
         return pulumi.get(self, "autonomous_container_database_resource_usages")
 
     @property
@@ -65,7 +62,7 @@ class GetCloudAutonomousVmClusterAcdResourceUsagesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -90,24 +87,7 @@ def get_cloud_autonomous_vm_cluster_acd_resource_usages(cloud_autonomous_vm_clus
                                                         filters: Optional[Sequence[pulumi.InputType['GetCloudAutonomousVmClusterAcdResourceUsagesFilterArgs']]] = None,
                                                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCloudAutonomousVmClusterAcdResourceUsagesResult:
     """
-    This data source provides the list of Cloud Autonomous Vm Cluster Acd Resource Usages in Oracle Cloud Infrastructure Database service.
-
-    Gets the list of resource usage details for all the Cloud Autonomous Container Database
-    in the specified Cloud Autonomous Exadata VM cluster.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_cloud_autonomous_vm_cluster_acd_resource_usages = oci.Database.get_cloud_autonomous_vm_cluster_acd_resource_usages(cloud_autonomous_vm_cluster_id=oci_database_cloud_autonomous_vm_cluster["test_cloud_autonomous_vm_cluster"]["id"],
-        compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str cloud_autonomous_vm_cluster_id: The Cloud VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['cloudAutonomousVmClusterId'] = cloud_autonomous_vm_cluster_id
@@ -130,23 +110,6 @@ def get_cloud_autonomous_vm_cluster_acd_resource_usages_output(cloud_autonomous_
                                                                filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetCloudAutonomousVmClusterAcdResourceUsagesFilterArgs']]]]] = None,
                                                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCloudAutonomousVmClusterAcdResourceUsagesResult]:
     """
-    This data source provides the list of Cloud Autonomous Vm Cluster Acd Resource Usages in Oracle Cloud Infrastructure Database service.
-
-    Gets the list of resource usage details for all the Cloud Autonomous Container Database
-    in the specified Cloud Autonomous Exadata VM cluster.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_cloud_autonomous_vm_cluster_acd_resource_usages = oci.Database.get_cloud_autonomous_vm_cluster_acd_resource_usages(cloud_autonomous_vm_cluster_id=oci_database_cloud_autonomous_vm_cluster["test_cloud_autonomous_vm_cluster"]["id"],
-        compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str cloud_autonomous_vm_cluster_id: The Cloud VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     ...

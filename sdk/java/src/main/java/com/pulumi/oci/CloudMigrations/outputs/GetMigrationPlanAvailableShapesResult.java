@@ -23,7 +23,7 @@ public final class GetMigrationPlanAvailableShapesResult {
      * @return The list of available_shapes_collection.
      * 
      */
-    private List<GetMigrationPlanAvailableShapesAvailableShapesCollection> availableShapesCollections;
+    private @Nullable List<GetMigrationPlanAvailableShapesAvailableShapesCollection> availableShapesCollections;
     private @Nullable String compartmentId;
     private @Nullable String dvhHostId;
     private @Nullable List<GetMigrationPlanAvailableShapesFilter> filters;
@@ -31,7 +31,7 @@ public final class GetMigrationPlanAvailableShapesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String migrationPlanId;
     private @Nullable String reservedCapacityId;
 
@@ -48,7 +48,7 @@ public final class GetMigrationPlanAvailableShapesResult {
      * 
      */
     public List<GetMigrationPlanAvailableShapesAvailableShapesCollection> availableShapesCollections() {
-        return this.availableShapesCollections;
+        return this.availableShapesCollections == null ? List.of() : this.availableShapesCollections;
     }
     public Optional<String> compartmentId() {
         return Optional.ofNullable(this.compartmentId);
@@ -63,8 +63,8 @@ public final class GetMigrationPlanAvailableShapesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String migrationPlanId() {
         return this.migrationPlanId;
@@ -83,11 +83,11 @@ public final class GetMigrationPlanAvailableShapesResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String availabilityDomain;
-        private List<GetMigrationPlanAvailableShapesAvailableShapesCollection> availableShapesCollections;
+        private @Nullable List<GetMigrationPlanAvailableShapesAvailableShapesCollection> availableShapesCollections;
         private @Nullable String compartmentId;
         private @Nullable String dvhHostId;
         private @Nullable List<GetMigrationPlanAvailableShapesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private String migrationPlanId;
         private @Nullable String reservedCapacityId;
         public Builder() {}
@@ -109,8 +109,8 @@ public final class GetMigrationPlanAvailableShapesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder availableShapesCollections(List<GetMigrationPlanAvailableShapesAvailableShapesCollection> availableShapesCollections) {
-            this.availableShapesCollections = Objects.requireNonNull(availableShapesCollections);
+        public Builder availableShapesCollections(@Nullable List<GetMigrationPlanAvailableShapesAvailableShapesCollection> availableShapesCollections) {
+            this.availableShapesCollections = availableShapesCollections;
             return this;
         }
         public Builder availableShapesCollections(GetMigrationPlanAvailableShapesAvailableShapesCollection... availableShapesCollections) {
@@ -135,8 +135,8 @@ public final class GetMigrationPlanAvailableShapesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

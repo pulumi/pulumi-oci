@@ -55,25 +55,16 @@ class GetKeysResult:
     @property
     @pulumi.getter
     def algorithm(self) -> Optional[str]:
-        """
-        The algorithm used by a key's key versions to encrypt or decrypt. Only AES algorithm is supported for `External` keys.
-        """
         return pulumi.get(self, "algorithm")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment that contains this master encryption key.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="curveId")
     def curve_id(self) -> Optional[str]:
-        """
-        Supported curve IDs for ECDSA keys.
-        """
         return pulumi.get(self, "curve_id")
 
     @property
@@ -83,7 +74,7 @@ class GetKeysResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -91,21 +82,12 @@ class GetKeysResult:
 
     @property
     @pulumi.getter
-    def keys(self) -> Sequence['outputs.GetKeysKeyResult']:
-        """
-        The list of keys.
-        """
+    def keys(self) -> Optional[Sequence['outputs.GetKeysKeyResult']]:
         return pulumi.get(self, "keys")
 
     @property
     @pulumi.getter
     def length(self) -> Optional[int]:
-        """
-        The length of the key in bytes, expressed as an integer. Supported values include the following:
-        * AES: 16, 24, or 32
-        * RSA: 256, 384, or 512
-        * ECDSA: 32, 48, or 66
-        """
         return pulumi.get(self, "length")
 
     @property
@@ -116,9 +98,6 @@ class GetKeysResult:
     @property
     @pulumi.getter(name="protectionMode")
     def protection_mode(self) -> Optional[str]:
-        """
-        The key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's RSA wrapping key which persists on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default, a key's protection mode is set to `HSM`. You can't change a key's protection mode after the key is created or imported. A protection mode of `EXTERNAL` mean that the key persists on the customer's external key manager which is hosted externally outside of oracle. Oracle only hold a reference to that key.  All cryptographic operations that use a key with a protection mode of `EXTERNAL` are performed by external key manager.
-        """
         return pulumi.get(self, "protection_mode")
 
 
@@ -148,36 +127,7 @@ def get_keys(algorithm: Optional[str] = None,
              protection_mode: Optional[str] = None,
              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetKeysResult:
     """
-    This data source provides the list of Keys in Oracle Cloud Infrastructure Kms service.
-
-    Lists the master encryption keys in the specified vault and compartment.
-
-    As a management operation, this call is subject to a Key Management limit that applies to the total number
-    of requests across all management read operations. Key Management might throttle this call to reject an
-    otherwise valid request when the total rate of management read operations exceeds 10 requests per second
-    for a given tenancy.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_keys = oci.Kms.get_keys(compartment_id=var["compartment_id"],
-        management_endpoint=var["key_management_endpoint"],
-        algorithm=var["key_algorithm"],
-        length=var["key_length"],
-        curve_id=oci_kms_curve["test_curve"]["id"],
-        protection_mode=var["key_protection_mode"])
-    ```
-
-
-    :param str algorithm: The algorithm used by a key's key versions to encrypt or decrypt data. Currently, support includes AES, RSA, and ECDSA algorithms.
-    :param str compartment_id: The OCID of the compartment.
-    :param str curve_id: The curve ID of the keys. (This pertains only to ECDSA keys.)
-    :param int length: The length of the key in bytes, expressed as an integer. Supported values include 16, 24, or 32.
-    :param str management_endpoint: The service endpoint to perform management operations against. Management operations include 'Create,' 'Update,' 'List,' 'Get,' and 'Delete' operations. See Vault Management endpoint.
-    :param str protection_mode: A key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's RSA wrapping key which persists on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. A protection mode of `EXTERNAL` mean that the key persists on the customer's external key manager which is hosted externally outside of oracle. Oracle only hold a reference to that key. All cryptographic operations that use a key with a protection mode of `EXTERNAL` are performed by external key manager.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['algorithm'] = algorithm
@@ -212,35 +162,6 @@ def get_keys_output(algorithm: Optional[pulumi.Input[Optional[str]]] = None,
                     protection_mode: Optional[pulumi.Input[Optional[str]]] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetKeysResult]:
     """
-    This data source provides the list of Keys in Oracle Cloud Infrastructure Kms service.
-
-    Lists the master encryption keys in the specified vault and compartment.
-
-    As a management operation, this call is subject to a Key Management limit that applies to the total number
-    of requests across all management read operations. Key Management might throttle this call to reject an
-    otherwise valid request when the total rate of management read operations exceeds 10 requests per second
-    for a given tenancy.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_keys = oci.Kms.get_keys(compartment_id=var["compartment_id"],
-        management_endpoint=var["key_management_endpoint"],
-        algorithm=var["key_algorithm"],
-        length=var["key_length"],
-        curve_id=oci_kms_curve["test_curve"]["id"],
-        protection_mode=var["key_protection_mode"])
-    ```
-
-
-    :param str algorithm: The algorithm used by a key's key versions to encrypt or decrypt data. Currently, support includes AES, RSA, and ECDSA algorithms.
-    :param str compartment_id: The OCID of the compartment.
-    :param str curve_id: The curve ID of the keys. (This pertains only to ECDSA keys.)
-    :param int length: The length of the key in bytes, expressed as an integer. Supported values include 16, 24, or 32.
-    :param str management_endpoint: The service endpoint to perform management operations against. Management operations include 'Create,' 'Update,' 'List,' 'Get,' and 'Delete' operations. See Vault Management endpoint.
-    :param str protection_mode: A key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's RSA wrapping key which persists on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. A protection mode of `EXTERNAL` mean that the key persists on the customer's external key manager which is hosted externally outside of oracle. Oracle only hold a reference to that key. All cryptographic operations that use a key with a protection mode of `EXTERNAL` are performed by external key manager.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -45,18 +45,12 @@ class GetListingPackageAgreementsResult:
 
     @property
     @pulumi.getter
-    def agreements(self) -> Sequence['outputs.GetListingPackageAgreementsAgreementResult']:
-        """
-        The list of agreements.
-        """
+    def agreements(self) -> Optional[Sequence['outputs.GetListingPackageAgreementsAgreementResult']]:
         return pulumi.get(self, "agreements")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
-        """
-        The unique identifier for the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -66,7 +60,7 @@ class GetListingPackageAgreementsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -103,25 +97,7 @@ def get_listing_package_agreements(compartment_id: Optional[str] = None,
                                    package_version: Optional[str] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetListingPackageAgreementsResult:
     """
-    This data source provides the list of Listing Package Agreements in Oracle Cloud Infrastructure Marketplace service.
-
-    Returns the terms of use agreements that must be accepted before you can deploy the specified version of a package.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_listing_package_agreements = oci.Marketplace.get_listing_package_agreements(listing_id=oci_marketplace_listing["test_listing"]["id"],
-        package_version=var["listing_package_agreement_package_version"],
-        compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str compartment_id: The unique identifier for the compartment.
-    :param str listing_id: The unique identifier for the listing.
-    :param str package_version: The version of the package. Package versions are unique within a listing.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -147,24 +123,6 @@ def get_listing_package_agreements_output(compartment_id: Optional[pulumi.Input[
                                           package_version: Optional[pulumi.Input[str]] = None,
                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetListingPackageAgreementsResult]:
     """
-    This data source provides the list of Listing Package Agreements in Oracle Cloud Infrastructure Marketplace service.
-
-    Returns the terms of use agreements that must be accepted before you can deploy the specified version of a package.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_listing_package_agreements = oci.Marketplace.get_listing_package_agreements(listing_id=oci_marketplace_listing["test_listing"]["id"],
-        package_version=var["listing_package_agreement_package_version"],
-        compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str compartment_id: The unique identifier for the compartment.
-    :param str listing_id: The unique identifier for the listing.
-    :param str package_version: The version of the package. Package versions are unique within a listing.
+    Use this data source to access information about an existing resource.
     """
     ...

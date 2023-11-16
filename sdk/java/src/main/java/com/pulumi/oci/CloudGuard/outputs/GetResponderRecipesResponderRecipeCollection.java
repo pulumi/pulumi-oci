@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.CloudGuard.outputs.GetResponderRecipesResponderRecipeCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetResponderRecipesResponderRecipeCollection {
-    private List<GetResponderRecipesResponderRecipeCollectionItem> items;
+    private @Nullable List<GetResponderRecipesResponderRecipeCollectionItem> items;
 
     private GetResponderRecipesResponderRecipeCollection() {}
     public List<GetResponderRecipesResponderRecipeCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetResponderRecipesResponderRecipeCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetResponderRecipesResponderRecipeCollectionItem> items;
+        private @Nullable List<GetResponderRecipesResponderRecipeCollectionItem> items;
         public Builder() {}
         public Builder(GetResponderRecipesResponderRecipeCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetResponderRecipesResponderRecipeCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetResponderRecipesResponderRecipeCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetResponderRecipesResponderRecipeCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetResponderRecipesResponderRecipeCollectionItem... items) {

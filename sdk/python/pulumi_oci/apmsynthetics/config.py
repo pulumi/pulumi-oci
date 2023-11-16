@@ -38,30 +38,6 @@ class ConfigArgs:
                  timeout_in_seconds: Optional[pulumi.Input[int]] = None):
         """
         The set of arguments for constructing a Config resource.
-        :param pulumi.Input[str] apm_domain_id: (Updatable) The APM domain ID the request is intended for.
-        :param pulumi.Input[str] display_name: Unique name that can be edited. The name should not contain any confidential information.
-        :param pulumi.Input[str] monitor_type: Type of monitor.
-        :param pulumi.Input[int] repeat_interval_in_seconds: (Updatable) Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
-        :param pulumi.Input[Sequence[pulumi.Input['ConfigVantagePointArgs']]] vantage_points: (Updatable) A list of public and dedicated vantage points from which to execute the monitor. Use /publicVantagePoints to fetch public vantage points, and /dedicatedVantagePoints to fetch dedicated vantage points. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input['ConfigAvailabilityConfigurationArgs'] availability_configuration: (Updatable) Monitor availability configuration details.
-        :param pulumi.Input[int] batch_interval_in_seconds: (Updatable) Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
-        :param pulumi.Input['ConfigConfigurationArgs'] configuration: (Updatable) Details of monitor configuration.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[bool] is_run_now: (Updatable) If isRunNow is enabled, then the monitor will run immediately.
-        :param pulumi.Input[bool] is_run_once: (Updatable) If runOnce is enabled, then the monitor will run once.
-        :param pulumi.Input['ConfigMaintenanceWindowScheduleArgs'] maintenance_window_schedule: (Updatable) Details required to schedule maintenance window.
-        :param pulumi.Input[str] scheduling_policy: (Updatable) Scheduling policy to decide the distribution of monitor executions on vantage points.
-        :param pulumi.Input[str] script_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the script. scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null.
-        :param pulumi.Input[str] script_name: Name of the script.
-        :param pulumi.Input[Sequence[pulumi.Input['ConfigScriptParameterArgs']]] script_parameters: (Updatable) List of script parameters in the monitor. This is valid only for SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null. Example: `[{"paramName": "userid", "paramValue":"testuser"}]`
-        :param pulumi.Input[str] status: (Updatable) Enables or disables the monitor.
-        :param pulumi.Input[str] target: (Updatable) Specify the endpoint on which to run the monitor. For BROWSER and REST monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
-        :param pulumi.Input[int] timeout_in_seconds: (Updatable) Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
         """
         pulumi.set(__self__, "apm_domain_id", apm_domain_id)
         pulumi.set(__self__, "display_name", display_name)
@@ -102,9 +78,6 @@ class ConfigArgs:
     @property
     @pulumi.getter(name="apmDomainId")
     def apm_domain_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The APM domain ID the request is intended for.
-        """
         return pulumi.get(self, "apm_domain_id")
 
     @apm_domain_id.setter
@@ -114,9 +87,6 @@ class ConfigArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[str]:
-        """
-        Unique name that can be edited. The name should not contain any confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -126,9 +96,6 @@ class ConfigArgs:
     @property
     @pulumi.getter(name="monitorType")
     def monitor_type(self) -> pulumi.Input[str]:
-        """
-        Type of monitor.
-        """
         return pulumi.get(self, "monitor_type")
 
     @monitor_type.setter
@@ -138,9 +105,6 @@ class ConfigArgs:
     @property
     @pulumi.getter(name="repeatIntervalInSeconds")
     def repeat_interval_in_seconds(self) -> pulumi.Input[int]:
-        """
-        (Updatable) Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
-        """
         return pulumi.get(self, "repeat_interval_in_seconds")
 
     @repeat_interval_in_seconds.setter
@@ -150,13 +114,6 @@ class ConfigArgs:
     @property
     @pulumi.getter(name="vantagePoints")
     def vantage_points(self) -> pulumi.Input[Sequence[pulumi.Input['ConfigVantagePointArgs']]]:
-        """
-        (Updatable) A list of public and dedicated vantage points from which to execute the monitor. Use /publicVantagePoints to fetch public vantage points, and /dedicatedVantagePoints to fetch dedicated vantage points. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "vantage_points")
 
     @vantage_points.setter
@@ -166,9 +123,6 @@ class ConfigArgs:
     @property
     @pulumi.getter(name="availabilityConfiguration")
     def availability_configuration(self) -> Optional[pulumi.Input['ConfigAvailabilityConfigurationArgs']]:
-        """
-        (Updatable) Monitor availability configuration details.
-        """
         return pulumi.get(self, "availability_configuration")
 
     @availability_configuration.setter
@@ -178,9 +132,6 @@ class ConfigArgs:
     @property
     @pulumi.getter(name="batchIntervalInSeconds")
     def batch_interval_in_seconds(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
-        """
         return pulumi.get(self, "batch_interval_in_seconds")
 
     @batch_interval_in_seconds.setter
@@ -190,9 +141,6 @@ class ConfigArgs:
     @property
     @pulumi.getter
     def configuration(self) -> Optional[pulumi.Input['ConfigConfigurationArgs']]:
-        """
-        (Updatable) Details of monitor configuration.
-        """
         return pulumi.get(self, "configuration")
 
     @configuration.setter
@@ -202,9 +150,6 @@ class ConfigArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -214,9 +159,6 @@ class ConfigArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -226,9 +168,6 @@ class ConfigArgs:
     @property
     @pulumi.getter(name="isRunNow")
     def is_run_now(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) If isRunNow is enabled, then the monitor will run immediately.
-        """
         return pulumi.get(self, "is_run_now")
 
     @is_run_now.setter
@@ -238,9 +177,6 @@ class ConfigArgs:
     @property
     @pulumi.getter(name="isRunOnce")
     def is_run_once(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) If runOnce is enabled, then the monitor will run once.
-        """
         return pulumi.get(self, "is_run_once")
 
     @is_run_once.setter
@@ -250,9 +186,6 @@ class ConfigArgs:
     @property
     @pulumi.getter(name="maintenanceWindowSchedule")
     def maintenance_window_schedule(self) -> Optional[pulumi.Input['ConfigMaintenanceWindowScheduleArgs']]:
-        """
-        (Updatable) Details required to schedule maintenance window.
-        """
         return pulumi.get(self, "maintenance_window_schedule")
 
     @maintenance_window_schedule.setter
@@ -262,9 +195,6 @@ class ConfigArgs:
     @property
     @pulumi.getter(name="schedulingPolicy")
     def scheduling_policy(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Scheduling policy to decide the distribution of monitor executions on vantage points.
-        """
         return pulumi.get(self, "scheduling_policy")
 
     @scheduling_policy.setter
@@ -274,9 +204,6 @@ class ConfigArgs:
     @property
     @pulumi.getter(name="scriptId")
     def script_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the script. scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null.
-        """
         return pulumi.get(self, "script_id")
 
     @script_id.setter
@@ -286,9 +213,6 @@ class ConfigArgs:
     @property
     @pulumi.getter(name="scriptName")
     def script_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Name of the script.
-        """
         return pulumi.get(self, "script_name")
 
     @script_name.setter
@@ -298,9 +222,6 @@ class ConfigArgs:
     @property
     @pulumi.getter(name="scriptParameters")
     def script_parameters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ConfigScriptParameterArgs']]]]:
-        """
-        (Updatable) List of script parameters in the monitor. This is valid only for SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null. Example: `[{"paramName": "userid", "paramValue":"testuser"}]`
-        """
         return pulumi.get(self, "script_parameters")
 
     @script_parameters.setter
@@ -310,9 +231,6 @@ class ConfigArgs:
     @property
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Enables or disables the monitor.
-        """
         return pulumi.get(self, "status")
 
     @status.setter
@@ -322,9 +240,6 @@ class ConfigArgs:
     @property
     @pulumi.getter
     def target(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Specify the endpoint on which to run the monitor. For BROWSER and REST monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
-        """
         return pulumi.get(self, "target")
 
     @target.setter
@@ -334,9 +249,6 @@ class ConfigArgs:
     @property
     @pulumi.getter(name="timeoutInSeconds")
     def timeout_in_seconds(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
-        """
         return pulumi.get(self, "timeout_in_seconds")
 
     @timeout_in_seconds.setter
@@ -372,33 +284,6 @@ class _ConfigState:
                  vantage_points: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigVantagePointArgs']]]] = None):
         """
         Input properties used for looking up and filtering Config resources.
-        :param pulumi.Input[str] apm_domain_id: (Updatable) The APM domain ID the request is intended for.
-        :param pulumi.Input['ConfigAvailabilityConfigurationArgs'] availability_configuration: (Updatable) Monitor availability configuration details.
-        :param pulumi.Input[int] batch_interval_in_seconds: (Updatable) Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
-        :param pulumi.Input['ConfigConfigurationArgs'] configuration: (Updatable) Details of monitor configuration.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: Unique name that can be edited. The name should not contain any confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[bool] is_run_now: (Updatable) If isRunNow is enabled, then the monitor will run immediately.
-        :param pulumi.Input[bool] is_run_once: (Updatable) If runOnce is enabled, then the monitor will run once.
-        :param pulumi.Input['ConfigMaintenanceWindowScheduleArgs'] maintenance_window_schedule: (Updatable) Details required to schedule maintenance window.
-        :param pulumi.Input[str] monitor_type: Type of monitor.
-        :param pulumi.Input[int] repeat_interval_in_seconds: (Updatable) Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
-        :param pulumi.Input[str] scheduling_policy: (Updatable) Scheduling policy to decide the distribution of monitor executions on vantage points.
-        :param pulumi.Input[str] script_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the script. scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null.
-        :param pulumi.Input[str] script_name: Name of the script.
-        :param pulumi.Input[Sequence[pulumi.Input['ConfigScriptParameterArgs']]] script_parameters: (Updatable) List of script parameters in the monitor. This is valid only for SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null. Example: `[{"paramName": "userid", "paramValue":"testuser"}]`
-        :param pulumi.Input[str] status: (Updatable) Enables or disables the monitor.
-        :param pulumi.Input[str] target: (Updatable) Specify the endpoint on which to run the monitor. For BROWSER and REST monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
-        :param pulumi.Input[str] time_created: The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
-        :param pulumi.Input[str] time_updated: The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
-        :param pulumi.Input[int] timeout_in_seconds: (Updatable) Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
-        :param pulumi.Input[int] vantage_point_count: Number of vantage points where monitor is running.
-        :param pulumi.Input[Sequence[pulumi.Input['ConfigVantagePointArgs']]] vantage_points: (Updatable) A list of public and dedicated vantage points from which to execute the monitor. Use /publicVantagePoints to fetch public vantage points, and /dedicatedVantagePoints to fetch dedicated vantage points. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if apm_domain_id is not None:
             pulumi.set(__self__, "apm_domain_id", apm_domain_id)
@@ -450,9 +335,6 @@ class _ConfigState:
     @property
     @pulumi.getter(name="apmDomainId")
     def apm_domain_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The APM domain ID the request is intended for.
-        """
         return pulumi.get(self, "apm_domain_id")
 
     @apm_domain_id.setter
@@ -462,9 +344,6 @@ class _ConfigState:
     @property
     @pulumi.getter(name="availabilityConfiguration")
     def availability_configuration(self) -> Optional[pulumi.Input['ConfigAvailabilityConfigurationArgs']]:
-        """
-        (Updatable) Monitor availability configuration details.
-        """
         return pulumi.get(self, "availability_configuration")
 
     @availability_configuration.setter
@@ -474,9 +353,6 @@ class _ConfigState:
     @property
     @pulumi.getter(name="batchIntervalInSeconds")
     def batch_interval_in_seconds(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
-        """
         return pulumi.get(self, "batch_interval_in_seconds")
 
     @batch_interval_in_seconds.setter
@@ -486,9 +362,6 @@ class _ConfigState:
     @property
     @pulumi.getter
     def configuration(self) -> Optional[pulumi.Input['ConfigConfigurationArgs']]:
-        """
-        (Updatable) Details of monitor configuration.
-        """
         return pulumi.get(self, "configuration")
 
     @configuration.setter
@@ -498,9 +371,6 @@ class _ConfigState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -510,9 +380,6 @@ class _ConfigState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Unique name that can be edited. The name should not contain any confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -522,9 +389,6 @@ class _ConfigState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -534,9 +398,6 @@ class _ConfigState:
     @property
     @pulumi.getter(name="isRunNow")
     def is_run_now(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) If isRunNow is enabled, then the monitor will run immediately.
-        """
         return pulumi.get(self, "is_run_now")
 
     @is_run_now.setter
@@ -546,9 +407,6 @@ class _ConfigState:
     @property
     @pulumi.getter(name="isRunOnce")
     def is_run_once(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) If runOnce is enabled, then the monitor will run once.
-        """
         return pulumi.get(self, "is_run_once")
 
     @is_run_once.setter
@@ -558,9 +416,6 @@ class _ConfigState:
     @property
     @pulumi.getter(name="maintenanceWindowSchedule")
     def maintenance_window_schedule(self) -> Optional[pulumi.Input['ConfigMaintenanceWindowScheduleArgs']]:
-        """
-        (Updatable) Details required to schedule maintenance window.
-        """
         return pulumi.get(self, "maintenance_window_schedule")
 
     @maintenance_window_schedule.setter
@@ -570,9 +425,6 @@ class _ConfigState:
     @property
     @pulumi.getter(name="monitorType")
     def monitor_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        Type of monitor.
-        """
         return pulumi.get(self, "monitor_type")
 
     @monitor_type.setter
@@ -582,9 +434,6 @@ class _ConfigState:
     @property
     @pulumi.getter(name="repeatIntervalInSeconds")
     def repeat_interval_in_seconds(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
-        """
         return pulumi.get(self, "repeat_interval_in_seconds")
 
     @repeat_interval_in_seconds.setter
@@ -594,9 +443,6 @@ class _ConfigState:
     @property
     @pulumi.getter(name="schedulingPolicy")
     def scheduling_policy(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Scheduling policy to decide the distribution of monitor executions on vantage points.
-        """
         return pulumi.get(self, "scheduling_policy")
 
     @scheduling_policy.setter
@@ -606,9 +452,6 @@ class _ConfigState:
     @property
     @pulumi.getter(name="scriptId")
     def script_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the script. scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null.
-        """
         return pulumi.get(self, "script_id")
 
     @script_id.setter
@@ -618,9 +461,6 @@ class _ConfigState:
     @property
     @pulumi.getter(name="scriptName")
     def script_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Name of the script.
-        """
         return pulumi.get(self, "script_name")
 
     @script_name.setter
@@ -630,9 +470,6 @@ class _ConfigState:
     @property
     @pulumi.getter(name="scriptParameters")
     def script_parameters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ConfigScriptParameterArgs']]]]:
-        """
-        (Updatable) List of script parameters in the monitor. This is valid only for SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null. Example: `[{"paramName": "userid", "paramValue":"testuser"}]`
-        """
         return pulumi.get(self, "script_parameters")
 
     @script_parameters.setter
@@ -642,9 +479,6 @@ class _ConfigState:
     @property
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Enables or disables the monitor.
-        """
         return pulumi.get(self, "status")
 
     @status.setter
@@ -654,9 +488,6 @@ class _ConfigState:
     @property
     @pulumi.getter
     def target(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Specify the endpoint on which to run the monitor. For BROWSER and REST monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
-        """
         return pulumi.get(self, "target")
 
     @target.setter
@@ -666,9 +497,6 @@ class _ConfigState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -678,9 +506,6 @@ class _ConfigState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -690,9 +515,6 @@ class _ConfigState:
     @property
     @pulumi.getter(name="timeoutInSeconds")
     def timeout_in_seconds(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
-        """
         return pulumi.get(self, "timeout_in_seconds")
 
     @timeout_in_seconds.setter
@@ -702,9 +524,6 @@ class _ConfigState:
     @property
     @pulumi.getter(name="vantagePointCount")
     def vantage_point_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        Number of vantage points where monitor is running.
-        """
         return pulumi.get(self, "vantage_point_count")
 
     @vantage_point_count.setter
@@ -714,13 +533,6 @@ class _ConfigState:
     @property
     @pulumi.getter(name="vantagePoints")
     def vantage_points(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ConfigVantagePointArgs']]]]:
-        """
-        (Updatable) A list of public and dedicated vantage points from which to execute the monitor. Use /publicVantagePoints to fetch public vantage points, and /dedicatedVantagePoints to fetch dedicated vantage points. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "vantage_points")
 
     @vantage_points.setter
@@ -755,144 +567,9 @@ class Config(pulumi.CustomResource):
                  vantage_points: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ConfigVantagePointArgs']]]]] = None,
                  __props__=None):
         """
-        This resource provides the Monitor resource in Oracle Cloud Infrastructure Apm Synthetics service.
-
-        Creates a new monitor.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_monitor = oci.apm_synthetics.Config("testMonitor",
-            apm_domain_id=oci_apm_synthetics_apm_domain["test_apm_domain"]["id"],
-            display_name=var["monitor_display_name"],
-            monitor_type=var["monitor_monitor_type"],
-            repeat_interval_in_seconds=var["monitor_repeat_interval_in_seconds"],
-            vantage_points=[oci.apm_synthetics.ConfigVantagePointArgs(
-                name=var["monitor_vantage_points_name"],
-                display_name=var["monitor_vantage_points_param_display_name"],
-            )],
-            availability_configuration=oci.apm_synthetics.ConfigAvailabilityConfigurationArgs(
-                max_allowed_failures_per_interval=var["monitor_availability_configuration_max_allowed_failures_per_interval"],
-                min_allowed_runs_per_interval=var["monitor_availability_configuration_min_allowed_runs_per_interval"],
-            ),
-            batch_interval_in_seconds=var["monitor_batch_interval_in_seconds"],
-            configuration=oci.apm_synthetics.ConfigConfigurationArgs(
-                client_certificate_details=oci.apm_synthetics.ConfigConfigurationClientCertificateDetailsArgs(
-                    client_certificate=oci.apm_synthetics.ConfigConfigurationClientCertificateDetailsClientCertificateArgs(
-                        content=var["monitor_configuration_client_certificate_details_client_certificate_content"],
-                        file_name=var["monitor_configuration_client_certificate_details_client_certificate_file_name"],
-                    ),
-                    private_key=oci.apm_synthetics.ConfigConfigurationClientCertificateDetailsPrivateKeyArgs(
-                        content=var["monitor_configuration_client_certificate_details_private_key_content"],
-                        file_name=var["monitor_configuration_client_certificate_details_private_key_file_name"],
-                    ),
-                ),
-                config_type=var["monitor_configuration_config_type"],
-                dns_configuration=oci.apm_synthetics.ConfigConfigurationDnsConfigurationArgs(
-                    is_override_dns=var["monitor_configuration_dns_configuration_is_override_dns"],
-                    override_dns_ip=var["monitor_configuration_dns_configuration_override_dns_ip"],
-                ),
-                is_certificate_validation_enabled=var["monitor_configuration_is_certificate_validation_enabled"],
-                is_default_snapshot_enabled=var["monitor_configuration_is_default_snapshot_enabled"],
-                is_failure_retried=var["monitor_configuration_is_failure_retried"],
-                is_redirection_enabled=var["monitor_configuration_is_redirection_enabled"],
-                network_configuration=oci.apm_synthetics.ConfigConfigurationNetworkConfigurationArgs(
-                    number_of_hops=var["monitor_configuration_network_configuration_number_of_hops"],
-                    probe_mode=var["monitor_configuration_network_configuration_probe_mode"],
-                    probe_per_hop=var["monitor_configuration_network_configuration_probe_per_hop"],
-                    protocol=var["monitor_configuration_network_configuration_protocol"],
-                    transmission_rate=var["monitor_configuration_network_configuration_transmission_rate"],
-                ),
-                req_authentication_details=oci.apm_synthetics.ConfigConfigurationReqAuthenticationDetailsArgs(
-                    auth_headers=[oci.apm_synthetics.ConfigConfigurationReqAuthenticationDetailsAuthHeaderArgs(
-                        header_name=var["monitor_configuration_req_authentication_details_auth_headers_header_name"],
-                        header_value=var["monitor_configuration_req_authentication_details_auth_headers_header_value"],
-                    )],
-                    auth_request_method=var["monitor_configuration_req_authentication_details_auth_request_method"],
-                    auth_request_post_body=var["monitor_configuration_req_authentication_details_auth_request_post_body"],
-                    auth_token=var["monitor_configuration_req_authentication_details_auth_token"],
-                    auth_url=var["monitor_configuration_req_authentication_details_auth_url"],
-                    auth_user_name=oci_identity_user["test_user"]["name"],
-                    auth_user_password=var["monitor_configuration_req_authentication_details_auth_user_password"],
-                    oauth_scheme=var["monitor_configuration_req_authentication_details_oauth_scheme"],
-                ),
-                req_authentication_scheme=var["monitor_configuration_req_authentication_scheme"],
-                request_headers=[oci.apm_synthetics.ConfigConfigurationRequestHeaderArgs(
-                    header_name=var["monitor_configuration_request_headers_header_name"],
-                    header_value=var["monitor_configuration_request_headers_header_value"],
-                )],
-                request_method=var["monitor_configuration_request_method"],
-                request_post_body=var["monitor_configuration_request_post_body"],
-                request_query_params=[oci.apm_synthetics.ConfigConfigurationRequestQueryParamArgs(
-                    param_name=var["monitor_configuration_request_query_params_param_name"],
-                    param_value=var["monitor_configuration_request_query_params_param_value"],
-                )],
-                verify_response_codes=var["monitor_configuration_verify_response_codes"],
-                verify_response_content=var["monitor_configuration_verify_response_content"],
-                verify_texts=[oci.apm_synthetics.ConfigConfigurationVerifyTextArgs(
-                    text=var["monitor_configuration_verify_texts_text"],
-                )],
-            ),
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            freeform_tags={
-                "bar-key": "value",
-            },
-            is_run_now=var["monitor_is_run_now"],
-            is_run_once=var["monitor_is_run_once"],
-            maintenance_window_schedule=oci.apm_synthetics.ConfigMaintenanceWindowScheduleArgs(
-                time_ended=var["monitor_maintenance_window_schedule_time_ended"],
-                time_started=var["monitor_maintenance_window_schedule_time_started"],
-            ),
-            scheduling_policy=var["monitor_scheduling_policy"],
-            script_id=oci_apm_synthetics_script["test_script"]["id"],
-            script_parameters=[oci.apm_synthetics.ConfigScriptParameterArgs(
-                param_name=var["monitor_script_parameters_param_name"],
-                param_value=var["monitor_script_parameters_param_value"],
-            )],
-            status=var["monitor_status"],
-            target=var["monitor_target"],
-            timeout_in_seconds=var["monitor_timeout_in_seconds"])
-        ```
-
-        ## Import
-
-        Monitors can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:ApmSynthetics/config:Config test_monitor "monitors/{monitorId}/apmDomainId/{apmDomainId}"
-        ```
-
+        Create a Config resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] apm_domain_id: (Updatable) The APM domain ID the request is intended for.
-        :param pulumi.Input[pulumi.InputType['ConfigAvailabilityConfigurationArgs']] availability_configuration: (Updatable) Monitor availability configuration details.
-        :param pulumi.Input[int] batch_interval_in_seconds: (Updatable) Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
-        :param pulumi.Input[pulumi.InputType['ConfigConfigurationArgs']] configuration: (Updatable) Details of monitor configuration.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: Unique name that can be edited. The name should not contain any confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[bool] is_run_now: (Updatable) If isRunNow is enabled, then the monitor will run immediately.
-        :param pulumi.Input[bool] is_run_once: (Updatable) If runOnce is enabled, then the monitor will run once.
-        :param pulumi.Input[pulumi.InputType['ConfigMaintenanceWindowScheduleArgs']] maintenance_window_schedule: (Updatable) Details required to schedule maintenance window.
-        :param pulumi.Input[str] monitor_type: Type of monitor.
-        :param pulumi.Input[int] repeat_interval_in_seconds: (Updatable) Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
-        :param pulumi.Input[str] scheduling_policy: (Updatable) Scheduling policy to decide the distribution of monitor executions on vantage points.
-        :param pulumi.Input[str] script_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the script. scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null.
-        :param pulumi.Input[str] script_name: Name of the script.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ConfigScriptParameterArgs']]]] script_parameters: (Updatable) List of script parameters in the monitor. This is valid only for SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null. Example: `[{"paramName": "userid", "paramValue":"testuser"}]`
-        :param pulumi.Input[str] status: (Updatable) Enables or disables the monitor.
-        :param pulumi.Input[str] target: (Updatable) Specify the endpoint on which to run the monitor. For BROWSER and REST monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
-        :param pulumi.Input[int] timeout_in_seconds: (Updatable) Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ConfigVantagePointArgs']]]] vantage_points: (Updatable) A list of public and dedicated vantage points from which to execute the monitor. Use /publicVantagePoints to fetch public vantage points, and /dedicatedVantagePoints to fetch dedicated vantage points. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -901,118 +578,7 @@ class Config(pulumi.CustomResource):
                  args: ConfigArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Monitor resource in Oracle Cloud Infrastructure Apm Synthetics service.
-
-        Creates a new monitor.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_monitor = oci.apm_synthetics.Config("testMonitor",
-            apm_domain_id=oci_apm_synthetics_apm_domain["test_apm_domain"]["id"],
-            display_name=var["monitor_display_name"],
-            monitor_type=var["monitor_monitor_type"],
-            repeat_interval_in_seconds=var["monitor_repeat_interval_in_seconds"],
-            vantage_points=[oci.apm_synthetics.ConfigVantagePointArgs(
-                name=var["monitor_vantage_points_name"],
-                display_name=var["monitor_vantage_points_param_display_name"],
-            )],
-            availability_configuration=oci.apm_synthetics.ConfigAvailabilityConfigurationArgs(
-                max_allowed_failures_per_interval=var["monitor_availability_configuration_max_allowed_failures_per_interval"],
-                min_allowed_runs_per_interval=var["monitor_availability_configuration_min_allowed_runs_per_interval"],
-            ),
-            batch_interval_in_seconds=var["monitor_batch_interval_in_seconds"],
-            configuration=oci.apm_synthetics.ConfigConfigurationArgs(
-                client_certificate_details=oci.apm_synthetics.ConfigConfigurationClientCertificateDetailsArgs(
-                    client_certificate=oci.apm_synthetics.ConfigConfigurationClientCertificateDetailsClientCertificateArgs(
-                        content=var["monitor_configuration_client_certificate_details_client_certificate_content"],
-                        file_name=var["monitor_configuration_client_certificate_details_client_certificate_file_name"],
-                    ),
-                    private_key=oci.apm_synthetics.ConfigConfigurationClientCertificateDetailsPrivateKeyArgs(
-                        content=var["monitor_configuration_client_certificate_details_private_key_content"],
-                        file_name=var["monitor_configuration_client_certificate_details_private_key_file_name"],
-                    ),
-                ),
-                config_type=var["monitor_configuration_config_type"],
-                dns_configuration=oci.apm_synthetics.ConfigConfigurationDnsConfigurationArgs(
-                    is_override_dns=var["monitor_configuration_dns_configuration_is_override_dns"],
-                    override_dns_ip=var["monitor_configuration_dns_configuration_override_dns_ip"],
-                ),
-                is_certificate_validation_enabled=var["monitor_configuration_is_certificate_validation_enabled"],
-                is_default_snapshot_enabled=var["monitor_configuration_is_default_snapshot_enabled"],
-                is_failure_retried=var["monitor_configuration_is_failure_retried"],
-                is_redirection_enabled=var["monitor_configuration_is_redirection_enabled"],
-                network_configuration=oci.apm_synthetics.ConfigConfigurationNetworkConfigurationArgs(
-                    number_of_hops=var["monitor_configuration_network_configuration_number_of_hops"],
-                    probe_mode=var["monitor_configuration_network_configuration_probe_mode"],
-                    probe_per_hop=var["monitor_configuration_network_configuration_probe_per_hop"],
-                    protocol=var["monitor_configuration_network_configuration_protocol"],
-                    transmission_rate=var["monitor_configuration_network_configuration_transmission_rate"],
-                ),
-                req_authentication_details=oci.apm_synthetics.ConfigConfigurationReqAuthenticationDetailsArgs(
-                    auth_headers=[oci.apm_synthetics.ConfigConfigurationReqAuthenticationDetailsAuthHeaderArgs(
-                        header_name=var["monitor_configuration_req_authentication_details_auth_headers_header_name"],
-                        header_value=var["monitor_configuration_req_authentication_details_auth_headers_header_value"],
-                    )],
-                    auth_request_method=var["monitor_configuration_req_authentication_details_auth_request_method"],
-                    auth_request_post_body=var["monitor_configuration_req_authentication_details_auth_request_post_body"],
-                    auth_token=var["monitor_configuration_req_authentication_details_auth_token"],
-                    auth_url=var["monitor_configuration_req_authentication_details_auth_url"],
-                    auth_user_name=oci_identity_user["test_user"]["name"],
-                    auth_user_password=var["monitor_configuration_req_authentication_details_auth_user_password"],
-                    oauth_scheme=var["monitor_configuration_req_authentication_details_oauth_scheme"],
-                ),
-                req_authentication_scheme=var["monitor_configuration_req_authentication_scheme"],
-                request_headers=[oci.apm_synthetics.ConfigConfigurationRequestHeaderArgs(
-                    header_name=var["monitor_configuration_request_headers_header_name"],
-                    header_value=var["monitor_configuration_request_headers_header_value"],
-                )],
-                request_method=var["monitor_configuration_request_method"],
-                request_post_body=var["monitor_configuration_request_post_body"],
-                request_query_params=[oci.apm_synthetics.ConfigConfigurationRequestQueryParamArgs(
-                    param_name=var["monitor_configuration_request_query_params_param_name"],
-                    param_value=var["monitor_configuration_request_query_params_param_value"],
-                )],
-                verify_response_codes=var["monitor_configuration_verify_response_codes"],
-                verify_response_content=var["monitor_configuration_verify_response_content"],
-                verify_texts=[oci.apm_synthetics.ConfigConfigurationVerifyTextArgs(
-                    text=var["monitor_configuration_verify_texts_text"],
-                )],
-            ),
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            freeform_tags={
-                "bar-key": "value",
-            },
-            is_run_now=var["monitor_is_run_now"],
-            is_run_once=var["monitor_is_run_once"],
-            maintenance_window_schedule=oci.apm_synthetics.ConfigMaintenanceWindowScheduleArgs(
-                time_ended=var["monitor_maintenance_window_schedule_time_ended"],
-                time_started=var["monitor_maintenance_window_schedule_time_started"],
-            ),
-            scheduling_policy=var["monitor_scheduling_policy"],
-            script_id=oci_apm_synthetics_script["test_script"]["id"],
-            script_parameters=[oci.apm_synthetics.ConfigScriptParameterArgs(
-                param_name=var["monitor_script_parameters_param_name"],
-                param_value=var["monitor_script_parameters_param_value"],
-            )],
-            status=var["monitor_status"],
-            target=var["monitor_target"],
-            timeout_in_seconds=var["monitor_timeout_in_seconds"])
-        ```
-
-        ## Import
-
-        Monitors can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:ApmSynthetics/config:Config test_monitor "monitors/{monitorId}/apmDomainId/{apmDomainId}"
-        ```
-
+        Create a Config resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param ConfigArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -1130,33 +696,6 @@ class Config(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] apm_domain_id: (Updatable) The APM domain ID the request is intended for.
-        :param pulumi.Input[pulumi.InputType['ConfigAvailabilityConfigurationArgs']] availability_configuration: (Updatable) Monitor availability configuration details.
-        :param pulumi.Input[int] batch_interval_in_seconds: (Updatable) Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
-        :param pulumi.Input[pulumi.InputType['ConfigConfigurationArgs']] configuration: (Updatable) Details of monitor configuration.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: Unique name that can be edited. The name should not contain any confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[bool] is_run_now: (Updatable) If isRunNow is enabled, then the monitor will run immediately.
-        :param pulumi.Input[bool] is_run_once: (Updatable) If runOnce is enabled, then the monitor will run once.
-        :param pulumi.Input[pulumi.InputType['ConfigMaintenanceWindowScheduleArgs']] maintenance_window_schedule: (Updatable) Details required to schedule maintenance window.
-        :param pulumi.Input[str] monitor_type: Type of monitor.
-        :param pulumi.Input[int] repeat_interval_in_seconds: (Updatable) Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
-        :param pulumi.Input[str] scheduling_policy: (Updatable) Scheduling policy to decide the distribution of monitor executions on vantage points.
-        :param pulumi.Input[str] script_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the script. scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null.
-        :param pulumi.Input[str] script_name: Name of the script.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ConfigScriptParameterArgs']]]] script_parameters: (Updatable) List of script parameters in the monitor. This is valid only for SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null. Example: `[{"paramName": "userid", "paramValue":"testuser"}]`
-        :param pulumi.Input[str] status: (Updatable) Enables or disables the monitor.
-        :param pulumi.Input[str] target: (Updatable) Specify the endpoint on which to run the monitor. For BROWSER and REST monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
-        :param pulumi.Input[str] time_created: The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
-        :param pulumi.Input[str] time_updated: The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
-        :param pulumi.Input[int] timeout_in_seconds: (Updatable) Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
-        :param pulumi.Input[int] vantage_point_count: Number of vantage points where monitor is running.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ConfigVantagePointArgs']]]] vantage_points: (Updatable) A list of public and dedicated vantage points from which to execute the monitor. Use /publicVantagePoints to fetch public vantage points, and /dedicatedVantagePoints to fetch dedicated vantage points. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -1190,188 +729,115 @@ class Config(pulumi.CustomResource):
     @property
     @pulumi.getter(name="apmDomainId")
     def apm_domain_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The APM domain ID the request is intended for.
-        """
         return pulumi.get(self, "apm_domain_id")
 
     @property
     @pulumi.getter(name="availabilityConfiguration")
-    def availability_configuration(self) -> pulumi.Output['outputs.ConfigAvailabilityConfiguration']:
-        """
-        (Updatable) Monitor availability configuration details.
-        """
+    def availability_configuration(self) -> pulumi.Output[Optional['outputs.ConfigAvailabilityConfiguration']]:
         return pulumi.get(self, "availability_configuration")
 
     @property
     @pulumi.getter(name="batchIntervalInSeconds")
-    def batch_interval_in_seconds(self) -> pulumi.Output[int]:
-        """
-        (Updatable) Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
-        """
+    def batch_interval_in_seconds(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "batch_interval_in_seconds")
 
     @property
     @pulumi.getter
-    def configuration(self) -> pulumi.Output['outputs.ConfigConfiguration']:
-        """
-        (Updatable) Details of monitor configuration.
-        """
+    def configuration(self) -> pulumi.Output[Optional['outputs.ConfigConfiguration']]:
         return pulumi.get(self, "configuration")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
-        """
-        Unique name that can be edited. The name should not contain any confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="isRunNow")
-    def is_run_now(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) If isRunNow is enabled, then the monitor will run immediately.
-        """
+    def is_run_now(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_run_now")
 
     @property
     @pulumi.getter(name="isRunOnce")
-    def is_run_once(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) If runOnce is enabled, then the monitor will run once.
-        """
+    def is_run_once(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_run_once")
 
     @property
     @pulumi.getter(name="maintenanceWindowSchedule")
-    def maintenance_window_schedule(self) -> pulumi.Output['outputs.ConfigMaintenanceWindowSchedule']:
-        """
-        (Updatable) Details required to schedule maintenance window.
-        """
+    def maintenance_window_schedule(self) -> pulumi.Output[Optional['outputs.ConfigMaintenanceWindowSchedule']]:
         return pulumi.get(self, "maintenance_window_schedule")
 
     @property
     @pulumi.getter(name="monitorType")
     def monitor_type(self) -> pulumi.Output[str]:
-        """
-        Type of monitor.
-        """
         return pulumi.get(self, "monitor_type")
 
     @property
     @pulumi.getter(name="repeatIntervalInSeconds")
     def repeat_interval_in_seconds(self) -> pulumi.Output[int]:
-        """
-        (Updatable) Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
-        """
         return pulumi.get(self, "repeat_interval_in_seconds")
 
     @property
     @pulumi.getter(name="schedulingPolicy")
-    def scheduling_policy(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Scheduling policy to decide the distribution of monitor executions on vantage points.
-        """
+    def scheduling_policy(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "scheduling_policy")
 
     @property
     @pulumi.getter(name="scriptId")
-    def script_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the script. scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null.
-        """
+    def script_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "script_id")
 
     @property
     @pulumi.getter(name="scriptName")
-    def script_name(self) -> pulumi.Output[str]:
-        """
-        Name of the script.
-        """
+    def script_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "script_name")
 
     @property
     @pulumi.getter(name="scriptParameters")
-    def script_parameters(self) -> pulumi.Output[Sequence['outputs.ConfigScriptParameter']]:
-        """
-        (Updatable) List of script parameters in the monitor. This is valid only for SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null. Example: `[{"paramName": "userid", "paramValue":"testuser"}]`
-        """
+    def script_parameters(self) -> pulumi.Output[Optional[Sequence['outputs.ConfigScriptParameter']]]:
         return pulumi.get(self, "script_parameters")
 
     @property
     @pulumi.getter
-    def status(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Enables or disables the monitor.
-        """
+    def status(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter
-    def target(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Specify the endpoint on which to run the monitor. For BROWSER and REST monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
-        """
+    def target(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "target")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="timeoutInSeconds")
-    def timeout_in_seconds(self) -> pulumi.Output[int]:
-        """
-        (Updatable) Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
-        """
+    def timeout_in_seconds(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "timeout_in_seconds")
 
     @property
     @pulumi.getter(name="vantagePointCount")
-    def vantage_point_count(self) -> pulumi.Output[int]:
-        """
-        Number of vantage points where monitor is running.
-        """
+    def vantage_point_count(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "vantage_point_count")
 
     @property
     @pulumi.getter(name="vantagePoints")
     def vantage_points(self) -> pulumi.Output[Sequence['outputs.ConfigVantagePoint']]:
-        """
-        (Updatable) A list of public and dedicated vantage points from which to execute the monitor. Use /publicVantagePoints to fetch public vantage points, and /dedicatedVantagePoints to fetch dedicated vantage points. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "vantage_points")
 

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Managed My Sql Database Configuration Data in Oracle Cloud Infrastructure Database Management service.
@@ -62,8 +61,8 @@ type GetManagedMySqlDatabaseConfigurationDataArgs struct {
 type GetManagedMySqlDatabaseConfigurationDataResult struct {
 	Filters []GetManagedMySqlDatabaseConfigurationDataFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                     string `pulumi:"id"`
-	ManagedMySqlDatabaseId string `pulumi:"managedMySqlDatabaseId"`
+	Id                     *string `pulumi:"id"`
+	ManagedMySqlDatabaseId string  `pulumi:"managedMySqlDatabaseId"`
 	// The list of my_sql_configuration_data_collection.
 	MySqlConfigurationDataCollections []GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollection `pulumi:"mySqlConfigurationDataCollections"`
 }
@@ -107,12 +106,6 @@ func (o GetManagedMySqlDatabaseConfigurationDataResultOutput) ToGetManagedMySqlD
 	return o
 }
 
-func (o GetManagedMySqlDatabaseConfigurationDataResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedMySqlDatabaseConfigurationDataResult] {
-	return pulumix.Output[GetManagedMySqlDatabaseConfigurationDataResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetManagedMySqlDatabaseConfigurationDataResultOutput) Filters() GetManagedMySqlDatabaseConfigurationDataFilterArrayOutput {
 	return o.ApplyT(func(v GetManagedMySqlDatabaseConfigurationDataResult) []GetManagedMySqlDatabaseConfigurationDataFilter {
 		return v.Filters
@@ -120,8 +113,8 @@ func (o GetManagedMySqlDatabaseConfigurationDataResultOutput) Filters() GetManag
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetManagedMySqlDatabaseConfigurationDataResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedMySqlDatabaseConfigurationDataResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetManagedMySqlDatabaseConfigurationDataResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedMySqlDatabaseConfigurationDataResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetManagedMySqlDatabaseConfigurationDataResultOutput) ManagedMySqlDatabaseId() pulumi.StringOutput {

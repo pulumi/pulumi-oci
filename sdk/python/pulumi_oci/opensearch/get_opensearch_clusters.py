@@ -46,17 +46,11 @@ class GetOpensearchClustersResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment where the cluster is located.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        The name of the cluster. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -67,25 +61,16 @@ class GetOpensearchClustersResult:
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        The OCID of the cluster.
-        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="opensearchClusterCollections")
-    def opensearch_cluster_collections(self) -> Sequence['outputs.GetOpensearchClustersOpensearchClusterCollectionResult']:
-        """
-        The list of opensearch_cluster_collection.
-        """
+    def opensearch_cluster_collections(self) -> Optional[Sequence['outputs.GetOpensearchClustersOpensearchClusterCollectionResult']]:
         return pulumi.get(self, "opensearch_cluster_collections")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the cluster.
-        """
         return pulumi.get(self, "state")
 
 
@@ -110,39 +95,7 @@ def get_opensearch_clusters(compartment_id: Optional[str] = None,
                             state: Optional[str] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetOpensearchClustersResult:
     """
-    This data source provides the list of Opensearch Clusters in Oracle Cloud Infrastructure Opensearch service.
-
-    Returns a list of OpensearchClusters.
-
-    ## Prerequisites
-
-    The below policies must be created in compartment before creating OpensearchCluster
-
-    ##### {Compartment-Name} - Name of  your compartment
-    ```python
-    import pulumi
-    ```
-
-    For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\\
-    Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_opensearch_clusters = oci.Opensearch.get_opensearch_clusters(compartment_id=var["compartment_id"],
-        display_name=var["opensearch_cluster_display_name"],
-        id=var["opensearch_cluster_id"],
-        state=var["opensearch_cluster_state"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str id: unique OpensearchCluster identifier
-    :param str state: A filter to return only OpensearchClusters their lifecycleState matches the given lifecycleState.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -170,38 +123,6 @@ def get_opensearch_clusters_output(compartment_id: Optional[pulumi.Input[str]] =
                                    state: Optional[pulumi.Input[Optional[str]]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOpensearchClustersResult]:
     """
-    This data source provides the list of Opensearch Clusters in Oracle Cloud Infrastructure Opensearch service.
-
-    Returns a list of OpensearchClusters.
-
-    ## Prerequisites
-
-    The below policies must be created in compartment before creating OpensearchCluster
-
-    ##### {Compartment-Name} - Name of  your compartment
-    ```python
-    import pulumi
-    ```
-
-    For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\\
-    Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_opensearch_clusters = oci.Opensearch.get_opensearch_clusters(compartment_id=var["compartment_id"],
-        display_name=var["opensearch_cluster_display_name"],
-        id=var["opensearch_cluster_id"],
-        state=var["opensearch_cluster_state"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str id: unique OpensearchCluster identifier
-    :param str state: A filter to return only OpensearchClusters their lifecycleState matches the given lifecycleState.
+    Use this data source to access information about an existing resource.
     """
     ...

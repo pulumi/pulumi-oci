@@ -16,41 +16,41 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// The user-friendly name for the Autonomous Container Database. The name does not need to be unique.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// CPUs / cores assigned to ADBs in the Autonomous Container Database.
         /// </summary>
-        public readonly double ProvisionedCpus;
+        public readonly double? ProvisionedCpus;
         /// <summary>
         /// CPUs / cores reclaimable or released to cluster on Autonomous Container Database restart.
         /// </summary>
-        public readonly double ReclaimableCpus;
+        public readonly double? ReclaimableCpus;
         /// <summary>
         /// CPUs / cores reserved for scalability, resilliency and other overheads. This includes failover, autoscaling and idle instance overhead.
         /// </summary>
-        public readonly double ReservedCpus;
+        public readonly double? ReservedCpus;
         /// <summary>
         /// CPUs / cores assigned to the Autonomous Container Database. Sum of provisioned, reserved and reclaimable CPUs/ cores.
         /// </summary>
-        public readonly double UsedCpus;
+        public readonly double? UsedCpus;
 
         [OutputConstructor]
         private GetAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageResult(
-            string displayName,
+            string? displayName,
 
-            string id,
+            string? id,
 
-            double provisionedCpus,
+            double? provisionedCpus,
 
-            double reclaimableCpus,
+            double? reclaimableCpus,
 
-            double reservedCpus,
+            double? reservedCpus,
 
-            double usedCpus)
+            double? usedCpus)
         {
             DisplayName = displayName;
             Id = id;

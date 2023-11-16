@@ -60,7 +60,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * type: dateTime
      * * uniqueness: none
      */
-    public readonly accessTokenExpiry!: pulumi.Output<number>;
+    public readonly accessTokenExpiry!: pulumi.Output<number | undefined>;
     /**
      * (Updatable) Accounts of App
      *
@@ -74,7 +74,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public /*out*/ readonly accounts!: pulumi.Output<outputs.Identity.DomainsAppAccount[]>;
+    public /*out*/ readonly accounts!: pulumi.Output<outputs.Identity.DomainsAppAccount[] | undefined>;
     /**
      * (Updatable) If true, this App is able to participate in runtime services, such as automatic-login, OAuth, and SAML. If false, all runtime services are disabled for this App, and only administrative operations can be performed.
      *
@@ -87,7 +87,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly active!: pulumi.Output<boolean>;
+    public readonly active!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) A list of AppRoles defined by this UnmanagedApp. Membership in each of these AppRoles confers administrative privilege within this App.
      *
@@ -100,7 +100,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * returned: request
      * * type: complex
      */
-    public /*out*/ readonly adminRoles!: pulumi.Output<outputs.Identity.DomainsAppAdminRole[]>;
+    public /*out*/ readonly adminRoles!: pulumi.Output<outputs.Identity.DomainsAppAdminRole[] | undefined>;
     /**
      * (Updatable) Each value of this internal attribute refers to an Oracle Public Cloud infrastructure App on which this App depends.
      *
@@ -115,7 +115,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly aliasApps!: pulumi.Output<outputs.Identity.DomainsAppAliasApp[]>;
+    public readonly aliasApps!: pulumi.Output<outputs.Identity.DomainsAppAliasApp[] | undefined>;
     /**
      * (Updatable) If true, indicates that the system should allow all URL-schemes within each value of the 'redirectUris' attribute.  Also indicates that the system should not attempt to confirm that each value of the 'redirectUris' attribute is a valid URI.  In particular, the system should not confirm that the domain component of the URI is a top-level domain and the system should not confirm that the hostname portion is a valid system that is reachable over the network.
      *
@@ -128,7 +128,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly allUrlSchemesAllowed!: pulumi.Output<boolean>;
+    public readonly allUrlSchemesAllowed!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) If true, any managed App that is based on this template is checked for access control that is, access to this app is subject to successful authorization at SSO service, viz. app grants to start with.
      *
@@ -141,7 +141,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly allowAccessControl!: pulumi.Output<boolean>;
+    public readonly allowAccessControl!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) If true, indicates that the Refresh Token is allowed when this App acts as an OAuth Resource.
      *
@@ -154,7 +154,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly allowOffline!: pulumi.Output<boolean>;
+    public readonly allowOffline!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) List of grant-types that this App is allowed to use when it acts as an OAuthClient.
      *
@@ -168,7 +168,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly allowedGrants!: pulumi.Output<string[]>;
+    public readonly allowedGrants!: pulumi.Output<string[] | undefined>;
     /**
      * (Updatable) OPTIONAL. Required only when this App acts as an OAuthClient. Supported values are 'introspect' and 'onBehalfOfUser'. The value 'introspect' allows the client to look inside the access-token. The value 'onBehalfOfUser' overrides how the client's privileges are combined with the privileges of the Subject User. Ordinarily, authorization calculates the set of effective privileges as the intersection of the client's privileges and the user's privileges. The value 'onBehalfOf' indicates that authorization should ignore the privileges of the client and use only the user's privileges to calculate the effective privileges.
      *
@@ -182,7 +182,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly allowedOperations!: pulumi.Output<string[]>;
+    public readonly allowedOperations!: pulumi.Output<string[] | undefined>;
     /**
      * (Updatable) A list of scopes (exposed by this App or by other Apps) that this App is allowed to access when it acts as an OAuthClient.
      *
@@ -197,7 +197,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly allowedScopes!: pulumi.Output<outputs.Identity.DomainsAppAllowedScope[]>;
+    public readonly allowedScopes!: pulumi.Output<outputs.Identity.DomainsAppAllowedScope[] | undefined>;
     /**
      * (Updatable) A list of tags, acting as an OAuthClient, this App is allowed to access.
      *
@@ -213,7 +213,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly allowedTags!: pulumi.Output<outputs.Identity.DomainsAppAllowedTag[]>;
+    public readonly allowedTags!: pulumi.Output<outputs.Identity.DomainsAppAllowedTag[] | undefined>;
     /**
      * (Updatable) Application icon.
      *
@@ -226,7 +226,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly appIcon!: pulumi.Output<string>;
+    public readonly appIcon!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) App Sign-on Policy.
      *
@@ -238,7 +238,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * returned: default
      * * type: complex
      */
-    public readonly appSignonPolicy!: pulumi.Output<outputs.Identity.DomainsAppAppSignonPolicy>;
+    public readonly appSignonPolicy!: pulumi.Output<outputs.Identity.DomainsAppAppSignonPolicy | undefined>;
     /**
      * (Updatable) Application thumbnail.
      *
@@ -251,7 +251,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly appThumbnail!: pulumi.Output<string>;
+    public readonly appThumbnail!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Network Perimeter
      *
@@ -265,7 +265,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * returned: default
      * * type: complex
      */
-    public readonly appsNetworkPerimeters!: pulumi.Output<outputs.Identity.DomainsAppAppsNetworkPerimeter[]>;
+    public readonly appsNetworkPerimeters!: pulumi.Output<outputs.Identity.DomainsAppAppsNetworkPerimeter[] | undefined>;
     /**
      * (Updatable) OPCService facet of the application.
      *
@@ -279,7 +279,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * returned: default
      * * type: complex
      */
-    public readonly asOpcService!: pulumi.Output<outputs.Identity.DomainsAppAsOpcService>;
+    public readonly asOpcService!: pulumi.Output<outputs.Identity.DomainsAppAsOpcService | undefined>;
     /**
      * (Updatable) Label for the attribute to be shown in the UI.
      *
@@ -293,7 +293,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly attrRenderingMetadatas!: pulumi.Output<outputs.Identity.DomainsAppAttrRenderingMetadata[]>;
+    public readonly attrRenderingMetadatas!: pulumi.Output<outputs.Identity.DomainsAppAttrRenderingMetadata[] | undefined>;
     /**
      * (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
      */
@@ -315,7 +315,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly audience!: pulumi.Output<string>;
+    public readonly audience!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
      */
@@ -347,7 +347,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly bypassConsent!: pulumi.Output<boolean>;
+    public readonly bypassConsent!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) Callback Service URL
      *
@@ -361,7 +361,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly callbackServiceUrl!: pulumi.Output<string>;
+    public /*out*/ readonly callbackServiceUrl!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Each value of this attribute represent a certificate that this App uses when it acts as an OAuthClient.
      *
@@ -376,7 +376,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly certificates!: pulumi.Output<outputs.Identity.DomainsAppCertificate[]>;
+    public readonly certificates!: pulumi.Output<outputs.Identity.DomainsAppCertificate[] | undefined>;
     /**
      * (Updatable) Network Perimeters checking mode
      *
@@ -392,7 +392,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly clientIpChecking!: pulumi.Output<string>;
+    public readonly clientIpChecking!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) This value is the credential of this App, which this App supplies as a password when this App authenticates to the Oracle Public Cloud infrastructure. This value is also the client secret of this App when it acts as an OAuthClient.
      *
@@ -407,7 +407,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly clientSecret!: pulumi.Output<string>;
+    public /*out*/ readonly clientSecret!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Specifies the type of access that this App has when it acts as an OAuthClient.
      *
@@ -421,7 +421,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly clientType!: pulumi.Output<string>;
+    public readonly clientType!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) A collection of arbitrary properties that scope the privileges of a cloud-control App.
      *
@@ -437,7 +437,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public /*out*/ readonly cloudControlProperties!: pulumi.Output<outputs.Identity.DomainsAppCloudControlProperty[]>;
+    public /*out*/ readonly cloudControlProperties!: pulumi.Output<outputs.Identity.DomainsAppCloudControlProperty[] | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
      *
@@ -451,7 +451,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly compartmentOcid!: pulumi.Output<string>;
+    public /*out*/ readonly compartmentOcid!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Contact Email Address
      *
@@ -466,7 +466,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly contactEmailAddress!: pulumi.Output<string>;
+    public readonly contactEmailAddress!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Service Names allow to use Oracle Cloud Infrastructure signature for client authentication instead of client credentials
      *
@@ -482,7 +482,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly delegatedServiceNames!: pulumi.Output<string[]>;
+    public readonly delegatedServiceNames!: pulumi.Output<string[] | undefined>;
     /**
      * (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      *
@@ -496,7 +496,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public /*out*/ readonly deleteInProgress!: pulumi.Output<boolean>;
+    public /*out*/ readonly deleteInProgress!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) The description of the AppRole.
      *
@@ -509,7 +509,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly description!: pulumi.Output<string>;
+    public readonly description!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Indicates whether the application is allowed to be access using kmsi token.
      *
@@ -524,7 +524,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly disableKmsiTokenAuthentication!: pulumi.Output<boolean>;
+    public readonly disableKmsiTokenAuthentication!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) Display name of the flatfile bundle configuration property. This attribute maps to \"displayName\" attribute in \"ConfigurationProperty\" in ICF.
      *
@@ -552,7 +552,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly domainOcid!: pulumi.Output<string>;
+    public /*out*/ readonly domainOcid!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) App attributes editable by subject
      *
@@ -569,7 +569,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public /*out*/ readonly editableAttributes!: pulumi.Output<outputs.Identity.DomainsAppEditableAttribute[]>;
+    public /*out*/ readonly editableAttributes!: pulumi.Output<outputs.Identity.DomainsAppEditableAttribute[] | undefined>;
     /**
      * (Updatable) This attribute specifies the URL of the page to which an application will redirect an end-user in case of error.
      *
@@ -583,7 +583,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly errorPageUrl!: pulumi.Output<string>;
+    public readonly errorPageUrl!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) A list of AppRoles that are granted to this App (and that are defined by other Apps). Within the Oracle Public Cloud infrastructure, this allows AppID-based association. Such an association allows this App to act as a consumer and thus to access resources of another App that acts as a producer.
      *
@@ -598,7 +598,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public /*out*/ readonly grantedAppRoles!: pulumi.Output<outputs.Identity.DomainsAppGrantedAppRole[]>;
+    public /*out*/ readonly grantedAppRoles!: pulumi.Output<outputs.Identity.DomainsAppGrantedAppRole[] | undefined>;
     /**
      * (Updatable) Grants assigned to the app
      *
@@ -612,7 +612,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public /*out*/ readonly grants!: pulumi.Output<outputs.Identity.DomainsAppGrant[]>;
+    public /*out*/ readonly grants!: pulumi.Output<outputs.Identity.DomainsAppGrant[] | undefined>;
     /**
      * (Updatable) Hashed Client Secret. This hash-value is used to verify the 'clientSecret' credential of this App
      *
@@ -628,7 +628,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly hashedClientSecret!: pulumi.Output<string>;
+    public /*out*/ readonly hashedClientSecret!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Home Page URL
      *
@@ -643,7 +643,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly homePageUrl!: pulumi.Output<string>;
+    public readonly homePageUrl!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) URL of application icon.
      *
@@ -656,7 +656,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * type: reference
      * * uniqueness: none
      */
-    public readonly icon!: pulumi.Output<string>;
+    public readonly icon!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Encryption Alogrithm to use for encrypting ID token.
      *
@@ -672,7 +672,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly idTokenEncAlgo!: pulumi.Output<string>;
+    public readonly idTokenEncAlgo!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The User or App who created the Resource
      *
@@ -684,7 +684,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * returned: default
      * * type: complex
      */
-    public /*out*/ readonly idcsCreatedBies!: pulumi.Output<outputs.Identity.DomainsAppIdcsCreatedBy[]>;
+    public /*out*/ readonly idcsCreatedBies!: pulumi.Output<outputs.Identity.DomainsAppIdcsCreatedBy[] | undefined>;
     /**
      * The basic endpoint for the identity domain
      */
@@ -700,7 +700,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * returned: default
      * * type: complex
      */
-    public /*out*/ readonly idcsLastModifiedBies!: pulumi.Output<outputs.Identity.DomainsAppIdcsLastModifiedBy[]>;
+    public /*out*/ readonly idcsLastModifiedBies!: pulumi.Output<outputs.Identity.DomainsAppIdcsLastModifiedBy[] | undefined>;
     /**
      * (Updatable) The release number when the resource was upgraded.
      *
@@ -714,7 +714,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly idcsLastUpgradedInRelease!: pulumi.Output<string>;
+    public /*out*/ readonly idcsLastUpgradedInRelease!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      *
@@ -727,7 +727,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly idcsPreventedOperations!: pulumi.Output<string[]>;
+    public /*out*/ readonly idcsPreventedOperations!: pulumi.Output<string[] | undefined>;
     /**
      * (Updatable) A list of IdentityProvider assigned to app. A user trying to access this app will be automatically redirected to configured IdP during the authentication phase, before being able to access App.
      *
@@ -740,7 +740,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * returned: request
      * * type: complex
      */
-    public readonly identityProviders!: pulumi.Output<outputs.Identity.DomainsAppIdentityProvider[]>;
+    public readonly identityProviders!: pulumi.Output<outputs.Identity.DomainsAppIdentityProvider[] | undefined>;
     /**
      * (Updatable) IDP Policy.
      *
@@ -754,7 +754,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * returned: default
      * * type: complex
      */
-    public readonly idpPolicy!: pulumi.Output<outputs.Identity.DomainsAppIdpPolicy>;
+    public readonly idpPolicy!: pulumi.Output<outputs.Identity.DomainsAppIdpPolicy | undefined>;
     /**
      * (Updatable) If true, this App is an internal infrastructure App.
      *
@@ -767,7 +767,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public /*out*/ readonly infrastructure!: pulumi.Output<boolean>;
+    public /*out*/ readonly infrastructure!: pulumi.Output<boolean | undefined>;
     /**
      * If true, this App is an AliasApp and it cannot be granted to an end-user directly.
      *
@@ -780,7 +780,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly isAliasApp!: pulumi.Output<boolean>;
+    public readonly isAliasApp!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) If true, this application acts as database service Application
      *
@@ -793,7 +793,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * required: false
      * * type: boolean
      */
-    public /*out*/ readonly isDatabaseService!: pulumi.Output<boolean>;
+    public /*out*/ readonly isDatabaseService!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) If true, this app acts as Enterprise app with Authentication and URL Authz policy.
      *
@@ -808,7 +808,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly isEnterpriseApp!: pulumi.Output<boolean>;
+    public readonly isEnterpriseApp!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) If true, this application acts as FormFill Application
      *
@@ -821,7 +821,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly isFormFill!: pulumi.Output<boolean>;
+    public readonly isFormFill!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) If true, indicates that this App supports Kerberos Authentication
      *
@@ -834,7 +834,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly isKerberosRealm!: pulumi.Output<boolean>;
+    public readonly isKerberosRealm!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) If true, this App allows runtime services to log end users into this App automatically.
      *
@@ -847,7 +847,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly isLoginTarget!: pulumi.Output<boolean>;
+    public readonly isLoginTarget!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) If true, indicates that access to this App requires an account. That is, in order to log in to the App, a User must use an application-specific identity that is maintained in the remote identity-repository of that App.
      *
@@ -860,7 +860,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public /*out*/ readonly isManagedApp!: pulumi.Output<boolean>;
+    public /*out*/ readonly isManagedApp!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) If true, indicates that the App should be visible in each end-user's mobile application.
      *
@@ -873,7 +873,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly isMobileTarget!: pulumi.Output<boolean>;
+    public readonly isMobileTarget!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) If true, indicates the app is used for multicloud service integration.
      *
@@ -888,7 +888,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly isMulticloudServiceApp!: pulumi.Output<boolean>;
+    public readonly isMulticloudServiceApp!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) If true, this application acts as an OAuth Client
      *
@@ -901,7 +901,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly isOauthClient!: pulumi.Output<boolean>;
+    public readonly isOauthClient!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) If true, indicates that this application acts as an OAuth Resource.
      *
@@ -914,7 +914,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly isOauthResource!: pulumi.Output<boolean>;
+    public readonly isOauthResource!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) This flag indicates if the App is capable of validating obligations with the token for allowing access to the App.
      *
@@ -928,7 +928,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly isObligationCapable!: pulumi.Output<boolean>;
+    public readonly isObligationCapable!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) If true, this application is an Oracle Public Cloud service-instance.
      *
@@ -941,7 +941,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public /*out*/ readonly isOpcService!: pulumi.Output<boolean>;
+    public /*out*/ readonly isOpcService!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) If true, this application acts as an Radius App
      *
@@ -956,7 +956,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly isRadiusApp!: pulumi.Output<boolean>;
+    public readonly isRadiusApp!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) If true, then this App acts as a SAML Service Provider.
      *
@@ -969,7 +969,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly isSamlServiceProvider!: pulumi.Output<boolean>;
+    public readonly isSamlServiceProvider!: pulumi.Output<boolean | undefined>;
     /**
      * If true, indicates that this application accepts an Oracle Cloud Identity Service User as a login-identity (does not require an account) and relies for authorization on the User's memberships in AppRoles.
      *
@@ -982,7 +982,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly isUnmanagedApp!: pulumi.Output<boolean>;
+    public readonly isUnmanagedApp!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) If true, the webtier policy is active
      *
@@ -995,7 +995,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly isWebTierPolicy!: pulumi.Output<boolean>;
+    public readonly isWebTierPolicy!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) The URL of the landing page for this App, which is the first page that an end user should see if runtime services log that end user in to this App automatically.
      *
@@ -1008,7 +1008,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly landingPageUrl!: pulumi.Output<string>;
+    public readonly landingPageUrl!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) This attribute specifies the callback URL for the social linking operation.
      *
@@ -1024,7 +1024,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly linkingCallbackUrl!: pulumi.Output<string>;
+    public readonly linkingCallbackUrl!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The protocol that runtime services will use to log end users in to this App automatically. If 'OIDC', then runtime services use the OpenID Connect protocol. If 'SAML', then runtime services use Security Assertion Markup Language protocol.
      *
@@ -1038,7 +1038,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly loginMechanism!: pulumi.Output<string>;
+    public readonly loginMechanism!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) This attribute specifies the URL of the page that the App uses when an end-user signs in to that App.
      *
@@ -1052,7 +1052,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly loginPageUrl!: pulumi.Output<string>;
+    public readonly loginPageUrl!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) This attribute specifies the URL of the page that the App uses when an end-user signs out.
      *
@@ -1068,7 +1068,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly logoutPageUrl!: pulumi.Output<string>;
+    public readonly logoutPageUrl!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) OAuth will use this URI to logout if this App wants to participate in SSO, and if this App's session gets cleared as part of global logout. Note: This attribute is used only if this App acts as an OAuthClient.
      *
@@ -1082,7 +1082,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly logoutUri!: pulumi.Output<string>;
+    public readonly logoutUri!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      *
@@ -1096,7 +1096,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
      * * type: complex
      */
-    public /*out*/ readonly metas!: pulumi.Output<outputs.Identity.DomainsAppMeta[]>;
+    public /*out*/ readonly metas!: pulumi.Output<outputs.Identity.DomainsAppMeta[] | undefined>;
     /**
      * (Updatable) Indicates whether the application is billed as an OPCService. If true, customer is not billed for runtime operations of the app.
      *
@@ -1111,7 +1111,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public /*out*/ readonly meterAsOpcService!: pulumi.Output<boolean>;
+    public /*out*/ readonly meterAsOpcService!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) If true, this App was migrated from an earlier version of Oracle Public Cloud infrastructure (and may therefore require special handling from runtime services such as OAuth or SAML). If false, this App requires no special handling from runtime services.
      *
@@ -1124,7 +1124,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public /*out*/ readonly migrated!: pulumi.Output<boolean>;
+    public /*out*/ readonly migrated!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
      *
@@ -1155,7 +1155,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: global
      */
-    public readonly ocid!: pulumi.Output<string>;
+    public readonly ocid!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Each value of this attribute is the URI of a landing page within this App. It is used only when this App, acting as an OAuthClient, initiates the logout flow and wants to be redirected back to one of its landing pages.
      *
@@ -1169,7 +1169,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly postLogoutRedirectUris!: pulumi.Output<string[]>;
+    public readonly postLogoutRedirectUris!: pulumi.Output<string[] | undefined>;
     /**
      * (Updatable) Privacy Policy URL
      *
@@ -1184,7 +1184,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly privacyPolicyUrl!: pulumi.Output<string>;
+    public readonly privacyPolicyUrl!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Application Logo URL
      *
@@ -1199,7 +1199,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly productLogoUrl!: pulumi.Output<string>;
+    public readonly productLogoUrl!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Product Name
      *
@@ -1214,7 +1214,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly productName!: pulumi.Output<string>;
+    public readonly productName!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) A list of secondary audiences--additional URIs to be added automatically to any OAuth token that allows access to this App. Note: This attribute is used mainly for backward compatibility in certain Oracle Public Cloud Apps.
      *
@@ -1231,7 +1231,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly protectableSecondaryAudiences!: pulumi.Output<outputs.Identity.DomainsAppProtectableSecondaryAudience[]>;
+    public readonly protectableSecondaryAudiences!: pulumi.Output<outputs.Identity.DomainsAppProtectableSecondaryAudience[] | undefined>;
     /**
      * (Updatable) RADIUS Policy assigned to this application.
      *
@@ -1245,7 +1245,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * returned: default
      * * type: complex
      */
-    public readonly radiusPolicy!: pulumi.Output<outputs.Identity.DomainsAppRadiusPolicy>;
+    public readonly radiusPolicy!: pulumi.Output<outputs.Identity.DomainsAppRadiusPolicy | undefined>;
     /**
      * (Updatable) If true, this App requires an upgrade and mandates attention from application administrator. The flag is used by UI to indicate this app is ready to upgrade.
      *
@@ -1258,7 +1258,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public /*out*/ readonly readyToUpgrade!: pulumi.Output<boolean>;
+    public /*out*/ readonly readyToUpgrade!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) OPTIONAL. Each value is a URI within this App. This attribute is required when this App acts as an OAuthClient and is involved in three-legged flows (authorization-code flows).
      *
@@ -1272,7 +1272,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly redirectUris!: pulumi.Output<string[]>;
+    public readonly redirectUris!: pulumi.Output<string[] | undefined>;
     /**
      * (Updatable) Expiry-time in seconds for a Refresh Token.  Any token that allows access to this App, once refreshed, will expire after the specified duration.
      *
@@ -1285,7 +1285,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * type: integer
      * * uniqueness: none
      */
-    public readonly refreshTokenExpiry!: pulumi.Output<number>;
+    public readonly refreshTokenExpiry!: pulumi.Output<number | undefined>;
     /**
      * (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      */
@@ -1302,7 +1302,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly samlServiceProvider!: pulumi.Output<outputs.Identity.DomainsAppSamlServiceProvider>;
+    public readonly samlServiceProvider!: pulumi.Output<outputs.Identity.DomainsAppSamlServiceProvider | undefined>;
     /**
      * (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      *
@@ -1331,7 +1331,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly scopes!: pulumi.Output<outputs.Identity.DomainsAppScope[]>;
+    public readonly scopes!: pulumi.Output<outputs.Identity.DomainsAppScope[] | undefined>;
     /**
      * (Updatable) A list of secondary audiences--additional URIs to be added automatically to any OAuth token that allows access to this App. Note: This attribute is used mainly for backward compatibility in certain Oracle Public Cloud Apps.
      *
@@ -1347,7 +1347,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly secondaryAudiences!: pulumi.Output<string[]>;
+    public readonly secondaryAudiences!: pulumi.Output<string[] | undefined>;
     /**
      * (Updatable) Custom attribute that is required to compute other attribute values during app creation.
      *
@@ -1361,7 +1361,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly serviceParams!: pulumi.Output<outputs.Identity.DomainsAppServiceParam[]>;
+    public readonly serviceParams!: pulumi.Output<outputs.Identity.DomainsAppServiceParam[] | undefined>;
     /**
      * (Updatable) This Uniform Resource Name (URN) value identifies the type of Oracle Public Cloud service of which this app is an instance.
      *
@@ -1375,7 +1375,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly serviceTypeUrn!: pulumi.Output<string>;
+    public readonly serviceTypeUrn!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) This value specifies the version of the Oracle Public Cloud service of which this App is an instance
      *
@@ -1389,7 +1389,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly serviceTypeVersion!: pulumi.Output<string>;
+    public readonly serviceTypeVersion!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) If true, this app will be displayed in the MyApps page of each end-user who has access to the App.
      *
@@ -1404,7 +1404,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      */
-    public readonly showInMyApps!: pulumi.Output<boolean>;
+    public readonly showInMyApps!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) Sign-on Policy.
      *
@@ -1418,7 +1418,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * returned: default
      * * type: complex
      */
-    public readonly signonPolicy!: pulumi.Output<outputs.Identity.DomainsAppSignonPolicy>;
+    public readonly signonPolicy!: pulumi.Output<outputs.Identity.DomainsAppSignonPolicy | undefined>;
     /**
      * (Updatable) A list of tags on this resource.
      *
@@ -1432,7 +1432,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * type: complex
      * * uniqueness: none
      */
-    public readonly tags!: pulumi.Output<outputs.Identity.DomainsAppTag[]>;
+    public readonly tags!: pulumi.Output<outputs.Identity.DomainsAppTag[] | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      *
@@ -1446,7 +1446,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public /*out*/ readonly tenancyOcid!: pulumi.Output<string>;
+    public /*out*/ readonly tenancyOcid!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Terms of Service URL
      *
@@ -1461,7 +1461,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly termsOfServiceUrl!: pulumi.Output<string>;
+    public readonly termsOfServiceUrl!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Terms Of Use.
      *
@@ -1475,7 +1475,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * returned: default
      * * type: complex
      */
-    public readonly termsOfUse!: pulumi.Output<outputs.Identity.DomainsAppTermsOfUse>;
+    public readonly termsOfUse!: pulumi.Output<outputs.Identity.DomainsAppTermsOfUse | undefined>;
     /**
      * (Updatable) Trust Policies.
      *
@@ -1488,7 +1488,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * returned: default
      * * type: complex
      */
-    public readonly trustPolicies!: pulumi.Output<outputs.Identity.DomainsAppTrustPolicy[]>;
+    public readonly trustPolicies!: pulumi.Output<outputs.Identity.DomainsAppTrustPolicy[] | undefined>;
     /**
      * (Updatable) Indicates the scope of trust for this App when acting as an OAuthClient. A value of 'Explicit' indicates that the App is allowed to access only the scopes of OAuthResources that are explicitly specified as 'allowedScopes'. A value of 'Account' indicates that the App is allowed implicitly to access any scope of any OAuthResource within the same Oracle Cloud Account. A value of 'Tags' indicates that the App is allowed to access any scope of any OAuthResource with a matching tag within the same Oracle Cloud Account. A value of 'Default' indicates that the Tenant default trust scope configured in the Tenant Settings is used.
      *
@@ -1504,59 +1504,59 @@ export class DomainsApp extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: none
      */
-    public readonly trustScope!: pulumi.Output<string>;
+    public readonly trustScope!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Tags.
      */
-    public readonly urnietfparamsscimschemasoracleidcsextensionOciTags!: pulumi.Output<outputs.Identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTags>;
+    public readonly urnietfparamsscimschemasoracleidcsextensionOciTags!: pulumi.Output<outputs.Identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTags | undefined>;
     /**
      * (Updatable) This extension provides attributes for database service facet of an App
      */
-    public readonly urnietfparamsscimschemasoracleidcsextensiondbcsApp!: pulumi.Output<outputs.Identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsApp>;
+    public readonly urnietfparamsscimschemasoracleidcsextensiondbcsApp!: pulumi.Output<outputs.Identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsApp | undefined>;
     /**
      * (Updatable) This extension defines the Enterprise App related attributes.
      */
-    public readonly urnietfparamsscimschemasoracleidcsextensionenterpriseAppApp!: pulumi.Output<outputs.Identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppApp>;
+    public readonly urnietfparamsscimschemasoracleidcsextensionenterpriseAppApp!: pulumi.Output<outputs.Identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppApp | undefined>;
     /**
      * (Updatable) This extension provides attributes for Form-Fill facet of App
      */
-    public readonly urnietfparamsscimschemasoracleidcsextensionformFillAppApp!: pulumi.Output<outputs.Identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppApp>;
+    public readonly urnietfparamsscimschemasoracleidcsextensionformFillAppApp!: pulumi.Output<outputs.Identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppApp | undefined>;
     /**
      * (Updatable) This extension provides attributes for Form-Fill facet of AppTemplate
      */
-    public readonly urnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplate!: pulumi.Output<outputs.Identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplate>;
+    public readonly urnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplate!: pulumi.Output<outputs.Identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplate | undefined>;
     /**
      * (Updatable) Kerberos Realm
      */
-    public readonly urnietfparamsscimschemasoracleidcsextensionkerberosRealmApp!: pulumi.Output<outputs.Identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmApp>;
+    public readonly urnietfparamsscimschemasoracleidcsextensionkerberosRealmApp!: pulumi.Output<outputs.Identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmApp | undefined>;
     /**
      * (Updatable) Managed App
      */
-    public readonly urnietfparamsscimschemasoracleidcsextensionmanagedappApp!: pulumi.Output<outputs.Identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappApp>;
+    public readonly urnietfparamsscimschemasoracleidcsextensionmanagedappApp!: pulumi.Output<outputs.Identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappApp | undefined>;
     /**
      * (Updatable) This extension defines attributes specific to Apps that represent instances of Multicloud Service App
      */
-    public readonly urnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApp!: pulumi.Output<outputs.Identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApp>;
+    public readonly urnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApp!: pulumi.Output<outputs.Identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApp | undefined>;
     /**
      * (Updatable) This extension defines attributes specific to Apps that represent instances of an Oracle Public Cloud (OPC) service.
      */
-    public readonly urnietfparamsscimschemasoracleidcsextensionopcServiceApp!: pulumi.Output<outputs.Identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceApp>;
+    public readonly urnietfparamsscimschemasoracleidcsextensionopcServiceApp!: pulumi.Output<outputs.Identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceApp | undefined>;
     /**
      * (Updatable) This extension defines attributes specific to Apps that represent instances of Radius App.
      */
-    public readonly urnietfparamsscimschemasoracleidcsextensionradiusAppApp!: pulumi.Output<outputs.Identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppApp>;
+    public readonly urnietfparamsscimschemasoracleidcsextensionradiusAppApp!: pulumi.Output<outputs.Identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppApp | undefined>;
     /**
      * (Updatable) Requestable App
      */
-    public readonly urnietfparamsscimschemasoracleidcsextensionrequestableApp!: pulumi.Output<outputs.Identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableApp>;
+    public readonly urnietfparamsscimschemasoracleidcsextensionrequestableApp!: pulumi.Output<outputs.Identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableApp | undefined>;
     /**
      * (Updatable) This extension defines attributes related to the Service Providers configuration.
      */
-    public readonly urnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp!: pulumi.Output<outputs.Identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp>;
+    public readonly urnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp!: pulumi.Output<outputs.Identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp | undefined>;
     /**
      * (Updatable) WebTier Policy
      */
-    public readonly urnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp!: pulumi.Output<outputs.Identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp>;
+    public readonly urnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp!: pulumi.Output<outputs.Identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp | undefined>;
     /**
      * (Updatable) A list of AppRoles defined by this UnmanagedApp. Membership in each of these AppRoles confers end-user privilege within this App.
      *
@@ -1569,7 +1569,7 @@ export class DomainsApp extends pulumi.CustomResource {
      * * returned: request
      * * type: complex
      */
-    public /*out*/ readonly userRoles!: pulumi.Output<outputs.Identity.DomainsAppUserRole[]>;
+    public /*out*/ readonly userRoles!: pulumi.Output<outputs.Identity.DomainsAppUserRole[] | undefined>;
 
     /**
      * Create a DomainsApp resource with the given unique name, arguments, and options.

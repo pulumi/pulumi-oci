@@ -46,17 +46,11 @@ class GetVbInstancesResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        Compartment Identifier.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        Vb Instance Identifier, can be renamed.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -66,7 +60,7 @@ class GetVbInstancesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -75,17 +69,11 @@ class GetVbInstancesResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the vb instance.
-        """
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="vbInstanceSummaryCollections")
-    def vb_instance_summary_collections(self) -> Sequence['outputs.GetVbInstancesVbInstanceSummaryCollectionResult']:
-        """
-        The list of vb_instance_summary_collection.
-        """
+    def vb_instance_summary_collections(self) -> Optional[Sequence['outputs.GetVbInstancesVbInstanceSummaryCollectionResult']]:
         return pulumi.get(self, "vb_instance_summary_collections")
 
 
@@ -109,25 +97,7 @@ def get_vb_instances(compartment_id: Optional[str] = None,
                      state: Optional[str] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetVbInstancesResult:
     """
-    This data source provides the list of Vb Instances in Oracle Cloud Infrastructure Visual Builder service.
-
-    Returns a list of Vb Instances.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_vb_instances = oci.VisualBuilder.get_vb_instances(compartment_id=var["compartment_id"],
-        display_name=var["vb_instance_display_name"],
-        state=var["vb_instance_state"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
-    :param str state: Life cycle state to query on.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -153,24 +123,6 @@ def get_vb_instances_output(compartment_id: Optional[pulumi.Input[str]] = None,
                             state: Optional[pulumi.Input[Optional[str]]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVbInstancesResult]:
     """
-    This data source provides the list of Vb Instances in Oracle Cloud Infrastructure Visual Builder service.
-
-    Returns a list of Vb Instances.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_vb_instances = oci.VisualBuilder.get_vb_instances(compartment_id=var["compartment_id"],
-        display_name=var["vb_instance_display_name"],
-        state=var["vb_instance_state"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
-    :param str state: Life cycle state to query on.
+    Use this data source to access information about an existing resource.
     """
     ...

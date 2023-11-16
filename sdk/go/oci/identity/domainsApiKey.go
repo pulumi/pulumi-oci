@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Api Key resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -46,7 +45,7 @@ type DomainsApiKey struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	CompartmentOcid pulumi.StringOutput `pulumi:"compartmentOcid"`
+	CompartmentOcid pulumi.StringPtrOutput `pulumi:"compartmentOcid"`
 	// (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
 	//
 	// **SCIM++ Properties:**
@@ -58,7 +57,7 @@ type DomainsApiKey struct {
 	// * returned: default
 	// * type: boolean
 	// * uniqueness: none
-	DeleteInProgress pulumi.BoolOutput `pulumi:"deleteInProgress"`
+	DeleteInProgress pulumi.BoolPtrOutput `pulumi:"deleteInProgress"`
 	// Description
 	//
 	// **Added In:** 2101262133
@@ -69,7 +68,7 @@ type DomainsApiKey struct {
 	// * mutability: readWrite
 	// * required: false
 	// * returned: default
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
 	//
 	// **SCIM++ Properties:**
@@ -81,7 +80,7 @@ type DomainsApiKey struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	DomainOcid pulumi.StringOutput `pulumi:"domainOcid"`
+	DomainOcid pulumi.StringPtrOutput `pulumi:"domainOcid"`
 	// (Updatable) Fingerprint
 	//
 	// **Added In:** 2010242156
@@ -93,7 +92,7 @@ type DomainsApiKey struct {
 	// * mutability: readOnly
 	// * required: true
 	// * returned: default
-	Fingerprint pulumi.StringOutput `pulumi:"fingerprint"`
+	Fingerprint pulumi.StringPtrOutput `pulumi:"fingerprint"`
 	// (Updatable) The User or App who created the Resource
 	//
 	// **SCIM++ Properties:**
@@ -127,7 +126,7 @@ type DomainsApiKey struct {
 	// * returned: request
 	// * type: string
 	// * uniqueness: none
-	IdcsLastUpgradedInRelease pulumi.StringOutput `pulumi:"idcsLastUpgradedInRelease"`
+	IdcsLastUpgradedInRelease pulumi.StringPtrOutput `pulumi:"idcsLastUpgradedInRelease"`
 	// (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
 	//
 	// **SCIM++ Properties:**
@@ -174,7 +173,7 @@ type DomainsApiKey struct {
 	// * returned: always
 	// * type: string
 	// * uniqueness: none
-	Ocid pulumi.StringOutput `pulumi:"ocid"`
+	Ocid pulumi.StringPtrOutput `pulumi:"ocid"`
 	// An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
 	ResourceTypeSchemaVersion pulumi.StringPtrOutput `pulumi:"resourceTypeSchemaVersion"`
 	// REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
@@ -212,9 +211,9 @@ type DomainsApiKey struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	TenancyOcid pulumi.StringOutput `pulumi:"tenancyOcid"`
+	TenancyOcid pulumi.StringPtrOutput `pulumi:"tenancyOcid"`
 	// Controls whether a user can update themselves or not via User related APIs
-	UrnietfparamsscimschemasoracleidcsextensionselfChangeUser DomainsApiKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensionselfChangeUser"`
+	UrnietfparamsscimschemasoracleidcsextensionselfChangeUser DomainsApiKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserPtrOutput `pulumi:"urnietfparamsscimschemasoracleidcsextensionselfChangeUser"`
 	// The user linked to the API key.
 	//
 	// **SCIM++ Properties:**
@@ -226,7 +225,7 @@ type DomainsApiKey struct {
 	// * returned: default
 	// * type: complex
 	// * uniqueness: none
-	User DomainsApiKeyUserOutput `pulumi:"user"`
+	User DomainsApiKeyUserPtrOutput `pulumi:"user"`
 }
 
 // NewDomainsApiKey registers a new resource with the given unique name, arguments, and options.
@@ -869,12 +868,6 @@ func (i *DomainsApiKey) ToDomainsApiKeyOutputWithContext(ctx context.Context) Do
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsApiKeyOutput)
 }
 
-func (i *DomainsApiKey) ToOutput(ctx context.Context) pulumix.Output[*DomainsApiKey] {
-	return pulumix.Output[*DomainsApiKey]{
-		OutputState: i.ToDomainsApiKeyOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DomainsApiKeyArrayInput is an input type that accepts DomainsApiKeyArray and DomainsApiKeyArrayOutput values.
 // You can construct a concrete instance of `DomainsApiKeyArrayInput` via:
 //
@@ -898,12 +891,6 @@ func (i DomainsApiKeyArray) ToDomainsApiKeyArrayOutput() DomainsApiKeyArrayOutpu
 
 func (i DomainsApiKeyArray) ToDomainsApiKeyArrayOutputWithContext(ctx context.Context) DomainsApiKeyArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsApiKeyArrayOutput)
-}
-
-func (i DomainsApiKeyArray) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsApiKey] {
-	return pulumix.Output[[]*DomainsApiKey]{
-		OutputState: i.ToDomainsApiKeyArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DomainsApiKeyMapInput is an input type that accepts DomainsApiKeyMap and DomainsApiKeyMapOutput values.
@@ -931,12 +918,6 @@ func (i DomainsApiKeyMap) ToDomainsApiKeyMapOutputWithContext(ctx context.Contex
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsApiKeyMapOutput)
 }
 
-func (i DomainsApiKeyMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsApiKey] {
-	return pulumix.Output[map[string]*DomainsApiKey]{
-		OutputState: i.ToDomainsApiKeyMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DomainsApiKeyOutput struct{ *pulumi.OutputState }
 
 func (DomainsApiKeyOutput) ElementType() reflect.Type {
@@ -949,12 +930,6 @@ func (o DomainsApiKeyOutput) ToDomainsApiKeyOutput() DomainsApiKeyOutput {
 
 func (o DomainsApiKeyOutput) ToDomainsApiKeyOutputWithContext(ctx context.Context) DomainsApiKeyOutput {
 	return o
-}
-
-func (o DomainsApiKeyOutput) ToOutput(ctx context.Context) pulumix.Output[*DomainsApiKey] {
-	return pulumix.Output[*DomainsApiKey]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
@@ -983,8 +958,8 @@ func (o DomainsApiKeyOutput) Authorization() pulumi.StringPtrOutput {
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsApiKeyOutput) CompartmentOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsApiKey) pulumi.StringOutput { return v.CompartmentOcid }).(pulumi.StringOutput)
+func (o DomainsApiKeyOutput) CompartmentOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsApiKey) pulumi.StringPtrOutput { return v.CompartmentOcid }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
@@ -998,8 +973,8 @@ func (o DomainsApiKeyOutput) CompartmentOcid() pulumi.StringOutput {
 // * returned: default
 // * type: boolean
 // * uniqueness: none
-func (o DomainsApiKeyOutput) DeleteInProgress() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DomainsApiKey) pulumi.BoolOutput { return v.DeleteInProgress }).(pulumi.BoolOutput)
+func (o DomainsApiKeyOutput) DeleteInProgress() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DomainsApiKey) pulumi.BoolPtrOutput { return v.DeleteInProgress }).(pulumi.BoolPtrOutput)
 }
 
 // Description
@@ -1012,8 +987,8 @@ func (o DomainsApiKeyOutput) DeleteInProgress() pulumi.BoolOutput {
 // * mutability: readWrite
 // * required: false
 // * returned: default
-func (o DomainsApiKeyOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsApiKey) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o DomainsApiKeyOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsApiKey) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
@@ -1027,8 +1002,8 @@ func (o DomainsApiKeyOutput) Description() pulumi.StringOutput {
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsApiKeyOutput) DomainOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsApiKey) pulumi.StringOutput { return v.DomainOcid }).(pulumi.StringOutput)
+func (o DomainsApiKeyOutput) DomainOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsApiKey) pulumi.StringPtrOutput { return v.DomainOcid }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Fingerprint
@@ -1042,8 +1017,8 @@ func (o DomainsApiKeyOutput) DomainOcid() pulumi.StringOutput {
 // * mutability: readOnly
 // * required: true
 // * returned: default
-func (o DomainsApiKeyOutput) Fingerprint() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsApiKey) pulumi.StringOutput { return v.Fingerprint }).(pulumi.StringOutput)
+func (o DomainsApiKeyOutput) Fingerprint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsApiKey) pulumi.StringPtrOutput { return v.Fingerprint }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The User or App who created the Resource
@@ -1088,8 +1063,8 @@ func (o DomainsApiKeyOutput) IdcsLastModifiedBies() DomainsApiKeyIdcsLastModifie
 // * returned: request
 // * type: string
 // * uniqueness: none
-func (o DomainsApiKeyOutput) IdcsLastUpgradedInRelease() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsApiKey) pulumi.StringOutput { return v.IdcsLastUpgradedInRelease }).(pulumi.StringOutput)
+func (o DomainsApiKeyOutput) IdcsLastUpgradedInRelease() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsApiKey) pulumi.StringPtrOutput { return v.IdcsLastUpgradedInRelease }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
@@ -1147,8 +1122,8 @@ func (o DomainsApiKeyOutput) Metas() DomainsApiKeyMetaArrayOutput {
 // * returned: always
 // * type: string
 // * uniqueness: none
-func (o DomainsApiKeyOutput) Ocid() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsApiKey) pulumi.StringOutput { return v.Ocid }).(pulumi.StringOutput)
+func (o DomainsApiKeyOutput) Ocid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsApiKey) pulumi.StringPtrOutput { return v.Ocid }).(pulumi.StringPtrOutput)
 }
 
 // An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
@@ -1197,15 +1172,15 @@ func (o DomainsApiKeyOutput) Tags() DomainsApiKeyTagArrayOutput {
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsApiKeyOutput) TenancyOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsApiKey) pulumi.StringOutput { return v.TenancyOcid }).(pulumi.StringOutput)
+func (o DomainsApiKeyOutput) TenancyOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsApiKey) pulumi.StringPtrOutput { return v.TenancyOcid }).(pulumi.StringPtrOutput)
 }
 
 // Controls whether a user can update themselves or not via User related APIs
-func (o DomainsApiKeyOutput) UrnietfparamsscimschemasoracleidcsextensionselfChangeUser() DomainsApiKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserOutput {
-	return o.ApplyT(func(v *DomainsApiKey) DomainsApiKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserOutput {
+func (o DomainsApiKeyOutput) UrnietfparamsscimschemasoracleidcsextensionselfChangeUser() DomainsApiKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserPtrOutput {
+	return o.ApplyT(func(v *DomainsApiKey) DomainsApiKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserPtrOutput {
 		return v.UrnietfparamsscimschemasoracleidcsextensionselfChangeUser
-	}).(DomainsApiKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserOutput)
+	}).(DomainsApiKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserPtrOutput)
 }
 
 // The user linked to the API key.
@@ -1219,8 +1194,8 @@ func (o DomainsApiKeyOutput) UrnietfparamsscimschemasoracleidcsextensionselfChan
 // * returned: default
 // * type: complex
 // * uniqueness: none
-func (o DomainsApiKeyOutput) User() DomainsApiKeyUserOutput {
-	return o.ApplyT(func(v *DomainsApiKey) DomainsApiKeyUserOutput { return v.User }).(DomainsApiKeyUserOutput)
+func (o DomainsApiKeyOutput) User() DomainsApiKeyUserPtrOutput {
+	return o.ApplyT(func(v *DomainsApiKey) DomainsApiKeyUserPtrOutput { return v.User }).(DomainsApiKeyUserPtrOutput)
 }
 
 type DomainsApiKeyArrayOutput struct{ *pulumi.OutputState }
@@ -1235,12 +1210,6 @@ func (o DomainsApiKeyArrayOutput) ToDomainsApiKeyArrayOutput() DomainsApiKeyArra
 
 func (o DomainsApiKeyArrayOutput) ToDomainsApiKeyArrayOutputWithContext(ctx context.Context) DomainsApiKeyArrayOutput {
 	return o
-}
-
-func (o DomainsApiKeyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsApiKey] {
-	return pulumix.Output[[]*DomainsApiKey]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DomainsApiKeyArrayOutput) Index(i pulumi.IntInput) DomainsApiKeyOutput {
@@ -1261,12 +1230,6 @@ func (o DomainsApiKeyMapOutput) ToDomainsApiKeyMapOutput() DomainsApiKeyMapOutpu
 
 func (o DomainsApiKeyMapOutput) ToDomainsApiKeyMapOutputWithContext(ctx context.Context) DomainsApiKeyMapOutput {
 	return o
-}
-
-func (o DomainsApiKeyMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsApiKey] {
-	return pulumix.Output[map[string]*DomainsApiKey]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DomainsApiKeyMapOutput) MapIndex(k pulumi.StringInput) DomainsApiKeyOutput {

@@ -6,6 +6,8 @@ package com.pulumi.oci.Database.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Double;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAutonomousExadataInfrastructureOcpuByWorkloadType {
@@ -13,27 +15,27 @@ public final class GetAutonomousExadataInfrastructureOcpuByWorkloadType {
      * @return The total number of OCPU cores in use for Autonomous Data Warehouse databases in the infrastructure instance.
      * 
      */
-    private Double adw;
+    private @Nullable Double adw;
     /**
      * @return The total number of OCPU cores in use for Autonomous Transaction Processing databases in the infrastructure instance.
      * 
      */
-    private Double atp;
+    private @Nullable Double atp;
 
     private GetAutonomousExadataInfrastructureOcpuByWorkloadType() {}
     /**
      * @return The total number of OCPU cores in use for Autonomous Data Warehouse databases in the infrastructure instance.
      * 
      */
-    public Double adw() {
-        return this.adw;
+    public Optional<Double> adw() {
+        return Optional.ofNullable(this.adw);
     }
     /**
      * @return The total number of OCPU cores in use for Autonomous Transaction Processing databases in the infrastructure instance.
      * 
      */
-    public Double atp() {
-        return this.atp;
+    public Optional<Double> atp() {
+        return Optional.ofNullable(this.atp);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetAutonomousExadataInfrastructureOcpuByWorkloadType {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Double adw;
-        private Double atp;
+        private @Nullable Double adw;
+        private @Nullable Double atp;
         public Builder() {}
         public Builder(GetAutonomousExadataInfrastructureOcpuByWorkloadType defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetAutonomousExadataInfrastructureOcpuByWorkloadType {
         }
 
         @CustomType.Setter
-        public Builder adw(Double adw) {
-            this.adw = Objects.requireNonNull(adw);
+        public Builder adw(@Nullable Double adw) {
+            this.adw = adw;
             return this;
         }
         @CustomType.Setter
-        public Builder atp(Double atp) {
-            this.atp = Objects.requireNonNull(atp);
+        public Builder atp(@Nullable Double atp) {
+            this.atp = atp;
             return this;
         }
         public GetAutonomousExadataInfrastructureOcpuByWorkloadType build() {

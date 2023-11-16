@@ -46,17 +46,11 @@ class GetIntegrationInstancesResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        Compartment Identifier.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        Integration Instance Identifier, can be renamed.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -66,7 +60,7 @@ class GetIntegrationInstancesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -74,18 +68,12 @@ class GetIntegrationInstancesResult:
 
     @property
     @pulumi.getter(name="integrationInstances")
-    def integration_instances(self) -> Sequence['outputs.GetIntegrationInstancesIntegrationInstanceResult']:
-        """
-        The list of integration_instances.
-        """
+    def integration_instances(self) -> Optional[Sequence['outputs.GetIntegrationInstancesIntegrationInstanceResult']]:
         return pulumi.get(self, "integration_instances")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the integration instance.
-        """
         return pulumi.get(self, "state")
 
 
@@ -109,25 +97,7 @@ def get_integration_instances(compartment_id: Optional[str] = None,
                               state: Optional[str] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetIntegrationInstancesResult:
     """
-    This data source provides the list of Integration Instances in Oracle Cloud Infrastructure Integration service.
-
-    Returns a list of Integration Instances.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_integration_instances = oci.Integration.get_integration_instances(compartment_id=var["compartment_id"],
-        display_name=var["integration_instance_display_name"],
-        state=var["integration_instance_state"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
-    :param str state: Life cycle state to query on.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -153,24 +123,6 @@ def get_integration_instances_output(compartment_id: Optional[pulumi.Input[str]]
                                      state: Optional[pulumi.Input[Optional[str]]] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetIntegrationInstancesResult]:
     """
-    This data source provides the list of Integration Instances in Oracle Cloud Infrastructure Integration service.
-
-    Returns a list of Integration Instances.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_integration_instances = oci.Integration.get_integration_instances(compartment_id=var["compartment_id"],
-        display_name=var["integration_instance_display_name"],
-        state=var["integration_instance_state"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
-    :param str state: Life cycle state to query on.
+    Use this data source to access information about an existing resource.
     """
     ...

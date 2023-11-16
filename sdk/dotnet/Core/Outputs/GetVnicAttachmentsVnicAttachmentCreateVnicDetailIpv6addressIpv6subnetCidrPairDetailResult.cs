@@ -13,14 +13,14 @@ namespace Pulumi.Oci.Core.Outputs
     [OutputType]
     public sealed class GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailResult
     {
-        public readonly string Ipv6Address;
-        public readonly string Ipv6SubnetCidr;
+        public readonly string? Ipv6Address;
+        public readonly string? Ipv6SubnetCidr;
 
         [OutputConstructor]
         private GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailResult(
-            string ipv6Address,
+            string? ipv6Address,
 
-            string ipv6SubnetCidr)
+            string? ipv6SubnetCidr)
         {
             Ipv6Address = ipv6Address;
             Ipv6SubnetCidr = ipv6SubnetCidr;

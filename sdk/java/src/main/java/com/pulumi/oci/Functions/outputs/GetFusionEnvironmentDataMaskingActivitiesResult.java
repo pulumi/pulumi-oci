@@ -18,7 +18,7 @@ public final class GetFusionEnvironmentDataMaskingActivitiesResult {
      * @return The list of data_masking_activity_collection.
      * 
      */
-    private List<GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollection> dataMaskingActivityCollections;
+    private @Nullable List<GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollection> dataMaskingActivityCollections;
     private @Nullable List<GetFusionEnvironmentDataMaskingActivitiesFilter> filters;
     /**
      * @return Fusion Environment Identifier.
@@ -29,7 +29,7 @@ public final class GetFusionEnvironmentDataMaskingActivitiesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The current state of the DataMaskingActivity.
      * 
@@ -42,7 +42,7 @@ public final class GetFusionEnvironmentDataMaskingActivitiesResult {
      * 
      */
     public List<GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollection> dataMaskingActivityCollections() {
-        return this.dataMaskingActivityCollections;
+        return this.dataMaskingActivityCollections == null ? List.of() : this.dataMaskingActivityCollections;
     }
     public List<GetFusionEnvironmentDataMaskingActivitiesFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -58,8 +58,8 @@ public final class GetFusionEnvironmentDataMaskingActivitiesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The current state of the DataMaskingActivity.
@@ -78,10 +78,10 @@ public final class GetFusionEnvironmentDataMaskingActivitiesResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollection> dataMaskingActivityCollections;
+        private @Nullable List<GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollection> dataMaskingActivityCollections;
         private @Nullable List<GetFusionEnvironmentDataMaskingActivitiesFilter> filters;
         private String fusionEnvironmentId;
-        private String id;
+        private @Nullable String id;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetFusionEnvironmentDataMaskingActivitiesResult defaults) {
@@ -94,8 +94,8 @@ public final class GetFusionEnvironmentDataMaskingActivitiesResult {
         }
 
         @CustomType.Setter
-        public Builder dataMaskingActivityCollections(List<GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollection> dataMaskingActivityCollections) {
-            this.dataMaskingActivityCollections = Objects.requireNonNull(dataMaskingActivityCollections);
+        public Builder dataMaskingActivityCollections(@Nullable List<GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollection> dataMaskingActivityCollections) {
+            this.dataMaskingActivityCollections = dataMaskingActivityCollections;
             return this;
         }
         public Builder dataMaskingActivityCollections(GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollection... dataMaskingActivityCollections) {
@@ -115,8 +115,8 @@ public final class GetFusionEnvironmentDataMaskingActivitiesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

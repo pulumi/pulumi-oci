@@ -76,55 +76,37 @@ class GetFleetJavaMigrationAnalysisResultResult:
 
     @property
     @pulumi.getter(name="applicationExecutionType")
-    def application_execution_type(self) -> str:
-        """
-        Execution type of the application for an application type, such as WAR and EAR, that is deployed or installed.
-        """
+    def application_execution_type(self) -> Optional[str]:
         return pulumi.get(self, "application_execution_type")
 
     @property
     @pulumi.getter(name="applicationName")
-    def application_name(self) -> str:
-        """
-        The name of the application for which the Java migration analysis was performed.
-        """
+    def application_name(self) -> Optional[str]:
         return pulumi.get(self, "application_name")
 
     @property
     @pulumi.getter(name="applicationPath")
-    def application_path(self) -> str:
-        """
-        The installation path of the application for which the Java migration analysis was performed.
-        """
+    def application_path(self) -> Optional[str]:
         return pulumi.get(self, "application_path")
 
     @property
     @pulumi.getter
-    def bucket(self) -> str:
-        """
-        The name of the object storage bucket that contains the results of the migration analysis.
-        """
+    def bucket(self) -> Optional[str]:
         return pulumi.get(self, "bucket")
 
     @property
     @pulumi.getter(name="fleetId")
     def fleet_id(self) -> str:
-        """
-        The fleet OCID.
-        """
         return pulumi.get(self, "fleet_id")
 
     @property
     @pulumi.getter(name="hostName")
-    def host_name(self) -> str:
-        """
-        The hostname of the managed instance that hosts the application for which the Java migration analysis was performed.
-        """
+    def host_name(self) -> Optional[str]:
         return pulumi.get(self, "host_name")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -137,74 +119,47 @@ class GetFleetJavaMigrationAnalysisResultResult:
 
     @property
     @pulumi.getter(name="managedInstanceId")
-    def managed_instance_id(self) -> str:
-        """
-        The managed instance OCID.
-        """
+    def managed_instance_id(self) -> Optional[str]:
         return pulumi.get(self, "managed_instance_id")
 
     @property
     @pulumi.getter
-    def metadata(self) -> str:
-        """
-        Additional info reserved for future use.
-        """
+    def metadata(self) -> Optional[str]:
         return pulumi.get(self, "metadata")
 
     @property
     @pulumi.getter
-    def namespace(self) -> str:
-        """
-        The object storage namespace that contains the results of the migration analysis.
-        """
+    def namespace(self) -> Optional[str]:
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter(name="objectLists")
-    def object_lists(self) -> Sequence[str]:
-        """
-        The names of the object storage objects that contain the results of the migration analysis.
-        """
+    def object_lists(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "object_lists")
 
     @property
     @pulumi.getter(name="objectStorageUploadDirPath")
-    def object_storage_upload_dir_path(self) -> str:
-        """
-        The directory path of the object storage bucket that contains the results of the migration analysis.
-        """
+    def object_storage_upload_dir_path(self) -> Optional[str]:
         return pulumi.get(self, "object_storage_upload_dir_path")
 
     @property
     @pulumi.getter(name="sourceJdkVersion")
-    def source_jdk_version(self) -> str:
-        """
-        The source JDK version of the application that's currently running.
-        """
+    def source_jdk_version(self) -> Optional[str]:
         return pulumi.get(self, "source_jdk_version")
 
     @property
     @pulumi.getter(name="targetJdkVersion")
-    def target_jdk_version(self) -> str:
-        """
-        The target JDK version of the application to be migrated.
-        """
+    def target_jdk_version(self) -> Optional[str]:
         return pulumi.get(self, "target_jdk_version")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the result is compiled.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="workRequestId")
-    def work_request_id(self) -> str:
-        """
-        The OCID of the work request of this analysis.
-        """
+    def work_request_id(self) -> Optional[str]:
         return pulumi.get(self, "work_request_id")
 
 
@@ -237,23 +192,7 @@ def get_fleet_java_migration_analysis_result(fleet_id: Optional[str] = None,
                                              java_migration_analysis_result_id: Optional[str] = None,
                                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetFleetJavaMigrationAnalysisResultResult:
     """
-    This data source provides details about a specific Fleet Java Migration Analysis Result resource in Oracle Cloud Infrastructure Jms service.
-
-    Retrieve Java Migration Analysis result.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_fleet_java_migration_analysis_result = oci.Jms.get_fleet_java_migration_analysis_result(fleet_id=oci_jms_fleet["test_fleet"]["id"],
-        java_migration_analysis_result_id=oci_apm_synthetics_result["test_result"]["id"])
-    ```
-
-
-    :param str fleet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
-    :param str java_migration_analysis_result_id: The OCID of the analysis result.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['fleetId'] = fleet_id
@@ -286,22 +225,6 @@ def get_fleet_java_migration_analysis_result_output(fleet_id: Optional[pulumi.In
                                                     java_migration_analysis_result_id: Optional[pulumi.Input[str]] = None,
                                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFleetJavaMigrationAnalysisResultResult]:
     """
-    This data source provides details about a specific Fleet Java Migration Analysis Result resource in Oracle Cloud Infrastructure Jms service.
-
-    Retrieve Java Migration Analysis result.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_fleet_java_migration_analysis_result = oci.Jms.get_fleet_java_migration_analysis_result(fleet_id=oci_jms_fleet["test_fleet"]["id"],
-        java_migration_analysis_result_id=oci_apm_synthetics_result["test_result"]["id"])
-    ```
-
-
-    :param str fleet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
-    :param str java_migration_analysis_result_id: The OCID of the analysis result.
+    Use this data source to access information about an existing resource.
     """
     ...

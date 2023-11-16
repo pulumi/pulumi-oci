@@ -66,9 +66,6 @@ class GetRecordsResult:
     @property
     @pulumi.getter
     def domain(self) -> Optional[str]:
-        """
-        The fully qualified domain name where the record can be located.
-        """
         return pulumi.get(self, "domain")
 
     @property
@@ -83,7 +80,7 @@ class GetRecordsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -91,18 +88,12 @@ class GetRecordsResult:
 
     @property
     @pulumi.getter
-    def records(self) -> Sequence['outputs.GetRecordsRecordResult']:
-        """
-        The list of records.
-        """
+    def records(self) -> Optional[Sequence['outputs.GetRecordsRecordResult']]:
         return pulumi.get(self, "records")
 
     @property
     @pulumi.getter
     def rtype(self) -> Optional[str]:
-        """
-        The canonical name for the record's type, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
-        """
         return pulumi.get(self, "rtype")
 
     @property
@@ -118,9 +109,6 @@ class GetRecordsResult:
     @property
     @pulumi.getter(name="zoneNameOrId")
     def zone_name_or_id(self) -> str:
-        """
-        The name or OCID of the target zone.
-        """
         warnings.warn("""The 'oci_dns_records' resource has been deprecated. Please use 'oci_dns_rrsets' instead.""", DeprecationWarning)
         pulumi.log.warn("""zone_name_or_id is deprecated: The 'oci_dns_records' resource has been deprecated. Please use 'oci_dns_rrsets' instead.""")
 
@@ -162,25 +150,7 @@ def get_records(compartment_id: Optional[str] = None,
                 zone_version: Optional[str] = None,
                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetRecordsResult:
     """
-    **Deprecated. Use dns_get_rrsets instead.**
-
-    This data source provides the list of Records in Oracle Cloud Infrastructure DNS service.
-
-    Gets all records in the specified zone. The results are sorted by `domain` in alphabetical order by default.
-    For more information about records, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
-    For private zones, the scope query parameter is required with a value of `PRIVATE`. When the zone name is
-    provided as a path parameter and `PRIVATE` is used for the scope query parameter then the viewId query
-    parameter is required.
-
-
-    :param str compartment_id: The OCID of the compartment the resource belongs to.
-    :param str domain: Search by domain. Will match any record whose domain (case-insensitive) equals the provided value.
-    :param str domain_contains: Search by domain. Will match any record whose domain (case-insensitive) contains the provided value.
-    :param str rtype: Search by record type. Will match any record whose [type](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4) (case-insensitive) equals the provided value.
-    :param str sort_by: The field by which to sort records. Allowed values are: domain|rtype|ttl
-    :param str sort_order: The order to sort the resources. Allowed values are: ASC|DESC
-    :param str zone_name_or_id: The name or OCID of the target zone.
-    :param str zone_version: The version of the zone for which data is requested.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -221,24 +191,6 @@ def get_records_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = N
                        zone_version: Optional[pulumi.Input[Optional[str]]] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRecordsResult]:
     """
-    **Deprecated. Use dns_get_rrsets instead.**
-
-    This data source provides the list of Records in Oracle Cloud Infrastructure DNS service.
-
-    Gets all records in the specified zone. The results are sorted by `domain` in alphabetical order by default.
-    For more information about records, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
-    For private zones, the scope query parameter is required with a value of `PRIVATE`. When the zone name is
-    provided as a path parameter and `PRIVATE` is used for the scope query parameter then the viewId query
-    parameter is required.
-
-
-    :param str compartment_id: The OCID of the compartment the resource belongs to.
-    :param str domain: Search by domain. Will match any record whose domain (case-insensitive) equals the provided value.
-    :param str domain_contains: Search by domain. Will match any record whose domain (case-insensitive) contains the provided value.
-    :param str rtype: Search by record type. Will match any record whose [type](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4) (case-insensitive) equals the provided value.
-    :param str sort_by: The field by which to sort records. Allowed values are: domain|rtype|ttl
-    :param str sort_order: The order to sort the resources. Allowed values are: ASC|DESC
-    :param str zone_name_or_id: The name or OCID of the target zone.
-    :param str zone_version: The version of the zone for which data is requested.
+    Use this data source to access information about an existing resource.
     """
     ...

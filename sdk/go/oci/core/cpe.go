@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Cpe resource in Oracle Cloud Infrastructure Core service.
@@ -88,11 +87,11 @@ type Cpe struct {
 	// * [GetIpsecCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnection/GetIpsecCpeDeviceConfigContent)
 	// * [GetTunnelCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/TunnelCpeDeviceConfig/GetTunnelCpeDeviceConfigContent)
 	// * [GetTunnelCpeDeviceConfig](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/TunnelCpeDeviceConfig/GetTunnelCpeDeviceConfig)
-	CpeDeviceShapeId pulumi.StringOutput `pulumi:"cpeDeviceShapeId"`
+	CpeDeviceShapeId pulumi.StringPtrOutput `pulumi:"cpeDeviceShapeId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The public IP address of the on-premises router.  Example: `203.0.113.2`
@@ -101,9 +100,9 @@ type Cpe struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	IsPrivate pulumi.BoolOutput `pulumi:"isPrivate"`
+	IsPrivate pulumi.BoolPtrOutput `pulumi:"isPrivate"`
 	// The date and time the CPE was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 }
 
 // NewCpe registers a new resource with the given unique name, arguments, and options.
@@ -277,12 +276,6 @@ func (i *Cpe) ToCpeOutputWithContext(ctx context.Context) CpeOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(CpeOutput)
 }
 
-func (i *Cpe) ToOutput(ctx context.Context) pulumix.Output[*Cpe] {
-	return pulumix.Output[*Cpe]{
-		OutputState: i.ToCpeOutputWithContext(ctx).OutputState,
-	}
-}
-
 // CpeArrayInput is an input type that accepts CpeArray and CpeArrayOutput values.
 // You can construct a concrete instance of `CpeArrayInput` via:
 //
@@ -306,12 +299,6 @@ func (i CpeArray) ToCpeArrayOutput() CpeArrayOutput {
 
 func (i CpeArray) ToCpeArrayOutputWithContext(ctx context.Context) CpeArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(CpeArrayOutput)
-}
-
-func (i CpeArray) ToOutput(ctx context.Context) pulumix.Output[[]*Cpe] {
-	return pulumix.Output[[]*Cpe]{
-		OutputState: i.ToCpeArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // CpeMapInput is an input type that accepts CpeMap and CpeMapOutput values.
@@ -339,12 +326,6 @@ func (i CpeMap) ToCpeMapOutputWithContext(ctx context.Context) CpeMapOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(CpeMapOutput)
 }
 
-func (i CpeMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Cpe] {
-	return pulumix.Output[map[string]*Cpe]{
-		OutputState: i.ToCpeMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type CpeOutput struct{ *pulumi.OutputState }
 
 func (CpeOutput) ElementType() reflect.Type {
@@ -359,12 +340,6 @@ func (o CpeOutput) ToCpeOutputWithContext(ctx context.Context) CpeOutput {
 	return o
 }
 
-func (o CpeOutput) ToOutput(ctx context.Context) pulumix.Output[*Cpe] {
-	return pulumix.Output[*Cpe]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the CPE.
 func (o CpeOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Cpe) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
@@ -377,8 +352,8 @@ func (o CpeOutput) CompartmentId() pulumi.StringOutput {
 // * [GetIpsecCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnection/GetIpsecCpeDeviceConfigContent)
 // * [GetTunnelCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/TunnelCpeDeviceConfig/GetTunnelCpeDeviceConfigContent)
 // * [GetTunnelCpeDeviceConfig](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/TunnelCpeDeviceConfig/GetTunnelCpeDeviceConfig)
-func (o CpeOutput) CpeDeviceShapeId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Cpe) pulumi.StringOutput { return v.CpeDeviceShapeId }).(pulumi.StringOutput)
+func (o CpeOutput) CpeDeviceShapeId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Cpe) pulumi.StringPtrOutput { return v.CpeDeviceShapeId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -387,8 +362,8 @@ func (o CpeOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-func (o CpeOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *Cpe) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o CpeOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Cpe) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -405,13 +380,13 @@ func (o CpeOutput) IpAddress() pulumi.StringOutput {
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o CpeOutput) IsPrivate() pulumi.BoolOutput {
-	return o.ApplyT(func(v *Cpe) pulumi.BoolOutput { return v.IsPrivate }).(pulumi.BoolOutput)
+func (o CpeOutput) IsPrivate() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *Cpe) pulumi.BoolPtrOutput { return v.IsPrivate }).(pulumi.BoolPtrOutput)
 }
 
 // The date and time the CPE was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-func (o CpeOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Cpe) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o CpeOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Cpe) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 type CpeArrayOutput struct{ *pulumi.OutputState }
@@ -426,12 +401,6 @@ func (o CpeArrayOutput) ToCpeArrayOutput() CpeArrayOutput {
 
 func (o CpeArrayOutput) ToCpeArrayOutputWithContext(ctx context.Context) CpeArrayOutput {
 	return o
-}
-
-func (o CpeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Cpe] {
-	return pulumix.Output[[]*Cpe]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o CpeArrayOutput) Index(i pulumi.IntInput) CpeOutput {
@@ -452,12 +421,6 @@ func (o CpeMapOutput) ToCpeMapOutput() CpeMapOutput {
 
 func (o CpeMapOutput) ToCpeMapOutputWithContext(ctx context.Context) CpeMapOutput {
 	return o
-}
-
-func (o CpeMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Cpe] {
-	return pulumix.Output[map[string]*Cpe]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o CpeMapOutput) MapIndex(k pulumi.StringInput) CpeOutput {

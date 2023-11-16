@@ -18,6 +18,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -82,14 +83,14 @@ public class ProductLicense extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="activeLicenseRecordCount", refs={Integer.class}, tree="[0]")
-    private Output<Integer> activeLicenseRecordCount;
+    private Output</* @Nullable */ Integer> activeLicenseRecordCount;
 
     /**
      * @return The number of active license records associated with the product license.
      * 
      */
-    public Output<Integer> activeLicenseRecordCount() {
-        return this.activeLicenseRecordCount;
+    public Output<Optional<Integer>> activeLicenseRecordCount() {
+        return Codegen.optional(this.activeLicenseRecordCount);
     }
     /**
      * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where product licenses are created.
@@ -110,14 +111,14 @@ public class ProductLicense extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * Name of the product license.
@@ -138,56 +139,56 @@ public class ProductLicense extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * (Updatable) The image details associated with the product license.
      * 
      */
     @Export(name="images", refs={List.class,ProductLicenseImage.class}, tree="[0,1]")
-    private Output<List<ProductLicenseImage>> images;
+    private Output</* @Nullable */ List<ProductLicenseImage>> images;
 
     /**
      * @return (Updatable) The image details associated with the product license.
      * 
      */
-    public Output<List<ProductLicenseImage>> images() {
-        return this.images;
+    public Output<Optional<List<ProductLicenseImage>>> images() {
+        return Codegen.optional(this.images);
     }
     /**
      * Specifies whether or not the product license is oversubscribed.
      * 
      */
     @Export(name="isOverSubscribed", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isOverSubscribed;
+    private Output</* @Nullable */ Boolean> isOverSubscribed;
 
     /**
      * @return Specifies whether or not the product license is oversubscribed.
      * 
      */
-    public Output<Boolean> isOverSubscribed() {
-        return this.isOverSubscribed;
+    public Output<Optional<Boolean>> isOverSubscribed() {
+        return Codegen.optional(this.isOverSubscribed);
     }
     /**
      * Specifies if the license unit count is unlimited.
      * 
      */
     @Export(name="isUnlimited", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isUnlimited;
+    private Output</* @Nullable */ Boolean> isUnlimited;
 
     /**
      * @return Specifies if the license unit count is unlimited.
      * 
      */
-    public Output<Boolean> isUnlimited() {
-        return this.isUnlimited;
+    public Output<Optional<Boolean>> isUnlimited() {
+        return Codegen.optional(this.isUnlimited);
     }
     /**
      * Specifies if the product license vendor is Oracle or a third party.
@@ -222,126 +223,126 @@ public class ProductLicense extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current product license state.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The current product license status.
      * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
-    private Output<String> status;
+    private Output</* @Nullable */ String> status;
 
     /**
      * @return The current product license status.
      * 
      */
-    public Output<String> status() {
-        return this.status;
+    public Output<Optional<String>> status() {
+        return Codegen.optional(this.status);
     }
     /**
      * Status description for the current product license status.
      * 
      */
     @Export(name="statusDescription", refs={String.class}, tree="[0]")
-    private Output<String> statusDescription;
+    private Output</* @Nullable */ String> statusDescription;
 
     /**
      * @return Status description for the current product license status.
      * 
      */
-    public Output<String> statusDescription() {
-        return this.statusDescription;
+    public Output<Optional<String>> statusDescription() {
+        return Codegen.optional(this.statusDescription);
     }
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> systemTags;
+    private Output</* @Nullable */ Map<String,Object>> systemTags;
 
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    public Output<Map<String,Object>> systemTags() {
-        return this.systemTags;
+    public Output<Optional<Map<String,Object>>> systemTags() {
+        return Codegen.optional(this.systemTags);
     }
     /**
      * The time the product license was created. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The time the product license was created. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The time the product license was updated. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The time the product license was updated. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
     /**
      * The total number of licenses available for the product license, calculated by adding up all the license counts for active license records associated with the product license.
      * 
      */
     @Export(name="totalActiveLicenseUnitCount", refs={Integer.class}, tree="[0]")
-    private Output<Integer> totalActiveLicenseUnitCount;
+    private Output</* @Nullable */ Integer> totalActiveLicenseUnitCount;
 
     /**
      * @return The total number of licenses available for the product license, calculated by adding up all the license counts for active license records associated with the product license.
      * 
      */
-    public Output<Integer> totalActiveLicenseUnitCount() {
-        return this.totalActiveLicenseUnitCount;
+    public Output<Optional<Integer>> totalActiveLicenseUnitCount() {
+        return Codegen.optional(this.totalActiveLicenseUnitCount);
     }
     /**
      * The number of license records associated with the product license.
      * 
      */
     @Export(name="totalLicenseRecordCount", refs={Integer.class}, tree="[0]")
-    private Output<Integer> totalLicenseRecordCount;
+    private Output</* @Nullable */ Integer> totalLicenseRecordCount;
 
     /**
      * @return The number of license records associated with the product license.
      * 
      */
-    public Output<Integer> totalLicenseRecordCount() {
-        return this.totalLicenseRecordCount;
+    public Output<Optional<Integer>> totalLicenseRecordCount() {
+        return Codegen.optional(this.totalLicenseRecordCount);
     }
     /**
      * The number of license units consumed. Updated after each allocation run.
      * 
      */
     @Export(name="totalLicenseUnitsConsumed", refs={Double.class}, tree="[0]")
-    private Output<Double> totalLicenseUnitsConsumed;
+    private Output</* @Nullable */ Double> totalLicenseUnitsConsumed;
 
     /**
      * @return The number of license units consumed. Updated after each allocation run.
      * 
      */
-    public Output<Double> totalLicenseUnitsConsumed() {
-        return this.totalLicenseUnitsConsumed;
+    public Output<Optional<Double>> totalLicenseUnitsConsumed() {
+        return Codegen.optional(this.totalLicenseUnitsConsumed);
     }
     /**
      * The product license vendor name, for example: Microsoft, RHEL, and so on.
@@ -351,7 +352,7 @@ public class ProductLicense extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="vendorName", refs={String.class}, tree="[0]")
-    private Output<String> vendorName;
+    private Output</* @Nullable */ String> vendorName;
 
     /**
      * @return The product license vendor name, for example: Microsoft, RHEL, and so on.
@@ -360,8 +361,8 @@ public class ProductLicense extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> vendorName() {
-        return this.vendorName;
+    public Output<Optional<String>> vendorName() {
+        return Codegen.optional(this.vendorName);
     }
 
     /**

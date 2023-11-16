@@ -16,23 +16,23 @@ namespace Pulumi.Oci.Marketplace.Outputs
         /// <summary>
         /// The category that the document belongs to.
         /// </summary>
-        public readonly string DocumentCategory;
+        public readonly string? DocumentCategory;
         /// <summary>
         /// The name of the listing.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The URL of the resource.
         /// </summary>
-        public readonly string Url;
+        public readonly string? Url;
 
         [OutputConstructor]
         private GetListingsListingDocumentationLinkResult(
-            string documentCategory,
+            string? documentCategory,
 
-            string name,
+            string? name,
 
-            string url)
+            string? url)
         {
             DocumentCategory = documentCategory;
             Name = name;

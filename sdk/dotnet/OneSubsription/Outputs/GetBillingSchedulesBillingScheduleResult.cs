@@ -16,31 +16,31 @@ namespace Pulumi.Oci.OneSubsription.Outputs
         /// <summary>
         /// Billing schedule line net amount
         /// </summary>
-        public readonly string Amount;
+        public readonly string? Amount;
         /// <summary>
         /// Indicates the associated AR Customer transaction id a unique identifier existing on AR.
         /// </summary>
-        public readonly string ArCustomerTransactionId;
+        public readonly string? ArCustomerTransactionId;
         /// <summary>
         /// Indicates the associated AR Invoice Number
         /// </summary>
-        public readonly string ArInvoiceNumber;
+        public readonly string? ArInvoiceNumber;
         /// <summary>
         /// Billing frequency
         /// </summary>
-        public readonly string BillingFrequency;
+        public readonly string? BillingFrequency;
         /// <summary>
         /// Billing schedule invoice status
         /// </summary>
-        public readonly string InvoiceStatus;
+        public readonly string? InvoiceStatus;
         /// <summary>
         /// Billing schedule net unit price
         /// </summary>
-        public readonly string NetUnitPrice;
+        public readonly string? NetUnitPrice;
         /// <summary>
         /// Order number associated with the Subscribed Service
         /// </summary>
-        public readonly string OrderNumber;
+        public readonly string? OrderNumber;
         /// <summary>
         /// Product description
         /// </summary>
@@ -48,51 +48,51 @@ namespace Pulumi.Oci.OneSubsription.Outputs
         /// <summary>
         /// Billing schedule quantity
         /// </summary>
-        public readonly string Quantity;
+        public readonly string? Quantity;
         /// <summary>
         /// This param is used to get only the billing schedules for a particular Subscribed Service
         /// </summary>
-        public readonly string SubscribedServiceId;
+        public readonly string? SubscribedServiceId;
         /// <summary>
         /// Billing schedule end date
         /// </summary>
-        public readonly string TimeEnd;
+        public readonly string? TimeEnd;
         /// <summary>
         /// Billing schedule invoicing date
         /// </summary>
-        public readonly string TimeInvoicing;
+        public readonly string? TimeInvoicing;
         /// <summary>
         /// Billing schedule start date
         /// </summary>
-        public readonly string TimeStart;
+        public readonly string? TimeStart;
 
         [OutputConstructor]
         private GetBillingSchedulesBillingScheduleResult(
-            string amount,
+            string? amount,
 
-            string arCustomerTransactionId,
+            string? arCustomerTransactionId,
 
-            string arInvoiceNumber,
+            string? arInvoiceNumber,
 
-            string billingFrequency,
+            string? billingFrequency,
 
-            string invoiceStatus,
+            string? invoiceStatus,
 
-            string netUnitPrice,
+            string? netUnitPrice,
 
-            string orderNumber,
+            string? orderNumber,
 
             ImmutableArray<Outputs.GetBillingSchedulesBillingScheduleProductResult> products,
 
-            string quantity,
+            string? quantity,
 
-            string subscribedServiceId,
+            string? subscribedServiceId,
 
-            string timeEnd,
+            string? timeEnd,
 
-            string timeInvoicing,
+            string? timeInvoicing,
 
-            string timeStart)
+            string? timeStart)
         {
             Amount = amount;
             ArCustomerTransactionId = arCustomerTransactionId;

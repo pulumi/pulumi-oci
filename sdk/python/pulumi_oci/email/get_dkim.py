@@ -73,34 +73,22 @@ class GetDkimResult:
 
     @property
     @pulumi.getter(name="cnameRecordValue")
-    def cname_record_value(self) -> str:
-        """
-        The DNS CNAME record value to provision to the DKIM DNS subdomain, when using the CNAME method for DKIM setup (preferred).
-        """
+    def cname_record_value(self) -> Optional[str]:
         return pulumi.get(self, "cname_record_value")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this DKIM.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        The description of the DKIM. Avoid entering confidential information.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
@@ -110,90 +98,57 @@ class GetDkimResult:
 
     @property
     @pulumi.getter(name="dnsSubdomainName")
-    def dns_subdomain_name(self) -> str:
-        """
-        The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue
-        """
+    def dns_subdomain_name(self) -> Optional[str]:
         return pulumi.get(self, "dns_subdomain_name")
 
     @property
     @pulumi.getter(name="emailDomainId")
-    def email_domain_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the email domain that this DKIM belongs to.
-        """
+    def email_domain_id(self) -> Optional[str]:
         return pulumi.get(self, "email_domain_id")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DKIM.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The DKIM selector. If the same domain is managed in more than one region, each region must use different selectors.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the DKIM.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the DKIM was created. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".  Example: `2021-02-12T22:47:12.613Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time of the last change to the DKIM configuration, due to a state change or an update operation. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="txtRecordValue")
-    def txt_record_value(self) -> str:
-        """
-        The DNS TXT record value to provision to the DKIM DNS subdomain in place of using a CNAME record. This is used in cases where a CNAME can not be used, such as when the cnameRecordValue would exceed the maximum length for a DNS entry. This can also be used by customers who have an existing procedure to directly provision TXT records for DKIM. Be aware that many DNS APIs will require you to break this string into segments of less than 255 characters.
-        """
+    def txt_record_value(self) -> Optional[str]:
         return pulumi.get(self, "txt_record_value")
 
 
@@ -224,21 +179,7 @@ class AwaitableGetDkimResult(GetDkimResult):
 def get_dkim(dkim_id: Optional[str] = None,
              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDkimResult:
     """
-    This data source provides details about a specific Dkim resource in Oracle Cloud Infrastructure Email service.
-
-    Retrieves the specified DKIM.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_dkim = oci.Email.get_dkim(dkim_id=oci_email_dkim["test_dkim"]["id"])
-    ```
-
-
-    :param str dkim_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this DKIM.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['dkimId'] = dkim_id
@@ -268,20 +209,6 @@ def get_dkim(dkim_id: Optional[str] = None,
 def get_dkim_output(dkim_id: Optional[pulumi.Input[str]] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDkimResult]:
     """
-    This data source provides details about a specific Dkim resource in Oracle Cloud Infrastructure Email service.
-
-    Retrieves the specified DKIM.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_dkim = oci.Email.get_dkim(dkim_id=oci_email_dkim["test_dkim"]["id"])
-    ```
-
-
-    :param str dkim_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this DKIM.
+    Use this data source to access information about an existing resource.
     """
     ...

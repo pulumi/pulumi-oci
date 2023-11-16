@@ -16,20 +16,20 @@ namespace Pulumi.Oci.Kms.Outputs
         /// <summary>
         /// URL of the vault on external key manager.
         /// </summary>
-        public readonly string ExternalVaultEndpointUrl;
+        public readonly string? ExternalVaultEndpointUrl;
         public readonly ImmutableArray<Outputs.GetVaultsVaultExternalKeyManagerMetadataOauthMetadataResult> OauthMetadatas;
         /// <summary>
         /// OCID of the private endpoint.
         /// </summary>
-        public readonly string PrivateEndpointId;
+        public readonly string? PrivateEndpointId;
 
         [OutputConstructor]
         private GetVaultsVaultExternalKeyManagerMetadataResult(
-            string externalVaultEndpointUrl,
+            string? externalVaultEndpointUrl,
 
             ImmutableArray<Outputs.GetVaultsVaultExternalKeyManagerMetadataOauthMetadataResult> oauthMetadatas,
 
-            string privateEndpointId)
+            string? privateEndpointId)
         {
             ExternalVaultEndpointUrl = externalVaultEndpointUrl;
             OauthMetadatas = oauthMetadatas;

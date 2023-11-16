@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Compute Capacity Reservation Instances in Oracle Cloud Infrastructure Core service.
@@ -75,7 +74,7 @@ type GetComputeCapacityReservationInstancesResult struct {
 	CompartmentId *string                                        `pulumi:"compartmentId"`
 	Filters       []GetComputeCapacityReservationInstancesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 func GetComputeCapacityReservationInstancesOutput(ctx *pulumi.Context, args GetComputeCapacityReservationInstancesOutputArgs, opts ...pulumi.InvokeOption) GetComputeCapacityReservationInstancesResultOutput {
@@ -121,12 +120,6 @@ func (o GetComputeCapacityReservationInstancesResultOutput) ToGetComputeCapacity
 	return o
 }
 
-func (o GetComputeCapacityReservationInstancesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetComputeCapacityReservationInstancesResult] {
-	return pulumix.Output[GetComputeCapacityReservationInstancesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The availability domain the instance is running in.
 func (o GetComputeCapacityReservationInstancesResultOutput) AvailabilityDomain() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetComputeCapacityReservationInstancesResult) *string { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
@@ -155,8 +148,8 @@ func (o GetComputeCapacityReservationInstancesResultOutput) Filters() GetCompute
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetComputeCapacityReservationInstancesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputeCapacityReservationInstancesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetComputeCapacityReservationInstancesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputeCapacityReservationInstancesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func init() {

@@ -98,58 +98,37 @@ class GetMediaAssetResult:
 
     @property
     @pulumi.getter
-    def bucket(self) -> str:
-        """
-        The name of the object storage bucket where this represented asset is located.
-        """
+    def bucket(self) -> Optional[str]:
         return pulumi.get(self, "bucket")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The ID of the compartment containing the MediaAsset.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        Unique identifier that is immutable on creation.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="masterMediaAssetId")
-    def master_media_asset_id(self) -> str:
-        """
-        The ID of the senior most asset from which this asset is derived.
-        """
+    def master_media_asset_id(self) -> Optional[str]:
         return pulumi.get(self, "master_media_asset_id")
 
     @property
@@ -159,130 +138,82 @@ class GetMediaAssetResult:
 
     @property
     @pulumi.getter(name="mediaAssetTags")
-    def media_asset_tags(self) -> Sequence['outputs.GetMediaAssetMediaAssetTagResult']:
-        """
-        List of tags for the MediaAsset.
-        """
+    def media_asset_tags(self) -> Optional[Sequence['outputs.GetMediaAssetMediaAssetTagResult']]:
         return pulumi.get(self, "media_asset_tags")
 
     @property
     @pulumi.getter(name="mediaWorkflowJobId")
-    def media_workflow_job_id(self) -> str:
-        """
-        The ID of the MediaWorkflowJob used to produce this asset.
-        """
+    def media_workflow_job_id(self) -> Optional[str]:
         return pulumi.get(self, "media_workflow_job_id")
 
     @property
     @pulumi.getter
-    def metadatas(self) -> Sequence['outputs.GetMediaAssetMetadataResult']:
-        """
-        JSON string containing the technial metadata for the media asset.
-        """
+    def metadatas(self) -> Optional[Sequence['outputs.GetMediaAssetMetadataResult']]:
         return pulumi.get(self, "metadatas")
 
     @property
     @pulumi.getter
-    def namespace(self) -> str:
-        """
-        The object storage namespace where this asset is located.
-        """
+    def namespace(self) -> Optional[str]:
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter
-    def object(self) -> str:
-        """
-        The object storage object name that identifies this asset.
-        """
+    def object(self) -> Optional[str]:
         return pulumi.get(self, "object")
 
     @property
     @pulumi.getter(name="objectEtag")
-    def object_etag(self) -> str:
-        """
-        eTag of the underlying object storage object.
-        """
+    def object_etag(self) -> Optional[str]:
         return pulumi.get(self, "object_etag")
 
     @property
     @pulumi.getter(name="parentMediaAssetId")
-    def parent_media_asset_id(self) -> str:
-        """
-        The ID of the parent asset from which this asset is derived.
-        """
+    def parent_media_asset_id(self) -> Optional[str]:
         return pulumi.get(self, "parent_media_asset_id")
 
     @property
     @pulumi.getter(name="segmentRangeEndIndex")
-    def segment_range_end_index(self) -> str:
-        """
-        The end index of video segment files.
-        """
+    def segment_range_end_index(self) -> Optional[str]:
         return pulumi.get(self, "segment_range_end_index")
 
     @property
     @pulumi.getter(name="segmentRangeStartIndex")
-    def segment_range_start_index(self) -> str:
-        """
-        The start index for video segment files.
-        """
+    def segment_range_start_index(self) -> Optional[str]:
         return pulumi.get(self, "segment_range_start_index")
 
     @property
     @pulumi.getter(name="sourceMediaWorkflowId")
-    def source_media_workflow_id(self) -> str:
-        """
-        The ID of the MediaWorkflow used to produce this asset.
-        """
+    def source_media_workflow_id(self) -> Optional[str]:
         return pulumi.get(self, "source_media_workflow_id")
 
     @property
     @pulumi.getter(name="sourceMediaWorkflowVersion")
-    def source_media_workflow_version(self) -> str:
-        """
-        The version of the MediaWorkflow used to produce this asset.
-        """
+    def source_media_workflow_version(self) -> Optional[str]:
         return pulumi.get(self, "source_media_workflow_version")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the MediaAsset.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time when the MediaAsset was created. An RFC3339 formatted datetime string.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time when the MediaAsset was updated. An RFC3339 formatted datetime string.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        The type of the media asset.
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
 
@@ -321,21 +252,7 @@ class AwaitableGetMediaAssetResult(GetMediaAssetResult):
 def get_media_asset(media_asset_id: Optional[str] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMediaAssetResult:
     """
-    This data source provides details about a specific Media Asset resource in Oracle Cloud Infrastructure Media Services service.
-
-    Gets a MediaAsset by identifier.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_media_asset = oci.MediaServices.get_media_asset(media_asset_id=oci_media_services_media_asset["test_media_asset"]["id"])
-    ```
-
-
-    :param str media_asset_id: Unique MediaAsset identifier
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['mediaAssetId'] = media_asset_id
@@ -373,20 +290,6 @@ def get_media_asset(media_asset_id: Optional[str] = None,
 def get_media_asset_output(media_asset_id: Optional[pulumi.Input[str]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMediaAssetResult]:
     """
-    This data source provides details about a specific Media Asset resource in Oracle Cloud Infrastructure Media Services service.
-
-    Gets a MediaAsset by identifier.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_media_asset = oci.MediaServices.get_media_asset(media_asset_id=oci_media_services_media_asset["test_media_asset"]["id"])
-    ```
-
-
-    :param str media_asset_id: Unique MediaAsset identifier
+    Use this data source to access information about an existing resource.
     """
     ...

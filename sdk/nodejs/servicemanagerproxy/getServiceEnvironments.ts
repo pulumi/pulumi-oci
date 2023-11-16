@@ -79,11 +79,11 @@ export interface GetServiceEnvironmentsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of service_environment_collection.
      */
-    readonly serviceEnvironmentCollections: outputs.ServiceManagerProxy.GetServiceEnvironmentsServiceEnvironmentCollection[];
+    readonly serviceEnvironmentCollections?: outputs.ServiceManagerProxy.GetServiceEnvironmentsServiceEnvironmentCollection[];
     readonly serviceEnvironmentId?: string;
     readonly serviceEnvironmentType?: string;
 }

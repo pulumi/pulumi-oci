@@ -6,6 +6,8 @@ package com.pulumi.oci.Database.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfig {
@@ -13,27 +15,27 @@ public final class GetExternalContainerDatabasesExternalContainerDatabaseStackMo
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
      * 
      */
-    private String stackMonitoringConnectorId;
+    private @Nullable String stackMonitoringConnectorId;
     /**
      * @return The status of Stack Monitoring.
      * 
      */
-    private String stackMonitoringStatus;
+    private @Nullable String stackMonitoringStatus;
 
     private GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfig() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
      * 
      */
-    public String stackMonitoringConnectorId() {
-        return this.stackMonitoringConnectorId;
+    public Optional<String> stackMonitoringConnectorId() {
+        return Optional.ofNullable(this.stackMonitoringConnectorId);
     }
     /**
      * @return The status of Stack Monitoring.
      * 
      */
-    public String stackMonitoringStatus() {
-        return this.stackMonitoringStatus;
+    public Optional<String> stackMonitoringStatus() {
+        return Optional.ofNullable(this.stackMonitoringStatus);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetExternalContainerDatabasesExternalContainerDatabaseStackMo
     }
     @CustomType.Builder
     public static final class Builder {
-        private String stackMonitoringConnectorId;
-        private String stackMonitoringStatus;
+        private @Nullable String stackMonitoringConnectorId;
+        private @Nullable String stackMonitoringStatus;
         public Builder() {}
         public Builder(GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfig defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetExternalContainerDatabasesExternalContainerDatabaseStackMo
         }
 
         @CustomType.Setter
-        public Builder stackMonitoringConnectorId(String stackMonitoringConnectorId) {
-            this.stackMonitoringConnectorId = Objects.requireNonNull(stackMonitoringConnectorId);
+        public Builder stackMonitoringConnectorId(@Nullable String stackMonitoringConnectorId) {
+            this.stackMonitoringConnectorId = stackMonitoringConnectorId;
             return this;
         }
         @CustomType.Setter
-        public Builder stackMonitoringStatus(String stackMonitoringStatus) {
-            this.stackMonitoringStatus = Objects.requireNonNull(stackMonitoringStatus);
+        public Builder stackMonitoringStatus(@Nullable String stackMonitoringStatus) {
+            this.stackMonitoringStatus = stackMonitoringStatus;
             return this;
         }
         public GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfig build() {

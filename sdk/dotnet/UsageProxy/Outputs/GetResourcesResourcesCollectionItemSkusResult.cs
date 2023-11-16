@@ -16,23 +16,23 @@ namespace Pulumi.Oci.UsageProxy.Outputs
         /// <summary>
         /// The cloud credit type for the resource.
         /// </summary>
-        public readonly string CloudCreditType;
+        public readonly string? CloudCreditType;
         /// <summary>
         /// The Sku Id for the resource.
         /// </summary>
-        public readonly string SkuId;
+        public readonly string? SkuId;
         /// <summary>
         /// The Sku type for the resource.
         /// </summary>
-        public readonly string SkuType;
+        public readonly string? SkuType;
 
         [OutputConstructor]
         private GetResourcesResourcesCollectionItemSkusResult(
-            string cloudCreditType,
+            string? cloudCreditType,
 
-            string skuId,
+            string? skuId,
 
-            string skuType)
+            string? skuType)
         {
             CloudCreditType = cloudCreditType;
             SkuId = skuId;

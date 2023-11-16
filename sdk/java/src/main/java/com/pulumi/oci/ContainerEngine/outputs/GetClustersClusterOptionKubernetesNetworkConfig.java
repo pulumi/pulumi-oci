@@ -6,6 +6,8 @@ package com.pulumi.oci.ContainerEngine.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetClustersClusterOptionKubernetesNetworkConfig {
@@ -13,27 +15,27 @@ public final class GetClustersClusterOptionKubernetesNetworkConfig {
      * @return The CIDR block for Kubernetes pods. Optional, defaults to 10.244.0.0/16.
      * 
      */
-    private String podsCidr;
+    private @Nullable String podsCidr;
     /**
      * @return The CIDR block for Kubernetes services. Optional, defaults to 10.96.0.0/16.
      * 
      */
-    private String servicesCidr;
+    private @Nullable String servicesCidr;
 
     private GetClustersClusterOptionKubernetesNetworkConfig() {}
     /**
      * @return The CIDR block for Kubernetes pods. Optional, defaults to 10.244.0.0/16.
      * 
      */
-    public String podsCidr() {
-        return this.podsCidr;
+    public Optional<String> podsCidr() {
+        return Optional.ofNullable(this.podsCidr);
     }
     /**
      * @return The CIDR block for Kubernetes services. Optional, defaults to 10.96.0.0/16.
      * 
      */
-    public String servicesCidr() {
-        return this.servicesCidr;
+    public Optional<String> servicesCidr() {
+        return Optional.ofNullable(this.servicesCidr);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetClustersClusterOptionKubernetesNetworkConfig {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String podsCidr;
-        private String servicesCidr;
+        private @Nullable String podsCidr;
+        private @Nullable String servicesCidr;
         public Builder() {}
         public Builder(GetClustersClusterOptionKubernetesNetworkConfig defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetClustersClusterOptionKubernetesNetworkConfig {
         }
 
         @CustomType.Setter
-        public Builder podsCidr(String podsCidr) {
-            this.podsCidr = Objects.requireNonNull(podsCidr);
+        public Builder podsCidr(@Nullable String podsCidr) {
+            this.podsCidr = podsCidr;
             return this;
         }
         @CustomType.Setter
-        public Builder servicesCidr(String servicesCidr) {
-            this.servicesCidr = Objects.requireNonNull(servicesCidr);
+        public Builder servicesCidr(@Nullable String servicesCidr) {
+            this.servicesCidr = servicesCidr;
             return this;
         }
         public GetClustersClusterOptionKubernetesNetworkConfig build() {

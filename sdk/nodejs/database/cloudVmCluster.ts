@@ -95,11 +95,11 @@ export class CloudVmCluster extends pulumi.CustomResource {
     /**
      * The name of the availability domain that the cloud Exadata infrastructure resource is located in.
      */
-    public /*out*/ readonly availabilityDomain!: pulumi.Output<string>;
+    public /*out*/ readonly availabilityDomain!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
      */
-    public readonly backupNetworkNsgIds!: pulumi.Output<string[]>;
+    public readonly backupNetworkNsgIds!: pulumi.Output<string[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the cloud VM cluster.
      */
@@ -111,7 +111,7 @@ export class CloudVmCluster extends pulumi.CustomResource {
     /**
      * The cluster name for cloud VM cluster. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
      */
-    public readonly clusterName!: pulumi.Output<string>;
+    public readonly clusterName!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
@@ -131,31 +131,31 @@ export class CloudVmCluster extends pulumi.CustomResource {
     /**
      * (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
      */
-    public readonly dataCollectionOptions!: pulumi.Output<outputs.Database.CloudVmClusterDataCollectionOptions>;
+    public readonly dataCollectionOptions!: pulumi.Output<outputs.Database.CloudVmClusterDataCollectionOptions | undefined>;
     /**
      * The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 35, 40, 60 and 80. The default is 80 percent assigned to DATA storage. See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
      */
-    public readonly dataStoragePercentage!: pulumi.Output<number>;
+    public readonly dataStoragePercentage!: pulumi.Output<number | undefined>;
     /**
      * (Updatable) The data disk group size to be allocated in TBs.
      */
-    public readonly dataStorageSizeInTbs!: pulumi.Output<number>;
+    public readonly dataStorageSizeInTbs!: pulumi.Output<number | undefined>;
     /**
      * (Updatable) The local node storage to be allocated in GBs.
      */
-    public readonly dbNodeStorageSizeInGbs!: pulumi.Output<number>;
+    public readonly dbNodeStorageSizeInGbs!: pulumi.Output<number | undefined>;
     /**
      * The list of DB servers.
      */
-    public readonly dbServers!: pulumi.Output<string[]>;
+    public readonly dbServers!: pulumi.Output<string[] | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The type of redundancy configured for the cloud Vm cluster. NORMAL is 2-way redundancy. HIGH is 3-way redundancy.
      */
-    public /*out*/ readonly diskRedundancy!: pulumi.Output<string>;
+    public /*out*/ readonly diskRedundancy!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The user-friendly name for the cloud VM cluster. The name does not need to be unique.
      */
@@ -163,11 +163,11 @@ export class CloudVmCluster extends pulumi.CustomResource {
     /**
      * A domain name used for the cloud VM cluster. If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted. Applies to Exadata Cloud Service instances only.
      */
-    public readonly domain!: pulumi.Output<string>;
+    public readonly domain!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * A valid Oracle Grid Infrastructure (GI) software version.
      */
@@ -183,76 +183,76 @@ export class CloudVmCluster extends pulumi.CustomResource {
     /**
      * The IORM settings of the Exadata DB system.
      */
-    public /*out*/ readonly iormConfigCaches!: pulumi.Output<outputs.Database.CloudVmClusterIormConfigCach[]>;
+    public /*out*/ readonly iormConfigCaches!: pulumi.Output<outputs.Database.CloudVmClusterIormConfigCach[] | undefined>;
     /**
      * If true, database backup on local Exadata storage is configured for the cloud VM cluster. If false, database backup on local Exadata storage is not available in the cloud VM cluster.
      */
-    public readonly isLocalBackupEnabled!: pulumi.Output<boolean>;
+    public readonly isLocalBackupEnabled!: pulumi.Output<boolean | undefined>;
     /**
      * If true, the sparse disk group is configured for the cloud VM cluster. If false, the sparse disk group is not created.
      */
-    public readonly isSparseDiskgroupEnabled!: pulumi.Output<boolean>;
+    public readonly isSparseDiskgroupEnabled!: pulumi.Output<boolean | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history entry. This value is updated when a maintenance update starts.
      */
-    public /*out*/ readonly lastUpdateHistoryEntryId!: pulumi.Output<string>;
+    public /*out*/ readonly lastUpdateHistoryEntryId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The Oracle license model that applies to the cloud VM cluster. The default is BRING_YOUR_OWN_LICENSE.
      */
-    public readonly licenseModel!: pulumi.Output<string>;
+    public readonly licenseModel!: pulumi.Output<string | undefined>;
     /**
      * Additional information about the current lifecycle state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * The port number configured for the listener on the cloud VM cluster.
      */
-    public /*out*/ readonly listenerPort!: pulumi.Output<string>;
+    public /*out*/ readonly listenerPort!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The memory to be allocated in GBs.
      */
-    public readonly memorySizeInGbs!: pulumi.Output<number>;
+    public readonly memorySizeInGbs!: pulumi.Output<number | undefined>;
     /**
      * The number of nodes in the cloud VM cluster.
      */
-    public /*out*/ readonly nodeCount!: pulumi.Output<number>;
+    public /*out*/ readonly nodeCount!: pulumi.Output<number | undefined>;
     /**
      * (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
      * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
      */
-    public readonly nsgIds!: pulumi.Output<string[]>;
+    public readonly nsgIds!: pulumi.Output<string[] | undefined>;
     /**
      * (Updatable) The number of OCPU cores to enable for a cloud VM cluster. Only 1 decimal place is allowed for the fractional part.
      */
-    public readonly ocpuCount!: pulumi.Output<number>;
+    public readonly ocpuCount!: pulumi.Output<number | undefined>;
     /**
      * The private zone id in which DNS records need to be created.
      */
-    public readonly privateZoneId!: pulumi.Output<string>;
+    public readonly privateZoneId!: pulumi.Output<string | undefined>;
     /**
      * The FQDN of the DNS record for the SCAN IP addresses that are associated with the cloud VM cluster.
      */
-    public /*out*/ readonly scanDnsName!: pulumi.Output<string>;
+    public /*out*/ readonly scanDnsName!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DNS record for the SCAN IP addresses that are associated with the cloud VM cluster.
      */
-    public /*out*/ readonly scanDnsRecordId!: pulumi.Output<string>;
+    public /*out*/ readonly scanDnsRecordId!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the cloud VM cluster. SCAN IP addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
      */
-    public /*out*/ readonly scanIpIds!: pulumi.Output<string[]>;
+    public /*out*/ readonly scanIpIds!: pulumi.Output<string[] | undefined>;
     /**
      * The TCP Single Client Access Name (SCAN) port. The default port is 1521.
      */
-    public readonly scanListenerPortTcp!: pulumi.Output<number>;
+    public readonly scanListenerPortTcp!: pulumi.Output<number | undefined>;
     /**
      * The TCPS Single Client Access Name (SCAN) port. The default port is 2484.
      */
-    public readonly scanListenerPortTcpSsl!: pulumi.Output<number>;
+    public readonly scanListenerPortTcpSsl!: pulumi.Output<number | undefined>;
     /**
      * The model name of the Exadata hardware running the cloud VM cluster.
      */
-    public /*out*/ readonly shape!: pulumi.Output<string>;
+    public /*out*/ readonly shape!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The public key portion of one or more key pairs used for SSH access to the cloud VM cluster.
      */
@@ -260,11 +260,11 @@ export class CloudVmCluster extends pulumi.CustomResource {
     /**
      * The current state of the cloud VM cluster.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The storage allocation for the disk group, in gigabytes (GB).
      */
-    public /*out*/ readonly storageSizeInGbs!: pulumi.Output<number>;
+    public /*out*/ readonly storageSizeInGbs!: pulumi.Output<number | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the cloud VM cluster.
      */
@@ -272,11 +272,11 @@ export class CloudVmCluster extends pulumi.CustomResource {
     /**
      * Operating system version of the image.
      */
-    public /*out*/ readonly systemVersion!: pulumi.Output<string>;
+    public /*out*/ readonly systemVersion!: pulumi.Output<string | undefined>;
     /**
      * The date and time that the cloud VM cluster was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm). 
      *
@@ -284,15 +284,15 @@ export class CloudVmCluster extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly timeZone!: pulumi.Output<string>;
+    public readonly timeZone!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
      */
-    public /*out*/ readonly vipIds!: pulumi.Output<string[]>;
+    public /*out*/ readonly vipIds!: pulumi.Output<string[] | undefined>;
     /**
      * The OCID of the zone the cloud VM cluster is associated with.
      */
-    public /*out*/ readonly zoneId!: pulumi.Output<string>;
+    public /*out*/ readonly zoneId!: pulumi.Output<string | undefined>;
 
     /**
      * Create a CloudVmCluster resource with the given unique name, arguments, and options.

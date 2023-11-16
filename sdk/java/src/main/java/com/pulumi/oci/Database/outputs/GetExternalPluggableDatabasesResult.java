@@ -33,13 +33,13 @@ public final class GetExternalPluggableDatabasesResult {
      * @return The list of external_pluggable_databases.
      * 
      */
-    private List<GetExternalPluggableDatabasesExternalPluggableDatabase> externalPluggableDatabases;
+    private @Nullable List<GetExternalPluggableDatabasesExternalPluggableDatabase> externalPluggableDatabases;
     private @Nullable List<GetExternalPluggableDatabasesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The current state of the Oracle Cloud Infrastructure external database resource.
      * 
@@ -73,7 +73,7 @@ public final class GetExternalPluggableDatabasesResult {
      * 
      */
     public List<GetExternalPluggableDatabasesExternalPluggableDatabase> externalPluggableDatabases() {
-        return this.externalPluggableDatabases;
+        return this.externalPluggableDatabases == null ? List.of() : this.externalPluggableDatabases;
     }
     public List<GetExternalPluggableDatabasesFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -82,8 +82,8 @@ public final class GetExternalPluggableDatabasesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The current state of the Oracle Cloud Infrastructure external database resource.
@@ -105,9 +105,9 @@ public final class GetExternalPluggableDatabasesResult {
         private String compartmentId;
         private @Nullable String displayName;
         private @Nullable String externalContainerDatabaseId;
-        private List<GetExternalPluggableDatabasesExternalPluggableDatabase> externalPluggableDatabases;
+        private @Nullable List<GetExternalPluggableDatabasesExternalPluggableDatabase> externalPluggableDatabases;
         private @Nullable List<GetExternalPluggableDatabasesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetExternalPluggableDatabasesResult defaults) {
@@ -137,8 +137,8 @@ public final class GetExternalPluggableDatabasesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder externalPluggableDatabases(List<GetExternalPluggableDatabasesExternalPluggableDatabase> externalPluggableDatabases) {
-            this.externalPluggableDatabases = Objects.requireNonNull(externalPluggableDatabases);
+        public Builder externalPluggableDatabases(@Nullable List<GetExternalPluggableDatabasesExternalPluggableDatabase> externalPluggableDatabases) {
+            this.externalPluggableDatabases = externalPluggableDatabases;
             return this;
         }
         public Builder externalPluggableDatabases(GetExternalPluggableDatabasesExternalPluggableDatabase... externalPluggableDatabases) {
@@ -153,8 +153,8 @@ public final class GetExternalPluggableDatabasesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

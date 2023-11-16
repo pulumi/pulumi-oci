@@ -109,19 +109,19 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// **No longer used.** For Autonomous Database on dedicated Exadata infrastructure, the container database is created within a specified `cloudAutonomousVmCluster`.
         /// </summary>
-        public readonly string AutonomousExadataInfrastructureId;
+        public readonly string? AutonomousExadataInfrastructureId;
         /// <summary>
         /// The OCID of the Autonomous VM Cluster.
         /// </summary>
-        public readonly string AutonomousVmClusterId;
+        public readonly string? AutonomousVmClusterId;
         /// <summary>
         /// The availability domain of the Autonomous Container Database.
         /// </summary>
-        public readonly string AvailabilityDomain;
+        public readonly string? AvailabilityDomain;
         /// <summary>
         /// Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.&lt;br&gt; For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
         /// </summary>
-        public readonly double AvailableCpus;
+        public readonly double? AvailableCpus;
         /// <summary>
         /// Backup options for the Autonomous Container Database.
         /// </summary>
@@ -129,54 +129,54 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
         /// </summary>
-        public readonly string CloudAutonomousVmClusterId;
+        public readonly string? CloudAutonomousVmClusterId;
         /// <summary>
         /// The OCID of the compartment.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The compute model of the Autonomous VM Cluster.
         /// </summary>
-        public readonly string ComputeModel;
+        public readonly string? ComputeModel;
         /// <summary>
         /// The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
         /// </summary>
-        public readonly string DbName;
-        public readonly string DbUniqueName;
+        public readonly string? DbName;
+        public readonly string? DbUniqueName;
         /// <summary>
         /// Oracle Database version of the Autonomous Container Database.
         /// </summary>
-        public readonly string DbVersion;
+        public readonly string? DbVersion;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// The user-provided name for the Autonomous Container Database.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// DST Time Zone File version of the Autonomous Container Database.
         /// </summary>
-        public readonly string DstFileVersion;
-        public readonly int FastStartFailOverLagLimitInSeconds;
+        public readonly string? DstFileVersion;
+        public readonly int? FastStartFailOverLagLimitInSeconds;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The infrastructure type this resource belongs to.
         /// </summary>
-        public readonly string InfrastructureType;
-        public readonly bool IsAutomaticFailoverEnabled;
+        public readonly string? InfrastructureType;
+        public readonly bool? IsAutomaticFailoverEnabled;
         /// <summary>
         /// Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
         /// </summary>
-        public readonly bool IsDstFileUpdateEnabled;
+        public readonly bool? IsDstFileUpdateEnabled;
         /// <summary>
         /// Key History Entry.
         /// </summary>
@@ -184,27 +184,27 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
         /// </summary>
-        public readonly string KeyStoreId;
+        public readonly string? KeyStoreId;
         /// <summary>
         /// The wallet name for Oracle Key Vault.
         /// </summary>
-        public readonly string KeyStoreWalletName;
+        public readonly string? KeyStoreWalletName;
         /// <summary>
         /// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         /// </summary>
-        public readonly string KmsKeyId;
+        public readonly string? KmsKeyId;
         /// <summary>
         /// The largest Autonomous Database (CPU) that can be created in a new Autonomous Container Database.
         /// </summary>
-        public readonly double LargestProvisionableAutonomousDatabaseInCpus;
+        public readonly double? LargestProvisionableAutonomousDatabaseInCpus;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
         /// </summary>
-        public readonly string LastMaintenanceRunId;
+        public readonly string? LastMaintenanceRunId;
         /// <summary>
         /// Additional information about the current lifecycle state.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         public readonly ImmutableArray<Outputs.GetAutonomousContainerDatabaseMaintenanceWindowDetailResult> MaintenanceWindowDetails;
         /// <summary>
         /// The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
@@ -213,27 +213,27 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// The amount of memory (in GBs) enabled per OCPU or ECPU in the Autonomous VM Cluster.
         /// </summary>
-        public readonly int MemoryPerOracleComputeUnitInGbs;
+        public readonly int? MemoryPerOracleComputeUnitInGbs;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
         /// </summary>
-        public readonly string NextMaintenanceRunId;
+        public readonly string? NextMaintenanceRunId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch applied on the system.
         /// </summary>
-        public readonly string PatchId;
+        public readonly string? PatchId;
         /// <summary>
         /// Database patch model preference.
         /// </summary>
-        public readonly string PatchModel;
+        public readonly string? PatchModel;
         public readonly ImmutableArray<Outputs.GetAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigResult> PeerAutonomousContainerDatabaseBackupConfigs;
-        public readonly string PeerAutonomousContainerDatabaseCompartmentId;
-        public readonly string PeerAutonomousContainerDatabaseDisplayName;
-        public readonly string PeerAutonomousExadataInfrastructureId;
-        public readonly string PeerAutonomousVmClusterId;
-        public readonly string PeerCloudAutonomousVmClusterId;
-        public readonly string PeerDbUniqueName;
-        public readonly string ProtectionMode;
+        public readonly string? PeerAutonomousContainerDatabaseCompartmentId;
+        public readonly string? PeerAutonomousContainerDatabaseDisplayName;
+        public readonly string? PeerAutonomousExadataInfrastructureId;
+        public readonly string? PeerAutonomousVmClusterId;
+        public readonly string? PeerCloudAutonomousVmClusterId;
+        public readonly string? PeerDbUniqueName;
+        public readonly string? ProtectionMode;
         /// <summary>
         /// An array of CPU values that can be used to successfully provision a single Autonomous Database.\ For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
         /// </summary>
@@ -241,168 +241,168 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// The number of CPUs provisioned in an Autonomous Container Database.
         /// </summary>
-        public readonly double ProvisionedCpus;
+        public readonly double? ProvisionedCpus;
         /// <summary>
         /// For Autonomous Databases on Dedicated Exadata Infrastructure:
         /// * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
         /// * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
         /// </summary>
-        public readonly double ReclaimableCpus;
+        public readonly double? ReclaimableCpus;
         /// <summary>
         /// The number of CPUs reserved in an Autonomous Container Database.
         /// </summary>
-        public readonly double ReservedCpus;
+        public readonly double? ReservedCpus;
         /// <summary>
         /// The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
         /// </summary>
-        public readonly string Role;
-        public readonly bool RotateKeyTrigger;
+        public readonly string? Role;
+        public readonly bool? RotateKeyTrigger;
         /// <summary>
         /// The service level agreement type of the container database. The default is STANDARD.
         /// </summary>
-        public readonly string ServiceLevelAgreementType;
+        public readonly string? ServiceLevelAgreementType;
         /// <summary>
         /// The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database.
         /// </summary>
-        public readonly int StandbyMaintenanceBufferInDays;
+        public readonly int? StandbyMaintenanceBufferInDays;
         /// <summary>
         /// The current state of the Autonomous Container Database.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The date and time the Autonomous Container Database was created.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The date and time the Autonomous Container Database will be reverted to Standby from Snapshot Standby.
         /// </summary>
-        public readonly string TimeSnapshotStandbyRevert;
+        public readonly string? TimeSnapshotStandbyRevert;
         /// <summary>
         /// The number of CPUs allocated to the Autonomous VM cluster.&lt;br&gt; For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
         /// </summary>
-        public readonly int TotalCpus;
+        public readonly int? TotalCpus;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         /// </summary>
-        public readonly string VaultId;
+        public readonly string? VaultId;
         /// <summary>
         /// The next maintenance version preference.
         /// </summary>
-        public readonly string VersionPreference;
+        public readonly string? VersionPreference;
 
         [OutputConstructor]
         private GetAutonomousContainerDatabaseResult(
             string autonomousContainerDatabaseId,
 
-            string autonomousExadataInfrastructureId,
+            string? autonomousExadataInfrastructureId,
 
-            string autonomousVmClusterId,
+            string? autonomousVmClusterId,
 
-            string availabilityDomain,
+            string? availabilityDomain,
 
-            double availableCpus,
+            double? availableCpus,
 
             ImmutableArray<Outputs.GetAutonomousContainerDatabaseBackupConfigResult> backupConfigs,
 
-            string cloudAutonomousVmClusterId,
+            string? cloudAutonomousVmClusterId,
 
-            string compartmentId,
+            string? compartmentId,
 
-            string computeModel,
+            string? computeModel,
 
-            string dbName,
+            string? dbName,
 
-            string dbUniqueName,
+            string? dbUniqueName,
 
-            string dbVersion,
+            string? dbVersion,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string displayName,
+            string? displayName,
 
-            string dstFileVersion,
+            string? dstFileVersion,
 
-            int fastStartFailOverLagLimitInSeconds,
+            int? fastStartFailOverLagLimitInSeconds,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            string infrastructureType,
+            string? infrastructureType,
 
-            bool isAutomaticFailoverEnabled,
+            bool? isAutomaticFailoverEnabled,
 
-            bool isDstFileUpdateEnabled,
+            bool? isDstFileUpdateEnabled,
 
             ImmutableArray<Outputs.GetAutonomousContainerDatabaseKeyHistoryEntryResult> keyHistoryEntries,
 
-            string keyStoreId,
+            string? keyStoreId,
 
-            string keyStoreWalletName,
+            string? keyStoreWalletName,
 
-            string kmsKeyId,
+            string? kmsKeyId,
 
-            double largestProvisionableAutonomousDatabaseInCpus,
+            double? largestProvisionableAutonomousDatabaseInCpus,
 
-            string lastMaintenanceRunId,
+            string? lastMaintenanceRunId,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
             ImmutableArray<Outputs.GetAutonomousContainerDatabaseMaintenanceWindowDetailResult> maintenanceWindowDetails,
 
             ImmutableArray<Outputs.GetAutonomousContainerDatabaseMaintenanceWindowResult> maintenanceWindows,
 
-            int memoryPerOracleComputeUnitInGbs,
+            int? memoryPerOracleComputeUnitInGbs,
 
-            string nextMaintenanceRunId,
+            string? nextMaintenanceRunId,
 
-            string patchId,
+            string? patchId,
 
-            string patchModel,
+            string? patchModel,
 
             ImmutableArray<Outputs.GetAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigResult> peerAutonomousContainerDatabaseBackupConfigs,
 
-            string peerAutonomousContainerDatabaseCompartmentId,
+            string? peerAutonomousContainerDatabaseCompartmentId,
 
-            string peerAutonomousContainerDatabaseDisplayName,
+            string? peerAutonomousContainerDatabaseDisplayName,
 
-            string peerAutonomousExadataInfrastructureId,
+            string? peerAutonomousExadataInfrastructureId,
 
-            string peerAutonomousVmClusterId,
+            string? peerAutonomousVmClusterId,
 
-            string peerCloudAutonomousVmClusterId,
+            string? peerCloudAutonomousVmClusterId,
 
-            string peerDbUniqueName,
+            string? peerDbUniqueName,
 
-            string protectionMode,
+            string? protectionMode,
 
             ImmutableArray<double> provisionableCpuses,
 
-            double provisionedCpus,
+            double? provisionedCpus,
 
-            double reclaimableCpus,
+            double? reclaimableCpus,
 
-            double reservedCpus,
+            double? reservedCpus,
 
-            string role,
+            string? role,
 
-            bool rotateKeyTrigger,
+            bool? rotateKeyTrigger,
 
-            string serviceLevelAgreementType,
+            string? serviceLevelAgreementType,
 
-            int standbyMaintenanceBufferInDays,
+            int? standbyMaintenanceBufferInDays,
 
-            string state,
+            string? state,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeSnapshotStandbyRevert,
+            string? timeSnapshotStandbyRevert,
 
-            int totalCpus,
+            int? totalCpus,
 
-            string vaultId,
+            string? vaultId,
 
-            string versionPreference)
+            string? versionPreference)
         {
             AutonomousContainerDatabaseId = autonomousContainerDatabaseId;
             AutonomousExadataInfrastructureId = autonomousExadataInfrastructureId;

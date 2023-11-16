@@ -73,25 +73,25 @@ namespace Pulumi.Oci.ServiceMesh
         /// (Updatable) Routing policy for the virtual service.
         /// </summary>
         [Output("defaultRoutingPolicy")]
-        public Output<Outputs.VirtualServiceDefaultRoutingPolicy> DefaultRoutingPolicy { get; private set; } = null!;
+        public Output<Outputs.VirtualServiceDefaultRoutingPolicy?> DefaultRoutingPolicy { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
         /// </summary>
         [Output("description")]
-        public Output<string> Description { get; private set; } = null!;
+        public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The DNS hostnames of the virtual service that is used by its callers. Wildcard hostnames are supported in the prefix form. Examples of valid hostnames are "www.example.com", "*.example.com", "*.com". Can be omitted if the virtual service will only have TCP virtual deployments.
@@ -103,7 +103,7 @@ namespace Pulumi.Oci.ServiceMesh
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the service mesh in which this virtual service is created.
@@ -115,7 +115,7 @@ namespace Pulumi.Oci.ServiceMesh
         /// (Updatable) The mTLS authentication mode to use when receiving requests from other virtual services or ingress gateways within the mesh.
         /// </summary>
         [Output("mtls")]
-        public Output<Outputs.VirtualServiceMtls> Mtls { get; private set; } = null!;
+        public Output<Outputs.VirtualServiceMtls?> Mtls { get; private set; } = null!;
 
         /// <summary>
         /// A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name` 
@@ -131,25 +131,25 @@ namespace Pulumi.Oci.ServiceMesh
         /// The current state of the Resource.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
         [Output("systemTags")]
-        public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// The time when this resource was created in an RFC3339 formatted datetime string.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The time when this resource was updated in an RFC3339 formatted datetime string.
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
 
         /// <summary>

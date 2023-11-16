@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.CloudBridge.outputs.GetAssetSourcesAssetSourceCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAssetSourcesAssetSourceCollection {
-    private List<GetAssetSourcesAssetSourceCollectionItem> items;
+    private @Nullable List<GetAssetSourcesAssetSourceCollectionItem> items;
 
     private GetAssetSourcesAssetSourceCollection() {}
     public List<GetAssetSourcesAssetSourceCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetAssetSourcesAssetSourceCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetAssetSourcesAssetSourceCollectionItem> items;
+        private @Nullable List<GetAssetSourcesAssetSourceCollectionItem> items;
         public Builder() {}
         public Builder(GetAssetSourcesAssetSourceCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetAssetSourcesAssetSourceCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetAssetSourcesAssetSourceCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetAssetSourcesAssetSourceCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetAssetSourcesAssetSourceCollectionItem... items) {

@@ -88,19 +88,19 @@ export class AddressActionVerification extends pulumi.CustomResource {
     /**
      * Address identifier.
      */
-    public readonly addressKey!: pulumi.Output<string>;
+    public readonly addressKey!: pulumi.Output<string | undefined>;
     /**
      * Address details model.
      */
-    public /*out*/ readonly addresses!: pulumi.Output<outputs.OspGateway.AddressActionVerificationAddress[]>;
+    public /*out*/ readonly addresses!: pulumi.Output<outputs.OspGateway.AddressActionVerificationAddress[] | undefined>;
     /**
      * Name of the city.
      */
-    public readonly city!: pulumi.Output<string>;
+    public readonly city!: pulumi.Output<string | undefined>;
     /**
      * Name of the customer company.
      */
-    public readonly companyName!: pulumi.Output<string>;
+    public readonly companyName!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
@@ -108,63 +108,63 @@ export class AddressActionVerification extends pulumi.CustomResource {
     /**
      * Contributor class of the customer company.
      */
-    public readonly contributorClass!: pulumi.Output<string>;
+    public readonly contributorClass!: pulumi.Output<string | undefined>;
     /**
      * Country of the address.
      */
-    public readonly country!: pulumi.Output<string>;
+    public readonly country!: pulumi.Output<string | undefined>;
     /**
      * County of the address.
      */
-    public readonly county!: pulumi.Output<string>;
+    public readonly county!: pulumi.Output<string | undefined>;
     /**
      * Department name of the customer company.
      */
-    public readonly departmentName!: pulumi.Output<string>;
+    public readonly departmentName!: pulumi.Output<string | undefined>;
     /**
      * Contact person email address.
      */
-    public readonly emailAddress!: pulumi.Output<string>;
+    public readonly emailAddress!: pulumi.Output<string | undefined>;
     /**
      * First name of the contact person.
      */
-    public readonly firstName!: pulumi.Output<string>;
+    public readonly firstName!: pulumi.Output<string | undefined>;
     /**
      * Internal number of the customer company.
      */
-    public readonly internalNumber!: pulumi.Output<string>;
+    public readonly internalNumber!: pulumi.Output<string | undefined>;
     /**
      * Job title of the contact person.
      */
-    public readonly jobTitle!: pulumi.Output<string>;
+    public readonly jobTitle!: pulumi.Output<string | undefined>;
     /**
      * Last name of the contact person.
      */
-    public readonly lastName!: pulumi.Output<string>;
+    public readonly lastName!: pulumi.Output<string | undefined>;
     /**
      * Address line 1.
      */
-    public readonly line1!: pulumi.Output<string>;
+    public readonly line1!: pulumi.Output<string | undefined>;
     /**
      * Address line 2.
      */
-    public readonly line2!: pulumi.Output<string>;
+    public readonly line2!: pulumi.Output<string | undefined>;
     /**
      * Address line 3.
      */
-    public readonly line3!: pulumi.Output<string>;
+    public readonly line3!: pulumi.Output<string | undefined>;
     /**
      * Address line 4.
      */
-    public readonly line4!: pulumi.Output<string>;
+    public readonly line4!: pulumi.Output<string | undefined>;
     /**
      * Middle name of the contact person.
      */
-    public readonly middleName!: pulumi.Output<string>;
+    public readonly middleName!: pulumi.Output<string | undefined>;
     /**
      * Municipal Inscription.
      */
-    public readonly municipalInscription!: pulumi.Output<string>;
+    public readonly municipalInscription!: pulumi.Output<string | undefined>;
     /**
      * The home region's public name of the logged in user.
      */
@@ -172,35 +172,35 @@ export class AddressActionVerification extends pulumi.CustomResource {
     /**
      * Phone country code of the contact person.
      */
-    public readonly phoneCountryCode!: pulumi.Output<string>;
+    public readonly phoneCountryCode!: pulumi.Output<string | undefined>;
     /**
      * Phone number of the contact person.
      */
-    public readonly phoneNumber!: pulumi.Output<string>;
+    public readonly phoneNumber!: pulumi.Output<string | undefined>;
     /**
      * Post code of the address.
      */
-    public readonly postalCode!: pulumi.Output<string>;
+    public readonly postalCode!: pulumi.Output<string | undefined>;
     /**
      * Province of the address.
      */
-    public readonly province!: pulumi.Output<string>;
+    public readonly province!: pulumi.Output<string | undefined>;
     /**
      * Address quality type.
      */
-    public /*out*/ readonly quality!: pulumi.Output<string>;
+    public /*out*/ readonly quality!: pulumi.Output<string | undefined>;
     /**
      * State of the address.
      */
-    public readonly state!: pulumi.Output<string>;
+    public readonly state!: pulumi.Output<string | undefined>;
     /**
      * State Inscription.
      */
-    public readonly stateInscription!: pulumi.Output<string>;
+    public readonly stateInscription!: pulumi.Output<string | undefined>;
     /**
      * Street name of the address.
      */
-    public readonly streetName!: pulumi.Output<string>;
+    public readonly streetName!: pulumi.Output<string | undefined>;
     /**
      * Street number of the address.
      *
@@ -208,11 +208,11 @@ export class AddressActionVerification extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly streetNumber!: pulumi.Output<string>;
+    public readonly streetNumber!: pulumi.Output<string | undefined>;
     /**
      * Address verification code.
      */
-    public /*out*/ readonly verificationCode!: pulumi.Output<string>;
+    public /*out*/ readonly verificationCode!: pulumi.Output<string | undefined>;
 
     /**
      * Create a AddressActionVerification resource with the given unique name, arguments, and options.

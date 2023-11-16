@@ -56,7 +56,7 @@ export interface GetRunStatementsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The ID of a run.
      */
@@ -68,7 +68,7 @@ export interface GetRunStatementsResult {
     /**
      * The list of statement_collection.
      */
-    readonly statementCollections: outputs.DataFlow.GetRunStatementsStatementCollection[];
+    readonly statementCollections?: outputs.DataFlow.GetRunStatementsStatementCollection[];
 }
 /**
  * This data source provides the list of Run Statements in Oracle Cloud Infrastructure Data Flow service.

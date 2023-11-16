@@ -45,88 +45,88 @@ export interface GetSqlFirewallPolicyResult {
     /**
      * The list of allowed ip addresses for the SQL firewall policy.
      */
-    readonly allowedClientIps: string[];
+    readonly allowedClientIps?: string[];
     /**
      * The list of allowed operating system user names for the SQL firewall policy.
      */
-    readonly allowedClientOsUsernames: string[];
+    readonly allowedClientOsUsernames?: string[];
     /**
      * The list of allowed client programs for the SQL firewall policy.
      */
-    readonly allowedClientPrograms: string[];
+    readonly allowedClientPrograms?: string[];
     /**
      * The OCID of the compartment containing the SQL firewall policy.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * The database user name.
      */
-    readonly dbUserName: string;
+    readonly dbUserName?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * The description of the SQL firewall policy.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * The display name of the SQL firewall policy.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Specifies the SQL firewall policy enforcement option.
      */
-    readonly enforcementScope: string;
+    readonly enforcementScope?: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The OCID of the SQL firewall policy.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Details about the current state of the SQL firewall policy in Data Safe.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * The OCID of the security policy corresponding to the SQL firewall policy.
      */
-    readonly securityPolicyId: string;
+    readonly securityPolicyId?: string;
     readonly sqlFirewallPolicyId: string;
     /**
      * Specifies the level of SQL included for this SQL firewall policy. USER_ISSUED_SQL - User issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
      */
-    readonly sqlLevel: string;
+    readonly sqlLevel?: string;
     /**
      * The current state of the SQL firewall policy.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * Specifies whether the SQL firewall policy is enabled or disabled.
      */
-    readonly status: string;
+    readonly status?: string;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * The time that the SQL firewall policy was created, in the format defined by RFC3339.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The date and time the SQL firewall policy was last updated, in the format defined by RFC3339.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
     /**
      * Specifies the mode in which the SQL firewall policy is enabled.
      */
-    readonly violationAction: string;
+    readonly violationAction?: string;
     /**
      * Specifies whether a unified audit policy should be enabled for auditing the SQL firewall policy violations.
      */
-    readonly violationAudit: string;
+    readonly violationAudit?: string;
 }
 /**
  * This data source provides details about a specific Sql Firewall Policy resource in Oracle Cloud Infrastructure Data Safe service.

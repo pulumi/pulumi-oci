@@ -99,19 +99,19 @@ namespace Pulumi.Oci.OsManagementHub
         /// The architecture type supported by the software source.
         /// </summary>
         [Output("archType")]
-        public Output<string> ArchType { get; private set; } = null!;
+        public Output<string?> ArchType { get; private set; } = null!;
 
         /// <summary>
         /// Possible availabilities of a software source.
         /// </summary>
         [Output("availability")]
-        public Output<string> Availability { get; private set; } = null!;
+        public Output<string?> Availability { get; private set; } = null!;
 
         /// <summary>
         /// The yum repository checksum type used by this software source.
         /// </summary>
         [Output("checksumType")]
-        public Output<string> ChecksumType { get; private set; } = null!;
+        public Output<string?> ChecksumType { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The OCID of the tenancy containing the software source.
@@ -123,19 +123,19 @@ namespace Pulumi.Oci.OsManagementHub
         /// (Updatable) Used to apply filters to a VendorSoftwareSource to create/update CustomSoftwareSources.
         /// </summary>
         [Output("customSoftwareSourceFilter")]
-        public Output<Outputs.SoftwareSourceCustomSoftwareSourceFilter> CustomSoftwareSourceFilter { get; private set; } = null!;
+        public Output<Outputs.SoftwareSourceCustomSoftwareSourceFilter?> CustomSoftwareSourceFilter { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Information specified by the user about the software source.
         /// </summary>
         [Output("description")]
-        public Output<string> Description { get; private set; } = null!;
+        public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) User friendly name.
@@ -147,49 +147,49 @@ namespace Pulumi.Oci.OsManagementHub
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// Fingerprint of the GPG key for this software source.
         /// </summary>
         [Output("gpgKeyFingerprint")]
-        public Output<string> GpgKeyFingerprint { get; private set; } = null!;
+        public Output<string?> GpgKeyFingerprint { get; private set; } = null!;
 
         /// <summary>
         /// ID of the GPG key for this software source.
         /// </summary>
         [Output("gpgKeyId")]
-        public Output<string> GpgKeyId { get; private set; } = null!;
+        public Output<string?> GpgKeyId { get; private set; } = null!;
 
         /// <summary>
         /// URL of the GPG key for this software source.
         /// </summary>
         [Output("gpgKeyUrl")]
-        public Output<string> GpgKeyUrl { get; private set; } = null!;
+        public Output<string?> GpgKeyUrl { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Indicates whether service should automatically update the custom software source for the user.
         /// </summary>
         [Output("isAutomaticallyUpdated")]
-        public Output<bool> IsAutomaticallyUpdated { get; private set; } = null!;
+        public Output<bool?> IsAutomaticallyUpdated { get; private set; } = null!;
 
         /// <summary>
         /// The OS family the software source belongs to.
         /// </summary>
         [Output("osFamily")]
-        public Output<string> OsFamily { get; private set; } = null!;
+        public Output<string?> OsFamily { get; private set; } = null!;
 
         /// <summary>
         /// Number of packages.
         /// </summary>
         [Output("packageCount")]
-        public Output<string> PackageCount { get; private set; } = null!;
+        public Output<string?> PackageCount { get; private set; } = null!;
 
         /// <summary>
         /// The Repo ID for the software source.
         /// </summary>
         [Output("repoId")]
-        public Output<string> RepoId { get; private set; } = null!;
+        public Output<string?> RepoId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Type of the software source.
@@ -201,37 +201,37 @@ namespace Pulumi.Oci.OsManagementHub
         /// The version to assign to this custom software source.
         /// </summary>
         [Output("softwareSourceVersion")]
-        public Output<string> SoftwareSourceVersion { get; private set; } = null!;
+        public Output<string?> SoftwareSourceVersion { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the software source.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
         [Output("systemTags")]
-        public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the software source was created, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// URL for the repository.
         /// </summary>
         [Output("url")]
-        public Output<string> Url { get; private set; } = null!;
+        public Output<string?> Url { get; private set; } = null!;
 
         /// <summary>
         /// Name of the vendor providing the software source.
         /// </summary>
         [Output("vendorName")]
-        public Output<string> VendorName { get; private set; } = null!;
+        public Output<string?> VendorName { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) List of vendor software sources.

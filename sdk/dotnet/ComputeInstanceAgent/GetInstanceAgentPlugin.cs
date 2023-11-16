@@ -129,43 +129,43 @@ namespace Pulumi.Oci.ComputeInstanceAgent
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string InstanceagentId;
         /// <summary>
         /// The optional message from the agent plugin
         /// </summary>
-        public readonly string Message;
+        public readonly string? Message;
         /// <summary>
         /// The plugin name
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         public readonly string PluginName;
         /// <summary>
         /// The plugin status Specified the plugin state on the instance * `RUNNING` - The plugin is in running state * `STOPPED` - The plugin is in stopped state * `NOT_SUPPORTED` - The plugin is not supported on this platform * `INVALID` - The plugin state is not recognizable by the service
         /// </summary>
-        public readonly string Status;
+        public readonly string? Status;
         /// <summary>
         /// The last update time of the plugin in UTC
         /// </summary>
-        public readonly string TimeLastUpdatedUtc;
+        public readonly string? TimeLastUpdatedUtc;
 
         [OutputConstructor]
         private GetInstanceAgentPluginResult(
             string compartmentId,
 
-            string id,
+            string? id,
 
             string instanceagentId,
 
-            string message,
+            string? message,
 
-            string name,
+            string? name,
 
             string pluginName,
 
-            string status,
+            string? status,
 
-            string timeLastUpdatedUtc)
+            string? timeLastUpdatedUtc)
         {
             CompartmentId = compartmentId;
             Id = id;

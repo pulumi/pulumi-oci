@@ -64,14 +64,14 @@ public class AutonomousDatabaseRegionalWalletManagement extends com.pulumi.resou
      * 
      */
     @Export(name="gracePeriod", refs={Integer.class}, tree="[0]")
-    private Output<Integer> gracePeriod;
+    private Output</* @Nullable */ Integer> gracePeriod;
 
     /**
      * @return (Updatable) The number of hours that the old wallet can be used after it has been rotated. The old wallet will no longer be valid after the number of hours in the wallet rotation grace period has passed. During the grace period, both the old wallet and the current wallet can be used.
      * 
      */
-    public Output<Integer> gracePeriod() {
-        return this.gracePeriod;
+    public Output<Optional<Integer>> gracePeriod() {
+        return Codegen.optional(this.gracePeriod);
     }
     /**
      * (Updatable) Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
@@ -98,28 +98,28 @@ public class AutonomousDatabaseRegionalWalletManagement extends com.pulumi.resou
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current lifecycle state of the Autonomous Database wallet.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The date and time the wallet was last rotated.
      * 
      */
     @Export(name="timeRotated", refs={String.class}, tree="[0]")
-    private Output<String> timeRotated;
+    private Output</* @Nullable */ String> timeRotated;
 
     /**
      * @return The date and time the wallet was last rotated.
      * 
      */
-    public Output<String> timeRotated() {
-        return this.timeRotated;
+    public Output<Optional<String>> timeRotated() {
+        return Codegen.optional(this.timeRotated);
     }
 
     /**

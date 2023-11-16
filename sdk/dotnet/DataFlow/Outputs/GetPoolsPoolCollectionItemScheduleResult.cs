@@ -16,23 +16,23 @@ namespace Pulumi.Oci.DataFlow.Outputs
         /// <summary>
         /// Day of the week SUN-SAT
         /// </summary>
-        public readonly string DayOfWeek;
+        public readonly string? DayOfWeek;
         /// <summary>
         /// Hour of the day to start or stop pool.
         /// </summary>
-        public readonly int StartTime;
+        public readonly int? StartTime;
         /// <summary>
         /// Hour of the day to stop the pool.
         /// </summary>
-        public readonly int StopTime;
+        public readonly int? StopTime;
 
         [OutputConstructor]
         private GetPoolsPoolCollectionItemScheduleResult(
-            string dayOfWeek,
+            string? dayOfWeek,
 
-            int startTime,
+            int? startTime,
 
-            int stopTime)
+            int? stopTime)
         {
             DayOfWeek = dayOfWeek;
             StartTime = startTime;

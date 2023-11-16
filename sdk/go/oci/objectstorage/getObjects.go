@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Objects in Oracle Cloud Infrastructure Object Storage service.
@@ -60,8 +59,8 @@ type GetObjectsResult struct {
 	End       *string            `pulumi:"end"`
 	Filters   []GetObjectsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id        string `pulumi:"id"`
-	Namespace string `pulumi:"namespace"`
+	Id        *string `pulumi:"id"`
+	Namespace string  `pulumi:"namespace"`
 	// The list of list_objects.
 	Objects    []GetObjectsObject `pulumi:"objects"`
 	Prefix     *string            `pulumi:"prefix"`
@@ -121,12 +120,6 @@ func (o GetObjectsResultOutput) ToGetObjectsResultOutputWithContext(ctx context.
 	return o
 }
 
-func (o GetObjectsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetObjectsResult] {
-	return pulumix.Output[GetObjectsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetObjectsResultOutput) Bucket() pulumi.StringOutput {
 	return o.ApplyT(func(v GetObjectsResult) string { return v.Bucket }).(pulumi.StringOutput)
 }
@@ -144,8 +137,8 @@ func (o GetObjectsResultOutput) Filters() GetObjectsFilterArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetObjectsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetObjectsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetObjectsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetObjectsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetObjectsResultOutput) Namespace() pulumi.StringOutput {

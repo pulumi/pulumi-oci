@@ -9,6 +9,7 @@ import com.pulumi.oci.DataLabellingService.outputs.GetAnnotationFormatsFilter;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -17,14 +18,14 @@ public final class GetAnnotationFormatsResult {
      * @return The list of annotation_format_collection.
      * 
      */
-    private List<GetAnnotationFormatsAnnotationFormatCollection> annotationFormatCollections;
+    private @Nullable List<GetAnnotationFormatsAnnotationFormatCollection> annotationFormatCollections;
     private String compartmentId;
     private @Nullable List<GetAnnotationFormatsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
 
     private GetAnnotationFormatsResult() {}
     /**
@@ -32,7 +33,7 @@ public final class GetAnnotationFormatsResult {
      * 
      */
     public List<GetAnnotationFormatsAnnotationFormatCollection> annotationFormatCollections() {
-        return this.annotationFormatCollections;
+        return this.annotationFormatCollections == null ? List.of() : this.annotationFormatCollections;
     }
     public String compartmentId() {
         return this.compartmentId;
@@ -44,8 +45,8 @@ public final class GetAnnotationFormatsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
 
     public static Builder builder() {
@@ -57,10 +58,10 @@ public final class GetAnnotationFormatsResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetAnnotationFormatsAnnotationFormatCollection> annotationFormatCollections;
+        private @Nullable List<GetAnnotationFormatsAnnotationFormatCollection> annotationFormatCollections;
         private String compartmentId;
         private @Nullable List<GetAnnotationFormatsFilter> filters;
-        private String id;
+        private @Nullable String id;
         public Builder() {}
         public Builder(GetAnnotationFormatsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -71,8 +72,8 @@ public final class GetAnnotationFormatsResult {
         }
 
         @CustomType.Setter
-        public Builder annotationFormatCollections(List<GetAnnotationFormatsAnnotationFormatCollection> annotationFormatCollections) {
-            this.annotationFormatCollections = Objects.requireNonNull(annotationFormatCollections);
+        public Builder annotationFormatCollections(@Nullable List<GetAnnotationFormatsAnnotationFormatCollection> annotationFormatCollections) {
+            this.annotationFormatCollections = annotationFormatCollections;
             return this;
         }
         public Builder annotationFormatCollections(GetAnnotationFormatsAnnotationFormatCollection... annotationFormatCollections) {
@@ -92,8 +93,8 @@ public final class GetAnnotationFormatsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         public GetAnnotationFormatsResult build() {

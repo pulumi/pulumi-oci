@@ -122,27 +122,27 @@ namespace Pulumi.Oci.Marketplace
         /// <summary>
         /// The ID of the listing resource associated with this publication package. For more information, see [AppCatalogListing](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListing/) in the Core Services API.
         /// </summary>
-        public readonly string AppCatalogListingId;
+        public readonly string? AppCatalogListingId;
         /// <summary>
         /// The resource version of the listing resource associated with this publication package.
         /// </summary>
-        public readonly string AppCatalogListingResourceVersion;
+        public readonly string? AppCatalogListingResourceVersion;
         /// <summary>
         /// A description of the variable.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The ID of the image that corresponds to the package.
         /// </summary>
-        public readonly string ImageId;
+        public readonly string? ImageId;
         /// <summary>
         /// The ID of the listing that the specified package belongs to.
         /// </summary>
-        public readonly string ListingId;
+        public readonly string? ListingId;
         /// <summary>
         /// The operating system used by the listing.
         /// </summary>
@@ -150,21 +150,21 @@ namespace Pulumi.Oci.Marketplace
         /// <summary>
         /// The specified package's type.
         /// </summary>
-        public readonly string PackageType;
+        public readonly string? PackageType;
         public readonly string PackageVersion;
         public readonly string PublicationId;
         /// <summary>
         /// The unique identifier for the package resource.
         /// </summary>
-        public readonly string ResourceId;
+        public readonly string? ResourceId;
         /// <summary>
         /// A link to the stack resource.
         /// </summary>
-        public readonly string ResourceLink;
+        public readonly string? ResourceLink;
         /// <summary>
         /// The date and time the publication package was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// A list of variables for the stack resource.
         /// </summary>
@@ -172,39 +172,39 @@ namespace Pulumi.Oci.Marketplace
         /// <summary>
         /// The package version.
         /// </summary>
-        public readonly string Version;
+        public readonly string? Version;
 
         [OutputConstructor]
         private GetPublicationPackageResult(
-            string appCatalogListingId,
+            string? appCatalogListingId,
 
-            string appCatalogListingResourceVersion,
+            string? appCatalogListingResourceVersion,
 
-            string description,
+            string? description,
 
-            string id,
+            string? id,
 
-            string imageId,
+            string? imageId,
 
-            string listingId,
+            string? listingId,
 
             ImmutableArray<Outputs.GetPublicationPackageOperatingSystemResult> operatingSystems,
 
-            string packageType,
+            string? packageType,
 
             string packageVersion,
 
             string publicationId,
 
-            string resourceId,
+            string? resourceId,
 
-            string resourceLink,
+            string? resourceLink,
 
-            string timeCreated,
+            string? timeCreated,
 
             ImmutableArray<Outputs.GetPublicationPackageVariableResult> variables,
 
-            string version)
+            string? version)
         {
             AppCatalogListingId = appCatalogListingId;
             AppCatalogListingResourceVersion = appCatalogListingResourceVersion;

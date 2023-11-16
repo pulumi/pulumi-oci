@@ -8,6 +8,8 @@ import com.pulumi.oci.LoadBalancer.outputs.GetListenerRulesListenerRuleRule;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetListenerRulesListenerRule {
@@ -15,31 +17,31 @@ public final class GetListenerRulesListenerRule {
      * @return The name of the rule set that the rule belongs to.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return A rule object that applies to the listener.
      * 
      */
-    private List<GetListenerRulesListenerRuleRule> rules;
-    private String state;
+    private @Nullable List<GetListenerRulesListenerRuleRule> rules;
+    private @Nullable String state;
 
     private GetListenerRulesListenerRule() {}
     /**
      * @return The name of the rule set that the rule belongs to.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return A rule object that applies to the listener.
      * 
      */
     public List<GetListenerRulesListenerRuleRule> rules() {
-        return this.rules;
+        return this.rules == null ? List.of() : this.rules;
     }
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
 
     public static Builder builder() {
@@ -51,9 +53,9 @@ public final class GetListenerRulesListenerRule {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String name;
-        private List<GetListenerRulesListenerRuleRule> rules;
-        private String state;
+        private @Nullable String name;
+        private @Nullable List<GetListenerRulesListenerRuleRule> rules;
+        private @Nullable String state;
         public Builder() {}
         public Builder(GetListenerRulesListenerRule defaults) {
     	      Objects.requireNonNull(defaults);
@@ -63,21 +65,21 @@ public final class GetListenerRulesListenerRule {
         }
 
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder rules(List<GetListenerRulesListenerRuleRule> rules) {
-            this.rules = Objects.requireNonNull(rules);
+        public Builder rules(@Nullable List<GetListenerRulesListenerRuleRule> rules) {
+            this.rules = rules;
             return this;
         }
         public Builder rules(GetListenerRulesListenerRuleRule... rules) {
             return rules(List.of(rules));
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         public GetListenerRulesListenerRule build() {

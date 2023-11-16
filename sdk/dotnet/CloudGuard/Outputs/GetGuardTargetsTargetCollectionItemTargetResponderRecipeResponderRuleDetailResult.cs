@@ -16,7 +16,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// <summary>
         /// Base condition object
         /// </summary>
-        public readonly string Condition;
+        public readonly string? Condition;
         /// <summary>
         /// ResponderRule configurations
         /// </summary>
@@ -24,21 +24,21 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// <summary>
         /// Identifies state for ResponderRule
         /// </summary>
-        public readonly bool IsEnabled;
+        public readonly bool? IsEnabled;
         /// <summary>
         /// Execution Mode for ResponderRule
         /// </summary>
-        public readonly string Mode;
+        public readonly string? Mode;
 
         [OutputConstructor]
         private GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailResult(
-            string condition,
+            string? condition,
 
             ImmutableArray<Outputs.GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailConfigurationResult> configurations,
 
-            bool isEnabled,
+            bool? isEnabled,
 
-            string mode)
+            string? mode)
         {
             Condition = condition;
             Configurations = configurations;

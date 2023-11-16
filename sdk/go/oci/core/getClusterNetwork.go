@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Cluster Network resource in Oracle Cloud Infrastructure Core service.
@@ -62,17 +61,17 @@ type LookupClusterNetworkResult struct {
 	ClusterConfigurations []GetClusterNetworkClusterConfiguration `pulumi:"clusterConfigurations"`
 	ClusterNetworkId      string                                  `pulumi:"clusterNetworkId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC island used by the cluster network.
-	HpcIslandId string `pulumi:"hpcIslandId"`
+	HpcIslandId *string `pulumi:"hpcIslandId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer attachment.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The instance pools in the cluster network.
 	InstancePools []GetClusterNetworkInstancePool `pulumi:"instancePools"`
 	// The list of network block OCIDs of the HPC island.
@@ -80,11 +79,11 @@ type LookupClusterNetworkResult struct {
 	// The location for where the instance pools in a cluster network will place instances.
 	PlacementConfigurations []GetClusterNetworkPlacementConfiguration `pulumi:"placementConfigurations"`
 	// The current state of the cluster network.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the resource was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the resource was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func LookupClusterNetworkOutput(ctx *pulumi.Context, args LookupClusterNetworkOutputArgs, opts ...pulumi.InvokeOption) LookupClusterNetworkResultOutput {
@@ -125,12 +124,6 @@ func (o LookupClusterNetworkResultOutput) ToLookupClusterNetworkResultOutputWith
 	return o
 }
 
-func (o LookupClusterNetworkResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupClusterNetworkResult] {
-	return pulumix.Output[LookupClusterNetworkResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o LookupClusterNetworkResultOutput) ClusterConfigurations() GetClusterNetworkClusterConfigurationArrayOutput {
 	return o.ApplyT(func(v LookupClusterNetworkResult) []GetClusterNetworkClusterConfiguration {
 		return v.ClusterConfigurations
@@ -142,8 +135,8 @@ func (o LookupClusterNetworkResultOutput) ClusterNetworkId() pulumi.StringOutput
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
-func (o LookupClusterNetworkResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupClusterNetworkResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupClusterNetworkResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupClusterNetworkResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -152,8 +145,8 @@ func (o LookupClusterNetworkResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
-func (o LookupClusterNetworkResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupClusterNetworkResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupClusterNetworkResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupClusterNetworkResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -162,13 +155,13 @@ func (o LookupClusterNetworkResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC island used by the cluster network.
-func (o LookupClusterNetworkResultOutput) HpcIslandId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupClusterNetworkResult) string { return v.HpcIslandId }).(pulumi.StringOutput)
+func (o LookupClusterNetworkResultOutput) HpcIslandId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupClusterNetworkResult) *string { return v.HpcIslandId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer attachment.
-func (o LookupClusterNetworkResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupClusterNetworkResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupClusterNetworkResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupClusterNetworkResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The instance pools in the cluster network.
@@ -189,18 +182,18 @@ func (o LookupClusterNetworkResultOutput) PlacementConfigurations() GetClusterNe
 }
 
 // The current state of the cluster network.
-func (o LookupClusterNetworkResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupClusterNetworkResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupClusterNetworkResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupClusterNetworkResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-func (o LookupClusterNetworkResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupClusterNetworkResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupClusterNetworkResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupClusterNetworkResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-func (o LookupClusterNetworkResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupClusterNetworkResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupClusterNetworkResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupClusterNetworkResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

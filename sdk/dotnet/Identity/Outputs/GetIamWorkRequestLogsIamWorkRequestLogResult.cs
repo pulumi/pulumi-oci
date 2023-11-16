@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// A human-readable error string.
         /// </summary>
-        public readonly string Message;
+        public readonly string? Message;
         /// <summary>
         /// Date and time the log was written, in the format defined by RFC3339. Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
-        public readonly string Timestamp;
+        public readonly string? Timestamp;
 
         [OutputConstructor]
         private GetIamWorkRequestLogsIamWorkRequestLogResult(
-            string message,
+            string? message,
 
-            string timestamp)
+            string? timestamp)
         {
             Message = message;
             Timestamp = timestamp;

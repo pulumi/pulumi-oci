@@ -16,35 +16,35 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
         /// </summary>
-        public readonly int LagTimeInSeconds;
+        public readonly int? LagTimeInSeconds;
         /// <summary>
         /// Additional information about the current lifecycle state.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// The current state of the Autonomous Database.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
         /// </summary>
-        public readonly string TimeDataGuardRoleChanged;
+        public readonly string? TimeDataGuardRoleChanged;
         /// <summary>
         /// The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
         /// </summary>
-        public readonly string TimeDisasterRecoveryRoleChanged;
+        public readonly string? TimeDisasterRecoveryRoleChanged;
 
         [OutputConstructor]
         private GetAutonomousDatabaseLocalStandbyDbResult(
-            int lagTimeInSeconds,
+            int? lagTimeInSeconds,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string state,
+            string? state,
 
-            string timeDataGuardRoleChanged,
+            string? timeDataGuardRoleChanged,
 
-            string timeDisasterRecoveryRoleChanged)
+            string? timeDisasterRecoveryRoleChanged)
         {
             LagTimeInSeconds = lagTimeInSeconds;
             LifecycleDetails = lifecycleDetails;

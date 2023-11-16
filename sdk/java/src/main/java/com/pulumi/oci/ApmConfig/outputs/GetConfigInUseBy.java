@@ -6,6 +6,8 @@ package com.pulumi.oci.ApmConfig.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetConfigInUseBy {
@@ -13,51 +15,51 @@ public final class GetConfigInUseBy {
      * @return The type of configuration item.
      * 
      */
-    private String configType;
+    private @Nullable String configType;
     /**
      * @return The name by which a configuration entity is displayed to the end user.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID is generated when the item is created.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return A string that specifies the group that an OPTIONS item belongs to.
      * 
      */
-    private String optionsGroup;
+    private @Nullable String optionsGroup;
 
     private GetConfigInUseBy() {}
     /**
      * @return The type of configuration item.
      * 
      */
-    public String configType() {
-        return this.configType;
+    public Optional<String> configType() {
+        return Optional.ofNullable(this.configType);
     }
     /**
      * @return The name by which a configuration entity is displayed to the end user.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID is generated when the item is created.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return A string that specifies the group that an OPTIONS item belongs to.
      * 
      */
-    public String optionsGroup() {
-        return this.optionsGroup;
+    public Optional<String> optionsGroup() {
+        return Optional.ofNullable(this.optionsGroup);
     }
 
     public static Builder builder() {
@@ -69,10 +71,10 @@ public final class GetConfigInUseBy {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String configType;
-        private String displayName;
-        private String id;
-        private String optionsGroup;
+        private @Nullable String configType;
+        private @Nullable String displayName;
+        private @Nullable String id;
+        private @Nullable String optionsGroup;
         public Builder() {}
         public Builder(GetConfigInUseBy defaults) {
     	      Objects.requireNonNull(defaults);
@@ -83,23 +85,23 @@ public final class GetConfigInUseBy {
         }
 
         @CustomType.Setter
-        public Builder configType(String configType) {
-            this.configType = Objects.requireNonNull(configType);
+        public Builder configType(@Nullable String configType) {
+            this.configType = configType;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder optionsGroup(String optionsGroup) {
-            this.optionsGroup = Objects.requireNonNull(optionsGroup);
+        public Builder optionsGroup(@Nullable String optionsGroup) {
+            this.optionsGroup = optionsGroup;
             return this;
         }
         public GetConfigInUseBy build() {

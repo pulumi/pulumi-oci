@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Network Firewall Policy Decryption Rule resource in Oracle Cloud Infrastructure Network Firewall service.
@@ -42,10 +41,10 @@ type NetworkFirewallPolicyDecryptionRule struct {
 	// Unique Network Firewall Policy identifier
 	NetworkFirewallPolicyId pulumi.StringOutput `pulumi:"networkFirewallPolicyId"`
 	// OCID of the Network Firewall Policy this decryption rule belongs to.
-	ParentResourceId pulumi.StringOutput `pulumi:"parentResourceId"`
+	ParentResourceId pulumi.StringPtrOutput `pulumi:"parentResourceId"`
 	// (Updatable) An object which defines the position of the rule. Only one of `afterRule` or `beforeRule` should be provided.
-	Position      NetworkFirewallPolicyDecryptionRulePositionOutput `pulumi:"position"`
-	PriorityOrder pulumi.StringPtrOutput                            `pulumi:"priorityOrder"`
+	Position      NetworkFirewallPolicyDecryptionRulePositionPtrOutput `pulumi:"position"`
+	PriorityOrder pulumi.StringPtrOutput                               `pulumi:"priorityOrder"`
 	// (Updatable) The name of a mapped secret. Its `type` must match that of the specified decryption profile.
 	Secret pulumi.StringPtrOutput `pulumi:"secret"`
 }
@@ -200,12 +199,6 @@ func (i *NetworkFirewallPolicyDecryptionRule) ToNetworkFirewallPolicyDecryptionR
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkFirewallPolicyDecryptionRuleOutput)
 }
 
-func (i *NetworkFirewallPolicyDecryptionRule) ToOutput(ctx context.Context) pulumix.Output[*NetworkFirewallPolicyDecryptionRule] {
-	return pulumix.Output[*NetworkFirewallPolicyDecryptionRule]{
-		OutputState: i.ToNetworkFirewallPolicyDecryptionRuleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // NetworkFirewallPolicyDecryptionRuleArrayInput is an input type that accepts NetworkFirewallPolicyDecryptionRuleArray and NetworkFirewallPolicyDecryptionRuleArrayOutput values.
 // You can construct a concrete instance of `NetworkFirewallPolicyDecryptionRuleArrayInput` via:
 //
@@ -229,12 +222,6 @@ func (i NetworkFirewallPolicyDecryptionRuleArray) ToNetworkFirewallPolicyDecrypt
 
 func (i NetworkFirewallPolicyDecryptionRuleArray) ToNetworkFirewallPolicyDecryptionRuleArrayOutputWithContext(ctx context.Context) NetworkFirewallPolicyDecryptionRuleArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkFirewallPolicyDecryptionRuleArrayOutput)
-}
-
-func (i NetworkFirewallPolicyDecryptionRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]*NetworkFirewallPolicyDecryptionRule] {
-	return pulumix.Output[[]*NetworkFirewallPolicyDecryptionRule]{
-		OutputState: i.ToNetworkFirewallPolicyDecryptionRuleArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // NetworkFirewallPolicyDecryptionRuleMapInput is an input type that accepts NetworkFirewallPolicyDecryptionRuleMap and NetworkFirewallPolicyDecryptionRuleMapOutput values.
@@ -262,12 +249,6 @@ func (i NetworkFirewallPolicyDecryptionRuleMap) ToNetworkFirewallPolicyDecryptio
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkFirewallPolicyDecryptionRuleMapOutput)
 }
 
-func (i NetworkFirewallPolicyDecryptionRuleMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*NetworkFirewallPolicyDecryptionRule] {
-	return pulumix.Output[map[string]*NetworkFirewallPolicyDecryptionRule]{
-		OutputState: i.ToNetworkFirewallPolicyDecryptionRuleMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type NetworkFirewallPolicyDecryptionRuleOutput struct{ *pulumi.OutputState }
 
 func (NetworkFirewallPolicyDecryptionRuleOutput) ElementType() reflect.Type {
@@ -280,12 +261,6 @@ func (o NetworkFirewallPolicyDecryptionRuleOutput) ToNetworkFirewallPolicyDecryp
 
 func (o NetworkFirewallPolicyDecryptionRuleOutput) ToNetworkFirewallPolicyDecryptionRuleOutputWithContext(ctx context.Context) NetworkFirewallPolicyDecryptionRuleOutput {
 	return o
-}
-
-func (o NetworkFirewallPolicyDecryptionRuleOutput) ToOutput(ctx context.Context) pulumix.Output[*NetworkFirewallPolicyDecryptionRule] {
-	return pulumix.Output[*NetworkFirewallPolicyDecryptionRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Action:
@@ -318,15 +293,15 @@ func (o NetworkFirewallPolicyDecryptionRuleOutput) NetworkFirewallPolicyId() pul
 }
 
 // OCID of the Network Firewall Policy this decryption rule belongs to.
-func (o NetworkFirewallPolicyDecryptionRuleOutput) ParentResourceId() pulumi.StringOutput {
-	return o.ApplyT(func(v *NetworkFirewallPolicyDecryptionRule) pulumi.StringOutput { return v.ParentResourceId }).(pulumi.StringOutput)
+func (o NetworkFirewallPolicyDecryptionRuleOutput) ParentResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NetworkFirewallPolicyDecryptionRule) pulumi.StringPtrOutput { return v.ParentResourceId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) An object which defines the position of the rule. Only one of `afterRule` or `beforeRule` should be provided.
-func (o NetworkFirewallPolicyDecryptionRuleOutput) Position() NetworkFirewallPolicyDecryptionRulePositionOutput {
-	return o.ApplyT(func(v *NetworkFirewallPolicyDecryptionRule) NetworkFirewallPolicyDecryptionRulePositionOutput {
+func (o NetworkFirewallPolicyDecryptionRuleOutput) Position() NetworkFirewallPolicyDecryptionRulePositionPtrOutput {
+	return o.ApplyT(func(v *NetworkFirewallPolicyDecryptionRule) NetworkFirewallPolicyDecryptionRulePositionPtrOutput {
 		return v.Position
-	}).(NetworkFirewallPolicyDecryptionRulePositionOutput)
+	}).(NetworkFirewallPolicyDecryptionRulePositionPtrOutput)
 }
 
 func (o NetworkFirewallPolicyDecryptionRuleOutput) PriorityOrder() pulumi.StringPtrOutput {
@@ -352,12 +327,6 @@ func (o NetworkFirewallPolicyDecryptionRuleArrayOutput) ToNetworkFirewallPolicyD
 	return o
 }
 
-func (o NetworkFirewallPolicyDecryptionRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*NetworkFirewallPolicyDecryptionRule] {
-	return pulumix.Output[[]*NetworkFirewallPolicyDecryptionRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o NetworkFirewallPolicyDecryptionRuleArrayOutput) Index(i pulumi.IntInput) NetworkFirewallPolicyDecryptionRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *NetworkFirewallPolicyDecryptionRule {
 		return vs[0].([]*NetworkFirewallPolicyDecryptionRule)[vs[1].(int)]
@@ -376,12 +345,6 @@ func (o NetworkFirewallPolicyDecryptionRuleMapOutput) ToNetworkFirewallPolicyDec
 
 func (o NetworkFirewallPolicyDecryptionRuleMapOutput) ToNetworkFirewallPolicyDecryptionRuleMapOutputWithContext(ctx context.Context) NetworkFirewallPolicyDecryptionRuleMapOutput {
 	return o
-}
-
-func (o NetworkFirewallPolicyDecryptionRuleMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*NetworkFirewallPolicyDecryptionRule] {
-	return pulumix.Output[map[string]*NetworkFirewallPolicyDecryptionRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o NetworkFirewallPolicyDecryptionRuleMapOutput) MapIndex(k pulumi.StringInput) NetworkFirewallPolicyDecryptionRuleOutput {

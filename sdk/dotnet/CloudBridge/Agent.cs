@@ -60,7 +60,7 @@ namespace Pulumi.Oci.CloudBridge
         /// Resource principal public key.
         /// </summary>
         [Output("agentPubKey")]
-        public Output<string> AgentPubKey { get; private set; } = null!;
+        public Output<string?> AgentPubKey { get; private set; } = null!;
 
         /// <summary>
         /// Agent identifier.
@@ -84,7 +84,7 @@ namespace Pulumi.Oci.CloudBridge
         /// (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Agent identifier.
@@ -102,19 +102,19 @@ namespace Pulumi.Oci.CloudBridge
         /// (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// The current heartbeat status of the Agent based on its timeLastSyncReceived value.
         /// </summary>
         [Output("heartBeatStatus")]
-        public Output<string> HeartBeatStatus { get; private set; } = null!;
+        public Output<string?> HeartBeatStatus { get; private set; } = null!;
 
         /// <summary>
         /// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// OS version.
@@ -136,37 +136,37 @@ namespace Pulumi.Oci.CloudBridge
         /// The current state of the Agent.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
         /// </summary>
         [Output("systemTags")]
-        public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// The time when the Agent was created. An RFC3339 formatted datetime string.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The time since epoch for when the public key will expire. An RFC3339 formatted datetime string.
         /// </summary>
         [Output("timeExpireAgentKeyInMs")]
-        public Output<string> TimeExpireAgentKeyInMs { get; private set; } = null!;
+        public Output<string?> TimeExpireAgentKeyInMs { get; private set; } = null!;
 
         /// <summary>
         /// The time when the last heartbeat of the Agent was noted. An RFC3339 formatted datetime string.
         /// </summary>
         [Output("timeLastSyncReceived")]
-        public Output<string> TimeLastSyncReceived { get; private set; } = null!;
+        public Output<string?> TimeLastSyncReceived { get; private set; } = null!;
 
         /// <summary>
         /// The time when the Agent was updated. An RFC3339 formatted datetime string.
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
 
         /// <summary>

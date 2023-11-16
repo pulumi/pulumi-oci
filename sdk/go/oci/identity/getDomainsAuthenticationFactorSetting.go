@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Authentication Factor Setting resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -79,40 +78,40 @@ type LookupDomainsAuthenticationFactorSettingResult struct {
 	AuthenticationFactorSettingId *string  `pulumi:"authenticationFactorSettingId"`
 	Authorization                 *string  `pulumi:"authorization"`
 	// If true, indicates that email will not be enrolled as a MFA factor automatically if it a account recovery factor
-	AutoEnrollEmailFactorDisabled bool `pulumi:"autoEnrollEmailFactorDisabled"`
+	AutoEnrollEmailFactorDisabled *bool `pulumi:"autoEnrollEmailFactorDisabled"`
 	// If true, indicates that Bypass Code is enabled for authentication
-	BypassCodeEnabled bool `pulumi:"bypassCodeEnabled"`
+	BypassCodeEnabled *bool `pulumi:"bypassCodeEnabled"`
 	// Settings related to the bypass code, such as bypass code length, bypass code expiry, max active bypass codes, and so on
 	BypassCodeSettings []GetDomainsAuthenticationFactorSettingBypassCodeSetting `pulumi:"bypassCodeSettings"`
 	// Settings related to compliance, Personal Identification Number (PIN) policy, and so on
 	ClientAppSettings []GetDomainsAuthenticationFactorSettingClientAppSetting `pulumi:"clientAppSettings"`
 	// Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
-	CompartmentOcid string `pulumi:"compartmentOcid"`
+	CompartmentOcid *string `pulumi:"compartmentOcid"`
 	// Compliance Policy that defines actions to be taken when a condition is violated
 	CompliancePolicies []GetDomainsAuthenticationFactorSettingCompliancePolicy `pulumi:"compliancePolicies"`
 	// A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
-	DeleteInProgress bool `pulumi:"deleteInProgress"`
+	DeleteInProgress *bool `pulumi:"deleteInProgress"`
 	// Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
-	DomainOcid string `pulumi:"domainOcid"`
+	DomainOcid *string `pulumi:"domainOcid"`
 	// If true, indicates that the EMAIL channel is enabled for authentication
-	EmailEnabled bool `pulumi:"emailEnabled"`
+	EmailEnabled *bool `pulumi:"emailEnabled"`
 	// Settings related to Email Factor, such as enabled email magic link factor, custom url for Email Link
 	EmailSettings []GetDomainsAuthenticationFactorSettingEmailSetting `pulumi:"emailSettings"`
 	// Settings that describe the set of restrictions that the system should apply to devices and trusted endpoints of a user
 	EndpointRestrictions []GetDomainsAuthenticationFactorSettingEndpointRestriction `pulumi:"endpointRestrictions"`
 	// If true, indicates that the Fido Authenticator channels are enabled for authentication
-	FidoAuthenticatorEnabled bool `pulumi:"fidoAuthenticatorEnabled"`
+	FidoAuthenticatorEnabled *bool `pulumi:"fidoAuthenticatorEnabled"`
 	// If true, indicates that 'Show backup factor(s)' button will be hidden during authentication
-	HideBackupFactorEnabled bool `pulumi:"hideBackupFactorEnabled"`
+	HideBackupFactorEnabled *bool `pulumi:"hideBackupFactorEnabled"`
 	// Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The User or App who created the Resource
 	IdcsCreatedBies []GetDomainsAuthenticationFactorSettingIdcsCreatedBy `pulumi:"idcsCreatedBies"`
 	IdcsEndpoint    string                                               `pulumi:"idcsEndpoint"`
 	// The User or App who modified the Resource
 	IdcsLastModifiedBies []GetDomainsAuthenticationFactorSettingIdcsLastModifiedBy `pulumi:"idcsLastModifiedBies"`
 	// The release number when the resource was upgraded.
-	IdcsLastUpgradedInRelease string `pulumi:"idcsLastUpgradedInRelease"`
+	IdcsLastUpgradedInRelease *string `pulumi:"idcsLastUpgradedInRelease"`
 	// Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
 	IdcsPreventedOperations []string `pulumi:"idcsPreventedOperations"`
 	// Settings related to the use of a user's profile details from the identity store
@@ -120,32 +119,32 @@ type LookupDomainsAuthenticationFactorSettingResult struct {
 	// A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
 	Metas []GetDomainsAuthenticationFactorSettingMeta `pulumi:"metas"`
 	// Specifies the category of people for whom Multi-Factor Authentication is enabled. This is a readOnly attribute which reflects the value of mfaEnabledCategory attribute in SsoSettings
-	MfaEnabledCategory string `pulumi:"mfaEnabledCategory"`
+	MfaEnabledCategory *string `pulumi:"mfaEnabledCategory"`
 	// Specifies if Multi-Factor Authentication enrollment is mandatory or optional for a user
-	MfaEnrollmentType string `pulumi:"mfaEnrollmentType"`
+	MfaEnrollmentType *string `pulumi:"mfaEnrollmentType"`
 	// Settings related to the Mobile App Notification channel, such as pull
 	NotificationSettings []GetDomainsAuthenticationFactorSettingNotificationSetting `pulumi:"notificationSettings"`
 	// Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
-	Ocid string `pulumi:"ocid"`
+	Ocid *string `pulumi:"ocid"`
 	// If true, indicates that the phone (PHONE_CALL) channel is enabled for authentication
-	PhoneCallEnabled bool `pulumi:"phoneCallEnabled"`
+	PhoneCallEnabled *bool `pulumi:"phoneCallEnabled"`
 	// If true, indicates that the Mobile App Push Notification channel is enabled for authentication
-	PushEnabled               bool    `pulumi:"pushEnabled"`
+	PushEnabled               *bool   `pulumi:"pushEnabled"`
 	ResourceTypeSchemaVersion *string `pulumi:"resourceTypeSchemaVersion"`
 	// REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
 	Schemas []string `pulumi:"schemas"`
 	// If true, indicates that Security Questions are enabled for authentication
-	SecurityQuestionsEnabled bool `pulumi:"securityQuestionsEnabled"`
+	SecurityQuestionsEnabled *bool `pulumi:"securityQuestionsEnabled"`
 	// If true, indicates that the Short Message Service (SMS) channel is enabled for authentication
-	SmsEnabled bool `pulumi:"smsEnabled"`
+	SmsEnabled *bool `pulumi:"smsEnabled"`
 	// A list of tags on this resource.
 	Tags []GetDomainsAuthenticationFactorSettingTag `pulumi:"tags"`
 	// Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
-	TenancyOcid string `pulumi:"tenancyOcid"`
+	TenancyOcid *string `pulumi:"tenancyOcid"`
 	// Settings related to third-party factor
 	ThirdPartyFactors []GetDomainsAuthenticationFactorSettingThirdPartyFactor `pulumi:"thirdPartyFactors"`
 	// If true, indicates that the Mobile App One Time Passcode channel is enabled for authentication
-	TotpEnabled bool `pulumi:"totpEnabled"`
+	TotpEnabled *bool `pulumi:"totpEnabled"`
 	// Settings related to Time-Based One-Time Passcodes (TOTP), such as hashing algo, totp time step, passcode length, and so on
 	TotpSettings []GetDomainsAuthenticationFactorSettingTotpSetting `pulumi:"totpSettings"`
 	// This extension defines attributes used to manage Multi-Factor Authentication settings of fido authentication
@@ -155,7 +154,7 @@ type LookupDomainsAuthenticationFactorSettingResult struct {
 	// Factors for which enrollment should be blocked for End User
 	UserEnrollmentDisabledFactors []string `pulumi:"userEnrollmentDisabledFactors"`
 	// If true, indicates that the Yubico OTP is enabled for authentication
-	YubicoOtpEnabled bool `pulumi:"yubicoOtpEnabled"`
+	YubicoOtpEnabled *bool `pulumi:"yubicoOtpEnabled"`
 }
 
 func LookupDomainsAuthenticationFactorSettingOutput(ctx *pulumi.Context, args LookupDomainsAuthenticationFactorSettingOutputArgs, opts ...pulumi.InvokeOption) LookupDomainsAuthenticationFactorSettingResultOutput {
@@ -206,12 +205,6 @@ func (o LookupDomainsAuthenticationFactorSettingResultOutput) ToLookupDomainsAut
 	return o
 }
 
-func (o LookupDomainsAuthenticationFactorSettingResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupDomainsAuthenticationFactorSettingResult] {
-	return pulumix.Output[LookupDomainsAuthenticationFactorSettingResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o LookupDomainsAuthenticationFactorSettingResultOutput) AttributeSets() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupDomainsAuthenticationFactorSettingResult) []string { return v.AttributeSets }).(pulumi.StringArrayOutput)
 }
@@ -229,13 +222,13 @@ func (o LookupDomainsAuthenticationFactorSettingResultOutput) Authorization() pu
 }
 
 // If true, indicates that email will not be enrolled as a MFA factor automatically if it a account recovery factor
-func (o LookupDomainsAuthenticationFactorSettingResultOutput) AutoEnrollEmailFactorDisabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDomainsAuthenticationFactorSettingResult) bool { return v.AutoEnrollEmailFactorDisabled }).(pulumi.BoolOutput)
+func (o LookupDomainsAuthenticationFactorSettingResultOutput) AutoEnrollEmailFactorDisabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAuthenticationFactorSettingResult) *bool { return v.AutoEnrollEmailFactorDisabled }).(pulumi.BoolPtrOutput)
 }
 
 // If true, indicates that Bypass Code is enabled for authentication
-func (o LookupDomainsAuthenticationFactorSettingResultOutput) BypassCodeEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDomainsAuthenticationFactorSettingResult) bool { return v.BypassCodeEnabled }).(pulumi.BoolOutput)
+func (o LookupDomainsAuthenticationFactorSettingResultOutput) BypassCodeEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAuthenticationFactorSettingResult) *bool { return v.BypassCodeEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // Settings related to the bypass code, such as bypass code length, bypass code expiry, max active bypass codes, and so on
@@ -253,8 +246,8 @@ func (o LookupDomainsAuthenticationFactorSettingResultOutput) ClientAppSettings(
 }
 
 // Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
-func (o LookupDomainsAuthenticationFactorSettingResultOutput) CompartmentOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsAuthenticationFactorSettingResult) string { return v.CompartmentOcid }).(pulumi.StringOutput)
+func (o LookupDomainsAuthenticationFactorSettingResultOutput) CompartmentOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAuthenticationFactorSettingResult) *string { return v.CompartmentOcid }).(pulumi.StringPtrOutput)
 }
 
 // Compliance Policy that defines actions to be taken when a condition is violated
@@ -265,18 +258,18 @@ func (o LookupDomainsAuthenticationFactorSettingResultOutput) CompliancePolicies
 }
 
 // A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
-func (o LookupDomainsAuthenticationFactorSettingResultOutput) DeleteInProgress() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDomainsAuthenticationFactorSettingResult) bool { return v.DeleteInProgress }).(pulumi.BoolOutput)
+func (o LookupDomainsAuthenticationFactorSettingResultOutput) DeleteInProgress() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAuthenticationFactorSettingResult) *bool { return v.DeleteInProgress }).(pulumi.BoolPtrOutput)
 }
 
 // Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
-func (o LookupDomainsAuthenticationFactorSettingResultOutput) DomainOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsAuthenticationFactorSettingResult) string { return v.DomainOcid }).(pulumi.StringOutput)
+func (o LookupDomainsAuthenticationFactorSettingResultOutput) DomainOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAuthenticationFactorSettingResult) *string { return v.DomainOcid }).(pulumi.StringPtrOutput)
 }
 
 // If true, indicates that the EMAIL channel is enabled for authentication
-func (o LookupDomainsAuthenticationFactorSettingResultOutput) EmailEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDomainsAuthenticationFactorSettingResult) bool { return v.EmailEnabled }).(pulumi.BoolOutput)
+func (o LookupDomainsAuthenticationFactorSettingResultOutput) EmailEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAuthenticationFactorSettingResult) *bool { return v.EmailEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // Settings related to Email Factor, such as enabled email magic link factor, custom url for Email Link
@@ -294,18 +287,18 @@ func (o LookupDomainsAuthenticationFactorSettingResultOutput) EndpointRestrictio
 }
 
 // If true, indicates that the Fido Authenticator channels are enabled for authentication
-func (o LookupDomainsAuthenticationFactorSettingResultOutput) FidoAuthenticatorEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDomainsAuthenticationFactorSettingResult) bool { return v.FidoAuthenticatorEnabled }).(pulumi.BoolOutput)
+func (o LookupDomainsAuthenticationFactorSettingResultOutput) FidoAuthenticatorEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAuthenticationFactorSettingResult) *bool { return v.FidoAuthenticatorEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // If true, indicates that 'Show backup factor(s)' button will be hidden during authentication
-func (o LookupDomainsAuthenticationFactorSettingResultOutput) HideBackupFactorEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDomainsAuthenticationFactorSettingResult) bool { return v.HideBackupFactorEnabled }).(pulumi.BoolOutput)
+func (o LookupDomainsAuthenticationFactorSettingResultOutput) HideBackupFactorEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAuthenticationFactorSettingResult) *bool { return v.HideBackupFactorEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
-func (o LookupDomainsAuthenticationFactorSettingResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsAuthenticationFactorSettingResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupDomainsAuthenticationFactorSettingResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAuthenticationFactorSettingResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The User or App who created the Resource
@@ -327,8 +320,8 @@ func (o LookupDomainsAuthenticationFactorSettingResultOutput) IdcsLastModifiedBi
 }
 
 // The release number when the resource was upgraded.
-func (o LookupDomainsAuthenticationFactorSettingResultOutput) IdcsLastUpgradedInRelease() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsAuthenticationFactorSettingResult) string { return v.IdcsLastUpgradedInRelease }).(pulumi.StringOutput)
+func (o LookupDomainsAuthenticationFactorSettingResultOutput) IdcsLastUpgradedInRelease() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAuthenticationFactorSettingResult) *string { return v.IdcsLastUpgradedInRelease }).(pulumi.StringPtrOutput)
 }
 
 // Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
@@ -351,13 +344,13 @@ func (o LookupDomainsAuthenticationFactorSettingResultOutput) Metas() GetDomains
 }
 
 // Specifies the category of people for whom Multi-Factor Authentication is enabled. This is a readOnly attribute which reflects the value of mfaEnabledCategory attribute in SsoSettings
-func (o LookupDomainsAuthenticationFactorSettingResultOutput) MfaEnabledCategory() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsAuthenticationFactorSettingResult) string { return v.MfaEnabledCategory }).(pulumi.StringOutput)
+func (o LookupDomainsAuthenticationFactorSettingResultOutput) MfaEnabledCategory() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAuthenticationFactorSettingResult) *string { return v.MfaEnabledCategory }).(pulumi.StringPtrOutput)
 }
 
 // Specifies if Multi-Factor Authentication enrollment is mandatory or optional for a user
-func (o LookupDomainsAuthenticationFactorSettingResultOutput) MfaEnrollmentType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsAuthenticationFactorSettingResult) string { return v.MfaEnrollmentType }).(pulumi.StringOutput)
+func (o LookupDomainsAuthenticationFactorSettingResultOutput) MfaEnrollmentType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAuthenticationFactorSettingResult) *string { return v.MfaEnrollmentType }).(pulumi.StringPtrOutput)
 }
 
 // Settings related to the Mobile App Notification channel, such as pull
@@ -368,18 +361,18 @@ func (o LookupDomainsAuthenticationFactorSettingResultOutput) NotificationSettin
 }
 
 // Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
-func (o LookupDomainsAuthenticationFactorSettingResultOutput) Ocid() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsAuthenticationFactorSettingResult) string { return v.Ocid }).(pulumi.StringOutput)
+func (o LookupDomainsAuthenticationFactorSettingResultOutput) Ocid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAuthenticationFactorSettingResult) *string { return v.Ocid }).(pulumi.StringPtrOutput)
 }
 
 // If true, indicates that the phone (PHONE_CALL) channel is enabled for authentication
-func (o LookupDomainsAuthenticationFactorSettingResultOutput) PhoneCallEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDomainsAuthenticationFactorSettingResult) bool { return v.PhoneCallEnabled }).(pulumi.BoolOutput)
+func (o LookupDomainsAuthenticationFactorSettingResultOutput) PhoneCallEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAuthenticationFactorSettingResult) *bool { return v.PhoneCallEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // If true, indicates that the Mobile App Push Notification channel is enabled for authentication
-func (o LookupDomainsAuthenticationFactorSettingResultOutput) PushEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDomainsAuthenticationFactorSettingResult) bool { return v.PushEnabled }).(pulumi.BoolOutput)
+func (o LookupDomainsAuthenticationFactorSettingResultOutput) PushEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAuthenticationFactorSettingResult) *bool { return v.PushEnabled }).(pulumi.BoolPtrOutput)
 }
 
 func (o LookupDomainsAuthenticationFactorSettingResultOutput) ResourceTypeSchemaVersion() pulumi.StringPtrOutput {
@@ -392,13 +385,13 @@ func (o LookupDomainsAuthenticationFactorSettingResultOutput) Schemas() pulumi.S
 }
 
 // If true, indicates that Security Questions are enabled for authentication
-func (o LookupDomainsAuthenticationFactorSettingResultOutput) SecurityQuestionsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDomainsAuthenticationFactorSettingResult) bool { return v.SecurityQuestionsEnabled }).(pulumi.BoolOutput)
+func (o LookupDomainsAuthenticationFactorSettingResultOutput) SecurityQuestionsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAuthenticationFactorSettingResult) *bool { return v.SecurityQuestionsEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // If true, indicates that the Short Message Service (SMS) channel is enabled for authentication
-func (o LookupDomainsAuthenticationFactorSettingResultOutput) SmsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDomainsAuthenticationFactorSettingResult) bool { return v.SmsEnabled }).(pulumi.BoolOutput)
+func (o LookupDomainsAuthenticationFactorSettingResultOutput) SmsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAuthenticationFactorSettingResult) *bool { return v.SmsEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // A list of tags on this resource.
@@ -409,8 +402,8 @@ func (o LookupDomainsAuthenticationFactorSettingResultOutput) Tags() GetDomainsA
 }
 
 // Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
-func (o LookupDomainsAuthenticationFactorSettingResultOutput) TenancyOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsAuthenticationFactorSettingResult) string { return v.TenancyOcid }).(pulumi.StringOutput)
+func (o LookupDomainsAuthenticationFactorSettingResultOutput) TenancyOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAuthenticationFactorSettingResult) *string { return v.TenancyOcid }).(pulumi.StringPtrOutput)
 }
 
 // Settings related to third-party factor
@@ -421,8 +414,8 @@ func (o LookupDomainsAuthenticationFactorSettingResultOutput) ThirdPartyFactors(
 }
 
 // If true, indicates that the Mobile App One Time Passcode channel is enabled for authentication
-func (o LookupDomainsAuthenticationFactorSettingResultOutput) TotpEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDomainsAuthenticationFactorSettingResult) bool { return v.TotpEnabled }).(pulumi.BoolOutput)
+func (o LookupDomainsAuthenticationFactorSettingResultOutput) TotpEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAuthenticationFactorSettingResult) *bool { return v.TotpEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // Settings related to Time-Based One-Time Passcodes (TOTP), such as hashing algo, totp time step, passcode length, and so on
@@ -454,8 +447,8 @@ func (o LookupDomainsAuthenticationFactorSettingResultOutput) UserEnrollmentDisa
 }
 
 // If true, indicates that the Yubico OTP is enabled for authentication
-func (o LookupDomainsAuthenticationFactorSettingResultOutput) YubicoOtpEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDomainsAuthenticationFactorSettingResult) bool { return v.YubicoOtpEnabled }).(pulumi.BoolOutput)
+func (o LookupDomainsAuthenticationFactorSettingResultOutput) YubicoOtpEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDomainsAuthenticationFactorSettingResult) *bool { return v.YubicoOtpEnabled }).(pulumi.BoolPtrOutput)
 }
 
 func init() {

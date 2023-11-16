@@ -37,7 +37,7 @@ public final class GetSqlFirewallPoliciesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The OCID of the security policy corresponding to the SQL firewall policy.
      * 
@@ -47,7 +47,7 @@ public final class GetSqlFirewallPoliciesResult {
      * @return The list of sql_firewall_policy_collection.
      * 
      */
-    private List<GetSqlFirewallPoliciesSqlFirewallPolicyCollection> sqlFirewallPolicyCollections;
+    private @Nullable List<GetSqlFirewallPoliciesSqlFirewallPolicyCollection> sqlFirewallPolicyCollections;
     private @Nullable String sqlFirewallPolicyId;
     /**
      * @return The current state of the SQL firewall policy.
@@ -97,8 +97,8 @@ public final class GetSqlFirewallPoliciesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The OCID of the security policy corresponding to the SQL firewall policy.
@@ -112,7 +112,7 @@ public final class GetSqlFirewallPoliciesResult {
      * 
      */
     public List<GetSqlFirewallPoliciesSqlFirewallPolicyCollection> sqlFirewallPolicyCollections() {
-        return this.sqlFirewallPolicyCollections;
+        return this.sqlFirewallPolicyCollections == null ? List.of() : this.sqlFirewallPolicyCollections;
     }
     public Optional<String> sqlFirewallPolicyId() {
         return Optional.ofNullable(this.sqlFirewallPolicyId);
@@ -153,9 +153,9 @@ public final class GetSqlFirewallPoliciesResult {
         private @Nullable String dbUserName;
         private @Nullable String displayName;
         private @Nullable List<GetSqlFirewallPoliciesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String securityPolicyId;
-        private List<GetSqlFirewallPoliciesSqlFirewallPolicyCollection> sqlFirewallPolicyCollections;
+        private @Nullable List<GetSqlFirewallPoliciesSqlFirewallPolicyCollection> sqlFirewallPolicyCollections;
         private @Nullable String sqlFirewallPolicyId;
         private @Nullable String state;
         private @Nullable String timeCreatedGreaterThanOrEqualTo;
@@ -214,8 +214,8 @@ public final class GetSqlFirewallPoliciesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -224,8 +224,8 @@ public final class GetSqlFirewallPoliciesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder sqlFirewallPolicyCollections(List<GetSqlFirewallPoliciesSqlFirewallPolicyCollection> sqlFirewallPolicyCollections) {
-            this.sqlFirewallPolicyCollections = Objects.requireNonNull(sqlFirewallPolicyCollections);
+        public Builder sqlFirewallPolicyCollections(@Nullable List<GetSqlFirewallPoliciesSqlFirewallPolicyCollection> sqlFirewallPolicyCollections) {
+            this.sqlFirewallPolicyCollections = sqlFirewallPolicyCollections;
             return this;
         }
         public Builder sqlFirewallPolicyCollections(GetSqlFirewallPoliciesSqlFirewallPolicyCollection... sqlFirewallPolicyCollections) {

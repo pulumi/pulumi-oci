@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Vm Clusters in Oracle Cloud Infrastructure Database service.
@@ -78,7 +77,7 @@ type GetVmClustersResult struct {
 	ExadataInfrastructureId *string               `pulumi:"exadataInfrastructureId"`
 	Filters                 []GetVmClustersFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The current state of the VM cluster.
 	State *string `pulumi:"state"`
 	// The list of vm_clusters.
@@ -130,12 +129,6 @@ func (o GetVmClustersResultOutput) ToGetVmClustersResultOutputWithContext(ctx co
 	return o
 }
 
-func (o GetVmClustersResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetVmClustersResult] {
-	return pulumix.Output[GetVmClustersResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 func (o GetVmClustersResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVmClustersResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -156,8 +149,8 @@ func (o GetVmClustersResultOutput) Filters() GetVmClustersFilterArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetVmClustersResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClustersResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetVmClustersResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClustersResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the VM cluster.

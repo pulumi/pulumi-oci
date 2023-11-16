@@ -16,6 +16,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -93,14 +94,14 @@ public class Quota extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) The description you assign to the quota.
@@ -121,42 +122,42 @@ public class Quota extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * this is a computed field which is set to true if any lock is present`
      * 
      */
     @Export(name="isLockOverride", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isLockOverride;
+    private Output</* @Nullable */ Boolean> isLockOverride;
 
     /**
      * @return this is a computed field which is set to true if any lock is present`
      * 
      */
-    public Output<Boolean> isLockOverride() {
-        return this.isLockOverride;
+    public Output<Optional<Boolean>> isLockOverride() {
+        return Codegen.optional(this.isLockOverride);
     }
     /**
      * Locks associated with this resource.
      * 
      */
     @Export(name="locks", refs={List.class,QuotaLock.class}, tree="[0,1]")
-    private Output<List<QuotaLock>> locks;
+    private Output</* @Nullable */ List<QuotaLock>> locks;
 
     /**
      * @return Locks associated with this resource.
      * 
      */
-    public Output<List<QuotaLock>> locks() {
-        return this.locks;
+    public Output<Optional<List<QuotaLock>>> locks() {
+        return Codegen.optional(this.locks);
     }
     /**
      * The name you assign to the quota during creation. The name must be unique across all quotas in the tenancy and cannot be changed.
@@ -177,14 +178,14 @@ public class Quota extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The quota&#39;s current state.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * (Updatable) An array of quota statements written in the declarative quota statement language.
@@ -211,14 +212,14 @@ public class Quota extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return Date and time the quota was created, in the format defined by RFC 3339. Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
 
     /**

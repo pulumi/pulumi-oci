@@ -128,7 +128,7 @@ namespace Pulumi.Oci.Dns
         /// <summary>
         /// The OCID of the attached VCN.
         /// </summary>
-        public readonly string AttachedVcnId;
+        public readonly string? AttachedVcnId;
         /// <summary>
         /// The attached views. Views are evaluated in order.
         /// </summary>
@@ -136,19 +136,19 @@ namespace Pulumi.Oci.Dns
         /// <summary>
         /// The OCID of the owning compartment. This will match the resolver that the resolver endpoint is under and will be updated if the resolver's compartment is changed.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The OCID of the default view.
         /// </summary>
-        public readonly string DefaultViewId;
+        public readonly string? DefaultViewId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// The display name of the resolver.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Read-only array of endpoints for the resolver.
         /// </summary>
@@ -156,15 +156,15 @@ namespace Pulumi.Oci.Dns
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The OCID of the resolver.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
         /// </summary>
-        public readonly bool IsProtected;
+        public readonly bool? IsProtected;
         public readonly string ResolverId;
         /// <summary>
         /// Rules for the resolver. Rules are evaluated in order.
@@ -174,41 +174,41 @@ namespace Pulumi.Oci.Dns
         /// <summary>
         /// The canonical absolute URL of the resource.
         /// </summary>
-        public readonly string Self;
+        public readonly string? Self;
         /// <summary>
         /// The current state of the resource.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
 
         [OutputConstructor]
         private GetResolverResult(
-            string attachedVcnId,
+            string? attachedVcnId,
 
             ImmutableArray<Outputs.GetResolverAttachedViewResult> attachedViews,
 
-            string compartmentId,
+            string? compartmentId,
 
-            string defaultViewId,
+            string? defaultViewId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string displayName,
+            string? displayName,
 
             ImmutableArray<Outputs.GetResolverEndpointResult> endpoints,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            bool isProtected,
+            bool? isProtected,
 
             string resolverId,
 
@@ -216,13 +216,13 @@ namespace Pulumi.Oci.Dns
 
             string? scope,
 
-            string self,
+            string? self,
 
-            string state,
+            string? state,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated)
+            string? timeUpdated)
         {
             AttachedVcnId = attachedVcnId;
             AttachedViews = attachedViews;

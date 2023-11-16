@@ -22,7 +22,7 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksFindingsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private @Nullable String indexHashFilter;
     private String managedDatabaseId;
     private @Nullable String searchPeriod;
@@ -30,7 +30,7 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksFindingsResult {
      * @return The list of sql_tuning_advisor_task_finding_collection.
      * 
      */
-    private List<GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFindingCollection> sqlTuningAdvisorTaskFindingCollections;
+    private @Nullable List<GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFindingCollection> sqlTuningAdvisorTaskFindingCollections;
     /**
      * @return The unique identifier of the SQL Tuning Advisor task. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
@@ -55,8 +55,8 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksFindingsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public Optional<String> indexHashFilter() {
         return Optional.ofNullable(this.indexHashFilter);
@@ -72,7 +72,7 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksFindingsResult {
      * 
      */
     public List<GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFindingCollection> sqlTuningAdvisorTaskFindingCollections() {
-        return this.sqlTuningAdvisorTaskFindingCollections;
+        return this.sqlTuningAdvisorTaskFindingCollections == null ? List.of() : this.sqlTuningAdvisorTaskFindingCollections;
     }
     /**
      * @return The unique identifier of the SQL Tuning Advisor task. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -98,11 +98,11 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksFindingsResult {
         private @Nullable String endExecId;
         private @Nullable List<GetManagedDatabaseSqlTuningAdvisorTasksFindingsFilter> filters;
         private @Nullable String findingFilter;
-        private String id;
+        private @Nullable String id;
         private @Nullable String indexHashFilter;
         private String managedDatabaseId;
         private @Nullable String searchPeriod;
-        private List<GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFindingCollection> sqlTuningAdvisorTaskFindingCollections;
+        private @Nullable List<GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFindingCollection> sqlTuningAdvisorTaskFindingCollections;
         private String sqlTuningAdvisorTaskId;
         private @Nullable String statsHashFilter;
         public Builder() {}
@@ -145,8 +145,8 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksFindingsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -165,8 +165,8 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksFindingsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder sqlTuningAdvisorTaskFindingCollections(List<GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFindingCollection> sqlTuningAdvisorTaskFindingCollections) {
-            this.sqlTuningAdvisorTaskFindingCollections = Objects.requireNonNull(sqlTuningAdvisorTaskFindingCollections);
+        public Builder sqlTuningAdvisorTaskFindingCollections(@Nullable List<GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFindingCollection> sqlTuningAdvisorTaskFindingCollections) {
+            this.sqlTuningAdvisorTaskFindingCollections = sqlTuningAdvisorTaskFindingCollections;
             return this;
         }
         public Builder sqlTuningAdvisorTaskFindingCollections(GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFindingCollection... sqlTuningAdvisorTaskFindingCollections) {

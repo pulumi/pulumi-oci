@@ -78,7 +78,7 @@ export interface GetPbfListingVersionsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly isCurrentVersion?: boolean;
     /**
      * A brief descriptive name for the PBF trigger.
@@ -92,7 +92,7 @@ export interface GetPbfListingVersionsResult {
     /**
      * The list of pbf_listing_versions_collection.
      */
-    readonly pbfListingVersionsCollections: outputs.Functions.GetPbfListingVersionsPbfListingVersionsCollection[];
+    readonly pbfListingVersionsCollections?: outputs.Functions.GetPbfListingVersionsPbfListingVersionsCollection[];
     /**
      * The current state of the PBF resource.
      */

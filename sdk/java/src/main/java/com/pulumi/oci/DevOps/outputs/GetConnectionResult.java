@@ -11,6 +11,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetConnectionResult {
@@ -18,122 +20,122 @@ public final class GetConnectionResult {
      * @return The OCID of personal access token saved in secret store.
      * 
      */
-    private String accessToken;
+    private @Nullable String accessToken;
     /**
      * @return OCID of personal Bitbucket Cloud AppPassword saved in secret store
      * 
      */
-    private String appPassword;
+    private @Nullable String appPassword;
     /**
      * @return The Base URL of the hosted BitbucketServer/Visual Builder Studio server.
      * 
      */
-    private String baseUrl;
+    private @Nullable String baseUrl;
     /**
      * @return The OCID of the compartment containing the connection.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     private String connectionId;
     /**
      * @return The type of connection.
      * 
      */
-    private String connectionType;
+    private @Nullable String connectionType;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return Optional description about the connection.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return Connection display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return Unique identifier that is immutable on creation.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The result of validating the credentials of a connection.
      * 
      */
-    private List<GetConnectionLastConnectionValidationResult> lastConnectionValidationResults;
+    private @Nullable List<GetConnectionLastConnectionValidationResult> lastConnectionValidationResults;
     /**
      * @return The OCID of the DevOps project.
      * 
      */
-    private String projectId;
+    private @Nullable String projectId;
     /**
      * @return The current state of the connection.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private @Nullable Map<String,Object> systemTags;
     /**
      * @return The time the connection was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The time the connection was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
     /**
      * @return TLS configuration used by build service to verify TLS connection.
      * 
      */
-    private List<GetConnectionTlsVerifyConfig> tlsVerifyConfigs;
+    private @Nullable List<GetConnectionTlsVerifyConfig> tlsVerifyConfigs;
     /**
      * @return Public Bitbucket Cloud Username in plain text
      * 
      */
-    private String username;
+    private @Nullable String username;
 
     private GetConnectionResult() {}
     /**
      * @return The OCID of personal access token saved in secret store.
      * 
      */
-    public String accessToken() {
-        return this.accessToken;
+    public Optional<String> accessToken() {
+        return Optional.ofNullable(this.accessToken);
     }
     /**
      * @return OCID of personal Bitbucket Cloud AppPassword saved in secret store
      * 
      */
-    public String appPassword() {
-        return this.appPassword;
+    public Optional<String> appPassword() {
+        return Optional.ofNullable(this.appPassword);
     }
     /**
      * @return The Base URL of the hosted BitbucketServer/Visual Builder Studio server.
      * 
      */
-    public String baseUrl() {
-        return this.baseUrl;
+    public Optional<String> baseUrl() {
+        return Optional.ofNullable(this.baseUrl);
     }
     /**
      * @return The OCID of the compartment containing the connection.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     public String connectionId() {
         return this.connectionId;
@@ -142,99 +144,99 @@ public final class GetConnectionResult {
      * @return The type of connection.
      * 
      */
-    public String connectionType() {
-        return this.connectionType;
+    public Optional<String> connectionType() {
+        return Optional.ofNullable(this.connectionType);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return Optional description about the connection.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return Connection display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return Unique identifier that is immutable on creation.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The result of validating the credentials of a connection.
      * 
      */
     public List<GetConnectionLastConnectionValidationResult> lastConnectionValidationResults() {
-        return this.lastConnectionValidationResults;
+        return this.lastConnectionValidationResults == null ? List.of() : this.lastConnectionValidationResults;
     }
     /**
      * @return The OCID of the DevOps project.
      * 
      */
-    public String projectId() {
-        return this.projectId;
+    public Optional<String> projectId() {
+        return Optional.ofNullable(this.projectId);
     }
     /**
      * @return The current state of the connection.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     public Map<String,Object> systemTags() {
-        return this.systemTags;
+        return this.systemTags == null ? Map.of() : this.systemTags;
     }
     /**
      * @return The time the connection was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The time the connection was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
     /**
      * @return TLS configuration used by build service to verify TLS connection.
      * 
      */
     public List<GetConnectionTlsVerifyConfig> tlsVerifyConfigs() {
-        return this.tlsVerifyConfigs;
+        return this.tlsVerifyConfigs == null ? List.of() : this.tlsVerifyConfigs;
     }
     /**
      * @return Public Bitbucket Cloud Username in plain text
      * 
      */
-    public String username() {
-        return this.username;
+    public Optional<String> username() {
+        return Optional.ofNullable(this.username);
     }
 
     public static Builder builder() {
@@ -246,25 +248,25 @@ public final class GetConnectionResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String accessToken;
-        private String appPassword;
-        private String baseUrl;
-        private String compartmentId;
+        private @Nullable String accessToken;
+        private @Nullable String appPassword;
+        private @Nullable String baseUrl;
+        private @Nullable String compartmentId;
         private String connectionId;
-        private String connectionType;
-        private Map<String,Object> definedTags;
-        private String description;
-        private String displayName;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private List<GetConnectionLastConnectionValidationResult> lastConnectionValidationResults;
-        private String projectId;
-        private String state;
-        private Map<String,Object> systemTags;
-        private String timeCreated;
-        private String timeUpdated;
-        private List<GetConnectionTlsVerifyConfig> tlsVerifyConfigs;
-        private String username;
+        private @Nullable String connectionType;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String description;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable List<GetConnectionLastConnectionValidationResult> lastConnectionValidationResults;
+        private @Nullable String projectId;
+        private @Nullable String state;
+        private @Nullable Map<String,Object> systemTags;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
+        private @Nullable List<GetConnectionTlsVerifyConfig> tlsVerifyConfigs;
+        private @Nullable String username;
         public Builder() {}
         public Builder(GetConnectionResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -290,23 +292,23 @@ public final class GetConnectionResult {
         }
 
         @CustomType.Setter
-        public Builder accessToken(String accessToken) {
-            this.accessToken = Objects.requireNonNull(accessToken);
+        public Builder accessToken(@Nullable String accessToken) {
+            this.accessToken = accessToken;
             return this;
         }
         @CustomType.Setter
-        public Builder appPassword(String appPassword) {
-            this.appPassword = Objects.requireNonNull(appPassword);
+        public Builder appPassword(@Nullable String appPassword) {
+            this.appPassword = appPassword;
             return this;
         }
         @CustomType.Setter
-        public Builder baseUrl(String baseUrl) {
-            this.baseUrl = Objects.requireNonNull(baseUrl);
+        public Builder baseUrl(@Nullable String baseUrl) {
+            this.baseUrl = baseUrl;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
@@ -315,79 +317,79 @@ public final class GetConnectionResult {
             return this;
         }
         @CustomType.Setter
-        public Builder connectionType(String connectionType) {
-            this.connectionType = Objects.requireNonNull(connectionType);
+        public Builder connectionType(@Nullable String connectionType) {
+            this.connectionType = connectionType;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder lastConnectionValidationResults(List<GetConnectionLastConnectionValidationResult> lastConnectionValidationResults) {
-            this.lastConnectionValidationResults = Objects.requireNonNull(lastConnectionValidationResults);
+        public Builder lastConnectionValidationResults(@Nullable List<GetConnectionLastConnectionValidationResult> lastConnectionValidationResults) {
+            this.lastConnectionValidationResults = lastConnectionValidationResults;
             return this;
         }
         public Builder lastConnectionValidationResults(GetConnectionLastConnectionValidationResult... lastConnectionValidationResults) {
             return lastConnectionValidationResults(List.of(lastConnectionValidationResults));
         }
         @CustomType.Setter
-        public Builder projectId(String projectId) {
-            this.projectId = Objects.requireNonNull(projectId);
+        public Builder projectId(@Nullable String projectId) {
+            this.projectId = projectId;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+        public Builder systemTags(@Nullable Map<String,Object> systemTags) {
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
-        public Builder tlsVerifyConfigs(List<GetConnectionTlsVerifyConfig> tlsVerifyConfigs) {
-            this.tlsVerifyConfigs = Objects.requireNonNull(tlsVerifyConfigs);
+        public Builder tlsVerifyConfigs(@Nullable List<GetConnectionTlsVerifyConfig> tlsVerifyConfigs) {
+            this.tlsVerifyConfigs = tlsVerifyConfigs;
             return this;
         }
         public Builder tlsVerifyConfigs(GetConnectionTlsVerifyConfig... tlsVerifyConfigs) {
             return tlsVerifyConfigs(List.of(tlsVerifyConfigs));
         }
         @CustomType.Setter
-        public Builder username(String username) {
-            this.username = Objects.requireNonNull(username);
+        public Builder username(@Nullable String username) {
+            this.username = username;
             return this;
         }
         public GetConnectionResult build() {

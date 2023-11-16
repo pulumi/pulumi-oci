@@ -13,6 +13,7 @@ import com.pulumi.oci.DatabaseManagement.outputs.ExternalDbSystemConnectorConnec
 import com.pulumi.oci.Utilities;
 import java.lang.String;
 import java.util.List;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -68,70 +69,70 @@ public class ExternalDbSystemConnector extends com.pulumi.resources.CustomResour
      * 
      */
     @Export(name="agentId", refs={String.class}, tree="[0]")
-    private Output<String> agentId;
+    private Output</* @Nullable */ String> agentId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the external DB system connector.
      * 
      */
-    public Output<String> agentId() {
-        return this.agentId;
+    public Output<Optional<String>> agentId() {
+        return Codegen.optional(this.agentId);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
-    private Output<String> compartmentId;
+    private Output</* @Nullable */ String> compartmentId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    public Output<String> compartmentId() {
-        return this.compartmentId;
+    public Output<Optional<String>> compartmentId() {
+        return Codegen.optional(this.compartmentId);
     }
     /**
      * The error message indicating the reason for connection failure or `null` if the connection was successful.
      * 
      */
     @Export(name="connectionFailureMessage", refs={String.class}, tree="[0]")
-    private Output<String> connectionFailureMessage;
+    private Output</* @Nullable */ String> connectionFailureMessage;
 
     /**
      * @return The error message indicating the reason for connection failure or `null` if the connection was successful.
      * 
      */
-    public Output<String> connectionFailureMessage() {
-        return this.connectionFailureMessage;
+    public Output<Optional<String>> connectionFailureMessage() {
+        return Codegen.optional(this.connectionFailureMessage);
     }
     /**
      * The connection details required to connect to an external DB system component.
      * 
      */
     @Export(name="connectionInfos", refs={List.class,ExternalDbSystemConnectorConnectionInfo.class}, tree="[0,1]")
-    private Output<List<ExternalDbSystemConnectorConnectionInfo>> connectionInfos;
+    private Output</* @Nullable */ List<ExternalDbSystemConnectorConnectionInfo>> connectionInfos;
 
     /**
      * @return The connection details required to connect to an external DB system component.
      * 
      */
-    public Output<List<ExternalDbSystemConnectorConnectionInfo>> connectionInfos() {
-        return this.connectionInfos;
+    public Output<Optional<List<ExternalDbSystemConnectorConnectionInfo>>> connectionInfos() {
+        return Codegen.optional(this.connectionInfos);
     }
     /**
      * The status of connectivity to the external DB system component.
      * 
      */
     @Export(name="connectionStatus", refs={String.class}, tree="[0]")
-    private Output<String> connectionStatus;
+    private Output</* @Nullable */ String> connectionStatus;
 
     /**
      * @return The status of connectivity to the external DB system component.
      * 
      */
-    public Output<String> connectionStatus() {
-        return this.connectionStatus;
+    public Output<Optional<String>> connectionStatus() {
+        return Codegen.optional(this.connectionStatus);
     }
     /**
      * (Updatable) The type of connector.
@@ -152,14 +153,14 @@ public class ExternalDbSystemConnector extends com.pulumi.resources.CustomResour
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return The user-friendly name for the external connector. The name does not have to be unique.
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
@@ -186,70 +187,70 @@ public class ExternalDbSystemConnector extends com.pulumi.resources.CustomResour
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return Additional information about the current lifecycle state.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * The current lifecycle state of the external DB system connector.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current lifecycle state of the external DB system connector.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The date and time the connectionStatus of the external DB system connector was last updated.
      * 
      */
     @Export(name="timeConnectionStatusLastUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeConnectionStatusLastUpdated;
+    private Output</* @Nullable */ String> timeConnectionStatusLastUpdated;
 
     /**
      * @return The date and time the connectionStatus of the external DB system connector was last updated.
      * 
      */
-    public Output<String> timeConnectionStatusLastUpdated() {
-        return this.timeConnectionStatusLastUpdated;
+    public Output<Optional<String>> timeConnectionStatusLastUpdated() {
+        return Codegen.optional(this.timeConnectionStatusLastUpdated);
     }
     /**
      * The date and time the external DB system connector was created.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the external DB system connector was created.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The date and time the external DB system connector was last updated.
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The date and time the external DB system connector was last updated.
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
 
     /**

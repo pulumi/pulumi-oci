@@ -8,6 +8,8 @@ import com.pulumi.oci.Waf.outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyC
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControl {
@@ -17,12 +19,12 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRe
      * * **RETURN_HTTP_RESPONSE** terminates further execution of modules and rules and returns defined HTTP response.
      * 
      */
-    private String defaultActionName;
+    private @Nullable String defaultActionName;
     /**
      * @return Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
      * 
      */
-    private List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlRule> rules;
+    private @Nullable List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlRule> rules;
 
     private GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControl() {}
     /**
@@ -31,15 +33,15 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRe
      * * **RETURN_HTTP_RESPONSE** terminates further execution of modules and rules and returns defined HTTP response.
      * 
      */
-    public String defaultActionName() {
-        return this.defaultActionName;
+    public Optional<String> defaultActionName() {
+        return Optional.ofNullable(this.defaultActionName);
     }
     /**
      * @return Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
      * 
      */
     public List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlRule> rules() {
-        return this.rules;
+        return this.rules == null ? List.of() : this.rules;
     }
 
     public static Builder builder() {
@@ -51,8 +53,8 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRe
     }
     @CustomType.Builder
     public static final class Builder {
-        private String defaultActionName;
-        private List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlRule> rules;
+        private @Nullable String defaultActionName;
+        private @Nullable List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlRule> rules;
         public Builder() {}
         public Builder(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControl defaults) {
     	      Objects.requireNonNull(defaults);
@@ -61,13 +63,13 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRe
         }
 
         @CustomType.Setter
-        public Builder defaultActionName(String defaultActionName) {
-            this.defaultActionName = Objects.requireNonNull(defaultActionName);
+        public Builder defaultActionName(@Nullable String defaultActionName) {
+            this.defaultActionName = defaultActionName;
             return this;
         }
         @CustomType.Setter
-        public Builder rules(List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlRule> rules) {
-            this.rules = Objects.requireNonNull(rules);
+        public Builder rules(@Nullable List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlRule> rules) {
+            this.rules = rules;
             return this;
         }
         public Builder rules(GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlRule... rules) {

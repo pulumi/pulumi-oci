@@ -58,15 +58,15 @@ export class LibraryMasingFormat extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) The description of the format entry.
      */
-    public readonly description!: pulumi.Output<string>;
+    public readonly description!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The display name of the library masking format. The name does not have to be unique, and it's changeable.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    public readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) An array of format entries. The combined output of all the format entries is used for masking.
      */
@@ -74,7 +74,7 @@ export class LibraryMasingFormat extends pulumi.CustomResource {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) An array of OCIDs of the sensitive types compatible with the library masking format. It helps track the sensitive types for which the library masking format is being created. 
      *
@@ -82,23 +82,23 @@ export class LibraryMasingFormat extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly sensitiveTypeIds!: pulumi.Output<string[]>;
+    public readonly sensitiveTypeIds!: pulumi.Output<string[] | undefined>;
     /**
      * Specifies whether the library masking format is user-defined or predefined.
      */
-    public /*out*/ readonly source!: pulumi.Output<string>;
+    public /*out*/ readonly source!: pulumi.Output<string | undefined>;
     /**
      * The current state of the library masking format.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The date and time the library masking format was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The date and time the library masking format was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a LibraryMasingFormat resource with the given unique name, arguments, and options.

@@ -45,81 +45,81 @@ export interface GetAuditTrailResult {
     /**
      * The date from which the audit trail must start collecting data, in the format defined by RFC3339.
      */
-    readonly auditCollectionStartTime: string;
+    readonly auditCollectionStartTime?: string;
     /**
      * The OCID of the  parent audit.
      */
-    readonly auditProfileId: string;
+    readonly auditProfileId?: string;
     readonly auditTrailId: string;
     /**
      * The OCID of the compartment that contains the audit trail and is the same as the compartment of the audit profile resource.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * The description of the audit trail.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * The display name of the audit trail.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The OCID of the audit trail.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Indicates if auto purge is enabled on the target database, which helps delete audit data in the target database every seven days so that the database's audit trail does not become too large.
      */
-    readonly isAutoPurgeEnabled: boolean;
+    readonly isAutoPurgeEnabled?: boolean;
     /**
      * Details about the current state of the audit trail in Data Safe.
      */
-    readonly lifecycleDetails: string;
-    readonly resumeTrigger: number;
+    readonly lifecycleDetails?: string;
+    readonly resumeTrigger?: number;
     /**
      * The current state of the audit trail.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The current sub-state of the audit trail.
      */
-    readonly status: string;
+    readonly status?: string;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * The OCID of the Data Safe target for which the audit trail is created.
      */
-    readonly targetId: string;
+    readonly targetId?: string;
     /**
      * The date and time the audit trail was created, in the format defined by RFC3339.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The date and time until when the audit events were collected from the target database by the Data Safe audit trail  collection process, in the format defined by RFC3339.
      */
-    readonly timeLastCollected: string;
+    readonly timeLastCollected?: string;
     /**
      * The date and time the audit trail was updated, in the format defined by RFC3339.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
     /**
      * An audit trail location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
      */
-    readonly trailLocation: string;
+    readonly trailLocation?: string;
     /**
      * The OCID of the workrequest for audit trail which collects audit records.
      */
-    readonly workRequestId: string;
+    readonly workRequestId?: string;
 }
 /**
  * This data source provides details about a specific Audit Trail resource in Oracle Cloud Infrastructure Data Safe service.

@@ -210,7 +210,7 @@ namespace Pulumi.Oci.AiAnomalyDetection
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The OCID of the trained model.
         /// </summary>
@@ -236,7 +236,7 @@ namespace Pulumi.Oci.AiAnomalyDetection
 
             ImmutableArray<Outputs.GetDetectAnomalyJobsFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? modelId,
 

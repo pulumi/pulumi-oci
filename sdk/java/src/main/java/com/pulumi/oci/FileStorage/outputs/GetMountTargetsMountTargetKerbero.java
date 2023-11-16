@@ -8,6 +8,8 @@ import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMountTargetsMountTargetKerbero {
@@ -15,63 +17,63 @@ public final class GetMountTargetsMountTargetKerbero {
      * @return Version of the keytab secert in the Vault to use as a backup.
      * 
      */
-    private Integer backupKeyTabSecretVersion;
+    private @Nullable Integer backupKeyTabSecretVersion;
     /**
      * @return Version of the keytab secret in the Vault to use.
      * 
      */
-    private Integer currentKeyTabSecretVersion;
+    private @Nullable Integer currentKeyTabSecretVersion;
     /**
      * @return Specifies whether to enable or disable Kerberos.
      * 
      */
-    private Boolean isKerberosEnabled;
+    private @Nullable Boolean isKerberosEnabled;
     /**
      * @return The Kerberos realm that the mount target will join.
      * 
      */
-    private String kerberosRealm;
+    private @Nullable String kerberosRealm;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the keytab secret in the Vault.
      * 
      */
-    private String keyTabSecretId;
+    private @Nullable String keyTabSecretId;
 
     private GetMountTargetsMountTargetKerbero() {}
     /**
      * @return Version of the keytab secert in the Vault to use as a backup.
      * 
      */
-    public Integer backupKeyTabSecretVersion() {
-        return this.backupKeyTabSecretVersion;
+    public Optional<Integer> backupKeyTabSecretVersion() {
+        return Optional.ofNullable(this.backupKeyTabSecretVersion);
     }
     /**
      * @return Version of the keytab secret in the Vault to use.
      * 
      */
-    public Integer currentKeyTabSecretVersion() {
-        return this.currentKeyTabSecretVersion;
+    public Optional<Integer> currentKeyTabSecretVersion() {
+        return Optional.ofNullable(this.currentKeyTabSecretVersion);
     }
     /**
      * @return Specifies whether to enable or disable Kerberos.
      * 
      */
-    public Boolean isKerberosEnabled() {
-        return this.isKerberosEnabled;
+    public Optional<Boolean> isKerberosEnabled() {
+        return Optional.ofNullable(this.isKerberosEnabled);
     }
     /**
      * @return The Kerberos realm that the mount target will join.
      * 
      */
-    public String kerberosRealm() {
-        return this.kerberosRealm;
+    public Optional<String> kerberosRealm() {
+        return Optional.ofNullable(this.kerberosRealm);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the keytab secret in the Vault.
      * 
      */
-    public String keyTabSecretId() {
-        return this.keyTabSecretId;
+    public Optional<String> keyTabSecretId() {
+        return Optional.ofNullable(this.keyTabSecretId);
     }
 
     public static Builder builder() {
@@ -83,11 +85,11 @@ public final class GetMountTargetsMountTargetKerbero {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer backupKeyTabSecretVersion;
-        private Integer currentKeyTabSecretVersion;
-        private Boolean isKerberosEnabled;
-        private String kerberosRealm;
-        private String keyTabSecretId;
+        private @Nullable Integer backupKeyTabSecretVersion;
+        private @Nullable Integer currentKeyTabSecretVersion;
+        private @Nullable Boolean isKerberosEnabled;
+        private @Nullable String kerberosRealm;
+        private @Nullable String keyTabSecretId;
         public Builder() {}
         public Builder(GetMountTargetsMountTargetKerbero defaults) {
     	      Objects.requireNonNull(defaults);
@@ -99,28 +101,28 @@ public final class GetMountTargetsMountTargetKerbero {
         }
 
         @CustomType.Setter
-        public Builder backupKeyTabSecretVersion(Integer backupKeyTabSecretVersion) {
-            this.backupKeyTabSecretVersion = Objects.requireNonNull(backupKeyTabSecretVersion);
+        public Builder backupKeyTabSecretVersion(@Nullable Integer backupKeyTabSecretVersion) {
+            this.backupKeyTabSecretVersion = backupKeyTabSecretVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder currentKeyTabSecretVersion(Integer currentKeyTabSecretVersion) {
-            this.currentKeyTabSecretVersion = Objects.requireNonNull(currentKeyTabSecretVersion);
+        public Builder currentKeyTabSecretVersion(@Nullable Integer currentKeyTabSecretVersion) {
+            this.currentKeyTabSecretVersion = currentKeyTabSecretVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder isKerberosEnabled(Boolean isKerberosEnabled) {
-            this.isKerberosEnabled = Objects.requireNonNull(isKerberosEnabled);
+        public Builder isKerberosEnabled(@Nullable Boolean isKerberosEnabled) {
+            this.isKerberosEnabled = isKerberosEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder kerberosRealm(String kerberosRealm) {
-            this.kerberosRealm = Objects.requireNonNull(kerberosRealm);
+        public Builder kerberosRealm(@Nullable String kerberosRealm) {
+            this.kerberosRealm = kerberosRealm;
             return this;
         }
         @CustomType.Setter
-        public Builder keyTabSecretId(String keyTabSecretId) {
-            this.keyTabSecretId = Objects.requireNonNull(keyTabSecretId);
+        public Builder keyTabSecretId(@Nullable String keyTabSecretId) {
+            this.keyTabSecretId = keyTabSecretId;
             return this;
         }
         public GetMountTargetsMountTargetKerbero build() {

@@ -264,7 +264,7 @@ namespace Pulumi.Oci.Artifacts
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string? ImageDigest;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container image.  Example: `ocid1.containerimage.oc1..exampleuniqueID`
@@ -297,7 +297,7 @@ namespace Pulumi.Oci.Artifacts
 
             ImmutableArray<Outputs.GetContainerSignaturesFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? imageDigest,
 

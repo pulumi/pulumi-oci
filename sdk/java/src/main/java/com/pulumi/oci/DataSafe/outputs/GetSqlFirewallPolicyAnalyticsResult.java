@@ -24,7 +24,7 @@ public final class GetSqlFirewallPolicyAnalyticsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The OCID of the security policy corresponding to the SQL firewall policy.
      * 
@@ -34,7 +34,7 @@ public final class GetSqlFirewallPolicyAnalyticsResult {
      * @return The list of sql_firewall_policy_analytics_collection.
      * 
      */
-    private List<GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollection> sqlFirewallPolicyAnalyticsCollections;
+    private @Nullable List<GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollection> sqlFirewallPolicyAnalyticsCollections;
     /**
      * @return The current state of the SQL firewall policy.
      * 
@@ -63,8 +63,8 @@ public final class GetSqlFirewallPolicyAnalyticsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The OCID of the security policy corresponding to the SQL firewall policy.
@@ -78,7 +78,7 @@ public final class GetSqlFirewallPolicyAnalyticsResult {
      * 
      */
     public List<GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollection> sqlFirewallPolicyAnalyticsCollections() {
-        return this.sqlFirewallPolicyAnalyticsCollections;
+        return this.sqlFirewallPolicyAnalyticsCollections == null ? List.of() : this.sqlFirewallPolicyAnalyticsCollections;
     }
     /**
      * @return The current state of the SQL firewall policy.
@@ -108,9 +108,9 @@ public final class GetSqlFirewallPolicyAnalyticsResult {
         private @Nullable Boolean compartmentIdInSubtree;
         private @Nullable List<GetSqlFirewallPolicyAnalyticsFilter> filters;
         private @Nullable List<String> groupBies;
-        private String id;
+        private @Nullable String id;
         private @Nullable String securityPolicyId;
-        private List<GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollection> sqlFirewallPolicyAnalyticsCollections;
+        private @Nullable List<GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollection> sqlFirewallPolicyAnalyticsCollections;
         private @Nullable String state;
         private @Nullable String timeEnded;
         private @Nullable String timeStarted;
@@ -162,8 +162,8 @@ public final class GetSqlFirewallPolicyAnalyticsResult {
             return groupBies(List.of(groupBies));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -172,8 +172,8 @@ public final class GetSqlFirewallPolicyAnalyticsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder sqlFirewallPolicyAnalyticsCollections(List<GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollection> sqlFirewallPolicyAnalyticsCollections) {
-            this.sqlFirewallPolicyAnalyticsCollections = Objects.requireNonNull(sqlFirewallPolicyAnalyticsCollections);
+        public Builder sqlFirewallPolicyAnalyticsCollections(@Nullable List<GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollection> sqlFirewallPolicyAnalyticsCollections) {
+            this.sqlFirewallPolicyAnalyticsCollections = sqlFirewallPolicyAnalyticsCollections;
             return this;
         }
         public Builder sqlFirewallPolicyAnalyticsCollections(GetSqlFirewallPolicyAnalyticsSqlFirewallPolicyAnalyticsCollection... sqlFirewallPolicyAnalyticsCollections) {

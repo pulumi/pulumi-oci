@@ -47,132 +47,132 @@ export interface GetCloudExadataInfrastructureResult {
     /**
      * The requested number of additional storage servers activated for the Exadata infrastructure.
      */
-    readonly activatedStorageCount: number;
+    readonly activatedStorageCount?: number;
     /**
      * The requested number of additional storage servers for the Exadata infrastructure.
      */
-    readonly additionalStorageCount: number;
+    readonly additionalStorageCount?: number;
     /**
      * The name of the availability domain that the cloud Exadata infrastructure resource is located in.
      */
-    readonly availabilityDomain: string;
+    readonly availabilityDomain?: string;
     /**
      * The available storage can be allocated to the cloud Exadata infrastructure resource, in gigabytes (GB).
      */
-    readonly availableStorageSizeInGbs: number;
+    readonly availableStorageSizeInGbs?: number;
     readonly cloudExadataInfrastructureId: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * The number of compute servers for the cloud Exadata infrastructure.
      */
-    readonly computeCount: number;
+    readonly computeCount?: number;
     /**
      * The total number of CPU cores allocated.
      */
-    readonly cpuCount: number;
+    readonly cpuCount?: number;
     /**
      * The list of customer email addresses that receive information from Oracle about the specified Oracle Cloud Infrastructure Database service resource. Oracle uses these email addresses to send notifications about planned and unplanned software maintenance updates, information about system hardware, and other information needed by administrators. Up to 10 email addresses can be added to the customer contacts for a cloud Exadata infrastructure instance.
      */
-    readonly customerContacts: outputs.Database.GetCloudExadataInfrastructureCustomerContact[];
+    readonly customerContacts?: outputs.Database.GetCloudExadataInfrastructureCustomerContact[];
     /**
      * Size, in terabytes, of the DATA disk group.
      */
-    readonly dataStorageSizeInTbs: number;
+    readonly dataStorageSizeInTbs?: number;
     /**
      * The local node storage allocated in GBs.
      */
-    readonly dbNodeStorageSizeInGbs: number;
+    readonly dbNodeStorageSizeInGbs?: number;
     /**
      * The software version of the database servers (dom0) in the cloud Exadata infrastructure. Example: 20.1.15
      */
-    readonly dbServerVersion: string;
+    readonly dbServerVersion?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * The user-friendly name for the cloud Exadata infrastructure resource. The name does not need to be unique.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
      */
-    readonly lastMaintenanceRunId: string;
+    readonly lastMaintenanceRunId?: string;
     /**
      * Additional information about the current lifecycle state.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
      */
-    readonly maintenanceWindows: outputs.Database.GetCloudExadataInfrastructureMaintenanceWindow[];
+    readonly maintenanceWindows?: outputs.Database.GetCloudExadataInfrastructureMaintenanceWindow[];
     /**
      * The total number of CPU cores available.
      */
-    readonly maxCpuCount: number;
+    readonly maxCpuCount?: number;
     /**
      * The total available DATA disk group size.
      */
-    readonly maxDataStorageInTbs: number;
+    readonly maxDataStorageInTbs?: number;
     /**
      * The total local node storage available in GBs.
      */
-    readonly maxDbNodeStorageInGbs: number;
+    readonly maxDbNodeStorageInGbs?: number;
     /**
      * The total memory available in GBs.
      */
-    readonly maxMemoryInGbs: number;
+    readonly maxMemoryInGbs?: number;
     /**
      * The memory allocated in GBs.
      */
-    readonly memorySizeInGbs: number;
+    readonly memorySizeInGbs?: number;
     /**
      * The monthly software version of the database servers (dom0) in the cloud Exadata infrastructure. Example: 20.1.15
      */
-    readonly monthlyDbServerVersion: string;
+    readonly monthlyDbServerVersion?: string;
     /**
      * The monthly software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
      */
-    readonly monthlyStorageServerVersion: string;
+    readonly monthlyStorageServerVersion?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
      */
-    readonly nextMaintenanceRunId: string;
+    readonly nextMaintenanceRunId?: string;
     /**
      * The model name of the cloud Exadata infrastructure resource.
      */
-    readonly shape: string;
+    readonly shape?: string;
     /**
      * The current lifecycle state of the cloud Exadata infrastructure resource.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The number of storage servers for the cloud Exadata infrastructure.
      */
-    readonly storageCount: number;
+    readonly storageCount?: number;
     /**
      * The software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
      */
-    readonly storageServerVersion: string;
+    readonly storageServerVersion?: string;
     /**
      * The date and time the cloud Exadata infrastructure resource was created.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The total storage allocated to the cloud Exadata infrastructure resource, in gigabytes (GB).
      */
-    readonly totalStorageSizeInGbs: number;
+    readonly totalStorageSizeInGbs?: number;
 }
 /**
  * This data source provides details about a specific Cloud Exadata Infrastructure resource in Oracle Cloud Infrastructure Database service.

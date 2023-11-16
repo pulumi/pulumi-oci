@@ -20,7 +20,7 @@ namespace Pulumi.Oci.Dns.Outputs
         /// <summary>
         /// A Boolean flag indicating whether or not parts of the record are unable to be explicitly managed.
         /// </summary>
-        public readonly bool IsProtected;
+        public readonly bool? IsProtected;
         /// <summary>
         /// The record's data, as whitespace-delimited tokens in type-specific presentation format. All RDATA is normalized and the returned presentation of your RDATA may differ from its initial input. For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
         /// </summary>
@@ -28,11 +28,11 @@ namespace Pulumi.Oci.Dns.Outputs
         /// <summary>
         /// A unique identifier for the record within its zone.
         /// </summary>
-        public readonly string RecordHash;
+        public readonly string? RecordHash;
         /// <summary>
         /// The latest version of the record's zone in which its RRSet differs from the preceding version.
         /// </summary>
-        public readonly string RrsetVersion;
+        public readonly string? RrsetVersion;
         /// <summary>
         /// Search by record type. Will match any record whose [type](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4) (case-insensitive) equals the provided value.
         /// </summary>
@@ -46,13 +46,13 @@ namespace Pulumi.Oci.Dns.Outputs
         private GetRrsetsRrsetItemResult(
             string domain,
 
-            bool isProtected,
+            bool? isProtected,
 
             string rdata,
 
-            string recordHash,
+            string? recordHash,
 
-            string rrsetVersion,
+            string? rrsetVersion,
 
             string rtype,
 

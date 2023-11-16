@@ -8,6 +8,8 @@ import com.pulumi.oci.DataSafe.outputs.GetSecurityAssessmentFindingsFindingRefer
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSecurityAssessmentFindingsFinding {
@@ -15,111 +17,111 @@ public final class GetSecurityAssessmentFindingsFinding {
      * @return The OCID of the assessment that generated this finding.
      * 
      */
-    private String assessmentId;
+    private @Nullable String assessmentId;
     /**
      * @return The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
      * 
      */
-    private List<String> details;
+    private @Nullable List<String> details;
     /**
      * @return The unique finding key. This is a system-generated identifier. To get the finding key for a finding, use ListFindings.
      * 
      */
-    private String key;
+    private @Nullable String key;
     /**
      * @return An optional filter to return only findings that match the specified reference.
      * 
      */
-    private List<GetSecurityAssessmentFindingsFindingReference> references;
+    private @Nullable List<GetSecurityAssessmentFindingsFindingReference> references;
     /**
      * @return The explanation of the issue in this finding. It explains the reason for the rule and, if a risk is reported, it may also explain the recommended actions for remediation.
      * 
      */
-    private String remarks;
+    private @Nullable String remarks;
     /**
      * @return A filter to return only findings of a particular risk level.
      * 
      */
-    private String severity;
+    private @Nullable String severity;
     /**
      * @return The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
      * 
      */
-    private String summary;
+    private @Nullable String summary;
     /**
      * @return The OCID of the target database.
      * 
      */
-    private String targetId;
+    private @Nullable String targetId;
     /**
      * @return The short title for the finding.
      * 
      */
-    private String title;
+    private @Nullable String title;
 
     private GetSecurityAssessmentFindingsFinding() {}
     /**
      * @return The OCID of the assessment that generated this finding.
      * 
      */
-    public String assessmentId() {
-        return this.assessmentId;
+    public Optional<String> assessmentId() {
+        return Optional.ofNullable(this.assessmentId);
     }
     /**
      * @return The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
      * 
      */
     public List<String> details() {
-        return this.details;
+        return this.details == null ? List.of() : this.details;
     }
     /**
      * @return The unique finding key. This is a system-generated identifier. To get the finding key for a finding, use ListFindings.
      * 
      */
-    public String key() {
-        return this.key;
+    public Optional<String> key() {
+        return Optional.ofNullable(this.key);
     }
     /**
      * @return An optional filter to return only findings that match the specified reference.
      * 
      */
     public List<GetSecurityAssessmentFindingsFindingReference> references() {
-        return this.references;
+        return this.references == null ? List.of() : this.references;
     }
     /**
      * @return The explanation of the issue in this finding. It explains the reason for the rule and, if a risk is reported, it may also explain the recommended actions for remediation.
      * 
      */
-    public String remarks() {
-        return this.remarks;
+    public Optional<String> remarks() {
+        return Optional.ofNullable(this.remarks);
     }
     /**
      * @return A filter to return only findings of a particular risk level.
      * 
      */
-    public String severity() {
-        return this.severity;
+    public Optional<String> severity() {
+        return Optional.ofNullable(this.severity);
     }
     /**
      * @return The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
      * 
      */
-    public String summary() {
-        return this.summary;
+    public Optional<String> summary() {
+        return Optional.ofNullable(this.summary);
     }
     /**
      * @return The OCID of the target database.
      * 
      */
-    public String targetId() {
-        return this.targetId;
+    public Optional<String> targetId() {
+        return Optional.ofNullable(this.targetId);
     }
     /**
      * @return The short title for the finding.
      * 
      */
-    public String title() {
-        return this.title;
+    public Optional<String> title() {
+        return Optional.ofNullable(this.title);
     }
 
     public static Builder builder() {
@@ -131,15 +133,15 @@ public final class GetSecurityAssessmentFindingsFinding {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String assessmentId;
-        private List<String> details;
-        private String key;
-        private List<GetSecurityAssessmentFindingsFindingReference> references;
-        private String remarks;
-        private String severity;
-        private String summary;
-        private String targetId;
-        private String title;
+        private @Nullable String assessmentId;
+        private @Nullable List<String> details;
+        private @Nullable String key;
+        private @Nullable List<GetSecurityAssessmentFindingsFindingReference> references;
+        private @Nullable String remarks;
+        private @Nullable String severity;
+        private @Nullable String summary;
+        private @Nullable String targetId;
+        private @Nullable String title;
         public Builder() {}
         public Builder(GetSecurityAssessmentFindingsFinding defaults) {
     	      Objects.requireNonNull(defaults);
@@ -155,54 +157,54 @@ public final class GetSecurityAssessmentFindingsFinding {
         }
 
         @CustomType.Setter
-        public Builder assessmentId(String assessmentId) {
-            this.assessmentId = Objects.requireNonNull(assessmentId);
+        public Builder assessmentId(@Nullable String assessmentId) {
+            this.assessmentId = assessmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder details(List<String> details) {
-            this.details = Objects.requireNonNull(details);
+        public Builder details(@Nullable List<String> details) {
+            this.details = details;
             return this;
         }
         public Builder details(String... details) {
             return details(List.of(details));
         }
         @CustomType.Setter
-        public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
+        public Builder key(@Nullable String key) {
+            this.key = key;
             return this;
         }
         @CustomType.Setter
-        public Builder references(List<GetSecurityAssessmentFindingsFindingReference> references) {
-            this.references = Objects.requireNonNull(references);
+        public Builder references(@Nullable List<GetSecurityAssessmentFindingsFindingReference> references) {
+            this.references = references;
             return this;
         }
         public Builder references(GetSecurityAssessmentFindingsFindingReference... references) {
             return references(List.of(references));
         }
         @CustomType.Setter
-        public Builder remarks(String remarks) {
-            this.remarks = Objects.requireNonNull(remarks);
+        public Builder remarks(@Nullable String remarks) {
+            this.remarks = remarks;
             return this;
         }
         @CustomType.Setter
-        public Builder severity(String severity) {
-            this.severity = Objects.requireNonNull(severity);
+        public Builder severity(@Nullable String severity) {
+            this.severity = severity;
             return this;
         }
         @CustomType.Setter
-        public Builder summary(String summary) {
-            this.summary = Objects.requireNonNull(summary);
+        public Builder summary(@Nullable String summary) {
+            this.summary = summary;
             return this;
         }
         @CustomType.Setter
-        public Builder targetId(String targetId) {
-            this.targetId = Objects.requireNonNull(targetId);
+        public Builder targetId(@Nullable String targetId) {
+            this.targetId = targetId;
             return this;
         }
         @CustomType.Setter
-        public Builder title(String title) {
-            this.title = Objects.requireNonNull(title);
+        public Builder title(@Nullable String title) {
+            this.title = title;
             return this;
         }
         public GetSecurityAssessmentFindingsFinding build() {

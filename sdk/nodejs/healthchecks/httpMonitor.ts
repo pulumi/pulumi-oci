@@ -82,7 +82,7 @@ export class HttpMonitor extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) A user-friendly and mutable name suitable for display in a user interface.
      */
@@ -90,17 +90,17 @@ export class HttpMonitor extends pulumi.CustomResource {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) A dictionary of HTTP request headers.
      *
      * *Note:* Monitors and probes do not support the use of the `Authorization` HTTP header.
      */
-    public readonly headers!: pulumi.Output<{[key: string]: any}>;
+    public readonly headers!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The region where updates must be made and where results must be fetched from.
      */
-    public /*out*/ readonly homeRegion!: pulumi.Output<string>;
+    public /*out*/ readonly homeRegion!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The monitor interval in seconds. Valid values: 10, 30, and 60.
      */
@@ -108,19 +108,19 @@ export class HttpMonitor extends pulumi.CustomResource {
     /**
      * (Updatable) Enables or disables the monitor. Set to 'true' to launch monitoring.
      */
-    public readonly isEnabled!: pulumi.Output<boolean>;
+    public readonly isEnabled!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) The supported HTTP methods available for probes.
      */
-    public readonly method!: pulumi.Output<string>;
+    public readonly method!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The optional URL path to probe, including query parameters.
      */
-    public readonly path!: pulumi.Output<string>;
+    public readonly path!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The port on which to probe endpoints. If unspecified, probes will use the default port of their protocol.
      */
-    public readonly port!: pulumi.Output<number>;
+    public readonly port!: pulumi.Output<number | undefined>;
     /**
      * (Updatable) The supported protocols available for HTTP probes.
      */
@@ -128,7 +128,7 @@ export class HttpMonitor extends pulumi.CustomResource {
     /**
      * A URL for fetching the probe results.
      */
-    public /*out*/ readonly resultsUrl!: pulumi.Output<string>;
+    public /*out*/ readonly resultsUrl!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) A list of targets (hostnames or IP addresses) of the probe.
      */
@@ -136,11 +136,11 @@ export class HttpMonitor extends pulumi.CustomResource {
     /**
      * The RFC 3339-formatted creation date and time of the probe.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
      */
-    public readonly timeoutInSeconds!: pulumi.Output<number>;
+    public readonly timeoutInSeconds!: pulumi.Output<number | undefined>;
     /**
      * (Updatable) A list of names of vantage points from which to execute the probe.
      *
@@ -148,7 +148,7 @@ export class HttpMonitor extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly vantagePointNames!: pulumi.Output<string[]>;
+    public readonly vantagePointNames!: pulumi.Output<string[] | undefined>;
 
     /**
      * Create a HttpMonitor resource with the given unique name, arguments, and options.

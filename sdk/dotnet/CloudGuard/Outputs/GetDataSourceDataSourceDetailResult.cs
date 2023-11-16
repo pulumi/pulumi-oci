@@ -16,15 +16,15 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// <summary>
         /// The additional entities count used for data source query.
         /// </summary>
-        public readonly int AdditionalEntitiesCount;
+        public readonly int? AdditionalEntitiesCount;
         /// <summary>
         /// Possible type of dataSourceFeed Provider(LoggingQuery)
         /// </summary>
-        public readonly string DataSourceFeedProvider;
+        public readonly string? DataSourceFeedProvider;
         /// <summary>
         /// Interval in minutes that query is run periodically.
         /// </summary>
-        public readonly int IntervalInMinutes;
+        public readonly int? IntervalInMinutes;
         /// <summary>
         /// Additional details specific to the data source type (Sighting/Insight).
         /// </summary>
@@ -32,15 +32,15 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// <summary>
         /// Logging query type for data source (Sighting/Insight)
         /// </summary>
-        public readonly string LoggingQueryType;
+        public readonly string? LoggingQueryType;
         /// <summary>
         /// Operator used in Data Soruce
         /// </summary>
-        public readonly string Operator;
+        public readonly string? Operator;
         /// <summary>
         /// The continuous query expression that is run periodically.
         /// </summary>
-        public readonly string Query;
+        public readonly string? Query;
         /// <summary>
         /// Time when the query can start, if not specified it can start immediately.
         /// </summary>
@@ -52,29 +52,29 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// <summary>
         /// The integer value that must be exceeded, fall below or equal to (depending on the operator), the query result to trigger an event.
         /// </summary>
-        public readonly int Threshold;
+        public readonly int? Threshold;
 
         [OutputConstructor]
         private GetDataSourceDataSourceDetailResult(
-            int additionalEntitiesCount,
+            int? additionalEntitiesCount,
 
-            string dataSourceFeedProvider,
+            string? dataSourceFeedProvider,
 
-            int intervalInMinutes,
+            int? intervalInMinutes,
 
             ImmutableArray<Outputs.GetDataSourceDataSourceDetailLoggingQueryDetailResult> loggingQueryDetails,
 
-            string loggingQueryType,
+            string? loggingQueryType,
 
-            string @operator,
+            string? @operator,
 
-            string query,
+            string? query,
 
             ImmutableArray<Outputs.GetDataSourceDataSourceDetailQueryStartTimeResult> queryStartTimes,
 
             ImmutableArray<string> regions,
 
-            int threshold)
+            int? threshold)
         {
             AdditionalEntitiesCount = additionalEntitiesCount;
             DataSourceFeedProvider = dataSourceFeedProvider;

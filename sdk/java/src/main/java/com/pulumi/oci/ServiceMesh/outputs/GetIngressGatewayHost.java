@@ -8,6 +8,8 @@ import com.pulumi.oci.ServiceMesh.outputs.GetIngressGatewayHostListener;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetIngressGatewayHost {
@@ -15,17 +17,17 @@ public final class GetIngressGatewayHost {
      * @return Hostnames of the host. Applicable only for HTTP and TLS_PASSTHROUGH listeners. Wildcard hostnames are supported in the prefix form. Examples of valid hostnames are &#34;www.example.com&#34;, &#34;*.example.com&#34;, &#34;*.com&#34;.
      * 
      */
-    private List<String> hostnames;
+    private @Nullable List<String> hostnames;
     /**
      * @return The listeners for the ingress gateway.
      * 
      */
-    private List<GetIngressGatewayHostListener> listeners;
+    private @Nullable List<GetIngressGatewayHostListener> listeners;
     /**
      * @return A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
      * 
      */
-    private String name;
+    private @Nullable String name;
 
     private GetIngressGatewayHost() {}
     /**
@@ -33,21 +35,21 @@ public final class GetIngressGatewayHost {
      * 
      */
     public List<String> hostnames() {
-        return this.hostnames;
+        return this.hostnames == null ? List.of() : this.hostnames;
     }
     /**
      * @return The listeners for the ingress gateway.
      * 
      */
     public List<GetIngressGatewayHostListener> listeners() {
-        return this.listeners;
+        return this.listeners == null ? List.of() : this.listeners;
     }
     /**
      * @return A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
 
     public static Builder builder() {
@@ -59,9 +61,9 @@ public final class GetIngressGatewayHost {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> hostnames;
-        private List<GetIngressGatewayHostListener> listeners;
-        private String name;
+        private @Nullable List<String> hostnames;
+        private @Nullable List<GetIngressGatewayHostListener> listeners;
+        private @Nullable String name;
         public Builder() {}
         public Builder(GetIngressGatewayHost defaults) {
     	      Objects.requireNonNull(defaults);
@@ -71,24 +73,24 @@ public final class GetIngressGatewayHost {
         }
 
         @CustomType.Setter
-        public Builder hostnames(List<String> hostnames) {
-            this.hostnames = Objects.requireNonNull(hostnames);
+        public Builder hostnames(@Nullable List<String> hostnames) {
+            this.hostnames = hostnames;
             return this;
         }
         public Builder hostnames(String... hostnames) {
             return hostnames(List.of(hostnames));
         }
         @CustomType.Setter
-        public Builder listeners(List<GetIngressGatewayHostListener> listeners) {
-            this.listeners = Objects.requireNonNull(listeners);
+        public Builder listeners(@Nullable List<GetIngressGatewayHostListener> listeners) {
+            this.listeners = listeners;
             return this;
         }
         public Builder listeners(GetIngressGatewayHostListener... listeners) {
             return listeners(List.of(listeners));
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         public GetIngressGatewayHost build() {

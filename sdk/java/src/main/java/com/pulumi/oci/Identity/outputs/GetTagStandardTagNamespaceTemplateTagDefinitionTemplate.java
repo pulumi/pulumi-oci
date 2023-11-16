@@ -8,6 +8,8 @@ import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetTagStandardTagNamespaceTemplateTagDefinitionTemplate {
@@ -15,75 +17,75 @@ public final class GetTagStandardTagNamespaceTemplateTagDefinitionTemplate {
      * @return The default description of the tag namespace that users can use to create the tag definition
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return The mutability of the possible values list for enum tags. This will default to IMMUTABLE for string value tags
      * 
      */
-    private String enumMutability;
+    private @Nullable String enumMutability;
     /**
      * @return Is the tag a cost tracking tag. Default will be false as cost tracking tags have been deprecated
      * 
      */
-    private Boolean isCostTracking;
+    private @Nullable Boolean isCostTracking;
     /**
      * @return List of possible values. An optional parameter that will be present if the type of definition is enum.
      * 
      */
-    private List<String> possibleValues;
+    private @Nullable List<String> possibleValues;
     /**
      * @return The name of this standard tag definition
      * 
      */
-    private String tagDefinitionName;
+    private @Nullable String tagDefinitionName;
     /**
      * @return The type of tag definition. Enum or string.
      * 
      */
-    private String type;
+    private @Nullable String type;
 
     private GetTagStandardTagNamespaceTemplateTagDefinitionTemplate() {}
     /**
      * @return The default description of the tag namespace that users can use to create the tag definition
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return The mutability of the possible values list for enum tags. This will default to IMMUTABLE for string value tags
      * 
      */
-    public String enumMutability() {
-        return this.enumMutability;
+    public Optional<String> enumMutability() {
+        return Optional.ofNullable(this.enumMutability);
     }
     /**
      * @return Is the tag a cost tracking tag. Default will be false as cost tracking tags have been deprecated
      * 
      */
-    public Boolean isCostTracking() {
-        return this.isCostTracking;
+    public Optional<Boolean> isCostTracking() {
+        return Optional.ofNullable(this.isCostTracking);
     }
     /**
      * @return List of possible values. An optional parameter that will be present if the type of definition is enum.
      * 
      */
     public List<String> possibleValues() {
-        return this.possibleValues;
+        return this.possibleValues == null ? List.of() : this.possibleValues;
     }
     /**
      * @return The name of this standard tag definition
      * 
      */
-    public String tagDefinitionName() {
-        return this.tagDefinitionName;
+    public Optional<String> tagDefinitionName() {
+        return Optional.ofNullable(this.tagDefinitionName);
     }
     /**
      * @return The type of tag definition. Enum or string.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
 
     public static Builder builder() {
@@ -95,12 +97,12 @@ public final class GetTagStandardTagNamespaceTemplateTagDefinitionTemplate {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String description;
-        private String enumMutability;
-        private Boolean isCostTracking;
-        private List<String> possibleValues;
-        private String tagDefinitionName;
-        private String type;
+        private @Nullable String description;
+        private @Nullable String enumMutability;
+        private @Nullable Boolean isCostTracking;
+        private @Nullable List<String> possibleValues;
+        private @Nullable String tagDefinitionName;
+        private @Nullable String type;
         public Builder() {}
         public Builder(GetTagStandardTagNamespaceTemplateTagDefinitionTemplate defaults) {
     	      Objects.requireNonNull(defaults);
@@ -113,36 +115,36 @@ public final class GetTagStandardTagNamespaceTemplateTagDefinitionTemplate {
         }
 
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder enumMutability(String enumMutability) {
-            this.enumMutability = Objects.requireNonNull(enumMutability);
+        public Builder enumMutability(@Nullable String enumMutability) {
+            this.enumMutability = enumMutability;
             return this;
         }
         @CustomType.Setter
-        public Builder isCostTracking(Boolean isCostTracking) {
-            this.isCostTracking = Objects.requireNonNull(isCostTracking);
+        public Builder isCostTracking(@Nullable Boolean isCostTracking) {
+            this.isCostTracking = isCostTracking;
             return this;
         }
         @CustomType.Setter
-        public Builder possibleValues(List<String> possibleValues) {
-            this.possibleValues = Objects.requireNonNull(possibleValues);
+        public Builder possibleValues(@Nullable List<String> possibleValues) {
+            this.possibleValues = possibleValues;
             return this;
         }
         public Builder possibleValues(String... possibleValues) {
             return possibleValues(List.of(possibleValues));
         }
         @CustomType.Setter
-        public Builder tagDefinitionName(String tagDefinitionName) {
-            this.tagDefinitionName = Objects.requireNonNull(tagDefinitionName);
+        public Builder tagDefinitionName(@Nullable String tagDefinitionName) {
+            this.tagDefinitionName = tagDefinitionName;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         public GetTagStandardTagNamespaceTemplateTagDefinitionTemplate build() {

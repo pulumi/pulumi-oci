@@ -94,14 +94,14 @@ public class DrProtectionGroup extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="association", refs={DrProtectionGroupAssociation.class}, tree="[0]")
-    private Output<DrProtectionGroupAssociation> association;
+    private Output</* @Nullable */ DrProtectionGroupAssociation> association;
 
     /**
      * @return The details for associating a DR protection group with a peer DR protection group.
      * 
      */
-    public Output<DrProtectionGroupAssociation> association() {
-        return this.association;
+    public Output<Optional<DrProtectionGroupAssociation>> association() {
+        return Codegen.optional(this.association);
     }
     /**
      * (Updatable) The OCID of the compartment in which to create the DR protection group.  Example: `ocid1.compartment.oc1..uniqueID`
@@ -122,14 +122,14 @@ public class DrProtectionGroup extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) An optional property when incremented triggers Disassociate. Could be set to any integer value.
@@ -170,42 +170,42 @@ public class DrProtectionGroup extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * A message describing the DR protection group&#39;s current state in more detail.
      * 
      */
     @Export(name="lifeCycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifeCycleDetails;
+    private Output</* @Nullable */ String> lifeCycleDetails;
 
     /**
      * @return A message describing the DR protection group&#39;s current state in more detail.
      * 
      */
-    public Output<String> lifeCycleDetails() {
-        return this.lifeCycleDetails;
+    public Output<Optional<String>> lifeCycleDetails() {
+        return Codegen.optional(this.lifeCycleDetails);
     }
     /**
      * The current sub-state of the DR protection group.
      * 
      */
     @Export(name="lifecycleSubState", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleSubState;
+    private Output</* @Nullable */ String> lifecycleSubState;
 
     /**
      * @return The current sub-state of the DR protection group.
      * 
      */
-    public Output<String> lifecycleSubState() {
-        return this.lifecycleSubState;
+    public Output<Optional<String>> lifecycleSubState() {
+        return Codegen.optional(this.lifecycleSubState);
     }
     /**
      * (Updatable) The details for creating an object storage log location for a DR protection group.
@@ -226,112 +226,112 @@ public class DrProtectionGroup extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="members", refs={List.class,DrProtectionGroupMember.class}, tree="[0,1]")
-    private Output<List<DrProtectionGroupMember>> members;
+    private Output</* @Nullable */ List<DrProtectionGroupMember>> members;
 
     /**
      * @return (Updatable) A list of DR protection group members.
      * 
      */
-    public Output<List<DrProtectionGroupMember>> members() {
-        return this.members;
+    public Output<Optional<List<DrProtectionGroupMember>>> members() {
+        return Codegen.optional(this.members);
     }
     /**
      * The OCID of the peer DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      * 
      */
     @Export(name="peerId", refs={String.class}, tree="[0]")
-    private Output<String> peerId;
+    private Output</* @Nullable */ String> peerId;
 
     /**
      * @return The OCID of the peer DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      * 
      */
-    public Output<String> peerId() {
-        return this.peerId;
+    public Output<Optional<String>> peerId() {
+        return Codegen.optional(this.peerId);
     }
     /**
      * The region of the peer DR protection group.  Example: `us-ashburn-1`
      * 
      */
     @Export(name="peerRegion", refs={String.class}, tree="[0]")
-    private Output<String> peerRegion;
+    private Output</* @Nullable */ String> peerRegion;
 
     /**
      * @return The region of the peer DR protection group.  Example: `us-ashburn-1`
      * 
      */
-    public Output<String> peerRegion() {
-        return this.peerRegion;
+    public Output<Optional<String>> peerRegion() {
+        return Codegen.optional(this.peerRegion);
     }
     /**
      * The role of the DR protection group.  Example: `STANDBY`
      * 
      */
     @Export(name="role", refs={String.class}, tree="[0]")
-    private Output<String> role;
+    private Output</* @Nullable */ String> role;
 
     /**
      * @return The role of the DR protection group.  Example: `STANDBY`
      * 
      */
-    public Output<String> role() {
-        return this.role;
+    public Output<Optional<String>> role() {
+        return Codegen.optional(this.role);
     }
     /**
      * The current state of the DR protection group.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the DR protection group.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> systemTags;
+    private Output</* @Nullable */ Map<String,Object>> systemTags;
 
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    public Output<Map<String,Object>> systemTags() {
-        return this.systemTags;
+    public Output<Optional<Map<String,Object>>> systemTags() {
+        return Codegen.optional(this.systemTags);
     }
     /**
      * The date and time the DR protection group was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the DR protection group was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The date and time the DR protection group was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The date and time the DR protection group was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
 
     /**

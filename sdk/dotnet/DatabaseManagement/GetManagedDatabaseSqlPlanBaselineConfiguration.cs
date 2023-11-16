@@ -122,40 +122,40 @@ namespace Pulumi.Oci.DatabaseManagement
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Indicates whether the Automatic SPM Evolve Advisor task is enabled (`true`) or not (`false`).
         /// </summary>
-        public readonly bool IsAutoSpmEvolveTaskEnabled;
+        public readonly bool? IsAutoSpmEvolveTaskEnabled;
         /// <summary>
         /// Indicates whether the automatic capture of SQL plan baselines is enabled (`true`) or not (`false`).
         /// </summary>
-        public readonly bool IsAutomaticInitialPlanCaptureEnabled;
+        public readonly bool? IsAutomaticInitialPlanCaptureEnabled;
         /// <summary>
         /// Indicates whether the high frequency Automatic SPM Evolve Advisor task is enabled (`true`) or not (`false`).
         /// </summary>
-        public readonly bool IsHighFrequencyAutoSpmEvolveTaskEnabled;
+        public readonly bool? IsHighFrequencyAutoSpmEvolveTaskEnabled;
         /// <summary>
         /// Indicates whether the database uses SQL plan baselines (`true`) or not (`false`).
         /// </summary>
-        public readonly bool IsSqlPlanBaselinesUsageEnabled;
+        public readonly bool? IsSqlPlanBaselinesUsageEnabled;
         public readonly string ManagedDatabaseId;
         /// <summary>
         /// The number of weeks to retain unused plans before they are purged.
         /// </summary>
-        public readonly int PlanRetentionWeeks;
+        public readonly int? PlanRetentionWeeks;
         /// <summary>
         /// The maximum `SYSAUX` space that can be used for SQL Management Base in MB.
         /// </summary>
-        public readonly double SpaceBudgetMb;
+        public readonly double? SpaceBudgetMb;
         /// <summary>
         /// The maximum percent of `SYSAUX` space that can be used for SQL Management Base.
         /// </summary>
-        public readonly double SpaceBudgetPercent;
+        public readonly double? SpaceBudgetPercent;
         /// <summary>
         /// The space used by SQL Management Base in MB.
         /// </summary>
-        public readonly double SpaceUsedMb;
+        public readonly double? SpaceUsedMb;
 
         [OutputConstructor]
         private GetManagedDatabaseSqlPlanBaselineConfigurationResult(
@@ -163,25 +163,25 @@ namespace Pulumi.Oci.DatabaseManagement
 
             ImmutableArray<Outputs.GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameterResult> autoSpmEvolveTaskParameters,
 
-            string id,
+            string? id,
 
-            bool isAutoSpmEvolveTaskEnabled,
+            bool? isAutoSpmEvolveTaskEnabled,
 
-            bool isAutomaticInitialPlanCaptureEnabled,
+            bool? isAutomaticInitialPlanCaptureEnabled,
 
-            bool isHighFrequencyAutoSpmEvolveTaskEnabled,
+            bool? isHighFrequencyAutoSpmEvolveTaskEnabled,
 
-            bool isSqlPlanBaselinesUsageEnabled,
+            bool? isSqlPlanBaselinesUsageEnabled,
 
             string managedDatabaseId,
 
-            int planRetentionWeeks,
+            int? planRetentionWeeks,
 
-            double spaceBudgetMb,
+            double? spaceBudgetMb,
 
-            double spaceBudgetPercent,
+            double? spaceBudgetPercent,
 
-            double spaceUsedMb)
+            double? spaceUsedMb)
         {
             AutoCaptureFilters = autoCaptureFilters;
             AutoSpmEvolveTaskParameters = autoSpmEvolveTaskParameters;

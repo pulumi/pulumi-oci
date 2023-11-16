@@ -82,74 +82,47 @@ class GetLicenseRecordResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where the license record is created.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The license record display name. Avoid entering confidential information.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="expirationDate")
-    def expiration_date(self) -> str:
-        """
-        The license record end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format. Example: `2018-09-12`
-        """
+    def expiration_date(self) -> Optional[str]:
         return pulumi.get(self, "expiration_date")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The license record [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isPerpetual")
-    def is_perpetual(self) -> bool:
-        """
-        Specifies if the license record term is perpertual.
-        """
+    def is_perpetual(self) -> Optional[bool]:
         return pulumi.get(self, "is_perpetual")
 
     @property
     @pulumi.getter(name="isUnlimited")
-    def is_unlimited(self) -> bool:
-        """
-        Specifies if the license count is unlimited.
-        """
+    def is_unlimited(self) -> Optional[bool]:
         return pulumi.get(self, "is_unlimited")
 
     @property
     @pulumi.getter(name="licenseCount")
-    def license_count(self) -> int:
-        """
-        The number of license units added by the user for the given license record. Default 1
-        """
+    def license_count(self) -> Optional[int]:
         return pulumi.get(self, "license_count")
 
     @property
@@ -159,74 +132,47 @@ class GetLicenseRecordResult:
 
     @property
     @pulumi.getter(name="licenseUnit")
-    def license_unit(self) -> str:
-        """
-        The product license unit.
-        """
+    def license_unit(self) -> Optional[str]:
         return pulumi.get(self, "license_unit")
 
     @property
     @pulumi.getter(name="productId")
-    def product_id(self) -> str:
-        """
-        The license record product ID.
-        """
+    def product_id(self) -> Optional[str]:
         return pulumi.get(self, "product_id")
 
     @property
     @pulumi.getter(name="productLicense")
-    def product_license(self) -> str:
-        """
-        The product license name with which the license record is associated.
-        """
+    def product_license(self) -> Optional[str]:
         return pulumi.get(self, "product_license")
 
     @property
     @pulumi.getter(name="productLicenseId")
-    def product_license_id(self) -> str:
-        """
-        The product license [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) with which the license record is associated.
-        """
+    def product_license_id(self) -> Optional[str]:
         return pulumi.get(self, "product_license_id")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current license record state.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="supportEndDate")
-    def support_end_date(self) -> str:
-        """
-        The license record support end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format. Example: `2018-09-12`
-        """
+    def support_end_date(self) -> Optional[str]:
         return pulumi.get(self, "support_end_date")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the license record was created. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the license record was updated. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -260,21 +206,7 @@ class AwaitableGetLicenseRecordResult(GetLicenseRecordResult):
 def get_license_record(license_record_id: Optional[str] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetLicenseRecordResult:
     """
-    This data source provides details about a specific License Record resource in Oracle Cloud Infrastructure License Manager service.
-
-    Retrieves license record details by the license record ID in a given compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_license_record = oci.LicenseManager.get_license_record(license_record_id=oci_license_manager_license_record["test_license_record"]["id"])
-    ```
-
-
-    :param str license_record_id: Unique license record identifier.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['licenseRecordId'] = license_record_id
@@ -307,20 +239,6 @@ def get_license_record(license_record_id: Optional[str] = None,
 def get_license_record_output(license_record_id: Optional[pulumi.Input[str]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetLicenseRecordResult]:
     """
-    This data source provides details about a specific License Record resource in Oracle Cloud Infrastructure License Manager service.
-
-    Retrieves license record details by the license record ID in a given compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_license_record = oci.LicenseManager.get_license_record(license_record_id=oci_license_manager_license_record["test_license_record"]["id"])
-    ```
-
-
-    :param str license_record_id: Unique license record identifier.
+    Use this data source to access information about an existing resource.
     """
     ...

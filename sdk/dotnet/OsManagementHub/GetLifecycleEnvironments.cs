@@ -238,7 +238,7 @@ namespace Pulumi.Oci.OsManagementHub
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The list of lifecycle_environment_collection.
         /// </summary>
@@ -268,7 +268,7 @@ namespace Pulumi.Oci.OsManagementHub
 
             ImmutableArray<Outputs.GetLifecycleEnvironmentsFilterResult> filters,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetLifecycleEnvironmentsLifecycleEnvironmentCollectionResult> lifecycleEnvironmentCollections,
 

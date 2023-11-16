@@ -6,6 +6,8 @@ package com.pulumi.oci.Jms.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetFleetsFleetCollectionItemOperationLog {
@@ -13,27 +15,27 @@ public final class GetFleetsFleetCollectionItemOperationLog {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
      * 
      */
-    private String logGroupId;
+    private @Nullable String logGroupId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
      * 
      */
-    private String logId;
+    private @Nullable String logId;
 
     private GetFleetsFleetCollectionItemOperationLog() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
      * 
      */
-    public String logGroupId() {
-        return this.logGroupId;
+    public Optional<String> logGroupId() {
+        return Optional.ofNullable(this.logGroupId);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
      * 
      */
-    public String logId() {
-        return this.logId;
+    public Optional<String> logId() {
+        return Optional.ofNullable(this.logId);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetFleetsFleetCollectionItemOperationLog {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String logGroupId;
-        private String logId;
+        private @Nullable String logGroupId;
+        private @Nullable String logId;
         public Builder() {}
         public Builder(GetFleetsFleetCollectionItemOperationLog defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetFleetsFleetCollectionItemOperationLog {
         }
 
         @CustomType.Setter
-        public Builder logGroupId(String logGroupId) {
-            this.logGroupId = Objects.requireNonNull(logGroupId);
+        public Builder logGroupId(@Nullable String logGroupId) {
+            this.logGroupId = logGroupId;
             return this;
         }
         @CustomType.Setter
-        public Builder logId(String logId) {
-            this.logId = Objects.requireNonNull(logId);
+        public Builder logId(@Nullable String logId) {
+            this.logId = logId;
             return this;
         }
         public GetFleetsFleetCollectionItemOperationLog build() {

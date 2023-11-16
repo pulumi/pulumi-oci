@@ -16,29 +16,29 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// <summary>
         /// Listen port for the backend server.
         /// </summary>
-        public readonly int BackendPort;
+        public readonly int? BackendPort;
         /// <summary>
         /// Name of the load balancer listener.
         /// </summary>
-        public readonly string ListenerName;
+        public readonly string? ListenerName;
         /// <summary>
         /// The OCID of the load balancer.
         /// </summary>
-        public readonly string LoadBalancerId;
+        public readonly string? LoadBalancerId;
         /// <summary>
         /// A filter to return only deployment stages that matches the given lifecycle state.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
 
         [OutputConstructor]
         private GetDeployStagesDeployStageCollectionItemTestLoadBalancerConfigResult(
-            int backendPort,
+            int? backendPort,
 
-            string listenerName,
+            string? listenerName,
 
-            string loadBalancerId,
+            string? loadBalancerId,
 
-            string state)
+            string? state)
         {
             BackendPort = backendPort;
             ListenerName = listenerName;

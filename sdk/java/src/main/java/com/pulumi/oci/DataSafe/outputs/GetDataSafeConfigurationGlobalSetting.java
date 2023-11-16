@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDataSafeConfigurationGlobalSetting {
@@ -14,39 +16,39 @@ public final class GetDataSafeConfigurationGlobalSetting {
      * @return The paid usage option chosen by the customer admin.
      * 
      */
-    private Boolean isPaidUsage;
+    private @Nullable Boolean isPaidUsage;
     /**
      * @return The offline retention period in months.
      * 
      */
-    private Integer offlineRetentionPeriod;
+    private @Nullable Integer offlineRetentionPeriod;
     /**
      * @return The online retention period in months.
      * 
      */
-    private Integer onlineRetentionPeriod;
+    private @Nullable Integer onlineRetentionPeriod;
 
     private GetDataSafeConfigurationGlobalSetting() {}
     /**
      * @return The paid usage option chosen by the customer admin.
      * 
      */
-    public Boolean isPaidUsage() {
-        return this.isPaidUsage;
+    public Optional<Boolean> isPaidUsage() {
+        return Optional.ofNullable(this.isPaidUsage);
     }
     /**
      * @return The offline retention period in months.
      * 
      */
-    public Integer offlineRetentionPeriod() {
-        return this.offlineRetentionPeriod;
+    public Optional<Integer> offlineRetentionPeriod() {
+        return Optional.ofNullable(this.offlineRetentionPeriod);
     }
     /**
      * @return The online retention period in months.
      * 
      */
-    public Integer onlineRetentionPeriod() {
-        return this.onlineRetentionPeriod;
+    public Optional<Integer> onlineRetentionPeriod() {
+        return Optional.ofNullable(this.onlineRetentionPeriod);
     }
 
     public static Builder builder() {
@@ -58,9 +60,9 @@ public final class GetDataSafeConfigurationGlobalSetting {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Boolean isPaidUsage;
-        private Integer offlineRetentionPeriod;
-        private Integer onlineRetentionPeriod;
+        private @Nullable Boolean isPaidUsage;
+        private @Nullable Integer offlineRetentionPeriod;
+        private @Nullable Integer onlineRetentionPeriod;
         public Builder() {}
         public Builder(GetDataSafeConfigurationGlobalSetting defaults) {
     	      Objects.requireNonNull(defaults);
@@ -70,18 +72,18 @@ public final class GetDataSafeConfigurationGlobalSetting {
         }
 
         @CustomType.Setter
-        public Builder isPaidUsage(Boolean isPaidUsage) {
-            this.isPaidUsage = Objects.requireNonNull(isPaidUsage);
+        public Builder isPaidUsage(@Nullable Boolean isPaidUsage) {
+            this.isPaidUsage = isPaidUsage;
             return this;
         }
         @CustomType.Setter
-        public Builder offlineRetentionPeriod(Integer offlineRetentionPeriod) {
-            this.offlineRetentionPeriod = Objects.requireNonNull(offlineRetentionPeriod);
+        public Builder offlineRetentionPeriod(@Nullable Integer offlineRetentionPeriod) {
+            this.offlineRetentionPeriod = offlineRetentionPeriod;
             return this;
         }
         @CustomType.Setter
-        public Builder onlineRetentionPeriod(Integer onlineRetentionPeriod) {
-            this.onlineRetentionPeriod = Objects.requireNonNull(onlineRetentionPeriod);
+        public Builder onlineRetentionPeriod(@Nullable Integer onlineRetentionPeriod) {
+            this.onlineRetentionPeriod = onlineRetentionPeriod;
             return this;
         }
         public GetDataSafeConfigurationGlobalSetting build() {

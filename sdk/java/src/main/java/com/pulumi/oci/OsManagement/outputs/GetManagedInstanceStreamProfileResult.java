@@ -20,7 +20,7 @@ public final class GetManagedInstanceStreamProfileResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String managedInstanceId;
     /**
      * @return The name of the module that contains the stream profile
@@ -31,7 +31,7 @@ public final class GetManagedInstanceStreamProfileResult {
      * @return The list of module_stream_profile_on_managed_instances.
      * 
      */
-    private List<GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstance> moduleStreamProfileOnManagedInstances;
+    private @Nullable List<GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstance> moduleStreamProfileOnManagedInstances;
     /**
      * @return The name of the profile
      * 
@@ -55,8 +55,8 @@ public final class GetManagedInstanceStreamProfileResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String managedInstanceId() {
         return this.managedInstanceId;
@@ -73,7 +73,7 @@ public final class GetManagedInstanceStreamProfileResult {
      * 
      */
     public List<GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstance> moduleStreamProfileOnManagedInstances() {
-        return this.moduleStreamProfileOnManagedInstances;
+        return this.moduleStreamProfileOnManagedInstances == null ? List.of() : this.moduleStreamProfileOnManagedInstances;
     }
     /**
      * @return The name of the profile
@@ -104,10 +104,10 @@ public final class GetManagedInstanceStreamProfileResult {
     public static final class Builder {
         private @Nullable String compartmentId;
         private @Nullable List<GetManagedInstanceStreamProfileFilter> filters;
-        private String id;
+        private @Nullable String id;
         private String managedInstanceId;
         private @Nullable String moduleName;
-        private List<GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstance> moduleStreamProfileOnManagedInstances;
+        private @Nullable List<GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstance> moduleStreamProfileOnManagedInstances;
         private @Nullable String profileName;
         private @Nullable String profileStatus;
         private @Nullable String streamName;
@@ -139,8 +139,8 @@ public final class GetManagedInstanceStreamProfileResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -154,8 +154,8 @@ public final class GetManagedInstanceStreamProfileResult {
             return this;
         }
         @CustomType.Setter
-        public Builder moduleStreamProfileOnManagedInstances(List<GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstance> moduleStreamProfileOnManagedInstances) {
-            this.moduleStreamProfileOnManagedInstances = Objects.requireNonNull(moduleStreamProfileOnManagedInstances);
+        public Builder moduleStreamProfileOnManagedInstances(@Nullable List<GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstance> moduleStreamProfileOnManagedInstances) {
+            this.moduleStreamProfileOnManagedInstances = moduleStreamProfileOnManagedInstances;
             return this;
         }
         public Builder moduleStreamProfileOnManagedInstances(GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstance... moduleStreamProfileOnManagedInstances) {

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Public Vantage Point resource in Oracle Cloud Infrastructure Apm Synthetics service.
@@ -69,7 +68,7 @@ type GetVantagePointResult struct {
 	// Unique name that can be edited. The name should not contain any confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// List of PublicVantagePointSummary items.
 	Items []GetVantagePointItem `pulumi:"items"`
 	// Unique permanent name of the vantage point.
@@ -118,12 +117,6 @@ func (o GetVantagePointResultOutput) ToGetVantagePointResultOutputWithContext(ct
 	return o
 }
 
-func (o GetVantagePointResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetVantagePointResult] {
-	return pulumix.Output[GetVantagePointResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetVantagePointResultOutput) ApmDomainId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVantagePointResult) string { return v.ApmDomainId }).(pulumi.StringOutput)
 }
@@ -134,8 +127,8 @@ func (o GetVantagePointResultOutput) DisplayName() pulumi.StringPtrOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetVantagePointResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVantagePointResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetVantagePointResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVantagePointResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // List of PublicVantagePointSummary items.

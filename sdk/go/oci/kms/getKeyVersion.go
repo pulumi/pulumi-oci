@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Key Version resource in Oracle Cloud Infrastructure Kms service.
@@ -71,35 +70,35 @@ type LookupKeyVersionArgs struct {
 // A collection of values returned by getKeyVersion.
 type LookupKeyVersionResult struct {
 	// The OCID of the compartment that contains this key version.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Key reference data to be returned to the customer as a response.
 	ExternalKeyReferenceDetails []GetKeyVersionExternalKeyReferenceDetail `pulumi:"externalKeyReferenceDetails"`
 	// Key version ID associated with the external key.
-	ExternalKeyVersionId string `pulumi:"externalKeyVersionId"`
+	ExternalKeyVersionId *string `pulumi:"externalKeyVersionId"`
 	// The OCID of the key version.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A Boolean value that indicates whether the KeyVersion belongs to primary Vault or replica Vault.
-	IsPrimary bool `pulumi:"isPrimary"`
+	IsPrimary *bool `pulumi:"isPrimary"`
 	// The OCID of the master encryption key associated with this key version.
 	KeyId string `pulumi:"keyId"`
 	// The OCID of the key version.
 	KeyVersionId       string `pulumi:"keyVersionId"`
 	ManagementEndpoint string `pulumi:"managementEndpoint"`
 	// The public key in PEM format. (This value pertains only to RSA and ECDSA keys.)
-	PublicKey string `pulumi:"publicKey"`
+	PublicKey *string `pulumi:"publicKey"`
 	// KeyVersion replica details
 	ReplicaDetails    []GetKeyVersionReplicaDetail `pulumi:"replicaDetails"`
-	RestoredFromKeyId string                       `pulumi:"restoredFromKeyId"`
+	RestoredFromKeyId *string                      `pulumi:"restoredFromKeyId"`
 	// The OCID of the key version from which this key version was restored.
-	RestoredFromKeyVersionId string `pulumi:"restoredFromKeyVersionId"`
+	RestoredFromKeyVersionId *string `pulumi:"restoredFromKeyVersionId"`
 	// The key version's current lifecycle state.  Example: `ENABLED`
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time this key version was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: "2018-04-03T21:10:29.600Z"
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// An optional property to indicate when to delete the key version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfDeletion string `pulumi:"timeOfDeletion"`
+	TimeOfDeletion *string `pulumi:"timeOfDeletion"`
 	// The OCID of the vault that contains this key version.
-	VaultId string `pulumi:"vaultId"`
+	VaultId *string `pulumi:"vaultId"`
 }
 
 func LookupKeyVersionOutput(ctx *pulumi.Context, args LookupKeyVersionOutputArgs, opts ...pulumi.InvokeOption) LookupKeyVersionResultOutput {
@@ -144,15 +143,9 @@ func (o LookupKeyVersionResultOutput) ToLookupKeyVersionResultOutputWithContext(
 	return o
 }
 
-func (o LookupKeyVersionResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupKeyVersionResult] {
-	return pulumix.Output[LookupKeyVersionResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment that contains this key version.
-func (o LookupKeyVersionResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupKeyVersionResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupKeyVersionResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupKeyVersionResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Key reference data to be returned to the customer as a response.
@@ -163,18 +156,18 @@ func (o LookupKeyVersionResultOutput) ExternalKeyReferenceDetails() GetKeyVersio
 }
 
 // Key version ID associated with the external key.
-func (o LookupKeyVersionResultOutput) ExternalKeyVersionId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupKeyVersionResult) string { return v.ExternalKeyVersionId }).(pulumi.StringOutput)
+func (o LookupKeyVersionResultOutput) ExternalKeyVersionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupKeyVersionResult) *string { return v.ExternalKeyVersionId }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the key version.
-func (o LookupKeyVersionResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupKeyVersionResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupKeyVersionResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupKeyVersionResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A Boolean value that indicates whether the KeyVersion belongs to primary Vault or replica Vault.
-func (o LookupKeyVersionResultOutput) IsPrimary() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupKeyVersionResult) bool { return v.IsPrimary }).(pulumi.BoolOutput)
+func (o LookupKeyVersionResultOutput) IsPrimary() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupKeyVersionResult) *bool { return v.IsPrimary }).(pulumi.BoolPtrOutput)
 }
 
 // The OCID of the master encryption key associated with this key version.
@@ -192,8 +185,8 @@ func (o LookupKeyVersionResultOutput) ManagementEndpoint() pulumi.StringOutput {
 }
 
 // The public key in PEM format. (This value pertains only to RSA and ECDSA keys.)
-func (o LookupKeyVersionResultOutput) PublicKey() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupKeyVersionResult) string { return v.PublicKey }).(pulumi.StringOutput)
+func (o LookupKeyVersionResultOutput) PublicKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupKeyVersionResult) *string { return v.PublicKey }).(pulumi.StringPtrOutput)
 }
 
 // KeyVersion replica details
@@ -201,33 +194,33 @@ func (o LookupKeyVersionResultOutput) ReplicaDetails() GetKeyVersionReplicaDetai
 	return o.ApplyT(func(v LookupKeyVersionResult) []GetKeyVersionReplicaDetail { return v.ReplicaDetails }).(GetKeyVersionReplicaDetailArrayOutput)
 }
 
-func (o LookupKeyVersionResultOutput) RestoredFromKeyId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupKeyVersionResult) string { return v.RestoredFromKeyId }).(pulumi.StringOutput)
+func (o LookupKeyVersionResultOutput) RestoredFromKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupKeyVersionResult) *string { return v.RestoredFromKeyId }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the key version from which this key version was restored.
-func (o LookupKeyVersionResultOutput) RestoredFromKeyVersionId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupKeyVersionResult) string { return v.RestoredFromKeyVersionId }).(pulumi.StringOutput)
+func (o LookupKeyVersionResultOutput) RestoredFromKeyVersionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupKeyVersionResult) *string { return v.RestoredFromKeyVersionId }).(pulumi.StringPtrOutput)
 }
 
 // The key version's current lifecycle state.  Example: `ENABLED`
-func (o LookupKeyVersionResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupKeyVersionResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupKeyVersionResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupKeyVersionResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time this key version was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: "2018-04-03T21:10:29.600Z"
-func (o LookupKeyVersionResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupKeyVersionResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupKeyVersionResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupKeyVersionResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // An optional property to indicate when to delete the key version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-func (o LookupKeyVersionResultOutput) TimeOfDeletion() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupKeyVersionResult) string { return v.TimeOfDeletion }).(pulumi.StringOutput)
+func (o LookupKeyVersionResultOutput) TimeOfDeletion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupKeyVersionResult) *string { return v.TimeOfDeletion }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the vault that contains this key version.
-func (o LookupKeyVersionResultOutput) VaultId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupKeyVersionResult) string { return v.VaultId }).(pulumi.StringOutput)
+func (o LookupKeyVersionResultOutput) VaultId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupKeyVersionResult) *string { return v.VaultId }).(pulumi.StringPtrOutput)
 }
 
 func init() {

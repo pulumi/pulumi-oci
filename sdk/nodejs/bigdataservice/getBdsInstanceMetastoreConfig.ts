@@ -48,43 +48,43 @@ export interface GetBdsInstanceMetastoreConfigArgs {
  * A collection of values returned by getBdsInstanceMetastoreConfig.
  */
 export interface GetBdsInstanceMetastoreConfigResult {
-    readonly activateTrigger: number;
+    readonly activateTrigger?: number;
     /**
      * The ID of BDS API Key used for metastore configuration. Set only if metastore's type is EXTERNAL.
      */
-    readonly bdsApiKeyId: string;
-    readonly bdsApiKeyPassphrase: string;
+    readonly bdsApiKeyId?: string;
+    readonly bdsApiKeyPassphrase?: string;
     readonly bdsInstanceId: string;
-    readonly clusterAdminPassword: string;
+    readonly clusterAdminPassword?: string;
     /**
      * The display name of metastore configuration
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * The ID of the metastore configuration
      */
-    readonly id: string;
+    readonly id?: string;
     readonly metastoreConfigId: string;
     /**
      * The OCID of the Data Catalog metastore. Set only if metastore's type is EXTERNAL.
      */
-    readonly metastoreId: string;
+    readonly metastoreId?: string;
     /**
      * The type of the metastore in the metastore configuration.
      */
-    readonly metastoreType: string;
+    readonly metastoreType?: string;
     /**
      * the lifecycle state of the metastore configuration.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The time when the configuration was created, shown as an RFC 3339 formatted datetime string.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The time when the configuration was updated, shown as an RFC 3339 formatted datetime string.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific Bds Instance Metastore Config resource in Oracle Cloud Infrastructure Big Data Service service.

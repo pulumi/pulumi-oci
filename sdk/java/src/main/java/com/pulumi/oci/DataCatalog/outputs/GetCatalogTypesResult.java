@@ -30,7 +30,7 @@ public final class GetCatalogTypesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Indicates whether the type is approved for use as a classifying object.
      * 
@@ -65,7 +65,7 @@ public final class GetCatalogTypesResult {
      * @return The list of type_collection.
      * 
      */
-    private List<GetCatalogTypesTypeCollection> typeCollections;
+    private @Nullable List<GetCatalogTypesTypeCollection> typeCollections;
 
     private GetCatalogTypesResult() {}
     /**
@@ -92,8 +92,8 @@ public final class GetCatalogTypesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Indicates whether the type is approved for use as a classifying object.
@@ -142,7 +142,7 @@ public final class GetCatalogTypesResult {
      * 
      */
     public List<GetCatalogTypesTypeCollection> typeCollections() {
-        return this.typeCollections;
+        return this.typeCollections == null ? List.of() : this.typeCollections;
     }
 
     public static Builder builder() {
@@ -158,14 +158,14 @@ public final class GetCatalogTypesResult {
         private @Nullable String externalTypeName;
         private @Nullable List<String> fields;
         private @Nullable List<GetCatalogTypesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String isApproved;
         private @Nullable String isInternal;
         private @Nullable String isTag;
         private @Nullable String name;
         private @Nullable String state;
         private @Nullable String typeCategory;
-        private List<GetCatalogTypesTypeCollection> typeCollections;
+        private @Nullable List<GetCatalogTypesTypeCollection> typeCollections;
         public Builder() {}
         public Builder(GetCatalogTypesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -210,8 +210,8 @@ public final class GetCatalogTypesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -245,8 +245,8 @@ public final class GetCatalogTypesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder typeCollections(List<GetCatalogTypesTypeCollection> typeCollections) {
-            this.typeCollections = Objects.requireNonNull(typeCollections);
+        public Builder typeCollections(@Nullable List<GetCatalogTypesTypeCollection> typeCollections) {
+            this.typeCollections = typeCollections;
             return this;
         }
         public Builder typeCollections(GetCatalogTypesTypeCollection... typeCollections) {

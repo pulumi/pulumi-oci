@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific External Cluster Instance resource in Oracle Cloud Infrastructure Database Management service.
@@ -60,38 +59,38 @@ type LookupExternalClusterInstanceArgs struct {
 // A collection of values returned by getExternalClusterInstance.
 type LookupExternalClusterInstanceResult struct {
 	// The Automatic Diagnostic Repository (ADR) home directory for the cluster instance.
-	AdrHomeDirectory string `pulumi:"adrHomeDirectory"`
+	AdrHomeDirectory *string `pulumi:"adrHomeDirectory"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The name of the external cluster instance.
-	ComponentName string `pulumi:"componentName"`
+	ComponentName *string `pulumi:"componentName"`
 	// The Oracle base location of Cluster Ready Services (CRS).
-	CrsBaseDirectory string `pulumi:"crsBaseDirectory"`
+	CrsBaseDirectory *string `pulumi:"crsBaseDirectory"`
 	// The user-friendly name for the cluster instance. The name does not have to be unique.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external cluster that the cluster instance belongs to.
-	ExternalClusterId         string `pulumi:"externalClusterId"`
-	ExternalClusterInstanceId string `pulumi:"externalClusterInstanceId"`
+	ExternalClusterId         *string `pulumi:"externalClusterId"`
+	ExternalClusterInstanceId string  `pulumi:"externalClusterInstanceId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
-	ExternalConnectorId string `pulumi:"externalConnectorId"`
+	ExternalConnectorId *string `pulumi:"externalConnectorId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB node.
-	ExternalDbNodeId string `pulumi:"externalDbNodeId"`
+	ExternalDbNodeId *string `pulumi:"externalDbNodeId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the cluster instance is a part of.
-	ExternalDbSystemId string `pulumi:"externalDbSystemId"`
+	ExternalDbSystemId *string `pulumi:"externalDbSystemId"`
 	// The name of the host on which the cluster instance is running.
-	HostName string `pulumi:"hostName"`
+	HostName *string `pulumi:"hostName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external cluster instance.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Additional information about the current lifecycle state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The role of the cluster node.
-	NodeRole string `pulumi:"nodeRole"`
+	NodeRole *string `pulumi:"nodeRole"`
 	// The current lifecycle state of the external cluster instance.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the external cluster instance was created.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the external cluster instance was last updated.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func LookupExternalClusterInstanceOutput(ctx *pulumi.Context, args LookupExternalClusterInstanceOutputArgs, opts ...pulumi.InvokeOption) LookupExternalClusterInstanceResultOutput {
@@ -132,40 +131,34 @@ func (o LookupExternalClusterInstanceResultOutput) ToLookupExternalClusterInstan
 	return o
 }
 
-func (o LookupExternalClusterInstanceResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupExternalClusterInstanceResult] {
-	return pulumix.Output[LookupExternalClusterInstanceResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The Automatic Diagnostic Repository (ADR) home directory for the cluster instance.
-func (o LookupExternalClusterInstanceResultOutput) AdrHomeDirectory() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalClusterInstanceResult) string { return v.AdrHomeDirectory }).(pulumi.StringOutput)
+func (o LookupExternalClusterInstanceResultOutput) AdrHomeDirectory() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalClusterInstanceResult) *string { return v.AdrHomeDirectory }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-func (o LookupExternalClusterInstanceResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalClusterInstanceResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupExternalClusterInstanceResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalClusterInstanceResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The name of the external cluster instance.
-func (o LookupExternalClusterInstanceResultOutput) ComponentName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalClusterInstanceResult) string { return v.ComponentName }).(pulumi.StringOutput)
+func (o LookupExternalClusterInstanceResultOutput) ComponentName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalClusterInstanceResult) *string { return v.ComponentName }).(pulumi.StringPtrOutput)
 }
 
 // The Oracle base location of Cluster Ready Services (CRS).
-func (o LookupExternalClusterInstanceResultOutput) CrsBaseDirectory() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalClusterInstanceResult) string { return v.CrsBaseDirectory }).(pulumi.StringOutput)
+func (o LookupExternalClusterInstanceResultOutput) CrsBaseDirectory() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalClusterInstanceResult) *string { return v.CrsBaseDirectory }).(pulumi.StringPtrOutput)
 }
 
 // The user-friendly name for the cluster instance. The name does not have to be unique.
-func (o LookupExternalClusterInstanceResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalClusterInstanceResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupExternalClusterInstanceResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalClusterInstanceResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external cluster that the cluster instance belongs to.
-func (o LookupExternalClusterInstanceResultOutput) ExternalClusterId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalClusterInstanceResult) string { return v.ExternalClusterId }).(pulumi.StringOutput)
+func (o LookupExternalClusterInstanceResultOutput) ExternalClusterId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalClusterInstanceResult) *string { return v.ExternalClusterId }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupExternalClusterInstanceResultOutput) ExternalClusterInstanceId() pulumi.StringOutput {
@@ -173,53 +166,53 @@ func (o LookupExternalClusterInstanceResultOutput) ExternalClusterInstanceId() p
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
-func (o LookupExternalClusterInstanceResultOutput) ExternalConnectorId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalClusterInstanceResult) string { return v.ExternalConnectorId }).(pulumi.StringOutput)
+func (o LookupExternalClusterInstanceResultOutput) ExternalConnectorId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalClusterInstanceResult) *string { return v.ExternalConnectorId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB node.
-func (o LookupExternalClusterInstanceResultOutput) ExternalDbNodeId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalClusterInstanceResult) string { return v.ExternalDbNodeId }).(pulumi.StringOutput)
+func (o LookupExternalClusterInstanceResultOutput) ExternalDbNodeId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalClusterInstanceResult) *string { return v.ExternalDbNodeId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the cluster instance is a part of.
-func (o LookupExternalClusterInstanceResultOutput) ExternalDbSystemId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalClusterInstanceResult) string { return v.ExternalDbSystemId }).(pulumi.StringOutput)
+func (o LookupExternalClusterInstanceResultOutput) ExternalDbSystemId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalClusterInstanceResult) *string { return v.ExternalDbSystemId }).(pulumi.StringPtrOutput)
 }
 
 // The name of the host on which the cluster instance is running.
-func (o LookupExternalClusterInstanceResultOutput) HostName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalClusterInstanceResult) string { return v.HostName }).(pulumi.StringOutput)
+func (o LookupExternalClusterInstanceResultOutput) HostName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalClusterInstanceResult) *string { return v.HostName }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external cluster instance.
-func (o LookupExternalClusterInstanceResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalClusterInstanceResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupExternalClusterInstanceResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalClusterInstanceResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Additional information about the current lifecycle state.
-func (o LookupExternalClusterInstanceResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalClusterInstanceResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupExternalClusterInstanceResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalClusterInstanceResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The role of the cluster node.
-func (o LookupExternalClusterInstanceResultOutput) NodeRole() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalClusterInstanceResult) string { return v.NodeRole }).(pulumi.StringOutput)
+func (o LookupExternalClusterInstanceResultOutput) NodeRole() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalClusterInstanceResult) *string { return v.NodeRole }).(pulumi.StringPtrOutput)
 }
 
 // The current lifecycle state of the external cluster instance.
-func (o LookupExternalClusterInstanceResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalClusterInstanceResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupExternalClusterInstanceResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalClusterInstanceResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the external cluster instance was created.
-func (o LookupExternalClusterInstanceResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalClusterInstanceResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupExternalClusterInstanceResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalClusterInstanceResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the external cluster instance was last updated.
-func (o LookupExternalClusterInstanceResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupExternalClusterInstanceResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupExternalClusterInstanceResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupExternalClusterInstanceResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

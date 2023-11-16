@@ -10,6 +10,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItem {
@@ -17,159 +19,159 @@ public final class GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionI
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return A description of the Compute Cloud@Customer upgrade schedule time block.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return A filter to return only resources that match the entire display name given.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return List of preferred times for Compute Cloud@Customer infrastructures associated with this schedule to be upgraded.
      * 
      */
-    private List<GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEvent> events;
+    private @Nullable List<GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEvent> events;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return Upgrade schedule [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This cannot be changed once created.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return List of Compute Cloud@Customer infrastructure [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that are using this upgrade schedule.
      * 
      */
-    private List<String> infrastructureIds;
+    private @Nullable List<String> infrastructureIds;
     /**
      * @return A message describing the current state in more detail. For example, the message can be used to provide actionable information for a resource in a Failed state.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return A filter to return resources only when their lifecycleState matches the given lifecycleState.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private @Nullable Map<String,Object> systemTags;
     /**
      * @return The time the upgrade schedule was created, using an RFC3339 formatted datetime string.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The time the upgrade schedule was updated, using an RFC3339 formatted datetime string.
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
 
     private GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItem() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return A description of the Compute Cloud@Customer upgrade schedule time block.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return A filter to return only resources that match the entire display name given.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return List of preferred times for Compute Cloud@Customer infrastructures associated with this schedule to be upgraded.
      * 
      */
     public List<GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEvent> events() {
-        return this.events;
+        return this.events == null ? List.of() : this.events;
     }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return Upgrade schedule [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This cannot be changed once created.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return List of Compute Cloud@Customer infrastructure [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that are using this upgrade schedule.
      * 
      */
     public List<String> infrastructureIds() {
-        return this.infrastructureIds;
+        return this.infrastructureIds == null ? List.of() : this.infrastructureIds;
     }
     /**
      * @return A message describing the current state in more detail. For example, the message can be used to provide actionable information for a resource in a Failed state.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return A filter to return resources only when their lifecycleState matches the given lifecycleState.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     public Map<String,Object> systemTags() {
-        return this.systemTags;
+        return this.systemTags == null ? Map.of() : this.systemTags;
     }
     /**
      * @return The time the upgrade schedule was created, using an RFC3339 formatted datetime string.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The time the upgrade schedule was updated, using an RFC3339 formatted datetime string.
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
 
     public static Builder builder() {
@@ -181,19 +183,19 @@ public final class GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionI
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private Map<String,Object> definedTags;
-        private String description;
-        private String displayName;
-        private List<GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEvent> events;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private List<String> infrastructureIds;
-        private String lifecycleDetails;
-        private String state;
-        private Map<String,Object> systemTags;
-        private String timeCreated;
-        private String timeUpdated;
+        private @Nullable String compartmentId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String description;
+        private @Nullable String displayName;
+        private @Nullable List<GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEvent> events;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable List<String> infrastructureIds;
+        private @Nullable String lifecycleDetails;
+        private @Nullable String state;
+        private @Nullable Map<String,Object> systemTags;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
         public Builder() {}
         public Builder(GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -213,74 +215,74 @@ public final class GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionI
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder events(List<GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEvent> events) {
-            this.events = Objects.requireNonNull(events);
+        public Builder events(@Nullable List<GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEvent> events) {
+            this.events = events;
             return this;
         }
         public Builder events(GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEvent... events) {
             return events(List.of(events));
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder infrastructureIds(List<String> infrastructureIds) {
-            this.infrastructureIds = Objects.requireNonNull(infrastructureIds);
+        public Builder infrastructureIds(@Nullable List<String> infrastructureIds) {
+            this.infrastructureIds = infrastructureIds;
             return this;
         }
         public Builder infrastructureIds(String... infrastructureIds) {
             return infrastructureIds(List.of(infrastructureIds));
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+        public Builder systemTags(@Nullable Map<String,Object> systemTags) {
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItem build() {

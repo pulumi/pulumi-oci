@@ -16,53 +16,53 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// If true, then the role provides administrative access privileges. READ-ONLY.
         /// </summary>
-        public readonly bool AdminRole;
+        public readonly bool? AdminRole;
         /// <summary>
         /// The ID of the App in this Grant.
         /// </summary>
-        public readonly string AppId;
+        public readonly string? AppId;
         /// <summary>
         /// The name (Client ID) of the App that defines this AppRole.
         /// </summary>
-        public readonly string AppName;
+        public readonly string? AppName;
         /// <summary>
         /// A human readable name, primarily used for display purposes.
         /// </summary>
-        public readonly string Display;
+        public readonly string? Display;
         /// <summary>
         /// The name (if any) under which this AppRole should appear in this User's group-memberships for reasons of backward compatibility. Oracle Identity Cloud Service distinguishes between Groups and AppRoles, but some services still expect AppRoles appear as if they were service-instance-specific Groups.
         /// </summary>
-        public readonly string LegacyGroupName;
+        public readonly string? LegacyGroupName;
         /// <summary>
         /// User Token URI
         /// </summary>
-        public readonly string Ref;
+        public readonly string? Ref;
         /// <summary>
         /// A label indicating the attribute's function.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
         /// <summary>
         /// The value of a X509 certificate.
         /// </summary>
-        public readonly string Value;
+        public readonly string? Value;
 
         [OutputConstructor]
         private GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRoleResult(
-            bool adminRole,
+            bool? adminRole,
 
-            string appId,
+            string? appId,
 
-            string appName,
+            string? appName,
 
-            string display,
+            string? display,
 
-            string legacyGroupName,
+            string? legacyGroupName,
 
-            string @ref,
+            string? @ref,
 
-            string type,
+            string? type,
 
-            string value)
+            string? value)
         {
             AdminRole = adminRole;
             AppId = appId;

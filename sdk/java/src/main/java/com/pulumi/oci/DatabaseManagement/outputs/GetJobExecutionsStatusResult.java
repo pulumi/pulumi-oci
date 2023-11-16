@@ -20,7 +20,7 @@ public final class GetJobExecutionsStatusResult {
      * @return A list of JobExecutionsSummary objects.
      * 
      */
-    private List<GetJobExecutionsStatusItem> items;
+    private @Nullable List<GetJobExecutionsStatusItem> items;
     private @Nullable String managedDatabaseGroupId;
     private @Nullable String managedDatabaseId;
     private @Nullable String name;
@@ -41,7 +41,7 @@ public final class GetJobExecutionsStatusResult {
      * 
      */
     public List<GetJobExecutionsStatusItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
     public Optional<String> managedDatabaseGroupId() {
         return Optional.ofNullable(this.managedDatabaseGroupId);
@@ -68,7 +68,7 @@ public final class GetJobExecutionsStatusResult {
         private String compartmentId;
         private String endTime;
         private @Nullable String id;
-        private List<GetJobExecutionsStatusItem> items;
+        private @Nullable List<GetJobExecutionsStatusItem> items;
         private @Nullable String managedDatabaseGroupId;
         private @Nullable String managedDatabaseId;
         private @Nullable String name;
@@ -102,8 +102,8 @@ public final class GetJobExecutionsStatusResult {
             return this;
         }
         @CustomType.Setter
-        public Builder items(List<GetJobExecutionsStatusItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetJobExecutionsStatusItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetJobExecutionsStatusItem... items) {

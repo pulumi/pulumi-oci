@@ -9,6 +9,7 @@ import com.pulumi.oci.Core.outputs.GetImageShapesImageShapeCompatibility;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -18,7 +19,7 @@ public final class GetImageShapesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
@@ -28,7 +29,7 @@ public final class GetImageShapesResult {
      * @return The list of image_shape_compatibilities.
      * 
      */
-    private List<GetImageShapesImageShapeCompatibility> imageShapeCompatibilities;
+    private @Nullable List<GetImageShapesImageShapeCompatibility> imageShapeCompatibilities;
 
     private GetImageShapesResult() {}
     public List<GetImageShapesFilter> filters() {
@@ -38,8 +39,8 @@ public final class GetImageShapesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -53,7 +54,7 @@ public final class GetImageShapesResult {
      * 
      */
     public List<GetImageShapesImageShapeCompatibility> imageShapeCompatibilities() {
-        return this.imageShapeCompatibilities;
+        return this.imageShapeCompatibilities == null ? List.of() : this.imageShapeCompatibilities;
     }
 
     public static Builder builder() {
@@ -66,9 +67,9 @@ public final class GetImageShapesResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetImageShapesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private String imageId;
-        private List<GetImageShapesImageShapeCompatibility> imageShapeCompatibilities;
+        private @Nullable List<GetImageShapesImageShapeCompatibility> imageShapeCompatibilities;
         public Builder() {}
         public Builder(GetImageShapesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -87,8 +88,8 @@ public final class GetImageShapesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -97,8 +98,8 @@ public final class GetImageShapesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder imageShapeCompatibilities(List<GetImageShapesImageShapeCompatibility> imageShapeCompatibilities) {
-            this.imageShapeCompatibilities = Objects.requireNonNull(imageShapeCompatibilities);
+        public Builder imageShapeCompatibilities(@Nullable List<GetImageShapesImageShapeCompatibility> imageShapeCompatibilities) {
+            this.imageShapeCompatibilities = imageShapeCompatibilities;
             return this;
         }
         public Builder imageShapeCompatibilities(GetImageShapesImageShapeCompatibility... imageShapeCompatibilities) {

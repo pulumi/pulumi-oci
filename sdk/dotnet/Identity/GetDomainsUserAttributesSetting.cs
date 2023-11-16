@@ -203,19 +203,19 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
         /// </summary>
-        public readonly string CompartmentOcid;
+        public readonly string? CompartmentOcid;
         /// <summary>
         /// A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
         /// </summary>
-        public readonly bool DeleteInProgress;
+        public readonly bool? DeleteInProgress;
         /// <summary>
         /// Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
         /// </summary>
-        public readonly string DomainOcid;
+        public readonly string? DomainOcid;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The User or App who created the Resource
         /// </summary>
@@ -228,7 +228,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// The release number when the resource was upgraded.
         /// </summary>
-        public readonly string IdcsLastUpgradedInRelease;
+        public readonly string? IdcsLastUpgradedInRelease;
         /// <summary>
         /// Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
         /// </summary>
@@ -240,7 +240,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
         /// </summary>
-        public readonly string Ocid;
+        public readonly string? Ocid;
         public readonly string? ResourceTypeSchemaVersion;
         /// <summary>
         /// REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
@@ -253,7 +253,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
         /// </summary>
-        public readonly string TenancyOcid;
+        public readonly string? TenancyOcid;
         public readonly string UserAttributesSettingId;
 
         [OutputConstructor]
@@ -266,13 +266,13 @@ namespace Pulumi.Oci.Identity
 
             string? authorization,
 
-            string compartmentOcid,
+            string? compartmentOcid,
 
-            bool deleteInProgress,
+            bool? deleteInProgress,
 
-            string domainOcid,
+            string? domainOcid,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetDomainsUserAttributesSettingIdcsCreatedByResult> idcsCreatedBies,
 
@@ -280,13 +280,13 @@ namespace Pulumi.Oci.Identity
 
             ImmutableArray<Outputs.GetDomainsUserAttributesSettingIdcsLastModifiedByResult> idcsLastModifiedBies,
 
-            string idcsLastUpgradedInRelease,
+            string? idcsLastUpgradedInRelease,
 
             ImmutableArray<string> idcsPreventedOperations,
 
             ImmutableArray<Outputs.GetDomainsUserAttributesSettingMetaResult> metas,
 
-            string ocid,
+            string? ocid,
 
             string? resourceTypeSchemaVersion,
 
@@ -294,7 +294,7 @@ namespace Pulumi.Oci.Identity
 
             ImmutableArray<Outputs.GetDomainsUserAttributesSettingTagResult> tags,
 
-            string tenancyOcid,
+            string? tenancyOcid,
 
             string userAttributesSettingId)
         {

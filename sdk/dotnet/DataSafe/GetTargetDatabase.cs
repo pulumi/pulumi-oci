@@ -114,7 +114,7 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// The OCID of the compartment which contains the Data Safe target database.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Types of connection supported by Data Safe.
         /// </summary>
@@ -130,44 +130,44 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// The description of the target database in Data Safe.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// The display name of the target database in Data Safe.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The OCID of the Data Safe target database.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Details about the current state of the target database in Data Safe.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// The current state of the target database in Data Safe.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, object>? SystemTags;
         public readonly string TargetDatabaseId;
         /// <summary>
         /// The date and time the database was registered in Data Safe and created as a target database in Data Safe.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The date and time of the target database update in Data Safe.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
         /// <summary>
         /// The details required to establish a TLS enabled connection.
         /// </summary>
@@ -177,7 +177,7 @@ namespace Pulumi.Oci.DataSafe
         private GetTargetDatabaseResult(
             ImmutableArray<string> associatedResourceIds,
 
-            string compartmentId,
+            string? compartmentId,
 
             ImmutableArray<Outputs.GetTargetDatabaseConnectionOptionResult> connectionOptions,
 
@@ -185,27 +185,27 @@ namespace Pulumi.Oci.DataSafe
 
             ImmutableArray<Outputs.GetTargetDatabaseDatabaseDetailResult> databaseDetails,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string description,
+            string? description,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string state,
+            string? state,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, object>? systemTags,
 
             string targetDatabaseId,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated,
+            string? timeUpdated,
 
             ImmutableArray<Outputs.GetTargetDatabaseTlsConfigResult> tlsConfigs)
         {

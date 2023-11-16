@@ -20,19 +20,19 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// <summary>
         /// Shape of the pods.
         /// </summary>
-        public readonly string Shape;
+        public readonly string? Shape;
         /// <summary>
         /// The regional subnet where pods' VNIC will be placed.
         /// </summary>
-        public readonly string SubnetId;
+        public readonly string? SubnetId;
 
         [OutputConstructor]
         private GetVirtualNodePoolPodConfigurationResult(
             ImmutableArray<string> nsgIds,
 
-            string shape,
+            string? shape,
 
-            string subnetId)
+            string? subnetId)
         {
             NsgIds = nsgIds;
             Shape = shape;

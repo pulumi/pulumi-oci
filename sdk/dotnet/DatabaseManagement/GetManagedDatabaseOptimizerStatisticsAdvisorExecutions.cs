@@ -160,7 +160,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string ManagedDatabaseId;
         /// <summary>
         /// The list of optimizer_statistics_advisor_executions_collection.
@@ -174,7 +174,7 @@ namespace Pulumi.Oci.DatabaseManagement
 
             ImmutableArray<Outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterResult> filters,
 
-            string id,
+            string? id,
 
             string managedDatabaseId,
 

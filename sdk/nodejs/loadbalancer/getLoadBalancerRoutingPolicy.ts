@@ -53,19 +53,19 @@ export interface GetLoadBalancerRoutingPolicyResult {
     /**
      * The version of the language in which `condition` of `rules` are composed.
      */
-    readonly conditionLanguageVersion: string;
-    readonly id: string;
+    readonly conditionLanguageVersion?: string;
+    readonly id?: string;
     readonly loadBalancerId: string;
     /**
      * A unique name for the routing policy rule. Avoid entering confidential information.
      */
-    readonly name: string;
+    readonly name?: string;
     readonly routingPolicyName: string;
     /**
      * The ordered list of routing rules.
      */
-    readonly rules: outputs.LoadBalancer.GetLoadBalancerRoutingPolicyRule[];
-    readonly state: string;
+    readonly rules?: outputs.LoadBalancer.GetLoadBalancerRoutingPolicyRule[];
+    readonly state?: string;
 }
 /**
  * This data source provides details about a specific Load Balancer Routing Policy resource in Oracle Cloud Infrastructure Load Balancer service.

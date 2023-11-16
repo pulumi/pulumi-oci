@@ -45,52 +45,52 @@ export interface GetReportResult {
     /**
      * The OCID of the compartment containing the report.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * Specifies a description of the report.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * Name of the report.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Specifies the format of report to be excel or pdf
      */
-    readonly mimeType: string;
+    readonly mimeType?: string;
     /**
      * The OCID of the report definition.
      */
-    readonly reportDefinitionId: string;
+    readonly reportDefinitionId?: string;
     readonly reportId: string;
     /**
      * The current state of the audit report.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * Specifies the date and time the report was generated.
      */
-    readonly timeGenerated: string;
+    readonly timeGenerated?: string;
     /**
      * The type of the audit report.
      */
-    readonly type: string;
+    readonly type?: string;
 }
 /**
  * This data source provides details about a specific Report resource in Oracle Cloud Infrastructure Data Safe service.

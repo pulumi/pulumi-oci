@@ -49,7 +49,7 @@ export interface GetAutonomousContainerDatabaseDataguardAssociationsResult {
     /**
      * The list of autonomous_container_database_dataguard_associations.
      */
-    readonly autonomousContainerDatabaseDataguardAssociations: outputs.Database.GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociation[];
+    readonly autonomousContainerDatabaseDataguardAssociations?: outputs.Database.GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociation[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database.
      */
@@ -58,7 +58,7 @@ export interface GetAutonomousContainerDatabaseDataguardAssociationsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
 }
 /**
  * This data source provides the list of Autonomous Container Database Dataguard Associations in Oracle Cloud Infrastructure Database service.

@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportObjectStatFinding {
@@ -14,75 +16,75 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportObjectSta
      * @return Name of the object.
      * 
      */
-    private String object;
+    private @Nullable String object;
     /**
      * @return Numerical representation of the object.
      * 
      */
-    private String objectHashValue;
+    private @Nullable String objectHashValue;
     /**
      * @return Type of the object.
      * 
      */
-    private String objectType;
+    private @Nullable String objectType;
     /**
      * @return Type of statistics problem related to the object.
      * 
      */
-    private String problemType;
+    private @Nullable String problemType;
     /**
      * @return The number of the times the object is referenced within the SQL Tuning advisor task findings.
      * 
      */
-    private Integer referenceCount;
+    private @Nullable Integer referenceCount;
     /**
      * @return Schema of the object.
      * 
      */
-    private String schema;
+    private @Nullable String schema;
 
     private GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportObjectStatFinding() {}
     /**
      * @return Name of the object.
      * 
      */
-    public String object() {
-        return this.object;
+    public Optional<String> object() {
+        return Optional.ofNullable(this.object);
     }
     /**
      * @return Numerical representation of the object.
      * 
      */
-    public String objectHashValue() {
-        return this.objectHashValue;
+    public Optional<String> objectHashValue() {
+        return Optional.ofNullable(this.objectHashValue);
     }
     /**
      * @return Type of the object.
      * 
      */
-    public String objectType() {
-        return this.objectType;
+    public Optional<String> objectType() {
+        return Optional.ofNullable(this.objectType);
     }
     /**
      * @return Type of statistics problem related to the object.
      * 
      */
-    public String problemType() {
-        return this.problemType;
+    public Optional<String> problemType() {
+        return Optional.ofNullable(this.problemType);
     }
     /**
      * @return The number of the times the object is referenced within the SQL Tuning advisor task findings.
      * 
      */
-    public Integer referenceCount() {
-        return this.referenceCount;
+    public Optional<Integer> referenceCount() {
+        return Optional.ofNullable(this.referenceCount);
     }
     /**
      * @return Schema of the object.
      * 
      */
-    public String schema() {
-        return this.schema;
+    public Optional<String> schema() {
+        return Optional.ofNullable(this.schema);
     }
 
     public static Builder builder() {
@@ -94,12 +96,12 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportObjectSta
     }
     @CustomType.Builder
     public static final class Builder {
-        private String object;
-        private String objectHashValue;
-        private String objectType;
-        private String problemType;
-        private Integer referenceCount;
-        private String schema;
+        private @Nullable String object;
+        private @Nullable String objectHashValue;
+        private @Nullable String objectType;
+        private @Nullable String problemType;
+        private @Nullable Integer referenceCount;
+        private @Nullable String schema;
         public Builder() {}
         public Builder(GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportObjectStatFinding defaults) {
     	      Objects.requireNonNull(defaults);
@@ -112,33 +114,33 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportObjectSta
         }
 
         @CustomType.Setter
-        public Builder object(String object) {
-            this.object = Objects.requireNonNull(object);
+        public Builder object(@Nullable String object) {
+            this.object = object;
             return this;
         }
         @CustomType.Setter
-        public Builder objectHashValue(String objectHashValue) {
-            this.objectHashValue = Objects.requireNonNull(objectHashValue);
+        public Builder objectHashValue(@Nullable String objectHashValue) {
+            this.objectHashValue = objectHashValue;
             return this;
         }
         @CustomType.Setter
-        public Builder objectType(String objectType) {
-            this.objectType = Objects.requireNonNull(objectType);
+        public Builder objectType(@Nullable String objectType) {
+            this.objectType = objectType;
             return this;
         }
         @CustomType.Setter
-        public Builder problemType(String problemType) {
-            this.problemType = Objects.requireNonNull(problemType);
+        public Builder problemType(@Nullable String problemType) {
+            this.problemType = problemType;
             return this;
         }
         @CustomType.Setter
-        public Builder referenceCount(Integer referenceCount) {
-            this.referenceCount = Objects.requireNonNull(referenceCount);
+        public Builder referenceCount(@Nullable Integer referenceCount) {
+            this.referenceCount = referenceCount;
             return this;
         }
         @CustomType.Setter
-        public Builder schema(String schema) {
-            this.schema = Objects.requireNonNull(schema);
+        public Builder schema(@Nullable String schema) {
+            this.schema = schema;
             return this;
         }
         public GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportObjectStatFinding build() {

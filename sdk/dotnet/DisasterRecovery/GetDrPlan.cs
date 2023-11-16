@@ -108,40 +108,40 @@ namespace Pulumi.Oci.DisasterRecovery
         /// <summary>
         /// The OCID of the compartment containing the DR plan.  Example: `ocid1.compartment.oc1..uniqueID`
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// The display name of the group.  Example: `DATABASE_SWITCHOVER`
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         public readonly string DrPlanId;
         /// <summary>
         /// The OCID of the DR protection group to which this DR plan belongs.  Example: `ocid1.drplan.oc1..uniqueID`
         /// </summary>
-        public readonly string DrProtectionGroupId;
+        public readonly string? DrProtectionGroupId;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// A message describing the DR plan's current state in more detail.
         /// </summary>
-        public readonly string LifeCycleDetails;
+        public readonly string? LifeCycleDetails;
         /// <summary>
         /// The OCID of the peer DR protection group associated with this plan's DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
         /// </summary>
-        public readonly string PeerDrProtectionGroupId;
+        public readonly string? PeerDrProtectionGroupId;
         /// <summary>
         /// The region of the peer DR protection group associated with this plan's DR protection group.  Example: `us-ashburn-1`
         /// </summary>
-        public readonly string PeerRegion;
+        public readonly string? PeerRegion;
         /// <summary>
         /// The list of groups in this DR plan.
         /// </summary>
@@ -149,57 +149,57 @@ namespace Pulumi.Oci.DisasterRecovery
         /// <summary>
         /// The current state of the DR plan.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, object>? SystemTags;
         /// <summary>
         /// The date and time the DR plan was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The date and time the DR plan was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
         /// <summary>
         /// The type of the DR plan.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
 
         [OutputConstructor]
         private GetDrPlanResult(
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string displayName,
+            string? displayName,
 
             string drPlanId,
 
-            string drProtectionGroupId,
+            string? drProtectionGroupId,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            string lifeCycleDetails,
+            string? lifeCycleDetails,
 
-            string peerDrProtectionGroupId,
+            string? peerDrProtectionGroupId,
 
-            string peerRegion,
+            string? peerRegion,
 
             ImmutableArray<Outputs.GetDrPlanPlanGroupResult> planGroups,
 
-            string state,
+            string? state,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, object>? systemTags,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated,
+            string? timeUpdated,
 
-            string type)
+            string? type)
         {
             CompartmentId = compartmentId;
             DefinedTags = definedTags;

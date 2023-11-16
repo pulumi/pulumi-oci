@@ -30,20 +30,6 @@ class FunctionArgs:
                  trace_config: Optional[pulumi.Input['FunctionTraceConfigArgs']] = None):
         """
         The set of arguments for constructing a Function resource.
-        :param pulumi.Input[str] application_id: The OCID of the application this function belongs to.
-        :param pulumi.Input[str] display_name: The display name of the function. The display name must be unique within the application containing the function. Avoid entering confidential information.
-        :param pulumi.Input[str] memory_in_mbs: (Updatable) Maximum usable memory for the function (MiB).
-        :param pulumi.Input[Mapping[str, Any]] config: (Updatable) Function configuration. These values are passed on to the function as environment variables, this overrides application configuration values. Keys must be ASCII strings consisting solely of letters, digits, and the '_' (underscore) character, and must not begin with a digit. Values should be limited to printable unicode characters.  Example: `{"MY_FUNCTION_CONFIG": "ConfVal"}`
-               
-               The maximum size for all configuration keys and values is limited to 4KB. This is measured as the sum of octets necessary to represent each key and value in UTF-8.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] image: (Updatable) The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. This field must be updated if image_digest is updated. Example: `phx.ocir.io/ten/functions/function:0.0.1`
-        :param pulumi.Input[str] image_digest: (Updatable) The image digest for the version of the image that will be pulled when invoking this function. If no value is specified, the digest currently associated with the image in the Oracle Cloud Infrastructure Registry will be used. This field must be updated if image is updated. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
-        :param pulumi.Input['FunctionProvisionedConcurrencyConfigArgs'] provisioned_concurrency_config: (Updatable) Define the strategy for provisioned concurrency for the function.
-        :param pulumi.Input['FunctionSourceDetailsArgs'] source_details: The source details for the Function. The function can be created from various sources.
-        :param pulumi.Input[int] timeout_in_seconds: (Updatable) Timeout for executions of the function. Value in seconds.
-        :param pulumi.Input['FunctionTraceConfigArgs'] trace_config: (Updatable) Define the tracing configuration for a function.
         """
         pulumi.set(__self__, "application_id", application_id)
         pulumi.set(__self__, "display_name", display_name)
@@ -70,9 +56,6 @@ class FunctionArgs:
     @property
     @pulumi.getter(name="applicationId")
     def application_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of the application this function belongs to.
-        """
         return pulumi.get(self, "application_id")
 
     @application_id.setter
@@ -82,9 +65,6 @@ class FunctionArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[str]:
-        """
-        The display name of the function. The display name must be unique within the application containing the function. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -94,9 +74,6 @@ class FunctionArgs:
     @property
     @pulumi.getter(name="memoryInMbs")
     def memory_in_mbs(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Maximum usable memory for the function (MiB).
-        """
         return pulumi.get(self, "memory_in_mbs")
 
     @memory_in_mbs.setter
@@ -106,11 +83,6 @@ class FunctionArgs:
     @property
     @pulumi.getter
     def config(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Function configuration. These values are passed on to the function as environment variables, this overrides application configuration values. Keys must be ASCII strings consisting solely of letters, digits, and the '_' (underscore) character, and must not begin with a digit. Values should be limited to printable unicode characters.  Example: `{"MY_FUNCTION_CONFIG": "ConfVal"}`
-
-        The maximum size for all configuration keys and values is limited to 4KB. This is measured as the sum of octets necessary to represent each key and value in UTF-8.
-        """
         return pulumi.get(self, "config")
 
     @config.setter
@@ -120,9 +92,6 @@ class FunctionArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -132,9 +101,6 @@ class FunctionArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -144,9 +110,6 @@ class FunctionArgs:
     @property
     @pulumi.getter
     def image(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. This field must be updated if image_digest is updated. Example: `phx.ocir.io/ten/functions/function:0.0.1`
-        """
         return pulumi.get(self, "image")
 
     @image.setter
@@ -156,9 +119,6 @@ class FunctionArgs:
     @property
     @pulumi.getter(name="imageDigest")
     def image_digest(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The image digest for the version of the image that will be pulled when invoking this function. If no value is specified, the digest currently associated with the image in the Oracle Cloud Infrastructure Registry will be used. This field must be updated if image is updated. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
-        """
         return pulumi.get(self, "image_digest")
 
     @image_digest.setter
@@ -168,9 +128,6 @@ class FunctionArgs:
     @property
     @pulumi.getter(name="provisionedConcurrencyConfig")
     def provisioned_concurrency_config(self) -> Optional[pulumi.Input['FunctionProvisionedConcurrencyConfigArgs']]:
-        """
-        (Updatable) Define the strategy for provisioned concurrency for the function.
-        """
         return pulumi.get(self, "provisioned_concurrency_config")
 
     @provisioned_concurrency_config.setter
@@ -180,9 +137,6 @@ class FunctionArgs:
     @property
     @pulumi.getter(name="sourceDetails")
     def source_details(self) -> Optional[pulumi.Input['FunctionSourceDetailsArgs']]:
-        """
-        The source details for the Function. The function can be created from various sources.
-        """
         return pulumi.get(self, "source_details")
 
     @source_details.setter
@@ -192,9 +146,6 @@ class FunctionArgs:
     @property
     @pulumi.getter(name="timeoutInSeconds")
     def timeout_in_seconds(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Timeout for executions of the function. Value in seconds.
-        """
         return pulumi.get(self, "timeout_in_seconds")
 
     @timeout_in_seconds.setter
@@ -204,9 +155,6 @@ class FunctionArgs:
     @property
     @pulumi.getter(name="traceConfig")
     def trace_config(self) -> Optional[pulumi.Input['FunctionTraceConfigArgs']]:
-        """
-        (Updatable) Define the tracing configuration for a function.
-        """
         return pulumi.get(self, "trace_config")
 
     @trace_config.setter
@@ -237,26 +185,6 @@ class _FunctionState:
                  trace_config: Optional[pulumi.Input['FunctionTraceConfigArgs']] = None):
         """
         Input properties used for looking up and filtering Function resources.
-        :param pulumi.Input[str] application_id: The OCID of the application this function belongs to.
-        :param pulumi.Input[str] compartment_id: The OCID of the compartment that contains the function.
-        :param pulumi.Input[Mapping[str, Any]] config: (Updatable) Function configuration. These values are passed on to the function as environment variables, this overrides application configuration values. Keys must be ASCII strings consisting solely of letters, digits, and the '_' (underscore) character, and must not begin with a digit. Values should be limited to printable unicode characters.  Example: `{"MY_FUNCTION_CONFIG": "ConfVal"}`
-               
-               The maximum size for all configuration keys and values is limited to 4KB. This is measured as the sum of octets necessary to represent each key and value in UTF-8.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: The display name of the function. The display name must be unique within the application containing the function. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] image: (Updatable) The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. This field must be updated if image_digest is updated. Example: `phx.ocir.io/ten/functions/function:0.0.1`
-        :param pulumi.Input[str] image_digest: (Updatable) The image digest for the version of the image that will be pulled when invoking this function. If no value is specified, the digest currently associated with the image in the Oracle Cloud Infrastructure Registry will be used. This field must be updated if image is updated. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
-        :param pulumi.Input[str] invoke_endpoint: The base https invoke URL to set on a client in order to invoke a function. This URL will never change over the lifetime of the function and can be cached.
-        :param pulumi.Input[str] memory_in_mbs: (Updatable) Maximum usable memory for the function (MiB).
-        :param pulumi.Input['FunctionProvisionedConcurrencyConfigArgs'] provisioned_concurrency_config: (Updatable) Define the strategy for provisioned concurrency for the function.
-        :param pulumi.Input[str] shape: The processor shape (`GENERIC_X86`/`GENERIC_ARM`) on which to run functions in the application, extracted from the image manifest.
-        :param pulumi.Input['FunctionSourceDetailsArgs'] source_details: The source details for the Function. The function can be created from various sources.
-        :param pulumi.Input[str] state: The current state of the function.
-        :param pulumi.Input[str] time_created: The time the function was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
-        :param pulumi.Input[str] time_updated: The time the function was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
-        :param pulumi.Input[int] timeout_in_seconds: (Updatable) Timeout for executions of the function. Value in seconds.
-        :param pulumi.Input['FunctionTraceConfigArgs'] trace_config: (Updatable) Define the tracing configuration for a function.
         """
         if application_id is not None:
             pulumi.set(__self__, "application_id", application_id)
@@ -298,9 +226,6 @@ class _FunctionState:
     @property
     @pulumi.getter(name="applicationId")
     def application_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the application this function belongs to.
-        """
         return pulumi.get(self, "application_id")
 
     @application_id.setter
@@ -310,9 +235,6 @@ class _FunctionState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the compartment that contains the function.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -322,11 +244,6 @@ class _FunctionState:
     @property
     @pulumi.getter
     def config(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Function configuration. These values are passed on to the function as environment variables, this overrides application configuration values. Keys must be ASCII strings consisting solely of letters, digits, and the '_' (underscore) character, and must not begin with a digit. Values should be limited to printable unicode characters.  Example: `{"MY_FUNCTION_CONFIG": "ConfVal"}`
-
-        The maximum size for all configuration keys and values is limited to 4KB. This is measured as the sum of octets necessary to represent each key and value in UTF-8.
-        """
         return pulumi.get(self, "config")
 
     @config.setter
@@ -336,9 +253,6 @@ class _FunctionState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -348,9 +262,6 @@ class _FunctionState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The display name of the function. The display name must be unique within the application containing the function. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -360,9 +271,6 @@ class _FunctionState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -372,9 +280,6 @@ class _FunctionState:
     @property
     @pulumi.getter
     def image(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. This field must be updated if image_digest is updated. Example: `phx.ocir.io/ten/functions/function:0.0.1`
-        """
         return pulumi.get(self, "image")
 
     @image.setter
@@ -384,9 +289,6 @@ class _FunctionState:
     @property
     @pulumi.getter(name="imageDigest")
     def image_digest(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The image digest for the version of the image that will be pulled when invoking this function. If no value is specified, the digest currently associated with the image in the Oracle Cloud Infrastructure Registry will be used. This field must be updated if image is updated. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
-        """
         return pulumi.get(self, "image_digest")
 
     @image_digest.setter
@@ -396,9 +298,6 @@ class _FunctionState:
     @property
     @pulumi.getter(name="invokeEndpoint")
     def invoke_endpoint(self) -> Optional[pulumi.Input[str]]:
-        """
-        The base https invoke URL to set on a client in order to invoke a function. This URL will never change over the lifetime of the function and can be cached.
-        """
         return pulumi.get(self, "invoke_endpoint")
 
     @invoke_endpoint.setter
@@ -408,9 +307,6 @@ class _FunctionState:
     @property
     @pulumi.getter(name="memoryInMbs")
     def memory_in_mbs(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Maximum usable memory for the function (MiB).
-        """
         return pulumi.get(self, "memory_in_mbs")
 
     @memory_in_mbs.setter
@@ -420,9 +316,6 @@ class _FunctionState:
     @property
     @pulumi.getter(name="provisionedConcurrencyConfig")
     def provisioned_concurrency_config(self) -> Optional[pulumi.Input['FunctionProvisionedConcurrencyConfigArgs']]:
-        """
-        (Updatable) Define the strategy for provisioned concurrency for the function.
-        """
         return pulumi.get(self, "provisioned_concurrency_config")
 
     @provisioned_concurrency_config.setter
@@ -432,9 +325,6 @@ class _FunctionState:
     @property
     @pulumi.getter
     def shape(self) -> Optional[pulumi.Input[str]]:
-        """
-        The processor shape (`GENERIC_X86`/`GENERIC_ARM`) on which to run functions in the application, extracted from the image manifest.
-        """
         return pulumi.get(self, "shape")
 
     @shape.setter
@@ -444,9 +334,6 @@ class _FunctionState:
     @property
     @pulumi.getter(name="sourceDetails")
     def source_details(self) -> Optional[pulumi.Input['FunctionSourceDetailsArgs']]:
-        """
-        The source details for the Function. The function can be created from various sources.
-        """
         return pulumi.get(self, "source_details")
 
     @source_details.setter
@@ -456,9 +343,6 @@ class _FunctionState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the function.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -468,9 +352,6 @@ class _FunctionState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the function was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -480,9 +361,6 @@ class _FunctionState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the function was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -492,9 +370,6 @@ class _FunctionState:
     @property
     @pulumi.getter(name="timeoutInSeconds")
     def timeout_in_seconds(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Timeout for executions of the function. Value in seconds.
-        """
         return pulumi.get(self, "timeout_in_seconds")
 
     @timeout_in_seconds.setter
@@ -504,9 +379,6 @@ class _FunctionState:
     @property
     @pulumi.getter(name="traceConfig")
     def trace_config(self) -> Optional[pulumi.Input['FunctionTraceConfigArgs']]:
-        """
-        (Updatable) Define the tracing configuration for a function.
-        """
         return pulumi.get(self, "trace_config")
 
     @trace_config.setter
@@ -533,67 +405,9 @@ class Function(pulumi.CustomResource):
                  trace_config: Optional[pulumi.Input[pulumi.InputType['FunctionTraceConfigArgs']]] = None,
                  __props__=None):
         """
-        This resource provides the Function resource in Oracle Cloud Infrastructure Functions service.
-
-        Creates a new function.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_function = oci.functions.Function("testFunction",
-            application_id=oci_functions_application["test_application"]["id"],
-            display_name=var["function_display_name"],
-            memory_in_mbs=var["function_memory_in_mbs"],
-            config=var["function_config"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            freeform_tags={
-                "Department": "Finance",
-            },
-            image=var["function_image"],
-            image_digest=var["function_image_digest"],
-            provisioned_concurrency_config=oci.functions.FunctionProvisionedConcurrencyConfigArgs(
-                strategy=var["function_provisioned_concurrency_config_strategy"],
-                count=var["function_provisioned_concurrency_config_count"],
-            ),
-            source_details=oci.functions.FunctionSourceDetailsArgs(
-                pbf_listing_id=oci_functions_pbf_listing["test_pbf_listing"]["id"],
-                source_type=var["function_source_details_source_type"],
-            ),
-            timeout_in_seconds=var["function_timeout_in_seconds"],
-            trace_config=oci.functions.FunctionTraceConfigArgs(
-                is_enabled=var["function_trace_config_is_enabled"],
-            ))
-        ```
-
-        ## Import
-
-        Functions can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Functions/function:Function test_function "id"
-        ```
-
+        Create a Function resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] application_id: The OCID of the application this function belongs to.
-        :param pulumi.Input[Mapping[str, Any]] config: (Updatable) Function configuration. These values are passed on to the function as environment variables, this overrides application configuration values. Keys must be ASCII strings consisting solely of letters, digits, and the '_' (underscore) character, and must not begin with a digit. Values should be limited to printable unicode characters.  Example: `{"MY_FUNCTION_CONFIG": "ConfVal"}`
-               
-               The maximum size for all configuration keys and values is limited to 4KB. This is measured as the sum of octets necessary to represent each key and value in UTF-8.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: The display name of the function. The display name must be unique within the application containing the function. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] image: (Updatable) The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. This field must be updated if image_digest is updated. Example: `phx.ocir.io/ten/functions/function:0.0.1`
-        :param pulumi.Input[str] image_digest: (Updatable) The image digest for the version of the image that will be pulled when invoking this function. If no value is specified, the digest currently associated with the image in the Oracle Cloud Infrastructure Registry will be used. This field must be updated if image is updated. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
-        :param pulumi.Input[str] memory_in_mbs: (Updatable) Maximum usable memory for the function (MiB).
-        :param pulumi.Input[pulumi.InputType['FunctionProvisionedConcurrencyConfigArgs']] provisioned_concurrency_config: (Updatable) Define the strategy for provisioned concurrency for the function.
-        :param pulumi.Input[pulumi.InputType['FunctionSourceDetailsArgs']] source_details: The source details for the Function. The function can be created from various sources.
-        :param pulumi.Input[int] timeout_in_seconds: (Updatable) Timeout for executions of the function. Value in seconds.
-        :param pulumi.Input[pulumi.InputType['FunctionTraceConfigArgs']] trace_config: (Updatable) Define the tracing configuration for a function.
         """
         ...
     @overload
@@ -602,51 +416,7 @@ class Function(pulumi.CustomResource):
                  args: FunctionArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Function resource in Oracle Cloud Infrastructure Functions service.
-
-        Creates a new function.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_function = oci.functions.Function("testFunction",
-            application_id=oci_functions_application["test_application"]["id"],
-            display_name=var["function_display_name"],
-            memory_in_mbs=var["function_memory_in_mbs"],
-            config=var["function_config"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            freeform_tags={
-                "Department": "Finance",
-            },
-            image=var["function_image"],
-            image_digest=var["function_image_digest"],
-            provisioned_concurrency_config=oci.functions.FunctionProvisionedConcurrencyConfigArgs(
-                strategy=var["function_provisioned_concurrency_config_strategy"],
-                count=var["function_provisioned_concurrency_config_count"],
-            ),
-            source_details=oci.functions.FunctionSourceDetailsArgs(
-                pbf_listing_id=oci_functions_pbf_listing["test_pbf_listing"]["id"],
-                source_type=var["function_source_details_source_type"],
-            ),
-            timeout_in_seconds=var["function_timeout_in_seconds"],
-            trace_config=oci.functions.FunctionTraceConfigArgs(
-                is_enabled=var["function_trace_config_is_enabled"],
-            ))
-        ```
-
-        ## Import
-
-        Functions can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Functions/function:Function test_function "id"
-        ```
-
+        Create a Function resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param FunctionArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -742,26 +512,6 @@ class Function(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] application_id: The OCID of the application this function belongs to.
-        :param pulumi.Input[str] compartment_id: The OCID of the compartment that contains the function.
-        :param pulumi.Input[Mapping[str, Any]] config: (Updatable) Function configuration. These values are passed on to the function as environment variables, this overrides application configuration values. Keys must be ASCII strings consisting solely of letters, digits, and the '_' (underscore) character, and must not begin with a digit. Values should be limited to printable unicode characters.  Example: `{"MY_FUNCTION_CONFIG": "ConfVal"}`
-               
-               The maximum size for all configuration keys and values is limited to 4KB. This is measured as the sum of octets necessary to represent each key and value in UTF-8.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: The display name of the function. The display name must be unique within the application containing the function. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] image: (Updatable) The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. This field must be updated if image_digest is updated. Example: `phx.ocir.io/ten/functions/function:0.0.1`
-        :param pulumi.Input[str] image_digest: (Updatable) The image digest for the version of the image that will be pulled when invoking this function. If no value is specified, the digest currently associated with the image in the Oracle Cloud Infrastructure Registry will be used. This field must be updated if image is updated. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
-        :param pulumi.Input[str] invoke_endpoint: The base https invoke URL to set on a client in order to invoke a function. This URL will never change over the lifetime of the function and can be cached.
-        :param pulumi.Input[str] memory_in_mbs: (Updatable) Maximum usable memory for the function (MiB).
-        :param pulumi.Input[pulumi.InputType['FunctionProvisionedConcurrencyConfigArgs']] provisioned_concurrency_config: (Updatable) Define the strategy for provisioned concurrency for the function.
-        :param pulumi.Input[str] shape: The processor shape (`GENERIC_X86`/`GENERIC_ARM`) on which to run functions in the application, extracted from the image manifest.
-        :param pulumi.Input[pulumi.InputType['FunctionSourceDetailsArgs']] source_details: The source details for the Function. The function can be created from various sources.
-        :param pulumi.Input[str] state: The current state of the function.
-        :param pulumi.Input[str] time_created: The time the function was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
-        :param pulumi.Input[str] time_updated: The time the function was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
-        :param pulumi.Input[int] timeout_in_seconds: (Updatable) Timeout for executions of the function. Value in seconds.
-        :param pulumi.Input[pulumi.InputType['FunctionTraceConfigArgs']] trace_config: (Updatable) Define the tracing configuration for a function.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -790,146 +540,90 @@ class Function(pulumi.CustomResource):
     @property
     @pulumi.getter(name="applicationId")
     def application_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the application this function belongs to.
-        """
         return pulumi.get(self, "application_id")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the compartment that contains the function.
-        """
+    def compartment_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter
-    def config(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Function configuration. These values are passed on to the function as environment variables, this overrides application configuration values. Keys must be ASCII strings consisting solely of letters, digits, and the '_' (underscore) character, and must not begin with a digit. Values should be limited to printable unicode characters.  Example: `{"MY_FUNCTION_CONFIG": "ConfVal"}`
-
-        The maximum size for all configuration keys and values is limited to 4KB. This is measured as the sum of octets necessary to represent each key and value in UTF-8.
-        """
+    def config(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "config")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
-        """
-        The display name of the function. The display name must be unique within the application containing the function. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def image(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. This field must be updated if image_digest is updated. Example: `phx.ocir.io/ten/functions/function:0.0.1`
-        """
+    def image(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "image")
 
     @property
     @pulumi.getter(name="imageDigest")
-    def image_digest(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The image digest for the version of the image that will be pulled when invoking this function. If no value is specified, the digest currently associated with the image in the Oracle Cloud Infrastructure Registry will be used. This field must be updated if image is updated. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
-        """
+    def image_digest(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "image_digest")
 
     @property
     @pulumi.getter(name="invokeEndpoint")
-    def invoke_endpoint(self) -> pulumi.Output[str]:
-        """
-        The base https invoke URL to set on a client in order to invoke a function. This URL will never change over the lifetime of the function and can be cached.
-        """
+    def invoke_endpoint(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "invoke_endpoint")
 
     @property
     @pulumi.getter(name="memoryInMbs")
     def memory_in_mbs(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Maximum usable memory for the function (MiB).
-        """
         return pulumi.get(self, "memory_in_mbs")
 
     @property
     @pulumi.getter(name="provisionedConcurrencyConfig")
-    def provisioned_concurrency_config(self) -> pulumi.Output['outputs.FunctionProvisionedConcurrencyConfig']:
-        """
-        (Updatable) Define the strategy for provisioned concurrency for the function.
-        """
+    def provisioned_concurrency_config(self) -> pulumi.Output[Optional['outputs.FunctionProvisionedConcurrencyConfig']]:
         return pulumi.get(self, "provisioned_concurrency_config")
 
     @property
     @pulumi.getter
-    def shape(self) -> pulumi.Output[str]:
-        """
-        The processor shape (`GENERIC_X86`/`GENERIC_ARM`) on which to run functions in the application, extracted from the image manifest.
-        """
+    def shape(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "shape")
 
     @property
     @pulumi.getter(name="sourceDetails")
-    def source_details(self) -> pulumi.Output['outputs.FunctionSourceDetails']:
-        """
-        The source details for the Function. The function can be created from various sources.
-        """
+    def source_details(self) -> pulumi.Output[Optional['outputs.FunctionSourceDetails']]:
         return pulumi.get(self, "source_details")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the function.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The time the function was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The time the function was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="timeoutInSeconds")
-    def timeout_in_seconds(self) -> pulumi.Output[int]:
-        """
-        (Updatable) Timeout for executions of the function. Value in seconds.
-        """
+    def timeout_in_seconds(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "timeout_in_seconds")
 
     @property
     @pulumi.getter(name="traceConfig")
-    def trace_config(self) -> pulumi.Output['outputs.FunctionTraceConfig']:
-        """
-        (Updatable) Define the tracing configuration for a function.
-        """
+    def trace_config(self) -> pulumi.Output[Optional['outputs.FunctionTraceConfig']]:
         return pulumi.get(self, "trace_config")
 

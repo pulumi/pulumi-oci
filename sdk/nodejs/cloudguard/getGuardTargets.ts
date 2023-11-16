@@ -103,7 +103,7 @@ export interface GetGuardTargetsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly isNonSecurityZoneTargetsOnlyQuery?: boolean;
     /**
      * The current state of the ResponderRule.
@@ -112,7 +112,7 @@ export interface GetGuardTargetsResult {
     /**
      * The list of target_collection.
      */
-    readonly targetCollections: outputs.CloudGuard.GetGuardTargetsTargetCollection[];
+    readonly targetCollections?: outputs.CloudGuard.GetGuardTargetsTargetCollection[];
 }
 /**
  * This data source provides the list of Targets in Oracle Cloud Infrastructure Cloud Guard service.

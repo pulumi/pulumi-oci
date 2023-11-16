@@ -21,13 +21,6 @@ class MonitoredResourcesListMemberArgs:
                  limit_level: Optional[pulumi.Input[int]] = None):
         """
         The set of arguments for constructing a MonitoredResourcesListMember resource.
-        :param pulumi.Input[str] monitored_resource_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] destination_resource_id: Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[int] limit_level: The field which determines the depth of hierarchy while searching for members.
         """
         pulumi.set(__self__, "monitored_resource_id", monitored_resource_id)
         if destination_resource_id is not None:
@@ -38,13 +31,6 @@ class MonitoredResourcesListMemberArgs:
     @property
     @pulumi.getter(name="monitoredResourceId")
     def monitored_resource_id(self) -> pulumi.Input[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "monitored_resource_id")
 
     @monitored_resource_id.setter
@@ -54,9 +40,6 @@ class MonitoredResourcesListMemberArgs:
     @property
     @pulumi.getter(name="destinationResourceId")
     def destination_resource_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
         return pulumi.get(self, "destination_resource_id")
 
     @destination_resource_id.setter
@@ -66,9 +49,6 @@ class MonitoredResourcesListMemberArgs:
     @property
     @pulumi.getter(name="limitLevel")
     def limit_level(self) -> Optional[pulumi.Input[int]]:
-        """
-        The field which determines the depth of hierarchy while searching for members.
-        """
         return pulumi.get(self, "limit_level")
 
     @limit_level.setter
@@ -85,14 +65,6 @@ class _MonitoredResourcesListMemberState:
                  monitored_resource_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering MonitoredResourcesListMember resources.
-        :param pulumi.Input[str] destination_resource_id: Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[Sequence[pulumi.Input['MonitoredResourcesListMemberItemArgs']]] items: List of member resources.
-        :param pulumi.Input[int] limit_level: The field which determines the depth of hierarchy while searching for members.
-        :param pulumi.Input[str] monitored_resource_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if destination_resource_id is not None:
             pulumi.set(__self__, "destination_resource_id", destination_resource_id)
@@ -106,9 +78,6 @@ class _MonitoredResourcesListMemberState:
     @property
     @pulumi.getter(name="destinationResourceId")
     def destination_resource_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
         return pulumi.get(self, "destination_resource_id")
 
     @destination_resource_id.setter
@@ -118,9 +87,6 @@ class _MonitoredResourcesListMemberState:
     @property
     @pulumi.getter
     def items(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourcesListMemberItemArgs']]]]:
-        """
-        List of member resources.
-        """
         return pulumi.get(self, "items")
 
     @items.setter
@@ -130,9 +96,6 @@ class _MonitoredResourcesListMemberState:
     @property
     @pulumi.getter(name="limitLevel")
     def limit_level(self) -> Optional[pulumi.Input[int]]:
-        """
-        The field which determines the depth of hierarchy while searching for members.
-        """
         return pulumi.get(self, "limit_level")
 
     @limit_level.setter
@@ -142,13 +105,6 @@ class _MonitoredResourcesListMemberState:
     @property
     @pulumi.getter(name="monitoredResourceId")
     def monitored_resource_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "monitored_resource_id")
 
     @monitored_resource_id.setter
@@ -166,39 +122,9 @@ class MonitoredResourcesListMember(pulumi.CustomResource):
                  monitored_resource_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Monitored Resources List Member resource in Oracle Cloud Infrastructure Stack Monitoring service.
-
-        List the member resources for the given monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_monitored_resources_list_member = oci.stack_monitoring.MonitoredResourcesListMember("testMonitoredResourcesListMember",
-            monitored_resource_id=oci_stack_monitoring_monitored_resource["test_monitored_resource"]["id"],
-            destination_resource_id=oci_stack_monitoring_destination_resource["test_destination_resource"]["id"],
-            limit_level=var["monitored_resources_list_member_limit_level"])
-        ```
-
-        ## Import
-
-        MonitoredResourcesListMembers can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:StackMonitoring/monitoredResourcesListMember:MonitoredResourcesListMember test_monitored_resources_list_member "id"
-        ```
-
+        Create a MonitoredResourcesListMember resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] destination_resource_id: Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[int] limit_level: The field which determines the depth of hierarchy while searching for members.
-        :param pulumi.Input[str] monitored_resource_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -207,30 +133,7 @@ class MonitoredResourcesListMember(pulumi.CustomResource):
                  args: MonitoredResourcesListMemberArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Monitored Resources List Member resource in Oracle Cloud Infrastructure Stack Monitoring service.
-
-        List the member resources for the given monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_monitored_resources_list_member = oci.stack_monitoring.MonitoredResourcesListMember("testMonitoredResourcesListMember",
-            monitored_resource_id=oci_stack_monitoring_monitored_resource["test_monitored_resource"]["id"],
-            destination_resource_id=oci_stack_monitoring_destination_resource["test_destination_resource"]["id"],
-            limit_level=var["monitored_resources_list_member_limit_level"])
-        ```
-
-        ## Import
-
-        MonitoredResourcesListMembers can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:StackMonitoring/monitoredResourcesListMember:MonitoredResourcesListMember test_monitored_resources_list_member "id"
-        ```
-
+        Create a MonitoredResourcesListMember resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param MonitoredResourcesListMemberArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -285,14 +188,6 @@ class MonitoredResourcesListMember(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] destination_resource_id: Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MonitoredResourcesListMemberItemArgs']]]] items: List of member resources.
-        :param pulumi.Input[int] limit_level: The field which determines the depth of hierarchy while searching for members.
-        :param pulumi.Input[str] monitored_resource_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -307,36 +202,20 @@ class MonitoredResourcesListMember(pulumi.CustomResource):
     @property
     @pulumi.getter(name="destinationResourceId")
     def destination_resource_id(self) -> pulumi.Output[Optional[str]]:
-        """
-        Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
         return pulumi.get(self, "destination_resource_id")
 
     @property
     @pulumi.getter
-    def items(self) -> pulumi.Output[Sequence['outputs.MonitoredResourcesListMemberItem']]:
-        """
-        List of member resources.
-        """
+    def items(self) -> pulumi.Output[Optional[Sequence['outputs.MonitoredResourcesListMemberItem']]]:
         return pulumi.get(self, "items")
 
     @property
     @pulumi.getter(name="limitLevel")
     def limit_level(self) -> pulumi.Output[Optional[int]]:
-        """
-        The field which determines the depth of hierarchy while searching for members.
-        """
         return pulumi.get(self, "limit_level")
 
     @property
     @pulumi.getter(name="monitoredResourceId")
     def monitored_resource_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "monitored_resource_id")
 

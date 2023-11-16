@@ -146,7 +146,7 @@ export interface GetMaskingPoliciesMaskingColumnsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Indicates whether data masking is enabled for the masking column.
      */
@@ -155,7 +155,7 @@ export interface GetMaskingPoliciesMaskingColumnsResult {
     /**
      * The list of masking_column_collection.
      */
-    readonly maskingColumnCollections: outputs.DataSafe.GetMaskingPoliciesMaskingColumnsMaskingColumnCollection[];
+    readonly maskingColumnCollections?: outputs.DataSafe.GetMaskingPoliciesMaskingColumnsMaskingColumnCollection[];
     /**
      * The group of the masking column. All the columns in a group are masked together to ensure  that the masked data across these columns continue to retain the same logical relationship.  For more details, check <a href=https://docs.oracle.com/en/cloud/paas/data-safe/udscs/group-masking1.html#GUID-755056B9-9540-48C0-9491-262A44A85037>Group Masking in the Data Safe documentation.</a>
      */

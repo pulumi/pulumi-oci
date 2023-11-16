@@ -9,6 +9,7 @@ import com.pulumi.oci.Identity.outputs.GetIamWorkRequestLogsIamWorkRequestLog;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -19,12 +20,12 @@ public final class GetIamWorkRequestLogsResult {
      * @return The list of iam_work_request_logs.
      * 
      */
-    private List<GetIamWorkRequestLogsIamWorkRequestLog> iamWorkRequestLogs;
+    private @Nullable List<GetIamWorkRequestLogsIamWorkRequestLog> iamWorkRequestLogs;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
 
     private GetIamWorkRequestLogsResult() {}
     public List<GetIamWorkRequestLogsFilter> filters() {
@@ -38,14 +39,14 @@ public final class GetIamWorkRequestLogsResult {
      * 
      */
     public List<GetIamWorkRequestLogsIamWorkRequestLog> iamWorkRequestLogs() {
-        return this.iamWorkRequestLogs;
+        return this.iamWorkRequestLogs == null ? List.of() : this.iamWorkRequestLogs;
     }
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
 
     public static Builder builder() {
@@ -59,8 +60,8 @@ public final class GetIamWorkRequestLogsResult {
     public static final class Builder {
         private @Nullable List<GetIamWorkRequestLogsFilter> filters;
         private String iamWorkRequestId;
-        private List<GetIamWorkRequestLogsIamWorkRequestLog> iamWorkRequestLogs;
-        private String id;
+        private @Nullable List<GetIamWorkRequestLogsIamWorkRequestLog> iamWorkRequestLogs;
+        private @Nullable String id;
         public Builder() {}
         public Builder(GetIamWorkRequestLogsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -84,16 +85,16 @@ public final class GetIamWorkRequestLogsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder iamWorkRequestLogs(List<GetIamWorkRequestLogsIamWorkRequestLog> iamWorkRequestLogs) {
-            this.iamWorkRequestLogs = Objects.requireNonNull(iamWorkRequestLogs);
+        public Builder iamWorkRequestLogs(@Nullable List<GetIamWorkRequestLogsIamWorkRequestLog> iamWorkRequestLogs) {
+            this.iamWorkRequestLogs = iamWorkRequestLogs;
             return this;
         }
         public Builder iamWorkRequestLogs(GetIamWorkRequestLogsIamWorkRequestLog... iamWorkRequestLogs) {
             return iamWorkRequestLogs(List.of(iamWorkRequestLogs));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         public GetIamWorkRequestLogsResult build() {

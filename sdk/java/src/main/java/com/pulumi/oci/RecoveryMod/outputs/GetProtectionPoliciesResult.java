@@ -29,13 +29,13 @@ public final class GetProtectionPoliciesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private @Nullable String owner;
     /**
      * @return The list of protection_policy_collection.
      * 
      */
-    private List<GetProtectionPoliciesProtectionPolicyCollection> protectionPolicyCollections;
+    private @Nullable List<GetProtectionPoliciesProtectionPolicyCollection> protectionPolicyCollections;
     private @Nullable String protectionPolicyId;
     /**
      * @return The current state of the protection policy. Allowed values are:
@@ -71,8 +71,8 @@ public final class GetProtectionPoliciesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public Optional<String> owner() {
         return Optional.ofNullable(this.owner);
@@ -82,7 +82,7 @@ public final class GetProtectionPoliciesResult {
      * 
      */
     public List<GetProtectionPoliciesProtectionPolicyCollection> protectionPolicyCollections() {
-        return this.protectionPolicyCollections;
+        return this.protectionPolicyCollections == null ? List.of() : this.protectionPolicyCollections;
     }
     public Optional<String> protectionPolicyId() {
         return Optional.ofNullable(this.protectionPolicyId);
@@ -113,9 +113,9 @@ public final class GetProtectionPoliciesResult {
         private String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetProtectionPoliciesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String owner;
-        private List<GetProtectionPoliciesProtectionPolicyCollection> protectionPolicyCollections;
+        private @Nullable List<GetProtectionPoliciesProtectionPolicyCollection> protectionPolicyCollections;
         private @Nullable String protectionPolicyId;
         private @Nullable String state;
         public Builder() {}
@@ -150,8 +150,8 @@ public final class GetProtectionPoliciesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -160,8 +160,8 @@ public final class GetProtectionPoliciesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder protectionPolicyCollections(List<GetProtectionPoliciesProtectionPolicyCollection> protectionPolicyCollections) {
-            this.protectionPolicyCollections = Objects.requireNonNull(protectionPolicyCollections);
+        public Builder protectionPolicyCollections(@Nullable List<GetProtectionPoliciesProtectionPolicyCollection> protectionPolicyCollections) {
+            this.protectionPolicyCollections = protectionPolicyCollections;
             return this;
         }
         public Builder protectionPolicyCollections(GetProtectionPoliciesProtectionPolicyCollection... protectionPolicyCollections) {

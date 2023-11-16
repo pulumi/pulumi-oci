@@ -45,10 +45,7 @@ class GetIpsecConfigResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the IPSec connection.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -58,7 +55,7 @@ class GetIpsecConfigResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -71,18 +68,12 @@ class GetIpsecConfigResult:
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the IPSec connection was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter
-    def tunnels(self) -> Sequence['outputs.GetIpsecConfigTunnelResult']:
-        """
-        Two [TunnelConfig](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/TunnelConfig/) objects.
-        """
+    def tunnels(self) -> Optional[Sequence['outputs.GetIpsecConfigTunnelResult']]:
         return pulumi.get(self, "tunnels")
 
 
@@ -104,24 +95,7 @@ def get_ipsec_config(filters: Optional[Sequence[pulumi.InputType['GetIpsecConfig
                      ipsec_id: Optional[str] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetIpsecConfigResult:
     """
-    This data source provides details about a specific Ip Sec Connection Device Config resource in Oracle Cloud Infrastructure Core service.
-
-    Deprecated. To get tunnel information, instead use:
-
-    * [GetIPSecConnectionTunnel](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnectionTunnel/GetIPSecConnectionTunnel)
-    * [GetIPSecConnectionTunnelSharedSecret](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnectionTunnelSharedSecret/GetIPSecConnectionTunnelSharedSecret)
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_ip_sec_connection_device_config = oci.Core.get_ipsec_config(ipsec_id=oci_core_ipsec["test_ipsec"]["id"])
-    ```
-
-
-    :param str ipsec_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IPSec connection.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -143,23 +117,6 @@ def get_ipsec_config_output(filters: Optional[pulumi.Input[Optional[Sequence[pul
                             ipsec_id: Optional[pulumi.Input[str]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetIpsecConfigResult]:
     """
-    This data source provides details about a specific Ip Sec Connection Device Config resource in Oracle Cloud Infrastructure Core service.
-
-    Deprecated. To get tunnel information, instead use:
-
-    * [GetIPSecConnectionTunnel](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnectionTunnel/GetIPSecConnectionTunnel)
-    * [GetIPSecConnectionTunnelSharedSecret](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnectionTunnelSharedSecret/GetIPSecConnectionTunnelSharedSecret)
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_ip_sec_connection_device_config = oci.Core.get_ipsec_config(ipsec_id=oci_core_ipsec["test_ipsec"]["id"])
-    ```
-
-
-    :param str ipsec_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IPSec connection.
+    Use this data source to access information about an existing resource.
     """
     ...

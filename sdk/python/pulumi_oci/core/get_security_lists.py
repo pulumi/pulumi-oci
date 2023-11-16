@@ -49,17 +49,11 @@ class GetSecurityListsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the security list.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -69,7 +63,7 @@ class GetSecurityListsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -77,26 +71,17 @@ class GetSecurityListsResult:
 
     @property
     @pulumi.getter(name="securityLists")
-    def security_lists(self) -> Sequence['outputs.GetSecurityListsSecurityListResult']:
-        """
-        The list of security_lists.
-        """
+    def security_lists(self) -> Optional[Sequence['outputs.GetSecurityListsSecurityListResult']]:
         return pulumi.get(self, "security_lists")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The security list's current state.
-        """
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="vcnId")
     def vcn_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN the security list belongs to.
-        """
         return pulumi.get(self, "vcn_id")
 
 
@@ -122,28 +107,7 @@ def get_security_lists(compartment_id: Optional[str] = None,
                        vcn_id: Optional[str] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSecurityListsResult:
     """
-    This data source provides the list of Security Lists in Oracle Cloud Infrastructure Core service.
-
-    Lists the security lists in the specified VCN and compartment.
-    If the VCN ID is not provided, then the list includes the security lists from all VCNs in the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_security_lists = oci.Core.get_security_lists(compartment_id=var["compartment_id"],
-        display_name=var["security_list_display_name"],
-        state=var["security_list_state"],
-        vcn_id=oci_core_vcn["test_vcn"]["id"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str display_name: A filter to return only resources that match the given display name exactly.
-    :param str state: A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
-    :param str vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -172,27 +136,6 @@ def get_security_lists_output(compartment_id: Optional[pulumi.Input[str]] = None
                               vcn_id: Optional[pulumi.Input[Optional[str]]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSecurityListsResult]:
     """
-    This data source provides the list of Security Lists in Oracle Cloud Infrastructure Core service.
-
-    Lists the security lists in the specified VCN and compartment.
-    If the VCN ID is not provided, then the list includes the security lists from all VCNs in the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_security_lists = oci.Core.get_security_lists(compartment_id=var["compartment_id"],
-        display_name=var["security_list_display_name"],
-        state=var["security_list_state"],
-        vcn_id=oci_core_vcn["test_vcn"]["id"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str display_name: A filter to return only resources that match the given display name exactly.
-    :param str state: A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
-    :param str vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Custom Protection Rule resource in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
@@ -60,26 +59,26 @@ type LookupCustomProtectionRuleArgs struct {
 // A collection of values returned by getCustomProtectionRule.
 type LookupCustomProtectionRuleResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom protection rule's compartment.
-	CompartmentId          string `pulumi:"compartmentId"`
-	CustomProtectionRuleId string `pulumi:"customProtectionRuleId"`
+	CompartmentId          *string `pulumi:"compartmentId"`
+	CustomProtectionRuleId string  `pulumi:"customProtectionRuleId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The description of the custom protection rule.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// The user-friendly name of the custom protection rule.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom protection rule.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The auto-generated ID for the custom protection rule. These IDs are referenced in logs.
 	ModSecurityRuleIds []string `pulumi:"modSecurityRuleIds"`
 	// The current lifecycle state of the custom protection rule.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The template text of the custom protection rule. All custom protection rules are expressed in ModSecurity Rule Language.
-	Template string `pulumi:"template"`
+	Template *string `pulumi:"template"`
 	// The date and time the protection rule was created, expressed in RFC 3339 timestamp format.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 }
 
 func LookupCustomProtectionRuleOutput(ctx *pulumi.Context, args LookupCustomProtectionRuleOutputArgs, opts ...pulumi.InvokeOption) LookupCustomProtectionRuleResultOutput {
@@ -120,15 +119,9 @@ func (o LookupCustomProtectionRuleResultOutput) ToLookupCustomProtectionRuleResu
 	return o
 }
 
-func (o LookupCustomProtectionRuleResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupCustomProtectionRuleResult] {
-	return pulumix.Output[LookupCustomProtectionRuleResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom protection rule's compartment.
-func (o LookupCustomProtectionRuleResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCustomProtectionRuleResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupCustomProtectionRuleResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCustomProtectionRuleResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupCustomProtectionRuleResultOutput) CustomProtectionRuleId() pulumi.StringOutput {
@@ -141,13 +134,13 @@ func (o LookupCustomProtectionRuleResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // The description of the custom protection rule.
-func (o LookupCustomProtectionRuleResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCustomProtectionRuleResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupCustomProtectionRuleResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCustomProtectionRuleResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // The user-friendly name of the custom protection rule.
-func (o LookupCustomProtectionRuleResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCustomProtectionRuleResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupCustomProtectionRuleResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCustomProtectionRuleResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -156,8 +149,8 @@ func (o LookupCustomProtectionRuleResultOutput) FreeformTags() pulumi.MapOutput 
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom protection rule.
-func (o LookupCustomProtectionRuleResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCustomProtectionRuleResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupCustomProtectionRuleResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCustomProtectionRuleResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The auto-generated ID for the custom protection rule. These IDs are referenced in logs.
@@ -166,18 +159,18 @@ func (o LookupCustomProtectionRuleResultOutput) ModSecurityRuleIds() pulumi.Stri
 }
 
 // The current lifecycle state of the custom protection rule.
-func (o LookupCustomProtectionRuleResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCustomProtectionRuleResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupCustomProtectionRuleResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCustomProtectionRuleResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The template text of the custom protection rule. All custom protection rules are expressed in ModSecurity Rule Language.
-func (o LookupCustomProtectionRuleResultOutput) Template() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCustomProtectionRuleResult) string { return v.Template }).(pulumi.StringOutput)
+func (o LookupCustomProtectionRuleResultOutput) Template() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCustomProtectionRuleResult) *string { return v.Template }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the protection rule was created, expressed in RFC 3339 timestamp format.
-func (o LookupCustomProtectionRuleResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCustomProtectionRuleResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupCustomProtectionRuleResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCustomProtectionRuleResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

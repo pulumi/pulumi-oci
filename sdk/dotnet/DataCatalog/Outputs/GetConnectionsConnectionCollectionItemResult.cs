@@ -20,7 +20,7 @@ namespace Pulumi.Oci.DataCatalog.Outputs
         /// <summary>
         /// OCID of the user who created the resource.
         /// </summary>
-        public readonly string CreatedById;
+        public readonly string? CreatedById;
         /// <summary>
         /// Unique data asset key.
         /// </summary>
@@ -28,7 +28,7 @@ namespace Pulumi.Oci.DataCatalog.Outputs
         /// <summary>
         /// A description of the connection.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// A filter to return only resources that match the entire display name given. The match is not case sensitive.
         /// </summary>
@@ -37,15 +37,15 @@ namespace Pulumi.Oci.DataCatalog.Outputs
         /// <summary>
         /// Unique external identifier of this resource in the external source system.
         /// </summary>
-        public readonly string ExternalKey;
+        public readonly string? ExternalKey;
         /// <summary>
         /// Indicates whether this connection is the default connection.
         /// </summary>
-        public readonly bool IsDefault;
+        public readonly bool? IsDefault;
         /// <summary>
         /// Unique connection key that is immutable.
         /// </summary>
-        public readonly string Key;
+        public readonly string? Key;
         /// <summary>
         /// A map of maps that contains the properties which are specific to the connection type. Each connection type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most connections have required properties within the "default" category. Example: `{"properties": { "default": { "username": "user1"}}}`
         /// </summary>
@@ -53,19 +53,19 @@ namespace Pulumi.Oci.DataCatalog.Outputs
         /// <summary>
         /// A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// Time that the resource was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// Time that the resource's status was last updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
         /// </summary>
-        public readonly string TimeStatusUpdated;
+        public readonly string? TimeStatusUpdated;
         /// <summary>
         /// Time that the resource was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
         /// <summary>
         /// The key of the object type. Type key's can be found via the '/types' endpoint.
         /// </summary>
@@ -73,47 +73,47 @@ namespace Pulumi.Oci.DataCatalog.Outputs
         /// <summary>
         /// OCID of the user who updated the resource.
         /// </summary>
-        public readonly string UpdatedById;
+        public readonly string? UpdatedById;
         /// <summary>
         /// URI to the connection instance in the API.
         /// </summary>
-        public readonly string Uri;
+        public readonly string? Uri;
 
         [OutputConstructor]
         private GetConnectionsConnectionCollectionItemResult(
             string catalogId,
 
-            string createdById,
+            string? createdById,
 
             string dataAssetKey,
 
-            string description,
+            string? description,
 
             string displayName,
 
             ImmutableDictionary<string, object>? encProperties,
 
-            string externalKey,
+            string? externalKey,
 
-            bool isDefault,
+            bool? isDefault,
 
-            string key,
+            string? key,
 
             ImmutableDictionary<string, object> properties,
 
-            string state,
+            string? state,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeStatusUpdated,
+            string? timeStatusUpdated,
 
-            string timeUpdated,
+            string? timeUpdated,
 
             string typeKey,
 
-            string updatedById,
+            string? updatedById,
 
-            string uri)
+            string? uri)
         {
             CatalogId = catalogId;
             CreatedById = createdById;

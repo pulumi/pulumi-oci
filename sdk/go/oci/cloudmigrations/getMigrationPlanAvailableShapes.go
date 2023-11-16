@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Migration Plan Available Shapes in Oracle Cloud Infrastructure Cloud Migrations service.
@@ -80,7 +79,7 @@ type GetMigrationPlanAvailableShapesResult struct {
 	DvhHostId                  *string                                                    `pulumi:"dvhHostId"`
 	Filters                    []GetMigrationPlanAvailableShapesFilter                    `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                 string  `pulumi:"id"`
+	Id                 *string `pulumi:"id"`
 	MigrationPlanId    string  `pulumi:"migrationPlanId"`
 	ReservedCapacityId *string `pulumi:"reservedCapacityId"`
 }
@@ -132,12 +131,6 @@ func (o GetMigrationPlanAvailableShapesResultOutput) ToGetMigrationPlanAvailable
 	return o
 }
 
-func (o GetMigrationPlanAvailableShapesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationPlanAvailableShapesResult] {
-	return pulumix.Output[GetMigrationPlanAvailableShapesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Availability domain of the shape.
 func (o GetMigrationPlanAvailableShapesResultOutput) AvailabilityDomain() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetMigrationPlanAvailableShapesResult) *string { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
@@ -165,8 +158,8 @@ func (o GetMigrationPlanAvailableShapesResultOutput) Filters() GetMigrationPlanA
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetMigrationPlanAvailableShapesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMigrationPlanAvailableShapesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetMigrationPlanAvailableShapesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMigrationPlanAvailableShapesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetMigrationPlanAvailableShapesResultOutput) MigrationPlanId() pulumi.StringOutput {

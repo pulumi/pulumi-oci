@@ -6,6 +6,8 @@ package com.pulumi.oci.ComputeCloud.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAtCustomerCccUpgradeScheduleEvent {
@@ -13,63 +15,63 @@ public final class GetAtCustomerCccUpgradeScheduleEvent {
      * @return A description of the Compute Cloud@Customer upgrade schedule time block.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return Generated name associated with the event.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return The duration of this block of time. The duration must be specified and be of the ISO-8601 format for durations.
      * 
      */
-    private String scheduleEventDuration;
+    private @Nullable String scheduleEventDuration;
     /**
      * @return Frequency of recurrence of schedule block. When this field is not included, the event is assumed to be a one time occurrence. The frequency field is strictly parsed and must conform to RFC-5545 formatting for recurrences.
      * 
      */
-    private String scheduleEventRecurrences;
+    private @Nullable String scheduleEventRecurrences;
     /**
      * @return The date and time when the Compute Cloud@Customer upgrade schedule event starts, inclusive. An RFC3339 formatted UTC datetime string. For an event with recurrences, this is the date that a recurrence can start being applied.
      * 
      */
-    private String timeStart;
+    private @Nullable String timeStart;
 
     private GetAtCustomerCccUpgradeScheduleEvent() {}
     /**
      * @return A description of the Compute Cloud@Customer upgrade schedule time block.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return Generated name associated with the event.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return The duration of this block of time. The duration must be specified and be of the ISO-8601 format for durations.
      * 
      */
-    public String scheduleEventDuration() {
-        return this.scheduleEventDuration;
+    public Optional<String> scheduleEventDuration() {
+        return Optional.ofNullable(this.scheduleEventDuration);
     }
     /**
      * @return Frequency of recurrence of schedule block. When this field is not included, the event is assumed to be a one time occurrence. The frequency field is strictly parsed and must conform to RFC-5545 formatting for recurrences.
      * 
      */
-    public String scheduleEventRecurrences() {
-        return this.scheduleEventRecurrences;
+    public Optional<String> scheduleEventRecurrences() {
+        return Optional.ofNullable(this.scheduleEventRecurrences);
     }
     /**
      * @return The date and time when the Compute Cloud@Customer upgrade schedule event starts, inclusive. An RFC3339 formatted UTC datetime string. For an event with recurrences, this is the date that a recurrence can start being applied.
      * 
      */
-    public String timeStart() {
-        return this.timeStart;
+    public Optional<String> timeStart() {
+        return Optional.ofNullable(this.timeStart);
     }
 
     public static Builder builder() {
@@ -81,11 +83,11 @@ public final class GetAtCustomerCccUpgradeScheduleEvent {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String description;
-        private String name;
-        private String scheduleEventDuration;
-        private String scheduleEventRecurrences;
-        private String timeStart;
+        private @Nullable String description;
+        private @Nullable String name;
+        private @Nullable String scheduleEventDuration;
+        private @Nullable String scheduleEventRecurrences;
+        private @Nullable String timeStart;
         public Builder() {}
         public Builder(GetAtCustomerCccUpgradeScheduleEvent defaults) {
     	      Objects.requireNonNull(defaults);
@@ -97,28 +99,28 @@ public final class GetAtCustomerCccUpgradeScheduleEvent {
         }
 
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder scheduleEventDuration(String scheduleEventDuration) {
-            this.scheduleEventDuration = Objects.requireNonNull(scheduleEventDuration);
+        public Builder scheduleEventDuration(@Nullable String scheduleEventDuration) {
+            this.scheduleEventDuration = scheduleEventDuration;
             return this;
         }
         @CustomType.Setter
-        public Builder scheduleEventRecurrences(String scheduleEventRecurrences) {
-            this.scheduleEventRecurrences = Objects.requireNonNull(scheduleEventRecurrences);
+        public Builder scheduleEventRecurrences(@Nullable String scheduleEventRecurrences) {
+            this.scheduleEventRecurrences = scheduleEventRecurrences;
             return this;
         }
         @CustomType.Setter
-        public Builder timeStart(String timeStart) {
-            this.timeStart = Objects.requireNonNull(timeStart);
+        public Builder timeStart(@Nullable String timeStart) {
+            this.timeStart = timeStart;
             return this;
         }
         public GetAtCustomerCccUpgradeScheduleEvent build() {

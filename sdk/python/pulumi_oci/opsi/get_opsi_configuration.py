@@ -80,10 +80,7 @@ class GetOpsiConfigurationResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -98,10 +95,7 @@ class GetOpsiConfigurationResult:
 
     @property
     @pulumi.getter(name="configItems")
-    def config_items(self) -> Sequence['outputs.GetOpsiConfigurationConfigItemResult']:
-        """
-        Array of configuration item summary objects.
-        """
+    def config_items(self) -> Optional[Sequence['outputs.GetOpsiConfigurationConfigItemResult']]:
         return pulumi.get(self, "config_items")
 
     @property
@@ -111,50 +105,32 @@ class GetOpsiConfigurationResult:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Description of OPSI configuration.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        User-friendly display name for the OPSI configuration. The name does not have to be unique.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of OPSI configuration resource.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
@@ -164,10 +140,7 @@ class GetOpsiConfigurationResult:
 
     @property
     @pulumi.getter(name="opsiConfigType")
-    def opsi_config_type(self) -> str:
-        """
-        OPSI configuration type.
-        """
+    def opsi_config_type(self) -> Optional[str]:
         return pulumi.get(self, "opsi_config_type")
 
     @property
@@ -177,34 +150,22 @@ class GetOpsiConfigurationResult:
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        OPSI configuration resource lifecycle state.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time at which the resource was first created. An RFC3339 formatted datetime string
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time at which the resource was last updated. An RFC3339 formatted datetime string
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -241,31 +202,7 @@ def get_opsi_configuration(config_item_custom_statuses: Optional[Sequence[str]] 
                            opsi_configuration_id: Optional[str] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetOpsiConfigurationResult:
     """
-    This data source provides details about a specific Opsi Configuration resource in Oracle Cloud Infrastructure Opsi service.
-
-    Gets details of an OPSI configuration resource.
-    Values specified in configItemField and configItemCustomStatus query params will be considered, only if configItems field is requested as part of opsiConfigField query param.
-    Values specified in configItemCustomStatus will determine whether only customized configuration items or only non-customized configuration items or both have to be returned.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_opsi_configuration = oci.Opsi.get_opsi_configuration(opsi_configuration_id=oci_opsi_opsi_configuration["test_opsi_configuration"]["id"],
-        config_item_custom_statuses=var["opsi_configuration_config_item_custom_status"],
-        config_item_fields=var["opsi_configuration_config_item_field"],
-        config_items_applicable_contexts=var["opsi_configuration_config_items_applicable_context"],
-        opsi_config_fields=var["opsi_configuration_opsi_config_field"])
-    ```
-
-
-    :param Sequence[str] config_item_custom_statuses: Specifies whether only customized configuration items or only non-customized configuration items or both have to be returned. By default only customized configuration items are returned.
-    :param Sequence[str] config_item_fields: Specifies the fields to return in a config item summary.
-    :param Sequence[str] config_items_applicable_contexts: Returns the configuration items filtered by applicable contexts sent in this param. By default configuration items of all applicable contexts are returned.
-    :param Sequence[str] opsi_config_fields: Optional fields to return as part of OpsiConfiguration object. Unless requested, these fields will not be returned by default.
-    :param str opsi_configuration_id: [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of OPSI configuration resource.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['configItemCustomStatuses'] = config_item_custom_statuses
@@ -305,30 +242,6 @@ def get_opsi_configuration_output(config_item_custom_statuses: Optional[pulumi.I
                                   opsi_configuration_id: Optional[pulumi.Input[str]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOpsiConfigurationResult]:
     """
-    This data source provides details about a specific Opsi Configuration resource in Oracle Cloud Infrastructure Opsi service.
-
-    Gets details of an OPSI configuration resource.
-    Values specified in configItemField and configItemCustomStatus query params will be considered, only if configItems field is requested as part of opsiConfigField query param.
-    Values specified in configItemCustomStatus will determine whether only customized configuration items or only non-customized configuration items or both have to be returned.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_opsi_configuration = oci.Opsi.get_opsi_configuration(opsi_configuration_id=oci_opsi_opsi_configuration["test_opsi_configuration"]["id"],
-        config_item_custom_statuses=var["opsi_configuration_config_item_custom_status"],
-        config_item_fields=var["opsi_configuration_config_item_field"],
-        config_items_applicable_contexts=var["opsi_configuration_config_items_applicable_context"],
-        opsi_config_fields=var["opsi_configuration_opsi_config_field"])
-    ```
-
-
-    :param Sequence[str] config_item_custom_statuses: Specifies whether only customized configuration items or only non-customized configuration items or both have to be returned. By default only customized configuration items are returned.
-    :param Sequence[str] config_item_fields: Specifies the fields to return in a config item summary.
-    :param Sequence[str] config_items_applicable_contexts: Returns the configuration items filtered by applicable contexts sent in this param. By default configuration items of all applicable contexts are returned.
-    :param Sequence[str] opsi_config_fields: Optional fields to return as part of OpsiConfiguration object. Unless requested, these fields will not be returned by default.
-    :param str opsi_configuration_id: [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of OPSI configuration resource.
+    Use this data source to access information about an existing resource.
     """
     ...

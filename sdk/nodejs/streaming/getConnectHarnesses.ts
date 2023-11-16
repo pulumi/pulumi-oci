@@ -71,7 +71,7 @@ export interface GetConnectHarnessesResult {
     /**
      * The list of connect_harness.
      */
-    readonly connectHarnesses: outputs.Streaming.GetConnectHarnessesConnectHarness[];
+    readonly connectHarnesses?: outputs.Streaming.GetConnectHarnessesConnectHarness[];
     readonly filters?: outputs.Streaming.GetConnectHarnessesFilter[];
     /**
      * The OCID of the connect harness.

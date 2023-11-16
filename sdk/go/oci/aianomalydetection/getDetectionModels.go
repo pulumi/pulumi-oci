@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Models in Oracle Cloud Infrastructure Ai Anomaly Detection service.
@@ -75,7 +74,7 @@ type GetDetectionModelsResult struct {
 	DisplayName *string                    `pulumi:"displayName"`
 	Filters     []GetDetectionModelsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of model_collection.
 	ModelCollections []GetDetectionModelsModelCollection `pulumi:"modelCollections"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
@@ -129,12 +128,6 @@ func (o GetDetectionModelsResultOutput) ToGetDetectionModelsResultOutputWithCont
 	return o
 }
 
-func (o GetDetectionModelsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectionModelsResult] {
-	return pulumix.Output[GetDetectionModelsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID for the model's compartment.
 func (o GetDetectionModelsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDetectionModelsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -150,8 +143,8 @@ func (o GetDetectionModelsResultOutput) Filters() GetDetectionModelsFilterArrayO
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetDetectionModelsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionModelsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDetectionModelsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionModelsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of model_collection.

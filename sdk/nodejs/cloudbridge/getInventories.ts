@@ -60,11 +60,11 @@ export interface GetInventoriesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of inventory_collection.
      */
-    readonly inventoryCollections: outputs.CloudBridge.GetInventoriesInventoryCollection[];
+    readonly inventoryCollections?: outputs.CloudBridge.GetInventoriesInventoryCollection[];
     /**
      * The current state of the inventory.
      */

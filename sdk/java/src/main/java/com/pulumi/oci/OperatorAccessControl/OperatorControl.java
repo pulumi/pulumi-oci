@@ -15,6 +15,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -38,14 +39,14 @@ public class OperatorControl extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="approvalRequiredOpActionLists", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> approvalRequiredOpActionLists;
+    private Output</* @Nullable */ List<String>> approvalRequiredOpActionLists;
 
     /**
      * @return List of operator actions that need explicit approval. Any operator action not in the pre-approved list will require explicit approval. Access requests associated with a resource governed by this operator control will be require explicit approval if the access request contains any operator action in this list.
      * 
      */
-    public Output<List<String>> approvalRequiredOpActionLists() {
-        return this.approvalRequiredOpActionLists;
+    public Output<Optional<List<String>>> approvalRequiredOpActionLists() {
+        return Codegen.optional(this.approvalRequiredOpActionLists);
     }
     /**
      * (Updatable) List of user groups who can approve an access request associated with a resource governed by this operator control.
@@ -66,14 +67,14 @@ public class OperatorControl extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="approversLists", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> approversLists;
+    private Output</* @Nullable */ List<String>> approversLists;
 
     /**
      * @return (Updatable) List of users who can approve an access request associated with a resource governed by this operator control.
      * 
      */
-    public Output<List<String>> approversLists() {
-        return this.approversLists;
+    public Output<Optional<List<String>>> approversLists() {
+        return Codegen.optional(this.approversLists);
     }
     /**
      * (Updatable) The OCID of the compartment that contains this operator control.
@@ -94,70 +95,70 @@ public class OperatorControl extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) Description of the operator control.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
-    private Output<String> description;
+    private Output</* @Nullable */ String> description;
 
     /**
      * @return (Updatable) Description of the operator control.
      * 
      */
-    public Output<String> description() {
-        return this.description;
+    public Output<Optional<String>> description() {
+        return Codegen.optional(this.description);
     }
     /**
      * (Updatable) List of emailId.
      * 
      */
     @Export(name="emailIdLists", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> emailIdLists;
+    private Output</* @Nullable */ List<String>> emailIdLists;
 
     /**
      * @return (Updatable) List of emailId.
      * 
      */
-    public Output<List<String>> emailIdLists() {
-        return this.emailIdLists;
+    public Output<Optional<List<String>>> emailIdLists() {
+        return Codegen.optional(this.emailIdLists);
     }
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * Whether the operator control is a default Operator Control.
      * 
      */
     @Export(name="isDefaultOperatorControl", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isDefaultOperatorControl;
+    private Output</* @Nullable */ Boolean> isDefaultOperatorControl;
 
     /**
      * @return Whether the operator control is a default Operator Control.
      * 
      */
-    public Output<Boolean> isDefaultOperatorControl() {
-        return this.isDefaultOperatorControl;
+    public Output<Optional<Boolean>> isDefaultOperatorControl() {
+        return Codegen.optional(this.isDefaultOperatorControl);
     }
     /**
      * (Updatable) Whether all the operator actions have been pre-approved. If yes, all access requests associated with a resource governed by this operator control  will be auto-approved.
@@ -178,14 +179,14 @@ public class OperatorControl extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="lastModifiedInfo", refs={String.class}, tree="[0]")
-    private Output<String> lastModifiedInfo;
+    private Output</* @Nullable */ String> lastModifiedInfo;
 
     /**
      * @return Description associated with the latest modification of the operator control.
      * 
      */
-    public Output<String> lastModifiedInfo() {
-        return this.lastModifiedInfo;
+    public Output<Optional<String>> lastModifiedInfo() {
+        return Codegen.optional(this.lastModifiedInfo);
     }
     /**
      * (Updatable) Name of the operator control.
@@ -206,14 +207,14 @@ public class OperatorControl extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="preApprovedOpActionLists", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> preApprovedOpActionLists;
+    private Output</* @Nullable */ List<String>> preApprovedOpActionLists;
 
     /**
      * @return (Updatable) List of pre-approved operator actions. Access requests associated with a resource governed by this operator control will be auto-approved if the access request only contain operator actions in the pre-approved list.
      * 
      */
-    public Output<List<String>> preApprovedOpActionLists() {
-        return this.preApprovedOpActionLists;
+    public Output<Optional<List<String>>> preApprovedOpActionLists() {
+        return Codegen.optional(this.preApprovedOpActionLists);
     }
     /**
      * resourceType for which the OperatorControl is applicable
@@ -234,14 +235,14 @@ public class OperatorControl extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current lifecycle state of the operator control.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * (Updatable) This is the message that will be displayed to the operator users while accessing the system.
@@ -251,7 +252,7 @@ public class OperatorControl extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="systemMessage", refs={String.class}, tree="[0]")
-    private Output<String> systemMessage;
+    private Output</* @Nullable */ String> systemMessage;
 
     /**
      * @return (Updatable) This is the message that will be displayed to the operator users while accessing the system.
@@ -260,50 +261,50 @@ public class OperatorControl extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> systemMessage() {
-        return this.systemMessage;
+    public Output<Optional<String>> systemMessage() {
+        return Codegen.optional(this.systemMessage);
     }
     /**
      * Time when the operator control was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: &#39;2020-05-22T21:10:29.600Z&#39;
      * 
      */
     @Export(name="timeOfCreation", refs={String.class}, tree="[0]")
-    private Output<String> timeOfCreation;
+    private Output</* @Nullable */ String> timeOfCreation;
 
     /**
      * @return Time when the operator control was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: &#39;2020-05-22T21:10:29.600Z&#39;
      * 
      */
-    public Output<String> timeOfCreation() {
-        return this.timeOfCreation;
+    public Output<Optional<String>> timeOfCreation() {
+        return Codegen.optional(this.timeOfCreation);
     }
     /**
      * Time when deleted expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: &#39;2020-05-22T21:10:29.600Z&#39;. Note a deleted operator control still stays in the system, so that you can still audit operator actions associated with access requests raised on target resources governed by the deleted operator control.
      * 
      */
     @Export(name="timeOfDeletion", refs={String.class}, tree="[0]")
-    private Output<String> timeOfDeletion;
+    private Output</* @Nullable */ String> timeOfDeletion;
 
     /**
      * @return Time when deleted expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: &#39;2020-05-22T21:10:29.600Z&#39;. Note a deleted operator control still stays in the system, so that you can still audit operator actions associated with access requests raised on target resources governed by the deleted operator control.
      * 
      */
-    public Output<String> timeOfDeletion() {
-        return this.timeOfDeletion;
+    public Output<Optional<String>> timeOfDeletion() {
+        return Codegen.optional(this.timeOfDeletion);
     }
     /**
      * Time when the operator control was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: &#39;2020-05-22T21:10:29.600Z&#39;
      * 
      */
     @Export(name="timeOfModification", refs={String.class}, tree="[0]")
-    private Output<String> timeOfModification;
+    private Output</* @Nullable */ String> timeOfModification;
 
     /**
      * @return Time when the operator control was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: &#39;2020-05-22T21:10:29.600Z&#39;
      * 
      */
-    public Output<String> timeOfModification() {
-        return this.timeOfModification;
+    public Output<Optional<String>> timeOfModification() {
+        return Codegen.optional(this.timeOfModification);
     }
 
     /**

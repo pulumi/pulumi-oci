@@ -55,11 +55,11 @@ export interface GetCostTrackingTagsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of tags.
      */
-    readonly tags: outputs.Identity.GetCostTrackingTagsTag[];
+    readonly tags?: outputs.Identity.GetCostTrackingTagsTag[];
 }
 /**
  * This data source provides the list of Cost Tracking Tags in Oracle Cloud Infrastructure Identity service.

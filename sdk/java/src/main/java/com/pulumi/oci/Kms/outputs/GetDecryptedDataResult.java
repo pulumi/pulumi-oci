@@ -8,6 +8,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -19,18 +20,18 @@ public final class GetDecryptedDataResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String keyId;
     /**
      * @return The decrypted data, in the form of a base64-encoded value.
      * 
      */
-    private String plaintext;
+    private @Nullable String plaintext;
     /**
      * @return Checksum of the decrypted data.
      * 
      */
-    private String plaintextChecksum;
+    private @Nullable String plaintextChecksum;
 
     private GetDecryptedDataResult() {}
     public Map<String,Object> associatedData() {
@@ -46,8 +47,8 @@ public final class GetDecryptedDataResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String keyId() {
         return this.keyId;
@@ -56,15 +57,15 @@ public final class GetDecryptedDataResult {
      * @return The decrypted data, in the form of a base64-encoded value.
      * 
      */
-    public String plaintext() {
-        return this.plaintext;
+    public Optional<String> plaintext() {
+        return Optional.ofNullable(this.plaintext);
     }
     /**
      * @return Checksum of the decrypted data.
      * 
      */
-    public String plaintextChecksum() {
-        return this.plaintextChecksum;
+    public Optional<String> plaintextChecksum() {
+        return Optional.ofNullable(this.plaintextChecksum);
     }
 
     public static Builder builder() {
@@ -79,10 +80,10 @@ public final class GetDecryptedDataResult {
         private @Nullable Map<String,Object> associatedData;
         private String ciphertext;
         private String cryptoEndpoint;
-        private String id;
+        private @Nullable String id;
         private String keyId;
-        private String plaintext;
-        private String plaintextChecksum;
+        private @Nullable String plaintext;
+        private @Nullable String plaintextChecksum;
         public Builder() {}
         public Builder(GetDecryptedDataResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -111,8 +112,8 @@ public final class GetDecryptedDataResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -121,13 +122,13 @@ public final class GetDecryptedDataResult {
             return this;
         }
         @CustomType.Setter
-        public Builder plaintext(String plaintext) {
-            this.plaintext = Objects.requireNonNull(plaintext);
+        public Builder plaintext(@Nullable String plaintext) {
+            this.plaintext = plaintext;
             return this;
         }
         @CustomType.Setter
-        public Builder plaintextChecksum(String plaintextChecksum) {
-            this.plaintextChecksum = Objects.requireNonNull(plaintextChecksum);
+        public Builder plaintextChecksum(@Nullable String plaintextChecksum) {
+            this.plaintextChecksum = plaintextChecksum;
             return this;
         }
         public GetDecryptedDataResult build() {

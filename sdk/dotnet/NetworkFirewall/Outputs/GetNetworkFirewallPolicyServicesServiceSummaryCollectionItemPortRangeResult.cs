@@ -16,7 +16,7 @@ namespace Pulumi.Oci.NetworkFirewall.Outputs
         /// <summary>
         /// The maximum port in the range (inclusive), which may be absent for a single-port range.
         /// </summary>
-        public readonly int MaximumPort;
+        public readonly int? MaximumPort;
         /// <summary>
         /// The minimum port in the range (inclusive), or the sole port of a single-port range.
         /// </summary>
@@ -24,7 +24,7 @@ namespace Pulumi.Oci.NetworkFirewall.Outputs
 
         [OutputConstructor]
         private GetNetworkFirewallPolicyServicesServiceSummaryCollectionItemPortRangeResult(
-            int maximumPort,
+            int? maximumPort,
 
             int minimumPort)
         {

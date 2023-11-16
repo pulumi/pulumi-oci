@@ -116,19 +116,19 @@ namespace Pulumi.Oci.DataScience
         /// (Updatable) The configuration details of a pipeline.
         /// </summary>
         [Output("configurationDetails")]
-        public Output<Outputs.PipelineConfigurationDetails> ConfigurationDetails { get; private set; } = null!;
+        public Output<Outputs.PipelineConfigurationDetails?> ConfigurationDetails { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the pipeline.
         /// </summary>
         [Output("createdBy")]
-        public Output<string> CreatedBy { get; private set; } = null!;
+        public Output<string?> CreatedBy { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         [Output("deleteRelatedPipelineRuns")]
         public Output<bool?> DeleteRelatedPipelineRuns { get; private set; } = null!;
@@ -137,37 +137,37 @@ namespace Pulumi.Oci.DataScience
         /// (Updatable) A short description of the step.
         /// </summary>
         [Output("description")]
-        public Output<string> Description { get; private set; } = null!;
+        public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A user-friendly display name for the resource.
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// The infrastructure configuration details of a pipeline or a step.
         /// </summary>
         [Output("infrastructureConfigurationDetails")]
-        public Output<Outputs.PipelineInfrastructureConfigurationDetails> InfrastructureConfigurationDetails { get; private set; } = null!;
+        public Output<Outputs.PipelineInfrastructureConfigurationDetails?> InfrastructureConfigurationDetails { get; private set; } = null!;
 
         /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The pipeline log configuration details.
         /// </summary>
         [Output("logConfigurationDetails")]
-        public Output<Outputs.PipelineLogConfigurationDetails> LogConfigurationDetails { get; private set; } = null!;
+        public Output<Outputs.PipelineLogConfigurationDetails?> LogConfigurationDetails { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline with.
@@ -179,10 +179,10 @@ namespace Pulumi.Oci.DataScience
         /// The current state of the pipeline.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         [Output("stepArtifact")]
-        public Output<Outputs.PipelineStepArtifact> StepArtifact { get; private set; } = null!;
+        public Output<Outputs.PipelineStepArtifact?> StepArtifact { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Array of step details for each step.
@@ -194,19 +194,19 @@ namespace Pulumi.Oci.DataScience
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
         [Output("systemTags")]
-        public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the resource was updated in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
 
         /// <summary>

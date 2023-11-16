@@ -46,33 +46,21 @@ class GetExternalClustersResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        The user-friendly name for the external cluster. The name does not have to be unique.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="externalClusterCollections")
-    def external_cluster_collections(self) -> Sequence['outputs.GetExternalClustersExternalClusterCollectionResult']:
-        """
-        The list of external_cluster_collection.
-        """
+    def external_cluster_collections(self) -> Optional[Sequence['outputs.GetExternalClustersExternalClusterCollectionResult']]:
         return pulumi.get(self, "external_cluster_collections")
 
     @property
     @pulumi.getter(name="externalDbSystemId")
     def external_db_system_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the cluster is a part of.
-        """
         return pulumi.get(self, "external_db_system_id")
 
     @property
@@ -82,7 +70,7 @@ class GetExternalClustersResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -109,25 +97,7 @@ def get_external_clusters(compartment_id: Optional[str] = None,
                           filters: Optional[Sequence[pulumi.InputType['GetExternalClustersFilterArgs']]] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetExternalClustersResult:
     """
-    This data source provides the list of External Clusters in Oracle Cloud Infrastructure Database Management service.
-
-    Lists the clusters in the specified external DB system.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_external_clusters = oci.DatabaseManagement.get_external_clusters(compartment_id=var["compartment_id"],
-        display_name=var["external_cluster_display_name"],
-        external_db_system_id=oci_database_management_external_db_system["test_external_db_system"]["id"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str display_name: A filter to only return the resources that match the entire display name.
-    :param str external_db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -153,24 +123,6 @@ def get_external_clusters_output(compartment_id: Optional[pulumi.Input[Optional[
                                  filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetExternalClustersFilterArgs']]]]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExternalClustersResult]:
     """
-    This data source provides the list of External Clusters in Oracle Cloud Infrastructure Database Management service.
-
-    Lists the clusters in the specified external DB system.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_external_clusters = oci.DatabaseManagement.get_external_clusters(compartment_id=var["compartment_id"],
-        display_name=var["external_cluster_display_name"],
-        external_db_system_id=oci_database_management_external_db_system["test_external_db_system"]["id"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str display_name: A filter to only return the resources that match the entire display name.
-    :param str external_db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
+    Use this data source to access information about an existing resource.
     """
     ...

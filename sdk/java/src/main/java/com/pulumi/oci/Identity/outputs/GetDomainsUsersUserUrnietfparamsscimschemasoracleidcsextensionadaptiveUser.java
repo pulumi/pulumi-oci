@@ -8,6 +8,8 @@ import com.pulumi.oci.Identity.outputs.GetDomainsUsersUserUrnietfparamsscimschem
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUser {
@@ -15,27 +17,27 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
      * @return Risk Level
      * 
      */
-    private String riskLevel;
+    private @Nullable String riskLevel;
     /**
      * @return The risk score pertaining to the user.
      * 
      */
-    private List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScore> riskScores;
+    private @Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScore> riskScores;
 
     private GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUser() {}
     /**
      * @return Risk Level
      * 
      */
-    public String riskLevel() {
-        return this.riskLevel;
+    public Optional<String> riskLevel() {
+        return Optional.ofNullable(this.riskLevel);
     }
     /**
      * @return The risk score pertaining to the user.
      * 
      */
     public List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScore> riskScores() {
-        return this.riskScores;
+        return this.riskScores == null ? List.of() : this.riskScores;
     }
 
     public static Builder builder() {
@@ -47,8 +49,8 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
     }
     @CustomType.Builder
     public static final class Builder {
-        private String riskLevel;
-        private List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScore> riskScores;
+        private @Nullable String riskLevel;
+        private @Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScore> riskScores;
         public Builder() {}
         public Builder(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUser defaults) {
     	      Objects.requireNonNull(defaults);
@@ -57,13 +59,13 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
         }
 
         @CustomType.Setter
-        public Builder riskLevel(String riskLevel) {
-            this.riskLevel = Objects.requireNonNull(riskLevel);
+        public Builder riskLevel(@Nullable String riskLevel) {
+            this.riskLevel = riskLevel;
             return this;
         }
         @CustomType.Setter
-        public Builder riskScores(List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScore> riskScores) {
-            this.riskScores = Objects.requireNonNull(riskScores);
+        public Builder riskScores(@Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScore> riskScores) {
+            this.riskScores = riskScores;
             return this;
         }
         public Builder riskScores(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScore... riskScores) {

@@ -8,6 +8,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetHealthResult {
@@ -15,12 +17,12 @@ public final class GetHealthResult {
      * @return A list of backend sets that are currently in the `CRITICAL` health state. The list identifies each backend set by the friendly name you assigned when you created it.  Example: `example_backend_set`
      * 
      */
-    private List<String> criticalStateBackendSetNames;
+    private @Nullable List<String> criticalStateBackendSetNames;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String loadBalancerId;
     /**
      * @return The overall health status of the load balancer.
@@ -34,22 +36,22 @@ public final class GetHealthResult {
      * *  The system could not retrieve metrics for any reason.
      * 
      */
-    private String status;
+    private @Nullable String status;
     /**
      * @return The total number of backend sets associated with this load balancer.  Example: `4`
      * 
      */
-    private Integer totalBackendSetCount;
+    private @Nullable Integer totalBackendSetCount;
     /**
      * @return A list of backend sets that are currently in the `UNKNOWN` health state. The list identifies each backend set by the friendly name you assigned when you created it.  Example: `example_backend_set2`
      * 
      */
-    private List<String> unknownStateBackendSetNames;
+    private @Nullable List<String> unknownStateBackendSetNames;
     /**
      * @return A list of backend sets that are currently in the `WARNING` health state. The list identifies each backend set by the friendly name you assigned when you created it.  Example: `example_backend_set3`
      * 
      */
-    private List<String> warningStateBackendSetNames;
+    private @Nullable List<String> warningStateBackendSetNames;
 
     private GetHealthResult() {}
     /**
@@ -57,14 +59,14 @@ public final class GetHealthResult {
      * 
      */
     public List<String> criticalStateBackendSetNames() {
-        return this.criticalStateBackendSetNames;
+        return this.criticalStateBackendSetNames == null ? List.of() : this.criticalStateBackendSetNames;
     }
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String loadBalancerId() {
         return this.loadBalancerId;
@@ -81,29 +83,29 @@ public final class GetHealthResult {
      * *  The system could not retrieve metrics for any reason.
      * 
      */
-    public String status() {
-        return this.status;
+    public Optional<String> status() {
+        return Optional.ofNullable(this.status);
     }
     /**
      * @return The total number of backend sets associated with this load balancer.  Example: `4`
      * 
      */
-    public Integer totalBackendSetCount() {
-        return this.totalBackendSetCount;
+    public Optional<Integer> totalBackendSetCount() {
+        return Optional.ofNullable(this.totalBackendSetCount);
     }
     /**
      * @return A list of backend sets that are currently in the `UNKNOWN` health state. The list identifies each backend set by the friendly name you assigned when you created it.  Example: `example_backend_set2`
      * 
      */
     public List<String> unknownStateBackendSetNames() {
-        return this.unknownStateBackendSetNames;
+        return this.unknownStateBackendSetNames == null ? List.of() : this.unknownStateBackendSetNames;
     }
     /**
      * @return A list of backend sets that are currently in the `WARNING` health state. The list identifies each backend set by the friendly name you assigned when you created it.  Example: `example_backend_set3`
      * 
      */
     public List<String> warningStateBackendSetNames() {
-        return this.warningStateBackendSetNames;
+        return this.warningStateBackendSetNames == null ? List.of() : this.warningStateBackendSetNames;
     }
 
     public static Builder builder() {
@@ -115,13 +117,13 @@ public final class GetHealthResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> criticalStateBackendSetNames;
-        private String id;
+        private @Nullable List<String> criticalStateBackendSetNames;
+        private @Nullable String id;
         private String loadBalancerId;
-        private String status;
-        private Integer totalBackendSetCount;
-        private List<String> unknownStateBackendSetNames;
-        private List<String> warningStateBackendSetNames;
+        private @Nullable String status;
+        private @Nullable Integer totalBackendSetCount;
+        private @Nullable List<String> unknownStateBackendSetNames;
+        private @Nullable List<String> warningStateBackendSetNames;
         public Builder() {}
         public Builder(GetHealthResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -135,16 +137,16 @@ public final class GetHealthResult {
         }
 
         @CustomType.Setter
-        public Builder criticalStateBackendSetNames(List<String> criticalStateBackendSetNames) {
-            this.criticalStateBackendSetNames = Objects.requireNonNull(criticalStateBackendSetNames);
+        public Builder criticalStateBackendSetNames(@Nullable List<String> criticalStateBackendSetNames) {
+            this.criticalStateBackendSetNames = criticalStateBackendSetNames;
             return this;
         }
         public Builder criticalStateBackendSetNames(String... criticalStateBackendSetNames) {
             return criticalStateBackendSetNames(List.of(criticalStateBackendSetNames));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -153,26 +155,26 @@ public final class GetHealthResult {
             return this;
         }
         @CustomType.Setter
-        public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+        public Builder status(@Nullable String status) {
+            this.status = status;
             return this;
         }
         @CustomType.Setter
-        public Builder totalBackendSetCount(Integer totalBackendSetCount) {
-            this.totalBackendSetCount = Objects.requireNonNull(totalBackendSetCount);
+        public Builder totalBackendSetCount(@Nullable Integer totalBackendSetCount) {
+            this.totalBackendSetCount = totalBackendSetCount;
             return this;
         }
         @CustomType.Setter
-        public Builder unknownStateBackendSetNames(List<String> unknownStateBackendSetNames) {
-            this.unknownStateBackendSetNames = Objects.requireNonNull(unknownStateBackendSetNames);
+        public Builder unknownStateBackendSetNames(@Nullable List<String> unknownStateBackendSetNames) {
+            this.unknownStateBackendSetNames = unknownStateBackendSetNames;
             return this;
         }
         public Builder unknownStateBackendSetNames(String... unknownStateBackendSetNames) {
             return unknownStateBackendSetNames(List.of(unknownStateBackendSetNames));
         }
         @CustomType.Setter
-        public Builder warningStateBackendSetNames(List<String> warningStateBackendSetNames) {
-            this.warningStateBackendSetNames = Objects.requireNonNull(warningStateBackendSetNames);
+        public Builder warningStateBackendSetNames(@Nullable List<String> warningStateBackendSetNames) {
+            this.warningStateBackendSetNames = warningStateBackendSetNames;
             return this;
         }
         public Builder warningStateBackendSetNames(String... warningStateBackendSetNames) {

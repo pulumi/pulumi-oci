@@ -8,6 +8,8 @@ import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyResponseCacheLookup {
@@ -15,22 +17,22 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPo
      * @return A list of context expressions whose values will be added to the base cache key. Values should contain an expression enclosed within ${} delimiters. Only the request context is available.
      * 
      */
-    private List<String> cacheKeyAdditions;
+    private @Nullable List<String> cacheKeyAdditions;
     /**
      * @return Whether this policy is currently enabled.
      * 
      */
-    private Boolean isEnabled;
+    private @Nullable Boolean isEnabled;
     /**
      * @return Set true to allow caching responses where the request has an Authorization header. Ensure you have configured your  cache key additions to get the level of isolation across authenticated requests that you require.
      * 
      */
-    private Boolean isPrivateCachingEnabled;
+    private @Nullable Boolean isPrivateCachingEnabled;
     /**
      * @return Type of the Response Cache Store Policy.
      * 
      */
-    private String type;
+    private @Nullable String type;
 
     private GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyResponseCacheLookup() {}
     /**
@@ -38,28 +40,28 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPo
      * 
      */
     public List<String> cacheKeyAdditions() {
-        return this.cacheKeyAdditions;
+        return this.cacheKeyAdditions == null ? List.of() : this.cacheKeyAdditions;
     }
     /**
      * @return Whether this policy is currently enabled.
      * 
      */
-    public Boolean isEnabled() {
-        return this.isEnabled;
+    public Optional<Boolean> isEnabled() {
+        return Optional.ofNullable(this.isEnabled);
     }
     /**
      * @return Set true to allow caching responses where the request has an Authorization header. Ensure you have configured your  cache key additions to get the level of isolation across authenticated requests that you require.
      * 
      */
-    public Boolean isPrivateCachingEnabled() {
-        return this.isPrivateCachingEnabled;
+    public Optional<Boolean> isPrivateCachingEnabled() {
+        return Optional.ofNullable(this.isPrivateCachingEnabled);
     }
     /**
      * @return Type of the Response Cache Store Policy.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
 
     public static Builder builder() {
@@ -71,10 +73,10 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPo
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> cacheKeyAdditions;
-        private Boolean isEnabled;
-        private Boolean isPrivateCachingEnabled;
-        private String type;
+        private @Nullable List<String> cacheKeyAdditions;
+        private @Nullable Boolean isEnabled;
+        private @Nullable Boolean isPrivateCachingEnabled;
+        private @Nullable String type;
         public Builder() {}
         public Builder(GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyResponseCacheLookup defaults) {
     	      Objects.requireNonNull(defaults);
@@ -85,26 +87,26 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPo
         }
 
         @CustomType.Setter
-        public Builder cacheKeyAdditions(List<String> cacheKeyAdditions) {
-            this.cacheKeyAdditions = Objects.requireNonNull(cacheKeyAdditions);
+        public Builder cacheKeyAdditions(@Nullable List<String> cacheKeyAdditions) {
+            this.cacheKeyAdditions = cacheKeyAdditions;
             return this;
         }
         public Builder cacheKeyAdditions(String... cacheKeyAdditions) {
             return cacheKeyAdditions(List.of(cacheKeyAdditions));
         }
         @CustomType.Setter
-        public Builder isEnabled(Boolean isEnabled) {
-            this.isEnabled = Objects.requireNonNull(isEnabled);
+        public Builder isEnabled(@Nullable Boolean isEnabled) {
+            this.isEnabled = isEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder isPrivateCachingEnabled(Boolean isPrivateCachingEnabled) {
-            this.isPrivateCachingEnabled = Objects.requireNonNull(isPrivateCachingEnabled);
+        public Builder isPrivateCachingEnabled(@Nullable Boolean isPrivateCachingEnabled) {
+            this.isPrivateCachingEnabled = isPrivateCachingEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         public GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyResponseCacheLookup build() {

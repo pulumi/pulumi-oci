@@ -81,7 +81,7 @@ export interface GetVolumeGroupReplicasResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The current state of a volume group.
      */
@@ -89,7 +89,7 @@ export interface GetVolumeGroupReplicasResult {
     /**
      * The list of volume_group_replicas.
      */
-    readonly volumeGroupReplicas: outputs.Core.GetVolumeGroupReplicasVolumeGroupReplica[];
+    readonly volumeGroupReplicas?: outputs.Core.GetVolumeGroupReplicasVolumeGroupReplica[];
 }
 /**
  * This data source provides the list of Volume Group Replicas in Oracle Cloud Infrastructure Core service.

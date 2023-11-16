@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Log resource in Oracle Cloud Infrastructure Logging service.
@@ -63,34 +62,34 @@ type LookupLogArgs struct {
 // A collection of values returned by getLog.
 type LookupLogResult struct {
 	// The OCID of the compartment that the resource belongs to.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Log object configuration.
 	Configurations []GetLogConfiguration `pulumi:"configurations"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The user-friendly display name. This must be unique within the enclosing resource, and it's changeable. Avoid entering confidential information.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Whether or not this resource is currently enabled.
-	IsEnabled bool `pulumi:"isEnabled"`
+	IsEnabled *bool `pulumi:"isEnabled"`
 	// Log group OCID.
 	LogGroupId string `pulumi:"logGroupId"`
 	LogId      string `pulumi:"logId"`
 	// The logType that the log object is for, whether custom or service.
-	LogType string `pulumi:"logType"`
+	LogType *string `pulumi:"logType"`
 	// Log retention duration in 30-day increments (30, 60, 90 and so on until 180).
-	RetentionDuration int `pulumi:"retentionDuration"`
+	RetentionDuration *int `pulumi:"retentionDuration"`
 	// The pipeline state.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The OCID of the tenancy.
-	TenancyId string `pulumi:"tenancyId"`
+	TenancyId *string `pulumi:"tenancyId"`
 	// Time the resource was created.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// Time the resource was last modified.
-	TimeLastModified string `pulumi:"timeLastModified"`
+	TimeLastModified *string `pulumi:"timeLastModified"`
 }
 
 func LookupLogOutput(ctx *pulumi.Context, args LookupLogOutputArgs, opts ...pulumi.InvokeOption) LookupLogResultOutput {
@@ -133,15 +132,9 @@ func (o LookupLogResultOutput) ToLookupLogResultOutputWithContext(ctx context.Co
 	return o
 }
 
-func (o LookupLogResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupLogResult] {
-	return pulumix.Output[LookupLogResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment that the resource belongs to.
-func (o LookupLogResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupLogResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupLogResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupLogResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Log object configuration.
@@ -155,8 +148,8 @@ func (o LookupLogResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // The user-friendly display name. This must be unique within the enclosing resource, and it's changeable. Avoid entering confidential information.
-func (o LookupLogResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupLogResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupLogResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupLogResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -165,13 +158,13 @@ func (o LookupLogResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The OCID of the resource.
-func (o LookupLogResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupLogResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupLogResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupLogResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Whether or not this resource is currently enabled.
-func (o LookupLogResultOutput) IsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupLogResult) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+func (o LookupLogResultOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupLogResult) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // Log group OCID.
@@ -184,33 +177,33 @@ func (o LookupLogResultOutput) LogId() pulumi.StringOutput {
 }
 
 // The logType that the log object is for, whether custom or service.
-func (o LookupLogResultOutput) LogType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupLogResult) string { return v.LogType }).(pulumi.StringOutput)
+func (o LookupLogResultOutput) LogType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupLogResult) *string { return v.LogType }).(pulumi.StringPtrOutput)
 }
 
 // Log retention duration in 30-day increments (30, 60, 90 and so on until 180).
-func (o LookupLogResultOutput) RetentionDuration() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupLogResult) int { return v.RetentionDuration }).(pulumi.IntOutput)
+func (o LookupLogResultOutput) RetentionDuration() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupLogResult) *int { return v.RetentionDuration }).(pulumi.IntPtrOutput)
 }
 
 // The pipeline state.
-func (o LookupLogResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupLogResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupLogResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupLogResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the tenancy.
-func (o LookupLogResultOutput) TenancyId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupLogResult) string { return v.TenancyId }).(pulumi.StringOutput)
+func (o LookupLogResultOutput) TenancyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupLogResult) *string { return v.TenancyId }).(pulumi.StringPtrOutput)
 }
 
 // Time the resource was created.
-func (o LookupLogResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupLogResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupLogResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupLogResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // Time the resource was last modified.
-func (o LookupLogResultOutput) TimeLastModified() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupLogResult) string { return v.TimeLastModified }).(pulumi.StringOutput)
+func (o LookupLogResultOutput) TimeLastModified() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupLogResult) *string { return v.TimeLastModified }).(pulumi.StringPtrOutput)
 }
 
 func init() {

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Security Lists in Oracle Cloud Infrastructure Core service.
@@ -76,7 +75,7 @@ type GetSecurityListsResult struct {
 	DisplayName *string                  `pulumi:"displayName"`
 	Filters     []GetSecurityListsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of security_lists.
 	SecurityLists []GetSecurityListsSecurityList `pulumi:"securityLists"`
 	// The security list's current state.
@@ -130,12 +129,6 @@ func (o GetSecurityListsResultOutput) ToGetSecurityListsResultOutputWithContext(
 	return o
 }
 
-func (o GetSecurityListsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityListsResult] {
-	return pulumix.Output[GetSecurityListsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the security list.
 func (o GetSecurityListsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityListsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -151,8 +144,8 @@ func (o GetSecurityListsResultOutput) Filters() GetSecurityListsFilterArrayOutpu
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetSecurityListsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSecurityListsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetSecurityListsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSecurityListsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of security_lists.

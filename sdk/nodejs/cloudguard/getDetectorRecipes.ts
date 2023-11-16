@@ -99,7 +99,7 @@ export interface GetDetectorRecipesResult {
     /**
      * The list of detector_recipe_collection.
      */
-    readonly detectorRecipeCollections: outputs.CloudGuard.GetDetectorRecipesDetectorRecipeCollection[];
+    readonly detectorRecipeCollections?: outputs.CloudGuard.GetDetectorRecipesDetectorRecipeCollection[];
     /**
      * The display name of entity
      */
@@ -108,7 +108,7 @@ export interface GetDetectorRecipesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly resourceMetadataOnly?: boolean;
     /**
      * The current state of the resource.

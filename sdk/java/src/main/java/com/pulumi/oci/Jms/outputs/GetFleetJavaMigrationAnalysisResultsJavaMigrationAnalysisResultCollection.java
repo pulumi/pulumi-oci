@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Jms.outputs.GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollection {
-    private List<GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem> items;
+    private @Nullable List<GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem> items;
 
     private GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollection() {}
     public List<GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResu
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem> items;
+        private @Nullable List<GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem> items;
         public Builder() {}
         public Builder(GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResu
         }
 
         @CustomType.Setter
-        public Builder items(List<GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem... items) {

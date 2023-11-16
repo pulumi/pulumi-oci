@@ -15,6 +15,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -71,70 +72,70 @@ public class RemediationRun extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
-    private Output<String> compartmentId;
+    private Output</* @Nullable */ String> compartmentId;
 
     /**
      * @return (Updatable) The compartment Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the remediation run.
      * 
      */
-    public Output<String> compartmentId() {
-        return this.compartmentId;
+    public Output<Optional<String>> compartmentId() {
+        return Codegen.optional(this.compartmentId);
     }
     /**
      * The type of the current stage of the remediation run.
      * 
      */
     @Export(name="currentStageType", refs={String.class}, tree="[0]")
-    private Output<String> currentStageType;
+    private Output</* @Nullable */ String> currentStageType;
 
     /**
      * @return The type of the current stage of the remediation run.
      * 
      */
-    public Output<String> currentStageType() {
-        return this.currentStageType;
+    public Output<Optional<String>> currentStageType() {
+        return Codegen.optional(this.currentStageType);
     }
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) The name of the remediation run.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return (Updatable) The name of the remediation run.
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * The Oracle Cloud identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Remediation Recipe.
@@ -161,112 +162,112 @@ public class RemediationRun extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="remediationRunSource", refs={String.class}, tree="[0]")
-    private Output<String> remediationRunSource;
+    private Output</* @Nullable */ String> remediationRunSource;
 
     /**
      * @return The source that triggered the Remediation Recipe.
      * 
      */
-    public Output<String> remediationRunSource() {
-        return this.remediationRunSource;
+    public Output<Optional<String>> remediationRunSource() {
+        return Codegen.optional(this.remediationRunSource);
     }
     /**
      * The list of remediation run stage summaries.
      * 
      */
     @Export(name="stages", refs={List.class,RemediationRunStage.class}, tree="[0,1]")
-    private Output<List<RemediationRunStage>> stages;
+    private Output</* @Nullable */ List<RemediationRunStage>> stages;
 
     /**
      * @return The list of remediation run stage summaries.
      * 
      */
-    public Output<List<RemediationRunStage>> stages() {
-        return this.stages;
+    public Output<Optional<List<RemediationRunStage>>> stages() {
+        return Codegen.optional(this.stages);
     }
     /**
      * The current lifecycle state of the remediation run.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current lifecycle state of the remediation run.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> systemTags;
+    private Output</* @Nullable */ Map<String,Object>> systemTags;
 
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    public Output<Map<String,Object>> systemTags() {
-        return this.systemTags;
+    public Output<Optional<Map<String,Object>>> systemTags() {
+        return Codegen.optional(this.systemTags);
     }
     /**
      * The creation date and time of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The creation date and time of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The date and time of the finish of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      * 
      */
     @Export(name="timeFinished", refs={String.class}, tree="[0]")
-    private Output<String> timeFinished;
+    private Output</* @Nullable */ String> timeFinished;
 
     /**
      * @return The date and time of the finish of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      * 
      */
-    public Output<String> timeFinished() {
-        return this.timeFinished;
+    public Output<Optional<String>> timeFinished() {
+        return Codegen.optional(this.timeFinished);
     }
     /**
      * The date and time of the start of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      * 
      */
     @Export(name="timeStarted", refs={String.class}, tree="[0]")
-    private Output<String> timeStarted;
+    private Output</* @Nullable */ String> timeStarted;
 
     /**
      * @return The date and time of the start of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      * 
      */
-    public Output<String> timeStarted() {
-        return this.timeStarted;
+    public Output<Optional<String>> timeStarted() {
+        return Codegen.optional(this.timeStarted);
     }
     /**
      * The date and time the remediation run was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The date and time the remediation run was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
 
     /**

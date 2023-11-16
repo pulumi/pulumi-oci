@@ -89,18 +89,12 @@ class GetAssetSourceResult:
 
     @property
     @pulumi.getter(name="areHistoricalMetricsCollected")
-    def are_historical_metrics_collected(self) -> bool:
-        """
-        Flag indicating whether historical metrics are collected for assets, originating from this asset source.
-        """
+    def are_historical_metrics_collected(self) -> Optional[bool]:
         return pulumi.get(self, "are_historical_metrics_collected")
 
     @property
     @pulumi.getter(name="areRealtimeMetricsCollected")
-    def are_realtime_metrics_collected(self) -> bool:
-        """
-        Flag indicating whether real-time metrics are collected for assets, originating from this asset source.
-        """
+    def are_realtime_metrics_collected(self) -> Optional[bool]:
         return pulumi.get(self, "are_realtime_metrics_collected")
 
     @property
@@ -110,146 +104,92 @@ class GetAssetSourceResult:
 
     @property
     @pulumi.getter(name="assetsCompartmentId")
-    def assets_compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that is going to be used to create assets.
-        """
+    def assets_compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "assets_compartment_id")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for the resource.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="discoveryCredentials")
-    def discovery_credentials(self) -> Sequence['outputs.GetAssetSourceDiscoveryCredentialResult']:
-        """
-        Credentials for an asset source.
-        """
+    def discovery_credentials(self) -> Optional[Sequence['outputs.GetAssetSourceDiscoveryCredentialResult']]:
         return pulumi.get(self, "discovery_credentials")
 
     @property
     @pulumi.getter(name="discoveryScheduleId")
-    def discovery_schedule_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of an attached discovery schedule.
-        """
+    def discovery_schedule_id(self) -> Optional[str]:
         return pulumi.get(self, "discovery_schedule_id")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A user-friendly name for the asset source. Does not have to be unique, and it's mutable. Avoid entering confidential information.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="environmentId")
-    def environment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the environment.
-        """
+    def environment_id(self) -> Optional[str]:
         return pulumi.get(self, "environment_id")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="inventoryId")
-    def inventory_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the inventory that will contain created assets.
-        """
+    def inventory_id(self) -> Optional[str]:
         return pulumi.get(self, "inventory_id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        The detailed state of the asset source.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="replicationCredentials")
-    def replication_credentials(self) -> Sequence['outputs.GetAssetSourceReplicationCredentialResult']:
-        """
-        Credentials for an asset source.
-        """
+    def replication_credentials(self) -> Optional[Sequence['outputs.GetAssetSourceReplicationCredentialResult']]:
         return pulumi.get(self, "replication_credentials")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the asset source.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time when the asset source was created in the RFC3339 format.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The point in time that the asset source was last updated in the RFC3339 format.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        The type of asset source. Indicates external origin of the assets that are read by assigning this asset source.
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
     @property
     @pulumi.getter(name="vcenterEndpoint")
-    def vcenter_endpoint(self) -> str:
-        """
-        Endpoint for VMware asset discovery and replication in the form of ```https://<host>:<port>/sdk```
-        """
+    def vcenter_endpoint(self) -> Optional[str]:
         return pulumi.get(self, "vcenter_endpoint")
 
 
@@ -285,21 +225,7 @@ class AwaitableGetAssetSourceResult(GetAssetSourceResult):
 def get_asset_source(asset_source_id: Optional[str] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAssetSourceResult:
     """
-    This data source provides details about a specific Asset Source resource in Oracle Cloud Infrastructure Cloud Bridge service.
-
-    Gets the asset source by ID.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_asset_source = oci.CloudBridge.get_asset_source(asset_source_id=oci_cloud_bridge_asset_source["test_asset_source"]["id"])
-    ```
-
-
-    :param str asset_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the asset source.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['assetSourceId'] = asset_source_id
@@ -334,20 +260,6 @@ def get_asset_source(asset_source_id: Optional[str] = None,
 def get_asset_source_output(asset_source_id: Optional[pulumi.Input[str]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAssetSourceResult]:
     """
-    This data source provides details about a specific Asset Source resource in Oracle Cloud Infrastructure Cloud Bridge service.
-
-    Gets the asset source by ID.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_asset_source = oci.CloudBridge.get_asset_source(asset_source_id=oci_cloud_bridge_asset_source["test_asset_source"]["id"])
-    ```
-
-
-    :param str asset_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the asset source.
+    Use this data source to access information about an existing resource.
     """
     ...

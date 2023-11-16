@@ -109,7 +109,7 @@ namespace Pulumi.Oci.ApiGateway
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Policies controlling the pushing of logs to Oracle Cloud Infrastructure Public Logging.
         /// </summary>
@@ -127,7 +127,7 @@ namespace Pulumi.Oci.ApiGateway
         private GetApiDeploymentSpecificationResult(
             string apiId,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetApiDeploymentSpecificationLoggingPolicyResult> loggingPolicies,
 

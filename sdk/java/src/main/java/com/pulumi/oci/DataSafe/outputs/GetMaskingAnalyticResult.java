@@ -21,12 +21,12 @@ public final class GetMaskingAnalyticResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return An array of masking analytics summary objects.
      * 
      */
-    private List<GetMaskingAnalyticItem> items;
+    private @Nullable List<GetMaskingAnalyticItem> items;
     private @Nullable String maskingPolicyId;
     /**
      * @return The OCID of the target database.
@@ -48,15 +48,15 @@ public final class GetMaskingAnalyticResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return An array of masking analytics summary objects.
      * 
      */
     public List<GetMaskingAnalyticItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
     public Optional<String> maskingPolicyId() {
         return Optional.ofNullable(this.maskingPolicyId);
@@ -81,8 +81,8 @@ public final class GetMaskingAnalyticResult {
         private String compartmentId;
         private @Nullable Boolean compartmentIdInSubtree;
         private @Nullable String groupBy;
-        private String id;
-        private List<GetMaskingAnalyticItem> items;
+        private @Nullable String id;
+        private @Nullable List<GetMaskingAnalyticItem> items;
         private @Nullable String maskingPolicyId;
         private @Nullable String targetId;
         public Builder() {}
@@ -113,13 +113,13 @@ public final class GetMaskingAnalyticResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder items(List<GetMaskingAnalyticItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetMaskingAnalyticItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetMaskingAnalyticItem... items) {

@@ -17,6 +17,7 @@ import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -126,28 +127,28 @@ public class SqlEndpoint extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * The description of CreateSQLEndpointDetails.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
-    private Output<String> description;
+    private Output</* @Nullable */ String> description;
 
     /**
      * @return The description of CreateSQLEndpointDetails.
      * 
      */
-    public Output<String> description() {
-        return this.description;
+    public Output<Optional<String>> description() {
+        return Codegen.optional(this.description);
     }
     /**
      * The SQL Endpoint name, which can be changed.
@@ -182,14 +183,14 @@ public class SqlEndpoint extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="driverShapeConfig", refs={SqlEndpointDriverShapeConfig.class}, tree="[0]")
-    private Output<SqlEndpointDriverShapeConfig> driverShapeConfig;
+    private Output</* @Nullable */ SqlEndpointDriverShapeConfig> driverShapeConfig;
 
     /**
      * @return This is used to configure the shape of the driver or executor if a flexible shape is used.
      * 
      */
-    public Output<SqlEndpointDriverShapeConfig> driverShapeConfig() {
-        return this.driverShapeConfig;
+    public Output<Optional<SqlEndpointDriverShapeConfig>> driverShapeConfig() {
+        return Codegen.optional(this.driverShapeConfig);
     }
     /**
      * The shape of the SQL Endpoint worker instance.
@@ -210,70 +211,70 @@ public class SqlEndpoint extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="executorShapeConfig", refs={SqlEndpointExecutorShapeConfig.class}, tree="[0]")
-    private Output<SqlEndpointExecutorShapeConfig> executorShapeConfig;
+    private Output</* @Nullable */ SqlEndpointExecutorShapeConfig> executorShapeConfig;
 
     /**
      * @return This is used to configure the shape of the driver or executor if a flexible shape is used.
      * 
      */
-    public Output<SqlEndpointExecutorShapeConfig> executorShapeConfig() {
-        return this.executorShapeConfig;
+    public Output<Optional<SqlEndpointExecutorShapeConfig>> executorShapeConfig() {
+        return Codegen.optional(this.executorShapeConfig);
     }
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * The JDBC URL field. For example, jdbc:spark://{serviceFQDN}:443/default;SparkServerType=DFI
      * 
      */
     @Export(name="jdbcEndpointUrl", refs={String.class}, tree="[0]")
-    private Output<String> jdbcEndpointUrl;
+    private Output</* @Nullable */ String> jdbcEndpointUrl;
 
     /**
      * @return The JDBC URL field. For example, jdbc:spark://{serviceFQDN}:443/default;SparkServerType=DFI
      * 
      */
-    public Output<String> jdbcEndpointUrl() {
-        return this.jdbcEndpointUrl;
+    public Output<Optional<String>> jdbcEndpointUrl() {
+        return Codegen.optional(this.jdbcEndpointUrl);
     }
     /**
      * Oracle Cloud Infrastructure lake OCID
      * 
      */
     @Export(name="lakeId", refs={String.class}, tree="[0]")
-    private Output<String> lakeId;
+    private Output</* @Nullable */ String> lakeId;
 
     /**
      * @return Oracle Cloud Infrastructure lake OCID
      * 
      */
-    public Output<String> lakeId() {
-        return this.lakeId;
+    public Output<Optional<String>> lakeId() {
+        return Codegen.optional(this.lakeId);
     }
     /**
      * This token is used by Splat, and indicates that the service accepts the request, and that the request is currently being processed.
      * 
      */
     @Export(name="lastAcceptedRequestToken", refs={String.class}, tree="[0]")
-    private Output<String> lastAcceptedRequestToken;
+    private Output</* @Nullable */ String> lastAcceptedRequestToken;
 
     /**
      * @return This token is used by Splat, and indicates that the service accepts the request, and that the request is currently being processed.
      * 
      */
-    public Output<String> lastAcceptedRequestToken() {
-        return this.lastAcceptedRequestToken;
+    public Output<Optional<String>> lastAcceptedRequestToken() {
+        return Codegen.optional(this.lastAcceptedRequestToken);
     }
     /**
      * The maximum number of executors.
@@ -336,14 +337,14 @@ public class SqlEndpoint extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="sparkAdvancedConfigurations", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> sparkAdvancedConfigurations;
+    private Output</* @Nullable */ Map<String,Object>> sparkAdvancedConfigurations;
 
     /**
      * @return The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { &#34;spark.app.name&#34; : &#34;My App Name&#34;, &#34;spark.shuffle.io.maxRetries&#34; : &#34;4&#34; } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
      * 
      */
-    public Output<Map<String,Object>> sparkAdvancedConfigurations() {
-        return this.sparkAdvancedConfigurations;
+    public Output<Optional<Map<String,Object>>> sparkAdvancedConfigurations() {
+        return Codegen.optional(this.sparkAdvancedConfigurations);
     }
     /**
      * The version of the SQL Endpoint.
@@ -364,70 +365,70 @@ public class SqlEndpoint extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the Sql Endpoint.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * A message describing the reason why the resource is in it&#39;s current state. Helps bubble up errors in state changes. For example, it can be used to provide actionable information for a resource in the Failed state.
      * 
      */
     @Export(name="stateMessage", refs={String.class}, tree="[0]")
-    private Output<String> stateMessage;
+    private Output</* @Nullable */ String> stateMessage;
 
     /**
      * @return A message describing the reason why the resource is in it&#39;s current state. Helps bubble up errors in state changes. For example, it can be used to provide actionable information for a resource in the Failed state.
      * 
      */
-    public Output<String> stateMessage() {
-        return this.stateMessage;
+    public Output<Optional<String>> stateMessage() {
+        return Codegen.optional(this.stateMessage);
     }
     /**
      * The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
      * 
      */
     @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> systemTags;
+    private Output</* @Nullable */ Map<String,Object>> systemTags;
 
     /**
      * @return The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
      * 
      */
-    public Output<Map<String,Object>> systemTags() {
-        return this.systemTags;
+    public Output<Optional<Map<String,Object>>> systemTags() {
+        return Codegen.optional(this.systemTags);
     }
     /**
      * The time the Sql Endpoint was created. An RFC3339 formatted datetime string.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The time the Sql Endpoint was created. An RFC3339 formatted datetime string.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The time the Sql Endpoint was updated. An RFC3339 formatted datetime string.
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The time the Sql Endpoint was updated. An RFC3339 formatted datetime string.
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
     /**
      * The warehouse bucket URI. It is a Oracle Cloud Infrastructure Object Storage bucket URI as defined here https://docs.oracle.com/en/cloud/paas/atp-cloud/atpud/object-storage-uris.html
@@ -437,7 +438,7 @@ public class SqlEndpoint extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="warehouseBucketUri", refs={String.class}, tree="[0]")
-    private Output<String> warehouseBucketUri;
+    private Output</* @Nullable */ String> warehouseBucketUri;
 
     /**
      * @return The warehouse bucket URI. It is a Oracle Cloud Infrastructure Object Storage bucket URI as defined here https://docs.oracle.com/en/cloud/paas/atp-cloud/atpud/object-storage-uris.html
@@ -446,8 +447,8 @@ public class SqlEndpoint extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> warehouseBucketUri() {
-        return this.warehouseBucketUri;
+    public Output<Optional<String>> warehouseBucketUri() {
+        return Codegen.optional(this.warehouseBucketUri);
     }
 
     /**

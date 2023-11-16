@@ -16,10 +16,10 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// <summary>
         /// The type of policy used for rolling out a deployment stage.
         /// </summary>
-        public readonly string PolicyType;
+        public readonly string? PolicyType;
 
         [OutputConstructor]
-        private GetDeployStageRollbackPolicyResult(string policyType)
+        private GetDeployStageRollbackPolicyResult(string? policyType)
         {
             PolicyType = policyType;
         }

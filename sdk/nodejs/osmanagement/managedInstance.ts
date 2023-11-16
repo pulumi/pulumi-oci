@@ -50,55 +50,55 @@ export class ManagedInstance extends pulumi.CustomResource {
     /**
      * if present, indicates the Managed Instance is an autonomous instance. Holds all the Autonomous specific information
      */
-    public /*out*/ readonly autonomouses!: pulumi.Output<outputs.OsManagement.ManagedInstanceAutonomouse[]>;
+    public /*out*/ readonly autonomouses!: pulumi.Output<outputs.OsManagement.ManagedInstanceAutonomouse[] | undefined>;
     /**
      * Number of bug fix type updates available to be installed
      */
-    public /*out*/ readonly bugUpdatesAvailable!: pulumi.Output<number>;
+    public /*out*/ readonly bugUpdatesAvailable!: pulumi.Output<number | undefined>;
     /**
      * list of child Software Sources attached to the Managed Instance
      */
-    public /*out*/ readonly childSoftwareSources!: pulumi.Output<outputs.OsManagement.ManagedInstanceChildSoftwareSource[]>;
+    public /*out*/ readonly childSoftwareSources!: pulumi.Output<outputs.OsManagement.ManagedInstanceChildSoftwareSource[] | undefined>;
     /**
      * OCID for the Compartment
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    public /*out*/ readonly compartmentId!: pulumi.Output<string | undefined>;
     /**
      * Information specified by the user about the managed instance
      */
-    public /*out*/ readonly description!: pulumi.Output<string>;
+    public /*out*/ readonly description!: pulumi.Output<string | undefined>;
     /**
      * User friendly name
      */
-    public /*out*/ readonly displayName!: pulumi.Output<string>;
+    public /*out*/ readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * Number of enhancement type updates available to be installed
      */
-    public /*out*/ readonly enhancementUpdatesAvailable!: pulumi.Output<number>;
+    public /*out*/ readonly enhancementUpdatesAvailable!: pulumi.Output<number | undefined>;
     /**
      * (Updatable) True if user allow data collection for this instance
      */
-    public readonly isDataCollectionAuthorized!: pulumi.Output<boolean>;
+    public readonly isDataCollectionAuthorized!: pulumi.Output<boolean | undefined>;
     /**
      * Indicates whether a reboot is required to complete installation of updates.
      */
-    public /*out*/ readonly isRebootRequired!: pulumi.Output<boolean>;
+    public /*out*/ readonly isRebootRequired!: pulumi.Output<boolean | undefined>;
     /**
      * The ksplice effective kernel version
      */
-    public /*out*/ readonly kspliceEffectiveKernelVersion!: pulumi.Output<string>;
+    public /*out*/ readonly kspliceEffectiveKernelVersion!: pulumi.Output<string | undefined>;
     /**
      * Time at which the instance last booted
      */
-    public /*out*/ readonly lastBoot!: pulumi.Output<string>;
+    public /*out*/ readonly lastBoot!: pulumi.Output<string | undefined>;
     /**
      * Time at which the instance last checked in
      */
-    public /*out*/ readonly lastCheckin!: pulumi.Output<string>;
+    public /*out*/ readonly lastCheckin!: pulumi.Output<string | undefined>;
     /**
      * The ids of the managed instance groups of which this instance is a member.
      */
-    public /*out*/ readonly managedInstanceGroups!: pulumi.Output<outputs.OsManagement.ManagedInstanceManagedInstanceGroup[]>;
+    public /*out*/ readonly managedInstanceGroups!: pulumi.Output<outputs.OsManagement.ManagedInstanceManagedInstanceGroup[] | undefined>;
     /**
      * OCID for the managed instance
      */
@@ -110,51 +110,51 @@ export class ManagedInstance extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly notificationTopicId!: pulumi.Output<string>;
+    public readonly notificationTopicId!: pulumi.Output<string | undefined>;
     /**
      * The Operating System type of the managed instance.
      */
-    public /*out*/ readonly osFamily!: pulumi.Output<string>;
+    public /*out*/ readonly osFamily!: pulumi.Output<string | undefined>;
     /**
      * Operating System Kernel Version
      */
-    public /*out*/ readonly osKernelVersion!: pulumi.Output<string>;
+    public /*out*/ readonly osKernelVersion!: pulumi.Output<string | undefined>;
     /**
      * Operating System Name
      */
-    public /*out*/ readonly osName!: pulumi.Output<string>;
+    public /*out*/ readonly osName!: pulumi.Output<string | undefined>;
     /**
      * Operating System Version
      */
-    public /*out*/ readonly osVersion!: pulumi.Output<string>;
+    public /*out*/ readonly osVersion!: pulumi.Output<string | undefined>;
     /**
      * Number of non-classified updates available to be installed
      */
-    public /*out*/ readonly otherUpdatesAvailable!: pulumi.Output<number>;
+    public /*out*/ readonly otherUpdatesAvailable!: pulumi.Output<number | undefined>;
     /**
      * the parent (base) Software Source attached to the Managed Instance
      */
-    public /*out*/ readonly parentSoftwareSources!: pulumi.Output<outputs.OsManagement.ManagedInstanceParentSoftwareSource[]>;
+    public /*out*/ readonly parentSoftwareSources!: pulumi.Output<outputs.OsManagement.ManagedInstanceParentSoftwareSource[] | undefined>;
     /**
      * Number of scheduled jobs associated with this instance
      */
-    public /*out*/ readonly scheduledJobCount!: pulumi.Output<number>;
+    public /*out*/ readonly scheduledJobCount!: pulumi.Output<number | undefined>;
     /**
      * Number of security type updates available to be installed
      */
-    public /*out*/ readonly securityUpdatesAvailable!: pulumi.Output<number>;
+    public /*out*/ readonly securityUpdatesAvailable!: pulumi.Output<number | undefined>;
     /**
      * status of the managed instance.
      */
-    public /*out*/ readonly status!: pulumi.Output<string>;
+    public /*out*/ readonly status!: pulumi.Output<string | undefined>;
     /**
      * Number of updates available to be installed
      */
-    public /*out*/ readonly updatesAvailable!: pulumi.Output<number>;
+    public /*out*/ readonly updatesAvailable!: pulumi.Output<number | undefined>;
     /**
      * Number of work requests associated with this instance
      */
-    public /*out*/ readonly workRequestCount!: pulumi.Output<number>;
+    public /*out*/ readonly workRequestCount!: pulumi.Output<number | undefined>;
 
     /**
      * Create a ManagedInstance resource with the given unique name, arguments, and options.

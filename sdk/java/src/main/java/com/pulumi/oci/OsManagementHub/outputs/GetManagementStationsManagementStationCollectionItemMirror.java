@@ -6,6 +6,8 @@ package com.pulumi.oci.OsManagementHub.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagementStationsManagementStationCollectionItemMirror {
@@ -13,51 +15,51 @@ public final class GetManagementStationsManagementStationCollectionItemMirror {
      * @return Directory for the mirroring
      * 
      */
-    private String directory;
+    private @Nullable String directory;
     /**
      * @return Port that the proxy will use
      * 
      */
-    private String port;
+    private @Nullable String port;
     /**
      * @return Local path for the sslcert
      * 
      */
-    private String sslcert;
+    private @Nullable String sslcert;
     /**
      * @return Default sslport for the mirror
      * 
      */
-    private String sslport;
+    private @Nullable String sslport;
 
     private GetManagementStationsManagementStationCollectionItemMirror() {}
     /**
      * @return Directory for the mirroring
      * 
      */
-    public String directory() {
-        return this.directory;
+    public Optional<String> directory() {
+        return Optional.ofNullable(this.directory);
     }
     /**
      * @return Port that the proxy will use
      * 
      */
-    public String port() {
-        return this.port;
+    public Optional<String> port() {
+        return Optional.ofNullable(this.port);
     }
     /**
      * @return Local path for the sslcert
      * 
      */
-    public String sslcert() {
-        return this.sslcert;
+    public Optional<String> sslcert() {
+        return Optional.ofNullable(this.sslcert);
     }
     /**
      * @return Default sslport for the mirror
      * 
      */
-    public String sslport() {
-        return this.sslport;
+    public Optional<String> sslport() {
+        return Optional.ofNullable(this.sslport);
     }
 
     public static Builder builder() {
@@ -69,10 +71,10 @@ public final class GetManagementStationsManagementStationCollectionItemMirror {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String directory;
-        private String port;
-        private String sslcert;
-        private String sslport;
+        private @Nullable String directory;
+        private @Nullable String port;
+        private @Nullable String sslcert;
+        private @Nullable String sslport;
         public Builder() {}
         public Builder(GetManagementStationsManagementStationCollectionItemMirror defaults) {
     	      Objects.requireNonNull(defaults);
@@ -83,23 +85,23 @@ public final class GetManagementStationsManagementStationCollectionItemMirror {
         }
 
         @CustomType.Setter
-        public Builder directory(String directory) {
-            this.directory = Objects.requireNonNull(directory);
+        public Builder directory(@Nullable String directory) {
+            this.directory = directory;
             return this;
         }
         @CustomType.Setter
-        public Builder port(String port) {
-            this.port = Objects.requireNonNull(port);
+        public Builder port(@Nullable String port) {
+            this.port = port;
             return this;
         }
         @CustomType.Setter
-        public Builder sslcert(String sslcert) {
-            this.sslcert = Objects.requireNonNull(sslcert);
+        public Builder sslcert(@Nullable String sslcert) {
+            this.sslcert = sslcert;
             return this;
         }
         @CustomType.Setter
-        public Builder sslport(String sslport) {
-            this.sslport = Objects.requireNonNull(sslport);
+        public Builder sslport(@Nullable String sslport) {
+            this.sslport = sslport;
             return this;
         }
         public GetManagementStationsManagementStationCollectionItemMirror build() {

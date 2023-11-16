@@ -16,17 +16,17 @@ namespace Pulumi.Oci.OsManagement.Outputs
         /// <summary>
         /// User friendly name for the software source
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// OCID for the Software Source
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
 
         [OutputConstructor]
         private GetSoftwareSourceAssociatedManagedInstanceResult(
-            string displayName,
+            string? displayName,
 
-            string id)
+            string? id)
         {
             DisplayName = displayName;
             Id = id;

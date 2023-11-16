@@ -16,35 +16,35 @@ namespace Pulumi.Oci.Kms.Outputs
         /// <summary>
         /// Name of the bucket where vault was backed up
         /// </summary>
-        public readonly string Bucket;
+        public readonly string? Bucket;
         /// <summary>
         /// Type of backup to restore from. Values of "BUCKET", "PRE_AUTHENTICATED_REQUEST_URI" are supported
         /// </summary>
-        public readonly string Destination;
+        public readonly string? Destination;
         /// <summary>
         /// Namespace of the bucket where vault was backed up
         /// </summary>
-        public readonly string Namespace;
+        public readonly string? Namespace;
         /// <summary>
         /// Object containing the backup
         /// </summary>
-        public readonly string Object;
+        public readonly string? Object;
         /// <summary>
         /// Pre-authenticated-request-uri of the backup
         /// </summary>
-        public readonly string Uri;
+        public readonly string? Uri;
 
         [OutputConstructor]
         private GetVaultRestoreFromObjectStoreResult(
-            string bucket,
+            string? bucket,
 
-            string destination,
+            string? destination,
 
-            string @namespace,
+            string? @namespace,
 
-            string @object,
+            string? @object,
 
-            string uri)
+            string? uri)
         {
             Bucket = bucket;
             Destination = destination;

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Api resource in Oracle Cloud Infrastructure API Gateway service.
@@ -61,16 +60,16 @@ type LookupApiArgs struct {
 type LookupApiResult struct {
 	ApiId string `pulumi:"apiId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the resource is created.
-	CompartmentId string `pulumi:"compartmentId"`
-	Content       string `pulumi:"content"`
+	CompartmentId *string `pulumi:"compartmentId"`
+	Content       *string `pulumi:"content"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A message describing the current lifecycleState in more detail. For ACTIVE state it describes if the document has been validated and the possible values are:
 	// * 'New' for just updated API Specifications
 	// * 'Validating' for a document which is being validated.
@@ -79,15 +78,15 @@ type LookupApiResult struct {
 	// * 'Error' the document has been validated and contains errors
 	// * 'Failed' the document validation failed
 	// * 'Canceled' the document validation was canceled
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Type of API Specification file.
-	SpecificationType string `pulumi:"specificationType"`
+	SpecificationType *string `pulumi:"specificationType"`
 	// The current state of the API.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The time this resource was created. An RFC3339 formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time this resource was last updated. An RFC3339 formatted datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// Status of each feature available from the API.
 	ValidationResults []GetApiValidationResult `pulumi:"validationResults"`
 }
@@ -130,23 +129,17 @@ func (o LookupApiResultOutput) ToLookupApiResultOutputWithContext(ctx context.Co
 	return o
 }
 
-func (o LookupApiResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupApiResult] {
-	return pulumix.Output[LookupApiResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o LookupApiResultOutput) ApiId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupApiResult) string { return v.ApiId }).(pulumi.StringOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the resource is created.
-func (o LookupApiResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupApiResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupApiResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupApiResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupApiResultOutput) Content() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupApiResult) string { return v.Content }).(pulumi.StringOutput)
+func (o LookupApiResultOutput) Content() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupApiResult) *string { return v.Content }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -155,8 +148,8 @@ func (o LookupApiResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
-func (o LookupApiResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupApiResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupApiResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupApiResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -165,8 +158,8 @@ func (o LookupApiResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
-func (o LookupApiResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupApiResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupApiResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupApiResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current lifecycleState in more detail. For ACTIVE state it describes if the document has been validated and the possible values are:
@@ -177,28 +170,28 @@ func (o LookupApiResultOutput) Id() pulumi.StringOutput {
 // * 'Error' the document has been validated and contains errors
 // * 'Failed' the document validation failed
 // * 'Canceled' the document validation was canceled
-func (o LookupApiResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupApiResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupApiResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupApiResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // Type of API Specification file.
-func (o LookupApiResultOutput) SpecificationType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupApiResult) string { return v.SpecificationType }).(pulumi.StringOutput)
+func (o LookupApiResultOutput) SpecificationType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupApiResult) *string { return v.SpecificationType }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the API.
-func (o LookupApiResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupApiResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupApiResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupApiResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The time this resource was created. An RFC3339 formatted datetime string.
-func (o LookupApiResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupApiResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupApiResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupApiResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time this resource was last updated. An RFC3339 formatted datetime string.
-func (o LookupApiResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupApiResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupApiResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupApiResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // Status of each feature available from the API.

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of External Db System Discoveries in Oracle Cloud Infrastructure Database Management service.
@@ -71,7 +70,7 @@ type GetExternalDbSystemDiscoveriesResult struct {
 	ExternalDbSystemDiscoveryCollections []GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollection `pulumi:"externalDbSystemDiscoveryCollections"`
 	Filters                              []GetExternalDbSystemDiscoveriesFilter                              `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 func GetExternalDbSystemDiscoveriesOutput(ctx *pulumi.Context, args GetExternalDbSystemDiscoveriesOutputArgs, opts ...pulumi.InvokeOption) GetExternalDbSystemDiscoveriesResultOutput {
@@ -115,12 +114,6 @@ func (o GetExternalDbSystemDiscoveriesResultOutput) ToGetExternalDbSystemDiscove
 	return o
 }
 
-func (o GetExternalDbSystemDiscoveriesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetExternalDbSystemDiscoveriesResult] {
-	return pulumix.Output[GetExternalDbSystemDiscoveriesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 func (o GetExternalDbSystemDiscoveriesResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExternalDbSystemDiscoveriesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -143,8 +136,8 @@ func (o GetExternalDbSystemDiscoveriesResultOutput) Filters() GetExternalDbSyste
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetExternalDbSystemDiscoveriesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExternalDbSystemDiscoveriesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetExternalDbSystemDiscoveriesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExternalDbSystemDiscoveriesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func init() {

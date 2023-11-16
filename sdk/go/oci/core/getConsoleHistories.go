@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Console Histories in Oracle Cloud Infrastructure Core service.
@@ -77,7 +76,7 @@ type GetConsoleHistoriesResult struct {
 	ConsoleHistories []GetConsoleHistoriesConsoleHistory `pulumi:"consoleHistories"`
 	Filters          []GetConsoleHistoriesFilter         `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The OCID of the instance this console history was fetched from.
 	InstanceId *string `pulumi:"instanceId"`
 	// The current state of the console history.
@@ -129,12 +128,6 @@ func (o GetConsoleHistoriesResultOutput) ToGetConsoleHistoriesResultOutputWithCo
 	return o
 }
 
-func (o GetConsoleHistoriesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetConsoleHistoriesResult] {
-	return pulumix.Output[GetConsoleHistoriesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The availability domain of an instance.  Example: `Uocm:PHX-AD-1`
 func (o GetConsoleHistoriesResultOutput) AvailabilityDomain() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetConsoleHistoriesResult) *string { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
@@ -155,8 +148,8 @@ func (o GetConsoleHistoriesResultOutput) Filters() GetConsoleHistoriesFilterArra
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetConsoleHistoriesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetConsoleHistoriesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetConsoleHistoriesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetConsoleHistoriesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the instance this console history was fetched from.

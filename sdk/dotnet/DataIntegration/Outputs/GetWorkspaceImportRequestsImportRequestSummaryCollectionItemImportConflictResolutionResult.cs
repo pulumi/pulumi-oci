@@ -16,11 +16,11 @@ namespace Pulumi.Oci.DataIntegration.Outputs
         /// <summary>
         /// In case of DUPLICATE mode, prefix will be used to disambiguate the object.
         /// </summary>
-        public readonly string DuplicatePrefix;
+        public readonly string? DuplicatePrefix;
         /// <summary>
         /// In case of DUPLICATE mode, suffix will be used to disambiguate the object.
         /// </summary>
-        public readonly string DuplicateSuffix;
+        public readonly string? DuplicateSuffix;
         /// <summary>
         /// Import Objects Conflict resolution Type (RETAIN/DUPLICATE/REPLACE).
         /// </summary>
@@ -28,9 +28,9 @@ namespace Pulumi.Oci.DataIntegration.Outputs
 
         [OutputConstructor]
         private GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionResult(
-            string duplicatePrefix,
+            string? duplicatePrefix,
 
-            string duplicateSuffix,
+            string? duplicateSuffix,
 
             string importConflictResolutionType)
         {

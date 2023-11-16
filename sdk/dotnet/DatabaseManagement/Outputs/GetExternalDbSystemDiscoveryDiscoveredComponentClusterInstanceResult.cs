@@ -16,11 +16,11 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// The Automatic Diagnostic Repository (ADR) home directory for the cluster instance.
         /// </summary>
-        public readonly string AdrHomeDirectory;
+        public readonly string? AdrHomeDirectory;
         /// <summary>
         /// The unique identifier of the Oracle cluster.
         /// </summary>
-        public readonly string ClusterId;
+        public readonly string? ClusterId;
         /// <summary>
         /// The connector details used to connect to the external DB system component.
         /// </summary>
@@ -28,29 +28,29 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// The Oracle base location of Cluster Ready Services (CRS).
         /// </summary>
-        public readonly string CrsBaseDirectory;
+        public readonly string? CrsBaseDirectory;
         /// <summary>
         /// The host name of the database or the SCAN name in case of a RAC database.
         /// </summary>
-        public readonly string HostName;
+        public readonly string? HostName;
         /// <summary>
         /// The role of the cluster node.
         /// </summary>
-        public readonly string NodeRole;
+        public readonly string? NodeRole;
 
         [OutputConstructor]
         private GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceResult(
-            string adrHomeDirectory,
+            string? adrHomeDirectory,
 
-            string clusterId,
+            string? clusterId,
 
             ImmutableArray<Outputs.GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorResult> connectors,
 
-            string crsBaseDirectory,
+            string? crsBaseDirectory,
 
-            string hostName,
+            string? hostName,
 
-            string nodeRole)
+            string? nodeRole)
         {
             AdrHomeDirectory = adrHomeDirectory;
             ClusterId = clusterId;

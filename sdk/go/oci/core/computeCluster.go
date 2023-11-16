@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Compute Cluster resource in Oracle Cloud Infrastructure Core service.
@@ -82,16 +81,16 @@ type ComputeCluster struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The current state of the compute cluster.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The date and time the compute cluster was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 }
 
 // NewComputeCluster registers a new resource with the given unique name, arguments, and options.
@@ -229,12 +228,6 @@ func (i *ComputeCluster) ToComputeClusterOutputWithContext(ctx context.Context) 
 	return pulumi.ToOutputWithContext(ctx, i).(ComputeClusterOutput)
 }
 
-func (i *ComputeCluster) ToOutput(ctx context.Context) pulumix.Output[*ComputeCluster] {
-	return pulumix.Output[*ComputeCluster]{
-		OutputState: i.ToComputeClusterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ComputeClusterArrayInput is an input type that accepts ComputeClusterArray and ComputeClusterArrayOutput values.
 // You can construct a concrete instance of `ComputeClusterArrayInput` via:
 //
@@ -258,12 +251,6 @@ func (i ComputeClusterArray) ToComputeClusterArrayOutput() ComputeClusterArrayOu
 
 func (i ComputeClusterArray) ToComputeClusterArrayOutputWithContext(ctx context.Context) ComputeClusterArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ComputeClusterArrayOutput)
-}
-
-func (i ComputeClusterArray) ToOutput(ctx context.Context) pulumix.Output[[]*ComputeCluster] {
-	return pulumix.Output[[]*ComputeCluster]{
-		OutputState: i.ToComputeClusterArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ComputeClusterMapInput is an input type that accepts ComputeClusterMap and ComputeClusterMapOutput values.
@@ -291,12 +278,6 @@ func (i ComputeClusterMap) ToComputeClusterMapOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(ComputeClusterMapOutput)
 }
 
-func (i ComputeClusterMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ComputeCluster] {
-	return pulumix.Output[map[string]*ComputeCluster]{
-		OutputState: i.ToComputeClusterMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ComputeClusterOutput struct{ *pulumi.OutputState }
 
 func (ComputeClusterOutput) ElementType() reflect.Type {
@@ -309,12 +290,6 @@ func (o ComputeClusterOutput) ToComputeClusterOutput() ComputeClusterOutput {
 
 func (o ComputeClusterOutput) ToComputeClusterOutputWithContext(ctx context.Context) ComputeClusterOutput {
 	return o
-}
-
-func (o ComputeClusterOutput) ToOutput(ctx context.Context) pulumix.Output[*ComputeCluster] {
-	return pulumix.Output[*ComputeCluster]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The availability domain to place the compute cluster in.  Example: `Uocm:PHX-AD-1`
@@ -333,8 +308,8 @@ func (o ComputeClusterOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-func (o ComputeClusterOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *ComputeCluster) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o ComputeClusterOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ComputeCluster) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -346,13 +321,13 @@ func (o ComputeClusterOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The current state of the compute cluster.
-func (o ComputeClusterOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *ComputeCluster) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o ComputeClusterOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ComputeCluster) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the compute cluster was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-func (o ComputeClusterOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *ComputeCluster) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o ComputeClusterOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ComputeCluster) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 type ComputeClusterArrayOutput struct{ *pulumi.OutputState }
@@ -367,12 +342,6 @@ func (o ComputeClusterArrayOutput) ToComputeClusterArrayOutput() ComputeClusterA
 
 func (o ComputeClusterArrayOutput) ToComputeClusterArrayOutputWithContext(ctx context.Context) ComputeClusterArrayOutput {
 	return o
-}
-
-func (o ComputeClusterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ComputeCluster] {
-	return pulumix.Output[[]*ComputeCluster]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ComputeClusterArrayOutput) Index(i pulumi.IntInput) ComputeClusterOutput {
@@ -393,12 +362,6 @@ func (o ComputeClusterMapOutput) ToComputeClusterMapOutput() ComputeClusterMapOu
 
 func (o ComputeClusterMapOutput) ToComputeClusterMapOutputWithContext(ctx context.Context) ComputeClusterMapOutput {
 	return o
-}
-
-func (o ComputeClusterMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ComputeCluster] {
-	return pulumix.Output[map[string]*ComputeCluster]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ComputeClusterMapOutput) MapIndex(k pulumi.StringInput) ComputeClusterOutput {

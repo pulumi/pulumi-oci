@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.VisualBuilder.outputs.GetVbInstancesVbInstanceSummaryCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetVbInstancesVbInstanceSummaryCollection {
-    private List<GetVbInstancesVbInstanceSummaryCollectionItem> items;
+    private @Nullable List<GetVbInstancesVbInstanceSummaryCollectionItem> items;
 
     private GetVbInstancesVbInstanceSummaryCollection() {}
     public List<GetVbInstancesVbInstanceSummaryCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetVbInstancesVbInstanceSummaryCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetVbInstancesVbInstanceSummaryCollectionItem> items;
+        private @Nullable List<GetVbInstancesVbInstanceSummaryCollectionItem> items;
         public Builder() {}
         public Builder(GetVbInstancesVbInstanceSummaryCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetVbInstancesVbInstanceSummaryCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetVbInstancesVbInstanceSummaryCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetVbInstancesVbInstanceSummaryCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetVbInstancesVbInstanceSummaryCollectionItem... items) {

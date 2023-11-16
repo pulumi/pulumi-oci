@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Stream resource in Oracle Cloud Infrastructure Streaming service.
@@ -60,30 +59,30 @@ type LookupStreamArgs struct {
 // A collection of values returned by getStream.
 type LookupStreamResult struct {
 	// The OCID of the compartment that contains the stream.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations": {"CostCenter": "42"}}'
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair that is applied with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the stream.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Any additional details about the current state of the stream.
-	LifecycleStateDetails string `pulumi:"lifecycleStateDetails"`
+	LifecycleStateDetails *string `pulumi:"lifecycleStateDetails"`
 	// The endpoint to use when creating the StreamClient to consume or publish messages in the stream. If the associated stream pool is private, the endpoint is also private and can only be accessed from inside the stream pool's associated subnet.
-	MessagesEndpoint string `pulumi:"messagesEndpoint"`
+	MessagesEndpoint *string `pulumi:"messagesEndpoint"`
 	// The name of the stream. Avoid entering confidential information.  Example: `TelemetryEvents`
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The number of partitions in the stream.
-	Partitions int `pulumi:"partitions"`
+	Partitions *int `pulumi:"partitions"`
 	// The retention period of the stream, in hours. This property is read-only.
-	RetentionInHours int `pulumi:"retentionInHours"`
+	RetentionInHours *int `pulumi:"retentionInHours"`
 	// The current state of the stream.
-	State    string `pulumi:"state"`
-	StreamId string `pulumi:"streamId"`
+	State    *string `pulumi:"state"`
+	StreamId string  `pulumi:"streamId"`
 	// The OCID of the stream pool that contains the stream.
-	StreamPoolId string `pulumi:"streamPoolId"`
+	StreamPoolId *string `pulumi:"streamPoolId"`
 	// The date and time the stream was created, expressed in in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 }
 
 func LookupStreamOutput(ctx *pulumi.Context, args LookupStreamOutputArgs, opts ...pulumi.InvokeOption) LookupStreamResultOutput {
@@ -124,15 +123,9 @@ func (o LookupStreamResultOutput) ToLookupStreamResultOutputWithContext(ctx cont
 	return o
 }
 
-func (o LookupStreamResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupStreamResult] {
-	return pulumix.Output[LookupStreamResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment that contains the stream.
-func (o LookupStreamResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupStreamResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupStreamResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupStreamResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations": {"CostCenter": "42"}}'
@@ -146,38 +139,38 @@ func (o LookupStreamResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The OCID of the stream.
-func (o LookupStreamResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupStreamResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupStreamResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupStreamResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Any additional details about the current state of the stream.
-func (o LookupStreamResultOutput) LifecycleStateDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupStreamResult) string { return v.LifecycleStateDetails }).(pulumi.StringOutput)
+func (o LookupStreamResultOutput) LifecycleStateDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupStreamResult) *string { return v.LifecycleStateDetails }).(pulumi.StringPtrOutput)
 }
 
 // The endpoint to use when creating the StreamClient to consume or publish messages in the stream. If the associated stream pool is private, the endpoint is also private and can only be accessed from inside the stream pool's associated subnet.
-func (o LookupStreamResultOutput) MessagesEndpoint() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupStreamResult) string { return v.MessagesEndpoint }).(pulumi.StringOutput)
+func (o LookupStreamResultOutput) MessagesEndpoint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupStreamResult) *string { return v.MessagesEndpoint }).(pulumi.StringPtrOutput)
 }
 
 // The name of the stream. Avoid entering confidential information.  Example: `TelemetryEvents`
-func (o LookupStreamResultOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupStreamResult) string { return v.Name }).(pulumi.StringOutput)
+func (o LookupStreamResultOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupStreamResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The number of partitions in the stream.
-func (o LookupStreamResultOutput) Partitions() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupStreamResult) int { return v.Partitions }).(pulumi.IntOutput)
+func (o LookupStreamResultOutput) Partitions() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupStreamResult) *int { return v.Partitions }).(pulumi.IntPtrOutput)
 }
 
 // The retention period of the stream, in hours. This property is read-only.
-func (o LookupStreamResultOutput) RetentionInHours() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupStreamResult) int { return v.RetentionInHours }).(pulumi.IntOutput)
+func (o LookupStreamResultOutput) RetentionInHours() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupStreamResult) *int { return v.RetentionInHours }).(pulumi.IntPtrOutput)
 }
 
 // The current state of the stream.
-func (o LookupStreamResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupStreamResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupStreamResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupStreamResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupStreamResultOutput) StreamId() pulumi.StringOutput {
@@ -185,13 +178,13 @@ func (o LookupStreamResultOutput) StreamId() pulumi.StringOutput {
 }
 
 // The OCID of the stream pool that contains the stream.
-func (o LookupStreamResultOutput) StreamPoolId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupStreamResult) string { return v.StreamPoolId }).(pulumi.StringOutput)
+func (o LookupStreamResultOutput) StreamPoolId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupStreamResult) *string { return v.StreamPoolId }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the stream was created, expressed in in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
-func (o LookupStreamResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupStreamResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupStreamResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupStreamResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

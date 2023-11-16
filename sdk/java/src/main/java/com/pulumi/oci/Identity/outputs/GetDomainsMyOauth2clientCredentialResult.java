@@ -24,105 +24,105 @@ public final class GetDomainsMyOauth2clientCredentialResult {
      * @return Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
      * 
      */
-    private String compartmentOcid;
+    private @Nullable String compartmentOcid;
     /**
      * @return A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      * 
      */
-    private Boolean deleteInProgress;
+    private @Nullable Boolean deleteInProgress;
     /**
      * @return Description
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      * 
      */
-    private String domainOcid;
+    private @Nullable String domainOcid;
     /**
      * @return When the user&#39;s credentials expire.
      * 
      */
-    private String expiresOn;
+    private @Nullable String expiresOn;
     /**
      * @return Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider&#39;s entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The User or App who created the Resource
      * 
      */
-    private List<GetDomainsMyOauth2clientCredentialIdcsCreatedBy> idcsCreatedBies;
+    private @Nullable List<GetDomainsMyOauth2clientCredentialIdcsCreatedBy> idcsCreatedBies;
     private String idcsEndpoint;
     /**
      * @return The User or App who modified the Resource
      * 
      */
-    private List<GetDomainsMyOauth2clientCredentialIdcsLastModifiedBy> idcsLastModifiedBies;
+    private @Nullable List<GetDomainsMyOauth2clientCredentialIdcsLastModifiedBy> idcsLastModifiedBies;
     /**
      * @return The release number when the resource was upgraded.
      * 
      */
-    private String idcsLastUpgradedInRelease;
+    private @Nullable String idcsLastUpgradedInRelease;
     /**
      * @return Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      * 
      */
-    private List<String> idcsPreventedOperations;
+    private @Nullable List<String> idcsPreventedOperations;
     /**
      * @return Specifies whether the secret must be reset.
      * 
      */
-    private Boolean isResetSecret;
+    private @Nullable Boolean isResetSecret;
     /**
      * @return A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      * 
      */
-    private List<GetDomainsMyOauth2clientCredentialMeta> metas;
+    private @Nullable List<GetDomainsMyOauth2clientCredentialMeta> metas;
     private String myOauth2clientCredentialId;
     /**
      * @return The username.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return The user&#39;s OCID.
      * 
      */
-    private String ocid;
+    private @Nullable String ocid;
     private @Nullable String resourceTypeSchemaVersion;
     /**
      * @return REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      * 
      */
-    private List<String> schemas;
+    private @Nullable List<String> schemas;
     /**
      * @return Scopes
      * 
      */
-    private List<GetDomainsMyOauth2clientCredentialScope> scopes;
+    private @Nullable List<GetDomainsMyOauth2clientCredentialScope> scopes;
     /**
      * @return The user&#39;s credential status.
      * 
      */
-    private String status;
+    private @Nullable String status;
     /**
      * @return A list of tags on this resource.
      * 
      */
-    private List<GetDomainsMyOauth2clientCredentialTag> tags;
+    private @Nullable List<GetDomainsMyOauth2clientCredentialTag> tags;
     /**
      * @return Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      * 
      */
-    private String tenancyOcid;
+    private @Nullable String tenancyOcid;
     /**
      * @return The user linked to the OAuth2 client credential.
      * 
      */
-    private List<GetDomainsMyOauth2clientCredentialUser> users;
+    private @Nullable List<GetDomainsMyOauth2clientCredentialUser> users;
 
     private GetDomainsMyOauth2clientCredentialResult() {}
     public Optional<String> authorization() {
@@ -132,50 +132,50 @@ public final class GetDomainsMyOauth2clientCredentialResult {
      * @return Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
      * 
      */
-    public String compartmentOcid() {
-        return this.compartmentOcid;
+    public Optional<String> compartmentOcid() {
+        return Optional.ofNullable(this.compartmentOcid);
     }
     /**
      * @return A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      * 
      */
-    public Boolean deleteInProgress() {
-        return this.deleteInProgress;
+    public Optional<Boolean> deleteInProgress() {
+        return Optional.ofNullable(this.deleteInProgress);
     }
     /**
      * @return Description
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      * 
      */
-    public String domainOcid() {
-        return this.domainOcid;
+    public Optional<String> domainOcid() {
+        return Optional.ofNullable(this.domainOcid);
     }
     /**
      * @return When the user&#39;s credentials expire.
      * 
      */
-    public String expiresOn() {
-        return this.expiresOn;
+    public Optional<String> expiresOn() {
+        return Optional.ofNullable(this.expiresOn);
     }
     /**
      * @return Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider&#39;s entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The User or App who created the Resource
      * 
      */
     public List<GetDomainsMyOauth2clientCredentialIdcsCreatedBy> idcsCreatedBies() {
-        return this.idcsCreatedBies;
+        return this.idcsCreatedBies == null ? List.of() : this.idcsCreatedBies;
     }
     public String idcsEndpoint() {
         return this.idcsEndpoint;
@@ -185,35 +185,35 @@ public final class GetDomainsMyOauth2clientCredentialResult {
      * 
      */
     public List<GetDomainsMyOauth2clientCredentialIdcsLastModifiedBy> idcsLastModifiedBies() {
-        return this.idcsLastModifiedBies;
+        return this.idcsLastModifiedBies == null ? List.of() : this.idcsLastModifiedBies;
     }
     /**
      * @return The release number when the resource was upgraded.
      * 
      */
-    public String idcsLastUpgradedInRelease() {
-        return this.idcsLastUpgradedInRelease;
+    public Optional<String> idcsLastUpgradedInRelease() {
+        return Optional.ofNullable(this.idcsLastUpgradedInRelease);
     }
     /**
      * @return Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      * 
      */
     public List<String> idcsPreventedOperations() {
-        return this.idcsPreventedOperations;
+        return this.idcsPreventedOperations == null ? List.of() : this.idcsPreventedOperations;
     }
     /**
      * @return Specifies whether the secret must be reset.
      * 
      */
-    public Boolean isResetSecret() {
-        return this.isResetSecret;
+    public Optional<Boolean> isResetSecret() {
+        return Optional.ofNullable(this.isResetSecret);
     }
     /**
      * @return A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      * 
      */
     public List<GetDomainsMyOauth2clientCredentialMeta> metas() {
-        return this.metas;
+        return this.metas == null ? List.of() : this.metas;
     }
     public String myOauth2clientCredentialId() {
         return this.myOauth2clientCredentialId;
@@ -222,15 +222,15 @@ public final class GetDomainsMyOauth2clientCredentialResult {
      * @return The username.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return The user&#39;s OCID.
      * 
      */
-    public String ocid() {
-        return this.ocid;
+    public Optional<String> ocid() {
+        return Optional.ofNullable(this.ocid);
     }
     public Optional<String> resourceTypeSchemaVersion() {
         return Optional.ofNullable(this.resourceTypeSchemaVersion);
@@ -240,42 +240,42 @@ public final class GetDomainsMyOauth2clientCredentialResult {
      * 
      */
     public List<String> schemas() {
-        return this.schemas;
+        return this.schemas == null ? List.of() : this.schemas;
     }
     /**
      * @return Scopes
      * 
      */
     public List<GetDomainsMyOauth2clientCredentialScope> scopes() {
-        return this.scopes;
+        return this.scopes == null ? List.of() : this.scopes;
     }
     /**
      * @return The user&#39;s credential status.
      * 
      */
-    public String status() {
-        return this.status;
+    public Optional<String> status() {
+        return Optional.ofNullable(this.status);
     }
     /**
      * @return A list of tags on this resource.
      * 
      */
     public List<GetDomainsMyOauth2clientCredentialTag> tags() {
-        return this.tags;
+        return this.tags == null ? List.of() : this.tags;
     }
     /**
      * @return Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      * 
      */
-    public String tenancyOcid() {
-        return this.tenancyOcid;
+    public Optional<String> tenancyOcid() {
+        return Optional.ofNullable(this.tenancyOcid);
     }
     /**
      * @return The user linked to the OAuth2 client credential.
      * 
      */
     public List<GetDomainsMyOauth2clientCredentialUser> users() {
-        return this.users;
+        return this.users == null ? List.of() : this.users;
     }
 
     public static Builder builder() {
@@ -288,29 +288,29 @@ public final class GetDomainsMyOauth2clientCredentialResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String authorization;
-        private String compartmentOcid;
-        private Boolean deleteInProgress;
-        private String description;
-        private String domainOcid;
-        private String expiresOn;
-        private String id;
-        private List<GetDomainsMyOauth2clientCredentialIdcsCreatedBy> idcsCreatedBies;
+        private @Nullable String compartmentOcid;
+        private @Nullable Boolean deleteInProgress;
+        private @Nullable String description;
+        private @Nullable String domainOcid;
+        private @Nullable String expiresOn;
+        private @Nullable String id;
+        private @Nullable List<GetDomainsMyOauth2clientCredentialIdcsCreatedBy> idcsCreatedBies;
         private String idcsEndpoint;
-        private List<GetDomainsMyOauth2clientCredentialIdcsLastModifiedBy> idcsLastModifiedBies;
-        private String idcsLastUpgradedInRelease;
-        private List<String> idcsPreventedOperations;
-        private Boolean isResetSecret;
-        private List<GetDomainsMyOauth2clientCredentialMeta> metas;
+        private @Nullable List<GetDomainsMyOauth2clientCredentialIdcsLastModifiedBy> idcsLastModifiedBies;
+        private @Nullable String idcsLastUpgradedInRelease;
+        private @Nullable List<String> idcsPreventedOperations;
+        private @Nullable Boolean isResetSecret;
+        private @Nullable List<GetDomainsMyOauth2clientCredentialMeta> metas;
         private String myOauth2clientCredentialId;
-        private String name;
-        private String ocid;
+        private @Nullable String name;
+        private @Nullable String ocid;
         private @Nullable String resourceTypeSchemaVersion;
-        private List<String> schemas;
-        private List<GetDomainsMyOauth2clientCredentialScope> scopes;
-        private String status;
-        private List<GetDomainsMyOauth2clientCredentialTag> tags;
-        private String tenancyOcid;
-        private List<GetDomainsMyOauth2clientCredentialUser> users;
+        private @Nullable List<String> schemas;
+        private @Nullable List<GetDomainsMyOauth2clientCredentialScope> scopes;
+        private @Nullable String status;
+        private @Nullable List<GetDomainsMyOauth2clientCredentialTag> tags;
+        private @Nullable String tenancyOcid;
+        private @Nullable List<GetDomainsMyOauth2clientCredentialUser> users;
         public Builder() {}
         public Builder(GetDomainsMyOauth2clientCredentialResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -346,38 +346,38 @@ public final class GetDomainsMyOauth2clientCredentialResult {
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentOcid(String compartmentOcid) {
-            this.compartmentOcid = Objects.requireNonNull(compartmentOcid);
+        public Builder compartmentOcid(@Nullable String compartmentOcid) {
+            this.compartmentOcid = compartmentOcid;
             return this;
         }
         @CustomType.Setter
-        public Builder deleteInProgress(Boolean deleteInProgress) {
-            this.deleteInProgress = Objects.requireNonNull(deleteInProgress);
+        public Builder deleteInProgress(@Nullable Boolean deleteInProgress) {
+            this.deleteInProgress = deleteInProgress;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder domainOcid(String domainOcid) {
-            this.domainOcid = Objects.requireNonNull(domainOcid);
+        public Builder domainOcid(@Nullable String domainOcid) {
+            this.domainOcid = domainOcid;
             return this;
         }
         @CustomType.Setter
-        public Builder expiresOn(String expiresOn) {
-            this.expiresOn = Objects.requireNonNull(expiresOn);
+        public Builder expiresOn(@Nullable String expiresOn) {
+            this.expiresOn = expiresOn;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsCreatedBies(List<GetDomainsMyOauth2clientCredentialIdcsCreatedBy> idcsCreatedBies) {
-            this.idcsCreatedBies = Objects.requireNonNull(idcsCreatedBies);
+        public Builder idcsCreatedBies(@Nullable List<GetDomainsMyOauth2clientCredentialIdcsCreatedBy> idcsCreatedBies) {
+            this.idcsCreatedBies = idcsCreatedBies;
             return this;
         }
         public Builder idcsCreatedBies(GetDomainsMyOauth2clientCredentialIdcsCreatedBy... idcsCreatedBies) {
@@ -389,34 +389,34 @@ public final class GetDomainsMyOauth2clientCredentialResult {
             return this;
         }
         @CustomType.Setter
-        public Builder idcsLastModifiedBies(List<GetDomainsMyOauth2clientCredentialIdcsLastModifiedBy> idcsLastModifiedBies) {
-            this.idcsLastModifiedBies = Objects.requireNonNull(idcsLastModifiedBies);
+        public Builder idcsLastModifiedBies(@Nullable List<GetDomainsMyOauth2clientCredentialIdcsLastModifiedBy> idcsLastModifiedBies) {
+            this.idcsLastModifiedBies = idcsLastModifiedBies;
             return this;
         }
         public Builder idcsLastModifiedBies(GetDomainsMyOauth2clientCredentialIdcsLastModifiedBy... idcsLastModifiedBies) {
             return idcsLastModifiedBies(List.of(idcsLastModifiedBies));
         }
         @CustomType.Setter
-        public Builder idcsLastUpgradedInRelease(String idcsLastUpgradedInRelease) {
-            this.idcsLastUpgradedInRelease = Objects.requireNonNull(idcsLastUpgradedInRelease);
+        public Builder idcsLastUpgradedInRelease(@Nullable String idcsLastUpgradedInRelease) {
+            this.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsPreventedOperations(List<String> idcsPreventedOperations) {
-            this.idcsPreventedOperations = Objects.requireNonNull(idcsPreventedOperations);
+        public Builder idcsPreventedOperations(@Nullable List<String> idcsPreventedOperations) {
+            this.idcsPreventedOperations = idcsPreventedOperations;
             return this;
         }
         public Builder idcsPreventedOperations(String... idcsPreventedOperations) {
             return idcsPreventedOperations(List.of(idcsPreventedOperations));
         }
         @CustomType.Setter
-        public Builder isResetSecret(Boolean isResetSecret) {
-            this.isResetSecret = Objects.requireNonNull(isResetSecret);
+        public Builder isResetSecret(@Nullable Boolean isResetSecret) {
+            this.isResetSecret = isResetSecret;
             return this;
         }
         @CustomType.Setter
-        public Builder metas(List<GetDomainsMyOauth2clientCredentialMeta> metas) {
-            this.metas = Objects.requireNonNull(metas);
+        public Builder metas(@Nullable List<GetDomainsMyOauth2clientCredentialMeta> metas) {
+            this.metas = metas;
             return this;
         }
         public Builder metas(GetDomainsMyOauth2clientCredentialMeta... metas) {
@@ -428,13 +428,13 @@ public final class GetDomainsMyOauth2clientCredentialResult {
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder ocid(String ocid) {
-            this.ocid = Objects.requireNonNull(ocid);
+        public Builder ocid(@Nullable String ocid) {
+            this.ocid = ocid;
             return this;
         }
         @CustomType.Setter
@@ -443,42 +443,42 @@ public final class GetDomainsMyOauth2clientCredentialResult {
             return this;
         }
         @CustomType.Setter
-        public Builder schemas(List<String> schemas) {
-            this.schemas = Objects.requireNonNull(schemas);
+        public Builder schemas(@Nullable List<String> schemas) {
+            this.schemas = schemas;
             return this;
         }
         public Builder schemas(String... schemas) {
             return schemas(List.of(schemas));
         }
         @CustomType.Setter
-        public Builder scopes(List<GetDomainsMyOauth2clientCredentialScope> scopes) {
-            this.scopes = Objects.requireNonNull(scopes);
+        public Builder scopes(@Nullable List<GetDomainsMyOauth2clientCredentialScope> scopes) {
+            this.scopes = scopes;
             return this;
         }
         public Builder scopes(GetDomainsMyOauth2clientCredentialScope... scopes) {
             return scopes(List.of(scopes));
         }
         @CustomType.Setter
-        public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+        public Builder status(@Nullable String status) {
+            this.status = status;
             return this;
         }
         @CustomType.Setter
-        public Builder tags(List<GetDomainsMyOauth2clientCredentialTag> tags) {
-            this.tags = Objects.requireNonNull(tags);
+        public Builder tags(@Nullable List<GetDomainsMyOauth2clientCredentialTag> tags) {
+            this.tags = tags;
             return this;
         }
         public Builder tags(GetDomainsMyOauth2clientCredentialTag... tags) {
             return tags(List.of(tags));
         }
         @CustomType.Setter
-        public Builder tenancyOcid(String tenancyOcid) {
-            this.tenancyOcid = Objects.requireNonNull(tenancyOcid);
+        public Builder tenancyOcid(@Nullable String tenancyOcid) {
+            this.tenancyOcid = tenancyOcid;
             return this;
         }
         @CustomType.Setter
-        public Builder users(List<GetDomainsMyOauth2clientCredentialUser> users) {
-            this.users = Objects.requireNonNull(users);
+        public Builder users(@Nullable List<GetDomainsMyOauth2clientCredentialUser> users) {
+            this.users = users;
             return this;
         }
         public Builder users(GetDomainsMyOauth2clientCredentialUser... users) {

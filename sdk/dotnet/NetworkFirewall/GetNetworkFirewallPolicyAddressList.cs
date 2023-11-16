@@ -77,7 +77,7 @@ namespace Pulumi.Oci.NetworkFirewall
         /// List of addresses.
         /// </summary>
         public readonly ImmutableArray<string> Addresses;
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Unique name to identify the group of addresses to be used in the policy rules.
         /// </summary>
@@ -86,31 +86,31 @@ namespace Pulumi.Oci.NetworkFirewall
         /// <summary>
         /// OCID of the Network Firewall Policy this Address List belongs to.
         /// </summary>
-        public readonly string ParentResourceId;
+        public readonly string? ParentResourceId;
         /// <summary>
         /// Count of total Addresses in the AddressList
         /// </summary>
-        public readonly int TotalAddresses;
+        public readonly int? TotalAddresses;
         /// <summary>
         /// Type of address List.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
 
         [OutputConstructor]
         private GetNetworkFirewallPolicyAddressListResult(
             ImmutableArray<string> addresses,
 
-            string id,
+            string? id,
 
             string name,
 
             string networkFirewallPolicyId,
 
-            string parentResourceId,
+            string? parentResourceId,
 
-            int totalAddresses,
+            int? totalAddresses,
 
-            string type)
+            string? type)
         {
             Addresses = addresses;
             Id = id;

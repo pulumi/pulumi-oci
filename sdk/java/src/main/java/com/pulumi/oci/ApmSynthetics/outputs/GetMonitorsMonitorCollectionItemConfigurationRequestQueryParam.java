@@ -6,6 +6,8 @@ package com.pulumi.oci.ApmSynthetics.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMonitorsMonitorCollectionItemConfigurationRequestQueryParam {
@@ -13,27 +15,27 @@ public final class GetMonitorsMonitorCollectionItemConfigurationRequestQueryPara
      * @return Name of the parameter.
      * 
      */
-    private String paramName;
+    private @Nullable String paramName;
     /**
      * @return Value of the parameter.
      * 
      */
-    private String paramValue;
+    private @Nullable String paramValue;
 
     private GetMonitorsMonitorCollectionItemConfigurationRequestQueryParam() {}
     /**
      * @return Name of the parameter.
      * 
      */
-    public String paramName() {
-        return this.paramName;
+    public Optional<String> paramName() {
+        return Optional.ofNullable(this.paramName);
     }
     /**
      * @return Value of the parameter.
      * 
      */
-    public String paramValue() {
-        return this.paramValue;
+    public Optional<String> paramValue() {
+        return Optional.ofNullable(this.paramValue);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetMonitorsMonitorCollectionItemConfigurationRequestQueryPara
     }
     @CustomType.Builder
     public static final class Builder {
-        private String paramName;
-        private String paramValue;
+        private @Nullable String paramName;
+        private @Nullable String paramValue;
         public Builder() {}
         public Builder(GetMonitorsMonitorCollectionItemConfigurationRequestQueryParam defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetMonitorsMonitorCollectionItemConfigurationRequestQueryPara
         }
 
         @CustomType.Setter
-        public Builder paramName(String paramName) {
-            this.paramName = Objects.requireNonNull(paramName);
+        public Builder paramName(@Nullable String paramName) {
+            this.paramName = paramName;
             return this;
         }
         @CustomType.Setter
-        public Builder paramValue(String paramValue) {
-            this.paramValue = Objects.requireNonNull(paramValue);
+        public Builder paramValue(@Nullable String paramValue) {
+            this.paramValue = paramValue;
             return this;
         }
         public GetMonitorsMonitorCollectionItemConfigurationRequestQueryParam build() {

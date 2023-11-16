@@ -44,7 +44,7 @@ class GetImageShapesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -53,17 +53,11 @@ class GetImageShapesResult:
     @property
     @pulumi.getter(name="imageId")
     def image_id(self) -> str:
-        """
-        The image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
         return pulumi.get(self, "image_id")
 
     @property
     @pulumi.getter(name="imageShapeCompatibilities")
-    def image_shape_compatibilities(self) -> Sequence['outputs.GetImageShapesImageShapeCompatibilityResult']:
-        """
-        The list of image_shape_compatibilities.
-        """
+    def image_shape_compatibilities(self) -> Optional[Sequence['outputs.GetImageShapesImageShapeCompatibilityResult']]:
         return pulumi.get(self, "image_shape_compatibilities")
 
 
@@ -83,21 +77,7 @@ def get_image_shapes(filters: Optional[Sequence[pulumi.InputType['GetImageShapes
                      image_id: Optional[str] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetImageShapesResult:
     """
-    This data source provides the list of Image Shapes in Oracle Cloud Infrastructure Core service.
-
-    Lists the compatible shapes for the specified image.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_image_shapes = oci.Core.get_image_shapes(image_id=oci_core_image["test_image"]["id"])
-    ```
-
-
-    :param str image_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the image.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -117,20 +97,6 @@ def get_image_shapes_output(filters: Optional[pulumi.Input[Optional[Sequence[pul
                             image_id: Optional[pulumi.Input[str]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetImageShapesResult]:
     """
-    This data source provides the list of Image Shapes in Oracle Cloud Infrastructure Core service.
-
-    Lists the compatible shapes for the specified image.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_image_shapes = oci.Core.get_image_shapes(image_id=oci_core_image["test_image"]["id"])
-    ```
-
-
-    :param str image_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the image.
+    Use this data source to access information about an existing resource.
     """
     ...

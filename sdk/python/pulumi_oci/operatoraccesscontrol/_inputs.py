@@ -61,9 +61,6 @@ class GetActionsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: A filter to return only resources that match the entire display name given.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -72,9 +69,6 @@ class GetActionsFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        A filter to return only resources that match the entire display name given.
-        """
         return pulumi.get(self, "name")
 
     @name.setter

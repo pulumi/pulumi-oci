@@ -113,15 +113,15 @@ namespace Pulumi.Oci.DataCatalog
         /// <summary>
         /// Identifier of the compartment this private endpoint belongs to
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// Mutable name of the Private Reverse Connection Endpoint
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// List of DNS zones to be used by the data assets to be harvested. Example: custpvtsubnet.oraclevcn.com for data asset: db.custpvtsubnet.oraclevcn.com
         /// </summary>
@@ -129,31 +129,31 @@ namespace Pulumi.Oci.DataCatalog
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// Unique identifier that is immutable
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// The current state of the private endpoint resource.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// Subnet Identifier
         /// </summary>
-        public readonly string SubnetId;
+        public readonly string? SubnetId;
         /// <summary>
         /// The time the private endpoint was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The time the private endpoint was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
 
         [OutputConstructor]
         private GetCatalogPrivateEndpointResult(
@@ -161,27 +161,27 @@ namespace Pulumi.Oci.DataCatalog
 
             string catalogPrivateEndpointId,
 
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string displayName,
+            string? displayName,
 
             ImmutableArray<string> dnsZones,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string state,
+            string? state,
 
-            string subnetId,
+            string? subnetId,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated)
+            string? timeUpdated)
         {
             AttachedCatalogs = attachedCatalogs;
             CatalogPrivateEndpointId = catalogPrivateEndpointId;

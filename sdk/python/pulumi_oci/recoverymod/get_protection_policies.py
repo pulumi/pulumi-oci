@@ -52,17 +52,11 @@ class GetProtectionPoliciesResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment that contains the protection policy.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A user provided name for the protection policy.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -72,7 +66,7 @@ class GetProtectionPoliciesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -85,10 +79,7 @@ class GetProtectionPoliciesResult:
 
     @property
     @pulumi.getter(name="protectionPolicyCollections")
-    def protection_policy_collections(self) -> Sequence['outputs.GetProtectionPoliciesProtectionPolicyCollectionResult']:
-        """
-        The list of protection_policy_collection.
-        """
+    def protection_policy_collections(self) -> Optional[Sequence['outputs.GetProtectionPoliciesProtectionPolicyCollectionResult']]:
         return pulumi.get(self, "protection_policy_collections")
 
     @property
@@ -99,15 +90,6 @@ class GetProtectionPoliciesResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the protection policy. Allowed values are:
-        * CREATING
-        * UPDATING
-        * ACTIVE
-        * DELETING
-        * DELETED
-        * FAILED
-        """
         return pulumi.get(self, "state")
 
 
@@ -135,29 +117,7 @@ def get_protection_policies(compartment_id: Optional[str] = None,
                             state: Optional[str] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetProtectionPoliciesResult:
     """
-    This data source provides the list of Protection Policies in Oracle Cloud Infrastructure Recovery service.
-
-    Gets a list of protection policies based on the specified parameters.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_protection_policies = oci.RecoveryMod.get_protection_policies(compartment_id=var["compartment_id"],
-        display_name=var["protection_policy_display_name"],
-        owner=var["protection_policy_owner"],
-        protection_policy_id=oci_recovery_protection_policy["test_protection_policy"]["id"],
-        state=var["protection_policy_state"])
-    ```
-
-
-    :param str compartment_id: The compartment OCID.
-    :param str display_name: A filter to return only resources that match the entire 'displayname' given.
-    :param str owner: A filter to return only the policies that match the owner as 'Customer' or 'Oracle'.
-    :param str protection_policy_id: The protection policy OCID.
-    :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -189,28 +149,6 @@ def get_protection_policies_output(compartment_id: Optional[pulumi.Input[str]] =
                                    state: Optional[pulumi.Input[Optional[str]]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetProtectionPoliciesResult]:
     """
-    This data source provides the list of Protection Policies in Oracle Cloud Infrastructure Recovery service.
-
-    Gets a list of protection policies based on the specified parameters.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_protection_policies = oci.RecoveryMod.get_protection_policies(compartment_id=var["compartment_id"],
-        display_name=var["protection_policy_display_name"],
-        owner=var["protection_policy_owner"],
-        protection_policy_id=oci_recovery_protection_policy["test_protection_policy"]["id"],
-        state=var["protection_policy_state"])
-    ```
-
-
-    :param str compartment_id: The compartment OCID.
-    :param str display_name: A filter to return only resources that match the entire 'displayname' given.
-    :param str owner: A filter to return only the policies that match the owner as 'Customer' or 'Oracle'.
-    :param str protection_policy_id: The protection policy OCID.
-    :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
+    Use this data source to access information about an existing resource.
     """
     ...

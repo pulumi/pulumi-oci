@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Autonomous Exadata Infrastructures in Oracle Cloud Infrastructure Database service.
@@ -79,7 +78,7 @@ type GetAutonomousExadataInfrastructuresResult struct {
 	DisplayName *string                                     `pulumi:"displayName"`
 	Filters     []GetAutonomousExadataInfrastructuresFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The current lifecycle state of the Autonomous Exadata Infrastructure.
 	State *string `pulumi:"state"`
 }
@@ -129,12 +128,6 @@ func (o GetAutonomousExadataInfrastructuresResultOutput) ToGetAutonomousExadataI
 	return o
 }
 
-func (o GetAutonomousExadataInfrastructuresResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAutonomousExadataInfrastructuresResult] {
-	return pulumix.Output[GetAutonomousExadataInfrastructuresResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The list of autonomous_exadata_infrastructures.
 func (o GetAutonomousExadataInfrastructuresResultOutput) AutonomousExadataInfrastructures() GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureArrayOutput {
 	return o.ApplyT(func(v GetAutonomousExadataInfrastructuresResult) []GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructure {
@@ -164,8 +157,8 @@ func (o GetAutonomousExadataInfrastructuresResultOutput) Filters() GetAutonomous
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetAutonomousExadataInfrastructuresResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAutonomousExadataInfrastructuresResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetAutonomousExadataInfrastructuresResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAutonomousExadataInfrastructuresResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The current lifecycle state of the Autonomous Exadata Infrastructure.

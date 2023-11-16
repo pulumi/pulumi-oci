@@ -16,197 +16,197 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// The Average Execution Time.
         /// </summary>
-        public readonly double AvgTimerWait;
+        public readonly double? AvgTimerWait;
         /// <summary>
         /// The Number Of Times The Query Has Been Executed.
         /// </summary>
-        public readonly double CountStar;
+        public readonly double? CountStar;
         /// <summary>
         /// The Digest Of The Normalized Query.
         /// </summary>
-        public readonly string Digest;
+        public readonly string? Digest;
         /// <summary>
         /// The Normalized Query.
         /// </summary>
-        public readonly string DigestText;
+        public readonly string? DigestText;
         /// <summary>
         /// When The Query Was First Seen. When The Table Is Truncated, The First Seen Value Is Also Reset.
         /// </summary>
-        public readonly string FirstSeen;
+        public readonly string? FirstSeen;
         /// <summary>
         /// When The Query Was Seen The Last Time.
         /// </summary>
-        public readonly string LastSeen;
+        public readonly string? LastSeen;
         /// <summary>
         /// The Slowest The Query Has Been Executed.
         /// </summary>
-        public readonly double MaxTimerWait;
+        public readonly double? MaxTimerWait;
         /// <summary>
         /// The Fastest The Query Has Been Executed.
         /// </summary>
-        public readonly double MinTimerWait;
+        public readonly double? MinTimerWait;
         /// <summary>
         /// The 95th Percentile Of The Query Latency. That Is, 95% Of The Queries Complete In The Time Given Or In Less Time.
         /// </summary>
-        public readonly double Quantile95;
+        public readonly double? Quantile95;
         /// <summary>
         /// The 99th Percentile Of The Query Latency.
         /// </summary>
-        public readonly double Quantile99;
+        public readonly double? Quantile99;
         /// <summary>
         /// The 99.9th Percentile Of The Query Latency.
         /// </summary>
-        public readonly double Quantile999;
+        public readonly double? Quantile999;
         /// <summary>
         /// The Schema That Was The Default Schema When Executing The Query. If No Schema Was The Default, The Value Is NULL.
         /// </summary>
-        public readonly string SchemaName;
+        public readonly string? SchemaName;
         /// <summary>
         /// The Total Number Of On-Disk Internal Temporary Tables That Have Been Created By The Query.
         /// </summary>
-        public readonly double SumCreatedTempDiskTables;
+        public readonly double? SumCreatedTempDiskTables;
         /// <summary>
         /// The Total Number Of Internal Temporary Tables – Whether Created In Memory Or On Disk – That Have Been Created By The Query.
         /// </summary>
-        public readonly double SumCreatedTempTables;
+        public readonly double? SumCreatedTempTables;
         /// <summary>
         /// The Total Number Of Errors That Have Been Encountered Executing The Query.
         /// </summary>
-        public readonly double SumErrors;
+        public readonly double? SumErrors;
         /// <summary>
         /// The Total Amount Of Time That Has Been Spent Waiting For Table Locks.
         /// </summary>
-        public readonly double SumLockTime;
+        public readonly double? SumLockTime;
         /// <summary>
         /// The Total Number Of Times No Good Index Was Used. This Means That The ExtraColumn In The EXPLAIN Output Includes “Range Checked For Each Record.”
         /// </summary>
-        public readonly double SumNoGoodIndexUsed;
+        public readonly double? SumNoGoodIndexUsed;
         /// <summary>
         /// The Total Number Of Times No Index Was Used To Execute The Query.
         /// </summary>
-        public readonly double SumNoIndexUsed;
+        public readonly double? SumNoIndexUsed;
         /// <summary>
         /// The Total Number Of Rows That Have Been Modified By The Query.
         /// </summary>
-        public readonly double SumRowsAffected;
+        public readonly double? SumRowsAffected;
         /// <summary>
         /// The Total Number Of Rows That Have Been Examined By The Query.
         /// </summary>
-        public readonly double SumRowsExamined;
+        public readonly double? SumRowsExamined;
         /// <summary>
         /// The Total Number Of Rows That Have Been Returned (Sent) To The Client.
         /// </summary>
-        public readonly double SumRowsSent;
+        public readonly double? SumRowsSent;
         /// <summary>
         /// The Total Number Of Joins That Have Performed Full Table Scans As There Is No Index For The Join Condition Or There Is No Join Condition. This Is The Same That Increments The Select_full_join Status Variable.
         /// </summary>
-        public readonly double SumSelectFullJoin;
+        public readonly double? SumSelectFullJoin;
         /// <summary>
         /// The Total Number Of Joins That Use A Full Range Search. This Is The Same That Increments The Select_full_range_join Status Variable.
         /// </summary>
-        public readonly double SumSelectFullRangeJoin;
+        public readonly double? SumSelectFullRangeJoin;
         /// <summary>
         /// The Total Number Of Times The Query Has Used A Range Search. This Is The Same That Increments The Select_range Status Variable.
         /// </summary>
-        public readonly double SumSelectRange;
+        public readonly double? SumSelectRange;
         /// <summary>
         /// The Total Number Of Joins By The Query Where The Join Does Not Have An Index That Checks For The Index Usage After Each Row. This Is The Same That Increments The Select_range_check Status Variable.
         /// </summary>
-        public readonly double SumSelectRangeCheck;
+        public readonly double? SumSelectRangeCheck;
         /// <summary>
         /// The Total Number Of Times The Query Has Performed A Full Table Scan On The First Table In The Join. This Is The Same That Increments The Select_scan Status Variable.
         /// </summary>
-        public readonly double SumSelectScan;
+        public readonly double? SumSelectScan;
         /// <summary>
         /// The Total Number Of Sort Merge Passes That Have Been Done To Sort The Result Of The Query. This Is The Same That Increments The Sort_merge_passes Status Variable.
         /// </summary>
-        public readonly double SumSortMergePasses;
+        public readonly double? SumSortMergePasses;
         /// <summary>
         /// The Total Number Of Times A Sort Was Done Using Ranges. This Is The Same That Increments The Sort_range Status Variable.
         /// </summary>
-        public readonly double SumSortRange;
+        public readonly double? SumSortRange;
         /// <summary>
         /// The Total Number Of Rows Sorted. This Is The Same That Increments The Sort_rowsStatus Variable.
         /// </summary>
-        public readonly double SumSortRows;
+        public readonly double? SumSortRows;
         /// <summary>
         /// The Total Number Of Times A Sort Was Done By Scanning The Table. This Is The Same That Increments The Sort_scan Status Variable.
         /// </summary>
-        public readonly double SumSortScan;
+        public readonly double? SumSortScan;
         /// <summary>
         /// The Total Amount Of Time That Has Been Spent Executing The Query.
         /// </summary>
-        public readonly double SumTimerWait;
+        public readonly double? SumTimerWait;
         /// <summary>
         /// The Total Number Of Warnings That Have Been Encountered Executing The Query.
         /// </summary>
-        public readonly double SumWarnings;
+        public readonly double? SumWarnings;
 
         [OutputConstructor]
         private GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemResult(
-            double avgTimerWait,
+            double? avgTimerWait,
 
-            double countStar,
+            double? countStar,
 
-            string digest,
+            string? digest,
 
-            string digestText,
+            string? digestText,
 
-            string firstSeen,
+            string? firstSeen,
 
-            string lastSeen,
+            string? lastSeen,
 
-            double maxTimerWait,
+            double? maxTimerWait,
 
-            double minTimerWait,
+            double? minTimerWait,
 
-            double quantile95,
+            double? quantile95,
 
-            double quantile99,
+            double? quantile99,
 
-            double quantile999,
+            double? quantile999,
 
-            string schemaName,
+            string? schemaName,
 
-            double sumCreatedTempDiskTables,
+            double? sumCreatedTempDiskTables,
 
-            double sumCreatedTempTables,
+            double? sumCreatedTempTables,
 
-            double sumErrors,
+            double? sumErrors,
 
-            double sumLockTime,
+            double? sumLockTime,
 
-            double sumNoGoodIndexUsed,
+            double? sumNoGoodIndexUsed,
 
-            double sumNoIndexUsed,
+            double? sumNoIndexUsed,
 
-            double sumRowsAffected,
+            double? sumRowsAffected,
 
-            double sumRowsExamined,
+            double? sumRowsExamined,
 
-            double sumRowsSent,
+            double? sumRowsSent,
 
-            double sumSelectFullJoin,
+            double? sumSelectFullJoin,
 
-            double sumSelectFullRangeJoin,
+            double? sumSelectFullRangeJoin,
 
-            double sumSelectRange,
+            double? sumSelectRange,
 
-            double sumSelectRangeCheck,
+            double? sumSelectRangeCheck,
 
-            double sumSelectScan,
+            double? sumSelectScan,
 
-            double sumSortMergePasses,
+            double? sumSortMergePasses,
 
-            double sumSortRange,
+            double? sumSortRange,
 
-            double sumSortRows,
+            double? sumSortRows,
 
-            double sumSortScan,
+            double? sumSortScan,
 
-            double sumTimerWait,
+            double? sumTimerWait,
 
-            double sumWarnings)
+            double? sumWarnings)
         {
             AvgTimerWait = avgTimerWait;
             CountStar = countStar;

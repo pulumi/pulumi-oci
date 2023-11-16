@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DataSafe.outputs.GetSensitiveTypesSensitiveTypeCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSensitiveTypesSensitiveTypeCollection {
-    private List<GetSensitiveTypesSensitiveTypeCollectionItem> items;
+    private @Nullable List<GetSensitiveTypesSensitiveTypeCollectionItem> items;
 
     private GetSensitiveTypesSensitiveTypeCollection() {}
     public List<GetSensitiveTypesSensitiveTypeCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetSensitiveTypesSensitiveTypeCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetSensitiveTypesSensitiveTypeCollectionItem> items;
+        private @Nullable List<GetSensitiveTypesSensitiveTypeCollectionItem> items;
         public Builder() {}
         public Builder(GetSensitiveTypesSensitiveTypeCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetSensitiveTypesSensitiveTypeCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetSensitiveTypesSensitiveTypeCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetSensitiveTypesSensitiveTypeCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetSensitiveTypesSensitiveTypeCollectionItem... items) {

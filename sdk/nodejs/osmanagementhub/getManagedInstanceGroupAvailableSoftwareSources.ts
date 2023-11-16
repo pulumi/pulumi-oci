@@ -68,7 +68,7 @@ export interface GetManagedInstanceGroupAvailableSoftwareSourcesResult {
     /**
      * The list of available_software_source_collection.
      */
-    readonly availableSoftwareSourceCollections: outputs.OsManagementHub.GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollection[];
+    readonly availableSoftwareSourceCollections?: outputs.OsManagementHub.GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollection[];
     /**
      * The OCID for the compartment.
      */
@@ -82,7 +82,7 @@ export interface GetManagedInstanceGroupAvailableSoftwareSourcesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly managedInstanceGroupId: string;
 }
 /**

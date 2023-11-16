@@ -77,7 +77,7 @@ namespace Pulumi.Oci.OsManagement
         /// (Updatable) The yum repository checksum type used by this software source
         /// </summary>
         [Output("checksumType")]
-        public Output<string> ChecksumType { get; private set; } = null!;
+        public Output<string?> ChecksumType { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) OCID for the Compartment
@@ -89,13 +89,13 @@ namespace Pulumi.Oci.OsManagement
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Information specified by the user about the software source
         /// </summary>
         [Output("description")]
-        public Output<string> Description { get; private set; } = null!;
+        public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) User friendly name for the software source
@@ -107,49 +107,49 @@ namespace Pulumi.Oci.OsManagement
         /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// Fingerprint of the GPG key for this software source
         /// </summary>
         [Output("gpgKeyFingerprint")]
-        public Output<string> GpgKeyFingerprint { get; private set; } = null!;
+        public Output<string?> GpgKeyFingerprint { get; private set; } = null!;
 
         /// <summary>
         /// ID of the GPG key for this software source
         /// </summary>
         [Output("gpgKeyId")]
-        public Output<string> GpgKeyId { get; private set; } = null!;
+        public Output<string?> GpgKeyId { get; private set; } = null!;
 
         /// <summary>
         /// URL of the GPG key for this software source
         /// </summary>
         [Output("gpgKeyUrl")]
-        public Output<string> GpgKeyUrl { get; private set; } = null!;
+        public Output<string?> GpgKeyUrl { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Email address of the person maintaining this software source
         /// </summary>
         [Output("maintainerEmail")]
-        public Output<string> MaintainerEmail { get; private set; } = null!;
+        public Output<string?> MaintainerEmail { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Name of the person maintaining this software source
         /// </summary>
         [Output("maintainerName")]
-        public Output<string> MaintainerName { get; private set; } = null!;
+        public Output<string?> MaintainerName { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Phone number of the person maintaining this software source
         /// </summary>
         [Output("maintainerPhone")]
-        public Output<string> MaintainerPhone { get; private set; } = null!;
+        public Output<string?> MaintainerPhone { get; private set; } = null!;
 
         /// <summary>
         /// Number of packages
         /// </summary>
         [Output("packages")]
-        public Output<int> Packages { get; private set; } = null!;
+        public Output<int?> Packages { get; private set; } = null!;
 
         /// <summary>
         /// OCID for the parent software source, if there is one
@@ -159,37 +159,37 @@ namespace Pulumi.Oci.OsManagement
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("parentId")]
-        public Output<string> ParentId { get; private set; } = null!;
+        public Output<string?> ParentId { get; private set; } = null!;
 
         /// <summary>
         /// Display name the parent software source, if there is one
         /// </summary>
         [Output("parentName")]
-        public Output<string> ParentName { get; private set; } = null!;
+        public Output<string?> ParentName { get; private set; } = null!;
 
         /// <summary>
         /// Type of the Software Source
         /// </summary>
         [Output("repoType")]
-        public Output<string> RepoType { get; private set; } = null!;
+        public Output<string?> RepoType { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the Software Source.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// status of the software source.
         /// </summary>
         [Output("status")]
-        public Output<string> Status { get; private set; } = null!;
+        public Output<string?> Status { get; private set; } = null!;
 
         /// <summary>
         /// URL for the repostiory
         /// </summary>
         [Output("url")]
-        public Output<string> Url { get; private set; } = null!;
+        public Output<string?> Url { get; private set; } = null!;
 
 
         /// <summary>

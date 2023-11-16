@@ -24,11 +24,11 @@ namespace Pulumi.Oci.HealthChecks.Outputs
         /// <summary>
         /// The time immediately before the vantage point finishes the domain name lookup for the resource.
         /// </summary>
-        public readonly double DomainLookupEnd;
+        public readonly double? DomainLookupEnd;
         /// <summary>
         /// The time immediately before the vantage point starts the domain name lookup for the resource.
         /// </summary>
-        public readonly double DomainLookupStart;
+        public readonly double? DomainLookupStart;
         /// <summary>
         /// The category of error if an error occurs executing the probe. The `errorMessage` field provides a message with the error details.
         /// * NONE - No error
@@ -37,51 +37,51 @@ namespace Pulumi.Oci.HealthChecks.Outputs
         /// * NETWORK - Network-related errors, for example a "network unreachable" error.
         /// * SYSTEM - Internal system errors.
         /// </summary>
-        public readonly string ErrorCategory;
+        public readonly string? ErrorCategory;
         /// <summary>
         /// The error information indicating why a probe execution failed.
         /// </summary>
-        public readonly string ErrorMessage;
+        public readonly string? ErrorMessage;
         /// <summary>
         /// The ICMP code of the response message.  This field is not used when the protocol is set to TCP.  For more information on ICMP codes, see [Internet Control Message Protocol (ICMP) Parameters](https://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml).
         /// </summary>
-        public readonly int IcmpCode;
+        public readonly int? IcmpCode;
         /// <summary>
         /// True if the probe result is determined to be healthy based on probe type-specific criteria.  For HTTP probes, a probe result is considered healthy if the HTTP response code is greater than or equal to 200 and less than 300.
         /// </summary>
-        public readonly bool IsHealthy;
+        public readonly bool? IsHealthy;
         /// <summary>
         /// True if the probe did not complete before the configured `timeoutInSeconds` value.
         /// </summary>
-        public readonly bool IsTimedOut;
+        public readonly bool? IsTimedOut;
         /// <summary>
         /// A value identifying this specific probe result. The key is only unique within the results of its probe configuration. The key may be reused after 90 days.
         /// </summary>
-        public readonly string Key;
+        public readonly string? Key;
         /// <summary>
         /// The latency of the probe execution, in milliseconds.
         /// </summary>
-        public readonly double LatencyInMs;
+        public readonly double? LatencyInMs;
         /// <summary>
         /// The OCID of a monitor or on-demand probe.
         /// </summary>
-        public readonly string ProbeConfigurationId;
+        public readonly string? ProbeConfigurationId;
         /// <summary>
         /// The protocols for ping probes.
         /// </summary>
-        public readonly string Protocol;
+        public readonly string? Protocol;
         /// <summary>
         /// The date and time the probe was executed, expressed in milliseconds since the POSIX epoch. This field is defined by the PerformanceResourceTiming interface of the W3C Resource Timing specification. For more information, see [Resource Timing](https://w3c.github.io/resource-timing/#sec-resource-timing).
         /// </summary>
-        public readonly double StartTime;
+        public readonly double? StartTime;
         /// <summary>
         /// Filters results that match the `target`.
         /// </summary>
-        public readonly string Target;
+        public readonly string? Target;
         /// <summary>
         /// The name of the vantage point that executed the probe.
         /// </summary>
-        public readonly string VantagePointName;
+        public readonly string? VantagePointName;
 
         [OutputConstructor]
         private GetPingProbeResultsPingProbeResultResult(
@@ -89,33 +89,33 @@ namespace Pulumi.Oci.HealthChecks.Outputs
 
             ImmutableArray<Outputs.GetPingProbeResultsPingProbeResultDnResult> dns,
 
-            double domainLookupEnd,
+            double? domainLookupEnd,
 
-            double domainLookupStart,
+            double? domainLookupStart,
 
-            string errorCategory,
+            string? errorCategory,
 
-            string errorMessage,
+            string? errorMessage,
 
-            int icmpCode,
+            int? icmpCode,
 
-            bool isHealthy,
+            bool? isHealthy,
 
-            bool isTimedOut,
+            bool? isTimedOut,
 
-            string key,
+            string? key,
 
-            double latencyInMs,
+            double? latencyInMs,
 
-            string probeConfigurationId,
+            string? probeConfigurationId,
 
-            string protocol,
+            string? protocol,
 
-            double startTime,
+            double? startTime,
 
-            string target,
+            string? target,
 
-            string vantagePointName)
+            string? vantagePointName)
         {
             Connections = connections;
             Dns = dns;

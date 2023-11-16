@@ -26,115 +26,115 @@ public final class GetDomainsMyTrustedUserAgentResult {
      * @return Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
      * 
      */
-    private String compartmentOcid;
+    private @Nullable String compartmentOcid;
     /**
      * @return A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      * 
      */
-    private Boolean deleteInProgress;
+    private @Nullable Boolean deleteInProgress;
     /**
      * @return Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      * 
      */
-    private String domainOcid;
+    private @Nullable String domainOcid;
     /**
      * @return Validation period of the trust token.
      * 
      */
-    private String expiryTime;
+    private @Nullable String expiryTime;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The User or App who created the Resource
      * 
      */
-    private List<GetDomainsMyTrustedUserAgentIdcsCreatedBy> idcsCreatedBies;
+    private @Nullable List<GetDomainsMyTrustedUserAgentIdcsCreatedBy> idcsCreatedBies;
     private String idcsEndpoint;
     /**
      * @return The User or App who modified the Resource
      * 
      */
-    private List<GetDomainsMyTrustedUserAgentIdcsLastModifiedBy> idcsLastModifiedBies;
+    private @Nullable List<GetDomainsMyTrustedUserAgentIdcsLastModifiedBy> idcsLastModifiedBies;
     /**
      * @return The release number when the resource was upgraded.
      * 
      */
-    private String idcsLastUpgradedInRelease;
+    private @Nullable String idcsLastUpgradedInRelease;
     /**
      * @return Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      * 
      */
-    private List<String> idcsPreventedOperations;
+    private @Nullable List<String> idcsPreventedOperations;
     /**
      * @return Indicates when this token was used lastime.
      * 
      */
-    private String lastUsedOn;
+    private @Nullable String lastUsedOn;
     /**
      * @return The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
      * 
      */
-    private String location;
+    private @Nullable String location;
     /**
      * @return A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      * 
      */
-    private List<GetDomainsMyTrustedUserAgentMeta> metas;
+    private @Nullable List<GetDomainsMyTrustedUserAgentMeta> metas;
     private String myTrustedUserAgentId;
     /**
      * @return The name of the User Agent that the user wants the system to trust and to use in Multi-Factor Authentication.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return The OCID of the user
      * 
      */
-    private String ocid;
+    private @Nullable String ocid;
     /**
      * @return User agent platform for which the trust token has been issued.
      * 
      */
-    private String platform;
+    private @Nullable String platform;
     private @Nullable String resourceTypeSchemaVersion;
     /**
      * @return REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      * 
      */
-    private List<String> schemas;
+    private @Nullable List<String> schemas;
     /**
      * @return A list of tags on this resource.
      * 
      */
-    private List<GetDomainsMyTrustedUserAgentTag> tags;
+    private @Nullable List<GetDomainsMyTrustedUserAgentTag> tags;
     /**
      * @return Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      * 
      */
-    private String tenancyOcid;
+    private @Nullable String tenancyOcid;
     /**
      * @return The token type being created. This token is used as trusted and kmsi token.
      * 
      */
-    private String tokenType;
+    private @Nullable String tokenType;
     /**
      * @return Trust token for the user agent. This is a random string value that will be updated whenever a token that has been issued is verified successfully.
      * 
      */
-    private String trustToken;
+    private @Nullable String trustToken;
     /**
      * @return Trusted 2FA Factors
      * 
      */
-    private List<GetDomainsMyTrustedUserAgentTrustedFactor> trustedFactors;
+    private @Nullable List<GetDomainsMyTrustedUserAgentTrustedFactor> trustedFactors;
     /**
      * @return user for whom the trust-token was issued
      * 
      */
-    private List<GetDomainsMyTrustedUserAgentUser> users;
+    private @Nullable List<GetDomainsMyTrustedUserAgentUser> users;
 
     private GetDomainsMyTrustedUserAgentResult() {}
     public List<String> attributeSets() {
@@ -150,43 +150,43 @@ public final class GetDomainsMyTrustedUserAgentResult {
      * @return Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
      * 
      */
-    public String compartmentOcid() {
-        return this.compartmentOcid;
+    public Optional<String> compartmentOcid() {
+        return Optional.ofNullable(this.compartmentOcid);
     }
     /**
      * @return A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      * 
      */
-    public Boolean deleteInProgress() {
-        return this.deleteInProgress;
+    public Optional<Boolean> deleteInProgress() {
+        return Optional.ofNullable(this.deleteInProgress);
     }
     /**
      * @return Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      * 
      */
-    public String domainOcid() {
-        return this.domainOcid;
+    public Optional<String> domainOcid() {
+        return Optional.ofNullable(this.domainOcid);
     }
     /**
      * @return Validation period of the trust token.
      * 
      */
-    public String expiryTime() {
-        return this.expiryTime;
+    public Optional<String> expiryTime() {
+        return Optional.ofNullable(this.expiryTime);
     }
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The User or App who created the Resource
      * 
      */
     public List<GetDomainsMyTrustedUserAgentIdcsCreatedBy> idcsCreatedBies() {
-        return this.idcsCreatedBies;
+        return this.idcsCreatedBies == null ? List.of() : this.idcsCreatedBies;
     }
     public String idcsEndpoint() {
         return this.idcsEndpoint;
@@ -196,42 +196,42 @@ public final class GetDomainsMyTrustedUserAgentResult {
      * 
      */
     public List<GetDomainsMyTrustedUserAgentIdcsLastModifiedBy> idcsLastModifiedBies() {
-        return this.idcsLastModifiedBies;
+        return this.idcsLastModifiedBies == null ? List.of() : this.idcsLastModifiedBies;
     }
     /**
      * @return The release number when the resource was upgraded.
      * 
      */
-    public String idcsLastUpgradedInRelease() {
-        return this.idcsLastUpgradedInRelease;
+    public Optional<String> idcsLastUpgradedInRelease() {
+        return Optional.ofNullable(this.idcsLastUpgradedInRelease);
     }
     /**
      * @return Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      * 
      */
     public List<String> idcsPreventedOperations() {
-        return this.idcsPreventedOperations;
+        return this.idcsPreventedOperations == null ? List.of() : this.idcsPreventedOperations;
     }
     /**
      * @return Indicates when this token was used lastime.
      * 
      */
-    public String lastUsedOn() {
-        return this.lastUsedOn;
+    public Optional<String> lastUsedOn() {
+        return Optional.ofNullable(this.lastUsedOn);
     }
     /**
      * @return The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
      * 
      */
-    public String location() {
-        return this.location;
+    public Optional<String> location() {
+        return Optional.ofNullable(this.location);
     }
     /**
      * @return A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      * 
      */
     public List<GetDomainsMyTrustedUserAgentMeta> metas() {
-        return this.metas;
+        return this.metas == null ? List.of() : this.metas;
     }
     public String myTrustedUserAgentId() {
         return this.myTrustedUserAgentId;
@@ -240,22 +240,22 @@ public final class GetDomainsMyTrustedUserAgentResult {
      * @return The name of the User Agent that the user wants the system to trust and to use in Multi-Factor Authentication.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return The OCID of the user
      * 
      */
-    public String ocid() {
-        return this.ocid;
+    public Optional<String> ocid() {
+        return Optional.ofNullable(this.ocid);
     }
     /**
      * @return User agent platform for which the trust token has been issued.
      * 
      */
-    public String platform() {
-        return this.platform;
+    public Optional<String> platform() {
+        return Optional.ofNullable(this.platform);
     }
     public Optional<String> resourceTypeSchemaVersion() {
         return Optional.ofNullable(this.resourceTypeSchemaVersion);
@@ -265,49 +265,49 @@ public final class GetDomainsMyTrustedUserAgentResult {
      * 
      */
     public List<String> schemas() {
-        return this.schemas;
+        return this.schemas == null ? List.of() : this.schemas;
     }
     /**
      * @return A list of tags on this resource.
      * 
      */
     public List<GetDomainsMyTrustedUserAgentTag> tags() {
-        return this.tags;
+        return this.tags == null ? List.of() : this.tags;
     }
     /**
      * @return Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      * 
      */
-    public String tenancyOcid() {
-        return this.tenancyOcid;
+    public Optional<String> tenancyOcid() {
+        return Optional.ofNullable(this.tenancyOcid);
     }
     /**
      * @return The token type being created. This token is used as trusted and kmsi token.
      * 
      */
-    public String tokenType() {
-        return this.tokenType;
+    public Optional<String> tokenType() {
+        return Optional.ofNullable(this.tokenType);
     }
     /**
      * @return Trust token for the user agent. This is a random string value that will be updated whenever a token that has been issued is verified successfully.
      * 
      */
-    public String trustToken() {
-        return this.trustToken;
+    public Optional<String> trustToken() {
+        return Optional.ofNullable(this.trustToken);
     }
     /**
      * @return Trusted 2FA Factors
      * 
      */
     public List<GetDomainsMyTrustedUserAgentTrustedFactor> trustedFactors() {
-        return this.trustedFactors;
+        return this.trustedFactors == null ? List.of() : this.trustedFactors;
     }
     /**
      * @return user for whom the trust-token was issued
      * 
      */
     public List<GetDomainsMyTrustedUserAgentUser> users() {
-        return this.users;
+        return this.users == null ? List.of() : this.users;
     }
 
     public static Builder builder() {
@@ -322,31 +322,31 @@ public final class GetDomainsMyTrustedUserAgentResult {
         private @Nullable List<String> attributeSets;
         private @Nullable String attributes;
         private @Nullable String authorization;
-        private String compartmentOcid;
-        private Boolean deleteInProgress;
-        private String domainOcid;
-        private String expiryTime;
-        private String id;
-        private List<GetDomainsMyTrustedUserAgentIdcsCreatedBy> idcsCreatedBies;
+        private @Nullable String compartmentOcid;
+        private @Nullable Boolean deleteInProgress;
+        private @Nullable String domainOcid;
+        private @Nullable String expiryTime;
+        private @Nullable String id;
+        private @Nullable List<GetDomainsMyTrustedUserAgentIdcsCreatedBy> idcsCreatedBies;
         private String idcsEndpoint;
-        private List<GetDomainsMyTrustedUserAgentIdcsLastModifiedBy> idcsLastModifiedBies;
-        private String idcsLastUpgradedInRelease;
-        private List<String> idcsPreventedOperations;
-        private String lastUsedOn;
-        private String location;
-        private List<GetDomainsMyTrustedUserAgentMeta> metas;
+        private @Nullable List<GetDomainsMyTrustedUserAgentIdcsLastModifiedBy> idcsLastModifiedBies;
+        private @Nullable String idcsLastUpgradedInRelease;
+        private @Nullable List<String> idcsPreventedOperations;
+        private @Nullable String lastUsedOn;
+        private @Nullable String location;
+        private @Nullable List<GetDomainsMyTrustedUserAgentMeta> metas;
         private String myTrustedUserAgentId;
-        private String name;
-        private String ocid;
-        private String platform;
+        private @Nullable String name;
+        private @Nullable String ocid;
+        private @Nullable String platform;
         private @Nullable String resourceTypeSchemaVersion;
-        private List<String> schemas;
-        private List<GetDomainsMyTrustedUserAgentTag> tags;
-        private String tenancyOcid;
-        private String tokenType;
-        private String trustToken;
-        private List<GetDomainsMyTrustedUserAgentTrustedFactor> trustedFactors;
-        private List<GetDomainsMyTrustedUserAgentUser> users;
+        private @Nullable List<String> schemas;
+        private @Nullable List<GetDomainsMyTrustedUserAgentTag> tags;
+        private @Nullable String tenancyOcid;
+        private @Nullable String tokenType;
+        private @Nullable String trustToken;
+        private @Nullable List<GetDomainsMyTrustedUserAgentTrustedFactor> trustedFactors;
+        private @Nullable List<GetDomainsMyTrustedUserAgentUser> users;
         public Builder() {}
         public Builder(GetDomainsMyTrustedUserAgentResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -399,33 +399,33 @@ public final class GetDomainsMyTrustedUserAgentResult {
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentOcid(String compartmentOcid) {
-            this.compartmentOcid = Objects.requireNonNull(compartmentOcid);
+        public Builder compartmentOcid(@Nullable String compartmentOcid) {
+            this.compartmentOcid = compartmentOcid;
             return this;
         }
         @CustomType.Setter
-        public Builder deleteInProgress(Boolean deleteInProgress) {
-            this.deleteInProgress = Objects.requireNonNull(deleteInProgress);
+        public Builder deleteInProgress(@Nullable Boolean deleteInProgress) {
+            this.deleteInProgress = deleteInProgress;
             return this;
         }
         @CustomType.Setter
-        public Builder domainOcid(String domainOcid) {
-            this.domainOcid = Objects.requireNonNull(domainOcid);
+        public Builder domainOcid(@Nullable String domainOcid) {
+            this.domainOcid = domainOcid;
             return this;
         }
         @CustomType.Setter
-        public Builder expiryTime(String expiryTime) {
-            this.expiryTime = Objects.requireNonNull(expiryTime);
+        public Builder expiryTime(@Nullable String expiryTime) {
+            this.expiryTime = expiryTime;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsCreatedBies(List<GetDomainsMyTrustedUserAgentIdcsCreatedBy> idcsCreatedBies) {
-            this.idcsCreatedBies = Objects.requireNonNull(idcsCreatedBies);
+        public Builder idcsCreatedBies(@Nullable List<GetDomainsMyTrustedUserAgentIdcsCreatedBy> idcsCreatedBies) {
+            this.idcsCreatedBies = idcsCreatedBies;
             return this;
         }
         public Builder idcsCreatedBies(GetDomainsMyTrustedUserAgentIdcsCreatedBy... idcsCreatedBies) {
@@ -437,39 +437,39 @@ public final class GetDomainsMyTrustedUserAgentResult {
             return this;
         }
         @CustomType.Setter
-        public Builder idcsLastModifiedBies(List<GetDomainsMyTrustedUserAgentIdcsLastModifiedBy> idcsLastModifiedBies) {
-            this.idcsLastModifiedBies = Objects.requireNonNull(idcsLastModifiedBies);
+        public Builder idcsLastModifiedBies(@Nullable List<GetDomainsMyTrustedUserAgentIdcsLastModifiedBy> idcsLastModifiedBies) {
+            this.idcsLastModifiedBies = idcsLastModifiedBies;
             return this;
         }
         public Builder idcsLastModifiedBies(GetDomainsMyTrustedUserAgentIdcsLastModifiedBy... idcsLastModifiedBies) {
             return idcsLastModifiedBies(List.of(idcsLastModifiedBies));
         }
         @CustomType.Setter
-        public Builder idcsLastUpgradedInRelease(String idcsLastUpgradedInRelease) {
-            this.idcsLastUpgradedInRelease = Objects.requireNonNull(idcsLastUpgradedInRelease);
+        public Builder idcsLastUpgradedInRelease(@Nullable String idcsLastUpgradedInRelease) {
+            this.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsPreventedOperations(List<String> idcsPreventedOperations) {
-            this.idcsPreventedOperations = Objects.requireNonNull(idcsPreventedOperations);
+        public Builder idcsPreventedOperations(@Nullable List<String> idcsPreventedOperations) {
+            this.idcsPreventedOperations = idcsPreventedOperations;
             return this;
         }
         public Builder idcsPreventedOperations(String... idcsPreventedOperations) {
             return idcsPreventedOperations(List.of(idcsPreventedOperations));
         }
         @CustomType.Setter
-        public Builder lastUsedOn(String lastUsedOn) {
-            this.lastUsedOn = Objects.requireNonNull(lastUsedOn);
+        public Builder lastUsedOn(@Nullable String lastUsedOn) {
+            this.lastUsedOn = lastUsedOn;
             return this;
         }
         @CustomType.Setter
-        public Builder location(String location) {
-            this.location = Objects.requireNonNull(location);
+        public Builder location(@Nullable String location) {
+            this.location = location;
             return this;
         }
         @CustomType.Setter
-        public Builder metas(List<GetDomainsMyTrustedUserAgentMeta> metas) {
-            this.metas = Objects.requireNonNull(metas);
+        public Builder metas(@Nullable List<GetDomainsMyTrustedUserAgentMeta> metas) {
+            this.metas = metas;
             return this;
         }
         public Builder metas(GetDomainsMyTrustedUserAgentMeta... metas) {
@@ -481,18 +481,18 @@ public final class GetDomainsMyTrustedUserAgentResult {
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder ocid(String ocid) {
-            this.ocid = Objects.requireNonNull(ocid);
+        public Builder ocid(@Nullable String ocid) {
+            this.ocid = ocid;
             return this;
         }
         @CustomType.Setter
-        public Builder platform(String platform) {
-            this.platform = Objects.requireNonNull(platform);
+        public Builder platform(@Nullable String platform) {
+            this.platform = platform;
             return this;
         }
         @CustomType.Setter
@@ -501,47 +501,47 @@ public final class GetDomainsMyTrustedUserAgentResult {
             return this;
         }
         @CustomType.Setter
-        public Builder schemas(List<String> schemas) {
-            this.schemas = Objects.requireNonNull(schemas);
+        public Builder schemas(@Nullable List<String> schemas) {
+            this.schemas = schemas;
             return this;
         }
         public Builder schemas(String... schemas) {
             return schemas(List.of(schemas));
         }
         @CustomType.Setter
-        public Builder tags(List<GetDomainsMyTrustedUserAgentTag> tags) {
-            this.tags = Objects.requireNonNull(tags);
+        public Builder tags(@Nullable List<GetDomainsMyTrustedUserAgentTag> tags) {
+            this.tags = tags;
             return this;
         }
         public Builder tags(GetDomainsMyTrustedUserAgentTag... tags) {
             return tags(List.of(tags));
         }
         @CustomType.Setter
-        public Builder tenancyOcid(String tenancyOcid) {
-            this.tenancyOcid = Objects.requireNonNull(tenancyOcid);
+        public Builder tenancyOcid(@Nullable String tenancyOcid) {
+            this.tenancyOcid = tenancyOcid;
             return this;
         }
         @CustomType.Setter
-        public Builder tokenType(String tokenType) {
-            this.tokenType = Objects.requireNonNull(tokenType);
+        public Builder tokenType(@Nullable String tokenType) {
+            this.tokenType = tokenType;
             return this;
         }
         @CustomType.Setter
-        public Builder trustToken(String trustToken) {
-            this.trustToken = Objects.requireNonNull(trustToken);
+        public Builder trustToken(@Nullable String trustToken) {
+            this.trustToken = trustToken;
             return this;
         }
         @CustomType.Setter
-        public Builder trustedFactors(List<GetDomainsMyTrustedUserAgentTrustedFactor> trustedFactors) {
-            this.trustedFactors = Objects.requireNonNull(trustedFactors);
+        public Builder trustedFactors(@Nullable List<GetDomainsMyTrustedUserAgentTrustedFactor> trustedFactors) {
+            this.trustedFactors = trustedFactors;
             return this;
         }
         public Builder trustedFactors(GetDomainsMyTrustedUserAgentTrustedFactor... trustedFactors) {
             return trustedFactors(List.of(trustedFactors));
         }
         @CustomType.Setter
-        public Builder users(List<GetDomainsMyTrustedUserAgentUser> users) {
-            this.users = Objects.requireNonNull(users);
+        public Builder users(@Nullable List<GetDomainsMyTrustedUserAgentUser> users) {
+            this.users = users;
             return this;
         }
         public Builder users(GetDomainsMyTrustedUserAgentUser... users) {

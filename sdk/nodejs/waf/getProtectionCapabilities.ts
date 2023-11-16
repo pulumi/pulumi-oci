@@ -86,7 +86,7 @@ export interface GetProtectionCapabilitiesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The field that shows if this is the latest version of protection capability.
      */
@@ -98,7 +98,7 @@ export interface GetProtectionCapabilitiesResult {
     /**
      * The list of protection_capability_collection.
      */
-    readonly protectionCapabilityCollections: outputs.Waf.GetProtectionCapabilitiesProtectionCapabilityCollection[];
+    readonly protectionCapabilityCollections?: outputs.Waf.GetProtectionCapabilitiesProtectionCapabilityCollection[];
     /**
      * The type of protection capability.
      * * **REQUEST_PROTECTION_CAPABILITY** can only be used in `requestProtection` module of WebAppFirewallPolicy.

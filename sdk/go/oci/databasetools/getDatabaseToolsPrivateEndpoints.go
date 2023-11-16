@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Database Tools Private Endpoints in Oracle Cloud Infrastructure Database Tools service.
@@ -82,7 +81,7 @@ type GetDatabaseToolsPrivateEndpointsResult struct {
 	EndpointServiceId *string                                  `pulumi:"endpointServiceId"`
 	Filters           []GetDatabaseToolsPrivateEndpointsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The current state of the Database Tools private endpoint.
 	State *string `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet that the private endpoint belongs to.
@@ -136,12 +135,6 @@ func (o GetDatabaseToolsPrivateEndpointsResultOutput) ToGetDatabaseToolsPrivateE
 	return o
 }
 
-func (o GetDatabaseToolsPrivateEndpointsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseToolsPrivateEndpointsResult] {
-	return pulumix.Output[GetDatabaseToolsPrivateEndpointsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools private endpoint.
 func (o GetDatabaseToolsPrivateEndpointsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseToolsPrivateEndpointsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -171,8 +164,8 @@ func (o GetDatabaseToolsPrivateEndpointsResultOutput) Filters() GetDatabaseTools
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetDatabaseToolsPrivateEndpointsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabaseToolsPrivateEndpointsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDatabaseToolsPrivateEndpointsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseToolsPrivateEndpointsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the Database Tools private endpoint.

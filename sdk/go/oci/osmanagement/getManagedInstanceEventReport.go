@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Managed Instance Event Report resource in Oracle Cloud Infrastructure OS Management service.
@@ -69,9 +68,9 @@ type GetManagedInstanceEventReportArgs struct {
 // A collection of values returned by getManagedInstanceEventReport.
 type GetManagedInstanceEventReportResult struct {
 	CompartmentId string `pulumi:"compartmentId"`
-	Counts        int    `pulumi:"counts"`
+	Counts        *int   `pulumi:"counts"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                                  string  `pulumi:"id"`
+	Id                                  *string `pulumi:"id"`
 	LatestTimestampGreaterThanOrEqualTo *string `pulumi:"latestTimestampGreaterThanOrEqualTo"`
 	LatestTimestampLessThan             *string `pulumi:"latestTimestampLessThan"`
 	ManagedInstanceId                   string  `pulumi:"managedInstanceId"`
@@ -121,23 +120,17 @@ func (o GetManagedInstanceEventReportResultOutput) ToGetManagedInstanceEventRepo
 	return o
 }
 
-func (o GetManagedInstanceEventReportResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstanceEventReportResult] {
-	return pulumix.Output[GetManagedInstanceEventReportResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetManagedInstanceEventReportResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagedInstanceEventReportResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-func (o GetManagedInstanceEventReportResultOutput) Counts() pulumi.IntOutput {
-	return o.ApplyT(func(v GetManagedInstanceEventReportResult) int { return v.Counts }).(pulumi.IntOutput)
+func (o GetManagedInstanceEventReportResultOutput) Counts() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetManagedInstanceEventReportResult) *int { return v.Counts }).(pulumi.IntPtrOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetManagedInstanceEventReportResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedInstanceEventReportResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetManagedInstanceEventReportResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedInstanceEventReportResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetManagedInstanceEventReportResultOutput) LatestTimestampGreaterThanOrEqualTo() pulumi.StringPtrOutput {

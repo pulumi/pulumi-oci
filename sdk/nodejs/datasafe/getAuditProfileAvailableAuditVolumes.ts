@@ -81,12 +81,12 @@ export interface GetAuditProfileAvailableAuditVolumesResult {
     /**
      * The list of available_audit_volume_collection.
      */
-    readonly availableAuditVolumeCollections: outputs.DataSafe.GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollection[];
+    readonly availableAuditVolumeCollections?: outputs.DataSafe.GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollection[];
     readonly filters?: outputs.DataSafe.GetAuditProfileAvailableAuditVolumesFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly monthInConsiderationGreaterThan?: string;
     readonly monthInConsiderationLessThan?: string;
     /**

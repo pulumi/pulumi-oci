@@ -9,6 +9,8 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDbNodeResult {
@@ -16,160 +18,160 @@ public final class GetDbNodeResult {
      * @return Additional information about the planned maintenance.
      * 
      */
-    private String additionalDetails;
+    private @Nullable String additionalDetails;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup IP address associated with the database node. Use this OCID with either the [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IP address needed to make a database connection.
      * 
      */
-    private String backupIpId;
+    private @Nullable String backupIpId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second backup VNIC.
      * 
      */
-    private String backupVnic2id;
+    private @Nullable String backupVnic2id;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup VNIC.
      * 
      */
-    private String backupVnicId;
+    private @Nullable String backupVnicId;
     /**
      * @return The number of CPU cores enabled on the Db node.
      * 
      */
-    private Integer cpuCoreCount;
+    private @Nullable Integer cpuCoreCount;
     private String dbNodeId;
     /**
      * @return The allocated local node storage in GBs on the Db node.
      * 
      */
-    private Integer dbNodeStorageSizeInGbs;
+    private @Nullable Integer dbNodeStorageSizeInGbs;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exacc Db server associated with the database node.
      * 
      */
-    private String dbServerId;
+    private @Nullable String dbServerId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
      * 
      */
-    private String dbSystemId;
+    private @Nullable String dbSystemId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return The name of the Fault Domain the instance is contained in.
      * 
      */
-    private String faultDomain;
+    private @Nullable String faultDomain;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host IP address associated with the database node. Use this OCID with either the  [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IP address  needed to make a database connection.
      * **Note:** Applies only to Exadata Cloud Service.
      * 
      */
-    private String hostIpId;
+    private @Nullable String hostIpId;
     /**
      * @return The host name for the database node.
      * 
      */
-    private String hostname;
+    private @Nullable String hostname;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database node.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Information about the current lifecycle state.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return The type of database node maintenance.
      * 
      */
-    private String maintenanceType;
+    private @Nullable String maintenanceType;
     /**
      * @return The allocated memory in GBs on the Db node.
      * 
      */
-    private Integer memorySizeInGbs;
+    private @Nullable Integer memorySizeInGbs;
     /**
      * @return The size (in GB) of the block storage volume allocation for the DB system. This attribute applies only for virtual machine DB systems.
      * 
      */
-    private Integer softwareStorageSizeInGb;
+    private @Nullable Integer softwareStorageSizeInGb;
     /**
      * @return The current state of the database node.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The date and time that the database node was created.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return End date and time of maintenance window.
      * 
      */
-    private String timeMaintenanceWindowEnd;
+    private @Nullable String timeMaintenanceWindowEnd;
     /**
      * @return Start date and time of maintenance window.
      * 
      */
-    private String timeMaintenanceWindowStart;
+    private @Nullable String timeMaintenanceWindowStart;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second VNIC.
      * 
      */
-    private String vnic2id;
+    private @Nullable String vnic2id;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC.
      * 
      */
-    private String vnicId;
+    private @Nullable String vnicId;
 
     private GetDbNodeResult() {}
     /**
      * @return Additional information about the planned maintenance.
      * 
      */
-    public String additionalDetails() {
-        return this.additionalDetails;
+    public Optional<String> additionalDetails() {
+        return Optional.ofNullable(this.additionalDetails);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup IP address associated with the database node. Use this OCID with either the [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IP address needed to make a database connection.
      * 
      */
-    public String backupIpId() {
-        return this.backupIpId;
+    public Optional<String> backupIpId() {
+        return Optional.ofNullable(this.backupIpId);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second backup VNIC.
      * 
      */
-    public String backupVnic2id() {
-        return this.backupVnic2id;
+    public Optional<String> backupVnic2id() {
+        return Optional.ofNullable(this.backupVnic2id);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup VNIC.
      * 
      */
-    public String backupVnicId() {
-        return this.backupVnicId;
+    public Optional<String> backupVnicId() {
+        return Optional.ofNullable(this.backupVnicId);
     }
     /**
      * @return The number of CPU cores enabled on the Db node.
      * 
      */
-    public Integer cpuCoreCount() {
-        return this.cpuCoreCount;
+    public Optional<Integer> cpuCoreCount() {
+        return Optional.ofNullable(this.cpuCoreCount);
     }
     public String dbNodeId() {
         return this.dbNodeId;
@@ -178,135 +180,135 @@ public final class GetDbNodeResult {
      * @return The allocated local node storage in GBs on the Db node.
      * 
      */
-    public Integer dbNodeStorageSizeInGbs() {
-        return this.dbNodeStorageSizeInGbs;
+    public Optional<Integer> dbNodeStorageSizeInGbs() {
+        return Optional.ofNullable(this.dbNodeStorageSizeInGbs);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exacc Db server associated with the database node.
      * 
      */
-    public String dbServerId() {
-        return this.dbServerId;
+    public Optional<String> dbServerId() {
+        return Optional.ofNullable(this.dbServerId);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
      * 
      */
-    public String dbSystemId() {
-        return this.dbSystemId;
+    public Optional<String> dbSystemId() {
+        return Optional.ofNullable(this.dbSystemId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return The name of the Fault Domain the instance is contained in.
      * 
      */
-    public String faultDomain() {
-        return this.faultDomain;
+    public Optional<String> faultDomain() {
+        return Optional.ofNullable(this.faultDomain);
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host IP address associated with the database node. Use this OCID with either the  [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IP address  needed to make a database connection.
      * **Note:** Applies only to Exadata Cloud Service.
      * 
      */
-    public String hostIpId() {
-        return this.hostIpId;
+    public Optional<String> hostIpId() {
+        return Optional.ofNullable(this.hostIpId);
     }
     /**
      * @return The host name for the database node.
      * 
      */
-    public String hostname() {
-        return this.hostname;
+    public Optional<String> hostname() {
+        return Optional.ofNullable(this.hostname);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database node.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Information about the current lifecycle state.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return The type of database node maintenance.
      * 
      */
-    public String maintenanceType() {
-        return this.maintenanceType;
+    public Optional<String> maintenanceType() {
+        return Optional.ofNullable(this.maintenanceType);
     }
     /**
      * @return The allocated memory in GBs on the Db node.
      * 
      */
-    public Integer memorySizeInGbs() {
-        return this.memorySizeInGbs;
+    public Optional<Integer> memorySizeInGbs() {
+        return Optional.ofNullable(this.memorySizeInGbs);
     }
     /**
      * @return The size (in GB) of the block storage volume allocation for the DB system. This attribute applies only for virtual machine DB systems.
      * 
      */
-    public Integer softwareStorageSizeInGb() {
-        return this.softwareStorageSizeInGb;
+    public Optional<Integer> softwareStorageSizeInGb() {
+        return Optional.ofNullable(this.softwareStorageSizeInGb);
     }
     /**
      * @return The current state of the database node.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The date and time that the database node was created.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return End date and time of maintenance window.
      * 
      */
-    public String timeMaintenanceWindowEnd() {
-        return this.timeMaintenanceWindowEnd;
+    public Optional<String> timeMaintenanceWindowEnd() {
+        return Optional.ofNullable(this.timeMaintenanceWindowEnd);
     }
     /**
      * @return Start date and time of maintenance window.
      * 
      */
-    public String timeMaintenanceWindowStart() {
-        return this.timeMaintenanceWindowStart;
+    public Optional<String> timeMaintenanceWindowStart() {
+        return Optional.ofNullable(this.timeMaintenanceWindowStart);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second VNIC.
      * 
      */
-    public String vnic2id() {
-        return this.vnic2id;
+    public Optional<String> vnic2id() {
+        return Optional.ofNullable(this.vnic2id);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC.
      * 
      */
-    public String vnicId() {
-        return this.vnicId;
+    public Optional<String> vnicId() {
+        return Optional.ofNullable(this.vnicId);
     }
 
     public static Builder builder() {
@@ -318,31 +320,31 @@ public final class GetDbNodeResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String additionalDetails;
-        private String backupIpId;
-        private String backupVnic2id;
-        private String backupVnicId;
-        private Integer cpuCoreCount;
+        private @Nullable String additionalDetails;
+        private @Nullable String backupIpId;
+        private @Nullable String backupVnic2id;
+        private @Nullable String backupVnicId;
+        private @Nullable Integer cpuCoreCount;
         private String dbNodeId;
-        private Integer dbNodeStorageSizeInGbs;
-        private String dbServerId;
-        private String dbSystemId;
-        private Map<String,Object> definedTags;
-        private String faultDomain;
-        private Map<String,Object> freeformTags;
-        private String hostIpId;
-        private String hostname;
-        private String id;
-        private String lifecycleDetails;
-        private String maintenanceType;
-        private Integer memorySizeInGbs;
-        private Integer softwareStorageSizeInGb;
-        private String state;
-        private String timeCreated;
-        private String timeMaintenanceWindowEnd;
-        private String timeMaintenanceWindowStart;
-        private String vnic2id;
-        private String vnicId;
+        private @Nullable Integer dbNodeStorageSizeInGbs;
+        private @Nullable String dbServerId;
+        private @Nullable String dbSystemId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String faultDomain;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String hostIpId;
+        private @Nullable String hostname;
+        private @Nullable String id;
+        private @Nullable String lifecycleDetails;
+        private @Nullable String maintenanceType;
+        private @Nullable Integer memorySizeInGbs;
+        private @Nullable Integer softwareStorageSizeInGb;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
+        private @Nullable String timeMaintenanceWindowEnd;
+        private @Nullable String timeMaintenanceWindowStart;
+        private @Nullable String vnic2id;
+        private @Nullable String vnicId;
         public Builder() {}
         public Builder(GetDbNodeResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -374,28 +376,28 @@ public final class GetDbNodeResult {
         }
 
         @CustomType.Setter
-        public Builder additionalDetails(String additionalDetails) {
-            this.additionalDetails = Objects.requireNonNull(additionalDetails);
+        public Builder additionalDetails(@Nullable String additionalDetails) {
+            this.additionalDetails = additionalDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder backupIpId(String backupIpId) {
-            this.backupIpId = Objects.requireNonNull(backupIpId);
+        public Builder backupIpId(@Nullable String backupIpId) {
+            this.backupIpId = backupIpId;
             return this;
         }
         @CustomType.Setter
-        public Builder backupVnic2id(String backupVnic2id) {
-            this.backupVnic2id = Objects.requireNonNull(backupVnic2id);
+        public Builder backupVnic2id(@Nullable String backupVnic2id) {
+            this.backupVnic2id = backupVnic2id;
             return this;
         }
         @CustomType.Setter
-        public Builder backupVnicId(String backupVnicId) {
-            this.backupVnicId = Objects.requireNonNull(backupVnicId);
+        public Builder backupVnicId(@Nullable String backupVnicId) {
+            this.backupVnicId = backupVnicId;
             return this;
         }
         @CustomType.Setter
-        public Builder cpuCoreCount(Integer cpuCoreCount) {
-            this.cpuCoreCount = Objects.requireNonNull(cpuCoreCount);
+        public Builder cpuCoreCount(@Nullable Integer cpuCoreCount) {
+            this.cpuCoreCount = cpuCoreCount;
             return this;
         }
         @CustomType.Setter
@@ -404,98 +406,98 @@ public final class GetDbNodeResult {
             return this;
         }
         @CustomType.Setter
-        public Builder dbNodeStorageSizeInGbs(Integer dbNodeStorageSizeInGbs) {
-            this.dbNodeStorageSizeInGbs = Objects.requireNonNull(dbNodeStorageSizeInGbs);
+        public Builder dbNodeStorageSizeInGbs(@Nullable Integer dbNodeStorageSizeInGbs) {
+            this.dbNodeStorageSizeInGbs = dbNodeStorageSizeInGbs;
             return this;
         }
         @CustomType.Setter
-        public Builder dbServerId(String dbServerId) {
-            this.dbServerId = Objects.requireNonNull(dbServerId);
+        public Builder dbServerId(@Nullable String dbServerId) {
+            this.dbServerId = dbServerId;
             return this;
         }
         @CustomType.Setter
-        public Builder dbSystemId(String dbSystemId) {
-            this.dbSystemId = Objects.requireNonNull(dbSystemId);
+        public Builder dbSystemId(@Nullable String dbSystemId) {
+            this.dbSystemId = dbSystemId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder faultDomain(String faultDomain) {
-            this.faultDomain = Objects.requireNonNull(faultDomain);
+        public Builder faultDomain(@Nullable String faultDomain) {
+            this.faultDomain = faultDomain;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder hostIpId(String hostIpId) {
-            this.hostIpId = Objects.requireNonNull(hostIpId);
+        public Builder hostIpId(@Nullable String hostIpId) {
+            this.hostIpId = hostIpId;
             return this;
         }
         @CustomType.Setter
-        public Builder hostname(String hostname) {
-            this.hostname = Objects.requireNonNull(hostname);
+        public Builder hostname(@Nullable String hostname) {
+            this.hostname = hostname;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder maintenanceType(String maintenanceType) {
-            this.maintenanceType = Objects.requireNonNull(maintenanceType);
+        public Builder maintenanceType(@Nullable String maintenanceType) {
+            this.maintenanceType = maintenanceType;
             return this;
         }
         @CustomType.Setter
-        public Builder memorySizeInGbs(Integer memorySizeInGbs) {
-            this.memorySizeInGbs = Objects.requireNonNull(memorySizeInGbs);
+        public Builder memorySizeInGbs(@Nullable Integer memorySizeInGbs) {
+            this.memorySizeInGbs = memorySizeInGbs;
             return this;
         }
         @CustomType.Setter
-        public Builder softwareStorageSizeInGb(Integer softwareStorageSizeInGb) {
-            this.softwareStorageSizeInGb = Objects.requireNonNull(softwareStorageSizeInGb);
+        public Builder softwareStorageSizeInGb(@Nullable Integer softwareStorageSizeInGb) {
+            this.softwareStorageSizeInGb = softwareStorageSizeInGb;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeMaintenanceWindowEnd(String timeMaintenanceWindowEnd) {
-            this.timeMaintenanceWindowEnd = Objects.requireNonNull(timeMaintenanceWindowEnd);
+        public Builder timeMaintenanceWindowEnd(@Nullable String timeMaintenanceWindowEnd) {
+            this.timeMaintenanceWindowEnd = timeMaintenanceWindowEnd;
             return this;
         }
         @CustomType.Setter
-        public Builder timeMaintenanceWindowStart(String timeMaintenanceWindowStart) {
-            this.timeMaintenanceWindowStart = Objects.requireNonNull(timeMaintenanceWindowStart);
+        public Builder timeMaintenanceWindowStart(@Nullable String timeMaintenanceWindowStart) {
+            this.timeMaintenanceWindowStart = timeMaintenanceWindowStart;
             return this;
         }
         @CustomType.Setter
-        public Builder vnic2id(String vnic2id) {
-            this.vnic2id = Objects.requireNonNull(vnic2id);
+        public Builder vnic2id(@Nullable String vnic2id) {
+            this.vnic2id = vnic2id;
             return this;
         }
         @CustomType.Setter
-        public Builder vnicId(String vnicId) {
-            this.vnicId = Objects.requireNonNull(vnicId);
+        public Builder vnicId(@Nullable String vnicId) {
+            this.vnicId = vnicId;
             return this;
         }
         public GetDbNodeResult build() {

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Network Firewall Policy Security Rule resource in Oracle Cloud Infrastructure Network Firewall service.
@@ -40,22 +39,22 @@ type LookupNetworkFirewallPolicySecurityRuleResult struct {
 	// * DROP - Silently drops the traffic, e.g. without sending a TCP reset.
 	// * REJECT - Rejects the traffic, sending a TCP reset to client and/or server as applicable.
 	// * INSPECT - Inspects traffic for vulnerability as specified in `inspection`, which may result in rejection.
-	Action string `pulumi:"action"`
+	Action *string `pulumi:"action"`
 	// Criteria to evaluate against network traffic. A match occurs when at least one item in the array associated with each specified property corresponds with the relevant aspect of the traffic.
 	Conditions []GetNetworkFirewallPolicySecurityRuleCondition `pulumi:"conditions"`
-	Id         string                                          `pulumi:"id"`
+	Id         *string                                         `pulumi:"id"`
 	// Type of inspection to affect the Traffic flow. This is only applicable if action is INSPECT.
 	// * INTRUSION_DETECTION - Intrusion Detection.
 	// * INTRUSION_PREVENTION - Intrusion Detection and Prevention. Traffic classified as potentially malicious will be rejected as described in `type`.
-	Inspection string `pulumi:"inspection"`
+	Inspection *string `pulumi:"inspection"`
 	// Name for the Security rule, must be unique within the policy.
 	Name                    string `pulumi:"name"`
 	NetworkFirewallPolicyId string `pulumi:"networkFirewallPolicyId"`
 	// OCID of the Network Firewall Policy this security rule belongs to.
-	ParentResourceId string `pulumi:"parentResourceId"`
+	ParentResourceId *string `pulumi:"parentResourceId"`
 	// An object which defines the position of the rule.
 	Positions     []GetNetworkFirewallPolicySecurityRulePosition `pulumi:"positions"`
-	PriorityOrder string                                         `pulumi:"priorityOrder"`
+	PriorityOrder *string                                        `pulumi:"priorityOrder"`
 }
 
 func LookupNetworkFirewallPolicySecurityRuleOutput(ctx *pulumi.Context, args LookupNetworkFirewallPolicySecurityRuleOutputArgs, opts ...pulumi.InvokeOption) LookupNetworkFirewallPolicySecurityRuleResultOutput {
@@ -98,19 +97,13 @@ func (o LookupNetworkFirewallPolicySecurityRuleResultOutput) ToLookupNetworkFire
 	return o
 }
 
-func (o LookupNetworkFirewallPolicySecurityRuleResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupNetworkFirewallPolicySecurityRuleResult] {
-	return pulumix.Output[LookupNetworkFirewallPolicySecurityRuleResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Types of Action on the Traffic flow.
 // * ALLOW - Allows the traffic.
 // * DROP - Silently drops the traffic, e.g. without sending a TCP reset.
 // * REJECT - Rejects the traffic, sending a TCP reset to client and/or server as applicable.
 // * INSPECT - Inspects traffic for vulnerability as specified in `inspection`, which may result in rejection.
-func (o LookupNetworkFirewallPolicySecurityRuleResultOutput) Action() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNetworkFirewallPolicySecurityRuleResult) string { return v.Action }).(pulumi.StringOutput)
+func (o LookupNetworkFirewallPolicySecurityRuleResultOutput) Action() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNetworkFirewallPolicySecurityRuleResult) *string { return v.Action }).(pulumi.StringPtrOutput)
 }
 
 // Criteria to evaluate against network traffic. A match occurs when at least one item in the array associated with each specified property corresponds with the relevant aspect of the traffic.
@@ -120,15 +113,15 @@ func (o LookupNetworkFirewallPolicySecurityRuleResultOutput) Conditions() GetNet
 	}).(GetNetworkFirewallPolicySecurityRuleConditionArrayOutput)
 }
 
-func (o LookupNetworkFirewallPolicySecurityRuleResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNetworkFirewallPolicySecurityRuleResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupNetworkFirewallPolicySecurityRuleResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNetworkFirewallPolicySecurityRuleResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Type of inspection to affect the Traffic flow. This is only applicable if action is INSPECT.
 // * INTRUSION_DETECTION - Intrusion Detection.
 // * INTRUSION_PREVENTION - Intrusion Detection and Prevention. Traffic classified as potentially malicious will be rejected as described in `type`.
-func (o LookupNetworkFirewallPolicySecurityRuleResultOutput) Inspection() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNetworkFirewallPolicySecurityRuleResult) string { return v.Inspection }).(pulumi.StringOutput)
+func (o LookupNetworkFirewallPolicySecurityRuleResultOutput) Inspection() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNetworkFirewallPolicySecurityRuleResult) *string { return v.Inspection }).(pulumi.StringPtrOutput)
 }
 
 // Name for the Security rule, must be unique within the policy.
@@ -141,8 +134,8 @@ func (o LookupNetworkFirewallPolicySecurityRuleResultOutput) NetworkFirewallPoli
 }
 
 // OCID of the Network Firewall Policy this security rule belongs to.
-func (o LookupNetworkFirewallPolicySecurityRuleResultOutput) ParentResourceId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNetworkFirewallPolicySecurityRuleResult) string { return v.ParentResourceId }).(pulumi.StringOutput)
+func (o LookupNetworkFirewallPolicySecurityRuleResultOutput) ParentResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNetworkFirewallPolicySecurityRuleResult) *string { return v.ParentResourceId }).(pulumi.StringPtrOutput)
 }
 
 // An object which defines the position of the rule.
@@ -152,8 +145,8 @@ func (o LookupNetworkFirewallPolicySecurityRuleResultOutput) Positions() GetNetw
 	}).(GetNetworkFirewallPolicySecurityRulePositionArrayOutput)
 }
 
-func (o LookupNetworkFirewallPolicySecurityRuleResultOutput) PriorityOrder() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNetworkFirewallPolicySecurityRuleResult) string { return v.PriorityOrder }).(pulumi.StringOutput)
+func (o LookupNetworkFirewallPolicySecurityRuleResultOutput) PriorityOrder() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNetworkFirewallPolicySecurityRuleResult) *string { return v.PriorityOrder }).(pulumi.StringPtrOutput)
 }
 
 func init() {

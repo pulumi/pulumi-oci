@@ -10,6 +10,8 @@ import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAddonsAddon {
@@ -17,7 +19,7 @@ public final class GetAddonsAddon {
      * @return The error info of the addon.
      * 
      */
-    private List<GetAddonsAddonAddonError> addonErrors;
+    private @Nullable List<GetAddonsAddonAddonError> addonErrors;
     /**
      * @return The name of the addon.
      * 
@@ -32,28 +34,28 @@ public final class GetAddonsAddon {
      * @return Addon configuration details.
      * 
      */
-    private List<GetAddonsAddonConfiguration> configurations;
+    private @Nullable List<GetAddonsAddonConfiguration> configurations;
     /**
      * @return current installed version of the addon
      * 
      */
-    private String currentInstalledVersion;
+    private @Nullable String currentInstalledVersion;
     private Boolean removeAddonResourcesOnDelete;
     /**
      * @return The state of the addon.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The time the cluster was created.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return selected addon version, or null indicates autoUpdate
      * 
      */
-    private String version;
+    private @Nullable String version;
 
     private GetAddonsAddon() {}
     /**
@@ -61,7 +63,7 @@ public final class GetAddonsAddon {
      * 
      */
     public List<GetAddonsAddonAddonError> addonErrors() {
-        return this.addonErrors;
+        return this.addonErrors == null ? List.of() : this.addonErrors;
     }
     /**
      * @return The name of the addon.
@@ -82,14 +84,14 @@ public final class GetAddonsAddon {
      * 
      */
     public List<GetAddonsAddonConfiguration> configurations() {
-        return this.configurations;
+        return this.configurations == null ? List.of() : this.configurations;
     }
     /**
      * @return current installed version of the addon
      * 
      */
-    public String currentInstalledVersion() {
-        return this.currentInstalledVersion;
+    public Optional<String> currentInstalledVersion() {
+        return Optional.ofNullable(this.currentInstalledVersion);
     }
     public Boolean removeAddonResourcesOnDelete() {
         return this.removeAddonResourcesOnDelete;
@@ -98,22 +100,22 @@ public final class GetAddonsAddon {
      * @return The state of the addon.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The time the cluster was created.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return selected addon version, or null indicates autoUpdate
      * 
      */
-    public String version() {
-        return this.version;
+    public Optional<String> version() {
+        return Optional.ofNullable(this.version);
     }
 
     public static Builder builder() {
@@ -125,15 +127,15 @@ public final class GetAddonsAddon {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetAddonsAddonAddonError> addonErrors;
+        private @Nullable List<GetAddonsAddonAddonError> addonErrors;
         private String addonName;
         private String clusterId;
-        private List<GetAddonsAddonConfiguration> configurations;
-        private String currentInstalledVersion;
+        private @Nullable List<GetAddonsAddonConfiguration> configurations;
+        private @Nullable String currentInstalledVersion;
         private Boolean removeAddonResourcesOnDelete;
-        private String state;
-        private String timeCreated;
-        private String version;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
+        private @Nullable String version;
         public Builder() {}
         public Builder(GetAddonsAddon defaults) {
     	      Objects.requireNonNull(defaults);
@@ -149,8 +151,8 @@ public final class GetAddonsAddon {
         }
 
         @CustomType.Setter
-        public Builder addonErrors(List<GetAddonsAddonAddonError> addonErrors) {
-            this.addonErrors = Objects.requireNonNull(addonErrors);
+        public Builder addonErrors(@Nullable List<GetAddonsAddonAddonError> addonErrors) {
+            this.addonErrors = addonErrors;
             return this;
         }
         public Builder addonErrors(GetAddonsAddonAddonError... addonErrors) {
@@ -167,16 +169,16 @@ public final class GetAddonsAddon {
             return this;
         }
         @CustomType.Setter
-        public Builder configurations(List<GetAddonsAddonConfiguration> configurations) {
-            this.configurations = Objects.requireNonNull(configurations);
+        public Builder configurations(@Nullable List<GetAddonsAddonConfiguration> configurations) {
+            this.configurations = configurations;
             return this;
         }
         public Builder configurations(GetAddonsAddonConfiguration... configurations) {
             return configurations(List.of(configurations));
         }
         @CustomType.Setter
-        public Builder currentInstalledVersion(String currentInstalledVersion) {
-            this.currentInstalledVersion = Objects.requireNonNull(currentInstalledVersion);
+        public Builder currentInstalledVersion(@Nullable String currentInstalledVersion) {
+            this.currentInstalledVersion = currentInstalledVersion;
             return this;
         }
         @CustomType.Setter
@@ -185,18 +187,18 @@ public final class GetAddonsAddon {
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder version(String version) {
-            this.version = Objects.requireNonNull(version);
+        public Builder version(@Nullable String version) {
+            this.version = version;
             return this;
         }
         public GetAddonsAddon build() {

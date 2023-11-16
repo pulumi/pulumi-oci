@@ -90,7 +90,7 @@ export interface GetFirewallsResult {
     /**
      * The list of web_app_firewall_collection.
      */
-    readonly webAppFirewallCollections: outputs.Waf.GetFirewallsWebAppFirewallCollection[];
+    readonly webAppFirewallCollections?: outputs.Waf.GetFirewallsWebAppFirewallCollection[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of WebAppFirewallPolicy, which is attached to the resource.
      */

@@ -9,6 +9,7 @@ import com.pulumi.oci.Core.outputs.GetNetworkSecurityGroupVnicsNetworkSecurityGr
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -18,13 +19,13 @@ public final class GetNetworkSecurityGroupVnicsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String networkSecurityGroupId;
     /**
      * @return The list of network_security_group_vnics.
      * 
      */
-    private List<GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnic> networkSecurityGroupVnics;
+    private @Nullable List<GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnic> networkSecurityGroupVnics;
 
     private GetNetworkSecurityGroupVnicsResult() {}
     public List<GetNetworkSecurityGroupVnicsFilter> filters() {
@@ -34,8 +35,8 @@ public final class GetNetworkSecurityGroupVnicsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String networkSecurityGroupId() {
         return this.networkSecurityGroupId;
@@ -45,7 +46,7 @@ public final class GetNetworkSecurityGroupVnicsResult {
      * 
      */
     public List<GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnic> networkSecurityGroupVnics() {
-        return this.networkSecurityGroupVnics;
+        return this.networkSecurityGroupVnics == null ? List.of() : this.networkSecurityGroupVnics;
     }
 
     public static Builder builder() {
@@ -58,9 +59,9 @@ public final class GetNetworkSecurityGroupVnicsResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetNetworkSecurityGroupVnicsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private String networkSecurityGroupId;
-        private List<GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnic> networkSecurityGroupVnics;
+        private @Nullable List<GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnic> networkSecurityGroupVnics;
         public Builder() {}
         public Builder(GetNetworkSecurityGroupVnicsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -79,8 +80,8 @@ public final class GetNetworkSecurityGroupVnicsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -89,8 +90,8 @@ public final class GetNetworkSecurityGroupVnicsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder networkSecurityGroupVnics(List<GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnic> networkSecurityGroupVnics) {
-            this.networkSecurityGroupVnics = Objects.requireNonNull(networkSecurityGroupVnics);
+        public Builder networkSecurityGroupVnics(@Nullable List<GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnic> networkSecurityGroupVnics) {
+            this.networkSecurityGroupVnics = networkSecurityGroupVnics;
             return this;
         }
         public Builder networkSecurityGroupVnics(GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnic... networkSecurityGroupVnics) {

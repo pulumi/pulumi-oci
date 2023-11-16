@@ -12,6 +12,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetChannelResult {
@@ -20,63 +22,63 @@ public final class GetChannelResult {
      * @return The OCID of the compartment.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return User provided description of the Channel.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return The user-friendly name for the Channel. It does not have to be unique.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
-    private String id;
+    private @Nullable Map<String,Object> freeformTags;
+    private @Nullable String id;
     /**
      * @return Whether the Channel has been enabled by the user.
      * 
      */
-    private Boolean isEnabled;
+    private @Nullable Boolean isEnabled;
     /**
      * @return A message describing the state of the Channel.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return Parameters detailing how to provision the source for the given Channel.
      * 
      */
-    private List<GetChannelSource> sources;
+    private @Nullable List<GetChannelSource> sources;
     /**
      * @return The state of the Channel.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return Details about the Channel target.
      * 
      */
-    private List<GetChannelTarget> targets;
+    private @Nullable List<GetChannelTarget> targets;
     /**
      * @return The date and time the Channel was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The time the Channel was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
 
     private GetChannelResult() {}
     public String channelId() {
@@ -86,88 +88,88 @@ public final class GetChannelResult {
      * @return The OCID of the compartment.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return User provided description of the Channel.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return The user-friendly name for the Channel. It does not have to be unique.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Whether the Channel has been enabled by the user.
      * 
      */
-    public Boolean isEnabled() {
-        return this.isEnabled;
+    public Optional<Boolean> isEnabled() {
+        return Optional.ofNullable(this.isEnabled);
     }
     /**
      * @return A message describing the state of the Channel.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return Parameters detailing how to provision the source for the given Channel.
      * 
      */
     public List<GetChannelSource> sources() {
-        return this.sources;
+        return this.sources == null ? List.of() : this.sources;
     }
     /**
      * @return The state of the Channel.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return Details about the Channel target.
      * 
      */
     public List<GetChannelTarget> targets() {
-        return this.targets;
+        return this.targets == null ? List.of() : this.targets;
     }
     /**
      * @return The date and time the Channel was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The time the Channel was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
 
     public static Builder builder() {
@@ -180,19 +182,19 @@ public final class GetChannelResult {
     @CustomType.Builder
     public static final class Builder {
         private String channelId;
-        private String compartmentId;
-        private Map<String,Object> definedTags;
-        private String description;
-        private String displayName;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private Boolean isEnabled;
-        private String lifecycleDetails;
-        private List<GetChannelSource> sources;
-        private String state;
-        private List<GetChannelTarget> targets;
-        private String timeCreated;
-        private String timeUpdated;
+        private @Nullable String compartmentId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String description;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable Boolean isEnabled;
+        private @Nullable String lifecycleDetails;
+        private @Nullable List<GetChannelSource> sources;
+        private @Nullable String state;
+        private @Nullable List<GetChannelTarget> targets;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
         public Builder() {}
         public Builder(GetChannelResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -218,74 +220,74 @@ public final class GetChannelResult {
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder isEnabled(Boolean isEnabled) {
-            this.isEnabled = Objects.requireNonNull(isEnabled);
+        public Builder isEnabled(@Nullable Boolean isEnabled) {
+            this.isEnabled = isEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder sources(List<GetChannelSource> sources) {
-            this.sources = Objects.requireNonNull(sources);
+        public Builder sources(@Nullable List<GetChannelSource> sources) {
+            this.sources = sources;
             return this;
         }
         public Builder sources(GetChannelSource... sources) {
             return sources(List.of(sources));
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder targets(List<GetChannelTarget> targets) {
-            this.targets = Objects.requireNonNull(targets);
+        public Builder targets(@Nullable List<GetChannelTarget> targets) {
+            this.targets = targets;
             return this;
         }
         public Builder targets(GetChannelTarget... targets) {
             return targets(List.of(targets));
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetChannelResult build() {

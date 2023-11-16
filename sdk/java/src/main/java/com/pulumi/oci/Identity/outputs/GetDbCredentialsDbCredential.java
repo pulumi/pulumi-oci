@@ -6,6 +6,8 @@ package com.pulumi.oci.Identity.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDbCredentialsDbCredential {
@@ -13,83 +15,83 @@ public final class GetDbCredentialsDbCredential {
      * @return The description you assign to the DB credential. Does not have to be unique, and it&#39;s changeable.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return The OCID of the DB credential.
      * 
      */
-    private String id;
-    private String lifecycleDetails;
-    private String password;
+    private @Nullable String id;
+    private @Nullable String lifecycleDetails;
+    private @Nullable String password;
     /**
      * @return A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return Date and time the `DbCredential` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return Date and time when this credential will expire, in the format defined by RFC3339. Null if it never expires.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private String timeExpires;
+    private @Nullable String timeExpires;
     /**
      * @return The OCID of the user.
      * 
      */
-    private String userId;
+    private @Nullable String userId;
 
     private GetDbCredentialsDbCredential() {}
     /**
      * @return The description you assign to the DB credential. Does not have to be unique, and it&#39;s changeable.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return The OCID of the DB credential.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
-    public String password() {
-        return this.password;
+    public Optional<String> password() {
+        return Optional.ofNullable(this.password);
     }
     /**
      * @return A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return Date and time the `DbCredential` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return Date and time when this credential will expire, in the format defined by RFC3339. Null if it never expires.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public String timeExpires() {
-        return this.timeExpires;
+    public Optional<String> timeExpires() {
+        return Optional.ofNullable(this.timeExpires);
     }
     /**
      * @return The OCID of the user.
      * 
      */
-    public String userId() {
-        return this.userId;
+    public Optional<String> userId() {
+        return Optional.ofNullable(this.userId);
     }
 
     public static Builder builder() {
@@ -101,14 +103,14 @@ public final class GetDbCredentialsDbCredential {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String description;
-        private String id;
-        private String lifecycleDetails;
-        private String password;
-        private String state;
-        private String timeCreated;
-        private String timeExpires;
-        private String userId;
+        private @Nullable String description;
+        private @Nullable String id;
+        private @Nullable String lifecycleDetails;
+        private @Nullable String password;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
+        private @Nullable String timeExpires;
+        private @Nullable String userId;
         public Builder() {}
         public Builder(GetDbCredentialsDbCredential defaults) {
     	      Objects.requireNonNull(defaults);
@@ -123,43 +125,43 @@ public final class GetDbCredentialsDbCredential {
         }
 
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder password(String password) {
-            this.password = Objects.requireNonNull(password);
+        public Builder password(@Nullable String password) {
+            this.password = password;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeExpires(String timeExpires) {
-            this.timeExpires = Objects.requireNonNull(timeExpires);
+        public Builder timeExpires(@Nullable String timeExpires) {
+            this.timeExpires = timeExpires;
             return this;
         }
         @CustomType.Setter
-        public Builder userId(String userId) {
-            this.userId = Objects.requireNonNull(userId);
+        public Builder userId(@Nullable String userId) {
+            this.userId = userId;
             return this;
         }
         public GetDbCredentialsDbCredential build() {

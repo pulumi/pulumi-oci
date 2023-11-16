@@ -16,10 +16,10 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// <summary>
         /// The physical mount point of the file system on a host.  Example: `/mnt/yourmountpoint`
         /// </summary>
-        public readonly string MountPoint;
+        public readonly string? MountPoint;
 
         [OutputConstructor]
-        private GetDrProtectionGroupMemberBlockVolumeOperationMountDetailResult(string mountPoint)
+        private GetDrProtectionGroupMemberBlockVolumeOperationMountDetailResult(string? mountPoint)
         {
             MountPoint = mountPoint;
         }

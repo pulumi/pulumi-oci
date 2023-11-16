@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Vm Cluster Patch History Entries in Oracle Cloud Infrastructure Database service.
@@ -62,7 +61,7 @@ type GetVmClusterPatchHistoryEntriesArgs struct {
 type GetVmClusterPatchHistoryEntriesResult struct {
 	Filters []GetVmClusterPatchHistoryEntriesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of patch_history_entries.
 	PatchHistoryEntries []GetVmClusterPatchHistoryEntriesPatchHistoryEntry `pulumi:"patchHistoryEntries"`
 	VmClusterId         string                                             `pulumi:"vmClusterId"`
@@ -107,12 +106,6 @@ func (o GetVmClusterPatchHistoryEntriesResultOutput) ToGetVmClusterPatchHistoryE
 	return o
 }
 
-func (o GetVmClusterPatchHistoryEntriesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterPatchHistoryEntriesResult] {
-	return pulumix.Output[GetVmClusterPatchHistoryEntriesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetVmClusterPatchHistoryEntriesResultOutput) Filters() GetVmClusterPatchHistoryEntriesFilterArrayOutput {
 	return o.ApplyT(func(v GetVmClusterPatchHistoryEntriesResult) []GetVmClusterPatchHistoryEntriesFilter {
 		return v.Filters
@@ -120,8 +113,8 @@ func (o GetVmClusterPatchHistoryEntriesResultOutput) Filters() GetVmClusterPatch
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetVmClusterPatchHistoryEntriesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterPatchHistoryEntriesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetVmClusterPatchHistoryEntriesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterPatchHistoryEntriesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of patch_history_entries.

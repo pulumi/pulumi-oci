@@ -18,7 +18,6 @@ class ManagementDashboardsImportArgs:
                  import_details_file: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a ManagementDashboardsImport resource.
-        :param pulumi.Input[str] import_details: Array of Dashboards to import. The `import_details` is mandatory if `import_details_path` is not passed. Value should be stringified JSON of [ManagementDashboardImportDetails](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/managementdashboard/20200901/ManagementDashboardImportDetails/)
         """
         if import_details is not None:
             pulumi.set(__self__, "import_details", import_details)
@@ -28,9 +27,6 @@ class ManagementDashboardsImportArgs:
     @property
     @pulumi.getter(name="importDetails")
     def import_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        Array of Dashboards to import. The `import_details` is mandatory if `import_details_path` is not passed. Value should be stringified JSON of [ManagementDashboardImportDetails](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/managementdashboard/20200901/ManagementDashboardImportDetails/)
-        """
         return pulumi.get(self, "import_details")
 
     @import_details.setter
@@ -54,7 +50,6 @@ class _ManagementDashboardsImportState:
                  import_details_file: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering ManagementDashboardsImport resources.
-        :param pulumi.Input[str] import_details: Array of Dashboards to import. The `import_details` is mandatory if `import_details_path` is not passed. Value should be stringified JSON of [ManagementDashboardImportDetails](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/managementdashboard/20200901/ManagementDashboardImportDetails/)
         """
         if import_details is not None:
             pulumi.set(__self__, "import_details", import_details)
@@ -64,9 +59,6 @@ class _ManagementDashboardsImportState:
     @property
     @pulumi.getter(name="importDetails")
     def import_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        Array of Dashboards to import. The `import_details` is mandatory if `import_details_path` is not passed. Value should be stringified JSON of [ManagementDashboardImportDetails](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/managementdashboard/20200901/ManagementDashboardImportDetails/)
-        """
         return pulumi.get(self, "import_details")
 
     @import_details.setter
@@ -92,37 +84,9 @@ class ManagementDashboardsImport(pulumi.CustomResource):
                  import_details_file: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Management Dashboards Import resource in Oracle Cloud Infrastructure Management Dashboard service.
-
-        Imports an array of dashboards and their saved searches.
-        Here's an example of how you can use CLI to import a dashboard. For information on the details that must be passed to IMPORT, you can use the EXPORT API to obtain the Import.json file:
-        `oci management-dashboard dashboard export --query data --export-dashboard-id "{\\"dashboardIds\\":[\\"ocid1.managementdashboard.oc1..dashboardId1\\"]}"  > Import.json`.
-        Note that import API updates the resource if it already exists, and creates a new resource if it does not exist. To import to a different compartment, edit and change the compartmentId to the desired compartment OCID.
-        Here's an example of how you can use CLI to import:
-        `oci management-dashboard dashboard import --from-json file://Import.json`
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_management_dashboards_import = oci.management_dashboard.ManagementDashboardsImport("testManagementDashboardsImport",
-            import_details=var["sample_import_details"],
-            import_details_file=var["sample_import_details_file_path"])
-        ```
-
-        ## Import
-
-        ManagementDashboardsImport can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:ManagementDashboard/managementDashboardsImport:ManagementDashboardsImport test_management_dashboards_import "id"
-        ```
-
+        Create a ManagementDashboardsImport resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] import_details: Array of Dashboards to import. The `import_details` is mandatory if `import_details_path` is not passed. Value should be stringified JSON of [ManagementDashboardImportDetails](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/managementdashboard/20200901/ManagementDashboardImportDetails/)
         """
         ...
     @overload
@@ -131,34 +95,7 @@ class ManagementDashboardsImport(pulumi.CustomResource):
                  args: Optional[ManagementDashboardsImportArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Management Dashboards Import resource in Oracle Cloud Infrastructure Management Dashboard service.
-
-        Imports an array of dashboards and their saved searches.
-        Here's an example of how you can use CLI to import a dashboard. For information on the details that must be passed to IMPORT, you can use the EXPORT API to obtain the Import.json file:
-        `oci management-dashboard dashboard export --query data --export-dashboard-id "{\\"dashboardIds\\":[\\"ocid1.managementdashboard.oc1..dashboardId1\\"]}"  > Import.json`.
-        Note that import API updates the resource if it already exists, and creates a new resource if it does not exist. To import to a different compartment, edit and change the compartmentId to the desired compartment OCID.
-        Here's an example of how you can use CLI to import:
-        `oci management-dashboard dashboard import --from-json file://Import.json`
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_management_dashboards_import = oci.management_dashboard.ManagementDashboardsImport("testManagementDashboardsImport",
-            import_details=var["sample_import_details"],
-            import_details_file=var["sample_import_details_file_path"])
-        ```
-
-        ## Import
-
-        ManagementDashboardsImport can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:ManagementDashboard/managementDashboardsImport:ManagementDashboardsImport test_management_dashboards_import "id"
-        ```
-
+        Create a ManagementDashboardsImport resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param ManagementDashboardsImportArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -206,7 +143,6 @@ class ManagementDashboardsImport(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] import_details: Array of Dashboards to import. The `import_details` is mandatory if `import_details_path` is not passed. Value should be stringified JSON of [ManagementDashboardImportDetails](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/managementdashboard/20200901/ManagementDashboardImportDetails/)
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -219,9 +155,6 @@ class ManagementDashboardsImport(pulumi.CustomResource):
     @property
     @pulumi.getter(name="importDetails")
     def import_details(self) -> pulumi.Output[Optional[str]]:
-        """
-        Array of Dashboards to import. The `import_details` is mandatory if `import_details_path` is not passed. Value should be stringified JSON of [ManagementDashboardImportDetails](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/managementdashboard/20200901/ManagementDashboardImportDetails/)
-        """
         return pulumi.get(self, "import_details")
 
     @property

@@ -79,63 +79,42 @@ class GetFleetPerformanceTuningAnalysisResultResult:
 
     @property
     @pulumi.getter(name="applicationId")
-    def application_id(self) -> str:
-        """
-        The OCID of the application for which the report has been generated.
-        """
+    def application_id(self) -> Optional[str]:
         return pulumi.get(self, "application_id")
 
     @property
     @pulumi.getter(name="applicationInstallationId")
-    def application_installation_id(self) -> str:
-        """
-        The internal identifier of the application installation for which the report has been generated.
-        """
+    def application_installation_id(self) -> Optional[str]:
         return pulumi.get(self, "application_installation_id")
 
     @property
     @pulumi.getter(name="applicationInstallationPath")
-    def application_installation_path(self) -> str:
-        """
-        The installation path of the application for which the report has been generated.
-        """
+    def application_installation_path(self) -> Optional[str]:
         return pulumi.get(self, "application_installation_path")
 
     @property
     @pulumi.getter(name="applicationName")
-    def application_name(self) -> str:
-        """
-        The name of the application for which the report has been generated.
-        """
+    def application_name(self) -> Optional[str]:
         return pulumi.get(self, "application_name")
 
     @property
     @pulumi.getter
-    def bucket(self) -> str:
-        """
-        The Object Storage bucket name of this analysis result.
-        """
+    def bucket(self) -> Optional[str]:
         return pulumi.get(self, "bucket")
 
     @property
     @pulumi.getter(name="fleetId")
     def fleet_id(self) -> str:
-        """
-        The fleet OCID.
-        """
         return pulumi.get(self, "fleet_id")
 
     @property
     @pulumi.getter(name="hostName")
-    def host_name(self) -> str:
-        """
-        The hostname of the managed instance.
-        """
+    def host_name(self) -> Optional[str]:
         return pulumi.get(self, "host_name")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -143,26 +122,17 @@ class GetFleetPerformanceTuningAnalysisResultResult:
 
     @property
     @pulumi.getter(name="managedInstanceId")
-    def managed_instance_id(self) -> str:
-        """
-        The managed instance OCID.
-        """
+    def managed_instance_id(self) -> Optional[str]:
         return pulumi.get(self, "managed_instance_id")
 
     @property
     @pulumi.getter
-    def namespace(self) -> str:
-        """
-        The Object Storage namespace of this analysis result.
-        """
+    def namespace(self) -> Optional[str]:
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter
-    def object(self) -> str:
-        """
-        The Object Storage object name of this analysis result.
-        """
+    def object(self) -> Optional[str]:
         return pulumi.get(self, "object")
 
     @property
@@ -172,50 +142,32 @@ class GetFleetPerformanceTuningAnalysisResultResult:
 
     @property
     @pulumi.getter
-    def result(self) -> str:
-        """
-        Result of the analysis based on whether warnings have been found or not.
-        """
+    def result(self) -> Optional[str]:
         return pulumi.get(self, "result")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the result is compiled.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeFinished")
-    def time_finished(self) -> str:
-        """
-        The time the JFR capture finished.
-        """
+    def time_finished(self) -> Optional[str]:
         return pulumi.get(self, "time_finished")
 
     @property
     @pulumi.getter(name="timeStarted")
-    def time_started(self) -> str:
-        """
-        The time the JFR capture started.
-        """
+    def time_started(self) -> Optional[str]:
         return pulumi.get(self, "time_started")
 
     @property
     @pulumi.getter(name="warningCount")
-    def warning_count(self) -> int:
-        """
-        Total number of warnings reported by the analysis.
-        """
+    def warning_count(self) -> Optional[int]:
         return pulumi.get(self, "warning_count")
 
     @property
     @pulumi.getter(name="workRequestId")
-    def work_request_id(self) -> str:
-        """
-        The OCID of the work request to start the analysis.
-        """
+    def work_request_id(self) -> Optional[str]:
         return pulumi.get(self, "work_request_id")
 
 
@@ -249,23 +201,7 @@ def get_fleet_performance_tuning_analysis_result(fleet_id: Optional[str] = None,
                                                  performance_tuning_analysis_result_id: Optional[str] = None,
                                                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetFleetPerformanceTuningAnalysisResultResult:
     """
-    This data source provides details about a specific Fleet Performance Tuning Analysis Result resource in Oracle Cloud Infrastructure Jms service.
-
-    Retrieve metadata of the Performance Tuning Analysis result.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_fleet_performance_tuning_analysis_result = oci.Jms.get_fleet_performance_tuning_analysis_result(fleet_id=oci_jms_fleet["test_fleet"]["id"],
-        performance_tuning_analysis_result_id=oci_apm_synthetics_result["test_result"]["id"])
-    ```
-
-
-    :param str fleet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
-    :param str performance_tuning_analysis_result_id: The OCID of the performance tuning analysis result.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['fleetId'] = fleet_id
@@ -299,22 +235,6 @@ def get_fleet_performance_tuning_analysis_result_output(fleet_id: Optional[pulum
                                                         performance_tuning_analysis_result_id: Optional[pulumi.Input[str]] = None,
                                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFleetPerformanceTuningAnalysisResultResult]:
     """
-    This data source provides details about a specific Fleet Performance Tuning Analysis Result resource in Oracle Cloud Infrastructure Jms service.
-
-    Retrieve metadata of the Performance Tuning Analysis result.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_fleet_performance_tuning_analysis_result = oci.Jms.get_fleet_performance_tuning_analysis_result(fleet_id=oci_jms_fleet["test_fleet"]["id"],
-        performance_tuning_analysis_result_id=oci_apm_synthetics_result["test_result"]["id"])
-    ```
-
-
-    :param str fleet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
-    :param str performance_tuning_analysis_result_id: The OCID of the performance tuning analysis result.
+    Use this data source to access information about an existing resource.
     """
     ...

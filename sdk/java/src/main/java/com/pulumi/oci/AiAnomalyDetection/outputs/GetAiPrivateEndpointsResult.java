@@ -18,7 +18,7 @@ public final class GetAiPrivateEndpointsResult {
      * @return The list of ai_private_endpoint_collection.
      * 
      */
-    private List<GetAiPrivateEndpointsAiPrivateEndpointCollection> aiPrivateEndpointCollections;
+    private @Nullable List<GetAiPrivateEndpointsAiPrivateEndpointCollection> aiPrivateEndpointCollections;
     /**
      * @return Compartment Identifier.
      * 
@@ -47,7 +47,7 @@ public final class GetAiPrivateEndpointsResult {
      * 
      */
     public List<GetAiPrivateEndpointsAiPrivateEndpointCollection> aiPrivateEndpointCollections() {
-        return this.aiPrivateEndpointCollections;
+        return this.aiPrivateEndpointCollections == null ? List.of() : this.aiPrivateEndpointCollections;
     }
     /**
      * @return Compartment Identifier.
@@ -90,7 +90,7 @@ public final class GetAiPrivateEndpointsResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetAiPrivateEndpointsAiPrivateEndpointCollection> aiPrivateEndpointCollections;
+        private @Nullable List<GetAiPrivateEndpointsAiPrivateEndpointCollection> aiPrivateEndpointCollections;
         private String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetAiPrivateEndpointsFilter> filters;
@@ -108,8 +108,8 @@ public final class GetAiPrivateEndpointsResult {
         }
 
         @CustomType.Setter
-        public Builder aiPrivateEndpointCollections(List<GetAiPrivateEndpointsAiPrivateEndpointCollection> aiPrivateEndpointCollections) {
-            this.aiPrivateEndpointCollections = Objects.requireNonNull(aiPrivateEndpointCollections);
+        public Builder aiPrivateEndpointCollections(@Nullable List<GetAiPrivateEndpointsAiPrivateEndpointCollection> aiPrivateEndpointCollections) {
+            this.aiPrivateEndpointCollections = aiPrivateEndpointCollections;
             return this;
         }
         public Builder aiPrivateEndpointCollections(GetAiPrivateEndpointsAiPrivateEndpointCollection... aiPrivateEndpointCollections) {

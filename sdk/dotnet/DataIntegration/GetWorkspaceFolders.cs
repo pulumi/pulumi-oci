@@ -230,7 +230,7 @@ namespace Pulumi.Oci.DataIntegration
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The identifier of the aggregator.
         /// </summary>
@@ -252,7 +252,7 @@ namespace Pulumi.Oci.DataIntegration
 
             ImmutableArray<Outputs.GetWorkspaceFoldersFolderSummaryCollectionResult> folderSummaryCollections,
 
-            string id,
+            string? id,
 
             ImmutableArray<string> identifiers,
 

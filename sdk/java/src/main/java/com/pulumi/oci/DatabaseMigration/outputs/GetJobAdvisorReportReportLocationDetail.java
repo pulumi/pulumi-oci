@@ -8,6 +8,8 @@ import com.pulumi.oci.DatabaseMigration.outputs.GetJobAdvisorReportReportLocatio
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetJobAdvisorReportReportLocationDetail {
@@ -15,27 +17,27 @@ public final class GetJobAdvisorReportReportLocationDetail {
      * @return Path in the Source Registered Connection where the Pre-Migration advisor report can be accessed.
      * 
      */
-    private String locationInSource;
+    private @Nullable String locationInSource;
     /**
      * @return Details to access Pre-Migration Advisor report in the specified Object Storage bucket, if any.
      * 
      */
-    private List<GetJobAdvisorReportReportLocationDetailObjectStorageDetail> objectStorageDetails;
+    private @Nullable List<GetJobAdvisorReportReportLocationDetailObjectStorageDetail> objectStorageDetails;
 
     private GetJobAdvisorReportReportLocationDetail() {}
     /**
      * @return Path in the Source Registered Connection where the Pre-Migration advisor report can be accessed.
      * 
      */
-    public String locationInSource() {
-        return this.locationInSource;
+    public Optional<String> locationInSource() {
+        return Optional.ofNullable(this.locationInSource);
     }
     /**
      * @return Details to access Pre-Migration Advisor report in the specified Object Storage bucket, if any.
      * 
      */
     public List<GetJobAdvisorReportReportLocationDetailObjectStorageDetail> objectStorageDetails() {
-        return this.objectStorageDetails;
+        return this.objectStorageDetails == null ? List.of() : this.objectStorageDetails;
     }
 
     public static Builder builder() {
@@ -47,8 +49,8 @@ public final class GetJobAdvisorReportReportLocationDetail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String locationInSource;
-        private List<GetJobAdvisorReportReportLocationDetailObjectStorageDetail> objectStorageDetails;
+        private @Nullable String locationInSource;
+        private @Nullable List<GetJobAdvisorReportReportLocationDetailObjectStorageDetail> objectStorageDetails;
         public Builder() {}
         public Builder(GetJobAdvisorReportReportLocationDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -57,13 +59,13 @@ public final class GetJobAdvisorReportReportLocationDetail {
         }
 
         @CustomType.Setter
-        public Builder locationInSource(String locationInSource) {
-            this.locationInSource = Objects.requireNonNull(locationInSource);
+        public Builder locationInSource(@Nullable String locationInSource) {
+            this.locationInSource = locationInSource;
             return this;
         }
         @CustomType.Setter
-        public Builder objectStorageDetails(List<GetJobAdvisorReportReportLocationDetailObjectStorageDetail> objectStorageDetails) {
-            this.objectStorageDetails = Objects.requireNonNull(objectStorageDetails);
+        public Builder objectStorageDetails(@Nullable List<GetJobAdvisorReportReportLocationDetailObjectStorageDetail> objectStorageDetails) {
+            this.objectStorageDetails = objectStorageDetails;
             return this;
         }
         public Builder objectStorageDetails(GetJobAdvisorReportReportLocationDetailObjectStorageDetail... objectStorageDetails) {

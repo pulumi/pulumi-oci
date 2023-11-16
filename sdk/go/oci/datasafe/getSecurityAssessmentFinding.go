@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetSecurityAssessmentFinding(ctx *pulumi.Context, args *GetSecurityAssessmentFindingArgs, opts ...pulumi.InvokeOption) (*GetSecurityAssessmentFindingResult, error) {
@@ -41,7 +40,7 @@ type GetSecurityAssessmentFindingResult struct {
 	FindingKey             *string                               `pulumi:"findingKey"`
 	Findings               []GetSecurityAssessmentFindingFinding `pulumi:"findings"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                   string  `pulumi:"id"`
+	Id                   *string `pulumi:"id"`
 	References           *string `pulumi:"references"`
 	SecurityAssessmentId string  `pulumi:"securityAssessmentId"`
 	Severity             *string `pulumi:"severity"`
@@ -90,12 +89,6 @@ func (o GetSecurityAssessmentFindingResultOutput) ToGetSecurityAssessmentFinding
 	return o
 }
 
-func (o GetSecurityAssessmentFindingResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityAssessmentFindingResult] {
-	return pulumix.Output[GetSecurityAssessmentFindingResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSecurityAssessmentFindingResultOutput) AccessLevel() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentFindingResult) *string { return v.AccessLevel }).(pulumi.StringPtrOutput)
 }
@@ -117,8 +110,8 @@ func (o GetSecurityAssessmentFindingResultOutput) Findings() GetSecurityAssessme
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetSecurityAssessmentFindingResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSecurityAssessmentFindingResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetSecurityAssessmentFindingResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentFindingResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetSecurityAssessmentFindingResultOutput) References() pulumi.StringPtrOutput {

@@ -57,19 +57,19 @@ export interface GetSoftwareSourceModuleStreamResult {
     /**
      * The architecture for which the packages in this module stream were built
      */
-    readonly architecture: string;
+    readonly architecture?: string;
     /**
      * A description of the contents of the module stream
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Indicates if this stream is the default for its module.
      */
-    readonly isDefault: boolean;
+    readonly isDefault?: boolean;
     /**
      * The name of the module that contains the stream
      */
@@ -77,11 +77,11 @@ export interface GetSoftwareSourceModuleStreamResult {
     /**
      * A list of packages that are contained by the stream.  Each element in the list is the name of a package.  The name is suitable to use as an argument to other OS Management APIs that interact directly with packages.
      */
-    readonly packages: string[];
+    readonly packages?: string[];
     /**
      * A list of profiles that are part of the stream.  Each element in the list is the name of a profile.  The name is suitable to use as an argument to other OS Management APIs that interact directly with module stream profiles.  However, it is not URL encoded.
      */
-    readonly profiles: string[];
+    readonly profiles?: string[];
     /**
      * The OCID of the software source that provides this module stream.
      */

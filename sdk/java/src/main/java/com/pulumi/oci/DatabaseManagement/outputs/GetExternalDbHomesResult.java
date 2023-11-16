@@ -28,7 +28,7 @@ public final class GetExternalDbHomesResult {
      * @return The list of external_db_home_collection.
      * 
      */
-    private List<GetExternalDbHomesExternalDbHomeCollection> externalDbHomeCollections;
+    private @Nullable List<GetExternalDbHomesExternalDbHomeCollection> externalDbHomeCollections;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the DB home is a part of.
      * 
@@ -39,7 +39,7 @@ public final class GetExternalDbHomesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
 
     private GetExternalDbHomesResult() {}
     /**
@@ -61,7 +61,7 @@ public final class GetExternalDbHomesResult {
      * 
      */
     public List<GetExternalDbHomesExternalDbHomeCollection> externalDbHomeCollections() {
-        return this.externalDbHomeCollections;
+        return this.externalDbHomeCollections == null ? List.of() : this.externalDbHomeCollections;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the DB home is a part of.
@@ -77,8 +77,8 @@ public final class GetExternalDbHomesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
 
     public static Builder builder() {
@@ -92,10 +92,10 @@ public final class GetExternalDbHomesResult {
     public static final class Builder {
         private @Nullable String compartmentId;
         private @Nullable String displayName;
-        private List<GetExternalDbHomesExternalDbHomeCollection> externalDbHomeCollections;
+        private @Nullable List<GetExternalDbHomesExternalDbHomeCollection> externalDbHomeCollections;
         private @Nullable String externalDbSystemId;
         private @Nullable List<GetExternalDbHomesFilter> filters;
-        private String id;
+        private @Nullable String id;
         public Builder() {}
         public Builder(GetExternalDbHomesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -118,8 +118,8 @@ public final class GetExternalDbHomesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder externalDbHomeCollections(List<GetExternalDbHomesExternalDbHomeCollection> externalDbHomeCollections) {
-            this.externalDbHomeCollections = Objects.requireNonNull(externalDbHomeCollections);
+        public Builder externalDbHomeCollections(@Nullable List<GetExternalDbHomesExternalDbHomeCollection> externalDbHomeCollections) {
+            this.externalDbHomeCollections = externalDbHomeCollections;
             return this;
         }
         public Builder externalDbHomeCollections(GetExternalDbHomesExternalDbHomeCollection... externalDbHomeCollections) {
@@ -139,8 +139,8 @@ public final class GetExternalDbHomesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         public GetExternalDbHomesResult build() {

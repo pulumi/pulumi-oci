@@ -18,14 +18,14 @@ public final class GetCommitmentsResult {
      * @return The list of commitments.
      * 
      */
-    private List<GetCommitmentsCommitment> commitments;
+    private @Nullable List<GetCommitmentsCommitment> commitments;
     private String compartmentId;
     private @Nullable List<GetCommitmentsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String subscribedServiceId;
     private @Nullable String xOneGatewaySubscriptionId;
     private @Nullable String xOneOriginRegion;
@@ -36,7 +36,7 @@ public final class GetCommitmentsResult {
      * 
      */
     public List<GetCommitmentsCommitment> commitments() {
-        return this.commitments;
+        return this.commitments == null ? List.of() : this.commitments;
     }
     public String compartmentId() {
         return this.compartmentId;
@@ -48,8 +48,8 @@ public final class GetCommitmentsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String subscribedServiceId() {
         return this.subscribedServiceId;
@@ -70,10 +70,10 @@ public final class GetCommitmentsResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetCommitmentsCommitment> commitments;
+        private @Nullable List<GetCommitmentsCommitment> commitments;
         private String compartmentId;
         private @Nullable List<GetCommitmentsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private String subscribedServiceId;
         private @Nullable String xOneGatewaySubscriptionId;
         private @Nullable String xOneOriginRegion;
@@ -90,8 +90,8 @@ public final class GetCommitmentsResult {
         }
 
         @CustomType.Setter
-        public Builder commitments(List<GetCommitmentsCommitment> commitments) {
-            this.commitments = Objects.requireNonNull(commitments);
+        public Builder commitments(@Nullable List<GetCommitmentsCommitment> commitments) {
+            this.commitments = commitments;
             return this;
         }
         public Builder commitments(GetCommitmentsCommitment... commitments) {
@@ -111,8 +111,8 @@ public final class GetCommitmentsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

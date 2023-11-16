@@ -60,12 +60,12 @@ export interface GetInvoicesInvoiceLineResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly internalInvoiceId: string;
     /**
      * Invoice line list elements
      */
-    readonly items: outputs.OspGateway.GetInvoicesInvoiceLineItem[];
+    readonly items?: outputs.OspGateway.GetInvoicesInvoiceLineItem[];
     readonly ospHomeRegion: string;
 }
 /**

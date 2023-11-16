@@ -74,19 +74,19 @@ namespace Pulumi.Oci.Opa
         /// Parameter specifying which entitlement to use for billing purposes
         /// </summary>
         [Output("consumptionModel")]
-        public Output<string> ConsumptionModel { get; private set; } = null!;
+        public Output<string?> ConsumptionModel { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Description of the Oracle Process Automation instance.
         /// </summary>
         [Output("description")]
-        public Output<string> Description { get; private set; } = null!;
+        public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) OpaInstance Identifier. User-friendly name for the instance. Avoid entering confidential information. You can change this value anytime.
@@ -98,55 +98,55 @@ namespace Pulumi.Oci.Opa
         /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// IDCS Authentication token. This is required for all realms with IDCS. This property is optional, as it is not required for non-IDCS realms.
         /// </summary>
         [Output("idcsAt")]
-        public Output<string> IdcsAt { get; private set; } = null!;
+        public Output<string?> IdcsAt { get; private set; } = null!;
 
         /// <summary>
         /// This property specifies the name of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this OPA instance for users within the identity domain.
         /// </summary>
         [Output("identityAppDisplayName")]
-        public Output<string> IdentityAppDisplayName { get; private set; } = null!;
+        public Output<string?> IdentityAppDisplayName { get; private set; } = null!;
 
         /// <summary>
         /// This property specifies the GUID of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user role mappings to grant access to this OPA instance for users within the identity domain.
         /// </summary>
         [Output("identityAppGuid")]
-        public Output<string> IdentityAppGuid { get; private set; } = null!;
+        public Output<string?> IdentityAppGuid { get; private set; } = null!;
 
         /// <summary>
         /// This property specifies the OPC Service Instance GUID of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this OPA instance for users within the identity domain.
         /// </summary>
         [Output("identityAppOpcServiceInstanceGuid")]
-        public Output<string> IdentityAppOpcServiceInstanceGuid { get; private set; } = null!;
+        public Output<string?> IdentityAppOpcServiceInstanceGuid { get; private set; } = null!;
 
         /// <summary>
         /// This property specifies the domain url of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this OPA instance for users within the identity domain.
         /// </summary>
         [Output("identityDomainUrl")]
-        public Output<string> IdentityDomainUrl { get; private set; } = null!;
+        public Output<string?> IdentityDomainUrl { get; private set; } = null!;
 
         /// <summary>
         /// OPA Instance URL
         /// </summary>
         [Output("instanceUrl")]
-        public Output<string> InstanceUrl { get; private set; } = null!;
+        public Output<string?> InstanceUrl { get; private set; } = null!;
 
         /// <summary>
         /// indicates if breakGlass is enabled for the opa instance.
         /// </summary>
         [Output("isBreakglassEnabled")]
-        public Output<bool> IsBreakglassEnabled { get; private set; } = null!;
+        public Output<bool?> IsBreakglassEnabled { get; private set; } = null!;
 
         /// <summary>
         /// MeteringType Identifier
         /// </summary>
         [Output("meteringType")]
-        public Output<string> MeteringType { get; private set; } = null!;
+        public Output<string?> MeteringType { get; private set; } = null!;
 
         /// <summary>
         /// Shape of the instance.
@@ -162,25 +162,25 @@ namespace Pulumi.Oci.Opa
         /// The current state of the OpaInstance.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
         [Output("systemTags")]
-        public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// The time when OpaInstance was created. An RFC3339 formatted datetime string
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The time the OpaInstance was updated. An RFC3339 formatted datetime string
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
 
         /// <summary>

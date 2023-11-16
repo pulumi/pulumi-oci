@@ -16,23 +16,23 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// The user's API key value.
         /// </summary>
-        public readonly string Key;
+        public readonly string? Key;
         /// <summary>
         /// Oracle Cloud Infrastructure Tag namespace
         /// </summary>
-        public readonly string Namespace;
+        public readonly string? Namespace;
         /// <summary>
         /// The value of a X509 certificate.
         /// </summary>
-        public readonly string Value;
+        public readonly string? Value;
 
         [OutputConstructor]
         private GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTagResult(
-            string key,
+            string? key,
 
-            string @namespace,
+            string? @namespace,
 
-            string value)
+            string? value)
         {
             Key = key;
             Namespace = @namespace;

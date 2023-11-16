@@ -60,9 +60,6 @@ class GetProtectionCapabilitiesResult:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        The display name of protection capability.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -77,7 +74,7 @@ class GetProtectionCapabilitiesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -86,35 +83,21 @@ class GetProtectionCapabilitiesResult:
     @property
     @pulumi.getter(name="isLatestVersions")
     def is_latest_versions(self) -> Optional[Sequence[bool]]:
-        """
-        The field that shows if this is the latest version of protection capability.
-        """
         return pulumi.get(self, "is_latest_versions")
 
     @property
     @pulumi.getter
     def key(self) -> Optional[str]:
-        """
-        Unique key of protection capability.
-        """
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter(name="protectionCapabilityCollections")
-    def protection_capability_collections(self) -> Sequence['outputs.GetProtectionCapabilitiesProtectionCapabilityCollectionResult']:
-        """
-        The list of protection_capability_collection.
-        """
+    def protection_capability_collections(self) -> Optional[Sequence['outputs.GetProtectionCapabilitiesProtectionCapabilityCollectionResult']]:
         return pulumi.get(self, "protection_capability_collections")
 
     @property
     @pulumi.getter
     def type(self) -> Optional[str]:
-        """
-        The type of protection capability.
-        * **REQUEST_PROTECTION_CAPABILITY** can only be used in `requestProtection` module of WebAppFirewallPolicy.
-        * **RESPONSE_PROTECTION_CAPABILITY** can only be used in `responseProtection` module of WebAppFirewallPolicy.
-        """
         return pulumi.get(self, "type")
 
 
@@ -144,31 +127,7 @@ def get_protection_capabilities(compartment_id: Optional[str] = None,
                                 type: Optional[str] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetProtectionCapabilitiesResult:
     """
-    This data source provides the list of Protection Capabilities in Oracle Cloud Infrastructure Waf service.
-
-    Lists of protection capabilities filtered by query parameters.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_protection_capabilities = oci.Waf.get_protection_capabilities(compartment_id=var["compartment_id"],
-        display_name=var["protection_capability_display_name"],
-        group_tags=var["protection_capability_group_tag"],
-        is_latest_versions=var["protection_capability_is_latest_version"],
-        key=var["protection_capability_key"],
-        type=var["protection_capability_type"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param Sequence[str] group_tags: A filter to return only resources that are accociated given group tag.
-    :param Sequence[bool] is_latest_versions: A filter to return only resources that matches given isLatestVersion.
-    :param str key: The unique key of protection capability to filter by.
-    :param str type: A filter to return only resources that matches given type.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -203,30 +162,6 @@ def get_protection_capabilities_output(compartment_id: Optional[pulumi.Input[str
                                        type: Optional[pulumi.Input[Optional[str]]] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetProtectionCapabilitiesResult]:
     """
-    This data source provides the list of Protection Capabilities in Oracle Cloud Infrastructure Waf service.
-
-    Lists of protection capabilities filtered by query parameters.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_protection_capabilities = oci.Waf.get_protection_capabilities(compartment_id=var["compartment_id"],
-        display_name=var["protection_capability_display_name"],
-        group_tags=var["protection_capability_group_tag"],
-        is_latest_versions=var["protection_capability_is_latest_version"],
-        key=var["protection_capability_key"],
-        type=var["protection_capability_type"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param Sequence[str] group_tags: A filter to return only resources that are accociated given group tag.
-    :param Sequence[bool] is_latest_versions: A filter to return only resources that matches given isLatestVersion.
-    :param str key: The unique key of protection capability to filter by.
-    :param str type: A filter to return only resources that matches given type.
+    Use this data source to access information about an existing resource.
     """
     ...

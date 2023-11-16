@@ -153,7 +153,7 @@ namespace Pulumi.Oci.LoadBalancer
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string ListenerName;
         /// <summary>
         /// The list of listener_rules.
@@ -165,7 +165,7 @@ namespace Pulumi.Oci.LoadBalancer
         private GetListenerRulesResult(
             ImmutableArray<Outputs.GetListenerRulesFilterResult> filters,
 
-            string id,
+            string? id,
 
             string listenerName,
 

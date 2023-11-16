@@ -47,68 +47,68 @@ export interface GetExternalAsmResult {
     /**
      * The additional details of the external ASM defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
      */
-    readonly additionalDetails: {[key: string]: any};
+    readonly additionalDetails?: {[key: string]: any};
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external database resides.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * The name of the external ASM.
      */
-    readonly componentName: string;
+    readonly componentName?: string;
     /**
      * The user-friendly name for the database. The name does not have to be unique.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     readonly externalAsmId: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
      */
-    readonly externalConnectorId: string;
+    readonly externalConnectorId?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the ASM is a part of.
      */
-    readonly externalDbSystemId: string;
+    readonly externalDbSystemId?: string;
     /**
      * The directory in which ASM is installed. This is the same directory in which Oracle Grid Infrastructure is installed.
      */
-    readonly gridHome: string;
+    readonly gridHome?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Indicates whether the ASM is a cluster ASM or not.
      */
-    readonly isCluster: boolean;
+    readonly isCluster?: boolean;
     /**
      * Indicates whether Oracle Flex ASM is enabled or not.
      */
-    readonly isFlexEnabled: boolean;
+    readonly isFlexEnabled?: boolean;
     /**
      * Additional information about the current lifecycle state.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * The list of databases that are serviced by the ASM.
      */
-    readonly servicedDatabases: outputs.DatabaseManagement.GetExternalAsmServicedDatabase[];
+    readonly servicedDatabases?: outputs.DatabaseManagement.GetExternalAsmServicedDatabase[];
     /**
      * The current lifecycle state of the external ASM.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The date and time the external ASM was created.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The date and time the external ASM was last updated.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
     /**
      * The ASM version.
      */
-    readonly version: string;
+    readonly version?: string;
 }
 /**
  * This data source provides details about a specific External Asm resource in Oracle Cloud Infrastructure Database Management service.

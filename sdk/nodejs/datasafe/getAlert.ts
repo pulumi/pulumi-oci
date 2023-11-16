@@ -46,91 +46,91 @@ export interface GetAlertResult {
     /**
      * Type of the alert. Indicates the Data Safe feature triggering the alert.
      */
-    readonly alertType: string;
+    readonly alertType?: string;
     /**
      * A comment for the alert. Entered by the user.
      */
-    readonly comment: string;
+    readonly comment?: string;
     /**
      * The OCID of the compartment that contains the alert.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * The description of the alert.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * The display name of the alert.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Map that contains maps of values. Example: `{"Operations": {"CostCenter": "42"}}`
      */
-    readonly featureDetails: {[key: string]: any};
+    readonly featureDetails?: {[key: string]: any};
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The OCID of the alert.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The operation (event) that triggered alert.
      */
-    readonly operation: string;
+    readonly operation?: string;
     /**
      * The result of the operation (event) that triggered alert.
      */
-    readonly operationStatus: string;
+    readonly operationStatus?: string;
     /**
      * Creation date and time of the operation that triggered alert, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    readonly operationTime: string;
+    readonly operationTime?: string;
     /**
      * The OCID of the policy that triggered alert.
      */
-    readonly policyId: string;
+    readonly policyId?: string;
     /**
      * The resource endpoint that triggered the alert.
      */
-    readonly resourceName: string;
+    readonly resourceName?: string;
     /**
      * Severity level of the alert.
      */
-    readonly severity: string;
+    readonly severity?: string;
     /**
      * The current state of the alert.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The status of the alert.
      */
-    readonly status: string;
+    readonly status?: string;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * Array of OCIDs of the target database which are associated with the alert.
      */
-    readonly targetIds: string[];
+    readonly targetIds?: string[];
     /**
      * Array of names of the target database.
      */
-    readonly targetNames: string[];
+    readonly targetNames?: string[];
     /**
      * Creation date and time of the alert, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * Last date and time the alert was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific Alert resource in Oracle Cloud Infrastructure Data Safe service.

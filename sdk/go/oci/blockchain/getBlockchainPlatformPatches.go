@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Blockchain Platform Patches in Oracle Cloud Infrastructure Blockchain service.
@@ -65,7 +64,7 @@ type GetBlockchainPlatformPatchesResult struct {
 	BlockchainPlatformPatchCollections []GetBlockchainPlatformPatchesBlockchainPlatformPatchCollection `pulumi:"blockchainPlatformPatchCollections"`
 	Filters                            []GetBlockchainPlatformPatchesFilter                            `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 func GetBlockchainPlatformPatchesOutput(ctx *pulumi.Context, args GetBlockchainPlatformPatchesOutputArgs, opts ...pulumi.InvokeOption) GetBlockchainPlatformPatchesResultOutput {
@@ -107,12 +106,6 @@ func (o GetBlockchainPlatformPatchesResultOutput) ToGetBlockchainPlatformPatches
 	return o
 }
 
-func (o GetBlockchainPlatformPatchesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetBlockchainPlatformPatchesResult] {
-	return pulumix.Output[GetBlockchainPlatformPatchesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetBlockchainPlatformPatchesResultOutput) BlockchainPlatformId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBlockchainPlatformPatchesResult) string { return v.BlockchainPlatformId }).(pulumi.StringOutput)
 }
@@ -129,8 +122,8 @@ func (o GetBlockchainPlatformPatchesResultOutput) Filters() GetBlockchainPlatfor
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetBlockchainPlatformPatchesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBlockchainPlatformPatchesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetBlockchainPlatformPatchesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBlockchainPlatformPatchesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func init() {

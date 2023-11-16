@@ -13,10 +13,10 @@ namespace Pulumi.Oci.Dns.Outputs
     [OutputType]
     public sealed class GetResolversResolverAttachedViewResult
     {
-        public readonly string ViewId;
+        public readonly string? ViewId;
 
         [OutputConstructor]
-        private GetResolversResolverAttachedViewResult(string viewId)
+        private GetResolversResolverAttachedViewResult(string? viewId)
         {
             ViewId = viewId;
         }

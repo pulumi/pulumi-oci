@@ -24,14 +24,14 @@ public final class GetAutonomousContainerPatchesResult {
      * @return The list of autonomous_patches.
      * 
      */
-    private List<GetAutonomousContainerPatchesAutonomousPatch> autonomousPatches;
+    private @Nullable List<GetAutonomousContainerPatchesAutonomousPatch> autonomousPatches;
     private String compartmentId;
     private @Nullable List<GetAutonomousContainerPatchesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
 
     private GetAutonomousContainerPatchesResult() {}
     public String autonomousContainerDatabaseId() {
@@ -49,7 +49,7 @@ public final class GetAutonomousContainerPatchesResult {
      * 
      */
     public List<GetAutonomousContainerPatchesAutonomousPatch> autonomousPatches() {
-        return this.autonomousPatches;
+        return this.autonomousPatches == null ? List.of() : this.autonomousPatches;
     }
     public String compartmentId() {
         return this.compartmentId;
@@ -61,8 +61,8 @@ public final class GetAutonomousContainerPatchesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
 
     public static Builder builder() {
@@ -76,10 +76,10 @@ public final class GetAutonomousContainerPatchesResult {
     public static final class Builder {
         private String autonomousContainerDatabaseId;
         private @Nullable String autonomousPatchType;
-        private List<GetAutonomousContainerPatchesAutonomousPatch> autonomousPatches;
+        private @Nullable List<GetAutonomousContainerPatchesAutonomousPatch> autonomousPatches;
         private String compartmentId;
         private @Nullable List<GetAutonomousContainerPatchesFilter> filters;
-        private String id;
+        private @Nullable String id;
         public Builder() {}
         public Builder(GetAutonomousContainerPatchesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -102,8 +102,8 @@ public final class GetAutonomousContainerPatchesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder autonomousPatches(List<GetAutonomousContainerPatchesAutonomousPatch> autonomousPatches) {
-            this.autonomousPatches = Objects.requireNonNull(autonomousPatches);
+        public Builder autonomousPatches(@Nullable List<GetAutonomousContainerPatchesAutonomousPatch> autonomousPatches) {
+            this.autonomousPatches = autonomousPatches;
             return this;
         }
         public Builder autonomousPatches(GetAutonomousContainerPatchesAutonomousPatch... autonomousPatches) {
@@ -123,8 +123,8 @@ public final class GetAutonomousContainerPatchesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         public GetAutonomousContainerPatchesResult build() {

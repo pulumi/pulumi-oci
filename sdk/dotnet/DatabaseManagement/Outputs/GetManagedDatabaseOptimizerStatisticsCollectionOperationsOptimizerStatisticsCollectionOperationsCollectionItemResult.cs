@@ -16,7 +16,7 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// The number of objects for which statistics collection is completed.
         /// </summary>
-        public readonly int CompletedCount;
+        public readonly int? CompletedCount;
         /// <summary>
         /// The summary of the Managed Database resource.
         /// </summary>
@@ -24,43 +24,43 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// The time it takes to complete the operation (in seconds).
         /// </summary>
-        public readonly double DurationInSeconds;
+        public readonly double? DurationInSeconds;
         /// <summary>
         /// The end time of the operation.
         /// </summary>
-        public readonly string EndTime;
+        public readonly string? EndTime;
         /// <summary>
         /// The number of objects for which statistics collection failed.
         /// </summary>
-        public readonly int FailedCount;
+        public readonly int? FailedCount;
         /// <summary>
         /// The ID of the operation.
         /// </summary>
-        public readonly int Id;
+        public readonly int? Id;
         /// <summary>
         /// The number of objects for which statistics collection is in progress.
         /// </summary>
-        public readonly int InProgressCount;
+        public readonly int? InProgressCount;
         /// <summary>
         /// The name of the job.
         /// </summary>
-        public readonly string JobName;
+        public readonly string? JobName;
         /// <summary>
         /// The name of the operation.
         /// </summary>
-        public readonly string OperationName;
+        public readonly string? OperationName;
         /// <summary>
         /// The start time of the operation.
         /// </summary>
-        public readonly string StartTime;
+        public readonly string? StartTime;
         /// <summary>
         /// The status of the Optimizer Statistics Collection task.
         /// </summary>
-        public readonly string Status;
+        public readonly string? Status;
         /// <summary>
         /// The name of the target object for which statistics are gathered.
         /// </summary>
-        public readonly string Target;
+        public readonly string? Target;
         /// <summary>
         /// An array of Optimizer Statistics Collection task details.
         /// </summary>
@@ -68,43 +68,43 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// The number of objects for which statistics collection timed out.
         /// </summary>
-        public readonly int TimedOutCount;
+        public readonly int? TimedOutCount;
         /// <summary>
         /// The total number of objects for which statistics is collected. This number is the sum of all the objects with various statuses: completed, inProgress, failed, and timedOut.
         /// </summary>
-        public readonly int TotalObjectsCount;
+        public readonly int? TotalObjectsCount;
 
         [OutputConstructor]
         private GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemResult(
-            int completedCount,
+            int? completedCount,
 
             ImmutableArray<Outputs.GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemDatabaseResult> databases,
 
-            double durationInSeconds,
+            double? durationInSeconds,
 
-            string endTime,
+            string? endTime,
 
-            int failedCount,
+            int? failedCount,
 
-            int id,
+            int? id,
 
-            int inProgressCount,
+            int? inProgressCount,
 
-            string jobName,
+            string? jobName,
 
-            string operationName,
+            string? operationName,
 
-            string startTime,
+            string? startTime,
 
-            string status,
+            string? status,
 
-            string target,
+            string? target,
 
             ImmutableArray<Outputs.GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTaskResult> tasks,
 
-            int timedOutCount,
+            int? timedOutCount,
 
-            int totalObjectsCount)
+            int? totalObjectsCount)
         {
             CompletedCount = completedCount;
             Databases = databases;

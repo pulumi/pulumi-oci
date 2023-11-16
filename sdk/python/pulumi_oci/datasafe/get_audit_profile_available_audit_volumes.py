@@ -52,17 +52,11 @@ class GetAuditProfileAvailableAuditVolumesResult:
     @property
     @pulumi.getter(name="auditProfileId")
     def audit_profile_id(self) -> str:
-        """
-        The OCID of the audit profile resource.
-        """
         return pulumi.get(self, "audit_profile_id")
 
     @property
     @pulumi.getter(name="availableAuditVolumeCollections")
-    def available_audit_volume_collections(self) -> Sequence['outputs.GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionResult']:
-        """
-        The list of available_audit_volume_collection.
-        """
+    def available_audit_volume_collections(self) -> Optional[Sequence['outputs.GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionResult']]:
         return pulumi.get(self, "available_audit_volume_collections")
 
     @property
@@ -72,7 +66,7 @@ class GetAuditProfileAvailableAuditVolumesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -91,9 +85,6 @@ class GetAuditProfileAvailableAuditVolumesResult:
     @property
     @pulumi.getter(name="trailLocation")
     def trail_location(self) -> Optional[str]:
-        """
-        Audit trail location on the target database from where the audit data is being collected by Data Safe.
-        """
         return pulumi.get(self, "trail_location")
 
     @property
@@ -126,33 +117,7 @@ def get_audit_profile_available_audit_volumes(audit_profile_id: Optional[str] = 
                                               work_request_id: Optional[str] = None,
                                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAuditProfileAvailableAuditVolumesResult:
     """
-    This data source provides the list of Audit Profile Available Audit Volumes in Oracle Cloud Infrastructure Data Safe service.
-
-    Retrieves a list of audit trails, and associated audit event volume for each trail up to defined start date.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_audit_profile_available_audit_volumes = oci.DataSafe.get_audit_profile_available_audit_volumes(audit_profile_id=oci_data_safe_audit_profile["test_audit_profile"]["id"],
-        work_request_id=oci_containerengine_work_request["test_work_request"]["id"],
-        month_in_consideration_greater_than=var["audit_profile_available_audit_volume_month_in_consideration_greater_than"],
-        month_in_consideration_less_than=var["audit_profile_available_audit_volume_month_in_consideration_less_than"],
-        trail_location=var["audit_profile_available_audit_volume_trail_location"])
-    ```
-
-
-    :param str audit_profile_id: The OCID of the audit.
-    :param str month_in_consideration_greater_than: Specifying `monthInConsiderationGreaterThan` parameter will retrieve all items for which the event month is greater than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-           
-           **Example:** 2016-12-19T00:00:00.000Z
-    :param str month_in_consideration_less_than: Specifying `monthInConsiderationLessThan` parameter will retrieve all items for which the event month is less than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-           
-           **Example:** 2016-12-19T00:00:00.000Z
-    :param str trail_location: The audit trail location.
-    :param str work_request_id: The OCID of the work request.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['auditProfileId'] = audit_profile_id
@@ -184,32 +149,6 @@ def get_audit_profile_available_audit_volumes_output(audit_profile_id: Optional[
                                                      work_request_id: Optional[pulumi.Input[str]] = None,
                                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAuditProfileAvailableAuditVolumesResult]:
     """
-    This data source provides the list of Audit Profile Available Audit Volumes in Oracle Cloud Infrastructure Data Safe service.
-
-    Retrieves a list of audit trails, and associated audit event volume for each trail up to defined start date.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_audit_profile_available_audit_volumes = oci.DataSafe.get_audit_profile_available_audit_volumes(audit_profile_id=oci_data_safe_audit_profile["test_audit_profile"]["id"],
-        work_request_id=oci_containerengine_work_request["test_work_request"]["id"],
-        month_in_consideration_greater_than=var["audit_profile_available_audit_volume_month_in_consideration_greater_than"],
-        month_in_consideration_less_than=var["audit_profile_available_audit_volume_month_in_consideration_less_than"],
-        trail_location=var["audit_profile_available_audit_volume_trail_location"])
-    ```
-
-
-    :param str audit_profile_id: The OCID of the audit.
-    :param str month_in_consideration_greater_than: Specifying `monthInConsiderationGreaterThan` parameter will retrieve all items for which the event month is greater than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-           
-           **Example:** 2016-12-19T00:00:00.000Z
-    :param str month_in_consideration_less_than: Specifying `monthInConsiderationLessThan` parameter will retrieve all items for which the event month is less than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-           
-           **Example:** 2016-12-19T00:00:00.000Z
-    :param str trail_location: The audit trail location.
-    :param str work_request_id: The OCID of the work request.
+    Use this data source to access information about an existing resource.
     """
     ...

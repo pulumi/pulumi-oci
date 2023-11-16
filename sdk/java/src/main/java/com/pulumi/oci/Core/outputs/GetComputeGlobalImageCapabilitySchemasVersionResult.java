@@ -8,6 +8,8 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetComputeGlobalImageCapabilitySchemasVersionResult {
@@ -21,27 +23,27 @@ public final class GetComputeGlobalImageCapabilitySchemasVersionResult {
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The name of the compute global image capability schema version
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return The map of each capability name to its ImageCapabilityDescriptor.
      * 
      */
-    private Map<String,Object> schemaData;
+    private @Nullable Map<String,Object> schemaData;
     /**
      * @return The date and time the compute global image capability schema version was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
 
     private GetComputeGlobalImageCapabilitySchemasVersionResult() {}
     /**
@@ -58,36 +60,36 @@ public final class GetComputeGlobalImageCapabilitySchemasVersionResult {
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The name of the compute global image capability schema version
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return The map of each capability name to its ImageCapabilityDescriptor.
      * 
      */
     public Map<String,Object> schemaData() {
-        return this.schemaData;
+        return this.schemaData == null ? Map.of() : this.schemaData;
     }
     /**
      * @return The date and time the compute global image capability schema version was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
 
     public static Builder builder() {
@@ -101,11 +103,11 @@ public final class GetComputeGlobalImageCapabilitySchemasVersionResult {
     public static final class Builder {
         private String computeGlobalImageCapabilitySchemaId;
         private String computeGlobalImageCapabilitySchemaVersionName;
-        private String displayName;
-        private String id;
-        private String name;
-        private Map<String,Object> schemaData;
-        private String timeCreated;
+        private @Nullable String displayName;
+        private @Nullable String id;
+        private @Nullable String name;
+        private @Nullable Map<String,Object> schemaData;
+        private @Nullable String timeCreated;
         public Builder() {}
         public Builder(GetComputeGlobalImageCapabilitySchemasVersionResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -129,28 +131,28 @@ public final class GetComputeGlobalImageCapabilitySchemasVersionResult {
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder schemaData(Map<String,Object> schemaData) {
-            this.schemaData = Objects.requireNonNull(schemaData);
+        public Builder schemaData(@Nullable Map<String,Object> schemaData) {
+            this.schemaData = schemaData;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetComputeGlobalImageCapabilitySchemasVersionResult build() {

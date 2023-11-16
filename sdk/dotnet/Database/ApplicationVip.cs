@@ -57,25 +57,25 @@ namespace Pulumi.Oci.Database
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
         [Output("compartmentId")]
-        public Output<string> CompartmentId { get; private set; } = null!;
+        public Output<string?> CompartmentId { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB node associated with the application virtual IP (VIP) address.
         /// </summary>
         [Output("dbNodeId")]
-        public Output<string> DbNodeId { get; private set; } = null!;
+        public Output<string?> DbNodeId { get; private set; } = null!;
 
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// The hostname of the application virtual IP (VIP) address.
@@ -87,19 +87,19 @@ namespace Pulumi.Oci.Database
         /// The application virtual IP (VIP) address.
         /// </summary>
         [Output("ipAddress")]
-        public Output<string> IpAddress { get; private set; } = null!;
+        public Output<string?> IpAddress { get; private set; } = null!;
 
         /// <summary>
         /// Additional information about the current lifecycle state of the application virtual IP (VIP) address.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// The current lifecycle state of the application virtual IP (VIP) address.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the application virtual IP (VIP) address.
@@ -115,7 +115,7 @@ namespace Pulumi.Oci.Database
         /// The date and time when the create operation for the application virtual IP (VIP) address completed.
         /// </summary>
         [Output("timeAssigned")]
-        public Output<string> TimeAssigned { get; private set; } = null!;
+        public Output<string?> TimeAssigned { get; private set; } = null!;
 
 
         /// <summary>

@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkus {
@@ -14,63 +16,63 @@ public final class GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkus 
      * @return Description of the stock units.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return Description of the covered product belonging to this Sku.
      * 
      */
-    private String licensePartDescription;
+    private @Nullable String licensePartDescription;
     /**
      * @return Base metric for billing the service.
      * 
      */
-    private String metricName;
+    private @Nullable String metricName;
     /**
      * @return Quantity of the stock units.
      * 
      */
-    private Integer quantity;
+    private @Nullable Integer quantity;
     /**
      * @return Stock keeping unit id.
      * 
      */
-    private String sku;
+    private @Nullable String sku;
 
     private GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkus() {}
     /**
      * @return Description of the stock units.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return Description of the covered product belonging to this Sku.
      * 
      */
-    public String licensePartDescription() {
-        return this.licensePartDescription;
+    public Optional<String> licensePartDescription() {
+        return Optional.ofNullable(this.licensePartDescription);
     }
     /**
      * @return Base metric for billing the service.
      * 
      */
-    public String metricName() {
-        return this.metricName;
+    public Optional<String> metricName() {
+        return Optional.ofNullable(this.metricName);
     }
     /**
      * @return Quantity of the stock units.
      * 
      */
-    public Integer quantity() {
-        return this.quantity;
+    public Optional<Integer> quantity() {
+        return Optional.ofNullable(this.quantity);
     }
     /**
      * @return Stock keeping unit id.
      * 
      */
-    public String sku() {
-        return this.sku;
+    public Optional<String> sku() {
+        return Optional.ofNullable(this.sku);
     }
 
     public static Builder builder() {
@@ -82,11 +84,11 @@ public final class GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkus 
     }
     @CustomType.Builder
     public static final class Builder {
-        private String description;
-        private String licensePartDescription;
-        private String metricName;
-        private Integer quantity;
-        private String sku;
+        private @Nullable String description;
+        private @Nullable String licensePartDescription;
+        private @Nullable String metricName;
+        private @Nullable Integer quantity;
+        private @Nullable String sku;
         public Builder() {}
         public Builder(GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkus defaults) {
     	      Objects.requireNonNull(defaults);
@@ -98,28 +100,28 @@ public final class GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkus 
         }
 
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder licensePartDescription(String licensePartDescription) {
-            this.licensePartDescription = Objects.requireNonNull(licensePartDescription);
+        public Builder licensePartDescription(@Nullable String licensePartDescription) {
+            this.licensePartDescription = licensePartDescription;
             return this;
         }
         @CustomType.Setter
-        public Builder metricName(String metricName) {
-            this.metricName = Objects.requireNonNull(metricName);
+        public Builder metricName(@Nullable String metricName) {
+            this.metricName = metricName;
             return this;
         }
         @CustomType.Setter
-        public Builder quantity(Integer quantity) {
-            this.quantity = Objects.requireNonNull(quantity);
+        public Builder quantity(@Nullable Integer quantity) {
+            this.quantity = quantity;
             return this;
         }
         @CustomType.Setter
-        public Builder sku(String sku) {
-            this.sku = Objects.requireNonNull(sku);
+        public Builder sku(@Nullable String sku) {
+            this.sku = sku;
             return this;
         }
         public GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkus build() {

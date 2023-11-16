@@ -24,11 +24,11 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// The number of failed login attempts. The value is reset to 0 after a successful login.
         /// </summary>
-        public readonly int LoginAttempts;
+        public readonly int? LoginAttempts;
         /// <summary>
         /// The date when the user enrolled in multi factor authentication. This will be set to null, when the user resets their factors.
         /// </summary>
-        public readonly string MfaEnabledOn;
+        public readonly string? MfaEnabledOn;
         /// <summary>
         /// User MFA Ignored Apps Identifiers
         /// </summary>
@@ -36,15 +36,15 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// The user opted for MFA.
         /// </summary>
-        public readonly string MfaStatus;
+        public readonly string? MfaStatus;
         /// <summary>
         /// The preferred authentication factor type.
         /// </summary>
-        public readonly string PreferredAuthenticationFactor;
+        public readonly string? PreferredAuthenticationFactor;
         /// <summary>
         /// The preferred authentication method.
         /// </summary>
-        public readonly string PreferredAuthenticationMethod;
+        public readonly string? PreferredAuthenticationMethod;
         /// <summary>
         /// The user's preferred device.
         /// </summary>
@@ -52,7 +52,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// The preferred third-party vendor name.
         /// </summary>
-        public readonly string PreferredThirdPartyVendor;
+        public readonly string? PreferredThirdPartyVendor;
         /// <summary>
         /// A list of trusted User Agents owned by this user. Multi-Factored Authentication uses Trusted User Agents to authenticate users.  A User Agent is software application that a user uses to issue requests. For example, a User Agent could be a particular browser (possibly one of several executing on a desktop or laptop) or a particular mobile application (again, oneof several executing on a particular mobile device). A User Agent is trusted once the Multi-Factor Authentication has verified it in some way.
         /// </summary>
@@ -64,21 +64,21 @@ namespace Pulumi.Oci.Identity.Outputs
 
             ImmutableArray<Outputs.GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceResult> devices,
 
-            int loginAttempts,
+            int? loginAttempts,
 
-            string mfaEnabledOn,
+            string? mfaEnabledOn,
 
             ImmutableArray<string> mfaIgnoredApps,
 
-            string mfaStatus,
+            string? mfaStatus,
 
-            string preferredAuthenticationFactor,
+            string? preferredAuthenticationFactor,
 
-            string preferredAuthenticationMethod,
+            string? preferredAuthenticationMethod,
 
             ImmutableArray<Outputs.GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceResult> preferredDevices,
 
-            string preferredThirdPartyVendor,
+            string? preferredThirdPartyVendor,
 
             ImmutableArray<Outputs.GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentResult> trustedUserAgents)
         {

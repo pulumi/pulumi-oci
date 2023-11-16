@@ -20,43 +20,43 @@ namespace Pulumi.Oci.DataFlow.Outputs
         /// <summary>
         /// The host name prefix.
         /// </summary>
-        public readonly string HostNamePrefix;
+        public readonly string? HostNamePrefix;
         /// <summary>
         /// The type of network configuration.
         /// </summary>
-        public readonly string NetworkType;
+        public readonly string? NetworkType;
         /// <summary>
         /// Ip Address of private endpoint
         /// </summary>
-        public readonly string PrivateEndpointIp;
+        public readonly string? PrivateEndpointIp;
         /// <summary>
         /// Ip Address of public endpoint
         /// </summary>
-        public readonly string PublicEndpointIp;
+        public readonly string? PublicEndpointIp;
         /// <summary>
         /// The VCN Subnet OCID.
         /// </summary>
-        public readonly string SubnetId;
+        public readonly string? SubnetId;
         /// <summary>
         /// The VCN OCID.
         /// </summary>
-        public readonly string VcnId;
+        public readonly string? VcnId;
 
         [OutputConstructor]
         private GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationResult(
             ImmutableArray<Outputs.GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRuleResult> accessControlRules,
 
-            string hostNamePrefix,
+            string? hostNamePrefix,
 
-            string networkType,
+            string? networkType,
 
-            string privateEndpointIp,
+            string? privateEndpointIp,
 
-            string publicEndpointIp,
+            string? publicEndpointIp,
 
-            string subnetId,
+            string? subnetId,
 
-            string vcnId)
+            string? vcnId)
         {
             AccessControlRules = accessControlRules;
             HostNamePrefix = hostNamePrefix;

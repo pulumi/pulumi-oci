@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Network Sources in Oracle Cloud Infrastructure Identity service.
@@ -72,7 +71,7 @@ type GetNetworkSourcesResult struct {
 	CompartmentId string                    `pulumi:"compartmentId"`
 	Filters       []GetNetworkSourcesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The name you assign to the network source during creation. The name must be unique across the tenancy and cannot be changed.
 	Name *string `pulumi:"name"`
 	// The list of network_sources.
@@ -124,12 +123,6 @@ func (o GetNetworkSourcesResultOutput) ToGetNetworkSourcesResultOutputWithContex
 	return o
 }
 
-func (o GetNetworkSourcesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetNetworkSourcesResult] {
-	return pulumix.Output[GetNetworkSourcesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the tenancy containing the network source. The tenancy is the root compartment.
 func (o GetNetworkSourcesResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNetworkSourcesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -140,8 +133,8 @@ func (o GetNetworkSourcesResultOutput) Filters() GetNetworkSourcesFilterArrayOut
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetNetworkSourcesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNetworkSourcesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetNetworkSourcesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNetworkSourcesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The name you assign to the network source during creation. The name must be unique across the tenancy and cannot be changed.

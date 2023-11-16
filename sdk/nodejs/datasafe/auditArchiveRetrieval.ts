@@ -72,7 +72,7 @@ export class AuditArchiveRetrieval extends pulumi.CustomResource {
     /**
      * Total count of audit events to be retrieved from the archive for the specified date range.
      */
-    public /*out*/ readonly auditEventCount!: pulumi.Output<string>;
+    public /*out*/ readonly auditEventCount!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The OCID of the compartment that contains the archival retrieval.
      */
@@ -80,15 +80,15 @@ export class AuditArchiveRetrieval extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) Description of the archive retrieval.
      */
-    public readonly description!: pulumi.Output<string>;
+    public readonly description!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The display name of the archive retrieval. The name does not have to be unique, and is changeable.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    public readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * End month of the archive retrieval, in the format defined by RFC3339.
      */
@@ -96,15 +96,15 @@ export class AuditArchiveRetrieval extends pulumi.CustomResource {
     /**
      * The Error details of a failed archive retrieval.
      */
-    public /*out*/ readonly errorInfo!: pulumi.Output<string>;
+    public /*out*/ readonly errorInfo!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * Details about the current state of the archive retrieval.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * Start month of the archive retrieval, in the format defined by RFC3339.
      */
@@ -112,11 +112,11 @@ export class AuditArchiveRetrieval extends pulumi.CustomResource {
     /**
      * The current state of the archive retrieval.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The OCID of the target associated with the archive retrieval.
      *
@@ -128,15 +128,15 @@ export class AuditArchiveRetrieval extends pulumi.CustomResource {
     /**
      * The date time when archive retrieval request was fulfilled, in the format defined by RFC3339.
      */
-    public /*out*/ readonly timeCompleted!: pulumi.Output<string>;
+    public /*out*/ readonly timeCompleted!: pulumi.Output<string | undefined>;
     /**
      * The date time when retrieved archive data will be deleted from Data Safe and unloaded back into archival.
      */
-    public /*out*/ readonly timeOfExpiry!: pulumi.Output<string>;
+    public /*out*/ readonly timeOfExpiry!: pulumi.Output<string | undefined>;
     /**
      * The date time when archive retrieval was requested, in the format defined by RFC3339.
      */
-    public /*out*/ readonly timeRequested!: pulumi.Output<string>;
+    public /*out*/ readonly timeRequested!: pulumi.Output<string | undefined>;
 
     /**
      * Create a AuditArchiveRetrieval resource with the given unique name, arguments, and options.

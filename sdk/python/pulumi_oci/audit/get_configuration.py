@@ -39,15 +39,12 @@ class GetConfigurationResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="retentionPeriodDays")
-    def retention_period_days(self) -> int:
-        """
-        The retention period setting, specified in days. The minimum is 90, the maximum 365.  Example: `90`
-        """
+    def retention_period_days(self) -> Optional[int]:
         return pulumi.get(self, "retention_period_days")
 
 
@@ -65,21 +62,7 @@ class AwaitableGetConfigurationResult(GetConfigurationResult):
 def get_configuration(compartment_id: Optional[str] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetConfigurationResult:
     """
-    This data source provides details about a specific Configuration resource in Oracle Cloud Infrastructure Audit service.
-
-    Get the configuration
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_configuration = oci.Audit.get_configuration(compartment_id=var["tenancy_ocid"])
-    ```
-
-
-    :param str compartment_id: ID of the root compartment (tenancy)
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -96,20 +79,6 @@ def get_configuration(compartment_id: Optional[str] = None,
 def get_configuration_output(compartment_id: Optional[pulumi.Input[str]] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetConfigurationResult]:
     """
-    This data source provides details about a specific Configuration resource in Oracle Cloud Infrastructure Audit service.
-
-    Get the configuration
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_configuration = oci.Audit.get_configuration(compartment_id=var["tenancy_ocid"])
-    ```
-
-
-    :param str compartment_id: ID of the root compartment (tenancy)
+    Use this data source to access information about an existing resource.
     """
     ...

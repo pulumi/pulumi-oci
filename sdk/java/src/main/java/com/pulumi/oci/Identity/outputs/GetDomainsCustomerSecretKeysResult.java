@@ -24,24 +24,24 @@ public final class GetDomainsCustomerSecretKeysResult {
      * @return The list of customer_secret_keys.
      * 
      */
-    private List<GetDomainsCustomerSecretKeysCustomerSecretKey> customerSecretKeys;
+    private @Nullable List<GetDomainsCustomerSecretKeysCustomerSecretKey> customerSecretKeys;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String idcsEndpoint;
-    private Integer itemsPerPage;
+    private @Nullable Integer itemsPerPage;
     private @Nullable String resourceTypeSchemaVersion;
     /**
      * @return REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      * 
      */
-    private List<String> schemas;
+    private @Nullable List<String> schemas;
     private @Nullable String sortBy;
     private @Nullable String sortOrder;
     private @Nullable Integer startIndex;
-    private Integer totalResults;
+    private @Nullable Integer totalResults;
 
     private GetDomainsCustomerSecretKeysResult() {}
     public List<String> attributeSets() {
@@ -67,20 +67,20 @@ public final class GetDomainsCustomerSecretKeysResult {
      * 
      */
     public List<GetDomainsCustomerSecretKeysCustomerSecretKey> customerSecretKeys() {
-        return this.customerSecretKeys;
+        return this.customerSecretKeys == null ? List.of() : this.customerSecretKeys;
     }
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String idcsEndpoint() {
         return this.idcsEndpoint;
     }
-    public Integer itemsPerPage() {
-        return this.itemsPerPage;
+    public Optional<Integer> itemsPerPage() {
+        return Optional.ofNullable(this.itemsPerPage);
     }
     public Optional<String> resourceTypeSchemaVersion() {
         return Optional.ofNullable(this.resourceTypeSchemaVersion);
@@ -90,7 +90,7 @@ public final class GetDomainsCustomerSecretKeysResult {
      * 
      */
     public List<String> schemas() {
-        return this.schemas;
+        return this.schemas == null ? List.of() : this.schemas;
     }
     public Optional<String> sortBy() {
         return Optional.ofNullable(this.sortBy);
@@ -101,8 +101,8 @@ public final class GetDomainsCustomerSecretKeysResult {
     public Optional<Integer> startIndex() {
         return Optional.ofNullable(this.startIndex);
     }
-    public Integer totalResults() {
-        return this.totalResults;
+    public Optional<Integer> totalResults() {
+        return Optional.ofNullable(this.totalResults);
     }
 
     public static Builder builder() {
@@ -120,16 +120,16 @@ public final class GetDomainsCustomerSecretKeysResult {
         private @Nullable String compartmentId;
         private @Nullable Integer customerSecretKeyCount;
         private @Nullable String customerSecretKeyFilter;
-        private List<GetDomainsCustomerSecretKeysCustomerSecretKey> customerSecretKeys;
-        private String id;
+        private @Nullable List<GetDomainsCustomerSecretKeysCustomerSecretKey> customerSecretKeys;
+        private @Nullable String id;
         private String idcsEndpoint;
-        private Integer itemsPerPage;
+        private @Nullable Integer itemsPerPage;
         private @Nullable String resourceTypeSchemaVersion;
-        private List<String> schemas;
+        private @Nullable List<String> schemas;
         private @Nullable String sortBy;
         private @Nullable String sortOrder;
         private @Nullable Integer startIndex;
-        private Integer totalResults;
+        private @Nullable Integer totalResults;
         public Builder() {}
         public Builder(GetDomainsCustomerSecretKeysResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -185,16 +185,16 @@ public final class GetDomainsCustomerSecretKeysResult {
             return this;
         }
         @CustomType.Setter
-        public Builder customerSecretKeys(List<GetDomainsCustomerSecretKeysCustomerSecretKey> customerSecretKeys) {
-            this.customerSecretKeys = Objects.requireNonNull(customerSecretKeys);
+        public Builder customerSecretKeys(@Nullable List<GetDomainsCustomerSecretKeysCustomerSecretKey> customerSecretKeys) {
+            this.customerSecretKeys = customerSecretKeys;
             return this;
         }
         public Builder customerSecretKeys(GetDomainsCustomerSecretKeysCustomerSecretKey... customerSecretKeys) {
             return customerSecretKeys(List.of(customerSecretKeys));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -203,8 +203,8 @@ public final class GetDomainsCustomerSecretKeysResult {
             return this;
         }
         @CustomType.Setter
-        public Builder itemsPerPage(Integer itemsPerPage) {
-            this.itemsPerPage = Objects.requireNonNull(itemsPerPage);
+        public Builder itemsPerPage(@Nullable Integer itemsPerPage) {
+            this.itemsPerPage = itemsPerPage;
             return this;
         }
         @CustomType.Setter
@@ -213,8 +213,8 @@ public final class GetDomainsCustomerSecretKeysResult {
             return this;
         }
         @CustomType.Setter
-        public Builder schemas(List<String> schemas) {
-            this.schemas = Objects.requireNonNull(schemas);
+        public Builder schemas(@Nullable List<String> schemas) {
+            this.schemas = schemas;
             return this;
         }
         public Builder schemas(String... schemas) {
@@ -236,8 +236,8 @@ public final class GetDomainsCustomerSecretKeysResult {
             return this;
         }
         @CustomType.Setter
-        public Builder totalResults(Integer totalResults) {
-            this.totalResults = Objects.requireNonNull(totalResults);
+        public Builder totalResults(@Nullable Integer totalResults) {
+            this.totalResults = totalResults;
             return this;
         }
         public GetDomainsCustomerSecretKeysResult build() {

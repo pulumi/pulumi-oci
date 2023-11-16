@@ -11,6 +11,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetResourceActionsResourceActionCollectionItem {
@@ -18,93 +20,93 @@ public final class GetResourceActionsResourceActionCollectionItem {
      * @return Details about the recommended action.
      * 
      */
-    private List<GetResourceActionsResourceActionCollectionItemAction> actions;
+    private @Nullable List<GetResourceActionsResourceActionCollectionItemAction> actions;
     /**
      * @return The unique OCID associated with the category.
      * 
      */
-    private String categoryId;
+    private @Nullable String categoryId;
     /**
      * @return The OCID of the compartment.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The name associated with the compartment.
      * 
      */
-    private String compartmentName;
+    private @Nullable String compartmentName;
     /**
      * @return The estimated cost savings, in dollars, for the resource action.
      * 
      */
-    private Double estimatedCostSaving;
+    private @Nullable Double estimatedCostSaving;
     /**
      * @return Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
      * 
      */
-    private Map<String,Object> extendedMetadata;
+    private @Nullable Map<String,Object> extendedMetadata;
     /**
      * @return The unique OCID associated with the resource action.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Custom metadata key/value pairs for the resource action.
      * 
      */
-    private Map<String,Object> metadata;
+    private @Nullable Map<String,Object> metadata;
     /**
      * @return Optional. A filter that returns results that match the name specified.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return The unique OCID associated with the recommendation.
      * 
      */
-    private String recommendationId;
-    private String resourceActionId;
+    private @Nullable String recommendationId;
+    private @Nullable String resourceActionId;
     /**
      * @return The unique OCID associated with the resource.
      * 
      */
-    private String resourceId;
+    private @Nullable String resourceId;
     /**
      * @return Optional. A filter that returns results that match the resource type specified.
      * 
      */
-    private String resourceType;
+    private @Nullable String resourceType;
     /**
      * @return A filter that returns results that match the lifecycle state specified.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return A filter that returns recommendations that match the status specified.
      * 
      */
-    private String status;
+    private @Nullable String status;
     /**
      * @return The date and time the resource action details were created, in the format defined by RFC3339.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The date and time that the resource action entered its current status. The format is defined by RFC3339.
      * 
      */
-    private String timeStatusBegin;
+    private @Nullable String timeStatusBegin;
     /**
      * @return The date and time the current status will change. The format is defined by RFC3339.
      * 
      */
-    private String timeStatusEnd;
+    private @Nullable String timeStatusEnd;
     /**
      * @return The date and time the resource action details were last updated, in the format defined by RFC3339.
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
 
     private GetResourceActionsResourceActionCollectionItem() {}
     /**
@@ -112,129 +114,129 @@ public final class GetResourceActionsResourceActionCollectionItem {
      * 
      */
     public List<GetResourceActionsResourceActionCollectionItemAction> actions() {
-        return this.actions;
+        return this.actions == null ? List.of() : this.actions;
     }
     /**
      * @return The unique OCID associated with the category.
      * 
      */
-    public String categoryId() {
-        return this.categoryId;
+    public Optional<String> categoryId() {
+        return Optional.ofNullable(this.categoryId);
     }
     /**
      * @return The OCID of the compartment.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The name associated with the compartment.
      * 
      */
-    public String compartmentName() {
-        return this.compartmentName;
+    public Optional<String> compartmentName() {
+        return Optional.ofNullable(this.compartmentName);
     }
     /**
      * @return The estimated cost savings, in dollars, for the resource action.
      * 
      */
-    public Double estimatedCostSaving() {
-        return this.estimatedCostSaving;
+    public Optional<Double> estimatedCostSaving() {
+        return Optional.ofNullable(this.estimatedCostSaving);
     }
     /**
      * @return Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
      * 
      */
     public Map<String,Object> extendedMetadata() {
-        return this.extendedMetadata;
+        return this.extendedMetadata == null ? Map.of() : this.extendedMetadata;
     }
     /**
      * @return The unique OCID associated with the resource action.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Custom metadata key/value pairs for the resource action.
      * 
      */
     public Map<String,Object> metadata() {
-        return this.metadata;
+        return this.metadata == null ? Map.of() : this.metadata;
     }
     /**
      * @return Optional. A filter that returns results that match the name specified.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return The unique OCID associated with the recommendation.
      * 
      */
-    public String recommendationId() {
-        return this.recommendationId;
+    public Optional<String> recommendationId() {
+        return Optional.ofNullable(this.recommendationId);
     }
-    public String resourceActionId() {
-        return this.resourceActionId;
+    public Optional<String> resourceActionId() {
+        return Optional.ofNullable(this.resourceActionId);
     }
     /**
      * @return The unique OCID associated with the resource.
      * 
      */
-    public String resourceId() {
-        return this.resourceId;
+    public Optional<String> resourceId() {
+        return Optional.ofNullable(this.resourceId);
     }
     /**
      * @return Optional. A filter that returns results that match the resource type specified.
      * 
      */
-    public String resourceType() {
-        return this.resourceType;
+    public Optional<String> resourceType() {
+        return Optional.ofNullable(this.resourceType);
     }
     /**
      * @return A filter that returns results that match the lifecycle state specified.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return A filter that returns recommendations that match the status specified.
      * 
      */
-    public String status() {
-        return this.status;
+    public Optional<String> status() {
+        return Optional.ofNullable(this.status);
     }
     /**
      * @return The date and time the resource action details were created, in the format defined by RFC3339.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The date and time that the resource action entered its current status. The format is defined by RFC3339.
      * 
      */
-    public String timeStatusBegin() {
-        return this.timeStatusBegin;
+    public Optional<String> timeStatusBegin() {
+        return Optional.ofNullable(this.timeStatusBegin);
     }
     /**
      * @return The date and time the current status will change. The format is defined by RFC3339.
      * 
      */
-    public String timeStatusEnd() {
-        return this.timeStatusEnd;
+    public Optional<String> timeStatusEnd() {
+        return Optional.ofNullable(this.timeStatusEnd);
     }
     /**
      * @return The date and time the resource action details were last updated, in the format defined by RFC3339.
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
 
     public static Builder builder() {
@@ -246,25 +248,25 @@ public final class GetResourceActionsResourceActionCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetResourceActionsResourceActionCollectionItemAction> actions;
-        private String categoryId;
-        private String compartmentId;
-        private String compartmentName;
-        private Double estimatedCostSaving;
-        private Map<String,Object> extendedMetadata;
-        private String id;
-        private Map<String,Object> metadata;
-        private String name;
-        private String recommendationId;
-        private String resourceActionId;
-        private String resourceId;
-        private String resourceType;
-        private String state;
-        private String status;
-        private String timeCreated;
-        private String timeStatusBegin;
-        private String timeStatusEnd;
-        private String timeUpdated;
+        private @Nullable List<GetResourceActionsResourceActionCollectionItemAction> actions;
+        private @Nullable String categoryId;
+        private @Nullable String compartmentId;
+        private @Nullable String compartmentName;
+        private @Nullable Double estimatedCostSaving;
+        private @Nullable Map<String,Object> extendedMetadata;
+        private @Nullable String id;
+        private @Nullable Map<String,Object> metadata;
+        private @Nullable String name;
+        private @Nullable String recommendationId;
+        private @Nullable String resourceActionId;
+        private @Nullable String resourceId;
+        private @Nullable String resourceType;
+        private @Nullable String state;
+        private @Nullable String status;
+        private @Nullable String timeCreated;
+        private @Nullable String timeStatusBegin;
+        private @Nullable String timeStatusEnd;
+        private @Nullable String timeUpdated;
         public Builder() {}
         public Builder(GetResourceActionsResourceActionCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -290,101 +292,101 @@ public final class GetResourceActionsResourceActionCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder actions(List<GetResourceActionsResourceActionCollectionItemAction> actions) {
-            this.actions = Objects.requireNonNull(actions);
+        public Builder actions(@Nullable List<GetResourceActionsResourceActionCollectionItemAction> actions) {
+            this.actions = actions;
             return this;
         }
         public Builder actions(GetResourceActionsResourceActionCollectionItemAction... actions) {
             return actions(List.of(actions));
         }
         @CustomType.Setter
-        public Builder categoryId(String categoryId) {
-            this.categoryId = Objects.requireNonNull(categoryId);
+        public Builder categoryId(@Nullable String categoryId) {
+            this.categoryId = categoryId;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentName(String compartmentName) {
-            this.compartmentName = Objects.requireNonNull(compartmentName);
+        public Builder compartmentName(@Nullable String compartmentName) {
+            this.compartmentName = compartmentName;
             return this;
         }
         @CustomType.Setter
-        public Builder estimatedCostSaving(Double estimatedCostSaving) {
-            this.estimatedCostSaving = Objects.requireNonNull(estimatedCostSaving);
+        public Builder estimatedCostSaving(@Nullable Double estimatedCostSaving) {
+            this.estimatedCostSaving = estimatedCostSaving;
             return this;
         }
         @CustomType.Setter
-        public Builder extendedMetadata(Map<String,Object> extendedMetadata) {
-            this.extendedMetadata = Objects.requireNonNull(extendedMetadata);
+        public Builder extendedMetadata(@Nullable Map<String,Object> extendedMetadata) {
+            this.extendedMetadata = extendedMetadata;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder metadata(Map<String,Object> metadata) {
-            this.metadata = Objects.requireNonNull(metadata);
+        public Builder metadata(@Nullable Map<String,Object> metadata) {
+            this.metadata = metadata;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder recommendationId(String recommendationId) {
-            this.recommendationId = Objects.requireNonNull(recommendationId);
+        public Builder recommendationId(@Nullable String recommendationId) {
+            this.recommendationId = recommendationId;
             return this;
         }
         @CustomType.Setter
-        public Builder resourceActionId(String resourceActionId) {
-            this.resourceActionId = Objects.requireNonNull(resourceActionId);
+        public Builder resourceActionId(@Nullable String resourceActionId) {
+            this.resourceActionId = resourceActionId;
             return this;
         }
         @CustomType.Setter
-        public Builder resourceId(String resourceId) {
-            this.resourceId = Objects.requireNonNull(resourceId);
+        public Builder resourceId(@Nullable String resourceId) {
+            this.resourceId = resourceId;
             return this;
         }
         @CustomType.Setter
-        public Builder resourceType(String resourceType) {
-            this.resourceType = Objects.requireNonNull(resourceType);
+        public Builder resourceType(@Nullable String resourceType) {
+            this.resourceType = resourceType;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+        public Builder status(@Nullable String status) {
+            this.status = status;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeStatusBegin(String timeStatusBegin) {
-            this.timeStatusBegin = Objects.requireNonNull(timeStatusBegin);
+        public Builder timeStatusBegin(@Nullable String timeStatusBegin) {
+            this.timeStatusBegin = timeStatusBegin;
             return this;
         }
         @CustomType.Setter
-        public Builder timeStatusEnd(String timeStatusEnd) {
-            this.timeStatusEnd = Objects.requireNonNull(timeStatusEnd);
+        public Builder timeStatusEnd(@Nullable String timeStatusEnd) {
+            this.timeStatusEnd = timeStatusEnd;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetResourceActionsResourceActionCollectionItem build() {

@@ -16,41 +16,41 @@ namespace Pulumi.Oci.OneSubsription.Outputs
         /// <summary>
         /// Metered service billing category
         /// </summary>
-        public readonly string BillingCategory;
+        public readonly string? BillingCategory;
         /// <summary>
         /// Product name
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// This param is used to get the rate card(s) filterd by the partNumber
         /// </summary>
-        public readonly string PartNumber;
+        public readonly string? PartNumber;
         /// <summary>
         /// Product category
         /// </summary>
-        public readonly string ProductCategory;
+        public readonly string? ProductCategory;
         /// <summary>
         /// Rate card part type of Product
         /// </summary>
-        public readonly string UcmRateCardPartType;
+        public readonly string? UcmRateCardPartType;
         /// <summary>
         /// Unit of measure
         /// </summary>
-        public readonly string UnitOfMeasure;
+        public readonly string? UnitOfMeasure;
 
         [OutputConstructor]
         private GetRatecardsRateCardProductResult(
-            string billingCategory,
+            string? billingCategory,
 
-            string name,
+            string? name,
 
-            string partNumber,
+            string? partNumber,
 
-            string productCategory,
+            string? productCategory,
 
-            string ucmRateCardPartType,
+            string? ucmRateCardPartType,
 
-            string unitOfMeasure)
+            string? unitOfMeasure)
         {
             BillingCategory = billingCategory;
             Name = name;

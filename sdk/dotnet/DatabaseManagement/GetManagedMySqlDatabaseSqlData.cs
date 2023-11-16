@@ -171,7 +171,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string ManagedMySqlDatabaseId;
         /// <summary>
         /// The list of my_sql_data_collection.
@@ -187,7 +187,7 @@ namespace Pulumi.Oci.DatabaseManagement
 
             ImmutableArray<Outputs.GetManagedMySqlDatabaseSqlDataFilterResult> filters,
 
-            string id,
+            string? id,
 
             string managedMySqlDatabaseId,
 

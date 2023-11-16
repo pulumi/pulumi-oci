@@ -12,6 +12,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSteeringPoliciesSteeringPolicy {
@@ -19,67 +21,67 @@ public final class GetSteeringPoliciesSteeringPolicy {
      * @return The set of all answers that can potentially issue from the steering policy.
      * 
      */
-    private List<GetSteeringPoliciesSteeringPolicyAnswer> answers;
+    private @Nullable List<GetSteeringPoliciesSteeringPolicyAnswer> answers;
     /**
      * @return The OCID of the compartment the resource belongs to.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return The displayName of a resource.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return Search by health check monitor OCID. Will match any resource whose health check monitor ID matches the provided value.
      * 
      */
-    private String healthCheckMonitorId;
+    private @Nullable String healthCheckMonitorId;
     /**
      * @return The OCID of a resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The series of rules that will be processed in sequence to reduce the pool of answers to a response for any given request.
      * 
      */
-    private List<GetSteeringPoliciesSteeringPolicyRule> rules;
+    private @Nullable List<GetSteeringPoliciesSteeringPolicyRule> rules;
     /**
      * @return The canonical absolute URL of the resource.
      * 
      */
-    private String self;
+    private @Nullable String self;
     /**
      * @return The state of a resource.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return Search by steering template type. Will match any resource whose template type matches the provided value.
      * 
      */
-    private String template;
+    private @Nullable String template;
     /**
      * @return The date and time the resource was created, expressed in RFC 3339 timestamp format.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The Time To Live (TTL) for responses from the steering policy, in seconds. If not specified during creation, a value of 30 seconds will be used.
      * 
      */
-    private Integer ttl;
+    private @Nullable Integer ttl;
 
     private GetSteeringPoliciesSteeringPolicy() {}
     /**
@@ -87,91 +89,91 @@ public final class GetSteeringPoliciesSteeringPolicy {
      * 
      */
     public List<GetSteeringPoliciesSteeringPolicyAnswer> answers() {
-        return this.answers;
+        return this.answers == null ? List.of() : this.answers;
     }
     /**
      * @return The OCID of the compartment the resource belongs to.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return The displayName of a resource.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return Search by health check monitor OCID. Will match any resource whose health check monitor ID matches the provided value.
      * 
      */
-    public String healthCheckMonitorId() {
-        return this.healthCheckMonitorId;
+    public Optional<String> healthCheckMonitorId() {
+        return Optional.ofNullable(this.healthCheckMonitorId);
     }
     /**
      * @return The OCID of a resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The series of rules that will be processed in sequence to reduce the pool of answers to a response for any given request.
      * 
      */
     public List<GetSteeringPoliciesSteeringPolicyRule> rules() {
-        return this.rules;
+        return this.rules == null ? List.of() : this.rules;
     }
     /**
      * @return The canonical absolute URL of the resource.
      * 
      */
-    public String self() {
-        return this.self;
+    public Optional<String> self() {
+        return Optional.ofNullable(this.self);
     }
     /**
      * @return The state of a resource.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return Search by steering template type. Will match any resource whose template type matches the provided value.
      * 
      */
-    public String template() {
-        return this.template;
+    public Optional<String> template() {
+        return Optional.ofNullable(this.template);
     }
     /**
      * @return The date and time the resource was created, expressed in RFC 3339 timestamp format.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The Time To Live (TTL) for responses from the steering policy, in seconds. If not specified during creation, a value of 30 seconds will be used.
      * 
      */
-    public Integer ttl() {
-        return this.ttl;
+    public Optional<Integer> ttl() {
+        return Optional.ofNullable(this.ttl);
     }
 
     public static Builder builder() {
@@ -183,19 +185,19 @@ public final class GetSteeringPoliciesSteeringPolicy {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetSteeringPoliciesSteeringPolicyAnswer> answers;
-        private String compartmentId;
-        private Map<String,Object> definedTags;
-        private String displayName;
-        private Map<String,Object> freeformTags;
-        private String healthCheckMonitorId;
-        private String id;
-        private List<GetSteeringPoliciesSteeringPolicyRule> rules;
-        private String self;
-        private String state;
-        private String template;
-        private String timeCreated;
-        private Integer ttl;
+        private @Nullable List<GetSteeringPoliciesSteeringPolicyAnswer> answers;
+        private @Nullable String compartmentId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String healthCheckMonitorId;
+        private @Nullable String id;
+        private @Nullable List<GetSteeringPoliciesSteeringPolicyRule> rules;
+        private @Nullable String self;
+        private @Nullable String state;
+        private @Nullable String template;
+        private @Nullable String timeCreated;
+        private @Nullable Integer ttl;
         public Builder() {}
         public Builder(GetSteeringPoliciesSteeringPolicy defaults) {
     	      Objects.requireNonNull(defaults);
@@ -215,74 +217,74 @@ public final class GetSteeringPoliciesSteeringPolicy {
         }
 
         @CustomType.Setter
-        public Builder answers(List<GetSteeringPoliciesSteeringPolicyAnswer> answers) {
-            this.answers = Objects.requireNonNull(answers);
+        public Builder answers(@Nullable List<GetSteeringPoliciesSteeringPolicyAnswer> answers) {
+            this.answers = answers;
             return this;
         }
         public Builder answers(GetSteeringPoliciesSteeringPolicyAnswer... answers) {
             return answers(List.of(answers));
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder healthCheckMonitorId(String healthCheckMonitorId) {
-            this.healthCheckMonitorId = Objects.requireNonNull(healthCheckMonitorId);
+        public Builder healthCheckMonitorId(@Nullable String healthCheckMonitorId) {
+            this.healthCheckMonitorId = healthCheckMonitorId;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder rules(List<GetSteeringPoliciesSteeringPolicyRule> rules) {
-            this.rules = Objects.requireNonNull(rules);
+        public Builder rules(@Nullable List<GetSteeringPoliciesSteeringPolicyRule> rules) {
+            this.rules = rules;
             return this;
         }
         public Builder rules(GetSteeringPoliciesSteeringPolicyRule... rules) {
             return rules(List.of(rules));
         }
         @CustomType.Setter
-        public Builder self(String self) {
-            this.self = Objects.requireNonNull(self);
+        public Builder self(@Nullable String self) {
+            this.self = self;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder template(String template) {
-            this.template = Objects.requireNonNull(template);
+        public Builder template(@Nullable String template) {
+            this.template = template;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder ttl(Integer ttl) {
-            this.ttl = Objects.requireNonNull(ttl);
+        public Builder ttl(@Nullable Integer ttl) {
+            this.ttl = ttl;
             return this;
         }
         public GetSteeringPoliciesSteeringPolicy build() {

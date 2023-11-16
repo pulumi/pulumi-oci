@@ -39,10 +39,7 @@ class GetApiKeysResult:
 
     @property
     @pulumi.getter(name="apiKeys")
-    def api_keys(self) -> Sequence['outputs.GetApiKeysApiKeyResult']:
-        """
-        The list of api_keys.
-        """
+    def api_keys(self) -> Optional[Sequence['outputs.GetApiKeysApiKeyResult']]:
         return pulumi.get(self, "api_keys")
 
     @property
@@ -52,7 +49,7 @@ class GetApiKeysResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -61,9 +58,6 @@ class GetApiKeysResult:
     @property
     @pulumi.getter(name="userId")
     def user_id(self) -> str:
-        """
-        The OCID of the user the key belongs to.
-        """
         return pulumi.get(self, "user_id")
 
 
@@ -83,24 +77,7 @@ def get_api_keys(filters: Optional[Sequence[pulumi.InputType['GetApiKeysFilterAr
                  user_id: Optional[str] = None,
                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetApiKeysResult:
     """
-    This data source provides the list of Api Keys in Oracle Cloud Infrastructure Identity service.
-
-    Lists the API signing keys for the specified user. A user can have a maximum of three keys.
-
-    Every user has permission to use this API call for *their own user ID*.  An administrator in your
-    organization does not need to write a policy to give users this ability.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_api_keys = oci.Identity.get_api_keys(user_id=oci_identity_user["test_user"]["id"])
-    ```
-
-
-    :param str user_id: The OCID of the user.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -120,23 +97,6 @@ def get_api_keys_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.
                         user_id: Optional[pulumi.Input[str]] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetApiKeysResult]:
     """
-    This data source provides the list of Api Keys in Oracle Cloud Infrastructure Identity service.
-
-    Lists the API signing keys for the specified user. A user can have a maximum of three keys.
-
-    Every user has permission to use this API call for *their own user ID*.  An administrator in your
-    organization does not need to write a policy to give users this ability.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_api_keys = oci.Identity.get_api_keys(user_id=oci_identity_user["test_user"]["id"])
-    ```
-
-
-    :param str user_id: The OCID of the user.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -17,12 +17,12 @@ public final class GetManagedDatabasesAsmPropertyResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return An array of AsmPropertySummary resources.
      * 
      */
-    private List<GetManagedDatabasesAsmPropertyItem> items;
+    private @Nullable List<GetManagedDatabasesAsmPropertyItem> items;
     private String managedDatabaseId;
     private @Nullable String name;
 
@@ -31,15 +31,15 @@ public final class GetManagedDatabasesAsmPropertyResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return An array of AsmPropertySummary resources.
      * 
      */
     public List<GetManagedDatabasesAsmPropertyItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
     public String managedDatabaseId() {
         return this.managedDatabaseId;
@@ -57,8 +57,8 @@ public final class GetManagedDatabasesAsmPropertyResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String id;
-        private List<GetManagedDatabasesAsmPropertyItem> items;
+        private @Nullable String id;
+        private @Nullable List<GetManagedDatabasesAsmPropertyItem> items;
         private String managedDatabaseId;
         private @Nullable String name;
         public Builder() {}
@@ -71,13 +71,13 @@ public final class GetManagedDatabasesAsmPropertyResult {
         }
 
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder items(List<GetManagedDatabasesAsmPropertyItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetManagedDatabasesAsmPropertyItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetManagedDatabasesAsmPropertyItem... items) {

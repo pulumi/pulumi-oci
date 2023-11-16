@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the External Exadata Infrastructure Exadata Management resource in Oracle Cloud Infrastructure Database Management service.
@@ -60,7 +59,7 @@ type ExternalExadataInfrastructureExadataManagement struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
 	ExternalExadataInfrastructureId pulumi.StringOutput `pulumi:"externalExadataInfrastructureId"`
 	// The Oracle license model.
-	LicenseModel pulumi.StringOutput `pulumi:"licenseModel"`
+	LicenseModel pulumi.StringPtrOutput `pulumi:"licenseModel"`
 }
 
 // NewExternalExadataInfrastructureExadataManagement registers a new resource with the given unique name, arguments, and options.
@@ -174,12 +173,6 @@ func (i *ExternalExadataInfrastructureExadataManagement) ToExternalExadataInfras
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalExadataInfrastructureExadataManagementOutput)
 }
 
-func (i *ExternalExadataInfrastructureExadataManagement) ToOutput(ctx context.Context) pulumix.Output[*ExternalExadataInfrastructureExadataManagement] {
-	return pulumix.Output[*ExternalExadataInfrastructureExadataManagement]{
-		OutputState: i.ToExternalExadataInfrastructureExadataManagementOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ExternalExadataInfrastructureExadataManagementArrayInput is an input type that accepts ExternalExadataInfrastructureExadataManagementArray and ExternalExadataInfrastructureExadataManagementArrayOutput values.
 // You can construct a concrete instance of `ExternalExadataInfrastructureExadataManagementArrayInput` via:
 //
@@ -203,12 +196,6 @@ func (i ExternalExadataInfrastructureExadataManagementArray) ToExternalExadataIn
 
 func (i ExternalExadataInfrastructureExadataManagementArray) ToExternalExadataInfrastructureExadataManagementArrayOutputWithContext(ctx context.Context) ExternalExadataInfrastructureExadataManagementArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalExadataInfrastructureExadataManagementArrayOutput)
-}
-
-func (i ExternalExadataInfrastructureExadataManagementArray) ToOutput(ctx context.Context) pulumix.Output[[]*ExternalExadataInfrastructureExadataManagement] {
-	return pulumix.Output[[]*ExternalExadataInfrastructureExadataManagement]{
-		OutputState: i.ToExternalExadataInfrastructureExadataManagementArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ExternalExadataInfrastructureExadataManagementMapInput is an input type that accepts ExternalExadataInfrastructureExadataManagementMap and ExternalExadataInfrastructureExadataManagementMapOutput values.
@@ -236,12 +223,6 @@ func (i ExternalExadataInfrastructureExadataManagementMap) ToExternalExadataInfr
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalExadataInfrastructureExadataManagementMapOutput)
 }
 
-func (i ExternalExadataInfrastructureExadataManagementMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ExternalExadataInfrastructureExadataManagement] {
-	return pulumix.Output[map[string]*ExternalExadataInfrastructureExadataManagement]{
-		OutputState: i.ToExternalExadataInfrastructureExadataManagementMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ExternalExadataInfrastructureExadataManagementOutput struct{ *pulumi.OutputState }
 
 func (ExternalExadataInfrastructureExadataManagementOutput) ElementType() reflect.Type {
@@ -254,12 +235,6 @@ func (o ExternalExadataInfrastructureExadataManagementOutput) ToExternalExadataI
 
 func (o ExternalExadataInfrastructureExadataManagementOutput) ToExternalExadataInfrastructureExadataManagementOutputWithContext(ctx context.Context) ExternalExadataInfrastructureExadataManagementOutput {
 	return o
-}
-
-func (o ExternalExadataInfrastructureExadataManagementOutput) ToOutput(ctx context.Context) pulumix.Output[*ExternalExadataInfrastructureExadataManagement] {
-	return pulumix.Output[*ExternalExadataInfrastructureExadataManagement]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
@@ -278,8 +253,8 @@ func (o ExternalExadataInfrastructureExadataManagementOutput) ExternalExadataInf
 }
 
 // The Oracle license model.
-func (o ExternalExadataInfrastructureExadataManagementOutput) LicenseModel() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalExadataInfrastructureExadataManagement) pulumi.StringOutput { return v.LicenseModel }).(pulumi.StringOutput)
+func (o ExternalExadataInfrastructureExadataManagementOutput) LicenseModel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalExadataInfrastructureExadataManagement) pulumi.StringPtrOutput { return v.LicenseModel }).(pulumi.StringPtrOutput)
 }
 
 type ExternalExadataInfrastructureExadataManagementArrayOutput struct{ *pulumi.OutputState }
@@ -294,12 +269,6 @@ func (o ExternalExadataInfrastructureExadataManagementArrayOutput) ToExternalExa
 
 func (o ExternalExadataInfrastructureExadataManagementArrayOutput) ToExternalExadataInfrastructureExadataManagementArrayOutputWithContext(ctx context.Context) ExternalExadataInfrastructureExadataManagementArrayOutput {
 	return o
-}
-
-func (o ExternalExadataInfrastructureExadataManagementArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ExternalExadataInfrastructureExadataManagement] {
-	return pulumix.Output[[]*ExternalExadataInfrastructureExadataManagement]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ExternalExadataInfrastructureExadataManagementArrayOutput) Index(i pulumi.IntInput) ExternalExadataInfrastructureExadataManagementOutput {
@@ -320,12 +289,6 @@ func (o ExternalExadataInfrastructureExadataManagementMapOutput) ToExternalExada
 
 func (o ExternalExadataInfrastructureExadataManagementMapOutput) ToExternalExadataInfrastructureExadataManagementMapOutputWithContext(ctx context.Context) ExternalExadataInfrastructureExadataManagementMapOutput {
 	return o
-}
-
-func (o ExternalExadataInfrastructureExadataManagementMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ExternalExadataInfrastructureExadataManagement] {
-	return pulumix.Output[map[string]*ExternalExadataInfrastructureExadataManagement]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ExternalExadataInfrastructureExadataManagementMapOutput) MapIndex(k pulumi.StringInput) ExternalExadataInfrastructureExadataManagementOutput {

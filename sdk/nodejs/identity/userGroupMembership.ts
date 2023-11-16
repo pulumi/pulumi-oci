@@ -60,7 +60,7 @@ export class UserGroupMembership extends pulumi.CustomResource {
     /**
      * The OCID of the tenancy containing the user, group, and membership object.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    public readonly compartmentId!: pulumi.Output<string | undefined>;
     /**
      * The OCID of the group.
      */
@@ -68,15 +68,15 @@ export class UserGroupMembership extends pulumi.CustomResource {
     /**
      * The detailed status of INACTIVE lifecycleState.
      */
-    public /*out*/ readonly inactiveState!: pulumi.Output<string>;
+    public /*out*/ readonly inactiveState!: pulumi.Output<string | undefined>;
     /**
      * The membership's current state.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * Date and time the membership was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The OCID of the user.
      *

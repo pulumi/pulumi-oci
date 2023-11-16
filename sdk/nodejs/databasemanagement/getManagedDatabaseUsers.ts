@@ -56,7 +56,7 @@ export interface GetManagedDatabaseUsersResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly managedDatabaseId: string;
     /**
      * The name of the User.
@@ -65,7 +65,7 @@ export interface GetManagedDatabaseUsersResult {
     /**
      * The list of user_collection.
      */
-    readonly userCollections: outputs.DatabaseManagement.GetManagedDatabaseUsersUserCollection[];
+    readonly userCollections?: outputs.DatabaseManagement.GetManagedDatabaseUsersUserCollection[];
 }
 /**
  * This data source provides the list of Managed Database Users in Oracle Cloud Infrastructure Database Management service.

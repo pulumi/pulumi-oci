@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAssetsAssetCollectionItemComputeNvdimm {
@@ -14,39 +16,39 @@ public final class GetAssetsAssetCollectionItemComputeNvdimm {
      * @return Controller key.
      * 
      */
-    private Integer controllerKey;
+    private @Nullable Integer controllerKey;
     /**
      * @return Provides a label and summary information for the device.
      * 
      */
-    private String label;
+    private @Nullable String label;
     /**
      * @return The unit number of the SCSI controller.
      * 
      */
-    private Integer unitNumber;
+    private @Nullable Integer unitNumber;
 
     private GetAssetsAssetCollectionItemComputeNvdimm() {}
     /**
      * @return Controller key.
      * 
      */
-    public Integer controllerKey() {
-        return this.controllerKey;
+    public Optional<Integer> controllerKey() {
+        return Optional.ofNullable(this.controllerKey);
     }
     /**
      * @return Provides a label and summary information for the device.
      * 
      */
-    public String label() {
-        return this.label;
+    public Optional<String> label() {
+        return Optional.ofNullable(this.label);
     }
     /**
      * @return The unit number of the SCSI controller.
      * 
      */
-    public Integer unitNumber() {
-        return this.unitNumber;
+    public Optional<Integer> unitNumber() {
+        return Optional.ofNullable(this.unitNumber);
     }
 
     public static Builder builder() {
@@ -58,9 +60,9 @@ public final class GetAssetsAssetCollectionItemComputeNvdimm {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer controllerKey;
-        private String label;
-        private Integer unitNumber;
+        private @Nullable Integer controllerKey;
+        private @Nullable String label;
+        private @Nullable Integer unitNumber;
         public Builder() {}
         public Builder(GetAssetsAssetCollectionItemComputeNvdimm defaults) {
     	      Objects.requireNonNull(defaults);
@@ -70,18 +72,18 @@ public final class GetAssetsAssetCollectionItemComputeNvdimm {
         }
 
         @CustomType.Setter
-        public Builder controllerKey(Integer controllerKey) {
-            this.controllerKey = Objects.requireNonNull(controllerKey);
+        public Builder controllerKey(@Nullable Integer controllerKey) {
+            this.controllerKey = controllerKey;
             return this;
         }
         @CustomType.Setter
-        public Builder label(String label) {
-            this.label = Objects.requireNonNull(label);
+        public Builder label(@Nullable String label) {
+            this.label = label;
             return this;
         }
         @CustomType.Setter
-        public Builder unitNumber(Integer unitNumber) {
-            this.unitNumber = Objects.requireNonNull(unitNumber);
+        public Builder unitNumber(@Nullable Integer unitNumber) {
+            this.unitNumber = unitNumber;
             return this;
         }
         public GetAssetsAssetCollectionItemComputeNvdimm build() {

@@ -71,50 +71,32 @@ class GetPathAnalyzerTestResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PathAnalyzerTest` resource's compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="destinationEndpoints")
-    def destination_endpoints(self) -> Sequence['outputs.GetPathAnalyzerTestDestinationEndpointResult']:
-        """
-        Information describing a source or destination in a `PathAnalyzerTest` resource.
-        """
+    def destination_endpoints(self) -> Optional[Sequence['outputs.GetPathAnalyzerTestDestinationEndpointResult']]:
         return pulumi.get(self, "destination_endpoints")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        A unique identifier established when the resource is created. The identifier can't be changed later.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
@@ -124,66 +106,42 @@ class GetPathAnalyzerTestResult:
 
     @property
     @pulumi.getter
-    def protocol(self) -> int:
-        """
-        The IP protocol to use for the `PathAnalyzerTest` resource.
-        """
+    def protocol(self) -> Optional[int]:
         return pulumi.get(self, "protocol")
 
     @property
     @pulumi.getter(name="protocolParameters")
-    def protocol_parameters(self) -> Sequence['outputs.GetPathAnalyzerTestProtocolParameterResult']:
-        """
-        Defines the IP protocol parameters for a `PathAnalyzerTest` resource.
-        """
+    def protocol_parameters(self) -> Optional[Sequence['outputs.GetPathAnalyzerTestProtocolParameterResult']]:
         return pulumi.get(self, "protocol_parameters")
 
     @property
     @pulumi.getter(name="queryOptions")
-    def query_options(self) -> Sequence['outputs.GetPathAnalyzerTestQueryOptionResult']:
-        """
-        Defines the query options required for a `PathAnalyzerTest` resource.
-        """
+    def query_options(self) -> Optional[Sequence['outputs.GetPathAnalyzerTestQueryOptionResult']]:
         return pulumi.get(self, "query_options")
 
     @property
     @pulumi.getter(name="sourceEndpoints")
-    def source_endpoints(self) -> Sequence['outputs.GetPathAnalyzerTestSourceEndpointResult']:
-        """
-        Information describing a source or destination in a `PathAnalyzerTest` resource.
-        """
+    def source_endpoints(self) -> Optional[Sequence['outputs.GetPathAnalyzerTestSourceEndpointResult']]:
         return pulumi.get(self, "source_endpoints")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the `PathAnalyzerTest` resource.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the `PathAnalyzerTest` resource was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time the `PathAnalyzerTest` resource was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -213,21 +171,7 @@ class AwaitableGetPathAnalyzerTestResult(GetPathAnalyzerTestResult):
 def get_path_analyzer_test(path_analyzer_test_id: Optional[str] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPathAnalyzerTestResult:
     """
-    This data source provides details about a specific Path Analyzer Test resource in Oracle Cloud Infrastructure Vn Monitoring service.
-
-    Gets a `PathAnalyzerTest` using its identifier.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_path_analyzer_test = oci.VnMonitoring.get_path_analyzer_test(path_analyzer_test_id=oci_vn_monitoring_path_analyzer_test["test_path_analyzer_test"]["id"])
-    ```
-
-
-    :param str path_analyzer_test_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PathAnalyzerTest` resource.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['pathAnalyzerTestId'] = path_analyzer_test_id
@@ -256,20 +200,6 @@ def get_path_analyzer_test(path_analyzer_test_id: Optional[str] = None,
 def get_path_analyzer_test_output(path_analyzer_test_id: Optional[pulumi.Input[str]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPathAnalyzerTestResult]:
     """
-    This data source provides details about a specific Path Analyzer Test resource in Oracle Cloud Infrastructure Vn Monitoring service.
-
-    Gets a `PathAnalyzerTest` using its identifier.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_path_analyzer_test = oci.VnMonitoring.get_path_analyzer_test(path_analyzer_test_id=oci_vn_monitoring_path_analyzer_test["test_path_analyzer_test"]["id"])
-    ```
-
-
-    :param str path_analyzer_test_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PathAnalyzerTest` resource.
+    Use this data source to access information about an existing resource.
     """
     ...

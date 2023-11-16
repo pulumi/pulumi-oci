@@ -9,6 +9,7 @@ import com.pulumi.oci.Identity.outputs.GetFaultDomainsFilter;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -27,13 +28,13 @@ public final class GetFaultDomainsResult {
      * @return The list of fault_domains.
      * 
      */
-    private List<GetFaultDomainsFaultDomain> faultDomains;
+    private @Nullable List<GetFaultDomainsFaultDomain> faultDomains;
     private @Nullable List<GetFaultDomainsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
 
     private GetFaultDomainsResult() {}
     /**
@@ -55,7 +56,7 @@ public final class GetFaultDomainsResult {
      * 
      */
     public List<GetFaultDomainsFaultDomain> faultDomains() {
-        return this.faultDomains;
+        return this.faultDomains == null ? List.of() : this.faultDomains;
     }
     public List<GetFaultDomainsFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -64,8 +65,8 @@ public final class GetFaultDomainsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
 
     public static Builder builder() {
@@ -79,9 +80,9 @@ public final class GetFaultDomainsResult {
     public static final class Builder {
         private String availabilityDomain;
         private String compartmentId;
-        private List<GetFaultDomainsFaultDomain> faultDomains;
+        private @Nullable List<GetFaultDomainsFaultDomain> faultDomains;
         private @Nullable List<GetFaultDomainsFilter> filters;
-        private String id;
+        private @Nullable String id;
         public Builder() {}
         public Builder(GetFaultDomainsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -103,8 +104,8 @@ public final class GetFaultDomainsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder faultDomains(List<GetFaultDomainsFaultDomain> faultDomains) {
-            this.faultDomains = Objects.requireNonNull(faultDomains);
+        public Builder faultDomains(@Nullable List<GetFaultDomainsFaultDomain> faultDomains) {
+            this.faultDomains = faultDomains;
             return this;
         }
         public Builder faultDomains(GetFaultDomainsFaultDomain... faultDomains) {
@@ -119,8 +120,8 @@ public final class GetFaultDomainsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         public GetFaultDomainsResult build() {

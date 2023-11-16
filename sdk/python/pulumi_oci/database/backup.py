@@ -18,12 +18,6 @@ class BackupArgs:
                  display_name: pulumi.Input[str]):
         """
         The set of arguments for constructing a Backup resource.
-        :param pulumi.Input[str] database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
-        :param pulumi.Input[str] display_name: The user-friendly name for the backup. The name does not have to be unique.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "database_id", database_id)
         pulumi.set(__self__, "display_name", display_name)
@@ -31,9 +25,6 @@ class BackupArgs:
     @property
     @pulumi.getter(name="databaseId")
     def database_id(self) -> pulumi.Input[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
-        """
         return pulumi.get(self, "database_id")
 
     @database_id.setter
@@ -43,13 +34,6 @@ class BackupArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[str]:
-        """
-        The user-friendly name for the backup. The name does not have to be unique.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -80,28 +64,6 @@ class _BackupState:
                  version: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering Backup resources.
-        :param pulumi.Input[str] availability_domain: The name of the availability domain where the database backup is stored.
-        :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[str] database_edition: The Oracle Database edition of the DB system from which the database backup was taken.
-        :param pulumi.Input[str] database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
-        :param pulumi.Input[float] database_size_in_gbs: The size of the database in gigabytes at the time the backup was taken.
-        :param pulumi.Input[str] display_name: The user-friendly name for the backup. The name does not have to be unique.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
-        :param pulumi.Input[str] key_store_wallet_name: The wallet name for Oracle Key Vault.
-        :param pulumi.Input[str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-        :param pulumi.Input[str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
-        :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
-        :param pulumi.Input[str] shape: Shape of the backup's source database.
-        :param pulumi.Input[str] state: The current state of the backup.
-        :param pulumi.Input[str] time_ended: The date and time the backup was completed.
-        :param pulumi.Input[str] time_started: The date and time the backup started.
-        :param pulumi.Input[str] type: The type of backup.
-        :param pulumi.Input[str] vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
-        :param pulumi.Input[str] version: Version of the backup's source database
         """
         if availability_domain is not None:
             pulumi.set(__self__, "availability_domain", availability_domain)
@@ -143,9 +105,6 @@ class _BackupState:
     @property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name of the availability domain where the database backup is stored.
-        """
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
@@ -155,9 +114,6 @@ class _BackupState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -167,9 +123,6 @@ class _BackupState:
     @property
     @pulumi.getter(name="databaseEdition")
     def database_edition(self) -> Optional[pulumi.Input[str]]:
-        """
-        The Oracle Database edition of the DB system from which the database backup was taken.
-        """
         return pulumi.get(self, "database_edition")
 
     @database_edition.setter
@@ -179,9 +132,6 @@ class _BackupState:
     @property
     @pulumi.getter(name="databaseId")
     def database_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
-        """
         return pulumi.get(self, "database_id")
 
     @database_id.setter
@@ -191,9 +141,6 @@ class _BackupState:
     @property
     @pulumi.getter(name="databaseSizeInGbs")
     def database_size_in_gbs(self) -> Optional[pulumi.Input[float]]:
-        """
-        The size of the database in gigabytes at the time the backup was taken.
-        """
         return pulumi.get(self, "database_size_in_gbs")
 
     @database_size_in_gbs.setter
@@ -203,13 +150,6 @@ class _BackupState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The user-friendly name for the backup. The name does not have to be unique.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -219,9 +159,6 @@ class _BackupState:
     @property
     @pulumi.getter(name="keyStoreId")
     def key_store_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
-        """
         return pulumi.get(self, "key_store_id")
 
     @key_store_id.setter
@@ -231,9 +168,6 @@ class _BackupState:
     @property
     @pulumi.getter(name="keyStoreWalletName")
     def key_store_wallet_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The wallet name for Oracle Key Vault.
-        """
         return pulumi.get(self, "key_store_wallet_name")
 
     @key_store_wallet_name.setter
@@ -243,9 +177,6 @@ class _BackupState:
     @property
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-        """
         return pulumi.get(self, "kms_key_id")
 
     @kms_key_id.setter
@@ -255,9 +186,6 @@ class _BackupState:
     @property
     @pulumi.getter(name="kmsKeyVersionId")
     def kms_key_version_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
-        """
         return pulumi.get(self, "kms_key_version_id")
 
     @kms_key_version_id.setter
@@ -267,9 +195,6 @@ class _BackupState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        Additional information about the current lifecycle state.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -279,9 +204,6 @@ class _BackupState:
     @property
     @pulumi.getter
     def shape(self) -> Optional[pulumi.Input[str]]:
-        """
-        Shape of the backup's source database.
-        """
         return pulumi.get(self, "shape")
 
     @shape.setter
@@ -291,9 +213,6 @@ class _BackupState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the backup.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -303,9 +222,6 @@ class _BackupState:
     @property
     @pulumi.getter(name="timeEnded")
     def time_ended(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the backup was completed.
-        """
         return pulumi.get(self, "time_ended")
 
     @time_ended.setter
@@ -315,9 +231,6 @@ class _BackupState:
     @property
     @pulumi.getter(name="timeStarted")
     def time_started(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the backup started.
-        """
         return pulumi.get(self, "time_started")
 
     @time_started.setter
@@ -327,9 +240,6 @@ class _BackupState:
     @property
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The type of backup.
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -339,9 +249,6 @@ class _BackupState:
     @property
     @pulumi.getter(name="vaultId")
     def vault_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
-        """
         return pulumi.get(self, "vault_id")
 
     @vault_id.setter
@@ -351,9 +258,6 @@ class _BackupState:
     @property
     @pulumi.getter
     def version(self) -> Optional[pulumi.Input[str]]:
-        """
-        Version of the backup's source database
-        """
         return pulumi.get(self, "version")
 
     @version.setter
@@ -370,37 +274,9 @@ class Backup(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Backup resource in Oracle Cloud Infrastructure Database service.
-
-        Creates a new backup in the specified database based on the request parameters you provide. If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_backup = oci.database.Backup("testBackup",
-            database_id=oci_database_database["test_database"]["id"],
-            display_name=var["backup_display_name"])
-        ```
-
-        ## Import
-
-        Backups can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Database/backup:Backup test_backup "id"
-        ```
-
+        Create a Backup resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
-        :param pulumi.Input[str] display_name: The user-friendly name for the backup. The name does not have to be unique.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -409,29 +285,7 @@ class Backup(pulumi.CustomResource):
                  args: BackupArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Backup resource in Oracle Cloud Infrastructure Database service.
-
-        Creates a new backup in the specified database based on the request parameters you provide. If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_backup = oci.database.Backup("testBackup",
-            database_id=oci_database_database["test_database"]["id"],
-            display_name=var["backup_display_name"])
-        ```
-
-        ## Import
-
-        Backups can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Database/backup:Backup test_backup "id"
-        ```
-
+        Create a Backup resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param BackupArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -515,28 +369,6 @@ class Backup(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] availability_domain: The name of the availability domain where the database backup is stored.
-        :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[str] database_edition: The Oracle Database edition of the DB system from which the database backup was taken.
-        :param pulumi.Input[str] database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
-        :param pulumi.Input[float] database_size_in_gbs: The size of the database in gigabytes at the time the backup was taken.
-        :param pulumi.Input[str] display_name: The user-friendly name for the backup. The name does not have to be unique.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
-        :param pulumi.Input[str] key_store_wallet_name: The wallet name for Oracle Key Vault.
-        :param pulumi.Input[str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-        :param pulumi.Input[str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
-        :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
-        :param pulumi.Input[str] shape: Shape of the backup's source database.
-        :param pulumi.Input[str] state: The current state of the backup.
-        :param pulumi.Input[str] time_ended: The date and time the backup was completed.
-        :param pulumi.Input[str] time_started: The date and time the backup started.
-        :param pulumi.Input[str] type: The type of backup.
-        :param pulumi.Input[str] vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
-        :param pulumi.Input[str] version: Version of the backup's source database
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -564,149 +396,91 @@ class Backup(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="availabilityDomain")
-    def availability_domain(self) -> pulumi.Output[str]:
-        """
-        The name of the availability domain where the database backup is stored.
-        """
+    def availability_domain(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "availability_domain")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
+    def compartment_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="databaseEdition")
-    def database_edition(self) -> pulumi.Output[str]:
-        """
-        The Oracle Database edition of the DB system from which the database backup was taken.
-        """
+    def database_edition(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "database_edition")
 
     @property
     @pulumi.getter(name="databaseId")
     def database_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
-        """
         return pulumi.get(self, "database_id")
 
     @property
     @pulumi.getter(name="databaseSizeInGbs")
-    def database_size_in_gbs(self) -> pulumi.Output[float]:
-        """
-        The size of the database in gigabytes at the time the backup was taken.
-        """
+    def database_size_in_gbs(self) -> pulumi.Output[Optional[float]]:
         return pulumi.get(self, "database_size_in_gbs")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
-        """
-        The user-friendly name for the backup. The name does not have to be unique.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="keyStoreId")
-    def key_store_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
-        """
+    def key_store_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "key_store_id")
 
     @property
     @pulumi.getter(name="keyStoreWalletName")
-    def key_store_wallet_name(self) -> pulumi.Output[str]:
-        """
-        The wallet name for Oracle Key Vault.
-        """
+    def key_store_wallet_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "key_store_wallet_name")
 
     @property
     @pulumi.getter(name="kmsKeyId")
-    def kms_key_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-        """
+    def kms_key_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "kms_key_id")
 
     @property
     @pulumi.getter(name="kmsKeyVersionId")
-    def kms_key_version_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
-        """
+    def kms_key_version_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "kms_key_version_id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        Additional information about the current lifecycle state.
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
-    def shape(self) -> pulumi.Output[str]:
-        """
-        Shape of the backup's source database.
-        """
+    def shape(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "shape")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the backup.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeEnded")
-    def time_ended(self) -> pulumi.Output[str]:
-        """
-        The date and time the backup was completed.
-        """
+    def time_ended(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_ended")
 
     @property
     @pulumi.getter(name="timeStarted")
-    def time_started(self) -> pulumi.Output[str]:
-        """
-        The date and time the backup started.
-        """
+    def time_started(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_started")
 
     @property
     @pulumi.getter
-    def type(self) -> pulumi.Output[str]:
-        """
-        The type of backup.
-        """
+    def type(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "type")
 
     @property
     @pulumi.getter(name="vaultId")
-    def vault_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
-        """
+    def vault_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "vault_id")
 
     @property
     @pulumi.getter
-    def version(self) -> pulumi.Output[str]:
-        """
-        Version of the backup's source database
-        """
+    def version(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "version")
 

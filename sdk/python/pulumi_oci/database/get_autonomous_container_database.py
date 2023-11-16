@@ -199,405 +199,277 @@ class GetAutonomousContainerDatabaseResult:
 
     @property
     @pulumi.getter(name="autonomousExadataInfrastructureId")
-    def autonomous_exadata_infrastructure_id(self) -> str:
-        """
-        **No longer used.** For Autonomous Database on dedicated Exadata infrastructure, the container database is created within a specified `cloudAutonomousVmCluster`.
-        """
+    def autonomous_exadata_infrastructure_id(self) -> Optional[str]:
         return pulumi.get(self, "autonomous_exadata_infrastructure_id")
 
     @property
     @pulumi.getter(name="autonomousVmClusterId")
-    def autonomous_vm_cluster_id(self) -> str:
-        """
-        The OCID of the Autonomous VM Cluster.
-        """
+    def autonomous_vm_cluster_id(self) -> Optional[str]:
         return pulumi.get(self, "autonomous_vm_cluster_id")
 
     @property
     @pulumi.getter(name="availabilityDomain")
-    def availability_domain(self) -> str:
-        """
-        The availability domain of the Autonomous Container Database.
-        """
+    def availability_domain(self) -> Optional[str]:
         return pulumi.get(self, "availability_domain")
 
     @property
     @pulumi.getter(name="availableCpus")
-    def available_cpus(self) -> float:
-        """
-        Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.<br> For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
-        """
+    def available_cpus(self) -> Optional[float]:
         return pulumi.get(self, "available_cpus")
 
     @property
     @pulumi.getter(name="backupConfigs")
-    def backup_configs(self) -> Sequence['outputs.GetAutonomousContainerDatabaseBackupConfigResult']:
-        """
-        Backup options for the Autonomous Container Database.
-        """
+    def backup_configs(self) -> Optional[Sequence['outputs.GetAutonomousContainerDatabaseBackupConfigResult']]:
         return pulumi.get(self, "backup_configs")
 
     @property
     @pulumi.getter(name="cloudAutonomousVmClusterId")
-    def cloud_autonomous_vm_cluster_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
-        """
+    def cloud_autonomous_vm_cluster_id(self) -> Optional[str]:
         return pulumi.get(self, "cloud_autonomous_vm_cluster_id")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="computeModel")
-    def compute_model(self) -> str:
-        """
-        The compute model of the Autonomous VM Cluster.
-        """
+    def compute_model(self) -> Optional[str]:
         return pulumi.get(self, "compute_model")
 
     @property
     @pulumi.getter(name="dbName")
-    def db_name(self) -> str:
-        """
-        The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
-        """
+    def db_name(self) -> Optional[str]:
         return pulumi.get(self, "db_name")
 
     @property
     @pulumi.getter(name="dbUniqueName")
-    def db_unique_name(self) -> str:
+    def db_unique_name(self) -> Optional[str]:
         return pulumi.get(self, "db_unique_name")
 
     @property
     @pulumi.getter(name="dbVersion")
-    def db_version(self) -> str:
-        """
-        Oracle Database version of the Autonomous Container Database.
-        """
+    def db_version(self) -> Optional[str]:
         return pulumi.get(self, "db_version")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The user-provided name for the Autonomous Container Database.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="dstFileVersion")
-    def dst_file_version(self) -> str:
-        """
-        DST Time Zone File version of the Autonomous Container Database.
-        """
+    def dst_file_version(self) -> Optional[str]:
         return pulumi.get(self, "dst_file_version")
 
     @property
     @pulumi.getter(name="fastStartFailOverLagLimitInSeconds")
-    def fast_start_fail_over_lag_limit_in_seconds(self) -> int:
+    def fast_start_fail_over_lag_limit_in_seconds(self) -> Optional[int]:
         return pulumi.get(self, "fast_start_fail_over_lag_limit_in_seconds")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="infrastructureType")
-    def infrastructure_type(self) -> str:
-        """
-        The infrastructure type this resource belongs to.
-        """
+    def infrastructure_type(self) -> Optional[str]:
         return pulumi.get(self, "infrastructure_type")
 
     @property
     @pulumi.getter(name="isAutomaticFailoverEnabled")
-    def is_automatic_failover_enabled(self) -> bool:
+    def is_automatic_failover_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_automatic_failover_enabled")
 
     @property
     @pulumi.getter(name="isDstFileUpdateEnabled")
-    def is_dst_file_update_enabled(self) -> bool:
-        """
-        Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
-        """
+    def is_dst_file_update_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_dst_file_update_enabled")
 
     @property
     @pulumi.getter(name="keyHistoryEntries")
-    def key_history_entries(self) -> Sequence['outputs.GetAutonomousContainerDatabaseKeyHistoryEntryResult']:
-        """
-        Key History Entry.
-        """
+    def key_history_entries(self) -> Optional[Sequence['outputs.GetAutonomousContainerDatabaseKeyHistoryEntryResult']]:
         return pulumi.get(self, "key_history_entries")
 
     @property
     @pulumi.getter(name="keyStoreId")
-    def key_store_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
-        """
+    def key_store_id(self) -> Optional[str]:
         return pulumi.get(self, "key_store_id")
 
     @property
     @pulumi.getter(name="keyStoreWalletName")
-    def key_store_wallet_name(self) -> str:
-        """
-        The wallet name for Oracle Key Vault.
-        """
+    def key_store_wallet_name(self) -> Optional[str]:
         return pulumi.get(self, "key_store_wallet_name")
 
     @property
     @pulumi.getter(name="kmsKeyId")
-    def kms_key_id(self) -> str:
-        """
-        The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-        """
+    def kms_key_id(self) -> Optional[str]:
         return pulumi.get(self, "kms_key_id")
 
     @property
     @pulumi.getter(name="largestProvisionableAutonomousDatabaseInCpus")
-    def largest_provisionable_autonomous_database_in_cpus(self) -> float:
-        """
-        The largest Autonomous Database (CPU) that can be created in a new Autonomous Container Database.
-        """
+    def largest_provisionable_autonomous_database_in_cpus(self) -> Optional[float]:
         return pulumi.get(self, "largest_provisionable_autonomous_database_in_cpus")
 
     @property
     @pulumi.getter(name="lastMaintenanceRunId")
-    def last_maintenance_run_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
-        """
+    def last_maintenance_run_id(self) -> Optional[str]:
         return pulumi.get(self, "last_maintenance_run_id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        Additional information about the current lifecycle state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="maintenanceWindowDetails")
-    def maintenance_window_details(self) -> Sequence['outputs.GetAutonomousContainerDatabaseMaintenanceWindowDetailResult']:
+    def maintenance_window_details(self) -> Optional[Sequence['outputs.GetAutonomousContainerDatabaseMaintenanceWindowDetailResult']]:
         return pulumi.get(self, "maintenance_window_details")
 
     @property
     @pulumi.getter(name="maintenanceWindows")
-    def maintenance_windows(self) -> Sequence['outputs.GetAutonomousContainerDatabaseMaintenanceWindowResult']:
-        """
-        The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
-        """
+    def maintenance_windows(self) -> Optional[Sequence['outputs.GetAutonomousContainerDatabaseMaintenanceWindowResult']]:
         return pulumi.get(self, "maintenance_windows")
 
     @property
     @pulumi.getter(name="memoryPerOracleComputeUnitInGbs")
-    def memory_per_oracle_compute_unit_in_gbs(self) -> int:
-        """
-        The amount of memory (in GBs) enabled per OCPU or ECPU in the Autonomous VM Cluster.
-        """
+    def memory_per_oracle_compute_unit_in_gbs(self) -> Optional[int]:
         return pulumi.get(self, "memory_per_oracle_compute_unit_in_gbs")
 
     @property
     @pulumi.getter(name="nextMaintenanceRunId")
-    def next_maintenance_run_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
-        """
+    def next_maintenance_run_id(self) -> Optional[str]:
         return pulumi.get(self, "next_maintenance_run_id")
 
     @property
     @pulumi.getter(name="patchId")
-    def patch_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch applied on the system.
-        """
+    def patch_id(self) -> Optional[str]:
         return pulumi.get(self, "patch_id")
 
     @property
     @pulumi.getter(name="patchModel")
-    def patch_model(self) -> str:
-        """
-        Database patch model preference.
-        """
+    def patch_model(self) -> Optional[str]:
         return pulumi.get(self, "patch_model")
 
     @property
     @pulumi.getter(name="peerAutonomousContainerDatabaseBackupConfigs")
-    def peer_autonomous_container_database_backup_configs(self) -> Sequence['outputs.GetAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigResult']:
+    def peer_autonomous_container_database_backup_configs(self) -> Optional[Sequence['outputs.GetAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigResult']]:
         return pulumi.get(self, "peer_autonomous_container_database_backup_configs")
 
     @property
     @pulumi.getter(name="peerAutonomousContainerDatabaseCompartmentId")
-    def peer_autonomous_container_database_compartment_id(self) -> str:
+    def peer_autonomous_container_database_compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "peer_autonomous_container_database_compartment_id")
 
     @property
     @pulumi.getter(name="peerAutonomousContainerDatabaseDisplayName")
-    def peer_autonomous_container_database_display_name(self) -> str:
+    def peer_autonomous_container_database_display_name(self) -> Optional[str]:
         return pulumi.get(self, "peer_autonomous_container_database_display_name")
 
     @property
     @pulumi.getter(name="peerAutonomousExadataInfrastructureId")
-    def peer_autonomous_exadata_infrastructure_id(self) -> str:
+    def peer_autonomous_exadata_infrastructure_id(self) -> Optional[str]:
         return pulumi.get(self, "peer_autonomous_exadata_infrastructure_id")
 
     @property
     @pulumi.getter(name="peerAutonomousVmClusterId")
-    def peer_autonomous_vm_cluster_id(self) -> str:
+    def peer_autonomous_vm_cluster_id(self) -> Optional[str]:
         return pulumi.get(self, "peer_autonomous_vm_cluster_id")
 
     @property
     @pulumi.getter(name="peerCloudAutonomousVmClusterId")
-    def peer_cloud_autonomous_vm_cluster_id(self) -> str:
+    def peer_cloud_autonomous_vm_cluster_id(self) -> Optional[str]:
         return pulumi.get(self, "peer_cloud_autonomous_vm_cluster_id")
 
     @property
     @pulumi.getter(name="peerDbUniqueName")
-    def peer_db_unique_name(self) -> str:
+    def peer_db_unique_name(self) -> Optional[str]:
         return pulumi.get(self, "peer_db_unique_name")
 
     @property
     @pulumi.getter(name="protectionMode")
-    def protection_mode(self) -> str:
+    def protection_mode(self) -> Optional[str]:
         return pulumi.get(self, "protection_mode")
 
     @property
     @pulumi.getter(name="provisionableCpuses")
-    def provisionable_cpuses(self) -> Sequence[float]:
-        """
-        An array of CPU values that can be used to successfully provision a single Autonomous Database.\\ For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
-        """
+    def provisionable_cpuses(self) -> Optional[Sequence[float]]:
         return pulumi.get(self, "provisionable_cpuses")
 
     @property
     @pulumi.getter(name="provisionedCpus")
-    def provisioned_cpus(self) -> float:
-        """
-        The number of CPUs provisioned in an Autonomous Container Database.
-        """
+    def provisioned_cpus(self) -> Optional[float]:
         return pulumi.get(self, "provisioned_cpus")
 
     @property
     @pulumi.getter(name="reclaimableCpus")
-    def reclaimable_cpus(self) -> float:
-        """
-        For Autonomous Databases on Dedicated Exadata Infrastructure:
-        * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
-        * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
-        """
+    def reclaimable_cpus(self) -> Optional[float]:
         return pulumi.get(self, "reclaimable_cpus")
 
     @property
     @pulumi.getter(name="reservedCpus")
-    def reserved_cpus(self) -> float:
-        """
-        The number of CPUs reserved in an Autonomous Container Database.
-        """
+    def reserved_cpus(self) -> Optional[float]:
         return pulumi.get(self, "reserved_cpus")
 
     @property
     @pulumi.getter
-    def role(self) -> str:
-        """
-        The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
-        """
+    def role(self) -> Optional[str]:
         return pulumi.get(self, "role")
 
     @property
     @pulumi.getter(name="rotateKeyTrigger")
-    def rotate_key_trigger(self) -> bool:
+    def rotate_key_trigger(self) -> Optional[bool]:
         return pulumi.get(self, "rotate_key_trigger")
 
     @property
     @pulumi.getter(name="serviceLevelAgreementType")
-    def service_level_agreement_type(self) -> str:
-        """
-        The service level agreement type of the container database. The default is STANDARD.
-        """
+    def service_level_agreement_type(self) -> Optional[str]:
         return pulumi.get(self, "service_level_agreement_type")
 
     @property
     @pulumi.getter(name="standbyMaintenanceBufferInDays")
-    def standby_maintenance_buffer_in_days(self) -> int:
-        """
-        The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database.
-        """
+    def standby_maintenance_buffer_in_days(self) -> Optional[int]:
         return pulumi.get(self, "standby_maintenance_buffer_in_days")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the Autonomous Container Database.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the Autonomous Container Database was created.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeSnapshotStandbyRevert")
-    def time_snapshot_standby_revert(self) -> str:
-        """
-        The date and time the Autonomous Container Database will be reverted to Standby from Snapshot Standby.
-        """
+    def time_snapshot_standby_revert(self) -> Optional[str]:
         return pulumi.get(self, "time_snapshot_standby_revert")
 
     @property
     @pulumi.getter(name="totalCpus")
-    def total_cpus(self) -> int:
-        """
-        The number of CPUs allocated to the Autonomous VM cluster.<br> For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
-        """
+    def total_cpus(self) -> Optional[int]:
         return pulumi.get(self, "total_cpus")
 
     @property
     @pulumi.getter(name="vaultId")
-    def vault_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
-        """
+    def vault_id(self) -> Optional[str]:
         return pulumi.get(self, "vault_id")
 
     @property
     @pulumi.getter(name="versionPreference")
-    def version_preference(self) -> str:
-        """
-        The next maintenance version preference.
-        """
+    def version_preference(self) -> Optional[str]:
         return pulumi.get(self, "version_preference")
 
 
@@ -668,21 +540,7 @@ class AwaitableGetAutonomousContainerDatabaseResult(GetAutonomousContainerDataba
 def get_autonomous_container_database(autonomous_container_database_id: Optional[str] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAutonomousContainerDatabaseResult:
     """
-    This data source provides details about a specific Autonomous Container Database resource in Oracle Cloud Infrastructure Database service.
-
-    Gets information about the specified Autonomous Container Database.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_autonomous_container_database = oci.Database.get_autonomous_container_database(autonomous_container_database_id=oci_database_autonomous_container_database["test_autonomous_container_database"]["id"])
-    ```
-
-
-    :param str autonomous_container_database_id: The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['autonomousContainerDatabaseId'] = autonomous_container_database_id
@@ -752,20 +610,6 @@ def get_autonomous_container_database(autonomous_container_database_id: Optional
 def get_autonomous_container_database_output(autonomous_container_database_id: Optional[pulumi.Input[str]] = None,
                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAutonomousContainerDatabaseResult]:
     """
-    This data source provides details about a specific Autonomous Container Database resource in Oracle Cloud Infrastructure Database service.
-
-    Gets information about the specified Autonomous Container Database.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_autonomous_container_database = oci.Database.get_autonomous_container_database(autonomous_container_database_id=oci_database_autonomous_container_database["test_autonomous_container_database"]["id"])
-    ```
-
-
-    :param str autonomous_container_database_id: The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -19,13 +19,13 @@ public final class GetManagedDatabaseAlertLogCountResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private @Nullable Boolean isRegularExpression;
     /**
      * @return An array of the counts of different urgency or type of alert logs.
      * 
      */
-    private List<GetManagedDatabaseAlertLogCountItem> items;
+    private @Nullable List<GetManagedDatabaseAlertLogCountItem> items;
     private @Nullable String levelFilter;
     private @Nullable String logSearchText;
     /**
@@ -45,8 +45,8 @@ public final class GetManagedDatabaseAlertLogCountResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public Optional<Boolean> isRegularExpression() {
         return Optional.ofNullable(this.isRegularExpression);
@@ -56,7 +56,7 @@ public final class GetManagedDatabaseAlertLogCountResult {
      * 
      */
     public List<GetManagedDatabaseAlertLogCountItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
     public Optional<String> levelFilter() {
         return Optional.ofNullable(this.levelFilter);
@@ -91,9 +91,9 @@ public final class GetManagedDatabaseAlertLogCountResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String groupBy;
-        private String id;
+        private @Nullable String id;
         private @Nullable Boolean isRegularExpression;
-        private List<GetManagedDatabaseAlertLogCountItem> items;
+        private @Nullable List<GetManagedDatabaseAlertLogCountItem> items;
         private @Nullable String levelFilter;
         private @Nullable String logSearchText;
         private String managedDatabaseId;
@@ -121,8 +121,8 @@ public final class GetManagedDatabaseAlertLogCountResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -131,8 +131,8 @@ public final class GetManagedDatabaseAlertLogCountResult {
             return this;
         }
         @CustomType.Setter
-        public Builder items(List<GetManagedDatabaseAlertLogCountItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetManagedDatabaseAlertLogCountItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetManagedDatabaseAlertLogCountItem... items) {

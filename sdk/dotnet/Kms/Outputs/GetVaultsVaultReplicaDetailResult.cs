@@ -16,10 +16,10 @@ namespace Pulumi.Oci.Kms.Outputs
         /// <summary>
         /// ReplicationId associated with a vault operation
         /// </summary>
-        public readonly string ReplicationId;
+        public readonly string? ReplicationId;
 
         [OutputConstructor]
-        private GetVaultsVaultReplicaDetailResult(string replicationId)
+        private GetVaultsVaultReplicaDetailResult(string? replicationId)
         {
             ReplicationId = replicationId;
         }

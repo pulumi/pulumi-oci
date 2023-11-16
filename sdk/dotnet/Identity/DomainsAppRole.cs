@@ -38,7 +38,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("adminRole")]
-        public Output<bool> AdminRole { get; private set; } = null!;
+        public Output<bool?> AdminRole { get; private set; } = null!;
 
         /// <summary>
         /// A unique identifier for the application that references this role.
@@ -87,7 +87,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("availableToClients")]
-        public Output<bool> AvailableToClients { get; private set; } = null!;
+        public Output<bool?> AvailableToClients { get; private set; } = null!;
 
         /// <summary>
         /// If true, this AppRole can be granted to Groups.
@@ -102,7 +102,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("availableToGroups")]
-        public Output<bool> AvailableToGroups { get; private set; } = null!;
+        public Output<bool?> AvailableToGroups { get; private set; } = null!;
 
         /// <summary>
         /// If true, this AppRole can be granted to Users.
@@ -117,7 +117,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("availableToUsers")]
-        public Output<bool> AvailableToUsers { get; private set; } = null!;
+        public Output<bool?> AvailableToUsers { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
@@ -133,7 +133,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("compartmentOcid")]
-        public Output<string> CompartmentOcid { get; private set; } = null!;
+        public Output<string?> CompartmentOcid { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
@@ -149,7 +149,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("deleteInProgress")]
-        public Output<bool> DeleteInProgress { get; private set; } = null!;
+        public Output<bool?> DeleteInProgress { get; private set; } = null!;
 
         /// <summary>
         /// AppRole description
@@ -165,7 +165,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("description")]
-        public Output<string> Description { get; private set; } = null!;
+        public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
         /// AppRole name
@@ -199,7 +199,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("domainOcid")]
-        public Output<string> DomainOcid { get; private set; } = null!;
+        public Output<string?> DomainOcid { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The User or App who created the Resource
@@ -249,7 +249,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("idcsLastUpgradedInRelease")]
-        public Output<string> IdcsLastUpgradedInRelease { get; private set; } = null!;
+        public Output<string?> IdcsLastUpgradedInRelease { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
@@ -280,7 +280,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: server
         /// </summary>
         [Output("legacyGroupName")]
-        public Output<string> LegacyGroupName { get; private set; } = null!;
+        public Output<string?> LegacyGroupName { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) If true, indicates that this Oracle Identity Cloud Service AppRole can be granted to a delegated administrator whose scope is limited to users that are members of one or more groups.
@@ -297,7 +297,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("limitedToOneOrMoreGroups")]
-        public Output<bool> LimitedToOneOrMoreGroups { get; private set; } = null!;
+        public Output<bool?> LimitedToOneOrMoreGroups { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) AppRole localization name
@@ -315,7 +315,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("localizedDisplayName")]
-        public Output<string> LocalizedDisplayName { get; private set; } = null!;
+        public Output<string?> LocalizedDisplayName { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) AppRole members - when requesting members attribute, it is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%26count=10]
@@ -365,7 +365,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: global
         /// </summary>
         [Output("ocid")]
-        public Output<string> Ocid { get; private set; } = null!;
+        public Output<string?> Ocid { get; private set; } = null!;
 
         /// <summary>
         /// If true, this AppRole is available automatically to every Oracle Identity Cloud Service User in this tenancy. There is no need to grant it to individual Users or Groups.
@@ -380,7 +380,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("public")]
-        public Output<bool> Public { get; private set; } = null!;
+        public Output<bool?> Public { get; private set; } = null!;
 
         /// <summary>
         /// An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
@@ -434,7 +434,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("tenancyOcid")]
-        public Output<string> TenancyOcid { get; private set; } = null!;
+        public Output<string?> TenancyOcid { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) AppRole unique name
@@ -453,7 +453,7 @@ namespace Pulumi.Oci.Identity
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("uniqueName")]
-        public Output<string> UniqueName { get; private set; } = null!;
+        public Output<string?> UniqueName { get; private set; } = null!;
 
 
         /// <summary>

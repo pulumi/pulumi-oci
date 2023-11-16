@@ -59,11 +59,6 @@ class CertificateExtensionArgs:
                  is_critical: Optional[pulumi.Input[bool]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  value: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[bool] is_critical: The critical flag of the extension. Critical extensions must be processed, non-critical extensions can be ignored.
-        :param pulumi.Input[str] name: The certificate extension name.
-        :param pulumi.Input[str] value: The certificate extension value.
-        """
         if is_critical is not None:
             pulumi.set(__self__, "is_critical", is_critical)
         if name is not None:
@@ -74,9 +69,6 @@ class CertificateExtensionArgs:
     @property
     @pulumi.getter(name="isCritical")
     def is_critical(self) -> Optional[pulumi.Input[bool]]:
-        """
-        The critical flag of the extension. Critical extensions must be processed, non-critical extensions can be ignored.
-        """
         return pulumi.get(self, "is_critical")
 
     @is_critical.setter
@@ -86,9 +78,6 @@ class CertificateExtensionArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The certificate extension name.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -98,9 +87,6 @@ class CertificateExtensionArgs:
     @property
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[str]]:
-        """
-        The certificate extension value.
-        """
         return pulumi.get(self, "value")
 
     @value.setter
@@ -118,15 +104,6 @@ class CertificateIssuerNameArgs:
                  organization: Optional[pulumi.Input[str]] = None,
                  organizational_unit: Optional[pulumi.Input[str]] = None,
                  state_province: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] common_name: The fully qualified domain name used for DNS lookups of the server.
-        :param pulumi.Input[str] country: ISO 3166-1 alpha-2 code of the country where the organization is located. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/).
-        :param pulumi.Input[str] email_address: The email address of the server's administrator.
-        :param pulumi.Input[str] locality: The city in which the organization is located.
-        :param pulumi.Input[str] organization: The organization name.
-        :param pulumi.Input[str] organizational_unit: The field to differentiate between divisions within an organization.
-        :param pulumi.Input[str] state_province: The province where the organization is located.
-        """
         if common_name is not None:
             pulumi.set(__self__, "common_name", common_name)
         if country is not None:
@@ -145,9 +122,6 @@ class CertificateIssuerNameArgs:
     @property
     @pulumi.getter(name="commonName")
     def common_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The fully qualified domain name used for DNS lookups of the server.
-        """
         return pulumi.get(self, "common_name")
 
     @common_name.setter
@@ -157,9 +131,6 @@ class CertificateIssuerNameArgs:
     @property
     @pulumi.getter
     def country(self) -> Optional[pulumi.Input[str]]:
-        """
-        ISO 3166-1 alpha-2 code of the country where the organization is located. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/).
-        """
         return pulumi.get(self, "country")
 
     @country.setter
@@ -169,9 +140,6 @@ class CertificateIssuerNameArgs:
     @property
     @pulumi.getter(name="emailAddress")
     def email_address(self) -> Optional[pulumi.Input[str]]:
-        """
-        The email address of the server's administrator.
-        """
         return pulumi.get(self, "email_address")
 
     @email_address.setter
@@ -181,9 +149,6 @@ class CertificateIssuerNameArgs:
     @property
     @pulumi.getter
     def locality(self) -> Optional[pulumi.Input[str]]:
-        """
-        The city in which the organization is located.
-        """
         return pulumi.get(self, "locality")
 
     @locality.setter
@@ -193,9 +158,6 @@ class CertificateIssuerNameArgs:
     @property
     @pulumi.getter
     def organization(self) -> Optional[pulumi.Input[str]]:
-        """
-        The organization name.
-        """
         return pulumi.get(self, "organization")
 
     @organization.setter
@@ -205,9 +167,6 @@ class CertificateIssuerNameArgs:
     @property
     @pulumi.getter(name="organizationalUnit")
     def organizational_unit(self) -> Optional[pulumi.Input[str]]:
-        """
-        The field to differentiate between divisions within an organization.
-        """
         return pulumi.get(self, "organizational_unit")
 
     @organizational_unit.setter
@@ -217,9 +176,6 @@ class CertificateIssuerNameArgs:
     @property
     @pulumi.getter(name="stateProvince")
     def state_province(self) -> Optional[pulumi.Input[str]]:
-        """
-        The province where the organization is located.
-        """
         return pulumi.get(self, "state_province")
 
     @state_province.setter
@@ -233,11 +189,6 @@ class CertificatePublicKeyInfoArgs:
                  algorithm: Optional[pulumi.Input[str]] = None,
                  exponent: Optional[pulumi.Input[int]] = None,
                  key_size: Optional[pulumi.Input[int]] = None):
-        """
-        :param pulumi.Input[str] algorithm: The algorithm identifier and parameters for the public key.
-        :param pulumi.Input[int] exponent: The private key exponent.
-        :param pulumi.Input[int] key_size: The number of bits in a key used by a cryptographic algorithm.
-        """
         if algorithm is not None:
             pulumi.set(__self__, "algorithm", algorithm)
         if exponent is not None:
@@ -248,9 +199,6 @@ class CertificatePublicKeyInfoArgs:
     @property
     @pulumi.getter
     def algorithm(self) -> Optional[pulumi.Input[str]]:
-        """
-        The algorithm identifier and parameters for the public key.
-        """
         return pulumi.get(self, "algorithm")
 
     @algorithm.setter
@@ -260,9 +208,6 @@ class CertificatePublicKeyInfoArgs:
     @property
     @pulumi.getter
     def exponent(self) -> Optional[pulumi.Input[int]]:
-        """
-        The private key exponent.
-        """
         return pulumi.get(self, "exponent")
 
     @exponent.setter
@@ -272,9 +217,6 @@ class CertificatePublicKeyInfoArgs:
     @property
     @pulumi.getter(name="keySize")
     def key_size(self) -> Optional[pulumi.Input[int]]:
-        """
-        The number of bits in a key used by a cryptographic algorithm.
-        """
         return pulumi.get(self, "key_size")
 
     @key_size.setter
@@ -292,15 +234,6 @@ class CertificateSubjectNameArgs:
                  organization: Optional[pulumi.Input[str]] = None,
                  organizational_unit: Optional[pulumi.Input[str]] = None,
                  state_province: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] common_name: The fully qualified domain name used for DNS lookups of the server.
-        :param pulumi.Input[str] country: ISO 3166-1 alpha-2 code of the country where the organization is located. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/).
-        :param pulumi.Input[str] email_address: The email address of the server's administrator.
-        :param pulumi.Input[str] locality: The city in which the organization is located.
-        :param pulumi.Input[str] organization: The organization name.
-        :param pulumi.Input[str] organizational_unit: The field to differentiate between divisions within an organization.
-        :param pulumi.Input[str] state_province: The province where the organization is located.
-        """
         if common_name is not None:
             pulumi.set(__self__, "common_name", common_name)
         if country is not None:
@@ -319,9 +252,6 @@ class CertificateSubjectNameArgs:
     @property
     @pulumi.getter(name="commonName")
     def common_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The fully qualified domain name used for DNS lookups of the server.
-        """
         return pulumi.get(self, "common_name")
 
     @common_name.setter
@@ -331,9 +261,6 @@ class CertificateSubjectNameArgs:
     @property
     @pulumi.getter
     def country(self) -> Optional[pulumi.Input[str]]:
-        """
-        ISO 3166-1 alpha-2 code of the country where the organization is located. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/).
-        """
         return pulumi.get(self, "country")
 
     @country.setter
@@ -343,9 +270,6 @@ class CertificateSubjectNameArgs:
     @property
     @pulumi.getter(name="emailAddress")
     def email_address(self) -> Optional[pulumi.Input[str]]:
-        """
-        The email address of the server's administrator.
-        """
         return pulumi.get(self, "email_address")
 
     @email_address.setter
@@ -355,9 +279,6 @@ class CertificateSubjectNameArgs:
     @property
     @pulumi.getter
     def locality(self) -> Optional[pulumi.Input[str]]:
-        """
-        The city in which the organization is located.
-        """
         return pulumi.get(self, "locality")
 
     @locality.setter
@@ -367,9 +288,6 @@ class CertificateSubjectNameArgs:
     @property
     @pulumi.getter
     def organization(self) -> Optional[pulumi.Input[str]]:
-        """
-        The organization name.
-        """
         return pulumi.get(self, "organization")
 
     @organization.setter
@@ -379,9 +297,6 @@ class CertificateSubjectNameArgs:
     @property
     @pulumi.getter(name="organizationalUnit")
     def organizational_unit(self) -> Optional[pulumi.Input[str]]:
-        """
-        The field to differentiate between divisions within an organization.
-        """
         return pulumi.get(self, "organizational_unit")
 
     @organizational_unit.setter
@@ -391,9 +306,6 @@ class CertificateSubjectNameArgs:
     @property
     @pulumi.getter(name="stateProvince")
     def state_province(self) -> Optional[pulumi.Input[str]]:
-        """
-        The province where the organization is located.
-        """
         return pulumi.get(self, "state_province")
 
     @state_province.setter
@@ -409,17 +321,6 @@ class HttpRedirectTargetArgs:
                  protocol: pulumi.Input[str],
                  query: pulumi.Input[str],
                  port: Optional[pulumi.Input[int]] = None):
-        """
-        :param pulumi.Input[str] host: (Updatable) The host portion of the redirect.
-        :param pulumi.Input[str] path: (Updatable) The path component of the target URL (e.g., "/path/to/resource" in "https://target.example.com/path/to/resource?redirected"), which can be empty, static, or request-copying, or request-prefixing. Use of \\ is not permitted except to escape a following \\, {, or }. An empty value is treated the same as static "/". A static value must begin with a leading "/", optionally followed by other path characters. A request-copying value must exactly match "{path}", and will be replaced with the path component of the request URL (including its initial "/"). A request-prefixing value must start with "/" and end with a non-escaped "{path}", which will be replaced with the path component of the request URL (including its initial "/"). Only one such replacement token is allowed.
-        :param pulumi.Input[str] protocol: (Updatable) The protocol used for the target, http or https.
-        :param pulumi.Input[str] query: (Updatable) The query component of the target URL (e.g., "?redirected" in "https://target.example.com/path/to/resource?redirected"), which can be empty, static, or request-copying. Use of \\ is not permitted except to escape a following \\, {, or }. An empty value results in a redirection target URL with no query component. A static value must begin with a leading "?", optionally followed by other query characters. A request-copying value must exactly match "{query}", and will be replaced with the query component of the request URL (including a leading "?" if and only if the request URL includes a query component).
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[int] port: (Updatable) Port number of the target destination of the redirect, default to match protocol
-        """
         pulumi.set(__self__, "host", host)
         pulumi.set(__self__, "path", path)
         pulumi.set(__self__, "protocol", protocol)
@@ -430,9 +331,6 @@ class HttpRedirectTargetArgs:
     @property
     @pulumi.getter
     def host(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The host portion of the redirect.
-        """
         return pulumi.get(self, "host")
 
     @host.setter
@@ -442,9 +340,6 @@ class HttpRedirectTargetArgs:
     @property
     @pulumi.getter
     def path(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The path component of the target URL (e.g., "/path/to/resource" in "https://target.example.com/path/to/resource?redirected"), which can be empty, static, or request-copying, or request-prefixing. Use of \\ is not permitted except to escape a following \\, {, or }. An empty value is treated the same as static "/". A static value must begin with a leading "/", optionally followed by other path characters. A request-copying value must exactly match "{path}", and will be replaced with the path component of the request URL (including its initial "/"). A request-prefixing value must start with "/" and end with a non-escaped "{path}", which will be replaced with the path component of the request URL (including its initial "/"). Only one such replacement token is allowed.
-        """
         return pulumi.get(self, "path")
 
     @path.setter
@@ -454,9 +349,6 @@ class HttpRedirectTargetArgs:
     @property
     @pulumi.getter
     def protocol(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The protocol used for the target, http or https.
-        """
         return pulumi.get(self, "protocol")
 
     @protocol.setter
@@ -466,13 +358,6 @@ class HttpRedirectTargetArgs:
     @property
     @pulumi.getter
     def query(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The query component of the target URL (e.g., "?redirected" in "https://target.example.com/path/to/resource?redirected"), which can be empty, static, or request-copying. Use of \\ is not permitted except to escape a following \\, {, or }. An empty value results in a redirection target URL with no query component. A static value must begin with a leading "?", optionally followed by other query characters. A request-copying value must exactly match "{query}", and will be replaced with the query component of the request URL (including a leading "?" if and only if the request URL includes a query component).
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "query")
 
     @query.setter
@@ -482,9 +367,6 @@ class HttpRedirectTargetArgs:
     @property
     @pulumi.getter
     def port(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Port number of the target destination of the redirect, default to match protocol
-        """
         return pulumi.get(self, "port")
 
     @port.setter
@@ -500,12 +382,6 @@ class PolicyOriginArgs:
                  custom_headers: Optional[pulumi.Input[Sequence[pulumi.Input['PolicyOriginCustomHeaderArgs']]]] = None,
                  http_port: Optional[pulumi.Input[int]] = None,
                  https_port: Optional[pulumi.Input[int]] = None):
-        """
-        :param pulumi.Input[str] uri: (Updatable) The URI of the origin. Does not support paths. Port numbers should be specified in the `httpPort` and `httpsPort` fields.
-        :param pulumi.Input[Sequence[pulumi.Input['PolicyOriginCustomHeaderArgs']]] custom_headers: (Updatable) A list of HTTP headers to forward to your origin.
-        :param pulumi.Input[int] http_port: (Updatable) The HTTP port on the origin that the web application listens on. If unspecified, defaults to `80`. If `0` is specified - the origin is not used for HTTP traffic.
-        :param pulumi.Input[int] https_port: (Updatable) The HTTPS port on the origin that the web application listens on. If unspecified, defaults to `443`. If `0` is specified - the origin is not used for HTTPS traffic.
-        """
         pulumi.set(__self__, "label", label)
         pulumi.set(__self__, "uri", uri)
         if custom_headers is not None:
@@ -527,9 +403,6 @@ class PolicyOriginArgs:
     @property
     @pulumi.getter
     def uri(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The URI of the origin. Does not support paths. Port numbers should be specified in the `httpPort` and `httpsPort` fields.
-        """
         return pulumi.get(self, "uri")
 
     @uri.setter
@@ -539,9 +412,6 @@ class PolicyOriginArgs:
     @property
     @pulumi.getter(name="customHeaders")
     def custom_headers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PolicyOriginCustomHeaderArgs']]]]:
-        """
-        (Updatable) A list of HTTP headers to forward to your origin.
-        """
         return pulumi.get(self, "custom_headers")
 
     @custom_headers.setter
@@ -551,9 +421,6 @@ class PolicyOriginArgs:
     @property
     @pulumi.getter(name="httpPort")
     def http_port(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The HTTP port on the origin that the web application listens on. If unspecified, defaults to `80`. If `0` is specified - the origin is not used for HTTP traffic.
-        """
         return pulumi.get(self, "http_port")
 
     @http_port.setter
@@ -563,9 +430,6 @@ class PolicyOriginArgs:
     @property
     @pulumi.getter(name="httpsPort")
     def https_port(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The HTTPS port on the origin that the web application listens on. If unspecified, defaults to `443`. If `0` is specified - the origin is not used for HTTPS traffic.
-        """
         return pulumi.get(self, "https_port")
 
     @https_port.setter
@@ -578,27 +442,12 @@ class PolicyOriginCustomHeaderArgs:
     def __init__(__self__, *,
                  name: pulumi.Input[str],
                  value: pulumi.Input[str]):
-        """
-        :param pulumi.Input[str] name: (Updatable) The unique name of the whitelist.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] value: (Updatable) The value of the header.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter
     def name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The unique name of the whitelist.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -608,9 +457,6 @@ class PolicyOriginCustomHeaderArgs:
     @property
     @pulumi.getter
     def value(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The value of the header.
-        """
         return pulumi.get(self, "value")
 
     @value.setter
@@ -650,9 +496,6 @@ class PolicyOriginGroupOriginGroupArgs:
     def __init__(__self__, *,
                  origin: pulumi.Input[str],
                  weight: Optional[pulumi.Input[int]] = None):
-        """
-        :param pulumi.Input[str] origin: (Updatable) The key in the map of origins referencing the origin used for the Web Application Firewall. The origin must already be included in `Origins`. Required when creating the `WafConfig` resource, but is not required upon updating the configuration.
-        """
         pulumi.set(__self__, "origin", origin)
         if weight is not None:
             pulumi.set(__self__, "weight", weight)
@@ -660,9 +503,6 @@ class PolicyOriginGroupOriginGroupArgs:
     @property
     @pulumi.getter
     def origin(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The key in the map of origins referencing the origin used for the Web Application Firewall. The origin must already be included in `Origins`. Required when creating the `WafConfig` resource, but is not required upon updating the configuration.
-        """
         return pulumi.get(self, "origin")
 
     @origin.setter
@@ -696,40 +536,6 @@ class PolicyPolicyConfigArgs:
                  load_balancing_method: Optional[pulumi.Input['PolicyPolicyConfigLoadBalancingMethodArgs']] = None,
                  tls_protocols: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  websocket_path_prefixes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
-        """
-        :param pulumi.Input[str] certificate_id: (Updatable) The OCID of the SSL certificate to use if HTTPS is supported.
-        :param pulumi.Input[str] cipher_group: (Updatable) The set cipher group for the configured TLS protocol. This sets the configuration for the TLS connections between clients and edge nodes only.
-               * **DEFAULT:** Cipher group supports TLS 1.0, TLS 1.1, TLS 1.2, TLS 1.3 protocols. It has the following ciphers enabled: `ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:DHE-DSS-AES128-GCM-SHA256:kEDH+AESGCM:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA:ECDHE-ECDSA-AES256-SHA:DHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA:DHE-DSS-AES128-SHA256:DHE-RSA-AES256-SHA256:DHE-DSS-AES256-SHA:DHE-RSA-AES256-SHA:AES128-GCM-SHA256:AES256-GCM-SHA384:AES128-SHA256:AES256-SHA256:AES128-SHA:AES256-SHA:AES:CAMELLIA:!DES-CBC3-SHA:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!aECDH:!EDH-DSS-DES-CBC3-SHA:!EDH-RSA-DES-CBC3-SHA:!KRB5-DES-CBC3-SHA`
-        :param pulumi.Input[str] client_address_header: (Updatable) Specifies an HTTP header name which is treated as the connecting client's IP address. Applicable only if `isBehindCdn` is enabled.
-               
-               The edge node reads this header and its value and sets the client IP address as specified. It does not create the header if the header is not present in the request. If the header is not present, the connecting IP address will be used as the client's true IP address. It uses the last IP address in the header's value as the true IP address.
-               
-               Example: `X-Client-Ip: 11.1.1.1, 13.3.3.3`
-               
-               In the case of multiple headers with the same name, only the first header will be used. It is assumed that CDN sets the correct client IP address to prevent spoofing.
-               * **X_FORWARDED_FOR:** Corresponds to `X-Forwarded-For` header name.
-               * **X_CLIENT_IP:** Corresponds to `X-Client-Ip` header name.
-               * **X_REAL_IP:** Corresponds to `X-Real-Ip` header name.
-               * **CLIENT_IP:** Corresponds to `Client-Ip` header name.
-               * **TRUE_CLIENT_IP:** Corresponds to `True-Client-Ip` header name.
-        :param pulumi.Input['PolicyPolicyConfigHealthChecksArgs'] health_checks: (Updatable) Health checks monitor the status of your origin servers and only route traffic to the origins that pass the health check. If the health check fails, origin is automatically removed from the load balancing. There is roughly one health check per EDGE POP per period. Any checks that pass will be reported as "healthy".
-        :param pulumi.Input[bool] is_behind_cdn: (Updatable) Enabling `isBehindCdn` allows for the collection of IP addresses from client requests if the WAF is connected to a CDN.
-        :param pulumi.Input[bool] is_cache_control_respected: (Updatable) Enable or disable automatic content caching based on the response `cache-control` header. This feature enables the origin to act as a proxy cache. Caching is usually defined using `cache-control` header. For example `cache-control: max-age=120` means that the returned resource is valid for 120 seconds. Caching rules will overwrite this setting.
-        :param pulumi.Input[bool] is_https_enabled: (Updatable) Enable or disable HTTPS support. If true, a `certificateId` is required. If unspecified, defaults to `false`.
-        :param pulumi.Input[bool] is_https_forced: (Updatable) Force HTTP to HTTPS redirection. If unspecified, defaults to `false`.
-        :param pulumi.Input[bool] is_origin_compression_enabled: (Updatable) Enable or disable GZIP compression of origin responses. If enabled, the header `Accept-Encoding: gzip` is sent to origin, otherwise, the empty `Accept-Encoding:` header is used.
-        :param pulumi.Input[bool] is_response_buffering_enabled: (Updatable) Enable or disable buffering of responses from the origin. Buffering improves overall stability in case of network issues, but slightly increases Time To First Byte.
-        :param pulumi.Input[bool] is_sni_enabled: (Updatable) SNI stands for Server Name Indication and is an extension of the TLS protocol. It indicates which hostname is being contacted by the browser at the beginning of the 'handshake'-process. This allows a server to connect multiple SSL Certificates to one IP address and port.
-        :param pulumi.Input['PolicyPolicyConfigLoadBalancingMethodArgs'] load_balancing_method: (Updatable) An object that represents a load balancing method and its properties.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] tls_protocols: (Updatable) A list of allowed TLS protocols. Only applicable when HTTPS support is enabled. The TLS protocol is negotiated while the request is connecting and the most recent protocol supported by both the edge node and client browser will be selected. If no such version exists, the connection will be aborted.
-               * **TLS_V1:** corresponds to TLS 1.0 specification.
-               * **TLS_V1_1:** corresponds to TLS 1.1 specification.
-               * **TLS_V1_2:** corresponds to TLS 1.2 specification.
-               * **TLS_V1_3:** corresponds to TLS 1.3 specification.
-               
-               Enabled TLS protocols must go in a row. For example if `TLS_v1_1` and `TLS_V1_3` are enabled, `TLS_V1_2` must be enabled too.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] websocket_path_prefixes: (Updatable) ModSecurity is not capable to inspect WebSockets. Therefore paths specified here have WAF disabled if Connection request header from the client has the value Upgrade (case insensitive matching) and Upgrade request header has the value websocket (case insensitive matching). Paths matches if the concatenation of request URL path and query starts with the contents of the one of `websocketPathPrefixes` array value. In All other cases challenges, like JSC, HIC and etc., remain active.
-        """
         if certificate_id is not None:
             pulumi.set(__self__, "certificate_id", certificate_id)
         if cipher_group is not None:
@@ -762,9 +568,6 @@ class PolicyPolicyConfigArgs:
     @property
     @pulumi.getter(name="certificateId")
     def certificate_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the SSL certificate to use if HTTPS is supported.
-        """
         return pulumi.get(self, "certificate_id")
 
     @certificate_id.setter
@@ -774,10 +577,6 @@ class PolicyPolicyConfigArgs:
     @property
     @pulumi.getter(name="cipherGroup")
     def cipher_group(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The set cipher group for the configured TLS protocol. This sets the configuration for the TLS connections between clients and edge nodes only.
-        * **DEFAULT:** Cipher group supports TLS 1.0, TLS 1.1, TLS 1.2, TLS 1.3 protocols. It has the following ciphers enabled: `ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:DHE-DSS-AES128-GCM-SHA256:kEDH+AESGCM:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA:ECDHE-ECDSA-AES256-SHA:DHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA:DHE-DSS-AES128-SHA256:DHE-RSA-AES256-SHA256:DHE-DSS-AES256-SHA:DHE-RSA-AES256-SHA:AES128-GCM-SHA256:AES256-GCM-SHA384:AES128-SHA256:AES256-SHA256:AES128-SHA:AES256-SHA:AES:CAMELLIA:!DES-CBC3-SHA:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!aECDH:!EDH-DSS-DES-CBC3-SHA:!EDH-RSA-DES-CBC3-SHA:!KRB5-DES-CBC3-SHA`
-        """
         return pulumi.get(self, "cipher_group")
 
     @cipher_group.setter
@@ -787,20 +586,6 @@ class PolicyPolicyConfigArgs:
     @property
     @pulumi.getter(name="clientAddressHeader")
     def client_address_header(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Specifies an HTTP header name which is treated as the connecting client's IP address. Applicable only if `isBehindCdn` is enabled.
-
-        The edge node reads this header and its value and sets the client IP address as specified. It does not create the header if the header is not present in the request. If the header is not present, the connecting IP address will be used as the client's true IP address. It uses the last IP address in the header's value as the true IP address.
-
-        Example: `X-Client-Ip: 11.1.1.1, 13.3.3.3`
-
-        In the case of multiple headers with the same name, only the first header will be used. It is assumed that CDN sets the correct client IP address to prevent spoofing.
-        * **X_FORWARDED_FOR:** Corresponds to `X-Forwarded-For` header name.
-        * **X_CLIENT_IP:** Corresponds to `X-Client-Ip` header name.
-        * **X_REAL_IP:** Corresponds to `X-Real-Ip` header name.
-        * **CLIENT_IP:** Corresponds to `Client-Ip` header name.
-        * **TRUE_CLIENT_IP:** Corresponds to `True-Client-Ip` header name.
-        """
         return pulumi.get(self, "client_address_header")
 
     @client_address_header.setter
@@ -810,9 +595,6 @@ class PolicyPolicyConfigArgs:
     @property
     @pulumi.getter(name="healthChecks")
     def health_checks(self) -> Optional[pulumi.Input['PolicyPolicyConfigHealthChecksArgs']]:
-        """
-        (Updatable) Health checks monitor the status of your origin servers and only route traffic to the origins that pass the health check. If the health check fails, origin is automatically removed from the load balancing. There is roughly one health check per EDGE POP per period. Any checks that pass will be reported as "healthy".
-        """
         return pulumi.get(self, "health_checks")
 
     @health_checks.setter
@@ -822,9 +604,6 @@ class PolicyPolicyConfigArgs:
     @property
     @pulumi.getter(name="isBehindCdn")
     def is_behind_cdn(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Enabling `isBehindCdn` allows for the collection of IP addresses from client requests if the WAF is connected to a CDN.
-        """
         return pulumi.get(self, "is_behind_cdn")
 
     @is_behind_cdn.setter
@@ -834,9 +613,6 @@ class PolicyPolicyConfigArgs:
     @property
     @pulumi.getter(name="isCacheControlRespected")
     def is_cache_control_respected(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Enable or disable automatic content caching based on the response `cache-control` header. This feature enables the origin to act as a proxy cache. Caching is usually defined using `cache-control` header. For example `cache-control: max-age=120` means that the returned resource is valid for 120 seconds. Caching rules will overwrite this setting.
-        """
         return pulumi.get(self, "is_cache_control_respected")
 
     @is_cache_control_respected.setter
@@ -846,9 +622,6 @@ class PolicyPolicyConfigArgs:
     @property
     @pulumi.getter(name="isHttpsEnabled")
     def is_https_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Enable or disable HTTPS support. If true, a `certificateId` is required. If unspecified, defaults to `false`.
-        """
         return pulumi.get(self, "is_https_enabled")
 
     @is_https_enabled.setter
@@ -858,9 +631,6 @@ class PolicyPolicyConfigArgs:
     @property
     @pulumi.getter(name="isHttpsForced")
     def is_https_forced(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Force HTTP to HTTPS redirection. If unspecified, defaults to `false`.
-        """
         return pulumi.get(self, "is_https_forced")
 
     @is_https_forced.setter
@@ -870,9 +640,6 @@ class PolicyPolicyConfigArgs:
     @property
     @pulumi.getter(name="isOriginCompressionEnabled")
     def is_origin_compression_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Enable or disable GZIP compression of origin responses. If enabled, the header `Accept-Encoding: gzip` is sent to origin, otherwise, the empty `Accept-Encoding:` header is used.
-        """
         return pulumi.get(self, "is_origin_compression_enabled")
 
     @is_origin_compression_enabled.setter
@@ -882,9 +649,6 @@ class PolicyPolicyConfigArgs:
     @property
     @pulumi.getter(name="isResponseBufferingEnabled")
     def is_response_buffering_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Enable or disable buffering of responses from the origin. Buffering improves overall stability in case of network issues, but slightly increases Time To First Byte.
-        """
         return pulumi.get(self, "is_response_buffering_enabled")
 
     @is_response_buffering_enabled.setter
@@ -894,9 +658,6 @@ class PolicyPolicyConfigArgs:
     @property
     @pulumi.getter(name="isSniEnabled")
     def is_sni_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) SNI stands for Server Name Indication and is an extension of the TLS protocol. It indicates which hostname is being contacted by the browser at the beginning of the 'handshake'-process. This allows a server to connect multiple SSL Certificates to one IP address and port.
-        """
         return pulumi.get(self, "is_sni_enabled")
 
     @is_sni_enabled.setter
@@ -906,9 +667,6 @@ class PolicyPolicyConfigArgs:
     @property
     @pulumi.getter(name="loadBalancingMethod")
     def load_balancing_method(self) -> Optional[pulumi.Input['PolicyPolicyConfigLoadBalancingMethodArgs']]:
-        """
-        (Updatable) An object that represents a load balancing method and its properties.
-        """
         return pulumi.get(self, "load_balancing_method")
 
     @load_balancing_method.setter
@@ -918,15 +676,6 @@ class PolicyPolicyConfigArgs:
     @property
     @pulumi.getter(name="tlsProtocols")
     def tls_protocols(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) A list of allowed TLS protocols. Only applicable when HTTPS support is enabled. The TLS protocol is negotiated while the request is connecting and the most recent protocol supported by both the edge node and client browser will be selected. If no such version exists, the connection will be aborted.
-        * **TLS_V1:** corresponds to TLS 1.0 specification.
-        * **TLS_V1_1:** corresponds to TLS 1.1 specification.
-        * **TLS_V1_2:** corresponds to TLS 1.2 specification.
-        * **TLS_V1_3:** corresponds to TLS 1.3 specification.
-
-        Enabled TLS protocols must go in a row. For example if `TLS_v1_1` and `TLS_V1_3` are enabled, `TLS_V1_2` must be enabled too.
-        """
         return pulumi.get(self, "tls_protocols")
 
     @tls_protocols.setter
@@ -936,9 +685,6 @@ class PolicyPolicyConfigArgs:
     @property
     @pulumi.getter(name="websocketPathPrefixes")
     def websocket_path_prefixes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) ModSecurity is not capable to inspect WebSockets. Therefore paths specified here have WAF disabled if Connection request header from the client has the value Upgrade (case insensitive matching) and Upgrade request header has the value websocket (case insensitive matching). Paths matches if the concatenation of request URL path and query starts with the contents of the one of `websocketPathPrefixes` array value. In All other cases challenges, like JSC, HIC and etc., remain active.
-        """
         return pulumi.get(self, "websocket_path_prefixes")
 
     @websocket_path_prefixes.setter
@@ -960,28 +706,6 @@ class PolicyPolicyConfigHealthChecksArgs:
                  path: Optional[pulumi.Input[str]] = None,
                  timeout_in_seconds: Optional[pulumi.Input[int]] = None,
                  unhealthy_threshold: Optional[pulumi.Input[int]] = None):
-        """
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] expected_response_code_groups: (Updatable) The HTTP response codes that signify a healthy state.
-               * **2XX:** Success response code group.
-               * **3XX:** Redirection response code group.
-               * **4XX:** Client errors response code group.
-               * **5XX:** Server errors response code group.
-        :param pulumi.Input[str] expected_response_text: (Updatable) Health check will search for the given text in a case-sensitive manner within the response body and will fail if the text is not found.
-        :param pulumi.Input[Mapping[str, Any]] headers: (Updatable) HTTP header fields to include in health check requests, expressed as `"name": "value"` properties. Because HTTP header field names are case-insensitive, any use of names that are case-insensitive equal to other names will be rejected. If Host is not specified, requests will include a Host header field with value matching the policy's protected domain. If User-Agent is not specified, requests will include a User-Agent header field with value "waf health checks".
-               
-               **Note:** The only currently-supported header fields are Host and User-Agent.
-        :param pulumi.Input[int] healthy_threshold: (Updatable) Number of successful health checks after which the server is marked up.
-        :param pulumi.Input[int] interval_in_seconds: (Updatable) Time between health checks of an individual origin server, in seconds.
-        :param pulumi.Input[bool] is_enabled: (Updatable) Enables or disables the JavaScript challenge Web Application Firewall feature.
-        :param pulumi.Input[bool] is_response_text_check_enabled: (Updatable) Enables or disables additional check for predefined text in addition to response code.
-        :param pulumi.Input[str] method: (Updatable) Load balancing methods are algorithms used to efficiently distribute traffic among origin servers.
-               * **[IP_HASH](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/IPHashLoadBalancingMethod):** All the incoming requests from the same client IP address should go to the same content origination server. IP_HASH load balancing method uses origin weights when choosing which origin should the hash be assigned to initially.
-               * **[ROUND_ROBIN](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/RoundRobinLoadBalancingMethod):** Forwards requests sequentially to the available origin servers. The first request - to the first origin server, the second request - to the next origin server, and so on. After it sends a request to the last origin server, it starts again with the first origin server. When using weights on origins, Weighted Round Robin assigns more requests to origins with a greater weight. Over a period of time, origins will receive a number of requests in proportion to their weight.
-               * **[STICKY_COOKIE](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/StickyCookieLoadBalancingMethod):** Adds a session cookie to the first response from the origin server and identifies the server that sent the response. The client's next request contains the cookie value, and nginx routes the request to the origin server that responded to the first request. STICKY_COOKIE load balancing method falls back to Round Robin for the first request.
-        :param pulumi.Input[str] path: (Updatable) Path to visit on your origins when performing the health check.
-        :param pulumi.Input[int] timeout_in_seconds: (Updatable) Response timeout represents wait time until request is considered failed, in seconds.
-        :param pulumi.Input[int] unhealthy_threshold: (Updatable) Number of failed health checks after which the server is marked down.
-        """
         if expected_response_code_groups is not None:
             pulumi.set(__self__, "expected_response_code_groups", expected_response_code_groups)
         if expected_response_text is not None:
@@ -1008,13 +732,6 @@ class PolicyPolicyConfigHealthChecksArgs:
     @property
     @pulumi.getter(name="expectedResponseCodeGroups")
     def expected_response_code_groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) The HTTP response codes that signify a healthy state.
-        * **2XX:** Success response code group.
-        * **3XX:** Redirection response code group.
-        * **4XX:** Client errors response code group.
-        * **5XX:** Server errors response code group.
-        """
         return pulumi.get(self, "expected_response_code_groups")
 
     @expected_response_code_groups.setter
@@ -1024,9 +741,6 @@ class PolicyPolicyConfigHealthChecksArgs:
     @property
     @pulumi.getter(name="expectedResponseText")
     def expected_response_text(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Health check will search for the given text in a case-sensitive manner within the response body and will fail if the text is not found.
-        """
         return pulumi.get(self, "expected_response_text")
 
     @expected_response_text.setter
@@ -1036,11 +750,6 @@ class PolicyPolicyConfigHealthChecksArgs:
     @property
     @pulumi.getter
     def headers(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) HTTP header fields to include in health check requests, expressed as `"name": "value"` properties. Because HTTP header field names are case-insensitive, any use of names that are case-insensitive equal to other names will be rejected. If Host is not specified, requests will include a Host header field with value matching the policy's protected domain. If User-Agent is not specified, requests will include a User-Agent header field with value "waf health checks".
-
-        **Note:** The only currently-supported header fields are Host and User-Agent.
-        """
         return pulumi.get(self, "headers")
 
     @headers.setter
@@ -1050,9 +759,6 @@ class PolicyPolicyConfigHealthChecksArgs:
     @property
     @pulumi.getter(name="healthyThreshold")
     def healthy_threshold(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Number of successful health checks after which the server is marked up.
-        """
         return pulumi.get(self, "healthy_threshold")
 
     @healthy_threshold.setter
@@ -1062,9 +768,6 @@ class PolicyPolicyConfigHealthChecksArgs:
     @property
     @pulumi.getter(name="intervalInSeconds")
     def interval_in_seconds(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Time between health checks of an individual origin server, in seconds.
-        """
         return pulumi.get(self, "interval_in_seconds")
 
     @interval_in_seconds.setter
@@ -1074,9 +777,6 @@ class PolicyPolicyConfigHealthChecksArgs:
     @property
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Enables or disables the JavaScript challenge Web Application Firewall feature.
-        """
         return pulumi.get(self, "is_enabled")
 
     @is_enabled.setter
@@ -1086,9 +786,6 @@ class PolicyPolicyConfigHealthChecksArgs:
     @property
     @pulumi.getter(name="isResponseTextCheckEnabled")
     def is_response_text_check_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Enables or disables additional check for predefined text in addition to response code.
-        """
         return pulumi.get(self, "is_response_text_check_enabled")
 
     @is_response_text_check_enabled.setter
@@ -1098,12 +795,6 @@ class PolicyPolicyConfigHealthChecksArgs:
     @property
     @pulumi.getter
     def method(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Load balancing methods are algorithms used to efficiently distribute traffic among origin servers.
-        * **[IP_HASH](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/IPHashLoadBalancingMethod):** All the incoming requests from the same client IP address should go to the same content origination server. IP_HASH load balancing method uses origin weights when choosing which origin should the hash be assigned to initially.
-        * **[ROUND_ROBIN](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/RoundRobinLoadBalancingMethod):** Forwards requests sequentially to the available origin servers. The first request - to the first origin server, the second request - to the next origin server, and so on. After it sends a request to the last origin server, it starts again with the first origin server. When using weights on origins, Weighted Round Robin assigns more requests to origins with a greater weight. Over a period of time, origins will receive a number of requests in proportion to their weight.
-        * **[STICKY_COOKIE](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/StickyCookieLoadBalancingMethod):** Adds a session cookie to the first response from the origin server and identifies the server that sent the response. The client's next request contains the cookie value, and nginx routes the request to the origin server that responded to the first request. STICKY_COOKIE load balancing method falls back to Round Robin for the first request.
-        """
         return pulumi.get(self, "method")
 
     @method.setter
@@ -1113,9 +804,6 @@ class PolicyPolicyConfigHealthChecksArgs:
     @property
     @pulumi.getter
     def path(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Path to visit on your origins when performing the health check.
-        """
         return pulumi.get(self, "path")
 
     @path.setter
@@ -1125,9 +813,6 @@ class PolicyPolicyConfigHealthChecksArgs:
     @property
     @pulumi.getter(name="timeoutInSeconds")
     def timeout_in_seconds(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Response timeout represents wait time until request is considered failed, in seconds.
-        """
         return pulumi.get(self, "timeout_in_seconds")
 
     @timeout_in_seconds.setter
@@ -1137,9 +822,6 @@ class PolicyPolicyConfigHealthChecksArgs:
     @property
     @pulumi.getter(name="unhealthyThreshold")
     def unhealthy_threshold(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Number of failed health checks after which the server is marked down.
-        """
         return pulumi.get(self, "unhealthy_threshold")
 
     @unhealthy_threshold.setter
@@ -1154,19 +836,6 @@ class PolicyPolicyConfigLoadBalancingMethodArgs:
                  domain: Optional[pulumi.Input[str]] = None,
                  expiration_time_in_seconds: Optional[pulumi.Input[int]] = None,
                  name: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] method: (Updatable) Load balancing methods are algorithms used to efficiently distribute traffic among origin servers.
-               * **[IP_HASH](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/IPHashLoadBalancingMethod):** All the incoming requests from the same client IP address should go to the same content origination server. IP_HASH load balancing method uses origin weights when choosing which origin should the hash be assigned to initially.
-               * **[ROUND_ROBIN](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/RoundRobinLoadBalancingMethod):** Forwards requests sequentially to the available origin servers. The first request - to the first origin server, the second request - to the next origin server, and so on. After it sends a request to the last origin server, it starts again with the first origin server. When using weights on origins, Weighted Round Robin assigns more requests to origins with a greater weight. Over a period of time, origins will receive a number of requests in proportion to their weight.
-               * **[STICKY_COOKIE](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/StickyCookieLoadBalancingMethod):** Adds a session cookie to the first response from the origin server and identifies the server that sent the response. The client's next request contains the cookie value, and nginx routes the request to the origin server that responded to the first request. STICKY_COOKIE load balancing method falls back to Round Robin for the first request.
-        :param pulumi.Input[str] domain: (Updatable) The domain for which the cookie is set, defaults to WAAS policy domain.
-        :param pulumi.Input[int] expiration_time_in_seconds: (Updatable) The time for which a browser should keep the cookie in seconds. Empty value will cause the cookie to expire at the end of a browser session.
-        :param pulumi.Input[str] name: (Updatable) The unique name of the whitelist.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         pulumi.set(__self__, "method", method)
         if domain is not None:
             pulumi.set(__self__, "domain", domain)
@@ -1178,12 +847,6 @@ class PolicyPolicyConfigLoadBalancingMethodArgs:
     @property
     @pulumi.getter
     def method(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Load balancing methods are algorithms used to efficiently distribute traffic among origin servers.
-        * **[IP_HASH](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/IPHashLoadBalancingMethod):** All the incoming requests from the same client IP address should go to the same content origination server. IP_HASH load balancing method uses origin weights when choosing which origin should the hash be assigned to initially.
-        * **[ROUND_ROBIN](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/RoundRobinLoadBalancingMethod):** Forwards requests sequentially to the available origin servers. The first request - to the first origin server, the second request - to the next origin server, and so on. After it sends a request to the last origin server, it starts again with the first origin server. When using weights on origins, Weighted Round Robin assigns more requests to origins with a greater weight. Over a period of time, origins will receive a number of requests in proportion to their weight.
-        * **[STICKY_COOKIE](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/StickyCookieLoadBalancingMethod):** Adds a session cookie to the first response from the origin server and identifies the server that sent the response. The client's next request contains the cookie value, and nginx routes the request to the origin server that responded to the first request. STICKY_COOKIE load balancing method falls back to Round Robin for the first request.
-        """
         return pulumi.get(self, "method")
 
     @method.setter
@@ -1193,9 +856,6 @@ class PolicyPolicyConfigLoadBalancingMethodArgs:
     @property
     @pulumi.getter
     def domain(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The domain for which the cookie is set, defaults to WAAS policy domain.
-        """
         return pulumi.get(self, "domain")
 
     @domain.setter
@@ -1205,9 +865,6 @@ class PolicyPolicyConfigLoadBalancingMethodArgs:
     @property
     @pulumi.getter(name="expirationTimeInSeconds")
     def expiration_time_in_seconds(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The time for which a browser should keep the cookie in seconds. Empty value will cause the cookie to expire at the end of a browser session.
-        """
         return pulumi.get(self, "expiration_time_in_seconds")
 
     @expiration_time_in_seconds.setter
@@ -1217,13 +874,6 @@ class PolicyPolicyConfigLoadBalancingMethodArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The unique name of the whitelist.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -1246,20 +896,6 @@ class PolicyWafConfigArgs:
                  origin_groups: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  protection_settings: Optional[pulumi.Input['PolicyWafConfigProtectionSettingsArgs']] = None,
                  whitelists: Optional[pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigWhitelistArgs']]]] = None):
-        """
-        :param pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigAccessRuleArgs']]] access_rules: (Updatable) The access rules applied to the Web Application Firewall. Access rules allow custom content access policies to be defined and `ALLOW`, `DETECT`, or `BLOCK` actions to be taken on a request when specified criteria are met.
-        :param pulumi.Input['PolicyWafConfigAddressRateLimitingArgs'] address_rate_limiting: (Updatable) The settings used to limit the number of requests from an IP address.
-        :param pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigCachingRuleArgs']]] caching_rules: (Updatable) A list of caching rules applied to the web application.
-        :param pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigCaptchaArgs']]] captchas: (Updatable) A list of CAPTCHA challenge settings. CAPTCHAs challenge requests to ensure a human is attempting to reach the specified URL and not a bot.
-        :param pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigCustomProtectionRuleArgs']]] custom_protection_rules: (Updatable) A list of the custom protection rule OCIDs and their actions.
-        :param pulumi.Input['PolicyWafConfigDeviceFingerprintChallengeArgs'] device_fingerprint_challenge: (Updatable) The device fingerprint challenge settings. Blocks bots based on unique device fingerprint information.
-        :param pulumi.Input['PolicyWafConfigHumanInteractionChallengeArgs'] human_interaction_challenge: (Updatable) The human interaction challenge settings. Detects natural human interactions such as mouse movements, time on site, and page scrolling to identify bots.
-        :param pulumi.Input['PolicyWafConfigJsChallengeArgs'] js_challenge: (Updatable) The JavaScript challenge settings. Blocks bots by challenging requests from browsers that have no JavaScript support.
-        :param pulumi.Input[str] origin: (Updatable) The key in the map of origins referencing the origin used for the Web Application Firewall. The origin must already be included in `Origins`. Required when creating the `WafConfig` resource, but is not required upon updating the configuration.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] origin_groups: (Updatable) The map of origin groups and their keys used to associate origins to the `wafConfig`. Origin groups allow you to apply weights to groups of origins for load balancing purposes. Origins with higher weights will receive larger proportions of client requests. To add additional origins to your WAAS policy, update the `origins` field of a `UpdateWaasPolicy` request.
-        :param pulumi.Input['PolicyWafConfigProtectionSettingsArgs'] protection_settings: (Updatable) The settings applied to protection rules.
-        :param pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigWhitelistArgs']]] whitelists: (Updatable) A list of IP addresses that bypass the Web Application Firewall.
-        """
         if access_rules is not None:
             pulumi.set(__self__, "access_rules", access_rules)
         if address_rate_limiting is not None:
@@ -1288,9 +924,6 @@ class PolicyWafConfigArgs:
     @property
     @pulumi.getter(name="accessRules")
     def access_rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigAccessRuleArgs']]]]:
-        """
-        (Updatable) The access rules applied to the Web Application Firewall. Access rules allow custom content access policies to be defined and `ALLOW`, `DETECT`, or `BLOCK` actions to be taken on a request when specified criteria are met.
-        """
         return pulumi.get(self, "access_rules")
 
     @access_rules.setter
@@ -1300,9 +933,6 @@ class PolicyWafConfigArgs:
     @property
     @pulumi.getter(name="addressRateLimiting")
     def address_rate_limiting(self) -> Optional[pulumi.Input['PolicyWafConfigAddressRateLimitingArgs']]:
-        """
-        (Updatable) The settings used to limit the number of requests from an IP address.
-        """
         return pulumi.get(self, "address_rate_limiting")
 
     @address_rate_limiting.setter
@@ -1312,9 +942,6 @@ class PolicyWafConfigArgs:
     @property
     @pulumi.getter(name="cachingRules")
     def caching_rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigCachingRuleArgs']]]]:
-        """
-        (Updatable) A list of caching rules applied to the web application.
-        """
         return pulumi.get(self, "caching_rules")
 
     @caching_rules.setter
@@ -1324,9 +951,6 @@ class PolicyWafConfigArgs:
     @property
     @pulumi.getter
     def captchas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigCaptchaArgs']]]]:
-        """
-        (Updatable) A list of CAPTCHA challenge settings. CAPTCHAs challenge requests to ensure a human is attempting to reach the specified URL and not a bot.
-        """
         return pulumi.get(self, "captchas")
 
     @captchas.setter
@@ -1336,9 +960,6 @@ class PolicyWafConfigArgs:
     @property
     @pulumi.getter(name="customProtectionRules")
     def custom_protection_rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigCustomProtectionRuleArgs']]]]:
-        """
-        (Updatable) A list of the custom protection rule OCIDs and their actions.
-        """
         return pulumi.get(self, "custom_protection_rules")
 
     @custom_protection_rules.setter
@@ -1348,9 +969,6 @@ class PolicyWafConfigArgs:
     @property
     @pulumi.getter(name="deviceFingerprintChallenge")
     def device_fingerprint_challenge(self) -> Optional[pulumi.Input['PolicyWafConfigDeviceFingerprintChallengeArgs']]:
-        """
-        (Updatable) The device fingerprint challenge settings. Blocks bots based on unique device fingerprint information.
-        """
         return pulumi.get(self, "device_fingerprint_challenge")
 
     @device_fingerprint_challenge.setter
@@ -1360,9 +978,6 @@ class PolicyWafConfigArgs:
     @property
     @pulumi.getter(name="humanInteractionChallenge")
     def human_interaction_challenge(self) -> Optional[pulumi.Input['PolicyWafConfigHumanInteractionChallengeArgs']]:
-        """
-        (Updatable) The human interaction challenge settings. Detects natural human interactions such as mouse movements, time on site, and page scrolling to identify bots.
-        """
         return pulumi.get(self, "human_interaction_challenge")
 
     @human_interaction_challenge.setter
@@ -1372,9 +987,6 @@ class PolicyWafConfigArgs:
     @property
     @pulumi.getter(name="jsChallenge")
     def js_challenge(self) -> Optional[pulumi.Input['PolicyWafConfigJsChallengeArgs']]:
-        """
-        (Updatable) The JavaScript challenge settings. Blocks bots by challenging requests from browsers that have no JavaScript support.
-        """
         return pulumi.get(self, "js_challenge")
 
     @js_challenge.setter
@@ -1384,9 +996,6 @@ class PolicyWafConfigArgs:
     @property
     @pulumi.getter
     def origin(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The key in the map of origins referencing the origin used for the Web Application Firewall. The origin must already be included in `Origins`. Required when creating the `WafConfig` resource, but is not required upon updating the configuration.
-        """
         return pulumi.get(self, "origin")
 
     @origin.setter
@@ -1396,9 +1005,6 @@ class PolicyWafConfigArgs:
     @property
     @pulumi.getter(name="originGroups")
     def origin_groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) The map of origin groups and their keys used to associate origins to the `wafConfig`. Origin groups allow you to apply weights to groups of origins for load balancing purposes. Origins with higher weights will receive larger proportions of client requests. To add additional origins to your WAAS policy, update the `origins` field of a `UpdateWaasPolicy` request.
-        """
         return pulumi.get(self, "origin_groups")
 
     @origin_groups.setter
@@ -1408,9 +1014,6 @@ class PolicyWafConfigArgs:
     @property
     @pulumi.getter(name="protectionSettings")
     def protection_settings(self) -> Optional[pulumi.Input['PolicyWafConfigProtectionSettingsArgs']]:
-        """
-        (Updatable) The settings applied to protection rules.
-        """
         return pulumi.get(self, "protection_settings")
 
     @protection_settings.setter
@@ -1420,9 +1023,6 @@ class PolicyWafConfigArgs:
     @property
     @pulumi.getter
     def whitelists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigWhitelistArgs']]]]:
-        """
-        (Updatable) A list of IP addresses that bypass the Web Application Firewall.
-        """
         return pulumi.get(self, "whitelists")
 
     @whitelists.setter
@@ -1449,34 +1049,6 @@ class PolicyWafConfigAccessRuleArgs:
                  redirect_response_code: Optional[pulumi.Input[str]] = None,
                  redirect_url: Optional[pulumi.Input[str]] = None,
                  response_header_manipulations: Optional[pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigAccessRuleResponseHeaderManipulationArgs']]]] = None):
-        """
-        :param pulumi.Input[str] action: (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
-        :param pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigAccessRuleCriteriaArgs']]] criterias: (Updatable) When defined, the JavaScript Challenge would be applied only for the requests that matched all the listed conditions.
-        :param pulumi.Input[str] name: (Updatable) The unique name of the whitelist.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] block_action: (Updatable) If `action` is set to `BLOCK`, this specifies how the traffic is blocked when detected as malicious by a protection rule. If unspecified, defaults to `SET_RESPONSE_CODE`.
-        :param pulumi.Input[str] block_error_page_code: (Updatable) The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`.
-        :param pulumi.Input[str] block_error_page_description: (Updatable) The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
-        :param pulumi.Input[str] block_error_page_message: (Updatable) The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to 'Access to the website is blocked.'
-        :param pulumi.Input[int] block_response_code: (Updatable) The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] bypass_challenges: (Updatable) The list of challenges to bypass when `action` is set to `BYPASS`. If unspecified or empty, all challenges are bypassed.
-               * **JS_CHALLENGE:** Bypasses JavaScript Challenge.
-               * **DEVICE_FINGERPRINT_CHALLENGE:** Bypasses Device Fingerprint Challenge.
-               * **HUMAN_INTERACTION_CHALLENGE:** Bypasses Human Interaction Challenge.
-               * **CAPTCHA:** Bypasses CAPTCHA Challenge.
-        :param pulumi.Input[str] captcha_footer: (Updatable) The text to show in the footer when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, default to `Enter the letters and numbers as they are shown in image above`.
-        :param pulumi.Input[str] captcha_header: (Updatable) The text to show in the header when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `We have detected an increased number of attempts to access this webapp. To help us keep this webapp secure, please let us know that you are not a robot by entering the text from captcha below.`
-        :param pulumi.Input[str] captcha_submit_label: (Updatable) The text to show on the label of the CAPTCHA challenge submit button when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Yes, I am human`.
-        :param pulumi.Input[str] captcha_title: (Updatable) The title used when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Are you human?`
-        :param pulumi.Input[str] redirect_response_code: (Updatable) The response status code to return when `action` is set to `REDIRECT`.
-               * **MOVED_PERMANENTLY:** Used for designating the permanent movement of a page (numerical code - 301).
-               * **FOUND:** Used for designating the temporary movement of a page (numerical code - 302).
-        :param pulumi.Input[str] redirect_url: (Updatable) The target to which the request should be redirected, represented as a URI reference. Required when `action` is `REDIRECT`.
-        :param pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigAccessRuleResponseHeaderManipulationArgs']]] response_header_manipulations: (Updatable) An object that represents an action to apply to an HTTP response headers if all rule criteria will be matched regardless of `action` value.
-        """
         pulumi.set(__self__, "action", action)
         pulumi.set(__self__, "criterias", criterias)
         pulumi.set(__self__, "name", name)
@@ -1510,9 +1082,6 @@ class PolicyWafConfigAccessRuleArgs:
     @property
     @pulumi.getter
     def action(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
-        """
         return pulumi.get(self, "action")
 
     @action.setter
@@ -1522,9 +1091,6 @@ class PolicyWafConfigAccessRuleArgs:
     @property
     @pulumi.getter
     def criterias(self) -> pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigAccessRuleCriteriaArgs']]]:
-        """
-        (Updatable) When defined, the JavaScript Challenge would be applied only for the requests that matched all the listed conditions.
-        """
         return pulumi.get(self, "criterias")
 
     @criterias.setter
@@ -1534,13 +1100,6 @@ class PolicyWafConfigAccessRuleArgs:
     @property
     @pulumi.getter
     def name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The unique name of the whitelist.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -1550,9 +1109,6 @@ class PolicyWafConfigAccessRuleArgs:
     @property
     @pulumi.getter(name="blockAction")
     def block_action(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) If `action` is set to `BLOCK`, this specifies how the traffic is blocked when detected as malicious by a protection rule. If unspecified, defaults to `SET_RESPONSE_CODE`.
-        """
         return pulumi.get(self, "block_action")
 
     @block_action.setter
@@ -1562,9 +1118,6 @@ class PolicyWafConfigAccessRuleArgs:
     @property
     @pulumi.getter(name="blockErrorPageCode")
     def block_error_page_code(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`.
-        """
         return pulumi.get(self, "block_error_page_code")
 
     @block_error_page_code.setter
@@ -1574,9 +1127,6 @@ class PolicyWafConfigAccessRuleArgs:
     @property
     @pulumi.getter(name="blockErrorPageDescription")
     def block_error_page_description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
-        """
         return pulumi.get(self, "block_error_page_description")
 
     @block_error_page_description.setter
@@ -1586,9 +1136,6 @@ class PolicyWafConfigAccessRuleArgs:
     @property
     @pulumi.getter(name="blockErrorPageMessage")
     def block_error_page_message(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to 'Access to the website is blocked.'
-        """
         return pulumi.get(self, "block_error_page_message")
 
     @block_error_page_message.setter
@@ -1598,9 +1145,6 @@ class PolicyWafConfigAccessRuleArgs:
     @property
     @pulumi.getter(name="blockResponseCode")
     def block_response_code(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
-        """
         return pulumi.get(self, "block_response_code")
 
     @block_response_code.setter
@@ -1610,13 +1154,6 @@ class PolicyWafConfigAccessRuleArgs:
     @property
     @pulumi.getter(name="bypassChallenges")
     def bypass_challenges(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) The list of challenges to bypass when `action` is set to `BYPASS`. If unspecified or empty, all challenges are bypassed.
-        * **JS_CHALLENGE:** Bypasses JavaScript Challenge.
-        * **DEVICE_FINGERPRINT_CHALLENGE:** Bypasses Device Fingerprint Challenge.
-        * **HUMAN_INTERACTION_CHALLENGE:** Bypasses Human Interaction Challenge.
-        * **CAPTCHA:** Bypasses CAPTCHA Challenge.
-        """
         return pulumi.get(self, "bypass_challenges")
 
     @bypass_challenges.setter
@@ -1626,9 +1163,6 @@ class PolicyWafConfigAccessRuleArgs:
     @property
     @pulumi.getter(name="captchaFooter")
     def captcha_footer(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The text to show in the footer when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, default to `Enter the letters and numbers as they are shown in image above`.
-        """
         return pulumi.get(self, "captcha_footer")
 
     @captcha_footer.setter
@@ -1638,9 +1172,6 @@ class PolicyWafConfigAccessRuleArgs:
     @property
     @pulumi.getter(name="captchaHeader")
     def captcha_header(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The text to show in the header when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `We have detected an increased number of attempts to access this webapp. To help us keep this webapp secure, please let us know that you are not a robot by entering the text from captcha below.`
-        """
         return pulumi.get(self, "captcha_header")
 
     @captcha_header.setter
@@ -1650,9 +1181,6 @@ class PolicyWafConfigAccessRuleArgs:
     @property
     @pulumi.getter(name="captchaSubmitLabel")
     def captcha_submit_label(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The text to show on the label of the CAPTCHA challenge submit button when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Yes, I am human`.
-        """
         return pulumi.get(self, "captcha_submit_label")
 
     @captcha_submit_label.setter
@@ -1662,9 +1190,6 @@ class PolicyWafConfigAccessRuleArgs:
     @property
     @pulumi.getter(name="captchaTitle")
     def captcha_title(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The title used when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Are you human?`
-        """
         return pulumi.get(self, "captcha_title")
 
     @captcha_title.setter
@@ -1674,11 +1199,6 @@ class PolicyWafConfigAccessRuleArgs:
     @property
     @pulumi.getter(name="redirectResponseCode")
     def redirect_response_code(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The response status code to return when `action` is set to `REDIRECT`.
-        * **MOVED_PERMANENTLY:** Used for designating the permanent movement of a page (numerical code - 301).
-        * **FOUND:** Used for designating the temporary movement of a page (numerical code - 302).
-        """
         return pulumi.get(self, "redirect_response_code")
 
     @redirect_response_code.setter
@@ -1688,9 +1208,6 @@ class PolicyWafConfigAccessRuleArgs:
     @property
     @pulumi.getter(name="redirectUrl")
     def redirect_url(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The target to which the request should be redirected, represented as a URI reference. Required when `action` is `REDIRECT`.
-        """
         return pulumi.get(self, "redirect_url")
 
     @redirect_url.setter
@@ -1700,9 +1217,6 @@ class PolicyWafConfigAccessRuleArgs:
     @property
     @pulumi.getter(name="responseHeaderManipulations")
     def response_header_manipulations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigAccessRuleResponseHeaderManipulationArgs']]]]:
-        """
-        (Updatable) An object that represents an action to apply to an HTTP response headers if all rule criteria will be matched regardless of `action` value.
-        """
         return pulumi.get(self, "response_header_manipulations")
 
     @response_header_manipulations.setter
@@ -1716,36 +1230,6 @@ class PolicyWafConfigAccessRuleCriteriaArgs:
                  condition: pulumi.Input[str],
                  value: pulumi.Input[str],
                  is_case_sensitive: Optional[pulumi.Input[bool]] = None):
-        """
-        :param pulumi.Input[str] condition: (Updatable) The criteria the access rule and JavaScript Challenge uses to determine if action should be taken on a request.
-               * **URL_IS:** Matches if the concatenation of request URL path and query is identical to the contents of the `value` field. URL must start with a `/`.
-               * **URL_IS_NOT:** Matches if the concatenation of request URL path and query is not identical to the contents of the `value` field. URL must start with a `/`.
-               * **URL_STARTS_WITH:** Matches if the concatenation of request URL path and query starts with the contents of the `value` field. URL must start with a `/`.
-               * **URL_PART_ENDS_WITH:** Matches if the concatenation of request URL path and query ends with the contents of the `value` field.
-               * **URL_PART_CONTAINS:** Matches if the concatenation of request URL path and query contains the contents of the `value` field.
-               * **URL_REGEX:** Matches if the concatenation of request URL path and query is described by the regular expression in the value field. The value must be a valid regular expression recognized by the PCRE library in Nginx (https://www.pcre.org).
-               * **URL_DOES_NOT_MATCH_REGEX:** Matches if the concatenation of request URL path and query is not described by the regular expression in the `value` field. The value must be a valid regular expression recognized by the PCRE library in Nginx (https://www.pcre.org).
-               * **URL_DOES_NOT_START_WITH:** Matches if the concatenation of request URL path and query does not start with the contents of the `value` field.
-               * **URL_PART_DOES_NOT_CONTAIN:** Matches if the concatenation of request URL path and query does not contain the contents of the `value` field.
-               * **URL_PART_DOES_NOT_END_WITH:** Matches if the concatenation of request URL path and query does not end with the contents of the `value` field.
-               * **IP_IS:** Matches if the request originates from one of the IP addresses contained in the defined address list. The `value` in this case is string with one or multiple IPs or CIDR notations separated by new line symbol \\n *Example:* "1.1.1.1\\n1.1.1.2\\n1.2.2.1/30"
-               * **IP_IS_NOT:** Matches if the request does not originate from any of the IP addresses contained in the defined address list. The `value` in this case is string with one or multiple IPs or CIDR notations separated by new line symbol \\n *Example:* "1.1.1.1\\n1.1.1.2\\n1.2.2.1/30"
-               * **IP_IN_LIST:** Matches if the request originates from one of the IP addresses contained in the referenced address list. The `value` in this case is OCID of the address list.
-               * **IP_NOT_IN_LIST:** Matches if the request does not originate from any IP address contained in the referenced address list. The `value` field in this case is OCID of the address list.
-               * **HTTP_HEADER_CONTAINS:** The HTTP_HEADER_CONTAINS criteria is defined using a compound value separated by a colon: a header field name and a header field value. `host:test.example.com` is an example of a criteria value where `host` is the header field name and `test.example.com` is the header field value. A request matches when the header field name is a case insensitive match and the header field value is a case insensitive, substring match. *Example:* With a criteria value of `host:test.example.com`, where `host` is the name of the field and `test.example.com` is the value of the host field, a request with the header values, `Host: www.test.example.com` will match, where as a request with header values of `host: www.example.com` or `host: test.sub.example.com` will not match.
-               * **HTTP_METHOD_IS:** Matches if the request method is identical to one of the values listed in field. The `value` in this case is string with one or multiple HTTP methods separated by new line symbol \\n The list of available methods: `GET`, `HEAD`, `POST`, `PUT`, `DELETE`, `CONNECT`, `OPTIONS`, `TRACE`, `PATCH`
-               
-               *Example:* "GET\\nPOST"
-               * **HTTP_METHOD_IS_NOT:** Matches if the request is not identical to any of the contents of the `value` field. The `value` in this case is string with one or multiple HTTP methods separated by new line symbol \\n The list of available methods: `GET`, `HEAD`, `POST`, `PUT`, `DELETE`, `CONNECT`, `OPTIONS`, `TRACE`, `PATCH`
-               
-               *Example:* "GET\\nPOST"
-               * **COUNTRY_IS:** Matches if the request originates from one of countries in the `value` field. The `value` in this case is string with one or multiple countries separated by new line symbol \\n Country codes are in ISO 3166-1 alpha-2 format. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/). *Example:* "AL\\nDZ\\nAM"
-               * **COUNTRY_IS_NOT:** Matches if the request does not originate from any of countries in the `value` field. The `value` in this case is string with one or multiple countries separated by new line symbol \\n Country codes are in ISO 3166-1 alpha-2 format. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/). *Example:* "AL\\nDZ\\nAM"
-               * **USER_AGENT_IS:** Matches if the requesting user agent is identical to the contents of the `value` field. *Example:* `Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:35.0) Gecko/20100101 Firefox/35.0`
-               * **USER_AGENT_IS_NOT:** Matches if the requesting user agent is not identical to the contents of the `value` field. *Example:* `Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:35.0) Gecko/20100101 Firefox/35.0`
-        :param pulumi.Input[str] value: (Updatable) The value of the header.
-        :param pulumi.Input[bool] is_case_sensitive: (Updatable) When enabled, the condition will be matched with case-sensitive rules.
-        """
         pulumi.set(__self__, "condition", condition)
         pulumi.set(__self__, "value", value)
         if is_case_sensitive is not None:
@@ -1754,34 +1238,6 @@ class PolicyWafConfigAccessRuleCriteriaArgs:
     @property
     @pulumi.getter
     def condition(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The criteria the access rule and JavaScript Challenge uses to determine if action should be taken on a request.
-        * **URL_IS:** Matches if the concatenation of request URL path and query is identical to the contents of the `value` field. URL must start with a `/`.
-        * **URL_IS_NOT:** Matches if the concatenation of request URL path and query is not identical to the contents of the `value` field. URL must start with a `/`.
-        * **URL_STARTS_WITH:** Matches if the concatenation of request URL path and query starts with the contents of the `value` field. URL must start with a `/`.
-        * **URL_PART_ENDS_WITH:** Matches if the concatenation of request URL path and query ends with the contents of the `value` field.
-        * **URL_PART_CONTAINS:** Matches if the concatenation of request URL path and query contains the contents of the `value` field.
-        * **URL_REGEX:** Matches if the concatenation of request URL path and query is described by the regular expression in the value field. The value must be a valid regular expression recognized by the PCRE library in Nginx (https://www.pcre.org).
-        * **URL_DOES_NOT_MATCH_REGEX:** Matches if the concatenation of request URL path and query is not described by the regular expression in the `value` field. The value must be a valid regular expression recognized by the PCRE library in Nginx (https://www.pcre.org).
-        * **URL_DOES_NOT_START_WITH:** Matches if the concatenation of request URL path and query does not start with the contents of the `value` field.
-        * **URL_PART_DOES_NOT_CONTAIN:** Matches if the concatenation of request URL path and query does not contain the contents of the `value` field.
-        * **URL_PART_DOES_NOT_END_WITH:** Matches if the concatenation of request URL path and query does not end with the contents of the `value` field.
-        * **IP_IS:** Matches if the request originates from one of the IP addresses contained in the defined address list. The `value` in this case is string with one or multiple IPs or CIDR notations separated by new line symbol \\n *Example:* "1.1.1.1\\n1.1.1.2\\n1.2.2.1/30"
-        * **IP_IS_NOT:** Matches if the request does not originate from any of the IP addresses contained in the defined address list. The `value` in this case is string with one or multiple IPs or CIDR notations separated by new line symbol \\n *Example:* "1.1.1.1\\n1.1.1.2\\n1.2.2.1/30"
-        * **IP_IN_LIST:** Matches if the request originates from one of the IP addresses contained in the referenced address list. The `value` in this case is OCID of the address list.
-        * **IP_NOT_IN_LIST:** Matches if the request does not originate from any IP address contained in the referenced address list. The `value` field in this case is OCID of the address list.
-        * **HTTP_HEADER_CONTAINS:** The HTTP_HEADER_CONTAINS criteria is defined using a compound value separated by a colon: a header field name and a header field value. `host:test.example.com` is an example of a criteria value where `host` is the header field name and `test.example.com` is the header field value. A request matches when the header field name is a case insensitive match and the header field value is a case insensitive, substring match. *Example:* With a criteria value of `host:test.example.com`, where `host` is the name of the field and `test.example.com` is the value of the host field, a request with the header values, `Host: www.test.example.com` will match, where as a request with header values of `host: www.example.com` or `host: test.sub.example.com` will not match.
-        * **HTTP_METHOD_IS:** Matches if the request method is identical to one of the values listed in field. The `value` in this case is string with one or multiple HTTP methods separated by new line symbol \\n The list of available methods: `GET`, `HEAD`, `POST`, `PUT`, `DELETE`, `CONNECT`, `OPTIONS`, `TRACE`, `PATCH`
-
-        *Example:* "GET\\nPOST"
-        * **HTTP_METHOD_IS_NOT:** Matches if the request is not identical to any of the contents of the `value` field. The `value` in this case is string with one or multiple HTTP methods separated by new line symbol \\n The list of available methods: `GET`, `HEAD`, `POST`, `PUT`, `DELETE`, `CONNECT`, `OPTIONS`, `TRACE`, `PATCH`
-
-        *Example:* "GET\\nPOST"
-        * **COUNTRY_IS:** Matches if the request originates from one of countries in the `value` field. The `value` in this case is string with one or multiple countries separated by new line symbol \\n Country codes are in ISO 3166-1 alpha-2 format. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/). *Example:* "AL\\nDZ\\nAM"
-        * **COUNTRY_IS_NOT:** Matches if the request does not originate from any of countries in the `value` field. The `value` in this case is string with one or multiple countries separated by new line symbol \\n Country codes are in ISO 3166-1 alpha-2 format. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/). *Example:* "AL\\nDZ\\nAM"
-        * **USER_AGENT_IS:** Matches if the requesting user agent is identical to the contents of the `value` field. *Example:* `Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:35.0) Gecko/20100101 Firefox/35.0`
-        * **USER_AGENT_IS_NOT:** Matches if the requesting user agent is not identical to the contents of the `value` field. *Example:* `Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:35.0) Gecko/20100101 Firefox/35.0`
-        """
         return pulumi.get(self, "condition")
 
     @condition.setter
@@ -1791,9 +1247,6 @@ class PolicyWafConfigAccessRuleCriteriaArgs:
     @property
     @pulumi.getter
     def value(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The value of the header.
-        """
         return pulumi.get(self, "value")
 
     @value.setter
@@ -1803,9 +1256,6 @@ class PolicyWafConfigAccessRuleCriteriaArgs:
     @property
     @pulumi.getter(name="isCaseSensitive")
     def is_case_sensitive(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) When enabled, the condition will be matched with case-sensitive rules.
-        """
         return pulumi.get(self, "is_case_sensitive")
 
     @is_case_sensitive.setter
@@ -1819,11 +1269,6 @@ class PolicyWafConfigAccessRuleResponseHeaderManipulationArgs:
                  action: pulumi.Input[str],
                  header: pulumi.Input[str],
                  value: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] action: (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
-        :param pulumi.Input[str] header: (Updatable) A header field name that conforms to RFC 7230.  Example: `example_header_name`
-        :param pulumi.Input[str] value: (Updatable) The value of the header.
-        """
         pulumi.set(__self__, "action", action)
         pulumi.set(__self__, "header", header)
         if value is not None:
@@ -1832,9 +1277,6 @@ class PolicyWafConfigAccessRuleResponseHeaderManipulationArgs:
     @property
     @pulumi.getter
     def action(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
-        """
         return pulumi.get(self, "action")
 
     @action.setter
@@ -1844,9 +1286,6 @@ class PolicyWafConfigAccessRuleResponseHeaderManipulationArgs:
     @property
     @pulumi.getter
     def header(self) -> pulumi.Input[str]:
-        """
-        (Updatable) A header field name that conforms to RFC 7230.  Example: `example_header_name`
-        """
         return pulumi.get(self, "header")
 
     @header.setter
@@ -1856,9 +1295,6 @@ class PolicyWafConfigAccessRuleResponseHeaderManipulationArgs:
     @property
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The value of the header.
-        """
         return pulumi.get(self, "value")
 
     @value.setter
@@ -1873,12 +1309,6 @@ class PolicyWafConfigAddressRateLimitingArgs:
                  allowed_rate_per_address: Optional[pulumi.Input[int]] = None,
                  block_response_code: Optional[pulumi.Input[int]] = None,
                  max_delayed_count_per_address: Optional[pulumi.Input[int]] = None):
-        """
-        :param pulumi.Input[bool] is_enabled: (Updatable) Enables or disables the JavaScript challenge Web Application Firewall feature.
-        :param pulumi.Input[int] allowed_rate_per_address: (Updatable) The number of allowed requests per second from one IP address. If unspecified, defaults to `1`.
-        :param pulumi.Input[int] block_response_code: (Updatable) The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
-        :param pulumi.Input[int] max_delayed_count_per_address: (Updatable) The maximum number of requests allowed to be queued before subsequent requests are dropped. If unspecified, defaults to `10`.
-        """
         pulumi.set(__self__, "is_enabled", is_enabled)
         if allowed_rate_per_address is not None:
             pulumi.set(__self__, "allowed_rate_per_address", allowed_rate_per_address)
@@ -1890,9 +1320,6 @@ class PolicyWafConfigAddressRateLimitingArgs:
     @property
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> pulumi.Input[bool]:
-        """
-        (Updatable) Enables or disables the JavaScript challenge Web Application Firewall feature.
-        """
         return pulumi.get(self, "is_enabled")
 
     @is_enabled.setter
@@ -1902,9 +1329,6 @@ class PolicyWafConfigAddressRateLimitingArgs:
     @property
     @pulumi.getter(name="allowedRatePerAddress")
     def allowed_rate_per_address(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The number of allowed requests per second from one IP address. If unspecified, defaults to `1`.
-        """
         return pulumi.get(self, "allowed_rate_per_address")
 
     @allowed_rate_per_address.setter
@@ -1914,9 +1338,6 @@ class PolicyWafConfigAddressRateLimitingArgs:
     @property
     @pulumi.getter(name="blockResponseCode")
     def block_response_code(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
-        """
         return pulumi.get(self, "block_response_code")
 
     @block_response_code.setter
@@ -1926,9 +1347,6 @@ class PolicyWafConfigAddressRateLimitingArgs:
     @property
     @pulumi.getter(name="maxDelayedCountPerAddress")
     def max_delayed_count_per_address(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The maximum number of requests allowed to be queued before subsequent requests are dropped. If unspecified, defaults to `10`.
-        """
         return pulumi.get(self, "max_delayed_count_per_address")
 
     @max_delayed_count_per_address.setter
@@ -1946,19 +1364,6 @@ class PolicyWafConfigCachingRuleArgs:
                  client_caching_duration: Optional[pulumi.Input[str]] = None,
                  is_client_caching_enabled: Optional[pulumi.Input[bool]] = None,
                  key: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] action: (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
-        :param pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigCachingRuleCriteriaArgs']]] criterias: (Updatable) When defined, the JavaScript Challenge would be applied only for the requests that matched all the listed conditions.
-        :param pulumi.Input[str] name: (Updatable) The unique name of the whitelist.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] caching_duration: (Updatable) The duration to cache content for the caching rule, specified in ISO 8601 extended format. Supported units: seconds, minutes, hours, days, weeks, months. The maximum value that can be set for any unit is `99`. Mixing of multiple units is not supported. Only applies when the `action` is set to `CACHE`. Example: `PT1H`
-        :param pulumi.Input[str] client_caching_duration: (Updatable) The duration to cache content in the user's browser, specified in ISO 8601 extended format. Supported units: seconds, minutes, hours, days, weeks, months. The maximum value that can be set for any unit is `99`. Mixing of multiple units is not supported. Only applies when the `action` is set to `CACHE`. Example: `PT1H`
-        :param pulumi.Input[bool] is_client_caching_enabled: (Updatable) Enables or disables client caching. Browsers use the `Cache-Control` header value for caching content locally in the browser. This setting overrides the addition of a `Cache-Control` header in responses.
-        :param pulumi.Input[str] key: (Updatable) The unique key for the caching rule.
-        """
         pulumi.set(__self__, "action", action)
         pulumi.set(__self__, "criterias", criterias)
         pulumi.set(__self__, "name", name)
@@ -1974,9 +1379,6 @@ class PolicyWafConfigCachingRuleArgs:
     @property
     @pulumi.getter
     def action(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
-        """
         return pulumi.get(self, "action")
 
     @action.setter
@@ -1986,9 +1388,6 @@ class PolicyWafConfigCachingRuleArgs:
     @property
     @pulumi.getter
     def criterias(self) -> pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigCachingRuleCriteriaArgs']]]:
-        """
-        (Updatable) When defined, the JavaScript Challenge would be applied only for the requests that matched all the listed conditions.
-        """
         return pulumi.get(self, "criterias")
 
     @criterias.setter
@@ -1998,13 +1397,6 @@ class PolicyWafConfigCachingRuleArgs:
     @property
     @pulumi.getter
     def name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The unique name of the whitelist.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -2014,9 +1406,6 @@ class PolicyWafConfigCachingRuleArgs:
     @property
     @pulumi.getter(name="cachingDuration")
     def caching_duration(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The duration to cache content for the caching rule, specified in ISO 8601 extended format. Supported units: seconds, minutes, hours, days, weeks, months. The maximum value that can be set for any unit is `99`. Mixing of multiple units is not supported. Only applies when the `action` is set to `CACHE`. Example: `PT1H`
-        """
         return pulumi.get(self, "caching_duration")
 
     @caching_duration.setter
@@ -2026,9 +1415,6 @@ class PolicyWafConfigCachingRuleArgs:
     @property
     @pulumi.getter(name="clientCachingDuration")
     def client_caching_duration(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The duration to cache content in the user's browser, specified in ISO 8601 extended format. Supported units: seconds, minutes, hours, days, weeks, months. The maximum value that can be set for any unit is `99`. Mixing of multiple units is not supported. Only applies when the `action` is set to `CACHE`. Example: `PT1H`
-        """
         return pulumi.get(self, "client_caching_duration")
 
     @client_caching_duration.setter
@@ -2038,9 +1424,6 @@ class PolicyWafConfigCachingRuleArgs:
     @property
     @pulumi.getter(name="isClientCachingEnabled")
     def is_client_caching_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Enables or disables client caching. Browsers use the `Cache-Control` header value for caching content locally in the browser. This setting overrides the addition of a `Cache-Control` header in responses.
-        """
         return pulumi.get(self, "is_client_caching_enabled")
 
     @is_client_caching_enabled.setter
@@ -2050,9 +1433,6 @@ class PolicyWafConfigCachingRuleArgs:
     @property
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The unique key for the caching rule.
-        """
         return pulumi.get(self, "key")
 
     @key.setter
@@ -2065,69 +1445,12 @@ class PolicyWafConfigCachingRuleCriteriaArgs:
     def __init__(__self__, *,
                  condition: pulumi.Input[str],
                  value: pulumi.Input[str]):
-        """
-        :param pulumi.Input[str] condition: (Updatable) The criteria the access rule and JavaScript Challenge uses to determine if action should be taken on a request.
-               * **URL_IS:** Matches if the concatenation of request URL path and query is identical to the contents of the `value` field. URL must start with a `/`.
-               * **URL_IS_NOT:** Matches if the concatenation of request URL path and query is not identical to the contents of the `value` field. URL must start with a `/`.
-               * **URL_STARTS_WITH:** Matches if the concatenation of request URL path and query starts with the contents of the `value` field. URL must start with a `/`.
-               * **URL_PART_ENDS_WITH:** Matches if the concatenation of request URL path and query ends with the contents of the `value` field.
-               * **URL_PART_CONTAINS:** Matches if the concatenation of request URL path and query contains the contents of the `value` field.
-               * **URL_REGEX:** Matches if the concatenation of request URL path and query is described by the regular expression in the value field. The value must be a valid regular expression recognized by the PCRE library in Nginx (https://www.pcre.org).
-               * **URL_DOES_NOT_MATCH_REGEX:** Matches if the concatenation of request URL path and query is not described by the regular expression in the `value` field. The value must be a valid regular expression recognized by the PCRE library in Nginx (https://www.pcre.org).
-               * **URL_DOES_NOT_START_WITH:** Matches if the concatenation of request URL path and query does not start with the contents of the `value` field.
-               * **URL_PART_DOES_NOT_CONTAIN:** Matches if the concatenation of request URL path and query does not contain the contents of the `value` field.
-               * **URL_PART_DOES_NOT_END_WITH:** Matches if the concatenation of request URL path and query does not end with the contents of the `value` field.
-               * **IP_IS:** Matches if the request originates from one of the IP addresses contained in the defined address list. The `value` in this case is string with one or multiple IPs or CIDR notations separated by new line symbol \\n *Example:* "1.1.1.1\\n1.1.1.2\\n1.2.2.1/30"
-               * **IP_IS_NOT:** Matches if the request does not originate from any of the IP addresses contained in the defined address list. The `value` in this case is string with one or multiple IPs or CIDR notations separated by new line symbol \\n *Example:* "1.1.1.1\\n1.1.1.2\\n1.2.2.1/30"
-               * **IP_IN_LIST:** Matches if the request originates from one of the IP addresses contained in the referenced address list. The `value` in this case is OCID of the address list.
-               * **IP_NOT_IN_LIST:** Matches if the request does not originate from any IP address contained in the referenced address list. The `value` field in this case is OCID of the address list.
-               * **HTTP_HEADER_CONTAINS:** The HTTP_HEADER_CONTAINS criteria is defined using a compound value separated by a colon: a header field name and a header field value. `host:test.example.com` is an example of a criteria value where `host` is the header field name and `test.example.com` is the header field value. A request matches when the header field name is a case insensitive match and the header field value is a case insensitive, substring match. *Example:* With a criteria value of `host:test.example.com`, where `host` is the name of the field and `test.example.com` is the value of the host field, a request with the header values, `Host: www.test.example.com` will match, where as a request with header values of `host: www.example.com` or `host: test.sub.example.com` will not match.
-               * **HTTP_METHOD_IS:** Matches if the request method is identical to one of the values listed in field. The `value` in this case is string with one or multiple HTTP methods separated by new line symbol \\n The list of available methods: `GET`, `HEAD`, `POST`, `PUT`, `DELETE`, `CONNECT`, `OPTIONS`, `TRACE`, `PATCH`
-               
-               *Example:* "GET\\nPOST"
-               * **HTTP_METHOD_IS_NOT:** Matches if the request is not identical to any of the contents of the `value` field. The `value` in this case is string with one or multiple HTTP methods separated by new line symbol \\n The list of available methods: `GET`, `HEAD`, `POST`, `PUT`, `DELETE`, `CONNECT`, `OPTIONS`, `TRACE`, `PATCH`
-               
-               *Example:* "GET\\nPOST"
-               * **COUNTRY_IS:** Matches if the request originates from one of countries in the `value` field. The `value` in this case is string with one or multiple countries separated by new line symbol \\n Country codes are in ISO 3166-1 alpha-2 format. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/). *Example:* "AL\\nDZ\\nAM"
-               * **COUNTRY_IS_NOT:** Matches if the request does not originate from any of countries in the `value` field. The `value` in this case is string with one or multiple countries separated by new line symbol \\n Country codes are in ISO 3166-1 alpha-2 format. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/). *Example:* "AL\\nDZ\\nAM"
-               * **USER_AGENT_IS:** Matches if the requesting user agent is identical to the contents of the `value` field. *Example:* `Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:35.0) Gecko/20100101 Firefox/35.0`
-               * **USER_AGENT_IS_NOT:** Matches if the requesting user agent is not identical to the contents of the `value` field. *Example:* `Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:35.0) Gecko/20100101 Firefox/35.0`
-        :param pulumi.Input[str] value: (Updatable) The value of the header.
-        """
         pulumi.set(__self__, "condition", condition)
         pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter
     def condition(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The criteria the access rule and JavaScript Challenge uses to determine if action should be taken on a request.
-        * **URL_IS:** Matches if the concatenation of request URL path and query is identical to the contents of the `value` field. URL must start with a `/`.
-        * **URL_IS_NOT:** Matches if the concatenation of request URL path and query is not identical to the contents of the `value` field. URL must start with a `/`.
-        * **URL_STARTS_WITH:** Matches if the concatenation of request URL path and query starts with the contents of the `value` field. URL must start with a `/`.
-        * **URL_PART_ENDS_WITH:** Matches if the concatenation of request URL path and query ends with the contents of the `value` field.
-        * **URL_PART_CONTAINS:** Matches if the concatenation of request URL path and query contains the contents of the `value` field.
-        * **URL_REGEX:** Matches if the concatenation of request URL path and query is described by the regular expression in the value field. The value must be a valid regular expression recognized by the PCRE library in Nginx (https://www.pcre.org).
-        * **URL_DOES_NOT_MATCH_REGEX:** Matches if the concatenation of request URL path and query is not described by the regular expression in the `value` field. The value must be a valid regular expression recognized by the PCRE library in Nginx (https://www.pcre.org).
-        * **URL_DOES_NOT_START_WITH:** Matches if the concatenation of request URL path and query does not start with the contents of the `value` field.
-        * **URL_PART_DOES_NOT_CONTAIN:** Matches if the concatenation of request URL path and query does not contain the contents of the `value` field.
-        * **URL_PART_DOES_NOT_END_WITH:** Matches if the concatenation of request URL path and query does not end with the contents of the `value` field.
-        * **IP_IS:** Matches if the request originates from one of the IP addresses contained in the defined address list. The `value` in this case is string with one or multiple IPs or CIDR notations separated by new line symbol \\n *Example:* "1.1.1.1\\n1.1.1.2\\n1.2.2.1/30"
-        * **IP_IS_NOT:** Matches if the request does not originate from any of the IP addresses contained in the defined address list. The `value` in this case is string with one or multiple IPs or CIDR notations separated by new line symbol \\n *Example:* "1.1.1.1\\n1.1.1.2\\n1.2.2.1/30"
-        * **IP_IN_LIST:** Matches if the request originates from one of the IP addresses contained in the referenced address list. The `value` in this case is OCID of the address list.
-        * **IP_NOT_IN_LIST:** Matches if the request does not originate from any IP address contained in the referenced address list. The `value` field in this case is OCID of the address list.
-        * **HTTP_HEADER_CONTAINS:** The HTTP_HEADER_CONTAINS criteria is defined using a compound value separated by a colon: a header field name and a header field value. `host:test.example.com` is an example of a criteria value where `host` is the header field name and `test.example.com` is the header field value. A request matches when the header field name is a case insensitive match and the header field value is a case insensitive, substring match. *Example:* With a criteria value of `host:test.example.com`, where `host` is the name of the field and `test.example.com` is the value of the host field, a request with the header values, `Host: www.test.example.com` will match, where as a request with header values of `host: www.example.com` or `host: test.sub.example.com` will not match.
-        * **HTTP_METHOD_IS:** Matches if the request method is identical to one of the values listed in field. The `value` in this case is string with one or multiple HTTP methods separated by new line symbol \\n The list of available methods: `GET`, `HEAD`, `POST`, `PUT`, `DELETE`, `CONNECT`, `OPTIONS`, `TRACE`, `PATCH`
-
-        *Example:* "GET\\nPOST"
-        * **HTTP_METHOD_IS_NOT:** Matches if the request is not identical to any of the contents of the `value` field. The `value` in this case is string with one or multiple HTTP methods separated by new line symbol \\n The list of available methods: `GET`, `HEAD`, `POST`, `PUT`, `DELETE`, `CONNECT`, `OPTIONS`, `TRACE`, `PATCH`
-
-        *Example:* "GET\\nPOST"
-        * **COUNTRY_IS:** Matches if the request originates from one of countries in the `value` field. The `value` in this case is string with one or multiple countries separated by new line symbol \\n Country codes are in ISO 3166-1 alpha-2 format. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/). *Example:* "AL\\nDZ\\nAM"
-        * **COUNTRY_IS_NOT:** Matches if the request does not originate from any of countries in the `value` field. The `value` in this case is string with one or multiple countries separated by new line symbol \\n Country codes are in ISO 3166-1 alpha-2 format. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/). *Example:* "AL\\nDZ\\nAM"
-        * **USER_AGENT_IS:** Matches if the requesting user agent is identical to the contents of the `value` field. *Example:* `Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:35.0) Gecko/20100101 Firefox/35.0`
-        * **USER_AGENT_IS_NOT:** Matches if the requesting user agent is not identical to the contents of the `value` field. *Example:* `Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:35.0) Gecko/20100101 Firefox/35.0`
-        """
         return pulumi.get(self, "condition")
 
     @condition.setter
@@ -2137,9 +1460,6 @@ class PolicyWafConfigCachingRuleCriteriaArgs:
     @property
     @pulumi.getter
     def value(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The value of the header.
-        """
         return pulumi.get(self, "value")
 
     @value.setter
@@ -2157,15 +1477,6 @@ class PolicyWafConfigCaptchaArgs:
                  url: pulumi.Input[str],
                  footer_text: Optional[pulumi.Input[str]] = None,
                  header_text: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] failure_message: (Updatable) The text to show when incorrect CAPTCHA text is entered. If unspecified, defaults to `The CAPTCHA was incorrect. Try again.`
-        :param pulumi.Input[int] session_expiration_in_seconds: (Updatable) The amount of time before the CAPTCHA expires, in seconds. If unspecified, defaults to `300`.
-        :param pulumi.Input[str] submit_label: (Updatable) The text to show on the label of the CAPTCHA challenge submit button. If unspecified, defaults to `Yes, I am human`.
-        :param pulumi.Input[str] title: (Updatable) The title used when displaying a CAPTCHA challenge. If unspecified, defaults to `Are you human?`
-        :param pulumi.Input[str] url: (Updatable) The unique URL path at which to show the CAPTCHA challenge.
-        :param pulumi.Input[str] footer_text: (Updatable) The text to show in the footer when showing a CAPTCHA challenge. If unspecified, defaults to 'Enter the letters and numbers as they are shown in the image above.'
-        :param pulumi.Input[str] header_text: (Updatable) The text to show in the header when showing a CAPTCHA challenge. If unspecified, defaults to 'We have detected an increased number of attempts to access this website. To help us keep this site secure, please let us know that you are not a robot by entering the text from the image below.'
-        """
         pulumi.set(__self__, "failure_message", failure_message)
         pulumi.set(__self__, "session_expiration_in_seconds", session_expiration_in_seconds)
         pulumi.set(__self__, "submit_label", submit_label)
@@ -2179,9 +1490,6 @@ class PolicyWafConfigCaptchaArgs:
     @property
     @pulumi.getter(name="failureMessage")
     def failure_message(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The text to show when incorrect CAPTCHA text is entered. If unspecified, defaults to `The CAPTCHA was incorrect. Try again.`
-        """
         return pulumi.get(self, "failure_message")
 
     @failure_message.setter
@@ -2191,9 +1499,6 @@ class PolicyWafConfigCaptchaArgs:
     @property
     @pulumi.getter(name="sessionExpirationInSeconds")
     def session_expiration_in_seconds(self) -> pulumi.Input[int]:
-        """
-        (Updatable) The amount of time before the CAPTCHA expires, in seconds. If unspecified, defaults to `300`.
-        """
         return pulumi.get(self, "session_expiration_in_seconds")
 
     @session_expiration_in_seconds.setter
@@ -2203,9 +1508,6 @@ class PolicyWafConfigCaptchaArgs:
     @property
     @pulumi.getter(name="submitLabel")
     def submit_label(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The text to show on the label of the CAPTCHA challenge submit button. If unspecified, defaults to `Yes, I am human`.
-        """
         return pulumi.get(self, "submit_label")
 
     @submit_label.setter
@@ -2215,9 +1517,6 @@ class PolicyWafConfigCaptchaArgs:
     @property
     @pulumi.getter
     def title(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The title used when displaying a CAPTCHA challenge. If unspecified, defaults to `Are you human?`
-        """
         return pulumi.get(self, "title")
 
     @title.setter
@@ -2227,9 +1526,6 @@ class PolicyWafConfigCaptchaArgs:
     @property
     @pulumi.getter
     def url(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The unique URL path at which to show the CAPTCHA challenge.
-        """
         return pulumi.get(self, "url")
 
     @url.setter
@@ -2239,9 +1535,6 @@ class PolicyWafConfigCaptchaArgs:
     @property
     @pulumi.getter(name="footerText")
     def footer_text(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The text to show in the footer when showing a CAPTCHA challenge. If unspecified, defaults to 'Enter the letters and numbers as they are shown in the image above.'
-        """
         return pulumi.get(self, "footer_text")
 
     @footer_text.setter
@@ -2251,9 +1544,6 @@ class PolicyWafConfigCaptchaArgs:
     @property
     @pulumi.getter(name="headerText")
     def header_text(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The text to show in the header when showing a CAPTCHA challenge. If unspecified, defaults to 'We have detected an increased number of attempts to access this website. To help us keep this site secure, please let us know that you are not a robot by entering the text from the image below.'
-        """
         return pulumi.get(self, "header_text")
 
     @header_text.setter
@@ -2267,11 +1557,6 @@ class PolicyWafConfigCustomProtectionRuleArgs:
                  action: Optional[pulumi.Input[str]] = None,
                  exclusions: Optional[pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigCustomProtectionRuleExclusionArgs']]]] = None,
                  id: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] action: (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
-        :param pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigCustomProtectionRuleExclusionArgs']]] exclusions: (Updatable) An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
-        :param pulumi.Input[str] id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom protection rule.
-        """
         if action is not None:
             pulumi.set(__self__, "action", action)
         if exclusions is not None:
@@ -2282,9 +1567,6 @@ class PolicyWafConfigCustomProtectionRuleArgs:
     @property
     @pulumi.getter
     def action(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
-        """
         return pulumi.get(self, "action")
 
     @action.setter
@@ -2294,9 +1576,6 @@ class PolicyWafConfigCustomProtectionRuleArgs:
     @property
     @pulumi.getter
     def exclusions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigCustomProtectionRuleExclusionArgs']]]]:
-        """
-        (Updatable) An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
-        """
         return pulumi.get(self, "exclusions")
 
     @exclusions.setter
@@ -2306,9 +1585,6 @@ class PolicyWafConfigCustomProtectionRuleArgs:
     @property
     @pulumi.getter
     def id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom protection rule.
-        """
         return pulumi.get(self, "id")
 
     @id.setter
@@ -2321,10 +1597,6 @@ class PolicyWafConfigCustomProtectionRuleExclusionArgs:
     def __init__(__self__, *,
                  exclusions: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  target: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] exclusions: (Updatable) An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
-        :param pulumi.Input[str] target: (Updatable) The target of the exclusion.
-        """
         if exclusions is not None:
             pulumi.set(__self__, "exclusions", exclusions)
         if target is not None:
@@ -2333,9 +1605,6 @@ class PolicyWafConfigCustomProtectionRuleExclusionArgs:
     @property
     @pulumi.getter
     def exclusions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
-        """
         return pulumi.get(self, "exclusions")
 
     @exclusions.setter
@@ -2345,9 +1614,6 @@ class PolicyWafConfigCustomProtectionRuleExclusionArgs:
     @property
     @pulumi.getter
     def target(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The target of the exclusion.
-        """
         return pulumi.get(self, "target")
 
     @target.setter
@@ -2366,16 +1632,6 @@ class PolicyWafConfigDeviceFingerprintChallengeArgs:
                  failure_threshold_expiration_in_seconds: Optional[pulumi.Input[int]] = None,
                  max_address_count: Optional[pulumi.Input[int]] = None,
                  max_address_count_expiration_in_seconds: Optional[pulumi.Input[int]] = None):
-        """
-        :param pulumi.Input[bool] is_enabled: (Updatable) Enables or disables the JavaScript challenge Web Application Firewall feature.
-        :param pulumi.Input[str] action: (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
-        :param pulumi.Input[int] action_expiration_in_seconds: (Updatable) The number of seconds between challenges from the same IP address. If unspecified, defaults to `60`.
-        :param pulumi.Input['PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsArgs'] challenge_settings: (Updatable) The challenge settings if `action` is set to `BLOCK`.
-        :param pulumi.Input[int] failure_threshold: (Updatable) The number of failed requests before taking action. If unspecified, defaults to `10`.
-        :param pulumi.Input[int] failure_threshold_expiration_in_seconds: (Updatable) The number of seconds before the failure threshold resets. If unspecified, defaults to  `60`.
-        :param pulumi.Input[int] max_address_count: (Updatable) The maximum number of IP addresses permitted with the same device fingerprint. If unspecified, defaults to `20`.
-        :param pulumi.Input[int] max_address_count_expiration_in_seconds: (Updatable) The number of seconds before the maximum addresses count resets. If unspecified, defaults to `60`.
-        """
         pulumi.set(__self__, "is_enabled", is_enabled)
         if action is not None:
             pulumi.set(__self__, "action", action)
@@ -2395,9 +1651,6 @@ class PolicyWafConfigDeviceFingerprintChallengeArgs:
     @property
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> pulumi.Input[bool]:
-        """
-        (Updatable) Enables or disables the JavaScript challenge Web Application Firewall feature.
-        """
         return pulumi.get(self, "is_enabled")
 
     @is_enabled.setter
@@ -2407,9 +1660,6 @@ class PolicyWafConfigDeviceFingerprintChallengeArgs:
     @property
     @pulumi.getter
     def action(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
-        """
         return pulumi.get(self, "action")
 
     @action.setter
@@ -2419,9 +1669,6 @@ class PolicyWafConfigDeviceFingerprintChallengeArgs:
     @property
     @pulumi.getter(name="actionExpirationInSeconds")
     def action_expiration_in_seconds(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The number of seconds between challenges from the same IP address. If unspecified, defaults to `60`.
-        """
         return pulumi.get(self, "action_expiration_in_seconds")
 
     @action_expiration_in_seconds.setter
@@ -2431,9 +1678,6 @@ class PolicyWafConfigDeviceFingerprintChallengeArgs:
     @property
     @pulumi.getter(name="challengeSettings")
     def challenge_settings(self) -> Optional[pulumi.Input['PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsArgs']]:
-        """
-        (Updatable) The challenge settings if `action` is set to `BLOCK`.
-        """
         return pulumi.get(self, "challenge_settings")
 
     @challenge_settings.setter
@@ -2443,9 +1687,6 @@ class PolicyWafConfigDeviceFingerprintChallengeArgs:
     @property
     @pulumi.getter(name="failureThreshold")
     def failure_threshold(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The number of failed requests before taking action. If unspecified, defaults to `10`.
-        """
         return pulumi.get(self, "failure_threshold")
 
     @failure_threshold.setter
@@ -2455,9 +1696,6 @@ class PolicyWafConfigDeviceFingerprintChallengeArgs:
     @property
     @pulumi.getter(name="failureThresholdExpirationInSeconds")
     def failure_threshold_expiration_in_seconds(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The number of seconds before the failure threshold resets. If unspecified, defaults to  `60`.
-        """
         return pulumi.get(self, "failure_threshold_expiration_in_seconds")
 
     @failure_threshold_expiration_in_seconds.setter
@@ -2467,9 +1705,6 @@ class PolicyWafConfigDeviceFingerprintChallengeArgs:
     @property
     @pulumi.getter(name="maxAddressCount")
     def max_address_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The maximum number of IP addresses permitted with the same device fingerprint. If unspecified, defaults to `20`.
-        """
         return pulumi.get(self, "max_address_count")
 
     @max_address_count.setter
@@ -2479,9 +1714,6 @@ class PolicyWafConfigDeviceFingerprintChallengeArgs:
     @property
     @pulumi.getter(name="maxAddressCountExpirationInSeconds")
     def max_address_count_expiration_in_seconds(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The number of seconds before the maximum addresses count resets. If unspecified, defaults to `60`.
-        """
         return pulumi.get(self, "max_address_count_expiration_in_seconds")
 
     @max_address_count_expiration_in_seconds.setter
@@ -2501,17 +1733,6 @@ class PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsArgs:
                  captcha_header: Optional[pulumi.Input[str]] = None,
                  captcha_submit_label: Optional[pulumi.Input[str]] = None,
                  captcha_title: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] block_action: (Updatable) If `action` is set to `BLOCK`, this specifies how the traffic is blocked when detected as malicious by a protection rule. If unspecified, defaults to `SET_RESPONSE_CODE`.
-        :param pulumi.Input[str] block_error_page_code: (Updatable) The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`.
-        :param pulumi.Input[str] block_error_page_description: (Updatable) The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
-        :param pulumi.Input[str] block_error_page_message: (Updatable) The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to 'Access to the website is blocked.'
-        :param pulumi.Input[int] block_response_code: (Updatable) The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
-        :param pulumi.Input[str] captcha_footer: (Updatable) The text to show in the footer when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, default to `Enter the letters and numbers as they are shown in image above`.
-        :param pulumi.Input[str] captcha_header: (Updatable) The text to show in the header when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `We have detected an increased number of attempts to access this webapp. To help us keep this webapp secure, please let us know that you are not a robot by entering the text from captcha below.`
-        :param pulumi.Input[str] captcha_submit_label: (Updatable) The text to show on the label of the CAPTCHA challenge submit button when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Yes, I am human`.
-        :param pulumi.Input[str] captcha_title: (Updatable) The title used when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Are you human?`
-        """
         if block_action is not None:
             pulumi.set(__self__, "block_action", block_action)
         if block_error_page_code is not None:
@@ -2534,9 +1755,6 @@ class PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsArgs:
     @property
     @pulumi.getter(name="blockAction")
     def block_action(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) If `action` is set to `BLOCK`, this specifies how the traffic is blocked when detected as malicious by a protection rule. If unspecified, defaults to `SET_RESPONSE_CODE`.
-        """
         return pulumi.get(self, "block_action")
 
     @block_action.setter
@@ -2546,9 +1764,6 @@ class PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsArgs:
     @property
     @pulumi.getter(name="blockErrorPageCode")
     def block_error_page_code(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`.
-        """
         return pulumi.get(self, "block_error_page_code")
 
     @block_error_page_code.setter
@@ -2558,9 +1773,6 @@ class PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsArgs:
     @property
     @pulumi.getter(name="blockErrorPageDescription")
     def block_error_page_description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
-        """
         return pulumi.get(self, "block_error_page_description")
 
     @block_error_page_description.setter
@@ -2570,9 +1782,6 @@ class PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsArgs:
     @property
     @pulumi.getter(name="blockErrorPageMessage")
     def block_error_page_message(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to 'Access to the website is blocked.'
-        """
         return pulumi.get(self, "block_error_page_message")
 
     @block_error_page_message.setter
@@ -2582,9 +1791,6 @@ class PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsArgs:
     @property
     @pulumi.getter(name="blockResponseCode")
     def block_response_code(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
-        """
         return pulumi.get(self, "block_response_code")
 
     @block_response_code.setter
@@ -2594,9 +1800,6 @@ class PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsArgs:
     @property
     @pulumi.getter(name="captchaFooter")
     def captcha_footer(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The text to show in the footer when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, default to `Enter the letters and numbers as they are shown in image above`.
-        """
         return pulumi.get(self, "captcha_footer")
 
     @captcha_footer.setter
@@ -2606,9 +1809,6 @@ class PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsArgs:
     @property
     @pulumi.getter(name="captchaHeader")
     def captcha_header(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The text to show in the header when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `We have detected an increased number of attempts to access this webapp. To help us keep this webapp secure, please let us know that you are not a robot by entering the text from captcha below.`
-        """
         return pulumi.get(self, "captcha_header")
 
     @captcha_header.setter
@@ -2618,9 +1818,6 @@ class PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsArgs:
     @property
     @pulumi.getter(name="captchaSubmitLabel")
     def captcha_submit_label(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The text to show on the label of the CAPTCHA challenge submit button when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Yes, I am human`.
-        """
         return pulumi.get(self, "captcha_submit_label")
 
     @captcha_submit_label.setter
@@ -2630,9 +1827,6 @@ class PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsArgs:
     @property
     @pulumi.getter(name="captchaTitle")
     def captcha_title(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The title used when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Are you human?`
-        """
         return pulumi.get(self, "captcha_title")
 
     @captcha_title.setter
@@ -2653,18 +1847,6 @@ class PolicyWafConfigHumanInteractionChallengeArgs:
                  is_nat_enabled: Optional[pulumi.Input[bool]] = None,
                  recording_period_in_seconds: Optional[pulumi.Input[int]] = None,
                  set_http_header: Optional[pulumi.Input['PolicyWafConfigHumanInteractionChallengeSetHttpHeaderArgs']] = None):
-        """
-        :param pulumi.Input[bool] is_enabled: (Updatable) Enables or disables the JavaScript challenge Web Application Firewall feature.
-        :param pulumi.Input[str] action: (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
-        :param pulumi.Input[int] action_expiration_in_seconds: (Updatable) The number of seconds between challenges from the same IP address. If unspecified, defaults to `60`.
-        :param pulumi.Input['PolicyWafConfigHumanInteractionChallengeChallengeSettingsArgs'] challenge_settings: (Updatable) The challenge settings if `action` is set to `BLOCK`.
-        :param pulumi.Input[int] failure_threshold: (Updatable) The number of failed requests before taking action. If unspecified, defaults to `10`.
-        :param pulumi.Input[int] failure_threshold_expiration_in_seconds: (Updatable) The number of seconds before the failure threshold resets. If unspecified, defaults to  `60`.
-        :param pulumi.Input[int] interaction_threshold: (Updatable) The number of interactions required to pass the challenge. If unspecified, defaults to `3`.
-        :param pulumi.Input[bool] is_nat_enabled: (Updatable) When enabled, the user is identified not only by the IP address but also by an unique additional hash, which prevents blocking visitors with shared IP addresses.
-        :param pulumi.Input[int] recording_period_in_seconds: (Updatable) The number of seconds to record the interactions from the user. If unspecified, defaults to `15`.
-        :param pulumi.Input['PolicyWafConfigHumanInteractionChallengeSetHttpHeaderArgs'] set_http_header: (Updatable) Adds an additional HTTP header to requests that fail the challenge before being passed to the origin. Only applicable when the `action` is set to `DETECT`.
-        """
         pulumi.set(__self__, "is_enabled", is_enabled)
         if action is not None:
             pulumi.set(__self__, "action", action)
@@ -2688,9 +1870,6 @@ class PolicyWafConfigHumanInteractionChallengeArgs:
     @property
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> pulumi.Input[bool]:
-        """
-        (Updatable) Enables or disables the JavaScript challenge Web Application Firewall feature.
-        """
         return pulumi.get(self, "is_enabled")
 
     @is_enabled.setter
@@ -2700,9 +1879,6 @@ class PolicyWafConfigHumanInteractionChallengeArgs:
     @property
     @pulumi.getter
     def action(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
-        """
         return pulumi.get(self, "action")
 
     @action.setter
@@ -2712,9 +1888,6 @@ class PolicyWafConfigHumanInteractionChallengeArgs:
     @property
     @pulumi.getter(name="actionExpirationInSeconds")
     def action_expiration_in_seconds(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The number of seconds between challenges from the same IP address. If unspecified, defaults to `60`.
-        """
         return pulumi.get(self, "action_expiration_in_seconds")
 
     @action_expiration_in_seconds.setter
@@ -2724,9 +1897,6 @@ class PolicyWafConfigHumanInteractionChallengeArgs:
     @property
     @pulumi.getter(name="challengeSettings")
     def challenge_settings(self) -> Optional[pulumi.Input['PolicyWafConfigHumanInteractionChallengeChallengeSettingsArgs']]:
-        """
-        (Updatable) The challenge settings if `action` is set to `BLOCK`.
-        """
         return pulumi.get(self, "challenge_settings")
 
     @challenge_settings.setter
@@ -2736,9 +1906,6 @@ class PolicyWafConfigHumanInteractionChallengeArgs:
     @property
     @pulumi.getter(name="failureThreshold")
     def failure_threshold(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The number of failed requests before taking action. If unspecified, defaults to `10`.
-        """
         return pulumi.get(self, "failure_threshold")
 
     @failure_threshold.setter
@@ -2748,9 +1915,6 @@ class PolicyWafConfigHumanInteractionChallengeArgs:
     @property
     @pulumi.getter(name="failureThresholdExpirationInSeconds")
     def failure_threshold_expiration_in_seconds(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The number of seconds before the failure threshold resets. If unspecified, defaults to  `60`.
-        """
         return pulumi.get(self, "failure_threshold_expiration_in_seconds")
 
     @failure_threshold_expiration_in_seconds.setter
@@ -2760,9 +1924,6 @@ class PolicyWafConfigHumanInteractionChallengeArgs:
     @property
     @pulumi.getter(name="interactionThreshold")
     def interaction_threshold(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The number of interactions required to pass the challenge. If unspecified, defaults to `3`.
-        """
         return pulumi.get(self, "interaction_threshold")
 
     @interaction_threshold.setter
@@ -2772,9 +1933,6 @@ class PolicyWafConfigHumanInteractionChallengeArgs:
     @property
     @pulumi.getter(name="isNatEnabled")
     def is_nat_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) When enabled, the user is identified not only by the IP address but also by an unique additional hash, which prevents blocking visitors with shared IP addresses.
-        """
         return pulumi.get(self, "is_nat_enabled")
 
     @is_nat_enabled.setter
@@ -2784,9 +1942,6 @@ class PolicyWafConfigHumanInteractionChallengeArgs:
     @property
     @pulumi.getter(name="recordingPeriodInSeconds")
     def recording_period_in_seconds(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The number of seconds to record the interactions from the user. If unspecified, defaults to `15`.
-        """
         return pulumi.get(self, "recording_period_in_seconds")
 
     @recording_period_in_seconds.setter
@@ -2796,9 +1951,6 @@ class PolicyWafConfigHumanInteractionChallengeArgs:
     @property
     @pulumi.getter(name="setHttpHeader")
     def set_http_header(self) -> Optional[pulumi.Input['PolicyWafConfigHumanInteractionChallengeSetHttpHeaderArgs']]:
-        """
-        (Updatable) Adds an additional HTTP header to requests that fail the challenge before being passed to the origin. Only applicable when the `action` is set to `DETECT`.
-        """
         return pulumi.get(self, "set_http_header")
 
     @set_http_header.setter
@@ -2818,17 +1970,6 @@ class PolicyWafConfigHumanInteractionChallengeChallengeSettingsArgs:
                  captcha_header: Optional[pulumi.Input[str]] = None,
                  captcha_submit_label: Optional[pulumi.Input[str]] = None,
                  captcha_title: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] block_action: (Updatable) If `action` is set to `BLOCK`, this specifies how the traffic is blocked when detected as malicious by a protection rule. If unspecified, defaults to `SET_RESPONSE_CODE`.
-        :param pulumi.Input[str] block_error_page_code: (Updatable) The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`.
-        :param pulumi.Input[str] block_error_page_description: (Updatable) The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
-        :param pulumi.Input[str] block_error_page_message: (Updatable) The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to 'Access to the website is blocked.'
-        :param pulumi.Input[int] block_response_code: (Updatable) The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
-        :param pulumi.Input[str] captcha_footer: (Updatable) The text to show in the footer when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, default to `Enter the letters and numbers as they are shown in image above`.
-        :param pulumi.Input[str] captcha_header: (Updatable) The text to show in the header when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `We have detected an increased number of attempts to access this webapp. To help us keep this webapp secure, please let us know that you are not a robot by entering the text from captcha below.`
-        :param pulumi.Input[str] captcha_submit_label: (Updatable) The text to show on the label of the CAPTCHA challenge submit button when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Yes, I am human`.
-        :param pulumi.Input[str] captcha_title: (Updatable) The title used when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Are you human?`
-        """
         if block_action is not None:
             pulumi.set(__self__, "block_action", block_action)
         if block_error_page_code is not None:
@@ -2851,9 +1992,6 @@ class PolicyWafConfigHumanInteractionChallengeChallengeSettingsArgs:
     @property
     @pulumi.getter(name="blockAction")
     def block_action(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) If `action` is set to `BLOCK`, this specifies how the traffic is blocked when detected as malicious by a protection rule. If unspecified, defaults to `SET_RESPONSE_CODE`.
-        """
         return pulumi.get(self, "block_action")
 
     @block_action.setter
@@ -2863,9 +2001,6 @@ class PolicyWafConfigHumanInteractionChallengeChallengeSettingsArgs:
     @property
     @pulumi.getter(name="blockErrorPageCode")
     def block_error_page_code(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`.
-        """
         return pulumi.get(self, "block_error_page_code")
 
     @block_error_page_code.setter
@@ -2875,9 +2010,6 @@ class PolicyWafConfigHumanInteractionChallengeChallengeSettingsArgs:
     @property
     @pulumi.getter(name="blockErrorPageDescription")
     def block_error_page_description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
-        """
         return pulumi.get(self, "block_error_page_description")
 
     @block_error_page_description.setter
@@ -2887,9 +2019,6 @@ class PolicyWafConfigHumanInteractionChallengeChallengeSettingsArgs:
     @property
     @pulumi.getter(name="blockErrorPageMessage")
     def block_error_page_message(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to 'Access to the website is blocked.'
-        """
         return pulumi.get(self, "block_error_page_message")
 
     @block_error_page_message.setter
@@ -2899,9 +2028,6 @@ class PolicyWafConfigHumanInteractionChallengeChallengeSettingsArgs:
     @property
     @pulumi.getter(name="blockResponseCode")
     def block_response_code(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
-        """
         return pulumi.get(self, "block_response_code")
 
     @block_response_code.setter
@@ -2911,9 +2037,6 @@ class PolicyWafConfigHumanInteractionChallengeChallengeSettingsArgs:
     @property
     @pulumi.getter(name="captchaFooter")
     def captcha_footer(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The text to show in the footer when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, default to `Enter the letters and numbers as they are shown in image above`.
-        """
         return pulumi.get(self, "captcha_footer")
 
     @captcha_footer.setter
@@ -2923,9 +2046,6 @@ class PolicyWafConfigHumanInteractionChallengeChallengeSettingsArgs:
     @property
     @pulumi.getter(name="captchaHeader")
     def captcha_header(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The text to show in the header when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `We have detected an increased number of attempts to access this webapp. To help us keep this webapp secure, please let us know that you are not a robot by entering the text from captcha below.`
-        """
         return pulumi.get(self, "captcha_header")
 
     @captcha_header.setter
@@ -2935,9 +2055,6 @@ class PolicyWafConfigHumanInteractionChallengeChallengeSettingsArgs:
     @property
     @pulumi.getter(name="captchaSubmitLabel")
     def captcha_submit_label(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The text to show on the label of the CAPTCHA challenge submit button when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Yes, I am human`.
-        """
         return pulumi.get(self, "captcha_submit_label")
 
     @captcha_submit_label.setter
@@ -2947,9 +2064,6 @@ class PolicyWafConfigHumanInteractionChallengeChallengeSettingsArgs:
     @property
     @pulumi.getter(name="captchaTitle")
     def captcha_title(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The title used when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Are you human?`
-        """
         return pulumi.get(self, "captcha_title")
 
     @captcha_title.setter
@@ -2962,27 +2076,12 @@ class PolicyWafConfigHumanInteractionChallengeSetHttpHeaderArgs:
     def __init__(__self__, *,
                  name: pulumi.Input[str],
                  value: pulumi.Input[str]):
-        """
-        :param pulumi.Input[str] name: (Updatable) The unique name of the whitelist.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] value: (Updatable) The value of the header.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter
     def name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The unique name of the whitelist.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -2992,9 +2091,6 @@ class PolicyWafConfigHumanInteractionChallengeSetHttpHeaderArgs:
     @property
     @pulumi.getter
     def value(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The value of the header.
-        """
         return pulumi.get(self, "value")
 
     @value.setter
@@ -3014,17 +2110,6 @@ class PolicyWafConfigJsChallengeArgs:
                  failure_threshold: Optional[pulumi.Input[int]] = None,
                  is_nat_enabled: Optional[pulumi.Input[bool]] = None,
                  set_http_header: Optional[pulumi.Input['PolicyWafConfigJsChallengeSetHttpHeaderArgs']] = None):
-        """
-        :param pulumi.Input[bool] is_enabled: (Updatable) Enables or disables the JavaScript challenge Web Application Firewall feature.
-        :param pulumi.Input[str] action: (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
-        :param pulumi.Input[int] action_expiration_in_seconds: (Updatable) The number of seconds between challenges from the same IP address. If unspecified, defaults to `60`.
-        :param pulumi.Input[bool] are_redirects_challenged: (Updatable) When enabled, redirect responses from the origin will also be challenged. This will change HTTP 301/302 responses from origin to HTTP 200 with an HTML body containing JavaScript page redirection.
-        :param pulumi.Input['PolicyWafConfigJsChallengeChallengeSettingsArgs'] challenge_settings: (Updatable) The challenge settings if `action` is set to `BLOCK`.
-        :param pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigJsChallengeCriteriaArgs']]] criterias: (Updatable) When defined, the JavaScript Challenge would be applied only for the requests that matched all the listed conditions.
-        :param pulumi.Input[int] failure_threshold: (Updatable) The number of failed requests before taking action. If unspecified, defaults to `10`.
-        :param pulumi.Input[bool] is_nat_enabled: (Updatable) When enabled, the user is identified not only by the IP address but also by an unique additional hash, which prevents blocking visitors with shared IP addresses.
-        :param pulumi.Input['PolicyWafConfigJsChallengeSetHttpHeaderArgs'] set_http_header: (Updatable) Adds an additional HTTP header to requests that fail the challenge before being passed to the origin. Only applicable when the `action` is set to `DETECT`.
-        """
         pulumi.set(__self__, "is_enabled", is_enabled)
         if action is not None:
             pulumi.set(__self__, "action", action)
@@ -3046,9 +2131,6 @@ class PolicyWafConfigJsChallengeArgs:
     @property
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> pulumi.Input[bool]:
-        """
-        (Updatable) Enables or disables the JavaScript challenge Web Application Firewall feature.
-        """
         return pulumi.get(self, "is_enabled")
 
     @is_enabled.setter
@@ -3058,9 +2140,6 @@ class PolicyWafConfigJsChallengeArgs:
     @property
     @pulumi.getter
     def action(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
-        """
         return pulumi.get(self, "action")
 
     @action.setter
@@ -3070,9 +2149,6 @@ class PolicyWafConfigJsChallengeArgs:
     @property
     @pulumi.getter(name="actionExpirationInSeconds")
     def action_expiration_in_seconds(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The number of seconds between challenges from the same IP address. If unspecified, defaults to `60`.
-        """
         return pulumi.get(self, "action_expiration_in_seconds")
 
     @action_expiration_in_seconds.setter
@@ -3082,9 +2158,6 @@ class PolicyWafConfigJsChallengeArgs:
     @property
     @pulumi.getter(name="areRedirectsChallenged")
     def are_redirects_challenged(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) When enabled, redirect responses from the origin will also be challenged. This will change HTTP 301/302 responses from origin to HTTP 200 with an HTML body containing JavaScript page redirection.
-        """
         return pulumi.get(self, "are_redirects_challenged")
 
     @are_redirects_challenged.setter
@@ -3094,9 +2167,6 @@ class PolicyWafConfigJsChallengeArgs:
     @property
     @pulumi.getter(name="challengeSettings")
     def challenge_settings(self) -> Optional[pulumi.Input['PolicyWafConfigJsChallengeChallengeSettingsArgs']]:
-        """
-        (Updatable) The challenge settings if `action` is set to `BLOCK`.
-        """
         return pulumi.get(self, "challenge_settings")
 
     @challenge_settings.setter
@@ -3106,9 +2176,6 @@ class PolicyWafConfigJsChallengeArgs:
     @property
     @pulumi.getter
     def criterias(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigJsChallengeCriteriaArgs']]]]:
-        """
-        (Updatable) When defined, the JavaScript Challenge would be applied only for the requests that matched all the listed conditions.
-        """
         return pulumi.get(self, "criterias")
 
     @criterias.setter
@@ -3118,9 +2185,6 @@ class PolicyWafConfigJsChallengeArgs:
     @property
     @pulumi.getter(name="failureThreshold")
     def failure_threshold(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The number of failed requests before taking action. If unspecified, defaults to `10`.
-        """
         return pulumi.get(self, "failure_threshold")
 
     @failure_threshold.setter
@@ -3130,9 +2194,6 @@ class PolicyWafConfigJsChallengeArgs:
     @property
     @pulumi.getter(name="isNatEnabled")
     def is_nat_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) When enabled, the user is identified not only by the IP address but also by an unique additional hash, which prevents blocking visitors with shared IP addresses.
-        """
         return pulumi.get(self, "is_nat_enabled")
 
     @is_nat_enabled.setter
@@ -3142,9 +2203,6 @@ class PolicyWafConfigJsChallengeArgs:
     @property
     @pulumi.getter(name="setHttpHeader")
     def set_http_header(self) -> Optional[pulumi.Input['PolicyWafConfigJsChallengeSetHttpHeaderArgs']]:
-        """
-        (Updatable) Adds an additional HTTP header to requests that fail the challenge before being passed to the origin. Only applicable when the `action` is set to `DETECT`.
-        """
         return pulumi.get(self, "set_http_header")
 
     @set_http_header.setter
@@ -3164,17 +2222,6 @@ class PolicyWafConfigJsChallengeChallengeSettingsArgs:
                  captcha_header: Optional[pulumi.Input[str]] = None,
                  captcha_submit_label: Optional[pulumi.Input[str]] = None,
                  captcha_title: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] block_action: (Updatable) If `action` is set to `BLOCK`, this specifies how the traffic is blocked when detected as malicious by a protection rule. If unspecified, defaults to `SET_RESPONSE_CODE`.
-        :param pulumi.Input[str] block_error_page_code: (Updatable) The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`.
-        :param pulumi.Input[str] block_error_page_description: (Updatable) The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
-        :param pulumi.Input[str] block_error_page_message: (Updatable) The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to 'Access to the website is blocked.'
-        :param pulumi.Input[int] block_response_code: (Updatable) The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
-        :param pulumi.Input[str] captcha_footer: (Updatable) The text to show in the footer when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, default to `Enter the letters and numbers as they are shown in image above`.
-        :param pulumi.Input[str] captcha_header: (Updatable) The text to show in the header when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `We have detected an increased number of attempts to access this webapp. To help us keep this webapp secure, please let us know that you are not a robot by entering the text from captcha below.`
-        :param pulumi.Input[str] captcha_submit_label: (Updatable) The text to show on the label of the CAPTCHA challenge submit button when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Yes, I am human`.
-        :param pulumi.Input[str] captcha_title: (Updatable) The title used when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Are you human?`
-        """
         if block_action is not None:
             pulumi.set(__self__, "block_action", block_action)
         if block_error_page_code is not None:
@@ -3197,9 +2244,6 @@ class PolicyWafConfigJsChallengeChallengeSettingsArgs:
     @property
     @pulumi.getter(name="blockAction")
     def block_action(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) If `action` is set to `BLOCK`, this specifies how the traffic is blocked when detected as malicious by a protection rule. If unspecified, defaults to `SET_RESPONSE_CODE`.
-        """
         return pulumi.get(self, "block_action")
 
     @block_action.setter
@@ -3209,9 +2253,6 @@ class PolicyWafConfigJsChallengeChallengeSettingsArgs:
     @property
     @pulumi.getter(name="blockErrorPageCode")
     def block_error_page_code(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`.
-        """
         return pulumi.get(self, "block_error_page_code")
 
     @block_error_page_code.setter
@@ -3221,9 +2262,6 @@ class PolicyWafConfigJsChallengeChallengeSettingsArgs:
     @property
     @pulumi.getter(name="blockErrorPageDescription")
     def block_error_page_description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
-        """
         return pulumi.get(self, "block_error_page_description")
 
     @block_error_page_description.setter
@@ -3233,9 +2271,6 @@ class PolicyWafConfigJsChallengeChallengeSettingsArgs:
     @property
     @pulumi.getter(name="blockErrorPageMessage")
     def block_error_page_message(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to 'Access to the website is blocked.'
-        """
         return pulumi.get(self, "block_error_page_message")
 
     @block_error_page_message.setter
@@ -3245,9 +2280,6 @@ class PolicyWafConfigJsChallengeChallengeSettingsArgs:
     @property
     @pulumi.getter(name="blockResponseCode")
     def block_response_code(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
-        """
         return pulumi.get(self, "block_response_code")
 
     @block_response_code.setter
@@ -3257,9 +2289,6 @@ class PolicyWafConfigJsChallengeChallengeSettingsArgs:
     @property
     @pulumi.getter(name="captchaFooter")
     def captcha_footer(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The text to show in the footer when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, default to `Enter the letters and numbers as they are shown in image above`.
-        """
         return pulumi.get(self, "captcha_footer")
 
     @captcha_footer.setter
@@ -3269,9 +2298,6 @@ class PolicyWafConfigJsChallengeChallengeSettingsArgs:
     @property
     @pulumi.getter(name="captchaHeader")
     def captcha_header(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The text to show in the header when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `We have detected an increased number of attempts to access this webapp. To help us keep this webapp secure, please let us know that you are not a robot by entering the text from captcha below.`
-        """
         return pulumi.get(self, "captcha_header")
 
     @captcha_header.setter
@@ -3281,9 +2307,6 @@ class PolicyWafConfigJsChallengeChallengeSettingsArgs:
     @property
     @pulumi.getter(name="captchaSubmitLabel")
     def captcha_submit_label(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The text to show on the label of the CAPTCHA challenge submit button when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Yes, I am human`.
-        """
         return pulumi.get(self, "captcha_submit_label")
 
     @captcha_submit_label.setter
@@ -3293,9 +2316,6 @@ class PolicyWafConfigJsChallengeChallengeSettingsArgs:
     @property
     @pulumi.getter(name="captchaTitle")
     def captcha_title(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The title used when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Are you human?`
-        """
         return pulumi.get(self, "captcha_title")
 
     @captcha_title.setter
@@ -3309,36 +2329,6 @@ class PolicyWafConfigJsChallengeCriteriaArgs:
                  condition: pulumi.Input[str],
                  value: pulumi.Input[str],
                  is_case_sensitive: Optional[pulumi.Input[bool]] = None):
-        """
-        :param pulumi.Input[str] condition: (Updatable) The criteria the access rule and JavaScript Challenge uses to determine if action should be taken on a request.
-               * **URL_IS:** Matches if the concatenation of request URL path and query is identical to the contents of the `value` field. URL must start with a `/`.
-               * **URL_IS_NOT:** Matches if the concatenation of request URL path and query is not identical to the contents of the `value` field. URL must start with a `/`.
-               * **URL_STARTS_WITH:** Matches if the concatenation of request URL path and query starts with the contents of the `value` field. URL must start with a `/`.
-               * **URL_PART_ENDS_WITH:** Matches if the concatenation of request URL path and query ends with the contents of the `value` field.
-               * **URL_PART_CONTAINS:** Matches if the concatenation of request URL path and query contains the contents of the `value` field.
-               * **URL_REGEX:** Matches if the concatenation of request URL path and query is described by the regular expression in the value field. The value must be a valid regular expression recognized by the PCRE library in Nginx (https://www.pcre.org).
-               * **URL_DOES_NOT_MATCH_REGEX:** Matches if the concatenation of request URL path and query is not described by the regular expression in the `value` field. The value must be a valid regular expression recognized by the PCRE library in Nginx (https://www.pcre.org).
-               * **URL_DOES_NOT_START_WITH:** Matches if the concatenation of request URL path and query does not start with the contents of the `value` field.
-               * **URL_PART_DOES_NOT_CONTAIN:** Matches if the concatenation of request URL path and query does not contain the contents of the `value` field.
-               * **URL_PART_DOES_NOT_END_WITH:** Matches if the concatenation of request URL path and query does not end with the contents of the `value` field.
-               * **IP_IS:** Matches if the request originates from one of the IP addresses contained in the defined address list. The `value` in this case is string with one or multiple IPs or CIDR notations separated by new line symbol \\n *Example:* "1.1.1.1\\n1.1.1.2\\n1.2.2.1/30"
-               * **IP_IS_NOT:** Matches if the request does not originate from any of the IP addresses contained in the defined address list. The `value` in this case is string with one or multiple IPs or CIDR notations separated by new line symbol \\n *Example:* "1.1.1.1\\n1.1.1.2\\n1.2.2.1/30"
-               * **IP_IN_LIST:** Matches if the request originates from one of the IP addresses contained in the referenced address list. The `value` in this case is OCID of the address list.
-               * **IP_NOT_IN_LIST:** Matches if the request does not originate from any IP address contained in the referenced address list. The `value` field in this case is OCID of the address list.
-               * **HTTP_HEADER_CONTAINS:** The HTTP_HEADER_CONTAINS criteria is defined using a compound value separated by a colon: a header field name and a header field value. `host:test.example.com` is an example of a criteria value where `host` is the header field name and `test.example.com` is the header field value. A request matches when the header field name is a case insensitive match and the header field value is a case insensitive, substring match. *Example:* With a criteria value of `host:test.example.com`, where `host` is the name of the field and `test.example.com` is the value of the host field, a request with the header values, `Host: www.test.example.com` will match, where as a request with header values of `host: www.example.com` or `host: test.sub.example.com` will not match.
-               * **HTTP_METHOD_IS:** Matches if the request method is identical to one of the values listed in field. The `value` in this case is string with one or multiple HTTP methods separated by new line symbol \\n The list of available methods: `GET`, `HEAD`, `POST`, `PUT`, `DELETE`, `CONNECT`, `OPTIONS`, `TRACE`, `PATCH`
-               
-               *Example:* "GET\\nPOST"
-               * **HTTP_METHOD_IS_NOT:** Matches if the request is not identical to any of the contents of the `value` field. The `value` in this case is string with one or multiple HTTP methods separated by new line symbol \\n The list of available methods: `GET`, `HEAD`, `POST`, `PUT`, `DELETE`, `CONNECT`, `OPTIONS`, `TRACE`, `PATCH`
-               
-               *Example:* "GET\\nPOST"
-               * **COUNTRY_IS:** Matches if the request originates from one of countries in the `value` field. The `value` in this case is string with one or multiple countries separated by new line symbol \\n Country codes are in ISO 3166-1 alpha-2 format. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/). *Example:* "AL\\nDZ\\nAM"
-               * **COUNTRY_IS_NOT:** Matches if the request does not originate from any of countries in the `value` field. The `value` in this case is string with one or multiple countries separated by new line symbol \\n Country codes are in ISO 3166-1 alpha-2 format. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/). *Example:* "AL\\nDZ\\nAM"
-               * **USER_AGENT_IS:** Matches if the requesting user agent is identical to the contents of the `value` field. *Example:* `Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:35.0) Gecko/20100101 Firefox/35.0`
-               * **USER_AGENT_IS_NOT:** Matches if the requesting user agent is not identical to the contents of the `value` field. *Example:* `Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:35.0) Gecko/20100101 Firefox/35.0`
-        :param pulumi.Input[str] value: (Updatable) The value of the header.
-        :param pulumi.Input[bool] is_case_sensitive: (Updatable) When enabled, the condition will be matched with case-sensitive rules.
-        """
         pulumi.set(__self__, "condition", condition)
         pulumi.set(__self__, "value", value)
         if is_case_sensitive is not None:
@@ -3347,34 +2337,6 @@ class PolicyWafConfigJsChallengeCriteriaArgs:
     @property
     @pulumi.getter
     def condition(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The criteria the access rule and JavaScript Challenge uses to determine if action should be taken on a request.
-        * **URL_IS:** Matches if the concatenation of request URL path and query is identical to the contents of the `value` field. URL must start with a `/`.
-        * **URL_IS_NOT:** Matches if the concatenation of request URL path and query is not identical to the contents of the `value` field. URL must start with a `/`.
-        * **URL_STARTS_WITH:** Matches if the concatenation of request URL path and query starts with the contents of the `value` field. URL must start with a `/`.
-        * **URL_PART_ENDS_WITH:** Matches if the concatenation of request URL path and query ends with the contents of the `value` field.
-        * **URL_PART_CONTAINS:** Matches if the concatenation of request URL path and query contains the contents of the `value` field.
-        * **URL_REGEX:** Matches if the concatenation of request URL path and query is described by the regular expression in the value field. The value must be a valid regular expression recognized by the PCRE library in Nginx (https://www.pcre.org).
-        * **URL_DOES_NOT_MATCH_REGEX:** Matches if the concatenation of request URL path and query is not described by the regular expression in the `value` field. The value must be a valid regular expression recognized by the PCRE library in Nginx (https://www.pcre.org).
-        * **URL_DOES_NOT_START_WITH:** Matches if the concatenation of request URL path and query does not start with the contents of the `value` field.
-        * **URL_PART_DOES_NOT_CONTAIN:** Matches if the concatenation of request URL path and query does not contain the contents of the `value` field.
-        * **URL_PART_DOES_NOT_END_WITH:** Matches if the concatenation of request URL path and query does not end with the contents of the `value` field.
-        * **IP_IS:** Matches if the request originates from one of the IP addresses contained in the defined address list. The `value` in this case is string with one or multiple IPs or CIDR notations separated by new line symbol \\n *Example:* "1.1.1.1\\n1.1.1.2\\n1.2.2.1/30"
-        * **IP_IS_NOT:** Matches if the request does not originate from any of the IP addresses contained in the defined address list. The `value` in this case is string with one or multiple IPs or CIDR notations separated by new line symbol \\n *Example:* "1.1.1.1\\n1.1.1.2\\n1.2.2.1/30"
-        * **IP_IN_LIST:** Matches if the request originates from one of the IP addresses contained in the referenced address list. The `value` in this case is OCID of the address list.
-        * **IP_NOT_IN_LIST:** Matches if the request does not originate from any IP address contained in the referenced address list. The `value` field in this case is OCID of the address list.
-        * **HTTP_HEADER_CONTAINS:** The HTTP_HEADER_CONTAINS criteria is defined using a compound value separated by a colon: a header field name and a header field value. `host:test.example.com` is an example of a criteria value where `host` is the header field name and `test.example.com` is the header field value. A request matches when the header field name is a case insensitive match and the header field value is a case insensitive, substring match. *Example:* With a criteria value of `host:test.example.com`, where `host` is the name of the field and `test.example.com` is the value of the host field, a request with the header values, `Host: www.test.example.com` will match, where as a request with header values of `host: www.example.com` or `host: test.sub.example.com` will not match.
-        * **HTTP_METHOD_IS:** Matches if the request method is identical to one of the values listed in field. The `value` in this case is string with one or multiple HTTP methods separated by new line symbol \\n The list of available methods: `GET`, `HEAD`, `POST`, `PUT`, `DELETE`, `CONNECT`, `OPTIONS`, `TRACE`, `PATCH`
-
-        *Example:* "GET\\nPOST"
-        * **HTTP_METHOD_IS_NOT:** Matches if the request is not identical to any of the contents of the `value` field. The `value` in this case is string with one or multiple HTTP methods separated by new line symbol \\n The list of available methods: `GET`, `HEAD`, `POST`, `PUT`, `DELETE`, `CONNECT`, `OPTIONS`, `TRACE`, `PATCH`
-
-        *Example:* "GET\\nPOST"
-        * **COUNTRY_IS:** Matches if the request originates from one of countries in the `value` field. The `value` in this case is string with one or multiple countries separated by new line symbol \\n Country codes are in ISO 3166-1 alpha-2 format. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/). *Example:* "AL\\nDZ\\nAM"
-        * **COUNTRY_IS_NOT:** Matches if the request does not originate from any of countries in the `value` field. The `value` in this case is string with one or multiple countries separated by new line symbol \\n Country codes are in ISO 3166-1 alpha-2 format. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/). *Example:* "AL\\nDZ\\nAM"
-        * **USER_AGENT_IS:** Matches if the requesting user agent is identical to the contents of the `value` field. *Example:* `Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:35.0) Gecko/20100101 Firefox/35.0`
-        * **USER_AGENT_IS_NOT:** Matches if the requesting user agent is not identical to the contents of the `value` field. *Example:* `Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:35.0) Gecko/20100101 Firefox/35.0`
-        """
         return pulumi.get(self, "condition")
 
     @condition.setter
@@ -3384,9 +2346,6 @@ class PolicyWafConfigJsChallengeCriteriaArgs:
     @property
     @pulumi.getter
     def value(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The value of the header.
-        """
         return pulumi.get(self, "value")
 
     @value.setter
@@ -3396,9 +2355,6 @@ class PolicyWafConfigJsChallengeCriteriaArgs:
     @property
     @pulumi.getter(name="isCaseSensitive")
     def is_case_sensitive(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) When enabled, the condition will be matched with case-sensitive rules.
-        """
         return pulumi.get(self, "is_case_sensitive")
 
     @is_case_sensitive.setter
@@ -3411,27 +2367,12 @@ class PolicyWafConfigJsChallengeSetHttpHeaderArgs:
     def __init__(__self__, *,
                  name: pulumi.Input[str],
                  value: pulumi.Input[str]):
-        """
-        :param pulumi.Input[str] name: (Updatable) The unique name of the whitelist.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] value: (Updatable) The value of the header.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter
     def name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The unique name of the whitelist.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -3441,9 +2382,6 @@ class PolicyWafConfigJsChallengeSetHttpHeaderArgs:
     @property
     @pulumi.getter
     def value(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The value of the header.
-        """
         return pulumi.get(self, "value")
 
     @value.setter
@@ -3467,45 +2405,6 @@ class PolicyWafConfigProtectionSettingsArgs:
                  max_total_name_length_of_arguments: Optional[pulumi.Input[int]] = None,
                  media_types: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  recommendations_period_in_days: Optional[pulumi.Input[int]] = None):
-        """
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] allowed_http_methods: (Updatable) The list of allowed HTTP methods. If unspecified, default to `[OPTIONS, GET, HEAD, POST]`. This setting only applies if a corresponding protection rule is enabled, such as the "Restrict HTTP Request Methods" rule (key: 911100).
-        :param pulumi.Input[str] block_action: (Updatable) If `action` is set to `BLOCK`, this specifies how the traffic is blocked when detected as malicious by a protection rule. If unspecified, defaults to `SET_RESPONSE_CODE`.
-        :param pulumi.Input[str] block_error_page_code: (Updatable) The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`.
-        :param pulumi.Input[str] block_error_page_description: (Updatable) The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
-        :param pulumi.Input[str] block_error_page_message: (Updatable) The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to 'Access to the website is blocked.'
-        :param pulumi.Input[int] block_response_code: (Updatable) The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
-        :param pulumi.Input[bool] is_response_inspected: (Updatable) Inspects the response body of origin responses. Can be used to detect leakage of sensitive data. If unspecified, defaults to `false`.
-               
-               **Note:** Only origin responses with a Content-Type matching a value in `mediaTypes` will be inspected.
-        :param pulumi.Input[int] max_argument_count: (Updatable) The maximum number of arguments allowed to be passed to your application before an action is taken. Arguements are query parameters or body parameters in a PUT or POST request. If unspecified, defaults to `255`. This setting only applies if a corresponding protection rule is enabled, such as the "Number of Arguments Limits" rule (key: 960335).  Example: If `maxArgumentCount` to `2` for the Max Number of Arguments protection rule (key: 960335), the following requests would be blocked: `GET /myapp/path?query=one&query=two&query=three` `POST /myapp/path` with Body `{"argument1":"one","argument2":"two","argument3":"three"}`
-        :param pulumi.Input[int] max_name_length_per_argument: (Updatable) The maximum length allowed for each argument name, in characters. Arguements are query parameters or body parameters in a PUT or POST request. If unspecified, defaults to `400`. This setting only applies if a corresponding protection rule is enabled, such as the "Values Limits" rule (key: 960208).
-        :param pulumi.Input[int] max_response_size_in_ki_b: (Updatable) The maximum response size to be fully inspected, in binary kilobytes (KiB). Anything over this limit will be partially inspected. If unspecified, defaults to `1024`.
-        :param pulumi.Input[int] max_total_name_length_of_arguments: (Updatable) The maximum length allowed for the sum of the argument name and value, in characters. Arguements are query parameters or body parameters in a PUT or POST request. If unspecified, defaults to `64000`. This setting only applies if a corresponding protection rule is enabled, such as the "Total Arguments Limits" rule (key: 960341).
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] media_types: (Updatable) The list of media types to allow for inspection, if `isResponseInspected` is enabled. Only responses with MIME types in this list will be inspected. If unspecified, defaults to `["text/html", "text/plain", "text/xml"]`.
-               
-               Supported MIME types include:
-               * text/html
-               * text/plain
-               * text/asp
-               * text/css
-               * text/x-script
-               * application/json
-               * text/webviewhtml
-               * text/x-java-source
-               * application/x-javascript
-               * application/javascript
-               * application/ecmascript
-               * text/javascript
-               * text/ecmascript
-               * text/x-script.perl
-               * text/x-script.phyton
-               * application/plain
-               * application/xml
-               * text/xml
-        :param pulumi.Input[int] recommendations_period_in_days: (Updatable) The length of time to analyze traffic traffic, in days. After the analysis period, `WafRecommendations` will be populated. If unspecified, defaults to `10`.
-               
-               Use `GET /waasPolicies/{waasPolicyId}/wafRecommendations` to view WAF recommendations.
-        """
         if allowed_http_methods is not None:
             pulumi.set(__self__, "allowed_http_methods", allowed_http_methods)
         if block_action is not None:
@@ -3536,9 +2435,6 @@ class PolicyWafConfigProtectionSettingsArgs:
     @property
     @pulumi.getter(name="allowedHttpMethods")
     def allowed_http_methods(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) The list of allowed HTTP methods. If unspecified, default to `[OPTIONS, GET, HEAD, POST]`. This setting only applies if a corresponding protection rule is enabled, such as the "Restrict HTTP Request Methods" rule (key: 911100).
-        """
         return pulumi.get(self, "allowed_http_methods")
 
     @allowed_http_methods.setter
@@ -3548,9 +2444,6 @@ class PolicyWafConfigProtectionSettingsArgs:
     @property
     @pulumi.getter(name="blockAction")
     def block_action(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) If `action` is set to `BLOCK`, this specifies how the traffic is blocked when detected as malicious by a protection rule. If unspecified, defaults to `SET_RESPONSE_CODE`.
-        """
         return pulumi.get(self, "block_action")
 
     @block_action.setter
@@ -3560,9 +2453,6 @@ class PolicyWafConfigProtectionSettingsArgs:
     @property
     @pulumi.getter(name="blockErrorPageCode")
     def block_error_page_code(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`.
-        """
         return pulumi.get(self, "block_error_page_code")
 
     @block_error_page_code.setter
@@ -3572,9 +2462,6 @@ class PolicyWafConfigProtectionSettingsArgs:
     @property
     @pulumi.getter(name="blockErrorPageDescription")
     def block_error_page_description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
-        """
         return pulumi.get(self, "block_error_page_description")
 
     @block_error_page_description.setter
@@ -3584,9 +2471,6 @@ class PolicyWafConfigProtectionSettingsArgs:
     @property
     @pulumi.getter(name="blockErrorPageMessage")
     def block_error_page_message(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to 'Access to the website is blocked.'
-        """
         return pulumi.get(self, "block_error_page_message")
 
     @block_error_page_message.setter
@@ -3596,9 +2480,6 @@ class PolicyWafConfigProtectionSettingsArgs:
     @property
     @pulumi.getter(name="blockResponseCode")
     def block_response_code(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
-        """
         return pulumi.get(self, "block_response_code")
 
     @block_response_code.setter
@@ -3608,11 +2489,6 @@ class PolicyWafConfigProtectionSettingsArgs:
     @property
     @pulumi.getter(name="isResponseInspected")
     def is_response_inspected(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Inspects the response body of origin responses. Can be used to detect leakage of sensitive data. If unspecified, defaults to `false`.
-
-        **Note:** Only origin responses with a Content-Type matching a value in `mediaTypes` will be inspected.
-        """
         return pulumi.get(self, "is_response_inspected")
 
     @is_response_inspected.setter
@@ -3622,9 +2498,6 @@ class PolicyWafConfigProtectionSettingsArgs:
     @property
     @pulumi.getter(name="maxArgumentCount")
     def max_argument_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The maximum number of arguments allowed to be passed to your application before an action is taken. Arguements are query parameters or body parameters in a PUT or POST request. If unspecified, defaults to `255`. This setting only applies if a corresponding protection rule is enabled, such as the "Number of Arguments Limits" rule (key: 960335).  Example: If `maxArgumentCount` to `2` for the Max Number of Arguments protection rule (key: 960335), the following requests would be blocked: `GET /myapp/path?query=one&query=two&query=three` `POST /myapp/path` with Body `{"argument1":"one","argument2":"two","argument3":"three"}`
-        """
         return pulumi.get(self, "max_argument_count")
 
     @max_argument_count.setter
@@ -3634,9 +2507,6 @@ class PolicyWafConfigProtectionSettingsArgs:
     @property
     @pulumi.getter(name="maxNameLengthPerArgument")
     def max_name_length_per_argument(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The maximum length allowed for each argument name, in characters. Arguements are query parameters or body parameters in a PUT or POST request. If unspecified, defaults to `400`. This setting only applies if a corresponding protection rule is enabled, such as the "Values Limits" rule (key: 960208).
-        """
         return pulumi.get(self, "max_name_length_per_argument")
 
     @max_name_length_per_argument.setter
@@ -3646,9 +2516,6 @@ class PolicyWafConfigProtectionSettingsArgs:
     @property
     @pulumi.getter(name="maxResponseSizeInKiB")
     def max_response_size_in_ki_b(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The maximum response size to be fully inspected, in binary kilobytes (KiB). Anything over this limit will be partially inspected. If unspecified, defaults to `1024`.
-        """
         return pulumi.get(self, "max_response_size_in_ki_b")
 
     @max_response_size_in_ki_b.setter
@@ -3658,9 +2525,6 @@ class PolicyWafConfigProtectionSettingsArgs:
     @property
     @pulumi.getter(name="maxTotalNameLengthOfArguments")
     def max_total_name_length_of_arguments(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The maximum length allowed for the sum of the argument name and value, in characters. Arguements are query parameters or body parameters in a PUT or POST request. If unspecified, defaults to `64000`. This setting only applies if a corresponding protection rule is enabled, such as the "Total Arguments Limits" rule (key: 960341).
-        """
         return pulumi.get(self, "max_total_name_length_of_arguments")
 
     @max_total_name_length_of_arguments.setter
@@ -3670,29 +2534,6 @@ class PolicyWafConfigProtectionSettingsArgs:
     @property
     @pulumi.getter(name="mediaTypes")
     def media_types(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) The list of media types to allow for inspection, if `isResponseInspected` is enabled. Only responses with MIME types in this list will be inspected. If unspecified, defaults to `["text/html", "text/plain", "text/xml"]`.
-
-        Supported MIME types include:
-        * text/html
-        * text/plain
-        * text/asp
-        * text/css
-        * text/x-script
-        * application/json
-        * text/webviewhtml
-        * text/x-java-source
-        * application/x-javascript
-        * application/javascript
-        * application/ecmascript
-        * text/javascript
-        * text/ecmascript
-        * text/x-script.perl
-        * text/x-script.phyton
-        * application/plain
-        * application/xml
-        * text/xml
-        """
         return pulumi.get(self, "media_types")
 
     @media_types.setter
@@ -3702,11 +2543,6 @@ class PolicyWafConfigProtectionSettingsArgs:
     @property
     @pulumi.getter(name="recommendationsPeriodInDays")
     def recommendations_period_in_days(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The length of time to analyze traffic traffic, in days. After the analysis period, `WafRecommendations` will be populated. If unspecified, defaults to `10`.
-
-        Use `GET /waasPolicies/{waasPolicyId}/wafRecommendations` to view WAF recommendations.
-        """
         return pulumi.get(self, "recommendations_period_in_days")
 
     @recommendations_period_in_days.setter
@@ -3720,15 +2556,6 @@ class PolicyWafConfigWhitelistArgs:
                  name: pulumi.Input[str],
                  address_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  addresses: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
-        """
-        :param pulumi.Input[str] name: (Updatable) The unique name of the whitelist.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] address_lists: (Updatable) A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of IP address lists to include in the whitelist.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] addresses: (Updatable) A set of IP addresses or CIDR notations to include in the whitelist.
-        """
         pulumi.set(__self__, "name", name)
         if address_lists is not None:
             pulumi.set(__self__, "address_lists", address_lists)
@@ -3738,13 +2565,6 @@ class PolicyWafConfigWhitelistArgs:
     @property
     @pulumi.getter
     def name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The unique name of the whitelist.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -3754,9 +2574,6 @@ class PolicyWafConfigWhitelistArgs:
     @property
     @pulumi.getter(name="addressLists")
     def address_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of IP address lists to include in the whitelist.
-        """
         return pulumi.get(self, "address_lists")
 
     @address_lists.setter
@@ -3766,9 +2583,6 @@ class PolicyWafConfigWhitelistArgs:
     @property
     @pulumi.getter
     def addresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) A set of IP addresses or CIDR notations to include in the whitelist.
-        """
         return pulumi.get(self, "addresses")
 
     @addresses.setter
@@ -3781,13 +2595,6 @@ class ProtectionRuleExclusionArgs:
     def __init__(__self__, *,
                  exclusions: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  target: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] exclusions: An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
-        :param pulumi.Input[str] target: The target of the exclusion.
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         if exclusions is not None:
             pulumi.set(__self__, "exclusions", exclusions)
         if target is not None:
@@ -3796,9 +2603,6 @@ class ProtectionRuleExclusionArgs:
     @property
     @pulumi.getter
     def exclusions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
-        """
         return pulumi.get(self, "exclusions")
 
     @exclusions.setter
@@ -3808,12 +2612,6 @@ class ProtectionRuleExclusionArgs:
     @property
     @pulumi.getter
     def target(self) -> Optional[pulumi.Input[str]]:
-        """
-        The target of the exclusion.
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "target")
 
     @target.setter
@@ -3866,9 +2664,6 @@ class GetCertificatesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The certificate extension name.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -3877,9 +2672,6 @@ class GetCertificatesFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The certificate extension name.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -4028,9 +2820,6 @@ class GetProtectionRulesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The name of the protection rule.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -4039,9 +2828,6 @@ class GetProtectionRulesFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The name of the protection rule.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -4073,9 +2859,6 @@ class GetWaasPoliciesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The unique name of the whitelist.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -4084,9 +2867,6 @@ class GetWaasPoliciesFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The unique name of the whitelist.
-        """
         return pulumi.get(self, "name")
 
     @name.setter

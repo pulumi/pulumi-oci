@@ -108,12 +108,12 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string InstanceId;
         /// <summary>
         /// Whether the verification succeeded, and the new values match the expected values.
         /// </summary>
-        public readonly bool IsPolicyVerificationSuccessful;
+        public readonly bool? IsPolicyVerificationSuccessful;
         /// <summary>
         /// A list of Trusted Platform Module (TPM) Platform Configuration Register (PCR) entries.
         /// </summary>
@@ -121,11 +121,11 @@ namespace Pulumi.Oci.Core
 
         [OutputConstructor]
         private GetInstanceMeasuredBootReportResult(
-            string id,
+            string? id,
 
             string instanceId,
 
-            bool isPolicyVerificationSuccessful,
+            bool? isPolicyVerificationSuccessful,
 
             ImmutableArray<Outputs.GetInstanceMeasuredBootReportMeasurementResult> measurements)
         {

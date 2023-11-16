@@ -163,7 +163,7 @@ namespace Pulumi.Oci.Integration
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The list of integration_instances.
         /// </summary>
@@ -181,7 +181,7 @@ namespace Pulumi.Oci.Integration
 
             ImmutableArray<Outputs.GetIntegrationInstancesFilterResult> filters,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetIntegrationInstancesIntegrationInstanceResult> integrationInstances,
 

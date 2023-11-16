@@ -6,6 +6,8 @@ package com.pulumi.oci.Mysql.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificate {
@@ -13,27 +15,27 @@ public final class GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificate {
      * @return The type of CA certificate.
      * 
      */
-    private String certificateType;
+    private @Nullable String certificateType;
     /**
      * @return The string containing the CA certificate in PEM format.
      * 
      */
-    private String contents;
+    private @Nullable String contents;
 
     private GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificate() {}
     /**
      * @return The type of CA certificate.
      * 
      */
-    public String certificateType() {
-        return this.certificateType;
+    public Optional<String> certificateType() {
+        return Optional.ofNullable(this.certificateType);
     }
     /**
      * @return The string containing the CA certificate in PEM format.
      * 
      */
-    public String contents() {
-        return this.contents;
+    public Optional<String> contents() {
+        return Optional.ofNullable(this.contents);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificate {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String certificateType;
-        private String contents;
+        private @Nullable String certificateType;
+        private @Nullable String contents;
         public Builder() {}
         public Builder(GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificate defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificate {
         }
 
         @CustomType.Setter
-        public Builder certificateType(String certificateType) {
-            this.certificateType = Objects.requireNonNull(certificateType);
+        public Builder certificateType(@Nullable String certificateType) {
+            this.certificateType = certificateType;
             return this;
         }
         @CustomType.Setter
-        public Builder contents(String contents) {
-            this.contents = Objects.requireNonNull(contents);
+        public Builder contents(@Nullable String contents) {
+            this.contents = contents;
             return this;
         }
         public GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificate build() {

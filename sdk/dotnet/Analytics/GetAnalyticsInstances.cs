@@ -199,7 +199,7 @@ namespace Pulumi.Oci.Analytics
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
         /// </summary>
@@ -221,7 +221,7 @@ namespace Pulumi.Oci.Analytics
 
             ImmutableArray<Outputs.GetAnalyticsInstancesFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? name,
 

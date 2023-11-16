@@ -16,17 +16,17 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// <summary>
         /// Approval policy type.
         /// </summary>
-        public readonly string ApprovalPolicyType;
+        public readonly string? ApprovalPolicyType;
         /// <summary>
         /// A minimum number of approvals required for stage to proceed.
         /// </summary>
-        public readonly int NumberOfApprovalsRequired;
+        public readonly int? NumberOfApprovalsRequired;
 
         [OutputConstructor]
         private GetDeployStageApprovalPolicyResult(
-            string approvalPolicyType,
+            string? approvalPolicyType,
 
-            int numberOfApprovalsRequired)
+            int? numberOfApprovalsRequired)
         {
             ApprovalPolicyType = approvalPolicyType;
             NumberOfApprovalsRequired = numberOfApprovalsRequired;

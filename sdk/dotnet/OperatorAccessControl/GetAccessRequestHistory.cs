@@ -111,7 +111,7 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// contains AccessRequestHistorySummary
         /// </summary>
@@ -121,7 +121,7 @@ namespace Pulumi.Oci.OperatorAccessControl
         private GetAccessRequestHistoryResult(
             string accessRequestId,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetAccessRequestHistoryItemResult> items)
         {

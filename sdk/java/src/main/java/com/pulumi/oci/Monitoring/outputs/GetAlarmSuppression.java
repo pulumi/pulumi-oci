@@ -6,6 +6,8 @@ package com.pulumi.oci.Monitoring.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAlarmSuppression {
@@ -13,39 +15,39 @@ public final class GetAlarmSuppression {
      * @return Human-readable reason for suppressing alarm notifications. It does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
      * 
      */
-    private String timeSuppressFrom;
+    private @Nullable String timeSuppressFrom;
     /**
      * @return The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2019-02-01T02:02:29.600Z`
      * 
      */
-    private String timeSuppressUntil;
+    private @Nullable String timeSuppressUntil;
 
     private GetAlarmSuppression() {}
     /**
      * @return Human-readable reason for suppressing alarm notifications. It does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
      * 
      */
-    public String timeSuppressFrom() {
-        return this.timeSuppressFrom;
+    public Optional<String> timeSuppressFrom() {
+        return Optional.ofNullable(this.timeSuppressFrom);
     }
     /**
      * @return The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2019-02-01T02:02:29.600Z`
      * 
      */
-    public String timeSuppressUntil() {
-        return this.timeSuppressUntil;
+    public Optional<String> timeSuppressUntil() {
+        return Optional.ofNullable(this.timeSuppressUntil);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetAlarmSuppression {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String description;
-        private String timeSuppressFrom;
-        private String timeSuppressUntil;
+        private @Nullable String description;
+        private @Nullable String timeSuppressFrom;
+        private @Nullable String timeSuppressUntil;
         public Builder() {}
         public Builder(GetAlarmSuppression defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetAlarmSuppression {
         }
 
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder timeSuppressFrom(String timeSuppressFrom) {
-            this.timeSuppressFrom = Objects.requireNonNull(timeSuppressFrom);
+        public Builder timeSuppressFrom(@Nullable String timeSuppressFrom) {
+            this.timeSuppressFrom = timeSuppressFrom;
             return this;
         }
         @CustomType.Setter
-        public Builder timeSuppressUntil(String timeSuppressUntil) {
-            this.timeSuppressUntil = Objects.requireNonNull(timeSuppressUntil);
+        public Builder timeSuppressUntil(@Nullable String timeSuppressUntil) {
+            this.timeSuppressUntil = timeSuppressUntil;
             return this;
         }
         public GetAlarmSuppression build() {

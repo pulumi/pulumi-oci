@@ -100,7 +100,7 @@ export interface GetAuditPoliciesResult {
     /**
      * The list of audit_policy_collection.
      */
-    readonly auditPolicyCollections: outputs.DataSafe.GetAuditPoliciesAuditPolicyCollection[];
+    readonly auditPolicyCollections?: outputs.DataSafe.GetAuditPoliciesAuditPolicyCollection[];
     readonly auditPolicyId?: string;
     /**
      * The OCID of the compartment containing the audit policy.
@@ -115,7 +115,7 @@ export interface GetAuditPoliciesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The current state of the audit policy.
      */

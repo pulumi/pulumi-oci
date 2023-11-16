@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of My Trusted User Agents in Oracle Cloud Infrastructure Identity Domains service.
@@ -88,9 +87,9 @@ type GetDomainsMyTrustedUserAgentsResult struct {
 	Authorization *string  `pulumi:"authorization"`
 	CompartmentId *string  `pulumi:"compartmentId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                       string  `pulumi:"id"`
+	Id                       *string `pulumi:"id"`
 	IdcsEndpoint             string  `pulumi:"idcsEndpoint"`
-	ItemsPerPage             int     `pulumi:"itemsPerPage"`
+	ItemsPerPage             *int    `pulumi:"itemsPerPage"`
 	MyTrustedUserAgentCount  *int    `pulumi:"myTrustedUserAgentCount"`
 	MyTrustedUserAgentFilter *string `pulumi:"myTrustedUserAgentFilter"`
 	// The list of my_trusted_user_agents.
@@ -101,7 +100,7 @@ type GetDomainsMyTrustedUserAgentsResult struct {
 	SortBy       *string  `pulumi:"sortBy"`
 	SortOrder    *string  `pulumi:"sortOrder"`
 	StartIndex   *int     `pulumi:"startIndex"`
-	TotalResults int      `pulumi:"totalResults"`
+	TotalResults *int     `pulumi:"totalResults"`
 }
 
 func GetDomainsMyTrustedUserAgentsOutput(ctx *pulumi.Context, args GetDomainsMyTrustedUserAgentsOutputArgs, opts ...pulumi.InvokeOption) GetDomainsMyTrustedUserAgentsResultOutput {
@@ -159,12 +158,6 @@ func (o GetDomainsMyTrustedUserAgentsResultOutput) ToGetDomainsMyTrustedUserAgen
 	return o
 }
 
-func (o GetDomainsMyTrustedUserAgentsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsMyTrustedUserAgentsResult] {
-	return pulumix.Output[GetDomainsMyTrustedUserAgentsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDomainsMyTrustedUserAgentsResultOutput) AttributeSets() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetDomainsMyTrustedUserAgentsResult) []string { return v.AttributeSets }).(pulumi.StringArrayOutput)
 }
@@ -182,16 +175,16 @@ func (o GetDomainsMyTrustedUserAgentsResultOutput) CompartmentId() pulumi.String
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetDomainsMyTrustedUserAgentsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDomainsMyTrustedUserAgentsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDomainsMyTrustedUserAgentsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDomainsMyTrustedUserAgentsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetDomainsMyTrustedUserAgentsResultOutput) IdcsEndpoint() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDomainsMyTrustedUserAgentsResult) string { return v.IdcsEndpoint }).(pulumi.StringOutput)
 }
 
-func (o GetDomainsMyTrustedUserAgentsResultOutput) ItemsPerPage() pulumi.IntOutput {
-	return o.ApplyT(func(v GetDomainsMyTrustedUserAgentsResult) int { return v.ItemsPerPage }).(pulumi.IntOutput)
+func (o GetDomainsMyTrustedUserAgentsResultOutput) ItemsPerPage() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetDomainsMyTrustedUserAgentsResult) *int { return v.ItemsPerPage }).(pulumi.IntPtrOutput)
 }
 
 func (o GetDomainsMyTrustedUserAgentsResultOutput) MyTrustedUserAgentCount() pulumi.IntPtrOutput {
@@ -230,8 +223,8 @@ func (o GetDomainsMyTrustedUserAgentsResultOutput) StartIndex() pulumi.IntPtrOut
 	return o.ApplyT(func(v GetDomainsMyTrustedUserAgentsResult) *int { return v.StartIndex }).(pulumi.IntPtrOutput)
 }
 
-func (o GetDomainsMyTrustedUserAgentsResultOutput) TotalResults() pulumi.IntOutput {
-	return o.ApplyT(func(v GetDomainsMyTrustedUserAgentsResult) int { return v.TotalResults }).(pulumi.IntOutput)
+func (o GetDomainsMyTrustedUserAgentsResultOutput) TotalResults() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetDomainsMyTrustedUserAgentsResult) *int { return v.TotalResults }).(pulumi.IntPtrOutput)
 }
 
 func init() {

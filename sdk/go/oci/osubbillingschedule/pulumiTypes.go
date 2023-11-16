@@ -9,36 +9,35 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
 
 type GetBillingScheduleBillingSchedule struct {
 	// Billing schedule line net amount
-	Amount string `pulumi:"amount"`
+	Amount *string `pulumi:"amount"`
 	// Indicates the associated AR Customer transaction id a unique identifier existing on AR.
-	ArCustomerTransactionId string `pulumi:"arCustomerTransactionId"`
+	ArCustomerTransactionId *string `pulumi:"arCustomerTransactionId"`
 	// Indicates the associated AR Invoice Number
-	ArInvoiceNumber string `pulumi:"arInvoiceNumber"`
+	ArInvoiceNumber *string `pulumi:"arInvoiceNumber"`
 	// Billing frequency
-	BillingFrequency string `pulumi:"billingFrequency"`
+	BillingFrequency *string `pulumi:"billingFrequency"`
 	// Billing schedule invoice status
-	InvoiceStatus string `pulumi:"invoiceStatus"`
+	InvoiceStatus *string `pulumi:"invoiceStatus"`
 	// Billing schedule net unit price
-	NetUnitPrice string `pulumi:"netUnitPrice"`
+	NetUnitPrice *string `pulumi:"netUnitPrice"`
 	// Order number associated with the Subscribed Service
-	OrderNumber string `pulumi:"orderNumber"`
+	OrderNumber *string `pulumi:"orderNumber"`
 	// Product description
 	Products []GetBillingScheduleBillingScheduleProduct `pulumi:"products"`
 	// Billing schedule quantity
-	Quantity string `pulumi:"quantity"`
+	Quantity *string `pulumi:"quantity"`
 	// Billing schedule end date
-	TimeEnd string `pulumi:"timeEnd"`
+	TimeEnd *string `pulumi:"timeEnd"`
 	// Billing schedule invoicing date
-	TimeInvoicing string `pulumi:"timeInvoicing"`
+	TimeInvoicing *string `pulumi:"timeInvoicing"`
 	// Billing schedule start date
-	TimeStart string `pulumi:"timeStart"`
+	TimeStart *string `pulumi:"timeStart"`
 }
 
 // GetBillingScheduleBillingScheduleInput is an input type that accepts GetBillingScheduleBillingScheduleArgs and GetBillingScheduleBillingScheduleOutput values.
@@ -54,29 +53,29 @@ type GetBillingScheduleBillingScheduleInput interface {
 
 type GetBillingScheduleBillingScheduleArgs struct {
 	// Billing schedule line net amount
-	Amount pulumi.StringInput `pulumi:"amount"`
+	Amount pulumi.StringPtrInput `pulumi:"amount"`
 	// Indicates the associated AR Customer transaction id a unique identifier existing on AR.
-	ArCustomerTransactionId pulumi.StringInput `pulumi:"arCustomerTransactionId"`
+	ArCustomerTransactionId pulumi.StringPtrInput `pulumi:"arCustomerTransactionId"`
 	// Indicates the associated AR Invoice Number
-	ArInvoiceNumber pulumi.StringInput `pulumi:"arInvoiceNumber"`
+	ArInvoiceNumber pulumi.StringPtrInput `pulumi:"arInvoiceNumber"`
 	// Billing frequency
-	BillingFrequency pulumi.StringInput `pulumi:"billingFrequency"`
+	BillingFrequency pulumi.StringPtrInput `pulumi:"billingFrequency"`
 	// Billing schedule invoice status
-	InvoiceStatus pulumi.StringInput `pulumi:"invoiceStatus"`
+	InvoiceStatus pulumi.StringPtrInput `pulumi:"invoiceStatus"`
 	// Billing schedule net unit price
-	NetUnitPrice pulumi.StringInput `pulumi:"netUnitPrice"`
+	NetUnitPrice pulumi.StringPtrInput `pulumi:"netUnitPrice"`
 	// Order number associated with the Subscribed Service
-	OrderNumber pulumi.StringInput `pulumi:"orderNumber"`
+	OrderNumber pulumi.StringPtrInput `pulumi:"orderNumber"`
 	// Product description
 	Products GetBillingScheduleBillingScheduleProductArrayInput `pulumi:"products"`
 	// Billing schedule quantity
-	Quantity pulumi.StringInput `pulumi:"quantity"`
+	Quantity pulumi.StringPtrInput `pulumi:"quantity"`
 	// Billing schedule end date
-	TimeEnd pulumi.StringInput `pulumi:"timeEnd"`
+	TimeEnd pulumi.StringPtrInput `pulumi:"timeEnd"`
 	// Billing schedule invoicing date
-	TimeInvoicing pulumi.StringInput `pulumi:"timeInvoicing"`
+	TimeInvoicing pulumi.StringPtrInput `pulumi:"timeInvoicing"`
 	// Billing schedule start date
-	TimeStart pulumi.StringInput `pulumi:"timeStart"`
+	TimeStart pulumi.StringPtrInput `pulumi:"timeStart"`
 }
 
 func (GetBillingScheduleBillingScheduleArgs) ElementType() reflect.Type {
@@ -89,12 +88,6 @@ func (i GetBillingScheduleBillingScheduleArgs) ToGetBillingScheduleBillingSchedu
 
 func (i GetBillingScheduleBillingScheduleArgs) ToGetBillingScheduleBillingScheduleOutputWithContext(ctx context.Context) GetBillingScheduleBillingScheduleOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetBillingScheduleBillingScheduleOutput)
-}
-
-func (i GetBillingScheduleBillingScheduleArgs) ToOutput(ctx context.Context) pulumix.Output[GetBillingScheduleBillingSchedule] {
-	return pulumix.Output[GetBillingScheduleBillingSchedule]{
-		OutputState: i.ToGetBillingScheduleBillingScheduleOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetBillingScheduleBillingScheduleArrayInput is an input type that accepts GetBillingScheduleBillingScheduleArray and GetBillingScheduleBillingScheduleArrayOutput values.
@@ -122,12 +115,6 @@ func (i GetBillingScheduleBillingScheduleArray) ToGetBillingScheduleBillingSched
 	return pulumi.ToOutputWithContext(ctx, i).(GetBillingScheduleBillingScheduleArrayOutput)
 }
 
-func (i GetBillingScheduleBillingScheduleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBillingScheduleBillingSchedule] {
-	return pulumix.Output[[]GetBillingScheduleBillingSchedule]{
-		OutputState: i.ToGetBillingScheduleBillingScheduleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBillingScheduleBillingScheduleOutput struct{ *pulumi.OutputState }
 
 func (GetBillingScheduleBillingScheduleOutput) ElementType() reflect.Type {
@@ -142,45 +129,39 @@ func (o GetBillingScheduleBillingScheduleOutput) ToGetBillingScheduleBillingSche
 	return o
 }
 
-func (o GetBillingScheduleBillingScheduleOutput) ToOutput(ctx context.Context) pulumix.Output[GetBillingScheduleBillingSchedule] {
-	return pulumix.Output[GetBillingScheduleBillingSchedule]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Billing schedule line net amount
-func (o GetBillingScheduleBillingScheduleOutput) Amount() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBillingScheduleBillingSchedule) string { return v.Amount }).(pulumi.StringOutput)
+func (o GetBillingScheduleBillingScheduleOutput) Amount() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBillingScheduleBillingSchedule) *string { return v.Amount }).(pulumi.StringPtrOutput)
 }
 
 // Indicates the associated AR Customer transaction id a unique identifier existing on AR.
-func (o GetBillingScheduleBillingScheduleOutput) ArCustomerTransactionId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBillingScheduleBillingSchedule) string { return v.ArCustomerTransactionId }).(pulumi.StringOutput)
+func (o GetBillingScheduleBillingScheduleOutput) ArCustomerTransactionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBillingScheduleBillingSchedule) *string { return v.ArCustomerTransactionId }).(pulumi.StringPtrOutput)
 }
 
 // Indicates the associated AR Invoice Number
-func (o GetBillingScheduleBillingScheduleOutput) ArInvoiceNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBillingScheduleBillingSchedule) string { return v.ArInvoiceNumber }).(pulumi.StringOutput)
+func (o GetBillingScheduleBillingScheduleOutput) ArInvoiceNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBillingScheduleBillingSchedule) *string { return v.ArInvoiceNumber }).(pulumi.StringPtrOutput)
 }
 
 // Billing frequency
-func (o GetBillingScheduleBillingScheduleOutput) BillingFrequency() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBillingScheduleBillingSchedule) string { return v.BillingFrequency }).(pulumi.StringOutput)
+func (o GetBillingScheduleBillingScheduleOutput) BillingFrequency() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBillingScheduleBillingSchedule) *string { return v.BillingFrequency }).(pulumi.StringPtrOutput)
 }
 
 // Billing schedule invoice status
-func (o GetBillingScheduleBillingScheduleOutput) InvoiceStatus() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBillingScheduleBillingSchedule) string { return v.InvoiceStatus }).(pulumi.StringOutput)
+func (o GetBillingScheduleBillingScheduleOutput) InvoiceStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBillingScheduleBillingSchedule) *string { return v.InvoiceStatus }).(pulumi.StringPtrOutput)
 }
 
 // Billing schedule net unit price
-func (o GetBillingScheduleBillingScheduleOutput) NetUnitPrice() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBillingScheduleBillingSchedule) string { return v.NetUnitPrice }).(pulumi.StringOutput)
+func (o GetBillingScheduleBillingScheduleOutput) NetUnitPrice() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBillingScheduleBillingSchedule) *string { return v.NetUnitPrice }).(pulumi.StringPtrOutput)
 }
 
 // Order number associated with the Subscribed Service
-func (o GetBillingScheduleBillingScheduleOutput) OrderNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBillingScheduleBillingSchedule) string { return v.OrderNumber }).(pulumi.StringOutput)
+func (o GetBillingScheduleBillingScheduleOutput) OrderNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBillingScheduleBillingSchedule) *string { return v.OrderNumber }).(pulumi.StringPtrOutput)
 }
 
 // Product description
@@ -191,23 +172,23 @@ func (o GetBillingScheduleBillingScheduleOutput) Products() GetBillingScheduleBi
 }
 
 // Billing schedule quantity
-func (o GetBillingScheduleBillingScheduleOutput) Quantity() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBillingScheduleBillingSchedule) string { return v.Quantity }).(pulumi.StringOutput)
+func (o GetBillingScheduleBillingScheduleOutput) Quantity() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBillingScheduleBillingSchedule) *string { return v.Quantity }).(pulumi.StringPtrOutput)
 }
 
 // Billing schedule end date
-func (o GetBillingScheduleBillingScheduleOutput) TimeEnd() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBillingScheduleBillingSchedule) string { return v.TimeEnd }).(pulumi.StringOutput)
+func (o GetBillingScheduleBillingScheduleOutput) TimeEnd() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBillingScheduleBillingSchedule) *string { return v.TimeEnd }).(pulumi.StringPtrOutput)
 }
 
 // Billing schedule invoicing date
-func (o GetBillingScheduleBillingScheduleOutput) TimeInvoicing() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBillingScheduleBillingSchedule) string { return v.TimeInvoicing }).(pulumi.StringOutput)
+func (o GetBillingScheduleBillingScheduleOutput) TimeInvoicing() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBillingScheduleBillingSchedule) *string { return v.TimeInvoicing }).(pulumi.StringPtrOutput)
 }
 
 // Billing schedule start date
-func (o GetBillingScheduleBillingScheduleOutput) TimeStart() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBillingScheduleBillingSchedule) string { return v.TimeStart }).(pulumi.StringOutput)
+func (o GetBillingScheduleBillingScheduleOutput) TimeStart() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBillingScheduleBillingSchedule) *string { return v.TimeStart }).(pulumi.StringPtrOutput)
 }
 
 type GetBillingScheduleBillingScheduleArrayOutput struct{ *pulumi.OutputState }
@@ -224,12 +205,6 @@ func (o GetBillingScheduleBillingScheduleArrayOutput) ToGetBillingScheduleBillin
 	return o
 }
 
-func (o GetBillingScheduleBillingScheduleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBillingScheduleBillingSchedule] {
-	return pulumix.Output[[]GetBillingScheduleBillingSchedule]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetBillingScheduleBillingScheduleArrayOutput) Index(i pulumi.IntInput) GetBillingScheduleBillingScheduleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBillingScheduleBillingSchedule {
 		return vs[0].([]GetBillingScheduleBillingSchedule)[vs[1].(int)]
@@ -238,9 +213,9 @@ func (o GetBillingScheduleBillingScheduleArrayOutput) Index(i pulumi.IntInput) G
 
 type GetBillingScheduleBillingScheduleProduct struct {
 	// Product name
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Indicates the associated AR Invoice Number
-	PartNumber string `pulumi:"partNumber"`
+	PartNumber *string `pulumi:"partNumber"`
 }
 
 // GetBillingScheduleBillingScheduleProductInput is an input type that accepts GetBillingScheduleBillingScheduleProductArgs and GetBillingScheduleBillingScheduleProductOutput values.
@@ -256,9 +231,9 @@ type GetBillingScheduleBillingScheduleProductInput interface {
 
 type GetBillingScheduleBillingScheduleProductArgs struct {
 	// Product name
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Indicates the associated AR Invoice Number
-	PartNumber pulumi.StringInput `pulumi:"partNumber"`
+	PartNumber pulumi.StringPtrInput `pulumi:"partNumber"`
 }
 
 func (GetBillingScheduleBillingScheduleProductArgs) ElementType() reflect.Type {
@@ -271,12 +246,6 @@ func (i GetBillingScheduleBillingScheduleProductArgs) ToGetBillingScheduleBillin
 
 func (i GetBillingScheduleBillingScheduleProductArgs) ToGetBillingScheduleBillingScheduleProductOutputWithContext(ctx context.Context) GetBillingScheduleBillingScheduleProductOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetBillingScheduleBillingScheduleProductOutput)
-}
-
-func (i GetBillingScheduleBillingScheduleProductArgs) ToOutput(ctx context.Context) pulumix.Output[GetBillingScheduleBillingScheduleProduct] {
-	return pulumix.Output[GetBillingScheduleBillingScheduleProduct]{
-		OutputState: i.ToGetBillingScheduleBillingScheduleProductOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetBillingScheduleBillingScheduleProductArrayInput is an input type that accepts GetBillingScheduleBillingScheduleProductArray and GetBillingScheduleBillingScheduleProductArrayOutput values.
@@ -304,12 +273,6 @@ func (i GetBillingScheduleBillingScheduleProductArray) ToGetBillingScheduleBilli
 	return pulumi.ToOutputWithContext(ctx, i).(GetBillingScheduleBillingScheduleProductArrayOutput)
 }
 
-func (i GetBillingScheduleBillingScheduleProductArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBillingScheduleBillingScheduleProduct] {
-	return pulumix.Output[[]GetBillingScheduleBillingScheduleProduct]{
-		OutputState: i.ToGetBillingScheduleBillingScheduleProductArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBillingScheduleBillingScheduleProductOutput struct{ *pulumi.OutputState }
 
 func (GetBillingScheduleBillingScheduleProductOutput) ElementType() reflect.Type {
@@ -324,20 +287,14 @@ func (o GetBillingScheduleBillingScheduleProductOutput) ToGetBillingScheduleBill
 	return o
 }
 
-func (o GetBillingScheduleBillingScheduleProductOutput) ToOutput(ctx context.Context) pulumix.Output[GetBillingScheduleBillingScheduleProduct] {
-	return pulumix.Output[GetBillingScheduleBillingScheduleProduct]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Product name
-func (o GetBillingScheduleBillingScheduleProductOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBillingScheduleBillingScheduleProduct) string { return v.Name }).(pulumi.StringOutput)
+func (o GetBillingScheduleBillingScheduleProductOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBillingScheduleBillingScheduleProduct) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Indicates the associated AR Invoice Number
-func (o GetBillingScheduleBillingScheduleProductOutput) PartNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBillingScheduleBillingScheduleProduct) string { return v.PartNumber }).(pulumi.StringOutput)
+func (o GetBillingScheduleBillingScheduleProductOutput) PartNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBillingScheduleBillingScheduleProduct) *string { return v.PartNumber }).(pulumi.StringPtrOutput)
 }
 
 type GetBillingScheduleBillingScheduleProductArrayOutput struct{ *pulumi.OutputState }
@@ -352,12 +309,6 @@ func (o GetBillingScheduleBillingScheduleProductArrayOutput) ToGetBillingSchedul
 
 func (o GetBillingScheduleBillingScheduleProductArrayOutput) ToGetBillingScheduleBillingScheduleProductArrayOutputWithContext(ctx context.Context) GetBillingScheduleBillingScheduleProductArrayOutput {
 	return o
-}
-
-func (o GetBillingScheduleBillingScheduleProductArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBillingScheduleBillingScheduleProduct] {
-	return pulumix.Output[[]GetBillingScheduleBillingScheduleProduct]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetBillingScheduleBillingScheduleProductArrayOutput) Index(i pulumi.IntInput) GetBillingScheduleBillingScheduleProductOutput {
@@ -403,12 +354,6 @@ func (i GetBillingScheduleFilterArgs) ToGetBillingScheduleFilterOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetBillingScheduleFilterOutput)
 }
 
-func (i GetBillingScheduleFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetBillingScheduleFilter] {
-	return pulumix.Output[GetBillingScheduleFilter]{
-		OutputState: i.ToGetBillingScheduleFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetBillingScheduleFilterArrayInput is an input type that accepts GetBillingScheduleFilterArray and GetBillingScheduleFilterArrayOutput values.
 // You can construct a concrete instance of `GetBillingScheduleFilterArrayInput` via:
 //
@@ -434,12 +379,6 @@ func (i GetBillingScheduleFilterArray) ToGetBillingScheduleFilterArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetBillingScheduleFilterArrayOutput)
 }
 
-func (i GetBillingScheduleFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBillingScheduleFilter] {
-	return pulumix.Output[[]GetBillingScheduleFilter]{
-		OutputState: i.ToGetBillingScheduleFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBillingScheduleFilterOutput struct{ *pulumi.OutputState }
 
 func (GetBillingScheduleFilterOutput) ElementType() reflect.Type {
@@ -452,12 +391,6 @@ func (o GetBillingScheduleFilterOutput) ToGetBillingScheduleFilterOutput() GetBi
 
 func (o GetBillingScheduleFilterOutput) ToGetBillingScheduleFilterOutputWithContext(ctx context.Context) GetBillingScheduleFilterOutput {
 	return o
-}
-
-func (o GetBillingScheduleFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetBillingScheduleFilter] {
-	return pulumix.Output[GetBillingScheduleFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Product name
@@ -485,12 +418,6 @@ func (o GetBillingScheduleFilterArrayOutput) ToGetBillingScheduleFilterArrayOutp
 
 func (o GetBillingScheduleFilterArrayOutput) ToGetBillingScheduleFilterArrayOutputWithContext(ctx context.Context) GetBillingScheduleFilterArrayOutput {
 	return o
-}
-
-func (o GetBillingScheduleFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBillingScheduleFilter] {
-	return pulumix.Output[[]GetBillingScheduleFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetBillingScheduleFilterArrayOutput) Index(i pulumi.IntInput) GetBillingScheduleFilterOutput {

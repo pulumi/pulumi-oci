@@ -255,7 +255,7 @@ namespace Pulumi.Oci.StackMonitoring
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly bool? IsExcludeSystemTypes;
         /// <summary>
         /// Metric namespace for resource type.
@@ -281,7 +281,7 @@ namespace Pulumi.Oci.StackMonitoring
 
             ImmutableArray<Outputs.GetMonitoredResourceTypesFilterResult> filters,
 
-            string id,
+            string? id,
 
             bool? isExcludeSystemTypes,
 

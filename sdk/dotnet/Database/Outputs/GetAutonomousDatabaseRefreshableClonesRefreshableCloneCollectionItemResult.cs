@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The name of the region where the refreshable clone exists.
         /// </summary>
-        public readonly string Region;
+        public readonly string? Region;
 
         [OutputConstructor]
         private GetAutonomousDatabaseRefreshableClonesRefreshableCloneCollectionItemResult(
-            string id,
+            string? id,
 
-            string region)
+            string? region)
         {
             Id = id;
             Region = region;

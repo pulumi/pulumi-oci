@@ -16,67 +16,67 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// <summary>
         /// ("autocommit")
         /// </summary>
-        public readonly bool Autocommit;
+        public readonly bool? Autocommit;
         /// <summary>
         /// If enabled, the server stores all temporary tables on disk rather than in memory.
         /// </summary>
-        public readonly bool BigTables;
+        public readonly bool? BigTables;
         /// <summary>
         /// Sets the binary log expiration period in seconds. binlogExpireLogsSeconds corresponds to the MySQL binary logging system variable [binlog_expire_logs_seconds](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_expire_logs_seconds).
         /// </summary>
-        public readonly int BinlogExpireLogsSeconds;
+        public readonly int? BinlogExpireLogsSeconds;
         /// <summary>
         /// Configures the amount of table metadata added to the binary log when using row-based logging. binlogRowMetadata corresponds to the MySQL binary logging system variable [binlog_row_metadata](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_metadata).
         /// </summary>
-        public readonly string BinlogRowMetadata;
+        public readonly string? BinlogRowMetadata;
         /// <summary>
         /// When set to PARTIAL_JSON, this enables use of a space-efficient binary log format for updates that modify only a small portion of a JSON document. binlogRowValueOptions corresponds to the MySQL binary logging system variable [binlog_row_value_options](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_value_options).
         /// </summary>
-        public readonly string BinlogRowValueOptions;
+        public readonly string? BinlogRowValueOptions;
         /// <summary>
         /// Enables compression for transactions that are written to binary log files on this server. binlogTransactionCompression corresponds to the MySQL binary logging system variable [binlog_transaction_compression](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_transaction_compression).
         /// </summary>
-        public readonly bool BinlogTransactionCompression;
+        public readonly bool? BinlogTransactionCompression;
         /// <summary>
         /// ("completion_type")
         /// </summary>
-        public readonly string CompletionType;
+        public readonly string? CompletionType;
         /// <summary>
         /// The number of seconds that the mysqld server waits for a connect packet before responding with Bad handshake.
         /// </summary>
-        public readonly int ConnectTimeout;
+        public readonly int? ConnectTimeout;
         /// <summary>
         /// Set the chunking size for updates to the global memory usage counter Global_connection_memory.
         /// </summary>
-        public readonly int ConnectionMemoryChunkSize;
+        public readonly int? ConnectionMemoryChunkSize;
         /// <summary>
         /// Set the maximum amount of memory that can be used by a single user connection.
         /// </summary>
-        public readonly string ConnectionMemoryLimit;
+        public readonly string? ConnectionMemoryLimit;
         /// <summary>
         /// ("cte_max_recursion_depth")
         /// </summary>
-        public readonly string CteMaxRecursionDepth;
+        public readonly string? CteMaxRecursionDepth;
         /// <summary>
         /// ("default_authentication_plugin")
         /// </summary>
-        public readonly string DefaultAuthenticationPlugin;
+        public readonly string? DefaultAuthenticationPlugin;
         /// <summary>
         /// ("foreign_key_checks")
         /// </summary>
-        public readonly bool ForeignKeyChecks;
+        public readonly bool? ForeignKeyChecks;
         /// <summary>
         /// ("generated_random_password_length") DEPRECATED -- variable should not be settable and will be ignored
         /// </summary>
-        public readonly int GeneratedRandomPasswordLength;
+        public readonly int? GeneratedRandomPasswordLength;
         /// <summary>
         /// Set the total amount of memory that can be used by all user connections.
         /// </summary>
-        public readonly string GlobalConnectionMemoryLimit;
+        public readonly string? GlobalConnectionMemoryLimit;
         /// <summary>
         /// Determines whether the MySQL server calculates Global_connection_memory.
         /// </summary>
-        public readonly bool GlobalConnectionMemoryTracking;
+        public readonly bool? GlobalConnectionMemoryTracking;
         /// <summary>
         /// * EVENTUAL: Both RO and RW transactions do not wait for preceding transactions to be applied before executing. A RW transaction does not wait for other members to apply a transaction. This means that a transaction could be externalized on one member before the others. This also means that in the event of a primary failover, the new primary can accept new RO and RW transactions before the previous primary transactions are all applied. RO transactions could result in outdated values, RW transactions could result in a rollback due to conflicts.
         /// * BEFORE_ON_PRIMARY_FAILOVER: New RO or RW transactions with a newly elected primary that is applying backlog from the old primary are held (not applied) until any backlog has been applied. This ensures that when a primary failover happens, intentionally or not, clients always see the latest value on the primary. This guarantees consistency, but means that clients must be able to handle the delay in the event that a backlog is being applied. Usually this delay should be minimal, but does depend on the size of the backlog.
@@ -84,415 +84,415 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// * AFTER: A RW transaction waits until its changes have been applied to all of the other members. This value has no effect on RO transactions. This mode ensures that when a transaction is committed on the local member, any subsequent transaction reads the written value or a more recent value on any group member. Use this mode with a group that is used for predominantly RO operations to ensure that applied RW transactions are applied everywhere once they commit. This could be used by your application to ensure that subsequent reads fetch the latest data which includes the latest writes. This reduces the overhead of synchronization on every RO transaction, by ensuring synchronization is used only on RW transactions. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
         /// * BEFORE_AND_AFTER: A RW transaction waits for 1) all preceding transactions to complete before being applied and 2) until its changes have been applied on other members. A RO transaction waits for all preceding transactions to complete before execution takes place. This consistency level also includes the consistency guarantees provided by BEFORE_ON_PRIMARY_FAILOVER.
         /// </summary>
-        public readonly string GroupReplicationConsistency;
+        public readonly string? GroupReplicationConsistency;
         /// <summary>
         /// ("information_schema_stats_expiry")
         /// </summary>
-        public readonly int InformationSchemaStatsExpiry;
+        public readonly int? InformationSchemaStatsExpiry;
         /// <summary>
         /// Specifies the percentage of the most recently used pages for each buffer pool to read out and dump.
         /// </summary>
-        public readonly int InnodbBufferPoolDumpPct;
+        public readonly int? InnodbBufferPoolDumpPct;
         /// <summary>
         /// ("innodb_buffer_pool_instances")
         /// </summary>
-        public readonly int InnodbBufferPoolInstances;
+        public readonly int? InnodbBufferPoolInstances;
         /// <summary>
         /// The size (in bytes) of the buffer pool, that is, the memory area where InnoDB caches table and index data.
         /// </summary>
-        public readonly string InnodbBufferPoolSize;
+        public readonly string? InnodbBufferPoolSize;
         /// <summary>
         /// innodbDdlBufferSize corresponds to the MySQL system variable [innodb_ddl_buffer_size] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_buffer_size)
         /// </summary>
-        public readonly string InnodbDdlBufferSize;
+        public readonly string? InnodbDdlBufferSize;
         /// <summary>
         /// innodbDdlThreads corresponds to the MySQL system variable [innodb_ddl_threads] (https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_ddl_threads)
         /// </summary>
-        public readonly int InnodbDdlThreads;
+        public readonly int? InnodbDdlThreads;
         /// <summary>
         /// ("innodb_ft_enable_stopword")
         /// </summary>
-        public readonly bool InnodbFtEnableStopword;
+        public readonly bool? InnodbFtEnableStopword;
         /// <summary>
         /// ("innodb_ft_max_token_size")
         /// </summary>
-        public readonly int InnodbFtMaxTokenSize;
+        public readonly int? InnodbFtMaxTokenSize;
         /// <summary>
         /// ("innodb_ft_min_token_size")
         /// </summary>
-        public readonly int InnodbFtMinTokenSize;
+        public readonly int? InnodbFtMinTokenSize;
         /// <summary>
         /// ("innodb_ft_num_word_optimize")
         /// </summary>
-        public readonly int InnodbFtNumWordOptimize;
+        public readonly int? InnodbFtNumWordOptimize;
         /// <summary>
         /// ("innodb_ft_result_cache_limit")
         /// </summary>
-        public readonly string InnodbFtResultCacheLimit;
+        public readonly string? InnodbFtResultCacheLimit;
         /// <summary>
         /// ("innodb_ft_server_stopword_table")
         /// </summary>
-        public readonly string InnodbFtServerStopwordTable;
+        public readonly string? InnodbFtServerStopwordTable;
         /// <summary>
         /// ("innodb_lock_wait_timeout")
         /// </summary>
-        public readonly int InnodbLockWaitTimeout;
+        public readonly int? InnodbLockWaitTimeout;
         /// <summary>
         /// Enables dedicated log writer threads for writing redo log records from the log buffer to the system buffers and flushing the system buffers to the redo log files.
         /// </summary>
-        public readonly bool InnodbLogWriterThreads;
+        public readonly bool? InnodbLogWriterThreads;
         /// <summary>
         /// The desired maximum purge lag in terms of transactions.
         /// </summary>
-        public readonly string InnodbMaxPurgeLag;
+        public readonly string? InnodbMaxPurgeLag;
         /// <summary>
         /// The maximum delay in microseconds for the delay imposed when the innodb_max_purge_lag threshold is exceeded.
         /// </summary>
-        public readonly int InnodbMaxPurgeLagDelay;
+        public readonly int? InnodbMaxPurgeLagDelay;
         /// <summary>
         /// The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by ANALYZE TABLE.
         /// </summary>
-        public readonly string InnodbStatsPersistentSamplePages;
+        public readonly string? InnodbStatsPersistentSamplePages;
         /// <summary>
         /// The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by [ANALYZE TABLE](https://dev.mysql.com/doc/refman/8.0/en/analyze-table.html).
         /// </summary>
-        public readonly string InnodbStatsTransientSamplePages;
+        public readonly string? InnodbStatsTransientSamplePages;
         /// <summary>
         /// The number of seconds the server waits for activity on an interactive connection before closing it.
         /// </summary>
-        public readonly int InteractiveTimeout;
+        public readonly int? InteractiveTimeout;
         /// <summary>
         /// ("local_infile")
         /// </summary>
-        public readonly bool LocalInfile;
+        public readonly bool? LocalInfile;
         /// <summary>
         /// ("mandatory_roles")
         /// </summary>
-        public readonly string MandatoryRoles;
+        public readonly string? MandatoryRoles;
         /// <summary>
         /// The maximum size of one packet or any generated/intermediate string.
         /// </summary>
-        public readonly int MaxAllowedPacket;
+        public readonly int? MaxAllowedPacket;
         /// <summary>
         /// Sets the size of the transaction cache.
         /// </summary>
-        public readonly string MaxBinlogCacheSize;
+        public readonly string? MaxBinlogCacheSize;
         /// <summary>
         /// ("max_connect_errors")
         /// </summary>
-        public readonly string MaxConnectErrors;
+        public readonly string? MaxConnectErrors;
         /// <summary>
         /// ("max_connections")
         /// </summary>
-        public readonly int MaxConnections;
+        public readonly int? MaxConnections;
         /// <summary>
         /// ("max_execution_time")
         /// </summary>
-        public readonly string MaxExecutionTime;
+        public readonly string? MaxExecutionTime;
         /// <summary>
         /// This variable sets the maximum size to which user-created MEMORY tables are permitted to grow.
         /// </summary>
-        public readonly string MaxHeapTableSize;
+        public readonly string? MaxHeapTableSize;
         /// <summary>
         /// ("max_prepared_stmt_count")
         /// </summary>
-        public readonly int MaxPreparedStmtCount;
+        public readonly int? MaxPreparedStmtCount;
         /// <summary>
         /// ("mysql_firewall_mode")
         /// </summary>
-        public readonly bool MysqlFirewallMode;
+        public readonly bool? MysqlFirewallMode;
         /// <summary>
         /// DEPRECATED -- typo of mysqlx_zstd_default_compression_level. variable will be ignored.
         /// </summary>
-        public readonly int MysqlZstdDefaultCompressionLevel;
+        public readonly int? MysqlZstdDefaultCompressionLevel;
         /// <summary>
         /// The number of seconds X Plugin waits for the first packet to be received from newly connected clients.
         /// </summary>
-        public readonly int MysqlxConnectTimeout;
+        public readonly int? MysqlxConnectTimeout;
         /// <summary>
         /// Set the default compression level for the deflate algorithm. ("mysqlx_deflate_default_compression_level")
         /// </summary>
-        public readonly int MysqlxDeflateDefaultCompressionLevel;
+        public readonly int? MysqlxDeflateDefaultCompressionLevel;
         /// <summary>
         /// Limit the upper bound of accepted compression levels for the deflate algorithm. ("mysqlx_deflate_max_client_compression_level")
         /// </summary>
-        public readonly int MysqlxDeflateMaxClientCompressionLevel;
+        public readonly int? MysqlxDeflateMaxClientCompressionLevel;
         /// <summary>
         /// ("mysqlx_document_id_unique_prefix") DEPRECATED -- variable should not be settable and will be ignored
         /// </summary>
-        public readonly int MysqlxDocumentIdUniquePrefix;
+        public readonly int? MysqlxDocumentIdUniquePrefix;
         /// <summary>
         /// ("mysqlx_enable_hello_notice") DEPRECATED -- variable should not be settable and will be ignored
         /// </summary>
-        public readonly bool MysqlxEnableHelloNotice;
+        public readonly bool? MysqlxEnableHelloNotice;
         /// <summary>
         /// ("mysqlx_idle_worker_thread_timeout") DEPRECATED -- variable should not be settable and will be ignored
         /// </summary>
-        public readonly int MysqlxIdleWorkerThreadTimeout;
+        public readonly int? MysqlxIdleWorkerThreadTimeout;
         /// <summary>
         /// The number of seconds to wait for interactive clients to timeout.
         /// </summary>
-        public readonly int MysqlxInteractiveTimeout;
+        public readonly int? MysqlxInteractiveTimeout;
         /// <summary>
         /// Set the default compression level for the lz4 algorithm. ("mysqlx_lz4_default_compression_level")
         /// </summary>
-        public readonly int MysqlxLz4defaultCompressionLevel;
+        public readonly int? MysqlxLz4defaultCompressionLevel;
         /// <summary>
         /// Limit the upper bound of accepted compression levels for the lz4 algorithm. ("mysqlx_lz4_max_client_compression_level")
         /// </summary>
-        public readonly int MysqlxLz4maxClientCompressionLevel;
+        public readonly int? MysqlxLz4maxClientCompressionLevel;
         /// <summary>
         /// The maximum size of network packets that can be received by X Plugin.
         /// </summary>
-        public readonly int MysqlxMaxAllowedPacket;
+        public readonly int? MysqlxMaxAllowedPacket;
         /// <summary>
         /// ("mysqlx_min_worker_threads") DEPRECATED -- variable should not be settable and will be ignored
         /// </summary>
-        public readonly int MysqlxMinWorkerThreads;
+        public readonly int? MysqlxMinWorkerThreads;
         /// <summary>
         /// The number of seconds that X Plugin waits for blocking read operations to complete. After this time, if the read operation is not successful, X Plugin closes the connection and returns a warning notice with the error code ER_IO_READ_ERROR to the client application.
         /// </summary>
-        public readonly int MysqlxReadTimeout;
+        public readonly int? MysqlxReadTimeout;
         /// <summary>
         /// The number of seconds that X Plugin waits for activity on a connection.
         /// </summary>
-        public readonly int MysqlxWaitTimeout;
+        public readonly int? MysqlxWaitTimeout;
         /// <summary>
         /// The number of seconds that X Plugin waits for blocking write operations to complete. After this time, if the write operation is not successful, X Plugin closes the connection.
         /// </summary>
-        public readonly int MysqlxWriteTimeout;
+        public readonly int? MysqlxWriteTimeout;
         /// <summary>
         /// Set the default compression level for the zstd algorithm. ("mysqlx_zstd_default_compression_level")
         /// </summary>
-        public readonly int MysqlxZstdDefaultCompressionLevel;
+        public readonly int? MysqlxZstdDefaultCompressionLevel;
         /// <summary>
         /// Limit the upper bound of accepted compression levels for the zstd algorithm. ("mysqlx_zstd_max_client_compression_level")
         /// </summary>
-        public readonly int MysqlxZstdMaxClientCompressionLevel;
+        public readonly int? MysqlxZstdMaxClientCompressionLevel;
         /// <summary>
         /// The number of seconds to wait for more data from a connection before aborting the read.
         /// </summary>
-        public readonly int NetReadTimeout;
+        public readonly int? NetReadTimeout;
         /// <summary>
         /// The number of seconds to wait for a block to be written to a connection before aborting the write.
         /// </summary>
-        public readonly int NetWriteTimeout;
+        public readonly int? NetWriteTimeout;
         /// <summary>
         /// ("parser_max_mem_size")
         /// </summary>
-        public readonly string ParserMaxMemSize;
+        public readonly string? ParserMaxMemSize;
         /// <summary>
         /// ("query_alloc_block_size") DEPRECATED -- variable should not be settable and will be ignored
         /// </summary>
-        public readonly string QueryAllocBlockSize;
+        public readonly string? QueryAllocBlockSize;
         /// <summary>
         /// ("query_prealloc_size") DEPRECATED -- variable should not be settable and will be ignored
         /// </summary>
-        public readonly string QueryPreallocSize;
+        public readonly string? QueryPreallocSize;
         /// <summary>
         /// regexpTimeLimit corresponds to the MySQL system variable [regexp_time_limit] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_regexp_time_limit)
         /// </summary>
-        public readonly int RegexpTimeLimit;
+        public readonly int? RegexpTimeLimit;
         /// <summary>
         /// Each session that must perform a sort allocates a buffer of this size.
         /// </summary>
-        public readonly string SortBufferSize;
+        public readonly string? SortBufferSize;
         /// <summary>
         /// ("sql_mode")
         /// </summary>
-        public readonly string SqlMode;
+        public readonly string? SqlMode;
         /// <summary>
         /// ("sql_require_primary_key")
         /// </summary>
-        public readonly bool SqlRequirePrimaryKey;
+        public readonly bool? SqlRequirePrimaryKey;
         /// <summary>
         /// ("sql_warnings")
         /// </summary>
-        public readonly bool SqlWarnings;
+        public readonly bool? SqlWarnings;
         /// <summary>
         /// Controls whether the thread pool uses dedicated listener threads. If enabled, a listener thread in each thread group is dedicated to the task of listening for network events from clients, ensuring that the maximum number of query worker threads is no more than the value specified by threadPoolMaxTransactionsLimit. threadPoolDedicatedListeners corresponds to the MySQL Database Service-specific system variable thread_pool_dedicated_listeners.
         /// </summary>
-        public readonly bool ThreadPoolDedicatedListeners;
+        public readonly bool? ThreadPoolDedicatedListeners;
         /// <summary>
         /// Limits the maximum number of open transactions to the defined value. The default value is 0, which enforces no limit. threadPoolMaxTransactionsLimit corresponds to the MySQL Database Service-specific system variable thread_pool_max_transactions_limit.
         /// </summary>
-        public readonly int ThreadPoolMaxTransactionsLimit;
+        public readonly int? ThreadPoolMaxTransactionsLimit;
         /// <summary>
         /// Initializes the time zone for each client that connects.
         /// </summary>
-        public readonly string TimeZone;
+        public readonly string? TimeZone;
         /// <summary>
         /// The maximum size of internal in-memory temporary tables. This variable does not apply to user-created MEMORY tables.
         /// </summary>
-        public readonly string TmpTableSize;
+        public readonly string? TmpTableSize;
         /// <summary>
         /// ("transaction_isolation")
         /// </summary>
-        public readonly string TransactionIsolation;
+        public readonly string? TransactionIsolation;
         /// <summary>
         /// The number of seconds the server waits for activity on a noninteractive connection before closing it.
         /// </summary>
-        public readonly int WaitTimeout;
+        public readonly int? WaitTimeout;
 
         [OutputConstructor]
         private GetMysqlConfigurationsConfigurationVariableResult(
-            bool autocommit,
+            bool? autocommit,
 
-            bool bigTables,
+            bool? bigTables,
 
-            int binlogExpireLogsSeconds,
+            int? binlogExpireLogsSeconds,
 
-            string binlogRowMetadata,
+            string? binlogRowMetadata,
 
-            string binlogRowValueOptions,
+            string? binlogRowValueOptions,
 
-            bool binlogTransactionCompression,
+            bool? binlogTransactionCompression,
 
-            string completionType,
+            string? completionType,
 
-            int connectTimeout,
+            int? connectTimeout,
 
-            int connectionMemoryChunkSize,
+            int? connectionMemoryChunkSize,
 
-            string connectionMemoryLimit,
+            string? connectionMemoryLimit,
 
-            string cteMaxRecursionDepth,
+            string? cteMaxRecursionDepth,
 
-            string defaultAuthenticationPlugin,
+            string? defaultAuthenticationPlugin,
 
-            bool foreignKeyChecks,
+            bool? foreignKeyChecks,
 
-            int generatedRandomPasswordLength,
+            int? generatedRandomPasswordLength,
 
-            string globalConnectionMemoryLimit,
+            string? globalConnectionMemoryLimit,
 
-            bool globalConnectionMemoryTracking,
+            bool? globalConnectionMemoryTracking,
 
-            string groupReplicationConsistency,
+            string? groupReplicationConsistency,
 
-            int informationSchemaStatsExpiry,
+            int? informationSchemaStatsExpiry,
 
-            int innodbBufferPoolDumpPct,
+            int? innodbBufferPoolDumpPct,
 
-            int innodbBufferPoolInstances,
+            int? innodbBufferPoolInstances,
 
-            string innodbBufferPoolSize,
+            string? innodbBufferPoolSize,
 
-            string innodbDdlBufferSize,
+            string? innodbDdlBufferSize,
 
-            int innodbDdlThreads,
+            int? innodbDdlThreads,
 
-            bool innodbFtEnableStopword,
+            bool? innodbFtEnableStopword,
 
-            int innodbFtMaxTokenSize,
+            int? innodbFtMaxTokenSize,
 
-            int innodbFtMinTokenSize,
+            int? innodbFtMinTokenSize,
 
-            int innodbFtNumWordOptimize,
+            int? innodbFtNumWordOptimize,
 
-            string innodbFtResultCacheLimit,
+            string? innodbFtResultCacheLimit,
 
-            string innodbFtServerStopwordTable,
+            string? innodbFtServerStopwordTable,
 
-            int innodbLockWaitTimeout,
+            int? innodbLockWaitTimeout,
 
-            bool innodbLogWriterThreads,
+            bool? innodbLogWriterThreads,
 
-            string innodbMaxPurgeLag,
+            string? innodbMaxPurgeLag,
 
-            int innodbMaxPurgeLagDelay,
+            int? innodbMaxPurgeLagDelay,
 
-            string innodbStatsPersistentSamplePages,
+            string? innodbStatsPersistentSamplePages,
 
-            string innodbStatsTransientSamplePages,
+            string? innodbStatsTransientSamplePages,
 
-            int interactiveTimeout,
+            int? interactiveTimeout,
 
-            bool localInfile,
+            bool? localInfile,
 
-            string mandatoryRoles,
+            string? mandatoryRoles,
 
-            int maxAllowedPacket,
+            int? maxAllowedPacket,
 
-            string maxBinlogCacheSize,
+            string? maxBinlogCacheSize,
 
-            string maxConnectErrors,
+            string? maxConnectErrors,
 
-            int maxConnections,
+            int? maxConnections,
 
-            string maxExecutionTime,
+            string? maxExecutionTime,
 
-            string maxHeapTableSize,
+            string? maxHeapTableSize,
 
-            int maxPreparedStmtCount,
+            int? maxPreparedStmtCount,
 
-            bool mysqlFirewallMode,
+            bool? mysqlFirewallMode,
 
-            int mysqlZstdDefaultCompressionLevel,
+            int? mysqlZstdDefaultCompressionLevel,
 
-            int mysqlxConnectTimeout,
+            int? mysqlxConnectTimeout,
 
-            int mysqlxDeflateDefaultCompressionLevel,
+            int? mysqlxDeflateDefaultCompressionLevel,
 
-            int mysqlxDeflateMaxClientCompressionLevel,
+            int? mysqlxDeflateMaxClientCompressionLevel,
 
-            int mysqlxDocumentIdUniquePrefix,
+            int? mysqlxDocumentIdUniquePrefix,
 
-            bool mysqlxEnableHelloNotice,
+            bool? mysqlxEnableHelloNotice,
 
-            int mysqlxIdleWorkerThreadTimeout,
+            int? mysqlxIdleWorkerThreadTimeout,
 
-            int mysqlxInteractiveTimeout,
+            int? mysqlxInteractiveTimeout,
 
-            int mysqlxLz4defaultCompressionLevel,
+            int? mysqlxLz4defaultCompressionLevel,
 
-            int mysqlxLz4maxClientCompressionLevel,
+            int? mysqlxLz4maxClientCompressionLevel,
 
-            int mysqlxMaxAllowedPacket,
+            int? mysqlxMaxAllowedPacket,
 
-            int mysqlxMinWorkerThreads,
+            int? mysqlxMinWorkerThreads,
 
-            int mysqlxReadTimeout,
+            int? mysqlxReadTimeout,
 
-            int mysqlxWaitTimeout,
+            int? mysqlxWaitTimeout,
 
-            int mysqlxWriteTimeout,
+            int? mysqlxWriteTimeout,
 
-            int mysqlxZstdDefaultCompressionLevel,
+            int? mysqlxZstdDefaultCompressionLevel,
 
-            int mysqlxZstdMaxClientCompressionLevel,
+            int? mysqlxZstdMaxClientCompressionLevel,
 
-            int netReadTimeout,
+            int? netReadTimeout,
 
-            int netWriteTimeout,
+            int? netWriteTimeout,
 
-            string parserMaxMemSize,
+            string? parserMaxMemSize,
 
-            string queryAllocBlockSize,
+            string? queryAllocBlockSize,
 
-            string queryPreallocSize,
+            string? queryPreallocSize,
 
-            int regexpTimeLimit,
+            int? regexpTimeLimit,
 
-            string sortBufferSize,
+            string? sortBufferSize,
 
-            string sqlMode,
+            string? sqlMode,
 
-            bool sqlRequirePrimaryKey,
+            bool? sqlRequirePrimaryKey,
 
-            bool sqlWarnings,
+            bool? sqlWarnings,
 
-            bool threadPoolDedicatedListeners,
+            bool? threadPoolDedicatedListeners,
 
-            int threadPoolMaxTransactionsLimit,
+            int? threadPoolMaxTransactionsLimit,
 
-            string timeZone,
+            string? timeZone,
 
-            string tmpTableSize,
+            string? tmpTableSize,
 
-            string transactionIsolation,
+            string? transactionIsolation,
 
-            int waitTimeout)
+            int? waitTimeout)
         {
             Autocommit = autocommit;
             BigTables = bigTables;

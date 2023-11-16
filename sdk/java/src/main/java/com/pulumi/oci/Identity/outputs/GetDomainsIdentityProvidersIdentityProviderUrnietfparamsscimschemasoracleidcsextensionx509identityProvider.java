@@ -9,6 +9,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsIdentityProvidersIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProvider {
@@ -16,207 +18,207 @@ public final class GetDomainsIdentityProvidersIdentityProviderUrnietfparamsscims
      * @return X509 Certificate Matching Attribute
      * 
      */
-    private String certMatchAttribute;
+    private @Nullable String certMatchAttribute;
     /**
      * @return Fallback on CRL Validation if OCSP fails.
      * 
      */
-    private Boolean crlCheckOnOcspFailureEnabled;
+    private @Nullable Boolean crlCheckOnOcspFailureEnabled;
     /**
      * @return Set to true to enable CRL Validation
      * 
      */
-    private Boolean crlEnabled;
+    private @Nullable Boolean crlEnabled;
     /**
      * @return CRL Location URL
      * 
      */
-    private String crlLocation;
+    private @Nullable String crlLocation;
     /**
      * @return Fetch the CRL contents every X minutes
      * 
      */
-    private Integer crlReloadDuration;
+    private @Nullable Integer crlReloadDuration;
     /**
      * @return Set to true to enable EKU Validation
      * 
      */
-    private Boolean ekuValidationEnabled;
+    private @Nullable Boolean ekuValidationEnabled;
     /**
      * @return List of EKU which needs to be validated
      * 
      */
-    private List<String> ekuValues;
+    private @Nullable List<String> ekuValues;
     /**
      * @return Allow access if OCSP response is UNKNOWN or OCSP Responder does not respond within the timeout duration
      * 
      */
-    private Boolean ocspAllowUnknownResponseStatus;
+    private @Nullable Boolean ocspAllowUnknownResponseStatus;
     /**
      * @return Describes if the OCSP response is signed
      * 
      */
-    private Boolean ocspEnableSignedResponse;
+    private @Nullable Boolean ocspEnableSignedResponse;
     /**
      * @return Set to true to enable OCSP Validation
      * 
      */
-    private Boolean ocspEnabled;
+    private @Nullable Boolean ocspEnabled;
     /**
      * @return This property specifies OCSP Responder URL.
      * 
      */
-    private String ocspResponderUrl;
+    private @Nullable String ocspResponderUrl;
     /**
      * @return Revalidate OCSP status for user after X hours
      * 
      */
-    private Integer ocspRevalidateTime;
+    private @Nullable Integer ocspRevalidateTime;
     /**
      * @return This property specifies the OCSP Server alias name
      * 
      */
-    private String ocspServerName;
+    private @Nullable String ocspServerName;
     /**
      * @return OCSP Trusted Certificate Chain
      * 
      */
-    private List<String> ocspTrustCertChains;
+    private @Nullable List<String> ocspTrustCertChains;
     /**
      * @return Check for specific conditions of other certificate attributes
      * 
      */
-    private String otherCertMatchAttribute;
+    private @Nullable String otherCertMatchAttribute;
     /**
      * @return Certificate alias list to create a chain for the incoming client certificate
      * 
      */
-    private List<String> signingCertificateChains;
+    private @Nullable List<String> signingCertificateChains;
     /**
      * @return This property specifies the userstore attribute value that must match the incoming certificate attribute.
      * 
      */
-    private String userMatchAttribute;
+    private @Nullable String userMatchAttribute;
 
     private GetDomainsIdentityProvidersIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProvider() {}
     /**
      * @return X509 Certificate Matching Attribute
      * 
      */
-    public String certMatchAttribute() {
-        return this.certMatchAttribute;
+    public Optional<String> certMatchAttribute() {
+        return Optional.ofNullable(this.certMatchAttribute);
     }
     /**
      * @return Fallback on CRL Validation if OCSP fails.
      * 
      */
-    public Boolean crlCheckOnOcspFailureEnabled() {
-        return this.crlCheckOnOcspFailureEnabled;
+    public Optional<Boolean> crlCheckOnOcspFailureEnabled() {
+        return Optional.ofNullable(this.crlCheckOnOcspFailureEnabled);
     }
     /**
      * @return Set to true to enable CRL Validation
      * 
      */
-    public Boolean crlEnabled() {
-        return this.crlEnabled;
+    public Optional<Boolean> crlEnabled() {
+        return Optional.ofNullable(this.crlEnabled);
     }
     /**
      * @return CRL Location URL
      * 
      */
-    public String crlLocation() {
-        return this.crlLocation;
+    public Optional<String> crlLocation() {
+        return Optional.ofNullable(this.crlLocation);
     }
     /**
      * @return Fetch the CRL contents every X minutes
      * 
      */
-    public Integer crlReloadDuration() {
-        return this.crlReloadDuration;
+    public Optional<Integer> crlReloadDuration() {
+        return Optional.ofNullable(this.crlReloadDuration);
     }
     /**
      * @return Set to true to enable EKU Validation
      * 
      */
-    public Boolean ekuValidationEnabled() {
-        return this.ekuValidationEnabled;
+    public Optional<Boolean> ekuValidationEnabled() {
+        return Optional.ofNullable(this.ekuValidationEnabled);
     }
     /**
      * @return List of EKU which needs to be validated
      * 
      */
     public List<String> ekuValues() {
-        return this.ekuValues;
+        return this.ekuValues == null ? List.of() : this.ekuValues;
     }
     /**
      * @return Allow access if OCSP response is UNKNOWN or OCSP Responder does not respond within the timeout duration
      * 
      */
-    public Boolean ocspAllowUnknownResponseStatus() {
-        return this.ocspAllowUnknownResponseStatus;
+    public Optional<Boolean> ocspAllowUnknownResponseStatus() {
+        return Optional.ofNullable(this.ocspAllowUnknownResponseStatus);
     }
     /**
      * @return Describes if the OCSP response is signed
      * 
      */
-    public Boolean ocspEnableSignedResponse() {
-        return this.ocspEnableSignedResponse;
+    public Optional<Boolean> ocspEnableSignedResponse() {
+        return Optional.ofNullable(this.ocspEnableSignedResponse);
     }
     /**
      * @return Set to true to enable OCSP Validation
      * 
      */
-    public Boolean ocspEnabled() {
-        return this.ocspEnabled;
+    public Optional<Boolean> ocspEnabled() {
+        return Optional.ofNullable(this.ocspEnabled);
     }
     /**
      * @return This property specifies OCSP Responder URL.
      * 
      */
-    public String ocspResponderUrl() {
-        return this.ocspResponderUrl;
+    public Optional<String> ocspResponderUrl() {
+        return Optional.ofNullable(this.ocspResponderUrl);
     }
     /**
      * @return Revalidate OCSP status for user after X hours
      * 
      */
-    public Integer ocspRevalidateTime() {
-        return this.ocspRevalidateTime;
+    public Optional<Integer> ocspRevalidateTime() {
+        return Optional.ofNullable(this.ocspRevalidateTime);
     }
     /**
      * @return This property specifies the OCSP Server alias name
      * 
      */
-    public String ocspServerName() {
-        return this.ocspServerName;
+    public Optional<String> ocspServerName() {
+        return Optional.ofNullable(this.ocspServerName);
     }
     /**
      * @return OCSP Trusted Certificate Chain
      * 
      */
     public List<String> ocspTrustCertChains() {
-        return this.ocspTrustCertChains;
+        return this.ocspTrustCertChains == null ? List.of() : this.ocspTrustCertChains;
     }
     /**
      * @return Check for specific conditions of other certificate attributes
      * 
      */
-    public String otherCertMatchAttribute() {
-        return this.otherCertMatchAttribute;
+    public Optional<String> otherCertMatchAttribute() {
+        return Optional.ofNullable(this.otherCertMatchAttribute);
     }
     /**
      * @return Certificate alias list to create a chain for the incoming client certificate
      * 
      */
     public List<String> signingCertificateChains() {
-        return this.signingCertificateChains;
+        return this.signingCertificateChains == null ? List.of() : this.signingCertificateChains;
     }
     /**
      * @return This property specifies the userstore attribute value that must match the incoming certificate attribute.
      * 
      */
-    public String userMatchAttribute() {
-        return this.userMatchAttribute;
+    public Optional<String> userMatchAttribute() {
+        return Optional.ofNullable(this.userMatchAttribute);
     }
 
     public static Builder builder() {
@@ -228,23 +230,23 @@ public final class GetDomainsIdentityProvidersIdentityProviderUrnietfparamsscims
     }
     @CustomType.Builder
     public static final class Builder {
-        private String certMatchAttribute;
-        private Boolean crlCheckOnOcspFailureEnabled;
-        private Boolean crlEnabled;
-        private String crlLocation;
-        private Integer crlReloadDuration;
-        private Boolean ekuValidationEnabled;
-        private List<String> ekuValues;
-        private Boolean ocspAllowUnknownResponseStatus;
-        private Boolean ocspEnableSignedResponse;
-        private Boolean ocspEnabled;
-        private String ocspResponderUrl;
-        private Integer ocspRevalidateTime;
-        private String ocspServerName;
-        private List<String> ocspTrustCertChains;
-        private String otherCertMatchAttribute;
-        private List<String> signingCertificateChains;
-        private String userMatchAttribute;
+        private @Nullable String certMatchAttribute;
+        private @Nullable Boolean crlCheckOnOcspFailureEnabled;
+        private @Nullable Boolean crlEnabled;
+        private @Nullable String crlLocation;
+        private @Nullable Integer crlReloadDuration;
+        private @Nullable Boolean ekuValidationEnabled;
+        private @Nullable List<String> ekuValues;
+        private @Nullable Boolean ocspAllowUnknownResponseStatus;
+        private @Nullable Boolean ocspEnableSignedResponse;
+        private @Nullable Boolean ocspEnabled;
+        private @Nullable String ocspResponderUrl;
+        private @Nullable Integer ocspRevalidateTime;
+        private @Nullable String ocspServerName;
+        private @Nullable List<String> ocspTrustCertChains;
+        private @Nullable String otherCertMatchAttribute;
+        private @Nullable List<String> signingCertificateChains;
+        private @Nullable String userMatchAttribute;
         public Builder() {}
         public Builder(GetDomainsIdentityProvidersIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProvider defaults) {
     	      Objects.requireNonNull(defaults);
@@ -268,97 +270,97 @@ public final class GetDomainsIdentityProvidersIdentityProviderUrnietfparamsscims
         }
 
         @CustomType.Setter
-        public Builder certMatchAttribute(String certMatchAttribute) {
-            this.certMatchAttribute = Objects.requireNonNull(certMatchAttribute);
+        public Builder certMatchAttribute(@Nullable String certMatchAttribute) {
+            this.certMatchAttribute = certMatchAttribute;
             return this;
         }
         @CustomType.Setter
-        public Builder crlCheckOnOcspFailureEnabled(Boolean crlCheckOnOcspFailureEnabled) {
-            this.crlCheckOnOcspFailureEnabled = Objects.requireNonNull(crlCheckOnOcspFailureEnabled);
+        public Builder crlCheckOnOcspFailureEnabled(@Nullable Boolean crlCheckOnOcspFailureEnabled) {
+            this.crlCheckOnOcspFailureEnabled = crlCheckOnOcspFailureEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder crlEnabled(Boolean crlEnabled) {
-            this.crlEnabled = Objects.requireNonNull(crlEnabled);
+        public Builder crlEnabled(@Nullable Boolean crlEnabled) {
+            this.crlEnabled = crlEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder crlLocation(String crlLocation) {
-            this.crlLocation = Objects.requireNonNull(crlLocation);
+        public Builder crlLocation(@Nullable String crlLocation) {
+            this.crlLocation = crlLocation;
             return this;
         }
         @CustomType.Setter
-        public Builder crlReloadDuration(Integer crlReloadDuration) {
-            this.crlReloadDuration = Objects.requireNonNull(crlReloadDuration);
+        public Builder crlReloadDuration(@Nullable Integer crlReloadDuration) {
+            this.crlReloadDuration = crlReloadDuration;
             return this;
         }
         @CustomType.Setter
-        public Builder ekuValidationEnabled(Boolean ekuValidationEnabled) {
-            this.ekuValidationEnabled = Objects.requireNonNull(ekuValidationEnabled);
+        public Builder ekuValidationEnabled(@Nullable Boolean ekuValidationEnabled) {
+            this.ekuValidationEnabled = ekuValidationEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder ekuValues(List<String> ekuValues) {
-            this.ekuValues = Objects.requireNonNull(ekuValues);
+        public Builder ekuValues(@Nullable List<String> ekuValues) {
+            this.ekuValues = ekuValues;
             return this;
         }
         public Builder ekuValues(String... ekuValues) {
             return ekuValues(List.of(ekuValues));
         }
         @CustomType.Setter
-        public Builder ocspAllowUnknownResponseStatus(Boolean ocspAllowUnknownResponseStatus) {
-            this.ocspAllowUnknownResponseStatus = Objects.requireNonNull(ocspAllowUnknownResponseStatus);
+        public Builder ocspAllowUnknownResponseStatus(@Nullable Boolean ocspAllowUnknownResponseStatus) {
+            this.ocspAllowUnknownResponseStatus = ocspAllowUnknownResponseStatus;
             return this;
         }
         @CustomType.Setter
-        public Builder ocspEnableSignedResponse(Boolean ocspEnableSignedResponse) {
-            this.ocspEnableSignedResponse = Objects.requireNonNull(ocspEnableSignedResponse);
+        public Builder ocspEnableSignedResponse(@Nullable Boolean ocspEnableSignedResponse) {
+            this.ocspEnableSignedResponse = ocspEnableSignedResponse;
             return this;
         }
         @CustomType.Setter
-        public Builder ocspEnabled(Boolean ocspEnabled) {
-            this.ocspEnabled = Objects.requireNonNull(ocspEnabled);
+        public Builder ocspEnabled(@Nullable Boolean ocspEnabled) {
+            this.ocspEnabled = ocspEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder ocspResponderUrl(String ocspResponderUrl) {
-            this.ocspResponderUrl = Objects.requireNonNull(ocspResponderUrl);
+        public Builder ocspResponderUrl(@Nullable String ocspResponderUrl) {
+            this.ocspResponderUrl = ocspResponderUrl;
             return this;
         }
         @CustomType.Setter
-        public Builder ocspRevalidateTime(Integer ocspRevalidateTime) {
-            this.ocspRevalidateTime = Objects.requireNonNull(ocspRevalidateTime);
+        public Builder ocspRevalidateTime(@Nullable Integer ocspRevalidateTime) {
+            this.ocspRevalidateTime = ocspRevalidateTime;
             return this;
         }
         @CustomType.Setter
-        public Builder ocspServerName(String ocspServerName) {
-            this.ocspServerName = Objects.requireNonNull(ocspServerName);
+        public Builder ocspServerName(@Nullable String ocspServerName) {
+            this.ocspServerName = ocspServerName;
             return this;
         }
         @CustomType.Setter
-        public Builder ocspTrustCertChains(List<String> ocspTrustCertChains) {
-            this.ocspTrustCertChains = Objects.requireNonNull(ocspTrustCertChains);
+        public Builder ocspTrustCertChains(@Nullable List<String> ocspTrustCertChains) {
+            this.ocspTrustCertChains = ocspTrustCertChains;
             return this;
         }
         public Builder ocspTrustCertChains(String... ocspTrustCertChains) {
             return ocspTrustCertChains(List.of(ocspTrustCertChains));
         }
         @CustomType.Setter
-        public Builder otherCertMatchAttribute(String otherCertMatchAttribute) {
-            this.otherCertMatchAttribute = Objects.requireNonNull(otherCertMatchAttribute);
+        public Builder otherCertMatchAttribute(@Nullable String otherCertMatchAttribute) {
+            this.otherCertMatchAttribute = otherCertMatchAttribute;
             return this;
         }
         @CustomType.Setter
-        public Builder signingCertificateChains(List<String> signingCertificateChains) {
-            this.signingCertificateChains = Objects.requireNonNull(signingCertificateChains);
+        public Builder signingCertificateChains(@Nullable List<String> signingCertificateChains) {
+            this.signingCertificateChains = signingCertificateChains;
             return this;
         }
         public Builder signingCertificateChains(String... signingCertificateChains) {
             return signingCertificateChains(List.of(signingCertificateChains));
         }
         @CustomType.Setter
-        public Builder userMatchAttribute(String userMatchAttribute) {
-            this.userMatchAttribute = Objects.requireNonNull(userMatchAttribute);
+        public Builder userMatchAttribute(@Nullable String userMatchAttribute) {
+            this.userMatchAttribute = userMatchAttribute;
             return this;
         }
         public GetDomainsIdentityProvidersIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProvider build() {

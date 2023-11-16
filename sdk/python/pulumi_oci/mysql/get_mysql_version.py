@@ -49,7 +49,7 @@ class GetMysqlVersionResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -57,10 +57,7 @@ class GetMysqlVersionResult:
 
     @property
     @pulumi.getter
-    def versions(self) -> Sequence['outputs.GetMysqlVersionVersionResult']:
-        """
-        The list of supported MySQL Versions.
-        """
+    def versions(self) -> Optional[Sequence['outputs.GetMysqlVersionVersionResult']]:
         return pulumi.get(self, "versions")
 
 
@@ -80,23 +77,7 @@ def get_mysql_version(compartment_id: Optional[str] = None,
                       filters: Optional[Sequence[pulumi.InputType['GetMysqlVersionFilterArgs']]] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMysqlVersionResult:
     """
-    This data source provides the list of Mysql Versions in Oracle Cloud Infrastructure MySQL Database service.
-
-    Get a list of supported and available MySQL database major versions.
-
-    The list is sorted by version family.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_mysql_versions = oci.Mysql.get_mysql_version(compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -116,22 +97,6 @@ def get_mysql_version_output(compartment_id: Optional[pulumi.Input[str]] = None,
                              filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetMysqlVersionFilterArgs']]]]] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMysqlVersionResult]:
     """
-    This data source provides the list of Mysql Versions in Oracle Cloud Infrastructure MySQL Database service.
-
-    Get a list of supported and available MySQL database major versions.
-
-    The list is sorted by version family.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_mysql_versions = oci.Mysql.get_mysql_version(compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     ...

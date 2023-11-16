@@ -11,6 +11,8 @@ import com.pulumi.oci.DatabaseMigration.outputs.GetMigrationGoldenGateDetailHubT
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMigrationGoldenGateDetailHub {
@@ -18,99 +20,99 @@ public final class GetMigrationGoldenGateDetailHub {
      * @return OCID of GoldenGate compute instance.
      * 
      */
-    private String computeId;
+    private @Nullable String computeId;
     /**
      * @return Database Administrator Credentials details.
      * 
      */
-    private List<GetMigrationGoldenGateDetailHubRestAdminCredential> restAdminCredentials;
+    private @Nullable List<GetMigrationGoldenGateDetailHubRestAdminCredential> restAdminCredentials;
     /**
      * @return Database Administrator Credentials details.
      * 
      */
-    private List<GetMigrationGoldenGateDetailHubSourceContainerDbAdminCredential> sourceContainerDbAdminCredentials;
+    private @Nullable List<GetMigrationGoldenGateDetailHubSourceContainerDbAdminCredential> sourceContainerDbAdminCredentials;
     /**
      * @return Database Administrator Credentials details.
      * 
      */
-    private List<GetMigrationGoldenGateDetailHubSourceDbAdminCredential> sourceDbAdminCredentials;
+    private @Nullable List<GetMigrationGoldenGateDetailHubSourceDbAdminCredential> sourceDbAdminCredentials;
     /**
      * @return Name of GoldenGate deployment to operate on source database
      * 
      */
-    private String sourceMicroservicesDeploymentName;
+    private @Nullable String sourceMicroservicesDeploymentName;
     /**
      * @return Database Administrator Credentials details.
      * 
      */
-    private List<GetMigrationGoldenGateDetailHubTargetDbAdminCredential> targetDbAdminCredentials;
+    private @Nullable List<GetMigrationGoldenGateDetailHubTargetDbAdminCredential> targetDbAdminCredentials;
     /**
      * @return Name of GoldenGate deployment to operate on target database
      * 
      */
-    private String targetMicroservicesDeploymentName;
+    private @Nullable String targetMicroservicesDeploymentName;
     /**
      * @return Oracle GoldenGate hub&#39;s REST endpoint. Refer to https://docs.oracle.com/en/middleware/goldengate/core/19.1/securing/network.html#GUID-A709DA55-111D-455E-8942-C9BDD1E38CAA
      * 
      */
-    private String url;
+    private @Nullable String url;
 
     private GetMigrationGoldenGateDetailHub() {}
     /**
      * @return OCID of GoldenGate compute instance.
      * 
      */
-    public String computeId() {
-        return this.computeId;
+    public Optional<String> computeId() {
+        return Optional.ofNullable(this.computeId);
     }
     /**
      * @return Database Administrator Credentials details.
      * 
      */
     public List<GetMigrationGoldenGateDetailHubRestAdminCredential> restAdminCredentials() {
-        return this.restAdminCredentials;
+        return this.restAdminCredentials == null ? List.of() : this.restAdminCredentials;
     }
     /**
      * @return Database Administrator Credentials details.
      * 
      */
     public List<GetMigrationGoldenGateDetailHubSourceContainerDbAdminCredential> sourceContainerDbAdminCredentials() {
-        return this.sourceContainerDbAdminCredentials;
+        return this.sourceContainerDbAdminCredentials == null ? List.of() : this.sourceContainerDbAdminCredentials;
     }
     /**
      * @return Database Administrator Credentials details.
      * 
      */
     public List<GetMigrationGoldenGateDetailHubSourceDbAdminCredential> sourceDbAdminCredentials() {
-        return this.sourceDbAdminCredentials;
+        return this.sourceDbAdminCredentials == null ? List.of() : this.sourceDbAdminCredentials;
     }
     /**
      * @return Name of GoldenGate deployment to operate on source database
      * 
      */
-    public String sourceMicroservicesDeploymentName() {
-        return this.sourceMicroservicesDeploymentName;
+    public Optional<String> sourceMicroservicesDeploymentName() {
+        return Optional.ofNullable(this.sourceMicroservicesDeploymentName);
     }
     /**
      * @return Database Administrator Credentials details.
      * 
      */
     public List<GetMigrationGoldenGateDetailHubTargetDbAdminCredential> targetDbAdminCredentials() {
-        return this.targetDbAdminCredentials;
+        return this.targetDbAdminCredentials == null ? List.of() : this.targetDbAdminCredentials;
     }
     /**
      * @return Name of GoldenGate deployment to operate on target database
      * 
      */
-    public String targetMicroservicesDeploymentName() {
-        return this.targetMicroservicesDeploymentName;
+    public Optional<String> targetMicroservicesDeploymentName() {
+        return Optional.ofNullable(this.targetMicroservicesDeploymentName);
     }
     /**
      * @return Oracle GoldenGate hub&#39;s REST endpoint. Refer to https://docs.oracle.com/en/middleware/goldengate/core/19.1/securing/network.html#GUID-A709DA55-111D-455E-8942-C9BDD1E38CAA
      * 
      */
-    public String url() {
-        return this.url;
+    public Optional<String> url() {
+        return Optional.ofNullable(this.url);
     }
 
     public static Builder builder() {
@@ -122,14 +124,14 @@ public final class GetMigrationGoldenGateDetailHub {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String computeId;
-        private List<GetMigrationGoldenGateDetailHubRestAdminCredential> restAdminCredentials;
-        private List<GetMigrationGoldenGateDetailHubSourceContainerDbAdminCredential> sourceContainerDbAdminCredentials;
-        private List<GetMigrationGoldenGateDetailHubSourceDbAdminCredential> sourceDbAdminCredentials;
-        private String sourceMicroservicesDeploymentName;
-        private List<GetMigrationGoldenGateDetailHubTargetDbAdminCredential> targetDbAdminCredentials;
-        private String targetMicroservicesDeploymentName;
-        private String url;
+        private @Nullable String computeId;
+        private @Nullable List<GetMigrationGoldenGateDetailHubRestAdminCredential> restAdminCredentials;
+        private @Nullable List<GetMigrationGoldenGateDetailHubSourceContainerDbAdminCredential> sourceContainerDbAdminCredentials;
+        private @Nullable List<GetMigrationGoldenGateDetailHubSourceDbAdminCredential> sourceDbAdminCredentials;
+        private @Nullable String sourceMicroservicesDeploymentName;
+        private @Nullable List<GetMigrationGoldenGateDetailHubTargetDbAdminCredential> targetDbAdminCredentials;
+        private @Nullable String targetMicroservicesDeploymentName;
+        private @Nullable String url;
         public Builder() {}
         public Builder(GetMigrationGoldenGateDetailHub defaults) {
     	      Objects.requireNonNull(defaults);
@@ -144,55 +146,55 @@ public final class GetMigrationGoldenGateDetailHub {
         }
 
         @CustomType.Setter
-        public Builder computeId(String computeId) {
-            this.computeId = Objects.requireNonNull(computeId);
+        public Builder computeId(@Nullable String computeId) {
+            this.computeId = computeId;
             return this;
         }
         @CustomType.Setter
-        public Builder restAdminCredentials(List<GetMigrationGoldenGateDetailHubRestAdminCredential> restAdminCredentials) {
-            this.restAdminCredentials = Objects.requireNonNull(restAdminCredentials);
+        public Builder restAdminCredentials(@Nullable List<GetMigrationGoldenGateDetailHubRestAdminCredential> restAdminCredentials) {
+            this.restAdminCredentials = restAdminCredentials;
             return this;
         }
         public Builder restAdminCredentials(GetMigrationGoldenGateDetailHubRestAdminCredential... restAdminCredentials) {
             return restAdminCredentials(List.of(restAdminCredentials));
         }
         @CustomType.Setter
-        public Builder sourceContainerDbAdminCredentials(List<GetMigrationGoldenGateDetailHubSourceContainerDbAdminCredential> sourceContainerDbAdminCredentials) {
-            this.sourceContainerDbAdminCredentials = Objects.requireNonNull(sourceContainerDbAdminCredentials);
+        public Builder sourceContainerDbAdminCredentials(@Nullable List<GetMigrationGoldenGateDetailHubSourceContainerDbAdminCredential> sourceContainerDbAdminCredentials) {
+            this.sourceContainerDbAdminCredentials = sourceContainerDbAdminCredentials;
             return this;
         }
         public Builder sourceContainerDbAdminCredentials(GetMigrationGoldenGateDetailHubSourceContainerDbAdminCredential... sourceContainerDbAdminCredentials) {
             return sourceContainerDbAdminCredentials(List.of(sourceContainerDbAdminCredentials));
         }
         @CustomType.Setter
-        public Builder sourceDbAdminCredentials(List<GetMigrationGoldenGateDetailHubSourceDbAdminCredential> sourceDbAdminCredentials) {
-            this.sourceDbAdminCredentials = Objects.requireNonNull(sourceDbAdminCredentials);
+        public Builder sourceDbAdminCredentials(@Nullable List<GetMigrationGoldenGateDetailHubSourceDbAdminCredential> sourceDbAdminCredentials) {
+            this.sourceDbAdminCredentials = sourceDbAdminCredentials;
             return this;
         }
         public Builder sourceDbAdminCredentials(GetMigrationGoldenGateDetailHubSourceDbAdminCredential... sourceDbAdminCredentials) {
             return sourceDbAdminCredentials(List.of(sourceDbAdminCredentials));
         }
         @CustomType.Setter
-        public Builder sourceMicroservicesDeploymentName(String sourceMicroservicesDeploymentName) {
-            this.sourceMicroservicesDeploymentName = Objects.requireNonNull(sourceMicroservicesDeploymentName);
+        public Builder sourceMicroservicesDeploymentName(@Nullable String sourceMicroservicesDeploymentName) {
+            this.sourceMicroservicesDeploymentName = sourceMicroservicesDeploymentName;
             return this;
         }
         @CustomType.Setter
-        public Builder targetDbAdminCredentials(List<GetMigrationGoldenGateDetailHubTargetDbAdminCredential> targetDbAdminCredentials) {
-            this.targetDbAdminCredentials = Objects.requireNonNull(targetDbAdminCredentials);
+        public Builder targetDbAdminCredentials(@Nullable List<GetMigrationGoldenGateDetailHubTargetDbAdminCredential> targetDbAdminCredentials) {
+            this.targetDbAdminCredentials = targetDbAdminCredentials;
             return this;
         }
         public Builder targetDbAdminCredentials(GetMigrationGoldenGateDetailHubTargetDbAdminCredential... targetDbAdminCredentials) {
             return targetDbAdminCredentials(List.of(targetDbAdminCredentials));
         }
         @CustomType.Setter
-        public Builder targetMicroservicesDeploymentName(String targetMicroservicesDeploymentName) {
-            this.targetMicroservicesDeploymentName = Objects.requireNonNull(targetMicroservicesDeploymentName);
+        public Builder targetMicroservicesDeploymentName(@Nullable String targetMicroservicesDeploymentName) {
+            this.targetMicroservicesDeploymentName = targetMicroservicesDeploymentName;
             return this;
         }
         @CustomType.Setter
-        public Builder url(String url) {
-            this.url = Objects.requireNonNull(url);
+        public Builder url(@Nullable String url) {
+            this.url = url;
             return this;
         }
         public GetMigrationGoldenGateDetailHub build() {

@@ -135,7 +135,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="allowedChars", refs={String.class}, tree="[0]")
-    private Output<String> allowedChars;
+    private Output</* @Nullable */ String> allowedChars;
 
     /**
      * @return (Updatable) A String value whose contents indicate a set of characters that can appear, in any sequence, in a password value
@@ -150,8 +150,8 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<String> allowedChars() {
-        return this.allowedChars;
+    public Output<Optional<String>> allowedChars() {
+        return Codegen.optional(this.allowedChars);
     }
     /**
      * (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If &#39;attributes&#39; query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
@@ -210,7 +210,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="compartmentOcid", refs={String.class}, tree="[0]")
-    private Output<String> compartmentOcid;
+    private Output</* @Nullable */ String> compartmentOcid;
 
     /**
      * @return (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
@@ -226,8 +226,8 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<String> compartmentOcid() {
-        return this.compartmentOcid;
+    public Output<Optional<String>> compartmentOcid() {
+        return Codegen.optional(this.compartmentOcid);
     }
     /**
      * (Updatable) List of password policy rules that have values set. This map of stringKey:stringValue pairs can be used to aid users while setting/resetting password
@@ -244,7 +244,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="configuredPasswordPolicyRules", refs={List.class,DomainsPasswordPolicyConfiguredPasswordPolicyRule.class}, tree="[0,1]")
-    private Output<List<DomainsPasswordPolicyConfiguredPasswordPolicyRule>> configuredPasswordPolicyRules;
+    private Output</* @Nullable */ List<DomainsPasswordPolicyConfiguredPasswordPolicyRule>> configuredPasswordPolicyRules;
 
     /**
      * @return (Updatable) List of password policy rules that have values set. This map of stringKey:stringValue pairs can be used to aid users while setting/resetting password
@@ -260,8 +260,8 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<List<DomainsPasswordPolicyConfiguredPasswordPolicyRule>> configuredPasswordPolicyRules() {
-        return this.configuredPasswordPolicyRules;
+    public Output<Optional<List<DomainsPasswordPolicyConfiguredPasswordPolicyRule>>> configuredPasswordPolicyRules() {
+        return Codegen.optional(this.configuredPasswordPolicyRules);
     }
     /**
      * (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
@@ -278,7 +278,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="deleteInProgress", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> deleteInProgress;
+    private Output</* @Nullable */ Boolean> deleteInProgress;
 
     /**
      * @return (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
@@ -294,8 +294,8 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<Boolean> deleteInProgress() {
-        return this.deleteInProgress;
+    public Output<Optional<Boolean>> deleteInProgress() {
+        return Codegen.optional(this.deleteInProgress);
     }
     /**
      * (Updatable) A String that describes the password policy
@@ -311,7 +311,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
-    private Output<String> description;
+    private Output</* @Nullable */ String> description;
 
     /**
      * @return (Updatable) A String that describes the password policy
@@ -326,8 +326,8 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<String> description() {
-        return this.description;
+    public Output<Optional<String>> description() {
+        return Codegen.optional(this.description);
     }
     /**
      * (Updatable) A delimiter used to separate characters in the dictionary file
@@ -343,7 +343,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="dictionaryDelimiter", refs={String.class}, tree="[0]")
-    private Output<String> dictionaryDelimiter;
+    private Output</* @Nullable */ String> dictionaryDelimiter;
 
     /**
      * @return (Updatable) A delimiter used to separate characters in the dictionary file
@@ -358,8 +358,8 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<String> dictionaryDelimiter() {
-        return this.dictionaryDelimiter;
+    public Output<Optional<String>> dictionaryDelimiter() {
+        return Codegen.optional(this.dictionaryDelimiter);
     }
     /**
      * (Updatable) A Reference value that contains the URI of a dictionary of words not allowed to appear within a password value
@@ -375,7 +375,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="dictionaryLocation", refs={String.class}, tree="[0]")
-    private Output<String> dictionaryLocation;
+    private Output</* @Nullable */ String> dictionaryLocation;
 
     /**
      * @return (Updatable) A Reference value that contains the URI of a dictionary of words not allowed to appear within a password value
@@ -390,8 +390,8 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<String> dictionaryLocation() {
-        return this.dictionaryLocation;
+    public Output<Optional<String>> dictionaryLocation() {
+        return Codegen.optional(this.dictionaryLocation);
     }
     /**
      * (Updatable) Indicates whether the password can match a dictionary word
@@ -407,7 +407,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="dictionaryWordDisallowed", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> dictionaryWordDisallowed;
+    private Output</* @Nullable */ Boolean> dictionaryWordDisallowed;
 
     /**
      * @return (Updatable) Indicates whether the password can match a dictionary word
@@ -422,8 +422,8 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<Boolean> dictionaryWordDisallowed() {
-        return this.dictionaryWordDisallowed;
+    public Output<Optional<Boolean>> dictionaryWordDisallowed() {
+        return Codegen.optional(this.dictionaryWordDisallowed);
     }
     /**
      * (Updatable) A String value whose contents indicate a set of characters that cannot appear, in any sequence, in a password value
@@ -439,7 +439,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="disallowedChars", refs={String.class}, tree="[0]")
-    private Output<String> disallowedChars;
+    private Output</* @Nullable */ String> disallowedChars;
 
     /**
      * @return (Updatable) A String value whose contents indicate a set of characters that cannot appear, in any sequence, in a password value
@@ -454,8 +454,8 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<String> disallowedChars() {
-        return this.disallowedChars;
+    public Output<Optional<String>> disallowedChars() {
+        return Codegen.optional(this.disallowedChars);
     }
     /**
      * (Updatable) A String value whose contents indicate a set of substrings that cannot appear, in any sequence, in a password value
@@ -471,7 +471,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="disallowedSubstrings", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> disallowedSubstrings;
+    private Output</* @Nullable */ List<String>> disallowedSubstrings;
 
     /**
      * @return (Updatable) A String value whose contents indicate a set of substrings that cannot appear, in any sequence, in a password value
@@ -486,8 +486,8 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<List<String>> disallowedSubstrings() {
-        return this.disallowedSubstrings;
+    public Output<Optional<List<String>>> disallowedSubstrings() {
+        return Codegen.optional(this.disallowedSubstrings);
     }
     /**
      * (Updatable) List of User attributes whose values are not allowed in the password.
@@ -505,7 +505,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="disallowedUserAttributeValues", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> disallowedUserAttributeValues;
+    private Output</* @Nullable */ List<String>> disallowedUserAttributeValues;
 
     /**
      * @return (Updatable) List of User attributes whose values are not allowed in the password.
@@ -522,8 +522,8 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<List<String>> disallowedUserAttributeValues() {
-        return this.disallowedUserAttributeValues;
+    public Output<Optional<List<String>>> disallowedUserAttributeValues() {
+        return Codegen.optional(this.disallowedUserAttributeValues);
     }
     /**
      * (Updatable) The number of distinct characters between old password and new password
@@ -541,7 +541,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="distinctCharacters", refs={Integer.class}, tree="[0]")
-    private Output<Integer> distinctCharacters;
+    private Output</* @Nullable */ Integer> distinctCharacters;
 
     /**
      * @return (Updatable) The number of distinct characters between old password and new password
@@ -558,8 +558,8 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<Integer> distinctCharacters() {
-        return this.distinctCharacters;
+    public Output<Optional<Integer>> distinctCharacters() {
+        return Codegen.optional(this.distinctCharacters);
     }
     /**
      * (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
@@ -576,7 +576,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="domainOcid", refs={String.class}, tree="[0]")
-    private Output<String> domainOcid;
+    private Output</* @Nullable */ String> domainOcid;
 
     /**
      * @return (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
@@ -592,8 +592,8 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<String> domainOcid() {
-        return this.domainOcid;
+    public Output<Optional<String>> domainOcid() {
+        return Codegen.optional(this.domainOcid);
     }
     /**
      * (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer&#39;s tenant.
@@ -609,7 +609,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="externalId", refs={String.class}, tree="[0]")
-    private Output<String> externalId;
+    private Output</* @Nullable */ String> externalId;
 
     /**
      * @return (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer&#39;s tenant.
@@ -624,8 +624,8 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<String> externalId() {
-        return this.externalId;
+    public Output<Optional<String>> externalId() {
+        return Codegen.optional(this.externalId);
     }
     /**
      * (Updatable) Indicates a sequence of characters that match the user&#39;s first name of given name cannot be the password. Password validation against policy will be ignored if length of first name is less than or equal to 3 characters.
@@ -641,7 +641,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="firstNameDisallowed", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> firstNameDisallowed;
+    private Output</* @Nullable */ Boolean> firstNameDisallowed;
 
     /**
      * @return (Updatable) Indicates a sequence of characters that match the user&#39;s first name of given name cannot be the password. Password validation against policy will be ignored if length of first name is less than or equal to 3 characters.
@@ -656,8 +656,8 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<Boolean> firstNameDisallowed() {
-        return this.firstNameDisallowed;
+    public Output<Optional<Boolean>> firstNameDisallowed() {
+        return Codegen.optional(this.firstNameDisallowed);
     }
     /**
      * (Updatable) Indicates whether all of the users should be forced to reset their password on the next login (to comply with new password policy changes)
@@ -673,7 +673,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="forcePasswordReset", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> forcePasswordReset;
+    private Output</* @Nullable */ Boolean> forcePasswordReset;
 
     /**
      * @return (Updatable) Indicates whether all of the users should be forced to reset their password on the next login (to comply with new password policy changes)
@@ -688,8 +688,8 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<Boolean> forcePasswordReset() {
-        return this.forcePasswordReset;
+    public Output<Optional<Boolean>> forcePasswordReset() {
+        return Codegen.optional(this.forcePasswordReset);
     }
     /**
      * (Updatable) A list of groups that the password policy belongs to.
@@ -709,7 +709,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="groups", refs={List.class,DomainsPasswordPolicyGroup.class}, tree="[0,1]")
-    private Output<List<DomainsPasswordPolicyGroup>> groups;
+    private Output</* @Nullable */ List<DomainsPasswordPolicyGroup>> groups;
 
     /**
      * @return (Updatable) A list of groups that the password policy belongs to.
@@ -728,8 +728,8 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<List<DomainsPasswordPolicyGroup>> groups() {
-        return this.groups;
+    public Output<Optional<List<DomainsPasswordPolicyGroup>>> groups() {
+        return Codegen.optional(this.groups);
     }
     /**
      * (Updatable) The User or App who created the Resource
@@ -744,7 +744,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="idcsCreatedBies", refs={List.class,DomainsPasswordPolicyIdcsCreatedBy.class}, tree="[0,1]")
-    private Output<List<DomainsPasswordPolicyIdcsCreatedBy>> idcsCreatedBies;
+    private Output</* @Nullable */ List<DomainsPasswordPolicyIdcsCreatedBy>> idcsCreatedBies;
 
     /**
      * @return (Updatable) The User or App who created the Resource
@@ -758,8 +758,8 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * type: complex
      * 
      */
-    public Output<List<DomainsPasswordPolicyIdcsCreatedBy>> idcsCreatedBies() {
-        return this.idcsCreatedBies;
+    public Output<Optional<List<DomainsPasswordPolicyIdcsCreatedBy>>> idcsCreatedBies() {
+        return Codegen.optional(this.idcsCreatedBies);
     }
     /**
      * The basic endpoint for the identity domain
@@ -788,7 +788,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="idcsLastModifiedBies", refs={List.class,DomainsPasswordPolicyIdcsLastModifiedBy.class}, tree="[0,1]")
-    private Output<List<DomainsPasswordPolicyIdcsLastModifiedBy>> idcsLastModifiedBies;
+    private Output</* @Nullable */ List<DomainsPasswordPolicyIdcsLastModifiedBy>> idcsLastModifiedBies;
 
     /**
      * @return (Updatable) The User or App who modified the Resource
@@ -802,8 +802,8 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * type: complex
      * 
      */
-    public Output<List<DomainsPasswordPolicyIdcsLastModifiedBy>> idcsLastModifiedBies() {
-        return this.idcsLastModifiedBies;
+    public Output<Optional<List<DomainsPasswordPolicyIdcsLastModifiedBy>>> idcsLastModifiedBies() {
+        return Codegen.optional(this.idcsLastModifiedBies);
     }
     /**
      * (Updatable) The release number when the resource was upgraded.
@@ -820,7 +820,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="idcsLastUpgradedInRelease", refs={String.class}, tree="[0]")
-    private Output<String> idcsLastUpgradedInRelease;
+    private Output</* @Nullable */ String> idcsLastUpgradedInRelease;
 
     /**
      * @return (Updatable) The release number when the resource was upgraded.
@@ -836,8 +836,8 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<String> idcsLastUpgradedInRelease() {
-        return this.idcsLastUpgradedInRelease;
+    public Output<Optional<String>> idcsLastUpgradedInRelease() {
+        return Codegen.optional(this.idcsLastUpgradedInRelease);
     }
     /**
      * (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
@@ -853,7 +853,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="idcsPreventedOperations", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> idcsPreventedOperations;
+    private Output</* @Nullable */ List<String>> idcsPreventedOperations;
 
     /**
      * @return (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
@@ -868,8 +868,8 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<List<String>> idcsPreventedOperations() {
-        return this.idcsPreventedOperations;
+    public Output<Optional<List<String>>> idcsPreventedOperations() {
+        return Codegen.optional(this.idcsPreventedOperations);
     }
     /**
      * (Updatable) Indicates a sequence of characters that match the user&#39;s last name of given name cannot be the password. Password validation against policy will be ignored if length of last name is less than or equal to 3 characters.
@@ -885,7 +885,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="lastNameDisallowed", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> lastNameDisallowed;
+    private Output</* @Nullable */ Boolean> lastNameDisallowed;
 
     /**
      * @return (Updatable) Indicates a sequence of characters that match the user&#39;s last name of given name cannot be the password. Password validation against policy will be ignored if length of last name is less than or equal to 3 characters.
@@ -900,8 +900,8 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<Boolean> lastNameDisallowed() {
-        return this.lastNameDisallowed;
+    public Output<Optional<Boolean>> lastNameDisallowed() {
+        return Codegen.optional(this.lastNameDisallowed);
     }
     /**
      * (Updatable) The time period in minutes to lock out a user account when the threshold of invalid login attempts is reached. The available range is from 5 through 1440 minutes (24 hours).
@@ -917,7 +917,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="lockoutDuration", refs={Integer.class}, tree="[0]")
-    private Output<Integer> lockoutDuration;
+    private Output</* @Nullable */ Integer> lockoutDuration;
 
     /**
      * @return (Updatable) The time period in minutes to lock out a user account when the threshold of invalid login attempts is reached. The available range is from 5 through 1440 minutes (24 hours).
@@ -932,8 +932,8 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<Integer> lockoutDuration() {
-        return this.lockoutDuration;
+    public Output<Optional<Integer>> lockoutDuration() {
+        return Codegen.optional(this.lockoutDuration);
     }
     /**
      * (Updatable) An integer that represents the maximum number of failed logins before an account is locked
@@ -949,7 +949,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="maxIncorrectAttempts", refs={Integer.class}, tree="[0]")
-    private Output<Integer> maxIncorrectAttempts;
+    private Output</* @Nullable */ Integer> maxIncorrectAttempts;
 
     /**
      * @return (Updatable) An integer that represents the maximum number of failed logins before an account is locked
@@ -964,8 +964,8 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<Integer> maxIncorrectAttempts() {
-        return this.maxIncorrectAttempts;
+    public Output<Optional<Integer>> maxIncorrectAttempts() {
+        return Codegen.optional(this.maxIncorrectAttempts);
     }
     /**
      * (Updatable) The maximum password length (in characters). A value of 0 or no value indicates no maximum length restriction.
@@ -982,7 +982,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="maxLength", refs={Integer.class}, tree="[0]")
-    private Output<Integer> maxLength;
+    private Output</* @Nullable */ Integer> maxLength;
 
     /**
      * @return (Updatable) The maximum password length (in characters). A value of 0 or no value indicates no maximum length restriction.
@@ -998,8 +998,8 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<Integer> maxLength() {
-        return this.maxLength;
+    public Output<Optional<Integer>> maxLength() {
+        return Codegen.optional(this.maxLength);
     }
     /**
      * (Updatable) The maximum number of repeated characters allowed in a password.  A value of 0 or no value indicates no such restriction.
@@ -1015,7 +1015,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="maxRepeatedChars", refs={Integer.class}, tree="[0]")
-    private Output<Integer> maxRepeatedChars;
+    private Output</* @Nullable */ Integer> maxRepeatedChars;
 
     /**
      * @return (Updatable) The maximum number of repeated characters allowed in a password.  A value of 0 or no value indicates no such restriction.
@@ -1030,8 +1030,8 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<Integer> maxRepeatedChars() {
-        return this.maxRepeatedChars;
+    public Output<Optional<Integer>> maxRepeatedChars() {
+        return Codegen.optional(this.maxRepeatedChars);
     }
     /**
      * (Updatable) The maximum number of special characters in a password.  A value of 0 or no value indicates no maximum special characters restriction.
@@ -1047,7 +1047,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="maxSpecialChars", refs={Integer.class}, tree="[0]")
-    private Output<Integer> maxSpecialChars;
+    private Output</* @Nullable */ Integer> maxSpecialChars;
 
     /**
      * @return (Updatable) The maximum number of special characters in a password.  A value of 0 or no value indicates no maximum special characters restriction.
@@ -1062,8 +1062,8 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<Integer> maxSpecialChars() {
-        return this.maxSpecialChars;
+    public Output<Optional<Integer>> maxSpecialChars() {
+        return Codegen.optional(this.maxSpecialChars);
     }
     /**
      * (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
@@ -1080,7 +1080,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="metas", refs={List.class,DomainsPasswordPolicyMeta.class}, tree="[0,1]")
-    private Output<List<DomainsPasswordPolicyMeta>> metas;
+    private Output</* @Nullable */ List<DomainsPasswordPolicyMeta>> metas;
 
     /**
      * @return (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
@@ -1096,8 +1096,8 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * type: complex
      * 
      */
-    public Output<List<DomainsPasswordPolicyMeta>> metas() {
-        return this.metas;
+    public Output<Optional<List<DomainsPasswordPolicyMeta>>> metas() {
+        return Codegen.optional(this.metas);
     }
     /**
      * (Updatable) The minimum number of a combination of alphabetic and numeric characters in a password.  A value of 0 or no value indicates no minimum alphanumeric character restriction.
@@ -1113,7 +1113,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="minAlphaNumerals", refs={Integer.class}, tree="[0]")
-    private Output<Integer> minAlphaNumerals;
+    private Output</* @Nullable */ Integer> minAlphaNumerals;
 
     /**
      * @return (Updatable) The minimum number of a combination of alphabetic and numeric characters in a password.  A value of 0 or no value indicates no minimum alphanumeric character restriction.
@@ -1128,8 +1128,8 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<Integer> minAlphaNumerals() {
-        return this.minAlphaNumerals;
+    public Output<Optional<Integer>> minAlphaNumerals() {
+        return Codegen.optional(this.minAlphaNumerals);
     }
     /**
      * (Updatable) The minimum number of alphabetic characters in a password.  A value of 0 or no value indicates no minimum alphas restriction.
@@ -1145,7 +1145,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="minAlphas", refs={Integer.class}, tree="[0]")
-    private Output<Integer> minAlphas;
+    private Output</* @Nullable */ Integer> minAlphas;
 
     /**
      * @return (Updatable) The minimum number of alphabetic characters in a password.  A value of 0 or no value indicates no minimum alphas restriction.
@@ -1160,8 +1160,8 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<Integer> minAlphas() {
-        return this.minAlphas;
+    public Output<Optional<Integer>> minAlphas() {
+        return Codegen.optional(this.minAlphas);
     }
     /**
      * (Updatable) The minimum password length (in characters). A value of 0 or no value indicates no minimum length restriction.
@@ -1177,7 +1177,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="minLength", refs={Integer.class}, tree="[0]")
-    private Output<Integer> minLength;
+    private Output</* @Nullable */ Integer> minLength;
 
     /**
      * @return (Updatable) The minimum password length (in characters). A value of 0 or no value indicates no minimum length restriction.
@@ -1192,8 +1192,8 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<Integer> minLength() {
-        return this.minLength;
+    public Output<Optional<Integer>> minLength() {
+        return Codegen.optional(this.minLength);
     }
     /**
      * (Updatable) The minimum number of lowercase alphabetic characters in a password.  A value of 0 or no value indicates no minimum lowercase restriction.
@@ -1209,7 +1209,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="minLowerCase", refs={Integer.class}, tree="[0]")
-    private Output<Integer> minLowerCase;
+    private Output</* @Nullable */ Integer> minLowerCase;
 
     /**
      * @return (Updatable) The minimum number of lowercase alphabetic characters in a password.  A value of 0 or no value indicates no minimum lowercase restriction.
@@ -1224,8 +1224,8 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<Integer> minLowerCase() {
-        return this.minLowerCase;
+    public Output<Optional<Integer>> minLowerCase() {
+        return Codegen.optional(this.minLowerCase);
     }
     /**
      * (Updatable) The minimum number of numeric characters in a password.  A value of 0 or no value indicates no minimum numeric character restriction.
@@ -1241,7 +1241,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="minNumerals", refs={Integer.class}, tree="[0]")
-    private Output<Integer> minNumerals;
+    private Output</* @Nullable */ Integer> minNumerals;
 
     /**
      * @return (Updatable) The minimum number of numeric characters in a password.  A value of 0 or no value indicates no minimum numeric character restriction.
@@ -1256,8 +1256,8 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<Integer> minNumerals() {
-        return this.minNumerals;
+    public Output<Optional<Integer>> minNumerals() {
+        return Codegen.optional(this.minNumerals);
     }
     /**
      * (Updatable) Minimum time after which the user can resubmit the reset password request
@@ -1273,7 +1273,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="minPasswordAge", refs={Integer.class}, tree="[0]")
-    private Output<Integer> minPasswordAge;
+    private Output</* @Nullable */ Integer> minPasswordAge;
 
     /**
      * @return (Updatable) Minimum time after which the user can resubmit the reset password request
@@ -1288,8 +1288,8 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<Integer> minPasswordAge() {
-        return this.minPasswordAge;
+    public Output<Optional<Integer>> minPasswordAge() {
+        return Codegen.optional(this.minPasswordAge);
     }
     /**
      * (Updatable) The minimum number of special characters in a password. A value of 0 or no value indicates no minimum special characters restriction.
@@ -1305,7 +1305,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="minSpecialChars", refs={Integer.class}, tree="[0]")
-    private Output<Integer> minSpecialChars;
+    private Output</* @Nullable */ Integer> minSpecialChars;
 
     /**
      * @return (Updatable) The minimum number of special characters in a password. A value of 0 or no value indicates no minimum special characters restriction.
@@ -1320,8 +1320,8 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<Integer> minSpecialChars() {
-        return this.minSpecialChars;
+    public Output<Optional<Integer>> minSpecialChars() {
+        return Codegen.optional(this.minSpecialChars);
     }
     /**
      * (Updatable) The minimum number of unique characters in a password.  A value of 0 or no value indicates no minimum unique characters restriction.
@@ -1337,7 +1337,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="minUniqueChars", refs={Integer.class}, tree="[0]")
-    private Output<Integer> minUniqueChars;
+    private Output</* @Nullable */ Integer> minUniqueChars;
 
     /**
      * @return (Updatable) The minimum number of unique characters in a password.  A value of 0 or no value indicates no minimum unique characters restriction.
@@ -1352,8 +1352,8 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<Integer> minUniqueChars() {
-        return this.minUniqueChars;
+    public Output<Optional<Integer>> minUniqueChars() {
+        return Codegen.optional(this.minUniqueChars);
     }
     /**
      * (Updatable) The minimum number of uppercase alphabetic characters in a password. A value of 0 or no value indicates no minimum uppercase restriction.
@@ -1369,7 +1369,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="minUpperCase", refs={Integer.class}, tree="[0]")
-    private Output<Integer> minUpperCase;
+    private Output</* @Nullable */ Integer> minUpperCase;
 
     /**
      * @return (Updatable) The minimum number of uppercase alphabetic characters in a password. A value of 0 or no value indicates no minimum uppercase restriction.
@@ -1384,8 +1384,8 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<Integer> minUpperCase() {
-        return this.minUpperCase;
+    public Output<Optional<Integer>> minUpperCase() {
+        return Codegen.optional(this.minUpperCase);
     }
     /**
      * (Updatable) A String that is the name of the policy to display to the user. This is the only mandatory attribute for a password policy.
@@ -1435,7 +1435,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="numPasswordsInHistory", refs={Integer.class}, tree="[0]")
-    private Output<Integer> numPasswordsInHistory;
+    private Output</* @Nullable */ Integer> numPasswordsInHistory;
 
     /**
      * @return (Updatable) The number of passwords that will be kept in history that may not be used as a password
@@ -1450,8 +1450,8 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<Integer> numPasswordsInHistory() {
-        return this.numPasswordsInHistory;
+    public Output<Optional<Integer>> numPasswordsInHistory() {
+        return Codegen.optional(this.numPasswordsInHistory);
     }
     /**
      * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
@@ -1468,7 +1468,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="ocid", refs={String.class}, tree="[0]")
-    private Output<String> ocid;
+    private Output</* @Nullable */ String> ocid;
 
     /**
      * @return (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
@@ -1484,8 +1484,8 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * uniqueness: global
      * 
      */
-    public Output<String> ocid() {
-        return this.ocid;
+    public Output<Optional<String>> ocid() {
+        return Codegen.optional(this.ocid);
     }
     /**
      * (Updatable) An integer indicating the number of days before which the user should be warned about password expiry.
@@ -1501,7 +1501,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="passwordExpireWarning", refs={Integer.class}, tree="[0]")
-    private Output<Integer> passwordExpireWarning;
+    private Output</* @Nullable */ Integer> passwordExpireWarning;
 
     /**
      * @return (Updatable) An integer indicating the number of days before which the user should be warned about password expiry.
@@ -1516,8 +1516,8 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<Integer> passwordExpireWarning() {
-        return this.passwordExpireWarning;
+    public Output<Optional<Integer>> passwordExpireWarning() {
+        return Codegen.optional(this.passwordExpireWarning);
     }
     /**
      * (Updatable) The number of days after which the password expires automatically
@@ -1533,7 +1533,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="passwordExpiresAfter", refs={Integer.class}, tree="[0]")
-    private Output<Integer> passwordExpiresAfter;
+    private Output</* @Nullable */ Integer> passwordExpiresAfter;
 
     /**
      * @return (Updatable) The number of days after which the password expires automatically
@@ -1548,8 +1548,8 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<Integer> passwordExpiresAfter() {
-        return this.passwordExpiresAfter;
+    public Output<Optional<Integer>> passwordExpiresAfter() {
+        return Codegen.optional(this.passwordExpiresAfter);
     }
     /**
      * (Updatable) Indicates whether the password policy is configured as Simple, Standard, or Custom.
@@ -1565,7 +1565,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="passwordStrength", refs={String.class}, tree="[0]")
-    private Output<String> passwordStrength;
+    private Output</* @Nullable */ String> passwordStrength;
 
     /**
      * @return (Updatable) Indicates whether the password policy is configured as Simple, Standard, or Custom.
@@ -1580,8 +1580,8 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<String> passwordStrength() {
-        return this.passwordStrength;
+    public Output<Optional<String>> passwordStrength() {
+        return Codegen.optional(this.passwordStrength);
     }
     /**
      * (Updatable) Password policy priority
@@ -1600,7 +1600,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="priority", refs={Integer.class}, tree="[0]")
-    private Output<Integer> priority;
+    private Output</* @Nullable */ Integer> priority;
 
     /**
      * @return (Updatable) Password policy priority
@@ -1618,8 +1618,8 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * uniqueness: server
      * 
      */
-    public Output<Integer> priority() {
-        return this.priority;
+    public Output<Optional<Integer>> priority() {
+        return Codegen.optional(this.priority);
     }
     /**
      * (Updatable) A String value whose contents indicate a set of characters that must appear, in any sequence, in a password value
@@ -1635,7 +1635,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="requiredChars", refs={String.class}, tree="[0]")
-    private Output<String> requiredChars;
+    private Output</* @Nullable */ String> requiredChars;
 
     /**
      * @return (Updatable) A String value whose contents indicate a set of characters that must appear, in any sequence, in a password value
@@ -1650,8 +1650,8 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<String> requiredChars() {
-        return this.requiredChars;
+    public Output<Optional<String>> requiredChars() {
+        return Codegen.optional(this.requiredChars);
     }
     /**
      * (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
@@ -1715,7 +1715,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="startsWithAlphabet", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> startsWithAlphabet;
+    private Output</* @Nullable */ Boolean> startsWithAlphabet;
 
     /**
      * @return (Updatable) Indicates that the password must begin with an alphabetic character
@@ -1730,8 +1730,8 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<Boolean> startsWithAlphabet() {
-        return this.startsWithAlphabet;
+    public Output<Optional<Boolean>> startsWithAlphabet() {
+        return Codegen.optional(this.startsWithAlphabet);
     }
     /**
      * (Updatable) A list of tags on this resource.
@@ -1748,7 +1748,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="tags", refs={List.class,DomainsPasswordPolicyTag.class}, tree="[0,1]")
-    private Output<List<DomainsPasswordPolicyTag>> tags;
+    private Output</* @Nullable */ List<DomainsPasswordPolicyTag>> tags;
 
     /**
      * @return (Updatable) A list of tags on this resource.
@@ -1764,8 +1764,8 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<List<DomainsPasswordPolicyTag>> tags() {
-        return this.tags;
+    public Output<Optional<List<DomainsPasswordPolicyTag>>> tags() {
+        return Codegen.optional(this.tags);
     }
     /**
      * (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
@@ -1782,7 +1782,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="tenancyOcid", refs={String.class}, tree="[0]")
-    private Output<String> tenancyOcid;
+    private Output</* @Nullable */ String> tenancyOcid;
 
     /**
      * @return (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
@@ -1798,8 +1798,8 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * * uniqueness: none
      * 
      */
-    public Output<String> tenancyOcid() {
-        return this.tenancyOcid;
+    public Output<Optional<String>> tenancyOcid() {
+        return Codegen.optional(this.tenancyOcid);
     }
     /**
      * (Updatable) Indicates a sequence of characters that match the username cannot be the password. Password validation against policy will be ignored if length of user name is less than or equal to 3 characters.
@@ -1818,7 +1818,7 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="userNameDisallowed", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> userNameDisallowed;
+    private Output</* @Nullable */ Boolean> userNameDisallowed;
 
     /**
      * @return (Updatable) Indicates a sequence of characters that match the username cannot be the password. Password validation against policy will be ignored if length of user name is less than or equal to 3 characters.
@@ -1836,8 +1836,8 @@ public class DomainsPasswordPolicy extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<Boolean> userNameDisallowed() {
-        return this.userNameDisallowed;
+    public Output<Optional<Boolean>> userNameDisallowed() {
+        return Codegen.optional(this.userNameDisallowed);
     }
 
     /**

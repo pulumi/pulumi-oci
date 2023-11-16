@@ -7,22 +7,24 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDbSystemsDbSystemIormConfigCachDbPlan {
-    private String dbName;
-    private String flashCacheLimit;
-    private Integer share;
+    private @Nullable String dbName;
+    private @Nullable String flashCacheLimit;
+    private @Nullable Integer share;
 
     private GetDbSystemsDbSystemIormConfigCachDbPlan() {}
-    public String dbName() {
-        return this.dbName;
+    public Optional<String> dbName() {
+        return Optional.ofNullable(this.dbName);
     }
-    public String flashCacheLimit() {
-        return this.flashCacheLimit;
+    public Optional<String> flashCacheLimit() {
+        return Optional.ofNullable(this.flashCacheLimit);
     }
-    public Integer share() {
-        return this.share;
+    public Optional<Integer> share() {
+        return Optional.ofNullable(this.share);
     }
 
     public static Builder builder() {
@@ -34,9 +36,9 @@ public final class GetDbSystemsDbSystemIormConfigCachDbPlan {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String dbName;
-        private String flashCacheLimit;
-        private Integer share;
+        private @Nullable String dbName;
+        private @Nullable String flashCacheLimit;
+        private @Nullable Integer share;
         public Builder() {}
         public Builder(GetDbSystemsDbSystemIormConfigCachDbPlan defaults) {
     	      Objects.requireNonNull(defaults);
@@ -46,18 +48,18 @@ public final class GetDbSystemsDbSystemIormConfigCachDbPlan {
         }
 
         @CustomType.Setter
-        public Builder dbName(String dbName) {
-            this.dbName = Objects.requireNonNull(dbName);
+        public Builder dbName(@Nullable String dbName) {
+            this.dbName = dbName;
             return this;
         }
         @CustomType.Setter
-        public Builder flashCacheLimit(String flashCacheLimit) {
-            this.flashCacheLimit = Objects.requireNonNull(flashCacheLimit);
+        public Builder flashCacheLimit(@Nullable String flashCacheLimit) {
+            this.flashCacheLimit = flashCacheLimit;
             return this;
         }
         @CustomType.Setter
-        public Builder share(Integer share) {
-            this.share = Objects.requireNonNull(share);
+        public Builder share(@Nullable Integer share) {
+            this.share = share;
             return this;
         }
         public GetDbSystemsDbSystemIormConfigCachDbPlan build() {

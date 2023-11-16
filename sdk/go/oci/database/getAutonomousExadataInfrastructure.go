@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Autonomous Exadata Infrastructure resource in Oracle Cloud Infrastructure Database service.
@@ -63,48 +62,48 @@ type LookupAutonomousExadataInfrastructureResult struct {
 	// The name of the availability domain that the Autonomous Exadata Infrastructure is located in.
 	//
 	// Deprecated: Autonomous Exadata Infrastructure resource is now end-of-life.Please provision cloud autonomous vm cluster instead.
-	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	AvailabilityDomain *string `pulumi:"availabilityDomain"`
 	// The OCID of the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
-	CreateAsync   bool   `pulumi:"createAsync"`
+	CompartmentId *string `pulumi:"compartmentId"`
+	CreateAsync   *bool   `pulumi:"createAsync"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The user-friendly name for the Autonomous Exadata Infrastructure.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The domain name for the Autonomous Exadata Infrastructure.
-	Domain string `pulumi:"domain"`
+	Domain *string `pulumi:"domain"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The host name for the Autonomous Exadata Infrastructure node.
-	Hostname string `pulumi:"hostname"`
+	Hostname *string `pulumi:"hostname"`
 	// The OCID of the Autonomous Exadata Infrastructure.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
-	LastMaintenanceRunId string `pulumi:"lastMaintenanceRunId"`
+	LastMaintenanceRunId *string `pulumi:"lastMaintenanceRunId"`
 	// The Oracle license model that applies to all databases in the Autonomous Exadata Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
-	LicenseModel string `pulumi:"licenseModel"`
+	LicenseModel *string `pulumi:"licenseModel"`
 	// Additional information about the current lifecycle state of the Autonomous Exadata Infrastructure.
-	LifecycleDetails         string                                                      `pulumi:"lifecycleDetails"`
+	LifecycleDetails         *string                                                     `pulumi:"lifecycleDetails"`
 	MaintenanceWindowDetails []GetAutonomousExadataInfrastructureMaintenanceWindowDetail `pulumi:"maintenanceWindowDetails"`
 	// The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
 	MaintenanceWindows []GetAutonomousExadataInfrastructureMaintenanceWindow `pulumi:"maintenanceWindows"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
-	NextMaintenanceRunId string `pulumi:"nextMaintenanceRunId"`
+	NextMaintenanceRunId *string `pulumi:"nextMaintenanceRunId"`
 	// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
 	// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
 	NsgIds []string `pulumi:"nsgIds"`
 	// The FQDN of the DNS record for the SCAN IP addresses that are associated with the Autonomous Exadata Infrastructure.
-	ScanDnsName string `pulumi:"scanDnsName"`
+	ScanDnsName *string `pulumi:"scanDnsName"`
 	// The shape of the Autonomous Exadata Infrastructure. The shape determines resources to allocate to the Autonomous Exadata Infrastructure (CPU cores, memory and storage).
-	Shape string `pulumi:"shape"`
+	Shape *string `pulumi:"shape"`
 	// The current lifecycle state of the Autonomous Exadata Infrastructure.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The OCID of the subnet the Autonomous Exadata Infrastructure is associated with.
-	SubnetId string `pulumi:"subnetId"`
+	SubnetId *string `pulumi:"subnetId"`
 	// The date and time the Autonomous Exadata Infrastructure was created.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The OCID of the zone the Autonomous Exadata Infrastructure is associated with.
-	ZoneId string `pulumi:"zoneId"`
+	ZoneId *string `pulumi:"zoneId"`
 }
 
 func LookupAutonomousExadataInfrastructureOutput(ctx *pulumi.Context, args LookupAutonomousExadataInfrastructureOutputArgs, opts ...pulumi.InvokeOption) LookupAutonomousExadataInfrastructureResultOutput {
@@ -145,12 +144,6 @@ func (o LookupAutonomousExadataInfrastructureResultOutput) ToLookupAutonomousExa
 	return o
 }
 
-func (o LookupAutonomousExadataInfrastructureResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupAutonomousExadataInfrastructureResult] {
-	return pulumix.Output[LookupAutonomousExadataInfrastructureResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o LookupAutonomousExadataInfrastructureResultOutput) AutonomousExadataInfrastructureId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousExadataInfrastructureResult) string { return v.AutonomousExadataInfrastructureId }).(pulumi.StringOutput)
 }
@@ -158,17 +151,17 @@ func (o LookupAutonomousExadataInfrastructureResultOutput) AutonomousExadataInfr
 // The name of the availability domain that the Autonomous Exadata Infrastructure is located in.
 //
 // Deprecated: Autonomous Exadata Infrastructure resource is now end-of-life.Please provision cloud autonomous vm cluster instead.
-func (o LookupAutonomousExadataInfrastructureResultOutput) AvailabilityDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousExadataInfrastructureResult) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
+func (o LookupAutonomousExadataInfrastructureResultOutput) AvailabilityDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousExadataInfrastructureResult) *string { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the compartment.
-func (o LookupAutonomousExadataInfrastructureResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousExadataInfrastructureResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupAutonomousExadataInfrastructureResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousExadataInfrastructureResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupAutonomousExadataInfrastructureResultOutput) CreateAsync() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupAutonomousExadataInfrastructureResult) bool { return v.CreateAsync }).(pulumi.BoolOutput)
+func (o LookupAutonomousExadataInfrastructureResultOutput) CreateAsync() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousExadataInfrastructureResult) *bool { return v.CreateAsync }).(pulumi.BoolPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -177,13 +170,13 @@ func (o LookupAutonomousExadataInfrastructureResultOutput) DefinedTags() pulumi.
 }
 
 // The user-friendly name for the Autonomous Exadata Infrastructure.
-func (o LookupAutonomousExadataInfrastructureResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousExadataInfrastructureResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupAutonomousExadataInfrastructureResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousExadataInfrastructureResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The domain name for the Autonomous Exadata Infrastructure.
-func (o LookupAutonomousExadataInfrastructureResultOutput) Domain() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousExadataInfrastructureResult) string { return v.Domain }).(pulumi.StringOutput)
+func (o LookupAutonomousExadataInfrastructureResultOutput) Domain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousExadataInfrastructureResult) *string { return v.Domain }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -192,28 +185,28 @@ func (o LookupAutonomousExadataInfrastructureResultOutput) FreeformTags() pulumi
 }
 
 // The host name for the Autonomous Exadata Infrastructure node.
-func (o LookupAutonomousExadataInfrastructureResultOutput) Hostname() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousExadataInfrastructureResult) string { return v.Hostname }).(pulumi.StringOutput)
+func (o LookupAutonomousExadataInfrastructureResultOutput) Hostname() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousExadataInfrastructureResult) *string { return v.Hostname }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the Autonomous Exadata Infrastructure.
-func (o LookupAutonomousExadataInfrastructureResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousExadataInfrastructureResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupAutonomousExadataInfrastructureResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousExadataInfrastructureResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
-func (o LookupAutonomousExadataInfrastructureResultOutput) LastMaintenanceRunId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousExadataInfrastructureResult) string { return v.LastMaintenanceRunId }).(pulumi.StringOutput)
+func (o LookupAutonomousExadataInfrastructureResultOutput) LastMaintenanceRunId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousExadataInfrastructureResult) *string { return v.LastMaintenanceRunId }).(pulumi.StringPtrOutput)
 }
 
 // The Oracle license model that applies to all databases in the Autonomous Exadata Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
-func (o LookupAutonomousExadataInfrastructureResultOutput) LicenseModel() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousExadataInfrastructureResult) string { return v.LicenseModel }).(pulumi.StringOutput)
+func (o LookupAutonomousExadataInfrastructureResultOutput) LicenseModel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousExadataInfrastructureResult) *string { return v.LicenseModel }).(pulumi.StringPtrOutput)
 }
 
 // Additional information about the current lifecycle state of the Autonomous Exadata Infrastructure.
-func (o LookupAutonomousExadataInfrastructureResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousExadataInfrastructureResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupAutonomousExadataInfrastructureResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousExadataInfrastructureResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupAutonomousExadataInfrastructureResultOutput) MaintenanceWindowDetails() GetAutonomousExadataInfrastructureMaintenanceWindowDetailArrayOutput {
@@ -230,8 +223,8 @@ func (o LookupAutonomousExadataInfrastructureResultOutput) MaintenanceWindows() 
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
-func (o LookupAutonomousExadataInfrastructureResultOutput) NextMaintenanceRunId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousExadataInfrastructureResult) string { return v.NextMaintenanceRunId }).(pulumi.StringOutput)
+func (o LookupAutonomousExadataInfrastructureResultOutput) NextMaintenanceRunId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousExadataInfrastructureResult) *string { return v.NextMaintenanceRunId }).(pulumi.StringPtrOutput)
 }
 
 // The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
@@ -241,33 +234,33 @@ func (o LookupAutonomousExadataInfrastructureResultOutput) NsgIds() pulumi.Strin
 }
 
 // The FQDN of the DNS record for the SCAN IP addresses that are associated with the Autonomous Exadata Infrastructure.
-func (o LookupAutonomousExadataInfrastructureResultOutput) ScanDnsName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousExadataInfrastructureResult) string { return v.ScanDnsName }).(pulumi.StringOutput)
+func (o LookupAutonomousExadataInfrastructureResultOutput) ScanDnsName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousExadataInfrastructureResult) *string { return v.ScanDnsName }).(pulumi.StringPtrOutput)
 }
 
 // The shape of the Autonomous Exadata Infrastructure. The shape determines resources to allocate to the Autonomous Exadata Infrastructure (CPU cores, memory and storage).
-func (o LookupAutonomousExadataInfrastructureResultOutput) Shape() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousExadataInfrastructureResult) string { return v.Shape }).(pulumi.StringOutput)
+func (o LookupAutonomousExadataInfrastructureResultOutput) Shape() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousExadataInfrastructureResult) *string { return v.Shape }).(pulumi.StringPtrOutput)
 }
 
 // The current lifecycle state of the Autonomous Exadata Infrastructure.
-func (o LookupAutonomousExadataInfrastructureResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousExadataInfrastructureResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupAutonomousExadataInfrastructureResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousExadataInfrastructureResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the subnet the Autonomous Exadata Infrastructure is associated with.
-func (o LookupAutonomousExadataInfrastructureResultOutput) SubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousExadataInfrastructureResult) string { return v.SubnetId }).(pulumi.StringOutput)
+func (o LookupAutonomousExadataInfrastructureResultOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousExadataInfrastructureResult) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the Autonomous Exadata Infrastructure was created.
-func (o LookupAutonomousExadataInfrastructureResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousExadataInfrastructureResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupAutonomousExadataInfrastructureResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousExadataInfrastructureResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the zone the Autonomous Exadata Infrastructure is associated with.
-func (o LookupAutonomousExadataInfrastructureResultOutput) ZoneId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAutonomousExadataInfrastructureResult) string { return v.ZoneId }).(pulumi.StringOutput)
+func (o LookupAutonomousExadataInfrastructureResultOutput) ZoneId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAutonomousExadataInfrastructureResult) *string { return v.ZoneId }).(pulumi.StringPtrOutput)
 }
 
 func init() {

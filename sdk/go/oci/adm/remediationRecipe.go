@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Remediation Recipe resource in Oracle Cloud Infrastructure Adm service.
@@ -104,7 +103,7 @@ type RemediationRecipe struct {
 	// (Updatable) A configuration to define the constraints when detecting vulnerable dependencies.
 	DetectConfiguration RemediationRecipeDetectConfigurationOutput `pulumi:"detectConfiguration"`
 	// (Updatable) The name of the remediation recipe.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// (Updatable) Boolean indicating if a run should be automatically triggered once the knowledge base is updated.
@@ -119,13 +118,13 @@ type RemediationRecipe struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The creation date and time of the Remediation Recipe (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The date and time the Remediation Recipe was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 	// (Updatable) The Verify stage configuration specifies a build service to run a pipeline for the recommended code changes. The build pipeline will be initiated to ensure that there is no breaking change after the dependency versions have been updated in source to avoid vulnerabilities.
 	VerifyConfiguration RemediationRecipeVerifyConfigurationOutput `pulumi:"verifyConfiguration"`
 }
@@ -332,12 +331,6 @@ func (i *RemediationRecipe) ToRemediationRecipeOutputWithContext(ctx context.Con
 	return pulumi.ToOutputWithContext(ctx, i).(RemediationRecipeOutput)
 }
 
-func (i *RemediationRecipe) ToOutput(ctx context.Context) pulumix.Output[*RemediationRecipe] {
-	return pulumix.Output[*RemediationRecipe]{
-		OutputState: i.ToRemediationRecipeOutputWithContext(ctx).OutputState,
-	}
-}
-
 // RemediationRecipeArrayInput is an input type that accepts RemediationRecipeArray and RemediationRecipeArrayOutput values.
 // You can construct a concrete instance of `RemediationRecipeArrayInput` via:
 //
@@ -361,12 +354,6 @@ func (i RemediationRecipeArray) ToRemediationRecipeArrayOutput() RemediationReci
 
 func (i RemediationRecipeArray) ToRemediationRecipeArrayOutputWithContext(ctx context.Context) RemediationRecipeArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(RemediationRecipeArrayOutput)
-}
-
-func (i RemediationRecipeArray) ToOutput(ctx context.Context) pulumix.Output[[]*RemediationRecipe] {
-	return pulumix.Output[[]*RemediationRecipe]{
-		OutputState: i.ToRemediationRecipeArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // RemediationRecipeMapInput is an input type that accepts RemediationRecipeMap and RemediationRecipeMapOutput values.
@@ -394,12 +381,6 @@ func (i RemediationRecipeMap) ToRemediationRecipeMapOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(RemediationRecipeMapOutput)
 }
 
-func (i RemediationRecipeMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*RemediationRecipe] {
-	return pulumix.Output[map[string]*RemediationRecipe]{
-		OutputState: i.ToRemediationRecipeMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type RemediationRecipeOutput struct{ *pulumi.OutputState }
 
 func (RemediationRecipeOutput) ElementType() reflect.Type {
@@ -412,12 +393,6 @@ func (o RemediationRecipeOutput) ToRemediationRecipeOutput() RemediationRecipeOu
 
 func (o RemediationRecipeOutput) ToRemediationRecipeOutputWithContext(ctx context.Context) RemediationRecipeOutput {
 	return o
-}
-
-func (o RemediationRecipeOutput) ToOutput(ctx context.Context) pulumix.Output[*RemediationRecipe] {
-	return pulumix.Output[*RemediationRecipe]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The compartment Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the remediation recipe.
@@ -436,8 +411,8 @@ func (o RemediationRecipeOutput) DetectConfiguration() RemediationRecipeDetectCo
 }
 
 // (Updatable) The name of the remediation recipe.
-func (o RemediationRecipeOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *RemediationRecipe) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o RemediationRecipeOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RemediationRecipe) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -469,8 +444,8 @@ func (o RemediationRecipeOutput) ScmConfiguration() RemediationRecipeScmConfigur
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o RemediationRecipeOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *RemediationRecipe) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o RemediationRecipeOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RemediationRecipe) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -479,13 +454,13 @@ func (o RemediationRecipeOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The creation date and time of the Remediation Recipe (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-func (o RemediationRecipeOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *RemediationRecipe) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o RemediationRecipeOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RemediationRecipe) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the Remediation Recipe was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-func (o RemediationRecipeOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *RemediationRecipe) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o RemediationRecipeOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RemediationRecipe) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The Verify stage configuration specifies a build service to run a pipeline for the recommended code changes. The build pipeline will be initiated to ensure that there is no breaking change after the dependency versions have been updated in source to avoid vulnerabilities.
@@ -507,12 +482,6 @@ func (o RemediationRecipeArrayOutput) ToRemediationRecipeArrayOutputWithContext(
 	return o
 }
 
-func (o RemediationRecipeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*RemediationRecipe] {
-	return pulumix.Output[[]*RemediationRecipe]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o RemediationRecipeArrayOutput) Index(i pulumi.IntInput) RemediationRecipeOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *RemediationRecipe {
 		return vs[0].([]*RemediationRecipe)[vs[1].(int)]
@@ -531,12 +500,6 @@ func (o RemediationRecipeMapOutput) ToRemediationRecipeMapOutput() RemediationRe
 
 func (o RemediationRecipeMapOutput) ToRemediationRecipeMapOutputWithContext(ctx context.Context) RemediationRecipeMapOutput {
 	return o
-}
-
-func (o RemediationRecipeMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*RemediationRecipe] {
-	return pulumix.Output[map[string]*RemediationRecipe]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o RemediationRecipeMapOutput) MapIndex(k pulumi.StringInput) RemediationRecipeOutput {

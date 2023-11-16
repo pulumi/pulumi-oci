@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Database Tools Private Endpoint resource in Oracle Cloud Infrastructure Database Tools service.
@@ -62,44 +61,44 @@ type LookupDatabaseToolsPrivateEndpointResult struct {
 	// A list of additional FQDNs that can be also be used for the private endpoint.
 	AdditionalFqdns []string `pulumi:"additionalFqdns"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools private endpoint.
-	CompartmentId                  string `pulumi:"compartmentId"`
-	DatabaseToolsPrivateEndpointId string `pulumi:"databaseToolsPrivateEndpointId"`
+	CompartmentId                  *string `pulumi:"compartmentId"`
+	DatabaseToolsPrivateEndpointId string  `pulumi:"databaseToolsPrivateEndpointId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A description of the Database Tools private endpoint.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Then FQDN to use for the private endpoint.
-	EndpointFqdn string `pulumi:"endpointFqdn"`
+	EndpointFqdn *string `pulumi:"endpointFqdn"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools Endpoint Service.
-	EndpointServiceId string `pulumi:"endpointServiceId"`
+	EndpointServiceId *string `pulumi:"endpointServiceId"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups that the private endpoint's VNIC belongs to.  For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
 	NsgIds []string `pulumi:"nsgIds"`
 	// The private IP address that represents the access point for the associated endpoint service.
-	PrivateEndpointIp string `pulumi:"privateEndpointIp"`
+	PrivateEndpointIp *string `pulumi:"privateEndpointIp"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint's VNIC.
-	PrivateEndpointVnicId string `pulumi:"privateEndpointVnicId"`
+	PrivateEndpointVnicId *string `pulumi:"privateEndpointVnicId"`
 	// Reverse connection configuration details of the private endpoint.
 	ReverseConnectionConfigurations []GetDatabaseToolsPrivateEndpointReverseConnectionConfiguration `pulumi:"reverseConnectionConfigurations"`
 	// The current state of the Database Tools private endpoint.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet that the private endpoint belongs to.
-	SubnetId string `pulumi:"subnetId"`
+	SubnetId *string `pulumi:"subnetId"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time the Database Tools private endpoint was created. An RFC3339 formatted datetime string
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the Database Tools private endpoint was updated. An RFC3339 formatted datetime string
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN that the private endpoint belongs to.
-	VcnId string `pulumi:"vcnId"`
+	VcnId *string `pulumi:"vcnId"`
 }
 
 func LookupDatabaseToolsPrivateEndpointOutput(ctx *pulumi.Context, args LookupDatabaseToolsPrivateEndpointOutputArgs, opts ...pulumi.InvokeOption) LookupDatabaseToolsPrivateEndpointResultOutput {
@@ -140,20 +139,14 @@ func (o LookupDatabaseToolsPrivateEndpointResultOutput) ToLookupDatabaseToolsPri
 	return o
 }
 
-func (o LookupDatabaseToolsPrivateEndpointResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupDatabaseToolsPrivateEndpointResult] {
-	return pulumix.Output[LookupDatabaseToolsPrivateEndpointResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A list of additional FQDNs that can be also be used for the private endpoint.
 func (o LookupDatabaseToolsPrivateEndpointResultOutput) AdditionalFqdns() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupDatabaseToolsPrivateEndpointResult) []string { return v.AdditionalFqdns }).(pulumi.StringArrayOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools private endpoint.
-func (o LookupDatabaseToolsPrivateEndpointResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseToolsPrivateEndpointResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupDatabaseToolsPrivateEndpointResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseToolsPrivateEndpointResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupDatabaseToolsPrivateEndpointResultOutput) DatabaseToolsPrivateEndpointId() pulumi.StringOutput {
@@ -166,23 +159,23 @@ func (o LookupDatabaseToolsPrivateEndpointResultOutput) DefinedTags() pulumi.Map
 }
 
 // A description of the Database Tools private endpoint.
-func (o LookupDatabaseToolsPrivateEndpointResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseToolsPrivateEndpointResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupDatabaseToolsPrivateEndpointResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseToolsPrivateEndpointResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-func (o LookupDatabaseToolsPrivateEndpointResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseToolsPrivateEndpointResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupDatabaseToolsPrivateEndpointResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseToolsPrivateEndpointResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Then FQDN to use for the private endpoint.
-func (o LookupDatabaseToolsPrivateEndpointResultOutput) EndpointFqdn() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseToolsPrivateEndpointResult) string { return v.EndpointFqdn }).(pulumi.StringOutput)
+func (o LookupDatabaseToolsPrivateEndpointResultOutput) EndpointFqdn() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseToolsPrivateEndpointResult) *string { return v.EndpointFqdn }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools Endpoint Service.
-func (o LookupDatabaseToolsPrivateEndpointResultOutput) EndpointServiceId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseToolsPrivateEndpointResult) string { return v.EndpointServiceId }).(pulumi.StringOutput)
+func (o LookupDatabaseToolsPrivateEndpointResultOutput) EndpointServiceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseToolsPrivateEndpointResult) *string { return v.EndpointServiceId }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -191,13 +184,13 @@ func (o LookupDatabaseToolsPrivateEndpointResultOutput) FreeformTags() pulumi.Ma
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint.
-func (o LookupDatabaseToolsPrivateEndpointResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseToolsPrivateEndpointResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupDatabaseToolsPrivateEndpointResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseToolsPrivateEndpointResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o LookupDatabaseToolsPrivateEndpointResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseToolsPrivateEndpointResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupDatabaseToolsPrivateEndpointResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseToolsPrivateEndpointResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups that the private endpoint's VNIC belongs to.  For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
@@ -206,13 +199,13 @@ func (o LookupDatabaseToolsPrivateEndpointResultOutput) NsgIds() pulumi.StringAr
 }
 
 // The private IP address that represents the access point for the associated endpoint service.
-func (o LookupDatabaseToolsPrivateEndpointResultOutput) PrivateEndpointIp() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseToolsPrivateEndpointResult) string { return v.PrivateEndpointIp }).(pulumi.StringOutput)
+func (o LookupDatabaseToolsPrivateEndpointResultOutput) PrivateEndpointIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseToolsPrivateEndpointResult) *string { return v.PrivateEndpointIp }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint's VNIC.
-func (o LookupDatabaseToolsPrivateEndpointResultOutput) PrivateEndpointVnicId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseToolsPrivateEndpointResult) string { return v.PrivateEndpointVnicId }).(pulumi.StringOutput)
+func (o LookupDatabaseToolsPrivateEndpointResultOutput) PrivateEndpointVnicId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseToolsPrivateEndpointResult) *string { return v.PrivateEndpointVnicId }).(pulumi.StringPtrOutput)
 }
 
 // Reverse connection configuration details of the private endpoint.
@@ -223,13 +216,13 @@ func (o LookupDatabaseToolsPrivateEndpointResultOutput) ReverseConnectionConfigu
 }
 
 // The current state of the Database Tools private endpoint.
-func (o LookupDatabaseToolsPrivateEndpointResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseToolsPrivateEndpointResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupDatabaseToolsPrivateEndpointResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseToolsPrivateEndpointResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet that the private endpoint belongs to.
-func (o LookupDatabaseToolsPrivateEndpointResultOutput) SubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseToolsPrivateEndpointResult) string { return v.SubnetId }).(pulumi.StringOutput)
+func (o LookupDatabaseToolsPrivateEndpointResultOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseToolsPrivateEndpointResult) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -238,18 +231,18 @@ func (o LookupDatabaseToolsPrivateEndpointResultOutput) SystemTags() pulumi.MapO
 }
 
 // The time the Database Tools private endpoint was created. An RFC3339 formatted datetime string
-func (o LookupDatabaseToolsPrivateEndpointResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseToolsPrivateEndpointResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupDatabaseToolsPrivateEndpointResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseToolsPrivateEndpointResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the Database Tools private endpoint was updated. An RFC3339 formatted datetime string
-func (o LookupDatabaseToolsPrivateEndpointResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseToolsPrivateEndpointResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupDatabaseToolsPrivateEndpointResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseToolsPrivateEndpointResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN that the private endpoint belongs to.
-func (o LookupDatabaseToolsPrivateEndpointResultOutput) VcnId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseToolsPrivateEndpointResult) string { return v.VcnId }).(pulumi.StringOutput)
+func (o LookupDatabaseToolsPrivateEndpointResultOutput) VcnId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseToolsPrivateEndpointResult) *string { return v.VcnId }).(pulumi.StringPtrOutput)
 }
 
 func init() {

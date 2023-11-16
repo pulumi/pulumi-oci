@@ -16,7 +16,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// A filter to return only resources that match the given display name exactly.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure will select an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
         /// </summary>
@@ -24,21 +24,21 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
         /// </summary>
-        public readonly bool IsAssignIpv6ip;
+        public readonly bool? IsAssignIpv6ip;
         /// <summary>
         /// The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
         /// </summary>
-        public readonly string SubnetId;
+        public readonly string? SubnetId;
 
         [OutputConstructor]
         private GetClusterNetworksClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnetResult(
-            string displayName,
+            string? displayName,
 
             ImmutableArray<Outputs.GetClusterNetworksClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailResult> ipv6addressIpv6subnetCidrPairDetails,
 
-            bool isAssignIpv6ip,
+            bool? isAssignIpv6ip,
 
-            string subnetId)
+            string? subnetId)
         {
             DisplayName = displayName;
             Ipv6addressIpv6subnetCidrPairDetails = ipv6addressIpv6subnetCidrPairDetails;

@@ -6,6 +6,8 @@ package com.pulumi.oci.BigDataService.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetBdsInstanceComputeOnlyWorkerNodeShapeConfig {
@@ -13,39 +15,39 @@ public final class GetBdsInstanceComputeOnlyWorkerNodeShapeConfig {
      * @return The total amount of memory available to the node, in gigabytes.
      * 
      */
-    private Integer memoryInGbs;
+    private @Nullable Integer memoryInGbs;
     /**
      * @return The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
      * 
      */
-    private Integer nvmes;
+    private @Nullable Integer nvmes;
     /**
      * @return The total number of OCPUs available to the node.
      * 
      */
-    private Integer ocpus;
+    private @Nullable Integer ocpus;
 
     private GetBdsInstanceComputeOnlyWorkerNodeShapeConfig() {}
     /**
      * @return The total amount of memory available to the node, in gigabytes.
      * 
      */
-    public Integer memoryInGbs() {
-        return this.memoryInGbs;
+    public Optional<Integer> memoryInGbs() {
+        return Optional.ofNullable(this.memoryInGbs);
     }
     /**
      * @return The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
      * 
      */
-    public Integer nvmes() {
-        return this.nvmes;
+    public Optional<Integer> nvmes() {
+        return Optional.ofNullable(this.nvmes);
     }
     /**
      * @return The total number of OCPUs available to the node.
      * 
      */
-    public Integer ocpus() {
-        return this.ocpus;
+    public Optional<Integer> ocpus() {
+        return Optional.ofNullable(this.ocpus);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetBdsInstanceComputeOnlyWorkerNodeShapeConfig {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer memoryInGbs;
-        private Integer nvmes;
-        private Integer ocpus;
+        private @Nullable Integer memoryInGbs;
+        private @Nullable Integer nvmes;
+        private @Nullable Integer ocpus;
         public Builder() {}
         public Builder(GetBdsInstanceComputeOnlyWorkerNodeShapeConfig defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetBdsInstanceComputeOnlyWorkerNodeShapeConfig {
         }
 
         @CustomType.Setter
-        public Builder memoryInGbs(Integer memoryInGbs) {
-            this.memoryInGbs = Objects.requireNonNull(memoryInGbs);
+        public Builder memoryInGbs(@Nullable Integer memoryInGbs) {
+            this.memoryInGbs = memoryInGbs;
             return this;
         }
         @CustomType.Setter
-        public Builder nvmes(Integer nvmes) {
-            this.nvmes = Objects.requireNonNull(nvmes);
+        public Builder nvmes(@Nullable Integer nvmes) {
+            this.nvmes = nvmes;
             return this;
         }
         @CustomType.Setter
-        public Builder ocpus(Integer ocpus) {
-            this.ocpus = Objects.requireNonNull(ocpus);
+        public Builder ocpus(@Nullable Integer ocpus) {
+            this.ocpus = ocpus;
             return this;
         }
         public GetBdsInstanceComputeOnlyWorkerNodeShapeConfig build() {

@@ -6,6 +6,8 @@ package com.pulumi.oci.Core.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetImageShapesImageShapeCompatibilityMemoryConstraint {
@@ -13,27 +15,27 @@ public final class GetImageShapesImageShapeCompatibilityMemoryConstraint {
      * @return The maximum amount of memory, in gigabytes.
      * 
      */
-    private Integer maxInGbs;
+    private @Nullable Integer maxInGbs;
     /**
      * @return The minimum amount of memory, in gigabytes.
      * 
      */
-    private Integer minInGbs;
+    private @Nullable Integer minInGbs;
 
     private GetImageShapesImageShapeCompatibilityMemoryConstraint() {}
     /**
      * @return The maximum amount of memory, in gigabytes.
      * 
      */
-    public Integer maxInGbs() {
-        return this.maxInGbs;
+    public Optional<Integer> maxInGbs() {
+        return Optional.ofNullable(this.maxInGbs);
     }
     /**
      * @return The minimum amount of memory, in gigabytes.
      * 
      */
-    public Integer minInGbs() {
-        return this.minInGbs;
+    public Optional<Integer> minInGbs() {
+        return Optional.ofNullable(this.minInGbs);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetImageShapesImageShapeCompatibilityMemoryConstraint {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer maxInGbs;
-        private Integer minInGbs;
+        private @Nullable Integer maxInGbs;
+        private @Nullable Integer minInGbs;
         public Builder() {}
         public Builder(GetImageShapesImageShapeCompatibilityMemoryConstraint defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetImageShapesImageShapeCompatibilityMemoryConstraint {
         }
 
         @CustomType.Setter
-        public Builder maxInGbs(Integer maxInGbs) {
-            this.maxInGbs = Objects.requireNonNull(maxInGbs);
+        public Builder maxInGbs(@Nullable Integer maxInGbs) {
+            this.maxInGbs = maxInGbs;
             return this;
         }
         @CustomType.Setter
-        public Builder minInGbs(Integer minInGbs) {
-            this.minInGbs = Objects.requireNonNull(minInGbs);
+        public Builder minInGbs(@Nullable Integer minInGbs) {
+            this.minInGbs = minInGbs;
             return this;
         }
         public GetImageShapesImageShapeCompatibilityMemoryConstraint build() {

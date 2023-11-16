@@ -55,11 +55,11 @@ export interface GetSystemMediaWorkflowResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * List of SytemMediaWorkflow items.
      */
-    readonly items: outputs.MediaServices.GetSystemMediaWorkflowItem[];
+    readonly items?: outputs.MediaServices.GetSystemMediaWorkflowItem[];
     /**
      * System provided unique identifier for this static media workflow.
      */

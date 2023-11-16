@@ -59,28 +59,28 @@ export interface GetServiceEnvironmentResult {
     /**
      * The URL for the console.
      */
-    readonly consoleUrl: string;
+    readonly consoleUrl?: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Details for a service definition.
      */
-    readonly serviceDefinitions: outputs.ServiceManagerProxy.GetServiceEnvironmentServiceDefinition[];
+    readonly serviceDefinitions?: outputs.ServiceManagerProxy.GetServiceEnvironmentServiceDefinition[];
     /**
      * Array of service environment end points.
      */
-    readonly serviceEnvironmentEndpoints: outputs.ServiceManagerProxy.GetServiceEnvironmentServiceEnvironmentEndpoint[];
+    readonly serviceEnvironmentEndpoints?: outputs.ServiceManagerProxy.GetServiceEnvironmentServiceEnvironmentEndpoint[];
     readonly serviceEnvironmentId: string;
     /**
      * Status of the entitlement registration for the service.
      */
-    readonly status: string;
+    readonly status?: string;
     /**
      * The unique subscription ID associated with the service environment ID.
      */
-    readonly subscriptionId: string;
+    readonly subscriptionId?: string;
 }
 /**
  * This data source provides details about a specific Service Environment resource in Oracle Cloud Infrastructure Service Manager Proxy service.

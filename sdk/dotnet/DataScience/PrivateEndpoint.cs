@@ -67,7 +67,7 @@ namespace Pulumi.Oci.DataScience
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user that created the private endpoint.
         /// </summary>
         [Output("createdBy")]
-        public Output<string> CreatedBy { get; private set; } = null!;
+        public Output<string?> CreatedBy { get; private set; } = null!;
 
         /// <summary>
         /// Data Science resource type.
@@ -79,37 +79,37 @@ namespace Pulumi.Oci.DataScience
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A user friendly description. Avoid entering confidential information.
         /// </summary>
         [Output("description")]
-        public Output<string> Description { get; private set; } = null!;
+        public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A user friendly name. It doesn't have to be unique. Avoid entering confidential information.
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// Accesing the Data Science resource using FQDN.
         /// </summary>
         [Output("fqdn")]
-        public Output<string> Fqdn { get; private set; } = null!;
+        public Output<string?> Fqdn { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// Details of the state of Data Science private endpoint.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) An array of network security group OCIDs.
@@ -121,13 +121,13 @@ namespace Pulumi.Oci.DataScience
         /// State of the Data Science private endpoint.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// Subdomain for a private endpoint FQDN.
         /// </summary>
         [Output("subDomain")]
-        public Output<string> SubDomain { get; private set; } = null!;
+        public Output<string?> SubDomain { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the subnet. 
@@ -143,13 +143,13 @@ namespace Pulumi.Oci.DataScience
         /// The date and time that the Data Science private endpoint was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The date and time that the Data Science private endpoint was updated expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
 
         /// <summary>

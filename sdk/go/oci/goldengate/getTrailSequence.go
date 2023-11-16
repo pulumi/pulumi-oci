@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Trail Sequence resource in Oracle Cloud Infrastructure Golden Gate service.
@@ -72,13 +71,13 @@ type GetTrailSequenceResult struct {
 	// An object's Display Name.
 	DisplayName string `pulumi:"displayName"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// An array of TrailSequences.
 	Items []GetTrailSequenceItem `pulumi:"items"`
 	// The time the data was last fetched from the deployment. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-	TimeLastFetched string `pulumi:"timeLastFetched"`
-	TrailFileId     string `pulumi:"trailFileId"`
-	TrailSequenceId string `pulumi:"trailSequenceId"`
+	TimeLastFetched *string `pulumi:"timeLastFetched"`
+	TrailFileId     string  `pulumi:"trailFileId"`
+	TrailSequenceId string  `pulumi:"trailSequenceId"`
 }
 
 func GetTrailSequenceOutput(ctx *pulumi.Context, args GetTrailSequenceOutputArgs, opts ...pulumi.InvokeOption) GetTrailSequenceResultOutput {
@@ -125,12 +124,6 @@ func (o GetTrailSequenceResultOutput) ToGetTrailSequenceResultOutputWithContext(
 	return o
 }
 
-func (o GetTrailSequenceResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetTrailSequenceResult] {
-	return pulumix.Output[GetTrailSequenceResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetTrailSequenceResultOutput) DeploymentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTrailSequenceResult) string { return v.DeploymentId }).(pulumi.StringOutput)
 }
@@ -141,8 +134,8 @@ func (o GetTrailSequenceResultOutput) DisplayName() pulumi.StringOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetTrailSequenceResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTrailSequenceResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetTrailSequenceResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTrailSequenceResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // An array of TrailSequences.
@@ -151,8 +144,8 @@ func (o GetTrailSequenceResultOutput) Items() GetTrailSequenceItemArrayOutput {
 }
 
 // The time the data was last fetched from the deployment. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-func (o GetTrailSequenceResultOutput) TimeLastFetched() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTrailSequenceResult) string { return v.TimeLastFetched }).(pulumi.StringOutput)
+func (o GetTrailSequenceResultOutput) TimeLastFetched() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTrailSequenceResult) *string { return v.TimeLastFetched }).(pulumi.StringPtrOutput)
 }
 
 func (o GetTrailSequenceResultOutput) TrailFileId() pulumi.StringOutput {

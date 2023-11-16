@@ -9,6 +9,7 @@ import com.pulumi.oci.Jms.outputs.GetFleetAdvancedFeatureConfigurationLcmPostIns
 import com.pulumi.oci.Jms.outputs.GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTl;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSetting {
@@ -19,7 +20,7 @@ public final class GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction
      * * Changing minimum key length for DSA
      * 
      */
-    private List<GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpath> certpaths;
+    private @Nullable List<GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpath> certpaths;
     /**
      * @return Updates the minimum key size for the specified encryption algorithm. The JDK property jdk.jar.disabledAlgorithms will be updated with the following supported actions:
      * * Changing minimum key length for RSA signed jars
@@ -27,13 +28,13 @@ public final class GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction
      * * Changing minimum key length for DSA
      * 
      */
-    private List<GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJar> jars;
+    private @Nullable List<GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJar> jars;
     /**
      * @return Updates the minimum key size for the specified encryption algorithm. The JDK property jdk.tls.disabledAlgorithms will be updated with the following supported actions:
      * * Changing minimum key length for Diffie-Hellman
      * 
      */
-    private List<GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTl> tls;
+    private @Nullable List<GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTl> tls;
 
     private GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSetting() {}
     /**
@@ -44,7 +45,7 @@ public final class GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction
      * 
      */
     public List<GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpath> certpaths() {
-        return this.certpaths;
+        return this.certpaths == null ? List.of() : this.certpaths;
     }
     /**
      * @return Updates the minimum key size for the specified encryption algorithm. The JDK property jdk.jar.disabledAlgorithms will be updated with the following supported actions:
@@ -54,7 +55,7 @@ public final class GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction
      * 
      */
     public List<GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJar> jars() {
-        return this.jars;
+        return this.jars == null ? List.of() : this.jars;
     }
     /**
      * @return Updates the minimum key size for the specified encryption algorithm. The JDK property jdk.tls.disabledAlgorithms will be updated with the following supported actions:
@@ -62,7 +63,7 @@ public final class GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction
      * 
      */
     public List<GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTl> tls() {
-        return this.tls;
+        return this.tls == null ? List.of() : this.tls;
     }
 
     public static Builder builder() {
@@ -74,9 +75,9 @@ public final class GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpath> certpaths;
-        private List<GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJar> jars;
-        private List<GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTl> tls;
+        private @Nullable List<GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpath> certpaths;
+        private @Nullable List<GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJar> jars;
+        private @Nullable List<GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTl> tls;
         public Builder() {}
         public Builder(GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSetting defaults) {
     	      Objects.requireNonNull(defaults);
@@ -86,24 +87,24 @@ public final class GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction
         }
 
         @CustomType.Setter
-        public Builder certpaths(List<GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpath> certpaths) {
-            this.certpaths = Objects.requireNonNull(certpaths);
+        public Builder certpaths(@Nullable List<GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpath> certpaths) {
+            this.certpaths = certpaths;
             return this;
         }
         public Builder certpaths(GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpath... certpaths) {
             return certpaths(List.of(certpaths));
         }
         @CustomType.Setter
-        public Builder jars(List<GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJar> jars) {
-            this.jars = Objects.requireNonNull(jars);
+        public Builder jars(@Nullable List<GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJar> jars) {
+            this.jars = jars;
             return this;
         }
         public Builder jars(GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJar... jars) {
             return jars(List.of(jars));
         }
         @CustomType.Setter
-        public Builder tls(List<GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTl> tls) {
-            this.tls = Objects.requireNonNull(tls);
+        public Builder tls(@Nullable List<GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTl> tls) {
+            this.tls = tls;
             return this;
         }
         public Builder tls(GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTl... tls) {

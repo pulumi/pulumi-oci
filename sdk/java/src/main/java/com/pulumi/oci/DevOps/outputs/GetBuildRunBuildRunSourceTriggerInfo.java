@@ -8,6 +8,8 @@ import com.pulumi.oci.DevOps.outputs.GetBuildRunBuildRunSourceTriggerInfoAction;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetBuildRunBuildRunSourceTriggerInfo {
@@ -15,12 +17,12 @@ public final class GetBuildRunBuildRunSourceTriggerInfo {
      * @return The list of actions that are to be performed for this Trigger
      * 
      */
-    private List<GetBuildRunBuildRunSourceTriggerInfoAction> actions;
+    private @Nullable List<GetBuildRunBuildRunSourceTriggerInfoAction> actions;
     /**
      * @return Build run display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
 
     private GetBuildRunBuildRunSourceTriggerInfo() {}
     /**
@@ -28,14 +30,14 @@ public final class GetBuildRunBuildRunSourceTriggerInfo {
      * 
      */
     public List<GetBuildRunBuildRunSourceTriggerInfoAction> actions() {
-        return this.actions;
+        return this.actions == null ? List.of() : this.actions;
     }
     /**
      * @return Build run display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
 
     public static Builder builder() {
@@ -47,8 +49,8 @@ public final class GetBuildRunBuildRunSourceTriggerInfo {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetBuildRunBuildRunSourceTriggerInfoAction> actions;
-        private String displayName;
+        private @Nullable List<GetBuildRunBuildRunSourceTriggerInfoAction> actions;
+        private @Nullable String displayName;
         public Builder() {}
         public Builder(GetBuildRunBuildRunSourceTriggerInfo defaults) {
     	      Objects.requireNonNull(defaults);
@@ -57,16 +59,16 @@ public final class GetBuildRunBuildRunSourceTriggerInfo {
         }
 
         @CustomType.Setter
-        public Builder actions(List<GetBuildRunBuildRunSourceTriggerInfoAction> actions) {
-            this.actions = Objects.requireNonNull(actions);
+        public Builder actions(@Nullable List<GetBuildRunBuildRunSourceTriggerInfoAction> actions) {
+            this.actions = actions;
             return this;
         }
         public Builder actions(GetBuildRunBuildRunSourceTriggerInfoAction... actions) {
             return actions(List.of(actions));
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         public GetBuildRunBuildRunSourceTriggerInfo build() {

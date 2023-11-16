@@ -58,7 +58,7 @@ class GetActionsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -67,25 +67,16 @@ class GetActionsResult:
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        Name of the property
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="operatorActionCollections")
-    def operator_action_collections(self) -> Sequence['outputs.GetActionsOperatorActionCollectionResult']:
-        """
-        The list of operator_action_collection.
-        """
+    def operator_action_collections(self) -> Optional[Sequence['outputs.GetActionsOperatorActionCollectionResult']]:
         return pulumi.get(self, "operator_action_collections")
 
     @property
     @pulumi.getter(name="resourceType")
     def resource_type(self) -> Optional[str]:
-        """
-        resourceType for which the OperatorAction is applicable
-        """
         return pulumi.get(self, "resource_type")
 
     @property
@@ -116,27 +107,7 @@ def get_actions(compartment_id: Optional[str] = None,
                 state: Optional[str] = None,
                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetActionsResult:
     """
-    This data source provides the list of Operator Actions in Oracle Cloud Infrastructure Operator Access Control service.
-
-    Lists all the OperatorActions available in the system.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_operator_actions = oci.OperatorAccessControl.get_actions(compartment_id=var["compartment_id"],
-        name=var["operator_action_name"],
-        resource_type=var["operator_action_resource_type"],
-        state=var["operator_action_state"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str name: A filter to return only resources that match the entire display name given.
-    :param str resource_type: A filter to return only lists of resources that match the entire given service type.
-    :param str state: A filter to return only resources whose lifecycleState matches the given OperatorAction lifecycleState.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -165,26 +136,6 @@ def get_actions_output(compartment_id: Optional[pulumi.Input[str]] = None,
                        state: Optional[pulumi.Input[Optional[str]]] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetActionsResult]:
     """
-    This data source provides the list of Operator Actions in Oracle Cloud Infrastructure Operator Access Control service.
-
-    Lists all the OperatorActions available in the system.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_operator_actions = oci.OperatorAccessControl.get_actions(compartment_id=var["compartment_id"],
-        name=var["operator_action_name"],
-        resource_type=var["operator_action_resource_type"],
-        state=var["operator_action_state"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str name: A filter to return only resources that match the entire display name given.
-    :param str resource_type: A filter to return only lists of resources that match the entire given service type.
-    :param str state: A filter to return only resources whose lifecycleState matches the given OperatorAction lifecycleState.
+    Use this data source to access information about an existing resource.
     """
     ...

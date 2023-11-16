@@ -59,11 +59,11 @@ export interface GetManagedDatabasesUserSystemPrivilegeResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * An array of system privileges.
      */
-    readonly items: outputs.DatabaseManagement.GetManagedDatabasesUserSystemPrivilegeItem[];
+    readonly items?: outputs.DatabaseManagement.GetManagedDatabasesUserSystemPrivilegeItem[];
     readonly managedDatabaseId: string;
     /**
      * The name of a system privilege.

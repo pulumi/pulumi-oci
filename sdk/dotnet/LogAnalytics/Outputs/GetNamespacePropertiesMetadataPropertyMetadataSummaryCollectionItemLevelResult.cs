@@ -16,17 +16,17 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
         /// <summary>
         /// The constraints that apply to the properties at a certain level.
         /// </summary>
-        public readonly string Constraints;
+        public readonly string? Constraints;
         /// <summary>
         /// The property name used for filtering.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
 
         [OutputConstructor]
         private GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelResult(
-            string constraints,
+            string? constraints,
 
-            string name)
+            string? name)
         {
             Constraints = constraints;
             Name = name;

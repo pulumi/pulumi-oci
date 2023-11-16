@@ -56,41 +56,27 @@ class GetNetworkFirewallPolicyDecryptionRuleResult:
 
     @property
     @pulumi.getter
-    def action(self) -> str:
-        """
-        Action:
-        * NO_DECRYPT - Matching traffic is not decrypted.
-        * DECRYPT - Matching traffic is decrypted with the specified `secret` according to the specified `decryptionProfile`.
-        """
+    def action(self) -> Optional[str]:
         return pulumi.get(self, "action")
 
     @property
     @pulumi.getter
-    def conditions(self) -> Sequence['outputs.GetNetworkFirewallPolicyDecryptionRuleConditionResult']:
-        """
-        Match criteria used in Decryption Rule used on the firewall policy rules.
-        """
+    def conditions(self) -> Optional[Sequence['outputs.GetNetworkFirewallPolicyDecryptionRuleConditionResult']]:
         return pulumi.get(self, "conditions")
 
     @property
     @pulumi.getter(name="decryptionProfile")
-    def decryption_profile(self) -> str:
-        """
-        The name of the decryption profile to use.
-        """
+    def decryption_profile(self) -> Optional[str]:
         return pulumi.get(self, "decryption_profile")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Name for the decryption rule, must be unique within the policy.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -100,31 +86,22 @@ class GetNetworkFirewallPolicyDecryptionRuleResult:
 
     @property
     @pulumi.getter(name="parentResourceId")
-    def parent_resource_id(self) -> str:
-        """
-        OCID of the Network Firewall Policy this decryption rule belongs to.
-        """
+    def parent_resource_id(self) -> Optional[str]:
         return pulumi.get(self, "parent_resource_id")
 
     @property
     @pulumi.getter
-    def positions(self) -> Sequence['outputs.GetNetworkFirewallPolicyDecryptionRulePositionResult']:
-        """
-        An object which defines the position of the rule.
-        """
+    def positions(self) -> Optional[Sequence['outputs.GetNetworkFirewallPolicyDecryptionRulePositionResult']]:
         return pulumi.get(self, "positions")
 
     @property
     @pulumi.getter(name="priorityOrder")
-    def priority_order(self) -> str:
+    def priority_order(self) -> Optional[str]:
         return pulumi.get(self, "priority_order")
 
     @property
     @pulumi.getter
-    def secret(self) -> str:
-        """
-        The name of a mapped secret. Its `type` must match that of the specified decryption profile.
-        """
+    def secret(self) -> Optional[str]:
         return pulumi.get(self, "secret")
 
 
@@ -150,13 +127,7 @@ def get_network_firewall_policy_decryption_rule(name: Optional[str] = None,
                                                 network_firewall_policy_id: Optional[str] = None,
                                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNetworkFirewallPolicyDecryptionRuleResult:
     """
-    This data source provides details about a specific Network Firewall Policy Decryption Rule resource in Oracle Cloud Infrastructure Network Firewall service.
-
-    Get Decryption Rule by the given name in the context of network firewall policy.
-
-
-    :param str name: Name for the decryption rule, must be unique within the policy.
-    :param str network_firewall_policy_id: Unique Network Firewall Policy identifier
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['name'] = name
@@ -182,12 +153,6 @@ def get_network_firewall_policy_decryption_rule_output(name: Optional[pulumi.Inp
                                                        network_firewall_policy_id: Optional[pulumi.Input[str]] = None,
                                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNetworkFirewallPolicyDecryptionRuleResult]:
     """
-    This data source provides details about a specific Network Firewall Policy Decryption Rule resource in Oracle Cloud Infrastructure Network Firewall service.
-
-    Get Decryption Rule by the given name in the context of network firewall policy.
-
-
-    :param str name: Name for the decryption rule, must be unique within the policy.
-    :param str network_firewall_policy_id: Unique Network Firewall Policy identifier
+    Use this data source to access information about an existing resource.
     """
     ...

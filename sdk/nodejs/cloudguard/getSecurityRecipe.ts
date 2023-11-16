@@ -45,52 +45,52 @@ export interface GetSecurityRecipeResult {
     /**
      * The id of the compartment that contains the recipe
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * The recipe's description
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * The recipe's name
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * Unique identifier that is immutable on creation
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * A message describing the current state in more detail. For example, this can be used to provide actionable information for a recipe in the `Failed` state.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * The owner of the recipe
      */
-    readonly owner: string;
+    readonly owner?: string;
     /**
      * The list of `SecurityPolicy` ids that are included in the recipe
      */
-    readonly securityPolicies: string[];
+    readonly securityPolicies?: string[];
     readonly securityRecipeId: string;
     /**
      * The current state of the recipe
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The time the recipe was created. An RFC3339 formatted datetime string.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The time the recipe was last updated. An RFC3339 formatted datetime string.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific Security Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.

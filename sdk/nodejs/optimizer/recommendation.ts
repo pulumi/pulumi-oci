@@ -55,31 +55,31 @@ export class Recommendation extends pulumi.CustomResource {
     /**
      * The unique OCID associated with the category.
      */
-    public /*out*/ readonly categoryId!: pulumi.Output<string>;
+    public /*out*/ readonly categoryId!: pulumi.Output<string | undefined>;
     /**
      * The OCID of the tenancy. The tenancy is the root compartment.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    public /*out*/ readonly compartmentId!: pulumi.Output<string | undefined>;
     /**
      * Text describing the recommendation.
      */
-    public /*out*/ readonly description!: pulumi.Output<string>;
+    public /*out*/ readonly description!: pulumi.Output<string | undefined>;
     /**
      * The estimated cost savings, in dollars, for the recommendation.
      */
-    public /*out*/ readonly estimatedCostSaving!: pulumi.Output<number>;
+    public /*out*/ readonly estimatedCostSaving!: pulumi.Output<number | undefined>;
     /**
      * Additional metadata key/value pairs for the recommendation.
      */
-    public /*out*/ readonly extendedMetadata!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly extendedMetadata!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The level of importance assigned to the recommendation.
      */
-    public /*out*/ readonly importance!: pulumi.Output<string>;
+    public /*out*/ readonly importance!: pulumi.Output<string | undefined>;
     /**
      * The name of the profile level.
      */
-    public /*out*/ readonly name!: pulumi.Output<string>;
+    public /*out*/ readonly name!: pulumi.Output<string | undefined>;
     /**
      * The unique OCID associated with the recommendation.
      */
@@ -87,11 +87,11 @@ export class Recommendation extends pulumi.CustomResource {
     /**
      * An array of `ResourceCount` objects grouped by the status of the resource actions.
      */
-    public /*out*/ readonly resourceCounts!: pulumi.Output<outputs.Optimizer.RecommendationResourceCount[]>;
+    public /*out*/ readonly resourceCounts!: pulumi.Output<outputs.Optimizer.RecommendationResourceCount[] | undefined>;
     /**
      * The recommendation's current state.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The status of the recommendation.
      */
@@ -99,15 +99,15 @@ export class Recommendation extends pulumi.CustomResource {
     /**
      * Optional. The profile levels supported by a recommendation. For example, profile level values could be `Low`, `Medium`, and `High`. Not all recommendations support this field.
      */
-    public /*out*/ readonly supportedLevels!: pulumi.Output<outputs.Optimizer.RecommendationSupportedLevel[]>;
+    public /*out*/ readonly supportedLevels!: pulumi.Output<outputs.Optimizer.RecommendationSupportedLevel[] | undefined>;
     /**
      * The date and time the recommendation details were created, in the format defined by RFC3339.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The date and time that the recommendation entered its current status. The format is defined by RFC3339.
      */
-    public /*out*/ readonly timeStatusBegin!: pulumi.Output<string>;
+    public /*out*/ readonly timeStatusBegin!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The date and time the current status will change. The format is defined by RFC3339.
      *
@@ -117,11 +117,11 @@ export class Recommendation extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly timeStatusEnd!: pulumi.Output<string>;
+    public readonly timeStatusEnd!: pulumi.Output<string | undefined>;
     /**
      * The date and time the recommendation details were last updated, in the format defined by RFC3339.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a Recommendation resource with the given unique name, arguments, and options.

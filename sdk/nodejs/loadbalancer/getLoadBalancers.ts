@@ -81,11 +81,11 @@ export interface GetLoadBalancersResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of load_balancers.
      */
-    readonly loadBalancers: outputs.LoadBalancer.GetLoadBalancersLoadBalancer[];
+    readonly loadBalancers?: outputs.LoadBalancer.GetLoadBalancersLoadBalancer[];
     /**
      * The current state of the load balancer.
      */

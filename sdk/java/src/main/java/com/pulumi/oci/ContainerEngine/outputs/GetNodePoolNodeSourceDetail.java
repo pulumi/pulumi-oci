@@ -6,6 +6,8 @@ package com.pulumi.oci.ContainerEngine.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetNodePoolNodeSourceDetail {
@@ -13,39 +15,39 @@ public final class GetNodePoolNodeSourceDetail {
      * @return The size of the boot volume in GBs. Minimum value is 50 GB. See [here](https://docs.cloud.oracle.com/en-us/iaas/Content/Block/Concepts/bootvolumes.htm) for max custom boot volume sizing and OS-specific requirements.
      * 
      */
-    private String bootVolumeSizeInGbs;
+    private @Nullable String bootVolumeSizeInGbs;
     /**
      * @return The OCID of the image used to boot the node.
      * 
      */
-    private String imageId;
+    private @Nullable String imageId;
     /**
      * @return The source type for the node. Use `IMAGE` when specifying an OCID of an image.
      * 
      */
-    private String sourceType;
+    private @Nullable String sourceType;
 
     private GetNodePoolNodeSourceDetail() {}
     /**
      * @return The size of the boot volume in GBs. Minimum value is 50 GB. See [here](https://docs.cloud.oracle.com/en-us/iaas/Content/Block/Concepts/bootvolumes.htm) for max custom boot volume sizing and OS-specific requirements.
      * 
      */
-    public String bootVolumeSizeInGbs() {
-        return this.bootVolumeSizeInGbs;
+    public Optional<String> bootVolumeSizeInGbs() {
+        return Optional.ofNullable(this.bootVolumeSizeInGbs);
     }
     /**
      * @return The OCID of the image used to boot the node.
      * 
      */
-    public String imageId() {
-        return this.imageId;
+    public Optional<String> imageId() {
+        return Optional.ofNullable(this.imageId);
     }
     /**
      * @return The source type for the node. Use `IMAGE` when specifying an OCID of an image.
      * 
      */
-    public String sourceType() {
-        return this.sourceType;
+    public Optional<String> sourceType() {
+        return Optional.ofNullable(this.sourceType);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetNodePoolNodeSourceDetail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String bootVolumeSizeInGbs;
-        private String imageId;
-        private String sourceType;
+        private @Nullable String bootVolumeSizeInGbs;
+        private @Nullable String imageId;
+        private @Nullable String sourceType;
         public Builder() {}
         public Builder(GetNodePoolNodeSourceDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetNodePoolNodeSourceDetail {
         }
 
         @CustomType.Setter
-        public Builder bootVolumeSizeInGbs(String bootVolumeSizeInGbs) {
-            this.bootVolumeSizeInGbs = Objects.requireNonNull(bootVolumeSizeInGbs);
+        public Builder bootVolumeSizeInGbs(@Nullable String bootVolumeSizeInGbs) {
+            this.bootVolumeSizeInGbs = bootVolumeSizeInGbs;
             return this;
         }
         @CustomType.Setter
-        public Builder imageId(String imageId) {
-            this.imageId = Objects.requireNonNull(imageId);
+        public Builder imageId(@Nullable String imageId) {
+            this.imageId = imageId;
             return this;
         }
         @CustomType.Setter
-        public Builder sourceType(String sourceType) {
-            this.sourceType = Objects.requireNonNull(sourceType);
+        public Builder sourceType(@Nullable String sourceType) {
+            this.sourceType = sourceType;
             return this;
         }
         public GetNodePoolNodeSourceDetail build() {

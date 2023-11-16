@@ -113,7 +113,7 @@ export class Subnet extends pulumi.CustomResource {
      *
      * Example: `Uocm:PHX-AD-1`
      */
-    public readonly availabilityDomain!: pulumi.Output<string>;
+    public readonly availabilityDomain!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The CIDR IP address range of the subnet. The CIDR must maintain the following rules -
      *
@@ -129,15 +129,15 @@ export class Subnet extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the set of DHCP options the subnet will use. If you don't provide a value, the subnet uses the VCN's default set of DHCP options.
      */
-    public readonly dhcpOptionsId!: pulumi.Output<string>;
+    public readonly dhcpOptionsId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    public readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * A DNS label for the subnet, used in conjunction with the VNIC's hostname and VCN's DNS label to form a fully qualified domain name (FQDN) for each VNIC within this subnet (for example, `bminstance1.subnet123.vcn1.oraclevcn.com`). Must be an alphanumeric string that begins with a letter and is unique within the VCN. The value cannot be changed.
      *
@@ -147,11 +147,11 @@ export class Subnet extends pulumi.CustomResource {
      *
      * Example: `subnet123`
      */
-    public readonly dnsLabel!: pulumi.Output<string>;
+    public readonly dnsLabel!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) Use this to enable IPv6 addressing for this subnet. The VCN must be enabled for IPv6. You can't change this subnet characteristic later. All subnets are /64 in size. The subnet portion of the IPv6 address is the fourth hextet from the left (1111 in the following example).
      *
@@ -159,18 +159,18 @@ export class Subnet extends pulumi.CustomResource {
      *
      * Example: `2001:0db8:0123:1111::/64`
      */
-    public readonly ipv6cidrBlock!: pulumi.Output<string>;
+    public readonly ipv6cidrBlock!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The list of all IPv6 prefixes (Oracle allocated IPv6 GUA, ULA or private IPv6 prefixes, BYOIPv6 prefixes) for the subnet that meets the following criteria:
      * * The prefixes must be valid.
      * * Multiple prefixes must not overlap each other or the on-premises network prefix.
      * * The number of prefixes must not exceed the limit of IPv6 prefixes allowed to a subnet.
      */
-    public readonly ipv6cidrBlocks!: pulumi.Output<string[]>;
+    public readonly ipv6cidrBlocks!: pulumi.Output<string[] | undefined>;
     /**
      * For an IPv6-enabled subnet, this is the IPv6 address of the virtual router.  Example: `2001:0db8:0123:1111:89ab:cdef:1234:5678`
      */
-    public /*out*/ readonly ipv6virtualRouterIp!: pulumi.Output<string>;
+    public /*out*/ readonly ipv6virtualRouterIp!: pulumi.Output<string | undefined>;
     /**
      * Whether to disallow ingress internet traffic to VNICs within this subnet. Defaults to false.
      *
@@ -180,7 +180,7 @@ export class Subnet extends pulumi.CustomResource {
      *
      * Example: `true`
      */
-    public readonly prohibitInternetIngress!: pulumi.Output<boolean>;
+    public readonly prohibitInternetIngress!: pulumi.Output<boolean | undefined>;
     /**
      * Whether VNICs within this subnet can have public IP addresses. Defaults to false, which means VNICs created in this subnet will automatically be assigned public IP addresses unless specified otherwise during instance launch or VNIC creation (with the `assignPublicIp` flag in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/)). If `prohibitPublicIpOnVnic` is set to true, VNICs created in this subnet cannot have public IP addresses (that is, it's a private subnet).
      *
@@ -188,27 +188,27 @@ export class Subnet extends pulumi.CustomResource {
      *
      * Example: `true`
      */
-    public readonly prohibitPublicIpOnVnic!: pulumi.Output<boolean>;
+    public readonly prohibitPublicIpOnVnic!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the subnet will use. If you don't provide a value, the subnet uses the VCN's default route table.
      */
-    public readonly routeTableId!: pulumi.Output<string>;
+    public readonly routeTableId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The OCIDs of the security list or lists the subnet will use. If you don't provide a value, the subnet uses the VCN's default security list. Remember that security lists are associated *with the subnet*, but the rules are applied to the individual VNICs in the subnet.
      */
-    public readonly securityListIds!: pulumi.Output<string[]>;
+    public readonly securityListIds!: pulumi.Output<string[] | undefined>;
     /**
      * The subnet's current state.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The subnet's domain name, which consists of the subnet's DNS label, the VCN's DNS label, and the `oraclevcn.com` domain.
      */
-    public /*out*/ readonly subnetDomainName!: pulumi.Output<string>;
+    public /*out*/ readonly subnetDomainName!: pulumi.Output<string | undefined>;
     /**
      * The date and time the subnet was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN to contain the subnet.
      *
@@ -220,11 +220,11 @@ export class Subnet extends pulumi.CustomResource {
     /**
      * The IP address of the virtual router.  Example: `10.0.14.1`
      */
-    public /*out*/ readonly virtualRouterIp!: pulumi.Output<string>;
+    public /*out*/ readonly virtualRouterIp!: pulumi.Output<string | undefined>;
     /**
      * The MAC address of the virtual router.  Example: `00:00:00:00:00:01`
      */
-    public /*out*/ readonly virtualRouterMac!: pulumi.Output<string>;
+    public /*out*/ readonly virtualRouterMac!: pulumi.Output<string | undefined>;
 
     /**
      * Create a Subnet resource with the given unique name, arguments, and options.

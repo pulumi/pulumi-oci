@@ -20,13 +20,13 @@ namespace Pulumi.Oci.OspGateway.Outputs
         /// <summary>
         /// Third party validation.
         /// </summary>
-        public readonly string ThirdPartyValidation;
+        public readonly string? ThirdPartyValidation;
 
         [OutputConstructor]
         private GetAddressRuleAddressResult(
             ImmutableArray<Outputs.GetAddressRuleAddressFieldResult> fields,
 
-            string thirdPartyValidation)
+            string? thirdPartyValidation)
         {
             Fields = fields;
             ThirdPartyValidation = thirdPartyValidation;

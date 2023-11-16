@@ -8,6 +8,8 @@ import com.pulumi.oci.DataSafe.outputs.GetUserAssessmentComparisonSummary;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetUserAssessmentComparisonResult {
@@ -16,22 +18,22 @@ public final class GetUserAssessmentComparisonResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The current state of the user assessment comparison.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return List containing maps as values. Example: `{&#34;Operations&#34;: [ {&#34;CostCenter&#34;: &#34;42&#34;} ] }`
      * 
      */
-    private List<GetUserAssessmentComparisonSummary> summaries;
+    private @Nullable List<GetUserAssessmentComparisonSummary> summaries;
     /**
      * @return The date and time the user assessment comparison was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     private String userAssessmentId;
 
     private GetUserAssessmentComparisonResult() {}
@@ -42,29 +44,29 @@ public final class GetUserAssessmentComparisonResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The current state of the user assessment comparison.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return List containing maps as values. Example: `{&#34;Operations&#34;: [ {&#34;CostCenter&#34;: &#34;42&#34;} ] }`
      * 
      */
     public List<GetUserAssessmentComparisonSummary> summaries() {
-        return this.summaries;
+        return this.summaries == null ? List.of() : this.summaries;
     }
     /**
      * @return The date and time the user assessment comparison was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     public String userAssessmentId() {
         return this.userAssessmentId;
@@ -80,10 +82,10 @@ public final class GetUserAssessmentComparisonResult {
     @CustomType.Builder
     public static final class Builder {
         private String comparisonUserAssessmentId;
-        private String id;
-        private String state;
-        private List<GetUserAssessmentComparisonSummary> summaries;
-        private String timeCreated;
+        private @Nullable String id;
+        private @Nullable String state;
+        private @Nullable List<GetUserAssessmentComparisonSummary> summaries;
+        private @Nullable String timeCreated;
         private String userAssessmentId;
         public Builder() {}
         public Builder(GetUserAssessmentComparisonResult defaults) {
@@ -102,26 +104,26 @@ public final class GetUserAssessmentComparisonResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder summaries(List<GetUserAssessmentComparisonSummary> summaries) {
-            this.summaries = Objects.requireNonNull(summaries);
+        public Builder summaries(@Nullable List<GetUserAssessmentComparisonSummary> summaries) {
+            this.summaries = summaries;
             return this;
         }
         public Builder summaries(GetUserAssessmentComparisonSummary... summaries) {
             return summaries(List.of(summaries));
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter

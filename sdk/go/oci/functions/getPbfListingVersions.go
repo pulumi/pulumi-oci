@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Pbf Listing Versions in Oracle Cloud Infrastructure Functions service.
@@ -78,8 +77,8 @@ type GetPbfListingVersionsArgs struct {
 type GetPbfListingVersionsResult struct {
 	Filters []GetPbfListingVersionsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id               string `pulumi:"id"`
-	IsCurrentVersion *bool  `pulumi:"isCurrentVersion"`
+	Id               *string `pulumi:"id"`
+	IsCurrentVersion *bool   `pulumi:"isCurrentVersion"`
 	// A brief descriptive name for the PBF trigger.
 	Name *string `pulumi:"name"`
 	// The OCID of the PbfListing this resource version belongs to.
@@ -138,19 +137,13 @@ func (o GetPbfListingVersionsResultOutput) ToGetPbfListingVersionsResultOutputWi
 	return o
 }
 
-func (o GetPbfListingVersionsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetPbfListingVersionsResult] {
-	return pulumix.Output[GetPbfListingVersionsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetPbfListingVersionsResultOutput) Filters() GetPbfListingVersionsFilterArrayOutput {
 	return o.ApplyT(func(v GetPbfListingVersionsResult) []GetPbfListingVersionsFilter { return v.Filters }).(GetPbfListingVersionsFilterArrayOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetPbfListingVersionsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPbfListingVersionsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetPbfListingVersionsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPbfListingVersionsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetPbfListingVersionsResultOutput) IsCurrentVersion() pulumi.BoolPtrOutput {

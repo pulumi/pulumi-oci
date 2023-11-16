@@ -79,11 +79,11 @@ export interface GetPrivateEndpointsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of private_endpoint_collection.
      */
-    readonly privateEndpointCollections: outputs.ResourceManager.GetPrivateEndpointsPrivateEndpointCollection[];
+    readonly privateEndpointCollections?: outputs.ResourceManager.GetPrivateEndpointsPrivateEndpointCollection[];
     readonly privateEndpointId?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN for the private endpoint.

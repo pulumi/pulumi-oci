@@ -47,76 +47,76 @@ export interface GetManagedInstanceGroupResult {
     /**
      * The CPU architecture of the instances in the managed instance group.
      */
-    readonly archType: string;
+    readonly archType?: string;
     /**
      * The OCID of the tenancy containing the managed instance group.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * Software source description.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * Software source name.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The OCID of the software source.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The number of Managed Instances in the managed instance group.
      */
-    readonly managedInstanceCount: number;
+    readonly managedInstanceCount?: number;
     readonly managedInstanceGroupId: string;
     /**
      * The list of managed instances OCIDs attached to the managed instance group.
      */
-    readonly managedInstanceIds: string[];
+    readonly managedInstanceIds?: string[];
     /**
      * The operating system type of the instances in the managed instance group.
      */
-    readonly osFamily: string;
+    readonly osFamily?: string;
     /**
      * The number of scheduled jobs pending against the managed instance group.
      */
-    readonly pendingJobCount: number;
+    readonly pendingJobCount?: number;
     /**
      * The list of software source OCIDs that the managed instance group will use.
      */
-    readonly softwareSourceIds: string[];
+    readonly softwareSourceIds?: string[];
     /**
      * The list of software sources that the managed instance group will use.
      */
-    readonly softwareSources: outputs.OsManagementHub.GetManagedInstanceGroupSoftwareSource[];
+    readonly softwareSources?: outputs.OsManagementHub.GetManagedInstanceGroupSoftwareSource[];
     /**
      * The current state of the managed instance group.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * The time the managed instance group was created. An RFC3339 formatted datetime string.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The time the managed instance group was last modified. An RFC3339 formatted datetime string.
      */
-    readonly timeModified: string;
+    readonly timeModified?: string;
     /**
      * The software source vendor name.
      */
-    readonly vendorName: string;
+    readonly vendorName?: string;
 }
 /**
  * This data source provides details about a specific Managed Instance Group resource in Oracle Cloud Infrastructure Os Management Hub service.

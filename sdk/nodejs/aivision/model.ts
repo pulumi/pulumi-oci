@@ -95,7 +95,7 @@ export class Model extends pulumi.CustomResource {
     /**
      * Average precision of the trained model
      */
-    public /*out*/ readonly averagePrecision!: pulumi.Output<number>;
+    public /*out*/ readonly averagePrecision!: pulumi.Output<number | undefined>;
     /**
      * (Updatable) Compartment Identifier
      */
@@ -103,39 +103,39 @@ export class Model extends pulumi.CustomResource {
     /**
      * Confidence ratio of the calculation
      */
-    public /*out*/ readonly confidenceThreshold!: pulumi.Output<number>;
+    public /*out*/ readonly confidenceThreshold!: pulumi.Output<number | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) A short description of the Model.
      */
-    public readonly description!: pulumi.Output<string>;
+    public readonly description!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Model Identifier
      */
-    public readonly displayName!: pulumi.Output<string>;
+    public readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * If It's true, Training is set for recommended epochs needed for quick training.
      */
-    public readonly isQuickMode!: pulumi.Output<boolean>;
+    public readonly isQuickMode!: pulumi.Output<boolean | undefined>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * The maximum duration in hours for which the training will run.
      */
-    public readonly maxTrainingDurationInHours!: pulumi.Output<number>;
+    public readonly maxTrainingDurationInHours!: pulumi.Output<number | undefined>;
     /**
      * Complete Training Metrics for successful trained model
      */
-    public /*out*/ readonly metrics!: pulumi.Output<string>;
+    public /*out*/ readonly metrics!: pulumi.Output<string | undefined>;
     /**
      * The  type of the model.
      */
@@ -143,11 +143,11 @@ export class Model extends pulumi.CustomResource {
     /**
      * Model version.
      */
-    public readonly modelVersion!: pulumi.Output<string>;
+    public readonly modelVersion!: pulumi.Output<string | undefined>;
     /**
      * Precision of the trained model
      */
-    public /*out*/ readonly precision!: pulumi.Output<number>;
+    public /*out*/ readonly precision!: pulumi.Output<number | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
      */
@@ -155,39 +155,39 @@ export class Model extends pulumi.CustomResource {
     /**
      * Recall of the trained model
      */
-    public /*out*/ readonly recall!: pulumi.Output<number>;
+    public /*out*/ readonly recall!: pulumi.Output<number | undefined>;
     /**
      * The current state of the Model.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * Total number of testing Images
      */
-    public /*out*/ readonly testImageCount!: pulumi.Output<number>;
+    public /*out*/ readonly testImageCount!: pulumi.Output<number | undefined>;
     /**
      * The base entity for a Dataset, which is the input for Model creation.
      */
-    public readonly testingDataset!: pulumi.Output<outputs.AiVision.ModelTestingDataset>;
+    public readonly testingDataset!: pulumi.Output<outputs.AiVision.ModelTestingDataset | undefined>;
     /**
      * The time the Model was created. An RFC3339 formatted datetime string
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The time the Model was updated. An RFC3339 formatted datetime string
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
     /**
      * Total number of training Images
      */
-    public /*out*/ readonly totalImageCount!: pulumi.Output<number>;
+    public /*out*/ readonly totalImageCount!: pulumi.Output<number | undefined>;
     /**
      * Total hours actually used for training
      */
-    public /*out*/ readonly trainedDurationInHours!: pulumi.Output<number>;
+    public /*out*/ readonly trainedDurationInHours!: pulumi.Output<number | undefined>;
     /**
      * The base entity for a Dataset, which is the input for Model creation.
      */
@@ -195,7 +195,7 @@ export class Model extends pulumi.CustomResource {
     /**
      * The base entity for a Dataset, which is the input for Model creation.
      */
-    public readonly validationDataset!: pulumi.Output<outputs.AiVision.ModelValidationDataset>;
+    public readonly validationDataset!: pulumi.Output<outputs.AiVision.ModelValidationDataset | undefined>;
 
     /**
      * Create a Model resource with the given unique name, arguments, and options.

@@ -23,13 +23,6 @@ class ComputeImageCapabilitySchemaArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None):
         """
         The set of arguments for constructing a ComputeImageCapabilitySchema resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that contains the resource.
-        :param pulumi.Input[str] compute_global_image_capability_schema_version_name: The name of the compute global image capability schema version
-        :param pulumi.Input[str] image_id: The ocid of the image
-        :param pulumi.Input[Mapping[str, Any]] schema_data: (Updatable) The map of each capability name to its ImageCapabilitySchemaDescriptor.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "compute_global_image_capability_schema_version_name", compute_global_image_capability_schema_version_name)
@@ -45,9 +38,6 @@ class ComputeImageCapabilitySchemaArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The OCID of the compartment that contains the resource.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -57,9 +47,6 @@ class ComputeImageCapabilitySchemaArgs:
     @property
     @pulumi.getter(name="computeGlobalImageCapabilitySchemaVersionName")
     def compute_global_image_capability_schema_version_name(self) -> pulumi.Input[str]:
-        """
-        The name of the compute global image capability schema version
-        """
         return pulumi.get(self, "compute_global_image_capability_schema_version_name")
 
     @compute_global_image_capability_schema_version_name.setter
@@ -69,9 +56,6 @@ class ComputeImageCapabilitySchemaArgs:
     @property
     @pulumi.getter(name="imageId")
     def image_id(self) -> pulumi.Input[str]:
-        """
-        The ocid of the image
-        """
         return pulumi.get(self, "image_id")
 
     @image_id.setter
@@ -81,9 +65,6 @@ class ComputeImageCapabilitySchemaArgs:
     @property
     @pulumi.getter(name="schemaData")
     def schema_data(self) -> pulumi.Input[Mapping[str, Any]]:
-        """
-        (Updatable) The map of each capability name to its ImageCapabilitySchemaDescriptor.
-        """
         return pulumi.get(self, "schema_data")
 
     @schema_data.setter
@@ -93,9 +74,6 @@ class ComputeImageCapabilitySchemaArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -105,9 +83,6 @@ class ComputeImageCapabilitySchemaArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -117,9 +92,6 @@ class ComputeImageCapabilitySchemaArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -141,15 +113,6 @@ class _ComputeImageCapabilitySchemaState:
                  time_created: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering ComputeImageCapabilitySchema resources.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that contains the resource.
-        :param pulumi.Input[str] compute_global_image_capability_schema_id: The ocid of the compute global image capability schema
-        :param pulumi.Input[str] compute_global_image_capability_schema_version_name: The name of the compute global image capability schema version
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] image_id: The ocid of the image
-        :param pulumi.Input[Mapping[str, Any]] schema_data: (Updatable) The map of each capability name to its ImageCapabilitySchemaDescriptor.
-        :param pulumi.Input[str] time_created: The date and time the compute image capability schema was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -173,9 +136,6 @@ class _ComputeImageCapabilitySchemaState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the compartment that contains the resource.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -185,9 +145,6 @@ class _ComputeImageCapabilitySchemaState:
     @property
     @pulumi.getter(name="computeGlobalImageCapabilitySchemaId")
     def compute_global_image_capability_schema_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The ocid of the compute global image capability schema
-        """
         return pulumi.get(self, "compute_global_image_capability_schema_id")
 
     @compute_global_image_capability_schema_id.setter
@@ -197,9 +154,6 @@ class _ComputeImageCapabilitySchemaState:
     @property
     @pulumi.getter(name="computeGlobalImageCapabilitySchemaVersionName")
     def compute_global_image_capability_schema_version_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name of the compute global image capability schema version
-        """
         return pulumi.get(self, "compute_global_image_capability_schema_version_name")
 
     @compute_global_image_capability_schema_version_name.setter
@@ -209,9 +163,6 @@ class _ComputeImageCapabilitySchemaState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -221,9 +172,6 @@ class _ComputeImageCapabilitySchemaState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -233,9 +181,6 @@ class _ComputeImageCapabilitySchemaState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -245,9 +190,6 @@ class _ComputeImageCapabilitySchemaState:
     @property
     @pulumi.getter(name="imageId")
     def image_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The ocid of the image
-        """
         return pulumi.get(self, "image_id")
 
     @image_id.setter
@@ -257,9 +199,6 @@ class _ComputeImageCapabilitySchemaState:
     @property
     @pulumi.getter(name="schemaData")
     def schema_data(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) The map of each capability name to its ImageCapabilitySchemaDescriptor.
-        """
         return pulumi.get(self, "schema_data")
 
     @schema_data.setter
@@ -269,9 +208,6 @@ class _ComputeImageCapabilitySchemaState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the compute image capability schema was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -293,52 +229,9 @@ class ComputeImageCapabilitySchema(pulumi.CustomResource):
                  schema_data: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  __props__=None):
         """
-        This resource provides the Compute Image Capability Schema resource in Oracle Cloud Infrastructure Core service.
-
-        Creates compute image capability schema.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_compute_image_capability_schema = oci.core.ComputeImageCapabilitySchema("testComputeImageCapabilitySchema",
-            compartment_id=var["compartment_id"],
-            compute_global_image_capability_schema_version_name=var["compute_image_capability_schema_compute_global_image_capability_schema_version_name"],
-            image_id=oci_core_image["test_image"]["id"],
-            schema_data=[{
-                "descriptorType": var["compute_image_capability_schema_schema_data_descriptor_type"],
-                "source": var["compute_image_capability_schema_schema_data_source"],
-                "defaultValue": var["compute_image_capability_schema_schema_data_default_value"],
-                "values": var["compute_image_capability_schema_schema_data_values"],
-            }],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            display_name=var["compute_image_capability_schema_display_name"],
-            freeform_tags={
-                "Department": "Finance",
-            })
-        ```
-
-        ## Import
-
-        ComputeImageCapabilitySchemas can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Core/computeImageCapabilitySchema:ComputeImageCapabilitySchema test_compute_image_capability_schema "id"
-        ```
-
+        Create a ComputeImageCapabilitySchema resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that contains the resource.
-        :param pulumi.Input[str] compute_global_image_capability_schema_version_name: The name of the compute global image capability schema version
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] image_id: The ocid of the image
-        :param pulumi.Input[Mapping[str, Any]] schema_data: (Updatable) The map of each capability name to its ImageCapabilitySchemaDescriptor.
         """
         ...
     @overload
@@ -347,43 +240,7 @@ class ComputeImageCapabilitySchema(pulumi.CustomResource):
                  args: ComputeImageCapabilitySchemaArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Compute Image Capability Schema resource in Oracle Cloud Infrastructure Core service.
-
-        Creates compute image capability schema.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_compute_image_capability_schema = oci.core.ComputeImageCapabilitySchema("testComputeImageCapabilitySchema",
-            compartment_id=var["compartment_id"],
-            compute_global_image_capability_schema_version_name=var["compute_image_capability_schema_compute_global_image_capability_schema_version_name"],
-            image_id=oci_core_image["test_image"]["id"],
-            schema_data=[{
-                "descriptorType": var["compute_image_capability_schema_schema_data_descriptor_type"],
-                "source": var["compute_image_capability_schema_schema_data_source"],
-                "defaultValue": var["compute_image_capability_schema_schema_data_default_value"],
-                "values": var["compute_image_capability_schema_schema_data_values"],
-            }],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            display_name=var["compute_image_capability_schema_display_name"],
-            freeform_tags={
-                "Department": "Finance",
-            })
-        ```
-
-        ## Import
-
-        ComputeImageCapabilitySchemas can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Core/computeImageCapabilitySchema:ComputeImageCapabilitySchema test_compute_image_capability_schema "id"
-        ```
-
+        Create a ComputeImageCapabilitySchema resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param ComputeImageCapabilitySchemaArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -458,15 +315,6 @@ class ComputeImageCapabilitySchema(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that contains the resource.
-        :param pulumi.Input[str] compute_global_image_capability_schema_id: The ocid of the compute global image capability schema
-        :param pulumi.Input[str] compute_global_image_capability_schema_version_name: The name of the compute global image capability schema version
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] image_id: The ocid of the image
-        :param pulumi.Input[Mapping[str, Any]] schema_data: (Updatable) The map of each capability name to its ImageCapabilitySchemaDescriptor.
-        :param pulumi.Input[str] time_created: The date and time the compute image capability schema was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -486,72 +334,45 @@ class ComputeImageCapabilitySchema(pulumi.CustomResource):
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The OCID of the compartment that contains the resource.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="computeGlobalImageCapabilitySchemaId")
-    def compute_global_image_capability_schema_id(self) -> pulumi.Output[str]:
-        """
-        The ocid of the compute global image capability schema
-        """
+    def compute_global_image_capability_schema_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "compute_global_image_capability_schema_id")
 
     @property
     @pulumi.getter(name="computeGlobalImageCapabilitySchemaVersionName")
     def compute_global_image_capability_schema_version_name(self) -> pulumi.Output[str]:
-        """
-        The name of the compute global image capability schema version
-        """
         return pulumi.get(self, "compute_global_image_capability_schema_version_name")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="imageId")
     def image_id(self) -> pulumi.Output[str]:
-        """
-        The ocid of the image
-        """
         return pulumi.get(self, "image_id")
 
     @property
     @pulumi.getter(name="schemaData")
     def schema_data(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) The map of each capability name to its ImageCapabilitySchemaDescriptor.
-        """
         return pulumi.get(self, "schema_data")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The date and time the compute image capability schema was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 

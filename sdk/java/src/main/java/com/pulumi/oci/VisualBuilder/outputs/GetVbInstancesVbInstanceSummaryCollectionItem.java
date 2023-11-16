@@ -15,6 +15,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetVbInstancesVbInstanceSummaryCollectionItem {
@@ -22,113 +24,113 @@ public final class GetVbInstancesVbInstanceSummaryCollectionItem {
      * @return A list of alternate custom endpoints used for the vb instance URL.
      * 
      */
-    private List<GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpoint> alternateCustomEndpoints;
+    private @Nullable List<GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpoint> alternateCustomEndpoints;
     /**
      * @return A list of associated attachments to other services
      * 
      */
-    private List<GetVbInstancesVbInstanceSummaryCollectionItemAttachment> attachments;
+    private @Nullable List<GetVbInstancesVbInstanceSummaryCollectionItemAttachment> attachments;
     /**
      * @return The ID of the compartment in which to list resources.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The entitlement used for billing purposes.
      * 
      */
-    private String consumptionModel;
+    private @Nullable String consumptionModel;
     /**
      * @return Details for a custom endpoint for the vb instance.
      * 
      */
-    private List<GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpoint> customEndpoints;
+    private @Nullable List<GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpoint> customEndpoints;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable.  Example: `My new resource`
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return Unique identifier that is immutable on creation.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Information for IDCS access
      * 
      */
-    private List<GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfo> idcsInfos;
-    private String idcsOpenId;
+    private @Nullable List<GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfo> idcsInfos;
+    private @Nullable String idcsOpenId;
     /**
      * @return The Vb Instance URL.
      * 
      */
-    private String instanceUrl;
+    private @Nullable String instanceUrl;
     /**
      * @return Visual Builder is enabled or not.
      * 
      */
-    private Boolean isVisualBuilderEnabled;
+    private @Nullable Boolean isVisualBuilderEnabled;
     /**
      * @return The NAT gateway IP address for the VB management VCN
      * 
      */
-    private String managementNatGatewayIp;
+    private @Nullable String managementNatGatewayIp;
     /**
      * @return The Oracle Cloud ID (OCID) of the Visual Builder management VCN
      * 
      */
-    private String managementVcnId;
+    private @Nullable String managementVcnId;
     /**
      * @return The number of Nodes
      * 
      */
-    private Integer nodeCount;
+    private @Nullable Integer nodeCount;
     /**
      * @return The NAT gateway IP address for the VB service VCN
      * 
      */
-    private String serviceNatGatewayIp;
+    private @Nullable String serviceNatGatewayIp;
     /**
      * @return The Oracle Cloud ID (OCID) of the Visual Builder service VCN
      * 
      */
-    private String serviceVcnId;
+    private @Nullable String serviceVcnId;
     /**
      * @return Life cycle state to query on.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    private String stateMessage;
+    private @Nullable String stateMessage;
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private @Nullable Map<String,Object> systemTags;
     /**
      * @return The time the the VbInstance was created. An RFC3339 formatted datetime string.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The time the VbInstance was updated. An RFC3339 formatted datetime string.
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
 
     private GetVbInstancesVbInstanceSummaryCollectionItem() {}
     /**
@@ -136,157 +138,157 @@ public final class GetVbInstancesVbInstanceSummaryCollectionItem {
      * 
      */
     public List<GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpoint> alternateCustomEndpoints() {
-        return this.alternateCustomEndpoints;
+        return this.alternateCustomEndpoints == null ? List.of() : this.alternateCustomEndpoints;
     }
     /**
      * @return A list of associated attachments to other services
      * 
      */
     public List<GetVbInstancesVbInstanceSummaryCollectionItemAttachment> attachments() {
-        return this.attachments;
+        return this.attachments == null ? List.of() : this.attachments;
     }
     /**
      * @return The ID of the compartment in which to list resources.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The entitlement used for billing purposes.
      * 
      */
-    public String consumptionModel() {
-        return this.consumptionModel;
+    public Optional<String> consumptionModel() {
+        return Optional.ofNullable(this.consumptionModel);
     }
     /**
      * @return Details for a custom endpoint for the vb instance.
      * 
      */
     public List<GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpoint> customEndpoints() {
-        return this.customEndpoints;
+        return this.customEndpoints == null ? List.of() : this.customEndpoints;
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable.  Example: `My new resource`
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return Unique identifier that is immutable on creation.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Information for IDCS access
      * 
      */
     public List<GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfo> idcsInfos() {
-        return this.idcsInfos;
+        return this.idcsInfos == null ? List.of() : this.idcsInfos;
     }
-    public String idcsOpenId() {
-        return this.idcsOpenId;
+    public Optional<String> idcsOpenId() {
+        return Optional.ofNullable(this.idcsOpenId);
     }
     /**
      * @return The Vb Instance URL.
      * 
      */
-    public String instanceUrl() {
-        return this.instanceUrl;
+    public Optional<String> instanceUrl() {
+        return Optional.ofNullable(this.instanceUrl);
     }
     /**
      * @return Visual Builder is enabled or not.
      * 
      */
-    public Boolean isVisualBuilderEnabled() {
-        return this.isVisualBuilderEnabled;
+    public Optional<Boolean> isVisualBuilderEnabled() {
+        return Optional.ofNullable(this.isVisualBuilderEnabled);
     }
     /**
      * @return The NAT gateway IP address for the VB management VCN
      * 
      */
-    public String managementNatGatewayIp() {
-        return this.managementNatGatewayIp;
+    public Optional<String> managementNatGatewayIp() {
+        return Optional.ofNullable(this.managementNatGatewayIp);
     }
     /**
      * @return The Oracle Cloud ID (OCID) of the Visual Builder management VCN
      * 
      */
-    public String managementVcnId() {
-        return this.managementVcnId;
+    public Optional<String> managementVcnId() {
+        return Optional.ofNullable(this.managementVcnId);
     }
     /**
      * @return The number of Nodes
      * 
      */
-    public Integer nodeCount() {
-        return this.nodeCount;
+    public Optional<Integer> nodeCount() {
+        return Optional.ofNullable(this.nodeCount);
     }
     /**
      * @return The NAT gateway IP address for the VB service VCN
      * 
      */
-    public String serviceNatGatewayIp() {
-        return this.serviceNatGatewayIp;
+    public Optional<String> serviceNatGatewayIp() {
+        return Optional.ofNullable(this.serviceNatGatewayIp);
     }
     /**
      * @return The Oracle Cloud ID (OCID) of the Visual Builder service VCN
      * 
      */
-    public String serviceVcnId() {
-        return this.serviceVcnId;
+    public Optional<String> serviceVcnId() {
+        return Optional.ofNullable(this.serviceVcnId);
     }
     /**
      * @return Life cycle state to query on.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    public String stateMessage() {
-        return this.stateMessage;
+    public Optional<String> stateMessage() {
+        return Optional.ofNullable(this.stateMessage);
     }
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     public Map<String,Object> systemTags() {
-        return this.systemTags;
+        return this.systemTags == null ? Map.of() : this.systemTags;
     }
     /**
      * @return The time the the VbInstance was created. An RFC3339 formatted datetime string.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The time the VbInstance was updated. An RFC3339 formatted datetime string.
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
 
     public static Builder builder() {
@@ -298,29 +300,29 @@ public final class GetVbInstancesVbInstanceSummaryCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpoint> alternateCustomEndpoints;
-        private List<GetVbInstancesVbInstanceSummaryCollectionItemAttachment> attachments;
-        private String compartmentId;
-        private String consumptionModel;
-        private List<GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpoint> customEndpoints;
-        private Map<String,Object> definedTags;
-        private String displayName;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private List<GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfo> idcsInfos;
-        private String idcsOpenId;
-        private String instanceUrl;
-        private Boolean isVisualBuilderEnabled;
-        private String managementNatGatewayIp;
-        private String managementVcnId;
-        private Integer nodeCount;
-        private String serviceNatGatewayIp;
-        private String serviceVcnId;
-        private String state;
-        private String stateMessage;
-        private Map<String,Object> systemTags;
-        private String timeCreated;
-        private String timeUpdated;
+        private @Nullable List<GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpoint> alternateCustomEndpoints;
+        private @Nullable List<GetVbInstancesVbInstanceSummaryCollectionItemAttachment> attachments;
+        private @Nullable String compartmentId;
+        private @Nullable String consumptionModel;
+        private @Nullable List<GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpoint> customEndpoints;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable List<GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfo> idcsInfos;
+        private @Nullable String idcsOpenId;
+        private @Nullable String instanceUrl;
+        private @Nullable Boolean isVisualBuilderEnabled;
+        private @Nullable String managementNatGatewayIp;
+        private @Nullable String managementVcnId;
+        private @Nullable Integer nodeCount;
+        private @Nullable String serviceNatGatewayIp;
+        private @Nullable String serviceVcnId;
+        private @Nullable String state;
+        private @Nullable String stateMessage;
+        private @Nullable Map<String,Object> systemTags;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
         public Builder() {}
         public Builder(GetVbInstancesVbInstanceSummaryCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -350,130 +352,130 @@ public final class GetVbInstancesVbInstanceSummaryCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder alternateCustomEndpoints(List<GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpoint> alternateCustomEndpoints) {
-            this.alternateCustomEndpoints = Objects.requireNonNull(alternateCustomEndpoints);
+        public Builder alternateCustomEndpoints(@Nullable List<GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpoint> alternateCustomEndpoints) {
+            this.alternateCustomEndpoints = alternateCustomEndpoints;
             return this;
         }
         public Builder alternateCustomEndpoints(GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpoint... alternateCustomEndpoints) {
             return alternateCustomEndpoints(List.of(alternateCustomEndpoints));
         }
         @CustomType.Setter
-        public Builder attachments(List<GetVbInstancesVbInstanceSummaryCollectionItemAttachment> attachments) {
-            this.attachments = Objects.requireNonNull(attachments);
+        public Builder attachments(@Nullable List<GetVbInstancesVbInstanceSummaryCollectionItemAttachment> attachments) {
+            this.attachments = attachments;
             return this;
         }
         public Builder attachments(GetVbInstancesVbInstanceSummaryCollectionItemAttachment... attachments) {
             return attachments(List.of(attachments));
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder consumptionModel(String consumptionModel) {
-            this.consumptionModel = Objects.requireNonNull(consumptionModel);
+        public Builder consumptionModel(@Nullable String consumptionModel) {
+            this.consumptionModel = consumptionModel;
             return this;
         }
         @CustomType.Setter
-        public Builder customEndpoints(List<GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpoint> customEndpoints) {
-            this.customEndpoints = Objects.requireNonNull(customEndpoints);
+        public Builder customEndpoints(@Nullable List<GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpoint> customEndpoints) {
+            this.customEndpoints = customEndpoints;
             return this;
         }
         public Builder customEndpoints(GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpoint... customEndpoints) {
             return customEndpoints(List.of(customEndpoints));
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsInfos(List<GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfo> idcsInfos) {
-            this.idcsInfos = Objects.requireNonNull(idcsInfos);
+        public Builder idcsInfos(@Nullable List<GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfo> idcsInfos) {
+            this.idcsInfos = idcsInfos;
             return this;
         }
         public Builder idcsInfos(GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfo... idcsInfos) {
             return idcsInfos(List.of(idcsInfos));
         }
         @CustomType.Setter
-        public Builder idcsOpenId(String idcsOpenId) {
-            this.idcsOpenId = Objects.requireNonNull(idcsOpenId);
+        public Builder idcsOpenId(@Nullable String idcsOpenId) {
+            this.idcsOpenId = idcsOpenId;
             return this;
         }
         @CustomType.Setter
-        public Builder instanceUrl(String instanceUrl) {
-            this.instanceUrl = Objects.requireNonNull(instanceUrl);
+        public Builder instanceUrl(@Nullable String instanceUrl) {
+            this.instanceUrl = instanceUrl;
             return this;
         }
         @CustomType.Setter
-        public Builder isVisualBuilderEnabled(Boolean isVisualBuilderEnabled) {
-            this.isVisualBuilderEnabled = Objects.requireNonNull(isVisualBuilderEnabled);
+        public Builder isVisualBuilderEnabled(@Nullable Boolean isVisualBuilderEnabled) {
+            this.isVisualBuilderEnabled = isVisualBuilderEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder managementNatGatewayIp(String managementNatGatewayIp) {
-            this.managementNatGatewayIp = Objects.requireNonNull(managementNatGatewayIp);
+        public Builder managementNatGatewayIp(@Nullable String managementNatGatewayIp) {
+            this.managementNatGatewayIp = managementNatGatewayIp;
             return this;
         }
         @CustomType.Setter
-        public Builder managementVcnId(String managementVcnId) {
-            this.managementVcnId = Objects.requireNonNull(managementVcnId);
+        public Builder managementVcnId(@Nullable String managementVcnId) {
+            this.managementVcnId = managementVcnId;
             return this;
         }
         @CustomType.Setter
-        public Builder nodeCount(Integer nodeCount) {
-            this.nodeCount = Objects.requireNonNull(nodeCount);
+        public Builder nodeCount(@Nullable Integer nodeCount) {
+            this.nodeCount = nodeCount;
             return this;
         }
         @CustomType.Setter
-        public Builder serviceNatGatewayIp(String serviceNatGatewayIp) {
-            this.serviceNatGatewayIp = Objects.requireNonNull(serviceNatGatewayIp);
+        public Builder serviceNatGatewayIp(@Nullable String serviceNatGatewayIp) {
+            this.serviceNatGatewayIp = serviceNatGatewayIp;
             return this;
         }
         @CustomType.Setter
-        public Builder serviceVcnId(String serviceVcnId) {
-            this.serviceVcnId = Objects.requireNonNull(serviceVcnId);
+        public Builder serviceVcnId(@Nullable String serviceVcnId) {
+            this.serviceVcnId = serviceVcnId;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder stateMessage(String stateMessage) {
-            this.stateMessage = Objects.requireNonNull(stateMessage);
+        public Builder stateMessage(@Nullable String stateMessage) {
+            this.stateMessage = stateMessage;
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+        public Builder systemTags(@Nullable Map<String,Object> systemTags) {
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetVbInstancesVbInstanceSummaryCollectionItem build() {

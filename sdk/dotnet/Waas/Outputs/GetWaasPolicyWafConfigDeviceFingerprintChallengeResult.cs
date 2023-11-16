@@ -16,23 +16,23 @@ namespace Pulumi.Oci.Waas.Outputs
         /// <summary>
         /// The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
         /// </summary>
-        public readonly string Action;
+        public readonly string? Action;
         /// <summary>
         /// The number of seconds between challenges from the same IP address. If unspecified, defaults to `60`.
         /// </summary>
-        public readonly int ActionExpirationInSeconds;
+        public readonly int? ActionExpirationInSeconds;
         /// <summary>
         /// The challenge settings if `action` is set to `BLOCK`.
         /// </summary>
-        public readonly Outputs.GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsResult ChallengeSettings;
+        public readonly Outputs.GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsResult? ChallengeSettings;
         /// <summary>
         /// The number of failed requests before taking action. If unspecified, defaults to `10`.
         /// </summary>
-        public readonly int FailureThreshold;
+        public readonly int? FailureThreshold;
         /// <summary>
         /// The number of seconds before the failure threshold resets. If unspecified, defaults to  `60`.
         /// </summary>
-        public readonly int FailureThresholdExpirationInSeconds;
+        public readonly int? FailureThresholdExpirationInSeconds;
         /// <summary>
         /// Enables or disables the JavaScript challenge Web Application Firewall feature.
         /// </summary>
@@ -40,29 +40,29 @@ namespace Pulumi.Oci.Waas.Outputs
         /// <summary>
         /// The maximum number of IP addresses permitted with the same device fingerprint. If unspecified, defaults to `20`.
         /// </summary>
-        public readonly int MaxAddressCount;
+        public readonly int? MaxAddressCount;
         /// <summary>
         /// The number of seconds before the maximum addresses count resets. If unspecified, defaults to `60`.
         /// </summary>
-        public readonly int MaxAddressCountExpirationInSeconds;
+        public readonly int? MaxAddressCountExpirationInSeconds;
 
         [OutputConstructor]
         private GetWaasPolicyWafConfigDeviceFingerprintChallengeResult(
-            string action,
+            string? action,
 
-            int actionExpirationInSeconds,
+            int? actionExpirationInSeconds,
 
-            Outputs.GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsResult challengeSettings,
+            Outputs.GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsResult? challengeSettings,
 
-            int failureThreshold,
+            int? failureThreshold,
 
-            int failureThresholdExpirationInSeconds,
+            int? failureThresholdExpirationInSeconds,
 
             bool isEnabled,
 
-            int maxAddressCount,
+            int? maxAddressCount,
 
-            int maxAddressCountExpirationInSeconds)
+            int? maxAddressCountExpirationInSeconds)
         {
             Action = action;
             ActionExpirationInSeconds = actionExpirationInSeconds;

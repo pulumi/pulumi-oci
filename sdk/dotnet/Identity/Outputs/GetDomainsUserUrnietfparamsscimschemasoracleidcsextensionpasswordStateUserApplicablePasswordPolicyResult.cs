@@ -16,29 +16,29 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// A human readable name, primarily used for display purposes.
         /// </summary>
-        public readonly string Display;
+        public readonly string? Display;
         /// <summary>
         /// PasswordPolicy priority
         /// </summary>
-        public readonly int Priority;
+        public readonly int? Priority;
         /// <summary>
         /// User Token URI
         /// </summary>
-        public readonly string Ref;
+        public readonly string? Ref;
         /// <summary>
         /// The value of a X509 certificate.
         /// </summary>
-        public readonly string Value;
+        public readonly string? Value;
 
         [OutputConstructor]
         private GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyResult(
-            string display,
+            string? display,
 
-            int priority,
+            int? priority,
 
-            string @ref,
+            string? @ref,
 
-            string value)
+            string? value)
         {
             Display = display;
             Priority = priority;

@@ -8,6 +8,8 @@ import com.pulumi.oci.Kms.outputs.GetVaultExternalKeyManagerMetadataOauthMetadat
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetVaultExternalKeyManagerMetadata {
@@ -15,31 +17,31 @@ public final class GetVaultExternalKeyManagerMetadata {
      * @return URL of the vault on external key manager.
      * 
      */
-    private String externalVaultEndpointUrl;
-    private List<GetVaultExternalKeyManagerMetadataOauthMetadata> oauthMetadatas;
+    private @Nullable String externalVaultEndpointUrl;
+    private @Nullable List<GetVaultExternalKeyManagerMetadataOauthMetadata> oauthMetadatas;
     /**
      * @return OCID of the private endpoint.
      * 
      */
-    private String privateEndpointId;
+    private @Nullable String privateEndpointId;
 
     private GetVaultExternalKeyManagerMetadata() {}
     /**
      * @return URL of the vault on external key manager.
      * 
      */
-    public String externalVaultEndpointUrl() {
-        return this.externalVaultEndpointUrl;
+    public Optional<String> externalVaultEndpointUrl() {
+        return Optional.ofNullable(this.externalVaultEndpointUrl);
     }
     public List<GetVaultExternalKeyManagerMetadataOauthMetadata> oauthMetadatas() {
-        return this.oauthMetadatas;
+        return this.oauthMetadatas == null ? List.of() : this.oauthMetadatas;
     }
     /**
      * @return OCID of the private endpoint.
      * 
      */
-    public String privateEndpointId() {
-        return this.privateEndpointId;
+    public Optional<String> privateEndpointId() {
+        return Optional.ofNullable(this.privateEndpointId);
     }
 
     public static Builder builder() {
@@ -51,9 +53,9 @@ public final class GetVaultExternalKeyManagerMetadata {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String externalVaultEndpointUrl;
-        private List<GetVaultExternalKeyManagerMetadataOauthMetadata> oauthMetadatas;
-        private String privateEndpointId;
+        private @Nullable String externalVaultEndpointUrl;
+        private @Nullable List<GetVaultExternalKeyManagerMetadataOauthMetadata> oauthMetadatas;
+        private @Nullable String privateEndpointId;
         public Builder() {}
         public Builder(GetVaultExternalKeyManagerMetadata defaults) {
     	      Objects.requireNonNull(defaults);
@@ -63,21 +65,21 @@ public final class GetVaultExternalKeyManagerMetadata {
         }
 
         @CustomType.Setter
-        public Builder externalVaultEndpointUrl(String externalVaultEndpointUrl) {
-            this.externalVaultEndpointUrl = Objects.requireNonNull(externalVaultEndpointUrl);
+        public Builder externalVaultEndpointUrl(@Nullable String externalVaultEndpointUrl) {
+            this.externalVaultEndpointUrl = externalVaultEndpointUrl;
             return this;
         }
         @CustomType.Setter
-        public Builder oauthMetadatas(List<GetVaultExternalKeyManagerMetadataOauthMetadata> oauthMetadatas) {
-            this.oauthMetadatas = Objects.requireNonNull(oauthMetadatas);
+        public Builder oauthMetadatas(@Nullable List<GetVaultExternalKeyManagerMetadataOauthMetadata> oauthMetadatas) {
+            this.oauthMetadatas = oauthMetadatas;
             return this;
         }
         public Builder oauthMetadatas(GetVaultExternalKeyManagerMetadataOauthMetadata... oauthMetadatas) {
             return oauthMetadatas(List.of(oauthMetadatas));
         }
         @CustomType.Setter
-        public Builder privateEndpointId(String privateEndpointId) {
-            this.privateEndpointId = Objects.requireNonNull(privateEndpointId);
+        public Builder privateEndpointId(@Nullable String privateEndpointId) {
+            this.privateEndpointId = privateEndpointId;
             return this;
         }
         public GetVaultExternalKeyManagerMetadata build() {

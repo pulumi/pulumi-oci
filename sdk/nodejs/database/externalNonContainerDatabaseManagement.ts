@@ -58,7 +58,7 @@ export class ExternalNonContainerDatabaseManagement extends pulumi.CustomResourc
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly licenseModel!: pulumi.Output<string>;
+    public readonly licenseModel!: pulumi.Output<string | undefined>;
 
     /**
      * Create a ExternalNonContainerDatabaseManagement resource with the given unique name, arguments, and options.

@@ -58,10 +58,7 @@ class GetCustomProtectionRuleResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom protection rule's compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -71,74 +68,47 @@ class GetCustomProtectionRuleResult:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        The description of the custom protection rule.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The user-friendly name of the custom protection rule.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom protection rule.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="modSecurityRuleIds")
-    def mod_security_rule_ids(self) -> Sequence[str]:
-        """
-        The auto-generated ID for the custom protection rule. These IDs are referenced in logs.
-        """
+    def mod_security_rule_ids(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "mod_security_rule_ids")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current lifecycle state of the custom protection rule.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter
-    def template(self) -> str:
-        """
-        The template text of the custom protection rule. All custom protection rules are expressed in ModSecurity Rule Language.
-        """
+    def template(self) -> Optional[str]:
         return pulumi.get(self, "template")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the protection rule was created, expressed in RFC 3339 timestamp format.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
 
@@ -164,21 +134,7 @@ class AwaitableGetCustomProtectionRuleResult(GetCustomProtectionRuleResult):
 def get_custom_protection_rule(custom_protection_rule_id: Optional[str] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCustomProtectionRuleResult:
     """
-    This data source provides details about a specific Custom Protection Rule resource in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
-
-    Gets the details of a custom protection rule.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_custom_protection_rule = oci.Waas.get_custom_protection_rule(custom_protection_rule_id=oci_waas_custom_protection_rule["test_custom_protection_rule"]["id"])
-    ```
-
-
-    :param str custom_protection_rule_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom protection rule. This number is generated when the custom protection rule is added to the compartment.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['customProtectionRuleId'] = custom_protection_rule_id
@@ -203,20 +159,6 @@ def get_custom_protection_rule(custom_protection_rule_id: Optional[str] = None,
 def get_custom_protection_rule_output(custom_protection_rule_id: Optional[pulumi.Input[str]] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCustomProtectionRuleResult]:
     """
-    This data source provides details about a specific Custom Protection Rule resource in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
-
-    Gets the details of a custom protection rule.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_custom_protection_rule = oci.Waas.get_custom_protection_rule(custom_protection_rule_id=oci_waas_custom_protection_rule["test_custom_protection_rule"]["id"])
-    ```
-
-
-    :param str custom_protection_rule_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom protection rule. This number is generated when the custom protection rule is added to the compartment.
+    Use this data source to access information about an existing resource.
     """
     ...

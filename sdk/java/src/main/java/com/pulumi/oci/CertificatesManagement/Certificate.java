@@ -140,28 +140,28 @@ public class Certificate extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="certificateProfileType", refs={String.class}, tree="[0]")
-    private Output<String> certificateProfileType;
+    private Output</* @Nullable */ String> certificateProfileType;
 
     /**
      * @return The name of the profile used to create the certificate, which depends on the type of certificate you need.
      * 
      */
-    public Output<String> certificateProfileType() {
-        return this.certificateProfileType;
+    public Output<Optional<String>> certificateProfileType() {
+        return Codegen.optional(this.certificateProfileType);
     }
     /**
      * The details of the certificate revocation list (CRL).
      * 
      */
     @Export(name="certificateRevocationListDetails", refs={List.class,CertificateCertificateRevocationListDetail.class}, tree="[0,1]")
-    private Output<List<CertificateCertificateRevocationListDetail>> certificateRevocationListDetails;
+    private Output</* @Nullable */ List<CertificateCertificateRevocationListDetail>> certificateRevocationListDetails;
 
     /**
      * @return The details of the certificate revocation list (CRL).
      * 
      */
-    public Output<List<CertificateCertificateRevocationListDetail>> certificateRevocationListDetails() {
-        return this.certificateRevocationListDetails;
+    public Output<Optional<List<CertificateCertificateRevocationListDetail>>> certificateRevocationListDetails() {
+        return Codegen.optional(this.certificateRevocationListDetails);
     }
     /**
      * (Updatable) An optional list of rules that control how the certificate is used and managed.
@@ -196,42 +196,42 @@ public class Certificate extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="configType", refs={String.class}, tree="[0]")
-    private Output<String> configType;
+    private Output</* @Nullable */ String> configType;
 
     /**
      * @return (Updatable) The origin of the certificate.
      * 
      */
-    public Output<String> configType() {
-        return this.configType;
+    public Output<Optional<String>> configType() {
+        return Codegen.optional(this.configType);
     }
     /**
      * The details of the certificate version. This object does not contain the certificate contents.
      * 
      */
     @Export(name="currentVersions", refs={List.class,CertificateCurrentVersion.class}, tree="[0,1]")
-    private Output<List<CertificateCurrentVersion>> currentVersions;
+    private Output</* @Nullable */ List<CertificateCurrentVersion>> currentVersions;
 
     /**
      * @return The details of the certificate version. This object does not contain the certificate contents.
      * 
      */
-    public Output<List<CertificateCurrentVersion>> currentVersions() {
-        return this.currentVersions;
+    public Output<Optional<List<CertificateCurrentVersion>>> currentVersions() {
+        return Codegen.optional(this.currentVersions);
     }
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) A brief description of the certificate. Avoid entering confidential information.
@@ -252,56 +252,56 @@ public class Certificate extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * The OCID of the private CA.
      * 
      */
     @Export(name="issuerCertificateAuthorityId", refs={String.class}, tree="[0]")
-    private Output<String> issuerCertificateAuthorityId;
+    private Output</* @Nullable */ String> issuerCertificateAuthorityId;
 
     /**
      * @return The OCID of the private CA.
      * 
      */
-    public Output<String> issuerCertificateAuthorityId() {
-        return this.issuerCertificateAuthorityId;
+    public Output<Optional<String>> issuerCertificateAuthorityId() {
+        return Codegen.optional(this.issuerCertificateAuthorityId);
     }
     /**
      * The algorithm to use to create key pairs.
      * 
      */
     @Export(name="keyAlgorithm", refs={String.class}, tree="[0]")
-    private Output<String> keyAlgorithm;
+    private Output</* @Nullable */ String> keyAlgorithm;
 
     /**
      * @return The algorithm to use to create key pairs.
      * 
      */
-    public Output<String> keyAlgorithm() {
-        return this.keyAlgorithm;
+    public Output<Optional<String>> keyAlgorithm() {
+        return Codegen.optional(this.keyAlgorithm);
     }
     /**
      * Additional information about the current lifecycle state of the certificate.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return Additional information about the current lifecycle state of the certificate.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * A user-friendly name for the certificate. Names are unique within a compartment. Avoid entering confidential information. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
@@ -328,70 +328,70 @@ public class Certificate extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="signatureAlgorithm", refs={String.class}, tree="[0]")
-    private Output<String> signatureAlgorithm;
+    private Output</* @Nullable */ String> signatureAlgorithm;
 
     /**
      * @return The algorithm to use to sign the public key certificate.
      * 
      */
-    public Output<String> signatureAlgorithm() {
-        return this.signatureAlgorithm;
+    public Output<Optional<String>> signatureAlgorithm() {
+        return Codegen.optional(this.signatureAlgorithm);
     }
     /**
      * The current lifecycle state of the certificate.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current lifecycle state of the certificate.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.
      * 
      */
     @Export(name="subjects", refs={List.class,CertificateSubject.class}, tree="[0,1]")
-    private Output<List<CertificateSubject>> subjects;
+    private Output</* @Nullable */ List<CertificateSubject>> subjects;
 
     /**
      * @return The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.
      * 
      */
-    public Output<List<CertificateSubject>> subjects() {
-        return this.subjects;
+    public Output<Optional<List<CertificateSubject>>> subjects() {
+        return Codegen.optional(this.subjects);
     }
     /**
      * A property indicating when the certificate was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return A property indicating when the certificate was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * An optional property indicating when to delete the certificate version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      * 
      */
     @Export(name="timeOfDeletion", refs={String.class}, tree="[0]")
-    private Output<String> timeOfDeletion;
+    private Output</* @Nullable */ String> timeOfDeletion;
 
     /**
      * @return An optional property indicating when to delete the certificate version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      * 
      */
-    public Output<String> timeOfDeletion() {
-        return this.timeOfDeletion;
+    public Output<Optional<String>> timeOfDeletion() {
+        return Codegen.optional(this.timeOfDeletion);
     }
 
     /**

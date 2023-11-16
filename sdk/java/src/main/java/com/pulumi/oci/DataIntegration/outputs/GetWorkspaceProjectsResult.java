@@ -20,7 +20,7 @@ public final class GetWorkspaceProjectsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The identifier of the aggregator.
      * 
@@ -36,7 +36,7 @@ public final class GetWorkspaceProjectsResult {
      * @return The list of project_summary_collection.
      * 
      */
-    private List<GetWorkspaceProjectsProjectSummaryCollection> projectSummaryCollections;
+    private @Nullable List<GetWorkspaceProjectsProjectSummaryCollection> projectSummaryCollections;
     private String workspaceId;
 
     private GetWorkspaceProjectsResult() {}
@@ -50,8 +50,8 @@ public final class GetWorkspaceProjectsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The identifier of the aggregator.
@@ -75,7 +75,7 @@ public final class GetWorkspaceProjectsResult {
      * 
      */
     public List<GetWorkspaceProjectsProjectSummaryCollection> projectSummaryCollections() {
-        return this.projectSummaryCollections;
+        return this.projectSummaryCollections == null ? List.of() : this.projectSummaryCollections;
     }
     public String workspaceId() {
         return this.workspaceId;
@@ -92,11 +92,11 @@ public final class GetWorkspaceProjectsResult {
     public static final class Builder {
         private @Nullable List<String> fields;
         private @Nullable List<GetWorkspaceProjectsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable List<String> identifiers;
         private @Nullable String name;
         private @Nullable String nameContains;
-        private List<GetWorkspaceProjectsProjectSummaryCollection> projectSummaryCollections;
+        private @Nullable List<GetWorkspaceProjectsProjectSummaryCollection> projectSummaryCollections;
         private String workspaceId;
         public Builder() {}
         public Builder(GetWorkspaceProjectsResult defaults) {
@@ -128,8 +128,8 @@ public final class GetWorkspaceProjectsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -151,8 +151,8 @@ public final class GetWorkspaceProjectsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder projectSummaryCollections(List<GetWorkspaceProjectsProjectSummaryCollection> projectSummaryCollections) {
-            this.projectSummaryCollections = Objects.requireNonNull(projectSummaryCollections);
+        public Builder projectSummaryCollections(@Nullable List<GetWorkspaceProjectsProjectSummaryCollection> projectSummaryCollections) {
+            this.projectSummaryCollections = projectSummaryCollections;
             return this;
         }
         public Builder projectSummaryCollections(GetWorkspaceProjectsProjectSummaryCollection... projectSummaryCollections) {

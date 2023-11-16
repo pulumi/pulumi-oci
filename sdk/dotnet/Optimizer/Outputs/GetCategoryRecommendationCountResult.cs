@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Optimizer.Outputs
         /// <summary>
         /// The count of resources.
         /// </summary>
-        public readonly int Count;
+        public readonly int? Count;
         /// <summary>
         /// The level of importance assigned to the recommendation.
         /// </summary>
-        public readonly string Importance;
+        public readonly string? Importance;
 
         [OutputConstructor]
         private GetCategoryRecommendationCountResult(
-            int count,
+            int? count,
 
-            string importance)
+            string? importance)
         {
             Count = count;
             Importance = importance;

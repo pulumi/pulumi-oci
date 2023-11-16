@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.MediaServices.outputs.GetStreamCdnConfigsStreamCdnConfigCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetStreamCdnConfigsStreamCdnConfigCollection {
-    private List<GetStreamCdnConfigsStreamCdnConfigCollectionItem> items;
+    private @Nullable List<GetStreamCdnConfigsStreamCdnConfigCollectionItem> items;
 
     private GetStreamCdnConfigsStreamCdnConfigCollection() {}
     public List<GetStreamCdnConfigsStreamCdnConfigCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetStreamCdnConfigsStreamCdnConfigCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetStreamCdnConfigsStreamCdnConfigCollectionItem> items;
+        private @Nullable List<GetStreamCdnConfigsStreamCdnConfigCollectionItem> items;
         public Builder() {}
         public Builder(GetStreamCdnConfigsStreamCdnConfigCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetStreamCdnConfigsStreamCdnConfigCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetStreamCdnConfigsStreamCdnConfigCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetStreamCdnConfigsStreamCdnConfigCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetStreamCdnConfigsStreamCdnConfigCollectionItem... items) {

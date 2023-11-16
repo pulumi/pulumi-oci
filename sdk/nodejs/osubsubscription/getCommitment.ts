@@ -57,32 +57,32 @@ export interface GetCommitmentResult {
     /**
      * Commitment available amount
      */
-    readonly availableAmount: string;
+    readonly availableAmount?: string;
     readonly commitmentId: string;
     /**
      * Funded Allocation line value example: 12000.00
      */
-    readonly fundedAllocationValue: string;
+    readonly fundedAllocationValue?: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Commitment quantity
      */
-    readonly quantity: string;
+    readonly quantity?: string;
     /**
      * Commitment end date
      */
-    readonly timeEnd: string;
+    readonly timeEnd?: string;
     /**
      * Commitment start date
      */
-    readonly timeStart: string;
+    readonly timeStart?: string;
     /**
      * Commitment used amount
      */
-    readonly usedAmount: string;
+    readonly usedAmount?: string;
     readonly xOneGatewaySubscriptionId?: string;
     readonly xOneOriginRegion?: string;
 }

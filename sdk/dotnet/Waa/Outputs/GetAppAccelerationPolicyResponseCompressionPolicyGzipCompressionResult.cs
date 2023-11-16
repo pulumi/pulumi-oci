@@ -16,10 +16,10 @@ namespace Pulumi.Oci.Waa.Outputs
         /// <summary>
         /// When true, support for gzip compression is enabled. HTTP responses will be compressed with gzip only if the client indicates support for gzip via the "Accept-Encoding: gzip" request header.
         /// </summary>
-        public readonly bool IsEnabled;
+        public readonly bool? IsEnabled;
 
         [OutputConstructor]
-        private GetAppAccelerationPolicyResponseCompressionPolicyGzipCompressionResult(bool isEnabled)
+        private GetAppAccelerationPolicyResponseCompressionPolicyGzipCompressionResult(bool? isEnabled)
         {
             IsEnabled = isEnabled;
         }

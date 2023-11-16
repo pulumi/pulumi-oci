@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Notification Topic resource in Oracle Cloud Infrastructure Notifications service.
@@ -76,15 +75,15 @@ type NotificationTopic struct {
 	pulumi.CustomResourceState
 
 	// The endpoint for managing subscriptions or publishing messages to the topic.
-	ApiEndpoint pulumi.StringOutput `pulumi:"apiEndpoint"`
+	ApiEndpoint pulumi.StringPtrOutput `pulumi:"apiEndpoint"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the topic in.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) The description of the topic being created. Avoid entering confidential information.
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// For optimistic concurrency control. See `if-match`.
-	Etag pulumi.StringOutput `pulumi:"etag"`
+	Etag pulumi.StringPtrOutput `pulumi:"etag"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The name of the topic being created. The topic name must be unique across the tenancy. Avoid entering confidential information.
@@ -93,13 +92,13 @@ type NotificationTopic struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Name pulumi.StringOutput `pulumi:"name"`
 	// A unique short topic Id. This is used only for SMS subscriptions.
-	ShortTopicId pulumi.StringOutput `pulumi:"shortTopicId"`
+	ShortTopicId pulumi.StringPtrOutput `pulumi:"shortTopicId"`
 	// The lifecycle state of the topic.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The time the topic was created.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
-	TopicId pulumi.StringOutput `pulumi:"topicId"`
+	TopicId pulumi.StringPtrOutput `pulumi:"topicId"`
 }
 
 // NewNotificationTopic registers a new resource with the given unique name, arguments, and options.
@@ -250,12 +249,6 @@ func (i *NotificationTopic) ToNotificationTopicOutputWithContext(ctx context.Con
 	return pulumi.ToOutputWithContext(ctx, i).(NotificationTopicOutput)
 }
 
-func (i *NotificationTopic) ToOutput(ctx context.Context) pulumix.Output[*NotificationTopic] {
-	return pulumix.Output[*NotificationTopic]{
-		OutputState: i.ToNotificationTopicOutputWithContext(ctx).OutputState,
-	}
-}
-
 // NotificationTopicArrayInput is an input type that accepts NotificationTopicArray and NotificationTopicArrayOutput values.
 // You can construct a concrete instance of `NotificationTopicArrayInput` via:
 //
@@ -279,12 +272,6 @@ func (i NotificationTopicArray) ToNotificationTopicArrayOutput() NotificationTop
 
 func (i NotificationTopicArray) ToNotificationTopicArrayOutputWithContext(ctx context.Context) NotificationTopicArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(NotificationTopicArrayOutput)
-}
-
-func (i NotificationTopicArray) ToOutput(ctx context.Context) pulumix.Output[[]*NotificationTopic] {
-	return pulumix.Output[[]*NotificationTopic]{
-		OutputState: i.ToNotificationTopicArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // NotificationTopicMapInput is an input type that accepts NotificationTopicMap and NotificationTopicMapOutput values.
@@ -312,12 +299,6 @@ func (i NotificationTopicMap) ToNotificationTopicMapOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(NotificationTopicMapOutput)
 }
 
-func (i NotificationTopicMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*NotificationTopic] {
-	return pulumix.Output[map[string]*NotificationTopic]{
-		OutputState: i.ToNotificationTopicMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type NotificationTopicOutput struct{ *pulumi.OutputState }
 
 func (NotificationTopicOutput) ElementType() reflect.Type {
@@ -332,15 +313,9 @@ func (o NotificationTopicOutput) ToNotificationTopicOutputWithContext(ctx contex
 	return o
 }
 
-func (o NotificationTopicOutput) ToOutput(ctx context.Context) pulumix.Output[*NotificationTopic] {
-	return pulumix.Output[*NotificationTopic]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The endpoint for managing subscriptions or publishing messages to the topic.
-func (o NotificationTopicOutput) ApiEndpoint() pulumi.StringOutput {
-	return o.ApplyT(func(v *NotificationTopic) pulumi.StringOutput { return v.ApiEndpoint }).(pulumi.StringOutput)
+func (o NotificationTopicOutput) ApiEndpoint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NotificationTopic) pulumi.StringPtrOutput { return v.ApiEndpoint }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the topic in.
@@ -354,13 +329,13 @@ func (o NotificationTopicOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) The description of the topic being created. Avoid entering confidential information.
-func (o NotificationTopicOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *NotificationTopic) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o NotificationTopicOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NotificationTopic) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // For optimistic concurrency control. See `if-match`.
-func (o NotificationTopicOutput) Etag() pulumi.StringOutput {
-	return o.ApplyT(func(v *NotificationTopic) pulumi.StringOutput { return v.Etag }).(pulumi.StringOutput)
+func (o NotificationTopicOutput) Etag() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NotificationTopic) pulumi.StringPtrOutput { return v.Etag }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -377,23 +352,23 @@ func (o NotificationTopicOutput) Name() pulumi.StringOutput {
 }
 
 // A unique short topic Id. This is used only for SMS subscriptions.
-func (o NotificationTopicOutput) ShortTopicId() pulumi.StringOutput {
-	return o.ApplyT(func(v *NotificationTopic) pulumi.StringOutput { return v.ShortTopicId }).(pulumi.StringOutput)
+func (o NotificationTopicOutput) ShortTopicId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NotificationTopic) pulumi.StringPtrOutput { return v.ShortTopicId }).(pulumi.StringPtrOutput)
 }
 
 // The lifecycle state of the topic.
-func (o NotificationTopicOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *NotificationTopic) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o NotificationTopicOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NotificationTopic) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The time the topic was created.
-func (o NotificationTopicOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *NotificationTopic) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o NotificationTopicOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NotificationTopic) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
-func (o NotificationTopicOutput) TopicId() pulumi.StringOutput {
-	return o.ApplyT(func(v *NotificationTopic) pulumi.StringOutput { return v.TopicId }).(pulumi.StringOutput)
+func (o NotificationTopicOutput) TopicId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NotificationTopic) pulumi.StringPtrOutput { return v.TopicId }).(pulumi.StringPtrOutput)
 }
 
 type NotificationTopicArrayOutput struct{ *pulumi.OutputState }
@@ -408,12 +383,6 @@ func (o NotificationTopicArrayOutput) ToNotificationTopicArrayOutput() Notificat
 
 func (o NotificationTopicArrayOutput) ToNotificationTopicArrayOutputWithContext(ctx context.Context) NotificationTopicArrayOutput {
 	return o
-}
-
-func (o NotificationTopicArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*NotificationTopic] {
-	return pulumix.Output[[]*NotificationTopic]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o NotificationTopicArrayOutput) Index(i pulumi.IntInput) NotificationTopicOutput {
@@ -434,12 +403,6 @@ func (o NotificationTopicMapOutput) ToNotificationTopicMapOutput() NotificationT
 
 func (o NotificationTopicMapOutput) ToNotificationTopicMapOutputWithContext(ctx context.Context) NotificationTopicMapOutput {
 	return o
-}
-
-func (o NotificationTopicMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*NotificationTopic] {
-	return pulumix.Output[map[string]*NotificationTopic]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o NotificationTopicMapOutput) MapIndex(k pulumi.StringInput) NotificationTopicOutput {

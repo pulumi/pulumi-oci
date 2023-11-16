@@ -46,33 +46,21 @@ class GetExternalAsmInstancesResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        The user-friendly name for the ASM instance. The name does not have to be unique.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="externalAsmId")
     def external_asm_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external ASM that the ASM instance belongs to.
-        """
         return pulumi.get(self, "external_asm_id")
 
     @property
     @pulumi.getter(name="externalAsmInstanceCollections")
-    def external_asm_instance_collections(self) -> Sequence['outputs.GetExternalAsmInstancesExternalAsmInstanceCollectionResult']:
-        """
-        The list of external_asm_instance_collection.
-        """
+    def external_asm_instance_collections(self) -> Optional[Sequence['outputs.GetExternalAsmInstancesExternalAsmInstanceCollectionResult']]:
         return pulumi.get(self, "external_asm_instance_collections")
 
     @property
@@ -82,7 +70,7 @@ class GetExternalAsmInstancesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -109,25 +97,7 @@ def get_external_asm_instances(compartment_id: Optional[str] = None,
                                filters: Optional[Sequence[pulumi.InputType['GetExternalAsmInstancesFilterArgs']]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetExternalAsmInstancesResult:
     """
-    This data source provides the list of External Asm Instances in Oracle Cloud Infrastructure Database Management service.
-
-    Lists the ASM instances in the specified external ASM.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_external_asm_instances = oci.DatabaseManagement.get_external_asm_instances(compartment_id=var["compartment_id"],
-        display_name=var["external_asm_instance_display_name"],
-        external_asm_id=oci_database_management_external_asm["test_external_asm"]["id"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str display_name: A filter to only return the resources that match the entire display name.
-    :param str external_asm_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external ASM.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -153,24 +123,6 @@ def get_external_asm_instances_output(compartment_id: Optional[pulumi.Input[Opti
                                       filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetExternalAsmInstancesFilterArgs']]]]] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExternalAsmInstancesResult]:
     """
-    This data source provides the list of External Asm Instances in Oracle Cloud Infrastructure Database Management service.
-
-    Lists the ASM instances in the specified external ASM.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_external_asm_instances = oci.DatabaseManagement.get_external_asm_instances(compartment_id=var["compartment_id"],
-        display_name=var["external_asm_instance_display_name"],
-        external_asm_id=oci_database_management_external_asm["test_external_asm"]["id"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str display_name: A filter to only return the resources that match the entire display name.
-    :param str external_asm_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external ASM.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -104,56 +104,56 @@ public class SqlCollection extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) The description of the SQL collection.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
-    private Output<String> description;
+    private Output</* @Nullable */ String> description;
 
     /**
      * @return (Updatable) The description of the SQL collection.
      * 
      */
-    public Output<String> description() {
-        return this.description;
+    public Output<Optional<String>> description() {
+        return Codegen.optional(this.description);
     }
     /**
      * (Updatable) The display name of the SQL collection. The name does not have to be unique, and it is changeable.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return (Updatable) The display name of the SQL collection. The name does not have to be unique, and it is changeable.
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * (Updatable) An optional property when incremented triggers Generate Sql Firewall Policy. Could be set to any integer value.
@@ -174,14 +174,14 @@ public class SqlCollection extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return Details about the current state of the SQL collection in Data Safe.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * (Updatable) An optional property when incremented triggers Purge Logs. Could be set to any integer value.
@@ -216,14 +216,14 @@ public class SqlCollection extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="sqlLevel", refs={String.class}, tree="[0]")
-    private Output<String> sqlLevel;
+    private Output</* @Nullable */ String> sqlLevel;
 
     /**
      * @return Specifies the level of SQL that will be collected. USER_ISSUED_SQL - User issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
      * 
      */
-    public Output<String> sqlLevel() {
-        return this.sqlLevel;
+    public Output<Optional<String>> sqlLevel() {
+        return Codegen.optional(this.sqlLevel);
     }
     /**
      * (Updatable) An optional property when incremented triggers Start. Could be set to any integer value.
@@ -244,28 +244,28 @@ public class SqlCollection extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the SQL collection.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * Specifies if the SqlCollection has to be started after creation. Enabled indicates that the SqlCollection will be started after creation.
      * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
-    private Output<String> status;
+    private Output</* @Nullable */ String> status;
 
     /**
      * @return Specifies if the SqlCollection has to be started after creation. Enabled indicates that the SqlCollection will be started after creation.
      * 
      */
-    public Output<String> status() {
-        return this.status;
+    public Output<Optional<String>> status() {
+        return Codegen.optional(this.status);
     }
     /**
      * (Updatable) An optional property when incremented triggers Stop. Could be set to any integer value.
@@ -292,14 +292,14 @@ public class SqlCollection extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> systemTags;
+    private Output</* @Nullable */ Map<String,Object>> systemTags;
 
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    public Output<Map<String,Object>> systemTags() {
-        return this.systemTags;
+    public Output<Optional<Map<String,Object>>> systemTags() {
+        return Codegen.optional(this.systemTags);
     }
     /**
      * The OCID of the target corresponding to the security policy deployment.
@@ -320,56 +320,56 @@ public class SqlCollection extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The time that the SQL collection was created, in the format defined by RFC3339.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The timestamp of the most recent SqlCollection start operation, in the format defined by RFC3339.
      * 
      */
     @Export(name="timeLastStarted", refs={String.class}, tree="[0]")
-    private Output<String> timeLastStarted;
+    private Output</* @Nullable */ String> timeLastStarted;
 
     /**
      * @return The timestamp of the most recent SqlCollection start operation, in the format defined by RFC3339.
      * 
      */
-    public Output<String> timeLastStarted() {
-        return this.timeLastStarted;
+    public Output<Optional<String>> timeLastStarted() {
+        return Codegen.optional(this.timeLastStarted);
     }
     /**
      * The timestamp of the most recent SqlCollection stop operation, in the format defined by RFC3339.
      * 
      */
     @Export(name="timeLastStopped", refs={String.class}, tree="[0]")
-    private Output<String> timeLastStopped;
+    private Output</* @Nullable */ String> timeLastStopped;
 
     /**
      * @return The timestamp of the most recent SqlCollection stop operation, in the format defined by RFC3339.
      * 
      */
-    public Output<String> timeLastStopped() {
-        return this.timeLastStopped;
+    public Output<Optional<String>> timeLastStopped() {
+        return Codegen.optional(this.timeLastStopped);
     }
     /**
      * The last date and time the SQL collection was updated, in the format defined by RFC3339.
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The last date and time the SQL collection was updated, in the format defined by RFC3339.
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
 
     /**

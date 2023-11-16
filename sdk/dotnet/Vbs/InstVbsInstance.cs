@@ -65,7 +65,7 @@ namespace Pulumi.Oci.Vbs
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Display Name
@@ -77,25 +77,25 @@ namespace Pulumi.Oci.Vbs
         /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// IDCS personal acceess token identifying IDCS user and stripe for the VBS service
         /// </summary>
         [Output("idcsAccessToken")]
-        public Output<string> IdcsAccessToken { get; private set; } = null!;
+        public Output<string?> IdcsAccessToken { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Whether VBS is authorized to create and use resources in the customer tenancy
         /// </summary>
         [Output("isResourceUsageAgreementGranted")]
-        public Output<bool> IsResourceUsageAgreementGranted { get; private set; } = null!;
+        public Output<bool?> IsResourceUsageAgreementGranted { get; private set; } = null!;
 
         /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
         [Output("lifecyleDetails")]
-        public Output<string> LifecyleDetails { get; private set; } = null!;
+        public Output<string?> LifecyleDetails { get; private set; } = null!;
 
         /// <summary>
         /// Service Instance Name
@@ -111,37 +111,37 @@ namespace Pulumi.Oci.Vbs
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("resourceCompartmentId")]
-        public Output<string> ResourceCompartmentId { get; private set; } = null!;
+        public Output<string?> ResourceCompartmentId { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the VbsInstance.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
         [Output("systemTags")]
-        public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// The time the the VbsInstance was created. An RFC3339 formatted datetime string
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The time the VbsInstance was updated. An RFC3339 formatted datetime string
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
         /// Public web URL for accessing the VBS service instance
         /// </summary>
         [Output("vbsAccessUrl")]
-        public Output<string> VbsAccessUrl { get; private set; } = null!;
+        public Output<string?> VbsAccessUrl { get; private set; } = null!;
 
 
         /// <summary>

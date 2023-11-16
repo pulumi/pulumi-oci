@@ -94,15 +94,15 @@ export class SoftwareSource extends pulumi.CustomResource {
     /**
      * The architecture type supported by the software source.
      */
-    public /*out*/ readonly archType!: pulumi.Output<string>;
+    public /*out*/ readonly archType!: pulumi.Output<string | undefined>;
     /**
      * Possible availabilities of a software source.
      */
-    public /*out*/ readonly availability!: pulumi.Output<string>;
+    public /*out*/ readonly availability!: pulumi.Output<string | undefined>;
     /**
      * The yum repository checksum type used by this software source.
      */
-    public /*out*/ readonly checksumType!: pulumi.Output<string>;
+    public /*out*/ readonly checksumType!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The OCID of the tenancy containing the software source.
      */
@@ -110,15 +110,15 @@ export class SoftwareSource extends pulumi.CustomResource {
     /**
      * (Updatable) Used to apply filters to a VendorSoftwareSource to create/update CustomSoftwareSources.
      */
-    public readonly customSoftwareSourceFilter!: pulumi.Output<outputs.OsManagementHub.SoftwareSourceCustomSoftwareSourceFilter>;
+    public readonly customSoftwareSourceFilter!: pulumi.Output<outputs.OsManagementHub.SoftwareSourceCustomSoftwareSourceFilter | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) Information specified by the user about the software source.
      */
-    public readonly description!: pulumi.Output<string>;
+    public readonly description!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) User friendly name.
      */
@@ -126,35 +126,35 @@ export class SoftwareSource extends pulumi.CustomResource {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * Fingerprint of the GPG key for this software source.
      */
-    public /*out*/ readonly gpgKeyFingerprint!: pulumi.Output<string>;
+    public /*out*/ readonly gpgKeyFingerprint!: pulumi.Output<string | undefined>;
     /**
      * ID of the GPG key for this software source.
      */
-    public /*out*/ readonly gpgKeyId!: pulumi.Output<string>;
+    public /*out*/ readonly gpgKeyId!: pulumi.Output<string | undefined>;
     /**
      * URL of the GPG key for this software source.
      */
-    public /*out*/ readonly gpgKeyUrl!: pulumi.Output<string>;
+    public /*out*/ readonly gpgKeyUrl!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Indicates whether service should automatically update the custom software source for the user.
      */
-    public readonly isAutomaticallyUpdated!: pulumi.Output<boolean>;
+    public readonly isAutomaticallyUpdated!: pulumi.Output<boolean | undefined>;
     /**
      * The OS family the software source belongs to.
      */
-    public /*out*/ readonly osFamily!: pulumi.Output<string>;
+    public /*out*/ readonly osFamily!: pulumi.Output<string | undefined>;
     /**
      * Number of packages.
      */
-    public /*out*/ readonly packageCount!: pulumi.Output<string>;
+    public /*out*/ readonly packageCount!: pulumi.Output<string | undefined>;
     /**
      * The Repo ID for the software source.
      */
-    public /*out*/ readonly repoId!: pulumi.Output<string>;
+    public /*out*/ readonly repoId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Type of the software source.
      */
@@ -162,27 +162,27 @@ export class SoftwareSource extends pulumi.CustomResource {
     /**
      * The version to assign to this custom software source.
      */
-    public readonly softwareSourceVersion!: pulumi.Output<string>;
+    public readonly softwareSourceVersion!: pulumi.Output<string | undefined>;
     /**
      * The current state of the software source.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The date and time the software source was created, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * URL for the repository.
      */
-    public /*out*/ readonly url!: pulumi.Output<string>;
+    public /*out*/ readonly url!: pulumi.Output<string | undefined>;
     /**
      * Name of the vendor providing the software source.
      */
-    public /*out*/ readonly vendorName!: pulumi.Output<string>;
+    public /*out*/ readonly vendorName!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) List of vendor software sources.
      */

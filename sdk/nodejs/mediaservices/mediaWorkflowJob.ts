@@ -77,71 +77,71 @@ export class MediaWorkflowJob extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) Name of the Media Workflow Job. Does not have to be unique. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    public readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The lifecycle details of MediaWorkflowJob task.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * Configurations to be applied to this run of the workflow.
      */
-    public readonly mediaWorkflowConfigurationIds!: pulumi.Output<string[]>;
+    public readonly mediaWorkflowConfigurationIds!: pulumi.Output<string[] | undefined>;
     /**
      * OCID of the MediaWorkflow that should be run.
      */
-    public readonly mediaWorkflowId!: pulumi.Output<string>;
+    public readonly mediaWorkflowId!: pulumi.Output<string | undefined>;
     /**
      * Name of the system MediaWorkflow that should be run.
      */
-    public readonly mediaWorkflowName!: pulumi.Output<string>;
+    public readonly mediaWorkflowName!: pulumi.Output<string | undefined>;
     /**
      * A list of JobOutput for the workflowJob.
      */
-    public /*out*/ readonly outputs!: pulumi.Output<outputs.MediaServices.MediaWorkflowJobOutput[]>;
+    public /*out*/ readonly outputs!: pulumi.Output<outputs.MediaServices.MediaWorkflowJobOutput[] | undefined>;
     /**
      * Parameters that override parameters specified in MediaWorkflowTaskDeclarations, the MediaWorkflow, the MediaWorkflow's MediaWorkflowConfigurations and the MediaWorkflowConfigurations of this MediaWorkflowJob. The parameters are given as JSON. The top level and 2nd level elements must be JSON objects (vs arrays, scalars, etc). The top level keys refer to a task's key and the 2nd level keys refer to a parameter's name.
      */
-    public readonly parameters!: pulumi.Output<string>;
+    public readonly parameters!: pulumi.Output<string | undefined>;
     /**
      * A JSON representation of the job as it will be run by the system. All the task declarations, configurations and parameters are merged. Parameter values are all fully resolved.
      */
-    public /*out*/ readonly runnable!: pulumi.Output<string>;
+    public /*out*/ readonly runnable!: pulumi.Output<string | undefined>;
     /**
      * The current state of the MediaWorkflowJob task.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * Status of each task.
      */
-    public /*out*/ readonly taskLifecycleStates!: pulumi.Output<outputs.MediaServices.MediaWorkflowJobTaskLifecycleState[]>;
+    public /*out*/ readonly taskLifecycleStates!: pulumi.Output<outputs.MediaServices.MediaWorkflowJobTaskLifecycleState[] | undefined>;
     /**
      * Creation time of the job. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * Time when the job finished. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeEnded!: pulumi.Output<string>;
+    public /*out*/ readonly timeEnded!: pulumi.Output<string | undefined>;
     /**
      * Time when the job started to execute. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeStarted!: pulumi.Output<string>;
+    public /*out*/ readonly timeStarted!: pulumi.Output<string | undefined>;
     /**
      * Updated time of the job. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
     /**
      * Discriminate identification of a workflow by name versus a workflow by ID.
      *

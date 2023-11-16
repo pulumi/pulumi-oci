@@ -20,7 +20,7 @@ public final class GetSoftwareSourceModuleStreamsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Indicates whether this module stream is the latest.
      * 
@@ -36,7 +36,7 @@ public final class GetSoftwareSourceModuleStreamsResult {
      * @return The list of module_stream_collection.
      * 
      */
-    private List<GetSoftwareSourceModuleStreamsModuleStreamCollection> moduleStreamCollections;
+    private @Nullable List<GetSoftwareSourceModuleStreamsModuleStreamCollection> moduleStreamCollections;
     /**
      * @return The name of the stream.
      * 
@@ -56,8 +56,8 @@ public final class GetSoftwareSourceModuleStreamsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Indicates whether this module stream is the latest.
@@ -81,7 +81,7 @@ public final class GetSoftwareSourceModuleStreamsResult {
      * 
      */
     public List<GetSoftwareSourceModuleStreamsModuleStreamCollection> moduleStreamCollections() {
-        return this.moduleStreamCollections;
+        return this.moduleStreamCollections == null ? List.of() : this.moduleStreamCollections;
     }
     /**
      * @return The name of the stream.
@@ -108,11 +108,11 @@ public final class GetSoftwareSourceModuleStreamsResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetSoftwareSourceModuleStreamsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable Boolean isLatest;
         private @Nullable String moduleName;
         private @Nullable String moduleNameContains;
-        private List<GetSoftwareSourceModuleStreamsModuleStreamCollection> moduleStreamCollections;
+        private @Nullable List<GetSoftwareSourceModuleStreamsModuleStreamCollection> moduleStreamCollections;
         private @Nullable String name;
         private String softwareSourceId;
         public Builder() {}
@@ -137,8 +137,8 @@ public final class GetSoftwareSourceModuleStreamsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -157,8 +157,8 @@ public final class GetSoftwareSourceModuleStreamsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder moduleStreamCollections(List<GetSoftwareSourceModuleStreamsModuleStreamCollection> moduleStreamCollections) {
-            this.moduleStreamCollections = Objects.requireNonNull(moduleStreamCollections);
+        public Builder moduleStreamCollections(@Nullable List<GetSoftwareSourceModuleStreamsModuleStreamCollection> moduleStreamCollections) {
+            this.moduleStreamCollections = moduleStreamCollections;
             return this;
         }
         public Builder moduleStreamCollections(GetSoftwareSourceModuleStreamsModuleStreamCollection... moduleStreamCollections) {

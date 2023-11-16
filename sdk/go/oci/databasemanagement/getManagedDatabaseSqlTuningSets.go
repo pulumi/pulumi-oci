@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Managed Database Sql Tuning Sets in Oracle Cloud Infrastructure Database Management service.
@@ -68,7 +67,7 @@ type GetManagedDatabaseSqlTuningSetsArgs struct {
 type GetManagedDatabaseSqlTuningSetsResult struct {
 	Filters []GetManagedDatabaseSqlTuningSetsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
 	ManagedDatabaseId string  `pulumi:"managedDatabaseId"`
 	NameContains      *string `pulumi:"nameContains"`
@@ -121,12 +120,6 @@ func (o GetManagedDatabaseSqlTuningSetsResultOutput) ToGetManagedDatabaseSqlTuni
 	return o
 }
 
-func (o GetManagedDatabaseSqlTuningSetsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedDatabaseSqlTuningSetsResult] {
-	return pulumix.Output[GetManagedDatabaseSqlTuningSetsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetManagedDatabaseSqlTuningSetsResultOutput) Filters() GetManagedDatabaseSqlTuningSetsFilterArrayOutput {
 	return o.ApplyT(func(v GetManagedDatabaseSqlTuningSetsResult) []GetManagedDatabaseSqlTuningSetsFilter {
 		return v.Filters
@@ -134,8 +127,8 @@ func (o GetManagedDatabaseSqlTuningSetsResultOutput) Filters() GetManagedDatabas
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetManagedDatabaseSqlTuningSetsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseSqlTuningSetsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetManagedDatabaseSqlTuningSetsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlTuningSetsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.

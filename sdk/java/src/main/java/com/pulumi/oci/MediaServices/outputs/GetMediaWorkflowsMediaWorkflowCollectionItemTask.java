@@ -9,6 +9,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMediaWorkflowsMediaWorkflowCollectionItemTask {
@@ -16,87 +18,87 @@ public final class GetMediaWorkflowsMediaWorkflowCollectionItemTask {
      * @return Allows this task to be conditionally enabled.  If no value or a blank value is given, the task is unconditionally enbled.  Otherwise the given string specifies a parameter of the job created for this task&#39;s workflow using the JSON pointer syntax. The JSON pointer is validated when a job is created from the workflow of this task.
      * 
      */
-    private String enableParameterReference;
+    private @Nullable String enableParameterReference;
     /**
      * @return Used in conjunction with enableParameterReference to conditionally enable a task.  When a job is created from the workflow of this task, the task will only be enabled if the value of the parameter specified by enableParameterReference is equal to the value of this property. This property must be prenset if and only if a enableParameterReference is given. The value is a JSON node.
      * 
      */
-    private Map<String,Object> enableWhenReferencedParameterEquals;
+    private @Nullable Map<String,Object> enableWhenReferencedParameterEquals;
     /**
      * @return A unique identifier for this task within its workflow. Keys are used to reference a task within workflows and MediaWorkflowJobs. Tasks are referenced as prerequisites and to track output and state.
      * 
      */
-    private String key;
+    private @Nullable String key;
     /**
      * @return Data specifiying how this task is to be run. The data is a JSON object that must conform to the JSON Schema specified by the parameters of the MediaWorkflowTaskDeclaration this task references. The parameters may contain values or references to other parameters.
      * 
      */
-    private String parameters;
+    private @Nullable String parameters;
     /**
      * @return Keys to the other tasks in this workflow that must be completed before execution of this task can begin.
      * 
      */
-    private List<String> prerequisites;
+    private @Nullable List<String> prerequisites;
     /**
      * @return The type of process to run at this task. Refers to the name of a MediaWorkflowTaskDeclaration.
      * 
      */
-    private String type;
+    private @Nullable String type;
     /**
      * @return The version of the MediaWorkflow.
      * 
      */
-    private String version;
+    private @Nullable String version;
 
     private GetMediaWorkflowsMediaWorkflowCollectionItemTask() {}
     /**
      * @return Allows this task to be conditionally enabled.  If no value or a blank value is given, the task is unconditionally enbled.  Otherwise the given string specifies a parameter of the job created for this task&#39;s workflow using the JSON pointer syntax. The JSON pointer is validated when a job is created from the workflow of this task.
      * 
      */
-    public String enableParameterReference() {
-        return this.enableParameterReference;
+    public Optional<String> enableParameterReference() {
+        return Optional.ofNullable(this.enableParameterReference);
     }
     /**
      * @return Used in conjunction with enableParameterReference to conditionally enable a task.  When a job is created from the workflow of this task, the task will only be enabled if the value of the parameter specified by enableParameterReference is equal to the value of this property. This property must be prenset if and only if a enableParameterReference is given. The value is a JSON node.
      * 
      */
     public Map<String,Object> enableWhenReferencedParameterEquals() {
-        return this.enableWhenReferencedParameterEquals;
+        return this.enableWhenReferencedParameterEquals == null ? Map.of() : this.enableWhenReferencedParameterEquals;
     }
     /**
      * @return A unique identifier for this task within its workflow. Keys are used to reference a task within workflows and MediaWorkflowJobs. Tasks are referenced as prerequisites and to track output and state.
      * 
      */
-    public String key() {
-        return this.key;
+    public Optional<String> key() {
+        return Optional.ofNullable(this.key);
     }
     /**
      * @return Data specifiying how this task is to be run. The data is a JSON object that must conform to the JSON Schema specified by the parameters of the MediaWorkflowTaskDeclaration this task references. The parameters may contain values or references to other parameters.
      * 
      */
-    public String parameters() {
-        return this.parameters;
+    public Optional<String> parameters() {
+        return Optional.ofNullable(this.parameters);
     }
     /**
      * @return Keys to the other tasks in this workflow that must be completed before execution of this task can begin.
      * 
      */
     public List<String> prerequisites() {
-        return this.prerequisites;
+        return this.prerequisites == null ? List.of() : this.prerequisites;
     }
     /**
      * @return The type of process to run at this task. Refers to the name of a MediaWorkflowTaskDeclaration.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
     /**
      * @return The version of the MediaWorkflow.
      * 
      */
-    public String version() {
-        return this.version;
+    public Optional<String> version() {
+        return Optional.ofNullable(this.version);
     }
 
     public static Builder builder() {
@@ -108,13 +110,13 @@ public final class GetMediaWorkflowsMediaWorkflowCollectionItemTask {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String enableParameterReference;
-        private Map<String,Object> enableWhenReferencedParameterEquals;
-        private String key;
-        private String parameters;
-        private List<String> prerequisites;
-        private String type;
-        private String version;
+        private @Nullable String enableParameterReference;
+        private @Nullable Map<String,Object> enableWhenReferencedParameterEquals;
+        private @Nullable String key;
+        private @Nullable String parameters;
+        private @Nullable List<String> prerequisites;
+        private @Nullable String type;
+        private @Nullable String version;
         public Builder() {}
         public Builder(GetMediaWorkflowsMediaWorkflowCollectionItemTask defaults) {
     	      Objects.requireNonNull(defaults);
@@ -128,41 +130,41 @@ public final class GetMediaWorkflowsMediaWorkflowCollectionItemTask {
         }
 
         @CustomType.Setter
-        public Builder enableParameterReference(String enableParameterReference) {
-            this.enableParameterReference = Objects.requireNonNull(enableParameterReference);
+        public Builder enableParameterReference(@Nullable String enableParameterReference) {
+            this.enableParameterReference = enableParameterReference;
             return this;
         }
         @CustomType.Setter
-        public Builder enableWhenReferencedParameterEquals(Map<String,Object> enableWhenReferencedParameterEquals) {
-            this.enableWhenReferencedParameterEquals = Objects.requireNonNull(enableWhenReferencedParameterEquals);
+        public Builder enableWhenReferencedParameterEquals(@Nullable Map<String,Object> enableWhenReferencedParameterEquals) {
+            this.enableWhenReferencedParameterEquals = enableWhenReferencedParameterEquals;
             return this;
         }
         @CustomType.Setter
-        public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
+        public Builder key(@Nullable String key) {
+            this.key = key;
             return this;
         }
         @CustomType.Setter
-        public Builder parameters(String parameters) {
-            this.parameters = Objects.requireNonNull(parameters);
+        public Builder parameters(@Nullable String parameters) {
+            this.parameters = parameters;
             return this;
         }
         @CustomType.Setter
-        public Builder prerequisites(List<String> prerequisites) {
-            this.prerequisites = Objects.requireNonNull(prerequisites);
+        public Builder prerequisites(@Nullable List<String> prerequisites) {
+            this.prerequisites = prerequisites;
             return this;
         }
         public Builder prerequisites(String... prerequisites) {
             return prerequisites(List.of(prerequisites));
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         @CustomType.Setter
-        public Builder version(String version) {
-            this.version = Objects.requireNonNull(version);
+        public Builder version(@Nullable String version) {
+            this.version = version;
             return this;
         }
         public GetMediaWorkflowsMediaWorkflowCollectionItemTask build() {

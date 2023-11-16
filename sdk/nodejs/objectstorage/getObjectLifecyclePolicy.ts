@@ -51,16 +51,16 @@ export interface GetObjectLifecyclePolicyArgs {
  */
 export interface GetObjectLifecyclePolicyResult {
     readonly bucket: string;
-    readonly id: string;
+    readonly id?: string;
     readonly namespace: string;
     /**
      * The live lifecycle policy on the bucket.
      */
-    readonly rules: outputs.ObjectStorage.GetObjectLifecyclePolicyRule[];
+    readonly rules?: outputs.ObjectStorage.GetObjectLifecyclePolicyRule[];
     /**
      * The date and time the object lifecycle policy was created, as described in [RFC 3339](https://tools.ietf.org/html/rfc3339).
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
 }
 /**
  * This data source provides details about a specific Object Lifecycle Policy resource in Oracle Cloud Infrastructure Object Storage service.

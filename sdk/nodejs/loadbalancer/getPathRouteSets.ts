@@ -50,12 +50,12 @@ export interface GetPathRouteSetsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly loadBalancerId: string;
     /**
      * The list of path_route_sets.
      */
-    readonly pathRouteSets: outputs.LoadBalancer.GetPathRouteSetsPathRouteSet[];
+    readonly pathRouteSets?: outputs.LoadBalancer.GetPathRouteSetsPathRouteSet[];
 }
 /**
  * This data source provides the list of Path Route Sets in Oracle Cloud Infrastructure Load Balancer service.

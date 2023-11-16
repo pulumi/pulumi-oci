@@ -16,65 +16,65 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// The percentage benefit of this implementation.
         /// </summary>
-        public readonly double Benefit;
+        public readonly double? Benefit;
         /// <summary>
         /// Summary of the issue found in the SQL statement.
         /// </summary>
-        public readonly string Finding;
+        public readonly string? Finding;
         /// <summary>
         /// Action sql to be implemented based on the recommendation result.
         /// </summary>
-        public readonly string ImplementActionSql;
+        public readonly string? ImplementActionSql;
         /// <summary>
         /// Indicates whether a SQL Profile recommendation uses parallel execution.
         /// </summary>
-        public readonly bool IsParallelExecution;
+        public readonly bool? IsParallelExecution;
         /// <summary>
         /// Describes the reasoning behind the recommendation and how it relates to the finding.
         /// </summary>
-        public readonly string Rationale;
+        public readonly string? Rationale;
         /// <summary>
         /// The recommendation for a specific finding.
         /// </summary>
-        public readonly string Recommendation;
+        public readonly string? Recommendation;
         /// <summary>
         /// The unique identifier of the recommendation in the scope of the task.
         /// </summary>
-        public readonly int RecommendationKey;
+        public readonly int? RecommendationKey;
         /// <summary>
         /// Type of recommendation.
         /// </summary>
-        public readonly string RecommendationType;
+        public readonly string? RecommendationType;
         /// <summary>
         /// The SQL tuning task identifier. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
-        public readonly string SqlTuningAdvisorTaskId;
+        public readonly string? SqlTuningAdvisorTaskId;
         /// <summary>
         /// The key of the object to which these recommendations apply. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
-        public readonly string SqlTuningAdvisorTaskObjectId;
+        public readonly string? SqlTuningAdvisorTaskObjectId;
 
         [OutputConstructor]
         private GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsSqlTuningAdvisorTaskRecommendationCollectionItemResult(
-            double benefit,
+            double? benefit,
 
-            string finding,
+            string? finding,
 
-            string implementActionSql,
+            string? implementActionSql,
 
-            bool isParallelExecution,
+            bool? isParallelExecution,
 
-            string rationale,
+            string? rationale,
 
-            string recommendation,
+            string? recommendation,
 
-            int recommendationKey,
+            int? recommendationKey,
 
-            string recommendationType,
+            string? recommendationType,
 
-            string sqlTuningAdvisorTaskId,
+            string? sqlTuningAdvisorTaskId,
 
-            string sqlTuningAdvisorTaskObjectId)
+            string? sqlTuningAdvisorTaskObjectId)
         {
             Benefit = benefit;
             Finding = finding;

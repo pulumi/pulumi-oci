@@ -39,7 +39,7 @@ class GetListingResourceVersionsResult:
 
     @property
     @pulumi.getter(name="appCatalogListingResourceVersions")
-    def app_catalog_listing_resource_versions(self) -> Sequence['outputs.GetListingResourceVersionsAppCatalogListingResourceVersionResult']:
+    def app_catalog_listing_resource_versions(self) -> Optional[Sequence['outputs.GetListingResourceVersionsAppCatalogListingResourceVersionResult']]:
         return pulumi.get(self, "app_catalog_listing_resource_versions")
 
     @property
@@ -49,7 +49,7 @@ class GetListingResourceVersionsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """

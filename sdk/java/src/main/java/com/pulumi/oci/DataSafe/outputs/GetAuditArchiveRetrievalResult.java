@@ -8,6 +8,8 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAuditArchiveRetrievalResult {
@@ -16,87 +18,87 @@ public final class GetAuditArchiveRetrievalResult {
      * @return Total count of audit events to be retrieved from the archive for the specified date range.
      * 
      */
-    private String auditEventCount;
+    private @Nullable String auditEventCount;
     /**
      * @return The OCID of the compartment that contains archive retrieval.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return Description of the archive retrieval.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return The display name of the archive retrieval. The name does not have to be unique, and is changeable.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return End month of the archive retrieval, in the format defined by RFC3339.
      * 
      */
-    private String endDate;
+    private @Nullable String endDate;
     /**
      * @return The Error details of a failed archive retrieval.
      * 
      */
-    private String errorInfo;
+    private @Nullable String errorInfo;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The OCID of the archive retrieval.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Details about the current state of the archive retrieval.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return Start month of the archive retrieval, in the format defined by RFC3339.
      * 
      */
-    private String startDate;
+    private @Nullable String startDate;
     /**
      * @return The current state of the archive retrieval.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private @Nullable Map<String,Object> systemTags;
     /**
      * @return The OCID of the target associated with the archive retrieval.
      * 
      */
-    private String targetId;
+    private @Nullable String targetId;
     /**
      * @return The date time when archive retrieval request was fulfilled, in the format defined by RFC3339.
      * 
      */
-    private String timeCompleted;
+    private @Nullable String timeCompleted;
     /**
      * @return The date time when retrieved archive data will be deleted from Data Safe and unloaded back into archival.
      * 
      */
-    private String timeOfExpiry;
+    private @Nullable String timeOfExpiry;
     /**
      * @return The date time when archive retrieval was requested, in the format defined by RFC3339.
      * 
      */
-    private String timeRequested;
+    private @Nullable String timeRequested;
 
     private GetAuditArchiveRetrievalResult() {}
     public String auditArchiveRetrievalId() {
@@ -106,120 +108,120 @@ public final class GetAuditArchiveRetrievalResult {
      * @return Total count of audit events to be retrieved from the archive for the specified date range.
      * 
      */
-    public String auditEventCount() {
-        return this.auditEventCount;
+    public Optional<String> auditEventCount() {
+        return Optional.ofNullable(this.auditEventCount);
     }
     /**
      * @return The OCID of the compartment that contains archive retrieval.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return Description of the archive retrieval.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return The display name of the archive retrieval. The name does not have to be unique, and is changeable.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return End month of the archive retrieval, in the format defined by RFC3339.
      * 
      */
-    public String endDate() {
-        return this.endDate;
+    public Optional<String> endDate() {
+        return Optional.ofNullable(this.endDate);
     }
     /**
      * @return The Error details of a failed archive retrieval.
      * 
      */
-    public String errorInfo() {
-        return this.errorInfo;
+    public Optional<String> errorInfo() {
+        return Optional.ofNullable(this.errorInfo);
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The OCID of the archive retrieval.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Details about the current state of the archive retrieval.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return Start month of the archive retrieval, in the format defined by RFC3339.
      * 
      */
-    public String startDate() {
-        return this.startDate;
+    public Optional<String> startDate() {
+        return Optional.ofNullable(this.startDate);
     }
     /**
      * @return The current state of the archive retrieval.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     public Map<String,Object> systemTags() {
-        return this.systemTags;
+        return this.systemTags == null ? Map.of() : this.systemTags;
     }
     /**
      * @return The OCID of the target associated with the archive retrieval.
      * 
      */
-    public String targetId() {
-        return this.targetId;
+    public Optional<String> targetId() {
+        return Optional.ofNullable(this.targetId);
     }
     /**
      * @return The date time when archive retrieval request was fulfilled, in the format defined by RFC3339.
      * 
      */
-    public String timeCompleted() {
-        return this.timeCompleted;
+    public Optional<String> timeCompleted() {
+        return Optional.ofNullable(this.timeCompleted);
     }
     /**
      * @return The date time when retrieved archive data will be deleted from Data Safe and unloaded back into archival.
      * 
      */
-    public String timeOfExpiry() {
-        return this.timeOfExpiry;
+    public Optional<String> timeOfExpiry() {
+        return Optional.ofNullable(this.timeOfExpiry);
     }
     /**
      * @return The date time when archive retrieval was requested, in the format defined by RFC3339.
      * 
      */
-    public String timeRequested() {
-        return this.timeRequested;
+    public Optional<String> timeRequested() {
+        return Optional.ofNullable(this.timeRequested);
     }
 
     public static Builder builder() {
@@ -232,23 +234,23 @@ public final class GetAuditArchiveRetrievalResult {
     @CustomType.Builder
     public static final class Builder {
         private String auditArchiveRetrievalId;
-        private String auditEventCount;
-        private String compartmentId;
-        private Map<String,Object> definedTags;
-        private String description;
-        private String displayName;
-        private String endDate;
-        private String errorInfo;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private String lifecycleDetails;
-        private String startDate;
-        private String state;
-        private Map<String,Object> systemTags;
-        private String targetId;
-        private String timeCompleted;
-        private String timeOfExpiry;
-        private String timeRequested;
+        private @Nullable String auditEventCount;
+        private @Nullable String compartmentId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String description;
+        private @Nullable String displayName;
+        private @Nullable String endDate;
+        private @Nullable String errorInfo;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable String lifecycleDetails;
+        private @Nullable String startDate;
+        private @Nullable String state;
+        private @Nullable Map<String,Object> systemTags;
+        private @Nullable String targetId;
+        private @Nullable String timeCompleted;
+        private @Nullable String timeOfExpiry;
+        private @Nullable String timeRequested;
         public Builder() {}
         public Builder(GetAuditArchiveRetrievalResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -278,88 +280,88 @@ public final class GetAuditArchiveRetrievalResult {
             return this;
         }
         @CustomType.Setter
-        public Builder auditEventCount(String auditEventCount) {
-            this.auditEventCount = Objects.requireNonNull(auditEventCount);
+        public Builder auditEventCount(@Nullable String auditEventCount) {
+            this.auditEventCount = auditEventCount;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder endDate(String endDate) {
-            this.endDate = Objects.requireNonNull(endDate);
+        public Builder endDate(@Nullable String endDate) {
+            this.endDate = endDate;
             return this;
         }
         @CustomType.Setter
-        public Builder errorInfo(String errorInfo) {
-            this.errorInfo = Objects.requireNonNull(errorInfo);
+        public Builder errorInfo(@Nullable String errorInfo) {
+            this.errorInfo = errorInfo;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder startDate(String startDate) {
-            this.startDate = Objects.requireNonNull(startDate);
+        public Builder startDate(@Nullable String startDate) {
+            this.startDate = startDate;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+        public Builder systemTags(@Nullable Map<String,Object> systemTags) {
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
-        public Builder targetId(String targetId) {
-            this.targetId = Objects.requireNonNull(targetId);
+        public Builder targetId(@Nullable String targetId) {
+            this.targetId = targetId;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCompleted(String timeCompleted) {
-            this.timeCompleted = Objects.requireNonNull(timeCompleted);
+        public Builder timeCompleted(@Nullable String timeCompleted) {
+            this.timeCompleted = timeCompleted;
             return this;
         }
         @CustomType.Setter
-        public Builder timeOfExpiry(String timeOfExpiry) {
-            this.timeOfExpiry = Objects.requireNonNull(timeOfExpiry);
+        public Builder timeOfExpiry(@Nullable String timeOfExpiry) {
+            this.timeOfExpiry = timeOfExpiry;
             return this;
         }
         @CustomType.Setter
-        public Builder timeRequested(String timeRequested) {
-            this.timeRequested = Objects.requireNonNull(timeRequested);
+        public Builder timeRequested(@Nullable String timeRequested) {
+            this.timeRequested = timeRequested;
             return this;
         }
         public GetAuditArchiveRetrievalResult build() {

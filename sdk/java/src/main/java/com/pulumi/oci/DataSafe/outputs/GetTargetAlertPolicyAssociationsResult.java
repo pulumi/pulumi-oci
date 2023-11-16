@@ -28,7 +28,7 @@ public final class GetTargetAlertPolicyAssociationsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The current state of the target-alert policy association.
      * 
@@ -38,7 +38,7 @@ public final class GetTargetAlertPolicyAssociationsResult {
      * @return The list of target_alert_policy_association_collection.
      * 
      */
-    private List<GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollection> targetAlertPolicyAssociationCollections;
+    private @Nullable List<GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollection> targetAlertPolicyAssociationCollections;
     private @Nullable String targetAlertPolicyAssociationId;
     /**
      * @return The OCID of the target on which alert policy is to be applied.
@@ -72,8 +72,8 @@ public final class GetTargetAlertPolicyAssociationsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The current state of the target-alert policy association.
@@ -87,7 +87,7 @@ public final class GetTargetAlertPolicyAssociationsResult {
      * 
      */
     public List<GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollection> targetAlertPolicyAssociationCollections() {
-        return this.targetAlertPolicyAssociationCollections;
+        return this.targetAlertPolicyAssociationCollections == null ? List.of() : this.targetAlertPolicyAssociationCollections;
     }
     public Optional<String> targetAlertPolicyAssociationId() {
         return Optional.ofNullable(this.targetAlertPolicyAssociationId);
@@ -120,9 +120,9 @@ public final class GetTargetAlertPolicyAssociationsResult {
         private String compartmentId;
         private @Nullable Boolean compartmentIdInSubtree;
         private @Nullable List<GetTargetAlertPolicyAssociationsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String state;
-        private List<GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollection> targetAlertPolicyAssociationCollections;
+        private @Nullable List<GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollection> targetAlertPolicyAssociationCollections;
         private @Nullable String targetAlertPolicyAssociationId;
         private @Nullable String targetId;
         private @Nullable String timeCreatedGreaterThanOrEqualTo;
@@ -173,8 +173,8 @@ public final class GetTargetAlertPolicyAssociationsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -183,8 +183,8 @@ public final class GetTargetAlertPolicyAssociationsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder targetAlertPolicyAssociationCollections(List<GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollection> targetAlertPolicyAssociationCollections) {
-            this.targetAlertPolicyAssociationCollections = Objects.requireNonNull(targetAlertPolicyAssociationCollections);
+        public Builder targetAlertPolicyAssociationCollections(@Nullable List<GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollection> targetAlertPolicyAssociationCollections) {
+            this.targetAlertPolicyAssociationCollections = targetAlertPolicyAssociationCollections;
             return this;
         }
         public Builder targetAlertPolicyAssociationCollections(GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollection... targetAlertPolicyAssociationCollections) {

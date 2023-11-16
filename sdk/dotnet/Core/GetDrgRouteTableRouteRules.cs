@@ -144,7 +144,7 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// You can specify static routes for the DRG route table using the API. The DRG learns dynamic routes from the DRG attachments using various routing protocols.
         /// </summary>
@@ -158,7 +158,7 @@ namespace Pulumi.Oci.Core
 
             ImmutableArray<Outputs.GetDrgRouteTableRouteRulesFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? routeType)
         {

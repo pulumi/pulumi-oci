@@ -61,7 +61,7 @@ export interface GetAutonomousVirtualMachinesResult {
     /**
      * The list of autonomous_virtual_machines.
      */
-    readonly autonomousVirtualMachines: outputs.Database.GetAutonomousVirtualMachinesAutonomousVirtualMachine[];
+    readonly autonomousVirtualMachines?: outputs.Database.GetAutonomousVirtualMachinesAutonomousVirtualMachine[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous VM Cluster associated with the Autonomous Virtual Machine.
      */
@@ -74,7 +74,7 @@ export interface GetAutonomousVirtualMachinesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The current state of the Autonomous Virtual Machine.
      */

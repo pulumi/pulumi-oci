@@ -80,12 +80,12 @@ export interface GetExternalPluggableDatabasesResult {
     /**
      * The list of external_pluggable_databases.
      */
-    readonly externalPluggableDatabases: outputs.Database.GetExternalPluggableDatabasesExternalPluggableDatabase[];
+    readonly externalPluggableDatabases?: outputs.Database.GetExternalPluggableDatabasesExternalPluggableDatabase[];
     readonly filters?: outputs.Database.GetExternalPluggableDatabasesFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The current state of the Oracle Cloud Infrastructure external database resource.
      */

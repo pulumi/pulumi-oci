@@ -78,7 +78,7 @@ class GetDomainsMyAuthTokensResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -91,7 +91,7 @@ class GetDomainsMyAuthTokensResult:
 
     @property
     @pulumi.getter(name="itemsPerPage")
-    def items_per_page(self) -> int:
+    def items_per_page(self) -> Optional[int]:
         return pulumi.get(self, "items_per_page")
 
     @property
@@ -106,10 +106,7 @@ class GetDomainsMyAuthTokensResult:
 
     @property
     @pulumi.getter(name="myAuthTokens")
-    def my_auth_tokens(self) -> Sequence['outputs.GetDomainsMyAuthTokensMyAuthTokenResult']:
-        """
-        The list of my_auth_tokens.
-        """
+    def my_auth_tokens(self) -> Optional[Sequence['outputs.GetDomainsMyAuthTokensMyAuthTokenResult']]:
         return pulumi.get(self, "my_auth_tokens")
 
     @property
@@ -119,10 +116,7 @@ class GetDomainsMyAuthTokensResult:
 
     @property
     @pulumi.getter
-    def schemas(self) -> Sequence[str]:
-        """
-        REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
-        """
+    def schemas(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "schemas")
 
     @property
@@ -142,7 +136,7 @@ class GetDomainsMyAuthTokensResult:
 
     @property
     @pulumi.getter(name="totalResults")
-    def total_results(self) -> int:
+    def total_results(self) -> Optional[int]:
         return pulumi.get(self, "total_results")
 
 
@@ -179,31 +173,7 @@ def get_domains_my_auth_tokens(authorization: Optional[str] = None,
                                start_index: Optional[int] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDomainsMyAuthTokensResult:
     """
-    This data source provides the list of My Auth Tokens in Oracle Cloud Infrastructure Identity Domains service.
-
-    Search for a user's own Auth token.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_my_auth_tokens = oci.Identity.get_domains_my_auth_tokens(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        my_auth_token_count=var["my_auth_token_my_auth_token_count"],
-        my_auth_token_filter=var["my_auth_token_my_auth_token_filter"],
-        authorization=var["my_auth_token_authorization"],
-        resource_type_schema_version=var["my_auth_token_resource_type_schema_version"],
-        start_index=var["my_auth_token_start_index"])
-    ```
-
-
-    :param str authorization: The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
-    :param str idcs_endpoint: The basic endpoint for the identity domain
-    :param int my_auth_token_count: OPTIONAL. An integer that indicates the desired maximum number of query results per page. 1000 is the largest value that you can use. See the Pagination section of the System for Cross-Domain Identity Management Protocol specification for more information. (Section 3.4.2.4).
-    :param str my_auth_token_filter: OPTIONAL. The filter string that is used to request a subset of resources. The filter string MUST be a valid filter expression. See the Filtering section of the SCIM specification for more information (Section 3.4.2.2). The string should contain at least one condition that each item must match in order to be returned in the search results. Each condition specifies an attribute, an operator, and a value. Conditions within a filter can be connected by logical operators (such as AND and OR). Sets of conditions can be grouped together using parentheses.
-    :param str resource_type_schema_version: An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
-    :param int start_index: OPTIONAL. An integer that indicates the 1-based index of the first query result. See the Pagination section of the SCIM specification for more information. (Section 3.4.2.4). The number of results pages to return. The first page is 1. Specify 2 to access the second page of results, and so on.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['authorization'] = authorization
@@ -247,30 +217,6 @@ def get_domains_my_auth_tokens_output(authorization: Optional[pulumi.Input[Optio
                                       start_index: Optional[pulumi.Input[Optional[int]]] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDomainsMyAuthTokensResult]:
     """
-    This data source provides the list of My Auth Tokens in Oracle Cloud Infrastructure Identity Domains service.
-
-    Search for a user's own Auth token.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_my_auth_tokens = oci.Identity.get_domains_my_auth_tokens(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        my_auth_token_count=var["my_auth_token_my_auth_token_count"],
-        my_auth_token_filter=var["my_auth_token_my_auth_token_filter"],
-        authorization=var["my_auth_token_authorization"],
-        resource_type_schema_version=var["my_auth_token_resource_type_schema_version"],
-        start_index=var["my_auth_token_start_index"])
-    ```
-
-
-    :param str authorization: The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
-    :param str idcs_endpoint: The basic endpoint for the identity domain
-    :param int my_auth_token_count: OPTIONAL. An integer that indicates the desired maximum number of query results per page. 1000 is the largest value that you can use. See the Pagination section of the System for Cross-Domain Identity Management Protocol specification for more information. (Section 3.4.2.4).
-    :param str my_auth_token_filter: OPTIONAL. The filter string that is used to request a subset of resources. The filter string MUST be a valid filter expression. See the Filtering section of the SCIM specification for more information (Section 3.4.2.2). The string should contain at least one condition that each item must match in order to be returned in the search results. Each condition specifies an attribute, an operator, and a value. Conditions within a filter can be connected by logical operators (such as AND and OR). Sets of conditions can be grouped together using parentheses.
-    :param str resource_type_schema_version: An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
-    :param int start_index: OPTIONAL. An integer that indicates the 1-based index of the first query result. See the Pagination section of the SCIM specification for more information. (Section 3.4.2.4). The number of results pages to return. The first page is 1. Specify 2 to access the second page of results, and so on.
+    Use this data source to access information about an existing resource.
     """
     ...

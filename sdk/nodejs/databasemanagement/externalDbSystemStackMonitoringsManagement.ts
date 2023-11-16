@@ -67,11 +67,11 @@ export class ExternalDbSystemStackMonitoringsManagement extends pulumi.CustomRes
     /**
      * The status of the associated service.
      */
-    public readonly isEnabled!: pulumi.Output<boolean>;
+    public readonly isEnabled!: pulumi.Output<boolean | undefined>;
     /**
      * The associated service-specific inputs in JSON string format, which Database Management can identify.
      */
-    public readonly metadata!: pulumi.Output<string>;
+    public readonly metadata!: pulumi.Output<string | undefined>;
 
     /**
      * Create a ExternalDbSystemStackMonitoringsManagement resource with the given unique name, arguments, and options.

@@ -44,7 +44,7 @@ export interface GetCertificateAuthorityArgs {
  * A collection of values returned by getCertificateAuthority.
  */
 export interface GetCertificateAuthorityResult {
-    readonly certificateAuthorityConfigs: outputs.CertificatesManagement.GetCertificateAuthorityCertificateAuthorityConfig[];
+    readonly certificateAuthorityConfigs?: outputs.CertificatesManagement.GetCertificateAuthorityCertificateAuthorityConfig[];
     /**
      * The OCID of the CA.
      */
@@ -52,75 +52,75 @@ export interface GetCertificateAuthorityResult {
     /**
      * An optional list of rules that control how the CA is used and managed.
      */
-    readonly certificateAuthorityRules: outputs.CertificatesManagement.GetCertificateAuthorityCertificateAuthorityRule[];
+    readonly certificateAuthorityRules?: outputs.CertificatesManagement.GetCertificateAuthorityCertificateAuthorityRule[];
     /**
      * The details of the certificate revocation list (CRL).
      */
-    readonly certificateRevocationListDetails: outputs.CertificatesManagement.GetCertificateAuthorityCertificateRevocationListDetail[];
+    readonly certificateRevocationListDetails?: outputs.CertificatesManagement.GetCertificateAuthorityCertificateRevocationListDetail[];
     /**
      * The OCID of the compartment under which the CA is created.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * The origin of the CA.
      */
-    readonly configType: string;
+    readonly configType?: string;
     /**
      * The metadata details of the certificate authority (CA) version. This summary object does not contain the CA contents.
      */
-    readonly currentVersions: outputs.CertificatesManagement.GetCertificateAuthorityCurrentVersion[];
+    readonly currentVersions?: outputs.CertificatesManagement.GetCertificateAuthorityCurrentVersion[];
     /**
      * Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * A brief description of the CA.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The OCID of the CA.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The OCID of the parent CA that issued this CA. If this is the root CA, then this value is null.
      */
-    readonly issuerCertificateAuthorityId: string;
+    readonly issuerCertificateAuthorityId?: string;
     /**
      * The OCID of the Oracle Cloud Infrastructure Vault key used to encrypt the CA.
      */
-    readonly kmsKeyId: string;
+    readonly kmsKeyId?: string;
     /**
      * Additional information about the current CA lifecycle state.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * A user-friendly name for the CA. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
      */
-    readonly name: string;
+    readonly name?: string;
     /**
      * The algorithm used to sign public key certificates that the CA issues.
      */
-    readonly signingAlgorithm: string;
+    readonly signingAlgorithm?: string;
     /**
      * The current lifecycle state of the certificate authority.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.
      */
-    readonly subjects: outputs.CertificatesManagement.GetCertificateAuthoritySubject[];
+    readonly subjects?: outputs.CertificatesManagement.GetCertificateAuthoritySubject[];
     /**
      * A property indicating when the CA was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * An optional property indicating when to delete the CA version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      */
-    readonly timeOfDeletion: string;
+    readonly timeOfDeletion?: string;
 }
 /**
  * This data source provides details about a specific Certificate Authority resource in Oracle Cloud Infrastructure Certificates Management service.

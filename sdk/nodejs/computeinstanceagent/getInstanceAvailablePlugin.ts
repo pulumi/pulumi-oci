@@ -63,13 +63,13 @@ export interface GetInstanceAvailablePluginResult {
     /**
      * The list of available_plugins.
      */
-    readonly availablePlugins: outputs.ComputeInstanceAgent.GetInstanceAvailablePluginAvailablePlugin[];
+    readonly availablePlugins?: outputs.ComputeInstanceAgent.GetInstanceAvailablePluginAvailablePlugin[];
     readonly compartmentId: string;
     readonly filters?: outputs.ComputeInstanceAgent.GetInstanceAvailablePluginFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The plugin name
      */

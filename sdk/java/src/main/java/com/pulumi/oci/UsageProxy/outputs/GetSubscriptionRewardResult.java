@@ -9,6 +9,8 @@ import com.pulumi.oci.UsageProxy.outputs.GetSubscriptionRewardSummary;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSubscriptionRewardResult {
@@ -16,12 +18,12 @@ public final class GetSubscriptionRewardResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The monthly summary of rewards.
      * 
      */
-    private List<GetSubscriptionRewardItem> items;
+    private @Nullable List<GetSubscriptionRewardItem> items;
     /**
      * @return The entitlement ID from MQS, which is the same as the subcription ID.
      * 
@@ -31,7 +33,7 @@ public final class GetSubscriptionRewardResult {
      * @return The overall monthly reward summary.
      * 
      */
-    private List<GetSubscriptionRewardSummary> summaries;
+    private @Nullable List<GetSubscriptionRewardSummary> summaries;
     /**
      * @return The OCID of the target tenancy.
      * 
@@ -43,15 +45,15 @@ public final class GetSubscriptionRewardResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The monthly summary of rewards.
      * 
      */
     public List<GetSubscriptionRewardItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
     /**
      * @return The entitlement ID from MQS, which is the same as the subcription ID.
@@ -65,7 +67,7 @@ public final class GetSubscriptionRewardResult {
      * 
      */
     public List<GetSubscriptionRewardSummary> summaries() {
-        return this.summaries;
+        return this.summaries == null ? List.of() : this.summaries;
     }
     /**
      * @return The OCID of the target tenancy.
@@ -84,10 +86,10 @@ public final class GetSubscriptionRewardResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String id;
-        private List<GetSubscriptionRewardItem> items;
+        private @Nullable String id;
+        private @Nullable List<GetSubscriptionRewardItem> items;
         private String subscriptionId;
-        private List<GetSubscriptionRewardSummary> summaries;
+        private @Nullable List<GetSubscriptionRewardSummary> summaries;
         private String tenancyId;
         public Builder() {}
         public Builder(GetSubscriptionRewardResult defaults) {
@@ -100,13 +102,13 @@ public final class GetSubscriptionRewardResult {
         }
 
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder items(List<GetSubscriptionRewardItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetSubscriptionRewardItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetSubscriptionRewardItem... items) {
@@ -118,8 +120,8 @@ public final class GetSubscriptionRewardResult {
             return this;
         }
         @CustomType.Setter
-        public Builder summaries(List<GetSubscriptionRewardSummary> summaries) {
-            this.summaries = Objects.requireNonNull(summaries);
+        public Builder summaries(@Nullable List<GetSubscriptionRewardSummary> summaries) {
+            this.summaries = summaries;
             return this;
         }
         public Builder summaries(GetSubscriptionRewardSummary... summaries) {

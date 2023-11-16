@@ -47,60 +47,60 @@ export interface GetExternalExadataStorageGridResult {
     /**
      * The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
      */
-    readonly additionalDetails: {[key: string]: any};
+    readonly additionalDetails?: {[key: string]: any};
     /**
      * The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
      */
-    readonly exadataInfrastructureId: string;
+    readonly exadataInfrastructureId?: string;
     readonly externalExadataStorageGridId: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The internal ID of the Exadata resource.
      */
-    readonly internalId: string;
+    readonly internalId?: string;
     /**
      * The details of the lifecycle state of the Exadata resource.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * The type of Exadata resource.
      */
-    readonly resourceType: string;
+    readonly resourceType?: string;
     /**
      * The number of Exadata storage servers in the Exadata infrastructure.
      */
-    readonly serverCount: number;
+    readonly serverCount?: number;
     /**
      * The current lifecycle state of the database resource.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The status of the Exadata resource.
      */
-    readonly status: string;
+    readonly status?: string;
     /**
      * A list of monitored Exadata storage servers.
      */
-    readonly storageServers: outputs.DatabaseManagement.GetExternalExadataStorageGridStorageServer[];
+    readonly storageServers?: outputs.DatabaseManagement.GetExternalExadataStorageGridStorageServer[];
     /**
      * The timestamp of the creation of the Exadata resource.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The timestamp of the last update of the Exadata resource.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
     /**
      * The version of the Exadata resource.
      */
-    readonly version: string;
+    readonly version?: string;
 }
 /**
  * This data source provides details about a specific External Exadata Storage Grid resource in Oracle Cloud Infrastructure Database Management service.

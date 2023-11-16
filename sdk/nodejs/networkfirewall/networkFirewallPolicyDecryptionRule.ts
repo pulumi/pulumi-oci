@@ -72,11 +72,11 @@ export class NetworkFirewallPolicyDecryptionRule extends pulumi.CustomResource {
     /**
      * OCID of the Network Firewall Policy this decryption rule belongs to.
      */
-    public /*out*/ readonly parentResourceId!: pulumi.Output<string>;
+    public /*out*/ readonly parentResourceId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) An object which defines the position of the rule. Only one of `afterRule` or `beforeRule` should be provided.
      */
-    public readonly position!: pulumi.Output<outputs.NetworkFirewall.NetworkFirewallPolicyDecryptionRulePosition>;
+    public readonly position!: pulumi.Output<outputs.NetworkFirewall.NetworkFirewallPolicyDecryptionRulePosition | undefined>;
     public readonly priorityOrder!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The name of a mapped secret. Its `type` must match that of the specified decryption profile.

@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // The `Core.AppCatalogListingResourceVersionAgreement` resource creates AppCatalogListingResourceVersionAgreement for a particular resource version of a listing.
@@ -45,17 +44,17 @@ type ListingResourceVersionAgreement struct {
 	pulumi.CustomResourceState
 
 	// EULA link
-	EulaLink pulumi.StringOutput `pulumi:"eulaLink"`
+	EulaLink pulumi.StringPtrOutput `pulumi:"eulaLink"`
 	// The OCID of the listing.
 	ListingId pulumi.StringOutput `pulumi:"listingId"`
 	// Listing Resource Version.
 	ListingResourceVersion pulumi.StringOutput `pulumi:"listingResourceVersion"`
 	// Oracle TOU link
-	OracleTermsOfUseLink pulumi.StringOutput `pulumi:"oracleTermsOfUseLink"`
+	OracleTermsOfUseLink pulumi.StringPtrOutput `pulumi:"oracleTermsOfUseLink"`
 	// A generated signature for this agreement retrieval operation which should be used in the create subscription call.
-	Signature pulumi.StringOutput `pulumi:"signature"`
+	Signature pulumi.StringPtrOutput `pulumi:"signature"`
 	// Date and time the agreements were retrieved, in RFC3339 format. Example: `2018-03-20T12:32:53.532Z`
-	TimeRetrieved pulumi.StringOutput `pulumi:"timeRetrieved"`
+	TimeRetrieved pulumi.StringPtrOutput `pulumi:"timeRetrieved"`
 }
 
 // NewListingResourceVersionAgreement registers a new resource with the given unique name, arguments, and options.
@@ -165,12 +164,6 @@ func (i *ListingResourceVersionAgreement) ToListingResourceVersionAgreementOutpu
 	return pulumi.ToOutputWithContext(ctx, i).(ListingResourceVersionAgreementOutput)
 }
 
-func (i *ListingResourceVersionAgreement) ToOutput(ctx context.Context) pulumix.Output[*ListingResourceVersionAgreement] {
-	return pulumix.Output[*ListingResourceVersionAgreement]{
-		OutputState: i.ToListingResourceVersionAgreementOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ListingResourceVersionAgreementArrayInput is an input type that accepts ListingResourceVersionAgreementArray and ListingResourceVersionAgreementArrayOutput values.
 // You can construct a concrete instance of `ListingResourceVersionAgreementArrayInput` via:
 //
@@ -194,12 +187,6 @@ func (i ListingResourceVersionAgreementArray) ToListingResourceVersionAgreementA
 
 func (i ListingResourceVersionAgreementArray) ToListingResourceVersionAgreementArrayOutputWithContext(ctx context.Context) ListingResourceVersionAgreementArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ListingResourceVersionAgreementArrayOutput)
-}
-
-func (i ListingResourceVersionAgreementArray) ToOutput(ctx context.Context) pulumix.Output[[]*ListingResourceVersionAgreement] {
-	return pulumix.Output[[]*ListingResourceVersionAgreement]{
-		OutputState: i.ToListingResourceVersionAgreementArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ListingResourceVersionAgreementMapInput is an input type that accepts ListingResourceVersionAgreementMap and ListingResourceVersionAgreementMapOutput values.
@@ -227,12 +214,6 @@ func (i ListingResourceVersionAgreementMap) ToListingResourceVersionAgreementMap
 	return pulumi.ToOutputWithContext(ctx, i).(ListingResourceVersionAgreementMapOutput)
 }
 
-func (i ListingResourceVersionAgreementMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ListingResourceVersionAgreement] {
-	return pulumix.Output[map[string]*ListingResourceVersionAgreement]{
-		OutputState: i.ToListingResourceVersionAgreementMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ListingResourceVersionAgreementOutput struct{ *pulumi.OutputState }
 
 func (ListingResourceVersionAgreementOutput) ElementType() reflect.Type {
@@ -247,15 +228,9 @@ func (o ListingResourceVersionAgreementOutput) ToListingResourceVersionAgreement
 	return o
 }
 
-func (o ListingResourceVersionAgreementOutput) ToOutput(ctx context.Context) pulumix.Output[*ListingResourceVersionAgreement] {
-	return pulumix.Output[*ListingResourceVersionAgreement]{
-		OutputState: o.OutputState,
-	}
-}
-
 // EULA link
-func (o ListingResourceVersionAgreementOutput) EulaLink() pulumi.StringOutput {
-	return o.ApplyT(func(v *ListingResourceVersionAgreement) pulumi.StringOutput { return v.EulaLink }).(pulumi.StringOutput)
+func (o ListingResourceVersionAgreementOutput) EulaLink() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ListingResourceVersionAgreement) pulumi.StringPtrOutput { return v.EulaLink }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the listing.
@@ -269,18 +244,18 @@ func (o ListingResourceVersionAgreementOutput) ListingResourceVersion() pulumi.S
 }
 
 // Oracle TOU link
-func (o ListingResourceVersionAgreementOutput) OracleTermsOfUseLink() pulumi.StringOutput {
-	return o.ApplyT(func(v *ListingResourceVersionAgreement) pulumi.StringOutput { return v.OracleTermsOfUseLink }).(pulumi.StringOutput)
+func (o ListingResourceVersionAgreementOutput) OracleTermsOfUseLink() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ListingResourceVersionAgreement) pulumi.StringPtrOutput { return v.OracleTermsOfUseLink }).(pulumi.StringPtrOutput)
 }
 
 // A generated signature for this agreement retrieval operation which should be used in the create subscription call.
-func (o ListingResourceVersionAgreementOutput) Signature() pulumi.StringOutput {
-	return o.ApplyT(func(v *ListingResourceVersionAgreement) pulumi.StringOutput { return v.Signature }).(pulumi.StringOutput)
+func (o ListingResourceVersionAgreementOutput) Signature() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ListingResourceVersionAgreement) pulumi.StringPtrOutput { return v.Signature }).(pulumi.StringPtrOutput)
 }
 
 // Date and time the agreements were retrieved, in RFC3339 format. Example: `2018-03-20T12:32:53.532Z`
-func (o ListingResourceVersionAgreementOutput) TimeRetrieved() pulumi.StringOutput {
-	return o.ApplyT(func(v *ListingResourceVersionAgreement) pulumi.StringOutput { return v.TimeRetrieved }).(pulumi.StringOutput)
+func (o ListingResourceVersionAgreementOutput) TimeRetrieved() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ListingResourceVersionAgreement) pulumi.StringPtrOutput { return v.TimeRetrieved }).(pulumi.StringPtrOutput)
 }
 
 type ListingResourceVersionAgreementArrayOutput struct{ *pulumi.OutputState }
@@ -295,12 +270,6 @@ func (o ListingResourceVersionAgreementArrayOutput) ToListingResourceVersionAgre
 
 func (o ListingResourceVersionAgreementArrayOutput) ToListingResourceVersionAgreementArrayOutputWithContext(ctx context.Context) ListingResourceVersionAgreementArrayOutput {
 	return o
-}
-
-func (o ListingResourceVersionAgreementArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ListingResourceVersionAgreement] {
-	return pulumix.Output[[]*ListingResourceVersionAgreement]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ListingResourceVersionAgreementArrayOutput) Index(i pulumi.IntInput) ListingResourceVersionAgreementOutput {
@@ -321,12 +290,6 @@ func (o ListingResourceVersionAgreementMapOutput) ToListingResourceVersionAgreem
 
 func (o ListingResourceVersionAgreementMapOutput) ToListingResourceVersionAgreementMapOutputWithContext(ctx context.Context) ListingResourceVersionAgreementMapOutput {
 	return o
-}
-
-func (o ListingResourceVersionAgreementMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ListingResourceVersionAgreement] {
-	return pulumix.Output[map[string]*ListingResourceVersionAgreement]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ListingResourceVersionAgreementMapOutput) MapIndex(k pulumi.StringInput) ListingResourceVersionAgreementOutput {

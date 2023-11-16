@@ -13,19 +13,19 @@ namespace Pulumi.Oci.Database.Outputs
     [OutputType]
     public sealed class GetVmClusterNetworksVmClusterNetworkResult
     {
-        public readonly string Action;
+        public readonly string? Action;
         /// <summary>
         /// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// A filter to return only resources that match the entire display name given. The match is not case sensitive.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// The list of DNS server IP addresses. Maximum of 3 allowed.
         /// </summary>
@@ -37,19 +37,19 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
-        public readonly string ExadataInfrastructureId;
+        public readonly string? ExadataInfrastructureId;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Additional information about the current lifecycle state.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// The list of NTP server IP addresses. Maximum of 3 allowed.
         /// </summary>
@@ -61,16 +61,16 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// A filter to return only resources that match the given lifecycle state exactly.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The date and time when the VM cluster network was created.
         /// </summary>
-        public readonly string TimeCreated;
-        public readonly bool ValidateVmClusterNetwork;
+        public readonly string? TimeCreated;
+        public readonly bool? ValidateVmClusterNetwork;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated VM Cluster.
         /// </summary>
-        public readonly string VmClusterId;
+        public readonly string? VmClusterId;
         /// <summary>
         /// Details of the client and backup networks.
         /// </summary>
@@ -78,37 +78,37 @@ namespace Pulumi.Oci.Database.Outputs
 
         [OutputConstructor]
         private GetVmClusterNetworksVmClusterNetworkResult(
-            string action,
+            string? action,
 
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string displayName,
+            string? displayName,
 
             ImmutableArray<string> dns,
 
             ImmutableArray<Outputs.GetVmClusterNetworksVmClusterNetworkDrScanResult> drScans,
 
-            string exadataInfrastructureId,
+            string? exadataInfrastructureId,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
             ImmutableArray<string> ntps,
 
             ImmutableArray<Outputs.GetVmClusterNetworksVmClusterNetworkScanResult> scans,
 
-            string state,
+            string? state,
 
-            string timeCreated,
+            string? timeCreated,
 
-            bool validateVmClusterNetwork,
+            bool? validateVmClusterNetwork,
 
-            string vmClusterId,
+            string? vmClusterId,
 
             ImmutableArray<Outputs.GetVmClusterNetworksVmClusterNetworkVmNetworkResult> vmNetworks)
         {

@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Cloud Guard Configuration resource in Oracle Cloud Infrastructure Cloud Guard service.
@@ -57,7 +56,7 @@ type CloudGuardConfiguration struct {
 	// (Updatable) The reporting region value
 	ReportingRegion pulumi.StringOutput `pulumi:"reportingRegion"`
 	// (Updatable) Identifies if Oracle managed resources will be created by customers. If no value is specified false is the default.
-	SelfManageResources pulumi.BoolOutput `pulumi:"selfManageResources"`
+	SelfManageResources pulumi.BoolPtrOutput `pulumi:"selfManageResources"`
 	// (Updatable) Status of Cloud Guard Tenant
 	//
 	// ** IMPORTANT **
@@ -187,12 +186,6 @@ func (i *CloudGuardConfiguration) ToCloudGuardConfigurationOutputWithContext(ctx
 	return pulumi.ToOutputWithContext(ctx, i).(CloudGuardConfigurationOutput)
 }
 
-func (i *CloudGuardConfiguration) ToOutput(ctx context.Context) pulumix.Output[*CloudGuardConfiguration] {
-	return pulumix.Output[*CloudGuardConfiguration]{
-		OutputState: i.ToCloudGuardConfigurationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // CloudGuardConfigurationArrayInput is an input type that accepts CloudGuardConfigurationArray and CloudGuardConfigurationArrayOutput values.
 // You can construct a concrete instance of `CloudGuardConfigurationArrayInput` via:
 //
@@ -216,12 +209,6 @@ func (i CloudGuardConfigurationArray) ToCloudGuardConfigurationArrayOutput() Clo
 
 func (i CloudGuardConfigurationArray) ToCloudGuardConfigurationArrayOutputWithContext(ctx context.Context) CloudGuardConfigurationArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(CloudGuardConfigurationArrayOutput)
-}
-
-func (i CloudGuardConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]*CloudGuardConfiguration] {
-	return pulumix.Output[[]*CloudGuardConfiguration]{
-		OutputState: i.ToCloudGuardConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // CloudGuardConfigurationMapInput is an input type that accepts CloudGuardConfigurationMap and CloudGuardConfigurationMapOutput values.
@@ -249,12 +236,6 @@ func (i CloudGuardConfigurationMap) ToCloudGuardConfigurationMapOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(CloudGuardConfigurationMapOutput)
 }
 
-func (i CloudGuardConfigurationMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*CloudGuardConfiguration] {
-	return pulumix.Output[map[string]*CloudGuardConfiguration]{
-		OutputState: i.ToCloudGuardConfigurationMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type CloudGuardConfigurationOutput struct{ *pulumi.OutputState }
 
 func (CloudGuardConfigurationOutput) ElementType() reflect.Type {
@@ -269,12 +250,6 @@ func (o CloudGuardConfigurationOutput) ToCloudGuardConfigurationOutputWithContex
 	return o
 }
 
-func (o CloudGuardConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[*CloudGuardConfiguration] {
-	return pulumix.Output[*CloudGuardConfiguration]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The ID of the compartment in which to list resources.
 func (o CloudGuardConfigurationOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *CloudGuardConfiguration) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
@@ -286,8 +261,8 @@ func (o CloudGuardConfigurationOutput) ReportingRegion() pulumi.StringOutput {
 }
 
 // (Updatable) Identifies if Oracle managed resources will be created by customers. If no value is specified false is the default.
-func (o CloudGuardConfigurationOutput) SelfManageResources() pulumi.BoolOutput {
-	return o.ApplyT(func(v *CloudGuardConfiguration) pulumi.BoolOutput { return v.SelfManageResources }).(pulumi.BoolOutput)
+func (o CloudGuardConfigurationOutput) SelfManageResources() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *CloudGuardConfiguration) pulumi.BoolPtrOutput { return v.SelfManageResources }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) Status of Cloud Guard Tenant
@@ -312,12 +287,6 @@ func (o CloudGuardConfigurationArrayOutput) ToCloudGuardConfigurationArrayOutput
 	return o
 }
 
-func (o CloudGuardConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*CloudGuardConfiguration] {
-	return pulumix.Output[[]*CloudGuardConfiguration]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o CloudGuardConfigurationArrayOutput) Index(i pulumi.IntInput) CloudGuardConfigurationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *CloudGuardConfiguration {
 		return vs[0].([]*CloudGuardConfiguration)[vs[1].(int)]
@@ -336,12 +305,6 @@ func (o CloudGuardConfigurationMapOutput) ToCloudGuardConfigurationMapOutput() C
 
 func (o CloudGuardConfigurationMapOutput) ToCloudGuardConfigurationMapOutputWithContext(ctx context.Context) CloudGuardConfigurationMapOutput {
 	return o
-}
-
-func (o CloudGuardConfigurationMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*CloudGuardConfiguration] {
-	return pulumix.Output[map[string]*CloudGuardConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o CloudGuardConfigurationMapOutput) MapIndex(k pulumi.StringInput) CloudGuardConfigurationOutput {

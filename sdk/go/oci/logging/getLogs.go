@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Logs in Oracle Cloud Infrastructure Logging service.
@@ -79,7 +78,7 @@ type GetLogsResult struct {
 	DisplayName *string         `pulumi:"displayName"`
 	Filters     []GetLogsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Log group OCID.
 	LogGroupId string `pulumi:"logGroupId"`
 	// The logType that the log object is for, whether custom or service.
@@ -141,12 +140,6 @@ func (o GetLogsResultOutput) ToGetLogsResultOutputWithContext(ctx context.Contex
 	return o
 }
 
-func (o GetLogsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetLogsResult] {
-	return pulumix.Output[GetLogsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The user-friendly display name. This must be unique within the enclosing resource, and it's changeable. Avoid entering confidential information.
 func (o GetLogsResultOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetLogsResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
@@ -157,8 +150,8 @@ func (o GetLogsResultOutput) Filters() GetLogsFilterArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetLogsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetLogsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Log group OCID.

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific My Smtp Credential resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -70,42 +69,42 @@ type LookupDomainsMySmtpCredentialArgs struct {
 type LookupDomainsMySmtpCredentialResult struct {
 	Authorization *string `pulumi:"authorization"`
 	// Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
-	CompartmentOcid string `pulumi:"compartmentOcid"`
+	CompartmentOcid *string `pulumi:"compartmentOcid"`
 	// A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
-	DeleteInProgress bool `pulumi:"deleteInProgress"`
+	DeleteInProgress *bool `pulumi:"deleteInProgress"`
 	// Description
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
-	DomainOcid string `pulumi:"domainOcid"`
+	DomainOcid *string `pulumi:"domainOcid"`
 	// User credential expires on
-	ExpiresOn string `pulumi:"expiresOn"`
+	ExpiresOn *string `pulumi:"expiresOn"`
 	// Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The User or App who created the Resource
 	IdcsCreatedBies []GetDomainsMySmtpCredentialIdcsCreatedBy `pulumi:"idcsCreatedBies"`
 	IdcsEndpoint    string                                    `pulumi:"idcsEndpoint"`
 	// The User or App who modified the Resource
 	IdcsLastModifiedBies []GetDomainsMySmtpCredentialIdcsLastModifiedBy `pulumi:"idcsLastModifiedBies"`
 	// The release number when the resource was upgraded.
-	IdcsLastUpgradedInRelease string `pulumi:"idcsLastUpgradedInRelease"`
+	IdcsLastUpgradedInRelease *string `pulumi:"idcsLastUpgradedInRelease"`
 	// Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
 	IdcsPreventedOperations []string `pulumi:"idcsPreventedOperations"`
 	// A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
 	Metas              []GetDomainsMySmtpCredentialMeta `pulumi:"metas"`
 	MySmtpCredentialId string                           `pulumi:"mySmtpCredentialId"`
 	// User's ocid
-	Ocid                      string  `pulumi:"ocid"`
+	Ocid                      *string `pulumi:"ocid"`
 	ResourceTypeSchemaVersion *string `pulumi:"resourceTypeSchemaVersion"`
 	// REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
 	Schemas []string `pulumi:"schemas"`
 	// User credential status
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 	// A list of tags on this resource.
 	Tags []GetDomainsMySmtpCredentialTag `pulumi:"tags"`
 	// Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
-	TenancyOcid string `pulumi:"tenancyOcid"`
+	TenancyOcid *string `pulumi:"tenancyOcid"`
 	// User name
-	UserName string `pulumi:"userName"`
+	UserName *string `pulumi:"userName"`
 	// User linked to smtp credential
 	Users []GetDomainsMySmtpCredentialUser `pulumi:"users"`
 }
@@ -154,44 +153,38 @@ func (o LookupDomainsMySmtpCredentialResultOutput) ToLookupDomainsMySmtpCredenti
 	return o
 }
 
-func (o LookupDomainsMySmtpCredentialResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupDomainsMySmtpCredentialResult] {
-	return pulumix.Output[LookupDomainsMySmtpCredentialResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o LookupDomainsMySmtpCredentialResultOutput) Authorization() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v LookupDomainsMySmtpCredentialResult) *string { return v.Authorization }).(pulumi.StringPtrOutput)
 }
 
 // Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
-func (o LookupDomainsMySmtpCredentialResultOutput) CompartmentOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsMySmtpCredentialResult) string { return v.CompartmentOcid }).(pulumi.StringOutput)
+func (o LookupDomainsMySmtpCredentialResultOutput) CompartmentOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsMySmtpCredentialResult) *string { return v.CompartmentOcid }).(pulumi.StringPtrOutput)
 }
 
 // A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
-func (o LookupDomainsMySmtpCredentialResultOutput) DeleteInProgress() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDomainsMySmtpCredentialResult) bool { return v.DeleteInProgress }).(pulumi.BoolOutput)
+func (o LookupDomainsMySmtpCredentialResultOutput) DeleteInProgress() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDomainsMySmtpCredentialResult) *bool { return v.DeleteInProgress }).(pulumi.BoolPtrOutput)
 }
 
 // Description
-func (o LookupDomainsMySmtpCredentialResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsMySmtpCredentialResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupDomainsMySmtpCredentialResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsMySmtpCredentialResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
-func (o LookupDomainsMySmtpCredentialResultOutput) DomainOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsMySmtpCredentialResult) string { return v.DomainOcid }).(pulumi.StringOutput)
+func (o LookupDomainsMySmtpCredentialResultOutput) DomainOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsMySmtpCredentialResult) *string { return v.DomainOcid }).(pulumi.StringPtrOutput)
 }
 
 // User credential expires on
-func (o LookupDomainsMySmtpCredentialResultOutput) ExpiresOn() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsMySmtpCredentialResult) string { return v.ExpiresOn }).(pulumi.StringOutput)
+func (o LookupDomainsMySmtpCredentialResultOutput) ExpiresOn() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsMySmtpCredentialResult) *string { return v.ExpiresOn }).(pulumi.StringPtrOutput)
 }
 
 // Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
-func (o LookupDomainsMySmtpCredentialResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsMySmtpCredentialResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupDomainsMySmtpCredentialResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsMySmtpCredentialResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The User or App who created the Resource
@@ -213,8 +206,8 @@ func (o LookupDomainsMySmtpCredentialResultOutput) IdcsLastModifiedBies() GetDom
 }
 
 // The release number when the resource was upgraded.
-func (o LookupDomainsMySmtpCredentialResultOutput) IdcsLastUpgradedInRelease() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsMySmtpCredentialResult) string { return v.IdcsLastUpgradedInRelease }).(pulumi.StringOutput)
+func (o LookupDomainsMySmtpCredentialResultOutput) IdcsLastUpgradedInRelease() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsMySmtpCredentialResult) *string { return v.IdcsLastUpgradedInRelease }).(pulumi.StringPtrOutput)
 }
 
 // Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
@@ -232,8 +225,8 @@ func (o LookupDomainsMySmtpCredentialResultOutput) MySmtpCredentialId() pulumi.S
 }
 
 // User's ocid
-func (o LookupDomainsMySmtpCredentialResultOutput) Ocid() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsMySmtpCredentialResult) string { return v.Ocid }).(pulumi.StringOutput)
+func (o LookupDomainsMySmtpCredentialResultOutput) Ocid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsMySmtpCredentialResult) *string { return v.Ocid }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupDomainsMySmtpCredentialResultOutput) ResourceTypeSchemaVersion() pulumi.StringPtrOutput {
@@ -246,8 +239,8 @@ func (o LookupDomainsMySmtpCredentialResultOutput) Schemas() pulumi.StringArrayO
 }
 
 // User credential status
-func (o LookupDomainsMySmtpCredentialResultOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsMySmtpCredentialResult) string { return v.Status }).(pulumi.StringOutput)
+func (o LookupDomainsMySmtpCredentialResultOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsMySmtpCredentialResult) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // A list of tags on this resource.
@@ -256,13 +249,13 @@ func (o LookupDomainsMySmtpCredentialResultOutput) Tags() GetDomainsMySmtpCreden
 }
 
 // Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
-func (o LookupDomainsMySmtpCredentialResultOutput) TenancyOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsMySmtpCredentialResult) string { return v.TenancyOcid }).(pulumi.StringOutput)
+func (o LookupDomainsMySmtpCredentialResultOutput) TenancyOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsMySmtpCredentialResult) *string { return v.TenancyOcid }).(pulumi.StringPtrOutput)
 }
 
 // User name
-func (o LookupDomainsMySmtpCredentialResultOutput) UserName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsMySmtpCredentialResult) string { return v.UserName }).(pulumi.StringOutput)
+func (o LookupDomainsMySmtpCredentialResultOutput) UserName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsMySmtpCredentialResult) *string { return v.UserName }).(pulumi.StringPtrOutput)
 }
 
 // User linked to smtp credential

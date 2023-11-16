@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Audit Archive Retrieval resource in Oracle Cloud Infrastructure Data Safe service.
@@ -61,39 +60,39 @@ type LookupAuditArchiveRetrievalArgs struct {
 type LookupAuditArchiveRetrievalResult struct {
 	AuditArchiveRetrievalId string `pulumi:"auditArchiveRetrievalId"`
 	// Total count of audit events to be retrieved from the archive for the specified date range.
-	AuditEventCount string `pulumi:"auditEventCount"`
+	AuditEventCount *string `pulumi:"auditEventCount"`
 	// The OCID of the compartment that contains archive retrieval.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Description of the archive retrieval.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// The display name of the archive retrieval. The name does not have to be unique, and is changeable.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// End month of the archive retrieval, in the format defined by RFC3339.
-	EndDate string `pulumi:"endDate"`
+	EndDate *string `pulumi:"endDate"`
 	// The Error details of a failed archive retrieval.
-	ErrorInfo string `pulumi:"errorInfo"`
+	ErrorInfo *string `pulumi:"errorInfo"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the archive retrieval.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Details about the current state of the archive retrieval.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Start month of the archive retrieval, in the format defined by RFC3339.
-	StartDate string `pulumi:"startDate"`
+	StartDate *string `pulumi:"startDate"`
 	// The current state of the archive retrieval.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The OCID of the target associated with the archive retrieval.
-	TargetId string `pulumi:"targetId"`
+	TargetId *string `pulumi:"targetId"`
 	// The date time when archive retrieval request was fulfilled, in the format defined by RFC3339.
-	TimeCompleted string `pulumi:"timeCompleted"`
+	TimeCompleted *string `pulumi:"timeCompleted"`
 	// The date time when retrieved archive data will be deleted from Data Safe and unloaded back into archival.
-	TimeOfExpiry string `pulumi:"timeOfExpiry"`
+	TimeOfExpiry *string `pulumi:"timeOfExpiry"`
 	// The date time when archive retrieval was requested, in the format defined by RFC3339.
-	TimeRequested string `pulumi:"timeRequested"`
+	TimeRequested *string `pulumi:"timeRequested"`
 }
 
 func LookupAuditArchiveRetrievalOutput(ctx *pulumi.Context, args LookupAuditArchiveRetrievalOutputArgs, opts ...pulumi.InvokeOption) LookupAuditArchiveRetrievalResultOutput {
@@ -134,24 +133,18 @@ func (o LookupAuditArchiveRetrievalResultOutput) ToLookupAuditArchiveRetrievalRe
 	return o
 }
 
-func (o LookupAuditArchiveRetrievalResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupAuditArchiveRetrievalResult] {
-	return pulumix.Output[LookupAuditArchiveRetrievalResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o LookupAuditArchiveRetrievalResultOutput) AuditArchiveRetrievalId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAuditArchiveRetrievalResult) string { return v.AuditArchiveRetrievalId }).(pulumi.StringOutput)
 }
 
 // Total count of audit events to be retrieved from the archive for the specified date range.
-func (o LookupAuditArchiveRetrievalResultOutput) AuditEventCount() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAuditArchiveRetrievalResult) string { return v.AuditEventCount }).(pulumi.StringOutput)
+func (o LookupAuditArchiveRetrievalResultOutput) AuditEventCount() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAuditArchiveRetrievalResult) *string { return v.AuditEventCount }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the compartment that contains archive retrieval.
-func (o LookupAuditArchiveRetrievalResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAuditArchiveRetrievalResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupAuditArchiveRetrievalResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAuditArchiveRetrievalResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
@@ -160,23 +153,23 @@ func (o LookupAuditArchiveRetrievalResultOutput) DefinedTags() pulumi.MapOutput 
 }
 
 // Description of the archive retrieval.
-func (o LookupAuditArchiveRetrievalResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAuditArchiveRetrievalResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupAuditArchiveRetrievalResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAuditArchiveRetrievalResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // The display name of the archive retrieval. The name does not have to be unique, and is changeable.
-func (o LookupAuditArchiveRetrievalResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAuditArchiveRetrievalResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupAuditArchiveRetrievalResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAuditArchiveRetrievalResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // End month of the archive retrieval, in the format defined by RFC3339.
-func (o LookupAuditArchiveRetrievalResultOutput) EndDate() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAuditArchiveRetrievalResult) string { return v.EndDate }).(pulumi.StringOutput)
+func (o LookupAuditArchiveRetrievalResultOutput) EndDate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAuditArchiveRetrievalResult) *string { return v.EndDate }).(pulumi.StringPtrOutput)
 }
 
 // The Error details of a failed archive retrieval.
-func (o LookupAuditArchiveRetrievalResultOutput) ErrorInfo() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAuditArchiveRetrievalResult) string { return v.ErrorInfo }).(pulumi.StringOutput)
+func (o LookupAuditArchiveRetrievalResultOutput) ErrorInfo() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAuditArchiveRetrievalResult) *string { return v.ErrorInfo }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
@@ -185,23 +178,23 @@ func (o LookupAuditArchiveRetrievalResultOutput) FreeformTags() pulumi.MapOutput
 }
 
 // The OCID of the archive retrieval.
-func (o LookupAuditArchiveRetrievalResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAuditArchiveRetrievalResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupAuditArchiveRetrievalResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAuditArchiveRetrievalResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Details about the current state of the archive retrieval.
-func (o LookupAuditArchiveRetrievalResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAuditArchiveRetrievalResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupAuditArchiveRetrievalResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAuditArchiveRetrievalResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // Start month of the archive retrieval, in the format defined by RFC3339.
-func (o LookupAuditArchiveRetrievalResultOutput) StartDate() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAuditArchiveRetrievalResult) string { return v.StartDate }).(pulumi.StringOutput)
+func (o LookupAuditArchiveRetrievalResultOutput) StartDate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAuditArchiveRetrievalResult) *string { return v.StartDate }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the archive retrieval.
-func (o LookupAuditArchiveRetrievalResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAuditArchiveRetrievalResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupAuditArchiveRetrievalResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAuditArchiveRetrievalResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -210,23 +203,23 @@ func (o LookupAuditArchiveRetrievalResultOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The OCID of the target associated with the archive retrieval.
-func (o LookupAuditArchiveRetrievalResultOutput) TargetId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAuditArchiveRetrievalResult) string { return v.TargetId }).(pulumi.StringOutput)
+func (o LookupAuditArchiveRetrievalResultOutput) TargetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAuditArchiveRetrievalResult) *string { return v.TargetId }).(pulumi.StringPtrOutput)
 }
 
 // The date time when archive retrieval request was fulfilled, in the format defined by RFC3339.
-func (o LookupAuditArchiveRetrievalResultOutput) TimeCompleted() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAuditArchiveRetrievalResult) string { return v.TimeCompleted }).(pulumi.StringOutput)
+func (o LookupAuditArchiveRetrievalResultOutput) TimeCompleted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAuditArchiveRetrievalResult) *string { return v.TimeCompleted }).(pulumi.StringPtrOutput)
 }
 
 // The date time when retrieved archive data will be deleted from Data Safe and unloaded back into archival.
-func (o LookupAuditArchiveRetrievalResultOutput) TimeOfExpiry() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAuditArchiveRetrievalResult) string { return v.TimeOfExpiry }).(pulumi.StringOutput)
+func (o LookupAuditArchiveRetrievalResultOutput) TimeOfExpiry() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAuditArchiveRetrievalResult) *string { return v.TimeOfExpiry }).(pulumi.StringPtrOutput)
 }
 
 // The date time when archive retrieval was requested, in the format defined by RFC3339.
-func (o LookupAuditArchiveRetrievalResultOutput) TimeRequested() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAuditArchiveRetrievalResult) string { return v.TimeRequested }).(pulumi.StringOutput)
+func (o LookupAuditArchiveRetrievalResultOutput) TimeRequested() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAuditArchiveRetrievalResult) *string { return v.TimeRequested }).(pulumi.StringPtrOutput)
 }
 
 func init() {

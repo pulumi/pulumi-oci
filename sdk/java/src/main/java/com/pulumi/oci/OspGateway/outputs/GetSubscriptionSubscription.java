@@ -12,6 +12,8 @@ import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSubscriptionSubscription {
@@ -19,255 +21,255 @@ public final class GetSubscriptionSubscription {
      * @return Account type.
      * 
      */
-    private String accountType;
+    private @Nullable String accountType;
     /**
      * @return Bill to customer Account id.
      * 
      */
-    private String billToCustAccountId;
+    private @Nullable String billToCustAccountId;
     /**
      * @return Address details model.
      * 
      */
-    private List<GetSubscriptionSubscriptionBillingAddress> billingAddresses;
+    private @Nullable List<GetSubscriptionSubscriptionBillingAddress> billingAddresses;
     /**
      * @return Currency code
      * 
      */
-    private String currencyCode;
+    private @Nullable String currencyCode;
     /**
      * @return GSI Subscription external code.
      * 
      */
-    private String gsiOrgCode;
+    private @Nullable String gsiOrgCode;
     /**
      * @return Subscription id identifier (OCID).
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Payment intension.
      * 
      */
-    private Boolean isIntentToPay;
+    private @Nullable Boolean isIntentToPay;
     /**
      * @return Language short code (en, de, hu, etc)
      * 
      */
-    private String languageCode;
+    private @Nullable String languageCode;
     /**
      * @return GSI organization external identifier.
      * 
      */
-    private String organizationId;
+    private @Nullable String organizationId;
     /**
      * @return Payment gateway details.
      * 
      */
-    private List<GetSubscriptionSubscriptionPaymentGateway> paymentGateways;
+    private @Nullable List<GetSubscriptionSubscriptionPaymentGateway> paymentGateways;
     /**
      * @return Payment option list of a subscription.
      * 
      */
-    private List<GetSubscriptionSubscriptionPaymentOption> paymentOptions;
+    private @Nullable List<GetSubscriptionSubscriptionPaymentOption> paymentOptions;
     /**
      * @return Subscription plan type.
      * 
      */
-    private String planType;
+    private @Nullable String planType;
     /**
      * @return Ship to customer account role.
      * 
      */
-    private String shipToCustAcctRoleId;
+    private @Nullable String shipToCustAcctRoleId;
     /**
      * @return Ship to customer account site address id.
      * 
      */
-    private String shipToCustAcctSiteId;
+    private @Nullable String shipToCustAcctSiteId;
     /**
      * @return Subscription plan number.
      * 
      */
-    private String subscriptionPlanNumber;
+    private @Nullable String subscriptionPlanNumber;
     /**
      * @return Tax details.
      * 
      */
-    private List<GetSubscriptionSubscriptionTaxInfo> taxInfos;
+    private @Nullable List<GetSubscriptionSubscriptionTaxInfo> taxInfos;
     /**
      * @return Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
      * 
      */
-    private String timePersonalToCorporateConv;
+    private @Nullable String timePersonalToCorporateConv;
     /**
      * @return Date of upgrade/conversion when planType changed from FREE_TIER to PAYG
      * 
      */
-    private String timePlanUpgrade;
+    private @Nullable String timePlanUpgrade;
     /**
      * @return Start date of the subscription.
      * 
      */
-    private String timeStart;
+    private @Nullable String timeStart;
     /**
      * @return Status of the upgrade.
      * 
      */
-    private String upgradeState;
+    private @Nullable String upgradeState;
     /**
      * @return This field is used to describe the Upgrade State in case of error (E.g. Upgrade failure caused by interfacing Tax details- TaxError)
      * 
      */
-    private String upgradeStateDetails;
+    private @Nullable String upgradeStateDetails;
 
     private GetSubscriptionSubscription() {}
     /**
      * @return Account type.
      * 
      */
-    public String accountType() {
-        return this.accountType;
+    public Optional<String> accountType() {
+        return Optional.ofNullable(this.accountType);
     }
     /**
      * @return Bill to customer Account id.
      * 
      */
-    public String billToCustAccountId() {
-        return this.billToCustAccountId;
+    public Optional<String> billToCustAccountId() {
+        return Optional.ofNullable(this.billToCustAccountId);
     }
     /**
      * @return Address details model.
      * 
      */
     public List<GetSubscriptionSubscriptionBillingAddress> billingAddresses() {
-        return this.billingAddresses;
+        return this.billingAddresses == null ? List.of() : this.billingAddresses;
     }
     /**
      * @return Currency code
      * 
      */
-    public String currencyCode() {
-        return this.currencyCode;
+    public Optional<String> currencyCode() {
+        return Optional.ofNullable(this.currencyCode);
     }
     /**
      * @return GSI Subscription external code.
      * 
      */
-    public String gsiOrgCode() {
-        return this.gsiOrgCode;
+    public Optional<String> gsiOrgCode() {
+        return Optional.ofNullable(this.gsiOrgCode);
     }
     /**
      * @return Subscription id identifier (OCID).
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Payment intension.
      * 
      */
-    public Boolean isIntentToPay() {
-        return this.isIntentToPay;
+    public Optional<Boolean> isIntentToPay() {
+        return Optional.ofNullable(this.isIntentToPay);
     }
     /**
      * @return Language short code (en, de, hu, etc)
      * 
      */
-    public String languageCode() {
-        return this.languageCode;
+    public Optional<String> languageCode() {
+        return Optional.ofNullable(this.languageCode);
     }
     /**
      * @return GSI organization external identifier.
      * 
      */
-    public String organizationId() {
-        return this.organizationId;
+    public Optional<String> organizationId() {
+        return Optional.ofNullable(this.organizationId);
     }
     /**
      * @return Payment gateway details.
      * 
      */
     public List<GetSubscriptionSubscriptionPaymentGateway> paymentGateways() {
-        return this.paymentGateways;
+        return this.paymentGateways == null ? List.of() : this.paymentGateways;
     }
     /**
      * @return Payment option list of a subscription.
      * 
      */
     public List<GetSubscriptionSubscriptionPaymentOption> paymentOptions() {
-        return this.paymentOptions;
+        return this.paymentOptions == null ? List.of() : this.paymentOptions;
     }
     /**
      * @return Subscription plan type.
      * 
      */
-    public String planType() {
-        return this.planType;
+    public Optional<String> planType() {
+        return Optional.ofNullable(this.planType);
     }
     /**
      * @return Ship to customer account role.
      * 
      */
-    public String shipToCustAcctRoleId() {
-        return this.shipToCustAcctRoleId;
+    public Optional<String> shipToCustAcctRoleId() {
+        return Optional.ofNullable(this.shipToCustAcctRoleId);
     }
     /**
      * @return Ship to customer account site address id.
      * 
      */
-    public String shipToCustAcctSiteId() {
-        return this.shipToCustAcctSiteId;
+    public Optional<String> shipToCustAcctSiteId() {
+        return Optional.ofNullable(this.shipToCustAcctSiteId);
     }
     /**
      * @return Subscription plan number.
      * 
      */
-    public String subscriptionPlanNumber() {
-        return this.subscriptionPlanNumber;
+    public Optional<String> subscriptionPlanNumber() {
+        return Optional.ofNullable(this.subscriptionPlanNumber);
     }
     /**
      * @return Tax details.
      * 
      */
     public List<GetSubscriptionSubscriptionTaxInfo> taxInfos() {
-        return this.taxInfos;
+        return this.taxInfos == null ? List.of() : this.taxInfos;
     }
     /**
      * @return Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
      * 
      */
-    public String timePersonalToCorporateConv() {
-        return this.timePersonalToCorporateConv;
+    public Optional<String> timePersonalToCorporateConv() {
+        return Optional.ofNullable(this.timePersonalToCorporateConv);
     }
     /**
      * @return Date of upgrade/conversion when planType changed from FREE_TIER to PAYG
      * 
      */
-    public String timePlanUpgrade() {
-        return this.timePlanUpgrade;
+    public Optional<String> timePlanUpgrade() {
+        return Optional.ofNullable(this.timePlanUpgrade);
     }
     /**
      * @return Start date of the subscription.
      * 
      */
-    public String timeStart() {
-        return this.timeStart;
+    public Optional<String> timeStart() {
+        return Optional.ofNullable(this.timeStart);
     }
     /**
      * @return Status of the upgrade.
      * 
      */
-    public String upgradeState() {
-        return this.upgradeState;
+    public Optional<String> upgradeState() {
+        return Optional.ofNullable(this.upgradeState);
     }
     /**
      * @return This field is used to describe the Upgrade State in case of error (E.g. Upgrade failure caused by interfacing Tax details- TaxError)
      * 
      */
-    public String upgradeStateDetails() {
-        return this.upgradeStateDetails;
+    public Optional<String> upgradeStateDetails() {
+        return Optional.ofNullable(this.upgradeStateDetails);
     }
 
     public static Builder builder() {
@@ -279,27 +281,27 @@ public final class GetSubscriptionSubscription {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String accountType;
-        private String billToCustAccountId;
-        private List<GetSubscriptionSubscriptionBillingAddress> billingAddresses;
-        private String currencyCode;
-        private String gsiOrgCode;
-        private String id;
-        private Boolean isIntentToPay;
-        private String languageCode;
-        private String organizationId;
-        private List<GetSubscriptionSubscriptionPaymentGateway> paymentGateways;
-        private List<GetSubscriptionSubscriptionPaymentOption> paymentOptions;
-        private String planType;
-        private String shipToCustAcctRoleId;
-        private String shipToCustAcctSiteId;
-        private String subscriptionPlanNumber;
-        private List<GetSubscriptionSubscriptionTaxInfo> taxInfos;
-        private String timePersonalToCorporateConv;
-        private String timePlanUpgrade;
-        private String timeStart;
-        private String upgradeState;
-        private String upgradeStateDetails;
+        private @Nullable String accountType;
+        private @Nullable String billToCustAccountId;
+        private @Nullable List<GetSubscriptionSubscriptionBillingAddress> billingAddresses;
+        private @Nullable String currencyCode;
+        private @Nullable String gsiOrgCode;
+        private @Nullable String id;
+        private @Nullable Boolean isIntentToPay;
+        private @Nullable String languageCode;
+        private @Nullable String organizationId;
+        private @Nullable List<GetSubscriptionSubscriptionPaymentGateway> paymentGateways;
+        private @Nullable List<GetSubscriptionSubscriptionPaymentOption> paymentOptions;
+        private @Nullable String planType;
+        private @Nullable String shipToCustAcctRoleId;
+        private @Nullable String shipToCustAcctSiteId;
+        private @Nullable String subscriptionPlanNumber;
+        private @Nullable List<GetSubscriptionSubscriptionTaxInfo> taxInfos;
+        private @Nullable String timePersonalToCorporateConv;
+        private @Nullable String timePlanUpgrade;
+        private @Nullable String timeStart;
+        private @Nullable String upgradeState;
+        private @Nullable String upgradeStateDetails;
         public Builder() {}
         public Builder(GetSubscriptionSubscription defaults) {
     	      Objects.requireNonNull(defaults);
@@ -327,120 +329,120 @@ public final class GetSubscriptionSubscription {
         }
 
         @CustomType.Setter
-        public Builder accountType(String accountType) {
-            this.accountType = Objects.requireNonNull(accountType);
+        public Builder accountType(@Nullable String accountType) {
+            this.accountType = accountType;
             return this;
         }
         @CustomType.Setter
-        public Builder billToCustAccountId(String billToCustAccountId) {
-            this.billToCustAccountId = Objects.requireNonNull(billToCustAccountId);
+        public Builder billToCustAccountId(@Nullable String billToCustAccountId) {
+            this.billToCustAccountId = billToCustAccountId;
             return this;
         }
         @CustomType.Setter
-        public Builder billingAddresses(List<GetSubscriptionSubscriptionBillingAddress> billingAddresses) {
-            this.billingAddresses = Objects.requireNonNull(billingAddresses);
+        public Builder billingAddresses(@Nullable List<GetSubscriptionSubscriptionBillingAddress> billingAddresses) {
+            this.billingAddresses = billingAddresses;
             return this;
         }
         public Builder billingAddresses(GetSubscriptionSubscriptionBillingAddress... billingAddresses) {
             return billingAddresses(List.of(billingAddresses));
         }
         @CustomType.Setter
-        public Builder currencyCode(String currencyCode) {
-            this.currencyCode = Objects.requireNonNull(currencyCode);
+        public Builder currencyCode(@Nullable String currencyCode) {
+            this.currencyCode = currencyCode;
             return this;
         }
         @CustomType.Setter
-        public Builder gsiOrgCode(String gsiOrgCode) {
-            this.gsiOrgCode = Objects.requireNonNull(gsiOrgCode);
+        public Builder gsiOrgCode(@Nullable String gsiOrgCode) {
+            this.gsiOrgCode = gsiOrgCode;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder isIntentToPay(Boolean isIntentToPay) {
-            this.isIntentToPay = Objects.requireNonNull(isIntentToPay);
+        public Builder isIntentToPay(@Nullable Boolean isIntentToPay) {
+            this.isIntentToPay = isIntentToPay;
             return this;
         }
         @CustomType.Setter
-        public Builder languageCode(String languageCode) {
-            this.languageCode = Objects.requireNonNull(languageCode);
+        public Builder languageCode(@Nullable String languageCode) {
+            this.languageCode = languageCode;
             return this;
         }
         @CustomType.Setter
-        public Builder organizationId(String organizationId) {
-            this.organizationId = Objects.requireNonNull(organizationId);
+        public Builder organizationId(@Nullable String organizationId) {
+            this.organizationId = organizationId;
             return this;
         }
         @CustomType.Setter
-        public Builder paymentGateways(List<GetSubscriptionSubscriptionPaymentGateway> paymentGateways) {
-            this.paymentGateways = Objects.requireNonNull(paymentGateways);
+        public Builder paymentGateways(@Nullable List<GetSubscriptionSubscriptionPaymentGateway> paymentGateways) {
+            this.paymentGateways = paymentGateways;
             return this;
         }
         public Builder paymentGateways(GetSubscriptionSubscriptionPaymentGateway... paymentGateways) {
             return paymentGateways(List.of(paymentGateways));
         }
         @CustomType.Setter
-        public Builder paymentOptions(List<GetSubscriptionSubscriptionPaymentOption> paymentOptions) {
-            this.paymentOptions = Objects.requireNonNull(paymentOptions);
+        public Builder paymentOptions(@Nullable List<GetSubscriptionSubscriptionPaymentOption> paymentOptions) {
+            this.paymentOptions = paymentOptions;
             return this;
         }
         public Builder paymentOptions(GetSubscriptionSubscriptionPaymentOption... paymentOptions) {
             return paymentOptions(List.of(paymentOptions));
         }
         @CustomType.Setter
-        public Builder planType(String planType) {
-            this.planType = Objects.requireNonNull(planType);
+        public Builder planType(@Nullable String planType) {
+            this.planType = planType;
             return this;
         }
         @CustomType.Setter
-        public Builder shipToCustAcctRoleId(String shipToCustAcctRoleId) {
-            this.shipToCustAcctRoleId = Objects.requireNonNull(shipToCustAcctRoleId);
+        public Builder shipToCustAcctRoleId(@Nullable String shipToCustAcctRoleId) {
+            this.shipToCustAcctRoleId = shipToCustAcctRoleId;
             return this;
         }
         @CustomType.Setter
-        public Builder shipToCustAcctSiteId(String shipToCustAcctSiteId) {
-            this.shipToCustAcctSiteId = Objects.requireNonNull(shipToCustAcctSiteId);
+        public Builder shipToCustAcctSiteId(@Nullable String shipToCustAcctSiteId) {
+            this.shipToCustAcctSiteId = shipToCustAcctSiteId;
             return this;
         }
         @CustomType.Setter
-        public Builder subscriptionPlanNumber(String subscriptionPlanNumber) {
-            this.subscriptionPlanNumber = Objects.requireNonNull(subscriptionPlanNumber);
+        public Builder subscriptionPlanNumber(@Nullable String subscriptionPlanNumber) {
+            this.subscriptionPlanNumber = subscriptionPlanNumber;
             return this;
         }
         @CustomType.Setter
-        public Builder taxInfos(List<GetSubscriptionSubscriptionTaxInfo> taxInfos) {
-            this.taxInfos = Objects.requireNonNull(taxInfos);
+        public Builder taxInfos(@Nullable List<GetSubscriptionSubscriptionTaxInfo> taxInfos) {
+            this.taxInfos = taxInfos;
             return this;
         }
         public Builder taxInfos(GetSubscriptionSubscriptionTaxInfo... taxInfos) {
             return taxInfos(List.of(taxInfos));
         }
         @CustomType.Setter
-        public Builder timePersonalToCorporateConv(String timePersonalToCorporateConv) {
-            this.timePersonalToCorporateConv = Objects.requireNonNull(timePersonalToCorporateConv);
+        public Builder timePersonalToCorporateConv(@Nullable String timePersonalToCorporateConv) {
+            this.timePersonalToCorporateConv = timePersonalToCorporateConv;
             return this;
         }
         @CustomType.Setter
-        public Builder timePlanUpgrade(String timePlanUpgrade) {
-            this.timePlanUpgrade = Objects.requireNonNull(timePlanUpgrade);
+        public Builder timePlanUpgrade(@Nullable String timePlanUpgrade) {
+            this.timePlanUpgrade = timePlanUpgrade;
             return this;
         }
         @CustomType.Setter
-        public Builder timeStart(String timeStart) {
-            this.timeStart = Objects.requireNonNull(timeStart);
+        public Builder timeStart(@Nullable String timeStart) {
+            this.timeStart = timeStart;
             return this;
         }
         @CustomType.Setter
-        public Builder upgradeState(String upgradeState) {
-            this.upgradeState = Objects.requireNonNull(upgradeState);
+        public Builder upgradeState(@Nullable String upgradeState) {
+            this.upgradeState = upgradeState;
             return this;
         }
         @CustomType.Setter
-        public Builder upgradeStateDetails(String upgradeStateDetails) {
-            this.upgradeStateDetails = Objects.requireNonNull(upgradeStateDetails);
+        public Builder upgradeStateDetails(@Nullable String upgradeStateDetails) {
+            this.upgradeStateDetails = upgradeStateDetails;
             return this;
         }
         public GetSubscriptionSubscription build() {

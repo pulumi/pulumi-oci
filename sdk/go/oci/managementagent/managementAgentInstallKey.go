@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Management Agent Install Key resource in Oracle Cloud Infrastructure Management Agent service.
@@ -60,32 +59,32 @@ type ManagementAgentInstallKey struct {
 	pulumi.CustomResourceState
 
 	// Total number of install for this keys
-	AllowedKeyInstallCount pulumi.IntOutput `pulumi:"allowedKeyInstallCount"`
+	AllowedKeyInstallCount pulumi.IntPtrOutput `pulumi:"allowedKeyInstallCount"`
 	// Compartment Identifier
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// Principal id of user who created the Agent Install key
-	CreatedByPrincipalId pulumi.StringOutput `pulumi:"createdByPrincipalId"`
+	CreatedByPrincipalId pulumi.StringPtrOutput `pulumi:"createdByPrincipalId"`
 	// Total number of install for this keys
-	CurrentKeyInstallCount pulumi.IntOutput `pulumi:"currentKeyInstallCount"`
+	CurrentKeyInstallCount pulumi.IntPtrOutput `pulumi:"currentKeyInstallCount"`
 	// (Updatable) Management Agent install Key Name
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// If set to true, the install key has no expiration date or usage limit. Defaults to false
-	IsUnlimited pulumi.BoolOutput `pulumi:"isUnlimited"`
+	IsUnlimited pulumi.BoolPtrOutput `pulumi:"isUnlimited"`
 	// Management Agent Install Key
-	Key pulumi.StringOutput `pulumi:"key"`
+	Key pulumi.StringPtrOutput `pulumi:"key"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// Status of Key
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The time when Management Agent install Key was created. An RFC3339 formatted date time string
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// date after which key would expire after creation
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	TimeExpires pulumi.StringOutput `pulumi:"timeExpires"`
+	TimeExpires pulumi.StringPtrOutput `pulumi:"timeExpires"`
 	// The time when Management Agent install Key was updated. An RFC3339 formatted date time string
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewManagementAgentInstallKey registers a new resource with the given unique name, arguments, and options.
@@ -243,12 +242,6 @@ func (i *ManagementAgentInstallKey) ToManagementAgentInstallKeyOutputWithContext
 	return pulumi.ToOutputWithContext(ctx, i).(ManagementAgentInstallKeyOutput)
 }
 
-func (i *ManagementAgentInstallKey) ToOutput(ctx context.Context) pulumix.Output[*ManagementAgentInstallKey] {
-	return pulumix.Output[*ManagementAgentInstallKey]{
-		OutputState: i.ToManagementAgentInstallKeyOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ManagementAgentInstallKeyArrayInput is an input type that accepts ManagementAgentInstallKeyArray and ManagementAgentInstallKeyArrayOutput values.
 // You can construct a concrete instance of `ManagementAgentInstallKeyArrayInput` via:
 //
@@ -272,12 +265,6 @@ func (i ManagementAgentInstallKeyArray) ToManagementAgentInstallKeyArrayOutput()
 
 func (i ManagementAgentInstallKeyArray) ToManagementAgentInstallKeyArrayOutputWithContext(ctx context.Context) ManagementAgentInstallKeyArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ManagementAgentInstallKeyArrayOutput)
-}
-
-func (i ManagementAgentInstallKeyArray) ToOutput(ctx context.Context) pulumix.Output[[]*ManagementAgentInstallKey] {
-	return pulumix.Output[[]*ManagementAgentInstallKey]{
-		OutputState: i.ToManagementAgentInstallKeyArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ManagementAgentInstallKeyMapInput is an input type that accepts ManagementAgentInstallKeyMap and ManagementAgentInstallKeyMapOutput values.
@@ -305,12 +292,6 @@ func (i ManagementAgentInstallKeyMap) ToManagementAgentInstallKeyMapOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(ManagementAgentInstallKeyMapOutput)
 }
 
-func (i ManagementAgentInstallKeyMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ManagementAgentInstallKey] {
-	return pulumix.Output[map[string]*ManagementAgentInstallKey]{
-		OutputState: i.ToManagementAgentInstallKeyMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ManagementAgentInstallKeyOutput struct{ *pulumi.OutputState }
 
 func (ManagementAgentInstallKeyOutput) ElementType() reflect.Type {
@@ -325,15 +306,9 @@ func (o ManagementAgentInstallKeyOutput) ToManagementAgentInstallKeyOutputWithCo
 	return o
 }
 
-func (o ManagementAgentInstallKeyOutput) ToOutput(ctx context.Context) pulumix.Output[*ManagementAgentInstallKey] {
-	return pulumix.Output[*ManagementAgentInstallKey]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Total number of install for this keys
-func (o ManagementAgentInstallKeyOutput) AllowedKeyInstallCount() pulumi.IntOutput {
-	return o.ApplyT(func(v *ManagementAgentInstallKey) pulumi.IntOutput { return v.AllowedKeyInstallCount }).(pulumi.IntOutput)
+func (o ManagementAgentInstallKeyOutput) AllowedKeyInstallCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ManagementAgentInstallKey) pulumi.IntPtrOutput { return v.AllowedKeyInstallCount }).(pulumi.IntPtrOutput)
 }
 
 // Compartment Identifier
@@ -342,13 +317,13 @@ func (o ManagementAgentInstallKeyOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Principal id of user who created the Agent Install key
-func (o ManagementAgentInstallKeyOutput) CreatedByPrincipalId() pulumi.StringOutput {
-	return o.ApplyT(func(v *ManagementAgentInstallKey) pulumi.StringOutput { return v.CreatedByPrincipalId }).(pulumi.StringOutput)
+func (o ManagementAgentInstallKeyOutput) CreatedByPrincipalId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ManagementAgentInstallKey) pulumi.StringPtrOutput { return v.CreatedByPrincipalId }).(pulumi.StringPtrOutput)
 }
 
 // Total number of install for this keys
-func (o ManagementAgentInstallKeyOutput) CurrentKeyInstallCount() pulumi.IntOutput {
-	return o.ApplyT(func(v *ManagementAgentInstallKey) pulumi.IntOutput { return v.CurrentKeyInstallCount }).(pulumi.IntOutput)
+func (o ManagementAgentInstallKeyOutput) CurrentKeyInstallCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ManagementAgentInstallKey) pulumi.IntPtrOutput { return v.CurrentKeyInstallCount }).(pulumi.IntPtrOutput)
 }
 
 // (Updatable) Management Agent install Key Name
@@ -357,41 +332,41 @@ func (o ManagementAgentInstallKeyOutput) DisplayName() pulumi.StringOutput {
 }
 
 // If set to true, the install key has no expiration date or usage limit. Defaults to false
-func (o ManagementAgentInstallKeyOutput) IsUnlimited() pulumi.BoolOutput {
-	return o.ApplyT(func(v *ManagementAgentInstallKey) pulumi.BoolOutput { return v.IsUnlimited }).(pulumi.BoolOutput)
+func (o ManagementAgentInstallKeyOutput) IsUnlimited() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ManagementAgentInstallKey) pulumi.BoolPtrOutput { return v.IsUnlimited }).(pulumi.BoolPtrOutput)
 }
 
 // Management Agent Install Key
-func (o ManagementAgentInstallKeyOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v *ManagementAgentInstallKey) pulumi.StringOutput { return v.Key }).(pulumi.StringOutput)
+func (o ManagementAgentInstallKeyOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ManagementAgentInstallKey) pulumi.StringPtrOutput { return v.Key }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o ManagementAgentInstallKeyOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *ManagementAgentInstallKey) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o ManagementAgentInstallKeyOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ManagementAgentInstallKey) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // Status of Key
-func (o ManagementAgentInstallKeyOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *ManagementAgentInstallKey) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o ManagementAgentInstallKeyOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ManagementAgentInstallKey) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The time when Management Agent install Key was created. An RFC3339 formatted date time string
-func (o ManagementAgentInstallKeyOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *ManagementAgentInstallKey) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o ManagementAgentInstallKeyOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ManagementAgentInstallKey) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // date after which key would expire after creation
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o ManagementAgentInstallKeyOutput) TimeExpires() pulumi.StringOutput {
-	return o.ApplyT(func(v *ManagementAgentInstallKey) pulumi.StringOutput { return v.TimeExpires }).(pulumi.StringOutput)
+func (o ManagementAgentInstallKeyOutput) TimeExpires() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ManagementAgentInstallKey) pulumi.StringPtrOutput { return v.TimeExpires }).(pulumi.StringPtrOutput)
 }
 
 // The time when Management Agent install Key was updated. An RFC3339 formatted date time string
-func (o ManagementAgentInstallKeyOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *ManagementAgentInstallKey) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o ManagementAgentInstallKeyOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ManagementAgentInstallKey) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type ManagementAgentInstallKeyArrayOutput struct{ *pulumi.OutputState }
@@ -406,12 +381,6 @@ func (o ManagementAgentInstallKeyArrayOutput) ToManagementAgentInstallKeyArrayOu
 
 func (o ManagementAgentInstallKeyArrayOutput) ToManagementAgentInstallKeyArrayOutputWithContext(ctx context.Context) ManagementAgentInstallKeyArrayOutput {
 	return o
-}
-
-func (o ManagementAgentInstallKeyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ManagementAgentInstallKey] {
-	return pulumix.Output[[]*ManagementAgentInstallKey]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ManagementAgentInstallKeyArrayOutput) Index(i pulumi.IntInput) ManagementAgentInstallKeyOutput {
@@ -432,12 +401,6 @@ func (o ManagementAgentInstallKeyMapOutput) ToManagementAgentInstallKeyMapOutput
 
 func (o ManagementAgentInstallKeyMapOutput) ToManagementAgentInstallKeyMapOutputWithContext(ctx context.Context) ManagementAgentInstallKeyMapOutput {
 	return o
-}
-
-func (o ManagementAgentInstallKeyMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ManagementAgentInstallKey] {
-	return pulumix.Output[map[string]*ManagementAgentInstallKey]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ManagementAgentInstallKeyMapOutput) MapIndex(k pulumi.StringInput) ManagementAgentInstallKeyOutput {

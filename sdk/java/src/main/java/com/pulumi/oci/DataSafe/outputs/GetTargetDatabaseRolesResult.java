@@ -25,7 +25,7 @@ public final class GetTargetDatabaseRolesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Is the role oracle maintained.
      * 
@@ -41,7 +41,7 @@ public final class GetTargetDatabaseRolesResult {
      * @return The list of roles.
      * 
      */
-    private List<GetTargetDatabaseRolesRole> roles;
+    private @Nullable List<GetTargetDatabaseRolesRole> roles;
     private String targetDatabaseId;
 
     private GetTargetDatabaseRolesResult() {}
@@ -59,8 +59,8 @@ public final class GetTargetDatabaseRolesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Is the role oracle maintained.
@@ -84,7 +84,7 @@ public final class GetTargetDatabaseRolesResult {
      * 
      */
     public List<GetTargetDatabaseRolesRole> roles() {
-        return this.roles;
+        return this.roles == null ? List.of() : this.roles;
     }
     public String targetDatabaseId() {
         return this.targetDatabaseId;
@@ -101,11 +101,11 @@ public final class GetTargetDatabaseRolesResult {
     public static final class Builder {
         private @Nullable String authenticationType;
         private @Nullable List<GetTargetDatabaseRolesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable Boolean isOracleMaintained;
         private @Nullable String roleNameContains;
         private @Nullable List<String> roleNames;
-        private List<GetTargetDatabaseRolesRole> roles;
+        private @Nullable List<GetTargetDatabaseRolesRole> roles;
         private String targetDatabaseId;
         public Builder() {}
         public Builder(GetTargetDatabaseRolesResult defaults) {
@@ -134,8 +134,8 @@ public final class GetTargetDatabaseRolesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -157,8 +157,8 @@ public final class GetTargetDatabaseRolesResult {
             return roleNames(List.of(roleNames));
         }
         @CustomType.Setter
-        public Builder roles(List<GetTargetDatabaseRolesRole> roles) {
-            this.roles = Objects.requireNonNull(roles);
+        public Builder roles(@Nullable List<GetTargetDatabaseRolesRole> roles) {
+            this.roles = roles;
             return this;
         }
         public Builder roles(GetTargetDatabaseRolesRole... roles) {

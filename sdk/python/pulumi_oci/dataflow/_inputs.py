@@ -44,19 +44,12 @@ class ApplicationApplicationLogConfigArgs:
     def __init__(__self__, *,
                  log_group_id: pulumi.Input[str],
                  log_id: pulumi.Input[str]):
-        """
-        :param pulumi.Input[str] log_group_id: (Updatable) The log group id for where log objects will be for Data Flow Runs.
-        :param pulumi.Input[str] log_id: (Updatable) The log id of the log object the Application Logs of Data Flow Run will be shipped to.
-        """
         pulumi.set(__self__, "log_group_id", log_group_id)
         pulumi.set(__self__, "log_id", log_id)
 
     @property
     @pulumi.getter(name="logGroupId")
     def log_group_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The log group id for where log objects will be for Data Flow Runs.
-        """
         return pulumi.get(self, "log_group_id")
 
     @log_group_id.setter
@@ -66,9 +59,6 @@ class ApplicationApplicationLogConfigArgs:
     @property
     @pulumi.getter(name="logId")
     def log_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The log id of the log object the Application Logs of Data Flow Run will be shipped to.
-        """
         return pulumi.get(self, "log_id")
 
     @log_id.setter
@@ -81,10 +71,6 @@ class ApplicationDriverShapeConfigArgs:
     def __init__(__self__, *,
                  memory_in_gbs: Optional[pulumi.Input[float]] = None,
                  ocpus: Optional[pulumi.Input[float]] = None):
-        """
-        :param pulumi.Input[float] memory_in_gbs: (Updatable) The amount of memory used for the driver or executors.
-        :param pulumi.Input[float] ocpus: (Updatable) The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-        """
         if memory_in_gbs is not None:
             pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         if ocpus is not None:
@@ -93,9 +79,6 @@ class ApplicationDriverShapeConfigArgs:
     @property
     @pulumi.getter(name="memoryInGbs")
     def memory_in_gbs(self) -> Optional[pulumi.Input[float]]:
-        """
-        (Updatable) The amount of memory used for the driver or executors.
-        """
         return pulumi.get(self, "memory_in_gbs")
 
     @memory_in_gbs.setter
@@ -105,9 +88,6 @@ class ApplicationDriverShapeConfigArgs:
     @property
     @pulumi.getter
     def ocpus(self) -> Optional[pulumi.Input[float]]:
-        """
-        (Updatable) The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-        """
         return pulumi.get(self, "ocpus")
 
     @ocpus.setter
@@ -120,10 +100,6 @@ class ApplicationExecutorShapeConfigArgs:
     def __init__(__self__, *,
                  memory_in_gbs: Optional[pulumi.Input[float]] = None,
                  ocpus: Optional[pulumi.Input[float]] = None):
-        """
-        :param pulumi.Input[float] memory_in_gbs: (Updatable) The amount of memory used for the driver or executors.
-        :param pulumi.Input[float] ocpus: (Updatable) The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-        """
         if memory_in_gbs is not None:
             pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         if ocpus is not None:
@@ -132,9 +108,6 @@ class ApplicationExecutorShapeConfigArgs:
     @property
     @pulumi.getter(name="memoryInGbs")
     def memory_in_gbs(self) -> Optional[pulumi.Input[float]]:
-        """
-        (Updatable) The amount of memory used for the driver or executors.
-        """
         return pulumi.get(self, "memory_in_gbs")
 
     @memory_in_gbs.setter
@@ -144,9 +117,6 @@ class ApplicationExecutorShapeConfigArgs:
     @property
     @pulumi.getter
     def ocpus(self) -> Optional[pulumi.Input[float]]:
-        """
-        (Updatable) The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-        """
         return pulumi.get(self, "ocpus")
 
     @ocpus.setter
@@ -159,19 +129,12 @@ class ApplicationParameterArgs:
     def __init__(__self__, *,
                  name: pulumi.Input[str],
                  value: pulumi.Input[str]):
-        """
-        :param pulumi.Input[str] name: (Updatable) The name of the parameter.  It must be a string of one or more word characters (a-z, A-Z, 0-9, _). Examples: "iterations", "input_file"
-        :param pulumi.Input[str] value: (Updatable) The value of the parameter. It must be a string of 0 or more characters of any kind. Examples: "" (empty string), "10", "mydata.xml", "${x}"
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter
     def name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The name of the parameter.  It must be a string of one or more word characters (a-z, A-Z, 0-9, _). Examples: "iterations", "input_file"
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -181,9 +144,6 @@ class ApplicationParameterArgs:
     @property
     @pulumi.getter
     def value(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The value of the parameter. It must be a string of 0 or more characters of any kind. Examples: "" (empty string), "10", "mydata.xml", "${x}"
-        """
         return pulumi.get(self, "value")
 
     @value.setter
@@ -196,19 +156,12 @@ class InvokeRunApplicationLogConfigArgs:
     def __init__(__self__, *,
                  log_group_id: pulumi.Input[str],
                  log_id: pulumi.Input[str]):
-        """
-        :param pulumi.Input[str] log_group_id: The log group id for where log objects will be for Data Flow Runs.
-        :param pulumi.Input[str] log_id: The log id of the log object the Application Logs of Data Flow Run will be shipped to.
-        """
         pulumi.set(__self__, "log_group_id", log_group_id)
         pulumi.set(__self__, "log_id", log_id)
 
     @property
     @pulumi.getter(name="logGroupId")
     def log_group_id(self) -> pulumi.Input[str]:
-        """
-        The log group id for where log objects will be for Data Flow Runs.
-        """
         return pulumi.get(self, "log_group_id")
 
     @log_group_id.setter
@@ -218,9 +171,6 @@ class InvokeRunApplicationLogConfigArgs:
     @property
     @pulumi.getter(name="logId")
     def log_id(self) -> pulumi.Input[str]:
-        """
-        The log id of the log object the Application Logs of Data Flow Run will be shipped to.
-        """
         return pulumi.get(self, "log_id")
 
     @log_id.setter
@@ -233,10 +183,6 @@ class InvokeRunDriverShapeConfigArgs:
     def __init__(__self__, *,
                  memory_in_gbs: Optional[pulumi.Input[float]] = None,
                  ocpus: Optional[pulumi.Input[float]] = None):
-        """
-        :param pulumi.Input[float] memory_in_gbs: The amount of memory used for the driver or executors.
-        :param pulumi.Input[float] ocpus: The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-        """
         if memory_in_gbs is not None:
             pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         if ocpus is not None:
@@ -245,9 +191,6 @@ class InvokeRunDriverShapeConfigArgs:
     @property
     @pulumi.getter(name="memoryInGbs")
     def memory_in_gbs(self) -> Optional[pulumi.Input[float]]:
-        """
-        The amount of memory used for the driver or executors.
-        """
         return pulumi.get(self, "memory_in_gbs")
 
     @memory_in_gbs.setter
@@ -257,9 +200,6 @@ class InvokeRunDriverShapeConfigArgs:
     @property
     @pulumi.getter
     def ocpus(self) -> Optional[pulumi.Input[float]]:
-        """
-        The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-        """
         return pulumi.get(self, "ocpus")
 
     @ocpus.setter
@@ -272,10 +212,6 @@ class InvokeRunExecutorShapeConfigArgs:
     def __init__(__self__, *,
                  memory_in_gbs: Optional[pulumi.Input[float]] = None,
                  ocpus: Optional[pulumi.Input[float]] = None):
-        """
-        :param pulumi.Input[float] memory_in_gbs: The amount of memory used for the driver or executors.
-        :param pulumi.Input[float] ocpus: The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-        """
         if memory_in_gbs is not None:
             pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         if ocpus is not None:
@@ -284,9 +220,6 @@ class InvokeRunExecutorShapeConfigArgs:
     @property
     @pulumi.getter(name="memoryInGbs")
     def memory_in_gbs(self) -> Optional[pulumi.Input[float]]:
-        """
-        The amount of memory used for the driver or executors.
-        """
         return pulumi.get(self, "memory_in_gbs")
 
     @memory_in_gbs.setter
@@ -296,9 +229,6 @@ class InvokeRunExecutorShapeConfigArgs:
     @property
     @pulumi.getter
     def ocpus(self) -> Optional[pulumi.Input[float]]:
-        """
-        The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-        """
         return pulumi.get(self, "ocpus")
 
     @ocpus.setter
@@ -311,19 +241,12 @@ class InvokeRunParameterArgs:
     def __init__(__self__, *,
                  name: pulumi.Input[str],
                  value: pulumi.Input[str]):
-        """
-        :param pulumi.Input[str] name: The name of the parameter.  It must be a string of one or more word characters (a-z, A-Z, 0-9, _). Examples: "iterations", "input_file"
-        :param pulumi.Input[str] value: The value of the parameter. It must be a string of 0 or more characters of any kind. Examples: "" (empty string), "10", "mydata.xml", "${x}"
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter
     def name(self) -> pulumi.Input[str]:
-        """
-        The name of the parameter.  It must be a string of one or more word characters (a-z, A-Z, 0-9, _). Examples: "iterations", "input_file"
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -333,9 +256,6 @@ class InvokeRunParameterArgs:
     @property
     @pulumi.getter
     def value(self) -> pulumi.Input[str]:
-        """
-        The value of the parameter. It must be a string of 0 or more characters of any kind. Examples: "" (empty string), "10", "mydata.xml", "${x}"
-        """
         return pulumi.get(self, "value")
 
     @value.setter
@@ -350,12 +270,6 @@ class PoolConfigurationArgs:
                  min: Optional[pulumi.Input[int]] = None,
                  shape: Optional[pulumi.Input[str]] = None,
                  shape_config: Optional[pulumi.Input['PoolConfigurationShapeConfigArgs']] = None):
-        """
-        :param pulumi.Input[int] max: (Updatable) Maximum number of compute instances in the pool for a given compute shape.
-        :param pulumi.Input[int] min: (Updatable) Minimum number of compute instances in the pool for a given compute shape.
-        :param pulumi.Input[str] shape: (Updatable) The compute shape of the resources you would like to provision.
-        :param pulumi.Input['PoolConfigurationShapeConfigArgs'] shape_config: (Updatable) This is used to configure the shape of the driver or executor if a flexible shape is used.
-        """
         if max is not None:
             pulumi.set(__self__, "max", max)
         if min is not None:
@@ -368,9 +282,6 @@ class PoolConfigurationArgs:
     @property
     @pulumi.getter
     def max(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Maximum number of compute instances in the pool for a given compute shape.
-        """
         return pulumi.get(self, "max")
 
     @max.setter
@@ -380,9 +291,6 @@ class PoolConfigurationArgs:
     @property
     @pulumi.getter
     def min(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Minimum number of compute instances in the pool for a given compute shape.
-        """
         return pulumi.get(self, "min")
 
     @min.setter
@@ -392,9 +300,6 @@ class PoolConfigurationArgs:
     @property
     @pulumi.getter
     def shape(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The compute shape of the resources you would like to provision.
-        """
         return pulumi.get(self, "shape")
 
     @shape.setter
@@ -404,9 +309,6 @@ class PoolConfigurationArgs:
     @property
     @pulumi.getter(name="shapeConfig")
     def shape_config(self) -> Optional[pulumi.Input['PoolConfigurationShapeConfigArgs']]:
-        """
-        (Updatable) This is used to configure the shape of the driver or executor if a flexible shape is used.
-        """
         return pulumi.get(self, "shape_config")
 
     @shape_config.setter
@@ -419,10 +321,6 @@ class PoolConfigurationShapeConfigArgs:
     def __init__(__self__, *,
                  memory_in_gbs: Optional[pulumi.Input[float]] = None,
                  ocpus: Optional[pulumi.Input[float]] = None):
-        """
-        :param pulumi.Input[float] memory_in_gbs: (Updatable) The amount of memory used for the driver or executors.
-        :param pulumi.Input[float] ocpus: (Updatable) The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-        """
         if memory_in_gbs is not None:
             pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         if ocpus is not None:
@@ -431,9 +329,6 @@ class PoolConfigurationShapeConfigArgs:
     @property
     @pulumi.getter(name="memoryInGbs")
     def memory_in_gbs(self) -> Optional[pulumi.Input[float]]:
-        """
-        (Updatable) The amount of memory used for the driver or executors.
-        """
         return pulumi.get(self, "memory_in_gbs")
 
     @memory_in_gbs.setter
@@ -443,9 +338,6 @@ class PoolConfigurationShapeConfigArgs:
     @property
     @pulumi.getter
     def ocpus(self) -> Optional[pulumi.Input[float]]:
-        """
-        (Updatable) The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-        """
         return pulumi.get(self, "ocpus")
 
     @ocpus.setter
@@ -462,14 +354,6 @@ class PoolPoolMetricArgs:
                  time_last_started: Optional[pulumi.Input[str]] = None,
                  time_last_stopped: Optional[pulumi.Input[str]] = None,
                  time_last_used: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] active_runs_count: The number of runs that are currently running that are using this pool.
-        :param pulumi.Input[Sequence[pulumi.Input['PoolPoolMetricActivelyUsedNodeCountArgs']]] actively_used_node_counts: A count of the nodes that are currently being used for each shape in this pool.
-        :param pulumi.Input[str] time_last_metrics_updated: The last time the mertics were updated for this.
-        :param pulumi.Input[str] time_last_started: The last time this pool was started.
-        :param pulumi.Input[str] time_last_stopped: The last time this pool was stopped.
-        :param pulumi.Input[str] time_last_used: The last time a run used this pool.
-        """
         if active_runs_count is not None:
             pulumi.set(__self__, "active_runs_count", active_runs_count)
         if actively_used_node_counts is not None:
@@ -486,9 +370,6 @@ class PoolPoolMetricArgs:
     @property
     @pulumi.getter(name="activeRunsCount")
     def active_runs_count(self) -> Optional[pulumi.Input[str]]:
-        """
-        The number of runs that are currently running that are using this pool.
-        """
         return pulumi.get(self, "active_runs_count")
 
     @active_runs_count.setter
@@ -498,9 +379,6 @@ class PoolPoolMetricArgs:
     @property
     @pulumi.getter(name="activelyUsedNodeCounts")
     def actively_used_node_counts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PoolPoolMetricActivelyUsedNodeCountArgs']]]]:
-        """
-        A count of the nodes that are currently being used for each shape in this pool.
-        """
         return pulumi.get(self, "actively_used_node_counts")
 
     @actively_used_node_counts.setter
@@ -510,9 +388,6 @@ class PoolPoolMetricArgs:
     @property
     @pulumi.getter(name="timeLastMetricsUpdated")
     def time_last_metrics_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The last time the mertics were updated for this.
-        """
         return pulumi.get(self, "time_last_metrics_updated")
 
     @time_last_metrics_updated.setter
@@ -522,9 +397,6 @@ class PoolPoolMetricArgs:
     @property
     @pulumi.getter(name="timeLastStarted")
     def time_last_started(self) -> Optional[pulumi.Input[str]]:
-        """
-        The last time this pool was started.
-        """
         return pulumi.get(self, "time_last_started")
 
     @time_last_started.setter
@@ -534,9 +406,6 @@ class PoolPoolMetricArgs:
     @property
     @pulumi.getter(name="timeLastStopped")
     def time_last_stopped(self) -> Optional[pulumi.Input[str]]:
-        """
-        The last time this pool was stopped.
-        """
         return pulumi.get(self, "time_last_stopped")
 
     @time_last_stopped.setter
@@ -546,9 +415,6 @@ class PoolPoolMetricArgs:
     @property
     @pulumi.getter(name="timeLastUsed")
     def time_last_used(self) -> Optional[pulumi.Input[str]]:
-        """
-        The last time a run used this pool.
-        """
         return pulumi.get(self, "time_last_used")
 
     @time_last_used.setter
@@ -561,10 +427,6 @@ class PoolPoolMetricActivelyUsedNodeCountArgs:
     def __init__(__self__, *,
                  logical_shape: Optional[pulumi.Input[str]] = None,
                  pool_count: Optional[pulumi.Input[int]] = None):
-        """
-        :param pulumi.Input[str] logical_shape: The compute shape of the nodes that the count is for.
-        :param pulumi.Input[int] pool_count: The node count of this compute shape.
-        """
         if logical_shape is not None:
             pulumi.set(__self__, "logical_shape", logical_shape)
         if pool_count is not None:
@@ -573,9 +435,6 @@ class PoolPoolMetricActivelyUsedNodeCountArgs:
     @property
     @pulumi.getter(name="logicalShape")
     def logical_shape(self) -> Optional[pulumi.Input[str]]:
-        """
-        The compute shape of the nodes that the count is for.
-        """
         return pulumi.get(self, "logical_shape")
 
     @logical_shape.setter
@@ -585,9 +444,6 @@ class PoolPoolMetricActivelyUsedNodeCountArgs:
     @property
     @pulumi.getter(name="poolCount")
     def pool_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        The node count of this compute shape.
-        """
         return pulumi.get(self, "pool_count")
 
     @pool_count.setter
@@ -601,11 +457,6 @@ class PoolScheduleArgs:
                  day_of_week: Optional[pulumi.Input[str]] = None,
                  start_time: Optional[pulumi.Input[int]] = None,
                  stop_time: Optional[pulumi.Input[int]] = None):
-        """
-        :param pulumi.Input[str] day_of_week: (Updatable) Day of the week SUN-SAT
-        :param pulumi.Input[int] start_time: (Updatable) Hour of the day to start or stop pool.
-        :param pulumi.Input[int] stop_time: (Updatable) Hour of the day to stop the pool.
-        """
         if day_of_week is not None:
             pulumi.set(__self__, "day_of_week", day_of_week)
         if start_time is not None:
@@ -616,9 +467,6 @@ class PoolScheduleArgs:
     @property
     @pulumi.getter(name="dayOfWeek")
     def day_of_week(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Day of the week SUN-SAT
-        """
         return pulumi.get(self, "day_of_week")
 
     @day_of_week.setter
@@ -628,9 +476,6 @@ class PoolScheduleArgs:
     @property
     @pulumi.getter(name="startTime")
     def start_time(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Hour of the day to start or stop pool.
-        """
         return pulumi.get(self, "start_time")
 
     @start_time.setter
@@ -640,9 +485,6 @@ class PoolScheduleArgs:
     @property
     @pulumi.getter(name="stopTime")
     def stop_time(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Hour of the day to stop the pool.
-        """
         return pulumi.get(self, "stop_time")
 
     @stop_time.setter
@@ -655,10 +497,6 @@ class PrivateEndpointScanDetailArgs:
     def __init__(__self__, *,
                  fqdn: Optional[pulumi.Input[str]] = None,
                  port: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] fqdn: (Updatable) A fully-qualified domain name (FQDN).
-        :param pulumi.Input[str] port: (Updatable) The port number of the FQDN
-        """
         if fqdn is not None:
             pulumi.set(__self__, "fqdn", fqdn)
         if port is not None:
@@ -667,9 +505,6 @@ class PrivateEndpointScanDetailArgs:
     @property
     @pulumi.getter
     def fqdn(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A fully-qualified domain name (FQDN).
-        """
         return pulumi.get(self, "fqdn")
 
     @fqdn.setter
@@ -679,9 +514,6 @@ class PrivateEndpointScanDetailArgs:
     @property
     @pulumi.getter
     def port(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The port number of the FQDN
-        """
         return pulumi.get(self, "port")
 
     @port.setter
@@ -697,13 +529,6 @@ class RunStatementOutputArgs:
                  error_value: Optional[pulumi.Input[str]] = None,
                  status: Optional[pulumi.Input[str]] = None,
                  tracebacks: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
-        """
-        :param pulumi.Input[Sequence[pulumi.Input['RunStatementOutputDataArgs']]] datas: An object representing execution output of a statement.
-        :param pulumi.Input[str] error_name: The name of the error in the statement output.
-        :param pulumi.Input[str] error_value: The value of the error in the statement output.
-        :param pulumi.Input[str] status: Status of the statement output.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] tracebacks: The traceback of the statement output.
-        """
         if datas is not None:
             pulumi.set(__self__, "datas", datas)
         if error_name is not None:
@@ -718,9 +543,6 @@ class RunStatementOutputArgs:
     @property
     @pulumi.getter
     def datas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['RunStatementOutputDataArgs']]]]:
-        """
-        An object representing execution output of a statement.
-        """
         return pulumi.get(self, "datas")
 
     @datas.setter
@@ -730,9 +552,6 @@ class RunStatementOutputArgs:
     @property
     @pulumi.getter(name="errorName")
     def error_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name of the error in the statement output.
-        """
         return pulumi.get(self, "error_name")
 
     @error_name.setter
@@ -742,9 +561,6 @@ class RunStatementOutputArgs:
     @property
     @pulumi.getter(name="errorValue")
     def error_value(self) -> Optional[pulumi.Input[str]]:
-        """
-        The value of the error in the statement output.
-        """
         return pulumi.get(self, "error_value")
 
     @error_value.setter
@@ -754,9 +570,6 @@ class RunStatementOutputArgs:
     @property
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[str]]:
-        """
-        Status of the statement output.
-        """
         return pulumi.get(self, "status")
 
     @status.setter
@@ -766,9 +579,6 @@ class RunStatementOutputArgs:
     @property
     @pulumi.getter
     def tracebacks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        The traceback of the statement output.
-        """
         return pulumi.get(self, "tracebacks")
 
     @tracebacks.setter
@@ -781,10 +591,6 @@ class RunStatementOutputDataArgs:
     def __init__(__self__, *,
                  type: Optional[pulumi.Input[str]] = None,
                  value: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] type: The type of the `StatementOutputData` like `TEXT_PLAIN`, `TEXT_HTML` or `IMAGE_PNG`.
-        :param pulumi.Input[str] value: The statement code execution output in html format.
-        """
         if type is not None:
             pulumi.set(__self__, "type", type)
         if value is not None:
@@ -793,9 +599,6 @@ class RunStatementOutputDataArgs:
     @property
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The type of the `StatementOutputData` like `TEXT_PLAIN`, `TEXT_HTML` or `IMAGE_PNG`.
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -805,9 +608,6 @@ class RunStatementOutputDataArgs:
     @property
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[str]]:
-        """
-        The statement code execution output in html format.
-        """
         return pulumi.get(self, "value")
 
     @value.setter
@@ -820,10 +620,6 @@ class SqlEndpointDriverShapeConfigArgs:
     def __init__(__self__, *,
                  memory_in_gbs: Optional[pulumi.Input[float]] = None,
                  ocpus: Optional[pulumi.Input[float]] = None):
-        """
-        :param pulumi.Input[float] memory_in_gbs: The amount of memory used for the driver or executors.
-        :param pulumi.Input[float] ocpus: The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-        """
         if memory_in_gbs is not None:
             pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         if ocpus is not None:
@@ -832,9 +628,6 @@ class SqlEndpointDriverShapeConfigArgs:
     @property
     @pulumi.getter(name="memoryInGbs")
     def memory_in_gbs(self) -> Optional[pulumi.Input[float]]:
-        """
-        The amount of memory used for the driver or executors.
-        """
         return pulumi.get(self, "memory_in_gbs")
 
     @memory_in_gbs.setter
@@ -844,9 +637,6 @@ class SqlEndpointDriverShapeConfigArgs:
     @property
     @pulumi.getter
     def ocpus(self) -> Optional[pulumi.Input[float]]:
-        """
-        The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-        """
         return pulumi.get(self, "ocpus")
 
     @ocpus.setter
@@ -859,10 +649,6 @@ class SqlEndpointExecutorShapeConfigArgs:
     def __init__(__self__, *,
                  memory_in_gbs: Optional[pulumi.Input[float]] = None,
                  ocpus: Optional[pulumi.Input[float]] = None):
-        """
-        :param pulumi.Input[float] memory_in_gbs: The amount of memory used for the driver or executors.
-        :param pulumi.Input[float] ocpus: The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-        """
         if memory_in_gbs is not None:
             pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         if ocpus is not None:
@@ -871,9 +657,6 @@ class SqlEndpointExecutorShapeConfigArgs:
     @property
     @pulumi.getter(name="memoryInGbs")
     def memory_in_gbs(self) -> Optional[pulumi.Input[float]]:
-        """
-        The amount of memory used for the driver or executors.
-        """
         return pulumi.get(self, "memory_in_gbs")
 
     @memory_in_gbs.setter
@@ -883,9 +666,6 @@ class SqlEndpointExecutorShapeConfigArgs:
     @property
     @pulumi.getter
     def ocpus(self) -> Optional[pulumi.Input[float]]:
-        """
-        The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-        """
         return pulumi.get(self, "ocpus")
 
     @ocpus.setter
@@ -903,15 +683,6 @@ class SqlEndpointNetworkConfigurationArgs:
                  public_endpoint_ip: Optional[pulumi.Input[str]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
                  vcn_id: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] network_type: The type of network configuration.
-        :param pulumi.Input[Sequence[pulumi.Input['SqlEndpointNetworkConfigurationAccessControlRuleArgs']]] access_control_rules: A list of SecureAccessControlRule's to which access is limited to
-        :param pulumi.Input[str] host_name_prefix: The host name prefix.
-        :param pulumi.Input[str] private_endpoint_ip: Ip Address of private endpoint
-        :param pulumi.Input[str] public_endpoint_ip: Ip Address of public endpoint
-        :param pulumi.Input[str] subnet_id: The VCN Subnet OCID.
-        :param pulumi.Input[str] vcn_id: The VCN OCID.
-        """
         pulumi.set(__self__, "network_type", network_type)
         if access_control_rules is not None:
             pulumi.set(__self__, "access_control_rules", access_control_rules)
@@ -929,9 +700,6 @@ class SqlEndpointNetworkConfigurationArgs:
     @property
     @pulumi.getter(name="networkType")
     def network_type(self) -> pulumi.Input[str]:
-        """
-        The type of network configuration.
-        """
         return pulumi.get(self, "network_type")
 
     @network_type.setter
@@ -941,9 +709,6 @@ class SqlEndpointNetworkConfigurationArgs:
     @property
     @pulumi.getter(name="accessControlRules")
     def access_control_rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SqlEndpointNetworkConfigurationAccessControlRuleArgs']]]]:
-        """
-        A list of SecureAccessControlRule's to which access is limited to
-        """
         return pulumi.get(self, "access_control_rules")
 
     @access_control_rules.setter
@@ -953,9 +718,6 @@ class SqlEndpointNetworkConfigurationArgs:
     @property
     @pulumi.getter(name="hostNamePrefix")
     def host_name_prefix(self) -> Optional[pulumi.Input[str]]:
-        """
-        The host name prefix.
-        """
         return pulumi.get(self, "host_name_prefix")
 
     @host_name_prefix.setter
@@ -965,9 +727,6 @@ class SqlEndpointNetworkConfigurationArgs:
     @property
     @pulumi.getter(name="privateEndpointIp")
     def private_endpoint_ip(self) -> Optional[pulumi.Input[str]]:
-        """
-        Ip Address of private endpoint
-        """
         return pulumi.get(self, "private_endpoint_ip")
 
     @private_endpoint_ip.setter
@@ -977,9 +736,6 @@ class SqlEndpointNetworkConfigurationArgs:
     @property
     @pulumi.getter(name="publicEndpointIp")
     def public_endpoint_ip(self) -> Optional[pulumi.Input[str]]:
-        """
-        Ip Address of public endpoint
-        """
         return pulumi.get(self, "public_endpoint_ip")
 
     @public_endpoint_ip.setter
@@ -989,9 +745,6 @@ class SqlEndpointNetworkConfigurationArgs:
     @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The VCN Subnet OCID.
-        """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
@@ -1001,9 +754,6 @@ class SqlEndpointNetworkConfigurationArgs:
     @property
     @pulumi.getter(name="vcnId")
     def vcn_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The VCN OCID.
-        """
         return pulumi.get(self, "vcn_id")
 
     @vcn_id.setter
@@ -1017,11 +767,6 @@ class SqlEndpointNetworkConfigurationAccessControlRuleArgs:
                  ip_notation: Optional[pulumi.Input[str]] = None,
                  value: Optional[pulumi.Input[str]] = None,
                  vcn_ips: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] ip_notation: The type of IP notation.
-        :param pulumi.Input[str] value: The associated value of the selected IP notation.
-        :param pulumi.Input[str] vcn_ips: A comma-separated IP or CIDR address for VCN OCID IP notation selection.
-        """
         if ip_notation is not None:
             pulumi.set(__self__, "ip_notation", ip_notation)
         if value is not None:
@@ -1032,9 +777,6 @@ class SqlEndpointNetworkConfigurationAccessControlRuleArgs:
     @property
     @pulumi.getter(name="ipNotation")
     def ip_notation(self) -> Optional[pulumi.Input[str]]:
-        """
-        The type of IP notation.
-        """
         return pulumi.get(self, "ip_notation")
 
     @ip_notation.setter
@@ -1044,9 +786,6 @@ class SqlEndpointNetworkConfigurationAccessControlRuleArgs:
     @property
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[str]]:
-        """
-        The associated value of the selected IP notation.
-        """
         return pulumi.get(self, "value")
 
     @value.setter
@@ -1056,9 +795,6 @@ class SqlEndpointNetworkConfigurationAccessControlRuleArgs:
     @property
     @pulumi.getter(name="vcnIps")
     def vcn_ips(self) -> Optional[pulumi.Input[str]]:
-        """
-        A comma-separated IP or CIDR address for VCN OCID IP notation selection.
-        """
         return pulumi.get(self, "vcn_ips")
 
     @vcn_ips.setter
@@ -1072,9 +808,6 @@ class GetApplicationsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The name of the parameter.  It must be a string of one or more word characters (a-z, A-Z, 0-9, _). Examples: "iterations", "input_file"
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -1083,9 +816,6 @@ class GetApplicationsFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The name of the parameter.  It must be a string of one or more word characters (a-z, A-Z, 0-9, _). Examples: "iterations", "input_file"
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -1117,9 +847,6 @@ class GetInvokeRunsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The name of the parameter.  It must be a string of one or more word characters (a-z, A-Z, 0-9, _). Examples: "iterations", "input_file"
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -1128,9 +855,6 @@ class GetInvokeRunsFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The name of the parameter.  It must be a string of one or more word characters (a-z, A-Z, 0-9, _). Examples: "iterations", "input_file"
-        """
         return pulumi.get(self, "name")
 
     @name.setter

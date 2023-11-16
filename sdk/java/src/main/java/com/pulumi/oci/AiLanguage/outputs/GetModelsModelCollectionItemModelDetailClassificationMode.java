@@ -6,6 +6,8 @@ package com.pulumi.oci.AiLanguage.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetModelsModelCollectionItemModelDetailClassificationMode {
@@ -13,27 +15,27 @@ public final class GetModelsModelCollectionItemModelDetailClassificationMode {
      * @return classification Modes
      * 
      */
-    private String classificationMode;
+    private @Nullable String classificationMode;
     /**
      * @return For pre trained models this will identify model type version used for model creation For custom identifying the model by model id is difficult. This param provides ease of use for end customer. &lt;&lt;service&gt;&gt;::&lt;&lt;service-name&gt;&gt;_&lt;&lt;model-type-version&gt;&gt;::&lt;&lt;custom model on which this training has to be done&gt;&gt; ex: ai-lang::NER_V1::CUSTOM-V0
      * 
      */
-    private String version;
+    private @Nullable String version;
 
     private GetModelsModelCollectionItemModelDetailClassificationMode() {}
     /**
      * @return classification Modes
      * 
      */
-    public String classificationMode() {
-        return this.classificationMode;
+    public Optional<String> classificationMode() {
+        return Optional.ofNullable(this.classificationMode);
     }
     /**
      * @return For pre trained models this will identify model type version used for model creation For custom identifying the model by model id is difficult. This param provides ease of use for end customer. &lt;&lt;service&gt;&gt;::&lt;&lt;service-name&gt;&gt;_&lt;&lt;model-type-version&gt;&gt;::&lt;&lt;custom model on which this training has to be done&gt;&gt; ex: ai-lang::NER_V1::CUSTOM-V0
      * 
      */
-    public String version() {
-        return this.version;
+    public Optional<String> version() {
+        return Optional.ofNullable(this.version);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetModelsModelCollectionItemModelDetailClassificationMode {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String classificationMode;
-        private String version;
+        private @Nullable String classificationMode;
+        private @Nullable String version;
         public Builder() {}
         public Builder(GetModelsModelCollectionItemModelDetailClassificationMode defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetModelsModelCollectionItemModelDetailClassificationMode {
         }
 
         @CustomType.Setter
-        public Builder classificationMode(String classificationMode) {
-            this.classificationMode = Objects.requireNonNull(classificationMode);
+        public Builder classificationMode(@Nullable String classificationMode) {
+            this.classificationMode = classificationMode;
             return this;
         }
         @CustomType.Setter
-        public Builder version(String version) {
-            this.version = Objects.requireNonNull(version);
+        public Builder version(@Nullable String version) {
+            this.version = version;
             return this;
         }
         public GetModelsModelCollectionItemModelDetailClassificationMode build() {

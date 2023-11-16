@@ -30,27 +30,6 @@ class AutonomousExadataInfrastructureArgs:
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         """
         The set of arguments for constructing a AutonomousExadataInfrastructure resource.
-        :param pulumi.Input[str] availability_domain: The availability domain where the Autonomous Exadata Infrastructure is located.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the Autonomous Exadata Infrastructure belongs in.
-        :param pulumi.Input[str] shape: The shape of the Autonomous Exadata Infrastructure. The shape determines resources allocated to the Autonomous Exadata Infrastructure (CPU cores, memory and storage). To get a list of shapes, use the ListDbSystemShapes operation.
-        :param pulumi.Input[str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the Autonomous Exadata Infrastructure is associated with.
-               
-               **Subnet Restrictions:**
-               * For Autonomous Exadata Infrastructures, do not use a subnet that overlaps with 192.168.128.0/20
-               
-               These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and backup subnet.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the Autonomous Exadata Infrastructure. It does not have to be unique.
-        :param pulumi.Input[str] domain: A domain name used for the Autonomous Exadata Infrastructure. If the Oracle-provided Internet and VCN Resolver is enabled for the specified subnet, the domain name for the subnet is used (don't provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] license_model: The Oracle license model that applies to all the databases in the Autonomous Exadata Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
-        :param pulumi.Input['AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs'] maintenance_window_details: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-               * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
         """
         if availability_domain is not None:
             warnings.warn("""Autonomous Exadata Infrastructure resource is now end-of-life.Please provision cloud autonomous vm cluster instead.""", DeprecationWarning)
@@ -79,9 +58,6 @@ class AutonomousExadataInfrastructureArgs:
     @property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> pulumi.Input[str]:
-        """
-        The availability domain where the Autonomous Exadata Infrastructure is located.
-        """
         warnings.warn("""Autonomous Exadata Infrastructure resource is now end-of-life.Please provision cloud autonomous vm cluster instead.""", DeprecationWarning)
         pulumi.log.warn("""availability_domain is deprecated: Autonomous Exadata Infrastructure resource is now end-of-life.Please provision cloud autonomous vm cluster instead.""")
 
@@ -94,9 +70,6 @@ class AutonomousExadataInfrastructureArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the Autonomous Exadata Infrastructure belongs in.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -106,9 +79,6 @@ class AutonomousExadataInfrastructureArgs:
     @property
     @pulumi.getter
     def shape(self) -> pulumi.Input[str]:
-        """
-        The shape of the Autonomous Exadata Infrastructure. The shape determines resources allocated to the Autonomous Exadata Infrastructure (CPU cores, memory and storage). To get a list of shapes, use the ListDbSystemShapes operation.
-        """
         return pulumi.get(self, "shape")
 
     @shape.setter
@@ -118,18 +88,6 @@ class AutonomousExadataInfrastructureArgs:
     @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Input[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the Autonomous Exadata Infrastructure is associated with.
-
-        **Subnet Restrictions:**
-        * For Autonomous Exadata Infrastructures, do not use a subnet that overlaps with 192.168.128.0/20
-
-        These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and backup subnet.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
@@ -148,9 +106,6 @@ class AutonomousExadataInfrastructureArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -160,9 +115,6 @@ class AutonomousExadataInfrastructureArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The user-friendly name for the Autonomous Exadata Infrastructure. It does not have to be unique.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -172,9 +124,6 @@ class AutonomousExadataInfrastructureArgs:
     @property
     @pulumi.getter
     def domain(self) -> Optional[pulumi.Input[str]]:
-        """
-        A domain name used for the Autonomous Exadata Infrastructure. If the Oracle-provided Internet and VCN Resolver is enabled for the specified subnet, the domain name for the subnet is used (don't provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.
-        """
         return pulumi.get(self, "domain")
 
     @domain.setter
@@ -184,9 +133,6 @@ class AutonomousExadataInfrastructureArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -196,9 +142,6 @@ class AutonomousExadataInfrastructureArgs:
     @property
     @pulumi.getter(name="licenseModel")
     def license_model(self) -> Optional[pulumi.Input[str]]:
-        """
-        The Oracle license model that applies to all the databases in the Autonomous Exadata Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
-        """
         return pulumi.get(self, "license_model")
 
     @license_model.setter
@@ -208,9 +151,6 @@ class AutonomousExadataInfrastructureArgs:
     @property
     @pulumi.getter(name="maintenanceWindowDetails")
     def maintenance_window_details(self) -> Optional[pulumi.Input['AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs']]:
-        """
-        (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
-        """
         return pulumi.get(self, "maintenance_window_details")
 
     @maintenance_window_details.setter
@@ -220,10 +160,6 @@ class AutonomousExadataInfrastructureArgs:
     @property
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-        * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
-        """
         return pulumi.get(self, "nsg_ids")
 
     @nsg_ids.setter
@@ -257,36 +193,6 @@ class _AutonomousExadataInfrastructureState:
                  zone_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering AutonomousExadataInfrastructure resources.
-        :param pulumi.Input[str] availability_domain: The availability domain where the Autonomous Exadata Infrastructure is located.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the Autonomous Exadata Infrastructure belongs in.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the Autonomous Exadata Infrastructure. It does not have to be unique.
-        :param pulumi.Input[str] domain: A domain name used for the Autonomous Exadata Infrastructure. If the Oracle-provided Internet and VCN Resolver is enabled for the specified subnet, the domain name for the subnet is used (don't provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] hostname: The host name for the Autonomous Exadata Infrastructure node.
-        :param pulumi.Input[str] last_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
-        :param pulumi.Input[str] license_model: The Oracle license model that applies to all the databases in the Autonomous Exadata Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
-        :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state of the Autonomous Exadata Infrastructure.
-        :param pulumi.Input['AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs'] maintenance_window_details: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
-        :param pulumi.Input[Sequence[pulumi.Input['AutonomousExadataInfrastructureMaintenanceWindowArgs']]] maintenance_windows: The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
-        :param pulumi.Input[str] next_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-               * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
-        :param pulumi.Input[str] scan_dns_name: The FQDN of the DNS record for the SCAN IP addresses that are associated with the Autonomous Exadata Infrastructure.
-        :param pulumi.Input[str] shape: The shape of the Autonomous Exadata Infrastructure. The shape determines resources allocated to the Autonomous Exadata Infrastructure (CPU cores, memory and storage). To get a list of shapes, use the ListDbSystemShapes operation.
-        :param pulumi.Input[str] state: The current lifecycle state of the Autonomous Exadata Infrastructure.
-        :param pulumi.Input[str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the Autonomous Exadata Infrastructure is associated with.
-               
-               **Subnet Restrictions:**
-               * For Autonomous Exadata Infrastructures, do not use a subnet that overlaps with 192.168.128.0/20
-               
-               These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and backup subnet.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] time_created: The date and time the Autonomous Exadata Infrastructure was created.
-        :param pulumi.Input[str] zone_id: The OCID of the zone the Autonomous Exadata Infrastructure is associated with.
         """
         if availability_domain is not None:
             warnings.warn("""Autonomous Exadata Infrastructure resource is now end-of-life.Please provision cloud autonomous vm cluster instead.""", DeprecationWarning)
@@ -337,9 +243,6 @@ class _AutonomousExadataInfrastructureState:
     @property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> Optional[pulumi.Input[str]]:
-        """
-        The availability domain where the Autonomous Exadata Infrastructure is located.
-        """
         warnings.warn("""Autonomous Exadata Infrastructure resource is now end-of-life.Please provision cloud autonomous vm cluster instead.""", DeprecationWarning)
         pulumi.log.warn("""availability_domain is deprecated: Autonomous Exadata Infrastructure resource is now end-of-life.Please provision cloud autonomous vm cluster instead.""")
 
@@ -352,9 +255,6 @@ class _AutonomousExadataInfrastructureState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the Autonomous Exadata Infrastructure belongs in.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -373,9 +273,6 @@ class _AutonomousExadataInfrastructureState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -385,9 +282,6 @@ class _AutonomousExadataInfrastructureState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The user-friendly name for the Autonomous Exadata Infrastructure. It does not have to be unique.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -397,9 +291,6 @@ class _AutonomousExadataInfrastructureState:
     @property
     @pulumi.getter
     def domain(self) -> Optional[pulumi.Input[str]]:
-        """
-        A domain name used for the Autonomous Exadata Infrastructure. If the Oracle-provided Internet and VCN Resolver is enabled for the specified subnet, the domain name for the subnet is used (don't provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.
-        """
         return pulumi.get(self, "domain")
 
     @domain.setter
@@ -409,9 +300,6 @@ class _AutonomousExadataInfrastructureState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -421,9 +309,6 @@ class _AutonomousExadataInfrastructureState:
     @property
     @pulumi.getter
     def hostname(self) -> Optional[pulumi.Input[str]]:
-        """
-        The host name for the Autonomous Exadata Infrastructure node.
-        """
         return pulumi.get(self, "hostname")
 
     @hostname.setter
@@ -433,9 +318,6 @@ class _AutonomousExadataInfrastructureState:
     @property
     @pulumi.getter(name="lastMaintenanceRunId")
     def last_maintenance_run_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
-        """
         return pulumi.get(self, "last_maintenance_run_id")
 
     @last_maintenance_run_id.setter
@@ -445,9 +327,6 @@ class _AutonomousExadataInfrastructureState:
     @property
     @pulumi.getter(name="licenseModel")
     def license_model(self) -> Optional[pulumi.Input[str]]:
-        """
-        The Oracle license model that applies to all the databases in the Autonomous Exadata Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
-        """
         return pulumi.get(self, "license_model")
 
     @license_model.setter
@@ -457,9 +336,6 @@ class _AutonomousExadataInfrastructureState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        Additional information about the current lifecycle state of the Autonomous Exadata Infrastructure.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -469,9 +345,6 @@ class _AutonomousExadataInfrastructureState:
     @property
     @pulumi.getter(name="maintenanceWindowDetails")
     def maintenance_window_details(self) -> Optional[pulumi.Input['AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs']]:
-        """
-        (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
-        """
         return pulumi.get(self, "maintenance_window_details")
 
     @maintenance_window_details.setter
@@ -481,9 +354,6 @@ class _AutonomousExadataInfrastructureState:
     @property
     @pulumi.getter(name="maintenanceWindows")
     def maintenance_windows(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousExadataInfrastructureMaintenanceWindowArgs']]]]:
-        """
-        The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
-        """
         return pulumi.get(self, "maintenance_windows")
 
     @maintenance_windows.setter
@@ -493,9 +363,6 @@ class _AutonomousExadataInfrastructureState:
     @property
     @pulumi.getter(name="nextMaintenanceRunId")
     def next_maintenance_run_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
-        """
         return pulumi.get(self, "next_maintenance_run_id")
 
     @next_maintenance_run_id.setter
@@ -505,10 +372,6 @@ class _AutonomousExadataInfrastructureState:
     @property
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-        * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
-        """
         return pulumi.get(self, "nsg_ids")
 
     @nsg_ids.setter
@@ -518,9 +381,6 @@ class _AutonomousExadataInfrastructureState:
     @property
     @pulumi.getter(name="scanDnsName")
     def scan_dns_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The FQDN of the DNS record for the SCAN IP addresses that are associated with the Autonomous Exadata Infrastructure.
-        """
         return pulumi.get(self, "scan_dns_name")
 
     @scan_dns_name.setter
@@ -530,9 +390,6 @@ class _AutonomousExadataInfrastructureState:
     @property
     @pulumi.getter
     def shape(self) -> Optional[pulumi.Input[str]]:
-        """
-        The shape of the Autonomous Exadata Infrastructure. The shape determines resources allocated to the Autonomous Exadata Infrastructure (CPU cores, memory and storage). To get a list of shapes, use the ListDbSystemShapes operation.
-        """
         return pulumi.get(self, "shape")
 
     @shape.setter
@@ -542,9 +399,6 @@ class _AutonomousExadataInfrastructureState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current lifecycle state of the Autonomous Exadata Infrastructure.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -554,18 +408,6 @@ class _AutonomousExadataInfrastructureState:
     @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the Autonomous Exadata Infrastructure is associated with.
-
-        **Subnet Restrictions:**
-        * For Autonomous Exadata Infrastructures, do not use a subnet that overlaps with 192.168.128.0/20
-
-        These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and backup subnet.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
@@ -575,9 +417,6 @@ class _AutonomousExadataInfrastructureState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the Autonomous Exadata Infrastructure was created.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -587,9 +426,6 @@ class _AutonomousExadataInfrastructureState:
     @property
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the zone the Autonomous Exadata Infrastructure is associated with.
-        """
         return pulumi.get(self, "zone_id")
 
     @zone_id.setter
@@ -616,80 +452,9 @@ class AutonomousExadataInfrastructure(pulumi.CustomResource):
                  subnet_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Autonomous Exadata Infrastructure resource in Oracle Cloud Infrastructure Database service.
-
-        **Deprecated** To create a new Autonomous Database system on dedicated Exadata Infrastructure, use the [CreateCloudExadataInfrastructure](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/CreateCloudExadataInfrastructure) and [CreateCloudAutonomousVmCluster](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudAutonomousVmCluster/CreateCloudAutonomousVmCluster) operations instead. Note that to create an Autonomous VM cluster, you must have an existing Exadata Infrastructure resource to contain the VM cluster.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_autonomous_exadata_infrastructure = oci.database.AutonomousExadataInfrastructure("testAutonomousExadataInfrastructure",
-            availability_domain=var["autonomous_exadata_infrastructure_availability_domain"],
-            compartment_id=var["compartment_id"],
-            shape=var["autonomous_exadata_infrastructure_shape"],
-            subnet_id=oci_core_subnet["test_subnet"]["id"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            display_name=var["autonomous_exadata_infrastructure_display_name"],
-            domain=var["autonomous_exadata_infrastructure_domain"],
-            freeform_tags={
-                "Department": "Finance",
-            },
-            license_model=var["autonomous_exadata_infrastructure_license_model"],
-            maintenance_window_details=oci.database.AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs(
-                custom_action_timeout_in_mins=var["autonomous_exadata_infrastructure_maintenance_window_details_custom_action_timeout_in_mins"],
-                days_of_weeks=[oci.database.AutonomousExadataInfrastructureMaintenanceWindowDetailsDaysOfWeekArgs(
-                    name=var["autonomous_exadata_infrastructure_maintenance_window_details_days_of_week_name"],
-                )],
-                hours_of_days=var["autonomous_exadata_infrastructure_maintenance_window_details_hours_of_day"],
-                is_custom_action_timeout_enabled=var["autonomous_exadata_infrastructure_maintenance_window_details_is_custom_action_timeout_enabled"],
-                is_monthly_patching_enabled=var["autonomous_exadata_infrastructure_maintenance_window_details_is_monthly_patching_enabled"],
-                lead_time_in_weeks=var["autonomous_exadata_infrastructure_maintenance_window_details_lead_time_in_weeks"],
-                months=[oci.database.AutonomousExadataInfrastructureMaintenanceWindowDetailsMonthArgs(
-                    name=var["autonomous_exadata_infrastructure_maintenance_window_details_months_name"],
-                )],
-                patching_mode=var["autonomous_exadata_infrastructure_maintenance_window_details_patching_mode"],
-                preference=var["autonomous_exadata_infrastructure_maintenance_window_details_preference"],
-                weeks_of_months=var["autonomous_exadata_infrastructure_maintenance_window_details_weeks_of_month"],
-            ),
-            nsg_ids=var["autonomous_exadata_infrastructure_nsg_ids"])
-        ```
-
-        ## Import
-
-        AutonomousExadataInfrastructures can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Database/autonomousExadataInfrastructure:AutonomousExadataInfrastructure test_autonomous_exadata_infrastructure "id"
-        ```
-
+        Create a AutonomousExadataInfrastructure resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] availability_domain: The availability domain where the Autonomous Exadata Infrastructure is located.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the Autonomous Exadata Infrastructure belongs in.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the Autonomous Exadata Infrastructure. It does not have to be unique.
-        :param pulumi.Input[str] domain: A domain name used for the Autonomous Exadata Infrastructure. If the Oracle-provided Internet and VCN Resolver is enabled for the specified subnet, the domain name for the subnet is used (don't provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] license_model: The Oracle license model that applies to all the databases in the Autonomous Exadata Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
-        :param pulumi.Input[pulumi.InputType['AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs']] maintenance_window_details: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-               * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
-        :param pulumi.Input[str] shape: The shape of the Autonomous Exadata Infrastructure. The shape determines resources allocated to the Autonomous Exadata Infrastructure (CPU cores, memory and storage). To get a list of shapes, use the ListDbSystemShapes operation.
-        :param pulumi.Input[str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the Autonomous Exadata Infrastructure is associated with.
-               
-               **Subnet Restrictions:**
-               * For Autonomous Exadata Infrastructures, do not use a subnet that overlaps with 192.168.128.0/20
-               
-               These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and backup subnet.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -698,57 +463,7 @@ class AutonomousExadataInfrastructure(pulumi.CustomResource):
                  args: AutonomousExadataInfrastructureArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Autonomous Exadata Infrastructure resource in Oracle Cloud Infrastructure Database service.
-
-        **Deprecated** To create a new Autonomous Database system on dedicated Exadata Infrastructure, use the [CreateCloudExadataInfrastructure](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/CreateCloudExadataInfrastructure) and [CreateCloudAutonomousVmCluster](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudAutonomousVmCluster/CreateCloudAutonomousVmCluster) operations instead. Note that to create an Autonomous VM cluster, you must have an existing Exadata Infrastructure resource to contain the VM cluster.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_autonomous_exadata_infrastructure = oci.database.AutonomousExadataInfrastructure("testAutonomousExadataInfrastructure",
-            availability_domain=var["autonomous_exadata_infrastructure_availability_domain"],
-            compartment_id=var["compartment_id"],
-            shape=var["autonomous_exadata_infrastructure_shape"],
-            subnet_id=oci_core_subnet["test_subnet"]["id"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            display_name=var["autonomous_exadata_infrastructure_display_name"],
-            domain=var["autonomous_exadata_infrastructure_domain"],
-            freeform_tags={
-                "Department": "Finance",
-            },
-            license_model=var["autonomous_exadata_infrastructure_license_model"],
-            maintenance_window_details=oci.database.AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs(
-                custom_action_timeout_in_mins=var["autonomous_exadata_infrastructure_maintenance_window_details_custom_action_timeout_in_mins"],
-                days_of_weeks=[oci.database.AutonomousExadataInfrastructureMaintenanceWindowDetailsDaysOfWeekArgs(
-                    name=var["autonomous_exadata_infrastructure_maintenance_window_details_days_of_week_name"],
-                )],
-                hours_of_days=var["autonomous_exadata_infrastructure_maintenance_window_details_hours_of_day"],
-                is_custom_action_timeout_enabled=var["autonomous_exadata_infrastructure_maintenance_window_details_is_custom_action_timeout_enabled"],
-                is_monthly_patching_enabled=var["autonomous_exadata_infrastructure_maintenance_window_details_is_monthly_patching_enabled"],
-                lead_time_in_weeks=var["autonomous_exadata_infrastructure_maintenance_window_details_lead_time_in_weeks"],
-                months=[oci.database.AutonomousExadataInfrastructureMaintenanceWindowDetailsMonthArgs(
-                    name=var["autonomous_exadata_infrastructure_maintenance_window_details_months_name"],
-                )],
-                patching_mode=var["autonomous_exadata_infrastructure_maintenance_window_details_patching_mode"],
-                preference=var["autonomous_exadata_infrastructure_maintenance_window_details_preference"],
-                weeks_of_months=var["autonomous_exadata_infrastructure_maintenance_window_details_weeks_of_month"],
-            ),
-            nsg_ids=var["autonomous_exadata_infrastructure_nsg_ids"])
-        ```
-
-        ## Import
-
-        AutonomousExadataInfrastructures can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Database/autonomousExadataInfrastructure:AutonomousExadataInfrastructure test_autonomous_exadata_infrastructure "id"
-        ```
-
+        Create a AutonomousExadataInfrastructure resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param AutonomousExadataInfrastructureArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -852,36 +567,6 @@ class AutonomousExadataInfrastructure(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] availability_domain: The availability domain where the Autonomous Exadata Infrastructure is located.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the Autonomous Exadata Infrastructure belongs in.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the Autonomous Exadata Infrastructure. It does not have to be unique.
-        :param pulumi.Input[str] domain: A domain name used for the Autonomous Exadata Infrastructure. If the Oracle-provided Internet and VCN Resolver is enabled for the specified subnet, the domain name for the subnet is used (don't provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] hostname: The host name for the Autonomous Exadata Infrastructure node.
-        :param pulumi.Input[str] last_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
-        :param pulumi.Input[str] license_model: The Oracle license model that applies to all the databases in the Autonomous Exadata Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
-        :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state of the Autonomous Exadata Infrastructure.
-        :param pulumi.Input[pulumi.InputType['AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs']] maintenance_window_details: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutonomousExadataInfrastructureMaintenanceWindowArgs']]]] maintenance_windows: The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
-        :param pulumi.Input[str] next_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-               * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
-        :param pulumi.Input[str] scan_dns_name: The FQDN of the DNS record for the SCAN IP addresses that are associated with the Autonomous Exadata Infrastructure.
-        :param pulumi.Input[str] shape: The shape of the Autonomous Exadata Infrastructure. The shape determines resources allocated to the Autonomous Exadata Infrastructure (CPU cores, memory and storage). To get a list of shapes, use the ListDbSystemShapes operation.
-        :param pulumi.Input[str] state: The current lifecycle state of the Autonomous Exadata Infrastructure.
-        :param pulumi.Input[str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the Autonomous Exadata Infrastructure is associated with.
-               
-               **Subnet Restrictions:**
-               * For Autonomous Exadata Infrastructures, do not use a subnet that overlaps with 192.168.128.0/20
-               
-               These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and backup subnet.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] time_created: The date and time the Autonomous Exadata Infrastructure was created.
-        :param pulumi.Input[str] zone_id: The OCID of the zone the Autonomous Exadata Infrastructure is associated with.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -913,9 +598,6 @@ class AutonomousExadataInfrastructure(pulumi.CustomResource):
     @property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> pulumi.Output[str]:
-        """
-        The availability domain where the Autonomous Exadata Infrastructure is located.
-        """
         warnings.warn("""Autonomous Exadata Infrastructure resource is now end-of-life.Please provision cloud autonomous vm cluster instead.""", DeprecationWarning)
         pulumi.log.warn("""availability_domain is deprecated: Autonomous Exadata Infrastructure resource is now end-of-life.Please provision cloud autonomous vm cluster instead.""")
 
@@ -924,9 +606,6 @@ class AutonomousExadataInfrastructure(pulumi.CustomResource):
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the Autonomous Exadata Infrastructure belongs in.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -936,155 +615,91 @@ class AutonomousExadataInfrastructure(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The user-friendly name for the Autonomous Exadata Infrastructure. It does not have to be unique.
-        """
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
-    def domain(self) -> pulumi.Output[str]:
-        """
-        A domain name used for the Autonomous Exadata Infrastructure. If the Oracle-provided Internet and VCN Resolver is enabled for the specified subnet, the domain name for the subnet is used (don't provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.
-        """
+    def domain(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "domain")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def hostname(self) -> pulumi.Output[str]:
-        """
-        The host name for the Autonomous Exadata Infrastructure node.
-        """
+    def hostname(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "hostname")
 
     @property
     @pulumi.getter(name="lastMaintenanceRunId")
-    def last_maintenance_run_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
-        """
+    def last_maintenance_run_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "last_maintenance_run_id")
 
     @property
     @pulumi.getter(name="licenseModel")
-    def license_model(self) -> pulumi.Output[str]:
-        """
-        The Oracle license model that applies to all the databases in the Autonomous Exadata Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
-        """
+    def license_model(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "license_model")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        Additional information about the current lifecycle state of the Autonomous Exadata Infrastructure.
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="maintenanceWindowDetails")
     def maintenance_window_details(self) -> pulumi.Output[Optional['outputs.AutonomousExadataInfrastructureMaintenanceWindowDetails']]:
-        """
-        (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
-        """
         return pulumi.get(self, "maintenance_window_details")
 
     @property
     @pulumi.getter(name="maintenanceWindows")
-    def maintenance_windows(self) -> pulumi.Output[Sequence['outputs.AutonomousExadataInfrastructureMaintenanceWindow']]:
-        """
-        The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
-        """
+    def maintenance_windows(self) -> pulumi.Output[Optional[Sequence['outputs.AutonomousExadataInfrastructureMaintenanceWindow']]]:
         return pulumi.get(self, "maintenance_windows")
 
     @property
     @pulumi.getter(name="nextMaintenanceRunId")
-    def next_maintenance_run_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
-        """
+    def next_maintenance_run_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "next_maintenance_run_id")
 
     @property
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> pulumi.Output[Optional[Sequence[str]]]:
-        """
-        (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-        * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
-        """
         return pulumi.get(self, "nsg_ids")
 
     @property
     @pulumi.getter(name="scanDnsName")
-    def scan_dns_name(self) -> pulumi.Output[str]:
-        """
-        The FQDN of the DNS record for the SCAN IP addresses that are associated with the Autonomous Exadata Infrastructure.
-        """
+    def scan_dns_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "scan_dns_name")
 
     @property
     @pulumi.getter
     def shape(self) -> pulumi.Output[str]:
-        """
-        The shape of the Autonomous Exadata Infrastructure. The shape determines resources allocated to the Autonomous Exadata Infrastructure (CPU cores, memory and storage). To get a list of shapes, use the ListDbSystemShapes operation.
-        """
         return pulumi.get(self, "shape")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current lifecycle state of the Autonomous Exadata Infrastructure.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the Autonomous Exadata Infrastructure is associated with.
-
-        **Subnet Restrictions:**
-        * For Autonomous Exadata Infrastructures, do not use a subnet that overlaps with 192.168.128.0/20
-
-        These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and backup subnet.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "subnet_id")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The date and time the Autonomous Exadata Infrastructure was created.
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="zoneId")
-    def zone_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the zone the Autonomous Exadata Infrastructure is associated with.
-        """
+    def zone_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "zone_id")
 

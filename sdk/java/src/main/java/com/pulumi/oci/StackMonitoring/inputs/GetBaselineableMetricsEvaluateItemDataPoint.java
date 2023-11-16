@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.Import;
 import java.lang.Double;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class GetBaselineableMetricsEvaluateItemDataPoint extends com.pulumi.resources.InvokeArgs {
@@ -17,75 +19,75 @@ public final class GetBaselineableMetricsEvaluateItemDataPoint extends com.pulum
      * if the value is anomaly or not 0 indicates not an anomaly -1 indicates value is below the threshold +1 indicates value is above the threshold
      * 
      */
-    @Import(name="anomaly", required=true)
-    private Double anomaly;
+    @Import(name="anomaly")
+    private @Nullable Double anomaly;
 
     /**
      * @return if the value is anomaly or not 0 indicates not an anomaly -1 indicates value is below the threshold +1 indicates value is above the threshold
      * 
      */
-    public Double anomaly() {
-        return this.anomaly;
+    public Optional<Double> anomaly() {
+        return Optional.ofNullable(this.anomaly);
     }
 
     /**
      * upper threshold for the metric value
      * 
      */
-    @Import(name="high", required=true)
-    private Double high;
+    @Import(name="high")
+    private @Nullable Double high;
 
     /**
      * @return upper threshold for the metric value
      * 
      */
-    public Double high() {
-        return this.high;
+    public Optional<Double> high() {
+        return Optional.ofNullable(this.high);
     }
 
     /**
      * lower threshold for the metric value
      * 
      */
-    @Import(name="low", required=true)
-    private Double low;
+    @Import(name="low")
+    private @Nullable Double low;
 
     /**
      * @return lower threshold for the metric value
      * 
      */
-    public Double low() {
-        return this.low;
+    public Optional<Double> low() {
+        return Optional.ofNullable(this.low);
     }
 
     /**
      * timestamp of when the metric was collected
      * 
      */
-    @Import(name="timestamp", required=true)
-    private String timestamp;
+    @Import(name="timestamp")
+    private @Nullable String timestamp;
 
     /**
      * @return timestamp of when the metric was collected
      * 
      */
-    public String timestamp() {
-        return this.timestamp;
+    public Optional<String> timestamp() {
+        return Optional.ofNullable(this.timestamp);
     }
 
     /**
      * value for the metric data point
      * 
      */
-    @Import(name="value", required=true)
-    private Double value;
+    @Import(name="value")
+    private @Nullable Double value;
 
     /**
      * @return value for the metric data point
      * 
      */
-    public Double value() {
-        return this.value;
+    public Optional<Double> value() {
+        return Optional.ofNullable(this.value);
     }
 
     private GetBaselineableMetricsEvaluateItemDataPoint() {}
@@ -122,7 +124,7 @@ public final class GetBaselineableMetricsEvaluateItemDataPoint extends com.pulum
          * @return builder
          * 
          */
-        public Builder anomaly(Double anomaly) {
+        public Builder anomaly(@Nullable Double anomaly) {
             $.anomaly = anomaly;
             return this;
         }
@@ -133,7 +135,7 @@ public final class GetBaselineableMetricsEvaluateItemDataPoint extends com.pulum
          * @return builder
          * 
          */
-        public Builder high(Double high) {
+        public Builder high(@Nullable Double high) {
             $.high = high;
             return this;
         }
@@ -144,7 +146,7 @@ public final class GetBaselineableMetricsEvaluateItemDataPoint extends com.pulum
          * @return builder
          * 
          */
-        public Builder low(Double low) {
+        public Builder low(@Nullable Double low) {
             $.low = low;
             return this;
         }
@@ -155,7 +157,7 @@ public final class GetBaselineableMetricsEvaluateItemDataPoint extends com.pulum
          * @return builder
          * 
          */
-        public Builder timestamp(String timestamp) {
+        public Builder timestamp(@Nullable String timestamp) {
             $.timestamp = timestamp;
             return this;
         }
@@ -166,17 +168,12 @@ public final class GetBaselineableMetricsEvaluateItemDataPoint extends com.pulum
          * @return builder
          * 
          */
-        public Builder value(Double value) {
+        public Builder value(@Nullable Double value) {
             $.value = value;
             return this;
         }
 
         public GetBaselineableMetricsEvaluateItemDataPoint build() {
-            $.anomaly = Objects.requireNonNull($.anomaly, "expected parameter 'anomaly' to be non-null");
-            $.high = Objects.requireNonNull($.high, "expected parameter 'high' to be non-null");
-            $.low = Objects.requireNonNull($.low, "expected parameter 'low' to be non-null");
-            $.timestamp = Objects.requireNonNull($.timestamp, "expected parameter 'timestamp' to be non-null");
-            $.value = Objects.requireNonNull($.value, "expected parameter 'value' to be non-null");
             return $;
         }
     }

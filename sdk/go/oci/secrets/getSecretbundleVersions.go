@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Secretbundle Versions in Oracle Cloud Infrastructure Secrets service.
@@ -62,7 +61,7 @@ type GetSecretbundleVersionsArgs struct {
 type GetSecretbundleVersionsResult struct {
 	Filters []GetSecretbundleVersionsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of secret_bundle_versions.
 	SecretBundleVersions []GetSecretbundleVersionsSecretBundleVersion `pulumi:"secretBundleVersions"`
 	// The OCID of the secret.
@@ -108,19 +107,13 @@ func (o GetSecretbundleVersionsResultOutput) ToGetSecretbundleVersionsResultOutp
 	return o
 }
 
-func (o GetSecretbundleVersionsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecretbundleVersionsResult] {
-	return pulumix.Output[GetSecretbundleVersionsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSecretbundleVersionsResultOutput) Filters() GetSecretbundleVersionsFilterArrayOutput {
 	return o.ApplyT(func(v GetSecretbundleVersionsResult) []GetSecretbundleVersionsFilter { return v.Filters }).(GetSecretbundleVersionsFilterArrayOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetSecretbundleVersionsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSecretbundleVersionsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetSecretbundleVersionsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSecretbundleVersionsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of secret_bundle_versions.

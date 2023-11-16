@@ -49,22 +49,22 @@ namespace Pulumi.Oci.DatabaseManagement
         /// (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         [Output("externalDbSystemDiscoveryId")]
-        public Output<string> ExternalDbSystemDiscoveryId { get; private set; } = null!;
+        public Output<string?> ExternalDbSystemDiscoveryId { get; private set; } = null!;
 
         /// <summary>
         /// The directory in which Oracle Grid Infrastructure is installed.
         /// </summary>
         [Output("gridHome")]
-        public Output<string> GridHome { get; private set; } = null!;
+        public Output<string?> GridHome { get; private set; } = null!;
 
         /// <summary>
         /// Additional information about the current lifecycle state.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable)
@@ -76,25 +76,25 @@ namespace Pulumi.Oci.DatabaseManagement
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Oracle Cloud Infrastructure resource matching the discovered DB system.
         /// </summary>
         [Output("resourceId")]
-        public Output<string> ResourceId { get; private set; } = null!;
+        public Output<string?> ResourceId { get; private set; } = null!;
 
         /// <summary>
         /// The current lifecycle state of the external DB system discovery resource.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the external DB system discovery was created.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the external DB system discovery was last updated.
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
 
         /// <summary>

@@ -149,7 +149,7 @@ namespace Pulumi.Oci.Apm
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
 
         [OutputConstructor]
         private GetDataKeysResult(
@@ -161,7 +161,7 @@ namespace Pulumi.Oci.Apm
 
             ImmutableArray<Outputs.GetDataKeysFilterResult> filters,
 
-            string id)
+            string? id)
         {
             ApmDomainId = apmDomainId;
             DataKeyType = dataKeyType;

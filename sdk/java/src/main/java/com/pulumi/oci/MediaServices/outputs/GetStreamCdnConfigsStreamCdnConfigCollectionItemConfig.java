@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetStreamCdnConfigsStreamCdnConfigCollectionItemConfig {
@@ -14,147 +16,147 @@ public final class GetStreamCdnConfigsStreamCdnConfigCollectionItemConfig {
      * @return The hostname of the CDN edge server to use when building CDN URLs.
      * 
      */
-    private String edgeHostname;
+    private @Nullable String edgeHostname;
     /**
      * @return The path to prepend when building CDN URLs.
      * 
      */
-    private String edgePathPrefix;
+    private @Nullable String edgePathPrefix;
     /**
      * @return The encryption key to use for edge token authentication.
      * 
      */
-    private String edgeTokenKey;
+    private @Nullable String edgeTokenKey;
     /**
      * @return Salt to use when encrypting authentication token.
      * 
      */
-    private String edgeTokenSalt;
+    private @Nullable String edgeTokenSalt;
     /**
      * @return Whether token authentication should be used at the CDN edge.
      * 
      */
-    private Boolean isEdgeTokenAuth;
+    private @Nullable Boolean isEdgeTokenAuth;
     /**
      * @return The shared secret key A, two for errorless key rotation.
      * 
      */
-    private String originAuthSecretKeyA;
+    private @Nullable String originAuthSecretKeyA;
     /**
      * @return The shared secret key B, two for errorless key rotation.
      * 
      */
-    private String originAuthSecretKeyB;
+    private @Nullable String originAuthSecretKeyB;
     /**
      * @return Nonce identifier for originAuthSecretKeyA (used to determine key used to sign).
      * 
      */
-    private String originAuthSecretKeyNonceA;
+    private @Nullable String originAuthSecretKeyNonceA;
     /**
      * @return Nonce identifier for originAuthSecretKeyB (used to determine key used to sign).
      * 
      */
-    private String originAuthSecretKeyNonceB;
+    private @Nullable String originAuthSecretKeyNonceB;
     /**
      * @return The type of encryption used to compute the signature.
      * 
      */
-    private String originAuthSignEncryption;
+    private @Nullable String originAuthSignEncryption;
     /**
      * @return The type of data used to compute the signature.
      * 
      */
-    private String originAuthSignType;
+    private @Nullable String originAuthSignType;
     /**
      * @return The name of the CDN configuration type.
      * 
      */
-    private String type;
+    private @Nullable String type;
 
     private GetStreamCdnConfigsStreamCdnConfigCollectionItemConfig() {}
     /**
      * @return The hostname of the CDN edge server to use when building CDN URLs.
      * 
      */
-    public String edgeHostname() {
-        return this.edgeHostname;
+    public Optional<String> edgeHostname() {
+        return Optional.ofNullable(this.edgeHostname);
     }
     /**
      * @return The path to prepend when building CDN URLs.
      * 
      */
-    public String edgePathPrefix() {
-        return this.edgePathPrefix;
+    public Optional<String> edgePathPrefix() {
+        return Optional.ofNullable(this.edgePathPrefix);
     }
     /**
      * @return The encryption key to use for edge token authentication.
      * 
      */
-    public String edgeTokenKey() {
-        return this.edgeTokenKey;
+    public Optional<String> edgeTokenKey() {
+        return Optional.ofNullable(this.edgeTokenKey);
     }
     /**
      * @return Salt to use when encrypting authentication token.
      * 
      */
-    public String edgeTokenSalt() {
-        return this.edgeTokenSalt;
+    public Optional<String> edgeTokenSalt() {
+        return Optional.ofNullable(this.edgeTokenSalt);
     }
     /**
      * @return Whether token authentication should be used at the CDN edge.
      * 
      */
-    public Boolean isEdgeTokenAuth() {
-        return this.isEdgeTokenAuth;
+    public Optional<Boolean> isEdgeTokenAuth() {
+        return Optional.ofNullable(this.isEdgeTokenAuth);
     }
     /**
      * @return The shared secret key A, two for errorless key rotation.
      * 
      */
-    public String originAuthSecretKeyA() {
-        return this.originAuthSecretKeyA;
+    public Optional<String> originAuthSecretKeyA() {
+        return Optional.ofNullable(this.originAuthSecretKeyA);
     }
     /**
      * @return The shared secret key B, two for errorless key rotation.
      * 
      */
-    public String originAuthSecretKeyB() {
-        return this.originAuthSecretKeyB;
+    public Optional<String> originAuthSecretKeyB() {
+        return Optional.ofNullable(this.originAuthSecretKeyB);
     }
     /**
      * @return Nonce identifier for originAuthSecretKeyA (used to determine key used to sign).
      * 
      */
-    public String originAuthSecretKeyNonceA() {
-        return this.originAuthSecretKeyNonceA;
+    public Optional<String> originAuthSecretKeyNonceA() {
+        return Optional.ofNullable(this.originAuthSecretKeyNonceA);
     }
     /**
      * @return Nonce identifier for originAuthSecretKeyB (used to determine key used to sign).
      * 
      */
-    public String originAuthSecretKeyNonceB() {
-        return this.originAuthSecretKeyNonceB;
+    public Optional<String> originAuthSecretKeyNonceB() {
+        return Optional.ofNullable(this.originAuthSecretKeyNonceB);
     }
     /**
      * @return The type of encryption used to compute the signature.
      * 
      */
-    public String originAuthSignEncryption() {
-        return this.originAuthSignEncryption;
+    public Optional<String> originAuthSignEncryption() {
+        return Optional.ofNullable(this.originAuthSignEncryption);
     }
     /**
      * @return The type of data used to compute the signature.
      * 
      */
-    public String originAuthSignType() {
-        return this.originAuthSignType;
+    public Optional<String> originAuthSignType() {
+        return Optional.ofNullable(this.originAuthSignType);
     }
     /**
      * @return The name of the CDN configuration type.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
 
     public static Builder builder() {
@@ -166,18 +168,18 @@ public final class GetStreamCdnConfigsStreamCdnConfigCollectionItemConfig {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String edgeHostname;
-        private String edgePathPrefix;
-        private String edgeTokenKey;
-        private String edgeTokenSalt;
-        private Boolean isEdgeTokenAuth;
-        private String originAuthSecretKeyA;
-        private String originAuthSecretKeyB;
-        private String originAuthSecretKeyNonceA;
-        private String originAuthSecretKeyNonceB;
-        private String originAuthSignEncryption;
-        private String originAuthSignType;
-        private String type;
+        private @Nullable String edgeHostname;
+        private @Nullable String edgePathPrefix;
+        private @Nullable String edgeTokenKey;
+        private @Nullable String edgeTokenSalt;
+        private @Nullable Boolean isEdgeTokenAuth;
+        private @Nullable String originAuthSecretKeyA;
+        private @Nullable String originAuthSecretKeyB;
+        private @Nullable String originAuthSecretKeyNonceA;
+        private @Nullable String originAuthSecretKeyNonceB;
+        private @Nullable String originAuthSignEncryption;
+        private @Nullable String originAuthSignType;
+        private @Nullable String type;
         public Builder() {}
         public Builder(GetStreamCdnConfigsStreamCdnConfigCollectionItemConfig defaults) {
     	      Objects.requireNonNull(defaults);
@@ -196,63 +198,63 @@ public final class GetStreamCdnConfigsStreamCdnConfigCollectionItemConfig {
         }
 
         @CustomType.Setter
-        public Builder edgeHostname(String edgeHostname) {
-            this.edgeHostname = Objects.requireNonNull(edgeHostname);
+        public Builder edgeHostname(@Nullable String edgeHostname) {
+            this.edgeHostname = edgeHostname;
             return this;
         }
         @CustomType.Setter
-        public Builder edgePathPrefix(String edgePathPrefix) {
-            this.edgePathPrefix = Objects.requireNonNull(edgePathPrefix);
+        public Builder edgePathPrefix(@Nullable String edgePathPrefix) {
+            this.edgePathPrefix = edgePathPrefix;
             return this;
         }
         @CustomType.Setter
-        public Builder edgeTokenKey(String edgeTokenKey) {
-            this.edgeTokenKey = Objects.requireNonNull(edgeTokenKey);
+        public Builder edgeTokenKey(@Nullable String edgeTokenKey) {
+            this.edgeTokenKey = edgeTokenKey;
             return this;
         }
         @CustomType.Setter
-        public Builder edgeTokenSalt(String edgeTokenSalt) {
-            this.edgeTokenSalt = Objects.requireNonNull(edgeTokenSalt);
+        public Builder edgeTokenSalt(@Nullable String edgeTokenSalt) {
+            this.edgeTokenSalt = edgeTokenSalt;
             return this;
         }
         @CustomType.Setter
-        public Builder isEdgeTokenAuth(Boolean isEdgeTokenAuth) {
-            this.isEdgeTokenAuth = Objects.requireNonNull(isEdgeTokenAuth);
+        public Builder isEdgeTokenAuth(@Nullable Boolean isEdgeTokenAuth) {
+            this.isEdgeTokenAuth = isEdgeTokenAuth;
             return this;
         }
         @CustomType.Setter
-        public Builder originAuthSecretKeyA(String originAuthSecretKeyA) {
-            this.originAuthSecretKeyA = Objects.requireNonNull(originAuthSecretKeyA);
+        public Builder originAuthSecretKeyA(@Nullable String originAuthSecretKeyA) {
+            this.originAuthSecretKeyA = originAuthSecretKeyA;
             return this;
         }
         @CustomType.Setter
-        public Builder originAuthSecretKeyB(String originAuthSecretKeyB) {
-            this.originAuthSecretKeyB = Objects.requireNonNull(originAuthSecretKeyB);
+        public Builder originAuthSecretKeyB(@Nullable String originAuthSecretKeyB) {
+            this.originAuthSecretKeyB = originAuthSecretKeyB;
             return this;
         }
         @CustomType.Setter
-        public Builder originAuthSecretKeyNonceA(String originAuthSecretKeyNonceA) {
-            this.originAuthSecretKeyNonceA = Objects.requireNonNull(originAuthSecretKeyNonceA);
+        public Builder originAuthSecretKeyNonceA(@Nullable String originAuthSecretKeyNonceA) {
+            this.originAuthSecretKeyNonceA = originAuthSecretKeyNonceA;
             return this;
         }
         @CustomType.Setter
-        public Builder originAuthSecretKeyNonceB(String originAuthSecretKeyNonceB) {
-            this.originAuthSecretKeyNonceB = Objects.requireNonNull(originAuthSecretKeyNonceB);
+        public Builder originAuthSecretKeyNonceB(@Nullable String originAuthSecretKeyNonceB) {
+            this.originAuthSecretKeyNonceB = originAuthSecretKeyNonceB;
             return this;
         }
         @CustomType.Setter
-        public Builder originAuthSignEncryption(String originAuthSignEncryption) {
-            this.originAuthSignEncryption = Objects.requireNonNull(originAuthSignEncryption);
+        public Builder originAuthSignEncryption(@Nullable String originAuthSignEncryption) {
+            this.originAuthSignEncryption = originAuthSignEncryption;
             return this;
         }
         @CustomType.Setter
-        public Builder originAuthSignType(String originAuthSignType) {
-            this.originAuthSignType = Objects.requireNonNull(originAuthSignType);
+        public Builder originAuthSignType(@Nullable String originAuthSignType) {
+            this.originAuthSignType = originAuthSignType;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         public GetStreamCdnConfigsStreamCdnConfigCollectionItemConfig build() {

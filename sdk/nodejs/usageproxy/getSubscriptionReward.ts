@@ -53,11 +53,11 @@ export interface GetSubscriptionRewardResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The monthly summary of rewards.
      */
-    readonly items: outputs.UsageProxy.GetSubscriptionRewardItem[];
+    readonly items?: outputs.UsageProxy.GetSubscriptionRewardItem[];
     /**
      * The entitlement ID from MQS, which is the same as the subcription ID.
      */
@@ -65,7 +65,7 @@ export interface GetSubscriptionRewardResult {
     /**
      * The overall monthly reward summary.
      */
-    readonly summaries: outputs.UsageProxy.GetSubscriptionRewardSummary[];
+    readonly summaries?: outputs.UsageProxy.GetSubscriptionRewardSummary[];
     /**
      * The OCID of the target tenancy.
      */

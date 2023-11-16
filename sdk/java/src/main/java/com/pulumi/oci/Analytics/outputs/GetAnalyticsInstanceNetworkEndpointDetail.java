@@ -8,6 +8,8 @@ import com.pulumi.oci.Analytics.outputs.GetAnalyticsInstanceNetworkEndpointDetai
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAnalyticsInstanceNetworkEndpointDetail {
@@ -15,87 +17,87 @@ public final class GetAnalyticsInstanceNetworkEndpointDetail {
      * @return The type of network endpoint.
      * 
      */
-    private String networkEndpointType;
+    private @Nullable String networkEndpointType;
     /**
      * @return Network Security Group OCIDs for an Analytics instance.
      * 
      */
-    private List<String> networkSecurityGroupIds;
+    private @Nullable List<String> networkSecurityGroupIds;
     /**
      * @return OCID of the customer subnet connected to private access channel.
      * 
      */
-    private String subnetId;
+    private @Nullable String subnetId;
     /**
      * @return OCID of the customer VCN peered with private access channel.
      * 
      */
-    private String vcnId;
+    private @Nullable String vcnId;
     /**
      * @return Source IP addresses or IP address ranges in ingress rules.
      * 
      */
-    private List<String> whitelistedIps;
+    private @Nullable List<String> whitelistedIps;
     /**
      * @return Oracle Cloud Services that are allowed to access this Analytics instance.
      * 
      */
-    private List<String> whitelistedServices;
+    private @Nullable List<String> whitelistedServices;
     /**
      * @return Virtual Cloud Networks allowed to access this network endpoint.
      * 
      */
-    private List<GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcn> whitelistedVcns;
+    private @Nullable List<GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcn> whitelistedVcns;
 
     private GetAnalyticsInstanceNetworkEndpointDetail() {}
     /**
      * @return The type of network endpoint.
      * 
      */
-    public String networkEndpointType() {
-        return this.networkEndpointType;
+    public Optional<String> networkEndpointType() {
+        return Optional.ofNullable(this.networkEndpointType);
     }
     /**
      * @return Network Security Group OCIDs for an Analytics instance.
      * 
      */
     public List<String> networkSecurityGroupIds() {
-        return this.networkSecurityGroupIds;
+        return this.networkSecurityGroupIds == null ? List.of() : this.networkSecurityGroupIds;
     }
     /**
      * @return OCID of the customer subnet connected to private access channel.
      * 
      */
-    public String subnetId() {
-        return this.subnetId;
+    public Optional<String> subnetId() {
+        return Optional.ofNullable(this.subnetId);
     }
     /**
      * @return OCID of the customer VCN peered with private access channel.
      * 
      */
-    public String vcnId() {
-        return this.vcnId;
+    public Optional<String> vcnId() {
+        return Optional.ofNullable(this.vcnId);
     }
     /**
      * @return Source IP addresses or IP address ranges in ingress rules.
      * 
      */
     public List<String> whitelistedIps() {
-        return this.whitelistedIps;
+        return this.whitelistedIps == null ? List.of() : this.whitelistedIps;
     }
     /**
      * @return Oracle Cloud Services that are allowed to access this Analytics instance.
      * 
      */
     public List<String> whitelistedServices() {
-        return this.whitelistedServices;
+        return this.whitelistedServices == null ? List.of() : this.whitelistedServices;
     }
     /**
      * @return Virtual Cloud Networks allowed to access this network endpoint.
      * 
      */
     public List<GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcn> whitelistedVcns() {
-        return this.whitelistedVcns;
+        return this.whitelistedVcns == null ? List.of() : this.whitelistedVcns;
     }
 
     public static Builder builder() {
@@ -107,13 +109,13 @@ public final class GetAnalyticsInstanceNetworkEndpointDetail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String networkEndpointType;
-        private List<String> networkSecurityGroupIds;
-        private String subnetId;
-        private String vcnId;
-        private List<String> whitelistedIps;
-        private List<String> whitelistedServices;
-        private List<GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcn> whitelistedVcns;
+        private @Nullable String networkEndpointType;
+        private @Nullable List<String> networkSecurityGroupIds;
+        private @Nullable String subnetId;
+        private @Nullable String vcnId;
+        private @Nullable List<String> whitelistedIps;
+        private @Nullable List<String> whitelistedServices;
+        private @Nullable List<GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcn> whitelistedVcns;
         public Builder() {}
         public Builder(GetAnalyticsInstanceNetworkEndpointDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -127,47 +129,47 @@ public final class GetAnalyticsInstanceNetworkEndpointDetail {
         }
 
         @CustomType.Setter
-        public Builder networkEndpointType(String networkEndpointType) {
-            this.networkEndpointType = Objects.requireNonNull(networkEndpointType);
+        public Builder networkEndpointType(@Nullable String networkEndpointType) {
+            this.networkEndpointType = networkEndpointType;
             return this;
         }
         @CustomType.Setter
-        public Builder networkSecurityGroupIds(List<String> networkSecurityGroupIds) {
-            this.networkSecurityGroupIds = Objects.requireNonNull(networkSecurityGroupIds);
+        public Builder networkSecurityGroupIds(@Nullable List<String> networkSecurityGroupIds) {
+            this.networkSecurityGroupIds = networkSecurityGroupIds;
             return this;
         }
         public Builder networkSecurityGroupIds(String... networkSecurityGroupIds) {
             return networkSecurityGroupIds(List.of(networkSecurityGroupIds));
         }
         @CustomType.Setter
-        public Builder subnetId(String subnetId) {
-            this.subnetId = Objects.requireNonNull(subnetId);
+        public Builder subnetId(@Nullable String subnetId) {
+            this.subnetId = subnetId;
             return this;
         }
         @CustomType.Setter
-        public Builder vcnId(String vcnId) {
-            this.vcnId = Objects.requireNonNull(vcnId);
+        public Builder vcnId(@Nullable String vcnId) {
+            this.vcnId = vcnId;
             return this;
         }
         @CustomType.Setter
-        public Builder whitelistedIps(List<String> whitelistedIps) {
-            this.whitelistedIps = Objects.requireNonNull(whitelistedIps);
+        public Builder whitelistedIps(@Nullable List<String> whitelistedIps) {
+            this.whitelistedIps = whitelistedIps;
             return this;
         }
         public Builder whitelistedIps(String... whitelistedIps) {
             return whitelistedIps(List.of(whitelistedIps));
         }
         @CustomType.Setter
-        public Builder whitelistedServices(List<String> whitelistedServices) {
-            this.whitelistedServices = Objects.requireNonNull(whitelistedServices);
+        public Builder whitelistedServices(@Nullable List<String> whitelistedServices) {
+            this.whitelistedServices = whitelistedServices;
             return this;
         }
         public Builder whitelistedServices(String... whitelistedServices) {
             return whitelistedServices(List.of(whitelistedServices));
         }
         @CustomType.Setter
-        public Builder whitelistedVcns(List<GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcn> whitelistedVcns) {
-            this.whitelistedVcns = Objects.requireNonNull(whitelistedVcns);
+        public Builder whitelistedVcns(@Nullable List<GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcn> whitelistedVcns) {
+            this.whitelistedVcns = whitelistedVcns;
             return this;
         }
         public Builder whitelistedVcns(GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcn... whitelistedVcns) {

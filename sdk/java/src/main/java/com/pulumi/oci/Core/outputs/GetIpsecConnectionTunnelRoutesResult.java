@@ -24,14 +24,14 @@ public final class GetIpsecConnectionTunnelRoutesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String ipsecId;
     private String tunnelId;
     /**
      * @return The list of tunnel_routes.
      * 
      */
-    private List<GetIpsecConnectionTunnelRoutesTunnelRoute> tunnelRoutes;
+    private @Nullable List<GetIpsecConnectionTunnelRoutesTunnelRoute> tunnelRoutes;
 
     private GetIpsecConnectionTunnelRoutesResult() {}
     /**
@@ -48,8 +48,8 @@ public final class GetIpsecConnectionTunnelRoutesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String ipsecId() {
         return this.ipsecId;
@@ -62,7 +62,7 @@ public final class GetIpsecConnectionTunnelRoutesResult {
      * 
      */
     public List<GetIpsecConnectionTunnelRoutesTunnelRoute> tunnelRoutes() {
-        return this.tunnelRoutes;
+        return this.tunnelRoutes == null ? List.of() : this.tunnelRoutes;
     }
 
     public static Builder builder() {
@@ -76,10 +76,10 @@ public final class GetIpsecConnectionTunnelRoutesResult {
     public static final class Builder {
         private @Nullable String advertiser;
         private @Nullable List<GetIpsecConnectionTunnelRoutesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private String ipsecId;
         private String tunnelId;
-        private List<GetIpsecConnectionTunnelRoutesTunnelRoute> tunnelRoutes;
+        private @Nullable List<GetIpsecConnectionTunnelRoutesTunnelRoute> tunnelRoutes;
         public Builder() {}
         public Builder(GetIpsecConnectionTunnelRoutesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -105,8 +105,8 @@ public final class GetIpsecConnectionTunnelRoutesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -120,8 +120,8 @@ public final class GetIpsecConnectionTunnelRoutesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder tunnelRoutes(List<GetIpsecConnectionTunnelRoutesTunnelRoute> tunnelRoutes) {
-            this.tunnelRoutes = Objects.requireNonNull(tunnelRoutes);
+        public Builder tunnelRoutes(@Nullable List<GetIpsecConnectionTunnelRoutesTunnelRoute> tunnelRoutes) {
+            this.tunnelRoutes = tunnelRoutes;
             return this;
         }
         public Builder tunnelRoutes(GetIpsecConnectionTunnelRoutesTunnelRoute... tunnelRoutes) {

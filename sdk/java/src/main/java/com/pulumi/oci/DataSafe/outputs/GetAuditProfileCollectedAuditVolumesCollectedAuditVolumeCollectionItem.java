@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DataSafe.outputs.GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItem {
@@ -14,7 +15,7 @@ public final class GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeColle
      * @return Array of collected audit volume summary.
      * 
      */
-    private List<GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItem> items;
+    private @Nullable List<GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItem> items;
 
     private GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItem() {}
     /**
@@ -22,7 +23,7 @@ public final class GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeColle
      * 
      */
     public List<GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeColle
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItem> items;
+        private @Nullable List<GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItem> items;
         public Builder() {}
         public Builder(GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeColle
         }
 
         @CustomType.Setter
-        public Builder items(List<GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItem... items) {

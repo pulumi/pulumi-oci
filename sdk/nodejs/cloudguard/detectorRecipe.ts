@@ -54,19 +54,19 @@ export class DetectorRecipe extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) Description for DetectorRecipeDetectorRule.
      */
-    public readonly description!: pulumi.Output<string>;
+    public readonly description!: pulumi.Output<string | undefined>;
     /**
      * detector for the rule
      */
-    public readonly detector!: pulumi.Output<string>;
+    public readonly detector!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Detector Rules to override from source detector recipe
      */
-    public readonly detectorRules!: pulumi.Output<outputs.CloudGuard.DetectorRecipeDetectorRule[]>;
+    public readonly detectorRules!: pulumi.Output<outputs.CloudGuard.DetectorRecipeDetectorRule[] | undefined>;
     /**
      * (Updatable) Detector recipe display name.
      *
@@ -76,17 +76,17 @@ export class DetectorRecipe extends pulumi.CustomResource {
     /**
      * List of effective detector rules for the detector type for recipe after applying defaults
      */
-    public /*out*/ readonly effectiveDetectorRules!: pulumi.Output<outputs.CloudGuard.DetectorRecipeEffectiveDetectorRule[]>;
+    public /*out*/ readonly effectiveDetectorRules!: pulumi.Output<outputs.CloudGuard.DetectorRecipeEffectiveDetectorRule[] | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      *
      * Avoid entering confidential information.
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * Owner of detector recipe
      */
-    public /*out*/ readonly owner!: pulumi.Output<string>;
+    public /*out*/ readonly owner!: pulumi.Output<string | undefined>;
     /**
      * The id of the source detector recipe.
      *
@@ -94,27 +94,27 @@ export class DetectorRecipe extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly sourceDetectorRecipeId!: pulumi.Output<string>;
+    public readonly sourceDetectorRecipeId!: pulumi.Output<string | undefined>;
     /**
      * The current state of the resource.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The recipe attached to targets
      */
-    public /*out*/ readonly targetIds!: pulumi.Output<string[]>;
+    public /*out*/ readonly targetIds!: pulumi.Output<string[] | undefined>;
     /**
      * The date and time the detector recipe was created. Format defined by RFC3339.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The date and time the detector recipe was updated. Format defined by RFC3339.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a DetectorRecipe resource with the given unique name, arguments, and options.

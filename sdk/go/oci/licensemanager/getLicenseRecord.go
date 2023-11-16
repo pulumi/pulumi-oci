@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific License Record resource in Oracle Cloud Infrastructure License Manager service.
@@ -60,42 +59,42 @@ type LookupLicenseRecordArgs struct {
 // A collection of values returned by getLicenseRecord.
 type LookupLicenseRecordResult struct {
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where the license record is created.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The license record display name. Avoid entering confidential information.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The license record end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format. Example: `2018-09-12`
-	ExpirationDate string `pulumi:"expirationDate"`
+	ExpirationDate *string `pulumi:"expirationDate"`
 	// Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The license record [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Specifies if the license record term is perpertual.
-	IsPerpetual bool `pulumi:"isPerpetual"`
+	IsPerpetual *bool `pulumi:"isPerpetual"`
 	// Specifies if the license count is unlimited.
-	IsUnlimited bool `pulumi:"isUnlimited"`
+	IsUnlimited *bool `pulumi:"isUnlimited"`
 	// The number of license units added by the user for the given license record. Default 1
-	LicenseCount    int    `pulumi:"licenseCount"`
+	LicenseCount    *int   `pulumi:"licenseCount"`
 	LicenseRecordId string `pulumi:"licenseRecordId"`
 	// The product license unit.
-	LicenseUnit string `pulumi:"licenseUnit"`
+	LicenseUnit *string `pulumi:"licenseUnit"`
 	// The license record product ID.
-	ProductId string `pulumi:"productId"`
+	ProductId *string `pulumi:"productId"`
 	// The product license name with which the license record is associated.
-	ProductLicense string `pulumi:"productLicense"`
+	ProductLicense *string `pulumi:"productLicense"`
 	// The product license [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) with which the license record is associated.
-	ProductLicenseId string `pulumi:"productLicenseId"`
+	ProductLicenseId *string `pulumi:"productLicenseId"`
 	// The current license record state.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The license record support end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format. Example: `2018-09-12`
-	SupportEndDate string `pulumi:"supportEndDate"`
+	SupportEndDate *string `pulumi:"supportEndDate"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time the license record was created. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the license record was updated. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func LookupLicenseRecordOutput(ctx *pulumi.Context, args LookupLicenseRecordOutputArgs, opts ...pulumi.InvokeOption) LookupLicenseRecordResultOutput {
@@ -136,15 +135,9 @@ func (o LookupLicenseRecordResultOutput) ToLookupLicenseRecordResultOutputWithCo
 	return o
 }
 
-func (o LookupLicenseRecordResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupLicenseRecordResult] {
-	return pulumix.Output[LookupLicenseRecordResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where the license record is created.
-func (o LookupLicenseRecordResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupLicenseRecordResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupLicenseRecordResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupLicenseRecordResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -153,13 +146,13 @@ func (o LookupLicenseRecordResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // The license record display name. Avoid entering confidential information.
-func (o LookupLicenseRecordResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupLicenseRecordResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupLicenseRecordResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupLicenseRecordResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The license record end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format. Example: `2018-09-12`
-func (o LookupLicenseRecordResultOutput) ExpirationDate() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupLicenseRecordResult) string { return v.ExpirationDate }).(pulumi.StringOutput)
+func (o LookupLicenseRecordResultOutput) ExpirationDate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupLicenseRecordResult) *string { return v.ExpirationDate }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -168,23 +161,23 @@ func (o LookupLicenseRecordResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The license record [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-func (o LookupLicenseRecordResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupLicenseRecordResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupLicenseRecordResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupLicenseRecordResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Specifies if the license record term is perpertual.
-func (o LookupLicenseRecordResultOutput) IsPerpetual() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupLicenseRecordResult) bool { return v.IsPerpetual }).(pulumi.BoolOutput)
+func (o LookupLicenseRecordResultOutput) IsPerpetual() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupLicenseRecordResult) *bool { return v.IsPerpetual }).(pulumi.BoolPtrOutput)
 }
 
 // Specifies if the license count is unlimited.
-func (o LookupLicenseRecordResultOutput) IsUnlimited() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupLicenseRecordResult) bool { return v.IsUnlimited }).(pulumi.BoolOutput)
+func (o LookupLicenseRecordResultOutput) IsUnlimited() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupLicenseRecordResult) *bool { return v.IsUnlimited }).(pulumi.BoolPtrOutput)
 }
 
 // The number of license units added by the user for the given license record. Default 1
-func (o LookupLicenseRecordResultOutput) LicenseCount() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupLicenseRecordResult) int { return v.LicenseCount }).(pulumi.IntOutput)
+func (o LookupLicenseRecordResultOutput) LicenseCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupLicenseRecordResult) *int { return v.LicenseCount }).(pulumi.IntPtrOutput)
 }
 
 func (o LookupLicenseRecordResultOutput) LicenseRecordId() pulumi.StringOutput {
@@ -192,33 +185,33 @@ func (o LookupLicenseRecordResultOutput) LicenseRecordId() pulumi.StringOutput {
 }
 
 // The product license unit.
-func (o LookupLicenseRecordResultOutput) LicenseUnit() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupLicenseRecordResult) string { return v.LicenseUnit }).(pulumi.StringOutput)
+func (o LookupLicenseRecordResultOutput) LicenseUnit() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupLicenseRecordResult) *string { return v.LicenseUnit }).(pulumi.StringPtrOutput)
 }
 
 // The license record product ID.
-func (o LookupLicenseRecordResultOutput) ProductId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupLicenseRecordResult) string { return v.ProductId }).(pulumi.StringOutput)
+func (o LookupLicenseRecordResultOutput) ProductId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupLicenseRecordResult) *string { return v.ProductId }).(pulumi.StringPtrOutput)
 }
 
 // The product license name with which the license record is associated.
-func (o LookupLicenseRecordResultOutput) ProductLicense() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupLicenseRecordResult) string { return v.ProductLicense }).(pulumi.StringOutput)
+func (o LookupLicenseRecordResultOutput) ProductLicense() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupLicenseRecordResult) *string { return v.ProductLicense }).(pulumi.StringPtrOutput)
 }
 
 // The product license [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) with which the license record is associated.
-func (o LookupLicenseRecordResultOutput) ProductLicenseId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupLicenseRecordResult) string { return v.ProductLicenseId }).(pulumi.StringOutput)
+func (o LookupLicenseRecordResultOutput) ProductLicenseId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupLicenseRecordResult) *string { return v.ProductLicenseId }).(pulumi.StringPtrOutput)
 }
 
 // The current license record state.
-func (o LookupLicenseRecordResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupLicenseRecordResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupLicenseRecordResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupLicenseRecordResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The license record support end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format. Example: `2018-09-12`
-func (o LookupLicenseRecordResultOutput) SupportEndDate() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupLicenseRecordResult) string { return v.SupportEndDate }).(pulumi.StringOutput)
+func (o LookupLicenseRecordResultOutput) SupportEndDate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupLicenseRecordResult) *string { return v.SupportEndDate }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -227,13 +220,13 @@ func (o LookupLicenseRecordResultOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time the license record was created. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
-func (o LookupLicenseRecordResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupLicenseRecordResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupLicenseRecordResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupLicenseRecordResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the license record was updated. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
-func (o LookupLicenseRecordResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupLicenseRecordResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupLicenseRecordResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupLicenseRecordResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

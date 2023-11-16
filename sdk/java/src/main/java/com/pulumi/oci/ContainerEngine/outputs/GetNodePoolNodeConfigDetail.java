@@ -13,6 +13,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetNodePoolNodeConfigDetail {
@@ -20,42 +22,42 @@ public final class GetNodePoolNodeConfigDetail {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return Whether to enable in-transit encryption for the data volume&#39;s paravirtualized attachment. This field applies to both block volumes and boot volumes. The default value is false.
      * 
      */
-    private Boolean isPvEncryptionInTransitEnabled;
+    private @Nullable Boolean isPvEncryptionInTransitEnabled;
     /**
      * @return The OCID of the Key Management Service key assigned to the boot volume.
      * 
      */
-    private String kmsKeyId;
+    private @Nullable String kmsKeyId;
     /**
      * @return The CNI related configuration of pods in the node pool.
      * 
      */
-    private List<GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail> nodePoolPodNetworkOptionDetails;
+    private @Nullable List<GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail> nodePoolPodNetworkOptionDetails;
     /**
      * @return The OCIDs of the Network Security Group(s) to associate nodes for this node pool with. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
      * 
      */
-    private List<String> nsgIds;
+    private @Nullable List<String> nsgIds;
     /**
      * @return The placement configurations for the node pool. Provide one placement configuration for each availability domain in which you intend to launch a node.
      * 
      */
-    private List<GetNodePoolNodeConfigDetailPlacementConfig> placementConfigs;
+    private @Nullable List<GetNodePoolNodeConfigDetailPlacementConfig> placementConfigs;
     /**
      * @return The number of nodes in the node pool.
      * 
      */
-    private Integer size;
+    private @Nullable Integer size;
 
     private GetNodePoolNodeConfigDetail() {}
     /**
@@ -63,56 +65,56 @@ public final class GetNodePoolNodeConfigDetail {
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return Whether to enable in-transit encryption for the data volume&#39;s paravirtualized attachment. This field applies to both block volumes and boot volumes. The default value is false.
      * 
      */
-    public Boolean isPvEncryptionInTransitEnabled() {
-        return this.isPvEncryptionInTransitEnabled;
+    public Optional<Boolean> isPvEncryptionInTransitEnabled() {
+        return Optional.ofNullable(this.isPvEncryptionInTransitEnabled);
     }
     /**
      * @return The OCID of the Key Management Service key assigned to the boot volume.
      * 
      */
-    public String kmsKeyId() {
-        return this.kmsKeyId;
+    public Optional<String> kmsKeyId() {
+        return Optional.ofNullable(this.kmsKeyId);
     }
     /**
      * @return The CNI related configuration of pods in the node pool.
      * 
      */
     public List<GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail> nodePoolPodNetworkOptionDetails() {
-        return this.nodePoolPodNetworkOptionDetails;
+        return this.nodePoolPodNetworkOptionDetails == null ? List.of() : this.nodePoolPodNetworkOptionDetails;
     }
     /**
      * @return The OCIDs of the Network Security Group(s) to associate nodes for this node pool with. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
      * 
      */
     public List<String> nsgIds() {
-        return this.nsgIds;
+        return this.nsgIds == null ? List.of() : this.nsgIds;
     }
     /**
      * @return The placement configurations for the node pool. Provide one placement configuration for each availability domain in which you intend to launch a node.
      * 
      */
     public List<GetNodePoolNodeConfigDetailPlacementConfig> placementConfigs() {
-        return this.placementConfigs;
+        return this.placementConfigs == null ? List.of() : this.placementConfigs;
     }
     /**
      * @return The number of nodes in the node pool.
      * 
      */
-    public Integer size() {
-        return this.size;
+    public Optional<Integer> size() {
+        return Optional.ofNullable(this.size);
     }
 
     public static Builder builder() {
@@ -124,14 +126,14 @@ public final class GetNodePoolNodeConfigDetail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Map<String,Object> definedTags;
-        private Map<String,Object> freeformTags;
-        private Boolean isPvEncryptionInTransitEnabled;
-        private String kmsKeyId;
-        private List<GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail> nodePoolPodNetworkOptionDetails;
-        private List<String> nsgIds;
-        private List<GetNodePoolNodeConfigDetailPlacementConfig> placementConfigs;
-        private Integer size;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable Boolean isPvEncryptionInTransitEnabled;
+        private @Nullable String kmsKeyId;
+        private @Nullable List<GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail> nodePoolPodNetworkOptionDetails;
+        private @Nullable List<String> nsgIds;
+        private @Nullable List<GetNodePoolNodeConfigDetailPlacementConfig> placementConfigs;
+        private @Nullable Integer size;
         public Builder() {}
         public Builder(GetNodePoolNodeConfigDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -146,52 +148,52 @@ public final class GetNodePoolNodeConfigDetail {
         }
 
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder isPvEncryptionInTransitEnabled(Boolean isPvEncryptionInTransitEnabled) {
-            this.isPvEncryptionInTransitEnabled = Objects.requireNonNull(isPvEncryptionInTransitEnabled);
+        public Builder isPvEncryptionInTransitEnabled(@Nullable Boolean isPvEncryptionInTransitEnabled) {
+            this.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder kmsKeyId(String kmsKeyId) {
-            this.kmsKeyId = Objects.requireNonNull(kmsKeyId);
+        public Builder kmsKeyId(@Nullable String kmsKeyId) {
+            this.kmsKeyId = kmsKeyId;
             return this;
         }
         @CustomType.Setter
-        public Builder nodePoolPodNetworkOptionDetails(List<GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail> nodePoolPodNetworkOptionDetails) {
-            this.nodePoolPodNetworkOptionDetails = Objects.requireNonNull(nodePoolPodNetworkOptionDetails);
+        public Builder nodePoolPodNetworkOptionDetails(@Nullable List<GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail> nodePoolPodNetworkOptionDetails) {
+            this.nodePoolPodNetworkOptionDetails = nodePoolPodNetworkOptionDetails;
             return this;
         }
         public Builder nodePoolPodNetworkOptionDetails(GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail... nodePoolPodNetworkOptionDetails) {
             return nodePoolPodNetworkOptionDetails(List.of(nodePoolPodNetworkOptionDetails));
         }
         @CustomType.Setter
-        public Builder nsgIds(List<String> nsgIds) {
-            this.nsgIds = Objects.requireNonNull(nsgIds);
+        public Builder nsgIds(@Nullable List<String> nsgIds) {
+            this.nsgIds = nsgIds;
             return this;
         }
         public Builder nsgIds(String... nsgIds) {
             return nsgIds(List.of(nsgIds));
         }
         @CustomType.Setter
-        public Builder placementConfigs(List<GetNodePoolNodeConfigDetailPlacementConfig> placementConfigs) {
-            this.placementConfigs = Objects.requireNonNull(placementConfigs);
+        public Builder placementConfigs(@Nullable List<GetNodePoolNodeConfigDetailPlacementConfig> placementConfigs) {
+            this.placementConfigs = placementConfigs;
             return this;
         }
         public Builder placementConfigs(GetNodePoolNodeConfigDetailPlacementConfig... placementConfigs) {
             return placementConfigs(List.of(placementConfigs));
         }
         @CustomType.Setter
-        public Builder size(Integer size) {
-            this.size = Objects.requireNonNull(size);
+        public Builder size(@Nullable Integer size) {
+            this.size = size;
             return this;
         }
         public GetNodePoolNodeConfigDetail build() {

@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollectionItem {
@@ -14,147 +16,147 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCo
      * @return The number of days left before the task expires. If the value equals -1, then the task has no expiration time (UNLIMITED).
      * 
      */
-    private Integer daysToExpire;
+    private @Nullable Integer daysToExpire;
     /**
      * @return The description of the SQL Tuning Advisor task.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return The instance ID of the SQL Tuning Advisor task. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    private Integer instanceId;
+    private @Nullable Integer instanceId;
     /**
      * @return The optional query parameter to filter the SQL Tuning Advisor task list by name.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return The owner of the SQL Tuning Advisor task.
      * 
      */
-    private String owner;
+    private @Nullable String owner;
     /**
      * @return The number of recommendations provided for the SQL Tuning Advisor task.
      * 
      */
-    private Integer recommendationCount;
+    private @Nullable Integer recommendationCount;
     /**
      * @return The unique identifier of the SQL Tuning Advisor task. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    private String sqlTuningAdvisorTaskId;
+    private @Nullable String sqlTuningAdvisorTaskId;
     /**
      * @return The status of the SQL Tuning Advisor task.
      * 
      */
-    private String taskStatus;
+    private @Nullable String taskStatus;
     /**
      * @return The Creation date of the SQL Tuning Advisor task.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The end time of the task execution.
      * 
      */
-    private String timeExecutionEnded;
+    private @Nullable String timeExecutionEnded;
     /**
      * @return The start time of the task execution.
      * 
      */
-    private String timeExecutionStarted;
+    private @Nullable String timeExecutionStarted;
     /**
      * @return The total number of SQL statements related to the SQL Tuning Advisor task.
      * 
      */
-    private Integer totalSqlStatements;
+    private @Nullable Integer totalSqlStatements;
 
     private GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollectionItem() {}
     /**
      * @return The number of days left before the task expires. If the value equals -1, then the task has no expiration time (UNLIMITED).
      * 
      */
-    public Integer daysToExpire() {
-        return this.daysToExpire;
+    public Optional<Integer> daysToExpire() {
+        return Optional.ofNullable(this.daysToExpire);
     }
     /**
      * @return The description of the SQL Tuning Advisor task.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return The instance ID of the SQL Tuning Advisor task. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    public Integer instanceId() {
-        return this.instanceId;
+    public Optional<Integer> instanceId() {
+        return Optional.ofNullable(this.instanceId);
     }
     /**
      * @return The optional query parameter to filter the SQL Tuning Advisor task list by name.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return The owner of the SQL Tuning Advisor task.
      * 
      */
-    public String owner() {
-        return this.owner;
+    public Optional<String> owner() {
+        return Optional.ofNullable(this.owner);
     }
     /**
      * @return The number of recommendations provided for the SQL Tuning Advisor task.
      * 
      */
-    public Integer recommendationCount() {
-        return this.recommendationCount;
+    public Optional<Integer> recommendationCount() {
+        return Optional.ofNullable(this.recommendationCount);
     }
     /**
      * @return The unique identifier of the SQL Tuning Advisor task. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    public String sqlTuningAdvisorTaskId() {
-        return this.sqlTuningAdvisorTaskId;
+    public Optional<String> sqlTuningAdvisorTaskId() {
+        return Optional.ofNullable(this.sqlTuningAdvisorTaskId);
     }
     /**
      * @return The status of the SQL Tuning Advisor task.
      * 
      */
-    public String taskStatus() {
-        return this.taskStatus;
+    public Optional<String> taskStatus() {
+        return Optional.ofNullable(this.taskStatus);
     }
     /**
      * @return The Creation date of the SQL Tuning Advisor task.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The end time of the task execution.
      * 
      */
-    public String timeExecutionEnded() {
-        return this.timeExecutionEnded;
+    public Optional<String> timeExecutionEnded() {
+        return Optional.ofNullable(this.timeExecutionEnded);
     }
     /**
      * @return The start time of the task execution.
      * 
      */
-    public String timeExecutionStarted() {
-        return this.timeExecutionStarted;
+    public Optional<String> timeExecutionStarted() {
+        return Optional.ofNullable(this.timeExecutionStarted);
     }
     /**
      * @return The total number of SQL statements related to the SQL Tuning Advisor task.
      * 
      */
-    public Integer totalSqlStatements() {
-        return this.totalSqlStatements;
+    public Optional<Integer> totalSqlStatements() {
+        return Optional.ofNullable(this.totalSqlStatements);
     }
 
     public static Builder builder() {
@@ -166,18 +168,18 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCo
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer daysToExpire;
-        private String description;
-        private Integer instanceId;
-        private String name;
-        private String owner;
-        private Integer recommendationCount;
-        private String sqlTuningAdvisorTaskId;
-        private String taskStatus;
-        private String timeCreated;
-        private String timeExecutionEnded;
-        private String timeExecutionStarted;
-        private Integer totalSqlStatements;
+        private @Nullable Integer daysToExpire;
+        private @Nullable String description;
+        private @Nullable Integer instanceId;
+        private @Nullable String name;
+        private @Nullable String owner;
+        private @Nullable Integer recommendationCount;
+        private @Nullable String sqlTuningAdvisorTaskId;
+        private @Nullable String taskStatus;
+        private @Nullable String timeCreated;
+        private @Nullable String timeExecutionEnded;
+        private @Nullable String timeExecutionStarted;
+        private @Nullable Integer totalSqlStatements;
         public Builder() {}
         public Builder(GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -196,63 +198,63 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCo
         }
 
         @CustomType.Setter
-        public Builder daysToExpire(Integer daysToExpire) {
-            this.daysToExpire = Objects.requireNonNull(daysToExpire);
+        public Builder daysToExpire(@Nullable Integer daysToExpire) {
+            this.daysToExpire = daysToExpire;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder instanceId(Integer instanceId) {
-            this.instanceId = Objects.requireNonNull(instanceId);
+        public Builder instanceId(@Nullable Integer instanceId) {
+            this.instanceId = instanceId;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder owner(String owner) {
-            this.owner = Objects.requireNonNull(owner);
+        public Builder owner(@Nullable String owner) {
+            this.owner = owner;
             return this;
         }
         @CustomType.Setter
-        public Builder recommendationCount(Integer recommendationCount) {
-            this.recommendationCount = Objects.requireNonNull(recommendationCount);
+        public Builder recommendationCount(@Nullable Integer recommendationCount) {
+            this.recommendationCount = recommendationCount;
             return this;
         }
         @CustomType.Setter
-        public Builder sqlTuningAdvisorTaskId(String sqlTuningAdvisorTaskId) {
-            this.sqlTuningAdvisorTaskId = Objects.requireNonNull(sqlTuningAdvisorTaskId);
+        public Builder sqlTuningAdvisorTaskId(@Nullable String sqlTuningAdvisorTaskId) {
+            this.sqlTuningAdvisorTaskId = sqlTuningAdvisorTaskId;
             return this;
         }
         @CustomType.Setter
-        public Builder taskStatus(String taskStatus) {
-            this.taskStatus = Objects.requireNonNull(taskStatus);
+        public Builder taskStatus(@Nullable String taskStatus) {
+            this.taskStatus = taskStatus;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeExecutionEnded(String timeExecutionEnded) {
-            this.timeExecutionEnded = Objects.requireNonNull(timeExecutionEnded);
+        public Builder timeExecutionEnded(@Nullable String timeExecutionEnded) {
+            this.timeExecutionEnded = timeExecutionEnded;
             return this;
         }
         @CustomType.Setter
-        public Builder timeExecutionStarted(String timeExecutionStarted) {
-            this.timeExecutionStarted = Objects.requireNonNull(timeExecutionStarted);
+        public Builder timeExecutionStarted(@Nullable String timeExecutionStarted) {
+            this.timeExecutionStarted = timeExecutionStarted;
             return this;
         }
         @CustomType.Setter
-        public Builder totalSqlStatements(Integer totalSqlStatements) {
-            this.totalSqlStatements = Objects.requireNonNull(totalSqlStatements);
+        public Builder totalSqlStatements(@Nullable Integer totalSqlStatements) {
+            this.totalSqlStatements = totalSqlStatements;
             return this;
         }
         public GetManagedDatabaseSqlTuningAdvisorTasksSqlTuningAdvisorTaskCollectionItem build() {

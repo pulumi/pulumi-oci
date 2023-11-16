@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicy {
@@ -14,27 +16,27 @@ public final class GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicy 
      * @return The maximum retry duration in milliseconds.
      * 
      */
-    private Integer maxRetryDuration;
+    private @Nullable Integer maxRetryDuration;
     /**
      * @return The type of delivery policy. Default value: EXPONENTIAL.
      * 
      */
-    private String policyType;
+    private @Nullable String policyType;
 
     private GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicy() {}
     /**
      * @return The maximum retry duration in milliseconds.
      * 
      */
-    public Integer maxRetryDuration() {
-        return this.maxRetryDuration;
+    public Optional<Integer> maxRetryDuration() {
+        return Optional.ofNullable(this.maxRetryDuration);
     }
     /**
      * @return The type of delivery policy. Default value: EXPONENTIAL.
      * 
      */
-    public String policyType() {
-        return this.policyType;
+    public Optional<String> policyType() {
+        return Optional.ofNullable(this.policyType);
     }
 
     public static Builder builder() {
@@ -46,8 +48,8 @@ public final class GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicy 
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer maxRetryDuration;
-        private String policyType;
+        private @Nullable Integer maxRetryDuration;
+        private @Nullable String policyType;
         public Builder() {}
         public Builder(GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicy defaults) {
     	      Objects.requireNonNull(defaults);
@@ -56,13 +58,13 @@ public final class GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicy 
         }
 
         @CustomType.Setter
-        public Builder maxRetryDuration(Integer maxRetryDuration) {
-            this.maxRetryDuration = Objects.requireNonNull(maxRetryDuration);
+        public Builder maxRetryDuration(@Nullable Integer maxRetryDuration) {
+            this.maxRetryDuration = maxRetryDuration;
             return this;
         }
         @CustomType.Setter
-        public Builder policyType(String policyType) {
-            this.policyType = Objects.requireNonNull(policyType);
+        public Builder policyType(@Nullable String policyType) {
+            this.policyType = policyType;
             return this;
         }
         public GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicy build() {

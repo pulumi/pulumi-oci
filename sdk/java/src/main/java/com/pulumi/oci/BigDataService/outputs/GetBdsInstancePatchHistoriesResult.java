@@ -20,12 +20,12 @@ public final class GetBdsInstancePatchHistoriesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of patch_histories.
      * 
      */
-    private List<GetBdsInstancePatchHistoriesPatchHistory> patchHistories;
+    private @Nullable List<GetBdsInstancePatchHistoriesPatchHistory> patchHistories;
     /**
      * @return The type of current patch history. DP - Data Plane patch(This history type is internal available only) ODH - Oracle Distribution of Hadoop patch OS - Operating System patch
      * 
@@ -49,15 +49,15 @@ public final class GetBdsInstancePatchHistoriesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of patch_histories.
      * 
      */
     public List<GetBdsInstancePatchHistoriesPatchHistory> patchHistories() {
-        return this.patchHistories;
+        return this.patchHistories == null ? List.of() : this.patchHistories;
     }
     /**
      * @return The type of current patch history. DP - Data Plane patch(This history type is internal available only) ODH - Oracle Distribution of Hadoop patch OS - Operating System patch
@@ -88,8 +88,8 @@ public final class GetBdsInstancePatchHistoriesResult {
     public static final class Builder {
         private String bdsInstanceId;
         private @Nullable List<GetBdsInstancePatchHistoriesFilter> filters;
-        private String id;
-        private List<GetBdsInstancePatchHistoriesPatchHistory> patchHistories;
+        private @Nullable String id;
+        private @Nullable List<GetBdsInstancePatchHistoriesPatchHistory> patchHistories;
         private @Nullable String patchType;
         private @Nullable String patchVersion;
         private @Nullable String state;
@@ -119,13 +119,13 @@ public final class GetBdsInstancePatchHistoriesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder patchHistories(List<GetBdsInstancePatchHistoriesPatchHistory> patchHistories) {
-            this.patchHistories = Objects.requireNonNull(patchHistories);
+        public Builder patchHistories(@Nullable List<GetBdsInstancePatchHistoriesPatchHistory> patchHistories) {
+            this.patchHistories = patchHistories;
             return this;
         }
         public Builder patchHistories(GetBdsInstancePatchHistoriesPatchHistory... patchHistories) {

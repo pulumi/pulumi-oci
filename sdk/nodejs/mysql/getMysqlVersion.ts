@@ -53,11 +53,11 @@ export interface GetMysqlVersionResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of supported MySQL Versions.
      */
-    readonly versions: outputs.Mysql.GetMysqlVersionVersion[];
+    readonly versions?: outputs.Mysql.GetMysqlVersionVersion[];
 }
 /**
  * This data source provides the list of Mysql Versions in Oracle Cloud Infrastructure MySQL Database service.

@@ -16,11 +16,11 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// <summary>
         /// The username for the administrative user.
         /// </summary>
-        public readonly string AdminUsername;
+        public readonly string? AdminUsername;
         /// <summary>
         /// The Availability Domain where the primary DB System should be located.
         /// </summary>
-        public readonly string AvailabilityDomain;
+        public readonly string? AvailabilityDomain;
         /// <summary>
         /// The Backup policy for the DB System.
         /// </summary>
@@ -28,27 +28,27 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// <summary>
         /// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The OCID of the Configuration to be used for Instances in this DB System.
         /// </summary>
-        public readonly string ConfigurationId;
+        public readonly string? ConfigurationId;
         /// <summary>
         /// Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled, and whether to enable or disable syncing of the Binary Logs.
         /// </summary>
-        public readonly string CrashRecovery;
+        public readonly string? CrashRecovery;
         /// <summary>
         /// Initial size of the data volume in GiBs that will be created and attached.
         /// </summary>
-        public readonly int DataStorageSizeInGb;
+        public readonly int? DataStorageSizeInGb;
         /// <summary>
         /// Whether to enable monitoring via the Database Management service.
         /// </summary>
-        public readonly string DatabaseManagement;
+        public readonly string? DatabaseManagement;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// The Deletion policy for the DB System.
         /// </summary>
@@ -56,11 +56,11 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// <summary>
         /// A user-supplied description for the backup.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// A filter to return only the resource matching the given display name exactly.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// The network endpoints available for this DB System.
         /// </summary>
@@ -68,27 +68,27 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// <summary>
         /// The name of the Fault Domain the DB System is located in.
         /// </summary>
-        public readonly string FaultDomain;
+        public readonly string? FaultDomain;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The hostname for the primary endpoint of the DB System. Used for DNS. The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com"). Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
         /// </summary>
-        public readonly string HostnameLabel;
+        public readonly string? HostnameLabel;
         /// <summary>
         /// OCID of the backup itself
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
         /// </summary>
-        public readonly string IpAddress;
+        public readonly string? IpAddress;
         /// <summary>
         /// Specifies if the DB System is highly available.
         /// </summary>
-        public readonly bool IsHighlyAvailable;
+        public readonly bool? IsHighlyAvailable;
         /// <summary>
         /// The Maintenance Policy for the DB System or Read Replica that this model is included in.
         /// </summary>
@@ -96,75 +96,75 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// <summary>
         /// The MySQL server version of the DB System used for backup.
         /// </summary>
-        public readonly string MysqlVersion;
+        public readonly string? MysqlVersion;
         /// <summary>
         /// The port for primary endpoint of the DB System to listen on.
         /// </summary>
-        public readonly int Port;
+        public readonly int? Port;
         /// <summary>
         /// The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
         /// </summary>
-        public readonly int PortX;
+        public readonly int? PortX;
         /// <summary>
         /// The shape of the DB System instance used for backup.
         /// </summary>
-        public readonly string ShapeName;
+        public readonly string? ShapeName;
         /// <summary>
         /// The OCID of the subnet the DB System is associated with.
         /// </summary>
-        public readonly string SubnetId;
+        public readonly string? SubnetId;
 
         [OutputConstructor]
         private GetMysqlBackupsBackupDbSystemSnapshotResult(
-            string adminUsername,
+            string? adminUsername,
 
-            string availabilityDomain,
+            string? availabilityDomain,
 
             ImmutableArray<Outputs.GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyResult> backupPolicies,
 
-            string compartmentId,
+            string? compartmentId,
 
-            string configurationId,
+            string? configurationId,
 
-            string crashRecovery,
+            string? crashRecovery,
 
-            int dataStorageSizeInGb,
+            int? dataStorageSizeInGb,
 
-            string databaseManagement,
+            string? databaseManagement,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
             ImmutableArray<Outputs.GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyResult> deletionPolicies,
 
-            string description,
+            string? description,
 
-            string displayName,
+            string? displayName,
 
             ImmutableArray<Outputs.GetMysqlBackupsBackupDbSystemSnapshotEndpointResult> endpoints,
 
-            string faultDomain,
+            string? faultDomain,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string hostnameLabel,
+            string? hostnameLabel,
 
-            string id,
+            string? id,
 
-            string ipAddress,
+            string? ipAddress,
 
-            bool isHighlyAvailable,
+            bool? isHighlyAvailable,
 
             ImmutableArray<Outputs.GetMysqlBackupsBackupDbSystemSnapshotMaintenanceResult> maintenances,
 
-            string mysqlVersion,
+            string? mysqlVersion,
 
-            int port,
+            int? port,
 
-            int portX,
+            int? portX,
 
-            string shapeName,
+            string? shapeName,
 
-            string subnetId)
+            string? subnetId)
         {
             AdminUsername = adminUsername;
             AvailabilityDomain = availabilityDomain;

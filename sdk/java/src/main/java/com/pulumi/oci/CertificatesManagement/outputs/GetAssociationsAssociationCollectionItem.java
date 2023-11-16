@@ -6,6 +6,8 @@ package com.pulumi.oci.CertificatesManagement.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAssociationsAssociationCollectionItem {
@@ -13,99 +15,99 @@ public final class GetAssociationsAssociationCollectionItem {
      * @return A filter that returns only resources that match the given OCID of an associated Oracle Cloud Infrastructure resource.
      * 
      */
-    private String associatedResourceId;
+    private @Nullable String associatedResourceId;
     /**
      * @return Type of associations to list. If the parameter is set to null, the service lists all types of associations.
      * 
      */
-    private String associationType;
+    private @Nullable String associationType;
     /**
      * @return A filter that returns only resources that match the given OCID of a certificate-related resource.
      * 
      */
-    private String certificatesResourceId;
+    private @Nullable String certificatesResourceId;
     /**
      * @return A filter that returns only resources that match the given compartment OCID.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The OCID of the association.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return A filter that returns only resources that match the specified name.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return The current lifecycle state of the association.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return A property indicating when the association was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
 
     private GetAssociationsAssociationCollectionItem() {}
     /**
      * @return A filter that returns only resources that match the given OCID of an associated Oracle Cloud Infrastructure resource.
      * 
      */
-    public String associatedResourceId() {
-        return this.associatedResourceId;
+    public Optional<String> associatedResourceId() {
+        return Optional.ofNullable(this.associatedResourceId);
     }
     /**
      * @return Type of associations to list. If the parameter is set to null, the service lists all types of associations.
      * 
      */
-    public String associationType() {
-        return this.associationType;
+    public Optional<String> associationType() {
+        return Optional.ofNullable(this.associationType);
     }
     /**
      * @return A filter that returns only resources that match the given OCID of a certificate-related resource.
      * 
      */
-    public String certificatesResourceId() {
-        return this.certificatesResourceId;
+    public Optional<String> certificatesResourceId() {
+        return Optional.ofNullable(this.certificatesResourceId);
     }
     /**
      * @return A filter that returns only resources that match the given compartment OCID.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The OCID of the association.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return A filter that returns only resources that match the specified name.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return The current lifecycle state of the association.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return A property indicating when the association was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
 
     public static Builder builder() {
@@ -117,14 +119,14 @@ public final class GetAssociationsAssociationCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String associatedResourceId;
-        private String associationType;
-        private String certificatesResourceId;
-        private String compartmentId;
-        private String id;
-        private String name;
-        private String state;
-        private String timeCreated;
+        private @Nullable String associatedResourceId;
+        private @Nullable String associationType;
+        private @Nullable String certificatesResourceId;
+        private @Nullable String compartmentId;
+        private @Nullable String id;
+        private @Nullable String name;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
         public Builder() {}
         public Builder(GetAssociationsAssociationCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -139,43 +141,43 @@ public final class GetAssociationsAssociationCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder associatedResourceId(String associatedResourceId) {
-            this.associatedResourceId = Objects.requireNonNull(associatedResourceId);
+        public Builder associatedResourceId(@Nullable String associatedResourceId) {
+            this.associatedResourceId = associatedResourceId;
             return this;
         }
         @CustomType.Setter
-        public Builder associationType(String associationType) {
-            this.associationType = Objects.requireNonNull(associationType);
+        public Builder associationType(@Nullable String associationType) {
+            this.associationType = associationType;
             return this;
         }
         @CustomType.Setter
-        public Builder certificatesResourceId(String certificatesResourceId) {
-            this.certificatesResourceId = Objects.requireNonNull(certificatesResourceId);
+        public Builder certificatesResourceId(@Nullable String certificatesResourceId) {
+            this.certificatesResourceId = certificatesResourceId;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetAssociationsAssociationCollectionItem build() {

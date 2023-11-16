@@ -26,7 +26,7 @@ public final class GetSoftwareSourceSoftwarePackagesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Indicates whether this package is the latest version.
      * 
@@ -36,7 +36,7 @@ public final class GetSoftwareSourceSoftwarePackagesResult {
      * @return The list of software_package_collection.
      * 
      */
-    private List<GetSoftwareSourceSoftwarePackagesSoftwarePackageCollection> softwarePackageCollections;
+    private @Nullable List<GetSoftwareSourceSoftwarePackagesSoftwarePackageCollection> softwarePackageCollections;
     private String softwareSourceId;
 
     private GetSoftwareSourceSoftwarePackagesResult() {}
@@ -57,8 +57,8 @@ public final class GetSoftwareSourceSoftwarePackagesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Indicates whether this package is the latest version.
@@ -72,7 +72,7 @@ public final class GetSoftwareSourceSoftwarePackagesResult {
      * 
      */
     public List<GetSoftwareSourceSoftwarePackagesSoftwarePackageCollection> softwarePackageCollections() {
-        return this.softwarePackageCollections;
+        return this.softwarePackageCollections == null ? List.of() : this.softwarePackageCollections;
     }
     public String softwareSourceId() {
         return this.softwareSourceId;
@@ -90,9 +90,9 @@ public final class GetSoftwareSourceSoftwarePackagesResult {
         private @Nullable String displayName;
         private @Nullable String displayNameContains;
         private @Nullable List<GetSoftwareSourceSoftwarePackagesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable Boolean isLatest;
-        private List<GetSoftwareSourceSoftwarePackagesSoftwarePackageCollection> softwarePackageCollections;
+        private @Nullable List<GetSoftwareSourceSoftwarePackagesSoftwarePackageCollection> softwarePackageCollections;
         private String softwareSourceId;
         public Builder() {}
         public Builder(GetSoftwareSourceSoftwarePackagesResult defaults) {
@@ -125,8 +125,8 @@ public final class GetSoftwareSourceSoftwarePackagesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -135,8 +135,8 @@ public final class GetSoftwareSourceSoftwarePackagesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder softwarePackageCollections(List<GetSoftwareSourceSoftwarePackagesSoftwarePackageCollection> softwarePackageCollections) {
-            this.softwarePackageCollections = Objects.requireNonNull(softwarePackageCollections);
+        public Builder softwarePackageCollections(@Nullable List<GetSoftwareSourceSoftwarePackagesSoftwarePackageCollection> softwarePackageCollections) {
+            this.softwarePackageCollections = softwarePackageCollections;
             return this;
         }
         public Builder softwarePackageCollections(GetSoftwareSourceSoftwarePackagesSoftwarePackageCollection... softwarePackageCollections) {

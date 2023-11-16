@@ -22,9 +22,6 @@ class GetOrganizationSubscriptionsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: Currency name
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -33,9 +30,6 @@ class GetOrganizationSubscriptionsFilterResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Currency name
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -52,135 +46,98 @@ class GetOrganizationSubscriptionsFilterResult(dict):
 @pulumi.output_type
 class GetOrganizationSubscriptionsSubscriptionResult(dict):
     def __init__(__self__, *,
-                 currencies: Sequence['outputs.GetOrganizationSubscriptionsSubscriptionCurrencyResult'],
-                 id: str,
-                 service_name: str,
-                 status: str,
-                 time_end: str,
-                 time_start: str,
-                 total_value: str,
-                 type: str):
-        """
-        :param Sequence['GetOrganizationSubscriptionsSubscriptionCurrencyArgs'] currencies: Currency details
-        :param str id: SPM internal Subscription ID
-        :param str service_name: Customer friendly service name provided by PRG
-        :param str status: Status of the plan
-        :param str time_end: Represents the date when the last service of the subscription ends
-        :param str time_start: Represents the date when the first service of the subscription was activated
-        :param str total_value: Total aggregate TCLV of all lines for the subscription including expired, active, and signed
-        :param str type: Subscription Type i.e. IAAS,SAAS,PAAS
-        """
-        pulumi.set(__self__, "currencies", currencies)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "service_name", service_name)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "time_end", time_end)
-        pulumi.set(__self__, "time_start", time_start)
-        pulumi.set(__self__, "total_value", total_value)
-        pulumi.set(__self__, "type", type)
+                 currencies: Optional[Sequence['outputs.GetOrganizationSubscriptionsSubscriptionCurrencyResult']] = None,
+                 id: Optional[str] = None,
+                 service_name: Optional[str] = None,
+                 status: Optional[str] = None,
+                 time_end: Optional[str] = None,
+                 time_start: Optional[str] = None,
+                 total_value: Optional[str] = None,
+                 type: Optional[str] = None):
+        if currencies is not None:
+            pulumi.set(__self__, "currencies", currencies)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if service_name is not None:
+            pulumi.set(__self__, "service_name", service_name)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if time_end is not None:
+            pulumi.set(__self__, "time_end", time_end)
+        if time_start is not None:
+            pulumi.set(__self__, "time_start", time_start)
+        if total_value is not None:
+            pulumi.set(__self__, "total_value", total_value)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter
-    def currencies(self) -> Sequence['outputs.GetOrganizationSubscriptionsSubscriptionCurrencyResult']:
-        """
-        Currency details
-        """
+    def currencies(self) -> Optional[Sequence['outputs.GetOrganizationSubscriptionsSubscriptionCurrencyResult']]:
         return pulumi.get(self, "currencies")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        SPM internal Subscription ID
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="serviceName")
-    def service_name(self) -> str:
-        """
-        Customer friendly service name provided by PRG
-        """
+    def service_name(self) -> Optional[str]:
         return pulumi.get(self, "service_name")
 
     @property
     @pulumi.getter
-    def status(self) -> str:
-        """
-        Status of the plan
-        """
+    def status(self) -> Optional[str]:
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter(name="timeEnd")
-    def time_end(self) -> str:
-        """
-        Represents the date when the last service of the subscription ends
-        """
+    def time_end(self) -> Optional[str]:
         return pulumi.get(self, "time_end")
 
     @property
     @pulumi.getter(name="timeStart")
-    def time_start(self) -> str:
-        """
-        Represents the date when the first service of the subscription was activated
-        """
+    def time_start(self) -> Optional[str]:
         return pulumi.get(self, "time_start")
 
     @property
     @pulumi.getter(name="totalValue")
-    def total_value(self) -> str:
-        """
-        Total aggregate TCLV of all lines for the subscription including expired, active, and signed
-        """
+    def total_value(self) -> Optional[str]:
         return pulumi.get(self, "total_value")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        Subscription Type i.e. IAAS,SAAS,PAAS
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
 
 @pulumi.output_type
 class GetOrganizationSubscriptionsSubscriptionCurrencyResult(dict):
     def __init__(__self__, *,
-                 iso_code: str,
-                 name: str,
-                 std_precision: str):
-        """
-        :param str iso_code: Currency Code
-        :param str name: Currency name
-        :param str std_precision: Standard Precision of the Currency
-        """
-        pulumi.set(__self__, "iso_code", iso_code)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "std_precision", std_precision)
+                 iso_code: Optional[str] = None,
+                 name: Optional[str] = None,
+                 std_precision: Optional[str] = None):
+        if iso_code is not None:
+            pulumi.set(__self__, "iso_code", iso_code)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if std_precision is not None:
+            pulumi.set(__self__, "std_precision", std_precision)
 
     @property
     @pulumi.getter(name="isoCode")
-    def iso_code(self) -> str:
-        """
-        Currency Code
-        """
+    def iso_code(self) -> Optional[str]:
         return pulumi.get(self, "iso_code")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Currency name
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="stdPrecision")
-    def std_precision(self) -> str:
-        """
-        Standard Precision of the Currency
-        """
+    def std_precision(self) -> Optional[str]:
         return pulumi.get(self, "std_precision")
 
 

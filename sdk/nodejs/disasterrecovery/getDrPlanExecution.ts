@@ -47,88 +47,88 @@ export interface GetDrPlanExecutionResult {
     /**
      * The OCID of the compartment containing this DR plan execution.  Example: `ocid1.compartment.oc1..uniqueID`
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * The display name of the step execution.  Example: `DATABASE_SWITCHOVER`
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     readonly drPlanExecutionId: string;
     /**
      * The OCID of the DR protection group to which this DR plan execution belongs.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      */
-    readonly drProtectionGroupId: string;
+    readonly drProtectionGroupId?: string;
     /**
      * The total duration in seconds taken to complete the step execution.  Example: `35`
      */
-    readonly executionDurationInSec: number;
+    readonly executionDurationInSec?: number;
     /**
      * The options for a plan execution.
      */
-    readonly executionOptions: outputs.DisasterRecovery.GetDrPlanExecutionExecutionOption[];
+    readonly executionOptions?: outputs.DisasterRecovery.GetDrPlanExecutionExecutionOption[];
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * A list of groups executed in this DR plan execution.
      */
-    readonly groupExecutions: outputs.DisasterRecovery.GetDrPlanExecutionGroupExecution[];
+    readonly groupExecutions?: outputs.DisasterRecovery.GetDrPlanExecutionGroupExecution[];
     /**
      * The OCID of the DR plan execution.  Example: `ocid1.drplanexecution.oc1..uniqueID`
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * A message describing the DR plan execution's current state in more detail.
      */
-    readonly lifeCycleDetails: string;
+    readonly lifeCycleDetails?: string;
     /**
      * The details of an object storage log location for a DR protection group.
      */
-    readonly logLocations: outputs.DisasterRecovery.GetDrPlanExecutionLogLocation[];
+    readonly logLocations?: outputs.DisasterRecovery.GetDrPlanExecutionLogLocation[];
     /**
      * The OCID of peer DR protection group associated with this plan's DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      */
-    readonly peerDrProtectionGroupId: string;
+    readonly peerDrProtectionGroupId?: string;
     /**
      * The region of the peer DR protection group associated with this plan's DR protection group.  Example: `us-ashburn-1`
      */
-    readonly peerRegion: string;
+    readonly peerRegion?: string;
     /**
      * The type of the DR plan executed.
      */
-    readonly planExecutionType: string;
+    readonly planExecutionType?: string;
     /**
      * The OCID of the DR plan.  Example: `ocid1.drplan.oc1..uniqueID`
      */
-    readonly planId: string;
+    readonly planId?: string;
     /**
      * The current state of the DR plan execution.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * The date and time at which DR plan execution was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The date and time at which DR plan execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      */
-    readonly timeEnded: string;
+    readonly timeEnded?: string;
     /**
      * The date and time at which DR plan execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      */
-    readonly timeStarted: string;
+    readonly timeStarted?: string;
     /**
      * The time when DR plan execution was last updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific Dr Plan Execution resource in Oracle Cloud Infrastructure Disaster Recovery service.

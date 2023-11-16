@@ -9,6 +9,7 @@ import com.pulumi.oci.NetworkLoadBalancer.outputs.GetNetworkLoadBalancersPolicie
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -18,12 +19,12 @@ public final class GetNetworkLoadBalancersPoliciesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of network_load_balancers_policy_collection.
      * 
      */
-    private List<GetNetworkLoadBalancersPoliciesNetworkLoadBalancersPolicyCollection> networkLoadBalancersPolicyCollections;
+    private @Nullable List<GetNetworkLoadBalancersPoliciesNetworkLoadBalancersPolicyCollection> networkLoadBalancersPolicyCollections;
 
     private GetNetworkLoadBalancersPoliciesResult() {}
     public List<GetNetworkLoadBalancersPoliciesFilter> filters() {
@@ -33,15 +34,15 @@ public final class GetNetworkLoadBalancersPoliciesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of network_load_balancers_policy_collection.
      * 
      */
     public List<GetNetworkLoadBalancersPoliciesNetworkLoadBalancersPolicyCollection> networkLoadBalancersPolicyCollections() {
-        return this.networkLoadBalancersPolicyCollections;
+        return this.networkLoadBalancersPolicyCollections == null ? List.of() : this.networkLoadBalancersPolicyCollections;
     }
 
     public static Builder builder() {
@@ -54,8 +55,8 @@ public final class GetNetworkLoadBalancersPoliciesResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetNetworkLoadBalancersPoliciesFilter> filters;
-        private String id;
-        private List<GetNetworkLoadBalancersPoliciesNetworkLoadBalancersPolicyCollection> networkLoadBalancersPolicyCollections;
+        private @Nullable String id;
+        private @Nullable List<GetNetworkLoadBalancersPoliciesNetworkLoadBalancersPolicyCollection> networkLoadBalancersPolicyCollections;
         public Builder() {}
         public Builder(GetNetworkLoadBalancersPoliciesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -73,13 +74,13 @@ public final class GetNetworkLoadBalancersPoliciesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder networkLoadBalancersPolicyCollections(List<GetNetworkLoadBalancersPoliciesNetworkLoadBalancersPolicyCollection> networkLoadBalancersPolicyCollections) {
-            this.networkLoadBalancersPolicyCollections = Objects.requireNonNull(networkLoadBalancersPolicyCollections);
+        public Builder networkLoadBalancersPolicyCollections(@Nullable List<GetNetworkLoadBalancersPoliciesNetworkLoadBalancersPolicyCollection> networkLoadBalancersPolicyCollections) {
+            this.networkLoadBalancersPolicyCollections = networkLoadBalancersPolicyCollections;
             return this;
         }
         public Builder networkLoadBalancersPolicyCollections(GetNetworkLoadBalancersPoliciesNetworkLoadBalancersPolicyCollection... networkLoadBalancersPolicyCollections) {

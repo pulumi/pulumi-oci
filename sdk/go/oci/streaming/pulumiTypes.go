@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -49,12 +48,6 @@ func (i StreamPoolCustomEncryptionKeyArgs) ToStreamPoolCustomEncryptionKeyOutput
 
 func (i StreamPoolCustomEncryptionKeyArgs) ToStreamPoolCustomEncryptionKeyOutputWithContext(ctx context.Context) StreamPoolCustomEncryptionKeyOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(StreamPoolCustomEncryptionKeyOutput)
-}
-
-func (i StreamPoolCustomEncryptionKeyArgs) ToOutput(ctx context.Context) pulumix.Output[StreamPoolCustomEncryptionKey] {
-	return pulumix.Output[StreamPoolCustomEncryptionKey]{
-		OutputState: i.ToStreamPoolCustomEncryptionKeyOutputWithContext(ctx).OutputState,
-	}
 }
 
 func (i StreamPoolCustomEncryptionKeyArgs) ToStreamPoolCustomEncryptionKeyPtrOutput() StreamPoolCustomEncryptionKeyPtrOutput {
@@ -98,12 +91,6 @@ func (i *streamPoolCustomEncryptionKeyPtrType) ToStreamPoolCustomEncryptionKeyPt
 	return pulumi.ToOutputWithContext(ctx, i).(StreamPoolCustomEncryptionKeyPtrOutput)
 }
 
-func (i *streamPoolCustomEncryptionKeyPtrType) ToOutput(ctx context.Context) pulumix.Output[*StreamPoolCustomEncryptionKey] {
-	return pulumix.Output[*StreamPoolCustomEncryptionKey]{
-		OutputState: i.ToStreamPoolCustomEncryptionKeyPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type StreamPoolCustomEncryptionKeyOutput struct{ *pulumi.OutputState }
 
 func (StreamPoolCustomEncryptionKeyOutput) ElementType() reflect.Type {
@@ -128,12 +115,6 @@ func (o StreamPoolCustomEncryptionKeyOutput) ToStreamPoolCustomEncryptionKeyPtrO
 	}).(StreamPoolCustomEncryptionKeyPtrOutput)
 }
 
-func (o StreamPoolCustomEncryptionKeyOutput) ToOutput(ctx context.Context) pulumix.Output[StreamPoolCustomEncryptionKey] {
-	return pulumix.Output[StreamPoolCustomEncryptionKey]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Life cycle State of the custom key
 func (o StreamPoolCustomEncryptionKeyOutput) KeyState() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v StreamPoolCustomEncryptionKey) *string { return v.KeyState }).(pulumi.StringPtrOutput)
@@ -156,12 +137,6 @@ func (o StreamPoolCustomEncryptionKeyPtrOutput) ToStreamPoolCustomEncryptionKeyP
 
 func (o StreamPoolCustomEncryptionKeyPtrOutput) ToStreamPoolCustomEncryptionKeyPtrOutputWithContext(ctx context.Context) StreamPoolCustomEncryptionKeyPtrOutput {
 	return o
-}
-
-func (o StreamPoolCustomEncryptionKeyPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*StreamPoolCustomEncryptionKey] {
-	return pulumix.Output[*StreamPoolCustomEncryptionKey]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o StreamPoolCustomEncryptionKeyPtrOutput) Elem() StreamPoolCustomEncryptionKeyOutput {
@@ -239,12 +214,6 @@ func (i StreamPoolKafkaSettingsArgs) ToStreamPoolKafkaSettingsOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(StreamPoolKafkaSettingsOutput)
 }
 
-func (i StreamPoolKafkaSettingsArgs) ToOutput(ctx context.Context) pulumix.Output[StreamPoolKafkaSettings] {
-	return pulumix.Output[StreamPoolKafkaSettings]{
-		OutputState: i.ToStreamPoolKafkaSettingsOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i StreamPoolKafkaSettingsArgs) ToStreamPoolKafkaSettingsPtrOutput() StreamPoolKafkaSettingsPtrOutput {
 	return i.ToStreamPoolKafkaSettingsPtrOutputWithContext(context.Background())
 }
@@ -286,12 +255,6 @@ func (i *streamPoolKafkaSettingsPtrType) ToStreamPoolKafkaSettingsPtrOutputWithC
 	return pulumi.ToOutputWithContext(ctx, i).(StreamPoolKafkaSettingsPtrOutput)
 }
 
-func (i *streamPoolKafkaSettingsPtrType) ToOutput(ctx context.Context) pulumix.Output[*StreamPoolKafkaSettings] {
-	return pulumix.Output[*StreamPoolKafkaSettings]{
-		OutputState: i.ToStreamPoolKafkaSettingsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type StreamPoolKafkaSettingsOutput struct{ *pulumi.OutputState }
 
 func (StreamPoolKafkaSettingsOutput) ElementType() reflect.Type {
@@ -314,12 +277,6 @@ func (o StreamPoolKafkaSettingsOutput) ToStreamPoolKafkaSettingsPtrOutputWithCon
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v StreamPoolKafkaSettings) *StreamPoolKafkaSettings {
 		return &v
 	}).(StreamPoolKafkaSettingsPtrOutput)
-}
-
-func (o StreamPoolKafkaSettingsOutput) ToOutput(ctx context.Context) pulumix.Output[StreamPoolKafkaSettings] {
-	return pulumix.Output[StreamPoolKafkaSettings]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Enable auto creation of topic on the server.
@@ -354,12 +311,6 @@ func (o StreamPoolKafkaSettingsPtrOutput) ToStreamPoolKafkaSettingsPtrOutput() S
 
 func (o StreamPoolKafkaSettingsPtrOutput) ToStreamPoolKafkaSettingsPtrOutputWithContext(ctx context.Context) StreamPoolKafkaSettingsPtrOutput {
 	return o
-}
-
-func (o StreamPoolKafkaSettingsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*StreamPoolKafkaSettings] {
-	return pulumix.Output[*StreamPoolKafkaSettings]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o StreamPoolKafkaSettingsPtrOutput) Elem() StreamPoolKafkaSettingsOutput {
@@ -459,12 +410,6 @@ func (i StreamPoolPrivateEndpointSettingsArgs) ToStreamPoolPrivateEndpointSettin
 	return pulumi.ToOutputWithContext(ctx, i).(StreamPoolPrivateEndpointSettingsOutput)
 }
 
-func (i StreamPoolPrivateEndpointSettingsArgs) ToOutput(ctx context.Context) pulumix.Output[StreamPoolPrivateEndpointSettings] {
-	return pulumix.Output[StreamPoolPrivateEndpointSettings]{
-		OutputState: i.ToStreamPoolPrivateEndpointSettingsOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i StreamPoolPrivateEndpointSettingsArgs) ToStreamPoolPrivateEndpointSettingsPtrOutput() StreamPoolPrivateEndpointSettingsPtrOutput {
 	return i.ToStreamPoolPrivateEndpointSettingsPtrOutputWithContext(context.Background())
 }
@@ -506,12 +451,6 @@ func (i *streamPoolPrivateEndpointSettingsPtrType) ToStreamPoolPrivateEndpointSe
 	return pulumi.ToOutputWithContext(ctx, i).(StreamPoolPrivateEndpointSettingsPtrOutput)
 }
 
-func (i *streamPoolPrivateEndpointSettingsPtrType) ToOutput(ctx context.Context) pulumix.Output[*StreamPoolPrivateEndpointSettings] {
-	return pulumix.Output[*StreamPoolPrivateEndpointSettings]{
-		OutputState: i.ToStreamPoolPrivateEndpointSettingsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type StreamPoolPrivateEndpointSettingsOutput struct{ *pulumi.OutputState }
 
 func (StreamPoolPrivateEndpointSettingsOutput) ElementType() reflect.Type {
@@ -534,12 +473,6 @@ func (o StreamPoolPrivateEndpointSettingsOutput) ToStreamPoolPrivateEndpointSett
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v StreamPoolPrivateEndpointSettings) *StreamPoolPrivateEndpointSettings {
 		return &v
 	}).(StreamPoolPrivateEndpointSettingsPtrOutput)
-}
-
-func (o StreamPoolPrivateEndpointSettingsOutput) ToOutput(ctx context.Context) pulumix.Output[StreamPoolPrivateEndpointSettings] {
-	return pulumix.Output[StreamPoolPrivateEndpointSettings]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The optional list of network security groups to be used with the private endpoint of the stream pool. That value cannot be changed.
@@ -572,12 +505,6 @@ func (o StreamPoolPrivateEndpointSettingsPtrOutput) ToStreamPoolPrivateEndpointS
 
 func (o StreamPoolPrivateEndpointSettingsPtrOutput) ToStreamPoolPrivateEndpointSettingsPtrOutputWithContext(ctx context.Context) StreamPoolPrivateEndpointSettingsPtrOutput {
 	return o
-}
-
-func (o StreamPoolPrivateEndpointSettingsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*StreamPoolPrivateEndpointSettings] {
-	return pulumix.Output[*StreamPoolPrivateEndpointSettings]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o StreamPoolPrivateEndpointSettingsPtrOutput) Elem() StreamPoolPrivateEndpointSettingsOutput {
@@ -625,21 +552,21 @@ func (o StreamPoolPrivateEndpointSettingsPtrOutput) SubnetId() pulumi.StringPtrO
 
 type GetConnectHarnessesConnectHarness struct {
 	// The OCID of the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations": {"CostCenter": "42"}}'
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair that is applied with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// A filter to return only resources that match the given ID exactly.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Any additional details about the current state of the connect harness.
-	LifecycleStateDetails string `pulumi:"lifecycleStateDetails"`
+	LifecycleStateDetails *string `pulumi:"lifecycleStateDetails"`
 	// A filter to return only resources that match the given name exactly.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the connect harness was created, expressed in in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 }
 
 // GetConnectHarnessesConnectHarnessInput is an input type that accepts GetConnectHarnessesConnectHarnessArgs and GetConnectHarnessesConnectHarnessOutput values.
@@ -655,21 +582,21 @@ type GetConnectHarnessesConnectHarnessInput interface {
 
 type GetConnectHarnessesConnectHarnessArgs struct {
 	// The OCID of the compartment.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations": {"CostCenter": "42"}}'
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair that is applied with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// A filter to return only resources that match the given ID exactly.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Any additional details about the current state of the connect harness.
-	LifecycleStateDetails pulumi.StringInput `pulumi:"lifecycleStateDetails"`
+	LifecycleStateDetails pulumi.StringPtrInput `pulumi:"lifecycleStateDetails"`
 	// A filter to return only resources that match the given name exactly.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The date and time the connect harness was created, expressed in in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 }
 
 func (GetConnectHarnessesConnectHarnessArgs) ElementType() reflect.Type {
@@ -682,12 +609,6 @@ func (i GetConnectHarnessesConnectHarnessArgs) ToGetConnectHarnessesConnectHarne
 
 func (i GetConnectHarnessesConnectHarnessArgs) ToGetConnectHarnessesConnectHarnessOutputWithContext(ctx context.Context) GetConnectHarnessesConnectHarnessOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetConnectHarnessesConnectHarnessOutput)
-}
-
-func (i GetConnectHarnessesConnectHarnessArgs) ToOutput(ctx context.Context) pulumix.Output[GetConnectHarnessesConnectHarness] {
-	return pulumix.Output[GetConnectHarnessesConnectHarness]{
-		OutputState: i.ToGetConnectHarnessesConnectHarnessOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetConnectHarnessesConnectHarnessArrayInput is an input type that accepts GetConnectHarnessesConnectHarnessArray and GetConnectHarnessesConnectHarnessArrayOutput values.
@@ -715,12 +636,6 @@ func (i GetConnectHarnessesConnectHarnessArray) ToGetConnectHarnessesConnectHarn
 	return pulumi.ToOutputWithContext(ctx, i).(GetConnectHarnessesConnectHarnessArrayOutput)
 }
 
-func (i GetConnectHarnessesConnectHarnessArray) ToOutput(ctx context.Context) pulumix.Output[[]GetConnectHarnessesConnectHarness] {
-	return pulumix.Output[[]GetConnectHarnessesConnectHarness]{
-		OutputState: i.ToGetConnectHarnessesConnectHarnessArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetConnectHarnessesConnectHarnessOutput struct{ *pulumi.OutputState }
 
 func (GetConnectHarnessesConnectHarnessOutput) ElementType() reflect.Type {
@@ -735,15 +650,9 @@ func (o GetConnectHarnessesConnectHarnessOutput) ToGetConnectHarnessesConnectHar
 	return o
 }
 
-func (o GetConnectHarnessesConnectHarnessOutput) ToOutput(ctx context.Context) pulumix.Output[GetConnectHarnessesConnectHarness] {
-	return pulumix.Output[GetConnectHarnessesConnectHarness]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment.
-func (o GetConnectHarnessesConnectHarnessOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetConnectHarnessesConnectHarness) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetConnectHarnessesConnectHarnessOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetConnectHarnessesConnectHarness) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations": {"CostCenter": "42"}}'
@@ -757,28 +666,28 @@ func (o GetConnectHarnessesConnectHarnessOutput) FreeformTags() pulumi.MapOutput
 }
 
 // A filter to return only resources that match the given ID exactly.
-func (o GetConnectHarnessesConnectHarnessOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetConnectHarnessesConnectHarness) string { return v.Id }).(pulumi.StringOutput)
+func (o GetConnectHarnessesConnectHarnessOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetConnectHarnessesConnectHarness) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Any additional details about the current state of the connect harness.
-func (o GetConnectHarnessesConnectHarnessOutput) LifecycleStateDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetConnectHarnessesConnectHarness) string { return v.LifecycleStateDetails }).(pulumi.StringOutput)
+func (o GetConnectHarnessesConnectHarnessOutput) LifecycleStateDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetConnectHarnessesConnectHarness) *string { return v.LifecycleStateDetails }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only resources that match the given name exactly.
-func (o GetConnectHarnessesConnectHarnessOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetConnectHarnessesConnectHarness) string { return v.Name }).(pulumi.StringOutput)
+func (o GetConnectHarnessesConnectHarnessOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetConnectHarnessesConnectHarness) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
-func (o GetConnectHarnessesConnectHarnessOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetConnectHarnessesConnectHarness) string { return v.State }).(pulumi.StringOutput)
+func (o GetConnectHarnessesConnectHarnessOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetConnectHarnessesConnectHarness) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the connect harness was created, expressed in in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
-func (o GetConnectHarnessesConnectHarnessOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetConnectHarnessesConnectHarness) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetConnectHarnessesConnectHarnessOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetConnectHarnessesConnectHarness) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 type GetConnectHarnessesConnectHarnessArrayOutput struct{ *pulumi.OutputState }
@@ -793,12 +702,6 @@ func (o GetConnectHarnessesConnectHarnessArrayOutput) ToGetConnectHarnessesConne
 
 func (o GetConnectHarnessesConnectHarnessArrayOutput) ToGetConnectHarnessesConnectHarnessArrayOutputWithContext(ctx context.Context) GetConnectHarnessesConnectHarnessArrayOutput {
 	return o
-}
-
-func (o GetConnectHarnessesConnectHarnessArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetConnectHarnessesConnectHarness] {
-	return pulumix.Output[[]GetConnectHarnessesConnectHarness]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetConnectHarnessesConnectHarnessArrayOutput) Index(i pulumi.IntInput) GetConnectHarnessesConnectHarnessOutput {
@@ -844,12 +747,6 @@ func (i GetConnectHarnessesFilterArgs) ToGetConnectHarnessesFilterOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetConnectHarnessesFilterOutput)
 }
 
-func (i GetConnectHarnessesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetConnectHarnessesFilter] {
-	return pulumix.Output[GetConnectHarnessesFilter]{
-		OutputState: i.ToGetConnectHarnessesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetConnectHarnessesFilterArrayInput is an input type that accepts GetConnectHarnessesFilterArray and GetConnectHarnessesFilterArrayOutput values.
 // You can construct a concrete instance of `GetConnectHarnessesFilterArrayInput` via:
 //
@@ -875,12 +772,6 @@ func (i GetConnectHarnessesFilterArray) ToGetConnectHarnessesFilterArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetConnectHarnessesFilterArrayOutput)
 }
 
-func (i GetConnectHarnessesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetConnectHarnessesFilter] {
-	return pulumix.Output[[]GetConnectHarnessesFilter]{
-		OutputState: i.ToGetConnectHarnessesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetConnectHarnessesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetConnectHarnessesFilterOutput) ElementType() reflect.Type {
@@ -893,12 +784,6 @@ func (o GetConnectHarnessesFilterOutput) ToGetConnectHarnessesFilterOutput() Get
 
 func (o GetConnectHarnessesFilterOutput) ToGetConnectHarnessesFilterOutputWithContext(ctx context.Context) GetConnectHarnessesFilterOutput {
 	return o
-}
-
-func (o GetConnectHarnessesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetConnectHarnessesFilter] {
-	return pulumix.Output[GetConnectHarnessesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A filter to return only resources that match the given name exactly.
@@ -928,12 +813,6 @@ func (o GetConnectHarnessesFilterArrayOutput) ToGetConnectHarnessesFilterArrayOu
 	return o
 }
 
-func (o GetConnectHarnessesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetConnectHarnessesFilter] {
-	return pulumix.Output[[]GetConnectHarnessesFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetConnectHarnessesFilterArrayOutput) Index(i pulumi.IntInput) GetConnectHarnessesFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetConnectHarnessesFilter {
 		return vs[0].([]GetConnectHarnessesFilter)[vs[1].(int)]
@@ -942,9 +821,9 @@ func (o GetConnectHarnessesFilterArrayOutput) Index(i pulumi.IntInput) GetConnec
 
 type GetStreamPoolCustomEncryptionKey struct {
 	// Life cycle State of the custom key
-	KeyState string `pulumi:"keyState"`
+	KeyState *string `pulumi:"keyState"`
 	// Custom Encryption Key (Master Key) ocid.
-	KmsKeyId string `pulumi:"kmsKeyId"`
+	KmsKeyId *string `pulumi:"kmsKeyId"`
 }
 
 // GetStreamPoolCustomEncryptionKeyInput is an input type that accepts GetStreamPoolCustomEncryptionKeyArgs and GetStreamPoolCustomEncryptionKeyOutput values.
@@ -960,9 +839,9 @@ type GetStreamPoolCustomEncryptionKeyInput interface {
 
 type GetStreamPoolCustomEncryptionKeyArgs struct {
 	// Life cycle State of the custom key
-	KeyState pulumi.StringInput `pulumi:"keyState"`
+	KeyState pulumi.StringPtrInput `pulumi:"keyState"`
 	// Custom Encryption Key (Master Key) ocid.
-	KmsKeyId pulumi.StringInput `pulumi:"kmsKeyId"`
+	KmsKeyId pulumi.StringPtrInput `pulumi:"kmsKeyId"`
 }
 
 func (GetStreamPoolCustomEncryptionKeyArgs) ElementType() reflect.Type {
@@ -975,12 +854,6 @@ func (i GetStreamPoolCustomEncryptionKeyArgs) ToGetStreamPoolCustomEncryptionKey
 
 func (i GetStreamPoolCustomEncryptionKeyArgs) ToGetStreamPoolCustomEncryptionKeyOutputWithContext(ctx context.Context) GetStreamPoolCustomEncryptionKeyOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetStreamPoolCustomEncryptionKeyOutput)
-}
-
-func (i GetStreamPoolCustomEncryptionKeyArgs) ToOutput(ctx context.Context) pulumix.Output[GetStreamPoolCustomEncryptionKey] {
-	return pulumix.Output[GetStreamPoolCustomEncryptionKey]{
-		OutputState: i.ToGetStreamPoolCustomEncryptionKeyOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetStreamPoolCustomEncryptionKeyArrayInput is an input type that accepts GetStreamPoolCustomEncryptionKeyArray and GetStreamPoolCustomEncryptionKeyArrayOutput values.
@@ -1008,12 +881,6 @@ func (i GetStreamPoolCustomEncryptionKeyArray) ToGetStreamPoolCustomEncryptionKe
 	return pulumi.ToOutputWithContext(ctx, i).(GetStreamPoolCustomEncryptionKeyArrayOutput)
 }
 
-func (i GetStreamPoolCustomEncryptionKeyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetStreamPoolCustomEncryptionKey] {
-	return pulumix.Output[[]GetStreamPoolCustomEncryptionKey]{
-		OutputState: i.ToGetStreamPoolCustomEncryptionKeyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetStreamPoolCustomEncryptionKeyOutput struct{ *pulumi.OutputState }
 
 func (GetStreamPoolCustomEncryptionKeyOutput) ElementType() reflect.Type {
@@ -1028,20 +895,14 @@ func (o GetStreamPoolCustomEncryptionKeyOutput) ToGetStreamPoolCustomEncryptionK
 	return o
 }
 
-func (o GetStreamPoolCustomEncryptionKeyOutput) ToOutput(ctx context.Context) pulumix.Output[GetStreamPoolCustomEncryptionKey] {
-	return pulumix.Output[GetStreamPoolCustomEncryptionKey]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Life cycle State of the custom key
-func (o GetStreamPoolCustomEncryptionKeyOutput) KeyState() pulumi.StringOutput {
-	return o.ApplyT(func(v GetStreamPoolCustomEncryptionKey) string { return v.KeyState }).(pulumi.StringOutput)
+func (o GetStreamPoolCustomEncryptionKeyOutput) KeyState() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetStreamPoolCustomEncryptionKey) *string { return v.KeyState }).(pulumi.StringPtrOutput)
 }
 
 // Custom Encryption Key (Master Key) ocid.
-func (o GetStreamPoolCustomEncryptionKeyOutput) KmsKeyId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetStreamPoolCustomEncryptionKey) string { return v.KmsKeyId }).(pulumi.StringOutput)
+func (o GetStreamPoolCustomEncryptionKeyOutput) KmsKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetStreamPoolCustomEncryptionKey) *string { return v.KmsKeyId }).(pulumi.StringPtrOutput)
 }
 
 type GetStreamPoolCustomEncryptionKeyArrayOutput struct{ *pulumi.OutputState }
@@ -1058,12 +919,6 @@ func (o GetStreamPoolCustomEncryptionKeyArrayOutput) ToGetStreamPoolCustomEncryp
 	return o
 }
 
-func (o GetStreamPoolCustomEncryptionKeyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetStreamPoolCustomEncryptionKey] {
-	return pulumix.Output[[]GetStreamPoolCustomEncryptionKey]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetStreamPoolCustomEncryptionKeyArrayOutput) Index(i pulumi.IntInput) GetStreamPoolCustomEncryptionKeyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetStreamPoolCustomEncryptionKey {
 		return vs[0].([]GetStreamPoolCustomEncryptionKey)[vs[1].(int)]
@@ -1072,13 +927,13 @@ func (o GetStreamPoolCustomEncryptionKeyArrayOutput) Index(i pulumi.IntInput) Ge
 
 type GetStreamPoolKafkaSetting struct {
 	// Enable auto creation of topic on the server.
-	AutoCreateTopicsEnable bool `pulumi:"autoCreateTopicsEnable"`
+	AutoCreateTopicsEnable *bool `pulumi:"autoCreateTopicsEnable"`
 	// Bootstrap servers.
-	BootstrapServers string `pulumi:"bootstrapServers"`
+	BootstrapServers *string `pulumi:"bootstrapServers"`
 	// The number of hours to keep a log file before deleting it (in hours).
-	LogRetentionHours int `pulumi:"logRetentionHours"`
+	LogRetentionHours *int `pulumi:"logRetentionHours"`
 	// The default number of log partitions per topic.
-	NumPartitions int `pulumi:"numPartitions"`
+	NumPartitions *int `pulumi:"numPartitions"`
 }
 
 // GetStreamPoolKafkaSettingInput is an input type that accepts GetStreamPoolKafkaSettingArgs and GetStreamPoolKafkaSettingOutput values.
@@ -1094,13 +949,13 @@ type GetStreamPoolKafkaSettingInput interface {
 
 type GetStreamPoolKafkaSettingArgs struct {
 	// Enable auto creation of topic on the server.
-	AutoCreateTopicsEnable pulumi.BoolInput `pulumi:"autoCreateTopicsEnable"`
+	AutoCreateTopicsEnable pulumi.BoolPtrInput `pulumi:"autoCreateTopicsEnable"`
 	// Bootstrap servers.
-	BootstrapServers pulumi.StringInput `pulumi:"bootstrapServers"`
+	BootstrapServers pulumi.StringPtrInput `pulumi:"bootstrapServers"`
 	// The number of hours to keep a log file before deleting it (in hours).
-	LogRetentionHours pulumi.IntInput `pulumi:"logRetentionHours"`
+	LogRetentionHours pulumi.IntPtrInput `pulumi:"logRetentionHours"`
 	// The default number of log partitions per topic.
-	NumPartitions pulumi.IntInput `pulumi:"numPartitions"`
+	NumPartitions pulumi.IntPtrInput `pulumi:"numPartitions"`
 }
 
 func (GetStreamPoolKafkaSettingArgs) ElementType() reflect.Type {
@@ -1113,12 +968,6 @@ func (i GetStreamPoolKafkaSettingArgs) ToGetStreamPoolKafkaSettingOutput() GetSt
 
 func (i GetStreamPoolKafkaSettingArgs) ToGetStreamPoolKafkaSettingOutputWithContext(ctx context.Context) GetStreamPoolKafkaSettingOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetStreamPoolKafkaSettingOutput)
-}
-
-func (i GetStreamPoolKafkaSettingArgs) ToOutput(ctx context.Context) pulumix.Output[GetStreamPoolKafkaSetting] {
-	return pulumix.Output[GetStreamPoolKafkaSetting]{
-		OutputState: i.ToGetStreamPoolKafkaSettingOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetStreamPoolKafkaSettingArrayInput is an input type that accepts GetStreamPoolKafkaSettingArray and GetStreamPoolKafkaSettingArrayOutput values.
@@ -1146,12 +995,6 @@ func (i GetStreamPoolKafkaSettingArray) ToGetStreamPoolKafkaSettingArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetStreamPoolKafkaSettingArrayOutput)
 }
 
-func (i GetStreamPoolKafkaSettingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetStreamPoolKafkaSetting] {
-	return pulumix.Output[[]GetStreamPoolKafkaSetting]{
-		OutputState: i.ToGetStreamPoolKafkaSettingArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetStreamPoolKafkaSettingOutput struct{ *pulumi.OutputState }
 
 func (GetStreamPoolKafkaSettingOutput) ElementType() reflect.Type {
@@ -1166,30 +1009,24 @@ func (o GetStreamPoolKafkaSettingOutput) ToGetStreamPoolKafkaSettingOutputWithCo
 	return o
 }
 
-func (o GetStreamPoolKafkaSettingOutput) ToOutput(ctx context.Context) pulumix.Output[GetStreamPoolKafkaSetting] {
-	return pulumix.Output[GetStreamPoolKafkaSetting]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Enable auto creation of topic on the server.
-func (o GetStreamPoolKafkaSettingOutput) AutoCreateTopicsEnable() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetStreamPoolKafkaSetting) bool { return v.AutoCreateTopicsEnable }).(pulumi.BoolOutput)
+func (o GetStreamPoolKafkaSettingOutput) AutoCreateTopicsEnable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetStreamPoolKafkaSetting) *bool { return v.AutoCreateTopicsEnable }).(pulumi.BoolPtrOutput)
 }
 
 // Bootstrap servers.
-func (o GetStreamPoolKafkaSettingOutput) BootstrapServers() pulumi.StringOutput {
-	return o.ApplyT(func(v GetStreamPoolKafkaSetting) string { return v.BootstrapServers }).(pulumi.StringOutput)
+func (o GetStreamPoolKafkaSettingOutput) BootstrapServers() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetStreamPoolKafkaSetting) *string { return v.BootstrapServers }).(pulumi.StringPtrOutput)
 }
 
 // The number of hours to keep a log file before deleting it (in hours).
-func (o GetStreamPoolKafkaSettingOutput) LogRetentionHours() pulumi.IntOutput {
-	return o.ApplyT(func(v GetStreamPoolKafkaSetting) int { return v.LogRetentionHours }).(pulumi.IntOutput)
+func (o GetStreamPoolKafkaSettingOutput) LogRetentionHours() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetStreamPoolKafkaSetting) *int { return v.LogRetentionHours }).(pulumi.IntPtrOutput)
 }
 
 // The default number of log partitions per topic.
-func (o GetStreamPoolKafkaSettingOutput) NumPartitions() pulumi.IntOutput {
-	return o.ApplyT(func(v GetStreamPoolKafkaSetting) int { return v.NumPartitions }).(pulumi.IntOutput)
+func (o GetStreamPoolKafkaSettingOutput) NumPartitions() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetStreamPoolKafkaSetting) *int { return v.NumPartitions }).(pulumi.IntPtrOutput)
 }
 
 type GetStreamPoolKafkaSettingArrayOutput struct{ *pulumi.OutputState }
@@ -1206,12 +1043,6 @@ func (o GetStreamPoolKafkaSettingArrayOutput) ToGetStreamPoolKafkaSettingArrayOu
 	return o
 }
 
-func (o GetStreamPoolKafkaSettingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetStreamPoolKafkaSetting] {
-	return pulumix.Output[[]GetStreamPoolKafkaSetting]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetStreamPoolKafkaSettingArrayOutput) Index(i pulumi.IntInput) GetStreamPoolKafkaSettingOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetStreamPoolKafkaSetting {
 		return vs[0].([]GetStreamPoolKafkaSetting)[vs[1].(int)]
@@ -1222,9 +1053,9 @@ type GetStreamPoolPrivateEndpointSetting struct {
 	// The optional list of network security groups that are associated with the private endpoint of the stream pool.
 	NsgIds []string `pulumi:"nsgIds"`
 	// The private IP associated with the stream pool in the associated subnetId. The stream pool's FQDN resolves to that IP and should be used - instead of the private IP - in order to not trigger any TLS issues.
-	PrivateEndpointIp string `pulumi:"privateEndpointIp"`
+	PrivateEndpointIp *string `pulumi:"privateEndpointIp"`
 	// The subnet id from which the private stream pool can be accessed. Trying to access the streams from another network location will result in an error.
-	SubnetId string `pulumi:"subnetId"`
+	SubnetId *string `pulumi:"subnetId"`
 }
 
 // GetStreamPoolPrivateEndpointSettingInput is an input type that accepts GetStreamPoolPrivateEndpointSettingArgs and GetStreamPoolPrivateEndpointSettingOutput values.
@@ -1242,9 +1073,9 @@ type GetStreamPoolPrivateEndpointSettingArgs struct {
 	// The optional list of network security groups that are associated with the private endpoint of the stream pool.
 	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
 	// The private IP associated with the stream pool in the associated subnetId. The stream pool's FQDN resolves to that IP and should be used - instead of the private IP - in order to not trigger any TLS issues.
-	PrivateEndpointIp pulumi.StringInput `pulumi:"privateEndpointIp"`
+	PrivateEndpointIp pulumi.StringPtrInput `pulumi:"privateEndpointIp"`
 	// The subnet id from which the private stream pool can be accessed. Trying to access the streams from another network location will result in an error.
-	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
 }
 
 func (GetStreamPoolPrivateEndpointSettingArgs) ElementType() reflect.Type {
@@ -1257,12 +1088,6 @@ func (i GetStreamPoolPrivateEndpointSettingArgs) ToGetStreamPoolPrivateEndpointS
 
 func (i GetStreamPoolPrivateEndpointSettingArgs) ToGetStreamPoolPrivateEndpointSettingOutputWithContext(ctx context.Context) GetStreamPoolPrivateEndpointSettingOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetStreamPoolPrivateEndpointSettingOutput)
-}
-
-func (i GetStreamPoolPrivateEndpointSettingArgs) ToOutput(ctx context.Context) pulumix.Output[GetStreamPoolPrivateEndpointSetting] {
-	return pulumix.Output[GetStreamPoolPrivateEndpointSetting]{
-		OutputState: i.ToGetStreamPoolPrivateEndpointSettingOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetStreamPoolPrivateEndpointSettingArrayInput is an input type that accepts GetStreamPoolPrivateEndpointSettingArray and GetStreamPoolPrivateEndpointSettingArrayOutput values.
@@ -1290,12 +1115,6 @@ func (i GetStreamPoolPrivateEndpointSettingArray) ToGetStreamPoolPrivateEndpoint
 	return pulumi.ToOutputWithContext(ctx, i).(GetStreamPoolPrivateEndpointSettingArrayOutput)
 }
 
-func (i GetStreamPoolPrivateEndpointSettingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetStreamPoolPrivateEndpointSetting] {
-	return pulumix.Output[[]GetStreamPoolPrivateEndpointSetting]{
-		OutputState: i.ToGetStreamPoolPrivateEndpointSettingArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetStreamPoolPrivateEndpointSettingOutput struct{ *pulumi.OutputState }
 
 func (GetStreamPoolPrivateEndpointSettingOutput) ElementType() reflect.Type {
@@ -1310,25 +1129,19 @@ func (o GetStreamPoolPrivateEndpointSettingOutput) ToGetStreamPoolPrivateEndpoin
 	return o
 }
 
-func (o GetStreamPoolPrivateEndpointSettingOutput) ToOutput(ctx context.Context) pulumix.Output[GetStreamPoolPrivateEndpointSetting] {
-	return pulumix.Output[GetStreamPoolPrivateEndpointSetting]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The optional list of network security groups that are associated with the private endpoint of the stream pool.
 func (o GetStreamPoolPrivateEndpointSettingOutput) NsgIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetStreamPoolPrivateEndpointSetting) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
 }
 
 // The private IP associated with the stream pool in the associated subnetId. The stream pool's FQDN resolves to that IP and should be used - instead of the private IP - in order to not trigger any TLS issues.
-func (o GetStreamPoolPrivateEndpointSettingOutput) PrivateEndpointIp() pulumi.StringOutput {
-	return o.ApplyT(func(v GetStreamPoolPrivateEndpointSetting) string { return v.PrivateEndpointIp }).(pulumi.StringOutput)
+func (o GetStreamPoolPrivateEndpointSettingOutput) PrivateEndpointIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetStreamPoolPrivateEndpointSetting) *string { return v.PrivateEndpointIp }).(pulumi.StringPtrOutput)
 }
 
 // The subnet id from which the private stream pool can be accessed. Trying to access the streams from another network location will result in an error.
-func (o GetStreamPoolPrivateEndpointSettingOutput) SubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetStreamPoolPrivateEndpointSetting) string { return v.SubnetId }).(pulumi.StringOutput)
+func (o GetStreamPoolPrivateEndpointSettingOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetStreamPoolPrivateEndpointSetting) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
 }
 
 type GetStreamPoolPrivateEndpointSettingArrayOutput struct{ *pulumi.OutputState }
@@ -1343,12 +1156,6 @@ func (o GetStreamPoolPrivateEndpointSettingArrayOutput) ToGetStreamPoolPrivateEn
 
 func (o GetStreamPoolPrivateEndpointSettingArrayOutput) ToGetStreamPoolPrivateEndpointSettingArrayOutputWithContext(ctx context.Context) GetStreamPoolPrivateEndpointSettingArrayOutput {
 	return o
-}
-
-func (o GetStreamPoolPrivateEndpointSettingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetStreamPoolPrivateEndpointSetting] {
-	return pulumix.Output[[]GetStreamPoolPrivateEndpointSetting]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetStreamPoolPrivateEndpointSettingArrayOutput) Index(i pulumi.IntInput) GetStreamPoolPrivateEndpointSettingOutput {
@@ -1394,12 +1201,6 @@ func (i GetStreamPoolsFilterArgs) ToGetStreamPoolsFilterOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GetStreamPoolsFilterOutput)
 }
 
-func (i GetStreamPoolsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetStreamPoolsFilter] {
-	return pulumix.Output[GetStreamPoolsFilter]{
-		OutputState: i.ToGetStreamPoolsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetStreamPoolsFilterArrayInput is an input type that accepts GetStreamPoolsFilterArray and GetStreamPoolsFilterArrayOutput values.
 // You can construct a concrete instance of `GetStreamPoolsFilterArrayInput` via:
 //
@@ -1425,12 +1226,6 @@ func (i GetStreamPoolsFilterArray) ToGetStreamPoolsFilterArrayOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetStreamPoolsFilterArrayOutput)
 }
 
-func (i GetStreamPoolsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetStreamPoolsFilter] {
-	return pulumix.Output[[]GetStreamPoolsFilter]{
-		OutputState: i.ToGetStreamPoolsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetStreamPoolsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetStreamPoolsFilterOutput) ElementType() reflect.Type {
@@ -1443,12 +1238,6 @@ func (o GetStreamPoolsFilterOutput) ToGetStreamPoolsFilterOutput() GetStreamPool
 
 func (o GetStreamPoolsFilterOutput) ToGetStreamPoolsFilterOutputWithContext(ctx context.Context) GetStreamPoolsFilterOutput {
 	return o
-}
-
-func (o GetStreamPoolsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetStreamPoolsFilter] {
-	return pulumix.Output[GetStreamPoolsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A filter to return only resources that match the given name exactly.
@@ -1478,12 +1267,6 @@ func (o GetStreamPoolsFilterArrayOutput) ToGetStreamPoolsFilterArrayOutputWithCo
 	return o
 }
 
-func (o GetStreamPoolsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetStreamPoolsFilter] {
-	return pulumix.Output[[]GetStreamPoolsFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetStreamPoolsFilterArrayOutput) Index(i pulumi.IntInput) GetStreamPoolsFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetStreamPoolsFilter {
 		return vs[0].([]GetStreamPoolsFilter)[vs[1].(int)]
@@ -1492,31 +1275,31 @@ func (o GetStreamPoolsFilterArrayOutput) Index(i pulumi.IntInput) GetStreamPools
 
 type GetStreamPoolsStreamPool struct {
 	// The OCID of the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Custom Encryption Key which will be used for encryption by all the streams in the pool.
 	CustomEncryptionKeys []GetStreamPoolsStreamPoolCustomEncryptionKey `pulumi:"customEncryptionKeys"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations": {"CostCenter": "42"}}'
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The FQDN used to access the streams inside the stream pool (same FQDN as the messagesEndpoint attribute of a [Stream](https://docs.cloud.oracle.com/iaas/api/#/en/streaming/20180418/Stream) object). If the stream pool is private, the FQDN is customized and can only be accessed from inside the associated subnetId, otherwise the FQDN is publicly resolvable. Depending on which protocol you attempt to use, you need to either prepend https or append the Kafka port.
-	EndpointFqdn string `pulumi:"endpointFqdn"`
+	EndpointFqdn *string `pulumi:"endpointFqdn"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair that is applied with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// A filter to return only resources that match the given ID exactly.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// True if the stream pool is private, false otherwise. The associated endpoint and subnetId of a private stream pool can be retrieved through the [GetStreamPool](https://docs.cloud.oracle.com/iaas/api/#/en/streaming/20180418/StreamPool/GetStreamPool) API.
-	IsPrivate bool `pulumi:"isPrivate"`
+	IsPrivate *bool `pulumi:"isPrivate"`
 	// Settings for the Kafka compatibility layer.
 	KafkaSettings []GetStreamPoolsStreamPoolKafkaSetting `pulumi:"kafkaSettings"`
 	// Any additional details about the current state of the stream.
-	LifecycleStateDetails string `pulumi:"lifecycleStateDetails"`
+	LifecycleStateDetails *string `pulumi:"lifecycleStateDetails"`
 	// A filter to return only resources that match the given name exactly.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Optional settings if the stream pool is private.
 	PrivateEndpointSettings []GetStreamPoolsStreamPoolPrivateEndpointSetting `pulumi:"privateEndpointSettings"`
 	// A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the stream pool was created, expressed in in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 }
 
 // GetStreamPoolsStreamPoolInput is an input type that accepts GetStreamPoolsStreamPoolArgs and GetStreamPoolsStreamPoolOutput values.
@@ -1532,31 +1315,31 @@ type GetStreamPoolsStreamPoolInput interface {
 
 type GetStreamPoolsStreamPoolArgs struct {
 	// The OCID of the compartment.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Custom Encryption Key which will be used for encryption by all the streams in the pool.
 	CustomEncryptionKeys GetStreamPoolsStreamPoolCustomEncryptionKeyArrayInput `pulumi:"customEncryptionKeys"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations": {"CostCenter": "42"}}'
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// The FQDN used to access the streams inside the stream pool (same FQDN as the messagesEndpoint attribute of a [Stream](https://docs.cloud.oracle.com/iaas/api/#/en/streaming/20180418/Stream) object). If the stream pool is private, the FQDN is customized and can only be accessed from inside the associated subnetId, otherwise the FQDN is publicly resolvable. Depending on which protocol you attempt to use, you need to either prepend https or append the Kafka port.
-	EndpointFqdn pulumi.StringInput `pulumi:"endpointFqdn"`
+	EndpointFqdn pulumi.StringPtrInput `pulumi:"endpointFqdn"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair that is applied with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// A filter to return only resources that match the given ID exactly.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// True if the stream pool is private, false otherwise. The associated endpoint and subnetId of a private stream pool can be retrieved through the [GetStreamPool](https://docs.cloud.oracle.com/iaas/api/#/en/streaming/20180418/StreamPool/GetStreamPool) API.
-	IsPrivate pulumi.BoolInput `pulumi:"isPrivate"`
+	IsPrivate pulumi.BoolPtrInput `pulumi:"isPrivate"`
 	// Settings for the Kafka compatibility layer.
 	KafkaSettings GetStreamPoolsStreamPoolKafkaSettingArrayInput `pulumi:"kafkaSettings"`
 	// Any additional details about the current state of the stream.
-	LifecycleStateDetails pulumi.StringInput `pulumi:"lifecycleStateDetails"`
+	LifecycleStateDetails pulumi.StringPtrInput `pulumi:"lifecycleStateDetails"`
 	// A filter to return only resources that match the given name exactly.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Optional settings if the stream pool is private.
 	PrivateEndpointSettings GetStreamPoolsStreamPoolPrivateEndpointSettingArrayInput `pulumi:"privateEndpointSettings"`
 	// A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The date and time the stream pool was created, expressed in in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 }
 
 func (GetStreamPoolsStreamPoolArgs) ElementType() reflect.Type {
@@ -1569,12 +1352,6 @@ func (i GetStreamPoolsStreamPoolArgs) ToGetStreamPoolsStreamPoolOutput() GetStre
 
 func (i GetStreamPoolsStreamPoolArgs) ToGetStreamPoolsStreamPoolOutputWithContext(ctx context.Context) GetStreamPoolsStreamPoolOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetStreamPoolsStreamPoolOutput)
-}
-
-func (i GetStreamPoolsStreamPoolArgs) ToOutput(ctx context.Context) pulumix.Output[GetStreamPoolsStreamPool] {
-	return pulumix.Output[GetStreamPoolsStreamPool]{
-		OutputState: i.ToGetStreamPoolsStreamPoolOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetStreamPoolsStreamPoolArrayInput is an input type that accepts GetStreamPoolsStreamPoolArray and GetStreamPoolsStreamPoolArrayOutput values.
@@ -1602,12 +1379,6 @@ func (i GetStreamPoolsStreamPoolArray) ToGetStreamPoolsStreamPoolArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetStreamPoolsStreamPoolArrayOutput)
 }
 
-func (i GetStreamPoolsStreamPoolArray) ToOutput(ctx context.Context) pulumix.Output[[]GetStreamPoolsStreamPool] {
-	return pulumix.Output[[]GetStreamPoolsStreamPool]{
-		OutputState: i.ToGetStreamPoolsStreamPoolArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetStreamPoolsStreamPoolOutput struct{ *pulumi.OutputState }
 
 func (GetStreamPoolsStreamPoolOutput) ElementType() reflect.Type {
@@ -1622,15 +1393,9 @@ func (o GetStreamPoolsStreamPoolOutput) ToGetStreamPoolsStreamPoolOutputWithCont
 	return o
 }
 
-func (o GetStreamPoolsStreamPoolOutput) ToOutput(ctx context.Context) pulumix.Output[GetStreamPoolsStreamPool] {
-	return pulumix.Output[GetStreamPoolsStreamPool]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment.
-func (o GetStreamPoolsStreamPoolOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetStreamPoolsStreamPool) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetStreamPoolsStreamPoolOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetStreamPoolsStreamPool) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Custom Encryption Key which will be used for encryption by all the streams in the pool.
@@ -1646,8 +1411,8 @@ func (o GetStreamPoolsStreamPoolOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // The FQDN used to access the streams inside the stream pool (same FQDN as the messagesEndpoint attribute of a [Stream](https://docs.cloud.oracle.com/iaas/api/#/en/streaming/20180418/Stream) object). If the stream pool is private, the FQDN is customized and can only be accessed from inside the associated subnetId, otherwise the FQDN is publicly resolvable. Depending on which protocol you attempt to use, you need to either prepend https or append the Kafka port.
-func (o GetStreamPoolsStreamPoolOutput) EndpointFqdn() pulumi.StringOutput {
-	return o.ApplyT(func(v GetStreamPoolsStreamPool) string { return v.EndpointFqdn }).(pulumi.StringOutput)
+func (o GetStreamPoolsStreamPoolOutput) EndpointFqdn() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetStreamPoolsStreamPool) *string { return v.EndpointFqdn }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair that is applied with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -1656,13 +1421,13 @@ func (o GetStreamPoolsStreamPoolOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // A filter to return only resources that match the given ID exactly.
-func (o GetStreamPoolsStreamPoolOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetStreamPoolsStreamPool) string { return v.Id }).(pulumi.StringOutput)
+func (o GetStreamPoolsStreamPoolOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetStreamPoolsStreamPool) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // True if the stream pool is private, false otherwise. The associated endpoint and subnetId of a private stream pool can be retrieved through the [GetStreamPool](https://docs.cloud.oracle.com/iaas/api/#/en/streaming/20180418/StreamPool/GetStreamPool) API.
-func (o GetStreamPoolsStreamPoolOutput) IsPrivate() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetStreamPoolsStreamPool) bool { return v.IsPrivate }).(pulumi.BoolOutput)
+func (o GetStreamPoolsStreamPoolOutput) IsPrivate() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetStreamPoolsStreamPool) *bool { return v.IsPrivate }).(pulumi.BoolPtrOutput)
 }
 
 // Settings for the Kafka compatibility layer.
@@ -1671,13 +1436,13 @@ func (o GetStreamPoolsStreamPoolOutput) KafkaSettings() GetStreamPoolsStreamPool
 }
 
 // Any additional details about the current state of the stream.
-func (o GetStreamPoolsStreamPoolOutput) LifecycleStateDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetStreamPoolsStreamPool) string { return v.LifecycleStateDetails }).(pulumi.StringOutput)
+func (o GetStreamPoolsStreamPoolOutput) LifecycleStateDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetStreamPoolsStreamPool) *string { return v.LifecycleStateDetails }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only resources that match the given name exactly.
-func (o GetStreamPoolsStreamPoolOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetStreamPoolsStreamPool) string { return v.Name }).(pulumi.StringOutput)
+func (o GetStreamPoolsStreamPoolOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetStreamPoolsStreamPool) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Optional settings if the stream pool is private.
@@ -1688,13 +1453,13 @@ func (o GetStreamPoolsStreamPoolOutput) PrivateEndpointSettings() GetStreamPools
 }
 
 // A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
-func (o GetStreamPoolsStreamPoolOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetStreamPoolsStreamPool) string { return v.State }).(pulumi.StringOutput)
+func (o GetStreamPoolsStreamPoolOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetStreamPoolsStreamPool) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the stream pool was created, expressed in in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
-func (o GetStreamPoolsStreamPoolOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetStreamPoolsStreamPool) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetStreamPoolsStreamPoolOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetStreamPoolsStreamPool) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 type GetStreamPoolsStreamPoolArrayOutput struct{ *pulumi.OutputState }
@@ -1711,12 +1476,6 @@ func (o GetStreamPoolsStreamPoolArrayOutput) ToGetStreamPoolsStreamPoolArrayOutp
 	return o
 }
 
-func (o GetStreamPoolsStreamPoolArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetStreamPoolsStreamPool] {
-	return pulumix.Output[[]GetStreamPoolsStreamPool]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetStreamPoolsStreamPoolArrayOutput) Index(i pulumi.IntInput) GetStreamPoolsStreamPoolOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetStreamPoolsStreamPool {
 		return vs[0].([]GetStreamPoolsStreamPool)[vs[1].(int)]
@@ -1725,9 +1484,9 @@ func (o GetStreamPoolsStreamPoolArrayOutput) Index(i pulumi.IntInput) GetStreamP
 
 type GetStreamPoolsStreamPoolCustomEncryptionKey struct {
 	// Life cycle State of the custom key
-	KeyState string `pulumi:"keyState"`
+	KeyState *string `pulumi:"keyState"`
 	// Custom Encryption Key (Master Key) ocid.
-	KmsKeyId string `pulumi:"kmsKeyId"`
+	KmsKeyId *string `pulumi:"kmsKeyId"`
 }
 
 // GetStreamPoolsStreamPoolCustomEncryptionKeyInput is an input type that accepts GetStreamPoolsStreamPoolCustomEncryptionKeyArgs and GetStreamPoolsStreamPoolCustomEncryptionKeyOutput values.
@@ -1743,9 +1502,9 @@ type GetStreamPoolsStreamPoolCustomEncryptionKeyInput interface {
 
 type GetStreamPoolsStreamPoolCustomEncryptionKeyArgs struct {
 	// Life cycle State of the custom key
-	KeyState pulumi.StringInput `pulumi:"keyState"`
+	KeyState pulumi.StringPtrInput `pulumi:"keyState"`
 	// Custom Encryption Key (Master Key) ocid.
-	KmsKeyId pulumi.StringInput `pulumi:"kmsKeyId"`
+	KmsKeyId pulumi.StringPtrInput `pulumi:"kmsKeyId"`
 }
 
 func (GetStreamPoolsStreamPoolCustomEncryptionKeyArgs) ElementType() reflect.Type {
@@ -1758,12 +1517,6 @@ func (i GetStreamPoolsStreamPoolCustomEncryptionKeyArgs) ToGetStreamPoolsStreamP
 
 func (i GetStreamPoolsStreamPoolCustomEncryptionKeyArgs) ToGetStreamPoolsStreamPoolCustomEncryptionKeyOutputWithContext(ctx context.Context) GetStreamPoolsStreamPoolCustomEncryptionKeyOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetStreamPoolsStreamPoolCustomEncryptionKeyOutput)
-}
-
-func (i GetStreamPoolsStreamPoolCustomEncryptionKeyArgs) ToOutput(ctx context.Context) pulumix.Output[GetStreamPoolsStreamPoolCustomEncryptionKey] {
-	return pulumix.Output[GetStreamPoolsStreamPoolCustomEncryptionKey]{
-		OutputState: i.ToGetStreamPoolsStreamPoolCustomEncryptionKeyOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetStreamPoolsStreamPoolCustomEncryptionKeyArrayInput is an input type that accepts GetStreamPoolsStreamPoolCustomEncryptionKeyArray and GetStreamPoolsStreamPoolCustomEncryptionKeyArrayOutput values.
@@ -1791,12 +1544,6 @@ func (i GetStreamPoolsStreamPoolCustomEncryptionKeyArray) ToGetStreamPoolsStream
 	return pulumi.ToOutputWithContext(ctx, i).(GetStreamPoolsStreamPoolCustomEncryptionKeyArrayOutput)
 }
 
-func (i GetStreamPoolsStreamPoolCustomEncryptionKeyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetStreamPoolsStreamPoolCustomEncryptionKey] {
-	return pulumix.Output[[]GetStreamPoolsStreamPoolCustomEncryptionKey]{
-		OutputState: i.ToGetStreamPoolsStreamPoolCustomEncryptionKeyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetStreamPoolsStreamPoolCustomEncryptionKeyOutput struct{ *pulumi.OutputState }
 
 func (GetStreamPoolsStreamPoolCustomEncryptionKeyOutput) ElementType() reflect.Type {
@@ -1811,20 +1558,14 @@ func (o GetStreamPoolsStreamPoolCustomEncryptionKeyOutput) ToGetStreamPoolsStrea
 	return o
 }
 
-func (o GetStreamPoolsStreamPoolCustomEncryptionKeyOutput) ToOutput(ctx context.Context) pulumix.Output[GetStreamPoolsStreamPoolCustomEncryptionKey] {
-	return pulumix.Output[GetStreamPoolsStreamPoolCustomEncryptionKey]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Life cycle State of the custom key
-func (o GetStreamPoolsStreamPoolCustomEncryptionKeyOutput) KeyState() pulumi.StringOutput {
-	return o.ApplyT(func(v GetStreamPoolsStreamPoolCustomEncryptionKey) string { return v.KeyState }).(pulumi.StringOutput)
+func (o GetStreamPoolsStreamPoolCustomEncryptionKeyOutput) KeyState() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetStreamPoolsStreamPoolCustomEncryptionKey) *string { return v.KeyState }).(pulumi.StringPtrOutput)
 }
 
 // Custom Encryption Key (Master Key) ocid.
-func (o GetStreamPoolsStreamPoolCustomEncryptionKeyOutput) KmsKeyId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetStreamPoolsStreamPoolCustomEncryptionKey) string { return v.KmsKeyId }).(pulumi.StringOutput)
+func (o GetStreamPoolsStreamPoolCustomEncryptionKeyOutput) KmsKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetStreamPoolsStreamPoolCustomEncryptionKey) *string { return v.KmsKeyId }).(pulumi.StringPtrOutput)
 }
 
 type GetStreamPoolsStreamPoolCustomEncryptionKeyArrayOutput struct{ *pulumi.OutputState }
@@ -1841,12 +1582,6 @@ func (o GetStreamPoolsStreamPoolCustomEncryptionKeyArrayOutput) ToGetStreamPools
 	return o
 }
 
-func (o GetStreamPoolsStreamPoolCustomEncryptionKeyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetStreamPoolsStreamPoolCustomEncryptionKey] {
-	return pulumix.Output[[]GetStreamPoolsStreamPoolCustomEncryptionKey]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetStreamPoolsStreamPoolCustomEncryptionKeyArrayOutput) Index(i pulumi.IntInput) GetStreamPoolsStreamPoolCustomEncryptionKeyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetStreamPoolsStreamPoolCustomEncryptionKey {
 		return vs[0].([]GetStreamPoolsStreamPoolCustomEncryptionKey)[vs[1].(int)]
@@ -1855,13 +1590,13 @@ func (o GetStreamPoolsStreamPoolCustomEncryptionKeyArrayOutput) Index(i pulumi.I
 
 type GetStreamPoolsStreamPoolKafkaSetting struct {
 	// Enable auto creation of topic on the server.
-	AutoCreateTopicsEnable bool `pulumi:"autoCreateTopicsEnable"`
+	AutoCreateTopicsEnable *bool `pulumi:"autoCreateTopicsEnable"`
 	// Bootstrap servers.
-	BootstrapServers string `pulumi:"bootstrapServers"`
+	BootstrapServers *string `pulumi:"bootstrapServers"`
 	// The number of hours to keep a log file before deleting it (in hours).
-	LogRetentionHours int `pulumi:"logRetentionHours"`
+	LogRetentionHours *int `pulumi:"logRetentionHours"`
 	// The default number of log partitions per topic.
-	NumPartitions int `pulumi:"numPartitions"`
+	NumPartitions *int `pulumi:"numPartitions"`
 }
 
 // GetStreamPoolsStreamPoolKafkaSettingInput is an input type that accepts GetStreamPoolsStreamPoolKafkaSettingArgs and GetStreamPoolsStreamPoolKafkaSettingOutput values.
@@ -1877,13 +1612,13 @@ type GetStreamPoolsStreamPoolKafkaSettingInput interface {
 
 type GetStreamPoolsStreamPoolKafkaSettingArgs struct {
 	// Enable auto creation of topic on the server.
-	AutoCreateTopicsEnable pulumi.BoolInput `pulumi:"autoCreateTopicsEnable"`
+	AutoCreateTopicsEnable pulumi.BoolPtrInput `pulumi:"autoCreateTopicsEnable"`
 	// Bootstrap servers.
-	BootstrapServers pulumi.StringInput `pulumi:"bootstrapServers"`
+	BootstrapServers pulumi.StringPtrInput `pulumi:"bootstrapServers"`
 	// The number of hours to keep a log file before deleting it (in hours).
-	LogRetentionHours pulumi.IntInput `pulumi:"logRetentionHours"`
+	LogRetentionHours pulumi.IntPtrInput `pulumi:"logRetentionHours"`
 	// The default number of log partitions per topic.
-	NumPartitions pulumi.IntInput `pulumi:"numPartitions"`
+	NumPartitions pulumi.IntPtrInput `pulumi:"numPartitions"`
 }
 
 func (GetStreamPoolsStreamPoolKafkaSettingArgs) ElementType() reflect.Type {
@@ -1896,12 +1631,6 @@ func (i GetStreamPoolsStreamPoolKafkaSettingArgs) ToGetStreamPoolsStreamPoolKafk
 
 func (i GetStreamPoolsStreamPoolKafkaSettingArgs) ToGetStreamPoolsStreamPoolKafkaSettingOutputWithContext(ctx context.Context) GetStreamPoolsStreamPoolKafkaSettingOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetStreamPoolsStreamPoolKafkaSettingOutput)
-}
-
-func (i GetStreamPoolsStreamPoolKafkaSettingArgs) ToOutput(ctx context.Context) pulumix.Output[GetStreamPoolsStreamPoolKafkaSetting] {
-	return pulumix.Output[GetStreamPoolsStreamPoolKafkaSetting]{
-		OutputState: i.ToGetStreamPoolsStreamPoolKafkaSettingOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetStreamPoolsStreamPoolKafkaSettingArrayInput is an input type that accepts GetStreamPoolsStreamPoolKafkaSettingArray and GetStreamPoolsStreamPoolKafkaSettingArrayOutput values.
@@ -1929,12 +1658,6 @@ func (i GetStreamPoolsStreamPoolKafkaSettingArray) ToGetStreamPoolsStreamPoolKaf
 	return pulumi.ToOutputWithContext(ctx, i).(GetStreamPoolsStreamPoolKafkaSettingArrayOutput)
 }
 
-func (i GetStreamPoolsStreamPoolKafkaSettingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetStreamPoolsStreamPoolKafkaSetting] {
-	return pulumix.Output[[]GetStreamPoolsStreamPoolKafkaSetting]{
-		OutputState: i.ToGetStreamPoolsStreamPoolKafkaSettingArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetStreamPoolsStreamPoolKafkaSettingOutput struct{ *pulumi.OutputState }
 
 func (GetStreamPoolsStreamPoolKafkaSettingOutput) ElementType() reflect.Type {
@@ -1949,30 +1672,24 @@ func (o GetStreamPoolsStreamPoolKafkaSettingOutput) ToGetStreamPoolsStreamPoolKa
 	return o
 }
 
-func (o GetStreamPoolsStreamPoolKafkaSettingOutput) ToOutput(ctx context.Context) pulumix.Output[GetStreamPoolsStreamPoolKafkaSetting] {
-	return pulumix.Output[GetStreamPoolsStreamPoolKafkaSetting]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Enable auto creation of topic on the server.
-func (o GetStreamPoolsStreamPoolKafkaSettingOutput) AutoCreateTopicsEnable() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetStreamPoolsStreamPoolKafkaSetting) bool { return v.AutoCreateTopicsEnable }).(pulumi.BoolOutput)
+func (o GetStreamPoolsStreamPoolKafkaSettingOutput) AutoCreateTopicsEnable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetStreamPoolsStreamPoolKafkaSetting) *bool { return v.AutoCreateTopicsEnable }).(pulumi.BoolPtrOutput)
 }
 
 // Bootstrap servers.
-func (o GetStreamPoolsStreamPoolKafkaSettingOutput) BootstrapServers() pulumi.StringOutput {
-	return o.ApplyT(func(v GetStreamPoolsStreamPoolKafkaSetting) string { return v.BootstrapServers }).(pulumi.StringOutput)
+func (o GetStreamPoolsStreamPoolKafkaSettingOutput) BootstrapServers() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetStreamPoolsStreamPoolKafkaSetting) *string { return v.BootstrapServers }).(pulumi.StringPtrOutput)
 }
 
 // The number of hours to keep a log file before deleting it (in hours).
-func (o GetStreamPoolsStreamPoolKafkaSettingOutput) LogRetentionHours() pulumi.IntOutput {
-	return o.ApplyT(func(v GetStreamPoolsStreamPoolKafkaSetting) int { return v.LogRetentionHours }).(pulumi.IntOutput)
+func (o GetStreamPoolsStreamPoolKafkaSettingOutput) LogRetentionHours() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetStreamPoolsStreamPoolKafkaSetting) *int { return v.LogRetentionHours }).(pulumi.IntPtrOutput)
 }
 
 // The default number of log partitions per topic.
-func (o GetStreamPoolsStreamPoolKafkaSettingOutput) NumPartitions() pulumi.IntOutput {
-	return o.ApplyT(func(v GetStreamPoolsStreamPoolKafkaSetting) int { return v.NumPartitions }).(pulumi.IntOutput)
+func (o GetStreamPoolsStreamPoolKafkaSettingOutput) NumPartitions() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetStreamPoolsStreamPoolKafkaSetting) *int { return v.NumPartitions }).(pulumi.IntPtrOutput)
 }
 
 type GetStreamPoolsStreamPoolKafkaSettingArrayOutput struct{ *pulumi.OutputState }
@@ -1989,12 +1706,6 @@ func (o GetStreamPoolsStreamPoolKafkaSettingArrayOutput) ToGetStreamPoolsStreamP
 	return o
 }
 
-func (o GetStreamPoolsStreamPoolKafkaSettingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetStreamPoolsStreamPoolKafkaSetting] {
-	return pulumix.Output[[]GetStreamPoolsStreamPoolKafkaSetting]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetStreamPoolsStreamPoolKafkaSettingArrayOutput) Index(i pulumi.IntInput) GetStreamPoolsStreamPoolKafkaSettingOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetStreamPoolsStreamPoolKafkaSetting {
 		return vs[0].([]GetStreamPoolsStreamPoolKafkaSetting)[vs[1].(int)]
@@ -2005,9 +1716,9 @@ type GetStreamPoolsStreamPoolPrivateEndpointSetting struct {
 	// The optional list of network security groups that are associated with the private endpoint of the stream pool.
 	NsgIds []string `pulumi:"nsgIds"`
 	// The private IP associated with the stream pool in the associated subnetId. The stream pool's FQDN resolves to that IP and should be used - instead of the private IP - in order to not trigger any TLS issues.
-	PrivateEndpointIp string `pulumi:"privateEndpointIp"`
+	PrivateEndpointIp *string `pulumi:"privateEndpointIp"`
 	// The subnet id from which the private stream pool can be accessed. Trying to access the streams from another network location will result in an error.
-	SubnetId string `pulumi:"subnetId"`
+	SubnetId *string `pulumi:"subnetId"`
 }
 
 // GetStreamPoolsStreamPoolPrivateEndpointSettingInput is an input type that accepts GetStreamPoolsStreamPoolPrivateEndpointSettingArgs and GetStreamPoolsStreamPoolPrivateEndpointSettingOutput values.
@@ -2025,9 +1736,9 @@ type GetStreamPoolsStreamPoolPrivateEndpointSettingArgs struct {
 	// The optional list of network security groups that are associated with the private endpoint of the stream pool.
 	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
 	// The private IP associated with the stream pool in the associated subnetId. The stream pool's FQDN resolves to that IP and should be used - instead of the private IP - in order to not trigger any TLS issues.
-	PrivateEndpointIp pulumi.StringInput `pulumi:"privateEndpointIp"`
+	PrivateEndpointIp pulumi.StringPtrInput `pulumi:"privateEndpointIp"`
 	// The subnet id from which the private stream pool can be accessed. Trying to access the streams from another network location will result in an error.
-	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
 }
 
 func (GetStreamPoolsStreamPoolPrivateEndpointSettingArgs) ElementType() reflect.Type {
@@ -2040,12 +1751,6 @@ func (i GetStreamPoolsStreamPoolPrivateEndpointSettingArgs) ToGetStreamPoolsStre
 
 func (i GetStreamPoolsStreamPoolPrivateEndpointSettingArgs) ToGetStreamPoolsStreamPoolPrivateEndpointSettingOutputWithContext(ctx context.Context) GetStreamPoolsStreamPoolPrivateEndpointSettingOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetStreamPoolsStreamPoolPrivateEndpointSettingOutput)
-}
-
-func (i GetStreamPoolsStreamPoolPrivateEndpointSettingArgs) ToOutput(ctx context.Context) pulumix.Output[GetStreamPoolsStreamPoolPrivateEndpointSetting] {
-	return pulumix.Output[GetStreamPoolsStreamPoolPrivateEndpointSetting]{
-		OutputState: i.ToGetStreamPoolsStreamPoolPrivateEndpointSettingOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetStreamPoolsStreamPoolPrivateEndpointSettingArrayInput is an input type that accepts GetStreamPoolsStreamPoolPrivateEndpointSettingArray and GetStreamPoolsStreamPoolPrivateEndpointSettingArrayOutput values.
@@ -2073,12 +1778,6 @@ func (i GetStreamPoolsStreamPoolPrivateEndpointSettingArray) ToGetStreamPoolsStr
 	return pulumi.ToOutputWithContext(ctx, i).(GetStreamPoolsStreamPoolPrivateEndpointSettingArrayOutput)
 }
 
-func (i GetStreamPoolsStreamPoolPrivateEndpointSettingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetStreamPoolsStreamPoolPrivateEndpointSetting] {
-	return pulumix.Output[[]GetStreamPoolsStreamPoolPrivateEndpointSetting]{
-		OutputState: i.ToGetStreamPoolsStreamPoolPrivateEndpointSettingArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetStreamPoolsStreamPoolPrivateEndpointSettingOutput struct{ *pulumi.OutputState }
 
 func (GetStreamPoolsStreamPoolPrivateEndpointSettingOutput) ElementType() reflect.Type {
@@ -2093,25 +1792,19 @@ func (o GetStreamPoolsStreamPoolPrivateEndpointSettingOutput) ToGetStreamPoolsSt
 	return o
 }
 
-func (o GetStreamPoolsStreamPoolPrivateEndpointSettingOutput) ToOutput(ctx context.Context) pulumix.Output[GetStreamPoolsStreamPoolPrivateEndpointSetting] {
-	return pulumix.Output[GetStreamPoolsStreamPoolPrivateEndpointSetting]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The optional list of network security groups that are associated with the private endpoint of the stream pool.
 func (o GetStreamPoolsStreamPoolPrivateEndpointSettingOutput) NsgIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetStreamPoolsStreamPoolPrivateEndpointSetting) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
 }
 
 // The private IP associated with the stream pool in the associated subnetId. The stream pool's FQDN resolves to that IP and should be used - instead of the private IP - in order to not trigger any TLS issues.
-func (o GetStreamPoolsStreamPoolPrivateEndpointSettingOutput) PrivateEndpointIp() pulumi.StringOutput {
-	return o.ApplyT(func(v GetStreamPoolsStreamPoolPrivateEndpointSetting) string { return v.PrivateEndpointIp }).(pulumi.StringOutput)
+func (o GetStreamPoolsStreamPoolPrivateEndpointSettingOutput) PrivateEndpointIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetStreamPoolsStreamPoolPrivateEndpointSetting) *string { return v.PrivateEndpointIp }).(pulumi.StringPtrOutput)
 }
 
 // The subnet id from which the private stream pool can be accessed. Trying to access the streams from another network location will result in an error.
-func (o GetStreamPoolsStreamPoolPrivateEndpointSettingOutput) SubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetStreamPoolsStreamPoolPrivateEndpointSetting) string { return v.SubnetId }).(pulumi.StringOutput)
+func (o GetStreamPoolsStreamPoolPrivateEndpointSettingOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetStreamPoolsStreamPoolPrivateEndpointSetting) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
 }
 
 type GetStreamPoolsStreamPoolPrivateEndpointSettingArrayOutput struct{ *pulumi.OutputState }
@@ -2126,12 +1819,6 @@ func (o GetStreamPoolsStreamPoolPrivateEndpointSettingArrayOutput) ToGetStreamPo
 
 func (o GetStreamPoolsStreamPoolPrivateEndpointSettingArrayOutput) ToGetStreamPoolsStreamPoolPrivateEndpointSettingArrayOutputWithContext(ctx context.Context) GetStreamPoolsStreamPoolPrivateEndpointSettingArrayOutput {
 	return o
-}
-
-func (o GetStreamPoolsStreamPoolPrivateEndpointSettingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetStreamPoolsStreamPoolPrivateEndpointSetting] {
-	return pulumix.Output[[]GetStreamPoolsStreamPoolPrivateEndpointSetting]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetStreamPoolsStreamPoolPrivateEndpointSettingArrayOutput) Index(i pulumi.IntInput) GetStreamPoolsStreamPoolPrivateEndpointSettingOutput {
@@ -2177,12 +1864,6 @@ func (i GetStreamsFilterArgs) ToGetStreamsFilterOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(GetStreamsFilterOutput)
 }
 
-func (i GetStreamsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetStreamsFilter] {
-	return pulumix.Output[GetStreamsFilter]{
-		OutputState: i.ToGetStreamsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetStreamsFilterArrayInput is an input type that accepts GetStreamsFilterArray and GetStreamsFilterArrayOutput values.
 // You can construct a concrete instance of `GetStreamsFilterArrayInput` via:
 //
@@ -2208,12 +1889,6 @@ func (i GetStreamsFilterArray) ToGetStreamsFilterArrayOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetStreamsFilterArrayOutput)
 }
 
-func (i GetStreamsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetStreamsFilter] {
-	return pulumix.Output[[]GetStreamsFilter]{
-		OutputState: i.ToGetStreamsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetStreamsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetStreamsFilterOutput) ElementType() reflect.Type {
@@ -2226,12 +1901,6 @@ func (o GetStreamsFilterOutput) ToGetStreamsFilterOutput() GetStreamsFilterOutpu
 
 func (o GetStreamsFilterOutput) ToGetStreamsFilterOutputWithContext(ctx context.Context) GetStreamsFilterOutput {
 	return o
-}
-
-func (o GetStreamsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetStreamsFilter] {
-	return pulumix.Output[GetStreamsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A filter to return only resources that match the given name exactly.
@@ -2261,12 +1930,6 @@ func (o GetStreamsFilterArrayOutput) ToGetStreamsFilterArrayOutputWithContext(ct
 	return o
 }
 
-func (o GetStreamsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetStreamsFilter] {
-	return pulumix.Output[[]GetStreamsFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetStreamsFilterArrayOutput) Index(i pulumi.IntInput) GetStreamsFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetStreamsFilter {
 		return vs[0].([]GetStreamsFilter)[vs[1].(int)]
@@ -2275,29 +1938,29 @@ func (o GetStreamsFilterArrayOutput) Index(i pulumi.IntInput) GetStreamsFilterOu
 
 type GetStreamsStream struct {
 	// The OCID of the compartment. Is exclusive with the `streamPoolId` parameter. One of them is required.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations": {"CostCenter": "42"}}'
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair that is applied with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// A filter to return only resources that match the given ID exactly.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Any additional details about the current state of the stream.
-	LifecycleStateDetails string `pulumi:"lifecycleStateDetails"`
+	LifecycleStateDetails *string `pulumi:"lifecycleStateDetails"`
 	// The endpoint to use when creating the StreamClient to consume or publish messages in the stream. If the associated stream pool is private, the endpoint is also private and can only be accessed from inside the stream pool's associated subnet.
-	MessagesEndpoint string `pulumi:"messagesEndpoint"`
+	MessagesEndpoint *string `pulumi:"messagesEndpoint"`
 	// A filter to return only resources that match the given name exactly.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The number of partitions in the stream.
-	Partitions int `pulumi:"partitions"`
+	Partitions *int `pulumi:"partitions"`
 	// The retention period of the stream, in hours. This property is read-only.
-	RetentionInHours int `pulumi:"retentionInHours"`
+	RetentionInHours *int `pulumi:"retentionInHours"`
 	// A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The OCID of the stream pool. Is exclusive with the `compartmentId` parameter. One of them is required.
-	StreamPoolId string `pulumi:"streamPoolId"`
+	StreamPoolId *string `pulumi:"streamPoolId"`
 	// The date and time the stream was created, expressed in in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 }
 
 // GetStreamsStreamInput is an input type that accepts GetStreamsStreamArgs and GetStreamsStreamOutput values.
@@ -2313,29 +1976,29 @@ type GetStreamsStreamInput interface {
 
 type GetStreamsStreamArgs struct {
 	// The OCID of the compartment. Is exclusive with the `streamPoolId` parameter. One of them is required.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations": {"CostCenter": "42"}}'
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair that is applied with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// A filter to return only resources that match the given ID exactly.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Any additional details about the current state of the stream.
-	LifecycleStateDetails pulumi.StringInput `pulumi:"lifecycleStateDetails"`
+	LifecycleStateDetails pulumi.StringPtrInput `pulumi:"lifecycleStateDetails"`
 	// The endpoint to use when creating the StreamClient to consume or publish messages in the stream. If the associated stream pool is private, the endpoint is also private and can only be accessed from inside the stream pool's associated subnet.
-	MessagesEndpoint pulumi.StringInput `pulumi:"messagesEndpoint"`
+	MessagesEndpoint pulumi.StringPtrInput `pulumi:"messagesEndpoint"`
 	// A filter to return only resources that match the given name exactly.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// The number of partitions in the stream.
-	Partitions pulumi.IntInput `pulumi:"partitions"`
+	Partitions pulumi.IntPtrInput `pulumi:"partitions"`
 	// The retention period of the stream, in hours. This property is read-only.
-	RetentionInHours pulumi.IntInput `pulumi:"retentionInHours"`
+	RetentionInHours pulumi.IntPtrInput `pulumi:"retentionInHours"`
 	// A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The OCID of the stream pool. Is exclusive with the `compartmentId` parameter. One of them is required.
-	StreamPoolId pulumi.StringInput `pulumi:"streamPoolId"`
+	StreamPoolId pulumi.StringPtrInput `pulumi:"streamPoolId"`
 	// The date and time the stream was created, expressed in in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 }
 
 func (GetStreamsStreamArgs) ElementType() reflect.Type {
@@ -2348,12 +2011,6 @@ func (i GetStreamsStreamArgs) ToGetStreamsStreamOutput() GetStreamsStreamOutput 
 
 func (i GetStreamsStreamArgs) ToGetStreamsStreamOutputWithContext(ctx context.Context) GetStreamsStreamOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetStreamsStreamOutput)
-}
-
-func (i GetStreamsStreamArgs) ToOutput(ctx context.Context) pulumix.Output[GetStreamsStream] {
-	return pulumix.Output[GetStreamsStream]{
-		OutputState: i.ToGetStreamsStreamOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetStreamsStreamArrayInput is an input type that accepts GetStreamsStreamArray and GetStreamsStreamArrayOutput values.
@@ -2381,12 +2038,6 @@ func (i GetStreamsStreamArray) ToGetStreamsStreamArrayOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetStreamsStreamArrayOutput)
 }
 
-func (i GetStreamsStreamArray) ToOutput(ctx context.Context) pulumix.Output[[]GetStreamsStream] {
-	return pulumix.Output[[]GetStreamsStream]{
-		OutputState: i.ToGetStreamsStreamArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetStreamsStreamOutput struct{ *pulumi.OutputState }
 
 func (GetStreamsStreamOutput) ElementType() reflect.Type {
@@ -2401,15 +2052,9 @@ func (o GetStreamsStreamOutput) ToGetStreamsStreamOutputWithContext(ctx context.
 	return o
 }
 
-func (o GetStreamsStreamOutput) ToOutput(ctx context.Context) pulumix.Output[GetStreamsStream] {
-	return pulumix.Output[GetStreamsStream]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment. Is exclusive with the `streamPoolId` parameter. One of them is required.
-func (o GetStreamsStreamOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetStreamsStream) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetStreamsStreamOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetStreamsStream) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations": {"CostCenter": "42"}}'
@@ -2423,48 +2068,48 @@ func (o GetStreamsStreamOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // A filter to return only resources that match the given ID exactly.
-func (o GetStreamsStreamOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetStreamsStream) string { return v.Id }).(pulumi.StringOutput)
+func (o GetStreamsStreamOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetStreamsStream) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Any additional details about the current state of the stream.
-func (o GetStreamsStreamOutput) LifecycleStateDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetStreamsStream) string { return v.LifecycleStateDetails }).(pulumi.StringOutput)
+func (o GetStreamsStreamOutput) LifecycleStateDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetStreamsStream) *string { return v.LifecycleStateDetails }).(pulumi.StringPtrOutput)
 }
 
 // The endpoint to use when creating the StreamClient to consume or publish messages in the stream. If the associated stream pool is private, the endpoint is also private and can only be accessed from inside the stream pool's associated subnet.
-func (o GetStreamsStreamOutput) MessagesEndpoint() pulumi.StringOutput {
-	return o.ApplyT(func(v GetStreamsStream) string { return v.MessagesEndpoint }).(pulumi.StringOutput)
+func (o GetStreamsStreamOutput) MessagesEndpoint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetStreamsStream) *string { return v.MessagesEndpoint }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only resources that match the given name exactly.
-func (o GetStreamsStreamOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetStreamsStream) string { return v.Name }).(pulumi.StringOutput)
+func (o GetStreamsStreamOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetStreamsStream) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The number of partitions in the stream.
-func (o GetStreamsStreamOutput) Partitions() pulumi.IntOutput {
-	return o.ApplyT(func(v GetStreamsStream) int { return v.Partitions }).(pulumi.IntOutput)
+func (o GetStreamsStreamOutput) Partitions() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetStreamsStream) *int { return v.Partitions }).(pulumi.IntPtrOutput)
 }
 
 // The retention period of the stream, in hours. This property is read-only.
-func (o GetStreamsStreamOutput) RetentionInHours() pulumi.IntOutput {
-	return o.ApplyT(func(v GetStreamsStream) int { return v.RetentionInHours }).(pulumi.IntOutput)
+func (o GetStreamsStreamOutput) RetentionInHours() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetStreamsStream) *int { return v.RetentionInHours }).(pulumi.IntPtrOutput)
 }
 
 // A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
-func (o GetStreamsStreamOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetStreamsStream) string { return v.State }).(pulumi.StringOutput)
+func (o GetStreamsStreamOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetStreamsStream) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the stream pool. Is exclusive with the `compartmentId` parameter. One of them is required.
-func (o GetStreamsStreamOutput) StreamPoolId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetStreamsStream) string { return v.StreamPoolId }).(pulumi.StringOutput)
+func (o GetStreamsStreamOutput) StreamPoolId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetStreamsStream) *string { return v.StreamPoolId }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the stream was created, expressed in in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
-func (o GetStreamsStreamOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetStreamsStream) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetStreamsStreamOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetStreamsStream) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 type GetStreamsStreamArrayOutput struct{ *pulumi.OutputState }
@@ -2479,12 +2124,6 @@ func (o GetStreamsStreamArrayOutput) ToGetStreamsStreamArrayOutput() GetStreamsS
 
 func (o GetStreamsStreamArrayOutput) ToGetStreamsStreamArrayOutputWithContext(ctx context.Context) GetStreamsStreamArrayOutput {
 	return o
-}
-
-func (o GetStreamsStreamArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetStreamsStream] {
-	return pulumix.Output[[]GetStreamsStream]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetStreamsStreamArrayOutput) Index(i pulumi.IntInput) GetStreamsStreamOutput {

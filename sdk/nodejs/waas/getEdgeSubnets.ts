@@ -43,12 +43,12 @@ export interface GetEdgeSubnetsResult {
     /**
      * The list of edge_subnets.
      */
-    readonly edgeSubnets: outputs.Waas.GetEdgeSubnetsEdgeSubnet[];
+    readonly edgeSubnets?: outputs.Waas.GetEdgeSubnetsEdgeSubnet[];
     readonly filters?: outputs.Waas.GetEdgeSubnetsFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
 }
 /**
  * This data source provides the list of Edge Subnets in Oracle Cloud Infrastructure Web Application Acceleration and Security service.

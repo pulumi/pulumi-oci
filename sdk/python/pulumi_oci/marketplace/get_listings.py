@@ -84,7 +84,7 @@ class GetListingsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -98,9 +98,6 @@ class GetListingsResult:
     @property
     @pulumi.getter(name="isFeatured")
     def is_featured(self) -> Optional[bool]:
-        """
-        Indicates whether the listing is included in Featured Listings.
-        """
         return pulumi.get(self, "is_featured")
 
     @property
@@ -115,18 +112,12 @@ class GetListingsResult:
 
     @property
     @pulumi.getter
-    def listings(self) -> Sequence['outputs.GetListingsListingResult']:
-        """
-        The list of listings.
-        """
+    def listings(self) -> Optional[Sequence['outputs.GetListingsListingResult']]:
         return pulumi.get(self, "listings")
 
     @property
     @pulumi.getter
     def names(self) -> Optional[Sequence[str]]:
-        """
-        Text that describes the resource.
-        """
         return pulumi.get(self, "names")
 
     @property
@@ -137,9 +128,6 @@ class GetListingsResult:
     @property
     @pulumi.getter(name="packageType")
     def package_type(self) -> Optional[str]:
-        """
-        The listing's package type.
-        """
         return pulumi.get(self, "package_type")
 
     @property
@@ -189,55 +177,7 @@ def get_listings(categories: Optional[Sequence[str]] = None,
                  publisher_id: Optional[str] = None,
                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetListingsResult:
     """
-    This data source provides the list of Listings in Oracle Cloud Infrastructure Marketplace service.
-
-    Gets a list of listings from Oracle Cloud Infrastructure Marketplace by searching keywords and
-    filtering according to listing attributes.
-
-    If you plan to launch an instance from an image listing, you must first subscribe to the listing. When
-    you launch the instance, you also need to provide the image ID of the listing resource version that you want.
-
-    Subscribing to the listing requires you to first get a signature from the terms of use agreement for the
-    listing resource version. To get the signature, issue a [GetAppCatalogListingAgreements](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersionAgreements/GetAppCatalogListingAgreements) API call.
-    The [AppCatalogListingResourceVersionAgreements](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersionAgreements) object, including
-    its signature, is returned in the response. With the signature for the terms of use agreement for the desired
-    listing resource version, create a subscription by issuing a
-    [CreateAppCatalogSubscription](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogSubscription/CreateAppCatalogSubscription) API call.
-
-    To get the image ID to launch an instance, issue a [GetAppCatalogListingResourceVersion](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersion/GetAppCatalogListingResourceVersion) API call.
-    Lastly, to launch the instance, use the image ID of the listing resource version to issue a [LaunchInstance](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/Instance/LaunchInstance) API call.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_listings = oci.Marketplace.get_listings(categories=var["listing_category"],
-        compartment_id=var["compartment_id"],
-        image_id=oci_core_image["test_image"]["id"],
-        is_featured=var["listing_is_featured"],
-        listing_id=oci_marketplace_listing["test_listing"]["id"],
-        listing_types=var["listing_listing_types"],
-        names=var["listing_name"],
-        operating_systems=var["listing_operating_systems"],
-        package_type=var["listing_package_type"],
-        pricings=var["listing_pricing"],
-        publisher_id=oci_marketplace_publisher["test_publisher"]["id"])
-    ```
-
-
-    :param Sequence[str] categories: Name of the product category or categories. If you specify multiple categories, then Marketplace returns any listing with one or more matching categories.
-    :param str compartment_id: The unique identifier for the compartment. It is mandatory when used in non-commercial realms.
-    :param str image_id: The image identifier of the listing.
-    :param bool is_featured: Indicates whether to show only featured listings. If this is set to `false` or is omitted, then all listings will be returned.
-    :param str listing_id: The unique identifier for the listing.
-    :param Sequence[str] listing_types: The type of the listing.
-    :param Sequence[str] names: The name of the listing.
-    :param Sequence[str] operating_systems: The operating system of the listing.
-    :param str package_type: A filter to return only packages that match the given package type exactly.
-    :param Sequence[str] pricings: Name of the pricing type. If multiple pricing types are provided, then any listing with one or more matching pricing models will be returned.
-    :param str publisher_id: Limit results to just this publisher.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['categories'] = categories
@@ -287,54 +227,6 @@ def get_listings_output(categories: Optional[pulumi.Input[Optional[Sequence[str]
                         publisher_id: Optional[pulumi.Input[Optional[str]]] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetListingsResult]:
     """
-    This data source provides the list of Listings in Oracle Cloud Infrastructure Marketplace service.
-
-    Gets a list of listings from Oracle Cloud Infrastructure Marketplace by searching keywords and
-    filtering according to listing attributes.
-
-    If you plan to launch an instance from an image listing, you must first subscribe to the listing. When
-    you launch the instance, you also need to provide the image ID of the listing resource version that you want.
-
-    Subscribing to the listing requires you to first get a signature from the terms of use agreement for the
-    listing resource version. To get the signature, issue a [GetAppCatalogListingAgreements](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersionAgreements/GetAppCatalogListingAgreements) API call.
-    The [AppCatalogListingResourceVersionAgreements](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersionAgreements) object, including
-    its signature, is returned in the response. With the signature for the terms of use agreement for the desired
-    listing resource version, create a subscription by issuing a
-    [CreateAppCatalogSubscription](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogSubscription/CreateAppCatalogSubscription) API call.
-
-    To get the image ID to launch an instance, issue a [GetAppCatalogListingResourceVersion](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersion/GetAppCatalogListingResourceVersion) API call.
-    Lastly, to launch the instance, use the image ID of the listing resource version to issue a [LaunchInstance](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/Instance/LaunchInstance) API call.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_listings = oci.Marketplace.get_listings(categories=var["listing_category"],
-        compartment_id=var["compartment_id"],
-        image_id=oci_core_image["test_image"]["id"],
-        is_featured=var["listing_is_featured"],
-        listing_id=oci_marketplace_listing["test_listing"]["id"],
-        listing_types=var["listing_listing_types"],
-        names=var["listing_name"],
-        operating_systems=var["listing_operating_systems"],
-        package_type=var["listing_package_type"],
-        pricings=var["listing_pricing"],
-        publisher_id=oci_marketplace_publisher["test_publisher"]["id"])
-    ```
-
-
-    :param Sequence[str] categories: Name of the product category or categories. If you specify multiple categories, then Marketplace returns any listing with one or more matching categories.
-    :param str compartment_id: The unique identifier for the compartment. It is mandatory when used in non-commercial realms.
-    :param str image_id: The image identifier of the listing.
-    :param bool is_featured: Indicates whether to show only featured listings. If this is set to `false` or is omitted, then all listings will be returned.
-    :param str listing_id: The unique identifier for the listing.
-    :param Sequence[str] listing_types: The type of the listing.
-    :param Sequence[str] names: The name of the listing.
-    :param Sequence[str] operating_systems: The operating system of the listing.
-    :param str package_type: A filter to return only packages that match the given package type exactly.
-    :param Sequence[str] pricings: Name of the pricing type. If multiple pricing types are provided, then any listing with one or more matching pricing models will be returned.
-    :param str publisher_id: Limit results to just this publisher.
+    Use this data source to access information about an existing resource.
     """
     ...

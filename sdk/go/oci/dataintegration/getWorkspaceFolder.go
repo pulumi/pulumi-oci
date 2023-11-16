@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Workspace Folder resource in Oracle Cloud Infrastructure Data Integration service.
@@ -63,29 +62,29 @@ type LookupWorkspaceFolderArgs struct {
 // A collection of values returned by getWorkspaceFolder.
 type LookupWorkspaceFolderResult struct {
 	// The category name.
-	CategoryName string `pulumi:"categoryName"`
+	CategoryName *string `pulumi:"categoryName"`
 	// The description of the aggregator.
-	Description string `pulumi:"description"`
-	FolderKey   string `pulumi:"folderKey"`
-	Id          string `pulumi:"id"`
+	Description *string `pulumi:"description"`
+	FolderKey   string  `pulumi:"folderKey"`
+	Id          *string `pulumi:"id"`
 	// The identifier of the aggregator.
-	Identifier string `pulumi:"identifier"`
+	Identifier *string `pulumi:"identifier"`
 	// The key of the aggregator object.
-	Key string `pulumi:"key"`
+	Key *string `pulumi:"key"`
 	// A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
 	KeyMap map[string]interface{} `pulumi:"keyMap"`
 	// A summary type containing information about the object including its key, name and when/who created/updated it.
 	Metadatas []GetWorkspaceFolderMetadata `pulumi:"metadatas"`
 	// The type of the object.
-	ModelType string `pulumi:"modelType"`
+	ModelType *string `pulumi:"modelType"`
 	// The model version of an object.
-	ModelVersion string `pulumi:"modelVersion"`
+	ModelVersion *string `pulumi:"modelVersion"`
 	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-	ObjectStatus int `pulumi:"objectStatus"`
+	ObjectStatus *int `pulumi:"objectStatus"`
 	// The version of the object that is used to track changes in the object instance.
-	ObjectVersion int `pulumi:"objectVersion"`
+	ObjectVersion *int `pulumi:"objectVersion"`
 	// A reference to the object's parent.
 	ParentReves       []GetWorkspaceFolderParentRef        `pulumi:"parentReves"`
 	RegistryMetadatas []GetWorkspaceFolderRegistryMetadata `pulumi:"registryMetadatas"`
@@ -132,38 +131,32 @@ func (o LookupWorkspaceFolderResultOutput) ToLookupWorkspaceFolderResultOutputWi
 	return o
 }
 
-func (o LookupWorkspaceFolderResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupWorkspaceFolderResult] {
-	return pulumix.Output[LookupWorkspaceFolderResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The category name.
-func (o LookupWorkspaceFolderResultOutput) CategoryName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupWorkspaceFolderResult) string { return v.CategoryName }).(pulumi.StringOutput)
+func (o LookupWorkspaceFolderResultOutput) CategoryName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupWorkspaceFolderResult) *string { return v.CategoryName }).(pulumi.StringPtrOutput)
 }
 
 // The description of the aggregator.
-func (o LookupWorkspaceFolderResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupWorkspaceFolderResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupWorkspaceFolderResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupWorkspaceFolderResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupWorkspaceFolderResultOutput) FolderKey() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupWorkspaceFolderResult) string { return v.FolderKey }).(pulumi.StringOutput)
 }
 
-func (o LookupWorkspaceFolderResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupWorkspaceFolderResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupWorkspaceFolderResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupWorkspaceFolderResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The identifier of the aggregator.
-func (o LookupWorkspaceFolderResultOutput) Identifier() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupWorkspaceFolderResult) string { return v.Identifier }).(pulumi.StringOutput)
+func (o LookupWorkspaceFolderResultOutput) Identifier() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupWorkspaceFolderResult) *string { return v.Identifier }).(pulumi.StringPtrOutput)
 }
 
 // The key of the aggregator object.
-func (o LookupWorkspaceFolderResultOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupWorkspaceFolderResult) string { return v.Key }).(pulumi.StringOutput)
+func (o LookupWorkspaceFolderResultOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupWorkspaceFolderResult) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
 // A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
@@ -177,28 +170,28 @@ func (o LookupWorkspaceFolderResultOutput) Metadatas() GetWorkspaceFolderMetadat
 }
 
 // The type of the object.
-func (o LookupWorkspaceFolderResultOutput) ModelType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupWorkspaceFolderResult) string { return v.ModelType }).(pulumi.StringOutput)
+func (o LookupWorkspaceFolderResultOutput) ModelType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupWorkspaceFolderResult) *string { return v.ModelType }).(pulumi.StringPtrOutput)
 }
 
 // The model version of an object.
-func (o LookupWorkspaceFolderResultOutput) ModelVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupWorkspaceFolderResult) string { return v.ModelVersion }).(pulumi.StringOutput)
+func (o LookupWorkspaceFolderResultOutput) ModelVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupWorkspaceFolderResult) *string { return v.ModelVersion }).(pulumi.StringPtrOutput)
 }
 
 // Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-func (o LookupWorkspaceFolderResultOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupWorkspaceFolderResult) string { return v.Name }).(pulumi.StringOutput)
+func (o LookupWorkspaceFolderResultOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupWorkspaceFolderResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-func (o LookupWorkspaceFolderResultOutput) ObjectStatus() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupWorkspaceFolderResult) int { return v.ObjectStatus }).(pulumi.IntOutput)
+func (o LookupWorkspaceFolderResultOutput) ObjectStatus() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupWorkspaceFolderResult) *int { return v.ObjectStatus }).(pulumi.IntPtrOutput)
 }
 
 // The version of the object that is used to track changes in the object instance.
-func (o LookupWorkspaceFolderResultOutput) ObjectVersion() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupWorkspaceFolderResult) int { return v.ObjectVersion }).(pulumi.IntOutput)
+func (o LookupWorkspaceFolderResultOutput) ObjectVersion() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupWorkspaceFolderResult) *int { return v.ObjectVersion }).(pulumi.IntPtrOutput)
 }
 
 // A reference to the object's parent.

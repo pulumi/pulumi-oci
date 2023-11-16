@@ -84,11 +84,11 @@ export interface GetManagementAgentInstallKeysResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of management_agent_install_keys.
      */
-    readonly managementAgentInstallKeys: outputs.ManagementAgent.GetManagementAgentInstallKeysManagementAgentInstallKey[];
+    readonly managementAgentInstallKeys?: outputs.ManagementAgent.GetManagementAgentInstallKeysManagementAgentInstallKey[];
     /**
      * Status of Key
      */

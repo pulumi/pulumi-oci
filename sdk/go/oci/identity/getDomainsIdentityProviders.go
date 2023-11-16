@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Identity Providers in Oracle Cloud Infrastructure Identity Domains service.
@@ -88,20 +87,20 @@ type GetDomainsIdentityProvidersResult struct {
 	Authorization *string  `pulumi:"authorization"`
 	CompartmentId *string  `pulumi:"compartmentId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                     string  `pulumi:"id"`
+	Id                     *string `pulumi:"id"`
 	IdcsEndpoint           string  `pulumi:"idcsEndpoint"`
 	IdentityProviderCount  *int    `pulumi:"identityProviderCount"`
 	IdentityProviderFilter *string `pulumi:"identityProviderFilter"`
 	// The list of identity_providers.
 	IdentityProviders         []GetDomainsIdentityProvidersIdentityProvider `pulumi:"identityProviders"`
-	ItemsPerPage              int                                           `pulumi:"itemsPerPage"`
+	ItemsPerPage              *int                                          `pulumi:"itemsPerPage"`
 	ResourceTypeSchemaVersion *string                                       `pulumi:"resourceTypeSchemaVersion"`
 	// REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
 	Schemas      []string `pulumi:"schemas"`
 	SortBy       *string  `pulumi:"sortBy"`
 	SortOrder    *string  `pulumi:"sortOrder"`
 	StartIndex   *int     `pulumi:"startIndex"`
-	TotalResults int      `pulumi:"totalResults"`
+	TotalResults *int     `pulumi:"totalResults"`
 }
 
 func GetDomainsIdentityProvidersOutput(ctx *pulumi.Context, args GetDomainsIdentityProvidersOutputArgs, opts ...pulumi.InvokeOption) GetDomainsIdentityProvidersResultOutput {
@@ -159,12 +158,6 @@ func (o GetDomainsIdentityProvidersResultOutput) ToGetDomainsIdentityProvidersRe
 	return o
 }
 
-func (o GetDomainsIdentityProvidersResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsIdentityProvidersResult] {
-	return pulumix.Output[GetDomainsIdentityProvidersResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDomainsIdentityProvidersResultOutput) AttributeSets() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetDomainsIdentityProvidersResult) []string { return v.AttributeSets }).(pulumi.StringArrayOutput)
 }
@@ -182,8 +175,8 @@ func (o GetDomainsIdentityProvidersResultOutput) CompartmentId() pulumi.StringPt
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetDomainsIdentityProvidersResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDomainsIdentityProvidersResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDomainsIdentityProvidersResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDomainsIdentityProvidersResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetDomainsIdentityProvidersResultOutput) IdcsEndpoint() pulumi.StringOutput {
@@ -205,8 +198,8 @@ func (o GetDomainsIdentityProvidersResultOutput) IdentityProviders() GetDomainsI
 	}).(GetDomainsIdentityProvidersIdentityProviderArrayOutput)
 }
 
-func (o GetDomainsIdentityProvidersResultOutput) ItemsPerPage() pulumi.IntOutput {
-	return o.ApplyT(func(v GetDomainsIdentityProvidersResult) int { return v.ItemsPerPage }).(pulumi.IntOutput)
+func (o GetDomainsIdentityProvidersResultOutput) ItemsPerPage() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetDomainsIdentityProvidersResult) *int { return v.ItemsPerPage }).(pulumi.IntPtrOutput)
 }
 
 func (o GetDomainsIdentityProvidersResultOutput) ResourceTypeSchemaVersion() pulumi.StringPtrOutput {
@@ -230,8 +223,8 @@ func (o GetDomainsIdentityProvidersResultOutput) StartIndex() pulumi.IntPtrOutpu
 	return o.ApplyT(func(v GetDomainsIdentityProvidersResult) *int { return v.StartIndex }).(pulumi.IntPtrOutput)
 }
 
-func (o GetDomainsIdentityProvidersResultOutput) TotalResults() pulumi.IntOutput {
-	return o.ApplyT(func(v GetDomainsIdentityProvidersResult) int { return v.TotalResults }).(pulumi.IntOutput)
+func (o GetDomainsIdentityProvidersResultOutput) TotalResults() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetDomainsIdentityProvidersResult) *int { return v.TotalResults }).(pulumi.IntPtrOutput)
 }
 
 func init() {

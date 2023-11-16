@@ -25,13 +25,6 @@ class TargetAssetArgs:
                  ms_license: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a TargetAsset resource.
-        :param pulumi.Input[bool] is_excluded_from_execution: (Updatable) A boolean indicating whether the asset should be migrated.
-        :param pulumi.Input[str] migration_plan_id: OCID of the associated migration plan.
-        :param pulumi.Input[str] preferred_shape_type: (Updatable) Preferred VM shape type that you provide.
-        :param pulumi.Input[str] type: (Updatable) The type of action to run when the instance is interrupted for eviction.
-        :param pulumi.Input['TargetAssetUserSpecArgs'] user_spec: (Updatable) Instance launch details. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
-        :param pulumi.Input[int] block_volumes_performance: (Updatable) Performance of the block volumes.
-        :param pulumi.Input[str] ms_license: (Updatable) Microsoft license for the VM configuration.
         """
         pulumi.set(__self__, "is_excluded_from_execution", is_excluded_from_execution)
         pulumi.set(__self__, "migration_plan_id", migration_plan_id)
@@ -46,9 +39,6 @@ class TargetAssetArgs:
     @property
     @pulumi.getter(name="isExcludedFromExecution")
     def is_excluded_from_execution(self) -> pulumi.Input[bool]:
-        """
-        (Updatable) A boolean indicating whether the asset should be migrated.
-        """
         return pulumi.get(self, "is_excluded_from_execution")
 
     @is_excluded_from_execution.setter
@@ -58,9 +48,6 @@ class TargetAssetArgs:
     @property
     @pulumi.getter(name="migrationPlanId")
     def migration_plan_id(self) -> pulumi.Input[str]:
-        """
-        OCID of the associated migration plan.
-        """
         return pulumi.get(self, "migration_plan_id")
 
     @migration_plan_id.setter
@@ -70,9 +57,6 @@ class TargetAssetArgs:
     @property
     @pulumi.getter(name="preferredShapeType")
     def preferred_shape_type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Preferred VM shape type that you provide.
-        """
         return pulumi.get(self, "preferred_shape_type")
 
     @preferred_shape_type.setter
@@ -82,9 +66,6 @@ class TargetAssetArgs:
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The type of action to run when the instance is interrupted for eviction.
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -94,9 +75,6 @@ class TargetAssetArgs:
     @property
     @pulumi.getter(name="userSpec")
     def user_spec(self) -> pulumi.Input['TargetAssetUserSpecArgs']:
-        """
-        (Updatable) Instance launch details. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
-        """
         return pulumi.get(self, "user_spec")
 
     @user_spec.setter
@@ -106,9 +84,6 @@ class TargetAssetArgs:
     @property
     @pulumi.getter(name="blockVolumesPerformance")
     def block_volumes_performance(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Performance of the block volumes.
-        """
         return pulumi.get(self, "block_volumes_performance")
 
     @block_volumes_performance.setter
@@ -118,9 +93,6 @@ class TargetAssetArgs:
     @property
     @pulumi.getter(name="msLicense")
     def ms_license(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Microsoft license for the VM configuration.
-        """
         return pulumi.get(self, "ms_license")
 
     @ms_license.setter
@@ -153,26 +125,6 @@ class _TargetAssetState:
                  user_spec: Optional[pulumi.Input['TargetAssetUserSpecArgs']] = None):
         """
         Input properties used for looking up and filtering TargetAsset resources.
-        :param pulumi.Input[int] block_volumes_performance: (Updatable) Performance of the block volumes.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment.
-        :param pulumi.Input[Sequence[pulumi.Input['TargetAssetCompatibilityMessageArgs']]] compatibility_messages: Messages about the compatibility issues.
-        :param pulumi.Input[str] created_resource_id: Created resource identifier
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[Sequence[pulumi.Input['TargetAssetEstimatedCostArgs']]] estimated_costs: Cost estimation description
-        :param pulumi.Input[bool] is_excluded_from_execution: (Updatable) A boolean indicating whether the asset should be migrated.
-        :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[Sequence[pulumi.Input['TargetAssetMigrationAssetArgs']]] migration_assets: Description of the migration asset.
-        :param pulumi.Input[str] migration_plan_id: OCID of the associated migration plan.
-        :param pulumi.Input[str] ms_license: (Updatable) Microsoft license for the VM configuration.
-        :param pulumi.Input[str] preferred_shape_type: (Updatable) Preferred VM shape type that you provide.
-        :param pulumi.Input[Sequence[pulumi.Input['TargetAssetRecommendedSpecArgs']]] recommended_specs: Instance launch details. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
-        :param pulumi.Input[str] state: The current state of the target asset.
-        :param pulumi.Input[Sequence[pulumi.Input['TargetAssetTestSpecArgs']]] test_specs: Instance launch details. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
-        :param pulumi.Input[str] time_assessed: The time when the assessment was done. An RFC3339 formatted datetime string.
-        :param pulumi.Input[str] time_created: The time when the target asset was created. An RFC3339 formatted datetime string.
-        :param pulumi.Input[str] time_updated: The time when the target asset was updated. An RFC3339 formatted datetime string.
-        :param pulumi.Input[str] type: (Updatable) The type of action to run when the instance is interrupted for eviction.
-        :param pulumi.Input['TargetAssetUserSpecArgs'] user_spec: (Updatable) Instance launch details. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
         """
         if block_volumes_performance is not None:
             pulumi.set(__self__, "block_volumes_performance", block_volumes_performance)
@@ -218,9 +170,6 @@ class _TargetAssetState:
     @property
     @pulumi.getter(name="blockVolumesPerformance")
     def block_volumes_performance(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Performance of the block volumes.
-        """
         return pulumi.get(self, "block_volumes_performance")
 
     @block_volumes_performance.setter
@@ -230,9 +179,6 @@ class _TargetAssetState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -242,9 +188,6 @@ class _TargetAssetState:
     @property
     @pulumi.getter(name="compatibilityMessages")
     def compatibility_messages(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['TargetAssetCompatibilityMessageArgs']]]]:
-        """
-        Messages about the compatibility issues.
-        """
         return pulumi.get(self, "compatibility_messages")
 
     @compatibility_messages.setter
@@ -254,9 +197,6 @@ class _TargetAssetState:
     @property
     @pulumi.getter(name="createdResourceId")
     def created_resource_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        Created resource identifier
-        """
         return pulumi.get(self, "created_resource_id")
 
     @created_resource_id.setter
@@ -266,9 +206,6 @@ class _TargetAssetState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -278,9 +215,6 @@ class _TargetAssetState:
     @property
     @pulumi.getter(name="estimatedCosts")
     def estimated_costs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['TargetAssetEstimatedCostArgs']]]]:
-        """
-        Cost estimation description
-        """
         return pulumi.get(self, "estimated_costs")
 
     @estimated_costs.setter
@@ -290,9 +224,6 @@ class _TargetAssetState:
     @property
     @pulumi.getter(name="isExcludedFromExecution")
     def is_excluded_from_execution(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) A boolean indicating whether the asset should be migrated.
-        """
         return pulumi.get(self, "is_excluded_from_execution")
 
     @is_excluded_from_execution.setter
@@ -302,9 +233,6 @@ class _TargetAssetState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -314,9 +242,6 @@ class _TargetAssetState:
     @property
     @pulumi.getter(name="migrationAssets")
     def migration_assets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['TargetAssetMigrationAssetArgs']]]]:
-        """
-        Description of the migration asset.
-        """
         return pulumi.get(self, "migration_assets")
 
     @migration_assets.setter
@@ -326,9 +251,6 @@ class _TargetAssetState:
     @property
     @pulumi.getter(name="migrationPlanId")
     def migration_plan_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        OCID of the associated migration plan.
-        """
         return pulumi.get(self, "migration_plan_id")
 
     @migration_plan_id.setter
@@ -338,9 +260,6 @@ class _TargetAssetState:
     @property
     @pulumi.getter(name="msLicense")
     def ms_license(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Microsoft license for the VM configuration.
-        """
         return pulumi.get(self, "ms_license")
 
     @ms_license.setter
@@ -350,9 +269,6 @@ class _TargetAssetState:
     @property
     @pulumi.getter(name="preferredShapeType")
     def preferred_shape_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Preferred VM shape type that you provide.
-        """
         return pulumi.get(self, "preferred_shape_type")
 
     @preferred_shape_type.setter
@@ -362,9 +278,6 @@ class _TargetAssetState:
     @property
     @pulumi.getter(name="recommendedSpecs")
     def recommended_specs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['TargetAssetRecommendedSpecArgs']]]]:
-        """
-        Instance launch details. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
-        """
         return pulumi.get(self, "recommended_specs")
 
     @recommended_specs.setter
@@ -374,9 +287,6 @@ class _TargetAssetState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the target asset.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -386,9 +296,6 @@ class _TargetAssetState:
     @property
     @pulumi.getter(name="testSpecs")
     def test_specs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['TargetAssetTestSpecArgs']]]]:
-        """
-        Instance launch details. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
-        """
         return pulumi.get(self, "test_specs")
 
     @test_specs.setter
@@ -398,9 +305,6 @@ class _TargetAssetState:
     @property
     @pulumi.getter(name="timeAssessed")
     def time_assessed(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time when the assessment was done. An RFC3339 formatted datetime string.
-        """
         return pulumi.get(self, "time_assessed")
 
     @time_assessed.setter
@@ -410,9 +314,6 @@ class _TargetAssetState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time when the target asset was created. An RFC3339 formatted datetime string.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -422,9 +323,6 @@ class _TargetAssetState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time when the target asset was updated. An RFC3339 formatted datetime string.
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -434,9 +332,6 @@ class _TargetAssetState:
     @property
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The type of action to run when the instance is interrupted for eviction.
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -446,9 +341,6 @@ class _TargetAssetState:
     @property
     @pulumi.getter(name="userSpec")
     def user_spec(self) -> Optional[pulumi.Input['TargetAssetUserSpecArgs']]:
-        """
-        (Updatable) Instance launch details. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
-        """
         return pulumi.get(self, "user_spec")
 
     @user_spec.setter
@@ -470,108 +362,9 @@ class TargetAsset(pulumi.CustomResource):
                  user_spec: Optional[pulumi.Input[pulumi.InputType['TargetAssetUserSpecArgs']]] = None,
                  __props__=None):
         """
-        This resource provides the Target Asset resource in Oracle Cloud Infrastructure Cloud Migrations service.
-
-        Creates a target asset.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_target_asset = oci.cloud_migrations.TargetAsset("testTargetAsset",
-            is_excluded_from_execution=var["target_asset_is_excluded_from_execution"],
-            migration_plan_id=oci_cloud_migrations_migration_plan["test_migration_plan"]["id"],
-            preferred_shape_type=var["target_asset_preferred_shape_type"],
-            type=var["target_asset_type"],
-            user_spec=oci.cloud_migrations.TargetAssetUserSpecArgs(
-                agent_config=oci.cloud_migrations.TargetAssetUserSpecAgentConfigArgs(
-                    are_all_plugins_disabled=var["target_asset_user_spec_agent_config_are_all_plugins_disabled"],
-                    is_management_disabled=var["target_asset_user_spec_agent_config_is_management_disabled"],
-                    is_monitoring_disabled=var["target_asset_user_spec_agent_config_is_monitoring_disabled"],
-                    plugins_configs=[oci.cloud_migrations.TargetAssetUserSpecAgentConfigPluginsConfigArgs(
-                        desired_state=var["target_asset_user_spec_agent_config_plugins_config_desired_state"],
-                        name=var["target_asset_user_spec_agent_config_plugins_config_name"],
-                    )],
-                ),
-                availability_domain=var["target_asset_user_spec_availability_domain"],
-                capacity_reservation_id=oci_cloud_migrations_capacity_reservation["test_capacity_reservation"]["id"],
-                compartment_id=var["compartment_id"],
-                create_vnic_details=oci.cloud_migrations.TargetAssetUserSpecCreateVnicDetailsArgs(
-                    assign_private_dns_record=var["target_asset_user_spec_create_vnic_details_assign_private_dns_record"],
-                    assign_public_ip=var["target_asset_user_spec_create_vnic_details_assign_public_ip"],
-                    defined_tags={
-                        "foo-namespace.bar-key": "value",
-                    },
-                    display_name=var["target_asset_user_spec_create_vnic_details_display_name"],
-                    freeform_tags={
-                        "bar-key": "value",
-                    },
-                    hostname_label=var["target_asset_user_spec_create_vnic_details_hostname_label"],
-                    nsg_ids=var["target_asset_user_spec_create_vnic_details_nsg_ids"],
-                    private_ip=var["target_asset_user_spec_create_vnic_details_private_ip"],
-                    skip_source_dest_check=var["target_asset_user_spec_create_vnic_details_skip_source_dest_check"],
-                    subnet_id=oci_core_subnet["test_subnet"]["id"],
-                    vlan_id=oci_core_vlan["test_vlan"]["id"],
-                ),
-                dedicated_vm_host_id=oci_core_dedicated_vm_host["test_dedicated_vm_host"]["id"],
-                defined_tags={
-                    "foo-namespace.bar-key": "value",
-                },
-                display_name=var["target_asset_user_spec_display_name"],
-                fault_domain=var["target_asset_user_spec_fault_domain"],
-                freeform_tags={
-                    "bar-key": "value",
-                },
-                hostname_label=var["target_asset_user_spec_hostname_label"],
-                instance_options=oci.cloud_migrations.TargetAssetUserSpecInstanceOptionsArgs(
-                    are_legacy_imds_endpoints_disabled=var["target_asset_user_spec_instance_options_are_legacy_imds_endpoints_disabled"],
-                ),
-                ipxe_script=var["target_asset_user_spec_ipxe_script"],
-                is_pv_encryption_in_transit_enabled=var["target_asset_user_spec_is_pv_encryption_in_transit_enabled"],
-                preemptible_instance_config=oci.cloud_migrations.TargetAssetUserSpecPreemptibleInstanceConfigArgs(
-                    preemption_action=oci.cloud_migrations.TargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionArgs(
-                        type=var["target_asset_user_spec_preemptible_instance_config_preemption_action_type"],
-                        preserve_boot_volume=var["target_asset_user_spec_preemptible_instance_config_preemption_action_preserve_boot_volume"],
-                    ),
-                ),
-                shape=var["target_asset_user_spec_shape"],
-                shape_config=oci.cloud_migrations.TargetAssetUserSpecShapeConfigArgs(
-                    baseline_ocpu_utilization=var["target_asset_user_spec_shape_config_baseline_ocpu_utilization"],
-                    memory_in_gbs=var["target_asset_user_spec_shape_config_memory_in_gbs"],
-                    ocpus=var["target_asset_user_spec_shape_config_ocpus"],
-                ),
-                source_details=oci.cloud_migrations.TargetAssetUserSpecSourceDetailsArgs(
-                    source_type=var["target_asset_user_spec_source_details_source_type"],
-                    boot_volume_id=oci_core_boot_volume["test_boot_volume"]["id"],
-                    boot_volume_size_in_gbs=var["target_asset_user_spec_source_details_boot_volume_size_in_gbs"],
-                    boot_volume_vpus_per_gb=var["target_asset_user_spec_source_details_boot_volume_vpus_per_gb"],
-                    image_id=oci_core_image["test_image"]["id"],
-                    kms_key_id=oci_kms_key["test_key"]["id"],
-                ),
-            ),
-            block_volumes_performance=var["target_asset_block_volumes_performance"],
-            ms_license=var["target_asset_ms_license"])
-        ```
-
-        ## Import
-
-        TargetAssets can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:CloudMigrations/targetAsset:TargetAsset test_target_asset "id"
-        ```
-
+        Create a TargetAsset resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[int] block_volumes_performance: (Updatable) Performance of the block volumes.
-        :param pulumi.Input[bool] is_excluded_from_execution: (Updatable) A boolean indicating whether the asset should be migrated.
-        :param pulumi.Input[str] migration_plan_id: OCID of the associated migration plan.
-        :param pulumi.Input[str] ms_license: (Updatable) Microsoft license for the VM configuration.
-        :param pulumi.Input[str] preferred_shape_type: (Updatable) Preferred VM shape type that you provide.
-        :param pulumi.Input[str] type: (Updatable) The type of action to run when the instance is interrupted for eviction.
-        :param pulumi.Input[pulumi.InputType['TargetAssetUserSpecArgs']] user_spec: (Updatable) Instance launch details. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
         """
         ...
     @overload
@@ -580,99 +373,7 @@ class TargetAsset(pulumi.CustomResource):
                  args: TargetAssetArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Target Asset resource in Oracle Cloud Infrastructure Cloud Migrations service.
-
-        Creates a target asset.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_target_asset = oci.cloud_migrations.TargetAsset("testTargetAsset",
-            is_excluded_from_execution=var["target_asset_is_excluded_from_execution"],
-            migration_plan_id=oci_cloud_migrations_migration_plan["test_migration_plan"]["id"],
-            preferred_shape_type=var["target_asset_preferred_shape_type"],
-            type=var["target_asset_type"],
-            user_spec=oci.cloud_migrations.TargetAssetUserSpecArgs(
-                agent_config=oci.cloud_migrations.TargetAssetUserSpecAgentConfigArgs(
-                    are_all_plugins_disabled=var["target_asset_user_spec_agent_config_are_all_plugins_disabled"],
-                    is_management_disabled=var["target_asset_user_spec_agent_config_is_management_disabled"],
-                    is_monitoring_disabled=var["target_asset_user_spec_agent_config_is_monitoring_disabled"],
-                    plugins_configs=[oci.cloud_migrations.TargetAssetUserSpecAgentConfigPluginsConfigArgs(
-                        desired_state=var["target_asset_user_spec_agent_config_plugins_config_desired_state"],
-                        name=var["target_asset_user_spec_agent_config_plugins_config_name"],
-                    )],
-                ),
-                availability_domain=var["target_asset_user_spec_availability_domain"],
-                capacity_reservation_id=oci_cloud_migrations_capacity_reservation["test_capacity_reservation"]["id"],
-                compartment_id=var["compartment_id"],
-                create_vnic_details=oci.cloud_migrations.TargetAssetUserSpecCreateVnicDetailsArgs(
-                    assign_private_dns_record=var["target_asset_user_spec_create_vnic_details_assign_private_dns_record"],
-                    assign_public_ip=var["target_asset_user_spec_create_vnic_details_assign_public_ip"],
-                    defined_tags={
-                        "foo-namespace.bar-key": "value",
-                    },
-                    display_name=var["target_asset_user_spec_create_vnic_details_display_name"],
-                    freeform_tags={
-                        "bar-key": "value",
-                    },
-                    hostname_label=var["target_asset_user_spec_create_vnic_details_hostname_label"],
-                    nsg_ids=var["target_asset_user_spec_create_vnic_details_nsg_ids"],
-                    private_ip=var["target_asset_user_spec_create_vnic_details_private_ip"],
-                    skip_source_dest_check=var["target_asset_user_spec_create_vnic_details_skip_source_dest_check"],
-                    subnet_id=oci_core_subnet["test_subnet"]["id"],
-                    vlan_id=oci_core_vlan["test_vlan"]["id"],
-                ),
-                dedicated_vm_host_id=oci_core_dedicated_vm_host["test_dedicated_vm_host"]["id"],
-                defined_tags={
-                    "foo-namespace.bar-key": "value",
-                },
-                display_name=var["target_asset_user_spec_display_name"],
-                fault_domain=var["target_asset_user_spec_fault_domain"],
-                freeform_tags={
-                    "bar-key": "value",
-                },
-                hostname_label=var["target_asset_user_spec_hostname_label"],
-                instance_options=oci.cloud_migrations.TargetAssetUserSpecInstanceOptionsArgs(
-                    are_legacy_imds_endpoints_disabled=var["target_asset_user_spec_instance_options_are_legacy_imds_endpoints_disabled"],
-                ),
-                ipxe_script=var["target_asset_user_spec_ipxe_script"],
-                is_pv_encryption_in_transit_enabled=var["target_asset_user_spec_is_pv_encryption_in_transit_enabled"],
-                preemptible_instance_config=oci.cloud_migrations.TargetAssetUserSpecPreemptibleInstanceConfigArgs(
-                    preemption_action=oci.cloud_migrations.TargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionArgs(
-                        type=var["target_asset_user_spec_preemptible_instance_config_preemption_action_type"],
-                        preserve_boot_volume=var["target_asset_user_spec_preemptible_instance_config_preemption_action_preserve_boot_volume"],
-                    ),
-                ),
-                shape=var["target_asset_user_spec_shape"],
-                shape_config=oci.cloud_migrations.TargetAssetUserSpecShapeConfigArgs(
-                    baseline_ocpu_utilization=var["target_asset_user_spec_shape_config_baseline_ocpu_utilization"],
-                    memory_in_gbs=var["target_asset_user_spec_shape_config_memory_in_gbs"],
-                    ocpus=var["target_asset_user_spec_shape_config_ocpus"],
-                ),
-                source_details=oci.cloud_migrations.TargetAssetUserSpecSourceDetailsArgs(
-                    source_type=var["target_asset_user_spec_source_details_source_type"],
-                    boot_volume_id=oci_core_boot_volume["test_boot_volume"]["id"],
-                    boot_volume_size_in_gbs=var["target_asset_user_spec_source_details_boot_volume_size_in_gbs"],
-                    boot_volume_vpus_per_gb=var["target_asset_user_spec_source_details_boot_volume_vpus_per_gb"],
-                    image_id=oci_core_image["test_image"]["id"],
-                    kms_key_id=oci_kms_key["test_key"]["id"],
-                ),
-            ),
-            block_volumes_performance=var["target_asset_block_volumes_performance"],
-            ms_license=var["target_asset_ms_license"])
-        ```
-
-        ## Import
-
-        TargetAssets can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:CloudMigrations/targetAsset:TargetAsset test_target_asset "id"
-        ```
-
+        Create a TargetAsset resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param TargetAssetArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -771,26 +472,6 @@ class TargetAsset(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[int] block_volumes_performance: (Updatable) Performance of the block volumes.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['TargetAssetCompatibilityMessageArgs']]]] compatibility_messages: Messages about the compatibility issues.
-        :param pulumi.Input[str] created_resource_id: Created resource identifier
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['TargetAssetEstimatedCostArgs']]]] estimated_costs: Cost estimation description
-        :param pulumi.Input[bool] is_excluded_from_execution: (Updatable) A boolean indicating whether the asset should be migrated.
-        :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['TargetAssetMigrationAssetArgs']]]] migration_assets: Description of the migration asset.
-        :param pulumi.Input[str] migration_plan_id: OCID of the associated migration plan.
-        :param pulumi.Input[str] ms_license: (Updatable) Microsoft license for the VM configuration.
-        :param pulumi.Input[str] preferred_shape_type: (Updatable) Preferred VM shape type that you provide.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['TargetAssetRecommendedSpecArgs']]]] recommended_specs: Instance launch details. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
-        :param pulumi.Input[str] state: The current state of the target asset.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['TargetAssetTestSpecArgs']]]] test_specs: Instance launch details. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
-        :param pulumi.Input[str] time_assessed: The time when the assessment was done. An RFC3339 formatted datetime string.
-        :param pulumi.Input[str] time_created: The time when the target asset was created. An RFC3339 formatted datetime string.
-        :param pulumi.Input[str] time_updated: The time when the target asset was updated. An RFC3339 formatted datetime string.
-        :param pulumi.Input[str] type: (Updatable) The type of action to run when the instance is interrupted for eviction.
-        :param pulumi.Input[pulumi.InputType['TargetAssetUserSpecArgs']] user_spec: (Updatable) Instance launch details. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -820,161 +501,101 @@ class TargetAsset(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="blockVolumesPerformance")
-    def block_volumes_performance(self) -> pulumi.Output[int]:
-        """
-        (Updatable) Performance of the block volumes.
-        """
+    def block_volumes_performance(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "block_volumes_performance")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The OCID of the compartment.
-        """
+    def compartment_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="compatibilityMessages")
-    def compatibility_messages(self) -> pulumi.Output[Sequence['outputs.TargetAssetCompatibilityMessage']]:
-        """
-        Messages about the compatibility issues.
-        """
+    def compatibility_messages(self) -> pulumi.Output[Optional[Sequence['outputs.TargetAssetCompatibilityMessage']]]:
         return pulumi.get(self, "compatibility_messages")
 
     @property
     @pulumi.getter(name="createdResourceId")
-    def created_resource_id(self) -> pulumi.Output[str]:
-        """
-        Created resource identifier
-        """
+    def created_resource_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "created_resource_id")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="estimatedCosts")
-    def estimated_costs(self) -> pulumi.Output[Sequence['outputs.TargetAssetEstimatedCost']]:
-        """
-        Cost estimation description
-        """
+    def estimated_costs(self) -> pulumi.Output[Optional[Sequence['outputs.TargetAssetEstimatedCost']]]:
         return pulumi.get(self, "estimated_costs")
 
     @property
     @pulumi.getter(name="isExcludedFromExecution")
     def is_excluded_from_execution(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) A boolean indicating whether the asset should be migrated.
-        """
         return pulumi.get(self, "is_excluded_from_execution")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="migrationAssets")
-    def migration_assets(self) -> pulumi.Output[Sequence['outputs.TargetAssetMigrationAsset']]:
-        """
-        Description of the migration asset.
-        """
+    def migration_assets(self) -> pulumi.Output[Optional[Sequence['outputs.TargetAssetMigrationAsset']]]:
         return pulumi.get(self, "migration_assets")
 
     @property
     @pulumi.getter(name="migrationPlanId")
     def migration_plan_id(self) -> pulumi.Output[str]:
-        """
-        OCID of the associated migration plan.
-        """
         return pulumi.get(self, "migration_plan_id")
 
     @property
     @pulumi.getter(name="msLicense")
-    def ms_license(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Microsoft license for the VM configuration.
-        """
+    def ms_license(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "ms_license")
 
     @property
     @pulumi.getter(name="preferredShapeType")
     def preferred_shape_type(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Preferred VM shape type that you provide.
-        """
         return pulumi.get(self, "preferred_shape_type")
 
     @property
     @pulumi.getter(name="recommendedSpecs")
-    def recommended_specs(self) -> pulumi.Output[Sequence['outputs.TargetAssetRecommendedSpec']]:
-        """
-        Instance launch details. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
-        """
+    def recommended_specs(self) -> pulumi.Output[Optional[Sequence['outputs.TargetAssetRecommendedSpec']]]:
         return pulumi.get(self, "recommended_specs")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the target asset.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="testSpecs")
-    def test_specs(self) -> pulumi.Output[Sequence['outputs.TargetAssetTestSpec']]:
-        """
-        Instance launch details. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
-        """
+    def test_specs(self) -> pulumi.Output[Optional[Sequence['outputs.TargetAssetTestSpec']]]:
         return pulumi.get(self, "test_specs")
 
     @property
     @pulumi.getter(name="timeAssessed")
-    def time_assessed(self) -> pulumi.Output[str]:
-        """
-        The time when the assessment was done. An RFC3339 formatted datetime string.
-        """
+    def time_assessed(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_assessed")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The time when the target asset was created. An RFC3339 formatted datetime string.
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The time when the target asset was updated. An RFC3339 formatted datetime string.
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter
     def type(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The type of action to run when the instance is interrupted for eviction.
-        """
         return pulumi.get(self, "type")
 
     @property
     @pulumi.getter(name="userSpec")
     def user_spec(self) -> pulumi.Output['outputs.TargetAssetUserSpec']:
-        """
-        (Updatable) Instance launch details. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
-        """
         return pulumi.get(self, "user_spec")
 

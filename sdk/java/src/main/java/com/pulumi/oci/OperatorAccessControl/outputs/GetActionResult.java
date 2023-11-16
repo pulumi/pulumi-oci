@@ -8,6 +8,8 @@ import com.pulumi.oci.OperatorAccessControl.outputs.GetActionProperty;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetActionResult {
@@ -15,74 +17,74 @@ public final class GetActionResult {
      * @return Name of the infrastructure layer associated with the operator action.
      * 
      */
-    private String component;
+    private @Nullable String component;
     /**
      * @return Display Name of the operator action.
      * 
      */
-    private String customerDisplayName;
+    private @Nullable String customerDisplayName;
     /**
      * @return Description of the operator action in terms of associated risk profile, and characteristics of the operating system commands made available to the operator under this operator action.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Name of the property
      * 
      */
-    private String name;
+    private @Nullable String name;
     private String operatorActionId;
     /**
      * @return Fine grained properties associated with the operator control.
      * 
      */
-    private List<GetActionProperty> properties;
+    private @Nullable List<GetActionProperty> properties;
     /**
      * @return resourceType for which the OperatorAction is applicable
      * 
      */
-    private String resourceType;
+    private @Nullable String resourceType;
 
     private GetActionResult() {}
     /**
      * @return Name of the infrastructure layer associated with the operator action.
      * 
      */
-    public String component() {
-        return this.component;
+    public Optional<String> component() {
+        return Optional.ofNullable(this.component);
     }
     /**
      * @return Display Name of the operator action.
      * 
      */
-    public String customerDisplayName() {
-        return this.customerDisplayName;
+    public Optional<String> customerDisplayName() {
+        return Optional.ofNullable(this.customerDisplayName);
     }
     /**
      * @return Description of the operator action in terms of associated risk profile, and characteristics of the operating system commands made available to the operator under this operator action.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Name of the property
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     public String operatorActionId() {
         return this.operatorActionId;
@@ -92,14 +94,14 @@ public final class GetActionResult {
      * 
      */
     public List<GetActionProperty> properties() {
-        return this.properties;
+        return this.properties == null ? List.of() : this.properties;
     }
     /**
      * @return resourceType for which the OperatorAction is applicable
      * 
      */
-    public String resourceType() {
-        return this.resourceType;
+    public Optional<String> resourceType() {
+        return Optional.ofNullable(this.resourceType);
     }
 
     public static Builder builder() {
@@ -111,14 +113,14 @@ public final class GetActionResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String component;
-        private String customerDisplayName;
-        private String description;
-        private String id;
-        private String name;
+        private @Nullable String component;
+        private @Nullable String customerDisplayName;
+        private @Nullable String description;
+        private @Nullable String id;
+        private @Nullable String name;
         private String operatorActionId;
-        private List<GetActionProperty> properties;
-        private String resourceType;
+        private @Nullable List<GetActionProperty> properties;
+        private @Nullable String resourceType;
         public Builder() {}
         public Builder(GetActionResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -133,28 +135,28 @@ public final class GetActionResult {
         }
 
         @CustomType.Setter
-        public Builder component(String component) {
-            this.component = Objects.requireNonNull(component);
+        public Builder component(@Nullable String component) {
+            this.component = component;
             return this;
         }
         @CustomType.Setter
-        public Builder customerDisplayName(String customerDisplayName) {
-            this.customerDisplayName = Objects.requireNonNull(customerDisplayName);
+        public Builder customerDisplayName(@Nullable String customerDisplayName) {
+            this.customerDisplayName = customerDisplayName;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
@@ -163,16 +165,16 @@ public final class GetActionResult {
             return this;
         }
         @CustomType.Setter
-        public Builder properties(List<GetActionProperty> properties) {
-            this.properties = Objects.requireNonNull(properties);
+        public Builder properties(@Nullable List<GetActionProperty> properties) {
+            this.properties = properties;
             return this;
         }
         public Builder properties(GetActionProperty... properties) {
             return properties(List.of(properties));
         }
         @CustomType.Setter
-        public Builder resourceType(String resourceType) {
-            this.resourceType = Objects.requireNonNull(resourceType);
+        public Builder resourceType(@Nullable String resourceType) {
+            this.resourceType = resourceType;
             return this;
         }
         public GetActionResult build() {

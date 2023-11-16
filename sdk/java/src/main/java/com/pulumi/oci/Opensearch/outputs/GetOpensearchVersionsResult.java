@@ -9,6 +9,7 @@ import com.pulumi.oci.Opensearch.outputs.GetOpensearchVersionsOpensearchVersions
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -19,12 +20,12 @@ public final class GetOpensearchVersionsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of opensearch_versions_collection.
      * 
      */
-    private List<GetOpensearchVersionsOpensearchVersionsCollection> opensearchVersionsCollections;
+    private @Nullable List<GetOpensearchVersionsOpensearchVersionsCollection> opensearchVersionsCollections;
 
     private GetOpensearchVersionsResult() {}
     public String compartmentId() {
@@ -37,15 +38,15 @@ public final class GetOpensearchVersionsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of opensearch_versions_collection.
      * 
      */
     public List<GetOpensearchVersionsOpensearchVersionsCollection> opensearchVersionsCollections() {
-        return this.opensearchVersionsCollections;
+        return this.opensearchVersionsCollections == null ? List.of() : this.opensearchVersionsCollections;
     }
 
     public static Builder builder() {
@@ -59,8 +60,8 @@ public final class GetOpensearchVersionsResult {
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetOpensearchVersionsFilter> filters;
-        private String id;
-        private List<GetOpensearchVersionsOpensearchVersionsCollection> opensearchVersionsCollections;
+        private @Nullable String id;
+        private @Nullable List<GetOpensearchVersionsOpensearchVersionsCollection> opensearchVersionsCollections;
         public Builder() {}
         public Builder(GetOpensearchVersionsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -84,13 +85,13 @@ public final class GetOpensearchVersionsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder opensearchVersionsCollections(List<GetOpensearchVersionsOpensearchVersionsCollection> opensearchVersionsCollections) {
-            this.opensearchVersionsCollections = Objects.requireNonNull(opensearchVersionsCollections);
+        public Builder opensearchVersionsCollections(@Nullable List<GetOpensearchVersionsOpensearchVersionsCollection> opensearchVersionsCollections) {
+            this.opensearchVersionsCollections = opensearchVersionsCollections;
             return this;
         }
         public Builder opensearchVersionsCollections(GetOpensearchVersionsOpensearchVersionsCollection... opensearchVersionsCollections) {

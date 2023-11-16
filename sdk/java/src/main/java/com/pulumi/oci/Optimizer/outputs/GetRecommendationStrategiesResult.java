@@ -22,7 +22,7 @@ public final class GetRecommendationStrategiesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The name of the strategy parameter.
      * 
@@ -33,7 +33,7 @@ public final class GetRecommendationStrategiesResult {
      * @return The list of recommendation_strategy_collection.
      * 
      */
-    private List<GetRecommendationStrategiesRecommendationStrategyCollection> recommendationStrategyCollections;
+    private @Nullable List<GetRecommendationStrategiesRecommendationStrategyCollection> recommendationStrategyCollections;
 
     private GetRecommendationStrategiesResult() {}
     public String compartmentId() {
@@ -49,8 +49,8 @@ public final class GetRecommendationStrategiesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The name of the strategy parameter.
@@ -67,7 +67,7 @@ public final class GetRecommendationStrategiesResult {
      * 
      */
     public List<GetRecommendationStrategiesRecommendationStrategyCollection> recommendationStrategyCollections() {
-        return this.recommendationStrategyCollections;
+        return this.recommendationStrategyCollections == null ? List.of() : this.recommendationStrategyCollections;
     }
 
     public static Builder builder() {
@@ -82,10 +82,10 @@ public final class GetRecommendationStrategiesResult {
         private String compartmentId;
         private Boolean compartmentIdInSubtree;
         private @Nullable List<GetRecommendationStrategiesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String name;
         private @Nullable String recommendationName;
-        private List<GetRecommendationStrategiesRecommendationStrategyCollection> recommendationStrategyCollections;
+        private @Nullable List<GetRecommendationStrategiesRecommendationStrategyCollection> recommendationStrategyCollections;
         public Builder() {}
         public Builder(GetRecommendationStrategiesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -117,8 +117,8 @@ public final class GetRecommendationStrategiesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -132,8 +132,8 @@ public final class GetRecommendationStrategiesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder recommendationStrategyCollections(List<GetRecommendationStrategiesRecommendationStrategyCollection> recommendationStrategyCollections) {
-            this.recommendationStrategyCollections = Objects.requireNonNull(recommendationStrategyCollections);
+        public Builder recommendationStrategyCollections(@Nullable List<GetRecommendationStrategiesRecommendationStrategyCollection> recommendationStrategyCollections) {
+            this.recommendationStrategyCollections = recommendationStrategyCollections;
             return this;
         }
         public Builder recommendationStrategyCollections(GetRecommendationStrategiesRecommendationStrategyCollection... recommendationStrategyCollections) {

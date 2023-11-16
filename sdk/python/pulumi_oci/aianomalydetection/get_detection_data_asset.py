@@ -68,10 +68,7 @@ class GetDetectionDataAssetResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment containing the DataAsset.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -81,98 +78,62 @@ class GetDetectionDataAssetResult:
 
     @property
     @pulumi.getter(name="dataSourceDetails")
-    def data_source_details(self) -> Sequence['outputs.GetDetectionDataAssetDataSourceDetailResult']:
-        """
-        Possible data sources
-        """
+    def data_source_details(self) -> Optional[Sequence['outputs.GetDetectionDataAssetDataSourceDetailResult']]:
         return pulumi.get(self, "data_source_details")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        A short description of the data asset.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The Unique Oracle ID (OCID) that is immutable on creation.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="privateEndpointId")
-    def private_endpoint_id(self) -> str:
-        """
-        OCID of Private Endpoint.
-        """
+    def private_endpoint_id(self) -> Optional[str]:
         return pulumi.get(self, "private_endpoint_id")
 
     @property
     @pulumi.getter(name="projectId")
-    def project_id(self) -> str:
-        """
-        The Unique project id which is created at project creation that is immutable on creation.
-        """
+    def project_id(self) -> Optional[str]:
         return pulumi.get(self, "project_id")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The lifecycle state of the Data Asset.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the the DataAsset was created. An RFC3339 formatted datetime string
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the the DataAsset was updated. An RFC3339 formatted datetime string
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -201,21 +162,7 @@ class AwaitableGetDetectionDataAssetResult(GetDetectionDataAssetResult):
 def get_detection_data_asset(data_asset_id: Optional[str] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDetectionDataAssetResult:
     """
-    This data source provides details about a specific Data Asset resource in Oracle Cloud Infrastructure Ai Anomaly Detection service.
-
-    Gets a DataAsset by identifier
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_data_asset = oci.AiAnomalyDetection.get_detection_data_asset(data_asset_id=oci_ai_anomaly_detection_data_asset["test_data_asset"]["id"])
-    ```
-
-
-    :param str data_asset_id: The OCID of the Data Asset.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['dataAssetId'] = data_asset_id
@@ -243,20 +190,6 @@ def get_detection_data_asset(data_asset_id: Optional[str] = None,
 def get_detection_data_asset_output(data_asset_id: Optional[pulumi.Input[str]] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDetectionDataAssetResult]:
     """
-    This data source provides details about a specific Data Asset resource in Oracle Cloud Infrastructure Ai Anomaly Detection service.
-
-    Gets a DataAsset by identifier
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_data_asset = oci.AiAnomalyDetection.get_detection_data_asset(data_asset_id=oci_ai_anomaly_detection_data_asset["test_data_asset"]["id"])
-    ```
-
-
-    :param str data_asset_id: The OCID of the Data Asset.
+    Use this data source to access information about an existing resource.
     """
     ...

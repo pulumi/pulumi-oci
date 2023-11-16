@@ -52,33 +52,21 @@ class GetConnectionAssignmentsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="connectionAssignmentCollections")
-    def connection_assignment_collections(self) -> Sequence['outputs.GetConnectionAssignmentsConnectionAssignmentCollectionResult']:
-        """
-        The list of connection_assignment_collection.
-        """
+    def connection_assignment_collections(self) -> Optional[Sequence['outputs.GetConnectionAssignmentsConnectionAssignmentCollectionResult']]:
         return pulumi.get(self, "connection_assignment_collections")
 
     @property
     @pulumi.getter(name="connectionId")
     def connection_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
-        """
         return pulumi.get(self, "connection_id")
 
     @property
     @pulumi.getter(name="deploymentId")
     def deployment_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
-        """
         return pulumi.get(self, "deployment_id")
 
     @property
@@ -88,7 +76,7 @@ class GetConnectionAssignmentsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -102,9 +90,6 @@ class GetConnectionAssignmentsResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        Possible lifecycle states for connection assignments.
-        """
         return pulumi.get(self, "state")
 
 
@@ -132,29 +117,7 @@ def get_connection_assignments(compartment_id: Optional[str] = None,
                                state: Optional[str] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetConnectionAssignmentsResult:
     """
-    This data source provides the list of Connection Assignments in Oracle Cloud Infrastructure Golden Gate service.
-
-    Lists the Connection Assignments in the compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_connection_assignments = oci.GoldenGate.get_connection_assignments(compartment_id=var["compartment_id"],
-        connection_id=oci_golden_gate_connection["test_connection"]["id"],
-        deployment_id=oci_golden_gate_deployment["test_deployment"]["id"],
-        name=var["connection_assignment_name"],
-        state=var["connection_assignment_state"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
-    :param str connection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection.
-    :param str deployment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment in which to list resources.
-    :param str name: The name of the connection in the assignment (aliasName).
-    :param str state: A filter to return only connection assignments having the 'lifecycleState' given.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -186,28 +149,6 @@ def get_connection_assignments_output(compartment_id: Optional[pulumi.Input[str]
                                       state: Optional[pulumi.Input[Optional[str]]] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetConnectionAssignmentsResult]:
     """
-    This data source provides the list of Connection Assignments in Oracle Cloud Infrastructure Golden Gate service.
-
-    Lists the Connection Assignments in the compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_connection_assignments = oci.GoldenGate.get_connection_assignments(compartment_id=var["compartment_id"],
-        connection_id=oci_golden_gate_connection["test_connection"]["id"],
-        deployment_id=oci_golden_gate_deployment["test_deployment"]["id"],
-        name=var["connection_assignment_name"],
-        state=var["connection_assignment_state"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
-    :param str connection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection.
-    :param str deployment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment in which to list resources.
-    :param str name: The name of the connection in the assignment (aliasName).
-    :param str state: A filter to return only connection assignments having the 'lifecycleState' given.
+    Use this data source to access information about an existing resource.
     """
     ...

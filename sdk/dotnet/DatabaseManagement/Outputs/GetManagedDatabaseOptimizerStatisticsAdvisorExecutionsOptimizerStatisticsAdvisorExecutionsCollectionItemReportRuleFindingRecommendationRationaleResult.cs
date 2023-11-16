@@ -16,10 +16,10 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// The message of the rationale.
         /// </summary>
-        public readonly string Message;
+        public readonly string? Message;
 
         [OutputConstructor]
-        private GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationaleResult(string message)
+        private GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationaleResult(string? message)
         {
             Message = message;
         }

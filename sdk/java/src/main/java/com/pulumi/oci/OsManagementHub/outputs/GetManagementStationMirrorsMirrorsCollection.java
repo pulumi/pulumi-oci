@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.OsManagementHub.outputs.GetManagementStationMirrorsMirrorsCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagementStationMirrorsMirrorsCollection {
@@ -14,7 +15,7 @@ public final class GetManagementStationMirrorsMirrorsCollection {
      * @return List of mirrors
      * 
      */
-    private List<GetManagementStationMirrorsMirrorsCollectionItem> items;
+    private @Nullable List<GetManagementStationMirrorsMirrorsCollectionItem> items;
 
     private GetManagementStationMirrorsMirrorsCollection() {}
     /**
@@ -22,7 +23,7 @@ public final class GetManagementStationMirrorsMirrorsCollection {
      * 
      */
     public List<GetManagementStationMirrorsMirrorsCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetManagementStationMirrorsMirrorsCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetManagementStationMirrorsMirrorsCollectionItem> items;
+        private @Nullable List<GetManagementStationMirrorsMirrorsCollectionItem> items;
         public Builder() {}
         public Builder(GetManagementStationMirrorsMirrorsCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetManagementStationMirrorsMirrorsCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetManagementStationMirrorsMirrorsCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetManagementStationMirrorsMirrorsCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetManagementStationMirrorsMirrorsCollectionItem... items) {

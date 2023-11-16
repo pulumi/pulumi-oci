@@ -55,39 +55,39 @@ export class ResourceAction extends pulumi.CustomResource {
     /**
      * Details about the recommended action.
      */
-    public /*out*/ readonly actions!: pulumi.Output<outputs.Optimizer.ResourceActionAction[]>;
+    public /*out*/ readonly actions!: pulumi.Output<outputs.Optimizer.ResourceActionAction[] | undefined>;
     /**
      * The unique OCID associated with the category.
      */
-    public /*out*/ readonly categoryId!: pulumi.Output<string>;
+    public /*out*/ readonly categoryId!: pulumi.Output<string | undefined>;
     /**
      * The OCID of the compartment.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    public /*out*/ readonly compartmentId!: pulumi.Output<string | undefined>;
     /**
      * The name associated with the compartment.
      */
-    public /*out*/ readonly compartmentName!: pulumi.Output<string>;
+    public /*out*/ readonly compartmentName!: pulumi.Output<string | undefined>;
     /**
      * The estimated cost savings, in dollars, for the resource action.
      */
-    public /*out*/ readonly estimatedCostSaving!: pulumi.Output<number>;
+    public /*out*/ readonly estimatedCostSaving!: pulumi.Output<number | undefined>;
     /**
      * Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
      */
-    public /*out*/ readonly extendedMetadata!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly extendedMetadata!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * Custom metadata key/value pairs for the resource action.
      */
-    public /*out*/ readonly metadata!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly metadata!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The name assigned to the resource.
      */
-    public /*out*/ readonly name!: pulumi.Output<string>;
+    public /*out*/ readonly name!: pulumi.Output<string | undefined>;
     /**
      * The unique OCID associated with the recommendation.
      */
-    public /*out*/ readonly recommendationId!: pulumi.Output<string>;
+    public /*out*/ readonly recommendationId!: pulumi.Output<string | undefined>;
     /**
      * The unique OCID associated with the resource action.
      */
@@ -95,15 +95,15 @@ export class ResourceAction extends pulumi.CustomResource {
     /**
      * The unique OCID associated with the resource.
      */
-    public /*out*/ readonly resourceId!: pulumi.Output<string>;
+    public /*out*/ readonly resourceId!: pulumi.Output<string | undefined>;
     /**
      * The kind of resource.
      */
-    public /*out*/ readonly resourceType!: pulumi.Output<string>;
+    public /*out*/ readonly resourceType!: pulumi.Output<string | undefined>;
     /**
      * The resource action's current state.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The status of the resource action.
      */
@@ -111,11 +111,11 @@ export class ResourceAction extends pulumi.CustomResource {
     /**
      * The date and time the resource action details were created, in the format defined by RFC3339.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The date and time that the resource action entered its current status. The format is defined by RFC3339.
      */
-    public /*out*/ readonly timeStatusBegin!: pulumi.Output<string>;
+    public /*out*/ readonly timeStatusBegin!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The date and time the current status will change. The format is defined by RFC3339.
      *
@@ -125,11 +125,11 @@ export class ResourceAction extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly timeStatusEnd!: pulumi.Output<string>;
+    public readonly timeStatusEnd!: pulumi.Output<string | undefined>;
     /**
      * The date and time the resource action details were last updated, in the format defined by RFC3339.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a ResourceAction resource with the given unique name, arguments, and options.

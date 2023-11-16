@@ -74,114 +74,72 @@ class GetVirtualDeploymentResult:
 
     @property
     @pulumi.getter(name="accessLoggings")
-    def access_loggings(self) -> Sequence['outputs.GetVirtualDeploymentAccessLoggingResult']:
-        """
-        This configuration determines if logging is enabled and where the logs will be output.
-        """
+    def access_loggings(self) -> Optional[Sequence['outputs.GetVirtualDeploymentAccessLoggingResult']]:
         return pulumi.get(self, "access_loggings")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        Unique identifier that is immutable on creation.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
-    def listeners(self) -> Sequence['outputs.GetVirtualDeploymentListenerResult']:
-        """
-        The listeners for the virtual deployment
-        """
+    def listeners(self) -> Optional[Sequence['outputs.GetVirtualDeploymentListenerResult']]:
         return pulumi.get(self, "listeners")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        A user-friendly name. The name must be unique within the same virtual service and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="serviceDiscoveries")
-    def service_discoveries(self) -> Sequence['outputs.GetVirtualDeploymentServiceDiscoveryResult']:
-        """
-        Service Discovery configuration for virtual deployments.
-        """
+    def service_discoveries(self) -> Optional[Sequence['outputs.GetVirtualDeploymentServiceDiscoveryResult']]:
         return pulumi.get(self, "service_discoveries")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the Resource.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time when this resource was created in an RFC3339 formatted datetime string.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time when this resource was updated in an RFC3339 formatted datetime string.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
@@ -191,10 +149,7 @@ class GetVirtualDeploymentResult:
 
     @property
     @pulumi.getter(name="virtualServiceId")
-    def virtual_service_id(self) -> str:
-        """
-        The OCID of the virtual service in which this virtual deployment is created.
-        """
+    def virtual_service_id(self) -> Optional[str]:
         return pulumi.get(self, "virtual_service_id")
 
 
@@ -225,21 +180,7 @@ class AwaitableGetVirtualDeploymentResult(GetVirtualDeploymentResult):
 def get_virtual_deployment(virtual_deployment_id: Optional[str] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetVirtualDeploymentResult:
     """
-    This data source provides details about a specific Virtual Deployment resource in Oracle Cloud Infrastructure Service Mesh service.
-
-    Gets a VirtualDeployment by identifier.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_virtual_deployment = oci.ServiceMesh.get_virtual_deployment(virtual_deployment_id=oci_service_mesh_virtual_deployment["test_virtual_deployment"]["id"])
-    ```
-
-
-    :param str virtual_deployment_id: Unique VirtualDeployment identifier.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['virtualDeploymentId'] = virtual_deployment_id
@@ -269,20 +210,6 @@ def get_virtual_deployment(virtual_deployment_id: Optional[str] = None,
 def get_virtual_deployment_output(virtual_deployment_id: Optional[pulumi.Input[str]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVirtualDeploymentResult]:
     """
-    This data source provides details about a specific Virtual Deployment resource in Oracle Cloud Infrastructure Service Mesh service.
-
-    Gets a VirtualDeployment by identifier.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_virtual_deployment = oci.ServiceMesh.get_virtual_deployment(virtual_deployment_id=oci_service_mesh_virtual_deployment["test_virtual_deployment"]["id"])
-    ```
-
-
-    :param str virtual_deployment_id: Unique VirtualDeployment identifier.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -16,41 +16,41 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// Pending e-mail address verification
         /// </summary>
-        public readonly string PendingVerificationData;
+        public readonly string? PendingVerificationData;
         /// <summary>
         /// A Boolean value indicating the 'primary' or preferred attribute value for this attribute. The primary attribute value 'true' MUST appear no more than once.
         /// </summary>
-        public readonly bool Primary;
+        public readonly bool? Primary;
         /// <summary>
         /// A Boolean value that indicates whether the email address is the secondary email address. The secondary attribute value 'true' MUST appear no more than once.
         /// </summary>
-        public readonly bool Secondary;
+        public readonly bool? Secondary;
         /// <summary>
         /// A label indicating the attribute's function.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
         /// <summary>
         /// The value of a X509 certificate.
         /// </summary>
-        public readonly string Value;
+        public readonly string? Value;
         /// <summary>
         /// A Boolean value that indicates if the phone number is verified.
         /// </summary>
-        public readonly bool Verified;
+        public readonly bool? Verified;
 
         [OutputConstructor]
         private GetDomainsUsersUserEmailResult(
-            string pendingVerificationData,
+            string? pendingVerificationData,
 
-            bool primary,
+            bool? primary,
 
-            bool secondary,
+            bool? secondary,
 
-            string type,
+            string? type,
 
-            string value,
+            string? value,
 
-            bool verified)
+            bool? verified)
         {
             PendingVerificationData = pendingVerificationData;
             Primary = primary;

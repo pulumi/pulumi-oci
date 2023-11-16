@@ -19,13 +19,13 @@ public final class GetAddonOptionsResult {
      * @return The list of addon_options.
      * 
      */
-    private List<GetAddonOptionsAddonOption> addonOptions;
+    private @Nullable List<GetAddonOptionsAddonOption> addonOptions;
     private @Nullable List<GetAddonOptionsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String kubernetesVersion;
 
     private GetAddonOptionsResult() {}
@@ -37,7 +37,7 @@ public final class GetAddonOptionsResult {
      * 
      */
     public List<GetAddonOptionsAddonOption> addonOptions() {
-        return this.addonOptions;
+        return this.addonOptions == null ? List.of() : this.addonOptions;
     }
     public List<GetAddonOptionsFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -46,8 +46,8 @@ public final class GetAddonOptionsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String kubernetesVersion() {
         return this.kubernetesVersion;
@@ -63,9 +63,9 @@ public final class GetAddonOptionsResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String addonName;
-        private List<GetAddonOptionsAddonOption> addonOptions;
+        private @Nullable List<GetAddonOptionsAddonOption> addonOptions;
         private @Nullable List<GetAddonOptionsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private String kubernetesVersion;
         public Builder() {}
         public Builder(GetAddonOptionsResult defaults) {
@@ -83,8 +83,8 @@ public final class GetAddonOptionsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder addonOptions(List<GetAddonOptionsAddonOption> addonOptions) {
-            this.addonOptions = Objects.requireNonNull(addonOptions);
+        public Builder addonOptions(@Nullable List<GetAddonOptionsAddonOption> addonOptions) {
+            this.addonOptions = addonOptions;
             return this;
         }
         public Builder addonOptions(GetAddonOptionsAddonOption... addonOptions) {
@@ -99,8 +99,8 @@ public final class GetAddonOptionsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Cpes in Oracle Cloud Infrastructure Core service.
@@ -66,7 +65,7 @@ type GetCpesResult struct {
 	Cpes    []GetCpesCpe    `pulumi:"cpes"`
 	Filters []GetCpesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 func GetCpesOutput(ctx *pulumi.Context, args GetCpesOutputArgs, opts ...pulumi.InvokeOption) GetCpesResultOutput {
@@ -108,12 +107,6 @@ func (o GetCpesResultOutput) ToGetCpesResultOutputWithContext(ctx context.Contex
 	return o
 }
 
-func (o GetCpesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetCpesResult] {
-	return pulumix.Output[GetCpesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the CPE.
 func (o GetCpesResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCpesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -129,8 +122,8 @@ func (o GetCpesResultOutput) Filters() GetCpesFilterArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetCpesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCpesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetCpesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCpesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func init() {

@@ -70,7 +70,7 @@ export interface GetExternalAsmsResult {
     /**
      * The list of external_asm_collection.
      */
-    readonly externalAsmCollections: outputs.DatabaseManagement.GetExternalAsmsExternalAsmCollection[];
+    readonly externalAsmCollections?: outputs.DatabaseManagement.GetExternalAsmsExternalAsmCollection[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the ASM is a part of.
      */
@@ -79,7 +79,7 @@ export interface GetExternalAsmsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
 }
 /**
  * This data source provides the list of External Asms in Oracle Cloud Infrastructure Database Management service.

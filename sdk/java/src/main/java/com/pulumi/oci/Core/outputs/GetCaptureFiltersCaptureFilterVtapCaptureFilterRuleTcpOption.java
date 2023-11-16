@@ -8,18 +8,19 @@ import com.pulumi.oci.Core.outputs.GetCaptureFiltersCaptureFilterVtapCaptureFilt
 import com.pulumi.oci.Core.outputs.GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleTcpOptionSourcePortRange;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleTcpOption {
-    private List<GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleTcpOptionDestinationPortRange> destinationPortRanges;
-    private List<GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleTcpOptionSourcePortRange> sourcePortRanges;
+    private @Nullable List<GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleTcpOptionDestinationPortRange> destinationPortRanges;
+    private @Nullable List<GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleTcpOptionSourcePortRange> sourcePortRanges;
 
     private GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleTcpOption() {}
     public List<GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleTcpOptionDestinationPortRange> destinationPortRanges() {
-        return this.destinationPortRanges;
+        return this.destinationPortRanges == null ? List.of() : this.destinationPortRanges;
     }
     public List<GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleTcpOptionSourcePortRange> sourcePortRanges() {
-        return this.sourcePortRanges;
+        return this.sourcePortRanges == null ? List.of() : this.sourcePortRanges;
     }
 
     public static Builder builder() {
@@ -31,8 +32,8 @@ public final class GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleTcpOption 
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleTcpOptionDestinationPortRange> destinationPortRanges;
-        private List<GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleTcpOptionSourcePortRange> sourcePortRanges;
+        private @Nullable List<GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleTcpOptionDestinationPortRange> destinationPortRanges;
+        private @Nullable List<GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleTcpOptionSourcePortRange> sourcePortRanges;
         public Builder() {}
         public Builder(GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleTcpOption defaults) {
     	      Objects.requireNonNull(defaults);
@@ -41,16 +42,16 @@ public final class GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleTcpOption 
         }
 
         @CustomType.Setter
-        public Builder destinationPortRanges(List<GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleTcpOptionDestinationPortRange> destinationPortRanges) {
-            this.destinationPortRanges = Objects.requireNonNull(destinationPortRanges);
+        public Builder destinationPortRanges(@Nullable List<GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleTcpOptionDestinationPortRange> destinationPortRanges) {
+            this.destinationPortRanges = destinationPortRanges;
             return this;
         }
         public Builder destinationPortRanges(GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleTcpOptionDestinationPortRange... destinationPortRanges) {
             return destinationPortRanges(List.of(destinationPortRanges));
         }
         @CustomType.Setter
-        public Builder sourcePortRanges(List<GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleTcpOptionSourcePortRange> sourcePortRanges) {
-            this.sourcePortRanges = Objects.requireNonNull(sourcePortRanges);
+        public Builder sourcePortRanges(@Nullable List<GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleTcpOptionSourcePortRange> sourcePortRanges) {
+            this.sourcePortRanges = sourcePortRanges;
             return this;
         }
         public Builder sourcePortRanges(GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleTcpOptionSourcePortRange... sourcePortRanges) {

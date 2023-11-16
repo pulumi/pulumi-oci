@@ -45,64 +45,64 @@ export interface GetDataSafePrivateEndpointResult {
     /**
      * The OCID of the compartment.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     readonly dataSafePrivateEndpointId: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * The description of the private endpoint.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * The display name of the private endpoint.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * The three-label fully qualified domain name (FQDN) of the private endpoint. The customer VCN's DNS records are updated with this FQDN.
      */
-    readonly endpointFqdn: string;
+    readonly endpointFqdn?: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The OCID of the Data Safe private endpoint.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The OCIDs of the network security groups that the private endpoint belongs to.
      */
-    readonly nsgIds: string[];
+    readonly nsgIds?: string[];
     /**
      * The OCID of the underlying private endpoint.
      */
-    readonly privateEndpointId: string;
+    readonly privateEndpointId?: string;
     /**
      * The private IP address of the private endpoint.
      */
-    readonly privateEndpointIp: string;
+    readonly privateEndpointIp?: string;
     /**
      * The current state of the private endpoint.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The OCID of the subnet.
      */
-    readonly subnetId: string;
+    readonly subnetId?: string;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * The date and time the private endpoint was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The OCID of the VCN.
      */
-    readonly vcnId: string;
+    readonly vcnId?: string;
 }
 /**
  * This data source provides details about a specific Data Safe Private Endpoint resource in Oracle Cloud Infrastructure Data Safe service.

@@ -60,9 +60,6 @@ class GetDataSafePrivateEndpointsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -72,18 +69,12 @@ class GetDataSafePrivateEndpointsResult:
 
     @property
     @pulumi.getter(name="dataSafePrivateEndpoints")
-    def data_safe_private_endpoints(self) -> Sequence['outputs.GetDataSafePrivateEndpointsDataSafePrivateEndpointResult']:
-        """
-        The list of data_safe_private_endpoints.
-        """
+    def data_safe_private_endpoints(self) -> Optional[Sequence['outputs.GetDataSafePrivateEndpointsDataSafePrivateEndpointResult']]:
         return pulumi.get(self, "data_safe_private_endpoints")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        The display name of the private endpoint.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -93,7 +84,7 @@ class GetDataSafePrivateEndpointsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -102,17 +93,11 @@ class GetDataSafePrivateEndpointsResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the private endpoint.
-        """
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="vcnId")
     def vcn_id(self) -> Optional[str]:
-        """
-        The OCID of the VCN.
-        """
         return pulumi.get(self, "vcn_id")
 
 
@@ -142,31 +127,7 @@ def get_data_safe_private_endpoints(access_level: Optional[str] = None,
                                     vcn_id: Optional[str] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDataSafePrivateEndpointsResult:
     """
-    This data source provides the list of Data Safe Private Endpoints in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets a list of Data Safe private endpoints.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_data_safe_private_endpoints = oci.DataSafe.get_data_safe_private_endpoints(compartment_id=var["compartment_id"],
-        access_level=var["data_safe_private_endpoint_access_level"],
-        compartment_id_in_subtree=var["data_safe_private_endpoint_compartment_id_in_subtree"],
-        display_name=var["data_safe_private_endpoint_display_name"],
-        state=var["data_safe_private_endpoint_state"],
-        vcn_id=oci_core_vcn["test_vcn"]["id"])
-    ```
-
-
-    :param str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
-    :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
-    :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
-    :param str display_name: A filter to return only resources that match the specified display name.
-    :param str state: A filter to return only resources that match the specified lifecycle state.
-    :param str vcn_id: A filter to return only resources that match the specified VCN OCID.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['accessLevel'] = access_level
@@ -201,30 +162,6 @@ def get_data_safe_private_endpoints_output(access_level: Optional[pulumi.Input[O
                                            vcn_id: Optional[pulumi.Input[Optional[str]]] = None,
                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDataSafePrivateEndpointsResult]:
     """
-    This data source provides the list of Data Safe Private Endpoints in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets a list of Data Safe private endpoints.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_data_safe_private_endpoints = oci.DataSafe.get_data_safe_private_endpoints(compartment_id=var["compartment_id"],
-        access_level=var["data_safe_private_endpoint_access_level"],
-        compartment_id_in_subtree=var["data_safe_private_endpoint_compartment_id_in_subtree"],
-        display_name=var["data_safe_private_endpoint_display_name"],
-        state=var["data_safe_private_endpoint_state"],
-        vcn_id=oci_core_vcn["test_vcn"]["id"])
-    ```
-
-
-    :param str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
-    :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
-    :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
-    :param str display_name: A filter to return only resources that match the specified display name.
-    :param str state: A filter to return only resources that match the specified lifecycle state.
-    :param str vcn_id: A filter to return only resources that match the specified VCN OCID.
+    Use this data source to access information about an existing resource.
     """
     ...

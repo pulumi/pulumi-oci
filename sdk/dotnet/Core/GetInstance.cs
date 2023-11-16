@@ -117,7 +117,7 @@ namespace Pulumi.Oci.Core
         /// Configuration options for the Oracle Cloud Agent software running on the instance.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetInstanceAgentConfigResult> AgentConfigs;
-        public readonly bool Async;
+        public readonly bool? Async;
         /// <summary>
         /// Options for defining the availabiity of a VM instance after a maintenance event that impacts the underlying hardware.
         /// </summary>
@@ -125,61 +125,61 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// The availability domain the instance is running in.  Example: `Uocm:PHX-AD-1`
         /// </summary>
-        public readonly string AvailabilityDomain;
+        public readonly string? AvailabilityDomain;
         /// <summary>
         /// The OCID of the attached boot volume. If the `source_type` is `bootVolume`, this will be the same OCID as the `source_id`.
         /// </summary>
-        public readonly string BootVolumeId;
+        public readonly string? BootVolumeId;
         /// <summary>
         /// The OCID of the compute capacity reservation this instance is launched under. When this field contains an empty string or is null, the instance is not currently in a capacity reservation. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
         /// </summary>
-        public readonly string CapacityReservationId;
+        public readonly string? CapacityReservationId;
         /// <summary>
         /// The OCID of the compartment containing images to search
         /// </summary>
-        public readonly string CompartmentId;
-        public readonly string ComputeClusterId;
+        public readonly string? CompartmentId;
+        public readonly string? ComputeClusterId;
         public readonly ImmutableArray<Outputs.GetInstanceCreateVnicDetailResult> CreateVnicDetails;
         /// <summary>
         /// The OCID of the dedicated virtual machine host that the instance is placed on.
         /// </summary>
-        public readonly string DedicatedVmHostId;
+        public readonly string? DedicatedVmHostId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
         /// </summary>
-        public readonly ImmutableDictionary<string, object> ExtendedMetadata;
+        public readonly ImmutableDictionary<string, object>? ExtendedMetadata;
         /// <summary>
         /// The name of the fault domain the instance is running in.
         /// </summary>
-        public readonly string FaultDomain;
+        public readonly string? FaultDomain;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The hostname for the instance VNIC's primary private IP.
         /// </summary>
-        public readonly string HostnameLabel;
+        public readonly string? HostnameLabel;
         /// <summary>
         /// The OCID of the instance.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Deprecated. Use `sourceDetails` instead.
         /// </summary>
-        public readonly string Image;
+        public readonly string? Image;
         /// <summary>
         /// The OCID of the Instance Configuration used to source launch details for this instance. Any other fields supplied in the instance launch request override the details stored in the Instance Configuration for this instance launch.
         /// </summary>
-        public readonly string InstanceConfigurationId;
+        public readonly string? InstanceConfigurationId;
         public readonly string InstanceId;
         /// <summary>
         /// Optional mutable instance options
@@ -188,19 +188,19 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// When a bare metal or virtual machine instance boots, the iPXE firmware that runs on the instance is configured to run an iPXE script to continue the boot process.
         /// </summary>
-        public readonly string IpxeScript;
+        public readonly string? IpxeScript;
         /// <summary>
         /// Whether the instance’s OCPUs and memory are distributed across multiple NUMA nodes.
         /// </summary>
-        public readonly bool IsCrossNumaNode;
+        public readonly bool? IsCrossNumaNode;
         /// <summary>
         /// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
         /// </summary>
-        public readonly bool IsPvEncryptionInTransitEnabled;
+        public readonly bool? IsPvEncryptionInTransitEnabled;
         /// <summary>
         /// Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
         /// </summary>
-        public readonly string LaunchMode;
+        public readonly string? LaunchMode;
         /// <summary>
         /// Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
         /// </summary>
@@ -208,7 +208,7 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// Custom metadata that you provide.
         /// </summary>
-        public readonly ImmutableDictionary<string, object> Metadata;
+        public readonly ImmutableDictionary<string, object>? Metadata;
         /// <summary>
         /// The platform configuration for the instance.
         /// </summary>
@@ -220,23 +220,23 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// (Optional) Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
         /// </summary>
-        public readonly bool PreserveBootVolume;
+        public readonly bool? PreserveBootVolume;
         /// <summary>
         /// The private IP address of instance VNIC. To set the private IP address, use the `private_ip` argument in create_vnic_details.
         /// </summary>
-        public readonly string PrivateIp;
+        public readonly string? PrivateIp;
         /// <summary>
         /// The public IP address of instance VNIC (if enabled).
         /// </summary>
-        public readonly string PublicIp;
+        public readonly string? PublicIp;
         /// <summary>
         /// The region that contains the availability domain the instance is running in.
         /// </summary>
-        public readonly string Region;
+        public readonly string? Region;
         /// <summary>
         /// The shape of the instance. The shape determines the number of CPUs and the amount of memory allocated to the instance. You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
         /// </summary>
-        public readonly string Shape;
+        public readonly string? Shape;
         /// <summary>
         /// The shape configuration for an instance. The shape configuration determines the resources allocated to an instance.
         /// </summary>
@@ -245,107 +245,107 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// The current state of the instance.
         /// </summary>
-        public readonly string State;
-        public readonly string SubnetId;
+        public readonly string? State;
+        public readonly string? SubnetId;
         /// <summary>
         /// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, object>? SystemTags;
         /// <summary>
         /// The date and time the instance was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The date and time the instance is expected to be stopped / started,  in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). After that time if instance hasn't been rebooted, Oracle will reboot the instance within 24 hours of the due time. Regardless of how the instance was stopped, the flag will be reset to empty as soon as instance reaches Stopped state. Example: `2018-05-25T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeMaintenanceRebootDue;
-        public readonly string UpdateOperationConstraint;
+        public readonly string? TimeMaintenanceRebootDue;
+        public readonly string? UpdateOperationConstraint;
 
         [OutputConstructor]
         private GetInstanceResult(
             ImmutableArray<Outputs.GetInstanceAgentConfigResult> agentConfigs,
 
-            bool async,
+            bool? async,
 
             ImmutableArray<Outputs.GetInstanceAvailabilityConfigResult> availabilityConfigs,
 
-            string availabilityDomain,
+            string? availabilityDomain,
 
-            string bootVolumeId,
+            string? bootVolumeId,
 
-            string capacityReservationId,
+            string? capacityReservationId,
 
-            string compartmentId,
+            string? compartmentId,
 
-            string computeClusterId,
+            string? computeClusterId,
 
             ImmutableArray<Outputs.GetInstanceCreateVnicDetailResult> createVnicDetails,
 
-            string dedicatedVmHostId,
+            string? dedicatedVmHostId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> extendedMetadata,
+            ImmutableDictionary<string, object>? extendedMetadata,
 
-            string faultDomain,
+            string? faultDomain,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string hostnameLabel,
+            string? hostnameLabel,
 
-            string id,
+            string? id,
 
-            string image,
+            string? image,
 
-            string instanceConfigurationId,
+            string? instanceConfigurationId,
 
             string instanceId,
 
             ImmutableArray<Outputs.GetInstanceInstanceOptionResult> instanceOptions,
 
-            string ipxeScript,
+            string? ipxeScript,
 
-            bool isCrossNumaNode,
+            bool? isCrossNumaNode,
 
-            bool isPvEncryptionInTransitEnabled,
+            bool? isPvEncryptionInTransitEnabled,
 
-            string launchMode,
+            string? launchMode,
 
             ImmutableArray<Outputs.GetInstanceLaunchOptionResult> launchOptions,
 
-            ImmutableDictionary<string, object> metadata,
+            ImmutableDictionary<string, object>? metadata,
 
             ImmutableArray<Outputs.GetInstancePlatformConfigResult> platformConfigs,
 
             ImmutableArray<Outputs.GetInstancePreemptibleInstanceConfigResult> preemptibleInstanceConfigs,
 
-            bool preserveBootVolume,
+            bool? preserveBootVolume,
 
-            string privateIp,
+            string? privateIp,
 
-            string publicIp,
+            string? publicIp,
 
-            string region,
+            string? region,
 
-            string shape,
+            string? shape,
 
             ImmutableArray<Outputs.GetInstanceShapeConfigResult> shapeConfigs,
 
             ImmutableArray<Outputs.GetInstanceSourceDetailResult> sourceDetails,
 
-            string state,
+            string? state,
 
-            string subnetId,
+            string? subnetId,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, object>? systemTags,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeMaintenanceRebootDue,
+            string? timeMaintenanceRebootDue,
 
-            string updateOperationConstraint)
+            string? updateOperationConstraint)
         {
             AgentConfigs = agentConfigs;
             Async = async;

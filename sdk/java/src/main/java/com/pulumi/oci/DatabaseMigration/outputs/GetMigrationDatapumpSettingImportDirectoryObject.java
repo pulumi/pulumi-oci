@@ -6,6 +6,8 @@ package com.pulumi.oci.DatabaseMigration.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMigrationDatapumpSettingImportDirectoryObject {
@@ -13,27 +15,27 @@ public final class GetMigrationDatapumpSettingImportDirectoryObject {
      * @return Name of directory object in database
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return Absolute path of directory on database server
      * 
      */
-    private String path;
+    private @Nullable String path;
 
     private GetMigrationDatapumpSettingImportDirectoryObject() {}
     /**
      * @return Name of directory object in database
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return Absolute path of directory on database server
      * 
      */
-    public String path() {
-        return this.path;
+    public Optional<String> path() {
+        return Optional.ofNullable(this.path);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetMigrationDatapumpSettingImportDirectoryObject {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String name;
-        private String path;
+        private @Nullable String name;
+        private @Nullable String path;
         public Builder() {}
         public Builder(GetMigrationDatapumpSettingImportDirectoryObject defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetMigrationDatapumpSettingImportDirectoryObject {
         }
 
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder path(String path) {
-            this.path = Objects.requireNonNull(path);
+        public Builder path(@Nullable String path) {
+            this.path = path;
             return this;
         }
         public GetMigrationDatapumpSettingImportDirectoryObject build() {

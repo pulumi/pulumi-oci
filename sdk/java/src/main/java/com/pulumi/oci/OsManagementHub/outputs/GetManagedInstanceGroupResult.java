@@ -11,6 +11,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedInstanceGroupResult {
@@ -18,150 +20,150 @@ public final class GetManagedInstanceGroupResult {
      * @return The CPU architecture of the instances in the managed instance group.
      * 
      */
-    private String archType;
+    private @Nullable String archType;
     /**
      * @return The OCID of the tenancy containing the managed instance group.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return Software source description.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return Software source name.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The OCID of the software source.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The number of Managed Instances in the managed instance group.
      * 
      */
-    private Integer managedInstanceCount;
+    private @Nullable Integer managedInstanceCount;
     private String managedInstanceGroupId;
     /**
      * @return The list of managed instances OCIDs attached to the managed instance group.
      * 
      */
-    private List<String> managedInstanceIds;
+    private @Nullable List<String> managedInstanceIds;
     /**
      * @return The operating system type of the instances in the managed instance group.
      * 
      */
-    private String osFamily;
+    private @Nullable String osFamily;
     /**
      * @return The number of scheduled jobs pending against the managed instance group.
      * 
      */
-    private Integer pendingJobCount;
+    private @Nullable Integer pendingJobCount;
     /**
      * @return The list of software source OCIDs that the managed instance group will use.
      * 
      */
-    private List<String> softwareSourceIds;
+    private @Nullable List<String> softwareSourceIds;
     /**
      * @return The list of software sources that the managed instance group will use.
      * 
      */
-    private List<GetManagedInstanceGroupSoftwareSource> softwareSources;
+    private @Nullable List<GetManagedInstanceGroupSoftwareSource> softwareSources;
     /**
      * @return The current state of the managed instance group.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private @Nullable Map<String,Object> systemTags;
     /**
      * @return The time the managed instance group was created. An RFC3339 formatted datetime string.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The time the managed instance group was last modified. An RFC3339 formatted datetime string.
      * 
      */
-    private String timeModified;
+    private @Nullable String timeModified;
     /**
      * @return The software source vendor name.
      * 
      */
-    private String vendorName;
+    private @Nullable String vendorName;
 
     private GetManagedInstanceGroupResult() {}
     /**
      * @return The CPU architecture of the instances in the managed instance group.
      * 
      */
-    public String archType() {
-        return this.archType;
+    public Optional<String> archType() {
+        return Optional.ofNullable(this.archType);
     }
     /**
      * @return The OCID of the tenancy containing the managed instance group.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return Software source description.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return Software source name.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The OCID of the software source.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The number of Managed Instances in the managed instance group.
      * 
      */
-    public Integer managedInstanceCount() {
-        return this.managedInstanceCount;
+    public Optional<Integer> managedInstanceCount() {
+        return Optional.ofNullable(this.managedInstanceCount);
     }
     public String managedInstanceGroupId() {
         return this.managedInstanceGroupId;
@@ -171,70 +173,70 @@ public final class GetManagedInstanceGroupResult {
      * 
      */
     public List<String> managedInstanceIds() {
-        return this.managedInstanceIds;
+        return this.managedInstanceIds == null ? List.of() : this.managedInstanceIds;
     }
     /**
      * @return The operating system type of the instances in the managed instance group.
      * 
      */
-    public String osFamily() {
-        return this.osFamily;
+    public Optional<String> osFamily() {
+        return Optional.ofNullable(this.osFamily);
     }
     /**
      * @return The number of scheduled jobs pending against the managed instance group.
      * 
      */
-    public Integer pendingJobCount() {
-        return this.pendingJobCount;
+    public Optional<Integer> pendingJobCount() {
+        return Optional.ofNullable(this.pendingJobCount);
     }
     /**
      * @return The list of software source OCIDs that the managed instance group will use.
      * 
      */
     public List<String> softwareSourceIds() {
-        return this.softwareSourceIds;
+        return this.softwareSourceIds == null ? List.of() : this.softwareSourceIds;
     }
     /**
      * @return The list of software sources that the managed instance group will use.
      * 
      */
     public List<GetManagedInstanceGroupSoftwareSource> softwareSources() {
-        return this.softwareSources;
+        return this.softwareSources == null ? List.of() : this.softwareSources;
     }
     /**
      * @return The current state of the managed instance group.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     public Map<String,Object> systemTags() {
-        return this.systemTags;
+        return this.systemTags == null ? Map.of() : this.systemTags;
     }
     /**
      * @return The time the managed instance group was created. An RFC3339 formatted datetime string.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The time the managed instance group was last modified. An RFC3339 formatted datetime string.
      * 
      */
-    public String timeModified() {
-        return this.timeModified;
+    public Optional<String> timeModified() {
+        return Optional.ofNullable(this.timeModified);
     }
     /**
      * @return The software source vendor name.
      * 
      */
-    public String vendorName() {
-        return this.vendorName;
+    public Optional<String> vendorName() {
+        return Optional.ofNullable(this.vendorName);
     }
 
     public static Builder builder() {
@@ -246,25 +248,25 @@ public final class GetManagedInstanceGroupResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String archType;
-        private String compartmentId;
-        private Map<String,Object> definedTags;
-        private String description;
-        private String displayName;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private Integer managedInstanceCount;
+        private @Nullable String archType;
+        private @Nullable String compartmentId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String description;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable Integer managedInstanceCount;
         private String managedInstanceGroupId;
-        private List<String> managedInstanceIds;
-        private String osFamily;
-        private Integer pendingJobCount;
-        private List<String> softwareSourceIds;
-        private List<GetManagedInstanceGroupSoftwareSource> softwareSources;
-        private String state;
-        private Map<String,Object> systemTags;
-        private String timeCreated;
-        private String timeModified;
-        private String vendorName;
+        private @Nullable List<String> managedInstanceIds;
+        private @Nullable String osFamily;
+        private @Nullable Integer pendingJobCount;
+        private @Nullable List<String> softwareSourceIds;
+        private @Nullable List<GetManagedInstanceGroupSoftwareSource> softwareSources;
+        private @Nullable String state;
+        private @Nullable Map<String,Object> systemTags;
+        private @Nullable String timeCreated;
+        private @Nullable String timeModified;
+        private @Nullable String vendorName;
         public Builder() {}
         public Builder(GetManagedInstanceGroupResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -290,43 +292,43 @@ public final class GetManagedInstanceGroupResult {
         }
 
         @CustomType.Setter
-        public Builder archType(String archType) {
-            this.archType = Objects.requireNonNull(archType);
+        public Builder archType(@Nullable String archType) {
+            this.archType = archType;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder managedInstanceCount(Integer managedInstanceCount) {
-            this.managedInstanceCount = Objects.requireNonNull(managedInstanceCount);
+        public Builder managedInstanceCount(@Nullable Integer managedInstanceCount) {
+            this.managedInstanceCount = managedInstanceCount;
             return this;
         }
         @CustomType.Setter
@@ -335,62 +337,62 @@ public final class GetManagedInstanceGroupResult {
             return this;
         }
         @CustomType.Setter
-        public Builder managedInstanceIds(List<String> managedInstanceIds) {
-            this.managedInstanceIds = Objects.requireNonNull(managedInstanceIds);
+        public Builder managedInstanceIds(@Nullable List<String> managedInstanceIds) {
+            this.managedInstanceIds = managedInstanceIds;
             return this;
         }
         public Builder managedInstanceIds(String... managedInstanceIds) {
             return managedInstanceIds(List.of(managedInstanceIds));
         }
         @CustomType.Setter
-        public Builder osFamily(String osFamily) {
-            this.osFamily = Objects.requireNonNull(osFamily);
+        public Builder osFamily(@Nullable String osFamily) {
+            this.osFamily = osFamily;
             return this;
         }
         @CustomType.Setter
-        public Builder pendingJobCount(Integer pendingJobCount) {
-            this.pendingJobCount = Objects.requireNonNull(pendingJobCount);
+        public Builder pendingJobCount(@Nullable Integer pendingJobCount) {
+            this.pendingJobCount = pendingJobCount;
             return this;
         }
         @CustomType.Setter
-        public Builder softwareSourceIds(List<String> softwareSourceIds) {
-            this.softwareSourceIds = Objects.requireNonNull(softwareSourceIds);
+        public Builder softwareSourceIds(@Nullable List<String> softwareSourceIds) {
+            this.softwareSourceIds = softwareSourceIds;
             return this;
         }
         public Builder softwareSourceIds(String... softwareSourceIds) {
             return softwareSourceIds(List.of(softwareSourceIds));
         }
         @CustomType.Setter
-        public Builder softwareSources(List<GetManagedInstanceGroupSoftwareSource> softwareSources) {
-            this.softwareSources = Objects.requireNonNull(softwareSources);
+        public Builder softwareSources(@Nullable List<GetManagedInstanceGroupSoftwareSource> softwareSources) {
+            this.softwareSources = softwareSources;
             return this;
         }
         public Builder softwareSources(GetManagedInstanceGroupSoftwareSource... softwareSources) {
             return softwareSources(List.of(softwareSources));
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+        public Builder systemTags(@Nullable Map<String,Object> systemTags) {
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeModified(String timeModified) {
-            this.timeModified = Objects.requireNonNull(timeModified);
+        public Builder timeModified(@Nullable String timeModified) {
+            this.timeModified = timeModified;
             return this;
         }
         @CustomType.Setter
-        public Builder vendorName(String vendorName) {
-            this.vendorName = Objects.requireNonNull(vendorName);
+        public Builder vendorName(@Nullable String vendorName) {
+            this.vendorName = vendorName;
             return this;
         }
         public GetManagedInstanceGroupResult build() {

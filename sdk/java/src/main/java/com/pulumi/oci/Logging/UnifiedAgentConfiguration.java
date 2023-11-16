@@ -16,6 +16,7 @@ import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -162,84 +163,84 @@ public class UnifiedAgentConfiguration extends com.pulumi.resources.CustomResour
      * 
      */
     @Export(name="configurationState", refs={String.class}, tree="[0]")
-    private Output<String> configurationState;
+    private Output</* @Nullable */ String> configurationState;
 
     /**
      * @return State of unified agent service configuration.
      * 
      */
-    public Output<String> configurationState() {
-        return this.configurationState;
+    public Output<Optional<String>> configurationState() {
+        return Codegen.optional(this.configurationState);
     }
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) Description for this resource.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
-    private Output<String> description;
+    private Output</* @Nullable */ String> description;
 
     /**
      * @return (Updatable) Description for this resource.
      * 
      */
-    public Output<String> description() {
-        return this.description;
+    public Output<Optional<String>> description() {
+        return Codegen.optional(this.description);
     }
     /**
      * (Updatable) The user-friendly display name. This must be unique within the enclosing resource, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return (Updatable) The user-friendly display name. This must be unique within the enclosing resource, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * (Updatable) Groups using the configuration.
      * 
      */
     @Export(name="groupAssociation", refs={UnifiedAgentConfigurationGroupAssociation.class}, tree="[0]")
-    private Output<UnifiedAgentConfigurationGroupAssociation> groupAssociation;
+    private Output</* @Nullable */ UnifiedAgentConfigurationGroupAssociation> groupAssociation;
 
     /**
      * @return (Updatable) Groups using the configuration.
      * 
      */
-    public Output<UnifiedAgentConfigurationGroupAssociation> groupAssociation() {
-        return this.groupAssociation;
+    public Output<Optional<UnifiedAgentConfigurationGroupAssociation>> groupAssociation() {
+        return Codegen.optional(this.groupAssociation);
     }
     /**
      * (Updatable) Whether or not this resource is currently enabled.
@@ -274,42 +275,42 @@ public class UnifiedAgentConfiguration extends com.pulumi.resources.CustomResour
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The pipeline state.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * Time the resource was created.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return Time the resource was created.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * Time the resource was last modified.
      * 
      */
     @Export(name="timeLastModified", refs={String.class}, tree="[0]")
-    private Output<String> timeLastModified;
+    private Output</* @Nullable */ String> timeLastModified;
 
     /**
      * @return Time the resource was last modified.
      * 
      */
-    public Output<String> timeLastModified() {
-        return this.timeLastModified;
+    public Output<Optional<String>> timeLastModified() {
+        return Codegen.optional(this.timeLastModified);
     }
 
     /**

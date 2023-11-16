@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDb {
@@ -14,63 +16,63 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDb {
      * @return The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
      * 
      */
-    private Integer lagTimeInSeconds;
+    private @Nullable Integer lagTimeInSeconds;
     /**
      * @return Additional information about the current lifecycle state.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return A filter to return only resources that match the given lifecycle state exactly.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the &#34;primary&#34; role in the primary Data Guard region, or database located in the remote Data Guard standby region.
      * 
      */
-    private String timeDataGuardRoleChanged;
+    private @Nullable String timeDataGuardRoleChanged;
     /**
      * @return The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
      * 
      */
-    private String timeDisasterRecoveryRoleChanged;
+    private @Nullable String timeDisasterRecoveryRoleChanged;
 
     private GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDb() {}
     /**
      * @return The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
      * 
      */
-    public Integer lagTimeInSeconds() {
-        return this.lagTimeInSeconds;
+    public Optional<Integer> lagTimeInSeconds() {
+        return Optional.ofNullable(this.lagTimeInSeconds);
     }
     /**
      * @return Additional information about the current lifecycle state.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return A filter to return only resources that match the given lifecycle state exactly.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the &#34;primary&#34; role in the primary Data Guard region, or database located in the remote Data Guard standby region.
      * 
      */
-    public String timeDataGuardRoleChanged() {
-        return this.timeDataGuardRoleChanged;
+    public Optional<String> timeDataGuardRoleChanged() {
+        return Optional.ofNullable(this.timeDataGuardRoleChanged);
     }
     /**
      * @return The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
      * 
      */
-    public String timeDisasterRecoveryRoleChanged() {
-        return this.timeDisasterRecoveryRoleChanged;
+    public Optional<String> timeDisasterRecoveryRoleChanged() {
+        return Optional.ofNullable(this.timeDisasterRecoveryRoleChanged);
     }
 
     public static Builder builder() {
@@ -82,11 +84,11 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDb {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer lagTimeInSeconds;
-        private String lifecycleDetails;
-        private String state;
-        private String timeDataGuardRoleChanged;
-        private String timeDisasterRecoveryRoleChanged;
+        private @Nullable Integer lagTimeInSeconds;
+        private @Nullable String lifecycleDetails;
+        private @Nullable String state;
+        private @Nullable String timeDataGuardRoleChanged;
+        private @Nullable String timeDisasterRecoveryRoleChanged;
         public Builder() {}
         public Builder(GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDb defaults) {
     	      Objects.requireNonNull(defaults);
@@ -98,28 +100,28 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDb {
         }
 
         @CustomType.Setter
-        public Builder lagTimeInSeconds(Integer lagTimeInSeconds) {
-            this.lagTimeInSeconds = Objects.requireNonNull(lagTimeInSeconds);
+        public Builder lagTimeInSeconds(@Nullable Integer lagTimeInSeconds) {
+            this.lagTimeInSeconds = lagTimeInSeconds;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeDataGuardRoleChanged(String timeDataGuardRoleChanged) {
-            this.timeDataGuardRoleChanged = Objects.requireNonNull(timeDataGuardRoleChanged);
+        public Builder timeDataGuardRoleChanged(@Nullable String timeDataGuardRoleChanged) {
+            this.timeDataGuardRoleChanged = timeDataGuardRoleChanged;
             return this;
         }
         @CustomType.Setter
-        public Builder timeDisasterRecoveryRoleChanged(String timeDisasterRecoveryRoleChanged) {
-            this.timeDisasterRecoveryRoleChanged = Objects.requireNonNull(timeDisasterRecoveryRoleChanged);
+        public Builder timeDisasterRecoveryRoleChanged(@Nullable String timeDisasterRecoveryRoleChanged) {
+            this.timeDisasterRecoveryRoleChanged = timeDisasterRecoveryRoleChanged;
             return this;
         }
         public GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDb build() {

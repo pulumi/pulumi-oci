@@ -53,40 +53,40 @@ export interface GetDbServerResult {
     /**
      * The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Virtual Machines associated with the Db server.
      */
-    readonly autonomousVirtualMachineIds: string[];
+    readonly autonomousVirtualMachineIds?: string[];
     /**
      * The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous VM Clusters associated with the Db server.
      */
-    readonly autonomousVmClusterIds: string[];
+    readonly autonomousVmClusterIds?: string[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * The number of CPU cores enabled on the Db server.
      */
-    readonly cpuCoreCount: number;
+    readonly cpuCoreCount?: number;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db nodes associated with the Db server.
      */
-    readonly dbNodeIds: string[];
+    readonly dbNodeIds?: string[];
     /**
      * The allocated local node storage in GBs on the Db server.
      */
-    readonly dbNodeStorageSizeInGbs: number;
+    readonly dbNodeStorageSizeInGbs?: number;
     readonly dbServerId: string;
     /**
      * The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
      */
-    readonly dbServerPatchingDetails: outputs.Database.GetDbServerDbServerPatchingDetail[];
+    readonly dbServerPatchingDetails?: outputs.Database.GetDbServerDbServerPatchingDetail[];
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * The user-friendly name for the Db server. The name does not need to be unique.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
      */
@@ -94,47 +94,47 @@ export interface GetDbServerResult {
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Additional information about the current lifecycle state.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * The total number of CPU cores available.
      */
-    readonly maxCpuCount: number;
+    readonly maxCpuCount?: number;
     /**
      * The total local node storage available in GBs.
      */
-    readonly maxDbNodeStorageInGbs: number;
+    readonly maxDbNodeStorageInGbs?: number;
     /**
      * The total memory available in GBs.
      */
-    readonly maxMemoryInGbs: number;
+    readonly maxMemoryInGbs?: number;
     /**
      * The allocated memory in GBs on the Db server.
      */
-    readonly memorySizeInGbs: number;
+    readonly memorySizeInGbs?: number;
     /**
      * The shape of the Db server. The shape determines the amount of CPU, storage, and memory resources available.
      */
-    readonly shape: string;
+    readonly shape?: string;
     /**
      * The current state of the Db server.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The date and time that the Db Server was created.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Clusters associated with the Db server.
      */
-    readonly vmClusterIds: string[];
+    readonly vmClusterIds?: string[];
 }
 /**
  * This data source provides details about a specific Db Server resource in Oracle Cloud Infrastructure Database service.

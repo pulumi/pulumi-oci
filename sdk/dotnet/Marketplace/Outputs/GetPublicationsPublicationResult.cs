@@ -16,15 +16,15 @@ namespace Pulumi.Oci.Marketplace.Outputs
         /// <summary>
         /// The unique identifier for the compartment.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The model for upload data for images and icons.
         /// </summary>
@@ -32,33 +32,33 @@ namespace Pulumi.Oci.Marketplace.Outputs
         /// <summary>
         /// The unique identifier for the publication in Marketplace.
         /// </summary>
-        public readonly string Id;
-        public readonly bool IsAgreementAcknowledged;
+        public readonly string? Id;
+        public readonly bool? IsAgreementAcknowledged;
         /// <summary>
         /// The type of the listing.
         /// </summary>
-        public readonly string ListingType;
+        public readonly string? ListingType;
         /// <summary>
         /// A long description of the publication to use in the listing.
         /// </summary>
-        public readonly string LongDescription;
+        public readonly string? LongDescription;
         /// <summary>
         /// The name of the publication.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         public readonly ImmutableArray<Outputs.GetPublicationsPublicationPackageDetailResult> PackageDetails;
         /// <summary>
         /// The listing's package type.
         /// </summary>
-        public readonly string PackageType;
+        public readonly string? PackageType;
         /// <summary>
         /// A short description of the publication to use in the listing.
         /// </summary>
-        public readonly string ShortDescription;
+        public readonly string? ShortDescription;
         /// <summary>
         /// The lifecycle state of the publication.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// Contact information for getting support from the publisher for the listing.
         /// </summary>
@@ -70,41 +70,41 @@ namespace Pulumi.Oci.Marketplace.Outputs
         /// <summary>
         /// The date and time the publication was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
 
         [OutputConstructor]
         private GetPublicationsPublicationResult(
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
             ImmutableArray<Outputs.GetPublicationsPublicationIconResult> icons,
 
-            string id,
+            string? id,
 
-            bool isAgreementAcknowledged,
+            bool? isAgreementAcknowledged,
 
-            string listingType,
+            string? listingType,
 
-            string longDescription,
+            string? longDescription,
 
-            string name,
+            string? name,
 
             ImmutableArray<Outputs.GetPublicationsPublicationPackageDetailResult> packageDetails,
 
-            string packageType,
+            string? packageType,
 
-            string shortDescription,
+            string? shortDescription,
 
-            string state,
+            string? state,
 
             ImmutableArray<Outputs.GetPublicationsPublicationSupportContactResult> supportContacts,
 
             ImmutableArray<Outputs.GetPublicationsPublicationSupportedOperatingSystemResult> supportedOperatingSystems,
 
-            string timeCreated)
+            string? timeCreated)
         {
             CompartmentId = compartmentId;
             DefinedTags = definedTags;

@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Waa.outputs.GetAppAccelerationsWebAppAccelerationCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAppAccelerationsWebAppAccelerationCollection {
-    private List<GetAppAccelerationsWebAppAccelerationCollectionItem> items;
+    private @Nullable List<GetAppAccelerationsWebAppAccelerationCollectionItem> items;
 
     private GetAppAccelerationsWebAppAccelerationCollection() {}
     public List<GetAppAccelerationsWebAppAccelerationCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetAppAccelerationsWebAppAccelerationCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetAppAccelerationsWebAppAccelerationCollectionItem> items;
+        private @Nullable List<GetAppAccelerationsWebAppAccelerationCollectionItem> items;
         public Builder() {}
         public Builder(GetAppAccelerationsWebAppAccelerationCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetAppAccelerationsWebAppAccelerationCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetAppAccelerationsWebAppAccelerationCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetAppAccelerationsWebAppAccelerationCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetAppAccelerationsWebAppAccelerationCollectionItem... items) {

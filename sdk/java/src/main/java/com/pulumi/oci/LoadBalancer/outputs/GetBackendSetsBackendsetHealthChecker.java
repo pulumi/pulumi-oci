@@ -8,6 +8,8 @@ import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetBackendSetsBackendsetHealthChecker {
@@ -15,111 +17,111 @@ public final class GetBackendSetsBackendsetHealthChecker {
      * @return The interval between health checks, in milliseconds. The default is 10000 (10 seconds).  Example: `10000`
      * 
      */
-    private Integer intervalMs;
+    private @Nullable Integer intervalMs;
     /**
      * @return Specifies if health checks should always be done using plain text instead of depending on whether or not the associated backend set is using SSL.
      * 
      */
-    private Boolean isForcePlainText;
+    private @Nullable Boolean isForcePlainText;
     /**
      * @return The backend server port against which to run the health check. If the port is not specified, the load balancer uses the port information from the `Backend` object.  Example: `8080`
      * 
      */
-    private Integer port;
+    private @Nullable Integer port;
     /**
      * @return The protocol the health check must use; either HTTP or TCP.  Example: `HTTP`
      * 
      */
-    private String protocol;
+    private @Nullable String protocol;
     /**
      * @return A regular expression for parsing the response body from the backend server.  Example: `^((?!false).|\s)*$`
      * 
      */
-    private String responseBodyRegex;
+    private @Nullable String responseBodyRegex;
     /**
      * @return The number of retries to attempt before a backend server is considered &#34;unhealthy&#34;. This number also applies when recovering a server to the &#34;healthy&#34; state. Defaults to 3.  Example: `3`
      * 
      */
-    private Integer retries;
+    private @Nullable Integer retries;
     /**
      * @return The status code a healthy backend server should return. If you configure the health check policy to use the HTTP protocol, you can use common HTTP status codes such as &#34;200&#34;.  Example: `200`
      * 
      */
-    private Integer returnCode;
+    private @Nullable Integer returnCode;
     /**
      * @return The maximum time, in milliseconds, to wait for a reply to a health check. A health check is successful only if a reply returns within this timeout period. Defaults to 3000 (3 seconds).  Example: `3000`
      * 
      */
-    private Integer timeoutInMillis;
+    private @Nullable Integer timeoutInMillis;
     /**
      * @return The path against which to run the health check.  Example: `/healthcheck`
      * 
      */
-    private String urlPath;
+    private @Nullable String urlPath;
 
     private GetBackendSetsBackendsetHealthChecker() {}
     /**
      * @return The interval between health checks, in milliseconds. The default is 10000 (10 seconds).  Example: `10000`
      * 
      */
-    public Integer intervalMs() {
-        return this.intervalMs;
+    public Optional<Integer> intervalMs() {
+        return Optional.ofNullable(this.intervalMs);
     }
     /**
      * @return Specifies if health checks should always be done using plain text instead of depending on whether or not the associated backend set is using SSL.
      * 
      */
-    public Boolean isForcePlainText() {
-        return this.isForcePlainText;
+    public Optional<Boolean> isForcePlainText() {
+        return Optional.ofNullable(this.isForcePlainText);
     }
     /**
      * @return The backend server port against which to run the health check. If the port is not specified, the load balancer uses the port information from the `Backend` object.  Example: `8080`
      * 
      */
-    public Integer port() {
-        return this.port;
+    public Optional<Integer> port() {
+        return Optional.ofNullable(this.port);
     }
     /**
      * @return The protocol the health check must use; either HTTP or TCP.  Example: `HTTP`
      * 
      */
-    public String protocol() {
-        return this.protocol;
+    public Optional<String> protocol() {
+        return Optional.ofNullable(this.protocol);
     }
     /**
      * @return A regular expression for parsing the response body from the backend server.  Example: `^((?!false).|\s)*$`
      * 
      */
-    public String responseBodyRegex() {
-        return this.responseBodyRegex;
+    public Optional<String> responseBodyRegex() {
+        return Optional.ofNullable(this.responseBodyRegex);
     }
     /**
      * @return The number of retries to attempt before a backend server is considered &#34;unhealthy&#34;. This number also applies when recovering a server to the &#34;healthy&#34; state. Defaults to 3.  Example: `3`
      * 
      */
-    public Integer retries() {
-        return this.retries;
+    public Optional<Integer> retries() {
+        return Optional.ofNullable(this.retries);
     }
     /**
      * @return The status code a healthy backend server should return. If you configure the health check policy to use the HTTP protocol, you can use common HTTP status codes such as &#34;200&#34;.  Example: `200`
      * 
      */
-    public Integer returnCode() {
-        return this.returnCode;
+    public Optional<Integer> returnCode() {
+        return Optional.ofNullable(this.returnCode);
     }
     /**
      * @return The maximum time, in milliseconds, to wait for a reply to a health check. A health check is successful only if a reply returns within this timeout period. Defaults to 3000 (3 seconds).  Example: `3000`
      * 
      */
-    public Integer timeoutInMillis() {
-        return this.timeoutInMillis;
+    public Optional<Integer> timeoutInMillis() {
+        return Optional.ofNullable(this.timeoutInMillis);
     }
     /**
      * @return The path against which to run the health check.  Example: `/healthcheck`
      * 
      */
-    public String urlPath() {
-        return this.urlPath;
+    public Optional<String> urlPath() {
+        return Optional.ofNullable(this.urlPath);
     }
 
     public static Builder builder() {
@@ -131,15 +133,15 @@ public final class GetBackendSetsBackendsetHealthChecker {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer intervalMs;
-        private Boolean isForcePlainText;
-        private Integer port;
-        private String protocol;
-        private String responseBodyRegex;
-        private Integer retries;
-        private Integer returnCode;
-        private Integer timeoutInMillis;
-        private String urlPath;
+        private @Nullable Integer intervalMs;
+        private @Nullable Boolean isForcePlainText;
+        private @Nullable Integer port;
+        private @Nullable String protocol;
+        private @Nullable String responseBodyRegex;
+        private @Nullable Integer retries;
+        private @Nullable Integer returnCode;
+        private @Nullable Integer timeoutInMillis;
+        private @Nullable String urlPath;
         public Builder() {}
         public Builder(GetBackendSetsBackendsetHealthChecker defaults) {
     	      Objects.requireNonNull(defaults);
@@ -155,48 +157,48 @@ public final class GetBackendSetsBackendsetHealthChecker {
         }
 
         @CustomType.Setter
-        public Builder intervalMs(Integer intervalMs) {
-            this.intervalMs = Objects.requireNonNull(intervalMs);
+        public Builder intervalMs(@Nullable Integer intervalMs) {
+            this.intervalMs = intervalMs;
             return this;
         }
         @CustomType.Setter
-        public Builder isForcePlainText(Boolean isForcePlainText) {
-            this.isForcePlainText = Objects.requireNonNull(isForcePlainText);
+        public Builder isForcePlainText(@Nullable Boolean isForcePlainText) {
+            this.isForcePlainText = isForcePlainText;
             return this;
         }
         @CustomType.Setter
-        public Builder port(Integer port) {
-            this.port = Objects.requireNonNull(port);
+        public Builder port(@Nullable Integer port) {
+            this.port = port;
             return this;
         }
         @CustomType.Setter
-        public Builder protocol(String protocol) {
-            this.protocol = Objects.requireNonNull(protocol);
+        public Builder protocol(@Nullable String protocol) {
+            this.protocol = protocol;
             return this;
         }
         @CustomType.Setter
-        public Builder responseBodyRegex(String responseBodyRegex) {
-            this.responseBodyRegex = Objects.requireNonNull(responseBodyRegex);
+        public Builder responseBodyRegex(@Nullable String responseBodyRegex) {
+            this.responseBodyRegex = responseBodyRegex;
             return this;
         }
         @CustomType.Setter
-        public Builder retries(Integer retries) {
-            this.retries = Objects.requireNonNull(retries);
+        public Builder retries(@Nullable Integer retries) {
+            this.retries = retries;
             return this;
         }
         @CustomType.Setter
-        public Builder returnCode(Integer returnCode) {
-            this.returnCode = Objects.requireNonNull(returnCode);
+        public Builder returnCode(@Nullable Integer returnCode) {
+            this.returnCode = returnCode;
             return this;
         }
         @CustomType.Setter
-        public Builder timeoutInMillis(Integer timeoutInMillis) {
-            this.timeoutInMillis = Objects.requireNonNull(timeoutInMillis);
+        public Builder timeoutInMillis(@Nullable Integer timeoutInMillis) {
+            this.timeoutInMillis = timeoutInMillis;
             return this;
         }
         @CustomType.Setter
-        public Builder urlPath(String urlPath) {
-            this.urlPath = Objects.requireNonNull(urlPath);
+        public Builder urlPath(@Nullable String urlPath) {
+            this.urlPath = urlPath;
             return this;
         }
         public GetBackendSetsBackendsetHealthChecker build() {

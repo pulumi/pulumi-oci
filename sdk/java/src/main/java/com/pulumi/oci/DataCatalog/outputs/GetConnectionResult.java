@@ -10,6 +10,7 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -20,7 +21,7 @@ public final class GetConnectionResult {
      * @return OCID of the user who created the connection.
      * 
      */
-    private String createdById;
+    private @Nullable String createdById;
     /**
      * @return Unique key of the parent data asset.
      * 
@@ -30,70 +31,70 @@ public final class GetConnectionResult {
      * @return A description of the connection.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return A user-friendly display name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private String displayName;
-    private Map<String,Object> encProperties;
+    private @Nullable String displayName;
+    private @Nullable Map<String,Object> encProperties;
     /**
      * @return Unique external key of this object from the source system.
      * 
      */
-    private String externalKey;
+    private @Nullable String externalKey;
     private @Nullable List<String> fields;
-    private String id;
+    private @Nullable String id;
     /**
      * @return Indicates whether this connection is the default connection.
      * 
      */
-    private Boolean isDefault;
+    private @Nullable Boolean isDefault;
     /**
      * @return Unique connection key that is immutable.
      * 
      */
-    private String key;
+    private @Nullable String key;
     /**
      * @return A map of maps that contains the properties which are specific to the connection type. Each connection type definition defines it&#39;s set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most connections have required properties within the &#34;default&#34; category. Example: `{&#34;properties&#34;: { &#34;default&#34;: { &#34;username&#34;: &#34;user1&#34;}}}`
      * 
      */
-    private Map<String,Object> properties;
+    private @Nullable Map<String,Object> properties;
     /**
      * @return The current state of the connection.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The date and time the connection was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2019-03-25T21:10:29.600Z`
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return Time that the connections status was last updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      * 
      */
-    private String timeStatusUpdated;
+    private @Nullable String timeStatusUpdated;
     /**
      * @return The last time that any change was made to the connection. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
     /**
      * @return The key of the object type. Type key&#39;s can be found via the &#39;/types&#39; endpoint.
      * 
      */
-    private String typeKey;
+    private @Nullable String typeKey;
     /**
      * @return OCID of the user who modified the connection.
      * 
      */
-    private String updatedById;
+    private @Nullable String updatedById;
     /**
      * @return URI to the connection instance in the API.
      * 
      */
-    private String uri;
+    private @Nullable String uri;
 
     private GetConnectionResult() {}
     public String catalogId() {
@@ -106,8 +107,8 @@ public final class GetConnectionResult {
      * @return OCID of the user who created the connection.
      * 
      */
-    public String createdById() {
-        return this.createdById;
+    public Optional<String> createdById() {
+        return Optional.ofNullable(this.createdById);
     }
     /**
      * @return Unique key of the parent data asset.
@@ -120,101 +121,101 @@ public final class GetConnectionResult {
      * @return A description of the connection.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return A user-friendly display name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     public Map<String,Object> encProperties() {
-        return this.encProperties;
+        return this.encProperties == null ? Map.of() : this.encProperties;
     }
     /**
      * @return Unique external key of this object from the source system.
      * 
      */
-    public String externalKey() {
-        return this.externalKey;
+    public Optional<String> externalKey() {
+        return Optional.ofNullable(this.externalKey);
     }
     public List<String> fields() {
         return this.fields == null ? List.of() : this.fields;
     }
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Indicates whether this connection is the default connection.
      * 
      */
-    public Boolean isDefault() {
-        return this.isDefault;
+    public Optional<Boolean> isDefault() {
+        return Optional.ofNullable(this.isDefault);
     }
     /**
      * @return Unique connection key that is immutable.
      * 
      */
-    public String key() {
-        return this.key;
+    public Optional<String> key() {
+        return Optional.ofNullable(this.key);
     }
     /**
      * @return A map of maps that contains the properties which are specific to the connection type. Each connection type definition defines it&#39;s set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most connections have required properties within the &#34;default&#34; category. Example: `{&#34;properties&#34;: { &#34;default&#34;: { &#34;username&#34;: &#34;user1&#34;}}}`
      * 
      */
     public Map<String,Object> properties() {
-        return this.properties;
+        return this.properties == null ? Map.of() : this.properties;
     }
     /**
      * @return The current state of the connection.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The date and time the connection was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2019-03-25T21:10:29.600Z`
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return Time that the connections status was last updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      * 
      */
-    public String timeStatusUpdated() {
-        return this.timeStatusUpdated;
+    public Optional<String> timeStatusUpdated() {
+        return Optional.ofNullable(this.timeStatusUpdated);
     }
     /**
      * @return The last time that any change was made to the connection. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
     /**
      * @return The key of the object type. Type key&#39;s can be found via the &#39;/types&#39; endpoint.
      * 
      */
-    public String typeKey() {
-        return this.typeKey;
+    public Optional<String> typeKey() {
+        return Optional.ofNullable(this.typeKey);
     }
     /**
      * @return OCID of the user who modified the connection.
      * 
      */
-    public String updatedById() {
-        return this.updatedById;
+    public Optional<String> updatedById() {
+        return Optional.ofNullable(this.updatedById);
     }
     /**
      * @return URI to the connection instance in the API.
      * 
      */
-    public String uri() {
-        return this.uri;
+    public Optional<String> uri() {
+        return Optional.ofNullable(this.uri);
     }
 
     public static Builder builder() {
@@ -228,24 +229,24 @@ public final class GetConnectionResult {
     public static final class Builder {
         private String catalogId;
         private String connectionKey;
-        private String createdById;
+        private @Nullable String createdById;
         private String dataAssetKey;
-        private String description;
-        private String displayName;
-        private Map<String,Object> encProperties;
-        private String externalKey;
+        private @Nullable String description;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> encProperties;
+        private @Nullable String externalKey;
         private @Nullable List<String> fields;
-        private String id;
-        private Boolean isDefault;
-        private String key;
-        private Map<String,Object> properties;
-        private String state;
-        private String timeCreated;
-        private String timeStatusUpdated;
-        private String timeUpdated;
-        private String typeKey;
-        private String updatedById;
-        private String uri;
+        private @Nullable String id;
+        private @Nullable Boolean isDefault;
+        private @Nullable String key;
+        private @Nullable Map<String,Object> properties;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
+        private @Nullable String timeStatusUpdated;
+        private @Nullable String timeUpdated;
+        private @Nullable String typeKey;
+        private @Nullable String updatedById;
+        private @Nullable String uri;
         public Builder() {}
         public Builder(GetConnectionResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -282,8 +283,8 @@ public final class GetConnectionResult {
             return this;
         }
         @CustomType.Setter
-        public Builder createdById(String createdById) {
-            this.createdById = Objects.requireNonNull(createdById);
+        public Builder createdById(@Nullable String createdById) {
+            this.createdById = createdById;
             return this;
         }
         @CustomType.Setter
@@ -292,23 +293,23 @@ public final class GetConnectionResult {
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder encProperties(Map<String,Object> encProperties) {
-            this.encProperties = Objects.requireNonNull(encProperties);
+        public Builder encProperties(@Nullable Map<String,Object> encProperties) {
+            this.encProperties = encProperties;
             return this;
         }
         @CustomType.Setter
-        public Builder externalKey(String externalKey) {
-            this.externalKey = Objects.requireNonNull(externalKey);
+        public Builder externalKey(@Nullable String externalKey) {
+            this.externalKey = externalKey;
             return this;
         }
         @CustomType.Setter
@@ -320,58 +321,58 @@ public final class GetConnectionResult {
             return fields(List.of(fields));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder isDefault(Boolean isDefault) {
-            this.isDefault = Objects.requireNonNull(isDefault);
+        public Builder isDefault(@Nullable Boolean isDefault) {
+            this.isDefault = isDefault;
             return this;
         }
         @CustomType.Setter
-        public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
+        public Builder key(@Nullable String key) {
+            this.key = key;
             return this;
         }
         @CustomType.Setter
-        public Builder properties(Map<String,Object> properties) {
-            this.properties = Objects.requireNonNull(properties);
+        public Builder properties(@Nullable Map<String,Object> properties) {
+            this.properties = properties;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeStatusUpdated(String timeStatusUpdated) {
-            this.timeStatusUpdated = Objects.requireNonNull(timeStatusUpdated);
+        public Builder timeStatusUpdated(@Nullable String timeStatusUpdated) {
+            this.timeStatusUpdated = timeStatusUpdated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
-        public Builder typeKey(String typeKey) {
-            this.typeKey = Objects.requireNonNull(typeKey);
+        public Builder typeKey(@Nullable String typeKey) {
+            this.typeKey = typeKey;
             return this;
         }
         @CustomType.Setter
-        public Builder updatedById(String updatedById) {
-            this.updatedById = Objects.requireNonNull(updatedById);
+        public Builder updatedById(@Nullable String updatedById) {
+            this.updatedById = updatedById;
             return this;
         }
         @CustomType.Setter
-        public Builder uri(String uri) {
-            this.uri = Objects.requireNonNull(uri);
+        public Builder uri(@Nullable String uri) {
+            this.uri = uri;
             return this;
         }
         public GetConnectionResult build() {

@@ -16,47 +16,47 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// The description you assign to the DB credential. Does not have to be unique, and it's changeable.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// The OCID of the DB credential.
         /// </summary>
-        public readonly string Id;
-        public readonly string LifecycleDetails;
-        public readonly string Password;
+        public readonly string? Id;
+        public readonly string? LifecycleDetails;
+        public readonly string? Password;
         /// <summary>
         /// A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// Date and time the `DbCredential` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// Date and time when this credential will expire, in the format defined by RFC3339. Null if it never expires.  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeExpires;
+        public readonly string? TimeExpires;
         /// <summary>
         /// The OCID of the user.
         /// </summary>
-        public readonly string UserId;
+        public readonly string? UserId;
 
         [OutputConstructor]
         private GetDbCredentialsDbCredentialResult(
-            string description,
+            string? description,
 
-            string id,
+            string? id,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string password,
+            string? password,
 
-            string state,
+            string? state,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeExpires,
+            string? timeExpires,
 
-            string userId)
+            string? userId)
         {
             Description = description;
             Id = id;

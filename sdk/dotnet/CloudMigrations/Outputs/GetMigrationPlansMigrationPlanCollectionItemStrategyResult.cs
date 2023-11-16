@@ -16,41 +16,41 @@ namespace Pulumi.Oci.CloudMigrations.Outputs
         /// <summary>
         /// The real resource usage is multiplied to this number before making any recommendation.
         /// </summary>
-        public readonly double AdjustmentMultiplier;
+        public readonly double? AdjustmentMultiplier;
         /// <summary>
         /// The current state of the migration plan.
         /// </summary>
-        public readonly string MetricTimeWindow;
+        public readonly string? MetricTimeWindow;
         /// <summary>
         /// The current state of the migration plan.
         /// </summary>
-        public readonly string MetricType;
+        public readonly string? MetricType;
         /// <summary>
         /// Percentile value
         /// </summary>
-        public readonly string Percentile;
+        public readonly string? Percentile;
         /// <summary>
         /// The type of resource.
         /// </summary>
-        public readonly string ResourceType;
+        public readonly string? ResourceType;
         /// <summary>
         /// The type of strategy used for migration.
         /// </summary>
-        public readonly string StrategyType;
+        public readonly string? StrategyType;
 
         [OutputConstructor]
         private GetMigrationPlansMigrationPlanCollectionItemStrategyResult(
-            double adjustmentMultiplier,
+            double? adjustmentMultiplier,
 
-            string metricTimeWindow,
+            string? metricTimeWindow,
 
-            string metricType,
+            string? metricType,
 
-            string percentile,
+            string? percentile,
 
-            string resourceType,
+            string? resourceType,
 
-            string strategyType)
+            string? strategyType)
         {
             AdjustmentMultiplier = adjustmentMultiplier;
             MetricTimeWindow = metricTimeWindow;

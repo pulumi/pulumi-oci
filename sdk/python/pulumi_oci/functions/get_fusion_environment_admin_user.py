@@ -50,18 +50,12 @@ class GetFusionEnvironmentAdminUserResult:
 
     @property
     @pulumi.getter(name="emailAddress")
-    def email_address(self) -> str:
-        """
-        Admin users email address
-        """
+    def email_address(self) -> Optional[str]:
         return pulumi.get(self, "email_address")
 
     @property
     @pulumi.getter(name="firstName")
-    def first_name(self) -> str:
-        """
-        Admin users first name
-        """
+    def first_name(self) -> Optional[str]:
         return pulumi.get(self, "first_name")
 
     @property
@@ -71,36 +65,27 @@ class GetFusionEnvironmentAdminUserResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetFusionEnvironmentAdminUserItemResult']:
-        """
-        A page of AdminUserSummary objects.
-        """
+    def items(self) -> Optional[Sequence['outputs.GetFusionEnvironmentAdminUserItemResult']]:
         return pulumi.get(self, "items")
 
     @property
     @pulumi.getter(name="lastName")
-    def last_name(self) -> str:
-        """
-        Admin users last name
-        """
+    def last_name(self) -> Optional[str]:
         return pulumi.get(self, "last_name")
 
     @property
     @pulumi.getter
-    def password(self) -> str:
+    def password(self) -> Optional[str]:
         return pulumi.get(self, "password")
 
     @property
     @pulumi.getter
-    def username(self) -> str:
-        """
-        Admin username
-        """
+    def username(self) -> Optional[str]:
         return pulumi.get(self, "username")
 
 
@@ -123,21 +108,7 @@ class AwaitableGetFusionEnvironmentAdminUserResult(GetFusionEnvironmentAdminUser
 def get_fusion_environment_admin_user(fusion_environment_id: Optional[str] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetFusionEnvironmentAdminUserResult:
     """
-    This data source provides details about a specific Fusion Environment Admin User resource in Oracle Cloud Infrastructure Fusion Apps service.
-
-    List all FusionEnvironment admin users
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_fusion_environment_admin_user = oci.Functions.get_fusion_environment_admin_user(fusion_environment_id=oci_fusion_apps_fusion_environment["test_fusion_environment"]["id"])
-    ```
-
-
-    :param str fusion_environment_id: unique FusionEnvironment identifier
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['fusionEnvironmentId'] = fusion_environment_id
@@ -159,20 +130,6 @@ def get_fusion_environment_admin_user(fusion_environment_id: Optional[str] = Non
 def get_fusion_environment_admin_user_output(fusion_environment_id: Optional[pulumi.Input[str]] = None,
                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFusionEnvironmentAdminUserResult]:
     """
-    This data source provides details about a specific Fusion Environment Admin User resource in Oracle Cloud Infrastructure Fusion Apps service.
-
-    List all FusionEnvironment admin users
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_fusion_environment_admin_user = oci.Functions.get_fusion_environment_admin_user(fusion_environment_id=oci_fusion_apps_fusion_environment["test_fusion_environment"]["id"])
-    ```
-
-
-    :param str fusion_environment_id: unique FusionEnvironment identifier
+    Use this data source to access information about an existing resource.
     """
     ...

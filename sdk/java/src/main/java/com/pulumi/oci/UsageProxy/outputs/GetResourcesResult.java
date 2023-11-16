@@ -21,12 +21,12 @@ public final class GetResourcesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of resources_collection.
      * 
      */
-    private List<GetResourcesResourcesCollection> resourcesCollections;
+    private @Nullable List<GetResourcesResourcesCollection> resourcesCollections;
     private String serviceName;
 
     private GetResourcesResult() {}
@@ -43,15 +43,15 @@ public final class GetResourcesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of resources_collection.
      * 
      */
     public List<GetResourcesResourcesCollection> resourcesCollections() {
-        return this.resourcesCollections;
+        return this.resourcesCollections == null ? List.of() : this.resourcesCollections;
     }
     public String serviceName() {
         return this.serviceName;
@@ -69,8 +69,8 @@ public final class GetResourcesResult {
         private String compartmentId;
         private @Nullable String entitlementId;
         private @Nullable List<GetResourcesFilter> filters;
-        private String id;
-        private List<GetResourcesResourcesCollection> resourcesCollections;
+        private @Nullable String id;
+        private @Nullable List<GetResourcesResourcesCollection> resourcesCollections;
         private String serviceName;
         public Builder() {}
         public Builder(GetResourcesResult defaults) {
@@ -102,13 +102,13 @@ public final class GetResourcesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder resourcesCollections(List<GetResourcesResourcesCollection> resourcesCollections) {
-            this.resourcesCollections = Objects.requireNonNull(resourcesCollections);
+        public Builder resourcesCollections(@Nullable List<GetResourcesResourcesCollection> resourcesCollections) {
+            this.resourcesCollections = resourcesCollections;
             return this;
         }
         public Builder resourcesCollections(GetResourcesResourcesCollection... resourcesCollections) {

@@ -17,35 +17,35 @@ namespace Pulumi.Oci.VisualBuilder.Outputs
         /// * If role == `PARENT`, the attached instance was created by this service instance
         /// * If role == `CHILD`, this instance was created from attached instance on behalf of a user
         /// </summary>
-        public readonly bool IsImplicit;
+        public readonly bool? IsImplicit;
         /// <summary>
         /// The OCID of the target instance (which could be any other Oracle Cloud Infrastructure PaaS/SaaS resource), to which this instance is attached.
         /// </summary>
-        public readonly string TargetId;
+        public readonly string? TargetId;
         /// <summary>
         /// The dataplane instance URL of the attached instance
         /// </summary>
-        public readonly string TargetInstanceUrl;
+        public readonly string? TargetInstanceUrl;
         /// <summary>
         /// The role of the target attachment.
         /// </summary>
-        public readonly string TargetRole;
+        public readonly string? TargetRole;
         /// <summary>
         /// The type of the target instance, such as "FUSION".
         /// </summary>
-        public readonly string TargetServiceType;
+        public readonly string? TargetServiceType;
 
         [OutputConstructor]
         private GetVbInstanceAttachmentResult(
-            bool isImplicit,
+            bool? isImplicit,
 
-            string targetId,
+            string? targetId,
 
-            string targetInstanceUrl,
+            string? targetInstanceUrl,
 
-            string targetRole,
+            string? targetRole,
 
-            string targetServiceType)
+            string? targetServiceType)
         {
             IsImplicit = isImplicit;
             TargetId = targetId;

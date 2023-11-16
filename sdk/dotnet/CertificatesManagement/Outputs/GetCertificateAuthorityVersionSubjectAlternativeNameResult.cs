@@ -13,14 +13,14 @@ namespace Pulumi.Oci.CertificatesManagement.Outputs
     [OutputType]
     public sealed class GetCertificateAuthorityVersionSubjectAlternativeNameResult
     {
-        public readonly string Type;
-        public readonly string Value;
+        public readonly string? Type;
+        public readonly string? Value;
 
         [OutputConstructor]
         private GetCertificateAuthorityVersionSubjectAlternativeNameResult(
-            string type,
+            string? type,
 
-            string value)
+            string? value)
         {
             Type = type;
             Value = value;

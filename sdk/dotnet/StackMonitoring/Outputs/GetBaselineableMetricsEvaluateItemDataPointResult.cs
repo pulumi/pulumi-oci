@@ -16,35 +16,35 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         /// <summary>
         /// if the value is anomaly or not 0 indicates not an anomaly -1 indicates value is below the threshold +1 indicates value is above the threshold
         /// </summary>
-        public readonly double Anomaly;
+        public readonly double? Anomaly;
         /// <summary>
         /// upper threshold for the metric value
         /// </summary>
-        public readonly double High;
+        public readonly double? High;
         /// <summary>
         /// lower threshold for the metric value
         /// </summary>
-        public readonly double Low;
+        public readonly double? Low;
         /// <summary>
         /// timestamp of when the metric was collected
         /// </summary>
-        public readonly string Timestamp;
+        public readonly string? Timestamp;
         /// <summary>
         /// value for the metric data point
         /// </summary>
-        public readonly double Value;
+        public readonly double? Value;
 
         [OutputConstructor]
         private GetBaselineableMetricsEvaluateItemDataPointResult(
-            double anomaly,
+            double? anomaly,
 
-            double high,
+            double? high,
 
-            double low,
+            double? low,
 
-            string timestamp,
+            string? timestamp,
 
-            double value)
+            double? value)
         {
             Anomaly = anomaly;
             High = high;

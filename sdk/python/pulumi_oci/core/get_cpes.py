@@ -40,17 +40,11 @@ class GetCpesResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the CPE.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter
-    def cpes(self) -> Sequence['outputs.GetCpesCpeResult']:
-        """
-        The list of cpes.
-        """
+    def cpes(self) -> Optional[Sequence['outputs.GetCpesCpeResult']]:
         return pulumi.get(self, "cpes")
 
     @property
@@ -60,7 +54,7 @@ class GetCpesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -83,21 +77,7 @@ def get_cpes(compartment_id: Optional[str] = None,
              filters: Optional[Sequence[pulumi.InputType['GetCpesFilterArgs']]] = None,
              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCpesResult:
     """
-    This data source provides the list of Cpes in Oracle Cloud Infrastructure Core service.
-
-    Lists the customer-premises equipment objects (CPEs) in the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_cpes = oci.Core.get_cpes(compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -117,20 +97,6 @@ def get_cpes_output(compartment_id: Optional[pulumi.Input[str]] = None,
                     filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetCpesFilterArgs']]]]] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCpesResult]:
     """
-    This data source provides the list of Cpes in Oracle Cloud Infrastructure Core service.
-
-    Lists the customer-premises equipment objects (CPEs) in the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_cpes = oci.Core.get_cpes(compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+    Use this data source to access information about an existing resource.
     """
     ...

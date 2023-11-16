@@ -43,17 +43,11 @@ class GetMonitoredInstancesResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A user-friendly name of the monitored instance. It is binded to [Compute Instance](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/computeoverview.htm). DisplayName is fetched from [Core Service API](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/Instance/).
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -63,7 +57,7 @@ class GetMonitoredInstancesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -71,10 +65,7 @@ class GetMonitoredInstancesResult:
 
     @property
     @pulumi.getter(name="monitoredInstanceCollections")
-    def monitored_instance_collections(self) -> Sequence['outputs.GetMonitoredInstancesMonitoredInstanceCollectionResult']:
-        """
-        The list of monitored_instance_collection.
-        """
+    def monitored_instance_collections(self) -> Optional[Sequence['outputs.GetMonitoredInstancesMonitoredInstanceCollectionResult']]:
         return pulumi.get(self, "monitored_instance_collections")
 
 
@@ -96,23 +87,7 @@ def get_monitored_instances(compartment_id: Optional[str] = None,
                             filters: Optional[Sequence[pulumi.InputType['GetMonitoredInstancesFilterArgs']]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMonitoredInstancesResult:
     """
-    This data source provides the list of Monitored Instances in Oracle Cloud Infrastructure Appmgmt Control service.
-
-    Returns a list of monitored instances.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_monitored_instances = oci.AppMgmtControl.get_monitored_instances(compartment_id=var["compartment_id"],
-        display_name=var["monitored_instance_display_name"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire display name given.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -135,22 +110,6 @@ def get_monitored_instances_output(compartment_id: Optional[pulumi.Input[str]] =
                                    filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetMonitoredInstancesFilterArgs']]]]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMonitoredInstancesResult]:
     """
-    This data source provides the list of Monitored Instances in Oracle Cloud Infrastructure Appmgmt Control service.
-
-    Returns a list of monitored instances.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_monitored_instances = oci.AppMgmtControl.get_monitored_instances(compartment_id=var["compartment_id"],
-        display_name=var["monitored_instance_display_name"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire display name given.
+    Use this data source to access information about an existing resource.
     """
     ...

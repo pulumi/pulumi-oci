@@ -71,7 +71,7 @@ export class NetworkFirewallPolicyMappedSecret extends pulumi.CustomResource {
     /**
      * OCID of the Network Firewall Policy this Mapped Secret belongs to.
      */
-    public /*out*/ readonly parentResourceId!: pulumi.Output<string>;
+    public /*out*/ readonly parentResourceId!: pulumi.Output<string | undefined>;
     /**
      * Source of the secrets, where the secrets are stored. The only accepted value is `OCI_VAULT`
      */

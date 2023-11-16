@@ -19,13 +19,13 @@ public final class GetManagedDatabaseAttentionLogCountResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private @Nullable Boolean isRegularExpression;
     /**
      * @return An array of the counts of different urgency or type of attention logs.
      * 
      */
-    private List<GetManagedDatabaseAttentionLogCountItem> items;
+    private @Nullable List<GetManagedDatabaseAttentionLogCountItem> items;
     private @Nullable String logSearchText;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
@@ -45,8 +45,8 @@ public final class GetManagedDatabaseAttentionLogCountResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public Optional<Boolean> isRegularExpression() {
         return Optional.ofNullable(this.isRegularExpression);
@@ -56,7 +56,7 @@ public final class GetManagedDatabaseAttentionLogCountResult {
      * 
      */
     public List<GetManagedDatabaseAttentionLogCountItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
     public Optional<String> logSearchText() {
         return Optional.ofNullable(this.logSearchText);
@@ -91,9 +91,9 @@ public final class GetManagedDatabaseAttentionLogCountResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String groupBy;
-        private String id;
+        private @Nullable String id;
         private @Nullable Boolean isRegularExpression;
-        private List<GetManagedDatabaseAttentionLogCountItem> items;
+        private @Nullable List<GetManagedDatabaseAttentionLogCountItem> items;
         private @Nullable String logSearchText;
         private String managedDatabaseId;
         private @Nullable String timeGreaterThanOrEqualTo;
@@ -121,8 +121,8 @@ public final class GetManagedDatabaseAttentionLogCountResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -131,8 +131,8 @@ public final class GetManagedDatabaseAttentionLogCountResult {
             return this;
         }
         @CustomType.Setter
-        public Builder items(List<GetManagedDatabaseAttentionLogCountItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetManagedDatabaseAttentionLogCountItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetManagedDatabaseAttentionLogCountItem... items) {

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Channel resource in Oracle Cloud Infrastructure MySQL Database service.
@@ -63,30 +62,30 @@ type LookupChannelArgs struct {
 type LookupChannelResult struct {
 	ChannelId string `pulumi:"channelId"`
 	// The OCID of the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// User provided description of the Channel.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// The user-friendly name for the Channel. It does not have to be unique.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	Id           string                 `pulumi:"id"`
+	Id           *string                `pulumi:"id"`
 	// Whether the Channel has been enabled by the user.
-	IsEnabled bool `pulumi:"isEnabled"`
+	IsEnabled *bool `pulumi:"isEnabled"`
 	// A message describing the state of the Channel.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Parameters detailing how to provision the source for the given Channel.
 	Sources []GetChannelSource `pulumi:"sources"`
 	// The state of the Channel.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Details about the Channel target.
 	Targets []GetChannelTarget `pulumi:"targets"`
 	// The date and time the Channel was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the Channel was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func LookupChannelOutput(ctx *pulumi.Context, args LookupChannelOutputArgs, opts ...pulumi.InvokeOption) LookupChannelResultOutput {
@@ -127,19 +126,13 @@ func (o LookupChannelResultOutput) ToLookupChannelResultOutputWithContext(ctx co
 	return o
 }
 
-func (o LookupChannelResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupChannelResult] {
-	return pulumix.Output[LookupChannelResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o LookupChannelResultOutput) ChannelId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupChannelResult) string { return v.ChannelId }).(pulumi.StringOutput)
 }
 
 // The OCID of the compartment.
-func (o LookupChannelResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupChannelResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupChannelResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupChannelResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
@@ -148,13 +141,13 @@ func (o LookupChannelResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // User provided description of the Channel.
-func (o LookupChannelResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupChannelResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupChannelResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupChannelResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // The user-friendly name for the Channel. It does not have to be unique.
-func (o LookupChannelResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupChannelResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupChannelResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupChannelResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -162,18 +155,18 @@ func (o LookupChannelResultOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupChannelResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-func (o LookupChannelResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupChannelResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupChannelResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupChannelResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Whether the Channel has been enabled by the user.
-func (o LookupChannelResultOutput) IsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupChannelResult) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+func (o LookupChannelResultOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupChannelResult) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // A message describing the state of the Channel.
-func (o LookupChannelResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupChannelResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupChannelResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupChannelResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // Parameters detailing how to provision the source for the given Channel.
@@ -182,8 +175,8 @@ func (o LookupChannelResultOutput) Sources() GetChannelSourceArrayOutput {
 }
 
 // The state of the Channel.
-func (o LookupChannelResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupChannelResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupChannelResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupChannelResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Details about the Channel target.
@@ -192,13 +185,13 @@ func (o LookupChannelResultOutput) Targets() GetChannelTargetArrayOutput {
 }
 
 // The date and time the Channel was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-func (o LookupChannelResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupChannelResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupChannelResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupChannelResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the Channel was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-func (o LookupChannelResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupChannelResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupChannelResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupChannelResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

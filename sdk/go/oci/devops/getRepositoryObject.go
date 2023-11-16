@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Repository Object resource in Oracle Cloud Infrastructure Devops service.
@@ -67,17 +66,17 @@ type GetRepositoryObjectArgs struct {
 type GetRepositoryObjectResult struct {
 	FilePath *string `pulumi:"filePath"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Flag to determine if the object contains binary file content or not.
-	IsBinary     bool    `pulumi:"isBinary"`
+	IsBinary     *bool   `pulumi:"isBinary"`
 	RefName      *string `pulumi:"refName"`
 	RepositoryId string  `pulumi:"repositoryId"`
 	// SHA-1 hash of git object.
-	Sha string `pulumi:"sha"`
+	Sha *string `pulumi:"sha"`
 	// Size in bytes.
-	SizeInBytes string `pulumi:"sizeInBytes"`
+	SizeInBytes *string `pulumi:"sizeInBytes"`
 	// The type of git object.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 }
 
 func GetRepositoryObjectOutput(ctx *pulumi.Context, args GetRepositoryObjectOutputArgs, opts ...pulumi.InvokeOption) GetRepositoryObjectResultOutput {
@@ -122,24 +121,18 @@ func (o GetRepositoryObjectResultOutput) ToGetRepositoryObjectResultOutputWithCo
 	return o
 }
 
-func (o GetRepositoryObjectResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetRepositoryObjectResult] {
-	return pulumix.Output[GetRepositoryObjectResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetRepositoryObjectResultOutput) FilePath() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetRepositoryObjectResult) *string { return v.FilePath }).(pulumi.StringPtrOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetRepositoryObjectResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRepositoryObjectResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetRepositoryObjectResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRepositoryObjectResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Flag to determine if the object contains binary file content or not.
-func (o GetRepositoryObjectResultOutput) IsBinary() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetRepositoryObjectResult) bool { return v.IsBinary }).(pulumi.BoolOutput)
+func (o GetRepositoryObjectResultOutput) IsBinary() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetRepositoryObjectResult) *bool { return v.IsBinary }).(pulumi.BoolPtrOutput)
 }
 
 func (o GetRepositoryObjectResultOutput) RefName() pulumi.StringPtrOutput {
@@ -151,18 +144,18 @@ func (o GetRepositoryObjectResultOutput) RepositoryId() pulumi.StringOutput {
 }
 
 // SHA-1 hash of git object.
-func (o GetRepositoryObjectResultOutput) Sha() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRepositoryObjectResult) string { return v.Sha }).(pulumi.StringOutput)
+func (o GetRepositoryObjectResultOutput) Sha() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRepositoryObjectResult) *string { return v.Sha }).(pulumi.StringPtrOutput)
 }
 
 // Size in bytes.
-func (o GetRepositoryObjectResultOutput) SizeInBytes() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRepositoryObjectResult) string { return v.SizeInBytes }).(pulumi.StringOutput)
+func (o GetRepositoryObjectResultOutput) SizeInBytes() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRepositoryObjectResult) *string { return v.SizeInBytes }).(pulumi.StringPtrOutput)
 }
 
 // The type of git object.
-func (o GetRepositoryObjectResultOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRepositoryObjectResult) string { return v.Type }).(pulumi.StringOutput)
+func (o GetRepositoryObjectResultOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRepositoryObjectResult) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 func init() {

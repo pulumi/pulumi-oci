@@ -11,6 +11,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetCostTrackingTagsTag {
@@ -18,159 +20,159 @@ public final class GetCostTrackingTagsTag {
      * @return The OCID of the compartment (remember that the tenancy is simply the root compartment).
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return The description you assign to the tag.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The OCID of the tag definition.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Indicates whether the tag is enabled for cost tracking.
      * 
      */
-    private Boolean isCostTracking;
+    private @Nullable Boolean isCostTracking;
     /**
      * @return Indicates whether the tag is retired. See [Retiring Key Definitions and Namespace Definitions](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/taggingoverview.htm#Retiring).
      * 
      */
-    private Boolean isRetired;
+    private @Nullable Boolean isRetired;
     /**
      * @return The name assigned to the tag during creation. This is the tag key definition. The name must be unique within the tag namespace and cannot be changed.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return The tag&#39;s current state. After creating a tag, make sure its `lifecycleState` is ACTIVE before using it. After retiring a tag, make sure its `lifecycleState` is INACTIVE before using it. If you delete a tag, you cannot delete another tag until the deleted tag&#39;s `lifecycleState` changes from DELETING to DELETED.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The OCID of the namespace that contains the tag definition.
      * 
      */
-    private String tagNamespaceId;
+    private @Nullable String tagNamespaceId;
     /**
      * @return The name of the tag namespace that contains the tag definition.
      * 
      */
-    private String tagNamespaceName;
+    private @Nullable String tagNamespaceName;
     /**
      * @return Date and time the tag was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return Validates a definedTag value. Each validator performs validation steps in addition to the standard validation for definedTag values. For more information, see [Limits on Tags](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/taggingoverview.htm#Limits).
      * 
      */
-    private List<GetCostTrackingTagsTagValidator> validators;
+    private @Nullable List<GetCostTrackingTagsTagValidator> validators;
 
     private GetCostTrackingTagsTag() {}
     /**
      * @return The OCID of the compartment (remember that the tenancy is simply the root compartment).
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return The description you assign to the tag.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The OCID of the tag definition.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Indicates whether the tag is enabled for cost tracking.
      * 
      */
-    public Boolean isCostTracking() {
-        return this.isCostTracking;
+    public Optional<Boolean> isCostTracking() {
+        return Optional.ofNullable(this.isCostTracking);
     }
     /**
      * @return Indicates whether the tag is retired. See [Retiring Key Definitions and Namespace Definitions](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/taggingoverview.htm#Retiring).
      * 
      */
-    public Boolean isRetired() {
-        return this.isRetired;
+    public Optional<Boolean> isRetired() {
+        return Optional.ofNullable(this.isRetired);
     }
     /**
      * @return The name assigned to the tag during creation. This is the tag key definition. The name must be unique within the tag namespace and cannot be changed.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return The tag&#39;s current state. After creating a tag, make sure its `lifecycleState` is ACTIVE before using it. After retiring a tag, make sure its `lifecycleState` is INACTIVE before using it. If you delete a tag, you cannot delete another tag until the deleted tag&#39;s `lifecycleState` changes from DELETING to DELETED.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The OCID of the namespace that contains the tag definition.
      * 
      */
-    public String tagNamespaceId() {
-        return this.tagNamespaceId;
+    public Optional<String> tagNamespaceId() {
+        return Optional.ofNullable(this.tagNamespaceId);
     }
     /**
      * @return The name of the tag namespace that contains the tag definition.
      * 
      */
-    public String tagNamespaceName() {
-        return this.tagNamespaceName;
+    public Optional<String> tagNamespaceName() {
+        return Optional.ofNullable(this.tagNamespaceName);
     }
     /**
      * @return Date and time the tag was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return Validates a definedTag value. Each validator performs validation steps in addition to the standard validation for definedTag values. For more information, see [Limits on Tags](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/taggingoverview.htm#Limits).
      * 
      */
     public List<GetCostTrackingTagsTagValidator> validators() {
-        return this.validators;
+        return this.validators == null ? List.of() : this.validators;
     }
 
     public static Builder builder() {
@@ -182,19 +184,19 @@ public final class GetCostTrackingTagsTag {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private Map<String,Object> definedTags;
-        private String description;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private Boolean isCostTracking;
-        private Boolean isRetired;
-        private String name;
-        private String state;
-        private String tagNamespaceId;
-        private String tagNamespaceName;
-        private String timeCreated;
-        private List<GetCostTrackingTagsTagValidator> validators;
+        private @Nullable String compartmentId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String description;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable Boolean isCostTracking;
+        private @Nullable Boolean isRetired;
+        private @Nullable String name;
+        private @Nullable String state;
+        private @Nullable String tagNamespaceId;
+        private @Nullable String tagNamespaceName;
+        private @Nullable String timeCreated;
+        private @Nullable List<GetCostTrackingTagsTagValidator> validators;
         public Builder() {}
         public Builder(GetCostTrackingTagsTag defaults) {
     	      Objects.requireNonNull(defaults);
@@ -214,68 +216,68 @@ public final class GetCostTrackingTagsTag {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder isCostTracking(Boolean isCostTracking) {
-            this.isCostTracking = Objects.requireNonNull(isCostTracking);
+        public Builder isCostTracking(@Nullable Boolean isCostTracking) {
+            this.isCostTracking = isCostTracking;
             return this;
         }
         @CustomType.Setter
-        public Builder isRetired(Boolean isRetired) {
-            this.isRetired = Objects.requireNonNull(isRetired);
+        public Builder isRetired(@Nullable Boolean isRetired) {
+            this.isRetired = isRetired;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder tagNamespaceId(String tagNamespaceId) {
-            this.tagNamespaceId = Objects.requireNonNull(tagNamespaceId);
+        public Builder tagNamespaceId(@Nullable String tagNamespaceId) {
+            this.tagNamespaceId = tagNamespaceId;
             return this;
         }
         @CustomType.Setter
-        public Builder tagNamespaceName(String tagNamespaceName) {
-            this.tagNamespaceName = Objects.requireNonNull(tagNamespaceName);
+        public Builder tagNamespaceName(@Nullable String tagNamespaceName) {
+            this.tagNamespaceName = tagNamespaceName;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder validators(List<GetCostTrackingTagsTagValidator> validators) {
-            this.validators = Objects.requireNonNull(validators);
+        public Builder validators(@Nullable List<GetCostTrackingTagsTagValidator> validators) {
+            this.validators = validators;
             return this;
         }
         public Builder validators(GetCostTrackingTagsTagValidator... validators) {

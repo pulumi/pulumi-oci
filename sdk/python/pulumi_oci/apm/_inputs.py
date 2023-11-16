@@ -59,9 +59,6 @@ class GetDataKeysFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: Name of the Data Key. The name uniquely identifies a Data Key within an APM domain.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -70,9 +67,6 @@ class GetDataKeysFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Name of the Data Key. The name uniquely identifies a Data Key within an APM domain.
-        """
         return pulumi.get(self, "name")
 
     @name.setter

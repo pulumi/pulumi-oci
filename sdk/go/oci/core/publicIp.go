@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Public Ip resource in Oracle Cloud Infrastructure Core service.
@@ -86,21 +85,21 @@ type PublicIp struct {
 	pulumi.CustomResourceState
 
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the entity the public IP is assigned to, or in the process of being assigned to.
-	AssignedEntityId pulumi.StringOutput `pulumi:"assignedEntityId"`
+	AssignedEntityId pulumi.StringPtrOutput `pulumi:"assignedEntityId"`
 	// The type of entity the public IP is assigned to, or in the process of being assigned to.
-	AssignedEntityType pulumi.StringOutput `pulumi:"assignedEntityType"`
+	AssignedEntityType pulumi.StringPtrOutput `pulumi:"assignedEntityType"`
 	// The public IP's availability domain. This property is set only for ephemeral public IPs that are assigned to a private IP (that is, when the `scope` of the public IP is set to AVAILABILITY_DOMAIN). The value is the availability domain of the assigned private IP.  Example: `Uocm:PHX-AD-1`
-	AvailabilityDomain pulumi.StringOutput `pulumi:"availabilityDomain"`
+	AvailabilityDomain pulumi.StringPtrOutput `pulumi:"availabilityDomain"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the public IP. For ephemeral public IPs, you must set this to the private IP's compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The public IP address of the `publicIp` object.  Example: `203.0.113.2`
-	IpAddress pulumi.StringOutput `pulumi:"ipAddress"`
+	IpAddress pulumi.StringPtrOutput `pulumi:"ipAddress"`
 	// Defines when the public IP is deleted and released back to the Oracle Cloud Infrastructure public IP pool. For more information, see [Public IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
 	Lifetime pulumi.StringOutput `pulumi:"lifetime"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private IP to assign the public IP to.
@@ -113,13 +112,13 @@ type PublicIp struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	PublicIpPoolId pulumi.StringOutput `pulumi:"publicIpPoolId"`
+	PublicIpPoolId pulumi.StringPtrOutput `pulumi:"publicIpPoolId"`
 	// Whether the public IP is regional or specific to a particular availability domain.
-	Scope pulumi.StringOutput `pulumi:"scope"`
+	Scope pulumi.StringPtrOutput `pulumi:"scope"`
 	// The public IP's current state.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The date and time the public IP was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 }
 
 // NewPublicIp registers a new resource with the given unique name, arguments, and options.
@@ -309,12 +308,6 @@ func (i *PublicIp) ToPublicIpOutputWithContext(ctx context.Context) PublicIpOutp
 	return pulumi.ToOutputWithContext(ctx, i).(PublicIpOutput)
 }
 
-func (i *PublicIp) ToOutput(ctx context.Context) pulumix.Output[*PublicIp] {
-	return pulumix.Output[*PublicIp]{
-		OutputState: i.ToPublicIpOutputWithContext(ctx).OutputState,
-	}
-}
-
 // PublicIpArrayInput is an input type that accepts PublicIpArray and PublicIpArrayOutput values.
 // You can construct a concrete instance of `PublicIpArrayInput` via:
 //
@@ -338,12 +331,6 @@ func (i PublicIpArray) ToPublicIpArrayOutput() PublicIpArrayOutput {
 
 func (i PublicIpArray) ToPublicIpArrayOutputWithContext(ctx context.Context) PublicIpArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(PublicIpArrayOutput)
-}
-
-func (i PublicIpArray) ToOutput(ctx context.Context) pulumix.Output[[]*PublicIp] {
-	return pulumix.Output[[]*PublicIp]{
-		OutputState: i.ToPublicIpArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // PublicIpMapInput is an input type that accepts PublicIpMap and PublicIpMapOutput values.
@@ -371,12 +358,6 @@ func (i PublicIpMap) ToPublicIpMapOutputWithContext(ctx context.Context) PublicI
 	return pulumi.ToOutputWithContext(ctx, i).(PublicIpMapOutput)
 }
 
-func (i PublicIpMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*PublicIp] {
-	return pulumix.Output[map[string]*PublicIp]{
-		OutputState: i.ToPublicIpMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type PublicIpOutput struct{ *pulumi.OutputState }
 
 func (PublicIpOutput) ElementType() reflect.Type {
@@ -391,25 +372,19 @@ func (o PublicIpOutput) ToPublicIpOutputWithContext(ctx context.Context) PublicI
 	return o
 }
 
-func (o PublicIpOutput) ToOutput(ctx context.Context) pulumix.Output[*PublicIp] {
-	return pulumix.Output[*PublicIp]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the entity the public IP is assigned to, or in the process of being assigned to.
-func (o PublicIpOutput) AssignedEntityId() pulumi.StringOutput {
-	return o.ApplyT(func(v *PublicIp) pulumi.StringOutput { return v.AssignedEntityId }).(pulumi.StringOutput)
+func (o PublicIpOutput) AssignedEntityId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PublicIp) pulumi.StringPtrOutput { return v.AssignedEntityId }).(pulumi.StringPtrOutput)
 }
 
 // The type of entity the public IP is assigned to, or in the process of being assigned to.
-func (o PublicIpOutput) AssignedEntityType() pulumi.StringOutput {
-	return o.ApplyT(func(v *PublicIp) pulumi.StringOutput { return v.AssignedEntityType }).(pulumi.StringOutput)
+func (o PublicIpOutput) AssignedEntityType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PublicIp) pulumi.StringPtrOutput { return v.AssignedEntityType }).(pulumi.StringPtrOutput)
 }
 
 // The public IP's availability domain. This property is set only for ephemeral public IPs that are assigned to a private IP (that is, when the `scope` of the public IP is set to AVAILABILITY_DOMAIN). The value is the availability domain of the assigned private IP.  Example: `Uocm:PHX-AD-1`
-func (o PublicIpOutput) AvailabilityDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v *PublicIp) pulumi.StringOutput { return v.AvailabilityDomain }).(pulumi.StringOutput)
+func (o PublicIpOutput) AvailabilityDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PublicIp) pulumi.StringPtrOutput { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the public IP. For ephemeral public IPs, you must set this to the private IP's compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -423,8 +398,8 @@ func (o PublicIpOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-func (o PublicIpOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *PublicIp) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o PublicIpOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PublicIp) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -433,8 +408,8 @@ func (o PublicIpOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The public IP address of the `publicIp` object.  Example: `203.0.113.2`
-func (o PublicIpOutput) IpAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v *PublicIp) pulumi.StringOutput { return v.IpAddress }).(pulumi.StringOutput)
+func (o PublicIpOutput) IpAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PublicIp) pulumi.StringPtrOutput { return v.IpAddress }).(pulumi.StringPtrOutput)
 }
 
 // Defines when the public IP is deleted and released back to the Oracle Cloud Infrastructure public IP pool. For more information, see [Public IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
@@ -455,23 +430,23 @@ func (o PublicIpOutput) PrivateIpId() pulumi.StringPtrOutput {
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o PublicIpOutput) PublicIpPoolId() pulumi.StringOutput {
-	return o.ApplyT(func(v *PublicIp) pulumi.StringOutput { return v.PublicIpPoolId }).(pulumi.StringOutput)
+func (o PublicIpOutput) PublicIpPoolId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PublicIp) pulumi.StringPtrOutput { return v.PublicIpPoolId }).(pulumi.StringPtrOutput)
 }
 
 // Whether the public IP is regional or specific to a particular availability domain.
-func (o PublicIpOutput) Scope() pulumi.StringOutput {
-	return o.ApplyT(func(v *PublicIp) pulumi.StringOutput { return v.Scope }).(pulumi.StringOutput)
+func (o PublicIpOutput) Scope() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PublicIp) pulumi.StringPtrOutput { return v.Scope }).(pulumi.StringPtrOutput)
 }
 
 // The public IP's current state.
-func (o PublicIpOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *PublicIp) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o PublicIpOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PublicIp) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the public IP was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-func (o PublicIpOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *PublicIp) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o PublicIpOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PublicIp) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 type PublicIpArrayOutput struct{ *pulumi.OutputState }
@@ -486,12 +461,6 @@ func (o PublicIpArrayOutput) ToPublicIpArrayOutput() PublicIpArrayOutput {
 
 func (o PublicIpArrayOutput) ToPublicIpArrayOutputWithContext(ctx context.Context) PublicIpArrayOutput {
 	return o
-}
-
-func (o PublicIpArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*PublicIp] {
-	return pulumix.Output[[]*PublicIp]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PublicIpArrayOutput) Index(i pulumi.IntInput) PublicIpOutput {
@@ -512,12 +481,6 @@ func (o PublicIpMapOutput) ToPublicIpMapOutput() PublicIpMapOutput {
 
 func (o PublicIpMapOutput) ToPublicIpMapOutputWithContext(ctx context.Context) PublicIpMapOutput {
 	return o
-}
-
-func (o PublicIpMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*PublicIp] {
-	return pulumix.Output[map[string]*PublicIp]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PublicIpMapOutput) MapIndex(k pulumi.StringInput) PublicIpOutput {

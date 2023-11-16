@@ -6,6 +6,8 @@ package com.pulumi.oci.DevOps.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetBuildRunBuildOutputDeliveredArtifactItem {
@@ -13,111 +15,111 @@ public final class GetBuildRunBuildOutputDeliveredArtifactItem {
      * @return The OCID of the artifact registry repository used by the DeliverArtifactStage
      * 
      */
-    private String artifactRepositoryId;
+    private @Nullable String artifactRepositoryId;
     /**
      * @return Type of artifact delivered.
      * 
      */
-    private String artifactType;
+    private @Nullable String artifactType;
     /**
      * @return The hash of the container registry artifact pushed by the Deliver Artifacts stage.
      * 
      */
-    private String deliveredArtifactHash;
+    private @Nullable String deliveredArtifactHash;
     /**
      * @return The OCID of the artifact pushed by the Deliver Artifacts stage.
      * 
      */
-    private String deliveredArtifactId;
+    private @Nullable String deliveredArtifactId;
     /**
      * @return The OCID of the deployment artifact definition.
      * 
      */
-    private String deployArtifactId;
+    private @Nullable String deployArtifactId;
     /**
      * @return The imageUri of the OCIR artifact pushed by the DeliverArtifactStage
      * 
      */
-    private String imageUri;
+    private @Nullable String imageUri;
     /**
      * @return Name of the output artifact defined in the build specification file.
      * 
      */
-    private String outputArtifactName;
+    private @Nullable String outputArtifactName;
     /**
      * @return Path of the repository where artifact was pushed
      * 
      */
-    private String path;
+    private @Nullable String path;
     /**
      * @return Version of the artifact pushed
      * 
      */
-    private String version;
+    private @Nullable String version;
 
     private GetBuildRunBuildOutputDeliveredArtifactItem() {}
     /**
      * @return The OCID of the artifact registry repository used by the DeliverArtifactStage
      * 
      */
-    public String artifactRepositoryId() {
-        return this.artifactRepositoryId;
+    public Optional<String> artifactRepositoryId() {
+        return Optional.ofNullable(this.artifactRepositoryId);
     }
     /**
      * @return Type of artifact delivered.
      * 
      */
-    public String artifactType() {
-        return this.artifactType;
+    public Optional<String> artifactType() {
+        return Optional.ofNullable(this.artifactType);
     }
     /**
      * @return The hash of the container registry artifact pushed by the Deliver Artifacts stage.
      * 
      */
-    public String deliveredArtifactHash() {
-        return this.deliveredArtifactHash;
+    public Optional<String> deliveredArtifactHash() {
+        return Optional.ofNullable(this.deliveredArtifactHash);
     }
     /**
      * @return The OCID of the artifact pushed by the Deliver Artifacts stage.
      * 
      */
-    public String deliveredArtifactId() {
-        return this.deliveredArtifactId;
+    public Optional<String> deliveredArtifactId() {
+        return Optional.ofNullable(this.deliveredArtifactId);
     }
     /**
      * @return The OCID of the deployment artifact definition.
      * 
      */
-    public String deployArtifactId() {
-        return this.deployArtifactId;
+    public Optional<String> deployArtifactId() {
+        return Optional.ofNullable(this.deployArtifactId);
     }
     /**
      * @return The imageUri of the OCIR artifact pushed by the DeliverArtifactStage
      * 
      */
-    public String imageUri() {
-        return this.imageUri;
+    public Optional<String> imageUri() {
+        return Optional.ofNullable(this.imageUri);
     }
     /**
      * @return Name of the output artifact defined in the build specification file.
      * 
      */
-    public String outputArtifactName() {
-        return this.outputArtifactName;
+    public Optional<String> outputArtifactName() {
+        return Optional.ofNullable(this.outputArtifactName);
     }
     /**
      * @return Path of the repository where artifact was pushed
      * 
      */
-    public String path() {
-        return this.path;
+    public Optional<String> path() {
+        return Optional.ofNullable(this.path);
     }
     /**
      * @return Version of the artifact pushed
      * 
      */
-    public String version() {
-        return this.version;
+    public Optional<String> version() {
+        return Optional.ofNullable(this.version);
     }
 
     public static Builder builder() {
@@ -129,15 +131,15 @@ public final class GetBuildRunBuildOutputDeliveredArtifactItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String artifactRepositoryId;
-        private String artifactType;
-        private String deliveredArtifactHash;
-        private String deliveredArtifactId;
-        private String deployArtifactId;
-        private String imageUri;
-        private String outputArtifactName;
-        private String path;
-        private String version;
+        private @Nullable String artifactRepositoryId;
+        private @Nullable String artifactType;
+        private @Nullable String deliveredArtifactHash;
+        private @Nullable String deliveredArtifactId;
+        private @Nullable String deployArtifactId;
+        private @Nullable String imageUri;
+        private @Nullable String outputArtifactName;
+        private @Nullable String path;
+        private @Nullable String version;
         public Builder() {}
         public Builder(GetBuildRunBuildOutputDeliveredArtifactItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -153,48 +155,48 @@ public final class GetBuildRunBuildOutputDeliveredArtifactItem {
         }
 
         @CustomType.Setter
-        public Builder artifactRepositoryId(String artifactRepositoryId) {
-            this.artifactRepositoryId = Objects.requireNonNull(artifactRepositoryId);
+        public Builder artifactRepositoryId(@Nullable String artifactRepositoryId) {
+            this.artifactRepositoryId = artifactRepositoryId;
             return this;
         }
         @CustomType.Setter
-        public Builder artifactType(String artifactType) {
-            this.artifactType = Objects.requireNonNull(artifactType);
+        public Builder artifactType(@Nullable String artifactType) {
+            this.artifactType = artifactType;
             return this;
         }
         @CustomType.Setter
-        public Builder deliveredArtifactHash(String deliveredArtifactHash) {
-            this.deliveredArtifactHash = Objects.requireNonNull(deliveredArtifactHash);
+        public Builder deliveredArtifactHash(@Nullable String deliveredArtifactHash) {
+            this.deliveredArtifactHash = deliveredArtifactHash;
             return this;
         }
         @CustomType.Setter
-        public Builder deliveredArtifactId(String deliveredArtifactId) {
-            this.deliveredArtifactId = Objects.requireNonNull(deliveredArtifactId);
+        public Builder deliveredArtifactId(@Nullable String deliveredArtifactId) {
+            this.deliveredArtifactId = deliveredArtifactId;
             return this;
         }
         @CustomType.Setter
-        public Builder deployArtifactId(String deployArtifactId) {
-            this.deployArtifactId = Objects.requireNonNull(deployArtifactId);
+        public Builder deployArtifactId(@Nullable String deployArtifactId) {
+            this.deployArtifactId = deployArtifactId;
             return this;
         }
         @CustomType.Setter
-        public Builder imageUri(String imageUri) {
-            this.imageUri = Objects.requireNonNull(imageUri);
+        public Builder imageUri(@Nullable String imageUri) {
+            this.imageUri = imageUri;
             return this;
         }
         @CustomType.Setter
-        public Builder outputArtifactName(String outputArtifactName) {
-            this.outputArtifactName = Objects.requireNonNull(outputArtifactName);
+        public Builder outputArtifactName(@Nullable String outputArtifactName) {
+            this.outputArtifactName = outputArtifactName;
             return this;
         }
         @CustomType.Setter
-        public Builder path(String path) {
-            this.path = Objects.requireNonNull(path);
+        public Builder path(@Nullable String path) {
+            this.path = path;
             return this;
         }
         @CustomType.Setter
-        public Builder version(String version) {
-            this.version = Objects.requireNonNull(version);
+        public Builder version(@Nullable String version) {
+            this.version = version;
             return this;
         }
         public GetBuildRunBuildOutputDeliveredArtifactItem build() {

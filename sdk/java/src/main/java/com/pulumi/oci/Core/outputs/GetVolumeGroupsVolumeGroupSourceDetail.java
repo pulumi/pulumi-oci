@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetVolumeGroupsVolumeGroupSourceDetail {
@@ -14,63 +16,63 @@ public final class GetVolumeGroupsVolumeGroupSourceDetail {
      * @return The type can be one of these values: `volumeGroupBackupId`, `volumeGroupId`, `volumeIds`
      * 
      */
-    private String type;
+    private @Nullable String type;
     /**
      * @return The OCID of the volume group backup to restore from, if the type is `volumeGroupBackup`
      * 
      */
-    private String volumeGroupBackupId;
+    private @Nullable String volumeGroupBackupId;
     /**
      * @return The OCID of the volume group to clone from, if the type is `volumeGroup`
      * 
      */
-    private String volumeGroupId;
+    private @Nullable String volumeGroupId;
     /**
      * @return The volume group replica&#39;s Oracle ID (OCID).
      * 
      */
-    private String volumeGroupReplicaId;
+    private @Nullable String volumeGroupReplicaId;
     /**
      * @return OCIDs for the volumes in this volume group.
      * 
      */
-    private List<String> volumeIds;
+    private @Nullable List<String> volumeIds;
 
     private GetVolumeGroupsVolumeGroupSourceDetail() {}
     /**
      * @return The type can be one of these values: `volumeGroupBackupId`, `volumeGroupId`, `volumeIds`
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
     /**
      * @return The OCID of the volume group backup to restore from, if the type is `volumeGroupBackup`
      * 
      */
-    public String volumeGroupBackupId() {
-        return this.volumeGroupBackupId;
+    public Optional<String> volumeGroupBackupId() {
+        return Optional.ofNullable(this.volumeGroupBackupId);
     }
     /**
      * @return The OCID of the volume group to clone from, if the type is `volumeGroup`
      * 
      */
-    public String volumeGroupId() {
-        return this.volumeGroupId;
+    public Optional<String> volumeGroupId() {
+        return Optional.ofNullable(this.volumeGroupId);
     }
     /**
      * @return The volume group replica&#39;s Oracle ID (OCID).
      * 
      */
-    public String volumeGroupReplicaId() {
-        return this.volumeGroupReplicaId;
+    public Optional<String> volumeGroupReplicaId() {
+        return Optional.ofNullable(this.volumeGroupReplicaId);
     }
     /**
      * @return OCIDs for the volumes in this volume group.
      * 
      */
     public List<String> volumeIds() {
-        return this.volumeIds;
+        return this.volumeIds == null ? List.of() : this.volumeIds;
     }
 
     public static Builder builder() {
@@ -82,11 +84,11 @@ public final class GetVolumeGroupsVolumeGroupSourceDetail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String type;
-        private String volumeGroupBackupId;
-        private String volumeGroupId;
-        private String volumeGroupReplicaId;
-        private List<String> volumeIds;
+        private @Nullable String type;
+        private @Nullable String volumeGroupBackupId;
+        private @Nullable String volumeGroupId;
+        private @Nullable String volumeGroupReplicaId;
+        private @Nullable List<String> volumeIds;
         public Builder() {}
         public Builder(GetVolumeGroupsVolumeGroupSourceDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -98,28 +100,28 @@ public final class GetVolumeGroupsVolumeGroupSourceDetail {
         }
 
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         @CustomType.Setter
-        public Builder volumeGroupBackupId(String volumeGroupBackupId) {
-            this.volumeGroupBackupId = Objects.requireNonNull(volumeGroupBackupId);
+        public Builder volumeGroupBackupId(@Nullable String volumeGroupBackupId) {
+            this.volumeGroupBackupId = volumeGroupBackupId;
             return this;
         }
         @CustomType.Setter
-        public Builder volumeGroupId(String volumeGroupId) {
-            this.volumeGroupId = Objects.requireNonNull(volumeGroupId);
+        public Builder volumeGroupId(@Nullable String volumeGroupId) {
+            this.volumeGroupId = volumeGroupId;
             return this;
         }
         @CustomType.Setter
-        public Builder volumeGroupReplicaId(String volumeGroupReplicaId) {
-            this.volumeGroupReplicaId = Objects.requireNonNull(volumeGroupReplicaId);
+        public Builder volumeGroupReplicaId(@Nullable String volumeGroupReplicaId) {
+            this.volumeGroupReplicaId = volumeGroupReplicaId;
             return this;
         }
         @CustomType.Setter
-        public Builder volumeIds(List<String> volumeIds) {
-            this.volumeIds = Objects.requireNonNull(volumeIds);
+        public Builder volumeIds(@Nullable List<String> volumeIds) {
+            this.volumeIds = volumeIds;
             return this;
         }
         public Builder volumeIds(String... volumeIds) {

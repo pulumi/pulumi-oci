@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Double;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetInvoicesInvoiceOrganization {
@@ -14,27 +16,27 @@ public final class GetInvoicesInvoiceOrganization {
      * @return Payment Term name
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return Organization ID
      * 
      */
-    private Double number;
+    private @Nullable Double number;
 
     private GetInvoicesInvoiceOrganization() {}
     /**
      * @return Payment Term name
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return Organization ID
      * 
      */
-    public Double number() {
-        return this.number;
+    public Optional<Double> number() {
+        return Optional.ofNullable(this.number);
     }
 
     public static Builder builder() {
@@ -46,8 +48,8 @@ public final class GetInvoicesInvoiceOrganization {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String name;
-        private Double number;
+        private @Nullable String name;
+        private @Nullable Double number;
         public Builder() {}
         public Builder(GetInvoicesInvoiceOrganization defaults) {
     	      Objects.requireNonNull(defaults);
@@ -56,13 +58,13 @@ public final class GetInvoicesInvoiceOrganization {
         }
 
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder number(Double number) {
-            this.number = Objects.requireNonNull(number);
+        public Builder number(@Nullable Double number) {
+            this.number = number;
             return this;
         }
         public GetInvoicesInvoiceOrganization build() {

@@ -20,11 +20,11 @@ namespace Pulumi.Oci.Waas.Outputs
         /// <summary>
         /// The text to show in the footer when showing a CAPTCHA challenge. If unspecified, defaults to 'Enter the letters and numbers as they are shown in the image above.'
         /// </summary>
-        public readonly string FooterText;
+        public readonly string? FooterText;
         /// <summary>
         /// The text to show in the header when showing a CAPTCHA challenge. If unspecified, defaults to 'We have detected an increased number of attempts to access this website. To help us keep this site secure, please let us know that you are not a robot by entering the text from the image below.'
         /// </summary>
-        public readonly string HeaderText;
+        public readonly string? HeaderText;
         /// <summary>
         /// The amount of time before the CAPTCHA expires, in seconds. If unspecified, defaults to `300`.
         /// </summary>
@@ -46,9 +46,9 @@ namespace Pulumi.Oci.Waas.Outputs
         private GetWaasPolicyWafConfigCaptchaResult(
             string failureMessage,
 
-            string footerText,
+            string? footerText,
 
-            string headerText,
+            string? headerText,
 
             int sessionExpirationInSeconds,
 

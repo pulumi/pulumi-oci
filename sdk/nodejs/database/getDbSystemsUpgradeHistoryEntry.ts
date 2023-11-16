@@ -51,40 +51,40 @@ export interface GetDbSystemsUpgradeHistoryEntryResult {
     /**
      * The operating system upgrade action.
      */
-    readonly action: string;
+    readonly action?: string;
     readonly dbSystemId: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * A descriptive text associated with the lifecycleState. Typically contains additional displayable text.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * A valid Oracle Grid Infrastructure (GI) software version.
      */
-    readonly newGiVersion: string;
+    readonly newGiVersion?: string;
     /**
      * A valid Oracle Grid Infrastructure (GI) software version.
      */
-    readonly oldGiVersion: string;
+    readonly oldGiVersion?: string;
     /**
      * The retention period, in days, for the snapshot that allows you to perform a rollback of the upgrade operation. After this number of days passes, you cannot roll back the upgrade.
      */
-    readonly snapshotRetentionPeriodInDays: number;
+    readonly snapshotRetentionPeriodInDays?: number;
     /**
      * The current state of the action.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The date and time when the upgrade action completed
      */
-    readonly timeEnded: string;
+    readonly timeEnded?: string;
     /**
      * The date and time when the upgrade action started.
      */
-    readonly timeStarted: string;
+    readonly timeStarted?: string;
     readonly upgradeHistoryEntryId: string;
 }
 /**

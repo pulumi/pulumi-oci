@@ -8,6 +8,8 @@ import com.pulumi.oci.AnnouncementsService.outputs.GetAnnouncementSubscriptionsA
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroup {
@@ -15,12 +17,12 @@ public final class GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectio
      * @return A list of filters against which the Announcements service matches announcements. You cannot have more than one of any given filter type within a filter group. You also cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group.
      * 
      */
-    private List<GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupFilter> filters;
+    private @Nullable List<GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupFilter> filters;
     /**
      * @return The name of the group. The name must be unique and it cannot be changed. Avoid entering confidential information.
      * 
      */
-    private String name;
+    private @Nullable String name;
 
     private GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroup() {}
     /**
@@ -28,14 +30,14 @@ public final class GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectio
      * 
      */
     public List<GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupFilter> filters() {
-        return this.filters;
+        return this.filters == null ? List.of() : this.filters;
     }
     /**
      * @return The name of the group. The name must be unique and it cannot be changed. Avoid entering confidential information.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
 
     public static Builder builder() {
@@ -47,8 +49,8 @@ public final class GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectio
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupFilter> filters;
-        private String name;
+        private @Nullable List<GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupFilter> filters;
+        private @Nullable String name;
         public Builder() {}
         public Builder(GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroup defaults) {
     	      Objects.requireNonNull(defaults);
@@ -57,16 +59,16 @@ public final class GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectio
         }
 
         @CustomType.Setter
-        public Builder filters(List<GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupFilter> filters) {
-            this.filters = Objects.requireNonNull(filters);
+        public Builder filters(@Nullable List<GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupFilter> filters) {
+            this.filters = filters;
             return this;
         }
         public Builder filters(GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupFilter... filters) {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         public GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroup build() {

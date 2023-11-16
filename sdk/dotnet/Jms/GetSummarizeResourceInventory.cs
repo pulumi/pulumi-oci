@@ -138,46 +138,46 @@ namespace Pulumi.Oci.Jms
         /// <summary>
         /// The number of _active_ fleets.
         /// </summary>
-        public readonly int ActiveFleetCount;
+        public readonly int? ActiveFleetCount;
         /// <summary>
         /// The number of applications.
         /// </summary>
-        public readonly int ApplicationCount;
+        public readonly int? ApplicationCount;
         public readonly string? CompartmentId;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The number of Java installations.
         /// </summary>
-        public readonly int InstallationCount;
+        public readonly int? InstallationCount;
         /// <summary>
         /// The number of Java Runtimes.
         /// </summary>
-        public readonly int JreCount;
+        public readonly int? JreCount;
         /// <summary>
         /// The number of managed instances.
         /// </summary>
-        public readonly int ManagedInstanceCount;
+        public readonly int? ManagedInstanceCount;
         public readonly string? TimeEnd;
         public readonly string? TimeStart;
 
         [OutputConstructor]
         private GetSummarizeResourceInventoryResult(
-            int activeFleetCount,
+            int? activeFleetCount,
 
-            int applicationCount,
+            int? applicationCount,
 
             string? compartmentId,
 
-            string id,
+            string? id,
 
-            int installationCount,
+            int? installationCount,
 
-            int jreCount,
+            int? jreCount,
 
-            int managedInstanceCount,
+            int? managedInstanceCount,
 
             string? timeEnd,
 

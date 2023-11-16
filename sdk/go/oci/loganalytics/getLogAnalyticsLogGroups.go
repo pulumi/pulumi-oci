@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Log Analytics Log Groups in Oracle Cloud Infrastructure Log Analytics service.
@@ -72,7 +71,7 @@ type GetLogAnalyticsLogGroupsResult struct {
 	DisplayName *string                          `pulumi:"displayName"`
 	Filters     []GetLogAnalyticsLogGroupsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of log_analytics_log_group_summary_collection.
 	LogAnalyticsLogGroupSummaryCollections []GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollection `pulumi:"logAnalyticsLogGroupSummaryCollections"`
 	Namespace                              string                                                          `pulumi:"namespace"`
@@ -121,12 +120,6 @@ func (o GetLogAnalyticsLogGroupsResultOutput) ToGetLogAnalyticsLogGroupsResultOu
 	return o
 }
 
-func (o GetLogAnalyticsLogGroupsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsLogGroupsResult] {
-	return pulumix.Output[GetLogAnalyticsLogGroupsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 func (o GetLogAnalyticsLogGroupsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLogAnalyticsLogGroupsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -142,8 +135,8 @@ func (o GetLogAnalyticsLogGroupsResultOutput) Filters() GetLogAnalyticsLogGroups
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetLogAnalyticsLogGroupsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsLogGroupsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetLogAnalyticsLogGroupsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsLogGroupsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of log_analytics_log_group_summary_collection.

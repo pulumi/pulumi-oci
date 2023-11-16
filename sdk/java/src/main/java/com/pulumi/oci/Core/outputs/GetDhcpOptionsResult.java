@@ -29,12 +29,12 @@ public final class GetDhcpOptionsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The collection of individual DHCP options.
      * 
      */
-    private List<GetDhcpOptionsOption> options;
+    private @Nullable List<GetDhcpOptionsOption> options;
     /**
      * @return The current state of the set of DHCP options.
      * 
@@ -68,15 +68,15 @@ public final class GetDhcpOptionsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The collection of individual DHCP options.
      * 
      */
     public List<GetDhcpOptionsOption> options() {
-        return this.options;
+        return this.options == null ? List.of() : this.options;
     }
     /**
      * @return The current state of the set of DHCP options.
@@ -105,8 +105,8 @@ public final class GetDhcpOptionsResult {
         private String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetDhcpOptionsFilter> filters;
-        private String id;
-        private List<GetDhcpOptionsOption> options;
+        private @Nullable String id;
+        private @Nullable List<GetDhcpOptionsOption> options;
         private @Nullable String state;
         private @Nullable String vcnId;
         public Builder() {}
@@ -140,13 +140,13 @@ public final class GetDhcpOptionsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder options(List<GetDhcpOptionsOption> options) {
-            this.options = Objects.requireNonNull(options);
+        public Builder options(@Nullable List<GetDhcpOptionsOption> options) {
+            this.options = options;
             return this;
         }
         public Builder options(GetDhcpOptionsOption... options) {

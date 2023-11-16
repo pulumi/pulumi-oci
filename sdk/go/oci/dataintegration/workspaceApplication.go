@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Workspace Application resource in Oracle Cloud Infrastructure Data Integration service.
@@ -82,23 +81,23 @@ type WorkspaceApplication struct {
 	pulumi.CustomResourceState
 
 	// The source application version of the application.
-	ApplicationVersion pulumi.IntOutput `pulumi:"applicationVersion"`
+	ApplicationVersion pulumi.IntPtrOutput `pulumi:"applicationVersion"`
 	// OCID of the compartment that this resource belongs to. Defaults to compartment of the Workspace.
-	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// A list of dependent objects in this patch.
 	DependentObjectMetadatas WorkspaceApplicationDependentObjectMetadataArrayOutput `pulumi:"dependentObjectMetadatas"`
 	// (Updatable) Detailed description for the object.
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 	Identifier pulumi.StringOutput `pulumi:"identifier"`
 	// The identifying key for the object.
-	Key pulumi.StringOutput `pulumi:"key"`
+	Key pulumi.StringPtrOutput `pulumi:"key"`
 	// A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
 	KeyMap pulumi.MapOutput `pulumi:"keyMap"`
 	// A summary type containing information about the object including its key, name and when/who created/updated it.
@@ -106,29 +105,29 @@ type WorkspaceApplication struct {
 	// (Updatable) The type of the application.
 	ModelType pulumi.StringOutput `pulumi:"modelType"`
 	// (Updatable) The object's model version.
-	ModelVersion pulumi.StringOutput `pulumi:"modelVersion"`
+	ModelVersion pulumi.StringPtrOutput `pulumi:"modelVersion"`
 	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name pulumi.StringOutput `pulumi:"name"`
 	// (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-	ObjectStatus pulumi.IntOutput `pulumi:"objectStatus"`
+	ObjectStatus pulumi.IntPtrOutput `pulumi:"objectStatus"`
 	// The object version.
-	ObjectVersion pulumi.IntOutput `pulumi:"objectVersion"`
+	ObjectVersion pulumi.IntPtrOutput `pulumi:"objectVersion"`
 	// A reference to the object's parent.
 	ParentReves WorkspaceApplicationParentRefArrayOutput `pulumi:"parentReves"`
 	// A list of objects that are published or unpublished in this patch.
 	PublishedObjectMetadatas WorkspaceApplicationPublishedObjectMetadataArrayOutput `pulumi:"publishedObjectMetadatas"`
 	// Information about the object and its parent.
-	RegistryMetadata WorkspaceApplicationRegistryMetadataOutput `pulumi:"registryMetadata"`
+	RegistryMetadata WorkspaceApplicationRegistryMetadataPtrOutput `pulumi:"registryMetadata"`
 	// The information about the application.
-	SourceApplicationInfo WorkspaceApplicationSourceApplicationInfoOutput `pulumi:"sourceApplicationInfo"`
+	SourceApplicationInfo WorkspaceApplicationSourceApplicationInfoPtrOutput `pulumi:"sourceApplicationInfo"`
 	// (Updatable) The current state of the workspace.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The date and time the application was created, in the timestamp format defined by RFC3339.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The date and time the application was patched, in the timestamp format defined by RFC3339.
-	TimePatched pulumi.StringOutput `pulumi:"timePatched"`
+	TimePatched pulumi.StringPtrOutput `pulumi:"timePatched"`
 	// The date and time the application was updated, in the timestamp format defined by RFC3339. example: 2019-08-25T21:10:29.41Z
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 	// The workspace ID.
 	//
 	// ** IMPORTANT **
@@ -382,12 +381,6 @@ func (i *WorkspaceApplication) ToWorkspaceApplicationOutputWithContext(ctx conte
 	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceApplicationOutput)
 }
 
-func (i *WorkspaceApplication) ToOutput(ctx context.Context) pulumix.Output[*WorkspaceApplication] {
-	return pulumix.Output[*WorkspaceApplication]{
-		OutputState: i.ToWorkspaceApplicationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // WorkspaceApplicationArrayInput is an input type that accepts WorkspaceApplicationArray and WorkspaceApplicationArrayOutput values.
 // You can construct a concrete instance of `WorkspaceApplicationArrayInput` via:
 //
@@ -411,12 +404,6 @@ func (i WorkspaceApplicationArray) ToWorkspaceApplicationArrayOutput() Workspace
 
 func (i WorkspaceApplicationArray) ToWorkspaceApplicationArrayOutputWithContext(ctx context.Context) WorkspaceApplicationArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceApplicationArrayOutput)
-}
-
-func (i WorkspaceApplicationArray) ToOutput(ctx context.Context) pulumix.Output[[]*WorkspaceApplication] {
-	return pulumix.Output[[]*WorkspaceApplication]{
-		OutputState: i.ToWorkspaceApplicationArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // WorkspaceApplicationMapInput is an input type that accepts WorkspaceApplicationMap and WorkspaceApplicationMapOutput values.
@@ -444,12 +431,6 @@ func (i WorkspaceApplicationMap) ToWorkspaceApplicationMapOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceApplicationMapOutput)
 }
 
-func (i WorkspaceApplicationMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*WorkspaceApplication] {
-	return pulumix.Output[map[string]*WorkspaceApplication]{
-		OutputState: i.ToWorkspaceApplicationMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type WorkspaceApplicationOutput struct{ *pulumi.OutputState }
 
 func (WorkspaceApplicationOutput) ElementType() reflect.Type {
@@ -464,20 +445,14 @@ func (o WorkspaceApplicationOutput) ToWorkspaceApplicationOutputWithContext(ctx 
 	return o
 }
 
-func (o WorkspaceApplicationOutput) ToOutput(ctx context.Context) pulumix.Output[*WorkspaceApplication] {
-	return pulumix.Output[*WorkspaceApplication]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The source application version of the application.
-func (o WorkspaceApplicationOutput) ApplicationVersion() pulumi.IntOutput {
-	return o.ApplyT(func(v *WorkspaceApplication) pulumi.IntOutput { return v.ApplicationVersion }).(pulumi.IntOutput)
+func (o WorkspaceApplicationOutput) ApplicationVersion() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *WorkspaceApplication) pulumi.IntPtrOutput { return v.ApplicationVersion }).(pulumi.IntPtrOutput)
 }
 
 // OCID of the compartment that this resource belongs to. Defaults to compartment of the Workspace.
-func (o WorkspaceApplicationOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *WorkspaceApplication) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
+func (o WorkspaceApplicationOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *WorkspaceApplication) pulumi.StringPtrOutput { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -493,13 +468,13 @@ func (o WorkspaceApplicationOutput) DependentObjectMetadatas() WorkspaceApplicat
 }
 
 // (Updatable) Detailed description for the object.
-func (o WorkspaceApplicationOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *WorkspaceApplication) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o WorkspaceApplicationOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *WorkspaceApplication) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-func (o WorkspaceApplicationOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *WorkspaceApplication) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o WorkspaceApplicationOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *WorkspaceApplication) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -513,8 +488,8 @@ func (o WorkspaceApplicationOutput) Identifier() pulumi.StringOutput {
 }
 
 // The identifying key for the object.
-func (o WorkspaceApplicationOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v *WorkspaceApplication) pulumi.StringOutput { return v.Key }).(pulumi.StringOutput)
+func (o WorkspaceApplicationOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *WorkspaceApplication) pulumi.StringPtrOutput { return v.Key }).(pulumi.StringPtrOutput)
 }
 
 // A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
@@ -533,8 +508,8 @@ func (o WorkspaceApplicationOutput) ModelType() pulumi.StringOutput {
 }
 
 // (Updatable) The object's model version.
-func (o WorkspaceApplicationOutput) ModelVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v *WorkspaceApplication) pulumi.StringOutput { return v.ModelVersion }).(pulumi.StringOutput)
+func (o WorkspaceApplicationOutput) ModelVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *WorkspaceApplication) pulumi.StringPtrOutput { return v.ModelVersion }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
@@ -543,13 +518,13 @@ func (o WorkspaceApplicationOutput) Name() pulumi.StringOutput {
 }
 
 // (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-func (o WorkspaceApplicationOutput) ObjectStatus() pulumi.IntOutput {
-	return o.ApplyT(func(v *WorkspaceApplication) pulumi.IntOutput { return v.ObjectStatus }).(pulumi.IntOutput)
+func (o WorkspaceApplicationOutput) ObjectStatus() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *WorkspaceApplication) pulumi.IntPtrOutput { return v.ObjectStatus }).(pulumi.IntPtrOutput)
 }
 
 // The object version.
-func (o WorkspaceApplicationOutput) ObjectVersion() pulumi.IntOutput {
-	return o.ApplyT(func(v *WorkspaceApplication) pulumi.IntOutput { return v.ObjectVersion }).(pulumi.IntOutput)
+func (o WorkspaceApplicationOutput) ObjectVersion() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *WorkspaceApplication) pulumi.IntPtrOutput { return v.ObjectVersion }).(pulumi.IntPtrOutput)
 }
 
 // A reference to the object's parent.
@@ -565,35 +540,35 @@ func (o WorkspaceApplicationOutput) PublishedObjectMetadatas() WorkspaceApplicat
 }
 
 // Information about the object and its parent.
-func (o WorkspaceApplicationOutput) RegistryMetadata() WorkspaceApplicationRegistryMetadataOutput {
-	return o.ApplyT(func(v *WorkspaceApplication) WorkspaceApplicationRegistryMetadataOutput { return v.RegistryMetadata }).(WorkspaceApplicationRegistryMetadataOutput)
+func (o WorkspaceApplicationOutput) RegistryMetadata() WorkspaceApplicationRegistryMetadataPtrOutput {
+	return o.ApplyT(func(v *WorkspaceApplication) WorkspaceApplicationRegistryMetadataPtrOutput { return v.RegistryMetadata }).(WorkspaceApplicationRegistryMetadataPtrOutput)
 }
 
 // The information about the application.
-func (o WorkspaceApplicationOutput) SourceApplicationInfo() WorkspaceApplicationSourceApplicationInfoOutput {
-	return o.ApplyT(func(v *WorkspaceApplication) WorkspaceApplicationSourceApplicationInfoOutput {
+func (o WorkspaceApplicationOutput) SourceApplicationInfo() WorkspaceApplicationSourceApplicationInfoPtrOutput {
+	return o.ApplyT(func(v *WorkspaceApplication) WorkspaceApplicationSourceApplicationInfoPtrOutput {
 		return v.SourceApplicationInfo
-	}).(WorkspaceApplicationSourceApplicationInfoOutput)
+	}).(WorkspaceApplicationSourceApplicationInfoPtrOutput)
 }
 
 // (Updatable) The current state of the workspace.
-func (o WorkspaceApplicationOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *WorkspaceApplication) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o WorkspaceApplicationOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *WorkspaceApplication) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the application was created, in the timestamp format defined by RFC3339.
-func (o WorkspaceApplicationOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *WorkspaceApplication) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o WorkspaceApplicationOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *WorkspaceApplication) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the application was patched, in the timestamp format defined by RFC3339.
-func (o WorkspaceApplicationOutput) TimePatched() pulumi.StringOutput {
-	return o.ApplyT(func(v *WorkspaceApplication) pulumi.StringOutput { return v.TimePatched }).(pulumi.StringOutput)
+func (o WorkspaceApplicationOutput) TimePatched() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *WorkspaceApplication) pulumi.StringPtrOutput { return v.TimePatched }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the application was updated, in the timestamp format defined by RFC3339. example: 2019-08-25T21:10:29.41Z
-func (o WorkspaceApplicationOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *WorkspaceApplication) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o WorkspaceApplicationOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *WorkspaceApplication) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // The workspace ID.
@@ -618,12 +593,6 @@ func (o WorkspaceApplicationArrayOutput) ToWorkspaceApplicationArrayOutputWithCo
 	return o
 }
 
-func (o WorkspaceApplicationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*WorkspaceApplication] {
-	return pulumix.Output[[]*WorkspaceApplication]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o WorkspaceApplicationArrayOutput) Index(i pulumi.IntInput) WorkspaceApplicationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *WorkspaceApplication {
 		return vs[0].([]*WorkspaceApplication)[vs[1].(int)]
@@ -642,12 +611,6 @@ func (o WorkspaceApplicationMapOutput) ToWorkspaceApplicationMapOutput() Workspa
 
 func (o WorkspaceApplicationMapOutput) ToWorkspaceApplicationMapOutputWithContext(ctx context.Context) WorkspaceApplicationMapOutput {
 	return o
-}
-
-func (o WorkspaceApplicationMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*WorkspaceApplication] {
-	return pulumix.Output[map[string]*WorkspaceApplication]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o WorkspaceApplicationMapOutput) MapIndex(k pulumi.StringInput) WorkspaceApplicationOutput {

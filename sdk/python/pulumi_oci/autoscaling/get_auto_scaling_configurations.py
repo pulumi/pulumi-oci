@@ -42,26 +42,17 @@ class GetAutoScalingConfigurationsResult:
 
     @property
     @pulumi.getter(name="autoScalingConfigurations")
-    def auto_scaling_configurations(self) -> Sequence['outputs.GetAutoScalingConfigurationsAutoScalingConfigurationResult']:
-        """
-        The list of auto_scaling_configurations.
-        """
+    def auto_scaling_configurations(self) -> Optional[Sequence['outputs.GetAutoScalingConfigurationsAutoScalingConfigurationResult']]:
         return pulumi.get(self, "auto_scaling_configurations")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the autoscaling configuration.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -71,7 +62,7 @@ class GetAutoScalingConfigurationsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -96,23 +87,7 @@ def get_auto_scaling_configurations(compartment_id: Optional[str] = None,
                                     filters: Optional[Sequence[pulumi.InputType['GetAutoScalingConfigurationsFilterArgs']]] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAutoScalingConfigurationsResult:
     """
-    This data source provides the list of Auto Scaling Configurations in Oracle Cloud Infrastructure Auto Scaling service.
-
-    Lists autoscaling configurations in the specifed compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_auto_scaling_configurations = oci.Autoscaling.get_auto_scaling_configurations(compartment_id=var["compartment_id"],
-        display_name=var["auto_scaling_configuration_display_name"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the resources monitored by the metric that you are searching for. Use tenancyId to search in the root compartment.
-    :param str display_name: A filter to return only resources that match the given display name exactly.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -135,22 +110,6 @@ def get_auto_scaling_configurations_output(compartment_id: Optional[pulumi.Input
                                            filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetAutoScalingConfigurationsFilterArgs']]]]] = None,
                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAutoScalingConfigurationsResult]:
     """
-    This data source provides the list of Auto Scaling Configurations in Oracle Cloud Infrastructure Auto Scaling service.
-
-    Lists autoscaling configurations in the specifed compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_auto_scaling_configurations = oci.Autoscaling.get_auto_scaling_configurations(compartment_id=var["compartment_id"],
-        display_name=var["auto_scaling_configuration_display_name"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the resources monitored by the metric that you are searching for. Use tenancyId to search in the root compartment.
-    :param str display_name: A filter to return only resources that match the given display name exactly.
+    Use this data source to access information about an existing resource.
     """
     ...

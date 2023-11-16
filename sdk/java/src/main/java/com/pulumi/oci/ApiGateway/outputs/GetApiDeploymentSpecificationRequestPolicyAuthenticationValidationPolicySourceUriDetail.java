@@ -6,6 +6,8 @@ package com.pulumi.oci.ApiGateway.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationPolicySourceUriDetail {
@@ -13,27 +15,27 @@ public final class GetApiDeploymentSpecificationRequestPolicyAuthenticationValid
      * @return Type of the Response Cache Store Policy.
      * 
      */
-    private String type;
+    private @Nullable String type;
     /**
      * @return The uri from which to retrieve the key. It must be accessible without authentication.
      * 
      */
-    private String uri;
+    private @Nullable String uri;
 
     private GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationPolicySourceUriDetail() {}
     /**
      * @return Type of the Response Cache Store Policy.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
     /**
      * @return The uri from which to retrieve the key. It must be accessible without authentication.
      * 
      */
-    public String uri() {
-        return this.uri;
+    public Optional<String> uri() {
+        return Optional.ofNullable(this.uri);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetApiDeploymentSpecificationRequestPolicyAuthenticationValid
     }
     @CustomType.Builder
     public static final class Builder {
-        private String type;
-        private String uri;
+        private @Nullable String type;
+        private @Nullable String uri;
         public Builder() {}
         public Builder(GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationPolicySourceUriDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetApiDeploymentSpecificationRequestPolicyAuthenticationValid
         }
 
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         @CustomType.Setter
-        public Builder uri(String uri) {
-            this.uri = Objects.requireNonNull(uri);
+        public Builder uri(@Nullable String uri) {
+            this.uri = uri;
             return this;
         }
         public GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationPolicySourceUriDetail build() {

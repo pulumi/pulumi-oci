@@ -229,7 +229,7 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Defines when the public IP is deleted and released back to Oracle's public IP pool.
         /// </summary>
@@ -255,7 +255,7 @@ namespace Pulumi.Oci.Core
 
             ImmutableArray<Outputs.GetPublicIpsFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? lifetime,
 

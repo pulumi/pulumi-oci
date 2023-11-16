@@ -46,55 +46,55 @@ export interface GetAlertPolicyResult {
     /**
      * Indicates the Data Safe feature to which the alert policy belongs.
      */
-    readonly alertPolicyType: string;
+    readonly alertPolicyType?: string;
     /**
      * The OCID of the compartment that contains the alert policy.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * The description of the alert policy.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * The display name of the alert policy.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Indicates if the alert policy is user-defined (true) or pre-defined (false).
      */
-    readonly isUserDefined: boolean;
+    readonly isUserDefined?: boolean;
     /**
      * Severity level of the alert raised by this policy.
      */
-    readonly severity: string;
+    readonly severity?: string;
     /**
      * The current state of the alert.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * Creation date and time of the alert policy, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * Last date and time the alert policy was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific Alert Policy resource in Oracle Cloud Infrastructure Data Safe service.

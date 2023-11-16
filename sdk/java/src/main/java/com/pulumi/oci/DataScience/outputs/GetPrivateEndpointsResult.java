@@ -28,7 +28,7 @@ public final class GetPrivateEndpointsResult {
      * @return The list of data_science_private_endpoints.
      * 
      */
-    private List<GetPrivateEndpointsDataSciencePrivateEndpoint> dataSciencePrivateEndpoints;
+    private @Nullable List<GetPrivateEndpointsDataSciencePrivateEndpoint> dataSciencePrivateEndpoints;
     /**
      * @return Data Science resource type.
      * 
@@ -44,7 +44,7 @@ public final class GetPrivateEndpointsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return State of the Data Science private endpoint.
      * 
@@ -71,7 +71,7 @@ public final class GetPrivateEndpointsResult {
      * 
      */
     public List<GetPrivateEndpointsDataSciencePrivateEndpoint> dataSciencePrivateEndpoints() {
-        return this.dataSciencePrivateEndpoints;
+        return this.dataSciencePrivateEndpoints == null ? List.of() : this.dataSciencePrivateEndpoints;
     }
     /**
      * @return Data Science resource type.
@@ -94,8 +94,8 @@ public final class GetPrivateEndpointsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return State of the Data Science private endpoint.
@@ -116,11 +116,11 @@ public final class GetPrivateEndpointsResult {
     public static final class Builder {
         private String compartmentId;
         private @Nullable String createdBy;
-        private List<GetPrivateEndpointsDataSciencePrivateEndpoint> dataSciencePrivateEndpoints;
+        private @Nullable List<GetPrivateEndpointsDataSciencePrivateEndpoint> dataSciencePrivateEndpoints;
         private @Nullable String dataScienceResourceType;
         private @Nullable String displayName;
         private @Nullable List<GetPrivateEndpointsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetPrivateEndpointsResult defaults) {
@@ -146,8 +146,8 @@ public final class GetPrivateEndpointsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder dataSciencePrivateEndpoints(List<GetPrivateEndpointsDataSciencePrivateEndpoint> dataSciencePrivateEndpoints) {
-            this.dataSciencePrivateEndpoints = Objects.requireNonNull(dataSciencePrivateEndpoints);
+        public Builder dataSciencePrivateEndpoints(@Nullable List<GetPrivateEndpointsDataSciencePrivateEndpoint> dataSciencePrivateEndpoints) {
+            this.dataSciencePrivateEndpoints = dataSciencePrivateEndpoints;
             return this;
         }
         public Builder dataSciencePrivateEndpoints(GetPrivateEndpointsDataSciencePrivateEndpoint... dataSciencePrivateEndpoints) {
@@ -172,8 +172,8 @@ public final class GetPrivateEndpointsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

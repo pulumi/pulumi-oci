@@ -8,6 +8,7 @@ import com.pulumi.oci.ApiGateway.outputs.GetDeploymentSpecificationRequestPolicy
 import com.pulumi.oci.ApiGateway.outputs.GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerKey;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServer {
@@ -15,12 +16,12 @@ public final class GetDeploymentSpecificationRequestPolicyDynamicAuthenticationA
      * @return Information on how to authenticate incoming requests.
      * 
      */
-    private List<GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetail> authenticationServerDetails;
+    private @Nullable List<GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetail> authenticationServerDetails;
     /**
      * @return Information around the values for selector of an authentication/ routing branch.
      * 
      */
-    private List<GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerKey> keys;
+    private @Nullable List<GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerKey> keys;
 
     private GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServer() {}
     /**
@@ -28,14 +29,14 @@ public final class GetDeploymentSpecificationRequestPolicyDynamicAuthenticationA
      * 
      */
     public List<GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetail> authenticationServerDetails() {
-        return this.authenticationServerDetails;
+        return this.authenticationServerDetails == null ? List.of() : this.authenticationServerDetails;
     }
     /**
      * @return Information around the values for selector of an authentication/ routing branch.
      * 
      */
     public List<GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerKey> keys() {
-        return this.keys;
+        return this.keys == null ? List.of() : this.keys;
     }
 
     public static Builder builder() {
@@ -47,8 +48,8 @@ public final class GetDeploymentSpecificationRequestPolicyDynamicAuthenticationA
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetail> authenticationServerDetails;
-        private List<GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerKey> keys;
+        private @Nullable List<GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetail> authenticationServerDetails;
+        private @Nullable List<GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerKey> keys;
         public Builder() {}
         public Builder(GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServer defaults) {
     	      Objects.requireNonNull(defaults);
@@ -57,16 +58,16 @@ public final class GetDeploymentSpecificationRequestPolicyDynamicAuthenticationA
         }
 
         @CustomType.Setter
-        public Builder authenticationServerDetails(List<GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetail> authenticationServerDetails) {
-            this.authenticationServerDetails = Objects.requireNonNull(authenticationServerDetails);
+        public Builder authenticationServerDetails(@Nullable List<GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetail> authenticationServerDetails) {
+            this.authenticationServerDetails = authenticationServerDetails;
             return this;
         }
         public Builder authenticationServerDetails(GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetail... authenticationServerDetails) {
             return authenticationServerDetails(List.of(authenticationServerDetails));
         }
         @CustomType.Setter
-        public Builder keys(List<GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerKey> keys) {
-            this.keys = Objects.requireNonNull(keys);
+        public Builder keys(@Nullable List<GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerKey> keys) {
+            this.keys = keys;
             return this;
         }
         public Builder keys(GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerKey... keys) {

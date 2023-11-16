@@ -16,7 +16,7 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// <summary>
         /// The availability domain in which to place virtual nodes. Example: `Uocm:PHX-AD-1`
         /// </summary>
-        public readonly string AvailabilityDomain;
+        public readonly string? AvailabilityDomain;
         /// <summary>
         /// The fault domain of this virtual node.
         /// </summary>
@@ -24,15 +24,15 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// <summary>
         /// The regional subnet where pods' VNIC will be placed.
         /// </summary>
-        public readonly string SubnetId;
+        public readonly string? SubnetId;
 
         [OutputConstructor]
         private GetVirtualNodePoolPlacementConfigurationResult(
-            string availabilityDomain,
+            string? availabilityDomain,
 
             ImmutableArray<string> faultDomains,
 
-            string subnetId)
+            string? subnetId)
         {
             AvailabilityDomain = availabilityDomain;
             FaultDomains = faultDomains;

@@ -210,7 +210,7 @@ namespace Pulumi.Oci.BigDataService
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The OCID of the Data Catalog metastore. Set only if metastore's type is EXTERNAL.
         /// </summary>
@@ -236,7 +236,7 @@ namespace Pulumi.Oci.BigDataService
 
             ImmutableArray<Outputs.GetBdsInstanceMetastoreConfigsFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? metastoreId,
 

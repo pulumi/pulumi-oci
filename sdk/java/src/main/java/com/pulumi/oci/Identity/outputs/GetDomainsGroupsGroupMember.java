@@ -6,6 +6,8 @@ package com.pulumi.oci.Identity.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsGroupsGroupMember {
@@ -13,99 +15,99 @@ public final class GetDomainsGroupsGroupMember {
      * @return The date and time that the member was added to the group.
      * 
      */
-    private String dateAdded;
+    private @Nullable String dateAdded;
     /**
      * @return App Display Name
      * 
      */
-    private String display;
+    private @Nullable String display;
     /**
      * @return The membership OCID.
      * 
      */
-    private String membershipOcid;
+    private @Nullable String membershipOcid;
     /**
      * @return PasswordPolicy Name
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      * 
      */
-    private String ocid;
+    private @Nullable String ocid;
     /**
      * @return App URI
      * 
      */
-    private String ref;
+    private @Nullable String ref;
     /**
      * @return The type of the entity that created this Group.
      * 
      */
-    private String type;
+    private @Nullable String type;
     /**
      * @return The ID of the App.
      * 
      */
-    private String value;
+    private @Nullable String value;
 
     private GetDomainsGroupsGroupMember() {}
     /**
      * @return The date and time that the member was added to the group.
      * 
      */
-    public String dateAdded() {
-        return this.dateAdded;
+    public Optional<String> dateAdded() {
+        return Optional.ofNullable(this.dateAdded);
     }
     /**
      * @return App Display Name
      * 
      */
-    public String display() {
-        return this.display;
+    public Optional<String> display() {
+        return Optional.ofNullable(this.display);
     }
     /**
      * @return The membership OCID.
      * 
      */
-    public String membershipOcid() {
-        return this.membershipOcid;
+    public Optional<String> membershipOcid() {
+        return Optional.ofNullable(this.membershipOcid);
     }
     /**
      * @return PasswordPolicy Name
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      * 
      */
-    public String ocid() {
-        return this.ocid;
+    public Optional<String> ocid() {
+        return Optional.ofNullable(this.ocid);
     }
     /**
      * @return App URI
      * 
      */
-    public String ref() {
-        return this.ref;
+    public Optional<String> ref() {
+        return Optional.ofNullable(this.ref);
     }
     /**
      * @return The type of the entity that created this Group.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
     /**
      * @return The ID of the App.
      * 
      */
-    public String value() {
-        return this.value;
+    public Optional<String> value() {
+        return Optional.ofNullable(this.value);
     }
 
     public static Builder builder() {
@@ -117,14 +119,14 @@ public final class GetDomainsGroupsGroupMember {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String dateAdded;
-        private String display;
-        private String membershipOcid;
-        private String name;
-        private String ocid;
-        private String ref;
-        private String type;
-        private String value;
+        private @Nullable String dateAdded;
+        private @Nullable String display;
+        private @Nullable String membershipOcid;
+        private @Nullable String name;
+        private @Nullable String ocid;
+        private @Nullable String ref;
+        private @Nullable String type;
+        private @Nullable String value;
         public Builder() {}
         public Builder(GetDomainsGroupsGroupMember defaults) {
     	      Objects.requireNonNull(defaults);
@@ -139,43 +141,43 @@ public final class GetDomainsGroupsGroupMember {
         }
 
         @CustomType.Setter
-        public Builder dateAdded(String dateAdded) {
-            this.dateAdded = Objects.requireNonNull(dateAdded);
+        public Builder dateAdded(@Nullable String dateAdded) {
+            this.dateAdded = dateAdded;
             return this;
         }
         @CustomType.Setter
-        public Builder display(String display) {
-            this.display = Objects.requireNonNull(display);
+        public Builder display(@Nullable String display) {
+            this.display = display;
             return this;
         }
         @CustomType.Setter
-        public Builder membershipOcid(String membershipOcid) {
-            this.membershipOcid = Objects.requireNonNull(membershipOcid);
+        public Builder membershipOcid(@Nullable String membershipOcid) {
+            this.membershipOcid = membershipOcid;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder ocid(String ocid) {
-            this.ocid = Objects.requireNonNull(ocid);
+        public Builder ocid(@Nullable String ocid) {
+            this.ocid = ocid;
             return this;
         }
         @CustomType.Setter
-        public Builder ref(String ref) {
-            this.ref = Objects.requireNonNull(ref);
+        public Builder ref(@Nullable String ref) {
+            this.ref = ref;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         @CustomType.Setter
-        public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+        public Builder value(@Nullable String value) {
+            this.value = value;
             return this;
         }
         public GetDomainsGroupsGroupMember build() {

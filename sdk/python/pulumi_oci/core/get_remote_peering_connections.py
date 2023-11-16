@@ -43,17 +43,11 @@ class GetRemotePeeringConnectionsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the RPC.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="drgId")
     def drg_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG that this RPC belongs to.
-        """
         return pulumi.get(self, "drg_id")
 
     @property
@@ -63,7 +57,7 @@ class GetRemotePeeringConnectionsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -71,10 +65,7 @@ class GetRemotePeeringConnectionsResult:
 
     @property
     @pulumi.getter(name="remotePeeringConnections")
-    def remote_peering_connections(self) -> Sequence['outputs.GetRemotePeeringConnectionsRemotePeeringConnectionResult']:
-        """
-        The list of remote_peering_connections.
-        """
+    def remote_peering_connections(self) -> Optional[Sequence['outputs.GetRemotePeeringConnectionsRemotePeeringConnectionResult']]:
         return pulumi.get(self, "remote_peering_connections")
 
 
@@ -96,24 +87,7 @@ def get_remote_peering_connections(compartment_id: Optional[str] = None,
                                    filters: Optional[Sequence[pulumi.InputType['GetRemotePeeringConnectionsFilterArgs']]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetRemotePeeringConnectionsResult:
     """
-    This data source provides the list of Remote Peering Connections in Oracle Cloud Infrastructure Core service.
-
-    Lists the remote peering connections (RPCs) for the specified DRG and compartment
-    (the RPC's compartment).
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_remote_peering_connections = oci.Core.get_remote_peering_connections(compartment_id=var["compartment_id"],
-        drg_id=oci_core_drg["test_drg"]["id"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str drg_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -136,23 +110,6 @@ def get_remote_peering_connections_output(compartment_id: Optional[pulumi.Input[
                                           filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetRemotePeeringConnectionsFilterArgs']]]]] = None,
                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRemotePeeringConnectionsResult]:
     """
-    This data source provides the list of Remote Peering Connections in Oracle Cloud Infrastructure Core service.
-
-    Lists the remote peering connections (RPCs) for the specified DRG and compartment
-    (the RPC's compartment).
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_remote_peering_connections = oci.Core.get_remote_peering_connections(compartment_id=var["compartment_id"],
-        drg_id=oci_core_drg["test_drg"]["id"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str drg_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
+    Use this data source to access information about an existing resource.
     """
     ...

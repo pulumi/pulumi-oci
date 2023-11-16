@@ -43,7 +43,7 @@ class GetNetworkFirewallPolicyMappedSecretsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -51,10 +51,7 @@ class GetNetworkFirewallPolicyMappedSecretsResult:
 
     @property
     @pulumi.getter(name="mappedSecretSummaryCollections")
-    def mapped_secret_summary_collections(self) -> Sequence['outputs.GetNetworkFirewallPolicyMappedSecretsMappedSecretSummaryCollectionResult']:
-        """
-        The list of mapped_secret_summary_collection.
-        """
+    def mapped_secret_summary_collections(self) -> Optional[Sequence['outputs.GetNetworkFirewallPolicyMappedSecretsMappedSecretSummaryCollectionResult']]:
         return pulumi.get(self, "mapped_secret_summary_collections")
 
     @property
@@ -79,23 +76,7 @@ def get_network_firewall_policy_mapped_secrets(display_name: Optional[str] = Non
                                                network_firewall_policy_id: Optional[str] = None,
                                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNetworkFirewallPolicyMappedSecretsResult:
     """
-    This data source provides the list of Network Firewall Policy Mapped Secrets in Oracle Cloud Infrastructure Network Firewall service.
-
-    Returns a list of Mapped Secret for the Network Firewall Policy.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_network_firewall_policy_mapped_secrets = oci.NetworkFirewall.get_network_firewall_policy_mapped_secrets(network_firewall_policy_id=oci_network_firewall_network_firewall_policy["test_network_firewall_policy"]["id"],
-        display_name=var["network_firewall_policy_mapped_secret_display_name"])
-    ```
-
-
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str network_firewall_policy_id: Unique Network Firewall Policy identifier
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['displayName'] = display_name
@@ -115,22 +96,6 @@ def get_network_firewall_policy_mapped_secrets_output(display_name: Optional[pul
                                                       network_firewall_policy_id: Optional[pulumi.Input[str]] = None,
                                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNetworkFirewallPolicyMappedSecretsResult]:
     """
-    This data source provides the list of Network Firewall Policy Mapped Secrets in Oracle Cloud Infrastructure Network Firewall service.
-
-    Returns a list of Mapped Secret for the Network Firewall Policy.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_network_firewall_policy_mapped_secrets = oci.NetworkFirewall.get_network_firewall_policy_mapped_secrets(network_firewall_policy_id=oci_network_firewall_network_firewall_policy["test_network_firewall_policy"]["id"],
-        display_name=var["network_firewall_policy_mapped_secret_display_name"])
-    ```
-
-
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str network_firewall_policy_id: Unique Network Firewall Policy identifier
+    Use this data source to access information about an existing resource.
     """
     ...

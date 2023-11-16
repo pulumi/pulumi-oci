@@ -13,6 +13,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetWorkspaceFoldersFolderSummaryCollectionItem {
@@ -20,13 +22,13 @@ public final class GetWorkspaceFoldersFolderSummaryCollectionItem {
      * @return The category name.
      * 
      */
-    private String categoryName;
+    private @Nullable String categoryName;
     /**
      * @return The description of the aggregator.
      * 
      */
-    private String description;
-    private String folderKey;
+    private @Nullable String description;
+    private @Nullable String folderKey;
     /**
      * @return Used to filter by the identifier of the object.
      * 
@@ -36,27 +38,27 @@ public final class GetWorkspaceFoldersFolderSummaryCollectionItem {
      * @return The key of the aggregator object.
      * 
      */
-    private String key;
+    private @Nullable String key;
     /**
      * @return A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
      * 
      */
-    private Map<String,Object> keyMap;
+    private @Nullable Map<String,Object> keyMap;
     /**
      * @return A summary type containing information about the object including its key, name and when/who created/updated it.
      * 
      */
-    private List<GetWorkspaceFoldersFolderSummaryCollectionItemMetadata> metadatas;
+    private @Nullable List<GetWorkspaceFoldersFolderSummaryCollectionItemMetadata> metadatas;
     /**
      * @return The type of the object.
      * 
      */
-    private String modelType;
+    private @Nullable String modelType;
     /**
      * @return The model version of an object.
      * 
      */
-    private String modelVersion;
+    private @Nullable String modelVersion;
     /**
      * @return Used to filter by the name of the object.
      * 
@@ -66,17 +68,17 @@ public final class GetWorkspaceFoldersFolderSummaryCollectionItem {
      * @return The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
      * 
      */
-    private Integer objectStatus;
+    private @Nullable Integer objectStatus;
     /**
      * @return The version of the object that is used to track changes in the object instance.
      * 
      */
-    private Integer objectVersion;
+    private @Nullable Integer objectVersion;
     /**
      * @return A reference to the object&#39;s parent.
      * 
      */
-    private List<GetWorkspaceFoldersFolderSummaryCollectionItemParentRef> parentReves;
+    private @Nullable List<GetWorkspaceFoldersFolderSummaryCollectionItemParentRef> parentReves;
     private GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadata registryMetadata;
     /**
      * @return The workspace ID.
@@ -89,18 +91,18 @@ public final class GetWorkspaceFoldersFolderSummaryCollectionItem {
      * @return The category name.
      * 
      */
-    public String categoryName() {
-        return this.categoryName;
+    public Optional<String> categoryName() {
+        return Optional.ofNullable(this.categoryName);
     }
     /**
      * @return The description of the aggregator.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
-    public String folderKey() {
-        return this.folderKey;
+    public Optional<String> folderKey() {
+        return Optional.ofNullable(this.folderKey);
     }
     /**
      * @return Used to filter by the identifier of the object.
@@ -113,36 +115,36 @@ public final class GetWorkspaceFoldersFolderSummaryCollectionItem {
      * @return The key of the aggregator object.
      * 
      */
-    public String key() {
-        return this.key;
+    public Optional<String> key() {
+        return Optional.ofNullable(this.key);
     }
     /**
      * @return A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
      * 
      */
     public Map<String,Object> keyMap() {
-        return this.keyMap;
+        return this.keyMap == null ? Map.of() : this.keyMap;
     }
     /**
      * @return A summary type containing information about the object including its key, name and when/who created/updated it.
      * 
      */
     public List<GetWorkspaceFoldersFolderSummaryCollectionItemMetadata> metadatas() {
-        return this.metadatas;
+        return this.metadatas == null ? List.of() : this.metadatas;
     }
     /**
      * @return The type of the object.
      * 
      */
-    public String modelType() {
-        return this.modelType;
+    public Optional<String> modelType() {
+        return Optional.ofNullable(this.modelType);
     }
     /**
      * @return The model version of an object.
      * 
      */
-    public String modelVersion() {
-        return this.modelVersion;
+    public Optional<String> modelVersion() {
+        return Optional.ofNullable(this.modelVersion);
     }
     /**
      * @return Used to filter by the name of the object.
@@ -155,22 +157,22 @@ public final class GetWorkspaceFoldersFolderSummaryCollectionItem {
      * @return The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
      * 
      */
-    public Integer objectStatus() {
-        return this.objectStatus;
+    public Optional<Integer> objectStatus() {
+        return Optional.ofNullable(this.objectStatus);
     }
     /**
      * @return The version of the object that is used to track changes in the object instance.
      * 
      */
-    public Integer objectVersion() {
-        return this.objectVersion;
+    public Optional<Integer> objectVersion() {
+        return Optional.ofNullable(this.objectVersion);
     }
     /**
      * @return A reference to the object&#39;s parent.
      * 
      */
     public List<GetWorkspaceFoldersFolderSummaryCollectionItemParentRef> parentReves() {
-        return this.parentReves;
+        return this.parentReves == null ? List.of() : this.parentReves;
     }
     public GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadata registryMetadata() {
         return this.registryMetadata;
@@ -192,19 +194,19 @@ public final class GetWorkspaceFoldersFolderSummaryCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String categoryName;
-        private String description;
-        private String folderKey;
+        private @Nullable String categoryName;
+        private @Nullable String description;
+        private @Nullable String folderKey;
         private String identifier;
-        private String key;
-        private Map<String,Object> keyMap;
-        private List<GetWorkspaceFoldersFolderSummaryCollectionItemMetadata> metadatas;
-        private String modelType;
-        private String modelVersion;
+        private @Nullable String key;
+        private @Nullable Map<String,Object> keyMap;
+        private @Nullable List<GetWorkspaceFoldersFolderSummaryCollectionItemMetadata> metadatas;
+        private @Nullable String modelType;
+        private @Nullable String modelVersion;
         private String name;
-        private Integer objectStatus;
-        private Integer objectVersion;
-        private List<GetWorkspaceFoldersFolderSummaryCollectionItemParentRef> parentReves;
+        private @Nullable Integer objectStatus;
+        private @Nullable Integer objectVersion;
+        private @Nullable List<GetWorkspaceFoldersFolderSummaryCollectionItemParentRef> parentReves;
         private GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadata registryMetadata;
         private String workspaceId;
         public Builder() {}
@@ -228,18 +230,18 @@ public final class GetWorkspaceFoldersFolderSummaryCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder categoryName(String categoryName) {
-            this.categoryName = Objects.requireNonNull(categoryName);
+        public Builder categoryName(@Nullable String categoryName) {
+            this.categoryName = categoryName;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder folderKey(String folderKey) {
-            this.folderKey = Objects.requireNonNull(folderKey);
+        public Builder folderKey(@Nullable String folderKey) {
+            this.folderKey = folderKey;
             return this;
         }
         @CustomType.Setter
@@ -248,31 +250,31 @@ public final class GetWorkspaceFoldersFolderSummaryCollectionItem {
             return this;
         }
         @CustomType.Setter
-        public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
+        public Builder key(@Nullable String key) {
+            this.key = key;
             return this;
         }
         @CustomType.Setter
-        public Builder keyMap(Map<String,Object> keyMap) {
-            this.keyMap = Objects.requireNonNull(keyMap);
+        public Builder keyMap(@Nullable Map<String,Object> keyMap) {
+            this.keyMap = keyMap;
             return this;
         }
         @CustomType.Setter
-        public Builder metadatas(List<GetWorkspaceFoldersFolderSummaryCollectionItemMetadata> metadatas) {
-            this.metadatas = Objects.requireNonNull(metadatas);
+        public Builder metadatas(@Nullable List<GetWorkspaceFoldersFolderSummaryCollectionItemMetadata> metadatas) {
+            this.metadatas = metadatas;
             return this;
         }
         public Builder metadatas(GetWorkspaceFoldersFolderSummaryCollectionItemMetadata... metadatas) {
             return metadatas(List.of(metadatas));
         }
         @CustomType.Setter
-        public Builder modelType(String modelType) {
-            this.modelType = Objects.requireNonNull(modelType);
+        public Builder modelType(@Nullable String modelType) {
+            this.modelType = modelType;
             return this;
         }
         @CustomType.Setter
-        public Builder modelVersion(String modelVersion) {
-            this.modelVersion = Objects.requireNonNull(modelVersion);
+        public Builder modelVersion(@Nullable String modelVersion) {
+            this.modelVersion = modelVersion;
             return this;
         }
         @CustomType.Setter
@@ -281,18 +283,18 @@ public final class GetWorkspaceFoldersFolderSummaryCollectionItem {
             return this;
         }
         @CustomType.Setter
-        public Builder objectStatus(Integer objectStatus) {
-            this.objectStatus = Objects.requireNonNull(objectStatus);
+        public Builder objectStatus(@Nullable Integer objectStatus) {
+            this.objectStatus = objectStatus;
             return this;
         }
         @CustomType.Setter
-        public Builder objectVersion(Integer objectVersion) {
-            this.objectVersion = Objects.requireNonNull(objectVersion);
+        public Builder objectVersion(@Nullable Integer objectVersion) {
+            this.objectVersion = objectVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder parentReves(List<GetWorkspaceFoldersFolderSummaryCollectionItemParentRef> parentReves) {
-            this.parentReves = Objects.requireNonNull(parentReves);
+        public Builder parentReves(@Nullable List<GetWorkspaceFoldersFolderSummaryCollectionItemParentRef> parentReves) {
+            this.parentReves = parentReves;
             return this;
         }
         public Builder parentReves(GetWorkspaceFoldersFolderSummaryCollectionItemParentRef... parentReves) {

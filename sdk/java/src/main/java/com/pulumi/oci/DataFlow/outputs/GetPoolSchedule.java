@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPoolSchedule {
@@ -14,39 +16,39 @@ public final class GetPoolSchedule {
      * @return Day of the week SUN-SAT
      * 
      */
-    private String dayOfWeek;
+    private @Nullable String dayOfWeek;
     /**
      * @return Hour of the day to start or stop pool.
      * 
      */
-    private Integer startTime;
+    private @Nullable Integer startTime;
     /**
      * @return Hour of the day to stop the pool.
      * 
      */
-    private Integer stopTime;
+    private @Nullable Integer stopTime;
 
     private GetPoolSchedule() {}
     /**
      * @return Day of the week SUN-SAT
      * 
      */
-    public String dayOfWeek() {
-        return this.dayOfWeek;
+    public Optional<String> dayOfWeek() {
+        return Optional.ofNullable(this.dayOfWeek);
     }
     /**
      * @return Hour of the day to start or stop pool.
      * 
      */
-    public Integer startTime() {
-        return this.startTime;
+    public Optional<Integer> startTime() {
+        return Optional.ofNullable(this.startTime);
     }
     /**
      * @return Hour of the day to stop the pool.
      * 
      */
-    public Integer stopTime() {
-        return this.stopTime;
+    public Optional<Integer> stopTime() {
+        return Optional.ofNullable(this.stopTime);
     }
 
     public static Builder builder() {
@@ -58,9 +60,9 @@ public final class GetPoolSchedule {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String dayOfWeek;
-        private Integer startTime;
-        private Integer stopTime;
+        private @Nullable String dayOfWeek;
+        private @Nullable Integer startTime;
+        private @Nullable Integer stopTime;
         public Builder() {}
         public Builder(GetPoolSchedule defaults) {
     	      Objects.requireNonNull(defaults);
@@ -70,18 +72,18 @@ public final class GetPoolSchedule {
         }
 
         @CustomType.Setter
-        public Builder dayOfWeek(String dayOfWeek) {
-            this.dayOfWeek = Objects.requireNonNull(dayOfWeek);
+        public Builder dayOfWeek(@Nullable String dayOfWeek) {
+            this.dayOfWeek = dayOfWeek;
             return this;
         }
         @CustomType.Setter
-        public Builder startTime(Integer startTime) {
-            this.startTime = Objects.requireNonNull(startTime);
+        public Builder startTime(@Nullable Integer startTime) {
+            this.startTime = startTime;
             return this;
         }
         @CustomType.Setter
-        public Builder stopTime(Integer stopTime) {
-            this.stopTime = Objects.requireNonNull(stopTime);
+        public Builder stopTime(@Nullable Integer stopTime) {
+            this.stopTime = stopTime;
             return this;
         }
         public GetPoolSchedule build() {

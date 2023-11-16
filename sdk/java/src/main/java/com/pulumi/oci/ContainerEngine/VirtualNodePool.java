@@ -20,6 +20,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -135,14 +136,14 @@ public class VirtualNodePool extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) Display name of the virtual node pool. This is a non-unique value.
@@ -166,7 +167,7 @@ public class VirtualNodePool extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
@@ -175,64 +176,64 @@ public class VirtualNodePool extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * (Updatable) Initial labels that will be added to the Kubernetes Virtual Node object when it registers.
      * 
      */
     @Export(name="initialVirtualNodeLabels", refs={List.class,VirtualNodePoolInitialVirtualNodeLabel.class}, tree="[0,1]")
-    private Output<List<VirtualNodePoolInitialVirtualNodeLabel>> initialVirtualNodeLabels;
+    private Output</* @Nullable */ List<VirtualNodePoolInitialVirtualNodeLabel>> initialVirtualNodeLabels;
 
     /**
      * @return (Updatable) Initial labels that will be added to the Kubernetes Virtual Node object when it registers.
      * 
      */
-    public Output<List<VirtualNodePoolInitialVirtualNodeLabel>> initialVirtualNodeLabels() {
-        return this.initialVirtualNodeLabels;
+    public Output<Optional<List<VirtualNodePoolInitialVirtualNodeLabel>>> initialVirtualNodeLabels() {
+        return Codegen.optional(this.initialVirtualNodeLabels);
     }
     /**
      * The version of Kubernetes running on the nodes in the node pool.
      * 
      */
     @Export(name="kubernetesVersion", refs={String.class}, tree="[0]")
-    private Output<String> kubernetesVersion;
+    private Output</* @Nullable */ String> kubernetesVersion;
 
     /**
      * @return The version of Kubernetes running on the nodes in the node pool.
      * 
      */
-    public Output<String> kubernetesVersion() {
-        return this.kubernetesVersion;
+    public Output<Optional<String>> kubernetesVersion() {
+        return Codegen.optional(this.kubernetesVersion);
     }
     /**
      * Details about the state of the Virtual Node Pool.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return Details about the state of the Virtual Node Pool.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * (Updatable) List of network security group IDs applied to the Pod VNIC.
      * 
      */
     @Export(name="nsgIds", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> nsgIds;
+    private Output</* @Nullable */ List<String>> nsgIds;
 
     /**
      * @return (Updatable) List of network security group IDs applied to the Pod VNIC.
      * 
      */
-    public Output<List<String>> nsgIds() {
-        return this.nsgIds;
+    public Output<Optional<List<String>>> nsgIds() {
+        return Codegen.optional(this.nsgIds);
     }
     /**
      * (Updatable) The list of placement configurations which determines where Virtual Nodes will be provisioned across as it relates to the subnet and availability domains. The size attribute determines how many we evenly spread across these placement configurations
@@ -281,84 +282,84 @@ public class VirtualNodePool extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The state of the Virtual Node Pool.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> systemTags;
+    private Output</* @Nullable */ Map<String,Object>> systemTags;
 
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    public Output<Map<String,Object>> systemTags() {
-        return this.systemTags;
+    public Output<Optional<Map<String,Object>>> systemTags() {
+        return Codegen.optional(this.systemTags);
     }
     /**
      * (Updatable) A taint is a collection of &lt;key, value, effect&gt;. These taints will be applied to the Virtual Nodes of this Virtual Node Pool for Kubernetes scheduling.
      * 
      */
     @Export(name="taints", refs={List.class,VirtualNodePoolTaint.class}, tree="[0,1]")
-    private Output<List<VirtualNodePoolTaint>> taints;
+    private Output</* @Nullable */ List<VirtualNodePoolTaint>> taints;
 
     /**
      * @return (Updatable) A taint is a collection of &lt;key, value, effect&gt;. These taints will be applied to the Virtual Nodes of this Virtual Node Pool for Kubernetes scheduling.
      * 
      */
-    public Output<List<VirtualNodePoolTaint>> taints() {
-        return this.taints;
+    public Output<Optional<List<VirtualNodePoolTaint>>> taints() {
+        return Codegen.optional(this.taints);
     }
     /**
      * The time the virtual node pool was created.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The time the virtual node pool was created.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The time the virtual node pool was updated.
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The time the virtual node pool was updated.
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
     /**
      * (Updatable) The tags associated to the virtual nodes in this virtual node pool.
      * 
      */
     @Export(name="virtualNodeTags", refs={VirtualNodePoolVirtualNodeTags.class}, tree="[0]")
-    private Output<VirtualNodePoolVirtualNodeTags> virtualNodeTags;
+    private Output</* @Nullable */ VirtualNodePoolVirtualNodeTags> virtualNodeTags;
 
     /**
      * @return (Updatable) The tags associated to the virtual nodes in this virtual node pool.
      * 
      */
-    public Output<VirtualNodePoolVirtualNodeTags> virtualNodeTags() {
-        return this.virtualNodeTags;
+    public Output<Optional<VirtualNodePoolVirtualNodeTags>> virtualNodeTags() {
+        return Codegen.optional(this.virtualNodeTags);
     }
 
     /**

@@ -16,29 +16,29 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// <summary>
         /// The number of a line in the base version.
         /// </summary>
-        public readonly int BaseLine;
+        public readonly int? BaseLine;
         /// <summary>
         /// Indicates whether a line in a conflicted section of the difference is from the base version, the target version, or if its just a marker indicating the beginning, middle, or end of a conflicted section.
         /// </summary>
-        public readonly string ConflictMarker;
+        public readonly string? ConflictMarker;
         /// <summary>
         /// The contents of a line.
         /// </summary>
-        public readonly string LineContent;
+        public readonly string? LineContent;
         /// <summary>
         /// Line number in target version where changes begin.
         /// </summary>
-        public readonly int TargetLine;
+        public readonly int? TargetLine;
 
         [OutputConstructor]
         private GetRepositoryDiffChangeDiffSectionLineResult(
-            int baseLine,
+            int? baseLine,
 
-            string conflictMarker,
+            string? conflictMarker,
 
-            string lineContent,
+            string? lineContent,
 
-            int targetLine)
+            int? targetLine)
         {
             BaseLine = baseLine;
             ConflictMarker = conflictMarker;

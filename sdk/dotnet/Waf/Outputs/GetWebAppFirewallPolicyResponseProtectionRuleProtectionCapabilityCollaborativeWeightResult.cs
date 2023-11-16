@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Waf.Outputs
         /// <summary>
         /// Unique key of referenced protection capability.
         /// </summary>
-        public readonly string Key;
+        public readonly string? Key;
         /// <summary>
         /// The value of weight to set.
         /// </summary>
-        public readonly int Weight;
+        public readonly int? Weight;
 
         [OutputConstructor]
         private GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightResult(
-            string key,
+            string? key,
 
-            int weight)
+            int? weight)
         {
             Key = key;
             Weight = weight;

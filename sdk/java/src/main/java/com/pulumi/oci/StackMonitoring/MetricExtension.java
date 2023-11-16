@@ -119,14 +119,14 @@ public class MetricExtension extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="collectionMethod", refs={String.class}, tree="[0]")
-    private Output<String> collectionMethod;
+    private Output</* @Nullable */ String> collectionMethod;
 
     /**
      * @return (Updatable) Type of possible collection methods.
      * 
      */
-    public Output<String> collectionMethod() {
-        return this.collectionMethod;
+    public Output<Optional<String>> collectionMethod() {
+        return Codegen.optional(this.collectionMethod);
     }
     /**
      * (Updatable) Schedule of metric extension should use RFC 5545 format i.e. recur-rule-part = &#34;FREQ&#34;;INTERVAL where FREQ rule part identifies the type of recurrence rule. Valid values are &#34;MINUTELY&#34;,&#34;HOURLY&#34;,&#34;DAILY&#34; to specify repeating events based on an interval of a minute, an hour and a day or more. Example- FREQ=DAILY;INTERVAL=1
@@ -161,28 +161,28 @@ public class MetricExtension extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="createdBy", refs={String.class}, tree="[0]")
-    private Output<String> createdBy;
+    private Output</* @Nullable */ String> createdBy;
 
     /**
      * @return Created by user
      * 
      */
-    public Output<String> createdBy() {
-        return this.createdBy;
+    public Output<Optional<String>> createdBy() {
+        return Codegen.optional(this.createdBy);
     }
     /**
      * (Updatable) Description of the metric extension.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
-    private Output<String> description;
+    private Output</* @Nullable */ String> description;
 
     /**
      * @return (Updatable) Description of the metric extension.
      * 
      */
-    public Output<String> description() {
-        return this.description;
+    public Output<Optional<String>> description() {
+        return Codegen.optional(this.description);
     }
     /**
      * (Updatable) Display name of the metric.
@@ -203,42 +203,42 @@ public class MetricExtension extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="enabledOnResources", refs={List.class,MetricExtensionEnabledOnResource.class}, tree="[0,1]")
-    private Output<List<MetricExtensionEnabledOnResource>> enabledOnResources;
+    private Output</* @Nullable */ List<MetricExtensionEnabledOnResource>> enabledOnResources;
 
     /**
      * @return List of resource objects on which this metric extension is enabled.
      * 
      */
-    public Output<List<MetricExtensionEnabledOnResource>> enabledOnResources() {
-        return this.enabledOnResources;
+    public Output<Optional<List<MetricExtensionEnabledOnResource>>> enabledOnResources() {
+        return Codegen.optional(this.enabledOnResources);
     }
     /**
      * Count of resources on which this metric extension is enabled.
      * 
      */
     @Export(name="enabledOnResourcesCount", refs={Integer.class}, tree="[0]")
-    private Output<Integer> enabledOnResourcesCount;
+    private Output</* @Nullable */ Integer> enabledOnResourcesCount;
 
     /**
      * @return Count of resources on which this metric extension is enabled.
      * 
      */
-    public Output<Integer> enabledOnResourcesCount() {
-        return this.enabledOnResourcesCount;
+    public Output<Optional<Integer>> enabledOnResourcesCount() {
+        return Codegen.optional(this.enabledOnResourcesCount);
     }
     /**
      * Last updated by user
      * 
      */
     @Export(name="lastUpdatedBy", refs={String.class}, tree="[0]")
-    private Output<String> lastUpdatedBy;
+    private Output</* @Nullable */ String> lastUpdatedBy;
 
     /**
      * @return Last updated by user
      * 
      */
-    public Output<String> lastUpdatedBy() {
-        return this.lastUpdatedBy;
+    public Output<Optional<String>> lastUpdatedBy() {
+        return Codegen.optional(this.lastUpdatedBy);
     }
     /**
      * (Updatable) List of metrics which are part of this metric extension
@@ -321,84 +321,84 @@ public class MetricExtension extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="resourceUri", refs={String.class}, tree="[0]")
-    private Output<String> resourceUri;
+    private Output</* @Nullable */ String> resourceUri;
 
     /**
      * @return The URI path that the user can do a GET on to access the metric extension metadata
      * 
      */
-    public Output<String> resourceUri() {
-        return this.resourceUri;
+    public Output<Optional<String>> resourceUri() {
+        return Codegen.optional(this.resourceUri);
     }
     /**
      * The current lifecycle state of the metric extension
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current lifecycle state of the metric extension
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The current status of the metric extension i.e. whether it is Draft or Published
      * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
-    private Output<String> status;
+    private Output</* @Nullable */ String> status;
 
     /**
      * @return The current status of the metric extension i.e. whether it is Draft or Published
      * 
      */
-    public Output<String> status() {
-        return this.status;
+    public Output<Optional<String>> status() {
+        return Codegen.optional(this.status);
     }
     /**
      * Tenant Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * 
      */
     @Export(name="tenantId", refs={String.class}, tree="[0]")
-    private Output<String> tenantId;
+    private Output</* @Nullable */ String> tenantId;
 
     /**
      * @return Tenant Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * 
      */
-    public Output<String> tenantId() {
-        return this.tenantId;
+    public Output<Optional<String>> tenantId() {
+        return Codegen.optional(this.tenantId);
     }
     /**
      * Metric Extension creation time. An RFC3339 formatted datetime string.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return Metric Extension creation time. An RFC3339 formatted datetime string.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * Metric Extension update time. An RFC3339 formatted datetime string.
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return Metric Extension update time. An RFC3339 formatted datetime string.
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
 
     /**

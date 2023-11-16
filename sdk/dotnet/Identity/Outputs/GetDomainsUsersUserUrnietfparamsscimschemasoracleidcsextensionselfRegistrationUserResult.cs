@@ -16,7 +16,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// A boolean value that indicates whether the consent is granted.
         /// </summary>
-        public readonly bool ConsentGranted;
+        public readonly bool? ConsentGranted;
         /// <summary>
         /// Self registration profile used when user is self registered.
         /// </summary>
@@ -24,15 +24,15 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// User token returned if userFlowControlledByExternalClient is true
         /// </summary>
-        public readonly string UserToken;
+        public readonly string? UserToken;
 
         [OutputConstructor]
         private GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserResult(
-            bool consentGranted,
+            bool? consentGranted,
 
             ImmutableArray<Outputs.GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileResult> selfRegistrationProfiles,
 
-            string userToken)
+            string? userToken)
         {
             ConsentGranted = consentGranted;
             SelfRegistrationProfiles = selfRegistrationProfiles;

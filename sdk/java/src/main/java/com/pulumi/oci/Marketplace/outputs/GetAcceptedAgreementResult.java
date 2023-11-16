@@ -8,6 +8,8 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAcceptedAgreementResult {
@@ -16,48 +18,48 @@ public final class GetAcceptedAgreementResult {
      * @return The unique identifier for the terms of use agreement itself.
      * 
      */
-    private String agreementId;
+    private @Nullable String agreementId;
     /**
      * @return The unique identifier for the compartment where the agreement was accepted.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return A display name for the accepted agreement.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The unique identifier for the acceptance of the agreement within a specific compartment.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The unique identifier for the listing associated with the agreement.
      * 
      */
-    private String listingId;
+    private @Nullable String listingId;
     /**
      * @return The package version associated with the agreement.
      * 
      */
-    private String packageVersion;
-    private String signature;
+    private @Nullable String packageVersion;
+    private @Nullable String signature;
     /**
      * @return The time the agreement was accepted.
      * 
      */
-    private String timeAccepted;
+    private @Nullable String timeAccepted;
 
     private GetAcceptedAgreementResult() {}
     public String acceptedAgreementId() {
@@ -67,67 +69,67 @@ public final class GetAcceptedAgreementResult {
      * @return The unique identifier for the terms of use agreement itself.
      * 
      */
-    public String agreementId() {
-        return this.agreementId;
+    public Optional<String> agreementId() {
+        return Optional.ofNullable(this.agreementId);
     }
     /**
      * @return The unique identifier for the compartment where the agreement was accepted.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return A display name for the accepted agreement.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The unique identifier for the acceptance of the agreement within a specific compartment.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The unique identifier for the listing associated with the agreement.
      * 
      */
-    public String listingId() {
-        return this.listingId;
+    public Optional<String> listingId() {
+        return Optional.ofNullable(this.listingId);
     }
     /**
      * @return The package version associated with the agreement.
      * 
      */
-    public String packageVersion() {
-        return this.packageVersion;
+    public Optional<String> packageVersion() {
+        return Optional.ofNullable(this.packageVersion);
     }
-    public String signature() {
-        return this.signature;
+    public Optional<String> signature() {
+        return Optional.ofNullable(this.signature);
     }
     /**
      * @return The time the agreement was accepted.
      * 
      */
-    public String timeAccepted() {
-        return this.timeAccepted;
+    public Optional<String> timeAccepted() {
+        return Optional.ofNullable(this.timeAccepted);
     }
 
     public static Builder builder() {
@@ -140,16 +142,16 @@ public final class GetAcceptedAgreementResult {
     @CustomType.Builder
     public static final class Builder {
         private String acceptedAgreementId;
-        private String agreementId;
-        private String compartmentId;
-        private Map<String,Object> definedTags;
-        private String displayName;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private String listingId;
-        private String packageVersion;
-        private String signature;
-        private String timeAccepted;
+        private @Nullable String agreementId;
+        private @Nullable String compartmentId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable String listingId;
+        private @Nullable String packageVersion;
+        private @Nullable String signature;
+        private @Nullable String timeAccepted;
         public Builder() {}
         public Builder(GetAcceptedAgreementResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -172,53 +174,53 @@ public final class GetAcceptedAgreementResult {
             return this;
         }
         @CustomType.Setter
-        public Builder agreementId(String agreementId) {
-            this.agreementId = Objects.requireNonNull(agreementId);
+        public Builder agreementId(@Nullable String agreementId) {
+            this.agreementId = agreementId;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder listingId(String listingId) {
-            this.listingId = Objects.requireNonNull(listingId);
+        public Builder listingId(@Nullable String listingId) {
+            this.listingId = listingId;
             return this;
         }
         @CustomType.Setter
-        public Builder packageVersion(String packageVersion) {
-            this.packageVersion = Objects.requireNonNull(packageVersion);
+        public Builder packageVersion(@Nullable String packageVersion) {
+            this.packageVersion = packageVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder signature(String signature) {
-            this.signature = Objects.requireNonNull(signature);
+        public Builder signature(@Nullable String signature) {
+            this.signature = signature;
             return this;
         }
         @CustomType.Setter
-        public Builder timeAccepted(String timeAccepted) {
-            this.timeAccepted = Objects.requireNonNull(timeAccepted);
+        public Builder timeAccepted(@Nullable String timeAccepted) {
+            this.timeAccepted = timeAccepted;
             return this;
         }
         public GetAcceptedAgreementResult build() {

@@ -16,77 +16,77 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// The ID number of the beginning AWR snapshot.
         /// </summary>
-        public readonly string BeginSnapshotId;
+        public readonly string? BeginSnapshotId;
         /// <summary>
         /// The database user who owns the ADDM task.
         /// </summary>
-        public readonly string DbUser;
+        public readonly string? DbUser;
         /// <summary>
         /// The description of the ADDM task.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// The ID number of the ending AWR snapshot.
         /// </summary>
-        public readonly string EndSnapshotId;
+        public readonly string? EndSnapshotId;
         /// <summary>
         /// The timestamp of the ending AWR snapshot used in the ADDM task as defined by date-time RFC3339 format.
         /// </summary>
-        public readonly string EndSnapshotTime;
+        public readonly string? EndSnapshotTime;
         /// <summary>
         /// The number of ADDM findings.
         /// </summary>
-        public readonly string Findings;
+        public readonly string? Findings;
         /// <summary>
         /// A description of how the task was created.
         /// </summary>
-        public readonly string HowCreated;
+        public readonly string? HowCreated;
         /// <summary>
         /// The timestamp of the beginning AWR snapshot used in the ADDM task as defined by date-time RFC3339 format.
         /// </summary>
-        public readonly string StartSnapshotTime;
+        public readonly string? StartSnapshotTime;
         /// <summary>
         /// The status of the ADDM task.
         /// </summary>
-        public readonly string Status;
+        public readonly string? Status;
         /// <summary>
         /// The ID number of the ADDM task.
         /// </summary>
-        public readonly string TaskId;
+        public readonly string? TaskId;
         /// <summary>
         /// The name of the ADDM task.
         /// </summary>
-        public readonly string TaskName;
+        public readonly string? TaskName;
         /// <summary>
         /// The creation date of the ADDM task.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
 
         [OutputConstructor]
         private GetManagedDatabaseAddmTasksAddmTasksCollectionItemResult(
-            string beginSnapshotId,
+            string? beginSnapshotId,
 
-            string dbUser,
+            string? dbUser,
 
-            string description,
+            string? description,
 
-            string endSnapshotId,
+            string? endSnapshotId,
 
-            string endSnapshotTime,
+            string? endSnapshotTime,
 
-            string findings,
+            string? findings,
 
-            string howCreated,
+            string? howCreated,
 
-            string startSnapshotTime,
+            string? startSnapshotTime,
 
-            string status,
+            string? status,
 
-            string taskId,
+            string? taskId,
 
-            string taskName,
+            string? taskName,
 
-            string timeCreated)
+            string? timeCreated)
         {
             BeginSnapshotId = beginSnapshotId;
             DbUser = dbUser;

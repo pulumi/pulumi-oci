@@ -9,6 +9,7 @@ import com.pulumi.oci.DataSafe.outputs.GetAlertPolicyRulesFilter;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -18,13 +19,13 @@ public final class GetAlertPolicyRulesResult {
      * @return The list of alert_policy_rule_collection.
      * 
      */
-    private List<GetAlertPolicyRulesAlertPolicyRuleCollection> alertPolicyRuleCollections;
+    private @Nullable List<GetAlertPolicyRulesAlertPolicyRuleCollection> alertPolicyRuleCollections;
     private @Nullable List<GetAlertPolicyRulesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
 
     private GetAlertPolicyRulesResult() {}
     public String alertPolicyId() {
@@ -35,7 +36,7 @@ public final class GetAlertPolicyRulesResult {
      * 
      */
     public List<GetAlertPolicyRulesAlertPolicyRuleCollection> alertPolicyRuleCollections() {
-        return this.alertPolicyRuleCollections;
+        return this.alertPolicyRuleCollections == null ? List.of() : this.alertPolicyRuleCollections;
     }
     public List<GetAlertPolicyRulesFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -44,8 +45,8 @@ public final class GetAlertPolicyRulesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
 
     public static Builder builder() {
@@ -58,9 +59,9 @@ public final class GetAlertPolicyRulesResult {
     @CustomType.Builder
     public static final class Builder {
         private String alertPolicyId;
-        private List<GetAlertPolicyRulesAlertPolicyRuleCollection> alertPolicyRuleCollections;
+        private @Nullable List<GetAlertPolicyRulesAlertPolicyRuleCollection> alertPolicyRuleCollections;
         private @Nullable List<GetAlertPolicyRulesFilter> filters;
-        private String id;
+        private @Nullable String id;
         public Builder() {}
         public Builder(GetAlertPolicyRulesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -76,8 +77,8 @@ public final class GetAlertPolicyRulesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder alertPolicyRuleCollections(List<GetAlertPolicyRulesAlertPolicyRuleCollection> alertPolicyRuleCollections) {
-            this.alertPolicyRuleCollections = Objects.requireNonNull(alertPolicyRuleCollections);
+        public Builder alertPolicyRuleCollections(@Nullable List<GetAlertPolicyRulesAlertPolicyRuleCollection> alertPolicyRuleCollections) {
+            this.alertPolicyRuleCollections = alertPolicyRuleCollections;
             return this;
         }
         public Builder alertPolicyRuleCollections(GetAlertPolicyRulesAlertPolicyRuleCollection... alertPolicyRuleCollections) {
@@ -92,8 +93,8 @@ public final class GetAlertPolicyRulesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         public GetAlertPolicyRulesResult build() {

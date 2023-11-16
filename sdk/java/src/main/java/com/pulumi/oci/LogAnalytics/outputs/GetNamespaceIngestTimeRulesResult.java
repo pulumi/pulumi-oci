@@ -40,12 +40,12 @@ public final class GetNamespaceIngestTimeRulesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of ingest_time_rule_summary_collection.
      * 
      */
-    private List<GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollection> ingestTimeRuleSummaryCollections;
+    private @Nullable List<GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollection> ingestTimeRuleSummaryCollections;
     /**
      * @return The namespace of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters and underscores (_).
      * 
@@ -96,15 +96,15 @@ public final class GetNamespaceIngestTimeRulesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of ingest_time_rule_summary_collection.
      * 
      */
     public List<GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollection> ingestTimeRuleSummaryCollections() {
-        return this.ingestTimeRuleSummaryCollections;
+        return this.ingestTimeRuleSummaryCollections == null ? List.of() : this.ingestTimeRuleSummaryCollections;
     }
     /**
      * @return The namespace of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters and underscores (_).
@@ -136,8 +136,8 @@ public final class GetNamespaceIngestTimeRulesResult {
         private @Nullable String fieldName;
         private @Nullable String fieldValue;
         private @Nullable List<GetNamespaceIngestTimeRulesFilter> filters;
-        private String id;
-        private List<GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollection> ingestTimeRuleSummaryCollections;
+        private @Nullable String id;
+        private @Nullable List<GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollection> ingestTimeRuleSummaryCollections;
         private String namespace;
         private @Nullable String state;
         public Builder() {}
@@ -189,13 +189,13 @@ public final class GetNamespaceIngestTimeRulesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder ingestTimeRuleSummaryCollections(List<GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollection> ingestTimeRuleSummaryCollections) {
-            this.ingestTimeRuleSummaryCollections = Objects.requireNonNull(ingestTimeRuleSummaryCollections);
+        public Builder ingestTimeRuleSummaryCollections(@Nullable List<GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollection> ingestTimeRuleSummaryCollections) {
+            this.ingestTimeRuleSummaryCollections = ingestTimeRuleSummaryCollections;
             return this;
         }
         public Builder ingestTimeRuleSummaryCollections(GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollection... ingestTimeRuleSummaryCollections) {

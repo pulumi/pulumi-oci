@@ -6,6 +6,8 @@ package com.pulumi.oci.Identity.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppConnectorBundle {
@@ -13,63 +15,63 @@ public final class GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanag
      * @return Display-name of the AppRole.
      * 
      */
-    private String display;
+    private @Nullable String display;
     /**
      * @return URI of the AppRole.
      * 
      */
-    private String ref;
+    private @Nullable String ref;
     /**
      * @return Object Class type. Allowed values are AccountObjectClass, ManagedObjectClass.
      * 
      */
-    private String type;
+    private @Nullable String type;
     /**
      * @return ID of the AppRole.
      * 
      */
-    private String value;
+    private @Nullable String value;
     /**
      * @return Unique well-known identifier used to reference connector bundle.
      * 
      */
-    private String wellKnownId;
+    private @Nullable String wellKnownId;
 
     private GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppConnectorBundle() {}
     /**
      * @return Display-name of the AppRole.
      * 
      */
-    public String display() {
-        return this.display;
+    public Optional<String> display() {
+        return Optional.ofNullable(this.display);
     }
     /**
      * @return URI of the AppRole.
      * 
      */
-    public String ref() {
-        return this.ref;
+    public Optional<String> ref() {
+        return Optional.ofNullable(this.ref);
     }
     /**
      * @return Object Class type. Allowed values are AccountObjectClass, ManagedObjectClass.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
     /**
      * @return ID of the AppRole.
      * 
      */
-    public String value() {
-        return this.value;
+    public Optional<String> value() {
+        return Optional.ofNullable(this.value);
     }
     /**
      * @return Unique well-known identifier used to reference connector bundle.
      * 
      */
-    public String wellKnownId() {
-        return this.wellKnownId;
+    public Optional<String> wellKnownId() {
+        return Optional.ofNullable(this.wellKnownId);
     }
 
     public static Builder builder() {
@@ -81,11 +83,11 @@ public final class GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanag
     }
     @CustomType.Builder
     public static final class Builder {
-        private String display;
-        private String ref;
-        private String type;
-        private String value;
-        private String wellKnownId;
+        private @Nullable String display;
+        private @Nullable String ref;
+        private @Nullable String type;
+        private @Nullable String value;
+        private @Nullable String wellKnownId;
         public Builder() {}
         public Builder(GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppConnectorBundle defaults) {
     	      Objects.requireNonNull(defaults);
@@ -97,28 +99,28 @@ public final class GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanag
         }
 
         @CustomType.Setter
-        public Builder display(String display) {
-            this.display = Objects.requireNonNull(display);
+        public Builder display(@Nullable String display) {
+            this.display = display;
             return this;
         }
         @CustomType.Setter
-        public Builder ref(String ref) {
-            this.ref = Objects.requireNonNull(ref);
+        public Builder ref(@Nullable String ref) {
+            this.ref = ref;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         @CustomType.Setter
-        public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+        public Builder value(@Nullable String value) {
+            this.value = value;
             return this;
         }
         @CustomType.Setter
-        public Builder wellKnownId(String wellKnownId) {
-            this.wellKnownId = Objects.requireNonNull(wellKnownId);
+        public Builder wellKnownId(@Nullable String wellKnownId) {
+            this.wellKnownId = wellKnownId;
             return this;
         }
         public GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppConnectorBundle build() {

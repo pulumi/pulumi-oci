@@ -29,7 +29,7 @@ public final class GetFleetPerformanceTuningAnalysisResultsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The managed instance OCID.
      * 
@@ -39,7 +39,7 @@ public final class GetFleetPerformanceTuningAnalysisResultsResult {
      * @return The list of performance_tuning_analysis_result_collection.
      * 
      */
-    private List<GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollection> performanceTuningAnalysisResultCollections;
+    private @Nullable List<GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollection> performanceTuningAnalysisResultCollections;
     private @Nullable String timeEnd;
     private @Nullable String timeStart;
 
@@ -65,8 +65,8 @@ public final class GetFleetPerformanceTuningAnalysisResultsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The managed instance OCID.
@@ -80,7 +80,7 @@ public final class GetFleetPerformanceTuningAnalysisResultsResult {
      * 
      */
     public List<GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollection> performanceTuningAnalysisResultCollections() {
-        return this.performanceTuningAnalysisResultCollections;
+        return this.performanceTuningAnalysisResultCollections == null ? List.of() : this.performanceTuningAnalysisResultCollections;
     }
     public Optional<String> timeEnd() {
         return Optional.ofNullable(this.timeEnd);
@@ -101,9 +101,9 @@ public final class GetFleetPerformanceTuningAnalysisResultsResult {
         private @Nullable String applicationId;
         private @Nullable List<GetFleetPerformanceTuningAnalysisResultsFilter> filters;
         private String fleetId;
-        private String id;
+        private @Nullable String id;
         private @Nullable String managedInstanceId;
-        private List<GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollection> performanceTuningAnalysisResultCollections;
+        private @Nullable List<GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollection> performanceTuningAnalysisResultCollections;
         private @Nullable String timeEnd;
         private @Nullable String timeStart;
         public Builder() {}
@@ -138,8 +138,8 @@ public final class GetFleetPerformanceTuningAnalysisResultsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -148,8 +148,8 @@ public final class GetFleetPerformanceTuningAnalysisResultsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder performanceTuningAnalysisResultCollections(List<GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollection> performanceTuningAnalysisResultCollections) {
-            this.performanceTuningAnalysisResultCollections = Objects.requireNonNull(performanceTuningAnalysisResultCollections);
+        public Builder performanceTuningAnalysisResultCollections(@Nullable List<GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollection> performanceTuningAnalysisResultCollections) {
+            this.performanceTuningAnalysisResultCollections = performanceTuningAnalysisResultCollections;
             return this;
         }
         public Builder performanceTuningAnalysisResultCollections(GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollection... performanceTuningAnalysisResultCollections) {

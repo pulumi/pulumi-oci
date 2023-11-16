@@ -6,6 +6,8 @@ package com.pulumi.oci.Bastion.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSessionKeyDetail {
@@ -13,15 +15,15 @@ public final class GetSessionKeyDetail {
      * @return The public key in OpenSSH format of the SSH key pair for the session. When you connect to the session, you must provide the private key of the same SSH key pair.
      * 
      */
-    private String publicKeyContent;
+    private @Nullable String publicKeyContent;
 
     private GetSessionKeyDetail() {}
     /**
      * @return The public key in OpenSSH format of the SSH key pair for the session. When you connect to the session, you must provide the private key of the same SSH key pair.
      * 
      */
-    public String publicKeyContent() {
-        return this.publicKeyContent;
+    public Optional<String> publicKeyContent() {
+        return Optional.ofNullable(this.publicKeyContent);
     }
 
     public static Builder builder() {
@@ -33,7 +35,7 @@ public final class GetSessionKeyDetail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String publicKeyContent;
+        private @Nullable String publicKeyContent;
         public Builder() {}
         public Builder(GetSessionKeyDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -41,8 +43,8 @@ public final class GetSessionKeyDetail {
         }
 
         @CustomType.Setter
-        public Builder publicKeyContent(String publicKeyContent) {
-            this.publicKeyContent = Objects.requireNonNull(publicKeyContent);
+        public Builder publicKeyContent(@Nullable String publicKeyContent) {
+            this.publicKeyContent = publicKeyContent;
             return this;
         }
         public GetSessionKeyDetail build() {

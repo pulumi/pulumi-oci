@@ -16,29 +16,29 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// A string that represents the regional public IP address ranges for the Oracle service or services covered by this `Service` object. Also known as the `Service` object's *service CIDR label*.
         /// </summary>
-        public readonly string CidrBlock;
+        public readonly string? CidrBlock;
         /// <summary>
         /// Description of the Oracle service or services covered by this `Service` object.  Example: `OCI PHX Object Storage`
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// The `Service` object's [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Name of the `Service` object. This name can change and is not guaranteed to be unique.  Example: `OCI PHX Object Storage`
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
 
         [OutputConstructor]
         private GetServicesServiceResult(
-            string cidrBlock,
+            string? cidrBlock,
 
-            string description,
+            string? description,
 
-            string id,
+            string? id,
 
-            string name)
+            string? name)
         {
             CidrBlock = cidrBlock;
             Description = description;

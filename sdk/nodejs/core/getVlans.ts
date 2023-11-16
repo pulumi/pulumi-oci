@@ -76,7 +76,7 @@ export interface GetVlansResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The VLAN's current state.
      */
@@ -88,7 +88,7 @@ export interface GetVlansResult {
     /**
      * The list of vlans.
      */
-    readonly vlans: outputs.Core.GetVlansVlan[];
+    readonly vlans?: outputs.Core.GetVlansVlan[];
 }
 /**
  * This data source provides the list of Vlans in Oracle Cloud Infrastructure Core service.

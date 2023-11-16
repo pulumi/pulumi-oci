@@ -101,7 +101,7 @@ export interface GetPublicIpsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Defines when the public IP is deleted and released back to Oracle's public IP pool.
      */
@@ -113,7 +113,7 @@ export interface GetPublicIpsResult {
     /**
      * The list of public_ips.
      */
-    readonly publicIps: outputs.Core.GetPublicIpsPublicIp[];
+    readonly publicIps?: outputs.Core.GetPublicIpsPublicIp[];
     /**
      * Whether the public IP is regional or specific to a particular availability domain.
      */

@@ -9,6 +9,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSqlFirewallPolicyResult {
@@ -16,108 +18,108 @@ public final class GetSqlFirewallPolicyResult {
      * @return The list of allowed ip addresses for the SQL firewall policy.
      * 
      */
-    private List<String> allowedClientIps;
+    private @Nullable List<String> allowedClientIps;
     /**
      * @return The list of allowed operating system user names for the SQL firewall policy.
      * 
      */
-    private List<String> allowedClientOsUsernames;
+    private @Nullable List<String> allowedClientOsUsernames;
     /**
      * @return The list of allowed client programs for the SQL firewall policy.
      * 
      */
-    private List<String> allowedClientPrograms;
+    private @Nullable List<String> allowedClientPrograms;
     /**
      * @return The OCID of the compartment containing the SQL firewall policy.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The database user name.
      * 
      */
-    private String dbUserName;
+    private @Nullable String dbUserName;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return The description of the SQL firewall policy.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return The display name of the SQL firewall policy.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Specifies the SQL firewall policy enforcement option.
      * 
      */
-    private String enforcementScope;
+    private @Nullable String enforcementScope;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The OCID of the SQL firewall policy.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Details about the current state of the SQL firewall policy in Data Safe.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return The OCID of the security policy corresponding to the SQL firewall policy.
      * 
      */
-    private String securityPolicyId;
+    private @Nullable String securityPolicyId;
     private String sqlFirewallPolicyId;
     /**
      * @return Specifies the level of SQL included for this SQL firewall policy. USER_ISSUED_SQL - User issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
      * 
      */
-    private String sqlLevel;
+    private @Nullable String sqlLevel;
     /**
      * @return The current state of the SQL firewall policy.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return Specifies whether the SQL firewall policy is enabled or disabled.
      * 
      */
-    private String status;
+    private @Nullable String status;
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private @Nullable Map<String,Object> systemTags;
     /**
      * @return The time that the SQL firewall policy was created, in the format defined by RFC3339.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The date and time the SQL firewall policy was last updated, in the format defined by RFC3339.
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
     /**
      * @return Specifies the mode in which the SQL firewall policy is enabled.
      * 
      */
-    private String violationAction;
+    private @Nullable String violationAction;
     /**
      * @return Specifies whether a unified audit policy should be enabled for auditing the SQL firewall policy violations.
      * 
      */
-    private String violationAudit;
+    private @Nullable String violationAudit;
 
     private GetSqlFirewallPolicyResult() {}
     /**
@@ -125,91 +127,91 @@ public final class GetSqlFirewallPolicyResult {
      * 
      */
     public List<String> allowedClientIps() {
-        return this.allowedClientIps;
+        return this.allowedClientIps == null ? List.of() : this.allowedClientIps;
     }
     /**
      * @return The list of allowed operating system user names for the SQL firewall policy.
      * 
      */
     public List<String> allowedClientOsUsernames() {
-        return this.allowedClientOsUsernames;
+        return this.allowedClientOsUsernames == null ? List.of() : this.allowedClientOsUsernames;
     }
     /**
      * @return The list of allowed client programs for the SQL firewall policy.
      * 
      */
     public List<String> allowedClientPrograms() {
-        return this.allowedClientPrograms;
+        return this.allowedClientPrograms == null ? List.of() : this.allowedClientPrograms;
     }
     /**
      * @return The OCID of the compartment containing the SQL firewall policy.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The database user name.
      * 
      */
-    public String dbUserName() {
-        return this.dbUserName;
+    public Optional<String> dbUserName() {
+        return Optional.ofNullable(this.dbUserName);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return The description of the SQL firewall policy.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return The display name of the SQL firewall policy.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Specifies the SQL firewall policy enforcement option.
      * 
      */
-    public String enforcementScope() {
-        return this.enforcementScope;
+    public Optional<String> enforcementScope() {
+        return Optional.ofNullable(this.enforcementScope);
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The OCID of the SQL firewall policy.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Details about the current state of the SQL firewall policy in Data Safe.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return The OCID of the security policy corresponding to the SQL firewall policy.
      * 
      */
-    public String securityPolicyId() {
-        return this.securityPolicyId;
+    public Optional<String> securityPolicyId() {
+        return Optional.ofNullable(this.securityPolicyId);
     }
     public String sqlFirewallPolicyId() {
         return this.sqlFirewallPolicyId;
@@ -218,57 +220,57 @@ public final class GetSqlFirewallPolicyResult {
      * @return Specifies the level of SQL included for this SQL firewall policy. USER_ISSUED_SQL - User issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
      * 
      */
-    public String sqlLevel() {
-        return this.sqlLevel;
+    public Optional<String> sqlLevel() {
+        return Optional.ofNullable(this.sqlLevel);
     }
     /**
      * @return The current state of the SQL firewall policy.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return Specifies whether the SQL firewall policy is enabled or disabled.
      * 
      */
-    public String status() {
-        return this.status;
+    public Optional<String> status() {
+        return Optional.ofNullable(this.status);
     }
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     public Map<String,Object> systemTags() {
-        return this.systemTags;
+        return this.systemTags == null ? Map.of() : this.systemTags;
     }
     /**
      * @return The time that the SQL firewall policy was created, in the format defined by RFC3339.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The date and time the SQL firewall policy was last updated, in the format defined by RFC3339.
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
     /**
      * @return Specifies the mode in which the SQL firewall policy is enabled.
      * 
      */
-    public String violationAction() {
-        return this.violationAction;
+    public Optional<String> violationAction() {
+        return Optional.ofNullable(this.violationAction);
     }
     /**
      * @return Specifies whether a unified audit policy should be enabled for auditing the SQL firewall policy violations.
      * 
      */
-    public String violationAudit() {
-        return this.violationAudit;
+    public Optional<String> violationAudit() {
+        return Optional.ofNullable(this.violationAudit);
     }
 
     public static Builder builder() {
@@ -280,28 +282,28 @@ public final class GetSqlFirewallPolicyResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> allowedClientIps;
-        private List<String> allowedClientOsUsernames;
-        private List<String> allowedClientPrograms;
-        private String compartmentId;
-        private String dbUserName;
-        private Map<String,Object> definedTags;
-        private String description;
-        private String displayName;
-        private String enforcementScope;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private String lifecycleDetails;
-        private String securityPolicyId;
+        private @Nullable List<String> allowedClientIps;
+        private @Nullable List<String> allowedClientOsUsernames;
+        private @Nullable List<String> allowedClientPrograms;
+        private @Nullable String compartmentId;
+        private @Nullable String dbUserName;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String description;
+        private @Nullable String displayName;
+        private @Nullable String enforcementScope;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable String lifecycleDetails;
+        private @Nullable String securityPolicyId;
         private String sqlFirewallPolicyId;
-        private String sqlLevel;
-        private String state;
-        private String status;
-        private Map<String,Object> systemTags;
-        private String timeCreated;
-        private String timeUpdated;
-        private String violationAction;
-        private String violationAudit;
+        private @Nullable String sqlLevel;
+        private @Nullable String state;
+        private @Nullable String status;
+        private @Nullable Map<String,Object> systemTags;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
+        private @Nullable String violationAction;
+        private @Nullable String violationAudit;
         public Builder() {}
         public Builder(GetSqlFirewallPolicyResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -330,77 +332,77 @@ public final class GetSqlFirewallPolicyResult {
         }
 
         @CustomType.Setter
-        public Builder allowedClientIps(List<String> allowedClientIps) {
-            this.allowedClientIps = Objects.requireNonNull(allowedClientIps);
+        public Builder allowedClientIps(@Nullable List<String> allowedClientIps) {
+            this.allowedClientIps = allowedClientIps;
             return this;
         }
         public Builder allowedClientIps(String... allowedClientIps) {
             return allowedClientIps(List.of(allowedClientIps));
         }
         @CustomType.Setter
-        public Builder allowedClientOsUsernames(List<String> allowedClientOsUsernames) {
-            this.allowedClientOsUsernames = Objects.requireNonNull(allowedClientOsUsernames);
+        public Builder allowedClientOsUsernames(@Nullable List<String> allowedClientOsUsernames) {
+            this.allowedClientOsUsernames = allowedClientOsUsernames;
             return this;
         }
         public Builder allowedClientOsUsernames(String... allowedClientOsUsernames) {
             return allowedClientOsUsernames(List.of(allowedClientOsUsernames));
         }
         @CustomType.Setter
-        public Builder allowedClientPrograms(List<String> allowedClientPrograms) {
-            this.allowedClientPrograms = Objects.requireNonNull(allowedClientPrograms);
+        public Builder allowedClientPrograms(@Nullable List<String> allowedClientPrograms) {
+            this.allowedClientPrograms = allowedClientPrograms;
             return this;
         }
         public Builder allowedClientPrograms(String... allowedClientPrograms) {
             return allowedClientPrograms(List.of(allowedClientPrograms));
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder dbUserName(String dbUserName) {
-            this.dbUserName = Objects.requireNonNull(dbUserName);
+        public Builder dbUserName(@Nullable String dbUserName) {
+            this.dbUserName = dbUserName;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder enforcementScope(String enforcementScope) {
-            this.enforcementScope = Objects.requireNonNull(enforcementScope);
+        public Builder enforcementScope(@Nullable String enforcementScope) {
+            this.enforcementScope = enforcementScope;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder securityPolicyId(String securityPolicyId) {
-            this.securityPolicyId = Objects.requireNonNull(securityPolicyId);
+        public Builder securityPolicyId(@Nullable String securityPolicyId) {
+            this.securityPolicyId = securityPolicyId;
             return this;
         }
         @CustomType.Setter
@@ -409,43 +411,43 @@ public final class GetSqlFirewallPolicyResult {
             return this;
         }
         @CustomType.Setter
-        public Builder sqlLevel(String sqlLevel) {
-            this.sqlLevel = Objects.requireNonNull(sqlLevel);
+        public Builder sqlLevel(@Nullable String sqlLevel) {
+            this.sqlLevel = sqlLevel;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+        public Builder status(@Nullable String status) {
+            this.status = status;
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+        public Builder systemTags(@Nullable Map<String,Object> systemTags) {
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
-        public Builder violationAction(String violationAction) {
-            this.violationAction = Objects.requireNonNull(violationAction);
+        public Builder violationAction(@Nullable String violationAction) {
+            this.violationAction = violationAction;
             return this;
         }
         @CustomType.Setter
-        public Builder violationAudit(String violationAudit) {
-            this.violationAudit = Objects.requireNonNull(violationAudit);
+        public Builder violationAudit(@Nullable String violationAudit) {
+            this.violationAudit = violationAudit;
             return this;
         }
         public GetSqlFirewallPolicyResult build() {

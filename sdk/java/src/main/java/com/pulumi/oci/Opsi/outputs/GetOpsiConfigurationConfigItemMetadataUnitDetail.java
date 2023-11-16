@@ -6,6 +6,8 @@ package com.pulumi.oci.Opsi.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetOpsiConfigurationConfigItemMetadataUnitDetail {
@@ -13,27 +15,27 @@ public final class GetOpsiConfigurationConfigItemMetadataUnitDetail {
      * @return User-friendly display name for the OPSI configuration. The name does not have to be unique.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Unit of configuration item.
      * 
      */
-    private String unit;
+    private @Nullable String unit;
 
     private GetOpsiConfigurationConfigItemMetadataUnitDetail() {}
     /**
      * @return User-friendly display name for the OPSI configuration. The name does not have to be unique.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Unit of configuration item.
      * 
      */
-    public String unit() {
-        return this.unit;
+    public Optional<String> unit() {
+        return Optional.ofNullable(this.unit);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetOpsiConfigurationConfigItemMetadataUnitDetail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String displayName;
-        private String unit;
+        private @Nullable String displayName;
+        private @Nullable String unit;
         public Builder() {}
         public Builder(GetOpsiConfigurationConfigItemMetadataUnitDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetOpsiConfigurationConfigItemMetadataUnitDetail {
         }
 
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder unit(String unit) {
-            this.unit = Objects.requireNonNull(unit);
+        public Builder unit(@Nullable String unit) {
+            this.unit = unit;
             return this;
         }
         public GetOpsiConfigurationConfigItemMetadataUnitDetail build() {

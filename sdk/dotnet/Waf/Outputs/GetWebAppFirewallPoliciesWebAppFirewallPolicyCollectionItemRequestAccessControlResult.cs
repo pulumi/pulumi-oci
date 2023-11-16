@@ -18,7 +18,7 @@ namespace Pulumi.Oci.Waf.Outputs
         /// * **ALLOW** continues execution of other modules and their rules.
         /// * **RETURN_HTTP_RESPONSE** terminates further execution of modules and rules and returns defined HTTP response.
         /// </summary>
-        public readonly string DefaultActionName;
+        public readonly string? DefaultActionName;
         /// <summary>
         /// Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
         /// </summary>
@@ -26,7 +26,7 @@ namespace Pulumi.Oci.Waf.Outputs
 
         [OutputConstructor]
         private GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlResult(
-            string defaultActionName,
+            string? defaultActionName,
 
             ImmutableArray<Outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlRuleResult> rules)
         {

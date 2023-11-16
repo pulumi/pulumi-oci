@@ -6,6 +6,8 @@ package com.pulumi.oci.Functions.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTime {
@@ -13,27 +15,27 @@ public final class GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTim
      * @return The frequency and month when maintenance occurs for the Fusion environment.
      * 
      */
-    private String beginTimesValue;
+    private @Nullable String beginTimesValue;
     /**
      * @return Determines if the maintenance schedule of the Fusion environment is inherited from the Fusion environment family.
      * 
      */
-    private String overrideType;
+    private @Nullable String overrideType;
 
     private GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTime() {}
     /**
      * @return The frequency and month when maintenance occurs for the Fusion environment.
      * 
      */
-    public String beginTimesValue() {
-        return this.beginTimesValue;
+    public Optional<String> beginTimesValue() {
+        return Optional.ofNullable(this.beginTimesValue);
     }
     /**
      * @return Determines if the maintenance schedule of the Fusion environment is inherited from the Fusion environment family.
      * 
      */
-    public String overrideType() {
-        return this.overrideType;
+    public Optional<String> overrideType() {
+        return Optional.ofNullable(this.overrideType);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTim
     }
     @CustomType.Builder
     public static final class Builder {
-        private String beginTimesValue;
-        private String overrideType;
+        private @Nullable String beginTimesValue;
+        private @Nullable String overrideType;
         public Builder() {}
         public Builder(GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTime defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTim
         }
 
         @CustomType.Setter
-        public Builder beginTimesValue(String beginTimesValue) {
-            this.beginTimesValue = Objects.requireNonNull(beginTimesValue);
+        public Builder beginTimesValue(@Nullable String beginTimesValue) {
+            this.beginTimesValue = beginTimesValue;
             return this;
         }
         @CustomType.Setter
-        public Builder overrideType(String overrideType) {
-            this.overrideType = Objects.requireNonNull(overrideType);
+        public Builder overrideType(@Nullable String overrideType) {
+            this.overrideType = overrideType;
             return this;
         }
         public GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTime build() {

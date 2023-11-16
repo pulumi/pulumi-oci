@@ -49,15 +49,12 @@ class GetNetworkFirewallPolicyMappedSecretResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Name of the secret.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -67,42 +64,27 @@ class GetNetworkFirewallPolicyMappedSecretResult:
 
     @property
     @pulumi.getter(name="parentResourceId")
-    def parent_resource_id(self) -> str:
-        """
-        OCID of the Network Firewall Policy this Mapped Secret belongs to.
-        """
+    def parent_resource_id(self) -> Optional[str]:
         return pulumi.get(self, "parent_resource_id")
 
     @property
     @pulumi.getter
-    def source(self) -> str:
-        """
-        Source of the secrets, where the secrets are stored.
-        """
+    def source(self) -> Optional[str]:
         return pulumi.get(self, "source")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        Type of the secrets mapped based on the policy.
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
     @property
     @pulumi.getter(name="vaultSecretId")
-    def vault_secret_id(self) -> str:
-        """
-        OCID for the Vault Secret to be used.
-        """
+    def vault_secret_id(self) -> Optional[str]:
         return pulumi.get(self, "vault_secret_id")
 
     @property
     @pulumi.getter(name="versionNumber")
-    def version_number(self) -> int:
-        """
-        Version number of the secret to be used.
-        """
+    def version_number(self) -> Optional[int]:
         return pulumi.get(self, "version_number")
 
 
@@ -126,13 +108,7 @@ def get_network_firewall_policy_mapped_secret(name: Optional[str] = None,
                                               network_firewall_policy_id: Optional[str] = None,
                                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNetworkFirewallPolicyMappedSecretResult:
     """
-    This data source provides details about a specific Network Firewall Policy Mapped Secret resource in Oracle Cloud Infrastructure Network Firewall service.
-
-    Get Mapped Secret by the given name in the context of network firewall policy.
-
-
-    :param str name: Name of the secret.
-    :param str network_firewall_policy_id: Unique Network Firewall Policy identifier
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['name'] = name
@@ -156,12 +132,6 @@ def get_network_firewall_policy_mapped_secret_output(name: Optional[pulumi.Input
                                                      network_firewall_policy_id: Optional[pulumi.Input[str]] = None,
                                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNetworkFirewallPolicyMappedSecretResult]:
     """
-    This data source provides details about a specific Network Firewall Policy Mapped Secret resource in Oracle Cloud Infrastructure Network Firewall service.
-
-    Get Mapped Secret by the given name in the context of network firewall policy.
-
-
-    :param str name: Name of the secret.
-    :param str network_firewall_policy_id: Unique Network Firewall Policy identifier
+    Use this data source to access information about an existing resource.
     """
     ...

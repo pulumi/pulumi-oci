@@ -70,33 +70,21 @@ class GetSoftwareSourcesResult:
     @property
     @pulumi.getter(name="archTypes")
     def arch_types(self) -> Optional[Sequence[str]]:
-        """
-        The architecture type supported by the software source.
-        """
         return pulumi.get(self, "arch_types")
 
     @property
     @pulumi.getter
     def availabilities(self) -> Optional[Sequence[str]]:
-        """
-        Possible availabilities of a software source.
-        """
         return pulumi.get(self, "availabilities")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
-        """
-        The OCID of the tenancy containing the software source.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        User friendly name.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -116,7 +104,7 @@ class GetSoftwareSourcesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -125,17 +113,11 @@ class GetSoftwareSourcesResult:
     @property
     @pulumi.getter(name="osFamilies")
     def os_families(self) -> Optional[Sequence[str]]:
-        """
-        The OS family the software source belongs to.
-        """
         return pulumi.get(self, "os_families")
 
     @property
     @pulumi.getter(name="softwareSourceCollections")
-    def software_source_collections(self) -> Sequence['outputs.GetSoftwareSourcesSoftwareSourceCollectionResult']:
-        """
-        The list of software_source_collection.
-        """
+    def software_source_collections(self) -> Optional[Sequence['outputs.GetSoftwareSourcesSoftwareSourceCollectionResult']]:
         return pulumi.get(self, "software_source_collections")
 
     @property
@@ -146,25 +128,16 @@ class GetSoftwareSourcesResult:
     @property
     @pulumi.getter(name="softwareSourceTypes")
     def software_source_types(self) -> Optional[Sequence[str]]:
-        """
-        Type of the software source.
-        """
         return pulumi.get(self, "software_source_types")
 
     @property
     @pulumi.getter
     def states(self) -> Optional[Sequence[str]]:
-        """
-        The current state of the software source.
-        """
         return pulumi.get(self, "states")
 
     @property
     @pulumi.getter(name="vendorName")
     def vendor_name(self) -> Optional[str]:
-        """
-        Name of the vendor providing the software source.
-        """
         return pulumi.get(self, "vendor_name")
 
 
@@ -204,42 +177,7 @@ def get_software_sources(arch_types: Optional[Sequence[str]] = None,
                          vendor_name: Optional[str] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSoftwareSourcesResult:
     """
-    This data source provides the list of Software Sources in Oracle Cloud Infrastructure Os Management Hub service.
-
-    Lists software sources that match the specified tenancy or software source OCID. Filter the list against a
-    variety of criteria including but not limited to its name, status, architecture, and OS family.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_software_sources = oci.OsManagementHub.get_software_sources(arch_types=var["software_source_arch_type"],
-        availabilities=var["software_source_availability"],
-        compartment_id=var["compartment_id"],
-        display_name=var["software_source_display_name"],
-        display_name_contains=var["software_source_display_name_contains"],
-        display_name_not_equal_tos=var["software_source_display_name_not_equal_to"],
-        os_families=var["software_source_os_family"],
-        software_source_id=oci_os_management_hub_software_source["test_software_source"]["id"],
-        software_source_types=var["software_source_software_source_type"],
-        states=var["software_source_state"],
-        vendor_name=var["software_source_vendor_name"])
-    ```
-
-
-    :param Sequence[str] arch_types: A filter to return only instances whose architecture type matches the given architecture.
-    :param Sequence[str] availabilities: The availabilities of the software source for a tenant.
-    :param str compartment_id: The OCID of the compartment that contains the resources to list.
-    :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
-    :param str display_name_contains: A filter to return resources that may partially match the given display name.
-    :param Sequence[str] display_name_not_equal_tos: A multi filter to return resources that do not contains the given display names.
-    :param Sequence[str] os_families: A filter to return only instances whose OS family type matches the given OS family.
-    :param str software_source_id: The OCID for the software source.
-    :param Sequence[str] software_source_types: The type of the software source.
-    :param Sequence[str] states: A filter to return only resources whose lifecycleState matches the given lifecycleStates.
-    :param str vendor_name: A filter to return only profiles that match the given vendorName.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['archTypes'] = arch_types
@@ -289,41 +227,6 @@ def get_software_sources_output(arch_types: Optional[pulumi.Input[Optional[Seque
                                 vendor_name: Optional[pulumi.Input[Optional[str]]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSoftwareSourcesResult]:
     """
-    This data source provides the list of Software Sources in Oracle Cloud Infrastructure Os Management Hub service.
-
-    Lists software sources that match the specified tenancy or software source OCID. Filter the list against a
-    variety of criteria including but not limited to its name, status, architecture, and OS family.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_software_sources = oci.OsManagementHub.get_software_sources(arch_types=var["software_source_arch_type"],
-        availabilities=var["software_source_availability"],
-        compartment_id=var["compartment_id"],
-        display_name=var["software_source_display_name"],
-        display_name_contains=var["software_source_display_name_contains"],
-        display_name_not_equal_tos=var["software_source_display_name_not_equal_to"],
-        os_families=var["software_source_os_family"],
-        software_source_id=oci_os_management_hub_software_source["test_software_source"]["id"],
-        software_source_types=var["software_source_software_source_type"],
-        states=var["software_source_state"],
-        vendor_name=var["software_source_vendor_name"])
-    ```
-
-
-    :param Sequence[str] arch_types: A filter to return only instances whose architecture type matches the given architecture.
-    :param Sequence[str] availabilities: The availabilities of the software source for a tenant.
-    :param str compartment_id: The OCID of the compartment that contains the resources to list.
-    :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
-    :param str display_name_contains: A filter to return resources that may partially match the given display name.
-    :param Sequence[str] display_name_not_equal_tos: A multi filter to return resources that do not contains the given display names.
-    :param Sequence[str] os_families: A filter to return only instances whose OS family type matches the given OS family.
-    :param str software_source_id: The OCID for the software source.
-    :param Sequence[str] software_source_types: The type of the software source.
-    :param Sequence[str] states: A filter to return only resources whose lifecycleState matches the given lifecycleStates.
-    :param str vendor_name: A filter to return only profiles that match the given vendorName.
+    Use this data source to access information about an existing resource.
     """
     ...

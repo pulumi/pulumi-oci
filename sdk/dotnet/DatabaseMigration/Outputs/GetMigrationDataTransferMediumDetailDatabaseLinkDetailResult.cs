@@ -16,7 +16,7 @@ namespace Pulumi.Oci.DatabaseMigration.Outputs
         /// <summary>
         /// Name of directory object in database
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// In lieu of a network database link, Oracle Cloud Infrastructure Object Storage bucket will be used to store Data Pump dump files for the migration. Additionally, it can be specified alongside a database link data transfer medium.
         /// </summary>
@@ -24,7 +24,7 @@ namespace Pulumi.Oci.DatabaseMigration.Outputs
 
         [OutputConstructor]
         private GetMigrationDataTransferMediumDetailDatabaseLinkDetailResult(
-            string name,
+            string? name,
 
             ImmutableArray<Outputs.GetMigrationDataTransferMediumDetailDatabaseLinkDetailWalletBucketResult> walletBuckets)
         {

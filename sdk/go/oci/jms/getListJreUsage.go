@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific List Jre Usage resource in Oracle Cloud Infrastructure Jms service.
@@ -79,7 +78,7 @@ type GetListJreUsageResult struct {
 	CompartmentId   *string `pulumi:"compartmentId"`
 	HostId          *string `pulumi:"hostId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A list of Java Runtimes.
 	Items []GetListJreUsageItem `pulumi:"items"`
 	// Upper bound of the specified time period filter. JMS provides a view of the data that is _per day_. The query uses only the date element of the parameter.
@@ -136,12 +135,6 @@ func (o GetListJreUsageResultOutput) ToGetListJreUsageResultOutputWithContext(ct
 	return o
 }
 
-func (o GetListJreUsageResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetListJreUsageResult] {
-	return pulumix.Output[GetListJreUsageResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetListJreUsageResultOutput) ApplicationId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetListJreUsageResult) *string { return v.ApplicationId }).(pulumi.StringPtrOutput)
 }
@@ -159,8 +152,8 @@ func (o GetListJreUsageResultOutput) HostId() pulumi.StringPtrOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetListJreUsageResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetListJreUsageResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetListJreUsageResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetListJreUsageResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A list of Java Runtimes.

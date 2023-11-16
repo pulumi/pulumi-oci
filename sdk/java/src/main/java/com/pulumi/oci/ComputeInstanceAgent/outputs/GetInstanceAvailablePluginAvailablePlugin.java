@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetInstanceAvailablePluginAvailablePlugin {
@@ -14,51 +16,51 @@ public final class GetInstanceAvailablePluginAvailablePlugin {
      * @return Is the plugin enabled or disabled by default
      * 
      */
-    private Boolean isEnabledByDefault;
+    private @Nullable Boolean isEnabledByDefault;
     /**
      * @return Is the plugin supported or not
      * 
      */
-    private Boolean isSupported;
+    private @Nullable Boolean isSupported;
     /**
      * @return The plugin name
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return A brief description of the plugin functionality
      * 
      */
-    private String summary;
+    private @Nullable String summary;
 
     private GetInstanceAvailablePluginAvailablePlugin() {}
     /**
      * @return Is the plugin enabled or disabled by default
      * 
      */
-    public Boolean isEnabledByDefault() {
-        return this.isEnabledByDefault;
+    public Optional<Boolean> isEnabledByDefault() {
+        return Optional.ofNullable(this.isEnabledByDefault);
     }
     /**
      * @return Is the plugin supported or not
      * 
      */
-    public Boolean isSupported() {
-        return this.isSupported;
+    public Optional<Boolean> isSupported() {
+        return Optional.ofNullable(this.isSupported);
     }
     /**
      * @return The plugin name
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return A brief description of the plugin functionality
      * 
      */
-    public String summary() {
-        return this.summary;
+    public Optional<String> summary() {
+        return Optional.ofNullable(this.summary);
     }
 
     public static Builder builder() {
@@ -70,10 +72,10 @@ public final class GetInstanceAvailablePluginAvailablePlugin {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Boolean isEnabledByDefault;
-        private Boolean isSupported;
-        private String name;
-        private String summary;
+        private @Nullable Boolean isEnabledByDefault;
+        private @Nullable Boolean isSupported;
+        private @Nullable String name;
+        private @Nullable String summary;
         public Builder() {}
         public Builder(GetInstanceAvailablePluginAvailablePlugin defaults) {
     	      Objects.requireNonNull(defaults);
@@ -84,23 +86,23 @@ public final class GetInstanceAvailablePluginAvailablePlugin {
         }
 
         @CustomType.Setter
-        public Builder isEnabledByDefault(Boolean isEnabledByDefault) {
-            this.isEnabledByDefault = Objects.requireNonNull(isEnabledByDefault);
+        public Builder isEnabledByDefault(@Nullable Boolean isEnabledByDefault) {
+            this.isEnabledByDefault = isEnabledByDefault;
             return this;
         }
         @CustomType.Setter
-        public Builder isSupported(Boolean isSupported) {
-            this.isSupported = Objects.requireNonNull(isSupported);
+        public Builder isSupported(@Nullable Boolean isSupported) {
+            this.isSupported = isSupported;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder summary(String summary) {
-            this.summary = Objects.requireNonNull(summary);
+        public Builder summary(@Nullable String summary) {
+            this.summary = summary;
             return this;
         }
         public GetInstanceAvailablePluginAvailablePlugin build() {

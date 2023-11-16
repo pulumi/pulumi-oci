@@ -47,48 +47,48 @@ export interface GetSubscriptionResult {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for the subscription.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * The time when this suscription was created.
      */
-    readonly createdTime: string;
+    readonly createdTime?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * The delivery policy of the subscription. Stored as a JSON string.
      */
-    readonly deliveryPolicy: string;
+    readonly deliveryPolicy?: string;
     /**
      * A locator that corresponds to the subscription protocol. For example, an email address for a subscription that uses the `EMAIL` protocol, or a URL for a subscription that uses an HTTP-based protocol.
      */
-    readonly endpoint: string;
+    readonly endpoint?: string;
     /**
      * For optimistic concurrency control. See `if-match`.
      */
-    readonly etag: string;
+    readonly etag?: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The protocol used for the subscription.
      */
-    readonly protocol: string;
+    readonly protocol?: string;
     /**
      * The lifecycle state of the subscription. The status of a new subscription is PENDING; when confirmed, the subscription status changes to ACTIVE.
      */
-    readonly state: string;
+    readonly state?: string;
     readonly subscriptionId: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated topic.
      */
-    readonly topicId: string;
+    readonly topicId?: string;
 }
 /**
  * This data source provides details about a specific Subscription resource in Oracle Cloud Infrastructure Notifications service.

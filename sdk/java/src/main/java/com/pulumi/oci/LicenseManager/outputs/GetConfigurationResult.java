@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetConfigurationResult {
@@ -19,18 +21,18 @@ public final class GetConfigurationResult {
      * @return The list of associated configuration email IDs.
      * 
      */
-    private List<String> emailIds;
-    private String id;
+    private @Nullable List<String> emailIds;
+    private @Nullable String id;
     /**
      * @return The time the configuration was created. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The time the configuration was updated. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
 
     private GetConfigurationResult() {}
     /**
@@ -45,24 +47,24 @@ public final class GetConfigurationResult {
      * 
      */
     public List<String> emailIds() {
-        return this.emailIds;
+        return this.emailIds == null ? List.of() : this.emailIds;
     }
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The time the configuration was created. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The time the configuration was updated. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
 
     public static Builder builder() {
@@ -75,10 +77,10 @@ public final class GetConfigurationResult {
     @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
-        private List<String> emailIds;
-        private String id;
-        private String timeCreated;
-        private String timeUpdated;
+        private @Nullable List<String> emailIds;
+        private @Nullable String id;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
         public Builder() {}
         public Builder(GetConfigurationResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -95,26 +97,26 @@ public final class GetConfigurationResult {
             return this;
         }
         @CustomType.Setter
-        public Builder emailIds(List<String> emailIds) {
-            this.emailIds = Objects.requireNonNull(emailIds);
+        public Builder emailIds(@Nullable List<String> emailIds) {
+            this.emailIds = emailIds;
             return this;
         }
         public Builder emailIds(String... emailIds) {
             return emailIds(List.of(emailIds));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetConfigurationResult build() {

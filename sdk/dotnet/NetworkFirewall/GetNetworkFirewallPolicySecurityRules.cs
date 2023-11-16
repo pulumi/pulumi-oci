@@ -156,7 +156,7 @@ namespace Pulumi.Oci.NetworkFirewall
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string NetworkFirewallPolicyId;
         public readonly int? SecurityRulePriorityOrder;
         /// <summary>
@@ -170,7 +170,7 @@ namespace Pulumi.Oci.NetworkFirewall
 
             ImmutableArray<Outputs.GetNetworkFirewallPolicySecurityRulesFilterResult> filters,
 
-            string id,
+            string? id,
 
             string networkFirewallPolicyId,
 

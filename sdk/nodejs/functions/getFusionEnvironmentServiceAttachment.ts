@@ -51,53 +51,53 @@ export interface GetFusionEnvironmentServiceAttachmentResult {
     /**
      * Compartment Identifier
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * Service Attachment Display name, can be renamed
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     readonly fusionEnvironmentId: string;
     /**
      * Unique identifier that is immutable on creation
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Whether this service is provisioned due to the customer being subscribed to a specific SKU
      */
-    readonly isSkuBased: boolean;
+    readonly isSkuBased?: boolean;
     readonly serviceAttachmentId: string;
     /**
      * The ID of the service instance created that can be used to identify this on the service control plane
      */
-    readonly serviceInstanceId: string;
+    readonly serviceInstanceId?: string;
     /**
      * Type of the serviceInstance.
      */
-    readonly serviceInstanceType: string;
+    readonly serviceInstanceType?: string;
     /**
      * Public URL
      */
-    readonly serviceUrl: string;
+    readonly serviceUrl?: string;
     /**
      * The current state of the ServiceInstance.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The time the the ServiceInstance was created. An RFC3339 formatted datetime string
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The time the ServiceInstance was updated. An RFC3339 formatted datetime string
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific Fusion Environment Service Attachment resource in Oracle Cloud Infrastructure Fusion Apps service.

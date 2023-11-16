@@ -74,9 +74,6 @@ class GetTargetAlertPolicyAssociationsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment that contains the policy.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -91,7 +88,7 @@ class GetTargetAlertPolicyAssociationsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -100,17 +97,11 @@ class GetTargetAlertPolicyAssociationsResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the target-alert policy association.
-        """
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="targetAlertPolicyAssociationCollections")
-    def target_alert_policy_association_collections(self) -> Sequence['outputs.GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionResult']:
-        """
-        The list of target_alert_policy_association_collection.
-        """
+    def target_alert_policy_association_collections(self) -> Optional[Sequence['outputs.GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionResult']]:
         return pulumi.get(self, "target_alert_policy_association_collections")
 
     @property
@@ -121,9 +112,6 @@ class GetTargetAlertPolicyAssociationsResult:
     @property
     @pulumi.getter(name="targetId")
     def target_id(self) -> Optional[str]:
-        """
-        The OCID of the target on which alert policy is to be applied.
-        """
         return pulumi.get(self, "target_id")
 
     @property
@@ -169,41 +157,7 @@ def get_target_alert_policy_associations(access_level: Optional[str] = None,
                                          time_created_less_than: Optional[str] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetTargetAlertPolicyAssociationsResult:
     """
-    This data source provides the list of Target Alert Policy Associations in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets a list of all target-alert policy associations.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_target_alert_policy_associations = oci.DataSafe.get_target_alert_policy_associations(compartment_id=var["compartment_id"],
-        access_level=var["target_alert_policy_association_access_level"],
-        alert_policy_id=oci_data_safe_alert_policy["test_alert_policy"]["id"],
-        compartment_id_in_subtree=var["target_alert_policy_association_compartment_id_in_subtree"],
-        state=var["target_alert_policy_association_state"],
-        target_alert_policy_association_id=oci_data_safe_target_alert_policy_association["test_target_alert_policy_association"]["id"],
-        target_id=oci_cloud_guard_target["test_target"]["id"],
-        time_created_greater_than_or_equal_to=var["target_alert_policy_association_time_created_greater_than_or_equal_to"],
-        time_created_less_than=var["target_alert_policy_association_time_created_less_than"])
-    ```
-
-
-    :param str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
-    :param str alert_policy_id: A filter to return policy by it's OCID.
-    :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
-    :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
-    :param str state: An optional filter to return only alert policies that have the given life-cycle state.
-    :param str target_alert_policy_association_id: A filter to return only items related to a specific target-alert policy association ID.
-    :param str target_id: A filter to return only items related to a specific target OCID.
-    :param str time_created_greater_than_or_equal_to: A filter to return only the resources that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after that date.
-           
-           **Example:** 2016-12-19T16:39:57.600Z
-    :param str time_created_less_than: Search for resources that were created before a specific date. Specifying this parameter corresponding `timeCreatedLessThan` parameter will retrieve all resources created before the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
-           
-           **Example:** 2016-12-19T16:39:57.600Z
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['accessLevel'] = access_level
@@ -247,40 +201,6 @@ def get_target_alert_policy_associations_output(access_level: Optional[pulumi.In
                                                 time_created_less_than: Optional[pulumi.Input[Optional[str]]] = None,
                                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetTargetAlertPolicyAssociationsResult]:
     """
-    This data source provides the list of Target Alert Policy Associations in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets a list of all target-alert policy associations.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_target_alert_policy_associations = oci.DataSafe.get_target_alert_policy_associations(compartment_id=var["compartment_id"],
-        access_level=var["target_alert_policy_association_access_level"],
-        alert_policy_id=oci_data_safe_alert_policy["test_alert_policy"]["id"],
-        compartment_id_in_subtree=var["target_alert_policy_association_compartment_id_in_subtree"],
-        state=var["target_alert_policy_association_state"],
-        target_alert_policy_association_id=oci_data_safe_target_alert_policy_association["test_target_alert_policy_association"]["id"],
-        target_id=oci_cloud_guard_target["test_target"]["id"],
-        time_created_greater_than_or_equal_to=var["target_alert_policy_association_time_created_greater_than_or_equal_to"],
-        time_created_less_than=var["target_alert_policy_association_time_created_less_than"])
-    ```
-
-
-    :param str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
-    :param str alert_policy_id: A filter to return policy by it's OCID.
-    :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
-    :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
-    :param str state: An optional filter to return only alert policies that have the given life-cycle state.
-    :param str target_alert_policy_association_id: A filter to return only items related to a specific target-alert policy association ID.
-    :param str target_id: A filter to return only items related to a specific target OCID.
-    :param str time_created_greater_than_or_equal_to: A filter to return only the resources that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after that date.
-           
-           **Example:** 2016-12-19T16:39:57.600Z
-    :param str time_created_less_than: Search for resources that were created before a specific date. Specifying this parameter corresponding `timeCreatedLessThan` parameter will retrieve all resources created before the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
-           
-           **Example:** 2016-12-19T16:39:57.600Z
+    Use this data source to access information about an existing resource.
     """
     ...

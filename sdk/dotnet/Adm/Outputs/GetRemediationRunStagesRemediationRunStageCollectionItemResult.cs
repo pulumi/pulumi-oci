@@ -16,11 +16,11 @@ namespace Pulumi.Oci.Adm.Outputs
         /// <summary>
         /// The Oracle Cloud identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the vulnerability audit.
         /// </summary>
-        public readonly string AuditId;
+        public readonly string? AuditId;
         /// <summary>
         /// The next type of stage in the remediation run.
         /// </summary>
-        public readonly string NextStageType;
+        public readonly string? NextStageType;
         /// <summary>
         /// Pipeline properties which result from the run of the verify stage.
         /// </summary>
@@ -28,7 +28,7 @@ namespace Pulumi.Oci.Adm.Outputs
         /// <summary>
         /// The previous type of stage in the remediation run.
         /// </summary>
-        public readonly string PreviousStageType;
+        public readonly string? PreviousStageType;
         /// <summary>
         /// Pull request properties from recommend stage of the remediation run.
         /// </summary>
@@ -36,63 +36,63 @@ namespace Pulumi.Oci.Adm.Outputs
         /// <summary>
         /// Count of recommended application dependencies to update.
         /// </summary>
-        public readonly int RecommendedUpdatesCount;
+        public readonly int? RecommendedUpdatesCount;
         /// <summary>
         /// Unique Remediation Run identifier path parameter.
         /// </summary>
-        public readonly string RemediationRunId;
+        public readonly string? RemediationRunId;
         /// <summary>
         /// A filter to return only Stages that match the specified status.
         /// </summary>
-        public readonly string Status;
+        public readonly string? Status;
         /// <summary>
         /// Information about the current step within the stage.
         /// </summary>
-        public readonly string Summary;
+        public readonly string? Summary;
         /// <summary>
         /// The creation date and time of the remediation run stage (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The date and time of the finish of the remediation run stage (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         /// </summary>
-        public readonly string TimeFinished;
+        public readonly string? TimeFinished;
         /// <summary>
         /// The date and time of the start of the remediation run stage (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         /// </summary>
-        public readonly string TimeStarted;
+        public readonly string? TimeStarted;
         /// <summary>
         /// A filter to return only Stages that match the specified type.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
 
         [OutputConstructor]
         private GetRemediationRunStagesRemediationRunStageCollectionItemResult(
-            string auditId,
+            string? auditId,
 
-            string nextStageType,
+            string? nextStageType,
 
             ImmutableArray<Outputs.GetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyResult> pipelineProperties,
 
-            string previousStageType,
+            string? previousStageType,
 
             ImmutableArray<Outputs.GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyResult> pullRequestProperties,
 
-            int recommendedUpdatesCount,
+            int? recommendedUpdatesCount,
 
-            string remediationRunId,
+            string? remediationRunId,
 
-            string status,
+            string? status,
 
-            string summary,
+            string? summary,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeFinished,
+            string? timeFinished,
 
-            string timeStarted,
+            string? timeStarted,
 
-            string type)
+            string? type)
         {
             AuditId = auditId;
             NextStageType = nextStageType;

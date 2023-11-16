@@ -38,7 +38,7 @@ class GetRepositoryAuthorResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -46,10 +46,7 @@ class GetRepositoryAuthorResult:
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetRepositoryAuthorItemResult']:
-        """
-        List of author objects.
-        """
+    def items(self) -> Optional[Sequence['outputs.GetRepositoryAuthorItemResult']]:
         return pulumi.get(self, "items")
 
     @property
@@ -79,23 +76,7 @@ def get_repository_author(ref_name: Optional[str] = None,
                           repository_id: Optional[str] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetRepositoryAuthorResult:
     """
-    This data source provides details about a specific Repository Author resource in Oracle Cloud Infrastructure Devops service.
-
-    Retrieve a list of all the authors.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_repository_author = oci.DevOps.get_repository_author(repository_id=oci_devops_repository["test_repository"]["id"],
-        ref_name=var["repository_author_ref_name"])
-    ```
-
-
-    :param str ref_name: A filter to return only resources that match the given reference name.
-    :param str repository_id: Unique repository identifier.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['refName'] = ref_name
@@ -115,22 +96,6 @@ def get_repository_author_output(ref_name: Optional[pulumi.Input[Optional[str]]]
                                  repository_id: Optional[pulumi.Input[str]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRepositoryAuthorResult]:
     """
-    This data source provides details about a specific Repository Author resource in Oracle Cloud Infrastructure Devops service.
-
-    Retrieve a list of all the authors.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_repository_author = oci.DevOps.get_repository_author(repository_id=oci_devops_repository["test_repository"]["id"],
-        ref_name=var["repository_author_ref_name"])
-    ```
-
-
-    :param str ref_name: A filter to return only resources that match the given reference name.
-    :param str repository_id: Unique repository identifier.
+    Use this data source to access information about an existing resource.
     """
     ...

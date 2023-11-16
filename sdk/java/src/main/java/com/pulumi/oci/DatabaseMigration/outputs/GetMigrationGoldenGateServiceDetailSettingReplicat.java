@@ -6,6 +6,8 @@ package com.pulumi.oci.DatabaseMigration.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMigrationGoldenGateServiceDetailSettingReplicat {
@@ -13,39 +15,39 @@ public final class GetMigrationGoldenGateServiceDetailSettingReplicat {
      * @return Number of threads used to read trail files (valid for Parallel Replicat)
      * 
      */
-    private Integer mapParallelism;
+    private @Nullable Integer mapParallelism;
     /**
      * @return Defines the range in which Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
      * 
      */
-    private Integer maxApplyParallelism;
+    private @Nullable Integer maxApplyParallelism;
     /**
      * @return Defines the range in which Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
      * 
      */
-    private Integer minApplyParallelism;
+    private @Nullable Integer minApplyParallelism;
 
     private GetMigrationGoldenGateServiceDetailSettingReplicat() {}
     /**
      * @return Number of threads used to read trail files (valid for Parallel Replicat)
      * 
      */
-    public Integer mapParallelism() {
-        return this.mapParallelism;
+    public Optional<Integer> mapParallelism() {
+        return Optional.ofNullable(this.mapParallelism);
     }
     /**
      * @return Defines the range in which Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
      * 
      */
-    public Integer maxApplyParallelism() {
-        return this.maxApplyParallelism;
+    public Optional<Integer> maxApplyParallelism() {
+        return Optional.ofNullable(this.maxApplyParallelism);
     }
     /**
      * @return Defines the range in which Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
      * 
      */
-    public Integer minApplyParallelism() {
-        return this.minApplyParallelism;
+    public Optional<Integer> minApplyParallelism() {
+        return Optional.ofNullable(this.minApplyParallelism);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetMigrationGoldenGateServiceDetailSettingReplicat {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer mapParallelism;
-        private Integer maxApplyParallelism;
-        private Integer minApplyParallelism;
+        private @Nullable Integer mapParallelism;
+        private @Nullable Integer maxApplyParallelism;
+        private @Nullable Integer minApplyParallelism;
         public Builder() {}
         public Builder(GetMigrationGoldenGateServiceDetailSettingReplicat defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetMigrationGoldenGateServiceDetailSettingReplicat {
         }
 
         @CustomType.Setter
-        public Builder mapParallelism(Integer mapParallelism) {
-            this.mapParallelism = Objects.requireNonNull(mapParallelism);
+        public Builder mapParallelism(@Nullable Integer mapParallelism) {
+            this.mapParallelism = mapParallelism;
             return this;
         }
         @CustomType.Setter
-        public Builder maxApplyParallelism(Integer maxApplyParallelism) {
-            this.maxApplyParallelism = Objects.requireNonNull(maxApplyParallelism);
+        public Builder maxApplyParallelism(@Nullable Integer maxApplyParallelism) {
+            this.maxApplyParallelism = maxApplyParallelism;
             return this;
         }
         @CustomType.Setter
-        public Builder minApplyParallelism(Integer minApplyParallelism) {
-            this.minApplyParallelism = Objects.requireNonNull(minApplyParallelism);
+        public Builder minApplyParallelism(@Nullable Integer minApplyParallelism) {
+            this.minApplyParallelism = minApplyParallelism;
             return this;
         }
         public GetMigrationGoldenGateServiceDetailSettingReplicat build() {

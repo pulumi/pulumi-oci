@@ -6,6 +6,8 @@ package com.pulumi.oci.DatabaseMigration.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMigrationGoldenGateServiceDetailGgsDeployment {
@@ -13,27 +15,27 @@ public final class GetMigrationGoldenGateServiceDetailGgsDeployment {
      * @return OCID of a GoldenGate Deployment
      * 
      */
-    private String deploymentId;
+    private @Nullable String deploymentId;
     /**
      * @return OCID of a VaultSecret containing the Admin Credentials for the GGS Deployment
      * 
      */
-    private String ggsAdminCredentialsSecretId;
+    private @Nullable String ggsAdminCredentialsSecretId;
 
     private GetMigrationGoldenGateServiceDetailGgsDeployment() {}
     /**
      * @return OCID of a GoldenGate Deployment
      * 
      */
-    public String deploymentId() {
-        return this.deploymentId;
+    public Optional<String> deploymentId() {
+        return Optional.ofNullable(this.deploymentId);
     }
     /**
      * @return OCID of a VaultSecret containing the Admin Credentials for the GGS Deployment
      * 
      */
-    public String ggsAdminCredentialsSecretId() {
-        return this.ggsAdminCredentialsSecretId;
+    public Optional<String> ggsAdminCredentialsSecretId() {
+        return Optional.ofNullable(this.ggsAdminCredentialsSecretId);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetMigrationGoldenGateServiceDetailGgsDeployment {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String deploymentId;
-        private String ggsAdminCredentialsSecretId;
+        private @Nullable String deploymentId;
+        private @Nullable String ggsAdminCredentialsSecretId;
         public Builder() {}
         public Builder(GetMigrationGoldenGateServiceDetailGgsDeployment defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetMigrationGoldenGateServiceDetailGgsDeployment {
         }
 
         @CustomType.Setter
-        public Builder deploymentId(String deploymentId) {
-            this.deploymentId = Objects.requireNonNull(deploymentId);
+        public Builder deploymentId(@Nullable String deploymentId) {
+            this.deploymentId = deploymentId;
             return this;
         }
         @CustomType.Setter
-        public Builder ggsAdminCredentialsSecretId(String ggsAdminCredentialsSecretId) {
-            this.ggsAdminCredentialsSecretId = Objects.requireNonNull(ggsAdminCredentialsSecretId);
+        public Builder ggsAdminCredentialsSecretId(@Nullable String ggsAdminCredentialsSecretId) {
+            this.ggsAdminCredentialsSecretId = ggsAdminCredentialsSecretId;
             return this;
         }
         public GetMigrationGoldenGateServiceDetailGgsDeployment build() {

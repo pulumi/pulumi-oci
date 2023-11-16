@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Catalog Type resource in Oracle Cloud Infrastructure Data Catalog service.
@@ -68,31 +67,31 @@ type GetCatalogTypeResult struct {
 	// The data catalog's OCID.
 	CatalogId string `pulumi:"catalogId"`
 	// Detailed description of the type.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Mapping type equivalence in the external system.
-	ExternalTypeName string   `pulumi:"externalTypeName"`
+	ExternalTypeName *string  `pulumi:"externalTypeName"`
 	Fields           []string `pulumi:"fields"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Indicates whether the type is approved for use as a classifying object.
-	IsApproved bool `pulumi:"isApproved"`
+	IsApproved *bool `pulumi:"isApproved"`
 	// Indicates whether the type is internal, making it unavailable for use by metadata elements.
-	IsInternal bool `pulumi:"isInternal"`
+	IsInternal *bool `pulumi:"isInternal"`
 	// Indicates whether the type can be used for tagging metadata elements.
-	IsTag bool `pulumi:"isTag"`
+	IsTag *bool `pulumi:"isTag"`
 	// Unique type key that is immutable.
-	Key string `pulumi:"key"`
+	Key *string `pulumi:"key"`
 	// The immutable name of the type.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// A map of arrays which defines the type specific properties, both required and optional. The map keys are category names and the values are arrays contiaing all property details. Every property is contained inside of a category. Most types have required properties within the "default" category. Example: `{ "properties": { "default": { "attributes:": [ { "name": "host", "type": "string", "isRequired": true, "isUpdatable": false }, ... ] } } }`
 	Properties map[string]interface{} `pulumi:"properties"`
 	// The current state of the type.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Indicates the category this type belongs to. For instance, data assets, connections.
-	TypeCategory string `pulumi:"typeCategory"`
-	TypeKey      string `pulumi:"typeKey"`
+	TypeCategory *string `pulumi:"typeCategory"`
+	TypeKey      string  `pulumi:"typeKey"`
 	// URI to the type instance in the API.
-	Uri string `pulumi:"uri"`
+	Uri *string `pulumi:"uri"`
 }
 
 func GetCatalogTypeOutput(ctx *pulumi.Context, args GetCatalogTypeOutputArgs, opts ...pulumi.InvokeOption) GetCatalogTypeResultOutput {
@@ -137,25 +136,19 @@ func (o GetCatalogTypeResultOutput) ToGetCatalogTypeResultOutputWithContext(ctx 
 	return o
 }
 
-func (o GetCatalogTypeResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetCatalogTypeResult] {
-	return pulumix.Output[GetCatalogTypeResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The data catalog's OCID.
 func (o GetCatalogTypeResultOutput) CatalogId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCatalogTypeResult) string { return v.CatalogId }).(pulumi.StringOutput)
 }
 
 // Detailed description of the type.
-func (o GetCatalogTypeResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCatalogTypeResult) string { return v.Description }).(pulumi.StringOutput)
+func (o GetCatalogTypeResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCatalogTypeResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Mapping type equivalence in the external system.
-func (o GetCatalogTypeResultOutput) ExternalTypeName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCatalogTypeResult) string { return v.ExternalTypeName }).(pulumi.StringOutput)
+func (o GetCatalogTypeResultOutput) ExternalTypeName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCatalogTypeResult) *string { return v.ExternalTypeName }).(pulumi.StringPtrOutput)
 }
 
 func (o GetCatalogTypeResultOutput) Fields() pulumi.StringArrayOutput {
@@ -163,33 +156,33 @@ func (o GetCatalogTypeResultOutput) Fields() pulumi.StringArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetCatalogTypeResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCatalogTypeResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetCatalogTypeResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCatalogTypeResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Indicates whether the type is approved for use as a classifying object.
-func (o GetCatalogTypeResultOutput) IsApproved() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetCatalogTypeResult) bool { return v.IsApproved }).(pulumi.BoolOutput)
+func (o GetCatalogTypeResultOutput) IsApproved() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetCatalogTypeResult) *bool { return v.IsApproved }).(pulumi.BoolPtrOutput)
 }
 
 // Indicates whether the type is internal, making it unavailable for use by metadata elements.
-func (o GetCatalogTypeResultOutput) IsInternal() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetCatalogTypeResult) bool { return v.IsInternal }).(pulumi.BoolOutput)
+func (o GetCatalogTypeResultOutput) IsInternal() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetCatalogTypeResult) *bool { return v.IsInternal }).(pulumi.BoolPtrOutput)
 }
 
 // Indicates whether the type can be used for tagging metadata elements.
-func (o GetCatalogTypeResultOutput) IsTag() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetCatalogTypeResult) bool { return v.IsTag }).(pulumi.BoolOutput)
+func (o GetCatalogTypeResultOutput) IsTag() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetCatalogTypeResult) *bool { return v.IsTag }).(pulumi.BoolPtrOutput)
 }
 
 // Unique type key that is immutable.
-func (o GetCatalogTypeResultOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCatalogTypeResult) string { return v.Key }).(pulumi.StringOutput)
+func (o GetCatalogTypeResultOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCatalogTypeResult) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
 // The immutable name of the type.
-func (o GetCatalogTypeResultOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCatalogTypeResult) string { return v.Name }).(pulumi.StringOutput)
+func (o GetCatalogTypeResultOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCatalogTypeResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // A map of arrays which defines the type specific properties, both required and optional. The map keys are category names and the values are arrays contiaing all property details. Every property is contained inside of a category. Most types have required properties within the "default" category. Example: `{ "properties": { "default": { "attributes:": [ { "name": "host", "type": "string", "isRequired": true, "isUpdatable": false }, ... ] } } }`
@@ -198,13 +191,13 @@ func (o GetCatalogTypeResultOutput) Properties() pulumi.MapOutput {
 }
 
 // The current state of the type.
-func (o GetCatalogTypeResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCatalogTypeResult) string { return v.State }).(pulumi.StringOutput)
+func (o GetCatalogTypeResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCatalogTypeResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Indicates the category this type belongs to. For instance, data assets, connections.
-func (o GetCatalogTypeResultOutput) TypeCategory() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCatalogTypeResult) string { return v.TypeCategory }).(pulumi.StringOutput)
+func (o GetCatalogTypeResultOutput) TypeCategory() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCatalogTypeResult) *string { return v.TypeCategory }).(pulumi.StringPtrOutput)
 }
 
 func (o GetCatalogTypeResultOutput) TypeKey() pulumi.StringOutput {
@@ -212,8 +205,8 @@ func (o GetCatalogTypeResultOutput) TypeKey() pulumi.StringOutput {
 }
 
 // URI to the type instance in the API.
-func (o GetCatalogTypeResultOutput) Uri() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCatalogTypeResult) string { return v.Uri }).(pulumi.StringOutput)
+func (o GetCatalogTypeResultOutput) Uri() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCatalogTypeResult) *string { return v.Uri }).(pulumi.StringPtrOutput)
 }
 
 func init() {

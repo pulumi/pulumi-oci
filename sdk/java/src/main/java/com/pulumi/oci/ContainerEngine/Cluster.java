@@ -44,28 +44,28 @@ public class Cluster extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="availableKubernetesUpgrades", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> availableKubernetesUpgrades;
+    private Output</* @Nullable */ List<String>> availableKubernetesUpgrades;
 
     /**
      * @return Available Kubernetes versions to which the clusters masters may be upgraded.
      * 
      */
-    public Output<List<String>> availableKubernetesUpgrades() {
-        return this.availableKubernetesUpgrades;
+    public Output<Optional<List<String>>> availableKubernetesUpgrades() {
+        return Codegen.optional(this.availableKubernetesUpgrades);
     }
     /**
      * Available CNIs and network options for existing and new node pools of the cluster
      * 
      */
     @Export(name="clusterPodNetworkOptions", refs={List.class,ClusterClusterPodNetworkOption.class}, tree="[0,1]")
-    private Output<List<ClusterClusterPodNetworkOption>> clusterPodNetworkOptions;
+    private Output</* @Nullable */ List<ClusterClusterPodNetworkOption>> clusterPodNetworkOptions;
 
     /**
      * @return Available CNIs and network options for existing and new node pools of the cluster
      * 
      */
-    public Output<List<ClusterClusterPodNetworkOption>> clusterPodNetworkOptions() {
-        return this.clusterPodNetworkOptions;
+    public Output<Optional<List<ClusterClusterPodNetworkOption>>> clusterPodNetworkOptions() {
+        return Codegen.optional(this.clusterPodNetworkOptions);
     }
     /**
      * The OCID of the compartment in which to create the cluster.
@@ -86,14 +86,14 @@ public class Cluster extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * The network configuration for access to the Cluster control plane.
@@ -114,56 +114,56 @@ public class Cluster extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="endpoints", refs={List.class,ClusterEndpoint.class}, tree="[0,1]")
-    private Output<List<ClusterEndpoint>> endpoints;
+    private Output</* @Nullable */ List<ClusterEndpoint>> endpoints;
 
     /**
      * @return Endpoints served up by the cluster masters.
      * 
      */
-    public Output<List<ClusterEndpoint>> endpoints() {
-        return this.endpoints;
+    public Output<Optional<List<ClusterEndpoint>>> endpoints() {
+        return Codegen.optional(this.endpoints);
     }
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * (Updatable) The image verification policy for signature validation. Once a policy is created and enabled with one or more kms keys, the policy will ensure all images deployed has been signed with the key(s) attached to the policy.
      * 
      */
     @Export(name="imagePolicyConfig", refs={ClusterImagePolicyConfig.class}, tree="[0]")
-    private Output<ClusterImagePolicyConfig> imagePolicyConfig;
+    private Output</* @Nullable */ ClusterImagePolicyConfig> imagePolicyConfig;
 
     /**
      * @return (Updatable) The image verification policy for signature validation. Once a policy is created and enabled with one or more kms keys, the policy will ensure all images deployed has been signed with the key(s) attached to the policy.
      * 
      */
-    public Output<ClusterImagePolicyConfig> imagePolicyConfig() {
-        return this.imagePolicyConfig;
+    public Output<Optional<ClusterImagePolicyConfig>> imagePolicyConfig() {
+        return Codegen.optional(this.imagePolicyConfig);
     }
     /**
      * The OCID of the KMS key to be used as the master encryption key for Kubernetes secret encryption. When used, `kubernetesVersion` must be at least `v1.13.0`.
      * 
      */
     @Export(name="kmsKeyId", refs={String.class}, tree="[0]")
-    private Output<String> kmsKeyId;
+    private Output</* @Nullable */ String> kmsKeyId;
 
     /**
      * @return The OCID of the KMS key to be used as the master encryption key for Kubernetes secret encryption. When used, `kubernetesVersion` must be at least `v1.13.0`.
      * 
      */
-    public Output<String> kmsKeyId() {
-        return this.kmsKeyId;
+    public Output<Optional<String>> kmsKeyId() {
+        return Codegen.optional(this.kmsKeyId);
     }
     /**
      * (Updatable) The version of Kubernetes to install into the cluster masters.
@@ -184,28 +184,28 @@ public class Cluster extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return Details about the state of the cluster masters.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * Metadata about the cluster.
      * 
      */
     @Export(name="metadatas", refs={List.class,ClusterMetadata.class}, tree="[0,1]")
-    private Output<List<ClusterMetadata>> metadatas;
+    private Output</* @Nullable */ List<ClusterMetadata>> metadatas;
 
     /**
      * @return Metadata about the cluster.
      * 
      */
-    public Output<List<ClusterMetadata>> metadatas() {
-        return this.metadatas;
+    public Output<Optional<List<ClusterMetadata>>> metadatas() {
+        return Codegen.optional(this.metadatas);
     }
     /**
      * (Updatable) The name of the cluster. Avoid entering confidential information.
@@ -226,42 +226,42 @@ public class Cluster extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="options", refs={ClusterOptions.class}, tree="[0]")
-    private Output<ClusterOptions> options;
+    private Output</* @Nullable */ ClusterOptions> options;
 
     /**
      * @return (Updatable) Optional attributes for the cluster.
      * 
      */
-    public Output<ClusterOptions> options() {
-        return this.options;
+    public Output<Optional<ClusterOptions>> options() {
+        return Codegen.optional(this.options);
     }
     /**
      * The state of the cluster masters.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The state of the cluster masters.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * (Updatable) Type of cluster
      * 
      */
     @Export(name="type", refs={String.class}, tree="[0]")
-    private Output<String> type;
+    private Output</* @Nullable */ String> type;
 
     /**
      * @return (Updatable) Type of cluster
      * 
      */
-    public Output<String> type() {
-        return this.type;
+    public Output<Optional<String>> type() {
+        return Codegen.optional(this.type);
     }
     /**
      * The OCID of the virtual cloud network (VCN) in which to create the cluster.

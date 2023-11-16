@@ -67,66 +67,42 @@ class GetSecurityZoneResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment for the security zone
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        The security zone's description
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The security zone's name
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        Unique identifier that is immutable on creation
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="inheritedByCompartments")
-    def inherited_by_compartments(self) -> Sequence[str]:
-        """
-        List of inherited compartments
-        """
+    def inherited_by_compartments(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "inherited_by_compartments")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A message describing the current state in more detail. For example, this can be used to provide actionable information for a zone in the `Failed` state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
@@ -136,42 +112,27 @@ class GetSecurityZoneResult:
 
     @property
     @pulumi.getter(name="securityZoneRecipeId")
-    def security_zone_recipe_id(self) -> str:
-        """
-        The OCID of the recipe (`SecurityRecipe`) for the security zone
-        """
+    def security_zone_recipe_id(self) -> Optional[str]:
         return pulumi.get(self, "security_zone_recipe_id")
 
     @property
     @pulumi.getter(name="securityZoneTargetId")
-    def security_zone_target_id(self) -> str:
-        """
-        The OCID of the target associated with the security zone
-        """
+    def security_zone_target_id(self) -> Optional[str]:
         return pulumi.get(self, "security_zone_target_id")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the security zone
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the security zone was created. An RFC3339 formatted datetime string.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the security zone was last updated. An RFC3339 formatted datetime string.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -200,21 +161,7 @@ class AwaitableGetSecurityZoneResult(GetSecurityZoneResult):
 def get_security_zone(security_zone_id: Optional[str] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSecurityZoneResult:
     """
-    This data source provides details about a specific Security Zone resource in Oracle Cloud Infrastructure Cloud Guard service.
-
-    Gets a security zone by its identifier. A security zone is associated with a security zone recipe and enforces all security zone policies in the recipe. Any actions in the zone's compartments that violate a policy are denied.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_security_zone = oci.CloudGuard.get_security_zone(security_zone_id=oci_cloud_guard_security_zone["test_security_zone"]["id"])
-    ```
-
-
-    :param str security_zone_id: The unique identifier of the security zone (`SecurityZone`)
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['securityZoneId'] = security_zone_id
@@ -242,20 +189,6 @@ def get_security_zone(security_zone_id: Optional[str] = None,
 def get_security_zone_output(security_zone_id: Optional[pulumi.Input[str]] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSecurityZoneResult]:
     """
-    This data source provides details about a specific Security Zone resource in Oracle Cloud Infrastructure Cloud Guard service.
-
-    Gets a security zone by its identifier. A security zone is associated with a security zone recipe and enforces all security zone policies in the recipe. Any actions in the zone's compartments that violate a policy are denied.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_security_zone = oci.CloudGuard.get_security_zone(security_zone_id=oci_cloud_guard_security_zone["test_security_zone"]["id"])
-    ```
-
-
-    :param str security_zone_id: The unique identifier of the security zone (`SecurityZone`)
+    Use this data source to access information about an existing resource.
     """
     ...

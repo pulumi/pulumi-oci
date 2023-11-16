@@ -11,6 +11,8 @@ import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSoftwareSourceSoftwarePackageResult {
@@ -18,164 +20,164 @@ public final class GetSoftwareSourceSoftwarePackageResult {
      * @return The architecture for which this software was built
      * 
      */
-    private String architecture;
+    private @Nullable String architecture;
     /**
      * @return Checksum of the file.
      * 
      */
-    private String checksum;
+    private @Nullable String checksum;
     /**
      * @return Type of the checksum.
      * 
      */
-    private String checksumType;
+    private @Nullable String checksumType;
     /**
      * @return List of dependencies for the software package.
      * 
      */
-    private List<GetSoftwareSourceSoftwarePackageDependency> dependencies;
+    private @Nullable List<GetSoftwareSourceSoftwarePackageDependency> dependencies;
     /**
      * @return Software source description.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return Software source name.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return List of files for the software package.
      * 
      */
-    private List<GetSoftwareSourceSoftwarePackageFile> files;
+    private @Nullable List<GetSoftwareSourceSoftwarePackageFile> files;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Indicates whether this package is the latest version.
      * 
      */
-    private Boolean isLatest;
+    private @Nullable Boolean isLatest;
     /**
      * @return Date of the last update to the package.
      * 
      */
-    private String lastModifiedDate;
+    private @Nullable String lastModifiedDate;
     /**
      * @return Unique identifier for the package. NOTE - This is not an OCID.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return Size of the package in bytes.
      * 
      */
-    private String sizeInBytes;
+    private @Nullable String sizeInBytes;
     private String softwarePackageName;
     private String softwareSourceId;
     /**
      * @return List of software sources that provide the software package.
      * 
      */
-    private List<GetSoftwareSourceSoftwarePackageSoftwareSource> softwareSources;
+    private @Nullable List<GetSoftwareSourceSoftwarePackageSoftwareSource> softwareSources;
     /**
      * @return Type of the package.
      * 
      */
-    private String type;
+    private @Nullable String type;
     /**
      * @return Version of the package.
      * 
      */
-    private String version;
+    private @Nullable String version;
 
     private GetSoftwareSourceSoftwarePackageResult() {}
     /**
      * @return The architecture for which this software was built
      * 
      */
-    public String architecture() {
-        return this.architecture;
+    public Optional<String> architecture() {
+        return Optional.ofNullable(this.architecture);
     }
     /**
      * @return Checksum of the file.
      * 
      */
-    public String checksum() {
-        return this.checksum;
+    public Optional<String> checksum() {
+        return Optional.ofNullable(this.checksum);
     }
     /**
      * @return Type of the checksum.
      * 
      */
-    public String checksumType() {
-        return this.checksumType;
+    public Optional<String> checksumType() {
+        return Optional.ofNullable(this.checksumType);
     }
     /**
      * @return List of dependencies for the software package.
      * 
      */
     public List<GetSoftwareSourceSoftwarePackageDependency> dependencies() {
-        return this.dependencies;
+        return this.dependencies == null ? List.of() : this.dependencies;
     }
     /**
      * @return Software source description.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return Software source name.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return List of files for the software package.
      * 
      */
     public List<GetSoftwareSourceSoftwarePackageFile> files() {
-        return this.files;
+        return this.files == null ? List.of() : this.files;
     }
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Indicates whether this package is the latest version.
      * 
      */
-    public Boolean isLatest() {
-        return this.isLatest;
+    public Optional<Boolean> isLatest() {
+        return Optional.ofNullable(this.isLatest);
     }
     /**
      * @return Date of the last update to the package.
      * 
      */
-    public String lastModifiedDate() {
-        return this.lastModifiedDate;
+    public Optional<String> lastModifiedDate() {
+        return Optional.ofNullable(this.lastModifiedDate);
     }
     /**
      * @return Unique identifier for the package. NOTE - This is not an OCID.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return Size of the package in bytes.
      * 
      */
-    public String sizeInBytes() {
-        return this.sizeInBytes;
+    public Optional<String> sizeInBytes() {
+        return Optional.ofNullable(this.sizeInBytes);
     }
     public String softwarePackageName() {
         return this.softwarePackageName;
@@ -188,21 +190,21 @@ public final class GetSoftwareSourceSoftwarePackageResult {
      * 
      */
     public List<GetSoftwareSourceSoftwarePackageSoftwareSource> softwareSources() {
-        return this.softwareSources;
+        return this.softwareSources == null ? List.of() : this.softwareSources;
     }
     /**
      * @return Type of the package.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
     /**
      * @return Version of the package.
      * 
      */
-    public String version() {
-        return this.version;
+    public Optional<String> version() {
+        return Optional.ofNullable(this.version);
     }
 
     public static Builder builder() {
@@ -214,23 +216,23 @@ public final class GetSoftwareSourceSoftwarePackageResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String architecture;
-        private String checksum;
-        private String checksumType;
-        private List<GetSoftwareSourceSoftwarePackageDependency> dependencies;
-        private String description;
-        private String displayName;
-        private List<GetSoftwareSourceSoftwarePackageFile> files;
-        private String id;
-        private Boolean isLatest;
-        private String lastModifiedDate;
-        private String name;
-        private String sizeInBytes;
+        private @Nullable String architecture;
+        private @Nullable String checksum;
+        private @Nullable String checksumType;
+        private @Nullable List<GetSoftwareSourceSoftwarePackageDependency> dependencies;
+        private @Nullable String description;
+        private @Nullable String displayName;
+        private @Nullable List<GetSoftwareSourceSoftwarePackageFile> files;
+        private @Nullable String id;
+        private @Nullable Boolean isLatest;
+        private @Nullable String lastModifiedDate;
+        private @Nullable String name;
+        private @Nullable String sizeInBytes;
         private String softwarePackageName;
         private String softwareSourceId;
-        private List<GetSoftwareSourceSoftwarePackageSoftwareSource> softwareSources;
-        private String type;
-        private String version;
+        private @Nullable List<GetSoftwareSourceSoftwarePackageSoftwareSource> softwareSources;
+        private @Nullable String type;
+        private @Nullable String version;
         public Builder() {}
         public Builder(GetSoftwareSourceSoftwarePackageResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -254,69 +256,69 @@ public final class GetSoftwareSourceSoftwarePackageResult {
         }
 
         @CustomType.Setter
-        public Builder architecture(String architecture) {
-            this.architecture = Objects.requireNonNull(architecture);
+        public Builder architecture(@Nullable String architecture) {
+            this.architecture = architecture;
             return this;
         }
         @CustomType.Setter
-        public Builder checksum(String checksum) {
-            this.checksum = Objects.requireNonNull(checksum);
+        public Builder checksum(@Nullable String checksum) {
+            this.checksum = checksum;
             return this;
         }
         @CustomType.Setter
-        public Builder checksumType(String checksumType) {
-            this.checksumType = Objects.requireNonNull(checksumType);
+        public Builder checksumType(@Nullable String checksumType) {
+            this.checksumType = checksumType;
             return this;
         }
         @CustomType.Setter
-        public Builder dependencies(List<GetSoftwareSourceSoftwarePackageDependency> dependencies) {
-            this.dependencies = Objects.requireNonNull(dependencies);
+        public Builder dependencies(@Nullable List<GetSoftwareSourceSoftwarePackageDependency> dependencies) {
+            this.dependencies = dependencies;
             return this;
         }
         public Builder dependencies(GetSoftwareSourceSoftwarePackageDependency... dependencies) {
             return dependencies(List.of(dependencies));
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder files(List<GetSoftwareSourceSoftwarePackageFile> files) {
-            this.files = Objects.requireNonNull(files);
+        public Builder files(@Nullable List<GetSoftwareSourceSoftwarePackageFile> files) {
+            this.files = files;
             return this;
         }
         public Builder files(GetSoftwareSourceSoftwarePackageFile... files) {
             return files(List.of(files));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder isLatest(Boolean isLatest) {
-            this.isLatest = Objects.requireNonNull(isLatest);
+        public Builder isLatest(@Nullable Boolean isLatest) {
+            this.isLatest = isLatest;
             return this;
         }
         @CustomType.Setter
-        public Builder lastModifiedDate(String lastModifiedDate) {
-            this.lastModifiedDate = Objects.requireNonNull(lastModifiedDate);
+        public Builder lastModifiedDate(@Nullable String lastModifiedDate) {
+            this.lastModifiedDate = lastModifiedDate;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder sizeInBytes(String sizeInBytes) {
-            this.sizeInBytes = Objects.requireNonNull(sizeInBytes);
+        public Builder sizeInBytes(@Nullable String sizeInBytes) {
+            this.sizeInBytes = sizeInBytes;
             return this;
         }
         @CustomType.Setter
@@ -330,21 +332,21 @@ public final class GetSoftwareSourceSoftwarePackageResult {
             return this;
         }
         @CustomType.Setter
-        public Builder softwareSources(List<GetSoftwareSourceSoftwarePackageSoftwareSource> softwareSources) {
-            this.softwareSources = Objects.requireNonNull(softwareSources);
+        public Builder softwareSources(@Nullable List<GetSoftwareSourceSoftwarePackageSoftwareSource> softwareSources) {
+            this.softwareSources = softwareSources;
             return this;
         }
         public Builder softwareSources(GetSoftwareSourceSoftwarePackageSoftwareSource... softwareSources) {
             return softwareSources(List.of(softwareSources));
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         @CustomType.Setter
-        public Builder version(String version) {
-            this.version = Objects.requireNonNull(version);
+        public Builder version(@Nullable String version) {
+            this.version = version;
             return this;
         }
         public GetSoftwareSourceSoftwarePackageResult build() {

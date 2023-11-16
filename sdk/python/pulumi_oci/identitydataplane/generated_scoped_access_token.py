@@ -18,12 +18,6 @@ class GeneratedScopedAccessTokenArgs:
                  scope: pulumi.Input[str]):
         """
         The set of arguments for constructing a GeneratedScopedAccessToken resource.
-        :param pulumi.Input[str] public_key: A temporary public key, owned by the service. The service also owns the corresponding private key. This public key will by put inside the security token by the auth service after successful validation of the certificate.
-        :param pulumi.Input[str] scope: Scope definition for the scoped access token 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "public_key", public_key)
         pulumi.set(__self__, "scope", scope)
@@ -31,9 +25,6 @@ class GeneratedScopedAccessTokenArgs:
     @property
     @pulumi.getter(name="publicKey")
     def public_key(self) -> pulumi.Input[str]:
-        """
-        A temporary public key, owned by the service. The service also owns the corresponding private key. This public key will by put inside the security token by the auth service after successful validation of the certificate.
-        """
         return pulumi.get(self, "public_key")
 
     @public_key.setter
@@ -43,13 +34,6 @@ class GeneratedScopedAccessTokenArgs:
     @property
     @pulumi.getter
     def scope(self) -> pulumi.Input[str]:
-        """
-        Scope definition for the scoped access token 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "scope")
 
     @scope.setter
@@ -65,13 +49,6 @@ class _GeneratedScopedAccessTokenState:
                  token: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering GeneratedScopedAccessToken resources.
-        :param pulumi.Input[str] public_key: A temporary public key, owned by the service. The service also owns the corresponding private key. This public key will by put inside the security token by the auth service after successful validation of the certificate.
-        :param pulumi.Input[str] scope: Scope definition for the scoped access token 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] token: The security token, signed by auth service
         """
         if public_key is not None:
             pulumi.set(__self__, "public_key", public_key)
@@ -83,9 +60,6 @@ class _GeneratedScopedAccessTokenState:
     @property
     @pulumi.getter(name="publicKey")
     def public_key(self) -> Optional[pulumi.Input[str]]:
-        """
-        A temporary public key, owned by the service. The service also owns the corresponding private key. This public key will by put inside the security token by the auth service after successful validation of the certificate.
-        """
         return pulumi.get(self, "public_key")
 
     @public_key.setter
@@ -95,13 +69,6 @@ class _GeneratedScopedAccessTokenState:
     @property
     @pulumi.getter
     def scope(self) -> Optional[pulumi.Input[str]]:
-        """
-        Scope definition for the scoped access token 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "scope")
 
     @scope.setter
@@ -111,9 +78,6 @@ class _GeneratedScopedAccessTokenState:
     @property
     @pulumi.getter
     def token(self) -> Optional[pulumi.Input[str]]:
-        """
-        The security token, signed by auth service
-        """
         return pulumi.get(self, "token")
 
     @token.setter
@@ -130,37 +94,9 @@ class GeneratedScopedAccessToken(pulumi.CustomResource):
                  scope: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Generate Scoped Access Token resource in Oracle Cloud Infrastructure Identity Data Plane service.
-
-        Based on the calling principal and the input payload, derive the claims and create a security token.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_generate_scoped_access_token = oci.identity_data_plane.GeneratedScopedAccessToken("testGenerateScopedAccessToken",
-            public_key=var["generate_scoped_access_token_public_key"],
-            scope=var["generate_scoped_access_token_scope"])
-        ```
-
-        ## Import
-
-        GenerateScopedAccessToken can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:IdentityDataPlane/generatedScopedAccessToken:GeneratedScopedAccessToken test_generate_scoped_access_token "id"
-        ```
-
+        Create a GeneratedScopedAccessToken resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] public_key: A temporary public key, owned by the service. The service also owns the corresponding private key. This public key will by put inside the security token by the auth service after successful validation of the certificate.
-        :param pulumi.Input[str] scope: Scope definition for the scoped access token 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -169,29 +105,7 @@ class GeneratedScopedAccessToken(pulumi.CustomResource):
                  args: GeneratedScopedAccessTokenArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Generate Scoped Access Token resource in Oracle Cloud Infrastructure Identity Data Plane service.
-
-        Based on the calling principal and the input payload, derive the claims and create a security token.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_generate_scoped_access_token = oci.identity_data_plane.GeneratedScopedAccessToken("testGenerateScopedAccessToken",
-            public_key=var["generate_scoped_access_token_public_key"],
-            scope=var["generate_scoped_access_token_scope"])
-        ```
-
-        ## Import
-
-        GenerateScopedAccessToken can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:IdentityDataPlane/generatedScopedAccessToken:GeneratedScopedAccessToken test_generate_scoped_access_token "id"
-        ```
-
+        Create a GeneratedScopedAccessToken resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param GeneratedScopedAccessTokenArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -245,13 +159,6 @@ class GeneratedScopedAccessToken(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] public_key: A temporary public key, owned by the service. The service also owns the corresponding private key. This public key will by put inside the security token by the auth service after successful validation of the certificate.
-        :param pulumi.Input[str] scope: Scope definition for the scoped access token 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] token: The security token, signed by auth service
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -265,28 +172,15 @@ class GeneratedScopedAccessToken(pulumi.CustomResource):
     @property
     @pulumi.getter(name="publicKey")
     def public_key(self) -> pulumi.Output[str]:
-        """
-        A temporary public key, owned by the service. The service also owns the corresponding private key. This public key will by put inside the security token by the auth service after successful validation of the certificate.
-        """
         return pulumi.get(self, "public_key")
 
     @property
     @pulumi.getter
     def scope(self) -> pulumi.Output[str]:
-        """
-        Scope definition for the scoped access token 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "scope")
 
     @property
     @pulumi.getter
-    def token(self) -> pulumi.Output[str]:
-        """
-        The security token, signed by auth service
-        """
+    def token(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "token")
 

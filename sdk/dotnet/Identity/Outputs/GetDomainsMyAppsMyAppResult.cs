@@ -16,11 +16,11 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// Type of the Acccount
         /// </summary>
-        public readonly string AccountType;
+        public readonly string? AccountType;
         /// <summary>
         /// If true, this App is able to participate in runtime services, such as automatic-login, OAuth, and SAML. If false, all runtime services are disabled for this App, and only administrative operations can be performed.
         /// </summary>
-        public readonly bool Active;
+        public readonly bool? Active;
         /// <summary>
         /// Application on which the account is based
         /// </summary>
@@ -28,23 +28,23 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
         /// </summary>
-        public readonly string CompartmentOcid;
+        public readonly string? CompartmentOcid;
         /// <summary>
         /// A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
         /// </summary>
-        public readonly bool DeleteInProgress;
+        public readonly bool? DeleteInProgress;
         /// <summary>
         /// Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
         /// </summary>
-        public readonly string DomainOcid;
+        public readonly string? DomainOcid;
         /// <summary>
         /// If true, this account has been marked as a favorite of the User who owns it.
         /// </summary>
-        public readonly bool Favorite;
+        public readonly bool? Favorite;
         /// <summary>
         /// Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The User or App who created the Resource
         /// </summary>
@@ -56,7 +56,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// The release number when the resource was upgraded.
         /// </summary>
-        public readonly string IdcsLastUpgradedInRelease;
+        public readonly string? IdcsLastUpgradedInRelease;
         /// <summary>
         /// Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
         /// </summary>
@@ -64,15 +64,15 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// If true, indicates that this managed object is an account, which is an identity that represents a user in the context of a specific application.
         /// </summary>
-        public readonly bool IsAccount;
+        public readonly bool? IsAccount;
         /// <summary>
         /// Last accessed timestamp of an application
         /// </summary>
-        public readonly string LastAccessed;
+        public readonly string? LastAccessed;
         /// <summary>
         /// The URL that will be used to launch the application.
         /// </summary>
-        public readonly string LaunchUrl;
+        public readonly string? LaunchUrl;
         /// <summary>
         /// A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
         /// </summary>
@@ -80,11 +80,11 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// Name of the Account
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
         /// </summary>
-        public readonly string Ocid;
+        public readonly string? Ocid;
         /// <summary>
         /// Owning user of the account
         /// </summary>
@@ -100,11 +100,11 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
         /// </summary>
-        public readonly string TenancyOcid;
+        public readonly string? TenancyOcid;
         /// <summary>
         /// Unique identifier of the Account.
         /// </summary>
-        public readonly string Uid;
+        public readonly string? Uid;
         /// <summary>
         /// The UserWalletArtifact that contains the credentials that the system will use in performing Secure Form-Fill to log the User into this application.
         /// </summary>
@@ -112,41 +112,41 @@ namespace Pulumi.Oci.Identity.Outputs
 
         [OutputConstructor]
         private GetDomainsMyAppsMyAppResult(
-            string accountType,
+            string? accountType,
 
-            bool active,
+            bool? active,
 
             ImmutableArray<Outputs.GetDomainsMyAppsMyAppAppResult> apps,
 
-            string compartmentOcid,
+            string? compartmentOcid,
 
-            bool deleteInProgress,
+            bool? deleteInProgress,
 
-            string domainOcid,
+            string? domainOcid,
 
-            bool favorite,
+            bool? favorite,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetDomainsMyAppsMyAppIdcsCreatedByResult> idcsCreatedBies,
 
             ImmutableArray<Outputs.GetDomainsMyAppsMyAppIdcsLastModifiedByResult> idcsLastModifiedBies,
 
-            string idcsLastUpgradedInRelease,
+            string? idcsLastUpgradedInRelease,
 
             ImmutableArray<string> idcsPreventedOperations,
 
-            bool isAccount,
+            bool? isAccount,
 
-            string lastAccessed,
+            string? lastAccessed,
 
-            string launchUrl,
+            string? launchUrl,
 
             ImmutableArray<Outputs.GetDomainsMyAppsMyAppMetaResult> metas,
 
-            string name,
+            string? name,
 
-            string ocid,
+            string? ocid,
 
             ImmutableArray<Outputs.GetDomainsMyAppsMyAppOwnerResult> owners,
 
@@ -154,9 +154,9 @@ namespace Pulumi.Oci.Identity.Outputs
 
             ImmutableArray<Outputs.GetDomainsMyAppsMyAppTagResult> tags,
 
-            string tenancyOcid,
+            string? tenancyOcid,
 
-            string uid,
+            string? uid,
 
             ImmutableArray<Outputs.GetDomainsMyAppsMyAppUserWalletArtifactResult> userWalletArtifacts)
         {

@@ -49,7 +49,7 @@ class GetBdsInstancePatchesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -57,10 +57,7 @@ class GetBdsInstancePatchesResult:
 
     @property
     @pulumi.getter
-    def patches(self) -> Sequence['outputs.GetBdsInstancePatchesPatchResult']:
-        """
-        The list of patches.
-        """
+    def patches(self) -> Optional[Sequence['outputs.GetBdsInstancePatchesPatchResult']]:
         return pulumi.get(self, "patches")
 
 
@@ -80,21 +77,7 @@ def get_bds_instance_patches(bds_instance_id: Optional[str] = None,
                              filters: Optional[Sequence[pulumi.InputType['GetBdsInstancePatchesFilterArgs']]] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetBdsInstancePatchesResult:
     """
-    This data source provides the list of Bds Instance Patches in Oracle Cloud Infrastructure Big Data Service service.
-
-    List all the available patches for this cluster.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_bds_instance_patches = oci.BigDataService.get_bds_instance_patches(bds_instance_id=oci_bds_bds_instance["test_bds_instance"]["id"])
-    ```
-
-
-    :param str bds_instance_id: The OCID of the cluster.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['bdsInstanceId'] = bds_instance_id
@@ -114,20 +97,6 @@ def get_bds_instance_patches_output(bds_instance_id: Optional[pulumi.Input[str]]
                                     filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetBdsInstancePatchesFilterArgs']]]]] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBdsInstancePatchesResult]:
     """
-    This data source provides the list of Bds Instance Patches in Oracle Cloud Infrastructure Big Data Service service.
-
-    List all the available patches for this cluster.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_bds_instance_patches = oci.BigDataService.get_bds_instance_patches(bds_instance_id=oci_bds_bds_instance["test_bds_instance"]["id"])
-    ```
-
-
-    :param str bds_instance_id: The OCID of the cluster.
+    Use this data source to access information about an existing resource.
     """
     ...

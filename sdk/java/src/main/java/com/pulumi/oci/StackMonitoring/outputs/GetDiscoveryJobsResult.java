@@ -23,13 +23,13 @@ public final class GetDiscoveryJobsResult {
      * @return The list of discovery_job_collection.
      * 
      */
-    private List<GetDiscoveryJobsDiscoveryJobCollection> discoveryJobCollections;
+    private @Nullable List<GetDiscoveryJobsDiscoveryJobCollection> discoveryJobCollections;
     private @Nullable List<GetDiscoveryJobsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private @Nullable String name;
 
     private GetDiscoveryJobsResult() {}
@@ -45,7 +45,7 @@ public final class GetDiscoveryJobsResult {
      * 
      */
     public List<GetDiscoveryJobsDiscoveryJobCollection> discoveryJobCollections() {
-        return this.discoveryJobCollections;
+        return this.discoveryJobCollections == null ? List.of() : this.discoveryJobCollections;
     }
     public List<GetDiscoveryJobsFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -54,8 +54,8 @@ public final class GetDiscoveryJobsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
@@ -71,9 +71,9 @@ public final class GetDiscoveryJobsResult {
     @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
-        private List<GetDiscoveryJobsDiscoveryJobCollection> discoveryJobCollections;
+        private @Nullable List<GetDiscoveryJobsDiscoveryJobCollection> discoveryJobCollections;
         private @Nullable List<GetDiscoveryJobsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String name;
         public Builder() {}
         public Builder(GetDiscoveryJobsResult defaults) {
@@ -91,8 +91,8 @@ public final class GetDiscoveryJobsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder discoveryJobCollections(List<GetDiscoveryJobsDiscoveryJobCollection> discoveryJobCollections) {
-            this.discoveryJobCollections = Objects.requireNonNull(discoveryJobCollections);
+        public Builder discoveryJobCollections(@Nullable List<GetDiscoveryJobsDiscoveryJobCollection> discoveryJobCollections) {
+            this.discoveryJobCollections = discoveryJobCollections;
             return this;
         }
         public Builder discoveryJobCollections(GetDiscoveryJobsDiscoveryJobCollection... discoveryJobCollections) {
@@ -107,8 +107,8 @@ public final class GetDiscoveryJobsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

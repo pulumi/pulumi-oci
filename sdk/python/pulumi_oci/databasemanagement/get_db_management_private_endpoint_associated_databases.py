@@ -42,18 +42,12 @@ class GetDbManagementPrivateEndpointAssociatedDatabasesResult:
 
     @property
     @pulumi.getter(name="associatedDatabaseCollections")
-    def associated_database_collections(self) -> Sequence['outputs.GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollectionResult']:
-        """
-        The list of associated_database_collection.
-        """
+    def associated_database_collections(self) -> Optional[Sequence['outputs.GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollectionResult']]:
         return pulumi.get(self, "associated_database_collections")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -68,7 +62,7 @@ class GetDbManagementPrivateEndpointAssociatedDatabasesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -93,23 +87,7 @@ def get_db_management_private_endpoint_associated_databases(compartment_id: Opti
                                                             filters: Optional[Sequence[pulumi.InputType['GetDbManagementPrivateEndpointAssociatedDatabasesFilterArgs']]] = None,
                                                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDbManagementPrivateEndpointAssociatedDatabasesResult:
     """
-    This data source provides the list of Db Management Private Endpoint Associated Databases in Oracle Cloud Infrastructure Database Management service.
-
-    Gets the list of databases using a specific Database Management private endpoint.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_db_management_private_endpoint_associated_databases = oci.DatabaseManagement.get_db_management_private_endpoint_associated_databases(compartment_id=var["compartment_id"],
-        db_management_private_endpoint_id=oci_database_management_db_management_private_endpoint["test_db_management_private_endpoint"]["id"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str db_management_private_endpoint_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -132,22 +110,6 @@ def get_db_management_private_endpoint_associated_databases_output(compartment_i
                                                                    filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetDbManagementPrivateEndpointAssociatedDatabasesFilterArgs']]]]] = None,
                                                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDbManagementPrivateEndpointAssociatedDatabasesResult]:
     """
-    This data source provides the list of Db Management Private Endpoint Associated Databases in Oracle Cloud Infrastructure Database Management service.
-
-    Gets the list of databases using a specific Database Management private endpoint.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_db_management_private_endpoint_associated_databases = oci.DatabaseManagement.get_db_management_private_endpoint_associated_databases(compartment_id=var["compartment_id"],
-        db_management_private_endpoint_id=oci_database_management_db_management_private_endpoint["test_db_management_private_endpoint"]["id"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str db_management_private_endpoint_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint.
+    Use this data source to access information about an existing resource.
     """
     ...

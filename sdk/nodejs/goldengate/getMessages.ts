@@ -50,12 +50,12 @@ export interface GetMessagesResult {
     /**
      * The list of deployment_messages_collection.
      */
-    readonly deploymentMessagesCollections: outputs.GoldenGate.GetMessagesDeploymentMessagesCollection[];
+    readonly deploymentMessagesCollections?: outputs.GoldenGate.GetMessagesDeploymentMessagesCollection[];
     readonly filters?: outputs.GoldenGate.GetMessagesFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
 }
 /**
  * This data source provides the list of Messages in Oracle Cloud Infrastructure Golden Gate service.

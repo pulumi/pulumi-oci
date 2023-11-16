@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Custom Table resource in Oracle Cloud Infrastructure Metering Computation service.
@@ -60,14 +59,14 @@ type LookupCustomTableArgs struct {
 // A collection of values returned by getCustomTable.
 type LookupCustomTableResult struct {
 	// The custom table compartment OCID.
-	CompartmentId string `pulumi:"compartmentId"`
-	CustomTableId string `pulumi:"customTableId"`
+	CompartmentId *string `pulumi:"compartmentId"`
+	CustomTableId string  `pulumi:"customTableId"`
 	// The custom table OCID.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The custom table for Cost Analysis UI rendering.
 	SavedCustomTables []GetCustomTableSavedCustomTable `pulumi:"savedCustomTables"`
 	// The custom table associated saved report OCID.
-	SavedReportId string `pulumi:"savedReportId"`
+	SavedReportId *string `pulumi:"savedReportId"`
 }
 
 func LookupCustomTableOutput(ctx *pulumi.Context, args LookupCustomTableOutputArgs, opts ...pulumi.InvokeOption) LookupCustomTableResultOutput {
@@ -108,15 +107,9 @@ func (o LookupCustomTableResultOutput) ToLookupCustomTableResultOutputWithContex
 	return o
 }
 
-func (o LookupCustomTableResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupCustomTableResult] {
-	return pulumix.Output[LookupCustomTableResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The custom table compartment OCID.
-func (o LookupCustomTableResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCustomTableResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupCustomTableResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCustomTableResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupCustomTableResultOutput) CustomTableId() pulumi.StringOutput {
@@ -124,8 +117,8 @@ func (o LookupCustomTableResultOutput) CustomTableId() pulumi.StringOutput {
 }
 
 // The custom table OCID.
-func (o LookupCustomTableResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCustomTableResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupCustomTableResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCustomTableResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The custom table for Cost Analysis UI rendering.
@@ -134,8 +127,8 @@ func (o LookupCustomTableResultOutput) SavedCustomTables() GetCustomTableSavedCu
 }
 
 // The custom table associated saved report OCID.
-func (o LookupCustomTableResultOutput) SavedReportId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCustomTableResult) string { return v.SavedReportId }).(pulumi.StringOutput)
+func (o LookupCustomTableResultOutput) SavedReportId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCustomTableResult) *string { return v.SavedReportId }).(pulumi.StringPtrOutput)
 }
 
 func init() {

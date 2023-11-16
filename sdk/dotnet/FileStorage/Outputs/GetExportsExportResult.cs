@@ -20,49 +20,49 @@ namespace Pulumi.Oci.FileStorage.Outputs
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export set.
         /// </summary>
-        public readonly string ExportSetId;
+        public readonly string? ExportSetId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system.
         /// </summary>
-        public readonly string FileSystemId;
+        public readonly string? FileSystemId;
         /// <summary>
         /// Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Whether or not the export should use ID mapping for Unix groups rather than the group list provided within an NFS request's RPC header. When this flag is true the Unix UID from the RPC header is used to retrieve the list of secondary groups from a the ID mapping subsystem. The primary GID is always taken from the RPC header. If ID mapping is not configured, incorrectly configured, unavailable, or cannot be used to determine a list of secondary groups then an empty secondary group list is used for authorization. If the number of groups exceeds the limit of 256 groups, the list retrieved from LDAP is truncated to the first 256 groups read.
         /// </summary>
-        public readonly bool IsIdmapGroupsForSysAuth;
+        public readonly bool? IsIdmapGroupsForSysAuth;
         /// <summary>
         /// Path used to access the associated file system.
         /// </summary>
-        public readonly string Path;
+        public readonly string? Path;
         /// <summary>
         /// Filter results by the specified lifecycle state. Must be a valid state for the resource type.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The date and time the export was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
 
         [OutputConstructor]
         private GetExportsExportResult(
             ImmutableArray<Outputs.GetExportsExportExportOptionResult> exportOptions,
 
-            string exportSetId,
+            string? exportSetId,
 
-            string fileSystemId,
+            string? fileSystemId,
 
-            string id,
+            string? id,
 
-            bool isIdmapGroupsForSysAuth,
+            bool? isIdmapGroupsForSysAuth,
 
-            string path,
+            string? path,
 
-            string state,
+            string? state,
 
-            string timeCreated)
+            string? timeCreated)
         {
             ExportOptions = exportOptions;
             ExportSetId = exportSetId;

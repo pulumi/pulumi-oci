@@ -77,165 +77,165 @@ export interface GetDomainsMyDeviceResult {
     /**
      * Device additional attributes
      */
-    readonly additionalAttributes: outputs.Identity.GetDomainsMyDeviceAdditionalAttribute[];
+    readonly additionalAttributes?: outputs.Identity.GetDomainsMyDeviceAdditionalAttribute[];
     /**
      * Mobile Authenticator App Version
      */
-    readonly appVersion: string;
+    readonly appVersion?: string;
     readonly attributeSets?: string[];
     readonly attributes?: string;
     /**
      * Authentication Factors
      */
-    readonly authenticationFactors: outputs.Identity.GetDomainsMyDeviceAuthenticationFactor[];
+    readonly authenticationFactors?: outputs.Identity.GetDomainsMyDeviceAuthenticationFactor[];
     /**
      * Authentication method used in device. For FIDO, it will contain SECURITY_KEY/WINDOWS_HELLO etc
      */
-    readonly authenticationMethod: string;
+    readonly authenticationMethod?: string;
     readonly authorization?: string;
     /**
      * Device base public Key
      */
-    readonly basePublicKey: string;
+    readonly basePublicKey?: string;
     /**
      * Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
      */
-    readonly compartmentOcid: string;
+    readonly compartmentOcid?: string;
     /**
      * Country code of user's Phone Number
      */
-    readonly countryCode: string;
+    readonly countryCode?: string;
     /**
      * A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      */
-    readonly deleteInProgress: boolean;
+    readonly deleteInProgress?: boolean;
     /**
      * Device hardware name/model
      */
-    readonly deviceType: string;
+    readonly deviceType?: string;
     /**
      * Unique id sent from device
      */
-    readonly deviceUuid: string;
+    readonly deviceUuid?: string;
     /**
      * Device friendly display name
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      */
-    readonly domainOcid: string;
+    readonly domainOcid?: string;
     /**
      * Attribute added for replication log, it is not used by IDCS, just added as place holder
      */
-    readonly expiresOn: number;
+    readonly expiresOn?: number;
     /**
      * An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued be the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
      */
-    readonly externalId: string;
+    readonly externalId?: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The User or App who created the Resource
      */
-    readonly idcsCreatedBies: outputs.Identity.GetDomainsMyDeviceIdcsCreatedBy[];
+    readonly idcsCreatedBies?: outputs.Identity.GetDomainsMyDeviceIdcsCreatedBy[];
     readonly idcsEndpoint: string;
     /**
      * The User or App who modified the Resource
      */
-    readonly idcsLastModifiedBies: outputs.Identity.GetDomainsMyDeviceIdcsLastModifiedBy[];
+    readonly idcsLastModifiedBies?: outputs.Identity.GetDomainsMyDeviceIdcsLastModifiedBy[];
     /**
      * The release number when the resource was upgraded.
      */
-    readonly idcsLastUpgradedInRelease: string;
+    readonly idcsLastUpgradedInRelease?: string;
     /**
      * Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      */
-    readonly idcsPreventedOperations: string[];
+    readonly idcsPreventedOperations?: string[];
     /**
      * Flag that indicates whether the device is enrolled for account recovery
      */
-    readonly isAccRecEnabled: boolean;
+    readonly isAccRecEnabled?: boolean;
     /**
      * Device Compliance Status
      */
-    readonly isCompliant: boolean;
+    readonly isCompliant?: boolean;
     /**
      * Last Sync time for device
      */
-    readonly lastSyncTime: string;
+    readonly lastSyncTime?: string;
     /**
      * The most recent timestamp when the device was successfully validated using one time passcode
      */
-    readonly lastValidatedTime: string;
+    readonly lastValidatedTime?: string;
     /**
      * A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      */
-    readonly metas: outputs.Identity.GetDomainsMyDeviceMeta[];
+    readonly metas?: outputs.Identity.GetDomainsMyDeviceMeta[];
     readonly myDeviceId: string;
     /**
      * Device Non Compliances
      */
-    readonly nonCompliances: outputs.Identity.GetDomainsMyDeviceNonCompliance[];
+    readonly nonCompliances?: outputs.Identity.GetDomainsMyDeviceNonCompliance[];
     /**
      * The OCID of the user
      */
-    readonly ocid: string;
+    readonly ocid?: string;
     /**
      * Mobile Authenticator App Package Id
      */
-    readonly packageId: string;
+    readonly packageId?: string;
     /**
      * User's Phone Number
      */
-    readonly phoneNumber: string;
+    readonly phoneNumber?: string;
     /**
      * Device Platform
      */
-    readonly platform: string;
+    readonly platform?: string;
     /**
      * Push Notification target. Reference to Device notification related resource
      */
-    readonly pushNotificationTargets: outputs.Identity.GetDomainsMyDevicePushNotificationTarget[];
+    readonly pushNotificationTargets?: outputs.Identity.GetDomainsMyDevicePushNotificationTarget[];
     /**
      * Additional comments/reasons for the change in device status
      */
-    readonly reason: string;
+    readonly reason?: string;
     readonly resourceTypeSchemaVersion?: string;
     /**
      * REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      */
-    readonly schemas: string[];
+    readonly schemas?: string[];
     /**
      * Attribute added for replication log, it is not used by IDCS, it is actual encrypted TOTP seed for the user
      */
-    readonly seed: string;
+    readonly seed?: string;
     /**
      * Attribute added for replication log, it is not used by IDCS, the DEK that encrypts the specific seed for that user
      */
-    readonly seedDekId: string;
+    readonly seedDekId?: string;
     /**
      * Device Status
      */
-    readonly status: string;
+    readonly status?: string;
     /**
      * A list of tags on this resource.
      */
-    readonly tags: outputs.Identity.GetDomainsMyDeviceTag[];
+    readonly tags?: outputs.Identity.GetDomainsMyDeviceTag[];
     /**
      * Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      */
-    readonly tenancyOcid: string;
+    readonly tenancyOcid?: string;
     /**
      * User's third-party authentication factor details
      */
-    readonly thirdPartyFactors: outputs.Identity.GetDomainsMyDeviceThirdPartyFactor[];
+    readonly thirdPartyFactors?: outputs.Identity.GetDomainsMyDeviceThirdPartyFactor[];
     /**
      * Device member
      */
-    readonly users: outputs.Identity.GetDomainsMyDeviceUser[];
+    readonly users?: outputs.Identity.GetDomainsMyDeviceUser[];
 }
 /**
  * This data source provides details about a specific My Device resource in Oracle Cloud Infrastructure Identity Domains service.

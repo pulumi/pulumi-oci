@@ -49,42 +49,42 @@ public class DrgAttachment extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
-    private Output<String> compartmentId;
+    private Output</* @Nullable */ String> compartmentId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the DRG attachment.
      * 
      */
-    public Output<String> compartmentId() {
-        return this.compartmentId;
+    public Output<Optional<String>> compartmentId() {
+        return Codegen.optional(this.compartmentId);
     }
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
@@ -107,7 +107,7 @@ public class DrgAttachment extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="drgRouteTableId", refs={String.class}, tree="[0]")
-    private Output<String> drgRouteTableId;
+    private Output</* @Nullable */ String> drgRouteTableId;
 
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table that is assigned to this attachment.
@@ -115,8 +115,8 @@ public class DrgAttachment extends com.pulumi.resources.CustomResource {
      * The DRG route table manages traffic inside the DRG.
      * 
      */
-    public Output<String> drgRouteTableId() {
-        return this.drgRouteTableId;
+    public Output<Optional<String>> drgRouteTableId() {
+        return Codegen.optional(this.drgRouteTableId);
     }
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export route distribution used to specify how routes in the assigned DRG route table are advertised to the attachment. If this value is null, no routes are advertised through this attachment.
@@ -124,57 +124,57 @@ public class DrgAttachment extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="exportDrgRouteDistributionId", refs={String.class}, tree="[0]")
-    private Output<String> exportDrgRouteDistributionId;
+    private Output</* @Nullable */ String> exportDrgRouteDistributionId;
 
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export route distribution used to specify how routes in the assigned DRG route table are advertised to the attachment. If this value is null, no routes are advertised through this attachment.
      * This field cannot be set by the user while creating the resource and gets a default value on creation. This can be only be updated to its default value. If this fields needs to be set to null, remove_export_drg_route_distribution_trigger needs to be used.
      * 
      */
-    public Output<String> exportDrgRouteDistributionId() {
-        return this.exportDrgRouteDistributionId;
+    public Output<Optional<String>> exportDrgRouteDistributionId() {
+        return Codegen.optional(this.exportDrgRouteDistributionId);
     }
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * Indicates whether the DRG attachment and attached network live in a different tenancy than the DRG.  Example: `false`
      * 
      */
     @Export(name="isCrossTenancy", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isCrossTenancy;
+    private Output</* @Nullable */ Boolean> isCrossTenancy;
 
     /**
      * @return Indicates whether the DRG attachment and attached network live in a different tenancy than the DRG.  Example: `false`
      * 
      */
-    public Output<Boolean> isCrossTenancy() {
-        return this.isCrossTenancy;
+    public Output<Optional<Boolean>> isCrossTenancy() {
+        return Codegen.optional(this.isCrossTenancy);
     }
     /**
      * (Updatable)
      * 
      */
     @Export(name="networkDetails", refs={DrgAttachmentNetworkDetails.class}, tree="[0]")
-    private Output<DrgAttachmentNetworkDetails> networkDetails;
+    private Output</* @Nullable */ DrgAttachmentNetworkDetails> networkDetails;
 
     /**
      * @return (Updatable)
      * 
      */
-    public Output<DrgAttachmentNetworkDetails> networkDetails() {
-        return this.networkDetails;
+    public Output<Optional<DrgAttachmentNetworkDetails>> networkDetails() {
+        return Codegen.optional(this.networkDetails);
     }
     /**
      * (Updatable) An optional property when set to true during update disables the export of route Distribution by setting export_drg_route_distribution_id to null.
@@ -206,7 +206,7 @@ public class DrgAttachment extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="routeTableId", refs={String.class}, tree="[0]")
-    private Output<String> routeTableId;
+    private Output</* @Nullable */ String> routeTableId;
 
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table used by the DRG attachment.
@@ -217,50 +217,50 @@ public class DrgAttachment extends com.pulumi.resources.CustomResource {
      *   This field is deprecated. Instead, use the networkDetails field to specify the VCN route table for this attachment.
      * 
      */
-    public Output<String> routeTableId() {
-        return this.routeTableId;
+    public Output<Optional<String>> routeTableId() {
+        return Codegen.optional(this.routeTableId);
     }
     /**
      * The DRG attachment&#39;s current state.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The DRG attachment&#39;s current state.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The date and time the DRG attachment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the DRG attachment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN. This field is deprecated. Instead, use the `networkDetails` field to specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached resource.
      * 
      */
     @Export(name="vcnId", refs={String.class}, tree="[0]")
-    private Output<String> vcnId;
+    private Output</* @Nullable */ String> vcnId;
 
     /**
      * @return (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN. This field is deprecated. Instead, use the `networkDetails` field to specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached resource.
      * 
      */
-    public Output<String> vcnId() {
-        return this.vcnId;
+    public Output<Optional<String>> vcnId() {
+        return Codegen.optional(this.vcnId);
     }
 
     /**

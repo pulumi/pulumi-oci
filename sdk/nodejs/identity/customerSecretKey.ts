@@ -74,23 +74,23 @@ export class CustomerSecretKey extends pulumi.CustomResource {
     /**
      * The detailed status of INACTIVE lifecycleState.
      */
-    public /*out*/ readonly inactiveState!: pulumi.Output<string>;
+    public /*out*/ readonly inactiveState!: pulumi.Output<string | undefined>;
     /**
      * The secret key.
      */
-    public /*out*/ readonly key!: pulumi.Output<string>;
+    public /*out*/ readonly key!: pulumi.Output<string | undefined>;
     /**
      * The secret key's current state.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * Date and time the `CustomerSecretKey` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * Date and time when this password will expire, in the format defined by RFC3339. Null if it never expires.  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeExpires!: pulumi.Output<string>;
+    public /*out*/ readonly timeExpires!: pulumi.Output<string | undefined>;
     /**
      * The OCID of the user.
      *

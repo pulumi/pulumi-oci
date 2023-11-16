@@ -66,12 +66,12 @@ export interface GetLogSavedSearchesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly logSavedSearchId?: string;
     /**
      * The list of log_saved_search_summary_collection.
      */
-    readonly logSavedSearchSummaryCollections: outputs.Logging.GetLogSavedSearchesLogSavedSearchSummaryCollection[];
+    readonly logSavedSearchSummaryCollections?: outputs.Logging.GetLogSavedSearchesLogSavedSearchSummaryCollection[];
     /**
      * The user-friendly display name. This must be unique within the enclosing resource, and it's changeable. Avoid entering confidential information.
      */

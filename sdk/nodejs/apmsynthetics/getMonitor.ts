@@ -54,96 +54,96 @@ export interface GetMonitorResult {
     /**
      * Monitor availability configuration details.
      */
-    readonly availabilityConfigurations: outputs.ApmSynthetics.GetMonitorAvailabilityConfiguration[];
+    readonly availabilityConfigurations?: outputs.ApmSynthetics.GetMonitorAvailabilityConfiguration[];
     /**
      * Time interval between two runs in round robin batch mode (SchedulingPolicy - BATCHED_ROUND_ROBIN).
      */
-    readonly batchIntervalInSeconds: number;
+    readonly batchIntervalInSeconds?: number;
     /**
      * Details of monitor configuration.
      */
-    readonly configurations: outputs.ApmSynthetics.GetMonitorConfiguration[];
+    readonly configurations?: outputs.ApmSynthetics.GetMonitorConfiguration[];
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * Unique name that can be edited. The name should not contain any confidential information.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitor.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * If isRunNow is enabled, then the monitor will run immediately.
      */
-    readonly isRunNow: boolean;
+    readonly isRunNow?: boolean;
     /**
      * If runOnce is enabled, then the monitor will run once.
      */
-    readonly isRunOnce: boolean;
+    readonly isRunOnce?: boolean;
     /**
      * Details required to schedule maintenance window.
      */
-    readonly maintenanceWindowSchedules: outputs.ApmSynthetics.GetMonitorMaintenanceWindowSchedule[];
+    readonly maintenanceWindowSchedules?: outputs.ApmSynthetics.GetMonitorMaintenanceWindowSchedule[];
     readonly monitorId: string;
     /**
      * Type of monitor.
      */
-    readonly monitorType: string;
+    readonly monitorType?: string;
     /**
      * Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
      */
-    readonly repeatIntervalInSeconds: number;
+    readonly repeatIntervalInSeconds?: number;
     /**
      * Scheduling policy to decide the distribution of monitor executions on vantage points.
      */
-    readonly schedulingPolicy: string;
+    readonly schedulingPolicy?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the script. scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null.
      */
-    readonly scriptId: string;
+    readonly scriptId?: string;
     /**
      * Name of the script.
      */
-    readonly scriptName: string;
+    readonly scriptName?: string;
     /**
      * List of script parameters. Example: `[{"monitorScriptParameter": {"paramName": "userid", "paramValue":"testuser"}, "isSecret": false, "isOverwritten": false}]`
      */
-    readonly scriptParameters: outputs.ApmSynthetics.GetMonitorScriptParameter[];
+    readonly scriptParameters?: outputs.ApmSynthetics.GetMonitorScriptParameter[];
     /**
      * Enables or disables the monitor.
      */
-    readonly status: string;
+    readonly status?: string;
     /**
      * Specify the endpoint on which to run the monitor. For BROWSER and REST monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
      */
-    readonly target: string;
+    readonly target?: string;
     /**
      * The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
     /**
      * Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
      */
-    readonly timeoutInSeconds: number;
+    readonly timeoutInSeconds?: number;
     /**
      * Number of vantage points where monitor is running.
      */
-    readonly vantagePointCount: number;
+    readonly vantagePointCount?: number;
     /**
      * List of public and dedicated vantage points where the monitor is running.
      */
-    readonly vantagePoints: outputs.ApmSynthetics.GetMonitorVantagePoint[];
+    readonly vantagePoints?: outputs.ApmSynthetics.GetMonitorVantagePoint[];
 }
 /**
  * This data source provides details about a specific Monitor resource in Oracle Cloud Infrastructure Apm Synthetics service.

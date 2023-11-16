@@ -8,6 +8,8 @@ import com.pulumi.oci.ManagementAgent.outputs.GetManagementAgentPluginCountItem;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagementAgentPluginCountResult {
@@ -17,12 +19,12 @@ public final class GetManagementAgentPluginCountResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return List in which each item describes an aggregation of Managment Agent Plugins
      * 
      */
-    private List<GetManagementAgentPluginCountItem> items;
+    private @Nullable List<GetManagementAgentPluginCountItem> items;
 
     private GetManagementAgentPluginCountResult() {}
     public String compartmentId() {
@@ -35,15 +37,15 @@ public final class GetManagementAgentPluginCountResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return List in which each item describes an aggregation of Managment Agent Plugins
      * 
      */
     public List<GetManagementAgentPluginCountItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -57,8 +59,8 @@ public final class GetManagementAgentPluginCountResult {
     public static final class Builder {
         private String compartmentId;
         private String groupBy;
-        private String id;
-        private List<GetManagementAgentPluginCountItem> items;
+        private @Nullable String id;
+        private @Nullable List<GetManagementAgentPluginCountItem> items;
         public Builder() {}
         public Builder(GetManagementAgentPluginCountResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -79,13 +81,13 @@ public final class GetManagementAgentPluginCountResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder items(List<GetManagementAgentPluginCountItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetManagementAgentPluginCountItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetManagementAgentPluginCountItem... items) {

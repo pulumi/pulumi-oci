@@ -176,7 +176,7 @@ namespace Pulumi.Oci.OsManagementHub
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Indicates whether this package is the latest version.
         /// </summary>
@@ -195,7 +195,7 @@ namespace Pulumi.Oci.OsManagementHub
 
             ImmutableArray<Outputs.GetSoftwareSourceSoftwarePackagesFilterResult> filters,
 
-            string id,
+            string? id,
 
             bool? isLatest,
 

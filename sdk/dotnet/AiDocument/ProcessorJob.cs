@@ -92,7 +92,7 @@ namespace Pulumi.Oci.AiDocument
         /// The display name of the processor job.
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// The location of the inputs.
@@ -104,7 +104,7 @@ namespace Pulumi.Oci.AiDocument
         /// The detailed status of FAILED state.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// The object storage location where to store analysis results.
@@ -116,7 +116,7 @@ namespace Pulumi.Oci.AiDocument
         /// How much progress the operation has made, compared to the total amount of work to be performed.
         /// </summary>
         [Output("percentComplete")]
-        public Output<double> PercentComplete { get; private set; } = null!;
+        public Output<double?> PercentComplete { get; private set; } = null!;
 
         /// <summary>
         /// The configuration of a processor.
@@ -128,25 +128,25 @@ namespace Pulumi.Oci.AiDocument
         /// The current state of the processor job.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The job acceptance time.
         /// </summary>
         [Output("timeAccepted")]
-        public Output<string> TimeAccepted { get; private set; } = null!;
+        public Output<string?> TimeAccepted { get; private set; } = null!;
 
         /// <summary>
         /// The job finish time.
         /// </summary>
         [Output("timeFinished")]
-        public Output<string> TimeFinished { get; private set; } = null!;
+        public Output<string?> TimeFinished { get; private set; } = null!;
 
         /// <summary>
         /// The job start time.
         /// </summary>
         [Output("timeStarted")]
-        public Output<string> TimeStarted { get; private set; } = null!;
+        public Output<string?> TimeStarted { get; private set; } = null!;
 
 
         /// <summary>

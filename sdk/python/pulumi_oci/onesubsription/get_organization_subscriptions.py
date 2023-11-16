@@ -49,7 +49,7 @@ class GetOrganizationSubscriptionsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -57,10 +57,7 @@ class GetOrganizationSubscriptionsResult:
 
     @property
     @pulumi.getter(name="organizationSubscriptions")
-    def organization_subscriptions(self) -> Sequence['outputs.GetOrganizationSubscriptionsOrganizationSubscriptionResult']:
-        """
-        The list of organization_subscriptions.
-        """
+    def organization_subscriptions(self) -> Optional[Sequence['outputs.GetOrganizationSubscriptionsOrganizationSubscriptionResult']]:
         return pulumi.get(self, "organization_subscriptions")
 
 
@@ -80,21 +77,7 @@ def get_organization_subscriptions(compartment_id: Optional[str] = None,
                                    filters: Optional[Sequence[pulumi.InputType['GetOrganizationSubscriptionsFilterArgs']]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetOrganizationSubscriptionsResult:
     """
-    This data source provides the list of Organization Subscriptions in Oracle Cloud Infrastructure Onesubscription service.
-
-    API that returns data for the list of subscription ids returned from Organizations API
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_organization_subscriptions = oci.OneSubsription.get_organization_subscriptions(compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str compartment_id: The OCID of the root compartment.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -114,20 +97,6 @@ def get_organization_subscriptions_output(compartment_id: Optional[pulumi.Input[
                                           filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetOrganizationSubscriptionsFilterArgs']]]]] = None,
                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOrganizationSubscriptionsResult]:
     """
-    This data source provides the list of Organization Subscriptions in Oracle Cloud Infrastructure Onesubscription service.
-
-    API that returns data for the list of subscription ids returned from Organizations API
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_organization_subscriptions = oci.OneSubsription.get_organization_subscriptions(compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str compartment_id: The OCID of the root compartment.
+    Use this data source to access information about an existing resource.
     """
     ...

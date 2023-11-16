@@ -45,48 +45,48 @@ export interface GetMediaWorkflowConfigurationResult {
     /**
      * Compartment Identifier.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * Display name for the MediaWorkflowConfiguration. Avoid entering confidential information.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * Unique identifier that is immutable on creation.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    readonly lifecyleDetails: string;
+    readonly lifecyleDetails?: string;
     readonly mediaWorkflowConfigurationId: string;
     /**
      * Reuseable parameter values encoded as a JSON; the top and second level JSON elements are objects. Each key of the top level object refer to a task key that is unqiue to the workflow, each of the second level objects' keys refer to the name of a parameter that is unique to the task. taskKey > parameterName > parameterValue
      */
-    readonly parameters: string;
+    readonly parameters?: string;
     /**
      * The current state of the MediaWorkflowConfiguration.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * The time when the the MediaWorkflowConfiguration was created. An RFC3339 formatted datetime string.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The time when the MediaWorkflowConfiguration was updated. An RFC3339 formatted datetime string.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific Media Workflow Configuration resource in Oracle Cloud Infrastructure Media Services service.

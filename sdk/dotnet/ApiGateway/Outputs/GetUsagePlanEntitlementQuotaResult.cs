@@ -16,29 +16,29 @@ namespace Pulumi.Oci.ApiGateway.Outputs
         /// <summary>
         /// What the usage plan will do when a quota is breached: `REJECT` will allow no further requests `ALLOW` will continue to allow further requests
         /// </summary>
-        public readonly string OperationOnBreach;
+        public readonly string? OperationOnBreach;
         /// <summary>
         /// The policy that controls when quotas will reset. Example: `CALENDAR`
         /// </summary>
-        public readonly string ResetPolicy;
+        public readonly string? ResetPolicy;
         /// <summary>
         /// The unit of time over which rate limits are calculated. Example: `SECOND`
         /// </summary>
-        public readonly string Unit;
+        public readonly string? Unit;
         /// <summary>
         /// The number of requests that can be made per time period.
         /// </summary>
-        public readonly int Value;
+        public readonly int? Value;
 
         [OutputConstructor]
         private GetUsagePlanEntitlementQuotaResult(
-            string operationOnBreach,
+            string? operationOnBreach,
 
-            string resetPolicy,
+            string? resetPolicy,
 
-            string unit,
+            string? unit,
 
-            int value)
+            int? value)
         {
             OperationOnBreach = operationOnBreach;
             ResetPolicy = resetPolicy;

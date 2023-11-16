@@ -13,10 +13,10 @@ namespace Pulumi.Oci.ObjectStorage
     public partial class NamespaceMetadata : global::Pulumi.CustomResource
     {
         [Output("defaultS3compartmentId")]
-        public Output<string> DefaultS3compartmentId { get; private set; } = null!;
+        public Output<string?> DefaultS3compartmentId { get; private set; } = null!;
 
         [Output("defaultSwiftCompartmentId")]
-        public Output<string> DefaultSwiftCompartmentId { get; private set; } = null!;
+        public Output<string?> DefaultSwiftCompartmentId { get; private set; } = null!;
 
         [Output("namespace")]
         public Output<string> Namespace { get; private set; } = null!;

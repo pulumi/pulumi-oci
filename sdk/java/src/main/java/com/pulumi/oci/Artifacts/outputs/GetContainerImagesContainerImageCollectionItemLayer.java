@@ -6,6 +6,8 @@ package com.pulumi.oci.Artifacts.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetContainerImagesContainerImageCollectionItemLayer {
@@ -13,39 +15,39 @@ public final class GetContainerImagesContainerImageCollectionItemLayer {
      * @return The sha256 digest of the image layer.
      * 
      */
-    private String digest;
+    private @Nullable String digest;
     /**
      * @return The size of the layer in bytes.
      * 
      */
-    private String sizeInBytes;
+    private @Nullable String sizeInBytes;
     /**
      * @return The creation time of the version.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
 
     private GetContainerImagesContainerImageCollectionItemLayer() {}
     /**
      * @return The sha256 digest of the image layer.
      * 
      */
-    public String digest() {
-        return this.digest;
+    public Optional<String> digest() {
+        return Optional.ofNullable(this.digest);
     }
     /**
      * @return The size of the layer in bytes.
      * 
      */
-    public String sizeInBytes() {
-        return this.sizeInBytes;
+    public Optional<String> sizeInBytes() {
+        return Optional.ofNullable(this.sizeInBytes);
     }
     /**
      * @return The creation time of the version.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetContainerImagesContainerImageCollectionItemLayer {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String digest;
-        private String sizeInBytes;
-        private String timeCreated;
+        private @Nullable String digest;
+        private @Nullable String sizeInBytes;
+        private @Nullable String timeCreated;
         public Builder() {}
         public Builder(GetContainerImagesContainerImageCollectionItemLayer defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetContainerImagesContainerImageCollectionItemLayer {
         }
 
         @CustomType.Setter
-        public Builder digest(String digest) {
-            this.digest = Objects.requireNonNull(digest);
+        public Builder digest(@Nullable String digest) {
+            this.digest = digest;
             return this;
         }
         @CustomType.Setter
-        public Builder sizeInBytes(String sizeInBytes) {
-            this.sizeInBytes = Objects.requireNonNull(sizeInBytes);
+        public Builder sizeInBytes(@Nullable String sizeInBytes) {
+            this.sizeInBytes = sizeInBytes;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetContainerImagesContainerImageCollectionItemLayer build() {

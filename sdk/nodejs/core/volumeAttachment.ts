@@ -75,33 +75,33 @@ export class VolumeAttachment extends pulumi.CustomResource {
     /**
      * The availability domain of an instance.  Example: `Uocm:PHX-AD-1`
      */
-    public /*out*/ readonly availabilityDomain!: pulumi.Output<string>;
+    public /*out*/ readonly availabilityDomain!: pulumi.Output<string | undefined>;
     /**
      * The Challenge-Handshake-Authentication-Protocol (CHAP) secret valid for the associated CHAP user name. (Also called the "CHAP password".)
      */
-    public /*out*/ readonly chapSecret!: pulumi.Output<string>;
+    public /*out*/ readonly chapSecret!: pulumi.Output<string | undefined>;
     /**
      * The volume's system-generated Challenge-Handshake-Authentication-Protocol (CHAP) user name. See [RFC 1994](https://tools.ietf.org/html/rfc1994) for more on CHAP.  Example: `ocid1.volume.oc1.phx.<unique_ID>`
      */
-    public /*out*/ readonly chapUsername!: pulumi.Output<string>;
+    public /*out*/ readonly chapUsername!: pulumi.Output<string | undefined>;
     /**
      * The OCID of the compartment.
      *
      * @deprecated The 'compartment_id' field has been deprecated and may be removed in a future version. Do not use this field.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    public readonly compartmentId!: pulumi.Output<string | undefined>;
     /**
      * The device name. To retrieve a list of devices for a given instance, see [ListInstanceDevices](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Device/ListInstanceDevices).
      */
-    public readonly device!: pulumi.Output<string>;
+    public readonly device!: pulumi.Output<string | undefined>;
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    public readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * Refer the top-level definition of encryptionInTransitType. The default value is NONE.
      */
-    public readonly encryptionInTransitType!: pulumi.Output<string>;
+    public readonly encryptionInTransitType!: pulumi.Output<string | undefined>;
     /**
      * The OCID of the instance.
      */
@@ -109,55 +109,55 @@ export class VolumeAttachment extends pulumi.CustomResource {
     /**
      * The volume's iSCSI IP address.  Example: `169.254.2.2`
      */
-    public /*out*/ readonly ipv4!: pulumi.Output<string>;
+    public /*out*/ readonly ipv4!: pulumi.Output<string | undefined>;
     /**
      * The target volume's iSCSI Qualified Name in the format defined by [RFC 3720](https://tools.ietf.org/html/rfc3720#page-32).  Example: `iqn.2015-12.com.oracleiaas:40b7ee03-883f-46c6-a951-63d2841d2195`
      */
-    public /*out*/ readonly iqn!: pulumi.Output<string>;
+    public /*out*/ readonly iqn!: pulumi.Output<string | undefined>;
     /**
      * Whether to enable Oracle Cloud Agent to perform the iSCSI login and logout commands after the volume attach or detach operations for non multipath-enabled iSCSI attachments.
      */
-    public readonly isAgentAutoIscsiLoginEnabled!: pulumi.Output<boolean>;
+    public readonly isAgentAutoIscsiLoginEnabled!: pulumi.Output<boolean | undefined>;
     /**
      * Whether the Iscsi or Paravirtualized attachment is multipath or not, it is not applicable to NVMe attachment.
      */
-    public /*out*/ readonly isMultipath!: pulumi.Output<boolean>;
+    public /*out*/ readonly isMultipath!: pulumi.Output<boolean | undefined>;
     /**
      * Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false.
      */
-    public readonly isPvEncryptionInTransitEnabled!: pulumi.Output<boolean>;
+    public readonly isPvEncryptionInTransitEnabled!: pulumi.Output<boolean | undefined>;
     /**
      * Whether the attachment was created in read-only mode.
      */
-    public readonly isReadOnly!: pulumi.Output<boolean>;
+    public readonly isReadOnly!: pulumi.Output<boolean | undefined>;
     /**
      * Whether the attachment should be created in shareable mode. If an attachment is created in shareable mode, then other instances can attach the same volume, provided that they also create their attachments in shareable mode. Only certain volume types can be attached in shareable mode. Defaults to false if not specified.
      */
-    public readonly isShareable!: pulumi.Output<boolean>;
+    public readonly isShareable!: pulumi.Output<boolean | undefined>;
     /**
      * The iscsi login state of the volume attachment. For a Iscsi volume attachment, all iscsi sessions need to be all logged-in or logged-out to be in logged-in or logged-out state.
      */
-    public /*out*/ readonly iscsiLoginState!: pulumi.Output<string>;
+    public /*out*/ readonly iscsiLoginState!: pulumi.Output<string | undefined>;
     /**
      * A list of secondary multipath devices
      */
-    public /*out*/ readonly multipathDevices!: pulumi.Output<outputs.Core.VolumeAttachmentMultipathDevice[]>;
+    public /*out*/ readonly multipathDevices!: pulumi.Output<outputs.Core.VolumeAttachmentMultipathDevice[] | undefined>;
     /**
      * The volume's iSCSI port, usually port 860 or 3260.  Example: `3260`
      */
-    public /*out*/ readonly port!: pulumi.Output<number>;
+    public /*out*/ readonly port!: pulumi.Output<number | undefined>;
     /**
      * The current state of the volume attachment.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The date and time the volume was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * Whether to use CHAP authentication for the volume attachment. Defaults to false.
      */
-    public readonly useChap!: pulumi.Output<boolean>;
+    public readonly useChap!: pulumi.Output<boolean | undefined>;
     /**
      * The OCID of the volume.
      *

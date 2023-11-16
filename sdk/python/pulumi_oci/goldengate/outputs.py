@@ -76,10 +76,6 @@ class ConnectionAdditionalAttribute(dict):
     def __init__(__self__, *,
                  name: Optional[str] = None,
                  value: Optional[str] = None):
-        """
-        :param str name: (Updatable) The name of the property entry.
-        :param str value: (Updatable) The value of the property entry.
-        """
         if name is not None:
             pulumi.set(__self__, "name", name)
         if value is not None:
@@ -88,17 +84,11 @@ class ConnectionAdditionalAttribute(dict):
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        (Updatable) The name of the property entry.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
     def value(self) -> Optional[str]:
-        """
-        (Updatable) The value of the property entry.
-        """
         return pulumi.get(self, "value")
 
 
@@ -125,11 +115,6 @@ class ConnectionBootstrapServer(dict):
                  host: Optional[str] = None,
                  port: Optional[int] = None,
                  private_ip: Optional[str] = None):
-        """
-        :param str host: (Updatable) The name or address of a host.
-        :param int port: (Updatable) The port of an endpoint usually specified for a connection.
-        :param str private_ip: (Updatable) The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
-        """
         if host is not None:
             pulumi.set(__self__, "host", host)
         if port is not None:
@@ -140,25 +125,16 @@ class ConnectionBootstrapServer(dict):
     @property
     @pulumi.getter
     def host(self) -> Optional[str]:
-        """
-        (Updatable) The name or address of a host.
-        """
         return pulumi.get(self, "host")
 
     @property
     @pulumi.getter
     def port(self) -> Optional[int]:
-        """
-        (Updatable) The port of an endpoint usually specified for a connection.
-        """
         return pulumi.get(self, "port")
 
     @property
     @pulumi.getter(name="privateIp")
     def private_ip(self) -> Optional[str]:
-        """
-        (Updatable) The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
-        """
         return pulumi.get(self, "private_ip")
 
 
@@ -183,18 +159,12 @@ class ConnectionIngressIp(dict):
 
     def __init__(__self__, *,
                  ingress_ip: Optional[str] = None):
-        """
-        :param str ingress_ip: A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
-        """
         if ingress_ip is not None:
             pulumi.set(__self__, "ingress_ip", ingress_ip)
 
     @property
     @pulumi.getter(name="ingressIp")
     def ingress_ip(self) -> Optional[str]:
-        """
-        A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
-        """
         return pulumi.get(self, "ingress_ip")
 
 
@@ -228,14 +198,6 @@ class DeploymentDeploymentDiagnosticData(dict):
                  object: Optional[str] = None,
                  time_diagnostic_end: Optional[str] = None,
                  time_diagnostic_start: Optional[str] = None):
-        """
-        :param str bucket: Name of the bucket where the object is to be uploaded in the object storage
-        :param str diagnostic_state: The state of the deployment diagnostic collection.
-        :param str namespace: Name of namespace that serves as a container for all of your buckets
-        :param str object: Name of the diagnostic collected and uploaded to object storage
-        :param str time_diagnostic_end: The time until which the diagnostic collection should collect the logs. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        :param str time_diagnostic_start: The time from which the diagnostic collection should collect the logs. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
         if bucket is not None:
             pulumi.set(__self__, "bucket", bucket)
         if diagnostic_state is not None:
@@ -252,49 +214,31 @@ class DeploymentDeploymentDiagnosticData(dict):
     @property
     @pulumi.getter
     def bucket(self) -> Optional[str]:
-        """
-        Name of the bucket where the object is to be uploaded in the object storage
-        """
         return pulumi.get(self, "bucket")
 
     @property
     @pulumi.getter(name="diagnosticState")
     def diagnostic_state(self) -> Optional[str]:
-        """
-        The state of the deployment diagnostic collection.
-        """
         return pulumi.get(self, "diagnostic_state")
 
     @property
     @pulumi.getter
     def namespace(self) -> Optional[str]:
-        """
-        Name of namespace that serves as a container for all of your buckets
-        """
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter
     def object(self) -> Optional[str]:
-        """
-        Name of the diagnostic collected and uploaded to object storage
-        """
         return pulumi.get(self, "object")
 
     @property
     @pulumi.getter(name="timeDiagnosticEnd")
     def time_diagnostic_end(self) -> Optional[str]:
-        """
-        The time until which the diagnostic collection should collect the logs. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
         return pulumi.get(self, "time_diagnostic_end")
 
     @property
     @pulumi.getter(name="timeDiagnosticStart")
     def time_diagnostic_start(self) -> Optional[str]:
-        """
-        The time from which the diagnostic collection should collect the logs. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
         return pulumi.get(self, "time_diagnostic_start")
 
 
@@ -331,13 +275,6 @@ class DeploymentMaintenanceConfiguration(dict):
                  is_interim_release_auto_upgrade_enabled: Optional[bool] = None,
                  major_release_upgrade_period_in_days: Optional[int] = None,
                  security_patch_upgrade_period_in_days: Optional[int] = None):
-        """
-        :param int bundle_release_upgrade_period_in_days: (Updatable) Defines auto upgrade period for bundle releases. Manually configured period cannot be longer than service defined period for bundle releases. This period must be shorter or equal to major release upgrade period. Not passing this field during create will equate to using the service default.
-        :param int interim_release_upgrade_period_in_days: (Updatable) Defines auto upgrade period for interim releases. This period must be shorter or equal to bundle release upgrade period.
-        :param bool is_interim_release_auto_upgrade_enabled: (Updatable) By default auto upgrade for interim releases are not enabled. If auto-upgrade is enabled for interim release,  you have to specify interimReleaseUpgradePeriodInDays too.
-        :param int major_release_upgrade_period_in_days: (Updatable) Defines auto upgrade period for major releases. Manually configured period cannot be longer than service defined period for major releases. Not passing this field during create will equate to using the service default.
-        :param int security_patch_upgrade_period_in_days: (Updatable) Defines auto upgrade period for releases with security fix. Manually configured period cannot be longer than service defined period for security releases. Not passing this field during create will equate to using the service default.
-        """
         if bundle_release_upgrade_period_in_days is not None:
             pulumi.set(__self__, "bundle_release_upgrade_period_in_days", bundle_release_upgrade_period_in_days)
         if interim_release_upgrade_period_in_days is not None:
@@ -352,41 +289,26 @@ class DeploymentMaintenanceConfiguration(dict):
     @property
     @pulumi.getter(name="bundleReleaseUpgradePeriodInDays")
     def bundle_release_upgrade_period_in_days(self) -> Optional[int]:
-        """
-        (Updatable) Defines auto upgrade period for bundle releases. Manually configured period cannot be longer than service defined period for bundle releases. This period must be shorter or equal to major release upgrade period. Not passing this field during create will equate to using the service default.
-        """
         return pulumi.get(self, "bundle_release_upgrade_period_in_days")
 
     @property
     @pulumi.getter(name="interimReleaseUpgradePeriodInDays")
     def interim_release_upgrade_period_in_days(self) -> Optional[int]:
-        """
-        (Updatable) Defines auto upgrade period for interim releases. This period must be shorter or equal to bundle release upgrade period.
-        """
         return pulumi.get(self, "interim_release_upgrade_period_in_days")
 
     @property
     @pulumi.getter(name="isInterimReleaseAutoUpgradeEnabled")
     def is_interim_release_auto_upgrade_enabled(self) -> Optional[bool]:
-        """
-        (Updatable) By default auto upgrade for interim releases are not enabled. If auto-upgrade is enabled for interim release,  you have to specify interimReleaseUpgradePeriodInDays too.
-        """
         return pulumi.get(self, "is_interim_release_auto_upgrade_enabled")
 
     @property
     @pulumi.getter(name="majorReleaseUpgradePeriodInDays")
     def major_release_upgrade_period_in_days(self) -> Optional[int]:
-        """
-        (Updatable) Defines auto upgrade period for major releases. Manually configured period cannot be longer than service defined period for major releases. Not passing this field during create will equate to using the service default.
-        """
         return pulumi.get(self, "major_release_upgrade_period_in_days")
 
     @property
     @pulumi.getter(name="securityPatchUpgradePeriodInDays")
     def security_patch_upgrade_period_in_days(self) -> Optional[int]:
-        """
-        (Updatable) Defines auto upgrade period for releases with security fix. Manually configured period cannot be longer than service defined period for security releases. Not passing this field during create will equate to using the service default.
-        """
         return pulumi.get(self, "security_patch_upgrade_period_in_days")
 
 
@@ -412,27 +334,17 @@ class DeploymentMaintenanceWindow(dict):
     def __init__(__self__, *,
                  day: str,
                  start_hour: int):
-        """
-        :param str day: (Updatable) Days of the week.
-        :param int start_hour: (Updatable) Start hour for maintenance period. Hour is in UTC.
-        """
         pulumi.set(__self__, "day", day)
         pulumi.set(__self__, "start_hour", start_hour)
 
     @property
     @pulumi.getter
     def day(self) -> str:
-        """
-        (Updatable) Days of the week.
-        """
         return pulumi.get(self, "day")
 
     @property
     @pulumi.getter(name="startHour")
     def start_hour(self) -> int:
-        """
-        (Updatable) Start hour for maintenance period. Hour is in UTC.
-        """
         return pulumi.get(self, "start_hour")
 
 
@@ -477,17 +389,6 @@ class DeploymentOggData(dict):
                  key: Optional[str] = None,
                  ogg_version: Optional[str] = None,
                  password_secret_id: Optional[str] = None):
-        """
-        :param str deployment_name: The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
-        :param str admin_password: (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as ‘$’, ‘^’, or ‘?’ are not allowed. This field will be deprecated and replaced by "passwordSecretId".
-        :param str admin_username: (Updatable) The GoldenGate deployment console username.
-        :param str certificate: (Updatable) A PEM-encoded SSL certificate.
-        :param str credential_store: (Updatable) The type of credential store for OGG.
-        :param str identity_domain_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
-        :param str key: (Updatable) A PEM-encoded private key.
-        :param str ogg_version: (Updatable) Version of ogg to use by deployment. By updating version you can upgrade your deployment to a newer version. Downgrade to older version is not supported.
-        :param str password_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment password is stored.
-        """
         pulumi.set(__self__, "deployment_name", deployment_name)
         if admin_password is not None:
             pulumi.set(__self__, "admin_password", admin_password)
@@ -509,209 +410,149 @@ class DeploymentOggData(dict):
     @property
     @pulumi.getter(name="deploymentName")
     def deployment_name(self) -> str:
-        """
-        The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
-        """
         return pulumi.get(self, "deployment_name")
 
     @property
     @pulumi.getter(name="adminPassword")
     def admin_password(self) -> Optional[str]:
-        """
-        (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as ‘$’, ‘^’, or ‘?’ are not allowed. This field will be deprecated and replaced by "passwordSecretId".
-        """
         return pulumi.get(self, "admin_password")
 
     @property
     @pulumi.getter(name="adminUsername")
     def admin_username(self) -> Optional[str]:
-        """
-        (Updatable) The GoldenGate deployment console username.
-        """
         return pulumi.get(self, "admin_username")
 
     @property
     @pulumi.getter
     def certificate(self) -> Optional[str]:
-        """
-        (Updatable) A PEM-encoded SSL certificate.
-        """
         return pulumi.get(self, "certificate")
 
     @property
     @pulumi.getter(name="credentialStore")
     def credential_store(self) -> Optional[str]:
-        """
-        (Updatable) The type of credential store for OGG.
-        """
         return pulumi.get(self, "credential_store")
 
     @property
     @pulumi.getter(name="identityDomainId")
     def identity_domain_id(self) -> Optional[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
-        """
         return pulumi.get(self, "identity_domain_id")
 
     @property
     @pulumi.getter
     def key(self) -> Optional[str]:
-        """
-        (Updatable) A PEM-encoded private key.
-        """
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter(name="oggVersion")
     def ogg_version(self) -> Optional[str]:
-        """
-        (Updatable) Version of ogg to use by deployment. By updating version you can upgrade your deployment to a newer version. Downgrade to older version is not supported.
-        """
         return pulumi.get(self, "ogg_version")
 
     @property
     @pulumi.getter(name="passwordSecretId")
     def password_secret_id(self) -> Optional[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment password is stored.
-        """
         return pulumi.get(self, "password_secret_id")
 
 
 @pulumi.output_type
 class GetConnectionAdditionalAttributeResult(dict):
     def __init__(__self__, *,
-                 name: str,
-                 value: str):
-        """
-        :param str name: The name of the property entry.
-        :param str value: The value of the property entry.
-        """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "value", value)
+                 name: Optional[str] = None,
+                 value: Optional[str] = None):
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The name of the property entry.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def value(self) -> str:
-        """
-        The value of the property entry.
-        """
+    def value(self) -> Optional[str]:
         return pulumi.get(self, "value")
 
 
 @pulumi.output_type
 class GetConnectionAssignmentsConnectionAssignmentCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetConnectionAssignmentsConnectionAssignmentCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetConnectionAssignmentsConnectionAssignmentCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetConnectionAssignmentsConnectionAssignmentCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetConnectionAssignmentsConnectionAssignmentCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetConnectionAssignmentsConnectionAssignmentCollectionItemResult(dict):
     def __init__(__self__, *,
-                 alias_name: str,
-                 compartment_id: str,
-                 connection_id: str,
-                 deployment_id: str,
-                 id: str,
-                 state: str,
-                 time_created: str,
-                 time_updated: str):
-        """
-        :param str alias_name: Credential store alias.
-        :param str compartment_id: The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
-        :param str connection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection.
-        :param str deployment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment in which to list resources.
-        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection assignment being referenced.
-        :param str state: A filter to return only connection assignments having the 'lifecycleState' given.
-        :param str time_created: The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        :param str time_updated: The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
-        pulumi.set(__self__, "alias_name", alias_name)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "connection_id", connection_id)
-        pulumi.set(__self__, "deployment_id", deployment_id)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+                 alias_name: Optional[str] = None,
+                 compartment_id: Optional[str] = None,
+                 connection_id: Optional[str] = None,
+                 deployment_id: Optional[str] = None,
+                 id: Optional[str] = None,
+                 state: Optional[str] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None):
+        if alias_name is not None:
+            pulumi.set(__self__, "alias_name", alias_name)
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if connection_id is not None:
+            pulumi.set(__self__, "connection_id", connection_id)
+        if deployment_id is not None:
+            pulumi.set(__self__, "deployment_id", deployment_id)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="aliasName")
-    def alias_name(self) -> str:
-        """
-        Credential store alias.
-        """
+    def alias_name(self) -> Optional[str]:
         return pulumi.get(self, "alias_name")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="connectionId")
-    def connection_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection.
-        """
+    def connection_id(self) -> Optional[str]:
         return pulumi.get(self, "connection_id")
 
     @property
     @pulumi.getter(name="deploymentId")
-    def deployment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment in which to list resources.
-        """
+    def deployment_id(self) -> Optional[str]:
         return pulumi.get(self, "deployment_id")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection assignment being referenced.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        A filter to return only connection assignments having the 'lifecycleState' given.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -721,9 +562,6 @@ class GetConnectionAssignmentsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The name of the connection in the assignment (aliasName).
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -732,9 +570,6 @@ class GetConnectionAssignmentsFilterResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The name of the connection in the assignment (aliasName).
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -751,883 +586,707 @@ class GetConnectionAssignmentsFilterResult(dict):
 @pulumi.output_type
 class GetConnectionBootstrapServerResult(dict):
     def __init__(__self__, *,
-                 host: str,
-                 port: int,
-                 private_ip: str):
-        """
-        :param str host: The name or address of a host.
-        :param int port: The port of an endpoint usually specified for a connection.
-        :param str private_ip: The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
-        """
-        pulumi.set(__self__, "host", host)
-        pulumi.set(__self__, "port", port)
-        pulumi.set(__self__, "private_ip", private_ip)
+                 host: Optional[str] = None,
+                 port: Optional[int] = None,
+                 private_ip: Optional[str] = None):
+        if host is not None:
+            pulumi.set(__self__, "host", host)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
+        if private_ip is not None:
+            pulumi.set(__self__, "private_ip", private_ip)
 
     @property
     @pulumi.getter
-    def host(self) -> str:
-        """
-        The name or address of a host.
-        """
+    def host(self) -> Optional[str]:
         return pulumi.get(self, "host")
 
     @property
     @pulumi.getter
-    def port(self) -> int:
-        """
-        The port of an endpoint usually specified for a connection.
-        """
+    def port(self) -> Optional[int]:
         return pulumi.get(self, "port")
 
     @property
     @pulumi.getter(name="privateIp")
-    def private_ip(self) -> str:
-        """
-        The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
-        """
+    def private_ip(self) -> Optional[str]:
         return pulumi.get(self, "private_ip")
 
 
 @pulumi.output_type
 class GetConnectionIngressIpResult(dict):
     def __init__(__self__, *,
-                 ingress_ip: str):
-        """
-        :param str ingress_ip: A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
-        """
-        pulumi.set(__self__, "ingress_ip", ingress_ip)
+                 ingress_ip: Optional[str] = None):
+        if ingress_ip is not None:
+            pulumi.set(__self__, "ingress_ip", ingress_ip)
 
     @property
     @pulumi.getter(name="ingressIp")
-    def ingress_ip(self) -> str:
-        """
-        A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
-        """
+    def ingress_ip(self) -> Optional[str]:
         return pulumi.get(self, "ingress_ip")
 
 
 @pulumi.output_type
 class GetConnectionsConnectionCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetConnectionsConnectionCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetConnectionsConnectionCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetConnectionsConnectionCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetConnectionsConnectionCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetConnectionsConnectionCollectionItemResult(dict):
     def __init__(__self__, *,
-                 access_key_id: str,
-                 account_key: str,
-                 account_name: str,
-                 additional_attributes: Sequence['outputs.GetConnectionsConnectionCollectionItemAdditionalAttributeResult'],
-                 authentication_type: str,
-                 azure_tenant_id: str,
-                 bootstrap_servers: Sequence['outputs.GetConnectionsConnectionCollectionItemBootstrapServerResult'],
-                 client_id: str,
-                 client_secret: str,
-                 compartment_id: str,
-                 connection_factory: str,
-                 connection_string: str,
-                 connection_type: str,
-                 connection_url: str,
-                 consumer_properties: str,
-                 core_site_xml: str,
-                 database_id: str,
-                 database_name: str,
-                 db_system_id: str,
-                 defined_tags: Mapping[str, Any],
-                 deployment_id: str,
-                 description: str,
-                 display_name: str,
-                 endpoint: str,
-                 freeform_tags: Mapping[str, Any],
-                 host: str,
-                 id: str,
-                 ingress_ips: Sequence['outputs.GetConnectionsConnectionCollectionItemIngressIpResult'],
-                 jndi_connection_factory: str,
-                 jndi_initial_context_factory: str,
-                 jndi_provider_url: str,
-                 jndi_security_credentials: str,
-                 jndi_security_principal: str,
-                 key_id: str,
-                 key_store: str,
-                 key_store_password: str,
-                 lifecycle_details: str,
-                 nsg_ids: Sequence[str],
-                 password: str,
-                 port: int,
-                 private_ip: str,
-                 private_key_file: str,
-                 private_key_passphrase: str,
-                 producer_properties: str,
-                 public_key_fingerprint: str,
-                 region: str,
-                 sas_token: str,
-                 secret_access_key: str,
-                 security_protocol: str,
-                 session_mode: str,
-                 should_use_jndi: bool,
-                 should_validate_server_certificate: bool,
-                 ssl_ca: str,
-                 ssl_cert: str,
-                 ssl_crl: str,
-                 ssl_key: str,
-                 ssl_key_password: str,
-                 ssl_mode: str,
-                 state: str,
-                 stream_pool_id: str,
-                 subnet_id: str,
-                 system_tags: Mapping[str, Any],
-                 technology_type: str,
-                 tenancy_id: str,
-                 time_created: str,
-                 time_updated: str,
-                 trust_store: str,
-                 trust_store_password: str,
-                 url: str,
-                 user_id: str,
-                 username: str,
-                 vault_id: str,
-                 wallet: str):
-        """
-        :param str access_key_id: Access key ID to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
-        :param str account_name: Sets the Azure storage account name.
-        :param Sequence['GetConnectionsConnectionCollectionItemAdditionalAttributeArgs'] additional_attributes: An array of name-value pair attribute entries. Used as additional parameters in connection string.
-        :param str authentication_type: Used authentication mechanism to access Azure Data Lake Storage.
-        :param str azure_tenant_id: Azure tenant ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
-        :param Sequence['GetConnectionsConnectionCollectionItemBootstrapServerArgs'] bootstrap_servers: Kafka bootstrap. Equivalent of bootstrap.servers configuration property in Kafka: list of KafkaBootstrapServer objects specified by host/port. Used for establishing the initial connection to the Kafka cluster. Example: `"server1.example.com:9092,server2.example.com:9092"`
-        :param str client_id: Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
-        :param str compartment_id: The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
-        :param str connection_factory: The of Java class implementing javax.jms.ConnectionFactory interface supplied by the Java Message Service provider. e.g.: 'com.stc.jmsjca.core.JConnectionFactoryXA'
-        :param str connection_string: JDBC connection string. e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;'
-        :param str connection_type: The array of connection types.
-        :param str connection_url: JDBC connection URL. e.g.: 'jdbc:snowflake://<account_name>.snowflakecomputing.com/?warehouse=<warehouse-name>&db=<db-name>'
-        :param str database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Autonomous Json Database.
-        :param str database_name: The name of the database.
-        :param str db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system being referenced.
-        :param Mapping[str, Any] defined_tags: Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
-        :param str deployment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
-        :param str description: Metadata about this specific object.
-        :param str display_name: A filter to return only the resources that match the entire 'displayName' given.
-        :param str endpoint: Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
-        :param Mapping[str, Any] freeform_tags: A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
-        :param str host: The name or address of a host.
-        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
-        :param Sequence['GetConnectionsConnectionCollectionItemIngressIpArgs'] ingress_ips: List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
-        :param str jndi_connection_factory: The Connection Factory can be looked up using this name. e.g.: 'ConnectionFactory'
-        :param str jndi_initial_context_factory: The implementation of javax.naming.spi.InitialContextFactory interface that the client uses to obtain initial naming context. e.g.: 'org.apache.activemq.jndi.ActiveMQInitialContextFactory'
-        :param str jndi_provider_url: The URL that Java Message Service will use to contact the JNDI provider. e.g.: 'tcp://myjms.host.domain:61616?jms.prefetchPolicy.all=1000'
-        :param str jndi_security_principal: Specifies the identity of the principal (user) to be authenticated. e.g.: 'admin2'
-        :param str key_id: Refers to the customer's master key OCID.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
-        :param str lifecycle_details: Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
-        :param Sequence[str] nsg_ids: An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
-        :param int port: The port of an endpoint usually specified for a connection.
-        :param str private_ip: The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
-        :param str region: The name of the region. e.g.: us-ashburn-1
-        :param str security_protocol: Security protocol for PostgreSQL / Microsoft SQL Server..
-        :param str session_mode: The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
-        :param bool should_use_jndi: If set to true, Java Naming and Directory Interface (JNDI) properties should be provided.
-        :param bool should_validate_server_certificate: If set to true, the driver validates the certificate that is sent by the database server.
-        :param str ssl_ca: Database Certificate - The base64 encoded content of pem file containing the server public key (for 1-way SSL).
-        :param str ssl_mode: SSL mode for PostgreSQL.
-        :param str state: A filter to return only connections having the 'lifecycleState' given.
-        :param str stream_pool_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream pool being referenced.
-        :param str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
-        :param Mapping[str, Any] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
-        :param str technology_type: The array of technology types.
-        :param str tenancy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related Oracle Cloud Infrastructure tenancy.
-        :param str time_created: The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        :param str time_updated: The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        :param str url: Kafka Schema Registry URL. e.g.: 'https://server1.us.oracle.com:8081'
-        :param str user_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database/Object Storage. The user must have write access to the table they want to connect to.
-        :param str username: The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivity requirements defined in it.
-        :param str vault_id: Refers to the customer's vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
-        """
-        pulumi.set(__self__, "access_key_id", access_key_id)
-        pulumi.set(__self__, "account_key", account_key)
-        pulumi.set(__self__, "account_name", account_name)
-        pulumi.set(__self__, "additional_attributes", additional_attributes)
-        pulumi.set(__self__, "authentication_type", authentication_type)
-        pulumi.set(__self__, "azure_tenant_id", azure_tenant_id)
-        pulumi.set(__self__, "bootstrap_servers", bootstrap_servers)
-        pulumi.set(__self__, "client_id", client_id)
-        pulumi.set(__self__, "client_secret", client_secret)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "connection_factory", connection_factory)
-        pulumi.set(__self__, "connection_string", connection_string)
-        pulumi.set(__self__, "connection_type", connection_type)
-        pulumi.set(__self__, "connection_url", connection_url)
-        pulumi.set(__self__, "consumer_properties", consumer_properties)
-        pulumi.set(__self__, "core_site_xml", core_site_xml)
-        pulumi.set(__self__, "database_id", database_id)
-        pulumi.set(__self__, "database_name", database_name)
-        pulumi.set(__self__, "db_system_id", db_system_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "deployment_id", deployment_id)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "endpoint", endpoint)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "host", host)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "ingress_ips", ingress_ips)
-        pulumi.set(__self__, "jndi_connection_factory", jndi_connection_factory)
-        pulumi.set(__self__, "jndi_initial_context_factory", jndi_initial_context_factory)
-        pulumi.set(__self__, "jndi_provider_url", jndi_provider_url)
-        pulumi.set(__self__, "jndi_security_credentials", jndi_security_credentials)
-        pulumi.set(__self__, "jndi_security_principal", jndi_security_principal)
-        pulumi.set(__self__, "key_id", key_id)
-        pulumi.set(__self__, "key_store", key_store)
-        pulumi.set(__self__, "key_store_password", key_store_password)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "nsg_ids", nsg_ids)
-        pulumi.set(__self__, "password", password)
-        pulumi.set(__self__, "port", port)
-        pulumi.set(__self__, "private_ip", private_ip)
-        pulumi.set(__self__, "private_key_file", private_key_file)
-        pulumi.set(__self__, "private_key_passphrase", private_key_passphrase)
-        pulumi.set(__self__, "producer_properties", producer_properties)
-        pulumi.set(__self__, "public_key_fingerprint", public_key_fingerprint)
-        pulumi.set(__self__, "region", region)
-        pulumi.set(__self__, "sas_token", sas_token)
-        pulumi.set(__self__, "secret_access_key", secret_access_key)
-        pulumi.set(__self__, "security_protocol", security_protocol)
-        pulumi.set(__self__, "session_mode", session_mode)
-        pulumi.set(__self__, "should_use_jndi", should_use_jndi)
-        pulumi.set(__self__, "should_validate_server_certificate", should_validate_server_certificate)
-        pulumi.set(__self__, "ssl_ca", ssl_ca)
-        pulumi.set(__self__, "ssl_cert", ssl_cert)
-        pulumi.set(__self__, "ssl_crl", ssl_crl)
-        pulumi.set(__self__, "ssl_key", ssl_key)
-        pulumi.set(__self__, "ssl_key_password", ssl_key_password)
-        pulumi.set(__self__, "ssl_mode", ssl_mode)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "stream_pool_id", stream_pool_id)
-        pulumi.set(__self__, "subnet_id", subnet_id)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "technology_type", technology_type)
-        pulumi.set(__self__, "tenancy_id", tenancy_id)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "trust_store", trust_store)
-        pulumi.set(__self__, "trust_store_password", trust_store_password)
-        pulumi.set(__self__, "url", url)
-        pulumi.set(__self__, "user_id", user_id)
-        pulumi.set(__self__, "username", username)
-        pulumi.set(__self__, "vault_id", vault_id)
-        pulumi.set(__self__, "wallet", wallet)
+                 access_key_id: Optional[str] = None,
+                 account_key: Optional[str] = None,
+                 account_name: Optional[str] = None,
+                 additional_attributes: Optional[Sequence['outputs.GetConnectionsConnectionCollectionItemAdditionalAttributeResult']] = None,
+                 authentication_type: Optional[str] = None,
+                 azure_tenant_id: Optional[str] = None,
+                 bootstrap_servers: Optional[Sequence['outputs.GetConnectionsConnectionCollectionItemBootstrapServerResult']] = None,
+                 client_id: Optional[str] = None,
+                 client_secret: Optional[str] = None,
+                 compartment_id: Optional[str] = None,
+                 connection_factory: Optional[str] = None,
+                 connection_string: Optional[str] = None,
+                 connection_type: Optional[str] = None,
+                 connection_url: Optional[str] = None,
+                 consumer_properties: Optional[str] = None,
+                 core_site_xml: Optional[str] = None,
+                 database_id: Optional[str] = None,
+                 database_name: Optional[str] = None,
+                 db_system_id: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 deployment_id: Optional[str] = None,
+                 description: Optional[str] = None,
+                 display_name: Optional[str] = None,
+                 endpoint: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 host: Optional[str] = None,
+                 id: Optional[str] = None,
+                 ingress_ips: Optional[Sequence['outputs.GetConnectionsConnectionCollectionItemIngressIpResult']] = None,
+                 jndi_connection_factory: Optional[str] = None,
+                 jndi_initial_context_factory: Optional[str] = None,
+                 jndi_provider_url: Optional[str] = None,
+                 jndi_security_credentials: Optional[str] = None,
+                 jndi_security_principal: Optional[str] = None,
+                 key_id: Optional[str] = None,
+                 key_store: Optional[str] = None,
+                 key_store_password: Optional[str] = None,
+                 lifecycle_details: Optional[str] = None,
+                 nsg_ids: Optional[Sequence[str]] = None,
+                 password: Optional[str] = None,
+                 port: Optional[int] = None,
+                 private_ip: Optional[str] = None,
+                 private_key_file: Optional[str] = None,
+                 private_key_passphrase: Optional[str] = None,
+                 producer_properties: Optional[str] = None,
+                 public_key_fingerprint: Optional[str] = None,
+                 region: Optional[str] = None,
+                 sas_token: Optional[str] = None,
+                 secret_access_key: Optional[str] = None,
+                 security_protocol: Optional[str] = None,
+                 session_mode: Optional[str] = None,
+                 should_use_jndi: Optional[bool] = None,
+                 should_validate_server_certificate: Optional[bool] = None,
+                 ssl_ca: Optional[str] = None,
+                 ssl_cert: Optional[str] = None,
+                 ssl_crl: Optional[str] = None,
+                 ssl_key: Optional[str] = None,
+                 ssl_key_password: Optional[str] = None,
+                 ssl_mode: Optional[str] = None,
+                 state: Optional[str] = None,
+                 stream_pool_id: Optional[str] = None,
+                 subnet_id: Optional[str] = None,
+                 system_tags: Optional[Mapping[str, Any]] = None,
+                 technology_type: Optional[str] = None,
+                 tenancy_id: Optional[str] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None,
+                 trust_store: Optional[str] = None,
+                 trust_store_password: Optional[str] = None,
+                 url: Optional[str] = None,
+                 user_id: Optional[str] = None,
+                 username: Optional[str] = None,
+                 vault_id: Optional[str] = None,
+                 wallet: Optional[str] = None):
+        if access_key_id is not None:
+            pulumi.set(__self__, "access_key_id", access_key_id)
+        if account_key is not None:
+            pulumi.set(__self__, "account_key", account_key)
+        if account_name is not None:
+            pulumi.set(__self__, "account_name", account_name)
+        if additional_attributes is not None:
+            pulumi.set(__self__, "additional_attributes", additional_attributes)
+        if authentication_type is not None:
+            pulumi.set(__self__, "authentication_type", authentication_type)
+        if azure_tenant_id is not None:
+            pulumi.set(__self__, "azure_tenant_id", azure_tenant_id)
+        if bootstrap_servers is not None:
+            pulumi.set(__self__, "bootstrap_servers", bootstrap_servers)
+        if client_id is not None:
+            pulumi.set(__self__, "client_id", client_id)
+        if client_secret is not None:
+            pulumi.set(__self__, "client_secret", client_secret)
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if connection_factory is not None:
+            pulumi.set(__self__, "connection_factory", connection_factory)
+        if connection_string is not None:
+            pulumi.set(__self__, "connection_string", connection_string)
+        if connection_type is not None:
+            pulumi.set(__self__, "connection_type", connection_type)
+        if connection_url is not None:
+            pulumi.set(__self__, "connection_url", connection_url)
+        if consumer_properties is not None:
+            pulumi.set(__self__, "consumer_properties", consumer_properties)
+        if core_site_xml is not None:
+            pulumi.set(__self__, "core_site_xml", core_site_xml)
+        if database_id is not None:
+            pulumi.set(__self__, "database_id", database_id)
+        if database_name is not None:
+            pulumi.set(__self__, "database_name", database_name)
+        if db_system_id is not None:
+            pulumi.set(__self__, "db_system_id", db_system_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if deployment_id is not None:
+            pulumi.set(__self__, "deployment_id", deployment_id)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if endpoint is not None:
+            pulumi.set(__self__, "endpoint", endpoint)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if host is not None:
+            pulumi.set(__self__, "host", host)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if ingress_ips is not None:
+            pulumi.set(__self__, "ingress_ips", ingress_ips)
+        if jndi_connection_factory is not None:
+            pulumi.set(__self__, "jndi_connection_factory", jndi_connection_factory)
+        if jndi_initial_context_factory is not None:
+            pulumi.set(__self__, "jndi_initial_context_factory", jndi_initial_context_factory)
+        if jndi_provider_url is not None:
+            pulumi.set(__self__, "jndi_provider_url", jndi_provider_url)
+        if jndi_security_credentials is not None:
+            pulumi.set(__self__, "jndi_security_credentials", jndi_security_credentials)
+        if jndi_security_principal is not None:
+            pulumi.set(__self__, "jndi_security_principal", jndi_security_principal)
+        if key_id is not None:
+            pulumi.set(__self__, "key_id", key_id)
+        if key_store is not None:
+            pulumi.set(__self__, "key_store", key_store)
+        if key_store_password is not None:
+            pulumi.set(__self__, "key_store_password", key_store_password)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if nsg_ids is not None:
+            pulumi.set(__self__, "nsg_ids", nsg_ids)
+        if password is not None:
+            pulumi.set(__self__, "password", password)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
+        if private_ip is not None:
+            pulumi.set(__self__, "private_ip", private_ip)
+        if private_key_file is not None:
+            pulumi.set(__self__, "private_key_file", private_key_file)
+        if private_key_passphrase is not None:
+            pulumi.set(__self__, "private_key_passphrase", private_key_passphrase)
+        if producer_properties is not None:
+            pulumi.set(__self__, "producer_properties", producer_properties)
+        if public_key_fingerprint is not None:
+            pulumi.set(__self__, "public_key_fingerprint", public_key_fingerprint)
+        if region is not None:
+            pulumi.set(__self__, "region", region)
+        if sas_token is not None:
+            pulumi.set(__self__, "sas_token", sas_token)
+        if secret_access_key is not None:
+            pulumi.set(__self__, "secret_access_key", secret_access_key)
+        if security_protocol is not None:
+            pulumi.set(__self__, "security_protocol", security_protocol)
+        if session_mode is not None:
+            pulumi.set(__self__, "session_mode", session_mode)
+        if should_use_jndi is not None:
+            pulumi.set(__self__, "should_use_jndi", should_use_jndi)
+        if should_validate_server_certificate is not None:
+            pulumi.set(__self__, "should_validate_server_certificate", should_validate_server_certificate)
+        if ssl_ca is not None:
+            pulumi.set(__self__, "ssl_ca", ssl_ca)
+        if ssl_cert is not None:
+            pulumi.set(__self__, "ssl_cert", ssl_cert)
+        if ssl_crl is not None:
+            pulumi.set(__self__, "ssl_crl", ssl_crl)
+        if ssl_key is not None:
+            pulumi.set(__self__, "ssl_key", ssl_key)
+        if ssl_key_password is not None:
+            pulumi.set(__self__, "ssl_key_password", ssl_key_password)
+        if ssl_mode is not None:
+            pulumi.set(__self__, "ssl_mode", ssl_mode)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if stream_pool_id is not None:
+            pulumi.set(__self__, "stream_pool_id", stream_pool_id)
+        if subnet_id is not None:
+            pulumi.set(__self__, "subnet_id", subnet_id)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
+        if technology_type is not None:
+            pulumi.set(__self__, "technology_type", technology_type)
+        if tenancy_id is not None:
+            pulumi.set(__self__, "tenancy_id", tenancy_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
+        if trust_store is not None:
+            pulumi.set(__self__, "trust_store", trust_store)
+        if trust_store_password is not None:
+            pulumi.set(__self__, "trust_store_password", trust_store_password)
+        if url is not None:
+            pulumi.set(__self__, "url", url)
+        if user_id is not None:
+            pulumi.set(__self__, "user_id", user_id)
+        if username is not None:
+            pulumi.set(__self__, "username", username)
+        if vault_id is not None:
+            pulumi.set(__self__, "vault_id", vault_id)
+        if wallet is not None:
+            pulumi.set(__self__, "wallet", wallet)
 
     @property
     @pulumi.getter(name="accessKeyId")
-    def access_key_id(self) -> str:
-        """
-        Access key ID to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
-        """
+    def access_key_id(self) -> Optional[str]:
         return pulumi.get(self, "access_key_id")
 
     @property
     @pulumi.getter(name="accountKey")
-    def account_key(self) -> str:
+    def account_key(self) -> Optional[str]:
         return pulumi.get(self, "account_key")
 
     @property
     @pulumi.getter(name="accountName")
-    def account_name(self) -> str:
-        """
-        Sets the Azure storage account name.
-        """
+    def account_name(self) -> Optional[str]:
         return pulumi.get(self, "account_name")
 
     @property
     @pulumi.getter(name="additionalAttributes")
-    def additional_attributes(self) -> Sequence['outputs.GetConnectionsConnectionCollectionItemAdditionalAttributeResult']:
-        """
-        An array of name-value pair attribute entries. Used as additional parameters in connection string.
-        """
+    def additional_attributes(self) -> Optional[Sequence['outputs.GetConnectionsConnectionCollectionItemAdditionalAttributeResult']]:
         return pulumi.get(self, "additional_attributes")
 
     @property
     @pulumi.getter(name="authenticationType")
-    def authentication_type(self) -> str:
-        """
-        Used authentication mechanism to access Azure Data Lake Storage.
-        """
+    def authentication_type(self) -> Optional[str]:
         return pulumi.get(self, "authentication_type")
 
     @property
     @pulumi.getter(name="azureTenantId")
-    def azure_tenant_id(self) -> str:
-        """
-        Azure tenant ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
-        """
+    def azure_tenant_id(self) -> Optional[str]:
         return pulumi.get(self, "azure_tenant_id")
 
     @property
     @pulumi.getter(name="bootstrapServers")
-    def bootstrap_servers(self) -> Sequence['outputs.GetConnectionsConnectionCollectionItemBootstrapServerResult']:
-        """
-        Kafka bootstrap. Equivalent of bootstrap.servers configuration property in Kafka: list of KafkaBootstrapServer objects specified by host/port. Used for establishing the initial connection to the Kafka cluster. Example: `"server1.example.com:9092,server2.example.com:9092"`
-        """
+    def bootstrap_servers(self) -> Optional[Sequence['outputs.GetConnectionsConnectionCollectionItemBootstrapServerResult']]:
         return pulumi.get(self, "bootstrap_servers")
 
     @property
     @pulumi.getter(name="clientId")
-    def client_id(self) -> str:
-        """
-        Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
-        """
+    def client_id(self) -> Optional[str]:
         return pulumi.get(self, "client_id")
 
     @property
     @pulumi.getter(name="clientSecret")
-    def client_secret(self) -> str:
+    def client_secret(self) -> Optional[str]:
         return pulumi.get(self, "client_secret")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="connectionFactory")
-    def connection_factory(self) -> str:
-        """
-        The of Java class implementing javax.jms.ConnectionFactory interface supplied by the Java Message Service provider. e.g.: 'com.stc.jmsjca.core.JConnectionFactoryXA'
-        """
+    def connection_factory(self) -> Optional[str]:
         return pulumi.get(self, "connection_factory")
 
     @property
     @pulumi.getter(name="connectionString")
-    def connection_string(self) -> str:
-        """
-        JDBC connection string. e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;'
-        """
+    def connection_string(self) -> Optional[str]:
         return pulumi.get(self, "connection_string")
 
     @property
     @pulumi.getter(name="connectionType")
-    def connection_type(self) -> str:
-        """
-        The array of connection types.
-        """
+    def connection_type(self) -> Optional[str]:
         return pulumi.get(self, "connection_type")
 
     @property
     @pulumi.getter(name="connectionUrl")
-    def connection_url(self) -> str:
-        """
-        JDBC connection URL. e.g.: 'jdbc:snowflake://<account_name>.snowflakecomputing.com/?warehouse=<warehouse-name>&db=<db-name>'
-        """
+    def connection_url(self) -> Optional[str]:
         return pulumi.get(self, "connection_url")
 
     @property
     @pulumi.getter(name="consumerProperties")
-    def consumer_properties(self) -> str:
+    def consumer_properties(self) -> Optional[str]:
         return pulumi.get(self, "consumer_properties")
 
     @property
     @pulumi.getter(name="coreSiteXml")
-    def core_site_xml(self) -> str:
+    def core_site_xml(self) -> Optional[str]:
         return pulumi.get(self, "core_site_xml")
 
     @property
     @pulumi.getter(name="databaseId")
-    def database_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Autonomous Json Database.
-        """
+    def database_id(self) -> Optional[str]:
         return pulumi.get(self, "database_id")
 
     @property
     @pulumi.getter(name="databaseName")
-    def database_name(self) -> str:
-        """
-        The name of the database.
-        """
+    def database_name(self) -> Optional[str]:
         return pulumi.get(self, "database_name")
 
     @property
     @pulumi.getter(name="dbSystemId")
-    def db_system_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system being referenced.
-        """
+    def db_system_id(self) -> Optional[str]:
         return pulumi.get(self, "db_system_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="deploymentId")
-    def deployment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
-        """
+    def deployment_id(self) -> Optional[str]:
         return pulumi.get(self, "deployment_id")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Metadata about this specific object.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return only the resources that match the entire 'displayName' given.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
-    def endpoint(self) -> str:
-        """
-        Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
-        """
+    def endpoint(self) -> Optional[str]:
         return pulumi.get(self, "endpoint")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def host(self) -> str:
-        """
-        The name or address of a host.
-        """
+    def host(self) -> Optional[str]:
         return pulumi.get(self, "host")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="ingressIps")
-    def ingress_ips(self) -> Sequence['outputs.GetConnectionsConnectionCollectionItemIngressIpResult']:
-        """
-        List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
-        """
+    def ingress_ips(self) -> Optional[Sequence['outputs.GetConnectionsConnectionCollectionItemIngressIpResult']]:
         return pulumi.get(self, "ingress_ips")
 
     @property
     @pulumi.getter(name="jndiConnectionFactory")
-    def jndi_connection_factory(self) -> str:
-        """
-        The Connection Factory can be looked up using this name. e.g.: 'ConnectionFactory'
-        """
+    def jndi_connection_factory(self) -> Optional[str]:
         return pulumi.get(self, "jndi_connection_factory")
 
     @property
     @pulumi.getter(name="jndiInitialContextFactory")
-    def jndi_initial_context_factory(self) -> str:
-        """
-        The implementation of javax.naming.spi.InitialContextFactory interface that the client uses to obtain initial naming context. e.g.: 'org.apache.activemq.jndi.ActiveMQInitialContextFactory'
-        """
+    def jndi_initial_context_factory(self) -> Optional[str]:
         return pulumi.get(self, "jndi_initial_context_factory")
 
     @property
     @pulumi.getter(name="jndiProviderUrl")
-    def jndi_provider_url(self) -> str:
-        """
-        The URL that Java Message Service will use to contact the JNDI provider. e.g.: 'tcp://myjms.host.domain:61616?jms.prefetchPolicy.all=1000'
-        """
+    def jndi_provider_url(self) -> Optional[str]:
         return pulumi.get(self, "jndi_provider_url")
 
     @property
     @pulumi.getter(name="jndiSecurityCredentials")
-    def jndi_security_credentials(self) -> str:
+    def jndi_security_credentials(self) -> Optional[str]:
         return pulumi.get(self, "jndi_security_credentials")
 
     @property
     @pulumi.getter(name="jndiSecurityPrincipal")
-    def jndi_security_principal(self) -> str:
-        """
-        Specifies the identity of the principal (user) to be authenticated. e.g.: 'admin2'
-        """
+    def jndi_security_principal(self) -> Optional[str]:
         return pulumi.get(self, "jndi_security_principal")
 
     @property
     @pulumi.getter(name="keyId")
-    def key_id(self) -> str:
-        """
-        Refers to the customer's master key OCID.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
-        """
+    def key_id(self) -> Optional[str]:
         return pulumi.get(self, "key_id")
 
     @property
     @pulumi.getter(name="keyStore")
-    def key_store(self) -> str:
+    def key_store(self) -> Optional[str]:
         return pulumi.get(self, "key_store")
 
     @property
     @pulumi.getter(name="keyStorePassword")
-    def key_store_password(self) -> str:
+    def key_store_password(self) -> Optional[str]:
         return pulumi.get(self, "key_store_password")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="nsgIds")
-    def nsg_ids(self) -> Sequence[str]:
-        """
-        An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
-        """
+    def nsg_ids(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "nsg_ids")
 
     @property
     @pulumi.getter
-    def password(self) -> str:
+    def password(self) -> Optional[str]:
         return pulumi.get(self, "password")
 
     @property
     @pulumi.getter
-    def port(self) -> int:
-        """
-        The port of an endpoint usually specified for a connection.
-        """
+    def port(self) -> Optional[int]:
         return pulumi.get(self, "port")
 
     @property
     @pulumi.getter(name="privateIp")
-    def private_ip(self) -> str:
-        """
-        The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
-        """
+    def private_ip(self) -> Optional[str]:
         return pulumi.get(self, "private_ip")
 
     @property
     @pulumi.getter(name="privateKeyFile")
-    def private_key_file(self) -> str:
+    def private_key_file(self) -> Optional[str]:
         return pulumi.get(self, "private_key_file")
 
     @property
     @pulumi.getter(name="privateKeyPassphrase")
-    def private_key_passphrase(self) -> str:
+    def private_key_passphrase(self) -> Optional[str]:
         return pulumi.get(self, "private_key_passphrase")
 
     @property
     @pulumi.getter(name="producerProperties")
-    def producer_properties(self) -> str:
+    def producer_properties(self) -> Optional[str]:
         return pulumi.get(self, "producer_properties")
 
     @property
     @pulumi.getter(name="publicKeyFingerprint")
-    def public_key_fingerprint(self) -> str:
+    def public_key_fingerprint(self) -> Optional[str]:
         return pulumi.get(self, "public_key_fingerprint")
 
     @property
     @pulumi.getter
-    def region(self) -> str:
-        """
-        The name of the region. e.g.: us-ashburn-1
-        """
+    def region(self) -> Optional[str]:
         return pulumi.get(self, "region")
 
     @property
     @pulumi.getter(name="sasToken")
-    def sas_token(self) -> str:
+    def sas_token(self) -> Optional[str]:
         return pulumi.get(self, "sas_token")
 
     @property
     @pulumi.getter(name="secretAccessKey")
-    def secret_access_key(self) -> str:
+    def secret_access_key(self) -> Optional[str]:
         return pulumi.get(self, "secret_access_key")
 
     @property
     @pulumi.getter(name="securityProtocol")
-    def security_protocol(self) -> str:
-        """
-        Security protocol for PostgreSQL / Microsoft SQL Server..
-        """
+    def security_protocol(self) -> Optional[str]:
         return pulumi.get(self, "security_protocol")
 
     @property
     @pulumi.getter(name="sessionMode")
-    def session_mode(self) -> str:
-        """
-        The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
-        """
+    def session_mode(self) -> Optional[str]:
         return pulumi.get(self, "session_mode")
 
     @property
     @pulumi.getter(name="shouldUseJndi")
-    def should_use_jndi(self) -> bool:
-        """
-        If set to true, Java Naming and Directory Interface (JNDI) properties should be provided.
-        """
+    def should_use_jndi(self) -> Optional[bool]:
         return pulumi.get(self, "should_use_jndi")
 
     @property
     @pulumi.getter(name="shouldValidateServerCertificate")
-    def should_validate_server_certificate(self) -> bool:
-        """
-        If set to true, the driver validates the certificate that is sent by the database server.
-        """
+    def should_validate_server_certificate(self) -> Optional[bool]:
         return pulumi.get(self, "should_validate_server_certificate")
 
     @property
     @pulumi.getter(name="sslCa")
-    def ssl_ca(self) -> str:
-        """
-        Database Certificate - The base64 encoded content of pem file containing the server public key (for 1-way SSL).
-        """
+    def ssl_ca(self) -> Optional[str]:
         return pulumi.get(self, "ssl_ca")
 
     @property
     @pulumi.getter(name="sslCert")
-    def ssl_cert(self) -> str:
+    def ssl_cert(self) -> Optional[str]:
         return pulumi.get(self, "ssl_cert")
 
     @property
     @pulumi.getter(name="sslCrl")
-    def ssl_crl(self) -> str:
+    def ssl_crl(self) -> Optional[str]:
         return pulumi.get(self, "ssl_crl")
 
     @property
     @pulumi.getter(name="sslKey")
-    def ssl_key(self) -> str:
+    def ssl_key(self) -> Optional[str]:
         return pulumi.get(self, "ssl_key")
 
     @property
     @pulumi.getter(name="sslKeyPassword")
-    def ssl_key_password(self) -> str:
+    def ssl_key_password(self) -> Optional[str]:
         return pulumi.get(self, "ssl_key_password")
 
     @property
     @pulumi.getter(name="sslMode")
-    def ssl_mode(self) -> str:
-        """
-        SSL mode for PostgreSQL.
-        """
+    def ssl_mode(self) -> Optional[str]:
         return pulumi.get(self, "ssl_mode")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        A filter to return only connections having the 'lifecycleState' given.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="streamPoolId")
-    def stream_pool_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream pool being referenced.
-        """
+    def stream_pool_id(self) -> Optional[str]:
         return pulumi.get(self, "stream_pool_id")
 
     @property
     @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
-        """
+    def subnet_id(self) -> Optional[str]:
         return pulumi.get(self, "subnet_id")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="technologyType")
-    def technology_type(self) -> str:
-        """
-        The array of technology types.
-        """
+    def technology_type(self) -> Optional[str]:
         return pulumi.get(self, "technology_type")
 
     @property
     @pulumi.getter(name="tenancyId")
-    def tenancy_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related Oracle Cloud Infrastructure tenancy.
-        """
+    def tenancy_id(self) -> Optional[str]:
         return pulumi.get(self, "tenancy_id")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="trustStore")
-    def trust_store(self) -> str:
+    def trust_store(self) -> Optional[str]:
         return pulumi.get(self, "trust_store")
 
     @property
     @pulumi.getter(name="trustStorePassword")
-    def trust_store_password(self) -> str:
+    def trust_store_password(self) -> Optional[str]:
         return pulumi.get(self, "trust_store_password")
 
     @property
     @pulumi.getter
-    def url(self) -> str:
-        """
-        Kafka Schema Registry URL. e.g.: 'https://server1.us.oracle.com:8081'
-        """
+    def url(self) -> Optional[str]:
         return pulumi.get(self, "url")
 
     @property
     @pulumi.getter(name="userId")
-    def user_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database/Object Storage. The user must have write access to the table they want to connect to.
-        """
+    def user_id(self) -> Optional[str]:
         return pulumi.get(self, "user_id")
 
     @property
     @pulumi.getter
-    def username(self) -> str:
-        """
-        The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivity requirements defined in it.
-        """
+    def username(self) -> Optional[str]:
         return pulumi.get(self, "username")
 
     @property
     @pulumi.getter(name="vaultId")
-    def vault_id(self) -> str:
-        """
-        Refers to the customer's vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
-        """
+    def vault_id(self) -> Optional[str]:
         return pulumi.get(self, "vault_id")
 
     @property
     @pulumi.getter
-    def wallet(self) -> str:
+    def wallet(self) -> Optional[str]:
         return pulumi.get(self, "wallet")
 
 
 @pulumi.output_type
 class GetConnectionsConnectionCollectionItemAdditionalAttributeResult(dict):
     def __init__(__self__, *,
-                 name: str,
-                 value: str):
-        """
-        :param str name: The name of the property entry.
-        :param str value: The value of the property entry.
-        """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "value", value)
+                 name: Optional[str] = None,
+                 value: Optional[str] = None):
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The name of the property entry.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def value(self) -> str:
-        """
-        The value of the property entry.
-        """
+    def value(self) -> Optional[str]:
         return pulumi.get(self, "value")
 
 
 @pulumi.output_type
 class GetConnectionsConnectionCollectionItemBootstrapServerResult(dict):
     def __init__(__self__, *,
-                 host: str,
-                 port: int,
-                 private_ip: str):
-        """
-        :param str host: The name or address of a host.
-        :param int port: The port of an endpoint usually specified for a connection.
-        :param str private_ip: The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
-        """
-        pulumi.set(__self__, "host", host)
-        pulumi.set(__self__, "port", port)
-        pulumi.set(__self__, "private_ip", private_ip)
+                 host: Optional[str] = None,
+                 port: Optional[int] = None,
+                 private_ip: Optional[str] = None):
+        if host is not None:
+            pulumi.set(__self__, "host", host)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
+        if private_ip is not None:
+            pulumi.set(__self__, "private_ip", private_ip)
 
     @property
     @pulumi.getter
-    def host(self) -> str:
-        """
-        The name or address of a host.
-        """
+    def host(self) -> Optional[str]:
         return pulumi.get(self, "host")
 
     @property
     @pulumi.getter
-    def port(self) -> int:
-        """
-        The port of an endpoint usually specified for a connection.
-        """
+    def port(self) -> Optional[int]:
         return pulumi.get(self, "port")
 
     @property
     @pulumi.getter(name="privateIp")
-    def private_ip(self) -> str:
-        """
-        The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
-        """
+    def private_ip(self) -> Optional[str]:
         return pulumi.get(self, "private_ip")
 
 
 @pulumi.output_type
 class GetConnectionsConnectionCollectionItemIngressIpResult(dict):
     def __init__(__self__, *,
-                 ingress_ip: str):
-        """
-        :param str ingress_ip: A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
-        """
-        pulumi.set(__self__, "ingress_ip", ingress_ip)
+                 ingress_ip: Optional[str] = None):
+        if ingress_ip is not None:
+            pulumi.set(__self__, "ingress_ip", ingress_ip)
 
     @property
     @pulumi.getter(name="ingressIp")
-    def ingress_ip(self) -> str:
-        """
-        A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
-        """
+    def ingress_ip(self) -> Optional[str]:
         return pulumi.get(self, "ingress_ip")
 
 
@@ -1637,9 +1296,6 @@ class GetConnectionsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The name of the property entry.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -1648,9 +1304,6 @@ class GetConnectionsFilterResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The name of the property entry.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -1667,297 +1320,226 @@ class GetConnectionsFilterResult(dict):
 @pulumi.output_type
 class GetDatabaseRegistrationsDatabaseRegistrationCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetDatabaseRegistrationsDatabaseRegistrationCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetDatabaseRegistrationsDatabaseRegistrationCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetDatabaseRegistrationsDatabaseRegistrationCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetDatabaseRegistrationsDatabaseRegistrationCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetDatabaseRegistrationsDatabaseRegistrationCollectionItemResult(dict):
     def __init__(__self__, *,
-                 alias_name: str,
-                 compartment_id: str,
-                 connection_string: str,
-                 database_id: str,
-                 defined_tags: Mapping[str, Any],
-                 description: str,
-                 display_name: str,
-                 fqdn: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 ip_address: str,
-                 key_id: str,
-                 lifecycle_details: str,
-                 password: str,
-                 rce_private_ip: str,
-                 secret_compartment_id: str,
-                 secret_id: str,
-                 session_mode: str,
-                 state: str,
-                 subnet_id: str,
-                 system_tags: Mapping[str, Any],
-                 time_created: str,
-                 time_updated: str,
-                 username: str,
-                 vault_id: str,
-                 wallet: str):
-        """
-        :param str alias_name: Credential store alias.
-        :param str compartment_id: The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
-        :param str connection_string: Connect descriptor or Easy Connect Naming method used to connect to a database.
-        :param str database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
-        :param Mapping[str, Any] defined_tags: Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
-        :param str description: Metadata about this specific object.
-        :param str display_name: A filter to return only the resources that match the entire 'displayName' given.
-        :param str fqdn: A three-label Fully Qualified Domain Name (FQDN) for a resource.
-        :param Mapping[str, Any] freeform_tags: A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
-        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the databaseRegistration being referenced.
-        :param str ip_address: The private IP address in the customer's VCN of the customer's endpoint, typically a database.
-        :param str key_id: Refers to the customer's master key OCID.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
-        :param str lifecycle_details: Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
-        :param str rce_private_ip: A Private Endpoint IP address created in the customer's subnet.  A customer database can expect network traffic initiated by GoldenGate Service from this IP address.  It can also send network traffic to this IP address, typically in response to requests from GoldenGate Service.  The customer may use this IP address in Security Lists or Network Security Groups (NSG) as needed.
-        :param str secret_compartment_id: The OCID of the compartment where the GoldenGate Secret will be created.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
-        :param str secret_id: The OCID of the customer's GoldenGate Service Secret.  If provided, it references a key that customers will be required to ensure the policies are established  to permit GoldenGate to use this Secret.
-        :param str session_mode: The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
-        :param str state: A filter to return only the resources that match the 'lifecycleState' given.
-        :param str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
-        :param Mapping[str, Any] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
-        :param str time_created: The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        :param str time_updated: The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        :param str username: The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivty requirments defined in it.
-        :param str vault_id: Refers to the customer's vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
-        """
-        pulumi.set(__self__, "alias_name", alias_name)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "connection_string", connection_string)
-        pulumi.set(__self__, "database_id", database_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "fqdn", fqdn)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "ip_address", ip_address)
-        pulumi.set(__self__, "key_id", key_id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "password", password)
-        pulumi.set(__self__, "rce_private_ip", rce_private_ip)
-        pulumi.set(__self__, "secret_compartment_id", secret_compartment_id)
-        pulumi.set(__self__, "secret_id", secret_id)
-        pulumi.set(__self__, "session_mode", session_mode)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "subnet_id", subnet_id)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "username", username)
-        pulumi.set(__self__, "vault_id", vault_id)
-        pulumi.set(__self__, "wallet", wallet)
+                 alias_name: Optional[str] = None,
+                 compartment_id: Optional[str] = None,
+                 connection_string: Optional[str] = None,
+                 database_id: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 description: Optional[str] = None,
+                 display_name: Optional[str] = None,
+                 fqdn: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 ip_address: Optional[str] = None,
+                 key_id: Optional[str] = None,
+                 lifecycle_details: Optional[str] = None,
+                 password: Optional[str] = None,
+                 rce_private_ip: Optional[str] = None,
+                 secret_compartment_id: Optional[str] = None,
+                 secret_id: Optional[str] = None,
+                 session_mode: Optional[str] = None,
+                 state: Optional[str] = None,
+                 subnet_id: Optional[str] = None,
+                 system_tags: Optional[Mapping[str, Any]] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None,
+                 username: Optional[str] = None,
+                 vault_id: Optional[str] = None,
+                 wallet: Optional[str] = None):
+        if alias_name is not None:
+            pulumi.set(__self__, "alias_name", alias_name)
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if connection_string is not None:
+            pulumi.set(__self__, "connection_string", connection_string)
+        if database_id is not None:
+            pulumi.set(__self__, "database_id", database_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if fqdn is not None:
+            pulumi.set(__self__, "fqdn", fqdn)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if ip_address is not None:
+            pulumi.set(__self__, "ip_address", ip_address)
+        if key_id is not None:
+            pulumi.set(__self__, "key_id", key_id)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if password is not None:
+            pulumi.set(__self__, "password", password)
+        if rce_private_ip is not None:
+            pulumi.set(__self__, "rce_private_ip", rce_private_ip)
+        if secret_compartment_id is not None:
+            pulumi.set(__self__, "secret_compartment_id", secret_compartment_id)
+        if secret_id is not None:
+            pulumi.set(__self__, "secret_id", secret_id)
+        if session_mode is not None:
+            pulumi.set(__self__, "session_mode", session_mode)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if subnet_id is not None:
+            pulumi.set(__self__, "subnet_id", subnet_id)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
+        if username is not None:
+            pulumi.set(__self__, "username", username)
+        if vault_id is not None:
+            pulumi.set(__self__, "vault_id", vault_id)
+        if wallet is not None:
+            pulumi.set(__self__, "wallet", wallet)
 
     @property
     @pulumi.getter(name="aliasName")
-    def alias_name(self) -> str:
-        """
-        Credential store alias.
-        """
+    def alias_name(self) -> Optional[str]:
         return pulumi.get(self, "alias_name")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="connectionString")
-    def connection_string(self) -> str:
-        """
-        Connect descriptor or Easy Connect Naming method used to connect to a database.
-        """
+    def connection_string(self) -> Optional[str]:
         return pulumi.get(self, "connection_string")
 
     @property
     @pulumi.getter(name="databaseId")
-    def database_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
-        """
+    def database_id(self) -> Optional[str]:
         return pulumi.get(self, "database_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Metadata about this specific object.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return only the resources that match the entire 'displayName' given.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
-    def fqdn(self) -> str:
-        """
-        A three-label Fully Qualified Domain Name (FQDN) for a resource.
-        """
+    def fqdn(self) -> Optional[str]:
         return pulumi.get(self, "fqdn")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the databaseRegistration being referenced.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="ipAddress")
-    def ip_address(self) -> str:
-        """
-        The private IP address in the customer's VCN of the customer's endpoint, typically a database.
-        """
+    def ip_address(self) -> Optional[str]:
         return pulumi.get(self, "ip_address")
 
     @property
     @pulumi.getter(name="keyId")
-    def key_id(self) -> str:
-        """
-        Refers to the customer's master key OCID.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
-        """
+    def key_id(self) -> Optional[str]:
         return pulumi.get(self, "key_id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
-    def password(self) -> str:
+    def password(self) -> Optional[str]:
         return pulumi.get(self, "password")
 
     @property
     @pulumi.getter(name="rcePrivateIp")
-    def rce_private_ip(self) -> str:
-        """
-        A Private Endpoint IP address created in the customer's subnet.  A customer database can expect network traffic initiated by GoldenGate Service from this IP address.  It can also send network traffic to this IP address, typically in response to requests from GoldenGate Service.  The customer may use this IP address in Security Lists or Network Security Groups (NSG) as needed.
-        """
+    def rce_private_ip(self) -> Optional[str]:
         return pulumi.get(self, "rce_private_ip")
 
     @property
     @pulumi.getter(name="secretCompartmentId")
-    def secret_compartment_id(self) -> str:
-        """
-        The OCID of the compartment where the GoldenGate Secret will be created.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
-        """
+    def secret_compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "secret_compartment_id")
 
     @property
     @pulumi.getter(name="secretId")
-    def secret_id(self) -> str:
-        """
-        The OCID of the customer's GoldenGate Service Secret.  If provided, it references a key that customers will be required to ensure the policies are established  to permit GoldenGate to use this Secret.
-        """
+    def secret_id(self) -> Optional[str]:
         return pulumi.get(self, "secret_id")
 
     @property
     @pulumi.getter(name="sessionMode")
-    def session_mode(self) -> str:
-        """
-        The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
-        """
+    def session_mode(self) -> Optional[str]:
         return pulumi.get(self, "session_mode")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        A filter to return only the resources that match the 'lifecycleState' given.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
-        """
+    def subnet_id(self) -> Optional[str]:
         return pulumi.get(self, "subnet_id")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter
-    def username(self) -> str:
-        """
-        The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivty requirments defined in it.
-        """
+    def username(self) -> Optional[str]:
         return pulumi.get(self, "username")
 
     @property
     @pulumi.getter(name="vaultId")
-    def vault_id(self) -> str:
-        """
-        Refers to the customer's vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
-        """
+    def vault_id(self) -> Optional[str]:
         return pulumi.get(self, "vault_id")
 
     @property
     @pulumi.getter
-    def wallet(self) -> str:
+    def wallet(self) -> Optional[str]:
         return pulumi.get(self, "wallet")
 
 
@@ -1991,239 +1573,178 @@ class GetDatabaseRegistrationsFilterResult(dict):
 @pulumi.output_type
 class GetDeploymentBackupsDeploymentBackupCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetDeploymentBackupsDeploymentBackupCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetDeploymentBackupsDeploymentBackupCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetDeploymentBackupsDeploymentBackupCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetDeploymentBackupsDeploymentBackupCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetDeploymentBackupsDeploymentBackupCollectionItemResult(dict):
     def __init__(__self__, *,
-                 backup_type: str,
-                 bucket: str,
-                 compartment_id: str,
-                 defined_tags: Mapping[str, Any],
-                 deployment_id: str,
-                 display_name: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 is_automatic: bool,
-                 lifecycle_details: str,
-                 namespace: str,
-                 object: str,
-                 ogg_version: str,
-                 size_in_bytes: float,
-                 state: str,
-                 system_tags: Mapping[str, Any],
-                 time_backup_finished: str,
-                 time_created: str,
-                 time_of_backup: str,
-                 time_updated: str):
-        """
-        :param str backup_type: Possible Deployment backup types.
-        :param str bucket: Name of the bucket where the object is to be uploaded in the object storage
-        :param str compartment_id: The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
-        :param Mapping[str, Any] defined_tags: Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
-        :param str deployment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment in which to list resources.
-        :param str display_name: A filter to return only the resources that match the entire 'displayName' given.
-        :param Mapping[str, Any] freeform_tags: A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
-        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup being referenced.
-        :param bool is_automatic: True if this object is automatically created
-        :param str lifecycle_details: Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
-        :param str namespace: Name of namespace that serves as a container for all of your buckets
-        :param str object: Name of the object to be uploaded to object storage
-        :param str ogg_version: Version of OGG
-        :param float size_in_bytes: The size of the backup stored in object storage (in bytes)
-        :param str state: A filter to return only the resources that match the 'lifecycleState' given.
-        :param Mapping[str, Any] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
-        :param str time_backup_finished: The time of the resource backup finish. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        :param str time_created: The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        :param str time_of_backup: The time of the resource backup. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        :param str time_updated: The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
-        pulumi.set(__self__, "backup_type", backup_type)
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "deployment_id", deployment_id)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_automatic", is_automatic)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "object", object)
-        pulumi.set(__self__, "ogg_version", ogg_version)
-        pulumi.set(__self__, "size_in_bytes", size_in_bytes)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_backup_finished", time_backup_finished)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_of_backup", time_of_backup)
-        pulumi.set(__self__, "time_updated", time_updated)
+                 backup_type: Optional[str] = None,
+                 bucket: Optional[str] = None,
+                 compartment_id: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 deployment_id: Optional[str] = None,
+                 display_name: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 is_automatic: Optional[bool] = None,
+                 lifecycle_details: Optional[str] = None,
+                 namespace: Optional[str] = None,
+                 object: Optional[str] = None,
+                 ogg_version: Optional[str] = None,
+                 size_in_bytes: Optional[float] = None,
+                 state: Optional[str] = None,
+                 system_tags: Optional[Mapping[str, Any]] = None,
+                 time_backup_finished: Optional[str] = None,
+                 time_created: Optional[str] = None,
+                 time_of_backup: Optional[str] = None,
+                 time_updated: Optional[str] = None):
+        if backup_type is not None:
+            pulumi.set(__self__, "backup_type", backup_type)
+        if bucket is not None:
+            pulumi.set(__self__, "bucket", bucket)
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if deployment_id is not None:
+            pulumi.set(__self__, "deployment_id", deployment_id)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if is_automatic is not None:
+            pulumi.set(__self__, "is_automatic", is_automatic)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if namespace is not None:
+            pulumi.set(__self__, "namespace", namespace)
+        if object is not None:
+            pulumi.set(__self__, "object", object)
+        if ogg_version is not None:
+            pulumi.set(__self__, "ogg_version", ogg_version)
+        if size_in_bytes is not None:
+            pulumi.set(__self__, "size_in_bytes", size_in_bytes)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
+        if time_backup_finished is not None:
+            pulumi.set(__self__, "time_backup_finished", time_backup_finished)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_of_backup is not None:
+            pulumi.set(__self__, "time_of_backup", time_of_backup)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="backupType")
-    def backup_type(self) -> str:
-        """
-        Possible Deployment backup types.
-        """
+    def backup_type(self) -> Optional[str]:
         return pulumi.get(self, "backup_type")
 
     @property
     @pulumi.getter
-    def bucket(self) -> str:
-        """
-        Name of the bucket where the object is to be uploaded in the object storage
-        """
+    def bucket(self) -> Optional[str]:
         return pulumi.get(self, "bucket")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="deploymentId")
-    def deployment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment in which to list resources.
-        """
+    def deployment_id(self) -> Optional[str]:
         return pulumi.get(self, "deployment_id")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return only the resources that match the entire 'displayName' given.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup being referenced.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isAutomatic")
-    def is_automatic(self) -> bool:
-        """
-        True if this object is automatically created
-        """
+    def is_automatic(self) -> Optional[bool]:
         return pulumi.get(self, "is_automatic")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
-    def namespace(self) -> str:
-        """
-        Name of namespace that serves as a container for all of your buckets
-        """
+    def namespace(self) -> Optional[str]:
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter
-    def object(self) -> str:
-        """
-        Name of the object to be uploaded to object storage
-        """
+    def object(self) -> Optional[str]:
         return pulumi.get(self, "object")
 
     @property
     @pulumi.getter(name="oggVersion")
-    def ogg_version(self) -> str:
-        """
-        Version of OGG
-        """
+    def ogg_version(self) -> Optional[str]:
         return pulumi.get(self, "ogg_version")
 
     @property
     @pulumi.getter(name="sizeInBytes")
-    def size_in_bytes(self) -> float:
-        """
-        The size of the backup stored in object storage (in bytes)
-        """
+    def size_in_bytes(self) -> Optional[float]:
         return pulumi.get(self, "size_in_bytes")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        A filter to return only the resources that match the 'lifecycleState' given.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeBackupFinished")
-    def time_backup_finished(self) -> str:
-        """
-        The time of the resource backup finish. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
+    def time_backup_finished(self) -> Optional[str]:
         return pulumi.get(self, "time_backup_finished")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeOfBackup")
-    def time_of_backup(self) -> str:
-        """
-        The time of the resource backup. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
+    def time_of_backup(self) -> Optional[str]:
         return pulumi.get(self, "time_of_backup")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -2257,437 +1778,323 @@ class GetDeploymentBackupsFilterResult(dict):
 @pulumi.output_type
 class GetDeploymentDeploymentDiagnosticDataResult(dict):
     def __init__(__self__, *,
-                 bucket: str,
-                 diagnostic_state: str,
-                 namespace: str,
-                 object: str,
-                 time_diagnostic_end: str,
-                 time_diagnostic_start: str):
-        """
-        :param str bucket: Name of the bucket where the object is to be uploaded in the object storage
-        :param str diagnostic_state: The state of the deployment diagnostic collection.
-        :param str namespace: Name of namespace that serves as a container for all of your buckets
-        :param str object: Name of the diagnostic collected and uploaded to object storage
-        :param str time_diagnostic_end: The time until which the diagnostic collection should collect the logs. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        :param str time_diagnostic_start: The time from which the diagnostic collection should collect the logs. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "diagnostic_state", diagnostic_state)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "object", object)
-        pulumi.set(__self__, "time_diagnostic_end", time_diagnostic_end)
-        pulumi.set(__self__, "time_diagnostic_start", time_diagnostic_start)
+                 bucket: Optional[str] = None,
+                 diagnostic_state: Optional[str] = None,
+                 namespace: Optional[str] = None,
+                 object: Optional[str] = None,
+                 time_diagnostic_end: Optional[str] = None,
+                 time_diagnostic_start: Optional[str] = None):
+        if bucket is not None:
+            pulumi.set(__self__, "bucket", bucket)
+        if diagnostic_state is not None:
+            pulumi.set(__self__, "diagnostic_state", diagnostic_state)
+        if namespace is not None:
+            pulumi.set(__self__, "namespace", namespace)
+        if object is not None:
+            pulumi.set(__self__, "object", object)
+        if time_diagnostic_end is not None:
+            pulumi.set(__self__, "time_diagnostic_end", time_diagnostic_end)
+        if time_diagnostic_start is not None:
+            pulumi.set(__self__, "time_diagnostic_start", time_diagnostic_start)
 
     @property
     @pulumi.getter
-    def bucket(self) -> str:
-        """
-        Name of the bucket where the object is to be uploaded in the object storage
-        """
+    def bucket(self) -> Optional[str]:
         return pulumi.get(self, "bucket")
 
     @property
     @pulumi.getter(name="diagnosticState")
-    def diagnostic_state(self) -> str:
-        """
-        The state of the deployment diagnostic collection.
-        """
+    def diagnostic_state(self) -> Optional[str]:
         return pulumi.get(self, "diagnostic_state")
 
     @property
     @pulumi.getter
-    def namespace(self) -> str:
-        """
-        Name of namespace that serves as a container for all of your buckets
-        """
+    def namespace(self) -> Optional[str]:
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter
-    def object(self) -> str:
-        """
-        Name of the diagnostic collected and uploaded to object storage
-        """
+    def object(self) -> Optional[str]:
         return pulumi.get(self, "object")
 
     @property
     @pulumi.getter(name="timeDiagnosticEnd")
-    def time_diagnostic_end(self) -> str:
-        """
-        The time until which the diagnostic collection should collect the logs. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
+    def time_diagnostic_end(self) -> Optional[str]:
         return pulumi.get(self, "time_diagnostic_end")
 
     @property
     @pulumi.getter(name="timeDiagnosticStart")
-    def time_diagnostic_start(self) -> str:
-        """
-        The time from which the diagnostic collection should collect the logs. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
+    def time_diagnostic_start(self) -> Optional[str]:
         return pulumi.get(self, "time_diagnostic_start")
 
 
 @pulumi.output_type
 class GetDeploymentMaintenanceConfigurationResult(dict):
     def __init__(__self__, *,
-                 bundle_release_upgrade_period_in_days: int,
-                 interim_release_upgrade_period_in_days: int,
-                 is_interim_release_auto_upgrade_enabled: bool,
-                 major_release_upgrade_period_in_days: int,
-                 security_patch_upgrade_period_in_days: int):
-        """
-        :param int bundle_release_upgrade_period_in_days: Defines auto upgrade period for bundle releases. Manually configured period cannot be longer than service defined period for bundle releases. This period must be shorter or equal to major release upgrade period. Not passing this field during create will equate to using the service default.
-        :param int interim_release_upgrade_period_in_days: Defines auto upgrade period for interim releases. This period must be shorter or equal to bundle release upgrade period.
-        :param bool is_interim_release_auto_upgrade_enabled: By default auto upgrade for interim releases are not enabled. If auto-upgrade is enabled for interim release,  you have to specify interimReleaseUpgradePeriodInDays too.
-        :param int major_release_upgrade_period_in_days: Defines auto upgrade period for major releases. Manually configured period cannot be longer than service defined period for major releases. Not passing this field during create will equate to using the service default.
-        :param int security_patch_upgrade_period_in_days: Defines auto upgrade period for releases with security fix. Manually configured period cannot be longer than service defined period for security releases. Not passing this field during create will equate to using the service default.
-        """
-        pulumi.set(__self__, "bundle_release_upgrade_period_in_days", bundle_release_upgrade_period_in_days)
-        pulumi.set(__self__, "interim_release_upgrade_period_in_days", interim_release_upgrade_period_in_days)
-        pulumi.set(__self__, "is_interim_release_auto_upgrade_enabled", is_interim_release_auto_upgrade_enabled)
-        pulumi.set(__self__, "major_release_upgrade_period_in_days", major_release_upgrade_period_in_days)
-        pulumi.set(__self__, "security_patch_upgrade_period_in_days", security_patch_upgrade_period_in_days)
+                 bundle_release_upgrade_period_in_days: Optional[int] = None,
+                 interim_release_upgrade_period_in_days: Optional[int] = None,
+                 is_interim_release_auto_upgrade_enabled: Optional[bool] = None,
+                 major_release_upgrade_period_in_days: Optional[int] = None,
+                 security_patch_upgrade_period_in_days: Optional[int] = None):
+        if bundle_release_upgrade_period_in_days is not None:
+            pulumi.set(__self__, "bundle_release_upgrade_period_in_days", bundle_release_upgrade_period_in_days)
+        if interim_release_upgrade_period_in_days is not None:
+            pulumi.set(__self__, "interim_release_upgrade_period_in_days", interim_release_upgrade_period_in_days)
+        if is_interim_release_auto_upgrade_enabled is not None:
+            pulumi.set(__self__, "is_interim_release_auto_upgrade_enabled", is_interim_release_auto_upgrade_enabled)
+        if major_release_upgrade_period_in_days is not None:
+            pulumi.set(__self__, "major_release_upgrade_period_in_days", major_release_upgrade_period_in_days)
+        if security_patch_upgrade_period_in_days is not None:
+            pulumi.set(__self__, "security_patch_upgrade_period_in_days", security_patch_upgrade_period_in_days)
 
     @property
     @pulumi.getter(name="bundleReleaseUpgradePeriodInDays")
-    def bundle_release_upgrade_period_in_days(self) -> int:
-        """
-        Defines auto upgrade period for bundle releases. Manually configured period cannot be longer than service defined period for bundle releases. This period must be shorter or equal to major release upgrade period. Not passing this field during create will equate to using the service default.
-        """
+    def bundle_release_upgrade_period_in_days(self) -> Optional[int]:
         return pulumi.get(self, "bundle_release_upgrade_period_in_days")
 
     @property
     @pulumi.getter(name="interimReleaseUpgradePeriodInDays")
-    def interim_release_upgrade_period_in_days(self) -> int:
-        """
-        Defines auto upgrade period for interim releases. This period must be shorter or equal to bundle release upgrade period.
-        """
+    def interim_release_upgrade_period_in_days(self) -> Optional[int]:
         return pulumi.get(self, "interim_release_upgrade_period_in_days")
 
     @property
     @pulumi.getter(name="isInterimReleaseAutoUpgradeEnabled")
-    def is_interim_release_auto_upgrade_enabled(self) -> bool:
-        """
-        By default auto upgrade for interim releases are not enabled. If auto-upgrade is enabled for interim release,  you have to specify interimReleaseUpgradePeriodInDays too.
-        """
+    def is_interim_release_auto_upgrade_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_interim_release_auto_upgrade_enabled")
 
     @property
     @pulumi.getter(name="majorReleaseUpgradePeriodInDays")
-    def major_release_upgrade_period_in_days(self) -> int:
-        """
-        Defines auto upgrade period for major releases. Manually configured period cannot be longer than service defined period for major releases. Not passing this field during create will equate to using the service default.
-        """
+    def major_release_upgrade_period_in_days(self) -> Optional[int]:
         return pulumi.get(self, "major_release_upgrade_period_in_days")
 
     @property
     @pulumi.getter(name="securityPatchUpgradePeriodInDays")
-    def security_patch_upgrade_period_in_days(self) -> int:
-        """
-        Defines auto upgrade period for releases with security fix. Manually configured period cannot be longer than service defined period for security releases. Not passing this field during create will equate to using the service default.
-        """
+    def security_patch_upgrade_period_in_days(self) -> Optional[int]:
         return pulumi.get(self, "security_patch_upgrade_period_in_days")
 
 
 @pulumi.output_type
 class GetDeploymentMaintenanceWindowResult(dict):
     def __init__(__self__, *,
-                 day: str,
-                 start_hour: int):
-        """
-        :param str day: Days of the week.
-        :param int start_hour: Start hour for maintenance period. Hour is in UTC.
-        """
-        pulumi.set(__self__, "day", day)
-        pulumi.set(__self__, "start_hour", start_hour)
+                 day: Optional[str] = None,
+                 start_hour: Optional[int] = None):
+        if day is not None:
+            pulumi.set(__self__, "day", day)
+        if start_hour is not None:
+            pulumi.set(__self__, "start_hour", start_hour)
 
     @property
     @pulumi.getter
-    def day(self) -> str:
-        """
-        Days of the week.
-        """
+    def day(self) -> Optional[str]:
         return pulumi.get(self, "day")
 
     @property
     @pulumi.getter(name="startHour")
-    def start_hour(self) -> int:
-        """
-        Start hour for maintenance period. Hour is in UTC.
-        """
+    def start_hour(self) -> Optional[int]:
         return pulumi.get(self, "start_hour")
 
 
 @pulumi.output_type
 class GetDeploymentOggDataResult(dict):
     def __init__(__self__, *,
-                 admin_password: str,
-                 admin_username: str,
-                 certificate: str,
-                 credential_store: str,
-                 deployment_name: str,
-                 identity_domain_id: str,
-                 key: str,
-                 ogg_version: str,
-                 password_secret_id: str):
-        """
-        :param str admin_username: The GoldenGate deployment console username.
-        :param str certificate: A PEM-encoded SSL certificate.
-        :param str credential_store: The type of credential store for OGG.
-        :param str deployment_name: The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
-        :param str identity_domain_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
-        :param str ogg_version: Version of OGG
-        :param str password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment password is stored.
-        """
-        pulumi.set(__self__, "admin_password", admin_password)
-        pulumi.set(__self__, "admin_username", admin_username)
-        pulumi.set(__self__, "certificate", certificate)
-        pulumi.set(__self__, "credential_store", credential_store)
-        pulumi.set(__self__, "deployment_name", deployment_name)
-        pulumi.set(__self__, "identity_domain_id", identity_domain_id)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "ogg_version", ogg_version)
-        pulumi.set(__self__, "password_secret_id", password_secret_id)
+                 admin_password: Optional[str] = None,
+                 admin_username: Optional[str] = None,
+                 certificate: Optional[str] = None,
+                 credential_store: Optional[str] = None,
+                 deployment_name: Optional[str] = None,
+                 identity_domain_id: Optional[str] = None,
+                 key: Optional[str] = None,
+                 ogg_version: Optional[str] = None,
+                 password_secret_id: Optional[str] = None):
+        if admin_password is not None:
+            pulumi.set(__self__, "admin_password", admin_password)
+        if admin_username is not None:
+            pulumi.set(__self__, "admin_username", admin_username)
+        if certificate is not None:
+            pulumi.set(__self__, "certificate", certificate)
+        if credential_store is not None:
+            pulumi.set(__self__, "credential_store", credential_store)
+        if deployment_name is not None:
+            pulumi.set(__self__, "deployment_name", deployment_name)
+        if identity_domain_id is not None:
+            pulumi.set(__self__, "identity_domain_id", identity_domain_id)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if ogg_version is not None:
+            pulumi.set(__self__, "ogg_version", ogg_version)
+        if password_secret_id is not None:
+            pulumi.set(__self__, "password_secret_id", password_secret_id)
 
     @property
     @pulumi.getter(name="adminPassword")
-    def admin_password(self) -> str:
+    def admin_password(self) -> Optional[str]:
         return pulumi.get(self, "admin_password")
 
     @property
     @pulumi.getter(name="adminUsername")
-    def admin_username(self) -> str:
-        """
-        The GoldenGate deployment console username.
-        """
+    def admin_username(self) -> Optional[str]:
         return pulumi.get(self, "admin_username")
 
     @property
     @pulumi.getter
-    def certificate(self) -> str:
-        """
-        A PEM-encoded SSL certificate.
-        """
+    def certificate(self) -> Optional[str]:
         return pulumi.get(self, "certificate")
 
     @property
     @pulumi.getter(name="credentialStore")
-    def credential_store(self) -> str:
-        """
-        The type of credential store for OGG.
-        """
+    def credential_store(self) -> Optional[str]:
         return pulumi.get(self, "credential_store")
 
     @property
     @pulumi.getter(name="deploymentName")
-    def deployment_name(self) -> str:
-        """
-        The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
-        """
+    def deployment_name(self) -> Optional[str]:
         return pulumi.get(self, "deployment_name")
 
     @property
     @pulumi.getter(name="identityDomainId")
-    def identity_domain_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
-        """
+    def identity_domain_id(self) -> Optional[str]:
         return pulumi.get(self, "identity_domain_id")
 
     @property
     @pulumi.getter
-    def key(self) -> str:
+    def key(self) -> Optional[str]:
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter(name="oggVersion")
-    def ogg_version(self) -> str:
-        """
-        Version of OGG
-        """
+    def ogg_version(self) -> Optional[str]:
         return pulumi.get(self, "ogg_version")
 
     @property
     @pulumi.getter(name="passwordSecretId")
-    def password_secret_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment password is stored.
-        """
+    def password_secret_id(self) -> Optional[str]:
         return pulumi.get(self, "password_secret_id")
 
 
 @pulumi.output_type
 class GetDeploymentTypeItemResult(dict):
     def __init__(__self__, *,
-                 category: str,
-                 connection_types: Sequence[str],
-                 deployment_type: str,
-                 display_name: str,
-                 source_technologies: Sequence[str],
-                 target_technologies: Sequence[str]):
-        """
-        :param str category: The deployment category defines the broad separation of the deployment type into categories.  Currently the separation is 'DATA_REPLICATION' and 'STREAM_ANALYTICS'.
-        :param Sequence[str] connection_types: An array of connectionTypes.
-        :param str deployment_type: The type of deployment, the value determines the exact 'type' of service executed in the Deployment. NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of the equivalent 'DATABASE_ORACLE' value.
-        :param str display_name: A filter to return only the resources that match the entire 'displayName' given.
-        :param Sequence[str] source_technologies: List of the supported technologies generally.  The value is a freeform text string generally consisting of a description of the technology and optionally the speific version(s) support.  For example, [ "Oracle Database 19c", "Oracle Exadata", "OCI Streaming" ]
-        :param Sequence[str] target_technologies: List of the supported technologies generally.  The value is a freeform text string generally consisting of a description of the technology and optionally the speific version(s) support.  For example, [ "Oracle Database 19c", "Oracle Exadata", "OCI Streaming" ]
-        """
-        pulumi.set(__self__, "category", category)
-        pulumi.set(__self__, "connection_types", connection_types)
-        pulumi.set(__self__, "deployment_type", deployment_type)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "source_technologies", source_technologies)
-        pulumi.set(__self__, "target_technologies", target_technologies)
+                 category: Optional[str] = None,
+                 connection_types: Optional[Sequence[str]] = None,
+                 deployment_type: Optional[str] = None,
+                 display_name: Optional[str] = None,
+                 source_technologies: Optional[Sequence[str]] = None,
+                 target_technologies: Optional[Sequence[str]] = None):
+        if category is not None:
+            pulumi.set(__self__, "category", category)
+        if connection_types is not None:
+            pulumi.set(__self__, "connection_types", connection_types)
+        if deployment_type is not None:
+            pulumi.set(__self__, "deployment_type", deployment_type)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if source_technologies is not None:
+            pulumi.set(__self__, "source_technologies", source_technologies)
+        if target_technologies is not None:
+            pulumi.set(__self__, "target_technologies", target_technologies)
 
     @property
     @pulumi.getter
-    def category(self) -> str:
-        """
-        The deployment category defines the broad separation of the deployment type into categories.  Currently the separation is 'DATA_REPLICATION' and 'STREAM_ANALYTICS'.
-        """
+    def category(self) -> Optional[str]:
         return pulumi.get(self, "category")
 
     @property
     @pulumi.getter(name="connectionTypes")
-    def connection_types(self) -> Sequence[str]:
-        """
-        An array of connectionTypes.
-        """
+    def connection_types(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "connection_types")
 
     @property
     @pulumi.getter(name="deploymentType")
-    def deployment_type(self) -> str:
-        """
-        The type of deployment, the value determines the exact 'type' of service executed in the Deployment. NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of the equivalent 'DATABASE_ORACLE' value.
-        """
+    def deployment_type(self) -> Optional[str]:
         return pulumi.get(self, "deployment_type")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return only the resources that match the entire 'displayName' given.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="sourceTechnologies")
-    def source_technologies(self) -> Sequence[str]:
-        """
-        List of the supported technologies generally.  The value is a freeform text string generally consisting of a description of the technology and optionally the speific version(s) support.  For example, [ "Oracle Database 19c", "Oracle Exadata", "OCI Streaming" ]
-        """
+    def source_technologies(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "source_technologies")
 
     @property
     @pulumi.getter(name="targetTechnologies")
-    def target_technologies(self) -> Sequence[str]:
-        """
-        List of the supported technologies generally.  The value is a freeform text string generally consisting of a description of the technology and optionally the speific version(s) support.  For example, [ "Oracle Database 19c", "Oracle Exadata", "OCI Streaming" ]
-        """
+    def target_technologies(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "target_technologies")
 
 
 @pulumi.output_type
 class GetDeploymentTypesDeploymentTypeCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetDeploymentTypesDeploymentTypeCollectionItemResult']):
-        """
-        :param Sequence['GetDeploymentTypesDeploymentTypeCollectionItemArgs'] items: Array of DeploymentTypeSummary
-        """
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetDeploymentTypesDeploymentTypeCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetDeploymentTypesDeploymentTypeCollectionItemResult']:
-        """
-        Array of DeploymentTypeSummary
-        """
+    def items(self) -> Optional[Sequence['outputs.GetDeploymentTypesDeploymentTypeCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetDeploymentTypesDeploymentTypeCollectionItemResult(dict):
     def __init__(__self__, *,
-                 category: str,
-                 connection_types: Sequence[str],
-                 deployment_type: str,
-                 display_name: str,
-                 ogg_version: str,
-                 source_technologies: Sequence[str],
-                 target_technologies: Sequence[str]):
-        """
-        :param str category: The deployment category defines the broad separation of the deployment type into categories.  Currently the separation is 'DATA_REPLICATION' and 'STREAM_ANALYTICS'.
-        :param Sequence[str] connection_types: An array of connectionTypes.
-        :param str deployment_type: The type of deployment, the value determines the exact 'type' of the service executed in the deployment. Default value is DATABASE_ORACLE.
-        :param str display_name: A filter to return only the resources that match the entire 'displayName' given.
-        :param str ogg_version: Allows to query by a specific GoldenGate version.
-        :param Sequence[str] source_technologies: List of the supported technologies generally.  The value is a freeform text string generally consisting of a description of the technology and optionally the speific version(s) support.  For example, [ "Oracle Database 19c", "Oracle Exadata", "OCI Streaming" ]
-        :param Sequence[str] target_technologies: List of the supported technologies generally.  The value is a freeform text string generally consisting of a description of the technology and optionally the speific version(s) support.  For example, [ "Oracle Database 19c", "Oracle Exadata", "OCI Streaming" ]
-        """
-        pulumi.set(__self__, "category", category)
-        pulumi.set(__self__, "connection_types", connection_types)
-        pulumi.set(__self__, "deployment_type", deployment_type)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "ogg_version", ogg_version)
-        pulumi.set(__self__, "source_technologies", source_technologies)
-        pulumi.set(__self__, "target_technologies", target_technologies)
+                 category: Optional[str] = None,
+                 connection_types: Optional[Sequence[str]] = None,
+                 deployment_type: Optional[str] = None,
+                 display_name: Optional[str] = None,
+                 ogg_version: Optional[str] = None,
+                 source_technologies: Optional[Sequence[str]] = None,
+                 target_technologies: Optional[Sequence[str]] = None):
+        if category is not None:
+            pulumi.set(__self__, "category", category)
+        if connection_types is not None:
+            pulumi.set(__self__, "connection_types", connection_types)
+        if deployment_type is not None:
+            pulumi.set(__self__, "deployment_type", deployment_type)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if ogg_version is not None:
+            pulumi.set(__self__, "ogg_version", ogg_version)
+        if source_technologies is not None:
+            pulumi.set(__self__, "source_technologies", source_technologies)
+        if target_technologies is not None:
+            pulumi.set(__self__, "target_technologies", target_technologies)
 
     @property
     @pulumi.getter
-    def category(self) -> str:
-        """
-        The deployment category defines the broad separation of the deployment type into categories.  Currently the separation is 'DATA_REPLICATION' and 'STREAM_ANALYTICS'.
-        """
+    def category(self) -> Optional[str]:
         return pulumi.get(self, "category")
 
     @property
     @pulumi.getter(name="connectionTypes")
-    def connection_types(self) -> Sequence[str]:
-        """
-        An array of connectionTypes.
-        """
+    def connection_types(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "connection_types")
 
     @property
     @pulumi.getter(name="deploymentType")
-    def deployment_type(self) -> str:
-        """
-        The type of deployment, the value determines the exact 'type' of the service executed in the deployment. Default value is DATABASE_ORACLE.
-        """
+    def deployment_type(self) -> Optional[str]:
         return pulumi.get(self, "deployment_type")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return only the resources that match the entire 'displayName' given.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="oggVersion")
-    def ogg_version(self) -> str:
-        """
-        Allows to query by a specific GoldenGate version.
-        """
+    def ogg_version(self) -> Optional[str]:
         return pulumi.get(self, "ogg_version")
 
     @property
     @pulumi.getter(name="sourceTechnologies")
-    def source_technologies(self) -> Sequence[str]:
-        """
-        List of the supported technologies generally.  The value is a freeform text string generally consisting of a description of the technology and optionally the speific version(s) support.  For example, [ "Oracle Database 19c", "Oracle Exadata", "OCI Streaming" ]
-        """
+    def source_technologies(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "source_technologies")
 
     @property
     @pulumi.getter(name="targetTechnologies")
-    def target_technologies(self) -> Sequence[str]:
-        """
-        List of the supported technologies generally.  The value is a freeform text string generally consisting of a description of the technology and optionally the speific version(s) support.  For example, [ "Oracle Database 19c", "Oracle Exadata", "OCI Streaming" ]
-        """
+    def target_technologies(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "target_technologies")
 
 
@@ -2721,342 +2128,250 @@ class GetDeploymentTypesFilterResult(dict):
 @pulumi.output_type
 class GetDeploymentUpgradesDeploymentUpgradeCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetDeploymentUpgradesDeploymentUpgradeCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetDeploymentUpgradesDeploymentUpgradeCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetDeploymentUpgradesDeploymentUpgradeCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetDeploymentUpgradesDeploymentUpgradeCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetDeploymentUpgradesDeploymentUpgradeCollectionItemResult(dict):
     def __init__(__self__, *,
-                 compartment_id: str,
-                 defined_tags: Mapping[str, Any],
-                 deployment_id: str,
-                 deployment_upgrade_type: str,
-                 description: str,
-                 display_name: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 is_cancel_allowed: bool,
-                 is_reschedule_allowed: bool,
-                 is_rollback_allowed: bool,
-                 is_security_fix: bool,
-                 is_snoozed: bool,
-                 lifecycle_details: str,
-                 lifecycle_sub_state: str,
-                 ogg_version: str,
-                 previous_ogg_version: str,
-                 release_type: str,
-                 state: str,
-                 system_tags: Mapping[str, Any],
-                 time_created: str,
-                 time_finished: str,
-                 time_ogg_version_supported_until: str,
-                 time_released: str,
-                 time_schedule: str,
-                 time_schedule_max: str,
-                 time_snoozed_until: str,
-                 time_started: str,
-                 time_updated: str):
-        """
-        :param str compartment_id: The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
-        :param Mapping[str, Any] defined_tags: Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
-        :param str deployment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment in which to list resources.
-        :param str deployment_upgrade_type: The type of the deployment upgrade: MANUAL or AUTOMATIC
-        :param str description: Metadata about this specific object.
-        :param str display_name: A filter to return only the resources that match the entire 'displayName' given.
-        :param Mapping[str, Any] freeform_tags: A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
-        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment upgrade being referenced.
-        :param bool is_cancel_allowed: Indicates if cancel is allowed. Scheduled upgrade can be cancelled only if target version is not forced by service,  otherwise only reschedule allowed.
-        :param bool is_reschedule_allowed: Indicates if reschedule is allowed. Upgrade can be rescheduled postponed until the end of the service defined auto-upgrade period.
-        :param bool is_rollback_allowed: Indicates if rollback is allowed. In practice only the last upgrade can be rolled back.
-               * Manual upgrade is allowed to rollback only until the old version isn't deprecated yet.
-               * Automatic upgrade by default is not allowed, unless a serious issue does not justify.
-        :param bool is_security_fix: Indicates if OGG release contains security fix.
-        :param bool is_snoozed: Indicates if upgrade notifications are snoozed or not.
-        :param str lifecycle_details: Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
-        :param str lifecycle_sub_state: Possible GGS lifecycle sub-states.
-        :param str ogg_version: Version of OGG
-        :param str previous_ogg_version: Version of OGG
-        :param str release_type: The type of release.
-        :param str state: A filter to return only the resources that match the 'lifecycleState' given.
-        :param Mapping[str, Any] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
-        :param str time_created: The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        :param str time_finished: The date and time the request was finished. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        :param str time_ogg_version_supported_until: The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        :param str time_released: The time the resource was released. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        :param str time_schedule: The time of upgrade schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        :param str time_schedule_max: Indicates the latest time until the deployment upgrade could be rescheduled. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        :param str time_snoozed_until: The time the upgrade notifications are snoozed until. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        :param str time_started: The date and time the request was started. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        :param str time_updated: The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "deployment_id", deployment_id)
-        pulumi.set(__self__, "deployment_upgrade_type", deployment_upgrade_type)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_cancel_allowed", is_cancel_allowed)
-        pulumi.set(__self__, "is_reschedule_allowed", is_reschedule_allowed)
-        pulumi.set(__self__, "is_rollback_allowed", is_rollback_allowed)
-        pulumi.set(__self__, "is_security_fix", is_security_fix)
-        pulumi.set(__self__, "is_snoozed", is_snoozed)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "lifecycle_sub_state", lifecycle_sub_state)
-        pulumi.set(__self__, "ogg_version", ogg_version)
-        pulumi.set(__self__, "previous_ogg_version", previous_ogg_version)
-        pulumi.set(__self__, "release_type", release_type)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_finished", time_finished)
-        pulumi.set(__self__, "time_ogg_version_supported_until", time_ogg_version_supported_until)
-        pulumi.set(__self__, "time_released", time_released)
-        pulumi.set(__self__, "time_schedule", time_schedule)
-        pulumi.set(__self__, "time_schedule_max", time_schedule_max)
-        pulumi.set(__self__, "time_snoozed_until", time_snoozed_until)
-        pulumi.set(__self__, "time_started", time_started)
-        pulumi.set(__self__, "time_updated", time_updated)
+                 compartment_id: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 deployment_id: Optional[str] = None,
+                 deployment_upgrade_type: Optional[str] = None,
+                 description: Optional[str] = None,
+                 display_name: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 is_cancel_allowed: Optional[bool] = None,
+                 is_reschedule_allowed: Optional[bool] = None,
+                 is_rollback_allowed: Optional[bool] = None,
+                 is_security_fix: Optional[bool] = None,
+                 is_snoozed: Optional[bool] = None,
+                 lifecycle_details: Optional[str] = None,
+                 lifecycle_sub_state: Optional[str] = None,
+                 ogg_version: Optional[str] = None,
+                 previous_ogg_version: Optional[str] = None,
+                 release_type: Optional[str] = None,
+                 state: Optional[str] = None,
+                 system_tags: Optional[Mapping[str, Any]] = None,
+                 time_created: Optional[str] = None,
+                 time_finished: Optional[str] = None,
+                 time_ogg_version_supported_until: Optional[str] = None,
+                 time_released: Optional[str] = None,
+                 time_schedule: Optional[str] = None,
+                 time_schedule_max: Optional[str] = None,
+                 time_snoozed_until: Optional[str] = None,
+                 time_started: Optional[str] = None,
+                 time_updated: Optional[str] = None):
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if deployment_id is not None:
+            pulumi.set(__self__, "deployment_id", deployment_id)
+        if deployment_upgrade_type is not None:
+            pulumi.set(__self__, "deployment_upgrade_type", deployment_upgrade_type)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if is_cancel_allowed is not None:
+            pulumi.set(__self__, "is_cancel_allowed", is_cancel_allowed)
+        if is_reschedule_allowed is not None:
+            pulumi.set(__self__, "is_reschedule_allowed", is_reschedule_allowed)
+        if is_rollback_allowed is not None:
+            pulumi.set(__self__, "is_rollback_allowed", is_rollback_allowed)
+        if is_security_fix is not None:
+            pulumi.set(__self__, "is_security_fix", is_security_fix)
+        if is_snoozed is not None:
+            pulumi.set(__self__, "is_snoozed", is_snoozed)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if lifecycle_sub_state is not None:
+            pulumi.set(__self__, "lifecycle_sub_state", lifecycle_sub_state)
+        if ogg_version is not None:
+            pulumi.set(__self__, "ogg_version", ogg_version)
+        if previous_ogg_version is not None:
+            pulumi.set(__self__, "previous_ogg_version", previous_ogg_version)
+        if release_type is not None:
+            pulumi.set(__self__, "release_type", release_type)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_finished is not None:
+            pulumi.set(__self__, "time_finished", time_finished)
+        if time_ogg_version_supported_until is not None:
+            pulumi.set(__self__, "time_ogg_version_supported_until", time_ogg_version_supported_until)
+        if time_released is not None:
+            pulumi.set(__self__, "time_released", time_released)
+        if time_schedule is not None:
+            pulumi.set(__self__, "time_schedule", time_schedule)
+        if time_schedule_max is not None:
+            pulumi.set(__self__, "time_schedule_max", time_schedule_max)
+        if time_snoozed_until is not None:
+            pulumi.set(__self__, "time_snoozed_until", time_snoozed_until)
+        if time_started is not None:
+            pulumi.set(__self__, "time_started", time_started)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="deploymentId")
-    def deployment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment in which to list resources.
-        """
+    def deployment_id(self) -> Optional[str]:
         return pulumi.get(self, "deployment_id")
 
     @property
     @pulumi.getter(name="deploymentUpgradeType")
-    def deployment_upgrade_type(self) -> str:
-        """
-        The type of the deployment upgrade: MANUAL or AUTOMATIC
-        """
+    def deployment_upgrade_type(self) -> Optional[str]:
         return pulumi.get(self, "deployment_upgrade_type")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Metadata about this specific object.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return only the resources that match the entire 'displayName' given.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment upgrade being referenced.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isCancelAllowed")
-    def is_cancel_allowed(self) -> bool:
-        """
-        Indicates if cancel is allowed. Scheduled upgrade can be cancelled only if target version is not forced by service,  otherwise only reschedule allowed.
-        """
+    def is_cancel_allowed(self) -> Optional[bool]:
         return pulumi.get(self, "is_cancel_allowed")
 
     @property
     @pulumi.getter(name="isRescheduleAllowed")
-    def is_reschedule_allowed(self) -> bool:
-        """
-        Indicates if reschedule is allowed. Upgrade can be rescheduled postponed until the end of the service defined auto-upgrade period.
-        """
+    def is_reschedule_allowed(self) -> Optional[bool]:
         return pulumi.get(self, "is_reschedule_allowed")
 
     @property
     @pulumi.getter(name="isRollbackAllowed")
-    def is_rollback_allowed(self) -> bool:
-        """
-        Indicates if rollback is allowed. In practice only the last upgrade can be rolled back.
-        * Manual upgrade is allowed to rollback only until the old version isn't deprecated yet.
-        * Automatic upgrade by default is not allowed, unless a serious issue does not justify.
-        """
+    def is_rollback_allowed(self) -> Optional[bool]:
         return pulumi.get(self, "is_rollback_allowed")
 
     @property
     @pulumi.getter(name="isSecurityFix")
-    def is_security_fix(self) -> bool:
-        """
-        Indicates if OGG release contains security fix.
-        """
+    def is_security_fix(self) -> Optional[bool]:
         return pulumi.get(self, "is_security_fix")
 
     @property
     @pulumi.getter(name="isSnoozed")
-    def is_snoozed(self) -> bool:
-        """
-        Indicates if upgrade notifications are snoozed or not.
-        """
+    def is_snoozed(self) -> Optional[bool]:
         return pulumi.get(self, "is_snoozed")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="lifecycleSubState")
-    def lifecycle_sub_state(self) -> str:
-        """
-        Possible GGS lifecycle sub-states.
-        """
+    def lifecycle_sub_state(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_sub_state")
 
     @property
     @pulumi.getter(name="oggVersion")
-    def ogg_version(self) -> str:
-        """
-        Version of OGG
-        """
+    def ogg_version(self) -> Optional[str]:
         return pulumi.get(self, "ogg_version")
 
     @property
     @pulumi.getter(name="previousOggVersion")
-    def previous_ogg_version(self) -> str:
-        """
-        Version of OGG
-        """
+    def previous_ogg_version(self) -> Optional[str]:
         return pulumi.get(self, "previous_ogg_version")
 
     @property
     @pulumi.getter(name="releaseType")
-    def release_type(self) -> str:
-        """
-        The type of release.
-        """
+    def release_type(self) -> Optional[str]:
         return pulumi.get(self, "release_type")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        A filter to return only the resources that match the 'lifecycleState' given.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeFinished")
-    def time_finished(self) -> str:
-        """
-        The date and time the request was finished. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
+    def time_finished(self) -> Optional[str]:
         return pulumi.get(self, "time_finished")
 
     @property
     @pulumi.getter(name="timeOggVersionSupportedUntil")
-    def time_ogg_version_supported_until(self) -> str:
-        """
-        The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
+    def time_ogg_version_supported_until(self) -> Optional[str]:
         return pulumi.get(self, "time_ogg_version_supported_until")
 
     @property
     @pulumi.getter(name="timeReleased")
-    def time_released(self) -> str:
-        """
-        The time the resource was released. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
+    def time_released(self) -> Optional[str]:
         return pulumi.get(self, "time_released")
 
     @property
     @pulumi.getter(name="timeSchedule")
-    def time_schedule(self) -> str:
-        """
-        The time of upgrade schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
+    def time_schedule(self) -> Optional[str]:
         return pulumi.get(self, "time_schedule")
 
     @property
     @pulumi.getter(name="timeScheduleMax")
-    def time_schedule_max(self) -> str:
-        """
-        Indicates the latest time until the deployment upgrade could be rescheduled. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
+    def time_schedule_max(self) -> Optional[str]:
         return pulumi.get(self, "time_schedule_max")
 
     @property
     @pulumi.getter(name="timeSnoozedUntil")
-    def time_snoozed_until(self) -> str:
-        """
-        The time the upgrade notifications are snoozed until. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
+    def time_snoozed_until(self) -> Optional[str]:
         return pulumi.get(self, "time_snoozed_until")
 
     @property
     @pulumi.getter(name="timeStarted")
-    def time_started(self) -> str:
-        """
-        The date and time the request was started. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
+    def time_started(self) -> Optional[str]:
         return pulumi.get(self, "time_started")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -3090,91 +2405,66 @@ class GetDeploymentUpgradesFilterResult(dict):
 @pulumi.output_type
 class GetDeploymentVersionsDeploymentVersionCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetDeploymentVersionsDeploymentVersionCollectionItemResult']):
-        """
-        :param Sequence['GetDeploymentVersionsDeploymentVersionCollectionItemArgs'] items: Array of DeploymentVersionSummary.
-        """
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetDeploymentVersionsDeploymentVersionCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetDeploymentVersionsDeploymentVersionCollectionItemResult']:
-        """
-        Array of DeploymentVersionSummary.
-        """
+    def items(self) -> Optional[Sequence['outputs.GetDeploymentVersionsDeploymentVersionCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetDeploymentVersionsDeploymentVersionCollectionItemResult(dict):
     def __init__(__self__, *,
-                 deployment_type: str,
-                 is_security_fix: bool,
-                 ogg_version: str,
-                 release_type: str,
-                 time_released: str,
-                 time_supported_until: str):
-        """
-        :param str deployment_type: The type of deployment, the value determines the exact 'type' of the service executed in the deployment. Default value is DATABASE_ORACLE.
-        :param bool is_security_fix: Indicates if OGG release contains security fix.
-        :param str ogg_version: Version of OGG
-        :param str release_type: The type of release.
-        :param str time_released: The time the resource was released. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        :param str time_supported_until: The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
-        pulumi.set(__self__, "deployment_type", deployment_type)
-        pulumi.set(__self__, "is_security_fix", is_security_fix)
-        pulumi.set(__self__, "ogg_version", ogg_version)
-        pulumi.set(__self__, "release_type", release_type)
-        pulumi.set(__self__, "time_released", time_released)
-        pulumi.set(__self__, "time_supported_until", time_supported_until)
+                 deployment_type: Optional[str] = None,
+                 is_security_fix: Optional[bool] = None,
+                 ogg_version: Optional[str] = None,
+                 release_type: Optional[str] = None,
+                 time_released: Optional[str] = None,
+                 time_supported_until: Optional[str] = None):
+        if deployment_type is not None:
+            pulumi.set(__self__, "deployment_type", deployment_type)
+        if is_security_fix is not None:
+            pulumi.set(__self__, "is_security_fix", is_security_fix)
+        if ogg_version is not None:
+            pulumi.set(__self__, "ogg_version", ogg_version)
+        if release_type is not None:
+            pulumi.set(__self__, "release_type", release_type)
+        if time_released is not None:
+            pulumi.set(__self__, "time_released", time_released)
+        if time_supported_until is not None:
+            pulumi.set(__self__, "time_supported_until", time_supported_until)
 
     @property
     @pulumi.getter(name="deploymentType")
-    def deployment_type(self) -> str:
-        """
-        The type of deployment, the value determines the exact 'type' of the service executed in the deployment. Default value is DATABASE_ORACLE.
-        """
+    def deployment_type(self) -> Optional[str]:
         return pulumi.get(self, "deployment_type")
 
     @property
     @pulumi.getter(name="isSecurityFix")
-    def is_security_fix(self) -> bool:
-        """
-        Indicates if OGG release contains security fix.
-        """
+    def is_security_fix(self) -> Optional[bool]:
         return pulumi.get(self, "is_security_fix")
 
     @property
     @pulumi.getter(name="oggVersion")
-    def ogg_version(self) -> str:
-        """
-        Version of OGG
-        """
+    def ogg_version(self) -> Optional[str]:
         return pulumi.get(self, "ogg_version")
 
     @property
     @pulumi.getter(name="releaseType")
-    def release_type(self) -> str:
-        """
-        The type of release.
-        """
+    def release_type(self) -> Optional[str]:
         return pulumi.get(self, "release_type")
 
     @property
     @pulumi.getter(name="timeReleased")
-    def time_released(self) -> str:
-        """
-        The time the resource was released. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
+    def time_released(self) -> Optional[str]:
         return pulumi.get(self, "time_released")
 
     @property
     @pulumi.getter(name="timeSupportedUntil")
-    def time_supported_until(self) -> str:
-        """
-        The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
+    def time_supported_until(self) -> Optional[str]:
         return pulumi.get(self, "time_supported_until")
 
 
@@ -3208,688 +2498,510 @@ class GetDeploymentVersionsFilterResult(dict):
 @pulumi.output_type
 class GetDeploymentsDeploymentCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetDeploymentsDeploymentCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetDeploymentsDeploymentCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetDeploymentsDeploymentCollectionItemResult(dict):
     def __init__(__self__, *,
-                 compartment_id: str,
-                 cpu_core_count: int,
-                 defined_tags: Mapping[str, Any],
-                 deployment_backup_id: str,
-                 deployment_diagnostic_datas: Sequence['outputs.GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataResult'],
-                 deployment_type: str,
-                 deployment_url: str,
-                 description: str,
-                 display_name: str,
-                 fqdn: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 is_auto_scaling_enabled: bool,
-                 is_healthy: bool,
-                 is_latest_version: bool,
-                 is_public: bool,
-                 is_storage_utilization_limit_exceeded: bool,
-                 license_model: str,
-                 lifecycle_details: str,
-                 lifecycle_sub_state: str,
-                 maintenance_configurations: Sequence['outputs.GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationResult'],
-                 maintenance_windows: Sequence['outputs.GetDeploymentsDeploymentCollectionItemMaintenanceWindowResult'],
-                 next_maintenance_action_type: str,
-                 next_maintenance_description: str,
-                 nsg_ids: Sequence[str],
-                 ogg_datas: Sequence['outputs.GetDeploymentsDeploymentCollectionItemOggDataResult'],
-                 private_ip_address: str,
-                 public_ip_address: str,
-                 state: str,
-                 storage_utilization_in_bytes: str,
-                 subnet_id: str,
-                 system_tags: Mapping[str, Any],
-                 time_created: str,
-                 time_of_next_maintenance: str,
-                 time_ogg_version_supported_until: str,
-                 time_updated: str,
-                 time_upgrade_required: str):
-        """
-        :param str compartment_id: The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
-        :param int cpu_core_count: The Minimum number of OCPUs to be made available for this Deployment.
-        :param Mapping[str, Any] defined_tags: Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
-        :param str deployment_backup_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup being referenced.
-        :param Sequence['GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataArgs'] deployment_diagnostic_datas: Information regarding the deployment diagnostic collection
-        :param str deployment_type: The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
-        :param str deployment_url: The URL of a resource.
-        :param str description: Metadata about this specific object.
-        :param str display_name: A filter to return only the resources that match the entire 'displayName' given.
-        :param str fqdn: A filter to return only the resources that match the 'fqdn' given.
-        :param Mapping[str, Any] freeform_tags: A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
-        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
-        :param bool is_auto_scaling_enabled: Indicates if auto scaling is enabled for the Deployment's CPU core count.
-        :param bool is_healthy: True if all of the aggregate resources are working correctly.
-        :param bool is_latest_version: Indicates if the resource is the the latest available version.
-        :param bool is_public: True if this object is publicly available.
-        :param bool is_storage_utilization_limit_exceeded: Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
-        :param str license_model: The Oracle license model that applies to a Deployment.
-        :param str lifecycle_details: Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
-        :param str lifecycle_sub_state: A filter to return only the resources that match the 'lifecycleSubState' given.
-        :param Sequence['GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationArgs'] maintenance_configurations: Attributes for configuring automatic deployment maintenance.
-        :param Sequence['GetDeploymentsDeploymentCollectionItemMaintenanceWindowArgs'] maintenance_windows: Defines the maintenance window, when automatic actions can be performed.
-        :param str next_maintenance_action_type: Type of the next maintenance.
-        :param str next_maintenance_description: Description of the next maintenance.
-        :param Sequence[str] nsg_ids: An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
-        :param Sequence['GetDeploymentsDeploymentCollectionItemOggDataArgs'] ogg_datas: Deployment Data for an OggDeployment
-        :param str private_ip_address: The private IP address in the customer's VCN representing the access point for the associated endpoint service in the GoldenGate service VCN.
-        :param str public_ip_address: The public IP address representing the access point for the Deployment.
-        :param str state: A filter to return only the resources that match the 'lifecycleState' given.
-        :param str storage_utilization_in_bytes: The amount of storage being utilized (in bytes)
-        :param str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
-        :param Mapping[str, Any] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
-        :param str time_created: The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        :param str time_of_next_maintenance: The time of next maintenance schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        :param str time_ogg_version_supported_until: The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        :param str time_updated: The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        :param str time_upgrade_required: Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records  to check, when deployment will be forced to upgrade to a newer version. Old description: The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "cpu_core_count", cpu_core_count)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "deployment_backup_id", deployment_backup_id)
-        pulumi.set(__self__, "deployment_diagnostic_datas", deployment_diagnostic_datas)
-        pulumi.set(__self__, "deployment_type", deployment_type)
-        pulumi.set(__self__, "deployment_url", deployment_url)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "fqdn", fqdn)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_auto_scaling_enabled", is_auto_scaling_enabled)
-        pulumi.set(__self__, "is_healthy", is_healthy)
-        pulumi.set(__self__, "is_latest_version", is_latest_version)
-        pulumi.set(__self__, "is_public", is_public)
-        pulumi.set(__self__, "is_storage_utilization_limit_exceeded", is_storage_utilization_limit_exceeded)
-        pulumi.set(__self__, "license_model", license_model)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "lifecycle_sub_state", lifecycle_sub_state)
-        pulumi.set(__self__, "maintenance_configurations", maintenance_configurations)
-        pulumi.set(__self__, "maintenance_windows", maintenance_windows)
-        pulumi.set(__self__, "next_maintenance_action_type", next_maintenance_action_type)
-        pulumi.set(__self__, "next_maintenance_description", next_maintenance_description)
-        pulumi.set(__self__, "nsg_ids", nsg_ids)
-        pulumi.set(__self__, "ogg_datas", ogg_datas)
-        pulumi.set(__self__, "private_ip_address", private_ip_address)
-        pulumi.set(__self__, "public_ip_address", public_ip_address)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "storage_utilization_in_bytes", storage_utilization_in_bytes)
-        pulumi.set(__self__, "subnet_id", subnet_id)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_of_next_maintenance", time_of_next_maintenance)
-        pulumi.set(__self__, "time_ogg_version_supported_until", time_ogg_version_supported_until)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "time_upgrade_required", time_upgrade_required)
+                 compartment_id: Optional[str] = None,
+                 cpu_core_count: Optional[int] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 deployment_backup_id: Optional[str] = None,
+                 deployment_diagnostic_datas: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataResult']] = None,
+                 deployment_type: Optional[str] = None,
+                 deployment_url: Optional[str] = None,
+                 description: Optional[str] = None,
+                 display_name: Optional[str] = None,
+                 fqdn: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 is_auto_scaling_enabled: Optional[bool] = None,
+                 is_healthy: Optional[bool] = None,
+                 is_latest_version: Optional[bool] = None,
+                 is_public: Optional[bool] = None,
+                 is_storage_utilization_limit_exceeded: Optional[bool] = None,
+                 license_model: Optional[str] = None,
+                 lifecycle_details: Optional[str] = None,
+                 lifecycle_sub_state: Optional[str] = None,
+                 maintenance_configurations: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationResult']] = None,
+                 maintenance_windows: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionItemMaintenanceWindowResult']] = None,
+                 next_maintenance_action_type: Optional[str] = None,
+                 next_maintenance_description: Optional[str] = None,
+                 nsg_ids: Optional[Sequence[str]] = None,
+                 ogg_datas: Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionItemOggDataResult']] = None,
+                 private_ip_address: Optional[str] = None,
+                 public_ip_address: Optional[str] = None,
+                 state: Optional[str] = None,
+                 storage_utilization_in_bytes: Optional[str] = None,
+                 subnet_id: Optional[str] = None,
+                 system_tags: Optional[Mapping[str, Any]] = None,
+                 time_created: Optional[str] = None,
+                 time_of_next_maintenance: Optional[str] = None,
+                 time_ogg_version_supported_until: Optional[str] = None,
+                 time_updated: Optional[str] = None,
+                 time_upgrade_required: Optional[str] = None):
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if cpu_core_count is not None:
+            pulumi.set(__self__, "cpu_core_count", cpu_core_count)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if deployment_backup_id is not None:
+            pulumi.set(__self__, "deployment_backup_id", deployment_backup_id)
+        if deployment_diagnostic_datas is not None:
+            pulumi.set(__self__, "deployment_diagnostic_datas", deployment_diagnostic_datas)
+        if deployment_type is not None:
+            pulumi.set(__self__, "deployment_type", deployment_type)
+        if deployment_url is not None:
+            pulumi.set(__self__, "deployment_url", deployment_url)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if fqdn is not None:
+            pulumi.set(__self__, "fqdn", fqdn)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if is_auto_scaling_enabled is not None:
+            pulumi.set(__self__, "is_auto_scaling_enabled", is_auto_scaling_enabled)
+        if is_healthy is not None:
+            pulumi.set(__self__, "is_healthy", is_healthy)
+        if is_latest_version is not None:
+            pulumi.set(__self__, "is_latest_version", is_latest_version)
+        if is_public is not None:
+            pulumi.set(__self__, "is_public", is_public)
+        if is_storage_utilization_limit_exceeded is not None:
+            pulumi.set(__self__, "is_storage_utilization_limit_exceeded", is_storage_utilization_limit_exceeded)
+        if license_model is not None:
+            pulumi.set(__self__, "license_model", license_model)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if lifecycle_sub_state is not None:
+            pulumi.set(__self__, "lifecycle_sub_state", lifecycle_sub_state)
+        if maintenance_configurations is not None:
+            pulumi.set(__self__, "maintenance_configurations", maintenance_configurations)
+        if maintenance_windows is not None:
+            pulumi.set(__self__, "maintenance_windows", maintenance_windows)
+        if next_maintenance_action_type is not None:
+            pulumi.set(__self__, "next_maintenance_action_type", next_maintenance_action_type)
+        if next_maintenance_description is not None:
+            pulumi.set(__self__, "next_maintenance_description", next_maintenance_description)
+        if nsg_ids is not None:
+            pulumi.set(__self__, "nsg_ids", nsg_ids)
+        if ogg_datas is not None:
+            pulumi.set(__self__, "ogg_datas", ogg_datas)
+        if private_ip_address is not None:
+            pulumi.set(__self__, "private_ip_address", private_ip_address)
+        if public_ip_address is not None:
+            pulumi.set(__self__, "public_ip_address", public_ip_address)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if storage_utilization_in_bytes is not None:
+            pulumi.set(__self__, "storage_utilization_in_bytes", storage_utilization_in_bytes)
+        if subnet_id is not None:
+            pulumi.set(__self__, "subnet_id", subnet_id)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_of_next_maintenance is not None:
+            pulumi.set(__self__, "time_of_next_maintenance", time_of_next_maintenance)
+        if time_ogg_version_supported_until is not None:
+            pulumi.set(__self__, "time_ogg_version_supported_until", time_ogg_version_supported_until)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
+        if time_upgrade_required is not None:
+            pulumi.set(__self__, "time_upgrade_required", time_upgrade_required)
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="cpuCoreCount")
-    def cpu_core_count(self) -> int:
-        """
-        The Minimum number of OCPUs to be made available for this Deployment.
-        """
+    def cpu_core_count(self) -> Optional[int]:
         return pulumi.get(self, "cpu_core_count")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="deploymentBackupId")
-    def deployment_backup_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup being referenced.
-        """
+    def deployment_backup_id(self) -> Optional[str]:
         return pulumi.get(self, "deployment_backup_id")
 
     @property
     @pulumi.getter(name="deploymentDiagnosticDatas")
-    def deployment_diagnostic_datas(self) -> Sequence['outputs.GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataResult']:
-        """
-        Information regarding the deployment diagnostic collection
-        """
+    def deployment_diagnostic_datas(self) -> Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataResult']]:
         return pulumi.get(self, "deployment_diagnostic_datas")
 
     @property
     @pulumi.getter(name="deploymentType")
-    def deployment_type(self) -> str:
-        """
-        The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
-        """
+    def deployment_type(self) -> Optional[str]:
         return pulumi.get(self, "deployment_type")
 
     @property
     @pulumi.getter(name="deploymentUrl")
-    def deployment_url(self) -> str:
-        """
-        The URL of a resource.
-        """
+    def deployment_url(self) -> Optional[str]:
         return pulumi.get(self, "deployment_url")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Metadata about this specific object.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return only the resources that match the entire 'displayName' given.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
-    def fqdn(self) -> str:
-        """
-        A filter to return only the resources that match the 'fqdn' given.
-        """
+    def fqdn(self) -> Optional[str]:
         return pulumi.get(self, "fqdn")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isAutoScalingEnabled")
-    def is_auto_scaling_enabled(self) -> bool:
-        """
-        Indicates if auto scaling is enabled for the Deployment's CPU core count.
-        """
+    def is_auto_scaling_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_auto_scaling_enabled")
 
     @property
     @pulumi.getter(name="isHealthy")
-    def is_healthy(self) -> bool:
-        """
-        True if all of the aggregate resources are working correctly.
-        """
+    def is_healthy(self) -> Optional[bool]:
         return pulumi.get(self, "is_healthy")
 
     @property
     @pulumi.getter(name="isLatestVersion")
-    def is_latest_version(self) -> bool:
-        """
-        Indicates if the resource is the the latest available version.
-        """
+    def is_latest_version(self) -> Optional[bool]:
         return pulumi.get(self, "is_latest_version")
 
     @property
     @pulumi.getter(name="isPublic")
-    def is_public(self) -> bool:
-        """
-        True if this object is publicly available.
-        """
+    def is_public(self) -> Optional[bool]:
         return pulumi.get(self, "is_public")
 
     @property
     @pulumi.getter(name="isStorageUtilizationLimitExceeded")
-    def is_storage_utilization_limit_exceeded(self) -> bool:
-        """
-        Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
-        """
+    def is_storage_utilization_limit_exceeded(self) -> Optional[bool]:
         return pulumi.get(self, "is_storage_utilization_limit_exceeded")
 
     @property
     @pulumi.getter(name="licenseModel")
-    def license_model(self) -> str:
-        """
-        The Oracle license model that applies to a Deployment.
-        """
+    def license_model(self) -> Optional[str]:
         return pulumi.get(self, "license_model")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="lifecycleSubState")
-    def lifecycle_sub_state(self) -> str:
-        """
-        A filter to return only the resources that match the 'lifecycleSubState' given.
-        """
+    def lifecycle_sub_state(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_sub_state")
 
     @property
     @pulumi.getter(name="maintenanceConfigurations")
-    def maintenance_configurations(self) -> Sequence['outputs.GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationResult']:
-        """
-        Attributes for configuring automatic deployment maintenance.
-        """
+    def maintenance_configurations(self) -> Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationResult']]:
         return pulumi.get(self, "maintenance_configurations")
 
     @property
     @pulumi.getter(name="maintenanceWindows")
-    def maintenance_windows(self) -> Sequence['outputs.GetDeploymentsDeploymentCollectionItemMaintenanceWindowResult']:
-        """
-        Defines the maintenance window, when automatic actions can be performed.
-        """
+    def maintenance_windows(self) -> Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionItemMaintenanceWindowResult']]:
         return pulumi.get(self, "maintenance_windows")
 
     @property
     @pulumi.getter(name="nextMaintenanceActionType")
-    def next_maintenance_action_type(self) -> str:
-        """
-        Type of the next maintenance.
-        """
+    def next_maintenance_action_type(self) -> Optional[str]:
         return pulumi.get(self, "next_maintenance_action_type")
 
     @property
     @pulumi.getter(name="nextMaintenanceDescription")
-    def next_maintenance_description(self) -> str:
-        """
-        Description of the next maintenance.
-        """
+    def next_maintenance_description(self) -> Optional[str]:
         return pulumi.get(self, "next_maintenance_description")
 
     @property
     @pulumi.getter(name="nsgIds")
-    def nsg_ids(self) -> Sequence[str]:
-        """
-        An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
-        """
+    def nsg_ids(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "nsg_ids")
 
     @property
     @pulumi.getter(name="oggDatas")
-    def ogg_datas(self) -> Sequence['outputs.GetDeploymentsDeploymentCollectionItemOggDataResult']:
-        """
-        Deployment Data for an OggDeployment
-        """
+    def ogg_datas(self) -> Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionItemOggDataResult']]:
         return pulumi.get(self, "ogg_datas")
 
     @property
     @pulumi.getter(name="privateIpAddress")
-    def private_ip_address(self) -> str:
-        """
-        The private IP address in the customer's VCN representing the access point for the associated endpoint service in the GoldenGate service VCN.
-        """
+    def private_ip_address(self) -> Optional[str]:
         return pulumi.get(self, "private_ip_address")
 
     @property
     @pulumi.getter(name="publicIpAddress")
-    def public_ip_address(self) -> str:
-        """
-        The public IP address representing the access point for the Deployment.
-        """
+    def public_ip_address(self) -> Optional[str]:
         return pulumi.get(self, "public_ip_address")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        A filter to return only the resources that match the 'lifecycleState' given.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="storageUtilizationInBytes")
-    def storage_utilization_in_bytes(self) -> str:
-        """
-        The amount of storage being utilized (in bytes)
-        """
+    def storage_utilization_in_bytes(self) -> Optional[str]:
         return pulumi.get(self, "storage_utilization_in_bytes")
 
     @property
     @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
-        """
+    def subnet_id(self) -> Optional[str]:
         return pulumi.get(self, "subnet_id")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeOfNextMaintenance")
-    def time_of_next_maintenance(self) -> str:
-        """
-        The time of next maintenance schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
+    def time_of_next_maintenance(self) -> Optional[str]:
         return pulumi.get(self, "time_of_next_maintenance")
 
     @property
     @pulumi.getter(name="timeOggVersionSupportedUntil")
-    def time_ogg_version_supported_until(self) -> str:
-        """
-        The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
+    def time_ogg_version_supported_until(self) -> Optional[str]:
         return pulumi.get(self, "time_ogg_version_supported_until")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="timeUpgradeRequired")
-    def time_upgrade_required(self) -> str:
-        """
-        Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records  to check, when deployment will be forced to upgrade to a newer version. Old description: The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
+    def time_upgrade_required(self) -> Optional[str]:
         return pulumi.get(self, "time_upgrade_required")
 
 
 @pulumi.output_type
 class GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataResult(dict):
     def __init__(__self__, *,
-                 bucket: str,
-                 diagnostic_state: str,
-                 namespace: str,
-                 object: str,
-                 time_diagnostic_end: str,
-                 time_diagnostic_start: str):
-        """
-        :param str bucket: Name of the bucket where the object is to be uploaded in the object storage
-        :param str diagnostic_state: The state of the deployment diagnostic collection.
-        :param str namespace: Name of namespace that serves as a container for all of your buckets
-        :param str object: Name of the diagnostic collected and uploaded to object storage
-        :param str time_diagnostic_end: The time until which the diagnostic collection should collect the logs. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        :param str time_diagnostic_start: The time from which the diagnostic collection should collect the logs. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "diagnostic_state", diagnostic_state)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "object", object)
-        pulumi.set(__self__, "time_diagnostic_end", time_diagnostic_end)
-        pulumi.set(__self__, "time_diagnostic_start", time_diagnostic_start)
+                 bucket: Optional[str] = None,
+                 diagnostic_state: Optional[str] = None,
+                 namespace: Optional[str] = None,
+                 object: Optional[str] = None,
+                 time_diagnostic_end: Optional[str] = None,
+                 time_diagnostic_start: Optional[str] = None):
+        if bucket is not None:
+            pulumi.set(__self__, "bucket", bucket)
+        if diagnostic_state is not None:
+            pulumi.set(__self__, "diagnostic_state", diagnostic_state)
+        if namespace is not None:
+            pulumi.set(__self__, "namespace", namespace)
+        if object is not None:
+            pulumi.set(__self__, "object", object)
+        if time_diagnostic_end is not None:
+            pulumi.set(__self__, "time_diagnostic_end", time_diagnostic_end)
+        if time_diagnostic_start is not None:
+            pulumi.set(__self__, "time_diagnostic_start", time_diagnostic_start)
 
     @property
     @pulumi.getter
-    def bucket(self) -> str:
-        """
-        Name of the bucket where the object is to be uploaded in the object storage
-        """
+    def bucket(self) -> Optional[str]:
         return pulumi.get(self, "bucket")
 
     @property
     @pulumi.getter(name="diagnosticState")
-    def diagnostic_state(self) -> str:
-        """
-        The state of the deployment diagnostic collection.
-        """
+    def diagnostic_state(self) -> Optional[str]:
         return pulumi.get(self, "diagnostic_state")
 
     @property
     @pulumi.getter
-    def namespace(self) -> str:
-        """
-        Name of namespace that serves as a container for all of your buckets
-        """
+    def namespace(self) -> Optional[str]:
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter
-    def object(self) -> str:
-        """
-        Name of the diagnostic collected and uploaded to object storage
-        """
+    def object(self) -> Optional[str]:
         return pulumi.get(self, "object")
 
     @property
     @pulumi.getter(name="timeDiagnosticEnd")
-    def time_diagnostic_end(self) -> str:
-        """
-        The time until which the diagnostic collection should collect the logs. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
+    def time_diagnostic_end(self) -> Optional[str]:
         return pulumi.get(self, "time_diagnostic_end")
 
     @property
     @pulumi.getter(name="timeDiagnosticStart")
-    def time_diagnostic_start(self) -> str:
-        """
-        The time from which the diagnostic collection should collect the logs. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
+    def time_diagnostic_start(self) -> Optional[str]:
         return pulumi.get(self, "time_diagnostic_start")
 
 
 @pulumi.output_type
 class GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationResult(dict):
     def __init__(__self__, *,
-                 bundle_release_upgrade_period_in_days: int,
-                 interim_release_upgrade_period_in_days: int,
-                 is_interim_release_auto_upgrade_enabled: bool,
-                 major_release_upgrade_period_in_days: int,
-                 security_patch_upgrade_period_in_days: int):
-        """
-        :param int bundle_release_upgrade_period_in_days: Defines auto upgrade period for bundle releases. Manually configured period cannot be longer than service defined period for bundle releases. This period must be shorter or equal to major release upgrade period. Not passing this field during create will equate to using the service default.
-        :param int interim_release_upgrade_period_in_days: Defines auto upgrade period for interim releases. This period must be shorter or equal to bundle release upgrade period.
-        :param bool is_interim_release_auto_upgrade_enabled: By default auto upgrade for interim releases are not enabled. If auto-upgrade is enabled for interim release,  you have to specify interimReleaseUpgradePeriodInDays too.
-        :param int major_release_upgrade_period_in_days: Defines auto upgrade period for major releases. Manually configured period cannot be longer than service defined period for major releases. Not passing this field during create will equate to using the service default.
-        :param int security_patch_upgrade_period_in_days: Defines auto upgrade period for releases with security fix. Manually configured period cannot be longer than service defined period for security releases. Not passing this field during create will equate to using the service default.
-        """
-        pulumi.set(__self__, "bundle_release_upgrade_period_in_days", bundle_release_upgrade_period_in_days)
-        pulumi.set(__self__, "interim_release_upgrade_period_in_days", interim_release_upgrade_period_in_days)
-        pulumi.set(__self__, "is_interim_release_auto_upgrade_enabled", is_interim_release_auto_upgrade_enabled)
-        pulumi.set(__self__, "major_release_upgrade_period_in_days", major_release_upgrade_period_in_days)
-        pulumi.set(__self__, "security_patch_upgrade_period_in_days", security_patch_upgrade_period_in_days)
+                 bundle_release_upgrade_period_in_days: Optional[int] = None,
+                 interim_release_upgrade_period_in_days: Optional[int] = None,
+                 is_interim_release_auto_upgrade_enabled: Optional[bool] = None,
+                 major_release_upgrade_period_in_days: Optional[int] = None,
+                 security_patch_upgrade_period_in_days: Optional[int] = None):
+        if bundle_release_upgrade_period_in_days is not None:
+            pulumi.set(__self__, "bundle_release_upgrade_period_in_days", bundle_release_upgrade_period_in_days)
+        if interim_release_upgrade_period_in_days is not None:
+            pulumi.set(__self__, "interim_release_upgrade_period_in_days", interim_release_upgrade_period_in_days)
+        if is_interim_release_auto_upgrade_enabled is not None:
+            pulumi.set(__self__, "is_interim_release_auto_upgrade_enabled", is_interim_release_auto_upgrade_enabled)
+        if major_release_upgrade_period_in_days is not None:
+            pulumi.set(__self__, "major_release_upgrade_period_in_days", major_release_upgrade_period_in_days)
+        if security_patch_upgrade_period_in_days is not None:
+            pulumi.set(__self__, "security_patch_upgrade_period_in_days", security_patch_upgrade_period_in_days)
 
     @property
     @pulumi.getter(name="bundleReleaseUpgradePeriodInDays")
-    def bundle_release_upgrade_period_in_days(self) -> int:
-        """
-        Defines auto upgrade period for bundle releases. Manually configured period cannot be longer than service defined period for bundle releases. This period must be shorter or equal to major release upgrade period. Not passing this field during create will equate to using the service default.
-        """
+    def bundle_release_upgrade_period_in_days(self) -> Optional[int]:
         return pulumi.get(self, "bundle_release_upgrade_period_in_days")
 
     @property
     @pulumi.getter(name="interimReleaseUpgradePeriodInDays")
-    def interim_release_upgrade_period_in_days(self) -> int:
-        """
-        Defines auto upgrade period for interim releases. This period must be shorter or equal to bundle release upgrade period.
-        """
+    def interim_release_upgrade_period_in_days(self) -> Optional[int]:
         return pulumi.get(self, "interim_release_upgrade_period_in_days")
 
     @property
     @pulumi.getter(name="isInterimReleaseAutoUpgradeEnabled")
-    def is_interim_release_auto_upgrade_enabled(self) -> bool:
-        """
-        By default auto upgrade for interim releases are not enabled. If auto-upgrade is enabled for interim release,  you have to specify interimReleaseUpgradePeriodInDays too.
-        """
+    def is_interim_release_auto_upgrade_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_interim_release_auto_upgrade_enabled")
 
     @property
     @pulumi.getter(name="majorReleaseUpgradePeriodInDays")
-    def major_release_upgrade_period_in_days(self) -> int:
-        """
-        Defines auto upgrade period for major releases. Manually configured period cannot be longer than service defined period for major releases. Not passing this field during create will equate to using the service default.
-        """
+    def major_release_upgrade_period_in_days(self) -> Optional[int]:
         return pulumi.get(self, "major_release_upgrade_period_in_days")
 
     @property
     @pulumi.getter(name="securityPatchUpgradePeriodInDays")
-    def security_patch_upgrade_period_in_days(self) -> int:
-        """
-        Defines auto upgrade period for releases with security fix. Manually configured period cannot be longer than service defined period for security releases. Not passing this field during create will equate to using the service default.
-        """
+    def security_patch_upgrade_period_in_days(self) -> Optional[int]:
         return pulumi.get(self, "security_patch_upgrade_period_in_days")
 
 
 @pulumi.output_type
 class GetDeploymentsDeploymentCollectionItemMaintenanceWindowResult(dict):
     def __init__(__self__, *,
-                 day: str,
-                 start_hour: int):
-        """
-        :param str day: Days of the week.
-        :param int start_hour: Start hour for maintenance period. Hour is in UTC.
-        """
-        pulumi.set(__self__, "day", day)
-        pulumi.set(__self__, "start_hour", start_hour)
+                 day: Optional[str] = None,
+                 start_hour: Optional[int] = None):
+        if day is not None:
+            pulumi.set(__self__, "day", day)
+        if start_hour is not None:
+            pulumi.set(__self__, "start_hour", start_hour)
 
     @property
     @pulumi.getter
-    def day(self) -> str:
-        """
-        Days of the week.
-        """
+    def day(self) -> Optional[str]:
         return pulumi.get(self, "day")
 
     @property
     @pulumi.getter(name="startHour")
-    def start_hour(self) -> int:
-        """
-        Start hour for maintenance period. Hour is in UTC.
-        """
+    def start_hour(self) -> Optional[int]:
         return pulumi.get(self, "start_hour")
 
 
 @pulumi.output_type
 class GetDeploymentsDeploymentCollectionItemOggDataResult(dict):
     def __init__(__self__, *,
-                 admin_password: str,
-                 admin_username: str,
-                 certificate: str,
-                 credential_store: str,
-                 deployment_name: str,
-                 identity_domain_id: str,
-                 key: str,
-                 ogg_version: str,
-                 password_secret_id: str):
-        """
-        :param str admin_username: The GoldenGate deployment console username.
-        :param str certificate: A PEM-encoded SSL certificate.
-        :param str credential_store: The type of credential store for OGG.
-        :param str deployment_name: The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
-        :param str identity_domain_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
-        :param str ogg_version: Version of OGG
-        :param str password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment password is stored.
-        """
-        pulumi.set(__self__, "admin_password", admin_password)
-        pulumi.set(__self__, "admin_username", admin_username)
-        pulumi.set(__self__, "certificate", certificate)
-        pulumi.set(__self__, "credential_store", credential_store)
-        pulumi.set(__self__, "deployment_name", deployment_name)
-        pulumi.set(__self__, "identity_domain_id", identity_domain_id)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "ogg_version", ogg_version)
-        pulumi.set(__self__, "password_secret_id", password_secret_id)
+                 admin_password: Optional[str] = None,
+                 admin_username: Optional[str] = None,
+                 certificate: Optional[str] = None,
+                 credential_store: Optional[str] = None,
+                 deployment_name: Optional[str] = None,
+                 identity_domain_id: Optional[str] = None,
+                 key: Optional[str] = None,
+                 ogg_version: Optional[str] = None,
+                 password_secret_id: Optional[str] = None):
+        if admin_password is not None:
+            pulumi.set(__self__, "admin_password", admin_password)
+        if admin_username is not None:
+            pulumi.set(__self__, "admin_username", admin_username)
+        if certificate is not None:
+            pulumi.set(__self__, "certificate", certificate)
+        if credential_store is not None:
+            pulumi.set(__self__, "credential_store", credential_store)
+        if deployment_name is not None:
+            pulumi.set(__self__, "deployment_name", deployment_name)
+        if identity_domain_id is not None:
+            pulumi.set(__self__, "identity_domain_id", identity_domain_id)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if ogg_version is not None:
+            pulumi.set(__self__, "ogg_version", ogg_version)
+        if password_secret_id is not None:
+            pulumi.set(__self__, "password_secret_id", password_secret_id)
 
     @property
     @pulumi.getter(name="adminPassword")
-    def admin_password(self) -> str:
+    def admin_password(self) -> Optional[str]:
         return pulumi.get(self, "admin_password")
 
     @property
     @pulumi.getter(name="adminUsername")
-    def admin_username(self) -> str:
-        """
-        The GoldenGate deployment console username.
-        """
+    def admin_username(self) -> Optional[str]:
         return pulumi.get(self, "admin_username")
 
     @property
     @pulumi.getter
-    def certificate(self) -> str:
-        """
-        A PEM-encoded SSL certificate.
-        """
+    def certificate(self) -> Optional[str]:
         return pulumi.get(self, "certificate")
 
     @property
     @pulumi.getter(name="credentialStore")
-    def credential_store(self) -> str:
-        """
-        The type of credential store for OGG.
-        """
+    def credential_store(self) -> Optional[str]:
         return pulumi.get(self, "credential_store")
 
     @property
     @pulumi.getter(name="deploymentName")
-    def deployment_name(self) -> str:
-        """
-        The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
-        """
+    def deployment_name(self) -> Optional[str]:
         return pulumi.get(self, "deployment_name")
 
     @property
     @pulumi.getter(name="identityDomainId")
-    def identity_domain_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
-        """
+    def identity_domain_id(self) -> Optional[str]:
         return pulumi.get(self, "identity_domain_id")
 
     @property
     @pulumi.getter
-    def key(self) -> str:
+    def key(self) -> Optional[str]:
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter(name="oggVersion")
-    def ogg_version(self) -> str:
-        """
-        Version of OGG
-        """
+    def ogg_version(self) -> Optional[str]:
         return pulumi.get(self, "ogg_version")
 
     @property
     @pulumi.getter(name="passwordSecretId")
-    def password_secret_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment password is stored.
-        """
+    def password_secret_id(self) -> Optional[str]:
         return pulumi.get(self, "password_secret_id")
 
 
@@ -3923,98 +3035,71 @@ class GetDeploymentsFilterResult(dict):
 @pulumi.output_type
 class GetMessageItemResult(dict):
     def __init__(__self__, *,
-                 deployment_message: str,
-                 deployment_message_status: str,
-                 id: str):
-        """
-        :param str deployment_message: The deployment Message in plain text with optional HTML anchor tags.
-        :param str deployment_message_status: The deployment Message Status.
-        :param str id: The deployment Message Id.
-        """
-        pulumi.set(__self__, "deployment_message", deployment_message)
-        pulumi.set(__self__, "deployment_message_status", deployment_message_status)
-        pulumi.set(__self__, "id", id)
+                 deployment_message: Optional[str] = None,
+                 deployment_message_status: Optional[str] = None,
+                 id: Optional[str] = None):
+        if deployment_message is not None:
+            pulumi.set(__self__, "deployment_message", deployment_message)
+        if deployment_message_status is not None:
+            pulumi.set(__self__, "deployment_message_status", deployment_message_status)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
 
     @property
     @pulumi.getter(name="deploymentMessage")
-    def deployment_message(self) -> str:
-        """
-        The deployment Message in plain text with optional HTML anchor tags.
-        """
+    def deployment_message(self) -> Optional[str]:
         return pulumi.get(self, "deployment_message")
 
     @property
     @pulumi.getter(name="deploymentMessageStatus")
-    def deployment_message_status(self) -> str:
-        """
-        The deployment Message Status.
-        """
+    def deployment_message_status(self) -> Optional[str]:
         return pulumi.get(self, "deployment_message_status")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The deployment Message Id.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
 
 @pulumi.output_type
 class GetMessagesDeploymentMessagesCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetMessagesDeploymentMessagesCollectionItemResult']):
-        """
-        :param Sequence['GetMessagesDeploymentMessagesCollectionItemArgs'] items: An array of DeploymentMessages.
-        """
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetMessagesDeploymentMessagesCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetMessagesDeploymentMessagesCollectionItemResult']:
-        """
-        An array of DeploymentMessages.
-        """
+    def items(self) -> Optional[Sequence['outputs.GetMessagesDeploymentMessagesCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetMessagesDeploymentMessagesCollectionItemResult(dict):
     def __init__(__self__, *,
-                 deployment_message: str,
-                 deployment_message_status: str,
-                 id: str):
-        """
-        :param str deployment_message: The deployment Message in plain text with optional HTML anchor tags.
-        :param str deployment_message_status: The deployment Message Status.
-        :param str id: The deployment Message Id.
-        """
-        pulumi.set(__self__, "deployment_message", deployment_message)
-        pulumi.set(__self__, "deployment_message_status", deployment_message_status)
-        pulumi.set(__self__, "id", id)
+                 deployment_message: Optional[str] = None,
+                 deployment_message_status: Optional[str] = None,
+                 id: Optional[str] = None):
+        if deployment_message is not None:
+            pulumi.set(__self__, "deployment_message", deployment_message)
+        if deployment_message_status is not None:
+            pulumi.set(__self__, "deployment_message_status", deployment_message_status)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
 
     @property
     @pulumi.getter(name="deploymentMessage")
-    def deployment_message(self) -> str:
-        """
-        The deployment Message in plain text with optional HTML anchor tags.
-        """
+    def deployment_message(self) -> Optional[str]:
         return pulumi.get(self, "deployment_message")
 
     @property
     @pulumi.getter(name="deploymentMessageStatus")
-    def deployment_message_status(self) -> str:
-        """
-        The deployment Message Status.
-        """
+    def deployment_message_status(self) -> Optional[str]:
         return pulumi.get(self, "deployment_message_status")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The deployment Message Id.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
 
@@ -4048,106 +3133,77 @@ class GetMessagesFilterResult(dict):
 @pulumi.output_type
 class GetTrailFileItemResult(dict):
     def __init__(__self__, *,
-                 consumers: Sequence[str],
-                 display_name: str,
-                 max_sequence_number: str,
-                 min_sequence_number: str,
-                 number_of_sequences: int,
-                 producer: str,
-                 size_in_bytes: float,
-                 time_last_updated: str,
-                 trail_file_id: str):
-        """
-        :param Sequence[str] consumers: array of consumer process names
-        :param str display_name: A filter to return only the resources that match the entire 'displayName' given.
-        :param str max_sequence_number: Maximum sequence number
-        :param str min_sequence_number: Minimum sequence number
-        :param int number_of_sequences: Number of sequences for a specific trail file
-        :param str producer: Producer Process Name if any.
-        :param float size_in_bytes: The size of the backup stored in object storage (in bytes)
-        :param str time_last_updated: The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        :param str trail_file_id: A Trail File identifier
-        """
-        pulumi.set(__self__, "consumers", consumers)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "max_sequence_number", max_sequence_number)
-        pulumi.set(__self__, "min_sequence_number", min_sequence_number)
-        pulumi.set(__self__, "number_of_sequences", number_of_sequences)
-        pulumi.set(__self__, "producer", producer)
-        pulumi.set(__self__, "size_in_bytes", size_in_bytes)
-        pulumi.set(__self__, "time_last_updated", time_last_updated)
-        pulumi.set(__self__, "trail_file_id", trail_file_id)
+                 consumers: Optional[Sequence[str]] = None,
+                 display_name: Optional[str] = None,
+                 max_sequence_number: Optional[str] = None,
+                 min_sequence_number: Optional[str] = None,
+                 number_of_sequences: Optional[int] = None,
+                 producer: Optional[str] = None,
+                 size_in_bytes: Optional[float] = None,
+                 time_last_updated: Optional[str] = None,
+                 trail_file_id: Optional[str] = None):
+        if consumers is not None:
+            pulumi.set(__self__, "consumers", consumers)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if max_sequence_number is not None:
+            pulumi.set(__self__, "max_sequence_number", max_sequence_number)
+        if min_sequence_number is not None:
+            pulumi.set(__self__, "min_sequence_number", min_sequence_number)
+        if number_of_sequences is not None:
+            pulumi.set(__self__, "number_of_sequences", number_of_sequences)
+        if producer is not None:
+            pulumi.set(__self__, "producer", producer)
+        if size_in_bytes is not None:
+            pulumi.set(__self__, "size_in_bytes", size_in_bytes)
+        if time_last_updated is not None:
+            pulumi.set(__self__, "time_last_updated", time_last_updated)
+        if trail_file_id is not None:
+            pulumi.set(__self__, "trail_file_id", trail_file_id)
 
     @property
     @pulumi.getter
-    def consumers(self) -> Sequence[str]:
-        """
-        array of consumer process names
-        """
+    def consumers(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "consumers")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return only the resources that match the entire 'displayName' given.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="maxSequenceNumber")
-    def max_sequence_number(self) -> str:
-        """
-        Maximum sequence number
-        """
+    def max_sequence_number(self) -> Optional[str]:
         return pulumi.get(self, "max_sequence_number")
 
     @property
     @pulumi.getter(name="minSequenceNumber")
-    def min_sequence_number(self) -> str:
-        """
-        Minimum sequence number
-        """
+    def min_sequence_number(self) -> Optional[str]:
         return pulumi.get(self, "min_sequence_number")
 
     @property
     @pulumi.getter(name="numberOfSequences")
-    def number_of_sequences(self) -> int:
-        """
-        Number of sequences for a specific trail file
-        """
+    def number_of_sequences(self) -> Optional[int]:
         return pulumi.get(self, "number_of_sequences")
 
     @property
     @pulumi.getter
-    def producer(self) -> str:
-        """
-        Producer Process Name if any.
-        """
+    def producer(self) -> Optional[str]:
         return pulumi.get(self, "producer")
 
     @property
     @pulumi.getter(name="sizeInBytes")
-    def size_in_bytes(self) -> float:
-        """
-        The size of the backup stored in object storage (in bytes)
-        """
+    def size_in_bytes(self) -> Optional[float]:
         return pulumi.get(self, "size_in_bytes")
 
     @property
     @pulumi.getter(name="timeLastUpdated")
-    def time_last_updated(self) -> str:
-        """
-        The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
+    def time_last_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_last_updated")
 
     @property
     @pulumi.getter(name="trailFileId")
-    def trail_file_id(self) -> str:
-        """
-        A Trail File identifier
-        """
+    def trail_file_id(self) -> Optional[str]:
         return pulumi.get(self, "trail_file_id")
 
 
@@ -4181,186 +3237,135 @@ class GetTrailFilesFilterResult(dict):
 @pulumi.output_type
 class GetTrailFilesTrailFileCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetTrailFilesTrailFileCollectionItemResult'],
-                 time_last_fetched: str):
-        """
-        :param Sequence['GetTrailFilesTrailFileCollectionItemArgs'] items: An array of TrailFiles.
-        :param str time_last_fetched: The time the data was last fetched from the deployment. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
-        pulumi.set(__self__, "items", items)
-        pulumi.set(__self__, "time_last_fetched", time_last_fetched)
+                 items: Optional[Sequence['outputs.GetTrailFilesTrailFileCollectionItemResult']] = None,
+                 time_last_fetched: Optional[str] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
+        if time_last_fetched is not None:
+            pulumi.set(__self__, "time_last_fetched", time_last_fetched)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetTrailFilesTrailFileCollectionItemResult']:
-        """
-        An array of TrailFiles.
-        """
+    def items(self) -> Optional[Sequence['outputs.GetTrailFilesTrailFileCollectionItemResult']]:
         return pulumi.get(self, "items")
 
     @property
     @pulumi.getter(name="timeLastFetched")
-    def time_last_fetched(self) -> str:
-        """
-        The time the data was last fetched from the deployment. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
+    def time_last_fetched(self) -> Optional[str]:
         return pulumi.get(self, "time_last_fetched")
 
 
 @pulumi.output_type
 class GetTrailFilesTrailFileCollectionItemResult(dict):
     def __init__(__self__, *,
-                 consumers: Sequence[str],
-                 display_name: str,
-                 max_sequence_number: str,
-                 min_sequence_number: str,
-                 number_of_sequences: int,
-                 producer: str,
-                 size_in_bytes: float,
-                 time_last_updated: str,
-                 trail_file_id: str):
-        """
-        :param Sequence[str] consumers: array of consumer process names
-        :param str display_name: A filter to return only the resources that match the entire 'displayName' given.
-        :param str max_sequence_number: Maximum sequence number
-        :param str min_sequence_number: Minimum sequence number
-        :param int number_of_sequences: Number of sequences for a specific trail file
-        :param str producer: Producer Process Name if any.
-        :param float size_in_bytes: The size of the backup stored in object storage (in bytes)
-        :param str time_last_updated: The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        :param str trail_file_id: A Trail File identifier
-        """
-        pulumi.set(__self__, "consumers", consumers)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "max_sequence_number", max_sequence_number)
-        pulumi.set(__self__, "min_sequence_number", min_sequence_number)
-        pulumi.set(__self__, "number_of_sequences", number_of_sequences)
-        pulumi.set(__self__, "producer", producer)
-        pulumi.set(__self__, "size_in_bytes", size_in_bytes)
-        pulumi.set(__self__, "time_last_updated", time_last_updated)
-        pulumi.set(__self__, "trail_file_id", trail_file_id)
+                 consumers: Optional[Sequence[str]] = None,
+                 display_name: Optional[str] = None,
+                 max_sequence_number: Optional[str] = None,
+                 min_sequence_number: Optional[str] = None,
+                 number_of_sequences: Optional[int] = None,
+                 producer: Optional[str] = None,
+                 size_in_bytes: Optional[float] = None,
+                 time_last_updated: Optional[str] = None,
+                 trail_file_id: Optional[str] = None):
+        if consumers is not None:
+            pulumi.set(__self__, "consumers", consumers)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if max_sequence_number is not None:
+            pulumi.set(__self__, "max_sequence_number", max_sequence_number)
+        if min_sequence_number is not None:
+            pulumi.set(__self__, "min_sequence_number", min_sequence_number)
+        if number_of_sequences is not None:
+            pulumi.set(__self__, "number_of_sequences", number_of_sequences)
+        if producer is not None:
+            pulumi.set(__self__, "producer", producer)
+        if size_in_bytes is not None:
+            pulumi.set(__self__, "size_in_bytes", size_in_bytes)
+        if time_last_updated is not None:
+            pulumi.set(__self__, "time_last_updated", time_last_updated)
+        if trail_file_id is not None:
+            pulumi.set(__self__, "trail_file_id", trail_file_id)
 
     @property
     @pulumi.getter
-    def consumers(self) -> Sequence[str]:
-        """
-        array of consumer process names
-        """
+    def consumers(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "consumers")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return only the resources that match the entire 'displayName' given.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="maxSequenceNumber")
-    def max_sequence_number(self) -> str:
-        """
-        Maximum sequence number
-        """
+    def max_sequence_number(self) -> Optional[str]:
         return pulumi.get(self, "max_sequence_number")
 
     @property
     @pulumi.getter(name="minSequenceNumber")
-    def min_sequence_number(self) -> str:
-        """
-        Minimum sequence number
-        """
+    def min_sequence_number(self) -> Optional[str]:
         return pulumi.get(self, "min_sequence_number")
 
     @property
     @pulumi.getter(name="numberOfSequences")
-    def number_of_sequences(self) -> int:
-        """
-        Number of sequences for a specific trail file
-        """
+    def number_of_sequences(self) -> Optional[int]:
         return pulumi.get(self, "number_of_sequences")
 
     @property
     @pulumi.getter
-    def producer(self) -> str:
-        """
-        Producer Process Name if any.
-        """
+    def producer(self) -> Optional[str]:
         return pulumi.get(self, "producer")
 
     @property
     @pulumi.getter(name="sizeInBytes")
-    def size_in_bytes(self) -> float:
-        """
-        The size of the backup stored in object storage (in bytes)
-        """
+    def size_in_bytes(self) -> Optional[float]:
         return pulumi.get(self, "size_in_bytes")
 
     @property
     @pulumi.getter(name="timeLastUpdated")
-    def time_last_updated(self) -> str:
-        """
-        The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
+    def time_last_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_last_updated")
 
     @property
     @pulumi.getter(name="trailFileId")
-    def trail_file_id(self) -> str:
-        """
-        A Trail File identifier
-        """
+    def trail_file_id(self) -> Optional[str]:
         return pulumi.get(self, "trail_file_id")
 
 
 @pulumi.output_type
 class GetTrailSequenceItemResult(dict):
     def __init__(__self__, *,
-                 display_name: str,
-                 sequence_id: str,
-                 size_in_bytes: float,
-                 time_last_updated: str):
-        """
-        :param str display_name: A filter to return only the resources that match the entire 'displayName' given.
-        :param str sequence_id: Sequence Id
-        :param float size_in_bytes: The size of the backup stored in object storage (in bytes)
-        :param str time_last_updated: The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "sequence_id", sequence_id)
-        pulumi.set(__self__, "size_in_bytes", size_in_bytes)
-        pulumi.set(__self__, "time_last_updated", time_last_updated)
+                 display_name: Optional[str] = None,
+                 sequence_id: Optional[str] = None,
+                 size_in_bytes: Optional[float] = None,
+                 time_last_updated: Optional[str] = None):
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if sequence_id is not None:
+            pulumi.set(__self__, "sequence_id", sequence_id)
+        if size_in_bytes is not None:
+            pulumi.set(__self__, "size_in_bytes", size_in_bytes)
+        if time_last_updated is not None:
+            pulumi.set(__self__, "time_last_updated", time_last_updated)
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return only the resources that match the entire 'displayName' given.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="sequenceId")
-    def sequence_id(self) -> str:
-        """
-        Sequence Id
-        """
+    def sequence_id(self) -> Optional[str]:
         return pulumi.get(self, "sequence_id")
 
     @property
     @pulumi.getter(name="sizeInBytes")
-    def size_in_bytes(self) -> float:
-        """
-        The size of the backup stored in object storage (in bytes)
-        """
+    def size_in_bytes(self) -> Optional[float]:
         return pulumi.get(self, "size_in_bytes")
 
     @property
     @pulumi.getter(name="timeLastUpdated")
-    def time_last_updated(self) -> str:
-        """
-        The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
+    def time_last_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_last_updated")
 
 
@@ -4394,80 +3399,58 @@ class GetTrailSequencesFilterResult(dict):
 @pulumi.output_type
 class GetTrailSequencesTrailSequenceCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetTrailSequencesTrailSequenceCollectionItemResult'],
-                 time_last_fetched: str):
-        """
-        :param Sequence['GetTrailSequencesTrailSequenceCollectionItemArgs'] items: An array of TrailSequences.
-        :param str time_last_fetched: The time the data was last fetched from the deployment. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
-        pulumi.set(__self__, "items", items)
-        pulumi.set(__self__, "time_last_fetched", time_last_fetched)
+                 items: Optional[Sequence['outputs.GetTrailSequencesTrailSequenceCollectionItemResult']] = None,
+                 time_last_fetched: Optional[str] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
+        if time_last_fetched is not None:
+            pulumi.set(__self__, "time_last_fetched", time_last_fetched)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetTrailSequencesTrailSequenceCollectionItemResult']:
-        """
-        An array of TrailSequences.
-        """
+    def items(self) -> Optional[Sequence['outputs.GetTrailSequencesTrailSequenceCollectionItemResult']]:
         return pulumi.get(self, "items")
 
     @property
     @pulumi.getter(name="timeLastFetched")
-    def time_last_fetched(self) -> str:
-        """
-        The time the data was last fetched from the deployment. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
+    def time_last_fetched(self) -> Optional[str]:
         return pulumi.get(self, "time_last_fetched")
 
 
 @pulumi.output_type
 class GetTrailSequencesTrailSequenceCollectionItemResult(dict):
     def __init__(__self__, *,
-                 display_name: str,
-                 sequence_id: str,
-                 size_in_bytes: float,
-                 time_last_updated: str):
-        """
-        :param str display_name: A filter to return only the resources that match the entire 'displayName' given.
-        :param str sequence_id: Sequence Id
-        :param float size_in_bytes: The size of the backup stored in object storage (in bytes)
-        :param str time_last_updated: The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "sequence_id", sequence_id)
-        pulumi.set(__self__, "size_in_bytes", size_in_bytes)
-        pulumi.set(__self__, "time_last_updated", time_last_updated)
+                 display_name: Optional[str] = None,
+                 sequence_id: Optional[str] = None,
+                 size_in_bytes: Optional[float] = None,
+                 time_last_updated: Optional[str] = None):
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if sequence_id is not None:
+            pulumi.set(__self__, "sequence_id", sequence_id)
+        if size_in_bytes is not None:
+            pulumi.set(__self__, "size_in_bytes", size_in_bytes)
+        if time_last_updated is not None:
+            pulumi.set(__self__, "time_last_updated", time_last_updated)
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return only the resources that match the entire 'displayName' given.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="sequenceId")
-    def sequence_id(self) -> str:
-        """
-        Sequence Id
-        """
+    def sequence_id(self) -> Optional[str]:
         return pulumi.get(self, "sequence_id")
 
     @property
     @pulumi.getter(name="sizeInBytes")
-    def size_in_bytes(self) -> float:
-        """
-        The size of the backup stored in object storage (in bytes)
-        """
+    def size_in_bytes(self) -> Optional[float]:
         return pulumi.get(self, "size_in_bytes")
 
     @property
     @pulumi.getter(name="timeLastUpdated")
-    def time_last_updated(self) -> str:
-        """
-        The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
+    def time_last_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_last_updated")
 
 

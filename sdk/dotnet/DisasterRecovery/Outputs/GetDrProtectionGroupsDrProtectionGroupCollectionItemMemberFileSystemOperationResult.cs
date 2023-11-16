@@ -16,7 +16,7 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// <summary>
         /// The export path of the file system.  Example: `/fs-export-path`
         /// </summary>
-        public readonly string ExportPath;
+        public readonly string? ExportPath;
         /// <summary>
         /// Mount details of a file system.
         /// </summary>
@@ -24,11 +24,11 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// <summary>
         /// The physical mount point of the file system on a host.  Example: `/mnt/yourmountpoint`
         /// </summary>
-        public readonly string MountPoint;
+        public readonly string? MountPoint;
         /// <summary>
         /// The OCID of the mount target for this file system.  Example: `ocid1.mounttarget.oc1..uniqueID`
         /// </summary>
-        public readonly string MountTargetId;
+        public readonly string? MountTargetId;
         /// <summary>
         /// Unmount details for a file system.
         /// </summary>
@@ -36,13 +36,13 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
 
         [OutputConstructor]
         private GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationResult(
-            string exportPath,
+            string? exportPath,
 
             ImmutableArray<Outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationMountDetailResult> mountDetails,
 
-            string mountPoint,
+            string? mountPoint,
 
-            string mountTargetId,
+            string? mountTargetId,
 
             ImmutableArray<Outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetailResult> unmountDetails)
         {

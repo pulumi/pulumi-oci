@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DevOps.outputs.GetTriggersTriggerCollectionItemActionFilterExcludeFileFilter;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetTriggersTriggerCollectionItemActionFilterExclude {
-    private List<GetTriggersTriggerCollectionItemActionFilterExcludeFileFilter> fileFilters;
+    private @Nullable List<GetTriggersTriggerCollectionItemActionFilterExcludeFileFilter> fileFilters;
 
     private GetTriggersTriggerCollectionItemActionFilterExclude() {}
     public List<GetTriggersTriggerCollectionItemActionFilterExcludeFileFilter> fileFilters() {
-        return this.fileFilters;
+        return this.fileFilters == null ? List.of() : this.fileFilters;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetTriggersTriggerCollectionItemActionFilterExclude {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetTriggersTriggerCollectionItemActionFilterExcludeFileFilter> fileFilters;
+        private @Nullable List<GetTriggersTriggerCollectionItemActionFilterExcludeFileFilter> fileFilters;
         public Builder() {}
         public Builder(GetTriggersTriggerCollectionItemActionFilterExclude defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetTriggersTriggerCollectionItemActionFilterExclude {
         }
 
         @CustomType.Setter
-        public Builder fileFilters(List<GetTriggersTriggerCollectionItemActionFilterExcludeFileFilter> fileFilters) {
-            this.fileFilters = Objects.requireNonNull(fileFilters);
+        public Builder fileFilters(@Nullable List<GetTriggersTriggerCollectionItemActionFilterExcludeFileFilter> fileFilters) {
+            this.fileFilters = fileFilters;
             return this;
         }
         public Builder fileFilters(GetTriggersTriggerCollectionItemActionFilterExcludeFileFilter... fileFilters) {

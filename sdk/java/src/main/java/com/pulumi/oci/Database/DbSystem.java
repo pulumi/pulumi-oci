@@ -108,7 +108,7 @@ public class DbSystem extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="backupSubnetId", refs={String.class}, tree="[0]")
-    private Output<String> backupSubnetId;
+    private Output</* @Nullable */ String> backupSubnetId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet the DB system is associated with. Applicable only to Exadata DB systems.
@@ -116,22 +116,22 @@ public class DbSystem extends com.pulumi.resources.CustomResource {
      * **Subnet Restrictions:** See the subnet restrictions information for **subnetId**.
      * 
      */
-    public Output<String> backupSubnetId() {
-        return this.backupSubnetId;
+    public Output<Optional<String>> backupSubnetId() {
+        return Codegen.optional(this.backupSubnetId);
     }
     /**
      * The cluster name for Exadata and 2-node RAC virtual machine DB systems. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
      * 
      */
     @Export(name="clusterName", refs={String.class}, tree="[0]")
-    private Output<String> clusterName;
+    private Output</* @Nullable */ String> clusterName;
 
     /**
      * @return The cluster name for Exadata and 2-node RAC virtual machine DB systems. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
      * 
      */
-    public Output<String> clusterName() {
-        return this.clusterName;
+    public Output<Optional<String>> clusterName() {
+        return Codegen.optional(this.clusterName);
     }
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the DB system  belongs in.
@@ -164,7 +164,7 @@ public class DbSystem extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="cpuCoreCount", refs={Integer.class}, tree="[0]")
-    private Output<Integer> cpuCoreCount;
+    private Output</* @Nullable */ Integer> cpuCoreCount;
 
     /**
      * @return (Updatable) The number of CPU cores to enable for a bare metal or Exadata DB system or AMD VMDB Systems. The valid values depend on the specified shape:
@@ -182,64 +182,64 @@ public class DbSystem extends com.pulumi.resources.CustomResource {
      * This parameter is not used for INTEL virtual machine DB systems because virtual machine DB systems have a set number of cores for each shape. For information about the number of cores for a virtual machine DB system shape, see [Virtual Machine DB Systems](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/overview.htm#virtualmachine)
      * 
      */
-    public Output<Integer> cpuCoreCount() {
-        return this.cpuCoreCount;
+    public Output<Optional<Integer>> cpuCoreCount() {
+        return Codegen.optional(this.cpuCoreCount);
     }
     /**
      * (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
      * 
      */
     @Export(name="dataCollectionOptions", refs={DbSystemDataCollectionOptions.class}, tree="[0]")
-    private Output<DbSystemDataCollectionOptions> dataCollectionOptions;
+    private Output</* @Nullable */ DbSystemDataCollectionOptions> dataCollectionOptions;
 
     /**
      * @return (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
      * 
      */
-    public Output<DbSystemDataCollectionOptions> dataCollectionOptions() {
-        return this.dataCollectionOptions;
+    public Output<Optional<DbSystemDataCollectionOptions>> dataCollectionOptions() {
+        return Codegen.optional(this.dataCollectionOptions);
     }
     /**
      * The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Specify 80 or 40. The default is 80 percent assigned to DATA storage. Not applicable for virtual machine DB systems. Required for BMDBs.
      * 
      */
     @Export(name="dataStoragePercentage", refs={Integer.class}, tree="[0]")
-    private Output<Integer> dataStoragePercentage;
+    private Output</* @Nullable */ Integer> dataStoragePercentage;
 
     /**
      * @return The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Specify 80 or 40. The default is 80 percent assigned to DATA storage. Not applicable for virtual machine DB systems. Required for BMDBs.
      * 
      */
-    public Output<Integer> dataStoragePercentage() {
-        return this.dataStoragePercentage;
+    public Output<Optional<Integer>> dataStoragePercentage() {
+        return Codegen.optional(this.dataStoragePercentage);
     }
     /**
      * (Updatable) Size (in GB) of the initial data volume that will be created and attached to a virtual machine DB system. You can scale up storage after provisioning, as needed. Note that the total storage size attached will be more than the amount you specify to allow for REDO/RECO space and software volume. Required for VMDBs.
      * 
      */
     @Export(name="dataStorageSizeInGb", refs={Integer.class}, tree="[0]")
-    private Output<Integer> dataStorageSizeInGb;
+    private Output</* @Nullable */ Integer> dataStorageSizeInGb;
 
     /**
      * @return (Updatable) Size (in GB) of the initial data volume that will be created and attached to a virtual machine DB system. You can scale up storage after provisioning, as needed. Note that the total storage size attached will be more than the amount you specify to allow for REDO/RECO space and software volume. Required for VMDBs.
      * 
      */
-    public Output<Integer> dataStorageSizeInGb() {
-        return this.dataStorageSizeInGb;
+    public Output<Optional<Integer>> dataStorageSizeInGb() {
+        return Codegen.optional(this.dataStorageSizeInGb);
     }
     /**
      * The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
      * 
      */
     @Export(name="databaseEdition", refs={String.class}, tree="[0]")
-    private Output<String> databaseEdition;
+    private Output</* @Nullable */ String> databaseEdition;
 
     /**
      * @return The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
      * 
      */
-    public Output<String> databaseEdition() {
-        return this.databaseEdition;
+    public Output<Optional<String>> databaseEdition() {
+        return Codegen.optional(this.databaseEdition);
     }
     /**
      * (Updatable) Details for creating a Database Home if you are creating a database by restoring from a database backup.
@@ -264,70 +264,70 @@ public class DbSystem extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="dbSystemOptions", refs={DbSystemDbSystemOptions.class}, tree="[0]")
-    private Output<DbSystemDbSystemOptions> dbSystemOptions;
+    private Output</* @Nullable */ DbSystemDbSystemOptions> dbSystemOptions;
 
     /**
      * @return The DB system options.
      * 
      */
-    public Output<DbSystemDbSystemOptions> dbSystemOptions() {
-        return this.dbSystemOptions;
+    public Output<Optional<DbSystemDbSystemOptions>> dbSystemOptions() {
+        return Codegen.optional(this.dbSystemOptions);
     }
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * The type of redundancy configured for the DB system. Normal is 2-way redundancy, recommended for test and development systems. High is 3-way redundancy, recommended for production systems.
      * 
      */
     @Export(name="diskRedundancy", refs={String.class}, tree="[0]")
-    private Output<String> diskRedundancy;
+    private Output</* @Nullable */ String> diskRedundancy;
 
     /**
      * @return The type of redundancy configured for the DB system. Normal is 2-way redundancy, recommended for test and development systems. High is 3-way redundancy, recommended for production systems.
      * 
      */
-    public Output<String> diskRedundancy() {
-        return this.diskRedundancy;
+    public Output<Optional<String>> diskRedundancy() {
+        return Codegen.optional(this.diskRedundancy);
     }
     /**
      * The user-friendly name for the DB system. The name does not have to be unique.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return The user-friendly name for the DB system. The name does not have to be unique.
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     /**
      * A domain name used for the DB system. If the Oracle-provided Internet and VCN Resolver is enabled for the specified subnet, the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.
      * 
      */
     @Export(name="domain", refs={String.class}, tree="[0]")
-    private Output<String> domain;
+    private Output</* @Nullable */ String> domain;
 
     /**
      * @return A domain name used for the DB system. If the Oracle-provided Internet and VCN Resolver is enabled for the specified subnet, the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.
      * 
      */
-    public Output<String> domain() {
-        return this.domain;
+    public Output<Optional<String>> domain() {
+        return Codegen.optional(this.domain);
     }
     /**
      * A Fault Domain is a grouping of hardware and infrastructure within an availability domain. Fault Domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or maintenance that affects one Fault Domain does not affect DB systems in other Fault Domains.
@@ -342,7 +342,7 @@ public class DbSystem extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="faultDomains", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> faultDomains;
+    private Output</* @Nullable */ List<String>> faultDomains;
 
     /**
      * @return A Fault Domain is a grouping of hardware and infrastructure within an availability domain. Fault Domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or maintenance that affects one Fault Domain does not affect DB systems in other Fault Domains.
@@ -356,22 +356,22 @@ public class DbSystem extends com.pulumi.resources.CustomResource {
      * Example: `FAULT-DOMAIN-1`
      * 
      */
-    public Output<List<String>> faultDomains() {
-        return this.faultDomains;
+    public Output<Optional<List<String>>> faultDomains() {
+        return Codegen.optional(this.faultDomains);
     }
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * The hostname for the DB system. The hostname must begin with an alphabetic character, and can contain alphanumeric characters and hyphens (-). The maximum length of the hostname is 16 characters for bare metal and virtual machine DB systems, and 12 characters for Exadata DB systems.
@@ -400,112 +400,112 @@ public class DbSystem extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="iormConfigCaches", refs={List.class,DbSystemIormConfigCach.class}, tree="[0,1]")
-    private Output<List<DbSystemIormConfigCach>> iormConfigCaches;
+    private Output</* @Nullable */ List<DbSystemIormConfigCach>> iormConfigCaches;
 
     /**
      * @return The IORM settings of the Exadata DB system.
      * 
      */
-    public Output<List<DbSystemIormConfigCach>> iormConfigCaches() {
-        return this.iormConfigCaches;
+    public Output<Optional<List<DbSystemIormConfigCach>>> iormConfigCaches() {
+        return Codegen.optional(this.iormConfigCaches);
     }
     /**
      * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      * 
      */
     @Export(name="kmsKeyId", refs={String.class}, tree="[0]")
-    private Output<String> kmsKeyId;
+    private Output</* @Nullable */ String> kmsKeyId;
 
     /**
      * @return The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      * 
      */
-    public Output<String> kmsKeyId() {
-        return this.kmsKeyId;
+    public Output<Optional<String>> kmsKeyId() {
+        return Codegen.optional(this.kmsKeyId);
     }
     /**
      * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
      * 
      */
     @Export(name="kmsKeyVersionId", refs={String.class}, tree="[0]")
-    private Output<String> kmsKeyVersionId;
+    private Output</* @Nullable */ String> kmsKeyVersionId;
 
     /**
      * @return The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
      * 
      */
-    public Output<String> kmsKeyVersionId() {
-        return this.kmsKeyVersionId;
+    public Output<Optional<String>> kmsKeyVersionId() {
+        return Codegen.optional(this.kmsKeyVersionId);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
      * 
      */
     @Export(name="lastMaintenanceRunId", refs={String.class}, tree="[0]")
-    private Output<String> lastMaintenanceRunId;
+    private Output</* @Nullable */ String> lastMaintenanceRunId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
      * 
      */
-    public Output<String> lastMaintenanceRunId() {
-        return this.lastMaintenanceRunId;
+    public Output<Optional<String>> lastMaintenanceRunId() {
+        return Codegen.optional(this.lastMaintenanceRunId);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation starts.
      * 
      */
     @Export(name="lastPatchHistoryEntryId", refs={String.class}, tree="[0]")
-    private Output<String> lastPatchHistoryEntryId;
+    private Output</* @Nullable */ String> lastPatchHistoryEntryId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation starts.
      * 
      */
-    public Output<String> lastPatchHistoryEntryId() {
-        return this.lastPatchHistoryEntryId;
+    public Output<Optional<String>> lastPatchHistoryEntryId() {
+        return Codegen.optional(this.lastPatchHistoryEntryId);
     }
     /**
      * (Updatable) The Oracle license model that applies to all the databases on the DB system. The default is LICENSE_INCLUDED.
      * 
      */
     @Export(name="licenseModel", refs={String.class}, tree="[0]")
-    private Output<String> licenseModel;
+    private Output</* @Nullable */ String> licenseModel;
 
     /**
      * @return (Updatable) The Oracle license model that applies to all the databases on the DB system. The default is LICENSE_INCLUDED.
      * 
      */
-    public Output<String> licenseModel() {
-        return this.licenseModel;
+    public Output<Optional<String>> licenseModel() {
+        return Codegen.optional(this.licenseModel);
     }
     /**
      * Additional information about the current lifecycle state.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return Additional information about the current lifecycle state.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * The port number configured for the listener on the DB system.
      * 
      */
     @Export(name="listenerPort", refs={Integer.class}, tree="[0]")
-    private Output<Integer> listenerPort;
+    private Output</* @Nullable */ Integer> listenerPort;
 
     /**
      * @return The port number configured for the listener on the DB system.
      * 
      */
-    public Output<Integer> listenerPort() {
-        return this.listenerPort;
+    public Output<Optional<Integer>> listenerPort() {
+        return Codegen.optional(this.listenerPort);
     }
     /**
      * (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
@@ -526,56 +526,56 @@ public class DbSystem extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="maintenanceWindows", refs={List.class,DbSystemMaintenanceWindow.class}, tree="[0,1]")
-    private Output<List<DbSystemMaintenanceWindow>> maintenanceWindows;
+    private Output</* @Nullable */ List<DbSystemMaintenanceWindow>> maintenanceWindows;
 
     /**
      * @return The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
      * 
      */
-    public Output<List<DbSystemMaintenanceWindow>> maintenanceWindows() {
-        return this.maintenanceWindows;
+    public Output<Optional<List<DbSystemMaintenanceWindow>>> maintenanceWindows() {
+        return Codegen.optional(this.maintenanceWindows);
     }
     /**
      * Memory allocated to the DB system, in gigabytes.
      * 
      */
     @Export(name="memorySizeInGbs", refs={Integer.class}, tree="[0]")
-    private Output<Integer> memorySizeInGbs;
+    private Output</* @Nullable */ Integer> memorySizeInGbs;
 
     /**
      * @return Memory allocated to the DB system, in gigabytes.
      * 
      */
-    public Output<Integer> memorySizeInGbs() {
-        return this.memorySizeInGbs;
+    public Output<Optional<Integer>> memorySizeInGbs() {
+        return Codegen.optional(this.memorySizeInGbs);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
      * 
      */
     @Export(name="nextMaintenanceRunId", refs={String.class}, tree="[0]")
-    private Output<String> nextMaintenanceRunId;
+    private Output</* @Nullable */ String> nextMaintenanceRunId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
      * 
      */
-    public Output<String> nextMaintenanceRunId() {
-        return this.nextMaintenanceRunId;
+    public Output<Optional<String>> nextMaintenanceRunId() {
+        return Codegen.optional(this.nextMaintenanceRunId);
     }
     /**
      * The number of nodes to launch for a 2-node RAC virtual machine DB system. Specify either 1 or 2.
      * 
      */
     @Export(name="nodeCount", refs={Integer.class}, tree="[0]")
-    private Output<Integer> nodeCount;
+    private Output</* @Nullable */ Integer> nodeCount;
 
     /**
      * @return The number of nodes to launch for a 2-node RAC virtual machine DB system. Specify either 1 or 2.
      * 
      */
-    public Output<Integer> nodeCount() {
-        return this.nodeCount;
+    public Output<Optional<Integer>> nodeCount() {
+        return Codegen.optional(this.nodeCount);
     }
     /**
      * (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
@@ -598,98 +598,98 @@ public class DbSystem extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="osVersion", refs={String.class}, tree="[0]")
-    private Output<String> osVersion;
+    private Output</* @Nullable */ String> osVersion;
 
     /**
      * @return The most recent OS Patch Version applied on the DB system.
      * 
      */
-    public Output<String> osVersion() {
-        return this.osVersion;
+    public Output<Optional<String>> osVersion() {
+        return Codegen.optional(this.osVersion);
     }
     /**
      * The point in time for a cloned database system when the data disks were cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
     @Export(name="pointInTimeDataDiskCloneTimestamp", refs={String.class}, tree="[0]")
-    private Output<String> pointInTimeDataDiskCloneTimestamp;
+    private Output</* @Nullable */ String> pointInTimeDataDiskCloneTimestamp;
 
     /**
      * @return The point in time for a cloned database system when the data disks were cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
      */
-    public Output<String> pointInTimeDataDiskCloneTimestamp() {
-        return this.pointInTimeDataDiskCloneTimestamp;
+    public Output<Optional<String>> pointInTimeDataDiskCloneTimestamp() {
+        return Codegen.optional(this.pointInTimeDataDiskCloneTimestamp);
     }
     /**
      * A private IP address of your choice. Must be an available IP address within the subnet&#39;s CIDR. If you don&#39;t specify a value, Oracle automatically assigns a private IP address from the subnet. Supported for VM BM shape.
      * 
      */
     @Export(name="privateIp", refs={String.class}, tree="[0]")
-    private Output<String> privateIp;
+    private Output</* @Nullable */ String> privateIp;
 
     /**
      * @return A private IP address of your choice. Must be an available IP address within the subnet&#39;s CIDR. If you don&#39;t specify a value, Oracle automatically assigns a private IP address from the subnet. Supported for VM BM shape.
      * 
      */
-    public Output<String> privateIp() {
-        return this.privateIp;
+    public Output<Optional<String>> privateIp() {
+        return Codegen.optional(this.privateIp);
     }
     /**
      * The RECO/REDO storage size, in gigabytes, that is currently allocated to the DB system. Applies only for virtual machine DB systems.
      * 
      */
     @Export(name="recoStorageSizeInGb", refs={Integer.class}, tree="[0]")
-    private Output<Integer> recoStorageSizeInGb;
+    private Output</* @Nullable */ Integer> recoStorageSizeInGb;
 
     /**
      * @return The RECO/REDO storage size, in gigabytes, that is currently allocated to the DB system. Applies only for virtual machine DB systems.
      * 
      */
-    public Output<Integer> recoStorageSizeInGb() {
-        return this.recoStorageSizeInGb;
+    public Output<Optional<Integer>> recoStorageSizeInGb() {
+        return Codegen.optional(this.recoStorageSizeInGb);
     }
     /**
      * The FQDN of the DNS record for the SCAN IP addresses that are associated with the DB system.
      * 
      */
     @Export(name="scanDnsName", refs={String.class}, tree="[0]")
-    private Output<String> scanDnsName;
+    private Output</* @Nullable */ String> scanDnsName;
 
     /**
      * @return The FQDN of the DNS record for the SCAN IP addresses that are associated with the DB system.
      * 
      */
-    public Output<String> scanDnsName() {
-        return this.scanDnsName;
+    public Output<Optional<String>> scanDnsName() {
+        return Codegen.optional(this.scanDnsName);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DNS record for the SCAN IP addresses that are associated with the DB system.
      * 
      */
     @Export(name="scanDnsRecordId", refs={String.class}, tree="[0]")
-    private Output<String> scanDnsRecordId;
+    private Output</* @Nullable */ String> scanDnsRecordId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DNS record for the SCAN IP addresses that are associated with the DB system.
      * 
      */
-    public Output<String> scanDnsRecordId() {
-        return this.scanDnsRecordId;
+    public Output<Optional<String>> scanDnsRecordId() {
+        return Codegen.optional(this.scanDnsRecordId);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the DB system. SCAN IP addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
      * 
      */
     @Export(name="scanIpIds", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> scanIpIds;
+    private Output</* @Nullable */ List<String>> scanIpIds;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the DB system. SCAN IP addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
      * 
      */
-    public Output<List<String>> scanIpIds() {
-        return this.scanIpIds;
+    public Output<Optional<List<String>>> scanIpIds() {
+        return Codegen.optional(this.scanIpIds);
     }
     /**
      * (Updatable) The shape of the DB system. The shape determines resources allocated to the DB system.
@@ -718,42 +718,42 @@ public class DbSystem extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="source", refs={String.class}, tree="[0]")
-    private Output<String> source;
+    private Output</* @Nullable */ String> source;
 
     /**
      * @return The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATABASE` for creating a new database from an existing database, including archive redo log data. The default is `NONE`.
      * 
      */
-    public Output<String> source() {
-        return this.source;
+    public Output<Optional<String>> source() {
+        return Codegen.optional(this.source);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
      * 
      */
     @Export(name="sourceDbSystemId", refs={String.class}, tree="[0]")
-    private Output<String> sourceDbSystemId;
+    private Output</* @Nullable */ String> sourceDbSystemId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
      * 
      */
-    public Output<String> sourceDbSystemId() {
-        return this.sourceDbSystemId;
+    public Output<Optional<String>> sourceDbSystemId() {
+        return Codegen.optional(this.sourceDbSystemId);
     }
     /**
      * If true, Sparse Diskgroup is configured for Exadata dbsystem. If False, Sparse diskgroup is not configured. Only applied for Exadata shape.
      * 
      */
     @Export(name="sparseDiskgroup", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> sparseDiskgroup;
+    private Output</* @Nullable */ Boolean> sparseDiskgroup;
 
     /**
      * @return If true, Sparse Diskgroup is configured for Exadata dbsystem. If False, Sparse diskgroup is not configured. Only applied for Exadata shape.
      * 
      */
-    public Output<Boolean> sparseDiskgroup() {
-        return this.sparseDiskgroup;
+    public Output<Optional<Boolean>> sparseDiskgroup() {
+        return Codegen.optional(this.sparseDiskgroup);
     }
     /**
      * (Updatable) The public key portion of the key pair to use for SSH access to the DB system. Multiple public keys can be provided. The length of the combined keys cannot exceed 40,000 characters.
@@ -774,28 +774,28 @@ public class DbSystem extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the DB system.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The block storage volume performance level. Valid values are `BALANCED` and `HIGH_PERFORMANCE`. See [Block Volume Performance](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm) for more information.
      * 
      */
     @Export(name="storageVolumePerformanceMode", refs={String.class}, tree="[0]")
-    private Output<String> storageVolumePerformanceMode;
+    private Output</* @Nullable */ String> storageVolumePerformanceMode;
 
     /**
      * @return The block storage volume performance level. Valid values are `BALANCED` and `HIGH_PERFORMANCE`. See [Block Volume Performance](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm) for more information.
      * 
      */
-    public Output<String> storageVolumePerformanceMode() {
-        return this.storageVolumePerformanceMode;
+    public Output<Optional<String>> storageVolumePerformanceMode() {
+        return Codegen.optional(this.storageVolumePerformanceMode);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the DB system is associated with.
@@ -828,14 +828,14 @@ public class DbSystem extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the DB system was created.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The time zone to use for the DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
@@ -845,7 +845,7 @@ public class DbSystem extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="timeZone", refs={String.class}, tree="[0]")
-    private Output<String> timeZone;
+    private Output</* @Nullable */ String> timeZone;
 
     /**
      * @return The time zone to use for the DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
@@ -854,50 +854,50 @@ public class DbSystem extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> timeZone() {
-        return this.timeZone;
+    public Output<Optional<String>> timeZone() {
+        return Codegen.optional(this.timeZone);
     }
     /**
      * The Oracle Database version of the DB system.
      * 
      */
     @Export(name="version", refs={String.class}, tree="[0]")
-    private Output<String> version;
+    private Output</* @Nullable */ String> version;
 
     /**
      * @return The Oracle Database version of the DB system.
      * 
      */
-    public Output<String> version() {
-        return this.version;
+    public Output<Optional<String>> version() {
+        return Codegen.optional(this.version);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the DB system. The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the DB system to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
      * 
      */
     @Export(name="vipIds", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> vipIds;
+    private Output</* @Nullable */ List<String>> vipIds;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the DB system. The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the DB system to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
      * 
      */
-    public Output<List<String>> vipIds() {
-        return this.vipIds;
+    public Output<Optional<List<String>>> vipIds() {
+        return Codegen.optional(this.vipIds);
     }
     /**
      * The OCID of the zone the DB system is associated with.
      * 
      */
     @Export(name="zoneId", refs={String.class}, tree="[0]")
-    private Output<String> zoneId;
+    private Output</* @Nullable */ String> zoneId;
 
     /**
      * @return The OCID of the zone the DB system is associated with.
      * 
      */
-    public Output<String> zoneId() {
-        return this.zoneId;
+    public Output<Optional<String>> zoneId() {
+        return Codegen.optional(this.zoneId);
     }
 
     /**

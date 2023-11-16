@@ -24,7 +24,7 @@ public final class GetAutonomousDatabasesResult {
      * @return The list of autonomous_databases.
      * 
      */
-    private List<GetAutonomousDatabasesAutonomousDatabase> autonomousDatabases;
+    private @Nullable List<GetAutonomousDatabasesAutonomousDatabase> autonomousDatabases;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
@@ -54,7 +54,7 @@ public final class GetAutonomousDatabasesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The infrastructure type this resource belongs to.
      * 
@@ -100,7 +100,7 @@ public final class GetAutonomousDatabasesResult {
      * 
      */
     public List<GetAutonomousDatabasesAutonomousDatabase> autonomousDatabases() {
-        return this.autonomousDatabases;
+        return this.autonomousDatabases == null ? List.of() : this.autonomousDatabases;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -141,8 +141,8 @@ public final class GetAutonomousDatabasesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The infrastructure type this resource belongs to.
@@ -200,13 +200,13 @@ public final class GetAutonomousDatabasesResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String autonomousContainerDatabaseId;
-        private List<GetAutonomousDatabasesAutonomousDatabase> autonomousDatabases;
+        private @Nullable List<GetAutonomousDatabasesAutonomousDatabase> autonomousDatabases;
         private String compartmentId;
         private @Nullable String dbVersion;
         private @Nullable String dbWorkload;
         private @Nullable String displayName;
         private @Nullable List<GetAutonomousDatabasesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String infrastructureType;
         private @Nullable Boolean isDataGuardEnabled;
         private @Nullable Boolean isFreeTier;
@@ -240,8 +240,8 @@ public final class GetAutonomousDatabasesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder autonomousDatabases(List<GetAutonomousDatabasesAutonomousDatabase> autonomousDatabases) {
-            this.autonomousDatabases = Objects.requireNonNull(autonomousDatabases);
+        public Builder autonomousDatabases(@Nullable List<GetAutonomousDatabasesAutonomousDatabase> autonomousDatabases) {
+            this.autonomousDatabases = autonomousDatabases;
             return this;
         }
         public Builder autonomousDatabases(GetAutonomousDatabasesAutonomousDatabase... autonomousDatabases) {
@@ -276,8 +276,8 @@ public final class GetAutonomousDatabasesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

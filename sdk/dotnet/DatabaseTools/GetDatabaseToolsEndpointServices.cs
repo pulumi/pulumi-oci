@@ -181,7 +181,7 @@ namespace Pulumi.Oci.DatabaseTools
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// A unique, non-changeable resource name.
         /// </summary>
@@ -201,7 +201,7 @@ namespace Pulumi.Oci.DatabaseTools
 
             ImmutableArray<Outputs.GetDatabaseToolsEndpointServicesFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? name,
 

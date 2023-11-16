@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.AiVision.outputs.GetModelsModelCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetModelsModelCollection {
-    private List<GetModelsModelCollectionItem> items;
+    private @Nullable List<GetModelsModelCollectionItem> items;
 
     private GetModelsModelCollection() {}
     public List<GetModelsModelCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetModelsModelCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetModelsModelCollectionItem> items;
+        private @Nullable List<GetModelsModelCollectionItem> items;
         public Builder() {}
         public Builder(GetModelsModelCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetModelsModelCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetModelsModelCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetModelsModelCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetModelsModelCollectionItem... items) {

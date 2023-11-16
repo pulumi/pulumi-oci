@@ -108,27 +108,27 @@ namespace Pulumi.Oci.ContainerEngine
         /// <summary>
         /// The cluster the virtual node pool is associated with. A virtual node pool can only be associated with one cluster.
         /// </summary>
-        public readonly string ClusterId;
+        public readonly string? ClusterId;
         /// <summary>
         /// Compartment of the virtual node pool.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// Display name of the virtual node pool. This is a non-unique value.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The OCID of the virtual node pool.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Initial labels that will be added to the Kubernetes Virtual Node object when it registers. This is the same as virtualNodePool resources.
         /// </summary>
@@ -136,11 +136,11 @@ namespace Pulumi.Oci.ContainerEngine
         /// <summary>
         /// The version of Kubernetes running on the nodes in the node pool.
         /// </summary>
-        public readonly string KubernetesVersion;
+        public readonly string? KubernetesVersion;
         /// <summary>
         /// Details about the state of the Virtual Node Pool.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// List of network security group IDs applied to the Pod VNIC.
         /// </summary>
@@ -156,15 +156,15 @@ namespace Pulumi.Oci.ContainerEngine
         /// <summary>
         /// The number of Virtual Nodes that should be in the Virtual Node Pool. The placement configurations determine where these virtual nodes are placed.
         /// </summary>
-        public readonly int Size;
+        public readonly int? Size;
         /// <summary>
         /// The state of the Virtual Node Pool.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, object>? SystemTags;
         /// <summary>
         /// A taint is a collection of &lt;key, value, effect&gt;. These taints will be applied to the Virtual Nodes of this Virtual Node Pool for Kubernetes scheduling.
         /// </summary>
@@ -172,11 +172,11 @@ namespace Pulumi.Oci.ContainerEngine
         /// <summary>
         /// The time the virtual node pool was created.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The time the virtual node pool was updated.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
         public readonly string VirtualNodePoolId;
         /// <summary>
         /// The tags associated to the virtual nodes in this virtual node pool.
@@ -185,23 +185,23 @@ namespace Pulumi.Oci.ContainerEngine
 
         [OutputConstructor]
         private GetVirtualNodePoolResult(
-            string clusterId,
+            string? clusterId,
 
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetVirtualNodePoolInitialVirtualNodeLabelResult> initialVirtualNodeLabels,
 
-            string kubernetesVersion,
+            string? kubernetesVersion,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
             ImmutableArray<string> nsgIds,
 
@@ -209,17 +209,17 @@ namespace Pulumi.Oci.ContainerEngine
 
             ImmutableArray<Outputs.GetVirtualNodePoolPodConfigurationResult> podConfigurations,
 
-            int size,
+            int? size,
 
-            string state,
+            string? state,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, object>? systemTags,
 
             ImmutableArray<Outputs.GetVirtualNodePoolTaintResult> taints,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated,
+            string? timeUpdated,
 
             string virtualNodePoolId,
 

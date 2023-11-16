@@ -6,6 +6,8 @@ package com.pulumi.oci.DatabaseMigration.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetJobOutputItem {
@@ -13,15 +15,15 @@ public final class GetJobOutputItem {
      * @return Job output line.
      * 
      */
-    private String message;
+    private @Nullable String message;
 
     private GetJobOutputItem() {}
     /**
      * @return Job output line.
      * 
      */
-    public String message() {
-        return this.message;
+    public Optional<String> message() {
+        return Optional.ofNullable(this.message);
     }
 
     public static Builder builder() {
@@ -33,7 +35,7 @@ public final class GetJobOutputItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String message;
+        private @Nullable String message;
         public Builder() {}
         public Builder(GetJobOutputItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -41,8 +43,8 @@ public final class GetJobOutputItem {
         }
 
         @CustomType.Setter
-        public Builder message(String message) {
-            this.message = Objects.requireNonNull(message);
+        public Builder message(@Nullable String message) {
+            this.message = message;
             return this;
         }
         public GetJobOutputItem build() {

@@ -16,35 +16,35 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// General information about the POSIX account such as their real name and phone number
         /// </summary>
-        public readonly string Gecos;
+        public readonly string? Gecos;
         /// <summary>
         /// Primary Group identifier of the POSIX user
         /// </summary>
-        public readonly int GidNumber;
+        public readonly int? GidNumber;
         /// <summary>
         /// The absolute path to the home directory of the POSIX account
         /// </summary>
-        public readonly string HomeDirectory;
+        public readonly string? HomeDirectory;
         /// <summary>
         /// The path to the login shell of the POSIX account
         /// </summary>
-        public readonly string LoginShell;
+        public readonly string? LoginShell;
         /// <summary>
         /// Integer uniquely identifying a user in a POSIX administrative domain
         /// </summary>
-        public readonly int UidNumber;
+        public readonly int? UidNumber;
 
         [OutputConstructor]
         private GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUserResult(
-            string gecos,
+            string? gecos,
 
-            int gidNumber,
+            int? gidNumber,
 
-            string homeDirectory,
+            string? homeDirectory,
 
-            string loginShell,
+            string? loginShell,
 
-            int uidNumber)
+            int? uidNumber)
         {
             Gecos = gecos;
             GidNumber = gidNumber;

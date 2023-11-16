@@ -13,26 +13,26 @@ namespace Pulumi.Oci.Opsi.Outputs
     [OutputType]
     public sealed class GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailResult
     {
-        public readonly string CredentialSourceName;
-        public readonly string CredentialType;
-        public readonly string PasswordSecretId;
-        public readonly string Role;
-        public readonly string UserName;
-        public readonly string WalletSecretId;
+        public readonly string? CredentialSourceName;
+        public readonly string? CredentialType;
+        public readonly string? PasswordSecretId;
+        public readonly string? Role;
+        public readonly string? UserName;
+        public readonly string? WalletSecretId;
 
         [OutputConstructor]
         private GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailResult(
-            string credentialSourceName,
+            string? credentialSourceName,
 
-            string credentialType,
+            string? credentialType,
 
-            string passwordSecretId,
+            string? passwordSecretId,
 
-            string role,
+            string? role,
 
-            string userName,
+            string? userName,
 
-            string walletSecretId)
+            string? walletSecretId)
         {
             CredentialSourceName = credentialSourceName;
             CredentialType = credentialType;

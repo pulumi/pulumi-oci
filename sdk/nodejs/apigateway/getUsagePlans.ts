@@ -70,7 +70,7 @@ export interface GetUsagePlansResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The current state of the usage plan.
      */
@@ -78,7 +78,7 @@ export interface GetUsagePlansResult {
     /**
      * The list of usage_plan_collection.
      */
-    readonly usagePlanCollections: outputs.ApiGateway.GetUsagePlansUsagePlanCollection[];
+    readonly usagePlanCollections?: outputs.ApiGateway.GetUsagePlansUsagePlanCollection[];
 }
 /**
  * This data source provides the list of Usage Plans in Oracle Cloud Infrastructure API Gateway service.

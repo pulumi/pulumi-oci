@@ -40,9 +40,6 @@ class GetVaultsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment that contains a particular vault.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -52,7 +49,7 @@ class GetVaultsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -60,10 +57,7 @@ class GetVaultsResult:
 
     @property
     @pulumi.getter
-    def vaults(self) -> Sequence['outputs.GetVaultsVaultResult']:
-        """
-        The list of vaults.
-        """
+    def vaults(self) -> Optional[Sequence['outputs.GetVaultsVaultResult']]:
         return pulumi.get(self, "vaults")
 
 
@@ -83,26 +77,7 @@ def get_vaults(compartment_id: Optional[str] = None,
                filters: Optional[Sequence[pulumi.InputType['GetVaultsFilterArgs']]] = None,
                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetVaultsResult:
     """
-    This data source provides the list of Vaults in Oracle Cloud Infrastructure Kms service.
-
-    Lists the vaults in the specified compartment.
-
-    As a provisioning operation, this call is subject to a Key Management limit that applies to
-    the total number of requests across all provisioning read operations. Key Management might
-    throttle this call to reject an otherwise valid request when the total rate of provisioning
-    read operations exceeds 10 requests per second for a given tenancy.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_vaults = oci.Kms.get_vaults(compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -122,25 +97,6 @@ def get_vaults_output(compartment_id: Optional[pulumi.Input[str]] = None,
                       filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetVaultsFilterArgs']]]]] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVaultsResult]:
     """
-    This data source provides the list of Vaults in Oracle Cloud Infrastructure Kms service.
-
-    Lists the vaults in the specified compartment.
-
-    As a provisioning operation, this call is subject to a Key Management limit that applies to
-    the total number of requests across all provisioning read operations. Key Management might
-    throttle this call to reject an otherwise valid request when the total rate of provisioning
-    read operations exceeds 10 requests per second for a given tenancy.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_vaults = oci.Kms.get_vaults(compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment.
+    Use this data source to access information about an existing resource.
     """
     ...

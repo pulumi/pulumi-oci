@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Knowledge Base resource in Oracle Cloud Infrastructure Adm service.
@@ -67,20 +66,20 @@ type KnowledgeBase struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) The name of the knowledge base.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The current lifecycle state of the knowledge base.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The creation date and time of the knowledge base (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The date and time the knowledge base was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewKnowledgeBase registers a new resource with the given unique name, arguments, and options.
@@ -215,12 +214,6 @@ func (i *KnowledgeBase) ToKnowledgeBaseOutputWithContext(ctx context.Context) Kn
 	return pulumi.ToOutputWithContext(ctx, i).(KnowledgeBaseOutput)
 }
 
-func (i *KnowledgeBase) ToOutput(ctx context.Context) pulumix.Output[*KnowledgeBase] {
-	return pulumix.Output[*KnowledgeBase]{
-		OutputState: i.ToKnowledgeBaseOutputWithContext(ctx).OutputState,
-	}
-}
-
 // KnowledgeBaseArrayInput is an input type that accepts KnowledgeBaseArray and KnowledgeBaseArrayOutput values.
 // You can construct a concrete instance of `KnowledgeBaseArrayInput` via:
 //
@@ -244,12 +237,6 @@ func (i KnowledgeBaseArray) ToKnowledgeBaseArrayOutput() KnowledgeBaseArrayOutpu
 
 func (i KnowledgeBaseArray) ToKnowledgeBaseArrayOutputWithContext(ctx context.Context) KnowledgeBaseArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(KnowledgeBaseArrayOutput)
-}
-
-func (i KnowledgeBaseArray) ToOutput(ctx context.Context) pulumix.Output[[]*KnowledgeBase] {
-	return pulumix.Output[[]*KnowledgeBase]{
-		OutputState: i.ToKnowledgeBaseArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // KnowledgeBaseMapInput is an input type that accepts KnowledgeBaseMap and KnowledgeBaseMapOutput values.
@@ -277,12 +264,6 @@ func (i KnowledgeBaseMap) ToKnowledgeBaseMapOutputWithContext(ctx context.Contex
 	return pulumi.ToOutputWithContext(ctx, i).(KnowledgeBaseMapOutput)
 }
 
-func (i KnowledgeBaseMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*KnowledgeBase] {
-	return pulumix.Output[map[string]*KnowledgeBase]{
-		OutputState: i.ToKnowledgeBaseMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type KnowledgeBaseOutput struct{ *pulumi.OutputState }
 
 func (KnowledgeBaseOutput) ElementType() reflect.Type {
@@ -297,12 +278,6 @@ func (o KnowledgeBaseOutput) ToKnowledgeBaseOutputWithContext(ctx context.Contex
 	return o
 }
 
-func (o KnowledgeBaseOutput) ToOutput(ctx context.Context) pulumix.Output[*KnowledgeBase] {
-	return pulumix.Output[*KnowledgeBase]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The compartment Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
 func (o KnowledgeBaseOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *KnowledgeBase) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
@@ -314,8 +289,8 @@ func (o KnowledgeBaseOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) The name of the knowledge base.
-func (o KnowledgeBaseOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *KnowledgeBase) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o KnowledgeBaseOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *KnowledgeBase) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -327,8 +302,8 @@ func (o KnowledgeBaseOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The current lifecycle state of the knowledge base.
-func (o KnowledgeBaseOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *KnowledgeBase) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o KnowledgeBaseOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *KnowledgeBase) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -337,13 +312,13 @@ func (o KnowledgeBaseOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The creation date and time of the knowledge base (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-func (o KnowledgeBaseOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *KnowledgeBase) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o KnowledgeBaseOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *KnowledgeBase) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the knowledge base was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-func (o KnowledgeBaseOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *KnowledgeBase) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o KnowledgeBaseOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *KnowledgeBase) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type KnowledgeBaseArrayOutput struct{ *pulumi.OutputState }
@@ -358,12 +333,6 @@ func (o KnowledgeBaseArrayOutput) ToKnowledgeBaseArrayOutput() KnowledgeBaseArra
 
 func (o KnowledgeBaseArrayOutput) ToKnowledgeBaseArrayOutputWithContext(ctx context.Context) KnowledgeBaseArrayOutput {
 	return o
-}
-
-func (o KnowledgeBaseArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*KnowledgeBase] {
-	return pulumix.Output[[]*KnowledgeBase]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o KnowledgeBaseArrayOutput) Index(i pulumi.IntInput) KnowledgeBaseOutput {
@@ -384,12 +353,6 @@ func (o KnowledgeBaseMapOutput) ToKnowledgeBaseMapOutput() KnowledgeBaseMapOutpu
 
 func (o KnowledgeBaseMapOutput) ToKnowledgeBaseMapOutputWithContext(ctx context.Context) KnowledgeBaseMapOutput {
 	return o
-}
-
-func (o KnowledgeBaseMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*KnowledgeBase] {
-	return pulumix.Output[map[string]*KnowledgeBase]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o KnowledgeBaseMapOutput) MapIndex(k pulumi.StringInput) KnowledgeBaseOutput {

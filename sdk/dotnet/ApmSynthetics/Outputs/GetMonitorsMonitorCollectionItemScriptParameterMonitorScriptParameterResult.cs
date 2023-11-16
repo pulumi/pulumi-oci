@@ -16,17 +16,17 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
         /// <summary>
         /// Name of the parameter.
         /// </summary>
-        public readonly string ParamName;
+        public readonly string? ParamName;
         /// <summary>
         /// Value of the parameter.
         /// </summary>
-        public readonly string ParamValue;
+        public readonly string? ParamValue;
 
         [OutputConstructor]
         private GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameterResult(
-            string paramName,
+            string? paramName,
 
-            string paramValue)
+            string? paramValue)
         {
             ParamName = paramName;
             ParamValue = paramValue;

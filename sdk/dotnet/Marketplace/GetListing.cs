@@ -165,7 +165,7 @@ namespace Pulumi.Oci.Marketplace
         /// <summary>
         /// The default package version.
         /// </summary>
-        public readonly string DefaultPackageVersion;
+        public readonly string? DefaultPackageVersion;
         /// <summary>
         /// Links to additional documentation provided by the publisher specifically for the listing.
         /// </summary>
@@ -177,15 +177,15 @@ namespace Pulumi.Oci.Marketplace
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Indicates whether the listing is included in Featured Listings.
         /// </summary>
-        public readonly bool IsFeatured;
+        public readonly bool? IsFeatured;
         /// <summary>
         /// Keywords associated with the listing.
         /// </summary>
-        public readonly string Keywords;
+        public readonly string? Keywords;
         /// <summary>
         /// Languages supported by the listing.
         /// </summary>
@@ -193,7 +193,7 @@ namespace Pulumi.Oci.Marketplace
         /// <summary>
         /// A description of the publisher's licensing model for the listing.
         /// </summary>
-        public readonly string LicenseModelDescription;
+        public readonly string? LicenseModelDescription;
         /// <summary>
         /// Reference links.
         /// </summary>
@@ -202,19 +202,19 @@ namespace Pulumi.Oci.Marketplace
         /// <summary>
         /// The publisher category to which the listing belongs. The publisher category informs where the listing appears for use.
         /// </summary>
-        public readonly string ListingType;
+        public readonly string? ListingType;
         /// <summary>
         /// A long description of the listing.
         /// </summary>
-        public readonly string LongDescription;
+        public readonly string? LongDescription;
         /// <summary>
         /// Text that describes the resource.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The listing's package type.
         /// </summary>
-        public readonly string PackageType;
+        public readonly string? PackageType;
         /// <summary>
         /// Summary details about the publisher of the listing.
         /// </summary>
@@ -226,7 +226,7 @@ namespace Pulumi.Oci.Marketplace
         /// <summary>
         /// Release notes for the listing.
         /// </summary>
-        public readonly string ReleaseNotes;
+        public readonly string? ReleaseNotes;
         /// <summary>
         /// Screenshots of the listing.
         /// </summary>
@@ -234,7 +234,7 @@ namespace Pulumi.Oci.Marketplace
         /// <summary>
         /// A short description of the listing.
         /// </summary>
-        public readonly string ShortDescription;
+        public readonly string? ShortDescription;
         /// <summary>
         /// Contact information to use to get support from the publisher for the listing.
         /// </summary>
@@ -250,23 +250,23 @@ namespace Pulumi.Oci.Marketplace
         /// <summary>
         /// System requirements for the listing.
         /// </summary>
-        public readonly string SystemRequirements;
+        public readonly string? SystemRequirements;
         /// <summary>
         /// The tagline of the listing.
         /// </summary>
-        public readonly string Tagline;
+        public readonly string? Tagline;
         /// <summary>
         /// The release date of the listing.
         /// </summary>
-        public readonly string TimeReleased;
+        public readonly string? TimeReleased;
         /// <summary>
         /// Usage information for the listing.
         /// </summary>
-        public readonly string UsageInformation;
+        public readonly string? UsageInformation;
         /// <summary>
         /// The version of the listing.
         /// </summary>
-        public readonly string Version;
+        public readonly string? Version;
         /// <summary>
         /// Videos of the listing.
         /// </summary>
@@ -282,43 +282,43 @@ namespace Pulumi.Oci.Marketplace
 
             ImmutableArray<string> compatibleArchitectures,
 
-            string defaultPackageVersion,
+            string? defaultPackageVersion,
 
             ImmutableArray<Outputs.GetListingDocumentationLinkResult> documentationLinks,
 
             ImmutableArray<Outputs.GetListingIconResult> icons,
 
-            string id,
+            string? id,
 
-            bool isFeatured,
+            bool? isFeatured,
 
-            string keywords,
+            string? keywords,
 
             ImmutableArray<Outputs.GetListingLanguageResult> languages,
 
-            string licenseModelDescription,
+            string? licenseModelDescription,
 
             ImmutableArray<Outputs.GetListingLinkResult> links,
 
             string listingId,
 
-            string listingType,
+            string? listingType,
 
-            string longDescription,
+            string? longDescription,
 
-            string name,
+            string? name,
 
-            string packageType,
+            string? packageType,
 
             ImmutableArray<Outputs.GetListingPublisherResult> publishers,
 
             ImmutableArray<Outputs.GetListingRegionResult> regions,
 
-            string releaseNotes,
+            string? releaseNotes,
 
             ImmutableArray<Outputs.GetListingScreenshotResult> screenshots,
 
-            string shortDescription,
+            string? shortDescription,
 
             ImmutableArray<Outputs.GetListingSupportContactResult> supportContacts,
 
@@ -326,15 +326,15 @@ namespace Pulumi.Oci.Marketplace
 
             ImmutableArray<Outputs.GetListingSupportedOperatingSystemResult> supportedOperatingSystems,
 
-            string systemRequirements,
+            string? systemRequirements,
 
-            string tagline,
+            string? tagline,
 
-            string timeReleased,
+            string? timeReleased,
 
-            string usageInformation,
+            string? usageInformation,
 
-            string version,
+            string? version,
 
             ImmutableArray<Outputs.GetListingVideoResult> videos)
         {

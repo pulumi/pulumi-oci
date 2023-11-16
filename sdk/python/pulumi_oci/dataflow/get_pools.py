@@ -52,17 +52,11 @@ class GetPoolsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of a compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A user-friendly name. It does not have to be unique. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -77,7 +71,7 @@ class GetPoolsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -86,25 +80,16 @@ class GetPoolsResult:
     @property
     @pulumi.getter(name="ownerPrincipalId")
     def owner_principal_id(self) -> Optional[str]:
-        """
-        The OCID of the user who created the resource.
-        """
         return pulumi.get(self, "owner_principal_id")
 
     @property
     @pulumi.getter(name="poolCollections")
-    def pool_collections(self) -> Sequence['outputs.GetPoolsPoolCollectionResult']:
-        """
-        The list of pool_collection.
-        """
+    def pool_collections(self) -> Optional[Sequence['outputs.GetPoolsPoolCollectionResult']]:
         return pulumi.get(self, "pool_collections")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of this pool.
-        """
         return pulumi.get(self, "state")
 
 
@@ -132,29 +117,7 @@ def get_pools(compartment_id: Optional[str] = None,
               state: Optional[str] = None,
               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPoolsResult:
     """
-    This data source provides the list of Pools in Oracle Cloud Infrastructure Data Flow service.
-
-    Lists all pools in the specified compartment. The query must include compartmentId. The query may also include one other parameter. If the query does not include compartmentId, or includes compartmentId, but with two or more other parameters, an error is returned.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_pools = oci.DataFlow.get_pools(compartment_id=var["compartment_id"],
-        display_name=var["pool_display_name"],
-        display_name_starts_with=var["pool_display_name_starts_with"],
-        owner_principal_id=oci_dataflow_owner_principal["test_owner_principal"]["id"],
-        state=var["pool_state"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment.
-    :param str display_name: The query parameter for the Spark application name.
-    :param str display_name_starts_with: The displayName prefix.
-    :param str owner_principal_id: The OCID of the user who created the resource.
-    :param str state: The LifecycleState of the pool.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -186,28 +149,6 @@ def get_pools_output(compartment_id: Optional[pulumi.Input[str]] = None,
                      state: Optional[pulumi.Input[Optional[str]]] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPoolsResult]:
     """
-    This data source provides the list of Pools in Oracle Cloud Infrastructure Data Flow service.
-
-    Lists all pools in the specified compartment. The query must include compartmentId. The query may also include one other parameter. If the query does not include compartmentId, or includes compartmentId, but with two or more other parameters, an error is returned.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_pools = oci.DataFlow.get_pools(compartment_id=var["compartment_id"],
-        display_name=var["pool_display_name"],
-        display_name_starts_with=var["pool_display_name_starts_with"],
-        owner_principal_id=oci_dataflow_owner_principal["test_owner_principal"]["id"],
-        state=var["pool_state"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment.
-    :param str display_name: The query parameter for the Spark application name.
-    :param str display_name_starts_with: The displayName prefix.
-    :param str owner_principal_id: The OCID of the user who created the resource.
-    :param str state: The LifecycleState of the pool.
+    Use this data source to access information about an existing resource.
     """
     ...

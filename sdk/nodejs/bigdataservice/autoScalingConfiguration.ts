@@ -104,7 +104,7 @@ export class AutoScalingConfiguration extends pulumi.CustomResource {
     /**
      * (Updatable) A user-friendly name. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    public readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Whether the autoscale configuration is enabled.
      */
@@ -116,7 +116,7 @@ export class AutoScalingConfiguration extends pulumi.CustomResource {
     /**
      * (Updatable) This model for autoscaling policy is deprecated and not supported for ODH clusters. Use the `AutoScalePolicyDetails` model to manage autoscale policy details for ODH clusters.
      */
-    public readonly policy!: pulumi.Output<outputs.BigDataService.AutoScalingConfigurationPolicy>;
+    public readonly policy!: pulumi.Output<outputs.BigDataService.AutoScalingConfigurationPolicy | undefined>;
     /**
      * (Updatable) Policy definition for the autoscale configuration.
      *
@@ -130,19 +130,19 @@ export class AutoScalingConfiguration extends pulumi.CustomResource {
      *
      * An autoscaling configuration can have one of above supported policies.
      */
-    public readonly policyDetails!: pulumi.Output<outputs.BigDataService.AutoScalingConfigurationPolicyDetails>;
+    public readonly policyDetails!: pulumi.Output<outputs.BigDataService.AutoScalingConfigurationPolicyDetails | undefined>;
     /**
      * The state of the autoscale configuration.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The time the cluster was created, shown as an RFC 3339 formatted datetime string.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The time the autoscale configuration was updated, shown as an RFC 3339 formatted datetime string.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a AutoScalingConfiguration resource with the given unique name, arguments, and options.

@@ -159,7 +159,7 @@ namespace Pulumi.Oci.OsubUsage
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Product description
         /// </summary>
@@ -179,7 +179,7 @@ namespace Pulumi.Oci.OsubUsage
 
             ImmutableArray<Outputs.GetComputedUsagesFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? parentProduct,
 

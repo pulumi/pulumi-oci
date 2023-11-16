@@ -80,79 +80,52 @@ class GetSecretResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment where you want to create the secret.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="currentVersionNumber")
-    def current_version_number(self) -> str:
-        """
-        The version number of the secret version that's currently in use.
-        """
+    def current_version_number(self) -> Optional[str]:
         return pulumi.get(self, "current_version_number")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        A brief description of the secret. Avoid entering confidential information.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the secret.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="keyId")
-    def key_id(self) -> str:
-        """
-        The OCID of the master encryption key that is used to encrypt the secret.
-        """
+    def key_id(self) -> Optional[str]:
         return pulumi.get(self, "key_id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        Additional information about the current lifecycle state of the secret.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
-    def metadata(self) -> Mapping[str, Any]:
-        """
-        Additional metadata that you can use to provide context about how to use the secret or during rotation or other administrative tasks. For example, for a secret that you use to connect to a database, the additional metadata might specify the connection endpoint and the connection string. Provide additional metadata as key-value pairs.
-        """
+    def metadata(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "metadata")
 
     @property
     @pulumi.getter(name="secretContents")
-    def secret_contents(self) -> Sequence['outputs.GetSecretSecretContentResult']:
+    def secret_contents(self) -> Optional[Sequence['outputs.GetSecretSecretContentResult']]:
         return pulumi.get(self, "secret_contents")
 
     @property
@@ -162,58 +135,37 @@ class GetSecretResult:
 
     @property
     @pulumi.getter(name="secretName")
-    def secret_name(self) -> str:
-        """
-        The user-friendly name of the secret. Avoid entering confidential information.
-        """
+    def secret_name(self) -> Optional[str]:
         return pulumi.get(self, "secret_name")
 
     @property
     @pulumi.getter(name="secretRules")
-    def secret_rules(self) -> Sequence['outputs.GetSecretSecretRuleResult']:
-        """
-        A list of rules that control how the secret is used and managed.
-        """
+    def secret_rules(self) -> Optional[Sequence['outputs.GetSecretSecretRuleResult']]:
         return pulumi.get(self, "secret_rules")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current lifecycle state of the secret.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        A property indicating when the secret was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeOfCurrentVersionExpiry")
-    def time_of_current_version_expiry(self) -> str:
-        """
-        An optional property indicating when the current secret version will expire, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-        """
+    def time_of_current_version_expiry(self) -> Optional[str]:
         return pulumi.get(self, "time_of_current_version_expiry")
 
     @property
     @pulumi.getter(name="timeOfDeletion")
-    def time_of_deletion(self) -> str:
-        """
-        An optional property indicating when to delete the secret, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-        """
+    def time_of_deletion(self) -> Optional[str]:
         return pulumi.get(self, "time_of_deletion")
 
     @property
     @pulumi.getter(name="vaultId")
-    def vault_id(self) -> str:
-        """
-        The OCID of the Vault in which the secret exists
-        """
+    def vault_id(self) -> Optional[str]:
         return pulumi.get(self, "vault_id")
 
 
@@ -246,21 +198,7 @@ class AwaitableGetSecretResult(GetSecretResult):
 def get_secret(secret_id: Optional[str] = None,
                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSecretResult:
     """
-    This data source provides details about a specific Secret resource in Oracle Cloud Infrastructure Vault service.
-
-    Gets information about the specified secret.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_secret = oci.Vault.get_secret(secret_id=oci_vault_secret["test_secret"]["id"])
-    ```
-
-
-    :param str secret_id: The OCID of the secret.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['secretId'] = secret_id
@@ -292,20 +230,6 @@ def get_secret(secret_id: Optional[str] = None,
 def get_secret_output(secret_id: Optional[pulumi.Input[str]] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSecretResult]:
     """
-    This data source provides details about a specific Secret resource in Oracle Cloud Infrastructure Vault service.
-
-    Gets information about the specified secret.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_secret = oci.Vault.get_secret(secret_id=oci_vault_secret["test_secret"]["id"])
-    ```
-
-
-    :param str secret_id: The OCID of the secret.
+    Use this data source to access information about an existing resource.
     """
     ...

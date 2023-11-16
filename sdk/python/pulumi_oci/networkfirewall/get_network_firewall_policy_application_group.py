@@ -43,23 +43,17 @@ class GetNetworkFirewallPolicyApplicationGroupResult:
 
     @property
     @pulumi.getter
-    def apps(self) -> Sequence[str]:
-        """
-        List of apps in the group.
-        """
+    def apps(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "apps")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Name of the application Group.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -69,18 +63,12 @@ class GetNetworkFirewallPolicyApplicationGroupResult:
 
     @property
     @pulumi.getter(name="parentResourceId")
-    def parent_resource_id(self) -> str:
-        """
-        OCID of the Network Firewall Policy this application group belongs to.
-        """
+    def parent_resource_id(self) -> Optional[str]:
         return pulumi.get(self, "parent_resource_id")
 
     @property
     @pulumi.getter(name="totalApps")
-    def total_apps(self) -> int:
-        """
-        Count of total applications in the given application group.
-        """
+    def total_apps(self) -> Optional[int]:
         return pulumi.get(self, "total_apps")
 
 
@@ -102,13 +90,7 @@ def get_network_firewall_policy_application_group(name: Optional[str] = None,
                                                   network_firewall_policy_id: Optional[str] = None,
                                                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNetworkFirewallPolicyApplicationGroupResult:
     """
-    This data source provides details about a specific Network Firewall Policy Application Group resource in Oracle Cloud Infrastructure Network Firewall service.
-
-    Get ApplicationGroup by the given name in the context of network firewall policy.
-
-
-    :param str name: Name of the application Group.
-    :param str network_firewall_policy_id: Unique Network Firewall Policy identifier
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['name'] = name
@@ -130,12 +112,6 @@ def get_network_firewall_policy_application_group_output(name: Optional[pulumi.I
                                                          network_firewall_policy_id: Optional[pulumi.Input[str]] = None,
                                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNetworkFirewallPolicyApplicationGroupResult]:
     """
-    This data source provides details about a specific Network Firewall Policy Application Group resource in Oracle Cloud Infrastructure Network Firewall service.
-
-    Get ApplicationGroup by the given name in the context of network firewall policy.
-
-
-    :param str name: Name of the application Group.
-    :param str network_firewall_policy_id: Unique Network Firewall Policy identifier
+    Use this data source to access information about an existing resource.
     """
     ...

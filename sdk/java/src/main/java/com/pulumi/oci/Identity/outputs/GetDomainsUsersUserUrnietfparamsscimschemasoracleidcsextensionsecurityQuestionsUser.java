@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Identity.outputs.GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestion;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser {
@@ -14,7 +15,7 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
      * @return The schema used to mnage security question and answers provided by a user for account recovery and/or MFA. While setting up security questions, a user can also provide a hint for the answer.
      * 
      */
-    private List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestion> secQuestions;
+    private @Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestion> secQuestions;
 
     private GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser() {}
     /**
@@ -22,7 +23,7 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
      * 
      */
     public List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestion> secQuestions() {
-        return this.secQuestions;
+        return this.secQuestions == null ? List.of() : this.secQuestions;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestion> secQuestions;
+        private @Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestion> secQuestions;
         public Builder() {}
         public Builder(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
         }
 
         @CustomType.Setter
-        public Builder secQuestions(List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestion> secQuestions) {
-            this.secQuestions = Objects.requireNonNull(secQuestions);
+        public Builder secQuestions(@Nullable List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestion> secQuestions) {
+            this.secQuestions = secQuestions;
             return this;
         }
         public Builder secQuestions(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestion... secQuestions) {

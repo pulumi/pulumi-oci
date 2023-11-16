@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Log Saved Search resource in Oracle Cloud Infrastructure Logging service.
@@ -68,7 +67,7 @@ type LogSavedSearch struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) Description for this resource.
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// (Updatable) The user-friendly display name. This must be unique within the enclosing resource, and it's changeable. Avoid entering confidential information.
@@ -79,11 +78,11 @@ type LogSavedSearch struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Query pulumi.StringOutput `pulumi:"query"`
 	// The state of the LogSavedSearch
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// Time the resource was created.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// Time the resource was last modified.
-	TimeLastModified pulumi.StringOutput `pulumi:"timeLastModified"`
+	TimeLastModified pulumi.StringPtrOutput `pulumi:"timeLastModified"`
 }
 
 // NewLogSavedSearch registers a new resource with the given unique name, arguments, and options.
@@ -233,12 +232,6 @@ func (i *LogSavedSearch) ToLogSavedSearchOutputWithContext(ctx context.Context) 
 	return pulumi.ToOutputWithContext(ctx, i).(LogSavedSearchOutput)
 }
 
-func (i *LogSavedSearch) ToOutput(ctx context.Context) pulumix.Output[*LogSavedSearch] {
-	return pulumix.Output[*LogSavedSearch]{
-		OutputState: i.ToLogSavedSearchOutputWithContext(ctx).OutputState,
-	}
-}
-
 // LogSavedSearchArrayInput is an input type that accepts LogSavedSearchArray and LogSavedSearchArrayOutput values.
 // You can construct a concrete instance of `LogSavedSearchArrayInput` via:
 //
@@ -262,12 +255,6 @@ func (i LogSavedSearchArray) ToLogSavedSearchArrayOutput() LogSavedSearchArrayOu
 
 func (i LogSavedSearchArray) ToLogSavedSearchArrayOutputWithContext(ctx context.Context) LogSavedSearchArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(LogSavedSearchArrayOutput)
-}
-
-func (i LogSavedSearchArray) ToOutput(ctx context.Context) pulumix.Output[[]*LogSavedSearch] {
-	return pulumix.Output[[]*LogSavedSearch]{
-		OutputState: i.ToLogSavedSearchArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // LogSavedSearchMapInput is an input type that accepts LogSavedSearchMap and LogSavedSearchMapOutput values.
@@ -295,12 +282,6 @@ func (i LogSavedSearchMap) ToLogSavedSearchMapOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(LogSavedSearchMapOutput)
 }
 
-func (i LogSavedSearchMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*LogSavedSearch] {
-	return pulumix.Output[map[string]*LogSavedSearch]{
-		OutputState: i.ToLogSavedSearchMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type LogSavedSearchOutput struct{ *pulumi.OutputState }
 
 func (LogSavedSearchOutput) ElementType() reflect.Type {
@@ -315,12 +296,6 @@ func (o LogSavedSearchOutput) ToLogSavedSearchOutputWithContext(ctx context.Cont
 	return o
 }
 
-func (o LogSavedSearchOutput) ToOutput(ctx context.Context) pulumix.Output[*LogSavedSearch] {
-	return pulumix.Output[*LogSavedSearch]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The OCID of the compartment that the resource belongs to.
 func (o LogSavedSearchOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *LogSavedSearch) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
@@ -332,8 +307,8 @@ func (o LogSavedSearchOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) Description for this resource.
-func (o LogSavedSearchOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *LogSavedSearch) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o LogSavedSearchOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LogSavedSearch) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -355,18 +330,18 @@ func (o LogSavedSearchOutput) Query() pulumi.StringOutput {
 }
 
 // The state of the LogSavedSearch
-func (o LogSavedSearchOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *LogSavedSearch) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o LogSavedSearchOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LogSavedSearch) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Time the resource was created.
-func (o LogSavedSearchOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *LogSavedSearch) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LogSavedSearchOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LogSavedSearch) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // Time the resource was last modified.
-func (o LogSavedSearchOutput) TimeLastModified() pulumi.StringOutput {
-	return o.ApplyT(func(v *LogSavedSearch) pulumi.StringOutput { return v.TimeLastModified }).(pulumi.StringOutput)
+func (o LogSavedSearchOutput) TimeLastModified() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LogSavedSearch) pulumi.StringPtrOutput { return v.TimeLastModified }).(pulumi.StringPtrOutput)
 }
 
 type LogSavedSearchArrayOutput struct{ *pulumi.OutputState }
@@ -381,12 +356,6 @@ func (o LogSavedSearchArrayOutput) ToLogSavedSearchArrayOutput() LogSavedSearchA
 
 func (o LogSavedSearchArrayOutput) ToLogSavedSearchArrayOutputWithContext(ctx context.Context) LogSavedSearchArrayOutput {
 	return o
-}
-
-func (o LogSavedSearchArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*LogSavedSearch] {
-	return pulumix.Output[[]*LogSavedSearch]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LogSavedSearchArrayOutput) Index(i pulumi.IntInput) LogSavedSearchOutput {
@@ -407,12 +376,6 @@ func (o LogSavedSearchMapOutput) ToLogSavedSearchMapOutput() LogSavedSearchMapOu
 
 func (o LogSavedSearchMapOutput) ToLogSavedSearchMapOutputWithContext(ctx context.Context) LogSavedSearchMapOutput {
 	return o
-}
-
-func (o LogSavedSearchMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*LogSavedSearch] {
-	return pulumix.Output[map[string]*LogSavedSearch]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LogSavedSearchMapOutput) MapIndex(k pulumi.StringInput) LogSavedSearchOutput {

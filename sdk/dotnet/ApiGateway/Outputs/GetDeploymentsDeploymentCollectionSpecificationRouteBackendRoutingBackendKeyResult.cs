@@ -16,19 +16,19 @@ namespace Pulumi.Oci.ApiGateway.Outputs
         /// <summary>
         /// String describing the expression with wildcards.
         /// </summary>
-        public readonly string Expression;
+        public readonly string? Expression;
         /// <summary>
         /// Information regarding whether this is the default branch.
         /// </summary>
-        public readonly bool IsDefault;
+        public readonly bool? IsDefault;
         /// <summary>
         /// The case-insensitive name of the header.  This name must be unique across transformation policies.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// Type of the Response Cache Store Policy.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
         /// <summary>
         /// A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
         /// </summary>
@@ -36,13 +36,13 @@ namespace Pulumi.Oci.ApiGateway.Outputs
 
         [OutputConstructor]
         private GetDeploymentsDeploymentCollectionSpecificationRouteBackendRoutingBackendKeyResult(
-            string expression,
+            string? expression,
 
-            bool isDefault,
+            bool? isDefault,
 
-            string name,
+            string? name,
 
-            string type,
+            string? type,
 
             ImmutableArray<string> values)
         {

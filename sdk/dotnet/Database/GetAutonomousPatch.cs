@@ -109,73 +109,73 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// Maintenance run type, either "QUARTERLY" or "TIMEZONE".
         /// </summary>
-        public readonly string AutonomousPatchType;
+        public readonly string? AutonomousPatchType;
         /// <summary>
         /// The text describing this patch package.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// A descriptive text associated with the lifecycleState. Typically can contain additional displayable text.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// Database patching model preference. See [My Oracle Support note 2285040.1](https://support.oracle.com/rs?type=doc&amp;id=2285040.1) for information on the Release Update (RU) and Release Update Revision (RUR) patching models.
         /// </summary>
-        public readonly string PatchModel;
+        public readonly string? PatchModel;
         /// <summary>
         /// First month of the quarter in which the patch was released.
         /// </summary>
-        public readonly string Quarter;
+        public readonly string? Quarter;
         /// <summary>
         /// The current state of the patch as a result of lastAction.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The date and time that the patch was released.
         /// </summary>
-        public readonly string TimeReleased;
+        public readonly string? TimeReleased;
         /// <summary>
         /// The type of patch. BUNDLE is one example.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
         /// <summary>
         /// The version of this patch package.
         /// </summary>
-        public readonly string Version;
+        public readonly string? Version;
         /// <summary>
         /// Year in which the patch was released.
         /// </summary>
-        public readonly string Year;
+        public readonly string? Year;
 
         [OutputConstructor]
         private GetAutonomousPatchResult(
             string autonomousPatchId,
 
-            string autonomousPatchType,
+            string? autonomousPatchType,
 
-            string description,
+            string? description,
 
-            string id,
+            string? id,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string patchModel,
+            string? patchModel,
 
-            string quarter,
+            string? quarter,
 
-            string state,
+            string? state,
 
-            string timeReleased,
+            string? timeReleased,
 
-            string type,
+            string? type,
 
-            string version,
+            string? version,
 
-            string year)
+            string? year)
         {
             AutonomousPatchId = autonomousPatchId;
             AutonomousPatchType = autonomousPatchType;

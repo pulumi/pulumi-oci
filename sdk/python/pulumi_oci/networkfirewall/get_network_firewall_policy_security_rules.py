@@ -55,7 +55,7 @@ class GetNetworkFirewallPolicySecurityRulesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -73,10 +73,7 @@ class GetNetworkFirewallPolicySecurityRulesResult:
 
     @property
     @pulumi.getter(name="securityRuleSummaryCollections")
-    def security_rule_summary_collections(self) -> Sequence['outputs.GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionResult']:
-        """
-        The list of security_rule_summary_collection.
-        """
+    def security_rule_summary_collections(self) -> Optional[Sequence['outputs.GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionResult']]:
         return pulumi.get(self, "security_rule_summary_collections")
 
 
@@ -100,25 +97,7 @@ def get_network_firewall_policy_security_rules(display_name: Optional[str] = Non
                                                security_rule_priority_order: Optional[int] = None,
                                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNetworkFirewallPolicySecurityRulesResult:
     """
-    This data source provides the list of Network Firewall Policy Security Rules in Oracle Cloud Infrastructure Network Firewall service.
-
-    Returns a list of Security Rule for the Network Firewall Policy.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_network_firewall_policy_security_rules = oci.NetworkFirewall.get_network_firewall_policy_security_rules(network_firewall_policy_id=oci_network_firewall_network_firewall_policy["test_network_firewall_policy"]["id"],
-        display_name=var["network_firewall_policy_security_rule_display_name"],
-        security_rule_priority_order=var["network_firewall_policy_security_rule_security_rule_priority_order"])
-    ```
-
-
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str network_firewall_policy_id: Unique Network Firewall Policy identifier
-    :param int security_rule_priority_order: Unique priority order for Security Rules in the network firewall policy.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['displayName'] = display_name
@@ -144,24 +123,6 @@ def get_network_firewall_policy_security_rules_output(display_name: Optional[pul
                                                       security_rule_priority_order: Optional[pulumi.Input[Optional[int]]] = None,
                                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNetworkFirewallPolicySecurityRulesResult]:
     """
-    This data source provides the list of Network Firewall Policy Security Rules in Oracle Cloud Infrastructure Network Firewall service.
-
-    Returns a list of Security Rule for the Network Firewall Policy.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_network_firewall_policy_security_rules = oci.NetworkFirewall.get_network_firewall_policy_security_rules(network_firewall_policy_id=oci_network_firewall_network_firewall_policy["test_network_firewall_policy"]["id"],
-        display_name=var["network_firewall_policy_security_rule_display_name"],
-        security_rule_priority_order=var["network_firewall_policy_security_rule_security_rule_priority_order"])
-    ```
-
-
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str network_firewall_policy_id: Unique Network Firewall Policy identifier
-    :param int security_rule_priority_order: Unique priority order for Security Rules in the network firewall policy.
+    Use this data source to access information about an existing resource.
     """
     ...

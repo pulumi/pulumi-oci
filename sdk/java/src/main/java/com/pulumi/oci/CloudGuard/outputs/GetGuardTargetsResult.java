@@ -32,7 +32,7 @@ public final class GetGuardTargetsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private @Nullable Boolean isNonSecurityZoneTargetsOnlyQuery;
     /**
      * @return The current state of the ResponderRule.
@@ -43,7 +43,7 @@ public final class GetGuardTargetsResult {
      * @return The list of target_collection.
      * 
      */
-    private List<GetGuardTargetsTargetCollection> targetCollections;
+    private @Nullable List<GetGuardTargetsTargetCollection> targetCollections;
 
     private GetGuardTargetsResult() {}
     public Optional<String> accessLevel() {
@@ -73,8 +73,8 @@ public final class GetGuardTargetsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public Optional<Boolean> isNonSecurityZoneTargetsOnlyQuery() {
         return Optional.ofNullable(this.isNonSecurityZoneTargetsOnlyQuery);
@@ -91,7 +91,7 @@ public final class GetGuardTargetsResult {
      * 
      */
     public List<GetGuardTargetsTargetCollection> targetCollections() {
-        return this.targetCollections;
+        return this.targetCollections == null ? List.of() : this.targetCollections;
     }
 
     public static Builder builder() {
@@ -108,10 +108,10 @@ public final class GetGuardTargetsResult {
         private @Nullable Boolean compartmentIdInSubtree;
         private @Nullable String displayName;
         private @Nullable List<GetGuardTargetsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable Boolean isNonSecurityZoneTargetsOnlyQuery;
         private @Nullable String state;
-        private List<GetGuardTargetsTargetCollection> targetCollections;
+        private @Nullable List<GetGuardTargetsTargetCollection> targetCollections;
         public Builder() {}
         public Builder(GetGuardTargetsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -155,8 +155,8 @@ public final class GetGuardTargetsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -170,8 +170,8 @@ public final class GetGuardTargetsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder targetCollections(List<GetGuardTargetsTargetCollection> targetCollections) {
-            this.targetCollections = Objects.requireNonNull(targetCollections);
+        public Builder targetCollections(@Nullable List<GetGuardTargetsTargetCollection> targetCollections) {
+            this.targetCollections = targetCollections;
             return this;
         }
         public Builder targetCollections(GetGuardTargetsTargetCollection... targetCollections) {

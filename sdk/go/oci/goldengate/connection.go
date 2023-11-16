@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Connection resource in Oracle Cloud Infrastructure Golden Gate service.
@@ -136,152 +135,152 @@ type Connection struct {
 	pulumi.CustomResourceState
 
 	// (Updatable) Access key ID to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
-	AccessKeyId pulumi.StringOutput `pulumi:"accessKeyId"`
+	AccessKeyId pulumi.StringPtrOutput `pulumi:"accessKeyId"`
 	// (Updatable) Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ==
-	AccountKey pulumi.StringOutput `pulumi:"accountKey"`
+	AccountKey pulumi.StringPtrOutput `pulumi:"accountKey"`
 	// (Updatable) Sets the Azure storage account name.
-	AccountName pulumi.StringOutput `pulumi:"accountName"`
+	AccountName pulumi.StringPtrOutput `pulumi:"accountName"`
 	// (Updatable) An array of name-value pair attribute entries. Used as additional parameters in connection string.
 	AdditionalAttributes ConnectionAdditionalAttributeArrayOutput `pulumi:"additionalAttributes"`
 	// (Updatable) Used authentication mechanism.
-	AuthenticationType pulumi.StringOutput `pulumi:"authenticationType"`
+	AuthenticationType pulumi.StringPtrOutput `pulumi:"authenticationType"`
 	// (Updatable) Azure tenant ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
-	AzureTenantId pulumi.StringOutput `pulumi:"azureTenantId"`
+	AzureTenantId pulumi.StringPtrOutput `pulumi:"azureTenantId"`
 	// (Updatable) Kafka bootstrap. Equivalent of bootstrap.servers configuration property in Kafka: list of KafkaBootstrapServer objects specified by host/port. Used for establishing the initial connection to the Kafka cluster. Example: `"server1.example.com:9092,server2.example.com:9092"`
 	BootstrapServers ConnectionBootstrapServerArrayOutput `pulumi:"bootstrapServers"`
 	// (Updatable) Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
-	ClientId pulumi.StringOutput `pulumi:"clientId"`
+	ClientId pulumi.StringPtrOutput `pulumi:"clientId"`
 	// (Updatable) Azure client secret (aka application password) for authentication. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1
-	ClientSecret pulumi.StringOutput `pulumi:"clientSecret"`
+	ClientSecret pulumi.StringPtrOutput `pulumi:"clientSecret"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) The of Java class implementing javax.jms.ConnectionFactory interface supplied by the Java Message Service provider. e.g.: 'com.stc.jmsjca.core.JConnectionFactoryXA'
-	ConnectionFactory pulumi.StringOutput `pulumi:"connectionFactory"`
+	ConnectionFactory pulumi.StringPtrOutput `pulumi:"connectionFactory"`
 	// (Updatable) Connection string. AZURE_SYNAPSE_ANALYTICS e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;', MONGODB e.g.: 'mongodb://mongodb0.example.com:27017/recordsrecords'.
-	ConnectionString pulumi.StringOutput `pulumi:"connectionString"`
+	ConnectionString pulumi.StringPtrOutput `pulumi:"connectionString"`
 	// (Updatable) The connection type.
 	ConnectionType pulumi.StringOutput `pulumi:"connectionType"`
 	// (Updatable) JAVA_MESSAGE_SERVICE: Connection URL of the Java Message Service, specifying the protocol, host, and port. e.g.: 'mq://myjms.host.domain:7676', SNOWFLAKE: JDBC connection URL. e.g.: 'jdbc:snowflake://<account_name>.snowflakecomputing.com/?warehouse=<warehouse-name>&db=<db-name>'
-	ConnectionUrl pulumi.StringOutput `pulumi:"connectionUrl"`
+	ConnectionUrl pulumi.StringPtrOutput `pulumi:"connectionUrl"`
 	// (Updatable) The base64 encoded content of the consumer.properties file.
-	ConsumerProperties pulumi.StringOutput `pulumi:"consumerProperties"`
+	ConsumerProperties pulumi.StringPtrOutput `pulumi:"consumerProperties"`
 	// (Updatable) The base64 encoded content of the Hadoop Distributed File System configuration file (core-site.xml).
-	CoreSiteXml pulumi.StringOutput `pulumi:"coreSiteXml"`
+	CoreSiteXml pulumi.StringPtrOutput `pulumi:"coreSiteXml"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
-	DatabaseId pulumi.StringOutput `pulumi:"databaseId"`
+	DatabaseId pulumi.StringPtrOutput `pulumi:"databaseId"`
 	// (Updatable) The name of the database.
-	DatabaseName pulumi.StringOutput `pulumi:"databaseName"`
+	DatabaseName pulumi.StringPtrOutput `pulumi:"databaseName"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system being referenced.
-	DbSystemId pulumi.StringOutput `pulumi:"dbSystemId"`
+	DbSystemId pulumi.StringPtrOutput `pulumi:"dbSystemId"`
 	// (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
-	DeploymentId pulumi.StringOutput `pulumi:"deploymentId"`
+	DeploymentId pulumi.StringPtrOutput `pulumi:"deploymentId"`
 	// (Updatable) Metadata about this specific object.
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) An object's Display Name.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
-	Endpoint pulumi.StringOutput `pulumi:"endpoint"`
+	Endpoint pulumi.StringPtrOutput `pulumi:"endpoint"`
 	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// (Updatable) The name or address of a host.
-	Host pulumi.StringOutput `pulumi:"host"`
+	Host pulumi.StringPtrOutput `pulumi:"host"`
 	// List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
 	IngressIps ConnectionIngressIpArrayOutput `pulumi:"ingressIps"`
 	// (Updatable) The Connection Factory can be looked up using this name. e.g.: 'ConnectionFactory'
-	JndiConnectionFactory pulumi.StringOutput `pulumi:"jndiConnectionFactory"`
+	JndiConnectionFactory pulumi.StringPtrOutput `pulumi:"jndiConnectionFactory"`
 	// (Updatable) The implementation of javax.naming.spi.InitialContextFactory interface that the client uses to obtain initial naming context. e.g.: 'org.apache.activemq.jndi.ActiveMQInitialContextFactory'
-	JndiInitialContextFactory pulumi.StringOutput `pulumi:"jndiInitialContextFactory"`
+	JndiInitialContextFactory pulumi.StringPtrOutput `pulumi:"jndiInitialContextFactory"`
 	// (Updatable) The URL that Java Message Service will use to contact the JNDI provider. e.g.: 'tcp://myjms.host.domain:61616?jms.prefetchPolicy.all=1000'
-	JndiProviderUrl pulumi.StringOutput `pulumi:"jndiProviderUrl"`
+	JndiProviderUrl pulumi.StringPtrOutput `pulumi:"jndiProviderUrl"`
 	// (Updatable) The password associated to the principal.
-	JndiSecurityCredentials pulumi.StringOutput `pulumi:"jndiSecurityCredentials"`
+	JndiSecurityCredentials pulumi.StringPtrOutput `pulumi:"jndiSecurityCredentials"`
 	// (Updatable) Specifies the identity of the principal (user) to be authenticated. e.g.: 'admin2'
-	JndiSecurityPrincipal pulumi.StringOutput `pulumi:"jndiSecurityPrincipal"`
+	JndiSecurityPrincipal pulumi.StringPtrOutput `pulumi:"jndiSecurityPrincipal"`
 	// (Updatable) Refers to the customer's master key OCID.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
-	KeyId pulumi.StringOutput `pulumi:"keyId"`
+	KeyId pulumi.StringPtrOutput `pulumi:"keyId"`
 	// (Updatable) The base64 encoded content of the KeyStore file.
-	KeyStore pulumi.StringOutput `pulumi:"keyStore"`
+	KeyStore pulumi.StringPtrOutput `pulumi:"keyStore"`
 	// (Updatable) The KeyStore password.
-	KeyStorePassword pulumi.StringOutput `pulumi:"keyStorePassword"`
+	KeyStorePassword pulumi.StringPtrOutput `pulumi:"keyStorePassword"`
 	// Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
 	NsgIds pulumi.StringArrayOutput `pulumi:"nsgIds"`
 	// (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on.
-	Password pulumi.StringOutput `pulumi:"password"`
+	Password pulumi.StringPtrOutput `pulumi:"password"`
 	// (Updatable) The port of an endpoint usually specified for a connection.
-	Port pulumi.IntOutput `pulumi:"port"`
+	Port pulumi.IntPtrOutput `pulumi:"port"`
 	// (Updatable) The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
-	PrivateIp pulumi.StringOutput `pulumi:"privateIp"`
+	PrivateIp pulumi.StringPtrOutput `pulumi:"privateIp"`
 	// (Updatable) The base64 encoded content of private key file in PEM format.
-	PrivateKeyFile pulumi.StringOutput `pulumi:"privateKeyFile"`
+	PrivateKeyFile pulumi.StringPtrOutput `pulumi:"privateKeyFile"`
 	// (Updatable) Password if the private key file is encrypted.
-	PrivateKeyPassphrase pulumi.StringOutput `pulumi:"privateKeyPassphrase"`
+	PrivateKeyPassphrase pulumi.StringPtrOutput `pulumi:"privateKeyPassphrase"`
 	// (Updatable) The base64 encoded content of the producer.properties file.
-	ProducerProperties pulumi.StringOutput `pulumi:"producerProperties"`
+	ProducerProperties pulumi.StringPtrOutput `pulumi:"producerProperties"`
 	// (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
-	PublicKeyFingerprint pulumi.StringOutput `pulumi:"publicKeyFingerprint"`
+	PublicKeyFingerprint pulumi.StringPtrOutput `pulumi:"publicKeyFingerprint"`
 	// (Updatable) The name of the region. e.g.: us-ashburn-1
-	Region pulumi.StringOutput `pulumi:"region"`
+	Region pulumi.StringPtrOutput `pulumi:"region"`
 	// (Updatable) Credential that uses a shared access signature (SAS) to authenticate to an Azure Service. This property is required when 'authenticationType' is set to 'SHARED_ACCESS_SIGNATURE'. e.g.: ?sv=2020-06-08&ss=bfqt&srt=sco&sp=rwdlacupyx&se=2020-09-10T20:27:28Z&st=2022-08-05T12:27:28Z&spr=https&sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D
-	SasToken pulumi.StringOutput `pulumi:"sasToken"`
+	SasToken pulumi.StringPtrOutput `pulumi:"sasToken"`
 	// (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
-	SecretAccessKey pulumi.StringOutput `pulumi:"secretAccessKey"`
+	SecretAccessKey pulumi.StringPtrOutput `pulumi:"secretAccessKey"`
 	// (Updatable) Security Protocol.
-	SecurityProtocol pulumi.StringOutput `pulumi:"securityProtocol"`
+	SecurityProtocol pulumi.StringPtrOutput `pulumi:"securityProtocol"`
 	// (Updatable) The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
-	SessionMode pulumi.StringOutput `pulumi:"sessionMode"`
+	SessionMode pulumi.StringPtrOutput `pulumi:"sessionMode"`
 	// (Updatable) If set to true, Java Naming and Directory Interface (JNDI) properties should be provided.
-	ShouldUseJndi pulumi.BoolOutput `pulumi:"shouldUseJndi"`
+	ShouldUseJndi pulumi.BoolPtrOutput `pulumi:"shouldUseJndi"`
 	// (Updatable) If set to true, the driver validates the certificate that is sent by the database server.
-	ShouldValidateServerCertificate pulumi.BoolOutput `pulumi:"shouldValidateServerCertificate"`
+	ShouldValidateServerCertificate pulumi.BoolPtrOutput `pulumi:"shouldValidateServerCertificate"`
 	// (Updatable) Database Certificate - The base64 encoded content of pem file containing the server public key (for 1-way SSL).
-	SslCa pulumi.StringOutput `pulumi:"sslCa"`
+	SslCa pulumi.StringPtrOutput `pulumi:"sslCa"`
 	// (Updatable) Client Certificate - The base64 encoded content of client-cert.pem file  containing the client public key (for 2-way SSL).
-	SslCert pulumi.StringOutput `pulumi:"sslCert"`
+	SslCert pulumi.StringPtrOutput `pulumi:"sslCert"`
 	// (Updatable) Certificates revoked by certificate authorities (CA). Server certificate must not be on this list (for 1 and 2-way SSL). Note: This is an optional and that too only applicable if TLS/MTLS option is selected.
-	SslCrl pulumi.StringOutput `pulumi:"sslCrl"`
+	SslCrl pulumi.StringPtrOutput `pulumi:"sslCrl"`
 	// (Updatable) Client Key - The client-key.pem containing the client private key (for 2-way SSL).
-	SslKey pulumi.StringOutput `pulumi:"sslKey"`
+	SslKey pulumi.StringPtrOutput `pulumi:"sslKey"`
 	// (Updatable) The password for the cert inside of the KeyStore. In case it differs from the KeyStore password, it should be provided.
-	SslKeyPassword pulumi.StringOutput `pulumi:"sslKeyPassword"`
+	SslKeyPassword pulumi.StringPtrOutput `pulumi:"sslKeyPassword"`
 	// (Updatable) SSL modes for PostgreSQL.
-	SslMode pulumi.StringOutput `pulumi:"sslMode"`
+	SslMode pulumi.StringPtrOutput `pulumi:"sslMode"`
 	// Possible lifecycle states for connection.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream pool being referenced.
-	StreamPoolId pulumi.StringOutput `pulumi:"streamPoolId"`
+	StreamPoolId pulumi.StringPtrOutput `pulumi:"streamPoolId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
-	SubnetId pulumi.StringOutput `pulumi:"subnetId"`
+	SubnetId pulumi.StringPtrOutput `pulumi:"subnetId"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The Kafka (e.g. Confluent) Schema Registry technology type.
 	TechnologyType pulumi.StringOutput `pulumi:"technologyType"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related Oracle Cloud Infrastructure tenancy.
-	TenancyId pulumi.StringOutput `pulumi:"tenancyId"`
+	TenancyId pulumi.StringPtrOutput `pulumi:"tenancyId"`
 	// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 	// (Updatable) The base64 encoded content of the TrustStore file.
-	TrustStore pulumi.StringOutput `pulumi:"trustStore"`
+	TrustStore pulumi.StringPtrOutput `pulumi:"trustStore"`
 	// (Updatable) The TrustStore password.
-	TrustStorePassword pulumi.StringOutput `pulumi:"trustStorePassword"`
+	TrustStorePassword pulumi.StringPtrOutput `pulumi:"trustStorePassword"`
 	// (Updatable) Kafka Schema Registry URL. e.g.: 'https://server1.us.oracle.com:8081'
-	Url pulumi.StringOutput `pulumi:"url"`
+	Url pulumi.StringPtrOutput `pulumi:"url"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database/ Object Storage. The user must have write access.
-	UserId pulumi.StringOutput `pulumi:"userId"`
+	UserId pulumi.StringPtrOutput `pulumi:"userId"`
 	// (Updatable) The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivity requirements defined in it.
-	Username pulumi.StringOutput `pulumi:"username"`
+	Username pulumi.StringPtrOutput `pulumi:"username"`
 	// (Updatable) Refers to the customer's vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
-	VaultId pulumi.StringOutput `pulumi:"vaultId"`
+	VaultId pulumi.StringPtrOutput `pulumi:"vaultId"`
 	// (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database.  This attribute is expected to be base64 encoded.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	Wallet pulumi.StringOutput `pulumi:"wallet"`
+	Wallet pulumi.StringPtrOutput `pulumi:"wallet"`
 }
 
 // NewConnection registers a new resource with the given unique name, arguments, and options.
@@ -956,12 +955,6 @@ func (i *Connection) ToConnectionOutputWithContext(ctx context.Context) Connecti
 	return pulumi.ToOutputWithContext(ctx, i).(ConnectionOutput)
 }
 
-func (i *Connection) ToOutput(ctx context.Context) pulumix.Output[*Connection] {
-	return pulumix.Output[*Connection]{
-		OutputState: i.ToConnectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ConnectionArrayInput is an input type that accepts ConnectionArray and ConnectionArrayOutput values.
 // You can construct a concrete instance of `ConnectionArrayInput` via:
 //
@@ -985,12 +978,6 @@ func (i ConnectionArray) ToConnectionArrayOutput() ConnectionArrayOutput {
 
 func (i ConnectionArray) ToConnectionArrayOutputWithContext(ctx context.Context) ConnectionArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ConnectionArrayOutput)
-}
-
-func (i ConnectionArray) ToOutput(ctx context.Context) pulumix.Output[[]*Connection] {
-	return pulumix.Output[[]*Connection]{
-		OutputState: i.ToConnectionArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ConnectionMapInput is an input type that accepts ConnectionMap and ConnectionMapOutput values.
@@ -1018,12 +1005,6 @@ func (i ConnectionMap) ToConnectionMapOutputWithContext(ctx context.Context) Con
 	return pulumi.ToOutputWithContext(ctx, i).(ConnectionMapOutput)
 }
 
-func (i ConnectionMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Connection] {
-	return pulumix.Output[map[string]*Connection]{
-		OutputState: i.ToConnectionMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ConnectionOutput struct{ *pulumi.OutputState }
 
 func (ConnectionOutput) ElementType() reflect.Type {
@@ -1038,25 +1019,19 @@ func (o ConnectionOutput) ToConnectionOutputWithContext(ctx context.Context) Con
 	return o
 }
 
-func (o ConnectionOutput) ToOutput(ctx context.Context) pulumix.Output[*Connection] {
-	return pulumix.Output[*Connection]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) Access key ID to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
-func (o ConnectionOutput) AccessKeyId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.AccessKeyId }).(pulumi.StringOutput)
+func (o ConnectionOutput) AccessKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.AccessKeyId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ==
-func (o ConnectionOutput) AccountKey() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.AccountKey }).(pulumi.StringOutput)
+func (o ConnectionOutput) AccountKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.AccountKey }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Sets the Azure storage account name.
-func (o ConnectionOutput) AccountName() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.AccountName }).(pulumi.StringOutput)
+func (o ConnectionOutput) AccountName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.AccountName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) An array of name-value pair attribute entries. Used as additional parameters in connection string.
@@ -1065,13 +1040,13 @@ func (o ConnectionOutput) AdditionalAttributes() ConnectionAdditionalAttributeAr
 }
 
 // (Updatable) Used authentication mechanism.
-func (o ConnectionOutput) AuthenticationType() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.AuthenticationType }).(pulumi.StringOutput)
+func (o ConnectionOutput) AuthenticationType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.AuthenticationType }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Azure tenant ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
-func (o ConnectionOutput) AzureTenantId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.AzureTenantId }).(pulumi.StringOutput)
+func (o ConnectionOutput) AzureTenantId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.AzureTenantId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Kafka bootstrap. Equivalent of bootstrap.servers configuration property in Kafka: list of KafkaBootstrapServer objects specified by host/port. Used for establishing the initial connection to the Kafka cluster. Example: `"server1.example.com:9092,server2.example.com:9092"`
@@ -1080,13 +1055,13 @@ func (o ConnectionOutput) BootstrapServers() ConnectionBootstrapServerArrayOutpu
 }
 
 // (Updatable) Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
-func (o ConnectionOutput) ClientId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.ClientId }).(pulumi.StringOutput)
+func (o ConnectionOutput) ClientId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.ClientId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Azure client secret (aka application password) for authentication. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1
-func (o ConnectionOutput) ClientSecret() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.ClientSecret }).(pulumi.StringOutput)
+func (o ConnectionOutput) ClientSecret() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.ClientSecret }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
@@ -1095,13 +1070,13 @@ func (o ConnectionOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) The of Java class implementing javax.jms.ConnectionFactory interface supplied by the Java Message Service provider. e.g.: 'com.stc.jmsjca.core.JConnectionFactoryXA'
-func (o ConnectionOutput) ConnectionFactory() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.ConnectionFactory }).(pulumi.StringOutput)
+func (o ConnectionOutput) ConnectionFactory() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.ConnectionFactory }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Connection string. AZURE_SYNAPSE_ANALYTICS e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;', MONGODB e.g.: 'mongodb://mongodb0.example.com:27017/recordsrecords'.
-func (o ConnectionOutput) ConnectionString() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.ConnectionString }).(pulumi.StringOutput)
+func (o ConnectionOutput) ConnectionString() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.ConnectionString }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The connection type.
@@ -1110,33 +1085,33 @@ func (o ConnectionOutput) ConnectionType() pulumi.StringOutput {
 }
 
 // (Updatable) JAVA_MESSAGE_SERVICE: Connection URL of the Java Message Service, specifying the protocol, host, and port. e.g.: 'mq://myjms.host.domain:7676', SNOWFLAKE: JDBC connection URL. e.g.: 'jdbc:snowflake://<account_name>.snowflakecomputing.com/?warehouse=<warehouse-name>&db=<db-name>'
-func (o ConnectionOutput) ConnectionUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.ConnectionUrl }).(pulumi.StringOutput)
+func (o ConnectionOutput) ConnectionUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.ConnectionUrl }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The base64 encoded content of the consumer.properties file.
-func (o ConnectionOutput) ConsumerProperties() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.ConsumerProperties }).(pulumi.StringOutput)
+func (o ConnectionOutput) ConsumerProperties() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.ConsumerProperties }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The base64 encoded content of the Hadoop Distributed File System configuration file (core-site.xml).
-func (o ConnectionOutput) CoreSiteXml() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.CoreSiteXml }).(pulumi.StringOutput)
+func (o ConnectionOutput) CoreSiteXml() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.CoreSiteXml }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
-func (o ConnectionOutput) DatabaseId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.DatabaseId }).(pulumi.StringOutput)
+func (o ConnectionOutput) DatabaseId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.DatabaseId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The name of the database.
-func (o ConnectionOutput) DatabaseName() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.DatabaseName }).(pulumi.StringOutput)
+func (o ConnectionOutput) DatabaseName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.DatabaseName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system being referenced.
-func (o ConnectionOutput) DbSystemId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.DbSystemId }).(pulumi.StringOutput)
+func (o ConnectionOutput) DbSystemId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.DbSystemId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
@@ -1145,13 +1120,13 @@ func (o ConnectionOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
-func (o ConnectionOutput) DeploymentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.DeploymentId }).(pulumi.StringOutput)
+func (o ConnectionOutput) DeploymentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.DeploymentId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Metadata about this specific object.
-func (o ConnectionOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o ConnectionOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) An object's Display Name.
@@ -1160,8 +1135,8 @@ func (o ConnectionOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
-func (o ConnectionOutput) Endpoint() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.Endpoint }).(pulumi.StringOutput)
+func (o ConnectionOutput) Endpoint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.Endpoint }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
@@ -1170,8 +1145,8 @@ func (o ConnectionOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // (Updatable) The name or address of a host.
-func (o ConnectionOutput) Host() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.Host }).(pulumi.StringOutput)
+func (o ConnectionOutput) Host() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.Host }).(pulumi.StringPtrOutput)
 }
 
 // List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
@@ -1180,48 +1155,48 @@ func (o ConnectionOutput) IngressIps() ConnectionIngressIpArrayOutput {
 }
 
 // (Updatable) The Connection Factory can be looked up using this name. e.g.: 'ConnectionFactory'
-func (o ConnectionOutput) JndiConnectionFactory() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.JndiConnectionFactory }).(pulumi.StringOutput)
+func (o ConnectionOutput) JndiConnectionFactory() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.JndiConnectionFactory }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The implementation of javax.naming.spi.InitialContextFactory interface that the client uses to obtain initial naming context. e.g.: 'org.apache.activemq.jndi.ActiveMQInitialContextFactory'
-func (o ConnectionOutput) JndiInitialContextFactory() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.JndiInitialContextFactory }).(pulumi.StringOutput)
+func (o ConnectionOutput) JndiInitialContextFactory() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.JndiInitialContextFactory }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The URL that Java Message Service will use to contact the JNDI provider. e.g.: 'tcp://myjms.host.domain:61616?jms.prefetchPolicy.all=1000'
-func (o ConnectionOutput) JndiProviderUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.JndiProviderUrl }).(pulumi.StringOutput)
+func (o ConnectionOutput) JndiProviderUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.JndiProviderUrl }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The password associated to the principal.
-func (o ConnectionOutput) JndiSecurityCredentials() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.JndiSecurityCredentials }).(pulumi.StringOutput)
+func (o ConnectionOutput) JndiSecurityCredentials() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.JndiSecurityCredentials }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Specifies the identity of the principal (user) to be authenticated. e.g.: 'admin2'
-func (o ConnectionOutput) JndiSecurityPrincipal() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.JndiSecurityPrincipal }).(pulumi.StringOutput)
+func (o ConnectionOutput) JndiSecurityPrincipal() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.JndiSecurityPrincipal }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Refers to the customer's master key OCID.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
-func (o ConnectionOutput) KeyId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.KeyId }).(pulumi.StringOutput)
+func (o ConnectionOutput) KeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.KeyId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The base64 encoded content of the KeyStore file.
-func (o ConnectionOutput) KeyStore() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.KeyStore }).(pulumi.StringOutput)
+func (o ConnectionOutput) KeyStore() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.KeyStore }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The KeyStore password.
-func (o ConnectionOutput) KeyStorePassword() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.KeyStorePassword }).(pulumi.StringOutput)
+func (o ConnectionOutput) KeyStorePassword() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.KeyStorePassword }).(pulumi.StringPtrOutput)
 }
 
 // Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
-func (o ConnectionOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o ConnectionOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
@@ -1230,118 +1205,118 @@ func (o ConnectionOutput) NsgIds() pulumi.StringArrayOutput {
 }
 
 // (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on.
-func (o ConnectionOutput) Password() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.Password }).(pulumi.StringOutput)
+func (o ConnectionOutput) Password() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.Password }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The port of an endpoint usually specified for a connection.
-func (o ConnectionOutput) Port() pulumi.IntOutput {
-	return o.ApplyT(func(v *Connection) pulumi.IntOutput { return v.Port }).(pulumi.IntOutput)
+func (o ConnectionOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.IntPtrOutput { return v.Port }).(pulumi.IntPtrOutput)
 }
 
 // (Updatable) The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
-func (o ConnectionOutput) PrivateIp() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.PrivateIp }).(pulumi.StringOutput)
+func (o ConnectionOutput) PrivateIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.PrivateIp }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The base64 encoded content of private key file in PEM format.
-func (o ConnectionOutput) PrivateKeyFile() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.PrivateKeyFile }).(pulumi.StringOutput)
+func (o ConnectionOutput) PrivateKeyFile() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.PrivateKeyFile }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Password if the private key file is encrypted.
-func (o ConnectionOutput) PrivateKeyPassphrase() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.PrivateKeyPassphrase }).(pulumi.StringOutput)
+func (o ConnectionOutput) PrivateKeyPassphrase() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.PrivateKeyPassphrase }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The base64 encoded content of the producer.properties file.
-func (o ConnectionOutput) ProducerProperties() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.ProducerProperties }).(pulumi.StringOutput)
+func (o ConnectionOutput) ProducerProperties() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.ProducerProperties }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
-func (o ConnectionOutput) PublicKeyFingerprint() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.PublicKeyFingerprint }).(pulumi.StringOutput)
+func (o ConnectionOutput) PublicKeyFingerprint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.PublicKeyFingerprint }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The name of the region. e.g.: us-ashburn-1
-func (o ConnectionOutput) Region() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.Region }).(pulumi.StringOutput)
+func (o ConnectionOutput) Region() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.Region }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Credential that uses a shared access signature (SAS) to authenticate to an Azure Service. This property is required when 'authenticationType' is set to 'SHARED_ACCESS_SIGNATURE'. e.g.: ?sv=2020-06-08&ss=bfqt&srt=sco&sp=rwdlacupyx&se=2020-09-10T20:27:28Z&st=2022-08-05T12:27:28Z&spr=https&sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D
-func (o ConnectionOutput) SasToken() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.SasToken }).(pulumi.StringOutput)
+func (o ConnectionOutput) SasToken() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.SasToken }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
-func (o ConnectionOutput) SecretAccessKey() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.SecretAccessKey }).(pulumi.StringOutput)
+func (o ConnectionOutput) SecretAccessKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.SecretAccessKey }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Security Protocol.
-func (o ConnectionOutput) SecurityProtocol() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.SecurityProtocol }).(pulumi.StringOutput)
+func (o ConnectionOutput) SecurityProtocol() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.SecurityProtocol }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
-func (o ConnectionOutput) SessionMode() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.SessionMode }).(pulumi.StringOutput)
+func (o ConnectionOutput) SessionMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.SessionMode }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) If set to true, Java Naming and Directory Interface (JNDI) properties should be provided.
-func (o ConnectionOutput) ShouldUseJndi() pulumi.BoolOutput {
-	return o.ApplyT(func(v *Connection) pulumi.BoolOutput { return v.ShouldUseJndi }).(pulumi.BoolOutput)
+func (o ConnectionOutput) ShouldUseJndi() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.BoolPtrOutput { return v.ShouldUseJndi }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) If set to true, the driver validates the certificate that is sent by the database server.
-func (o ConnectionOutput) ShouldValidateServerCertificate() pulumi.BoolOutput {
-	return o.ApplyT(func(v *Connection) pulumi.BoolOutput { return v.ShouldValidateServerCertificate }).(pulumi.BoolOutput)
+func (o ConnectionOutput) ShouldValidateServerCertificate() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.BoolPtrOutput { return v.ShouldValidateServerCertificate }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) Database Certificate - The base64 encoded content of pem file containing the server public key (for 1-way SSL).
-func (o ConnectionOutput) SslCa() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.SslCa }).(pulumi.StringOutput)
+func (o ConnectionOutput) SslCa() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.SslCa }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Client Certificate - The base64 encoded content of client-cert.pem file  containing the client public key (for 2-way SSL).
-func (o ConnectionOutput) SslCert() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.SslCert }).(pulumi.StringOutput)
+func (o ConnectionOutput) SslCert() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.SslCert }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Certificates revoked by certificate authorities (CA). Server certificate must not be on this list (for 1 and 2-way SSL). Note: This is an optional and that too only applicable if TLS/MTLS option is selected.
-func (o ConnectionOutput) SslCrl() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.SslCrl }).(pulumi.StringOutput)
+func (o ConnectionOutput) SslCrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.SslCrl }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Client Key - The client-key.pem containing the client private key (for 2-way SSL).
-func (o ConnectionOutput) SslKey() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.SslKey }).(pulumi.StringOutput)
+func (o ConnectionOutput) SslKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.SslKey }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The password for the cert inside of the KeyStore. In case it differs from the KeyStore password, it should be provided.
-func (o ConnectionOutput) SslKeyPassword() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.SslKeyPassword }).(pulumi.StringOutput)
+func (o ConnectionOutput) SslKeyPassword() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.SslKeyPassword }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) SSL modes for PostgreSQL.
-func (o ConnectionOutput) SslMode() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.SslMode }).(pulumi.StringOutput)
+func (o ConnectionOutput) SslMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.SslMode }).(pulumi.StringPtrOutput)
 }
 
 // Possible lifecycle states for connection.
-func (o ConnectionOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o ConnectionOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream pool being referenced.
-func (o ConnectionOutput) StreamPoolId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.StreamPoolId }).(pulumi.StringOutput)
+func (o ConnectionOutput) StreamPoolId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.StreamPoolId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
-func (o ConnectionOutput) SubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.SubnetId }).(pulumi.StringOutput)
+func (o ConnectionOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.SubnetId }).(pulumi.StringPtrOutput)
 }
 
 // The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
@@ -1355,56 +1330,56 @@ func (o ConnectionOutput) TechnologyType() pulumi.StringOutput {
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related Oracle Cloud Infrastructure tenancy.
-func (o ConnectionOutput) TenancyId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.TenancyId }).(pulumi.StringOutput)
+func (o ConnectionOutput) TenancyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.TenancyId }).(pulumi.StringPtrOutput)
 }
 
 // The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-func (o ConnectionOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o ConnectionOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-func (o ConnectionOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o ConnectionOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The base64 encoded content of the TrustStore file.
-func (o ConnectionOutput) TrustStore() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.TrustStore }).(pulumi.StringOutput)
+func (o ConnectionOutput) TrustStore() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.TrustStore }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The TrustStore password.
-func (o ConnectionOutput) TrustStorePassword() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.TrustStorePassword }).(pulumi.StringOutput)
+func (o ConnectionOutput) TrustStorePassword() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.TrustStorePassword }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Kafka Schema Registry URL. e.g.: 'https://server1.us.oracle.com:8081'
-func (o ConnectionOutput) Url() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.Url }).(pulumi.StringOutput)
+func (o ConnectionOutput) Url() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.Url }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database/ Object Storage. The user must have write access.
-func (o ConnectionOutput) UserId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.UserId }).(pulumi.StringOutput)
+func (o ConnectionOutput) UserId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.UserId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivity requirements defined in it.
-func (o ConnectionOutput) Username() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.Username }).(pulumi.StringOutput)
+func (o ConnectionOutput) Username() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.Username }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Refers to the customer's vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
-func (o ConnectionOutput) VaultId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.VaultId }).(pulumi.StringOutput)
+func (o ConnectionOutput) VaultId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.VaultId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database.  This attribute is expected to be base64 encoded.
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o ConnectionOutput) Wallet() pulumi.StringOutput {
-	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.Wallet }).(pulumi.StringOutput)
+func (o ConnectionOutput) Wallet() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringPtrOutput { return v.Wallet }).(pulumi.StringPtrOutput)
 }
 
 type ConnectionArrayOutput struct{ *pulumi.OutputState }
@@ -1419,12 +1394,6 @@ func (o ConnectionArrayOutput) ToConnectionArrayOutput() ConnectionArrayOutput {
 
 func (o ConnectionArrayOutput) ToConnectionArrayOutputWithContext(ctx context.Context) ConnectionArrayOutput {
 	return o
-}
-
-func (o ConnectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Connection] {
-	return pulumix.Output[[]*Connection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ConnectionArrayOutput) Index(i pulumi.IntInput) ConnectionOutput {
@@ -1445,12 +1414,6 @@ func (o ConnectionMapOutput) ToConnectionMapOutput() ConnectionMapOutput {
 
 func (o ConnectionMapOutput) ToConnectionMapOutputWithContext(ctx context.Context) ConnectionMapOutput {
 	return o
-}
-
-func (o ConnectionMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Connection] {
-	return pulumix.Output[map[string]*Connection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ConnectionMapOutput) MapIndex(k pulumi.StringInput) ConnectionOutput {

@@ -6,6 +6,8 @@ package com.pulumi.oci.Core.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetRouteTablesRouteTableRouteRule {
@@ -17,32 +19,32 @@ public final class GetRouteTablesRouteTableRouteRule {
      * 
      */
     @Deprecated /* The 'cidr_block' field has been deprecated. Please use 'destination' instead. */
-    private String cidrBlock;
+    private @Nullable String cidrBlock;
     /**
      * @return An optional description of your choice for the rule.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return Conceptually, this is the range of IP addresses used for matching when routing traffic. Required if you provide a `destinationType`.
      * 
      */
-    private String destination;
+    private @Nullable String destination;
     /**
      * @return Type of destination for the rule. Required if you provide a `destination`.
      * 
      */
-    private String destinationType;
+    private @Nullable String destinationType;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the route rule&#39;s target. For information about the type of targets you can specify, see [Route Tables](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm).
      * 
      */
-    private String networkEntityId;
+    private @Nullable String networkEntityId;
     /**
      * @return A route rule can be STATIC if manually added to the route table, LOCAL if added by Oracle Cloud Infrastructure to the route table.
      * 
      */
-    private String routeType;
+    private @Nullable String routeType;
 
     private GetRouteTablesRouteTableRouteRule() {}
     /**
@@ -53,43 +55,43 @@ public final class GetRouteTablesRouteTableRouteRule {
      * 
      */
     @Deprecated /* The 'cidr_block' field has been deprecated. Please use 'destination' instead. */
-    public String cidrBlock() {
-        return this.cidrBlock;
+    public Optional<String> cidrBlock() {
+        return Optional.ofNullable(this.cidrBlock);
     }
     /**
      * @return An optional description of your choice for the rule.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return Conceptually, this is the range of IP addresses used for matching when routing traffic. Required if you provide a `destinationType`.
      * 
      */
-    public String destination() {
-        return this.destination;
+    public Optional<String> destination() {
+        return Optional.ofNullable(this.destination);
     }
     /**
      * @return Type of destination for the rule. Required if you provide a `destination`.
      * 
      */
-    public String destinationType() {
-        return this.destinationType;
+    public Optional<String> destinationType() {
+        return Optional.ofNullable(this.destinationType);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the route rule&#39;s target. For information about the type of targets you can specify, see [Route Tables](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm).
      * 
      */
-    public String networkEntityId() {
-        return this.networkEntityId;
+    public Optional<String> networkEntityId() {
+        return Optional.ofNullable(this.networkEntityId);
     }
     /**
      * @return A route rule can be STATIC if manually added to the route table, LOCAL if added by Oracle Cloud Infrastructure to the route table.
      * 
      */
-    public String routeType() {
-        return this.routeType;
+    public Optional<String> routeType() {
+        return Optional.ofNullable(this.routeType);
     }
 
     public static Builder builder() {
@@ -101,12 +103,12 @@ public final class GetRouteTablesRouteTableRouteRule {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String cidrBlock;
-        private String description;
-        private String destination;
-        private String destinationType;
-        private String networkEntityId;
-        private String routeType;
+        private @Nullable String cidrBlock;
+        private @Nullable String description;
+        private @Nullable String destination;
+        private @Nullable String destinationType;
+        private @Nullable String networkEntityId;
+        private @Nullable String routeType;
         public Builder() {}
         public Builder(GetRouteTablesRouteTableRouteRule defaults) {
     	      Objects.requireNonNull(defaults);
@@ -119,33 +121,33 @@ public final class GetRouteTablesRouteTableRouteRule {
         }
 
         @CustomType.Setter
-        public Builder cidrBlock(String cidrBlock) {
-            this.cidrBlock = Objects.requireNonNull(cidrBlock);
+        public Builder cidrBlock(@Nullable String cidrBlock) {
+            this.cidrBlock = cidrBlock;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder destination(String destination) {
-            this.destination = Objects.requireNonNull(destination);
+        public Builder destination(@Nullable String destination) {
+            this.destination = destination;
             return this;
         }
         @CustomType.Setter
-        public Builder destinationType(String destinationType) {
-            this.destinationType = Objects.requireNonNull(destinationType);
+        public Builder destinationType(@Nullable String destinationType) {
+            this.destinationType = destinationType;
             return this;
         }
         @CustomType.Setter
-        public Builder networkEntityId(String networkEntityId) {
-            this.networkEntityId = Objects.requireNonNull(networkEntityId);
+        public Builder networkEntityId(@Nullable String networkEntityId) {
+            this.networkEntityId = networkEntityId;
             return this;
         }
         @CustomType.Setter
-        public Builder routeType(String routeType) {
-            this.routeType = Objects.requireNonNull(routeType);
+        public Builder routeType(@Nullable String routeType) {
+            this.routeType = routeType;
             return this;
         }
         public GetRouteTablesRouteTableRouteRule build() {

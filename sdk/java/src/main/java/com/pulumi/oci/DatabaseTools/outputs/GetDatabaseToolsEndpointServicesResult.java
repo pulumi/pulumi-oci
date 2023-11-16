@@ -23,7 +23,7 @@ public final class GetDatabaseToolsEndpointServicesResult {
      * @return The list of database_tools_endpoint_service_collection.
      * 
      */
-    private List<GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollection> databaseToolsEndpointServiceCollections;
+    private @Nullable List<GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollection> databaseToolsEndpointServiceCollections;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
@@ -34,7 +34,7 @@ public final class GetDatabaseToolsEndpointServicesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return A unique, non-changeable resource name.
      * 
@@ -59,7 +59,7 @@ public final class GetDatabaseToolsEndpointServicesResult {
      * 
      */
     public List<GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollection> databaseToolsEndpointServiceCollections() {
-        return this.databaseToolsEndpointServiceCollections;
+        return this.databaseToolsEndpointServiceCollections == null ? List.of() : this.databaseToolsEndpointServiceCollections;
     }
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
@@ -75,8 +75,8 @@ public final class GetDatabaseToolsEndpointServicesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return A unique, non-changeable resource name.
@@ -103,10 +103,10 @@ public final class GetDatabaseToolsEndpointServicesResult {
     @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
-        private List<GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollection> databaseToolsEndpointServiceCollections;
+        private @Nullable List<GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollection> databaseToolsEndpointServiceCollections;
         private @Nullable String displayName;
         private @Nullable List<GetDatabaseToolsEndpointServicesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String name;
         private @Nullable String state;
         public Builder() {}
@@ -127,8 +127,8 @@ public final class GetDatabaseToolsEndpointServicesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder databaseToolsEndpointServiceCollections(List<GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollection> databaseToolsEndpointServiceCollections) {
-            this.databaseToolsEndpointServiceCollections = Objects.requireNonNull(databaseToolsEndpointServiceCollections);
+        public Builder databaseToolsEndpointServiceCollections(@Nullable List<GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollection> databaseToolsEndpointServiceCollections) {
+            this.databaseToolsEndpointServiceCollections = databaseToolsEndpointServiceCollections;
             return this;
         }
         public Builder databaseToolsEndpointServiceCollections(GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollection... databaseToolsEndpointServiceCollections) {
@@ -148,8 +148,8 @@ public final class GetDatabaseToolsEndpointServicesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

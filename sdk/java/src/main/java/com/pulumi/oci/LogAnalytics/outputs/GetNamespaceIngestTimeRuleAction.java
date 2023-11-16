@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetNamespaceIngestTimeRuleAction {
@@ -14,75 +16,75 @@ public final class GetNamespaceIngestTimeRuleAction {
      * @return Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Additional dimensions to publish for the extracted metric. A valid list contains the source field names whose values are to be published as dimensions. The source name itself is specified using a special macro SOURCE_NAME
      * 
      */
-    private List<String> dimensions;
+    private @Nullable List<String> dimensions;
     /**
      * @return The metric name of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
      * 
      */
-    private String metricName;
+    private @Nullable String metricName;
     /**
      * @return The Logging Analytics namespace used for the request.
      * 
      */
-    private String namespace;
+    private @Nullable String namespace;
     /**
      * @return The resourceGroup of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
      * 
      */
-    private String resourceGroup;
+    private @Nullable String resourceGroup;
     /**
      * @return Discriminator.
      * 
      */
-    private String type;
+    private @Nullable String type;
 
     private GetNamespaceIngestTimeRuleAction() {}
     /**
      * @return Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Additional dimensions to publish for the extracted metric. A valid list contains the source field names whose values are to be published as dimensions. The source name itself is specified using a special macro SOURCE_NAME
      * 
      */
     public List<String> dimensions() {
-        return this.dimensions;
+        return this.dimensions == null ? List.of() : this.dimensions;
     }
     /**
      * @return The metric name of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
      * 
      */
-    public String metricName() {
-        return this.metricName;
+    public Optional<String> metricName() {
+        return Optional.ofNullable(this.metricName);
     }
     /**
      * @return The Logging Analytics namespace used for the request.
      * 
      */
-    public String namespace() {
-        return this.namespace;
+    public Optional<String> namespace() {
+        return Optional.ofNullable(this.namespace);
     }
     /**
      * @return The resourceGroup of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
      * 
      */
-    public String resourceGroup() {
-        return this.resourceGroup;
+    public Optional<String> resourceGroup() {
+        return Optional.ofNullable(this.resourceGroup);
     }
     /**
      * @return Discriminator.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
 
     public static Builder builder() {
@@ -94,12 +96,12 @@ public final class GetNamespaceIngestTimeRuleAction {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private List<String> dimensions;
-        private String metricName;
-        private String namespace;
-        private String resourceGroup;
-        private String type;
+        private @Nullable String compartmentId;
+        private @Nullable List<String> dimensions;
+        private @Nullable String metricName;
+        private @Nullable String namespace;
+        private @Nullable String resourceGroup;
+        private @Nullable String type;
         public Builder() {}
         public Builder(GetNamespaceIngestTimeRuleAction defaults) {
     	      Objects.requireNonNull(defaults);
@@ -112,36 +114,36 @@ public final class GetNamespaceIngestTimeRuleAction {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder dimensions(List<String> dimensions) {
-            this.dimensions = Objects.requireNonNull(dimensions);
+        public Builder dimensions(@Nullable List<String> dimensions) {
+            this.dimensions = dimensions;
             return this;
         }
         public Builder dimensions(String... dimensions) {
             return dimensions(List.of(dimensions));
         }
         @CustomType.Setter
-        public Builder metricName(String metricName) {
-            this.metricName = Objects.requireNonNull(metricName);
+        public Builder metricName(@Nullable String metricName) {
+            this.metricName = metricName;
             return this;
         }
         @CustomType.Setter
-        public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+        public Builder namespace(@Nullable String namespace) {
+            this.namespace = namespace;
             return this;
         }
         @CustomType.Setter
-        public Builder resourceGroup(String resourceGroup) {
-            this.resourceGroup = Objects.requireNonNull(resourceGroup);
+        public Builder resourceGroup(@Nullable String resourceGroup) {
+            this.resourceGroup = resourceGroup;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         public GetNamespaceIngestTimeRuleAction build() {

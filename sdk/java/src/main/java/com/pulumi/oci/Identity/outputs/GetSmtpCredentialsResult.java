@@ -9,6 +9,7 @@ import com.pulumi.oci.Identity.outputs.GetSmtpCredentialsSmtpCredential;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -18,12 +19,12 @@ public final class GetSmtpCredentialsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of smtp_credentials.
      * 
      */
-    private List<GetSmtpCredentialsSmtpCredential> smtpCredentials;
+    private @Nullable List<GetSmtpCredentialsSmtpCredential> smtpCredentials;
     /**
      * @return The OCID of the user the SMTP credential belongs to.
      * 
@@ -38,15 +39,15 @@ public final class GetSmtpCredentialsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of smtp_credentials.
      * 
      */
     public List<GetSmtpCredentialsSmtpCredential> smtpCredentials() {
-        return this.smtpCredentials;
+        return this.smtpCredentials == null ? List.of() : this.smtpCredentials;
     }
     /**
      * @return The OCID of the user the SMTP credential belongs to.
@@ -66,8 +67,8 @@ public final class GetSmtpCredentialsResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetSmtpCredentialsFilter> filters;
-        private String id;
-        private List<GetSmtpCredentialsSmtpCredential> smtpCredentials;
+        private @Nullable String id;
+        private @Nullable List<GetSmtpCredentialsSmtpCredential> smtpCredentials;
         private String userId;
         public Builder() {}
         public Builder(GetSmtpCredentialsResult defaults) {
@@ -87,13 +88,13 @@ public final class GetSmtpCredentialsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder smtpCredentials(List<GetSmtpCredentialsSmtpCredential> smtpCredentials) {
-            this.smtpCredentials = Objects.requireNonNull(smtpCredentials);
+        public Builder smtpCredentials(@Nullable List<GetSmtpCredentialsSmtpCredential> smtpCredentials) {
+            this.smtpCredentials = smtpCredentials;
             return this;
         }
         public Builder smtpCredentials(GetSmtpCredentialsSmtpCredential... smtpCredentials) {

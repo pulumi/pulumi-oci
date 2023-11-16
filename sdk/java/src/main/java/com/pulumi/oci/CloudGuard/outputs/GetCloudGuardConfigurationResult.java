@@ -7,54 +7,56 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetCloudGuardConfigurationResult {
     private String compartmentId;
-    private String id;
+    private @Nullable String id;
     /**
      * @return The reporting region value
      * 
      */
-    private String reportingRegion;
+    private @Nullable String reportingRegion;
     /**
      * @return Identifies if Oracle managed resources were created by customers
      * 
      */
-    private Boolean selfManageResources;
+    private @Nullable Boolean selfManageResources;
     /**
      * @return Status of Cloud Guard Tenant
      * 
      */
-    private String status;
+    private @Nullable String status;
 
     private GetCloudGuardConfigurationResult() {}
     public String compartmentId() {
         return this.compartmentId;
     }
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The reporting region value
      * 
      */
-    public String reportingRegion() {
-        return this.reportingRegion;
+    public Optional<String> reportingRegion() {
+        return Optional.ofNullable(this.reportingRegion);
     }
     /**
      * @return Identifies if Oracle managed resources were created by customers
      * 
      */
-    public Boolean selfManageResources() {
-        return this.selfManageResources;
+    public Optional<Boolean> selfManageResources() {
+        return Optional.ofNullable(this.selfManageResources);
     }
     /**
      * @return Status of Cloud Guard Tenant
      * 
      */
-    public String status() {
-        return this.status;
+    public Optional<String> status() {
+        return Optional.ofNullable(this.status);
     }
 
     public static Builder builder() {
@@ -67,10 +69,10 @@ public final class GetCloudGuardConfigurationResult {
     @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
-        private String id;
-        private String reportingRegion;
-        private Boolean selfManageResources;
-        private String status;
+        private @Nullable String id;
+        private @Nullable String reportingRegion;
+        private @Nullable Boolean selfManageResources;
+        private @Nullable String status;
         public Builder() {}
         public Builder(GetCloudGuardConfigurationResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -87,23 +89,23 @@ public final class GetCloudGuardConfigurationResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder reportingRegion(String reportingRegion) {
-            this.reportingRegion = Objects.requireNonNull(reportingRegion);
+        public Builder reportingRegion(@Nullable String reportingRegion) {
+            this.reportingRegion = reportingRegion;
             return this;
         }
         @CustomType.Setter
-        public Builder selfManageResources(Boolean selfManageResources) {
-            this.selfManageResources = Objects.requireNonNull(selfManageResources);
+        public Builder selfManageResources(@Nullable Boolean selfManageResources) {
+            this.selfManageResources = selfManageResources;
             return this;
         }
         @CustomType.Setter
-        public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+        public Builder status(@Nullable String status) {
+            this.status = status;
             return this;
         }
         public GetCloudGuardConfigurationResult build() {

@@ -13,17 +13,17 @@ namespace Pulumi.Oci.Database.Outputs
     [OutputType]
     public sealed class GetDataGuardAssociationsDataGuardAssociationDataCollectionOptionResult
     {
-        public readonly bool IsDiagnosticsEventsEnabled;
-        public readonly bool IsHealthMonitoringEnabled;
-        public readonly bool IsIncidentLogsEnabled;
+        public readonly bool? IsDiagnosticsEventsEnabled;
+        public readonly bool? IsHealthMonitoringEnabled;
+        public readonly bool? IsIncidentLogsEnabled;
 
         [OutputConstructor]
         private GetDataGuardAssociationsDataGuardAssociationDataCollectionOptionResult(
-            bool isDiagnosticsEventsEnabled,
+            bool? isDiagnosticsEventsEnabled,
 
-            bool isHealthMonitoringEnabled,
+            bool? isHealthMonitoringEnabled,
 
-            bool isIncidentLogsEnabled)
+            bool? isIncidentLogsEnabled)
         {
             IsDiagnosticsEventsEnabled = isDiagnosticsEventsEnabled;
             IsHealthMonitoringEnabled = isHealthMonitoringEnabled;

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Db Node Console Connections in Oracle Cloud Infrastructure Database service.
@@ -66,7 +65,7 @@ type GetDbNodeConsoleConnectionsResult struct {
 	DbNodeId string                              `pulumi:"dbNodeId"`
 	Filters  []GetDbNodeConsoleConnectionsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 func GetDbNodeConsoleConnectionsOutput(ctx *pulumi.Context, args GetDbNodeConsoleConnectionsOutputArgs, opts ...pulumi.InvokeOption) GetDbNodeConsoleConnectionsResultOutput {
@@ -108,12 +107,6 @@ func (o GetDbNodeConsoleConnectionsResultOutput) ToGetDbNodeConsoleConnectionsRe
 	return o
 }
 
-func (o GetDbNodeConsoleConnectionsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDbNodeConsoleConnectionsResult] {
-	return pulumix.Output[GetDbNodeConsoleConnectionsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The list of console_connections.
 func (o GetDbNodeConsoleConnectionsResultOutput) ConsoleConnections() GetDbNodeConsoleConnectionsConsoleConnectionArrayOutput {
 	return o.ApplyT(func(v GetDbNodeConsoleConnectionsResult) []GetDbNodeConsoleConnectionsConsoleConnection {
@@ -131,8 +124,8 @@ func (o GetDbNodeConsoleConnectionsResultOutput) Filters() GetDbNodeConsoleConne
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetDbNodeConsoleConnectionsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDbNodeConsoleConnectionsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDbNodeConsoleConnectionsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDbNodeConsoleConnectionsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func init() {

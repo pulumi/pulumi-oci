@@ -17,12 +17,12 @@ public final class GetVbInstanceApplicationsResult {
      * @return The list of application_summary_collection.
      * 
      */
-    private List<GetVbInstanceApplicationsApplicationSummaryCollection> applicationSummaryCollections;
+    private @Nullable List<GetVbInstanceApplicationsApplicationSummaryCollection> applicationSummaryCollections;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private @Nullable String idcsOpenId;
     private String vbInstanceId;
 
@@ -32,14 +32,14 @@ public final class GetVbInstanceApplicationsResult {
      * 
      */
     public List<GetVbInstanceApplicationsApplicationSummaryCollection> applicationSummaryCollections() {
-        return this.applicationSummaryCollections;
+        return this.applicationSummaryCollections == null ? List.of() : this.applicationSummaryCollections;
     }
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public Optional<String> idcsOpenId() {
         return Optional.ofNullable(this.idcsOpenId);
@@ -57,8 +57,8 @@ public final class GetVbInstanceApplicationsResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetVbInstanceApplicationsApplicationSummaryCollection> applicationSummaryCollections;
-        private String id;
+        private @Nullable List<GetVbInstanceApplicationsApplicationSummaryCollection> applicationSummaryCollections;
+        private @Nullable String id;
         private @Nullable String idcsOpenId;
         private String vbInstanceId;
         public Builder() {}
@@ -71,16 +71,16 @@ public final class GetVbInstanceApplicationsResult {
         }
 
         @CustomType.Setter
-        public Builder applicationSummaryCollections(List<GetVbInstanceApplicationsApplicationSummaryCollection> applicationSummaryCollections) {
-            this.applicationSummaryCollections = Objects.requireNonNull(applicationSummaryCollections);
+        public Builder applicationSummaryCollections(@Nullable List<GetVbInstanceApplicationsApplicationSummaryCollection> applicationSummaryCollections) {
+            this.applicationSummaryCollections = applicationSummaryCollections;
             return this;
         }
         public Builder applicationSummaryCollections(GetVbInstanceApplicationsApplicationSummaryCollection... applicationSummaryCollections) {
             return applicationSummaryCollections(List.of(applicationSummaryCollections));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

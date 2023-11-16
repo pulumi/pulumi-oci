@@ -6,6 +6,8 @@ package com.pulumi.oci.ObjectStorage.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetBucketRetentionRuleDuration {
@@ -13,27 +15,27 @@ public final class GetBucketRetentionRuleDuration {
      * @return The timeAmount is interpreted in units defined by the timeUnit parameter, and is calculated in relation to each object&#39;s Last-Modified timestamp.
      * 
      */
-    private String timeAmount;
+    private @Nullable String timeAmount;
     /**
      * @return The unit that should be used to interpret timeAmount.
      * 
      */
-    private String timeUnit;
+    private @Nullable String timeUnit;
 
     private GetBucketRetentionRuleDuration() {}
     /**
      * @return The timeAmount is interpreted in units defined by the timeUnit parameter, and is calculated in relation to each object&#39;s Last-Modified timestamp.
      * 
      */
-    public String timeAmount() {
-        return this.timeAmount;
+    public Optional<String> timeAmount() {
+        return Optional.ofNullable(this.timeAmount);
     }
     /**
      * @return The unit that should be used to interpret timeAmount.
      * 
      */
-    public String timeUnit() {
-        return this.timeUnit;
+    public Optional<String> timeUnit() {
+        return Optional.ofNullable(this.timeUnit);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetBucketRetentionRuleDuration {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String timeAmount;
-        private String timeUnit;
+        private @Nullable String timeAmount;
+        private @Nullable String timeUnit;
         public Builder() {}
         public Builder(GetBucketRetentionRuleDuration defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetBucketRetentionRuleDuration {
         }
 
         @CustomType.Setter
-        public Builder timeAmount(String timeAmount) {
-            this.timeAmount = Objects.requireNonNull(timeAmount);
+        public Builder timeAmount(@Nullable String timeAmount) {
+            this.timeAmount = timeAmount;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUnit(String timeUnit) {
-            this.timeUnit = Objects.requireNonNull(timeUnit);
+        public Builder timeUnit(@Nullable String timeUnit) {
+            this.timeUnit = timeUnit;
             return this;
         }
         public GetBucketRetentionRuleDuration build() {

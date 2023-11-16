@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Logging.Outputs
         /// <summary>
         /// Namespace to emit the operational metrics.
         /// </summary>
-        public readonly string Namespace;
+        public readonly string? Namespace;
         /// <summary>
         /// Resource group to emit the operational metrics.
         /// </summary>
-        public readonly string ResourceGroup;
+        public readonly string? ResourceGroup;
 
         [OutputConstructor]
         private GetUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInputResult(
-            string @namespace,
+            string? @namespace,
 
-            string resourceGroup)
+            string? resourceGroup)
         {
             Namespace = @namespace;
             ResourceGroup = resourceGroup;

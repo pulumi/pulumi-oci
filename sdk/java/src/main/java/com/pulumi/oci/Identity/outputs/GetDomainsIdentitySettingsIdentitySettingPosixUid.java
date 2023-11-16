@@ -6,6 +6,8 @@ package com.pulumi.oci.Identity.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsIdentitySettingsIdentitySettingPosixUid {
@@ -13,27 +15,27 @@ public final class GetDomainsIdentitySettingsIdentitySettingPosixUid {
      * @return The number at which the Posix Uid Manual assignment ends.
      * 
      */
-    private Integer manualAssignmentEndsAt;
+    private @Nullable Integer manualAssignmentEndsAt;
     /**
      * @return The number from which the Posix Uid Manual assignment starts.
      * 
      */
-    private Integer manualAssignmentStartsFrom;
+    private @Nullable Integer manualAssignmentStartsFrom;
 
     private GetDomainsIdentitySettingsIdentitySettingPosixUid() {}
     /**
      * @return The number at which the Posix Uid Manual assignment ends.
      * 
      */
-    public Integer manualAssignmentEndsAt() {
-        return this.manualAssignmentEndsAt;
+    public Optional<Integer> manualAssignmentEndsAt() {
+        return Optional.ofNullable(this.manualAssignmentEndsAt);
     }
     /**
      * @return The number from which the Posix Uid Manual assignment starts.
      * 
      */
-    public Integer manualAssignmentStartsFrom() {
-        return this.manualAssignmentStartsFrom;
+    public Optional<Integer> manualAssignmentStartsFrom() {
+        return Optional.ofNullable(this.manualAssignmentStartsFrom);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetDomainsIdentitySettingsIdentitySettingPosixUid {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer manualAssignmentEndsAt;
-        private Integer manualAssignmentStartsFrom;
+        private @Nullable Integer manualAssignmentEndsAt;
+        private @Nullable Integer manualAssignmentStartsFrom;
         public Builder() {}
         public Builder(GetDomainsIdentitySettingsIdentitySettingPosixUid defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetDomainsIdentitySettingsIdentitySettingPosixUid {
         }
 
         @CustomType.Setter
-        public Builder manualAssignmentEndsAt(Integer manualAssignmentEndsAt) {
-            this.manualAssignmentEndsAt = Objects.requireNonNull(manualAssignmentEndsAt);
+        public Builder manualAssignmentEndsAt(@Nullable Integer manualAssignmentEndsAt) {
+            this.manualAssignmentEndsAt = manualAssignmentEndsAt;
             return this;
         }
         @CustomType.Setter
-        public Builder manualAssignmentStartsFrom(Integer manualAssignmentStartsFrom) {
-            this.manualAssignmentStartsFrom = Objects.requireNonNull(manualAssignmentStartsFrom);
+        public Builder manualAssignmentStartsFrom(@Nullable Integer manualAssignmentStartsFrom) {
+            this.manualAssignmentStartsFrom = manualAssignmentStartsFrom;
             return this;
         }
         public GetDomainsIdentitySettingsIdentitySettingPosixUid build() {

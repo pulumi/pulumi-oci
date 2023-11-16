@@ -55,82 +55,52 @@ class GetCompartmentResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the parent compartment containing the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        The description you assign to the compartment. Does not have to be unique, and it's changeable.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
     def id(self) -> str:
-        """
-        The OCID of the compartment.
-        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="inactiveState")
-    def inactive_state(self) -> str:
-        """
-        The detailed status of INACTIVE lifecycleState.
-        """
+    def inactive_state(self) -> Optional[str]:
         return pulumi.get(self, "inactive_state")
 
     @property
     @pulumi.getter(name="isAccessible")
-    def is_accessible(self) -> bool:
-        """
-        Indicates whether or not the compartment is accessible for the user making the request. Returns true when the user has INSPECT permissions directly on a resource in the compartment or indirectly (permissions can be on a resource in a subcompartment).
-        """
+    def is_accessible(self) -> Optional[bool]:
         return pulumi.get(self, "is_accessible")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The name you assign to the compartment during creation. The name must be unique across all compartments in the parent. Avoid entering confidential information.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The compartment's current state.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        Date and time the compartment was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
 
@@ -155,28 +125,7 @@ class AwaitableGetCompartmentResult(GetCompartmentResult):
 def get_compartment(id: Optional[str] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCompartmentResult:
     """
-    This data source provides details about a specific Compartment resource in Oracle Cloud Infrastructure Identity service.
-
-    Gets the specified compartment's information.
-
-    This operation does not return a list of all the resources inside the compartment. There is no single
-    API operation that does that. Compartments can contain multiple types of resources (instances, block
-    storage volumes, etc.). To find out what's in a compartment, you must call the "List" operation for
-    each resource type and specify the compartment's OCID as a query parameter in the request. For example,
-    call the [ListInstances](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/Instance/ListInstances) operation in the Cloud Compute
-    Service or the [ListVolumes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/Volume/ListVolumes) operation in Cloud Block Storage.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_compartment = oci.Identity.get_compartment(id=var["compartment_id"])
-    ```
-
-
-    :param str id: The OCID of the compartment.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['id'] = id
@@ -200,27 +149,6 @@ def get_compartment(id: Optional[str] = None,
 def get_compartment_output(id: Optional[pulumi.Input[str]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCompartmentResult]:
     """
-    This data source provides details about a specific Compartment resource in Oracle Cloud Infrastructure Identity service.
-
-    Gets the specified compartment's information.
-
-    This operation does not return a list of all the resources inside the compartment. There is no single
-    API operation that does that. Compartments can contain multiple types of resources (instances, block
-    storage volumes, etc.). To find out what's in a compartment, you must call the "List" operation for
-    each resource type and specify the compartment's OCID as a query parameter in the request. For example,
-    call the [ListInstances](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/Instance/ListInstances) operation in the Cloud Compute
-    Service or the [ListVolumes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/Volume/ListVolumes) operation in Cloud Block Storage.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_compartment = oci.Identity.get_compartment(id=var["compartment_id"])
-    ```
-
-
-    :param str id: The OCID of the compartment.
+    Use this data source to access information about an existing resource.
     """
     ...

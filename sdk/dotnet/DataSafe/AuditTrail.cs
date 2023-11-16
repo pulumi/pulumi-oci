@@ -29,13 +29,13 @@ namespace Pulumi.Oci.DataSafe
         /// The date from which the audit trail must start collecting data, in the format defined by RFC3339.
         /// </summary>
         [Output("auditCollectionStartTime")]
-        public Output<string> AuditCollectionStartTime { get; private set; } = null!;
+        public Output<string?> AuditCollectionStartTime { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the  parent audit.
         /// </summary>
         [Output("auditProfileId")]
-        public Output<string> AuditProfileId { get; private set; } = null!;
+        public Output<string?> AuditProfileId { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the audit trail.
@@ -47,43 +47,43 @@ namespace Pulumi.Oci.DataSafe
         /// The OCID of the compartment that contains the audit trail and is the same as the compartment of the audit profile resource.
         /// </summary>
         [Output("compartmentId")]
-        public Output<string> CompartmentId { get; private set; } = null!;
+        public Output<string?> CompartmentId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The description of the audit trail.
         /// </summary>
         [Output("description")]
-        public Output<string> Description { get; private set; } = null!;
+        public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The display name of the audit trail. The name does not have to be unique, and it's changeable.
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Indicates if auto purge is enabled on the target database, which helps delete audit data in the target database every seven days so that the database's audit trail does not become too large.
         /// </summary>
         [Output("isAutoPurgeEnabled")]
-        public Output<bool> IsAutoPurgeEnabled { get; private set; } = null!;
+        public Output<bool?> IsAutoPurgeEnabled { get; private set; } = null!;
 
         /// <summary>
         /// Details about the current state of the audit trail in Data Safe.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) An optional property when incremented triggers Resume. Could be set to any integer value.
@@ -99,55 +99,55 @@ namespace Pulumi.Oci.DataSafe
         /// (Updatable) The target state for the Audit Trail. Could be set to `ACTIVE` or `INACTIVE`.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The current sub-state of the audit trail.
         /// </summary>
         [Output("status")]
-        public Output<string> Status { get; private set; } = null!;
+        public Output<string?> Status { get; private set; } = null!;
 
         /// <summary>
         /// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
         [Output("systemTags")]
-        public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the Data Safe target for which the audit trail is created.
         /// </summary>
         [Output("targetId")]
-        public Output<string> TargetId { get; private set; } = null!;
+        public Output<string?> TargetId { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the audit trail was created, in the format defined by RFC3339.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The date and time until when the audit events were collected from the target database by the Data Safe audit trail  collection process, in the format defined by RFC3339.
         /// </summary>
         [Output("timeLastCollected")]
-        public Output<string> TimeLastCollected { get; private set; } = null!;
+        public Output<string?> TimeLastCollected { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the audit trail was updated, in the format defined by RFC3339.
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
         /// An audit trail location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
         /// </summary>
         [Output("trailLocation")]
-        public Output<string> TrailLocation { get; private set; } = null!;
+        public Output<string?> TrailLocation { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the workrequest for audit trail which collects audit records.
         /// </summary>
         [Output("workRequestId")]
-        public Output<string> WorkRequestId { get; private set; } = null!;
+        public Output<string?> WorkRequestId { get; private set; } = null!;
 
 
         /// <summary>

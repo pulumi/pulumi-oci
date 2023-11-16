@@ -45,116 +45,116 @@ export interface GetControlAssignmentResult {
     /**
      * The OCID of the user who created this operator control assignment.
      */
-    readonly assignerId: string;
+    readonly assignerId?: string;
     /**
      * Comment about the assignment of the operator control to this target resource.
      */
-    readonly comment: string;
+    readonly comment?: string;
     /**
      * The OCID of the comparment that contains the operator control assignment.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * description containing reason for releasing of OperatorControl.
      */
-    readonly detachmentDescription: string;
+    readonly detachmentDescription?: string;
     /**
      * The code identifying the error occurred during Assignment operation.
      */
-    readonly errorCode: number;
+    readonly errorCode?: number;
     /**
      * The message describing the error occurred during Assignment operation.
      */
-    readonly errorMessage: string;
+    readonly errorMessage?: string;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The OCID of the operator control assignment.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The boolean if true would autoApprove during maintenance.
      */
-    readonly isAutoApproveDuringMaintenance: boolean;
+    readonly isAutoApproveDuringMaintenance?: boolean;
     /**
      * Whether the assignment is a default assignment.
      */
-    readonly isDefaultAssignment: boolean;
+    readonly isDefaultAssignment?: boolean;
     /**
      * If set, then the target resource is always governed by the operator control.
      */
-    readonly isEnforcedAlways: boolean;
+    readonly isEnforcedAlways?: boolean;
     /**
      * If set indicates that the audit logs are being forwarded to the relevant remote logging server
      */
-    readonly isLogForwarded: boolean;
+    readonly isLogForwarded?: boolean;
     /**
      * More in detail about the lifeCycleState.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     readonly operatorControlAssignmentId: string;
     /**
      * The OCID of the operator control.
      */
-    readonly operatorControlId: string;
+    readonly operatorControlId?: string;
     /**
      * The address of the remote syslog server where the audit logs are being forwarded to. Address in host or IP format.
      */
-    readonly remoteSyslogServerAddress: string;
+    readonly remoteSyslogServerAddress?: string;
     /**
      * The CA certificate of the remote syslog server.
      */
-    readonly remoteSyslogServerCaCert: string;
+    readonly remoteSyslogServerCaCert?: string;
     /**
      * The listening port of the remote syslog server. The port range is 0 - 65535. Only TCP supported.
      */
-    readonly remoteSyslogServerPort: number;
+    readonly remoteSyslogServerPort?: number;
     /**
      * The OCID of the compartment that contains the target resource.
      */
-    readonly resourceCompartmentId: string;
+    readonly resourceCompartmentId?: string;
     /**
      * The OCID of the target resource.
      */
-    readonly resourceId: string;
+    readonly resourceId?: string;
     /**
      * Name of the target resource.
      */
-    readonly resourceName: string;
+    readonly resourceName?: string;
     /**
      * resourceType for which the OperatorControlAssignment is applicable
      */
-    readonly resourceType: string;
+    readonly resourceType?: string;
     /**
      * The current lifcycle state of the OperatorControl.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The time at which the target resource will be brought under the governance of the operator control expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: '2020-05-22T21:10:29.600Z'
      */
-    readonly timeAssignmentFrom: string;
+    readonly timeAssignmentFrom?: string;
     /**
      * The time at which the target resource will leave the governance of the operator control expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
      */
-    readonly timeAssignmentTo: string;
+    readonly timeAssignmentTo?: string;
     /**
      * Time when the operator control assignment is created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
      */
-    readonly timeOfAssignment: string;
+    readonly timeOfAssignment?: string;
     /**
      * Time on which the operator control assignment was deleted in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z'
      */
-    readonly timeOfDeletion: string;
+    readonly timeOfDeletion?: string;
     /**
      * User id who released the operatorControl.
      */
-    readonly unassignerId: string;
+    readonly unassignerId?: string;
 }
 /**
  * This data source provides details about a specific Operator Control Assignment resource in Oracle Cloud Infrastructure Operator Access Control service.

@@ -16,17 +16,17 @@ namespace Pulumi.Oci.CloudMigrations.Outputs
         /// <summary>
         /// Total price per hour
         /// </summary>
-        public readonly double TotalPerHour;
+        public readonly double? TotalPerHour;
         /// <summary>
         /// Total price per hour by subscription
         /// </summary>
-        public readonly double TotalPerHourBySubscription;
+        public readonly double? TotalPerHourBySubscription;
 
         [OutputConstructor]
         private GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostOsImageResult(
-            double totalPerHour,
+            double? totalPerHour,
 
-            double totalPerHourBySubscription)
+            double? totalPerHourBySubscription)
         {
             TotalPerHour = totalPerHour;
             TotalPerHourBySubscription = totalPerHourBySubscription;

@@ -13,6 +13,7 @@ import com.pulumi.oci.Database.outputs.CloudVmClusterIormConfigDbPlan;
 import com.pulumi.oci.Utilities;
 import java.lang.String;
 import java.util.List;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -102,42 +103,42 @@ public class CloudVmClusterIormConfig extends com.pulumi.resources.CustomResourc
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return Additional information about the current `lifecycleState`.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * (Updatable) Value for the IORM objective Default is &#34;Auto&#34;
      * 
      */
     @Export(name="objective", refs={String.class}, tree="[0]")
-    private Output<String> objective;
+    private Output</* @Nullable */ String> objective;
 
     /**
      * @return (Updatable) Value for the IORM objective Default is &#34;Auto&#34;
      * 
      */
-    public Output<String> objective() {
-        return this.objective;
+    public Output<Optional<String>> objective() {
+        return Codegen.optional(this.objective);
     }
     /**
      * The current state of IORM configuration for the Exadata DB system.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of IORM configuration for the Exadata DB system.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
 
     /**

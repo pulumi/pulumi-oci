@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Customer Secret Key resource in Oracle Cloud Infrastructure Identity service.
@@ -69,15 +68,15 @@ type CustomerSecretKey struct {
 	// (Updatable) The name you assign to the secret key during creation. Does not have to be unique, and it's changeable.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// The detailed status of INACTIVE lifecycleState.
-	InactiveState pulumi.StringOutput `pulumi:"inactiveState"`
+	InactiveState pulumi.StringPtrOutput `pulumi:"inactiveState"`
 	// The secret key.
-	Key pulumi.StringOutput `pulumi:"key"`
+	Key pulumi.StringPtrOutput `pulumi:"key"`
 	// The secret key's current state.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// Date and time the `CustomerSecretKey` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// Date and time when this password will expire, in the format defined by RFC3339. Null if it never expires.  Example: `2016-08-25T21:10:29.600Z`
-	TimeExpires pulumi.StringOutput `pulumi:"timeExpires"`
+	TimeExpires pulumi.StringPtrOutput `pulumi:"timeExpires"`
 	// The OCID of the user.
 	//
 	// ** IMPORTANT **
@@ -208,12 +207,6 @@ func (i *CustomerSecretKey) ToCustomerSecretKeyOutputWithContext(ctx context.Con
 	return pulumi.ToOutputWithContext(ctx, i).(CustomerSecretKeyOutput)
 }
 
-func (i *CustomerSecretKey) ToOutput(ctx context.Context) pulumix.Output[*CustomerSecretKey] {
-	return pulumix.Output[*CustomerSecretKey]{
-		OutputState: i.ToCustomerSecretKeyOutputWithContext(ctx).OutputState,
-	}
-}
-
 // CustomerSecretKeyArrayInput is an input type that accepts CustomerSecretKeyArray and CustomerSecretKeyArrayOutput values.
 // You can construct a concrete instance of `CustomerSecretKeyArrayInput` via:
 //
@@ -237,12 +230,6 @@ func (i CustomerSecretKeyArray) ToCustomerSecretKeyArrayOutput() CustomerSecretK
 
 func (i CustomerSecretKeyArray) ToCustomerSecretKeyArrayOutputWithContext(ctx context.Context) CustomerSecretKeyArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(CustomerSecretKeyArrayOutput)
-}
-
-func (i CustomerSecretKeyArray) ToOutput(ctx context.Context) pulumix.Output[[]*CustomerSecretKey] {
-	return pulumix.Output[[]*CustomerSecretKey]{
-		OutputState: i.ToCustomerSecretKeyArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // CustomerSecretKeyMapInput is an input type that accepts CustomerSecretKeyMap and CustomerSecretKeyMapOutput values.
@@ -270,12 +257,6 @@ func (i CustomerSecretKeyMap) ToCustomerSecretKeyMapOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(CustomerSecretKeyMapOutput)
 }
 
-func (i CustomerSecretKeyMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*CustomerSecretKey] {
-	return pulumix.Output[map[string]*CustomerSecretKey]{
-		OutputState: i.ToCustomerSecretKeyMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type CustomerSecretKeyOutput struct{ *pulumi.OutputState }
 
 func (CustomerSecretKeyOutput) ElementType() reflect.Type {
@@ -290,40 +271,34 @@ func (o CustomerSecretKeyOutput) ToCustomerSecretKeyOutputWithContext(ctx contex
 	return o
 }
 
-func (o CustomerSecretKeyOutput) ToOutput(ctx context.Context) pulumix.Output[*CustomerSecretKey] {
-	return pulumix.Output[*CustomerSecretKey]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The name you assign to the secret key during creation. Does not have to be unique, and it's changeable.
 func (o CustomerSecretKeyOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *CustomerSecretKey) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }
 
 // The detailed status of INACTIVE lifecycleState.
-func (o CustomerSecretKeyOutput) InactiveState() pulumi.StringOutput {
-	return o.ApplyT(func(v *CustomerSecretKey) pulumi.StringOutput { return v.InactiveState }).(pulumi.StringOutput)
+func (o CustomerSecretKeyOutput) InactiveState() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CustomerSecretKey) pulumi.StringPtrOutput { return v.InactiveState }).(pulumi.StringPtrOutput)
 }
 
 // The secret key.
-func (o CustomerSecretKeyOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v *CustomerSecretKey) pulumi.StringOutput { return v.Key }).(pulumi.StringOutput)
+func (o CustomerSecretKeyOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CustomerSecretKey) pulumi.StringPtrOutput { return v.Key }).(pulumi.StringPtrOutput)
 }
 
 // The secret key's current state.
-func (o CustomerSecretKeyOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *CustomerSecretKey) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o CustomerSecretKeyOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CustomerSecretKey) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Date and time the `CustomerSecretKey` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-func (o CustomerSecretKeyOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *CustomerSecretKey) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o CustomerSecretKeyOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CustomerSecretKey) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // Date and time when this password will expire, in the format defined by RFC3339. Null if it never expires.  Example: `2016-08-25T21:10:29.600Z`
-func (o CustomerSecretKeyOutput) TimeExpires() pulumi.StringOutput {
-	return o.ApplyT(func(v *CustomerSecretKey) pulumi.StringOutput { return v.TimeExpires }).(pulumi.StringOutput)
+func (o CustomerSecretKeyOutput) TimeExpires() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CustomerSecretKey) pulumi.StringPtrOutput { return v.TimeExpires }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the user.
@@ -348,12 +323,6 @@ func (o CustomerSecretKeyArrayOutput) ToCustomerSecretKeyArrayOutputWithContext(
 	return o
 }
 
-func (o CustomerSecretKeyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*CustomerSecretKey] {
-	return pulumix.Output[[]*CustomerSecretKey]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o CustomerSecretKeyArrayOutput) Index(i pulumi.IntInput) CustomerSecretKeyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *CustomerSecretKey {
 		return vs[0].([]*CustomerSecretKey)[vs[1].(int)]
@@ -372,12 +341,6 @@ func (o CustomerSecretKeyMapOutput) ToCustomerSecretKeyMapOutput() CustomerSecre
 
 func (o CustomerSecretKeyMapOutput) ToCustomerSecretKeyMapOutputWithContext(ctx context.Context) CustomerSecretKeyMapOutput {
 	return o
-}
-
-func (o CustomerSecretKeyMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*CustomerSecretKey] {
-	return pulumix.Output[map[string]*CustomerSecretKey]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o CustomerSecretKeyMapOutput) MapIndex(k pulumi.StringInput) CustomerSecretKeyOutput {

@@ -57,12 +57,12 @@ export interface GetWorkRequestLogEntriesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly workRequestId: string;
     /**
      * The list of work_request_log_entries.
      */
-    readonly workRequestLogEntries: outputs.ContainerEngine.GetWorkRequestLogEntriesWorkRequestLogEntry[];
+    readonly workRequestLogEntries?: outputs.ContainerEngine.GetWorkRequestLogEntriesWorkRequestLogEntry[];
 }
 /**
  * This data source provides the list of Work Request Log Entries in Oracle Cloud Infrastructure Container Engine service.

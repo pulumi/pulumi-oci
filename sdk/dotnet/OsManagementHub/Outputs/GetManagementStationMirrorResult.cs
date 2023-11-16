@@ -16,29 +16,29 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         /// <summary>
         /// Directory for the mirroring
         /// </summary>
-        public readonly string Directory;
+        public readonly string? Directory;
         /// <summary>
         /// Port that the proxy will use
         /// </summary>
-        public readonly string Port;
+        public readonly string? Port;
         /// <summary>
         /// Local path for the sslcert
         /// </summary>
-        public readonly string Sslcert;
+        public readonly string? Sslcert;
         /// <summary>
         /// Default sslport for the mirror
         /// </summary>
-        public readonly string Sslport;
+        public readonly string? Sslport;
 
         [OutputConstructor]
         private GetManagementStationMirrorResult(
-            string directory,
+            string? directory,
 
-            string port,
+            string? port,
 
-            string sslcert,
+            string? sslcert,
 
-            string sslport)
+            string? sslport)
         {
             Directory = directory;
             Port = port;

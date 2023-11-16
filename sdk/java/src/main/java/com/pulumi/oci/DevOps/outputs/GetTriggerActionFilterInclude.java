@@ -8,6 +8,8 @@ import com.pulumi.oci.DevOps.outputs.GetTriggerActionFilterIncludeFileFilter;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetTriggerActionFilterInclude {
@@ -15,43 +17,43 @@ public final class GetTriggerActionFilterInclude {
      * @return The target branch for pull requests; not applicable for push requests.
      * 
      */
-    private String baseRef;
-    private List<GetTriggerActionFilterIncludeFileFilter> fileFilters;
+    private @Nullable String baseRef;
+    private @Nullable List<GetTriggerActionFilterIncludeFileFilter> fileFilters;
     /**
      * @return Branch for push event; source branch for pull requests.
      * 
      */
-    private String headRef;
+    private @Nullable String headRef;
     /**
      * @return The repository name for trigger events.
      * 
      */
-    private String repositoryName;
+    private @Nullable String repositoryName;
 
     private GetTriggerActionFilterInclude() {}
     /**
      * @return The target branch for pull requests; not applicable for push requests.
      * 
      */
-    public String baseRef() {
-        return this.baseRef;
+    public Optional<String> baseRef() {
+        return Optional.ofNullable(this.baseRef);
     }
     public List<GetTriggerActionFilterIncludeFileFilter> fileFilters() {
-        return this.fileFilters;
+        return this.fileFilters == null ? List.of() : this.fileFilters;
     }
     /**
      * @return Branch for push event; source branch for pull requests.
      * 
      */
-    public String headRef() {
-        return this.headRef;
+    public Optional<String> headRef() {
+        return Optional.ofNullable(this.headRef);
     }
     /**
      * @return The repository name for trigger events.
      * 
      */
-    public String repositoryName() {
-        return this.repositoryName;
+    public Optional<String> repositoryName() {
+        return Optional.ofNullable(this.repositoryName);
     }
 
     public static Builder builder() {
@@ -63,10 +65,10 @@ public final class GetTriggerActionFilterInclude {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String baseRef;
-        private List<GetTriggerActionFilterIncludeFileFilter> fileFilters;
-        private String headRef;
-        private String repositoryName;
+        private @Nullable String baseRef;
+        private @Nullable List<GetTriggerActionFilterIncludeFileFilter> fileFilters;
+        private @Nullable String headRef;
+        private @Nullable String repositoryName;
         public Builder() {}
         public Builder(GetTriggerActionFilterInclude defaults) {
     	      Objects.requireNonNull(defaults);
@@ -77,26 +79,26 @@ public final class GetTriggerActionFilterInclude {
         }
 
         @CustomType.Setter
-        public Builder baseRef(String baseRef) {
-            this.baseRef = Objects.requireNonNull(baseRef);
+        public Builder baseRef(@Nullable String baseRef) {
+            this.baseRef = baseRef;
             return this;
         }
         @CustomType.Setter
-        public Builder fileFilters(List<GetTriggerActionFilterIncludeFileFilter> fileFilters) {
-            this.fileFilters = Objects.requireNonNull(fileFilters);
+        public Builder fileFilters(@Nullable List<GetTriggerActionFilterIncludeFileFilter> fileFilters) {
+            this.fileFilters = fileFilters;
             return this;
         }
         public Builder fileFilters(GetTriggerActionFilterIncludeFileFilter... fileFilters) {
             return fileFilters(List.of(fileFilters));
         }
         @CustomType.Setter
-        public Builder headRef(String headRef) {
-            this.headRef = Objects.requireNonNull(headRef);
+        public Builder headRef(@Nullable String headRef) {
+            this.headRef = headRef;
             return this;
         }
         @CustomType.Setter
-        public Builder repositoryName(String repositoryName) {
-            this.repositoryName = Objects.requireNonNull(repositoryName);
+        public Builder repositoryName(@Nullable String repositoryName) {
+            this.repositoryName = repositoryName;
             return this;
         }
         public GetTriggerActionFilterInclude build() {

@@ -57,7 +57,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// (Updatable) IP version associated with the listener.
         /// </summary>
         [Output("ipVersion")]
-        public Output<string> IpVersion { get; private set; } = null!;
+        public Output<string?> IpVersion { get; private set; } = null!;
 
         /// <summary>
         /// A friendly name for the listener. It must be unique and it cannot be changed.  Example: `example_listener`

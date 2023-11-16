@@ -94,14 +94,14 @@ public class FusionEnvironmentFamily extends com.pulumi.resources.CustomResource
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) A friendly name for the environment family. The name must contain only letters, numbers, dashes, and underscores. Can be changed later.
@@ -122,70 +122,70 @@ public class FusionEnvironmentFamily extends com.pulumi.resources.CustomResource
      * 
      */
     @Export(name="familyMaintenancePolicy", refs={FusionEnvironmentFamilyFamilyMaintenancePolicy.class}, tree="[0]")
-    private Output<FusionEnvironmentFamilyFamilyMaintenancePolicy> familyMaintenancePolicy;
+    private Output</* @Nullable */ FusionEnvironmentFamilyFamilyMaintenancePolicy> familyMaintenancePolicy;
 
     /**
      * @return (Updatable) The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
      * 
      */
-    public Output<FusionEnvironmentFamilyFamilyMaintenancePolicy> familyMaintenancePolicy() {
-        return this.familyMaintenancePolicy;
+    public Output<Optional<FusionEnvironmentFamilyFamilyMaintenancePolicy>> familyMaintenancePolicy() {
+        return Codegen.optional(this.familyMaintenancePolicy);
     }
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * When set to True, a subscription update is required for the environment family.
      * 
      */
     @Export(name="isSubscriptionUpdateNeeded", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isSubscriptionUpdateNeeded;
+    private Output</* @Nullable */ Boolean> isSubscriptionUpdateNeeded;
 
     /**
      * @return When set to True, a subscription update is required for the environment family.
      * 
      */
-    public Output<Boolean> isSubscriptionUpdateNeeded() {
-        return this.isSubscriptionUpdateNeeded;
+    public Output<Optional<Boolean>> isSubscriptionUpdateNeeded() {
+        return Codegen.optional(this.isSubscriptionUpdateNeeded);
     }
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * The current state of the FusionEnvironmentFamily.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the FusionEnvironmentFamily.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * (Updatable) The list of the IDs of the applications subscriptions that are associated with the environment family.
@@ -212,28 +212,28 @@ public class FusionEnvironmentFamily extends com.pulumi.resources.CustomResource
      * 
      */
     @Export(name="systemName", refs={String.class}, tree="[0]")
-    private Output<String> systemName;
+    private Output</* @Nullable */ String> systemName;
 
     /**
      * @return Environment Specific Guid/ System Name
      * 
      */
-    public Output<String> systemName() {
-        return this.systemName;
+    public Output<Optional<String>> systemName() {
+        return Codegen.optional(this.systemName);
     }
     /**
      * The time the the FusionEnvironmentFamily was created. An RFC3339 formatted datetime string.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The time the the FusionEnvironmentFamily was created. An RFC3339 formatted datetime string.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> timeUpdated;

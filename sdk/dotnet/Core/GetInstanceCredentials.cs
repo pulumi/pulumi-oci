@@ -112,26 +112,26 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string InstanceId;
         /// <summary>
         /// The password for the username.
         /// </summary>
-        public readonly string Password;
+        public readonly string? Password;
         /// <summary>
         /// The username.
         /// </summary>
-        public readonly string Username;
+        public readonly string? Username;
 
         [OutputConstructor]
         private GetInstanceCredentialsResult(
-            string id,
+            string? id,
 
             string instanceId,
 
-            string password,
+            string? password,
 
-            string username)
+            string? username)
         {
             Id = id;
             InstanceId = instanceId;

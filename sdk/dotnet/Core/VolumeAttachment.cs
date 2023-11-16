@@ -63,43 +63,43 @@ namespace Pulumi.Oci.Core
         /// The availability domain of an instance.  Example: `Uocm:PHX-AD-1`
         /// </summary>
         [Output("availabilityDomain")]
-        public Output<string> AvailabilityDomain { get; private set; } = null!;
+        public Output<string?> AvailabilityDomain { get; private set; } = null!;
 
         /// <summary>
         /// The Challenge-Handshake-Authentication-Protocol (CHAP) secret valid for the associated CHAP user name. (Also called the "CHAP password".)
         /// </summary>
         [Output("chapSecret")]
-        public Output<string> ChapSecret { get; private set; } = null!;
+        public Output<string?> ChapSecret { get; private set; } = null!;
 
         /// <summary>
         /// The volume's system-generated Challenge-Handshake-Authentication-Protocol (CHAP) user name. See [RFC 1994](https://tools.ietf.org/html/rfc1994) for more on CHAP.  Example: `ocid1.volume.oc1.phx.&lt;unique_ID&gt;`
         /// </summary>
         [Output("chapUsername")]
-        public Output<string> ChapUsername { get; private set; } = null!;
+        public Output<string?> ChapUsername { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the compartment.
         /// </summary>
         [Output("compartmentId")]
-        public Output<string> CompartmentId { get; private set; } = null!;
+        public Output<string?> CompartmentId { get; private set; } = null!;
 
         /// <summary>
         /// The device name. To retrieve a list of devices for a given instance, see [ListInstanceDevices](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Device/ListInstanceDevices).
         /// </summary>
         [Output("device")]
-        public Output<string> Device { get; private set; } = null!;
+        public Output<string?> Device { get; private set; } = null!;
 
         /// <summary>
         /// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// Refer the top-level definition of encryptionInTransitType. The default value is NONE.
         /// </summary>
         [Output("encryptionInTransitType")]
-        public Output<string> EncryptionInTransitType { get; private set; } = null!;
+        public Output<string?> EncryptionInTransitType { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the instance.
@@ -111,49 +111,49 @@ namespace Pulumi.Oci.Core
         /// The volume's iSCSI IP address.  Example: `169.254.2.2`
         /// </summary>
         [Output("ipv4")]
-        public Output<string> Ipv4 { get; private set; } = null!;
+        public Output<string?> Ipv4 { get; private set; } = null!;
 
         /// <summary>
         /// The target volume's iSCSI Qualified Name in the format defined by [RFC 3720](https://tools.ietf.org/html/rfc3720#page-32).  Example: `iqn.2015-12.com.oracleiaas:40b7ee03-883f-46c6-a951-63d2841d2195`
         /// </summary>
         [Output("iqn")]
-        public Output<string> Iqn { get; private set; } = null!;
+        public Output<string?> Iqn { get; private set; } = null!;
 
         /// <summary>
         /// Whether to enable Oracle Cloud Agent to perform the iSCSI login and logout commands after the volume attach or detach operations for non multipath-enabled iSCSI attachments.
         /// </summary>
         [Output("isAgentAutoIscsiLoginEnabled")]
-        public Output<bool> IsAgentAutoIscsiLoginEnabled { get; private set; } = null!;
+        public Output<bool?> IsAgentAutoIscsiLoginEnabled { get; private set; } = null!;
 
         /// <summary>
         /// Whether the Iscsi or Paravirtualized attachment is multipath or not, it is not applicable to NVMe attachment.
         /// </summary>
         [Output("isMultipath")]
-        public Output<bool> IsMultipath { get; private set; } = null!;
+        public Output<bool?> IsMultipath { get; private set; } = null!;
 
         /// <summary>
         /// Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false.
         /// </summary>
         [Output("isPvEncryptionInTransitEnabled")]
-        public Output<bool> IsPvEncryptionInTransitEnabled { get; private set; } = null!;
+        public Output<bool?> IsPvEncryptionInTransitEnabled { get; private set; } = null!;
 
         /// <summary>
         /// Whether the attachment was created in read-only mode.
         /// </summary>
         [Output("isReadOnly")]
-        public Output<bool> IsReadOnly { get; private set; } = null!;
+        public Output<bool?> IsReadOnly { get; private set; } = null!;
 
         /// <summary>
         /// Whether the attachment should be created in shareable mode. If an attachment is created in shareable mode, then other instances can attach the same volume, provided that they also create their attachments in shareable mode. Only certain volume types can be attached in shareable mode. Defaults to false if not specified.
         /// </summary>
         [Output("isShareable")]
-        public Output<bool> IsShareable { get; private set; } = null!;
+        public Output<bool?> IsShareable { get; private set; } = null!;
 
         /// <summary>
         /// The iscsi login state of the volume attachment. For a Iscsi volume attachment, all iscsi sessions need to be all logged-in or logged-out to be in logged-in or logged-out state.
         /// </summary>
         [Output("iscsiLoginState")]
-        public Output<string> IscsiLoginState { get; private set; } = null!;
+        public Output<string?> IscsiLoginState { get; private set; } = null!;
 
         /// <summary>
         /// A list of secondary multipath devices
@@ -165,25 +165,25 @@ namespace Pulumi.Oci.Core
         /// The volume's iSCSI port, usually port 860 or 3260.  Example: `3260`
         /// </summary>
         [Output("port")]
-        public Output<int> Port { get; private set; } = null!;
+        public Output<int?> Port { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the volume attachment.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the volume was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// Whether to use CHAP authentication for the volume attachment. Defaults to false.
         /// </summary>
         [Output("useChap")]
-        public Output<bool> UseChap { get; private set; } = null!;
+        public Output<bool?> UseChap { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the volume.

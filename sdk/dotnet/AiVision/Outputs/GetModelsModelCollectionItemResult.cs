@@ -16,83 +16,83 @@ namespace Pulumi.Oci.AiVision.Outputs
         /// <summary>
         /// Average precision of the trained model
         /// </summary>
-        public readonly double AveragePrecision;
+        public readonly double? AveragePrecision;
         /// <summary>
         /// The ID of the compartment in which to list resources.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Confidence ratio of the calculation
         /// </summary>
-        public readonly double ConfidenceThreshold;
+        public readonly double? ConfidenceThreshold;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// A short description of the model.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// A filter to return only resources that match the entire display name given.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// unique Model identifier
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// If It's true, Training is set for recommended epochs needed for quick training.
         /// </summary>
-        public readonly bool IsQuickMode;
+        public readonly bool? IsQuickMode;
         /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// The maximum duration in hours for which the training will run.
         /// </summary>
-        public readonly double MaxTrainingDurationInHours;
+        public readonly double? MaxTrainingDurationInHours;
         /// <summary>
         /// Complete Training Metrics for successful trained model
         /// </summary>
-        public readonly string Metrics;
+        public readonly string? Metrics;
         /// <summary>
         /// Type of the Model.
         /// </summary>
-        public readonly string ModelType;
+        public readonly string? ModelType;
         /// <summary>
         /// The version of the model
         /// </summary>
-        public readonly string ModelVersion;
+        public readonly string? ModelVersion;
         /// <summary>
         /// Precision of the trained model
         /// </summary>
-        public readonly double Precision;
+        public readonly double? Precision;
         /// <summary>
         /// The ID of the project for which to list the objects.
         /// </summary>
-        public readonly string ProjectId;
+        public readonly string? ProjectId;
         /// <summary>
         /// Recall of the trained model
         /// </summary>
-        public readonly double Recall;
+        public readonly double? Recall;
         /// <summary>
         /// A filter to return only resources their lifecycleState matches the given lifecycleState.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, object>? SystemTags;
         /// <summary>
         /// Total number of testing Images
         /// </summary>
-        public readonly int TestImageCount;
+        public readonly int? TestImageCount;
         /// <summary>
         /// The base entity for a Dataset, which is the input for Model creation.
         /// </summary>
@@ -100,19 +100,19 @@ namespace Pulumi.Oci.AiVision.Outputs
         /// <summary>
         /// The time the Model was created. An RFC3339 formatted datetime string
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The time the Model was updated. An RFC3339 formatted datetime string
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
         /// <summary>
         /// Total number of training Images
         /// </summary>
-        public readonly int TotalImageCount;
+        public readonly int? TotalImageCount;
         /// <summary>
         /// Total hours actually used for training
         /// </summary>
-        public readonly double TrainedDurationInHours;
+        public readonly double? TrainedDurationInHours;
         /// <summary>
         /// The base entity for a Dataset, which is the input for Model creation.
         /// </summary>
@@ -124,55 +124,55 @@ namespace Pulumi.Oci.AiVision.Outputs
 
         [OutputConstructor]
         private GetModelsModelCollectionItemResult(
-            double averagePrecision,
+            double? averagePrecision,
 
-            string compartmentId,
+            string? compartmentId,
 
-            double confidenceThreshold,
+            double? confidenceThreshold,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string description,
+            string? description,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            bool isQuickMode,
+            bool? isQuickMode,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            double maxTrainingDurationInHours,
+            double? maxTrainingDurationInHours,
 
-            string metrics,
+            string? metrics,
 
-            string modelType,
+            string? modelType,
 
-            string modelVersion,
+            string? modelVersion,
 
-            double precision,
+            double? precision,
 
-            string projectId,
+            string? projectId,
 
-            double recall,
+            double? recall,
 
-            string state,
+            string? state,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, object>? systemTags,
 
-            int testImageCount,
+            int? testImageCount,
 
             ImmutableArray<Outputs.GetModelsModelCollectionItemTestingDatasetResult> testingDatasets,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated,
+            string? timeUpdated,
 
-            int totalImageCount,
+            int? totalImageCount,
 
-            double trainedDurationInHours,
+            double? trainedDurationInHours,
 
             ImmutableArray<Outputs.GetModelsModelCollectionItemTrainingDatasetResult> trainingDatasets,
 

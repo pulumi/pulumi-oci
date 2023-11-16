@@ -51,15 +51,15 @@ export interface GetSecretVersionResult {
     /**
      * The content type of the secret version's secret contents.
      */
-    readonly contentType: string;
+    readonly contentType?: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The name of the secret version. A name is unique across versions of a secret.
      */
-    readonly name: string;
+    readonly name?: string;
     /**
      * The OCID of the secret.
      */
@@ -68,23 +68,23 @@ export interface GetSecretVersionResult {
     /**
      * A list of possible rotation states for the secret version. A secret version marked `CURRENT` is currently in use. A secret version marked `PENDING` is staged and available for use, but has not been applied on the target system and, therefore, has not been rotated into current, active use. The secret most recently uploaded to a vault is always marked `LATEST`. (The first version of a secret is always marked as both `CURRENT` and `LATEST`.) A secret version marked `PREVIOUS` is the secret version that was most recently marked `CURRENT`, before the last secret version rotation. A secret version marked `DEPRECATED` is neither current, pending, nor the previous one in use. Only secret versions marked `DEPRECATED` can be scheduled for deletion.
      */
-    readonly stages: string[];
+    readonly stages?: string[];
     /**
      * A optional property indicating when the secret version was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * An optional property indicating when the current secret version will expire, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      */
-    readonly timeOfCurrentVersionExpiry: string;
+    readonly timeOfCurrentVersionExpiry?: string;
     /**
      * An optional property indicating when to delete the secret version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      */
-    readonly timeOfDeletion: string;
+    readonly timeOfDeletion?: string;
     /**
      * The version number of the secret.
      */
-    readonly versionNumber: string;
+    readonly versionNumber?: string;
 }
 /**
  * This data source provides details about a specific Secret Version resource in Oracle Cloud Infrastructure Vault service.

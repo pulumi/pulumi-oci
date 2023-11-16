@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedDatabaseSqlTuningSetItem {
@@ -14,51 +16,51 @@ public final class GetManagedDatabaseSqlTuningSetItem {
      * @return The description of the SQL tuning set.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return The name of the SQL tuning set.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return The owner of the SQL tuning set.
      * 
      */
-    private String owner;
+    private @Nullable String owner;
     /**
      * @return The number of SQL statements in the SQL tuning set.
      * 
      */
-    private Integer statementCounts;
+    private @Nullable Integer statementCounts;
 
     private GetManagedDatabaseSqlTuningSetItem() {}
     /**
      * @return The description of the SQL tuning set.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return The name of the SQL tuning set.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return The owner of the SQL tuning set.
      * 
      */
-    public String owner() {
-        return this.owner;
+    public Optional<String> owner() {
+        return Optional.ofNullable(this.owner);
     }
     /**
      * @return The number of SQL statements in the SQL tuning set.
      * 
      */
-    public Integer statementCounts() {
-        return this.statementCounts;
+    public Optional<Integer> statementCounts() {
+        return Optional.ofNullable(this.statementCounts);
     }
 
     public static Builder builder() {
@@ -70,10 +72,10 @@ public final class GetManagedDatabaseSqlTuningSetItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String description;
-        private String name;
-        private String owner;
-        private Integer statementCounts;
+        private @Nullable String description;
+        private @Nullable String name;
+        private @Nullable String owner;
+        private @Nullable Integer statementCounts;
         public Builder() {}
         public Builder(GetManagedDatabaseSqlTuningSetItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -84,23 +86,23 @@ public final class GetManagedDatabaseSqlTuningSetItem {
         }
 
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder owner(String owner) {
-            this.owner = Objects.requireNonNull(owner);
+        public Builder owner(@Nullable String owner) {
+            this.owner = owner;
             return this;
         }
         @CustomType.Setter
-        public Builder statementCounts(Integer statementCounts) {
-            this.statementCounts = Objects.requireNonNull(statementCounts);
+        public Builder statementCounts(@Nullable Integer statementCounts) {
+            this.statementCounts = statementCounts;
             return this;
         }
         public GetManagedDatabaseSqlTuningSetItem build() {

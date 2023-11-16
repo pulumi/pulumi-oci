@@ -49,17 +49,11 @@ class GetAppAccelerationsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        WebAppAcceleration display name, can be renamed.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -70,33 +64,21 @@ class GetAppAccelerationsResult:
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WebAppAcceleration.
-        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
     def states(self) -> Optional[Sequence[str]]:
-        """
-        The current state of the WebAppAcceleration.
-        """
         return pulumi.get(self, "states")
 
     @property
     @pulumi.getter(name="webAppAccelerationCollections")
-    def web_app_acceleration_collections(self) -> Sequence['outputs.GetAppAccelerationsWebAppAccelerationCollectionResult']:
-        """
-        The list of web_app_acceleration_collection.
-        """
+    def web_app_acceleration_collections(self) -> Optional[Sequence['outputs.GetAppAccelerationsWebAppAccelerationCollectionResult']]:
         return pulumi.get(self, "web_app_acceleration_collections")
 
     @property
     @pulumi.getter(name="webAppAccelerationPolicyId")
     def web_app_acceleration_policy_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of WebAppAccelerationPolicy, which is attached to the resource.
-        """
         return pulumi.get(self, "web_app_acceleration_policy_id")
 
 
@@ -123,29 +105,7 @@ def get_app_accelerations(compartment_id: Optional[str] = None,
                           web_app_acceleration_policy_id: Optional[str] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppAccelerationsResult:
     """
-    This data source provides the list of Web App Accelerations in Oracle Cloud Infrastructure Waa service.
-
-    Gets a list of all WebAppAccelerations in a compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_web_app_accelerations = oci.Waa.get_app_accelerations(compartment_id=var["compartment_id"],
-        display_name=var["web_app_acceleration_display_name"],
-        id=var["web_app_acceleration_id"],
-        states=var["web_app_acceleration_state"],
-        web_app_acceleration_policy_id=oci_waa_web_app_acceleration_policy["test_web_app_acceleration_policy"]["id"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str id: A filter to return only the WebAppAcceleration with the given [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param Sequence[str] states: A filter to return only resources that match the given lifecycleState.
-    :param str web_app_acceleration_policy_id: A filter to return only the WebAppAcceleration with the given [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of related WebAppAccelerationPolicy.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -176,28 +136,6 @@ def get_app_accelerations_output(compartment_id: Optional[pulumi.Input[str]] = N
                                  web_app_acceleration_policy_id: Optional[pulumi.Input[Optional[str]]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppAccelerationsResult]:
     """
-    This data source provides the list of Web App Accelerations in Oracle Cloud Infrastructure Waa service.
-
-    Gets a list of all WebAppAccelerations in a compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_web_app_accelerations = oci.Waa.get_app_accelerations(compartment_id=var["compartment_id"],
-        display_name=var["web_app_acceleration_display_name"],
-        id=var["web_app_acceleration_id"],
-        states=var["web_app_acceleration_state"],
-        web_app_acceleration_policy_id=oci_waa_web_app_acceleration_policy["test_web_app_acceleration_policy"]["id"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str id: A filter to return only the WebAppAcceleration with the given [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param Sequence[str] states: A filter to return only resources that match the given lifecycleState.
-    :param str web_app_acceleration_policy_id: A filter to return only the WebAppAcceleration with the given [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of related WebAppAccelerationPolicy.
+    Use this data source to access information about an existing resource.
     """
     ...

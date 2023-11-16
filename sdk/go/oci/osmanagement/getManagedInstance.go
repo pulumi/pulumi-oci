@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Managed Instance resource in Oracle Cloud Infrastructure OS Management service.
@@ -62,56 +61,56 @@ type LookupManagedInstanceResult struct {
 	// if present, indicates the Managed Instance is an autonomous instance. Holds all the Autonomous specific information
 	Autonomouses []GetManagedInstanceAutonomouse `pulumi:"autonomouses"`
 	// Number of bug fix type updates available to be installed
-	BugUpdatesAvailable int `pulumi:"bugUpdatesAvailable"`
+	BugUpdatesAvailable *int `pulumi:"bugUpdatesAvailable"`
 	// list of child Software Sources attached to the Managed Instance
 	ChildSoftwareSources []GetManagedInstanceChildSoftwareSource `pulumi:"childSoftwareSources"`
 	// OCID for the Compartment
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Information specified by the user about the managed instance
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// User friendly name
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Number of enhancement type updates available to be installed
-	EnhancementUpdatesAvailable int `pulumi:"enhancementUpdatesAvailable"`
+	EnhancementUpdatesAvailable *int `pulumi:"enhancementUpdatesAvailable"`
 	// software source identifier
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// True if user allow data collection for this instance
-	IsDataCollectionAuthorized bool `pulumi:"isDataCollectionAuthorized"`
+	IsDataCollectionAuthorized *bool `pulumi:"isDataCollectionAuthorized"`
 	// Indicates whether a reboot is required to complete installation of updates.
-	IsRebootRequired bool `pulumi:"isRebootRequired"`
+	IsRebootRequired *bool `pulumi:"isRebootRequired"`
 	// The ksplice effective kernel version
-	KspliceEffectiveKernelVersion string `pulumi:"kspliceEffectiveKernelVersion"`
+	KspliceEffectiveKernelVersion *string `pulumi:"kspliceEffectiveKernelVersion"`
 	// Time at which the instance last booted
-	LastBoot string `pulumi:"lastBoot"`
+	LastBoot *string `pulumi:"lastBoot"`
 	// Time at which the instance last checked in
-	LastCheckin string `pulumi:"lastCheckin"`
+	LastCheckin *string `pulumi:"lastCheckin"`
 	// The ids of the managed instance groups of which this instance is a member.
 	ManagedInstanceGroups []GetManagedInstanceManagedInstanceGroup `pulumi:"managedInstanceGroups"`
 	ManagedInstanceId     string                                   `pulumi:"managedInstanceId"`
 	// OCID of the ONS topic used to send notification to users
-	NotificationTopicId string `pulumi:"notificationTopicId"`
+	NotificationTopicId *string `pulumi:"notificationTopicId"`
 	// The Operating System type of the managed instance.
-	OsFamily string `pulumi:"osFamily"`
+	OsFamily *string `pulumi:"osFamily"`
 	// Operating System Kernel Version
-	OsKernelVersion string `pulumi:"osKernelVersion"`
+	OsKernelVersion *string `pulumi:"osKernelVersion"`
 	// Operating System Name
-	OsName string `pulumi:"osName"`
+	OsName *string `pulumi:"osName"`
 	// Operating System Version
-	OsVersion string `pulumi:"osVersion"`
+	OsVersion *string `pulumi:"osVersion"`
 	// Number of non-classified updates available to be installed
-	OtherUpdatesAvailable int `pulumi:"otherUpdatesAvailable"`
+	OtherUpdatesAvailable *int `pulumi:"otherUpdatesAvailable"`
 	// the parent (base) Software Source attached to the Managed Instance
 	ParentSoftwareSources []GetManagedInstanceParentSoftwareSource `pulumi:"parentSoftwareSources"`
 	// Number of scheduled jobs associated with this instance
-	ScheduledJobCount int `pulumi:"scheduledJobCount"`
+	ScheduledJobCount *int `pulumi:"scheduledJobCount"`
 	// Number of security type updates available to be installed
-	SecurityUpdatesAvailable int `pulumi:"securityUpdatesAvailable"`
+	SecurityUpdatesAvailable *int `pulumi:"securityUpdatesAvailable"`
 	// status of the managed instance.
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 	// Number of updates available to be installed
-	UpdatesAvailable int `pulumi:"updatesAvailable"`
+	UpdatesAvailable *int `pulumi:"updatesAvailable"`
 	// Number of work requests associated with this instance
-	WorkRequestCount int `pulumi:"workRequestCount"`
+	WorkRequestCount *int `pulumi:"workRequestCount"`
 }
 
 func LookupManagedInstanceOutput(ctx *pulumi.Context, args LookupManagedInstanceOutputArgs, opts ...pulumi.InvokeOption) LookupManagedInstanceResultOutput {
@@ -152,20 +151,14 @@ func (o LookupManagedInstanceResultOutput) ToLookupManagedInstanceResultOutputWi
 	return o
 }
 
-func (o LookupManagedInstanceResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupManagedInstanceResult] {
-	return pulumix.Output[LookupManagedInstanceResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // if present, indicates the Managed Instance is an autonomous instance. Holds all the Autonomous specific information
 func (o LookupManagedInstanceResultOutput) Autonomouses() GetManagedInstanceAutonomouseArrayOutput {
 	return o.ApplyT(func(v LookupManagedInstanceResult) []GetManagedInstanceAutonomouse { return v.Autonomouses }).(GetManagedInstanceAutonomouseArrayOutput)
 }
 
 // Number of bug fix type updates available to be installed
-func (o LookupManagedInstanceResultOutput) BugUpdatesAvailable() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupManagedInstanceResult) int { return v.BugUpdatesAvailable }).(pulumi.IntOutput)
+func (o LookupManagedInstanceResultOutput) BugUpdatesAvailable() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupManagedInstanceResult) *int { return v.BugUpdatesAvailable }).(pulumi.IntPtrOutput)
 }
 
 // list of child Software Sources attached to the Managed Instance
@@ -176,53 +169,53 @@ func (o LookupManagedInstanceResultOutput) ChildSoftwareSources() GetManagedInst
 }
 
 // OCID for the Compartment
-func (o LookupManagedInstanceResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupManagedInstanceResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupManagedInstanceResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupManagedInstanceResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Information specified by the user about the managed instance
-func (o LookupManagedInstanceResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupManagedInstanceResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupManagedInstanceResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupManagedInstanceResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // User friendly name
-func (o LookupManagedInstanceResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupManagedInstanceResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupManagedInstanceResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupManagedInstanceResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Number of enhancement type updates available to be installed
-func (o LookupManagedInstanceResultOutput) EnhancementUpdatesAvailable() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupManagedInstanceResult) int { return v.EnhancementUpdatesAvailable }).(pulumi.IntOutput)
+func (o LookupManagedInstanceResultOutput) EnhancementUpdatesAvailable() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupManagedInstanceResult) *int { return v.EnhancementUpdatesAvailable }).(pulumi.IntPtrOutput)
 }
 
 // software source identifier
-func (o LookupManagedInstanceResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupManagedInstanceResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupManagedInstanceResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupManagedInstanceResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // True if user allow data collection for this instance
-func (o LookupManagedInstanceResultOutput) IsDataCollectionAuthorized() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupManagedInstanceResult) bool { return v.IsDataCollectionAuthorized }).(pulumi.BoolOutput)
+func (o LookupManagedInstanceResultOutput) IsDataCollectionAuthorized() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupManagedInstanceResult) *bool { return v.IsDataCollectionAuthorized }).(pulumi.BoolPtrOutput)
 }
 
 // Indicates whether a reboot is required to complete installation of updates.
-func (o LookupManagedInstanceResultOutput) IsRebootRequired() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupManagedInstanceResult) bool { return v.IsRebootRequired }).(pulumi.BoolOutput)
+func (o LookupManagedInstanceResultOutput) IsRebootRequired() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupManagedInstanceResult) *bool { return v.IsRebootRequired }).(pulumi.BoolPtrOutput)
 }
 
 // The ksplice effective kernel version
-func (o LookupManagedInstanceResultOutput) KspliceEffectiveKernelVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupManagedInstanceResult) string { return v.KspliceEffectiveKernelVersion }).(pulumi.StringOutput)
+func (o LookupManagedInstanceResultOutput) KspliceEffectiveKernelVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupManagedInstanceResult) *string { return v.KspliceEffectiveKernelVersion }).(pulumi.StringPtrOutput)
 }
 
 // Time at which the instance last booted
-func (o LookupManagedInstanceResultOutput) LastBoot() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupManagedInstanceResult) string { return v.LastBoot }).(pulumi.StringOutput)
+func (o LookupManagedInstanceResultOutput) LastBoot() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupManagedInstanceResult) *string { return v.LastBoot }).(pulumi.StringPtrOutput)
 }
 
 // Time at which the instance last checked in
-func (o LookupManagedInstanceResultOutput) LastCheckin() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupManagedInstanceResult) string { return v.LastCheckin }).(pulumi.StringOutput)
+func (o LookupManagedInstanceResultOutput) LastCheckin() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupManagedInstanceResult) *string { return v.LastCheckin }).(pulumi.StringPtrOutput)
 }
 
 // The ids of the managed instance groups of which this instance is a member.
@@ -237,33 +230,33 @@ func (o LookupManagedInstanceResultOutput) ManagedInstanceId() pulumi.StringOutp
 }
 
 // OCID of the ONS topic used to send notification to users
-func (o LookupManagedInstanceResultOutput) NotificationTopicId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupManagedInstanceResult) string { return v.NotificationTopicId }).(pulumi.StringOutput)
+func (o LookupManagedInstanceResultOutput) NotificationTopicId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupManagedInstanceResult) *string { return v.NotificationTopicId }).(pulumi.StringPtrOutput)
 }
 
 // The Operating System type of the managed instance.
-func (o LookupManagedInstanceResultOutput) OsFamily() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupManagedInstanceResult) string { return v.OsFamily }).(pulumi.StringOutput)
+func (o LookupManagedInstanceResultOutput) OsFamily() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupManagedInstanceResult) *string { return v.OsFamily }).(pulumi.StringPtrOutput)
 }
 
 // Operating System Kernel Version
-func (o LookupManagedInstanceResultOutput) OsKernelVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupManagedInstanceResult) string { return v.OsKernelVersion }).(pulumi.StringOutput)
+func (o LookupManagedInstanceResultOutput) OsKernelVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupManagedInstanceResult) *string { return v.OsKernelVersion }).(pulumi.StringPtrOutput)
 }
 
 // Operating System Name
-func (o LookupManagedInstanceResultOutput) OsName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupManagedInstanceResult) string { return v.OsName }).(pulumi.StringOutput)
+func (o LookupManagedInstanceResultOutput) OsName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupManagedInstanceResult) *string { return v.OsName }).(pulumi.StringPtrOutput)
 }
 
 // Operating System Version
-func (o LookupManagedInstanceResultOutput) OsVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupManagedInstanceResult) string { return v.OsVersion }).(pulumi.StringOutput)
+func (o LookupManagedInstanceResultOutput) OsVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupManagedInstanceResult) *string { return v.OsVersion }).(pulumi.StringPtrOutput)
 }
 
 // Number of non-classified updates available to be installed
-func (o LookupManagedInstanceResultOutput) OtherUpdatesAvailable() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupManagedInstanceResult) int { return v.OtherUpdatesAvailable }).(pulumi.IntOutput)
+func (o LookupManagedInstanceResultOutput) OtherUpdatesAvailable() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupManagedInstanceResult) *int { return v.OtherUpdatesAvailable }).(pulumi.IntPtrOutput)
 }
 
 // the parent (base) Software Source attached to the Managed Instance
@@ -274,28 +267,28 @@ func (o LookupManagedInstanceResultOutput) ParentSoftwareSources() GetManagedIns
 }
 
 // Number of scheduled jobs associated with this instance
-func (o LookupManagedInstanceResultOutput) ScheduledJobCount() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupManagedInstanceResult) int { return v.ScheduledJobCount }).(pulumi.IntOutput)
+func (o LookupManagedInstanceResultOutput) ScheduledJobCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupManagedInstanceResult) *int { return v.ScheduledJobCount }).(pulumi.IntPtrOutput)
 }
 
 // Number of security type updates available to be installed
-func (o LookupManagedInstanceResultOutput) SecurityUpdatesAvailable() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupManagedInstanceResult) int { return v.SecurityUpdatesAvailable }).(pulumi.IntOutput)
+func (o LookupManagedInstanceResultOutput) SecurityUpdatesAvailable() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupManagedInstanceResult) *int { return v.SecurityUpdatesAvailable }).(pulumi.IntPtrOutput)
 }
 
 // status of the managed instance.
-func (o LookupManagedInstanceResultOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupManagedInstanceResult) string { return v.Status }).(pulumi.StringOutput)
+func (o LookupManagedInstanceResultOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupManagedInstanceResult) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // Number of updates available to be installed
-func (o LookupManagedInstanceResultOutput) UpdatesAvailable() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupManagedInstanceResult) int { return v.UpdatesAvailable }).(pulumi.IntOutput)
+func (o LookupManagedInstanceResultOutput) UpdatesAvailable() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupManagedInstanceResult) *int { return v.UpdatesAvailable }).(pulumi.IntPtrOutput)
 }
 
 // Number of work requests associated with this instance
-func (o LookupManagedInstanceResultOutput) WorkRequestCount() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupManagedInstanceResult) int { return v.WorkRequestCount }).(pulumi.IntOutput)
+func (o LookupManagedInstanceResultOutput) WorkRequestCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupManagedInstanceResult) *int { return v.WorkRequestCount }).(pulumi.IntPtrOutput)
 }
 
 func init() {

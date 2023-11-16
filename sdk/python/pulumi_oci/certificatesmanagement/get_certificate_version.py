@@ -66,9 +66,6 @@ class GetCertificateVersionResult:
     @property
     @pulumi.getter(name="certificateId")
     def certificate_id(self) -> str:
-        """
-        The OCID of the certificate.
-        """
         return pulumi.get(self, "certificate_id")
 
     @property
@@ -78,7 +75,7 @@ class GetCertificateVersionResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -86,82 +83,52 @@ class GetCertificateVersionResult:
 
     @property
     @pulumi.getter(name="issuerCaVersionNumber")
-    def issuer_ca_version_number(self) -> str:
-        """
-        The version number of the issuing certificate authority (CA).
-        """
+    def issuer_ca_version_number(self) -> Optional[str]:
         return pulumi.get(self, "issuer_ca_version_number")
 
     @property
     @pulumi.getter(name="revocationStatuses")
-    def revocation_statuses(self) -> Sequence['outputs.GetCertificateVersionRevocationStatusResult']:
-        """
-        The current revocation status of the entity.
-        """
+    def revocation_statuses(self) -> Optional[Sequence['outputs.GetCertificateVersionRevocationStatusResult']]:
         return pulumi.get(self, "revocation_statuses")
 
     @property
     @pulumi.getter(name="serialNumber")
-    def serial_number(self) -> str:
-        """
-        A unique certificate identifier used in certificate revocation tracking, formatted as octets. Example: `03 AC FC FA CC B3 CB 02 B8 F8 DE F5 85 E7 7B FF`
-        """
+    def serial_number(self) -> Optional[str]:
         return pulumi.get(self, "serial_number")
 
     @property
     @pulumi.getter
-    def stages(self) -> Sequence[str]:
-        """
-        A list of stages of this entity.
-        """
+    def stages(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "stages")
 
     @property
     @pulumi.getter(name="subjectAlternativeNames")
-    def subject_alternative_names(self) -> Sequence['outputs.GetCertificateVersionSubjectAlternativeNameResult']:
-        """
-        A list of subject alternative names.
-        """
+    def subject_alternative_names(self) -> Optional[Sequence['outputs.GetCertificateVersionSubjectAlternativeNameResult']]:
         return pulumi.get(self, "subject_alternative_names")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        A optional property indicating when the certificate version was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeOfDeletion")
-    def time_of_deletion(self) -> str:
-        """
-        An optional property indicating when to delete the certificate version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-        """
+    def time_of_deletion(self) -> Optional[str]:
         return pulumi.get(self, "time_of_deletion")
 
     @property
     @pulumi.getter
-    def validities(self) -> Sequence['outputs.GetCertificateVersionValidityResult']:
-        """
-        An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
-        """
+    def validities(self) -> Optional[Sequence['outputs.GetCertificateVersionValidityResult']]:
         return pulumi.get(self, "validities")
 
     @property
     @pulumi.getter(name="versionName")
-    def version_name(self) -> str:
-        """
-        The name of the certificate version. When the value is not null, a name is unique across versions of a given certificate.
-        """
+    def version_name(self) -> Optional[str]:
         return pulumi.get(self, "version_name")
 
     @property
     @pulumi.getter(name="versionNumber")
-    def version_number(self) -> str:
-        """
-        The version number of the certificate.
-        """
+    def version_number(self) -> Optional[str]:
         return pulumi.get(self, "version_number")
 
 
@@ -190,23 +157,7 @@ def get_certificate_version(certificate_id: Optional[str] = None,
                             certificate_version_number: Optional[str] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCertificateVersionResult:
     """
-    This data source provides details about a specific Certificate Version resource in Oracle Cloud Infrastructure Certificates Management service.
-
-    Gets details about the specified version of a certificate.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_certificate_version = oci.CertificatesManagement.get_certificate_version(certificate_id=oci_certificates_management_certificate["test_certificate"]["id"],
-        certificate_version_number=var["certificate_version_certificate_version_number"])
-    ```
-
-
-    :param str certificate_id: The OCID of the certificate.
-    :param str certificate_version_number: The version number of the certificate.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['certificateId'] = certificate_id
@@ -235,22 +186,6 @@ def get_certificate_version_output(certificate_id: Optional[pulumi.Input[str]] =
                                    certificate_version_number: Optional[pulumi.Input[str]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCertificateVersionResult]:
     """
-    This data source provides details about a specific Certificate Version resource in Oracle Cloud Infrastructure Certificates Management service.
-
-    Gets details about the specified version of a certificate.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_certificate_version = oci.CertificatesManagement.get_certificate_version(certificate_id=oci_certificates_management_certificate["test_certificate"]["id"],
-        certificate_version_number=var["certificate_version_certificate_version_number"])
-    ```
-
-
-    :param str certificate_id: The OCID of the certificate.
-    :param str certificate_version_number: The version number of the certificate.
+    Use this data source to access information about an existing resource.
     """
     ...

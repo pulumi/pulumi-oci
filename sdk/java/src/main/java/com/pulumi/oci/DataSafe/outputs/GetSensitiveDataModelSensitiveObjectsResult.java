@@ -9,6 +9,7 @@ import com.pulumi.oci.DataSafe.outputs.GetSensitiveDataModelSensitiveObjectsSens
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -18,7 +19,7 @@ public final class GetSensitiveDataModelSensitiveObjectsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The type of the database object that contains the sensitive column.
      * 
@@ -39,7 +40,7 @@ public final class GetSensitiveDataModelSensitiveObjectsResult {
      * @return The list of sensitive_object_collection.
      * 
      */
-    private List<GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollection> sensitiveObjectCollections;
+    private @Nullable List<GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollection> sensitiveObjectCollections;
 
     private GetSensitiveDataModelSensitiveObjectsResult() {}
     public List<GetSensitiveDataModelSensitiveObjectsFilter> filters() {
@@ -49,8 +50,8 @@ public final class GetSensitiveDataModelSensitiveObjectsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The type of the database object that contains the sensitive column.
@@ -81,7 +82,7 @@ public final class GetSensitiveDataModelSensitiveObjectsResult {
      * 
      */
     public List<GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollection> sensitiveObjectCollections() {
-        return this.sensitiveObjectCollections;
+        return this.sensitiveObjectCollections == null ? List.of() : this.sensitiveObjectCollections;
     }
 
     public static Builder builder() {
@@ -94,12 +95,12 @@ public final class GetSensitiveDataModelSensitiveObjectsResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetSensitiveDataModelSensitiveObjectsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable List<String> objectTypes;
         private @Nullable List<String> objects;
         private @Nullable List<String> schemaNames;
         private String sensitiveDataModelId;
-        private List<GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollection> sensitiveObjectCollections;
+        private @Nullable List<GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollection> sensitiveObjectCollections;
         public Builder() {}
         public Builder(GetSensitiveDataModelSensitiveObjectsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -121,8 +122,8 @@ public final class GetSensitiveDataModelSensitiveObjectsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -155,8 +156,8 @@ public final class GetSensitiveDataModelSensitiveObjectsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder sensitiveObjectCollections(List<GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollection> sensitiveObjectCollections) {
-            this.sensitiveObjectCollections = Objects.requireNonNull(sensitiveObjectCollections);
+        public Builder sensitiveObjectCollections(@Nullable List<GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollection> sensitiveObjectCollections) {
+            this.sensitiveObjectCollections = sensitiveObjectCollections;
             return this;
         }
         public Builder sensitiveObjectCollections(GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollection... sensitiveObjectCollections) {

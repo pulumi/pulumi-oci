@@ -81,11 +81,11 @@ export interface GetSddcsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of sddc_collection.
      */
-    readonly sddcCollections: outputs.Ocvp.GetSddcsSddcCollection[];
+    readonly sddcCollections?: outputs.Ocvp.GetSddcsSddcCollection[];
     /**
      * The current state of the SDDC.
      */

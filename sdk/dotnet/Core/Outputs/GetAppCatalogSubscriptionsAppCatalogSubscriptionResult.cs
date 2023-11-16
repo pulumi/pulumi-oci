@@ -20,7 +20,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         public readonly string? EulaLink;
         /// <summary>
         /// A filter to return only the listings that matches the given listing id.
@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// Listing resource id.
         /// </summary>
-        public readonly string ListingResourceId;
+        public readonly string? ListingResourceId;
         /// <summary>
         /// Listing resource version.
         /// </summary>
@@ -38,41 +38,41 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// Name of the publisher who published this listing.
         /// </summary>
-        public readonly string PublisherName;
+        public readonly string? PublisherName;
         public readonly string Signature;
         /// <summary>
         /// The short summary to the listing.
         /// </summary>
-        public readonly string Summary;
+        public readonly string? Summary;
         /// <summary>
         /// Date and time at which the subscription was created, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z`
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         public readonly string TimeRetrieved;
 
         [OutputConstructor]
         private GetAppCatalogSubscriptionsAppCatalogSubscriptionResult(
             string compartmentId,
 
-            string displayName,
+            string? displayName,
 
             string? eulaLink,
 
             string listingId,
 
-            string listingResourceId,
+            string? listingResourceId,
 
             string listingResourceVersion,
 
             string oracleTermsOfUseLink,
 
-            string publisherName,
+            string? publisherName,
 
             string signature,
 
-            string summary,
+            string? summary,
 
-            string timeCreated,
+            string? timeCreated,
 
             string timeRetrieved)
         {

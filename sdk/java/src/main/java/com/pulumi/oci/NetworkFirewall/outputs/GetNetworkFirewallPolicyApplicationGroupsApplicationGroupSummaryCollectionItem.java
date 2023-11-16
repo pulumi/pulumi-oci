@@ -8,6 +8,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetNetworkFirewallPolicyApplicationGroupsApplicationGroupSummaryCollectionItem {
@@ -30,12 +32,12 @@ public final class GetNetworkFirewallPolicyApplicationGroupsApplicationGroupSumm
      * @return OCID of the Network Firewall Policy this application group belongs to.
      * 
      */
-    private String parentResourceId;
+    private @Nullable String parentResourceId;
     /**
      * @return Count of total applications in the given application group.
      * 
      */
-    private Integer totalApps;
+    private @Nullable Integer totalApps;
 
     private GetNetworkFirewallPolicyApplicationGroupsApplicationGroupSummaryCollectionItem() {}
     /**
@@ -63,15 +65,15 @@ public final class GetNetworkFirewallPolicyApplicationGroupsApplicationGroupSumm
      * @return OCID of the Network Firewall Policy this application group belongs to.
      * 
      */
-    public String parentResourceId() {
-        return this.parentResourceId;
+    public Optional<String> parentResourceId() {
+        return Optional.ofNullable(this.parentResourceId);
     }
     /**
      * @return Count of total applications in the given application group.
      * 
      */
-    public Integer totalApps() {
-        return this.totalApps;
+    public Optional<Integer> totalApps() {
+        return Optional.ofNullable(this.totalApps);
     }
 
     public static Builder builder() {
@@ -86,8 +88,8 @@ public final class GetNetworkFirewallPolicyApplicationGroupsApplicationGroupSumm
         private List<String> apps;
         private String name;
         private String networkFirewallPolicyId;
-        private String parentResourceId;
-        private Integer totalApps;
+        private @Nullable String parentResourceId;
+        private @Nullable Integer totalApps;
         public Builder() {}
         public Builder(GetNetworkFirewallPolicyApplicationGroupsApplicationGroupSummaryCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -117,13 +119,13 @@ public final class GetNetworkFirewallPolicyApplicationGroupsApplicationGroupSumm
             return this;
         }
         @CustomType.Setter
-        public Builder parentResourceId(String parentResourceId) {
-            this.parentResourceId = Objects.requireNonNull(parentResourceId);
+        public Builder parentResourceId(@Nullable String parentResourceId) {
+            this.parentResourceId = parentResourceId;
             return this;
         }
         @CustomType.Setter
-        public Builder totalApps(Integer totalApps) {
-            this.totalApps = Objects.requireNonNull(totalApps);
+        public Builder totalApps(@Nullable Integer totalApps) {
+            this.totalApps = totalApps;
             return this;
         }
         public GetNetworkFirewallPolicyApplicationGroupsApplicationGroupSummaryCollectionItem build() {

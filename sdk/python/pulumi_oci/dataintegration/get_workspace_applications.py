@@ -51,10 +51,7 @@ class GetWorkspaceApplicationsResult:
 
     @property
     @pulumi.getter(name="applicationSummaryCollections")
-    def application_summary_collections(self) -> Sequence['outputs.GetWorkspaceApplicationsApplicationSummaryCollectionResult']:
-        """
-        The list of application_summary_collection.
-        """
+    def application_summary_collections(self) -> Optional[Sequence['outputs.GetWorkspaceApplicationsApplicationSummaryCollectionResult']]:
         return pulumi.get(self, "application_summary_collections")
 
     @property
@@ -69,7 +66,7 @@ class GetWorkspaceApplicationsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -78,17 +75,11 @@ class GetWorkspaceApplicationsResult:
     @property
     @pulumi.getter
     def identifiers(self) -> Optional[Sequence[str]]:
-        """
-        Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        """
         return pulumi.get(self, "identifiers")
 
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -99,9 +90,6 @@ class GetWorkspaceApplicationsResult:
     @property
     @pulumi.getter(name="workspaceId")
     def workspace_id(self) -> str:
-        """
-        The OCID of the workspace containing the application. This allows cross workspace deployment to publish an application from a different workspace into the current workspace specified in this operation.
-        """
         return pulumi.get(self, "workspace_id")
 
 
@@ -129,29 +117,7 @@ def get_workspace_applications(fields: Optional[Sequence[str]] = None,
                                workspace_id: Optional[str] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetWorkspaceApplicationsResult:
     """
-    This data source provides the list of Workspace Applications in Oracle Cloud Infrastructure Data Integration service.
-
-    Retrieves a list of applications and provides options to filter the list.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_workspace_applications = oci.DataIntegration.get_workspace_applications(workspace_id=oci_dataintegration_workspace["test_workspace"]["id"],
-        fields=var["workspace_application_fields"],
-        identifiers=var["workspace_application_identifier"],
-        name=var["workspace_application_name"],
-        name_contains=var["workspace_application_name_contains"])
-    ```
-
-
-    :param Sequence[str] fields: Specifies the fields to get for an object.
-    :param Sequence[str] identifiers: Used to filter by the identifier of the published object.
-    :param str name: Used to filter by the name of the object.
-    :param str name_contains: This parameter can be used to filter objects by the names that match partially or fully with the given value.
-    :param str workspace_id: The workspace ID.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['fields'] = fields
@@ -183,28 +149,6 @@ def get_workspace_applications_output(fields: Optional[pulumi.Input[Optional[Seq
                                       workspace_id: Optional[pulumi.Input[str]] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetWorkspaceApplicationsResult]:
     """
-    This data source provides the list of Workspace Applications in Oracle Cloud Infrastructure Data Integration service.
-
-    Retrieves a list of applications and provides options to filter the list.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_workspace_applications = oci.DataIntegration.get_workspace_applications(workspace_id=oci_dataintegration_workspace["test_workspace"]["id"],
-        fields=var["workspace_application_fields"],
-        identifiers=var["workspace_application_identifier"],
-        name=var["workspace_application_name"],
-        name_contains=var["workspace_application_name_contains"])
-    ```
-
-
-    :param Sequence[str] fields: Specifies the fields to get for an object.
-    :param Sequence[str] identifiers: Used to filter by the identifier of the published object.
-    :param str name: Used to filter by the name of the object.
-    :param str name_contains: This parameter can be used to filter objects by the names that match partially or fully with the given value.
-    :param str workspace_id: The workspace ID.
+    Use this data source to access information about an existing resource.
     """
     ...

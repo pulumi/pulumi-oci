@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DisasterRecovery.outputs.GetDrPlansDrPlanCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDrPlansDrPlanCollection {
-    private List<GetDrPlansDrPlanCollectionItem> items;
+    private @Nullable List<GetDrPlansDrPlanCollectionItem> items;
 
     private GetDrPlansDrPlanCollection() {}
     public List<GetDrPlansDrPlanCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetDrPlansDrPlanCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetDrPlansDrPlanCollectionItem> items;
+        private @Nullable List<GetDrPlansDrPlanCollectionItem> items;
         public Builder() {}
         public Builder(GetDrPlansDrPlanCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetDrPlansDrPlanCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetDrPlansDrPlanCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetDrPlansDrPlanCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetDrPlansDrPlanCollectionItem... items) {

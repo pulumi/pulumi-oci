@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSelectorItem {
@@ -14,22 +16,22 @@ public final class GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeIn
      * @return Compute instance OCID identifiers that are members of this group.
      * 
      */
-    private List<String> computeInstanceIds;
+    private @Nullable List<String> computeInstanceIds;
     /**
      * @return Query expression confirming to the Oracle Cloud Infrastructure Search Language syntax to select compute instances for the group. The language is documented at https://docs.oracle.com/en-us/iaas/Content/Search/Concepts/querysyntax.htm
      * 
      */
-    private String query;
+    private @Nullable String query;
     /**
      * @return Region identifier referred by the deployment environment. Region identifiers are listed at https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm
      * 
      */
-    private String region;
+    private @Nullable String region;
     /**
      * @return Defines the type of the instance selector for the group.
      * 
      */
-    private String selectorType;
+    private @Nullable String selectorType;
 
     private GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSelectorItem() {}
     /**
@@ -37,28 +39,28 @@ public final class GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeIn
      * 
      */
     public List<String> computeInstanceIds() {
-        return this.computeInstanceIds;
+        return this.computeInstanceIds == null ? List.of() : this.computeInstanceIds;
     }
     /**
      * @return Query expression confirming to the Oracle Cloud Infrastructure Search Language syntax to select compute instances for the group. The language is documented at https://docs.oracle.com/en-us/iaas/Content/Search/Concepts/querysyntax.htm
      * 
      */
-    public String query() {
-        return this.query;
+    public Optional<String> query() {
+        return Optional.ofNullable(this.query);
     }
     /**
      * @return Region identifier referred by the deployment environment. Region identifiers are listed at https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm
      * 
      */
-    public String region() {
-        return this.region;
+    public Optional<String> region() {
+        return Optional.ofNullable(this.region);
     }
     /**
      * @return Defines the type of the instance selector for the group.
      * 
      */
-    public String selectorType() {
-        return this.selectorType;
+    public Optional<String> selectorType() {
+        return Optional.ofNullable(this.selectorType);
     }
 
     public static Builder builder() {
@@ -70,10 +72,10 @@ public final class GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeIn
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> computeInstanceIds;
-        private String query;
-        private String region;
-        private String selectorType;
+        private @Nullable List<String> computeInstanceIds;
+        private @Nullable String query;
+        private @Nullable String region;
+        private @Nullable String selectorType;
         public Builder() {}
         public Builder(GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSelectorItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -84,26 +86,26 @@ public final class GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeIn
         }
 
         @CustomType.Setter
-        public Builder computeInstanceIds(List<String> computeInstanceIds) {
-            this.computeInstanceIds = Objects.requireNonNull(computeInstanceIds);
+        public Builder computeInstanceIds(@Nullable List<String> computeInstanceIds) {
+            this.computeInstanceIds = computeInstanceIds;
             return this;
         }
         public Builder computeInstanceIds(String... computeInstanceIds) {
             return computeInstanceIds(List.of(computeInstanceIds));
         }
         @CustomType.Setter
-        public Builder query(String query) {
-            this.query = Objects.requireNonNull(query);
+        public Builder query(@Nullable String query) {
+            this.query = query;
             return this;
         }
         @CustomType.Setter
-        public Builder region(String region) {
-            this.region = Objects.requireNonNull(region);
+        public Builder region(@Nullable String region) {
+            this.region = region;
             return this;
         }
         @CustomType.Setter
-        public Builder selectorType(String selectorType) {
-            this.selectorType = Objects.requireNonNull(selectorType);
+        public Builder selectorType(@Nullable String selectorType) {
+            this.selectorType = selectorType;
             return this;
         }
         public GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSelectorItem build() {

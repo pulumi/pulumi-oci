@@ -128,7 +128,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The list of standard_tag_namespace_templates.
         /// </summary>
@@ -140,7 +140,7 @@ namespace Pulumi.Oci.Identity
 
             ImmutableArray<Outputs.GetTagStandardTagNamespaceTemplatesFilterResult> filters,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetTagStandardTagNamespaceTemplatesStandardTagNamespaceTemplateResult> standardTagNamespaceTemplates)
         {

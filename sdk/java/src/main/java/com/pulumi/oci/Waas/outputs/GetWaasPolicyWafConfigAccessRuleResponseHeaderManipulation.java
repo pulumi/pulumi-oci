@@ -6,6 +6,8 @@ package com.pulumi.oci.Waas.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulation {
@@ -23,7 +25,7 @@ public final class GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulation {
      * @return The value of the header.
      * 
      */
-    private String value;
+    private @Nullable String value;
 
     private GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulation() {}
     /**
@@ -44,8 +46,8 @@ public final class GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulation {
      * @return The value of the header.
      * 
      */
-    public String value() {
-        return this.value;
+    public Optional<String> value() {
+        return Optional.ofNullable(this.value);
     }
 
     public static Builder builder() {
@@ -59,7 +61,7 @@ public final class GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulation {
     public static final class Builder {
         private String action;
         private String header;
-        private String value;
+        private @Nullable String value;
         public Builder() {}
         public Builder(GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulation defaults) {
     	      Objects.requireNonNull(defaults);
@@ -79,8 +81,8 @@ public final class GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulation {
             return this;
         }
         @CustomType.Setter
-        public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+        public Builder value(@Nullable String value) {
+            this.value = value;
             return this;
         }
         public GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulation build() {

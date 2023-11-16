@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Database Insight resource in Oracle Cloud Infrastructure Opsi service.
@@ -60,7 +59,7 @@ type LookupDatabaseInsightArgs struct {
 // A collection of values returned by getDatabaseInsight.
 type LookupDatabaseInsightResult struct {
 	// Compartment identifier of the database
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// User credential details to connect to the database. This is supplied via the External Database Service.
 	ConnectionCredentialDetails []GetDatabaseInsightConnectionCredentialDetail `pulumi:"connectionCredentialDetails"`
 	// Connection details to connect to the database. HostName, protocol, and port should be specified.
@@ -68,66 +67,66 @@ type LookupDatabaseInsightResult struct {
 	// User credential details to connect to the database.
 	CredentialDetails []GetDatabaseInsightCredentialDetail `pulumi:"credentialDetails"`
 	// A message describing the status of the database connection of this resource. For example, it can be used to provide actionable information about the permission and content validity of the database connection.
-	DatabaseConnectionStatusDetails string `pulumi:"databaseConnectionStatusDetails"`
+	DatabaseConnectionStatusDetails *string `pulumi:"databaseConnectionStatusDetails"`
 	// Display name of database
-	DatabaseDisplayName string `pulumi:"databaseDisplayName"`
+	DatabaseDisplayName *string `pulumi:"databaseDisplayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
-	DatabaseId        string `pulumi:"databaseId"`
-	DatabaseInsightId string `pulumi:"databaseInsightId"`
+	DatabaseId        *string `pulumi:"databaseId"`
+	DatabaseInsightId string  `pulumi:"databaseInsightId"`
 	// Name of database
-	DatabaseName string `pulumi:"databaseName"`
+	DatabaseName *string `pulumi:"databaseName"`
 	// Oracle Cloud Infrastructure database resource type
-	DatabaseResourceType string `pulumi:"databaseResourceType"`
+	DatabaseResourceType *string `pulumi:"databaseResourceType"`
 	// Operations Insights internal representation of the database type.
-	DatabaseType string `pulumi:"databaseType"`
+	DatabaseType *string `pulumi:"databaseType"`
 	// The version of the database.
-	DatabaseVersion      string `pulumi:"databaseVersion"`
-	DbmPrivateEndpointId string `pulumi:"dbmPrivateEndpointId"`
+	DatabaseVersion      *string `pulumi:"databaseVersion"`
+	DbmPrivateEndpointId *string `pulumi:"dbmPrivateEndpointId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags    map[string]interface{} `pulumi:"definedTags"`
-	DeploymentType string                 `pulumi:"deploymentType"`
+	DeploymentType *string                `pulumi:"deploymentType"`
 	// OPSI Enterprise Manager Bridge OCID
-	EnterpriseManagerBridgeId string `pulumi:"enterpriseManagerBridgeId"`
+	EnterpriseManagerBridgeId *string `pulumi:"enterpriseManagerBridgeId"`
 	// Enterprise Manager Entity Display Name
-	EnterpriseManagerEntityDisplayName string `pulumi:"enterpriseManagerEntityDisplayName"`
+	EnterpriseManagerEntityDisplayName *string `pulumi:"enterpriseManagerEntityDisplayName"`
 	// Enterprise Manager Entity Unique Identifier
-	EnterpriseManagerEntityIdentifier string `pulumi:"enterpriseManagerEntityIdentifier"`
+	EnterpriseManagerEntityIdentifier *string `pulumi:"enterpriseManagerEntityIdentifier"`
 	// Enterprise Manager Entity Name
-	EnterpriseManagerEntityName string `pulumi:"enterpriseManagerEntityName"`
+	EnterpriseManagerEntityName *string `pulumi:"enterpriseManagerEntityName"`
 	// Enterprise Manager Entity Type
-	EnterpriseManagerEntityType string `pulumi:"enterpriseManagerEntityType"`
+	EnterpriseManagerEntityType *string `pulumi:"enterpriseManagerEntityType"`
 	// Enterprise Manager Unqiue Identifier
-	EnterpriseManagerIdentifier string `pulumi:"enterpriseManagerIdentifier"`
+	EnterpriseManagerIdentifier *string `pulumi:"enterpriseManagerIdentifier"`
 	// Source of the database entity.
-	EntitySource string `pulumi:"entitySource"`
+	EntitySource *string `pulumi:"entitySource"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata insight.
-	ExadataInsightId string `pulumi:"exadataInsightId"`
+	ExadataInsightId *string `pulumi:"exadataInsightId"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Database insight identifier
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
-	OpsiPrivateEndpointId string `pulumi:"opsiPrivateEndpointId"`
+	OpsiPrivateEndpointId *string `pulumi:"opsiPrivateEndpointId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster or DB System ID, depending on which configuration the resource belongs to.
-	ParentId string `pulumi:"parentId"`
+	ParentId *string `pulumi:"parentId"`
 	// Processor count. This is the OCPU count for Autonomous Database and CPU core count for other database types.
-	ProcessorCount int `pulumi:"processorCount"`
+	ProcessorCount *int `pulumi:"processorCount"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
-	RootId string `pulumi:"rootId"`
+	RootId *string `pulumi:"rootId"`
 	// Database service name used for connection requests.
-	ServiceName string `pulumi:"serviceName"`
+	ServiceName *string `pulumi:"serviceName"`
 	// The current state of the database.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Indicates the status of a database insight in Operations Insights
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time the the database insight was first enabled. An RFC3339 formatted datetime string
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the database insight was updated. An RFC3339 formatted datetime string
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func LookupDatabaseInsightOutput(ctx *pulumi.Context, args LookupDatabaseInsightOutputArgs, opts ...pulumi.InvokeOption) LookupDatabaseInsightResultOutput {
@@ -168,15 +167,9 @@ func (o LookupDatabaseInsightResultOutput) ToLookupDatabaseInsightResultOutputWi
 	return o
 }
 
-func (o LookupDatabaseInsightResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupDatabaseInsightResult] {
-	return pulumix.Output[LookupDatabaseInsightResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Compartment identifier of the database
-func (o LookupDatabaseInsightResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseInsightResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupDatabaseInsightResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseInsightResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // User credential details to connect to the database. This is supplied via the External Database Service.
@@ -197,18 +190,18 @@ func (o LookupDatabaseInsightResultOutput) CredentialDetails() GetDatabaseInsigh
 }
 
 // A message describing the status of the database connection of this resource. For example, it can be used to provide actionable information about the permission and content validity of the database connection.
-func (o LookupDatabaseInsightResultOutput) DatabaseConnectionStatusDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseInsightResult) string { return v.DatabaseConnectionStatusDetails }).(pulumi.StringOutput)
+func (o LookupDatabaseInsightResultOutput) DatabaseConnectionStatusDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseInsightResult) *string { return v.DatabaseConnectionStatusDetails }).(pulumi.StringPtrOutput)
 }
 
 // Display name of database
-func (o LookupDatabaseInsightResultOutput) DatabaseDisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseInsightResult) string { return v.DatabaseDisplayName }).(pulumi.StringOutput)
+func (o LookupDatabaseInsightResultOutput) DatabaseDisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseInsightResult) *string { return v.DatabaseDisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
-func (o LookupDatabaseInsightResultOutput) DatabaseId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseInsightResult) string { return v.DatabaseId }).(pulumi.StringOutput)
+func (o LookupDatabaseInsightResultOutput) DatabaseId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseInsightResult) *string { return v.DatabaseId }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupDatabaseInsightResultOutput) DatabaseInsightId() pulumi.StringOutput {
@@ -216,27 +209,27 @@ func (o LookupDatabaseInsightResultOutput) DatabaseInsightId() pulumi.StringOutp
 }
 
 // Name of database
-func (o LookupDatabaseInsightResultOutput) DatabaseName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseInsightResult) string { return v.DatabaseName }).(pulumi.StringOutput)
+func (o LookupDatabaseInsightResultOutput) DatabaseName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseInsightResult) *string { return v.DatabaseName }).(pulumi.StringPtrOutput)
 }
 
 // Oracle Cloud Infrastructure database resource type
-func (o LookupDatabaseInsightResultOutput) DatabaseResourceType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseInsightResult) string { return v.DatabaseResourceType }).(pulumi.StringOutput)
+func (o LookupDatabaseInsightResultOutput) DatabaseResourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseInsightResult) *string { return v.DatabaseResourceType }).(pulumi.StringPtrOutput)
 }
 
 // Operations Insights internal representation of the database type.
-func (o LookupDatabaseInsightResultOutput) DatabaseType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseInsightResult) string { return v.DatabaseType }).(pulumi.StringOutput)
+func (o LookupDatabaseInsightResultOutput) DatabaseType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseInsightResult) *string { return v.DatabaseType }).(pulumi.StringPtrOutput)
 }
 
 // The version of the database.
-func (o LookupDatabaseInsightResultOutput) DatabaseVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseInsightResult) string { return v.DatabaseVersion }).(pulumi.StringOutput)
+func (o LookupDatabaseInsightResultOutput) DatabaseVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseInsightResult) *string { return v.DatabaseVersion }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupDatabaseInsightResultOutput) DbmPrivateEndpointId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseInsightResult) string { return v.DbmPrivateEndpointId }).(pulumi.StringOutput)
+func (o LookupDatabaseInsightResultOutput) DbmPrivateEndpointId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseInsightResult) *string { return v.DbmPrivateEndpointId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -244,48 +237,48 @@ func (o LookupDatabaseInsightResultOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupDatabaseInsightResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
-func (o LookupDatabaseInsightResultOutput) DeploymentType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseInsightResult) string { return v.DeploymentType }).(pulumi.StringOutput)
+func (o LookupDatabaseInsightResultOutput) DeploymentType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseInsightResult) *string { return v.DeploymentType }).(pulumi.StringPtrOutput)
 }
 
 // OPSI Enterprise Manager Bridge OCID
-func (o LookupDatabaseInsightResultOutput) EnterpriseManagerBridgeId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseInsightResult) string { return v.EnterpriseManagerBridgeId }).(pulumi.StringOutput)
+func (o LookupDatabaseInsightResultOutput) EnterpriseManagerBridgeId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseInsightResult) *string { return v.EnterpriseManagerBridgeId }).(pulumi.StringPtrOutput)
 }
 
 // Enterprise Manager Entity Display Name
-func (o LookupDatabaseInsightResultOutput) EnterpriseManagerEntityDisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseInsightResult) string { return v.EnterpriseManagerEntityDisplayName }).(pulumi.StringOutput)
+func (o LookupDatabaseInsightResultOutput) EnterpriseManagerEntityDisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseInsightResult) *string { return v.EnterpriseManagerEntityDisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Enterprise Manager Entity Unique Identifier
-func (o LookupDatabaseInsightResultOutput) EnterpriseManagerEntityIdentifier() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseInsightResult) string { return v.EnterpriseManagerEntityIdentifier }).(pulumi.StringOutput)
+func (o LookupDatabaseInsightResultOutput) EnterpriseManagerEntityIdentifier() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseInsightResult) *string { return v.EnterpriseManagerEntityIdentifier }).(pulumi.StringPtrOutput)
 }
 
 // Enterprise Manager Entity Name
-func (o LookupDatabaseInsightResultOutput) EnterpriseManagerEntityName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseInsightResult) string { return v.EnterpriseManagerEntityName }).(pulumi.StringOutput)
+func (o LookupDatabaseInsightResultOutput) EnterpriseManagerEntityName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseInsightResult) *string { return v.EnterpriseManagerEntityName }).(pulumi.StringPtrOutput)
 }
 
 // Enterprise Manager Entity Type
-func (o LookupDatabaseInsightResultOutput) EnterpriseManagerEntityType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseInsightResult) string { return v.EnterpriseManagerEntityType }).(pulumi.StringOutput)
+func (o LookupDatabaseInsightResultOutput) EnterpriseManagerEntityType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseInsightResult) *string { return v.EnterpriseManagerEntityType }).(pulumi.StringPtrOutput)
 }
 
 // Enterprise Manager Unqiue Identifier
-func (o LookupDatabaseInsightResultOutput) EnterpriseManagerIdentifier() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseInsightResult) string { return v.EnterpriseManagerIdentifier }).(pulumi.StringOutput)
+func (o LookupDatabaseInsightResultOutput) EnterpriseManagerIdentifier() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseInsightResult) *string { return v.EnterpriseManagerIdentifier }).(pulumi.StringPtrOutput)
 }
 
 // Source of the database entity.
-func (o LookupDatabaseInsightResultOutput) EntitySource() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseInsightResult) string { return v.EntitySource }).(pulumi.StringOutput)
+func (o LookupDatabaseInsightResultOutput) EntitySource() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseInsightResult) *string { return v.EntitySource }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata insight.
-func (o LookupDatabaseInsightResultOutput) ExadataInsightId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseInsightResult) string { return v.ExadataInsightId }).(pulumi.StringOutput)
+func (o LookupDatabaseInsightResultOutput) ExadataInsightId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseInsightResult) *string { return v.ExadataInsightId }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -294,48 +287,48 @@ func (o LookupDatabaseInsightResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Database insight identifier
-func (o LookupDatabaseInsightResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseInsightResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupDatabaseInsightResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseInsightResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o LookupDatabaseInsightResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseInsightResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupDatabaseInsightResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseInsightResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
-func (o LookupDatabaseInsightResultOutput) OpsiPrivateEndpointId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseInsightResult) string { return v.OpsiPrivateEndpointId }).(pulumi.StringOutput)
+func (o LookupDatabaseInsightResultOutput) OpsiPrivateEndpointId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseInsightResult) *string { return v.OpsiPrivateEndpointId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster or DB System ID, depending on which configuration the resource belongs to.
-func (o LookupDatabaseInsightResultOutput) ParentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseInsightResult) string { return v.ParentId }).(pulumi.StringOutput)
+func (o LookupDatabaseInsightResultOutput) ParentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseInsightResult) *string { return v.ParentId }).(pulumi.StringPtrOutput)
 }
 
 // Processor count. This is the OCPU count for Autonomous Database and CPU core count for other database types.
-func (o LookupDatabaseInsightResultOutput) ProcessorCount() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupDatabaseInsightResult) int { return v.ProcessorCount }).(pulumi.IntOutput)
+func (o LookupDatabaseInsightResultOutput) ProcessorCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseInsightResult) *int { return v.ProcessorCount }).(pulumi.IntPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
-func (o LookupDatabaseInsightResultOutput) RootId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseInsightResult) string { return v.RootId }).(pulumi.StringOutput)
+func (o LookupDatabaseInsightResultOutput) RootId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseInsightResult) *string { return v.RootId }).(pulumi.StringPtrOutput)
 }
 
 // Database service name used for connection requests.
-func (o LookupDatabaseInsightResultOutput) ServiceName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseInsightResult) string { return v.ServiceName }).(pulumi.StringOutput)
+func (o LookupDatabaseInsightResultOutput) ServiceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseInsightResult) *string { return v.ServiceName }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the database.
-func (o LookupDatabaseInsightResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseInsightResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupDatabaseInsightResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseInsightResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Indicates the status of a database insight in Operations Insights
-func (o LookupDatabaseInsightResultOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseInsightResult) string { return v.Status }).(pulumi.StringOutput)
+func (o LookupDatabaseInsightResultOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseInsightResult) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -344,13 +337,13 @@ func (o LookupDatabaseInsightResultOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time the the database insight was first enabled. An RFC3339 formatted datetime string
-func (o LookupDatabaseInsightResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseInsightResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupDatabaseInsightResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseInsightResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the database insight was updated. An RFC3339 formatted datetime string
-func (o LookupDatabaseInsightResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDatabaseInsightResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupDatabaseInsightResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDatabaseInsightResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

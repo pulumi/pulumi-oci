@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Bds Instance Metastore Configs in Oracle Cloud Infrastructure Big Data Service service.
@@ -84,7 +83,7 @@ type GetBdsInstanceMetastoreConfigsResult struct {
 	DisplayName *string                                `pulumi:"displayName"`
 	Filters     []GetBdsInstanceMetastoreConfigsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The OCID of the Data Catalog metastore. Set only if metastore's type is EXTERNAL.
 	MetastoreId *string `pulumi:"metastoreId"`
 	// The type of the metastore in the metastore configuration.
@@ -142,12 +141,6 @@ func (o GetBdsInstanceMetastoreConfigsResultOutput) ToGetBdsInstanceMetastoreCon
 	return o
 }
 
-func (o GetBdsInstanceMetastoreConfigsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstanceMetastoreConfigsResult] {
-	return pulumix.Output[GetBdsInstanceMetastoreConfigsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The ID of BDS API Key used for metastore configuration. Set only if metastore's type is EXTERNAL.
 func (o GetBdsInstanceMetastoreConfigsResultOutput) BdsApiKeyId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetBdsInstanceMetastoreConfigsResult) *string { return v.BdsApiKeyId }).(pulumi.StringPtrOutput)
@@ -174,8 +167,8 @@ func (o GetBdsInstanceMetastoreConfigsResultOutput) Filters() GetBdsInstanceMeta
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetBdsInstanceMetastoreConfigsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBdsInstanceMetastoreConfigsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetBdsInstanceMetastoreConfigsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBdsInstanceMetastoreConfigsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the Data Catalog metastore. Set only if metastore's type is EXTERNAL.

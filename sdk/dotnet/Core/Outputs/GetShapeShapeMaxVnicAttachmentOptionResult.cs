@@ -13,17 +13,17 @@ namespace Pulumi.Oci.Core.Outputs
     [OutputType]
     public sealed class GetShapeShapeMaxVnicAttachmentOptionResult
     {
-        public readonly double DefaultPerOcpu;
-        public readonly double Max;
-        public readonly int Min;
+        public readonly double? DefaultPerOcpu;
+        public readonly double? Max;
+        public readonly int? Min;
 
         [OutputConstructor]
         private GetShapeShapeMaxVnicAttachmentOptionResult(
-            double defaultPerOcpu,
+            double? defaultPerOcpu,
 
-            double max,
+            double? max,
 
-            int min)
+            int? min)
         {
             DefaultPerOcpu = defaultPerOcpu;
             Max = max;

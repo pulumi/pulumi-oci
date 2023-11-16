@@ -45,10 +45,7 @@ class GetDbCredentialsResult:
 
     @property
     @pulumi.getter(name="dbCredentials")
-    def db_credentials(self) -> Sequence['outputs.GetDbCredentialsDbCredentialResult']:
-        """
-        The list of db_credentials.
-        """
+    def db_credentials(self) -> Optional[Sequence['outputs.GetDbCredentialsDbCredentialResult']]:
         return pulumi.get(self, "db_credentials")
 
     @property
@@ -58,7 +55,7 @@ class GetDbCredentialsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -72,17 +69,11 @@ class GetDbCredentialsResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The credential's current state. After creating a DB credential, make sure its `lifecycleState` changes from CREATING to ACTIVE before using it.
-        """
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="userId")
     def user_id(self) -> str:
-        """
-        The OCID of the user the DB credential belongs to.
-        """
         return pulumi.get(self, "user_id")
 
 
@@ -106,25 +97,7 @@ def get_db_credentials(filters: Optional[Sequence[pulumi.InputType['GetDbCredent
                        user_id: Optional[str] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDbCredentialsResult:
     """
-    This data source provides the list of Db Credentials in Oracle Cloud Infrastructure Identity service.
-
-    Lists the DB credentials for the specified user. The returned object contains the credential's OCID
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_db_credentials = oci.Identity.get_db_credentials(user_id=oci_identity_user["test_user"]["id"],
-        name=var["db_credential_name"],
-        state=var["db_credential_state"])
-    ```
-
-
-    :param str name: A filter to only return resources that match the given name exactly.
-    :param str state: A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
-    :param str user_id: The OCID of the user.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -150,24 +123,6 @@ def get_db_credentials_output(filters: Optional[pulumi.Input[Optional[Sequence[p
                               user_id: Optional[pulumi.Input[str]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDbCredentialsResult]:
     """
-    This data source provides the list of Db Credentials in Oracle Cloud Infrastructure Identity service.
-
-    Lists the DB credentials for the specified user. The returned object contains the credential's OCID
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_db_credentials = oci.Identity.get_db_credentials(user_id=oci_identity_user["test_user"]["id"],
-        name=var["db_credential_name"],
-        state=var["db_credential_state"])
-    ```
-
-
-    :param str name: A filter to only return resources that match the given name exactly.
-    :param str state: A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
-    :param str user_id: The OCID of the user.
+    Use this data source to access information about an existing resource.
     """
     ...

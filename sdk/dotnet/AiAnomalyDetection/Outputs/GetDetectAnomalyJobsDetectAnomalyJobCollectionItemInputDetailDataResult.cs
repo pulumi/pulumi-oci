@@ -13,12 +13,12 @@ namespace Pulumi.Oci.AiAnomalyDetection.Outputs
     [OutputType]
     public sealed class GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailDataResult
     {
-        public readonly string Timestamp;
+        public readonly string? Timestamp;
         public readonly ImmutableArray<double> Values;
 
         [OutputConstructor]
         private GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailDataResult(
-            string timestamp,
+            string? timestamp,
 
             ImmutableArray<double> values)
         {

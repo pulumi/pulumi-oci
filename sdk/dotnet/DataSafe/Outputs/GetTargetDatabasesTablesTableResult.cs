@@ -16,17 +16,17 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// A filter to return only items related to specific schema name.
         /// </summary>
-        public readonly string SchemaName;
+        public readonly string? SchemaName;
         /// <summary>
         /// A filter to return only items related to specific table name.
         /// </summary>
-        public readonly string TableName;
+        public readonly string? TableName;
 
         [OutputConstructor]
         private GetTargetDatabasesTablesTableResult(
-            string schemaName,
+            string? schemaName,
 
-            string tableName)
+            string? tableName)
         {
             SchemaName = schemaName;
             TableName = tableName;

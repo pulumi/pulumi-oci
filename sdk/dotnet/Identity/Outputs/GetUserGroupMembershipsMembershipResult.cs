@@ -16,47 +16,47 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// The OCID of the compartment (remember that the tenancy is simply the root compartment).
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The OCID of the group.
         /// </summary>
-        public readonly string GroupId;
+        public readonly string? GroupId;
         /// <summary>
         /// The OCID of the membership.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The detailed status of INACTIVE lifecycleState.
         /// </summary>
-        public readonly string InactiveState;
+        public readonly string? InactiveState;
         /// <summary>
         /// The membership's current state.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// Date and time the membership was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The OCID of the user.
         /// </summary>
-        public readonly string UserId;
+        public readonly string? UserId;
 
         [OutputConstructor]
         private GetUserGroupMembershipsMembershipResult(
-            string compartmentId,
+            string? compartmentId,
 
-            string groupId,
+            string? groupId,
 
-            string id,
+            string? id,
 
-            string inactiveState,
+            string? inactiveState,
 
-            string state,
+            string? state,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string userId)
+            string? userId)
         {
             CompartmentId = compartmentId;
             GroupId = groupId;

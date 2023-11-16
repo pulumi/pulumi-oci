@@ -140,42 +140,27 @@ class GetDeploymentResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="cpuCoreCount")
-    def cpu_core_count(self) -> int:
-        """
-        The Minimum number of OCPUs to be made available for this Deployment.
-        """
+    def cpu_core_count(self) -> Optional[int]:
         return pulumi.get(self, "cpu_core_count")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="deploymentBackupId")
-    def deployment_backup_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup being referenced.
-        """
+    def deployment_backup_id(self) -> Optional[str]:
         return pulumi.get(self, "deployment_backup_id")
 
     @property
     @pulumi.getter(name="deploymentDiagnosticDatas")
-    def deployment_diagnostic_datas(self) -> Sequence['outputs.GetDeploymentDeploymentDiagnosticDataResult']:
-        """
-        Information regarding the deployment diagnostic collection
-        """
+    def deployment_diagnostic_datas(self) -> Optional[Sequence['outputs.GetDeploymentDeploymentDiagnosticDataResult']]:
         return pulumi.get(self, "deployment_diagnostic_datas")
 
     @property
@@ -185,258 +170,162 @@ class GetDeploymentResult:
 
     @property
     @pulumi.getter(name="deploymentType")
-    def deployment_type(self) -> str:
-        """
-        The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
-        """
+    def deployment_type(self) -> Optional[str]:
         return pulumi.get(self, "deployment_type")
 
     @property
     @pulumi.getter(name="deploymentUrl")
-    def deployment_url(self) -> str:
-        """
-        The URL of a resource.
-        """
+    def deployment_url(self) -> Optional[str]:
         return pulumi.get(self, "deployment_url")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Metadata about this specific object.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        An object's Display Name.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
-    def fqdn(self) -> str:
-        """
-        A three-label Fully Qualified Domain Name (FQDN) for a resource.
-        """
+    def fqdn(self) -> Optional[str]:
         return pulumi.get(self, "fqdn")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isAutoScalingEnabled")
-    def is_auto_scaling_enabled(self) -> bool:
-        """
-        Indicates if auto scaling is enabled for the Deployment's CPU core count.
-        """
+    def is_auto_scaling_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_auto_scaling_enabled")
 
     @property
     @pulumi.getter(name="isHealthy")
-    def is_healthy(self) -> bool:
-        """
-        True if all of the aggregate resources are working correctly.
-        """
+    def is_healthy(self) -> Optional[bool]:
         return pulumi.get(self, "is_healthy")
 
     @property
     @pulumi.getter(name="isLatestVersion")
-    def is_latest_version(self) -> bool:
-        """
-        Indicates if the resource is the the latest available version.
-        """
+    def is_latest_version(self) -> Optional[bool]:
         return pulumi.get(self, "is_latest_version")
 
     @property
     @pulumi.getter(name="isPublic")
-    def is_public(self) -> bool:
-        """
-        True if this object is publicly available.
-        """
+    def is_public(self) -> Optional[bool]:
         return pulumi.get(self, "is_public")
 
     @property
     @pulumi.getter(name="isStorageUtilizationLimitExceeded")
-    def is_storage_utilization_limit_exceeded(self) -> bool:
-        """
-        Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
-        """
+    def is_storage_utilization_limit_exceeded(self) -> Optional[bool]:
         return pulumi.get(self, "is_storage_utilization_limit_exceeded")
 
     @property
     @pulumi.getter(name="licenseModel")
-    def license_model(self) -> str:
-        """
-        The Oracle license model that applies to a Deployment.
-        """
+    def license_model(self) -> Optional[str]:
         return pulumi.get(self, "license_model")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="lifecycleSubState")
-    def lifecycle_sub_state(self) -> str:
-        """
-        Possible GGS lifecycle sub-states.
-        """
+    def lifecycle_sub_state(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_sub_state")
 
     @property
     @pulumi.getter(name="maintenanceConfigurations")
-    def maintenance_configurations(self) -> Sequence['outputs.GetDeploymentMaintenanceConfigurationResult']:
-        """
-        Attributes for configuring automatic deployment maintenance.
-        """
+    def maintenance_configurations(self) -> Optional[Sequence['outputs.GetDeploymentMaintenanceConfigurationResult']]:
         return pulumi.get(self, "maintenance_configurations")
 
     @property
     @pulumi.getter(name="maintenanceWindows")
-    def maintenance_windows(self) -> Sequence['outputs.GetDeploymentMaintenanceWindowResult']:
-        """
-        Defines the maintenance window, when automatic actions can be performed.
-        """
+    def maintenance_windows(self) -> Optional[Sequence['outputs.GetDeploymentMaintenanceWindowResult']]:
         return pulumi.get(self, "maintenance_windows")
 
     @property
     @pulumi.getter(name="nextMaintenanceActionType")
-    def next_maintenance_action_type(self) -> str:
-        """
-        Type of the next maintenance.
-        """
+    def next_maintenance_action_type(self) -> Optional[str]:
         return pulumi.get(self, "next_maintenance_action_type")
 
     @property
     @pulumi.getter(name="nextMaintenanceDescription")
-    def next_maintenance_description(self) -> str:
-        """
-        Description of the next maintenance.
-        """
+    def next_maintenance_description(self) -> Optional[str]:
         return pulumi.get(self, "next_maintenance_description")
 
     @property
     @pulumi.getter(name="nsgIds")
-    def nsg_ids(self) -> Sequence[str]:
-        """
-        An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
-        """
+    def nsg_ids(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "nsg_ids")
 
     @property
     @pulumi.getter(name="oggDatas")
-    def ogg_datas(self) -> Sequence['outputs.GetDeploymentOggDataResult']:
-        """
-        Deployment Data for an OggDeployment
-        """
+    def ogg_datas(self) -> Optional[Sequence['outputs.GetDeploymentOggDataResult']]:
         return pulumi.get(self, "ogg_datas")
 
     @property
     @pulumi.getter(name="privateIpAddress")
-    def private_ip_address(self) -> str:
-        """
-        The private IP address in the customer's VCN representing the access point for the associated endpoint service in the GoldenGate service VCN.
-        """
+    def private_ip_address(self) -> Optional[str]:
         return pulumi.get(self, "private_ip_address")
 
     @property
     @pulumi.getter(name="publicIpAddress")
-    def public_ip_address(self) -> str:
-        """
-        The public IP address representing the access point for the Deployment.
-        """
+    def public_ip_address(self) -> Optional[str]:
         return pulumi.get(self, "public_ip_address")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        Possible lifecycle states.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="storageUtilizationInBytes")
-    def storage_utilization_in_bytes(self) -> str:
-        """
-        The amount of storage being utilized (in bytes)
-        """
+    def storage_utilization_in_bytes(self) -> Optional[str]:
         return pulumi.get(self, "storage_utilization_in_bytes")
 
     @property
     @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
-        """
+    def subnet_id(self) -> Optional[str]:
         return pulumi.get(self, "subnet_id")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeOfNextMaintenance")
-    def time_of_next_maintenance(self) -> str:
-        """
-        The time of next maintenance schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
+    def time_of_next_maintenance(self) -> Optional[str]:
         return pulumi.get(self, "time_of_next_maintenance")
 
     @property
     @pulumi.getter(name="timeOggVersionSupportedUntil")
-    def time_ogg_version_supported_until(self) -> str:
-        """
-        The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
+    def time_ogg_version_supported_until(self) -> Optional[str]:
         return pulumi.get(self, "time_ogg_version_supported_until")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="timeUpgradeRequired")
-    def time_upgrade_required(self) -> str:
-        """
-        Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records  to check, when deployment will be forced to upgrade to a newer version. Old description: The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
+    def time_upgrade_required(self) -> Optional[str]:
         return pulumi.get(self, "time_upgrade_required")
 
 
@@ -489,21 +378,7 @@ class AwaitableGetDeploymentResult(GetDeploymentResult):
 def get_deployment(deployment_id: Optional[str] = None,
                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDeploymentResult:
     """
-    This data source provides details about a specific Deployment resource in Oracle Cloud Infrastructure Golden Gate service.
-
-    Retrieves a deployment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_deployment = oci.GoldenGate.get_deployment(deployment_id=oci_golden_gate_deployment["test_deployment"]["id"])
-    ```
-
-
-    :param str deployment_id: A unique Deployment identifier.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['deploymentId'] = deployment_id
@@ -555,20 +430,6 @@ def get_deployment(deployment_id: Optional[str] = None,
 def get_deployment_output(deployment_id: Optional[pulumi.Input[str]] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDeploymentResult]:
     """
-    This data source provides details about a specific Deployment resource in Oracle Cloud Infrastructure Golden Gate service.
-
-    Retrieves a deployment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_deployment = oci.GoldenGate.get_deployment(deployment_id=oci_golden_gate_deployment["test_deployment"]["id"])
-    ```
-
-
-    :param str deployment_id: A unique Deployment identifier.
+    Use this data source to access information about an existing resource.
     """
     ...

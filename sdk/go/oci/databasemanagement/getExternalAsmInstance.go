@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific External Asm Instance resource in Oracle Cloud Infrastructure Database Management service.
@@ -60,32 +59,32 @@ type GetExternalAsmInstanceArgs struct {
 // A collection of values returned by getExternalAsmInstance.
 type GetExternalAsmInstanceResult struct {
 	// The Automatic Diagnostic Repository (ADR) home directory for the ASM instance.
-	AdrHomeDirectory string `pulumi:"adrHomeDirectory"`
+	AdrHomeDirectory *string `pulumi:"adrHomeDirectory"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The name of the external ASM instance.
-	ComponentName string `pulumi:"componentName"`
+	ComponentName *string `pulumi:"componentName"`
 	// The user-friendly name for the ASM instance. The name does not have to be unique.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external ASM that the ASM instance belongs to.
-	ExternalAsmId         string `pulumi:"externalAsmId"`
-	ExternalAsmInstanceId string `pulumi:"externalAsmInstanceId"`
+	ExternalAsmId         *string `pulumi:"externalAsmId"`
+	ExternalAsmInstanceId string  `pulumi:"externalAsmInstanceId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB node on which the ASM instance is running.
-	ExternalDbNodeId string `pulumi:"externalDbNodeId"`
+	ExternalDbNodeId *string `pulumi:"externalDbNodeId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the ASM instance is a part of.
-	ExternalDbSystemId string `pulumi:"externalDbSystemId"`
+	ExternalDbSystemId *string `pulumi:"externalDbSystemId"`
 	// The name of the host on which the ASM instance is running.
-	HostName string `pulumi:"hostName"`
+	HostName *string `pulumi:"hostName"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Additional information about the current lifecycle state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The current lifecycle state of the external ASM instance.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the external ASM instance was created.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the external ASM instance was last updated.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func GetExternalAsmInstanceOutput(ctx *pulumi.Context, args GetExternalAsmInstanceOutputArgs, opts ...pulumi.InvokeOption) GetExternalAsmInstanceResultOutput {
@@ -126,35 +125,29 @@ func (o GetExternalAsmInstanceResultOutput) ToGetExternalAsmInstanceResultOutput
 	return o
 }
 
-func (o GetExternalAsmInstanceResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetExternalAsmInstanceResult] {
-	return pulumix.Output[GetExternalAsmInstanceResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The Automatic Diagnostic Repository (ADR) home directory for the ASM instance.
-func (o GetExternalAsmInstanceResultOutput) AdrHomeDirectory() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExternalAsmInstanceResult) string { return v.AdrHomeDirectory }).(pulumi.StringOutput)
+func (o GetExternalAsmInstanceResultOutput) AdrHomeDirectory() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExternalAsmInstanceResult) *string { return v.AdrHomeDirectory }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-func (o GetExternalAsmInstanceResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExternalAsmInstanceResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetExternalAsmInstanceResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExternalAsmInstanceResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The name of the external ASM instance.
-func (o GetExternalAsmInstanceResultOutput) ComponentName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExternalAsmInstanceResult) string { return v.ComponentName }).(pulumi.StringOutput)
+func (o GetExternalAsmInstanceResultOutput) ComponentName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExternalAsmInstanceResult) *string { return v.ComponentName }).(pulumi.StringPtrOutput)
 }
 
 // The user-friendly name for the ASM instance. The name does not have to be unique.
-func (o GetExternalAsmInstanceResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExternalAsmInstanceResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetExternalAsmInstanceResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExternalAsmInstanceResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external ASM that the ASM instance belongs to.
-func (o GetExternalAsmInstanceResultOutput) ExternalAsmId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExternalAsmInstanceResult) string { return v.ExternalAsmId }).(pulumi.StringOutput)
+func (o GetExternalAsmInstanceResultOutput) ExternalAsmId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExternalAsmInstanceResult) *string { return v.ExternalAsmId }).(pulumi.StringPtrOutput)
 }
 
 func (o GetExternalAsmInstanceResultOutput) ExternalAsmInstanceId() pulumi.StringOutput {
@@ -162,43 +155,43 @@ func (o GetExternalAsmInstanceResultOutput) ExternalAsmInstanceId() pulumi.Strin
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB node on which the ASM instance is running.
-func (o GetExternalAsmInstanceResultOutput) ExternalDbNodeId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExternalAsmInstanceResult) string { return v.ExternalDbNodeId }).(pulumi.StringOutput)
+func (o GetExternalAsmInstanceResultOutput) ExternalDbNodeId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExternalAsmInstanceResult) *string { return v.ExternalDbNodeId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the ASM instance is a part of.
-func (o GetExternalAsmInstanceResultOutput) ExternalDbSystemId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExternalAsmInstanceResult) string { return v.ExternalDbSystemId }).(pulumi.StringOutput)
+func (o GetExternalAsmInstanceResultOutput) ExternalDbSystemId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExternalAsmInstanceResult) *string { return v.ExternalDbSystemId }).(pulumi.StringPtrOutput)
 }
 
 // The name of the host on which the ASM instance is running.
-func (o GetExternalAsmInstanceResultOutput) HostName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExternalAsmInstanceResult) string { return v.HostName }).(pulumi.StringOutput)
+func (o GetExternalAsmInstanceResultOutput) HostName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExternalAsmInstanceResult) *string { return v.HostName }).(pulumi.StringPtrOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetExternalAsmInstanceResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExternalAsmInstanceResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetExternalAsmInstanceResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExternalAsmInstanceResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Additional information about the current lifecycle state.
-func (o GetExternalAsmInstanceResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExternalAsmInstanceResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetExternalAsmInstanceResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExternalAsmInstanceResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The current lifecycle state of the external ASM instance.
-func (o GetExternalAsmInstanceResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExternalAsmInstanceResult) string { return v.State }).(pulumi.StringOutput)
+func (o GetExternalAsmInstanceResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExternalAsmInstanceResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the external ASM instance was created.
-func (o GetExternalAsmInstanceResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExternalAsmInstanceResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetExternalAsmInstanceResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExternalAsmInstanceResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the external ASM instance was last updated.
-func (o GetExternalAsmInstanceResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExternalAsmInstanceResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetExternalAsmInstanceResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExternalAsmInstanceResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

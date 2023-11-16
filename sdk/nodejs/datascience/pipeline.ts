@@ -115,40 +115,40 @@ export class Pipeline extends pulumi.CustomResource {
     /**
      * (Updatable) The configuration details of a pipeline.
      */
-    public readonly configurationDetails!: pulumi.Output<outputs.DataScience.PipelineConfigurationDetails>;
+    public readonly configurationDetails!: pulumi.Output<outputs.DataScience.PipelineConfigurationDetails | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the pipeline.
      */
-    public /*out*/ readonly createdBy!: pulumi.Output<string>;
+    public /*out*/ readonly createdBy!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     public readonly deleteRelatedPipelineRuns!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) A short description of the step.
      */
-    public readonly description!: pulumi.Output<string>;
+    public readonly description!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) A user-friendly display name for the resource.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    public readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The infrastructure configuration details of a pipeline or a step.
      */
-    public readonly infrastructureConfigurationDetails!: pulumi.Output<outputs.DataScience.PipelineInfrastructureConfigurationDetails>;
+    public readonly infrastructureConfigurationDetails!: pulumi.Output<outputs.DataScience.PipelineInfrastructureConfigurationDetails | undefined>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The pipeline log configuration details.
      */
-    public readonly logConfigurationDetails!: pulumi.Output<outputs.DataScience.PipelineLogConfigurationDetails>;
+    public readonly logConfigurationDetails!: pulumi.Output<outputs.DataScience.PipelineLogConfigurationDetails | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline with.
      */
@@ -156,8 +156,8 @@ export class Pipeline extends pulumi.CustomResource {
     /**
      * The current state of the pipeline.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
-    public readonly stepArtifact!: pulumi.Output<outputs.DataScience.PipelineStepArtifact>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
+    public readonly stepArtifact!: pulumi.Output<outputs.DataScience.PipelineStepArtifact | undefined>;
     /**
      * (Updatable) Array of step details for each step.
      */
@@ -165,15 +165,15 @@ export class Pipeline extends pulumi.CustomResource {
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The date and time the resource was updated in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a Pipeline resource with the given unique name, arguments, and options.

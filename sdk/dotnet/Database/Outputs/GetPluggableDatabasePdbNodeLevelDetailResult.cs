@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// The Node name of the Database Instance.
         /// </summary>
-        public readonly string NodeName;
+        public readonly string? NodeName;
         /// <summary>
         /// The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
         /// </summary>
-        public readonly string OpenMode;
+        public readonly string? OpenMode;
 
         [OutputConstructor]
         private GetPluggableDatabasePdbNodeLevelDetailResult(
-            string nodeName,
+            string? nodeName,
 
-            string openMode)
+            string? openMode)
         {
             NodeName = nodeName;
             OpenMode = openMode;

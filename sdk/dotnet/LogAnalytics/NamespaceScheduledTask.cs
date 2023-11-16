@@ -41,19 +41,19 @@ namespace Pulumi.Oci.LogAnalytics
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A user-friendly name that is changeable and that does not have to be unique. Format: a leading alphanumeric, followed by zero or more alphanumerics, underscores, spaces, backslashes, or hyphens in any order). No trailing spaces allowed.
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Discriminator.
@@ -71,16 +71,16 @@ namespace Pulumi.Oci.LogAnalytics
         /// Number of execution occurrences.
         /// </summary>
         [Output("numOccurrences")]
-        public Output<string> NumOccurrences { get; private set; } = null!;
+        public Output<string?> NumOccurrences { get; private set; } = null!;
 
         /// <summary>
         /// The ManagementSavedSearch id [OCID] to be accelerated.
         /// </summary>
         [Output("savedSearchId")]
-        public Output<string> SavedSearchId { get; private set; } = null!;
+        public Output<string?> SavedSearchId { get; private set; } = null!;
 
         [Output("scheduledTaskId")]
-        public Output<string> ScheduledTaskId { get; private set; } = null!;
+        public Output<string?> ScheduledTaskId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Schedules, typically a single schedule. Note there may only be a single schedule for SAVED_SEARCH and PURGE scheduled tasks.
@@ -92,13 +92,13 @@ namespace Pulumi.Oci.LogAnalytics
         /// The current state of the scheduled task.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// Status of the scheduled task. - PURGE_RESOURCE_NOT_FOUND
         /// </summary>
         [Output("taskStatus")]
-        public Output<string> TaskStatus { get; private set; } = null!;
+        public Output<string?> TaskStatus { get; private set; } = null!;
 
         /// <summary>
         /// Task type.
@@ -114,19 +114,19 @@ namespace Pulumi.Oci.LogAnalytics
         /// The date and time the scheduled task was created, in the format defined by RFC3339.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the scheduled task was last updated, in the format defined by RFC3339.
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
         /// most recent Work Request Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
         /// </summary>
         [Output("workRequestId")]
-        public Output<string> WorkRequestId { get; private set; } = null!;
+        public Output<string?> WorkRequestId { get; private set; } = null!;
 
 
         /// <summary>

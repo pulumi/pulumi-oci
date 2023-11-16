@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Managed Database Cursor Cache Statements in Oracle Cloud Infrastructure Database Management service.
@@ -68,9 +67,9 @@ type GetManagedDatabaseCursorCacheStatementsResult struct {
 	CursorCacheStatementCollections []GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollection `pulumi:"cursorCacheStatementCollections"`
 	Filters                         []GetManagedDatabaseCursorCacheStatementsFilter                         `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                string `pulumi:"id"`
-	Limit             *int   `pulumi:"limit"`
-	ManagedDatabaseId string `pulumi:"managedDatabaseId"`
+	Id                *string `pulumi:"id"`
+	Limit             *int    `pulumi:"limit"`
+	ManagedDatabaseId string  `pulumi:"managedDatabaseId"`
 	// The first thousand characters of the SQL text.
 	SqlText *string `pulumi:"sqlText"`
 }
@@ -117,12 +116,6 @@ func (o GetManagedDatabaseCursorCacheStatementsResultOutput) ToGetManagedDatabas
 	return o
 }
 
-func (o GetManagedDatabaseCursorCacheStatementsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedDatabaseCursorCacheStatementsResult] {
-	return pulumix.Output[GetManagedDatabaseCursorCacheStatementsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The list of cursor_cache_statement_collection.
 func (o GetManagedDatabaseCursorCacheStatementsResultOutput) CursorCacheStatementCollections() GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionArrayOutput {
 	return o.ApplyT(func(v GetManagedDatabaseCursorCacheStatementsResult) []GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollection {
@@ -137,8 +130,8 @@ func (o GetManagedDatabaseCursorCacheStatementsResultOutput) Filters() GetManage
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetManagedDatabaseCursorCacheStatementsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseCursorCacheStatementsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetManagedDatabaseCursorCacheStatementsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseCursorCacheStatementsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetManagedDatabaseCursorCacheStatementsResultOutput) Limit() pulumi.IntPtrOutput {

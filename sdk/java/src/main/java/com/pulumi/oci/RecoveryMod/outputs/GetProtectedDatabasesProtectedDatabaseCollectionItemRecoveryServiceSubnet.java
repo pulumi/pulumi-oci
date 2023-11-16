@@ -6,6 +6,8 @@ package com.pulumi.oci.RecoveryMod.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnet {
@@ -13,27 +15,27 @@ public final class GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryS
      * @return The recovery service subnet OCID.
      * 
      */
-    private String recoveryServiceSubnetId;
+    private @Nullable String recoveryServiceSubnetId;
     /**
      * @return A filter to return only the resources that match the specified lifecycle state.
      * 
      */
-    private String state;
+    private @Nullable String state;
 
     private GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnet() {}
     /**
      * @return The recovery service subnet OCID.
      * 
      */
-    public String recoveryServiceSubnetId() {
-        return this.recoveryServiceSubnetId;
+    public Optional<String> recoveryServiceSubnetId() {
+        return Optional.ofNullable(this.recoveryServiceSubnetId);
     }
     /**
      * @return A filter to return only the resources that match the specified lifecycle state.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryS
     }
     @CustomType.Builder
     public static final class Builder {
-        private String recoveryServiceSubnetId;
-        private String state;
+        private @Nullable String recoveryServiceSubnetId;
+        private @Nullable String state;
         public Builder() {}
         public Builder(GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnet defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryS
         }
 
         @CustomType.Setter
-        public Builder recoveryServiceSubnetId(String recoveryServiceSubnetId) {
-            this.recoveryServiceSubnetId = Objects.requireNonNull(recoveryServiceSubnetId);
+        public Builder recoveryServiceSubnetId(@Nullable String recoveryServiceSubnetId) {
+            this.recoveryServiceSubnetId = recoveryServiceSubnetId;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         public GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnet build() {

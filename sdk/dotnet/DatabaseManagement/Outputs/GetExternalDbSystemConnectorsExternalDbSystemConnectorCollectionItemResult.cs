@@ -16,15 +16,15 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the external DB system connector.
         /// </summary>
-        public readonly string AgentId;
+        public readonly string? AgentId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The error message indicating the reason for connection failure or `null` if the connection was successful.
         /// </summary>
-        public readonly string ConnectionFailureMessage;
+        public readonly string? ConnectionFailureMessage;
         /// <summary>
         /// The connection details required to connect to an external DB system component.
         /// </summary>
@@ -32,73 +32,73 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// The status of connectivity to the external DB system component.
         /// </summary>
-        public readonly string ConnectionStatus;
+        public readonly string? ConnectionStatus;
         /// <summary>
         /// The type of connector.
         /// </summary>
-        public readonly string ConnectorType;
+        public readonly string? ConnectorType;
         /// <summary>
         /// A filter to only return the resources that match the entire display name.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
         /// </summary>
-        public readonly string ExternalDbSystemId;
+        public readonly string? ExternalDbSystemId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system connector.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Additional information about the current lifecycle state.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// The current lifecycle state of the external DB system connector.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The date and time the connectionStatus of the external DB system connector was last updated.
         /// </summary>
-        public readonly string TimeConnectionStatusLastUpdated;
+        public readonly string? TimeConnectionStatusLastUpdated;
         /// <summary>
         /// The date and time the external DB system connector was created.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The date and time the external DB system connector was last updated.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
 
         [OutputConstructor]
         private GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemResult(
-            string agentId,
+            string? agentId,
 
-            string compartmentId,
+            string? compartmentId,
 
-            string connectionFailureMessage,
+            string? connectionFailureMessage,
 
             ImmutableArray<Outputs.GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoResult> connectionInfos,
 
-            string connectionStatus,
+            string? connectionStatus,
 
-            string connectorType,
+            string? connectorType,
 
-            string displayName,
+            string? displayName,
 
-            string externalDbSystemId,
+            string? externalDbSystemId,
 
-            string id,
+            string? id,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string state,
+            string? state,
 
-            string timeConnectionStatusLastUpdated,
+            string? timeConnectionStatusLastUpdated,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated)
+            string? timeUpdated)
         {
             AgentId = agentId;
             CompartmentId = compartmentId;

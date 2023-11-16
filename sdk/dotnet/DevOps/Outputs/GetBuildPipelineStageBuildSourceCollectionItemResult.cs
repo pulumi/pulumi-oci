@@ -16,41 +16,41 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// <summary>
         /// Branch name.
         /// </summary>
-        public readonly string Branch;
+        public readonly string? Branch;
         /// <summary>
         /// Connection identifier pertinent to Bitbucket Server source provider
         /// </summary>
-        public readonly string ConnectionId;
+        public readonly string? ConnectionId;
         /// <summary>
         /// The type of source provider.
         /// </summary>
-        public readonly string ConnectionType;
+        public readonly string? ConnectionType;
         /// <summary>
         /// Name of the build source. This must be unique within a build source collection. The name can be used by customers to locate the working directory pertinent to this repository.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The DevOps code repository ID.
         /// </summary>
-        public readonly string RepositoryId;
+        public readonly string? RepositoryId;
         /// <summary>
         /// URL for the repository.
         /// </summary>
-        public readonly string RepositoryUrl;
+        public readonly string? RepositoryUrl;
 
         [OutputConstructor]
         private GetBuildPipelineStageBuildSourceCollectionItemResult(
-            string branch,
+            string? branch,
 
-            string connectionId,
+            string? connectionId,
 
-            string connectionType,
+            string? connectionType,
 
-            string name,
+            string? name,
 
-            string repositoryId,
+            string? repositoryId,
 
-            string repositoryUrl)
+            string? repositoryUrl)
         {
             Branch = branch;
             ConnectionId = connectionId;

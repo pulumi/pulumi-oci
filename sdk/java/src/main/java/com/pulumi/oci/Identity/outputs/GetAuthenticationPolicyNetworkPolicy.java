@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAuthenticationPolicyNetworkPolicy {
@@ -14,7 +15,7 @@ public final class GetAuthenticationPolicyNetworkPolicy {
      * @return Network Source ids
      * 
      */
-    private List<String> networkSourceIds;
+    private @Nullable List<String> networkSourceIds;
 
     private GetAuthenticationPolicyNetworkPolicy() {}
     /**
@@ -22,7 +23,7 @@ public final class GetAuthenticationPolicyNetworkPolicy {
      * 
      */
     public List<String> networkSourceIds() {
-        return this.networkSourceIds;
+        return this.networkSourceIds == null ? List.of() : this.networkSourceIds;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetAuthenticationPolicyNetworkPolicy {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> networkSourceIds;
+        private @Nullable List<String> networkSourceIds;
         public Builder() {}
         public Builder(GetAuthenticationPolicyNetworkPolicy defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetAuthenticationPolicyNetworkPolicy {
         }
 
         @CustomType.Setter
-        public Builder networkSourceIds(List<String> networkSourceIds) {
-            this.networkSourceIds = Objects.requireNonNull(networkSourceIds);
+        public Builder networkSourceIds(@Nullable List<String> networkSourceIds) {
+            this.networkSourceIds = networkSourceIds;
             return this;
         }
         public Builder networkSourceIds(String... networkSourceIds) {

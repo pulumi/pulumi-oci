@@ -16,31 +16,31 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// Attribute used to define the type of attestation required.
         /// </summary>
-        public readonly string Attestation;
+        public readonly string? Attestation;
         /// <summary>
         /// Attribute used to define authenticator selection attachment.
         /// </summary>
-        public readonly string AuthenticatorSelectionAttachment;
+        public readonly string? AuthenticatorSelectionAttachment;
         /// <summary>
         /// Flag used to indicate authenticator selection is required or not
         /// </summary>
-        public readonly bool AuthenticatorSelectionRequireResidentKey;
+        public readonly bool? AuthenticatorSelectionRequireResidentKey;
         /// <summary>
         /// Attribute used to define authenticator selection resident key requirement.
         /// </summary>
-        public readonly string AuthenticatorSelectionResidentKey;
+        public readonly string? AuthenticatorSelectionResidentKey;
         /// <summary>
         /// Attribute used to define authenticator selection verification.
         /// </summary>
-        public readonly string AuthenticatorSelectionUserVerification;
+        public readonly string? AuthenticatorSelectionUserVerification;
         /// <summary>
         /// Number of domain levels Oracle Identity Cloud Service should use for origin comparision
         /// </summary>
-        public readonly int DomainValidationLevel;
+        public readonly int? DomainValidationLevel;
         /// <summary>
         /// Flag used to indicate whether we need to restrict creation of multiple credentials in same authenticator
         /// </summary>
-        public readonly bool ExcludeCredentials;
+        public readonly bool? ExcludeCredentials;
         /// <summary>
         /// List of server supported public key algorithms
         /// </summary>
@@ -48,27 +48,27 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// Timeout for the fido authentication to complete
         /// </summary>
-        public readonly int Timeout;
+        public readonly int? Timeout;
 
         [OutputConstructor]
         private GetDomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettingResult(
-            string attestation,
+            string? attestation,
 
-            string authenticatorSelectionAttachment,
+            string? authenticatorSelectionAttachment,
 
-            bool authenticatorSelectionRequireResidentKey,
+            bool? authenticatorSelectionRequireResidentKey,
 
-            string authenticatorSelectionResidentKey,
+            string? authenticatorSelectionResidentKey,
 
-            string authenticatorSelectionUserVerification,
+            string? authenticatorSelectionUserVerification,
 
-            int domainValidationLevel,
+            int? domainValidationLevel,
 
-            bool excludeCredentials,
+            bool? excludeCredentials,
 
             ImmutableArray<string> publicKeyTypes,
 
-            int timeout)
+            int? timeout)
         {
             Attestation = attestation;
             AuthenticatorSelectionAttachment = authenticatorSelectionAttachment;

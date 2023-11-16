@@ -48,24 +48,24 @@ export interface GetApiResult {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the resource is created.
      */
-    readonly compartmentId: string;
-    readonly content: string;
+    readonly compartmentId?: string;
+    readonly content?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * A message describing the current lifecycleState in more detail. For ACTIVE state it describes if the document has been validated and the possible values are:
      * * 'New' for just updated API Specifications
@@ -76,27 +76,27 @@ export interface GetApiResult {
      * * 'Failed' the document validation failed
      * * 'Canceled' the document validation was canceled
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * Type of API Specification file.
      */
-    readonly specificationType: string;
+    readonly specificationType?: string;
     /**
      * The current state of the API.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The time this resource was created. An RFC3339 formatted datetime string.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The time this resource was last updated. An RFC3339 formatted datetime string.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
     /**
      * Status of each feature available from the API.
      */
-    readonly validationResults: outputs.ApiGateway.GetApiValidationResult[];
+    readonly validationResults?: outputs.ApiGateway.GetApiValidationResult[];
 }
 /**
  * This data source provides details about a specific Api resource in Oracle Cloud Infrastructure API Gateway service.

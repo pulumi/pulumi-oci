@@ -90,7 +90,7 @@ export interface GetReplicationTargetsResult {
     /**
      * The list of replication_targets.
      */
-    readonly replicationTargets: outputs.FileStorage.GetReplicationTargetsReplicationTarget[];
+    readonly replicationTargets?: outputs.FileStorage.GetReplicationTargetsReplicationTarget[];
     /**
      * The current state of this replication.
      */

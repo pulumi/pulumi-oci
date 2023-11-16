@@ -16,17 +16,17 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
         /// <summary>
         /// The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
         /// </summary>
-        public readonly string DestinationEntityId;
+        public readonly string? DestinationEntityId;
         /// <summary>
         /// The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
         /// </summary>
-        public readonly string SourceEntityId;
+        public readonly string? SourceEntityId;
 
         [OutputConstructor]
         private GetLogAnalyticsEntityTopologyItemLinkItemResult(
-            string destinationEntityId,
+            string? destinationEntityId,
 
-            string sourceEntityId)
+            string? sourceEntityId)
         {
             DestinationEntityId = destinationEntityId;
             SourceEntityId = sourceEntityId;

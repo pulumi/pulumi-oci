@@ -78,7 +78,7 @@ export class VolumeGroup extends pulumi.CustomResource {
     /**
      * If provided, specifies the ID of the volume backup policy to assign to the newly created volume group. If omitted, no policy will be assigned.
      */
-    public readonly backupPolicyId!: pulumi.Output<string>;
+    public readonly backupPolicyId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The OCID of the compartment that contains the volume group.
      */
@@ -86,7 +86,7 @@ export class VolumeGroup extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information. 
      *
@@ -94,24 +94,24 @@ export class VolumeGroup extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly displayName!: pulumi.Output<string>;
+    public readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * Specifies whether the newly created cloned volume group's data has finished copying from the source volume group or backup.
      */
-    public /*out*/ readonly isHydrated!: pulumi.Output<boolean>;
+    public /*out*/ readonly isHydrated!: pulumi.Output<boolean | undefined>;
     public readonly preserveVolumeReplica!: pulumi.Output<boolean | undefined>;
     /**
      * The aggregate size of the volume group in GBs.
      */
-    public /*out*/ readonly sizeInGbs!: pulumi.Output<string>;
+    public /*out*/ readonly sizeInGbs!: pulumi.Output<string | undefined>;
     /**
      * The aggregate size of the volume group in MBs.
      */
-    public /*out*/ readonly sizeInMbs!: pulumi.Output<string>;
+    public /*out*/ readonly sizeInMbs!: pulumi.Output<string | undefined>;
     /**
      * Specifies the source for a volume group.
      */
@@ -119,20 +119,20 @@ export class VolumeGroup extends pulumi.CustomResource {
     /**
      * The current state of a volume group.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The date and time the volume group was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The list of volume group replicas that this volume group will be enabled to have in the specified destination availability domains.
      */
-    public readonly volumeGroupReplicas!: pulumi.Output<outputs.Core.VolumeGroupVolumeGroupReplica[]>;
+    public readonly volumeGroupReplicas!: pulumi.Output<outputs.Core.VolumeGroupVolumeGroupReplica[] | undefined>;
     public readonly volumeGroupReplicasDeletion!: pulumi.Output<boolean | undefined>;
     /**
      * OCIDs for the volumes in this volume group.
      */
-    public readonly volumeIds!: pulumi.Output<string[]>;
+    public readonly volumeIds!: pulumi.Output<string[] | undefined>;
 
     /**
      * Create a VolumeGroup resource with the given unique name, arguments, and options.

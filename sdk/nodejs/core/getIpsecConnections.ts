@@ -66,7 +66,7 @@ export interface GetIpsecConnectionsResult {
     /**
      * The list of connections.
      */
-    readonly connections: outputs.Core.GetIpsecConnectionsConnection[];
+    readonly connections?: outputs.Core.GetIpsecConnectionsConnection[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [Cpe](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Cpe/) object.
      */
@@ -79,7 +79,7 @@ export interface GetIpsecConnectionsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
 }
 /**
  * This data source provides the list of Ip Sec Connections in Oracle Cloud Infrastructure Core service.

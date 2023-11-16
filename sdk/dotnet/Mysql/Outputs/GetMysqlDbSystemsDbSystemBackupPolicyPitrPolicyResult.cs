@@ -16,10 +16,10 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// <summary>
         /// Whether the Channel has been enabled by the user.
         /// </summary>
-        public readonly bool IsEnabled;
+        public readonly bool? IsEnabled;
 
         [OutputConstructor]
-        private GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyResult(bool isEnabled)
+        private GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyResult(bool? isEnabled)
         {
             IsEnabled = isEnabled;
         }

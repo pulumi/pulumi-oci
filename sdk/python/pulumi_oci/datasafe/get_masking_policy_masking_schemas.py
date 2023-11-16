@@ -47,7 +47,7 @@ class GetMaskingPolicyMaskingSchemasResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -60,18 +60,12 @@ class GetMaskingPolicyMaskingSchemasResult:
 
     @property
     @pulumi.getter(name="maskingSchemaCollections")
-    def masking_schema_collections(self) -> Sequence['outputs.GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionResult']:
-        """
-        The list of masking_schema_collection.
-        """
+    def masking_schema_collections(self) -> Optional[Sequence['outputs.GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionResult']]:
         return pulumi.get(self, "masking_schema_collections")
 
     @property
     @pulumi.getter(name="schemaNames")
     def schema_names(self) -> Optional[Sequence[str]]:
-        """
-        The database schema that contains the masking column.
-        """
         return pulumi.get(self, "schema_names")
 
 
@@ -93,23 +87,7 @@ def get_masking_policy_masking_schemas(filters: Optional[Sequence[pulumi.InputTy
                                        schema_names: Optional[Sequence[str]] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMaskingPolicyMaskingSchemasResult:
     """
-    This data source provides the list of Masking Policy Masking Schemas in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets a list of masking schemas present in the specified masking policy and based on the specified query parameters.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_masking_policy_masking_schemas = oci.DataSafe.get_masking_policy_masking_schemas(masking_policy_id=oci_data_safe_masking_policy["test_masking_policy"]["id"],
-        schema_names=var["masking_policy_masking_schema_schema_name"])
-    ```
-
-
-    :param str masking_policy_id: The OCID of the masking policy.
-    :param Sequence[str] schema_names: A filter to return only items related to specific schema name.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -132,22 +110,6 @@ def get_masking_policy_masking_schemas_output(filters: Optional[pulumi.Input[Opt
                                               schema_names: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMaskingPolicyMaskingSchemasResult]:
     """
-    This data source provides the list of Masking Policy Masking Schemas in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets a list of masking schemas present in the specified masking policy and based on the specified query parameters.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_masking_policy_masking_schemas = oci.DataSafe.get_masking_policy_masking_schemas(masking_policy_id=oci_data_safe_masking_policy["test_masking_policy"]["id"],
-        schema_names=var["masking_policy_masking_schema_schema_name"])
-    ```
-
-
-    :param str masking_policy_id: The OCID of the masking policy.
-    :param Sequence[str] schema_names: A filter to return only items related to specific schema name.
+    Use this data source to access information about an existing resource.
     """
     ...

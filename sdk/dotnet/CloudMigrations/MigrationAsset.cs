@@ -62,7 +62,7 @@ namespace Pulumi.Oci.CloudMigrations
         /// Compartment Identifier
         /// </summary>
         [Output("compartmentId")]
-        public Output<string> CompartmentId { get; private set; } = null!;
+        public Output<string?> CompartmentId { get; private set; } = null!;
 
         /// <summary>
         /// List of migration assets that depend on the asset.
@@ -74,7 +74,7 @@ namespace Pulumi.Oci.CloudMigrations
         /// (Updatable) A user-friendly name. If empty, then source asset name will be used. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// OCID of an asset for an inventory.
@@ -86,7 +86,7 @@ namespace Pulumi.Oci.CloudMigrations
         /// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         [Output("migrationAssetDependsOns")]
         public Output<ImmutableArray<string>> MigrationAssetDependsOns { get; private set; } = null!;
@@ -107,7 +107,7 @@ namespace Pulumi.Oci.CloudMigrations
         /// The parent snapshot of the migration asset to be used by the replication task.
         /// </summary>
         [Output("parentSnapshot")]
-        public Output<string> ParentSnapshot { get; private set; } = null!;
+        public Output<string?> ParentSnapshot { get; private set; } = null!;
 
         /// <summary>
         /// Replication compartment identifier
@@ -119,7 +119,7 @@ namespace Pulumi.Oci.CloudMigrations
         /// (Updatable) Replication schedule identifier
         /// </summary>
         [Output("replicationScheduleId")]
-        public Output<string> ReplicationScheduleId { get; private set; } = null!;
+        public Output<string?> ReplicationScheduleId { get; private set; } = null!;
 
         /// <summary>
         /// Name of snapshot bucket
@@ -135,43 +135,43 @@ namespace Pulumi.Oci.CloudMigrations
         /// Key-value pair representing disks ID mapped to the OCIDs of replicated or hydration server volume snapshots. Example: `{"bar-key": "value"}`
         /// </summary>
         [Output("snapshots")]
-        public Output<ImmutableDictionary<string, object>> Snapshots { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> Snapshots { get; private set; } = null!;
 
         /// <summary>
         /// OCID that is referenced to an asset for an inventory.
         /// </summary>
         [Output("sourceAssetId")]
-        public Output<string> SourceAssetId { get; private set; } = null!;
+        public Output<string?> SourceAssetId { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the migration asset.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// Tenancy identifier
         /// </summary>
         [Output("tenancyId")]
-        public Output<string> TenancyId { get; private set; } = null!;
+        public Output<string?> TenancyId { get; private set; } = null!;
 
         /// <summary>
         /// The time when the migration asset was created. An RFC3339 formatted datetime string.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The time when the migration asset was updated. An RFC3339 formatted datetime string.
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
         /// The type of asset referenced for inventory.
         /// </summary>
         [Output("type")]
-        public Output<string> Type { get; private set; } = null!;
+        public Output<string?> Type { get; private set; } = null!;
 
 
         /// <summary>

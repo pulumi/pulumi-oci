@@ -16,17 +16,17 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// The comments about the operation.
         /// </summary>
-        public readonly string Comment;
+        public readonly string? Comment;
         /// <summary>
         /// The details of the example operation.
         /// </summary>
-        public readonly string Operation;
+        public readonly string? Operation;
 
         [OutputConstructor]
         private GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationExampleLineResult(
-            string comment,
+            string? comment,
 
-            string operation)
+            string? operation)
         {
             Comment = comment;
             Operation = operation;

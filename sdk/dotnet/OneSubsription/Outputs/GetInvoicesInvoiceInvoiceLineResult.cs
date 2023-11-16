@@ -16,15 +16,15 @@ namespace Pulumi.Oci.OneSubsription.Outputs
         /// <summary>
         /// AR Invoice Number for Invoice Line
         /// </summary>
-        public readonly string ArInvoiceNumber;
+        public readonly string? ArInvoiceNumber;
         /// <summary>
         /// Data Center Attribute.
         /// </summary>
-        public readonly string DataCenter;
+        public readonly string? DataCenter;
         /// <summary>
         /// SPM Invoice Line internal identifier
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Product description
         /// </summary>
@@ -32,25 +32,25 @@ namespace Pulumi.Oci.OneSubsription.Outputs
         /// <summary>
         /// Usage end time
         /// </summary>
-        public readonly string TimeEnd;
+        public readonly string? TimeEnd;
         /// <summary>
         /// Usage start time
         /// </summary>
-        public readonly string TimeStart;
+        public readonly string? TimeStart;
 
         [OutputConstructor]
         private GetInvoicesInvoiceInvoiceLineResult(
-            string arInvoiceNumber,
+            string? arInvoiceNumber,
 
-            string dataCenter,
+            string? dataCenter,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetInvoicesInvoiceInvoiceLineProductResult> products,
 
-            string timeEnd,
+            string? timeEnd,
 
-            string timeStart)
+            string? timeStart)
         {
             ArInvoiceNumber = arInvoiceNumber;
             DataCenter = dataCenter;

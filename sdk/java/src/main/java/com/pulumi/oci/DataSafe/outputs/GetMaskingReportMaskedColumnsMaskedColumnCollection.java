@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DataSafe.outputs.GetMaskingReportMaskedColumnsMaskedColumnCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMaskingReportMaskedColumnsMaskedColumnCollection {
@@ -14,7 +15,7 @@ public final class GetMaskingReportMaskedColumnsMaskedColumnCollection {
      * @return An array of masking column summary objects.
      * 
      */
-    private List<GetMaskingReportMaskedColumnsMaskedColumnCollectionItem> items;
+    private @Nullable List<GetMaskingReportMaskedColumnsMaskedColumnCollectionItem> items;
 
     private GetMaskingReportMaskedColumnsMaskedColumnCollection() {}
     /**
@@ -22,7 +23,7 @@ public final class GetMaskingReportMaskedColumnsMaskedColumnCollection {
      * 
      */
     public List<GetMaskingReportMaskedColumnsMaskedColumnCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetMaskingReportMaskedColumnsMaskedColumnCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetMaskingReportMaskedColumnsMaskedColumnCollectionItem> items;
+        private @Nullable List<GetMaskingReportMaskedColumnsMaskedColumnCollectionItem> items;
         public Builder() {}
         public Builder(GetMaskingReportMaskedColumnsMaskedColumnCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetMaskingReportMaskedColumnsMaskedColumnCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetMaskingReportMaskedColumnsMaskedColumnCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetMaskingReportMaskedColumnsMaskedColumnCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetMaskingReportMaskedColumnsMaskedColumnCollectionItem... items) {

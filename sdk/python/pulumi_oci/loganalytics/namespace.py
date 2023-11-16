@@ -19,9 +19,6 @@ class NamespaceArgs:
                  namespace: pulumi.Input[str]):
         """
         The set of arguments for constructing a Namespace resource.
-        :param pulumi.Input[str] compartment_id: The OCID of the root compartment i.e. OCID of the tenancy.
-        :param pulumi.Input[bool] is_onboarded: Use `true` if tenancy is to be onboarded to logging analytics and `false` if tenancy is to be offboarded
-        :param pulumi.Input[str] namespace: The Log Analytics namespace used for the request.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "is_onboarded", is_onboarded)
@@ -30,9 +27,6 @@ class NamespaceArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of the root compartment i.e. OCID of the tenancy.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -42,9 +36,6 @@ class NamespaceArgs:
     @property
     @pulumi.getter(name="isOnboarded")
     def is_onboarded(self) -> pulumi.Input[bool]:
-        """
-        Use `true` if tenancy is to be onboarded to logging analytics and `false` if tenancy is to be offboarded
-        """
         return pulumi.get(self, "is_onboarded")
 
     @is_onboarded.setter
@@ -54,9 +45,6 @@ class NamespaceArgs:
     @property
     @pulumi.getter
     def namespace(self) -> pulumi.Input[str]:
-        """
-        The Log Analytics namespace used for the request.
-        """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
@@ -72,9 +60,6 @@ class _NamespaceState:
                  namespace: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering Namespace resources.
-        :param pulumi.Input[str] compartment_id: The OCID of the root compartment i.e. OCID of the tenancy.
-        :param pulumi.Input[bool] is_onboarded: Use `true` if tenancy is to be onboarded to logging analytics and `false` if tenancy is to be offboarded
-        :param pulumi.Input[str] namespace: The Log Analytics namespace used for the request.
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -86,9 +71,6 @@ class _NamespaceState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the root compartment i.e. OCID of the tenancy.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -98,9 +80,6 @@ class _NamespaceState:
     @property
     @pulumi.getter(name="isOnboarded")
     def is_onboarded(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Use `true` if tenancy is to be onboarded to logging analytics and `false` if tenancy is to be offboarded
-        """
         return pulumi.get(self, "is_onboarded")
 
     @is_onboarded.setter
@@ -110,9 +89,6 @@ class _NamespaceState:
     @property
     @pulumi.getter
     def namespace(self) -> Optional[pulumi.Input[str]]:
-        """
-        The Log Analytics namespace used for the request.
-        """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
@@ -130,35 +106,9 @@ class Namespace(pulumi.CustomResource):
                  namespace: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Namespace resource in Oracle Cloud Infrastructure Log Analytics service.
-
-        Onboards a tenancy with Log Analytics or Offboards a tenancy from Log Analytics functionality.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_namespace = oci.log_analytics.Namespace("testNamespace",
-            compartment_id=var["compartment_id"],
-            is_onboarded=var["is_onboarded"],
-            namespace=var["namespace_namespace"])
-        ```
-
-        ## Import
-
-        Namespace can be imported using the `namespace`, e.g.
-
-        ```sh
-         $ pulumi import oci:LogAnalytics/namespace:Namespace test_namespace "namespace"
-        ```
-
+        Create a Namespace resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: The OCID of the root compartment i.e. OCID of the tenancy.
-        :param pulumi.Input[bool] is_onboarded: Use `true` if tenancy is to be onboarded to logging analytics and `false` if tenancy is to be offboarded
-        :param pulumi.Input[str] namespace: The Log Analytics namespace used for the request.
         """
         ...
     @overload
@@ -167,30 +117,7 @@ class Namespace(pulumi.CustomResource):
                  args: NamespaceArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Namespace resource in Oracle Cloud Infrastructure Log Analytics service.
-
-        Onboards a tenancy with Log Analytics or Offboards a tenancy from Log Analytics functionality.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_namespace = oci.log_analytics.Namespace("testNamespace",
-            compartment_id=var["compartment_id"],
-            is_onboarded=var["is_onboarded"],
-            namespace=var["namespace_namespace"])
-        ```
-
-        ## Import
-
-        Namespace can be imported using the `namespace`, e.g.
-
-        ```sh
-         $ pulumi import oci:LogAnalytics/namespace:Namespace test_namespace "namespace"
-        ```
-
+        Create a Namespace resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param NamespaceArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -247,9 +174,6 @@ class Namespace(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: The OCID of the root compartment i.e. OCID of the tenancy.
-        :param pulumi.Input[bool] is_onboarded: Use `true` if tenancy is to be onboarded to logging analytics and `false` if tenancy is to be offboarded
-        :param pulumi.Input[str] namespace: The Log Analytics namespace used for the request.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -263,24 +187,15 @@ class Namespace(pulumi.CustomResource):
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the root compartment i.e. OCID of the tenancy.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="isOnboarded")
     def is_onboarded(self) -> pulumi.Output[bool]:
-        """
-        Use `true` if tenancy is to be onboarded to logging analytics and `false` if tenancy is to be offboarded
-        """
         return pulumi.get(self, "is_onboarded")
 
     @property
     @pulumi.getter
     def namespace(self) -> pulumi.Output[str]:
-        """
-        The Log Analytics namespace used for the request.
-        """
         return pulumi.get(self, "namespace")
 

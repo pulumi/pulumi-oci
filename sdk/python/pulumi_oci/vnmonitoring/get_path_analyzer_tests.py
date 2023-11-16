@@ -46,17 +46,11 @@ class GetPathAnalyzerTestsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PathAnalyzerTest` resource's compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -66,7 +60,7 @@ class GetPathAnalyzerTestsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -74,18 +68,12 @@ class GetPathAnalyzerTestsResult:
 
     @property
     @pulumi.getter(name="pathAnalyzerTestCollections")
-    def path_analyzer_test_collections(self) -> Sequence['outputs.GetPathAnalyzerTestsPathAnalyzerTestCollectionResult']:
-        """
-        The list of path_analyzer_test_collection.
-        """
+    def path_analyzer_test_collections(self) -> Optional[Sequence['outputs.GetPathAnalyzerTestsPathAnalyzerTestCollectionResult']]:
         return pulumi.get(self, "path_analyzer_test_collections")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the `PathAnalyzerTest` resource.
-        """
         return pulumi.get(self, "state")
 
 
@@ -109,25 +97,7 @@ def get_path_analyzer_tests(compartment_id: Optional[str] = None,
                             state: Optional[str] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPathAnalyzerTestsResult:
     """
-    This data source provides the list of Path Analyzer Tests in Oracle Cloud Infrastructure Vn Monitoring service.
-
-    Returns a list of all `PathAnalyzerTests` in a compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_path_analyzer_tests = oci.VnMonitoring.get_path_analyzer_tests(compartment_id=var["compartment_id"],
-        display_name=var["path_analyzer_test_display_name"],
-        state=var["path_analyzer_test_state"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str display_name: A filter that returns only resources that match the entire display name given.
-    :param str state: A filter that returns only resources whose `lifecycleState` matches the given `lifecycleState`.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -153,24 +123,6 @@ def get_path_analyzer_tests_output(compartment_id: Optional[pulumi.Input[str]] =
                                    state: Optional[pulumi.Input[Optional[str]]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPathAnalyzerTestsResult]:
     """
-    This data source provides the list of Path Analyzer Tests in Oracle Cloud Infrastructure Vn Monitoring service.
-
-    Returns a list of all `PathAnalyzerTests` in a compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_path_analyzer_tests = oci.VnMonitoring.get_path_analyzer_tests(compartment_id=var["compartment_id"],
-        display_name=var["path_analyzer_test_display_name"],
-        state=var["path_analyzer_test_state"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str display_name: A filter that returns only resources that match the entire display name given.
-    :param str state: A filter that returns only resources whose `lifecycleState` matches the given `lifecycleState`.
+    Use this data source to access information about an existing resource.
     """
     ...

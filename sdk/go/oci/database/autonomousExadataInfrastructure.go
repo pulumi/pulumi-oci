@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Autonomous Exadata Infrastructure resource in Oracle Cloud Infrastructure Database service.
@@ -98,34 +97,34 @@ type AutonomousExadataInfrastructure struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) The user-friendly name for the Autonomous Exadata Infrastructure. It does not have to be unique.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// A domain name used for the Autonomous Exadata Infrastructure. If the Oracle-provided Internet and VCN Resolver is enabled for the specified subnet, the domain name for the subnet is used (don't provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.
-	Domain pulumi.StringOutput `pulumi:"domain"`
+	Domain pulumi.StringPtrOutput `pulumi:"domain"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The host name for the Autonomous Exadata Infrastructure node.
-	Hostname pulumi.StringOutput `pulumi:"hostname"`
+	Hostname pulumi.StringPtrOutput `pulumi:"hostname"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
-	LastMaintenanceRunId pulumi.StringOutput `pulumi:"lastMaintenanceRunId"`
+	LastMaintenanceRunId pulumi.StringPtrOutput `pulumi:"lastMaintenanceRunId"`
 	// The Oracle license model that applies to all the databases in the Autonomous Exadata Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
-	LicenseModel pulumi.StringOutput `pulumi:"licenseModel"`
+	LicenseModel pulumi.StringPtrOutput `pulumi:"licenseModel"`
 	// Additional information about the current lifecycle state of the Autonomous Exadata Infrastructure.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
 	MaintenanceWindowDetails AutonomousExadataInfrastructureMaintenanceWindowDetailsPtrOutput `pulumi:"maintenanceWindowDetails"`
 	// The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
 	MaintenanceWindows AutonomousExadataInfrastructureMaintenanceWindowArrayOutput `pulumi:"maintenanceWindows"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
-	NextMaintenanceRunId pulumi.StringOutput `pulumi:"nextMaintenanceRunId"`
+	NextMaintenanceRunId pulumi.StringPtrOutput `pulumi:"nextMaintenanceRunId"`
 	// (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
 	// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
 	NsgIds pulumi.StringArrayOutput `pulumi:"nsgIds"`
 	// The FQDN of the DNS record for the SCAN IP addresses that are associated with the Autonomous Exadata Infrastructure.
-	ScanDnsName pulumi.StringOutput `pulumi:"scanDnsName"`
+	ScanDnsName pulumi.StringPtrOutput `pulumi:"scanDnsName"`
 	// The shape of the Autonomous Exadata Infrastructure. The shape determines resources allocated to the Autonomous Exadata Infrastructure (CPU cores, memory and storage). To get a list of shapes, use the ListDbSystemShapes operation.
 	Shape pulumi.StringOutput `pulumi:"shape"`
 	// The current lifecycle state of the Autonomous Exadata Infrastructure.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the Autonomous Exadata Infrastructure is associated with.
 	//
 	// **Subnet Restrictions:**
@@ -137,9 +136,9 @@ type AutonomousExadataInfrastructure struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubnetId pulumi.StringOutput `pulumi:"subnetId"`
 	// The date and time the Autonomous Exadata Infrastructure was created.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The OCID of the zone the Autonomous Exadata Infrastructure is associated with.
-	ZoneId pulumi.StringOutput `pulumi:"zoneId"`
+	ZoneId pulumi.StringPtrOutput `pulumi:"zoneId"`
 }
 
 // NewAutonomousExadataInfrastructure registers a new resource with the given unique name, arguments, and options.
@@ -395,12 +394,6 @@ func (i *AutonomousExadataInfrastructure) ToAutonomousExadataInfrastructureOutpu
 	return pulumi.ToOutputWithContext(ctx, i).(AutonomousExadataInfrastructureOutput)
 }
 
-func (i *AutonomousExadataInfrastructure) ToOutput(ctx context.Context) pulumix.Output[*AutonomousExadataInfrastructure] {
-	return pulumix.Output[*AutonomousExadataInfrastructure]{
-		OutputState: i.ToAutonomousExadataInfrastructureOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AutonomousExadataInfrastructureArrayInput is an input type that accepts AutonomousExadataInfrastructureArray and AutonomousExadataInfrastructureArrayOutput values.
 // You can construct a concrete instance of `AutonomousExadataInfrastructureArrayInput` via:
 //
@@ -424,12 +417,6 @@ func (i AutonomousExadataInfrastructureArray) ToAutonomousExadataInfrastructureA
 
 func (i AutonomousExadataInfrastructureArray) ToAutonomousExadataInfrastructureArrayOutputWithContext(ctx context.Context) AutonomousExadataInfrastructureArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AutonomousExadataInfrastructureArrayOutput)
-}
-
-func (i AutonomousExadataInfrastructureArray) ToOutput(ctx context.Context) pulumix.Output[[]*AutonomousExadataInfrastructure] {
-	return pulumix.Output[[]*AutonomousExadataInfrastructure]{
-		OutputState: i.ToAutonomousExadataInfrastructureArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // AutonomousExadataInfrastructureMapInput is an input type that accepts AutonomousExadataInfrastructureMap and AutonomousExadataInfrastructureMapOutput values.
@@ -457,12 +444,6 @@ func (i AutonomousExadataInfrastructureMap) ToAutonomousExadataInfrastructureMap
 	return pulumi.ToOutputWithContext(ctx, i).(AutonomousExadataInfrastructureMapOutput)
 }
 
-func (i AutonomousExadataInfrastructureMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AutonomousExadataInfrastructure] {
-	return pulumix.Output[map[string]*AutonomousExadataInfrastructure]{
-		OutputState: i.ToAutonomousExadataInfrastructureMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AutonomousExadataInfrastructureOutput struct{ *pulumi.OutputState }
 
 func (AutonomousExadataInfrastructureOutput) ElementType() reflect.Type {
@@ -475,12 +456,6 @@ func (o AutonomousExadataInfrastructureOutput) ToAutonomousExadataInfrastructure
 
 func (o AutonomousExadataInfrastructureOutput) ToAutonomousExadataInfrastructureOutputWithContext(ctx context.Context) AutonomousExadataInfrastructureOutput {
 	return o
-}
-
-func (o AutonomousExadataInfrastructureOutput) ToOutput(ctx context.Context) pulumix.Output[*AutonomousExadataInfrastructure] {
-	return pulumix.Output[*AutonomousExadataInfrastructure]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The availability domain where the Autonomous Exadata Infrastructure is located.
@@ -505,13 +480,13 @@ func (o AutonomousExadataInfrastructureOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) The user-friendly name for the Autonomous Exadata Infrastructure. It does not have to be unique.
-func (o AutonomousExadataInfrastructureOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *AutonomousExadataInfrastructure) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o AutonomousExadataInfrastructureOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AutonomousExadataInfrastructure) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // A domain name used for the Autonomous Exadata Infrastructure. If the Oracle-provided Internet and VCN Resolver is enabled for the specified subnet, the domain name for the subnet is used (don't provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.
-func (o AutonomousExadataInfrastructureOutput) Domain() pulumi.StringOutput {
-	return o.ApplyT(func(v *AutonomousExadataInfrastructure) pulumi.StringOutput { return v.Domain }).(pulumi.StringOutput)
+func (o AutonomousExadataInfrastructureOutput) Domain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AutonomousExadataInfrastructure) pulumi.StringPtrOutput { return v.Domain }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -520,23 +495,23 @@ func (o AutonomousExadataInfrastructureOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The host name for the Autonomous Exadata Infrastructure node.
-func (o AutonomousExadataInfrastructureOutput) Hostname() pulumi.StringOutput {
-	return o.ApplyT(func(v *AutonomousExadataInfrastructure) pulumi.StringOutput { return v.Hostname }).(pulumi.StringOutput)
+func (o AutonomousExadataInfrastructureOutput) Hostname() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AutonomousExadataInfrastructure) pulumi.StringPtrOutput { return v.Hostname }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
-func (o AutonomousExadataInfrastructureOutput) LastMaintenanceRunId() pulumi.StringOutput {
-	return o.ApplyT(func(v *AutonomousExadataInfrastructure) pulumi.StringOutput { return v.LastMaintenanceRunId }).(pulumi.StringOutput)
+func (o AutonomousExadataInfrastructureOutput) LastMaintenanceRunId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AutonomousExadataInfrastructure) pulumi.StringPtrOutput { return v.LastMaintenanceRunId }).(pulumi.StringPtrOutput)
 }
 
 // The Oracle license model that applies to all the databases in the Autonomous Exadata Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
-func (o AutonomousExadataInfrastructureOutput) LicenseModel() pulumi.StringOutput {
-	return o.ApplyT(func(v *AutonomousExadataInfrastructure) pulumi.StringOutput { return v.LicenseModel }).(pulumi.StringOutput)
+func (o AutonomousExadataInfrastructureOutput) LicenseModel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AutonomousExadataInfrastructure) pulumi.StringPtrOutput { return v.LicenseModel }).(pulumi.StringPtrOutput)
 }
 
 // Additional information about the current lifecycle state of the Autonomous Exadata Infrastructure.
-func (o AutonomousExadataInfrastructureOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *AutonomousExadataInfrastructure) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o AutonomousExadataInfrastructureOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AutonomousExadataInfrastructure) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
@@ -554,8 +529,8 @@ func (o AutonomousExadataInfrastructureOutput) MaintenanceWindows() AutonomousEx
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
-func (o AutonomousExadataInfrastructureOutput) NextMaintenanceRunId() pulumi.StringOutput {
-	return o.ApplyT(func(v *AutonomousExadataInfrastructure) pulumi.StringOutput { return v.NextMaintenanceRunId }).(pulumi.StringOutput)
+func (o AutonomousExadataInfrastructureOutput) NextMaintenanceRunId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AutonomousExadataInfrastructure) pulumi.StringPtrOutput { return v.NextMaintenanceRunId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
@@ -565,8 +540,8 @@ func (o AutonomousExadataInfrastructureOutput) NsgIds() pulumi.StringArrayOutput
 }
 
 // The FQDN of the DNS record for the SCAN IP addresses that are associated with the Autonomous Exadata Infrastructure.
-func (o AutonomousExadataInfrastructureOutput) ScanDnsName() pulumi.StringOutput {
-	return o.ApplyT(func(v *AutonomousExadataInfrastructure) pulumi.StringOutput { return v.ScanDnsName }).(pulumi.StringOutput)
+func (o AutonomousExadataInfrastructureOutput) ScanDnsName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AutonomousExadataInfrastructure) pulumi.StringPtrOutput { return v.ScanDnsName }).(pulumi.StringPtrOutput)
 }
 
 // The shape of the Autonomous Exadata Infrastructure. The shape determines resources allocated to the Autonomous Exadata Infrastructure (CPU cores, memory and storage). To get a list of shapes, use the ListDbSystemShapes operation.
@@ -575,8 +550,8 @@ func (o AutonomousExadataInfrastructureOutput) Shape() pulumi.StringOutput {
 }
 
 // The current lifecycle state of the Autonomous Exadata Infrastructure.
-func (o AutonomousExadataInfrastructureOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *AutonomousExadataInfrastructure) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o AutonomousExadataInfrastructureOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AutonomousExadataInfrastructure) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the Autonomous Exadata Infrastructure is associated with.
@@ -593,13 +568,13 @@ func (o AutonomousExadataInfrastructureOutput) SubnetId() pulumi.StringOutput {
 }
 
 // The date and time the Autonomous Exadata Infrastructure was created.
-func (o AutonomousExadataInfrastructureOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *AutonomousExadataInfrastructure) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o AutonomousExadataInfrastructureOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AutonomousExadataInfrastructure) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the zone the Autonomous Exadata Infrastructure is associated with.
-func (o AutonomousExadataInfrastructureOutput) ZoneId() pulumi.StringOutput {
-	return o.ApplyT(func(v *AutonomousExadataInfrastructure) pulumi.StringOutput { return v.ZoneId }).(pulumi.StringOutput)
+func (o AutonomousExadataInfrastructureOutput) ZoneId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AutonomousExadataInfrastructure) pulumi.StringPtrOutput { return v.ZoneId }).(pulumi.StringPtrOutput)
 }
 
 type AutonomousExadataInfrastructureArrayOutput struct{ *pulumi.OutputState }
@@ -614,12 +589,6 @@ func (o AutonomousExadataInfrastructureArrayOutput) ToAutonomousExadataInfrastru
 
 func (o AutonomousExadataInfrastructureArrayOutput) ToAutonomousExadataInfrastructureArrayOutputWithContext(ctx context.Context) AutonomousExadataInfrastructureArrayOutput {
 	return o
-}
-
-func (o AutonomousExadataInfrastructureArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AutonomousExadataInfrastructure] {
-	return pulumix.Output[[]*AutonomousExadataInfrastructure]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AutonomousExadataInfrastructureArrayOutput) Index(i pulumi.IntInput) AutonomousExadataInfrastructureOutput {
@@ -640,12 +609,6 @@ func (o AutonomousExadataInfrastructureMapOutput) ToAutonomousExadataInfrastruct
 
 func (o AutonomousExadataInfrastructureMapOutput) ToAutonomousExadataInfrastructureMapOutputWithContext(ctx context.Context) AutonomousExadataInfrastructureMapOutput {
 	return o
-}
-
-func (o AutonomousExadataInfrastructureMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AutonomousExadataInfrastructure] {
-	return pulumix.Output[map[string]*AutonomousExadataInfrastructure]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AutonomousExadataInfrastructureMapOutput) MapIndex(k pulumi.StringInput) AutonomousExadataInfrastructureOutput {

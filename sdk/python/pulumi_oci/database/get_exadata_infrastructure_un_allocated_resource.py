@@ -53,10 +53,7 @@ class GetExadataInfrastructureUnAllocatedResourceResult:
 
     @property
     @pulumi.getter(name="autonomousVmClusters")
-    def autonomous_vm_clusters(self) -> Sequence['outputs.GetExadataInfrastructureUnAllocatedResourceAutonomousVmClusterResult']:
-        """
-        The list of Autonomous VM Clusters on the Infra and their associated unallocated resources details
-        """
+    def autonomous_vm_clusters(self) -> Optional[Sequence['outputs.GetExadataInfrastructureUnAllocatedResourceAutonomousVmClusterResult']]:
         return pulumi.get(self, "autonomous_vm_clusters")
 
     @property
@@ -66,10 +63,7 @@ class GetExadataInfrastructureUnAllocatedResourceResult:
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The user-friendly name for the Exadata Cloud@Customer infrastructure. The name does not need to be unique.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
@@ -79,15 +73,12 @@ class GetExadataInfrastructureUnAllocatedResourceResult:
 
     @property
     @pulumi.getter(name="exadataStorageInTbs")
-    def exadata_storage_in_tbs(self) -> float:
-        """
-        Total unallocated exadata storage in the infrastructure in TBs.
-        """
+    def exadata_storage_in_tbs(self) -> Optional[float]:
         return pulumi.get(self, "exadata_storage_in_tbs")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -95,26 +86,17 @@ class GetExadataInfrastructureUnAllocatedResourceResult:
 
     @property
     @pulumi.getter(name="localStorageInGbs")
-    def local_storage_in_gbs(self) -> int:
-        """
-        The minimum amount of un allocated storage that is available across all nodes in the infrastructure.
-        """
+    def local_storage_in_gbs(self) -> Optional[int]:
         return pulumi.get(self, "local_storage_in_gbs")
 
     @property
     @pulumi.getter(name="memoryInGbs")
-    def memory_in_gbs(self) -> int:
-        """
-        The minimum amount of un allocated memory that is available across all nodes in the infrastructure.
-        """
+    def memory_in_gbs(self) -> Optional[int]:
         return pulumi.get(self, "memory_in_gbs")
 
     @property
     @pulumi.getter
-    def ocpus(self) -> int:
-        """
-        The minimum amount of un allocated ocpus that is available across all nodes in the infrastructure.
-        """
+    def ocpus(self) -> Optional[int]:
         return pulumi.get(self, "ocpus")
 
 
@@ -139,23 +121,7 @@ def get_exadata_infrastructure_un_allocated_resource(db_servers: Optional[Sequen
                                                      exadata_infrastructure_id: Optional[str] = None,
                                                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetExadataInfrastructureUnAllocatedResourceResult:
     """
-    This data source provides details about a specific Exadata Infrastructure Un Allocated Resource resource in Oracle Cloud Infrastructure Database service.
-
-    Gets un allocated resources information for the specified Exadata infrastructure. Applies to Exadata Cloud@Customer instances only.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_exadata_infrastructure_un_allocated_resource = oci.Database.get_exadata_infrastructure_un_allocated_resource(exadata_infrastructure_id=oci_database_exadata_infrastructure["test_exadata_infrastructure"]["id"],
-        db_servers=var["exadata_infrastructure_un_allocated_resource_db_servers"])
-    ```
-
-
-    :param Sequence[str] db_servers: The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db servers.
-    :param str exadata_infrastructure_id: The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['dbServers'] = db_servers
@@ -180,22 +146,6 @@ def get_exadata_infrastructure_un_allocated_resource_output(db_servers: Optional
                                                             exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
                                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExadataInfrastructureUnAllocatedResourceResult]:
     """
-    This data source provides details about a specific Exadata Infrastructure Un Allocated Resource resource in Oracle Cloud Infrastructure Database service.
-
-    Gets un allocated resources information for the specified Exadata infrastructure. Applies to Exadata Cloud@Customer instances only.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_exadata_infrastructure_un_allocated_resource = oci.Database.get_exadata_infrastructure_un_allocated_resource(exadata_infrastructure_id=oci_database_exadata_infrastructure["test_exadata_infrastructure"]["id"],
-        db_servers=var["exadata_infrastructure_un_allocated_resource_db_servers"])
-    ```
-
-
-    :param Sequence[str] db_servers: The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db servers.
-    :param str exadata_infrastructure_id: The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -89,153 +89,102 @@ class GetVcnResult:
 
     @property
     @pulumi.getter(name="byoipv6cidrBlocks")
-    def byoipv6cidr_blocks(self) -> Sequence[str]:
-        """
-        The list of BYOIPv6 prefixes required to create a VCN that uses BYOIPv6 ranges.
-        """
+    def byoipv6cidr_blocks(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "byoipv6cidr_blocks")
 
     @property
     @pulumi.getter(name="byoipv6cidrDetails")
-    def byoipv6cidr_details(self) -> Sequence['outputs.GetVcnByoipv6cidrDetailResult']:
+    def byoipv6cidr_details(self) -> Optional[Sequence['outputs.GetVcnByoipv6cidrDetailResult']]:
         return pulumi.get(self, "byoipv6cidr_details")
 
     @property
     @pulumi.getter(name="cidrBlock")
-    def cidr_block(self) -> str:
-        """
-        Deprecated. The first CIDR IP address from cidrBlocks.  Example: `172.16.0.0/16`
-        """
+    def cidr_block(self) -> Optional[str]:
         return pulumi.get(self, "cidr_block")
 
     @property
     @pulumi.getter(name="cidrBlocks")
-    def cidr_blocks(self) -> Sequence[str]:
-        """
-        The list of IPv4 CIDR blocks the VCN will use.
-        """
+    def cidr_blocks(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "cidr_blocks")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the VCN.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="defaultDhcpOptionsId")
-    def default_dhcp_options_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the VCN's default set of DHCP options.
-        """
+    def default_dhcp_options_id(self) -> Optional[str]:
         return pulumi.get(self, "default_dhcp_options_id")
 
     @property
     @pulumi.getter(name="defaultRouteTableId")
-    def default_route_table_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the VCN's default route table.
-        """
+    def default_route_table_id(self) -> Optional[str]:
         return pulumi.get(self, "default_route_table_id")
 
     @property
     @pulumi.getter(name="defaultSecurityListId")
-    def default_security_list_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the VCN's default security list.
-        """
+    def default_security_list_id(self) -> Optional[str]:
         return pulumi.get(self, "default_security_list_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="dnsLabel")
-    def dns_label(self) -> str:
-        """
-        A DNS label for the VCN, used in conjunction with the VNIC's hostname and subnet's DNS label to form a fully qualified domain name (FQDN) for each VNIC within this subnet (for example, `bminstance1.subnet123.vcn1.oraclevcn.com`). Must be an alphanumeric string that begins with a letter. The value cannot be changed.
-        """
+    def dns_label(self) -> Optional[str]:
         return pulumi.get(self, "dns_label")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The VCN's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="ipv6cidrBlocks")
-    def ipv6cidr_blocks(self) -> Sequence[str]:
-        """
-        For an IPv6-enabled VCN, this is the list of IPv6 prefixes for the VCN's IP address space. The prefixes are provided by Oracle and the sizes are always /56.
-        """
+    def ipv6cidr_blocks(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "ipv6cidr_blocks")
 
     @property
     @pulumi.getter(name="ipv6privateCidrBlocks")
-    def ipv6private_cidr_blocks(self) -> Sequence[str]:
-        """
-        For an IPv6-enabled VCN, this is the list of Private IPv6 prefixes for the VCN's IP address space.
-        """
+    def ipv6private_cidr_blocks(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "ipv6private_cidr_blocks")
 
     @property
     @pulumi.getter(name="isIpv6enabled")
-    def is_ipv6enabled(self) -> bool:
+    def is_ipv6enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_ipv6enabled")
 
     @property
     @pulumi.getter(name="isOracleGuaAllocationEnabled")
-    def is_oracle_gua_allocation_enabled(self) -> bool:
+    def is_oracle_gua_allocation_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_oracle_gua_allocation_enabled")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The VCN's current state.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the VCN was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="vcnDomainName")
-    def vcn_domain_name(self) -> str:
-        """
-        The VCN's domain name, which consists of the VCN's DNS label, and the `oraclevcn.com` domain.
-        """
+    def vcn_domain_name(self) -> Optional[str]:
         return pulumi.get(self, "vcn_domain_name")
 
     @property
@@ -276,21 +225,7 @@ class AwaitableGetVcnResult(GetVcnResult):
 def get_vcn(vcn_id: Optional[str] = None,
             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetVcnResult:
     """
-    This data source provides details about a specific Vcn resource in Oracle Cloud Infrastructure Core service.
-
-    Gets the specified VCN's information.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_vcn = oci.Core.get_vcn(vcn_id=oci_core_vcn["test_vcn"]["id"])
-    ```
-
-
-    :param str vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['vcnId'] = vcn_id
@@ -325,20 +260,6 @@ def get_vcn(vcn_id: Optional[str] = None,
 def get_vcn_output(vcn_id: Optional[pulumi.Input[str]] = None,
                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVcnResult]:
     """
-    This data source provides details about a specific Vcn resource in Oracle Cloud Infrastructure Core service.
-
-    Gets the specified VCN's information.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_vcn = oci.Core.get_vcn(vcn_id=oci_core_vcn["test_vcn"]["id"])
-    ```
-
-
-    :param str vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+    Use this data source to access information about an existing resource.
     """
     ...

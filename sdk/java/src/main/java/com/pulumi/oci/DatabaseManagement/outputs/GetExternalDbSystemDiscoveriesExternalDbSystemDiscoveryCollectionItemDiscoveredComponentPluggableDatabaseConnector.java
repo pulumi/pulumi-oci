@@ -8,6 +8,8 @@ import com.pulumi.oci.DatabaseManagement.outputs.GetExternalDbSystemDiscoveriesE
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnector {
@@ -15,87 +17,87 @@ public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollec
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the external DB system connector.
      * 
      */
-    private String agentId;
+    private @Nullable String agentId;
     /**
      * @return The error message indicating the reason for connection failure or `null` if the connection was successful.
      * 
      */
-    private String connectionFailureMessage;
+    private @Nullable String connectionFailureMessage;
     /**
      * @return The connection details required to connect to an external DB system component.
      * 
      */
-    private List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfo> connectionInfos;
+    private @Nullable List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfo> connectionInfos;
     /**
      * @return The status of connectivity to the external DB system component.
      * 
      */
-    private String connectionStatus;
+    private @Nullable String connectionStatus;
     /**
      * @return The type of connector.
      * 
      */
-    private String connectorType;
+    private @Nullable String connectorType;
     /**
      * @return A filter to only return the resources that match the entire display name.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return The date and time the connectionStatus of the external DB system connector was last updated.
      * 
      */
-    private String timeConnectionStatusLastUpdated;
+    private @Nullable String timeConnectionStatusLastUpdated;
 
     private GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnector() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the external DB system connector.
      * 
      */
-    public String agentId() {
-        return this.agentId;
+    public Optional<String> agentId() {
+        return Optional.ofNullable(this.agentId);
     }
     /**
      * @return The error message indicating the reason for connection failure or `null` if the connection was successful.
      * 
      */
-    public String connectionFailureMessage() {
-        return this.connectionFailureMessage;
+    public Optional<String> connectionFailureMessage() {
+        return Optional.ofNullable(this.connectionFailureMessage);
     }
     /**
      * @return The connection details required to connect to an external DB system component.
      * 
      */
     public List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfo> connectionInfos() {
-        return this.connectionInfos;
+        return this.connectionInfos == null ? List.of() : this.connectionInfos;
     }
     /**
      * @return The status of connectivity to the external DB system component.
      * 
      */
-    public String connectionStatus() {
-        return this.connectionStatus;
+    public Optional<String> connectionStatus() {
+        return Optional.ofNullable(this.connectionStatus);
     }
     /**
      * @return The type of connector.
      * 
      */
-    public String connectorType() {
-        return this.connectorType;
+    public Optional<String> connectorType() {
+        return Optional.ofNullable(this.connectorType);
     }
     /**
      * @return A filter to only return the resources that match the entire display name.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return The date and time the connectionStatus of the external DB system connector was last updated.
      * 
      */
-    public String timeConnectionStatusLastUpdated() {
-        return this.timeConnectionStatusLastUpdated;
+    public Optional<String> timeConnectionStatusLastUpdated() {
+        return Optional.ofNullable(this.timeConnectionStatusLastUpdated);
     }
 
     public static Builder builder() {
@@ -107,13 +109,13 @@ public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollec
     }
     @CustomType.Builder
     public static final class Builder {
-        private String agentId;
-        private String connectionFailureMessage;
-        private List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfo> connectionInfos;
-        private String connectionStatus;
-        private String connectorType;
-        private String displayName;
-        private String timeConnectionStatusLastUpdated;
+        private @Nullable String agentId;
+        private @Nullable String connectionFailureMessage;
+        private @Nullable List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfo> connectionInfos;
+        private @Nullable String connectionStatus;
+        private @Nullable String connectorType;
+        private @Nullable String displayName;
+        private @Nullable String timeConnectionStatusLastUpdated;
         public Builder() {}
         public Builder(GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnector defaults) {
     	      Objects.requireNonNull(defaults);
@@ -127,41 +129,41 @@ public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollec
         }
 
         @CustomType.Setter
-        public Builder agentId(String agentId) {
-            this.agentId = Objects.requireNonNull(agentId);
+        public Builder agentId(@Nullable String agentId) {
+            this.agentId = agentId;
             return this;
         }
         @CustomType.Setter
-        public Builder connectionFailureMessage(String connectionFailureMessage) {
-            this.connectionFailureMessage = Objects.requireNonNull(connectionFailureMessage);
+        public Builder connectionFailureMessage(@Nullable String connectionFailureMessage) {
+            this.connectionFailureMessage = connectionFailureMessage;
             return this;
         }
         @CustomType.Setter
-        public Builder connectionInfos(List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfo> connectionInfos) {
-            this.connectionInfos = Objects.requireNonNull(connectionInfos);
+        public Builder connectionInfos(@Nullable List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfo> connectionInfos) {
+            this.connectionInfos = connectionInfos;
             return this;
         }
         public Builder connectionInfos(GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfo... connectionInfos) {
             return connectionInfos(List.of(connectionInfos));
         }
         @CustomType.Setter
-        public Builder connectionStatus(String connectionStatus) {
-            this.connectionStatus = Objects.requireNonNull(connectionStatus);
+        public Builder connectionStatus(@Nullable String connectionStatus) {
+            this.connectionStatus = connectionStatus;
             return this;
         }
         @CustomType.Setter
-        public Builder connectorType(String connectorType) {
-            this.connectorType = Objects.requireNonNull(connectorType);
+        public Builder connectorType(@Nullable String connectorType) {
+            this.connectorType = connectorType;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder timeConnectionStatusLastUpdated(String timeConnectionStatusLastUpdated) {
-            this.timeConnectionStatusLastUpdated = Objects.requireNonNull(timeConnectionStatusLastUpdated);
+        public Builder timeConnectionStatusLastUpdated(@Nullable String timeConnectionStatusLastUpdated) {
+            this.timeConnectionStatusLastUpdated = timeConnectionStatusLastUpdated;
             return this;
         }
         public GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnector build() {

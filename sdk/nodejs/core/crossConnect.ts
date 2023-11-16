@@ -105,27 +105,27 @@ export class CrossConnect extends pulumi.CustomResource {
     /**
      * The OCID of the cross-connect group to put this cross-connect in.
      */
-    public readonly crossConnectGroupId!: pulumi.Output<string>;
+    public readonly crossConnectGroupId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) A reference name or identifier for the physical fiber connection that this cross-connect uses.
      */
-    public readonly customerReferenceName!: pulumi.Output<string>;
+    public readonly customerReferenceName!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    public readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * If you already have an existing cross-connect or cross-connect group at this FastConnect location, and you want this new cross-connect to be on a different router (for the purposes of redundancy), provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that existing cross-connect or cross-connect group.
      */
-    public readonly farCrossConnectOrCrossConnectGroupId!: pulumi.Output<string>;
+    public readonly farCrossConnectOrCrossConnectGroupId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) Set to true to activate the cross-connect. You activate it after the physical cabling is complete, and you've confirmed the cross-connect's light levels are good and your side of the interface is up. Activation indicates to Oracle that the physical connection is ready.
      */
@@ -137,23 +137,23 @@ export class CrossConnect extends pulumi.CustomResource {
     /**
      * (Updatable) Properties used to configure MACsec (if capable).
      */
-    public readonly macsecProperties!: pulumi.Output<outputs.Core.CrossConnectMacsecProperties>;
+    public readonly macsecProperties!: pulumi.Output<outputs.Core.CrossConnectMacsecProperties | undefined>;
     /**
      * If you already have an existing cross-connect or cross-connect group at this FastConnect location, and you want this new cross-connect to be on the same router, provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that existing cross-connect or cross-connect group.
      */
-    public readonly nearCrossConnectOrCrossConnectGroupId!: pulumi.Output<string>;
+    public readonly nearCrossConnectOrCrossConnectGroupId!: pulumi.Output<string | undefined>;
     /**
      * The FastConnect device that terminates the logical connection. This device might be different than the device that terminates the physical connection.
      */
-    public /*out*/ readonly ociLogicalDeviceName!: pulumi.Output<string>;
+    public /*out*/ readonly ociLogicalDeviceName!: pulumi.Output<string | undefined>;
     /**
      * The FastConnect device that terminates the physical connection.
      */
-    public /*out*/ readonly ociPhysicalDeviceName!: pulumi.Output<string>;
+    public /*out*/ readonly ociPhysicalDeviceName!: pulumi.Output<string | undefined>;
     /**
      * A string identifying the meet-me room port for this cross-connect.
      */
-    public /*out*/ readonly portName!: pulumi.Output<string>;
+    public /*out*/ readonly portName!: pulumi.Output<string | undefined>;
     /**
      * The port speed for this cross-connect. To get a list of the available port speeds, see [ListCrossConnectPortSpeedShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CrossConnectPortSpeedShape/ListCrossconnectPortSpeedShapes).  Example: `10 Gbps` 
      *
@@ -165,11 +165,11 @@ export class CrossConnect extends pulumi.CustomResource {
     /**
      * (Updatable) Indicates whether or not MACsec is enabled.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The date and time the cross-connect was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a CrossConnect resource with the given unique name, arguments, and options.

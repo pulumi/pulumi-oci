@@ -89,7 +89,7 @@ export interface GetUnifiedAgentConfigurationsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly isCompartmentIdInSubtree?: boolean;
     readonly logId?: string;
     /**
@@ -99,7 +99,7 @@ export interface GetUnifiedAgentConfigurationsResult {
     /**
      * The list of unified_agent_configuration_collection.
      */
-    readonly unifiedAgentConfigurationCollections: outputs.Logging.GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollection[];
+    readonly unifiedAgentConfigurationCollections?: outputs.Logging.GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollection[];
 }
 /**
  * This data source provides the list of Unified Agent Configurations in Oracle Cloud Infrastructure Logging service.

@@ -411,7 +411,7 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Indicates whether data masking is enabled for the masking column.
         /// </summary>
@@ -459,7 +459,7 @@ namespace Pulumi.Oci.DataSafe
 
             ImmutableArray<Outputs.GetMaskingPoliciesMaskingColumnsFilterResult> filters,
 
-            string id,
+            string? id,
 
             bool? isMaskingEnabled,
 

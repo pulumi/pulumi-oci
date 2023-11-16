@@ -10,6 +10,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetProtectionCapabilitiesProtectionCapabilityCollectionItem {
@@ -17,111 +19,111 @@ public final class GetProtectionCapabilitiesProtectionCapabilityCollectionItem {
      * @return The default collaborative action threshold for OCI-managed collaborative protection capability. Collaborative protection capabilities are made of several simple, non-collaborative protection capabilities (referred to as `contributing capabilities` later on) which have weights assigned to them. These weights can be found in the `collaborativeWeights` array. For incoming/outgoing HTTP messages, all contributing capabilities are executed and the sum of all triggered contributing capabilities weights is calculated. Only if this sum is greater than or equal to `collaborativeActionThreshold` is the incoming/outgoing HTTP message marked as malicious.
      * 
      */
-    private Integer collaborativeActionThreshold;
+    private @Nullable Integer collaborativeActionThreshold;
     /**
      * @return The weights of contributing capabilities. Defines how much each contributing capability contributes towards the action threshold of a collaborative protection capability.
      * 
      */
-    private List<GetProtectionCapabilitiesProtectionCapabilityCollectionItemCollaborativeWeight> collaborativeWeights;
+    private @Nullable List<GetProtectionCapabilitiesProtectionCapabilityCollectionItemCollaborativeWeight> collaborativeWeights;
     /**
      * @return The description of protection capability.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return A filter to return only resources that match the entire display name given.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return The list of unique names protection capability group tags that are associated with this capability. Example: [&#34;PCI&#34;, &#34;Recommended&#34;]
      * 
      */
-    private List<String> groupTags;
+    private @Nullable List<String> groupTags;
     /**
      * @return A filter to return only resources that matches given isLatestVersion.
      * 
      */
-    private Boolean isLatestVersion;
+    private @Nullable Boolean isLatestVersion;
     /**
      * @return The unique key of protection capability to filter by.
      * 
      */
-    private String key;
+    private @Nullable String key;
     /**
      * @return A filter to return only resources that matches given type.
      * 
      */
-    private String type;
+    private @Nullable String type;
     /**
      * @return The version of protection capability.
      * 
      */
-    private Integer version;
+    private @Nullable Integer version;
 
     private GetProtectionCapabilitiesProtectionCapabilityCollectionItem() {}
     /**
      * @return The default collaborative action threshold for OCI-managed collaborative protection capability. Collaborative protection capabilities are made of several simple, non-collaborative protection capabilities (referred to as `contributing capabilities` later on) which have weights assigned to them. These weights can be found in the `collaborativeWeights` array. For incoming/outgoing HTTP messages, all contributing capabilities are executed and the sum of all triggered contributing capabilities weights is calculated. Only if this sum is greater than or equal to `collaborativeActionThreshold` is the incoming/outgoing HTTP message marked as malicious.
      * 
      */
-    public Integer collaborativeActionThreshold() {
-        return this.collaborativeActionThreshold;
+    public Optional<Integer> collaborativeActionThreshold() {
+        return Optional.ofNullable(this.collaborativeActionThreshold);
     }
     /**
      * @return The weights of contributing capabilities. Defines how much each contributing capability contributes towards the action threshold of a collaborative protection capability.
      * 
      */
     public List<GetProtectionCapabilitiesProtectionCapabilityCollectionItemCollaborativeWeight> collaborativeWeights() {
-        return this.collaborativeWeights;
+        return this.collaborativeWeights == null ? List.of() : this.collaborativeWeights;
     }
     /**
      * @return The description of protection capability.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return A filter to return only resources that match the entire display name given.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return The list of unique names protection capability group tags that are associated with this capability. Example: [&#34;PCI&#34;, &#34;Recommended&#34;]
      * 
      */
     public List<String> groupTags() {
-        return this.groupTags;
+        return this.groupTags == null ? List.of() : this.groupTags;
     }
     /**
      * @return A filter to return only resources that matches given isLatestVersion.
      * 
      */
-    public Boolean isLatestVersion() {
-        return this.isLatestVersion;
+    public Optional<Boolean> isLatestVersion() {
+        return Optional.ofNullable(this.isLatestVersion);
     }
     /**
      * @return The unique key of protection capability to filter by.
      * 
      */
-    public String key() {
-        return this.key;
+    public Optional<String> key() {
+        return Optional.ofNullable(this.key);
     }
     /**
      * @return A filter to return only resources that matches given type.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
     /**
      * @return The version of protection capability.
      * 
      */
-    public Integer version() {
-        return this.version;
+    public Optional<Integer> version() {
+        return Optional.ofNullable(this.version);
     }
 
     public static Builder builder() {
@@ -133,15 +135,15 @@ public final class GetProtectionCapabilitiesProtectionCapabilityCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer collaborativeActionThreshold;
-        private List<GetProtectionCapabilitiesProtectionCapabilityCollectionItemCollaborativeWeight> collaborativeWeights;
-        private String description;
-        private String displayName;
-        private List<String> groupTags;
-        private Boolean isLatestVersion;
-        private String key;
-        private String type;
-        private Integer version;
+        private @Nullable Integer collaborativeActionThreshold;
+        private @Nullable List<GetProtectionCapabilitiesProtectionCapabilityCollectionItemCollaborativeWeight> collaborativeWeights;
+        private @Nullable String description;
+        private @Nullable String displayName;
+        private @Nullable List<String> groupTags;
+        private @Nullable Boolean isLatestVersion;
+        private @Nullable String key;
+        private @Nullable String type;
+        private @Nullable Integer version;
         public Builder() {}
         public Builder(GetProtectionCapabilitiesProtectionCapabilityCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -157,54 +159,54 @@ public final class GetProtectionCapabilitiesProtectionCapabilityCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder collaborativeActionThreshold(Integer collaborativeActionThreshold) {
-            this.collaborativeActionThreshold = Objects.requireNonNull(collaborativeActionThreshold);
+        public Builder collaborativeActionThreshold(@Nullable Integer collaborativeActionThreshold) {
+            this.collaborativeActionThreshold = collaborativeActionThreshold;
             return this;
         }
         @CustomType.Setter
-        public Builder collaborativeWeights(List<GetProtectionCapabilitiesProtectionCapabilityCollectionItemCollaborativeWeight> collaborativeWeights) {
-            this.collaborativeWeights = Objects.requireNonNull(collaborativeWeights);
+        public Builder collaborativeWeights(@Nullable List<GetProtectionCapabilitiesProtectionCapabilityCollectionItemCollaborativeWeight> collaborativeWeights) {
+            this.collaborativeWeights = collaborativeWeights;
             return this;
         }
         public Builder collaborativeWeights(GetProtectionCapabilitiesProtectionCapabilityCollectionItemCollaborativeWeight... collaborativeWeights) {
             return collaborativeWeights(List.of(collaborativeWeights));
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder groupTags(List<String> groupTags) {
-            this.groupTags = Objects.requireNonNull(groupTags);
+        public Builder groupTags(@Nullable List<String> groupTags) {
+            this.groupTags = groupTags;
             return this;
         }
         public Builder groupTags(String... groupTags) {
             return groupTags(List.of(groupTags));
         }
         @CustomType.Setter
-        public Builder isLatestVersion(Boolean isLatestVersion) {
-            this.isLatestVersion = Objects.requireNonNull(isLatestVersion);
+        public Builder isLatestVersion(@Nullable Boolean isLatestVersion) {
+            this.isLatestVersion = isLatestVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
+        public Builder key(@Nullable String key) {
+            this.key = key;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         @CustomType.Setter
-        public Builder version(Integer version) {
-            this.version = Objects.requireNonNull(version);
+        public Builder version(@Nullable Integer version) {
+            this.version = version;
             return this;
         }
         public GetProtectionCapabilitiesProtectionCapabilityCollectionItem build() {

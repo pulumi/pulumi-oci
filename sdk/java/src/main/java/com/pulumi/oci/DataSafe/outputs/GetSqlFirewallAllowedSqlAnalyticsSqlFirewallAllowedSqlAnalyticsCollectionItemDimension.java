@@ -6,6 +6,8 @@ package com.pulumi.oci.DataSafe.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimension {
@@ -13,51 +15,51 @@ public final class GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyti
      * @return The database user name.
      * 
      */
-    private String dbUserName;
+    private @Nullable String dbUserName;
     /**
      * @return The OCID of the SQL firewall policy corresponding to the SQL firewall allowed SQL.
      * 
      */
-    private String sqlFirewallPolicyId;
+    private @Nullable String sqlFirewallPolicyId;
     /**
      * @return Specifies the level of SQL included for this SQL firewall policy. USER_ISSUED_SQL - User issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
      * 
      */
-    private String sqlLevel;
+    private @Nullable String sqlLevel;
     /**
      * @return The current state of the SQL firewall allowed SQL.
      * 
      */
-    private String state;
+    private @Nullable String state;
 
     private GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimension() {}
     /**
      * @return The database user name.
      * 
      */
-    public String dbUserName() {
-        return this.dbUserName;
+    public Optional<String> dbUserName() {
+        return Optional.ofNullable(this.dbUserName);
     }
     /**
      * @return The OCID of the SQL firewall policy corresponding to the SQL firewall allowed SQL.
      * 
      */
-    public String sqlFirewallPolicyId() {
-        return this.sqlFirewallPolicyId;
+    public Optional<String> sqlFirewallPolicyId() {
+        return Optional.ofNullable(this.sqlFirewallPolicyId);
     }
     /**
      * @return Specifies the level of SQL included for this SQL firewall policy. USER_ISSUED_SQL - User issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
      * 
      */
-    public String sqlLevel() {
-        return this.sqlLevel;
+    public Optional<String> sqlLevel() {
+        return Optional.ofNullable(this.sqlLevel);
     }
     /**
      * @return The current state of the SQL firewall allowed SQL.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
 
     public static Builder builder() {
@@ -69,10 +71,10 @@ public final class GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyti
     }
     @CustomType.Builder
     public static final class Builder {
-        private String dbUserName;
-        private String sqlFirewallPolicyId;
-        private String sqlLevel;
-        private String state;
+        private @Nullable String dbUserName;
+        private @Nullable String sqlFirewallPolicyId;
+        private @Nullable String sqlLevel;
+        private @Nullable String state;
         public Builder() {}
         public Builder(GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimension defaults) {
     	      Objects.requireNonNull(defaults);
@@ -83,23 +85,23 @@ public final class GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyti
         }
 
         @CustomType.Setter
-        public Builder dbUserName(String dbUserName) {
-            this.dbUserName = Objects.requireNonNull(dbUserName);
+        public Builder dbUserName(@Nullable String dbUserName) {
+            this.dbUserName = dbUserName;
             return this;
         }
         @CustomType.Setter
-        public Builder sqlFirewallPolicyId(String sqlFirewallPolicyId) {
-            this.sqlFirewallPolicyId = Objects.requireNonNull(sqlFirewallPolicyId);
+        public Builder sqlFirewallPolicyId(@Nullable String sqlFirewallPolicyId) {
+            this.sqlFirewallPolicyId = sqlFirewallPolicyId;
             return this;
         }
         @CustomType.Setter
-        public Builder sqlLevel(String sqlLevel) {
-            this.sqlLevel = Objects.requireNonNull(sqlLevel);
+        public Builder sqlLevel(@Nullable String sqlLevel) {
+            this.sqlLevel = sqlLevel;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         public GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionItemDimension build() {

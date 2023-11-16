@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Optimizer.Outputs
         /// <summary>
         /// The count of resources.
         /// </summary>
-        public readonly int Count;
+        public readonly int? Count;
         /// <summary>
         /// The recommendation status of the resource.
         /// </summary>
-        public readonly string Status;
+        public readonly string? Status;
 
         [OutputConstructor]
         private GetCategoryResourceCountResult(
-            int count,
+            int? count,
 
-            string status)
+            string? status)
         {
             Count = count;
             Status = status;

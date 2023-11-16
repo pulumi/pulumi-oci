@@ -6,6 +6,8 @@ package com.pulumi.oci.GoldenGate.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetConnectionsConnectionCollectionItemIngressIp {
@@ -13,15 +15,15 @@ public final class GetConnectionsConnectionCollectionItemIngressIp {
      * @return A Private Endpoint IPv4 or IPv6 Address created in the customer&#39;s subnet.
      * 
      */
-    private String ingressIp;
+    private @Nullable String ingressIp;
 
     private GetConnectionsConnectionCollectionItemIngressIp() {}
     /**
      * @return A Private Endpoint IPv4 or IPv6 Address created in the customer&#39;s subnet.
      * 
      */
-    public String ingressIp() {
-        return this.ingressIp;
+    public Optional<String> ingressIp() {
+        return Optional.ofNullable(this.ingressIp);
     }
 
     public static Builder builder() {
@@ -33,7 +35,7 @@ public final class GetConnectionsConnectionCollectionItemIngressIp {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String ingressIp;
+        private @Nullable String ingressIp;
         public Builder() {}
         public Builder(GetConnectionsConnectionCollectionItemIngressIp defaults) {
     	      Objects.requireNonNull(defaults);
@@ -41,8 +43,8 @@ public final class GetConnectionsConnectionCollectionItemIngressIp {
         }
 
         @CustomType.Setter
-        public Builder ingressIp(String ingressIp) {
-            this.ingressIp = Objects.requireNonNull(ingressIp);
+        public Builder ingressIp(@Nullable String ingressIp) {
+            this.ingressIp = ingressIp;
             return this;
         }
         public GetConnectionsConnectionCollectionItemIngressIp build() {

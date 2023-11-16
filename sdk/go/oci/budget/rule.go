@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Alert Rule resource in Oracle Cloud Infrastructure Budget service.
@@ -73,32 +72,32 @@ type Rule struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) The description of the alert rule.
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) The name of the alert rule. Avoid entering confidential information.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// (Updatable) The message to be sent to the recipients when the alert rule is triggered.
-	Message pulumi.StringOutput `pulumi:"message"`
+	Message pulumi.StringPtrOutput `pulumi:"message"`
 	// (Updatable) The audience that receives the alert when it triggers. An empty string is interpreted as null.
 	Recipients pulumi.StringPtrOutput `pulumi:"recipients"`
 	// The current state of the alert rule.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// (Updatable) The threshold for triggering the alert, expressed as a whole number or decimal value. If the thresholdType is ABSOLUTE, the threshold can have at most 12 digits before the decimal point, and up to two digits after the decimal point. If the thresholdType is PERCENTAGE, the maximum value is 10000 and can have up to two digits after the decimal point.
 	Threshold pulumi.Float64Output `pulumi:"threshold"`
 	// (Updatable) The type of threshold.
 	ThresholdType pulumi.StringOutput `pulumi:"thresholdType"`
 	// The time when the budget was created.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The time when the budget was updated.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 	// (Updatable) The type of the alert. Valid values are ACTUAL (the alert triggers based on actual usage), or FORECAST (the alert triggers based on predicted usage).
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Type pulumi.StringOutput `pulumi:"type"`
 	// The version of the alert rule. Starts from 1 and increments by 1.
-	Version pulumi.IntOutput `pulumi:"version"`
+	Version pulumi.IntPtrOutput `pulumi:"version"`
 }
 
 // NewRule registers a new resource with the given unique name, arguments, and options.
@@ -290,12 +289,6 @@ func (i *Rule) ToRuleOutputWithContext(ctx context.Context) RuleOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(RuleOutput)
 }
 
-func (i *Rule) ToOutput(ctx context.Context) pulumix.Output[*Rule] {
-	return pulumix.Output[*Rule]{
-		OutputState: i.ToRuleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // RuleArrayInput is an input type that accepts RuleArray and RuleArrayOutput values.
 // You can construct a concrete instance of `RuleArrayInput` via:
 //
@@ -319,12 +312,6 @@ func (i RuleArray) ToRuleArrayOutput() RuleArrayOutput {
 
 func (i RuleArray) ToRuleArrayOutputWithContext(ctx context.Context) RuleArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(RuleArrayOutput)
-}
-
-func (i RuleArray) ToOutput(ctx context.Context) pulumix.Output[[]*Rule] {
-	return pulumix.Output[[]*Rule]{
-		OutputState: i.ToRuleArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // RuleMapInput is an input type that accepts RuleMap and RuleMapOutput values.
@@ -352,12 +339,6 @@ func (i RuleMap) ToRuleMapOutputWithContext(ctx context.Context) RuleMapOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(RuleMapOutput)
 }
 
-func (i RuleMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Rule] {
-	return pulumix.Output[map[string]*Rule]{
-		OutputState: i.ToRuleMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type RuleOutput struct{ *pulumi.OutputState }
 
 func (RuleOutput) ElementType() reflect.Type {
@@ -372,12 +353,6 @@ func (o RuleOutput) ToRuleOutputWithContext(ctx context.Context) RuleOutput {
 	return o
 }
 
-func (o RuleOutput) ToOutput(ctx context.Context) pulumix.Output[*Rule] {
-	return pulumix.Output[*Rule]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The unique budget OCID.
 func (o RuleOutput) BudgetId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Rule) pulumi.StringOutput { return v.BudgetId }).(pulumi.StringOutput)
@@ -389,13 +364,13 @@ func (o RuleOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) The description of the alert rule.
-func (o RuleOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *Rule) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o RuleOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Rule) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The name of the alert rule. Avoid entering confidential information.
-func (o RuleOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *Rule) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o RuleOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Rule) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -404,8 +379,8 @@ func (o RuleOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // (Updatable) The message to be sent to the recipients when the alert rule is triggered.
-func (o RuleOutput) Message() pulumi.StringOutput {
-	return o.ApplyT(func(v *Rule) pulumi.StringOutput { return v.Message }).(pulumi.StringOutput)
+func (o RuleOutput) Message() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Rule) pulumi.StringPtrOutput { return v.Message }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The audience that receives the alert when it triggers. An empty string is interpreted as null.
@@ -414,8 +389,8 @@ func (o RuleOutput) Recipients() pulumi.StringPtrOutput {
 }
 
 // The current state of the alert rule.
-func (o RuleOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *Rule) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o RuleOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Rule) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The threshold for triggering the alert, expressed as a whole number or decimal value. If the thresholdType is ABSOLUTE, the threshold can have at most 12 digits before the decimal point, and up to two digits after the decimal point. If the thresholdType is PERCENTAGE, the maximum value is 10000 and can have up to two digits after the decimal point.
@@ -429,13 +404,13 @@ func (o RuleOutput) ThresholdType() pulumi.StringOutput {
 }
 
 // The time when the budget was created.
-func (o RuleOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Rule) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o RuleOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Rule) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time when the budget was updated.
-func (o RuleOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Rule) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o RuleOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Rule) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The type of the alert. Valid values are ACTUAL (the alert triggers based on actual usage), or FORECAST (the alert triggers based on predicted usage).
@@ -447,8 +422,8 @@ func (o RuleOutput) Type() pulumi.StringOutput {
 }
 
 // The version of the alert rule. Starts from 1 and increments by 1.
-func (o RuleOutput) Version() pulumi.IntOutput {
-	return o.ApplyT(func(v *Rule) pulumi.IntOutput { return v.Version }).(pulumi.IntOutput)
+func (o RuleOutput) Version() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *Rule) pulumi.IntPtrOutput { return v.Version }).(pulumi.IntPtrOutput)
 }
 
 type RuleArrayOutput struct{ *pulumi.OutputState }
@@ -463,12 +438,6 @@ func (o RuleArrayOutput) ToRuleArrayOutput() RuleArrayOutput {
 
 func (o RuleArrayOutput) ToRuleArrayOutputWithContext(ctx context.Context) RuleArrayOutput {
 	return o
-}
-
-func (o RuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Rule] {
-	return pulumix.Output[[]*Rule]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o RuleArrayOutput) Index(i pulumi.IntInput) RuleOutput {
@@ -489,12 +458,6 @@ func (o RuleMapOutput) ToRuleMapOutput() RuleMapOutput {
 
 func (o RuleMapOutput) ToRuleMapOutputWithContext(ctx context.Context) RuleMapOutput {
 	return o
-}
-
-func (o RuleMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Rule] {
-	return pulumix.Output[map[string]*Rule]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o RuleMapOutput) MapIndex(k pulumi.StringInput) RuleOutput {

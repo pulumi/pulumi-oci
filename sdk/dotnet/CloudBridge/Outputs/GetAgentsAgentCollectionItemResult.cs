@@ -16,51 +16,51 @@ namespace Pulumi.Oci.CloudBridge.Outputs
         /// <summary>
         /// Resource principal public key.
         /// </summary>
-        public readonly string AgentPubKey;
+        public readonly string? AgentPubKey;
         /// <summary>
         /// Type of the Agent.
         /// </summary>
-        public readonly string AgentType;
+        public readonly string? AgentType;
         /// <summary>
         /// Agent identifier.
         /// </summary>
-        public readonly string AgentVersion;
+        public readonly string? AgentVersion;
         /// <summary>
         /// The ID of the compartment in which to list resources.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// A filter to return only resources that match the entire display name given.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// A filter to return only resources that match the given environment ID.
         /// </summary>
-        public readonly string EnvironmentId;
+        public readonly string? EnvironmentId;
         /// <summary>
         /// The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The current heartbeat status of the Agent based on its timeLastSyncReceived value.
         /// </summary>
-        public readonly string HeartBeatStatus;
+        public readonly string? HeartBeatStatus;
         /// <summary>
         /// Unique identifier that is immutable on creation.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// OS version.
         /// </summary>
-        public readonly string OsVersion;
+        public readonly string? OsVersion;
         /// <summary>
         /// List of plugins associated with the agent.
         /// </summary>
@@ -68,67 +68,67 @@ namespace Pulumi.Oci.CloudBridge.Outputs
         /// <summary>
         /// A filter to return only resources their lifecycleState matches the given lifecycleState.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, object>? SystemTags;
         /// <summary>
         /// The time when the Agent was created. An RFC3339 formatted datetime string.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The time since epoch for when the public key will expire. An RFC3339 formatted datetime string.
         /// </summary>
-        public readonly string TimeExpireAgentKeyInMs;
+        public readonly string? TimeExpireAgentKeyInMs;
         /// <summary>
         /// The time when the last heartbeat of the Agent was noted. An RFC3339 formatted datetime string.
         /// </summary>
-        public readonly string TimeLastSyncReceived;
+        public readonly string? TimeLastSyncReceived;
         /// <summary>
         /// The time when the Agent was updated. An RFC3339 formatted datetime string.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
 
         [OutputConstructor]
         private GetAgentsAgentCollectionItemResult(
-            string agentPubKey,
+            string? agentPubKey,
 
-            string agentType,
+            string? agentType,
 
-            string agentVersion,
+            string? agentVersion,
 
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string displayName,
+            string? displayName,
 
-            string environmentId,
+            string? environmentId,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string heartBeatStatus,
+            string? heartBeatStatus,
 
-            string id,
+            string? id,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string osVersion,
+            string? osVersion,
 
             ImmutableArray<Outputs.GetAgentsAgentCollectionItemPluginListResult> pluginLists,
 
-            string state,
+            string? state,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, object>? systemTags,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeExpireAgentKeyInMs,
+            string? timeExpireAgentKeyInMs,
 
-            string timeLastSyncReceived,
+            string? timeLastSyncReceived,
 
-            string timeUpdated)
+            string? timeUpdated)
         {
             AgentPubKey = agentPubKey;
             AgentType = agentType;

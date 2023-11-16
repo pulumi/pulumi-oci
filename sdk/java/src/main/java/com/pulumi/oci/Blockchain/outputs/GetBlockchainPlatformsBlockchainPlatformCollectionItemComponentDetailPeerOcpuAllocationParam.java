@@ -6,6 +6,8 @@ package com.pulumi.oci.Blockchain.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Double;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerOcpuAllocationParam {
@@ -13,15 +15,15 @@ public final class GetBlockchainPlatformsBlockchainPlatformCollectionItemCompone
      * @return Number of OCPU allocation
      * 
      */
-    private Double ocpuAllocationNumber;
+    private @Nullable Double ocpuAllocationNumber;
 
     private GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerOcpuAllocationParam() {}
     /**
      * @return Number of OCPU allocation
      * 
      */
-    public Double ocpuAllocationNumber() {
-        return this.ocpuAllocationNumber;
+    public Optional<Double> ocpuAllocationNumber() {
+        return Optional.ofNullable(this.ocpuAllocationNumber);
     }
 
     public static Builder builder() {
@@ -33,7 +35,7 @@ public final class GetBlockchainPlatformsBlockchainPlatformCollectionItemCompone
     }
     @CustomType.Builder
     public static final class Builder {
-        private Double ocpuAllocationNumber;
+        private @Nullable Double ocpuAllocationNumber;
         public Builder() {}
         public Builder(GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerOcpuAllocationParam defaults) {
     	      Objects.requireNonNull(defaults);
@@ -41,8 +43,8 @@ public final class GetBlockchainPlatformsBlockchainPlatformCollectionItemCompone
         }
 
         @CustomType.Setter
-        public Builder ocpuAllocationNumber(Double ocpuAllocationNumber) {
-            this.ocpuAllocationNumber = Objects.requireNonNull(ocpuAllocationNumber);
+        public Builder ocpuAllocationNumber(@Nullable Double ocpuAllocationNumber) {
+            this.ocpuAllocationNumber = ocpuAllocationNumber;
             return this;
         }
         public GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerOcpuAllocationParam build() {

@@ -67,18 +67,12 @@ class GetAutonomousDatabaseDataguardAssociationResult:
 
     @property
     @pulumi.getter(name="applyLag")
-    def apply_lag(self) -> str:
-        """
-        The lag time between updates to the primary database and application of the redo data on the standby database, as computed by the reporting database.  Example: `9 seconds`
-        """
+    def apply_lag(self) -> Optional[str]:
         return pulumi.get(self, "apply_lag")
 
     @property
     @pulumi.getter(name="applyRate")
-    def apply_rate(self) -> str:
-        """
-        The rate at which redo logs are synced between the associated databases.  Example: `180 Mb per second`
-        """
+    def apply_rate(self) -> Optional[str]:
         return pulumi.get(self, "apply_rate")
 
     @property
@@ -89,14 +83,11 @@ class GetAutonomousDatabaseDataguardAssociationResult:
     @property
     @pulumi.getter(name="autonomousDatabaseId")
     def autonomous_database_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database that has a relationship with the peer Autonomous Database.
-        """
         return pulumi.get(self, "autonomous_database_id")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -104,74 +95,47 @@ class GetAutonomousDatabaseDataguardAssociationResult:
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        Additional information about the current lifecycleState, if available.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="peerAutonomousDatabaseId")
-    def peer_autonomous_database_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Database.
-        """
+    def peer_autonomous_database_id(self) -> Optional[str]:
         return pulumi.get(self, "peer_autonomous_database_id")
 
     @property
     @pulumi.getter(name="peerAutonomousDatabaseLifeCycleState")
-    def peer_autonomous_database_life_cycle_state(self) -> str:
-        """
-        The current state of the Autonomous Dataguard.
-        """
+    def peer_autonomous_database_life_cycle_state(self) -> Optional[str]:
         return pulumi.get(self, "peer_autonomous_database_life_cycle_state")
 
     @property
     @pulumi.getter(name="peerRole")
-    def peer_role(self) -> str:
-        """
-        The role of the Autonomous Dataguard enabled Autonomous Container Database.
-        """
+    def peer_role(self) -> Optional[str]:
         return pulumi.get(self, "peer_role")
 
     @property
     @pulumi.getter(name="protectionMode")
-    def protection_mode(self) -> str:
-        """
-        The protection mode of this Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
-        """
+    def protection_mode(self) -> Optional[str]:
         return pulumi.get(self, "protection_mode")
 
     @property
     @pulumi.getter
-    def role(self) -> str:
-        """
-        The role of the Autonomous Dataguard enabled Autonomous Container Database.
-        """
+    def role(self) -> Optional[str]:
         return pulumi.get(self, "role")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the Autonomous Dataguard.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the Data Guard association was created.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeLastRoleChanged")
-    def time_last_role_changed(self) -> str:
-        """
-        The date and time when the last role change action happened.
-        """
+    def time_last_role_changed(self) -> Optional[str]:
         return pulumi.get(self, "time_last_role_changed")
 
 
@@ -201,23 +165,7 @@ def get_autonomous_database_dataguard_association(autonomous_database_dataguard_
                                                   autonomous_database_id: Optional[str] = None,
                                                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAutonomousDatabaseDataguardAssociationResult:
     """
-    This data source provides details about a specific Autonomous Database Dataguard Association resource in Oracle Cloud Infrastructure Database service.
-
-    Gets an Autonomous Database dataguard assocation for the specified Autonomous Database.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_autonomous_database_dataguard_association = oci.Database.get_autonomous_database_dataguard_association(autonomous_database_dataguard_association_id=oci_database_autonomous_database_dataguard_association["test_autonomous_database_dataguard_association"]["id"],
-        autonomous_database_id=oci_database_autonomous_database["test_autonomous_database"]["id"])
-    ```
-
-
-    :param str autonomous_database_dataguard_association_id: The Autonomous Database Dataguard Association [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str autonomous_database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['autonomousDatabaseDataguardAssociationId'] = autonomous_database_dataguard_association_id
@@ -247,22 +195,6 @@ def get_autonomous_database_dataguard_association_output(autonomous_database_dat
                                                          autonomous_database_id: Optional[pulumi.Input[str]] = None,
                                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAutonomousDatabaseDataguardAssociationResult]:
     """
-    This data source provides details about a specific Autonomous Database Dataguard Association resource in Oracle Cloud Infrastructure Database service.
-
-    Gets an Autonomous Database dataguard assocation for the specified Autonomous Database.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_autonomous_database_dataguard_association = oci.Database.get_autonomous_database_dataguard_association(autonomous_database_dataguard_association_id=oci_database_autonomous_database_dataguard_association["test_autonomous_database_dataguard_association"]["id"],
-        autonomous_database_id=oci_database_autonomous_database["test_autonomous_database"]["id"])
-    ```
-
-
-    :param str autonomous_database_dataguard_association_id: The Autonomous Database Dataguard Association [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str autonomous_database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     ...

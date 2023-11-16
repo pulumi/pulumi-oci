@@ -74,11 +74,11 @@ export interface GetPingProbeResultsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of ping_probe_results.
      */
-    readonly pingProbeResults: outputs.HealthChecks.GetPingProbeResultsPingProbeResult[];
+    readonly pingProbeResults?: outputs.HealthChecks.GetPingProbeResultsPingProbeResult[];
     /**
      * The OCID of the monitor or on-demand probe responsible for creating this result.
      */

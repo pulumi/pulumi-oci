@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Fleet Crypto Analysis Results in Oracle Cloud Infrastructure Jms service.
@@ -80,7 +79,7 @@ type GetFleetCryptoAnalysisResultsResult struct {
 	// The fleet OCID.
 	FleetId string `pulumi:"fleetId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The managed instance OCID.
 	ManagedInstanceId *string `pulumi:"managedInstanceId"`
 	TimeEnd           *string `pulumi:"timeEnd"`
@@ -134,12 +133,6 @@ func (o GetFleetCryptoAnalysisResultsResultOutput) ToGetFleetCryptoAnalysisResul
 	return o
 }
 
-func (o GetFleetCryptoAnalysisResultsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetFleetCryptoAnalysisResultsResult] {
-	return pulumix.Output[GetFleetCryptoAnalysisResultsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The result aggregation mode
 func (o GetFleetCryptoAnalysisResultsResultOutput) AggregationMode() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetFleetCryptoAnalysisResultsResult) *string { return v.AggregationMode }).(pulumi.StringPtrOutput)
@@ -162,8 +155,8 @@ func (o GetFleetCryptoAnalysisResultsResultOutput) FleetId() pulumi.StringOutput
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetFleetCryptoAnalysisResultsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetCryptoAnalysisResultsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetFleetCryptoAnalysisResultsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetCryptoAnalysisResultsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The managed instance OCID.

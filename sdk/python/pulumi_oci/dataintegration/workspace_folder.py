@@ -28,19 +28,6 @@ class WorkspaceFolderArgs:
                  object_status: Optional[pulumi.Input[int]] = None):
         """
         The set of arguments for constructing a WorkspaceFolder resource.
-        :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        :param pulumi.Input['WorkspaceFolderRegistryMetadataArgs'] registry_metadata: (Updatable) Information about the object and its parent.
-        :param pulumi.Input[str] workspace_id: The workspace ID.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] category_name: (Updatable) The category name.
-        :param pulumi.Input[str] description: (Updatable) A user defined description for the folder.
-        :param pulumi.Input[str] key: (Updatable) The identifying key for the object.
-        :param pulumi.Input[str] model_version: (Updatable) The model version of an object.
-        :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-        :param pulumi.Input[int] object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
         """
         pulumi.set(__self__, "identifier", identifier)
         pulumi.set(__self__, "registry_metadata", registry_metadata)
@@ -63,9 +50,6 @@ class WorkspaceFolderArgs:
     @property
     @pulumi.getter
     def identifier(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        """
         return pulumi.get(self, "identifier")
 
     @identifier.setter
@@ -75,9 +59,6 @@ class WorkspaceFolderArgs:
     @property
     @pulumi.getter(name="registryMetadata")
     def registry_metadata(self) -> pulumi.Input['WorkspaceFolderRegistryMetadataArgs']:
-        """
-        (Updatable) Information about the object and its parent.
-        """
         return pulumi.get(self, "registry_metadata")
 
     @registry_metadata.setter
@@ -87,13 +68,6 @@ class WorkspaceFolderArgs:
     @property
     @pulumi.getter(name="workspaceId")
     def workspace_id(self) -> pulumi.Input[str]:
-        """
-        The workspace ID.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "workspace_id")
 
     @workspace_id.setter
@@ -103,9 +77,6 @@ class WorkspaceFolderArgs:
     @property
     @pulumi.getter(name="categoryName")
     def category_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The category name.
-        """
         return pulumi.get(self, "category_name")
 
     @category_name.setter
@@ -115,9 +86,6 @@ class WorkspaceFolderArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user defined description for the folder.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -136,9 +104,6 @@ class WorkspaceFolderArgs:
     @property
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The identifying key for the object.
-        """
         return pulumi.get(self, "key")
 
     @key.setter
@@ -148,9 +113,6 @@ class WorkspaceFolderArgs:
     @property
     @pulumi.getter(name="modelVersion")
     def model_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The model version of an object.
-        """
         return pulumi.get(self, "model_version")
 
     @model_version.setter
@@ -160,9 +122,6 @@ class WorkspaceFolderArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -172,9 +131,6 @@ class WorkspaceFolderArgs:
     @property
     @pulumi.getter(name="objectStatus")
     def object_status(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-        """
         return pulumi.get(self, "object_status")
 
     @object_status.setter
@@ -202,24 +158,6 @@ class _WorkspaceFolderState:
                  workspace_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering WorkspaceFolder resources.
-        :param pulumi.Input[str] category_name: (Updatable) The category name.
-        :param pulumi.Input[str] description: (Updatable) A user defined description for the folder.
-        :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        :param pulumi.Input[str] key: (Updatable) The identifying key for the object.
-        :param pulumi.Input[Mapping[str, Any]] key_map: A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
-        :param pulumi.Input[Sequence[pulumi.Input['WorkspaceFolderMetadataArgs']]] metadatas: A summary type containing information about the object including its key, name and when/who created/updated it.
-        :param pulumi.Input[str] model_type: The type of the object.
-        :param pulumi.Input[str] model_version: (Updatable) The model version of an object.
-        :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-        :param pulumi.Input[int] object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-        :param pulumi.Input[int] object_version: The version of the object that is used to track changes in the object instance.
-        :param pulumi.Input[Sequence[pulumi.Input['WorkspaceFolderParentRefArgs']]] parent_reves: A reference to the object's parent.
-        :param pulumi.Input['WorkspaceFolderRegistryMetadataArgs'] registry_metadata: (Updatable) Information about the object and its parent.
-        :param pulumi.Input[str] workspace_id: The workspace ID.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if category_name is not None:
             pulumi.set(__self__, "category_name", category_name)
@@ -255,9 +193,6 @@ class _WorkspaceFolderState:
     @property
     @pulumi.getter(name="categoryName")
     def category_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The category name.
-        """
         return pulumi.get(self, "category_name")
 
     @category_name.setter
@@ -267,9 +202,6 @@ class _WorkspaceFolderState:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user defined description for the folder.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -288,9 +220,6 @@ class _WorkspaceFolderState:
     @property
     @pulumi.getter
     def identifier(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        """
         return pulumi.get(self, "identifier")
 
     @identifier.setter
@@ -300,9 +229,6 @@ class _WorkspaceFolderState:
     @property
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The identifying key for the object.
-        """
         return pulumi.get(self, "key")
 
     @key.setter
@@ -312,9 +238,6 @@ class _WorkspaceFolderState:
     @property
     @pulumi.getter(name="keyMap")
     def key_map(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
-        """
         return pulumi.get(self, "key_map")
 
     @key_map.setter
@@ -324,9 +247,6 @@ class _WorkspaceFolderState:
     @property
     @pulumi.getter
     def metadatas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceFolderMetadataArgs']]]]:
-        """
-        A summary type containing information about the object including its key, name and when/who created/updated it.
-        """
         return pulumi.get(self, "metadatas")
 
     @metadatas.setter
@@ -336,9 +256,6 @@ class _WorkspaceFolderState:
     @property
     @pulumi.getter(name="modelType")
     def model_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The type of the object.
-        """
         return pulumi.get(self, "model_type")
 
     @model_type.setter
@@ -348,9 +265,6 @@ class _WorkspaceFolderState:
     @property
     @pulumi.getter(name="modelVersion")
     def model_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The model version of an object.
-        """
         return pulumi.get(self, "model_version")
 
     @model_version.setter
@@ -360,9 +274,6 @@ class _WorkspaceFolderState:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -372,9 +283,6 @@ class _WorkspaceFolderState:
     @property
     @pulumi.getter(name="objectStatus")
     def object_status(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-        """
         return pulumi.get(self, "object_status")
 
     @object_status.setter
@@ -384,9 +292,6 @@ class _WorkspaceFolderState:
     @property
     @pulumi.getter(name="objectVersion")
     def object_version(self) -> Optional[pulumi.Input[int]]:
-        """
-        The version of the object that is used to track changes in the object instance.
-        """
         return pulumi.get(self, "object_version")
 
     @object_version.setter
@@ -396,9 +301,6 @@ class _WorkspaceFolderState:
     @property
     @pulumi.getter(name="parentReves")
     def parent_reves(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceFolderParentRefArgs']]]]:
-        """
-        A reference to the object's parent.
-        """
         return pulumi.get(self, "parent_reves")
 
     @parent_reves.setter
@@ -408,9 +310,6 @@ class _WorkspaceFolderState:
     @property
     @pulumi.getter(name="registryMetadata")
     def registry_metadata(self) -> Optional[pulumi.Input['WorkspaceFolderRegistryMetadataArgs']]:
-        """
-        (Updatable) Information about the object and its parent.
-        """
         return pulumi.get(self, "registry_metadata")
 
     @registry_metadata.setter
@@ -420,13 +319,6 @@ class _WorkspaceFolderState:
     @property
     @pulumi.getter(name="workspaceId")
     def workspace_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The workspace ID.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "workspace_id")
 
     @workspace_id.setter
@@ -451,57 +343,9 @@ class WorkspaceFolder(pulumi.CustomResource):
                  workspace_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Workspace Folder resource in Oracle Cloud Infrastructure Data Integration service.
-
-        Creates a folder in a project or in another folder, limited to two levels of folders. |
-        Folders are used to organize your design-time resources, such as tasks or data flows.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_workspace_folder = oci.data_integration.WorkspaceFolder("testWorkspaceFolder",
-            identifier=var["workspace_folder_identifier"],
-            registry_metadata=oci.data_integration.WorkspaceFolderRegistryMetadataArgs(
-                aggregator_key=var["workspace_folder_registry_metadata_aggregator_key"],
-                is_favorite=var["workspace_folder_registry_metadata_is_favorite"],
-                key=var["workspace_folder_registry_metadata_key"],
-                labels=var["workspace_folder_registry_metadata_labels"],
-                registry_version=var["workspace_folder_registry_metadata_registry_version"],
-            ),
-            workspace_id=oci_dataintegration_workspace["test_workspace"]["id"],
-            category_name=oci_marketplace_category["test_category"]["name"],
-            description=var["workspace_folder_description"],
-            key=var["workspace_folder_key"],
-            model_version=var["workspace_folder_model_version"],
-            object_status=var["workspace_folder_object_status"])
-        ```
-
-        ## Import
-
-        WorkspaceFolders can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:DataIntegration/workspaceFolder:WorkspaceFolder test_workspace_folder "workspaces/{workspaceId}/folders/{folderKey}"
-        ```
-
+        Create a WorkspaceFolder resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] category_name: (Updatable) The category name.
-        :param pulumi.Input[str] description: (Updatable) A user defined description for the folder.
-        :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        :param pulumi.Input[str] key: (Updatable) The identifying key for the object.
-        :param pulumi.Input[str] model_version: (Updatable) The model version of an object.
-        :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-        :param pulumi.Input[int] object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-        :param pulumi.Input[pulumi.InputType['WorkspaceFolderRegistryMetadataArgs']] registry_metadata: (Updatable) Information about the object and its parent.
-        :param pulumi.Input[str] workspace_id: The workspace ID.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -510,42 +354,7 @@ class WorkspaceFolder(pulumi.CustomResource):
                  args: WorkspaceFolderArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Workspace Folder resource in Oracle Cloud Infrastructure Data Integration service.
-
-        Creates a folder in a project or in another folder, limited to two levels of folders. |
-        Folders are used to organize your design-time resources, such as tasks or data flows.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_workspace_folder = oci.data_integration.WorkspaceFolder("testWorkspaceFolder",
-            identifier=var["workspace_folder_identifier"],
-            registry_metadata=oci.data_integration.WorkspaceFolderRegistryMetadataArgs(
-                aggregator_key=var["workspace_folder_registry_metadata_aggregator_key"],
-                is_favorite=var["workspace_folder_registry_metadata_is_favorite"],
-                key=var["workspace_folder_registry_metadata_key"],
-                labels=var["workspace_folder_registry_metadata_labels"],
-                registry_version=var["workspace_folder_registry_metadata_registry_version"],
-            ),
-            workspace_id=oci_dataintegration_workspace["test_workspace"]["id"],
-            category_name=oci_marketplace_category["test_category"]["name"],
-            description=var["workspace_folder_description"],
-            key=var["workspace_folder_key"],
-            model_version=var["workspace_folder_model_version"],
-            object_status=var["workspace_folder_object_status"])
-        ```
-
-        ## Import
-
-        WorkspaceFolders can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:DataIntegration/workspaceFolder:WorkspaceFolder test_workspace_folder "workspaces/{workspaceId}/folders/{folderKey}"
-        ```
-
+        Create a WorkspaceFolder resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param WorkspaceFolderArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -633,24 +442,6 @@ class WorkspaceFolder(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] category_name: (Updatable) The category name.
-        :param pulumi.Input[str] description: (Updatable) A user defined description for the folder.
-        :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        :param pulumi.Input[str] key: (Updatable) The identifying key for the object.
-        :param pulumi.Input[Mapping[str, Any]] key_map: A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['WorkspaceFolderMetadataArgs']]]] metadatas: A summary type containing information about the object including its key, name and when/who created/updated it.
-        :param pulumi.Input[str] model_type: The type of the object.
-        :param pulumi.Input[str] model_version: (Updatable) The model version of an object.
-        :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-        :param pulumi.Input[int] object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-        :param pulumi.Input[int] object_version: The version of the object that is used to track changes in the object instance.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['WorkspaceFolderParentRefArgs']]]] parent_reves: A reference to the object's parent.
-        :param pulumi.Input[pulumi.InputType['WorkspaceFolderRegistryMetadataArgs']] registry_metadata: (Updatable) Information about the object and its parent.
-        :param pulumi.Input[str] workspace_id: The workspace ID.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -675,122 +466,76 @@ class WorkspaceFolder(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="categoryName")
-    def category_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The category name.
-        """
+    def category_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "category_name")
 
     @property
     @pulumi.getter
-    def description(self) -> pulumi.Output[str]:
-        """
-        (Updatable) A user defined description for the folder.
-        """
+    def description(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="folderKey")
-    def folder_key(self) -> pulumi.Output[str]:
+    def folder_key(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "folder_key")
 
     @property
     @pulumi.getter
     def identifier(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        """
         return pulumi.get(self, "identifier")
 
     @property
     @pulumi.getter
-    def key(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The identifying key for the object.
-        """
+    def key(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter(name="keyMap")
-    def key_map(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
-        """
+    def key_map(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "key_map")
 
     @property
     @pulumi.getter
-    def metadatas(self) -> pulumi.Output[Sequence['outputs.WorkspaceFolderMetadata']]:
-        """
-        A summary type containing information about the object including its key, name and when/who created/updated it.
-        """
+    def metadatas(self) -> pulumi.Output[Optional[Sequence['outputs.WorkspaceFolderMetadata']]]:
         return pulumi.get(self, "metadatas")
 
     @property
     @pulumi.getter(name="modelType")
-    def model_type(self) -> pulumi.Output[str]:
-        """
-        The type of the object.
-        """
+    def model_type(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "model_type")
 
     @property
     @pulumi.getter(name="modelVersion")
-    def model_version(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The model version of an object.
-        """
+    def model_version(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "model_version")
 
     @property
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="objectStatus")
-    def object_status(self) -> pulumi.Output[int]:
-        """
-        (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-        """
+    def object_status(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "object_status")
 
     @property
     @pulumi.getter(name="objectVersion")
-    def object_version(self) -> pulumi.Output[int]:
-        """
-        The version of the object that is used to track changes in the object instance.
-        """
+    def object_version(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "object_version")
 
     @property
     @pulumi.getter(name="parentReves")
-    def parent_reves(self) -> pulumi.Output[Sequence['outputs.WorkspaceFolderParentRef']]:
-        """
-        A reference to the object's parent.
-        """
+    def parent_reves(self) -> pulumi.Output[Optional[Sequence['outputs.WorkspaceFolderParentRef']]]:
         return pulumi.get(self, "parent_reves")
 
     @property
     @pulumi.getter(name="registryMetadata")
     def registry_metadata(self) -> pulumi.Output['outputs.WorkspaceFolderRegistryMetadata']:
-        """
-        (Updatable) Information about the object and its parent.
-        """
         return pulumi.get(self, "registry_metadata")
 
     @property
     @pulumi.getter(name="workspaceId")
     def workspace_id(self) -> pulumi.Output[str]:
-        """
-        The workspace ID.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "workspace_id")
 

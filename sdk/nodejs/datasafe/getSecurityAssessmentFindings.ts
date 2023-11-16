@@ -67,11 +67,11 @@ export interface GetSecurityAssessmentFindingsResult {
     /**
      * The list of findings.
      */
-    readonly findings: outputs.DataSafe.GetSecurityAssessmentFindingsFinding[];
+    readonly findings?: outputs.DataSafe.GetSecurityAssessmentFindingsFinding[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, a STIG rule, or a GDPR Article/Recital.
      */

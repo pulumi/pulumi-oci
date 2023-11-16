@@ -24,11 +24,6 @@ class PrivateApplicationLogoArgs:
                  content_url: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  mime_type: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] content_url: The content URL of the uploaded data.
-        :param pulumi.Input[str] display_name: (Updatable) The name of the private application.
-        :param pulumi.Input[str] mime_type: The MIME type of the uploaded data.
-        """
         if content_url is not None:
             pulumi.set(__self__, "content_url", content_url)
         if display_name is not None:
@@ -39,9 +34,6 @@ class PrivateApplicationLogoArgs:
     @property
     @pulumi.getter(name="contentUrl")
     def content_url(self) -> Optional[pulumi.Input[str]]:
-        """
-        The content URL of the uploaded data.
-        """
         return pulumi.get(self, "content_url")
 
     @content_url.setter
@@ -51,9 +43,6 @@ class PrivateApplicationLogoArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The name of the private application.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -63,9 +52,6 @@ class PrivateApplicationLogoArgs:
     @property
     @pulumi.getter(name="mimeType")
     def mime_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The MIME type of the uploaded data.
-        """
         return pulumi.get(self, "mime_type")
 
     @mime_type.setter
@@ -79,10 +65,6 @@ class PrivateApplicationPackageDetailsArgs:
                  package_type: pulumi.Input[str],
                  version: pulumi.Input[str],
                  zip_file_base64encoded: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] package_type: The package's type.
-        :param pulumi.Input[str] version: The package version.
-        """
         pulumi.set(__self__, "package_type", package_type)
         pulumi.set(__self__, "version", version)
         if zip_file_base64encoded is not None:
@@ -91,9 +73,6 @@ class PrivateApplicationPackageDetailsArgs:
     @property
     @pulumi.getter(name="packageType")
     def package_type(self) -> pulumi.Input[str]:
-        """
-        The package's type.
-        """
         return pulumi.get(self, "package_type")
 
     @package_type.setter
@@ -103,9 +82,6 @@ class PrivateApplicationPackageDetailsArgs:
     @property
     @pulumi.getter
     def version(self) -> pulumi.Input[str]:
-        """
-        The package version.
-        """
         return pulumi.get(self, "version")
 
     @version.setter

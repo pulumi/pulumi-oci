@@ -28,7 +28,7 @@ public final class GetCrossConnectsResult {
      * @return The list of cross_connects.
      * 
      */
-    private List<GetCrossConnectsCrossConnect> crossConnects;
+    private @Nullable List<GetCrossConnectsCrossConnect> crossConnects;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
@@ -39,7 +39,7 @@ public final class GetCrossConnectsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The cross-connect&#39;s current state.
      * 
@@ -66,7 +66,7 @@ public final class GetCrossConnectsResult {
      * 
      */
     public List<GetCrossConnectsCrossConnect> crossConnects() {
-        return this.crossConnects;
+        return this.crossConnects == null ? List.of() : this.crossConnects;
     }
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
@@ -82,8 +82,8 @@ public final class GetCrossConnectsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The cross-connect&#39;s current state.
@@ -104,10 +104,10 @@ public final class GetCrossConnectsResult {
     public static final class Builder {
         private String compartmentId;
         private @Nullable String crossConnectGroupId;
-        private List<GetCrossConnectsCrossConnect> crossConnects;
+        private @Nullable List<GetCrossConnectsCrossConnect> crossConnects;
         private @Nullable String displayName;
         private @Nullable List<GetCrossConnectsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetCrossConnectsResult defaults) {
@@ -132,8 +132,8 @@ public final class GetCrossConnectsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder crossConnects(List<GetCrossConnectsCrossConnect> crossConnects) {
-            this.crossConnects = Objects.requireNonNull(crossConnects);
+        public Builder crossConnects(@Nullable List<GetCrossConnectsCrossConnect> crossConnects) {
+            this.crossConnects = crossConnects;
             return this;
         }
         public Builder crossConnects(GetCrossConnectsCrossConnect... crossConnects) {
@@ -153,8 +153,8 @@ public final class GetCrossConnectsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

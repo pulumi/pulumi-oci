@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Double;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMetricDataMetricDataAggregatedDatapoint {
@@ -14,27 +16,27 @@ public final class GetMetricDataMetricDataAggregatedDatapoint {
      * @return The date and time associated with the value of this data point. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
      * 
      */
-    private String timestamp;
+    private @Nullable String timestamp;
     /**
      * @return Numeric value of the metric.  Example: `10.4`
      * 
      */
-    private Double value;
+    private @Nullable Double value;
 
     private GetMetricDataMetricDataAggregatedDatapoint() {}
     /**
      * @return The date and time associated with the value of this data point. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
      * 
      */
-    public String timestamp() {
-        return this.timestamp;
+    public Optional<String> timestamp() {
+        return Optional.ofNullable(this.timestamp);
     }
     /**
      * @return Numeric value of the metric.  Example: `10.4`
      * 
      */
-    public Double value() {
-        return this.value;
+    public Optional<Double> value() {
+        return Optional.ofNullable(this.value);
     }
 
     public static Builder builder() {
@@ -46,8 +48,8 @@ public final class GetMetricDataMetricDataAggregatedDatapoint {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String timestamp;
-        private Double value;
+        private @Nullable String timestamp;
+        private @Nullable Double value;
         public Builder() {}
         public Builder(GetMetricDataMetricDataAggregatedDatapoint defaults) {
     	      Objects.requireNonNull(defaults);
@@ -56,13 +58,13 @@ public final class GetMetricDataMetricDataAggregatedDatapoint {
         }
 
         @CustomType.Setter
-        public Builder timestamp(String timestamp) {
-            this.timestamp = Objects.requireNonNull(timestamp);
+        public Builder timestamp(@Nullable String timestamp) {
+            this.timestamp = timestamp;
             return this;
         }
         @CustomType.Setter
-        public Builder value(Double value) {
-            this.value = Objects.requireNonNull(value);
+        public Builder value(@Nullable Double value) {
+            this.value = value;
             return this;
         }
         public GetMetricDataMetricDataAggregatedDatapoint build() {

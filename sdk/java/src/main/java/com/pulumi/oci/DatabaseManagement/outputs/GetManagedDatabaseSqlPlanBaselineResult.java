@@ -6,6 +6,8 @@ package com.pulumi.oci.DatabaseManagement.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedDatabaseSqlPlanBaselineResult {
@@ -13,53 +15,53 @@ public final class GetManagedDatabaseSqlPlanBaselineResult {
      * @return Indicates whether the plan baseline is accepted (`YES`) or not (`NO`).
      * 
      */
-    private String accepted;
+    private @Nullable String accepted;
     /**
      * @return The application action.
      * 
      */
-    private String action;
+    private @Nullable String action;
     /**
      * @return Indicates whether a plan that is automatically captured by SQL plan management is marked adaptive or not.
      * 
      */
-    private String adaptive;
+    private @Nullable String adaptive;
     /**
      * @return Indicates whether the plan baseline is auto-purged (`YES`) or not (`NO`).
      * 
      */
-    private String autoPurge;
+    private @Nullable String autoPurge;
     /**
      * @return Indicates whether the plan baseline is enabled (`YES`) or disabled (`NO`).
      * 
      */
-    private String enabled;
+    private @Nullable String enabled;
     /**
      * @return The execution plan for the SQL statement.
      * 
      */
-    private String executionPlan;
+    private @Nullable String executionPlan;
     /**
      * @return Indicates whether the plan baseline is fixed (`YES`) or not (`NO`).
      * 
      */
-    private String fixed;
+    private @Nullable String fixed;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String managedDatabaseId;
     /**
      * @return The application module name.
      * 
      */
-    private String module;
+    private @Nullable String module;
     /**
      * @return The origin of the SQL plan baseline.
      * 
      */
-    private String origin;
+    private @Nullable String origin;
     /**
      * @return The unique plan identifier.
      * 
@@ -69,89 +71,89 @@ public final class GetManagedDatabaseSqlPlanBaselineResult {
      * @return Indicates whether the optimizer was able to reproduce the plan (`YES`) or not (`NO`). The value is set to `YES` when a plan is initially added to the plan baseline.
      * 
      */
-    private String reproduced;
+    private @Nullable String reproduced;
     /**
      * @return The unique SQL identifier.
      * 
      */
-    private String sqlHandle;
+    private @Nullable String sqlHandle;
     /**
      * @return The SQL text.
      * 
      */
-    private String sqlText;
+    private @Nullable String sqlText;
     /**
      * @return The date and time when the plan baseline was created.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The date and time when the plan baseline was last executed.
      * 
      */
-    private String timeLastExecuted;
+    private @Nullable String timeLastExecuted;
     /**
      * @return The date and time when the plan baseline was last modified.
      * 
      */
-    private String timeLastModified;
+    private @Nullable String timeLastModified;
 
     private GetManagedDatabaseSqlPlanBaselineResult() {}
     /**
      * @return Indicates whether the plan baseline is accepted (`YES`) or not (`NO`).
      * 
      */
-    public String accepted() {
-        return this.accepted;
+    public Optional<String> accepted() {
+        return Optional.ofNullable(this.accepted);
     }
     /**
      * @return The application action.
      * 
      */
-    public String action() {
-        return this.action;
+    public Optional<String> action() {
+        return Optional.ofNullable(this.action);
     }
     /**
      * @return Indicates whether a plan that is automatically captured by SQL plan management is marked adaptive or not.
      * 
      */
-    public String adaptive() {
-        return this.adaptive;
+    public Optional<String> adaptive() {
+        return Optional.ofNullable(this.adaptive);
     }
     /**
      * @return Indicates whether the plan baseline is auto-purged (`YES`) or not (`NO`).
      * 
      */
-    public String autoPurge() {
-        return this.autoPurge;
+    public Optional<String> autoPurge() {
+        return Optional.ofNullable(this.autoPurge);
     }
     /**
      * @return Indicates whether the plan baseline is enabled (`YES`) or disabled (`NO`).
      * 
      */
-    public String enabled() {
-        return this.enabled;
+    public Optional<String> enabled() {
+        return Optional.ofNullable(this.enabled);
     }
     /**
      * @return The execution plan for the SQL statement.
      * 
      */
-    public String executionPlan() {
-        return this.executionPlan;
+    public Optional<String> executionPlan() {
+        return Optional.ofNullable(this.executionPlan);
     }
     /**
      * @return Indicates whether the plan baseline is fixed (`YES`) or not (`NO`).
      * 
      */
-    public String fixed() {
-        return this.fixed;
+    public Optional<String> fixed() {
+        return Optional.ofNullable(this.fixed);
     }
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String managedDatabaseId() {
         return this.managedDatabaseId;
@@ -160,15 +162,15 @@ public final class GetManagedDatabaseSqlPlanBaselineResult {
      * @return The application module name.
      * 
      */
-    public String module() {
-        return this.module;
+    public Optional<String> module() {
+        return Optional.ofNullable(this.module);
     }
     /**
      * @return The origin of the SQL plan baseline.
      * 
      */
-    public String origin() {
-        return this.origin;
+    public Optional<String> origin() {
+        return Optional.ofNullable(this.origin);
     }
     /**
      * @return The unique plan identifier.
@@ -181,43 +183,43 @@ public final class GetManagedDatabaseSqlPlanBaselineResult {
      * @return Indicates whether the optimizer was able to reproduce the plan (`YES`) or not (`NO`). The value is set to `YES` when a plan is initially added to the plan baseline.
      * 
      */
-    public String reproduced() {
-        return this.reproduced;
+    public Optional<String> reproduced() {
+        return Optional.ofNullable(this.reproduced);
     }
     /**
      * @return The unique SQL identifier.
      * 
      */
-    public String sqlHandle() {
-        return this.sqlHandle;
+    public Optional<String> sqlHandle() {
+        return Optional.ofNullable(this.sqlHandle);
     }
     /**
      * @return The SQL text.
      * 
      */
-    public String sqlText() {
-        return this.sqlText;
+    public Optional<String> sqlText() {
+        return Optional.ofNullable(this.sqlText);
     }
     /**
      * @return The date and time when the plan baseline was created.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The date and time when the plan baseline was last executed.
      * 
      */
-    public String timeLastExecuted() {
-        return this.timeLastExecuted;
+    public Optional<String> timeLastExecuted() {
+        return Optional.ofNullable(this.timeLastExecuted);
     }
     /**
      * @return The date and time when the plan baseline was last modified.
      * 
      */
-    public String timeLastModified() {
-        return this.timeLastModified;
+    public Optional<String> timeLastModified() {
+        return Optional.ofNullable(this.timeLastModified);
     }
 
     public static Builder builder() {
@@ -229,24 +231,24 @@ public final class GetManagedDatabaseSqlPlanBaselineResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String accepted;
-        private String action;
-        private String adaptive;
-        private String autoPurge;
-        private String enabled;
-        private String executionPlan;
-        private String fixed;
-        private String id;
+        private @Nullable String accepted;
+        private @Nullable String action;
+        private @Nullable String adaptive;
+        private @Nullable String autoPurge;
+        private @Nullable String enabled;
+        private @Nullable String executionPlan;
+        private @Nullable String fixed;
+        private @Nullable String id;
         private String managedDatabaseId;
-        private String module;
-        private String origin;
+        private @Nullable String module;
+        private @Nullable String origin;
         private String planName;
-        private String reproduced;
-        private String sqlHandle;
-        private String sqlText;
-        private String timeCreated;
-        private String timeLastExecuted;
-        private String timeLastModified;
+        private @Nullable String reproduced;
+        private @Nullable String sqlHandle;
+        private @Nullable String sqlText;
+        private @Nullable String timeCreated;
+        private @Nullable String timeLastExecuted;
+        private @Nullable String timeLastModified;
         public Builder() {}
         public Builder(GetManagedDatabaseSqlPlanBaselineResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -271,43 +273,43 @@ public final class GetManagedDatabaseSqlPlanBaselineResult {
         }
 
         @CustomType.Setter
-        public Builder accepted(String accepted) {
-            this.accepted = Objects.requireNonNull(accepted);
+        public Builder accepted(@Nullable String accepted) {
+            this.accepted = accepted;
             return this;
         }
         @CustomType.Setter
-        public Builder action(String action) {
-            this.action = Objects.requireNonNull(action);
+        public Builder action(@Nullable String action) {
+            this.action = action;
             return this;
         }
         @CustomType.Setter
-        public Builder adaptive(String adaptive) {
-            this.adaptive = Objects.requireNonNull(adaptive);
+        public Builder adaptive(@Nullable String adaptive) {
+            this.adaptive = adaptive;
             return this;
         }
         @CustomType.Setter
-        public Builder autoPurge(String autoPurge) {
-            this.autoPurge = Objects.requireNonNull(autoPurge);
+        public Builder autoPurge(@Nullable String autoPurge) {
+            this.autoPurge = autoPurge;
             return this;
         }
         @CustomType.Setter
-        public Builder enabled(String enabled) {
-            this.enabled = Objects.requireNonNull(enabled);
+        public Builder enabled(@Nullable String enabled) {
+            this.enabled = enabled;
             return this;
         }
         @CustomType.Setter
-        public Builder executionPlan(String executionPlan) {
-            this.executionPlan = Objects.requireNonNull(executionPlan);
+        public Builder executionPlan(@Nullable String executionPlan) {
+            this.executionPlan = executionPlan;
             return this;
         }
         @CustomType.Setter
-        public Builder fixed(String fixed) {
-            this.fixed = Objects.requireNonNull(fixed);
+        public Builder fixed(@Nullable String fixed) {
+            this.fixed = fixed;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -316,13 +318,13 @@ public final class GetManagedDatabaseSqlPlanBaselineResult {
             return this;
         }
         @CustomType.Setter
-        public Builder module(String module) {
-            this.module = Objects.requireNonNull(module);
+        public Builder module(@Nullable String module) {
+            this.module = module;
             return this;
         }
         @CustomType.Setter
-        public Builder origin(String origin) {
-            this.origin = Objects.requireNonNull(origin);
+        public Builder origin(@Nullable String origin) {
+            this.origin = origin;
             return this;
         }
         @CustomType.Setter
@@ -331,33 +333,33 @@ public final class GetManagedDatabaseSqlPlanBaselineResult {
             return this;
         }
         @CustomType.Setter
-        public Builder reproduced(String reproduced) {
-            this.reproduced = Objects.requireNonNull(reproduced);
+        public Builder reproduced(@Nullable String reproduced) {
+            this.reproduced = reproduced;
             return this;
         }
         @CustomType.Setter
-        public Builder sqlHandle(String sqlHandle) {
-            this.sqlHandle = Objects.requireNonNull(sqlHandle);
+        public Builder sqlHandle(@Nullable String sqlHandle) {
+            this.sqlHandle = sqlHandle;
             return this;
         }
         @CustomType.Setter
-        public Builder sqlText(String sqlText) {
-            this.sqlText = Objects.requireNonNull(sqlText);
+        public Builder sqlText(@Nullable String sqlText) {
+            this.sqlText = sqlText;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeLastExecuted(String timeLastExecuted) {
-            this.timeLastExecuted = Objects.requireNonNull(timeLastExecuted);
+        public Builder timeLastExecuted(@Nullable String timeLastExecuted) {
+            this.timeLastExecuted = timeLastExecuted;
             return this;
         }
         @CustomType.Setter
-        public Builder timeLastModified(String timeLastModified) {
-            this.timeLastModified = Objects.requireNonNull(timeLastModified);
+        public Builder timeLastModified(@Nullable String timeLastModified) {
+            this.timeLastModified = timeLastModified;
             return this;
         }
         public GetManagedDatabaseSqlPlanBaselineResult build() {

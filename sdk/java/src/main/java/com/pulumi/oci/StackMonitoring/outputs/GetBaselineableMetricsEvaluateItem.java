@@ -12,6 +12,7 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetBaselineableMetricsEvaluateItem {
@@ -19,12 +20,12 @@ public final class GetBaselineableMetricsEvaluateItem {
      * @return list of anomaly data points for the metric
      * 
      */
-    private List<GetBaselineableMetricsEvaluateItemDataPoint> dataPoints;
+    private @Nullable List<GetBaselineableMetricsEvaluateItemDataPoint> dataPoints;
     /**
      * @return list of dimensions for the metric
      * 
      */
-    private Map<String,Object> dimensions;
+    private @Nullable Map<String,Object> dimensions;
     /**
      * @return list of data points for the metric for evaluation of anomalies
      * 
@@ -42,14 +43,14 @@ public final class GetBaselineableMetricsEvaluateItem {
      * 
      */
     public List<GetBaselineableMetricsEvaluateItemDataPoint> dataPoints() {
-        return this.dataPoints;
+        return this.dataPoints == null ? List.of() : this.dataPoints;
     }
     /**
      * @return list of dimensions for the metric
      * 
      */
     public Map<String,Object> dimensions() {
-        return this.dimensions;
+        return this.dimensions == null ? Map.of() : this.dimensions;
     }
     /**
      * @return list of data points for the metric for evaluation of anomalies
@@ -75,8 +76,8 @@ public final class GetBaselineableMetricsEvaluateItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetBaselineableMetricsEvaluateItemDataPoint> dataPoints;
-        private Map<String,Object> dimensions;
+        private @Nullable List<GetBaselineableMetricsEvaluateItemDataPoint> dataPoints;
+        private @Nullable Map<String,Object> dimensions;
         private List<GetBaselineableMetricsEvaluateItemEvaluationDataPoint> evaluationDataPoints;
         private List<GetBaselineableMetricsEvaluateItemTrainingDataPoint> trainingDataPoints;
         public Builder() {}
@@ -89,16 +90,16 @@ public final class GetBaselineableMetricsEvaluateItem {
         }
 
         @CustomType.Setter
-        public Builder dataPoints(List<GetBaselineableMetricsEvaluateItemDataPoint> dataPoints) {
-            this.dataPoints = Objects.requireNonNull(dataPoints);
+        public Builder dataPoints(@Nullable List<GetBaselineableMetricsEvaluateItemDataPoint> dataPoints) {
+            this.dataPoints = dataPoints;
             return this;
         }
         public Builder dataPoints(GetBaselineableMetricsEvaluateItemDataPoint... dataPoints) {
             return dataPoints(List.of(dataPoints));
         }
         @CustomType.Setter
-        public Builder dimensions(Map<String,Object> dimensions) {
-            this.dimensions = Objects.requireNonNull(dimensions);
+        public Builder dimensions(@Nullable Map<String,Object> dimensions) {
+            this.dimensions = dimensions;
             return this;
         }
         @CustomType.Setter

@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DevOps.outputs.GetDeploymentDeployStageOverrideArgumentItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDeploymentDeployStageOverrideArgument {
@@ -14,7 +15,7 @@ public final class GetDeploymentDeployStageOverrideArgument {
      * @return A list of stage predecessors for a stage.
      * 
      */
-    private List<GetDeploymentDeployStageOverrideArgumentItem> items;
+    private @Nullable List<GetDeploymentDeployStageOverrideArgumentItem> items;
 
     private GetDeploymentDeployStageOverrideArgument() {}
     /**
@@ -22,7 +23,7 @@ public final class GetDeploymentDeployStageOverrideArgument {
      * 
      */
     public List<GetDeploymentDeployStageOverrideArgumentItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetDeploymentDeployStageOverrideArgument {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetDeploymentDeployStageOverrideArgumentItem> items;
+        private @Nullable List<GetDeploymentDeployStageOverrideArgumentItem> items;
         public Builder() {}
         public Builder(GetDeploymentDeployStageOverrideArgument defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetDeploymentDeployStageOverrideArgument {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetDeploymentDeployStageOverrideArgumentItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetDeploymentDeployStageOverrideArgumentItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetDeploymentDeployStageOverrideArgumentItem... items) {

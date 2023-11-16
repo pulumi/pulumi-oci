@@ -39,10 +39,7 @@ class GetAppCatalogListingResourceVersionsResult:
 
     @property
     @pulumi.getter(name="appCatalogListingResourceVersions")
-    def app_catalog_listing_resource_versions(self) -> Sequence['outputs.GetAppCatalogListingResourceVersionsAppCatalogListingResourceVersionResult']:
-        """
-        The list of app_catalog_listing_resource_versions.
-        """
+    def app_catalog_listing_resource_versions(self) -> Optional[Sequence['outputs.GetAppCatalogListingResourceVersionsAppCatalogListingResourceVersionResult']]:
         return pulumi.get(self, "app_catalog_listing_resource_versions")
 
     @property
@@ -52,7 +49,7 @@ class GetAppCatalogListingResourceVersionsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -61,9 +58,6 @@ class GetAppCatalogListingResourceVersionsResult:
     @property
     @pulumi.getter(name="listingId")
     def listing_id(self) -> str:
-        """
-        The OCID of the listing this resource version belongs to.
-        """
         return pulumi.get(self, "listing_id")
 
 
@@ -83,21 +77,7 @@ def get_app_catalog_listing_resource_versions(filters: Optional[Sequence[pulumi.
                                               listing_id: Optional[str] = None,
                                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppCatalogListingResourceVersionsResult:
     """
-    This data source provides the list of App Catalog Listing Resource Versions in Oracle Cloud Infrastructure Core service.
-
-    Gets all resource versions for a particular listing.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_app_catalog_listing_resource_versions = oci.Core.get_app_catalog_listing_resource_versions(listing_id=data["oci_core_app_catalog_listing"]["test_listing"]["id"])
-    ```
-
-
-    :param str listing_id: The OCID of the listing.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -117,20 +97,6 @@ def get_app_catalog_listing_resource_versions_output(filters: Optional[pulumi.In
                                                      listing_id: Optional[pulumi.Input[str]] = None,
                                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppCatalogListingResourceVersionsResult]:
     """
-    This data source provides the list of App Catalog Listing Resource Versions in Oracle Cloud Infrastructure Core service.
-
-    Gets all resource versions for a particular listing.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_app_catalog_listing_resource_versions = oci.Core.get_app_catalog_listing_resource_versions(listing_id=data["oci_core_app_catalog_listing"]["test_listing"]["id"])
-    ```
-
-
-    :param str listing_id: The OCID of the listing.
+    Use this data source to access information about an existing resource.
     """
     ...

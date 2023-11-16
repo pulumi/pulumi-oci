@@ -20,25 +20,25 @@ namespace Pulumi.Oci.Adm.Outputs
         /// <summary>
         /// The maximum Common Vulnerability Scoring System Version 2 (CVSS V2) score. An artifact with a CVSS V2 score below this value is not considered for patching.
         /// </summary>
-        public readonly double MaxPermissibleCvssV2score;
+        public readonly double? MaxPermissibleCvssV2score;
         /// <summary>
         /// The maximum Common Vulnerability Scoring System Version 3 (CVSS V3) score. An artifact with a CVSS V3 score below this value is not considered for patching.
         /// </summary>
-        public readonly double MaxPermissibleCvssV3score;
+        public readonly double? MaxPermissibleCvssV3score;
         /// <summary>
         /// The upgrade policy for recommendations. The `Nearest` upgrade policy upgrades a dependency to the oldest version that meets both of the following criteria: it is newer than the current version and it is not affected by a vulnerability.
         /// </summary>
-        public readonly string UpgradePolicy;
+        public readonly string? UpgradePolicy;
 
         [OutputConstructor]
         private GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationResult(
             ImmutableArray<string> exclusions,
 
-            double maxPermissibleCvssV2score,
+            double? maxPermissibleCvssV2score,
 
-            double maxPermissibleCvssV3score,
+            double? maxPermissibleCvssV3score,
 
-            string upgradePolicy)
+            string? upgradePolicy)
         {
             Exclusions = exclusions;
             MaxPermissibleCvssV2score = maxPermissibleCvssV2score;

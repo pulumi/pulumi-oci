@@ -73,25 +73,16 @@ class GetLogAnalyticsEntitiesResult:
     @property
     @pulumi.getter(name="cloudResourceId")
     def cloud_resource_id(self) -> Optional[str]:
-        """
-        The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
-        """
         return pulumi.get(self, "cloud_resource_id")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="entityTypeNames")
     def entity_type_names(self) -> Optional[Sequence[str]]:
-        """
-        Log analytics entity type name.
-        """
         return pulumi.get(self, "entity_type_names")
 
     @property
@@ -102,9 +93,6 @@ class GetLogAnalyticsEntitiesResult:
     @property
     @pulumi.getter
     def hostname(self) -> Optional[str]:
-        """
-        The hostname where the entity represented here is actually present. This would be the output one would get if they run `echo $HOSTNAME` on Linux or an equivalent OS command. This may be different from management agents host since logs may be collected remotely.
-        """
         return pulumi.get(self, "hostname")
 
     @property
@@ -114,7 +102,7 @@ class GetLogAnalyticsEntitiesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -132,18 +120,12 @@ class GetLogAnalyticsEntitiesResult:
 
     @property
     @pulumi.getter(name="logAnalyticsEntityCollections")
-    def log_analytics_entity_collections(self) -> Sequence['outputs.GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionResult']:
-        """
-        The list of log_analytics_entity_collection.
-        """
+    def log_analytics_entity_collections(self) -> Optional[Sequence['outputs.GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionResult']]:
         return pulumi.get(self, "log_analytics_entity_collections")
 
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        Log analytics entity name.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -159,17 +141,11 @@ class GetLogAnalyticsEntitiesResult:
     @property
     @pulumi.getter(name="sourceId")
     def source_id(self) -> Optional[str]:
-        """
-        This indicates the type of source. It is primarily for Enterprise Manager Repository ID.
-        """
         return pulumi.get(self, "source_id")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the log analytics entity.
-        """
         return pulumi.get(self, "state")
 
 
@@ -211,43 +187,7 @@ def get_log_analytics_entities(cloud_resource_id: Optional[str] = None,
                                state: Optional[str] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetLogAnalyticsEntitiesResult:
     """
-    This data source provides the list of Log Analytics Entities in Oracle Cloud Infrastructure Log Analytics service.
-
-    Return a list of log analytics entities.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_log_analytics_entities = oci.LogAnalytics.get_log_analytics_entities(compartment_id=var["compartment_id"],
-        namespace=var["log_analytics_entity_namespace"],
-        cloud_resource_id=oci_log_analytics_cloud_resource["test_cloud_resource"]["id"],
-        entity_type_names=var["log_analytics_entity_entity_type_name"],
-        hostname=var["log_analytics_entity_hostname"],
-        hostname_contains=var["log_analytics_entity_hostname_contains"],
-        is_management_agent_id_null=var["log_analytics_entity_is_management_agent_id_null"],
-        lifecycle_details_contains=var["log_analytics_entity_lifecycle_details_contains"],
-        name=var["log_analytics_entity_name"],
-        name_contains=var["log_analytics_entity_name_contains"],
-        source_id=oci_log_analytics_source["test_source"]["id"],
-        state=var["log_analytics_entity_state"])
-    ```
-
-
-    :param str cloud_resource_id: A filter to return only log analytics entities whose cloudResourceId matches the cloudResourceId given.
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param Sequence[str] entity_type_names: A filter to return only log analytics entities whose entityTypeName matches the entire log analytics entity type name of one of the entityTypeNames given in the list. The match is case-insensitive.
-    :param str hostname: A filter to return only log analytics entities whose hostname matches the entire hostname given.
-    :param str hostname_contains: A filter to return only log analytics entities whose hostname contains the substring given. The match is case-insensitive.
-    :param str is_management_agent_id_null: A filter to return only those log analytics entities whose managementAgentId is null or is not null.
-    :param str lifecycle_details_contains: A filter to return only log analytics entities whose lifecycleDetails contains the specified string.
-    :param str name: A filter to return only log analytics entities whose name matches the entire name given. The match is case-insensitive.
-    :param str name_contains: A filter to return only log analytics entities whose name contains the name given. The match is case-insensitive.
-    :param str namespace: The Logging Analytics namespace used for the request.
-    :param str source_id: A filter to return only log analytics entities whose sourceId matches the sourceId given.
-    :param str state: A filter to return only those log analytics entities with the specified lifecycle state. The state value is case-insensitive.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['cloudResourceId'] = cloud_resource_id
@@ -300,42 +240,6 @@ def get_log_analytics_entities_output(cloud_resource_id: Optional[pulumi.Input[O
                                       state: Optional[pulumi.Input[Optional[str]]] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetLogAnalyticsEntitiesResult]:
     """
-    This data source provides the list of Log Analytics Entities in Oracle Cloud Infrastructure Log Analytics service.
-
-    Return a list of log analytics entities.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_log_analytics_entities = oci.LogAnalytics.get_log_analytics_entities(compartment_id=var["compartment_id"],
-        namespace=var["log_analytics_entity_namespace"],
-        cloud_resource_id=oci_log_analytics_cloud_resource["test_cloud_resource"]["id"],
-        entity_type_names=var["log_analytics_entity_entity_type_name"],
-        hostname=var["log_analytics_entity_hostname"],
-        hostname_contains=var["log_analytics_entity_hostname_contains"],
-        is_management_agent_id_null=var["log_analytics_entity_is_management_agent_id_null"],
-        lifecycle_details_contains=var["log_analytics_entity_lifecycle_details_contains"],
-        name=var["log_analytics_entity_name"],
-        name_contains=var["log_analytics_entity_name_contains"],
-        source_id=oci_log_analytics_source["test_source"]["id"],
-        state=var["log_analytics_entity_state"])
-    ```
-
-
-    :param str cloud_resource_id: A filter to return only log analytics entities whose cloudResourceId matches the cloudResourceId given.
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param Sequence[str] entity_type_names: A filter to return only log analytics entities whose entityTypeName matches the entire log analytics entity type name of one of the entityTypeNames given in the list. The match is case-insensitive.
-    :param str hostname: A filter to return only log analytics entities whose hostname matches the entire hostname given.
-    :param str hostname_contains: A filter to return only log analytics entities whose hostname contains the substring given. The match is case-insensitive.
-    :param str is_management_agent_id_null: A filter to return only those log analytics entities whose managementAgentId is null or is not null.
-    :param str lifecycle_details_contains: A filter to return only log analytics entities whose lifecycleDetails contains the specified string.
-    :param str name: A filter to return only log analytics entities whose name matches the entire name given. The match is case-insensitive.
-    :param str name_contains: A filter to return only log analytics entities whose name contains the name given. The match is case-insensitive.
-    :param str namespace: The Logging Analytics namespace used for the request.
-    :param str source_id: A filter to return only log analytics entities whose sourceId matches the sourceId given.
-    :param str state: A filter to return only those log analytics entities with the specified lifecycle state. The state value is case-insensitive.
+    Use this data source to access information about an existing resource.
     """
     ...

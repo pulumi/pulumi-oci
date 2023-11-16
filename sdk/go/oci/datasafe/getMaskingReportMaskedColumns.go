@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Masking Reports Masked Columns in Oracle Cloud Infrastructure Data Safe service.
@@ -82,7 +81,7 @@ type GetMaskingReportMaskedColumnsResult struct {
 	ColumnNames []string                              `pulumi:"columnNames"`
 	Filters     []GetMaskingReportMaskedColumnsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of masked_column_collection.
 	MaskedColumnCollections []GetMaskingReportMaskedColumnsMaskedColumnCollection `pulumi:"maskedColumnCollections"`
 	// The masking group of the masked column.
@@ -149,12 +148,6 @@ func (o GetMaskingReportMaskedColumnsResultOutput) ToGetMaskingReportMaskedColum
 	return o
 }
 
-func (o GetMaskingReportMaskedColumnsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetMaskingReportMaskedColumnsResult] {
-	return pulumix.Output[GetMaskingReportMaskedColumnsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The name of the masked column.
 func (o GetMaskingReportMaskedColumnsResultOutput) ColumnNames() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetMaskingReportMaskedColumnsResult) []string { return v.ColumnNames }).(pulumi.StringArrayOutput)
@@ -165,8 +158,8 @@ func (o GetMaskingReportMaskedColumnsResultOutput) Filters() GetMaskingReportMas
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetMaskingReportMaskedColumnsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMaskingReportMaskedColumnsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetMaskingReportMaskedColumnsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMaskingReportMaskedColumnsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of masked_column_collection.

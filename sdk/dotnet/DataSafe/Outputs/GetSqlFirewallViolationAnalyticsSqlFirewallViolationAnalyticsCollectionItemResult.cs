@@ -20,37 +20,37 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// The display name of aggregation field.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// The name of the aggregation.
         /// </summary>
-        public readonly string MetricName;
+        public readonly string? MetricName;
         /// <summary>
         /// Total count of aggregated value.
         /// </summary>
-        public readonly string SqlFirewallViolationAnalyticCount;
+        public readonly string? SqlFirewallViolationAnalyticCount;
         /// <summary>
         /// An optional filter to return audit events whose creation time in the database is less than and equal to the date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
-        public readonly string TimeEnded;
+        public readonly string? TimeEnded;
         /// <summary>
         /// An optional filter to return audit events whose creation time in the database is greater than and equal to the date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
-        public readonly string TimeStarted;
+        public readonly string? TimeStarted;
 
         [OutputConstructor]
         private GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemResult(
             ImmutableArray<Outputs.GetSqlFirewallViolationAnalyticsSqlFirewallViolationAnalyticsCollectionItemDimensionResult> dimensions,
 
-            string displayName,
+            string? displayName,
 
-            string metricName,
+            string? metricName,
 
-            string sqlFirewallViolationAnalyticCount,
+            string? sqlFirewallViolationAnalyticCount,
 
-            string timeEnded,
+            string? timeEnded,
 
-            string timeStarted)
+            string? timeStarted)
         {
             Dimensions = dimensions;
             DisplayName = displayName;

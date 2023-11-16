@@ -93,15 +93,15 @@ export class Publication extends pulumi.CustomResource {
     /**
      * (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The model for upload data for images and icons.
      */
-    public /*out*/ readonly icons!: pulumi.Output<outputs.Marketplace.PublicationIcon[]>;
+    public /*out*/ readonly icons!: pulumi.Output<outputs.Marketplace.PublicationIcon[] | undefined>;
     /**
      * Whether the publisher acknowledged that they have the right and authority to share the contents of the publication and that they accepted the Oracle terms of use agreements required to create a publication.
      */
@@ -113,7 +113,7 @@ export class Publication extends pulumi.CustomResource {
     /**
      * (Updatable) A long description of the publication to use in the listing.
      */
-    public readonly longDescription!: pulumi.Output<string>;
+    public readonly longDescription!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The name of the contact.
      */
@@ -125,7 +125,7 @@ export class Publication extends pulumi.CustomResource {
     /**
      * The package's type.
      */
-    public /*out*/ readonly packageType!: pulumi.Output<string>;
+    public /*out*/ readonly packageType!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) A short description of the publication to use in the listing.
      */
@@ -133,7 +133,7 @@ export class Publication extends pulumi.CustomResource {
     /**
      * The lifecycle state of the publication.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Contact information for getting support from the publisher for the listing.
      */
@@ -141,11 +141,11 @@ export class Publication extends pulumi.CustomResource {
     /**
      * The list of operating systems supported by the listing.
      */
-    public /*out*/ readonly supportedOperatingSystems!: pulumi.Output<outputs.Marketplace.PublicationSupportedOperatingSystem[]>;
+    public /*out*/ readonly supportedOperatingSystems!: pulumi.Output<outputs.Marketplace.PublicationSupportedOperatingSystem[] | undefined>;
     /**
      * The date and time the publication was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a Publication resource with the given unique name, arguments, and options.

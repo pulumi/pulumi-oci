@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Budgets in Oracle Cloud Infrastructure Budget service.
@@ -86,7 +85,7 @@ type GetBudgetsResult struct {
 	DisplayName *string            `pulumi:"displayName"`
 	Filters     []GetBudgetsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The current state of the budget.
 	State *string `pulumi:"state"`
 	// The type of target on which the budget is applied.
@@ -141,12 +140,6 @@ func (o GetBudgetsResultOutput) ToGetBudgetsResultOutputWithContext(ctx context.
 	return o
 }
 
-func (o GetBudgetsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetBudgetsResult] {
-	return pulumix.Output[GetBudgetsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The list of budgets.
 func (o GetBudgetsResultOutput) Budgets() GetBudgetsBudgetArrayOutput {
 	return o.ApplyT(func(v GetBudgetsResult) []GetBudgetsBudget { return v.Budgets }).(GetBudgetsBudgetArrayOutput)
@@ -167,8 +160,8 @@ func (o GetBudgetsResultOutput) Filters() GetBudgetsFilterArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetBudgetsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBudgetsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetBudgetsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBudgetsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the budget.

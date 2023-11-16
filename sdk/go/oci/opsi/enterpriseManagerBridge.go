@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Enterprise Manager Bridge resource in Oracle Cloud Infrastructure Opsi service.
@@ -69,30 +68,30 @@ type EnterpriseManagerBridge struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) Description of Enterprise Manager Bridge
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) User-friedly name of Enterprise Manager Bridge that does not have to be unique.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// Object Storage Bucket Name
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ObjectStorageBucketName pulumi.StringOutput `pulumi:"objectStorageBucketName"`
 	// A message describing status of the object storage bucket of this resource. For example, it can be used to provide actionable information about the permission and content validity of the bucket.
-	ObjectStorageBucketStatusDetails pulumi.StringOutput `pulumi:"objectStorageBucketStatusDetails"`
+	ObjectStorageBucketStatusDetails pulumi.StringPtrOutput `pulumi:"objectStorageBucketStatusDetails"`
 	// Object Storage Namespace Name
-	ObjectStorageNamespaceName pulumi.StringOutput `pulumi:"objectStorageNamespaceName"`
+	ObjectStorageNamespaceName pulumi.StringPtrOutput `pulumi:"objectStorageNamespaceName"`
 	// The current state of the Enterprise Manager bridge.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The time the the Enterprise Manager bridge was first created. An RFC3339 formatted datetime string
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The time the Enterprise Manager bridge was updated. An RFC3339 formatted datetime string
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewEnterpriseManagerBridge registers a new resource with the given unique name, arguments, and options.
@@ -261,12 +260,6 @@ func (i *EnterpriseManagerBridge) ToEnterpriseManagerBridgeOutputWithContext(ctx
 	return pulumi.ToOutputWithContext(ctx, i).(EnterpriseManagerBridgeOutput)
 }
 
-func (i *EnterpriseManagerBridge) ToOutput(ctx context.Context) pulumix.Output[*EnterpriseManagerBridge] {
-	return pulumix.Output[*EnterpriseManagerBridge]{
-		OutputState: i.ToEnterpriseManagerBridgeOutputWithContext(ctx).OutputState,
-	}
-}
-
 // EnterpriseManagerBridgeArrayInput is an input type that accepts EnterpriseManagerBridgeArray and EnterpriseManagerBridgeArrayOutput values.
 // You can construct a concrete instance of `EnterpriseManagerBridgeArrayInput` via:
 //
@@ -290,12 +283,6 @@ func (i EnterpriseManagerBridgeArray) ToEnterpriseManagerBridgeArrayOutput() Ent
 
 func (i EnterpriseManagerBridgeArray) ToEnterpriseManagerBridgeArrayOutputWithContext(ctx context.Context) EnterpriseManagerBridgeArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(EnterpriseManagerBridgeArrayOutput)
-}
-
-func (i EnterpriseManagerBridgeArray) ToOutput(ctx context.Context) pulumix.Output[[]*EnterpriseManagerBridge] {
-	return pulumix.Output[[]*EnterpriseManagerBridge]{
-		OutputState: i.ToEnterpriseManagerBridgeArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // EnterpriseManagerBridgeMapInput is an input type that accepts EnterpriseManagerBridgeMap and EnterpriseManagerBridgeMapOutput values.
@@ -323,12 +310,6 @@ func (i EnterpriseManagerBridgeMap) ToEnterpriseManagerBridgeMapOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(EnterpriseManagerBridgeMapOutput)
 }
 
-func (i EnterpriseManagerBridgeMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*EnterpriseManagerBridge] {
-	return pulumix.Output[map[string]*EnterpriseManagerBridge]{
-		OutputState: i.ToEnterpriseManagerBridgeMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type EnterpriseManagerBridgeOutput struct{ *pulumi.OutputState }
 
 func (EnterpriseManagerBridgeOutput) ElementType() reflect.Type {
@@ -343,12 +324,6 @@ func (o EnterpriseManagerBridgeOutput) ToEnterpriseManagerBridgeOutputWithContex
 	return o
 }
 
-func (o EnterpriseManagerBridgeOutput) ToOutput(ctx context.Context) pulumix.Output[*EnterpriseManagerBridge] {
-	return pulumix.Output[*EnterpriseManagerBridge]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) Compartment identifier of the Enterprise Manager bridge
 func (o EnterpriseManagerBridgeOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *EnterpriseManagerBridge) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
@@ -360,8 +335,8 @@ func (o EnterpriseManagerBridgeOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) Description of Enterprise Manager Bridge
-func (o EnterpriseManagerBridgeOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *EnterpriseManagerBridge) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o EnterpriseManagerBridgeOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *EnterpriseManagerBridge) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) User-friedly name of Enterprise Manager Bridge that does not have to be unique.
@@ -375,8 +350,8 @@ func (o EnterpriseManagerBridgeOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o EnterpriseManagerBridgeOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *EnterpriseManagerBridge) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o EnterpriseManagerBridgeOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *EnterpriseManagerBridge) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // Object Storage Bucket Name
@@ -388,18 +363,18 @@ func (o EnterpriseManagerBridgeOutput) ObjectStorageBucketName() pulumi.StringOu
 }
 
 // A message describing status of the object storage bucket of this resource. For example, it can be used to provide actionable information about the permission and content validity of the bucket.
-func (o EnterpriseManagerBridgeOutput) ObjectStorageBucketStatusDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *EnterpriseManagerBridge) pulumi.StringOutput { return v.ObjectStorageBucketStatusDetails }).(pulumi.StringOutput)
+func (o EnterpriseManagerBridgeOutput) ObjectStorageBucketStatusDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *EnterpriseManagerBridge) pulumi.StringPtrOutput { return v.ObjectStorageBucketStatusDetails }).(pulumi.StringPtrOutput)
 }
 
 // Object Storage Namespace Name
-func (o EnterpriseManagerBridgeOutput) ObjectStorageNamespaceName() pulumi.StringOutput {
-	return o.ApplyT(func(v *EnterpriseManagerBridge) pulumi.StringOutput { return v.ObjectStorageNamespaceName }).(pulumi.StringOutput)
+func (o EnterpriseManagerBridgeOutput) ObjectStorageNamespaceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *EnterpriseManagerBridge) pulumi.StringPtrOutput { return v.ObjectStorageNamespaceName }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the Enterprise Manager bridge.
-func (o EnterpriseManagerBridgeOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *EnterpriseManagerBridge) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o EnterpriseManagerBridgeOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *EnterpriseManagerBridge) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -408,13 +383,13 @@ func (o EnterpriseManagerBridgeOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time the the Enterprise Manager bridge was first created. An RFC3339 formatted datetime string
-func (o EnterpriseManagerBridgeOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *EnterpriseManagerBridge) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o EnterpriseManagerBridgeOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *EnterpriseManagerBridge) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the Enterprise Manager bridge was updated. An RFC3339 formatted datetime string
-func (o EnterpriseManagerBridgeOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *EnterpriseManagerBridge) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o EnterpriseManagerBridgeOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *EnterpriseManagerBridge) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type EnterpriseManagerBridgeArrayOutput struct{ *pulumi.OutputState }
@@ -429,12 +404,6 @@ func (o EnterpriseManagerBridgeArrayOutput) ToEnterpriseManagerBridgeArrayOutput
 
 func (o EnterpriseManagerBridgeArrayOutput) ToEnterpriseManagerBridgeArrayOutputWithContext(ctx context.Context) EnterpriseManagerBridgeArrayOutput {
 	return o
-}
-
-func (o EnterpriseManagerBridgeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*EnterpriseManagerBridge] {
-	return pulumix.Output[[]*EnterpriseManagerBridge]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o EnterpriseManagerBridgeArrayOutput) Index(i pulumi.IntInput) EnterpriseManagerBridgeOutput {
@@ -455,12 +424,6 @@ func (o EnterpriseManagerBridgeMapOutput) ToEnterpriseManagerBridgeMapOutput() E
 
 func (o EnterpriseManagerBridgeMapOutput) ToEnterpriseManagerBridgeMapOutputWithContext(ctx context.Context) EnterpriseManagerBridgeMapOutput {
 	return o
-}
-
-func (o EnterpriseManagerBridgeMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*EnterpriseManagerBridge] {
-	return pulumix.Output[map[string]*EnterpriseManagerBridge]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o EnterpriseManagerBridgeMapOutput) MapIndex(k pulumi.StringInput) EnterpriseManagerBridgeOutput {

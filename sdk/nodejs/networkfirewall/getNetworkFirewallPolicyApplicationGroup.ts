@@ -39,8 +39,8 @@ export interface GetNetworkFirewallPolicyApplicationGroupResult {
     /**
      * List of apps in the group.
      */
-    readonly apps: string[];
-    readonly id: string;
+    readonly apps?: string[];
+    readonly id?: string;
     /**
      * Name of the application Group.
      */
@@ -49,11 +49,11 @@ export interface GetNetworkFirewallPolicyApplicationGroupResult {
     /**
      * OCID of the Network Firewall Policy this application group belongs to.
      */
-    readonly parentResourceId: string;
+    readonly parentResourceId?: string;
     /**
      * Count of total applications in the given application group.
      */
-    readonly totalApps: number;
+    readonly totalApps?: number;
 }
 /**
  * This data source provides details about a specific Network Firewall Policy Application Group resource in Oracle Cloud Infrastructure Network Firewall service.

@@ -124,19 +124,19 @@ namespace Pulumi.Oci.ResourceManager
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// An IP address for the Resource Manager service to use for connection to the private resource.
         /// </summary>
-        public readonly string IpAddress;
+        public readonly string? IpAddress;
         public readonly string PrivateEndpointId;
         public readonly string PrivateIp;
 
         [OutputConstructor]
         private GetPrivateEndpointReachableIpResult(
-            string id,
+            string? id,
 
-            string ipAddress,
+            string? ipAddress,
 
             string privateEndpointId,
 

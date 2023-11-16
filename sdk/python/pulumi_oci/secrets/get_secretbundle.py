@@ -62,7 +62,7 @@ class GetSecretbundleResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -70,26 +70,17 @@ class GetSecretbundleResult:
 
     @property
     @pulumi.getter
-    def metadata(self) -> Mapping[str, Any]:
-        """
-        Customer-provided contextual metadata for the secret.
-        """
+    def metadata(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "metadata")
 
     @property
     @pulumi.getter(name="secretBundleContents")
-    def secret_bundle_contents(self) -> Sequence['outputs.GetSecretbundleSecretBundleContentResult']:
-        """
-        The contents of the secret.
-        """
+    def secret_bundle_contents(self) -> Optional[Sequence['outputs.GetSecretbundleSecretBundleContentResult']]:
         return pulumi.get(self, "secret_bundle_contents")
 
     @property
     @pulumi.getter(name="secretId")
     def secret_id(self) -> str:
-        """
-        The OCID of the secret.
-        """
         return pulumi.get(self, "secret_id")
 
     @property
@@ -104,50 +95,32 @@ class GetSecretbundleResult:
 
     @property
     @pulumi.getter
-    def stages(self) -> Sequence[str]:
-        """
-        A list of possible rotation states for the secret version.
-        """
+    def stages(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "stages")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time when the secret bundle was created.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeOfDeletion")
-    def time_of_deletion(self) -> str:
-        """
-        An optional property indicating when to delete the secret version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-        """
+    def time_of_deletion(self) -> Optional[str]:
         return pulumi.get(self, "time_of_deletion")
 
     @property
     @pulumi.getter(name="timeOfExpiry")
-    def time_of_expiry(self) -> str:
-        """
-        An optional property indicating when the secret version will expire, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-        """
+    def time_of_expiry(self) -> Optional[str]:
         return pulumi.get(self, "time_of_expiry")
 
     @property
     @pulumi.getter(name="versionName")
-    def version_name(self) -> str:
-        """
-        The name of the secret version. Labels are unique across the different versions of a particular secret.
-        """
+    def version_name(self) -> Optional[str]:
         return pulumi.get(self, "version_name")
 
     @property
     @pulumi.getter(name="versionNumber")
-    def version_number(self) -> str:
-        """
-        The version number of the secret.
-        """
+    def version_number(self) -> Optional[str]:
         return pulumi.get(self, "version_number")
 
 
@@ -177,28 +150,7 @@ def get_secretbundle(secret_id: Optional[str] = None,
                      version_number: Optional[str] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSecretbundleResult:
     """
-    This data source provides details about a specific Secretbundle resource in Oracle Cloud Infrastructure Secrets service.
-
-    Gets a secret bundle that matches either the specified `stage`, `label`, or `versionNumber` parameter.
-    If none of these parameters are provided, the bundle for the secret version marked as `CURRENT` will be returned.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_secretbundle = oci.Secrets.get_secretbundle(secret_id=oci_vault_secret["test_secret"]["id"],
-        secret_version_name=oci_vault_secret_version["test_secret_version"]["name"],
-        stage=var["secretbundle_stage"],
-        version_number=var["secretbundle_version_number"])
-    ```
-
-
-    :param str secret_id: The OCID of the secret.
-    :param str secret_version_name: The name of the secret. (This might be referred to as the name of the secret version. Names are unique across the different versions of a secret.)
-    :param str stage: The rotation state of the secret version.
-    :param str version_number: The version number of the secret.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['secretId'] = secret_id
@@ -230,27 +182,6 @@ def get_secretbundle_output(secret_id: Optional[pulumi.Input[str]] = None,
                             version_number: Optional[pulumi.Input[Optional[str]]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSecretbundleResult]:
     """
-    This data source provides details about a specific Secretbundle resource in Oracle Cloud Infrastructure Secrets service.
-
-    Gets a secret bundle that matches either the specified `stage`, `label`, or `versionNumber` parameter.
-    If none of these parameters are provided, the bundle for the secret version marked as `CURRENT` will be returned.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_secretbundle = oci.Secrets.get_secretbundle(secret_id=oci_vault_secret["test_secret"]["id"],
-        secret_version_name=oci_vault_secret_version["test_secret_version"]["name"],
-        stage=var["secretbundle_stage"],
-        version_number=var["secretbundle_version_number"])
-    ```
-
-
-    :param str secret_id: The OCID of the secret.
-    :param str secret_version_name: The name of the secret. (This might be referred to as the name of the secret version. Names are unique across the different versions of a secret.)
-    :param str stage: The rotation state of the secret version.
-    :param str version_number: The version number of the secret.
+    Use this data source to access information about an existing resource.
     """
     ...

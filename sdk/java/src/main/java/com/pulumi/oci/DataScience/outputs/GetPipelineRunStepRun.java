@@ -6,6 +6,8 @@ package com.pulumi.oci.DataScience.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPipelineRunStepRun {
@@ -13,87 +15,87 @@ public final class GetPipelineRunStepRun {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job run triggered for this step run.
      * 
      */
-    private String jobRunId;
+    private @Nullable String jobRunId;
     /**
      * @return Details of the state of the step run.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return The state of the step run.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The name of the step.
      * 
      */
-    private String stepName;
+    private @Nullable String stepName;
     /**
      * @return The type of step.
      * 
      */
-    private String stepType;
+    private @Nullable String stepType;
     /**
      * @return The date and time the pipeline run request was finished in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    private String timeFinished;
+    private @Nullable String timeFinished;
     /**
      * @return The date and time the pipeline run request was started in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    private String timeStarted;
+    private @Nullable String timeStarted;
 
     private GetPipelineRunStepRun() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job run triggered for this step run.
      * 
      */
-    public String jobRunId() {
-        return this.jobRunId;
+    public Optional<String> jobRunId() {
+        return Optional.ofNullable(this.jobRunId);
     }
     /**
      * @return Details of the state of the step run.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return The state of the step run.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The name of the step.
      * 
      */
-    public String stepName() {
-        return this.stepName;
+    public Optional<String> stepName() {
+        return Optional.ofNullable(this.stepName);
     }
     /**
      * @return The type of step.
      * 
      */
-    public String stepType() {
-        return this.stepType;
+    public Optional<String> stepType() {
+        return Optional.ofNullable(this.stepType);
     }
     /**
      * @return The date and time the pipeline run request was finished in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    public String timeFinished() {
-        return this.timeFinished;
+    public Optional<String> timeFinished() {
+        return Optional.ofNullable(this.timeFinished);
     }
     /**
      * @return The date and time the pipeline run request was started in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    public String timeStarted() {
-        return this.timeStarted;
+    public Optional<String> timeStarted() {
+        return Optional.ofNullable(this.timeStarted);
     }
 
     public static Builder builder() {
@@ -105,13 +107,13 @@ public final class GetPipelineRunStepRun {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String jobRunId;
-        private String lifecycleDetails;
-        private String state;
-        private String stepName;
-        private String stepType;
-        private String timeFinished;
-        private String timeStarted;
+        private @Nullable String jobRunId;
+        private @Nullable String lifecycleDetails;
+        private @Nullable String state;
+        private @Nullable String stepName;
+        private @Nullable String stepType;
+        private @Nullable String timeFinished;
+        private @Nullable String timeStarted;
         public Builder() {}
         public Builder(GetPipelineRunStepRun defaults) {
     	      Objects.requireNonNull(defaults);
@@ -125,38 +127,38 @@ public final class GetPipelineRunStepRun {
         }
 
         @CustomType.Setter
-        public Builder jobRunId(String jobRunId) {
-            this.jobRunId = Objects.requireNonNull(jobRunId);
+        public Builder jobRunId(@Nullable String jobRunId) {
+            this.jobRunId = jobRunId;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder stepName(String stepName) {
-            this.stepName = Objects.requireNonNull(stepName);
+        public Builder stepName(@Nullable String stepName) {
+            this.stepName = stepName;
             return this;
         }
         @CustomType.Setter
-        public Builder stepType(String stepType) {
-            this.stepType = Objects.requireNonNull(stepType);
+        public Builder stepType(@Nullable String stepType) {
+            this.stepType = stepType;
             return this;
         }
         @CustomType.Setter
-        public Builder timeFinished(String timeFinished) {
-            this.timeFinished = Objects.requireNonNull(timeFinished);
+        public Builder timeFinished(@Nullable String timeFinished) {
+            this.timeFinished = timeFinished;
             return this;
         }
         @CustomType.Setter
-        public Builder timeStarted(String timeStarted) {
-            this.timeStarted = Objects.requireNonNull(timeStarted);
+        public Builder timeStarted(@Nullable String timeStarted) {
+            this.timeStarted = timeStarted;
             return this;
         }
         public GetPipelineRunStepRun build() {

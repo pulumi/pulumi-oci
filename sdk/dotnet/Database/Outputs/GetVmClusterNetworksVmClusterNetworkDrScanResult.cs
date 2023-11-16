@@ -16,7 +16,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// The node host name.
         /// </summary>
-        public readonly string Hostname;
+        public readonly string? Hostname;
         /// <summary>
         /// The list of SCAN IP addresses. Three addresses should be provided.
         /// </summary>
@@ -24,15 +24,15 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// The SCAN TCPIP port. Default is 1521.
         /// </summary>
-        public readonly int ScanListenerPortTcp;
+        public readonly int? ScanListenerPortTcp;
 
         [OutputConstructor]
         private GetVmClusterNetworksVmClusterNetworkDrScanResult(
-            string hostname,
+            string? hostname,
 
             ImmutableArray<string> ips,
 
-            int scanListenerPortTcp)
+            int? scanListenerPortTcp)
         {
             Hostname = hostname;
             Ips = ips;

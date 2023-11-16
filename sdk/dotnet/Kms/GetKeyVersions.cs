@@ -153,7 +153,7 @@ namespace Pulumi.Oci.Kms
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The OCID of the master encryption key associated with this key version.
         /// </summary>
@@ -168,7 +168,7 @@ namespace Pulumi.Oci.Kms
         private GetKeyVersionsResult(
             ImmutableArray<Outputs.GetKeyVersionsFilterResult> filters,
 
-            string id,
+            string? id,
 
             string keyId,
 

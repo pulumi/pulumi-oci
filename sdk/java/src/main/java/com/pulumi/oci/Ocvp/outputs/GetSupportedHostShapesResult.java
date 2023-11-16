@@ -20,12 +20,12 @@ public final class GetSupportedHostShapesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return A list of the supported compute shapes for ESXi hosts.
      * 
      */
-    private List<GetSupportedHostShapesItem> items;
+    private @Nullable List<GetSupportedHostShapesItem> items;
     /**
      * @return The name of the supported compute shape.
      * 
@@ -50,15 +50,15 @@ public final class GetSupportedHostShapesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return A list of the supported compute shapes for ESXi hosts.
      * 
      */
     public List<GetSupportedHostShapesItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
     /**
      * @return The name of the supported compute shape.
@@ -88,8 +88,8 @@ public final class GetSupportedHostShapesResult {
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetSupportedHostShapesFilter> filters;
-        private String id;
-        private List<GetSupportedHostShapesItem> items;
+        private @Nullable String id;
+        private @Nullable List<GetSupportedHostShapesItem> items;
         private @Nullable String name;
         private @Nullable String sddcType;
         public Builder() {}
@@ -117,13 +117,13 @@ public final class GetSupportedHostShapesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder items(List<GetSupportedHostShapesItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetSupportedHostShapesItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetSupportedHostShapesItem... items) {

@@ -19,6 +19,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -105,182 +106,182 @@ public class ActionCreateZoneFromZoneFile extends com.pulumi.resources.CustomRes
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
      * 
      */
     @Export(name="externalDownstreams", refs={List.class,ActionCreateZoneFromZoneFileExternalDownstream.class}, tree="[0,1]")
-    private Output<List<ActionCreateZoneFromZoneFileExternalDownstream>> externalDownstreams;
+    private Output</* @Nullable */ List<ActionCreateZoneFromZoneFileExternalDownstream>> externalDownstreams;
 
     /**
      * @return External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
      * 
      */
-    public Output<List<ActionCreateZoneFromZoneFileExternalDownstream>> externalDownstreams() {
-        return this.externalDownstreams;
+    public Output<Optional<List<ActionCreateZoneFromZoneFileExternalDownstream>>> externalDownstreams() {
+        return Codegen.optional(this.externalDownstreams);
     }
     /**
      * External master servers for the zone. `externalMasters` becomes a required parameter when the `zoneType` value is `SECONDARY`.
      * 
      */
     @Export(name="externalMasters", refs={List.class,ActionCreateZoneFromZoneFileExternalMaster.class}, tree="[0,1]")
-    private Output<List<ActionCreateZoneFromZoneFileExternalMaster>> externalMasters;
+    private Output</* @Nullable */ List<ActionCreateZoneFromZoneFileExternalMaster>> externalMasters;
 
     /**
      * @return External master servers for the zone. `externalMasters` becomes a required parameter when the `zoneType` value is `SECONDARY`.
      * 
      */
-    public Output<List<ActionCreateZoneFromZoneFileExternalMaster>> externalMasters() {
-        return this.externalMasters;
+    public Output<Optional<List<ActionCreateZoneFromZoneFileExternalMaster>>> externalMasters() {
+        return Codegen.optional(this.externalMasters);
     }
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
      * 
      */
     @Export(name="isProtected", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isProtected;
+    private Output</* @Nullable */ Boolean> isProtected;
 
     /**
      * @return A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
      * 
      */
-    public Output<Boolean> isProtected() {
-        return this.isProtected;
+    public Output<Optional<Boolean>> isProtected() {
+        return Codegen.optional(this.isProtected);
     }
     /**
      * The name of the zone.
      * 
      */
     @Export(name="name", refs={String.class}, tree="[0]")
-    private Output<String> name;
+    private Output</* @Nullable */ String> name;
 
     /**
      * @return The name of the zone.
      * 
      */
-    public Output<String> name() {
-        return this.name;
+    public Output<Optional<String>> name() {
+        return Codegen.optional(this.name);
     }
     /**
      * The authoritative nameservers for the zone.
      * 
      */
     @Export(name="nameservers", refs={List.class,ActionCreateZoneFromZoneFileNameserver.class}, tree="[0,1]")
-    private Output<List<ActionCreateZoneFromZoneFileNameserver>> nameservers;
+    private Output</* @Nullable */ List<ActionCreateZoneFromZoneFileNameserver>> nameservers;
 
     /**
      * @return The authoritative nameservers for the zone.
      * 
      */
-    public Output<List<ActionCreateZoneFromZoneFileNameserver>> nameservers() {
-        return this.nameservers;
+    public Output<Optional<List<ActionCreateZoneFromZoneFileNameserver>>> nameservers() {
+        return Codegen.optional(this.nameservers);
     }
     /**
      * Specifies to operate only on resources that have a matching DNS scope.
      * 
      */
     @Export(name="scope", refs={String.class}, tree="[0]")
-    private Output<String> scope;
+    private Output</* @Nullable */ String> scope;
 
     /**
      * @return Specifies to operate only on resources that have a matching DNS scope.
      * 
      */
-    public Output<String> scope() {
-        return this.scope;
+    public Output<Optional<String>> scope() {
+        return Codegen.optional(this.scope);
     }
     /**
      * The canonical absolute URL of the resource.
      * 
      */
     @Export(name="self", refs={String.class}, tree="[0]")
-    private Output<String> self;
+    private Output</* @Nullable */ String> self;
 
     /**
      * @return The canonical absolute URL of the resource.
      * 
      */
-    public Output<String> self() {
-        return this.self;
+    public Output<Optional<String>> self() {
+        return Codegen.optional(this.self);
     }
     /**
      * The current serial of the zone. As seen in the zone&#39;s SOA record.
      * 
      */
     @Export(name="serial", refs={String.class}, tree="[0]")
-    private Output<String> serial;
+    private Output</* @Nullable */ String> serial;
 
     /**
      * @return The current serial of the zone. As seen in the zone&#39;s SOA record.
      * 
      */
-    public Output<String> serial() {
-        return this.serial;
+    public Output<Optional<String>> serial() {
+        return Codegen.optional(this.serial);
     }
     /**
      * The current state of the zone resource.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the zone resource.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The date and time the resource was created in &#34;YYYY-MM-ddThh:mm:ssZ&#34; format with a Z offset, as defined by RFC 3339.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the resource was created in &#34;YYYY-MM-ddThh:mm:ssZ&#34; format with a Z offset, as defined by RFC 3339.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * Version is the never-repeating, totally-orderable, version of the zone, from which the serial field of the zone&#39;s SOA record is derived.
      * 
      */
     @Export(name="version", refs={String.class}, tree="[0]")
-    private Output<String> version;
+    private Output</* @Nullable */ String> version;
 
     /**
      * @return Version is the never-repeating, totally-orderable, version of the zone, from which the serial field of the zone&#39;s SOA record is derived.
      * 
      */
-    public Output<String> version() {
-        return this.version;
+    public Output<Optional<String>> version() {
+        return Codegen.optional(this.version);
     }
     /**
      * The OCID of the view the resource is associated with.
@@ -290,7 +291,7 @@ public class ActionCreateZoneFromZoneFile extends com.pulumi.resources.CustomRes
      * 
      */
     @Export(name="viewId", refs={String.class}, tree="[0]")
-    private Output<String> viewId;
+    private Output</* @Nullable */ String> viewId;
 
     /**
      * @return The OCID of the view the resource is associated with.
@@ -299,36 +300,36 @@ public class ActionCreateZoneFromZoneFile extends com.pulumi.resources.CustomRes
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> viewId() {
-        return this.viewId;
+    public Output<Optional<String>> viewId() {
+        return Codegen.optional(this.viewId);
     }
     /**
      * The Oracle Cloud Infrastructure nameservers that transfer the zone data with external nameservers.
      * 
      */
     @Export(name="zoneTransferServers", refs={List.class,ActionCreateZoneFromZoneFileZoneTransferServer.class}, tree="[0,1]")
-    private Output<List<ActionCreateZoneFromZoneFileZoneTransferServer>> zoneTransferServers;
+    private Output</* @Nullable */ List<ActionCreateZoneFromZoneFileZoneTransferServer>> zoneTransferServers;
 
     /**
      * @return The Oracle Cloud Infrastructure nameservers that transfer the zone data with external nameservers.
      * 
      */
-    public Output<List<ActionCreateZoneFromZoneFileZoneTransferServer>> zoneTransferServers() {
-        return this.zoneTransferServers;
+    public Output<Optional<List<ActionCreateZoneFromZoneFileZoneTransferServer>>> zoneTransferServers() {
+        return Codegen.optional(this.zoneTransferServers);
     }
     /**
      * The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL zones.
      * 
      */
     @Export(name="zoneType", refs={String.class}, tree="[0]")
-    private Output<String> zoneType;
+    private Output</* @Nullable */ String> zoneType;
 
     /**
      * @return The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL zones.
      * 
      */
-    public Output<String> zoneType() {
-        return this.zoneType;
+    public Output<Optional<String>> zoneType() {
+        return Codegen.optional(this.zoneType);
     }
 
     /**

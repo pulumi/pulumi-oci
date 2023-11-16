@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the External Container Database resource in Oracle Cloud Infrastructure Database service.
@@ -61,23 +60,23 @@ type ExternalContainerDatabase struct {
 	pulumi.CustomResourceState
 
 	// The character set of the external database.
-	CharacterSet pulumi.StringOutput `pulumi:"characterSet"`
+	CharacterSet pulumi.StringPtrOutput `pulumi:"characterSet"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// The Oracle Database configuration
-	DatabaseConfiguration pulumi.StringOutput `pulumi:"databaseConfiguration"`
+	DatabaseConfiguration pulumi.StringPtrOutput `pulumi:"databaseConfiguration"`
 	// The Oracle Database edition.
-	DatabaseEdition pulumi.StringOutput `pulumi:"databaseEdition"`
+	DatabaseEdition pulumi.StringPtrOutput `pulumi:"databaseEdition"`
 	// The configuration of the Database Management service.
 	DatabaseManagementConfigs ExternalContainerDatabaseDatabaseManagementConfigArrayOutput `pulumi:"databaseManagementConfigs"`
 	// The Oracle Database version.
-	DatabaseVersion pulumi.StringOutput `pulumi:"databaseVersion"`
+	DatabaseVersion pulumi.StringPtrOutput `pulumi:"databaseVersion"`
 	// The Oracle Database ID, which identifies an Oracle Database located outside of Oracle Cloud.
-	DbId pulumi.StringOutput `pulumi:"dbId"`
+	DbId pulumi.StringPtrOutput `pulumi:"dbId"`
 	// The database packs licensed for the external Oracle Database.
-	DbPacks pulumi.StringOutput `pulumi:"dbPacks"`
+	DbPacks pulumi.StringPtrOutput `pulumi:"dbPacks"`
 	// The `DB_UNIQUE_NAME` of the external database.
-	DbUniqueName pulumi.StringOutput `pulumi:"dbUniqueName"`
+	DbUniqueName pulumi.StringPtrOutput `pulumi:"dbUniqueName"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) The user-friendly name for the external database. The name does not have to be unique.
@@ -88,17 +87,17 @@ type ExternalContainerDatabase struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// Additional information about the current lifecycle state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// The national character of the external database.
-	NcharacterSet pulumi.StringOutput `pulumi:"ncharacterSet"`
+	NcharacterSet pulumi.StringPtrOutput `pulumi:"ncharacterSet"`
 	// The configuration of Stack Monitoring for the external database.
 	StackMonitoringConfigs ExternalContainerDatabaseStackMonitoringConfigArrayOutput `pulumi:"stackMonitoringConfigs"`
 	// The current state of the Oracle Cloud Infrastructure external database resource.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The date and time the database was created.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The time zone of the external database. It is a time zone offset (a character type in the format '[+|-]TZH:TZM') or a time zone region name, depending on how the time zone value was specified when the database was created / last altered.
-	TimeZone pulumi.StringOutput `pulumi:"timeZone"`
+	TimeZone pulumi.StringPtrOutput `pulumi:"timeZone"`
 }
 
 // NewExternalContainerDatabase registers a new resource with the given unique name, arguments, and options.
@@ -276,12 +275,6 @@ func (i *ExternalContainerDatabase) ToExternalContainerDatabaseOutputWithContext
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalContainerDatabaseOutput)
 }
 
-func (i *ExternalContainerDatabase) ToOutput(ctx context.Context) pulumix.Output[*ExternalContainerDatabase] {
-	return pulumix.Output[*ExternalContainerDatabase]{
-		OutputState: i.ToExternalContainerDatabaseOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ExternalContainerDatabaseArrayInput is an input type that accepts ExternalContainerDatabaseArray and ExternalContainerDatabaseArrayOutput values.
 // You can construct a concrete instance of `ExternalContainerDatabaseArrayInput` via:
 //
@@ -305,12 +298,6 @@ func (i ExternalContainerDatabaseArray) ToExternalContainerDatabaseArrayOutput()
 
 func (i ExternalContainerDatabaseArray) ToExternalContainerDatabaseArrayOutputWithContext(ctx context.Context) ExternalContainerDatabaseArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalContainerDatabaseArrayOutput)
-}
-
-func (i ExternalContainerDatabaseArray) ToOutput(ctx context.Context) pulumix.Output[[]*ExternalContainerDatabase] {
-	return pulumix.Output[[]*ExternalContainerDatabase]{
-		OutputState: i.ToExternalContainerDatabaseArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ExternalContainerDatabaseMapInput is an input type that accepts ExternalContainerDatabaseMap and ExternalContainerDatabaseMapOutput values.
@@ -338,12 +325,6 @@ func (i ExternalContainerDatabaseMap) ToExternalContainerDatabaseMapOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalContainerDatabaseMapOutput)
 }
 
-func (i ExternalContainerDatabaseMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ExternalContainerDatabase] {
-	return pulumix.Output[map[string]*ExternalContainerDatabase]{
-		OutputState: i.ToExternalContainerDatabaseMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ExternalContainerDatabaseOutput struct{ *pulumi.OutputState }
 
 func (ExternalContainerDatabaseOutput) ElementType() reflect.Type {
@@ -358,15 +339,9 @@ func (o ExternalContainerDatabaseOutput) ToExternalContainerDatabaseOutputWithCo
 	return o
 }
 
-func (o ExternalContainerDatabaseOutput) ToOutput(ctx context.Context) pulumix.Output[*ExternalContainerDatabase] {
-	return pulumix.Output[*ExternalContainerDatabase]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The character set of the external database.
-func (o ExternalContainerDatabaseOutput) CharacterSet() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalContainerDatabase) pulumi.StringOutput { return v.CharacterSet }).(pulumi.StringOutput)
+func (o ExternalContainerDatabaseOutput) CharacterSet() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalContainerDatabase) pulumi.StringPtrOutput { return v.CharacterSet }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -375,13 +350,13 @@ func (o ExternalContainerDatabaseOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // The Oracle Database configuration
-func (o ExternalContainerDatabaseOutput) DatabaseConfiguration() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalContainerDatabase) pulumi.StringOutput { return v.DatabaseConfiguration }).(pulumi.StringOutput)
+func (o ExternalContainerDatabaseOutput) DatabaseConfiguration() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalContainerDatabase) pulumi.StringPtrOutput { return v.DatabaseConfiguration }).(pulumi.StringPtrOutput)
 }
 
 // The Oracle Database edition.
-func (o ExternalContainerDatabaseOutput) DatabaseEdition() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalContainerDatabase) pulumi.StringOutput { return v.DatabaseEdition }).(pulumi.StringOutput)
+func (o ExternalContainerDatabaseOutput) DatabaseEdition() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalContainerDatabase) pulumi.StringPtrOutput { return v.DatabaseEdition }).(pulumi.StringPtrOutput)
 }
 
 // The configuration of the Database Management service.
@@ -392,23 +367,23 @@ func (o ExternalContainerDatabaseOutput) DatabaseManagementConfigs() ExternalCon
 }
 
 // The Oracle Database version.
-func (o ExternalContainerDatabaseOutput) DatabaseVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalContainerDatabase) pulumi.StringOutput { return v.DatabaseVersion }).(pulumi.StringOutput)
+func (o ExternalContainerDatabaseOutput) DatabaseVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalContainerDatabase) pulumi.StringPtrOutput { return v.DatabaseVersion }).(pulumi.StringPtrOutput)
 }
 
 // The Oracle Database ID, which identifies an Oracle Database located outside of Oracle Cloud.
-func (o ExternalContainerDatabaseOutput) DbId() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalContainerDatabase) pulumi.StringOutput { return v.DbId }).(pulumi.StringOutput)
+func (o ExternalContainerDatabaseOutput) DbId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalContainerDatabase) pulumi.StringPtrOutput { return v.DbId }).(pulumi.StringPtrOutput)
 }
 
 // The database packs licensed for the external Oracle Database.
-func (o ExternalContainerDatabaseOutput) DbPacks() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalContainerDatabase) pulumi.StringOutput { return v.DbPacks }).(pulumi.StringOutput)
+func (o ExternalContainerDatabaseOutput) DbPacks() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalContainerDatabase) pulumi.StringPtrOutput { return v.DbPacks }).(pulumi.StringPtrOutput)
 }
 
 // The `DB_UNIQUE_NAME` of the external database.
-func (o ExternalContainerDatabaseOutput) DbUniqueName() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalContainerDatabase) pulumi.StringOutput { return v.DbUniqueName }).(pulumi.StringOutput)
+func (o ExternalContainerDatabaseOutput) DbUniqueName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalContainerDatabase) pulumi.StringPtrOutput { return v.DbUniqueName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -430,13 +405,13 @@ func (o ExternalContainerDatabaseOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Additional information about the current lifecycle state.
-func (o ExternalContainerDatabaseOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalContainerDatabase) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o ExternalContainerDatabaseOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalContainerDatabase) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The national character of the external database.
-func (o ExternalContainerDatabaseOutput) NcharacterSet() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalContainerDatabase) pulumi.StringOutput { return v.NcharacterSet }).(pulumi.StringOutput)
+func (o ExternalContainerDatabaseOutput) NcharacterSet() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalContainerDatabase) pulumi.StringPtrOutput { return v.NcharacterSet }).(pulumi.StringPtrOutput)
 }
 
 // The configuration of Stack Monitoring for the external database.
@@ -447,18 +422,18 @@ func (o ExternalContainerDatabaseOutput) StackMonitoringConfigs() ExternalContai
 }
 
 // The current state of the Oracle Cloud Infrastructure external database resource.
-func (o ExternalContainerDatabaseOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalContainerDatabase) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o ExternalContainerDatabaseOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalContainerDatabase) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the database was created.
-func (o ExternalContainerDatabaseOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalContainerDatabase) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o ExternalContainerDatabaseOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalContainerDatabase) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time zone of the external database. It is a time zone offset (a character type in the format '[+|-]TZH:TZM') or a time zone region name, depending on how the time zone value was specified when the database was created / last altered.
-func (o ExternalContainerDatabaseOutput) TimeZone() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalContainerDatabase) pulumi.StringOutput { return v.TimeZone }).(pulumi.StringOutput)
+func (o ExternalContainerDatabaseOutput) TimeZone() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalContainerDatabase) pulumi.StringPtrOutput { return v.TimeZone }).(pulumi.StringPtrOutput)
 }
 
 type ExternalContainerDatabaseArrayOutput struct{ *pulumi.OutputState }
@@ -473,12 +448,6 @@ func (o ExternalContainerDatabaseArrayOutput) ToExternalContainerDatabaseArrayOu
 
 func (o ExternalContainerDatabaseArrayOutput) ToExternalContainerDatabaseArrayOutputWithContext(ctx context.Context) ExternalContainerDatabaseArrayOutput {
 	return o
-}
-
-func (o ExternalContainerDatabaseArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ExternalContainerDatabase] {
-	return pulumix.Output[[]*ExternalContainerDatabase]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ExternalContainerDatabaseArrayOutput) Index(i pulumi.IntInput) ExternalContainerDatabaseOutput {
@@ -499,12 +468,6 @@ func (o ExternalContainerDatabaseMapOutput) ToExternalContainerDatabaseMapOutput
 
 func (o ExternalContainerDatabaseMapOutput) ToExternalContainerDatabaseMapOutputWithContext(ctx context.Context) ExternalContainerDatabaseMapOutput {
 	return o
-}
-
-func (o ExternalContainerDatabaseMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ExternalContainerDatabase] {
-	return pulumix.Output[map[string]*ExternalContainerDatabase]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ExternalContainerDatabaseMapOutput) MapIndex(k pulumi.StringInput) ExternalContainerDatabaseOutput {

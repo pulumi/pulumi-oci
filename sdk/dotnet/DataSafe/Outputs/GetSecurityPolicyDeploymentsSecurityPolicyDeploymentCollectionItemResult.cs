@@ -16,89 +16,89 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// A filter to return only resources that match the specified compartment OCID.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// The description of the security policy deployment.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// A filter to return only resources that match the specified display name.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The OCID of the security policy deployment.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Details about the current state of the security policy deployment in Data Safe.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// An optional filter to return only resources that match the specified OCID of the security policy deployment resource.
         /// </summary>
-        public readonly string SecurityPolicyDeploymentId;
+        public readonly string? SecurityPolicyDeploymentId;
         /// <summary>
         /// An optional filter to return only resources that match the specified OCID of the security policy resource.
         /// </summary>
-        public readonly string SecurityPolicyId;
+        public readonly string? SecurityPolicyId;
         /// <summary>
         /// The current state of the security policy deployment.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, object>? SystemTags;
         /// <summary>
         /// A filter to return only items related to a specific target OCID.
         /// </summary>
-        public readonly string TargetId;
+        public readonly string? TargetId;
         /// <summary>
         /// The time that the security policy deployment was created, in the format defined by RFC3339.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The last date and time the security policy deployment was updated, in the format defined by RFC3339.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
 
         [OutputConstructor]
         private GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemResult(
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string description,
+            string? description,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string securityPolicyDeploymentId,
+            string? securityPolicyDeploymentId,
 
-            string securityPolicyId,
+            string? securityPolicyId,
 
-            string state,
+            string? state,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, object>? systemTags,
 
-            string targetId,
+            string? targetId,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated)
+            string? timeUpdated)
         {
             CompartmentId = compartmentId;
             DefinedTags = definedTags;

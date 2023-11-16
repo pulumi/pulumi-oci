@@ -16,53 +16,53 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// The number of findings in the Auditing category.
         /// </summary>
-        public readonly int AuditingFindingsCount;
+        public readonly int? AuditingFindingsCount;
         /// <summary>
         /// The number of findings in the Authorization Control category.
         /// </summary>
-        public readonly int AuthorizationControlFindingsCount;
+        public readonly int? AuthorizationControlFindingsCount;
         /// <summary>
         /// The number of findings in the Data Encryption category.
         /// </summary>
-        public readonly int DataEncryptionFindingsCount;
+        public readonly int? DataEncryptionFindingsCount;
         /// <summary>
         /// The number of findings in the Database Configuration category.
         /// </summary>
-        public readonly int DbConfigurationFindingsCount;
+        public readonly int? DbConfigurationFindingsCount;
         /// <summary>
         /// The number of findings in the Fine-Grained Access Control category.
         /// </summary>
-        public readonly int FineGrainedAccessControlFindingsCount;
+        public readonly int? FineGrainedAccessControlFindingsCount;
         /// <summary>
         /// The number of findings in the Privileges and Roles category.
         /// </summary>
-        public readonly int PrivilegesAndRolesFindingsCount;
+        public readonly int? PrivilegesAndRolesFindingsCount;
         /// <summary>
         /// The total number of targets in this security assessment.
         /// </summary>
-        public readonly int TargetsCount;
+        public readonly int? TargetsCount;
         /// <summary>
         /// The number of findings in the User Accounts category.
         /// </summary>
-        public readonly int UserAccountsFindingsCount;
+        public readonly int? UserAccountsFindingsCount;
 
         [OutputConstructor]
         private GetSecurityAssessmentStatisticEvaluateResult(
-            int auditingFindingsCount,
+            int? auditingFindingsCount,
 
-            int authorizationControlFindingsCount,
+            int? authorizationControlFindingsCount,
 
-            int dataEncryptionFindingsCount,
+            int? dataEncryptionFindingsCount,
 
-            int dbConfigurationFindingsCount,
+            int? dbConfigurationFindingsCount,
 
-            int fineGrainedAccessControlFindingsCount,
+            int? fineGrainedAccessControlFindingsCount,
 
-            int privilegesAndRolesFindingsCount,
+            int? privilegesAndRolesFindingsCount,
 
-            int targetsCount,
+            int? targetsCount,
 
-            int userAccountsFindingsCount)
+            int? userAccountsFindingsCount)
         {
             AuditingFindingsCount = auditingFindingsCount;
             AuthorizationControlFindingsCount = authorizationControlFindingsCount;

@@ -8,18 +8,20 @@ import com.pulumi.oci.DataCatalog.outputs.GetDataAssetsDataAssetCollectionItem;
 import java.lang.Integer;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDataAssetsDataAssetCollection {
-    private Integer count;
-    private List<GetDataAssetsDataAssetCollectionItem> items;
+    private @Nullable Integer count;
+    private @Nullable List<GetDataAssetsDataAssetCollectionItem> items;
 
     private GetDataAssetsDataAssetCollection() {}
-    public Integer count() {
-        return this.count;
+    public Optional<Integer> count() {
+        return Optional.ofNullable(this.count);
     }
     public List<GetDataAssetsDataAssetCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -31,8 +33,8 @@ public final class GetDataAssetsDataAssetCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer count;
-        private List<GetDataAssetsDataAssetCollectionItem> items;
+        private @Nullable Integer count;
+        private @Nullable List<GetDataAssetsDataAssetCollectionItem> items;
         public Builder() {}
         public Builder(GetDataAssetsDataAssetCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -41,13 +43,13 @@ public final class GetDataAssetsDataAssetCollection {
         }
 
         @CustomType.Setter
-        public Builder count(Integer count) {
-            this.count = Objects.requireNonNull(count);
+        public Builder count(@Nullable Integer count) {
+            this.count = count;
             return this;
         }
         @CustomType.Setter
-        public Builder items(List<GetDataAssetsDataAssetCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetDataAssetsDataAssetCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetDataAssetsDataAssetCollectionItem... items) {

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Audit Policy resource in Oracle Cloud Infrastructure Data Safe service.
@@ -65,37 +64,37 @@ type LookupAuditPolicyResult struct {
 	// Represents all available audit policy specifications relevant for the target database. For more details on available audit polcies, refer to [documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827).
 	AuditSpecifications []GetAuditPolicyAuditSpecification `pulumi:"auditSpecifications"`
 	// The OCID of the compartment containing the audit policy.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Description of the audit policy.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// The display name of the audit policy.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the audit policy.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Option provided to users at the target to indicate whether the Data Safe service account has to be excluded while provisioning the audit policies.
-	IsDataSafeServiceAccountExcluded bool `pulumi:"isDataSafeServiceAccountExcluded"`
+	IsDataSafeServiceAccountExcluded *bool `pulumi:"isDataSafeServiceAccountExcluded"`
 	// Details about the current state of the audit policy in Data Safe.
-	LifecycleDetails          string `pulumi:"lifecycleDetails"`
-	ProvisionTrigger          int    `pulumi:"provisionTrigger"`
-	RetrieveFromTargetTrigger int    `pulumi:"retrieveFromTargetTrigger"`
+	LifecycleDetails          *string `pulumi:"lifecycleDetails"`
+	ProvisionTrigger          *int    `pulumi:"provisionTrigger"`
+	RetrieveFromTargetTrigger *int    `pulumi:"retrieveFromTargetTrigger"`
 	// The current state of the audit policy.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The OCID of the target for which the audit policy is created.
-	TargetId string `pulumi:"targetId"`
+	TargetId *string `pulumi:"targetId"`
 	// The time the the audit policy was created, in the format defined by RFC3339.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// Indicates the last provisioning time of audit policies on the target, in the format defined by RFC3339.
-	TimeLastProvisioned string `pulumi:"timeLastProvisioned"`
+	TimeLastProvisioned *string `pulumi:"timeLastProvisioned"`
 	// The time when the audit policies was last retrieved from this target, in the format defined by RFC3339.
-	TimeLastRetrieved string `pulumi:"timeLastRetrieved"`
+	TimeLastRetrieved *string `pulumi:"timeLastRetrieved"`
 	// The last date and time the audit policy was updated, in the format defined by RFC3339.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func LookupAuditPolicyOutput(ctx *pulumi.Context, args LookupAuditPolicyOutputArgs, opts ...pulumi.InvokeOption) LookupAuditPolicyResultOutput {
@@ -136,12 +135,6 @@ func (o LookupAuditPolicyResultOutput) ToLookupAuditPolicyResultOutputWithContex
 	return o
 }
 
-func (o LookupAuditPolicyResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupAuditPolicyResult] {
-	return pulumix.Output[LookupAuditPolicyResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Lists the audit policy provisioning conditions for the target database.
 func (o LookupAuditPolicyResultOutput) AuditConditions() GetAuditPolicyAuditConditionArrayOutput {
 	return o.ApplyT(func(v LookupAuditPolicyResult) []GetAuditPolicyAuditCondition { return v.AuditConditions }).(GetAuditPolicyAuditConditionArrayOutput)
@@ -157,8 +150,8 @@ func (o LookupAuditPolicyResultOutput) AuditSpecifications() GetAuditPolicyAudit
 }
 
 // The OCID of the compartment containing the audit policy.
-func (o LookupAuditPolicyResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAuditPolicyResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupAuditPolicyResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAuditPolicyResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
@@ -167,13 +160,13 @@ func (o LookupAuditPolicyResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // Description of the audit policy.
-func (o LookupAuditPolicyResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAuditPolicyResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupAuditPolicyResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAuditPolicyResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // The display name of the audit policy.
-func (o LookupAuditPolicyResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAuditPolicyResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupAuditPolicyResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAuditPolicyResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
@@ -182,31 +175,31 @@ func (o LookupAuditPolicyResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The OCID of the audit policy.
-func (o LookupAuditPolicyResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAuditPolicyResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupAuditPolicyResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAuditPolicyResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Option provided to users at the target to indicate whether the Data Safe service account has to be excluded while provisioning the audit policies.
-func (o LookupAuditPolicyResultOutput) IsDataSafeServiceAccountExcluded() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupAuditPolicyResult) bool { return v.IsDataSafeServiceAccountExcluded }).(pulumi.BoolOutput)
+func (o LookupAuditPolicyResultOutput) IsDataSafeServiceAccountExcluded() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupAuditPolicyResult) *bool { return v.IsDataSafeServiceAccountExcluded }).(pulumi.BoolPtrOutput)
 }
 
 // Details about the current state of the audit policy in Data Safe.
-func (o LookupAuditPolicyResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAuditPolicyResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupAuditPolicyResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAuditPolicyResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupAuditPolicyResultOutput) ProvisionTrigger() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupAuditPolicyResult) int { return v.ProvisionTrigger }).(pulumi.IntOutput)
+func (o LookupAuditPolicyResultOutput) ProvisionTrigger() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupAuditPolicyResult) *int { return v.ProvisionTrigger }).(pulumi.IntPtrOutput)
 }
 
-func (o LookupAuditPolicyResultOutput) RetrieveFromTargetTrigger() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupAuditPolicyResult) int { return v.RetrieveFromTargetTrigger }).(pulumi.IntOutput)
+func (o LookupAuditPolicyResultOutput) RetrieveFromTargetTrigger() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupAuditPolicyResult) *int { return v.RetrieveFromTargetTrigger }).(pulumi.IntPtrOutput)
 }
 
 // The current state of the audit policy.
-func (o LookupAuditPolicyResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAuditPolicyResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupAuditPolicyResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAuditPolicyResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -215,28 +208,28 @@ func (o LookupAuditPolicyResultOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The OCID of the target for which the audit policy is created.
-func (o LookupAuditPolicyResultOutput) TargetId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAuditPolicyResult) string { return v.TargetId }).(pulumi.StringOutput)
+func (o LookupAuditPolicyResultOutput) TargetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAuditPolicyResult) *string { return v.TargetId }).(pulumi.StringPtrOutput)
 }
 
 // The time the the audit policy was created, in the format defined by RFC3339.
-func (o LookupAuditPolicyResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAuditPolicyResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupAuditPolicyResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAuditPolicyResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // Indicates the last provisioning time of audit policies on the target, in the format defined by RFC3339.
-func (o LookupAuditPolicyResultOutput) TimeLastProvisioned() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAuditPolicyResult) string { return v.TimeLastProvisioned }).(pulumi.StringOutput)
+func (o LookupAuditPolicyResultOutput) TimeLastProvisioned() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAuditPolicyResult) *string { return v.TimeLastProvisioned }).(pulumi.StringPtrOutput)
 }
 
 // The time when the audit policies was last retrieved from this target, in the format defined by RFC3339.
-func (o LookupAuditPolicyResultOutput) TimeLastRetrieved() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAuditPolicyResult) string { return v.TimeLastRetrieved }).(pulumi.StringOutput)
+func (o LookupAuditPolicyResultOutput) TimeLastRetrieved() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAuditPolicyResult) *string { return v.TimeLastRetrieved }).(pulumi.StringPtrOutput)
 }
 
 // The last date and time the audit policy was updated, in the format defined by RFC3339.
-func (o LookupAuditPolicyResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAuditPolicyResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupAuditPolicyResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAuditPolicyResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

@@ -29,12 +29,12 @@ public final class GetMetastoresResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of metastores.
      * 
      */
-    private List<GetMetastoresMetastore> metastores;
+    private @Nullable List<GetMetastoresMetastore> metastores;
     /**
      * @return The current state of the metastore.
      * 
@@ -63,15 +63,15 @@ public final class GetMetastoresResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of metastores.
      * 
      */
     public List<GetMetastoresMetastore> metastores() {
-        return this.metastores;
+        return this.metastores == null ? List.of() : this.metastores;
     }
     /**
      * @return The current state of the metastore.
@@ -93,8 +93,8 @@ public final class GetMetastoresResult {
         private String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetMetastoresFilter> filters;
-        private String id;
-        private List<GetMetastoresMetastore> metastores;
+        private @Nullable String id;
+        private @Nullable List<GetMetastoresMetastore> metastores;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetMetastoresResult defaults) {
@@ -126,13 +126,13 @@ public final class GetMetastoresResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder metastores(List<GetMetastoresMetastore> metastores) {
-            this.metastores = Objects.requireNonNull(metastores);
+        public Builder metastores(@Nullable List<GetMetastoresMetastore> metastores) {
+            this.metastores = metastores;
             return this;
         }
         public Builder metastores(GetMetastoresMetastore... metastores) {

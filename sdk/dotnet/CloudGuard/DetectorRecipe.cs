@@ -35,19 +35,19 @@ namespace Pulumi.Oci.CloudGuard
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Description for DetectorRecipeDetectorRule.
         /// </summary>
         [Output("description")]
-        public Output<string> Description { get; private set; } = null!;
+        public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
         /// detector for the rule
         /// </summary>
         [Output("detector")]
-        public Output<string> Detector { get; private set; } = null!;
+        public Output<string?> Detector { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Detector Rules to override from source detector recipe
@@ -75,13 +75,13 @@ namespace Pulumi.Oci.CloudGuard
         /// Avoid entering confidential information.
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// Owner of detector recipe
         /// </summary>
         [Output("owner")]
-        public Output<string> Owner { get; private set; } = null!;
+        public Output<string?> Owner { get; private set; } = null!;
 
         /// <summary>
         /// The id of the source detector recipe.
@@ -91,19 +91,19 @@ namespace Pulumi.Oci.CloudGuard
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("sourceDetectorRecipeId")]
-        public Output<string> SourceDetectorRecipeId { get; private set; } = null!;
+        public Output<string?> SourceDetectorRecipeId { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the resource.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
         [Output("systemTags")]
-        public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// The recipe attached to targets
@@ -115,13 +115,13 @@ namespace Pulumi.Oci.CloudGuard
         /// The date and time the detector recipe was created. Format defined by RFC3339.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the detector recipe was updated. Format defined by RFC3339.
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
 
         /// <summary>

@@ -16,17 +16,17 @@ namespace Pulumi.Oci.ApmTraces.Outputs
         /// <summary>
         /// Key that specifies the log name.
         /// </summary>
-        public readonly string LogKey;
+        public readonly string? LogKey;
         /// <summary>
         /// Value associated with the log key.
         /// </summary>
-        public readonly string LogValue;
+        public readonly string? LogValue;
 
         [OutputConstructor]
         private GetTraceSpanLogSpanLogResult(
-            string logKey,
+            string? logKey,
 
-            string logValue)
+            string? logValue)
         {
             LogKey = logKey;
             LogValue = logValue;

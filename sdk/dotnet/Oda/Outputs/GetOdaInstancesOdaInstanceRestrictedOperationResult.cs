@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Oda.Outputs
         /// <summary>
         /// Name of the restricted operation.
         /// </summary>
-        public readonly string OperationName;
+        public readonly string? OperationName;
         /// <summary>
         /// Name of the service restricting the operation.
         /// </summary>
-        public readonly string RestrictingService;
+        public readonly string? RestrictingService;
 
         [OutputConstructor]
         private GetOdaInstancesOdaInstanceRestrictedOperationResult(
-            string operationName,
+            string? operationName,
 
-            string restrictingService)
+            string? restrictingService)
         {
             OperationName = operationName;
             RestrictingService = restrictingService;

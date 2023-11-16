@@ -27,31 +27,6 @@ class SteeringPolicyArgs:
                  ttl: Optional[pulumi.Input[int]] = None):
         """
         The set of arguments for constructing a SteeringPolicy resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment containing the steering policy.
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name for the steering policy. Does not have to be unique and can be changed. Avoid entering confidential information.
-        :param pulumi.Input[str] template: (Updatable) A set of predefined rules based on the desired purpose of the steering policy. Each template utilizes Traffic Management's rules in a different order to produce the desired results when answering DNS queries.
-               
-               **Example:** The `FAILOVER` template determines answers by filtering the policy's answers using the `FILTER` rule first, then the following rules in succession: `HEALTH`, `PRIORITY`, and `LIMIT`. This gives the domain dynamic failover capability.
-               
-               It is **strongly recommended** to use a template other than `CUSTOM` when creating a steering policy.
-               
-               All templates require the rule order to begin with an unconditional `FILTER` rule that keeps answers contingent upon `answer.isDisabled != true`, except for `CUSTOM`. A defined `HEALTH` rule must follow the `FILTER` rule if the policy references a `healthCheckMonitorId`. The last rule of a template must must be a `LIMIT` rule. For more information about templates and code examples, see [Traffic Management API Guide](https://docs.cloud.oracle.com/iaas/Content/TrafficManagement/Concepts/trafficmanagementapi.htm).
-               
-               **Template Types**
-        :param pulumi.Input[Sequence[pulumi.Input['SteeringPolicyAnswerArgs']]] answers: The set of all answers that can potentially issue from the steering policy.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param pulumi.Input[str] health_check_monitor_id: (Updatable) The OCID of the health check monitor providing health data about the answers of the steering policy. A steering policy answer with `rdata` matching a monitored endpoint will use the health data of that endpoint. A steering policy answer with `rdata` not matching any monitored endpoint will be assumed healthy.
-               
-               **Note:** To use the Health Check monitoring feature in a steering policy, a monitor must be created using the Health Checks service first. For more information on how to create a monitor, please see [Managing Health Checks](https://docs.cloud.oracle.com/iaas/Content/HealthChecks/Tasks/managinghealthchecks.htm).
-        :param pulumi.Input[Sequence[pulumi.Input['SteeringPolicyRuleArgs']]] rules: The series of rules that will be processed in sequence to reduce the pool of answers to a response for any given request.
-               
-               The first rule receives a shuffled list of all answers, and every other rule receives the list of answers emitted by the one preceding it. The last rule populates the response.
-        :param pulumi.Input[int] ttl: (Updatable) The Time To Live (TTL) for responses from the steering policy, in seconds. If not specified during creation, a value of 30 seconds will be used. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "display_name", display_name)
@@ -72,9 +47,6 @@ class SteeringPolicyArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The OCID of the compartment containing the steering policy.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -84,9 +56,6 @@ class SteeringPolicyArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) A user-friendly name for the steering policy. Does not have to be unique and can be changed. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -96,17 +65,6 @@ class SteeringPolicyArgs:
     @property
     @pulumi.getter
     def template(self) -> pulumi.Input[str]:
-        """
-        (Updatable) A set of predefined rules based on the desired purpose of the steering policy. Each template utilizes Traffic Management's rules in a different order to produce the desired results when answering DNS queries.
-
-        **Example:** The `FAILOVER` template determines answers by filtering the policy's answers using the `FILTER` rule first, then the following rules in succession: `HEALTH`, `PRIORITY`, and `LIMIT`. This gives the domain dynamic failover capability.
-
-        It is **strongly recommended** to use a template other than `CUSTOM` when creating a steering policy.
-
-        All templates require the rule order to begin with an unconditional `FILTER` rule that keeps answers contingent upon `answer.isDisabled != true`, except for `CUSTOM`. A defined `HEALTH` rule must follow the `FILTER` rule if the policy references a `healthCheckMonitorId`. The last rule of a template must must be a `LIMIT` rule. For more information about templates and code examples, see [Traffic Management API Guide](https://docs.cloud.oracle.com/iaas/Content/TrafficManagement/Concepts/trafficmanagementapi.htm).
-
-        **Template Types**
-        """
         return pulumi.get(self, "template")
 
     @template.setter
@@ -116,9 +74,6 @@ class SteeringPolicyArgs:
     @property
     @pulumi.getter
     def answers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SteeringPolicyAnswerArgs']]]]:
-        """
-        The set of all answers that can potentially issue from the steering policy.
-        """
         return pulumi.get(self, "answers")
 
     @answers.setter
@@ -128,9 +83,6 @@ class SteeringPolicyArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -140,9 +92,6 @@ class SteeringPolicyArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -152,11 +101,6 @@ class SteeringPolicyArgs:
     @property
     @pulumi.getter(name="healthCheckMonitorId")
     def health_check_monitor_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the health check monitor providing health data about the answers of the steering policy. A steering policy answer with `rdata` matching a monitored endpoint will use the health data of that endpoint. A steering policy answer with `rdata` not matching any monitored endpoint will be assumed healthy.
-
-        **Note:** To use the Health Check monitoring feature in a steering policy, a monitor must be created using the Health Checks service first. For more information on how to create a monitor, please see [Managing Health Checks](https://docs.cloud.oracle.com/iaas/Content/HealthChecks/Tasks/managinghealthchecks.htm).
-        """
         return pulumi.get(self, "health_check_monitor_id")
 
     @health_check_monitor_id.setter
@@ -166,11 +110,6 @@ class SteeringPolicyArgs:
     @property
     @pulumi.getter
     def rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SteeringPolicyRuleArgs']]]]:
-        """
-        The series of rules that will be processed in sequence to reduce the pool of answers to a response for any given request.
-
-        The first rule receives a shuffled list of all answers, and every other rule receives the list of answers emitted by the one preceding it. The last rule populates the response.
-        """
         return pulumi.get(self, "rules")
 
     @rules.setter
@@ -180,13 +119,6 @@ class SteeringPolicyArgs:
     @property
     @pulumi.getter
     def ttl(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The Time To Live (TTL) for responses from the steering policy, in seconds. If not specified during creation, a value of 30 seconds will be used. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "ttl")
 
     @ttl.setter
@@ -211,34 +143,6 @@ class _SteeringPolicyState:
                  ttl: Optional[pulumi.Input[int]] = None):
         """
         Input properties used for looking up and filtering SteeringPolicy resources.
-        :param pulumi.Input[Sequence[pulumi.Input['SteeringPolicyAnswerArgs']]] answers: The set of all answers that can potentially issue from the steering policy.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment containing the steering policy.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name for the steering policy. Does not have to be unique and can be changed. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param pulumi.Input[str] health_check_monitor_id: (Updatable) The OCID of the health check monitor providing health data about the answers of the steering policy. A steering policy answer with `rdata` matching a monitored endpoint will use the health data of that endpoint. A steering policy answer with `rdata` not matching any monitored endpoint will be assumed healthy.
-               
-               **Note:** To use the Health Check monitoring feature in a steering policy, a monitor must be created using the Health Checks service first. For more information on how to create a monitor, please see [Managing Health Checks](https://docs.cloud.oracle.com/iaas/Content/HealthChecks/Tasks/managinghealthchecks.htm).
-        :param pulumi.Input[Sequence[pulumi.Input['SteeringPolicyRuleArgs']]] rules: The series of rules that will be processed in sequence to reduce the pool of answers to a response for any given request.
-               
-               The first rule receives a shuffled list of all answers, and every other rule receives the list of answers emitted by the one preceding it. The last rule populates the response.
-        :param pulumi.Input[str] self: The canonical absolute URL of the resource.
-        :param pulumi.Input[str] state: The current state of the resource.
-        :param pulumi.Input[str] template: (Updatable) A set of predefined rules based on the desired purpose of the steering policy. Each template utilizes Traffic Management's rules in a different order to produce the desired results when answering DNS queries.
-               
-               **Example:** The `FAILOVER` template determines answers by filtering the policy's answers using the `FILTER` rule first, then the following rules in succession: `HEALTH`, `PRIORITY`, and `LIMIT`. This gives the domain dynamic failover capability.
-               
-               It is **strongly recommended** to use a template other than `CUSTOM` when creating a steering policy.
-               
-               All templates require the rule order to begin with an unconditional `FILTER` rule that keeps answers contingent upon `answer.isDisabled != true`, except for `CUSTOM`. A defined `HEALTH` rule must follow the `FILTER` rule if the policy references a `healthCheckMonitorId`. The last rule of a template must must be a `LIMIT` rule. For more information about templates and code examples, see [Traffic Management API Guide](https://docs.cloud.oracle.com/iaas/Content/TrafficManagement/Concepts/trafficmanagementapi.htm).
-               
-               **Template Types**
-        :param pulumi.Input[str] time_created: The date and time the resource was created, expressed in RFC 3339 timestamp format.
-        :param pulumi.Input[int] ttl: (Updatable) The Time To Live (TTL) for responses from the steering policy, in seconds. If not specified during creation, a value of 30 seconds will be used. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if answers is not None:
             pulumi.set(__self__, "answers", answers)
@@ -268,9 +172,6 @@ class _SteeringPolicyState:
     @property
     @pulumi.getter
     def answers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SteeringPolicyAnswerArgs']]]]:
-        """
-        The set of all answers that can potentially issue from the steering policy.
-        """
         return pulumi.get(self, "answers")
 
     @answers.setter
@@ -280,9 +181,6 @@ class _SteeringPolicyState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the compartment containing the steering policy.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -292,9 +190,6 @@ class _SteeringPolicyState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -304,9 +199,6 @@ class _SteeringPolicyState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly name for the steering policy. Does not have to be unique and can be changed. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -316,9 +208,6 @@ class _SteeringPolicyState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -328,11 +217,6 @@ class _SteeringPolicyState:
     @property
     @pulumi.getter(name="healthCheckMonitorId")
     def health_check_monitor_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the health check monitor providing health data about the answers of the steering policy. A steering policy answer with `rdata` matching a monitored endpoint will use the health data of that endpoint. A steering policy answer with `rdata` not matching any monitored endpoint will be assumed healthy.
-
-        **Note:** To use the Health Check monitoring feature in a steering policy, a monitor must be created using the Health Checks service first. For more information on how to create a monitor, please see [Managing Health Checks](https://docs.cloud.oracle.com/iaas/Content/HealthChecks/Tasks/managinghealthchecks.htm).
-        """
         return pulumi.get(self, "health_check_monitor_id")
 
     @health_check_monitor_id.setter
@@ -342,11 +226,6 @@ class _SteeringPolicyState:
     @property
     @pulumi.getter
     def rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SteeringPolicyRuleArgs']]]]:
-        """
-        The series of rules that will be processed in sequence to reduce the pool of answers to a response for any given request.
-
-        The first rule receives a shuffled list of all answers, and every other rule receives the list of answers emitted by the one preceding it. The last rule populates the response.
-        """
         return pulumi.get(self, "rules")
 
     @rules.setter
@@ -356,9 +235,6 @@ class _SteeringPolicyState:
     @property
     @pulumi.getter
     def self(self) -> Optional[pulumi.Input[str]]:
-        """
-        The canonical absolute URL of the resource.
-        """
         return pulumi.get(self, "self")
 
     @self.setter
@@ -368,9 +244,6 @@ class _SteeringPolicyState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the resource.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -380,17 +253,6 @@ class _SteeringPolicyState:
     @property
     @pulumi.getter
     def template(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A set of predefined rules based on the desired purpose of the steering policy. Each template utilizes Traffic Management's rules in a different order to produce the desired results when answering DNS queries.
-
-        **Example:** The `FAILOVER` template determines answers by filtering the policy's answers using the `FILTER` rule first, then the following rules in succession: `HEALTH`, `PRIORITY`, and `LIMIT`. This gives the domain dynamic failover capability.
-
-        It is **strongly recommended** to use a template other than `CUSTOM` when creating a steering policy.
-
-        All templates require the rule order to begin with an unconditional `FILTER` rule that keeps answers contingent upon `answer.isDisabled != true`, except for `CUSTOM`. A defined `HEALTH` rule must follow the `FILTER` rule if the policy references a `healthCheckMonitorId`. The last rule of a template must must be a `LIMIT` rule. For more information about templates and code examples, see [Traffic Management API Guide](https://docs.cloud.oracle.com/iaas/Content/TrafficManagement/Concepts/trafficmanagementapi.htm).
-
-        **Template Types**
-        """
         return pulumi.get(self, "template")
 
     @template.setter
@@ -400,9 +262,6 @@ class _SteeringPolicyState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the resource was created, expressed in RFC 3339 timestamp format.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -412,13 +271,6 @@ class _SteeringPolicyState:
     @property
     @pulumi.getter
     def ttl(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The Time To Live (TTL) for responses from the steering policy, in seconds. If not specified during creation, a value of 30 seconds will be used. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "ttl")
 
     @ttl.setter
@@ -442,88 +294,9 @@ class SteeringPolicy(pulumi.CustomResource):
                  ttl: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         """
-        This resource provides the Steering Policy resource in Oracle Cloud Infrastructure DNS service.
-
-        Creates a new steering policy in the specified compartment. For more information on
-        creating policies with templates, see [Traffic Management API Guide](https://docs.cloud.oracle.com/iaas/Content/TrafficManagement/Concepts/trafficmanagementapi.htm).
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_steering_policy = oci.dns.SteeringPolicy("testSteeringPolicy",
-            compartment_id=var["compartment_id"],
-            display_name=var["steering_policy_display_name"],
-            template=var["steering_policy_template"],
-            answers=[oci.dns.SteeringPolicyAnswerArgs(
-                name=var["steering_policy_answers_name"],
-                rdata=var["steering_policy_answers_rdata"],
-                rtype=var["steering_policy_answers_rtype"],
-                is_disabled=var["steering_policy_answers_is_disabled"],
-                pool=var["steering_policy_answers_pool"],
-            )],
-            defined_tags=var["steering_policy_defined_tags"],
-            freeform_tags=var["steering_policy_freeform_tags"],
-            health_check_monitor_id=oci_health_checks_http_monitor["test_http_monitor"]["id"],
-            rules=[oci.dns.SteeringPolicyRuleArgs(
-                rule_type=var["steering_policy_rules_rule_type"],
-                cases=[oci.dns.SteeringPolicyRuleCaseArgs(
-                    answer_datas=[oci.dns.SteeringPolicyRuleCaseAnswerDataArgs(
-                        answer_condition=var["steering_policy_rules_cases_answer_data_answer_condition"],
-                        should_keep=var["steering_policy_rules_cases_answer_data_should_keep"],
-                        value=var["steering_policy_rules_cases_answer_data_value"],
-                    )],
-                    case_condition=var["steering_policy_rules_cases_case_condition"],
-                    count=var["steering_policy_rules_cases_count"],
-                )],
-                default_answer_datas=[oci.dns.SteeringPolicyRuleDefaultAnswerDataArgs(
-                    answer_condition=var["steering_policy_rules_default_answer_data_answer_condition"],
-                    should_keep=var["steering_policy_rules_default_answer_data_should_keep"],
-                    value=var["steering_policy_rules_default_answer_data_value"],
-                )],
-                default_count=var["steering_policy_rules_default_count"],
-                description=var["steering_policy_rules_description"],
-            )],
-            ttl=var["steering_policy_ttl"])
-        ```
-
-        ## Import
-
-        SteeringPolicies can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Dns/steeringPolicy:SteeringPolicy test_steering_policy "id"
-        ```
-
+        Create a SteeringPolicy resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['SteeringPolicyAnswerArgs']]]] answers: The set of all answers that can potentially issue from the steering policy.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment containing the steering policy.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name for the steering policy. Does not have to be unique and can be changed. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param pulumi.Input[str] health_check_monitor_id: (Updatable) The OCID of the health check monitor providing health data about the answers of the steering policy. A steering policy answer with `rdata` matching a monitored endpoint will use the health data of that endpoint. A steering policy answer with `rdata` not matching any monitored endpoint will be assumed healthy.
-               
-               **Note:** To use the Health Check monitoring feature in a steering policy, a monitor must be created using the Health Checks service first. For more information on how to create a monitor, please see [Managing Health Checks](https://docs.cloud.oracle.com/iaas/Content/HealthChecks/Tasks/managinghealthchecks.htm).
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['SteeringPolicyRuleArgs']]]] rules: The series of rules that will be processed in sequence to reduce the pool of answers to a response for any given request.
-               
-               The first rule receives a shuffled list of all answers, and every other rule receives the list of answers emitted by the one preceding it. The last rule populates the response.
-        :param pulumi.Input[str] template: (Updatable) A set of predefined rules based on the desired purpose of the steering policy. Each template utilizes Traffic Management's rules in a different order to produce the desired results when answering DNS queries.
-               
-               **Example:** The `FAILOVER` template determines answers by filtering the policy's answers using the `FILTER` rule first, then the following rules in succession: `HEALTH`, `PRIORITY`, and `LIMIT`. This gives the domain dynamic failover capability.
-               
-               It is **strongly recommended** to use a template other than `CUSTOM` when creating a steering policy.
-               
-               All templates require the rule order to begin with an unconditional `FILTER` rule that keeps answers contingent upon `answer.isDisabled != true`, except for `CUSTOM`. A defined `HEALTH` rule must follow the `FILTER` rule if the policy references a `healthCheckMonitorId`. The last rule of a template must must be a `LIMIT` rule. For more information about templates and code examples, see [Traffic Management API Guide](https://docs.cloud.oracle.com/iaas/Content/TrafficManagement/Concepts/trafficmanagementapi.htm).
-               
-               **Template Types**
-        :param pulumi.Input[int] ttl: (Updatable) The Time To Live (TTL) for responses from the steering policy, in seconds. If not specified during creation, a value of 30 seconds will be used. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -532,61 +305,7 @@ class SteeringPolicy(pulumi.CustomResource):
                  args: SteeringPolicyArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Steering Policy resource in Oracle Cloud Infrastructure DNS service.
-
-        Creates a new steering policy in the specified compartment. For more information on
-        creating policies with templates, see [Traffic Management API Guide](https://docs.cloud.oracle.com/iaas/Content/TrafficManagement/Concepts/trafficmanagementapi.htm).
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_steering_policy = oci.dns.SteeringPolicy("testSteeringPolicy",
-            compartment_id=var["compartment_id"],
-            display_name=var["steering_policy_display_name"],
-            template=var["steering_policy_template"],
-            answers=[oci.dns.SteeringPolicyAnswerArgs(
-                name=var["steering_policy_answers_name"],
-                rdata=var["steering_policy_answers_rdata"],
-                rtype=var["steering_policy_answers_rtype"],
-                is_disabled=var["steering_policy_answers_is_disabled"],
-                pool=var["steering_policy_answers_pool"],
-            )],
-            defined_tags=var["steering_policy_defined_tags"],
-            freeform_tags=var["steering_policy_freeform_tags"],
-            health_check_monitor_id=oci_health_checks_http_monitor["test_http_monitor"]["id"],
-            rules=[oci.dns.SteeringPolicyRuleArgs(
-                rule_type=var["steering_policy_rules_rule_type"],
-                cases=[oci.dns.SteeringPolicyRuleCaseArgs(
-                    answer_datas=[oci.dns.SteeringPolicyRuleCaseAnswerDataArgs(
-                        answer_condition=var["steering_policy_rules_cases_answer_data_answer_condition"],
-                        should_keep=var["steering_policy_rules_cases_answer_data_should_keep"],
-                        value=var["steering_policy_rules_cases_answer_data_value"],
-                    )],
-                    case_condition=var["steering_policy_rules_cases_case_condition"],
-                    count=var["steering_policy_rules_cases_count"],
-                )],
-                default_answer_datas=[oci.dns.SteeringPolicyRuleDefaultAnswerDataArgs(
-                    answer_condition=var["steering_policy_rules_default_answer_data_answer_condition"],
-                    should_keep=var["steering_policy_rules_default_answer_data_should_keep"],
-                    value=var["steering_policy_rules_default_answer_data_value"],
-                )],
-                default_count=var["steering_policy_rules_default_count"],
-                description=var["steering_policy_rules_description"],
-            )],
-            ttl=var["steering_policy_ttl"])
-        ```
-
-        ## Import
-
-        SteeringPolicies can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Dns/steeringPolicy:SteeringPolicy test_steering_policy "id"
-        ```
-
+        Create a SteeringPolicy resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param SteeringPolicyArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -667,34 +386,6 @@ class SteeringPolicy(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['SteeringPolicyAnswerArgs']]]] answers: The set of all answers that can potentially issue from the steering policy.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment containing the steering policy.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name for the steering policy. Does not have to be unique and can be changed. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param pulumi.Input[str] health_check_monitor_id: (Updatable) The OCID of the health check monitor providing health data about the answers of the steering policy. A steering policy answer with `rdata` matching a monitored endpoint will use the health data of that endpoint. A steering policy answer with `rdata` not matching any monitored endpoint will be assumed healthy.
-               
-               **Note:** To use the Health Check monitoring feature in a steering policy, a monitor must be created using the Health Checks service first. For more information on how to create a monitor, please see [Managing Health Checks](https://docs.cloud.oracle.com/iaas/Content/HealthChecks/Tasks/managinghealthchecks.htm).
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['SteeringPolicyRuleArgs']]]] rules: The series of rules that will be processed in sequence to reduce the pool of answers to a response for any given request.
-               
-               The first rule receives a shuffled list of all answers, and every other rule receives the list of answers emitted by the one preceding it. The last rule populates the response.
-        :param pulumi.Input[str] self: The canonical absolute URL of the resource.
-        :param pulumi.Input[str] state: The current state of the resource.
-        :param pulumi.Input[str] template: (Updatable) A set of predefined rules based on the desired purpose of the steering policy. Each template utilizes Traffic Management's rules in a different order to produce the desired results when answering DNS queries.
-               
-               **Example:** The `FAILOVER` template determines answers by filtering the policy's answers using the `FILTER` rule first, then the following rules in succession: `HEALTH`, `PRIORITY`, and `LIMIT`. This gives the domain dynamic failover capability.
-               
-               It is **strongly recommended** to use a template other than `CUSTOM` when creating a steering policy.
-               
-               All templates require the rule order to begin with an unconditional `FILTER` rule that keeps answers contingent upon `answer.isDisabled != true`, except for `CUSTOM`. A defined `HEALTH` rule must follow the `FILTER` rule if the policy references a `healthCheckMonitorId`. The last rule of a template must must be a `LIMIT` rule. For more information about templates and code examples, see [Traffic Management API Guide](https://docs.cloud.oracle.com/iaas/Content/TrafficManagement/Concepts/trafficmanagementapi.htm).
-               
-               **Template Types**
-        :param pulumi.Input[str] time_created: The date and time the resource was created, expressed in RFC 3339 timestamp format.
-        :param pulumi.Input[int] ttl: (Updatable) The Time To Live (TTL) for responses from the steering policy, in seconds. If not specified during creation, a value of 30 seconds will be used. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -716,113 +407,61 @@ class SteeringPolicy(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def answers(self) -> pulumi.Output[Sequence['outputs.SteeringPolicyAnswer']]:
-        """
-        The set of all answers that can potentially issue from the steering policy.
-        """
+    def answers(self) -> pulumi.Output[Optional[Sequence['outputs.SteeringPolicyAnswer']]]:
         return pulumi.get(self, "answers")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The OCID of the compartment containing the steering policy.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) A user-friendly name for the steering policy. Does not have to be unique and can be changed. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="healthCheckMonitorId")
-    def health_check_monitor_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The OCID of the health check monitor providing health data about the answers of the steering policy. A steering policy answer with `rdata` matching a monitored endpoint will use the health data of that endpoint. A steering policy answer with `rdata` not matching any monitored endpoint will be assumed healthy.
-
-        **Note:** To use the Health Check monitoring feature in a steering policy, a monitor must be created using the Health Checks service first. For more information on how to create a monitor, please see [Managing Health Checks](https://docs.cloud.oracle.com/iaas/Content/HealthChecks/Tasks/managinghealthchecks.htm).
-        """
+    def health_check_monitor_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "health_check_monitor_id")
 
     @property
     @pulumi.getter
-    def rules(self) -> pulumi.Output[Sequence['outputs.SteeringPolicyRule']]:
-        """
-        The series of rules that will be processed in sequence to reduce the pool of answers to a response for any given request.
-
-        The first rule receives a shuffled list of all answers, and every other rule receives the list of answers emitted by the one preceding it. The last rule populates the response.
-        """
+    def rules(self) -> pulumi.Output[Optional[Sequence['outputs.SteeringPolicyRule']]]:
         return pulumi.get(self, "rules")
 
     @property
     @pulumi.getter
-    def self(self) -> pulumi.Output[str]:
-        """
-        The canonical absolute URL of the resource.
-        """
+    def self(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "self")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the resource.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter
     def template(self) -> pulumi.Output[str]:
-        """
-        (Updatable) A set of predefined rules based on the desired purpose of the steering policy. Each template utilizes Traffic Management's rules in a different order to produce the desired results when answering DNS queries.
-
-        **Example:** The `FAILOVER` template determines answers by filtering the policy's answers using the `FILTER` rule first, then the following rules in succession: `HEALTH`, `PRIORITY`, and `LIMIT`. This gives the domain dynamic failover capability.
-
-        It is **strongly recommended** to use a template other than `CUSTOM` when creating a steering policy.
-
-        All templates require the rule order to begin with an unconditional `FILTER` rule that keeps answers contingent upon `answer.isDisabled != true`, except for `CUSTOM`. A defined `HEALTH` rule must follow the `FILTER` rule if the policy references a `healthCheckMonitorId`. The last rule of a template must must be a `LIMIT` rule. For more information about templates and code examples, see [Traffic Management API Guide](https://docs.cloud.oracle.com/iaas/Content/TrafficManagement/Concepts/trafficmanagementapi.htm).
-
-        **Template Types**
-        """
         return pulumi.get(self, "template")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The date and time the resource was created, expressed in RFC 3339 timestamp format.
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter
-    def ttl(self) -> pulumi.Output[int]:
-        """
-        (Updatable) The Time To Live (TTL) for responses from the steering policy, in seconds. If not specified during creation, a value of 30 seconds will be used. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
+    def ttl(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "ttl")
 

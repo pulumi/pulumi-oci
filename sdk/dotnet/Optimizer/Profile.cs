@@ -85,7 +85,7 @@ namespace Pulumi.Oci.Optimizer
         /// (Updatable) The time period over which to collect data for the recommendations, measured in number of days.
         /// </summary>
         [Output("aggregationIntervalInDays")]
-        public Output<int> AggregationIntervalInDays { get; private set; } = null!;
+        public Output<int?> AggregationIntervalInDays { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the tenancy. The tenancy is the root compartment.
@@ -97,7 +97,7 @@ namespace Pulumi.Oci.Optimizer
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Text describing the profile. Avoid entering confidential information.
@@ -109,7 +109,7 @@ namespace Pulumi.Oci.Optimizer
         /// (Updatable) Simple key-value pair applied without any predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A list of configuration levels for each recommendation.
@@ -127,31 +127,31 @@ namespace Pulumi.Oci.Optimizer
         /// The profile's current state.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Optional. The compartments specified in the profile override for a recommendation.
         /// </summary>
         [Output("targetCompartments")]
-        public Output<Outputs.ProfileTargetCompartments> TargetCompartments { get; private set; } = null!;
+        public Output<Outputs.ProfileTargetCompartments?> TargetCompartments { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Optional. The tags specified in the profile override for a recommendation.
         /// </summary>
         [Output("targetTags")]
-        public Output<Outputs.ProfileTargetTags> TargetTags { get; private set; } = null!;
+        public Output<Outputs.ProfileTargetTags?> TargetTags { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the profile was created, in the format defined by RFC3339.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the profile was last updated, in the format defined by RFC3339.
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
 
         /// <summary>

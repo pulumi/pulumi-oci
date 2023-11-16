@@ -36,7 +36,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// The severity of this diff.
         /// </summary>
-        public readonly string Severity;
+        public readonly string? Severity;
 
         [OutputConstructor]
         private GetSecurityAssessmentComparisonTargetAuthorizationControlResult(
@@ -50,7 +50,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
 
             ImmutableArray<string> removedItems,
 
-            string severity)
+            string? severity)
         {
             AddedItems = addedItems;
             Baselines = baselines;

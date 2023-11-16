@@ -16,23 +16,23 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// The association type.
         /// </summary>
-        public readonly string AssociationType;
+        public readonly string? AssociationType;
         /// <summary>
         /// The identifier of the discovered DB system component.
         /// </summary>
-        public readonly string ComponentId;
+        public readonly string? ComponentId;
         /// <summary>
         /// The component type.
         /// </summary>
-        public readonly string ComponentType;
+        public readonly string? ComponentType;
 
         [OutputConstructor]
         private GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentAssociatedComponentResult(
-            string associationType,
+            string? associationType,
 
-            string componentId,
+            string? componentId,
 
-            string componentType)
+            string? componentType)
         {
             AssociationType = associationType;
             ComponentId = componentId;

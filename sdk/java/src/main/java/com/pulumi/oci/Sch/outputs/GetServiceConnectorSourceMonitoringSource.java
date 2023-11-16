@@ -8,6 +8,8 @@ import com.pulumi.oci.Sch.outputs.GetServiceConnectorSourceMonitoringSourceNames
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetServiceConnectorSourceMonitoringSource {
@@ -15,27 +17,27 @@ public final class GetServiceConnectorSourceMonitoringSource {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Discriminator for namespaces in the compartment-specific list.
      * 
      */
-    private List<GetServiceConnectorSourceMonitoringSourceNamespaceDetail> namespaceDetails;
+    private @Nullable List<GetServiceConnectorSourceMonitoringSourceNamespaceDetail> namespaceDetails;
 
     private GetServiceConnectorSourceMonitoringSource() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Discriminator for namespaces in the compartment-specific list.
      * 
      */
     public List<GetServiceConnectorSourceMonitoringSourceNamespaceDetail> namespaceDetails() {
-        return this.namespaceDetails;
+        return this.namespaceDetails == null ? List.of() : this.namespaceDetails;
     }
 
     public static Builder builder() {
@@ -47,8 +49,8 @@ public final class GetServiceConnectorSourceMonitoringSource {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private List<GetServiceConnectorSourceMonitoringSourceNamespaceDetail> namespaceDetails;
+        private @Nullable String compartmentId;
+        private @Nullable List<GetServiceConnectorSourceMonitoringSourceNamespaceDetail> namespaceDetails;
         public Builder() {}
         public Builder(GetServiceConnectorSourceMonitoringSource defaults) {
     	      Objects.requireNonNull(defaults);
@@ -57,13 +59,13 @@ public final class GetServiceConnectorSourceMonitoringSource {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder namespaceDetails(List<GetServiceConnectorSourceMonitoringSourceNamespaceDetail> namespaceDetails) {
-            this.namespaceDetails = Objects.requireNonNull(namespaceDetails);
+        public Builder namespaceDetails(@Nullable List<GetServiceConnectorSourceMonitoringSourceNamespaceDetail> namespaceDetails) {
+            this.namespaceDetails = namespaceDetails;
             return this;
         }
         public Builder namespaceDetails(GetServiceConnectorSourceMonitoringSourceNamespaceDetail... namespaceDetails) {

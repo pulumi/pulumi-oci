@@ -53,19 +53,19 @@ namespace Pulumi.Oci.Marketplace
         /// Who authored the agreement.
         /// </summary>
         [Output("author")]
-        public Output<string> Author { get; private set; } = null!;
+        public Output<string?> Author { get; private set; } = null!;
 
         /// <summary>
         /// The unique identifier for the compartment, required in gov regions.
         /// </summary>
         [Output("compartmentId")]
-        public Output<string> CompartmentId { get; private set; } = null!;
+        public Output<string?> CompartmentId { get; private set; } = null!;
 
         /// <summary>
         /// The content URL of the agreement.
         /// </summary>
         [Output("contentUrl")]
-        public Output<string> ContentUrl { get; private set; } = null!;
+        public Output<string?> ContentUrl { get; private set; } = null!;
 
         /// <summary>
         /// The unique identifier for the listing.
@@ -83,13 +83,13 @@ namespace Pulumi.Oci.Marketplace
         /// Textual prompt to read and accept the agreement.
         /// </summary>
         [Output("prompt")]
-        public Output<string> Prompt { get; private set; } = null!;
+        public Output<string?> Prompt { get; private set; } = null!;
 
         /// <summary>
         /// A time-based signature that can be used to accept an agreement or remove a previously accepted agreement from the list that Marketplace checks before a deployment.
         /// </summary>
         [Output("signature")]
-        public Output<string> Signature { get; private set; } = null!;
+        public Output<string?> Signature { get; private set; } = null!;
 
 
         /// <summary>

@@ -55,50 +55,50 @@ export interface GetDatabasePdbConversionHistoryEntryResult {
      * * Use `SYNC` if the non-container database was manually converted into a pluggable database using the dbcli command-line utility. Databases may need to be converted manually if the CONVERT action fails when converting a non-container database using the API.
      * * Use `SYNC_ROLLBACK` if the conversion of a non-container database into a pluggable database was manually rolled back using the dbcli command line utility. Conversions may need to be manually rolled back if the CONVERT action fails when converting a non-container database using the API.
      */
-    readonly action: string;
+    readonly action?: string;
     /**
      * Additional container database parameter.
      */
-    readonly additionalCdbParams: string;
+    readonly additionalCdbParams?: string;
     /**
      * The database name. The name must begin with an alphabetic character and can contain a maximum of 8 alphanumeric characters. Special characters are not permitted. The database name must be unique in the tenancy.
      */
-    readonly cdbName: string;
+    readonly cdbName?: string;
     readonly databaseId: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Additional information about the current lifecycle state for the conversion operation.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     readonly pdbConversionHistoryEntryId: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
      */
-    readonly sourceDatabaseId: string;
+    readonly sourceDatabaseId?: string;
     /**
      * Status of an operation performed during the conversion of a non-container database to a pluggable database.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The target container database of the pluggable database created by the database conversion operation. Currently, the database conversion operation only supports creating the pluggable database in a new container database.
      * * Use `NEW_DATABASE` to specify that the pluggable database be created within a new container database in the same database home.
      */
-    readonly target: string;
+    readonly target?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
      */
-    readonly targetDatabaseId: string;
+    readonly targetDatabaseId?: string;
     /**
      * The date and time when the database conversion operation ended.
      */
-    readonly timeEnded: string;
+    readonly timeEnded?: string;
     /**
      * The date and time when the database conversion operation started.
      */
-    readonly timeStarted: string;
+    readonly timeStarted?: string;
 }
 /**
  * This data source provides details about a specific Database Pdb Conversion History Entry resource in Oracle Cloud Infrastructure Database service.

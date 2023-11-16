@@ -64,10 +64,7 @@ class GetComputedUsagesResult:
 
     @property
     @pulumi.getter(name="computedUsages")
-    def computed_usages(self) -> Sequence['outputs.GetComputedUsagesComputedUsageResult']:
-        """
-        The list of computed_usages.
-        """
+    def computed_usages(self) -> Optional[Sequence['outputs.GetComputedUsagesComputedUsageResult']]:
         return pulumi.get(self, "computed_usages")
 
     @property
@@ -77,7 +74,7 @@ class GetComputedUsagesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -86,9 +83,6 @@ class GetComputedUsagesResult:
     @property
     @pulumi.getter(name="parentProduct")
     def parent_product(self) -> Optional[str]:
-        """
-        Product description
-        """
         return pulumi.get(self, "parent_product")
 
     @property
@@ -133,17 +127,7 @@ def get_computed_usages(compartment_id: Optional[str] = None,
                         time_to: Optional[str] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetComputedUsagesResult:
     """
-    This data source provides the list of Computed Usages in Oracle Cloud Infrastructure Onesubscription service.
-
-    This is a collection API which returns a list of Computed Usages for given filters.
-
-
-    :param str compartment_id: The OCID of the root compartment.
-    :param str computed_product: Product part number for Computed Usage .
-    :param str parent_product: Product part number for subscribed service line, called parent product.
-    :param str subscription_id: Subscription Id is an identifier associated to the service used for filter the Computed Usage in SPM.
-    :param str time_from: Initial date to filter Computed Usage data in SPM. In the case of non aggregated data the time period between of fromDate and toDate , expressed in RFC 3339 timestamp format.
-    :param str time_to: Final date to filter Computed Usage data in SPM, expressed in RFC 3339 timestamp format.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -178,16 +162,6 @@ def get_computed_usages_output(compartment_id: Optional[pulumi.Input[str]] = Non
                                time_to: Optional[pulumi.Input[str]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetComputedUsagesResult]:
     """
-    This data source provides the list of Computed Usages in Oracle Cloud Infrastructure Onesubscription service.
-
-    This is a collection API which returns a list of Computed Usages for given filters.
-
-
-    :param str compartment_id: The OCID of the root compartment.
-    :param str computed_product: Product part number for Computed Usage .
-    :param str parent_product: Product part number for subscribed service line, called parent product.
-    :param str subscription_id: Subscription Id is an identifier associated to the service used for filter the Computed Usage in SPM.
-    :param str time_from: Initial date to filter Computed Usage data in SPM. In the case of non aggregated data the time period between of fromDate and toDate , expressed in RFC 3339 timestamp format.
-    :param str time_to: Final date to filter Computed Usage data in SPM, expressed in RFC 3339 timestamp format.
+    Use this data source to access information about an existing resource.
     """
     ...

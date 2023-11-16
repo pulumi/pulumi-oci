@@ -108,35 +108,35 @@ namespace Pulumi.Oci.CloudMigrations
         /// <summary>
         /// Limits of the resources that are needed for migration. Example: {"BlockVolume": 2, "VCN": 1}
         /// </summary>
-        public readonly ImmutableDictionary<string, object> CalculatedLimits;
+        public readonly ImmutableDictionary<string, object>? CalculatedLimits;
         /// <summary>
         /// The OCID of the compartment containing the migration plan.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The unique Oracle ID (OCID) that is immutable on creation.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// The OCID of the associated migration.
         /// </summary>
-        public readonly string MigrationId;
+        public readonly string? MigrationId;
         public readonly string MigrationPlanId;
         /// <summary>
         /// Status of the migration plan.
@@ -145,15 +145,15 @@ namespace Pulumi.Oci.CloudMigrations
         /// <summary>
         /// OCID of the referenced ORM job.
         /// </summary>
-        public readonly string ReferenceToRmsStack;
+        public readonly string? ReferenceToRmsStack;
         /// <summary>
         /// Source migraiton plan ID to be cloned.
         /// </summary>
-        public readonly string SourceMigrationPlanId;
+        public readonly string? SourceMigrationPlanId;
         /// <summary>
         /// The current state of the migration plan.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// List of strategies for the resources to be migrated.
         /// </summary>
@@ -161,7 +161,7 @@ namespace Pulumi.Oci.CloudMigrations
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, object>? SystemTags;
         /// <summary>
         /// List of target environments.
         /// </summary>
@@ -169,49 +169,49 @@ namespace Pulumi.Oci.CloudMigrations
         /// <summary>
         /// The time when the migration plan was created. An RFC3339 formatted datetime string.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The time when the migration plan was updated. An RFC3339 formatted datetime string.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
 
         [OutputConstructor]
         private GetMigrationPlanResult(
-            ImmutableDictionary<string, object> calculatedLimits,
+            ImmutableDictionary<string, object>? calculatedLimits,
 
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string migrationId,
+            string? migrationId,
 
             string migrationPlanId,
 
             ImmutableArray<Outputs.GetMigrationPlanMigrationPlanStatResult> migrationPlanStats,
 
-            string referenceToRmsStack,
+            string? referenceToRmsStack,
 
-            string sourceMigrationPlanId,
+            string? sourceMigrationPlanId,
 
-            string state,
+            string? state,
 
             ImmutableArray<Outputs.GetMigrationPlanStrategyResult> strategies,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, object>? systemTags,
 
             ImmutableArray<Outputs.GetMigrationPlanTargetEnvironmentResult> targetEnvironments,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated)
+            string? timeUpdated)
         {
             CalculatedLimits = calculatedLimits;
             CompartmentId = compartmentId;

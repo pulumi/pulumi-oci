@@ -61,7 +61,7 @@ class GetUsagelimitsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -70,9 +70,6 @@ class GetUsagelimitsResult:
     @property
     @pulumi.getter(name="limitType")
     def limit_type(self) -> Optional[str]:
-        """
-        The limit type of the usage limit
-        """
         return pulumi.get(self, "limit_type")
 
     @property
@@ -92,10 +89,7 @@ class GetUsagelimitsResult:
 
     @property
     @pulumi.getter(name="usageLimitCollections")
-    def usage_limit_collections(self) -> Sequence['outputs.GetUsagelimitsUsageLimitCollectionResult']:
-        """
-        The list of usage_limit_collection.
-        """
+    def usage_limit_collections(self) -> Optional[Sequence['outputs.GetUsagelimitsUsageLimitCollectionResult']]:
         return pulumi.get(self, "usage_limit_collections")
 
 
@@ -123,29 +117,7 @@ def get_usagelimits(compartment_id: Optional[str] = None,
                     subscription_id: Optional[str] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetUsagelimitsResult:
     """
-    This data source provides the list of Usagelimits in Oracle Cloud Infrastructure Usage Proxy service.
-
-    Returns the list of usage limit for the subscription ID and tenant ID.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_usagelimits = oci.UsageProxy.get_usagelimits(compartment_id=var["compartment_id"],
-        subscription_id=oci_onesubscription_subscription["test_subscription"]["id"],
-        limit_type=var["usagelimit_limit_type"],
-        resource_type=var["usagelimit_resource_type"],
-        service_type=var["usagelimit_service_type"])
-    ```
-
-
-    :param str compartment_id: The OCID of the root compartment.
-    :param str limit_type: Hard or soft limit. Hard limits lead to breaches, soft to alerts.
-    :param str resource_type: Resource Name.
-    :param str service_type: Service Name.
-    :param str subscription_id: The subscription ID for which rewards information is requested for.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -177,28 +149,6 @@ def get_usagelimits_output(compartment_id: Optional[pulumi.Input[str]] = None,
                            subscription_id: Optional[pulumi.Input[str]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetUsagelimitsResult]:
     """
-    This data source provides the list of Usagelimits in Oracle Cloud Infrastructure Usage Proxy service.
-
-    Returns the list of usage limit for the subscription ID and tenant ID.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_usagelimits = oci.UsageProxy.get_usagelimits(compartment_id=var["compartment_id"],
-        subscription_id=oci_onesubscription_subscription["test_subscription"]["id"],
-        limit_type=var["usagelimit_limit_type"],
-        resource_type=var["usagelimit_resource_type"],
-        service_type=var["usagelimit_service_type"])
-    ```
-
-
-    :param str compartment_id: The OCID of the root compartment.
-    :param str limit_type: Hard or soft limit. Hard limits lead to breaches, soft to alerts.
-    :param str resource_type: Resource Name.
-    :param str service_type: Service Name.
-    :param str subscription_id: The subscription ID for which rewards information is requested for.
+    Use this data source to access information about an existing resource.
     """
     ...

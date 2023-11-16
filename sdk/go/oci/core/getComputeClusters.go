@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Compute Clusters in Oracle Cloud Infrastructure Core service.
@@ -77,7 +76,7 @@ type GetComputeClustersResult struct {
 	DisplayName *string                    `pulumi:"displayName"`
 	Filters     []GetComputeClustersFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 func GetComputeClustersOutput(ctx *pulumi.Context, args GetComputeClustersOutputArgs, opts ...pulumi.InvokeOption) GetComputeClustersResultOutput {
@@ -123,12 +122,6 @@ func (o GetComputeClustersResultOutput) ToGetComputeClustersResultOutputWithCont
 	return o
 }
 
-func (o GetComputeClustersResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetComputeClustersResult] {
-	return pulumix.Output[GetComputeClustersResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The availability domain the compute cluster is running in.  Example: `Uocm:PHX-AD-1`
 func (o GetComputeClustersResultOutput) AvailabilityDomain() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetComputeClustersResult) *string { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
@@ -156,8 +149,8 @@ func (o GetComputeClustersResultOutput) Filters() GetComputeClustersFilterArrayO
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetComputeClustersResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputeClustersResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetComputeClustersResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputeClustersResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func init() {

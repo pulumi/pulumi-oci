@@ -72,11 +72,11 @@ export interface GetPublicIpPoolsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of public_ip_pool_collection.
      */
-    readonly publicIpPoolCollections: outputs.Core.GetPublicIpPoolsPublicIpPoolCollection[];
+    readonly publicIpPoolCollections?: outputs.Core.GetPublicIpPoolsPublicIpPoolCollection[];
 }
 /**
  * This data source provides the list of Public Ip Pools in Oracle Cloud Infrastructure Core service.

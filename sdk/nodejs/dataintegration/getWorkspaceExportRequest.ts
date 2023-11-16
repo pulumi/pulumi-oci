@@ -53,77 +53,77 @@ export interface GetWorkspaceExportRequestResult {
     /**
      * Controls if the references will be exported along with the objects
      */
-    readonly areReferencesIncluded: boolean;
+    readonly areReferencesIncluded?: boolean;
     /**
      * The name of the Object Storage Bucket where the objects will be exported to
      */
-    readonly bucket: string;
+    readonly bucket?: string;
     /**
      * Name of the user who initiated export request.
      */
-    readonly createdBy: string;
+    readonly createdBy?: string;
     /**
      * Contains key of the error
      */
-    readonly errorMessages: {[key: string]: any};
+    readonly errorMessages?: {[key: string]: any};
     readonly exportRequestKey: string;
     /**
      * The array of exported object details.
      */
-    readonly exportedItems: outputs.DataIntegration.GetWorkspaceExportRequestExportedItem[];
+    readonly exportedItems?: outputs.DataIntegration.GetWorkspaceExportRequestExportedItem[];
     /**
      * Name of the exported zip file.
      */
-    readonly fileName: string;
+    readonly fileName?: string;
     /**
      * Export multiple objects based on filters.
      */
-    readonly filters: string[];
-    readonly id: string;
+    readonly filters?: string[];
+    readonly id?: string;
     /**
      * Flag to control whether to overwrite the object if it is already present at the provided object storage location.
      */
-    readonly isObjectOverwriteEnabled: boolean;
+    readonly isObjectOverwriteEnabled?: boolean;
     /**
      * Export object request key
      */
-    readonly key: string;
+    readonly key?: string;
     /**
      * Name of the export request.
      */
-    readonly name: string;
+    readonly name?: string;
     /**
      * The list of the objects to be exported
      */
-    readonly objectKeys: string[];
+    readonly objectKeys?: string[];
     /**
      * Region of the object storage (if using object storage of different region)
      */
-    readonly objectStorageRegion: string;
+    readonly objectStorageRegion?: string;
     /**
      * Optional parameter to point to object storage tenancy (if using Object Storage of different tenancy)
      */
-    readonly objectStorageTenancyId: string;
+    readonly objectStorageTenancyId?: string;
     /**
      * The array of exported referenced objects.
      */
-    readonly referencedItems: string;
+    readonly referencedItems?: string;
     /**
      * Export Objects request status.
      */
-    readonly status: string;
+    readonly status?: string;
     /**
      * Time at which the request was completely processed.
      */
-    readonly timeEndedInMillis: string;
+    readonly timeEndedInMillis?: string;
     /**
      * Time at which the request started getting processed.
      */
-    readonly timeStartedInMillis: string;
+    readonly timeStartedInMillis?: string;
     /**
      * Number of objects that are exported.
      */
-    readonly totalExportedObjectCount: number;
+    readonly totalExportedObjectCount?: number;
     readonly workspaceId: string;
 }
 /**

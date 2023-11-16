@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -49,12 +48,6 @@ func (i ApplicationImagePolicyConfigArgs) ToApplicationImagePolicyConfigOutput()
 
 func (i ApplicationImagePolicyConfigArgs) ToApplicationImagePolicyConfigOutputWithContext(ctx context.Context) ApplicationImagePolicyConfigOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ApplicationImagePolicyConfigOutput)
-}
-
-func (i ApplicationImagePolicyConfigArgs) ToOutput(ctx context.Context) pulumix.Output[ApplicationImagePolicyConfig] {
-	return pulumix.Output[ApplicationImagePolicyConfig]{
-		OutputState: i.ToApplicationImagePolicyConfigOutputWithContext(ctx).OutputState,
-	}
 }
 
 func (i ApplicationImagePolicyConfigArgs) ToApplicationImagePolicyConfigPtrOutput() ApplicationImagePolicyConfigPtrOutput {
@@ -98,12 +91,6 @@ func (i *applicationImagePolicyConfigPtrType) ToApplicationImagePolicyConfigPtrO
 	return pulumi.ToOutputWithContext(ctx, i).(ApplicationImagePolicyConfigPtrOutput)
 }
 
-func (i *applicationImagePolicyConfigPtrType) ToOutput(ctx context.Context) pulumix.Output[*ApplicationImagePolicyConfig] {
-	return pulumix.Output[*ApplicationImagePolicyConfig]{
-		OutputState: i.ToApplicationImagePolicyConfigPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ApplicationImagePolicyConfigOutput struct{ *pulumi.OutputState }
 
 func (ApplicationImagePolicyConfigOutput) ElementType() reflect.Type {
@@ -128,12 +115,6 @@ func (o ApplicationImagePolicyConfigOutput) ToApplicationImagePolicyConfigPtrOut
 	}).(ApplicationImagePolicyConfigPtrOutput)
 }
 
-func (o ApplicationImagePolicyConfigOutput) ToOutput(ctx context.Context) pulumix.Output[ApplicationImagePolicyConfig] {
-	return pulumix.Output[ApplicationImagePolicyConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) Define if image signature verification policy is enabled for the application.
 func (o ApplicationImagePolicyConfigOutput) IsPolicyEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v ApplicationImagePolicyConfig) bool { return v.IsPolicyEnabled }).(pulumi.BoolOutput)
@@ -156,12 +137,6 @@ func (o ApplicationImagePolicyConfigPtrOutput) ToApplicationImagePolicyConfigPtr
 
 func (o ApplicationImagePolicyConfigPtrOutput) ToApplicationImagePolicyConfigPtrOutputWithContext(ctx context.Context) ApplicationImagePolicyConfigPtrOutput {
 	return o
-}
-
-func (o ApplicationImagePolicyConfigPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*ApplicationImagePolicyConfig] {
-	return pulumix.Output[*ApplicationImagePolicyConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ApplicationImagePolicyConfigPtrOutput) Elem() ApplicationImagePolicyConfigOutput {
@@ -227,12 +202,6 @@ func (i ApplicationImagePolicyConfigKeyDetailArgs) ToApplicationImagePolicyConfi
 	return pulumi.ToOutputWithContext(ctx, i).(ApplicationImagePolicyConfigKeyDetailOutput)
 }
 
-func (i ApplicationImagePolicyConfigKeyDetailArgs) ToOutput(ctx context.Context) pulumix.Output[ApplicationImagePolicyConfigKeyDetail] {
-	return pulumix.Output[ApplicationImagePolicyConfigKeyDetail]{
-		OutputState: i.ToApplicationImagePolicyConfigKeyDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ApplicationImagePolicyConfigKeyDetailArrayInput is an input type that accepts ApplicationImagePolicyConfigKeyDetailArray and ApplicationImagePolicyConfigKeyDetailArrayOutput values.
 // You can construct a concrete instance of `ApplicationImagePolicyConfigKeyDetailArrayInput` via:
 //
@@ -258,12 +227,6 @@ func (i ApplicationImagePolicyConfigKeyDetailArray) ToApplicationImagePolicyConf
 	return pulumi.ToOutputWithContext(ctx, i).(ApplicationImagePolicyConfigKeyDetailArrayOutput)
 }
 
-func (i ApplicationImagePolicyConfigKeyDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]ApplicationImagePolicyConfigKeyDetail] {
-	return pulumix.Output[[]ApplicationImagePolicyConfigKeyDetail]{
-		OutputState: i.ToApplicationImagePolicyConfigKeyDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ApplicationImagePolicyConfigKeyDetailOutput struct{ *pulumi.OutputState }
 
 func (ApplicationImagePolicyConfigKeyDetailOutput) ElementType() reflect.Type {
@@ -276,12 +239,6 @@ func (o ApplicationImagePolicyConfigKeyDetailOutput) ToApplicationImagePolicyCon
 
 func (o ApplicationImagePolicyConfigKeyDetailOutput) ToApplicationImagePolicyConfigKeyDetailOutputWithContext(ctx context.Context) ApplicationImagePolicyConfigKeyDetailOutput {
 	return o
-}
-
-func (o ApplicationImagePolicyConfigKeyDetailOutput) ToOutput(ctx context.Context) pulumix.Output[ApplicationImagePolicyConfigKeyDetail] {
-	return pulumix.Output[ApplicationImagePolicyConfigKeyDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the KMS key that will be used to verify the image signature.
@@ -301,12 +258,6 @@ func (o ApplicationImagePolicyConfigKeyDetailArrayOutput) ToApplicationImagePoli
 
 func (o ApplicationImagePolicyConfigKeyDetailArrayOutput) ToApplicationImagePolicyConfigKeyDetailArrayOutputWithContext(ctx context.Context) ApplicationImagePolicyConfigKeyDetailArrayOutput {
 	return o
-}
-
-func (o ApplicationImagePolicyConfigKeyDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ApplicationImagePolicyConfigKeyDetail] {
-	return pulumix.Output[[]ApplicationImagePolicyConfigKeyDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ApplicationImagePolicyConfigKeyDetailArrayOutput) Index(i pulumi.IntInput) ApplicationImagePolicyConfigKeyDetailOutput {
@@ -358,12 +309,6 @@ func (i ApplicationTraceConfigArgs) ToApplicationTraceConfigOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(ApplicationTraceConfigOutput)
 }
 
-func (i ApplicationTraceConfigArgs) ToOutput(ctx context.Context) pulumix.Output[ApplicationTraceConfig] {
-	return pulumix.Output[ApplicationTraceConfig]{
-		OutputState: i.ToApplicationTraceConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i ApplicationTraceConfigArgs) ToApplicationTraceConfigPtrOutput() ApplicationTraceConfigPtrOutput {
 	return i.ToApplicationTraceConfigPtrOutputWithContext(context.Background())
 }
@@ -405,12 +350,6 @@ func (i *applicationTraceConfigPtrType) ToApplicationTraceConfigPtrOutputWithCon
 	return pulumi.ToOutputWithContext(ctx, i).(ApplicationTraceConfigPtrOutput)
 }
 
-func (i *applicationTraceConfigPtrType) ToOutput(ctx context.Context) pulumix.Output[*ApplicationTraceConfig] {
-	return pulumix.Output[*ApplicationTraceConfig]{
-		OutputState: i.ToApplicationTraceConfigPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ApplicationTraceConfigOutput struct{ *pulumi.OutputState }
 
 func (ApplicationTraceConfigOutput) ElementType() reflect.Type {
@@ -433,12 +372,6 @@ func (o ApplicationTraceConfigOutput) ToApplicationTraceConfigPtrOutputWithConte
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v ApplicationTraceConfig) *ApplicationTraceConfig {
 		return &v
 	}).(ApplicationTraceConfigPtrOutput)
-}
-
-func (o ApplicationTraceConfigOutput) ToOutput(ctx context.Context) pulumix.Output[ApplicationTraceConfig] {
-	return pulumix.Output[ApplicationTraceConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The OCID of the collector (e.g. an APM Domain) trace events will be sent to.
@@ -466,12 +399,6 @@ func (o ApplicationTraceConfigPtrOutput) ToApplicationTraceConfigPtrOutput() App
 
 func (o ApplicationTraceConfigPtrOutput) ToApplicationTraceConfigPtrOutputWithContext(ctx context.Context) ApplicationTraceConfigPtrOutput {
 	return o
-}
-
-func (o ApplicationTraceConfigPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*ApplicationTraceConfig] {
-	return pulumix.Output[*ApplicationTraceConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ApplicationTraceConfigPtrOutput) Elem() ApplicationTraceConfigOutput {
@@ -544,12 +471,6 @@ func (i FunctionProvisionedConcurrencyConfigArgs) ToFunctionProvisionedConcurren
 	return pulumi.ToOutputWithContext(ctx, i).(FunctionProvisionedConcurrencyConfigOutput)
 }
 
-func (i FunctionProvisionedConcurrencyConfigArgs) ToOutput(ctx context.Context) pulumix.Output[FunctionProvisionedConcurrencyConfig] {
-	return pulumix.Output[FunctionProvisionedConcurrencyConfig]{
-		OutputState: i.ToFunctionProvisionedConcurrencyConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i FunctionProvisionedConcurrencyConfigArgs) ToFunctionProvisionedConcurrencyConfigPtrOutput() FunctionProvisionedConcurrencyConfigPtrOutput {
 	return i.ToFunctionProvisionedConcurrencyConfigPtrOutputWithContext(context.Background())
 }
@@ -591,12 +512,6 @@ func (i *functionProvisionedConcurrencyConfigPtrType) ToFunctionProvisionedConcu
 	return pulumi.ToOutputWithContext(ctx, i).(FunctionProvisionedConcurrencyConfigPtrOutput)
 }
 
-func (i *functionProvisionedConcurrencyConfigPtrType) ToOutput(ctx context.Context) pulumix.Output[*FunctionProvisionedConcurrencyConfig] {
-	return pulumix.Output[*FunctionProvisionedConcurrencyConfig]{
-		OutputState: i.ToFunctionProvisionedConcurrencyConfigPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type FunctionProvisionedConcurrencyConfigOutput struct{ *pulumi.OutputState }
 
 func (FunctionProvisionedConcurrencyConfigOutput) ElementType() reflect.Type {
@@ -621,12 +536,6 @@ func (o FunctionProvisionedConcurrencyConfigOutput) ToFunctionProvisionedConcurr
 	}).(FunctionProvisionedConcurrencyConfigPtrOutput)
 }
 
-func (o FunctionProvisionedConcurrencyConfigOutput) ToOutput(ctx context.Context) pulumix.Output[FunctionProvisionedConcurrencyConfig] {
-	return pulumix.Output[FunctionProvisionedConcurrencyConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) Configuration specifying a constant amount of provisioned concurrency.
 func (o FunctionProvisionedConcurrencyConfigOutput) Count() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v FunctionProvisionedConcurrencyConfig) *int { return v.Count }).(pulumi.IntPtrOutput)
@@ -649,12 +558,6 @@ func (o FunctionProvisionedConcurrencyConfigPtrOutput) ToFunctionProvisionedConc
 
 func (o FunctionProvisionedConcurrencyConfigPtrOutput) ToFunctionProvisionedConcurrencyConfigPtrOutputWithContext(ctx context.Context) FunctionProvisionedConcurrencyConfigPtrOutput {
 	return o
-}
-
-func (o FunctionProvisionedConcurrencyConfigPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*FunctionProvisionedConcurrencyConfig] {
-	return pulumix.Output[*FunctionProvisionedConcurrencyConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o FunctionProvisionedConcurrencyConfigPtrOutput) Elem() FunctionProvisionedConcurrencyConfigOutput {
@@ -724,12 +627,6 @@ func (i FunctionSourceDetailsArgs) ToFunctionSourceDetailsOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(FunctionSourceDetailsOutput)
 }
 
-func (i FunctionSourceDetailsArgs) ToOutput(ctx context.Context) pulumix.Output[FunctionSourceDetails] {
-	return pulumix.Output[FunctionSourceDetails]{
-		OutputState: i.ToFunctionSourceDetailsOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i FunctionSourceDetailsArgs) ToFunctionSourceDetailsPtrOutput() FunctionSourceDetailsPtrOutput {
 	return i.ToFunctionSourceDetailsPtrOutputWithContext(context.Background())
 }
@@ -771,12 +668,6 @@ func (i *functionSourceDetailsPtrType) ToFunctionSourceDetailsPtrOutputWithConte
 	return pulumi.ToOutputWithContext(ctx, i).(FunctionSourceDetailsPtrOutput)
 }
 
-func (i *functionSourceDetailsPtrType) ToOutput(ctx context.Context) pulumix.Output[*FunctionSourceDetails] {
-	return pulumix.Output[*FunctionSourceDetails]{
-		OutputState: i.ToFunctionSourceDetailsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type FunctionSourceDetailsOutput struct{ *pulumi.OutputState }
 
 func (FunctionSourceDetailsOutput) ElementType() reflect.Type {
@@ -801,12 +692,6 @@ func (o FunctionSourceDetailsOutput) ToFunctionSourceDetailsPtrOutputWithContext
 	}).(FunctionSourceDetailsPtrOutput)
 }
 
-func (o FunctionSourceDetailsOutput) ToOutput(ctx context.Context) pulumix.Output[FunctionSourceDetails] {
-	return pulumix.Output[FunctionSourceDetails]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PbfListing this function is sourced from.
 func (o FunctionSourceDetailsOutput) PbfListingId() pulumi.StringOutput {
 	return o.ApplyT(func(v FunctionSourceDetails) string { return v.PbfListingId }).(pulumi.StringOutput)
@@ -829,12 +714,6 @@ func (o FunctionSourceDetailsPtrOutput) ToFunctionSourceDetailsPtrOutput() Funct
 
 func (o FunctionSourceDetailsPtrOutput) ToFunctionSourceDetailsPtrOutputWithContext(ctx context.Context) FunctionSourceDetailsPtrOutput {
 	return o
-}
-
-func (o FunctionSourceDetailsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*FunctionSourceDetails] {
-	return pulumix.Output[*FunctionSourceDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o FunctionSourceDetailsPtrOutput) Elem() FunctionSourceDetailsOutput {
@@ -906,12 +785,6 @@ func (i FunctionTraceConfigArgs) ToFunctionTraceConfigOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(FunctionTraceConfigOutput)
 }
 
-func (i FunctionTraceConfigArgs) ToOutput(ctx context.Context) pulumix.Output[FunctionTraceConfig] {
-	return pulumix.Output[FunctionTraceConfig]{
-		OutputState: i.ToFunctionTraceConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i FunctionTraceConfigArgs) ToFunctionTraceConfigPtrOutput() FunctionTraceConfigPtrOutput {
 	return i.ToFunctionTraceConfigPtrOutputWithContext(context.Background())
 }
@@ -953,12 +826,6 @@ func (i *functionTraceConfigPtrType) ToFunctionTraceConfigPtrOutputWithContext(c
 	return pulumi.ToOutputWithContext(ctx, i).(FunctionTraceConfigPtrOutput)
 }
 
-func (i *functionTraceConfigPtrType) ToOutput(ctx context.Context) pulumix.Output[*FunctionTraceConfig] {
-	return pulumix.Output[*FunctionTraceConfig]{
-		OutputState: i.ToFunctionTraceConfigPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type FunctionTraceConfigOutput struct{ *pulumi.OutputState }
 
 func (FunctionTraceConfigOutput) ElementType() reflect.Type {
@@ -983,12 +850,6 @@ func (o FunctionTraceConfigOutput) ToFunctionTraceConfigPtrOutputWithContext(ctx
 	}).(FunctionTraceConfigPtrOutput)
 }
 
-func (o FunctionTraceConfigOutput) ToOutput(ctx context.Context) pulumix.Output[FunctionTraceConfig] {
-	return pulumix.Output[FunctionTraceConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) Define if tracing is enabled for the resource.
 //
 // ** IMPORTANT **
@@ -1009,12 +870,6 @@ func (o FunctionTraceConfigPtrOutput) ToFunctionTraceConfigPtrOutput() FunctionT
 
 func (o FunctionTraceConfigPtrOutput) ToFunctionTraceConfigPtrOutputWithContext(ctx context.Context) FunctionTraceConfigPtrOutput {
 	return o
-}
-
-func (o FunctionTraceConfigPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*FunctionTraceConfig] {
-	return pulumix.Output[*FunctionTraceConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o FunctionTraceConfigPtrOutput) Elem() FunctionTraceConfigOutput {
@@ -1042,7 +897,7 @@ func (o FunctionTraceConfigPtrOutput) IsEnabled() pulumi.BoolPtrOutput {
 
 type GetApplicationImagePolicyConfig struct {
 	// Define if image signature verification policy is enabled for the application.
-	IsPolicyEnabled bool `pulumi:"isPolicyEnabled"`
+	IsPolicyEnabled *bool `pulumi:"isPolicyEnabled"`
 	// A list of KMS key details.
 	KeyDetails []GetApplicationImagePolicyConfigKeyDetail `pulumi:"keyDetails"`
 }
@@ -1060,7 +915,7 @@ type GetApplicationImagePolicyConfigInput interface {
 
 type GetApplicationImagePolicyConfigArgs struct {
 	// Define if image signature verification policy is enabled for the application.
-	IsPolicyEnabled pulumi.BoolInput `pulumi:"isPolicyEnabled"`
+	IsPolicyEnabled pulumi.BoolPtrInput `pulumi:"isPolicyEnabled"`
 	// A list of KMS key details.
 	KeyDetails GetApplicationImagePolicyConfigKeyDetailArrayInput `pulumi:"keyDetails"`
 }
@@ -1075,12 +930,6 @@ func (i GetApplicationImagePolicyConfigArgs) ToGetApplicationImagePolicyConfigOu
 
 func (i GetApplicationImagePolicyConfigArgs) ToGetApplicationImagePolicyConfigOutputWithContext(ctx context.Context) GetApplicationImagePolicyConfigOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetApplicationImagePolicyConfigOutput)
-}
-
-func (i GetApplicationImagePolicyConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetApplicationImagePolicyConfig] {
-	return pulumix.Output[GetApplicationImagePolicyConfig]{
-		OutputState: i.ToGetApplicationImagePolicyConfigOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetApplicationImagePolicyConfigArrayInput is an input type that accepts GetApplicationImagePolicyConfigArray and GetApplicationImagePolicyConfigArrayOutput values.
@@ -1108,12 +957,6 @@ func (i GetApplicationImagePolicyConfigArray) ToGetApplicationImagePolicyConfigA
 	return pulumi.ToOutputWithContext(ctx, i).(GetApplicationImagePolicyConfigArrayOutput)
 }
 
-func (i GetApplicationImagePolicyConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetApplicationImagePolicyConfig] {
-	return pulumix.Output[[]GetApplicationImagePolicyConfig]{
-		OutputState: i.ToGetApplicationImagePolicyConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetApplicationImagePolicyConfigOutput struct{ *pulumi.OutputState }
 
 func (GetApplicationImagePolicyConfigOutput) ElementType() reflect.Type {
@@ -1128,15 +971,9 @@ func (o GetApplicationImagePolicyConfigOutput) ToGetApplicationImagePolicyConfig
 	return o
 }
 
-func (o GetApplicationImagePolicyConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetApplicationImagePolicyConfig] {
-	return pulumix.Output[GetApplicationImagePolicyConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Define if image signature verification policy is enabled for the application.
-func (o GetApplicationImagePolicyConfigOutput) IsPolicyEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetApplicationImagePolicyConfig) bool { return v.IsPolicyEnabled }).(pulumi.BoolOutput)
+func (o GetApplicationImagePolicyConfigOutput) IsPolicyEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetApplicationImagePolicyConfig) *bool { return v.IsPolicyEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // A list of KMS key details.
@@ -1160,12 +997,6 @@ func (o GetApplicationImagePolicyConfigArrayOutput) ToGetApplicationImagePolicyC
 	return o
 }
 
-func (o GetApplicationImagePolicyConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetApplicationImagePolicyConfig] {
-	return pulumix.Output[[]GetApplicationImagePolicyConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetApplicationImagePolicyConfigArrayOutput) Index(i pulumi.IntInput) GetApplicationImagePolicyConfigOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetApplicationImagePolicyConfig {
 		return vs[0].([]GetApplicationImagePolicyConfig)[vs[1].(int)]
@@ -1174,7 +1005,7 @@ func (o GetApplicationImagePolicyConfigArrayOutput) Index(i pulumi.IntInput) Get
 
 type GetApplicationImagePolicyConfigKeyDetail struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the KMS key that will be used to verify the image signature.
-	KmsKeyId string `pulumi:"kmsKeyId"`
+	KmsKeyId *string `pulumi:"kmsKeyId"`
 }
 
 // GetApplicationImagePolicyConfigKeyDetailInput is an input type that accepts GetApplicationImagePolicyConfigKeyDetailArgs and GetApplicationImagePolicyConfigKeyDetailOutput values.
@@ -1190,7 +1021,7 @@ type GetApplicationImagePolicyConfigKeyDetailInput interface {
 
 type GetApplicationImagePolicyConfigKeyDetailArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the KMS key that will be used to verify the image signature.
-	KmsKeyId pulumi.StringInput `pulumi:"kmsKeyId"`
+	KmsKeyId pulumi.StringPtrInput `pulumi:"kmsKeyId"`
 }
 
 func (GetApplicationImagePolicyConfigKeyDetailArgs) ElementType() reflect.Type {
@@ -1203,12 +1034,6 @@ func (i GetApplicationImagePolicyConfigKeyDetailArgs) ToGetApplicationImagePolic
 
 func (i GetApplicationImagePolicyConfigKeyDetailArgs) ToGetApplicationImagePolicyConfigKeyDetailOutputWithContext(ctx context.Context) GetApplicationImagePolicyConfigKeyDetailOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetApplicationImagePolicyConfigKeyDetailOutput)
-}
-
-func (i GetApplicationImagePolicyConfigKeyDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetApplicationImagePolicyConfigKeyDetail] {
-	return pulumix.Output[GetApplicationImagePolicyConfigKeyDetail]{
-		OutputState: i.ToGetApplicationImagePolicyConfigKeyDetailOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetApplicationImagePolicyConfigKeyDetailArrayInput is an input type that accepts GetApplicationImagePolicyConfigKeyDetailArray and GetApplicationImagePolicyConfigKeyDetailArrayOutput values.
@@ -1236,12 +1061,6 @@ func (i GetApplicationImagePolicyConfigKeyDetailArray) ToGetApplicationImagePoli
 	return pulumi.ToOutputWithContext(ctx, i).(GetApplicationImagePolicyConfigKeyDetailArrayOutput)
 }
 
-func (i GetApplicationImagePolicyConfigKeyDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetApplicationImagePolicyConfigKeyDetail] {
-	return pulumix.Output[[]GetApplicationImagePolicyConfigKeyDetail]{
-		OutputState: i.ToGetApplicationImagePolicyConfigKeyDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetApplicationImagePolicyConfigKeyDetailOutput struct{ *pulumi.OutputState }
 
 func (GetApplicationImagePolicyConfigKeyDetailOutput) ElementType() reflect.Type {
@@ -1256,15 +1075,9 @@ func (o GetApplicationImagePolicyConfigKeyDetailOutput) ToGetApplicationImagePol
 	return o
 }
 
-func (o GetApplicationImagePolicyConfigKeyDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetApplicationImagePolicyConfigKeyDetail] {
-	return pulumix.Output[GetApplicationImagePolicyConfigKeyDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the KMS key that will be used to verify the image signature.
-func (o GetApplicationImagePolicyConfigKeyDetailOutput) KmsKeyId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetApplicationImagePolicyConfigKeyDetail) string { return v.KmsKeyId }).(pulumi.StringOutput)
+func (o GetApplicationImagePolicyConfigKeyDetailOutput) KmsKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetApplicationImagePolicyConfigKeyDetail) *string { return v.KmsKeyId }).(pulumi.StringPtrOutput)
 }
 
 type GetApplicationImagePolicyConfigKeyDetailArrayOutput struct{ *pulumi.OutputState }
@@ -1281,12 +1094,6 @@ func (o GetApplicationImagePolicyConfigKeyDetailArrayOutput) ToGetApplicationIma
 	return o
 }
 
-func (o GetApplicationImagePolicyConfigKeyDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetApplicationImagePolicyConfigKeyDetail] {
-	return pulumix.Output[[]GetApplicationImagePolicyConfigKeyDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetApplicationImagePolicyConfigKeyDetailArrayOutput) Index(i pulumi.IntInput) GetApplicationImagePolicyConfigKeyDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetApplicationImagePolicyConfigKeyDetail {
 		return vs[0].([]GetApplicationImagePolicyConfigKeyDetail)[vs[1].(int)]
@@ -1295,9 +1102,9 @@ func (o GetApplicationImagePolicyConfigKeyDetailArrayOutput) Index(i pulumi.IntI
 
 type GetApplicationTraceConfig struct {
 	// The OCID of the collector (e.g. an APM Domain) trace events will be sent to.
-	DomainId string `pulumi:"domainId"`
+	DomainId *string `pulumi:"domainId"`
 	// Define if tracing is enabled for the resource.
-	IsEnabled bool `pulumi:"isEnabled"`
+	IsEnabled *bool `pulumi:"isEnabled"`
 }
 
 // GetApplicationTraceConfigInput is an input type that accepts GetApplicationTraceConfigArgs and GetApplicationTraceConfigOutput values.
@@ -1313,9 +1120,9 @@ type GetApplicationTraceConfigInput interface {
 
 type GetApplicationTraceConfigArgs struct {
 	// The OCID of the collector (e.g. an APM Domain) trace events will be sent to.
-	DomainId pulumi.StringInput `pulumi:"domainId"`
+	DomainId pulumi.StringPtrInput `pulumi:"domainId"`
 	// Define if tracing is enabled for the resource.
-	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+	IsEnabled pulumi.BoolPtrInput `pulumi:"isEnabled"`
 }
 
 func (GetApplicationTraceConfigArgs) ElementType() reflect.Type {
@@ -1328,12 +1135,6 @@ func (i GetApplicationTraceConfigArgs) ToGetApplicationTraceConfigOutput() GetAp
 
 func (i GetApplicationTraceConfigArgs) ToGetApplicationTraceConfigOutputWithContext(ctx context.Context) GetApplicationTraceConfigOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetApplicationTraceConfigOutput)
-}
-
-func (i GetApplicationTraceConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetApplicationTraceConfig] {
-	return pulumix.Output[GetApplicationTraceConfig]{
-		OutputState: i.ToGetApplicationTraceConfigOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetApplicationTraceConfigArrayInput is an input type that accepts GetApplicationTraceConfigArray and GetApplicationTraceConfigArrayOutput values.
@@ -1361,12 +1162,6 @@ func (i GetApplicationTraceConfigArray) ToGetApplicationTraceConfigArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetApplicationTraceConfigArrayOutput)
 }
 
-func (i GetApplicationTraceConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetApplicationTraceConfig] {
-	return pulumix.Output[[]GetApplicationTraceConfig]{
-		OutputState: i.ToGetApplicationTraceConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetApplicationTraceConfigOutput struct{ *pulumi.OutputState }
 
 func (GetApplicationTraceConfigOutput) ElementType() reflect.Type {
@@ -1381,20 +1176,14 @@ func (o GetApplicationTraceConfigOutput) ToGetApplicationTraceConfigOutputWithCo
 	return o
 }
 
-func (o GetApplicationTraceConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetApplicationTraceConfig] {
-	return pulumix.Output[GetApplicationTraceConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the collector (e.g. an APM Domain) trace events will be sent to.
-func (o GetApplicationTraceConfigOutput) DomainId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetApplicationTraceConfig) string { return v.DomainId }).(pulumi.StringOutput)
+func (o GetApplicationTraceConfigOutput) DomainId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetApplicationTraceConfig) *string { return v.DomainId }).(pulumi.StringPtrOutput)
 }
 
 // Define if tracing is enabled for the resource.
-func (o GetApplicationTraceConfigOutput) IsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetApplicationTraceConfig) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+func (o GetApplicationTraceConfigOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetApplicationTraceConfig) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
 }
 
 type GetApplicationTraceConfigArrayOutput struct{ *pulumi.OutputState }
@@ -1411,12 +1200,6 @@ func (o GetApplicationTraceConfigArrayOutput) ToGetApplicationTraceConfigArrayOu
 	return o
 }
 
-func (o GetApplicationTraceConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetApplicationTraceConfig] {
-	return pulumix.Output[[]GetApplicationTraceConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetApplicationTraceConfigArrayOutput) Index(i pulumi.IntInput) GetApplicationTraceConfigOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetApplicationTraceConfig {
 		return vs[0].([]GetApplicationTraceConfig)[vs[1].(int)]
@@ -1425,33 +1208,33 @@ func (o GetApplicationTraceConfigArrayOutput) Index(i pulumi.IntInput) GetApplic
 
 type GetApplicationsApplication struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this resource belongs.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Application configuration for functions in this application (passed as environment variables). Can be overridden by function configuration. Keys must be ASCII strings consisting solely of letters, digits, and the '_' (underscore) character, and must not begin with a digit. Values should be limited to printable unicode characters.  Example: `{"MY_FUNCTION_CONFIG": "ConfVal"}`
 	Config map[string]interface{} `pulumi:"config"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A filter to return only applications with display names that match the display name string. Matching is exact.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// A filter to return only applications with the specified OCID.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Define the image signature verification policy for an application.
 	ImagePolicyConfigs []GetApplicationsApplicationImagePolicyConfig `pulumi:"imagePolicyConfigs"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the Network Security Groups to add the application to.
 	NetworkSecurityGroupIds []string `pulumi:"networkSecurityGroupIds"`
 	// Valid values are `GENERIC_X86`, `GENERIC_ARM` and `GENERIC_X86_ARM`. Default is `GENERIC_X86`. Setting this to `GENERIC_X86`, will run the functions in the application on X86 processor architecture. Setting this to `GENERIC_ARM`, will run the functions in the application on ARM processor architecture. When set to `GENERIC_X86_ARM`, functions in the application are run on either X86 or ARM processor architecture. Accepted values are: `GENERIC_X86`, `GENERIC_ARM`, `GENERIC_X86_ARM`
-	Shape string `pulumi:"shape"`
+	Shape *string `pulumi:"shape"`
 	// A filter to return only applications that match the lifecycle state in this parameter. Example: `Creating`
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the subnets in which to run functions in the application.
 	SubnetIds []string `pulumi:"subnetIds"`
 	// A syslog URL to which to send all function logs. Supports tcp, udp, and tcp+tls. The syslog URL must be reachable from all of the subnets configured for the application. Note: If you enable the Oracle Cloud Infrastructure Logging service for this application, the syslogUrl value is ignored. Function logs are sent to the Oracle Cloud Infrastructure Logging service, and not to the syslog URL.  Example: `tcp://logserver.myserver:1234`
-	SyslogUrl string `pulumi:"syslogUrl"`
+	SyslogUrl *string `pulumi:"syslogUrl"`
 	// The time the application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the application was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-09-12T22:47:12.613Z`
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// Define the tracing configuration for an application.
 	TraceConfigs []GetApplicationsApplicationTraceConfig `pulumi:"traceConfigs"`
 }
@@ -1469,33 +1252,33 @@ type GetApplicationsApplicationInput interface {
 
 type GetApplicationsApplicationArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this resource belongs.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Application configuration for functions in this application (passed as environment variables). Can be overridden by function configuration. Keys must be ASCII strings consisting solely of letters, digits, and the '_' (underscore) character, and must not begin with a digit. Values should be limited to printable unicode characters.  Example: `{"MY_FUNCTION_CONFIG": "ConfVal"}`
 	Config pulumi.MapInput `pulumi:"config"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A filter to return only applications with display names that match the display name string. Matching is exact.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// A filter to return only applications with the specified OCID.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Define the image signature verification policy for an application.
 	ImagePolicyConfigs GetApplicationsApplicationImagePolicyConfigArrayInput `pulumi:"imagePolicyConfigs"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the Network Security Groups to add the application to.
 	NetworkSecurityGroupIds pulumi.StringArrayInput `pulumi:"networkSecurityGroupIds"`
 	// Valid values are `GENERIC_X86`, `GENERIC_ARM` and `GENERIC_X86_ARM`. Default is `GENERIC_X86`. Setting this to `GENERIC_X86`, will run the functions in the application on X86 processor architecture. Setting this to `GENERIC_ARM`, will run the functions in the application on ARM processor architecture. When set to `GENERIC_X86_ARM`, functions in the application are run on either X86 or ARM processor architecture. Accepted values are: `GENERIC_X86`, `GENERIC_ARM`, `GENERIC_X86_ARM`
-	Shape pulumi.StringInput `pulumi:"shape"`
+	Shape pulumi.StringPtrInput `pulumi:"shape"`
 	// A filter to return only applications that match the lifecycle state in this parameter. Example: `Creating`
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the subnets in which to run functions in the application.
 	SubnetIds pulumi.StringArrayInput `pulumi:"subnetIds"`
 	// A syslog URL to which to send all function logs. Supports tcp, udp, and tcp+tls. The syslog URL must be reachable from all of the subnets configured for the application. Note: If you enable the Oracle Cloud Infrastructure Logging service for this application, the syslogUrl value is ignored. Function logs are sent to the Oracle Cloud Infrastructure Logging service, and not to the syslog URL.  Example: `tcp://logserver.myserver:1234`
-	SyslogUrl pulumi.StringInput `pulumi:"syslogUrl"`
+	SyslogUrl pulumi.StringPtrInput `pulumi:"syslogUrl"`
 	// The time the application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The time the application was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-09-12T22:47:12.613Z`
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 	// Define the tracing configuration for an application.
 	TraceConfigs GetApplicationsApplicationTraceConfigArrayInput `pulumi:"traceConfigs"`
 }
@@ -1510,12 +1293,6 @@ func (i GetApplicationsApplicationArgs) ToGetApplicationsApplicationOutput() Get
 
 func (i GetApplicationsApplicationArgs) ToGetApplicationsApplicationOutputWithContext(ctx context.Context) GetApplicationsApplicationOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetApplicationsApplicationOutput)
-}
-
-func (i GetApplicationsApplicationArgs) ToOutput(ctx context.Context) pulumix.Output[GetApplicationsApplication] {
-	return pulumix.Output[GetApplicationsApplication]{
-		OutputState: i.ToGetApplicationsApplicationOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetApplicationsApplicationArrayInput is an input type that accepts GetApplicationsApplicationArray and GetApplicationsApplicationArrayOutput values.
@@ -1543,12 +1320,6 @@ func (i GetApplicationsApplicationArray) ToGetApplicationsApplicationArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetApplicationsApplicationArrayOutput)
 }
 
-func (i GetApplicationsApplicationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetApplicationsApplication] {
-	return pulumix.Output[[]GetApplicationsApplication]{
-		OutputState: i.ToGetApplicationsApplicationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetApplicationsApplicationOutput struct{ *pulumi.OutputState }
 
 func (GetApplicationsApplicationOutput) ElementType() reflect.Type {
@@ -1563,15 +1334,9 @@ func (o GetApplicationsApplicationOutput) ToGetApplicationsApplicationOutputWith
 	return o
 }
 
-func (o GetApplicationsApplicationOutput) ToOutput(ctx context.Context) pulumix.Output[GetApplicationsApplication] {
-	return pulumix.Output[GetApplicationsApplication]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this resource belongs.
-func (o GetApplicationsApplicationOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetApplicationsApplication) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetApplicationsApplicationOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetApplicationsApplication) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Application configuration for functions in this application (passed as environment variables). Can be overridden by function configuration. Keys must be ASCII strings consisting solely of letters, digits, and the '_' (underscore) character, and must not begin with a digit. Values should be limited to printable unicode characters.  Example: `{"MY_FUNCTION_CONFIG": "ConfVal"}`
@@ -1585,8 +1350,8 @@ func (o GetApplicationsApplicationOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // A filter to return only applications with display names that match the display name string. Matching is exact.
-func (o GetApplicationsApplicationOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetApplicationsApplication) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetApplicationsApplicationOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetApplicationsApplication) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -1595,8 +1360,8 @@ func (o GetApplicationsApplicationOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // A filter to return only applications with the specified OCID.
-func (o GetApplicationsApplicationOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetApplicationsApplication) string { return v.Id }).(pulumi.StringOutput)
+func (o GetApplicationsApplicationOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetApplicationsApplication) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Define the image signature verification policy for an application.
@@ -1612,13 +1377,13 @@ func (o GetApplicationsApplicationOutput) NetworkSecurityGroupIds() pulumi.Strin
 }
 
 // Valid values are `GENERIC_X86`, `GENERIC_ARM` and `GENERIC_X86_ARM`. Default is `GENERIC_X86`. Setting this to `GENERIC_X86`, will run the functions in the application on X86 processor architecture. Setting this to `GENERIC_ARM`, will run the functions in the application on ARM processor architecture. When set to `GENERIC_X86_ARM`, functions in the application are run on either X86 or ARM processor architecture. Accepted values are: `GENERIC_X86`, `GENERIC_ARM`, `GENERIC_X86_ARM`
-func (o GetApplicationsApplicationOutput) Shape() pulumi.StringOutput {
-	return o.ApplyT(func(v GetApplicationsApplication) string { return v.Shape }).(pulumi.StringOutput)
+func (o GetApplicationsApplicationOutput) Shape() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetApplicationsApplication) *string { return v.Shape }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only applications that match the lifecycle state in this parameter. Example: `Creating`
-func (o GetApplicationsApplicationOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetApplicationsApplication) string { return v.State }).(pulumi.StringOutput)
+func (o GetApplicationsApplicationOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetApplicationsApplication) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the subnets in which to run functions in the application.
@@ -1627,18 +1392,18 @@ func (o GetApplicationsApplicationOutput) SubnetIds() pulumi.StringArrayOutput {
 }
 
 // A syslog URL to which to send all function logs. Supports tcp, udp, and tcp+tls. The syslog URL must be reachable from all of the subnets configured for the application. Note: If you enable the Oracle Cloud Infrastructure Logging service for this application, the syslogUrl value is ignored. Function logs are sent to the Oracle Cloud Infrastructure Logging service, and not to the syslog URL.  Example: `tcp://logserver.myserver:1234`
-func (o GetApplicationsApplicationOutput) SyslogUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v GetApplicationsApplication) string { return v.SyslogUrl }).(pulumi.StringOutput)
+func (o GetApplicationsApplicationOutput) SyslogUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetApplicationsApplication) *string { return v.SyslogUrl }).(pulumi.StringPtrOutput)
 }
 
 // The time the application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
-func (o GetApplicationsApplicationOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetApplicationsApplication) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetApplicationsApplicationOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetApplicationsApplication) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the application was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-09-12T22:47:12.613Z`
-func (o GetApplicationsApplicationOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetApplicationsApplication) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetApplicationsApplicationOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetApplicationsApplication) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // Define the tracing configuration for an application.
@@ -1660,12 +1425,6 @@ func (o GetApplicationsApplicationArrayOutput) ToGetApplicationsApplicationArray
 	return o
 }
 
-func (o GetApplicationsApplicationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetApplicationsApplication] {
-	return pulumix.Output[[]GetApplicationsApplication]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetApplicationsApplicationArrayOutput) Index(i pulumi.IntInput) GetApplicationsApplicationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetApplicationsApplication {
 		return vs[0].([]GetApplicationsApplication)[vs[1].(int)]
@@ -1674,7 +1433,7 @@ func (o GetApplicationsApplicationArrayOutput) Index(i pulumi.IntInput) GetAppli
 
 type GetApplicationsApplicationImagePolicyConfig struct {
 	// Define if image signature verification policy is enabled for the application.
-	IsPolicyEnabled bool `pulumi:"isPolicyEnabled"`
+	IsPolicyEnabled *bool `pulumi:"isPolicyEnabled"`
 	// A list of KMS key details.
 	KeyDetails []GetApplicationsApplicationImagePolicyConfigKeyDetail `pulumi:"keyDetails"`
 }
@@ -1692,7 +1451,7 @@ type GetApplicationsApplicationImagePolicyConfigInput interface {
 
 type GetApplicationsApplicationImagePolicyConfigArgs struct {
 	// Define if image signature verification policy is enabled for the application.
-	IsPolicyEnabled pulumi.BoolInput `pulumi:"isPolicyEnabled"`
+	IsPolicyEnabled pulumi.BoolPtrInput `pulumi:"isPolicyEnabled"`
 	// A list of KMS key details.
 	KeyDetails GetApplicationsApplicationImagePolicyConfigKeyDetailArrayInput `pulumi:"keyDetails"`
 }
@@ -1707,12 +1466,6 @@ func (i GetApplicationsApplicationImagePolicyConfigArgs) ToGetApplicationsApplic
 
 func (i GetApplicationsApplicationImagePolicyConfigArgs) ToGetApplicationsApplicationImagePolicyConfigOutputWithContext(ctx context.Context) GetApplicationsApplicationImagePolicyConfigOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetApplicationsApplicationImagePolicyConfigOutput)
-}
-
-func (i GetApplicationsApplicationImagePolicyConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetApplicationsApplicationImagePolicyConfig] {
-	return pulumix.Output[GetApplicationsApplicationImagePolicyConfig]{
-		OutputState: i.ToGetApplicationsApplicationImagePolicyConfigOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetApplicationsApplicationImagePolicyConfigArrayInput is an input type that accepts GetApplicationsApplicationImagePolicyConfigArray and GetApplicationsApplicationImagePolicyConfigArrayOutput values.
@@ -1740,12 +1493,6 @@ func (i GetApplicationsApplicationImagePolicyConfigArray) ToGetApplicationsAppli
 	return pulumi.ToOutputWithContext(ctx, i).(GetApplicationsApplicationImagePolicyConfigArrayOutput)
 }
 
-func (i GetApplicationsApplicationImagePolicyConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetApplicationsApplicationImagePolicyConfig] {
-	return pulumix.Output[[]GetApplicationsApplicationImagePolicyConfig]{
-		OutputState: i.ToGetApplicationsApplicationImagePolicyConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetApplicationsApplicationImagePolicyConfigOutput struct{ *pulumi.OutputState }
 
 func (GetApplicationsApplicationImagePolicyConfigOutput) ElementType() reflect.Type {
@@ -1760,15 +1507,9 @@ func (o GetApplicationsApplicationImagePolicyConfigOutput) ToGetApplicationsAppl
 	return o
 }
 
-func (o GetApplicationsApplicationImagePolicyConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetApplicationsApplicationImagePolicyConfig] {
-	return pulumix.Output[GetApplicationsApplicationImagePolicyConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Define if image signature verification policy is enabled for the application.
-func (o GetApplicationsApplicationImagePolicyConfigOutput) IsPolicyEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetApplicationsApplicationImagePolicyConfig) bool { return v.IsPolicyEnabled }).(pulumi.BoolOutput)
+func (o GetApplicationsApplicationImagePolicyConfigOutput) IsPolicyEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetApplicationsApplicationImagePolicyConfig) *bool { return v.IsPolicyEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // A list of KMS key details.
@@ -1792,12 +1533,6 @@ func (o GetApplicationsApplicationImagePolicyConfigArrayOutput) ToGetApplication
 	return o
 }
 
-func (o GetApplicationsApplicationImagePolicyConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetApplicationsApplicationImagePolicyConfig] {
-	return pulumix.Output[[]GetApplicationsApplicationImagePolicyConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetApplicationsApplicationImagePolicyConfigArrayOutput) Index(i pulumi.IntInput) GetApplicationsApplicationImagePolicyConfigOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetApplicationsApplicationImagePolicyConfig {
 		return vs[0].([]GetApplicationsApplicationImagePolicyConfig)[vs[1].(int)]
@@ -1806,7 +1541,7 @@ func (o GetApplicationsApplicationImagePolicyConfigArrayOutput) Index(i pulumi.I
 
 type GetApplicationsApplicationImagePolicyConfigKeyDetail struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the KMS key that will be used to verify the image signature.
-	KmsKeyId string `pulumi:"kmsKeyId"`
+	KmsKeyId *string `pulumi:"kmsKeyId"`
 }
 
 // GetApplicationsApplicationImagePolicyConfigKeyDetailInput is an input type that accepts GetApplicationsApplicationImagePolicyConfigKeyDetailArgs and GetApplicationsApplicationImagePolicyConfigKeyDetailOutput values.
@@ -1822,7 +1557,7 @@ type GetApplicationsApplicationImagePolicyConfigKeyDetailInput interface {
 
 type GetApplicationsApplicationImagePolicyConfigKeyDetailArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the KMS key that will be used to verify the image signature.
-	KmsKeyId pulumi.StringInput `pulumi:"kmsKeyId"`
+	KmsKeyId pulumi.StringPtrInput `pulumi:"kmsKeyId"`
 }
 
 func (GetApplicationsApplicationImagePolicyConfigKeyDetailArgs) ElementType() reflect.Type {
@@ -1835,12 +1570,6 @@ func (i GetApplicationsApplicationImagePolicyConfigKeyDetailArgs) ToGetApplicati
 
 func (i GetApplicationsApplicationImagePolicyConfigKeyDetailArgs) ToGetApplicationsApplicationImagePolicyConfigKeyDetailOutputWithContext(ctx context.Context) GetApplicationsApplicationImagePolicyConfigKeyDetailOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetApplicationsApplicationImagePolicyConfigKeyDetailOutput)
-}
-
-func (i GetApplicationsApplicationImagePolicyConfigKeyDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetApplicationsApplicationImagePolicyConfigKeyDetail] {
-	return pulumix.Output[GetApplicationsApplicationImagePolicyConfigKeyDetail]{
-		OutputState: i.ToGetApplicationsApplicationImagePolicyConfigKeyDetailOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetApplicationsApplicationImagePolicyConfigKeyDetailArrayInput is an input type that accepts GetApplicationsApplicationImagePolicyConfigKeyDetailArray and GetApplicationsApplicationImagePolicyConfigKeyDetailArrayOutput values.
@@ -1868,12 +1597,6 @@ func (i GetApplicationsApplicationImagePolicyConfigKeyDetailArray) ToGetApplicat
 	return pulumi.ToOutputWithContext(ctx, i).(GetApplicationsApplicationImagePolicyConfigKeyDetailArrayOutput)
 }
 
-func (i GetApplicationsApplicationImagePolicyConfigKeyDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetApplicationsApplicationImagePolicyConfigKeyDetail] {
-	return pulumix.Output[[]GetApplicationsApplicationImagePolicyConfigKeyDetail]{
-		OutputState: i.ToGetApplicationsApplicationImagePolicyConfigKeyDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetApplicationsApplicationImagePolicyConfigKeyDetailOutput struct{ *pulumi.OutputState }
 
 func (GetApplicationsApplicationImagePolicyConfigKeyDetailOutput) ElementType() reflect.Type {
@@ -1888,15 +1611,9 @@ func (o GetApplicationsApplicationImagePolicyConfigKeyDetailOutput) ToGetApplica
 	return o
 }
 
-func (o GetApplicationsApplicationImagePolicyConfigKeyDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetApplicationsApplicationImagePolicyConfigKeyDetail] {
-	return pulumix.Output[GetApplicationsApplicationImagePolicyConfigKeyDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the KMS key that will be used to verify the image signature.
-func (o GetApplicationsApplicationImagePolicyConfigKeyDetailOutput) KmsKeyId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetApplicationsApplicationImagePolicyConfigKeyDetail) string { return v.KmsKeyId }).(pulumi.StringOutput)
+func (o GetApplicationsApplicationImagePolicyConfigKeyDetailOutput) KmsKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetApplicationsApplicationImagePolicyConfigKeyDetail) *string { return v.KmsKeyId }).(pulumi.StringPtrOutput)
 }
 
 type GetApplicationsApplicationImagePolicyConfigKeyDetailArrayOutput struct{ *pulumi.OutputState }
@@ -1913,12 +1630,6 @@ func (o GetApplicationsApplicationImagePolicyConfigKeyDetailArrayOutput) ToGetAp
 	return o
 }
 
-func (o GetApplicationsApplicationImagePolicyConfigKeyDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetApplicationsApplicationImagePolicyConfigKeyDetail] {
-	return pulumix.Output[[]GetApplicationsApplicationImagePolicyConfigKeyDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetApplicationsApplicationImagePolicyConfigKeyDetailArrayOutput) Index(i pulumi.IntInput) GetApplicationsApplicationImagePolicyConfigKeyDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetApplicationsApplicationImagePolicyConfigKeyDetail {
 		return vs[0].([]GetApplicationsApplicationImagePolicyConfigKeyDetail)[vs[1].(int)]
@@ -1927,9 +1638,9 @@ func (o GetApplicationsApplicationImagePolicyConfigKeyDetailArrayOutput) Index(i
 
 type GetApplicationsApplicationTraceConfig struct {
 	// The OCID of the collector (e.g. an APM Domain) trace events will be sent to.
-	DomainId string `pulumi:"domainId"`
+	DomainId *string `pulumi:"domainId"`
 	// Define if tracing is enabled for the resource.
-	IsEnabled bool `pulumi:"isEnabled"`
+	IsEnabled *bool `pulumi:"isEnabled"`
 }
 
 // GetApplicationsApplicationTraceConfigInput is an input type that accepts GetApplicationsApplicationTraceConfigArgs and GetApplicationsApplicationTraceConfigOutput values.
@@ -1945,9 +1656,9 @@ type GetApplicationsApplicationTraceConfigInput interface {
 
 type GetApplicationsApplicationTraceConfigArgs struct {
 	// The OCID of the collector (e.g. an APM Domain) trace events will be sent to.
-	DomainId pulumi.StringInput `pulumi:"domainId"`
+	DomainId pulumi.StringPtrInput `pulumi:"domainId"`
 	// Define if tracing is enabled for the resource.
-	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+	IsEnabled pulumi.BoolPtrInput `pulumi:"isEnabled"`
 }
 
 func (GetApplicationsApplicationTraceConfigArgs) ElementType() reflect.Type {
@@ -1960,12 +1671,6 @@ func (i GetApplicationsApplicationTraceConfigArgs) ToGetApplicationsApplicationT
 
 func (i GetApplicationsApplicationTraceConfigArgs) ToGetApplicationsApplicationTraceConfigOutputWithContext(ctx context.Context) GetApplicationsApplicationTraceConfigOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetApplicationsApplicationTraceConfigOutput)
-}
-
-func (i GetApplicationsApplicationTraceConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetApplicationsApplicationTraceConfig] {
-	return pulumix.Output[GetApplicationsApplicationTraceConfig]{
-		OutputState: i.ToGetApplicationsApplicationTraceConfigOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetApplicationsApplicationTraceConfigArrayInput is an input type that accepts GetApplicationsApplicationTraceConfigArray and GetApplicationsApplicationTraceConfigArrayOutput values.
@@ -1993,12 +1698,6 @@ func (i GetApplicationsApplicationTraceConfigArray) ToGetApplicationsApplication
 	return pulumi.ToOutputWithContext(ctx, i).(GetApplicationsApplicationTraceConfigArrayOutput)
 }
 
-func (i GetApplicationsApplicationTraceConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetApplicationsApplicationTraceConfig] {
-	return pulumix.Output[[]GetApplicationsApplicationTraceConfig]{
-		OutputState: i.ToGetApplicationsApplicationTraceConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetApplicationsApplicationTraceConfigOutput struct{ *pulumi.OutputState }
 
 func (GetApplicationsApplicationTraceConfigOutput) ElementType() reflect.Type {
@@ -2013,20 +1712,14 @@ func (o GetApplicationsApplicationTraceConfigOutput) ToGetApplicationsApplicatio
 	return o
 }
 
-func (o GetApplicationsApplicationTraceConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetApplicationsApplicationTraceConfig] {
-	return pulumix.Output[GetApplicationsApplicationTraceConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the collector (e.g. an APM Domain) trace events will be sent to.
-func (o GetApplicationsApplicationTraceConfigOutput) DomainId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetApplicationsApplicationTraceConfig) string { return v.DomainId }).(pulumi.StringOutput)
+func (o GetApplicationsApplicationTraceConfigOutput) DomainId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetApplicationsApplicationTraceConfig) *string { return v.DomainId }).(pulumi.StringPtrOutput)
 }
 
 // Define if tracing is enabled for the resource.
-func (o GetApplicationsApplicationTraceConfigOutput) IsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetApplicationsApplicationTraceConfig) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+func (o GetApplicationsApplicationTraceConfigOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetApplicationsApplicationTraceConfig) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
 }
 
 type GetApplicationsApplicationTraceConfigArrayOutput struct{ *pulumi.OutputState }
@@ -2041,12 +1734,6 @@ func (o GetApplicationsApplicationTraceConfigArrayOutput) ToGetApplicationsAppli
 
 func (o GetApplicationsApplicationTraceConfigArrayOutput) ToGetApplicationsApplicationTraceConfigArrayOutputWithContext(ctx context.Context) GetApplicationsApplicationTraceConfigArrayOutput {
 	return o
-}
-
-func (o GetApplicationsApplicationTraceConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetApplicationsApplicationTraceConfig] {
-	return pulumix.Output[[]GetApplicationsApplicationTraceConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetApplicationsApplicationTraceConfigArrayOutput) Index(i pulumi.IntInput) GetApplicationsApplicationTraceConfigOutput {
@@ -2090,12 +1777,6 @@ func (i GetApplicationsFilterArgs) ToGetApplicationsFilterOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetApplicationsFilterOutput)
 }
 
-func (i GetApplicationsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetApplicationsFilter] {
-	return pulumix.Output[GetApplicationsFilter]{
-		OutputState: i.ToGetApplicationsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetApplicationsFilterArrayInput is an input type that accepts GetApplicationsFilterArray and GetApplicationsFilterArrayOutput values.
 // You can construct a concrete instance of `GetApplicationsFilterArrayInput` via:
 //
@@ -2121,12 +1802,6 @@ func (i GetApplicationsFilterArray) ToGetApplicationsFilterArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetApplicationsFilterArrayOutput)
 }
 
-func (i GetApplicationsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetApplicationsFilter] {
-	return pulumix.Output[[]GetApplicationsFilter]{
-		OutputState: i.ToGetApplicationsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetApplicationsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetApplicationsFilterOutput) ElementType() reflect.Type {
@@ -2139,12 +1814,6 @@ func (o GetApplicationsFilterOutput) ToGetApplicationsFilterOutput() GetApplicat
 
 func (o GetApplicationsFilterOutput) ToGetApplicationsFilterOutputWithContext(ctx context.Context) GetApplicationsFilterOutput {
 	return o
-}
-
-func (o GetApplicationsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetApplicationsFilter] {
-	return pulumix.Output[GetApplicationsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetApplicationsFilterOutput) Name() pulumi.StringOutput {
@@ -2173,12 +1842,6 @@ func (o GetApplicationsFilterArrayOutput) ToGetApplicationsFilterArrayOutputWith
 	return o
 }
 
-func (o GetApplicationsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetApplicationsFilter] {
-	return pulumix.Output[[]GetApplicationsFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetApplicationsFilterArrayOutput) Index(i pulumi.IntInput) GetApplicationsFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetApplicationsFilter {
 		return vs[0].([]GetApplicationsFilter)[vs[1].(int)]
@@ -2187,9 +1850,9 @@ func (o GetApplicationsFilterArrayOutput) Index(i pulumi.IntInput) GetApplicatio
 
 type GetFunctionProvisionedConcurrencyConfig struct {
 	// Configuration specifying a constant amount of provisioned concurrency.
-	Count int `pulumi:"count"`
+	Count *int `pulumi:"count"`
 	// The strategy for provisioned concurrency to be used.
-	Strategy string `pulumi:"strategy"`
+	Strategy *string `pulumi:"strategy"`
 }
 
 // GetFunctionProvisionedConcurrencyConfigInput is an input type that accepts GetFunctionProvisionedConcurrencyConfigArgs and GetFunctionProvisionedConcurrencyConfigOutput values.
@@ -2205,9 +1868,9 @@ type GetFunctionProvisionedConcurrencyConfigInput interface {
 
 type GetFunctionProvisionedConcurrencyConfigArgs struct {
 	// Configuration specifying a constant amount of provisioned concurrency.
-	Count pulumi.IntInput `pulumi:"count"`
+	Count pulumi.IntPtrInput `pulumi:"count"`
 	// The strategy for provisioned concurrency to be used.
-	Strategy pulumi.StringInput `pulumi:"strategy"`
+	Strategy pulumi.StringPtrInput `pulumi:"strategy"`
 }
 
 func (GetFunctionProvisionedConcurrencyConfigArgs) ElementType() reflect.Type {
@@ -2220,12 +1883,6 @@ func (i GetFunctionProvisionedConcurrencyConfigArgs) ToGetFunctionProvisionedCon
 
 func (i GetFunctionProvisionedConcurrencyConfigArgs) ToGetFunctionProvisionedConcurrencyConfigOutputWithContext(ctx context.Context) GetFunctionProvisionedConcurrencyConfigOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetFunctionProvisionedConcurrencyConfigOutput)
-}
-
-func (i GetFunctionProvisionedConcurrencyConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetFunctionProvisionedConcurrencyConfig] {
-	return pulumix.Output[GetFunctionProvisionedConcurrencyConfig]{
-		OutputState: i.ToGetFunctionProvisionedConcurrencyConfigOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetFunctionProvisionedConcurrencyConfigArrayInput is an input type that accepts GetFunctionProvisionedConcurrencyConfigArray and GetFunctionProvisionedConcurrencyConfigArrayOutput values.
@@ -2253,12 +1910,6 @@ func (i GetFunctionProvisionedConcurrencyConfigArray) ToGetFunctionProvisionedCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetFunctionProvisionedConcurrencyConfigArrayOutput)
 }
 
-func (i GetFunctionProvisionedConcurrencyConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFunctionProvisionedConcurrencyConfig] {
-	return pulumix.Output[[]GetFunctionProvisionedConcurrencyConfig]{
-		OutputState: i.ToGetFunctionProvisionedConcurrencyConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFunctionProvisionedConcurrencyConfigOutput struct{ *pulumi.OutputState }
 
 func (GetFunctionProvisionedConcurrencyConfigOutput) ElementType() reflect.Type {
@@ -2273,20 +1924,14 @@ func (o GetFunctionProvisionedConcurrencyConfigOutput) ToGetFunctionProvisionedC
 	return o
 }
 
-func (o GetFunctionProvisionedConcurrencyConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetFunctionProvisionedConcurrencyConfig] {
-	return pulumix.Output[GetFunctionProvisionedConcurrencyConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Configuration specifying a constant amount of provisioned concurrency.
-func (o GetFunctionProvisionedConcurrencyConfigOutput) Count() pulumi.IntOutput {
-	return o.ApplyT(func(v GetFunctionProvisionedConcurrencyConfig) int { return v.Count }).(pulumi.IntOutput)
+func (o GetFunctionProvisionedConcurrencyConfigOutput) Count() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetFunctionProvisionedConcurrencyConfig) *int { return v.Count }).(pulumi.IntPtrOutput)
 }
 
 // The strategy for provisioned concurrency to be used.
-func (o GetFunctionProvisionedConcurrencyConfigOutput) Strategy() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFunctionProvisionedConcurrencyConfig) string { return v.Strategy }).(pulumi.StringOutput)
+func (o GetFunctionProvisionedConcurrencyConfigOutput) Strategy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFunctionProvisionedConcurrencyConfig) *string { return v.Strategy }).(pulumi.StringPtrOutput)
 }
 
 type GetFunctionProvisionedConcurrencyConfigArrayOutput struct{ *pulumi.OutputState }
@@ -2303,12 +1948,6 @@ func (o GetFunctionProvisionedConcurrencyConfigArrayOutput) ToGetFunctionProvisi
 	return o
 }
 
-func (o GetFunctionProvisionedConcurrencyConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFunctionProvisionedConcurrencyConfig] {
-	return pulumix.Output[[]GetFunctionProvisionedConcurrencyConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetFunctionProvisionedConcurrencyConfigArrayOutput) Index(i pulumi.IntInput) GetFunctionProvisionedConcurrencyConfigOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFunctionProvisionedConcurrencyConfig {
 		return vs[0].([]GetFunctionProvisionedConcurrencyConfig)[vs[1].(int)]
@@ -2317,9 +1956,9 @@ func (o GetFunctionProvisionedConcurrencyConfigArrayOutput) Index(i pulumi.IntIn
 
 type GetFunctionSourceDetail struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PbfListing this function is sourced from.
-	PbfListingId string `pulumi:"pbfListingId"`
+	PbfListingId *string `pulumi:"pbfListingId"`
 	// Type of the Function Source. Possible values: PRE_BUILT_FUNCTIONS.
-	SourceType string `pulumi:"sourceType"`
+	SourceType *string `pulumi:"sourceType"`
 }
 
 // GetFunctionSourceDetailInput is an input type that accepts GetFunctionSourceDetailArgs and GetFunctionSourceDetailOutput values.
@@ -2335,9 +1974,9 @@ type GetFunctionSourceDetailInput interface {
 
 type GetFunctionSourceDetailArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PbfListing this function is sourced from.
-	PbfListingId pulumi.StringInput `pulumi:"pbfListingId"`
+	PbfListingId pulumi.StringPtrInput `pulumi:"pbfListingId"`
 	// Type of the Function Source. Possible values: PRE_BUILT_FUNCTIONS.
-	SourceType pulumi.StringInput `pulumi:"sourceType"`
+	SourceType pulumi.StringPtrInput `pulumi:"sourceType"`
 }
 
 func (GetFunctionSourceDetailArgs) ElementType() reflect.Type {
@@ -2350,12 +1989,6 @@ func (i GetFunctionSourceDetailArgs) ToGetFunctionSourceDetailOutput() GetFuncti
 
 func (i GetFunctionSourceDetailArgs) ToGetFunctionSourceDetailOutputWithContext(ctx context.Context) GetFunctionSourceDetailOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetFunctionSourceDetailOutput)
-}
-
-func (i GetFunctionSourceDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetFunctionSourceDetail] {
-	return pulumix.Output[GetFunctionSourceDetail]{
-		OutputState: i.ToGetFunctionSourceDetailOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetFunctionSourceDetailArrayInput is an input type that accepts GetFunctionSourceDetailArray and GetFunctionSourceDetailArrayOutput values.
@@ -2383,12 +2016,6 @@ func (i GetFunctionSourceDetailArray) ToGetFunctionSourceDetailArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetFunctionSourceDetailArrayOutput)
 }
 
-func (i GetFunctionSourceDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFunctionSourceDetail] {
-	return pulumix.Output[[]GetFunctionSourceDetail]{
-		OutputState: i.ToGetFunctionSourceDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFunctionSourceDetailOutput struct{ *pulumi.OutputState }
 
 func (GetFunctionSourceDetailOutput) ElementType() reflect.Type {
@@ -2403,20 +2030,14 @@ func (o GetFunctionSourceDetailOutput) ToGetFunctionSourceDetailOutputWithContex
 	return o
 }
 
-func (o GetFunctionSourceDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetFunctionSourceDetail] {
-	return pulumix.Output[GetFunctionSourceDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PbfListing this function is sourced from.
-func (o GetFunctionSourceDetailOutput) PbfListingId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFunctionSourceDetail) string { return v.PbfListingId }).(pulumi.StringOutput)
+func (o GetFunctionSourceDetailOutput) PbfListingId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFunctionSourceDetail) *string { return v.PbfListingId }).(pulumi.StringPtrOutput)
 }
 
 // Type of the Function Source. Possible values: PRE_BUILT_FUNCTIONS.
-func (o GetFunctionSourceDetailOutput) SourceType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFunctionSourceDetail) string { return v.SourceType }).(pulumi.StringOutput)
+func (o GetFunctionSourceDetailOutput) SourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFunctionSourceDetail) *string { return v.SourceType }).(pulumi.StringPtrOutput)
 }
 
 type GetFunctionSourceDetailArrayOutput struct{ *pulumi.OutputState }
@@ -2433,12 +2054,6 @@ func (o GetFunctionSourceDetailArrayOutput) ToGetFunctionSourceDetailArrayOutput
 	return o
 }
 
-func (o GetFunctionSourceDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFunctionSourceDetail] {
-	return pulumix.Output[[]GetFunctionSourceDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetFunctionSourceDetailArrayOutput) Index(i pulumi.IntInput) GetFunctionSourceDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFunctionSourceDetail {
 		return vs[0].([]GetFunctionSourceDetail)[vs[1].(int)]
@@ -2447,7 +2062,7 @@ func (o GetFunctionSourceDetailArrayOutput) Index(i pulumi.IntInput) GetFunction
 
 type GetFunctionTraceConfig struct {
 	// Define if tracing is enabled for the resource.
-	IsEnabled bool `pulumi:"isEnabled"`
+	IsEnabled *bool `pulumi:"isEnabled"`
 }
 
 // GetFunctionTraceConfigInput is an input type that accepts GetFunctionTraceConfigArgs and GetFunctionTraceConfigOutput values.
@@ -2463,7 +2078,7 @@ type GetFunctionTraceConfigInput interface {
 
 type GetFunctionTraceConfigArgs struct {
 	// Define if tracing is enabled for the resource.
-	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+	IsEnabled pulumi.BoolPtrInput `pulumi:"isEnabled"`
 }
 
 func (GetFunctionTraceConfigArgs) ElementType() reflect.Type {
@@ -2476,12 +2091,6 @@ func (i GetFunctionTraceConfigArgs) ToGetFunctionTraceConfigOutput() GetFunction
 
 func (i GetFunctionTraceConfigArgs) ToGetFunctionTraceConfigOutputWithContext(ctx context.Context) GetFunctionTraceConfigOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetFunctionTraceConfigOutput)
-}
-
-func (i GetFunctionTraceConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetFunctionTraceConfig] {
-	return pulumix.Output[GetFunctionTraceConfig]{
-		OutputState: i.ToGetFunctionTraceConfigOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetFunctionTraceConfigArrayInput is an input type that accepts GetFunctionTraceConfigArray and GetFunctionTraceConfigArrayOutput values.
@@ -2509,12 +2118,6 @@ func (i GetFunctionTraceConfigArray) ToGetFunctionTraceConfigArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetFunctionTraceConfigArrayOutput)
 }
 
-func (i GetFunctionTraceConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFunctionTraceConfig] {
-	return pulumix.Output[[]GetFunctionTraceConfig]{
-		OutputState: i.ToGetFunctionTraceConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFunctionTraceConfigOutput struct{ *pulumi.OutputState }
 
 func (GetFunctionTraceConfigOutput) ElementType() reflect.Type {
@@ -2529,15 +2132,9 @@ func (o GetFunctionTraceConfigOutput) ToGetFunctionTraceConfigOutputWithContext(
 	return o
 }
 
-func (o GetFunctionTraceConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetFunctionTraceConfig] {
-	return pulumix.Output[GetFunctionTraceConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Define if tracing is enabled for the resource.
-func (o GetFunctionTraceConfigOutput) IsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetFunctionTraceConfig) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+func (o GetFunctionTraceConfigOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetFunctionTraceConfig) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
 }
 
 type GetFunctionTraceConfigArrayOutput struct{ *pulumi.OutputState }
@@ -2552,12 +2149,6 @@ func (o GetFunctionTraceConfigArrayOutput) ToGetFunctionTraceConfigArrayOutput()
 
 func (o GetFunctionTraceConfigArrayOutput) ToGetFunctionTraceConfigArrayOutputWithContext(ctx context.Context) GetFunctionTraceConfigArrayOutput {
 	return o
-}
-
-func (o GetFunctionTraceConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFunctionTraceConfig] {
-	return pulumix.Output[[]GetFunctionTraceConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFunctionTraceConfigArrayOutput) Index(i pulumi.IntInput) GetFunctionTraceConfigOutput {
@@ -2601,12 +2192,6 @@ func (i GetFunctionsFilterArgs) ToGetFunctionsFilterOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetFunctionsFilterOutput)
 }
 
-func (i GetFunctionsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetFunctionsFilter] {
-	return pulumix.Output[GetFunctionsFilter]{
-		OutputState: i.ToGetFunctionsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetFunctionsFilterArrayInput is an input type that accepts GetFunctionsFilterArray and GetFunctionsFilterArrayOutput values.
 // You can construct a concrete instance of `GetFunctionsFilterArrayInput` via:
 //
@@ -2632,12 +2217,6 @@ func (i GetFunctionsFilterArray) ToGetFunctionsFilterArrayOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetFunctionsFilterArrayOutput)
 }
 
-func (i GetFunctionsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFunctionsFilter] {
-	return pulumix.Output[[]GetFunctionsFilter]{
-		OutputState: i.ToGetFunctionsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFunctionsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetFunctionsFilterOutput) ElementType() reflect.Type {
@@ -2650,12 +2229,6 @@ func (o GetFunctionsFilterOutput) ToGetFunctionsFilterOutput() GetFunctionsFilte
 
 func (o GetFunctionsFilterOutput) ToGetFunctionsFilterOutputWithContext(ctx context.Context) GetFunctionsFilterOutput {
 	return o
-}
-
-func (o GetFunctionsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetFunctionsFilter] {
-	return pulumix.Output[GetFunctionsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFunctionsFilterOutput) Name() pulumi.StringOutput {
@@ -2684,12 +2257,6 @@ func (o GetFunctionsFilterArrayOutput) ToGetFunctionsFilterArrayOutputWithContex
 	return o
 }
 
-func (o GetFunctionsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFunctionsFilter] {
-	return pulumix.Output[[]GetFunctionsFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetFunctionsFilterArrayOutput) Index(i pulumi.IntInput) GetFunctionsFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFunctionsFilter {
 		return vs[0].([]GetFunctionsFilter)[vs[1].(int)]
@@ -2698,41 +2265,41 @@ func (o GetFunctionsFilterArrayOutput) Index(i pulumi.IntInput) GetFunctionsFilt
 
 type GetFunctionsFunction struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the application to which this function belongs.
-	ApplicationId string `pulumi:"applicationId"`
+	ApplicationId *string `pulumi:"applicationId"`
 	// The OCID of the compartment that contains the function.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Function configuration. Overrides application configuration. Keys must be ASCII strings consisting solely of letters, digits, and the '_' (underscore) character, and must not begin with a digit. Values should be limited to printable unicode characters.  Example: `{"MY_FUNCTION_CONFIG": "ConfVal"}`
 	Config map[string]interface{} `pulumi:"config"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A filter to return only functions with display names that match the display name string. Matching is exact.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// A filter to return only functions with the specified OCID.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. Example: `phx.ocir.io/ten/functions/function:0.0.1`
-	Image string `pulumi:"image"`
+	Image *string `pulumi:"image"`
 	// The image digest for the version of the image that will be pulled when invoking this function. If no value is specified, the digest currently associated with the image in the Oracle Cloud Infrastructure Registry will be used. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
-	ImageDigest string `pulumi:"imageDigest"`
+	ImageDigest *string `pulumi:"imageDigest"`
 	// The base https invoke URL to set on a client in order to invoke a function. This URL will never change over the lifetime of the function and can be cached.
-	InvokeEndpoint string `pulumi:"invokeEndpoint"`
+	InvokeEndpoint *string `pulumi:"invokeEndpoint"`
 	// Maximum usable memory for the function (MiB).
-	MemoryInMbs string `pulumi:"memoryInMbs"`
+	MemoryInMbs *string `pulumi:"memoryInMbs"`
 	// Define the strategy for provisioned concurrency for the function.
 	ProvisionedConcurrencyConfigs []GetFunctionsFunctionProvisionedConcurrencyConfig `pulumi:"provisionedConcurrencyConfigs"`
 	// The processor shape (`GENERIC_X86`/`GENERIC_ARM`) on which to run functions in the application, extracted from the image manifest.
-	Shape string `pulumi:"shape"`
+	Shape *string `pulumi:"shape"`
 	// The source details for the Function. The function can be created from various sources.
 	SourceDetails []GetFunctionsFunctionSourceDetail `pulumi:"sourceDetails"`
 	// A filter to return only functions that match the lifecycle state in this parameter. Example: `Creating`
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The time the function was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the function was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// Timeout for executions of the function. Value in seconds.
-	TimeoutInSeconds int `pulumi:"timeoutInSeconds"`
+	TimeoutInSeconds *int `pulumi:"timeoutInSeconds"`
 	// Define the tracing configuration for a function.
 	TraceConfigs []GetFunctionsFunctionTraceConfig `pulumi:"traceConfigs"`
 }
@@ -2750,41 +2317,41 @@ type GetFunctionsFunctionInput interface {
 
 type GetFunctionsFunctionArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the application to which this function belongs.
-	ApplicationId pulumi.StringInput `pulumi:"applicationId"`
+	ApplicationId pulumi.StringPtrInput `pulumi:"applicationId"`
 	// The OCID of the compartment that contains the function.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Function configuration. Overrides application configuration. Keys must be ASCII strings consisting solely of letters, digits, and the '_' (underscore) character, and must not begin with a digit. Values should be limited to printable unicode characters.  Example: `{"MY_FUNCTION_CONFIG": "ConfVal"}`
 	Config pulumi.MapInput `pulumi:"config"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A filter to return only functions with display names that match the display name string. Matching is exact.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// A filter to return only functions with the specified OCID.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. Example: `phx.ocir.io/ten/functions/function:0.0.1`
-	Image pulumi.StringInput `pulumi:"image"`
+	Image pulumi.StringPtrInput `pulumi:"image"`
 	// The image digest for the version of the image that will be pulled when invoking this function. If no value is specified, the digest currently associated with the image in the Oracle Cloud Infrastructure Registry will be used. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
-	ImageDigest pulumi.StringInput `pulumi:"imageDigest"`
+	ImageDigest pulumi.StringPtrInput `pulumi:"imageDigest"`
 	// The base https invoke URL to set on a client in order to invoke a function. This URL will never change over the lifetime of the function and can be cached.
-	InvokeEndpoint pulumi.StringInput `pulumi:"invokeEndpoint"`
+	InvokeEndpoint pulumi.StringPtrInput `pulumi:"invokeEndpoint"`
 	// Maximum usable memory for the function (MiB).
-	MemoryInMbs pulumi.StringInput `pulumi:"memoryInMbs"`
+	MemoryInMbs pulumi.StringPtrInput `pulumi:"memoryInMbs"`
 	// Define the strategy for provisioned concurrency for the function.
 	ProvisionedConcurrencyConfigs GetFunctionsFunctionProvisionedConcurrencyConfigArrayInput `pulumi:"provisionedConcurrencyConfigs"`
 	// The processor shape (`GENERIC_X86`/`GENERIC_ARM`) on which to run functions in the application, extracted from the image manifest.
-	Shape pulumi.StringInput `pulumi:"shape"`
+	Shape pulumi.StringPtrInput `pulumi:"shape"`
 	// The source details for the Function. The function can be created from various sources.
 	SourceDetails GetFunctionsFunctionSourceDetailArrayInput `pulumi:"sourceDetails"`
 	// A filter to return only functions that match the lifecycle state in this parameter. Example: `Creating`
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The time the function was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The time the function was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 	// Timeout for executions of the function. Value in seconds.
-	TimeoutInSeconds pulumi.IntInput `pulumi:"timeoutInSeconds"`
+	TimeoutInSeconds pulumi.IntPtrInput `pulumi:"timeoutInSeconds"`
 	// Define the tracing configuration for a function.
 	TraceConfigs GetFunctionsFunctionTraceConfigArrayInput `pulumi:"traceConfigs"`
 }
@@ -2799,12 +2366,6 @@ func (i GetFunctionsFunctionArgs) ToGetFunctionsFunctionOutput() GetFunctionsFun
 
 func (i GetFunctionsFunctionArgs) ToGetFunctionsFunctionOutputWithContext(ctx context.Context) GetFunctionsFunctionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetFunctionsFunctionOutput)
-}
-
-func (i GetFunctionsFunctionArgs) ToOutput(ctx context.Context) pulumix.Output[GetFunctionsFunction] {
-	return pulumix.Output[GetFunctionsFunction]{
-		OutputState: i.ToGetFunctionsFunctionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetFunctionsFunctionArrayInput is an input type that accepts GetFunctionsFunctionArray and GetFunctionsFunctionArrayOutput values.
@@ -2832,12 +2393,6 @@ func (i GetFunctionsFunctionArray) ToGetFunctionsFunctionArrayOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetFunctionsFunctionArrayOutput)
 }
 
-func (i GetFunctionsFunctionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFunctionsFunction] {
-	return pulumix.Output[[]GetFunctionsFunction]{
-		OutputState: i.ToGetFunctionsFunctionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFunctionsFunctionOutput struct{ *pulumi.OutputState }
 
 func (GetFunctionsFunctionOutput) ElementType() reflect.Type {
@@ -2852,20 +2407,14 @@ func (o GetFunctionsFunctionOutput) ToGetFunctionsFunctionOutputWithContext(ctx 
 	return o
 }
 
-func (o GetFunctionsFunctionOutput) ToOutput(ctx context.Context) pulumix.Output[GetFunctionsFunction] {
-	return pulumix.Output[GetFunctionsFunction]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the application to which this function belongs.
-func (o GetFunctionsFunctionOutput) ApplicationId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFunctionsFunction) string { return v.ApplicationId }).(pulumi.StringOutput)
+func (o GetFunctionsFunctionOutput) ApplicationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFunctionsFunction) *string { return v.ApplicationId }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the compartment that contains the function.
-func (o GetFunctionsFunctionOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFunctionsFunction) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetFunctionsFunctionOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFunctionsFunction) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Function configuration. Overrides application configuration. Keys must be ASCII strings consisting solely of letters, digits, and the '_' (underscore) character, and must not begin with a digit. Values should be limited to printable unicode characters.  Example: `{"MY_FUNCTION_CONFIG": "ConfVal"}`
@@ -2879,8 +2428,8 @@ func (o GetFunctionsFunctionOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // A filter to return only functions with display names that match the display name string. Matching is exact.
-func (o GetFunctionsFunctionOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFunctionsFunction) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetFunctionsFunctionOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFunctionsFunction) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -2889,28 +2438,28 @@ func (o GetFunctionsFunctionOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // A filter to return only functions with the specified OCID.
-func (o GetFunctionsFunctionOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFunctionsFunction) string { return v.Id }).(pulumi.StringOutput)
+func (o GetFunctionsFunctionOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFunctionsFunction) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. Example: `phx.ocir.io/ten/functions/function:0.0.1`
-func (o GetFunctionsFunctionOutput) Image() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFunctionsFunction) string { return v.Image }).(pulumi.StringOutput)
+func (o GetFunctionsFunctionOutput) Image() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFunctionsFunction) *string { return v.Image }).(pulumi.StringPtrOutput)
 }
 
 // The image digest for the version of the image that will be pulled when invoking this function. If no value is specified, the digest currently associated with the image in the Oracle Cloud Infrastructure Registry will be used. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
-func (o GetFunctionsFunctionOutput) ImageDigest() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFunctionsFunction) string { return v.ImageDigest }).(pulumi.StringOutput)
+func (o GetFunctionsFunctionOutput) ImageDigest() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFunctionsFunction) *string { return v.ImageDigest }).(pulumi.StringPtrOutput)
 }
 
 // The base https invoke URL to set on a client in order to invoke a function. This URL will never change over the lifetime of the function and can be cached.
-func (o GetFunctionsFunctionOutput) InvokeEndpoint() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFunctionsFunction) string { return v.InvokeEndpoint }).(pulumi.StringOutput)
+func (o GetFunctionsFunctionOutput) InvokeEndpoint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFunctionsFunction) *string { return v.InvokeEndpoint }).(pulumi.StringPtrOutput)
 }
 
 // Maximum usable memory for the function (MiB).
-func (o GetFunctionsFunctionOutput) MemoryInMbs() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFunctionsFunction) string { return v.MemoryInMbs }).(pulumi.StringOutput)
+func (o GetFunctionsFunctionOutput) MemoryInMbs() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFunctionsFunction) *string { return v.MemoryInMbs }).(pulumi.StringPtrOutput)
 }
 
 // Define the strategy for provisioned concurrency for the function.
@@ -2921,8 +2470,8 @@ func (o GetFunctionsFunctionOutput) ProvisionedConcurrencyConfigs() GetFunctions
 }
 
 // The processor shape (`GENERIC_X86`/`GENERIC_ARM`) on which to run functions in the application, extracted from the image manifest.
-func (o GetFunctionsFunctionOutput) Shape() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFunctionsFunction) string { return v.Shape }).(pulumi.StringOutput)
+func (o GetFunctionsFunctionOutput) Shape() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFunctionsFunction) *string { return v.Shape }).(pulumi.StringPtrOutput)
 }
 
 // The source details for the Function. The function can be created from various sources.
@@ -2931,23 +2480,23 @@ func (o GetFunctionsFunctionOutput) SourceDetails() GetFunctionsFunctionSourceDe
 }
 
 // A filter to return only functions that match the lifecycle state in this parameter. Example: `Creating`
-func (o GetFunctionsFunctionOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFunctionsFunction) string { return v.State }).(pulumi.StringOutput)
+func (o GetFunctionsFunctionOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFunctionsFunction) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The time the function was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
-func (o GetFunctionsFunctionOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFunctionsFunction) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetFunctionsFunctionOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFunctionsFunction) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the function was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
-func (o GetFunctionsFunctionOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFunctionsFunction) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetFunctionsFunctionOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFunctionsFunction) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // Timeout for executions of the function. Value in seconds.
-func (o GetFunctionsFunctionOutput) TimeoutInSeconds() pulumi.IntOutput {
-	return o.ApplyT(func(v GetFunctionsFunction) int { return v.TimeoutInSeconds }).(pulumi.IntOutput)
+func (o GetFunctionsFunctionOutput) TimeoutInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetFunctionsFunction) *int { return v.TimeoutInSeconds }).(pulumi.IntPtrOutput)
 }
 
 // Define the tracing configuration for a function.
@@ -2969,12 +2518,6 @@ func (o GetFunctionsFunctionArrayOutput) ToGetFunctionsFunctionArrayOutputWithCo
 	return o
 }
 
-func (o GetFunctionsFunctionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFunctionsFunction] {
-	return pulumix.Output[[]GetFunctionsFunction]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetFunctionsFunctionArrayOutput) Index(i pulumi.IntInput) GetFunctionsFunctionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFunctionsFunction {
 		return vs[0].([]GetFunctionsFunction)[vs[1].(int)]
@@ -2983,9 +2526,9 @@ func (o GetFunctionsFunctionArrayOutput) Index(i pulumi.IntInput) GetFunctionsFu
 
 type GetFunctionsFunctionProvisionedConcurrencyConfig struct {
 	// Configuration specifying a constant amount of provisioned concurrency.
-	Count int `pulumi:"count"`
+	Count *int `pulumi:"count"`
 	// The strategy for provisioned concurrency to be used.
-	Strategy string `pulumi:"strategy"`
+	Strategy *string `pulumi:"strategy"`
 }
 
 // GetFunctionsFunctionProvisionedConcurrencyConfigInput is an input type that accepts GetFunctionsFunctionProvisionedConcurrencyConfigArgs and GetFunctionsFunctionProvisionedConcurrencyConfigOutput values.
@@ -3001,9 +2544,9 @@ type GetFunctionsFunctionProvisionedConcurrencyConfigInput interface {
 
 type GetFunctionsFunctionProvisionedConcurrencyConfigArgs struct {
 	// Configuration specifying a constant amount of provisioned concurrency.
-	Count pulumi.IntInput `pulumi:"count"`
+	Count pulumi.IntPtrInput `pulumi:"count"`
 	// The strategy for provisioned concurrency to be used.
-	Strategy pulumi.StringInput `pulumi:"strategy"`
+	Strategy pulumi.StringPtrInput `pulumi:"strategy"`
 }
 
 func (GetFunctionsFunctionProvisionedConcurrencyConfigArgs) ElementType() reflect.Type {
@@ -3016,12 +2559,6 @@ func (i GetFunctionsFunctionProvisionedConcurrencyConfigArgs) ToGetFunctionsFunc
 
 func (i GetFunctionsFunctionProvisionedConcurrencyConfigArgs) ToGetFunctionsFunctionProvisionedConcurrencyConfigOutputWithContext(ctx context.Context) GetFunctionsFunctionProvisionedConcurrencyConfigOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetFunctionsFunctionProvisionedConcurrencyConfigOutput)
-}
-
-func (i GetFunctionsFunctionProvisionedConcurrencyConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetFunctionsFunctionProvisionedConcurrencyConfig] {
-	return pulumix.Output[GetFunctionsFunctionProvisionedConcurrencyConfig]{
-		OutputState: i.ToGetFunctionsFunctionProvisionedConcurrencyConfigOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetFunctionsFunctionProvisionedConcurrencyConfigArrayInput is an input type that accepts GetFunctionsFunctionProvisionedConcurrencyConfigArray and GetFunctionsFunctionProvisionedConcurrencyConfigArrayOutput values.
@@ -3049,12 +2586,6 @@ func (i GetFunctionsFunctionProvisionedConcurrencyConfigArray) ToGetFunctionsFun
 	return pulumi.ToOutputWithContext(ctx, i).(GetFunctionsFunctionProvisionedConcurrencyConfigArrayOutput)
 }
 
-func (i GetFunctionsFunctionProvisionedConcurrencyConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFunctionsFunctionProvisionedConcurrencyConfig] {
-	return pulumix.Output[[]GetFunctionsFunctionProvisionedConcurrencyConfig]{
-		OutputState: i.ToGetFunctionsFunctionProvisionedConcurrencyConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFunctionsFunctionProvisionedConcurrencyConfigOutput struct{ *pulumi.OutputState }
 
 func (GetFunctionsFunctionProvisionedConcurrencyConfigOutput) ElementType() reflect.Type {
@@ -3069,20 +2600,14 @@ func (o GetFunctionsFunctionProvisionedConcurrencyConfigOutput) ToGetFunctionsFu
 	return o
 }
 
-func (o GetFunctionsFunctionProvisionedConcurrencyConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetFunctionsFunctionProvisionedConcurrencyConfig] {
-	return pulumix.Output[GetFunctionsFunctionProvisionedConcurrencyConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Configuration specifying a constant amount of provisioned concurrency.
-func (o GetFunctionsFunctionProvisionedConcurrencyConfigOutput) Count() pulumi.IntOutput {
-	return o.ApplyT(func(v GetFunctionsFunctionProvisionedConcurrencyConfig) int { return v.Count }).(pulumi.IntOutput)
+func (o GetFunctionsFunctionProvisionedConcurrencyConfigOutput) Count() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetFunctionsFunctionProvisionedConcurrencyConfig) *int { return v.Count }).(pulumi.IntPtrOutput)
 }
 
 // The strategy for provisioned concurrency to be used.
-func (o GetFunctionsFunctionProvisionedConcurrencyConfigOutput) Strategy() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFunctionsFunctionProvisionedConcurrencyConfig) string { return v.Strategy }).(pulumi.StringOutput)
+func (o GetFunctionsFunctionProvisionedConcurrencyConfigOutput) Strategy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFunctionsFunctionProvisionedConcurrencyConfig) *string { return v.Strategy }).(pulumi.StringPtrOutput)
 }
 
 type GetFunctionsFunctionProvisionedConcurrencyConfigArrayOutput struct{ *pulumi.OutputState }
@@ -3099,12 +2624,6 @@ func (o GetFunctionsFunctionProvisionedConcurrencyConfigArrayOutput) ToGetFuncti
 	return o
 }
 
-func (o GetFunctionsFunctionProvisionedConcurrencyConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFunctionsFunctionProvisionedConcurrencyConfig] {
-	return pulumix.Output[[]GetFunctionsFunctionProvisionedConcurrencyConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetFunctionsFunctionProvisionedConcurrencyConfigArrayOutput) Index(i pulumi.IntInput) GetFunctionsFunctionProvisionedConcurrencyConfigOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFunctionsFunctionProvisionedConcurrencyConfig {
 		return vs[0].([]GetFunctionsFunctionProvisionedConcurrencyConfig)[vs[1].(int)]
@@ -3113,9 +2632,9 @@ func (o GetFunctionsFunctionProvisionedConcurrencyConfigArrayOutput) Index(i pul
 
 type GetFunctionsFunctionSourceDetail struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PbfListing this function is sourced from.
-	PbfListingId string `pulumi:"pbfListingId"`
+	PbfListingId *string `pulumi:"pbfListingId"`
 	// Type of the Function Source. Possible values: PRE_BUILT_FUNCTIONS.
-	SourceType string `pulumi:"sourceType"`
+	SourceType *string `pulumi:"sourceType"`
 }
 
 // GetFunctionsFunctionSourceDetailInput is an input type that accepts GetFunctionsFunctionSourceDetailArgs and GetFunctionsFunctionSourceDetailOutput values.
@@ -3131,9 +2650,9 @@ type GetFunctionsFunctionSourceDetailInput interface {
 
 type GetFunctionsFunctionSourceDetailArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PbfListing this function is sourced from.
-	PbfListingId pulumi.StringInput `pulumi:"pbfListingId"`
+	PbfListingId pulumi.StringPtrInput `pulumi:"pbfListingId"`
 	// Type of the Function Source. Possible values: PRE_BUILT_FUNCTIONS.
-	SourceType pulumi.StringInput `pulumi:"sourceType"`
+	SourceType pulumi.StringPtrInput `pulumi:"sourceType"`
 }
 
 func (GetFunctionsFunctionSourceDetailArgs) ElementType() reflect.Type {
@@ -3146,12 +2665,6 @@ func (i GetFunctionsFunctionSourceDetailArgs) ToGetFunctionsFunctionSourceDetail
 
 func (i GetFunctionsFunctionSourceDetailArgs) ToGetFunctionsFunctionSourceDetailOutputWithContext(ctx context.Context) GetFunctionsFunctionSourceDetailOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetFunctionsFunctionSourceDetailOutput)
-}
-
-func (i GetFunctionsFunctionSourceDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetFunctionsFunctionSourceDetail] {
-	return pulumix.Output[GetFunctionsFunctionSourceDetail]{
-		OutputState: i.ToGetFunctionsFunctionSourceDetailOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetFunctionsFunctionSourceDetailArrayInput is an input type that accepts GetFunctionsFunctionSourceDetailArray and GetFunctionsFunctionSourceDetailArrayOutput values.
@@ -3179,12 +2692,6 @@ func (i GetFunctionsFunctionSourceDetailArray) ToGetFunctionsFunctionSourceDetai
 	return pulumi.ToOutputWithContext(ctx, i).(GetFunctionsFunctionSourceDetailArrayOutput)
 }
 
-func (i GetFunctionsFunctionSourceDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFunctionsFunctionSourceDetail] {
-	return pulumix.Output[[]GetFunctionsFunctionSourceDetail]{
-		OutputState: i.ToGetFunctionsFunctionSourceDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFunctionsFunctionSourceDetailOutput struct{ *pulumi.OutputState }
 
 func (GetFunctionsFunctionSourceDetailOutput) ElementType() reflect.Type {
@@ -3199,20 +2706,14 @@ func (o GetFunctionsFunctionSourceDetailOutput) ToGetFunctionsFunctionSourceDeta
 	return o
 }
 
-func (o GetFunctionsFunctionSourceDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetFunctionsFunctionSourceDetail] {
-	return pulumix.Output[GetFunctionsFunctionSourceDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PbfListing this function is sourced from.
-func (o GetFunctionsFunctionSourceDetailOutput) PbfListingId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFunctionsFunctionSourceDetail) string { return v.PbfListingId }).(pulumi.StringOutput)
+func (o GetFunctionsFunctionSourceDetailOutput) PbfListingId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFunctionsFunctionSourceDetail) *string { return v.PbfListingId }).(pulumi.StringPtrOutput)
 }
 
 // Type of the Function Source. Possible values: PRE_BUILT_FUNCTIONS.
-func (o GetFunctionsFunctionSourceDetailOutput) SourceType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFunctionsFunctionSourceDetail) string { return v.SourceType }).(pulumi.StringOutput)
+func (o GetFunctionsFunctionSourceDetailOutput) SourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFunctionsFunctionSourceDetail) *string { return v.SourceType }).(pulumi.StringPtrOutput)
 }
 
 type GetFunctionsFunctionSourceDetailArrayOutput struct{ *pulumi.OutputState }
@@ -3229,12 +2730,6 @@ func (o GetFunctionsFunctionSourceDetailArrayOutput) ToGetFunctionsFunctionSourc
 	return o
 }
 
-func (o GetFunctionsFunctionSourceDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFunctionsFunctionSourceDetail] {
-	return pulumix.Output[[]GetFunctionsFunctionSourceDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetFunctionsFunctionSourceDetailArrayOutput) Index(i pulumi.IntInput) GetFunctionsFunctionSourceDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFunctionsFunctionSourceDetail {
 		return vs[0].([]GetFunctionsFunctionSourceDetail)[vs[1].(int)]
@@ -3243,7 +2738,7 @@ func (o GetFunctionsFunctionSourceDetailArrayOutput) Index(i pulumi.IntInput) Ge
 
 type GetFunctionsFunctionTraceConfig struct {
 	// Define if tracing is enabled for the resource.
-	IsEnabled bool `pulumi:"isEnabled"`
+	IsEnabled *bool `pulumi:"isEnabled"`
 }
 
 // GetFunctionsFunctionTraceConfigInput is an input type that accepts GetFunctionsFunctionTraceConfigArgs and GetFunctionsFunctionTraceConfigOutput values.
@@ -3259,7 +2754,7 @@ type GetFunctionsFunctionTraceConfigInput interface {
 
 type GetFunctionsFunctionTraceConfigArgs struct {
 	// Define if tracing is enabled for the resource.
-	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+	IsEnabled pulumi.BoolPtrInput `pulumi:"isEnabled"`
 }
 
 func (GetFunctionsFunctionTraceConfigArgs) ElementType() reflect.Type {
@@ -3272,12 +2767,6 @@ func (i GetFunctionsFunctionTraceConfigArgs) ToGetFunctionsFunctionTraceConfigOu
 
 func (i GetFunctionsFunctionTraceConfigArgs) ToGetFunctionsFunctionTraceConfigOutputWithContext(ctx context.Context) GetFunctionsFunctionTraceConfigOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetFunctionsFunctionTraceConfigOutput)
-}
-
-func (i GetFunctionsFunctionTraceConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetFunctionsFunctionTraceConfig] {
-	return pulumix.Output[GetFunctionsFunctionTraceConfig]{
-		OutputState: i.ToGetFunctionsFunctionTraceConfigOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetFunctionsFunctionTraceConfigArrayInput is an input type that accepts GetFunctionsFunctionTraceConfigArray and GetFunctionsFunctionTraceConfigArrayOutput values.
@@ -3305,12 +2794,6 @@ func (i GetFunctionsFunctionTraceConfigArray) ToGetFunctionsFunctionTraceConfigA
 	return pulumi.ToOutputWithContext(ctx, i).(GetFunctionsFunctionTraceConfigArrayOutput)
 }
 
-func (i GetFunctionsFunctionTraceConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFunctionsFunctionTraceConfig] {
-	return pulumix.Output[[]GetFunctionsFunctionTraceConfig]{
-		OutputState: i.ToGetFunctionsFunctionTraceConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFunctionsFunctionTraceConfigOutput struct{ *pulumi.OutputState }
 
 func (GetFunctionsFunctionTraceConfigOutput) ElementType() reflect.Type {
@@ -3325,15 +2808,9 @@ func (o GetFunctionsFunctionTraceConfigOutput) ToGetFunctionsFunctionTraceConfig
 	return o
 }
 
-func (o GetFunctionsFunctionTraceConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetFunctionsFunctionTraceConfig] {
-	return pulumix.Output[GetFunctionsFunctionTraceConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Define if tracing is enabled for the resource.
-func (o GetFunctionsFunctionTraceConfigOutput) IsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetFunctionsFunctionTraceConfig) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+func (o GetFunctionsFunctionTraceConfigOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetFunctionsFunctionTraceConfig) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
 }
 
 type GetFunctionsFunctionTraceConfigArrayOutput struct{ *pulumi.OutputState }
@@ -3350,12 +2827,6 @@ func (o GetFunctionsFunctionTraceConfigArrayOutput) ToGetFunctionsFunctionTraceC
 	return o
 }
 
-func (o GetFunctionsFunctionTraceConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFunctionsFunctionTraceConfig] {
-	return pulumix.Output[[]GetFunctionsFunctionTraceConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetFunctionsFunctionTraceConfigArrayOutput) Index(i pulumi.IntInput) GetFunctionsFunctionTraceConfigOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFunctionsFunctionTraceConfig {
 		return vs[0].([]GetFunctionsFunctionTraceConfig)[vs[1].(int)]
@@ -3364,13 +2835,13 @@ func (o GetFunctionsFunctionTraceConfigArrayOutput) Index(i pulumi.IntInput) Get
 
 type GetFusionEnvironmentAdminUserItem struct {
 	// Admin users email address
-	EmailAddress string `pulumi:"emailAddress"`
+	EmailAddress *string `pulumi:"emailAddress"`
 	// Admin users first name
-	FirstName string `pulumi:"firstName"`
+	FirstName *string `pulumi:"firstName"`
 	// Admin users last name
-	LastName string `pulumi:"lastName"`
+	LastName *string `pulumi:"lastName"`
 	// Admin username
-	Username string `pulumi:"username"`
+	Username *string `pulumi:"username"`
 }
 
 // GetFusionEnvironmentAdminUserItemInput is an input type that accepts GetFusionEnvironmentAdminUserItemArgs and GetFusionEnvironmentAdminUserItemOutput values.
@@ -3386,13 +2857,13 @@ type GetFusionEnvironmentAdminUserItemInput interface {
 
 type GetFusionEnvironmentAdminUserItemArgs struct {
 	// Admin users email address
-	EmailAddress pulumi.StringInput `pulumi:"emailAddress"`
+	EmailAddress pulumi.StringPtrInput `pulumi:"emailAddress"`
 	// Admin users first name
-	FirstName pulumi.StringInput `pulumi:"firstName"`
+	FirstName pulumi.StringPtrInput `pulumi:"firstName"`
 	// Admin users last name
-	LastName pulumi.StringInput `pulumi:"lastName"`
+	LastName pulumi.StringPtrInput `pulumi:"lastName"`
 	// Admin username
-	Username pulumi.StringInput `pulumi:"username"`
+	Username pulumi.StringPtrInput `pulumi:"username"`
 }
 
 func (GetFusionEnvironmentAdminUserItemArgs) ElementType() reflect.Type {
@@ -3405,12 +2876,6 @@ func (i GetFusionEnvironmentAdminUserItemArgs) ToGetFusionEnvironmentAdminUserIt
 
 func (i GetFusionEnvironmentAdminUserItemArgs) ToGetFusionEnvironmentAdminUserItemOutputWithContext(ctx context.Context) GetFusionEnvironmentAdminUserItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentAdminUserItemOutput)
-}
-
-func (i GetFusionEnvironmentAdminUserItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentAdminUserItem] {
-	return pulumix.Output[GetFusionEnvironmentAdminUserItem]{
-		OutputState: i.ToGetFusionEnvironmentAdminUserItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetFusionEnvironmentAdminUserItemArrayInput is an input type that accepts GetFusionEnvironmentAdminUserItemArray and GetFusionEnvironmentAdminUserItemArrayOutput values.
@@ -3438,12 +2903,6 @@ func (i GetFusionEnvironmentAdminUserItemArray) ToGetFusionEnvironmentAdminUserI
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentAdminUserItemArrayOutput)
 }
 
-func (i GetFusionEnvironmentAdminUserItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentAdminUserItem] {
-	return pulumix.Output[[]GetFusionEnvironmentAdminUserItem]{
-		OutputState: i.ToGetFusionEnvironmentAdminUserItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFusionEnvironmentAdminUserItemOutput struct{ *pulumi.OutputState }
 
 func (GetFusionEnvironmentAdminUserItemOutput) ElementType() reflect.Type {
@@ -3458,30 +2917,24 @@ func (o GetFusionEnvironmentAdminUserItemOutput) ToGetFusionEnvironmentAdminUser
 	return o
 }
 
-func (o GetFusionEnvironmentAdminUserItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentAdminUserItem] {
-	return pulumix.Output[GetFusionEnvironmentAdminUserItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Admin users email address
-func (o GetFusionEnvironmentAdminUserItemOutput) EmailAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentAdminUserItem) string { return v.EmailAddress }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentAdminUserItemOutput) EmailAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentAdminUserItem) *string { return v.EmailAddress }).(pulumi.StringPtrOutput)
 }
 
 // Admin users first name
-func (o GetFusionEnvironmentAdminUserItemOutput) FirstName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentAdminUserItem) string { return v.FirstName }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentAdminUserItemOutput) FirstName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentAdminUserItem) *string { return v.FirstName }).(pulumi.StringPtrOutput)
 }
 
 // Admin users last name
-func (o GetFusionEnvironmentAdminUserItemOutput) LastName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentAdminUserItem) string { return v.LastName }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentAdminUserItemOutput) LastName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentAdminUserItem) *string { return v.LastName }).(pulumi.StringPtrOutput)
 }
 
 // Admin username
-func (o GetFusionEnvironmentAdminUserItemOutput) Username() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentAdminUserItem) string { return v.Username }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentAdminUserItemOutput) Username() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentAdminUserItem) *string { return v.Username }).(pulumi.StringPtrOutput)
 }
 
 type GetFusionEnvironmentAdminUserItemArrayOutput struct{ *pulumi.OutputState }
@@ -3496,12 +2949,6 @@ func (o GetFusionEnvironmentAdminUserItemArrayOutput) ToGetFusionEnvironmentAdmi
 
 func (o GetFusionEnvironmentAdminUserItemArrayOutput) ToGetFusionEnvironmentAdminUserItemArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentAdminUserItemArrayOutput {
 	return o
-}
-
-func (o GetFusionEnvironmentAdminUserItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentAdminUserItem] {
-	return pulumix.Output[[]GetFusionEnvironmentAdminUserItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFusionEnvironmentAdminUserItemArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentAdminUserItemOutput {
@@ -3543,12 +2990,6 @@ func (i GetFusionEnvironmentAdminUsersAdminUserCollectionArgs) ToGetFusionEnviro
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentAdminUsersAdminUserCollectionOutput)
 }
 
-func (i GetFusionEnvironmentAdminUsersAdminUserCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentAdminUsersAdminUserCollection] {
-	return pulumix.Output[GetFusionEnvironmentAdminUsersAdminUserCollection]{
-		OutputState: i.ToGetFusionEnvironmentAdminUsersAdminUserCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetFusionEnvironmentAdminUsersAdminUserCollectionArrayInput is an input type that accepts GetFusionEnvironmentAdminUsersAdminUserCollectionArray and GetFusionEnvironmentAdminUsersAdminUserCollectionArrayOutput values.
 // You can construct a concrete instance of `GetFusionEnvironmentAdminUsersAdminUserCollectionArrayInput` via:
 //
@@ -3574,12 +3015,6 @@ func (i GetFusionEnvironmentAdminUsersAdminUserCollectionArray) ToGetFusionEnvir
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentAdminUsersAdminUserCollectionArrayOutput)
 }
 
-func (i GetFusionEnvironmentAdminUsersAdminUserCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentAdminUsersAdminUserCollection] {
-	return pulumix.Output[[]GetFusionEnvironmentAdminUsersAdminUserCollection]{
-		OutputState: i.ToGetFusionEnvironmentAdminUsersAdminUserCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFusionEnvironmentAdminUsersAdminUserCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetFusionEnvironmentAdminUsersAdminUserCollectionOutput) ElementType() reflect.Type {
@@ -3592,12 +3027,6 @@ func (o GetFusionEnvironmentAdminUsersAdminUserCollectionOutput) ToGetFusionEnvi
 
 func (o GetFusionEnvironmentAdminUsersAdminUserCollectionOutput) ToGetFusionEnvironmentAdminUsersAdminUserCollectionOutputWithContext(ctx context.Context) GetFusionEnvironmentAdminUsersAdminUserCollectionOutput {
 	return o
-}
-
-func (o GetFusionEnvironmentAdminUsersAdminUserCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentAdminUsersAdminUserCollection] {
-	return pulumix.Output[GetFusionEnvironmentAdminUsersAdminUserCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A page of AdminUserSummary objects.
@@ -3621,12 +3050,6 @@ func (o GetFusionEnvironmentAdminUsersAdminUserCollectionArrayOutput) ToGetFusio
 	return o
 }
 
-func (o GetFusionEnvironmentAdminUsersAdminUserCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentAdminUsersAdminUserCollection] {
-	return pulumix.Output[[]GetFusionEnvironmentAdminUsersAdminUserCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetFusionEnvironmentAdminUsersAdminUserCollectionArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentAdminUsersAdminUserCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentAdminUsersAdminUserCollection {
 		return vs[0].([]GetFusionEnvironmentAdminUsersAdminUserCollection)[vs[1].(int)]
@@ -3635,19 +3058,19 @@ func (o GetFusionEnvironmentAdminUsersAdminUserCollectionArrayOutput) Index(i pu
 
 type GetFusionEnvironmentAdminUsersAdminUserCollectionItem struct {
 	// Admin users email address
-	EmailAddress string `pulumi:"emailAddress"`
+	EmailAddress *string `pulumi:"emailAddress"`
 	// Admin users first name
-	FirstName string `pulumi:"firstName"`
+	FirstName *string `pulumi:"firstName"`
 	// unique FusionEnvironment identifier
-	FusionEnvironmentId string `pulumi:"fusionEnvironmentId"`
-	Id                  string `pulumi:"id"`
+	FusionEnvironmentId *string `pulumi:"fusionEnvironmentId"`
+	Id                  *string `pulumi:"id"`
 	// A page of AdminUserSummary objects.
 	Items []GetFusionEnvironmentAdminUsersAdminUserCollectionItemItem `pulumi:"items"`
 	// Admin users last name
-	LastName string `pulumi:"lastName"`
-	Password string `pulumi:"password"`
+	LastName *string `pulumi:"lastName"`
+	Password *string `pulumi:"password"`
 	// Admin username
-	Username string `pulumi:"username"`
+	Username *string `pulumi:"username"`
 }
 
 // GetFusionEnvironmentAdminUsersAdminUserCollectionItemInput is an input type that accepts GetFusionEnvironmentAdminUsersAdminUserCollectionItemArgs and GetFusionEnvironmentAdminUsersAdminUserCollectionItemOutput values.
@@ -3663,19 +3086,19 @@ type GetFusionEnvironmentAdminUsersAdminUserCollectionItemInput interface {
 
 type GetFusionEnvironmentAdminUsersAdminUserCollectionItemArgs struct {
 	// Admin users email address
-	EmailAddress pulumi.StringInput `pulumi:"emailAddress"`
+	EmailAddress pulumi.StringPtrInput `pulumi:"emailAddress"`
 	// Admin users first name
-	FirstName pulumi.StringInput `pulumi:"firstName"`
+	FirstName pulumi.StringPtrInput `pulumi:"firstName"`
 	// unique FusionEnvironment identifier
-	FusionEnvironmentId pulumi.StringInput `pulumi:"fusionEnvironmentId"`
-	Id                  pulumi.StringInput `pulumi:"id"`
+	FusionEnvironmentId pulumi.StringPtrInput `pulumi:"fusionEnvironmentId"`
+	Id                  pulumi.StringPtrInput `pulumi:"id"`
 	// A page of AdminUserSummary objects.
 	Items GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemArrayInput `pulumi:"items"`
 	// Admin users last name
-	LastName pulumi.StringInput `pulumi:"lastName"`
-	Password pulumi.StringInput `pulumi:"password"`
+	LastName pulumi.StringPtrInput `pulumi:"lastName"`
+	Password pulumi.StringPtrInput `pulumi:"password"`
 	// Admin username
-	Username pulumi.StringInput `pulumi:"username"`
+	Username pulumi.StringPtrInput `pulumi:"username"`
 }
 
 func (GetFusionEnvironmentAdminUsersAdminUserCollectionItemArgs) ElementType() reflect.Type {
@@ -3688,12 +3111,6 @@ func (i GetFusionEnvironmentAdminUsersAdminUserCollectionItemArgs) ToGetFusionEn
 
 func (i GetFusionEnvironmentAdminUsersAdminUserCollectionItemArgs) ToGetFusionEnvironmentAdminUsersAdminUserCollectionItemOutputWithContext(ctx context.Context) GetFusionEnvironmentAdminUsersAdminUserCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentAdminUsersAdminUserCollectionItemOutput)
-}
-
-func (i GetFusionEnvironmentAdminUsersAdminUserCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentAdminUsersAdminUserCollectionItem] {
-	return pulumix.Output[GetFusionEnvironmentAdminUsersAdminUserCollectionItem]{
-		OutputState: i.ToGetFusionEnvironmentAdminUsersAdminUserCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetFusionEnvironmentAdminUsersAdminUserCollectionItemArrayInput is an input type that accepts GetFusionEnvironmentAdminUsersAdminUserCollectionItemArray and GetFusionEnvironmentAdminUsersAdminUserCollectionItemArrayOutput values.
@@ -3721,12 +3138,6 @@ func (i GetFusionEnvironmentAdminUsersAdminUserCollectionItemArray) ToGetFusionE
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentAdminUsersAdminUserCollectionItemArrayOutput)
 }
 
-func (i GetFusionEnvironmentAdminUsersAdminUserCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentAdminUsersAdminUserCollectionItem] {
-	return pulumix.Output[[]GetFusionEnvironmentAdminUsersAdminUserCollectionItem]{
-		OutputState: i.ToGetFusionEnvironmentAdminUsersAdminUserCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFusionEnvironmentAdminUsersAdminUserCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetFusionEnvironmentAdminUsersAdminUserCollectionItemOutput) ElementType() reflect.Type {
@@ -3741,29 +3152,23 @@ func (o GetFusionEnvironmentAdminUsersAdminUserCollectionItemOutput) ToGetFusion
 	return o
 }
 
-func (o GetFusionEnvironmentAdminUsersAdminUserCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentAdminUsersAdminUserCollectionItem] {
-	return pulumix.Output[GetFusionEnvironmentAdminUsersAdminUserCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Admin users email address
-func (o GetFusionEnvironmentAdminUsersAdminUserCollectionItemOutput) EmailAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentAdminUsersAdminUserCollectionItem) string { return v.EmailAddress }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentAdminUsersAdminUserCollectionItemOutput) EmailAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentAdminUsersAdminUserCollectionItem) *string { return v.EmailAddress }).(pulumi.StringPtrOutput)
 }
 
 // Admin users first name
-func (o GetFusionEnvironmentAdminUsersAdminUserCollectionItemOutput) FirstName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentAdminUsersAdminUserCollectionItem) string { return v.FirstName }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentAdminUsersAdminUserCollectionItemOutput) FirstName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentAdminUsersAdminUserCollectionItem) *string { return v.FirstName }).(pulumi.StringPtrOutput)
 }
 
 // unique FusionEnvironment identifier
-func (o GetFusionEnvironmentAdminUsersAdminUserCollectionItemOutput) FusionEnvironmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentAdminUsersAdminUserCollectionItem) string { return v.FusionEnvironmentId }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentAdminUsersAdminUserCollectionItemOutput) FusionEnvironmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentAdminUsersAdminUserCollectionItem) *string { return v.FusionEnvironmentId }).(pulumi.StringPtrOutput)
 }
 
-func (o GetFusionEnvironmentAdminUsersAdminUserCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentAdminUsersAdminUserCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentAdminUsersAdminUserCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentAdminUsersAdminUserCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A page of AdminUserSummary objects.
@@ -3774,17 +3179,17 @@ func (o GetFusionEnvironmentAdminUsersAdminUserCollectionItemOutput) Items() Get
 }
 
 // Admin users last name
-func (o GetFusionEnvironmentAdminUsersAdminUserCollectionItemOutput) LastName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentAdminUsersAdminUserCollectionItem) string { return v.LastName }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentAdminUsersAdminUserCollectionItemOutput) LastName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentAdminUsersAdminUserCollectionItem) *string { return v.LastName }).(pulumi.StringPtrOutput)
 }
 
-func (o GetFusionEnvironmentAdminUsersAdminUserCollectionItemOutput) Password() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentAdminUsersAdminUserCollectionItem) string { return v.Password }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentAdminUsersAdminUserCollectionItemOutput) Password() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentAdminUsersAdminUserCollectionItem) *string { return v.Password }).(pulumi.StringPtrOutput)
 }
 
 // Admin username
-func (o GetFusionEnvironmentAdminUsersAdminUserCollectionItemOutput) Username() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentAdminUsersAdminUserCollectionItem) string { return v.Username }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentAdminUsersAdminUserCollectionItemOutput) Username() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentAdminUsersAdminUserCollectionItem) *string { return v.Username }).(pulumi.StringPtrOutput)
 }
 
 type GetFusionEnvironmentAdminUsersAdminUserCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -3801,12 +3206,6 @@ func (o GetFusionEnvironmentAdminUsersAdminUserCollectionItemArrayOutput) ToGetF
 	return o
 }
 
-func (o GetFusionEnvironmentAdminUsersAdminUserCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentAdminUsersAdminUserCollectionItem] {
-	return pulumix.Output[[]GetFusionEnvironmentAdminUsersAdminUserCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetFusionEnvironmentAdminUsersAdminUserCollectionItemArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentAdminUsersAdminUserCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentAdminUsersAdminUserCollectionItem {
 		return vs[0].([]GetFusionEnvironmentAdminUsersAdminUserCollectionItem)[vs[1].(int)]
@@ -3815,13 +3214,13 @@ func (o GetFusionEnvironmentAdminUsersAdminUserCollectionItemArrayOutput) Index(
 
 type GetFusionEnvironmentAdminUsersAdminUserCollectionItemItem struct {
 	// Admin users email address
-	EmailAddress string `pulumi:"emailAddress"`
+	EmailAddress *string `pulumi:"emailAddress"`
 	// Admin users first name
-	FirstName string `pulumi:"firstName"`
+	FirstName *string `pulumi:"firstName"`
 	// Admin users last name
-	LastName string `pulumi:"lastName"`
+	LastName *string `pulumi:"lastName"`
 	// Admin username
-	Username string `pulumi:"username"`
+	Username *string `pulumi:"username"`
 }
 
 // GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemInput is an input type that accepts GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemArgs and GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemOutput values.
@@ -3837,13 +3236,13 @@ type GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemInput interface {
 
 type GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemArgs struct {
 	// Admin users email address
-	EmailAddress pulumi.StringInput `pulumi:"emailAddress"`
+	EmailAddress pulumi.StringPtrInput `pulumi:"emailAddress"`
 	// Admin users first name
-	FirstName pulumi.StringInput `pulumi:"firstName"`
+	FirstName pulumi.StringPtrInput `pulumi:"firstName"`
 	// Admin users last name
-	LastName pulumi.StringInput `pulumi:"lastName"`
+	LastName pulumi.StringPtrInput `pulumi:"lastName"`
 	// Admin username
-	Username pulumi.StringInput `pulumi:"username"`
+	Username pulumi.StringPtrInput `pulumi:"username"`
 }
 
 func (GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemArgs) ElementType() reflect.Type {
@@ -3856,12 +3255,6 @@ func (i GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemArgs) ToGetFusi
 
 func (i GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemArgs) ToGetFusionEnvironmentAdminUsersAdminUserCollectionItemItemOutputWithContext(ctx context.Context) GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemOutput)
-}
-
-func (i GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentAdminUsersAdminUserCollectionItemItem] {
-	return pulumix.Output[GetFusionEnvironmentAdminUsersAdminUserCollectionItemItem]{
-		OutputState: i.ToGetFusionEnvironmentAdminUsersAdminUserCollectionItemItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemArrayInput is an input type that accepts GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemArray and GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemArrayOutput values.
@@ -3889,12 +3282,6 @@ func (i GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemArray) ToGetFus
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemArrayOutput)
 }
 
-func (i GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentAdminUsersAdminUserCollectionItemItem] {
-	return pulumix.Output[[]GetFusionEnvironmentAdminUsersAdminUserCollectionItemItem]{
-		OutputState: i.ToGetFusionEnvironmentAdminUsersAdminUserCollectionItemItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemOutput struct{ *pulumi.OutputState }
 
 func (GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemOutput) ElementType() reflect.Type {
@@ -3909,30 +3296,24 @@ func (o GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemOutput) ToGetFu
 	return o
 }
 
-func (o GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentAdminUsersAdminUserCollectionItemItem] {
-	return pulumix.Output[GetFusionEnvironmentAdminUsersAdminUserCollectionItemItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Admin users email address
-func (o GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemOutput) EmailAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentAdminUsersAdminUserCollectionItemItem) string { return v.EmailAddress }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemOutput) EmailAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentAdminUsersAdminUserCollectionItemItem) *string { return v.EmailAddress }).(pulumi.StringPtrOutput)
 }
 
 // Admin users first name
-func (o GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemOutput) FirstName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentAdminUsersAdminUserCollectionItemItem) string { return v.FirstName }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemOutput) FirstName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentAdminUsersAdminUserCollectionItemItem) *string { return v.FirstName }).(pulumi.StringPtrOutput)
 }
 
 // Admin users last name
-func (o GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemOutput) LastName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentAdminUsersAdminUserCollectionItemItem) string { return v.LastName }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemOutput) LastName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentAdminUsersAdminUserCollectionItemItem) *string { return v.LastName }).(pulumi.StringPtrOutput)
 }
 
 // Admin username
-func (o GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemOutput) Username() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentAdminUsersAdminUserCollectionItemItem) string { return v.Username }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemOutput) Username() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentAdminUsersAdminUserCollectionItemItem) *string { return v.Username }).(pulumi.StringPtrOutput)
 }
 
 type GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemArrayOutput struct{ *pulumi.OutputState }
@@ -3947,12 +3328,6 @@ func (o GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemArrayOutput) To
 
 func (o GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemArrayOutput) ToGetFusionEnvironmentAdminUsersAdminUserCollectionItemItemArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemArrayOutput {
 	return o
-}
-
-func (o GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentAdminUsersAdminUserCollectionItemItem] {
-	return pulumix.Output[[]GetFusionEnvironmentAdminUsersAdminUserCollectionItemItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentAdminUsersAdminUserCollectionItemItemOutput {
@@ -3996,12 +3371,6 @@ func (i GetFusionEnvironmentAdminUsersFilterArgs) ToGetFusionEnvironmentAdminUse
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentAdminUsersFilterOutput)
 }
 
-func (i GetFusionEnvironmentAdminUsersFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentAdminUsersFilter] {
-	return pulumix.Output[GetFusionEnvironmentAdminUsersFilter]{
-		OutputState: i.ToGetFusionEnvironmentAdminUsersFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetFusionEnvironmentAdminUsersFilterArrayInput is an input type that accepts GetFusionEnvironmentAdminUsersFilterArray and GetFusionEnvironmentAdminUsersFilterArrayOutput values.
 // You can construct a concrete instance of `GetFusionEnvironmentAdminUsersFilterArrayInput` via:
 //
@@ -4027,12 +3396,6 @@ func (i GetFusionEnvironmentAdminUsersFilterArray) ToGetFusionEnvironmentAdminUs
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentAdminUsersFilterArrayOutput)
 }
 
-func (i GetFusionEnvironmentAdminUsersFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentAdminUsersFilter] {
-	return pulumix.Output[[]GetFusionEnvironmentAdminUsersFilter]{
-		OutputState: i.ToGetFusionEnvironmentAdminUsersFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFusionEnvironmentAdminUsersFilterOutput struct{ *pulumi.OutputState }
 
 func (GetFusionEnvironmentAdminUsersFilterOutput) ElementType() reflect.Type {
@@ -4045,12 +3408,6 @@ func (o GetFusionEnvironmentAdminUsersFilterOutput) ToGetFusionEnvironmentAdminU
 
 func (o GetFusionEnvironmentAdminUsersFilterOutput) ToGetFusionEnvironmentAdminUsersFilterOutputWithContext(ctx context.Context) GetFusionEnvironmentAdminUsersFilterOutput {
 	return o
-}
-
-func (o GetFusionEnvironmentAdminUsersFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentAdminUsersFilter] {
-	return pulumix.Output[GetFusionEnvironmentAdminUsersFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFusionEnvironmentAdminUsersFilterOutput) Name() pulumi.StringOutput {
@@ -4079,12 +3436,6 @@ func (o GetFusionEnvironmentAdminUsersFilterArrayOutput) ToGetFusionEnvironmentA
 	return o
 }
 
-func (o GetFusionEnvironmentAdminUsersFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentAdminUsersFilter] {
-	return pulumix.Output[[]GetFusionEnvironmentAdminUsersFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetFusionEnvironmentAdminUsersFilterArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentAdminUsersFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentAdminUsersFilter {
 		return vs[0].([]GetFusionEnvironmentAdminUsersFilter)[vs[1].(int)]
@@ -4092,11 +3443,11 @@ func (o GetFusionEnvironmentAdminUsersFilterArrayOutput) Index(i pulumi.IntInput
 }
 
 type GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetail struct {
-	EmailAddress string `pulumi:"emailAddress"`
-	FirstName    string `pulumi:"firstName"`
-	LastName     string `pulumi:"lastName"`
-	Password     string `pulumi:"password"`
-	Username     string `pulumi:"username"`
+	EmailAddress *string `pulumi:"emailAddress"`
+	FirstName    *string `pulumi:"firstName"`
+	LastName     *string `pulumi:"lastName"`
+	Password     *string `pulumi:"password"`
+	Username     *string `pulumi:"username"`
 }
 
 // GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailInput is an input type that accepts GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailArgs and GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailOutput values.
@@ -4111,11 +3462,11 @@ type GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailInput interface {
 }
 
 type GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailArgs struct {
-	EmailAddress pulumi.StringInput `pulumi:"emailAddress"`
-	FirstName    pulumi.StringInput `pulumi:"firstName"`
-	LastName     pulumi.StringInput `pulumi:"lastName"`
-	Password     pulumi.StringInput `pulumi:"password"`
-	Username     pulumi.StringInput `pulumi:"username"`
+	EmailAddress pulumi.StringPtrInput `pulumi:"emailAddress"`
+	FirstName    pulumi.StringPtrInput `pulumi:"firstName"`
+	LastName     pulumi.StringPtrInput `pulumi:"lastName"`
+	Password     pulumi.StringPtrInput `pulumi:"password"`
+	Username     pulumi.StringPtrInput `pulumi:"username"`
 }
 
 func (GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailArgs) ElementType() reflect.Type {
@@ -4128,12 +3479,6 @@ func (i GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailArgs) ToGetFus
 
 func (i GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailArgs) ToGetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailOutputWithContext(ctx context.Context) GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailOutput)
-}
-
-func (i GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetail] {
-	return pulumix.Output[GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetail]{
-		OutputState: i.ToGetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailArrayInput is an input type that accepts GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailArray and GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailArrayOutput values.
@@ -4161,12 +3506,6 @@ func (i GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailArray) ToGetFu
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailArrayOutput)
 }
 
-func (i GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetail] {
-	return pulumix.Output[[]GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetail]{
-		OutputState: i.ToGetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailOutput struct{ *pulumi.OutputState }
 
 func (GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailOutput) ElementType() reflect.Type {
@@ -4181,30 +3520,24 @@ func (o GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailOutput) ToGetF
 	return o
 }
 
-func (o GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetail] {
-	return pulumix.Output[GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetail]{
-		OutputState: o.OutputState,
-	}
+func (o GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailOutput) EmailAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetail) *string { return v.EmailAddress }).(pulumi.StringPtrOutput)
 }
 
-func (o GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailOutput) EmailAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetail) string { return v.EmailAddress }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailOutput) FirstName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetail) *string { return v.FirstName }).(pulumi.StringPtrOutput)
 }
 
-func (o GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailOutput) FirstName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetail) string { return v.FirstName }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailOutput) LastName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetail) *string { return v.LastName }).(pulumi.StringPtrOutput)
 }
 
-func (o GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailOutput) LastName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetail) string { return v.LastName }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailOutput) Password() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetail) *string { return v.Password }).(pulumi.StringPtrOutput)
 }
 
-func (o GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailOutput) Password() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetail) string { return v.Password }).(pulumi.StringOutput)
-}
-
-func (o GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailOutput) Username() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetail) string { return v.Username }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailOutput) Username() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetail) *string { return v.Username }).(pulumi.StringPtrOutput)
 }
 
 type GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailArrayOutput struct{ *pulumi.OutputState }
@@ -4219,12 +3552,6 @@ func (o GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailArrayOutput) T
 
 func (o GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailArrayOutput) ToGetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailArrayOutput {
 	return o
-}
-
-func (o GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetail] {
-	return pulumix.Output[[]GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetailOutput {
@@ -4264,12 +3591,6 @@ func (i GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionAr
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionOutput)
 }
 
-func (i GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollection] {
-	return pulumix.Output[GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollection]{
-		OutputState: i.ToGetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionArrayInput is an input type that accepts GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionArray and GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionArrayOutput values.
 // You can construct a concrete instance of `GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionArrayInput` via:
 //
@@ -4295,12 +3616,6 @@ func (i GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionAr
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionArrayOutput)
 }
 
-func (i GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollection] {
-	return pulumix.Output[[]GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollection]{
-		OutputState: i.ToGetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionOutput) ElementType() reflect.Type {
@@ -4313,12 +3628,6 @@ func (o GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionOu
 
 func (o GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionOutput) ToGetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionOutputWithContext(ctx context.Context) GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionOutput {
 	return o
-}
-
-func (o GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollection] {
-	return pulumix.Output[GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionOutput) Items() GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemArrayOutput {
@@ -4341,12 +3650,6 @@ func (o GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionAr
 	return o
 }
 
-func (o GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollection] {
-	return pulumix.Output[[]GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollection {
 		return vs[0].([]GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollection)[vs[1].(int)]
@@ -4355,16 +3658,16 @@ func (o GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionAr
 
 type GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItem struct {
 	// unique FusionEnvironment identifier
-	FusionEnvironmentId string `pulumi:"fusionEnvironmentId"`
+	FusionEnvironmentId *string `pulumi:"fusionEnvironmentId"`
 	// Unique identifier that is immutable on creation.
-	Id                  string `pulumi:"id"`
-	IsResumeDataMasking bool   `pulumi:"isResumeDataMasking"`
+	Id                  *string `pulumi:"id"`
+	IsResumeDataMasking *bool   `pulumi:"isResumeDataMasking"`
 	// A filter that returns all resources that match the specified status
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The time the data masking activity ended. An RFC3339 formatted datetime string.
-	TimeMaskingFinish string `pulumi:"timeMaskingFinish"`
+	TimeMaskingFinish *string `pulumi:"timeMaskingFinish"`
 	// The time the data masking activity started. An RFC3339 formatted datetime string.
-	TimeMaskingStart string `pulumi:"timeMaskingStart"`
+	TimeMaskingStart *string `pulumi:"timeMaskingStart"`
 }
 
 // GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemInput is an input type that accepts GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemArgs and GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemOutput values.
@@ -4380,16 +3683,16 @@ type GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemI
 
 type GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemArgs struct {
 	// unique FusionEnvironment identifier
-	FusionEnvironmentId pulumi.StringInput `pulumi:"fusionEnvironmentId"`
+	FusionEnvironmentId pulumi.StringPtrInput `pulumi:"fusionEnvironmentId"`
 	// Unique identifier that is immutable on creation.
-	Id                  pulumi.StringInput `pulumi:"id"`
-	IsResumeDataMasking pulumi.BoolInput   `pulumi:"isResumeDataMasking"`
+	Id                  pulumi.StringPtrInput `pulumi:"id"`
+	IsResumeDataMasking pulumi.BoolPtrInput   `pulumi:"isResumeDataMasking"`
 	// A filter that returns all resources that match the specified status
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The time the data masking activity ended. An RFC3339 formatted datetime string.
-	TimeMaskingFinish pulumi.StringInput `pulumi:"timeMaskingFinish"`
+	TimeMaskingFinish pulumi.StringPtrInput `pulumi:"timeMaskingFinish"`
 	// The time the data masking activity started. An RFC3339 formatted datetime string.
-	TimeMaskingStart pulumi.StringInput `pulumi:"timeMaskingStart"`
+	TimeMaskingStart pulumi.StringPtrInput `pulumi:"timeMaskingStart"`
 }
 
 func (GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemArgs) ElementType() reflect.Type {
@@ -4402,12 +3705,6 @@ func (i GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionIt
 
 func (i GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemArgs) ToGetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemOutputWithContext(ctx context.Context) GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemOutput)
-}
-
-func (i GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItem] {
-	return pulumix.Output[GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItem]{
-		OutputState: i.ToGetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemArrayInput is an input type that accepts GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemArray and GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemArrayOutput values.
@@ -4435,12 +3732,6 @@ func (i GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionIt
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemArrayOutput)
 }
 
-func (i GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItem] {
-	return pulumix.Output[[]GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItem]{
-		OutputState: i.ToGetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemOutput) ElementType() reflect.Type {
@@ -4455,49 +3746,45 @@ func (o GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionIt
 	return o
 }
 
-func (o GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItem] {
-	return pulumix.Output[GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // unique FusionEnvironment identifier
-func (o GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemOutput) FusionEnvironmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItem) string {
+func (o GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemOutput) FusionEnvironmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItem) *string {
 		return v.FusionEnvironmentId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Unique identifier that is immutable on creation.
-func (o GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItem) *string {
+		return v.Id
+	}).(pulumi.StringPtrOutput)
 }
 
-func (o GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemOutput) IsResumeDataMasking() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItem) bool {
+func (o GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemOutput) IsResumeDataMasking() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItem) *bool {
 		return v.IsResumeDataMasking
-	}).(pulumi.BoolOutput)
+	}).(pulumi.BoolPtrOutput)
 }
 
 // A filter that returns all resources that match the specified status
-func (o GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItem) string {
+func (o GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItem) *string {
 		return v.State
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The time the data masking activity ended. An RFC3339 formatted datetime string.
-func (o GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemOutput) TimeMaskingFinish() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItem) string {
+func (o GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemOutput) TimeMaskingFinish() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItem) *string {
 		return v.TimeMaskingFinish
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The time the data masking activity started. An RFC3339 formatted datetime string.
-func (o GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemOutput) TimeMaskingStart() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItem) string {
+func (o GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemOutput) TimeMaskingStart() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItem) *string {
 		return v.TimeMaskingStart
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -4512,12 +3799,6 @@ func (o GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionIt
 
 func (o GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemArrayOutput) ToGetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemArrayOutput {
 	return o
-}
-
-func (o GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItem] {
-	return pulumix.Output[[]GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItemOutput {
@@ -4561,12 +3842,6 @@ func (i GetFusionEnvironmentDataMaskingActivitiesFilterArgs) ToGetFusionEnvironm
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentDataMaskingActivitiesFilterOutput)
 }
 
-func (i GetFusionEnvironmentDataMaskingActivitiesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentDataMaskingActivitiesFilter] {
-	return pulumix.Output[GetFusionEnvironmentDataMaskingActivitiesFilter]{
-		OutputState: i.ToGetFusionEnvironmentDataMaskingActivitiesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetFusionEnvironmentDataMaskingActivitiesFilterArrayInput is an input type that accepts GetFusionEnvironmentDataMaskingActivitiesFilterArray and GetFusionEnvironmentDataMaskingActivitiesFilterArrayOutput values.
 // You can construct a concrete instance of `GetFusionEnvironmentDataMaskingActivitiesFilterArrayInput` via:
 //
@@ -4592,12 +3867,6 @@ func (i GetFusionEnvironmentDataMaskingActivitiesFilterArray) ToGetFusionEnviron
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentDataMaskingActivitiesFilterArrayOutput)
 }
 
-func (i GetFusionEnvironmentDataMaskingActivitiesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentDataMaskingActivitiesFilter] {
-	return pulumix.Output[[]GetFusionEnvironmentDataMaskingActivitiesFilter]{
-		OutputState: i.ToGetFusionEnvironmentDataMaskingActivitiesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFusionEnvironmentDataMaskingActivitiesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetFusionEnvironmentDataMaskingActivitiesFilterOutput) ElementType() reflect.Type {
@@ -4610,12 +3879,6 @@ func (o GetFusionEnvironmentDataMaskingActivitiesFilterOutput) ToGetFusionEnviro
 
 func (o GetFusionEnvironmentDataMaskingActivitiesFilterOutput) ToGetFusionEnvironmentDataMaskingActivitiesFilterOutputWithContext(ctx context.Context) GetFusionEnvironmentDataMaskingActivitiesFilterOutput {
 	return o
-}
-
-func (o GetFusionEnvironmentDataMaskingActivitiesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentDataMaskingActivitiesFilter] {
-	return pulumix.Output[GetFusionEnvironmentDataMaskingActivitiesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFusionEnvironmentDataMaskingActivitiesFilterOutput) Name() pulumi.StringOutput {
@@ -4642,12 +3905,6 @@ func (o GetFusionEnvironmentDataMaskingActivitiesFilterArrayOutput) ToGetFusionE
 
 func (o GetFusionEnvironmentDataMaskingActivitiesFilterArrayOutput) ToGetFusionEnvironmentDataMaskingActivitiesFilterArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentDataMaskingActivitiesFilterArrayOutput {
 	return o
-}
-
-func (o GetFusionEnvironmentDataMaskingActivitiesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentDataMaskingActivitiesFilter] {
-	return pulumix.Output[[]GetFusionEnvironmentDataMaskingActivitiesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFusionEnvironmentDataMaskingActivitiesFilterArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentDataMaskingActivitiesFilterOutput {
@@ -4691,12 +3948,6 @@ func (i GetFusionEnvironmentFamiliesFilterArgs) ToGetFusionEnvironmentFamiliesFi
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentFamiliesFilterOutput)
 }
 
-func (i GetFusionEnvironmentFamiliesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentFamiliesFilter] {
-	return pulumix.Output[GetFusionEnvironmentFamiliesFilter]{
-		OutputState: i.ToGetFusionEnvironmentFamiliesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetFusionEnvironmentFamiliesFilterArrayInput is an input type that accepts GetFusionEnvironmentFamiliesFilterArray and GetFusionEnvironmentFamiliesFilterArrayOutput values.
 // You can construct a concrete instance of `GetFusionEnvironmentFamiliesFilterArrayInput` via:
 //
@@ -4722,12 +3973,6 @@ func (i GetFusionEnvironmentFamiliesFilterArray) ToGetFusionEnvironmentFamiliesF
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentFamiliesFilterArrayOutput)
 }
 
-func (i GetFusionEnvironmentFamiliesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentFamiliesFilter] {
-	return pulumix.Output[[]GetFusionEnvironmentFamiliesFilter]{
-		OutputState: i.ToGetFusionEnvironmentFamiliesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFusionEnvironmentFamiliesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetFusionEnvironmentFamiliesFilterOutput) ElementType() reflect.Type {
@@ -4740,12 +3985,6 @@ func (o GetFusionEnvironmentFamiliesFilterOutput) ToGetFusionEnvironmentFamilies
 
 func (o GetFusionEnvironmentFamiliesFilterOutput) ToGetFusionEnvironmentFamiliesFilterOutputWithContext(ctx context.Context) GetFusionEnvironmentFamiliesFilterOutput {
 	return o
-}
-
-func (o GetFusionEnvironmentFamiliesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentFamiliesFilter] {
-	return pulumix.Output[GetFusionEnvironmentFamiliesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFusionEnvironmentFamiliesFilterOutput) Name() pulumi.StringOutput {
@@ -4772,12 +4011,6 @@ func (o GetFusionEnvironmentFamiliesFilterArrayOutput) ToGetFusionEnvironmentFam
 
 func (o GetFusionEnvironmentFamiliesFilterArrayOutput) ToGetFusionEnvironmentFamiliesFilterArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentFamiliesFilterArrayOutput {
 	return o
-}
-
-func (o GetFusionEnvironmentFamiliesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentFamiliesFilter] {
-	return pulumix.Output[[]GetFusionEnvironmentFamiliesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFusionEnvironmentFamiliesFilterArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentFamiliesFilterOutput {
@@ -4817,12 +4050,6 @@ func (i GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionArgs) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionOutput)
 }
 
-func (i GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollection] {
-	return pulumix.Output[GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollection]{
-		OutputState: i.ToGetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionArrayInput is an input type that accepts GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionArray and GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionArrayOutput values.
 // You can construct a concrete instance of `GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionArrayInput` via:
 //
@@ -4848,12 +4075,6 @@ func (i GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionArray) ToGe
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionArrayOutput)
 }
 
-func (i GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollection] {
-	return pulumix.Output[[]GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollection]{
-		OutputState: i.ToGetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionOutput) ElementType() reflect.Type {
@@ -4866,12 +4087,6 @@ func (o GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionOutput) ToG
 
 func (o GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionOutput) ToGetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionOutputWithContext(ctx context.Context) GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionOutput {
 	return o
-}
-
-func (o GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollection] {
-	return pulumix.Output[GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionOutput) Items() GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemArrayOutput {
@@ -4894,12 +4109,6 @@ func (o GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionArrayOutput
 	return o
 }
 
-func (o GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollection] {
-	return pulumix.Output[[]GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollection {
 		return vs[0].([]GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollection)[vs[1].(int)]
@@ -4908,30 +4117,30 @@ func (o GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionArrayOutput
 
 type GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItem struct {
 	// The ID of the compartment in which to list resources.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
 	FamilyMaintenancePolicies []GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicy `pulumi:"familyMaintenancePolicies"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The unique identifier (OCID) of the environment family. Can't be changed after creation.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// When set to True, a subscription update is required for the environment family.
-	IsSubscriptionUpdateNeeded bool `pulumi:"isSubscriptionUpdateNeeded"`
+	IsSubscriptionUpdateNeeded *bool `pulumi:"isSubscriptionUpdateNeeded"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// A filter that returns all resources that match the specified lifecycle state.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The list of the IDs of the applications subscriptions that are associated with the environment family.
 	SubscriptionIds []string `pulumi:"subscriptionIds"`
 	// Environment Specific Guid/ System Name
-	SystemName string `pulumi:"systemName"`
+	SystemName *string `pulumi:"systemName"`
 	// The time the the FusionEnvironmentFamily was created. An RFC3339 formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeCreated *string `pulumi:"timeCreated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 // GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemInput is an input type that accepts GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemArgs and GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemOutput values.
@@ -4947,30 +4156,30 @@ type GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemInput inte
 
 type GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemArgs struct {
 	// The ID of the compartment in which to list resources.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
 	FamilyMaintenancePolicies GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyArrayInput `pulumi:"familyMaintenancePolicies"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The unique identifier (OCID) of the environment family. Can't be changed after creation.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// When set to True, a subscription update is required for the environment family.
-	IsSubscriptionUpdateNeeded pulumi.BoolInput `pulumi:"isSubscriptionUpdateNeeded"`
+	IsSubscriptionUpdateNeeded pulumi.BoolPtrInput `pulumi:"isSubscriptionUpdateNeeded"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// A filter that returns all resources that match the specified lifecycle state.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The list of the IDs of the applications subscriptions that are associated with the environment family.
 	SubscriptionIds pulumi.StringArrayInput `pulumi:"subscriptionIds"`
 	// Environment Specific Guid/ System Name
-	SystemName pulumi.StringInput `pulumi:"systemName"`
+	SystemName pulumi.StringPtrInput `pulumi:"systemName"`
 	// The time the the FusionEnvironmentFamily was created. An RFC3339 formatted datetime string.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 }
 
 func (GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemArgs) ElementType() reflect.Type {
@@ -4983,12 +4192,6 @@ func (i GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemArgs) T
 
 func (i GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemArgs) ToGetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemOutputWithContext(ctx context.Context) GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemOutput)
-}
-
-func (i GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItem] {
-	return pulumix.Output[GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItem]{
-		OutputState: i.ToGetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemArrayInput is an input type that accepts GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemArray and GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemArrayOutput values.
@@ -5016,12 +4219,6 @@ func (i GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemArray) 
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemArrayOutput)
 }
 
-func (i GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItem] {
-	return pulumix.Output[[]GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItem]{
-		OutputState: i.ToGetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemOutput) ElementType() reflect.Type {
@@ -5036,17 +4233,11 @@ func (o GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemOutput)
 	return o
 }
 
-func (o GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItem] {
-	return pulumix.Output[GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The ID of the compartment in which to list resources.
-func (o GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItem) string {
+func (o GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItem) *string {
 		return v.CompartmentId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -5057,8 +4248,10 @@ func (o GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemOutput)
 }
 
 // A filter to return only resources that match the entire display name given.
-func (o GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItem) *string {
+		return v.DisplayName
+	}).(pulumi.StringPtrOutput)
 }
 
 // The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
@@ -5076,27 +4269,27 @@ func (o GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemOutput)
 }
 
 // The unique identifier (OCID) of the environment family. Can't be changed after creation.
-func (o GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // When set to True, a subscription update is required for the environment family.
-func (o GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemOutput) IsSubscriptionUpdateNeeded() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItem) bool {
+func (o GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemOutput) IsSubscriptionUpdateNeeded() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItem) *bool {
 		return v.IsSubscriptionUpdateNeeded
-	}).(pulumi.BoolOutput)
+	}).(pulumi.BoolPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItem) string {
+func (o GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItem) *string {
 		return v.LifecycleDetails
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // A filter that returns all resources that match the specified lifecycle state.
-func (o GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The list of the IDs of the applications subscriptions that are associated with the environment family.
@@ -5107,17 +4300,21 @@ func (o GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemOutput)
 }
 
 // Environment Specific Guid/ System Name
-func (o GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemOutput) SystemName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItem) string { return v.SystemName }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemOutput) SystemName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItem) *string { return v.SystemName }).(pulumi.StringPtrOutput)
 }
 
 // The time the the FusionEnvironmentFamily was created. An RFC3339 formatted datetime string.
-func (o GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItem) *string {
+		return v.TimeCreated
+	}).(pulumi.StringPtrOutput)
 }
 
-func (o GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItem) *string {
+		return v.TimeUpdated
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -5134,12 +4331,6 @@ func (o GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemArrayOu
 	return o
 }
 
-func (o GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItem] {
-	return pulumix.Output[[]GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItem {
 		return vs[0].([]GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItem)[vs[1].(int)]
@@ -5148,11 +4339,11 @@ func (o GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemArrayOu
 
 type GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicy struct {
 	// Option to upgrade both production and non-production environments at the same time. When set to PROD both types of environnments are upgraded on the production schedule. When set to NON_PROD both types of environments are upgraded on the non-production schedule.
-	ConcurrentMaintenance string `pulumi:"concurrentMaintenance"`
+	ConcurrentMaintenance *string `pulumi:"concurrentMaintenance"`
 	// When True, monthly patching is enabled for the environment family.
-	IsMonthlyPatchingEnabled bool `pulumi:"isMonthlyPatchingEnabled"`
+	IsMonthlyPatchingEnabled *bool `pulumi:"isMonthlyPatchingEnabled"`
 	// The quarterly maintenance month group schedule of the Fusion environment family.
-	QuarterlyUpgradeBeginTimes string `pulumi:"quarterlyUpgradeBeginTimes"`
+	QuarterlyUpgradeBeginTimes *string `pulumi:"quarterlyUpgradeBeginTimes"`
 }
 
 // GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyInput is an input type that accepts GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyArgs and GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyOutput values.
@@ -5168,11 +4359,11 @@ type GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMain
 
 type GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyArgs struct {
 	// Option to upgrade both production and non-production environments at the same time. When set to PROD both types of environnments are upgraded on the production schedule. When set to NON_PROD both types of environments are upgraded on the non-production schedule.
-	ConcurrentMaintenance pulumi.StringInput `pulumi:"concurrentMaintenance"`
+	ConcurrentMaintenance pulumi.StringPtrInput `pulumi:"concurrentMaintenance"`
 	// When True, monthly patching is enabled for the environment family.
-	IsMonthlyPatchingEnabled pulumi.BoolInput `pulumi:"isMonthlyPatchingEnabled"`
+	IsMonthlyPatchingEnabled pulumi.BoolPtrInput `pulumi:"isMonthlyPatchingEnabled"`
 	// The quarterly maintenance month group schedule of the Fusion environment family.
-	QuarterlyUpgradeBeginTimes pulumi.StringInput `pulumi:"quarterlyUpgradeBeginTimes"`
+	QuarterlyUpgradeBeginTimes pulumi.StringPtrInput `pulumi:"quarterlyUpgradeBeginTimes"`
 }
 
 func (GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyArgs) ElementType() reflect.Type {
@@ -5185,12 +4376,6 @@ func (i GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyM
 
 func (i GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyArgs) ToGetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyOutputWithContext(ctx context.Context) GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyOutput)
-}
-
-func (i GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyArgs) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicy] {
-	return pulumix.Output[GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicy]{
-		OutputState: i.ToGetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyArrayInput is an input type that accepts GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyArray and GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyArrayOutput values.
@@ -5218,12 +4403,6 @@ func (i GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyM
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyArrayOutput)
 }
 
-func (i GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicy] {
-	return pulumix.Output[[]GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicy]{
-		OutputState: i.ToGetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyOutput struct{ *pulumi.OutputState }
 
 func (GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyOutput) ElementType() reflect.Type {
@@ -5238,31 +4417,25 @@ func (o GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyM
 	return o
 }
 
-func (o GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyOutput) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicy] {
-	return pulumix.Output[GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicy]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Option to upgrade both production and non-production environments at the same time. When set to PROD both types of environnments are upgraded on the production schedule. When set to NON_PROD both types of environments are upgraded on the non-production schedule.
-func (o GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyOutput) ConcurrentMaintenance() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicy) string {
+func (o GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyOutput) ConcurrentMaintenance() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicy) *string {
 		return v.ConcurrentMaintenance
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // When True, monthly patching is enabled for the environment family.
-func (o GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyOutput) IsMonthlyPatchingEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicy) bool {
+func (o GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyOutput) IsMonthlyPatchingEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicy) *bool {
 		return v.IsMonthlyPatchingEnabled
-	}).(pulumi.BoolOutput)
+	}).(pulumi.BoolPtrOutput)
 }
 
 // The quarterly maintenance month group schedule of the Fusion environment family.
-func (o GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyOutput) QuarterlyUpgradeBeginTimes() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicy) string {
+func (o GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyOutput) QuarterlyUpgradeBeginTimes() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicy) *string {
 		return v.QuarterlyUpgradeBeginTimes
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyArrayOutput struct{ *pulumi.OutputState }
@@ -5279,12 +4452,6 @@ func (o GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyM
 	return o
 }
 
-func (o GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicy] {
-	return pulumix.Output[[]GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicy]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicy {
 		return vs[0].([]GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicy)[vs[1].(int)]
@@ -5293,11 +4460,11 @@ func (o GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyM
 
 type GetFusionEnvironmentFamilyFamilyMaintenancePolicy struct {
 	// Option to upgrade both production and non-production environments at the same time. When set to PROD both types of environnments are upgraded on the production schedule. When set to NON_PROD both types of environments are upgraded on the non-production schedule.
-	ConcurrentMaintenance string `pulumi:"concurrentMaintenance"`
+	ConcurrentMaintenance *string `pulumi:"concurrentMaintenance"`
 	// When True, monthly patching is enabled for the environment family.
-	IsMonthlyPatchingEnabled bool `pulumi:"isMonthlyPatchingEnabled"`
+	IsMonthlyPatchingEnabled *bool `pulumi:"isMonthlyPatchingEnabled"`
 	// The quarterly maintenance month group schedule of the Fusion environment family.
-	QuarterlyUpgradeBeginTimes string `pulumi:"quarterlyUpgradeBeginTimes"`
+	QuarterlyUpgradeBeginTimes *string `pulumi:"quarterlyUpgradeBeginTimes"`
 }
 
 // GetFusionEnvironmentFamilyFamilyMaintenancePolicyInput is an input type that accepts GetFusionEnvironmentFamilyFamilyMaintenancePolicyArgs and GetFusionEnvironmentFamilyFamilyMaintenancePolicyOutput values.
@@ -5313,11 +4480,11 @@ type GetFusionEnvironmentFamilyFamilyMaintenancePolicyInput interface {
 
 type GetFusionEnvironmentFamilyFamilyMaintenancePolicyArgs struct {
 	// Option to upgrade both production and non-production environments at the same time. When set to PROD both types of environnments are upgraded on the production schedule. When set to NON_PROD both types of environments are upgraded on the non-production schedule.
-	ConcurrentMaintenance pulumi.StringInput `pulumi:"concurrentMaintenance"`
+	ConcurrentMaintenance pulumi.StringPtrInput `pulumi:"concurrentMaintenance"`
 	// When True, monthly patching is enabled for the environment family.
-	IsMonthlyPatchingEnabled pulumi.BoolInput `pulumi:"isMonthlyPatchingEnabled"`
+	IsMonthlyPatchingEnabled pulumi.BoolPtrInput `pulumi:"isMonthlyPatchingEnabled"`
 	// The quarterly maintenance month group schedule of the Fusion environment family.
-	QuarterlyUpgradeBeginTimes pulumi.StringInput `pulumi:"quarterlyUpgradeBeginTimes"`
+	QuarterlyUpgradeBeginTimes pulumi.StringPtrInput `pulumi:"quarterlyUpgradeBeginTimes"`
 }
 
 func (GetFusionEnvironmentFamilyFamilyMaintenancePolicyArgs) ElementType() reflect.Type {
@@ -5330,12 +4497,6 @@ func (i GetFusionEnvironmentFamilyFamilyMaintenancePolicyArgs) ToGetFusionEnviro
 
 func (i GetFusionEnvironmentFamilyFamilyMaintenancePolicyArgs) ToGetFusionEnvironmentFamilyFamilyMaintenancePolicyOutputWithContext(ctx context.Context) GetFusionEnvironmentFamilyFamilyMaintenancePolicyOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentFamilyFamilyMaintenancePolicyOutput)
-}
-
-func (i GetFusionEnvironmentFamilyFamilyMaintenancePolicyArgs) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentFamilyFamilyMaintenancePolicy] {
-	return pulumix.Output[GetFusionEnvironmentFamilyFamilyMaintenancePolicy]{
-		OutputState: i.ToGetFusionEnvironmentFamilyFamilyMaintenancePolicyOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetFusionEnvironmentFamilyFamilyMaintenancePolicyArrayInput is an input type that accepts GetFusionEnvironmentFamilyFamilyMaintenancePolicyArray and GetFusionEnvironmentFamilyFamilyMaintenancePolicyArrayOutput values.
@@ -5363,12 +4524,6 @@ func (i GetFusionEnvironmentFamilyFamilyMaintenancePolicyArray) ToGetFusionEnvir
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentFamilyFamilyMaintenancePolicyArrayOutput)
 }
 
-func (i GetFusionEnvironmentFamilyFamilyMaintenancePolicyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentFamilyFamilyMaintenancePolicy] {
-	return pulumix.Output[[]GetFusionEnvironmentFamilyFamilyMaintenancePolicy]{
-		OutputState: i.ToGetFusionEnvironmentFamilyFamilyMaintenancePolicyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFusionEnvironmentFamilyFamilyMaintenancePolicyOutput struct{ *pulumi.OutputState }
 
 func (GetFusionEnvironmentFamilyFamilyMaintenancePolicyOutput) ElementType() reflect.Type {
@@ -5383,25 +4538,19 @@ func (o GetFusionEnvironmentFamilyFamilyMaintenancePolicyOutput) ToGetFusionEnvi
 	return o
 }
 
-func (o GetFusionEnvironmentFamilyFamilyMaintenancePolicyOutput) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentFamilyFamilyMaintenancePolicy] {
-	return pulumix.Output[GetFusionEnvironmentFamilyFamilyMaintenancePolicy]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Option to upgrade both production and non-production environments at the same time. When set to PROD both types of environnments are upgraded on the production schedule. When set to NON_PROD both types of environments are upgraded on the non-production schedule.
-func (o GetFusionEnvironmentFamilyFamilyMaintenancePolicyOutput) ConcurrentMaintenance() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentFamilyFamilyMaintenancePolicy) string { return v.ConcurrentMaintenance }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentFamilyFamilyMaintenancePolicyOutput) ConcurrentMaintenance() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentFamilyFamilyMaintenancePolicy) *string { return v.ConcurrentMaintenance }).(pulumi.StringPtrOutput)
 }
 
 // When True, monthly patching is enabled for the environment family.
-func (o GetFusionEnvironmentFamilyFamilyMaintenancePolicyOutput) IsMonthlyPatchingEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentFamilyFamilyMaintenancePolicy) bool { return v.IsMonthlyPatchingEnabled }).(pulumi.BoolOutput)
+func (o GetFusionEnvironmentFamilyFamilyMaintenancePolicyOutput) IsMonthlyPatchingEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentFamilyFamilyMaintenancePolicy) *bool { return v.IsMonthlyPatchingEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // The quarterly maintenance month group schedule of the Fusion environment family.
-func (o GetFusionEnvironmentFamilyFamilyMaintenancePolicyOutput) QuarterlyUpgradeBeginTimes() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentFamilyFamilyMaintenancePolicy) string { return v.QuarterlyUpgradeBeginTimes }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentFamilyFamilyMaintenancePolicyOutput) QuarterlyUpgradeBeginTimes() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentFamilyFamilyMaintenancePolicy) *string { return v.QuarterlyUpgradeBeginTimes }).(pulumi.StringPtrOutput)
 }
 
 type GetFusionEnvironmentFamilyFamilyMaintenancePolicyArrayOutput struct{ *pulumi.OutputState }
@@ -5418,12 +4567,6 @@ func (o GetFusionEnvironmentFamilyFamilyMaintenancePolicyArrayOutput) ToGetFusio
 	return o
 }
 
-func (o GetFusionEnvironmentFamilyFamilyMaintenancePolicyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentFamilyFamilyMaintenancePolicy] {
-	return pulumix.Output[[]GetFusionEnvironmentFamilyFamilyMaintenancePolicy]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetFusionEnvironmentFamilyFamilyMaintenancePolicyArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentFamilyFamilyMaintenancePolicyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentFamilyFamilyMaintenancePolicy {
 		return vs[0].([]GetFusionEnvironmentFamilyFamilyMaintenancePolicy)[vs[1].(int)]
@@ -5431,9 +4574,9 @@ func (o GetFusionEnvironmentFamilyFamilyMaintenancePolicyArrayOutput) Index(i pu
 }
 
 type GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsage struct {
-	Limit int `pulumi:"limit"`
+	Limit *int `pulumi:"limit"`
 	// The usage of current environment.
-	Usage int `pulumi:"usage"`
+	Usage *int `pulumi:"usage"`
 }
 
 // GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageInput is an input type that accepts GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageArgs and GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageOutput values.
@@ -5448,9 +4591,9 @@ type GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageInput inter
 }
 
 type GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageArgs struct {
-	Limit pulumi.IntInput `pulumi:"limit"`
+	Limit pulumi.IntPtrInput `pulumi:"limit"`
 	// The usage of current environment.
-	Usage pulumi.IntInput `pulumi:"usage"`
+	Usage pulumi.IntPtrInput `pulumi:"usage"`
 }
 
 func (GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageArgs) ElementType() reflect.Type {
@@ -5463,12 +4606,6 @@ func (i GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageArgs) To
 
 func (i GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageArgs) ToGetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageOutputWithContext(ctx context.Context) GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageOutput)
-}
-
-func (i GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageArgs) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsage] {
-	return pulumix.Output[GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsage]{
-		OutputState: i.ToGetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageArrayInput is an input type that accepts GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageArray and GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageArrayOutput values.
@@ -5496,12 +4633,6 @@ func (i GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageArray) T
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageArrayOutput)
 }
 
-func (i GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsage] {
-	return pulumix.Output[[]GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsage]{
-		OutputState: i.ToGetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageOutput struct{ *pulumi.OutputState }
 
 func (GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageOutput) ElementType() reflect.Type {
@@ -5516,19 +4647,13 @@ func (o GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageOutput) 
 	return o
 }
 
-func (o GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageOutput) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsage] {
-	return pulumix.Output[GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsage]{
-		OutputState: o.OutputState,
-	}
-}
-
-func (o GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageOutput) Limit() pulumi.IntOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsage) int { return v.Limit }).(pulumi.IntOutput)
+func (o GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageOutput) Limit() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsage) *int { return v.Limit }).(pulumi.IntPtrOutput)
 }
 
 // The usage of current environment.
-func (o GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageOutput) Usage() pulumi.IntOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsage) int { return v.Usage }).(pulumi.IntOutput)
+func (o GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageOutput) Usage() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsage) *int { return v.Usage }).(pulumi.IntPtrOutput)
 }
 
 type GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageArrayOutput struct{ *pulumi.OutputState }
@@ -5545,12 +4670,6 @@ func (o GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageArrayOut
 	return o
 }
 
-func (o GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsage] {
-	return pulumix.Output[[]GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsage]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsage {
 		return vs[0].([]GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsage)[vs[1].(int)]
@@ -5558,9 +4677,9 @@ func (o GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageArrayOut
 }
 
 type GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsage struct {
-	Limit int `pulumi:"limit"`
+	Limit *int `pulumi:"limit"`
 	// The usage of current environment.
-	Usage int `pulumi:"usage"`
+	Usage *int `pulumi:"usage"`
 }
 
 // GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageInput is an input type that accepts GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageArgs and GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageOutput values.
@@ -5575,9 +4694,9 @@ type GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageInput interf
 }
 
 type GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageArgs struct {
-	Limit pulumi.IntInput `pulumi:"limit"`
+	Limit pulumi.IntPtrInput `pulumi:"limit"`
 	// The usage of current environment.
-	Usage pulumi.IntInput `pulumi:"usage"`
+	Usage pulumi.IntPtrInput `pulumi:"usage"`
 }
 
 func (GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageArgs) ElementType() reflect.Type {
@@ -5590,12 +4709,6 @@ func (i GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageArgs) ToG
 
 func (i GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageArgs) ToGetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageOutputWithContext(ctx context.Context) GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageOutput)
-}
-
-func (i GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageArgs) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsage] {
-	return pulumix.Output[GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsage]{
-		OutputState: i.ToGetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageArrayInput is an input type that accepts GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageArray and GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageArrayOutput values.
@@ -5623,12 +4736,6 @@ func (i GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageArray) To
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageArrayOutput)
 }
 
-func (i GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsage] {
-	return pulumix.Output[[]GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsage]{
-		OutputState: i.ToGetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageOutput struct{ *pulumi.OutputState }
 
 func (GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageOutput) ElementType() reflect.Type {
@@ -5643,19 +4750,13 @@ func (o GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageOutput) T
 	return o
 }
 
-func (o GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageOutput) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsage] {
-	return pulumix.Output[GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsage]{
-		OutputState: o.OutputState,
-	}
-}
-
-func (o GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageOutput) Limit() pulumi.IntOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsage) int { return v.Limit }).(pulumi.IntOutput)
+func (o GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageOutput) Limit() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsage) *int { return v.Limit }).(pulumi.IntPtrOutput)
 }
 
 // The usage of current environment.
-func (o GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageOutput) Usage() pulumi.IntOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsage) int { return v.Usage }).(pulumi.IntOutput)
+func (o GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageOutput) Usage() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsage) *int { return v.Usage }).(pulumi.IntPtrOutput)
 }
 
 type GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageArrayOutput struct{ *pulumi.OutputState }
@@ -5672,12 +4773,6 @@ func (o GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageArrayOutp
 	return o
 }
 
-func (o GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsage] {
-	return pulumix.Output[[]GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsage]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsage {
 		return vs[0].([]GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsage)[vs[1].(int)]
@@ -5685,9 +4780,9 @@ func (o GetFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageArrayOutp
 }
 
 type GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsage struct {
-	Limit int `pulumi:"limit"`
+	Limit *int `pulumi:"limit"`
 	// The usage of current environment.
-	Usage int `pulumi:"usage"`
+	Usage *int `pulumi:"usage"`
 }
 
 // GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageInput is an input type that accepts GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageArgs and GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageOutput values.
@@ -5702,9 +4797,9 @@ type GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageInput interface {
 }
 
 type GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageArgs struct {
-	Limit pulumi.IntInput `pulumi:"limit"`
+	Limit pulumi.IntPtrInput `pulumi:"limit"`
 	// The usage of current environment.
-	Usage pulumi.IntInput `pulumi:"usage"`
+	Usage pulumi.IntPtrInput `pulumi:"usage"`
 }
 
 func (GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageArgs) ElementType() reflect.Type {
@@ -5717,12 +4812,6 @@ func (i GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageArgs) ToGetFusi
 
 func (i GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageArgs) ToGetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageOutputWithContext(ctx context.Context) GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageOutput)
-}
-
-func (i GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageArgs) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsage] {
-	return pulumix.Output[GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsage]{
-		OutputState: i.ToGetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageArrayInput is an input type that accepts GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageArray and GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageArrayOutput values.
@@ -5750,12 +4839,6 @@ func (i GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageArray) ToGetFus
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageArrayOutput)
 }
 
-func (i GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsage] {
-	return pulumix.Output[[]GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsage]{
-		OutputState: i.ToGetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageOutput struct{ *pulumi.OutputState }
 
 func (GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageOutput) ElementType() reflect.Type {
@@ -5770,19 +4853,13 @@ func (o GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageOutput) ToGetFu
 	return o
 }
 
-func (o GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageOutput) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsage] {
-	return pulumix.Output[GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsage]{
-		OutputState: o.OutputState,
-	}
-}
-
-func (o GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageOutput) Limit() pulumi.IntOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsage) int { return v.Limit }).(pulumi.IntOutput)
+func (o GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageOutput) Limit() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsage) *int { return v.Limit }).(pulumi.IntPtrOutput)
 }
 
 // The usage of current environment.
-func (o GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageOutput) Usage() pulumi.IntOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsage) int { return v.Usage }).(pulumi.IntOutput)
+func (o GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageOutput) Usage() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsage) *int { return v.Usage }).(pulumi.IntPtrOutput)
 }
 
 type GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageArrayOutput struct{ *pulumi.OutputState }
@@ -5799,12 +4876,6 @@ func (o GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageArrayOutput) To
 	return o
 }
 
-func (o GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsage] {
-	return pulumix.Output[[]GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsage]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsage {
 		return vs[0].([]GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsage)[vs[1].(int)]
@@ -5813,11 +4884,11 @@ func (o GetFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageArrayOutput) In
 
 type GetFusionEnvironmentFamilySubscriptionDetailSubscription struct {
 	// Subscription id.
-	ClassicSubscriptionId string `pulumi:"classicSubscriptionId"`
+	ClassicSubscriptionId *string `pulumi:"classicSubscriptionId"`
 	// OCID of the subscription details for particular root compartment or tenancy.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The type of subscription, such as 'CLOUDCM'/'SAAS'/'CRM', etc.
-	ServiceName string `pulumi:"serviceName"`
+	ServiceName *string `pulumi:"serviceName"`
 	// Stock keeping unit.
 	Skuses []GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkus `pulumi:"skuses"`
 }
@@ -5835,11 +4906,11 @@ type GetFusionEnvironmentFamilySubscriptionDetailSubscriptionInput interface {
 
 type GetFusionEnvironmentFamilySubscriptionDetailSubscriptionArgs struct {
 	// Subscription id.
-	ClassicSubscriptionId pulumi.StringInput `pulumi:"classicSubscriptionId"`
+	ClassicSubscriptionId pulumi.StringPtrInput `pulumi:"classicSubscriptionId"`
 	// OCID of the subscription details for particular root compartment or tenancy.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// The type of subscription, such as 'CLOUDCM'/'SAAS'/'CRM', etc.
-	ServiceName pulumi.StringInput `pulumi:"serviceName"`
+	ServiceName pulumi.StringPtrInput `pulumi:"serviceName"`
 	// Stock keeping unit.
 	Skuses GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusArrayInput `pulumi:"skuses"`
 }
@@ -5854,12 +4925,6 @@ func (i GetFusionEnvironmentFamilySubscriptionDetailSubscriptionArgs) ToGetFusio
 
 func (i GetFusionEnvironmentFamilySubscriptionDetailSubscriptionArgs) ToGetFusionEnvironmentFamilySubscriptionDetailSubscriptionOutputWithContext(ctx context.Context) GetFusionEnvironmentFamilySubscriptionDetailSubscriptionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentFamilySubscriptionDetailSubscriptionOutput)
-}
-
-func (i GetFusionEnvironmentFamilySubscriptionDetailSubscriptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentFamilySubscriptionDetailSubscription] {
-	return pulumix.Output[GetFusionEnvironmentFamilySubscriptionDetailSubscription]{
-		OutputState: i.ToGetFusionEnvironmentFamilySubscriptionDetailSubscriptionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetFusionEnvironmentFamilySubscriptionDetailSubscriptionArrayInput is an input type that accepts GetFusionEnvironmentFamilySubscriptionDetailSubscriptionArray and GetFusionEnvironmentFamilySubscriptionDetailSubscriptionArrayOutput values.
@@ -5887,12 +4952,6 @@ func (i GetFusionEnvironmentFamilySubscriptionDetailSubscriptionArray) ToGetFusi
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentFamilySubscriptionDetailSubscriptionArrayOutput)
 }
 
-func (i GetFusionEnvironmentFamilySubscriptionDetailSubscriptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentFamilySubscriptionDetailSubscription] {
-	return pulumix.Output[[]GetFusionEnvironmentFamilySubscriptionDetailSubscription]{
-		OutputState: i.ToGetFusionEnvironmentFamilySubscriptionDetailSubscriptionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFusionEnvironmentFamilySubscriptionDetailSubscriptionOutput struct{ *pulumi.OutputState }
 
 func (GetFusionEnvironmentFamilySubscriptionDetailSubscriptionOutput) ElementType() reflect.Type {
@@ -5907,27 +4966,21 @@ func (o GetFusionEnvironmentFamilySubscriptionDetailSubscriptionOutput) ToGetFus
 	return o
 }
 
-func (o GetFusionEnvironmentFamilySubscriptionDetailSubscriptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentFamilySubscriptionDetailSubscription] {
-	return pulumix.Output[GetFusionEnvironmentFamilySubscriptionDetailSubscription]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Subscription id.
-func (o GetFusionEnvironmentFamilySubscriptionDetailSubscriptionOutput) ClassicSubscriptionId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentFamilySubscriptionDetailSubscription) string {
+func (o GetFusionEnvironmentFamilySubscriptionDetailSubscriptionOutput) ClassicSubscriptionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentFamilySubscriptionDetailSubscription) *string {
 		return v.ClassicSubscriptionId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // OCID of the subscription details for particular root compartment or tenancy.
-func (o GetFusionEnvironmentFamilySubscriptionDetailSubscriptionOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentFamilySubscriptionDetailSubscription) string { return v.Id }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentFamilySubscriptionDetailSubscriptionOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentFamilySubscriptionDetailSubscription) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The type of subscription, such as 'CLOUDCM'/'SAAS'/'CRM', etc.
-func (o GetFusionEnvironmentFamilySubscriptionDetailSubscriptionOutput) ServiceName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentFamilySubscriptionDetailSubscription) string { return v.ServiceName }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentFamilySubscriptionDetailSubscriptionOutput) ServiceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentFamilySubscriptionDetailSubscription) *string { return v.ServiceName }).(pulumi.StringPtrOutput)
 }
 
 // Stock keeping unit.
@@ -5951,12 +5004,6 @@ func (o GetFusionEnvironmentFamilySubscriptionDetailSubscriptionArrayOutput) ToG
 	return o
 }
 
-func (o GetFusionEnvironmentFamilySubscriptionDetailSubscriptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentFamilySubscriptionDetailSubscription] {
-	return pulumix.Output[[]GetFusionEnvironmentFamilySubscriptionDetailSubscription]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetFusionEnvironmentFamilySubscriptionDetailSubscriptionArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentFamilySubscriptionDetailSubscriptionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentFamilySubscriptionDetailSubscription {
 		return vs[0].([]GetFusionEnvironmentFamilySubscriptionDetailSubscription)[vs[1].(int)]
@@ -5965,15 +5012,15 @@ func (o GetFusionEnvironmentFamilySubscriptionDetailSubscriptionArrayOutput) Ind
 
 type GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkus struct {
 	// Description of the stock units.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Description of the covered product belonging to this Sku.
-	LicensePartDescription string `pulumi:"licensePartDescription"`
+	LicensePartDescription *string `pulumi:"licensePartDescription"`
 	// Base metric for billing the service.
-	MetricName string `pulumi:"metricName"`
+	MetricName *string `pulumi:"metricName"`
 	// Quantity of the stock units.
-	Quantity int `pulumi:"quantity"`
+	Quantity *int `pulumi:"quantity"`
 	// Stock keeping unit id.
-	Sku string `pulumi:"sku"`
+	Sku *string `pulumi:"sku"`
 }
 
 // GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusInput is an input type that accepts GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusArgs and GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusOutput values.
@@ -5989,15 +5036,15 @@ type GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusInput interface
 
 type GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusArgs struct {
 	// Description of the stock units.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// Description of the covered product belonging to this Sku.
-	LicensePartDescription pulumi.StringInput `pulumi:"licensePartDescription"`
+	LicensePartDescription pulumi.StringPtrInput `pulumi:"licensePartDescription"`
 	// Base metric for billing the service.
-	MetricName pulumi.StringInput `pulumi:"metricName"`
+	MetricName pulumi.StringPtrInput `pulumi:"metricName"`
 	// Quantity of the stock units.
-	Quantity pulumi.IntInput `pulumi:"quantity"`
+	Quantity pulumi.IntPtrInput `pulumi:"quantity"`
 	// Stock keeping unit id.
-	Sku pulumi.StringInput `pulumi:"sku"`
+	Sku pulumi.StringPtrInput `pulumi:"sku"`
 }
 
 func (GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusArgs) ElementType() reflect.Type {
@@ -6010,12 +5057,6 @@ func (i GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusArgs) ToGetF
 
 func (i GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusArgs) ToGetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusOutputWithContext(ctx context.Context) GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusOutput)
-}
-
-func (i GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusArgs) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkus] {
-	return pulumix.Output[GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkus]{
-		OutputState: i.ToGetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusArrayInput is an input type that accepts GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusArray and GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusArrayOutput values.
@@ -6043,12 +5084,6 @@ func (i GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusArray) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusArrayOutput)
 }
 
-func (i GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkus] {
-	return pulumix.Output[[]GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkus]{
-		OutputState: i.ToGetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusOutput struct{ *pulumi.OutputState }
 
 func (GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusOutput) ElementType() reflect.Type {
@@ -6063,37 +5098,31 @@ func (o GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusOutput) ToGe
 	return o
 }
 
-func (o GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusOutput) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkus] {
-	return pulumix.Output[GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkus]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Description of the stock units.
-func (o GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkus) string { return v.Description }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkus) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Description of the covered product belonging to this Sku.
-func (o GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusOutput) LicensePartDescription() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkus) string {
+func (o GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusOutput) LicensePartDescription() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkus) *string {
 		return v.LicensePartDescription
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Base metric for billing the service.
-func (o GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusOutput) MetricName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkus) string { return v.MetricName }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusOutput) MetricName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkus) *string { return v.MetricName }).(pulumi.StringPtrOutput)
 }
 
 // Quantity of the stock units.
-func (o GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusOutput) Quantity() pulumi.IntOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkus) int { return v.Quantity }).(pulumi.IntOutput)
+func (o GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusOutput) Quantity() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkus) *int { return v.Quantity }).(pulumi.IntPtrOutput)
 }
 
 // Stock keeping unit id.
-func (o GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusOutput) Sku() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkus) string { return v.Sku }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusOutput) Sku() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkus) *string { return v.Sku }).(pulumi.StringPtrOutput)
 }
 
 type GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusArrayOutput struct{ *pulumi.OutputState }
@@ -6110,12 +5139,6 @@ func (o GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusArrayOutput)
 	return o
 }
 
-func (o GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkus] {
-	return pulumix.Output[[]GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkus]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkus {
 		return vs[0].([]GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkus)[vs[1].(int)]
@@ -6123,13 +5146,13 @@ func (o GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusArrayOutput)
 }
 
 type GetFusionEnvironmentKmsKeyInfo struct {
-	ActiveKeyId              string `pulumi:"activeKeyId"`
-	ActiveKeyVersion         string `pulumi:"activeKeyVersion"`
-	CurrentKeyLifecycleState string `pulumi:"currentKeyLifecycleState"`
-	ScheduledKeyId           string `pulumi:"scheduledKeyId"`
-	ScheduledKeyStatus       string `pulumi:"scheduledKeyStatus"`
-	ScheduledKeyVersion      string `pulumi:"scheduledKeyVersion"`
-	ScheduledLifecycleState  string `pulumi:"scheduledLifecycleState"`
+	ActiveKeyId              *string `pulumi:"activeKeyId"`
+	ActiveKeyVersion         *string `pulumi:"activeKeyVersion"`
+	CurrentKeyLifecycleState *string `pulumi:"currentKeyLifecycleState"`
+	ScheduledKeyId           *string `pulumi:"scheduledKeyId"`
+	ScheduledKeyStatus       *string `pulumi:"scheduledKeyStatus"`
+	ScheduledKeyVersion      *string `pulumi:"scheduledKeyVersion"`
+	ScheduledLifecycleState  *string `pulumi:"scheduledLifecycleState"`
 }
 
 // GetFusionEnvironmentKmsKeyInfoInput is an input type that accepts GetFusionEnvironmentKmsKeyInfoArgs and GetFusionEnvironmentKmsKeyInfoOutput values.
@@ -6144,13 +5167,13 @@ type GetFusionEnvironmentKmsKeyInfoInput interface {
 }
 
 type GetFusionEnvironmentKmsKeyInfoArgs struct {
-	ActiveKeyId              pulumi.StringInput `pulumi:"activeKeyId"`
-	ActiveKeyVersion         pulumi.StringInput `pulumi:"activeKeyVersion"`
-	CurrentKeyLifecycleState pulumi.StringInput `pulumi:"currentKeyLifecycleState"`
-	ScheduledKeyId           pulumi.StringInput `pulumi:"scheduledKeyId"`
-	ScheduledKeyStatus       pulumi.StringInput `pulumi:"scheduledKeyStatus"`
-	ScheduledKeyVersion      pulumi.StringInput `pulumi:"scheduledKeyVersion"`
-	ScheduledLifecycleState  pulumi.StringInput `pulumi:"scheduledLifecycleState"`
+	ActiveKeyId              pulumi.StringPtrInput `pulumi:"activeKeyId"`
+	ActiveKeyVersion         pulumi.StringPtrInput `pulumi:"activeKeyVersion"`
+	CurrentKeyLifecycleState pulumi.StringPtrInput `pulumi:"currentKeyLifecycleState"`
+	ScheduledKeyId           pulumi.StringPtrInput `pulumi:"scheduledKeyId"`
+	ScheduledKeyStatus       pulumi.StringPtrInput `pulumi:"scheduledKeyStatus"`
+	ScheduledKeyVersion      pulumi.StringPtrInput `pulumi:"scheduledKeyVersion"`
+	ScheduledLifecycleState  pulumi.StringPtrInput `pulumi:"scheduledLifecycleState"`
 }
 
 func (GetFusionEnvironmentKmsKeyInfoArgs) ElementType() reflect.Type {
@@ -6163,12 +5186,6 @@ func (i GetFusionEnvironmentKmsKeyInfoArgs) ToGetFusionEnvironmentKmsKeyInfoOutp
 
 func (i GetFusionEnvironmentKmsKeyInfoArgs) ToGetFusionEnvironmentKmsKeyInfoOutputWithContext(ctx context.Context) GetFusionEnvironmentKmsKeyInfoOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentKmsKeyInfoOutput)
-}
-
-func (i GetFusionEnvironmentKmsKeyInfoArgs) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentKmsKeyInfo] {
-	return pulumix.Output[GetFusionEnvironmentKmsKeyInfo]{
-		OutputState: i.ToGetFusionEnvironmentKmsKeyInfoOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetFusionEnvironmentKmsKeyInfoArrayInput is an input type that accepts GetFusionEnvironmentKmsKeyInfoArray and GetFusionEnvironmentKmsKeyInfoArrayOutput values.
@@ -6196,12 +5213,6 @@ func (i GetFusionEnvironmentKmsKeyInfoArray) ToGetFusionEnvironmentKmsKeyInfoArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentKmsKeyInfoArrayOutput)
 }
 
-func (i GetFusionEnvironmentKmsKeyInfoArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentKmsKeyInfo] {
-	return pulumix.Output[[]GetFusionEnvironmentKmsKeyInfo]{
-		OutputState: i.ToGetFusionEnvironmentKmsKeyInfoArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFusionEnvironmentKmsKeyInfoOutput struct{ *pulumi.OutputState }
 
 func (GetFusionEnvironmentKmsKeyInfoOutput) ElementType() reflect.Type {
@@ -6216,38 +5227,32 @@ func (o GetFusionEnvironmentKmsKeyInfoOutput) ToGetFusionEnvironmentKmsKeyInfoOu
 	return o
 }
 
-func (o GetFusionEnvironmentKmsKeyInfoOutput) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentKmsKeyInfo] {
-	return pulumix.Output[GetFusionEnvironmentKmsKeyInfo]{
-		OutputState: o.OutputState,
-	}
+func (o GetFusionEnvironmentKmsKeyInfoOutput) ActiveKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentKmsKeyInfo) *string { return v.ActiveKeyId }).(pulumi.StringPtrOutput)
 }
 
-func (o GetFusionEnvironmentKmsKeyInfoOutput) ActiveKeyId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentKmsKeyInfo) string { return v.ActiveKeyId }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentKmsKeyInfoOutput) ActiveKeyVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentKmsKeyInfo) *string { return v.ActiveKeyVersion }).(pulumi.StringPtrOutput)
 }
 
-func (o GetFusionEnvironmentKmsKeyInfoOutput) ActiveKeyVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentKmsKeyInfo) string { return v.ActiveKeyVersion }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentKmsKeyInfoOutput) CurrentKeyLifecycleState() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentKmsKeyInfo) *string { return v.CurrentKeyLifecycleState }).(pulumi.StringPtrOutput)
 }
 
-func (o GetFusionEnvironmentKmsKeyInfoOutput) CurrentKeyLifecycleState() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentKmsKeyInfo) string { return v.CurrentKeyLifecycleState }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentKmsKeyInfoOutput) ScheduledKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentKmsKeyInfo) *string { return v.ScheduledKeyId }).(pulumi.StringPtrOutput)
 }
 
-func (o GetFusionEnvironmentKmsKeyInfoOutput) ScheduledKeyId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentKmsKeyInfo) string { return v.ScheduledKeyId }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentKmsKeyInfoOutput) ScheduledKeyStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentKmsKeyInfo) *string { return v.ScheduledKeyStatus }).(pulumi.StringPtrOutput)
 }
 
-func (o GetFusionEnvironmentKmsKeyInfoOutput) ScheduledKeyStatus() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentKmsKeyInfo) string { return v.ScheduledKeyStatus }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentKmsKeyInfoOutput) ScheduledKeyVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentKmsKeyInfo) *string { return v.ScheduledKeyVersion }).(pulumi.StringPtrOutput)
 }
 
-func (o GetFusionEnvironmentKmsKeyInfoOutput) ScheduledKeyVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentKmsKeyInfo) string { return v.ScheduledKeyVersion }).(pulumi.StringOutput)
-}
-
-func (o GetFusionEnvironmentKmsKeyInfoOutput) ScheduledLifecycleState() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentKmsKeyInfo) string { return v.ScheduledLifecycleState }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentKmsKeyInfoOutput) ScheduledLifecycleState() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentKmsKeyInfo) *string { return v.ScheduledLifecycleState }).(pulumi.StringPtrOutput)
 }
 
 type GetFusionEnvironmentKmsKeyInfoArrayOutput struct{ *pulumi.OutputState }
@@ -6264,12 +5269,6 @@ func (o GetFusionEnvironmentKmsKeyInfoArrayOutput) ToGetFusionEnvironmentKmsKeyI
 	return o
 }
 
-func (o GetFusionEnvironmentKmsKeyInfoArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentKmsKeyInfo] {
-	return pulumix.Output[[]GetFusionEnvironmentKmsKeyInfo]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetFusionEnvironmentKmsKeyInfoArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentKmsKeyInfoOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentKmsKeyInfo {
 		return vs[0].([]GetFusionEnvironmentKmsKeyInfo)[vs[1].(int)]
@@ -6278,9 +5277,9 @@ func (o GetFusionEnvironmentKmsKeyInfoArrayOutput) Index(i pulumi.IntInput) GetF
 
 type GetFusionEnvironmentMaintenancePolicy struct {
 	// User choice to upgrade both production and non-production environments at the same time. Overrides the Fusion environment family setting.
-	EnvironmentMaintenanceOverride string `pulumi:"environmentMaintenanceOverride"`
+	EnvironmentMaintenanceOverride *string `pulumi:"environmentMaintenanceOverride"`
 	// Whether the Fusion environment will be updated monthly or updated on the quarterly cycle. This setting overrides the monthly patching setting of its Fusion environment family.
-	MonthlyPatchingOverride string `pulumi:"monthlyPatchingOverride"`
+	MonthlyPatchingOverride *string `pulumi:"monthlyPatchingOverride"`
 	// Determines the quarterly upgrade begin times (monthly maintenance group schedule ) of the Fusion environment.
 	QuarterlyUpgradeBeginTimes []GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTime `pulumi:"quarterlyUpgradeBeginTimes"`
 }
@@ -6298,9 +5297,9 @@ type GetFusionEnvironmentMaintenancePolicyInput interface {
 
 type GetFusionEnvironmentMaintenancePolicyArgs struct {
 	// User choice to upgrade both production and non-production environments at the same time. Overrides the Fusion environment family setting.
-	EnvironmentMaintenanceOverride pulumi.StringInput `pulumi:"environmentMaintenanceOverride"`
+	EnvironmentMaintenanceOverride pulumi.StringPtrInput `pulumi:"environmentMaintenanceOverride"`
 	// Whether the Fusion environment will be updated monthly or updated on the quarterly cycle. This setting overrides the monthly patching setting of its Fusion environment family.
-	MonthlyPatchingOverride pulumi.StringInput `pulumi:"monthlyPatchingOverride"`
+	MonthlyPatchingOverride pulumi.StringPtrInput `pulumi:"monthlyPatchingOverride"`
 	// Determines the quarterly upgrade begin times (monthly maintenance group schedule ) of the Fusion environment.
 	QuarterlyUpgradeBeginTimes GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArrayInput `pulumi:"quarterlyUpgradeBeginTimes"`
 }
@@ -6315,12 +5314,6 @@ func (i GetFusionEnvironmentMaintenancePolicyArgs) ToGetFusionEnvironmentMainten
 
 func (i GetFusionEnvironmentMaintenancePolicyArgs) ToGetFusionEnvironmentMaintenancePolicyOutputWithContext(ctx context.Context) GetFusionEnvironmentMaintenancePolicyOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentMaintenancePolicyOutput)
-}
-
-func (i GetFusionEnvironmentMaintenancePolicyArgs) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentMaintenancePolicy] {
-	return pulumix.Output[GetFusionEnvironmentMaintenancePolicy]{
-		OutputState: i.ToGetFusionEnvironmentMaintenancePolicyOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetFusionEnvironmentMaintenancePolicyArrayInput is an input type that accepts GetFusionEnvironmentMaintenancePolicyArray and GetFusionEnvironmentMaintenancePolicyArrayOutput values.
@@ -6348,12 +5341,6 @@ func (i GetFusionEnvironmentMaintenancePolicyArray) ToGetFusionEnvironmentMainte
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentMaintenancePolicyArrayOutput)
 }
 
-func (i GetFusionEnvironmentMaintenancePolicyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentMaintenancePolicy] {
-	return pulumix.Output[[]GetFusionEnvironmentMaintenancePolicy]{
-		OutputState: i.ToGetFusionEnvironmentMaintenancePolicyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFusionEnvironmentMaintenancePolicyOutput struct{ *pulumi.OutputState }
 
 func (GetFusionEnvironmentMaintenancePolicyOutput) ElementType() reflect.Type {
@@ -6368,20 +5355,14 @@ func (o GetFusionEnvironmentMaintenancePolicyOutput) ToGetFusionEnvironmentMaint
 	return o
 }
 
-func (o GetFusionEnvironmentMaintenancePolicyOutput) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentMaintenancePolicy] {
-	return pulumix.Output[GetFusionEnvironmentMaintenancePolicy]{
-		OutputState: o.OutputState,
-	}
-}
-
 // User choice to upgrade both production and non-production environments at the same time. Overrides the Fusion environment family setting.
-func (o GetFusionEnvironmentMaintenancePolicyOutput) EnvironmentMaintenanceOverride() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentMaintenancePolicy) string { return v.EnvironmentMaintenanceOverride }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentMaintenancePolicyOutput) EnvironmentMaintenanceOverride() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentMaintenancePolicy) *string { return v.EnvironmentMaintenanceOverride }).(pulumi.StringPtrOutput)
 }
 
 // Whether the Fusion environment will be updated monthly or updated on the quarterly cycle. This setting overrides the monthly patching setting of its Fusion environment family.
-func (o GetFusionEnvironmentMaintenancePolicyOutput) MonthlyPatchingOverride() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentMaintenancePolicy) string { return v.MonthlyPatchingOverride }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentMaintenancePolicyOutput) MonthlyPatchingOverride() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentMaintenancePolicy) *string { return v.MonthlyPatchingOverride }).(pulumi.StringPtrOutput)
 }
 
 // Determines the quarterly upgrade begin times (monthly maintenance group schedule ) of the Fusion environment.
@@ -6405,12 +5386,6 @@ func (o GetFusionEnvironmentMaintenancePolicyArrayOutput) ToGetFusionEnvironment
 	return o
 }
 
-func (o GetFusionEnvironmentMaintenancePolicyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentMaintenancePolicy] {
-	return pulumix.Output[[]GetFusionEnvironmentMaintenancePolicy]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetFusionEnvironmentMaintenancePolicyArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentMaintenancePolicyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentMaintenancePolicy {
 		return vs[0].([]GetFusionEnvironmentMaintenancePolicy)[vs[1].(int)]
@@ -6419,9 +5394,9 @@ func (o GetFusionEnvironmentMaintenancePolicyArrayOutput) Index(i pulumi.IntInpu
 
 type GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTime struct {
 	// The frequency and month when maintenance occurs for the Fusion environment.
-	BeginTimesValue string `pulumi:"beginTimesValue"`
+	BeginTimesValue *string `pulumi:"beginTimesValue"`
 	// Determines if the maintenance schedule of the Fusion environment is inherited from the Fusion environment family.
-	OverrideType string `pulumi:"overrideType"`
+	OverrideType *string `pulumi:"overrideType"`
 }
 
 // GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeInput is an input type that accepts GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArgs and GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeOutput values.
@@ -6437,9 +5412,9 @@ type GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeInput interfa
 
 type GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArgs struct {
 	// The frequency and month when maintenance occurs for the Fusion environment.
-	BeginTimesValue pulumi.StringInput `pulumi:"beginTimesValue"`
+	BeginTimesValue pulumi.StringPtrInput `pulumi:"beginTimesValue"`
 	// Determines if the maintenance schedule of the Fusion environment is inherited from the Fusion environment family.
-	OverrideType pulumi.StringInput `pulumi:"overrideType"`
+	OverrideType pulumi.StringPtrInput `pulumi:"overrideType"`
 }
 
 func (GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArgs) ElementType() reflect.Type {
@@ -6452,12 +5427,6 @@ func (i GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArgs) ToGe
 
 func (i GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArgs) ToGetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeOutputWithContext(ctx context.Context) GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeOutput)
-}
-
-func (i GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArgs) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTime] {
-	return pulumix.Output[GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTime]{
-		OutputState: i.ToGetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArrayInput is an input type that accepts GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArray and GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArrayOutput values.
@@ -6485,12 +5454,6 @@ func (i GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArray) ToG
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArrayOutput)
 }
 
-func (i GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTime] {
-	return pulumix.Output[[]GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTime]{
-		OutputState: i.ToGetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeOutput struct{ *pulumi.OutputState }
 
 func (GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeOutput) ElementType() reflect.Type {
@@ -6505,22 +5468,16 @@ func (o GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeOutput) To
 	return o
 }
 
-func (o GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeOutput) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTime] {
-	return pulumix.Output[GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTime]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The frequency and month when maintenance occurs for the Fusion environment.
-func (o GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeOutput) BeginTimesValue() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTime) string {
+func (o GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeOutput) BeginTimesValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTime) *string {
 		return v.BeginTimesValue
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Determines if the maintenance schedule of the Fusion environment is inherited from the Fusion environment family.
-func (o GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeOutput) OverrideType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTime) string { return v.OverrideType }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeOutput) OverrideType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTime) *string { return v.OverrideType }).(pulumi.StringPtrOutput)
 }
 
 type GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArrayOutput struct{ *pulumi.OutputState }
@@ -6537,12 +5494,6 @@ func (o GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArrayOutpu
 	return o
 }
 
-func (o GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTime] {
-	return pulumix.Output[[]GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTime]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTime {
 		return vs[0].([]GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTime)[vs[1].(int)]
@@ -6551,11 +5502,11 @@ func (o GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArrayOutpu
 
 type GetFusionEnvironmentRefresh struct {
 	// The source environment id for the last refresh
-	SourceFusionEnvironmentId string `pulumi:"sourceFusionEnvironmentId"`
+	SourceFusionEnvironmentId *string `pulumi:"sourceFusionEnvironmentId"`
 	// The time of when the last refresh finish
-	TimeFinished string `pulumi:"timeFinished"`
+	TimeFinished *string `pulumi:"timeFinished"`
 	// The point of time of the latest DB backup for the last refresh
-	TimeOfRestorationPoint string `pulumi:"timeOfRestorationPoint"`
+	TimeOfRestorationPoint *string `pulumi:"timeOfRestorationPoint"`
 }
 
 // GetFusionEnvironmentRefreshInput is an input type that accepts GetFusionEnvironmentRefreshArgs and GetFusionEnvironmentRefreshOutput values.
@@ -6571,11 +5522,11 @@ type GetFusionEnvironmentRefreshInput interface {
 
 type GetFusionEnvironmentRefreshArgs struct {
 	// The source environment id for the last refresh
-	SourceFusionEnvironmentId pulumi.StringInput `pulumi:"sourceFusionEnvironmentId"`
+	SourceFusionEnvironmentId pulumi.StringPtrInput `pulumi:"sourceFusionEnvironmentId"`
 	// The time of when the last refresh finish
-	TimeFinished pulumi.StringInput `pulumi:"timeFinished"`
+	TimeFinished pulumi.StringPtrInput `pulumi:"timeFinished"`
 	// The point of time of the latest DB backup for the last refresh
-	TimeOfRestorationPoint pulumi.StringInput `pulumi:"timeOfRestorationPoint"`
+	TimeOfRestorationPoint pulumi.StringPtrInput `pulumi:"timeOfRestorationPoint"`
 }
 
 func (GetFusionEnvironmentRefreshArgs) ElementType() reflect.Type {
@@ -6588,12 +5539,6 @@ func (i GetFusionEnvironmentRefreshArgs) ToGetFusionEnvironmentRefreshOutput() G
 
 func (i GetFusionEnvironmentRefreshArgs) ToGetFusionEnvironmentRefreshOutputWithContext(ctx context.Context) GetFusionEnvironmentRefreshOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentRefreshOutput)
-}
-
-func (i GetFusionEnvironmentRefreshArgs) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentRefresh] {
-	return pulumix.Output[GetFusionEnvironmentRefresh]{
-		OutputState: i.ToGetFusionEnvironmentRefreshOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetFusionEnvironmentRefreshArrayInput is an input type that accepts GetFusionEnvironmentRefreshArray and GetFusionEnvironmentRefreshArrayOutput values.
@@ -6621,12 +5566,6 @@ func (i GetFusionEnvironmentRefreshArray) ToGetFusionEnvironmentRefreshArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentRefreshArrayOutput)
 }
 
-func (i GetFusionEnvironmentRefreshArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentRefresh] {
-	return pulumix.Output[[]GetFusionEnvironmentRefresh]{
-		OutputState: i.ToGetFusionEnvironmentRefreshArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFusionEnvironmentRefreshOutput struct{ *pulumi.OutputState }
 
 func (GetFusionEnvironmentRefreshOutput) ElementType() reflect.Type {
@@ -6641,25 +5580,19 @@ func (o GetFusionEnvironmentRefreshOutput) ToGetFusionEnvironmentRefreshOutputWi
 	return o
 }
 
-func (o GetFusionEnvironmentRefreshOutput) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentRefresh] {
-	return pulumix.Output[GetFusionEnvironmentRefresh]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The source environment id for the last refresh
-func (o GetFusionEnvironmentRefreshOutput) SourceFusionEnvironmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentRefresh) string { return v.SourceFusionEnvironmentId }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentRefreshOutput) SourceFusionEnvironmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentRefresh) *string { return v.SourceFusionEnvironmentId }).(pulumi.StringPtrOutput)
 }
 
 // The time of when the last refresh finish
-func (o GetFusionEnvironmentRefreshOutput) TimeFinished() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentRefresh) string { return v.TimeFinished }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentRefreshOutput) TimeFinished() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentRefresh) *string { return v.TimeFinished }).(pulumi.StringPtrOutput)
 }
 
 // The point of time of the latest DB backup for the last refresh
-func (o GetFusionEnvironmentRefreshOutput) TimeOfRestorationPoint() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentRefresh) string { return v.TimeOfRestorationPoint }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentRefreshOutput) TimeOfRestorationPoint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentRefresh) *string { return v.TimeOfRestorationPoint }).(pulumi.StringPtrOutput)
 }
 
 type GetFusionEnvironmentRefreshArrayOutput struct{ *pulumi.OutputState }
@@ -6674,12 +5607,6 @@ func (o GetFusionEnvironmentRefreshArrayOutput) ToGetFusionEnvironmentRefreshArr
 
 func (o GetFusionEnvironmentRefreshArrayOutput) ToGetFusionEnvironmentRefreshArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentRefreshArrayOutput {
 	return o
-}
-
-func (o GetFusionEnvironmentRefreshArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentRefresh] {
-	return pulumix.Output[[]GetFusionEnvironmentRefresh]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFusionEnvironmentRefreshArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentRefreshOutput {
@@ -6723,12 +5650,6 @@ func (i GetFusionEnvironmentRefreshActivitiesFilterArgs) ToGetFusionEnvironmentR
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentRefreshActivitiesFilterOutput)
 }
 
-func (i GetFusionEnvironmentRefreshActivitiesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentRefreshActivitiesFilter] {
-	return pulumix.Output[GetFusionEnvironmentRefreshActivitiesFilter]{
-		OutputState: i.ToGetFusionEnvironmentRefreshActivitiesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetFusionEnvironmentRefreshActivitiesFilterArrayInput is an input type that accepts GetFusionEnvironmentRefreshActivitiesFilterArray and GetFusionEnvironmentRefreshActivitiesFilterArrayOutput values.
 // You can construct a concrete instance of `GetFusionEnvironmentRefreshActivitiesFilterArrayInput` via:
 //
@@ -6754,12 +5675,6 @@ func (i GetFusionEnvironmentRefreshActivitiesFilterArray) ToGetFusionEnvironment
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentRefreshActivitiesFilterArrayOutput)
 }
 
-func (i GetFusionEnvironmentRefreshActivitiesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentRefreshActivitiesFilter] {
-	return pulumix.Output[[]GetFusionEnvironmentRefreshActivitiesFilter]{
-		OutputState: i.ToGetFusionEnvironmentRefreshActivitiesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFusionEnvironmentRefreshActivitiesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetFusionEnvironmentRefreshActivitiesFilterOutput) ElementType() reflect.Type {
@@ -6772,12 +5687,6 @@ func (o GetFusionEnvironmentRefreshActivitiesFilterOutput) ToGetFusionEnvironmen
 
 func (o GetFusionEnvironmentRefreshActivitiesFilterOutput) ToGetFusionEnvironmentRefreshActivitiesFilterOutputWithContext(ctx context.Context) GetFusionEnvironmentRefreshActivitiesFilterOutput {
 	return o
-}
-
-func (o GetFusionEnvironmentRefreshActivitiesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentRefreshActivitiesFilter] {
-	return pulumix.Output[GetFusionEnvironmentRefreshActivitiesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFusionEnvironmentRefreshActivitiesFilterOutput) Name() pulumi.StringOutput {
@@ -6804,12 +5713,6 @@ func (o GetFusionEnvironmentRefreshActivitiesFilterArrayOutput) ToGetFusionEnvir
 
 func (o GetFusionEnvironmentRefreshActivitiesFilterArrayOutput) ToGetFusionEnvironmentRefreshActivitiesFilterArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentRefreshActivitiesFilterArrayOutput {
 	return o
-}
-
-func (o GetFusionEnvironmentRefreshActivitiesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentRefreshActivitiesFilter] {
-	return pulumix.Output[[]GetFusionEnvironmentRefreshActivitiesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFusionEnvironmentRefreshActivitiesFilterArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentRefreshActivitiesFilterOutput {
@@ -6849,12 +5752,6 @@ func (i GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionArgs) ToGe
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionOutput)
 }
 
-func (i GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentRefreshActivitiesRefreshActivityCollection] {
-	return pulumix.Output[GetFusionEnvironmentRefreshActivitiesRefreshActivityCollection]{
-		OutputState: i.ToGetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionArrayInput is an input type that accepts GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionArray and GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionArrayOutput values.
 // You can construct a concrete instance of `GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionArrayInput` via:
 //
@@ -6880,12 +5777,6 @@ func (i GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionArray) ToG
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionArrayOutput)
 }
 
-func (i GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentRefreshActivitiesRefreshActivityCollection] {
-	return pulumix.Output[[]GetFusionEnvironmentRefreshActivitiesRefreshActivityCollection]{
-		OutputState: i.ToGetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionOutput) ElementType() reflect.Type {
@@ -6898,12 +5789,6 @@ func (o GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionOutput) To
 
 func (o GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionOutput) ToGetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionOutputWithContext(ctx context.Context) GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionOutput {
 	return o
-}
-
-func (o GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentRefreshActivitiesRefreshActivityCollection] {
-	return pulumix.Output[GetFusionEnvironmentRefreshActivitiesRefreshActivityCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionOutput) Items() GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemArrayOutput {
@@ -6926,12 +5811,6 @@ func (o GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionArrayOutpu
 	return o
 }
 
-func (o GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentRefreshActivitiesRefreshActivityCollection] {
-	return pulumix.Output[[]GetFusionEnvironmentRefreshActivitiesRefreshActivityCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentRefreshActivitiesRefreshActivityCollection {
 		return vs[0].([]GetFusionEnvironmentRefreshActivitiesRefreshActivityCollection)[vs[1].(int)]
@@ -6940,32 +5819,32 @@ func (o GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionArrayOutpu
 
 type GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItem struct {
 	// A filter to return only resources that match the entire display name given.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// unique FusionEnvironment identifier
-	FusionEnvironmentId string `pulumi:"fusionEnvironmentId"`
+	FusionEnvironmentId *string `pulumi:"fusionEnvironmentId"`
 	// The unique identifier (OCID) of the refresh activity. Can't be changed after creation.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails  string `pulumi:"lifecycleDetails"`
-	RefreshActivityId string `pulumi:"refreshActivityId"`
+	LifecycleDetails  *string `pulumi:"lifecycleDetails"`
+	RefreshActivityId *string `pulumi:"refreshActivityId"`
 	// Details of refresh investigation information, each item represents a different issue.
 	RefreshIssueDetailsLists []GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsList `pulumi:"refreshIssueDetailsLists"`
 	// Service availability / impact during refresh activity execution up down
-	ServiceAvailability string `pulumi:"serviceAvailability"`
+	ServiceAvailability *string `pulumi:"serviceAvailability"`
 	// The OCID of the Fusion environment that is the source environment for the refresh.
-	SourceFusionEnvironmentId string `pulumi:"sourceFusionEnvironmentId"`
+	SourceFusionEnvironmentId *string `pulumi:"sourceFusionEnvironmentId"`
 	// A filter that returns all resources that match the specified status
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The time the refresh activity record was created. An RFC3339 formatted datetime string.
-	TimeAccepted string `pulumi:"timeAccepted"`
+	TimeAccepted *string `pulumi:"timeAccepted"`
 	// The time the refresh activity is scheduled to end. An RFC3339 formatted datetime string.
-	TimeExpectedFinish string `pulumi:"timeExpectedFinish"`
+	TimeExpectedFinish *string `pulumi:"timeExpectedFinish"`
 	// The time the refresh activity actually completed / cancelled / failed. An RFC3339 formatted datetime string.
-	TimeFinished string `pulumi:"timeFinished"`
+	TimeFinished *string `pulumi:"timeFinished"`
 	// The date and time of the most recent source environment backup used for the environment refresh.
-	TimeOfRestorationPoint string `pulumi:"timeOfRestorationPoint"`
+	TimeOfRestorationPoint *string `pulumi:"timeOfRestorationPoint"`
 	// The time the refresh activity record was updated. An RFC3339 formatted datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 // GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemInput is an input type that accepts GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemArgs and GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemOutput values.
@@ -6981,32 +5860,32 @@ type GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemInput int
 
 type GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemArgs struct {
 	// A filter to return only resources that match the entire display name given.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// unique FusionEnvironment identifier
-	FusionEnvironmentId pulumi.StringInput `pulumi:"fusionEnvironmentId"`
+	FusionEnvironmentId pulumi.StringPtrInput `pulumi:"fusionEnvironmentId"`
 	// The unique identifier (OCID) of the refresh activity. Can't be changed after creation.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails  pulumi.StringInput `pulumi:"lifecycleDetails"`
-	RefreshActivityId pulumi.StringInput `pulumi:"refreshActivityId"`
+	LifecycleDetails  pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
+	RefreshActivityId pulumi.StringPtrInput `pulumi:"refreshActivityId"`
 	// Details of refresh investigation information, each item represents a different issue.
 	RefreshIssueDetailsLists GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListArrayInput `pulumi:"refreshIssueDetailsLists"`
 	// Service availability / impact during refresh activity execution up down
-	ServiceAvailability pulumi.StringInput `pulumi:"serviceAvailability"`
+	ServiceAvailability pulumi.StringPtrInput `pulumi:"serviceAvailability"`
 	// The OCID of the Fusion environment that is the source environment for the refresh.
-	SourceFusionEnvironmentId pulumi.StringInput `pulumi:"sourceFusionEnvironmentId"`
+	SourceFusionEnvironmentId pulumi.StringPtrInput `pulumi:"sourceFusionEnvironmentId"`
 	// A filter that returns all resources that match the specified status
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The time the refresh activity record was created. An RFC3339 formatted datetime string.
-	TimeAccepted pulumi.StringInput `pulumi:"timeAccepted"`
+	TimeAccepted pulumi.StringPtrInput `pulumi:"timeAccepted"`
 	// The time the refresh activity is scheduled to end. An RFC3339 formatted datetime string.
-	TimeExpectedFinish pulumi.StringInput `pulumi:"timeExpectedFinish"`
+	TimeExpectedFinish pulumi.StringPtrInput `pulumi:"timeExpectedFinish"`
 	// The time the refresh activity actually completed / cancelled / failed. An RFC3339 formatted datetime string.
-	TimeFinished pulumi.StringInput `pulumi:"timeFinished"`
+	TimeFinished pulumi.StringPtrInput `pulumi:"timeFinished"`
 	// The date and time of the most recent source environment backup used for the environment refresh.
-	TimeOfRestorationPoint pulumi.StringInput `pulumi:"timeOfRestorationPoint"`
+	TimeOfRestorationPoint pulumi.StringPtrInput `pulumi:"timeOfRestorationPoint"`
 	// The time the refresh activity record was updated. An RFC3339 formatted datetime string.
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 }
 
 func (GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemArgs) ElementType() reflect.Type {
@@ -7019,12 +5898,6 @@ func (i GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemArgs) 
 
 func (i GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemArgs) ToGetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemOutputWithContext(ctx context.Context) GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemOutput)
-}
-
-func (i GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItem] {
-	return pulumix.Output[GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItem]{
-		OutputState: i.ToGetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemArrayInput is an input type that accepts GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemArray and GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemArrayOutput values.
@@ -7052,12 +5925,6 @@ func (i GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemArray)
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemArrayOutput)
 }
 
-func (i GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItem] {
-	return pulumix.Output[[]GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItem]{
-		OutputState: i.ToGetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemOutput) ElementType() reflect.Type {
@@ -7072,42 +5939,36 @@ func (o GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemOutput
 	return o
 }
 
-func (o GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItem] {
-	return pulumix.Output[GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A filter to return only resources that match the entire display name given.
-func (o GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItem) string {
+func (o GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItem) *string {
 		return v.DisplayName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // unique FusionEnvironment identifier
-func (o GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemOutput) FusionEnvironmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItem) string {
+func (o GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemOutput) FusionEnvironmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItem) *string {
 		return v.FusionEnvironmentId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The unique identifier (OCID) of the refresh activity. Can't be changed after creation.
-func (o GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItem) string {
+func (o GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItem) *string {
 		return v.LifecycleDetails
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
-func (o GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemOutput) RefreshActivityId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItem) string {
+func (o GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemOutput) RefreshActivityId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItem) *string {
 		return v.RefreshActivityId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Details of refresh investigation information, each item represents a different issue.
@@ -7118,57 +5979,57 @@ func (o GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemOutput
 }
 
 // Service availability / impact during refresh activity execution up down
-func (o GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemOutput) ServiceAvailability() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItem) string {
+func (o GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemOutput) ServiceAvailability() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItem) *string {
 		return v.ServiceAvailability
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the Fusion environment that is the source environment for the refresh.
-func (o GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemOutput) SourceFusionEnvironmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItem) string {
+func (o GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemOutput) SourceFusionEnvironmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItem) *string {
 		return v.SourceFusionEnvironmentId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // A filter that returns all resources that match the specified status
-func (o GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The time the refresh activity record was created. An RFC3339 formatted datetime string.
-func (o GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemOutput) TimeAccepted() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItem) string {
+func (o GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemOutput) TimeAccepted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItem) *string {
 		return v.TimeAccepted
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The time the refresh activity is scheduled to end. An RFC3339 formatted datetime string.
-func (o GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemOutput) TimeExpectedFinish() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItem) string {
+func (o GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemOutput) TimeExpectedFinish() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItem) *string {
 		return v.TimeExpectedFinish
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The time the refresh activity actually completed / cancelled / failed. An RFC3339 formatted datetime string.
-func (o GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemOutput) TimeFinished() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItem) string {
+func (o GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemOutput) TimeFinished() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItem) *string {
 		return v.TimeFinished
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The date and time of the most recent source environment backup used for the environment refresh.
-func (o GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemOutput) TimeOfRestorationPoint() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItem) string {
+func (o GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemOutput) TimeOfRestorationPoint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItem) *string {
 		return v.TimeOfRestorationPoint
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The time the refresh activity record was updated. An RFC3339 formatted datetime string.
-func (o GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItem) string {
+func (o GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItem) *string {
 		return v.TimeUpdated
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -7185,12 +6046,6 @@ func (o GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemArrayO
 	return o
 }
 
-func (o GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItem] {
-	return pulumix.Output[[]GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItem {
 		return vs[0].([]GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItem)[vs[1].(int)]
@@ -7199,7 +6054,7 @@ func (o GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemArrayO
 
 type GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsList struct {
 	// Detail reasons of refresh failure or validation failure that needs to be shown to customer.
-	RefreshIssues string `pulumi:"refreshIssues"`
+	RefreshIssues *string `pulumi:"refreshIssues"`
 }
 
 // GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListInput is an input type that accepts GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListArgs and GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListOutput values.
@@ -7215,7 +6070,7 @@ type GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIs
 
 type GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListArgs struct {
 	// Detail reasons of refresh failure or validation failure that needs to be shown to customer.
-	RefreshIssues pulumi.StringInput `pulumi:"refreshIssues"`
+	RefreshIssues pulumi.StringPtrInput `pulumi:"refreshIssues"`
 }
 
 func (GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListArgs) ElementType() reflect.Type {
@@ -7228,12 +6083,6 @@ func (i GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefres
 
 func (i GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListArgs) ToGetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListOutputWithContext(ctx context.Context) GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListOutput)
-}
-
-func (i GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListArgs) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsList] {
-	return pulumix.Output[GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsList]{
-		OutputState: i.ToGetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListArrayInput is an input type that accepts GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListArray and GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListArrayOutput values.
@@ -7261,12 +6110,6 @@ func (i GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefres
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListArrayOutput)
 }
 
-func (i GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsList] {
-	return pulumix.Output[[]GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsList]{
-		OutputState: i.ToGetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListOutput struct{ *pulumi.OutputState }
 
 func (GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListOutput) ElementType() reflect.Type {
@@ -7281,17 +6124,11 @@ func (o GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefres
 	return o
 }
 
-func (o GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListOutput) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsList] {
-	return pulumix.Output[GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsList]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Detail reasons of refresh failure or validation failure that needs to be shown to customer.
-func (o GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListOutput) RefreshIssues() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsList) string {
+func (o GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListOutput) RefreshIssues() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsList) *string {
 		return v.RefreshIssues
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListArrayOutput struct{ *pulumi.OutputState }
@@ -7308,12 +6145,6 @@ func (o GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefres
 	return o
 }
 
-func (o GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsList] {
-	return pulumix.Output[[]GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsList]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsList {
 		return vs[0].([]GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsList)[vs[1].(int)]
@@ -7322,7 +6153,7 @@ func (o GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefres
 
 type GetFusionEnvironmentRefreshActivityRefreshIssueDetailsList struct {
 	// Detail reasons of refresh failure or validation failure that needs to be shown to customer.
-	RefreshIssues string `pulumi:"refreshIssues"`
+	RefreshIssues *string `pulumi:"refreshIssues"`
 }
 
 // GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListInput is an input type that accepts GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListArgs and GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListOutput values.
@@ -7338,7 +6169,7 @@ type GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListInput interface {
 
 type GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListArgs struct {
 	// Detail reasons of refresh failure or validation failure that needs to be shown to customer.
-	RefreshIssues pulumi.StringInput `pulumi:"refreshIssues"`
+	RefreshIssues pulumi.StringPtrInput `pulumi:"refreshIssues"`
 }
 
 func (GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListArgs) ElementType() reflect.Type {
@@ -7351,12 +6182,6 @@ func (i GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListArgs) ToGetFus
 
 func (i GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListArgs) ToGetFusionEnvironmentRefreshActivityRefreshIssueDetailsListOutputWithContext(ctx context.Context) GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListOutput)
-}
-
-func (i GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListArgs) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentRefreshActivityRefreshIssueDetailsList] {
-	return pulumix.Output[GetFusionEnvironmentRefreshActivityRefreshIssueDetailsList]{
-		OutputState: i.ToGetFusionEnvironmentRefreshActivityRefreshIssueDetailsListOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListArrayInput is an input type that accepts GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListArray and GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListArrayOutput values.
@@ -7384,12 +6209,6 @@ func (i GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListArray) ToGetFu
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListArrayOutput)
 }
 
-func (i GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentRefreshActivityRefreshIssueDetailsList] {
-	return pulumix.Output[[]GetFusionEnvironmentRefreshActivityRefreshIssueDetailsList]{
-		OutputState: i.ToGetFusionEnvironmentRefreshActivityRefreshIssueDetailsListArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListOutput struct{ *pulumi.OutputState }
 
 func (GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListOutput) ElementType() reflect.Type {
@@ -7404,15 +6223,9 @@ func (o GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListOutput) ToGetF
 	return o
 }
 
-func (o GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListOutput) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentRefreshActivityRefreshIssueDetailsList] {
-	return pulumix.Output[GetFusionEnvironmentRefreshActivityRefreshIssueDetailsList]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Detail reasons of refresh failure or validation failure that needs to be shown to customer.
-func (o GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListOutput) RefreshIssues() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentRefreshActivityRefreshIssueDetailsList) string { return v.RefreshIssues }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListOutput) RefreshIssues() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentRefreshActivityRefreshIssueDetailsList) *string { return v.RefreshIssues }).(pulumi.StringPtrOutput)
 }
 
 type GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListArrayOutput struct{ *pulumi.OutputState }
@@ -7429,12 +6242,6 @@ func (o GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListArrayOutput) T
 	return o
 }
 
-func (o GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentRefreshActivityRefreshIssueDetailsList] {
-	return pulumix.Output[[]GetFusionEnvironmentRefreshActivityRefreshIssueDetailsList]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentRefreshActivityRefreshIssueDetailsList {
 		return vs[0].([]GetFusionEnvironmentRefreshActivityRefreshIssueDetailsList)[vs[1].(int)]
@@ -7443,10 +6250,10 @@ func (o GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListArrayOutput) I
 
 type GetFusionEnvironmentRule struct {
 	// Rule type
-	Action     string                              `pulumi:"action"`
+	Action     *string                             `pulumi:"action"`
 	Conditions []GetFusionEnvironmentRuleCondition `pulumi:"conditions"`
 	// A brief description of the access control rule. Avoid entering confidential information. example: `192.168.0.0/16 and 2001:db8::/32 are trusted clients. Whitelist them.`
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 }
 
 // GetFusionEnvironmentRuleInput is an input type that accepts GetFusionEnvironmentRuleArgs and GetFusionEnvironmentRuleOutput values.
@@ -7462,10 +6269,10 @@ type GetFusionEnvironmentRuleInput interface {
 
 type GetFusionEnvironmentRuleArgs struct {
 	// Rule type
-	Action     pulumi.StringInput                          `pulumi:"action"`
+	Action     pulumi.StringPtrInput                       `pulumi:"action"`
 	Conditions GetFusionEnvironmentRuleConditionArrayInput `pulumi:"conditions"`
 	// A brief description of the access control rule. Avoid entering confidential information. example: `192.168.0.0/16 and 2001:db8::/32 are trusted clients. Whitelist them.`
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 }
 
 func (GetFusionEnvironmentRuleArgs) ElementType() reflect.Type {
@@ -7478,12 +6285,6 @@ func (i GetFusionEnvironmentRuleArgs) ToGetFusionEnvironmentRuleOutput() GetFusi
 
 func (i GetFusionEnvironmentRuleArgs) ToGetFusionEnvironmentRuleOutputWithContext(ctx context.Context) GetFusionEnvironmentRuleOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentRuleOutput)
-}
-
-func (i GetFusionEnvironmentRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentRule] {
-	return pulumix.Output[GetFusionEnvironmentRule]{
-		OutputState: i.ToGetFusionEnvironmentRuleOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetFusionEnvironmentRuleArrayInput is an input type that accepts GetFusionEnvironmentRuleArray and GetFusionEnvironmentRuleArrayOutput values.
@@ -7511,12 +6312,6 @@ func (i GetFusionEnvironmentRuleArray) ToGetFusionEnvironmentRuleArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentRuleArrayOutput)
 }
 
-func (i GetFusionEnvironmentRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentRule] {
-	return pulumix.Output[[]GetFusionEnvironmentRule]{
-		OutputState: i.ToGetFusionEnvironmentRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFusionEnvironmentRuleOutput struct{ *pulumi.OutputState }
 
 func (GetFusionEnvironmentRuleOutput) ElementType() reflect.Type {
@@ -7531,15 +6326,9 @@ func (o GetFusionEnvironmentRuleOutput) ToGetFusionEnvironmentRuleOutputWithCont
 	return o
 }
 
-func (o GetFusionEnvironmentRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentRule] {
-	return pulumix.Output[GetFusionEnvironmentRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Rule type
-func (o GetFusionEnvironmentRuleOutput) Action() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentRule) string { return v.Action }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentRuleOutput) Action() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentRule) *string { return v.Action }).(pulumi.StringPtrOutput)
 }
 
 func (o GetFusionEnvironmentRuleOutput) Conditions() GetFusionEnvironmentRuleConditionArrayOutput {
@@ -7547,8 +6336,8 @@ func (o GetFusionEnvironmentRuleOutput) Conditions() GetFusionEnvironmentRuleCon
 }
 
 // A brief description of the access control rule. Avoid entering confidential information. example: `192.168.0.0/16 and 2001:db8::/32 are trusted clients. Whitelist them.`
-func (o GetFusionEnvironmentRuleOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentRule) string { return v.Description }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentRuleOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentRule) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 type GetFusionEnvironmentRuleArrayOutput struct{ *pulumi.OutputState }
@@ -7565,12 +6354,6 @@ func (o GetFusionEnvironmentRuleArrayOutput) ToGetFusionEnvironmentRuleArrayOutp
 	return o
 }
 
-func (o GetFusionEnvironmentRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentRule] {
-	return pulumix.Output[[]GetFusionEnvironmentRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetFusionEnvironmentRuleArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentRule {
 		return vs[0].([]GetFusionEnvironmentRule)[vs[1].(int)]
@@ -7579,9 +6362,9 @@ func (o GetFusionEnvironmentRuleArrayOutput) Index(i pulumi.IntInput) GetFusionE
 
 type GetFusionEnvironmentRuleCondition struct {
 	// RuleCondition type
-	AttributeName string `pulumi:"attributeName"`
+	AttributeName *string `pulumi:"attributeName"`
 	// The OCID of the originating VCN that an incoming packet must match. You can use this condition in conjunction with `SourceVcnIpAddressCondition`. **NOTE:** If you define this condition for a rule without a `SourceVcnIpAddressCondition`, this condition matches all incoming traffic in the specified VCN.
-	AttributeValue string `pulumi:"attributeValue"`
+	AttributeValue *string `pulumi:"attributeValue"`
 }
 
 // GetFusionEnvironmentRuleConditionInput is an input type that accepts GetFusionEnvironmentRuleConditionArgs and GetFusionEnvironmentRuleConditionOutput values.
@@ -7597,9 +6380,9 @@ type GetFusionEnvironmentRuleConditionInput interface {
 
 type GetFusionEnvironmentRuleConditionArgs struct {
 	// RuleCondition type
-	AttributeName pulumi.StringInput `pulumi:"attributeName"`
+	AttributeName pulumi.StringPtrInput `pulumi:"attributeName"`
 	// The OCID of the originating VCN that an incoming packet must match. You can use this condition in conjunction with `SourceVcnIpAddressCondition`. **NOTE:** If you define this condition for a rule without a `SourceVcnIpAddressCondition`, this condition matches all incoming traffic in the specified VCN.
-	AttributeValue pulumi.StringInput `pulumi:"attributeValue"`
+	AttributeValue pulumi.StringPtrInput `pulumi:"attributeValue"`
 }
 
 func (GetFusionEnvironmentRuleConditionArgs) ElementType() reflect.Type {
@@ -7612,12 +6395,6 @@ func (i GetFusionEnvironmentRuleConditionArgs) ToGetFusionEnvironmentRuleConditi
 
 func (i GetFusionEnvironmentRuleConditionArgs) ToGetFusionEnvironmentRuleConditionOutputWithContext(ctx context.Context) GetFusionEnvironmentRuleConditionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentRuleConditionOutput)
-}
-
-func (i GetFusionEnvironmentRuleConditionArgs) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentRuleCondition] {
-	return pulumix.Output[GetFusionEnvironmentRuleCondition]{
-		OutputState: i.ToGetFusionEnvironmentRuleConditionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetFusionEnvironmentRuleConditionArrayInput is an input type that accepts GetFusionEnvironmentRuleConditionArray and GetFusionEnvironmentRuleConditionArrayOutput values.
@@ -7645,12 +6422,6 @@ func (i GetFusionEnvironmentRuleConditionArray) ToGetFusionEnvironmentRuleCondit
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentRuleConditionArrayOutput)
 }
 
-func (i GetFusionEnvironmentRuleConditionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentRuleCondition] {
-	return pulumix.Output[[]GetFusionEnvironmentRuleCondition]{
-		OutputState: i.ToGetFusionEnvironmentRuleConditionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFusionEnvironmentRuleConditionOutput struct{ *pulumi.OutputState }
 
 func (GetFusionEnvironmentRuleConditionOutput) ElementType() reflect.Type {
@@ -7665,20 +6436,14 @@ func (o GetFusionEnvironmentRuleConditionOutput) ToGetFusionEnvironmentRuleCondi
 	return o
 }
 
-func (o GetFusionEnvironmentRuleConditionOutput) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentRuleCondition] {
-	return pulumix.Output[GetFusionEnvironmentRuleCondition]{
-		OutputState: o.OutputState,
-	}
-}
-
 // RuleCondition type
-func (o GetFusionEnvironmentRuleConditionOutput) AttributeName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentRuleCondition) string { return v.AttributeName }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentRuleConditionOutput) AttributeName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentRuleCondition) *string { return v.AttributeName }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the originating VCN that an incoming packet must match. You can use this condition in conjunction with `SourceVcnIpAddressCondition`. **NOTE:** If you define this condition for a rule without a `SourceVcnIpAddressCondition`, this condition matches all incoming traffic in the specified VCN.
-func (o GetFusionEnvironmentRuleConditionOutput) AttributeValue() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentRuleCondition) string { return v.AttributeValue }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentRuleConditionOutput) AttributeValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentRuleCondition) *string { return v.AttributeValue }).(pulumi.StringPtrOutput)
 }
 
 type GetFusionEnvironmentRuleConditionArrayOutput struct{ *pulumi.OutputState }
@@ -7693,12 +6458,6 @@ func (o GetFusionEnvironmentRuleConditionArrayOutput) ToGetFusionEnvironmentRule
 
 func (o GetFusionEnvironmentRuleConditionArrayOutput) ToGetFusionEnvironmentRuleConditionArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentRuleConditionArrayOutput {
 	return o
-}
-
-func (o GetFusionEnvironmentRuleConditionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentRuleCondition] {
-	return pulumix.Output[[]GetFusionEnvironmentRuleCondition]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFusionEnvironmentRuleConditionArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentRuleConditionOutput {
@@ -7742,12 +6501,6 @@ func (i GetFusionEnvironmentScheduledActivitiesFilterArgs) ToGetFusionEnvironmen
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentScheduledActivitiesFilterOutput)
 }
 
-func (i GetFusionEnvironmentScheduledActivitiesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentScheduledActivitiesFilter] {
-	return pulumix.Output[GetFusionEnvironmentScheduledActivitiesFilter]{
-		OutputState: i.ToGetFusionEnvironmentScheduledActivitiesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetFusionEnvironmentScheduledActivitiesFilterArrayInput is an input type that accepts GetFusionEnvironmentScheduledActivitiesFilterArray and GetFusionEnvironmentScheduledActivitiesFilterArrayOutput values.
 // You can construct a concrete instance of `GetFusionEnvironmentScheduledActivitiesFilterArrayInput` via:
 //
@@ -7773,12 +6526,6 @@ func (i GetFusionEnvironmentScheduledActivitiesFilterArray) ToGetFusionEnvironme
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentScheduledActivitiesFilterArrayOutput)
 }
 
-func (i GetFusionEnvironmentScheduledActivitiesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentScheduledActivitiesFilter] {
-	return pulumix.Output[[]GetFusionEnvironmentScheduledActivitiesFilter]{
-		OutputState: i.ToGetFusionEnvironmentScheduledActivitiesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFusionEnvironmentScheduledActivitiesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetFusionEnvironmentScheduledActivitiesFilterOutput) ElementType() reflect.Type {
@@ -7791,12 +6538,6 @@ func (o GetFusionEnvironmentScheduledActivitiesFilterOutput) ToGetFusionEnvironm
 
 func (o GetFusionEnvironmentScheduledActivitiesFilterOutput) ToGetFusionEnvironmentScheduledActivitiesFilterOutputWithContext(ctx context.Context) GetFusionEnvironmentScheduledActivitiesFilterOutput {
 	return o
-}
-
-func (o GetFusionEnvironmentScheduledActivitiesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentScheduledActivitiesFilter] {
-	return pulumix.Output[GetFusionEnvironmentScheduledActivitiesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFusionEnvironmentScheduledActivitiesFilterOutput) Name() pulumi.StringOutput {
@@ -7823,12 +6564,6 @@ func (o GetFusionEnvironmentScheduledActivitiesFilterArrayOutput) ToGetFusionEnv
 
 func (o GetFusionEnvironmentScheduledActivitiesFilterArrayOutput) ToGetFusionEnvironmentScheduledActivitiesFilterArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentScheduledActivitiesFilterArrayOutput {
 	return o
-}
-
-func (o GetFusionEnvironmentScheduledActivitiesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentScheduledActivitiesFilter] {
-	return pulumix.Output[[]GetFusionEnvironmentScheduledActivitiesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFusionEnvironmentScheduledActivitiesFilterArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentScheduledActivitiesFilterOutput {
@@ -7868,12 +6603,6 @@ func (i GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionArgs) 
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionOutput)
 }
 
-func (i GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentScheduledActivitiesScheduledActivityCollection] {
-	return pulumix.Output[GetFusionEnvironmentScheduledActivitiesScheduledActivityCollection]{
-		OutputState: i.ToGetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionArrayInput is an input type that accepts GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionArray and GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionArrayOutput values.
 // You can construct a concrete instance of `GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionArrayInput` via:
 //
@@ -7899,12 +6628,6 @@ func (i GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionArray)
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionArrayOutput)
 }
 
-func (i GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentScheduledActivitiesScheduledActivityCollection] {
-	return pulumix.Output[[]GetFusionEnvironmentScheduledActivitiesScheduledActivityCollection]{
-		OutputState: i.ToGetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionOutput) ElementType() reflect.Type {
@@ -7917,12 +6640,6 @@ func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionOutput
 
 func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionOutput) ToGetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionOutputWithContext(ctx context.Context) GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionOutput {
 	return o
-}
-
-func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentScheduledActivitiesScheduledActivityCollection] {
-	return pulumix.Output[GetFusionEnvironmentScheduledActivitiesScheduledActivityCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionOutput) Items() GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemArrayOutput {
@@ -7945,12 +6662,6 @@ func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionArrayO
 	return o
 }
 
-func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentScheduledActivitiesScheduledActivityCollection] {
-	return pulumix.Output[[]GetFusionEnvironmentScheduledActivitiesScheduledActivityCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentScheduledActivitiesScheduledActivityCollection {
 		return vs[0].([]GetFusionEnvironmentScheduledActivitiesScheduledActivityCollection)[vs[1].(int)]
@@ -7961,31 +6672,31 @@ type GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItem stru
 	// List of actions
 	Actions []GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAction `pulumi:"actions"`
 	// Cumulative delay hours
-	DelayInHours int `pulumi:"delayInHours"`
+	DelayInHours *int `pulumi:"delayInHours"`
 	// A filter to return only resources that match the entire display name given.
-	DisplayName  string                 `pulumi:"displayName"`
+	DisplayName  *string                `pulumi:"displayName"`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// unique FusionEnvironment identifier
-	FusionEnvironmentId string `pulumi:"fusionEnvironmentId"`
+	FusionEnvironmentId *string `pulumi:"fusionEnvironmentId"`
 	// Unique identifier that is immutable on creation.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// A filter that returns all resources that match the specified run cycle.
-	RunCycle string `pulumi:"runCycle"`
+	RunCycle *string `pulumi:"runCycle"`
 	// Service availability / impact during scheduled activity execution up down
-	ServiceAvailability string `pulumi:"serviceAvailability"`
+	ServiceAvailability *string `pulumi:"serviceAvailability"`
 	// A filter that returns all resources that match the specified status
-	State        string `pulumi:"state"`
-	TimeAccepted string `pulumi:"timeAccepted"`
+	State        *string `pulumi:"state"`
+	TimeAccepted *string `pulumi:"timeAccepted"`
 	// Current time the scheduled activity is scheduled to end. An RFC3339 formatted datetime string.
-	TimeExpectedFinish string `pulumi:"timeExpectedFinish"`
+	TimeExpectedFinish *string `pulumi:"timeExpectedFinish"`
 	// The time the scheduled activity actually completed / cancelled / failed. An RFC3339 formatted datetime string.
-	TimeFinished string `pulumi:"timeFinished"`
+	TimeFinished *string `pulumi:"timeFinished"`
 	// Current time the scheduled activity is scheduled to start. An RFC3339 formatted datetime string.
-	TimeScheduledStart string `pulumi:"timeScheduledStart"`
+	TimeScheduledStart *string `pulumi:"timeScheduledStart"`
 	// The time the scheduled activity record was updated. An RFC3339 formatted datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 // GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemInput is an input type that accepts GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemArgs and GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemOutput values.
@@ -8003,31 +6714,31 @@ type GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemArgs 
 	// List of actions
 	Actions GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionArrayInput `pulumi:"actions"`
 	// Cumulative delay hours
-	DelayInHours pulumi.IntInput `pulumi:"delayInHours"`
+	DelayInHours pulumi.IntPtrInput `pulumi:"delayInHours"`
 	// A filter to return only resources that match the entire display name given.
-	DisplayName  pulumi.StringInput `pulumi:"displayName"`
-	FreeformTags pulumi.MapInput    `pulumi:"freeformTags"`
+	DisplayName  pulumi.StringPtrInput `pulumi:"displayName"`
+	FreeformTags pulumi.MapInput       `pulumi:"freeformTags"`
 	// unique FusionEnvironment identifier
-	FusionEnvironmentId pulumi.StringInput `pulumi:"fusionEnvironmentId"`
+	FusionEnvironmentId pulumi.StringPtrInput `pulumi:"fusionEnvironmentId"`
 	// Unique identifier that is immutable on creation.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// A filter that returns all resources that match the specified run cycle.
-	RunCycle pulumi.StringInput `pulumi:"runCycle"`
+	RunCycle pulumi.StringPtrInput `pulumi:"runCycle"`
 	// Service availability / impact during scheduled activity execution up down
-	ServiceAvailability pulumi.StringInput `pulumi:"serviceAvailability"`
+	ServiceAvailability pulumi.StringPtrInput `pulumi:"serviceAvailability"`
 	// A filter that returns all resources that match the specified status
-	State        pulumi.StringInput `pulumi:"state"`
-	TimeAccepted pulumi.StringInput `pulumi:"timeAccepted"`
+	State        pulumi.StringPtrInput `pulumi:"state"`
+	TimeAccepted pulumi.StringPtrInput `pulumi:"timeAccepted"`
 	// Current time the scheduled activity is scheduled to end. An RFC3339 formatted datetime string.
-	TimeExpectedFinish pulumi.StringInput `pulumi:"timeExpectedFinish"`
+	TimeExpectedFinish pulumi.StringPtrInput `pulumi:"timeExpectedFinish"`
 	// The time the scheduled activity actually completed / cancelled / failed. An RFC3339 formatted datetime string.
-	TimeFinished pulumi.StringInput `pulumi:"timeFinished"`
+	TimeFinished pulumi.StringPtrInput `pulumi:"timeFinished"`
 	// Current time the scheduled activity is scheduled to start. An RFC3339 formatted datetime string.
-	TimeScheduledStart pulumi.StringInput `pulumi:"timeScheduledStart"`
+	TimeScheduledStart pulumi.StringPtrInput `pulumi:"timeScheduledStart"`
 	// The time the scheduled activity record was updated. An RFC3339 formatted datetime string.
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 }
 
 func (GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemArgs) ElementType() reflect.Type {
@@ -8040,12 +6751,6 @@ func (i GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAr
 
 func (i GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemArgs) ToGetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemOutputWithContext(ctx context.Context) GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemOutput)
-}
-
-func (i GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItem] {
-	return pulumix.Output[GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItem]{
-		OutputState: i.ToGetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemArrayInput is an input type that accepts GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemArray and GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemArrayOutput values.
@@ -8073,12 +6778,6 @@ func (i GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAr
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemArrayOutput)
 }
 
-func (i GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItem] {
-	return pulumix.Output[[]GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItem]{
-		OutputState: i.ToGetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemOutput) ElementType() reflect.Type {
@@ -8093,12 +6792,6 @@ func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemOu
 	return o
 }
 
-func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItem] {
-	return pulumix.Output[GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // List of actions
 func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemOutput) Actions() GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionArrayOutput {
 	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItem) []GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAction {
@@ -8107,17 +6800,17 @@ func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemOu
 }
 
 // Cumulative delay hours
-func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemOutput) DelayInHours() pulumi.IntOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItem) int {
+func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemOutput) DelayInHours() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItem) *int {
 		return v.DelayInHours
-	}).(pulumi.IntOutput)
+	}).(pulumi.IntPtrOutput)
 }
 
 // A filter to return only resources that match the entire display name given.
-func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItem) string {
+func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItem) *string {
 		return v.DisplayName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemOutput) FreeformTags() pulumi.MapOutput {
@@ -8127,75 +6820,75 @@ func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemOu
 }
 
 // unique FusionEnvironment identifier
-func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemOutput) FusionEnvironmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItem) string {
+func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemOutput) FusionEnvironmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItem) *string {
 		return v.FusionEnvironmentId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Unique identifier that is immutable on creation.
-func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItem) string {
+func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItem) *string {
 		return v.LifecycleDetails
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // A filter that returns all resources that match the specified run cycle.
-func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemOutput) RunCycle() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItem) string {
+func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemOutput) RunCycle() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItem) *string {
 		return v.RunCycle
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Service availability / impact during scheduled activity execution up down
-func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemOutput) ServiceAvailability() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItem) string {
+func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemOutput) ServiceAvailability() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItem) *string {
 		return v.ServiceAvailability
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // A filter that returns all resources that match the specified status
-func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
-func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemOutput) TimeAccepted() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItem) string {
+func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemOutput) TimeAccepted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItem) *string {
 		return v.TimeAccepted
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Current time the scheduled activity is scheduled to end. An RFC3339 formatted datetime string.
-func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemOutput) TimeExpectedFinish() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItem) string {
+func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemOutput) TimeExpectedFinish() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItem) *string {
 		return v.TimeExpectedFinish
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The time the scheduled activity actually completed / cancelled / failed. An RFC3339 formatted datetime string.
-func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemOutput) TimeFinished() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItem) string {
+func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemOutput) TimeFinished() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItem) *string {
 		return v.TimeFinished
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Current time the scheduled activity is scheduled to start. An RFC3339 formatted datetime string.
-func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemOutput) TimeScheduledStart() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItem) string {
+func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemOutput) TimeScheduledStart() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItem) *string {
 		return v.TimeScheduledStart
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The time the scheduled activity record was updated. An RFC3339 formatted datetime string.
-func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItem) string {
+func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItem) *string {
 		return v.TimeUpdated
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -8212,12 +6905,6 @@ func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAr
 	return o
 }
 
-func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItem] {
-	return pulumix.Output[[]GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItem {
 		return vs[0].([]GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItem)[vs[1].(int)]
@@ -8226,23 +6913,23 @@ func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAr
 
 type GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAction struct {
 	// Type of action
-	ActionType string `pulumi:"actionType"`
+	ActionType *string `pulumi:"actionType"`
 	// patch that delivered the vertex update prerequisite
-	Artifact string `pulumi:"artifact"`
+	Artifact *string `pulumi:"artifact"`
 	// patch artifact category
-	Category string `pulumi:"category"`
+	Category *string `pulumi:"category"`
 	// A string that describes the details of the action. It does not have to be unique, and you can change it. Avoid entering confidential information.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// A string that describeds whether the change is applied hot or cold
-	Mode string `pulumi:"mode"`
+	Mode *string `pulumi:"mode"`
 	// month qualifier
-	Qualifier string `pulumi:"qualifier"`
+	Qualifier *string `pulumi:"qualifier"`
 	// Unique identifier of the object that represents the action
-	ReferenceKey string `pulumi:"referenceKey"`
+	ReferenceKey *string `pulumi:"referenceKey"`
 	// A filter that returns all resources that match the specified status
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// name of the repo
-	Version string `pulumi:"version"`
+	Version *string `pulumi:"version"`
 }
 
 // GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionInput is an input type that accepts GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionArgs and GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionOutput values.
@@ -8258,23 +6945,23 @@ type GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActio
 
 type GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionArgs struct {
 	// Type of action
-	ActionType pulumi.StringInput `pulumi:"actionType"`
+	ActionType pulumi.StringPtrInput `pulumi:"actionType"`
 	// patch that delivered the vertex update prerequisite
-	Artifact pulumi.StringInput `pulumi:"artifact"`
+	Artifact pulumi.StringPtrInput `pulumi:"artifact"`
 	// patch artifact category
-	Category pulumi.StringInput `pulumi:"category"`
+	Category pulumi.StringPtrInput `pulumi:"category"`
 	// A string that describes the details of the action. It does not have to be unique, and you can change it. Avoid entering confidential information.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// A string that describeds whether the change is applied hot or cold
-	Mode pulumi.StringInput `pulumi:"mode"`
+	Mode pulumi.StringPtrInput `pulumi:"mode"`
 	// month qualifier
-	Qualifier pulumi.StringInput `pulumi:"qualifier"`
+	Qualifier pulumi.StringPtrInput `pulumi:"qualifier"`
 	// Unique identifier of the object that represents the action
-	ReferenceKey pulumi.StringInput `pulumi:"referenceKey"`
+	ReferenceKey pulumi.StringPtrInput `pulumi:"referenceKey"`
 	// A filter that returns all resources that match the specified status
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// name of the repo
-	Version pulumi.StringInput `pulumi:"version"`
+	Version pulumi.StringPtrInput `pulumi:"version"`
 }
 
 func (GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionArgs) ElementType() reflect.Type {
@@ -8287,12 +6974,6 @@ func (i GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAc
 
 func (i GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionArgs) ToGetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionOutputWithContext(ctx context.Context) GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionOutput)
-}
-
-func (i GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionArgs) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAction] {
-	return pulumix.Output[GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAction]{
-		OutputState: i.ToGetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionArrayInput is an input type that accepts GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionArray and GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionArrayOutput values.
@@ -8320,12 +7001,6 @@ func (i GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAc
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionArrayOutput)
 }
 
-func (i GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAction] {
-	return pulumix.Output[[]GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAction]{
-		OutputState: i.ToGetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionOutput struct{ *pulumi.OutputState }
 
 func (GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionOutput) ElementType() reflect.Type {
@@ -8340,73 +7015,67 @@ func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAc
 	return o
 }
 
-func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionOutput) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAction] {
-	return pulumix.Output[GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAction]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Type of action
-func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionOutput) ActionType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAction) string {
+func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionOutput) ActionType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAction) *string {
 		return v.ActionType
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // patch that delivered the vertex update prerequisite
-func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionOutput) Artifact() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAction) string {
+func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionOutput) Artifact() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAction) *string {
 		return v.Artifact
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // patch artifact category
-func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionOutput) Category() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAction) string {
+func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionOutput) Category() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAction) *string {
 		return v.Category
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // A string that describes the details of the action. It does not have to be unique, and you can change it. Avoid entering confidential information.
-func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAction) string {
+func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAction) *string {
 		return v.Description
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // A string that describeds whether the change is applied hot or cold
-func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionOutput) Mode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAction) string {
+func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionOutput) Mode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAction) *string {
 		return v.Mode
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // month qualifier
-func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionOutput) Qualifier() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAction) string {
+func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionOutput) Qualifier() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAction) *string {
 		return v.Qualifier
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Unique identifier of the object that represents the action
-func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionOutput) ReferenceKey() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAction) string {
+func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionOutput) ReferenceKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAction) *string {
 		return v.ReferenceKey
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // A filter that returns all resources that match the specified status
-func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAction) string {
+func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAction) *string {
 		return v.State
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // name of the repo
-func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionOutput) Version() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAction) string {
+func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionOutput) Version() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAction) *string {
 		return v.Version
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionArrayOutput struct{ *pulumi.OutputState }
@@ -8423,12 +7092,6 @@ func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAc
 	return o
 }
 
-func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAction] {
-	return pulumix.Output[[]GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAction]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAction {
 		return vs[0].([]GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAction)[vs[1].(int)]
@@ -8437,23 +7100,23 @@ func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAc
 
 type GetFusionEnvironmentScheduledActivityAction struct {
 	// Type of action
-	ActionType string `pulumi:"actionType"`
+	ActionType *string `pulumi:"actionType"`
 	// patch that delivered the vertex update prerequisite
-	Artifact string `pulumi:"artifact"`
+	Artifact *string `pulumi:"artifact"`
 	// patch artifact category
-	Category string `pulumi:"category"`
+	Category *string `pulumi:"category"`
 	// A string that describes the details of the action. It does not have to be unique, and you can change it. Avoid entering confidential information.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// A string that describeds whether the change is applied hot or cold
-	Mode string `pulumi:"mode"`
+	Mode *string `pulumi:"mode"`
 	// month qualifier
-	Qualifier string `pulumi:"qualifier"`
+	Qualifier *string `pulumi:"qualifier"`
 	// Unique identifier of the object that represents the action
-	ReferenceKey string `pulumi:"referenceKey"`
+	ReferenceKey *string `pulumi:"referenceKey"`
 	// The current state of the scheduledActivity.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// name of the repo
-	Version string `pulumi:"version"`
+	Version *string `pulumi:"version"`
 }
 
 // GetFusionEnvironmentScheduledActivityActionInput is an input type that accepts GetFusionEnvironmentScheduledActivityActionArgs and GetFusionEnvironmentScheduledActivityActionOutput values.
@@ -8469,23 +7132,23 @@ type GetFusionEnvironmentScheduledActivityActionInput interface {
 
 type GetFusionEnvironmentScheduledActivityActionArgs struct {
 	// Type of action
-	ActionType pulumi.StringInput `pulumi:"actionType"`
+	ActionType pulumi.StringPtrInput `pulumi:"actionType"`
 	// patch that delivered the vertex update prerequisite
-	Artifact pulumi.StringInput `pulumi:"artifact"`
+	Artifact pulumi.StringPtrInput `pulumi:"artifact"`
 	// patch artifact category
-	Category pulumi.StringInput `pulumi:"category"`
+	Category pulumi.StringPtrInput `pulumi:"category"`
 	// A string that describes the details of the action. It does not have to be unique, and you can change it. Avoid entering confidential information.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// A string that describeds whether the change is applied hot or cold
-	Mode pulumi.StringInput `pulumi:"mode"`
+	Mode pulumi.StringPtrInput `pulumi:"mode"`
 	// month qualifier
-	Qualifier pulumi.StringInput `pulumi:"qualifier"`
+	Qualifier pulumi.StringPtrInput `pulumi:"qualifier"`
 	// Unique identifier of the object that represents the action
-	ReferenceKey pulumi.StringInput `pulumi:"referenceKey"`
+	ReferenceKey pulumi.StringPtrInput `pulumi:"referenceKey"`
 	// The current state of the scheduledActivity.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// name of the repo
-	Version pulumi.StringInput `pulumi:"version"`
+	Version pulumi.StringPtrInput `pulumi:"version"`
 }
 
 func (GetFusionEnvironmentScheduledActivityActionArgs) ElementType() reflect.Type {
@@ -8498,12 +7161,6 @@ func (i GetFusionEnvironmentScheduledActivityActionArgs) ToGetFusionEnvironmentS
 
 func (i GetFusionEnvironmentScheduledActivityActionArgs) ToGetFusionEnvironmentScheduledActivityActionOutputWithContext(ctx context.Context) GetFusionEnvironmentScheduledActivityActionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentScheduledActivityActionOutput)
-}
-
-func (i GetFusionEnvironmentScheduledActivityActionArgs) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentScheduledActivityAction] {
-	return pulumix.Output[GetFusionEnvironmentScheduledActivityAction]{
-		OutputState: i.ToGetFusionEnvironmentScheduledActivityActionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetFusionEnvironmentScheduledActivityActionArrayInput is an input type that accepts GetFusionEnvironmentScheduledActivityActionArray and GetFusionEnvironmentScheduledActivityActionArrayOutput values.
@@ -8531,12 +7188,6 @@ func (i GetFusionEnvironmentScheduledActivityActionArray) ToGetFusionEnvironment
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentScheduledActivityActionArrayOutput)
 }
 
-func (i GetFusionEnvironmentScheduledActivityActionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentScheduledActivityAction] {
-	return pulumix.Output[[]GetFusionEnvironmentScheduledActivityAction]{
-		OutputState: i.ToGetFusionEnvironmentScheduledActivityActionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFusionEnvironmentScheduledActivityActionOutput struct{ *pulumi.OutputState }
 
 func (GetFusionEnvironmentScheduledActivityActionOutput) ElementType() reflect.Type {
@@ -8551,55 +7202,49 @@ func (o GetFusionEnvironmentScheduledActivityActionOutput) ToGetFusionEnvironmen
 	return o
 }
 
-func (o GetFusionEnvironmentScheduledActivityActionOutput) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentScheduledActivityAction] {
-	return pulumix.Output[GetFusionEnvironmentScheduledActivityAction]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Type of action
-func (o GetFusionEnvironmentScheduledActivityActionOutput) ActionType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivityAction) string { return v.ActionType }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentScheduledActivityActionOutput) ActionType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivityAction) *string { return v.ActionType }).(pulumi.StringPtrOutput)
 }
 
 // patch that delivered the vertex update prerequisite
-func (o GetFusionEnvironmentScheduledActivityActionOutput) Artifact() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivityAction) string { return v.Artifact }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentScheduledActivityActionOutput) Artifact() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivityAction) *string { return v.Artifact }).(pulumi.StringPtrOutput)
 }
 
 // patch artifact category
-func (o GetFusionEnvironmentScheduledActivityActionOutput) Category() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivityAction) string { return v.Category }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentScheduledActivityActionOutput) Category() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivityAction) *string { return v.Category }).(pulumi.StringPtrOutput)
 }
 
 // A string that describes the details of the action. It does not have to be unique, and you can change it. Avoid entering confidential information.
-func (o GetFusionEnvironmentScheduledActivityActionOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivityAction) string { return v.Description }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentScheduledActivityActionOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivityAction) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // A string that describeds whether the change is applied hot or cold
-func (o GetFusionEnvironmentScheduledActivityActionOutput) Mode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivityAction) string { return v.Mode }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentScheduledActivityActionOutput) Mode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivityAction) *string { return v.Mode }).(pulumi.StringPtrOutput)
 }
 
 // month qualifier
-func (o GetFusionEnvironmentScheduledActivityActionOutput) Qualifier() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivityAction) string { return v.Qualifier }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentScheduledActivityActionOutput) Qualifier() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivityAction) *string { return v.Qualifier }).(pulumi.StringPtrOutput)
 }
 
 // Unique identifier of the object that represents the action
-func (o GetFusionEnvironmentScheduledActivityActionOutput) ReferenceKey() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivityAction) string { return v.ReferenceKey }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentScheduledActivityActionOutput) ReferenceKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivityAction) *string { return v.ReferenceKey }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the scheduledActivity.
-func (o GetFusionEnvironmentScheduledActivityActionOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivityAction) string { return v.State }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentScheduledActivityActionOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivityAction) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // name of the repo
-func (o GetFusionEnvironmentScheduledActivityActionOutput) Version() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivityAction) string { return v.Version }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentScheduledActivityActionOutput) Version() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivityAction) *string { return v.Version }).(pulumi.StringPtrOutput)
 }
 
 type GetFusionEnvironmentScheduledActivityActionArrayOutput struct{ *pulumi.OutputState }
@@ -8614,12 +7259,6 @@ func (o GetFusionEnvironmentScheduledActivityActionArrayOutput) ToGetFusionEnvir
 
 func (o GetFusionEnvironmentScheduledActivityActionArrayOutput) ToGetFusionEnvironmentScheduledActivityActionArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentScheduledActivityActionArrayOutput {
 	return o
-}
-
-func (o GetFusionEnvironmentScheduledActivityActionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentScheduledActivityAction] {
-	return pulumix.Output[[]GetFusionEnvironmentScheduledActivityAction]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFusionEnvironmentScheduledActivityActionArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentScheduledActivityActionOutput {
@@ -8663,12 +7302,6 @@ func (i GetFusionEnvironmentServiceAttachmentsFilterArgs) ToGetFusionEnvironment
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentServiceAttachmentsFilterOutput)
 }
 
-func (i GetFusionEnvironmentServiceAttachmentsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentServiceAttachmentsFilter] {
-	return pulumix.Output[GetFusionEnvironmentServiceAttachmentsFilter]{
-		OutputState: i.ToGetFusionEnvironmentServiceAttachmentsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetFusionEnvironmentServiceAttachmentsFilterArrayInput is an input type that accepts GetFusionEnvironmentServiceAttachmentsFilterArray and GetFusionEnvironmentServiceAttachmentsFilterArrayOutput values.
 // You can construct a concrete instance of `GetFusionEnvironmentServiceAttachmentsFilterArrayInput` via:
 //
@@ -8694,12 +7327,6 @@ func (i GetFusionEnvironmentServiceAttachmentsFilterArray) ToGetFusionEnvironmen
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentServiceAttachmentsFilterArrayOutput)
 }
 
-func (i GetFusionEnvironmentServiceAttachmentsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentServiceAttachmentsFilter] {
-	return pulumix.Output[[]GetFusionEnvironmentServiceAttachmentsFilter]{
-		OutputState: i.ToGetFusionEnvironmentServiceAttachmentsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFusionEnvironmentServiceAttachmentsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetFusionEnvironmentServiceAttachmentsFilterOutput) ElementType() reflect.Type {
@@ -8712,12 +7339,6 @@ func (o GetFusionEnvironmentServiceAttachmentsFilterOutput) ToGetFusionEnvironme
 
 func (o GetFusionEnvironmentServiceAttachmentsFilterOutput) ToGetFusionEnvironmentServiceAttachmentsFilterOutputWithContext(ctx context.Context) GetFusionEnvironmentServiceAttachmentsFilterOutput {
 	return o
-}
-
-func (o GetFusionEnvironmentServiceAttachmentsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentServiceAttachmentsFilter] {
-	return pulumix.Output[GetFusionEnvironmentServiceAttachmentsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFusionEnvironmentServiceAttachmentsFilterOutput) Name() pulumi.StringOutput {
@@ -8744,12 +7365,6 @@ func (o GetFusionEnvironmentServiceAttachmentsFilterArrayOutput) ToGetFusionEnvi
 
 func (o GetFusionEnvironmentServiceAttachmentsFilterArrayOutput) ToGetFusionEnvironmentServiceAttachmentsFilterArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentServiceAttachmentsFilterArrayOutput {
 	return o
-}
-
-func (o GetFusionEnvironmentServiceAttachmentsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentServiceAttachmentsFilter] {
-	return pulumix.Output[[]GetFusionEnvironmentServiceAttachmentsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFusionEnvironmentServiceAttachmentsFilterArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentServiceAttachmentsFilterOutput {
@@ -8789,12 +7404,6 @@ func (i GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionArgs) T
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionOutput)
 }
 
-func (i GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollection] {
-	return pulumix.Output[GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollection]{
-		OutputState: i.ToGetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionArrayInput is an input type that accepts GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionArray and GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionArrayOutput values.
 // You can construct a concrete instance of `GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionArrayInput` via:
 //
@@ -8820,12 +7429,6 @@ func (i GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionArray) 
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionArrayOutput)
 }
 
-func (i GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollection] {
-	return pulumix.Output[[]GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollection]{
-		OutputState: i.ToGetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionOutput) ElementType() reflect.Type {
@@ -8838,12 +7441,6 @@ func (o GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionOutput)
 
 func (o GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionOutput) ToGetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionOutputWithContext(ctx context.Context) GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionOutput {
 	return o
-}
-
-func (o GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollection] {
-	return pulumix.Output[GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionOutput) Items() GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemArrayOutput {
@@ -8866,12 +7463,6 @@ func (o GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionArrayOu
 	return o
 }
 
-func (o GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollection] {
-	return pulumix.Output[[]GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollection {
 		return vs[0].([]GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollection)[vs[1].(int)]
@@ -8880,31 +7471,31 @@ func (o GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionArrayOu
 
 type GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem struct {
 	// Compartment Identifier
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// unique FusionEnvironment identifier
-	FusionEnvironmentId string `pulumi:"fusionEnvironmentId"`
+	FusionEnvironmentId *string `pulumi:"fusionEnvironmentId"`
 	// Unique identifier that is immutable on creation
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Whether this service is provisioned due to the customer being subscribed to a specific SKU
-	IsSkuBased bool `pulumi:"isSkuBased"`
+	IsSkuBased *bool `pulumi:"isSkuBased"`
 	// The ID of the service instance created that can be used to identify this on the service control plane
-	ServiceInstanceId string `pulumi:"serviceInstanceId"`
+	ServiceInstanceId *string `pulumi:"serviceInstanceId"`
 	// A filter that returns all resources that match the specified lifecycle state.
-	ServiceInstanceType string `pulumi:"serviceInstanceType"`
+	ServiceInstanceType *string `pulumi:"serviceInstanceType"`
 	// Public URL
-	ServiceUrl string `pulumi:"serviceUrl"`
+	ServiceUrl *string `pulumi:"serviceUrl"`
 	// A filter that returns all resources that match the specified lifecycle state.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The time the the ServiceInstance was created. An RFC3339 formatted datetime string
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the ServiceInstance was updated. An RFC3339 formatted datetime string
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 // GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemInput is an input type that accepts GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemArgs and GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemOutput values.
@@ -8920,31 +7511,31 @@ type GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemInput 
 
 type GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemArgs struct {
 	// Compartment Identifier
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// unique FusionEnvironment identifier
-	FusionEnvironmentId pulumi.StringInput `pulumi:"fusionEnvironmentId"`
+	FusionEnvironmentId pulumi.StringPtrInput `pulumi:"fusionEnvironmentId"`
 	// Unique identifier that is immutable on creation
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Whether this service is provisioned due to the customer being subscribed to a specific SKU
-	IsSkuBased pulumi.BoolInput `pulumi:"isSkuBased"`
+	IsSkuBased pulumi.BoolPtrInput `pulumi:"isSkuBased"`
 	// The ID of the service instance created that can be used to identify this on the service control plane
-	ServiceInstanceId pulumi.StringInput `pulumi:"serviceInstanceId"`
+	ServiceInstanceId pulumi.StringPtrInput `pulumi:"serviceInstanceId"`
 	// A filter that returns all resources that match the specified lifecycle state.
-	ServiceInstanceType pulumi.StringInput `pulumi:"serviceInstanceType"`
+	ServiceInstanceType pulumi.StringPtrInput `pulumi:"serviceInstanceType"`
 	// Public URL
-	ServiceUrl pulumi.StringInput `pulumi:"serviceUrl"`
+	ServiceUrl pulumi.StringPtrInput `pulumi:"serviceUrl"`
 	// A filter that returns all resources that match the specified lifecycle state.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The time the the ServiceInstance was created. An RFC3339 formatted datetime string
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The time the ServiceInstance was updated. An RFC3339 formatted datetime string
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 }
 
 func (GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemArgs) ElementType() reflect.Type {
@@ -8957,12 +7548,6 @@ func (i GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemArg
 
 func (i GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemArgs) ToGetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemOutputWithContext(ctx context.Context) GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemOutput)
-}
-
-func (i GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem] {
-	return pulumix.Output[GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem]{
-		OutputState: i.ToGetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemArrayInput is an input type that accepts GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemArray and GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemArrayOutput values.
@@ -8990,12 +7575,6 @@ func (i GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemArrayOutput)
 }
 
-func (i GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem] {
-	return pulumix.Output[[]GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem]{
-		OutputState: i.ToGetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemOutput) ElementType() reflect.Type {
@@ -9010,17 +7589,11 @@ func (o GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemOut
 	return o
 }
 
-func (o GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem] {
-	return pulumix.Output[GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Compartment Identifier
-func (o GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem) string {
+func (o GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem) *string {
 		return v.CompartmentId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -9031,10 +7604,10 @@ func (o GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemOut
 }
 
 // A filter to return only resources that match the entire display name given.
-func (o GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem) string {
+func (o GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem) *string {
 		return v.DisplayName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -9045,62 +7618,62 @@ func (o GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemOut
 }
 
 // unique FusionEnvironment identifier
-func (o GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemOutput) FusionEnvironmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem) string {
+func (o GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemOutput) FusionEnvironmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem) *string {
 		return v.FusionEnvironmentId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Unique identifier that is immutable on creation
-func (o GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Whether this service is provisioned due to the customer being subscribed to a specific SKU
-func (o GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemOutput) IsSkuBased() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem) bool {
+func (o GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemOutput) IsSkuBased() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem) *bool {
 		return v.IsSkuBased
-	}).(pulumi.BoolOutput)
+	}).(pulumi.BoolPtrOutput)
 }
 
 // The ID of the service instance created that can be used to identify this on the service control plane
-func (o GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemOutput) ServiceInstanceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem) string {
+func (o GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemOutput) ServiceInstanceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem) *string {
 		return v.ServiceInstanceId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // A filter that returns all resources that match the specified lifecycle state.
-func (o GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemOutput) ServiceInstanceType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem) string {
+func (o GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemOutput) ServiceInstanceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem) *string {
 		return v.ServiceInstanceType
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Public URL
-func (o GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemOutput) ServiceUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem) string {
+func (o GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemOutput) ServiceUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem) *string {
 		return v.ServiceUrl
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // A filter that returns all resources that match the specified lifecycle state.
-func (o GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The time the the ServiceInstance was created. An RFC3339 formatted datetime string
-func (o GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem) string {
+func (o GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem) *string {
 		return v.TimeCreated
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The time the ServiceInstance was updated. An RFC3339 formatted datetime string
-func (o GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem) string {
+func (o GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem) *string {
 		return v.TimeUpdated
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -9117,12 +7690,6 @@ func (o GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemArr
 	return o
 }
 
-func (o GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem] {
-	return pulumix.Output[[]GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem {
 		return vs[0].([]GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem)[vs[1].(int)]
@@ -9131,7 +7698,7 @@ func (o GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemArr
 
 type GetFusionEnvironmentTimeAvailableForRefreshItem struct {
 	// refresh time.
-	TimeAvailableForRefresh string `pulumi:"timeAvailableForRefresh"`
+	TimeAvailableForRefresh *string `pulumi:"timeAvailableForRefresh"`
 }
 
 // GetFusionEnvironmentTimeAvailableForRefreshItemInput is an input type that accepts GetFusionEnvironmentTimeAvailableForRefreshItemArgs and GetFusionEnvironmentTimeAvailableForRefreshItemOutput values.
@@ -9147,7 +7714,7 @@ type GetFusionEnvironmentTimeAvailableForRefreshItemInput interface {
 
 type GetFusionEnvironmentTimeAvailableForRefreshItemArgs struct {
 	// refresh time.
-	TimeAvailableForRefresh pulumi.StringInput `pulumi:"timeAvailableForRefresh"`
+	TimeAvailableForRefresh pulumi.StringPtrInput `pulumi:"timeAvailableForRefresh"`
 }
 
 func (GetFusionEnvironmentTimeAvailableForRefreshItemArgs) ElementType() reflect.Type {
@@ -9160,12 +7727,6 @@ func (i GetFusionEnvironmentTimeAvailableForRefreshItemArgs) ToGetFusionEnvironm
 
 func (i GetFusionEnvironmentTimeAvailableForRefreshItemArgs) ToGetFusionEnvironmentTimeAvailableForRefreshItemOutputWithContext(ctx context.Context) GetFusionEnvironmentTimeAvailableForRefreshItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentTimeAvailableForRefreshItemOutput)
-}
-
-func (i GetFusionEnvironmentTimeAvailableForRefreshItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentTimeAvailableForRefreshItem] {
-	return pulumix.Output[GetFusionEnvironmentTimeAvailableForRefreshItem]{
-		OutputState: i.ToGetFusionEnvironmentTimeAvailableForRefreshItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetFusionEnvironmentTimeAvailableForRefreshItemArrayInput is an input type that accepts GetFusionEnvironmentTimeAvailableForRefreshItemArray and GetFusionEnvironmentTimeAvailableForRefreshItemArrayOutput values.
@@ -9193,12 +7754,6 @@ func (i GetFusionEnvironmentTimeAvailableForRefreshItemArray) ToGetFusionEnviron
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentTimeAvailableForRefreshItemArrayOutput)
 }
 
-func (i GetFusionEnvironmentTimeAvailableForRefreshItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentTimeAvailableForRefreshItem] {
-	return pulumix.Output[[]GetFusionEnvironmentTimeAvailableForRefreshItem]{
-		OutputState: i.ToGetFusionEnvironmentTimeAvailableForRefreshItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFusionEnvironmentTimeAvailableForRefreshItemOutput struct{ *pulumi.OutputState }
 
 func (GetFusionEnvironmentTimeAvailableForRefreshItemOutput) ElementType() reflect.Type {
@@ -9213,15 +7768,9 @@ func (o GetFusionEnvironmentTimeAvailableForRefreshItemOutput) ToGetFusionEnviro
 	return o
 }
 
-func (o GetFusionEnvironmentTimeAvailableForRefreshItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentTimeAvailableForRefreshItem] {
-	return pulumix.Output[GetFusionEnvironmentTimeAvailableForRefreshItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // refresh time.
-func (o GetFusionEnvironmentTimeAvailableForRefreshItemOutput) TimeAvailableForRefresh() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentTimeAvailableForRefreshItem) string { return v.TimeAvailableForRefresh }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentTimeAvailableForRefreshItemOutput) TimeAvailableForRefresh() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentTimeAvailableForRefreshItem) *string { return v.TimeAvailableForRefresh }).(pulumi.StringPtrOutput)
 }
 
 type GetFusionEnvironmentTimeAvailableForRefreshItemArrayOutput struct{ *pulumi.OutputState }
@@ -9236,12 +7785,6 @@ func (o GetFusionEnvironmentTimeAvailableForRefreshItemArrayOutput) ToGetFusionE
 
 func (o GetFusionEnvironmentTimeAvailableForRefreshItemArrayOutput) ToGetFusionEnvironmentTimeAvailableForRefreshItemArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentTimeAvailableForRefreshItemArrayOutput {
 	return o
-}
-
-func (o GetFusionEnvironmentTimeAvailableForRefreshItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentTimeAvailableForRefreshItem] {
-	return pulumix.Output[[]GetFusionEnvironmentTimeAvailableForRefreshItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFusionEnvironmentTimeAvailableForRefreshItemArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentTimeAvailableForRefreshItemOutput {
@@ -9285,12 +7828,6 @@ func (i GetFusionEnvironmentTimeAvailableForRefreshsFilterArgs) ToGetFusionEnvir
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentTimeAvailableForRefreshsFilterOutput)
 }
 
-func (i GetFusionEnvironmentTimeAvailableForRefreshsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentTimeAvailableForRefreshsFilter] {
-	return pulumix.Output[GetFusionEnvironmentTimeAvailableForRefreshsFilter]{
-		OutputState: i.ToGetFusionEnvironmentTimeAvailableForRefreshsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetFusionEnvironmentTimeAvailableForRefreshsFilterArrayInput is an input type that accepts GetFusionEnvironmentTimeAvailableForRefreshsFilterArray and GetFusionEnvironmentTimeAvailableForRefreshsFilterArrayOutput values.
 // You can construct a concrete instance of `GetFusionEnvironmentTimeAvailableForRefreshsFilterArrayInput` via:
 //
@@ -9316,12 +7853,6 @@ func (i GetFusionEnvironmentTimeAvailableForRefreshsFilterArray) ToGetFusionEnvi
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentTimeAvailableForRefreshsFilterArrayOutput)
 }
 
-func (i GetFusionEnvironmentTimeAvailableForRefreshsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentTimeAvailableForRefreshsFilter] {
-	return pulumix.Output[[]GetFusionEnvironmentTimeAvailableForRefreshsFilter]{
-		OutputState: i.ToGetFusionEnvironmentTimeAvailableForRefreshsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFusionEnvironmentTimeAvailableForRefreshsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetFusionEnvironmentTimeAvailableForRefreshsFilterOutput) ElementType() reflect.Type {
@@ -9334,12 +7865,6 @@ func (o GetFusionEnvironmentTimeAvailableForRefreshsFilterOutput) ToGetFusionEnv
 
 func (o GetFusionEnvironmentTimeAvailableForRefreshsFilterOutput) ToGetFusionEnvironmentTimeAvailableForRefreshsFilterOutputWithContext(ctx context.Context) GetFusionEnvironmentTimeAvailableForRefreshsFilterOutput {
 	return o
-}
-
-func (o GetFusionEnvironmentTimeAvailableForRefreshsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentTimeAvailableForRefreshsFilter] {
-	return pulumix.Output[GetFusionEnvironmentTimeAvailableForRefreshsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFusionEnvironmentTimeAvailableForRefreshsFilterOutput) Name() pulumi.StringOutput {
@@ -9366,12 +7891,6 @@ func (o GetFusionEnvironmentTimeAvailableForRefreshsFilterArrayOutput) ToGetFusi
 
 func (o GetFusionEnvironmentTimeAvailableForRefreshsFilterArrayOutput) ToGetFusionEnvironmentTimeAvailableForRefreshsFilterArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentTimeAvailableForRefreshsFilterArrayOutput {
 	return o
-}
-
-func (o GetFusionEnvironmentTimeAvailableForRefreshsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentTimeAvailableForRefreshsFilter] {
-	return pulumix.Output[[]GetFusionEnvironmentTimeAvailableForRefreshsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFusionEnvironmentTimeAvailableForRefreshsFilterArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentTimeAvailableForRefreshsFilterOutput {
@@ -9413,12 +7932,6 @@ func (i GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshColle
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionOutput)
 }
 
-func (i GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollection] {
-	return pulumix.Output[GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollection]{
-		OutputState: i.ToGetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionArrayInput is an input type that accepts GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionArray and GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionArrayOutput values.
 // You can construct a concrete instance of `GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionArrayInput` via:
 //
@@ -9444,12 +7957,6 @@ func (i GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshColle
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionArrayOutput)
 }
 
-func (i GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollection] {
-	return pulumix.Output[[]GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollection]{
-		OutputState: i.ToGetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionOutput) ElementType() reflect.Type {
@@ -9462,12 +7969,6 @@ func (o GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshColle
 
 func (o GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionOutput) ToGetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionOutputWithContext(ctx context.Context) GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionOutput {
 	return o
-}
-
-func (o GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollection] {
-	return pulumix.Output[GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A list of available refresh time objects.
@@ -9491,12 +7992,6 @@ func (o GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshColle
 	return o
 }
 
-func (o GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollection] {
-	return pulumix.Output[[]GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollection {
 		return vs[0].([]GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollection)[vs[1].(int)]
@@ -9505,7 +8000,7 @@ func (o GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshColle
 
 type GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItem struct {
 	// refresh time.
-	TimeAvailableForRefresh string `pulumi:"timeAvailableForRefresh"`
+	TimeAvailableForRefresh *string `pulumi:"timeAvailableForRefresh"`
 }
 
 // GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemInput is an input type that accepts GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemArgs and GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemOutput values.
@@ -9521,7 +8016,7 @@ type GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollecti
 
 type GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemArgs struct {
 	// refresh time.
-	TimeAvailableForRefresh pulumi.StringInput `pulumi:"timeAvailableForRefresh"`
+	TimeAvailableForRefresh pulumi.StringPtrInput `pulumi:"timeAvailableForRefresh"`
 }
 
 func (GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemArgs) ElementType() reflect.Type {
@@ -9534,12 +8029,6 @@ func (i GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshColle
 
 func (i GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemArgs) ToGetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemOutputWithContext(ctx context.Context) GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemOutput)
-}
-
-func (i GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItem] {
-	return pulumix.Output[GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItem]{
-		OutputState: i.ToGetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemArrayInput is an input type that accepts GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemArray and GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemArrayOutput values.
@@ -9567,12 +8056,6 @@ func (i GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshColle
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemArrayOutput)
 }
 
-func (i GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItem] {
-	return pulumix.Output[[]GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItem]{
-		OutputState: i.ToGetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemOutput) ElementType() reflect.Type {
@@ -9587,17 +8070,11 @@ func (o GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshColle
 	return o
 }
 
-func (o GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItem] {
-	return pulumix.Output[GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // refresh time.
-func (o GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemOutput) TimeAvailableForRefresh() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItem) string {
+func (o GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemOutput) TimeAvailableForRefresh() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItem) *string {
 		return v.TimeAvailableForRefresh
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -9612,12 +8089,6 @@ func (o GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshColle
 
 func (o GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemArrayOutput) ToGetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemArrayOutput {
 	return o
-}
-
-func (o GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItem] {
-	return pulumix.Output[[]GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItemOutput {
@@ -9661,12 +8132,6 @@ func (i GetFusionEnvironmentsFilterArgs) ToGetFusionEnvironmentsFilterOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentsFilterOutput)
 }
 
-func (i GetFusionEnvironmentsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentsFilter] {
-	return pulumix.Output[GetFusionEnvironmentsFilter]{
-		OutputState: i.ToGetFusionEnvironmentsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetFusionEnvironmentsFilterArrayInput is an input type that accepts GetFusionEnvironmentsFilterArray and GetFusionEnvironmentsFilterArrayOutput values.
 // You can construct a concrete instance of `GetFusionEnvironmentsFilterArrayInput` via:
 //
@@ -9692,12 +8157,6 @@ func (i GetFusionEnvironmentsFilterArray) ToGetFusionEnvironmentsFilterArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentsFilterArrayOutput)
 }
 
-func (i GetFusionEnvironmentsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentsFilter] {
-	return pulumix.Output[[]GetFusionEnvironmentsFilter]{
-		OutputState: i.ToGetFusionEnvironmentsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFusionEnvironmentsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetFusionEnvironmentsFilterOutput) ElementType() reflect.Type {
@@ -9710,12 +8169,6 @@ func (o GetFusionEnvironmentsFilterOutput) ToGetFusionEnvironmentsFilterOutput()
 
 func (o GetFusionEnvironmentsFilterOutput) ToGetFusionEnvironmentsFilterOutputWithContext(ctx context.Context) GetFusionEnvironmentsFilterOutput {
 	return o
-}
-
-func (o GetFusionEnvironmentsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentsFilter] {
-	return pulumix.Output[GetFusionEnvironmentsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFusionEnvironmentsFilterOutput) Name() pulumi.StringOutput {
@@ -9742,12 +8195,6 @@ func (o GetFusionEnvironmentsFilterArrayOutput) ToGetFusionEnvironmentsFilterArr
 
 func (o GetFusionEnvironmentsFilterArrayOutput) ToGetFusionEnvironmentsFilterArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentsFilterArrayOutput {
 	return o
-}
-
-func (o GetFusionEnvironmentsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentsFilter] {
-	return pulumix.Output[[]GetFusionEnvironmentsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFusionEnvironmentsFilterArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentsFilterOutput {
@@ -9787,12 +8234,6 @@ func (i GetFusionEnvironmentsFusionEnvironmentCollectionArgs) ToGetFusionEnviron
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentsFusionEnvironmentCollectionOutput)
 }
 
-func (i GetFusionEnvironmentsFusionEnvironmentCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentsFusionEnvironmentCollection] {
-	return pulumix.Output[GetFusionEnvironmentsFusionEnvironmentCollection]{
-		OutputState: i.ToGetFusionEnvironmentsFusionEnvironmentCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetFusionEnvironmentsFusionEnvironmentCollectionArrayInput is an input type that accepts GetFusionEnvironmentsFusionEnvironmentCollectionArray and GetFusionEnvironmentsFusionEnvironmentCollectionArrayOutput values.
 // You can construct a concrete instance of `GetFusionEnvironmentsFusionEnvironmentCollectionArrayInput` via:
 //
@@ -9818,12 +8259,6 @@ func (i GetFusionEnvironmentsFusionEnvironmentCollectionArray) ToGetFusionEnviro
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentsFusionEnvironmentCollectionArrayOutput)
 }
 
-func (i GetFusionEnvironmentsFusionEnvironmentCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentsFusionEnvironmentCollection] {
-	return pulumix.Output[[]GetFusionEnvironmentsFusionEnvironmentCollection]{
-		OutputState: i.ToGetFusionEnvironmentsFusionEnvironmentCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFusionEnvironmentsFusionEnvironmentCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetFusionEnvironmentsFusionEnvironmentCollectionOutput) ElementType() reflect.Type {
@@ -9836,12 +8271,6 @@ func (o GetFusionEnvironmentsFusionEnvironmentCollectionOutput) ToGetFusionEnvir
 
 func (o GetFusionEnvironmentsFusionEnvironmentCollectionOutput) ToGetFusionEnvironmentsFusionEnvironmentCollectionOutputWithContext(ctx context.Context) GetFusionEnvironmentsFusionEnvironmentCollectionOutput {
 	return o
-}
-
-func (o GetFusionEnvironmentsFusionEnvironmentCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentsFusionEnvironmentCollection] {
-	return pulumix.Output[GetFusionEnvironmentsFusionEnvironmentCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFusionEnvironmentsFusionEnvironmentCollectionOutput) Items() GetFusionEnvironmentsFusionEnvironmentCollectionItemArrayOutput {
@@ -9864,12 +8293,6 @@ func (o GetFusionEnvironmentsFusionEnvironmentCollectionArrayOutput) ToGetFusion
 	return o
 }
 
-func (o GetFusionEnvironmentsFusionEnvironmentCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentsFusionEnvironmentCollection] {
-	return pulumix.Output[[]GetFusionEnvironmentsFusionEnvironmentCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetFusionEnvironmentsFusionEnvironmentCollectionArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentsFusionEnvironmentCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentsFusionEnvironmentCollection {
 		return vs[0].([]GetFusionEnvironmentsFusionEnvironmentCollection)[vs[1].(int)]
@@ -9882,58 +8305,58 @@ type GetFusionEnvironmentsFusionEnvironmentCollectionItem struct {
 	// Patch bundle names
 	AppliedPatchBundles []string `pulumi:"appliedPatchBundles"`
 	// The ID of the compartment in which to list resources.
-	CompartmentId                           string                                                                                       `pulumi:"compartmentId"`
+	CompartmentId                           *string                                                                                      `pulumi:"compartmentId"`
 	CreateFusionEnvironmentAdminUserDetails []GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetail `pulumi:"createFusionEnvironmentAdminUserDetails"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// DNS prefix
-	DnsPrefix string `pulumi:"dnsPrefix"`
+	DnsPrefix *string `pulumi:"dnsPrefix"`
 	// The IDCS domain created for the fusion instance
-	DomainId string `pulumi:"domainId"`
+	DomainId *string `pulumi:"domainId"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The ID of the fusion environment family in which to list resources.
-	FusionEnvironmentFamilyId string `pulumi:"fusionEnvironmentFamilyId"`
+	FusionEnvironmentFamilyId *string `pulumi:"fusionEnvironmentFamilyId"`
 	// Type of the FusionEnvironment.
-	FusionEnvironmentType string `pulumi:"fusionEnvironmentType"`
+	FusionEnvironmentType *string `pulumi:"fusionEnvironmentType"`
 	// Unique identifier that is immutable on creation
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The IDCS Domain URL
-	IdcsDomainUrl string `pulumi:"idcsDomainUrl"`
+	IdcsDomainUrl *string `pulumi:"idcsDomainUrl"`
 	// If it's true, then the Break Glass feature is enabled
-	IsBreakGlassEnabled bool `pulumi:"isBreakGlassEnabled"`
+	IsBreakGlassEnabled *bool `pulumi:"isBreakGlassEnabled"`
 	// BYOK key id
-	KmsKeyId string `pulumi:"kmsKeyId"`
+	KmsKeyId *string `pulumi:"kmsKeyId"`
 	// BYOK key info
 	KmsKeyInfos []GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfo `pulumi:"kmsKeyInfos"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The lockbox Id of this fusion environment. If there's no lockbox id, this field will be null
-	LockboxId string `pulumi:"lockboxId"`
+	LockboxId *string `pulumi:"lockboxId"`
 	// The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
 	MaintenancePolicies []GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicy `pulumi:"maintenancePolicies"`
 	// Public URL
-	PublicUrl string `pulumi:"publicUrl"`
+	PublicUrl *string `pulumi:"publicUrl"`
 	// Describes a refresh of a fusion environment
 	Refreshes []GetFusionEnvironmentsFusionEnvironmentCollectionItemRefresh `pulumi:"refreshes"`
 	// Network Access Control Rules
 	Rules []GetFusionEnvironmentsFusionEnvironmentCollectionItemRule `pulumi:"rules"`
 	// A filter that returns all resources that match the specified lifecycle state.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// List of subscription IDs.
 	SubscriptionIds []string `pulumi:"subscriptionIds"`
 	// Environment Specific Guid/ System Name
-	SystemName string `pulumi:"systemName"`
+	SystemName *string `pulumi:"systemName"`
 	// The time the the FusionEnvironment was created. An RFC3339 formatted datetime string
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The next maintenance for this environment
-	TimeUpcomingMaintenance string `pulumi:"timeUpcomingMaintenance"`
+	TimeUpcomingMaintenance *string `pulumi:"timeUpcomingMaintenance"`
 	// The time the FusionEnvironment was updated. An RFC3339 formatted datetime string
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// Version of Fusion Apps used by this environment
-	Version string `pulumi:"version"`
+	Version *string `pulumi:"version"`
 }
 
 // GetFusionEnvironmentsFusionEnvironmentCollectionItemInput is an input type that accepts GetFusionEnvironmentsFusionEnvironmentCollectionItemArgs and GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput values.
@@ -9953,58 +8376,58 @@ type GetFusionEnvironmentsFusionEnvironmentCollectionItemArgs struct {
 	// Patch bundle names
 	AppliedPatchBundles pulumi.StringArrayInput `pulumi:"appliedPatchBundles"`
 	// The ID of the compartment in which to list resources.
-	CompartmentId                           pulumi.StringInput                                                                                   `pulumi:"compartmentId"`
+	CompartmentId                           pulumi.StringPtrInput                                                                                `pulumi:"compartmentId"`
 	CreateFusionEnvironmentAdminUserDetails GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailArrayInput `pulumi:"createFusionEnvironmentAdminUserDetails"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// DNS prefix
-	DnsPrefix pulumi.StringInput `pulumi:"dnsPrefix"`
+	DnsPrefix pulumi.StringPtrInput `pulumi:"dnsPrefix"`
 	// The IDCS domain created for the fusion instance
-	DomainId pulumi.StringInput `pulumi:"domainId"`
+	DomainId pulumi.StringPtrInput `pulumi:"domainId"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The ID of the fusion environment family in which to list resources.
-	FusionEnvironmentFamilyId pulumi.StringInput `pulumi:"fusionEnvironmentFamilyId"`
+	FusionEnvironmentFamilyId pulumi.StringPtrInput `pulumi:"fusionEnvironmentFamilyId"`
 	// Type of the FusionEnvironment.
-	FusionEnvironmentType pulumi.StringInput `pulumi:"fusionEnvironmentType"`
+	FusionEnvironmentType pulumi.StringPtrInput `pulumi:"fusionEnvironmentType"`
 	// Unique identifier that is immutable on creation
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// The IDCS Domain URL
-	IdcsDomainUrl pulumi.StringInput `pulumi:"idcsDomainUrl"`
+	IdcsDomainUrl pulumi.StringPtrInput `pulumi:"idcsDomainUrl"`
 	// If it's true, then the Break Glass feature is enabled
-	IsBreakGlassEnabled pulumi.BoolInput `pulumi:"isBreakGlassEnabled"`
+	IsBreakGlassEnabled pulumi.BoolPtrInput `pulumi:"isBreakGlassEnabled"`
 	// BYOK key id
-	KmsKeyId pulumi.StringInput `pulumi:"kmsKeyId"`
+	KmsKeyId pulumi.StringPtrInput `pulumi:"kmsKeyId"`
 	// BYOK key info
 	KmsKeyInfos GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoArrayInput `pulumi:"kmsKeyInfos"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// The lockbox Id of this fusion environment. If there's no lockbox id, this field will be null
-	LockboxId pulumi.StringInput `pulumi:"lockboxId"`
+	LockboxId pulumi.StringPtrInput `pulumi:"lockboxId"`
 	// The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
 	MaintenancePolicies GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyArrayInput `pulumi:"maintenancePolicies"`
 	// Public URL
-	PublicUrl pulumi.StringInput `pulumi:"publicUrl"`
+	PublicUrl pulumi.StringPtrInput `pulumi:"publicUrl"`
 	// Describes a refresh of a fusion environment
 	Refreshes GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshArrayInput `pulumi:"refreshes"`
 	// Network Access Control Rules
 	Rules GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleArrayInput `pulumi:"rules"`
 	// A filter that returns all resources that match the specified lifecycle state.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// List of subscription IDs.
 	SubscriptionIds pulumi.StringArrayInput `pulumi:"subscriptionIds"`
 	// Environment Specific Guid/ System Name
-	SystemName pulumi.StringInput `pulumi:"systemName"`
+	SystemName pulumi.StringPtrInput `pulumi:"systemName"`
 	// The time the the FusionEnvironment was created. An RFC3339 formatted datetime string
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The next maintenance for this environment
-	TimeUpcomingMaintenance pulumi.StringInput `pulumi:"timeUpcomingMaintenance"`
+	TimeUpcomingMaintenance pulumi.StringPtrInput `pulumi:"timeUpcomingMaintenance"`
 	// The time the FusionEnvironment was updated. An RFC3339 formatted datetime string
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 	// Version of Fusion Apps used by this environment
-	Version pulumi.StringInput `pulumi:"version"`
+	Version pulumi.StringPtrInput `pulumi:"version"`
 }
 
 func (GetFusionEnvironmentsFusionEnvironmentCollectionItemArgs) ElementType() reflect.Type {
@@ -10017,12 +8440,6 @@ func (i GetFusionEnvironmentsFusionEnvironmentCollectionItemArgs) ToGetFusionEnv
 
 func (i GetFusionEnvironmentsFusionEnvironmentCollectionItemArgs) ToGetFusionEnvironmentsFusionEnvironmentCollectionItemOutputWithContext(ctx context.Context) GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput)
-}
-
-func (i GetFusionEnvironmentsFusionEnvironmentCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentsFusionEnvironmentCollectionItem] {
-	return pulumix.Output[GetFusionEnvironmentsFusionEnvironmentCollectionItem]{
-		OutputState: i.ToGetFusionEnvironmentsFusionEnvironmentCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetFusionEnvironmentsFusionEnvironmentCollectionItemArrayInput is an input type that accepts GetFusionEnvironmentsFusionEnvironmentCollectionItemArray and GetFusionEnvironmentsFusionEnvironmentCollectionItemArrayOutput values.
@@ -10050,12 +8467,6 @@ func (i GetFusionEnvironmentsFusionEnvironmentCollectionItemArray) ToGetFusionEn
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentsFusionEnvironmentCollectionItemArrayOutput)
 }
 
-func (i GetFusionEnvironmentsFusionEnvironmentCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentsFusionEnvironmentCollectionItem] {
-	return pulumix.Output[[]GetFusionEnvironmentsFusionEnvironmentCollectionItem]{
-		OutputState: i.ToGetFusionEnvironmentsFusionEnvironmentCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) ElementType() reflect.Type {
@@ -10068,12 +8479,6 @@ func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) ToGetFusionE
 
 func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) ToGetFusionEnvironmentsFusionEnvironmentCollectionItemOutputWithContext(ctx context.Context) GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput {
 	return o
-}
-
-func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentsFusionEnvironmentCollectionItem] {
-	return pulumix.Output[GetFusionEnvironmentsFusionEnvironmentCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Language packs
@@ -10089,8 +8494,8 @@ func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) AppliedPatch
 }
 
 // The ID of the compartment in which to list resources.
-func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) CreateFusionEnvironmentAdminUserDetails() GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailArrayOutput {
@@ -10107,18 +8512,18 @@ func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) DefinedTags(
 }
 
 // A filter to return only resources that match the entire display name given.
-func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItem) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // DNS prefix
-func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) DnsPrefix() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItem) string { return v.DnsPrefix }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) DnsPrefix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItem) *string { return v.DnsPrefix }).(pulumi.StringPtrOutput)
 }
 
 // The IDCS domain created for the fusion instance
-func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) DomainId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItem) string { return v.DomainId }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) DomainId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItem) *string { return v.DomainId }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -10129,35 +8534,35 @@ func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) FreeformTags
 }
 
 // The ID of the fusion environment family in which to list resources.
-func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) FusionEnvironmentFamilyId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItem) string {
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) FusionEnvironmentFamilyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItem) *string {
 		return v.FusionEnvironmentFamilyId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Type of the FusionEnvironment.
-func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) FusionEnvironmentType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItem) string { return v.FusionEnvironmentType }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) FusionEnvironmentType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItem) *string { return v.FusionEnvironmentType }).(pulumi.StringPtrOutput)
 }
 
 // Unique identifier that is immutable on creation
-func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The IDCS Domain URL
-func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) IdcsDomainUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItem) string { return v.IdcsDomainUrl }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) IdcsDomainUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItem) *string { return v.IdcsDomainUrl }).(pulumi.StringPtrOutput)
 }
 
 // If it's true, then the Break Glass feature is enabled
-func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) IsBreakGlassEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItem) bool { return v.IsBreakGlassEnabled }).(pulumi.BoolOutput)
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) IsBreakGlassEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItem) *bool { return v.IsBreakGlassEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // BYOK key id
-func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) KmsKeyId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItem) string { return v.KmsKeyId }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) KmsKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItem) *string { return v.KmsKeyId }).(pulumi.StringPtrOutput)
 }
 
 // BYOK key info
@@ -10168,13 +8573,13 @@ func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) KmsKeyInfos(
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItem) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The lockbox Id of this fusion environment. If there's no lockbox id, this field will be null
-func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) LockboxId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItem) string { return v.LockboxId }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) LockboxId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItem) *string { return v.LockboxId }).(pulumi.StringPtrOutput)
 }
 
 // The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
@@ -10185,8 +8590,8 @@ func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) MaintenanceP
 }
 
 // Public URL
-func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) PublicUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItem) string { return v.PublicUrl }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) PublicUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItem) *string { return v.PublicUrl }).(pulumi.StringPtrOutput)
 }
 
 // Describes a refresh of a fusion environment
@@ -10204,8 +8609,8 @@ func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) Rules() GetF
 }
 
 // A filter that returns all resources that match the specified lifecycle state.
-func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // List of subscription IDs.
@@ -10214,28 +8619,28 @@ func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) Subscription
 }
 
 // Environment Specific Guid/ System Name
-func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) SystemName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItem) string { return v.SystemName }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) SystemName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItem) *string { return v.SystemName }).(pulumi.StringPtrOutput)
 }
 
 // The time the the FusionEnvironment was created. An RFC3339 formatted datetime string
-func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The next maintenance for this environment
-func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) TimeUpcomingMaintenance() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItem) string { return v.TimeUpcomingMaintenance }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) TimeUpcomingMaintenance() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItem) *string { return v.TimeUpcomingMaintenance }).(pulumi.StringPtrOutput)
 }
 
 // The time the FusionEnvironment was updated. An RFC3339 formatted datetime string
-func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItem) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // Version of Fusion Apps used by this environment
-func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) Version() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItem) string { return v.Version }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) Version() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItem) *string { return v.Version }).(pulumi.StringPtrOutput)
 }
 
 type GetFusionEnvironmentsFusionEnvironmentCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -10252,12 +8657,6 @@ func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemArrayOutput) ToGetFu
 	return o
 }
 
-func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentsFusionEnvironmentCollectionItem] {
-	return pulumix.Output[[]GetFusionEnvironmentsFusionEnvironmentCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentsFusionEnvironmentCollectionItem {
 		return vs[0].([]GetFusionEnvironmentsFusionEnvironmentCollectionItem)[vs[1].(int)]
@@ -10265,11 +8664,11 @@ func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemArrayOutput) Index(i
 }
 
 type GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetail struct {
-	EmailAddress string `pulumi:"emailAddress"`
-	FirstName    string `pulumi:"firstName"`
-	LastName     string `pulumi:"lastName"`
-	Password     string `pulumi:"password"`
-	Username     string `pulumi:"username"`
+	EmailAddress *string `pulumi:"emailAddress"`
+	FirstName    *string `pulumi:"firstName"`
+	LastName     *string `pulumi:"lastName"`
+	Password     *string `pulumi:"password"`
+	Username     *string `pulumi:"username"`
 }
 
 // GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailInput is an input type that accepts GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailArgs and GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailOutput values.
@@ -10284,11 +8683,11 @@ type GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironment
 }
 
 type GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailArgs struct {
-	EmailAddress pulumi.StringInput `pulumi:"emailAddress"`
-	FirstName    pulumi.StringInput `pulumi:"firstName"`
-	LastName     pulumi.StringInput `pulumi:"lastName"`
-	Password     pulumi.StringInput `pulumi:"password"`
-	Username     pulumi.StringInput `pulumi:"username"`
+	EmailAddress pulumi.StringPtrInput `pulumi:"emailAddress"`
+	FirstName    pulumi.StringPtrInput `pulumi:"firstName"`
+	LastName     pulumi.StringPtrInput `pulumi:"lastName"`
+	Password     pulumi.StringPtrInput `pulumi:"password"`
+	Username     pulumi.StringPtrInput `pulumi:"username"`
 }
 
 func (GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailArgs) ElementType() reflect.Type {
@@ -10301,12 +8700,6 @@ func (i GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironm
 
 func (i GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailArgs) ToGetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailOutputWithContext(ctx context.Context) GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailOutput)
-}
-
-func (i GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetail] {
-	return pulumix.Output[GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetail]{
-		OutputState: i.ToGetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailArrayInput is an input type that accepts GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailArray and GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailArrayOutput values.
@@ -10334,12 +8727,6 @@ func (i GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironm
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailArrayOutput)
 }
 
-func (i GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetail] {
-	return pulumix.Output[[]GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetail]{
-		OutputState: i.ToGetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailOutput struct{ *pulumi.OutputState }
 
 func (GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailOutput) ElementType() reflect.Type {
@@ -10354,40 +8741,34 @@ func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironm
 	return o
 }
 
-func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetail] {
-	return pulumix.Output[GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
-func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailOutput) EmailAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetail) string {
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailOutput) EmailAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetail) *string {
 		return v.EmailAddress
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
-func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailOutput) FirstName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetail) string {
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailOutput) FirstName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetail) *string {
 		return v.FirstName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
-func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailOutput) LastName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetail) string {
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailOutput) LastName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetail) *string {
 		return v.LastName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
-func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailOutput) Password() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetail) string {
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailOutput) Password() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetail) *string {
 		return v.Password
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
-func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailOutput) Username() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetail) string {
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailOutput) Username() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetail) *string {
 		return v.Username
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailArrayOutput struct{ *pulumi.OutputState }
@@ -10404,12 +8785,6 @@ func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironm
 	return o
 }
 
-func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetail] {
-	return pulumix.Output[[]GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetail {
 		return vs[0].([]GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetail)[vs[1].(int)]
@@ -10417,13 +8792,13 @@ func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironm
 }
 
 type GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfo struct {
-	ActiveKeyId              string `pulumi:"activeKeyId"`
-	ActiveKeyVersion         string `pulumi:"activeKeyVersion"`
-	CurrentKeyLifecycleState string `pulumi:"currentKeyLifecycleState"`
-	ScheduledKeyId           string `pulumi:"scheduledKeyId"`
-	ScheduledKeyStatus       string `pulumi:"scheduledKeyStatus"`
-	ScheduledKeyVersion      string `pulumi:"scheduledKeyVersion"`
-	ScheduledLifecycleState  string `pulumi:"scheduledLifecycleState"`
+	ActiveKeyId              *string `pulumi:"activeKeyId"`
+	ActiveKeyVersion         *string `pulumi:"activeKeyVersion"`
+	CurrentKeyLifecycleState *string `pulumi:"currentKeyLifecycleState"`
+	ScheduledKeyId           *string `pulumi:"scheduledKeyId"`
+	ScheduledKeyStatus       *string `pulumi:"scheduledKeyStatus"`
+	ScheduledKeyVersion      *string `pulumi:"scheduledKeyVersion"`
+	ScheduledLifecycleState  *string `pulumi:"scheduledLifecycleState"`
 }
 
 // GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoInput is an input type that accepts GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoArgs and GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoOutput values.
@@ -10438,13 +8813,13 @@ type GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoInput interfa
 }
 
 type GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoArgs struct {
-	ActiveKeyId              pulumi.StringInput `pulumi:"activeKeyId"`
-	ActiveKeyVersion         pulumi.StringInput `pulumi:"activeKeyVersion"`
-	CurrentKeyLifecycleState pulumi.StringInput `pulumi:"currentKeyLifecycleState"`
-	ScheduledKeyId           pulumi.StringInput `pulumi:"scheduledKeyId"`
-	ScheduledKeyStatus       pulumi.StringInput `pulumi:"scheduledKeyStatus"`
-	ScheduledKeyVersion      pulumi.StringInput `pulumi:"scheduledKeyVersion"`
-	ScheduledLifecycleState  pulumi.StringInput `pulumi:"scheduledLifecycleState"`
+	ActiveKeyId              pulumi.StringPtrInput `pulumi:"activeKeyId"`
+	ActiveKeyVersion         pulumi.StringPtrInput `pulumi:"activeKeyVersion"`
+	CurrentKeyLifecycleState pulumi.StringPtrInput `pulumi:"currentKeyLifecycleState"`
+	ScheduledKeyId           pulumi.StringPtrInput `pulumi:"scheduledKeyId"`
+	ScheduledKeyStatus       pulumi.StringPtrInput `pulumi:"scheduledKeyStatus"`
+	ScheduledKeyVersion      pulumi.StringPtrInput `pulumi:"scheduledKeyVersion"`
+	ScheduledLifecycleState  pulumi.StringPtrInput `pulumi:"scheduledLifecycleState"`
 }
 
 func (GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoArgs) ElementType() reflect.Type {
@@ -10457,12 +8832,6 @@ func (i GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoArgs) ToGe
 
 func (i GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoArgs) ToGetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoOutputWithContext(ctx context.Context) GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoOutput)
-}
-
-func (i GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoArgs) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfo] {
-	return pulumix.Output[GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfo]{
-		OutputState: i.ToGetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoArrayInput is an input type that accepts GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoArray and GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoArrayOutput values.
@@ -10490,12 +8859,6 @@ func (i GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoArray) ToG
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoArrayOutput)
 }
 
-func (i GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfo] {
-	return pulumix.Output[[]GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfo]{
-		OutputState: i.ToGetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoOutput struct{ *pulumi.OutputState }
 
 func (GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoOutput) ElementType() reflect.Type {
@@ -10510,48 +8873,44 @@ func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoOutput) To
 	return o
 }
 
-func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoOutput) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfo] {
-	return pulumix.Output[GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfo]{
-		OutputState: o.OutputState,
-	}
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoOutput) ActiveKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfo) *string { return v.ActiveKeyId }).(pulumi.StringPtrOutput)
 }
 
-func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoOutput) ActiveKeyId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfo) string { return v.ActiveKeyId }).(pulumi.StringOutput)
-}
-
-func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoOutput) ActiveKeyVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfo) string {
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoOutput) ActiveKeyVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfo) *string {
 		return v.ActiveKeyVersion
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
-func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoOutput) CurrentKeyLifecycleState() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfo) string {
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoOutput) CurrentKeyLifecycleState() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfo) *string {
 		return v.CurrentKeyLifecycleState
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
-func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoOutput) ScheduledKeyId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfo) string { return v.ScheduledKeyId }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoOutput) ScheduledKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfo) *string {
+		return v.ScheduledKeyId
+	}).(pulumi.StringPtrOutput)
 }
 
-func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoOutput) ScheduledKeyStatus() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfo) string {
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoOutput) ScheduledKeyStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfo) *string {
 		return v.ScheduledKeyStatus
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
-func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoOutput) ScheduledKeyVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfo) string {
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoOutput) ScheduledKeyVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfo) *string {
 		return v.ScheduledKeyVersion
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
-func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoOutput) ScheduledLifecycleState() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfo) string {
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoOutput) ScheduledLifecycleState() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfo) *string {
 		return v.ScheduledLifecycleState
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoArrayOutput struct{ *pulumi.OutputState }
@@ -10568,12 +8927,6 @@ func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoArrayOutpu
 	return o
 }
 
-func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfo] {
-	return pulumix.Output[[]GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfo]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfo {
 		return vs[0].([]GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfo)[vs[1].(int)]
@@ -10582,9 +8935,9 @@ func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoArrayOutpu
 
 type GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicy struct {
 	// User choice to upgrade both production and non-production environments at the same time. Overrides the Fusion environment family setting.
-	EnvironmentMaintenanceOverride string `pulumi:"environmentMaintenanceOverride"`
+	EnvironmentMaintenanceOverride *string `pulumi:"environmentMaintenanceOverride"`
 	// Whether the Fusion environment will be updated monthly or updated on the quarterly cycle. This setting overrides the monthly patching setting of its Fusion environment family.
-	MonthlyPatchingOverride string `pulumi:"monthlyPatchingOverride"`
+	MonthlyPatchingOverride *string `pulumi:"monthlyPatchingOverride"`
 	// Determines the quarterly upgrade begin times (monthly maintenance group schedule ) of the Fusion environment.
 	QuarterlyUpgradeBeginTimes []GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTime `pulumi:"quarterlyUpgradeBeginTimes"`
 }
@@ -10602,9 +8955,9 @@ type GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyInput 
 
 type GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyArgs struct {
 	// User choice to upgrade both production and non-production environments at the same time. Overrides the Fusion environment family setting.
-	EnvironmentMaintenanceOverride pulumi.StringInput `pulumi:"environmentMaintenanceOverride"`
+	EnvironmentMaintenanceOverride pulumi.StringPtrInput `pulumi:"environmentMaintenanceOverride"`
 	// Whether the Fusion environment will be updated monthly or updated on the quarterly cycle. This setting overrides the monthly patching setting of its Fusion environment family.
-	MonthlyPatchingOverride pulumi.StringInput `pulumi:"monthlyPatchingOverride"`
+	MonthlyPatchingOverride pulumi.StringPtrInput `pulumi:"monthlyPatchingOverride"`
 	// Determines the quarterly upgrade begin times (monthly maintenance group schedule ) of the Fusion environment.
 	QuarterlyUpgradeBeginTimes GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeArrayInput `pulumi:"quarterlyUpgradeBeginTimes"`
 }
@@ -10619,12 +8972,6 @@ func (i GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyArg
 
 func (i GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyArgs) ToGetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyOutputWithContext(ctx context.Context) GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyOutput)
-}
-
-func (i GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyArgs) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicy] {
-	return pulumix.Output[GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicy]{
-		OutputState: i.ToGetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyArrayInput is an input type that accepts GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyArray and GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyArrayOutput values.
@@ -10652,12 +8999,6 @@ func (i GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyArrayOutput)
 }
 
-func (i GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicy] {
-	return pulumix.Output[[]GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicy]{
-		OutputState: i.ToGetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyOutput struct{ *pulumi.OutputState }
 
 func (GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyOutput) ElementType() reflect.Type {
@@ -10672,24 +9013,18 @@ func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyOut
 	return o
 }
 
-func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyOutput) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicy] {
-	return pulumix.Output[GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicy]{
-		OutputState: o.OutputState,
-	}
-}
-
 // User choice to upgrade both production and non-production environments at the same time. Overrides the Fusion environment family setting.
-func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyOutput) EnvironmentMaintenanceOverride() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicy) string {
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyOutput) EnvironmentMaintenanceOverride() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicy) *string {
 		return v.EnvironmentMaintenanceOverride
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Whether the Fusion environment will be updated monthly or updated on the quarterly cycle. This setting overrides the monthly patching setting of its Fusion environment family.
-func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyOutput) MonthlyPatchingOverride() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicy) string {
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyOutput) MonthlyPatchingOverride() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicy) *string {
 		return v.MonthlyPatchingOverride
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Determines the quarterly upgrade begin times (monthly maintenance group schedule ) of the Fusion environment.
@@ -10713,12 +9048,6 @@ func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyArr
 	return o
 }
 
-func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicy] {
-	return pulumix.Output[[]GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicy]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicy {
 		return vs[0].([]GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicy)[vs[1].(int)]
@@ -10727,9 +9056,9 @@ func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyArr
 
 type GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTime struct {
 	// The frequency and month when maintenance occurs for the Fusion environment.
-	BeginTimesValue string `pulumi:"beginTimesValue"`
+	BeginTimesValue *string `pulumi:"beginTimesValue"`
 	// Determines if the maintenance schedule of the Fusion environment is inherited from the Fusion environment family.
-	OverrideType string `pulumi:"overrideType"`
+	OverrideType *string `pulumi:"overrideType"`
 }
 
 // GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeInput is an input type that accepts GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeArgs and GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeOutput values.
@@ -10745,9 +9074,9 @@ type GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarte
 
 type GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeArgs struct {
 	// The frequency and month when maintenance occurs for the Fusion environment.
-	BeginTimesValue pulumi.StringInput `pulumi:"beginTimesValue"`
+	BeginTimesValue pulumi.StringPtrInput `pulumi:"beginTimesValue"`
 	// Determines if the maintenance schedule of the Fusion environment is inherited from the Fusion environment family.
-	OverrideType pulumi.StringInput `pulumi:"overrideType"`
+	OverrideType pulumi.StringPtrInput `pulumi:"overrideType"`
 }
 
 func (GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeArgs) ElementType() reflect.Type {
@@ -10760,12 +9089,6 @@ func (i GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQua
 
 func (i GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeArgs) ToGetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeOutputWithContext(ctx context.Context) GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeOutput)
-}
-
-func (i GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeArgs) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTime] {
-	return pulumix.Output[GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTime]{
-		OutputState: i.ToGetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeArrayInput is an input type that accepts GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeArray and GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeArrayOutput values.
@@ -10793,12 +9116,6 @@ func (i GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQua
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeArrayOutput)
 }
 
-func (i GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTime] {
-	return pulumix.Output[[]GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTime]{
-		OutputState: i.ToGetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeOutput struct{ *pulumi.OutputState }
 
 func (GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeOutput) ElementType() reflect.Type {
@@ -10813,24 +9130,18 @@ func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQua
 	return o
 }
 
-func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeOutput) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTime] {
-	return pulumix.Output[GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTime]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The frequency and month when maintenance occurs for the Fusion environment.
-func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeOutput) BeginTimesValue() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTime) string {
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeOutput) BeginTimesValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTime) *string {
 		return v.BeginTimesValue
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Determines if the maintenance schedule of the Fusion environment is inherited from the Fusion environment family.
-func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeOutput) OverrideType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTime) string {
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeOutput) OverrideType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTime) *string {
 		return v.OverrideType
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeArrayOutput struct{ *pulumi.OutputState }
@@ -10847,12 +9158,6 @@ func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQua
 	return o
 }
 
-func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTime] {
-	return pulumix.Output[[]GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTime]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTime {
 		return vs[0].([]GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTime)[vs[1].(int)]
@@ -10861,11 +9166,11 @@ func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQua
 
 type GetFusionEnvironmentsFusionEnvironmentCollectionItemRefresh struct {
 	// The source environment id for the last refresh
-	SourceFusionEnvironmentId string `pulumi:"sourceFusionEnvironmentId"`
+	SourceFusionEnvironmentId *string `pulumi:"sourceFusionEnvironmentId"`
 	// The time of when the last refresh finish
-	TimeFinished string `pulumi:"timeFinished"`
+	TimeFinished *string `pulumi:"timeFinished"`
 	// The point of time of the latest DB backup for the last refresh
-	TimeOfRestorationPoint string `pulumi:"timeOfRestorationPoint"`
+	TimeOfRestorationPoint *string `pulumi:"timeOfRestorationPoint"`
 }
 
 // GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshInput is an input type that accepts GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshArgs and GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshOutput values.
@@ -10881,11 +9186,11 @@ type GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshInput interface 
 
 type GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshArgs struct {
 	// The source environment id for the last refresh
-	SourceFusionEnvironmentId pulumi.StringInput `pulumi:"sourceFusionEnvironmentId"`
+	SourceFusionEnvironmentId pulumi.StringPtrInput `pulumi:"sourceFusionEnvironmentId"`
 	// The time of when the last refresh finish
-	TimeFinished pulumi.StringInput `pulumi:"timeFinished"`
+	TimeFinished pulumi.StringPtrInput `pulumi:"timeFinished"`
 	// The point of time of the latest DB backup for the last refresh
-	TimeOfRestorationPoint pulumi.StringInput `pulumi:"timeOfRestorationPoint"`
+	TimeOfRestorationPoint pulumi.StringPtrInput `pulumi:"timeOfRestorationPoint"`
 }
 
 func (GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshArgs) ElementType() reflect.Type {
@@ -10898,12 +9203,6 @@ func (i GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshArgs) ToGetFu
 
 func (i GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshArgs) ToGetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshOutputWithContext(ctx context.Context) GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshOutput)
-}
-
-func (i GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshArgs) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentsFusionEnvironmentCollectionItemRefresh] {
-	return pulumix.Output[GetFusionEnvironmentsFusionEnvironmentCollectionItemRefresh]{
-		OutputState: i.ToGetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshArrayInput is an input type that accepts GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshArray and GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshArrayOutput values.
@@ -10931,12 +9230,6 @@ func (i GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshArray) ToGetF
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshArrayOutput)
 }
 
-func (i GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentsFusionEnvironmentCollectionItemRefresh] {
-	return pulumix.Output[[]GetFusionEnvironmentsFusionEnvironmentCollectionItemRefresh]{
-		OutputState: i.ToGetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshOutput struct{ *pulumi.OutputState }
 
 func (GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshOutput) ElementType() reflect.Type {
@@ -10951,29 +9244,23 @@ func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshOutput) ToGet
 	return o
 }
 
-func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshOutput) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentsFusionEnvironmentCollectionItemRefresh] {
-	return pulumix.Output[GetFusionEnvironmentsFusionEnvironmentCollectionItemRefresh]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The source environment id for the last refresh
-func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshOutput) SourceFusionEnvironmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItemRefresh) string {
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshOutput) SourceFusionEnvironmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItemRefresh) *string {
 		return v.SourceFusionEnvironmentId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The time of when the last refresh finish
-func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshOutput) TimeFinished() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItemRefresh) string { return v.TimeFinished }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshOutput) TimeFinished() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItemRefresh) *string { return v.TimeFinished }).(pulumi.StringPtrOutput)
 }
 
 // The point of time of the latest DB backup for the last refresh
-func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshOutput) TimeOfRestorationPoint() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItemRefresh) string {
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshOutput) TimeOfRestorationPoint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItemRefresh) *string {
 		return v.TimeOfRestorationPoint
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshArrayOutput struct{ *pulumi.OutputState }
@@ -10990,12 +9277,6 @@ func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshArrayOutput) 
 	return o
 }
 
-func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentsFusionEnvironmentCollectionItemRefresh] {
-	return pulumix.Output[[]GetFusionEnvironmentsFusionEnvironmentCollectionItemRefresh]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentsFusionEnvironmentCollectionItemRefresh {
 		return vs[0].([]GetFusionEnvironmentsFusionEnvironmentCollectionItemRefresh)[vs[1].(int)]
@@ -11004,10 +9285,10 @@ func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemRefreshArrayOutput) 
 
 type GetFusionEnvironmentsFusionEnvironmentCollectionItemRule struct {
 	// Rule type
-	Action     string                                                              `pulumi:"action"`
+	Action     *string                                                             `pulumi:"action"`
 	Conditions []GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleCondition `pulumi:"conditions"`
 	// A brief description of the access control rule. Avoid entering confidential information. example: `192.168.0.0/16 and 2001:db8::/32 are trusted clients. Whitelist them.`
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 }
 
 // GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleInput is an input type that accepts GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleArgs and GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleOutput values.
@@ -11023,10 +9304,10 @@ type GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleInput interface {
 
 type GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleArgs struct {
 	// Rule type
-	Action     pulumi.StringInput                                                          `pulumi:"action"`
+	Action     pulumi.StringPtrInput                                                       `pulumi:"action"`
 	Conditions GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionArrayInput `pulumi:"conditions"`
 	// A brief description of the access control rule. Avoid entering confidential information. example: `192.168.0.0/16 and 2001:db8::/32 are trusted clients. Whitelist them.`
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 }
 
 func (GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleArgs) ElementType() reflect.Type {
@@ -11039,12 +9320,6 @@ func (i GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleArgs) ToGetFusio
 
 func (i GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleArgs) ToGetFusionEnvironmentsFusionEnvironmentCollectionItemRuleOutputWithContext(ctx context.Context) GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleOutput)
-}
-
-func (i GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentsFusionEnvironmentCollectionItemRule] {
-	return pulumix.Output[GetFusionEnvironmentsFusionEnvironmentCollectionItemRule]{
-		OutputState: i.ToGetFusionEnvironmentsFusionEnvironmentCollectionItemRuleOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleArrayInput is an input type that accepts GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleArray and GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleArrayOutput values.
@@ -11072,12 +9347,6 @@ func (i GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleArray) ToGetFusi
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleArrayOutput)
 }
 
-func (i GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentsFusionEnvironmentCollectionItemRule] {
-	return pulumix.Output[[]GetFusionEnvironmentsFusionEnvironmentCollectionItemRule]{
-		OutputState: i.ToGetFusionEnvironmentsFusionEnvironmentCollectionItemRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleOutput struct{ *pulumi.OutputState }
 
 func (GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleOutput) ElementType() reflect.Type {
@@ -11092,15 +9361,9 @@ func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleOutput) ToGetFus
 	return o
 }
 
-func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentsFusionEnvironmentCollectionItemRule] {
-	return pulumix.Output[GetFusionEnvironmentsFusionEnvironmentCollectionItemRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Rule type
-func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleOutput) Action() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItemRule) string { return v.Action }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleOutput) Action() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItemRule) *string { return v.Action }).(pulumi.StringPtrOutput)
 }
 
 func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleOutput) Conditions() GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionArrayOutput {
@@ -11110,8 +9373,8 @@ func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleOutput) Conditio
 }
 
 // A brief description of the access control rule. Avoid entering confidential information. example: `192.168.0.0/16 and 2001:db8::/32 are trusted clients. Whitelist them.`
-func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItemRule) string { return v.Description }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItemRule) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 type GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleArrayOutput struct{ *pulumi.OutputState }
@@ -11128,12 +9391,6 @@ func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleArrayOutput) ToG
 	return o
 }
 
-func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentsFusionEnvironmentCollectionItemRule] {
-	return pulumix.Output[[]GetFusionEnvironmentsFusionEnvironmentCollectionItemRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentsFusionEnvironmentCollectionItemRule {
 		return vs[0].([]GetFusionEnvironmentsFusionEnvironmentCollectionItemRule)[vs[1].(int)]
@@ -11142,9 +9399,9 @@ func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleArrayOutput) Ind
 
 type GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleCondition struct {
 	// RuleCondition type
-	AttributeName string `pulumi:"attributeName"`
+	AttributeName *string `pulumi:"attributeName"`
 	// The OCID of the originating VCN that an incoming packet must match. You can use this condition in conjunction with `SourceVcnIpAddressCondition`. **NOTE:** If you define this condition for a rule without a `SourceVcnIpAddressCondition`, this condition matches all incoming traffic in the specified VCN.
-	AttributeValue string `pulumi:"attributeValue"`
+	AttributeValue *string `pulumi:"attributeValue"`
 }
 
 // GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionInput is an input type that accepts GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionArgs and GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionOutput values.
@@ -11160,9 +9417,9 @@ type GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionInput inte
 
 type GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionArgs struct {
 	// RuleCondition type
-	AttributeName pulumi.StringInput `pulumi:"attributeName"`
+	AttributeName pulumi.StringPtrInput `pulumi:"attributeName"`
 	// The OCID of the originating VCN that an incoming packet must match. You can use this condition in conjunction with `SourceVcnIpAddressCondition`. **NOTE:** If you define this condition for a rule without a `SourceVcnIpAddressCondition`, this condition matches all incoming traffic in the specified VCN.
-	AttributeValue pulumi.StringInput `pulumi:"attributeValue"`
+	AttributeValue pulumi.StringPtrInput `pulumi:"attributeValue"`
 }
 
 func (GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionArgs) ElementType() reflect.Type {
@@ -11175,12 +9432,6 @@ func (i GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionArgs) T
 
 func (i GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionArgs) ToGetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionOutputWithContext(ctx context.Context) GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionOutput)
-}
-
-func (i GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionArgs) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleCondition] {
-	return pulumix.Output[GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleCondition]{
-		OutputState: i.ToGetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionArrayInput is an input type that accepts GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionArray and GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionArrayOutput values.
@@ -11208,12 +9459,6 @@ func (i GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionArray) 
 	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionArrayOutput)
 }
 
-func (i GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleCondition] {
-	return pulumix.Output[[]GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleCondition]{
-		OutputState: i.ToGetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionOutput struct{ *pulumi.OutputState }
 
 func (GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionOutput) ElementType() reflect.Type {
@@ -11228,24 +9473,18 @@ func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionOutput)
 	return o
 }
 
-func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionOutput) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleCondition] {
-	return pulumix.Output[GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleCondition]{
-		OutputState: o.OutputState,
-	}
-}
-
 // RuleCondition type
-func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionOutput) AttributeName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleCondition) string {
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionOutput) AttributeName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleCondition) *string {
 		return v.AttributeName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the originating VCN that an incoming packet must match. You can use this condition in conjunction with `SourceVcnIpAddressCondition`. **NOTE:** If you define this condition for a rule without a `SourceVcnIpAddressCondition`, this condition matches all incoming traffic in the specified VCN.
-func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionOutput) AttributeValue() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleCondition) string {
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionOutput) AttributeValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleCondition) *string {
 		return v.AttributeValue
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionArrayOutput struct{ *pulumi.OutputState }
@@ -11262,12 +9501,6 @@ func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionArrayOu
 	return o
 }
 
-func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleCondition] {
-	return pulumix.Output[[]GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleCondition]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleCondition {
 		return vs[0].([]GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleCondition)[vs[1].(int)]
@@ -11276,7 +9509,7 @@ func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleConditionArrayOu
 
 type GetPbfListingPublisherDetail struct {
 	// A brief descriptive name for the PBF trigger.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 }
 
 // GetPbfListingPublisherDetailInput is an input type that accepts GetPbfListingPublisherDetailArgs and GetPbfListingPublisherDetailOutput values.
@@ -11292,7 +9525,7 @@ type GetPbfListingPublisherDetailInput interface {
 
 type GetPbfListingPublisherDetailArgs struct {
 	// A brief descriptive name for the PBF trigger.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 }
 
 func (GetPbfListingPublisherDetailArgs) ElementType() reflect.Type {
@@ -11305,12 +9538,6 @@ func (i GetPbfListingPublisherDetailArgs) ToGetPbfListingPublisherDetailOutput()
 
 func (i GetPbfListingPublisherDetailArgs) ToGetPbfListingPublisherDetailOutputWithContext(ctx context.Context) GetPbfListingPublisherDetailOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetPbfListingPublisherDetailOutput)
-}
-
-func (i GetPbfListingPublisherDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetPbfListingPublisherDetail] {
-	return pulumix.Output[GetPbfListingPublisherDetail]{
-		OutputState: i.ToGetPbfListingPublisherDetailOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetPbfListingPublisherDetailArrayInput is an input type that accepts GetPbfListingPublisherDetailArray and GetPbfListingPublisherDetailArrayOutput values.
@@ -11338,12 +9565,6 @@ func (i GetPbfListingPublisherDetailArray) ToGetPbfListingPublisherDetailArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetPbfListingPublisherDetailArrayOutput)
 }
 
-func (i GetPbfListingPublisherDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPbfListingPublisherDetail] {
-	return pulumix.Output[[]GetPbfListingPublisherDetail]{
-		OutputState: i.ToGetPbfListingPublisherDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetPbfListingPublisherDetailOutput struct{ *pulumi.OutputState }
 
 func (GetPbfListingPublisherDetailOutput) ElementType() reflect.Type {
@@ -11358,15 +9579,9 @@ func (o GetPbfListingPublisherDetailOutput) ToGetPbfListingPublisherDetailOutput
 	return o
 }
 
-func (o GetPbfListingPublisherDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetPbfListingPublisherDetail] {
-	return pulumix.Output[GetPbfListingPublisherDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A brief descriptive name for the PBF trigger.
-func (o GetPbfListingPublisherDetailOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPbfListingPublisherDetail) string { return v.Name }).(pulumi.StringOutput)
+func (o GetPbfListingPublisherDetailOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPbfListingPublisherDetail) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 type GetPbfListingPublisherDetailArrayOutput struct{ *pulumi.OutputState }
@@ -11383,12 +9598,6 @@ func (o GetPbfListingPublisherDetailArrayOutput) ToGetPbfListingPublisherDetailA
 	return o
 }
 
-func (o GetPbfListingPublisherDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPbfListingPublisherDetail] {
-	return pulumix.Output[[]GetPbfListingPublisherDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetPbfListingPublisherDetailArrayOutput) Index(i pulumi.IntInput) GetPbfListingPublisherDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPbfListingPublisherDetail {
 		return vs[0].([]GetPbfListingPublisherDetail)[vs[1].(int)]
@@ -11397,7 +9606,7 @@ func (o GetPbfListingPublisherDetailArrayOutput) Index(i pulumi.IntInput) GetPbf
 
 type GetPbfListingTrigger struct {
 	// A brief descriptive name for the PBF trigger.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 }
 
 // GetPbfListingTriggerInput is an input type that accepts GetPbfListingTriggerArgs and GetPbfListingTriggerOutput values.
@@ -11413,7 +9622,7 @@ type GetPbfListingTriggerInput interface {
 
 type GetPbfListingTriggerArgs struct {
 	// A brief descriptive name for the PBF trigger.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 }
 
 func (GetPbfListingTriggerArgs) ElementType() reflect.Type {
@@ -11426,12 +9635,6 @@ func (i GetPbfListingTriggerArgs) ToGetPbfListingTriggerOutput() GetPbfListingTr
 
 func (i GetPbfListingTriggerArgs) ToGetPbfListingTriggerOutputWithContext(ctx context.Context) GetPbfListingTriggerOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetPbfListingTriggerOutput)
-}
-
-func (i GetPbfListingTriggerArgs) ToOutput(ctx context.Context) pulumix.Output[GetPbfListingTrigger] {
-	return pulumix.Output[GetPbfListingTrigger]{
-		OutputState: i.ToGetPbfListingTriggerOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetPbfListingTriggerArrayInput is an input type that accepts GetPbfListingTriggerArray and GetPbfListingTriggerArrayOutput values.
@@ -11459,12 +9662,6 @@ func (i GetPbfListingTriggerArray) ToGetPbfListingTriggerArrayOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetPbfListingTriggerArrayOutput)
 }
 
-func (i GetPbfListingTriggerArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPbfListingTrigger] {
-	return pulumix.Output[[]GetPbfListingTrigger]{
-		OutputState: i.ToGetPbfListingTriggerArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetPbfListingTriggerOutput struct{ *pulumi.OutputState }
 
 func (GetPbfListingTriggerOutput) ElementType() reflect.Type {
@@ -11479,15 +9676,9 @@ func (o GetPbfListingTriggerOutput) ToGetPbfListingTriggerOutputWithContext(ctx 
 	return o
 }
 
-func (o GetPbfListingTriggerOutput) ToOutput(ctx context.Context) pulumix.Output[GetPbfListingTrigger] {
-	return pulumix.Output[GetPbfListingTrigger]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A brief descriptive name for the PBF trigger.
-func (o GetPbfListingTriggerOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPbfListingTrigger) string { return v.Name }).(pulumi.StringOutput)
+func (o GetPbfListingTriggerOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPbfListingTrigger) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 type GetPbfListingTriggerArrayOutput struct{ *pulumi.OutputState }
@@ -11502,12 +9693,6 @@ func (o GetPbfListingTriggerArrayOutput) ToGetPbfListingTriggerArrayOutput() Get
 
 func (o GetPbfListingTriggerArrayOutput) ToGetPbfListingTriggerArrayOutputWithContext(ctx context.Context) GetPbfListingTriggerArrayOutput {
 	return o
-}
-
-func (o GetPbfListingTriggerArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPbfListingTrigger] {
-	return pulumix.Output[[]GetPbfListingTrigger]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetPbfListingTriggerArrayOutput) Index(i pulumi.IntInput) GetPbfListingTriggerOutput {
@@ -11553,12 +9738,6 @@ func (i GetPbfListingTriggersFilterArgs) ToGetPbfListingTriggersFilterOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetPbfListingTriggersFilterOutput)
 }
 
-func (i GetPbfListingTriggersFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetPbfListingTriggersFilter] {
-	return pulumix.Output[GetPbfListingTriggersFilter]{
-		OutputState: i.ToGetPbfListingTriggersFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetPbfListingTriggersFilterArrayInput is an input type that accepts GetPbfListingTriggersFilterArray and GetPbfListingTriggersFilterArrayOutput values.
 // You can construct a concrete instance of `GetPbfListingTriggersFilterArrayInput` via:
 //
@@ -11584,12 +9763,6 @@ func (i GetPbfListingTriggersFilterArray) ToGetPbfListingTriggersFilterArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetPbfListingTriggersFilterArrayOutput)
 }
 
-func (i GetPbfListingTriggersFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPbfListingTriggersFilter] {
-	return pulumix.Output[[]GetPbfListingTriggersFilter]{
-		OutputState: i.ToGetPbfListingTriggersFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetPbfListingTriggersFilterOutput struct{ *pulumi.OutputState }
 
 func (GetPbfListingTriggersFilterOutput) ElementType() reflect.Type {
@@ -11602,12 +9775,6 @@ func (o GetPbfListingTriggersFilterOutput) ToGetPbfListingTriggersFilterOutput()
 
 func (o GetPbfListingTriggersFilterOutput) ToGetPbfListingTriggersFilterOutputWithContext(ctx context.Context) GetPbfListingTriggersFilterOutput {
 	return o
-}
-
-func (o GetPbfListingTriggersFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetPbfListingTriggersFilter] {
-	return pulumix.Output[GetPbfListingTriggersFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A filter to return only resources that match the service trigger source of a PBF.
@@ -11635,12 +9802,6 @@ func (o GetPbfListingTriggersFilterArrayOutput) ToGetPbfListingTriggersFilterArr
 
 func (o GetPbfListingTriggersFilterArrayOutput) ToGetPbfListingTriggersFilterArrayOutputWithContext(ctx context.Context) GetPbfListingTriggersFilterArrayOutput {
 	return o
-}
-
-func (o GetPbfListingTriggersFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPbfListingTriggersFilter] {
-	return pulumix.Output[[]GetPbfListingTriggersFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetPbfListingTriggersFilterArrayOutput) Index(i pulumi.IntInput) GetPbfListingTriggersFilterOutput {
@@ -11682,12 +9843,6 @@ func (i GetPbfListingTriggersTriggersCollectionArgs) ToGetPbfListingTriggersTrig
 	return pulumi.ToOutputWithContext(ctx, i).(GetPbfListingTriggersTriggersCollectionOutput)
 }
 
-func (i GetPbfListingTriggersTriggersCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetPbfListingTriggersTriggersCollection] {
-	return pulumix.Output[GetPbfListingTriggersTriggersCollection]{
-		OutputState: i.ToGetPbfListingTriggersTriggersCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetPbfListingTriggersTriggersCollectionArrayInput is an input type that accepts GetPbfListingTriggersTriggersCollectionArray and GetPbfListingTriggersTriggersCollectionArrayOutput values.
 // You can construct a concrete instance of `GetPbfListingTriggersTriggersCollectionArrayInput` via:
 //
@@ -11713,12 +9868,6 @@ func (i GetPbfListingTriggersTriggersCollectionArray) ToGetPbfListingTriggersTri
 	return pulumi.ToOutputWithContext(ctx, i).(GetPbfListingTriggersTriggersCollectionArrayOutput)
 }
 
-func (i GetPbfListingTriggersTriggersCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPbfListingTriggersTriggersCollection] {
-	return pulumix.Output[[]GetPbfListingTriggersTriggersCollection]{
-		OutputState: i.ToGetPbfListingTriggersTriggersCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetPbfListingTriggersTriggersCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetPbfListingTriggersTriggersCollectionOutput) ElementType() reflect.Type {
@@ -11731,12 +9880,6 @@ func (o GetPbfListingTriggersTriggersCollectionOutput) ToGetPbfListingTriggersTr
 
 func (o GetPbfListingTriggersTriggersCollectionOutput) ToGetPbfListingTriggersTriggersCollectionOutputWithContext(ctx context.Context) GetPbfListingTriggersTriggersCollectionOutput {
 	return o
-}
-
-func (o GetPbfListingTriggersTriggersCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetPbfListingTriggersTriggersCollection] {
-	return pulumix.Output[GetPbfListingTriggersTriggersCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 // List of TriggerSummary.
@@ -11760,12 +9903,6 @@ func (o GetPbfListingTriggersTriggersCollectionArrayOutput) ToGetPbfListingTrigg
 	return o
 }
 
-func (o GetPbfListingTriggersTriggersCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPbfListingTriggersTriggersCollection] {
-	return pulumix.Output[[]GetPbfListingTriggersTriggersCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetPbfListingTriggersTriggersCollectionArrayOutput) Index(i pulumi.IntInput) GetPbfListingTriggersTriggersCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPbfListingTriggersTriggersCollection {
 		return vs[0].([]GetPbfListingTriggersTriggersCollection)[vs[1].(int)]
@@ -11774,7 +9911,7 @@ func (o GetPbfListingTriggersTriggersCollectionArrayOutput) Index(i pulumi.IntIn
 
 type GetPbfListingTriggersTriggersCollectionItem struct {
 	// A filter to return only resources that match the service trigger source of a PBF.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 }
 
 // GetPbfListingTriggersTriggersCollectionItemInput is an input type that accepts GetPbfListingTriggersTriggersCollectionItemArgs and GetPbfListingTriggersTriggersCollectionItemOutput values.
@@ -11790,7 +9927,7 @@ type GetPbfListingTriggersTriggersCollectionItemInput interface {
 
 type GetPbfListingTriggersTriggersCollectionItemArgs struct {
 	// A filter to return only resources that match the service trigger source of a PBF.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 }
 
 func (GetPbfListingTriggersTriggersCollectionItemArgs) ElementType() reflect.Type {
@@ -11803,12 +9940,6 @@ func (i GetPbfListingTriggersTriggersCollectionItemArgs) ToGetPbfListingTriggers
 
 func (i GetPbfListingTriggersTriggersCollectionItemArgs) ToGetPbfListingTriggersTriggersCollectionItemOutputWithContext(ctx context.Context) GetPbfListingTriggersTriggersCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetPbfListingTriggersTriggersCollectionItemOutput)
-}
-
-func (i GetPbfListingTriggersTriggersCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetPbfListingTriggersTriggersCollectionItem] {
-	return pulumix.Output[GetPbfListingTriggersTriggersCollectionItem]{
-		OutputState: i.ToGetPbfListingTriggersTriggersCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetPbfListingTriggersTriggersCollectionItemArrayInput is an input type that accepts GetPbfListingTriggersTriggersCollectionItemArray and GetPbfListingTriggersTriggersCollectionItemArrayOutput values.
@@ -11836,12 +9967,6 @@ func (i GetPbfListingTriggersTriggersCollectionItemArray) ToGetPbfListingTrigger
 	return pulumi.ToOutputWithContext(ctx, i).(GetPbfListingTriggersTriggersCollectionItemArrayOutput)
 }
 
-func (i GetPbfListingTriggersTriggersCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPbfListingTriggersTriggersCollectionItem] {
-	return pulumix.Output[[]GetPbfListingTriggersTriggersCollectionItem]{
-		OutputState: i.ToGetPbfListingTriggersTriggersCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetPbfListingTriggersTriggersCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetPbfListingTriggersTriggersCollectionItemOutput) ElementType() reflect.Type {
@@ -11856,15 +9981,9 @@ func (o GetPbfListingTriggersTriggersCollectionItemOutput) ToGetPbfListingTrigge
 	return o
 }
 
-func (o GetPbfListingTriggersTriggersCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetPbfListingTriggersTriggersCollectionItem] {
-	return pulumix.Output[GetPbfListingTriggersTriggersCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A filter to return only resources that match the service trigger source of a PBF.
-func (o GetPbfListingTriggersTriggersCollectionItemOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPbfListingTriggersTriggersCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+func (o GetPbfListingTriggersTriggersCollectionItemOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPbfListingTriggersTriggersCollectionItem) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 type GetPbfListingTriggersTriggersCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -11881,12 +10000,6 @@ func (o GetPbfListingTriggersTriggersCollectionItemArrayOutput) ToGetPbfListingT
 	return o
 }
 
-func (o GetPbfListingTriggersTriggersCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPbfListingTriggersTriggersCollectionItem] {
-	return pulumix.Output[[]GetPbfListingTriggersTriggersCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetPbfListingTriggersTriggersCollectionItemArrayOutput) Index(i pulumi.IntInput) GetPbfListingTriggersTriggersCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPbfListingTriggersTriggersCollectionItem {
 		return vs[0].([]GetPbfListingTriggersTriggersCollectionItem)[vs[1].(int)]
@@ -11895,11 +10008,11 @@ func (o GetPbfListingTriggersTriggersCollectionItemArrayOutput) Index(i pulumi.I
 
 type GetPbfListingVersionConfig struct {
 	// Details about why this policy is required and what it will be used for.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Is this a required config or an optional one. Requests with required config params missing will be rejected.
-	IsOptional bool `pulumi:"isOptional"`
+	IsOptional *bool `pulumi:"isOptional"`
 	// The key name of the config param.
-	Key string `pulumi:"key"`
+	Key *string `pulumi:"key"`
 }
 
 // GetPbfListingVersionConfigInput is an input type that accepts GetPbfListingVersionConfigArgs and GetPbfListingVersionConfigOutput values.
@@ -11915,11 +10028,11 @@ type GetPbfListingVersionConfigInput interface {
 
 type GetPbfListingVersionConfigArgs struct {
 	// Details about why this policy is required and what it will be used for.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// Is this a required config or an optional one. Requests with required config params missing will be rejected.
-	IsOptional pulumi.BoolInput `pulumi:"isOptional"`
+	IsOptional pulumi.BoolPtrInput `pulumi:"isOptional"`
 	// The key name of the config param.
-	Key pulumi.StringInput `pulumi:"key"`
+	Key pulumi.StringPtrInput `pulumi:"key"`
 }
 
 func (GetPbfListingVersionConfigArgs) ElementType() reflect.Type {
@@ -11932,12 +10045,6 @@ func (i GetPbfListingVersionConfigArgs) ToGetPbfListingVersionConfigOutput() Get
 
 func (i GetPbfListingVersionConfigArgs) ToGetPbfListingVersionConfigOutputWithContext(ctx context.Context) GetPbfListingVersionConfigOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetPbfListingVersionConfigOutput)
-}
-
-func (i GetPbfListingVersionConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetPbfListingVersionConfig] {
-	return pulumix.Output[GetPbfListingVersionConfig]{
-		OutputState: i.ToGetPbfListingVersionConfigOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetPbfListingVersionConfigArrayInput is an input type that accepts GetPbfListingVersionConfigArray and GetPbfListingVersionConfigArrayOutput values.
@@ -11965,12 +10072,6 @@ func (i GetPbfListingVersionConfigArray) ToGetPbfListingVersionConfigArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetPbfListingVersionConfigArrayOutput)
 }
 
-func (i GetPbfListingVersionConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPbfListingVersionConfig] {
-	return pulumix.Output[[]GetPbfListingVersionConfig]{
-		OutputState: i.ToGetPbfListingVersionConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetPbfListingVersionConfigOutput struct{ *pulumi.OutputState }
 
 func (GetPbfListingVersionConfigOutput) ElementType() reflect.Type {
@@ -11985,25 +10086,19 @@ func (o GetPbfListingVersionConfigOutput) ToGetPbfListingVersionConfigOutputWith
 	return o
 }
 
-func (o GetPbfListingVersionConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetPbfListingVersionConfig] {
-	return pulumix.Output[GetPbfListingVersionConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Details about why this policy is required and what it will be used for.
-func (o GetPbfListingVersionConfigOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPbfListingVersionConfig) string { return v.Description }).(pulumi.StringOutput)
+func (o GetPbfListingVersionConfigOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPbfListingVersionConfig) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Is this a required config or an optional one. Requests with required config params missing will be rejected.
-func (o GetPbfListingVersionConfigOutput) IsOptional() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetPbfListingVersionConfig) bool { return v.IsOptional }).(pulumi.BoolOutput)
+func (o GetPbfListingVersionConfigOutput) IsOptional() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetPbfListingVersionConfig) *bool { return v.IsOptional }).(pulumi.BoolPtrOutput)
 }
 
 // The key name of the config param.
-func (o GetPbfListingVersionConfigOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPbfListingVersionConfig) string { return v.Key }).(pulumi.StringOutput)
+func (o GetPbfListingVersionConfigOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPbfListingVersionConfig) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
 type GetPbfListingVersionConfigArrayOutput struct{ *pulumi.OutputState }
@@ -12020,12 +10115,6 @@ func (o GetPbfListingVersionConfigArrayOutput) ToGetPbfListingVersionConfigArray
 	return o
 }
 
-func (o GetPbfListingVersionConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPbfListingVersionConfig] {
-	return pulumix.Output[[]GetPbfListingVersionConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetPbfListingVersionConfigArrayOutput) Index(i pulumi.IntInput) GetPbfListingVersionConfigOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPbfListingVersionConfig {
 		return vs[0].([]GetPbfListingVersionConfig)[vs[1].(int)]
@@ -12034,7 +10123,7 @@ func (o GetPbfListingVersionConfigArrayOutput) Index(i pulumi.IntInput) GetPbfLi
 
 type GetPbfListingVersionRequirement struct {
 	// Minimum memory required by this PBF. The user should use memory greater than or equal to  this value while configuring the Function.
-	MinMemoryRequiredInMbs string `pulumi:"minMemoryRequiredInMbs"`
+	MinMemoryRequiredInMbs *string `pulumi:"minMemoryRequiredInMbs"`
 	// List of policies required for this PBF execution.
 	Policies []GetPbfListingVersionRequirementPolicy `pulumi:"policies"`
 }
@@ -12052,7 +10141,7 @@ type GetPbfListingVersionRequirementInput interface {
 
 type GetPbfListingVersionRequirementArgs struct {
 	// Minimum memory required by this PBF. The user should use memory greater than or equal to  this value while configuring the Function.
-	MinMemoryRequiredInMbs pulumi.StringInput `pulumi:"minMemoryRequiredInMbs"`
+	MinMemoryRequiredInMbs pulumi.StringPtrInput `pulumi:"minMemoryRequiredInMbs"`
 	// List of policies required for this PBF execution.
 	Policies GetPbfListingVersionRequirementPolicyArrayInput `pulumi:"policies"`
 }
@@ -12067,12 +10156,6 @@ func (i GetPbfListingVersionRequirementArgs) ToGetPbfListingVersionRequirementOu
 
 func (i GetPbfListingVersionRequirementArgs) ToGetPbfListingVersionRequirementOutputWithContext(ctx context.Context) GetPbfListingVersionRequirementOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetPbfListingVersionRequirementOutput)
-}
-
-func (i GetPbfListingVersionRequirementArgs) ToOutput(ctx context.Context) pulumix.Output[GetPbfListingVersionRequirement] {
-	return pulumix.Output[GetPbfListingVersionRequirement]{
-		OutputState: i.ToGetPbfListingVersionRequirementOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetPbfListingVersionRequirementArrayInput is an input type that accepts GetPbfListingVersionRequirementArray and GetPbfListingVersionRequirementArrayOutput values.
@@ -12100,12 +10183,6 @@ func (i GetPbfListingVersionRequirementArray) ToGetPbfListingVersionRequirementA
 	return pulumi.ToOutputWithContext(ctx, i).(GetPbfListingVersionRequirementArrayOutput)
 }
 
-func (i GetPbfListingVersionRequirementArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPbfListingVersionRequirement] {
-	return pulumix.Output[[]GetPbfListingVersionRequirement]{
-		OutputState: i.ToGetPbfListingVersionRequirementArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetPbfListingVersionRequirementOutput struct{ *pulumi.OutputState }
 
 func (GetPbfListingVersionRequirementOutput) ElementType() reflect.Type {
@@ -12120,15 +10197,9 @@ func (o GetPbfListingVersionRequirementOutput) ToGetPbfListingVersionRequirement
 	return o
 }
 
-func (o GetPbfListingVersionRequirementOutput) ToOutput(ctx context.Context) pulumix.Output[GetPbfListingVersionRequirement] {
-	return pulumix.Output[GetPbfListingVersionRequirement]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Minimum memory required by this PBF. The user should use memory greater than or equal to  this value while configuring the Function.
-func (o GetPbfListingVersionRequirementOutput) MinMemoryRequiredInMbs() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPbfListingVersionRequirement) string { return v.MinMemoryRequiredInMbs }).(pulumi.StringOutput)
+func (o GetPbfListingVersionRequirementOutput) MinMemoryRequiredInMbs() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPbfListingVersionRequirement) *string { return v.MinMemoryRequiredInMbs }).(pulumi.StringPtrOutput)
 }
 
 // List of policies required for this PBF execution.
@@ -12150,12 +10221,6 @@ func (o GetPbfListingVersionRequirementArrayOutput) ToGetPbfListingVersionRequir
 	return o
 }
 
-func (o GetPbfListingVersionRequirementArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPbfListingVersionRequirement] {
-	return pulumix.Output[[]GetPbfListingVersionRequirement]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetPbfListingVersionRequirementArrayOutput) Index(i pulumi.IntInput) GetPbfListingVersionRequirementOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPbfListingVersionRequirement {
 		return vs[0].([]GetPbfListingVersionRequirement)[vs[1].(int)]
@@ -12164,9 +10229,9 @@ func (o GetPbfListingVersionRequirementArrayOutput) Index(i pulumi.IntInput) Get
 
 type GetPbfListingVersionRequirementPolicy struct {
 	// Details about why this policy is required and what it will be used for.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Policy required for PBF execution
-	Policy string `pulumi:"policy"`
+	Policy *string `pulumi:"policy"`
 }
 
 // GetPbfListingVersionRequirementPolicyInput is an input type that accepts GetPbfListingVersionRequirementPolicyArgs and GetPbfListingVersionRequirementPolicyOutput values.
@@ -12182,9 +10247,9 @@ type GetPbfListingVersionRequirementPolicyInput interface {
 
 type GetPbfListingVersionRequirementPolicyArgs struct {
 	// Details about why this policy is required and what it will be used for.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// Policy required for PBF execution
-	Policy pulumi.StringInput `pulumi:"policy"`
+	Policy pulumi.StringPtrInput `pulumi:"policy"`
 }
 
 func (GetPbfListingVersionRequirementPolicyArgs) ElementType() reflect.Type {
@@ -12197,12 +10262,6 @@ func (i GetPbfListingVersionRequirementPolicyArgs) ToGetPbfListingVersionRequire
 
 func (i GetPbfListingVersionRequirementPolicyArgs) ToGetPbfListingVersionRequirementPolicyOutputWithContext(ctx context.Context) GetPbfListingVersionRequirementPolicyOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetPbfListingVersionRequirementPolicyOutput)
-}
-
-func (i GetPbfListingVersionRequirementPolicyArgs) ToOutput(ctx context.Context) pulumix.Output[GetPbfListingVersionRequirementPolicy] {
-	return pulumix.Output[GetPbfListingVersionRequirementPolicy]{
-		OutputState: i.ToGetPbfListingVersionRequirementPolicyOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetPbfListingVersionRequirementPolicyArrayInput is an input type that accepts GetPbfListingVersionRequirementPolicyArray and GetPbfListingVersionRequirementPolicyArrayOutput values.
@@ -12230,12 +10289,6 @@ func (i GetPbfListingVersionRequirementPolicyArray) ToGetPbfListingVersionRequir
 	return pulumi.ToOutputWithContext(ctx, i).(GetPbfListingVersionRequirementPolicyArrayOutput)
 }
 
-func (i GetPbfListingVersionRequirementPolicyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPbfListingVersionRequirementPolicy] {
-	return pulumix.Output[[]GetPbfListingVersionRequirementPolicy]{
-		OutputState: i.ToGetPbfListingVersionRequirementPolicyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetPbfListingVersionRequirementPolicyOutput struct{ *pulumi.OutputState }
 
 func (GetPbfListingVersionRequirementPolicyOutput) ElementType() reflect.Type {
@@ -12250,20 +10303,14 @@ func (o GetPbfListingVersionRequirementPolicyOutput) ToGetPbfListingVersionRequi
 	return o
 }
 
-func (o GetPbfListingVersionRequirementPolicyOutput) ToOutput(ctx context.Context) pulumix.Output[GetPbfListingVersionRequirementPolicy] {
-	return pulumix.Output[GetPbfListingVersionRequirementPolicy]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Details about why this policy is required and what it will be used for.
-func (o GetPbfListingVersionRequirementPolicyOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPbfListingVersionRequirementPolicy) string { return v.Description }).(pulumi.StringOutput)
+func (o GetPbfListingVersionRequirementPolicyOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPbfListingVersionRequirementPolicy) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Policy required for PBF execution
-func (o GetPbfListingVersionRequirementPolicyOutput) Policy() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPbfListingVersionRequirementPolicy) string { return v.Policy }).(pulumi.StringOutput)
+func (o GetPbfListingVersionRequirementPolicyOutput) Policy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPbfListingVersionRequirementPolicy) *string { return v.Policy }).(pulumi.StringPtrOutput)
 }
 
 type GetPbfListingVersionRequirementPolicyArrayOutput struct{ *pulumi.OutputState }
@@ -12280,12 +10327,6 @@ func (o GetPbfListingVersionRequirementPolicyArrayOutput) ToGetPbfListingVersion
 	return o
 }
 
-func (o GetPbfListingVersionRequirementPolicyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPbfListingVersionRequirementPolicy] {
-	return pulumix.Output[[]GetPbfListingVersionRequirementPolicy]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetPbfListingVersionRequirementPolicyArrayOutput) Index(i pulumi.IntInput) GetPbfListingVersionRequirementPolicyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPbfListingVersionRequirementPolicy {
 		return vs[0].([]GetPbfListingVersionRequirementPolicy)[vs[1].(int)]
@@ -12294,7 +10335,7 @@ func (o GetPbfListingVersionRequirementPolicyArrayOutput) Index(i pulumi.IntInpu
 
 type GetPbfListingVersionTrigger struct {
 	// A brief descriptive name for the PBF trigger.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 }
 
 // GetPbfListingVersionTriggerInput is an input type that accepts GetPbfListingVersionTriggerArgs and GetPbfListingVersionTriggerOutput values.
@@ -12310,7 +10351,7 @@ type GetPbfListingVersionTriggerInput interface {
 
 type GetPbfListingVersionTriggerArgs struct {
 	// A brief descriptive name for the PBF trigger.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 }
 
 func (GetPbfListingVersionTriggerArgs) ElementType() reflect.Type {
@@ -12323,12 +10364,6 @@ func (i GetPbfListingVersionTriggerArgs) ToGetPbfListingVersionTriggerOutput() G
 
 func (i GetPbfListingVersionTriggerArgs) ToGetPbfListingVersionTriggerOutputWithContext(ctx context.Context) GetPbfListingVersionTriggerOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetPbfListingVersionTriggerOutput)
-}
-
-func (i GetPbfListingVersionTriggerArgs) ToOutput(ctx context.Context) pulumix.Output[GetPbfListingVersionTrigger] {
-	return pulumix.Output[GetPbfListingVersionTrigger]{
-		OutputState: i.ToGetPbfListingVersionTriggerOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetPbfListingVersionTriggerArrayInput is an input type that accepts GetPbfListingVersionTriggerArray and GetPbfListingVersionTriggerArrayOutput values.
@@ -12356,12 +10391,6 @@ func (i GetPbfListingVersionTriggerArray) ToGetPbfListingVersionTriggerArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetPbfListingVersionTriggerArrayOutput)
 }
 
-func (i GetPbfListingVersionTriggerArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPbfListingVersionTrigger] {
-	return pulumix.Output[[]GetPbfListingVersionTrigger]{
-		OutputState: i.ToGetPbfListingVersionTriggerArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetPbfListingVersionTriggerOutput struct{ *pulumi.OutputState }
 
 func (GetPbfListingVersionTriggerOutput) ElementType() reflect.Type {
@@ -12376,15 +10405,9 @@ func (o GetPbfListingVersionTriggerOutput) ToGetPbfListingVersionTriggerOutputWi
 	return o
 }
 
-func (o GetPbfListingVersionTriggerOutput) ToOutput(ctx context.Context) pulumix.Output[GetPbfListingVersionTrigger] {
-	return pulumix.Output[GetPbfListingVersionTrigger]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A brief descriptive name for the PBF trigger.
-func (o GetPbfListingVersionTriggerOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPbfListingVersionTrigger) string { return v.Name }).(pulumi.StringOutput)
+func (o GetPbfListingVersionTriggerOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPbfListingVersionTrigger) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 type GetPbfListingVersionTriggerArrayOutput struct{ *pulumi.OutputState }
@@ -12399,12 +10422,6 @@ func (o GetPbfListingVersionTriggerArrayOutput) ToGetPbfListingVersionTriggerArr
 
 func (o GetPbfListingVersionTriggerArrayOutput) ToGetPbfListingVersionTriggerArrayOutputWithContext(ctx context.Context) GetPbfListingVersionTriggerArrayOutput {
 	return o
-}
-
-func (o GetPbfListingVersionTriggerArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPbfListingVersionTrigger] {
-	return pulumix.Output[[]GetPbfListingVersionTrigger]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetPbfListingVersionTriggerArrayOutput) Index(i pulumi.IntInput) GetPbfListingVersionTriggerOutput {
@@ -12450,12 +10467,6 @@ func (i GetPbfListingVersionsFilterArgs) ToGetPbfListingVersionsFilterOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetPbfListingVersionsFilterOutput)
 }
 
-func (i GetPbfListingVersionsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetPbfListingVersionsFilter] {
-	return pulumix.Output[GetPbfListingVersionsFilter]{
-		OutputState: i.ToGetPbfListingVersionsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetPbfListingVersionsFilterArrayInput is an input type that accepts GetPbfListingVersionsFilterArray and GetPbfListingVersionsFilterArrayOutput values.
 // You can construct a concrete instance of `GetPbfListingVersionsFilterArrayInput` via:
 //
@@ -12481,12 +10492,6 @@ func (i GetPbfListingVersionsFilterArray) ToGetPbfListingVersionsFilterArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetPbfListingVersionsFilterArrayOutput)
 }
 
-func (i GetPbfListingVersionsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPbfListingVersionsFilter] {
-	return pulumix.Output[[]GetPbfListingVersionsFilter]{
-		OutputState: i.ToGetPbfListingVersionsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetPbfListingVersionsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetPbfListingVersionsFilterOutput) ElementType() reflect.Type {
@@ -12499,12 +10504,6 @@ func (o GetPbfListingVersionsFilterOutput) ToGetPbfListingVersionsFilterOutput()
 
 func (o GetPbfListingVersionsFilterOutput) ToGetPbfListingVersionsFilterOutputWithContext(ctx context.Context) GetPbfListingVersionsFilterOutput {
 	return o
-}
-
-func (o GetPbfListingVersionsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetPbfListingVersionsFilter] {
-	return pulumix.Output[GetPbfListingVersionsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Matches a PbfListingVersion based on a provided semantic version name for a PbfListingVersion.  Each PbfListingVersion name is unique with respect to its associated PbfListing.
@@ -12532,12 +10531,6 @@ func (o GetPbfListingVersionsFilterArrayOutput) ToGetPbfListingVersionsFilterArr
 
 func (o GetPbfListingVersionsFilterArrayOutput) ToGetPbfListingVersionsFilterArrayOutputWithContext(ctx context.Context) GetPbfListingVersionsFilterArrayOutput {
 	return o
-}
-
-func (o GetPbfListingVersionsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPbfListingVersionsFilter] {
-	return pulumix.Output[[]GetPbfListingVersionsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetPbfListingVersionsFilterArrayOutput) Index(i pulumi.IntInput) GetPbfListingVersionsFilterOutput {
@@ -12579,12 +10572,6 @@ func (i GetPbfListingVersionsPbfListingVersionsCollectionArgs) ToGetPbfListingVe
 	return pulumi.ToOutputWithContext(ctx, i).(GetPbfListingVersionsPbfListingVersionsCollectionOutput)
 }
 
-func (i GetPbfListingVersionsPbfListingVersionsCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetPbfListingVersionsPbfListingVersionsCollection] {
-	return pulumix.Output[GetPbfListingVersionsPbfListingVersionsCollection]{
-		OutputState: i.ToGetPbfListingVersionsPbfListingVersionsCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetPbfListingVersionsPbfListingVersionsCollectionArrayInput is an input type that accepts GetPbfListingVersionsPbfListingVersionsCollectionArray and GetPbfListingVersionsPbfListingVersionsCollectionArrayOutput values.
 // You can construct a concrete instance of `GetPbfListingVersionsPbfListingVersionsCollectionArrayInput` via:
 //
@@ -12610,12 +10597,6 @@ func (i GetPbfListingVersionsPbfListingVersionsCollectionArray) ToGetPbfListingV
 	return pulumi.ToOutputWithContext(ctx, i).(GetPbfListingVersionsPbfListingVersionsCollectionArrayOutput)
 }
 
-func (i GetPbfListingVersionsPbfListingVersionsCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPbfListingVersionsPbfListingVersionsCollection] {
-	return pulumix.Output[[]GetPbfListingVersionsPbfListingVersionsCollection]{
-		OutputState: i.ToGetPbfListingVersionsPbfListingVersionsCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetPbfListingVersionsPbfListingVersionsCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetPbfListingVersionsPbfListingVersionsCollectionOutput) ElementType() reflect.Type {
@@ -12628,12 +10609,6 @@ func (o GetPbfListingVersionsPbfListingVersionsCollectionOutput) ToGetPbfListing
 
 func (o GetPbfListingVersionsPbfListingVersionsCollectionOutput) ToGetPbfListingVersionsPbfListingVersionsCollectionOutputWithContext(ctx context.Context) GetPbfListingVersionsPbfListingVersionsCollectionOutput {
 	return o
-}
-
-func (o GetPbfListingVersionsPbfListingVersionsCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetPbfListingVersionsPbfListingVersionsCollection] {
-	return pulumix.Output[GetPbfListingVersionsPbfListingVersionsCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 // List of PbfListingVersionSummary.
@@ -12657,12 +10632,6 @@ func (o GetPbfListingVersionsPbfListingVersionsCollectionArrayOutput) ToGetPbfLi
 	return o
 }
 
-func (o GetPbfListingVersionsPbfListingVersionsCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPbfListingVersionsPbfListingVersionsCollection] {
-	return pulumix.Output[[]GetPbfListingVersionsPbfListingVersionsCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetPbfListingVersionsPbfListingVersionsCollectionArrayOutput) Index(i pulumi.IntInput) GetPbfListingVersionsPbfListingVersionsCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPbfListingVersionsPbfListingVersionsCollection {
 		return vs[0].([]GetPbfListingVersionsPbfListingVersionsCollection)[vs[1].(int)]
@@ -12671,7 +10640,7 @@ func (o GetPbfListingVersionsPbfListingVersionsCollectionArrayOutput) Index(i pu
 
 type GetPbfListingVersionsPbfListingVersionsCollectionItem struct {
 	// Details changes are included in this version.
-	ChangeSummary string `pulumi:"changeSummary"`
+	ChangeSummary *string `pulumi:"changeSummary"`
 	// Details about the required and optional Function configurations needed for proper performance of the PBF.
 	Configs []GetPbfListingVersionsPbfListingVersionsCollectionItemConfig `pulumi:"configs"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -12679,21 +10648,21 @@ type GetPbfListingVersionsPbfListingVersionsCollectionItem struct {
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Unique identifier that is immutable on creation
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Matches a PbfListingVersion based on a provided semantic version name for a PbfListingVersion.  Each PbfListingVersion name is unique with respect to its associated PbfListing.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// unique PbfListing identifier
-	PbfListingId string `pulumi:"pbfListingId"`
+	PbfListingId *string `pulumi:"pbfListingId"`
 	// Minimum memory required by this PBF. The user should use memory greater than or equal to this value  while configuring the Function.
 	Requirements []GetPbfListingVersionsPbfListingVersionsCollectionItemRequirement `pulumi:"requirements"`
 	// A filter to return only resources their lifecycleState matches the given lifecycleState.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time the PbfListingVersion was created. An RFC3339 formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The last time the PbfListingVersion was updated. An RFC3339 formatted datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// An array of Trigger. A list of triggers that may activate the PBF.
 	Triggers []GetPbfListingVersionsPbfListingVersionsCollectionItemTrigger `pulumi:"triggers"`
 }
@@ -12711,7 +10680,7 @@ type GetPbfListingVersionsPbfListingVersionsCollectionItemInput interface {
 
 type GetPbfListingVersionsPbfListingVersionsCollectionItemArgs struct {
 	// Details changes are included in this version.
-	ChangeSummary pulumi.StringInput `pulumi:"changeSummary"`
+	ChangeSummary pulumi.StringPtrInput `pulumi:"changeSummary"`
 	// Details about the required and optional Function configurations needed for proper performance of the PBF.
 	Configs GetPbfListingVersionsPbfListingVersionsCollectionItemConfigArrayInput `pulumi:"configs"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -12719,21 +10688,21 @@ type GetPbfListingVersionsPbfListingVersionsCollectionItemArgs struct {
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// Unique identifier that is immutable on creation
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Matches a PbfListingVersion based on a provided semantic version name for a PbfListingVersion.  Each PbfListingVersion name is unique with respect to its associated PbfListing.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// unique PbfListing identifier
-	PbfListingId pulumi.StringInput `pulumi:"pbfListingId"`
+	PbfListingId pulumi.StringPtrInput `pulumi:"pbfListingId"`
 	// Minimum memory required by this PBF. The user should use memory greater than or equal to this value  while configuring the Function.
 	Requirements GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementArrayInput `pulumi:"requirements"`
 	// A filter to return only resources their lifecycleState matches the given lifecycleState.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// The time the PbfListingVersion was created. An RFC3339 formatted datetime string.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The last time the PbfListingVersion was updated. An RFC3339 formatted datetime string.
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 	// An array of Trigger. A list of triggers that may activate the PBF.
 	Triggers GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerArrayInput `pulumi:"triggers"`
 }
@@ -12748,12 +10717,6 @@ func (i GetPbfListingVersionsPbfListingVersionsCollectionItemArgs) ToGetPbfListi
 
 func (i GetPbfListingVersionsPbfListingVersionsCollectionItemArgs) ToGetPbfListingVersionsPbfListingVersionsCollectionItemOutputWithContext(ctx context.Context) GetPbfListingVersionsPbfListingVersionsCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetPbfListingVersionsPbfListingVersionsCollectionItemOutput)
-}
-
-func (i GetPbfListingVersionsPbfListingVersionsCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetPbfListingVersionsPbfListingVersionsCollectionItem] {
-	return pulumix.Output[GetPbfListingVersionsPbfListingVersionsCollectionItem]{
-		OutputState: i.ToGetPbfListingVersionsPbfListingVersionsCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetPbfListingVersionsPbfListingVersionsCollectionItemArrayInput is an input type that accepts GetPbfListingVersionsPbfListingVersionsCollectionItemArray and GetPbfListingVersionsPbfListingVersionsCollectionItemArrayOutput values.
@@ -12781,12 +10744,6 @@ func (i GetPbfListingVersionsPbfListingVersionsCollectionItemArray) ToGetPbfList
 	return pulumi.ToOutputWithContext(ctx, i).(GetPbfListingVersionsPbfListingVersionsCollectionItemArrayOutput)
 }
 
-func (i GetPbfListingVersionsPbfListingVersionsCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPbfListingVersionsPbfListingVersionsCollectionItem] {
-	return pulumix.Output[[]GetPbfListingVersionsPbfListingVersionsCollectionItem]{
-		OutputState: i.ToGetPbfListingVersionsPbfListingVersionsCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetPbfListingVersionsPbfListingVersionsCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetPbfListingVersionsPbfListingVersionsCollectionItemOutput) ElementType() reflect.Type {
@@ -12801,15 +10758,9 @@ func (o GetPbfListingVersionsPbfListingVersionsCollectionItemOutput) ToGetPbfLis
 	return o
 }
 
-func (o GetPbfListingVersionsPbfListingVersionsCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetPbfListingVersionsPbfListingVersionsCollectionItem] {
-	return pulumix.Output[GetPbfListingVersionsPbfListingVersionsCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Details changes are included in this version.
-func (o GetPbfListingVersionsPbfListingVersionsCollectionItemOutput) ChangeSummary() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPbfListingVersionsPbfListingVersionsCollectionItem) string { return v.ChangeSummary }).(pulumi.StringOutput)
+func (o GetPbfListingVersionsPbfListingVersionsCollectionItemOutput) ChangeSummary() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPbfListingVersionsPbfListingVersionsCollectionItem) *string { return v.ChangeSummary }).(pulumi.StringPtrOutput)
 }
 
 // Details about the required and optional Function configurations needed for proper performance of the PBF.
@@ -12834,18 +10785,18 @@ func (o GetPbfListingVersionsPbfListingVersionsCollectionItemOutput) FreeformTag
 }
 
 // Unique identifier that is immutable on creation
-func (o GetPbfListingVersionsPbfListingVersionsCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPbfListingVersionsPbfListingVersionsCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetPbfListingVersionsPbfListingVersionsCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPbfListingVersionsPbfListingVersionsCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Matches a PbfListingVersion based on a provided semantic version name for a PbfListingVersion.  Each PbfListingVersion name is unique with respect to its associated PbfListing.
-func (o GetPbfListingVersionsPbfListingVersionsCollectionItemOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPbfListingVersionsPbfListingVersionsCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+func (o GetPbfListingVersionsPbfListingVersionsCollectionItemOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPbfListingVersionsPbfListingVersionsCollectionItem) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // unique PbfListing identifier
-func (o GetPbfListingVersionsPbfListingVersionsCollectionItemOutput) PbfListingId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPbfListingVersionsPbfListingVersionsCollectionItem) string { return v.PbfListingId }).(pulumi.StringOutput)
+func (o GetPbfListingVersionsPbfListingVersionsCollectionItemOutput) PbfListingId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPbfListingVersionsPbfListingVersionsCollectionItem) *string { return v.PbfListingId }).(pulumi.StringPtrOutput)
 }
 
 // Minimum memory required by this PBF. The user should use memory greater than or equal to this value  while configuring the Function.
@@ -12856,8 +10807,8 @@ func (o GetPbfListingVersionsPbfListingVersionsCollectionItemOutput) Requirement
 }
 
 // A filter to return only resources their lifecycleState matches the given lifecycleState.
-func (o GetPbfListingVersionsPbfListingVersionsCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPbfListingVersionsPbfListingVersionsCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetPbfListingVersionsPbfListingVersionsCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPbfListingVersionsPbfListingVersionsCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -12868,13 +10819,13 @@ func (o GetPbfListingVersionsPbfListingVersionsCollectionItemOutput) SystemTags(
 }
 
 // The time the PbfListingVersion was created. An RFC3339 formatted datetime string.
-func (o GetPbfListingVersionsPbfListingVersionsCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPbfListingVersionsPbfListingVersionsCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetPbfListingVersionsPbfListingVersionsCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPbfListingVersionsPbfListingVersionsCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The last time the PbfListingVersion was updated. An RFC3339 formatted datetime string.
-func (o GetPbfListingVersionsPbfListingVersionsCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPbfListingVersionsPbfListingVersionsCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetPbfListingVersionsPbfListingVersionsCollectionItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPbfListingVersionsPbfListingVersionsCollectionItem) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // An array of Trigger. A list of triggers that may activate the PBF.
@@ -12898,12 +10849,6 @@ func (o GetPbfListingVersionsPbfListingVersionsCollectionItemArrayOutput) ToGetP
 	return o
 }
 
-func (o GetPbfListingVersionsPbfListingVersionsCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPbfListingVersionsPbfListingVersionsCollectionItem] {
-	return pulumix.Output[[]GetPbfListingVersionsPbfListingVersionsCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetPbfListingVersionsPbfListingVersionsCollectionItemArrayOutput) Index(i pulumi.IntInput) GetPbfListingVersionsPbfListingVersionsCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPbfListingVersionsPbfListingVersionsCollectionItem {
 		return vs[0].([]GetPbfListingVersionsPbfListingVersionsCollectionItem)[vs[1].(int)]
@@ -12912,11 +10857,11 @@ func (o GetPbfListingVersionsPbfListingVersionsCollectionItemArrayOutput) Index(
 
 type GetPbfListingVersionsPbfListingVersionsCollectionItemConfig struct {
 	// Details about why this policy is required and what it will be used for.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Is this a required config or an optional one. Requests with required config params missing will be rejected.
-	IsOptional bool `pulumi:"isOptional"`
+	IsOptional *bool `pulumi:"isOptional"`
 	// The key name of the config param.
-	Key string `pulumi:"key"`
+	Key *string `pulumi:"key"`
 }
 
 // GetPbfListingVersionsPbfListingVersionsCollectionItemConfigInput is an input type that accepts GetPbfListingVersionsPbfListingVersionsCollectionItemConfigArgs and GetPbfListingVersionsPbfListingVersionsCollectionItemConfigOutput values.
@@ -12932,11 +10877,11 @@ type GetPbfListingVersionsPbfListingVersionsCollectionItemConfigInput interface 
 
 type GetPbfListingVersionsPbfListingVersionsCollectionItemConfigArgs struct {
 	// Details about why this policy is required and what it will be used for.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// Is this a required config or an optional one. Requests with required config params missing will be rejected.
-	IsOptional pulumi.BoolInput `pulumi:"isOptional"`
+	IsOptional pulumi.BoolPtrInput `pulumi:"isOptional"`
 	// The key name of the config param.
-	Key pulumi.StringInput `pulumi:"key"`
+	Key pulumi.StringPtrInput `pulumi:"key"`
 }
 
 func (GetPbfListingVersionsPbfListingVersionsCollectionItemConfigArgs) ElementType() reflect.Type {
@@ -12949,12 +10894,6 @@ func (i GetPbfListingVersionsPbfListingVersionsCollectionItemConfigArgs) ToGetPb
 
 func (i GetPbfListingVersionsPbfListingVersionsCollectionItemConfigArgs) ToGetPbfListingVersionsPbfListingVersionsCollectionItemConfigOutputWithContext(ctx context.Context) GetPbfListingVersionsPbfListingVersionsCollectionItemConfigOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetPbfListingVersionsPbfListingVersionsCollectionItemConfigOutput)
-}
-
-func (i GetPbfListingVersionsPbfListingVersionsCollectionItemConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetPbfListingVersionsPbfListingVersionsCollectionItemConfig] {
-	return pulumix.Output[GetPbfListingVersionsPbfListingVersionsCollectionItemConfig]{
-		OutputState: i.ToGetPbfListingVersionsPbfListingVersionsCollectionItemConfigOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetPbfListingVersionsPbfListingVersionsCollectionItemConfigArrayInput is an input type that accepts GetPbfListingVersionsPbfListingVersionsCollectionItemConfigArray and GetPbfListingVersionsPbfListingVersionsCollectionItemConfigArrayOutput values.
@@ -12982,12 +10921,6 @@ func (i GetPbfListingVersionsPbfListingVersionsCollectionItemConfigArray) ToGetP
 	return pulumi.ToOutputWithContext(ctx, i).(GetPbfListingVersionsPbfListingVersionsCollectionItemConfigArrayOutput)
 }
 
-func (i GetPbfListingVersionsPbfListingVersionsCollectionItemConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPbfListingVersionsPbfListingVersionsCollectionItemConfig] {
-	return pulumix.Output[[]GetPbfListingVersionsPbfListingVersionsCollectionItemConfig]{
-		OutputState: i.ToGetPbfListingVersionsPbfListingVersionsCollectionItemConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetPbfListingVersionsPbfListingVersionsCollectionItemConfigOutput struct{ *pulumi.OutputState }
 
 func (GetPbfListingVersionsPbfListingVersionsCollectionItemConfigOutput) ElementType() reflect.Type {
@@ -13002,25 +10935,19 @@ func (o GetPbfListingVersionsPbfListingVersionsCollectionItemConfigOutput) ToGet
 	return o
 }
 
-func (o GetPbfListingVersionsPbfListingVersionsCollectionItemConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetPbfListingVersionsPbfListingVersionsCollectionItemConfig] {
-	return pulumix.Output[GetPbfListingVersionsPbfListingVersionsCollectionItemConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Details about why this policy is required and what it will be used for.
-func (o GetPbfListingVersionsPbfListingVersionsCollectionItemConfigOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPbfListingVersionsPbfListingVersionsCollectionItemConfig) string { return v.Description }).(pulumi.StringOutput)
+func (o GetPbfListingVersionsPbfListingVersionsCollectionItemConfigOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPbfListingVersionsPbfListingVersionsCollectionItemConfig) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Is this a required config or an optional one. Requests with required config params missing will be rejected.
-func (o GetPbfListingVersionsPbfListingVersionsCollectionItemConfigOutput) IsOptional() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetPbfListingVersionsPbfListingVersionsCollectionItemConfig) bool { return v.IsOptional }).(pulumi.BoolOutput)
+func (o GetPbfListingVersionsPbfListingVersionsCollectionItemConfigOutput) IsOptional() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetPbfListingVersionsPbfListingVersionsCollectionItemConfig) *bool { return v.IsOptional }).(pulumi.BoolPtrOutput)
 }
 
 // The key name of the config param.
-func (o GetPbfListingVersionsPbfListingVersionsCollectionItemConfigOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPbfListingVersionsPbfListingVersionsCollectionItemConfig) string { return v.Key }).(pulumi.StringOutput)
+func (o GetPbfListingVersionsPbfListingVersionsCollectionItemConfigOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPbfListingVersionsPbfListingVersionsCollectionItemConfig) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
 type GetPbfListingVersionsPbfListingVersionsCollectionItemConfigArrayOutput struct{ *pulumi.OutputState }
@@ -13037,12 +10964,6 @@ func (o GetPbfListingVersionsPbfListingVersionsCollectionItemConfigArrayOutput) 
 	return o
 }
 
-func (o GetPbfListingVersionsPbfListingVersionsCollectionItemConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPbfListingVersionsPbfListingVersionsCollectionItemConfig] {
-	return pulumix.Output[[]GetPbfListingVersionsPbfListingVersionsCollectionItemConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetPbfListingVersionsPbfListingVersionsCollectionItemConfigArrayOutput) Index(i pulumi.IntInput) GetPbfListingVersionsPbfListingVersionsCollectionItemConfigOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPbfListingVersionsPbfListingVersionsCollectionItemConfig {
 		return vs[0].([]GetPbfListingVersionsPbfListingVersionsCollectionItemConfig)[vs[1].(int)]
@@ -13051,7 +10972,7 @@ func (o GetPbfListingVersionsPbfListingVersionsCollectionItemConfigArrayOutput) 
 
 type GetPbfListingVersionsPbfListingVersionsCollectionItemRequirement struct {
 	// Minimum memory required by this PBF. The user should use memory greater than or equal to  this value while configuring the Function.
-	MinMemoryRequiredInMbs string `pulumi:"minMemoryRequiredInMbs"`
+	MinMemoryRequiredInMbs *string `pulumi:"minMemoryRequiredInMbs"`
 	// List of policies required for this PBF execution.
 	Policies []GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicy `pulumi:"policies"`
 }
@@ -13069,7 +10990,7 @@ type GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementInput inter
 
 type GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementArgs struct {
 	// Minimum memory required by this PBF. The user should use memory greater than or equal to  this value while configuring the Function.
-	MinMemoryRequiredInMbs pulumi.StringInput `pulumi:"minMemoryRequiredInMbs"`
+	MinMemoryRequiredInMbs pulumi.StringPtrInput `pulumi:"minMemoryRequiredInMbs"`
 	// List of policies required for this PBF execution.
 	Policies GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyArrayInput `pulumi:"policies"`
 }
@@ -13084,12 +11005,6 @@ func (i GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementArgs) To
 
 func (i GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementArgs) ToGetPbfListingVersionsPbfListingVersionsCollectionItemRequirementOutputWithContext(ctx context.Context) GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementOutput)
-}
-
-func (i GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementArgs) ToOutput(ctx context.Context) pulumix.Output[GetPbfListingVersionsPbfListingVersionsCollectionItemRequirement] {
-	return pulumix.Output[GetPbfListingVersionsPbfListingVersionsCollectionItemRequirement]{
-		OutputState: i.ToGetPbfListingVersionsPbfListingVersionsCollectionItemRequirementOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementArrayInput is an input type that accepts GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementArray and GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementArrayOutput values.
@@ -13117,12 +11032,6 @@ func (i GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementArray) T
 	return pulumi.ToOutputWithContext(ctx, i).(GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementArrayOutput)
 }
 
-func (i GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPbfListingVersionsPbfListingVersionsCollectionItemRequirement] {
-	return pulumix.Output[[]GetPbfListingVersionsPbfListingVersionsCollectionItemRequirement]{
-		OutputState: i.ToGetPbfListingVersionsPbfListingVersionsCollectionItemRequirementArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementOutput struct{ *pulumi.OutputState }
 
 func (GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementOutput) ElementType() reflect.Type {
@@ -13137,17 +11046,11 @@ func (o GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementOutput) 
 	return o
 }
 
-func (o GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementOutput) ToOutput(ctx context.Context) pulumix.Output[GetPbfListingVersionsPbfListingVersionsCollectionItemRequirement] {
-	return pulumix.Output[GetPbfListingVersionsPbfListingVersionsCollectionItemRequirement]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Minimum memory required by this PBF. The user should use memory greater than or equal to  this value while configuring the Function.
-func (o GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementOutput) MinMemoryRequiredInMbs() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPbfListingVersionsPbfListingVersionsCollectionItemRequirement) string {
+func (o GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementOutput) MinMemoryRequiredInMbs() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPbfListingVersionsPbfListingVersionsCollectionItemRequirement) *string {
 		return v.MinMemoryRequiredInMbs
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // List of policies required for this PBF execution.
@@ -13171,12 +11074,6 @@ func (o GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementArrayOut
 	return o
 }
 
-func (o GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPbfListingVersionsPbfListingVersionsCollectionItemRequirement] {
-	return pulumix.Output[[]GetPbfListingVersionsPbfListingVersionsCollectionItemRequirement]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementArrayOutput) Index(i pulumi.IntInput) GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPbfListingVersionsPbfListingVersionsCollectionItemRequirement {
 		return vs[0].([]GetPbfListingVersionsPbfListingVersionsCollectionItemRequirement)[vs[1].(int)]
@@ -13185,9 +11082,9 @@ func (o GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementArrayOut
 
 type GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicy struct {
 	// Details about why this policy is required and what it will be used for.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Policy required for PBF execution
-	Policy string `pulumi:"policy"`
+	Policy *string `pulumi:"policy"`
 }
 
 // GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyInput is an input type that accepts GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyArgs and GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyOutput values.
@@ -13203,9 +11100,9 @@ type GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyInput
 
 type GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyArgs struct {
 	// Details about why this policy is required and what it will be used for.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// Policy required for PBF execution
-	Policy pulumi.StringInput `pulumi:"policy"`
+	Policy pulumi.StringPtrInput `pulumi:"policy"`
 }
 
 func (GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyArgs) ElementType() reflect.Type {
@@ -13218,12 +11115,6 @@ func (i GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyAr
 
 func (i GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyArgs) ToGetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyOutputWithContext(ctx context.Context) GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyOutput)
-}
-
-func (i GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyArgs) ToOutput(ctx context.Context) pulumix.Output[GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicy] {
-	return pulumix.Output[GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicy]{
-		OutputState: i.ToGetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyArrayInput is an input type that accepts GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyArray and GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyArrayOutput values.
@@ -13251,12 +11142,6 @@ func (i GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyAr
 	return pulumi.ToOutputWithContext(ctx, i).(GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyArrayOutput)
 }
 
-func (i GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicy] {
-	return pulumix.Output[[]GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicy]{
-		OutputState: i.ToGetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyOutput struct{ *pulumi.OutputState }
 
 func (GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyOutput) ElementType() reflect.Type {
@@ -13271,22 +11156,18 @@ func (o GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyOu
 	return o
 }
 
-func (o GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyOutput) ToOutput(ctx context.Context) pulumix.Output[GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicy] {
-	return pulumix.Output[GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicy]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Details about why this policy is required and what it will be used for.
-func (o GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicy) string {
+func (o GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicy) *string {
 		return v.Description
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Policy required for PBF execution
-func (o GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyOutput) Policy() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicy) string { return v.Policy }).(pulumi.StringOutput)
+func (o GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyOutput) Policy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicy) *string {
+		return v.Policy
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyArrayOutput struct{ *pulumi.OutputState }
@@ -13303,12 +11184,6 @@ func (o GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyAr
 	return o
 }
 
-func (o GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicy] {
-	return pulumix.Output[[]GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicy]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyArrayOutput) Index(i pulumi.IntInput) GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicy {
 		return vs[0].([]GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicy)[vs[1].(int)]
@@ -13317,7 +11192,7 @@ func (o GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicyAr
 
 type GetPbfListingVersionsPbfListingVersionsCollectionItemTrigger struct {
 	// Matches a PbfListingVersion based on a provided semantic version name for a PbfListingVersion.  Each PbfListingVersion name is unique with respect to its associated PbfListing.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 }
 
 // GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerInput is an input type that accepts GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerArgs and GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerOutput values.
@@ -13333,7 +11208,7 @@ type GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerInput interface
 
 type GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerArgs struct {
 	// Matches a PbfListingVersion based on a provided semantic version name for a PbfListingVersion.  Each PbfListingVersion name is unique with respect to its associated PbfListing.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 }
 
 func (GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerArgs) ElementType() reflect.Type {
@@ -13346,12 +11221,6 @@ func (i GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerArgs) ToGetP
 
 func (i GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerArgs) ToGetPbfListingVersionsPbfListingVersionsCollectionItemTriggerOutputWithContext(ctx context.Context) GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerOutput)
-}
-
-func (i GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerArgs) ToOutput(ctx context.Context) pulumix.Output[GetPbfListingVersionsPbfListingVersionsCollectionItemTrigger] {
-	return pulumix.Output[GetPbfListingVersionsPbfListingVersionsCollectionItemTrigger]{
-		OutputState: i.ToGetPbfListingVersionsPbfListingVersionsCollectionItemTriggerOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerArrayInput is an input type that accepts GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerArray and GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerArrayOutput values.
@@ -13379,12 +11248,6 @@ func (i GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerArray) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerArrayOutput)
 }
 
-func (i GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPbfListingVersionsPbfListingVersionsCollectionItemTrigger] {
-	return pulumix.Output[[]GetPbfListingVersionsPbfListingVersionsCollectionItemTrigger]{
-		OutputState: i.ToGetPbfListingVersionsPbfListingVersionsCollectionItemTriggerArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerOutput struct{ *pulumi.OutputState }
 
 func (GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerOutput) ElementType() reflect.Type {
@@ -13399,15 +11262,9 @@ func (o GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerOutput) ToGe
 	return o
 }
 
-func (o GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerOutput) ToOutput(ctx context.Context) pulumix.Output[GetPbfListingVersionsPbfListingVersionsCollectionItemTrigger] {
-	return pulumix.Output[GetPbfListingVersionsPbfListingVersionsCollectionItemTrigger]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Matches a PbfListingVersion based on a provided semantic version name for a PbfListingVersion.  Each PbfListingVersion name is unique with respect to its associated PbfListing.
-func (o GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPbfListingVersionsPbfListingVersionsCollectionItemTrigger) string { return v.Name }).(pulumi.StringOutput)
+func (o GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPbfListingVersionsPbfListingVersionsCollectionItemTrigger) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 type GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerArrayOutput struct{ *pulumi.OutputState }
@@ -13422,12 +11279,6 @@ func (o GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerArrayOutput)
 
 func (o GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerArrayOutput) ToGetPbfListingVersionsPbfListingVersionsCollectionItemTriggerArrayOutputWithContext(ctx context.Context) GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerArrayOutput {
 	return o
-}
-
-func (o GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPbfListingVersionsPbfListingVersionsCollectionItemTrigger] {
-	return pulumix.Output[[]GetPbfListingVersionsPbfListingVersionsCollectionItemTrigger]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerArrayOutput) Index(i pulumi.IntInput) GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerOutput {
@@ -13473,12 +11324,6 @@ func (i GetPbfListingsFilterArgs) ToGetPbfListingsFilterOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GetPbfListingsFilterOutput)
 }
 
-func (i GetPbfListingsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetPbfListingsFilter] {
-	return pulumix.Output[GetPbfListingsFilter]{
-		OutputState: i.ToGetPbfListingsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetPbfListingsFilterArrayInput is an input type that accepts GetPbfListingsFilterArray and GetPbfListingsFilterArrayOutput values.
 // You can construct a concrete instance of `GetPbfListingsFilterArrayInput` via:
 //
@@ -13504,12 +11349,6 @@ func (i GetPbfListingsFilterArray) ToGetPbfListingsFilterArrayOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetPbfListingsFilterArrayOutput)
 }
 
-func (i GetPbfListingsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPbfListingsFilter] {
-	return pulumix.Output[[]GetPbfListingsFilter]{
-		OutputState: i.ToGetPbfListingsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetPbfListingsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetPbfListingsFilterOutput) ElementType() reflect.Type {
@@ -13522,12 +11361,6 @@ func (o GetPbfListingsFilterOutput) ToGetPbfListingsFilterOutput() GetPbfListing
 
 func (o GetPbfListingsFilterOutput) ToGetPbfListingsFilterOutputWithContext(ctx context.Context) GetPbfListingsFilterOutput {
 	return o
-}
-
-func (o GetPbfListingsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetPbfListingsFilter] {
-	return pulumix.Output[GetPbfListingsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A filter to return only resources that match the entire PBF name given.
@@ -13555,12 +11388,6 @@ func (o GetPbfListingsFilterArrayOutput) ToGetPbfListingsFilterArrayOutput() Get
 
 func (o GetPbfListingsFilterArrayOutput) ToGetPbfListingsFilterArrayOutputWithContext(ctx context.Context) GetPbfListingsFilterArrayOutput {
 	return o
-}
-
-func (o GetPbfListingsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPbfListingsFilter] {
-	return pulumix.Output[[]GetPbfListingsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetPbfListingsFilterArrayOutput) Index(i pulumi.IntInput) GetPbfListingsFilterOutput {
@@ -13602,12 +11429,6 @@ func (i GetPbfListingsPbfListingsCollectionArgs) ToGetPbfListingsPbfListingsColl
 	return pulumi.ToOutputWithContext(ctx, i).(GetPbfListingsPbfListingsCollectionOutput)
 }
 
-func (i GetPbfListingsPbfListingsCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetPbfListingsPbfListingsCollection] {
-	return pulumix.Output[GetPbfListingsPbfListingsCollection]{
-		OutputState: i.ToGetPbfListingsPbfListingsCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetPbfListingsPbfListingsCollectionArrayInput is an input type that accepts GetPbfListingsPbfListingsCollectionArray and GetPbfListingsPbfListingsCollectionArrayOutput values.
 // You can construct a concrete instance of `GetPbfListingsPbfListingsCollectionArrayInput` via:
 //
@@ -13633,12 +11454,6 @@ func (i GetPbfListingsPbfListingsCollectionArray) ToGetPbfListingsPbfListingsCol
 	return pulumi.ToOutputWithContext(ctx, i).(GetPbfListingsPbfListingsCollectionArrayOutput)
 }
 
-func (i GetPbfListingsPbfListingsCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPbfListingsPbfListingsCollection] {
-	return pulumix.Output[[]GetPbfListingsPbfListingsCollection]{
-		OutputState: i.ToGetPbfListingsPbfListingsCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetPbfListingsPbfListingsCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetPbfListingsPbfListingsCollectionOutput) ElementType() reflect.Type {
@@ -13651,12 +11466,6 @@ func (o GetPbfListingsPbfListingsCollectionOutput) ToGetPbfListingsPbfListingsCo
 
 func (o GetPbfListingsPbfListingsCollectionOutput) ToGetPbfListingsPbfListingsCollectionOutputWithContext(ctx context.Context) GetPbfListingsPbfListingsCollectionOutput {
 	return o
-}
-
-func (o GetPbfListingsPbfListingsCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetPbfListingsPbfListingsCollection] {
-	return pulumix.Output[GetPbfListingsPbfListingsCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 // List of PbfListingSummary.
@@ -13678,12 +11487,6 @@ func (o GetPbfListingsPbfListingsCollectionArrayOutput) ToGetPbfListingsPbfListi
 	return o
 }
 
-func (o GetPbfListingsPbfListingsCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPbfListingsPbfListingsCollection] {
-	return pulumix.Output[[]GetPbfListingsPbfListingsCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetPbfListingsPbfListingsCollectionArrayOutput) Index(i pulumi.IntInput) GetPbfListingsPbfListingsCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPbfListingsPbfListingsCollection {
 		return vs[0].([]GetPbfListingsPbfListingsCollection)[vs[1].(int)]
@@ -13694,23 +11497,23 @@ type GetPbfListingsPbfListingsCollectionItem struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A short overview of the PBF Listing: the purpose of the PBF and and associated information.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Unique identifier that is immutable on creation.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A filter to return only resources that match the entire PBF name given.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Contains details about the publisher of this PBF Listing.
 	PublisherDetails []GetPbfListingsPbfListingsCollectionItemPublisherDetail `pulumi:"publisherDetails"`
 	// A filter to return only resources their lifecycleState matches the given lifecycleState.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time the PbfListing was created. An RFC3339 formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The last time the PbfListing was updated. An RFC3339 formatted datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// An array of Trigger. A list of triggers that may activate the PBF.
 	Triggers []GetPbfListingsPbfListingsCollectionItemTrigger `pulumi:"triggers"`
 }
@@ -13730,23 +11533,23 @@ type GetPbfListingsPbfListingsCollectionItemArgs struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A short overview of the PBF Listing: the purpose of the PBF and and associated information.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// Unique identifier that is immutable on creation.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// A filter to return only resources that match the entire PBF name given.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Contains details about the publisher of this PBF Listing.
 	PublisherDetails GetPbfListingsPbfListingsCollectionItemPublisherDetailArrayInput `pulumi:"publisherDetails"`
 	// A filter to return only resources their lifecycleState matches the given lifecycleState.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// The time the PbfListing was created. An RFC3339 formatted datetime string.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The last time the PbfListing was updated. An RFC3339 formatted datetime string.
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 	// An array of Trigger. A list of triggers that may activate the PBF.
 	Triggers GetPbfListingsPbfListingsCollectionItemTriggerArrayInput `pulumi:"triggers"`
 }
@@ -13761,12 +11564,6 @@ func (i GetPbfListingsPbfListingsCollectionItemArgs) ToGetPbfListingsPbfListings
 
 func (i GetPbfListingsPbfListingsCollectionItemArgs) ToGetPbfListingsPbfListingsCollectionItemOutputWithContext(ctx context.Context) GetPbfListingsPbfListingsCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetPbfListingsPbfListingsCollectionItemOutput)
-}
-
-func (i GetPbfListingsPbfListingsCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetPbfListingsPbfListingsCollectionItem] {
-	return pulumix.Output[GetPbfListingsPbfListingsCollectionItem]{
-		OutputState: i.ToGetPbfListingsPbfListingsCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetPbfListingsPbfListingsCollectionItemArrayInput is an input type that accepts GetPbfListingsPbfListingsCollectionItemArray and GetPbfListingsPbfListingsCollectionItemArrayOutput values.
@@ -13794,12 +11591,6 @@ func (i GetPbfListingsPbfListingsCollectionItemArray) ToGetPbfListingsPbfListing
 	return pulumi.ToOutputWithContext(ctx, i).(GetPbfListingsPbfListingsCollectionItemArrayOutput)
 }
 
-func (i GetPbfListingsPbfListingsCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPbfListingsPbfListingsCollectionItem] {
-	return pulumix.Output[[]GetPbfListingsPbfListingsCollectionItem]{
-		OutputState: i.ToGetPbfListingsPbfListingsCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetPbfListingsPbfListingsCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetPbfListingsPbfListingsCollectionItemOutput) ElementType() reflect.Type {
@@ -13814,20 +11605,14 @@ func (o GetPbfListingsPbfListingsCollectionItemOutput) ToGetPbfListingsPbfListin
 	return o
 }
 
-func (o GetPbfListingsPbfListingsCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetPbfListingsPbfListingsCollectionItem] {
-	return pulumix.Output[GetPbfListingsPbfListingsCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 func (o GetPbfListingsPbfListingsCollectionItemOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetPbfListingsPbfListingsCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
 // A short overview of the PBF Listing: the purpose of the PBF and and associated information.
-func (o GetPbfListingsPbfListingsCollectionItemOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPbfListingsPbfListingsCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+func (o GetPbfListingsPbfListingsCollectionItemOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPbfListingsPbfListingsCollectionItem) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -13836,13 +11621,13 @@ func (o GetPbfListingsPbfListingsCollectionItemOutput) FreeformTags() pulumi.Map
 }
 
 // Unique identifier that is immutable on creation.
-func (o GetPbfListingsPbfListingsCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPbfListingsPbfListingsCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetPbfListingsPbfListingsCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPbfListingsPbfListingsCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only resources that match the entire PBF name given.
-func (o GetPbfListingsPbfListingsCollectionItemOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPbfListingsPbfListingsCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+func (o GetPbfListingsPbfListingsCollectionItemOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPbfListingsPbfListingsCollectionItem) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Contains details about the publisher of this PBF Listing.
@@ -13853,8 +11638,8 @@ func (o GetPbfListingsPbfListingsCollectionItemOutput) PublisherDetails() GetPbf
 }
 
 // A filter to return only resources their lifecycleState matches the given lifecycleState.
-func (o GetPbfListingsPbfListingsCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPbfListingsPbfListingsCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetPbfListingsPbfListingsCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPbfListingsPbfListingsCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -13863,13 +11648,13 @@ func (o GetPbfListingsPbfListingsCollectionItemOutput) SystemTags() pulumi.MapOu
 }
 
 // The time the PbfListing was created. An RFC3339 formatted datetime string.
-func (o GetPbfListingsPbfListingsCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPbfListingsPbfListingsCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetPbfListingsPbfListingsCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPbfListingsPbfListingsCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The last time the PbfListing was updated. An RFC3339 formatted datetime string.
-func (o GetPbfListingsPbfListingsCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPbfListingsPbfListingsCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetPbfListingsPbfListingsCollectionItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPbfListingsPbfListingsCollectionItem) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // An array of Trigger. A list of triggers that may activate the PBF.
@@ -13893,12 +11678,6 @@ func (o GetPbfListingsPbfListingsCollectionItemArrayOutput) ToGetPbfListingsPbfL
 	return o
 }
 
-func (o GetPbfListingsPbfListingsCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPbfListingsPbfListingsCollectionItem] {
-	return pulumix.Output[[]GetPbfListingsPbfListingsCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetPbfListingsPbfListingsCollectionItemArrayOutput) Index(i pulumi.IntInput) GetPbfListingsPbfListingsCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPbfListingsPbfListingsCollectionItem {
 		return vs[0].([]GetPbfListingsPbfListingsCollectionItem)[vs[1].(int)]
@@ -13907,7 +11686,7 @@ func (o GetPbfListingsPbfListingsCollectionItemArrayOutput) Index(i pulumi.IntIn
 
 type GetPbfListingsPbfListingsCollectionItemPublisherDetail struct {
 	// A filter to return only resources that match the entire PBF name given.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 }
 
 // GetPbfListingsPbfListingsCollectionItemPublisherDetailInput is an input type that accepts GetPbfListingsPbfListingsCollectionItemPublisherDetailArgs and GetPbfListingsPbfListingsCollectionItemPublisherDetailOutput values.
@@ -13923,7 +11702,7 @@ type GetPbfListingsPbfListingsCollectionItemPublisherDetailInput interface {
 
 type GetPbfListingsPbfListingsCollectionItemPublisherDetailArgs struct {
 	// A filter to return only resources that match the entire PBF name given.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 }
 
 func (GetPbfListingsPbfListingsCollectionItemPublisherDetailArgs) ElementType() reflect.Type {
@@ -13936,12 +11715,6 @@ func (i GetPbfListingsPbfListingsCollectionItemPublisherDetailArgs) ToGetPbfList
 
 func (i GetPbfListingsPbfListingsCollectionItemPublisherDetailArgs) ToGetPbfListingsPbfListingsCollectionItemPublisherDetailOutputWithContext(ctx context.Context) GetPbfListingsPbfListingsCollectionItemPublisherDetailOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetPbfListingsPbfListingsCollectionItemPublisherDetailOutput)
-}
-
-func (i GetPbfListingsPbfListingsCollectionItemPublisherDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetPbfListingsPbfListingsCollectionItemPublisherDetail] {
-	return pulumix.Output[GetPbfListingsPbfListingsCollectionItemPublisherDetail]{
-		OutputState: i.ToGetPbfListingsPbfListingsCollectionItemPublisherDetailOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetPbfListingsPbfListingsCollectionItemPublisherDetailArrayInput is an input type that accepts GetPbfListingsPbfListingsCollectionItemPublisherDetailArray and GetPbfListingsPbfListingsCollectionItemPublisherDetailArrayOutput values.
@@ -13969,12 +11742,6 @@ func (i GetPbfListingsPbfListingsCollectionItemPublisherDetailArray) ToGetPbfLis
 	return pulumi.ToOutputWithContext(ctx, i).(GetPbfListingsPbfListingsCollectionItemPublisherDetailArrayOutput)
 }
 
-func (i GetPbfListingsPbfListingsCollectionItemPublisherDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPbfListingsPbfListingsCollectionItemPublisherDetail] {
-	return pulumix.Output[[]GetPbfListingsPbfListingsCollectionItemPublisherDetail]{
-		OutputState: i.ToGetPbfListingsPbfListingsCollectionItemPublisherDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetPbfListingsPbfListingsCollectionItemPublisherDetailOutput struct{ *pulumi.OutputState }
 
 func (GetPbfListingsPbfListingsCollectionItemPublisherDetailOutput) ElementType() reflect.Type {
@@ -13989,15 +11756,9 @@ func (o GetPbfListingsPbfListingsCollectionItemPublisherDetailOutput) ToGetPbfLi
 	return o
 }
 
-func (o GetPbfListingsPbfListingsCollectionItemPublisherDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetPbfListingsPbfListingsCollectionItemPublisherDetail] {
-	return pulumix.Output[GetPbfListingsPbfListingsCollectionItemPublisherDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A filter to return only resources that match the entire PBF name given.
-func (o GetPbfListingsPbfListingsCollectionItemPublisherDetailOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPbfListingsPbfListingsCollectionItemPublisherDetail) string { return v.Name }).(pulumi.StringOutput)
+func (o GetPbfListingsPbfListingsCollectionItemPublisherDetailOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPbfListingsPbfListingsCollectionItemPublisherDetail) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 type GetPbfListingsPbfListingsCollectionItemPublisherDetailArrayOutput struct{ *pulumi.OutputState }
@@ -14014,12 +11775,6 @@ func (o GetPbfListingsPbfListingsCollectionItemPublisherDetailArrayOutput) ToGet
 	return o
 }
 
-func (o GetPbfListingsPbfListingsCollectionItemPublisherDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPbfListingsPbfListingsCollectionItemPublisherDetail] {
-	return pulumix.Output[[]GetPbfListingsPbfListingsCollectionItemPublisherDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetPbfListingsPbfListingsCollectionItemPublisherDetailArrayOutput) Index(i pulumi.IntInput) GetPbfListingsPbfListingsCollectionItemPublisherDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPbfListingsPbfListingsCollectionItemPublisherDetail {
 		return vs[0].([]GetPbfListingsPbfListingsCollectionItemPublisherDetail)[vs[1].(int)]
@@ -14028,7 +11783,7 @@ func (o GetPbfListingsPbfListingsCollectionItemPublisherDetailArrayOutput) Index
 
 type GetPbfListingsPbfListingsCollectionItemTrigger struct {
 	// A filter to return only resources that match the entire PBF name given.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 }
 
 // GetPbfListingsPbfListingsCollectionItemTriggerInput is an input type that accepts GetPbfListingsPbfListingsCollectionItemTriggerArgs and GetPbfListingsPbfListingsCollectionItemTriggerOutput values.
@@ -14044,7 +11799,7 @@ type GetPbfListingsPbfListingsCollectionItemTriggerInput interface {
 
 type GetPbfListingsPbfListingsCollectionItemTriggerArgs struct {
 	// A filter to return only resources that match the entire PBF name given.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 }
 
 func (GetPbfListingsPbfListingsCollectionItemTriggerArgs) ElementType() reflect.Type {
@@ -14057,12 +11812,6 @@ func (i GetPbfListingsPbfListingsCollectionItemTriggerArgs) ToGetPbfListingsPbfL
 
 func (i GetPbfListingsPbfListingsCollectionItemTriggerArgs) ToGetPbfListingsPbfListingsCollectionItemTriggerOutputWithContext(ctx context.Context) GetPbfListingsPbfListingsCollectionItemTriggerOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetPbfListingsPbfListingsCollectionItemTriggerOutput)
-}
-
-func (i GetPbfListingsPbfListingsCollectionItemTriggerArgs) ToOutput(ctx context.Context) pulumix.Output[GetPbfListingsPbfListingsCollectionItemTrigger] {
-	return pulumix.Output[GetPbfListingsPbfListingsCollectionItemTrigger]{
-		OutputState: i.ToGetPbfListingsPbfListingsCollectionItemTriggerOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetPbfListingsPbfListingsCollectionItemTriggerArrayInput is an input type that accepts GetPbfListingsPbfListingsCollectionItemTriggerArray and GetPbfListingsPbfListingsCollectionItemTriggerArrayOutput values.
@@ -14090,12 +11839,6 @@ func (i GetPbfListingsPbfListingsCollectionItemTriggerArray) ToGetPbfListingsPbf
 	return pulumi.ToOutputWithContext(ctx, i).(GetPbfListingsPbfListingsCollectionItemTriggerArrayOutput)
 }
 
-func (i GetPbfListingsPbfListingsCollectionItemTriggerArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPbfListingsPbfListingsCollectionItemTrigger] {
-	return pulumix.Output[[]GetPbfListingsPbfListingsCollectionItemTrigger]{
-		OutputState: i.ToGetPbfListingsPbfListingsCollectionItemTriggerArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetPbfListingsPbfListingsCollectionItemTriggerOutput struct{ *pulumi.OutputState }
 
 func (GetPbfListingsPbfListingsCollectionItemTriggerOutput) ElementType() reflect.Type {
@@ -14110,15 +11853,9 @@ func (o GetPbfListingsPbfListingsCollectionItemTriggerOutput) ToGetPbfListingsPb
 	return o
 }
 
-func (o GetPbfListingsPbfListingsCollectionItemTriggerOutput) ToOutput(ctx context.Context) pulumix.Output[GetPbfListingsPbfListingsCollectionItemTrigger] {
-	return pulumix.Output[GetPbfListingsPbfListingsCollectionItemTrigger]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A filter to return only resources that match the entire PBF name given.
-func (o GetPbfListingsPbfListingsCollectionItemTriggerOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPbfListingsPbfListingsCollectionItemTrigger) string { return v.Name }).(pulumi.StringOutput)
+func (o GetPbfListingsPbfListingsCollectionItemTriggerOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPbfListingsPbfListingsCollectionItemTrigger) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 type GetPbfListingsPbfListingsCollectionItemTriggerArrayOutput struct{ *pulumi.OutputState }
@@ -14133,12 +11870,6 @@ func (o GetPbfListingsPbfListingsCollectionItemTriggerArrayOutput) ToGetPbfListi
 
 func (o GetPbfListingsPbfListingsCollectionItemTriggerArrayOutput) ToGetPbfListingsPbfListingsCollectionItemTriggerArrayOutputWithContext(ctx context.Context) GetPbfListingsPbfListingsCollectionItemTriggerArrayOutput {
 	return o
-}
-
-func (o GetPbfListingsPbfListingsCollectionItemTriggerArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPbfListingsPbfListingsCollectionItemTrigger] {
-	return pulumix.Output[[]GetPbfListingsPbfListingsCollectionItemTrigger]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetPbfListingsPbfListingsCollectionItemTriggerArrayOutput) Index(i pulumi.IntInput) GetPbfListingsPbfListingsCollectionItemTriggerOutput {

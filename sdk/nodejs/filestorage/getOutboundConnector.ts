@@ -47,56 +47,56 @@ export interface GetOutboundConnectorResult {
     /**
      * The availability domain the outbound connector is in. May be unset as a blank or NULL value.  Example: `Uocm:PHX-AD-1`
      */
-    readonly availabilityDomain: string;
+    readonly availabilityDomain?: string;
     /**
      * The LDAP Distinguished Name of the account.
      */
-    readonly bindDistinguishedName: string;
+    readonly bindDistinguishedName?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the outbound connector.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * The account type of this outbound connector.
      */
-    readonly connectorType: string;
+    readonly connectorType?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My outbound connector`
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Array of server endpoints to use when connecting with the LDAP bind account.
      */
-    readonly endpoints: outputs.FileStorage.GetOutboundConnectorEndpoint[];
+    readonly endpoints?: outputs.FileStorage.GetOutboundConnectorEndpoint[];
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the outbound connector.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly outboundConnectorId: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the password for the LDAP bind account in the Vault.
      */
-    readonly passwordSecretId: string;
+    readonly passwordSecretId?: string;
     /**
      * Version of the password secret in the Vault to use.
      */
-    readonly passwordSecretVersion: number;
+    readonly passwordSecretVersion?: number;
     /**
      * The current state of this outbound connector.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The date and time the outbound connector was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
 }
 /**
  * This data source provides details about a specific Outbound Connector resource in Oracle Cloud Infrastructure File Storage service.

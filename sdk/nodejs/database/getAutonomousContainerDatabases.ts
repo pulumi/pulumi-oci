@@ -97,7 +97,7 @@ export interface GetAutonomousContainerDatabasesResult {
     /**
      * The list of autonomous_container_databases.
      */
-    readonly autonomousContainerDatabases: outputs.Database.GetAutonomousContainerDatabasesAutonomousContainerDatabase[];
+    readonly autonomousContainerDatabases?: outputs.Database.GetAutonomousContainerDatabasesAutonomousContainerDatabase[];
     /**
      * **No longer used.** For Autonomous Database on dedicated Exadata infrastructure, the container database is created within a specified `cloudAutonomousVmCluster`.
      */
@@ -126,7 +126,7 @@ export interface GetAutonomousContainerDatabasesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The infrastructure type this resource belongs to.
      */

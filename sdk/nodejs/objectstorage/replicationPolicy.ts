@@ -90,19 +90,19 @@ export class ReplicationPolicy extends pulumi.CustomResource {
     /**
      * The replication status of the policy. If the status is CLIENT_ERROR, once the user fixes the issue described in the status message, the status will become ACTIVE.
      */
-    public /*out*/ readonly status!: pulumi.Output<string>;
+    public /*out*/ readonly status!: pulumi.Output<string | undefined>;
     /**
      * A human-readable description of the status.
      */
-    public /*out*/ readonly statusMessage!: pulumi.Output<string>;
+    public /*out*/ readonly statusMessage!: pulumi.Output<string | undefined>;
     /**
      * The date when the replication policy was created as per [RFC 3339](https://tools.ietf.org/html/rfc3339).
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * Changes made to the source bucket before this time has been replicated.
      */
-    public /*out*/ readonly timeLastSync!: pulumi.Output<string>;
+    public /*out*/ readonly timeLastSync!: pulumi.Output<string | undefined>;
 
     /**
      * Create a ReplicationPolicy resource with the given unique name, arguments, and options.

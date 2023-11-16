@@ -116,11 +116,11 @@ namespace Pulumi.Oci.VisualBuilder
         /// <summary>
         /// Compartment Identifier.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The entitlement used for billing purposes.
         /// </summary>
-        public readonly string ConsumptionModel;
+        public readonly string? ConsumptionModel;
         /// <summary>
         /// Details for a custom endpoint for the vb instance.
         /// </summary>
@@ -128,72 +128,72 @@ namespace Pulumi.Oci.VisualBuilder
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// Vb Instance Identifier, can be renamed.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// Unique identifier that is immutable on creation.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Information for IDCS access
         /// </summary>
         public readonly ImmutableArray<Outputs.GetVbInstanceIdcsInfoResult> IdcsInfos;
-        public readonly string IdcsOpenId;
+        public readonly string? IdcsOpenId;
         /// <summary>
         /// The Vb Instance URL.
         /// </summary>
-        public readonly string InstanceUrl;
+        public readonly string? InstanceUrl;
         /// <summary>
         /// Visual Builder is enabled or not.
         /// </summary>
-        public readonly bool IsVisualBuilderEnabled;
+        public readonly bool? IsVisualBuilderEnabled;
         /// <summary>
         /// The NAT gateway IP address for the VB management VCN
         /// </summary>
-        public readonly string ManagementNatGatewayIp;
+        public readonly string? ManagementNatGatewayIp;
         /// <summary>
         /// The Oracle Cloud ID (OCID) of the Visual Builder management VCN
         /// </summary>
-        public readonly string ManagementVcnId;
+        public readonly string? ManagementVcnId;
         /// <summary>
         /// The number of Nodes
         /// </summary>
-        public readonly int NodeCount;
+        public readonly int? NodeCount;
         /// <summary>
         /// The NAT gateway IP address for the VB service VCN
         /// </summary>
-        public readonly string ServiceNatGatewayIp;
+        public readonly string? ServiceNatGatewayIp;
         /// <summary>
         /// The Oracle Cloud ID (OCID) of the Visual Builder service VCN
         /// </summary>
-        public readonly string ServiceVcnId;
+        public readonly string? ServiceVcnId;
         /// <summary>
         /// The current state of the vb instance.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
-        public readonly string StateMessage;
+        public readonly string? StateMessage;
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, object>? SystemTags;
         /// <summary>
         /// The time the the VbInstance was created. An RFC3339 formatted datetime string.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The time the VbInstance was updated. An RFC3339 formatted datetime string.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
         public readonly string VbInstanceId;
 
         [OutputConstructor]
@@ -202,47 +202,47 @@ namespace Pulumi.Oci.VisualBuilder
 
             ImmutableArray<Outputs.GetVbInstanceAttachmentResult> attachments,
 
-            string compartmentId,
+            string? compartmentId,
 
-            string consumptionModel,
+            string? consumptionModel,
 
             ImmutableArray<Outputs.GetVbInstanceCustomEndpointResult> customEndpoints,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetVbInstanceIdcsInfoResult> idcsInfos,
 
-            string idcsOpenId,
+            string? idcsOpenId,
 
-            string instanceUrl,
+            string? instanceUrl,
 
-            bool isVisualBuilderEnabled,
+            bool? isVisualBuilderEnabled,
 
-            string managementNatGatewayIp,
+            string? managementNatGatewayIp,
 
-            string managementVcnId,
+            string? managementVcnId,
 
-            int nodeCount,
+            int? nodeCount,
 
-            string serviceNatGatewayIp,
+            string? serviceNatGatewayIp,
 
-            string serviceVcnId,
+            string? serviceVcnId,
 
-            string state,
+            string? state,
 
-            string stateMessage,
+            string? stateMessage,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, object>? systemTags,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated,
+            string? timeUpdated,
 
             string vbInstanceId)
         {

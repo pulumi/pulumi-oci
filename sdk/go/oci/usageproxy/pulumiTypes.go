@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -55,12 +54,6 @@ func (i SubscriptionRedeemableUserItemArgs) ToSubscriptionRedeemableUserItemOutp
 	return pulumi.ToOutputWithContext(ctx, i).(SubscriptionRedeemableUserItemOutput)
 }
 
-func (i SubscriptionRedeemableUserItemArgs) ToOutput(ctx context.Context) pulumix.Output[SubscriptionRedeemableUserItem] {
-	return pulumix.Output[SubscriptionRedeemableUserItem]{
-		OutputState: i.ToSubscriptionRedeemableUserItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // SubscriptionRedeemableUserItemArrayInput is an input type that accepts SubscriptionRedeemableUserItemArray and SubscriptionRedeemableUserItemArrayOutput values.
 // You can construct a concrete instance of `SubscriptionRedeemableUserItemArrayInput` via:
 //
@@ -86,12 +79,6 @@ func (i SubscriptionRedeemableUserItemArray) ToSubscriptionRedeemableUserItemArr
 	return pulumi.ToOutputWithContext(ctx, i).(SubscriptionRedeemableUserItemArrayOutput)
 }
 
-func (i SubscriptionRedeemableUserItemArray) ToOutput(ctx context.Context) pulumix.Output[[]SubscriptionRedeemableUserItem] {
-	return pulumix.Output[[]SubscriptionRedeemableUserItem]{
-		OutputState: i.ToSubscriptionRedeemableUserItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type SubscriptionRedeemableUserItemOutput struct{ *pulumi.OutputState }
 
 func (SubscriptionRedeemableUserItemOutput) ElementType() reflect.Type {
@@ -104,12 +91,6 @@ func (o SubscriptionRedeemableUserItemOutput) ToSubscriptionRedeemableUserItemOu
 
 func (o SubscriptionRedeemableUserItemOutput) ToSubscriptionRedeemableUserItemOutputWithContext(ctx context.Context) SubscriptionRedeemableUserItemOutput {
 	return o
-}
-
-func (o SubscriptionRedeemableUserItemOutput) ToOutput(ctx context.Context) pulumix.Output[SubscriptionRedeemableUserItem] {
-	return pulumix.Output[SubscriptionRedeemableUserItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The email ID for a user that can redeem rewards.
@@ -139,12 +120,6 @@ func (o SubscriptionRedeemableUserItemArrayOutput) ToSubscriptionRedeemableUserI
 
 func (o SubscriptionRedeemableUserItemArrayOutput) ToSubscriptionRedeemableUserItemArrayOutputWithContext(ctx context.Context) SubscriptionRedeemableUserItemArrayOutput {
 	return o
-}
-
-func (o SubscriptionRedeemableUserItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]SubscriptionRedeemableUserItem] {
-	return pulumix.Output[[]SubscriptionRedeemableUserItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o SubscriptionRedeemableUserItemArrayOutput) Index(i pulumi.IntInput) SubscriptionRedeemableUserItemOutput {
@@ -190,12 +165,6 @@ func (i GetResourceQuotasFilterArgs) ToGetResourceQuotasFilterOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetResourceQuotasFilterOutput)
 }
 
-func (i GetResourceQuotasFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetResourceQuotasFilter] {
-	return pulumix.Output[GetResourceQuotasFilter]{
-		OutputState: i.ToGetResourceQuotasFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetResourceQuotasFilterArrayInput is an input type that accepts GetResourceQuotasFilterArray and GetResourceQuotasFilterArrayOutput values.
 // You can construct a concrete instance of `GetResourceQuotasFilterArrayInput` via:
 //
@@ -221,12 +190,6 @@ func (i GetResourceQuotasFilterArray) ToGetResourceQuotasFilterArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetResourceQuotasFilterArrayOutput)
 }
 
-func (i GetResourceQuotasFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetResourceQuotasFilter] {
-	return pulumix.Output[[]GetResourceQuotasFilter]{
-		OutputState: i.ToGetResourceQuotasFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetResourceQuotasFilterOutput struct{ *pulumi.OutputState }
 
 func (GetResourceQuotasFilterOutput) ElementType() reflect.Type {
@@ -239,12 +202,6 @@ func (o GetResourceQuotasFilterOutput) ToGetResourceQuotasFilterOutput() GetReso
 
 func (o GetResourceQuotasFilterOutput) ToGetResourceQuotasFilterOutputWithContext(ctx context.Context) GetResourceQuotasFilterOutput {
 	return o
-}
-
-func (o GetResourceQuotasFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetResourceQuotasFilter] {
-	return pulumix.Output[GetResourceQuotasFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The resource name.
@@ -274,12 +231,6 @@ func (o GetResourceQuotasFilterArrayOutput) ToGetResourceQuotasFilterArrayOutput
 	return o
 }
 
-func (o GetResourceQuotasFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetResourceQuotasFilter] {
-	return pulumix.Output[[]GetResourceQuotasFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetResourceQuotasFilterArrayOutput) Index(i pulumi.IntInput) GetResourceQuotasFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetResourceQuotasFilter {
 		return vs[0].([]GetResourceQuotasFilter)[vs[1].(int)]
@@ -288,7 +239,7 @@ func (o GetResourceQuotasFilterArrayOutput) Index(i pulumi.IntInput) GetResource
 
 type GetResourceQuotasResourceQuotumCollection struct {
 	// Used to indicate if further quota consumption isAllowed.
-	IsAllowed bool `pulumi:"isAllowed"`
+	IsAllowed *bool `pulumi:"isAllowed"`
 	// The list of resource quota details.
 	Items []GetResourceQuotasResourceQuotumCollectionItem `pulumi:"items"`
 }
@@ -306,7 +257,7 @@ type GetResourceQuotasResourceQuotumCollectionInput interface {
 
 type GetResourceQuotasResourceQuotumCollectionArgs struct {
 	// Used to indicate if further quota consumption isAllowed.
-	IsAllowed pulumi.BoolInput `pulumi:"isAllowed"`
+	IsAllowed pulumi.BoolPtrInput `pulumi:"isAllowed"`
 	// The list of resource quota details.
 	Items GetResourceQuotasResourceQuotumCollectionItemArrayInput `pulumi:"items"`
 }
@@ -321,12 +272,6 @@ func (i GetResourceQuotasResourceQuotumCollectionArgs) ToGetResourceQuotasResour
 
 func (i GetResourceQuotasResourceQuotumCollectionArgs) ToGetResourceQuotasResourceQuotumCollectionOutputWithContext(ctx context.Context) GetResourceQuotasResourceQuotumCollectionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetResourceQuotasResourceQuotumCollectionOutput)
-}
-
-func (i GetResourceQuotasResourceQuotumCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetResourceQuotasResourceQuotumCollection] {
-	return pulumix.Output[GetResourceQuotasResourceQuotumCollection]{
-		OutputState: i.ToGetResourceQuotasResourceQuotumCollectionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetResourceQuotasResourceQuotumCollectionArrayInput is an input type that accepts GetResourceQuotasResourceQuotumCollectionArray and GetResourceQuotasResourceQuotumCollectionArrayOutput values.
@@ -354,12 +299,6 @@ func (i GetResourceQuotasResourceQuotumCollectionArray) ToGetResourceQuotasResou
 	return pulumi.ToOutputWithContext(ctx, i).(GetResourceQuotasResourceQuotumCollectionArrayOutput)
 }
 
-func (i GetResourceQuotasResourceQuotumCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetResourceQuotasResourceQuotumCollection] {
-	return pulumix.Output[[]GetResourceQuotasResourceQuotumCollection]{
-		OutputState: i.ToGetResourceQuotasResourceQuotumCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetResourceQuotasResourceQuotumCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetResourceQuotasResourceQuotumCollectionOutput) ElementType() reflect.Type {
@@ -374,15 +313,9 @@ func (o GetResourceQuotasResourceQuotumCollectionOutput) ToGetResourceQuotasReso
 	return o
 }
 
-func (o GetResourceQuotasResourceQuotumCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetResourceQuotasResourceQuotumCollection] {
-	return pulumix.Output[GetResourceQuotasResourceQuotumCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Used to indicate if further quota consumption isAllowed.
-func (o GetResourceQuotasResourceQuotumCollectionOutput) IsAllowed() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetResourceQuotasResourceQuotumCollection) bool { return v.IsAllowed }).(pulumi.BoolOutput)
+func (o GetResourceQuotasResourceQuotumCollectionOutput) IsAllowed() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetResourceQuotasResourceQuotumCollection) *bool { return v.IsAllowed }).(pulumi.BoolPtrOutput)
 }
 
 // The list of resource quota details.
@@ -406,12 +339,6 @@ func (o GetResourceQuotasResourceQuotumCollectionArrayOutput) ToGetResourceQuota
 	return o
 }
 
-func (o GetResourceQuotasResourceQuotumCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetResourceQuotasResourceQuotumCollection] {
-	return pulumix.Output[[]GetResourceQuotasResourceQuotumCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetResourceQuotasResourceQuotumCollectionArrayOutput) Index(i pulumi.IntInput) GetResourceQuotasResourceQuotumCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetResourceQuotasResourceQuotumCollection {
 		return vs[0].([]GetResourceQuotasResourceQuotumCollection)[vs[1].(int)]
@@ -420,21 +347,21 @@ func (o GetResourceQuotasResourceQuotumCollectionArrayOutput) Index(i pulumi.Int
 
 type GetResourceQuotasResourceQuotumCollectionItem struct {
 	// The affected resource name.
-	AffectedResource string `pulumi:"affectedResource"`
+	AffectedResource *string `pulumi:"affectedResource"`
 	// The quota balance.
-	Balance float64 `pulumi:"balance"`
+	Balance *float64 `pulumi:"balance"`
 	// Used to indicate if further quota consumption isAllowed.
-	IsAllowed bool `pulumi:"isAllowed"`
+	IsAllowed *bool `pulumi:"isAllowed"`
 	// Used to indicate any resource dependencies.
-	IsDependency bool `pulumi:"isDependency"`
+	IsDependency *bool `pulumi:"isDependency"`
 	// Used to indicate if overages are incurred.
-	IsOverage bool `pulumi:"isOverage"`
+	IsOverage *bool `pulumi:"isOverage"`
 	// The resource name.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The purchased quota limit.
-	PurchasedLimit float64 `pulumi:"purchasedLimit"`
+	PurchasedLimit *float64 `pulumi:"purchasedLimit"`
 	// The service name.
-	Service string `pulumi:"service"`
+	Service *string `pulumi:"service"`
 }
 
 // GetResourceQuotasResourceQuotumCollectionItemInput is an input type that accepts GetResourceQuotasResourceQuotumCollectionItemArgs and GetResourceQuotasResourceQuotumCollectionItemOutput values.
@@ -450,21 +377,21 @@ type GetResourceQuotasResourceQuotumCollectionItemInput interface {
 
 type GetResourceQuotasResourceQuotumCollectionItemArgs struct {
 	// The affected resource name.
-	AffectedResource pulumi.StringInput `pulumi:"affectedResource"`
+	AffectedResource pulumi.StringPtrInput `pulumi:"affectedResource"`
 	// The quota balance.
-	Balance pulumi.Float64Input `pulumi:"balance"`
+	Balance pulumi.Float64PtrInput `pulumi:"balance"`
 	// Used to indicate if further quota consumption isAllowed.
-	IsAllowed pulumi.BoolInput `pulumi:"isAllowed"`
+	IsAllowed pulumi.BoolPtrInput `pulumi:"isAllowed"`
 	// Used to indicate any resource dependencies.
-	IsDependency pulumi.BoolInput `pulumi:"isDependency"`
+	IsDependency pulumi.BoolPtrInput `pulumi:"isDependency"`
 	// Used to indicate if overages are incurred.
-	IsOverage pulumi.BoolInput `pulumi:"isOverage"`
+	IsOverage pulumi.BoolPtrInput `pulumi:"isOverage"`
 	// The resource name.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// The purchased quota limit.
-	PurchasedLimit pulumi.Float64Input `pulumi:"purchasedLimit"`
+	PurchasedLimit pulumi.Float64PtrInput `pulumi:"purchasedLimit"`
 	// The service name.
-	Service pulumi.StringInput `pulumi:"service"`
+	Service pulumi.StringPtrInput `pulumi:"service"`
 }
 
 func (GetResourceQuotasResourceQuotumCollectionItemArgs) ElementType() reflect.Type {
@@ -477,12 +404,6 @@ func (i GetResourceQuotasResourceQuotumCollectionItemArgs) ToGetResourceQuotasRe
 
 func (i GetResourceQuotasResourceQuotumCollectionItemArgs) ToGetResourceQuotasResourceQuotumCollectionItemOutputWithContext(ctx context.Context) GetResourceQuotasResourceQuotumCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetResourceQuotasResourceQuotumCollectionItemOutput)
-}
-
-func (i GetResourceQuotasResourceQuotumCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetResourceQuotasResourceQuotumCollectionItem] {
-	return pulumix.Output[GetResourceQuotasResourceQuotumCollectionItem]{
-		OutputState: i.ToGetResourceQuotasResourceQuotumCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetResourceQuotasResourceQuotumCollectionItemArrayInput is an input type that accepts GetResourceQuotasResourceQuotumCollectionItemArray and GetResourceQuotasResourceQuotumCollectionItemArrayOutput values.
@@ -510,12 +431,6 @@ func (i GetResourceQuotasResourceQuotumCollectionItemArray) ToGetResourceQuotasR
 	return pulumi.ToOutputWithContext(ctx, i).(GetResourceQuotasResourceQuotumCollectionItemArrayOutput)
 }
 
-func (i GetResourceQuotasResourceQuotumCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetResourceQuotasResourceQuotumCollectionItem] {
-	return pulumix.Output[[]GetResourceQuotasResourceQuotumCollectionItem]{
-		OutputState: i.ToGetResourceQuotasResourceQuotumCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetResourceQuotasResourceQuotumCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetResourceQuotasResourceQuotumCollectionItemOutput) ElementType() reflect.Type {
@@ -530,50 +445,44 @@ func (o GetResourceQuotasResourceQuotumCollectionItemOutput) ToGetResourceQuotas
 	return o
 }
 
-func (o GetResourceQuotasResourceQuotumCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetResourceQuotasResourceQuotumCollectionItem] {
-	return pulumix.Output[GetResourceQuotasResourceQuotumCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The affected resource name.
-func (o GetResourceQuotasResourceQuotumCollectionItemOutput) AffectedResource() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResourceQuotasResourceQuotumCollectionItem) string { return v.AffectedResource }).(pulumi.StringOutput)
+func (o GetResourceQuotasResourceQuotumCollectionItemOutput) AffectedResource() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResourceQuotasResourceQuotumCollectionItem) *string { return v.AffectedResource }).(pulumi.StringPtrOutput)
 }
 
 // The quota balance.
-func (o GetResourceQuotasResourceQuotumCollectionItemOutput) Balance() pulumi.Float64Output {
-	return o.ApplyT(func(v GetResourceQuotasResourceQuotumCollectionItem) float64 { return v.Balance }).(pulumi.Float64Output)
+func (o GetResourceQuotasResourceQuotumCollectionItemOutput) Balance() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetResourceQuotasResourceQuotumCollectionItem) *float64 { return v.Balance }).(pulumi.Float64PtrOutput)
 }
 
 // Used to indicate if further quota consumption isAllowed.
-func (o GetResourceQuotasResourceQuotumCollectionItemOutput) IsAllowed() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetResourceQuotasResourceQuotumCollectionItem) bool { return v.IsAllowed }).(pulumi.BoolOutput)
+func (o GetResourceQuotasResourceQuotumCollectionItemOutput) IsAllowed() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetResourceQuotasResourceQuotumCollectionItem) *bool { return v.IsAllowed }).(pulumi.BoolPtrOutput)
 }
 
 // Used to indicate any resource dependencies.
-func (o GetResourceQuotasResourceQuotumCollectionItemOutput) IsDependency() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetResourceQuotasResourceQuotumCollectionItem) bool { return v.IsDependency }).(pulumi.BoolOutput)
+func (o GetResourceQuotasResourceQuotumCollectionItemOutput) IsDependency() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetResourceQuotasResourceQuotumCollectionItem) *bool { return v.IsDependency }).(pulumi.BoolPtrOutput)
 }
 
 // Used to indicate if overages are incurred.
-func (o GetResourceQuotasResourceQuotumCollectionItemOutput) IsOverage() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetResourceQuotasResourceQuotumCollectionItem) bool { return v.IsOverage }).(pulumi.BoolOutput)
+func (o GetResourceQuotasResourceQuotumCollectionItemOutput) IsOverage() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetResourceQuotasResourceQuotumCollectionItem) *bool { return v.IsOverage }).(pulumi.BoolPtrOutput)
 }
 
 // The resource name.
-func (o GetResourceQuotasResourceQuotumCollectionItemOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResourceQuotasResourceQuotumCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+func (o GetResourceQuotasResourceQuotumCollectionItemOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResourceQuotasResourceQuotumCollectionItem) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The purchased quota limit.
-func (o GetResourceQuotasResourceQuotumCollectionItemOutput) PurchasedLimit() pulumi.Float64Output {
-	return o.ApplyT(func(v GetResourceQuotasResourceQuotumCollectionItem) float64 { return v.PurchasedLimit }).(pulumi.Float64Output)
+func (o GetResourceQuotasResourceQuotumCollectionItemOutput) PurchasedLimit() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetResourceQuotasResourceQuotumCollectionItem) *float64 { return v.PurchasedLimit }).(pulumi.Float64PtrOutput)
 }
 
 // The service name.
-func (o GetResourceQuotasResourceQuotumCollectionItemOutput) Service() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResourceQuotasResourceQuotumCollectionItem) string { return v.Service }).(pulumi.StringOutput)
+func (o GetResourceQuotasResourceQuotumCollectionItemOutput) Service() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResourceQuotasResourceQuotumCollectionItem) *string { return v.Service }).(pulumi.StringPtrOutput)
 }
 
 type GetResourceQuotasResourceQuotumCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -588,12 +497,6 @@ func (o GetResourceQuotasResourceQuotumCollectionItemArrayOutput) ToGetResourceQ
 
 func (o GetResourceQuotasResourceQuotumCollectionItemArrayOutput) ToGetResourceQuotasResourceQuotumCollectionItemArrayOutputWithContext(ctx context.Context) GetResourceQuotasResourceQuotumCollectionItemArrayOutput {
 	return o
-}
-
-func (o GetResourceQuotasResourceQuotumCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetResourceQuotasResourceQuotumCollectionItem] {
-	return pulumix.Output[[]GetResourceQuotasResourceQuotumCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetResourceQuotasResourceQuotumCollectionItemArrayOutput) Index(i pulumi.IntInput) GetResourceQuotasResourceQuotumCollectionItemOutput {
@@ -639,12 +542,6 @@ func (i GetResourcesFilterArgs) ToGetResourcesFilterOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetResourcesFilterOutput)
 }
 
-func (i GetResourcesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetResourcesFilter] {
-	return pulumix.Output[GetResourcesFilter]{
-		OutputState: i.ToGetResourcesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetResourcesFilterArrayInput is an input type that accepts GetResourcesFilterArray and GetResourcesFilterArrayOutput values.
 // You can construct a concrete instance of `GetResourcesFilterArrayInput` via:
 //
@@ -670,12 +567,6 @@ func (i GetResourcesFilterArray) ToGetResourcesFilterArrayOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetResourcesFilterArrayOutput)
 }
 
-func (i GetResourcesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetResourcesFilter] {
-	return pulumix.Output[[]GetResourcesFilter]{
-		OutputState: i.ToGetResourcesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetResourcesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetResourcesFilterOutput) ElementType() reflect.Type {
@@ -688,12 +579,6 @@ func (o GetResourcesFilterOutput) ToGetResourcesFilterOutput() GetResourcesFilte
 
 func (o GetResourcesFilterOutput) ToGetResourcesFilterOutputWithContext(ctx context.Context) GetResourcesFilterOutput {
 	return o
-}
-
-func (o GetResourcesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetResourcesFilter] {
-	return pulumix.Output[GetResourcesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Name of the resource.
@@ -721,12 +606,6 @@ func (o GetResourcesFilterArrayOutput) ToGetResourcesFilterArrayOutput() GetReso
 
 func (o GetResourcesFilterArrayOutput) ToGetResourcesFilterArrayOutputWithContext(ctx context.Context) GetResourcesFilterArrayOutput {
 	return o
-}
-
-func (o GetResourcesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetResourcesFilter] {
-	return pulumix.Output[[]GetResourcesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetResourcesFilterArrayOutput) Index(i pulumi.IntInput) GetResourcesFilterOutput {
@@ -768,12 +647,6 @@ func (i GetResourcesResourcesCollectionArgs) ToGetResourcesResourcesCollectionOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetResourcesResourcesCollectionOutput)
 }
 
-func (i GetResourcesResourcesCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetResourcesResourcesCollection] {
-	return pulumix.Output[GetResourcesResourcesCollection]{
-		OutputState: i.ToGetResourcesResourcesCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetResourcesResourcesCollectionArrayInput is an input type that accepts GetResourcesResourcesCollectionArray and GetResourcesResourcesCollectionArrayOutput values.
 // You can construct a concrete instance of `GetResourcesResourcesCollectionArrayInput` via:
 //
@@ -799,12 +672,6 @@ func (i GetResourcesResourcesCollectionArray) ToGetResourcesResourcesCollectionA
 	return pulumi.ToOutputWithContext(ctx, i).(GetResourcesResourcesCollectionArrayOutput)
 }
 
-func (i GetResourcesResourcesCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetResourcesResourcesCollection] {
-	return pulumix.Output[[]GetResourcesResourcesCollection]{
-		OutputState: i.ToGetResourcesResourcesCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetResourcesResourcesCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetResourcesResourcesCollectionOutput) ElementType() reflect.Type {
@@ -817,12 +684,6 @@ func (o GetResourcesResourcesCollectionOutput) ToGetResourcesResourcesCollection
 
 func (o GetResourcesResourcesCollectionOutput) ToGetResourcesResourcesCollectionOutputWithContext(ctx context.Context) GetResourcesResourcesCollectionOutput {
 	return o
-}
-
-func (o GetResourcesResourcesCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetResourcesResourcesCollection] {
-	return pulumix.Output[GetResourcesResourcesCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The list of resource details for a service.
@@ -844,12 +705,6 @@ func (o GetResourcesResourcesCollectionArrayOutput) ToGetResourcesResourcesColle
 	return o
 }
 
-func (o GetResourcesResourcesCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetResourcesResourcesCollection] {
-	return pulumix.Output[[]GetResourcesResourcesCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetResourcesResourcesCollectionArrayOutput) Index(i pulumi.IntInput) GetResourcesResourcesCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetResourcesResourcesCollection {
 		return vs[0].([]GetResourcesResourcesCollection)[vs[1].(int)]
@@ -860,25 +715,25 @@ type GetResourcesResourcesCollectionItem struct {
 	// The details of any child resources.
 	ChildResources []string `pulumi:"childResources"`
 	// Units to be used for daily aggregated data.
-	DailyUnitDisplayName string `pulumi:"dailyUnitDisplayName"`
+	DailyUnitDisplayName *string `pulumi:"dailyUnitDisplayName"`
 	// Description of the resource.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Units to be used for hourly aggregated data.
-	HourlyUnitDisplayName string `pulumi:"hourlyUnitDisplayName"`
+	HourlyUnitDisplayName *string `pulumi:"hourlyUnitDisplayName"`
 	// Instance type for the resource.
-	InstanceType string `pulumi:"instanceType"`
+	InstanceType *string `pulumi:"instanceType"`
 	// Indicates if the SKU was purchased
-	IsPurchased bool `pulumi:"isPurchased"`
+	IsPurchased *bool `pulumi:"isPurchased"`
 	// Name of the resource.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Default units to use when unspecified.
-	RawUnitDisplayName string `pulumi:"rawUnitDisplayName"`
+	RawUnitDisplayName *string `pulumi:"rawUnitDisplayName"`
 	// Name of the service.
-	Servicename string `pulumi:"servicename"`
+	Servicename *string `pulumi:"servicename"`
 	// The details of resource Skus.
 	Skuses []GetResourcesResourcesCollectionItemSkus `pulumi:"skuses"`
 	// Usage data type of the resource.
-	UsageDataType string `pulumi:"usageDataType"`
+	UsageDataType *string `pulumi:"usageDataType"`
 }
 
 // GetResourcesResourcesCollectionItemInput is an input type that accepts GetResourcesResourcesCollectionItemArgs and GetResourcesResourcesCollectionItemOutput values.
@@ -896,25 +751,25 @@ type GetResourcesResourcesCollectionItemArgs struct {
 	// The details of any child resources.
 	ChildResources pulumi.StringArrayInput `pulumi:"childResources"`
 	// Units to be used for daily aggregated data.
-	DailyUnitDisplayName pulumi.StringInput `pulumi:"dailyUnitDisplayName"`
+	DailyUnitDisplayName pulumi.StringPtrInput `pulumi:"dailyUnitDisplayName"`
 	// Description of the resource.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// Units to be used for hourly aggregated data.
-	HourlyUnitDisplayName pulumi.StringInput `pulumi:"hourlyUnitDisplayName"`
+	HourlyUnitDisplayName pulumi.StringPtrInput `pulumi:"hourlyUnitDisplayName"`
 	// Instance type for the resource.
-	InstanceType pulumi.StringInput `pulumi:"instanceType"`
+	InstanceType pulumi.StringPtrInput `pulumi:"instanceType"`
 	// Indicates if the SKU was purchased
-	IsPurchased pulumi.BoolInput `pulumi:"isPurchased"`
+	IsPurchased pulumi.BoolPtrInput `pulumi:"isPurchased"`
 	// Name of the resource.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Default units to use when unspecified.
-	RawUnitDisplayName pulumi.StringInput `pulumi:"rawUnitDisplayName"`
+	RawUnitDisplayName pulumi.StringPtrInput `pulumi:"rawUnitDisplayName"`
 	// Name of the service.
-	Servicename pulumi.StringInput `pulumi:"servicename"`
+	Servicename pulumi.StringPtrInput `pulumi:"servicename"`
 	// The details of resource Skus.
 	Skuses GetResourcesResourcesCollectionItemSkusArrayInput `pulumi:"skuses"`
 	// Usage data type of the resource.
-	UsageDataType pulumi.StringInput `pulumi:"usageDataType"`
+	UsageDataType pulumi.StringPtrInput `pulumi:"usageDataType"`
 }
 
 func (GetResourcesResourcesCollectionItemArgs) ElementType() reflect.Type {
@@ -927,12 +782,6 @@ func (i GetResourcesResourcesCollectionItemArgs) ToGetResourcesResourcesCollecti
 
 func (i GetResourcesResourcesCollectionItemArgs) ToGetResourcesResourcesCollectionItemOutputWithContext(ctx context.Context) GetResourcesResourcesCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetResourcesResourcesCollectionItemOutput)
-}
-
-func (i GetResourcesResourcesCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetResourcesResourcesCollectionItem] {
-	return pulumix.Output[GetResourcesResourcesCollectionItem]{
-		OutputState: i.ToGetResourcesResourcesCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetResourcesResourcesCollectionItemArrayInput is an input type that accepts GetResourcesResourcesCollectionItemArray and GetResourcesResourcesCollectionItemArrayOutput values.
@@ -960,12 +809,6 @@ func (i GetResourcesResourcesCollectionItemArray) ToGetResourcesResourcesCollect
 	return pulumi.ToOutputWithContext(ctx, i).(GetResourcesResourcesCollectionItemArrayOutput)
 }
 
-func (i GetResourcesResourcesCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetResourcesResourcesCollectionItem] {
-	return pulumix.Output[[]GetResourcesResourcesCollectionItem]{
-		OutputState: i.ToGetResourcesResourcesCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetResourcesResourcesCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetResourcesResourcesCollectionItemOutput) ElementType() reflect.Type {
@@ -980,55 +823,49 @@ func (o GetResourcesResourcesCollectionItemOutput) ToGetResourcesResourcesCollec
 	return o
 }
 
-func (o GetResourcesResourcesCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetResourcesResourcesCollectionItem] {
-	return pulumix.Output[GetResourcesResourcesCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The details of any child resources.
 func (o GetResourcesResourcesCollectionItemOutput) ChildResources() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetResourcesResourcesCollectionItem) []string { return v.ChildResources }).(pulumi.StringArrayOutput)
 }
 
 // Units to be used for daily aggregated data.
-func (o GetResourcesResourcesCollectionItemOutput) DailyUnitDisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResourcesResourcesCollectionItem) string { return v.DailyUnitDisplayName }).(pulumi.StringOutput)
+func (o GetResourcesResourcesCollectionItemOutput) DailyUnitDisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResourcesResourcesCollectionItem) *string { return v.DailyUnitDisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Description of the resource.
-func (o GetResourcesResourcesCollectionItemOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResourcesResourcesCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+func (o GetResourcesResourcesCollectionItemOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResourcesResourcesCollectionItem) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Units to be used for hourly aggregated data.
-func (o GetResourcesResourcesCollectionItemOutput) HourlyUnitDisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResourcesResourcesCollectionItem) string { return v.HourlyUnitDisplayName }).(pulumi.StringOutput)
+func (o GetResourcesResourcesCollectionItemOutput) HourlyUnitDisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResourcesResourcesCollectionItem) *string { return v.HourlyUnitDisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Instance type for the resource.
-func (o GetResourcesResourcesCollectionItemOutput) InstanceType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResourcesResourcesCollectionItem) string { return v.InstanceType }).(pulumi.StringOutput)
+func (o GetResourcesResourcesCollectionItemOutput) InstanceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResourcesResourcesCollectionItem) *string { return v.InstanceType }).(pulumi.StringPtrOutput)
 }
 
 // Indicates if the SKU was purchased
-func (o GetResourcesResourcesCollectionItemOutput) IsPurchased() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetResourcesResourcesCollectionItem) bool { return v.IsPurchased }).(pulumi.BoolOutput)
+func (o GetResourcesResourcesCollectionItemOutput) IsPurchased() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetResourcesResourcesCollectionItem) *bool { return v.IsPurchased }).(pulumi.BoolPtrOutput)
 }
 
 // Name of the resource.
-func (o GetResourcesResourcesCollectionItemOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResourcesResourcesCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+func (o GetResourcesResourcesCollectionItemOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResourcesResourcesCollectionItem) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Default units to use when unspecified.
-func (o GetResourcesResourcesCollectionItemOutput) RawUnitDisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResourcesResourcesCollectionItem) string { return v.RawUnitDisplayName }).(pulumi.StringOutput)
+func (o GetResourcesResourcesCollectionItemOutput) RawUnitDisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResourcesResourcesCollectionItem) *string { return v.RawUnitDisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Name of the service.
-func (o GetResourcesResourcesCollectionItemOutput) Servicename() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResourcesResourcesCollectionItem) string { return v.Servicename }).(pulumi.StringOutput)
+func (o GetResourcesResourcesCollectionItemOutput) Servicename() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResourcesResourcesCollectionItem) *string { return v.Servicename }).(pulumi.StringPtrOutput)
 }
 
 // The details of resource Skus.
@@ -1037,8 +874,8 @@ func (o GetResourcesResourcesCollectionItemOutput) Skuses() GetResourcesResource
 }
 
 // Usage data type of the resource.
-func (o GetResourcesResourcesCollectionItemOutput) UsageDataType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResourcesResourcesCollectionItem) string { return v.UsageDataType }).(pulumi.StringOutput)
+func (o GetResourcesResourcesCollectionItemOutput) UsageDataType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResourcesResourcesCollectionItem) *string { return v.UsageDataType }).(pulumi.StringPtrOutput)
 }
 
 type GetResourcesResourcesCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -1055,12 +892,6 @@ func (o GetResourcesResourcesCollectionItemArrayOutput) ToGetResourcesResourcesC
 	return o
 }
 
-func (o GetResourcesResourcesCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetResourcesResourcesCollectionItem] {
-	return pulumix.Output[[]GetResourcesResourcesCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetResourcesResourcesCollectionItemArrayOutput) Index(i pulumi.IntInput) GetResourcesResourcesCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetResourcesResourcesCollectionItem {
 		return vs[0].([]GetResourcesResourcesCollectionItem)[vs[1].(int)]
@@ -1069,11 +900,11 @@ func (o GetResourcesResourcesCollectionItemArrayOutput) Index(i pulumi.IntInput)
 
 type GetResourcesResourcesCollectionItemSkus struct {
 	// The cloud credit type for the resource.
-	CloudCreditType string `pulumi:"cloudCreditType"`
+	CloudCreditType *string `pulumi:"cloudCreditType"`
 	// The Sku Id for the resource.
-	SkuId string `pulumi:"skuId"`
+	SkuId *string `pulumi:"skuId"`
 	// The Sku type for the resource.
-	SkuType string `pulumi:"skuType"`
+	SkuType *string `pulumi:"skuType"`
 }
 
 // GetResourcesResourcesCollectionItemSkusInput is an input type that accepts GetResourcesResourcesCollectionItemSkusArgs and GetResourcesResourcesCollectionItemSkusOutput values.
@@ -1089,11 +920,11 @@ type GetResourcesResourcesCollectionItemSkusInput interface {
 
 type GetResourcesResourcesCollectionItemSkusArgs struct {
 	// The cloud credit type for the resource.
-	CloudCreditType pulumi.StringInput `pulumi:"cloudCreditType"`
+	CloudCreditType pulumi.StringPtrInput `pulumi:"cloudCreditType"`
 	// The Sku Id for the resource.
-	SkuId pulumi.StringInput `pulumi:"skuId"`
+	SkuId pulumi.StringPtrInput `pulumi:"skuId"`
 	// The Sku type for the resource.
-	SkuType pulumi.StringInput `pulumi:"skuType"`
+	SkuType pulumi.StringPtrInput `pulumi:"skuType"`
 }
 
 func (GetResourcesResourcesCollectionItemSkusArgs) ElementType() reflect.Type {
@@ -1106,12 +937,6 @@ func (i GetResourcesResourcesCollectionItemSkusArgs) ToGetResourcesResourcesColl
 
 func (i GetResourcesResourcesCollectionItemSkusArgs) ToGetResourcesResourcesCollectionItemSkusOutputWithContext(ctx context.Context) GetResourcesResourcesCollectionItemSkusOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetResourcesResourcesCollectionItemSkusOutput)
-}
-
-func (i GetResourcesResourcesCollectionItemSkusArgs) ToOutput(ctx context.Context) pulumix.Output[GetResourcesResourcesCollectionItemSkus] {
-	return pulumix.Output[GetResourcesResourcesCollectionItemSkus]{
-		OutputState: i.ToGetResourcesResourcesCollectionItemSkusOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetResourcesResourcesCollectionItemSkusArrayInput is an input type that accepts GetResourcesResourcesCollectionItemSkusArray and GetResourcesResourcesCollectionItemSkusArrayOutput values.
@@ -1139,12 +964,6 @@ func (i GetResourcesResourcesCollectionItemSkusArray) ToGetResourcesResourcesCol
 	return pulumi.ToOutputWithContext(ctx, i).(GetResourcesResourcesCollectionItemSkusArrayOutput)
 }
 
-func (i GetResourcesResourcesCollectionItemSkusArray) ToOutput(ctx context.Context) pulumix.Output[[]GetResourcesResourcesCollectionItemSkus] {
-	return pulumix.Output[[]GetResourcesResourcesCollectionItemSkus]{
-		OutputState: i.ToGetResourcesResourcesCollectionItemSkusArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetResourcesResourcesCollectionItemSkusOutput struct{ *pulumi.OutputState }
 
 func (GetResourcesResourcesCollectionItemSkusOutput) ElementType() reflect.Type {
@@ -1159,25 +978,19 @@ func (o GetResourcesResourcesCollectionItemSkusOutput) ToGetResourcesResourcesCo
 	return o
 }
 
-func (o GetResourcesResourcesCollectionItemSkusOutput) ToOutput(ctx context.Context) pulumix.Output[GetResourcesResourcesCollectionItemSkus] {
-	return pulumix.Output[GetResourcesResourcesCollectionItemSkus]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The cloud credit type for the resource.
-func (o GetResourcesResourcesCollectionItemSkusOutput) CloudCreditType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResourcesResourcesCollectionItemSkus) string { return v.CloudCreditType }).(pulumi.StringOutput)
+func (o GetResourcesResourcesCollectionItemSkusOutput) CloudCreditType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResourcesResourcesCollectionItemSkus) *string { return v.CloudCreditType }).(pulumi.StringPtrOutput)
 }
 
 // The Sku Id for the resource.
-func (o GetResourcesResourcesCollectionItemSkusOutput) SkuId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResourcesResourcesCollectionItemSkus) string { return v.SkuId }).(pulumi.StringOutput)
+func (o GetResourcesResourcesCollectionItemSkusOutput) SkuId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResourcesResourcesCollectionItemSkus) *string { return v.SkuId }).(pulumi.StringPtrOutput)
 }
 
 // The Sku type for the resource.
-func (o GetResourcesResourcesCollectionItemSkusOutput) SkuType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResourcesResourcesCollectionItemSkus) string { return v.SkuType }).(pulumi.StringOutput)
+func (o GetResourcesResourcesCollectionItemSkusOutput) SkuType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResourcesResourcesCollectionItemSkus) *string { return v.SkuType }).(pulumi.StringPtrOutput)
 }
 
 type GetResourcesResourcesCollectionItemSkusArrayOutput struct{ *pulumi.OutputState }
@@ -1194,12 +1007,6 @@ func (o GetResourcesResourcesCollectionItemSkusArrayOutput) ToGetResourcesResour
 	return o
 }
 
-func (o GetResourcesResourcesCollectionItemSkusArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetResourcesResourcesCollectionItemSkus] {
-	return pulumix.Output[[]GetResourcesResourcesCollectionItemSkus]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetResourcesResourcesCollectionItemSkusArrayOutput) Index(i pulumi.IntInput) GetResourcesResourcesCollectionItemSkusOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetResourcesResourcesCollectionItemSkus {
 		return vs[0].([]GetResourcesResourcesCollectionItemSkus)[vs[1].(int)]
@@ -1208,15 +1015,15 @@ func (o GetResourcesResourcesCollectionItemSkusArrayOutput) Index(i pulumi.IntIn
 
 type GetSubscriptionProductItem struct {
 	// The earned rewards for the product.
-	EarnedRewards float64 `pulumi:"earnedRewards"`
+	EarnedRewards *float64 `pulumi:"earnedRewards"`
 	// The boolean parameter to indicate if the product is eligible to earn rewards.
-	IsEligibleToEarnRewards bool `pulumi:"isEligibleToEarnRewards"`
+	IsEligibleToEarnRewards *bool `pulumi:"isEligibleToEarnRewards"`
 	// The rate card product name.
-	ProductName string `pulumi:"productName"`
+	ProductName *string `pulumi:"productName"`
 	// The rate card product number.
-	ProductNumber string `pulumi:"productNumber"`
+	ProductNumber *string `pulumi:"productNumber"`
 	// The rate card product usage amount.
-	UsageAmount float64 `pulumi:"usageAmount"`
+	UsageAmount *float64 `pulumi:"usageAmount"`
 }
 
 // GetSubscriptionProductItemInput is an input type that accepts GetSubscriptionProductItemArgs and GetSubscriptionProductItemOutput values.
@@ -1232,15 +1039,15 @@ type GetSubscriptionProductItemInput interface {
 
 type GetSubscriptionProductItemArgs struct {
 	// The earned rewards for the product.
-	EarnedRewards pulumi.Float64Input `pulumi:"earnedRewards"`
+	EarnedRewards pulumi.Float64PtrInput `pulumi:"earnedRewards"`
 	// The boolean parameter to indicate if the product is eligible to earn rewards.
-	IsEligibleToEarnRewards pulumi.BoolInput `pulumi:"isEligibleToEarnRewards"`
+	IsEligibleToEarnRewards pulumi.BoolPtrInput `pulumi:"isEligibleToEarnRewards"`
 	// The rate card product name.
-	ProductName pulumi.StringInput `pulumi:"productName"`
+	ProductName pulumi.StringPtrInput `pulumi:"productName"`
 	// The rate card product number.
-	ProductNumber pulumi.StringInput `pulumi:"productNumber"`
+	ProductNumber pulumi.StringPtrInput `pulumi:"productNumber"`
 	// The rate card product usage amount.
-	UsageAmount pulumi.Float64Input `pulumi:"usageAmount"`
+	UsageAmount pulumi.Float64PtrInput `pulumi:"usageAmount"`
 }
 
 func (GetSubscriptionProductItemArgs) ElementType() reflect.Type {
@@ -1253,12 +1060,6 @@ func (i GetSubscriptionProductItemArgs) ToGetSubscriptionProductItemOutput() Get
 
 func (i GetSubscriptionProductItemArgs) ToGetSubscriptionProductItemOutputWithContext(ctx context.Context) GetSubscriptionProductItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionProductItemOutput)
-}
-
-func (i GetSubscriptionProductItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionProductItem] {
-	return pulumix.Output[GetSubscriptionProductItem]{
-		OutputState: i.ToGetSubscriptionProductItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscriptionProductItemArrayInput is an input type that accepts GetSubscriptionProductItemArray and GetSubscriptionProductItemArrayOutput values.
@@ -1286,12 +1087,6 @@ func (i GetSubscriptionProductItemArray) ToGetSubscriptionProductItemArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionProductItemArrayOutput)
 }
 
-func (i GetSubscriptionProductItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionProductItem] {
-	return pulumix.Output[[]GetSubscriptionProductItem]{
-		OutputState: i.ToGetSubscriptionProductItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscriptionProductItemOutput struct{ *pulumi.OutputState }
 
 func (GetSubscriptionProductItemOutput) ElementType() reflect.Type {
@@ -1306,35 +1101,29 @@ func (o GetSubscriptionProductItemOutput) ToGetSubscriptionProductItemOutputWith
 	return o
 }
 
-func (o GetSubscriptionProductItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionProductItem] {
-	return pulumix.Output[GetSubscriptionProductItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The earned rewards for the product.
-func (o GetSubscriptionProductItemOutput) EarnedRewards() pulumi.Float64Output {
-	return o.ApplyT(func(v GetSubscriptionProductItem) float64 { return v.EarnedRewards }).(pulumi.Float64Output)
+func (o GetSubscriptionProductItemOutput) EarnedRewards() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetSubscriptionProductItem) *float64 { return v.EarnedRewards }).(pulumi.Float64PtrOutput)
 }
 
 // The boolean parameter to indicate if the product is eligible to earn rewards.
-func (o GetSubscriptionProductItemOutput) IsEligibleToEarnRewards() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSubscriptionProductItem) bool { return v.IsEligibleToEarnRewards }).(pulumi.BoolOutput)
+func (o GetSubscriptionProductItemOutput) IsEligibleToEarnRewards() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionProductItem) *bool { return v.IsEligibleToEarnRewards }).(pulumi.BoolPtrOutput)
 }
 
 // The rate card product name.
-func (o GetSubscriptionProductItemOutput) ProductName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionProductItem) string { return v.ProductName }).(pulumi.StringOutput)
+func (o GetSubscriptionProductItemOutput) ProductName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionProductItem) *string { return v.ProductName }).(pulumi.StringPtrOutput)
 }
 
 // The rate card product number.
-func (o GetSubscriptionProductItemOutput) ProductNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionProductItem) string { return v.ProductNumber }).(pulumi.StringOutput)
+func (o GetSubscriptionProductItemOutput) ProductNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionProductItem) *string { return v.ProductNumber }).(pulumi.StringPtrOutput)
 }
 
 // The rate card product usage amount.
-func (o GetSubscriptionProductItemOutput) UsageAmount() pulumi.Float64Output {
-	return o.ApplyT(func(v GetSubscriptionProductItem) float64 { return v.UsageAmount }).(pulumi.Float64Output)
+func (o GetSubscriptionProductItemOutput) UsageAmount() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetSubscriptionProductItem) *float64 { return v.UsageAmount }).(pulumi.Float64PtrOutput)
 }
 
 type GetSubscriptionProductItemArrayOutput struct{ *pulumi.OutputState }
@@ -1349,12 +1138,6 @@ func (o GetSubscriptionProductItemArrayOutput) ToGetSubscriptionProductItemArray
 
 func (o GetSubscriptionProductItemArrayOutput) ToGetSubscriptionProductItemArrayOutputWithContext(ctx context.Context) GetSubscriptionProductItemArrayOutput {
 	return o
-}
-
-func (o GetSubscriptionProductItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionProductItem] {
-	return pulumix.Output[[]GetSubscriptionProductItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSubscriptionProductItemArrayOutput) Index(i pulumi.IntInput) GetSubscriptionProductItemOutput {
@@ -1398,12 +1181,6 @@ func (i GetSubscriptionProductsFilterArgs) ToGetSubscriptionProductsFilterOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionProductsFilterOutput)
 }
 
-func (i GetSubscriptionProductsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionProductsFilter] {
-	return pulumix.Output[GetSubscriptionProductsFilter]{
-		OutputState: i.ToGetSubscriptionProductsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetSubscriptionProductsFilterArrayInput is an input type that accepts GetSubscriptionProductsFilterArray and GetSubscriptionProductsFilterArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionProductsFilterArrayInput` via:
 //
@@ -1429,12 +1206,6 @@ func (i GetSubscriptionProductsFilterArray) ToGetSubscriptionProductsFilterArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionProductsFilterArrayOutput)
 }
 
-func (i GetSubscriptionProductsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionProductsFilter] {
-	return pulumix.Output[[]GetSubscriptionProductsFilter]{
-		OutputState: i.ToGetSubscriptionProductsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscriptionProductsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetSubscriptionProductsFilterOutput) ElementType() reflect.Type {
@@ -1447,12 +1218,6 @@ func (o GetSubscriptionProductsFilterOutput) ToGetSubscriptionProductsFilterOutp
 
 func (o GetSubscriptionProductsFilterOutput) ToGetSubscriptionProductsFilterOutputWithContext(ctx context.Context) GetSubscriptionProductsFilterOutput {
 	return o
-}
-
-func (o GetSubscriptionProductsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionProductsFilter] {
-	return pulumix.Output[GetSubscriptionProductsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSubscriptionProductsFilterOutput) Name() pulumi.StringOutput {
@@ -1479,12 +1244,6 @@ func (o GetSubscriptionProductsFilterArrayOutput) ToGetSubscriptionProductsFilte
 
 func (o GetSubscriptionProductsFilterArrayOutput) ToGetSubscriptionProductsFilterArrayOutputWithContext(ctx context.Context) GetSubscriptionProductsFilterArrayOutput {
 	return o
-}
-
-func (o GetSubscriptionProductsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionProductsFilter] {
-	return pulumix.Output[[]GetSubscriptionProductsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSubscriptionProductsFilterArrayOutput) Index(i pulumi.IntInput) GetSubscriptionProductsFilterOutput {
@@ -1526,12 +1285,6 @@ func (i GetSubscriptionProductsProductCollectionArgs) ToGetSubscriptionProductsP
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionProductsProductCollectionOutput)
 }
 
-func (i GetSubscriptionProductsProductCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionProductsProductCollection] {
-	return pulumix.Output[GetSubscriptionProductsProductCollection]{
-		OutputState: i.ToGetSubscriptionProductsProductCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetSubscriptionProductsProductCollectionArrayInput is an input type that accepts GetSubscriptionProductsProductCollectionArray and GetSubscriptionProductsProductCollectionArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionProductsProductCollectionArrayInput` via:
 //
@@ -1557,12 +1310,6 @@ func (i GetSubscriptionProductsProductCollectionArray) ToGetSubscriptionProducts
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionProductsProductCollectionArrayOutput)
 }
 
-func (i GetSubscriptionProductsProductCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionProductsProductCollection] {
-	return pulumix.Output[[]GetSubscriptionProductsProductCollection]{
-		OutputState: i.ToGetSubscriptionProductsProductCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscriptionProductsProductCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetSubscriptionProductsProductCollectionOutput) ElementType() reflect.Type {
@@ -1575,12 +1322,6 @@ func (o GetSubscriptionProductsProductCollectionOutput) ToGetSubscriptionProduct
 
 func (o GetSubscriptionProductsProductCollectionOutput) ToGetSubscriptionProductsProductCollectionOutputWithContext(ctx context.Context) GetSubscriptionProductsProductCollectionOutput {
 	return o
-}
-
-func (o GetSubscriptionProductsProductCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionProductsProductCollection] {
-	return pulumix.Output[GetSubscriptionProductsProductCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The list of product rewards summaries.
@@ -1602,12 +1343,6 @@ func (o GetSubscriptionProductsProductCollectionArrayOutput) ToGetSubscriptionPr
 
 func (o GetSubscriptionProductsProductCollectionArrayOutput) ToGetSubscriptionProductsProductCollectionArrayOutputWithContext(ctx context.Context) GetSubscriptionProductsProductCollectionArrayOutput {
 	return o
-}
-
-func (o GetSubscriptionProductsProductCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionProductsProductCollection] {
-	return pulumix.Output[[]GetSubscriptionProductsProductCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSubscriptionProductsProductCollectionArrayOutput) Index(i pulumi.IntInput) GetSubscriptionProductsProductCollectionOutput {
@@ -1649,12 +1384,6 @@ func (i GetSubscriptionProductsProductCollectionItemArgs) ToGetSubscriptionProdu
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionProductsProductCollectionItemOutput)
 }
 
-func (i GetSubscriptionProductsProductCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionProductsProductCollectionItem] {
-	return pulumix.Output[GetSubscriptionProductsProductCollectionItem]{
-		OutputState: i.ToGetSubscriptionProductsProductCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetSubscriptionProductsProductCollectionItemArrayInput is an input type that accepts GetSubscriptionProductsProductCollectionItemArray and GetSubscriptionProductsProductCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionProductsProductCollectionItemArrayInput` via:
 //
@@ -1680,12 +1409,6 @@ func (i GetSubscriptionProductsProductCollectionItemArray) ToGetSubscriptionProd
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionProductsProductCollectionItemArrayOutput)
 }
 
-func (i GetSubscriptionProductsProductCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionProductsProductCollectionItem] {
-	return pulumix.Output[[]GetSubscriptionProductsProductCollectionItem]{
-		OutputState: i.ToGetSubscriptionProductsProductCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscriptionProductsProductCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetSubscriptionProductsProductCollectionItemOutput) ElementType() reflect.Type {
@@ -1698,12 +1421,6 @@ func (o GetSubscriptionProductsProductCollectionItemOutput) ToGetSubscriptionPro
 
 func (o GetSubscriptionProductsProductCollectionItemOutput) ToGetSubscriptionProductsProductCollectionItemOutputWithContext(ctx context.Context) GetSubscriptionProductsProductCollectionItemOutput {
 	return o
-}
-
-func (o GetSubscriptionProductsProductCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionProductsProductCollectionItem] {
-	return pulumix.Output[GetSubscriptionProductsProductCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The list of product rewards summaries.
@@ -1727,12 +1444,6 @@ func (o GetSubscriptionProductsProductCollectionItemArrayOutput) ToGetSubscripti
 	return o
 }
 
-func (o GetSubscriptionProductsProductCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionProductsProductCollectionItem] {
-	return pulumix.Output[[]GetSubscriptionProductsProductCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscriptionProductsProductCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSubscriptionProductsProductCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscriptionProductsProductCollectionItem {
 		return vs[0].([]GetSubscriptionProductsProductCollectionItem)[vs[1].(int)]
@@ -1741,15 +1452,15 @@ func (o GetSubscriptionProductsProductCollectionItemArrayOutput) Index(i pulumi.
 
 type GetSubscriptionProductsProductCollectionItemItem struct {
 	// The earned rewards for the product.
-	EarnedRewards float64 `pulumi:"earnedRewards"`
+	EarnedRewards *float64 `pulumi:"earnedRewards"`
 	// The boolean parameter to indicate if the product is eligible to earn rewards.
-	IsEligibleToEarnRewards bool `pulumi:"isEligibleToEarnRewards"`
+	IsEligibleToEarnRewards *bool `pulumi:"isEligibleToEarnRewards"`
 	// The rate card product name.
-	ProductName string `pulumi:"productName"`
+	ProductName *string `pulumi:"productName"`
 	// The rate card product number.
-	ProductNumber string `pulumi:"productNumber"`
+	ProductNumber *string `pulumi:"productNumber"`
 	// The rate card product usage amount.
-	UsageAmount float64 `pulumi:"usageAmount"`
+	UsageAmount *float64 `pulumi:"usageAmount"`
 }
 
 // GetSubscriptionProductsProductCollectionItemItemInput is an input type that accepts GetSubscriptionProductsProductCollectionItemItemArgs and GetSubscriptionProductsProductCollectionItemItemOutput values.
@@ -1765,15 +1476,15 @@ type GetSubscriptionProductsProductCollectionItemItemInput interface {
 
 type GetSubscriptionProductsProductCollectionItemItemArgs struct {
 	// The earned rewards for the product.
-	EarnedRewards pulumi.Float64Input `pulumi:"earnedRewards"`
+	EarnedRewards pulumi.Float64PtrInput `pulumi:"earnedRewards"`
 	// The boolean parameter to indicate if the product is eligible to earn rewards.
-	IsEligibleToEarnRewards pulumi.BoolInput `pulumi:"isEligibleToEarnRewards"`
+	IsEligibleToEarnRewards pulumi.BoolPtrInput `pulumi:"isEligibleToEarnRewards"`
 	// The rate card product name.
-	ProductName pulumi.StringInput `pulumi:"productName"`
+	ProductName pulumi.StringPtrInput `pulumi:"productName"`
 	// The rate card product number.
-	ProductNumber pulumi.StringInput `pulumi:"productNumber"`
+	ProductNumber pulumi.StringPtrInput `pulumi:"productNumber"`
 	// The rate card product usage amount.
-	UsageAmount pulumi.Float64Input `pulumi:"usageAmount"`
+	UsageAmount pulumi.Float64PtrInput `pulumi:"usageAmount"`
 }
 
 func (GetSubscriptionProductsProductCollectionItemItemArgs) ElementType() reflect.Type {
@@ -1786,12 +1497,6 @@ func (i GetSubscriptionProductsProductCollectionItemItemArgs) ToGetSubscriptionP
 
 func (i GetSubscriptionProductsProductCollectionItemItemArgs) ToGetSubscriptionProductsProductCollectionItemItemOutputWithContext(ctx context.Context) GetSubscriptionProductsProductCollectionItemItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionProductsProductCollectionItemItemOutput)
-}
-
-func (i GetSubscriptionProductsProductCollectionItemItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionProductsProductCollectionItemItem] {
-	return pulumix.Output[GetSubscriptionProductsProductCollectionItemItem]{
-		OutputState: i.ToGetSubscriptionProductsProductCollectionItemItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscriptionProductsProductCollectionItemItemArrayInput is an input type that accepts GetSubscriptionProductsProductCollectionItemItemArray and GetSubscriptionProductsProductCollectionItemItemArrayOutput values.
@@ -1819,12 +1524,6 @@ func (i GetSubscriptionProductsProductCollectionItemItemArray) ToGetSubscription
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionProductsProductCollectionItemItemArrayOutput)
 }
 
-func (i GetSubscriptionProductsProductCollectionItemItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionProductsProductCollectionItemItem] {
-	return pulumix.Output[[]GetSubscriptionProductsProductCollectionItemItem]{
-		OutputState: i.ToGetSubscriptionProductsProductCollectionItemItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscriptionProductsProductCollectionItemItemOutput struct{ *pulumi.OutputState }
 
 func (GetSubscriptionProductsProductCollectionItemItemOutput) ElementType() reflect.Type {
@@ -1839,35 +1538,29 @@ func (o GetSubscriptionProductsProductCollectionItemItemOutput) ToGetSubscriptio
 	return o
 }
 
-func (o GetSubscriptionProductsProductCollectionItemItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionProductsProductCollectionItemItem] {
-	return pulumix.Output[GetSubscriptionProductsProductCollectionItemItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The earned rewards for the product.
-func (o GetSubscriptionProductsProductCollectionItemItemOutput) EarnedRewards() pulumi.Float64Output {
-	return o.ApplyT(func(v GetSubscriptionProductsProductCollectionItemItem) float64 { return v.EarnedRewards }).(pulumi.Float64Output)
+func (o GetSubscriptionProductsProductCollectionItemItemOutput) EarnedRewards() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetSubscriptionProductsProductCollectionItemItem) *float64 { return v.EarnedRewards }).(pulumi.Float64PtrOutput)
 }
 
 // The boolean parameter to indicate if the product is eligible to earn rewards.
-func (o GetSubscriptionProductsProductCollectionItemItemOutput) IsEligibleToEarnRewards() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSubscriptionProductsProductCollectionItemItem) bool { return v.IsEligibleToEarnRewards }).(pulumi.BoolOutput)
+func (o GetSubscriptionProductsProductCollectionItemItemOutput) IsEligibleToEarnRewards() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionProductsProductCollectionItemItem) *bool { return v.IsEligibleToEarnRewards }).(pulumi.BoolPtrOutput)
 }
 
 // The rate card product name.
-func (o GetSubscriptionProductsProductCollectionItemItemOutput) ProductName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionProductsProductCollectionItemItem) string { return v.ProductName }).(pulumi.StringOutput)
+func (o GetSubscriptionProductsProductCollectionItemItemOutput) ProductName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionProductsProductCollectionItemItem) *string { return v.ProductName }).(pulumi.StringPtrOutput)
 }
 
 // The rate card product number.
-func (o GetSubscriptionProductsProductCollectionItemItemOutput) ProductNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionProductsProductCollectionItemItem) string { return v.ProductNumber }).(pulumi.StringOutput)
+func (o GetSubscriptionProductsProductCollectionItemItemOutput) ProductNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionProductsProductCollectionItemItem) *string { return v.ProductNumber }).(pulumi.StringPtrOutput)
 }
 
 // The rate card product usage amount.
-func (o GetSubscriptionProductsProductCollectionItemItemOutput) UsageAmount() pulumi.Float64Output {
-	return o.ApplyT(func(v GetSubscriptionProductsProductCollectionItemItem) float64 { return v.UsageAmount }).(pulumi.Float64Output)
+func (o GetSubscriptionProductsProductCollectionItemItemOutput) UsageAmount() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetSubscriptionProductsProductCollectionItemItem) *float64 { return v.UsageAmount }).(pulumi.Float64PtrOutput)
 }
 
 type GetSubscriptionProductsProductCollectionItemItemArrayOutput struct{ *pulumi.OutputState }
@@ -1884,12 +1577,6 @@ func (o GetSubscriptionProductsProductCollectionItemItemArrayOutput) ToGetSubscr
 	return o
 }
 
-func (o GetSubscriptionProductsProductCollectionItemItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionProductsProductCollectionItemItem] {
-	return pulumix.Output[[]GetSubscriptionProductsProductCollectionItemItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscriptionProductsProductCollectionItemItemArrayOutput) Index(i pulumi.IntInput) GetSubscriptionProductsProductCollectionItemItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscriptionProductsProductCollectionItemItem {
 		return vs[0].([]GetSubscriptionProductsProductCollectionItemItem)[vs[1].(int)]
@@ -1898,11 +1585,11 @@ func (o GetSubscriptionProductsProductCollectionItemItemArrayOutput) Index(i pul
 
 type GetSubscriptionRedeemableUserItem struct {
 	// The email ID of the user that can redeem rewards.
-	EmailId string `pulumi:"emailId"`
+	EmailId *string `pulumi:"emailId"`
 	// The first name of the user that can redeem rewards.
-	FirstName string `pulumi:"firstName"`
+	FirstName *string `pulumi:"firstName"`
 	// The last name of the user that can redeem rewards.
-	LastName string `pulumi:"lastName"`
+	LastName *string `pulumi:"lastName"`
 }
 
 // GetSubscriptionRedeemableUserItemInput is an input type that accepts GetSubscriptionRedeemableUserItemArgs and GetSubscriptionRedeemableUserItemOutput values.
@@ -1918,11 +1605,11 @@ type GetSubscriptionRedeemableUserItemInput interface {
 
 type GetSubscriptionRedeemableUserItemArgs struct {
 	// The email ID of the user that can redeem rewards.
-	EmailId pulumi.StringInput `pulumi:"emailId"`
+	EmailId pulumi.StringPtrInput `pulumi:"emailId"`
 	// The first name of the user that can redeem rewards.
-	FirstName pulumi.StringInput `pulumi:"firstName"`
+	FirstName pulumi.StringPtrInput `pulumi:"firstName"`
 	// The last name of the user that can redeem rewards.
-	LastName pulumi.StringInput `pulumi:"lastName"`
+	LastName pulumi.StringPtrInput `pulumi:"lastName"`
 }
 
 func (GetSubscriptionRedeemableUserItemArgs) ElementType() reflect.Type {
@@ -1935,12 +1622,6 @@ func (i GetSubscriptionRedeemableUserItemArgs) ToGetSubscriptionRedeemableUserIt
 
 func (i GetSubscriptionRedeemableUserItemArgs) ToGetSubscriptionRedeemableUserItemOutputWithContext(ctx context.Context) GetSubscriptionRedeemableUserItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionRedeemableUserItemOutput)
-}
-
-func (i GetSubscriptionRedeemableUserItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionRedeemableUserItem] {
-	return pulumix.Output[GetSubscriptionRedeemableUserItem]{
-		OutputState: i.ToGetSubscriptionRedeemableUserItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscriptionRedeemableUserItemArrayInput is an input type that accepts GetSubscriptionRedeemableUserItemArray and GetSubscriptionRedeemableUserItemArrayOutput values.
@@ -1968,12 +1649,6 @@ func (i GetSubscriptionRedeemableUserItemArray) ToGetSubscriptionRedeemableUserI
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionRedeemableUserItemArrayOutput)
 }
 
-func (i GetSubscriptionRedeemableUserItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionRedeemableUserItem] {
-	return pulumix.Output[[]GetSubscriptionRedeemableUserItem]{
-		OutputState: i.ToGetSubscriptionRedeemableUserItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscriptionRedeemableUserItemOutput struct{ *pulumi.OutputState }
 
 func (GetSubscriptionRedeemableUserItemOutput) ElementType() reflect.Type {
@@ -1988,25 +1663,19 @@ func (o GetSubscriptionRedeemableUserItemOutput) ToGetSubscriptionRedeemableUser
 	return o
 }
 
-func (o GetSubscriptionRedeemableUserItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionRedeemableUserItem] {
-	return pulumix.Output[GetSubscriptionRedeemableUserItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The email ID of the user that can redeem rewards.
-func (o GetSubscriptionRedeemableUserItemOutput) EmailId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionRedeemableUserItem) string { return v.EmailId }).(pulumi.StringOutput)
+func (o GetSubscriptionRedeemableUserItemOutput) EmailId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionRedeemableUserItem) *string { return v.EmailId }).(pulumi.StringPtrOutput)
 }
 
 // The first name of the user that can redeem rewards.
-func (o GetSubscriptionRedeemableUserItemOutput) FirstName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionRedeemableUserItem) string { return v.FirstName }).(pulumi.StringOutput)
+func (o GetSubscriptionRedeemableUserItemOutput) FirstName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionRedeemableUserItem) *string { return v.FirstName }).(pulumi.StringPtrOutput)
 }
 
 // The last name of the user that can redeem rewards.
-func (o GetSubscriptionRedeemableUserItemOutput) LastName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionRedeemableUserItem) string { return v.LastName }).(pulumi.StringOutput)
+func (o GetSubscriptionRedeemableUserItemOutput) LastName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionRedeemableUserItem) *string { return v.LastName }).(pulumi.StringPtrOutput)
 }
 
 type GetSubscriptionRedeemableUserItemArrayOutput struct{ *pulumi.OutputState }
@@ -2021,12 +1690,6 @@ func (o GetSubscriptionRedeemableUserItemArrayOutput) ToGetSubscriptionRedeemabl
 
 func (o GetSubscriptionRedeemableUserItemArrayOutput) ToGetSubscriptionRedeemableUserItemArrayOutputWithContext(ctx context.Context) GetSubscriptionRedeemableUserItemArrayOutput {
 	return o
-}
-
-func (o GetSubscriptionRedeemableUserItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionRedeemableUserItem] {
-	return pulumix.Output[[]GetSubscriptionRedeemableUserItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSubscriptionRedeemableUserItemArrayOutput) Index(i pulumi.IntInput) GetSubscriptionRedeemableUserItemOutput {
@@ -2070,12 +1733,6 @@ func (i GetSubscriptionRedeemableUsersFilterArgs) ToGetSubscriptionRedeemableUse
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionRedeemableUsersFilterOutput)
 }
 
-func (i GetSubscriptionRedeemableUsersFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionRedeemableUsersFilter] {
-	return pulumix.Output[GetSubscriptionRedeemableUsersFilter]{
-		OutputState: i.ToGetSubscriptionRedeemableUsersFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetSubscriptionRedeemableUsersFilterArrayInput is an input type that accepts GetSubscriptionRedeemableUsersFilterArray and GetSubscriptionRedeemableUsersFilterArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionRedeemableUsersFilterArrayInput` via:
 //
@@ -2101,12 +1758,6 @@ func (i GetSubscriptionRedeemableUsersFilterArray) ToGetSubscriptionRedeemableUs
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionRedeemableUsersFilterArrayOutput)
 }
 
-func (i GetSubscriptionRedeemableUsersFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionRedeemableUsersFilter] {
-	return pulumix.Output[[]GetSubscriptionRedeemableUsersFilter]{
-		OutputState: i.ToGetSubscriptionRedeemableUsersFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscriptionRedeemableUsersFilterOutput struct{ *pulumi.OutputState }
 
 func (GetSubscriptionRedeemableUsersFilterOutput) ElementType() reflect.Type {
@@ -2119,12 +1770,6 @@ func (o GetSubscriptionRedeemableUsersFilterOutput) ToGetSubscriptionRedeemableU
 
 func (o GetSubscriptionRedeemableUsersFilterOutput) ToGetSubscriptionRedeemableUsersFilterOutputWithContext(ctx context.Context) GetSubscriptionRedeemableUsersFilterOutput {
 	return o
-}
-
-func (o GetSubscriptionRedeemableUsersFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionRedeemableUsersFilter] {
-	return pulumix.Output[GetSubscriptionRedeemableUsersFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSubscriptionRedeemableUsersFilterOutput) Name() pulumi.StringOutput {
@@ -2151,12 +1796,6 @@ func (o GetSubscriptionRedeemableUsersFilterArrayOutput) ToGetSubscriptionRedeem
 
 func (o GetSubscriptionRedeemableUsersFilterArrayOutput) ToGetSubscriptionRedeemableUsersFilterArrayOutputWithContext(ctx context.Context) GetSubscriptionRedeemableUsersFilterArrayOutput {
 	return o
-}
-
-func (o GetSubscriptionRedeemableUsersFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionRedeemableUsersFilter] {
-	return pulumix.Output[[]GetSubscriptionRedeemableUsersFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSubscriptionRedeemableUsersFilterArrayOutput) Index(i pulumi.IntInput) GetSubscriptionRedeemableUsersFilterOutput {
@@ -2198,12 +1837,6 @@ func (i GetSubscriptionRedeemableUsersRedeemableUserCollectionArgs) ToGetSubscri
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionRedeemableUsersRedeemableUserCollectionOutput)
 }
 
-func (i GetSubscriptionRedeemableUsersRedeemableUserCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionRedeemableUsersRedeemableUserCollection] {
-	return pulumix.Output[GetSubscriptionRedeemableUsersRedeemableUserCollection]{
-		OutputState: i.ToGetSubscriptionRedeemableUsersRedeemableUserCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetSubscriptionRedeemableUsersRedeemableUserCollectionArrayInput is an input type that accepts GetSubscriptionRedeemableUsersRedeemableUserCollectionArray and GetSubscriptionRedeemableUsersRedeemableUserCollectionArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionRedeemableUsersRedeemableUserCollectionArrayInput` via:
 //
@@ -2229,12 +1862,6 @@ func (i GetSubscriptionRedeemableUsersRedeemableUserCollectionArray) ToGetSubscr
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionRedeemableUsersRedeemableUserCollectionArrayOutput)
 }
 
-func (i GetSubscriptionRedeemableUsersRedeemableUserCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionRedeemableUsersRedeemableUserCollection] {
-	return pulumix.Output[[]GetSubscriptionRedeemableUsersRedeemableUserCollection]{
-		OutputState: i.ToGetSubscriptionRedeemableUsersRedeemableUserCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscriptionRedeemableUsersRedeemableUserCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetSubscriptionRedeemableUsersRedeemableUserCollectionOutput) ElementType() reflect.Type {
@@ -2247,12 +1874,6 @@ func (o GetSubscriptionRedeemableUsersRedeemableUserCollectionOutput) ToGetSubsc
 
 func (o GetSubscriptionRedeemableUsersRedeemableUserCollectionOutput) ToGetSubscriptionRedeemableUsersRedeemableUserCollectionOutputWithContext(ctx context.Context) GetSubscriptionRedeemableUsersRedeemableUserCollectionOutput {
 	return o
-}
-
-func (o GetSubscriptionRedeemableUsersRedeemableUserCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionRedeemableUsersRedeemableUserCollection] {
-	return pulumix.Output[GetSubscriptionRedeemableUsersRedeemableUserCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The list of user summary that can redeem rewards.
@@ -2276,12 +1897,6 @@ func (o GetSubscriptionRedeemableUsersRedeemableUserCollectionArrayOutput) ToGet
 	return o
 }
 
-func (o GetSubscriptionRedeemableUsersRedeemableUserCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionRedeemableUsersRedeemableUserCollection] {
-	return pulumix.Output[[]GetSubscriptionRedeemableUsersRedeemableUserCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscriptionRedeemableUsersRedeemableUserCollectionArrayOutput) Index(i pulumi.IntInput) GetSubscriptionRedeemableUsersRedeemableUserCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscriptionRedeemableUsersRedeemableUserCollection {
 		return vs[0].([]GetSubscriptionRedeemableUsersRedeemableUserCollection)[vs[1].(int)]
@@ -2294,8 +1909,8 @@ type GetSubscriptionRedeemableUsersRedeemableUserCollectionItem struct {
 	// The subscription ID for which rewards information is requested for.
 	SubscriptionId string `pulumi:"subscriptionId"`
 	// The OCID of the tenancy.
-	TenancyId string `pulumi:"tenancyId"`
-	UserId    string `pulumi:"userId"`
+	TenancyId string  `pulumi:"tenancyId"`
+	UserId    *string `pulumi:"userId"`
 }
 
 // GetSubscriptionRedeemableUsersRedeemableUserCollectionItemInput is an input type that accepts GetSubscriptionRedeemableUsersRedeemableUserCollectionItemArgs and GetSubscriptionRedeemableUsersRedeemableUserCollectionItemOutput values.
@@ -2315,8 +1930,8 @@ type GetSubscriptionRedeemableUsersRedeemableUserCollectionItemArgs struct {
 	// The subscription ID for which rewards information is requested for.
 	SubscriptionId pulumi.StringInput `pulumi:"subscriptionId"`
 	// The OCID of the tenancy.
-	TenancyId pulumi.StringInput `pulumi:"tenancyId"`
-	UserId    pulumi.StringInput `pulumi:"userId"`
+	TenancyId pulumi.StringInput    `pulumi:"tenancyId"`
+	UserId    pulumi.StringPtrInput `pulumi:"userId"`
 }
 
 func (GetSubscriptionRedeemableUsersRedeemableUserCollectionItemArgs) ElementType() reflect.Type {
@@ -2329,12 +1944,6 @@ func (i GetSubscriptionRedeemableUsersRedeemableUserCollectionItemArgs) ToGetSub
 
 func (i GetSubscriptionRedeemableUsersRedeemableUserCollectionItemArgs) ToGetSubscriptionRedeemableUsersRedeemableUserCollectionItemOutputWithContext(ctx context.Context) GetSubscriptionRedeemableUsersRedeemableUserCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionRedeemableUsersRedeemableUserCollectionItemOutput)
-}
-
-func (i GetSubscriptionRedeemableUsersRedeemableUserCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionRedeemableUsersRedeemableUserCollectionItem] {
-	return pulumix.Output[GetSubscriptionRedeemableUsersRedeemableUserCollectionItem]{
-		OutputState: i.ToGetSubscriptionRedeemableUsersRedeemableUserCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscriptionRedeemableUsersRedeemableUserCollectionItemArrayInput is an input type that accepts GetSubscriptionRedeemableUsersRedeemableUserCollectionItemArray and GetSubscriptionRedeemableUsersRedeemableUserCollectionItemArrayOutput values.
@@ -2362,12 +1971,6 @@ func (i GetSubscriptionRedeemableUsersRedeemableUserCollectionItemArray) ToGetSu
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionRedeemableUsersRedeemableUserCollectionItemArrayOutput)
 }
 
-func (i GetSubscriptionRedeemableUsersRedeemableUserCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionRedeemableUsersRedeemableUserCollectionItem] {
-	return pulumix.Output[[]GetSubscriptionRedeemableUsersRedeemableUserCollectionItem]{
-		OutputState: i.ToGetSubscriptionRedeemableUsersRedeemableUserCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscriptionRedeemableUsersRedeemableUserCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetSubscriptionRedeemableUsersRedeemableUserCollectionItemOutput) ElementType() reflect.Type {
@@ -2380,12 +1983,6 @@ func (o GetSubscriptionRedeemableUsersRedeemableUserCollectionItemOutput) ToGetS
 
 func (o GetSubscriptionRedeemableUsersRedeemableUserCollectionItemOutput) ToGetSubscriptionRedeemableUsersRedeemableUserCollectionItemOutputWithContext(ctx context.Context) GetSubscriptionRedeemableUsersRedeemableUserCollectionItemOutput {
 	return o
-}
-
-func (o GetSubscriptionRedeemableUsersRedeemableUserCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionRedeemableUsersRedeemableUserCollectionItem] {
-	return pulumix.Output[GetSubscriptionRedeemableUsersRedeemableUserCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The list of user summary that can redeem rewards.
@@ -2405,8 +2002,8 @@ func (o GetSubscriptionRedeemableUsersRedeemableUserCollectionItemOutput) Tenanc
 	return o.ApplyT(func(v GetSubscriptionRedeemableUsersRedeemableUserCollectionItem) string { return v.TenancyId }).(pulumi.StringOutput)
 }
 
-func (o GetSubscriptionRedeemableUsersRedeemableUserCollectionItemOutput) UserId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionRedeemableUsersRedeemableUserCollectionItem) string { return v.UserId }).(pulumi.StringOutput)
+func (o GetSubscriptionRedeemableUsersRedeemableUserCollectionItemOutput) UserId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionRedeemableUsersRedeemableUserCollectionItem) *string { return v.UserId }).(pulumi.StringPtrOutput)
 }
 
 type GetSubscriptionRedeemableUsersRedeemableUserCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -2423,12 +2020,6 @@ func (o GetSubscriptionRedeemableUsersRedeemableUserCollectionItemArrayOutput) T
 	return o
 }
 
-func (o GetSubscriptionRedeemableUsersRedeemableUserCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionRedeemableUsersRedeemableUserCollectionItem] {
-	return pulumix.Output[[]GetSubscriptionRedeemableUsersRedeemableUserCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscriptionRedeemableUsersRedeemableUserCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSubscriptionRedeemableUsersRedeemableUserCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscriptionRedeemableUsersRedeemableUserCollectionItem {
 		return vs[0].([]GetSubscriptionRedeemableUsersRedeemableUserCollectionItem)[vs[1].(int)]
@@ -2439,9 +2030,9 @@ type GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItem struct {
 	// The email ID of the user that can redeem rewards.
 	EmailId string `pulumi:"emailId"`
 	// The first name of the user that can redeem rewards.
-	FirstName string `pulumi:"firstName"`
+	FirstName *string `pulumi:"firstName"`
 	// The last name of the user that can redeem rewards.
-	LastName string `pulumi:"lastName"`
+	LastName *string `pulumi:"lastName"`
 }
 
 // GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItemInput is an input type that accepts GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItemArgs and GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItemOutput values.
@@ -2459,9 +2050,9 @@ type GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItemArgs struct {
 	// The email ID of the user that can redeem rewards.
 	EmailId pulumi.StringInput `pulumi:"emailId"`
 	// The first name of the user that can redeem rewards.
-	FirstName pulumi.StringInput `pulumi:"firstName"`
+	FirstName pulumi.StringPtrInput `pulumi:"firstName"`
 	// The last name of the user that can redeem rewards.
-	LastName pulumi.StringInput `pulumi:"lastName"`
+	LastName pulumi.StringPtrInput `pulumi:"lastName"`
 }
 
 func (GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItemArgs) ElementType() reflect.Type {
@@ -2474,12 +2065,6 @@ func (i GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItemArgs) ToGe
 
 func (i GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItemArgs) ToGetSubscriptionRedeemableUsersRedeemableUserCollectionItemItemOutputWithContext(ctx context.Context) GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItemOutput)
-}
-
-func (i GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItem] {
-	return pulumix.Output[GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItem]{
-		OutputState: i.ToGetSubscriptionRedeemableUsersRedeemableUserCollectionItemItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItemArrayInput is an input type that accepts GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItemArray and GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItemArrayOutput values.
@@ -2507,12 +2092,6 @@ func (i GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItemArray) ToG
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItemArrayOutput)
 }
 
-func (i GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItem] {
-	return pulumix.Output[[]GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItem]{
-		OutputState: i.ToGetSubscriptionRedeemableUsersRedeemableUserCollectionItemItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItemOutput struct{ *pulumi.OutputState }
 
 func (GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItemOutput) ElementType() reflect.Type {
@@ -2527,25 +2106,19 @@ func (o GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItemOutput) To
 	return o
 }
 
-func (o GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItem] {
-	return pulumix.Output[GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The email ID of the user that can redeem rewards.
 func (o GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItemOutput) EmailId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItem) string { return v.EmailId }).(pulumi.StringOutput)
 }
 
 // The first name of the user that can redeem rewards.
-func (o GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItemOutput) FirstName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItem) string { return v.FirstName }).(pulumi.StringOutput)
+func (o GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItemOutput) FirstName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItem) *string { return v.FirstName }).(pulumi.StringPtrOutput)
 }
 
 // The last name of the user that can redeem rewards.
-func (o GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItemOutput) LastName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItem) string { return v.LastName }).(pulumi.StringOutput)
+func (o GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItemOutput) LastName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItem) *string { return v.LastName }).(pulumi.StringPtrOutput)
 }
 
 type GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItemArrayOutput struct{ *pulumi.OutputState }
@@ -2562,12 +2135,6 @@ func (o GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItemArrayOutpu
 	return o
 }
 
-func (o GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItem] {
-	return pulumix.Output[[]GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItemArrayOutput) Index(i pulumi.IntInput) GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItem {
 		return vs[0].([]GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItem)[vs[1].(int)]
@@ -2576,25 +2143,25 @@ func (o GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItemArrayOutpu
 
 type GetSubscriptionRedemptionItem struct {
 	// It provides the redeemed rewards in base/subscription currency.
-	BaseRewards float64 `pulumi:"baseRewards"`
+	BaseRewards *float64 `pulumi:"baseRewards"`
 	// It provides the fxRate between invoice currency and subscription currency.
-	FxRate float64 `pulumi:"fxRate"`
+	FxRate *float64 `pulumi:"fxRate"`
 	// The currency associated with invoice.
-	InvoiceCurrency string `pulumi:"invoiceCurrency"`
+	InvoiceCurrency *string `pulumi:"invoiceCurrency"`
 	// It provides the invoice number against the redemption.
-	InvoiceNumber string `pulumi:"invoiceNumber"`
+	InvoiceNumber *string `pulumi:"invoiceNumber"`
 	// It provides the invoice total amount of given redemption.
-	InvoiceTotalAmount float64 `pulumi:"invoiceTotalAmount"`
+	InvoiceTotalAmount *float64 `pulumi:"invoiceTotalAmount"`
 	// It provides the redeemed rewards in invoice currency.
-	RedeemedRewards float64 `pulumi:"redeemedRewards"`
+	RedeemedRewards *float64 `pulumi:"redeemedRewards"`
 	// The redemption code used in the Billing Center during the reward redemption process.
-	RedemptionCode string `pulumi:"redemptionCode"`
+	RedemptionCode *string `pulumi:"redemptionCode"`
 	// It provides the redemption email id.
-	RedemptionEmail string `pulumi:"redemptionEmail"`
+	RedemptionEmail *string `pulumi:"redemptionEmail"`
 	// It provides the invoice date.
-	TimeInvoiced string `pulumi:"timeInvoiced"`
+	TimeInvoiced *string `pulumi:"timeInvoiced"`
 	// It provides redeem date.
-	TimeRedeemed string `pulumi:"timeRedeemed"`
+	TimeRedeemed *string `pulumi:"timeRedeemed"`
 }
 
 // GetSubscriptionRedemptionItemInput is an input type that accepts GetSubscriptionRedemptionItemArgs and GetSubscriptionRedemptionItemOutput values.
@@ -2610,25 +2177,25 @@ type GetSubscriptionRedemptionItemInput interface {
 
 type GetSubscriptionRedemptionItemArgs struct {
 	// It provides the redeemed rewards in base/subscription currency.
-	BaseRewards pulumi.Float64Input `pulumi:"baseRewards"`
+	BaseRewards pulumi.Float64PtrInput `pulumi:"baseRewards"`
 	// It provides the fxRate between invoice currency and subscription currency.
-	FxRate pulumi.Float64Input `pulumi:"fxRate"`
+	FxRate pulumi.Float64PtrInput `pulumi:"fxRate"`
 	// The currency associated with invoice.
-	InvoiceCurrency pulumi.StringInput `pulumi:"invoiceCurrency"`
+	InvoiceCurrency pulumi.StringPtrInput `pulumi:"invoiceCurrency"`
 	// It provides the invoice number against the redemption.
-	InvoiceNumber pulumi.StringInput `pulumi:"invoiceNumber"`
+	InvoiceNumber pulumi.StringPtrInput `pulumi:"invoiceNumber"`
 	// It provides the invoice total amount of given redemption.
-	InvoiceTotalAmount pulumi.Float64Input `pulumi:"invoiceTotalAmount"`
+	InvoiceTotalAmount pulumi.Float64PtrInput `pulumi:"invoiceTotalAmount"`
 	// It provides the redeemed rewards in invoice currency.
-	RedeemedRewards pulumi.Float64Input `pulumi:"redeemedRewards"`
+	RedeemedRewards pulumi.Float64PtrInput `pulumi:"redeemedRewards"`
 	// The redemption code used in the Billing Center during the reward redemption process.
-	RedemptionCode pulumi.StringInput `pulumi:"redemptionCode"`
+	RedemptionCode pulumi.StringPtrInput `pulumi:"redemptionCode"`
 	// It provides the redemption email id.
-	RedemptionEmail pulumi.StringInput `pulumi:"redemptionEmail"`
+	RedemptionEmail pulumi.StringPtrInput `pulumi:"redemptionEmail"`
 	// It provides the invoice date.
-	TimeInvoiced pulumi.StringInput `pulumi:"timeInvoiced"`
+	TimeInvoiced pulumi.StringPtrInput `pulumi:"timeInvoiced"`
 	// It provides redeem date.
-	TimeRedeemed pulumi.StringInput `pulumi:"timeRedeemed"`
+	TimeRedeemed pulumi.StringPtrInput `pulumi:"timeRedeemed"`
 }
 
 func (GetSubscriptionRedemptionItemArgs) ElementType() reflect.Type {
@@ -2641,12 +2208,6 @@ func (i GetSubscriptionRedemptionItemArgs) ToGetSubscriptionRedemptionItemOutput
 
 func (i GetSubscriptionRedemptionItemArgs) ToGetSubscriptionRedemptionItemOutputWithContext(ctx context.Context) GetSubscriptionRedemptionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionRedemptionItemOutput)
-}
-
-func (i GetSubscriptionRedemptionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionRedemptionItem] {
-	return pulumix.Output[GetSubscriptionRedemptionItem]{
-		OutputState: i.ToGetSubscriptionRedemptionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscriptionRedemptionItemArrayInput is an input type that accepts GetSubscriptionRedemptionItemArray and GetSubscriptionRedemptionItemArrayOutput values.
@@ -2674,12 +2235,6 @@ func (i GetSubscriptionRedemptionItemArray) ToGetSubscriptionRedemptionItemArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionRedemptionItemArrayOutput)
 }
 
-func (i GetSubscriptionRedemptionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionRedemptionItem] {
-	return pulumix.Output[[]GetSubscriptionRedemptionItem]{
-		OutputState: i.ToGetSubscriptionRedemptionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscriptionRedemptionItemOutput struct{ *pulumi.OutputState }
 
 func (GetSubscriptionRedemptionItemOutput) ElementType() reflect.Type {
@@ -2694,60 +2249,54 @@ func (o GetSubscriptionRedemptionItemOutput) ToGetSubscriptionRedemptionItemOutp
 	return o
 }
 
-func (o GetSubscriptionRedemptionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionRedemptionItem] {
-	return pulumix.Output[GetSubscriptionRedemptionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // It provides the redeemed rewards in base/subscription currency.
-func (o GetSubscriptionRedemptionItemOutput) BaseRewards() pulumi.Float64Output {
-	return o.ApplyT(func(v GetSubscriptionRedemptionItem) float64 { return v.BaseRewards }).(pulumi.Float64Output)
+func (o GetSubscriptionRedemptionItemOutput) BaseRewards() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetSubscriptionRedemptionItem) *float64 { return v.BaseRewards }).(pulumi.Float64PtrOutput)
 }
 
 // It provides the fxRate between invoice currency and subscription currency.
-func (o GetSubscriptionRedemptionItemOutput) FxRate() pulumi.Float64Output {
-	return o.ApplyT(func(v GetSubscriptionRedemptionItem) float64 { return v.FxRate }).(pulumi.Float64Output)
+func (o GetSubscriptionRedemptionItemOutput) FxRate() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetSubscriptionRedemptionItem) *float64 { return v.FxRate }).(pulumi.Float64PtrOutput)
 }
 
 // The currency associated with invoice.
-func (o GetSubscriptionRedemptionItemOutput) InvoiceCurrency() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionRedemptionItem) string { return v.InvoiceCurrency }).(pulumi.StringOutput)
+func (o GetSubscriptionRedemptionItemOutput) InvoiceCurrency() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionRedemptionItem) *string { return v.InvoiceCurrency }).(pulumi.StringPtrOutput)
 }
 
 // It provides the invoice number against the redemption.
-func (o GetSubscriptionRedemptionItemOutput) InvoiceNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionRedemptionItem) string { return v.InvoiceNumber }).(pulumi.StringOutput)
+func (o GetSubscriptionRedemptionItemOutput) InvoiceNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionRedemptionItem) *string { return v.InvoiceNumber }).(pulumi.StringPtrOutput)
 }
 
 // It provides the invoice total amount of given redemption.
-func (o GetSubscriptionRedemptionItemOutput) InvoiceTotalAmount() pulumi.Float64Output {
-	return o.ApplyT(func(v GetSubscriptionRedemptionItem) float64 { return v.InvoiceTotalAmount }).(pulumi.Float64Output)
+func (o GetSubscriptionRedemptionItemOutput) InvoiceTotalAmount() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetSubscriptionRedemptionItem) *float64 { return v.InvoiceTotalAmount }).(pulumi.Float64PtrOutput)
 }
 
 // It provides the redeemed rewards in invoice currency.
-func (o GetSubscriptionRedemptionItemOutput) RedeemedRewards() pulumi.Float64Output {
-	return o.ApplyT(func(v GetSubscriptionRedemptionItem) float64 { return v.RedeemedRewards }).(pulumi.Float64Output)
+func (o GetSubscriptionRedemptionItemOutput) RedeemedRewards() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetSubscriptionRedemptionItem) *float64 { return v.RedeemedRewards }).(pulumi.Float64PtrOutput)
 }
 
 // The redemption code used in the Billing Center during the reward redemption process.
-func (o GetSubscriptionRedemptionItemOutput) RedemptionCode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionRedemptionItem) string { return v.RedemptionCode }).(pulumi.StringOutput)
+func (o GetSubscriptionRedemptionItemOutput) RedemptionCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionRedemptionItem) *string { return v.RedemptionCode }).(pulumi.StringPtrOutput)
 }
 
 // It provides the redemption email id.
-func (o GetSubscriptionRedemptionItemOutput) RedemptionEmail() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionRedemptionItem) string { return v.RedemptionEmail }).(pulumi.StringOutput)
+func (o GetSubscriptionRedemptionItemOutput) RedemptionEmail() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionRedemptionItem) *string { return v.RedemptionEmail }).(pulumi.StringPtrOutput)
 }
 
 // It provides the invoice date.
-func (o GetSubscriptionRedemptionItemOutput) TimeInvoiced() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionRedemptionItem) string { return v.TimeInvoiced }).(pulumi.StringOutput)
+func (o GetSubscriptionRedemptionItemOutput) TimeInvoiced() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionRedemptionItem) *string { return v.TimeInvoiced }).(pulumi.StringPtrOutput)
 }
 
 // It provides redeem date.
-func (o GetSubscriptionRedemptionItemOutput) TimeRedeemed() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionRedemptionItem) string { return v.TimeRedeemed }).(pulumi.StringOutput)
+func (o GetSubscriptionRedemptionItemOutput) TimeRedeemed() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionRedemptionItem) *string { return v.TimeRedeemed }).(pulumi.StringPtrOutput)
 }
 
 type GetSubscriptionRedemptionItemArrayOutput struct{ *pulumi.OutputState }
@@ -2762,12 +2311,6 @@ func (o GetSubscriptionRedemptionItemArrayOutput) ToGetSubscriptionRedemptionIte
 
 func (o GetSubscriptionRedemptionItemArrayOutput) ToGetSubscriptionRedemptionItemArrayOutputWithContext(ctx context.Context) GetSubscriptionRedemptionItemArrayOutput {
 	return o
-}
-
-func (o GetSubscriptionRedemptionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionRedemptionItem] {
-	return pulumix.Output[[]GetSubscriptionRedemptionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSubscriptionRedemptionItemArrayOutput) Index(i pulumi.IntInput) GetSubscriptionRedemptionItemOutput {
@@ -2811,12 +2354,6 @@ func (i GetSubscriptionRedemptionsFilterArgs) ToGetSubscriptionRedemptionsFilter
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionRedemptionsFilterOutput)
 }
 
-func (i GetSubscriptionRedemptionsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionRedemptionsFilter] {
-	return pulumix.Output[GetSubscriptionRedemptionsFilter]{
-		OutputState: i.ToGetSubscriptionRedemptionsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetSubscriptionRedemptionsFilterArrayInput is an input type that accepts GetSubscriptionRedemptionsFilterArray and GetSubscriptionRedemptionsFilterArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionRedemptionsFilterArrayInput` via:
 //
@@ -2842,12 +2379,6 @@ func (i GetSubscriptionRedemptionsFilterArray) ToGetSubscriptionRedemptionsFilte
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionRedemptionsFilterArrayOutput)
 }
 
-func (i GetSubscriptionRedemptionsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionRedemptionsFilter] {
-	return pulumix.Output[[]GetSubscriptionRedemptionsFilter]{
-		OutputState: i.ToGetSubscriptionRedemptionsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscriptionRedemptionsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetSubscriptionRedemptionsFilterOutput) ElementType() reflect.Type {
@@ -2860,12 +2391,6 @@ func (o GetSubscriptionRedemptionsFilterOutput) ToGetSubscriptionRedemptionsFilt
 
 func (o GetSubscriptionRedemptionsFilterOutput) ToGetSubscriptionRedemptionsFilterOutputWithContext(ctx context.Context) GetSubscriptionRedemptionsFilterOutput {
 	return o
-}
-
-func (o GetSubscriptionRedemptionsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionRedemptionsFilter] {
-	return pulumix.Output[GetSubscriptionRedemptionsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSubscriptionRedemptionsFilterOutput) Name() pulumi.StringOutput {
@@ -2892,12 +2417,6 @@ func (o GetSubscriptionRedemptionsFilterArrayOutput) ToGetSubscriptionRedemption
 
 func (o GetSubscriptionRedemptionsFilterArrayOutput) ToGetSubscriptionRedemptionsFilterArrayOutputWithContext(ctx context.Context) GetSubscriptionRedemptionsFilterArrayOutput {
 	return o
-}
-
-func (o GetSubscriptionRedemptionsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionRedemptionsFilter] {
-	return pulumix.Output[[]GetSubscriptionRedemptionsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSubscriptionRedemptionsFilterArrayOutput) Index(i pulumi.IntInput) GetSubscriptionRedemptionsFilterOutput {
@@ -2939,12 +2458,6 @@ func (i GetSubscriptionRedemptionsRedemptionCollectionArgs) ToGetSubscriptionRed
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionRedemptionsRedemptionCollectionOutput)
 }
 
-func (i GetSubscriptionRedemptionsRedemptionCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionRedemptionsRedemptionCollection] {
-	return pulumix.Output[GetSubscriptionRedemptionsRedemptionCollection]{
-		OutputState: i.ToGetSubscriptionRedemptionsRedemptionCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetSubscriptionRedemptionsRedemptionCollectionArrayInput is an input type that accepts GetSubscriptionRedemptionsRedemptionCollectionArray and GetSubscriptionRedemptionsRedemptionCollectionArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionRedemptionsRedemptionCollectionArrayInput` via:
 //
@@ -2970,12 +2483,6 @@ func (i GetSubscriptionRedemptionsRedemptionCollectionArray) ToGetSubscriptionRe
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionRedemptionsRedemptionCollectionArrayOutput)
 }
 
-func (i GetSubscriptionRedemptionsRedemptionCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionRedemptionsRedemptionCollection] {
-	return pulumix.Output[[]GetSubscriptionRedemptionsRedemptionCollection]{
-		OutputState: i.ToGetSubscriptionRedemptionsRedemptionCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscriptionRedemptionsRedemptionCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetSubscriptionRedemptionsRedemptionCollectionOutput) ElementType() reflect.Type {
@@ -2988,12 +2495,6 @@ func (o GetSubscriptionRedemptionsRedemptionCollectionOutput) ToGetSubscriptionR
 
 func (o GetSubscriptionRedemptionsRedemptionCollectionOutput) ToGetSubscriptionRedemptionsRedemptionCollectionOutputWithContext(ctx context.Context) GetSubscriptionRedemptionsRedemptionCollectionOutput {
 	return o
-}
-
-func (o GetSubscriptionRedemptionsRedemptionCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionRedemptionsRedemptionCollection] {
-	return pulumix.Output[GetSubscriptionRedemptionsRedemptionCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The list of redemption summary.
@@ -3015,12 +2516,6 @@ func (o GetSubscriptionRedemptionsRedemptionCollectionArrayOutput) ToGetSubscrip
 
 func (o GetSubscriptionRedemptionsRedemptionCollectionArrayOutput) ToGetSubscriptionRedemptionsRedemptionCollectionArrayOutputWithContext(ctx context.Context) GetSubscriptionRedemptionsRedemptionCollectionArrayOutput {
 	return o
-}
-
-func (o GetSubscriptionRedemptionsRedemptionCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionRedemptionsRedemptionCollection] {
-	return pulumix.Output[[]GetSubscriptionRedemptionsRedemptionCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSubscriptionRedemptionsRedemptionCollectionArrayOutput) Index(i pulumi.IntInput) GetSubscriptionRedemptionsRedemptionCollectionOutput {
@@ -3062,12 +2557,6 @@ func (i GetSubscriptionRedemptionsRedemptionCollectionItemArgs) ToGetSubscriptio
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionRedemptionsRedemptionCollectionItemOutput)
 }
 
-func (i GetSubscriptionRedemptionsRedemptionCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionRedemptionsRedemptionCollectionItem] {
-	return pulumix.Output[GetSubscriptionRedemptionsRedemptionCollectionItem]{
-		OutputState: i.ToGetSubscriptionRedemptionsRedemptionCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetSubscriptionRedemptionsRedemptionCollectionItemArrayInput is an input type that accepts GetSubscriptionRedemptionsRedemptionCollectionItemArray and GetSubscriptionRedemptionsRedemptionCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionRedemptionsRedemptionCollectionItemArrayInput` via:
 //
@@ -3093,12 +2582,6 @@ func (i GetSubscriptionRedemptionsRedemptionCollectionItemArray) ToGetSubscripti
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionRedemptionsRedemptionCollectionItemArrayOutput)
 }
 
-func (i GetSubscriptionRedemptionsRedemptionCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionRedemptionsRedemptionCollectionItem] {
-	return pulumix.Output[[]GetSubscriptionRedemptionsRedemptionCollectionItem]{
-		OutputState: i.ToGetSubscriptionRedemptionsRedemptionCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscriptionRedemptionsRedemptionCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetSubscriptionRedemptionsRedemptionCollectionItemOutput) ElementType() reflect.Type {
@@ -3111,12 +2594,6 @@ func (o GetSubscriptionRedemptionsRedemptionCollectionItemOutput) ToGetSubscript
 
 func (o GetSubscriptionRedemptionsRedemptionCollectionItemOutput) ToGetSubscriptionRedemptionsRedemptionCollectionItemOutputWithContext(ctx context.Context) GetSubscriptionRedemptionsRedemptionCollectionItemOutput {
 	return o
-}
-
-func (o GetSubscriptionRedemptionsRedemptionCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionRedemptionsRedemptionCollectionItem] {
-	return pulumix.Output[GetSubscriptionRedemptionsRedemptionCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The list of redemption summary.
@@ -3140,12 +2617,6 @@ func (o GetSubscriptionRedemptionsRedemptionCollectionItemArrayOutput) ToGetSubs
 	return o
 }
 
-func (o GetSubscriptionRedemptionsRedemptionCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionRedemptionsRedemptionCollectionItem] {
-	return pulumix.Output[[]GetSubscriptionRedemptionsRedemptionCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscriptionRedemptionsRedemptionCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSubscriptionRedemptionsRedemptionCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscriptionRedemptionsRedemptionCollectionItem {
 		return vs[0].([]GetSubscriptionRedemptionsRedemptionCollectionItem)[vs[1].(int)]
@@ -3154,25 +2625,25 @@ func (o GetSubscriptionRedemptionsRedemptionCollectionItemArrayOutput) Index(i p
 
 type GetSubscriptionRedemptionsRedemptionCollectionItemItem struct {
 	// It provides the redeemed rewards in base/subscription currency.
-	BaseRewards float64 `pulumi:"baseRewards"`
+	BaseRewards *float64 `pulumi:"baseRewards"`
 	// It provides the fxRate between invoice currency and subscription currency.
-	FxRate float64 `pulumi:"fxRate"`
+	FxRate *float64 `pulumi:"fxRate"`
 	// The currency associated with invoice.
-	InvoiceCurrency string `pulumi:"invoiceCurrency"`
+	InvoiceCurrency *string `pulumi:"invoiceCurrency"`
 	// It provides the invoice number against the redemption.
-	InvoiceNumber string `pulumi:"invoiceNumber"`
+	InvoiceNumber *string `pulumi:"invoiceNumber"`
 	// It provides the invoice total amount of given redemption.
-	InvoiceTotalAmount float64 `pulumi:"invoiceTotalAmount"`
+	InvoiceTotalAmount *float64 `pulumi:"invoiceTotalAmount"`
 	// It provides the redeemed rewards in invoice currency.
-	RedeemedRewards float64 `pulumi:"redeemedRewards"`
+	RedeemedRewards *float64 `pulumi:"redeemedRewards"`
 	// The redemption code used in the Billing Center during the reward redemption process.
-	RedemptionCode string `pulumi:"redemptionCode"`
+	RedemptionCode *string `pulumi:"redemptionCode"`
 	// It provides the redemption email id.
-	RedemptionEmail string `pulumi:"redemptionEmail"`
+	RedemptionEmail *string `pulumi:"redemptionEmail"`
 	// It provides the invoice date.
-	TimeInvoiced string `pulumi:"timeInvoiced"`
+	TimeInvoiced *string `pulumi:"timeInvoiced"`
 	// It provides redeem date.
-	TimeRedeemed string `pulumi:"timeRedeemed"`
+	TimeRedeemed *string `pulumi:"timeRedeemed"`
 }
 
 // GetSubscriptionRedemptionsRedemptionCollectionItemItemInput is an input type that accepts GetSubscriptionRedemptionsRedemptionCollectionItemItemArgs and GetSubscriptionRedemptionsRedemptionCollectionItemItemOutput values.
@@ -3188,25 +2659,25 @@ type GetSubscriptionRedemptionsRedemptionCollectionItemItemInput interface {
 
 type GetSubscriptionRedemptionsRedemptionCollectionItemItemArgs struct {
 	// It provides the redeemed rewards in base/subscription currency.
-	BaseRewards pulumi.Float64Input `pulumi:"baseRewards"`
+	BaseRewards pulumi.Float64PtrInput `pulumi:"baseRewards"`
 	// It provides the fxRate between invoice currency and subscription currency.
-	FxRate pulumi.Float64Input `pulumi:"fxRate"`
+	FxRate pulumi.Float64PtrInput `pulumi:"fxRate"`
 	// The currency associated with invoice.
-	InvoiceCurrency pulumi.StringInput `pulumi:"invoiceCurrency"`
+	InvoiceCurrency pulumi.StringPtrInput `pulumi:"invoiceCurrency"`
 	// It provides the invoice number against the redemption.
-	InvoiceNumber pulumi.StringInput `pulumi:"invoiceNumber"`
+	InvoiceNumber pulumi.StringPtrInput `pulumi:"invoiceNumber"`
 	// It provides the invoice total amount of given redemption.
-	InvoiceTotalAmount pulumi.Float64Input `pulumi:"invoiceTotalAmount"`
+	InvoiceTotalAmount pulumi.Float64PtrInput `pulumi:"invoiceTotalAmount"`
 	// It provides the redeemed rewards in invoice currency.
-	RedeemedRewards pulumi.Float64Input `pulumi:"redeemedRewards"`
+	RedeemedRewards pulumi.Float64PtrInput `pulumi:"redeemedRewards"`
 	// The redemption code used in the Billing Center during the reward redemption process.
-	RedemptionCode pulumi.StringInput `pulumi:"redemptionCode"`
+	RedemptionCode pulumi.StringPtrInput `pulumi:"redemptionCode"`
 	// It provides the redemption email id.
-	RedemptionEmail pulumi.StringInput `pulumi:"redemptionEmail"`
+	RedemptionEmail pulumi.StringPtrInput `pulumi:"redemptionEmail"`
 	// It provides the invoice date.
-	TimeInvoiced pulumi.StringInput `pulumi:"timeInvoiced"`
+	TimeInvoiced pulumi.StringPtrInput `pulumi:"timeInvoiced"`
 	// It provides redeem date.
-	TimeRedeemed pulumi.StringInput `pulumi:"timeRedeemed"`
+	TimeRedeemed pulumi.StringPtrInput `pulumi:"timeRedeemed"`
 }
 
 func (GetSubscriptionRedemptionsRedemptionCollectionItemItemArgs) ElementType() reflect.Type {
@@ -3219,12 +2690,6 @@ func (i GetSubscriptionRedemptionsRedemptionCollectionItemItemArgs) ToGetSubscri
 
 func (i GetSubscriptionRedemptionsRedemptionCollectionItemItemArgs) ToGetSubscriptionRedemptionsRedemptionCollectionItemItemOutputWithContext(ctx context.Context) GetSubscriptionRedemptionsRedemptionCollectionItemItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionRedemptionsRedemptionCollectionItemItemOutput)
-}
-
-func (i GetSubscriptionRedemptionsRedemptionCollectionItemItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionRedemptionsRedemptionCollectionItemItem] {
-	return pulumix.Output[GetSubscriptionRedemptionsRedemptionCollectionItemItem]{
-		OutputState: i.ToGetSubscriptionRedemptionsRedemptionCollectionItemItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscriptionRedemptionsRedemptionCollectionItemItemArrayInput is an input type that accepts GetSubscriptionRedemptionsRedemptionCollectionItemItemArray and GetSubscriptionRedemptionsRedemptionCollectionItemItemArrayOutput values.
@@ -3252,12 +2717,6 @@ func (i GetSubscriptionRedemptionsRedemptionCollectionItemItemArray) ToGetSubscr
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionRedemptionsRedemptionCollectionItemItemArrayOutput)
 }
 
-func (i GetSubscriptionRedemptionsRedemptionCollectionItemItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionRedemptionsRedemptionCollectionItemItem] {
-	return pulumix.Output[[]GetSubscriptionRedemptionsRedemptionCollectionItemItem]{
-		OutputState: i.ToGetSubscriptionRedemptionsRedemptionCollectionItemItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscriptionRedemptionsRedemptionCollectionItemItemOutput struct{ *pulumi.OutputState }
 
 func (GetSubscriptionRedemptionsRedemptionCollectionItemItemOutput) ElementType() reflect.Type {
@@ -3272,60 +2731,54 @@ func (o GetSubscriptionRedemptionsRedemptionCollectionItemItemOutput) ToGetSubsc
 	return o
 }
 
-func (o GetSubscriptionRedemptionsRedemptionCollectionItemItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionRedemptionsRedemptionCollectionItemItem] {
-	return pulumix.Output[GetSubscriptionRedemptionsRedemptionCollectionItemItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // It provides the redeemed rewards in base/subscription currency.
-func (o GetSubscriptionRedemptionsRedemptionCollectionItemItemOutput) BaseRewards() pulumi.Float64Output {
-	return o.ApplyT(func(v GetSubscriptionRedemptionsRedemptionCollectionItemItem) float64 { return v.BaseRewards }).(pulumi.Float64Output)
+func (o GetSubscriptionRedemptionsRedemptionCollectionItemItemOutput) BaseRewards() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetSubscriptionRedemptionsRedemptionCollectionItemItem) *float64 { return v.BaseRewards }).(pulumi.Float64PtrOutput)
 }
 
 // It provides the fxRate between invoice currency and subscription currency.
-func (o GetSubscriptionRedemptionsRedemptionCollectionItemItemOutput) FxRate() pulumi.Float64Output {
-	return o.ApplyT(func(v GetSubscriptionRedemptionsRedemptionCollectionItemItem) float64 { return v.FxRate }).(pulumi.Float64Output)
+func (o GetSubscriptionRedemptionsRedemptionCollectionItemItemOutput) FxRate() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetSubscriptionRedemptionsRedemptionCollectionItemItem) *float64 { return v.FxRate }).(pulumi.Float64PtrOutput)
 }
 
 // The currency associated with invoice.
-func (o GetSubscriptionRedemptionsRedemptionCollectionItemItemOutput) InvoiceCurrency() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionRedemptionsRedemptionCollectionItemItem) string { return v.InvoiceCurrency }).(pulumi.StringOutput)
+func (o GetSubscriptionRedemptionsRedemptionCollectionItemItemOutput) InvoiceCurrency() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionRedemptionsRedemptionCollectionItemItem) *string { return v.InvoiceCurrency }).(pulumi.StringPtrOutput)
 }
 
 // It provides the invoice number against the redemption.
-func (o GetSubscriptionRedemptionsRedemptionCollectionItemItemOutput) InvoiceNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionRedemptionsRedemptionCollectionItemItem) string { return v.InvoiceNumber }).(pulumi.StringOutput)
+func (o GetSubscriptionRedemptionsRedemptionCollectionItemItemOutput) InvoiceNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionRedemptionsRedemptionCollectionItemItem) *string { return v.InvoiceNumber }).(pulumi.StringPtrOutput)
 }
 
 // It provides the invoice total amount of given redemption.
-func (o GetSubscriptionRedemptionsRedemptionCollectionItemItemOutput) InvoiceTotalAmount() pulumi.Float64Output {
-	return o.ApplyT(func(v GetSubscriptionRedemptionsRedemptionCollectionItemItem) float64 { return v.InvoiceTotalAmount }).(pulumi.Float64Output)
+func (o GetSubscriptionRedemptionsRedemptionCollectionItemItemOutput) InvoiceTotalAmount() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetSubscriptionRedemptionsRedemptionCollectionItemItem) *float64 { return v.InvoiceTotalAmount }).(pulumi.Float64PtrOutput)
 }
 
 // It provides the redeemed rewards in invoice currency.
-func (o GetSubscriptionRedemptionsRedemptionCollectionItemItemOutput) RedeemedRewards() pulumi.Float64Output {
-	return o.ApplyT(func(v GetSubscriptionRedemptionsRedemptionCollectionItemItem) float64 { return v.RedeemedRewards }).(pulumi.Float64Output)
+func (o GetSubscriptionRedemptionsRedemptionCollectionItemItemOutput) RedeemedRewards() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetSubscriptionRedemptionsRedemptionCollectionItemItem) *float64 { return v.RedeemedRewards }).(pulumi.Float64PtrOutput)
 }
 
 // The redemption code used in the Billing Center during the reward redemption process.
-func (o GetSubscriptionRedemptionsRedemptionCollectionItemItemOutput) RedemptionCode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionRedemptionsRedemptionCollectionItemItem) string { return v.RedemptionCode }).(pulumi.StringOutput)
+func (o GetSubscriptionRedemptionsRedemptionCollectionItemItemOutput) RedemptionCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionRedemptionsRedemptionCollectionItemItem) *string { return v.RedemptionCode }).(pulumi.StringPtrOutput)
 }
 
 // It provides the redemption email id.
-func (o GetSubscriptionRedemptionsRedemptionCollectionItemItemOutput) RedemptionEmail() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionRedemptionsRedemptionCollectionItemItem) string { return v.RedemptionEmail }).(pulumi.StringOutput)
+func (o GetSubscriptionRedemptionsRedemptionCollectionItemItemOutput) RedemptionEmail() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionRedemptionsRedemptionCollectionItemItem) *string { return v.RedemptionEmail }).(pulumi.StringPtrOutput)
 }
 
 // It provides the invoice date.
-func (o GetSubscriptionRedemptionsRedemptionCollectionItemItemOutput) TimeInvoiced() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionRedemptionsRedemptionCollectionItemItem) string { return v.TimeInvoiced }).(pulumi.StringOutput)
+func (o GetSubscriptionRedemptionsRedemptionCollectionItemItemOutput) TimeInvoiced() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionRedemptionsRedemptionCollectionItemItem) *string { return v.TimeInvoiced }).(pulumi.StringPtrOutput)
 }
 
 // It provides redeem date.
-func (o GetSubscriptionRedemptionsRedemptionCollectionItemItemOutput) TimeRedeemed() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionRedemptionsRedemptionCollectionItemItem) string { return v.TimeRedeemed }).(pulumi.StringOutput)
+func (o GetSubscriptionRedemptionsRedemptionCollectionItemItemOutput) TimeRedeemed() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionRedemptionsRedemptionCollectionItemItem) *string { return v.TimeRedeemed }).(pulumi.StringPtrOutput)
 }
 
 type GetSubscriptionRedemptionsRedemptionCollectionItemItemArrayOutput struct{ *pulumi.OutputState }
@@ -3342,12 +2795,6 @@ func (o GetSubscriptionRedemptionsRedemptionCollectionItemItemArrayOutput) ToGet
 	return o
 }
 
-func (o GetSubscriptionRedemptionsRedemptionCollectionItemItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionRedemptionsRedemptionCollectionItemItem] {
-	return pulumix.Output[[]GetSubscriptionRedemptionsRedemptionCollectionItemItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscriptionRedemptionsRedemptionCollectionItemItemArrayOutput) Index(i pulumi.IntInput) GetSubscriptionRedemptionsRedemptionCollectionItemItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscriptionRedemptionsRedemptionCollectionItemItem {
 		return vs[0].([]GetSubscriptionRedemptionsRedemptionCollectionItemItem)[vs[1].(int)]
@@ -3356,29 +2803,29 @@ func (o GetSubscriptionRedemptionsRedemptionCollectionItemItemArrayOutput) Index
 
 type GetSubscriptionRewardItem struct {
 	// The number of rewards available for a specific usage period.
-	AvailableRewards float64 `pulumi:"availableRewards"`
+	AvailableRewards *float64 `pulumi:"availableRewards"`
 	// The number of rewards earned for the specific usage period.
-	EarnedRewards float64 `pulumi:"earnedRewards"`
+	EarnedRewards *float64 `pulumi:"earnedRewards"`
 	// The eligible usage amount for the usage period.
-	EligibleUsageAmount float64 `pulumi:"eligibleUsageAmount"`
+	EligibleUsageAmount *float64 `pulumi:"eligibleUsageAmount"`
 	// The ineligible usage amount for the usage period.
-	IneligibleUsageAmount float64 `pulumi:"ineligibleUsageAmount"`
+	IneligibleUsageAmount *float64 `pulumi:"ineligibleUsageAmount"`
 	// The boolean parameter to indicate whether or not the available rewards are manually posted.
-	IsManual bool `pulumi:"isManual"`
+	IsManual *bool `pulumi:"isManual"`
 	// The number of rewards redeemed for a specific month.
-	RedeemedRewards float64 `pulumi:"redeemedRewards"`
+	RedeemedRewards *float64 `pulumi:"redeemedRewards"`
 	// The date and time when rewards accrue.
-	TimeRewardsEarned string `pulumi:"timeRewardsEarned"`
+	TimeRewardsEarned *string `pulumi:"timeRewardsEarned"`
 	// The date and time when rewards expire.
-	TimeRewardsExpired string `pulumi:"timeRewardsExpired"`
+	TimeRewardsExpired *string `pulumi:"timeRewardsExpired"`
 	// The end date and time for the usage period.
-	TimeUsageEnded string `pulumi:"timeUsageEnded"`
+	TimeUsageEnded *string `pulumi:"timeUsageEnded"`
 	// The start date and time for the usage period.
-	TimeUsageStarted string `pulumi:"timeUsageStarted"`
+	TimeUsageStarted *string `pulumi:"timeUsageStarted"`
 	// The usage amount for the usage period.
-	UsageAmount float64 `pulumi:"usageAmount"`
+	UsageAmount *float64 `pulumi:"usageAmount"`
 	// The usage period ID.
-	UsagePeriodKey string `pulumi:"usagePeriodKey"`
+	UsagePeriodKey *string `pulumi:"usagePeriodKey"`
 }
 
 // GetSubscriptionRewardItemInput is an input type that accepts GetSubscriptionRewardItemArgs and GetSubscriptionRewardItemOutput values.
@@ -3394,29 +2841,29 @@ type GetSubscriptionRewardItemInput interface {
 
 type GetSubscriptionRewardItemArgs struct {
 	// The number of rewards available for a specific usage period.
-	AvailableRewards pulumi.Float64Input `pulumi:"availableRewards"`
+	AvailableRewards pulumi.Float64PtrInput `pulumi:"availableRewards"`
 	// The number of rewards earned for the specific usage period.
-	EarnedRewards pulumi.Float64Input `pulumi:"earnedRewards"`
+	EarnedRewards pulumi.Float64PtrInput `pulumi:"earnedRewards"`
 	// The eligible usage amount for the usage period.
-	EligibleUsageAmount pulumi.Float64Input `pulumi:"eligibleUsageAmount"`
+	EligibleUsageAmount pulumi.Float64PtrInput `pulumi:"eligibleUsageAmount"`
 	// The ineligible usage amount for the usage period.
-	IneligibleUsageAmount pulumi.Float64Input `pulumi:"ineligibleUsageAmount"`
+	IneligibleUsageAmount pulumi.Float64PtrInput `pulumi:"ineligibleUsageAmount"`
 	// The boolean parameter to indicate whether or not the available rewards are manually posted.
-	IsManual pulumi.BoolInput `pulumi:"isManual"`
+	IsManual pulumi.BoolPtrInput `pulumi:"isManual"`
 	// The number of rewards redeemed for a specific month.
-	RedeemedRewards pulumi.Float64Input `pulumi:"redeemedRewards"`
+	RedeemedRewards pulumi.Float64PtrInput `pulumi:"redeemedRewards"`
 	// The date and time when rewards accrue.
-	TimeRewardsEarned pulumi.StringInput `pulumi:"timeRewardsEarned"`
+	TimeRewardsEarned pulumi.StringPtrInput `pulumi:"timeRewardsEarned"`
 	// The date and time when rewards expire.
-	TimeRewardsExpired pulumi.StringInput `pulumi:"timeRewardsExpired"`
+	TimeRewardsExpired pulumi.StringPtrInput `pulumi:"timeRewardsExpired"`
 	// The end date and time for the usage period.
-	TimeUsageEnded pulumi.StringInput `pulumi:"timeUsageEnded"`
+	TimeUsageEnded pulumi.StringPtrInput `pulumi:"timeUsageEnded"`
 	// The start date and time for the usage period.
-	TimeUsageStarted pulumi.StringInput `pulumi:"timeUsageStarted"`
+	TimeUsageStarted pulumi.StringPtrInput `pulumi:"timeUsageStarted"`
 	// The usage amount for the usage period.
-	UsageAmount pulumi.Float64Input `pulumi:"usageAmount"`
+	UsageAmount pulumi.Float64PtrInput `pulumi:"usageAmount"`
 	// The usage period ID.
-	UsagePeriodKey pulumi.StringInput `pulumi:"usagePeriodKey"`
+	UsagePeriodKey pulumi.StringPtrInput `pulumi:"usagePeriodKey"`
 }
 
 func (GetSubscriptionRewardItemArgs) ElementType() reflect.Type {
@@ -3429,12 +2876,6 @@ func (i GetSubscriptionRewardItemArgs) ToGetSubscriptionRewardItemOutput() GetSu
 
 func (i GetSubscriptionRewardItemArgs) ToGetSubscriptionRewardItemOutputWithContext(ctx context.Context) GetSubscriptionRewardItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionRewardItemOutput)
-}
-
-func (i GetSubscriptionRewardItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionRewardItem] {
-	return pulumix.Output[GetSubscriptionRewardItem]{
-		OutputState: i.ToGetSubscriptionRewardItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscriptionRewardItemArrayInput is an input type that accepts GetSubscriptionRewardItemArray and GetSubscriptionRewardItemArrayOutput values.
@@ -3462,12 +2903,6 @@ func (i GetSubscriptionRewardItemArray) ToGetSubscriptionRewardItemArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionRewardItemArrayOutput)
 }
 
-func (i GetSubscriptionRewardItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionRewardItem] {
-	return pulumix.Output[[]GetSubscriptionRewardItem]{
-		OutputState: i.ToGetSubscriptionRewardItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscriptionRewardItemOutput struct{ *pulumi.OutputState }
 
 func (GetSubscriptionRewardItemOutput) ElementType() reflect.Type {
@@ -3482,70 +2917,64 @@ func (o GetSubscriptionRewardItemOutput) ToGetSubscriptionRewardItemOutputWithCo
 	return o
 }
 
-func (o GetSubscriptionRewardItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionRewardItem] {
-	return pulumix.Output[GetSubscriptionRewardItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The number of rewards available for a specific usage period.
-func (o GetSubscriptionRewardItemOutput) AvailableRewards() pulumi.Float64Output {
-	return o.ApplyT(func(v GetSubscriptionRewardItem) float64 { return v.AvailableRewards }).(pulumi.Float64Output)
+func (o GetSubscriptionRewardItemOutput) AvailableRewards() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetSubscriptionRewardItem) *float64 { return v.AvailableRewards }).(pulumi.Float64PtrOutput)
 }
 
 // The number of rewards earned for the specific usage period.
-func (o GetSubscriptionRewardItemOutput) EarnedRewards() pulumi.Float64Output {
-	return o.ApplyT(func(v GetSubscriptionRewardItem) float64 { return v.EarnedRewards }).(pulumi.Float64Output)
+func (o GetSubscriptionRewardItemOutput) EarnedRewards() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetSubscriptionRewardItem) *float64 { return v.EarnedRewards }).(pulumi.Float64PtrOutput)
 }
 
 // The eligible usage amount for the usage period.
-func (o GetSubscriptionRewardItemOutput) EligibleUsageAmount() pulumi.Float64Output {
-	return o.ApplyT(func(v GetSubscriptionRewardItem) float64 { return v.EligibleUsageAmount }).(pulumi.Float64Output)
+func (o GetSubscriptionRewardItemOutput) EligibleUsageAmount() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetSubscriptionRewardItem) *float64 { return v.EligibleUsageAmount }).(pulumi.Float64PtrOutput)
 }
 
 // The ineligible usage amount for the usage period.
-func (o GetSubscriptionRewardItemOutput) IneligibleUsageAmount() pulumi.Float64Output {
-	return o.ApplyT(func(v GetSubscriptionRewardItem) float64 { return v.IneligibleUsageAmount }).(pulumi.Float64Output)
+func (o GetSubscriptionRewardItemOutput) IneligibleUsageAmount() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetSubscriptionRewardItem) *float64 { return v.IneligibleUsageAmount }).(pulumi.Float64PtrOutput)
 }
 
 // The boolean parameter to indicate whether or not the available rewards are manually posted.
-func (o GetSubscriptionRewardItemOutput) IsManual() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSubscriptionRewardItem) bool { return v.IsManual }).(pulumi.BoolOutput)
+func (o GetSubscriptionRewardItemOutput) IsManual() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionRewardItem) *bool { return v.IsManual }).(pulumi.BoolPtrOutput)
 }
 
 // The number of rewards redeemed for a specific month.
-func (o GetSubscriptionRewardItemOutput) RedeemedRewards() pulumi.Float64Output {
-	return o.ApplyT(func(v GetSubscriptionRewardItem) float64 { return v.RedeemedRewards }).(pulumi.Float64Output)
+func (o GetSubscriptionRewardItemOutput) RedeemedRewards() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetSubscriptionRewardItem) *float64 { return v.RedeemedRewards }).(pulumi.Float64PtrOutput)
 }
 
 // The date and time when rewards accrue.
-func (o GetSubscriptionRewardItemOutput) TimeRewardsEarned() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionRewardItem) string { return v.TimeRewardsEarned }).(pulumi.StringOutput)
+func (o GetSubscriptionRewardItemOutput) TimeRewardsEarned() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionRewardItem) *string { return v.TimeRewardsEarned }).(pulumi.StringPtrOutput)
 }
 
 // The date and time when rewards expire.
-func (o GetSubscriptionRewardItemOutput) TimeRewardsExpired() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionRewardItem) string { return v.TimeRewardsExpired }).(pulumi.StringOutput)
+func (o GetSubscriptionRewardItemOutput) TimeRewardsExpired() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionRewardItem) *string { return v.TimeRewardsExpired }).(pulumi.StringPtrOutput)
 }
 
 // The end date and time for the usage period.
-func (o GetSubscriptionRewardItemOutput) TimeUsageEnded() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionRewardItem) string { return v.TimeUsageEnded }).(pulumi.StringOutput)
+func (o GetSubscriptionRewardItemOutput) TimeUsageEnded() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionRewardItem) *string { return v.TimeUsageEnded }).(pulumi.StringPtrOutput)
 }
 
 // The start date and time for the usage period.
-func (o GetSubscriptionRewardItemOutput) TimeUsageStarted() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionRewardItem) string { return v.TimeUsageStarted }).(pulumi.StringOutput)
+func (o GetSubscriptionRewardItemOutput) TimeUsageStarted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionRewardItem) *string { return v.TimeUsageStarted }).(pulumi.StringPtrOutput)
 }
 
 // The usage amount for the usage period.
-func (o GetSubscriptionRewardItemOutput) UsageAmount() pulumi.Float64Output {
-	return o.ApplyT(func(v GetSubscriptionRewardItem) float64 { return v.UsageAmount }).(pulumi.Float64Output)
+func (o GetSubscriptionRewardItemOutput) UsageAmount() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetSubscriptionRewardItem) *float64 { return v.UsageAmount }).(pulumi.Float64PtrOutput)
 }
 
 // The usage period ID.
-func (o GetSubscriptionRewardItemOutput) UsagePeriodKey() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionRewardItem) string { return v.UsagePeriodKey }).(pulumi.StringOutput)
+func (o GetSubscriptionRewardItemOutput) UsagePeriodKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionRewardItem) *string { return v.UsagePeriodKey }).(pulumi.StringPtrOutput)
 }
 
 type GetSubscriptionRewardItemArrayOutput struct{ *pulumi.OutputState }
@@ -3562,12 +2991,6 @@ func (o GetSubscriptionRewardItemArrayOutput) ToGetSubscriptionRewardItemArrayOu
 	return o
 }
 
-func (o GetSubscriptionRewardItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionRewardItem] {
-	return pulumix.Output[[]GetSubscriptionRewardItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscriptionRewardItemArrayOutput) Index(i pulumi.IntInput) GetSubscriptionRewardItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscriptionRewardItem {
 		return vs[0].([]GetSubscriptionRewardItem)[vs[1].(int)]
@@ -3576,17 +2999,17 @@ func (o GetSubscriptionRewardItemArrayOutput) Index(i pulumi.IntInput) GetSubscr
 
 type GetSubscriptionRewardSummary struct {
 	// The currency unit for the reward amount.
-	Currency string `pulumi:"currency"`
+	Currency *string `pulumi:"currency"`
 	// The redemption code used in the Billing Center during the reward redemption process.
-	RedemptionCode string `pulumi:"redemptionCode"`
+	RedemptionCode *string `pulumi:"redemptionCode"`
 	// The current Rewards percentage in decimal format.
-	RewardsRate float64 `pulumi:"rewardsRate"`
+	RewardsRate *float64 `pulumi:"rewardsRate"`
 	// The subscription ID for which rewards information is requested for.
-	SubscriptionId string `pulumi:"subscriptionId"`
+	SubscriptionId *string `pulumi:"subscriptionId"`
 	// The OCID of the tenancy.
-	TenancyId string `pulumi:"tenancyId"`
+	TenancyId *string `pulumi:"tenancyId"`
 	// The total number of available rewards for a given subscription ID.
-	TotalRewardsAvailable float64 `pulumi:"totalRewardsAvailable"`
+	TotalRewardsAvailable *float64 `pulumi:"totalRewardsAvailable"`
 }
 
 // GetSubscriptionRewardSummaryInput is an input type that accepts GetSubscriptionRewardSummaryArgs and GetSubscriptionRewardSummaryOutput values.
@@ -3602,17 +3025,17 @@ type GetSubscriptionRewardSummaryInput interface {
 
 type GetSubscriptionRewardSummaryArgs struct {
 	// The currency unit for the reward amount.
-	Currency pulumi.StringInput `pulumi:"currency"`
+	Currency pulumi.StringPtrInput `pulumi:"currency"`
 	// The redemption code used in the Billing Center during the reward redemption process.
-	RedemptionCode pulumi.StringInput `pulumi:"redemptionCode"`
+	RedemptionCode pulumi.StringPtrInput `pulumi:"redemptionCode"`
 	// The current Rewards percentage in decimal format.
-	RewardsRate pulumi.Float64Input `pulumi:"rewardsRate"`
+	RewardsRate pulumi.Float64PtrInput `pulumi:"rewardsRate"`
 	// The subscription ID for which rewards information is requested for.
-	SubscriptionId pulumi.StringInput `pulumi:"subscriptionId"`
+	SubscriptionId pulumi.StringPtrInput `pulumi:"subscriptionId"`
 	// The OCID of the tenancy.
-	TenancyId pulumi.StringInput `pulumi:"tenancyId"`
+	TenancyId pulumi.StringPtrInput `pulumi:"tenancyId"`
 	// The total number of available rewards for a given subscription ID.
-	TotalRewardsAvailable pulumi.Float64Input `pulumi:"totalRewardsAvailable"`
+	TotalRewardsAvailable pulumi.Float64PtrInput `pulumi:"totalRewardsAvailable"`
 }
 
 func (GetSubscriptionRewardSummaryArgs) ElementType() reflect.Type {
@@ -3625,12 +3048,6 @@ func (i GetSubscriptionRewardSummaryArgs) ToGetSubscriptionRewardSummaryOutput()
 
 func (i GetSubscriptionRewardSummaryArgs) ToGetSubscriptionRewardSummaryOutputWithContext(ctx context.Context) GetSubscriptionRewardSummaryOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionRewardSummaryOutput)
-}
-
-func (i GetSubscriptionRewardSummaryArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionRewardSummary] {
-	return pulumix.Output[GetSubscriptionRewardSummary]{
-		OutputState: i.ToGetSubscriptionRewardSummaryOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscriptionRewardSummaryArrayInput is an input type that accepts GetSubscriptionRewardSummaryArray and GetSubscriptionRewardSummaryArrayOutput values.
@@ -3658,12 +3075,6 @@ func (i GetSubscriptionRewardSummaryArray) ToGetSubscriptionRewardSummaryArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionRewardSummaryArrayOutput)
 }
 
-func (i GetSubscriptionRewardSummaryArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionRewardSummary] {
-	return pulumix.Output[[]GetSubscriptionRewardSummary]{
-		OutputState: i.ToGetSubscriptionRewardSummaryArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscriptionRewardSummaryOutput struct{ *pulumi.OutputState }
 
 func (GetSubscriptionRewardSummaryOutput) ElementType() reflect.Type {
@@ -3678,40 +3089,34 @@ func (o GetSubscriptionRewardSummaryOutput) ToGetSubscriptionRewardSummaryOutput
 	return o
 }
 
-func (o GetSubscriptionRewardSummaryOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionRewardSummary] {
-	return pulumix.Output[GetSubscriptionRewardSummary]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The currency unit for the reward amount.
-func (o GetSubscriptionRewardSummaryOutput) Currency() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionRewardSummary) string { return v.Currency }).(pulumi.StringOutput)
+func (o GetSubscriptionRewardSummaryOutput) Currency() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionRewardSummary) *string { return v.Currency }).(pulumi.StringPtrOutput)
 }
 
 // The redemption code used in the Billing Center during the reward redemption process.
-func (o GetSubscriptionRewardSummaryOutput) RedemptionCode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionRewardSummary) string { return v.RedemptionCode }).(pulumi.StringOutput)
+func (o GetSubscriptionRewardSummaryOutput) RedemptionCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionRewardSummary) *string { return v.RedemptionCode }).(pulumi.StringPtrOutput)
 }
 
 // The current Rewards percentage in decimal format.
-func (o GetSubscriptionRewardSummaryOutput) RewardsRate() pulumi.Float64Output {
-	return o.ApplyT(func(v GetSubscriptionRewardSummary) float64 { return v.RewardsRate }).(pulumi.Float64Output)
+func (o GetSubscriptionRewardSummaryOutput) RewardsRate() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetSubscriptionRewardSummary) *float64 { return v.RewardsRate }).(pulumi.Float64PtrOutput)
 }
 
 // The subscription ID for which rewards information is requested for.
-func (o GetSubscriptionRewardSummaryOutput) SubscriptionId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionRewardSummary) string { return v.SubscriptionId }).(pulumi.StringOutput)
+func (o GetSubscriptionRewardSummaryOutput) SubscriptionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionRewardSummary) *string { return v.SubscriptionId }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the tenancy.
-func (o GetSubscriptionRewardSummaryOutput) TenancyId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionRewardSummary) string { return v.TenancyId }).(pulumi.StringOutput)
+func (o GetSubscriptionRewardSummaryOutput) TenancyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionRewardSummary) *string { return v.TenancyId }).(pulumi.StringPtrOutput)
 }
 
 // The total number of available rewards for a given subscription ID.
-func (o GetSubscriptionRewardSummaryOutput) TotalRewardsAvailable() pulumi.Float64Output {
-	return o.ApplyT(func(v GetSubscriptionRewardSummary) float64 { return v.TotalRewardsAvailable }).(pulumi.Float64Output)
+func (o GetSubscriptionRewardSummaryOutput) TotalRewardsAvailable() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetSubscriptionRewardSummary) *float64 { return v.TotalRewardsAvailable }).(pulumi.Float64PtrOutput)
 }
 
 type GetSubscriptionRewardSummaryArrayOutput struct{ *pulumi.OutputState }
@@ -3726,12 +3131,6 @@ func (o GetSubscriptionRewardSummaryArrayOutput) ToGetSubscriptionRewardSummaryA
 
 func (o GetSubscriptionRewardSummaryArrayOutput) ToGetSubscriptionRewardSummaryArrayOutputWithContext(ctx context.Context) GetSubscriptionRewardSummaryArrayOutput {
 	return o
-}
-
-func (o GetSubscriptionRewardSummaryArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionRewardSummary] {
-	return pulumix.Output[[]GetSubscriptionRewardSummary]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSubscriptionRewardSummaryArrayOutput) Index(i pulumi.IntInput) GetSubscriptionRewardSummaryOutput {
@@ -3775,12 +3174,6 @@ func (i GetSubscriptionRewardsFilterArgs) ToGetSubscriptionRewardsFilterOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionRewardsFilterOutput)
 }
 
-func (i GetSubscriptionRewardsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionRewardsFilter] {
-	return pulumix.Output[GetSubscriptionRewardsFilter]{
-		OutputState: i.ToGetSubscriptionRewardsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetSubscriptionRewardsFilterArrayInput is an input type that accepts GetSubscriptionRewardsFilterArray and GetSubscriptionRewardsFilterArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionRewardsFilterArrayInput` via:
 //
@@ -3806,12 +3199,6 @@ func (i GetSubscriptionRewardsFilterArray) ToGetSubscriptionRewardsFilterArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionRewardsFilterArrayOutput)
 }
 
-func (i GetSubscriptionRewardsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionRewardsFilter] {
-	return pulumix.Output[[]GetSubscriptionRewardsFilter]{
-		OutputState: i.ToGetSubscriptionRewardsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscriptionRewardsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetSubscriptionRewardsFilterOutput) ElementType() reflect.Type {
@@ -3824,12 +3211,6 @@ func (o GetSubscriptionRewardsFilterOutput) ToGetSubscriptionRewardsFilterOutput
 
 func (o GetSubscriptionRewardsFilterOutput) ToGetSubscriptionRewardsFilterOutputWithContext(ctx context.Context) GetSubscriptionRewardsFilterOutput {
 	return o
-}
-
-func (o GetSubscriptionRewardsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionRewardsFilter] {
-	return pulumix.Output[GetSubscriptionRewardsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSubscriptionRewardsFilterOutput) Name() pulumi.StringOutput {
@@ -3856,12 +3237,6 @@ func (o GetSubscriptionRewardsFilterArrayOutput) ToGetSubscriptionRewardsFilterA
 
 func (o GetSubscriptionRewardsFilterArrayOutput) ToGetSubscriptionRewardsFilterArrayOutputWithContext(ctx context.Context) GetSubscriptionRewardsFilterArrayOutput {
 	return o
-}
-
-func (o GetSubscriptionRewardsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionRewardsFilter] {
-	return pulumix.Output[[]GetSubscriptionRewardsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSubscriptionRewardsFilterArrayOutput) Index(i pulumi.IntInput) GetSubscriptionRewardsFilterOutput {
@@ -3903,12 +3278,6 @@ func (i GetSubscriptionRewardsRewardCollectionArgs) ToGetSubscriptionRewardsRewa
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionRewardsRewardCollectionOutput)
 }
 
-func (i GetSubscriptionRewardsRewardCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionRewardsRewardCollection] {
-	return pulumix.Output[GetSubscriptionRewardsRewardCollection]{
-		OutputState: i.ToGetSubscriptionRewardsRewardCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetSubscriptionRewardsRewardCollectionArrayInput is an input type that accepts GetSubscriptionRewardsRewardCollectionArray and GetSubscriptionRewardsRewardCollectionArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionRewardsRewardCollectionArrayInput` via:
 //
@@ -3934,12 +3303,6 @@ func (i GetSubscriptionRewardsRewardCollectionArray) ToGetSubscriptionRewardsRew
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionRewardsRewardCollectionArrayOutput)
 }
 
-func (i GetSubscriptionRewardsRewardCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionRewardsRewardCollection] {
-	return pulumix.Output[[]GetSubscriptionRewardsRewardCollection]{
-		OutputState: i.ToGetSubscriptionRewardsRewardCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscriptionRewardsRewardCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetSubscriptionRewardsRewardCollectionOutput) ElementType() reflect.Type {
@@ -3952,12 +3315,6 @@ func (o GetSubscriptionRewardsRewardCollectionOutput) ToGetSubscriptionRewardsRe
 
 func (o GetSubscriptionRewardsRewardCollectionOutput) ToGetSubscriptionRewardsRewardCollectionOutputWithContext(ctx context.Context) GetSubscriptionRewardsRewardCollectionOutput {
 	return o
-}
-
-func (o GetSubscriptionRewardsRewardCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionRewardsRewardCollection] {
-	return pulumix.Output[GetSubscriptionRewardsRewardCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The monthly summary of rewards.
@@ -3979,12 +3336,6 @@ func (o GetSubscriptionRewardsRewardCollectionArrayOutput) ToGetSubscriptionRewa
 
 func (o GetSubscriptionRewardsRewardCollectionArrayOutput) ToGetSubscriptionRewardsRewardCollectionArrayOutputWithContext(ctx context.Context) GetSubscriptionRewardsRewardCollectionArrayOutput {
 	return o
-}
-
-func (o GetSubscriptionRewardsRewardCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionRewardsRewardCollection] {
-	return pulumix.Output[[]GetSubscriptionRewardsRewardCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSubscriptionRewardsRewardCollectionArrayOutput) Index(i pulumi.IntInput) GetSubscriptionRewardsRewardCollectionOutput {
@@ -4030,12 +3381,6 @@ func (i GetSubscriptionRewardsRewardCollectionItemArgs) ToGetSubscriptionRewards
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionRewardsRewardCollectionItemOutput)
 }
 
-func (i GetSubscriptionRewardsRewardCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionRewardsRewardCollectionItem] {
-	return pulumix.Output[GetSubscriptionRewardsRewardCollectionItem]{
-		OutputState: i.ToGetSubscriptionRewardsRewardCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetSubscriptionRewardsRewardCollectionItemArrayInput is an input type that accepts GetSubscriptionRewardsRewardCollectionItemArray and GetSubscriptionRewardsRewardCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionRewardsRewardCollectionItemArrayInput` via:
 //
@@ -4061,12 +3406,6 @@ func (i GetSubscriptionRewardsRewardCollectionItemArray) ToGetSubscriptionReward
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionRewardsRewardCollectionItemArrayOutput)
 }
 
-func (i GetSubscriptionRewardsRewardCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionRewardsRewardCollectionItem] {
-	return pulumix.Output[[]GetSubscriptionRewardsRewardCollectionItem]{
-		OutputState: i.ToGetSubscriptionRewardsRewardCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscriptionRewardsRewardCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetSubscriptionRewardsRewardCollectionItemOutput) ElementType() reflect.Type {
@@ -4079,12 +3418,6 @@ func (o GetSubscriptionRewardsRewardCollectionItemOutput) ToGetSubscriptionRewar
 
 func (o GetSubscriptionRewardsRewardCollectionItemOutput) ToGetSubscriptionRewardsRewardCollectionItemOutputWithContext(ctx context.Context) GetSubscriptionRewardsRewardCollectionItemOutput {
 	return o
-}
-
-func (o GetSubscriptionRewardsRewardCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionRewardsRewardCollectionItem] {
-	return pulumix.Output[GetSubscriptionRewardsRewardCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The monthly summary of rewards.
@@ -4115,12 +3448,6 @@ func (o GetSubscriptionRewardsRewardCollectionItemArrayOutput) ToGetSubscription
 	return o
 }
 
-func (o GetSubscriptionRewardsRewardCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionRewardsRewardCollectionItem] {
-	return pulumix.Output[[]GetSubscriptionRewardsRewardCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscriptionRewardsRewardCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSubscriptionRewardsRewardCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscriptionRewardsRewardCollectionItem {
 		return vs[0].([]GetSubscriptionRewardsRewardCollectionItem)[vs[1].(int)]
@@ -4129,29 +3456,29 @@ func (o GetSubscriptionRewardsRewardCollectionItemArrayOutput) Index(i pulumi.In
 
 type GetSubscriptionRewardsRewardCollectionItemItem struct {
 	// The number of rewards available for a specific usage period.
-	AvailableRewards float64 `pulumi:"availableRewards"`
+	AvailableRewards *float64 `pulumi:"availableRewards"`
 	// The number of rewards earned for the specific usage period.
-	EarnedRewards float64 `pulumi:"earnedRewards"`
+	EarnedRewards *float64 `pulumi:"earnedRewards"`
 	// The eligible usage amount for the usage period.
-	EligibleUsageAmount float64 `pulumi:"eligibleUsageAmount"`
+	EligibleUsageAmount *float64 `pulumi:"eligibleUsageAmount"`
 	// The ineligible usage amount for the usage period.
-	IneligibleUsageAmount float64 `pulumi:"ineligibleUsageAmount"`
+	IneligibleUsageAmount *float64 `pulumi:"ineligibleUsageAmount"`
 	// The boolean parameter to indicate whether or not the available rewards are manually posted.
-	IsManual bool `pulumi:"isManual"`
+	IsManual *bool `pulumi:"isManual"`
 	// The number of rewards redeemed for a specific month.
-	RedeemedRewards float64 `pulumi:"redeemedRewards"`
+	RedeemedRewards *float64 `pulumi:"redeemedRewards"`
 	// The date and time when rewards accrue.
-	TimeRewardsEarned string `pulumi:"timeRewardsEarned"`
+	TimeRewardsEarned *string `pulumi:"timeRewardsEarned"`
 	// The date and time when rewards expire.
-	TimeRewardsExpired string `pulumi:"timeRewardsExpired"`
+	TimeRewardsExpired *string `pulumi:"timeRewardsExpired"`
 	// The end date and time for the usage period.
-	TimeUsageEnded string `pulumi:"timeUsageEnded"`
+	TimeUsageEnded *string `pulumi:"timeUsageEnded"`
 	// The start date and time for the usage period.
-	TimeUsageStarted string `pulumi:"timeUsageStarted"`
+	TimeUsageStarted *string `pulumi:"timeUsageStarted"`
 	// The usage amount for the usage period.
-	UsageAmount float64 `pulumi:"usageAmount"`
+	UsageAmount *float64 `pulumi:"usageAmount"`
 	// The usage period ID.
-	UsagePeriodKey string `pulumi:"usagePeriodKey"`
+	UsagePeriodKey *string `pulumi:"usagePeriodKey"`
 }
 
 // GetSubscriptionRewardsRewardCollectionItemItemInput is an input type that accepts GetSubscriptionRewardsRewardCollectionItemItemArgs and GetSubscriptionRewardsRewardCollectionItemItemOutput values.
@@ -4167,29 +3494,29 @@ type GetSubscriptionRewardsRewardCollectionItemItemInput interface {
 
 type GetSubscriptionRewardsRewardCollectionItemItemArgs struct {
 	// The number of rewards available for a specific usage period.
-	AvailableRewards pulumi.Float64Input `pulumi:"availableRewards"`
+	AvailableRewards pulumi.Float64PtrInput `pulumi:"availableRewards"`
 	// The number of rewards earned for the specific usage period.
-	EarnedRewards pulumi.Float64Input `pulumi:"earnedRewards"`
+	EarnedRewards pulumi.Float64PtrInput `pulumi:"earnedRewards"`
 	// The eligible usage amount for the usage period.
-	EligibleUsageAmount pulumi.Float64Input `pulumi:"eligibleUsageAmount"`
+	EligibleUsageAmount pulumi.Float64PtrInput `pulumi:"eligibleUsageAmount"`
 	// The ineligible usage amount for the usage period.
-	IneligibleUsageAmount pulumi.Float64Input `pulumi:"ineligibleUsageAmount"`
+	IneligibleUsageAmount pulumi.Float64PtrInput `pulumi:"ineligibleUsageAmount"`
 	// The boolean parameter to indicate whether or not the available rewards are manually posted.
-	IsManual pulumi.BoolInput `pulumi:"isManual"`
+	IsManual pulumi.BoolPtrInput `pulumi:"isManual"`
 	// The number of rewards redeemed for a specific month.
-	RedeemedRewards pulumi.Float64Input `pulumi:"redeemedRewards"`
+	RedeemedRewards pulumi.Float64PtrInput `pulumi:"redeemedRewards"`
 	// The date and time when rewards accrue.
-	TimeRewardsEarned pulumi.StringInput `pulumi:"timeRewardsEarned"`
+	TimeRewardsEarned pulumi.StringPtrInput `pulumi:"timeRewardsEarned"`
 	// The date and time when rewards expire.
-	TimeRewardsExpired pulumi.StringInput `pulumi:"timeRewardsExpired"`
+	TimeRewardsExpired pulumi.StringPtrInput `pulumi:"timeRewardsExpired"`
 	// The end date and time for the usage period.
-	TimeUsageEnded pulumi.StringInput `pulumi:"timeUsageEnded"`
+	TimeUsageEnded pulumi.StringPtrInput `pulumi:"timeUsageEnded"`
 	// The start date and time for the usage period.
-	TimeUsageStarted pulumi.StringInput `pulumi:"timeUsageStarted"`
+	TimeUsageStarted pulumi.StringPtrInput `pulumi:"timeUsageStarted"`
 	// The usage amount for the usage period.
-	UsageAmount pulumi.Float64Input `pulumi:"usageAmount"`
+	UsageAmount pulumi.Float64PtrInput `pulumi:"usageAmount"`
 	// The usage period ID.
-	UsagePeriodKey pulumi.StringInput `pulumi:"usagePeriodKey"`
+	UsagePeriodKey pulumi.StringPtrInput `pulumi:"usagePeriodKey"`
 }
 
 func (GetSubscriptionRewardsRewardCollectionItemItemArgs) ElementType() reflect.Type {
@@ -4202,12 +3529,6 @@ func (i GetSubscriptionRewardsRewardCollectionItemItemArgs) ToGetSubscriptionRew
 
 func (i GetSubscriptionRewardsRewardCollectionItemItemArgs) ToGetSubscriptionRewardsRewardCollectionItemItemOutputWithContext(ctx context.Context) GetSubscriptionRewardsRewardCollectionItemItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionRewardsRewardCollectionItemItemOutput)
-}
-
-func (i GetSubscriptionRewardsRewardCollectionItemItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionRewardsRewardCollectionItemItem] {
-	return pulumix.Output[GetSubscriptionRewardsRewardCollectionItemItem]{
-		OutputState: i.ToGetSubscriptionRewardsRewardCollectionItemItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscriptionRewardsRewardCollectionItemItemArrayInput is an input type that accepts GetSubscriptionRewardsRewardCollectionItemItemArray and GetSubscriptionRewardsRewardCollectionItemItemArrayOutput values.
@@ -4235,12 +3556,6 @@ func (i GetSubscriptionRewardsRewardCollectionItemItemArray) ToGetSubscriptionRe
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionRewardsRewardCollectionItemItemArrayOutput)
 }
 
-func (i GetSubscriptionRewardsRewardCollectionItemItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionRewardsRewardCollectionItemItem] {
-	return pulumix.Output[[]GetSubscriptionRewardsRewardCollectionItemItem]{
-		OutputState: i.ToGetSubscriptionRewardsRewardCollectionItemItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscriptionRewardsRewardCollectionItemItemOutput struct{ *pulumi.OutputState }
 
 func (GetSubscriptionRewardsRewardCollectionItemItemOutput) ElementType() reflect.Type {
@@ -4255,70 +3570,64 @@ func (o GetSubscriptionRewardsRewardCollectionItemItemOutput) ToGetSubscriptionR
 	return o
 }
 
-func (o GetSubscriptionRewardsRewardCollectionItemItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionRewardsRewardCollectionItemItem] {
-	return pulumix.Output[GetSubscriptionRewardsRewardCollectionItemItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The number of rewards available for a specific usage period.
-func (o GetSubscriptionRewardsRewardCollectionItemItemOutput) AvailableRewards() pulumi.Float64Output {
-	return o.ApplyT(func(v GetSubscriptionRewardsRewardCollectionItemItem) float64 { return v.AvailableRewards }).(pulumi.Float64Output)
+func (o GetSubscriptionRewardsRewardCollectionItemItemOutput) AvailableRewards() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetSubscriptionRewardsRewardCollectionItemItem) *float64 { return v.AvailableRewards }).(pulumi.Float64PtrOutput)
 }
 
 // The number of rewards earned for the specific usage period.
-func (o GetSubscriptionRewardsRewardCollectionItemItemOutput) EarnedRewards() pulumi.Float64Output {
-	return o.ApplyT(func(v GetSubscriptionRewardsRewardCollectionItemItem) float64 { return v.EarnedRewards }).(pulumi.Float64Output)
+func (o GetSubscriptionRewardsRewardCollectionItemItemOutput) EarnedRewards() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetSubscriptionRewardsRewardCollectionItemItem) *float64 { return v.EarnedRewards }).(pulumi.Float64PtrOutput)
 }
 
 // The eligible usage amount for the usage period.
-func (o GetSubscriptionRewardsRewardCollectionItemItemOutput) EligibleUsageAmount() pulumi.Float64Output {
-	return o.ApplyT(func(v GetSubscriptionRewardsRewardCollectionItemItem) float64 { return v.EligibleUsageAmount }).(pulumi.Float64Output)
+func (o GetSubscriptionRewardsRewardCollectionItemItemOutput) EligibleUsageAmount() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetSubscriptionRewardsRewardCollectionItemItem) *float64 { return v.EligibleUsageAmount }).(pulumi.Float64PtrOutput)
 }
 
 // The ineligible usage amount for the usage period.
-func (o GetSubscriptionRewardsRewardCollectionItemItemOutput) IneligibleUsageAmount() pulumi.Float64Output {
-	return o.ApplyT(func(v GetSubscriptionRewardsRewardCollectionItemItem) float64 { return v.IneligibleUsageAmount }).(pulumi.Float64Output)
+func (o GetSubscriptionRewardsRewardCollectionItemItemOutput) IneligibleUsageAmount() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetSubscriptionRewardsRewardCollectionItemItem) *float64 { return v.IneligibleUsageAmount }).(pulumi.Float64PtrOutput)
 }
 
 // The boolean parameter to indicate whether or not the available rewards are manually posted.
-func (o GetSubscriptionRewardsRewardCollectionItemItemOutput) IsManual() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSubscriptionRewardsRewardCollectionItemItem) bool { return v.IsManual }).(pulumi.BoolOutput)
+func (o GetSubscriptionRewardsRewardCollectionItemItemOutput) IsManual() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionRewardsRewardCollectionItemItem) *bool { return v.IsManual }).(pulumi.BoolPtrOutput)
 }
 
 // The number of rewards redeemed for a specific month.
-func (o GetSubscriptionRewardsRewardCollectionItemItemOutput) RedeemedRewards() pulumi.Float64Output {
-	return o.ApplyT(func(v GetSubscriptionRewardsRewardCollectionItemItem) float64 { return v.RedeemedRewards }).(pulumi.Float64Output)
+func (o GetSubscriptionRewardsRewardCollectionItemItemOutput) RedeemedRewards() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetSubscriptionRewardsRewardCollectionItemItem) *float64 { return v.RedeemedRewards }).(pulumi.Float64PtrOutput)
 }
 
 // The date and time when rewards accrue.
-func (o GetSubscriptionRewardsRewardCollectionItemItemOutput) TimeRewardsEarned() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionRewardsRewardCollectionItemItem) string { return v.TimeRewardsEarned }).(pulumi.StringOutput)
+func (o GetSubscriptionRewardsRewardCollectionItemItemOutput) TimeRewardsEarned() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionRewardsRewardCollectionItemItem) *string { return v.TimeRewardsEarned }).(pulumi.StringPtrOutput)
 }
 
 // The date and time when rewards expire.
-func (o GetSubscriptionRewardsRewardCollectionItemItemOutput) TimeRewardsExpired() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionRewardsRewardCollectionItemItem) string { return v.TimeRewardsExpired }).(pulumi.StringOutput)
+func (o GetSubscriptionRewardsRewardCollectionItemItemOutput) TimeRewardsExpired() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionRewardsRewardCollectionItemItem) *string { return v.TimeRewardsExpired }).(pulumi.StringPtrOutput)
 }
 
 // The end date and time for the usage period.
-func (o GetSubscriptionRewardsRewardCollectionItemItemOutput) TimeUsageEnded() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionRewardsRewardCollectionItemItem) string { return v.TimeUsageEnded }).(pulumi.StringOutput)
+func (o GetSubscriptionRewardsRewardCollectionItemItemOutput) TimeUsageEnded() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionRewardsRewardCollectionItemItem) *string { return v.TimeUsageEnded }).(pulumi.StringPtrOutput)
 }
 
 // The start date and time for the usage period.
-func (o GetSubscriptionRewardsRewardCollectionItemItemOutput) TimeUsageStarted() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionRewardsRewardCollectionItemItem) string { return v.TimeUsageStarted }).(pulumi.StringOutput)
+func (o GetSubscriptionRewardsRewardCollectionItemItemOutput) TimeUsageStarted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionRewardsRewardCollectionItemItem) *string { return v.TimeUsageStarted }).(pulumi.StringPtrOutput)
 }
 
 // The usage amount for the usage period.
-func (o GetSubscriptionRewardsRewardCollectionItemItemOutput) UsageAmount() pulumi.Float64Output {
-	return o.ApplyT(func(v GetSubscriptionRewardsRewardCollectionItemItem) float64 { return v.UsageAmount }).(pulumi.Float64Output)
+func (o GetSubscriptionRewardsRewardCollectionItemItemOutput) UsageAmount() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetSubscriptionRewardsRewardCollectionItemItem) *float64 { return v.UsageAmount }).(pulumi.Float64PtrOutput)
 }
 
 // The usage period ID.
-func (o GetSubscriptionRewardsRewardCollectionItemItemOutput) UsagePeriodKey() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionRewardsRewardCollectionItemItem) string { return v.UsagePeriodKey }).(pulumi.StringOutput)
+func (o GetSubscriptionRewardsRewardCollectionItemItemOutput) UsagePeriodKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionRewardsRewardCollectionItemItem) *string { return v.UsagePeriodKey }).(pulumi.StringPtrOutput)
 }
 
 type GetSubscriptionRewardsRewardCollectionItemItemArrayOutput struct{ *pulumi.OutputState }
@@ -4335,12 +3644,6 @@ func (o GetSubscriptionRewardsRewardCollectionItemItemArrayOutput) ToGetSubscrip
 	return o
 }
 
-func (o GetSubscriptionRewardsRewardCollectionItemItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionRewardsRewardCollectionItemItem] {
-	return pulumix.Output[[]GetSubscriptionRewardsRewardCollectionItemItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscriptionRewardsRewardCollectionItemItemArrayOutput) Index(i pulumi.IntInput) GetSubscriptionRewardsRewardCollectionItemItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscriptionRewardsRewardCollectionItemItem {
 		return vs[0].([]GetSubscriptionRewardsRewardCollectionItemItem)[vs[1].(int)]
@@ -4349,17 +3652,17 @@ func (o GetSubscriptionRewardsRewardCollectionItemItemArrayOutput) Index(i pulum
 
 type GetSubscriptionRewardsRewardCollectionItemSummary struct {
 	// The currency unit for the reward amount.
-	Currency string `pulumi:"currency"`
+	Currency *string `pulumi:"currency"`
 	// The redemption code used in the Billing Center during the reward redemption process.
-	RedemptionCode string `pulumi:"redemptionCode"`
+	RedemptionCode *string `pulumi:"redemptionCode"`
 	// The current Rewards percentage in decimal format.
-	RewardsRate float64 `pulumi:"rewardsRate"`
+	RewardsRate *float64 `pulumi:"rewardsRate"`
 	// The subscription ID for which rewards information is requested for.
-	SubscriptionId string `pulumi:"subscriptionId"`
+	SubscriptionId *string `pulumi:"subscriptionId"`
 	// The OCID of the tenancy.
-	TenancyId string `pulumi:"tenancyId"`
+	TenancyId *string `pulumi:"tenancyId"`
 	// The total number of available rewards for a given subscription ID.
-	TotalRewardsAvailable float64 `pulumi:"totalRewardsAvailable"`
+	TotalRewardsAvailable *float64 `pulumi:"totalRewardsAvailable"`
 }
 
 // GetSubscriptionRewardsRewardCollectionItemSummaryInput is an input type that accepts GetSubscriptionRewardsRewardCollectionItemSummaryArgs and GetSubscriptionRewardsRewardCollectionItemSummaryOutput values.
@@ -4375,17 +3678,17 @@ type GetSubscriptionRewardsRewardCollectionItemSummaryInput interface {
 
 type GetSubscriptionRewardsRewardCollectionItemSummaryArgs struct {
 	// The currency unit for the reward amount.
-	Currency pulumi.StringInput `pulumi:"currency"`
+	Currency pulumi.StringPtrInput `pulumi:"currency"`
 	// The redemption code used in the Billing Center during the reward redemption process.
-	RedemptionCode pulumi.StringInput `pulumi:"redemptionCode"`
+	RedemptionCode pulumi.StringPtrInput `pulumi:"redemptionCode"`
 	// The current Rewards percentage in decimal format.
-	RewardsRate pulumi.Float64Input `pulumi:"rewardsRate"`
+	RewardsRate pulumi.Float64PtrInput `pulumi:"rewardsRate"`
 	// The subscription ID for which rewards information is requested for.
-	SubscriptionId pulumi.StringInput `pulumi:"subscriptionId"`
+	SubscriptionId pulumi.StringPtrInput `pulumi:"subscriptionId"`
 	// The OCID of the tenancy.
-	TenancyId pulumi.StringInput `pulumi:"tenancyId"`
+	TenancyId pulumi.StringPtrInput `pulumi:"tenancyId"`
 	// The total number of available rewards for a given subscription ID.
-	TotalRewardsAvailable pulumi.Float64Input `pulumi:"totalRewardsAvailable"`
+	TotalRewardsAvailable pulumi.Float64PtrInput `pulumi:"totalRewardsAvailable"`
 }
 
 func (GetSubscriptionRewardsRewardCollectionItemSummaryArgs) ElementType() reflect.Type {
@@ -4398,12 +3701,6 @@ func (i GetSubscriptionRewardsRewardCollectionItemSummaryArgs) ToGetSubscription
 
 func (i GetSubscriptionRewardsRewardCollectionItemSummaryArgs) ToGetSubscriptionRewardsRewardCollectionItemSummaryOutputWithContext(ctx context.Context) GetSubscriptionRewardsRewardCollectionItemSummaryOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionRewardsRewardCollectionItemSummaryOutput)
-}
-
-func (i GetSubscriptionRewardsRewardCollectionItemSummaryArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionRewardsRewardCollectionItemSummary] {
-	return pulumix.Output[GetSubscriptionRewardsRewardCollectionItemSummary]{
-		OutputState: i.ToGetSubscriptionRewardsRewardCollectionItemSummaryOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscriptionRewardsRewardCollectionItemSummaryArrayInput is an input type that accepts GetSubscriptionRewardsRewardCollectionItemSummaryArray and GetSubscriptionRewardsRewardCollectionItemSummaryArrayOutput values.
@@ -4431,12 +3728,6 @@ func (i GetSubscriptionRewardsRewardCollectionItemSummaryArray) ToGetSubscriptio
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionRewardsRewardCollectionItemSummaryArrayOutput)
 }
 
-func (i GetSubscriptionRewardsRewardCollectionItemSummaryArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionRewardsRewardCollectionItemSummary] {
-	return pulumix.Output[[]GetSubscriptionRewardsRewardCollectionItemSummary]{
-		OutputState: i.ToGetSubscriptionRewardsRewardCollectionItemSummaryArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscriptionRewardsRewardCollectionItemSummaryOutput struct{ *pulumi.OutputState }
 
 func (GetSubscriptionRewardsRewardCollectionItemSummaryOutput) ElementType() reflect.Type {
@@ -4451,40 +3742,34 @@ func (o GetSubscriptionRewardsRewardCollectionItemSummaryOutput) ToGetSubscripti
 	return o
 }
 
-func (o GetSubscriptionRewardsRewardCollectionItemSummaryOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionRewardsRewardCollectionItemSummary] {
-	return pulumix.Output[GetSubscriptionRewardsRewardCollectionItemSummary]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The currency unit for the reward amount.
-func (o GetSubscriptionRewardsRewardCollectionItemSummaryOutput) Currency() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionRewardsRewardCollectionItemSummary) string { return v.Currency }).(pulumi.StringOutput)
+func (o GetSubscriptionRewardsRewardCollectionItemSummaryOutput) Currency() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionRewardsRewardCollectionItemSummary) *string { return v.Currency }).(pulumi.StringPtrOutput)
 }
 
 // The redemption code used in the Billing Center during the reward redemption process.
-func (o GetSubscriptionRewardsRewardCollectionItemSummaryOutput) RedemptionCode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionRewardsRewardCollectionItemSummary) string { return v.RedemptionCode }).(pulumi.StringOutput)
+func (o GetSubscriptionRewardsRewardCollectionItemSummaryOutput) RedemptionCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionRewardsRewardCollectionItemSummary) *string { return v.RedemptionCode }).(pulumi.StringPtrOutput)
 }
 
 // The current Rewards percentage in decimal format.
-func (o GetSubscriptionRewardsRewardCollectionItemSummaryOutput) RewardsRate() pulumi.Float64Output {
-	return o.ApplyT(func(v GetSubscriptionRewardsRewardCollectionItemSummary) float64 { return v.RewardsRate }).(pulumi.Float64Output)
+func (o GetSubscriptionRewardsRewardCollectionItemSummaryOutput) RewardsRate() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetSubscriptionRewardsRewardCollectionItemSummary) *float64 { return v.RewardsRate }).(pulumi.Float64PtrOutput)
 }
 
 // The subscription ID for which rewards information is requested for.
-func (o GetSubscriptionRewardsRewardCollectionItemSummaryOutput) SubscriptionId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionRewardsRewardCollectionItemSummary) string { return v.SubscriptionId }).(pulumi.StringOutput)
+func (o GetSubscriptionRewardsRewardCollectionItemSummaryOutput) SubscriptionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionRewardsRewardCollectionItemSummary) *string { return v.SubscriptionId }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the tenancy.
-func (o GetSubscriptionRewardsRewardCollectionItemSummaryOutput) TenancyId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionRewardsRewardCollectionItemSummary) string { return v.TenancyId }).(pulumi.StringOutput)
+func (o GetSubscriptionRewardsRewardCollectionItemSummaryOutput) TenancyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionRewardsRewardCollectionItemSummary) *string { return v.TenancyId }).(pulumi.StringPtrOutput)
 }
 
 // The total number of available rewards for a given subscription ID.
-func (o GetSubscriptionRewardsRewardCollectionItemSummaryOutput) TotalRewardsAvailable() pulumi.Float64Output {
-	return o.ApplyT(func(v GetSubscriptionRewardsRewardCollectionItemSummary) float64 { return v.TotalRewardsAvailable }).(pulumi.Float64Output)
+func (o GetSubscriptionRewardsRewardCollectionItemSummaryOutput) TotalRewardsAvailable() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetSubscriptionRewardsRewardCollectionItemSummary) *float64 { return v.TotalRewardsAvailable }).(pulumi.Float64PtrOutput)
 }
 
 type GetSubscriptionRewardsRewardCollectionItemSummaryArrayOutput struct{ *pulumi.OutputState }
@@ -4499,12 +3784,6 @@ func (o GetSubscriptionRewardsRewardCollectionItemSummaryArrayOutput) ToGetSubsc
 
 func (o GetSubscriptionRewardsRewardCollectionItemSummaryArrayOutput) ToGetSubscriptionRewardsRewardCollectionItemSummaryArrayOutputWithContext(ctx context.Context) GetSubscriptionRewardsRewardCollectionItemSummaryArrayOutput {
 	return o
-}
-
-func (o GetSubscriptionRewardsRewardCollectionItemSummaryArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionRewardsRewardCollectionItemSummary] {
-	return pulumix.Output[[]GetSubscriptionRewardsRewardCollectionItemSummary]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSubscriptionRewardsRewardCollectionItemSummaryArrayOutput) Index(i pulumi.IntInput) GetSubscriptionRewardsRewardCollectionItemSummaryOutput {
@@ -4548,12 +3827,6 @@ func (i GetUsagelimitsFilterArgs) ToGetUsagelimitsFilterOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GetUsagelimitsFilterOutput)
 }
 
-func (i GetUsagelimitsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetUsagelimitsFilter] {
-	return pulumix.Output[GetUsagelimitsFilter]{
-		OutputState: i.ToGetUsagelimitsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetUsagelimitsFilterArrayInput is an input type that accepts GetUsagelimitsFilterArray and GetUsagelimitsFilterArrayOutput values.
 // You can construct a concrete instance of `GetUsagelimitsFilterArrayInput` via:
 //
@@ -4579,12 +3852,6 @@ func (i GetUsagelimitsFilterArray) ToGetUsagelimitsFilterArrayOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetUsagelimitsFilterArrayOutput)
 }
 
-func (i GetUsagelimitsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetUsagelimitsFilter] {
-	return pulumix.Output[[]GetUsagelimitsFilter]{
-		OutputState: i.ToGetUsagelimitsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetUsagelimitsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetUsagelimitsFilterOutput) ElementType() reflect.Type {
@@ -4597,12 +3864,6 @@ func (o GetUsagelimitsFilterOutput) ToGetUsagelimitsFilterOutput() GetUsagelimit
 
 func (o GetUsagelimitsFilterOutput) ToGetUsagelimitsFilterOutputWithContext(ctx context.Context) GetUsagelimitsFilterOutput {
 	return o
-}
-
-func (o GetUsagelimitsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetUsagelimitsFilter] {
-	return pulumix.Output[GetUsagelimitsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetUsagelimitsFilterOutput) Name() pulumi.StringOutput {
@@ -4629,12 +3890,6 @@ func (o GetUsagelimitsFilterArrayOutput) ToGetUsagelimitsFilterArrayOutput() Get
 
 func (o GetUsagelimitsFilterArrayOutput) ToGetUsagelimitsFilterArrayOutputWithContext(ctx context.Context) GetUsagelimitsFilterArrayOutput {
 	return o
-}
-
-func (o GetUsagelimitsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetUsagelimitsFilter] {
-	return pulumix.Output[[]GetUsagelimitsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetUsagelimitsFilterArrayOutput) Index(i pulumi.IntInput) GetUsagelimitsFilterOutput {
@@ -4676,12 +3931,6 @@ func (i GetUsagelimitsUsageLimitCollectionArgs) ToGetUsagelimitsUsageLimitCollec
 	return pulumi.ToOutputWithContext(ctx, i).(GetUsagelimitsUsageLimitCollectionOutput)
 }
 
-func (i GetUsagelimitsUsageLimitCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetUsagelimitsUsageLimitCollection] {
-	return pulumix.Output[GetUsagelimitsUsageLimitCollection]{
-		OutputState: i.ToGetUsagelimitsUsageLimitCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetUsagelimitsUsageLimitCollectionArrayInput is an input type that accepts GetUsagelimitsUsageLimitCollectionArray and GetUsagelimitsUsageLimitCollectionArrayOutput values.
 // You can construct a concrete instance of `GetUsagelimitsUsageLimitCollectionArrayInput` via:
 //
@@ -4707,12 +3956,6 @@ func (i GetUsagelimitsUsageLimitCollectionArray) ToGetUsagelimitsUsageLimitColle
 	return pulumi.ToOutputWithContext(ctx, i).(GetUsagelimitsUsageLimitCollectionArrayOutput)
 }
 
-func (i GetUsagelimitsUsageLimitCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetUsagelimitsUsageLimitCollection] {
-	return pulumix.Output[[]GetUsagelimitsUsageLimitCollection]{
-		OutputState: i.ToGetUsagelimitsUsageLimitCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetUsagelimitsUsageLimitCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetUsagelimitsUsageLimitCollectionOutput) ElementType() reflect.Type {
@@ -4725,12 +3968,6 @@ func (o GetUsagelimitsUsageLimitCollectionOutput) ToGetUsagelimitsUsageLimitColl
 
 func (o GetUsagelimitsUsageLimitCollectionOutput) ToGetUsagelimitsUsageLimitCollectionOutputWithContext(ctx context.Context) GetUsagelimitsUsageLimitCollectionOutput {
 	return o
-}
-
-func (o GetUsagelimitsUsageLimitCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetUsagelimitsUsageLimitCollection] {
-	return pulumix.Output[GetUsagelimitsUsageLimitCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The list of usage limits.
@@ -4752,12 +3989,6 @@ func (o GetUsagelimitsUsageLimitCollectionArrayOutput) ToGetUsagelimitsUsageLimi
 	return o
 }
 
-func (o GetUsagelimitsUsageLimitCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetUsagelimitsUsageLimitCollection] {
-	return pulumix.Output[[]GetUsagelimitsUsageLimitCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetUsagelimitsUsageLimitCollectionArrayOutput) Index(i pulumi.IntInput) GetUsagelimitsUsageLimitCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUsagelimitsUsageLimitCollection {
 		return vs[0].([]GetUsagelimitsUsageLimitCollection)[vs[1].(int)]
@@ -4766,36 +3997,36 @@ func (o GetUsagelimitsUsageLimitCollectionArrayOutput) Index(i pulumi.IntInput) 
 
 type GetUsagelimitsUsageLimitCollectionItem struct {
 	// The action when usage limit is hit
-	Action string `pulumi:"action"`
+	Action *string `pulumi:"action"`
 	// The alert level of the usage limit
-	AlertLevel float64 `pulumi:"alertLevel"`
+	AlertLevel *float64 `pulumi:"alertLevel"`
 	// The user who created the limit
-	CreatedBy string `pulumi:"createdBy"`
+	CreatedBy *string `pulumi:"createdBy"`
 	// Entitlement ID of the usage limit
-	EntitlementId string `pulumi:"entitlementId"`
+	EntitlementId *string `pulumi:"entitlementId"`
 	// The usage limit ID
-	Id    string `pulumi:"id"`
-	Limit string `pulumi:"limit"`
+	Id    *string `pulumi:"id"`
+	Limit *string `pulumi:"limit"`
 	// Hard or soft limit. Hard limits lead to breaches, soft to alerts.
-	LimitType string `pulumi:"limitType"`
+	LimitType *string `pulumi:"limitType"`
 	// The maximum hard limit set for the usage limit
-	MaxHardLimit string `pulumi:"maxHardLimit"`
+	MaxHardLimit *string `pulumi:"maxHardLimit"`
 	// The user who modified the limit
-	ModifiedBy string `pulumi:"modifiedBy"`
+	ModifiedBy *string `pulumi:"modifiedBy"`
 	// The resource for which the limit is defined
-	ResourceName string `pulumi:"resourceName"`
+	ResourceName *string `pulumi:"resourceName"`
 	// The service for which the limit is defined
-	ServiceName string `pulumi:"serviceName"`
+	ServiceName *string `pulumi:"serviceName"`
 	// The SKU for which the usage limit is set
-	SkuPartId string `pulumi:"skuPartId"`
+	SkuPartId *string `pulumi:"skuPartId"`
 	// The usage limit lifecycle state.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Time when the usage limit was created
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// Time when the usage limit was modified
-	TimeModified string `pulumi:"timeModified"`
+	TimeModified *string `pulumi:"timeModified"`
 	// The value type of the usage limit
-	ValueType string `pulumi:"valueType"`
+	ValueType *string `pulumi:"valueType"`
 }
 
 // GetUsagelimitsUsageLimitCollectionItemInput is an input type that accepts GetUsagelimitsUsageLimitCollectionItemArgs and GetUsagelimitsUsageLimitCollectionItemOutput values.
@@ -4811,36 +4042,36 @@ type GetUsagelimitsUsageLimitCollectionItemInput interface {
 
 type GetUsagelimitsUsageLimitCollectionItemArgs struct {
 	// The action when usage limit is hit
-	Action pulumi.StringInput `pulumi:"action"`
+	Action pulumi.StringPtrInput `pulumi:"action"`
 	// The alert level of the usage limit
-	AlertLevel pulumi.Float64Input `pulumi:"alertLevel"`
+	AlertLevel pulumi.Float64PtrInput `pulumi:"alertLevel"`
 	// The user who created the limit
-	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
+	CreatedBy pulumi.StringPtrInput `pulumi:"createdBy"`
 	// Entitlement ID of the usage limit
-	EntitlementId pulumi.StringInput `pulumi:"entitlementId"`
+	EntitlementId pulumi.StringPtrInput `pulumi:"entitlementId"`
 	// The usage limit ID
-	Id    pulumi.StringInput `pulumi:"id"`
-	Limit pulumi.StringInput `pulumi:"limit"`
+	Id    pulumi.StringPtrInput `pulumi:"id"`
+	Limit pulumi.StringPtrInput `pulumi:"limit"`
 	// Hard or soft limit. Hard limits lead to breaches, soft to alerts.
-	LimitType pulumi.StringInput `pulumi:"limitType"`
+	LimitType pulumi.StringPtrInput `pulumi:"limitType"`
 	// The maximum hard limit set for the usage limit
-	MaxHardLimit pulumi.StringInput `pulumi:"maxHardLimit"`
+	MaxHardLimit pulumi.StringPtrInput `pulumi:"maxHardLimit"`
 	// The user who modified the limit
-	ModifiedBy pulumi.StringInput `pulumi:"modifiedBy"`
+	ModifiedBy pulumi.StringPtrInput `pulumi:"modifiedBy"`
 	// The resource for which the limit is defined
-	ResourceName pulumi.StringInput `pulumi:"resourceName"`
+	ResourceName pulumi.StringPtrInput `pulumi:"resourceName"`
 	// The service for which the limit is defined
-	ServiceName pulumi.StringInput `pulumi:"serviceName"`
+	ServiceName pulumi.StringPtrInput `pulumi:"serviceName"`
 	// The SKU for which the usage limit is set
-	SkuPartId pulumi.StringInput `pulumi:"skuPartId"`
+	SkuPartId pulumi.StringPtrInput `pulumi:"skuPartId"`
 	// The usage limit lifecycle state.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// Time when the usage limit was created
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// Time when the usage limit was modified
-	TimeModified pulumi.StringInput `pulumi:"timeModified"`
+	TimeModified pulumi.StringPtrInput `pulumi:"timeModified"`
 	// The value type of the usage limit
-	ValueType pulumi.StringInput `pulumi:"valueType"`
+	ValueType pulumi.StringPtrInput `pulumi:"valueType"`
 }
 
 func (GetUsagelimitsUsageLimitCollectionItemArgs) ElementType() reflect.Type {
@@ -4853,12 +4084,6 @@ func (i GetUsagelimitsUsageLimitCollectionItemArgs) ToGetUsagelimitsUsageLimitCo
 
 func (i GetUsagelimitsUsageLimitCollectionItemArgs) ToGetUsagelimitsUsageLimitCollectionItemOutputWithContext(ctx context.Context) GetUsagelimitsUsageLimitCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetUsagelimitsUsageLimitCollectionItemOutput)
-}
-
-func (i GetUsagelimitsUsageLimitCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetUsagelimitsUsageLimitCollectionItem] {
-	return pulumix.Output[GetUsagelimitsUsageLimitCollectionItem]{
-		OutputState: i.ToGetUsagelimitsUsageLimitCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetUsagelimitsUsageLimitCollectionItemArrayInput is an input type that accepts GetUsagelimitsUsageLimitCollectionItemArray and GetUsagelimitsUsageLimitCollectionItemArrayOutput values.
@@ -4886,12 +4111,6 @@ func (i GetUsagelimitsUsageLimitCollectionItemArray) ToGetUsagelimitsUsageLimitC
 	return pulumi.ToOutputWithContext(ctx, i).(GetUsagelimitsUsageLimitCollectionItemArrayOutput)
 }
 
-func (i GetUsagelimitsUsageLimitCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetUsagelimitsUsageLimitCollectionItem] {
-	return pulumix.Output[[]GetUsagelimitsUsageLimitCollectionItem]{
-		OutputState: i.ToGetUsagelimitsUsageLimitCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetUsagelimitsUsageLimitCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetUsagelimitsUsageLimitCollectionItemOutput) ElementType() reflect.Type {
@@ -4906,89 +4125,83 @@ func (o GetUsagelimitsUsageLimitCollectionItemOutput) ToGetUsagelimitsUsageLimit
 	return o
 }
 
-func (o GetUsagelimitsUsageLimitCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetUsagelimitsUsageLimitCollectionItem] {
-	return pulumix.Output[GetUsagelimitsUsageLimitCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The action when usage limit is hit
-func (o GetUsagelimitsUsageLimitCollectionItemOutput) Action() pulumi.StringOutput {
-	return o.ApplyT(func(v GetUsagelimitsUsageLimitCollectionItem) string { return v.Action }).(pulumi.StringOutput)
+func (o GetUsagelimitsUsageLimitCollectionItemOutput) Action() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetUsagelimitsUsageLimitCollectionItem) *string { return v.Action }).(pulumi.StringPtrOutput)
 }
 
 // The alert level of the usage limit
-func (o GetUsagelimitsUsageLimitCollectionItemOutput) AlertLevel() pulumi.Float64Output {
-	return o.ApplyT(func(v GetUsagelimitsUsageLimitCollectionItem) float64 { return v.AlertLevel }).(pulumi.Float64Output)
+func (o GetUsagelimitsUsageLimitCollectionItemOutput) AlertLevel() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetUsagelimitsUsageLimitCollectionItem) *float64 { return v.AlertLevel }).(pulumi.Float64PtrOutput)
 }
 
 // The user who created the limit
-func (o GetUsagelimitsUsageLimitCollectionItemOutput) CreatedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v GetUsagelimitsUsageLimitCollectionItem) string { return v.CreatedBy }).(pulumi.StringOutput)
+func (o GetUsagelimitsUsageLimitCollectionItemOutput) CreatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetUsagelimitsUsageLimitCollectionItem) *string { return v.CreatedBy }).(pulumi.StringPtrOutput)
 }
 
 // Entitlement ID of the usage limit
-func (o GetUsagelimitsUsageLimitCollectionItemOutput) EntitlementId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetUsagelimitsUsageLimitCollectionItem) string { return v.EntitlementId }).(pulumi.StringOutput)
+func (o GetUsagelimitsUsageLimitCollectionItemOutput) EntitlementId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetUsagelimitsUsageLimitCollectionItem) *string { return v.EntitlementId }).(pulumi.StringPtrOutput)
 }
 
 // The usage limit ID
-func (o GetUsagelimitsUsageLimitCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetUsagelimitsUsageLimitCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetUsagelimitsUsageLimitCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetUsagelimitsUsageLimitCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
-func (o GetUsagelimitsUsageLimitCollectionItemOutput) Limit() pulumi.StringOutput {
-	return o.ApplyT(func(v GetUsagelimitsUsageLimitCollectionItem) string { return v.Limit }).(pulumi.StringOutput)
+func (o GetUsagelimitsUsageLimitCollectionItemOutput) Limit() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetUsagelimitsUsageLimitCollectionItem) *string { return v.Limit }).(pulumi.StringPtrOutput)
 }
 
 // Hard or soft limit. Hard limits lead to breaches, soft to alerts.
-func (o GetUsagelimitsUsageLimitCollectionItemOutput) LimitType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetUsagelimitsUsageLimitCollectionItem) string { return v.LimitType }).(pulumi.StringOutput)
+func (o GetUsagelimitsUsageLimitCollectionItemOutput) LimitType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetUsagelimitsUsageLimitCollectionItem) *string { return v.LimitType }).(pulumi.StringPtrOutput)
 }
 
 // The maximum hard limit set for the usage limit
-func (o GetUsagelimitsUsageLimitCollectionItemOutput) MaxHardLimit() pulumi.StringOutput {
-	return o.ApplyT(func(v GetUsagelimitsUsageLimitCollectionItem) string { return v.MaxHardLimit }).(pulumi.StringOutput)
+func (o GetUsagelimitsUsageLimitCollectionItemOutput) MaxHardLimit() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetUsagelimitsUsageLimitCollectionItem) *string { return v.MaxHardLimit }).(pulumi.StringPtrOutput)
 }
 
 // The user who modified the limit
-func (o GetUsagelimitsUsageLimitCollectionItemOutput) ModifiedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v GetUsagelimitsUsageLimitCollectionItem) string { return v.ModifiedBy }).(pulumi.StringOutput)
+func (o GetUsagelimitsUsageLimitCollectionItemOutput) ModifiedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetUsagelimitsUsageLimitCollectionItem) *string { return v.ModifiedBy }).(pulumi.StringPtrOutput)
 }
 
 // The resource for which the limit is defined
-func (o GetUsagelimitsUsageLimitCollectionItemOutput) ResourceName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetUsagelimitsUsageLimitCollectionItem) string { return v.ResourceName }).(pulumi.StringOutput)
+func (o GetUsagelimitsUsageLimitCollectionItemOutput) ResourceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetUsagelimitsUsageLimitCollectionItem) *string { return v.ResourceName }).(pulumi.StringPtrOutput)
 }
 
 // The service for which the limit is defined
-func (o GetUsagelimitsUsageLimitCollectionItemOutput) ServiceName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetUsagelimitsUsageLimitCollectionItem) string { return v.ServiceName }).(pulumi.StringOutput)
+func (o GetUsagelimitsUsageLimitCollectionItemOutput) ServiceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetUsagelimitsUsageLimitCollectionItem) *string { return v.ServiceName }).(pulumi.StringPtrOutput)
 }
 
 // The SKU for which the usage limit is set
-func (o GetUsagelimitsUsageLimitCollectionItemOutput) SkuPartId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetUsagelimitsUsageLimitCollectionItem) string { return v.SkuPartId }).(pulumi.StringOutput)
+func (o GetUsagelimitsUsageLimitCollectionItemOutput) SkuPartId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetUsagelimitsUsageLimitCollectionItem) *string { return v.SkuPartId }).(pulumi.StringPtrOutput)
 }
 
 // The usage limit lifecycle state.
-func (o GetUsagelimitsUsageLimitCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetUsagelimitsUsageLimitCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetUsagelimitsUsageLimitCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetUsagelimitsUsageLimitCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Time when the usage limit was created
-func (o GetUsagelimitsUsageLimitCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetUsagelimitsUsageLimitCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetUsagelimitsUsageLimitCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetUsagelimitsUsageLimitCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // Time when the usage limit was modified
-func (o GetUsagelimitsUsageLimitCollectionItemOutput) TimeModified() pulumi.StringOutput {
-	return o.ApplyT(func(v GetUsagelimitsUsageLimitCollectionItem) string { return v.TimeModified }).(pulumi.StringOutput)
+func (o GetUsagelimitsUsageLimitCollectionItemOutput) TimeModified() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetUsagelimitsUsageLimitCollectionItem) *string { return v.TimeModified }).(pulumi.StringPtrOutput)
 }
 
 // The value type of the usage limit
-func (o GetUsagelimitsUsageLimitCollectionItemOutput) ValueType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetUsagelimitsUsageLimitCollectionItem) string { return v.ValueType }).(pulumi.StringOutput)
+func (o GetUsagelimitsUsageLimitCollectionItemOutput) ValueType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetUsagelimitsUsageLimitCollectionItem) *string { return v.ValueType }).(pulumi.StringPtrOutput)
 }
 
 type GetUsagelimitsUsageLimitCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -5003,12 +4216,6 @@ func (o GetUsagelimitsUsageLimitCollectionItemArrayOutput) ToGetUsagelimitsUsage
 
 func (o GetUsagelimitsUsageLimitCollectionItemArrayOutput) ToGetUsagelimitsUsageLimitCollectionItemArrayOutputWithContext(ctx context.Context) GetUsagelimitsUsageLimitCollectionItemArrayOutput {
 	return o
-}
-
-func (o GetUsagelimitsUsageLimitCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetUsagelimitsUsageLimitCollectionItem] {
-	return pulumix.Output[[]GetUsagelimitsUsageLimitCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetUsagelimitsUsageLimitCollectionItemArrayOutput) Index(i pulumi.IntInput) GetUsagelimitsUsageLimitCollectionItemOutput {

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific External Exadata Storage Server Iorm Plan resource in Oracle Cloud Infrastructure Database Management service.
@@ -63,11 +62,11 @@ type GetExternalExadataStorageServerIormPlanResult struct {
 	DbPlans                        []GetExternalExadataStorageServerIormPlanDbPlan `pulumi:"dbPlans"`
 	ExternalExadataStorageServerId string                                          `pulumi:"externalExadataStorageServerId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The objective of the IORM plan.
-	PlanObjective string `pulumi:"planObjective"`
+	PlanObjective *string `pulumi:"planObjective"`
 	// The status of the IORM plan.
-	PlanStatus string `pulumi:"planStatus"`
+	PlanStatus *string `pulumi:"planStatus"`
 }
 
 func GetExternalExadataStorageServerIormPlanOutput(ctx *pulumi.Context, args GetExternalExadataStorageServerIormPlanOutputArgs, opts ...pulumi.InvokeOption) GetExternalExadataStorageServerIormPlanResultOutput {
@@ -108,12 +107,6 @@ func (o GetExternalExadataStorageServerIormPlanResultOutput) ToGetExternalExadat
 	return o
 }
 
-func (o GetExternalExadataStorageServerIormPlanResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetExternalExadataStorageServerIormPlanResult] {
-	return pulumix.Output[GetExternalExadataStorageServerIormPlanResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The resource allocation directives must all use the share attribute, or they must all use the level and allocation attributes. If you use the share attribute to allocate I/O resources, then the database plan can have a maximum of 1024 directives. If you use the level and allocation attributes to allocate I/O resources, then the database plan can have a maximum of 32 directives. Only one directive is allowed for each database name and each profile name.
 func (o GetExternalExadataStorageServerIormPlanResultOutput) DbPlans() GetExternalExadataStorageServerIormPlanDbPlanArrayOutput {
 	return o.ApplyT(func(v GetExternalExadataStorageServerIormPlanResult) []GetExternalExadataStorageServerIormPlanDbPlan {
@@ -126,18 +119,18 @@ func (o GetExternalExadataStorageServerIormPlanResultOutput) ExternalExadataStor
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetExternalExadataStorageServerIormPlanResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExternalExadataStorageServerIormPlanResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetExternalExadataStorageServerIormPlanResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServerIormPlanResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The objective of the IORM plan.
-func (o GetExternalExadataStorageServerIormPlanResultOutput) PlanObjective() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExternalExadataStorageServerIormPlanResult) string { return v.PlanObjective }).(pulumi.StringOutput)
+func (o GetExternalExadataStorageServerIormPlanResultOutput) PlanObjective() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServerIormPlanResult) *string { return v.PlanObjective }).(pulumi.StringPtrOutput)
 }
 
 // The status of the IORM plan.
-func (o GetExternalExadataStorageServerIormPlanResultOutput) PlanStatus() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExternalExadataStorageServerIormPlanResult) string { return v.PlanStatus }).(pulumi.StringOutput)
+func (o GetExternalExadataStorageServerIormPlanResultOutput) PlanStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExternalExadataStorageServerIormPlanResult) *string { return v.PlanStatus }).(pulumi.StringPtrOutput)
 }
 
 func init() {

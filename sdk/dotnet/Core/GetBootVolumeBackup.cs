@@ -109,118 +109,118 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// The OCID of the boot volume.
         /// </summary>
-        public readonly string BootVolumeId;
+        public readonly string? BootVolumeId;
         /// <summary>
         /// The OCID of the compartment that contains the boot volume backup.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// The date and time the volume backup will expire and be automatically deleted. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). This parameter will always be present for backups that were created automatically by a scheduled-backup policy. For manually created backups, it will be absent, signifying that there is no expiration time and the backup will last forever until manually deleted.
         /// </summary>
-        public readonly string ExpirationTime;
+        public readonly string? ExpirationTime;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The OCID of the boot volume backup.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The image OCID used to create the boot volume the backup is taken from.
         /// </summary>
-        public readonly string ImageId;
+        public readonly string? ImageId;
         /// <summary>
         /// The OCID of the Vault service master encryption assigned to the boot volume backup. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
         /// </summary>
-        public readonly string KmsKeyId;
+        public readonly string? KmsKeyId;
         /// <summary>
         /// The size of the boot volume, in GBs.
         /// </summary>
-        public readonly string SizeInGbs;
+        public readonly string? SizeInGbs;
         /// <summary>
         /// The OCID of the source boot volume backup.
         /// </summary>
-        public readonly string SourceBootVolumeBackupId;
+        public readonly string? SourceBootVolumeBackupId;
         public readonly ImmutableArray<Outputs.GetBootVolumeBackupSourceDetailResult> SourceDetails;
         /// <summary>
         /// Specifies whether the backup was created manually, or via scheduled backup policy.
         /// </summary>
-        public readonly string SourceType;
+        public readonly string? SourceType;
         /// <summary>
         /// The current state of a boot volume backup.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, object>? SystemTags;
         /// <summary>
         /// The date and time the boot volume backup was created. This is the time the actual point-in-time image of the volume data was taken. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The date and time the request to create the boot volume backup was received. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
-        public readonly string TimeRequestReceived;
+        public readonly string? TimeRequestReceived;
         /// <summary>
         /// The type of a volume backup. Supported values are 'FULL' or 'INCREMENTAL'.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
         /// <summary>
         /// The size used by the backup, in GBs. It is typically smaller than sizeInGBs, depending on the space consumed on the boot volume and whether the backup is full or incremental.
         /// </summary>
-        public readonly string UniqueSizeInGbs;
+        public readonly string? UniqueSizeInGbs;
 
         [OutputConstructor]
         private GetBootVolumeBackupResult(
             string bootVolumeBackupId,
 
-            string bootVolumeId,
+            string? bootVolumeId,
 
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string displayName,
+            string? displayName,
 
-            string expirationTime,
+            string? expirationTime,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            string imageId,
+            string? imageId,
 
-            string kmsKeyId,
+            string? kmsKeyId,
 
-            string sizeInGbs,
+            string? sizeInGbs,
 
-            string sourceBootVolumeBackupId,
+            string? sourceBootVolumeBackupId,
 
             ImmutableArray<Outputs.GetBootVolumeBackupSourceDetailResult> sourceDetails,
 
-            string sourceType,
+            string? sourceType,
 
-            string state,
+            string? state,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, object>? systemTags,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeRequestReceived,
+            string? timeRequestReceived,
 
-            string type,
+            string? type,
 
-            string uniqueSizeInGbs)
+            string? uniqueSizeInGbs)
         {
             BootVolumeBackupId = bootVolumeBackupId;
             BootVolumeId = bootVolumeId;

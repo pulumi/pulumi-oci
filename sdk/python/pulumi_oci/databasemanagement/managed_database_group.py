@@ -22,10 +22,6 @@ class ManagedDatabaseGroupArgs:
                  name: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a ManagedDatabaseGroup resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database Group resides.
-        :param pulumi.Input[str] description: (Updatable) The information specified by the user about the Managed Database Group.
-        :param pulumi.Input[Sequence[pulumi.Input['ManagedDatabaseGroupManagedDatabaseArgs']]] managed_databases: (Updatable) Set of Managed Databases that the user wants to add to the Managed Database Group. Specifying a block will add the Managed Database to Managed Database Group and removing the block will remove Managed Database from the Managed Database Group.
-        :param pulumi.Input[str] name: The name of the Managed Database Group. Valid characters are uppercase or lowercase letters, numbers, and "_". The name of the Managed Database Group cannot be modified. It must be unique in the compartment and must begin with an alphabetic character.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         if description is not None:
@@ -38,9 +34,6 @@ class ManagedDatabaseGroupArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database Group resides.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -50,9 +43,6 @@ class ManagedDatabaseGroupArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The information specified by the user about the Managed Database Group.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -62,9 +52,6 @@ class ManagedDatabaseGroupArgs:
     @property
     @pulumi.getter(name="managedDatabases")
     def managed_databases(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ManagedDatabaseGroupManagedDatabaseArgs']]]]:
-        """
-        (Updatable) Set of Managed Databases that the user wants to add to the Managed Database Group. Specifying a block will add the Managed Database to Managed Database Group and removing the block will remove Managed Database from the Managed Database Group.
-        """
         return pulumi.get(self, "managed_databases")
 
     @managed_databases.setter
@@ -74,9 +61,6 @@ class ManagedDatabaseGroupArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name of the Managed Database Group. Valid characters are uppercase or lowercase letters, numbers, and "_". The name of the Managed Database Group cannot be modified. It must be unique in the compartment and must begin with an alphabetic character.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -96,13 +80,6 @@ class _ManagedDatabaseGroupState:
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering ManagedDatabaseGroup resources.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database Group resides.
-        :param pulumi.Input[str] description: (Updatable) The information specified by the user about the Managed Database Group.
-        :param pulumi.Input[Sequence[pulumi.Input['ManagedDatabaseGroupManagedDatabaseArgs']]] managed_databases: (Updatable) Set of Managed Databases that the user wants to add to the Managed Database Group. Specifying a block will add the Managed Database to Managed Database Group and removing the block will remove Managed Database from the Managed Database Group.
-        :param pulumi.Input[str] name: The name of the Managed Database Group. Valid characters are uppercase or lowercase letters, numbers, and "_". The name of the Managed Database Group cannot be modified. It must be unique in the compartment and must begin with an alphabetic character.
-        :param pulumi.Input[str] state: The current lifecycle state of the Managed Database Group.
-        :param pulumi.Input[str] time_created: The date and time the Managed Database Group was created.
-        :param pulumi.Input[str] time_updated: The date and time the Managed Database Group was last updated.
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -122,9 +99,6 @@ class _ManagedDatabaseGroupState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database Group resides.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -134,9 +108,6 @@ class _ManagedDatabaseGroupState:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The information specified by the user about the Managed Database Group.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -146,9 +117,6 @@ class _ManagedDatabaseGroupState:
     @property
     @pulumi.getter(name="managedDatabases")
     def managed_databases(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ManagedDatabaseGroupManagedDatabaseArgs']]]]:
-        """
-        (Updatable) Set of Managed Databases that the user wants to add to the Managed Database Group. Specifying a block will add the Managed Database to Managed Database Group and removing the block will remove Managed Database from the Managed Database Group.
-        """
         return pulumi.get(self, "managed_databases")
 
     @managed_databases.setter
@@ -158,9 +126,6 @@ class _ManagedDatabaseGroupState:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name of the Managed Database Group. Valid characters are uppercase or lowercase letters, numbers, and "_". The name of the Managed Database Group cannot be modified. It must be unique in the compartment and must begin with an alphabetic character.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -170,9 +135,6 @@ class _ManagedDatabaseGroupState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current lifecycle state of the Managed Database Group.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -182,9 +144,6 @@ class _ManagedDatabaseGroupState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the Managed Database Group was created.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -194,9 +153,6 @@ class _ManagedDatabaseGroupState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the Managed Database Group was last updated.
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -215,39 +171,9 @@ class ManagedDatabaseGroup(pulumi.CustomResource):
                  name: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Managed Database Group resource in Oracle Cloud Infrastructure Database Management service.
-
-        Creates a Managed Database Group. The group does not contain any
-        Managed Databases when it is created, and they must be added later.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_managed_database_group = oci.database_management.ManagedDatabaseGroup("testManagedDatabaseGroup",
-            compartment_id=var["compartment_id"],
-            description=var["managed_database_group_description"],
-            managed_databases=[oci.database_management.ManagedDatabaseGroupManagedDatabaseArgs(
-                id=var["managed_database_id"],
-            )])
-        ```
-
-        ## Import
-
-        ManagedDatabaseGroups can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:DatabaseManagement/managedDatabaseGroup:ManagedDatabaseGroup test_managed_database_group "id"
-        ```
-
+        Create a ManagedDatabaseGroup resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database Group resides.
-        :param pulumi.Input[str] description: (Updatable) The information specified by the user about the Managed Database Group.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagedDatabaseGroupManagedDatabaseArgs']]]] managed_databases: (Updatable) Set of Managed Databases that the user wants to add to the Managed Database Group. Specifying a block will add the Managed Database to Managed Database Group and removing the block will remove Managed Database from the Managed Database Group.
-        :param pulumi.Input[str] name: The name of the Managed Database Group. Valid characters are uppercase or lowercase letters, numbers, and "_". The name of the Managed Database Group cannot be modified. It must be unique in the compartment and must begin with an alphabetic character.
         """
         ...
     @overload
@@ -256,33 +182,7 @@ class ManagedDatabaseGroup(pulumi.CustomResource):
                  args: ManagedDatabaseGroupArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Managed Database Group resource in Oracle Cloud Infrastructure Database Management service.
-
-        Creates a Managed Database Group. The group does not contain any
-        Managed Databases when it is created, and they must be added later.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_managed_database_group = oci.database_management.ManagedDatabaseGroup("testManagedDatabaseGroup",
-            compartment_id=var["compartment_id"],
-            description=var["managed_database_group_description"],
-            managed_databases=[oci.database_management.ManagedDatabaseGroupManagedDatabaseArgs(
-                id=var["managed_database_id"],
-            )])
-        ```
-
-        ## Import
-
-        ManagedDatabaseGroups can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:DatabaseManagement/managedDatabaseGroup:ManagedDatabaseGroup test_managed_database_group "id"
-        ```
-
+        Create a ManagedDatabaseGroup resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param ManagedDatabaseGroupArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -344,13 +244,6 @@ class ManagedDatabaseGroup(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database Group resides.
-        :param pulumi.Input[str] description: (Updatable) The information specified by the user about the Managed Database Group.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagedDatabaseGroupManagedDatabaseArgs']]]] managed_databases: (Updatable) Set of Managed Databases that the user wants to add to the Managed Database Group. Specifying a block will add the Managed Database to Managed Database Group and removing the block will remove Managed Database from the Managed Database Group.
-        :param pulumi.Input[str] name: The name of the Managed Database Group. Valid characters are uppercase or lowercase letters, numbers, and "_". The name of the Managed Database Group cannot be modified. It must be unique in the compartment and must begin with an alphabetic character.
-        :param pulumi.Input[str] state: The current lifecycle state of the Managed Database Group.
-        :param pulumi.Input[str] time_created: The date and time the Managed Database Group was created.
-        :param pulumi.Input[str] time_updated: The date and time the Managed Database Group was last updated.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -368,56 +261,35 @@ class ManagedDatabaseGroup(pulumi.CustomResource):
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database Group resides.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter
-    def description(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The information specified by the user about the Managed Database Group.
-        """
+    def description(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="managedDatabases")
-    def managed_databases(self) -> pulumi.Output[Sequence['outputs.ManagedDatabaseGroupManagedDatabase']]:
-        """
-        (Updatable) Set of Managed Databases that the user wants to add to the Managed Database Group. Specifying a block will add the Managed Database to Managed Database Group and removing the block will remove Managed Database from the Managed Database Group.
-        """
+    def managed_databases(self) -> pulumi.Output[Optional[Sequence['outputs.ManagedDatabaseGroupManagedDatabase']]]:
         return pulumi.get(self, "managed_databases")
 
     @property
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
-        """
-        The name of the Managed Database Group. Valid characters are uppercase or lowercase letters, numbers, and "_". The name of the Managed Database Group cannot be modified. It must be unique in the compartment and must begin with an alphabetic character.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current lifecycle state of the Managed Database Group.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The date and time the Managed Database Group was created.
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The date and time the Managed Database Group was last updated.
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 

@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the External Non Container Database resource in Oracle Cloud Infrastructure Database service.
@@ -61,23 +60,23 @@ type ExternalNonContainerDatabase struct {
 	pulumi.CustomResourceState
 
 	// The character set of the external database.
-	CharacterSet pulumi.StringOutput `pulumi:"characterSet"`
+	CharacterSet pulumi.StringPtrOutput `pulumi:"characterSet"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// The Oracle Database configuration
-	DatabaseConfiguration pulumi.StringOutput `pulumi:"databaseConfiguration"`
+	DatabaseConfiguration pulumi.StringPtrOutput `pulumi:"databaseConfiguration"`
 	// The Oracle Database edition.
-	DatabaseEdition pulumi.StringOutput `pulumi:"databaseEdition"`
+	DatabaseEdition pulumi.StringPtrOutput `pulumi:"databaseEdition"`
 	// The configuration of the Database Management service.
 	DatabaseManagementConfigs ExternalNonContainerDatabaseDatabaseManagementConfigArrayOutput `pulumi:"databaseManagementConfigs"`
 	// The Oracle Database version.
-	DatabaseVersion pulumi.StringOutput `pulumi:"databaseVersion"`
+	DatabaseVersion pulumi.StringPtrOutput `pulumi:"databaseVersion"`
 	// The Oracle Database ID, which identifies an Oracle Database located outside of Oracle Cloud.
-	DbId pulumi.StringOutput `pulumi:"dbId"`
+	DbId pulumi.StringPtrOutput `pulumi:"dbId"`
 	// The database packs licensed for the external Oracle Database.
-	DbPacks pulumi.StringOutput `pulumi:"dbPacks"`
+	DbPacks pulumi.StringPtrOutput `pulumi:"dbPacks"`
 	// The `DB_UNIQUE_NAME` of the external database.
-	DbUniqueName pulumi.StringOutput `pulumi:"dbUniqueName"`
+	DbUniqueName pulumi.StringPtrOutput `pulumi:"dbUniqueName"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) The user-friendly name for the external database. The name does not have to be unique.
@@ -88,19 +87,19 @@ type ExternalNonContainerDatabase struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// Additional information about the current lifecycle state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// The national character of the external database.
-	NcharacterSet pulumi.StringOutput `pulumi:"ncharacterSet"`
+	NcharacterSet pulumi.StringPtrOutput `pulumi:"ncharacterSet"`
 	// The configuration of Operations Insights for the external database
 	OperationsInsightsConfigs ExternalNonContainerDatabaseOperationsInsightsConfigArrayOutput `pulumi:"operationsInsightsConfigs"`
 	// The configuration of Stack Monitoring for the external database.
 	StackMonitoringConfigs ExternalNonContainerDatabaseStackMonitoringConfigArrayOutput `pulumi:"stackMonitoringConfigs"`
 	// The current state of the Oracle Cloud Infrastructure external database resource.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The date and time the database was created.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The time zone of the external database. It is a time zone offset (a character type in the format '[+|-]TZH:TZM') or a time zone region name, depending on how the time zone value was specified when the database was created / last altered.
-	TimeZone pulumi.StringOutput `pulumi:"timeZone"`
+	TimeZone pulumi.StringPtrOutput `pulumi:"timeZone"`
 }
 
 // NewExternalNonContainerDatabase registers a new resource with the given unique name, arguments, and options.
@@ -282,12 +281,6 @@ func (i *ExternalNonContainerDatabase) ToExternalNonContainerDatabaseOutputWithC
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalNonContainerDatabaseOutput)
 }
 
-func (i *ExternalNonContainerDatabase) ToOutput(ctx context.Context) pulumix.Output[*ExternalNonContainerDatabase] {
-	return pulumix.Output[*ExternalNonContainerDatabase]{
-		OutputState: i.ToExternalNonContainerDatabaseOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ExternalNonContainerDatabaseArrayInput is an input type that accepts ExternalNonContainerDatabaseArray and ExternalNonContainerDatabaseArrayOutput values.
 // You can construct a concrete instance of `ExternalNonContainerDatabaseArrayInput` via:
 //
@@ -311,12 +304,6 @@ func (i ExternalNonContainerDatabaseArray) ToExternalNonContainerDatabaseArrayOu
 
 func (i ExternalNonContainerDatabaseArray) ToExternalNonContainerDatabaseArrayOutputWithContext(ctx context.Context) ExternalNonContainerDatabaseArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalNonContainerDatabaseArrayOutput)
-}
-
-func (i ExternalNonContainerDatabaseArray) ToOutput(ctx context.Context) pulumix.Output[[]*ExternalNonContainerDatabase] {
-	return pulumix.Output[[]*ExternalNonContainerDatabase]{
-		OutputState: i.ToExternalNonContainerDatabaseArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ExternalNonContainerDatabaseMapInput is an input type that accepts ExternalNonContainerDatabaseMap and ExternalNonContainerDatabaseMapOutput values.
@@ -344,12 +331,6 @@ func (i ExternalNonContainerDatabaseMap) ToExternalNonContainerDatabaseMapOutput
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalNonContainerDatabaseMapOutput)
 }
 
-func (i ExternalNonContainerDatabaseMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ExternalNonContainerDatabase] {
-	return pulumix.Output[map[string]*ExternalNonContainerDatabase]{
-		OutputState: i.ToExternalNonContainerDatabaseMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ExternalNonContainerDatabaseOutput struct{ *pulumi.OutputState }
 
 func (ExternalNonContainerDatabaseOutput) ElementType() reflect.Type {
@@ -364,15 +345,9 @@ func (o ExternalNonContainerDatabaseOutput) ToExternalNonContainerDatabaseOutput
 	return o
 }
 
-func (o ExternalNonContainerDatabaseOutput) ToOutput(ctx context.Context) pulumix.Output[*ExternalNonContainerDatabase] {
-	return pulumix.Output[*ExternalNonContainerDatabase]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The character set of the external database.
-func (o ExternalNonContainerDatabaseOutput) CharacterSet() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalNonContainerDatabase) pulumi.StringOutput { return v.CharacterSet }).(pulumi.StringOutput)
+func (o ExternalNonContainerDatabaseOutput) CharacterSet() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalNonContainerDatabase) pulumi.StringPtrOutput { return v.CharacterSet }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -381,13 +356,13 @@ func (o ExternalNonContainerDatabaseOutput) CompartmentId() pulumi.StringOutput 
 }
 
 // The Oracle Database configuration
-func (o ExternalNonContainerDatabaseOutput) DatabaseConfiguration() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalNonContainerDatabase) pulumi.StringOutput { return v.DatabaseConfiguration }).(pulumi.StringOutput)
+func (o ExternalNonContainerDatabaseOutput) DatabaseConfiguration() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalNonContainerDatabase) pulumi.StringPtrOutput { return v.DatabaseConfiguration }).(pulumi.StringPtrOutput)
 }
 
 // The Oracle Database edition.
-func (o ExternalNonContainerDatabaseOutput) DatabaseEdition() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalNonContainerDatabase) pulumi.StringOutput { return v.DatabaseEdition }).(pulumi.StringOutput)
+func (o ExternalNonContainerDatabaseOutput) DatabaseEdition() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalNonContainerDatabase) pulumi.StringPtrOutput { return v.DatabaseEdition }).(pulumi.StringPtrOutput)
 }
 
 // The configuration of the Database Management service.
@@ -398,23 +373,23 @@ func (o ExternalNonContainerDatabaseOutput) DatabaseManagementConfigs() External
 }
 
 // The Oracle Database version.
-func (o ExternalNonContainerDatabaseOutput) DatabaseVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalNonContainerDatabase) pulumi.StringOutput { return v.DatabaseVersion }).(pulumi.StringOutput)
+func (o ExternalNonContainerDatabaseOutput) DatabaseVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalNonContainerDatabase) pulumi.StringPtrOutput { return v.DatabaseVersion }).(pulumi.StringPtrOutput)
 }
 
 // The Oracle Database ID, which identifies an Oracle Database located outside of Oracle Cloud.
-func (o ExternalNonContainerDatabaseOutput) DbId() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalNonContainerDatabase) pulumi.StringOutput { return v.DbId }).(pulumi.StringOutput)
+func (o ExternalNonContainerDatabaseOutput) DbId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalNonContainerDatabase) pulumi.StringPtrOutput { return v.DbId }).(pulumi.StringPtrOutput)
 }
 
 // The database packs licensed for the external Oracle Database.
-func (o ExternalNonContainerDatabaseOutput) DbPacks() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalNonContainerDatabase) pulumi.StringOutput { return v.DbPacks }).(pulumi.StringOutput)
+func (o ExternalNonContainerDatabaseOutput) DbPacks() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalNonContainerDatabase) pulumi.StringPtrOutput { return v.DbPacks }).(pulumi.StringPtrOutput)
 }
 
 // The `DB_UNIQUE_NAME` of the external database.
-func (o ExternalNonContainerDatabaseOutput) DbUniqueName() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalNonContainerDatabase) pulumi.StringOutput { return v.DbUniqueName }).(pulumi.StringOutput)
+func (o ExternalNonContainerDatabaseOutput) DbUniqueName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalNonContainerDatabase) pulumi.StringPtrOutput { return v.DbUniqueName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -436,13 +411,13 @@ func (o ExternalNonContainerDatabaseOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Additional information about the current lifecycle state.
-func (o ExternalNonContainerDatabaseOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalNonContainerDatabase) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o ExternalNonContainerDatabaseOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalNonContainerDatabase) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The national character of the external database.
-func (o ExternalNonContainerDatabaseOutput) NcharacterSet() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalNonContainerDatabase) pulumi.StringOutput { return v.NcharacterSet }).(pulumi.StringOutput)
+func (o ExternalNonContainerDatabaseOutput) NcharacterSet() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalNonContainerDatabase) pulumi.StringPtrOutput { return v.NcharacterSet }).(pulumi.StringPtrOutput)
 }
 
 // The configuration of Operations Insights for the external database
@@ -460,18 +435,18 @@ func (o ExternalNonContainerDatabaseOutput) StackMonitoringConfigs() ExternalNon
 }
 
 // The current state of the Oracle Cloud Infrastructure external database resource.
-func (o ExternalNonContainerDatabaseOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalNonContainerDatabase) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o ExternalNonContainerDatabaseOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalNonContainerDatabase) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the database was created.
-func (o ExternalNonContainerDatabaseOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalNonContainerDatabase) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o ExternalNonContainerDatabaseOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalNonContainerDatabase) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time zone of the external database. It is a time zone offset (a character type in the format '[+|-]TZH:TZM') or a time zone region name, depending on how the time zone value was specified when the database was created / last altered.
-func (o ExternalNonContainerDatabaseOutput) TimeZone() pulumi.StringOutput {
-	return o.ApplyT(func(v *ExternalNonContainerDatabase) pulumi.StringOutput { return v.TimeZone }).(pulumi.StringOutput)
+func (o ExternalNonContainerDatabaseOutput) TimeZone() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExternalNonContainerDatabase) pulumi.StringPtrOutput { return v.TimeZone }).(pulumi.StringPtrOutput)
 }
 
 type ExternalNonContainerDatabaseArrayOutput struct{ *pulumi.OutputState }
@@ -486,12 +461,6 @@ func (o ExternalNonContainerDatabaseArrayOutput) ToExternalNonContainerDatabaseA
 
 func (o ExternalNonContainerDatabaseArrayOutput) ToExternalNonContainerDatabaseArrayOutputWithContext(ctx context.Context) ExternalNonContainerDatabaseArrayOutput {
 	return o
-}
-
-func (o ExternalNonContainerDatabaseArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ExternalNonContainerDatabase] {
-	return pulumix.Output[[]*ExternalNonContainerDatabase]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ExternalNonContainerDatabaseArrayOutput) Index(i pulumi.IntInput) ExternalNonContainerDatabaseOutput {
@@ -512,12 +481,6 @@ func (o ExternalNonContainerDatabaseMapOutput) ToExternalNonContainerDatabaseMap
 
 func (o ExternalNonContainerDatabaseMapOutput) ToExternalNonContainerDatabaseMapOutputWithContext(ctx context.Context) ExternalNonContainerDatabaseMapOutput {
 	return o
-}
-
-func (o ExternalNonContainerDatabaseMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ExternalNonContainerDatabase] {
-	return pulumix.Output[map[string]*ExternalNonContainerDatabase]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ExternalNonContainerDatabaseMapOutput) MapIndex(k pulumi.StringInput) ExternalNonContainerDatabaseOutput {

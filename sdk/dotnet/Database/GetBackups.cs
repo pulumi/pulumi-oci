@@ -153,7 +153,7 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
 
         [OutputConstructor]
         private GetBackupsResult(
@@ -165,7 +165,7 @@ namespace Pulumi.Oci.Database
 
             ImmutableArray<Outputs.GetBackupsFilterResult> filters,
 
-            string id)
+            string? id)
         {
             Backups = backups;
             CompartmentId = compartmentId;

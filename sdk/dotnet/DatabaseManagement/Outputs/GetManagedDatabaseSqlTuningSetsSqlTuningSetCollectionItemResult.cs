@@ -16,65 +16,65 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// The description of the SQL tuning set.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// Latest execution error of the plsql that was submitted as a scheduler job.
         /// </summary>
-        public readonly string ErrorMessage;
+        public readonly string? ErrorMessage;
         /// <summary>
         /// The unique Sql tuning set identifier. This is not OCID.
         /// </summary>
-        public readonly int Id;
+        public readonly int? Id;
         /// <summary>
         /// The name of the SQL tuning set.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The owner of the SQL tuning set.
         /// </summary>
-        public readonly string Owner;
+        public readonly string? Owner;
         /// <summary>
         /// Name of the Sql tuning set scheduler job.
         /// </summary>
-        public readonly string ScheduledJobName;
+        public readonly string? ScheduledJobName;
         /// <summary>
         /// The number of SQL statements in the SQL tuning set.
         /// </summary>
-        public readonly int StatementCounts;
+        public readonly int? StatementCounts;
         /// <summary>
         /// Current status of the Sql tuning set.
         /// </summary>
-        public readonly string Status;
+        public readonly string? Status;
         /// <summary>
         /// The created time of the Sql tuning set.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// Last modified time of the Sql tuning set.
         /// </summary>
-        public readonly string TimeLastModified;
+        public readonly string? TimeLastModified;
 
         [OutputConstructor]
         private GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItemResult(
-            string description,
+            string? description,
 
-            string errorMessage,
+            string? errorMessage,
 
-            int id,
+            int? id,
 
-            string name,
+            string? name,
 
-            string owner,
+            string? owner,
 
-            string scheduledJobName,
+            string? scheduledJobName,
 
-            int statementCounts,
+            int? statementCounts,
 
-            string status,
+            string? status,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeLastModified)
+            string? timeLastModified)
         {
             Description = description;
             ErrorMessage = errorMessage;

@@ -16,23 +16,23 @@ namespace Pulumi.Oci.Redis.Outputs
         /// <summary>
         /// A filter to return only resources that match the entire display name given.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// The fully qualified domain name (FQDN) of the API endpoint to access a specific node.
         /// </summary>
-        public readonly string PrivateEndpointFqdn;
+        public readonly string? PrivateEndpointFqdn;
         /// <summary>
         /// The private IP address of the API endpoint to access a specific node.
         /// </summary>
-        public readonly string PrivateEndpointIpAddress;
+        public readonly string? PrivateEndpointIpAddress;
 
         [OutputConstructor]
         private GetRedisClustersRedisClusterCollectionItemNodeCollectionItemResult(
-            string displayName,
+            string? displayName,
 
-            string privateEndpointFqdn,
+            string? privateEndpointFqdn,
 
-            string privateEndpointIpAddress)
+            string? privateEndpointIpAddress)
         {
             DisplayName = displayName;
             PrivateEndpointFqdn = privateEndpointFqdn;

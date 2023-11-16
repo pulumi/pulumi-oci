@@ -16,29 +16,29 @@ namespace Pulumi.Oci.Limits.Outputs
         /// <summary>
         /// Filter entries by availability domain. This implies that only AD-specific values are returned.
         /// </summary>
-        public readonly string AvailabilityDomain;
+        public readonly string? AvailabilityDomain;
         /// <summary>
         /// Optional field, can be used to see a specific resource limit value.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// Filter entries by scope type.
         /// </summary>
-        public readonly string ScopeType;
+        public readonly string? ScopeType;
         /// <summary>
         /// The resource limit value.
         /// </summary>
-        public readonly string Value;
+        public readonly string? Value;
 
         [OutputConstructor]
         private GetLimitValuesLimitValueResult(
-            string availabilityDomain,
+            string? availabilityDomain,
 
-            string name,
+            string? name,
 
-            string scopeType,
+            string? scopeType,
 
-            string value)
+            string? value)
         {
             AvailabilityDomain = availabilityDomain;
             Name = name;

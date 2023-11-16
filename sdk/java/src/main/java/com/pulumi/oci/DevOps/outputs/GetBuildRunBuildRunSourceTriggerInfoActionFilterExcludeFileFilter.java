@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilter {
-    private List<String> filePaths;
+    private @Nullable List<String> filePaths;
 
     private GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilter() {}
     public List<String> filePaths() {
-        return this.filePaths;
+        return this.filePaths == null ? List.of() : this.filePaths;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFi
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> filePaths;
+        private @Nullable List<String> filePaths;
         public Builder() {}
         public Builder(GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilter defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFi
         }
 
         @CustomType.Setter
-        public Builder filePaths(List<String> filePaths) {
-            this.filePaths = Objects.requireNonNull(filePaths);
+        public Builder filePaths(@Nullable List<String> filePaths) {
+            this.filePaths = filePaths;
             return this;
         }
         public Builder filePaths(String... filePaths) {

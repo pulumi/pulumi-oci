@@ -49,17 +49,11 @@ class GetSuppressionsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment to contain the suppression. Since suppressions are at the customer level, this must be the tenancy OCID.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="emailAddress")
     def email_address(self) -> Optional[str]:
-        """
-        The email address of the suppression.
-        """
         return pulumi.get(self, "email_address")
 
     @property
@@ -69,7 +63,7 @@ class GetSuppressionsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -77,10 +71,7 @@ class GetSuppressionsResult:
 
     @property
     @pulumi.getter
-    def suppressions(self) -> Sequence['outputs.GetSuppressionsSuppressionResult']:
-        """
-        The list of suppressions.
-        """
+    def suppressions(self) -> Optional[Sequence['outputs.GetSuppressionsSuppressionResult']]:
         return pulumi.get(self, "suppressions")
 
     @property
@@ -116,33 +107,7 @@ def get_suppressions(compartment_id: Optional[str] = None,
                      time_created_less_than: Optional[str] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSuppressionsResult:
     """
-    This data source provides the list of Suppressions in Oracle Cloud Infrastructure Email service.
-
-    Gets a list of suppressed recipient email addresses for a user. The
-    `compartmentId` for suppressions must be a tenancy OCID. The returned list
-    is sorted by creation time in descending order.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_suppressions = oci.Email.get_suppressions(compartment_id=var["tenancy_ocid"],
-        email_address=var["suppression_email_address"],
-        time_created_greater_than_or_equal_to=var["suppression_time_created_greater_than_or_equal_to"],
-        time_created_less_than=var["suppression_time_created_less_than"])
-    ```
-
-
-    :param str compartment_id: The OCID for the compartment.
-    :param str email_address: The email address of the suppression.
-    :param str time_created_greater_than_or_equal_to: Search for suppressions that were created within a specific date range, using this parameter to specify the earliest creation date for the returned list (inclusive). Specifying this parameter without the corresponding `timeCreatedLessThan` parameter will retrieve suppressions created from the given `timeCreatedGreaterThanOrEqualTo` to the current time, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
-           
-           **Example:** 2016-12-19T16:39:57.600Z
-    :param str time_created_less_than: Search for suppressions that were created within a specific date range, using this parameter to specify the latest creation date for the returned list (exclusive). Specifying this parameter without the corresponding `timeCreatedGreaterThanOrEqualTo` parameter will retrieve all suppressions created before the specified end date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
-           
-           **Example:** 2016-12-19T16:39:57.600Z
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -171,32 +136,6 @@ def get_suppressions_output(compartment_id: Optional[pulumi.Input[str]] = None,
                             time_created_less_than: Optional[pulumi.Input[Optional[str]]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSuppressionsResult]:
     """
-    This data source provides the list of Suppressions in Oracle Cloud Infrastructure Email service.
-
-    Gets a list of suppressed recipient email addresses for a user. The
-    `compartmentId` for suppressions must be a tenancy OCID. The returned list
-    is sorted by creation time in descending order.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_suppressions = oci.Email.get_suppressions(compartment_id=var["tenancy_ocid"],
-        email_address=var["suppression_email_address"],
-        time_created_greater_than_or_equal_to=var["suppression_time_created_greater_than_or_equal_to"],
-        time_created_less_than=var["suppression_time_created_less_than"])
-    ```
-
-
-    :param str compartment_id: The OCID for the compartment.
-    :param str email_address: The email address of the suppression.
-    :param str time_created_greater_than_or_equal_to: Search for suppressions that were created within a specific date range, using this parameter to specify the earliest creation date for the returned list (inclusive). Specifying this parameter without the corresponding `timeCreatedLessThan` parameter will retrieve suppressions created from the given `timeCreatedGreaterThanOrEqualTo` to the current time, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
-           
-           **Example:** 2016-12-19T16:39:57.600Z
-    :param str time_created_less_than: Search for suppressions that were created within a specific date range, using this parameter to specify the latest creation date for the returned list (exclusive). Specifying this parameter without the corresponding `timeCreatedGreaterThanOrEqualTo` parameter will retrieve all suppressions created before the specified end date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
-           
-           **Example:** 2016-12-19T16:39:57.600Z
+    Use this data source to access information about an existing resource.
     """
     ...

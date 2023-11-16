@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// The ICMP code (optional).
         /// </summary>
-        public readonly int Code;
+        public readonly int? Code;
         /// <summary>
         /// The ICMP type.
         /// </summary>
-        public readonly int Type;
+        public readonly int? Type;
 
         [OutputConstructor]
         private GetSecurityListsSecurityListIngressSecurityRuleIcmpOptionResult(
-            int code,
+            int? code,
 
-            int type)
+            int? type)
         {
             Code = code;
             Type = type;

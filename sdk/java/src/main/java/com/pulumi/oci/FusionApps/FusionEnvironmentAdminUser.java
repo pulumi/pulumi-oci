@@ -13,6 +13,7 @@ import com.pulumi.oci.FusionApps.outputs.FusionEnvironmentAdminUserItem;
 import com.pulumi.oci.Utilities;
 import java.lang.String;
 import java.util.List;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -113,14 +114,14 @@ public class FusionEnvironmentAdminUser extends com.pulumi.resources.CustomResou
      * 
      */
     @Export(name="items", refs={List.class,FusionEnvironmentAdminUserItem.class}, tree="[0,1]")
-    private Output<List<FusionEnvironmentAdminUserItem>> items;
+    private Output</* @Nullable */ List<FusionEnvironmentAdminUserItem>> items;
 
     /**
      * @return A page of AdminUserSummary objects.
      * 
      */
-    public Output<List<FusionEnvironmentAdminUserItem>> items() {
-        return this.items;
+    public Output<Optional<List<FusionEnvironmentAdminUserItem>>> items() {
+        return Codegen.optional(this.items);
     }
     /**
      * The administrator&#39;s last name.

@@ -8,6 +8,8 @@ import com.pulumi.oci.Database.outputs.GetAutonomousContainerDatabaseVersionsAut
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAutonomousContainerDatabaseVersionsAutonomousContainerDatabaseVersion {
@@ -15,39 +17,39 @@ public final class GetAutonomousContainerDatabaseVersionsAutonomousContainerData
      * @return A URL that points to a detailed description of the Autonomous Container Database version.
      * 
      */
-    private String details;
+    private @Nullable String details;
     /**
      * @return The list of applications supported for the given version.
      * 
      */
-    private List<GetAutonomousContainerDatabaseVersionsAutonomousContainerDatabaseVersionSupportedApp> supportedApps;
+    private @Nullable List<GetAutonomousContainerDatabaseVersionsAutonomousContainerDatabaseVersionSupportedApp> supportedApps;
     /**
      * @return A valid Oracle Database version for provisioning an Autonomous Container Database.
      * 
      */
-    private String version;
+    private @Nullable String version;
 
     private GetAutonomousContainerDatabaseVersionsAutonomousContainerDatabaseVersion() {}
     /**
      * @return A URL that points to a detailed description of the Autonomous Container Database version.
      * 
      */
-    public String details() {
-        return this.details;
+    public Optional<String> details() {
+        return Optional.ofNullable(this.details);
     }
     /**
      * @return The list of applications supported for the given version.
      * 
      */
     public List<GetAutonomousContainerDatabaseVersionsAutonomousContainerDatabaseVersionSupportedApp> supportedApps() {
-        return this.supportedApps;
+        return this.supportedApps == null ? List.of() : this.supportedApps;
     }
     /**
      * @return A valid Oracle Database version for provisioning an Autonomous Container Database.
      * 
      */
-    public String version() {
-        return this.version;
+    public Optional<String> version() {
+        return Optional.ofNullable(this.version);
     }
 
     public static Builder builder() {
@@ -59,9 +61,9 @@ public final class GetAutonomousContainerDatabaseVersionsAutonomousContainerData
     }
     @CustomType.Builder
     public static final class Builder {
-        private String details;
-        private List<GetAutonomousContainerDatabaseVersionsAutonomousContainerDatabaseVersionSupportedApp> supportedApps;
-        private String version;
+        private @Nullable String details;
+        private @Nullable List<GetAutonomousContainerDatabaseVersionsAutonomousContainerDatabaseVersionSupportedApp> supportedApps;
+        private @Nullable String version;
         public Builder() {}
         public Builder(GetAutonomousContainerDatabaseVersionsAutonomousContainerDatabaseVersion defaults) {
     	      Objects.requireNonNull(defaults);
@@ -71,21 +73,21 @@ public final class GetAutonomousContainerDatabaseVersionsAutonomousContainerData
         }
 
         @CustomType.Setter
-        public Builder details(String details) {
-            this.details = Objects.requireNonNull(details);
+        public Builder details(@Nullable String details) {
+            this.details = details;
             return this;
         }
         @CustomType.Setter
-        public Builder supportedApps(List<GetAutonomousContainerDatabaseVersionsAutonomousContainerDatabaseVersionSupportedApp> supportedApps) {
-            this.supportedApps = Objects.requireNonNull(supportedApps);
+        public Builder supportedApps(@Nullable List<GetAutonomousContainerDatabaseVersionsAutonomousContainerDatabaseVersionSupportedApp> supportedApps) {
+            this.supportedApps = supportedApps;
             return this;
         }
         public Builder supportedApps(GetAutonomousContainerDatabaseVersionsAutonomousContainerDatabaseVersionSupportedApp... supportedApps) {
             return supportedApps(List.of(supportedApps));
         }
         @CustomType.Setter
-        public Builder version(String version) {
-            this.version = Objects.requireNonNull(version);
+        public Builder version(@Nullable String version) {
+            this.version = version;
             return this;
         }
         public GetAutonomousContainerDatabaseVersionsAutonomousContainerDatabaseVersion build() {

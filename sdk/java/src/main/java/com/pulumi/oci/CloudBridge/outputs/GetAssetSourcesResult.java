@@ -18,7 +18,7 @@ public final class GetAssetSourcesResult {
      * @return The list of asset_source_collection.
      * 
      */
-    private List<GetAssetSourcesAssetSourceCollection> assetSourceCollections;
+    private @Nullable List<GetAssetSourcesAssetSourceCollection> assetSourceCollections;
     private @Nullable String assetSourceId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for the resource.
@@ -35,7 +35,7 @@ public final class GetAssetSourcesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The current state of the asset source.
      * 
@@ -48,7 +48,7 @@ public final class GetAssetSourcesResult {
      * 
      */
     public List<GetAssetSourcesAssetSourceCollection> assetSourceCollections() {
-        return this.assetSourceCollections;
+        return this.assetSourceCollections == null ? List.of() : this.assetSourceCollections;
     }
     public Optional<String> assetSourceId() {
         return Optional.ofNullable(this.assetSourceId);
@@ -74,8 +74,8 @@ public final class GetAssetSourcesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The current state of the asset source.
@@ -94,12 +94,12 @@ public final class GetAssetSourcesResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetAssetSourcesAssetSourceCollection> assetSourceCollections;
+        private @Nullable List<GetAssetSourcesAssetSourceCollection> assetSourceCollections;
         private @Nullable String assetSourceId;
         private String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetAssetSourcesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetAssetSourcesResult defaults) {
@@ -114,8 +114,8 @@ public final class GetAssetSourcesResult {
         }
 
         @CustomType.Setter
-        public Builder assetSourceCollections(List<GetAssetSourcesAssetSourceCollection> assetSourceCollections) {
-            this.assetSourceCollections = Objects.requireNonNull(assetSourceCollections);
+        public Builder assetSourceCollections(@Nullable List<GetAssetSourcesAssetSourceCollection> assetSourceCollections) {
+            this.assetSourceCollections = assetSourceCollections;
             return this;
         }
         public Builder assetSourceCollections(GetAssetSourcesAssetSourceCollection... assetSourceCollections) {
@@ -145,8 +145,8 @@ public final class GetAssetSourcesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

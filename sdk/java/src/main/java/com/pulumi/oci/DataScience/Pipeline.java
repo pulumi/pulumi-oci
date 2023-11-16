@@ -142,42 +142,42 @@ public class Pipeline extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="configurationDetails", refs={PipelineConfigurationDetails.class}, tree="[0]")
-    private Output<PipelineConfigurationDetails> configurationDetails;
+    private Output</* @Nullable */ PipelineConfigurationDetails> configurationDetails;
 
     /**
      * @return (Updatable) The configuration details of a pipeline.
      * 
      */
-    public Output<PipelineConfigurationDetails> configurationDetails() {
-        return this.configurationDetails;
+    public Output<Optional<PipelineConfigurationDetails>> configurationDetails() {
+        return Codegen.optional(this.configurationDetails);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the pipeline.
      * 
      */
     @Export(name="createdBy", refs={String.class}, tree="[0]")
-    private Output<String> createdBy;
+    private Output</* @Nullable */ String> createdBy;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the pipeline.
      * 
      */
-    public Output<String> createdBy() {
-        return this.createdBy;
+    public Output<Optional<String>> createdBy() {
+        return Codegen.optional(this.createdBy);
     }
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     @Export(name="deleteRelatedPipelineRuns", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> deleteRelatedPipelineRuns;
@@ -190,84 +190,84 @@ public class Pipeline extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
-    private Output<String> description;
+    private Output</* @Nullable */ String> description;
 
     /**
      * @return (Updatable) A short description of the step.
      * 
      */
-    public Output<String> description() {
-        return this.description;
+    public Output<Optional<String>> description() {
+        return Codegen.optional(this.description);
     }
     /**
      * (Updatable) A user-friendly display name for the resource.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return (Updatable) A user-friendly display name for the resource.
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * The infrastructure configuration details of a pipeline or a step.
      * 
      */
     @Export(name="infrastructureConfigurationDetails", refs={PipelineInfrastructureConfigurationDetails.class}, tree="[0]")
-    private Output<PipelineInfrastructureConfigurationDetails> infrastructureConfigurationDetails;
+    private Output</* @Nullable */ PipelineInfrastructureConfigurationDetails> infrastructureConfigurationDetails;
 
     /**
      * @return The infrastructure configuration details of a pipeline or a step.
      * 
      */
-    public Output<PipelineInfrastructureConfigurationDetails> infrastructureConfigurationDetails() {
-        return this.infrastructureConfigurationDetails;
+    public Output<Optional<PipelineInfrastructureConfigurationDetails>> infrastructureConfigurationDetails() {
+        return Codegen.optional(this.infrastructureConfigurationDetails);
     }
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in &#39;Failed&#39; state.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in &#39;Failed&#39; state.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * (Updatable) The pipeline log configuration details.
      * 
      */
     @Export(name="logConfigurationDetails", refs={PipelineLogConfigurationDetails.class}, tree="[0]")
-    private Output<PipelineLogConfigurationDetails> logConfigurationDetails;
+    private Output</* @Nullable */ PipelineLogConfigurationDetails> logConfigurationDetails;
 
     /**
      * @return (Updatable) The pipeline log configuration details.
      * 
      */
-    public Output<PipelineLogConfigurationDetails> logConfigurationDetails() {
-        return this.logConfigurationDetails;
+    public Output<Optional<PipelineLogConfigurationDetails>> logConfigurationDetails() {
+        return Codegen.optional(this.logConfigurationDetails);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline with.
@@ -288,20 +288,20 @@ public class Pipeline extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the pipeline.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     @Export(name="stepArtifact", refs={PipelineStepArtifact.class}, tree="[0]")
-    private Output<PipelineStepArtifact> stepArtifact;
+    private Output</* @Nullable */ PipelineStepArtifact> stepArtifact;
 
-    public Output<PipelineStepArtifact> stepArtifact() {
-        return this.stepArtifact;
+    public Output<Optional<PipelineStepArtifact>> stepArtifact() {
+        return Codegen.optional(this.stepArtifact);
     }
     /**
      * (Updatable) Array of step details for each step.
@@ -322,42 +322,42 @@ public class Pipeline extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> systemTags;
+    private Output</* @Nullable */ Map<String,Object>> systemTags;
 
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    public Output<Map<String,Object>> systemTags() {
-        return this.systemTags;
+    public Output<Optional<Map<String,Object>>> systemTags() {
+        return Codegen.optional(this.systemTags);
     }
     /**
      * The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The date and time the resource was updated in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The date and time the resource was updated in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
 
     /**

@@ -46,17 +46,11 @@ class GetUsagePlansResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the resource is created.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -66,7 +60,7 @@ class GetUsagePlansResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -75,17 +69,11 @@ class GetUsagePlansResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the usage plan.
-        """
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="usagePlanCollections")
-    def usage_plan_collections(self) -> Sequence['outputs.GetUsagePlansUsagePlanCollectionResult']:
-        """
-        The list of usage_plan_collection.
-        """
+    def usage_plan_collections(self) -> Optional[Sequence['outputs.GetUsagePlansUsagePlanCollectionResult']]:
         return pulumi.get(self, "usage_plan_collections")
 
 
@@ -109,25 +97,7 @@ def get_usage_plans(compartment_id: Optional[str] = None,
                     state: Optional[str] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetUsagePlansResult:
     """
-    This data source provides the list of Usage Plans in Oracle Cloud Infrastructure API Gateway service.
-
-    Returns a list of usage plans.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_usage_plans = oci.ApiGateway.get_usage_plans(compartment_id=var["compartment_id"],
-        display_name=var["usage_plan_display_name"],
-        state=var["usage_plan_state"])
-    ```
-
-
-    :param str compartment_id: The ocid of the compartment in which to list resources.
-    :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
-    :param str state: A filter to return only resources that match the given lifecycle state. Example: `ACTIVE`
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -153,24 +123,6 @@ def get_usage_plans_output(compartment_id: Optional[pulumi.Input[str]] = None,
                            state: Optional[pulumi.Input[Optional[str]]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetUsagePlansResult]:
     """
-    This data source provides the list of Usage Plans in Oracle Cloud Infrastructure API Gateway service.
-
-    Returns a list of usage plans.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_usage_plans = oci.ApiGateway.get_usage_plans(compartment_id=var["compartment_id"],
-        display_name=var["usage_plan_display_name"],
-        state=var["usage_plan_state"])
-    ```
-
-
-    :param str compartment_id: The ocid of the compartment in which to list resources.
-    :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
-    :param str state: A filter to return only resources that match the given lifecycle state. Example: `ACTIVE`
+    Use this data source to access information about an existing resource.
     """
     ...

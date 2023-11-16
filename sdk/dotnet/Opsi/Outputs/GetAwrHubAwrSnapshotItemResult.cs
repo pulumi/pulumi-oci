@@ -16,47 +16,47 @@ namespace Pulumi.Oci.Opsi.Outputs
         /// <summary>
         /// DatabaseId of the Source database for which AWR Data will be uploaded to AWR Hub.
         /// </summary>
-        public readonly string AwrSourceDatabaseId;
+        public readonly string? AwrSourceDatabaseId;
         /// <summary>
         /// The total number of errors.
         /// </summary>
-        public readonly string ErrorCount;
+        public readonly string? ErrorCount;
         /// <summary>
         /// The database instance number.
         /// </summary>
-        public readonly int InstanceNumber;
+        public readonly int? InstanceNumber;
         /// <summary>
         /// The identifier of the snapshot.
         /// </summary>
-        public readonly int SnapshotIdentifier;
+        public readonly int? SnapshotIdentifier;
         /// <summary>
         /// The timestamp of the database startup.
         /// </summary>
-        public readonly string TimeDbStartup;
+        public readonly string? TimeDbStartup;
         /// <summary>
         /// The start time of the snapshot.
         /// </summary>
-        public readonly string TimeSnapshotBegin;
+        public readonly string? TimeSnapshotBegin;
         /// <summary>
         /// The end time of the snapshot.
         /// </summary>
-        public readonly string TimeSnapshotEnd;
+        public readonly string? TimeSnapshotEnd;
 
         [OutputConstructor]
         private GetAwrHubAwrSnapshotItemResult(
-            string awrSourceDatabaseId,
+            string? awrSourceDatabaseId,
 
-            string errorCount,
+            string? errorCount,
 
-            int instanceNumber,
+            int? instanceNumber,
 
-            int snapshotIdentifier,
+            int? snapshotIdentifier,
 
-            string timeDbStartup,
+            string? timeDbStartup,
 
-            string timeSnapshotBegin,
+            string? timeSnapshotBegin,
 
-            string timeSnapshotEnd)
+            string? timeSnapshotEnd)
         {
             AwrSourceDatabaseId = awrSourceDatabaseId;
             ErrorCount = errorCount;

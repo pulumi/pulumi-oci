@@ -28,11 +28,11 @@ namespace Pulumi.Oci.NetworkFirewall.Outputs
         /// <summary>
         /// OCID of the Network Firewall Policy this Address List belongs to.
         /// </summary>
-        public readonly string ParentResourceId;
+        public readonly string? ParentResourceId;
         /// <summary>
         /// Count of total Addresses in the AddressList
         /// </summary>
-        public readonly int TotalAddresses;
+        public readonly int? TotalAddresses;
         /// <summary>
         /// Type of address list.
         /// </summary>
@@ -46,9 +46,9 @@ namespace Pulumi.Oci.NetworkFirewall.Outputs
 
             string networkFirewallPolicyId,
 
-            string parentResourceId,
+            string? parentResourceId,
 
-            int totalAddresses,
+            int? totalAddresses,
 
             string type)
         {

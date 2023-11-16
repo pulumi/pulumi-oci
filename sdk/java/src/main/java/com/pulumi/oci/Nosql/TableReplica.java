@@ -12,6 +12,7 @@ import com.pulumi.oci.Nosql.inputs.TableReplicaState;
 import com.pulumi.oci.Utilities;
 import java.lang.Integer;
 import java.lang.String;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -69,42 +70,42 @@ public class TableReplica extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
-    private Output<String> compartmentId;
+    private Output</* @Nullable */ String> compartmentId;
 
     /**
      * @return The OCID of the table&#39;s compartment.  Required if the tableNameOrId path parameter is a table name. Optional if tableNameOrId is an OCID.  If tableNameOrId is an OCID, and compartmentId is supplied, the latter must match the identified table&#39;s compartmentId.
      * 
      */
-    public Output<String> compartmentId() {
-        return this.compartmentId;
+    public Output<Optional<String>> compartmentId() {
+        return Codegen.optional(this.compartmentId);
     }
     /**
      * Maximum sustained read throughput limit for the new replica table. If not specified, the local table&#39;s read limit is used.
      * 
      */
     @Export(name="maxReadUnits", refs={Integer.class}, tree="[0]")
-    private Output<Integer> maxReadUnits;
+    private Output</* @Nullable */ Integer> maxReadUnits;
 
     /**
      * @return Maximum sustained read throughput limit for the new replica table. If not specified, the local table&#39;s read limit is used.
      * 
      */
-    public Output<Integer> maxReadUnits() {
-        return this.maxReadUnits;
+    public Output<Optional<Integer>> maxReadUnits() {
+        return Codegen.optional(this.maxReadUnits);
     }
     /**
      * Maximum sustained write throughput limit for the new replica table. If not specified, the local table&#39;s write limit is used.
      * 
      */
     @Export(name="maxWriteUnits", refs={Integer.class}, tree="[0]")
-    private Output<Integer> maxWriteUnits;
+    private Output</* @Nullable */ Integer> maxWriteUnits;
 
     /**
      * @return Maximum sustained write throughput limit for the new replica table. If not specified, the local table&#39;s write limit is used.
      * 
      */
-    public Output<Integer> maxWriteUnits() {
-        return this.maxWriteUnits;
+    public Output<Optional<Integer>> maxWriteUnits() {
+        return Codegen.optional(this.maxWriteUnits);
     }
     /**
      * Name of the remote region in standard Oracle Cloud Infrastructure format, i.e. us-ashburn-1

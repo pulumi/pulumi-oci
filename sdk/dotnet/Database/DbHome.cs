@@ -33,7 +33,7 @@ namespace Pulumi.Oci.Database
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
         [Output("compartmentId")]
-        public Output<string> CompartmentId { get; private set; } = null!;
+        public Output<string?> CompartmentId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Details for creating a database.
@@ -41,25 +41,25 @@ namespace Pulumi.Oci.Database
         /// **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
         /// </summary>
         [Output("database")]
-        public Output<Outputs.DbHomeDatabase> Database { get; private set; } = null!;
+        public Output<Outputs.DbHomeDatabase?> Database { get; private set; } = null!;
 
         /// <summary>
         /// The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
         /// </summary>
         [Output("databaseSoftwareImageId")]
-        public Output<string> DatabaseSoftwareImageId { get; private set; } = null!;
+        public Output<string?> DatabaseSoftwareImageId { get; private set; } = null!;
 
         /// <summary>
         /// The location of the Oracle Database Home.
         /// </summary>
         [Output("dbHomeLocation")]
-        public Output<string> DbHomeLocation { get; private set; } = null!;
+        public Output<string?> DbHomeLocation { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
         /// </summary>
         [Output("dbSystemId")]
-        public Output<string> DbSystemId { get; private set; } = null!;
+        public Output<string?> DbSystemId { get; private set; } = null!;
 
         /// <summary>
         /// A valid Oracle Database version. For a list of supported versions, use the ListDbVersions operation.
@@ -67,19 +67,19 @@ namespace Pulumi.Oci.Database
         /// This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
         /// </summary>
         [Output("dbVersion")]
-        public Output<string> DbVersion { get; private set; } = null!;
+        public Output<string?> DbVersion { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// The user-provided name of the Database Home.
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// Defaults to false. If omitted or set to false the provider will not delete databases removed from the Db Home configuration.
@@ -91,55 +91,55 @@ namespace Pulumi.Oci.Database
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// If true, the customer acknowledges that the specified Oracle Database software is an older release that is not currently supported by OCI.
         /// </summary>
         [Output("isDesupportedVersion")]
-        public Output<bool> IsDesupportedVersion { get; private set; } = null!;
+        public Output<bool?> IsDesupportedVersion { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         /// </summary>
         [Output("kmsKeyId")]
-        public Output<string> KmsKeyId { get; private set; } = null!;
+        public Output<string?> KmsKeyId { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
         /// </summary>
         [Output("kmsKeyVersionId")]
-        public Output<string> KmsKeyVersionId { get; private set; } = null!;
+        public Output<string?> KmsKeyVersionId { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation is started.
         /// </summary>
         [Output("lastPatchHistoryEntryId")]
-        public Output<string> LastPatchHistoryEntryId { get; private set; } = null!;
+        public Output<string?> LastPatchHistoryEntryId { get; private set; } = null!;
 
         /// <summary>
         /// Additional information about the current lifecycle state.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// The source of database: NONE for creating a new database. DB_BACKUP for creating a new database by restoring from a database backup. VM_CLUSTER_NEW for creating a database for VM Cluster.
         /// </summary>
         [Output("source")]
-        public Output<string> Source { get; private set; } = null!;
+        public Output<string?> Source { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the Database Home.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the Database Home was created.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
@@ -149,7 +149,7 @@ namespace Pulumi.Oci.Database
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("vmClusterId")]
-        public Output<string> VmClusterId { get; private set; } = null!;
+        public Output<string?> VmClusterId { get; private set; } = null!;
 
 
         /// <summary>

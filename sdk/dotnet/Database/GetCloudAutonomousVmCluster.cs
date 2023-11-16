@@ -110,68 +110,68 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// The percentage of the data storage used for the Autonomous Databases in an Autonomous VM Cluster.
         /// </summary>
-        public readonly double AutonomousDataStoragePercentage;
+        public readonly double? AutonomousDataStoragePercentage;
         /// <summary>
         /// The data disk group size allocated for Autonomous Databases, in TBs.
         /// </summary>
-        public readonly double AutonomousDataStorageSizeInTbs;
+        public readonly double? AutonomousDataStorageSizeInTbs;
         /// <summary>
         /// The name of the availability domain that the cloud Autonomous VM cluster is located in.
         /// </summary>
-        public readonly string AvailabilityDomain;
+        public readonly string? AvailabilityDomain;
         /// <summary>
         /// The data disk group size available for Autonomous Databases, in TBs.
         /// </summary>
-        public readonly double AvailableAutonomousDataStorageSizeInTbs;
+        public readonly double? AvailableAutonomousDataStorageSizeInTbs;
         /// <summary>
         /// The number of Autonomous Container Databases that can be created with the currently available local storage.
         /// </summary>
-        public readonly int AvailableContainerDatabases;
+        public readonly int? AvailableContainerDatabases;
         /// <summary>
         /// CPU cores available for allocation to Autonomous Databases.
         /// </summary>
-        public readonly double AvailableCpus;
+        public readonly double? AvailableCpus;
         public readonly string CloudAutonomousVmClusterId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure.
         /// </summary>
-        public readonly string CloudExadataInfrastructureId;
+        public readonly string? CloudExadataInfrastructureId;
         /// <summary>
         /// The time zone of the Cloud Autonomous VM Cluster.
         /// </summary>
-        public readonly string ClusterTimeZone;
+        public readonly string? ClusterTimeZone;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The compute model of the Cloud Autonomous VM Cluster.
         /// </summary>
-        public readonly string ComputeModel;
+        public readonly string? ComputeModel;
         /// <summary>
         /// The number of CPU cores on the cloud Autonomous VM cluster.
         /// </summary>
-        public readonly int CpuCoreCount;
+        public readonly int? CpuCoreCount;
         /// <summary>
         /// The number of CPU cores enabled per VM cluster node.
         /// </summary>
-        public readonly int CpuCoreCountPerNode;
+        public readonly int? CpuCoreCountPerNode;
         /// <summary>
         /// The percentage of total number of CPUs used in an Autonomous VM Cluster.
         /// </summary>
-        public readonly double CpuPercentage;
+        public readonly double? CpuPercentage;
         /// <summary>
         /// The total data storage allocated, in gigabytes (GB).
         /// </summary>
-        public readonly double DataStorageSizeInGb;
+        public readonly double? DataStorageSizeInGb;
         /// <summary>
         /// The total data storage allocated, in terabytes (TB).
         /// </summary>
-        public readonly double DataStorageSizeInTbs;
+        public readonly double? DataStorageSizeInTbs;
         /// <summary>
         /// The local node storage allocated in GBs.
         /// </summary>
-        public readonly int DbNodeStorageSizeInGbs;
+        public readonly int? DbNodeStorageSizeInGbs;
         /// <summary>
         /// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db servers.
         /// </summary>
@@ -179,51 +179,51 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// User defined description of the cloud Autonomous VM cluster.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// The user-friendly name for the cloud Autonomous VM cluster. The name does not need to be unique.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// The domain name for the cloud Autonomous VM cluster.
         /// </summary>
-        public readonly string Domain;
+        public readonly string? Domain;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The hostname for the cloud Autonomous VM cluster.
         /// </summary>
-        public readonly string Hostname;
+        public readonly string? Hostname;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud Autonomous VM cluster.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
         /// </summary>
-        public readonly bool IsMtlsEnabledVmCluster;
+        public readonly bool? IsMtlsEnabledVmCluster;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
         /// </summary>
-        public readonly string LastMaintenanceRunId;
+        public readonly string? LastMaintenanceRunId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history. This value is updated when a maintenance update starts.
         /// </summary>
-        public readonly string LastUpdateHistoryEntryId;
+        public readonly string? LastUpdateHistoryEntryId;
         /// <summary>
         /// The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Database service. Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null because the attribute is already set at the Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
         /// </summary>
-        public readonly string LicenseModel;
+        public readonly string? LicenseModel;
         /// <summary>
         /// Additional information about the current lifecycle state.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         public readonly ImmutableArray<Outputs.GetCloudAutonomousVmClusterMaintenanceWindowDetailResult> MaintenanceWindowDetails;
         /// <summary>
         /// The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
@@ -232,23 +232,23 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// The amount of memory (in GBs) enabled per OCPU or ECPU.
         /// </summary>
-        public readonly int MemoryPerOracleComputeUnitInGbs;
+        public readonly int? MemoryPerOracleComputeUnitInGbs;
         /// <summary>
         /// The memory allocated in GBs.
         /// </summary>
-        public readonly int MemorySizeInGbs;
+        public readonly int? MemorySizeInGbs;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
         /// </summary>
-        public readonly string NextMaintenanceRunId;
+        public readonly string? NextMaintenanceRunId;
         /// <summary>
         /// The number of database servers in the cloud VM cluster.
         /// </summary>
-        public readonly int NodeCount;
+        public readonly int? NodeCount;
         /// <summary>
         /// The number of non-provisionable Autonomous Container Databases in an Autonomous VM Cluster.
         /// </summary>
-        public readonly int NonProvisionableAutonomousContainerDatabases;
+        public readonly int? NonProvisionableAutonomousContainerDatabases;
         /// <summary>
         /// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
         /// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
@@ -257,179 +257,179 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// The number of CPU cores on the cloud Autonomous VM cluster. Only 1 decimal place is allowed for the fractional part.
         /// </summary>
-        public readonly double OcpuCount;
+        public readonly double? OcpuCount;
         /// <summary>
         /// The number of provisionable Autonomous Container Databases in an Autonomous VM Cluster.
         /// </summary>
-        public readonly int ProvisionableAutonomousContainerDatabases;
+        public readonly int? ProvisionableAutonomousContainerDatabases;
         /// <summary>
         /// The number of provisioned Autonomous Container Databases in an Autonomous VM Cluster.
         /// </summary>
-        public readonly int ProvisionedAutonomousContainerDatabases;
+        public readonly int? ProvisionedAutonomousContainerDatabases;
         /// <summary>
         /// The number of CPUs provisioned in an Autonomous VM Cluster.
         /// </summary>
-        public readonly double ProvisionedCpus;
+        public readonly double? ProvisionedCpus;
         /// <summary>
         /// For Autonomous Databases on Dedicated Exadata Infrastructure:
         /// * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
         /// * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
         /// </summary>
-        public readonly double ReclaimableCpus;
+        public readonly double? ReclaimableCpus;
         /// <summary>
         /// The number of CPUs reserved in an Autonomous VM Cluster.
         /// </summary>
-        public readonly double ReservedCpus;
+        public readonly double? ReservedCpus;
         /// <summary>
         /// The SCAN Listener Non TLS port. Default is 1521.
         /// </summary>
-        public readonly int ScanListenerPortNonTls;
+        public readonly int? ScanListenerPortNonTls;
         /// <summary>
         /// The SCAN Listenenr TLS port. Default is 2484.
         /// </summary>
-        public readonly int ScanListenerPortTls;
+        public readonly int? ScanListenerPortTls;
         /// <summary>
         /// The model name of the Exadata hardware running the cloud Autonomous VM cluster.
         /// </summary>
-        public readonly string Shape;
+        public readonly string? Shape;
         /// <summary>
         /// The current state of the cloud Autonomous VM cluster.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the cloud Autonomous VM Cluster is associated with.
         /// </summary>
-        public readonly string SubnetId;
+        public readonly string? SubnetId;
         /// <summary>
         /// The date and time that the cloud Autonomous VM cluster was created.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The last date and time that the cloud Autonomous VM cluster was updated.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
         /// <summary>
         /// The total data disk group size for Autonomous Databases, in TBs.
         /// </summary>
-        public readonly double TotalAutonomousDataStorageInTbs;
+        public readonly double? TotalAutonomousDataStorageInTbs;
         /// <summary>
         /// The total number of Autonomous Container Databases that can be created with the allocated local storage.
         /// </summary>
-        public readonly int TotalContainerDatabases;
+        public readonly int? TotalContainerDatabases;
         /// <summary>
         /// The total number of CPUs in an Autonomous VM Cluster.
         /// </summary>
-        public readonly double TotalCpus;
+        public readonly double? TotalCpus;
 
         [OutputConstructor]
         private GetCloudAutonomousVmClusterResult(
-            double autonomousDataStoragePercentage,
+            double? autonomousDataStoragePercentage,
 
-            double autonomousDataStorageSizeInTbs,
+            double? autonomousDataStorageSizeInTbs,
 
-            string availabilityDomain,
+            string? availabilityDomain,
 
-            double availableAutonomousDataStorageSizeInTbs,
+            double? availableAutonomousDataStorageSizeInTbs,
 
-            int availableContainerDatabases,
+            int? availableContainerDatabases,
 
-            double availableCpus,
+            double? availableCpus,
 
             string cloudAutonomousVmClusterId,
 
-            string cloudExadataInfrastructureId,
+            string? cloudExadataInfrastructureId,
 
-            string clusterTimeZone,
+            string? clusterTimeZone,
 
-            string compartmentId,
+            string? compartmentId,
 
-            string computeModel,
+            string? computeModel,
 
-            int cpuCoreCount,
+            int? cpuCoreCount,
 
-            int cpuCoreCountPerNode,
+            int? cpuCoreCountPerNode,
 
-            double cpuPercentage,
+            double? cpuPercentage,
 
-            double dataStorageSizeInGb,
+            double? dataStorageSizeInGb,
 
-            double dataStorageSizeInTbs,
+            double? dataStorageSizeInTbs,
 
-            int dbNodeStorageSizeInGbs,
+            int? dbNodeStorageSizeInGbs,
 
             ImmutableArray<string> dbServers,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string description,
+            string? description,
 
-            string displayName,
+            string? displayName,
 
-            string domain,
+            string? domain,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string hostname,
+            string? hostname,
 
-            string id,
+            string? id,
 
-            bool isMtlsEnabledVmCluster,
+            bool? isMtlsEnabledVmCluster,
 
-            string lastMaintenanceRunId,
+            string? lastMaintenanceRunId,
 
-            string lastUpdateHistoryEntryId,
+            string? lastUpdateHistoryEntryId,
 
-            string licenseModel,
+            string? licenseModel,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
             ImmutableArray<Outputs.GetCloudAutonomousVmClusterMaintenanceWindowDetailResult> maintenanceWindowDetails,
 
             ImmutableArray<Outputs.GetCloudAutonomousVmClusterMaintenanceWindowResult> maintenanceWindows,
 
-            int memoryPerOracleComputeUnitInGbs,
+            int? memoryPerOracleComputeUnitInGbs,
 
-            int memorySizeInGbs,
+            int? memorySizeInGbs,
 
-            string nextMaintenanceRunId,
+            string? nextMaintenanceRunId,
 
-            int nodeCount,
+            int? nodeCount,
 
-            int nonProvisionableAutonomousContainerDatabases,
+            int? nonProvisionableAutonomousContainerDatabases,
 
             ImmutableArray<string> nsgIds,
 
-            double ocpuCount,
+            double? ocpuCount,
 
-            int provisionableAutonomousContainerDatabases,
+            int? provisionableAutonomousContainerDatabases,
 
-            int provisionedAutonomousContainerDatabases,
+            int? provisionedAutonomousContainerDatabases,
 
-            double provisionedCpus,
+            double? provisionedCpus,
 
-            double reclaimableCpus,
+            double? reclaimableCpus,
 
-            double reservedCpus,
+            double? reservedCpus,
 
-            int scanListenerPortNonTls,
+            int? scanListenerPortNonTls,
 
-            int scanListenerPortTls,
+            int? scanListenerPortTls,
 
-            string shape,
+            string? shape,
 
-            string state,
+            string? state,
 
-            string subnetId,
+            string? subnetId,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated,
+            string? timeUpdated,
 
-            double totalAutonomousDataStorageInTbs,
+            double? totalAutonomousDataStorageInTbs,
 
-            int totalContainerDatabases,
+            int? totalContainerDatabases,
 
-            double totalCpus)
+            double? totalCpus)
         {
             AutonomousDataStoragePercentage = autonomousDataStoragePercentage;
             AutonomousDataStorageSizeInTbs = autonomousDataStorageSizeInTbs;

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Management Agent Plugins in Oracle Cloud Infrastructure Management Agent service.
@@ -78,7 +77,7 @@ type GetManagementAgentPluginsResult struct {
 	DisplayName *string                           `pulumi:"displayName"`
 	Filters     []GetManagementAgentPluginsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of management_agent_plugins.
 	ManagementAgentPlugins []GetManagementAgentPluginsManagementAgentPlugin `pulumi:"managementAgentPlugins"`
 	PlatformTypes          []string                                         `pulumi:"platformTypes"`
@@ -133,12 +132,6 @@ func (o GetManagementAgentPluginsResultOutput) ToGetManagementAgentPluginsResult
 	return o
 }
 
-func (o GetManagementAgentPluginsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagementAgentPluginsResult] {
-	return pulumix.Output[GetManagementAgentPluginsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetManagementAgentPluginsResultOutput) AgentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetManagementAgentPluginsResult) *string { return v.AgentId }).(pulumi.StringPtrOutput)
 }
@@ -157,8 +150,8 @@ func (o GetManagementAgentPluginsResultOutput) Filters() GetManagementAgentPlugi
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetManagementAgentPluginsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementAgentPluginsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetManagementAgentPluginsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentPluginsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of management_agent_plugins.

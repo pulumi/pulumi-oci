@@ -58,33 +58,21 @@ class GetReplicasResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment that contains the read replica.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="configurationId")
     def configuration_id(self) -> Optional[str]:
-        """
-        The OCID of the Configuration to be used by the read replica.
-        """
         return pulumi.get(self, "configuration_id")
 
     @property
     @pulumi.getter(name="dbSystemId")
     def db_system_id(self) -> Optional[str]:
-        """
-        The OCID of the DB System the read replica is associated with.
-        """
         return pulumi.get(self, "db_system_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        The user-friendly name for the read replica. It does not have to be unique.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -94,7 +82,7 @@ class GetReplicasResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -112,18 +100,12 @@ class GetReplicasResult:
 
     @property
     @pulumi.getter
-    def replicas(self) -> Sequence['outputs.GetReplicasReplicaResult']:
-        """
-        The list of replicas.
-        """
+    def replicas(self) -> Optional[Sequence['outputs.GetReplicasReplicaResult']]:
         return pulumi.get(self, "replicas")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The state of the read replica.
-        """
         return pulumi.get(self, "state")
 
 
@@ -155,33 +137,7 @@ def get_replicas(compartment_id: Optional[str] = None,
                  state: Optional[str] = None,
                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetReplicasResult:
     """
-    This data source provides the list of Replicas in Oracle Cloud Infrastructure MySQL Database service.
-
-    Lists all the read replicas that match the specified filters.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_replicas = oci.Mysql.get_replicas(compartment_id=var["compartment_id"],
-        configuration_id=oci_mysql_mysql_configuration["test_mysql_configuration"]["id"],
-        db_system_id=oci_mysql_mysql_db_system["test_mysql_db_system"]["id"],
-        display_name=var["replica_display_name"],
-        is_up_to_date=var["replica_is_up_to_date"],
-        replica_id=oci_mysql_replica["test_replica"]["id"],
-        state=var["replica_state"])
-    ```
-
-
-    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str configuration_id: The requested Configuration instance.
-    :param str db_system_id: The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str display_name: A filter to return only the resource matching the given display name exactly.
-    :param bool is_up_to_date: Filter instances if they are using the latest revision of the Configuration they are associated with.
-    :param str replica_id: The read replica [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str state: The LifecycleState of the read replica.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -219,32 +175,6 @@ def get_replicas_output(compartment_id: Optional[pulumi.Input[str]] = None,
                         state: Optional[pulumi.Input[Optional[str]]] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetReplicasResult]:
     """
-    This data source provides the list of Replicas in Oracle Cloud Infrastructure MySQL Database service.
-
-    Lists all the read replicas that match the specified filters.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_replicas = oci.Mysql.get_replicas(compartment_id=var["compartment_id"],
-        configuration_id=oci_mysql_mysql_configuration["test_mysql_configuration"]["id"],
-        db_system_id=oci_mysql_mysql_db_system["test_mysql_db_system"]["id"],
-        display_name=var["replica_display_name"],
-        is_up_to_date=var["replica_is_up_to_date"],
-        replica_id=oci_mysql_replica["test_replica"]["id"],
-        state=var["replica_state"])
-    ```
-
-
-    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str configuration_id: The requested Configuration instance.
-    :param str db_system_id: The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str display_name: A filter to return only the resource matching the given display name exactly.
-    :param bool is_up_to_date: Filter instances if they are using the latest revision of the Configuration they are associated with.
-    :param str replica_id: The read replica [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str state: The LifecycleState of the read replica.
+    Use this data source to access information about an existing resource.
     """
     ...

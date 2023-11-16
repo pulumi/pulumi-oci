@@ -28,7 +28,7 @@ public final class GetSchedulesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The unique name of the schedule created by the user.
      * 
@@ -38,7 +38,7 @@ public final class GetSchedulesResult {
      * @return The list of schedule_collection.
      * 
      */
-    private List<GetSchedulesScheduleCollection> scheduleCollections;
+    private @Nullable List<GetSchedulesScheduleCollection> scheduleCollections;
 
     private GetSchedulesResult() {}
     /**
@@ -59,8 +59,8 @@ public final class GetSchedulesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The unique name of the schedule created by the user.
@@ -74,7 +74,7 @@ public final class GetSchedulesResult {
      * 
      */
     public List<GetSchedulesScheduleCollection> scheduleCollections() {
-        return this.scheduleCollections;
+        return this.scheduleCollections == null ? List.of() : this.scheduleCollections;
     }
 
     public static Builder builder() {
@@ -88,9 +88,9 @@ public final class GetSchedulesResult {
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetSchedulesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String name;
-        private List<GetSchedulesScheduleCollection> scheduleCollections;
+        private @Nullable List<GetSchedulesScheduleCollection> scheduleCollections;
         public Builder() {}
         public Builder(GetSchedulesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -115,8 +115,8 @@ public final class GetSchedulesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -125,8 +125,8 @@ public final class GetSchedulesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder scheduleCollections(List<GetSchedulesScheduleCollection> scheduleCollections) {
-            this.scheduleCollections = Objects.requireNonNull(scheduleCollections);
+        public Builder scheduleCollections(@Nullable List<GetSchedulesScheduleCollection> scheduleCollections) {
+            this.scheduleCollections = scheduleCollections;
             return this;
         }
         public Builder scheduleCollections(GetSchedulesScheduleCollection... scheduleCollections) {

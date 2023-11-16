@@ -8,6 +8,8 @@ import com.pulumi.oci.DatabaseManagement.outputs.GetExternalDbSystemDiscoveriesE
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatchOperationValueConnector {
@@ -15,51 +17,51 @@ public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollec
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the external DB system connector.
      * 
      */
-    private String agentId;
+    private @Nullable String agentId;
     /**
      * @return The connection details required to connect to an external DB system component.
      * 
      */
-    private List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatchOperationValueConnectorConnectionInfo> connectionInfos;
+    private @Nullable List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatchOperationValueConnectorConnectionInfo> connectionInfos;
     /**
      * @return The type of connector.
      * 
      */
-    private String connectorType;
+    private @Nullable String connectorType;
     /**
      * @return A filter to only return the resources that match the entire display name.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
 
     private GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatchOperationValueConnector() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the external DB system connector.
      * 
      */
-    public String agentId() {
-        return this.agentId;
+    public Optional<String> agentId() {
+        return Optional.ofNullable(this.agentId);
     }
     /**
      * @return The connection details required to connect to an external DB system component.
      * 
      */
     public List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatchOperationValueConnectorConnectionInfo> connectionInfos() {
-        return this.connectionInfos;
+        return this.connectionInfos == null ? List.of() : this.connectionInfos;
     }
     /**
      * @return The type of connector.
      * 
      */
-    public String connectorType() {
-        return this.connectorType;
+    public Optional<String> connectorType() {
+        return Optional.ofNullable(this.connectorType);
     }
     /**
      * @return A filter to only return the resources that match the entire display name.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
 
     public static Builder builder() {
@@ -71,10 +73,10 @@ public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollec
     }
     @CustomType.Builder
     public static final class Builder {
-        private String agentId;
-        private List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatchOperationValueConnectorConnectionInfo> connectionInfos;
-        private String connectorType;
-        private String displayName;
+        private @Nullable String agentId;
+        private @Nullable List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatchOperationValueConnectorConnectionInfo> connectionInfos;
+        private @Nullable String connectorType;
+        private @Nullable String displayName;
         public Builder() {}
         public Builder(GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatchOperationValueConnector defaults) {
     	      Objects.requireNonNull(defaults);
@@ -85,26 +87,26 @@ public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollec
         }
 
         @CustomType.Setter
-        public Builder agentId(String agentId) {
-            this.agentId = Objects.requireNonNull(agentId);
+        public Builder agentId(@Nullable String agentId) {
+            this.agentId = agentId;
             return this;
         }
         @CustomType.Setter
-        public Builder connectionInfos(List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatchOperationValueConnectorConnectionInfo> connectionInfos) {
-            this.connectionInfos = Objects.requireNonNull(connectionInfos);
+        public Builder connectionInfos(@Nullable List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatchOperationValueConnectorConnectionInfo> connectionInfos) {
+            this.connectionInfos = connectionInfos;
             return this;
         }
         public Builder connectionInfos(GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatchOperationValueConnectorConnectionInfo... connectionInfos) {
             return connectionInfos(List.of(connectionInfos));
         }
         @CustomType.Setter
-        public Builder connectorType(String connectorType) {
-            this.connectorType = Objects.requireNonNull(connectorType);
+        public Builder connectorType(@Nullable String connectorType) {
+            this.connectorType = connectorType;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         public GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatchOperationValueConnector build() {

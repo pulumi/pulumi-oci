@@ -8,6 +8,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetVmClusterNetworkScan {
@@ -15,63 +17,63 @@ public final class GetVmClusterNetworkScan {
      * @return The node host name.
      * 
      */
-    private String hostname;
+    private @Nullable String hostname;
     /**
      * @return The list of SCAN IP addresses. Three addresses should be provided.
      * 
      */
-    private List<String> ips;
+    private @Nullable List<String> ips;
     /**
      * @return **Deprecated.** This field is deprecated. You may use &#39;scanListenerPortTcp&#39; to specify the port. The SCAN TCPIP port. Default is 1521.
      * 
      */
-    private Integer port;
+    private @Nullable Integer port;
     /**
      * @return The SCAN TCPIP port. Default is 1521.
      * 
      */
-    private Integer scanListenerPortTcp;
+    private @Nullable Integer scanListenerPortTcp;
     /**
      * @return The SCAN TCPIP SSL port. Default is 2484.
      * 
      */
-    private Integer scanListenerPortTcpSsl;
+    private @Nullable Integer scanListenerPortTcpSsl;
 
     private GetVmClusterNetworkScan() {}
     /**
      * @return The node host name.
      * 
      */
-    public String hostname() {
-        return this.hostname;
+    public Optional<String> hostname() {
+        return Optional.ofNullable(this.hostname);
     }
     /**
      * @return The list of SCAN IP addresses. Three addresses should be provided.
      * 
      */
     public List<String> ips() {
-        return this.ips;
+        return this.ips == null ? List.of() : this.ips;
     }
     /**
      * @return **Deprecated.** This field is deprecated. You may use &#39;scanListenerPortTcp&#39; to specify the port. The SCAN TCPIP port. Default is 1521.
      * 
      */
-    public Integer port() {
-        return this.port;
+    public Optional<Integer> port() {
+        return Optional.ofNullable(this.port);
     }
     /**
      * @return The SCAN TCPIP port. Default is 1521.
      * 
      */
-    public Integer scanListenerPortTcp() {
-        return this.scanListenerPortTcp;
+    public Optional<Integer> scanListenerPortTcp() {
+        return Optional.ofNullable(this.scanListenerPortTcp);
     }
     /**
      * @return The SCAN TCPIP SSL port. Default is 2484.
      * 
      */
-    public Integer scanListenerPortTcpSsl() {
-        return this.scanListenerPortTcpSsl;
+    public Optional<Integer> scanListenerPortTcpSsl() {
+        return Optional.ofNullable(this.scanListenerPortTcpSsl);
     }
 
     public static Builder builder() {
@@ -83,11 +85,11 @@ public final class GetVmClusterNetworkScan {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String hostname;
-        private List<String> ips;
-        private Integer port;
-        private Integer scanListenerPortTcp;
-        private Integer scanListenerPortTcpSsl;
+        private @Nullable String hostname;
+        private @Nullable List<String> ips;
+        private @Nullable Integer port;
+        private @Nullable Integer scanListenerPortTcp;
+        private @Nullable Integer scanListenerPortTcpSsl;
         public Builder() {}
         public Builder(GetVmClusterNetworkScan defaults) {
     	      Objects.requireNonNull(defaults);
@@ -99,31 +101,31 @@ public final class GetVmClusterNetworkScan {
         }
 
         @CustomType.Setter
-        public Builder hostname(String hostname) {
-            this.hostname = Objects.requireNonNull(hostname);
+        public Builder hostname(@Nullable String hostname) {
+            this.hostname = hostname;
             return this;
         }
         @CustomType.Setter
-        public Builder ips(List<String> ips) {
-            this.ips = Objects.requireNonNull(ips);
+        public Builder ips(@Nullable List<String> ips) {
+            this.ips = ips;
             return this;
         }
         public Builder ips(String... ips) {
             return ips(List.of(ips));
         }
         @CustomType.Setter
-        public Builder port(Integer port) {
-            this.port = Objects.requireNonNull(port);
+        public Builder port(@Nullable Integer port) {
+            this.port = port;
             return this;
         }
         @CustomType.Setter
-        public Builder scanListenerPortTcp(Integer scanListenerPortTcp) {
-            this.scanListenerPortTcp = Objects.requireNonNull(scanListenerPortTcp);
+        public Builder scanListenerPortTcp(@Nullable Integer scanListenerPortTcp) {
+            this.scanListenerPortTcp = scanListenerPortTcp;
             return this;
         }
         @CustomType.Setter
-        public Builder scanListenerPortTcpSsl(Integer scanListenerPortTcpSsl) {
-            this.scanListenerPortTcpSsl = Objects.requireNonNull(scanListenerPortTcpSsl);
+        public Builder scanListenerPortTcpSsl(@Nullable Integer scanListenerPortTcpSsl) {
+            this.scanListenerPortTcpSsl = scanListenerPortTcpSsl;
             return this;
         }
         public GetVmClusterNetworkScan build() {

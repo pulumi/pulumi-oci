@@ -73,11 +73,11 @@ export class LogAnalyticsEntity extends pulumi.CustomResource {
     /**
      * The Boolean flag to indicate if logs are collected for an entity for log analytics usage.
      */
-    public /*out*/ readonly areLogsCollected!: pulumi.Output<boolean>;
+    public /*out*/ readonly areLogsCollected!: pulumi.Output<boolean | undefined>;
     /**
      * The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
      */
-    public readonly cloudResourceId!: pulumi.Output<string>;
+    public readonly cloudResourceId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
@@ -85,11 +85,11 @@ export class LogAnalyticsEntity extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * Internal name for the log analytics entity type.
      */
-    public /*out*/ readonly entityTypeInternalName!: pulumi.Output<string>;
+    public /*out*/ readonly entityTypeInternalName!: pulumi.Output<string | undefined>;
     /**
      * Log analytics entity type name.
      */
@@ -97,27 +97,27 @@ export class LogAnalyticsEntity extends pulumi.CustomResource {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) The hostname where the entity represented here is actually present. This would be the output one would get if they run `echo $HOSTNAME` on Linux or an equivalent OS command. This may be different from management agents host since logs may be collected remotely.
      */
-    public readonly hostname!: pulumi.Output<string>;
+    public readonly hostname!: pulumi.Output<string | undefined>;
     /**
      * lifecycleDetails has additional information regarding substeps such as management agent plugin deployment.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * Management agent (management-agents resource kind) compartment OCID
      */
-    public /*out*/ readonly managementAgentCompartmentId!: pulumi.Output<string>;
+    public /*out*/ readonly managementAgentCompartmentId!: pulumi.Output<string | undefined>;
     /**
      * Management agent (management-agents resource kind) display name
      */
-    public /*out*/ readonly managementAgentDisplayName!: pulumi.Output<string>;
+    public /*out*/ readonly managementAgentDisplayName!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The OCID of the Management Agent.
      */
-    public readonly managementAgentId!: pulumi.Output<string>;
+    public readonly managementAgentId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Log analytics entity name.
      */
@@ -129,23 +129,23 @@ export class LogAnalyticsEntity extends pulumi.CustomResource {
     /**
      * (Updatable) The name/value pairs for parameter values to be used in file patterns specified in log sources.
      */
-    public readonly properties!: pulumi.Output<{[key: string]: any}>;
+    public readonly properties!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * This indicates the type of source. It is primarily for Enterprise Manager Repository ID.
      */
-    public readonly sourceId!: pulumi.Output<string>;
+    public readonly sourceId!: pulumi.Output<string | undefined>;
     /**
      * The current state of the log analytics entity.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The date and time the resource was created, in the format defined by RFC3339.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The date and time the resource was last updated, in the format defined by RFC3339.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The timezone region of the log analytics entity. 
      *
@@ -153,7 +153,7 @@ export class LogAnalyticsEntity extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly timezoneRegion!: pulumi.Output<string>;
+    public readonly timezoneRegion!: pulumi.Output<string | undefined>;
 
     /**
      * Create a LogAnalyticsEntity resource with the given unique name, arguments, and options.

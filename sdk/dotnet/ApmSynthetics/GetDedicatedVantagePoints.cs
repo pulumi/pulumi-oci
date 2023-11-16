@@ -178,7 +178,7 @@ namespace Pulumi.Oci.ApmSynthetics
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Unique permanent name of the dedicated vantage point. This is the same as the displayName.
         /// </summary>
@@ -198,7 +198,7 @@ namespace Pulumi.Oci.ApmSynthetics
 
             ImmutableArray<Outputs.GetDedicatedVantagePointsFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? name,
 

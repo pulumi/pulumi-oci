@@ -34,7 +34,7 @@ public final class GetOperationsInsightsWarehousesResult {
      * @return The list of operations_insights_warehouse_summary_collection.
      * 
      */
-    private List<GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollection> operationsInsightsWarehouseSummaryCollections;
+    private @Nullable List<GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollection> operationsInsightsWarehouseSummaryCollections;
     /**
      * @return Possible lifecycle states
      * 
@@ -71,7 +71,7 @@ public final class GetOperationsInsightsWarehousesResult {
      * 
      */
     public List<GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollection> operationsInsightsWarehouseSummaryCollections() {
-        return this.operationsInsightsWarehouseSummaryCollections;
+        return this.operationsInsightsWarehouseSummaryCollections == null ? List.of() : this.operationsInsightsWarehouseSummaryCollections;
     }
     /**
      * @return Possible lifecycle states
@@ -94,7 +94,7 @@ public final class GetOperationsInsightsWarehousesResult {
         private @Nullable String displayName;
         private @Nullable List<GetOperationsInsightsWarehousesFilter> filters;
         private @Nullable String id;
-        private List<GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollection> operationsInsightsWarehouseSummaryCollections;
+        private @Nullable List<GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollection> operationsInsightsWarehouseSummaryCollections;
         private @Nullable List<String> states;
         public Builder() {}
         public Builder(GetOperationsInsightsWarehousesResult defaults) {
@@ -131,8 +131,8 @@ public final class GetOperationsInsightsWarehousesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder operationsInsightsWarehouseSummaryCollections(List<GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollection> operationsInsightsWarehouseSummaryCollections) {
-            this.operationsInsightsWarehouseSummaryCollections = Objects.requireNonNull(operationsInsightsWarehouseSummaryCollections);
+        public Builder operationsInsightsWarehouseSummaryCollections(@Nullable List<GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollection> operationsInsightsWarehouseSummaryCollections) {
+            this.operationsInsightsWarehouseSummaryCollections = operationsInsightsWarehouseSummaryCollections;
             return this;
         }
         public Builder operationsInsightsWarehouseSummaryCollections(GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollection... operationsInsightsWarehouseSummaryCollections) {

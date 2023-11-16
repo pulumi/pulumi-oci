@@ -89,13 +89,13 @@ namespace Pulumi.Oci.Database
         /// The requested number of additional storage servers activated for the Exadata infrastructure.
         /// </summary>
         [Output("activatedStorageCount")]
-        public Output<int> ActivatedStorageCount { get; private set; } = null!;
+        public Output<int?> ActivatedStorageCount { get; private set; } = null!;
 
         /// <summary>
         /// The requested number of additional storage servers for the Exadata infrastructure.
         /// </summary>
         [Output("additionalStorageCount")]
-        public Output<int> AdditionalStorageCount { get; private set; } = null!;
+        public Output<int?> AdditionalStorageCount { get; private set; } = null!;
 
         /// <summary>
         /// The availability domain where the cloud Exadata infrastructure is located.
@@ -107,7 +107,7 @@ namespace Pulumi.Oci.Database
         /// The available storage can be allocated to the cloud Exadata infrastructure resource, in gigabytes (GB).
         /// </summary>
         [Output("availableStorageSizeInGbs")]
-        public Output<int> AvailableStorageSizeInGbs { get; private set; } = null!;
+        public Output<int?> AvailableStorageSizeInGbs { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -119,13 +119,13 @@ namespace Pulumi.Oci.Database
         /// (Updatable) The number of compute servers for the cloud Exadata infrastructure.
         /// </summary>
         [Output("computeCount")]
-        public Output<int> ComputeCount { get; private set; } = null!;
+        public Output<int?> ComputeCount { get; private set; } = null!;
 
         /// <summary>
         /// The total number of CPU cores allocated.
         /// </summary>
         [Output("cpuCount")]
-        public Output<int> CpuCount { get; private set; } = null!;
+        public Output<int?> CpuCount { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Customer contacts.
@@ -137,25 +137,25 @@ namespace Pulumi.Oci.Database
         /// Size, in terabytes, of the DATA disk group.
         /// </summary>
         [Output("dataStorageSizeInTbs")]
-        public Output<double> DataStorageSizeInTbs { get; private set; } = null!;
+        public Output<double?> DataStorageSizeInTbs { get; private set; } = null!;
 
         /// <summary>
         /// The local node storage allocated in GBs.
         /// </summary>
         [Output("dbNodeStorageSizeInGbs")]
-        public Output<int> DbNodeStorageSizeInGbs { get; private set; } = null!;
+        public Output<int?> DbNodeStorageSizeInGbs { get; private set; } = null!;
 
         /// <summary>
         /// The software version of the database servers (dom0) in the cloud Exadata infrastructure. Example: 20.1.15
         /// </summary>
         [Output("dbServerVersion")]
-        public Output<string> DbServerVersion { get; private set; } = null!;
+        public Output<string?> DbServerVersion { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The user-friendly name for the cloud Exadata infrastructure resource. The name does not need to be unique.
@@ -167,73 +167,73 @@ namespace Pulumi.Oci.Database
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
         /// </summary>
         [Output("lastMaintenanceRunId")]
-        public Output<string> LastMaintenanceRunId { get; private set; } = null!;
+        public Output<string?> LastMaintenanceRunId { get; private set; } = null!;
 
         /// <summary>
         /// Additional information about the current lifecycle state.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         /// </summary>
         [Output("maintenanceWindow")]
-        public Output<Outputs.CloudExadataInfrastructureMaintenanceWindow> MaintenanceWindow { get; private set; } = null!;
+        public Output<Outputs.CloudExadataInfrastructureMaintenanceWindow?> MaintenanceWindow { get; private set; } = null!;
 
         /// <summary>
         /// The total number of CPU cores available.
         /// </summary>
         [Output("maxCpuCount")]
-        public Output<int> MaxCpuCount { get; private set; } = null!;
+        public Output<int?> MaxCpuCount { get; private set; } = null!;
 
         /// <summary>
         /// The total available DATA disk group size.
         /// </summary>
         [Output("maxDataStorageInTbs")]
-        public Output<double> MaxDataStorageInTbs { get; private set; } = null!;
+        public Output<double?> MaxDataStorageInTbs { get; private set; } = null!;
 
         /// <summary>
         /// The total local node storage available in GBs.
         /// </summary>
         [Output("maxDbNodeStorageInGbs")]
-        public Output<int> MaxDbNodeStorageInGbs { get; private set; } = null!;
+        public Output<int?> MaxDbNodeStorageInGbs { get; private set; } = null!;
 
         /// <summary>
         /// The total memory available in GBs.
         /// </summary>
         [Output("maxMemoryInGbs")]
-        public Output<int> MaxMemoryInGbs { get; private set; } = null!;
+        public Output<int?> MaxMemoryInGbs { get; private set; } = null!;
 
         /// <summary>
         /// The memory allocated in GBs.
         /// </summary>
         [Output("memorySizeInGbs")]
-        public Output<int> MemorySizeInGbs { get; private set; } = null!;
+        public Output<int?> MemorySizeInGbs { get; private set; } = null!;
 
         /// <summary>
         /// The monthly software version of the database servers (dom0) in the cloud Exadata infrastructure. Example: 20.1.15
         /// </summary>
         [Output("monthlyDbServerVersion")]
-        public Output<string> MonthlyDbServerVersion { get; private set; } = null!;
+        public Output<string?> MonthlyDbServerVersion { get; private set; } = null!;
 
         /// <summary>
         /// The monthly software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
         /// </summary>
         [Output("monthlyStorageServerVersion")]
-        public Output<string> MonthlyStorageServerVersion { get; private set; } = null!;
+        public Output<string?> MonthlyStorageServerVersion { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
         /// </summary>
         [Output("nextMaintenanceRunId")]
-        public Output<string> NextMaintenanceRunId { get; private set; } = null!;
+        public Output<string?> NextMaintenanceRunId { get; private set; } = null!;
 
         /// <summary>
         /// The shape of the cloud Exadata infrastructure resource.
@@ -245,7 +245,7 @@ namespace Pulumi.Oci.Database
         /// The current lifecycle state of the cloud Exadata infrastructure resource.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The number of storage servers for the cloud Exadata infrastructure.
@@ -255,25 +255,25 @@ namespace Pulumi.Oci.Database
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("storageCount")]
-        public Output<int> StorageCount { get; private set; } = null!;
+        public Output<int?> StorageCount { get; private set; } = null!;
 
         /// <summary>
         /// The software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
         /// </summary>
         [Output("storageServerVersion")]
-        public Output<string> StorageServerVersion { get; private set; } = null!;
+        public Output<string?> StorageServerVersion { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the cloud Exadata infrastructure resource was created.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The total storage allocated to the cloud Exadata infrastructure resource, in gigabytes (GB).
         /// </summary>
         [Output("totalStorageSizeInGbs")]
-        public Output<int> TotalStorageSizeInGbs { get; private set; } = null!;
+        public Output<int?> TotalStorageSizeInGbs { get; private set; } = null!;
 
 
         /// <summary>

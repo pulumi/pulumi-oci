@@ -77,7 +77,7 @@ export class SensitiveType extends pulumi.CustomResource {
     /**
      * (Updatable) A regular expression to be used by data discovery for matching column comments.
      */
-    public readonly commentPattern!: pulumi.Output<string>;
+    public readonly commentPattern!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The OCID of the compartment where the sensitive type should be created.
      */
@@ -85,23 +85,23 @@ export class SensitiveType extends pulumi.CustomResource {
     /**
      * (Updatable) A regular expression to be used by data discovery for matching column data values.
      */
-    public readonly dataPattern!: pulumi.Output<string>;
+    public readonly dataPattern!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The OCID of the library masking format that should be used to mask the sensitive columns associated with the sensitive type.
      */
-    public readonly defaultMaskingFormatId!: pulumi.Output<string>;
+    public readonly defaultMaskingFormatId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) The description of the sensitive type.
      */
-    public readonly description!: pulumi.Output<string>;
+    public readonly description!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The display name of the sensitive type. The name does not have to be unique, and it's changeable.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    public readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The entity type. It can be either a sensitive type with regular expressions or a sensitive category used for grouping similar sensitive types.
      */
@@ -109,19 +109,19 @@ export class SensitiveType extends pulumi.CustomResource {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) A regular expression to be used by data discovery for matching column names.
      */
-    public readonly namePattern!: pulumi.Output<string>;
+    public readonly namePattern!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The OCID of the parent sensitive category.
      */
-    public readonly parentCategoryId!: pulumi.Output<string>;
+    public readonly parentCategoryId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The search type indicating how the column name, comment and data patterns should be used by data discovery. [Learn more](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/sensitive-types.html#GUID-1D1AD98E-B93F-4FF2-80AE-CB7D8A14F6CC).
      */
-    public readonly searchType!: pulumi.Output<string>;
+    public readonly searchType!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The short name of the sensitive type.
      *
@@ -129,27 +129,27 @@ export class SensitiveType extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly shortName!: pulumi.Output<string>;
+    public readonly shortName!: pulumi.Output<string | undefined>;
     /**
      * Specifies whether the sensitive type is user-defined or predefined.
      */
-    public /*out*/ readonly source!: pulumi.Output<string>;
+    public /*out*/ readonly source!: pulumi.Output<string | undefined>;
     /**
      * The current state of the sensitive type.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The date and time the sensitive type was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The date and time the sensitive type was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a SensitiveType resource with the given unique name, arguments, and options.

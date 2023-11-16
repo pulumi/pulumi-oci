@@ -11,6 +11,7 @@ import com.pulumi.oci.DatabaseMigration.outputs.GetMigrationsMigrationCollection
 import com.pulumi.oci.DatabaseMigration.outputs.GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredential;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMigrationsMigrationCollectionItemGoldenGateServiceDetail {
@@ -18,15 +19,15 @@ public final class GetMigrationsMigrationCollectionItemGoldenGateServiceDetail {
      * @return Details about Oracle GoldenGate GGS Deployment.
      * 
      */
-    private List<GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeployment> ggsDeployments;
+    private @Nullable List<GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeployment> ggsDeployments;
     /**
      * @return Optional settings for Oracle GoldenGate processes
      * 
      */
-    private List<GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSetting> settings;
-    private List<GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredential> sourceContainerDbCredentials;
-    private List<GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredential> sourceDbCredentials;
-    private List<GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredential> targetDbCredentials;
+    private @Nullable List<GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSetting> settings;
+    private @Nullable List<GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredential> sourceContainerDbCredentials;
+    private @Nullable List<GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredential> sourceDbCredentials;
+    private @Nullable List<GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredential> targetDbCredentials;
 
     private GetMigrationsMigrationCollectionItemGoldenGateServiceDetail() {}
     /**
@@ -34,23 +35,23 @@ public final class GetMigrationsMigrationCollectionItemGoldenGateServiceDetail {
      * 
      */
     public List<GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeployment> ggsDeployments() {
-        return this.ggsDeployments;
+        return this.ggsDeployments == null ? List.of() : this.ggsDeployments;
     }
     /**
      * @return Optional settings for Oracle GoldenGate processes
      * 
      */
     public List<GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSetting> settings() {
-        return this.settings;
+        return this.settings == null ? List.of() : this.settings;
     }
     public List<GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredential> sourceContainerDbCredentials() {
-        return this.sourceContainerDbCredentials;
+        return this.sourceContainerDbCredentials == null ? List.of() : this.sourceContainerDbCredentials;
     }
     public List<GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredential> sourceDbCredentials() {
-        return this.sourceDbCredentials;
+        return this.sourceDbCredentials == null ? List.of() : this.sourceDbCredentials;
     }
     public List<GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredential> targetDbCredentials() {
-        return this.targetDbCredentials;
+        return this.targetDbCredentials == null ? List.of() : this.targetDbCredentials;
     }
 
     public static Builder builder() {
@@ -62,11 +63,11 @@ public final class GetMigrationsMigrationCollectionItemGoldenGateServiceDetail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeployment> ggsDeployments;
-        private List<GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSetting> settings;
-        private List<GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredential> sourceContainerDbCredentials;
-        private List<GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredential> sourceDbCredentials;
-        private List<GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredential> targetDbCredentials;
+        private @Nullable List<GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeployment> ggsDeployments;
+        private @Nullable List<GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSetting> settings;
+        private @Nullable List<GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredential> sourceContainerDbCredentials;
+        private @Nullable List<GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredential> sourceDbCredentials;
+        private @Nullable List<GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredential> targetDbCredentials;
         public Builder() {}
         public Builder(GetMigrationsMigrationCollectionItemGoldenGateServiceDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -78,40 +79,40 @@ public final class GetMigrationsMigrationCollectionItemGoldenGateServiceDetail {
         }
 
         @CustomType.Setter
-        public Builder ggsDeployments(List<GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeployment> ggsDeployments) {
-            this.ggsDeployments = Objects.requireNonNull(ggsDeployments);
+        public Builder ggsDeployments(@Nullable List<GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeployment> ggsDeployments) {
+            this.ggsDeployments = ggsDeployments;
             return this;
         }
         public Builder ggsDeployments(GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeployment... ggsDeployments) {
             return ggsDeployments(List.of(ggsDeployments));
         }
         @CustomType.Setter
-        public Builder settings(List<GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSetting> settings) {
-            this.settings = Objects.requireNonNull(settings);
+        public Builder settings(@Nullable List<GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSetting> settings) {
+            this.settings = settings;
             return this;
         }
         public Builder settings(GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSetting... settings) {
             return settings(List.of(settings));
         }
         @CustomType.Setter
-        public Builder sourceContainerDbCredentials(List<GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredential> sourceContainerDbCredentials) {
-            this.sourceContainerDbCredentials = Objects.requireNonNull(sourceContainerDbCredentials);
+        public Builder sourceContainerDbCredentials(@Nullable List<GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredential> sourceContainerDbCredentials) {
+            this.sourceContainerDbCredentials = sourceContainerDbCredentials;
             return this;
         }
         public Builder sourceContainerDbCredentials(GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredential... sourceContainerDbCredentials) {
             return sourceContainerDbCredentials(List.of(sourceContainerDbCredentials));
         }
         @CustomType.Setter
-        public Builder sourceDbCredentials(List<GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredential> sourceDbCredentials) {
-            this.sourceDbCredentials = Objects.requireNonNull(sourceDbCredentials);
+        public Builder sourceDbCredentials(@Nullable List<GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredential> sourceDbCredentials) {
+            this.sourceDbCredentials = sourceDbCredentials;
             return this;
         }
         public Builder sourceDbCredentials(GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredential... sourceDbCredentials) {
             return sourceDbCredentials(List.of(sourceDbCredentials));
         }
         @CustomType.Setter
-        public Builder targetDbCredentials(List<GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredential> targetDbCredentials) {
-            this.targetDbCredentials = Objects.requireNonNull(targetDbCredentials);
+        public Builder targetDbCredentials(@Nullable List<GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredential> targetDbCredentials) {
+            this.targetDbCredentials = targetDbCredentials;
             return this;
         }
         public Builder targetDbCredentials(GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredential... targetDbCredentials) {

@@ -44,7 +44,7 @@ class GetSmtpCredentialsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -52,18 +52,12 @@ class GetSmtpCredentialsResult:
 
     @property
     @pulumi.getter(name="smtpCredentials")
-    def smtp_credentials(self) -> Sequence['outputs.GetSmtpCredentialsSmtpCredentialResult']:
-        """
-        The list of smtp_credentials.
-        """
+    def smtp_credentials(self) -> Optional[Sequence['outputs.GetSmtpCredentialsSmtpCredentialResult']]:
         return pulumi.get(self, "smtp_credentials")
 
     @property
     @pulumi.getter(name="userId")
     def user_id(self) -> str:
-        """
-        The OCID of the user the SMTP credential belongs to.
-        """
         return pulumi.get(self, "user_id")
 
 
@@ -83,22 +77,7 @@ def get_smtp_credentials(filters: Optional[Sequence[pulumi.InputType['GetSmtpCre
                          user_id: Optional[str] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSmtpCredentialsResult:
     """
-    This data source provides the list of Smtp Credentials in Oracle Cloud Infrastructure Identity service.
-
-    Lists the SMTP credentials for the specified user. The returned object contains the credential's OCID,
-    the SMTP user name but not the SMTP password. The SMTP password is returned only upon creation.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_smtp_credentials = oci.Identity.get_smtp_credentials(user_id=oci_identity_user["test_user"]["id"])
-    ```
-
-
-    :param str user_id: The OCID of the user.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -118,21 +97,6 @@ def get_smtp_credentials_output(filters: Optional[pulumi.Input[Optional[Sequence
                                 user_id: Optional[pulumi.Input[str]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSmtpCredentialsResult]:
     """
-    This data source provides the list of Smtp Credentials in Oracle Cloud Infrastructure Identity service.
-
-    Lists the SMTP credentials for the specified user. The returned object contains the credential's OCID,
-    the SMTP user name but not the SMTP password. The SMTP password is returned only upon creation.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_smtp_credentials = oci.Identity.get_smtp_credentials(user_id=oci_identity_user["test_user"]["id"])
-    ```
-
-
-    :param str user_id: The OCID of the user.
+    Use this data source to access information about an existing resource.
     """
     ...

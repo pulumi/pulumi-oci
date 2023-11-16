@@ -11,6 +11,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetWaasPolicyPolicyConfigHealthChecks {
@@ -22,37 +24,37 @@ public final class GetWaasPolicyPolicyConfigHealthChecks {
      * * **5XX:** Server errors response code group.
      * 
      */
-    private List<String> expectedResponseCodeGroups;
+    private @Nullable List<String> expectedResponseCodeGroups;
     /**
      * @return Health check will search for the given text in a case-sensitive manner within the response body and will fail if the text is not found.
      * 
      */
-    private String expectedResponseText;
+    private @Nullable String expectedResponseText;
     /**
      * @return HTTP header fields to include in health check requests, expressed as `&#34;name&#34;: &#34;value&#34;` properties. Because HTTP header field names are case-insensitive, any use of names that are case-insensitive equal to other names will be rejected. If Host is not specified, requests will include a Host header field with value matching the policy&#39;s protected domain. If User-Agent is not specified, requests will include a User-Agent header field with value &#34;waf health checks&#34;.
      * 
      */
-    private Map<String,Object> headers;
+    private @Nullable Map<String,Object> headers;
     /**
      * @return Number of successful health checks after which the server is marked up.
      * 
      */
-    private Integer healthyThreshold;
+    private @Nullable Integer healthyThreshold;
     /**
      * @return Time between health checks of an individual origin server, in seconds.
      * 
      */
-    private Integer intervalInSeconds;
+    private @Nullable Integer intervalInSeconds;
     /**
      * @return Enables or disables the JavaScript challenge Web Application Firewall feature.
      * 
      */
-    private Boolean isEnabled;
+    private @Nullable Boolean isEnabled;
     /**
      * @return Enables or disables additional check for predefined text in addition to response code.
      * 
      */
-    private Boolean isResponseTextCheckEnabled;
+    private @Nullable Boolean isResponseTextCheckEnabled;
     /**
      * @return Load balancing methods are algorithms used to efficiently distribute traffic among origin servers.
      * * **[IP_HASH](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/IPHashLoadBalancingMethod):** All the incoming requests from the same client IP address should go to the same content origination server. IP_HASH load balancing method uses origin weights when choosing which origin should the hash be assigned to initially.
@@ -60,22 +62,22 @@ public final class GetWaasPolicyPolicyConfigHealthChecks {
      * * **[STICKY_COOKIE](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/StickyCookieLoadBalancingMethod):** Adds a session cookie to the first response from the origin server and identifies the server that sent the response. The client&#39;s next request contains the cookie value, and nginx routes the request to the origin server that responded to the first request. STICKY_COOKIE load balancing method falls back to Round Robin for the first request.
      * 
      */
-    private String method;
+    private @Nullable String method;
     /**
      * @return Path to visit on your origins when performing the health check.
      * 
      */
-    private String path;
+    private @Nullable String path;
     /**
      * @return Response timeout represents wait time until request is considered failed, in seconds.
      * 
      */
-    private Integer timeoutInSeconds;
+    private @Nullable Integer timeoutInSeconds;
     /**
      * @return Number of failed health checks after which the server is marked down.
      * 
      */
-    private Integer unhealthyThreshold;
+    private @Nullable Integer unhealthyThreshold;
 
     private GetWaasPolicyPolicyConfigHealthChecks() {}
     /**
@@ -87,49 +89,49 @@ public final class GetWaasPolicyPolicyConfigHealthChecks {
      * 
      */
     public List<String> expectedResponseCodeGroups() {
-        return this.expectedResponseCodeGroups;
+        return this.expectedResponseCodeGroups == null ? List.of() : this.expectedResponseCodeGroups;
     }
     /**
      * @return Health check will search for the given text in a case-sensitive manner within the response body and will fail if the text is not found.
      * 
      */
-    public String expectedResponseText() {
-        return this.expectedResponseText;
+    public Optional<String> expectedResponseText() {
+        return Optional.ofNullable(this.expectedResponseText);
     }
     /**
      * @return HTTP header fields to include in health check requests, expressed as `&#34;name&#34;: &#34;value&#34;` properties. Because HTTP header field names are case-insensitive, any use of names that are case-insensitive equal to other names will be rejected. If Host is not specified, requests will include a Host header field with value matching the policy&#39;s protected domain. If User-Agent is not specified, requests will include a User-Agent header field with value &#34;waf health checks&#34;.
      * 
      */
     public Map<String,Object> headers() {
-        return this.headers;
+        return this.headers == null ? Map.of() : this.headers;
     }
     /**
      * @return Number of successful health checks after which the server is marked up.
      * 
      */
-    public Integer healthyThreshold() {
-        return this.healthyThreshold;
+    public Optional<Integer> healthyThreshold() {
+        return Optional.ofNullable(this.healthyThreshold);
     }
     /**
      * @return Time between health checks of an individual origin server, in seconds.
      * 
      */
-    public Integer intervalInSeconds() {
-        return this.intervalInSeconds;
+    public Optional<Integer> intervalInSeconds() {
+        return Optional.ofNullable(this.intervalInSeconds);
     }
     /**
      * @return Enables or disables the JavaScript challenge Web Application Firewall feature.
      * 
      */
-    public Boolean isEnabled() {
-        return this.isEnabled;
+    public Optional<Boolean> isEnabled() {
+        return Optional.ofNullable(this.isEnabled);
     }
     /**
      * @return Enables or disables additional check for predefined text in addition to response code.
      * 
      */
-    public Boolean isResponseTextCheckEnabled() {
-        return this.isResponseTextCheckEnabled;
+    public Optional<Boolean> isResponseTextCheckEnabled() {
+        return Optional.ofNullable(this.isResponseTextCheckEnabled);
     }
     /**
      * @return Load balancing methods are algorithms used to efficiently distribute traffic among origin servers.
@@ -138,29 +140,29 @@ public final class GetWaasPolicyPolicyConfigHealthChecks {
      * * **[STICKY_COOKIE](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/StickyCookieLoadBalancingMethod):** Adds a session cookie to the first response from the origin server and identifies the server that sent the response. The client&#39;s next request contains the cookie value, and nginx routes the request to the origin server that responded to the first request. STICKY_COOKIE load balancing method falls back to Round Robin for the first request.
      * 
      */
-    public String method() {
-        return this.method;
+    public Optional<String> method() {
+        return Optional.ofNullable(this.method);
     }
     /**
      * @return Path to visit on your origins when performing the health check.
      * 
      */
-    public String path() {
-        return this.path;
+    public Optional<String> path() {
+        return Optional.ofNullable(this.path);
     }
     /**
      * @return Response timeout represents wait time until request is considered failed, in seconds.
      * 
      */
-    public Integer timeoutInSeconds() {
-        return this.timeoutInSeconds;
+    public Optional<Integer> timeoutInSeconds() {
+        return Optional.ofNullable(this.timeoutInSeconds);
     }
     /**
      * @return Number of failed health checks after which the server is marked down.
      * 
      */
-    public Integer unhealthyThreshold() {
-        return this.unhealthyThreshold;
+    public Optional<Integer> unhealthyThreshold() {
+        return Optional.ofNullable(this.unhealthyThreshold);
     }
 
     public static Builder builder() {
@@ -172,17 +174,17 @@ public final class GetWaasPolicyPolicyConfigHealthChecks {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> expectedResponseCodeGroups;
-        private String expectedResponseText;
-        private Map<String,Object> headers;
-        private Integer healthyThreshold;
-        private Integer intervalInSeconds;
-        private Boolean isEnabled;
-        private Boolean isResponseTextCheckEnabled;
-        private String method;
-        private String path;
-        private Integer timeoutInSeconds;
-        private Integer unhealthyThreshold;
+        private @Nullable List<String> expectedResponseCodeGroups;
+        private @Nullable String expectedResponseText;
+        private @Nullable Map<String,Object> headers;
+        private @Nullable Integer healthyThreshold;
+        private @Nullable Integer intervalInSeconds;
+        private @Nullable Boolean isEnabled;
+        private @Nullable Boolean isResponseTextCheckEnabled;
+        private @Nullable String method;
+        private @Nullable String path;
+        private @Nullable Integer timeoutInSeconds;
+        private @Nullable Integer unhealthyThreshold;
         public Builder() {}
         public Builder(GetWaasPolicyPolicyConfigHealthChecks defaults) {
     	      Objects.requireNonNull(defaults);
@@ -200,61 +202,61 @@ public final class GetWaasPolicyPolicyConfigHealthChecks {
         }
 
         @CustomType.Setter
-        public Builder expectedResponseCodeGroups(List<String> expectedResponseCodeGroups) {
-            this.expectedResponseCodeGroups = Objects.requireNonNull(expectedResponseCodeGroups);
+        public Builder expectedResponseCodeGroups(@Nullable List<String> expectedResponseCodeGroups) {
+            this.expectedResponseCodeGroups = expectedResponseCodeGroups;
             return this;
         }
         public Builder expectedResponseCodeGroups(String... expectedResponseCodeGroups) {
             return expectedResponseCodeGroups(List.of(expectedResponseCodeGroups));
         }
         @CustomType.Setter
-        public Builder expectedResponseText(String expectedResponseText) {
-            this.expectedResponseText = Objects.requireNonNull(expectedResponseText);
+        public Builder expectedResponseText(@Nullable String expectedResponseText) {
+            this.expectedResponseText = expectedResponseText;
             return this;
         }
         @CustomType.Setter
-        public Builder headers(Map<String,Object> headers) {
-            this.headers = Objects.requireNonNull(headers);
+        public Builder headers(@Nullable Map<String,Object> headers) {
+            this.headers = headers;
             return this;
         }
         @CustomType.Setter
-        public Builder healthyThreshold(Integer healthyThreshold) {
-            this.healthyThreshold = Objects.requireNonNull(healthyThreshold);
+        public Builder healthyThreshold(@Nullable Integer healthyThreshold) {
+            this.healthyThreshold = healthyThreshold;
             return this;
         }
         @CustomType.Setter
-        public Builder intervalInSeconds(Integer intervalInSeconds) {
-            this.intervalInSeconds = Objects.requireNonNull(intervalInSeconds);
+        public Builder intervalInSeconds(@Nullable Integer intervalInSeconds) {
+            this.intervalInSeconds = intervalInSeconds;
             return this;
         }
         @CustomType.Setter
-        public Builder isEnabled(Boolean isEnabled) {
-            this.isEnabled = Objects.requireNonNull(isEnabled);
+        public Builder isEnabled(@Nullable Boolean isEnabled) {
+            this.isEnabled = isEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder isResponseTextCheckEnabled(Boolean isResponseTextCheckEnabled) {
-            this.isResponseTextCheckEnabled = Objects.requireNonNull(isResponseTextCheckEnabled);
+        public Builder isResponseTextCheckEnabled(@Nullable Boolean isResponseTextCheckEnabled) {
+            this.isResponseTextCheckEnabled = isResponseTextCheckEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder method(String method) {
-            this.method = Objects.requireNonNull(method);
+        public Builder method(@Nullable String method) {
+            this.method = method;
             return this;
         }
         @CustomType.Setter
-        public Builder path(String path) {
-            this.path = Objects.requireNonNull(path);
+        public Builder path(@Nullable String path) {
+            this.path = path;
             return this;
         }
         @CustomType.Setter
-        public Builder timeoutInSeconds(Integer timeoutInSeconds) {
-            this.timeoutInSeconds = Objects.requireNonNull(timeoutInSeconds);
+        public Builder timeoutInSeconds(@Nullable Integer timeoutInSeconds) {
+            this.timeoutInSeconds = timeoutInSeconds;
             return this;
         }
         @CustomType.Setter
-        public Builder unhealthyThreshold(Integer unhealthyThreshold) {
-            this.unhealthyThreshold = Objects.requireNonNull(unhealthyThreshold);
+        public Builder unhealthyThreshold(@Nullable Integer unhealthyThreshold) {
+            this.unhealthyThreshold = unhealthyThreshold;
             return this;
         }
         public GetWaasPolicyPolicyConfigHealthChecks build() {

@@ -29,12 +29,12 @@ public final class GetInternetGatewaysResult {
      * @return The list of gateways.
      * 
      */
-    private List<GetInternetGatewaysGateway> gateways;
+    private @Nullable List<GetInternetGatewaysGateway> gateways;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The internet gateway&#39;s current state.
      * 
@@ -69,14 +69,14 @@ public final class GetInternetGatewaysResult {
      * 
      */
     public List<GetInternetGatewaysGateway> gateways() {
-        return this.gateways;
+        return this.gateways == null ? List.of() : this.gateways;
     }
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The internet gateway&#39;s current state.
@@ -105,8 +105,8 @@ public final class GetInternetGatewaysResult {
         private String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetInternetGatewaysFilter> filters;
-        private List<GetInternetGatewaysGateway> gateways;
-        private String id;
+        private @Nullable List<GetInternetGatewaysGateway> gateways;
+        private @Nullable String id;
         private @Nullable String state;
         private @Nullable String vcnId;
         public Builder() {}
@@ -140,16 +140,16 @@ public final class GetInternetGatewaysResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder gateways(List<GetInternetGatewaysGateway> gateways) {
-            this.gateways = Objects.requireNonNull(gateways);
+        public Builder gateways(@Nullable List<GetInternetGatewaysGateway> gateways) {
+            this.gateways = gateways;
             return this;
         }
         public Builder gateways(GetInternetGatewaysGateway... gateways) {
             return gateways(List.of(gateways));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

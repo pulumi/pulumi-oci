@@ -20,7 +20,7 @@ namespace Pulumi.Oci.CloudMigrations.Outputs
         /// <summary>
         /// Currency code in the ISO format.
         /// </summary>
-        public readonly string CurrencyCode;
+        public readonly string? CurrencyCode;
         /// <summary>
         /// Cost estimation for the OS image.
         /// </summary>
@@ -32,31 +32,31 @@ namespace Pulumi.Oci.CloudMigrations.Outputs
         /// <summary>
         /// Subscription ID
         /// </summary>
-        public readonly string SubscriptionId;
+        public readonly string? SubscriptionId;
         /// <summary>
         /// Total estimation per month
         /// </summary>
-        public readonly double TotalEstimationPerMonth;
+        public readonly double? TotalEstimationPerMonth;
         /// <summary>
         /// Total estimation per month by subscription.
         /// </summary>
-        public readonly double TotalEstimationPerMonthBySubscription;
+        public readonly double? TotalEstimationPerMonthBySubscription;
 
         [OutputConstructor]
         private GetMigrationPlanMigrationPlanStatTotalEstimatedCostResult(
             ImmutableArray<Outputs.GetMigrationPlanMigrationPlanStatTotalEstimatedCostComputeResult> computes,
 
-            string currencyCode,
+            string? currencyCode,
 
             ImmutableArray<Outputs.GetMigrationPlanMigrationPlanStatTotalEstimatedCostOsImageResult> osImages,
 
             ImmutableArray<Outputs.GetMigrationPlanMigrationPlanStatTotalEstimatedCostStorageResult> storages,
 
-            string subscriptionId,
+            string? subscriptionId,
 
-            double totalEstimationPerMonth,
+            double? totalEstimationPerMonth,
 
-            double totalEstimationPerMonthBySubscription)
+            double? totalEstimationPerMonthBySubscription)
         {
             Computes = computes;
             CurrencyCode = currencyCode;

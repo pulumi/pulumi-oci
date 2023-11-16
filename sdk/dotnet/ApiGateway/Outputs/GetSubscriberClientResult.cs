@@ -16,17 +16,17 @@ namespace Pulumi.Oci.ApiGateway.Outputs
         /// <summary>
         /// The name of the client. Must be unique within a subscriber.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The token for the client. Must be unique within a tenancy.
         /// </summary>
-        public readonly string Token;
+        public readonly string? Token;
 
         [OutputConstructor]
         private GetSubscriberClientResult(
-            string name,
+            string? name,
 
-            string token)
+            string? token)
         {
             Name = name;
             Token = token;

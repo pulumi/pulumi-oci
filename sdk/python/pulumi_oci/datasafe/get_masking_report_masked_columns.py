@@ -58,9 +58,6 @@ class GetMaskingReportMaskedColumnsResult:
     @property
     @pulumi.getter(name="columnNames")
     def column_names(self) -> Optional[Sequence[str]]:
-        """
-        The name of the masked column.
-        """
         return pulumi.get(self, "column_names")
 
     @property
@@ -70,7 +67,7 @@ class GetMaskingReportMaskedColumnsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -78,18 +75,12 @@ class GetMaskingReportMaskedColumnsResult:
 
     @property
     @pulumi.getter(name="maskedColumnCollections")
-    def masked_column_collections(self) -> Sequence['outputs.GetMaskingReportMaskedColumnsMaskedColumnCollectionResult']:
-        """
-        The list of masked_column_collection.
-        """
+    def masked_column_collections(self) -> Optional[Sequence['outputs.GetMaskingReportMaskedColumnsMaskedColumnCollectionResult']]:
         return pulumi.get(self, "masked_column_collections")
 
     @property
     @pulumi.getter(name="maskingColumnGroups")
     def masking_column_groups(self) -> Optional[Sequence[str]]:
-        """
-        The masking group of the masked column.
-        """
         return pulumi.get(self, "masking_column_groups")
 
     @property
@@ -100,33 +91,21 @@ class GetMaskingReportMaskedColumnsResult:
     @property
     @pulumi.getter(name="objectTypes")
     def object_types(self) -> Optional[Sequence[str]]:
-        """
-        The type of the object (table or editioning view) that contains the masked column.
-        """
         return pulumi.get(self, "object_types")
 
     @property
     @pulumi.getter
     def objects(self) -> Optional[Sequence[str]]:
-        """
-        The name of the object (table or editioning view) that contains the masked column.
-        """
         return pulumi.get(self, "objects")
 
     @property
     @pulumi.getter(name="schemaNames")
     def schema_names(self) -> Optional[Sequence[str]]:
-        """
-        The name of the schema that contains the masked column.
-        """
         return pulumi.get(self, "schema_names")
 
     @property
     @pulumi.getter(name="sensitiveTypeId")
     def sensitive_type_id(self) -> Optional[str]:
-        """
-        The OCID of the sensitive type associated with the masked column.
-        """
         return pulumi.get(self, "sensitive_type_id")
 
 
@@ -158,33 +137,7 @@ def get_masking_report_masked_columns(column_names: Optional[Sequence[str]] = No
                                       sensitive_type_id: Optional[str] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMaskingReportMaskedColumnsResult:
     """
-    This data source provides the list of Masking Reports Masked Columns in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets a list of masked columns present in the specified masking report and based on the specified query parameters.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_masking_reports_masked_columns = oci.DataSafe.get_masking_report_masked_columns(masking_report_id=oci_data_safe_masking_report["test_masking_report"]["id"],
-        column_names=var["masking_reports_masked_column_column_name"],
-        masking_column_groups=var["masking_reports_masked_column_masking_column_group"],
-        objects=var["masking_reports_masked_column_object"],
-        object_types=var["masking_reports_masked_column_object_type"],
-        schema_names=var["masking_reports_masked_column_schema_name"],
-        sensitive_type_id=oci_data_safe_sensitive_type["test_sensitive_type"]["id"])
-    ```
-
-
-    :param Sequence[str] column_names: A filter to return only a specific column based on column name.
-    :param Sequence[str] masking_column_groups: A filter to return only the resources that match the specified masking column group.
-    :param str masking_report_id: The OCID of the masking report.
-    :param Sequence[str] object_types: A filter to return only items related to a specific object type.
-    :param Sequence[str] objects: A filter to return only items related to a specific object name.
-    :param Sequence[str] schema_names: A filter to return only items related to specific schema name.
-    :param str sensitive_type_id: A filter to return only items related to a specific sensitive type OCID.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['columnNames'] = column_names
@@ -222,32 +175,6 @@ def get_masking_report_masked_columns_output(column_names: Optional[pulumi.Input
                                              sensitive_type_id: Optional[pulumi.Input[Optional[str]]] = None,
                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMaskingReportMaskedColumnsResult]:
     """
-    This data source provides the list of Masking Reports Masked Columns in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets a list of masked columns present in the specified masking report and based on the specified query parameters.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_masking_reports_masked_columns = oci.DataSafe.get_masking_report_masked_columns(masking_report_id=oci_data_safe_masking_report["test_masking_report"]["id"],
-        column_names=var["masking_reports_masked_column_column_name"],
-        masking_column_groups=var["masking_reports_masked_column_masking_column_group"],
-        objects=var["masking_reports_masked_column_object"],
-        object_types=var["masking_reports_masked_column_object_type"],
-        schema_names=var["masking_reports_masked_column_schema_name"],
-        sensitive_type_id=oci_data_safe_sensitive_type["test_sensitive_type"]["id"])
-    ```
-
-
-    :param Sequence[str] column_names: A filter to return only a specific column based on column name.
-    :param Sequence[str] masking_column_groups: A filter to return only the resources that match the specified masking column group.
-    :param str masking_report_id: The OCID of the masking report.
-    :param Sequence[str] object_types: A filter to return only items related to a specific object type.
-    :param Sequence[str] objects: A filter to return only items related to a specific object name.
-    :param Sequence[str] schema_names: A filter to return only items related to specific schema name.
-    :param str sensitive_type_id: A filter to return only items related to a specific sensitive type OCID.
+    Use this data source to access information about an existing resource.
     """
     ...

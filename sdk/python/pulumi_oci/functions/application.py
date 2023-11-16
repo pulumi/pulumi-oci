@@ -29,19 +29,6 @@ class ApplicationArgs:
                  trace_config: Optional[pulumi.Input['ApplicationTraceConfigArgs']] = None):
         """
         The set of arguments for constructing a Application resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment to create the application within.
-        :param pulumi.Input[str] display_name: The display name of the application. The display name must be unique within the compartment containing the application. Avoid entering confidential information.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] subnet_ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the subnets in which to run functions in the application.
-        :param pulumi.Input[Mapping[str, Any]] config: (Updatable) Application configuration. These values are passed on to the function as environment variables, functions may override application configuration. Keys must be ASCII strings consisting solely of letters, digits, and the '_' (underscore) character, and must not begin with a digit. Values should be limited to printable unicode characters.  Example: `{"MY_FUNCTION_CONFIG": "ConfVal"}`
-               
-               The maximum size for all configuration keys and values is limited to 4KB. This is measured as the sum of octets necessary to represent each key and value in UTF-8.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input['ApplicationImagePolicyConfigArgs'] image_policy_config: (Updatable) Define the image signature verification policy for an application.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] network_security_group_ids: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the Network Security Groups to add the application to.
-        :param pulumi.Input[str] shape: Valid values are `GENERIC_X86`, `GENERIC_ARM` and `GENERIC_X86_ARM`. Default is `GENERIC_X86`. Setting this to `GENERIC_X86`, will run the functions in the application on X86 processor architecture. Setting this to `GENERIC_ARM`, will run the functions in the application on ARM processor architecture. When set to `GENERIC_X86_ARM`, functions in the application are run on either X86 or ARM processor architecture. Accepted values are: `GENERIC_X86`, `GENERIC_ARM`, `GENERIC_X86_ARM`
-        :param pulumi.Input[str] syslog_url: (Updatable) A syslog URL to which to send all function logs. Supports tcp, udp, and tcp+tls. The syslog URL must be reachable from all of the subnets configured for the application. Note: If you enable the Oracle Cloud Infrastructure Logging service for this application, the syslogUrl value is ignored. Function logs are sent to the Oracle Cloud Infrastructure Logging service, and not to the syslog URL.  Example: `tcp://logserver.myserver:1234`
-        :param pulumi.Input['ApplicationTraceConfigArgs'] trace_config: (Updatable) Define the tracing configuration for an application.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "display_name", display_name)
@@ -66,9 +53,6 @@ class ApplicationArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The OCID of the compartment to create the application within.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -78,9 +62,6 @@ class ApplicationArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[str]:
-        """
-        The display name of the application. The display name must be unique within the compartment containing the application. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -90,9 +71,6 @@ class ApplicationArgs:
     @property
     @pulumi.getter(name="subnetIds")
     def subnet_ids(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the subnets in which to run functions in the application.
-        """
         return pulumi.get(self, "subnet_ids")
 
     @subnet_ids.setter
@@ -102,11 +80,6 @@ class ApplicationArgs:
     @property
     @pulumi.getter
     def config(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Application configuration. These values are passed on to the function as environment variables, functions may override application configuration. Keys must be ASCII strings consisting solely of letters, digits, and the '_' (underscore) character, and must not begin with a digit. Values should be limited to printable unicode characters.  Example: `{"MY_FUNCTION_CONFIG": "ConfVal"}`
-
-        The maximum size for all configuration keys and values is limited to 4KB. This is measured as the sum of octets necessary to represent each key and value in UTF-8.
-        """
         return pulumi.get(self, "config")
 
     @config.setter
@@ -116,9 +89,6 @@ class ApplicationArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -128,9 +98,6 @@ class ApplicationArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -140,9 +107,6 @@ class ApplicationArgs:
     @property
     @pulumi.getter(name="imagePolicyConfig")
     def image_policy_config(self) -> Optional[pulumi.Input['ApplicationImagePolicyConfigArgs']]:
-        """
-        (Updatable) Define the image signature verification policy for an application.
-        """
         return pulumi.get(self, "image_policy_config")
 
     @image_policy_config.setter
@@ -152,9 +116,6 @@ class ApplicationArgs:
     @property
     @pulumi.getter(name="networkSecurityGroupIds")
     def network_security_group_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the Network Security Groups to add the application to.
-        """
         return pulumi.get(self, "network_security_group_ids")
 
     @network_security_group_ids.setter
@@ -164,9 +125,6 @@ class ApplicationArgs:
     @property
     @pulumi.getter
     def shape(self) -> Optional[pulumi.Input[str]]:
-        """
-        Valid values are `GENERIC_X86`, `GENERIC_ARM` and `GENERIC_X86_ARM`. Default is `GENERIC_X86`. Setting this to `GENERIC_X86`, will run the functions in the application on X86 processor architecture. Setting this to `GENERIC_ARM`, will run the functions in the application on ARM processor architecture. When set to `GENERIC_X86_ARM`, functions in the application are run on either X86 or ARM processor architecture. Accepted values are: `GENERIC_X86`, `GENERIC_ARM`, `GENERIC_X86_ARM`
-        """
         return pulumi.get(self, "shape")
 
     @shape.setter
@@ -176,9 +134,6 @@ class ApplicationArgs:
     @property
     @pulumi.getter(name="syslogUrl")
     def syslog_url(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A syslog URL to which to send all function logs. Supports tcp, udp, and tcp+tls. The syslog URL must be reachable from all of the subnets configured for the application. Note: If you enable the Oracle Cloud Infrastructure Logging service for this application, the syslogUrl value is ignored. Function logs are sent to the Oracle Cloud Infrastructure Logging service, and not to the syslog URL.  Example: `tcp://logserver.myserver:1234`
-        """
         return pulumi.get(self, "syslog_url")
 
     @syslog_url.setter
@@ -188,9 +143,6 @@ class ApplicationArgs:
     @property
     @pulumi.getter(name="traceConfig")
     def trace_config(self) -> Optional[pulumi.Input['ApplicationTraceConfigArgs']]:
-        """
-        (Updatable) Define the tracing configuration for an application.
-        """
         return pulumi.get(self, "trace_config")
 
     @trace_config.setter
@@ -217,22 +169,6 @@ class _ApplicationState:
                  trace_config: Optional[pulumi.Input['ApplicationTraceConfigArgs']] = None):
         """
         Input properties used for looking up and filtering Application resources.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment to create the application within.
-        :param pulumi.Input[Mapping[str, Any]] config: (Updatable) Application configuration. These values are passed on to the function as environment variables, functions may override application configuration. Keys must be ASCII strings consisting solely of letters, digits, and the '_' (underscore) character, and must not begin with a digit. Values should be limited to printable unicode characters.  Example: `{"MY_FUNCTION_CONFIG": "ConfVal"}`
-               
-               The maximum size for all configuration keys and values is limited to 4KB. This is measured as the sum of octets necessary to represent each key and value in UTF-8.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: The display name of the application. The display name must be unique within the compartment containing the application. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input['ApplicationImagePolicyConfigArgs'] image_policy_config: (Updatable) Define the image signature verification policy for an application.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] network_security_group_ids: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the Network Security Groups to add the application to.
-        :param pulumi.Input[str] shape: Valid values are `GENERIC_X86`, `GENERIC_ARM` and `GENERIC_X86_ARM`. Default is `GENERIC_X86`. Setting this to `GENERIC_X86`, will run the functions in the application on X86 processor architecture. Setting this to `GENERIC_ARM`, will run the functions in the application on ARM processor architecture. When set to `GENERIC_X86_ARM`, functions in the application are run on either X86 or ARM processor architecture. Accepted values are: `GENERIC_X86`, `GENERIC_ARM`, `GENERIC_X86_ARM`
-        :param pulumi.Input[str] state: The current state of the application.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] subnet_ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the subnets in which to run functions in the application.
-        :param pulumi.Input[str] syslog_url: (Updatable) A syslog URL to which to send all function logs. Supports tcp, udp, and tcp+tls. The syslog URL must be reachable from all of the subnets configured for the application. Note: If you enable the Oracle Cloud Infrastructure Logging service for this application, the syslogUrl value is ignored. Function logs are sent to the Oracle Cloud Infrastructure Logging service, and not to the syslog URL.  Example: `tcp://logserver.myserver:1234`
-        :param pulumi.Input[str] time_created: The time the application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
-        :param pulumi.Input[str] time_updated: The time the application was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-09-12T22:47:12.613Z`
-        :param pulumi.Input['ApplicationTraceConfigArgs'] trace_config: (Updatable) Define the tracing configuration for an application.
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -266,9 +202,6 @@ class _ApplicationState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the compartment to create the application within.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -278,11 +211,6 @@ class _ApplicationState:
     @property
     @pulumi.getter
     def config(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Application configuration. These values are passed on to the function as environment variables, functions may override application configuration. Keys must be ASCII strings consisting solely of letters, digits, and the '_' (underscore) character, and must not begin with a digit. Values should be limited to printable unicode characters.  Example: `{"MY_FUNCTION_CONFIG": "ConfVal"}`
-
-        The maximum size for all configuration keys and values is limited to 4KB. This is measured as the sum of octets necessary to represent each key and value in UTF-8.
-        """
         return pulumi.get(self, "config")
 
     @config.setter
@@ -292,9 +220,6 @@ class _ApplicationState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -304,9 +229,6 @@ class _ApplicationState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The display name of the application. The display name must be unique within the compartment containing the application. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -316,9 +238,6 @@ class _ApplicationState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -328,9 +247,6 @@ class _ApplicationState:
     @property
     @pulumi.getter(name="imagePolicyConfig")
     def image_policy_config(self) -> Optional[pulumi.Input['ApplicationImagePolicyConfigArgs']]:
-        """
-        (Updatable) Define the image signature verification policy for an application.
-        """
         return pulumi.get(self, "image_policy_config")
 
     @image_policy_config.setter
@@ -340,9 +256,6 @@ class _ApplicationState:
     @property
     @pulumi.getter(name="networkSecurityGroupIds")
     def network_security_group_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the Network Security Groups to add the application to.
-        """
         return pulumi.get(self, "network_security_group_ids")
 
     @network_security_group_ids.setter
@@ -352,9 +265,6 @@ class _ApplicationState:
     @property
     @pulumi.getter
     def shape(self) -> Optional[pulumi.Input[str]]:
-        """
-        Valid values are `GENERIC_X86`, `GENERIC_ARM` and `GENERIC_X86_ARM`. Default is `GENERIC_X86`. Setting this to `GENERIC_X86`, will run the functions in the application on X86 processor architecture. Setting this to `GENERIC_ARM`, will run the functions in the application on ARM processor architecture. When set to `GENERIC_X86_ARM`, functions in the application are run on either X86 or ARM processor architecture. Accepted values are: `GENERIC_X86`, `GENERIC_ARM`, `GENERIC_X86_ARM`
-        """
         return pulumi.get(self, "shape")
 
     @shape.setter
@@ -364,9 +274,6 @@ class _ApplicationState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the application.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -376,9 +283,6 @@ class _ApplicationState:
     @property
     @pulumi.getter(name="subnetIds")
     def subnet_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the subnets in which to run functions in the application.
-        """
         return pulumi.get(self, "subnet_ids")
 
     @subnet_ids.setter
@@ -388,9 +292,6 @@ class _ApplicationState:
     @property
     @pulumi.getter(name="syslogUrl")
     def syslog_url(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A syslog URL to which to send all function logs. Supports tcp, udp, and tcp+tls. The syslog URL must be reachable from all of the subnets configured for the application. Note: If you enable the Oracle Cloud Infrastructure Logging service for this application, the syslogUrl value is ignored. Function logs are sent to the Oracle Cloud Infrastructure Logging service, and not to the syslog URL.  Example: `tcp://logserver.myserver:1234`
-        """
         return pulumi.get(self, "syslog_url")
 
     @syslog_url.setter
@@ -400,9 +301,6 @@ class _ApplicationState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -412,9 +310,6 @@ class _ApplicationState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the application was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-09-12T22:47:12.613Z`
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -424,9 +319,6 @@ class _ApplicationState:
     @property
     @pulumi.getter(name="traceConfig")
     def trace_config(self) -> Optional[pulumi.Input['ApplicationTraceConfigArgs']]:
-        """
-        (Updatable) Define the tracing configuration for an application.
-        """
         return pulumi.get(self, "trace_config")
 
     @trace_config.setter
@@ -452,61 +344,9 @@ class Application(pulumi.CustomResource):
                  trace_config: Optional[pulumi.Input[pulumi.InputType['ApplicationTraceConfigArgs']]] = None,
                  __props__=None):
         """
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_application = oci.functions.Application("testApplication",
-            compartment_id=var["compartment_id"],
-            display_name=var["application_display_name"],
-            subnet_ids=var["application_subnet_ids"],
-            config=var["application_config"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            freeform_tags={
-                "Department": "Finance",
-            },
-            network_security_group_ids=var["application_network_security_group_ids"],
-            image_policy_config=oci.functions.ApplicationImagePolicyConfigArgs(
-                is_policy_enabled=var["application_image_policy_config_is_policy_enabled"],
-                key_details=[oci.functions.ApplicationImagePolicyConfigKeyDetailArgs(
-                    kms_key_id=oci_kms_key["test_key"]["id"],
-                )],
-            ),
-            shape=var["application_shape"],
-            syslog_url=var["application_syslog_url"],
-            trace_config=oci.functions.ApplicationTraceConfigArgs(
-                domain_id=oci_functions_domain["test_domain"]["id"],
-                is_enabled=var["application_trace_config_is_enabled"],
-            ))
-        ```
-
-        ## Import
-
-        Applications can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Functions/application:Application test_application "id"
-        ```
-
+        Create a Application resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment to create the application within.
-        :param pulumi.Input[Mapping[str, Any]] config: (Updatable) Application configuration. These values are passed on to the function as environment variables, functions may override application configuration. Keys must be ASCII strings consisting solely of letters, digits, and the '_' (underscore) character, and must not begin with a digit. Values should be limited to printable unicode characters.  Example: `{"MY_FUNCTION_CONFIG": "ConfVal"}`
-               
-               The maximum size for all configuration keys and values is limited to 4KB. This is measured as the sum of octets necessary to represent each key and value in UTF-8.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: The display name of the application. The display name must be unique within the compartment containing the application. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[pulumi.InputType['ApplicationImagePolicyConfigArgs']] image_policy_config: (Updatable) Define the image signature verification policy for an application.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] network_security_group_ids: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the Network Security Groups to add the application to.
-        :param pulumi.Input[str] shape: Valid values are `GENERIC_X86`, `GENERIC_ARM` and `GENERIC_X86_ARM`. Default is `GENERIC_X86`. Setting this to `GENERIC_X86`, will run the functions in the application on X86 processor architecture. Setting this to `GENERIC_ARM`, will run the functions in the application on ARM processor architecture. When set to `GENERIC_X86_ARM`, functions in the application are run on either X86 or ARM processor architecture. Accepted values are: `GENERIC_X86`, `GENERIC_ARM`, `GENERIC_X86_ARM`
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] subnet_ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the subnets in which to run functions in the application.
-        :param pulumi.Input[str] syslog_url: (Updatable) A syslog URL to which to send all function logs. Supports tcp, udp, and tcp+tls. The syslog URL must be reachable from all of the subnets configured for the application. Note: If you enable the Oracle Cloud Infrastructure Logging service for this application, the syslogUrl value is ignored. Function logs are sent to the Oracle Cloud Infrastructure Logging service, and not to the syslog URL.  Example: `tcp://logserver.myserver:1234`
-        :param pulumi.Input[pulumi.InputType['ApplicationTraceConfigArgs']] trace_config: (Updatable) Define the tracing configuration for an application.
         """
         ...
     @overload
@@ -515,46 +355,7 @@ class Application(pulumi.CustomResource):
                  args: ApplicationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_application = oci.functions.Application("testApplication",
-            compartment_id=var["compartment_id"],
-            display_name=var["application_display_name"],
-            subnet_ids=var["application_subnet_ids"],
-            config=var["application_config"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            freeform_tags={
-                "Department": "Finance",
-            },
-            network_security_group_ids=var["application_network_security_group_ids"],
-            image_policy_config=oci.functions.ApplicationImagePolicyConfigArgs(
-                is_policy_enabled=var["application_image_policy_config_is_policy_enabled"],
-                key_details=[oci.functions.ApplicationImagePolicyConfigKeyDetailArgs(
-                    kms_key_id=oci_kms_key["test_key"]["id"],
-                )],
-            ),
-            shape=var["application_shape"],
-            syslog_url=var["application_syslog_url"],
-            trace_config=oci.functions.ApplicationTraceConfigArgs(
-                domain_id=oci_functions_domain["test_domain"]["id"],
-                is_enabled=var["application_trace_config_is_enabled"],
-            ))
-        ```
-
-        ## Import
-
-        Applications can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Functions/application:Application test_application "id"
-        ```
-
+        Create a Application resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param ApplicationArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -641,22 +442,6 @@ class Application(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment to create the application within.
-        :param pulumi.Input[Mapping[str, Any]] config: (Updatable) Application configuration. These values are passed on to the function as environment variables, functions may override application configuration. Keys must be ASCII strings consisting solely of letters, digits, and the '_' (underscore) character, and must not begin with a digit. Values should be limited to printable unicode characters.  Example: `{"MY_FUNCTION_CONFIG": "ConfVal"}`
-               
-               The maximum size for all configuration keys and values is limited to 4KB. This is measured as the sum of octets necessary to represent each key and value in UTF-8.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: The display name of the application. The display name must be unique within the compartment containing the application. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[pulumi.InputType['ApplicationImagePolicyConfigArgs']] image_policy_config: (Updatable) Define the image signature verification policy for an application.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] network_security_group_ids: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the Network Security Groups to add the application to.
-        :param pulumi.Input[str] shape: Valid values are `GENERIC_X86`, `GENERIC_ARM` and `GENERIC_X86_ARM`. Default is `GENERIC_X86`. Setting this to `GENERIC_X86`, will run the functions in the application on X86 processor architecture. Setting this to `GENERIC_ARM`, will run the functions in the application on ARM processor architecture. When set to `GENERIC_X86_ARM`, functions in the application are run on either X86 or ARM processor architecture. Accepted values are: `GENERIC_X86`, `GENERIC_ARM`, `GENERIC_X86_ARM`
-        :param pulumi.Input[str] state: The current state of the application.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] subnet_ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the subnets in which to run functions in the application.
-        :param pulumi.Input[str] syslog_url: (Updatable) A syslog URL to which to send all function logs. Supports tcp, udp, and tcp+tls. The syslog URL must be reachable from all of the subnets configured for the application. Note: If you enable the Oracle Cloud Infrastructure Logging service for this application, the syslogUrl value is ignored. Function logs are sent to the Oracle Cloud Infrastructure Logging service, and not to the syslog URL.  Example: `tcp://logserver.myserver:1234`
-        :param pulumi.Input[str] time_created: The time the application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
-        :param pulumi.Input[str] time_updated: The time the application was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-09-12T22:47:12.613Z`
-        :param pulumi.Input[pulumi.InputType['ApplicationTraceConfigArgs']] trace_config: (Updatable) Define the tracing configuration for an application.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -681,114 +466,70 @@ class Application(pulumi.CustomResource):
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The OCID of the compartment to create the application within.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter
-    def config(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Application configuration. These values are passed on to the function as environment variables, functions may override application configuration. Keys must be ASCII strings consisting solely of letters, digits, and the '_' (underscore) character, and must not begin with a digit. Values should be limited to printable unicode characters.  Example: `{"MY_FUNCTION_CONFIG": "ConfVal"}`
-
-        The maximum size for all configuration keys and values is limited to 4KB. This is measured as the sum of octets necessary to represent each key and value in UTF-8.
-        """
+    def config(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "config")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
-        """
-        The display name of the application. The display name must be unique within the compartment containing the application. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="imagePolicyConfig")
-    def image_policy_config(self) -> pulumi.Output['outputs.ApplicationImagePolicyConfig']:
-        """
-        (Updatable) Define the image signature verification policy for an application.
-        """
+    def image_policy_config(self) -> pulumi.Output[Optional['outputs.ApplicationImagePolicyConfig']]:
         return pulumi.get(self, "image_policy_config")
 
     @property
     @pulumi.getter(name="networkSecurityGroupIds")
-    def network_security_group_ids(self) -> pulumi.Output[Sequence[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the Network Security Groups to add the application to.
-        """
+    def network_security_group_ids(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "network_security_group_ids")
 
     @property
     @pulumi.getter
-    def shape(self) -> pulumi.Output[str]:
-        """
-        Valid values are `GENERIC_X86`, `GENERIC_ARM` and `GENERIC_X86_ARM`. Default is `GENERIC_X86`. Setting this to `GENERIC_X86`, will run the functions in the application on X86 processor architecture. Setting this to `GENERIC_ARM`, will run the functions in the application on ARM processor architecture. When set to `GENERIC_X86_ARM`, functions in the application are run on either X86 or ARM processor architecture. Accepted values are: `GENERIC_X86`, `GENERIC_ARM`, `GENERIC_X86_ARM`
-        """
+    def shape(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "shape")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the application.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="subnetIds")
     def subnet_ids(self) -> pulumi.Output[Sequence[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the subnets in which to run functions in the application.
-        """
         return pulumi.get(self, "subnet_ids")
 
     @property
     @pulumi.getter(name="syslogUrl")
-    def syslog_url(self) -> pulumi.Output[str]:
-        """
-        (Updatable) A syslog URL to which to send all function logs. Supports tcp, udp, and tcp+tls. The syslog URL must be reachable from all of the subnets configured for the application. Note: If you enable the Oracle Cloud Infrastructure Logging service for this application, the syslogUrl value is ignored. Function logs are sent to the Oracle Cloud Infrastructure Logging service, and not to the syslog URL.  Example: `tcp://logserver.myserver:1234`
-        """
+    def syslog_url(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "syslog_url")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The time the application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The time the application was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-09-12T22:47:12.613Z`
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="traceConfig")
-    def trace_config(self) -> pulumi.Output['outputs.ApplicationTraceConfig']:
-        """
-        (Updatable) Define the tracing configuration for an application.
-        """
+    def trace_config(self) -> pulumi.Output[Optional['outputs.ApplicationTraceConfig']]:
         return pulumi.get(self, "trace_config")
 

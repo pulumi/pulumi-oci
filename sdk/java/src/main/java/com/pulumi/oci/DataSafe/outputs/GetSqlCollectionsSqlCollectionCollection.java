@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DataSafe.outputs.GetSqlCollectionsSqlCollectionCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSqlCollectionsSqlCollectionCollection {
-    private List<GetSqlCollectionsSqlCollectionCollectionItem> items;
+    private @Nullable List<GetSqlCollectionsSqlCollectionCollectionItem> items;
 
     private GetSqlCollectionsSqlCollectionCollection() {}
     public List<GetSqlCollectionsSqlCollectionCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetSqlCollectionsSqlCollectionCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetSqlCollectionsSqlCollectionCollectionItem> items;
+        private @Nullable List<GetSqlCollectionsSqlCollectionCollectionItem> items;
         public Builder() {}
         public Builder(GetSqlCollectionsSqlCollectionCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetSqlCollectionsSqlCollectionCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetSqlCollectionsSqlCollectionCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetSqlCollectionsSqlCollectionCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetSqlCollectionsSqlCollectionCollectionItem... items) {

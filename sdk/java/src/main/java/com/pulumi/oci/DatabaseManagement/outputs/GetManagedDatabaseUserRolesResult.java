@@ -19,7 +19,7 @@ public final class GetManagedDatabaseUserRolesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String managedDatabaseId;
     /**
      * @return The name of the role granted to the user.
@@ -30,7 +30,7 @@ public final class GetManagedDatabaseUserRolesResult {
      * @return The list of role_collection.
      * 
      */
-    private List<GetManagedDatabaseUserRolesRoleCollection> roleCollections;
+    private @Nullable List<GetManagedDatabaseUserRolesRoleCollection> roleCollections;
     private String userName;
 
     private GetManagedDatabaseUserRolesResult() {}
@@ -41,8 +41,8 @@ public final class GetManagedDatabaseUserRolesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String managedDatabaseId() {
         return this.managedDatabaseId;
@@ -59,7 +59,7 @@ public final class GetManagedDatabaseUserRolesResult {
      * 
      */
     public List<GetManagedDatabaseUserRolesRoleCollection> roleCollections() {
-        return this.roleCollections;
+        return this.roleCollections == null ? List.of() : this.roleCollections;
     }
     public String userName() {
         return this.userName;
@@ -75,10 +75,10 @@ public final class GetManagedDatabaseUserRolesResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetManagedDatabaseUserRolesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private String managedDatabaseId;
         private @Nullable String name;
-        private List<GetManagedDatabaseUserRolesRoleCollection> roleCollections;
+        private @Nullable List<GetManagedDatabaseUserRolesRoleCollection> roleCollections;
         private String userName;
         public Builder() {}
         public Builder(GetManagedDatabaseUserRolesResult defaults) {
@@ -100,8 +100,8 @@ public final class GetManagedDatabaseUserRolesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -115,8 +115,8 @@ public final class GetManagedDatabaseUserRolesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder roleCollections(List<GetManagedDatabaseUserRolesRoleCollection> roleCollections) {
-            this.roleCollections = Objects.requireNonNull(roleCollections);
+        public Builder roleCollections(@Nullable List<GetManagedDatabaseUserRolesRoleCollection> roleCollections) {
+            this.roleCollections = roleCollections;
             return this;
         }
         public Builder roleCollections(GetManagedDatabaseUserRolesRoleCollection... roleCollections) {

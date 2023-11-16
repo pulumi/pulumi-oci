@@ -75,37 +75,37 @@ export class VolumeBackup extends pulumi.CustomResource {
     /**
      * (Updatable) The OCID of the compartment that contains the volume backup.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    public readonly compartmentId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    public readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * The date and time the volume backup will expire and be automatically deleted. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). This parameter will always be present for backups that were created automatically by a scheduled-backup policy. For manually created backups, it will be absent, signifying that there is no expiration time and the backup will last forever until manually deleted.
      */
-    public /*out*/ readonly expirationTime!: pulumi.Output<string>;
+    public /*out*/ readonly expirationTime!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The OCID of the KMS key in the destination region which will be the master encryption key for the copied volume backup.
      */
-    public readonly kmsKeyId!: pulumi.Output<string>;
+    public readonly kmsKeyId!: pulumi.Output<string | undefined>;
     /**
      * The size of the volume, in GBs.
      */
-    public /*out*/ readonly sizeInGbs!: pulumi.Output<string>;
+    public /*out*/ readonly sizeInGbs!: pulumi.Output<string | undefined>;
     /**
      * The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Please use `sizeInGbs`.
      *
      * @deprecated The 'size_in_mbs' field has been deprecated. Please use 'size_in_gbs' instead.
      */
-    public /*out*/ readonly sizeInMbs!: pulumi.Output<string>;
+    public /*out*/ readonly sizeInMbs!: pulumi.Output<string | undefined>;
     /**
      * Details of the volume backup source in the cloud.
      */
@@ -113,45 +113,45 @@ export class VolumeBackup extends pulumi.CustomResource {
     /**
      * Specifies whether the backup was created manually, or via scheduled backup policy.
      */
-    public /*out*/ readonly sourceType!: pulumi.Output<string>;
+    public /*out*/ readonly sourceType!: pulumi.Output<string | undefined>;
     /**
      * The OCID of the source volume backup.
      */
-    public /*out*/ readonly sourceVolumeBackupId!: pulumi.Output<string>;
+    public /*out*/ readonly sourceVolumeBackupId!: pulumi.Output<string | undefined>;
     /**
      * The current state of a volume backup.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The date and time the volume backup was created. This is the time the actual point-in-time image of the volume data was taken. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The date and time the request to create the volume backup was received. Format defined by [RFC3339]https://tools.ietf.org/html/rfc3339.
      */
-    public /*out*/ readonly timeRequestReceived!: pulumi.Output<string>;
+    public /*out*/ readonly timeRequestReceived!: pulumi.Output<string | undefined>;
     /**
      * The type of backup to create. If omitted, defaults to INCREMENTAL. Supported values are 'FULL' or 'INCREMENTAL'.
      */
-    public readonly type!: pulumi.Output<string>;
+    public readonly type!: pulumi.Output<string | undefined>;
     /**
      * The size used by the backup, in GBs. It is typically smaller than sizeInGBs, depending on the space consumed on the volume and whether the backup is full or incremental.
      */
-    public /*out*/ readonly uniqueSizeInGbs!: pulumi.Output<string>;
+    public /*out*/ readonly uniqueSizeInGbs!: pulumi.Output<string | undefined>;
     /**
      * The size used by the backup, in MBs. It is typically smaller than sizeInMBs, depending on the space consumed on the volume and whether the backup is full or incremental. This field is deprecated. Please use uniqueSizeInGBs.
      *
      * @deprecated The 'unique_size_in_mbs' field has been deprecated. Please use 'unique_size_in_gbs' instead.
      */
-    public /*out*/ readonly uniqueSizeInMbs!: pulumi.Output<string>;
+    public /*out*/ readonly uniqueSizeInMbs!: pulumi.Output<string | undefined>;
     /**
      * The OCID of the volume that needs to be backed up.**Note: To create the resource either `volumeId` or `sourceDetails` is required to be set.
      */
-    public readonly volumeId!: pulumi.Output<string>;
+    public readonly volumeId!: pulumi.Output<string | undefined>;
 
     /**
      * Create a VolumeBackup resource with the given unique name, arguments, and options.

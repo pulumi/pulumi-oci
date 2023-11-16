@@ -46,17 +46,11 @@ class GetEtlRunsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
-        """
-        Compartment Identifier
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        The name of the ETLRun.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -66,10 +60,7 @@ class GetEtlRunsResult:
 
     @property
     @pulumi.getter(name="etlRunCollections")
-    def etl_run_collections(self) -> Sequence['outputs.GetEtlRunsEtlRunCollectionResult']:
-        """
-        The list of etl_run_collection.
-        """
+    def etl_run_collections(self) -> Optional[Sequence['outputs.GetEtlRunsEtlRunCollectionResult']]:
         return pulumi.get(self, "etl_run_collections")
 
     @property
@@ -79,7 +70,7 @@ class GetEtlRunsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -106,25 +97,7 @@ def get_etl_runs(compartment_id: Optional[str] = None,
                  filters: Optional[Sequence[pulumi.InputType['GetEtlRunsFilterArgs']]] = None,
                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetEtlRunsResult:
     """
-    This data source provides the list of Em Warehouse Etl Runs in Oracle Cloud Infrastructure Em Warehouse service.
-
-    Gets a list of runs of an EmWarehouseResource by identifier
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_em_warehouse_etl_runs = oci.EmWarehouse.get_etl_runs(em_warehouse_id=oci_em_warehouse_em_warehouse["test_em_warehouse"]["id"],
-        compartment_id=var["compartment_id"],
-        display_name=var["em_warehouse_etl_run_display_name"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str em_warehouse_id: unique EmWarehouse identifier
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -150,24 +123,6 @@ def get_etl_runs_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = 
                         filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetEtlRunsFilterArgs']]]]] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetEtlRunsResult]:
     """
-    This data source provides the list of Em Warehouse Etl Runs in Oracle Cloud Infrastructure Em Warehouse service.
-
-    Gets a list of runs of an EmWarehouseResource by identifier
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_em_warehouse_etl_runs = oci.EmWarehouse.get_etl_runs(em_warehouse_id=oci_em_warehouse_em_warehouse["test_em_warehouse"]["id"],
-        compartment_id=var["compartment_id"],
-        display_name=var["em_warehouse_etl_run_display_name"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str em_warehouse_id: unique EmWarehouse identifier
+    Use this data source to access information about an existing resource.
     """
     ...

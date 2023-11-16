@@ -79,19 +79,19 @@ export class Session extends pulumi.CustomResource {
     /**
      * The name of the bastion that is hosting this session.
      */
-    public /*out*/ readonly bastionName!: pulumi.Output<string>;
+    public /*out*/ readonly bastionName!: pulumi.Output<string | undefined>;
     /**
      * The public key of the bastion host. You can use this to verify that you're connecting to the correct bastion.
      */
-    public /*out*/ readonly bastionPublicHostKeyInfo!: pulumi.Output<string>;
+    public /*out*/ readonly bastionPublicHostKeyInfo!: pulumi.Output<string | undefined>;
     /**
      * The username that the session uses to connect to the target resource.
      */
-    public /*out*/ readonly bastionUserName!: pulumi.Output<string>;
+    public /*out*/ readonly bastionUserName!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The name of the session.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    public readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * Public key details for a bastion session.
      */
@@ -99,23 +99,23 @@ export class Session extends pulumi.CustomResource {
     /**
      * The type of the key used to connect to the session. PUB is a standard public key in OpenSSH format.
      */
-    public readonly keyType!: pulumi.Output<string>;
+    public readonly keyType!: pulumi.Output<string | undefined>;
     /**
      * A message describing the current session state in more detail.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * The amount of time the session can remain active.
      */
-    public readonly sessionTtlInSeconds!: pulumi.Output<number>;
+    public readonly sessionTtlInSeconds!: pulumi.Output<number | undefined>;
     /**
      * The connection message for the session.
      */
-    public /*out*/ readonly sshMetadata!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly sshMetadata!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The current state of the session.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * Details about a bastion session's target resource.
      */
@@ -123,11 +123,11 @@ export class Session extends pulumi.CustomResource {
     /**
      * The time the session was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The time the session was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a Session resource with the given unique name, arguments, and options.

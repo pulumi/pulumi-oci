@@ -47,69 +47,69 @@ export interface GetTriggerResult {
     /**
      * The list of actions that are to be performed for this trigger.
      */
-    readonly actions: outputs.DevOps.GetTriggerAction[];
+    readonly actions?: outputs.DevOps.GetTriggerAction[];
     /**
      * The OCID of the compartment that contains the trigger.
      */
-    readonly compartmentId: string;
-    readonly connectionId: string;
+    readonly compartmentId?: string;
+    readonly connectionId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * Description about the trigger.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * Trigger display name. Avoid entering confidential information.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * Unique identifier that is immutable on creation.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * The OCID of the DevOps project to which the trigger belongs to.
      */
-    readonly projectId: string;
+    readonly projectId?: string;
     /**
      * The OCID of the DevOps code repository.
      */
-    readonly repositoryId: string;
+    readonly repositoryId?: string;
     /**
      * The current state of the trigger.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * The time the trigger was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The time the trigger was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
     readonly triggerId: string;
     /**
      * Source of the trigger. Allowed values are, GITHUB and GITLAB.
      */
-    readonly triggerSource: string;
+    readonly triggerSource?: string;
     /**
      * The endpoint that listens to trigger events.
      */
-    readonly triggerUrl: string;
+    readonly triggerUrl?: string;
 }
 /**
  * This data source provides details about a specific Trigger resource in Oracle Cloud Infrastructure Devops service.

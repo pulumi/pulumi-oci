@@ -16,29 +16,29 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// The host name of the database.
         /// </summary>
-        public readonly string Hostname;
+        public readonly string? Hostname;
         /// <summary>
         /// The port used to connect to the database.
         /// </summary>
-        public readonly int Port;
+        public readonly int? Port;
         /// <summary>
         /// The protocol used to connect to the database.
         /// </summary>
-        public readonly string Protocol;
+        public readonly string? Protocol;
         /// <summary>
         /// The name of the service alias used to connect to the database.
         /// </summary>
-        public readonly string Service;
+        public readonly string? Service;
 
         [OutputConstructor]
         private GetExternalDatabaseConnectorConnectionStringResult(
-            string hostname,
+            string? hostname,
 
-            int port,
+            int? port,
 
-            string protocol,
+            string? protocol,
 
-            string service)
+            string? service)
         {
             Hostname = hostname;
             Port = port;

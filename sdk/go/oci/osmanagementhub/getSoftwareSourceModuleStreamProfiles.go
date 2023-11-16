@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Software Source Module Stream Profiles in Oracle Cloud Infrastructure Os Management Hub service.
@@ -72,7 +71,7 @@ type GetSoftwareSourceModuleStreamProfilesArgs struct {
 type GetSoftwareSourceModuleStreamProfilesResult struct {
 	Filters []GetSoftwareSourceModuleStreamProfilesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The name of the module that contains the stream profile.
 	ModuleName *string `pulumi:"moduleName"`
 	// The list of module_stream_profile_collection.
@@ -129,12 +128,6 @@ func (o GetSoftwareSourceModuleStreamProfilesResultOutput) ToGetSoftwareSourceMo
 	return o
 }
 
-func (o GetSoftwareSourceModuleStreamProfilesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourceModuleStreamProfilesResult] {
-	return pulumix.Output[GetSoftwareSourceModuleStreamProfilesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSoftwareSourceModuleStreamProfilesResultOutput) Filters() GetSoftwareSourceModuleStreamProfilesFilterArrayOutput {
 	return o.ApplyT(func(v GetSoftwareSourceModuleStreamProfilesResult) []GetSoftwareSourceModuleStreamProfilesFilter {
 		return v.Filters
@@ -142,8 +135,8 @@ func (o GetSoftwareSourceModuleStreamProfilesResultOutput) Filters() GetSoftware
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetSoftwareSourceModuleStreamProfilesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourceModuleStreamProfilesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetSoftwareSourceModuleStreamProfilesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourceModuleStreamProfilesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The name of the module that contains the stream profile.

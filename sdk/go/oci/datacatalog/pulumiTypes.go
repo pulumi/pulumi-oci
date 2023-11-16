@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -18,27 +17,27 @@ type GetCatalogPrivateEndpointsCatalogPrivateEndpoint struct {
 	// The list of catalogs using the private reverse connection endpoint
 	AttachedCatalogs []string `pulumi:"attachedCatalogs"`
 	// The OCID of the compartment where you want to list resources.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given. The match is not case sensitive.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// List of DNS zones to be used by the data assets to be harvested. Example: custpvtsubnet.oraclevcn.com for data asset: db.custpvtsubnet.oraclevcn.com
 	DnsZones []string `pulumi:"dnsZones"`
 	// Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Unique identifier that is immutable
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Subnet Identifier
-	SubnetId string `pulumi:"subnetId"`
+	SubnetId *string `pulumi:"subnetId"`
 	// The time the private endpoint was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the private endpoint was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 // GetCatalogPrivateEndpointsCatalogPrivateEndpointInput is an input type that accepts GetCatalogPrivateEndpointsCatalogPrivateEndpointArgs and GetCatalogPrivateEndpointsCatalogPrivateEndpointOutput values.
@@ -56,27 +55,27 @@ type GetCatalogPrivateEndpointsCatalogPrivateEndpointArgs struct {
 	// The list of catalogs using the private reverse connection endpoint
 	AttachedCatalogs pulumi.StringArrayInput `pulumi:"attachedCatalogs"`
 	// The OCID of the compartment where you want to list resources.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given. The match is not case sensitive.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// List of DNS zones to be used by the data assets to be harvested. Example: custpvtsubnet.oraclevcn.com for data asset: db.custpvtsubnet.oraclevcn.com
 	DnsZones pulumi.StringArrayInput `pulumi:"dnsZones"`
 	// Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// Unique identifier that is immutable
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// Subnet Identifier
-	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
 	// The time the private endpoint was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The time the private endpoint was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 }
 
 func (GetCatalogPrivateEndpointsCatalogPrivateEndpointArgs) ElementType() reflect.Type {
@@ -89,12 +88,6 @@ func (i GetCatalogPrivateEndpointsCatalogPrivateEndpointArgs) ToGetCatalogPrivat
 
 func (i GetCatalogPrivateEndpointsCatalogPrivateEndpointArgs) ToGetCatalogPrivateEndpointsCatalogPrivateEndpointOutputWithContext(ctx context.Context) GetCatalogPrivateEndpointsCatalogPrivateEndpointOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetCatalogPrivateEndpointsCatalogPrivateEndpointOutput)
-}
-
-func (i GetCatalogPrivateEndpointsCatalogPrivateEndpointArgs) ToOutput(ctx context.Context) pulumix.Output[GetCatalogPrivateEndpointsCatalogPrivateEndpoint] {
-	return pulumix.Output[GetCatalogPrivateEndpointsCatalogPrivateEndpoint]{
-		OutputState: i.ToGetCatalogPrivateEndpointsCatalogPrivateEndpointOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetCatalogPrivateEndpointsCatalogPrivateEndpointArrayInput is an input type that accepts GetCatalogPrivateEndpointsCatalogPrivateEndpointArray and GetCatalogPrivateEndpointsCatalogPrivateEndpointArrayOutput values.
@@ -122,12 +115,6 @@ func (i GetCatalogPrivateEndpointsCatalogPrivateEndpointArray) ToGetCatalogPriva
 	return pulumi.ToOutputWithContext(ctx, i).(GetCatalogPrivateEndpointsCatalogPrivateEndpointArrayOutput)
 }
 
-func (i GetCatalogPrivateEndpointsCatalogPrivateEndpointArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCatalogPrivateEndpointsCatalogPrivateEndpoint] {
-	return pulumix.Output[[]GetCatalogPrivateEndpointsCatalogPrivateEndpoint]{
-		OutputState: i.ToGetCatalogPrivateEndpointsCatalogPrivateEndpointArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCatalogPrivateEndpointsCatalogPrivateEndpointOutput struct{ *pulumi.OutputState }
 
 func (GetCatalogPrivateEndpointsCatalogPrivateEndpointOutput) ElementType() reflect.Type {
@@ -142,20 +129,14 @@ func (o GetCatalogPrivateEndpointsCatalogPrivateEndpointOutput) ToGetCatalogPriv
 	return o
 }
 
-func (o GetCatalogPrivateEndpointsCatalogPrivateEndpointOutput) ToOutput(ctx context.Context) pulumix.Output[GetCatalogPrivateEndpointsCatalogPrivateEndpoint] {
-	return pulumix.Output[GetCatalogPrivateEndpointsCatalogPrivateEndpoint]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The list of catalogs using the private reverse connection endpoint
 func (o GetCatalogPrivateEndpointsCatalogPrivateEndpointOutput) AttachedCatalogs() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetCatalogPrivateEndpointsCatalogPrivateEndpoint) []string { return v.AttachedCatalogs }).(pulumi.StringArrayOutput)
 }
 
 // The OCID of the compartment where you want to list resources.
-func (o GetCatalogPrivateEndpointsCatalogPrivateEndpointOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCatalogPrivateEndpointsCatalogPrivateEndpoint) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetCatalogPrivateEndpointsCatalogPrivateEndpointOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCatalogPrivateEndpointsCatalogPrivateEndpoint) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
@@ -164,8 +145,8 @@ func (o GetCatalogPrivateEndpointsCatalogPrivateEndpointOutput) DefinedTags() pu
 }
 
 // A filter to return only resources that match the entire display name given. The match is not case sensitive.
-func (o GetCatalogPrivateEndpointsCatalogPrivateEndpointOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCatalogPrivateEndpointsCatalogPrivateEndpoint) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetCatalogPrivateEndpointsCatalogPrivateEndpointOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCatalogPrivateEndpointsCatalogPrivateEndpoint) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // List of DNS zones to be used by the data assets to be harvested. Example: custpvtsubnet.oraclevcn.com for data asset: db.custpvtsubnet.oraclevcn.com
@@ -179,33 +160,33 @@ func (o GetCatalogPrivateEndpointsCatalogPrivateEndpointOutput) FreeformTags() p
 }
 
 // Unique identifier that is immutable
-func (o GetCatalogPrivateEndpointsCatalogPrivateEndpointOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCatalogPrivateEndpointsCatalogPrivateEndpoint) string { return v.Id }).(pulumi.StringOutput)
+func (o GetCatalogPrivateEndpointsCatalogPrivateEndpointOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCatalogPrivateEndpointsCatalogPrivateEndpoint) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
-func (o GetCatalogPrivateEndpointsCatalogPrivateEndpointOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCatalogPrivateEndpointsCatalogPrivateEndpoint) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetCatalogPrivateEndpointsCatalogPrivateEndpointOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCatalogPrivateEndpointsCatalogPrivateEndpoint) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
-func (o GetCatalogPrivateEndpointsCatalogPrivateEndpointOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCatalogPrivateEndpointsCatalogPrivateEndpoint) string { return v.State }).(pulumi.StringOutput)
+func (o GetCatalogPrivateEndpointsCatalogPrivateEndpointOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCatalogPrivateEndpointsCatalogPrivateEndpoint) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Subnet Identifier
-func (o GetCatalogPrivateEndpointsCatalogPrivateEndpointOutput) SubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCatalogPrivateEndpointsCatalogPrivateEndpoint) string { return v.SubnetId }).(pulumi.StringOutput)
+func (o GetCatalogPrivateEndpointsCatalogPrivateEndpointOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCatalogPrivateEndpointsCatalogPrivateEndpoint) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
 }
 
 // The time the private endpoint was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-func (o GetCatalogPrivateEndpointsCatalogPrivateEndpointOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCatalogPrivateEndpointsCatalogPrivateEndpoint) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetCatalogPrivateEndpointsCatalogPrivateEndpointOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCatalogPrivateEndpointsCatalogPrivateEndpoint) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the private endpoint was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-func (o GetCatalogPrivateEndpointsCatalogPrivateEndpointOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCatalogPrivateEndpointsCatalogPrivateEndpoint) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetCatalogPrivateEndpointsCatalogPrivateEndpointOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCatalogPrivateEndpointsCatalogPrivateEndpoint) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type GetCatalogPrivateEndpointsCatalogPrivateEndpointArrayOutput struct{ *pulumi.OutputState }
@@ -220,12 +201,6 @@ func (o GetCatalogPrivateEndpointsCatalogPrivateEndpointArrayOutput) ToGetCatalo
 
 func (o GetCatalogPrivateEndpointsCatalogPrivateEndpointArrayOutput) ToGetCatalogPrivateEndpointsCatalogPrivateEndpointArrayOutputWithContext(ctx context.Context) GetCatalogPrivateEndpointsCatalogPrivateEndpointArrayOutput {
 	return o
-}
-
-func (o GetCatalogPrivateEndpointsCatalogPrivateEndpointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCatalogPrivateEndpointsCatalogPrivateEndpoint] {
-	return pulumix.Output[[]GetCatalogPrivateEndpointsCatalogPrivateEndpoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetCatalogPrivateEndpointsCatalogPrivateEndpointArrayOutput) Index(i pulumi.IntInput) GetCatalogPrivateEndpointsCatalogPrivateEndpointOutput {
@@ -269,12 +244,6 @@ func (i GetCatalogPrivateEndpointsFilterArgs) ToGetCatalogPrivateEndpointsFilter
 	return pulumi.ToOutputWithContext(ctx, i).(GetCatalogPrivateEndpointsFilterOutput)
 }
 
-func (i GetCatalogPrivateEndpointsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetCatalogPrivateEndpointsFilter] {
-	return pulumix.Output[GetCatalogPrivateEndpointsFilter]{
-		OutputState: i.ToGetCatalogPrivateEndpointsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetCatalogPrivateEndpointsFilterArrayInput is an input type that accepts GetCatalogPrivateEndpointsFilterArray and GetCatalogPrivateEndpointsFilterArrayOutput values.
 // You can construct a concrete instance of `GetCatalogPrivateEndpointsFilterArrayInput` via:
 //
@@ -300,12 +269,6 @@ func (i GetCatalogPrivateEndpointsFilterArray) ToGetCatalogPrivateEndpointsFilte
 	return pulumi.ToOutputWithContext(ctx, i).(GetCatalogPrivateEndpointsFilterArrayOutput)
 }
 
-func (i GetCatalogPrivateEndpointsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCatalogPrivateEndpointsFilter] {
-	return pulumix.Output[[]GetCatalogPrivateEndpointsFilter]{
-		OutputState: i.ToGetCatalogPrivateEndpointsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCatalogPrivateEndpointsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetCatalogPrivateEndpointsFilterOutput) ElementType() reflect.Type {
@@ -318,12 +281,6 @@ func (o GetCatalogPrivateEndpointsFilterOutput) ToGetCatalogPrivateEndpointsFilt
 
 func (o GetCatalogPrivateEndpointsFilterOutput) ToGetCatalogPrivateEndpointsFilterOutputWithContext(ctx context.Context) GetCatalogPrivateEndpointsFilterOutput {
 	return o
-}
-
-func (o GetCatalogPrivateEndpointsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetCatalogPrivateEndpointsFilter] {
-	return pulumix.Output[GetCatalogPrivateEndpointsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetCatalogPrivateEndpointsFilterOutput) Name() pulumi.StringOutput {
@@ -350,12 +307,6 @@ func (o GetCatalogPrivateEndpointsFilterArrayOutput) ToGetCatalogPrivateEndpoint
 
 func (o GetCatalogPrivateEndpointsFilterArrayOutput) ToGetCatalogPrivateEndpointsFilterArrayOutputWithContext(ctx context.Context) GetCatalogPrivateEndpointsFilterArrayOutput {
 	return o
-}
-
-func (o GetCatalogPrivateEndpointsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCatalogPrivateEndpointsFilter] {
-	return pulumix.Output[[]GetCatalogPrivateEndpointsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetCatalogPrivateEndpointsFilterArrayOutput) Index(i pulumi.IntInput) GetCatalogPrivateEndpointsFilterOutput {
@@ -401,12 +352,6 @@ func (i GetCatalogTypesFilterArgs) ToGetCatalogTypesFilterOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetCatalogTypesFilterOutput)
 }
 
-func (i GetCatalogTypesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetCatalogTypesFilter] {
-	return pulumix.Output[GetCatalogTypesFilter]{
-		OutputState: i.ToGetCatalogTypesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetCatalogTypesFilterArrayInput is an input type that accepts GetCatalogTypesFilterArray and GetCatalogTypesFilterArrayOutput values.
 // You can construct a concrete instance of `GetCatalogTypesFilterArrayInput` via:
 //
@@ -432,12 +377,6 @@ func (i GetCatalogTypesFilterArray) ToGetCatalogTypesFilterArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetCatalogTypesFilterArrayOutput)
 }
 
-func (i GetCatalogTypesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCatalogTypesFilter] {
-	return pulumix.Output[[]GetCatalogTypesFilter]{
-		OutputState: i.ToGetCatalogTypesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCatalogTypesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetCatalogTypesFilterOutput) ElementType() reflect.Type {
@@ -450,12 +389,6 @@ func (o GetCatalogTypesFilterOutput) ToGetCatalogTypesFilterOutput() GetCatalogT
 
 func (o GetCatalogTypesFilterOutput) ToGetCatalogTypesFilterOutputWithContext(ctx context.Context) GetCatalogTypesFilterOutput {
 	return o
-}
-
-func (o GetCatalogTypesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetCatalogTypesFilter] {
-	return pulumix.Output[GetCatalogTypesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Immutable resource name.
@@ -485,12 +418,6 @@ func (o GetCatalogTypesFilterArrayOutput) ToGetCatalogTypesFilterArrayOutputWith
 	return o
 }
 
-func (o GetCatalogTypesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCatalogTypesFilter] {
-	return pulumix.Output[[]GetCatalogTypesFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCatalogTypesFilterArrayOutput) Index(i pulumi.IntInput) GetCatalogTypesFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCatalogTypesFilter {
 		return vs[0].([]GetCatalogTypesFilter)[vs[1].(int)]
@@ -498,7 +425,7 @@ func (o GetCatalogTypesFilterArrayOutput) Index(i pulumi.IntInput) GetCatalogTyp
 }
 
 type GetCatalogTypesTypeCollection struct {
-	Count int                                 `pulumi:"count"`
+	Count *int                                `pulumi:"count"`
 	Items []GetCatalogTypesTypeCollectionItem `pulumi:"items"`
 }
 
@@ -514,7 +441,7 @@ type GetCatalogTypesTypeCollectionInput interface {
 }
 
 type GetCatalogTypesTypeCollectionArgs struct {
-	Count pulumi.IntInput                             `pulumi:"count"`
+	Count pulumi.IntPtrInput                          `pulumi:"count"`
 	Items GetCatalogTypesTypeCollectionItemArrayInput `pulumi:"items"`
 }
 
@@ -528,12 +455,6 @@ func (i GetCatalogTypesTypeCollectionArgs) ToGetCatalogTypesTypeCollectionOutput
 
 func (i GetCatalogTypesTypeCollectionArgs) ToGetCatalogTypesTypeCollectionOutputWithContext(ctx context.Context) GetCatalogTypesTypeCollectionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetCatalogTypesTypeCollectionOutput)
-}
-
-func (i GetCatalogTypesTypeCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetCatalogTypesTypeCollection] {
-	return pulumix.Output[GetCatalogTypesTypeCollection]{
-		OutputState: i.ToGetCatalogTypesTypeCollectionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetCatalogTypesTypeCollectionArrayInput is an input type that accepts GetCatalogTypesTypeCollectionArray and GetCatalogTypesTypeCollectionArrayOutput values.
@@ -561,12 +482,6 @@ func (i GetCatalogTypesTypeCollectionArray) ToGetCatalogTypesTypeCollectionArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetCatalogTypesTypeCollectionArrayOutput)
 }
 
-func (i GetCatalogTypesTypeCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCatalogTypesTypeCollection] {
-	return pulumix.Output[[]GetCatalogTypesTypeCollection]{
-		OutputState: i.ToGetCatalogTypesTypeCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCatalogTypesTypeCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetCatalogTypesTypeCollectionOutput) ElementType() reflect.Type {
@@ -581,14 +496,8 @@ func (o GetCatalogTypesTypeCollectionOutput) ToGetCatalogTypesTypeCollectionOutp
 	return o
 }
 
-func (o GetCatalogTypesTypeCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetCatalogTypesTypeCollection] {
-	return pulumix.Output[GetCatalogTypesTypeCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
-func (o GetCatalogTypesTypeCollectionOutput) Count() pulumi.IntOutput {
-	return o.ApplyT(func(v GetCatalogTypesTypeCollection) int { return v.Count }).(pulumi.IntOutput)
+func (o GetCatalogTypesTypeCollectionOutput) Count() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetCatalogTypesTypeCollection) *int { return v.Count }).(pulumi.IntPtrOutput)
 }
 
 func (o GetCatalogTypesTypeCollectionOutput) Items() GetCatalogTypesTypeCollectionItemArrayOutput {
@@ -609,12 +518,6 @@ func (o GetCatalogTypesTypeCollectionArrayOutput) ToGetCatalogTypesTypeCollectio
 	return o
 }
 
-func (o GetCatalogTypesTypeCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCatalogTypesTypeCollection] {
-	return pulumix.Output[[]GetCatalogTypesTypeCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCatalogTypesTypeCollectionArrayOutput) Index(i pulumi.IntInput) GetCatalogTypesTypeCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCatalogTypesTypeCollection {
 		return vs[0].([]GetCatalogTypesTypeCollection)[vs[1].(int)]
@@ -623,19 +526,19 @@ func (o GetCatalogTypesTypeCollectionArrayOutput) Index(i pulumi.IntInput) GetCa
 
 type GetCatalogTypesTypeCollectionItem struct {
 	// Unique catalog identifier.
-	CatalogId string `pulumi:"catalogId"`
+	CatalogId *string `pulumi:"catalogId"`
 	// Detailed description of the type.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Unique type key that is immutable.
-	Key string `pulumi:"key"`
+	Key *string `pulumi:"key"`
 	// Immutable resource name.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Indicates the category of this type . For example, data assets or connections.
-	TypeCategory string `pulumi:"typeCategory"`
+	TypeCategory *string `pulumi:"typeCategory"`
 	// URI to the type instance in the API.
-	Uri string `pulumi:"uri"`
+	Uri *string `pulumi:"uri"`
 }
 
 // GetCatalogTypesTypeCollectionItemInput is an input type that accepts GetCatalogTypesTypeCollectionItemArgs and GetCatalogTypesTypeCollectionItemOutput values.
@@ -651,19 +554,19 @@ type GetCatalogTypesTypeCollectionItemInput interface {
 
 type GetCatalogTypesTypeCollectionItemArgs struct {
 	// Unique catalog identifier.
-	CatalogId pulumi.StringInput `pulumi:"catalogId"`
+	CatalogId pulumi.StringPtrInput `pulumi:"catalogId"`
 	// Detailed description of the type.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// Unique type key that is immutable.
-	Key pulumi.StringInput `pulumi:"key"`
+	Key pulumi.StringPtrInput `pulumi:"key"`
 	// Immutable resource name.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// Indicates the category of this type . For example, data assets or connections.
-	TypeCategory pulumi.StringInput `pulumi:"typeCategory"`
+	TypeCategory pulumi.StringPtrInput `pulumi:"typeCategory"`
 	// URI to the type instance in the API.
-	Uri pulumi.StringInput `pulumi:"uri"`
+	Uri pulumi.StringPtrInput `pulumi:"uri"`
 }
 
 func (GetCatalogTypesTypeCollectionItemArgs) ElementType() reflect.Type {
@@ -676,12 +579,6 @@ func (i GetCatalogTypesTypeCollectionItemArgs) ToGetCatalogTypesTypeCollectionIt
 
 func (i GetCatalogTypesTypeCollectionItemArgs) ToGetCatalogTypesTypeCollectionItemOutputWithContext(ctx context.Context) GetCatalogTypesTypeCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetCatalogTypesTypeCollectionItemOutput)
-}
-
-func (i GetCatalogTypesTypeCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetCatalogTypesTypeCollectionItem] {
-	return pulumix.Output[GetCatalogTypesTypeCollectionItem]{
-		OutputState: i.ToGetCatalogTypesTypeCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetCatalogTypesTypeCollectionItemArrayInput is an input type that accepts GetCatalogTypesTypeCollectionItemArray and GetCatalogTypesTypeCollectionItemArrayOutput values.
@@ -709,12 +606,6 @@ func (i GetCatalogTypesTypeCollectionItemArray) ToGetCatalogTypesTypeCollectionI
 	return pulumi.ToOutputWithContext(ctx, i).(GetCatalogTypesTypeCollectionItemArrayOutput)
 }
 
-func (i GetCatalogTypesTypeCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCatalogTypesTypeCollectionItem] {
-	return pulumix.Output[[]GetCatalogTypesTypeCollectionItem]{
-		OutputState: i.ToGetCatalogTypesTypeCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCatalogTypesTypeCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetCatalogTypesTypeCollectionItemOutput) ElementType() reflect.Type {
@@ -729,45 +620,39 @@ func (o GetCatalogTypesTypeCollectionItemOutput) ToGetCatalogTypesTypeCollection
 	return o
 }
 
-func (o GetCatalogTypesTypeCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetCatalogTypesTypeCollectionItem] {
-	return pulumix.Output[GetCatalogTypesTypeCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Unique catalog identifier.
-func (o GetCatalogTypesTypeCollectionItemOutput) CatalogId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCatalogTypesTypeCollectionItem) string { return v.CatalogId }).(pulumi.StringOutput)
+func (o GetCatalogTypesTypeCollectionItemOutput) CatalogId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCatalogTypesTypeCollectionItem) *string { return v.CatalogId }).(pulumi.StringPtrOutput)
 }
 
 // Detailed description of the type.
-func (o GetCatalogTypesTypeCollectionItemOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCatalogTypesTypeCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+func (o GetCatalogTypesTypeCollectionItemOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCatalogTypesTypeCollectionItem) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Unique type key that is immutable.
-func (o GetCatalogTypesTypeCollectionItemOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCatalogTypesTypeCollectionItem) string { return v.Key }).(pulumi.StringOutput)
+func (o GetCatalogTypesTypeCollectionItemOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCatalogTypesTypeCollectionItem) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
 // Immutable resource name.
-func (o GetCatalogTypesTypeCollectionItemOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCatalogTypesTypeCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+func (o GetCatalogTypesTypeCollectionItemOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCatalogTypesTypeCollectionItem) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
-func (o GetCatalogTypesTypeCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCatalogTypesTypeCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetCatalogTypesTypeCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCatalogTypesTypeCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Indicates the category of this type . For example, data assets or connections.
-func (o GetCatalogTypesTypeCollectionItemOutput) TypeCategory() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCatalogTypesTypeCollectionItem) string { return v.TypeCategory }).(pulumi.StringOutput)
+func (o GetCatalogTypesTypeCollectionItemOutput) TypeCategory() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCatalogTypesTypeCollectionItem) *string { return v.TypeCategory }).(pulumi.StringPtrOutput)
 }
 
 // URI to the type instance in the API.
-func (o GetCatalogTypesTypeCollectionItemOutput) Uri() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCatalogTypesTypeCollectionItem) string { return v.Uri }).(pulumi.StringOutput)
+func (o GetCatalogTypesTypeCollectionItemOutput) Uri() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCatalogTypesTypeCollectionItem) *string { return v.Uri }).(pulumi.StringPtrOutput)
 }
 
 type GetCatalogTypesTypeCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -784,12 +669,6 @@ func (o GetCatalogTypesTypeCollectionItemArrayOutput) ToGetCatalogTypesTypeColle
 	return o
 }
 
-func (o GetCatalogTypesTypeCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCatalogTypesTypeCollectionItem] {
-	return pulumix.Output[[]GetCatalogTypesTypeCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCatalogTypesTypeCollectionItemArrayOutput) Index(i pulumi.IntInput) GetCatalogTypesTypeCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCatalogTypesTypeCollectionItem {
 		return vs[0].([]GetCatalogTypesTypeCollectionItem)[vs[1].(int)]
@@ -800,29 +679,29 @@ type GetCatalogsCatalog struct {
 	// The list of private reverse connection endpoints attached to the catalog
 	AttachedCatalogPrivateEndpoints []string `pulumi:"attachedCatalogPrivateEndpoints"`
 	// The OCID of the compartment where you want to list resources.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given. The match is not case sensitive.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Unique identifier that is immutable on creation.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// An message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in 'Failed' state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The number of data objects added to the data catalog. Please see the data catalog documentation for further information on how this is calculated.
-	NumberOfObjects int `pulumi:"numberOfObjects"`
+	NumberOfObjects *int `pulumi:"numberOfObjects"`
 	// The REST front endpoint URL to the data catalog instance.
-	ServiceApiUrl string `pulumi:"serviceApiUrl"`
+	ServiceApiUrl *string `pulumi:"serviceApiUrl"`
 	// The console front endpoint URL to the data catalog instance.
-	ServiceConsoleUrl string `pulumi:"serviceConsoleUrl"`
+	ServiceConsoleUrl *string `pulumi:"serviceConsoleUrl"`
 	// A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The time the data catalog was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the data catalog was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 // GetCatalogsCatalogInput is an input type that accepts GetCatalogsCatalogArgs and GetCatalogsCatalogOutput values.
@@ -840,29 +719,29 @@ type GetCatalogsCatalogArgs struct {
 	// The list of private reverse connection endpoints attached to the catalog
 	AttachedCatalogPrivateEndpoints pulumi.StringArrayInput `pulumi:"attachedCatalogPrivateEndpoints"`
 	// The OCID of the compartment where you want to list resources.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given. The match is not case sensitive.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// Unique identifier that is immutable on creation.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// An message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in 'Failed' state.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// The number of data objects added to the data catalog. Please see the data catalog documentation for further information on how this is calculated.
-	NumberOfObjects pulumi.IntInput `pulumi:"numberOfObjects"`
+	NumberOfObjects pulumi.IntPtrInput `pulumi:"numberOfObjects"`
 	// The REST front endpoint URL to the data catalog instance.
-	ServiceApiUrl pulumi.StringInput `pulumi:"serviceApiUrl"`
+	ServiceApiUrl pulumi.StringPtrInput `pulumi:"serviceApiUrl"`
 	// The console front endpoint URL to the data catalog instance.
-	ServiceConsoleUrl pulumi.StringInput `pulumi:"serviceConsoleUrl"`
+	ServiceConsoleUrl pulumi.StringPtrInput `pulumi:"serviceConsoleUrl"`
 	// A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The time the data catalog was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The time the data catalog was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 }
 
 func (GetCatalogsCatalogArgs) ElementType() reflect.Type {
@@ -875,12 +754,6 @@ func (i GetCatalogsCatalogArgs) ToGetCatalogsCatalogOutput() GetCatalogsCatalogO
 
 func (i GetCatalogsCatalogArgs) ToGetCatalogsCatalogOutputWithContext(ctx context.Context) GetCatalogsCatalogOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetCatalogsCatalogOutput)
-}
-
-func (i GetCatalogsCatalogArgs) ToOutput(ctx context.Context) pulumix.Output[GetCatalogsCatalog] {
-	return pulumix.Output[GetCatalogsCatalog]{
-		OutputState: i.ToGetCatalogsCatalogOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetCatalogsCatalogArrayInput is an input type that accepts GetCatalogsCatalogArray and GetCatalogsCatalogArrayOutput values.
@@ -908,12 +781,6 @@ func (i GetCatalogsCatalogArray) ToGetCatalogsCatalogArrayOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetCatalogsCatalogArrayOutput)
 }
 
-func (i GetCatalogsCatalogArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCatalogsCatalog] {
-	return pulumix.Output[[]GetCatalogsCatalog]{
-		OutputState: i.ToGetCatalogsCatalogArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCatalogsCatalogOutput struct{ *pulumi.OutputState }
 
 func (GetCatalogsCatalogOutput) ElementType() reflect.Type {
@@ -928,20 +795,14 @@ func (o GetCatalogsCatalogOutput) ToGetCatalogsCatalogOutputWithContext(ctx cont
 	return o
 }
 
-func (o GetCatalogsCatalogOutput) ToOutput(ctx context.Context) pulumix.Output[GetCatalogsCatalog] {
-	return pulumix.Output[GetCatalogsCatalog]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The list of private reverse connection endpoints attached to the catalog
 func (o GetCatalogsCatalogOutput) AttachedCatalogPrivateEndpoints() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetCatalogsCatalog) []string { return v.AttachedCatalogPrivateEndpoints }).(pulumi.StringArrayOutput)
 }
 
 // The OCID of the compartment where you want to list resources.
-func (o GetCatalogsCatalogOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCatalogsCatalog) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetCatalogsCatalogOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCatalogsCatalog) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
@@ -950,8 +811,8 @@ func (o GetCatalogsCatalogOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // A filter to return only resources that match the entire display name given. The match is not case sensitive.
-func (o GetCatalogsCatalogOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCatalogsCatalog) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetCatalogsCatalogOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCatalogsCatalog) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -960,43 +821,43 @@ func (o GetCatalogsCatalogOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Unique identifier that is immutable on creation.
-func (o GetCatalogsCatalogOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCatalogsCatalog) string { return v.Id }).(pulumi.StringOutput)
+func (o GetCatalogsCatalogOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCatalogsCatalog) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // An message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in 'Failed' state.
-func (o GetCatalogsCatalogOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCatalogsCatalog) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetCatalogsCatalogOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCatalogsCatalog) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The number of data objects added to the data catalog. Please see the data catalog documentation for further information on how this is calculated.
-func (o GetCatalogsCatalogOutput) NumberOfObjects() pulumi.IntOutput {
-	return o.ApplyT(func(v GetCatalogsCatalog) int { return v.NumberOfObjects }).(pulumi.IntOutput)
+func (o GetCatalogsCatalogOutput) NumberOfObjects() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetCatalogsCatalog) *int { return v.NumberOfObjects }).(pulumi.IntPtrOutput)
 }
 
 // The REST front endpoint URL to the data catalog instance.
-func (o GetCatalogsCatalogOutput) ServiceApiUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCatalogsCatalog) string { return v.ServiceApiUrl }).(pulumi.StringOutput)
+func (o GetCatalogsCatalogOutput) ServiceApiUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCatalogsCatalog) *string { return v.ServiceApiUrl }).(pulumi.StringPtrOutput)
 }
 
 // The console front endpoint URL to the data catalog instance.
-func (o GetCatalogsCatalogOutput) ServiceConsoleUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCatalogsCatalog) string { return v.ServiceConsoleUrl }).(pulumi.StringOutput)
+func (o GetCatalogsCatalogOutput) ServiceConsoleUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCatalogsCatalog) *string { return v.ServiceConsoleUrl }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
-func (o GetCatalogsCatalogOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCatalogsCatalog) string { return v.State }).(pulumi.StringOutput)
+func (o GetCatalogsCatalogOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCatalogsCatalog) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The time the data catalog was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-func (o GetCatalogsCatalogOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCatalogsCatalog) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetCatalogsCatalogOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCatalogsCatalog) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the data catalog was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-func (o GetCatalogsCatalogOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCatalogsCatalog) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetCatalogsCatalogOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCatalogsCatalog) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type GetCatalogsCatalogArrayOutput struct{ *pulumi.OutputState }
@@ -1011,12 +872,6 @@ func (o GetCatalogsCatalogArrayOutput) ToGetCatalogsCatalogArrayOutput() GetCata
 
 func (o GetCatalogsCatalogArrayOutput) ToGetCatalogsCatalogArrayOutputWithContext(ctx context.Context) GetCatalogsCatalogArrayOutput {
 	return o
-}
-
-func (o GetCatalogsCatalogArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCatalogsCatalog] {
-	return pulumix.Output[[]GetCatalogsCatalog]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetCatalogsCatalogArrayOutput) Index(i pulumi.IntInput) GetCatalogsCatalogOutput {
@@ -1060,12 +915,6 @@ func (i GetCatalogsFilterArgs) ToGetCatalogsFilterOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(GetCatalogsFilterOutput)
 }
 
-func (i GetCatalogsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetCatalogsFilter] {
-	return pulumix.Output[GetCatalogsFilter]{
-		OutputState: i.ToGetCatalogsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetCatalogsFilterArrayInput is an input type that accepts GetCatalogsFilterArray and GetCatalogsFilterArrayOutput values.
 // You can construct a concrete instance of `GetCatalogsFilterArrayInput` via:
 //
@@ -1091,12 +940,6 @@ func (i GetCatalogsFilterArray) ToGetCatalogsFilterArrayOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GetCatalogsFilterArrayOutput)
 }
 
-func (i GetCatalogsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCatalogsFilter] {
-	return pulumix.Output[[]GetCatalogsFilter]{
-		OutputState: i.ToGetCatalogsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCatalogsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetCatalogsFilterOutput) ElementType() reflect.Type {
@@ -1109,12 +952,6 @@ func (o GetCatalogsFilterOutput) ToGetCatalogsFilterOutput() GetCatalogsFilterOu
 
 func (o GetCatalogsFilterOutput) ToGetCatalogsFilterOutputWithContext(ctx context.Context) GetCatalogsFilterOutput {
 	return o
-}
-
-func (o GetCatalogsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetCatalogsFilter] {
-	return pulumix.Output[GetCatalogsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetCatalogsFilterOutput) Name() pulumi.StringOutput {
@@ -1143,12 +980,6 @@ func (o GetCatalogsFilterArrayOutput) ToGetCatalogsFilterArrayOutputWithContext(
 	return o
 }
 
-func (o GetCatalogsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCatalogsFilter] {
-	return pulumix.Output[[]GetCatalogsFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCatalogsFilterArrayOutput) Index(i pulumi.IntInput) GetCatalogsFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCatalogsFilter {
 		return vs[0].([]GetCatalogsFilter)[vs[1].(int)]
@@ -1156,7 +987,7 @@ func (o GetCatalogsFilterArrayOutput) Index(i pulumi.IntInput) GetCatalogsFilter
 }
 
 type GetConnectionsConnectionCollection struct {
-	Count int                                      `pulumi:"count"`
+	Count *int                                     `pulumi:"count"`
 	Items []GetConnectionsConnectionCollectionItem `pulumi:"items"`
 }
 
@@ -1172,7 +1003,7 @@ type GetConnectionsConnectionCollectionInput interface {
 }
 
 type GetConnectionsConnectionCollectionArgs struct {
-	Count pulumi.IntInput                                  `pulumi:"count"`
+	Count pulumi.IntPtrInput                               `pulumi:"count"`
 	Items GetConnectionsConnectionCollectionItemArrayInput `pulumi:"items"`
 }
 
@@ -1186,12 +1017,6 @@ func (i GetConnectionsConnectionCollectionArgs) ToGetConnectionsConnectionCollec
 
 func (i GetConnectionsConnectionCollectionArgs) ToGetConnectionsConnectionCollectionOutputWithContext(ctx context.Context) GetConnectionsConnectionCollectionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionsConnectionCollectionOutput)
-}
-
-func (i GetConnectionsConnectionCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetConnectionsConnectionCollection] {
-	return pulumix.Output[GetConnectionsConnectionCollection]{
-		OutputState: i.ToGetConnectionsConnectionCollectionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetConnectionsConnectionCollectionArrayInput is an input type that accepts GetConnectionsConnectionCollectionArray and GetConnectionsConnectionCollectionArrayOutput values.
@@ -1219,12 +1044,6 @@ func (i GetConnectionsConnectionCollectionArray) ToGetConnectionsConnectionColle
 	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionsConnectionCollectionArrayOutput)
 }
 
-func (i GetConnectionsConnectionCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetConnectionsConnectionCollection] {
-	return pulumix.Output[[]GetConnectionsConnectionCollection]{
-		OutputState: i.ToGetConnectionsConnectionCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetConnectionsConnectionCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetConnectionsConnectionCollectionOutput) ElementType() reflect.Type {
@@ -1239,14 +1058,8 @@ func (o GetConnectionsConnectionCollectionOutput) ToGetConnectionsConnectionColl
 	return o
 }
 
-func (o GetConnectionsConnectionCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetConnectionsConnectionCollection] {
-	return pulumix.Output[GetConnectionsConnectionCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
-func (o GetConnectionsConnectionCollectionOutput) Count() pulumi.IntOutput {
-	return o.ApplyT(func(v GetConnectionsConnectionCollection) int { return v.Count }).(pulumi.IntOutput)
+func (o GetConnectionsConnectionCollectionOutput) Count() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollection) *int { return v.Count }).(pulumi.IntPtrOutput)
 }
 
 func (o GetConnectionsConnectionCollectionOutput) Items() GetConnectionsConnectionCollectionItemArrayOutput {
@@ -1267,12 +1080,6 @@ func (o GetConnectionsConnectionCollectionArrayOutput) ToGetConnectionsConnectio
 	return o
 }
 
-func (o GetConnectionsConnectionCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetConnectionsConnectionCollection] {
-	return pulumix.Output[[]GetConnectionsConnectionCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetConnectionsConnectionCollectionArrayOutput) Index(i pulumi.IntInput) GetConnectionsConnectionCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetConnectionsConnectionCollection {
 		return vs[0].([]GetConnectionsConnectionCollection)[vs[1].(int)]
@@ -1283,36 +1090,36 @@ type GetConnectionsConnectionCollectionItem struct {
 	// Unique catalog identifier.
 	CatalogId string `pulumi:"catalogId"`
 	// OCID of the user who created the resource.
-	CreatedById string `pulumi:"createdById"`
+	CreatedById *string `pulumi:"createdById"`
 	// Unique data asset key.
 	DataAssetKey string `pulumi:"dataAssetKey"`
 	// A description of the connection.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// A filter to return only resources that match the entire display name given. The match is not case sensitive.
 	DisplayName   string                 `pulumi:"displayName"`
 	EncProperties map[string]interface{} `pulumi:"encProperties"`
 	// Unique external identifier of this resource in the external source system.
-	ExternalKey string `pulumi:"externalKey"`
+	ExternalKey *string `pulumi:"externalKey"`
 	// Indicates whether this connection is the default connection.
-	IsDefault bool `pulumi:"isDefault"`
+	IsDefault *bool `pulumi:"isDefault"`
 	// Unique connection key that is immutable.
-	Key string `pulumi:"key"`
+	Key *string `pulumi:"key"`
 	// A map of maps that contains the properties which are specific to the connection type. Each connection type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most connections have required properties within the "default" category. Example: `{"properties": { "default": { "username": "user1"}}}`
 	Properties map[string]interface{} `pulumi:"properties"`
 	// A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Time that the resource was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// Time that the resource's status was last updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-	TimeStatusUpdated string `pulumi:"timeStatusUpdated"`
+	TimeStatusUpdated *string `pulumi:"timeStatusUpdated"`
 	// Time that the resource was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// The key of the object type. Type key's can be found via the '/types' endpoint.
 	TypeKey string `pulumi:"typeKey"`
 	// OCID of the user who updated the resource.
-	UpdatedById string `pulumi:"updatedById"`
+	UpdatedById *string `pulumi:"updatedById"`
 	// URI to the connection instance in the API.
-	Uri string `pulumi:"uri"`
+	Uri *string `pulumi:"uri"`
 }
 
 // GetConnectionsConnectionCollectionItemInput is an input type that accepts GetConnectionsConnectionCollectionItemArgs and GetConnectionsConnectionCollectionItemOutput values.
@@ -1330,36 +1137,36 @@ type GetConnectionsConnectionCollectionItemArgs struct {
 	// Unique catalog identifier.
 	CatalogId pulumi.StringInput `pulumi:"catalogId"`
 	// OCID of the user who created the resource.
-	CreatedById pulumi.StringInput `pulumi:"createdById"`
+	CreatedById pulumi.StringPtrInput `pulumi:"createdById"`
 	// Unique data asset key.
 	DataAssetKey pulumi.StringInput `pulumi:"dataAssetKey"`
 	// A description of the connection.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// A filter to return only resources that match the entire display name given. The match is not case sensitive.
 	DisplayName   pulumi.StringInput `pulumi:"displayName"`
 	EncProperties pulumi.MapInput    `pulumi:"encProperties"`
 	// Unique external identifier of this resource in the external source system.
-	ExternalKey pulumi.StringInput `pulumi:"externalKey"`
+	ExternalKey pulumi.StringPtrInput `pulumi:"externalKey"`
 	// Indicates whether this connection is the default connection.
-	IsDefault pulumi.BoolInput `pulumi:"isDefault"`
+	IsDefault pulumi.BoolPtrInput `pulumi:"isDefault"`
 	// Unique connection key that is immutable.
-	Key pulumi.StringInput `pulumi:"key"`
+	Key pulumi.StringPtrInput `pulumi:"key"`
 	// A map of maps that contains the properties which are specific to the connection type. Each connection type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most connections have required properties within the "default" category. Example: `{"properties": { "default": { "username": "user1"}}}`
 	Properties pulumi.MapInput `pulumi:"properties"`
 	// A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// Time that the resource was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// Time that the resource's status was last updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-	TimeStatusUpdated pulumi.StringInput `pulumi:"timeStatusUpdated"`
+	TimeStatusUpdated pulumi.StringPtrInput `pulumi:"timeStatusUpdated"`
 	// Time that the resource was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 	// The key of the object type. Type key's can be found via the '/types' endpoint.
 	TypeKey pulumi.StringInput `pulumi:"typeKey"`
 	// OCID of the user who updated the resource.
-	UpdatedById pulumi.StringInput `pulumi:"updatedById"`
+	UpdatedById pulumi.StringPtrInput `pulumi:"updatedById"`
 	// URI to the connection instance in the API.
-	Uri pulumi.StringInput `pulumi:"uri"`
+	Uri pulumi.StringPtrInput `pulumi:"uri"`
 }
 
 func (GetConnectionsConnectionCollectionItemArgs) ElementType() reflect.Type {
@@ -1372,12 +1179,6 @@ func (i GetConnectionsConnectionCollectionItemArgs) ToGetConnectionsConnectionCo
 
 func (i GetConnectionsConnectionCollectionItemArgs) ToGetConnectionsConnectionCollectionItemOutputWithContext(ctx context.Context) GetConnectionsConnectionCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionsConnectionCollectionItemOutput)
-}
-
-func (i GetConnectionsConnectionCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetConnectionsConnectionCollectionItem] {
-	return pulumix.Output[GetConnectionsConnectionCollectionItem]{
-		OutputState: i.ToGetConnectionsConnectionCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetConnectionsConnectionCollectionItemArrayInput is an input type that accepts GetConnectionsConnectionCollectionItemArray and GetConnectionsConnectionCollectionItemArrayOutput values.
@@ -1405,12 +1206,6 @@ func (i GetConnectionsConnectionCollectionItemArray) ToGetConnectionsConnectionC
 	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionsConnectionCollectionItemArrayOutput)
 }
 
-func (i GetConnectionsConnectionCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetConnectionsConnectionCollectionItem] {
-	return pulumix.Output[[]GetConnectionsConnectionCollectionItem]{
-		OutputState: i.ToGetConnectionsConnectionCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetConnectionsConnectionCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetConnectionsConnectionCollectionItemOutput) ElementType() reflect.Type {
@@ -1425,20 +1220,14 @@ func (o GetConnectionsConnectionCollectionItemOutput) ToGetConnectionsConnection
 	return o
 }
 
-func (o GetConnectionsConnectionCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetConnectionsConnectionCollectionItem] {
-	return pulumix.Output[GetConnectionsConnectionCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Unique catalog identifier.
 func (o GetConnectionsConnectionCollectionItemOutput) CatalogId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.CatalogId }).(pulumi.StringOutput)
 }
 
 // OCID of the user who created the resource.
-func (o GetConnectionsConnectionCollectionItemOutput) CreatedById() pulumi.StringOutput {
-	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.CreatedById }).(pulumi.StringOutput)
+func (o GetConnectionsConnectionCollectionItemOutput) CreatedById() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) *string { return v.CreatedById }).(pulumi.StringPtrOutput)
 }
 
 // Unique data asset key.
@@ -1447,8 +1236,8 @@ func (o GetConnectionsConnectionCollectionItemOutput) DataAssetKey() pulumi.Stri
 }
 
 // A description of the connection.
-func (o GetConnectionsConnectionCollectionItemOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+func (o GetConnectionsConnectionCollectionItemOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only resources that match the entire display name given. The match is not case sensitive.
@@ -1461,18 +1250,18 @@ func (o GetConnectionsConnectionCollectionItemOutput) EncProperties() pulumi.Map
 }
 
 // Unique external identifier of this resource in the external source system.
-func (o GetConnectionsConnectionCollectionItemOutput) ExternalKey() pulumi.StringOutput {
-	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.ExternalKey }).(pulumi.StringOutput)
+func (o GetConnectionsConnectionCollectionItemOutput) ExternalKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) *string { return v.ExternalKey }).(pulumi.StringPtrOutput)
 }
 
 // Indicates whether this connection is the default connection.
-func (o GetConnectionsConnectionCollectionItemOutput) IsDefault() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) bool { return v.IsDefault }).(pulumi.BoolOutput)
+func (o GetConnectionsConnectionCollectionItemOutput) IsDefault() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) *bool { return v.IsDefault }).(pulumi.BoolPtrOutput)
 }
 
 // Unique connection key that is immutable.
-func (o GetConnectionsConnectionCollectionItemOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.Key }).(pulumi.StringOutput)
+func (o GetConnectionsConnectionCollectionItemOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
 // A map of maps that contains the properties which are specific to the connection type. Each connection type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most connections have required properties within the "default" category. Example: `{"properties": { "default": { "username": "user1"}}}`
@@ -1481,23 +1270,23 @@ func (o GetConnectionsConnectionCollectionItemOutput) Properties() pulumi.MapOut
 }
 
 // A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
-func (o GetConnectionsConnectionCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetConnectionsConnectionCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Time that the resource was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-func (o GetConnectionsConnectionCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetConnectionsConnectionCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // Time that the resource's status was last updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-func (o GetConnectionsConnectionCollectionItemOutput) TimeStatusUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.TimeStatusUpdated }).(pulumi.StringOutput)
+func (o GetConnectionsConnectionCollectionItemOutput) TimeStatusUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) *string { return v.TimeStatusUpdated }).(pulumi.StringPtrOutput)
 }
 
 // Time that the resource was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-func (o GetConnectionsConnectionCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetConnectionsConnectionCollectionItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // The key of the object type. Type key's can be found via the '/types' endpoint.
@@ -1506,13 +1295,13 @@ func (o GetConnectionsConnectionCollectionItemOutput) TypeKey() pulumi.StringOut
 }
 
 // OCID of the user who updated the resource.
-func (o GetConnectionsConnectionCollectionItemOutput) UpdatedById() pulumi.StringOutput {
-	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.UpdatedById }).(pulumi.StringOutput)
+func (o GetConnectionsConnectionCollectionItemOutput) UpdatedById() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) *string { return v.UpdatedById }).(pulumi.StringPtrOutput)
 }
 
 // URI to the connection instance in the API.
-func (o GetConnectionsConnectionCollectionItemOutput) Uri() pulumi.StringOutput {
-	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.Uri }).(pulumi.StringOutput)
+func (o GetConnectionsConnectionCollectionItemOutput) Uri() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) *string { return v.Uri }).(pulumi.StringPtrOutput)
 }
 
 type GetConnectionsConnectionCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -1527,12 +1316,6 @@ func (o GetConnectionsConnectionCollectionItemArrayOutput) ToGetConnectionsConne
 
 func (o GetConnectionsConnectionCollectionItemArrayOutput) ToGetConnectionsConnectionCollectionItemArrayOutputWithContext(ctx context.Context) GetConnectionsConnectionCollectionItemArrayOutput {
 	return o
-}
-
-func (o GetConnectionsConnectionCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetConnectionsConnectionCollectionItem] {
-	return pulumix.Output[[]GetConnectionsConnectionCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetConnectionsConnectionCollectionItemArrayOutput) Index(i pulumi.IntInput) GetConnectionsConnectionCollectionItemOutput {
@@ -1576,12 +1359,6 @@ func (i GetConnectionsFilterArgs) ToGetConnectionsFilterOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionsFilterOutput)
 }
 
-func (i GetConnectionsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetConnectionsFilter] {
-	return pulumix.Output[GetConnectionsFilter]{
-		OutputState: i.ToGetConnectionsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetConnectionsFilterArrayInput is an input type that accepts GetConnectionsFilterArray and GetConnectionsFilterArrayOutput values.
 // You can construct a concrete instance of `GetConnectionsFilterArrayInput` via:
 //
@@ -1607,12 +1384,6 @@ func (i GetConnectionsFilterArray) ToGetConnectionsFilterArrayOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionsFilterArrayOutput)
 }
 
-func (i GetConnectionsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetConnectionsFilter] {
-	return pulumix.Output[[]GetConnectionsFilter]{
-		OutputState: i.ToGetConnectionsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetConnectionsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetConnectionsFilterOutput) ElementType() reflect.Type {
@@ -1625,12 +1396,6 @@ func (o GetConnectionsFilterOutput) ToGetConnectionsFilterOutput() GetConnection
 
 func (o GetConnectionsFilterOutput) ToGetConnectionsFilterOutputWithContext(ctx context.Context) GetConnectionsFilterOutput {
 	return o
-}
-
-func (o GetConnectionsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetConnectionsFilter] {
-	return pulumix.Output[GetConnectionsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetConnectionsFilterOutput) Name() pulumi.StringOutput {
@@ -1659,12 +1424,6 @@ func (o GetConnectionsFilterArrayOutput) ToGetConnectionsFilterArrayOutputWithCo
 	return o
 }
 
-func (o GetConnectionsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetConnectionsFilter] {
-	return pulumix.Output[[]GetConnectionsFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetConnectionsFilterArrayOutput) Index(i pulumi.IntInput) GetConnectionsFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetConnectionsFilter {
 		return vs[0].([]GetConnectionsFilter)[vs[1].(int)]
@@ -1672,7 +1431,7 @@ func (o GetConnectionsFilterArrayOutput) Index(i pulumi.IntInput) GetConnections
 }
 
 type GetDataAssetsDataAssetCollection struct {
-	Count int                                    `pulumi:"count"`
+	Count *int                                   `pulumi:"count"`
 	Items []GetDataAssetsDataAssetCollectionItem `pulumi:"items"`
 }
 
@@ -1688,7 +1447,7 @@ type GetDataAssetsDataAssetCollectionInput interface {
 }
 
 type GetDataAssetsDataAssetCollectionArgs struct {
-	Count pulumi.IntInput                                `pulumi:"count"`
+	Count pulumi.IntPtrInput                             `pulumi:"count"`
 	Items GetDataAssetsDataAssetCollectionItemArrayInput `pulumi:"items"`
 }
 
@@ -1702,12 +1461,6 @@ func (i GetDataAssetsDataAssetCollectionArgs) ToGetDataAssetsDataAssetCollection
 
 func (i GetDataAssetsDataAssetCollectionArgs) ToGetDataAssetsDataAssetCollectionOutputWithContext(ctx context.Context) GetDataAssetsDataAssetCollectionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetDataAssetsDataAssetCollectionOutput)
-}
-
-func (i GetDataAssetsDataAssetCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetDataAssetsDataAssetCollection] {
-	return pulumix.Output[GetDataAssetsDataAssetCollection]{
-		OutputState: i.ToGetDataAssetsDataAssetCollectionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetDataAssetsDataAssetCollectionArrayInput is an input type that accepts GetDataAssetsDataAssetCollectionArray and GetDataAssetsDataAssetCollectionArrayOutput values.
@@ -1735,12 +1488,6 @@ func (i GetDataAssetsDataAssetCollectionArray) ToGetDataAssetsDataAssetCollectio
 	return pulumi.ToOutputWithContext(ctx, i).(GetDataAssetsDataAssetCollectionArrayOutput)
 }
 
-func (i GetDataAssetsDataAssetCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDataAssetsDataAssetCollection] {
-	return pulumix.Output[[]GetDataAssetsDataAssetCollection]{
-		OutputState: i.ToGetDataAssetsDataAssetCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDataAssetsDataAssetCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetDataAssetsDataAssetCollectionOutput) ElementType() reflect.Type {
@@ -1755,14 +1502,8 @@ func (o GetDataAssetsDataAssetCollectionOutput) ToGetDataAssetsDataAssetCollecti
 	return o
 }
 
-func (o GetDataAssetsDataAssetCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetDataAssetsDataAssetCollection] {
-	return pulumix.Output[GetDataAssetsDataAssetCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
-func (o GetDataAssetsDataAssetCollectionOutput) Count() pulumi.IntOutput {
-	return o.ApplyT(func(v GetDataAssetsDataAssetCollection) int { return v.Count }).(pulumi.IntOutput)
+func (o GetDataAssetsDataAssetCollectionOutput) Count() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetDataAssetsDataAssetCollection) *int { return v.Count }).(pulumi.IntPtrOutput)
 }
 
 func (o GetDataAssetsDataAssetCollectionOutput) Items() GetDataAssetsDataAssetCollectionItemArrayOutput {
@@ -1783,12 +1524,6 @@ func (o GetDataAssetsDataAssetCollectionArrayOutput) ToGetDataAssetsDataAssetCol
 	return o
 }
 
-func (o GetDataAssetsDataAssetCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDataAssetsDataAssetCollection] {
-	return pulumix.Output[[]GetDataAssetsDataAssetCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDataAssetsDataAssetCollectionArrayOutput) Index(i pulumi.IntInput) GetDataAssetsDataAssetCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDataAssetsDataAssetCollection {
 		return vs[0].([]GetDataAssetsDataAssetCollection)[vs[1].(int)]
@@ -1799,33 +1534,33 @@ type GetDataAssetsDataAssetCollectionItem struct {
 	// Unique catalog identifier.
 	CatalogId string `pulumi:"catalogId"`
 	// OCID of the user who created the resource.
-	CreatedById string `pulumi:"createdById"`
+	CreatedById *string `pulumi:"createdById"`
 	// Detailed description of the data asset.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// A filter to return only resources that match the entire display name given. The match is not case sensitive.
 	DisplayName string `pulumi:"displayName"`
 	// Unique external identifier of this resource in the external source system.
-	ExternalKey string `pulumi:"externalKey"`
+	ExternalKey *string `pulumi:"externalKey"`
 	// Unique data asset key that is immutable.
-	Key string `pulumi:"key"`
+	Key *string `pulumi:"key"`
 	// A message describing the current state in more detail. An object not in ACTIVE state may have functional limitations, see service documentation for details.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// A map of maps that contains the properties which are specific to the asset type. Each data asset type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most data assets have required properties within the "default" category. Example: `{"properties": { "default": { "host": "host1", "port": "1521", "database": "orcl"}}}`
 	Properties map[string]interface{} `pulumi:"properties"`
 	// A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Time that the resource was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The last time that a harvest was performed on the data asset. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-	TimeHarvested string `pulumi:"timeHarvested"`
+	TimeHarvested *string `pulumi:"timeHarvested"`
 	// Time that the resource was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// The key of the object type.
 	TypeKey string `pulumi:"typeKey"`
 	// OCID of the user who updated the resource.
-	UpdatedById string `pulumi:"updatedById"`
+	UpdatedById *string `pulumi:"updatedById"`
 	// URI to the data asset instance in the API.
-	Uri string `pulumi:"uri"`
+	Uri *string `pulumi:"uri"`
 }
 
 // GetDataAssetsDataAssetCollectionItemInput is an input type that accepts GetDataAssetsDataAssetCollectionItemArgs and GetDataAssetsDataAssetCollectionItemOutput values.
@@ -1843,33 +1578,33 @@ type GetDataAssetsDataAssetCollectionItemArgs struct {
 	// Unique catalog identifier.
 	CatalogId pulumi.StringInput `pulumi:"catalogId"`
 	// OCID of the user who created the resource.
-	CreatedById pulumi.StringInput `pulumi:"createdById"`
+	CreatedById pulumi.StringPtrInput `pulumi:"createdById"`
 	// Detailed description of the data asset.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// A filter to return only resources that match the entire display name given. The match is not case sensitive.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Unique external identifier of this resource in the external source system.
-	ExternalKey pulumi.StringInput `pulumi:"externalKey"`
+	ExternalKey pulumi.StringPtrInput `pulumi:"externalKey"`
 	// Unique data asset key that is immutable.
-	Key pulumi.StringInput `pulumi:"key"`
+	Key pulumi.StringPtrInput `pulumi:"key"`
 	// A message describing the current state in more detail. An object not in ACTIVE state may have functional limitations, see service documentation for details.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// A map of maps that contains the properties which are specific to the asset type. Each data asset type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most data assets have required properties within the "default" category. Example: `{"properties": { "default": { "host": "host1", "port": "1521", "database": "orcl"}}}`
 	Properties pulumi.MapInput `pulumi:"properties"`
 	// A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// Time that the resource was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The last time that a harvest was performed on the data asset. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-	TimeHarvested pulumi.StringInput `pulumi:"timeHarvested"`
+	TimeHarvested pulumi.StringPtrInput `pulumi:"timeHarvested"`
 	// Time that the resource was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 	// The key of the object type.
 	TypeKey pulumi.StringInput `pulumi:"typeKey"`
 	// OCID of the user who updated the resource.
-	UpdatedById pulumi.StringInput `pulumi:"updatedById"`
+	UpdatedById pulumi.StringPtrInput `pulumi:"updatedById"`
 	// URI to the data asset instance in the API.
-	Uri pulumi.StringInput `pulumi:"uri"`
+	Uri pulumi.StringPtrInput `pulumi:"uri"`
 }
 
 func (GetDataAssetsDataAssetCollectionItemArgs) ElementType() reflect.Type {
@@ -1882,12 +1617,6 @@ func (i GetDataAssetsDataAssetCollectionItemArgs) ToGetDataAssetsDataAssetCollec
 
 func (i GetDataAssetsDataAssetCollectionItemArgs) ToGetDataAssetsDataAssetCollectionItemOutputWithContext(ctx context.Context) GetDataAssetsDataAssetCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetDataAssetsDataAssetCollectionItemOutput)
-}
-
-func (i GetDataAssetsDataAssetCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetDataAssetsDataAssetCollectionItem] {
-	return pulumix.Output[GetDataAssetsDataAssetCollectionItem]{
-		OutputState: i.ToGetDataAssetsDataAssetCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetDataAssetsDataAssetCollectionItemArrayInput is an input type that accepts GetDataAssetsDataAssetCollectionItemArray and GetDataAssetsDataAssetCollectionItemArrayOutput values.
@@ -1915,12 +1644,6 @@ func (i GetDataAssetsDataAssetCollectionItemArray) ToGetDataAssetsDataAssetColle
 	return pulumi.ToOutputWithContext(ctx, i).(GetDataAssetsDataAssetCollectionItemArrayOutput)
 }
 
-func (i GetDataAssetsDataAssetCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDataAssetsDataAssetCollectionItem] {
-	return pulumix.Output[[]GetDataAssetsDataAssetCollectionItem]{
-		OutputState: i.ToGetDataAssetsDataAssetCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDataAssetsDataAssetCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetDataAssetsDataAssetCollectionItemOutput) ElementType() reflect.Type {
@@ -1935,25 +1658,19 @@ func (o GetDataAssetsDataAssetCollectionItemOutput) ToGetDataAssetsDataAssetColl
 	return o
 }
 
-func (o GetDataAssetsDataAssetCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetDataAssetsDataAssetCollectionItem] {
-	return pulumix.Output[GetDataAssetsDataAssetCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Unique catalog identifier.
 func (o GetDataAssetsDataAssetCollectionItemOutput) CatalogId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDataAssetsDataAssetCollectionItem) string { return v.CatalogId }).(pulumi.StringOutput)
 }
 
 // OCID of the user who created the resource.
-func (o GetDataAssetsDataAssetCollectionItemOutput) CreatedById() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDataAssetsDataAssetCollectionItem) string { return v.CreatedById }).(pulumi.StringOutput)
+func (o GetDataAssetsDataAssetCollectionItemOutput) CreatedById() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDataAssetsDataAssetCollectionItem) *string { return v.CreatedById }).(pulumi.StringPtrOutput)
 }
 
 // Detailed description of the data asset.
-func (o GetDataAssetsDataAssetCollectionItemOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDataAssetsDataAssetCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+func (o GetDataAssetsDataAssetCollectionItemOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDataAssetsDataAssetCollectionItem) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only resources that match the entire display name given. The match is not case sensitive.
@@ -1962,18 +1679,18 @@ func (o GetDataAssetsDataAssetCollectionItemOutput) DisplayName() pulumi.StringO
 }
 
 // Unique external identifier of this resource in the external source system.
-func (o GetDataAssetsDataAssetCollectionItemOutput) ExternalKey() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDataAssetsDataAssetCollectionItem) string { return v.ExternalKey }).(pulumi.StringOutput)
+func (o GetDataAssetsDataAssetCollectionItemOutput) ExternalKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDataAssetsDataAssetCollectionItem) *string { return v.ExternalKey }).(pulumi.StringPtrOutput)
 }
 
 // Unique data asset key that is immutable.
-func (o GetDataAssetsDataAssetCollectionItemOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDataAssetsDataAssetCollectionItem) string { return v.Key }).(pulumi.StringOutput)
+func (o GetDataAssetsDataAssetCollectionItemOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDataAssetsDataAssetCollectionItem) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current state in more detail. An object not in ACTIVE state may have functional limitations, see service documentation for details.
-func (o GetDataAssetsDataAssetCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDataAssetsDataAssetCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetDataAssetsDataAssetCollectionItemOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDataAssetsDataAssetCollectionItem) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // A map of maps that contains the properties which are specific to the asset type. Each data asset type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most data assets have required properties within the "default" category. Example: `{"properties": { "default": { "host": "host1", "port": "1521", "database": "orcl"}}}`
@@ -1982,23 +1699,23 @@ func (o GetDataAssetsDataAssetCollectionItemOutput) Properties() pulumi.MapOutpu
 }
 
 // A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
-func (o GetDataAssetsDataAssetCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDataAssetsDataAssetCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetDataAssetsDataAssetCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDataAssetsDataAssetCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Time that the resource was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-func (o GetDataAssetsDataAssetCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDataAssetsDataAssetCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetDataAssetsDataAssetCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDataAssetsDataAssetCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The last time that a harvest was performed on the data asset. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-func (o GetDataAssetsDataAssetCollectionItemOutput) TimeHarvested() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDataAssetsDataAssetCollectionItem) string { return v.TimeHarvested }).(pulumi.StringOutput)
+func (o GetDataAssetsDataAssetCollectionItemOutput) TimeHarvested() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDataAssetsDataAssetCollectionItem) *string { return v.TimeHarvested }).(pulumi.StringPtrOutput)
 }
 
 // Time that the resource was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-func (o GetDataAssetsDataAssetCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDataAssetsDataAssetCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetDataAssetsDataAssetCollectionItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDataAssetsDataAssetCollectionItem) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // The key of the object type.
@@ -2007,13 +1724,13 @@ func (o GetDataAssetsDataAssetCollectionItemOutput) TypeKey() pulumi.StringOutpu
 }
 
 // OCID of the user who updated the resource.
-func (o GetDataAssetsDataAssetCollectionItemOutput) UpdatedById() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDataAssetsDataAssetCollectionItem) string { return v.UpdatedById }).(pulumi.StringOutput)
+func (o GetDataAssetsDataAssetCollectionItemOutput) UpdatedById() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDataAssetsDataAssetCollectionItem) *string { return v.UpdatedById }).(pulumi.StringPtrOutput)
 }
 
 // URI to the data asset instance in the API.
-func (o GetDataAssetsDataAssetCollectionItemOutput) Uri() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDataAssetsDataAssetCollectionItem) string { return v.Uri }).(pulumi.StringOutput)
+func (o GetDataAssetsDataAssetCollectionItemOutput) Uri() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDataAssetsDataAssetCollectionItem) *string { return v.Uri }).(pulumi.StringPtrOutput)
 }
 
 type GetDataAssetsDataAssetCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -2028,12 +1745,6 @@ func (o GetDataAssetsDataAssetCollectionItemArrayOutput) ToGetDataAssetsDataAsse
 
 func (o GetDataAssetsDataAssetCollectionItemArrayOutput) ToGetDataAssetsDataAssetCollectionItemArrayOutputWithContext(ctx context.Context) GetDataAssetsDataAssetCollectionItemArrayOutput {
 	return o
-}
-
-func (o GetDataAssetsDataAssetCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDataAssetsDataAssetCollectionItem] {
-	return pulumix.Output[[]GetDataAssetsDataAssetCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDataAssetsDataAssetCollectionItemArrayOutput) Index(i pulumi.IntInput) GetDataAssetsDataAssetCollectionItemOutput {
@@ -2077,12 +1788,6 @@ func (i GetDataAssetsFilterArgs) ToGetDataAssetsFilterOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetDataAssetsFilterOutput)
 }
 
-func (i GetDataAssetsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetDataAssetsFilter] {
-	return pulumix.Output[GetDataAssetsFilter]{
-		OutputState: i.ToGetDataAssetsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDataAssetsFilterArrayInput is an input type that accepts GetDataAssetsFilterArray and GetDataAssetsFilterArrayOutput values.
 // You can construct a concrete instance of `GetDataAssetsFilterArrayInput` via:
 //
@@ -2108,12 +1813,6 @@ func (i GetDataAssetsFilterArray) ToGetDataAssetsFilterArrayOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetDataAssetsFilterArrayOutput)
 }
 
-func (i GetDataAssetsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDataAssetsFilter] {
-	return pulumix.Output[[]GetDataAssetsFilter]{
-		OutputState: i.ToGetDataAssetsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDataAssetsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetDataAssetsFilterOutput) ElementType() reflect.Type {
@@ -2126,12 +1825,6 @@ func (o GetDataAssetsFilterOutput) ToGetDataAssetsFilterOutput() GetDataAssetsFi
 
 func (o GetDataAssetsFilterOutput) ToGetDataAssetsFilterOutputWithContext(ctx context.Context) GetDataAssetsFilterOutput {
 	return o
-}
-
-func (o GetDataAssetsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetDataAssetsFilter] {
-	return pulumix.Output[GetDataAssetsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDataAssetsFilterOutput) Name() pulumi.StringOutput {
@@ -2158,12 +1851,6 @@ func (o GetDataAssetsFilterArrayOutput) ToGetDataAssetsFilterArrayOutput() GetDa
 
 func (o GetDataAssetsFilterArrayOutput) ToGetDataAssetsFilterArrayOutputWithContext(ctx context.Context) GetDataAssetsFilterArrayOutput {
 	return o
-}
-
-func (o GetDataAssetsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDataAssetsFilter] {
-	return pulumix.Output[[]GetDataAssetsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDataAssetsFilterArrayOutput) Index(i pulumi.IntInput) GetDataAssetsFilterOutput {
@@ -2207,12 +1894,6 @@ func (i GetMetastoresFilterArgs) ToGetMetastoresFilterOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetMetastoresFilterOutput)
 }
 
-func (i GetMetastoresFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetMetastoresFilter] {
-	return pulumix.Output[GetMetastoresFilter]{
-		OutputState: i.ToGetMetastoresFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMetastoresFilterArrayInput is an input type that accepts GetMetastoresFilterArray and GetMetastoresFilterArrayOutput values.
 // You can construct a concrete instance of `GetMetastoresFilterArrayInput` via:
 //
@@ -2238,12 +1919,6 @@ func (i GetMetastoresFilterArray) ToGetMetastoresFilterArrayOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetMetastoresFilterArrayOutput)
 }
 
-func (i GetMetastoresFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMetastoresFilter] {
-	return pulumix.Output[[]GetMetastoresFilter]{
-		OutputState: i.ToGetMetastoresFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMetastoresFilterOutput struct{ *pulumi.OutputState }
 
 func (GetMetastoresFilterOutput) ElementType() reflect.Type {
@@ -2256,12 +1931,6 @@ func (o GetMetastoresFilterOutput) ToGetMetastoresFilterOutput() GetMetastoresFi
 
 func (o GetMetastoresFilterOutput) ToGetMetastoresFilterOutputWithContext(ctx context.Context) GetMetastoresFilterOutput {
 	return o
-}
-
-func (o GetMetastoresFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetMetastoresFilter] {
-	return pulumix.Output[GetMetastoresFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMetastoresFilterOutput) Name() pulumi.StringOutput {
@@ -2290,12 +1959,6 @@ func (o GetMetastoresFilterArrayOutput) ToGetMetastoresFilterArrayOutputWithCont
 	return o
 }
 
-func (o GetMetastoresFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMetastoresFilter] {
-	return pulumix.Output[[]GetMetastoresFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMetastoresFilterArrayOutput) Index(i pulumi.IntInput) GetMetastoresFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMetastoresFilter {
 		return vs[0].([]GetMetastoresFilter)[vs[1].(int)]
@@ -2304,27 +1967,27 @@ func (o GetMetastoresFilterArrayOutput) Index(i pulumi.IntInput) GetMetastoresFi
 
 type GetMetastoresMetastore struct {
 	// The OCID of the compartment where you want to list resources.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Location under which external tables will be created by default. This references Object Storage using an HDFS URI format. Example: oci://bucket@namespace/sub-dir/
-	DefaultExternalTableLocation string `pulumi:"defaultExternalTableLocation"`
+	DefaultExternalTableLocation *string `pulumi:"defaultExternalTableLocation"`
 	// Location under which managed tables will be created by default. This references Object Storage using an HDFS URI format. Example: oci://bucket@namespace/sub-dir/
-	DefaultManagedTableLocation string `pulumi:"defaultManagedTableLocation"`
+	DefaultManagedTableLocation *string `pulumi:"defaultManagedTableLocation"`
 	// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given. The match is not case sensitive.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The metastore's OCID.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Time at which the metastore was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// Time at which the metastore was last modified. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 // GetMetastoresMetastoreInput is an input type that accepts GetMetastoresMetastoreArgs and GetMetastoresMetastoreOutput values.
@@ -2340,27 +2003,27 @@ type GetMetastoresMetastoreInput interface {
 
 type GetMetastoresMetastoreArgs struct {
 	// The OCID of the compartment where you want to list resources.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Location under which external tables will be created by default. This references Object Storage using an HDFS URI format. Example: oci://bucket@namespace/sub-dir/
-	DefaultExternalTableLocation pulumi.StringInput `pulumi:"defaultExternalTableLocation"`
+	DefaultExternalTableLocation pulumi.StringPtrInput `pulumi:"defaultExternalTableLocation"`
 	// Location under which managed tables will be created by default. This references Object Storage using an HDFS URI format. Example: oci://bucket@namespace/sub-dir/
-	DefaultManagedTableLocation pulumi.StringInput `pulumi:"defaultManagedTableLocation"`
+	DefaultManagedTableLocation pulumi.StringPtrInput `pulumi:"defaultManagedTableLocation"`
 	// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given. The match is not case sensitive.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The metastore's OCID.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// Time at which the metastore was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// Time at which the metastore was last modified. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 }
 
 func (GetMetastoresMetastoreArgs) ElementType() reflect.Type {
@@ -2373,12 +2036,6 @@ func (i GetMetastoresMetastoreArgs) ToGetMetastoresMetastoreOutput() GetMetastor
 
 func (i GetMetastoresMetastoreArgs) ToGetMetastoresMetastoreOutputWithContext(ctx context.Context) GetMetastoresMetastoreOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMetastoresMetastoreOutput)
-}
-
-func (i GetMetastoresMetastoreArgs) ToOutput(ctx context.Context) pulumix.Output[GetMetastoresMetastore] {
-	return pulumix.Output[GetMetastoresMetastore]{
-		OutputState: i.ToGetMetastoresMetastoreOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMetastoresMetastoreArrayInput is an input type that accepts GetMetastoresMetastoreArray and GetMetastoresMetastoreArrayOutput values.
@@ -2406,12 +2063,6 @@ func (i GetMetastoresMetastoreArray) ToGetMetastoresMetastoreArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetMetastoresMetastoreArrayOutput)
 }
 
-func (i GetMetastoresMetastoreArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMetastoresMetastore] {
-	return pulumix.Output[[]GetMetastoresMetastore]{
-		OutputState: i.ToGetMetastoresMetastoreArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMetastoresMetastoreOutput struct{ *pulumi.OutputState }
 
 func (GetMetastoresMetastoreOutput) ElementType() reflect.Type {
@@ -2426,25 +2077,19 @@ func (o GetMetastoresMetastoreOutput) ToGetMetastoresMetastoreOutputWithContext(
 	return o
 }
 
-func (o GetMetastoresMetastoreOutput) ToOutput(ctx context.Context) pulumix.Output[GetMetastoresMetastore] {
-	return pulumix.Output[GetMetastoresMetastore]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment where you want to list resources.
-func (o GetMetastoresMetastoreOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMetastoresMetastore) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetMetastoresMetastoreOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMetastoresMetastore) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Location under which external tables will be created by default. This references Object Storage using an HDFS URI format. Example: oci://bucket@namespace/sub-dir/
-func (o GetMetastoresMetastoreOutput) DefaultExternalTableLocation() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMetastoresMetastore) string { return v.DefaultExternalTableLocation }).(pulumi.StringOutput)
+func (o GetMetastoresMetastoreOutput) DefaultExternalTableLocation() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMetastoresMetastore) *string { return v.DefaultExternalTableLocation }).(pulumi.StringPtrOutput)
 }
 
 // Location under which managed tables will be created by default. This references Object Storage using an HDFS URI format. Example: oci://bucket@namespace/sub-dir/
-func (o GetMetastoresMetastoreOutput) DefaultManagedTableLocation() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMetastoresMetastore) string { return v.DefaultManagedTableLocation }).(pulumi.StringOutput)
+func (o GetMetastoresMetastoreOutput) DefaultManagedTableLocation() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMetastoresMetastore) *string { return v.DefaultManagedTableLocation }).(pulumi.StringPtrOutput)
 }
 
 // Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
@@ -2453,8 +2098,8 @@ func (o GetMetastoresMetastoreOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // A filter to return only resources that match the entire display name given. The match is not case sensitive.
-func (o GetMetastoresMetastoreOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMetastoresMetastore) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetMetastoresMetastoreOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMetastoresMetastore) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -2463,28 +2108,28 @@ func (o GetMetastoresMetastoreOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The metastore's OCID.
-func (o GetMetastoresMetastoreOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMetastoresMetastore) string { return v.Id }).(pulumi.StringOutput)
+func (o GetMetastoresMetastoreOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMetastoresMetastore) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o GetMetastoresMetastoreOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMetastoresMetastore) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetMetastoresMetastoreOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMetastoresMetastore) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
-func (o GetMetastoresMetastoreOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMetastoresMetastore) string { return v.State }).(pulumi.StringOutput)
+func (o GetMetastoresMetastoreOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMetastoresMetastore) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Time at which the metastore was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-func (o GetMetastoresMetastoreOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMetastoresMetastore) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetMetastoresMetastoreOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMetastoresMetastore) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // Time at which the metastore was last modified. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-func (o GetMetastoresMetastoreOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMetastoresMetastore) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetMetastoresMetastoreOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMetastoresMetastore) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type GetMetastoresMetastoreArrayOutput struct{ *pulumi.OutputState }
@@ -2499,12 +2144,6 @@ func (o GetMetastoresMetastoreArrayOutput) ToGetMetastoresMetastoreArrayOutput()
 
 func (o GetMetastoresMetastoreArrayOutput) ToGetMetastoresMetastoreArrayOutputWithContext(ctx context.Context) GetMetastoresMetastoreArrayOutput {
 	return o
-}
-
-func (o GetMetastoresMetastoreArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMetastoresMetastore] {
-	return pulumix.Output[[]GetMetastoresMetastore]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMetastoresMetastoreArrayOutput) Index(i pulumi.IntInput) GetMetastoresMetastoreOutput {

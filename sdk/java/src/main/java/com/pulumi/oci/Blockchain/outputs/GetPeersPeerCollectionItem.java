@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Blockchain.outputs.GetPeersPeerCollectionItemOcpuAllocationParam;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPeersPeerCollectionItem {
@@ -19,7 +21,7 @@ public final class GetPeersPeerCollectionItem {
      * @return peer alias
      * 
      */
-    private String alias;
+    private @Nullable String alias;
     /**
      * @return Unique service identifier.
      * 
@@ -29,7 +31,7 @@ public final class GetPeersPeerCollectionItem {
      * @return Host on which the Peer exists
      * 
      */
-    private String host;
+    private @Nullable String host;
     /**
      * @return OCPU allocation parameter
      * 
@@ -39,7 +41,7 @@ public final class GetPeersPeerCollectionItem {
      * @return peer identifier
      * 
      */
-    private String peerKey;
+    private @Nullable String peerKey;
     /**
      * @return Peer role
      * 
@@ -49,7 +51,7 @@ public final class GetPeersPeerCollectionItem {
      * @return The current state of the peer.
      * 
      */
-    private String state;
+    private @Nullable String state;
 
     private GetPeersPeerCollectionItem() {}
     /**
@@ -63,8 +65,8 @@ public final class GetPeersPeerCollectionItem {
      * @return peer alias
      * 
      */
-    public String alias() {
-        return this.alias;
+    public Optional<String> alias() {
+        return Optional.ofNullable(this.alias);
     }
     /**
      * @return Unique service identifier.
@@ -77,8 +79,8 @@ public final class GetPeersPeerCollectionItem {
      * @return Host on which the Peer exists
      * 
      */
-    public String host() {
-        return this.host;
+    public Optional<String> host() {
+        return Optional.ofNullable(this.host);
     }
     /**
      * @return OCPU allocation parameter
@@ -91,8 +93,8 @@ public final class GetPeersPeerCollectionItem {
      * @return peer identifier
      * 
      */
-    public String peerKey() {
-        return this.peerKey;
+    public Optional<String> peerKey() {
+        return Optional.ofNullable(this.peerKey);
     }
     /**
      * @return Peer role
@@ -105,8 +107,8 @@ public final class GetPeersPeerCollectionItem {
      * @return The current state of the peer.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
 
     public static Builder builder() {
@@ -119,13 +121,13 @@ public final class GetPeersPeerCollectionItem {
     @CustomType.Builder
     public static final class Builder {
         private String ad;
-        private String alias;
+        private @Nullable String alias;
         private String blockchainPlatformId;
-        private String host;
+        private @Nullable String host;
         private GetPeersPeerCollectionItemOcpuAllocationParam ocpuAllocationParam;
-        private String peerKey;
+        private @Nullable String peerKey;
         private String role;
-        private String state;
+        private @Nullable String state;
         public Builder() {}
         public Builder(GetPeersPeerCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -145,8 +147,8 @@ public final class GetPeersPeerCollectionItem {
             return this;
         }
         @CustomType.Setter
-        public Builder alias(String alias) {
-            this.alias = Objects.requireNonNull(alias);
+        public Builder alias(@Nullable String alias) {
+            this.alias = alias;
             return this;
         }
         @CustomType.Setter
@@ -155,8 +157,8 @@ public final class GetPeersPeerCollectionItem {
             return this;
         }
         @CustomType.Setter
-        public Builder host(String host) {
-            this.host = Objects.requireNonNull(host);
+        public Builder host(@Nullable String host) {
+            this.host = host;
             return this;
         }
         @CustomType.Setter
@@ -165,8 +167,8 @@ public final class GetPeersPeerCollectionItem {
             return this;
         }
         @CustomType.Setter
-        public Builder peerKey(String peerKey) {
-            this.peerKey = Objects.requireNonNull(peerKey);
+        public Builder peerKey(@Nullable String peerKey) {
+            this.peerKey = peerKey;
             return this;
         }
         @CustomType.Setter
@@ -175,8 +177,8 @@ public final class GetPeersPeerCollectionItem {
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         public GetPeersPeerCollectionItem build() {

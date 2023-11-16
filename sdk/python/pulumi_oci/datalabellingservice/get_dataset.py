@@ -86,34 +86,22 @@ class GetDatasetResult:
 
     @property
     @pulumi.getter(name="additionalProperties")
-    def additional_properties(self) -> Mapping[str, Any]:
-        """
-        A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
-        """
+    def additional_properties(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "additional_properties")
 
     @property
     @pulumi.getter(name="annotationFormat")
-    def annotation_format(self) -> str:
-        """
-        The annotation format name required for labeling records.
-        """
+    def annotation_format(self) -> Optional[str]:
         return pulumi.get(self, "annotation_format")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment of the resource.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="datasetFormatDetails")
-    def dataset_format_details(self) -> Sequence['outputs.GetDatasetDatasetFormatDetailResult']:
-        """
-        It specifies how to process the data. Supported formats include DOCUMENT, IMAGE, and TEXT.
-        """
+    def dataset_format_details(self) -> Optional[Sequence['outputs.GetDatasetDatasetFormatDetailResult']]:
         return pulumi.get(self, "dataset_format_details")
 
     @property
@@ -123,122 +111,77 @@ class GetDatasetResult:
 
     @property
     @pulumi.getter(name="datasetSourceDetails")
-    def dataset_source_details(self) -> Sequence['outputs.GetDatasetDatasetSourceDetailResult']:
-        """
-        This allows the customer to specify the source of the dataset.
-        """
+    def dataset_source_details(self) -> Optional[Sequence['outputs.GetDatasetDatasetSourceDetailResult']]:
         return pulumi.get(self, "dataset_source_details")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        The defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        A user provided description of the dataset
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A user-friendly display name for the resource.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the Dataset.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="initialImportDatasetConfigurations")
-    def initial_import_dataset_configurations(self) -> Sequence['outputs.GetDatasetInitialImportDatasetConfigurationResult']:
-        """
-        Initial import dataset configuration. Allows user to create dataset from existing dataset files.
-        """
+    def initial_import_dataset_configurations(self) -> Optional[Sequence['outputs.GetDatasetInitialImportDatasetConfigurationResult']]:
         return pulumi.get(self, "initial_import_dataset_configurations")
 
     @property
     @pulumi.getter(name="initialRecordGenerationConfigurations")
-    def initial_record_generation_configurations(self) -> Sequence['outputs.GetDatasetInitialRecordGenerationConfigurationResult']:
-        """
-        The initial generate records configuration. It generates records from the dataset's source.
-        """
+    def initial_record_generation_configurations(self) -> Optional[Sequence['outputs.GetDatasetInitialRecordGenerationConfigurationResult']]:
         return pulumi.get(self, "initial_record_generation_configurations")
 
     @property
     @pulumi.getter(name="labelSets")
-    def label_sets(self) -> Sequence['outputs.GetDatasetLabelSetResult']:
-        """
-        An ordered collection of labels that are unique by name.
-        """
+    def label_sets(self) -> Optional[Sequence['outputs.GetDatasetLabelSetResult']]:
         return pulumi.get(self, "label_sets")
 
     @property
     @pulumi.getter(name="labelingInstructions")
-    def labeling_instructions(self) -> str:
-        """
-        The labeling instructions for human labelers in rich text format
-        """
+    def labeling_instructions(self) -> Optional[str]:
         return pulumi.get(self, "labeling_instructions")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in FAILED or NEEDS_ATTENTION state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="lifecycleSubstate")
-    def lifecycle_substate(self) -> str:
-        """
-        The sub-state of the dataset. IMPORT_DATASET - The dataset is being imported.
-        """
+    def lifecycle_substate(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_substate")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The state of a dataset. CREATING - The dataset is being created.  It will transition to ACTIVE when it is ready for labeling. ACTIVE   - The dataset is ready for labeling. UPDATING - The dataset is being updated.  It and its related resources may be unavailable for other updates until it returns to ACTIVE. NEEDS_ATTENTION - A dataset updation operation has failed due to validation or other errors and needs attention. DELETING - The dataset and its related resources are being deleted. DELETED  - The dataset has been deleted and is no longer available. FAILED   - The dataset has failed due to validation or other errors.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the resource was created, in the timestamp format defined by RFC3339.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time the resource was last updated, in the timestamp format defined by RFC3339.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -273,21 +216,7 @@ class AwaitableGetDatasetResult(GetDatasetResult):
 def get_dataset(dataset_id: Optional[str] = None,
                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDatasetResult:
     """
-    This data source provides details about a specific Dataset resource in Oracle Cloud Infrastructure Data Labeling Service service.
-
-    Gets a Dataset by identifier
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_dataset = oci.DataLabellingService.get_dataset(dataset_id=oci_data_labeling_service_dataset["test_dataset"]["id"])
-    ```
-
-
-    :param str dataset_id: Unique Dataset OCID
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['datasetId'] = dataset_id
@@ -321,20 +250,6 @@ def get_dataset(dataset_id: Optional[str] = None,
 def get_dataset_output(dataset_id: Optional[pulumi.Input[str]] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDatasetResult]:
     """
-    This data source provides details about a specific Dataset resource in Oracle Cloud Infrastructure Data Labeling Service service.
-
-    Gets a Dataset by identifier
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_dataset = oci.DataLabellingService.get_dataset(dataset_id=oci_data_labeling_service_dataset["test_dataset"]["id"])
-    ```
-
-
-    :param str dataset_id: Unique Dataset OCID
+    Use this data source to access information about an existing resource.
     """
     ...

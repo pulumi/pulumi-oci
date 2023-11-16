@@ -25,12 +25,12 @@ public final class GetLimitValuesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of limit_values.
      * 
      */
-    private List<GetLimitValuesLimitValue> limitValues;
+    private @Nullable List<GetLimitValuesLimitValue> limitValues;
     /**
      * @return The resource limit name. To be used for writing policies (in case of quotas) or other programmatic calls.
      * 
@@ -61,15 +61,15 @@ public final class GetLimitValuesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of limit_values.
      * 
      */
     public List<GetLimitValuesLimitValue> limitValues() {
-        return this.limitValues;
+        return this.limitValues == null ? List.of() : this.limitValues;
     }
     /**
      * @return The resource limit name. To be used for writing policies (in case of quotas) or other programmatic calls.
@@ -101,8 +101,8 @@ public final class GetLimitValuesResult {
         private @Nullable String availabilityDomain;
         private String compartmentId;
         private @Nullable List<GetLimitValuesFilter> filters;
-        private String id;
-        private List<GetLimitValuesLimitValue> limitValues;
+        private @Nullable String id;
+        private @Nullable List<GetLimitValuesLimitValue> limitValues;
         private @Nullable String name;
         private @Nullable String scopeType;
         private String serviceName;
@@ -138,13 +138,13 @@ public final class GetLimitValuesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder limitValues(List<GetLimitValuesLimitValue> limitValues) {
-            this.limitValues = Objects.requireNonNull(limitValues);
+        public Builder limitValues(@Nullable List<GetLimitValuesLimitValue> limitValues) {
+            this.limitValues = limitValues;
             return this;
         }
         public Builder limitValues(GetLimitValuesLimitValue... limitValues) {

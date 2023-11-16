@@ -16,35 +16,35 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         /// <summary>
         /// Total of mirrors in 'failed' state
         /// </summary>
-        public readonly int Failed;
+        public readonly int? Failed;
         /// <summary>
         /// Total of mirrors in 'queued' state
         /// </summary>
-        public readonly int Queued;
+        public readonly int? Queued;
         /// <summary>
         /// Total of mirrors in 'synced' state
         /// </summary>
-        public readonly int Synced;
+        public readonly int? Synced;
         /// <summary>
         /// Total of mirrors in 'syncing' state
         /// </summary>
-        public readonly int Syncing;
+        public readonly int? Syncing;
         /// <summary>
         /// Total of mirrors in 'failed' state
         /// </summary>
-        public readonly int Unsynced;
+        public readonly int? Unsynced;
 
         [OutputConstructor]
         private GetManagementStationMirrorSyncStatusResult(
-            int failed,
+            int? failed,
 
-            int queued,
+            int? queued,
 
-            int synced,
+            int? synced,
 
-            int syncing,
+            int? syncing,
 
-            int unsynced)
+            int? unsynced)
         {
             Failed = failed;
             Queued = queued;

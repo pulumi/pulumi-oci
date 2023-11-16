@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Repository resource in Oracle Cloud Infrastructure Devops service.
@@ -73,50 +72,50 @@ type Repository struct {
 	pulumi.CustomResourceState
 
 	// The count of the branches present in the repository.
-	BranchCount pulumi.IntOutput `pulumi:"branchCount"`
+	BranchCount pulumi.IntPtrOutput `pulumi:"branchCount"`
 	// The count of the commits present in the repository.
-	CommitCount pulumi.IntOutput `pulumi:"commitCount"`
+	CommitCount pulumi.IntPtrOutput `pulumi:"commitCount"`
 	// The OCID of the repository's compartment.
-	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrOutput `pulumi:"compartmentId"`
 	// (Updatable) The default branch of the repository.
-	DefaultBranch pulumi.StringOutput `pulumi:"defaultBranch"`
+	DefaultBranch pulumi.StringPtrOutput `pulumi:"defaultBranch"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) Details of the repository. Avoid entering confidential information.
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// HTTP URL that you use to git clone, pull and push.
-	HttpUrl pulumi.StringOutput `pulumi:"httpUrl"`
+	HttpUrl pulumi.StringPtrOutput `pulumi:"httpUrl"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecyleDetails pulumi.StringOutput `pulumi:"lifecyleDetails"`
+	LifecyleDetails pulumi.StringPtrOutput `pulumi:"lifecyleDetails"`
 	// (Updatable) Configuration information for mirroring the repository.
-	MirrorRepositoryConfig RepositoryMirrorRepositoryConfigOutput `pulumi:"mirrorRepositoryConfig"`
+	MirrorRepositoryConfig RepositoryMirrorRepositoryConfigPtrOutput `pulumi:"mirrorRepositoryConfig"`
 	// (Updatable) Unique name of a repository.
 	Name pulumi.StringOutput `pulumi:"name"`
 	// Tenancy unique namespace.
-	Namespace pulumi.StringOutput `pulumi:"namespace"`
+	Namespace pulumi.StringPtrOutput `pulumi:"namespace"`
 	// The OCID of the DevOps project containing the repository.
 	ProjectId pulumi.StringOutput `pulumi:"projectId"`
 	// Unique project name in a namespace.
-	ProjectName pulumi.StringOutput `pulumi:"projectName"`
+	ProjectName pulumi.StringPtrOutput `pulumi:"projectName"`
 	// (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED`
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	RepositoryType pulumi.StringOutput `pulumi:"repositoryType"`
 	// The size of the repository in bytes.
-	SizeInBytes pulumi.StringOutput `pulumi:"sizeInBytes"`
+	SizeInBytes pulumi.StringPtrOutput `pulumi:"sizeInBytes"`
 	// SSH URL that you use to git clone, pull and push.
-	SshUrl pulumi.StringOutput `pulumi:"sshUrl"`
+	SshUrl pulumi.StringPtrOutput `pulumi:"sshUrl"`
 	// The current state of the repository.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The time the repository was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The time the repository was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 	// Trigger build events supported for this repository: PUSH - Build is triggered when a push event occurs. COMMIT_UPDATES - Build is triggered when new commits are mirrored into a repository.
 	TriggerBuildEvents pulumi.StringArrayOutput `pulumi:"triggerBuildEvents"`
 }
@@ -328,12 +327,6 @@ func (i *Repository) ToRepositoryOutputWithContext(ctx context.Context) Reposito
 	return pulumi.ToOutputWithContext(ctx, i).(RepositoryOutput)
 }
 
-func (i *Repository) ToOutput(ctx context.Context) pulumix.Output[*Repository] {
-	return pulumix.Output[*Repository]{
-		OutputState: i.ToRepositoryOutputWithContext(ctx).OutputState,
-	}
-}
-
 // RepositoryArrayInput is an input type that accepts RepositoryArray and RepositoryArrayOutput values.
 // You can construct a concrete instance of `RepositoryArrayInput` via:
 //
@@ -357,12 +350,6 @@ func (i RepositoryArray) ToRepositoryArrayOutput() RepositoryArrayOutput {
 
 func (i RepositoryArray) ToRepositoryArrayOutputWithContext(ctx context.Context) RepositoryArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(RepositoryArrayOutput)
-}
-
-func (i RepositoryArray) ToOutput(ctx context.Context) pulumix.Output[[]*Repository] {
-	return pulumix.Output[[]*Repository]{
-		OutputState: i.ToRepositoryArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // RepositoryMapInput is an input type that accepts RepositoryMap and RepositoryMapOutput values.
@@ -390,12 +377,6 @@ func (i RepositoryMap) ToRepositoryMapOutputWithContext(ctx context.Context) Rep
 	return pulumi.ToOutputWithContext(ctx, i).(RepositoryMapOutput)
 }
 
-func (i RepositoryMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Repository] {
-	return pulumix.Output[map[string]*Repository]{
-		OutputState: i.ToRepositoryMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type RepositoryOutput struct{ *pulumi.OutputState }
 
 func (RepositoryOutput) ElementType() reflect.Type {
@@ -410,30 +391,24 @@ func (o RepositoryOutput) ToRepositoryOutputWithContext(ctx context.Context) Rep
 	return o
 }
 
-func (o RepositoryOutput) ToOutput(ctx context.Context) pulumix.Output[*Repository] {
-	return pulumix.Output[*Repository]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The count of the branches present in the repository.
-func (o RepositoryOutput) BranchCount() pulumi.IntOutput {
-	return o.ApplyT(func(v *Repository) pulumi.IntOutput { return v.BranchCount }).(pulumi.IntOutput)
+func (o RepositoryOutput) BranchCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *Repository) pulumi.IntPtrOutput { return v.BranchCount }).(pulumi.IntPtrOutput)
 }
 
 // The count of the commits present in the repository.
-func (o RepositoryOutput) CommitCount() pulumi.IntOutput {
-	return o.ApplyT(func(v *Repository) pulumi.IntOutput { return v.CommitCount }).(pulumi.IntOutput)
+func (o RepositoryOutput) CommitCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *Repository) pulumi.IntPtrOutput { return v.CommitCount }).(pulumi.IntPtrOutput)
 }
 
 // The OCID of the repository's compartment.
-func (o RepositoryOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Repository) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
+func (o RepositoryOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Repository) pulumi.StringPtrOutput { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The default branch of the repository.
-func (o RepositoryOutput) DefaultBranch() pulumi.StringOutput {
-	return o.ApplyT(func(v *Repository) pulumi.StringOutput { return v.DefaultBranch }).(pulumi.StringOutput)
+func (o RepositoryOutput) DefaultBranch() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Repository) pulumi.StringPtrOutput { return v.DefaultBranch }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
@@ -442,8 +417,8 @@ func (o RepositoryOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) Details of the repository. Avoid entering confidential information.
-func (o RepositoryOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *Repository) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o RepositoryOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Repository) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
@@ -452,18 +427,18 @@ func (o RepositoryOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // HTTP URL that you use to git clone, pull and push.
-func (o RepositoryOutput) HttpUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v *Repository) pulumi.StringOutput { return v.HttpUrl }).(pulumi.StringOutput)
+func (o RepositoryOutput) HttpUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Repository) pulumi.StringPtrOutput { return v.HttpUrl }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o RepositoryOutput) LifecyleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *Repository) pulumi.StringOutput { return v.LifecyleDetails }).(pulumi.StringOutput)
+func (o RepositoryOutput) LifecyleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Repository) pulumi.StringPtrOutput { return v.LifecyleDetails }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Configuration information for mirroring the repository.
-func (o RepositoryOutput) MirrorRepositoryConfig() RepositoryMirrorRepositoryConfigOutput {
-	return o.ApplyT(func(v *Repository) RepositoryMirrorRepositoryConfigOutput { return v.MirrorRepositoryConfig }).(RepositoryMirrorRepositoryConfigOutput)
+func (o RepositoryOutput) MirrorRepositoryConfig() RepositoryMirrorRepositoryConfigPtrOutput {
+	return o.ApplyT(func(v *Repository) RepositoryMirrorRepositoryConfigPtrOutput { return v.MirrorRepositoryConfig }).(RepositoryMirrorRepositoryConfigPtrOutput)
 }
 
 // (Updatable) Unique name of a repository.
@@ -472,8 +447,8 @@ func (o RepositoryOutput) Name() pulumi.StringOutput {
 }
 
 // Tenancy unique namespace.
-func (o RepositoryOutput) Namespace() pulumi.StringOutput {
-	return o.ApplyT(func(v *Repository) pulumi.StringOutput { return v.Namespace }).(pulumi.StringOutput)
+func (o RepositoryOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Repository) pulumi.StringPtrOutput { return v.Namespace }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the DevOps project containing the repository.
@@ -482,8 +457,8 @@ func (o RepositoryOutput) ProjectId() pulumi.StringOutput {
 }
 
 // Unique project name in a namespace.
-func (o RepositoryOutput) ProjectName() pulumi.StringOutput {
-	return o.ApplyT(func(v *Repository) pulumi.StringOutput { return v.ProjectName }).(pulumi.StringOutput)
+func (o RepositoryOutput) ProjectName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Repository) pulumi.StringPtrOutput { return v.ProjectName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED`
@@ -495,18 +470,18 @@ func (o RepositoryOutput) RepositoryType() pulumi.StringOutput {
 }
 
 // The size of the repository in bytes.
-func (o RepositoryOutput) SizeInBytes() pulumi.StringOutput {
-	return o.ApplyT(func(v *Repository) pulumi.StringOutput { return v.SizeInBytes }).(pulumi.StringOutput)
+func (o RepositoryOutput) SizeInBytes() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Repository) pulumi.StringPtrOutput { return v.SizeInBytes }).(pulumi.StringPtrOutput)
 }
 
 // SSH URL that you use to git clone, pull and push.
-func (o RepositoryOutput) SshUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v *Repository) pulumi.StringOutput { return v.SshUrl }).(pulumi.StringOutput)
+func (o RepositoryOutput) SshUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Repository) pulumi.StringPtrOutput { return v.SshUrl }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the repository.
-func (o RepositoryOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *Repository) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o RepositoryOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Repository) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -515,13 +490,13 @@ func (o RepositoryOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time the repository was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-func (o RepositoryOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Repository) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o RepositoryOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Repository) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the repository was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-func (o RepositoryOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Repository) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o RepositoryOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Repository) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // Trigger build events supported for this repository: PUSH - Build is triggered when a push event occurs. COMMIT_UPDATES - Build is triggered when new commits are mirrored into a repository.
@@ -543,12 +518,6 @@ func (o RepositoryArrayOutput) ToRepositoryArrayOutputWithContext(ctx context.Co
 	return o
 }
 
-func (o RepositoryArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Repository] {
-	return pulumix.Output[[]*Repository]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o RepositoryArrayOutput) Index(i pulumi.IntInput) RepositoryOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *Repository {
 		return vs[0].([]*Repository)[vs[1].(int)]
@@ -567,12 +536,6 @@ func (o RepositoryMapOutput) ToRepositoryMapOutput() RepositoryMapOutput {
 
 func (o RepositoryMapOutput) ToRepositoryMapOutputWithContext(ctx context.Context) RepositoryMapOutput {
 	return o
-}
-
-func (o RepositoryMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Repository] {
-	return pulumix.Output[map[string]*Repository]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o RepositoryMapOutput) MapIndex(k pulumi.StringInput) RepositoryOutput {

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Alert resource in Oracle Cloud Infrastructure Data Safe service.
@@ -61,39 +60,39 @@ type LookupAlertArgs struct {
 type LookupAlertResult struct {
 	AlertId string `pulumi:"alertId"`
 	// Type of the alert. Indicates the Data Safe feature triggering the alert.
-	AlertType string `pulumi:"alertType"`
+	AlertType *string `pulumi:"alertType"`
 	// A comment for the alert. Entered by the user.
-	Comment string `pulumi:"comment"`
+	Comment *string `pulumi:"comment"`
 	// The OCID of the compartment that contains the alert.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The description of the alert.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// The display name of the alert.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Map that contains maps of values. Example: `{"Operations": {"CostCenter": "42"}}`
 	FeatureDetails map[string]interface{} `pulumi:"featureDetails"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the alert.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The operation (event) that triggered alert.
-	Operation string `pulumi:"operation"`
+	Operation *string `pulumi:"operation"`
 	// The result of the operation (event) that triggered alert.
-	OperationStatus string `pulumi:"operationStatus"`
+	OperationStatus *string `pulumi:"operationStatus"`
 	// Creation date and time of the operation that triggered alert, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-	OperationTime string `pulumi:"operationTime"`
+	OperationTime *string `pulumi:"operationTime"`
 	// The OCID of the policy that triggered alert.
-	PolicyId string `pulumi:"policyId"`
+	PolicyId *string `pulumi:"policyId"`
 	// The resource endpoint that triggered the alert.
-	ResourceName string `pulumi:"resourceName"`
+	ResourceName *string `pulumi:"resourceName"`
 	// Severity level of the alert.
-	Severity string `pulumi:"severity"`
+	Severity *string `pulumi:"severity"`
 	// The current state of the alert.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The status of the alert.
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// Array of OCIDs of the target database which are associated with the alert.
@@ -101,9 +100,9 @@ type LookupAlertResult struct {
 	// Array of names of the target database.
 	TargetNames []string `pulumi:"targetNames"`
 	// Creation date and time of the alert, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// Last date and time the alert was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func LookupAlertOutput(ctx *pulumi.Context, args LookupAlertOutputArgs, opts ...pulumi.InvokeOption) LookupAlertResultOutput {
@@ -144,29 +143,23 @@ func (o LookupAlertResultOutput) ToLookupAlertResultOutputWithContext(ctx contex
 	return o
 }
 
-func (o LookupAlertResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupAlertResult] {
-	return pulumix.Output[LookupAlertResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o LookupAlertResultOutput) AlertId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAlertResult) string { return v.AlertId }).(pulumi.StringOutput)
 }
 
 // Type of the alert. Indicates the Data Safe feature triggering the alert.
-func (o LookupAlertResultOutput) AlertType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAlertResult) string { return v.AlertType }).(pulumi.StringOutput)
+func (o LookupAlertResultOutput) AlertType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAlertResult) *string { return v.AlertType }).(pulumi.StringPtrOutput)
 }
 
 // A comment for the alert. Entered by the user.
-func (o LookupAlertResultOutput) Comment() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAlertResult) string { return v.Comment }).(pulumi.StringOutput)
+func (o LookupAlertResultOutput) Comment() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAlertResult) *string { return v.Comment }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the compartment that contains the alert.
-func (o LookupAlertResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAlertResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupAlertResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAlertResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
@@ -175,13 +168,13 @@ func (o LookupAlertResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // The description of the alert.
-func (o LookupAlertResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAlertResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupAlertResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAlertResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // The display name of the alert.
-func (o LookupAlertResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAlertResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupAlertResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAlertResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Map that contains maps of values. Example: `{"Operations": {"CostCenter": "42"}}`
@@ -195,48 +188,48 @@ func (o LookupAlertResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The OCID of the alert.
-func (o LookupAlertResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAlertResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupAlertResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAlertResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The operation (event) that triggered alert.
-func (o LookupAlertResultOutput) Operation() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAlertResult) string { return v.Operation }).(pulumi.StringOutput)
+func (o LookupAlertResultOutput) Operation() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAlertResult) *string { return v.Operation }).(pulumi.StringPtrOutput)
 }
 
 // The result of the operation (event) that triggered alert.
-func (o LookupAlertResultOutput) OperationStatus() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAlertResult) string { return v.OperationStatus }).(pulumi.StringOutput)
+func (o LookupAlertResultOutput) OperationStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAlertResult) *string { return v.OperationStatus }).(pulumi.StringPtrOutput)
 }
 
 // Creation date and time of the operation that triggered alert, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-func (o LookupAlertResultOutput) OperationTime() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAlertResult) string { return v.OperationTime }).(pulumi.StringOutput)
+func (o LookupAlertResultOutput) OperationTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAlertResult) *string { return v.OperationTime }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the policy that triggered alert.
-func (o LookupAlertResultOutput) PolicyId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAlertResult) string { return v.PolicyId }).(pulumi.StringOutput)
+func (o LookupAlertResultOutput) PolicyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAlertResult) *string { return v.PolicyId }).(pulumi.StringPtrOutput)
 }
 
 // The resource endpoint that triggered the alert.
-func (o LookupAlertResultOutput) ResourceName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAlertResult) string { return v.ResourceName }).(pulumi.StringOutput)
+func (o LookupAlertResultOutput) ResourceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAlertResult) *string { return v.ResourceName }).(pulumi.StringPtrOutput)
 }
 
 // Severity level of the alert.
-func (o LookupAlertResultOutput) Severity() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAlertResult) string { return v.Severity }).(pulumi.StringOutput)
+func (o LookupAlertResultOutput) Severity() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAlertResult) *string { return v.Severity }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the alert.
-func (o LookupAlertResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAlertResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupAlertResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAlertResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The status of the alert.
-func (o LookupAlertResultOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAlertResult) string { return v.Status }).(pulumi.StringOutput)
+func (o LookupAlertResultOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAlertResult) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -255,13 +248,13 @@ func (o LookupAlertResultOutput) TargetNames() pulumi.StringArrayOutput {
 }
 
 // Creation date and time of the alert, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-func (o LookupAlertResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAlertResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupAlertResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAlertResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // Last date and time the alert was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-func (o LookupAlertResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAlertResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupAlertResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAlertResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

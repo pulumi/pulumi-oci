@@ -9,6 +9,8 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem {
@@ -16,255 +18,255 @@ public final class GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem {
      * @return The Boolean flag to indicate if logs are collected for an entity for log analytics usage.
      * 
      */
-    private Boolean areLogsCollected;
+    private @Nullable Boolean areLogsCollected;
     /**
      * @return A filter to return only log analytics entities whose cloudResourceId matches the cloudResourceId given.
      * 
      */
-    private String cloudResourceId;
+    private @Nullable String cloudResourceId;
     /**
      * @return The ID of the compartment in which to list resources.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return Internal name for the log analytics entity type.
      * 
      */
-    private String entityTypeInternalName;
+    private @Nullable String entityTypeInternalName;
     /**
      * @return A filter to return only log analytics entities whose entityTypeName matches the entire log analytics entity type name of one of the entityTypeNames given in the list. The match is case-insensitive.
      * 
      */
-    private String entityTypeName;
+    private @Nullable String entityTypeName;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return A filter to return only log analytics entities whose hostname matches the entire hostname given.
      * 
      */
-    private String hostname;
+    private @Nullable String hostname;
     /**
      * @return The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return lifecycleDetails has additional information regarding substeps such as management agent plugin deployment.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return Management agent (management-agents resource kind) compartment OCID
      * 
      */
-    private String managementAgentCompartmentId;
+    private @Nullable String managementAgentCompartmentId;
     /**
      * @return Management agent (management-agents resource kind) display name
      * 
      */
-    private String managementAgentDisplayName;
+    private @Nullable String managementAgentDisplayName;
     /**
      * @return The OCID of the Management Agent.
      * 
      */
-    private String managementAgentId;
+    private @Nullable String managementAgentId;
     /**
      * @return A filter to return only log analytics entities whose name matches the entire name given. The match is case-insensitive.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return The Logging Analytics namespace used for the request.
      * 
      */
-    private String namespace;
+    private @Nullable String namespace;
     /**
      * @return The name/value pairs for parameter values to be used in file patterns specified in log sources.
      * 
      */
-    private Map<String,Object> properties;
+    private @Nullable Map<String,Object> properties;
     /**
      * @return A filter to return only log analytics entities whose sourceId matches the sourceId given.
      * 
      */
-    private String sourceId;
+    private @Nullable String sourceId;
     /**
      * @return A filter to return only those log analytics entities with the specified lifecycle state. The state value is case-insensitive.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The date and time the resource was created, in the format defined by RFC3339.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The date and time the resource was last updated, in the format defined by RFC3339.
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
     /**
      * @return The timezone region of the log analytics entity.
      * 
      */
-    private String timezoneRegion;
+    private @Nullable String timezoneRegion;
 
     private GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem() {}
     /**
      * @return The Boolean flag to indicate if logs are collected for an entity for log analytics usage.
      * 
      */
-    public Boolean areLogsCollected() {
-        return this.areLogsCollected;
+    public Optional<Boolean> areLogsCollected() {
+        return Optional.ofNullable(this.areLogsCollected);
     }
     /**
      * @return A filter to return only log analytics entities whose cloudResourceId matches the cloudResourceId given.
      * 
      */
-    public String cloudResourceId() {
-        return this.cloudResourceId;
+    public Optional<String> cloudResourceId() {
+        return Optional.ofNullable(this.cloudResourceId);
     }
     /**
      * @return The ID of the compartment in which to list resources.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return Internal name for the log analytics entity type.
      * 
      */
-    public String entityTypeInternalName() {
-        return this.entityTypeInternalName;
+    public Optional<String> entityTypeInternalName() {
+        return Optional.ofNullable(this.entityTypeInternalName);
     }
     /**
      * @return A filter to return only log analytics entities whose entityTypeName matches the entire log analytics entity type name of one of the entityTypeNames given in the list. The match is case-insensitive.
      * 
      */
-    public String entityTypeName() {
-        return this.entityTypeName;
+    public Optional<String> entityTypeName() {
+        return Optional.ofNullable(this.entityTypeName);
     }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return A filter to return only log analytics entities whose hostname matches the entire hostname given.
      * 
      */
-    public String hostname() {
-        return this.hostname;
+    public Optional<String> hostname() {
+        return Optional.ofNullable(this.hostname);
     }
     /**
      * @return The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return lifecycleDetails has additional information regarding substeps such as management agent plugin deployment.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return Management agent (management-agents resource kind) compartment OCID
      * 
      */
-    public String managementAgentCompartmentId() {
-        return this.managementAgentCompartmentId;
+    public Optional<String> managementAgentCompartmentId() {
+        return Optional.ofNullable(this.managementAgentCompartmentId);
     }
     /**
      * @return Management agent (management-agents resource kind) display name
      * 
      */
-    public String managementAgentDisplayName() {
-        return this.managementAgentDisplayName;
+    public Optional<String> managementAgentDisplayName() {
+        return Optional.ofNullable(this.managementAgentDisplayName);
     }
     /**
      * @return The OCID of the Management Agent.
      * 
      */
-    public String managementAgentId() {
-        return this.managementAgentId;
+    public Optional<String> managementAgentId() {
+        return Optional.ofNullable(this.managementAgentId);
     }
     /**
      * @return A filter to return only log analytics entities whose name matches the entire name given. The match is case-insensitive.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return The Logging Analytics namespace used for the request.
      * 
      */
-    public String namespace() {
-        return this.namespace;
+    public Optional<String> namespace() {
+        return Optional.ofNullable(this.namespace);
     }
     /**
      * @return The name/value pairs for parameter values to be used in file patterns specified in log sources.
      * 
      */
     public Map<String,Object> properties() {
-        return this.properties;
+        return this.properties == null ? Map.of() : this.properties;
     }
     /**
      * @return A filter to return only log analytics entities whose sourceId matches the sourceId given.
      * 
      */
-    public String sourceId() {
-        return this.sourceId;
+    public Optional<String> sourceId() {
+        return Optional.ofNullable(this.sourceId);
     }
     /**
      * @return A filter to return only those log analytics entities with the specified lifecycle state. The state value is case-insensitive.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The date and time the resource was created, in the format defined by RFC3339.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The date and time the resource was last updated, in the format defined by RFC3339.
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
     /**
      * @return The timezone region of the log analytics entity.
      * 
      */
-    public String timezoneRegion() {
-        return this.timezoneRegion;
+    public Optional<String> timezoneRegion() {
+        return Optional.ofNullable(this.timezoneRegion);
     }
 
     public static Builder builder() {
@@ -276,27 +278,27 @@ public final class GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Boolean areLogsCollected;
-        private String cloudResourceId;
-        private String compartmentId;
-        private Map<String,Object> definedTags;
-        private String entityTypeInternalName;
-        private String entityTypeName;
-        private Map<String,Object> freeformTags;
-        private String hostname;
-        private String id;
-        private String lifecycleDetails;
-        private String managementAgentCompartmentId;
-        private String managementAgentDisplayName;
-        private String managementAgentId;
-        private String name;
-        private String namespace;
-        private Map<String,Object> properties;
-        private String sourceId;
-        private String state;
-        private String timeCreated;
-        private String timeUpdated;
-        private String timezoneRegion;
+        private @Nullable Boolean areLogsCollected;
+        private @Nullable String cloudResourceId;
+        private @Nullable String compartmentId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String entityTypeInternalName;
+        private @Nullable String entityTypeName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String hostname;
+        private @Nullable String id;
+        private @Nullable String lifecycleDetails;
+        private @Nullable String managementAgentCompartmentId;
+        private @Nullable String managementAgentDisplayName;
+        private @Nullable String managementAgentId;
+        private @Nullable String name;
+        private @Nullable String namespace;
+        private @Nullable Map<String,Object> properties;
+        private @Nullable String sourceId;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
+        private @Nullable String timezoneRegion;
         public Builder() {}
         public Builder(GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -324,108 +326,108 @@ public final class GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder areLogsCollected(Boolean areLogsCollected) {
-            this.areLogsCollected = Objects.requireNonNull(areLogsCollected);
+        public Builder areLogsCollected(@Nullable Boolean areLogsCollected) {
+            this.areLogsCollected = areLogsCollected;
             return this;
         }
         @CustomType.Setter
-        public Builder cloudResourceId(String cloudResourceId) {
-            this.cloudResourceId = Objects.requireNonNull(cloudResourceId);
+        public Builder cloudResourceId(@Nullable String cloudResourceId) {
+            this.cloudResourceId = cloudResourceId;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder entityTypeInternalName(String entityTypeInternalName) {
-            this.entityTypeInternalName = Objects.requireNonNull(entityTypeInternalName);
+        public Builder entityTypeInternalName(@Nullable String entityTypeInternalName) {
+            this.entityTypeInternalName = entityTypeInternalName;
             return this;
         }
         @CustomType.Setter
-        public Builder entityTypeName(String entityTypeName) {
-            this.entityTypeName = Objects.requireNonNull(entityTypeName);
+        public Builder entityTypeName(@Nullable String entityTypeName) {
+            this.entityTypeName = entityTypeName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder hostname(String hostname) {
-            this.hostname = Objects.requireNonNull(hostname);
+        public Builder hostname(@Nullable String hostname) {
+            this.hostname = hostname;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder managementAgentCompartmentId(String managementAgentCompartmentId) {
-            this.managementAgentCompartmentId = Objects.requireNonNull(managementAgentCompartmentId);
+        public Builder managementAgentCompartmentId(@Nullable String managementAgentCompartmentId) {
+            this.managementAgentCompartmentId = managementAgentCompartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder managementAgentDisplayName(String managementAgentDisplayName) {
-            this.managementAgentDisplayName = Objects.requireNonNull(managementAgentDisplayName);
+        public Builder managementAgentDisplayName(@Nullable String managementAgentDisplayName) {
+            this.managementAgentDisplayName = managementAgentDisplayName;
             return this;
         }
         @CustomType.Setter
-        public Builder managementAgentId(String managementAgentId) {
-            this.managementAgentId = Objects.requireNonNull(managementAgentId);
+        public Builder managementAgentId(@Nullable String managementAgentId) {
+            this.managementAgentId = managementAgentId;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+        public Builder namespace(@Nullable String namespace) {
+            this.namespace = namespace;
             return this;
         }
         @CustomType.Setter
-        public Builder properties(Map<String,Object> properties) {
-            this.properties = Objects.requireNonNull(properties);
+        public Builder properties(@Nullable Map<String,Object> properties) {
+            this.properties = properties;
             return this;
         }
         @CustomType.Setter
-        public Builder sourceId(String sourceId) {
-            this.sourceId = Objects.requireNonNull(sourceId);
+        public Builder sourceId(@Nullable String sourceId) {
+            this.sourceId = sourceId;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
-        public Builder timezoneRegion(String timezoneRegion) {
-            this.timezoneRegion = Objects.requireNonNull(timezoneRegion);
+        public Builder timezoneRegion(@Nullable String timezoneRegion) {
+            this.timezoneRegion = timezoneRegion;
             return this;
         }
         public GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem build() {

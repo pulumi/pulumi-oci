@@ -19,7 +19,7 @@ public final class GetPbfListingsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return A brief descriptive name for the PBF trigger.
      * 
@@ -32,7 +32,7 @@ public final class GetPbfListingsResult {
      * @return The list of pbf_listings_collection.
      * 
      */
-    private List<GetPbfListingsPbfListingsCollection> pbfListingsCollections;
+    private @Nullable List<GetPbfListingsPbfListingsCollection> pbfListingsCollections;
     /**
      * @return The current state of the PBF resource.
      * 
@@ -48,8 +48,8 @@ public final class GetPbfListingsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return A brief descriptive name for the PBF trigger.
@@ -72,7 +72,7 @@ public final class GetPbfListingsResult {
      * 
      */
     public List<GetPbfListingsPbfListingsCollection> pbfListingsCollections() {
-        return this.pbfListingsCollections;
+        return this.pbfListingsCollections == null ? List.of() : this.pbfListingsCollections;
     }
     /**
      * @return The current state of the PBF resource.
@@ -95,12 +95,12 @@ public final class GetPbfListingsResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetPbfListingsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String name;
         private @Nullable String nameContains;
         private @Nullable String nameStartsWith;
         private @Nullable String pbfListingId;
-        private List<GetPbfListingsPbfListingsCollection> pbfListingsCollections;
+        private @Nullable List<GetPbfListingsPbfListingsCollection> pbfListingsCollections;
         private @Nullable String state;
         private @Nullable List<String> triggers;
         public Builder() {}
@@ -126,8 +126,8 @@ public final class GetPbfListingsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -151,8 +151,8 @@ public final class GetPbfListingsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder pbfListingsCollections(List<GetPbfListingsPbfListingsCollection> pbfListingsCollections) {
-            this.pbfListingsCollections = Objects.requireNonNull(pbfListingsCollections);
+        public Builder pbfListingsCollections(@Nullable List<GetPbfListingsPbfListingsCollection> pbfListingsCollections) {
+            this.pbfListingsCollections = pbfListingsCollections;
             return this;
         }
         public Builder pbfListingsCollections(GetPbfListingsPbfListingsCollection... pbfListingsCollections) {

@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.GoldenGate.outputs.GetMessagesDeploymentMessagesCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMessagesDeploymentMessagesCollection {
@@ -14,7 +15,7 @@ public final class GetMessagesDeploymentMessagesCollection {
      * @return An array of DeploymentMessages.
      * 
      */
-    private List<GetMessagesDeploymentMessagesCollectionItem> items;
+    private @Nullable List<GetMessagesDeploymentMessagesCollectionItem> items;
 
     private GetMessagesDeploymentMessagesCollection() {}
     /**
@@ -22,7 +23,7 @@ public final class GetMessagesDeploymentMessagesCollection {
      * 
      */
     public List<GetMessagesDeploymentMessagesCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetMessagesDeploymentMessagesCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetMessagesDeploymentMessagesCollectionItem> items;
+        private @Nullable List<GetMessagesDeploymentMessagesCollectionItem> items;
         public Builder() {}
         public Builder(GetMessagesDeploymentMessagesCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetMessagesDeploymentMessagesCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetMessagesDeploymentMessagesCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetMessagesDeploymentMessagesCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetMessagesDeploymentMessagesCollectionItem... items) {

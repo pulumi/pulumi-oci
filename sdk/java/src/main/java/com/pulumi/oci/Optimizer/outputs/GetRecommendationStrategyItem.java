@@ -8,6 +8,8 @@ import com.pulumi.oci.Optimizer.outputs.GetRecommendationStrategyItemStrategy;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetRecommendationStrategyItem {
@@ -15,27 +17,27 @@ public final class GetRecommendationStrategyItem {
      * @return Optional. A filter that returns results that match the name specified.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return The list of strategies used.
      * 
      */
-    private List<GetRecommendationStrategyItemStrategy> strategies;
+    private @Nullable List<GetRecommendationStrategyItemStrategy> strategies;
 
     private GetRecommendationStrategyItem() {}
     /**
      * @return Optional. A filter that returns results that match the name specified.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return The list of strategies used.
      * 
      */
     public List<GetRecommendationStrategyItemStrategy> strategies() {
-        return this.strategies;
+        return this.strategies == null ? List.of() : this.strategies;
     }
 
     public static Builder builder() {
@@ -47,8 +49,8 @@ public final class GetRecommendationStrategyItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String name;
-        private List<GetRecommendationStrategyItemStrategy> strategies;
+        private @Nullable String name;
+        private @Nullable List<GetRecommendationStrategyItemStrategy> strategies;
         public Builder() {}
         public Builder(GetRecommendationStrategyItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -57,13 +59,13 @@ public final class GetRecommendationStrategyItem {
         }
 
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder strategies(List<GetRecommendationStrategyItemStrategy> strategies) {
-            this.strategies = Objects.requireNonNull(strategies);
+        public Builder strategies(@Nullable List<GetRecommendationStrategyItemStrategy> strategies) {
+            this.strategies = strategies;
             return this;
         }
         public Builder strategies(GetRecommendationStrategyItemStrategy... strategies) {

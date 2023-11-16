@@ -106,19 +106,19 @@ namespace Pulumi.Oci.ApiGateway
     public sealed class GetApiContentResult
     {
         public readonly string ApiId;
-        public readonly string Content;
+        public readonly string? Content;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
 
         [OutputConstructor]
         private GetApiContentResult(
             string apiId,
 
-            string content,
+            string? content,
 
-            string id)
+            string? id)
         {
             ApiId = apiId;
             Content = content;

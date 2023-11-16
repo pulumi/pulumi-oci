@@ -29,43 +29,6 @@ class LoadBalancerArgs:
                  shape_details: Optional[pulumi.Input['LoadBalancerShapeDetailsArgs']] = None):
         """
         The set of arguments for constructing a LoadBalancer resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the load balancer.
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `example_load_balancer`
-        :param pulumi.Input[str] shape: (Updatable) A template that determines the total pre-provisioned bandwidth (ingress plus egress). To get a list of available shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerShape/ListShapes) operation.  Example: `flexible` NOTE: Starting May 2023, Fixed shapes - 10Mbps, 100Mbps, 400Mbps, 8000Mbps would be deprecated and only shape allowed would be `Flexible` *Note: When updating shape for a load balancer, all existing connections to the load balancer will be reset during the update process. Also `10Mbps-Micro` shape cannot be updated to any other shape nor can any other shape be updated to `10Mbps-Micro`.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] subnet_ids: An array of subnet [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] ip_mode: IPv6 is currently supported only in the Government Cloud. Whether the load balancer has an IPv4 or IPv6 IP address.
-               
-               If "IPV4", the service assigns an IPv4 address and the load balancer supports IPv4 traffic.
-               
-               If "IPV6", the service assigns an IPv6 address and the load balancer supports IPv6 traffic.
-               
-               Example: "ipMode":"IPV6"
-        :param pulumi.Input[bool] is_private: Whether the load balancer has a VCN-local (private) IP address.
-               
-               If "true", the service assigns a private IP address to the load balancer.
-               
-               If "false", the service assigns a public IP address to the load balancer.
-               
-               A public load balancer is accessible from the internet, depending on your VCN's [security list rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securitylists.htm). For more information about public and private load balancers, see [How Load Balancing Works](https://docs.cloud.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm#how-load-balancing-works).
-               
-               Example: `true`
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] network_security_group_ids: (Updatable) An array of NSG [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this load balancer.
-               
-               During the load balancer's creation, the service adds the new load balancer to the specified NSGs.
-               
-               The benefits of using NSGs with the load balancer include:
-               *  NSGs define network security rules to govern ingress and egress traffic for the load balancer.
-               *  The network security rules of other resources can reference the NSGs associated with the load balancer to ensure access.
-               
-               Example: `["ocid1.nsg.oc1.phx.unique_ID"]`
-        :param pulumi.Input[Sequence[pulumi.Input['LoadBalancerReservedIpArgs']]] reserved_ips: An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
-        :param pulumi.Input['LoadBalancerShapeDetailsArgs'] shape_details: (Updatable) The configuration details to create load balancer using Flexible shape. This is required only if shapeName is `Flexible`.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "display_name", display_name)
@@ -89,9 +52,6 @@ class LoadBalancerArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the load balancer.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -101,9 +61,6 @@ class LoadBalancerArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `example_load_balancer`
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -113,9 +70,6 @@ class LoadBalancerArgs:
     @property
     @pulumi.getter
     def shape(self) -> pulumi.Input[str]:
-        """
-        (Updatable) A template that determines the total pre-provisioned bandwidth (ingress plus egress). To get a list of available shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerShape/ListShapes) operation.  Example: `flexible` NOTE: Starting May 2023, Fixed shapes - 10Mbps, 100Mbps, 400Mbps, 8000Mbps would be deprecated and only shape allowed would be `Flexible` *Note: When updating shape for a load balancer, all existing connections to the load balancer will be reset during the update process. Also `10Mbps-Micro` shape cannot be updated to any other shape nor can any other shape be updated to `10Mbps-Micro`.
-        """
         return pulumi.get(self, "shape")
 
     @shape.setter
@@ -125,13 +79,6 @@ class LoadBalancerArgs:
     @property
     @pulumi.getter(name="subnetIds")
     def subnet_ids(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
-        """
-        An array of subnet [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "subnet_ids")
 
     @subnet_ids.setter
@@ -141,9 +88,6 @@ class LoadBalancerArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -153,9 +97,6 @@ class LoadBalancerArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -165,15 +106,6 @@ class LoadBalancerArgs:
     @property
     @pulumi.getter(name="ipMode")
     def ip_mode(self) -> Optional[pulumi.Input[str]]:
-        """
-        IPv6 is currently supported only in the Government Cloud. Whether the load balancer has an IPv4 or IPv6 IP address.
-
-        If "IPV4", the service assigns an IPv4 address and the load balancer supports IPv4 traffic.
-
-        If "IPV6", the service assigns an IPv6 address and the load balancer supports IPv6 traffic.
-
-        Example: "ipMode":"IPV6"
-        """
         return pulumi.get(self, "ip_mode")
 
     @ip_mode.setter
@@ -183,17 +115,6 @@ class LoadBalancerArgs:
     @property
     @pulumi.getter(name="isPrivate")
     def is_private(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether the load balancer has a VCN-local (private) IP address.
-
-        If "true", the service assigns a private IP address to the load balancer.
-
-        If "false", the service assigns a public IP address to the load balancer.
-
-        A public load balancer is accessible from the internet, depending on your VCN's [security list rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securitylists.htm). For more information about public and private load balancers, see [How Load Balancing Works](https://docs.cloud.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm#how-load-balancing-works).
-
-        Example: `true`
-        """
         return pulumi.get(self, "is_private")
 
     @is_private.setter
@@ -203,17 +124,6 @@ class LoadBalancerArgs:
     @property
     @pulumi.getter(name="networkSecurityGroupIds")
     def network_security_group_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) An array of NSG [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this load balancer.
-
-        During the load balancer's creation, the service adds the new load balancer to the specified NSGs.
-
-        The benefits of using NSGs with the load balancer include:
-        *  NSGs define network security rules to govern ingress and egress traffic for the load balancer.
-        *  The network security rules of other resources can reference the NSGs associated with the load balancer to ensure access.
-
-        Example: `["ocid1.nsg.oc1.phx.unique_ID"]`
-        """
         return pulumi.get(self, "network_security_group_ids")
 
     @network_security_group_ids.setter
@@ -223,9 +133,6 @@ class LoadBalancerArgs:
     @property
     @pulumi.getter(name="reservedIps")
     def reserved_ips(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['LoadBalancerReservedIpArgs']]]]:
-        """
-        An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
-        """
         return pulumi.get(self, "reserved_ips")
 
     @reserved_ips.setter
@@ -235,9 +142,6 @@ class LoadBalancerArgs:
     @property
     @pulumi.getter(name="shapeDetails")
     def shape_details(self) -> Optional[pulumi.Input['LoadBalancerShapeDetailsArgs']]:
-        """
-        (Updatable) The configuration details to create load balancer using Flexible shape. This is required only if shapeName is `Flexible`.
-        """
         return pulumi.get(self, "shape_details")
 
     @shape_details.setter
@@ -266,48 +170,6 @@ class _LoadBalancerState:
                  time_created: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering LoadBalancer resources.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the load balancer.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `example_load_balancer`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input['LoadBalancerIpAddressDetailArgs']]] ip_address_details: An array of IP addresses.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] ip_addresses: An array of IP addresses. Deprecated: use ip_address_details instead
-        :param pulumi.Input[str] ip_mode: IPv6 is currently supported only in the Government Cloud. Whether the load balancer has an IPv4 or IPv6 IP address.
-               
-               If "IPV4", the service assigns an IPv4 address and the load balancer supports IPv4 traffic.
-               
-               If "IPV6", the service assigns an IPv6 address and the load balancer supports IPv6 traffic.
-               
-               Example: "ipMode":"IPV6"
-        :param pulumi.Input[bool] is_private: Whether the load balancer has a VCN-local (private) IP address.
-               
-               If "true", the service assigns a private IP address to the load balancer.
-               
-               If "false", the service assigns a public IP address to the load balancer.
-               
-               A public load balancer is accessible from the internet, depending on your VCN's [security list rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securitylists.htm). For more information about public and private load balancers, see [How Load Balancing Works](https://docs.cloud.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm#how-load-balancing-works).
-               
-               Example: `true`
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] network_security_group_ids: (Updatable) An array of NSG [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this load balancer.
-               
-               During the load balancer's creation, the service adds the new load balancer to the specified NSGs.
-               
-               The benefits of using NSGs with the load balancer include:
-               *  NSGs define network security rules to govern ingress and egress traffic for the load balancer.
-               *  The network security rules of other resources can reference the NSGs associated with the load balancer to ensure access.
-               
-               Example: `["ocid1.nsg.oc1.phx.unique_ID"]`
-        :param pulumi.Input[Sequence[pulumi.Input['LoadBalancerReservedIpArgs']]] reserved_ips: An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
-        :param pulumi.Input[str] shape: (Updatable) A template that determines the total pre-provisioned bandwidth (ingress plus egress). To get a list of available shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerShape/ListShapes) operation.  Example: `flexible` NOTE: Starting May 2023, Fixed shapes - 10Mbps, 100Mbps, 400Mbps, 8000Mbps would be deprecated and only shape allowed would be `Flexible` *Note: When updating shape for a load balancer, all existing connections to the load balancer will be reset during the update process. Also `10Mbps-Micro` shape cannot be updated to any other shape nor can any other shape be updated to `10Mbps-Micro`.
-        :param pulumi.Input['LoadBalancerShapeDetailsArgs'] shape_details: (Updatable) The configuration details to create load balancer using Flexible shape. This is required only if shapeName is `Flexible`.
-        :param pulumi.Input[str] state: The current state of the load balancer.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] subnet_ids: An array of subnet [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: The date and time the load balancer was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -348,9 +210,6 @@ class _LoadBalancerState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the load balancer.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -360,9 +219,6 @@ class _LoadBalancerState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -372,9 +228,6 @@ class _LoadBalancerState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `example_load_balancer`
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -384,9 +237,6 @@ class _LoadBalancerState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -396,9 +246,6 @@ class _LoadBalancerState:
     @property
     @pulumi.getter(name="ipAddressDetails")
     def ip_address_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['LoadBalancerIpAddressDetailArgs']]]]:
-        """
-        An array of IP addresses.
-        """
         return pulumi.get(self, "ip_address_details")
 
     @ip_address_details.setter
@@ -408,9 +255,6 @@ class _LoadBalancerState:
     @property
     @pulumi.getter(name="ipAddresses")
     def ip_addresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        An array of IP addresses. Deprecated: use ip_address_details instead
-        """
         warnings.warn("""The 'ip_addresses' field has been deprecated. Please use 'ip_address_details' instead.""", DeprecationWarning)
         pulumi.log.warn("""ip_addresses is deprecated: The 'ip_addresses' field has been deprecated. Please use 'ip_address_details' instead.""")
 
@@ -423,15 +267,6 @@ class _LoadBalancerState:
     @property
     @pulumi.getter(name="ipMode")
     def ip_mode(self) -> Optional[pulumi.Input[str]]:
-        """
-        IPv6 is currently supported only in the Government Cloud. Whether the load balancer has an IPv4 or IPv6 IP address.
-
-        If "IPV4", the service assigns an IPv4 address and the load balancer supports IPv4 traffic.
-
-        If "IPV6", the service assigns an IPv6 address and the load balancer supports IPv6 traffic.
-
-        Example: "ipMode":"IPV6"
-        """
         return pulumi.get(self, "ip_mode")
 
     @ip_mode.setter
@@ -441,17 +276,6 @@ class _LoadBalancerState:
     @property
     @pulumi.getter(name="isPrivate")
     def is_private(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether the load balancer has a VCN-local (private) IP address.
-
-        If "true", the service assigns a private IP address to the load balancer.
-
-        If "false", the service assigns a public IP address to the load balancer.
-
-        A public load balancer is accessible from the internet, depending on your VCN's [security list rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securitylists.htm). For more information about public and private load balancers, see [How Load Balancing Works](https://docs.cloud.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm#how-load-balancing-works).
-
-        Example: `true`
-        """
         return pulumi.get(self, "is_private")
 
     @is_private.setter
@@ -461,17 +285,6 @@ class _LoadBalancerState:
     @property
     @pulumi.getter(name="networkSecurityGroupIds")
     def network_security_group_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) An array of NSG [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this load balancer.
-
-        During the load balancer's creation, the service adds the new load balancer to the specified NSGs.
-
-        The benefits of using NSGs with the load balancer include:
-        *  NSGs define network security rules to govern ingress and egress traffic for the load balancer.
-        *  The network security rules of other resources can reference the NSGs associated with the load balancer to ensure access.
-
-        Example: `["ocid1.nsg.oc1.phx.unique_ID"]`
-        """
         return pulumi.get(self, "network_security_group_ids")
 
     @network_security_group_ids.setter
@@ -481,9 +294,6 @@ class _LoadBalancerState:
     @property
     @pulumi.getter(name="reservedIps")
     def reserved_ips(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['LoadBalancerReservedIpArgs']]]]:
-        """
-        An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
-        """
         return pulumi.get(self, "reserved_ips")
 
     @reserved_ips.setter
@@ -493,9 +303,6 @@ class _LoadBalancerState:
     @property
     @pulumi.getter
     def shape(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A template that determines the total pre-provisioned bandwidth (ingress plus egress). To get a list of available shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerShape/ListShapes) operation.  Example: `flexible` NOTE: Starting May 2023, Fixed shapes - 10Mbps, 100Mbps, 400Mbps, 8000Mbps would be deprecated and only shape allowed would be `Flexible` *Note: When updating shape for a load balancer, all existing connections to the load balancer will be reset during the update process. Also `10Mbps-Micro` shape cannot be updated to any other shape nor can any other shape be updated to `10Mbps-Micro`.
-        """
         return pulumi.get(self, "shape")
 
     @shape.setter
@@ -505,9 +312,6 @@ class _LoadBalancerState:
     @property
     @pulumi.getter(name="shapeDetails")
     def shape_details(self) -> Optional[pulumi.Input['LoadBalancerShapeDetailsArgs']]:
-        """
-        (Updatable) The configuration details to create load balancer using Flexible shape. This is required only if shapeName is `Flexible`.
-        """
         return pulumi.get(self, "shape_details")
 
     @shape_details.setter
@@ -517,9 +321,6 @@ class _LoadBalancerState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the load balancer.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -529,13 +330,6 @@ class _LoadBalancerState:
     @property
     @pulumi.getter(name="subnetIds")
     def subnet_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        An array of subnet [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "subnet_ids")
 
     @subnet_ids.setter
@@ -545,9 +339,6 @@ class _LoadBalancerState:
     @property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
@@ -557,9 +348,6 @@ class _LoadBalancerState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the load balancer was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -585,113 +373,9 @@ class LoadBalancer(pulumi.CustomResource):
                  subnet_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  __props__=None):
         """
-        This resource provides the Load Balancer resource in Oracle Cloud Infrastructure Load Balancer service.
-
-        Creates a new load balancer in the specified compartment. For general information about load balancers,
-        see [Overview of the Load Balancing Service](https://docs.cloud.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm).
-
-        For the purposes of access control, you must provide the OCID of the compartment where you want
-        the load balancer to reside. Notice that the load balancer doesn't have to be in the same compartment as the VCN
-        or backend set. If you're not sure which compartment to use, put the load balancer in the same compartment as the VCN.
-        For information about access control and compartments, see
-        [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
-
-        You must specify a display name for the load balancer. It does not have to be unique, and you can change it.
-
-        For information about Availability Domains, see
-        [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
-        To get a list of Availability Domains, use the `ListAvailabilityDomains` operation
-        in the Identity and Access Management Service API.
-
-        All Oracle Cloud Infrastructure resources, including load balancers, get an Oracle-assigned,
-        unique ID called an Oracle Cloud Identifier (OCID). When you create a resource, you can find its OCID
-        in the response. You can also retrieve a resource's OCID by using a List API operation on that resource type,
-        or by viewing the resource in the Console. Fore more information, see
-        [Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-
-        When you create a load balancer, the system assigns an IP address.
-        To get the IP address, use the [GetLoadBalancer](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancer/GetLoadBalancer) operation.
-
-        ## Supported Aliases
-
-        * `oci_load_balancer`
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_load_balancer = oci.load_balancer.LoadBalancer("testLoadBalancer",
-            compartment_id=var["compartment_id"],
-            display_name=var["load_balancer_display_name"],
-            shape=var["load_balancer_shape"],
-            subnet_ids=var["load_balancer_subnet_ids"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            freeform_tags={
-                "Department": "Finance",
-            },
-            ip_mode=var["load_balancer_ip_mode"],
-            is_private=var["load_balancer_is_private"],
-            network_security_group_ids=var["load_balancer_network_security_group_ids"],
-            reserved_ips=[oci.load_balancer.LoadBalancerReservedIpArgs(
-                id=var["load_balancer_reserved_ips_id"],
-            )],
-            shape_details=oci.load_balancer.LoadBalancerShapeDetailsArgs(
-                maximum_bandwidth_in_mbps=var["load_balancer_shape_details_maximum_bandwidth_in_mbps"],
-                minimum_bandwidth_in_mbps=var["load_balancer_shape_details_minimum_bandwidth_in_mbps"],
-            ))
-        ```
-
-        ## Import
-
-        LoadBalancers can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:LoadBalancer/loadBalancer:LoadBalancer test_load_balancer "id"
-        ```
-
+        Create a LoadBalancer resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the load balancer.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `example_load_balancer`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] ip_mode: IPv6 is currently supported only in the Government Cloud. Whether the load balancer has an IPv4 or IPv6 IP address.
-               
-               If "IPV4", the service assigns an IPv4 address and the load balancer supports IPv4 traffic.
-               
-               If "IPV6", the service assigns an IPv6 address and the load balancer supports IPv6 traffic.
-               
-               Example: "ipMode":"IPV6"
-        :param pulumi.Input[bool] is_private: Whether the load balancer has a VCN-local (private) IP address.
-               
-               If "true", the service assigns a private IP address to the load balancer.
-               
-               If "false", the service assigns a public IP address to the load balancer.
-               
-               A public load balancer is accessible from the internet, depending on your VCN's [security list rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securitylists.htm). For more information about public and private load balancers, see [How Load Balancing Works](https://docs.cloud.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm#how-load-balancing-works).
-               
-               Example: `true`
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] network_security_group_ids: (Updatable) An array of NSG [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this load balancer.
-               
-               During the load balancer's creation, the service adds the new load balancer to the specified NSGs.
-               
-               The benefits of using NSGs with the load balancer include:
-               *  NSGs define network security rules to govern ingress and egress traffic for the load balancer.
-               *  The network security rules of other resources can reference the NSGs associated with the load balancer to ensure access.
-               
-               Example: `["ocid1.nsg.oc1.phx.unique_ID"]`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['LoadBalancerReservedIpArgs']]]] reserved_ips: An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
-        :param pulumi.Input[str] shape: (Updatable) A template that determines the total pre-provisioned bandwidth (ingress plus egress). To get a list of available shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerShape/ListShapes) operation.  Example: `flexible` NOTE: Starting May 2023, Fixed shapes - 10Mbps, 100Mbps, 400Mbps, 8000Mbps would be deprecated and only shape allowed would be `Flexible` *Note: When updating shape for a load balancer, all existing connections to the load balancer will be reset during the update process. Also `10Mbps-Micro` shape cannot be updated to any other shape nor can any other shape be updated to `10Mbps-Micro`.
-        :param pulumi.Input[pulumi.InputType['LoadBalancerShapeDetailsArgs']] shape_details: (Updatable) The configuration details to create load balancer using Flexible shape. This is required only if shapeName is `Flexible`.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] subnet_ids: An array of subnet [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -700,74 +384,7 @@ class LoadBalancer(pulumi.CustomResource):
                  args: LoadBalancerArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Load Balancer resource in Oracle Cloud Infrastructure Load Balancer service.
-
-        Creates a new load balancer in the specified compartment. For general information about load balancers,
-        see [Overview of the Load Balancing Service](https://docs.cloud.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm).
-
-        For the purposes of access control, you must provide the OCID of the compartment where you want
-        the load balancer to reside. Notice that the load balancer doesn't have to be in the same compartment as the VCN
-        or backend set. If you're not sure which compartment to use, put the load balancer in the same compartment as the VCN.
-        For information about access control and compartments, see
-        [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
-
-        You must specify a display name for the load balancer. It does not have to be unique, and you can change it.
-
-        For information about Availability Domains, see
-        [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
-        To get a list of Availability Domains, use the `ListAvailabilityDomains` operation
-        in the Identity and Access Management Service API.
-
-        All Oracle Cloud Infrastructure resources, including load balancers, get an Oracle-assigned,
-        unique ID called an Oracle Cloud Identifier (OCID). When you create a resource, you can find its OCID
-        in the response. You can also retrieve a resource's OCID by using a List API operation on that resource type,
-        or by viewing the resource in the Console. Fore more information, see
-        [Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-
-        When you create a load balancer, the system assigns an IP address.
-        To get the IP address, use the [GetLoadBalancer](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancer/GetLoadBalancer) operation.
-
-        ## Supported Aliases
-
-        * `oci_load_balancer`
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_load_balancer = oci.load_balancer.LoadBalancer("testLoadBalancer",
-            compartment_id=var["compartment_id"],
-            display_name=var["load_balancer_display_name"],
-            shape=var["load_balancer_shape"],
-            subnet_ids=var["load_balancer_subnet_ids"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            freeform_tags={
-                "Department": "Finance",
-            },
-            ip_mode=var["load_balancer_ip_mode"],
-            is_private=var["load_balancer_is_private"],
-            network_security_group_ids=var["load_balancer_network_security_group_ids"],
-            reserved_ips=[oci.load_balancer.LoadBalancerReservedIpArgs(
-                id=var["load_balancer_reserved_ips_id"],
-            )],
-            shape_details=oci.load_balancer.LoadBalancerShapeDetailsArgs(
-                maximum_bandwidth_in_mbps=var["load_balancer_shape_details_maximum_bandwidth_in_mbps"],
-                minimum_bandwidth_in_mbps=var["load_balancer_shape_details_minimum_bandwidth_in_mbps"],
-            ))
-        ```
-
-        ## Import
-
-        LoadBalancers can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:LoadBalancer/loadBalancer:LoadBalancer test_load_balancer "id"
-        ```
-
+        Create a LoadBalancer resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param LoadBalancerArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -860,48 +477,6 @@ class LoadBalancer(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the load balancer.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `example_load_balancer`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['LoadBalancerIpAddressDetailArgs']]]] ip_address_details: An array of IP addresses.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] ip_addresses: An array of IP addresses. Deprecated: use ip_address_details instead
-        :param pulumi.Input[str] ip_mode: IPv6 is currently supported only in the Government Cloud. Whether the load balancer has an IPv4 or IPv6 IP address.
-               
-               If "IPV4", the service assigns an IPv4 address and the load balancer supports IPv4 traffic.
-               
-               If "IPV6", the service assigns an IPv6 address and the load balancer supports IPv6 traffic.
-               
-               Example: "ipMode":"IPV6"
-        :param pulumi.Input[bool] is_private: Whether the load balancer has a VCN-local (private) IP address.
-               
-               If "true", the service assigns a private IP address to the load balancer.
-               
-               If "false", the service assigns a public IP address to the load balancer.
-               
-               A public load balancer is accessible from the internet, depending on your VCN's [security list rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securitylists.htm). For more information about public and private load balancers, see [How Load Balancing Works](https://docs.cloud.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm#how-load-balancing-works).
-               
-               Example: `true`
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] network_security_group_ids: (Updatable) An array of NSG [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this load balancer.
-               
-               During the load balancer's creation, the service adds the new load balancer to the specified NSGs.
-               
-               The benefits of using NSGs with the load balancer include:
-               *  NSGs define network security rules to govern ingress and egress traffic for the load balancer.
-               *  The network security rules of other resources can reference the NSGs associated with the load balancer to ensure access.
-               
-               Example: `["ocid1.nsg.oc1.phx.unique_ID"]`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['LoadBalancerReservedIpArgs']]]] reserved_ips: An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
-        :param pulumi.Input[str] shape: (Updatable) A template that determines the total pre-provisioned bandwidth (ingress plus egress). To get a list of available shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerShape/ListShapes) operation.  Example: `flexible` NOTE: Starting May 2023, Fixed shapes - 10Mbps, 100Mbps, 400Mbps, 8000Mbps would be deprecated and only shape allowed would be `Flexible` *Note: When updating shape for a load balancer, all existing connections to the load balancer will be reset during the update process. Also `10Mbps-Micro` shape cannot be updated to any other shape nor can any other shape be updated to `10Mbps-Micro`.
-        :param pulumi.Input[pulumi.InputType['LoadBalancerShapeDetailsArgs']] shape_details: (Updatable) The configuration details to create load balancer using Flexible shape. This is required only if shapeName is `Flexible`.
-        :param pulumi.Input[str] state: The current state of the load balancer.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] subnet_ids: An array of subnet [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: The date and time the load balancer was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -928,49 +503,31 @@ class LoadBalancer(pulumi.CustomResource):
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the load balancer.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `example_load_balancer`
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="ipAddressDetails")
-    def ip_address_details(self) -> pulumi.Output[Sequence['outputs.LoadBalancerIpAddressDetail']]:
-        """
-        An array of IP addresses.
-        """
+    def ip_address_details(self) -> pulumi.Output[Optional[Sequence['outputs.LoadBalancerIpAddressDetail']]]:
         return pulumi.get(self, "ip_address_details")
 
     @property
     @pulumi.getter(name="ipAddresses")
-    def ip_addresses(self) -> pulumi.Output[Sequence[str]]:
-        """
-        An array of IP addresses. Deprecated: use ip_address_details instead
-        """
+    def ip_addresses(self) -> pulumi.Output[Optional[Sequence[str]]]:
         warnings.warn("""The 'ip_addresses' field has been deprecated. Please use 'ip_address_details' instead.""", DeprecationWarning)
         pulumi.log.warn("""ip_addresses is deprecated: The 'ip_addresses' field has been deprecated. Please use 'ip_address_details' instead.""")
 
@@ -978,107 +535,51 @@ class LoadBalancer(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="ipMode")
-    def ip_mode(self) -> pulumi.Output[str]:
-        """
-        IPv6 is currently supported only in the Government Cloud. Whether the load balancer has an IPv4 or IPv6 IP address.
-
-        If "IPV4", the service assigns an IPv4 address and the load balancer supports IPv4 traffic.
-
-        If "IPV6", the service assigns an IPv6 address and the load balancer supports IPv6 traffic.
-
-        Example: "ipMode":"IPV6"
-        """
+    def ip_mode(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "ip_mode")
 
     @property
     @pulumi.getter(name="isPrivate")
-    def is_private(self) -> pulumi.Output[bool]:
-        """
-        Whether the load balancer has a VCN-local (private) IP address.
-
-        If "true", the service assigns a private IP address to the load balancer.
-
-        If "false", the service assigns a public IP address to the load balancer.
-
-        A public load balancer is accessible from the internet, depending on your VCN's [security list rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securitylists.htm). For more information about public and private load balancers, see [How Load Balancing Works](https://docs.cloud.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm#how-load-balancing-works).
-
-        Example: `true`
-        """
+    def is_private(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_private")
 
     @property
     @pulumi.getter(name="networkSecurityGroupIds")
     def network_security_group_ids(self) -> pulumi.Output[Optional[Sequence[str]]]:
-        """
-        (Updatable) An array of NSG [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this load balancer.
-
-        During the load balancer's creation, the service adds the new load balancer to the specified NSGs.
-
-        The benefits of using NSGs with the load balancer include:
-        *  NSGs define network security rules to govern ingress and egress traffic for the load balancer.
-        *  The network security rules of other resources can reference the NSGs associated with the load balancer to ensure access.
-
-        Example: `["ocid1.nsg.oc1.phx.unique_ID"]`
-        """
         return pulumi.get(self, "network_security_group_ids")
 
     @property
     @pulumi.getter(name="reservedIps")
     def reserved_ips(self) -> pulumi.Output[Optional[Sequence['outputs.LoadBalancerReservedIp']]]:
-        """
-        An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
-        """
         return pulumi.get(self, "reserved_ips")
 
     @property
     @pulumi.getter
     def shape(self) -> pulumi.Output[str]:
-        """
-        (Updatable) A template that determines the total pre-provisioned bandwidth (ingress plus egress). To get a list of available shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerShape/ListShapes) operation.  Example: `flexible` NOTE: Starting May 2023, Fixed shapes - 10Mbps, 100Mbps, 400Mbps, 8000Mbps would be deprecated and only shape allowed would be `Flexible` *Note: When updating shape for a load balancer, all existing connections to the load balancer will be reset during the update process. Also `10Mbps-Micro` shape cannot be updated to any other shape nor can any other shape be updated to `10Mbps-Micro`.
-        """
         return pulumi.get(self, "shape")
 
     @property
     @pulumi.getter(name="shapeDetails")
-    def shape_details(self) -> pulumi.Output['outputs.LoadBalancerShapeDetails']:
-        """
-        (Updatable) The configuration details to create load balancer using Flexible shape. This is required only if shapeName is `Flexible`.
-        """
+    def shape_details(self) -> pulumi.Output[Optional['outputs.LoadBalancerShapeDetails']]:
         return pulumi.get(self, "shape_details")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the load balancer.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="subnetIds")
     def subnet_ids(self) -> pulumi.Output[Sequence[str]]:
-        """
-        An array of subnet [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "subnet_ids")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The date and time the load balancer was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 

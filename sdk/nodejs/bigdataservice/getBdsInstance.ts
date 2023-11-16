@@ -48,106 +48,106 @@ export interface GetBdsInstanceResult {
     /**
      * pre-authenticated URL of the bootstrap script in Object Store that can be downloaded and executed.
      */
-    readonly bootstrapScriptUrl: string;
+    readonly bootstrapScriptUrl?: string;
     /**
      * The information about added Cloud SQL capability
      */
-    readonly cloudSqlDetails: outputs.BigDataService.GetBdsInstanceCloudSqlDetail[];
-    readonly clusterAdminPassword: string;
+    readonly cloudSqlDetails?: outputs.BigDataService.GetBdsInstanceCloudSqlDetail[];
+    readonly clusterAdminPassword?: string;
     /**
      * Specific info about a Hadoop cluster
      */
-    readonly clusterDetails: outputs.BigDataService.GetBdsInstanceClusterDetail[];
+    readonly clusterDetails?: outputs.BigDataService.GetBdsInstanceClusterDetail[];
     /**
      * Profile of the Big Data Service cluster.
      */
-    readonly clusterProfile: string;
-    readonly clusterPublicKey: string;
+    readonly clusterProfile?: string;
+    readonly clusterPublicKey?: string;
     /**
      * Version of the Hadoop distribution.
      */
-    readonly clusterVersion: string;
+    readonly clusterVersion?: string;
     /**
      * The OCID of the compartment.
      */
-    readonly compartmentId: string;
-    readonly computeOnlyWorkerNodes: outputs.BigDataService.GetBdsInstanceComputeOnlyWorkerNode[];
+    readonly compartmentId?: string;
+    readonly computeOnlyWorkerNodes?: outputs.BigDataService.GetBdsInstanceComputeOnlyWorkerNode[];
     /**
      * The user who created the cluster.
      */
-    readonly createdBy: string;
+    readonly createdBy?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For example, `{"foo-namespace": {"bar-key": "value"}}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * The name of the node.
      */
-    readonly displayName: string;
-    readonly edgeNodes: outputs.BigDataService.GetBdsInstanceEdgeNode[];
+    readonly displayName?: string;
+    readonly edgeNodes?: outputs.BigDataService.GetBdsInstanceEdgeNode[];
     /**
      * Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. For example, `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The OCID of the Big Data Service resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Boolean flag specifying whether or not Cloud SQL should be configured.
      */
-    readonly isCloudSqlConfigured: boolean;
-    readonly isForceStopJobs: boolean;
+    readonly isCloudSqlConfigured?: boolean;
+    readonly isForceStopJobs?: boolean;
     /**
      * Boolean flag specifying whether or not the cluster is highly available (HA)
      */
-    readonly isHighAvailability: boolean;
+    readonly isHighAvailability?: boolean;
     /**
      * Boolean flag specifying whether or not Kafka should be configured.
      */
-    readonly isKafkaConfigured: boolean;
+    readonly isKafkaConfigured?: boolean;
     /**
      * Boolean flag specifying whether or not the cluster should be set up as secure.
      */
-    readonly isSecure: boolean;
-    readonly kafkaBrokerNodes: outputs.BigDataService.GetBdsInstanceKafkaBrokerNode[];
-    readonly kerberosRealmName: string;
+    readonly isSecure?: boolean;
+    readonly kafkaBrokerNodes?: outputs.BigDataService.GetBdsInstanceKafkaBrokerNode[];
+    readonly kerberosRealmName?: string;
     /**
      * The OCID of the Key Management master encryption key.
      */
-    readonly kmsKeyId: string;
-    readonly masterNodes: outputs.BigDataService.GetBdsInstanceMasterNode[];
+    readonly kmsKeyId?: string;
+    readonly masterNodes?: outputs.BigDataService.GetBdsInstanceMasterNode[];
     /**
      * Additional configuration of the user's network.
      */
-    readonly networkConfigs: outputs.BigDataService.GetBdsInstanceNetworkConfig[];
+    readonly networkConfigs?: outputs.BigDataService.GetBdsInstanceNetworkConfig[];
     /**
      * The list of nodes in the cluster.
      */
-    readonly nodes: outputs.BigDataService.GetBdsInstanceNode[];
+    readonly nodes?: outputs.BigDataService.GetBdsInstanceNode[];
     /**
      * The number of nodes that form the cluster.
      */
-    readonly numberOfNodes: number;
+    readonly numberOfNodes?: number;
     /**
      * Number of nodes that require a maintenance reboot
      */
-    readonly numberOfNodesRequiringMaintenanceReboot: number;
-    readonly osPatchVersion: string;
+    readonly numberOfNodesRequiringMaintenanceReboot?: number;
+    readonly osPatchVersion?: string;
     /**
      * The state of the cluster.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The time the cluster was created, shown as an RFC 3339 formatted datetime string.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The time the cluster was updated, shown as an RFC 3339 formatted datetime string.
      */
-    readonly timeUpdated: string;
-    readonly utilNodes: outputs.BigDataService.GetBdsInstanceUtilNode[];
-    readonly workerNodes: outputs.BigDataService.GetBdsInstanceWorkerNode[];
+    readonly timeUpdated?: string;
+    readonly utilNodes?: outputs.BigDataService.GetBdsInstanceUtilNode[];
+    readonly workerNodes?: outputs.BigDataService.GetBdsInstanceWorkerNode[];
 }
 /**
  * This data source provides details about a specific Bds Instance resource in Oracle Cloud Infrastructure Big Data Service service.

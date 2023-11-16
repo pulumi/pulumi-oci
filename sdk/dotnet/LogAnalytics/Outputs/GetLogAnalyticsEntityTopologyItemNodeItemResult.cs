@@ -16,101 +16,101 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
         /// <summary>
         /// The Boolean flag to indicate if logs are collected for an entity for log analytics usage.
         /// </summary>
-        public readonly bool AreLogsCollected;
+        public readonly bool? AreLogsCollected;
         /// <summary>
         /// The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
         /// </summary>
-        public readonly string CloudResourceId;
+        public readonly string? CloudResourceId;
         /// <summary>
         /// Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// Internal name for the log analytics entity type.
         /// </summary>
-        public readonly string EntityTypeInternalName;
+        public readonly string? EntityTypeInternalName;
         /// <summary>
         /// Log analytics entity type name.
         /// </summary>
-        public readonly string EntityTypeName;
+        public readonly string? EntityTypeName;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// lifecycleDetails has additional information regarding substeps such as management agent plugin deployment.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// The OCID of the Management Agent.
         /// </summary>
-        public readonly string ManagementAgentId;
+        public readonly string? ManagementAgentId;
         /// <summary>
         /// Log analytics entity name.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// This indicates the type of source. It is primarily for Enterprise Manager Repository ID.
         /// </summary>
-        public readonly string SourceId;
+        public readonly string? SourceId;
         /// <summary>
         /// A filter to return only those log analytics entities with the specified lifecycle state. The state value is case-insensitive.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The date and time the resource was created, in the format defined by RFC3339.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The date and time the resource was last updated, in the format defined by RFC3339.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
         /// <summary>
         /// The timezone region of the log analytics entity.
         /// </summary>
-        public readonly string TimezoneRegion;
+        public readonly string? TimezoneRegion;
 
         [OutputConstructor]
         private GetLogAnalyticsEntityTopologyItemNodeItemResult(
-            bool areLogsCollected,
+            bool? areLogsCollected,
 
-            string cloudResourceId,
+            string? cloudResourceId,
 
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string entityTypeInternalName,
+            string? entityTypeInternalName,
 
-            string entityTypeName,
+            string? entityTypeName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string managementAgentId,
+            string? managementAgentId,
 
-            string name,
+            string? name,
 
-            string sourceId,
+            string? sourceId,
 
-            string state,
+            string? state,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated,
+            string? timeUpdated,
 
-            string timezoneRegion)
+            string? timezoneRegion)
         {
             AreLogsCollected = areLogsCollected;
             CloudResourceId = cloudResourceId;

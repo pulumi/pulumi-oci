@@ -34,28 +34,6 @@ class ContainerInstanceArgs:
                  volumes: Optional[pulumi.Input[Sequence[pulumi.Input['ContainerInstanceVolumeArgs']]]] = None):
         """
         The set of arguments for constructing a ContainerInstance resource.
-        :param pulumi.Input[str] availability_domain: The availability domain where the container instance runs.
-        :param pulumi.Input[str] compartment_id: (Updatable) The compartment OCID.
-        :param pulumi.Input[Sequence[pulumi.Input['ContainerInstanceContainerArgs']]] containers: The containers to create on this container instance.
-        :param pulumi.Input[str] shape: The shape of the container instance. The shape determines the resources available to the container instance.
-        :param pulumi.Input['ContainerInstanceShapeConfigArgs'] shape_config: The size and amount of resources available to the container instance.
-        :param pulumi.Input[Sequence[pulumi.Input['ContainerInstanceVnicArgs']]] vnics: The networks available to containers on this container instance.
-        :param pulumi.Input[str] container_restart_policy: Container restart policy
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
-        :param pulumi.Input[str] display_name: A user-friendly name for the VNIC. Does not have to be unique. Avoid entering confidential information.
-        :param pulumi.Input['ContainerInstanceDnsConfigArgs'] dns_config: Allow customers to define DNS settings for containers. If this is not provided, the containers use the default DNS settings of the subnet.
-        :param pulumi.Input[str] fault_domain: The fault domain where the container instance runs.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] graceful_shutdown_timeout_in_seconds: The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
-        :param pulumi.Input[Sequence[pulumi.Input['ContainerInstanceImagePullSecretArgs']]] image_pull_secrets: The image pulls secrets so you can access private registry to pull container images.
-        :param pulumi.Input[str] state: (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Sequence[pulumi.Input['ContainerInstanceVolumeArgs']]] volumes: A volume is a directory with data that is accessible across multiple containers in a container instance.
-               
-               You can attach up to 32 volumes to single container instance.
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -87,9 +65,6 @@ class ContainerInstanceArgs:
     @property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> pulumi.Input[str]:
-        """
-        The availability domain where the container instance runs.
-        """
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
@@ -99,9 +74,6 @@ class ContainerInstanceArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The compartment OCID.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -111,9 +83,6 @@ class ContainerInstanceArgs:
     @property
     @pulumi.getter
     def containers(self) -> pulumi.Input[Sequence[pulumi.Input['ContainerInstanceContainerArgs']]]:
-        """
-        The containers to create on this container instance.
-        """
         return pulumi.get(self, "containers")
 
     @containers.setter
@@ -123,9 +92,6 @@ class ContainerInstanceArgs:
     @property
     @pulumi.getter
     def shape(self) -> pulumi.Input[str]:
-        """
-        The shape of the container instance. The shape determines the resources available to the container instance.
-        """
         return pulumi.get(self, "shape")
 
     @shape.setter
@@ -135,9 +101,6 @@ class ContainerInstanceArgs:
     @property
     @pulumi.getter(name="shapeConfig")
     def shape_config(self) -> pulumi.Input['ContainerInstanceShapeConfigArgs']:
-        """
-        The size and amount of resources available to the container instance.
-        """
         return pulumi.get(self, "shape_config")
 
     @shape_config.setter
@@ -147,9 +110,6 @@ class ContainerInstanceArgs:
     @property
     @pulumi.getter
     def vnics(self) -> pulumi.Input[Sequence[pulumi.Input['ContainerInstanceVnicArgs']]]:
-        """
-        The networks available to containers on this container instance.
-        """
         return pulumi.get(self, "vnics")
 
     @vnics.setter
@@ -159,9 +119,6 @@ class ContainerInstanceArgs:
     @property
     @pulumi.getter(name="containerRestartPolicy")
     def container_restart_policy(self) -> Optional[pulumi.Input[str]]:
-        """
-        Container restart policy
-        """
         return pulumi.get(self, "container_restart_policy")
 
     @container_restart_policy.setter
@@ -171,9 +128,6 @@ class ContainerInstanceArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -183,9 +137,6 @@ class ContainerInstanceArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        A user-friendly name for the VNIC. Does not have to be unique. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -195,9 +146,6 @@ class ContainerInstanceArgs:
     @property
     @pulumi.getter(name="dnsConfig")
     def dns_config(self) -> Optional[pulumi.Input['ContainerInstanceDnsConfigArgs']]:
-        """
-        Allow customers to define DNS settings for containers. If this is not provided, the containers use the default DNS settings of the subnet.
-        """
         return pulumi.get(self, "dns_config")
 
     @dns_config.setter
@@ -207,9 +155,6 @@ class ContainerInstanceArgs:
     @property
     @pulumi.getter(name="faultDomain")
     def fault_domain(self) -> Optional[pulumi.Input[str]]:
-        """
-        The fault domain where the container instance runs.
-        """
         return pulumi.get(self, "fault_domain")
 
     @fault_domain.setter
@@ -219,9 +164,6 @@ class ContainerInstanceArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -231,9 +173,6 @@ class ContainerInstanceArgs:
     @property
     @pulumi.getter(name="gracefulShutdownTimeoutInSeconds")
     def graceful_shutdown_timeout_in_seconds(self) -> Optional[pulumi.Input[str]]:
-        """
-        The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
-        """
         return pulumi.get(self, "graceful_shutdown_timeout_in_seconds")
 
     @graceful_shutdown_timeout_in_seconds.setter
@@ -243,9 +182,6 @@ class ContainerInstanceArgs:
     @property
     @pulumi.getter(name="imagePullSecrets")
     def image_pull_secrets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ContainerInstanceImagePullSecretArgs']]]]:
-        """
-        The image pulls secrets so you can access private registry to pull container images.
-        """
         return pulumi.get(self, "image_pull_secrets")
 
     @image_pull_secrets.setter
@@ -255,13 +191,6 @@ class ContainerInstanceArgs:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -271,11 +200,6 @@ class ContainerInstanceArgs:
     @property
     @pulumi.getter
     def volumes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ContainerInstanceVolumeArgs']]]]:
-        """
-        A volume is a directory with data that is accessible across multiple containers in a container instance.
-
-        You can attach up to 32 volumes to single container instance.
-        """
         return pulumi.get(self, "volumes")
 
     @volumes.setter
@@ -310,34 +234,6 @@ class _ContainerInstanceState:
                  volumes: Optional[pulumi.Input[Sequence[pulumi.Input['ContainerInstanceVolumeArgs']]]] = None):
         """
         Input properties used for looking up and filtering ContainerInstance resources.
-        :param pulumi.Input[str] availability_domain: The availability domain where the container instance runs.
-        :param pulumi.Input[str] compartment_id: (Updatable) The compartment OCID.
-        :param pulumi.Input[int] container_count: The number of containers on the container instance.
-        :param pulumi.Input[str] container_restart_policy: Container restart policy
-        :param pulumi.Input[Sequence[pulumi.Input['ContainerInstanceContainerArgs']]] containers: The containers to create on this container instance.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
-        :param pulumi.Input[str] display_name: A user-friendly name for the VNIC. Does not have to be unique. Avoid entering confidential information.
-        :param pulumi.Input['ContainerInstanceDnsConfigArgs'] dns_config: Allow customers to define DNS settings for containers. If this is not provided, the containers use the default DNS settings of the subnet.
-        :param pulumi.Input[str] fault_domain: The fault domain where the container instance runs.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] graceful_shutdown_timeout_in_seconds: The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
-        :param pulumi.Input[Sequence[pulumi.Input['ContainerInstanceImagePullSecretArgs']]] image_pull_secrets: The image pulls secrets so you can access private registry to pull container images.
-        :param pulumi.Input[str] lifecycle_details: A message that describes the current state of the container in more detail. Can be used to provide actionable information.
-        :param pulumi.Input[str] shape: The shape of the container instance. The shape determines the resources available to the container instance.
-        :param pulumi.Input['ContainerInstanceShapeConfigArgs'] shape_config: The size and amount of resources available to the container instance.
-        :param pulumi.Input[str] state: (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
-        :param pulumi.Input[str] time_created: The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-        :param pulumi.Input[str] time_updated: The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-        :param pulumi.Input[Sequence[pulumi.Input['ContainerInstanceVnicArgs']]] vnics: The networks available to containers on this container instance.
-        :param pulumi.Input[int] volume_count: The number of volumes that are attached to the container instance.
-        :param pulumi.Input[Sequence[pulumi.Input['ContainerInstanceVolumeArgs']]] volumes: A volume is a directory with data that is accessible across multiple containers in a container instance.
-               
-               You can attach up to 32 volumes to single container instance.
         """
         if availability_domain is not None:
             pulumi.set(__self__, "availability_domain", availability_domain)
@@ -387,9 +283,6 @@ class _ContainerInstanceState:
     @property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> Optional[pulumi.Input[str]]:
-        """
-        The availability domain where the container instance runs.
-        """
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
@@ -399,9 +292,6 @@ class _ContainerInstanceState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The compartment OCID.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -411,9 +301,6 @@ class _ContainerInstanceState:
     @property
     @pulumi.getter(name="containerCount")
     def container_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        The number of containers on the container instance.
-        """
         return pulumi.get(self, "container_count")
 
     @container_count.setter
@@ -423,9 +310,6 @@ class _ContainerInstanceState:
     @property
     @pulumi.getter(name="containerRestartPolicy")
     def container_restart_policy(self) -> Optional[pulumi.Input[str]]:
-        """
-        Container restart policy
-        """
         return pulumi.get(self, "container_restart_policy")
 
     @container_restart_policy.setter
@@ -435,9 +319,6 @@ class _ContainerInstanceState:
     @property
     @pulumi.getter
     def containers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ContainerInstanceContainerArgs']]]]:
-        """
-        The containers to create on this container instance.
-        """
         return pulumi.get(self, "containers")
 
     @containers.setter
@@ -447,9 +328,6 @@ class _ContainerInstanceState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -459,9 +337,6 @@ class _ContainerInstanceState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        A user-friendly name for the VNIC. Does not have to be unique. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -471,9 +346,6 @@ class _ContainerInstanceState:
     @property
     @pulumi.getter(name="dnsConfig")
     def dns_config(self) -> Optional[pulumi.Input['ContainerInstanceDnsConfigArgs']]:
-        """
-        Allow customers to define DNS settings for containers. If this is not provided, the containers use the default DNS settings of the subnet.
-        """
         return pulumi.get(self, "dns_config")
 
     @dns_config.setter
@@ -483,9 +355,6 @@ class _ContainerInstanceState:
     @property
     @pulumi.getter(name="faultDomain")
     def fault_domain(self) -> Optional[pulumi.Input[str]]:
-        """
-        The fault domain where the container instance runs.
-        """
         return pulumi.get(self, "fault_domain")
 
     @fault_domain.setter
@@ -495,9 +364,6 @@ class _ContainerInstanceState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -507,9 +373,6 @@ class _ContainerInstanceState:
     @property
     @pulumi.getter(name="gracefulShutdownTimeoutInSeconds")
     def graceful_shutdown_timeout_in_seconds(self) -> Optional[pulumi.Input[str]]:
-        """
-        The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
-        """
         return pulumi.get(self, "graceful_shutdown_timeout_in_seconds")
 
     @graceful_shutdown_timeout_in_seconds.setter
@@ -519,9 +382,6 @@ class _ContainerInstanceState:
     @property
     @pulumi.getter(name="imagePullSecrets")
     def image_pull_secrets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ContainerInstanceImagePullSecretArgs']]]]:
-        """
-        The image pulls secrets so you can access private registry to pull container images.
-        """
         return pulumi.get(self, "image_pull_secrets")
 
     @image_pull_secrets.setter
@@ -531,9 +391,6 @@ class _ContainerInstanceState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        A message that describes the current state of the container in more detail. Can be used to provide actionable information.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -543,9 +400,6 @@ class _ContainerInstanceState:
     @property
     @pulumi.getter
     def shape(self) -> Optional[pulumi.Input[str]]:
-        """
-        The shape of the container instance. The shape determines the resources available to the container instance.
-        """
         return pulumi.get(self, "shape")
 
     @shape.setter
@@ -555,9 +409,6 @@ class _ContainerInstanceState:
     @property
     @pulumi.getter(name="shapeConfig")
     def shape_config(self) -> Optional[pulumi.Input['ContainerInstanceShapeConfigArgs']]:
-        """
-        The size and amount of resources available to the container instance.
-        """
         return pulumi.get(self, "shape_config")
 
     @shape_config.setter
@@ -567,13 +418,6 @@ class _ContainerInstanceState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -583,9 +427,6 @@ class _ContainerInstanceState:
     @property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
-        """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
@@ -595,9 +436,6 @@ class _ContainerInstanceState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -607,9 +445,6 @@ class _ContainerInstanceState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -619,9 +454,6 @@ class _ContainerInstanceState:
     @property
     @pulumi.getter
     def vnics(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ContainerInstanceVnicArgs']]]]:
-        """
-        The networks available to containers on this container instance.
-        """
         return pulumi.get(self, "vnics")
 
     @vnics.setter
@@ -631,9 +463,6 @@ class _ContainerInstanceState:
     @property
     @pulumi.getter(name="volumeCount")
     def volume_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        The number of volumes that are attached to the container instance.
-        """
         return pulumi.get(self, "volume_count")
 
     @volume_count.setter
@@ -643,11 +472,6 @@ class _ContainerInstanceState:
     @property
     @pulumi.getter
     def volumes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ContainerInstanceVolumeArgs']]]]:
-        """
-        A volume is a directory with data that is accessible across multiple containers in a container instance.
-
-        You can attach up to 32 volumes to single container instance.
-        """
         return pulumi.get(self, "volumes")
 
     @volumes.setter
@@ -678,147 +502,9 @@ class ContainerInstance(pulumi.CustomResource):
                  volumes: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ContainerInstanceVolumeArgs']]]]] = None,
                  __props__=None):
         """
-        This resource provides the Container Instance resource in Oracle Cloud Infrastructure Container Instances service.
-
-        Creates a container instance and deploys the containers on it.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_container_instance = oci.container_engine.ContainerInstance("testContainerInstance",
-            availability_domain=var["container_instance_availability_domain"],
-            compartment_id=var["compartment_id"],
-            containers=[oci.container_engine.ContainerInstanceContainerArgs(
-                image_url=var["container_instance_containers_image_url"],
-                arguments=var["container_instance_containers_arguments"],
-                commands=var["container_instance_containers_command"],
-                defined_tags=var["container_instance_containers_defined_tags"],
-                display_name=var["container_instance_containers_display_name"],
-                environment_variables=var["container_instance_containers_environment_variables"],
-                freeform_tags=var["container_instance_containers_freeform_tags"],
-                health_checks=[oci.container_engine.ContainerInstanceContainerHealthCheckArgs(
-                    health_check_type=var["container_instance_containers_health_checks_health_check_type"],
-                    commands=var["container_instance_containers_health_checks_command"],
-                    failure_action=var["container_instance_containers_health_checks_failure_action"],
-                    failure_threshold=var["container_instance_containers_health_checks_failure_threshold"],
-                    headers=[oci.container_engine.ContainerInstanceContainerHealthCheckHeaderArgs(
-                        name=var["container_instance_containers_health_checks_headers_name"],
-                        value=var["container_instance_containers_health_checks_headers_value"],
-                    )],
-                    initial_delay_in_seconds=var["container_instance_containers_health_checks_initial_delay_in_seconds"],
-                    interval_in_seconds=var["container_instance_containers_health_checks_interval_in_seconds"],
-                    name=var["container_instance_containers_health_checks_name"],
-                    path=var["container_instance_containers_health_checks_path"],
-                    port=var["container_instance_containers_health_checks_port"],
-                    success_threshold=var["container_instance_containers_health_checks_success_threshold"],
-                    timeout_in_seconds=var["container_instance_containers_health_checks_timeout_in_seconds"],
-                )],
-                is_resource_principal_disabled=var["container_instance_containers_is_resource_principal_disabled"],
-                resource_config=oci.container_engine.ContainerInstanceContainerResourceConfigArgs(
-                    memory_limit_in_gbs=var["container_instance_containers_resource_config_memory_limit_in_gbs"],
-                    vcpus_limit=var["container_instance_containers_resource_config_vcpus_limit"],
-                ),
-                security_context=oci.container_engine.ContainerInstanceContainerSecurityContextArgs(
-                    is_non_root_user_check_enabled=var["container_instance_containers_security_context_is_non_root_user_check_enabled"],
-                    is_root_file_system_readonly=var["container_instance_containers_security_context_is_root_file_system_readonly"],
-                    run_as_group=var["container_instance_containers_security_context_run_as_group"],
-                    run_as_user=var["container_instance_containers_security_context_run_as_user"],
-                    security_context_type=var["container_instance_containers_security_context_security_context_type"],
-                ),
-                volume_mounts=[oci.container_engine.ContainerInstanceContainerVolumeMountArgs(
-                    mount_path=var["container_instance_containers_volume_mounts_mount_path"],
-                    volume_name=var["container_instance_containers_volume_mounts_volume_name"],
-                    is_read_only=var["container_instance_containers_volume_mounts_is_read_only"],
-                    partition=var["container_instance_containers_volume_mounts_partition"],
-                    sub_path=var["container_instance_containers_volume_mounts_sub_path"],
-                )],
-                working_directory=var["container_instance_containers_working_directory"],
-            )],
-            shape=var["container_instance_shape"],
-            shape_config=oci.container_engine.ContainerInstanceShapeConfigArgs(
-                ocpus=var["container_instance_shape_config_ocpus"],
-                memory_in_gbs=var["container_instance_shape_config_memory_in_gbs"],
-            ),
-            vnics=[oci.container_engine.ContainerInstanceVnicArgs(
-                subnet_id=oci_core_subnet["test_subnet"]["id"],
-                defined_tags=var["container_instance_vnics_defined_tags"],
-                display_name=var["container_instance_vnics_display_name"],
-                freeform_tags=var["container_instance_vnics_freeform_tags"],
-                hostname_label=var["container_instance_vnics_hostname_label"],
-                is_public_ip_assigned=var["container_instance_vnics_is_public_ip_assigned"],
-                nsg_ids=var["container_instance_vnics_nsg_ids"],
-                private_ip=var["container_instance_vnics_private_ip"],
-                skip_source_dest_check=var["container_instance_vnics_skip_source_dest_check"],
-            )],
-            container_restart_policy=var["container_instance_container_restart_policy"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            display_name=var["container_instance_display_name"],
-            dns_config=oci.container_engine.ContainerInstanceDnsConfigArgs(
-                nameservers=var["container_instance_dns_config_nameservers"],
-                options=var["container_instance_dns_config_options"],
-                searches=var["container_instance_dns_config_searches"],
-            ),
-            fault_domain=var["container_instance_fault_domain"],
-            freeform_tags={
-                "bar-key": "value",
-            },
-            graceful_shutdown_timeout_in_seconds=var["container_instance_graceful_shutdown_timeout_in_seconds"],
-            image_pull_secrets=[oci.container_engine.ContainerInstanceImagePullSecretArgs(
-                registry_endpoint=var["container_instance_image_pull_secrets_registry_endpoint"],
-                secret_type=var["container_instance_image_pull_secrets_secret_type"],
-                password=var["container_instance_image_pull_secrets_password"],
-                secret_id=oci_vault_secret["test_secret"]["id"],
-                username=var["container_instance_image_pull_secrets_username"],
-            )],
-            volumes=[oci.container_engine.ContainerInstanceVolumeArgs(
-                name=var["container_instance_volumes_name"],
-                volume_type=var["container_instance_volumes_volume_type"],
-                backing_store=var["container_instance_volumes_backing_store"],
-                configs=[oci.container_engine.ContainerInstanceVolumeConfigArgs(
-                    data=var["container_instance_volumes_configs_data"],
-                    file_name=var["container_instance_volumes_configs_file_name"],
-                    path=var["container_instance_volumes_configs_path"],
-                )],
-            )])
-        ```
-
-        ## Import
-
-        ContainerInstances can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:ContainerEngine/containerInstance:ContainerInstance test_container_instance "id"
-        ```
-
+        Create a ContainerInstance resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] availability_domain: The availability domain where the container instance runs.
-        :param pulumi.Input[str] compartment_id: (Updatable) The compartment OCID.
-        :param pulumi.Input[str] container_restart_policy: Container restart policy
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ContainerInstanceContainerArgs']]]] containers: The containers to create on this container instance.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
-        :param pulumi.Input[str] display_name: A user-friendly name for the VNIC. Does not have to be unique. Avoid entering confidential information.
-        :param pulumi.Input[pulumi.InputType['ContainerInstanceDnsConfigArgs']] dns_config: Allow customers to define DNS settings for containers. If this is not provided, the containers use the default DNS settings of the subnet.
-        :param pulumi.Input[str] fault_domain: The fault domain where the container instance runs.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] graceful_shutdown_timeout_in_seconds: The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ContainerInstanceImagePullSecretArgs']]]] image_pull_secrets: The image pulls secrets so you can access private registry to pull container images.
-        :param pulumi.Input[str] shape: The shape of the container instance. The shape determines the resources available to the container instance.
-        :param pulumi.Input[pulumi.InputType['ContainerInstanceShapeConfigArgs']] shape_config: The size and amount of resources available to the container instance.
-        :param pulumi.Input[str] state: (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ContainerInstanceVnicArgs']]]] vnics: The networks available to containers on this container instance.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ContainerInstanceVolumeArgs']]]] volumes: A volume is a directory with data that is accessible across multiple containers in a container instance.
-               
-               You can attach up to 32 volumes to single container instance.
         """
         ...
     @overload
@@ -827,123 +513,7 @@ class ContainerInstance(pulumi.CustomResource):
                  args: ContainerInstanceArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Container Instance resource in Oracle Cloud Infrastructure Container Instances service.
-
-        Creates a container instance and deploys the containers on it.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_container_instance = oci.container_engine.ContainerInstance("testContainerInstance",
-            availability_domain=var["container_instance_availability_domain"],
-            compartment_id=var["compartment_id"],
-            containers=[oci.container_engine.ContainerInstanceContainerArgs(
-                image_url=var["container_instance_containers_image_url"],
-                arguments=var["container_instance_containers_arguments"],
-                commands=var["container_instance_containers_command"],
-                defined_tags=var["container_instance_containers_defined_tags"],
-                display_name=var["container_instance_containers_display_name"],
-                environment_variables=var["container_instance_containers_environment_variables"],
-                freeform_tags=var["container_instance_containers_freeform_tags"],
-                health_checks=[oci.container_engine.ContainerInstanceContainerHealthCheckArgs(
-                    health_check_type=var["container_instance_containers_health_checks_health_check_type"],
-                    commands=var["container_instance_containers_health_checks_command"],
-                    failure_action=var["container_instance_containers_health_checks_failure_action"],
-                    failure_threshold=var["container_instance_containers_health_checks_failure_threshold"],
-                    headers=[oci.container_engine.ContainerInstanceContainerHealthCheckHeaderArgs(
-                        name=var["container_instance_containers_health_checks_headers_name"],
-                        value=var["container_instance_containers_health_checks_headers_value"],
-                    )],
-                    initial_delay_in_seconds=var["container_instance_containers_health_checks_initial_delay_in_seconds"],
-                    interval_in_seconds=var["container_instance_containers_health_checks_interval_in_seconds"],
-                    name=var["container_instance_containers_health_checks_name"],
-                    path=var["container_instance_containers_health_checks_path"],
-                    port=var["container_instance_containers_health_checks_port"],
-                    success_threshold=var["container_instance_containers_health_checks_success_threshold"],
-                    timeout_in_seconds=var["container_instance_containers_health_checks_timeout_in_seconds"],
-                )],
-                is_resource_principal_disabled=var["container_instance_containers_is_resource_principal_disabled"],
-                resource_config=oci.container_engine.ContainerInstanceContainerResourceConfigArgs(
-                    memory_limit_in_gbs=var["container_instance_containers_resource_config_memory_limit_in_gbs"],
-                    vcpus_limit=var["container_instance_containers_resource_config_vcpus_limit"],
-                ),
-                security_context=oci.container_engine.ContainerInstanceContainerSecurityContextArgs(
-                    is_non_root_user_check_enabled=var["container_instance_containers_security_context_is_non_root_user_check_enabled"],
-                    is_root_file_system_readonly=var["container_instance_containers_security_context_is_root_file_system_readonly"],
-                    run_as_group=var["container_instance_containers_security_context_run_as_group"],
-                    run_as_user=var["container_instance_containers_security_context_run_as_user"],
-                    security_context_type=var["container_instance_containers_security_context_security_context_type"],
-                ),
-                volume_mounts=[oci.container_engine.ContainerInstanceContainerVolumeMountArgs(
-                    mount_path=var["container_instance_containers_volume_mounts_mount_path"],
-                    volume_name=var["container_instance_containers_volume_mounts_volume_name"],
-                    is_read_only=var["container_instance_containers_volume_mounts_is_read_only"],
-                    partition=var["container_instance_containers_volume_mounts_partition"],
-                    sub_path=var["container_instance_containers_volume_mounts_sub_path"],
-                )],
-                working_directory=var["container_instance_containers_working_directory"],
-            )],
-            shape=var["container_instance_shape"],
-            shape_config=oci.container_engine.ContainerInstanceShapeConfigArgs(
-                ocpus=var["container_instance_shape_config_ocpus"],
-                memory_in_gbs=var["container_instance_shape_config_memory_in_gbs"],
-            ),
-            vnics=[oci.container_engine.ContainerInstanceVnicArgs(
-                subnet_id=oci_core_subnet["test_subnet"]["id"],
-                defined_tags=var["container_instance_vnics_defined_tags"],
-                display_name=var["container_instance_vnics_display_name"],
-                freeform_tags=var["container_instance_vnics_freeform_tags"],
-                hostname_label=var["container_instance_vnics_hostname_label"],
-                is_public_ip_assigned=var["container_instance_vnics_is_public_ip_assigned"],
-                nsg_ids=var["container_instance_vnics_nsg_ids"],
-                private_ip=var["container_instance_vnics_private_ip"],
-                skip_source_dest_check=var["container_instance_vnics_skip_source_dest_check"],
-            )],
-            container_restart_policy=var["container_instance_container_restart_policy"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            display_name=var["container_instance_display_name"],
-            dns_config=oci.container_engine.ContainerInstanceDnsConfigArgs(
-                nameservers=var["container_instance_dns_config_nameservers"],
-                options=var["container_instance_dns_config_options"],
-                searches=var["container_instance_dns_config_searches"],
-            ),
-            fault_domain=var["container_instance_fault_domain"],
-            freeform_tags={
-                "bar-key": "value",
-            },
-            graceful_shutdown_timeout_in_seconds=var["container_instance_graceful_shutdown_timeout_in_seconds"],
-            image_pull_secrets=[oci.container_engine.ContainerInstanceImagePullSecretArgs(
-                registry_endpoint=var["container_instance_image_pull_secrets_registry_endpoint"],
-                secret_type=var["container_instance_image_pull_secrets_secret_type"],
-                password=var["container_instance_image_pull_secrets_password"],
-                secret_id=oci_vault_secret["test_secret"]["id"],
-                username=var["container_instance_image_pull_secrets_username"],
-            )],
-            volumes=[oci.container_engine.ContainerInstanceVolumeArgs(
-                name=var["container_instance_volumes_name"],
-                volume_type=var["container_instance_volumes_volume_type"],
-                backing_store=var["container_instance_volumes_backing_store"],
-                configs=[oci.container_engine.ContainerInstanceVolumeConfigArgs(
-                    data=var["container_instance_volumes_configs_data"],
-                    file_name=var["container_instance_volumes_configs_file_name"],
-                    path=var["container_instance_volumes_configs_path"],
-                )],
-            )])
-        ```
-
-        ## Import
-
-        ContainerInstances can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:ContainerEngine/containerInstance:ContainerInstance test_container_instance "id"
-        ```
-
+        Create a ContainerInstance resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param ContainerInstanceArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -1057,34 +627,6 @@ class ContainerInstance(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] availability_domain: The availability domain where the container instance runs.
-        :param pulumi.Input[str] compartment_id: (Updatable) The compartment OCID.
-        :param pulumi.Input[int] container_count: The number of containers on the container instance.
-        :param pulumi.Input[str] container_restart_policy: Container restart policy
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ContainerInstanceContainerArgs']]]] containers: The containers to create on this container instance.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
-        :param pulumi.Input[str] display_name: A user-friendly name for the VNIC. Does not have to be unique. Avoid entering confidential information.
-        :param pulumi.Input[pulumi.InputType['ContainerInstanceDnsConfigArgs']] dns_config: Allow customers to define DNS settings for containers. If this is not provided, the containers use the default DNS settings of the subnet.
-        :param pulumi.Input[str] fault_domain: The fault domain where the container instance runs.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] graceful_shutdown_timeout_in_seconds: The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ContainerInstanceImagePullSecretArgs']]]] image_pull_secrets: The image pulls secrets so you can access private registry to pull container images.
-        :param pulumi.Input[str] lifecycle_details: A message that describes the current state of the container in more detail. Can be used to provide actionable information.
-        :param pulumi.Input[str] shape: The shape of the container instance. The shape determines the resources available to the container instance.
-        :param pulumi.Input[pulumi.InputType['ContainerInstanceShapeConfigArgs']] shape_config: The size and amount of resources available to the container instance.
-        :param pulumi.Input[str] state: (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
-        :param pulumi.Input[str] time_created: The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-        :param pulumi.Input[str] time_updated: The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ContainerInstanceVnicArgs']]]] vnics: The networks available to containers on this container instance.
-        :param pulumi.Input[int] volume_count: The number of volumes that are attached to the container instance.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ContainerInstanceVolumeArgs']]]] volumes: A volume is a directory with data that is accessible across multiple containers in a container instance.
-               
-               You can attach up to 32 volumes to single container instance.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -1117,182 +659,110 @@ class ContainerInstance(pulumi.CustomResource):
     @property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> pulumi.Output[str]:
-        """
-        The availability domain where the container instance runs.
-        """
         return pulumi.get(self, "availability_domain")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The compartment OCID.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="containerCount")
-    def container_count(self) -> pulumi.Output[int]:
-        """
-        The number of containers on the container instance.
-        """
+    def container_count(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "container_count")
 
     @property
     @pulumi.getter(name="containerRestartPolicy")
-    def container_restart_policy(self) -> pulumi.Output[str]:
-        """
-        Container restart policy
-        """
+    def container_restart_policy(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "container_restart_policy")
 
     @property
     @pulumi.getter
     def containers(self) -> pulumi.Output[Sequence['outputs.ContainerInstanceContainer']]:
-        """
-        The containers to create on this container instance.
-        """
         return pulumi.get(self, "containers")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
-        """
-        A user-friendly name for the VNIC. Does not have to be unique. Avoid entering confidential information.
-        """
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="dnsConfig")
-    def dns_config(self) -> pulumi.Output['outputs.ContainerInstanceDnsConfig']:
-        """
-        Allow customers to define DNS settings for containers. If this is not provided, the containers use the default DNS settings of the subnet.
-        """
+    def dns_config(self) -> pulumi.Output[Optional['outputs.ContainerInstanceDnsConfig']]:
         return pulumi.get(self, "dns_config")
 
     @property
     @pulumi.getter(name="faultDomain")
-    def fault_domain(self) -> pulumi.Output[str]:
-        """
-        The fault domain where the container instance runs.
-        """
+    def fault_domain(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "fault_domain")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="gracefulShutdownTimeoutInSeconds")
-    def graceful_shutdown_timeout_in_seconds(self) -> pulumi.Output[str]:
-        """
-        The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
-        """
+    def graceful_shutdown_timeout_in_seconds(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "graceful_shutdown_timeout_in_seconds")
 
     @property
     @pulumi.getter(name="imagePullSecrets")
-    def image_pull_secrets(self) -> pulumi.Output[Sequence['outputs.ContainerInstanceImagePullSecret']]:
-        """
-        The image pulls secrets so you can access private registry to pull container images.
-        """
+    def image_pull_secrets(self) -> pulumi.Output[Optional[Sequence['outputs.ContainerInstanceImagePullSecret']]]:
         return pulumi.get(self, "image_pull_secrets")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        A message that describes the current state of the container in more detail. Can be used to provide actionable information.
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
     def shape(self) -> pulumi.Output[str]:
-        """
-        The shape of the container instance. The shape determines the resources available to the container instance.
-        """
         return pulumi.get(self, "shape")
 
     @property
     @pulumi.getter(name="shapeConfig")
     def shape_config(self) -> pulumi.Output['outputs.ContainerInstanceShapeConfig']:
-        """
-        The size and amount of resources available to the container instance.
-        """
         return pulumi.get(self, "shape_config")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
-        """
+    def system_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter
     def vnics(self) -> pulumi.Output[Sequence['outputs.ContainerInstanceVnic']]:
-        """
-        The networks available to containers on this container instance.
-        """
         return pulumi.get(self, "vnics")
 
     @property
     @pulumi.getter(name="volumeCount")
-    def volume_count(self) -> pulumi.Output[int]:
-        """
-        The number of volumes that are attached to the container instance.
-        """
+    def volume_count(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "volume_count")
 
     @property
     @pulumi.getter
-    def volumes(self) -> pulumi.Output[Sequence['outputs.ContainerInstanceVolume']]:
-        """
-        A volume is a directory with data that is accessible across multiple containers in a container instance.
-
-        You can attach up to 32 volumes to single container instance.
-        """
+    def volumes(self) -> pulumi.Output[Optional[Sequence['outputs.ContainerInstanceVolume']]]:
         return pulumi.get(self, "volumes")
 

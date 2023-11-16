@@ -62,9 +62,6 @@ class GetManagementAgentPluginsResult:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        Management Agent Plugin Display Name
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -74,7 +71,7 @@ class GetManagementAgentPluginsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -82,10 +79,7 @@ class GetManagementAgentPluginsResult:
 
     @property
     @pulumi.getter(name="managementAgentPlugins")
-    def management_agent_plugins(self) -> Sequence['outputs.GetManagementAgentPluginsManagementAgentPluginResult']:
-        """
-        The list of management_agent_plugins.
-        """
+    def management_agent_plugins(self) -> Optional[Sequence['outputs.GetManagementAgentPluginsManagementAgentPluginResult']]:
         return pulumi.get(self, "management_agent_plugins")
 
     @property
@@ -96,9 +90,6 @@ class GetManagementAgentPluginsResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of Management Agent Plugin
-        """
         return pulumi.get(self, "state")
 
 
@@ -126,29 +117,7 @@ def get_management_agent_plugins(agent_id: Optional[str] = None,
                                  state: Optional[str] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagementAgentPluginsResult:
     """
-    This data source provides the list of Management Agent Plugins in Oracle Cloud Infrastructure Management Agent service.
-
-    Returns a list of managementAgentPlugins.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_management_agent_plugins = oci.ManagementAgent.get_management_agent_plugins(compartment_id=var["compartment_id"],
-        agent_id=var["management_agent_id"],
-        display_name=var["management_agent_plugin_display_name"],
-        platform_types=var["management_agent_plugin_platform_type"],
-        state=var["management_agent_plugin_state"])
-    ```
-
-
-    :param str agent_id: The ManagementAgentID of the agent from which the Management Agents to be filtered.
-    :param str compartment_id: The OCID of the compartment to which a request will be scoped.
-    :param str display_name: Filter to return only Management Agent Plugins having the particular display name.
-    :param Sequence[str] platform_types: Array of PlatformTypes to return only results having the particular platform types. Example: ["LINUX"]
-    :param str state: Filter to return only Management Agents in the particular lifecycle state.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['agentId'] = agent_id
@@ -180,28 +149,6 @@ def get_management_agent_plugins_output(agent_id: Optional[pulumi.Input[Optional
                                         state: Optional[pulumi.Input[Optional[str]]] = None,
                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagementAgentPluginsResult]:
     """
-    This data source provides the list of Management Agent Plugins in Oracle Cloud Infrastructure Management Agent service.
-
-    Returns a list of managementAgentPlugins.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_management_agent_plugins = oci.ManagementAgent.get_management_agent_plugins(compartment_id=var["compartment_id"],
-        agent_id=var["management_agent_id"],
-        display_name=var["management_agent_plugin_display_name"],
-        platform_types=var["management_agent_plugin_platform_type"],
-        state=var["management_agent_plugin_state"])
-    ```
-
-
-    :param str agent_id: The ManagementAgentID of the agent from which the Management Agents to be filtered.
-    :param str compartment_id: The OCID of the compartment to which a request will be scoped.
-    :param str display_name: Filter to return only Management Agent Plugins having the particular display name.
-    :param Sequence[str] platform_types: Array of PlatformTypes to return only results having the particular platform types. Example: ["LINUX"]
-    :param str state: Filter to return only Management Agents in the particular lifecycle state.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -16,29 +16,29 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// The answer provided by a user for a security question.
         /// </summary>
-        public readonly string Answer;
+        public readonly string? Answer;
         /// <summary>
         /// The hint for an answer that's given by user when setting up a security question.
         /// </summary>
-        public readonly string HintText;
+        public readonly string? HintText;
         /// <summary>
         /// User Token URI
         /// </summary>
-        public readonly string Ref;
+        public readonly string? Ref;
         /// <summary>
         /// The value of a X509 certificate.
         /// </summary>
-        public readonly string Value;
+        public readonly string? Value;
 
         [OutputConstructor]
         private GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionResult(
-            string answer,
+            string? answer,
 
-            string hintText,
+            string? hintText,
 
-            string @ref,
+            string? @ref,
 
-            string value)
+            string? value)
         {
             Answer = answer;
             HintText = hintText;

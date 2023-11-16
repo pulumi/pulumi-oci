@@ -28,13 +28,13 @@ public final class GetExternalContainerDatabasesResult {
      * @return The list of external_container_databases.
      * 
      */
-    private List<GetExternalContainerDatabasesExternalContainerDatabase> externalContainerDatabases;
+    private @Nullable List<GetExternalContainerDatabasesExternalContainerDatabase> externalContainerDatabases;
     private @Nullable List<GetExternalContainerDatabasesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The current state of the Oracle Cloud Infrastructure external database resource.
      * 
@@ -61,7 +61,7 @@ public final class GetExternalContainerDatabasesResult {
      * 
      */
     public List<GetExternalContainerDatabasesExternalContainerDatabase> externalContainerDatabases() {
-        return this.externalContainerDatabases;
+        return this.externalContainerDatabases == null ? List.of() : this.externalContainerDatabases;
     }
     public List<GetExternalContainerDatabasesFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -70,8 +70,8 @@ public final class GetExternalContainerDatabasesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The current state of the Oracle Cloud Infrastructure external database resource.
@@ -92,9 +92,9 @@ public final class GetExternalContainerDatabasesResult {
     public static final class Builder {
         private String compartmentId;
         private @Nullable String displayName;
-        private List<GetExternalContainerDatabasesExternalContainerDatabase> externalContainerDatabases;
+        private @Nullable List<GetExternalContainerDatabasesExternalContainerDatabase> externalContainerDatabases;
         private @Nullable List<GetExternalContainerDatabasesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetExternalContainerDatabasesResult defaults) {
@@ -118,8 +118,8 @@ public final class GetExternalContainerDatabasesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder externalContainerDatabases(List<GetExternalContainerDatabasesExternalContainerDatabase> externalContainerDatabases) {
-            this.externalContainerDatabases = Objects.requireNonNull(externalContainerDatabases);
+        public Builder externalContainerDatabases(@Nullable List<GetExternalContainerDatabasesExternalContainerDatabase> externalContainerDatabases) {
+            this.externalContainerDatabases = externalContainerDatabases;
             return this;
         }
         public Builder externalContainerDatabases(GetExternalContainerDatabasesExternalContainerDatabase... externalContainerDatabases) {
@@ -134,8 +134,8 @@ public final class GetExternalContainerDatabasesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

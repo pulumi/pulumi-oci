@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Image Shapes in Oracle Cloud Infrastructure Core service.
@@ -62,7 +61,7 @@ type GetImageShapesArgs struct {
 type GetImageShapesResult struct {
 	Filters []GetImageShapesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	ImageId string `pulumi:"imageId"`
 	// The list of image_shape_compatibilities.
@@ -108,19 +107,13 @@ func (o GetImageShapesResultOutput) ToGetImageShapesResultOutputWithContext(ctx 
 	return o
 }
 
-func (o GetImageShapesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetImageShapesResult] {
-	return pulumix.Output[GetImageShapesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetImageShapesResultOutput) Filters() GetImageShapesFilterArrayOutput {
 	return o.ApplyT(func(v GetImageShapesResult) []GetImageShapesFilter { return v.Filters }).(GetImageShapesFilterArrayOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetImageShapesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetImageShapesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetImageShapesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetImageShapesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).

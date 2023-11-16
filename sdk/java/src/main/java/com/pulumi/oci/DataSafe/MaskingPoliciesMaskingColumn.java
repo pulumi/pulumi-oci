@@ -14,6 +14,7 @@ import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -123,14 +124,14 @@ public class MaskingPoliciesMaskingColumn extends com.pulumi.resources.CustomRes
      * 
      */
     @Export(name="childColumns", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> childColumns;
+    private Output</* @Nullable */ List<String>> childColumns;
 
     /**
      * @return An array of child columns that are in referential relationship with the masking column.
      * 
      */
-    public Output<List<String>> childColumns() {
-        return this.childColumns;
+    public Output<Optional<List<String>>> childColumns() {
+        return Codegen.optional(this.childColumns);
     }
     /**
      * (Updatable) The name of the substitution column.
@@ -151,84 +152,84 @@ public class MaskingPoliciesMaskingColumn extends com.pulumi.resources.CustomRes
      * 
      */
     @Export(name="dataType", refs={String.class}, tree="[0]")
-    private Output<String> dataType;
+    private Output</* @Nullable */ String> dataType;
 
     /**
      * @return The data type of the masking column.
      * 
      */
-    public Output<String> dataType() {
-        return this.dataType;
+    public Output<Optional<String>> dataType() {
+        return Codegen.optional(this.dataType);
     }
     /**
      * (Updatable) Indicates whether data masking is enabled for the masking column. Set it to false if  you don&#39;t want to mask the column.
      * 
      */
     @Export(name="isMaskingEnabled", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isMaskingEnabled;
+    private Output</* @Nullable */ Boolean> isMaskingEnabled;
 
     /**
      * @return (Updatable) Indicates whether data masking is enabled for the masking column. Set it to false if  you don&#39;t want to mask the column.
      * 
      */
-    public Output<Boolean> isMaskingEnabled() {
-        return this.isMaskingEnabled;
+    public Output<Optional<Boolean>> isMaskingEnabled() {
+        return Codegen.optional(this.isMaskingEnabled);
     }
     /**
      * The unique key that identifies the masking column. It&#39;s numeric and unique within a masking policy.
      * 
      */
     @Export(name="key", refs={String.class}, tree="[0]")
-    private Output<String> key;
+    private Output</* @Nullable */ String> key;
 
     /**
      * @return The unique key that identifies the masking column. It&#39;s numeric and unique within a masking policy.
      * 
      */
-    public Output<String> key() {
-        return this.key;
+    public Output<Optional<String>> key() {
+        return Codegen.optional(this.key);
     }
     /**
      * Details about the current state of the masking column.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return Details about the current state of the masking column.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * (Updatable) The group of the masking column. It&#39;s a masking group identifier and can be any string  of acceptable length. All the columns in a group are masked together to ensure that  the masked data across these columns continue to retain the same logical relationship.  For more details, check  &lt;a href=https://docs.oracle.com/en/cloud/paas/data-safe/udscs/group-masking1.html#GUID-755056B9-9540-48C0-9491-262A44A85037&gt;Group Masking in the Data Safe documentation.&lt;/a&gt;
      * 
      */
     @Export(name="maskingColumnGroup", refs={String.class}, tree="[0]")
-    private Output<String> maskingColumnGroup;
+    private Output</* @Nullable */ String> maskingColumnGroup;
 
     /**
      * @return (Updatable) The group of the masking column. It&#39;s a masking group identifier and can be any string  of acceptable length. All the columns in a group are masked together to ensure that  the masked data across these columns continue to retain the same logical relationship.  For more details, check  &lt;a href=https://docs.oracle.com/en/cloud/paas/data-safe/udscs/group-masking1.html#GUID-755056B9-9540-48C0-9491-262A44A85037&gt;Group Masking in the Data Safe documentation.&lt;/a&gt;
      * 
      */
-    public Output<String> maskingColumnGroup() {
-        return this.maskingColumnGroup;
+    public Output<Optional<String>> maskingColumnGroup() {
+        return Codegen.optional(this.maskingColumnGroup);
     }
     /**
      * (Updatable) The masking formats to be assigned to the masking column. You can specify a condition  as part of each masking format. It enables you to do  &lt;a href=&#34;https://docs.oracle.com/en/cloud/paas/data-safe/udscs/conditional-masking.html&#34;&gt;conditional masking&lt;/a&gt;  so that you can mask the column data values differently using different masking  formats and the associated conditions. A masking format can have one or more format  entries. The combined output of all the format entries is used for masking. It  provides the flexibility to define a masking format that can generate different parts  of a data value separately and then combine them to get the final data value for masking.
      * 
      */
     @Export(name="maskingFormats", refs={List.class,MaskingPoliciesMaskingColumnMaskingFormat.class}, tree="[0,1]")
-    private Output<List<MaskingPoliciesMaskingColumnMaskingFormat>> maskingFormats;
+    private Output</* @Nullable */ List<MaskingPoliciesMaskingColumnMaskingFormat>> maskingFormats;
 
     /**
      * @return (Updatable) The masking formats to be assigned to the masking column. You can specify a condition  as part of each masking format. It enables you to do  &lt;a href=&#34;https://docs.oracle.com/en/cloud/paas/data-safe/udscs/conditional-masking.html&#34;&gt;conditional masking&lt;/a&gt;  so that you can mask the column data values differently using different masking  formats and the associated conditions. A masking format can have one or more format  entries. The combined output of all the format entries is used for masking. It  provides the flexibility to define a masking format that can generate different parts  of a data value separately and then combine them to get the final data value for masking.
      * 
      */
-    public Output<List<MaskingPoliciesMaskingColumnMaskingFormat>> maskingFormats() {
-        return this.maskingFormats;
+    public Output<Optional<List<MaskingPoliciesMaskingColumnMaskingFormat>>> maskingFormats() {
+        return Codegen.optional(this.maskingFormats);
     }
     /**
      * The OCID of the masking policy.
@@ -263,14 +264,14 @@ public class MaskingPoliciesMaskingColumn extends com.pulumi.resources.CustomRes
      * 
      */
     @Export(name="objectType", refs={String.class}, tree="[0]")
-    private Output<String> objectType;
+    private Output</* @Nullable */ String> objectType;
 
     /**
      * @return (Updatable) The type of the object that contains the database column.
      * 
      */
-    public Output<String> objectType() {
-        return this.objectType;
+    public Output<Optional<String>> objectType() {
+        return Codegen.optional(this.objectType);
     }
     /**
      * The name of the schema that contains the database column. This attribute cannot be updated for an existing masking column.
@@ -294,7 +295,7 @@ public class MaskingPoliciesMaskingColumn extends com.pulumi.resources.CustomRes
      * 
      */
     @Export(name="sensitiveTypeId", refs={String.class}, tree="[0]")
-    private Output<String> sensitiveTypeId;
+    private Output</* @Nullable */ String> sensitiveTypeId;
 
     /**
      * @return (Updatable) The OCID of the sensitive type to be associated with the masking column. Note that  if the maskingFormats attribute isn&#39;t provided while creating a masking column,   the default masking format associated with the specified sensitive type is assigned  to the masking column.
@@ -303,50 +304,50 @@ public class MaskingPoliciesMaskingColumn extends com.pulumi.resources.CustomRes
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> sensitiveTypeId() {
-        return this.sensitiveTypeId;
+    public Output<Optional<String>> sensitiveTypeId() {
+        return Codegen.optional(this.sensitiveTypeId);
     }
     /**
      * The current state of the masking column.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the masking column.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The date and time the masking column was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the masking column was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The date and time the masking column was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The date and time the masking column was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
 
     /**

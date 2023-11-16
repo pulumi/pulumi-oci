@@ -341,7 +341,7 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
         /// </summary>
@@ -384,7 +384,7 @@ namespace Pulumi.Oci.DataSafe
 
             ImmutableArray<Outputs.GetUserAssessmentsFilterResult> filters,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetUserAssessmentsIgnoredTargetResult> ignoredTargets,
 

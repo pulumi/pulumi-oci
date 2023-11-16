@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.CloudGuard.outputs.GetSecurityRecipesSecurityRecipeCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSecurityRecipesSecurityRecipeCollection {
-    private List<GetSecurityRecipesSecurityRecipeCollectionItem> items;
+    private @Nullable List<GetSecurityRecipesSecurityRecipeCollectionItem> items;
 
     private GetSecurityRecipesSecurityRecipeCollection() {}
     public List<GetSecurityRecipesSecurityRecipeCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetSecurityRecipesSecurityRecipeCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetSecurityRecipesSecurityRecipeCollectionItem> items;
+        private @Nullable List<GetSecurityRecipesSecurityRecipeCollectionItem> items;
         public Builder() {}
         public Builder(GetSecurityRecipesSecurityRecipeCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetSecurityRecipesSecurityRecipeCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetSecurityRecipesSecurityRecipeCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetSecurityRecipesSecurityRecipeCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetSecurityRecipesSecurityRecipeCollectionItem... items) {

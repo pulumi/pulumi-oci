@@ -62,10 +62,7 @@ class GetDomainsAccountRecoverySettingsResult:
 
     @property
     @pulumi.getter(name="accountRecoverySettings")
-    def account_recovery_settings(self) -> Sequence['outputs.GetDomainsAccountRecoverySettingsAccountRecoverySettingResult']:
-        """
-        The list of account_recovery_settings.
-        """
+    def account_recovery_settings(self) -> Optional[Sequence['outputs.GetDomainsAccountRecoverySettingsAccountRecoverySettingResult']]:
         return pulumi.get(self, "account_recovery_settings")
 
     @property
@@ -90,7 +87,7 @@ class GetDomainsAccountRecoverySettingsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -103,7 +100,7 @@ class GetDomainsAccountRecoverySettingsResult:
 
     @property
     @pulumi.getter(name="itemsPerPage")
-    def items_per_page(self) -> int:
+    def items_per_page(self) -> Optional[int]:
         return pulumi.get(self, "items_per_page")
 
     @property
@@ -113,20 +110,17 @@ class GetDomainsAccountRecoverySettingsResult:
 
     @property
     @pulumi.getter
-    def schemas(self) -> Sequence[str]:
-        """
-        REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
-        """
+    def schemas(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "schemas")
 
     @property
     @pulumi.getter(name="startIndex")
-    def start_index(self) -> int:
+    def start_index(self) -> Optional[int]:
         return pulumi.get(self, "start_index")
 
     @property
     @pulumi.getter(name="totalResults")
-    def total_results(self) -> int:
+    def total_results(self) -> Optional[int]:
         return pulumi.get(self, "total_results")
 
 
@@ -158,29 +152,7 @@ def get_domains_account_recovery_settings(attribute_sets: Optional[Sequence[str]
                                           resource_type_schema_version: Optional[str] = None,
                                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDomainsAccountRecoverySettingsResult:
     """
-    This data source provides the list of Account Recovery Settings in Oracle Cloud Infrastructure Identity Domains service.
-
-    Search for account recovery settings.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_account_recovery_settings = oci.Identity.get_domains_account_recovery_settings(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        attribute_sets=["all"],
-        attributes="",
-        authorization=var["account_recovery_setting_authorization"],
-        resource_type_schema_version=var["account_recovery_setting_resource_type_schema_version"])
-    ```
-
-
-    :param Sequence[str] attribute_sets: A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
-    :param str attributes: A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
-    :param str authorization: The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
-    :param str idcs_endpoint: The basic endpoint for the identity domain
-    :param str resource_type_schema_version: An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['attributeSets'] = attribute_sets
@@ -216,28 +188,6 @@ def get_domains_account_recovery_settings_output(attribute_sets: Optional[pulumi
                                                  resource_type_schema_version: Optional[pulumi.Input[Optional[str]]] = None,
                                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDomainsAccountRecoverySettingsResult]:
     """
-    This data source provides the list of Account Recovery Settings in Oracle Cloud Infrastructure Identity Domains service.
-
-    Search for account recovery settings.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_account_recovery_settings = oci.Identity.get_domains_account_recovery_settings(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        attribute_sets=["all"],
-        attributes="",
-        authorization=var["account_recovery_setting_authorization"],
-        resource_type_schema_version=var["account_recovery_setting_resource_type_schema_version"])
-    ```
-
-
-    :param Sequence[str] attribute_sets: A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
-    :param str attributes: A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
-    :param str authorization: The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
-    :param str idcs_endpoint: The basic endpoint for the identity domain
-    :param str resource_type_schema_version: An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+    Use this data source to access information about an existing resource.
     """
     ...

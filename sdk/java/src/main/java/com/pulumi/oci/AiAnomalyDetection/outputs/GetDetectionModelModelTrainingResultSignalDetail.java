@@ -8,6 +8,8 @@ import java.lang.Boolean;
 import java.lang.Double;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDetectionModelModelTrainingResultSignalDetail {
@@ -15,37 +17,37 @@ public final class GetDetectionModelModelTrainingResultSignalDetail {
      * @return detailed information for a signal.
      * 
      */
-    private String details;
+    private @Nullable String details;
     /**
      * @return Accuracy metric for a signal.
      * 
      */
-    private Double fap;
+    private @Nullable Double fap;
     /**
      * @return A boolean value to indicate if a signal is quantized or not.
      * 
      */
-    private Boolean isQuantized;
+    private @Nullable Boolean isQuantized;
     /**
      * @return Max value within a signal.
      * 
      */
-    private Double max;
+    private @Nullable Double max;
     /**
      * @return Min value within a signal.
      * 
      */
-    private Double min;
+    private @Nullable Double min;
     /**
      * @return The ratio of missing values in a signal filled/imputed by the IDP algorithm.
      * 
      */
-    private Double mviRatio;
+    private @Nullable Double mviRatio;
     /**
      * @return The name of a signal.
      * 
      */
-    private String signalName;
+    private @Nullable String signalName;
     /**
      * @return Status of the signal:
      * * ACCEPTED - the signal is used for training the model
@@ -53,62 +55,62 @@ public final class GetDetectionModelModelTrainingResultSignalDetail {
      * * OTHER - placeholder for other status
      * 
      */
-    private String status;
+    private @Nullable String status;
     /**
      * @return Standard deviation of values within a signal.
      * 
      */
-    private Double std;
+    private @Nullable Double std;
 
     private GetDetectionModelModelTrainingResultSignalDetail() {}
     /**
      * @return detailed information for a signal.
      * 
      */
-    public String details() {
-        return this.details;
+    public Optional<String> details() {
+        return Optional.ofNullable(this.details);
     }
     /**
      * @return Accuracy metric for a signal.
      * 
      */
-    public Double fap() {
-        return this.fap;
+    public Optional<Double> fap() {
+        return Optional.ofNullable(this.fap);
     }
     /**
      * @return A boolean value to indicate if a signal is quantized or not.
      * 
      */
-    public Boolean isQuantized() {
-        return this.isQuantized;
+    public Optional<Boolean> isQuantized() {
+        return Optional.ofNullable(this.isQuantized);
     }
     /**
      * @return Max value within a signal.
      * 
      */
-    public Double max() {
-        return this.max;
+    public Optional<Double> max() {
+        return Optional.ofNullable(this.max);
     }
     /**
      * @return Min value within a signal.
      * 
      */
-    public Double min() {
-        return this.min;
+    public Optional<Double> min() {
+        return Optional.ofNullable(this.min);
     }
     /**
      * @return The ratio of missing values in a signal filled/imputed by the IDP algorithm.
      * 
      */
-    public Double mviRatio() {
-        return this.mviRatio;
+    public Optional<Double> mviRatio() {
+        return Optional.ofNullable(this.mviRatio);
     }
     /**
      * @return The name of a signal.
      * 
      */
-    public String signalName() {
-        return this.signalName;
+    public Optional<String> signalName() {
+        return Optional.ofNullable(this.signalName);
     }
     /**
      * @return Status of the signal:
@@ -117,15 +119,15 @@ public final class GetDetectionModelModelTrainingResultSignalDetail {
      * * OTHER - placeholder for other status
      * 
      */
-    public String status() {
-        return this.status;
+    public Optional<String> status() {
+        return Optional.ofNullable(this.status);
     }
     /**
      * @return Standard deviation of values within a signal.
      * 
      */
-    public Double std() {
-        return this.std;
+    public Optional<Double> std() {
+        return Optional.ofNullable(this.std);
     }
 
     public static Builder builder() {
@@ -137,15 +139,15 @@ public final class GetDetectionModelModelTrainingResultSignalDetail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String details;
-        private Double fap;
-        private Boolean isQuantized;
-        private Double max;
-        private Double min;
-        private Double mviRatio;
-        private String signalName;
-        private String status;
-        private Double std;
+        private @Nullable String details;
+        private @Nullable Double fap;
+        private @Nullable Boolean isQuantized;
+        private @Nullable Double max;
+        private @Nullable Double min;
+        private @Nullable Double mviRatio;
+        private @Nullable String signalName;
+        private @Nullable String status;
+        private @Nullable Double std;
         public Builder() {}
         public Builder(GetDetectionModelModelTrainingResultSignalDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -161,48 +163,48 @@ public final class GetDetectionModelModelTrainingResultSignalDetail {
         }
 
         @CustomType.Setter
-        public Builder details(String details) {
-            this.details = Objects.requireNonNull(details);
+        public Builder details(@Nullable String details) {
+            this.details = details;
             return this;
         }
         @CustomType.Setter
-        public Builder fap(Double fap) {
-            this.fap = Objects.requireNonNull(fap);
+        public Builder fap(@Nullable Double fap) {
+            this.fap = fap;
             return this;
         }
         @CustomType.Setter
-        public Builder isQuantized(Boolean isQuantized) {
-            this.isQuantized = Objects.requireNonNull(isQuantized);
+        public Builder isQuantized(@Nullable Boolean isQuantized) {
+            this.isQuantized = isQuantized;
             return this;
         }
         @CustomType.Setter
-        public Builder max(Double max) {
-            this.max = Objects.requireNonNull(max);
+        public Builder max(@Nullable Double max) {
+            this.max = max;
             return this;
         }
         @CustomType.Setter
-        public Builder min(Double min) {
-            this.min = Objects.requireNonNull(min);
+        public Builder min(@Nullable Double min) {
+            this.min = min;
             return this;
         }
         @CustomType.Setter
-        public Builder mviRatio(Double mviRatio) {
-            this.mviRatio = Objects.requireNonNull(mviRatio);
+        public Builder mviRatio(@Nullable Double mviRatio) {
+            this.mviRatio = mviRatio;
             return this;
         }
         @CustomType.Setter
-        public Builder signalName(String signalName) {
-            this.signalName = Objects.requireNonNull(signalName);
+        public Builder signalName(@Nullable String signalName) {
+            this.signalName = signalName;
             return this;
         }
         @CustomType.Setter
-        public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+        public Builder status(@Nullable String status) {
+            this.status = status;
             return this;
         }
         @CustomType.Setter
-        public Builder std(Double std) {
-            this.std = Objects.requireNonNull(std);
+        public Builder std(@Nullable Double std) {
+            this.std = std;
             return this;
         }
         public GetDetectionModelModelTrainingResultSignalDetail build() {

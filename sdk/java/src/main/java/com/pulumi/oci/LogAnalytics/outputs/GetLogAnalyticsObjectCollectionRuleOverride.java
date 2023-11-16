@@ -6,26 +6,28 @@ package com.pulumi.oci.LogAnalytics.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetLogAnalyticsObjectCollectionRuleOverride {
-    private String matchType;
-    private String matchValue;
-    private String propertyName;
-    private String propertyValue;
+    private @Nullable String matchType;
+    private @Nullable String matchValue;
+    private @Nullable String propertyName;
+    private @Nullable String propertyValue;
 
     private GetLogAnalyticsObjectCollectionRuleOverride() {}
-    public String matchType() {
-        return this.matchType;
+    public Optional<String> matchType() {
+        return Optional.ofNullable(this.matchType);
     }
-    public String matchValue() {
-        return this.matchValue;
+    public Optional<String> matchValue() {
+        return Optional.ofNullable(this.matchValue);
     }
-    public String propertyName() {
-        return this.propertyName;
+    public Optional<String> propertyName() {
+        return Optional.ofNullable(this.propertyName);
     }
-    public String propertyValue() {
-        return this.propertyValue;
+    public Optional<String> propertyValue() {
+        return Optional.ofNullable(this.propertyValue);
     }
 
     public static Builder builder() {
@@ -37,10 +39,10 @@ public final class GetLogAnalyticsObjectCollectionRuleOverride {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String matchType;
-        private String matchValue;
-        private String propertyName;
-        private String propertyValue;
+        private @Nullable String matchType;
+        private @Nullable String matchValue;
+        private @Nullable String propertyName;
+        private @Nullable String propertyValue;
         public Builder() {}
         public Builder(GetLogAnalyticsObjectCollectionRuleOverride defaults) {
     	      Objects.requireNonNull(defaults);
@@ -51,23 +53,23 @@ public final class GetLogAnalyticsObjectCollectionRuleOverride {
         }
 
         @CustomType.Setter
-        public Builder matchType(String matchType) {
-            this.matchType = Objects.requireNonNull(matchType);
+        public Builder matchType(@Nullable String matchType) {
+            this.matchType = matchType;
             return this;
         }
         @CustomType.Setter
-        public Builder matchValue(String matchValue) {
-            this.matchValue = Objects.requireNonNull(matchValue);
+        public Builder matchValue(@Nullable String matchValue) {
+            this.matchValue = matchValue;
             return this;
         }
         @CustomType.Setter
-        public Builder propertyName(String propertyName) {
-            this.propertyName = Objects.requireNonNull(propertyName);
+        public Builder propertyName(@Nullable String propertyName) {
+            this.propertyName = propertyName;
             return this;
         }
         @CustomType.Setter
-        public Builder propertyValue(String propertyValue) {
-            this.propertyValue = Objects.requireNonNull(propertyValue);
+        public Builder propertyValue(@Nullable String propertyValue) {
+            this.propertyValue = propertyValue;
             return this;
         }
         public GetLogAnalyticsObjectCollectionRuleOverride build() {

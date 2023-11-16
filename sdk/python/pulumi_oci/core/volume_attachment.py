@@ -30,22 +30,6 @@ class VolumeAttachmentArgs:
                  use_chap: Optional[pulumi.Input[bool]] = None):
         """
         The set of arguments for constructing a VolumeAttachment resource.
-        :param pulumi.Input[str] attachment_type: The type of volume. The only supported values are "iscsi" and "paravirtualized".
-        :param pulumi.Input[str] instance_id: The OCID of the instance.
-        :param pulumi.Input[str] volume_id: The OCID of the volume.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] compartment_id: The OCID of the compartment.
-        :param pulumi.Input[str] device: The device name. To retrieve a list of devices for a given instance, see [ListInstanceDevices](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Device/ListInstanceDevices).
-        :param pulumi.Input[str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[str] encryption_in_transit_type: Refer the top-level definition of encryptionInTransitType. The default value is NONE.
-        :param pulumi.Input[bool] is_agent_auto_iscsi_login_enabled: Whether to enable Oracle Cloud Agent to perform the iSCSI login and logout commands after the volume attach or detach operations for non multipath-enabled iSCSI attachments.
-        :param pulumi.Input[bool] is_pv_encryption_in_transit_enabled: Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false.
-        :param pulumi.Input[bool] is_read_only: Whether the attachment was created in read-only mode.
-        :param pulumi.Input[bool] is_shareable: Whether the attachment should be created in shareable mode. If an attachment is created in shareable mode, then other instances can attach the same volume, provided that they also create their attachments in shareable mode. Only certain volume types can be attached in shareable mode. Defaults to false if not specified.
-        :param pulumi.Input[bool] use_chap: Whether to use CHAP authentication for the volume attachment. Defaults to false.
         """
         pulumi.set(__self__, "attachment_type", attachment_type)
         pulumi.set(__self__, "instance_id", instance_id)
@@ -75,9 +59,6 @@ class VolumeAttachmentArgs:
     @property
     @pulumi.getter(name="attachmentType")
     def attachment_type(self) -> pulumi.Input[str]:
-        """
-        The type of volume. The only supported values are "iscsi" and "paravirtualized".
-        """
         return pulumi.get(self, "attachment_type")
 
     @attachment_type.setter
@@ -87,9 +68,6 @@ class VolumeAttachmentArgs:
     @property
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of the instance.
-        """
         return pulumi.get(self, "instance_id")
 
     @instance_id.setter
@@ -99,13 +77,6 @@ class VolumeAttachmentArgs:
     @property
     @pulumi.getter(name="volumeId")
     def volume_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of the volume.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "volume_id")
 
     @volume_id.setter
@@ -115,9 +86,6 @@ class VolumeAttachmentArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the compartment.
-        """
         warnings.warn("""The 'compartment_id' field has been deprecated and may be removed in a future version. Do not use this field.""", DeprecationWarning)
         pulumi.log.warn("""compartment_id is deprecated: The 'compartment_id' field has been deprecated and may be removed in a future version. Do not use this field.""")
 
@@ -130,9 +98,6 @@ class VolumeAttachmentArgs:
     @property
     @pulumi.getter
     def device(self) -> Optional[pulumi.Input[str]]:
-        """
-        The device name. To retrieve a list of devices for a given instance, see [ListInstanceDevices](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Device/ListInstanceDevices).
-        """
         return pulumi.get(self, "device")
 
     @device.setter
@@ -142,9 +107,6 @@ class VolumeAttachmentArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -154,9 +116,6 @@ class VolumeAttachmentArgs:
     @property
     @pulumi.getter(name="encryptionInTransitType")
     def encryption_in_transit_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        Refer the top-level definition of encryptionInTransitType. The default value is NONE.
-        """
         return pulumi.get(self, "encryption_in_transit_type")
 
     @encryption_in_transit_type.setter
@@ -166,9 +125,6 @@ class VolumeAttachmentArgs:
     @property
     @pulumi.getter(name="isAgentAutoIscsiLoginEnabled")
     def is_agent_auto_iscsi_login_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether to enable Oracle Cloud Agent to perform the iSCSI login and logout commands after the volume attach or detach operations for non multipath-enabled iSCSI attachments.
-        """
         return pulumi.get(self, "is_agent_auto_iscsi_login_enabled")
 
     @is_agent_auto_iscsi_login_enabled.setter
@@ -178,9 +134,6 @@ class VolumeAttachmentArgs:
     @property
     @pulumi.getter(name="isPvEncryptionInTransitEnabled")
     def is_pv_encryption_in_transit_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false.
-        """
         return pulumi.get(self, "is_pv_encryption_in_transit_enabled")
 
     @is_pv_encryption_in_transit_enabled.setter
@@ -190,9 +143,6 @@ class VolumeAttachmentArgs:
     @property
     @pulumi.getter(name="isReadOnly")
     def is_read_only(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether the attachment was created in read-only mode.
-        """
         return pulumi.get(self, "is_read_only")
 
     @is_read_only.setter
@@ -202,9 +152,6 @@ class VolumeAttachmentArgs:
     @property
     @pulumi.getter(name="isShareable")
     def is_shareable(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether the attachment should be created in shareable mode. If an attachment is created in shareable mode, then other instances can attach the same volume, provided that they also create their attachments in shareable mode. Only certain volume types can be attached in shareable mode. Defaults to false if not specified.
-        """
         return pulumi.get(self, "is_shareable")
 
     @is_shareable.setter
@@ -214,9 +161,6 @@ class VolumeAttachmentArgs:
     @property
     @pulumi.getter(name="useChap")
     def use_chap(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether to use CHAP authentication for the volume attachment. Defaults to false.
-        """
         return pulumi.get(self, "use_chap")
 
     @use_chap.setter
@@ -252,33 +196,6 @@ class _VolumeAttachmentState:
                  volume_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering VolumeAttachment resources.
-        :param pulumi.Input[str] attachment_type: The type of volume. The only supported values are "iscsi" and "paravirtualized".
-        :param pulumi.Input[str] availability_domain: The availability domain of an instance.  Example: `Uocm:PHX-AD-1`
-        :param pulumi.Input[str] chap_secret: The Challenge-Handshake-Authentication-Protocol (CHAP) secret valid for the associated CHAP user name. (Also called the "CHAP password".)
-        :param pulumi.Input[str] chap_username: The volume's system-generated Challenge-Handshake-Authentication-Protocol (CHAP) user name. See [RFC 1994](https://tools.ietf.org/html/rfc1994) for more on CHAP.  Example: `ocid1.volume.oc1.phx.<unique_ID>`
-        :param pulumi.Input[str] compartment_id: The OCID of the compartment.
-        :param pulumi.Input[str] device: The device name. To retrieve a list of devices for a given instance, see [ListInstanceDevices](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Device/ListInstanceDevices).
-        :param pulumi.Input[str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[str] encryption_in_transit_type: Refer the top-level definition of encryptionInTransitType. The default value is NONE.
-        :param pulumi.Input[str] instance_id: The OCID of the instance.
-        :param pulumi.Input[str] ipv4: The volume's iSCSI IP address.  Example: `169.254.2.2`
-        :param pulumi.Input[str] iqn: The target volume's iSCSI Qualified Name in the format defined by [RFC 3720](https://tools.ietf.org/html/rfc3720#page-32).  Example: `iqn.2015-12.com.oracleiaas:40b7ee03-883f-46c6-a951-63d2841d2195`
-        :param pulumi.Input[bool] is_agent_auto_iscsi_login_enabled: Whether to enable Oracle Cloud Agent to perform the iSCSI login and logout commands after the volume attach or detach operations for non multipath-enabled iSCSI attachments.
-        :param pulumi.Input[bool] is_multipath: Whether the Iscsi or Paravirtualized attachment is multipath or not, it is not applicable to NVMe attachment.
-        :param pulumi.Input[bool] is_pv_encryption_in_transit_enabled: Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false.
-        :param pulumi.Input[bool] is_read_only: Whether the attachment was created in read-only mode.
-        :param pulumi.Input[bool] is_shareable: Whether the attachment should be created in shareable mode. If an attachment is created in shareable mode, then other instances can attach the same volume, provided that they also create their attachments in shareable mode. Only certain volume types can be attached in shareable mode. Defaults to false if not specified.
-        :param pulumi.Input[str] iscsi_login_state: The iscsi login state of the volume attachment. For a Iscsi volume attachment, all iscsi sessions need to be all logged-in or logged-out to be in logged-in or logged-out state.
-        :param pulumi.Input[Sequence[pulumi.Input['VolumeAttachmentMultipathDeviceArgs']]] multipath_devices: A list of secondary multipath devices
-        :param pulumi.Input[int] port: The volume's iSCSI port, usually port 860 or 3260.  Example: `3260`
-        :param pulumi.Input[str] state: The current state of the volume attachment.
-        :param pulumi.Input[str] time_created: The date and time the volume was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-        :param pulumi.Input[bool] use_chap: Whether to use CHAP authentication for the volume attachment. Defaults to false.
-        :param pulumi.Input[str] volume_id: The OCID of the volume.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if attachment_type is not None:
             pulumi.set(__self__, "attachment_type", attachment_type)
@@ -333,9 +250,6 @@ class _VolumeAttachmentState:
     @property
     @pulumi.getter(name="attachmentType")
     def attachment_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The type of volume. The only supported values are "iscsi" and "paravirtualized".
-        """
         return pulumi.get(self, "attachment_type")
 
     @attachment_type.setter
@@ -345,9 +259,6 @@ class _VolumeAttachmentState:
     @property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> Optional[pulumi.Input[str]]:
-        """
-        The availability domain of an instance.  Example: `Uocm:PHX-AD-1`
-        """
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
@@ -357,9 +268,6 @@ class _VolumeAttachmentState:
     @property
     @pulumi.getter(name="chapSecret")
     def chap_secret(self) -> Optional[pulumi.Input[str]]:
-        """
-        The Challenge-Handshake-Authentication-Protocol (CHAP) secret valid for the associated CHAP user name. (Also called the "CHAP password".)
-        """
         return pulumi.get(self, "chap_secret")
 
     @chap_secret.setter
@@ -369,9 +277,6 @@ class _VolumeAttachmentState:
     @property
     @pulumi.getter(name="chapUsername")
     def chap_username(self) -> Optional[pulumi.Input[str]]:
-        """
-        The volume's system-generated Challenge-Handshake-Authentication-Protocol (CHAP) user name. See [RFC 1994](https://tools.ietf.org/html/rfc1994) for more on CHAP.  Example: `ocid1.volume.oc1.phx.<unique_ID>`
-        """
         return pulumi.get(self, "chap_username")
 
     @chap_username.setter
@@ -381,9 +286,6 @@ class _VolumeAttachmentState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the compartment.
-        """
         warnings.warn("""The 'compartment_id' field has been deprecated and may be removed in a future version. Do not use this field.""", DeprecationWarning)
         pulumi.log.warn("""compartment_id is deprecated: The 'compartment_id' field has been deprecated and may be removed in a future version. Do not use this field.""")
 
@@ -396,9 +298,6 @@ class _VolumeAttachmentState:
     @property
     @pulumi.getter
     def device(self) -> Optional[pulumi.Input[str]]:
-        """
-        The device name. To retrieve a list of devices for a given instance, see [ListInstanceDevices](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Device/ListInstanceDevices).
-        """
         return pulumi.get(self, "device")
 
     @device.setter
@@ -408,9 +307,6 @@ class _VolumeAttachmentState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -420,9 +316,6 @@ class _VolumeAttachmentState:
     @property
     @pulumi.getter(name="encryptionInTransitType")
     def encryption_in_transit_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        Refer the top-level definition of encryptionInTransitType. The default value is NONE.
-        """
         return pulumi.get(self, "encryption_in_transit_type")
 
     @encryption_in_transit_type.setter
@@ -432,9 +325,6 @@ class _VolumeAttachmentState:
     @property
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the instance.
-        """
         return pulumi.get(self, "instance_id")
 
     @instance_id.setter
@@ -444,9 +334,6 @@ class _VolumeAttachmentState:
     @property
     @pulumi.getter
     def ipv4(self) -> Optional[pulumi.Input[str]]:
-        """
-        The volume's iSCSI IP address.  Example: `169.254.2.2`
-        """
         return pulumi.get(self, "ipv4")
 
     @ipv4.setter
@@ -456,9 +343,6 @@ class _VolumeAttachmentState:
     @property
     @pulumi.getter
     def iqn(self) -> Optional[pulumi.Input[str]]:
-        """
-        The target volume's iSCSI Qualified Name in the format defined by [RFC 3720](https://tools.ietf.org/html/rfc3720#page-32).  Example: `iqn.2015-12.com.oracleiaas:40b7ee03-883f-46c6-a951-63d2841d2195`
-        """
         return pulumi.get(self, "iqn")
 
     @iqn.setter
@@ -468,9 +352,6 @@ class _VolumeAttachmentState:
     @property
     @pulumi.getter(name="isAgentAutoIscsiLoginEnabled")
     def is_agent_auto_iscsi_login_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether to enable Oracle Cloud Agent to perform the iSCSI login and logout commands after the volume attach or detach operations for non multipath-enabled iSCSI attachments.
-        """
         return pulumi.get(self, "is_agent_auto_iscsi_login_enabled")
 
     @is_agent_auto_iscsi_login_enabled.setter
@@ -480,9 +361,6 @@ class _VolumeAttachmentState:
     @property
     @pulumi.getter(name="isMultipath")
     def is_multipath(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether the Iscsi or Paravirtualized attachment is multipath or not, it is not applicable to NVMe attachment.
-        """
         return pulumi.get(self, "is_multipath")
 
     @is_multipath.setter
@@ -492,9 +370,6 @@ class _VolumeAttachmentState:
     @property
     @pulumi.getter(name="isPvEncryptionInTransitEnabled")
     def is_pv_encryption_in_transit_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false.
-        """
         return pulumi.get(self, "is_pv_encryption_in_transit_enabled")
 
     @is_pv_encryption_in_transit_enabled.setter
@@ -504,9 +379,6 @@ class _VolumeAttachmentState:
     @property
     @pulumi.getter(name="isReadOnly")
     def is_read_only(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether the attachment was created in read-only mode.
-        """
         return pulumi.get(self, "is_read_only")
 
     @is_read_only.setter
@@ -516,9 +388,6 @@ class _VolumeAttachmentState:
     @property
     @pulumi.getter(name="isShareable")
     def is_shareable(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether the attachment should be created in shareable mode. If an attachment is created in shareable mode, then other instances can attach the same volume, provided that they also create their attachments in shareable mode. Only certain volume types can be attached in shareable mode. Defaults to false if not specified.
-        """
         return pulumi.get(self, "is_shareable")
 
     @is_shareable.setter
@@ -528,9 +397,6 @@ class _VolumeAttachmentState:
     @property
     @pulumi.getter(name="iscsiLoginState")
     def iscsi_login_state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The iscsi login state of the volume attachment. For a Iscsi volume attachment, all iscsi sessions need to be all logged-in or logged-out to be in logged-in or logged-out state.
-        """
         return pulumi.get(self, "iscsi_login_state")
 
     @iscsi_login_state.setter
@@ -540,9 +406,6 @@ class _VolumeAttachmentState:
     @property
     @pulumi.getter(name="multipathDevices")
     def multipath_devices(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VolumeAttachmentMultipathDeviceArgs']]]]:
-        """
-        A list of secondary multipath devices
-        """
         return pulumi.get(self, "multipath_devices")
 
     @multipath_devices.setter
@@ -552,9 +415,6 @@ class _VolumeAttachmentState:
     @property
     @pulumi.getter
     def port(self) -> Optional[pulumi.Input[int]]:
-        """
-        The volume's iSCSI port, usually port 860 or 3260.  Example: `3260`
-        """
         return pulumi.get(self, "port")
 
     @port.setter
@@ -564,9 +424,6 @@ class _VolumeAttachmentState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the volume attachment.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -576,9 +433,6 @@ class _VolumeAttachmentState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the volume was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -588,9 +442,6 @@ class _VolumeAttachmentState:
     @property
     @pulumi.getter(name="useChap")
     def use_chap(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether to use CHAP authentication for the volume attachment. Defaults to false.
-        """
         return pulumi.get(self, "use_chap")
 
     @use_chap.setter
@@ -600,13 +451,6 @@ class _VolumeAttachmentState:
     @property
     @pulumi.getter(name="volumeId")
     def volume_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the volume.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "volume_id")
 
     @volume_id.setter
@@ -633,56 +477,9 @@ class VolumeAttachment(pulumi.CustomResource):
                  volume_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Volume Attachment resource in Oracle Cloud Infrastructure Core service.
-
-        Attaches the specified storage volume to the specified instance.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_volume_attachment = oci.core.VolumeAttachment("testVolumeAttachment",
-            attachment_type=var["volume_attachment_attachment_type"],
-            instance_id=oci_core_instance["test_instance"]["id"],
-            volume_id=oci_core_volume["test_volume"]["id"],
-            device=var["volume_attachment_device"],
-            display_name=var["volume_attachment_display_name"],
-            encryption_in_transit_type=var["volume_attachment_encryption_in_transit_type"],
-            is_agent_auto_iscsi_login_enabled=var["volume_attachment_is_agent_auto_iscsi_login_enabled"],
-            is_pv_encryption_in_transit_enabled=var["volume_attachment_is_pv_encryption_in_transit_enabled"],
-            is_read_only=var["volume_attachment_is_read_only"],
-            is_shareable=var["volume_attachment_is_shareable"],
-            use_chap=var["volume_attachment_use_chap"])
-        ```
-
-        ## Import
-
-        VolumeAttachments can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Core/volumeAttachment:VolumeAttachment test_volume_attachment "id"
-        ```
-
+        Create a VolumeAttachment resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] attachment_type: The type of volume. The only supported values are "iscsi" and "paravirtualized".
-        :param pulumi.Input[str] compartment_id: The OCID of the compartment.
-        :param pulumi.Input[str] device: The device name. To retrieve a list of devices for a given instance, see [ListInstanceDevices](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Device/ListInstanceDevices).
-        :param pulumi.Input[str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[str] encryption_in_transit_type: Refer the top-level definition of encryptionInTransitType. The default value is NONE.
-        :param pulumi.Input[str] instance_id: The OCID of the instance.
-        :param pulumi.Input[bool] is_agent_auto_iscsi_login_enabled: Whether to enable Oracle Cloud Agent to perform the iSCSI login and logout commands after the volume attach or detach operations for non multipath-enabled iSCSI attachments.
-        :param pulumi.Input[bool] is_pv_encryption_in_transit_enabled: Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false.
-        :param pulumi.Input[bool] is_read_only: Whether the attachment was created in read-only mode.
-        :param pulumi.Input[bool] is_shareable: Whether the attachment should be created in shareable mode. If an attachment is created in shareable mode, then other instances can attach the same volume, provided that they also create their attachments in shareable mode. Only certain volume types can be attached in shareable mode. Defaults to false if not specified.
-        :param pulumi.Input[bool] use_chap: Whether to use CHAP authentication for the volume attachment. Defaults to false.
-        :param pulumi.Input[str] volume_id: The OCID of the volume.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -691,38 +488,7 @@ class VolumeAttachment(pulumi.CustomResource):
                  args: VolumeAttachmentArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Volume Attachment resource in Oracle Cloud Infrastructure Core service.
-
-        Attaches the specified storage volume to the specified instance.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_volume_attachment = oci.core.VolumeAttachment("testVolumeAttachment",
-            attachment_type=var["volume_attachment_attachment_type"],
-            instance_id=oci_core_instance["test_instance"]["id"],
-            volume_id=oci_core_volume["test_volume"]["id"],
-            device=var["volume_attachment_device"],
-            display_name=var["volume_attachment_display_name"],
-            encryption_in_transit_type=var["volume_attachment_encryption_in_transit_type"],
-            is_agent_auto_iscsi_login_enabled=var["volume_attachment_is_agent_auto_iscsi_login_enabled"],
-            is_pv_encryption_in_transit_enabled=var["volume_attachment_is_pv_encryption_in_transit_enabled"],
-            is_read_only=var["volume_attachment_is_read_only"],
-            is_shareable=var["volume_attachment_is_shareable"],
-            use_chap=var["volume_attachment_use_chap"])
-        ```
-
-        ## Import
-
-        VolumeAttachments can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Core/volumeAttachment:VolumeAttachment test_volume_attachment "id"
-        ```
-
+        Create a VolumeAttachment resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param VolumeAttachmentArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -828,33 +594,6 @@ class VolumeAttachment(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] attachment_type: The type of volume. The only supported values are "iscsi" and "paravirtualized".
-        :param pulumi.Input[str] availability_domain: The availability domain of an instance.  Example: `Uocm:PHX-AD-1`
-        :param pulumi.Input[str] chap_secret: The Challenge-Handshake-Authentication-Protocol (CHAP) secret valid for the associated CHAP user name. (Also called the "CHAP password".)
-        :param pulumi.Input[str] chap_username: The volume's system-generated Challenge-Handshake-Authentication-Protocol (CHAP) user name. See [RFC 1994](https://tools.ietf.org/html/rfc1994) for more on CHAP.  Example: `ocid1.volume.oc1.phx.<unique_ID>`
-        :param pulumi.Input[str] compartment_id: The OCID of the compartment.
-        :param pulumi.Input[str] device: The device name. To retrieve a list of devices for a given instance, see [ListInstanceDevices](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Device/ListInstanceDevices).
-        :param pulumi.Input[str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[str] encryption_in_transit_type: Refer the top-level definition of encryptionInTransitType. The default value is NONE.
-        :param pulumi.Input[str] instance_id: The OCID of the instance.
-        :param pulumi.Input[str] ipv4: The volume's iSCSI IP address.  Example: `169.254.2.2`
-        :param pulumi.Input[str] iqn: The target volume's iSCSI Qualified Name in the format defined by [RFC 3720](https://tools.ietf.org/html/rfc3720#page-32).  Example: `iqn.2015-12.com.oracleiaas:40b7ee03-883f-46c6-a951-63d2841d2195`
-        :param pulumi.Input[bool] is_agent_auto_iscsi_login_enabled: Whether to enable Oracle Cloud Agent to perform the iSCSI login and logout commands after the volume attach or detach operations for non multipath-enabled iSCSI attachments.
-        :param pulumi.Input[bool] is_multipath: Whether the Iscsi or Paravirtualized attachment is multipath or not, it is not applicable to NVMe attachment.
-        :param pulumi.Input[bool] is_pv_encryption_in_transit_enabled: Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false.
-        :param pulumi.Input[bool] is_read_only: Whether the attachment was created in read-only mode.
-        :param pulumi.Input[bool] is_shareable: Whether the attachment should be created in shareable mode. If an attachment is created in shareable mode, then other instances can attach the same volume, provided that they also create their attachments in shareable mode. Only certain volume types can be attached in shareable mode. Defaults to false if not specified.
-        :param pulumi.Input[str] iscsi_login_state: The iscsi login state of the volume attachment. For a Iscsi volume attachment, all iscsi sessions need to be all logged-in or logged-out to be in logged-in or logged-out state.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VolumeAttachmentMultipathDeviceArgs']]]] multipath_devices: A list of secondary multipath devices
-        :param pulumi.Input[int] port: The volume's iSCSI port, usually port 860 or 3260.  Example: `3260`
-        :param pulumi.Input[str] state: The current state of the volume attachment.
-        :param pulumi.Input[str] time_created: The date and time the volume was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-        :param pulumi.Input[bool] use_chap: Whether to use CHAP authentication for the volume attachment. Defaults to false.
-        :param pulumi.Input[str] volume_id: The OCID of the volume.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -888,41 +627,26 @@ class VolumeAttachment(pulumi.CustomResource):
     @property
     @pulumi.getter(name="attachmentType")
     def attachment_type(self) -> pulumi.Output[str]:
-        """
-        The type of volume. The only supported values are "iscsi" and "paravirtualized".
-        """
         return pulumi.get(self, "attachment_type")
 
     @property
     @pulumi.getter(name="availabilityDomain")
-    def availability_domain(self) -> pulumi.Output[str]:
-        """
-        The availability domain of an instance.  Example: `Uocm:PHX-AD-1`
-        """
+    def availability_domain(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "availability_domain")
 
     @property
     @pulumi.getter(name="chapSecret")
-    def chap_secret(self) -> pulumi.Output[str]:
-        """
-        The Challenge-Handshake-Authentication-Protocol (CHAP) secret valid for the associated CHAP user name. (Also called the "CHAP password".)
-        """
+    def chap_secret(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "chap_secret")
 
     @property
     @pulumi.getter(name="chapUsername")
-    def chap_username(self) -> pulumi.Output[str]:
-        """
-        The volume's system-generated Challenge-Handshake-Authentication-Protocol (CHAP) user name. See [RFC 1994](https://tools.ietf.org/html/rfc1994) for more on CHAP.  Example: `ocid1.volume.oc1.phx.<unique_ID>`
-        """
+    def chap_username(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "chap_username")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the compartment.
-        """
+    def compartment_id(self) -> pulumi.Output[Optional[str]]:
         warnings.warn("""The 'compartment_id' field has been deprecated and may be removed in a future version. Do not use this field.""", DeprecationWarning)
         pulumi.log.warn("""compartment_id is deprecated: The 'compartment_id' field has been deprecated and may be removed in a future version. Do not use this field.""")
 
@@ -930,149 +654,91 @@ class VolumeAttachment(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def device(self) -> pulumi.Output[str]:
-        """
-        The device name. To retrieve a list of devices for a given instance, see [ListInstanceDevices](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Device/ListInstanceDevices).
-        """
+    def device(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "device")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="encryptionInTransitType")
-    def encryption_in_transit_type(self) -> pulumi.Output[str]:
-        """
-        Refer the top-level definition of encryptionInTransitType. The default value is NONE.
-        """
+    def encryption_in_transit_type(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "encryption_in_transit_type")
 
     @property
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the instance.
-        """
         return pulumi.get(self, "instance_id")
 
     @property
     @pulumi.getter
-    def ipv4(self) -> pulumi.Output[str]:
-        """
-        The volume's iSCSI IP address.  Example: `169.254.2.2`
-        """
+    def ipv4(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "ipv4")
 
     @property
     @pulumi.getter
-    def iqn(self) -> pulumi.Output[str]:
-        """
-        The target volume's iSCSI Qualified Name in the format defined by [RFC 3720](https://tools.ietf.org/html/rfc3720#page-32).  Example: `iqn.2015-12.com.oracleiaas:40b7ee03-883f-46c6-a951-63d2841d2195`
-        """
+    def iqn(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "iqn")
 
     @property
     @pulumi.getter(name="isAgentAutoIscsiLoginEnabled")
-    def is_agent_auto_iscsi_login_enabled(self) -> pulumi.Output[bool]:
-        """
-        Whether to enable Oracle Cloud Agent to perform the iSCSI login and logout commands after the volume attach or detach operations for non multipath-enabled iSCSI attachments.
-        """
+    def is_agent_auto_iscsi_login_enabled(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_agent_auto_iscsi_login_enabled")
 
     @property
     @pulumi.getter(name="isMultipath")
-    def is_multipath(self) -> pulumi.Output[bool]:
-        """
-        Whether the Iscsi or Paravirtualized attachment is multipath or not, it is not applicable to NVMe attachment.
-        """
+    def is_multipath(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_multipath")
 
     @property
     @pulumi.getter(name="isPvEncryptionInTransitEnabled")
-    def is_pv_encryption_in_transit_enabled(self) -> pulumi.Output[bool]:
-        """
-        Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false.
-        """
+    def is_pv_encryption_in_transit_enabled(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_pv_encryption_in_transit_enabled")
 
     @property
     @pulumi.getter(name="isReadOnly")
-    def is_read_only(self) -> pulumi.Output[bool]:
-        """
-        Whether the attachment was created in read-only mode.
-        """
+    def is_read_only(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_read_only")
 
     @property
     @pulumi.getter(name="isShareable")
-    def is_shareable(self) -> pulumi.Output[bool]:
-        """
-        Whether the attachment should be created in shareable mode. If an attachment is created in shareable mode, then other instances can attach the same volume, provided that they also create their attachments in shareable mode. Only certain volume types can be attached in shareable mode. Defaults to false if not specified.
-        """
+    def is_shareable(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_shareable")
 
     @property
     @pulumi.getter(name="iscsiLoginState")
-    def iscsi_login_state(self) -> pulumi.Output[str]:
-        """
-        The iscsi login state of the volume attachment. For a Iscsi volume attachment, all iscsi sessions need to be all logged-in or logged-out to be in logged-in or logged-out state.
-        """
+    def iscsi_login_state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "iscsi_login_state")
 
     @property
     @pulumi.getter(name="multipathDevices")
-    def multipath_devices(self) -> pulumi.Output[Sequence['outputs.VolumeAttachmentMultipathDevice']]:
-        """
-        A list of secondary multipath devices
-        """
+    def multipath_devices(self) -> pulumi.Output[Optional[Sequence['outputs.VolumeAttachmentMultipathDevice']]]:
         return pulumi.get(self, "multipath_devices")
 
     @property
     @pulumi.getter
-    def port(self) -> pulumi.Output[int]:
-        """
-        The volume's iSCSI port, usually port 860 or 3260.  Example: `3260`
-        """
+    def port(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "port")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the volume attachment.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The date and time the volume was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="useChap")
-    def use_chap(self) -> pulumi.Output[bool]:
-        """
-        Whether to use CHAP authentication for the volume attachment. Defaults to false.
-        """
+    def use_chap(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "use_chap")
 
     @property
     @pulumi.getter(name="volumeId")
     def volume_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the volume.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "volume_id")
 

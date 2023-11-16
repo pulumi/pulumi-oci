@@ -127,23 +127,23 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The name of the compute global image capability schema version
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The map of each capability name to its ImageCapabilityDescriptor.
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SchemaData;
+        public readonly ImmutableDictionary<string, object>? SchemaData;
         /// <summary>
         /// The date and time the compute global image capability schema version was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
 
         [OutputConstructor]
         private GetComputeGlobalImageCapabilitySchemasVersionResult(
@@ -151,15 +151,15 @@ namespace Pulumi.Oci.Core
 
             string computeGlobalImageCapabilitySchemaVersionName,
 
-            string displayName,
+            string? displayName,
 
-            string id,
+            string? id,
 
-            string name,
+            string? name,
 
-            ImmutableDictionary<string, object> schemaData,
+            ImmutableDictionary<string, object>? schemaData,
 
-            string timeCreated)
+            string? timeCreated)
         {
             ComputeGlobalImageCapabilitySchemaId = computeGlobalImageCapabilitySchemaId;
             ComputeGlobalImageCapabilitySchemaVersionName = computeGlobalImageCapabilitySchemaVersionName;

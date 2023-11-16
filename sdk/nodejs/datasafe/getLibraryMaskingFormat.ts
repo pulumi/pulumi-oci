@@ -47,31 +47,31 @@ export interface GetLibraryMaskingFormatResult {
     /**
      * The OCID of the compartment that contains the library masking format.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * The description of the format entry.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * The display name of the library masking format.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * An array of format entries. The combined output of all the format entries is used for masking.
      */
-    readonly formatEntries: outputs.DataSafe.GetLibraryMaskingFormatFormatEntry[];
+    readonly formatEntries?: outputs.DataSafe.GetLibraryMaskingFormatFormatEntry[];
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The OCID of the library masking format.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The OCID of the library masking format.
      */
@@ -79,23 +79,23 @@ export interface GetLibraryMaskingFormatResult {
     /**
      * An array of OCIDs of the sensitive types compatible with the library masking format.
      */
-    readonly sensitiveTypeIds: string[];
+    readonly sensitiveTypeIds?: string[];
     /**
      * Specifies whether the library masking format is user-defined or predefined.
      */
-    readonly source: string;
+    readonly source?: string;
     /**
      * The current state of the library masking format.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The date and time the library masking format was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The date and time the library masking format was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific Library Masking Format resource in Oracle Cloud Infrastructure Data Safe service.

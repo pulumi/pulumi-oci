@@ -21,6 +21,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -185,56 +186,56 @@ public class Config extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="availabilityConfiguration", refs={ConfigAvailabilityConfiguration.class}, tree="[0]")
-    private Output<ConfigAvailabilityConfiguration> availabilityConfiguration;
+    private Output</* @Nullable */ ConfigAvailabilityConfiguration> availabilityConfiguration;
 
     /**
      * @return (Updatable) Monitor availability configuration details.
      * 
      */
-    public Output<ConfigAvailabilityConfiguration> availabilityConfiguration() {
-        return this.availabilityConfiguration;
+    public Output<Optional<ConfigAvailabilityConfiguration>> availabilityConfiguration() {
+        return Codegen.optional(this.availabilityConfiguration);
     }
     /**
      * (Updatable) Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
      * 
      */
     @Export(name="batchIntervalInSeconds", refs={Integer.class}, tree="[0]")
-    private Output<Integer> batchIntervalInSeconds;
+    private Output</* @Nullable */ Integer> batchIntervalInSeconds;
 
     /**
      * @return (Updatable) Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
      * 
      */
-    public Output<Integer> batchIntervalInSeconds() {
-        return this.batchIntervalInSeconds;
+    public Output<Optional<Integer>> batchIntervalInSeconds() {
+        return Codegen.optional(this.batchIntervalInSeconds);
     }
     /**
      * (Updatable) Details of monitor configuration.
      * 
      */
     @Export(name="configuration", refs={ConfigConfiguration.class}, tree="[0]")
-    private Output<ConfigConfiguration> configuration;
+    private Output</* @Nullable */ ConfigConfiguration> configuration;
 
     /**
      * @return (Updatable) Details of monitor configuration.
      * 
      */
-    public Output<ConfigConfiguration> configuration() {
-        return this.configuration;
+    public Output<Optional<ConfigConfiguration>> configuration() {
+        return Codegen.optional(this.configuration);
     }
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * Unique name that can be edited. The name should not contain any confidential information.
@@ -255,56 +256,56 @@ public class Config extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * (Updatable) If isRunNow is enabled, then the monitor will run immediately.
      * 
      */
     @Export(name="isRunNow", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isRunNow;
+    private Output</* @Nullable */ Boolean> isRunNow;
 
     /**
      * @return (Updatable) If isRunNow is enabled, then the monitor will run immediately.
      * 
      */
-    public Output<Boolean> isRunNow() {
-        return this.isRunNow;
+    public Output<Optional<Boolean>> isRunNow() {
+        return Codegen.optional(this.isRunNow);
     }
     /**
      * (Updatable) If runOnce is enabled, then the monitor will run once.
      * 
      */
     @Export(name="isRunOnce", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isRunOnce;
+    private Output</* @Nullable */ Boolean> isRunOnce;
 
     /**
      * @return (Updatable) If runOnce is enabled, then the monitor will run once.
      * 
      */
-    public Output<Boolean> isRunOnce() {
-        return this.isRunOnce;
+    public Output<Optional<Boolean>> isRunOnce() {
+        return Codegen.optional(this.isRunOnce);
     }
     /**
      * (Updatable) Details required to schedule maintenance window.
      * 
      */
     @Export(name="maintenanceWindowSchedule", refs={ConfigMaintenanceWindowSchedule.class}, tree="[0]")
-    private Output<ConfigMaintenanceWindowSchedule> maintenanceWindowSchedule;
+    private Output</* @Nullable */ ConfigMaintenanceWindowSchedule> maintenanceWindowSchedule;
 
     /**
      * @return (Updatable) Details required to schedule maintenance window.
      * 
      */
-    public Output<ConfigMaintenanceWindowSchedule> maintenanceWindowSchedule() {
-        return this.maintenanceWindowSchedule;
+    public Output<Optional<ConfigMaintenanceWindowSchedule>> maintenanceWindowSchedule() {
+        return Codegen.optional(this.maintenanceWindowSchedule);
     }
     /**
      * Type of monitor.
@@ -339,140 +340,140 @@ public class Config extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="schedulingPolicy", refs={String.class}, tree="[0]")
-    private Output<String> schedulingPolicy;
+    private Output</* @Nullable */ String> schedulingPolicy;
 
     /**
      * @return (Updatable) Scheduling policy to decide the distribution of monitor executions on vantage points.
      * 
      */
-    public Output<String> schedulingPolicy() {
-        return this.schedulingPolicy;
+    public Output<Optional<String>> schedulingPolicy() {
+        return Codegen.optional(this.schedulingPolicy);
     }
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the script. scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null.
      * 
      */
     @Export(name="scriptId", refs={String.class}, tree="[0]")
-    private Output<String> scriptId;
+    private Output</* @Nullable */ String> scriptId;
 
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the script. scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null.
      * 
      */
-    public Output<String> scriptId() {
-        return this.scriptId;
+    public Output<Optional<String>> scriptId() {
+        return Codegen.optional(this.scriptId);
     }
     /**
      * Name of the script.
      * 
      */
     @Export(name="scriptName", refs={String.class}, tree="[0]")
-    private Output<String> scriptName;
+    private Output</* @Nullable */ String> scriptName;
 
     /**
      * @return Name of the script.
      * 
      */
-    public Output<String> scriptName() {
-        return this.scriptName;
+    public Output<Optional<String>> scriptName() {
+        return Codegen.optional(this.scriptName);
     }
     /**
      * (Updatable) List of script parameters in the monitor. This is valid only for SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null. Example: `[{&#34;paramName&#34;: &#34;userid&#34;, &#34;paramValue&#34;:&#34;testuser&#34;}]`
      * 
      */
     @Export(name="scriptParameters", refs={List.class,ConfigScriptParameter.class}, tree="[0,1]")
-    private Output<List<ConfigScriptParameter>> scriptParameters;
+    private Output</* @Nullable */ List<ConfigScriptParameter>> scriptParameters;
 
     /**
      * @return (Updatable) List of script parameters in the monitor. This is valid only for SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null. Example: `[{&#34;paramName&#34;: &#34;userid&#34;, &#34;paramValue&#34;:&#34;testuser&#34;}]`
      * 
      */
-    public Output<List<ConfigScriptParameter>> scriptParameters() {
-        return this.scriptParameters;
+    public Output<Optional<List<ConfigScriptParameter>>> scriptParameters() {
+        return Codegen.optional(this.scriptParameters);
     }
     /**
      * (Updatable) Enables or disables the monitor.
      * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
-    private Output<String> status;
+    private Output</* @Nullable */ String> status;
 
     /**
      * @return (Updatable) Enables or disables the monitor.
      * 
      */
-    public Output<String> status() {
-        return this.status;
+    public Output<Optional<String>> status() {
+        return Codegen.optional(this.status);
     }
     /**
      * (Updatable) Specify the endpoint on which to run the monitor. For BROWSER and REST monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
      * 
      */
     @Export(name="target", refs={String.class}, tree="[0]")
-    private Output<String> target;
+    private Output</* @Nullable */ String> target;
 
     /**
      * @return (Updatable) Specify the endpoint on which to run the monitor. For BROWSER and REST monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
      * 
      */
-    public Output<String> target() {
-        return this.target;
+    public Output<Optional<String>> target() {
+        return Codegen.optional(this.target);
     }
     /**
      * The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
     /**
      * (Updatable) Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
      * 
      */
     @Export(name="timeoutInSeconds", refs={Integer.class}, tree="[0]")
-    private Output<Integer> timeoutInSeconds;
+    private Output</* @Nullable */ Integer> timeoutInSeconds;
 
     /**
      * @return (Updatable) Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
      * 
      */
-    public Output<Integer> timeoutInSeconds() {
-        return this.timeoutInSeconds;
+    public Output<Optional<Integer>> timeoutInSeconds() {
+        return Codegen.optional(this.timeoutInSeconds);
     }
     /**
      * Number of vantage points where monitor is running.
      * 
      */
     @Export(name="vantagePointCount", refs={Integer.class}, tree="[0]")
-    private Output<Integer> vantagePointCount;
+    private Output</* @Nullable */ Integer> vantagePointCount;
 
     /**
      * @return Number of vantage points where monitor is running.
      * 
      */
-    public Output<Integer> vantagePointCount() {
-        return this.vantagePointCount;
+    public Output<Optional<Integer>> vantagePointCount() {
+        return Codegen.optional(this.vantagePointCount);
     }
     /**
      * (Updatable) A list of public and dedicated vantage points from which to execute the monitor. Use /publicVantagePoints to fetch public vantage points, and /dedicatedVantagePoints to fetch dedicated vantage points.

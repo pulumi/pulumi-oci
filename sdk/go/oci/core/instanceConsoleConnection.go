@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Instance Console Connection resource in Oracle Cloud Infrastructure Core service.
@@ -67,13 +66,13 @@ type InstanceConsoleConnection struct {
 	pulumi.CustomResourceState
 
 	// The OCID of the compartment to contain the console connection.
-	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrOutput `pulumi:"compartmentId"`
 	// The SSH connection string for the console connection.
-	ConnectionString pulumi.StringOutput `pulumi:"connectionString"`
+	ConnectionString pulumi.StringPtrOutput `pulumi:"connectionString"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// The SSH public key's fingerprint for client authentication to the console connection.
-	Fingerprint pulumi.StringOutput `pulumi:"fingerprint"`
+	Fingerprint pulumi.StringPtrOutput `pulumi:"fingerprint"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The OCID of the instance to create the console connection to.
@@ -84,11 +83,11 @@ type InstanceConsoleConnection struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	PublicKey pulumi.StringOutput `pulumi:"publicKey"`
 	// The SSH public key's fingerprint for the console connection service host.
-	ServiceHostKeyFingerprint pulumi.StringOutput `pulumi:"serviceHostKeyFingerprint"`
+	ServiceHostKeyFingerprint pulumi.StringPtrOutput `pulumi:"serviceHostKeyFingerprint"`
 	// The current state of the console connection.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The SSH connection string for the SSH tunnel used to connect to the console connection over VNC.
-	VncConnectionString pulumi.StringOutput `pulumi:"vncConnectionString"`
+	VncConnectionString pulumi.StringPtrOutput `pulumi:"vncConnectionString"`
 }
 
 // NewInstanceConsoleConnection registers a new resource with the given unique name, arguments, and options.
@@ -234,12 +233,6 @@ func (i *InstanceConsoleConnection) ToInstanceConsoleConnectionOutputWithContext
 	return pulumi.ToOutputWithContext(ctx, i).(InstanceConsoleConnectionOutput)
 }
 
-func (i *InstanceConsoleConnection) ToOutput(ctx context.Context) pulumix.Output[*InstanceConsoleConnection] {
-	return pulumix.Output[*InstanceConsoleConnection]{
-		OutputState: i.ToInstanceConsoleConnectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // InstanceConsoleConnectionArrayInput is an input type that accepts InstanceConsoleConnectionArray and InstanceConsoleConnectionArrayOutput values.
 // You can construct a concrete instance of `InstanceConsoleConnectionArrayInput` via:
 //
@@ -263,12 +256,6 @@ func (i InstanceConsoleConnectionArray) ToInstanceConsoleConnectionArrayOutput()
 
 func (i InstanceConsoleConnectionArray) ToInstanceConsoleConnectionArrayOutputWithContext(ctx context.Context) InstanceConsoleConnectionArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(InstanceConsoleConnectionArrayOutput)
-}
-
-func (i InstanceConsoleConnectionArray) ToOutput(ctx context.Context) pulumix.Output[[]*InstanceConsoleConnection] {
-	return pulumix.Output[[]*InstanceConsoleConnection]{
-		OutputState: i.ToInstanceConsoleConnectionArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // InstanceConsoleConnectionMapInput is an input type that accepts InstanceConsoleConnectionMap and InstanceConsoleConnectionMapOutput values.
@@ -296,12 +283,6 @@ func (i InstanceConsoleConnectionMap) ToInstanceConsoleConnectionMapOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(InstanceConsoleConnectionMapOutput)
 }
 
-func (i InstanceConsoleConnectionMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*InstanceConsoleConnection] {
-	return pulumix.Output[map[string]*InstanceConsoleConnection]{
-		OutputState: i.ToInstanceConsoleConnectionMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type InstanceConsoleConnectionOutput struct{ *pulumi.OutputState }
 
 func (InstanceConsoleConnectionOutput) ElementType() reflect.Type {
@@ -316,20 +297,14 @@ func (o InstanceConsoleConnectionOutput) ToInstanceConsoleConnectionOutputWithCo
 	return o
 }
 
-func (o InstanceConsoleConnectionOutput) ToOutput(ctx context.Context) pulumix.Output[*InstanceConsoleConnection] {
-	return pulumix.Output[*InstanceConsoleConnection]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment to contain the console connection.
-func (o InstanceConsoleConnectionOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *InstanceConsoleConnection) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
+func (o InstanceConsoleConnectionOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstanceConsoleConnection) pulumi.StringPtrOutput { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The SSH connection string for the console connection.
-func (o InstanceConsoleConnectionOutput) ConnectionString() pulumi.StringOutput {
-	return o.ApplyT(func(v *InstanceConsoleConnection) pulumi.StringOutput { return v.ConnectionString }).(pulumi.StringOutput)
+func (o InstanceConsoleConnectionOutput) ConnectionString() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstanceConsoleConnection) pulumi.StringPtrOutput { return v.ConnectionString }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -338,8 +313,8 @@ func (o InstanceConsoleConnectionOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // The SSH public key's fingerprint for client authentication to the console connection.
-func (o InstanceConsoleConnectionOutput) Fingerprint() pulumi.StringOutput {
-	return o.ApplyT(func(v *InstanceConsoleConnection) pulumi.StringOutput { return v.Fingerprint }).(pulumi.StringOutput)
+func (o InstanceConsoleConnectionOutput) Fingerprint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstanceConsoleConnection) pulumi.StringPtrOutput { return v.Fingerprint }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -361,18 +336,18 @@ func (o InstanceConsoleConnectionOutput) PublicKey() pulumi.StringOutput {
 }
 
 // The SSH public key's fingerprint for the console connection service host.
-func (o InstanceConsoleConnectionOutput) ServiceHostKeyFingerprint() pulumi.StringOutput {
-	return o.ApplyT(func(v *InstanceConsoleConnection) pulumi.StringOutput { return v.ServiceHostKeyFingerprint }).(pulumi.StringOutput)
+func (o InstanceConsoleConnectionOutput) ServiceHostKeyFingerprint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstanceConsoleConnection) pulumi.StringPtrOutput { return v.ServiceHostKeyFingerprint }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the console connection.
-func (o InstanceConsoleConnectionOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *InstanceConsoleConnection) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o InstanceConsoleConnectionOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstanceConsoleConnection) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The SSH connection string for the SSH tunnel used to connect to the console connection over VNC.
-func (o InstanceConsoleConnectionOutput) VncConnectionString() pulumi.StringOutput {
-	return o.ApplyT(func(v *InstanceConsoleConnection) pulumi.StringOutput { return v.VncConnectionString }).(pulumi.StringOutput)
+func (o InstanceConsoleConnectionOutput) VncConnectionString() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstanceConsoleConnection) pulumi.StringPtrOutput { return v.VncConnectionString }).(pulumi.StringPtrOutput)
 }
 
 type InstanceConsoleConnectionArrayOutput struct{ *pulumi.OutputState }
@@ -387,12 +362,6 @@ func (o InstanceConsoleConnectionArrayOutput) ToInstanceConsoleConnectionArrayOu
 
 func (o InstanceConsoleConnectionArrayOutput) ToInstanceConsoleConnectionArrayOutputWithContext(ctx context.Context) InstanceConsoleConnectionArrayOutput {
 	return o
-}
-
-func (o InstanceConsoleConnectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*InstanceConsoleConnection] {
-	return pulumix.Output[[]*InstanceConsoleConnection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o InstanceConsoleConnectionArrayOutput) Index(i pulumi.IntInput) InstanceConsoleConnectionOutput {
@@ -413,12 +382,6 @@ func (o InstanceConsoleConnectionMapOutput) ToInstanceConsoleConnectionMapOutput
 
 func (o InstanceConsoleConnectionMapOutput) ToInstanceConsoleConnectionMapOutputWithContext(ctx context.Context) InstanceConsoleConnectionMapOutput {
 	return o
-}
-
-func (o InstanceConsoleConnectionMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*InstanceConsoleConnection] {
-	return pulumix.Output[map[string]*InstanceConsoleConnection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o InstanceConsoleConnectionMapOutput) MapIndex(k pulumi.StringInput) InstanceConsoleConnectionOutput {

@@ -64,15 +64,15 @@ export class PluggableDatabaseManagementsManagement extends pulumi.CustomResourc
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    public /*out*/ readonly compartmentId!: pulumi.Output<string | undefined>;
     /**
      * Connection strings to connect to an Oracle Pluggable Database.
      */
-    public /*out*/ readonly connectionStrings!: pulumi.Output<outputs.Database.PluggableDatabaseManagementsManagementConnectionString[]>;
+    public /*out*/ readonly connectionStrings!: pulumi.Output<outputs.Database.PluggableDatabaseManagementsManagementConnectionString[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CDB.
      */
-    public /*out*/ readonly containerDatabaseId!: pulumi.Output<string>;
+    public /*out*/ readonly containerDatabaseId!: pulumi.Output<string | undefined>;
     /**
      * Data for the credential used to connect to the database.
      */
@@ -80,7 +80,7 @@ export class PluggableDatabaseManagementsManagement extends pulumi.CustomResourc
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    public /*out*/ readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
      *
@@ -92,23 +92,23 @@ export class PluggableDatabaseManagementsManagement extends pulumi.CustomResourc
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public /*out*/ readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The restricted mode of the pluggable database. If a pluggable database is opened in restricted mode, the user needs both create a session and have restricted session privileges to connect to it.
      */
-    public /*out*/ readonly isRestricted!: pulumi.Output<boolean>;
+    public /*out*/ readonly isRestricted!: pulumi.Output<boolean | undefined>;
     /**
      * Detailed message for the lifecycle state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
      */
-    public /*out*/ readonly openMode!: pulumi.Output<string>;
+    public /*out*/ readonly openMode!: pulumi.Output<string | undefined>;
     /**
      * The name for the pluggable database (PDB). The name is unique in the context of a [container database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/Database/). The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
      */
-    public /*out*/ readonly pdbName!: pulumi.Output<string>;
+    public /*out*/ readonly pdbName!: pulumi.Output<string | undefined>;
     /**
      * The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
@@ -116,11 +116,11 @@ export class PluggableDatabaseManagementsManagement extends pulumi.CustomResourc
     /**
      * The configuration of the Pluggable Database Management service.
      */
-    public /*out*/ readonly pluggableDatabaseManagementConfigs!: pulumi.Output<outputs.Database.PluggableDatabaseManagementsManagementPluggableDatabaseManagementConfig[]>;
+    public /*out*/ readonly pluggableDatabaseManagementConfigs!: pulumi.Output<outputs.Database.PluggableDatabaseManagementsManagementPluggableDatabaseManagementConfig[] | undefined>;
     /**
      * The port used to connect to the pluggable database.
      */
-    public readonly port!: pulumi.Output<number>;
+    public readonly port!: pulumi.Output<number | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
      */
@@ -128,11 +128,11 @@ export class PluggableDatabaseManagementsManagement extends pulumi.CustomResourc
     /**
      * Protocol used by the database connection.
      */
-    public readonly protocol!: pulumi.Output<string>;
+    public readonly protocol!: pulumi.Output<string | undefined>;
     /**
      * The role of the user that will be connecting to the pluggable database.
      */
-    public readonly role!: pulumi.Output<string>;
+    public readonly role!: pulumi.Output<string | undefined>;
     /**
      * The name of the Oracle Database service that will be used to connect to the database.
      */
@@ -140,15 +140,15 @@ export class PluggableDatabaseManagementsManagement extends pulumi.CustomResourc
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      */
-    public readonly sslSecretId!: pulumi.Output<string>;
+    public readonly sslSecretId!: pulumi.Output<string | undefined>;
     /**
      * The current state of the pluggable database.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The date and time the pluggable database was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a PluggableDatabaseManagementsManagement resource with the given unique name, arguments, and options.

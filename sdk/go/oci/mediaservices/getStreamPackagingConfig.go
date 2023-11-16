@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Stream Packaging Config resource in Oracle Cloud Infrastructure Media Services service.
@@ -60,32 +59,32 @@ type LookupStreamPackagingConfigArgs struct {
 // A collection of values returned by getStreamPackagingConfig.
 type LookupStreamPackagingConfigResult struct {
 	// Compartment Identifier
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The name of the stream packaging configuration. Avoid entering confidential information.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Unique identifier of the Distribution Channel that this stream packaging configuration belongs to.
-	DistributionChannelId string `pulumi:"distributionChannelId"`
+	DistributionChannelId *string `pulumi:"distributionChannelId"`
 	// The encryption used by the stream packaging configuration.
 	Encryptions []GetStreamPackagingConfigEncryption `pulumi:"encryptions"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Unique identifier that is immutable on creation.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The duration in seconds for each fragment.
-	SegmentTimeInSeconds int `pulumi:"segmentTimeInSeconds"`
+	SegmentTimeInSeconds *int `pulumi:"segmentTimeInSeconds"`
 	// The current state of the Packaging Configuration.
-	State                   string `pulumi:"state"`
-	StreamPackagingConfigId string `pulumi:"streamPackagingConfigId"`
+	State                   *string `pulumi:"state"`
+	StreamPackagingConfigId string  `pulumi:"streamPackagingConfigId"`
 	// The output format for the package.
-	StreamPackagingFormat string `pulumi:"streamPackagingFormat"`
+	StreamPackagingFormat *string `pulumi:"streamPackagingFormat"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time when the Packaging Configuration was created. An RFC3339 formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time when the Packaging Configuration was updated. An RFC3339 formatted datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func LookupStreamPackagingConfigOutput(ctx *pulumi.Context, args LookupStreamPackagingConfigOutputArgs, opts ...pulumi.InvokeOption) LookupStreamPackagingConfigResultOutput {
@@ -126,15 +125,9 @@ func (o LookupStreamPackagingConfigResultOutput) ToLookupStreamPackagingConfigRe
 	return o
 }
 
-func (o LookupStreamPackagingConfigResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupStreamPackagingConfigResult] {
-	return pulumix.Output[LookupStreamPackagingConfigResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Compartment Identifier
-func (o LookupStreamPackagingConfigResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupStreamPackagingConfigResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupStreamPackagingConfigResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupStreamPackagingConfigResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -143,13 +136,13 @@ func (o LookupStreamPackagingConfigResultOutput) DefinedTags() pulumi.MapOutput 
 }
 
 // The name of the stream packaging configuration. Avoid entering confidential information.
-func (o LookupStreamPackagingConfigResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupStreamPackagingConfigResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupStreamPackagingConfigResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupStreamPackagingConfigResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Unique identifier of the Distribution Channel that this stream packaging configuration belongs to.
-func (o LookupStreamPackagingConfigResultOutput) DistributionChannelId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupStreamPackagingConfigResult) string { return v.DistributionChannelId }).(pulumi.StringOutput)
+func (o LookupStreamPackagingConfigResultOutput) DistributionChannelId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupStreamPackagingConfigResult) *string { return v.DistributionChannelId }).(pulumi.StringPtrOutput)
 }
 
 // The encryption used by the stream packaging configuration.
@@ -163,18 +156,18 @@ func (o LookupStreamPackagingConfigResultOutput) FreeformTags() pulumi.MapOutput
 }
 
 // Unique identifier that is immutable on creation.
-func (o LookupStreamPackagingConfigResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupStreamPackagingConfigResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupStreamPackagingConfigResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupStreamPackagingConfigResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The duration in seconds for each fragment.
-func (o LookupStreamPackagingConfigResultOutput) SegmentTimeInSeconds() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupStreamPackagingConfigResult) int { return v.SegmentTimeInSeconds }).(pulumi.IntOutput)
+func (o LookupStreamPackagingConfigResultOutput) SegmentTimeInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupStreamPackagingConfigResult) *int { return v.SegmentTimeInSeconds }).(pulumi.IntPtrOutput)
 }
 
 // The current state of the Packaging Configuration.
-func (o LookupStreamPackagingConfigResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupStreamPackagingConfigResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupStreamPackagingConfigResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupStreamPackagingConfigResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupStreamPackagingConfigResultOutput) StreamPackagingConfigId() pulumi.StringOutput {
@@ -182,8 +175,8 @@ func (o LookupStreamPackagingConfigResultOutput) StreamPackagingConfigId() pulum
 }
 
 // The output format for the package.
-func (o LookupStreamPackagingConfigResultOutput) StreamPackagingFormat() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupStreamPackagingConfigResult) string { return v.StreamPackagingFormat }).(pulumi.StringOutput)
+func (o LookupStreamPackagingConfigResultOutput) StreamPackagingFormat() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupStreamPackagingConfigResult) *string { return v.StreamPackagingFormat }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -192,13 +185,13 @@ func (o LookupStreamPackagingConfigResultOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time when the Packaging Configuration was created. An RFC3339 formatted datetime string.
-func (o LookupStreamPackagingConfigResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupStreamPackagingConfigResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupStreamPackagingConfigResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupStreamPackagingConfigResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time when the Packaging Configuration was updated. An RFC3339 formatted datetime string.
-func (o LookupStreamPackagingConfigResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupStreamPackagingConfigResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupStreamPackagingConfigResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupStreamPackagingConfigResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

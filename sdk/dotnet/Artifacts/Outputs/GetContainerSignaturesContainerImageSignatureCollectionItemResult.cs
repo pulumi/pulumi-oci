@@ -16,95 +16,95 @@ namespace Pulumi.Oci.Artifacts.Outputs
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The id of the user or principal that created the resource.
         /// </summary>
-        public readonly string CreatedBy;
+        public readonly string? CreatedBy;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// A filter to return only resources that match the given display name exactly.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container image signature.  Example: `ocid1.containerimagesignature.oc1..exampleuniqueID`
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// A filter to return a container image summary only for the specified container image OCID.
         /// </summary>
-        public readonly string ImageId;
+        public readonly string? ImageId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the kmsKeyVersionId used to sign the container image.  Example: `ocid1.keyversion.oc1..exampleuniqueID`
         /// </summary>
-        public readonly string KmsKeyId;
+        public readonly string? KmsKeyId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the kmsKeyVersionId used to sign the container image.  Example: `ocid1.keyversion.oc1..exampleuniqueID`
         /// </summary>
-        public readonly string KmsKeyVersionId;
+        public readonly string? KmsKeyVersionId;
         /// <summary>
         /// The base64 encoded signature payload that was signed.
         /// </summary>
-        public readonly string Message;
+        public readonly string? Message;
         /// <summary>
         /// The signature of the message field using the kmsKeyId, the kmsKeyVersionId, and the signingAlgorithm.
         /// </summary>
-        public readonly string Signature;
+        public readonly string? Signature;
         /// <summary>
         /// The algorithm to be used for signing. These are the only supported signing algorithms for container images.
         /// </summary>
-        public readonly string SigningAlgorithm;
+        public readonly string? SigningAlgorithm;
         /// <summary>
         /// The current state of the container image signature.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, object>? SystemTags;
         /// <summary>
         /// An RFC 3339 timestamp indicating when the image was created.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
 
         [OutputConstructor]
         private GetContainerSignaturesContainerImageSignatureCollectionItemResult(
-            string compartmentId,
+            string? compartmentId,
 
-            string createdBy,
+            string? createdBy,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            string imageId,
+            string? imageId,
 
-            string kmsKeyId,
+            string? kmsKeyId,
 
-            string kmsKeyVersionId,
+            string? kmsKeyVersionId,
 
-            string message,
+            string? message,
 
-            string signature,
+            string? signature,
 
-            string signingAlgorithm,
+            string? signingAlgorithm,
 
-            string state,
+            string? state,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, object>? systemTags,
 
-            string timeCreated)
+            string? timeCreated)
         {
             CompartmentId = compartmentId;
             CreatedBy = createdBy;

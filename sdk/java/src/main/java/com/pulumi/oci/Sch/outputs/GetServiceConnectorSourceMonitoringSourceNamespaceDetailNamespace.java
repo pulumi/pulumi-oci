@@ -8,6 +8,8 @@ import com.pulumi.oci.Sch.outputs.GetServiceConnectorSourceMonitoringSourceNames
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespace {
@@ -15,12 +17,12 @@ public final class GetServiceConnectorSourceMonitoringSourceNamespaceDetailNames
      * @return The metrics to query for the specified metric namespace.
      * 
      */
-    private List<GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetric> metrics;
+    private @Nullable List<GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetric> metrics;
     /**
      * @return The namespace.
      * 
      */
-    private String namespace;
+    private @Nullable String namespace;
 
     private GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespace() {}
     /**
@@ -28,14 +30,14 @@ public final class GetServiceConnectorSourceMonitoringSourceNamespaceDetailNames
      * 
      */
     public List<GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetric> metrics() {
-        return this.metrics;
+        return this.metrics == null ? List.of() : this.metrics;
     }
     /**
      * @return The namespace.
      * 
      */
-    public String namespace() {
-        return this.namespace;
+    public Optional<String> namespace() {
+        return Optional.ofNullable(this.namespace);
     }
 
     public static Builder builder() {
@@ -47,8 +49,8 @@ public final class GetServiceConnectorSourceMonitoringSourceNamespaceDetailNames
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetric> metrics;
-        private String namespace;
+        private @Nullable List<GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetric> metrics;
+        private @Nullable String namespace;
         public Builder() {}
         public Builder(GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespace defaults) {
     	      Objects.requireNonNull(defaults);
@@ -57,16 +59,16 @@ public final class GetServiceConnectorSourceMonitoringSourceNamespaceDetailNames
         }
 
         @CustomType.Setter
-        public Builder metrics(List<GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetric> metrics) {
-            this.metrics = Objects.requireNonNull(metrics);
+        public Builder metrics(@Nullable List<GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetric> metrics) {
+            this.metrics = metrics;
             return this;
         }
         public Builder metrics(GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetric... metrics) {
             return metrics(List.of(metrics));
         }
         @CustomType.Setter
-        public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+        public Builder namespace(@Nullable String namespace) {
+            this.namespace = namespace;
             return this;
         }
         public GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespace build() {

@@ -56,14 +56,11 @@ class GetResultResult:
     @property
     @pulumi.getter(name="executionTime")
     def execution_time(self) -> str:
-        """
-        The specific point of time when the result of an execution is collected.
-        """
         return pulumi.get(self, "execution_time")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -72,41 +69,26 @@ class GetResultResult:
     @property
     @pulumi.getter(name="monitorId")
     def monitor_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitor.
-        """
         return pulumi.get(self, "monitor_id")
 
     @property
     @pulumi.getter(name="resultContentType")
     def result_content_type(self) -> str:
-        """
-        Type of result content. Example: Zip or Raw file.
-        """
         return pulumi.get(self, "result_content_type")
 
     @property
     @pulumi.getter(name="resultDataSets")
-    def result_data_sets(self) -> Sequence['outputs.GetResultResultDataSetResult']:
-        """
-        Monitor result data set.
-        """
+    def result_data_sets(self) -> Optional[Sequence['outputs.GetResultResultDataSetResult']]:
         return pulumi.get(self, "result_data_sets")
 
     @property
     @pulumi.getter(name="resultType")
     def result_type(self) -> str:
-        """
-        Type of result. Example: HAR, Screenshot, Log or Network.
-        """
         return pulumi.get(self, "result_type")
 
     @property
     @pulumi.getter(name="vantagePoint")
     def vantage_point(self) -> str:
-        """
-        The name of the public or dedicated vantage point.
-        """
         return pulumi.get(self, "vantage_point")
 
 
@@ -134,31 +116,7 @@ def get_result(apm_domain_id: Optional[str] = None,
                vantage_point: Optional[str] = None,
                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetResultResult:
     """
-    This data source provides details about a specific Result resource in Oracle Cloud Infrastructure Apm Synthetics service.
-
-    Gets the results for a specific execution of a monitor identified by OCID. The results are in a HAR file, Screenshot, Console Log or Network details.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_result = oci.ApmSynthetics.get_result(apm_domain_id=oci_apm_synthetics_apm_domain["test_apm_domain"]["id"],
-        execution_time=var["result_execution_time"],
-        monitor_id=oci_apm_synthetics_monitor["test_monitor"]["id"],
-        result_content_type=var["result_result_content_type"],
-        result_type=var["result_result_type"],
-        vantage_point=var["result_vantage_point"])
-    ```
-
-
-    :param str apm_domain_id: The APM domain ID the request is intended for.
-    :param str execution_time: The time the object was posted.
-    :param str monitor_id: The OCID of the monitor.
-    :param str result_content_type: The result content type: zip or raw.
-    :param str result_type: The result type: har, screenshot, log, or network.
-    :param str vantage_point: The vantagePoint name.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['apmDomainId'] = apm_domain_id
@@ -190,30 +148,6 @@ def get_result_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
                       vantage_point: Optional[pulumi.Input[str]] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetResultResult]:
     """
-    This data source provides details about a specific Result resource in Oracle Cloud Infrastructure Apm Synthetics service.
-
-    Gets the results for a specific execution of a monitor identified by OCID. The results are in a HAR file, Screenshot, Console Log or Network details.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_result = oci.ApmSynthetics.get_result(apm_domain_id=oci_apm_synthetics_apm_domain["test_apm_domain"]["id"],
-        execution_time=var["result_execution_time"],
-        monitor_id=oci_apm_synthetics_monitor["test_monitor"]["id"],
-        result_content_type=var["result_result_content_type"],
-        result_type=var["result_result_type"],
-        vantage_point=var["result_vantage_point"])
-    ```
-
-
-    :param str apm_domain_id: The APM domain ID the request is intended for.
-    :param str execution_time: The time the object was posted.
-    :param str monitor_id: The OCID of the monitor.
-    :param str result_content_type: The result content type: zip or raw.
-    :param str result_type: The result type: har, screenshot, log, or network.
-    :param str vantage_point: The vantagePoint name.
+    Use this data source to access information about an existing resource.
     """
     ...

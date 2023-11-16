@@ -45,11 +45,11 @@ export interface GetNetworkLoadBalancersProtocolsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of network_load_balancers_protocol_collection.
      */
-    readonly networkLoadBalancersProtocolCollections: outputs.NetworkLoadBalancer.GetNetworkLoadBalancersProtocolsNetworkLoadBalancersProtocolCollection[];
+    readonly networkLoadBalancersProtocolCollections?: outputs.NetworkLoadBalancer.GetNetworkLoadBalancersProtocolsNetworkLoadBalancersProtocolCollection[];
 }
 /**
  * This data source provides the list of Network Load Balancers Protocols in Oracle Cloud Infrastructure Network Load Balancer service.

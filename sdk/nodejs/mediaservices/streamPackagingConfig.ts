@@ -74,11 +74,11 @@ export class StreamPackagingConfig extends pulumi.CustomResource {
     /**
      * Compartment Identifier
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    public /*out*/ readonly compartmentId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) The name of the stream Packaging Configuration. Avoid entering confidential information.
      */
@@ -90,11 +90,11 @@ export class StreamPackagingConfig extends pulumi.CustomResource {
     /**
      * The encryption used by the stream packaging configuration.
      */
-    public readonly encryption!: pulumi.Output<outputs.MediaServices.StreamPackagingConfigEncryption>;
+    public readonly encryption!: pulumi.Output<outputs.MediaServices.StreamPackagingConfigEncryption | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The duration in seconds for each fragment.
      */
@@ -102,7 +102,7 @@ export class StreamPackagingConfig extends pulumi.CustomResource {
     /**
      * The current state of the Packaging Configuration.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The output format for the package.
      *
@@ -114,15 +114,15 @@ export class StreamPackagingConfig extends pulumi.CustomResource {
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The time when the Packaging Configuration was created. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The time when the Packaging Configuration was updated. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a StreamPackagingConfig resource with the given unique name, arguments, and options.

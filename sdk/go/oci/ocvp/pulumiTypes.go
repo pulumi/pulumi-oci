@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -55,12 +54,6 @@ func (i SddcDatastoreArgs) ToSddcDatastoreOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(SddcDatastoreOutput)
 }
 
-func (i SddcDatastoreArgs) ToOutput(ctx context.Context) pulumix.Output[SddcDatastore] {
-	return pulumix.Output[SddcDatastore]{
-		OutputState: i.ToSddcDatastoreOutputWithContext(ctx).OutputState,
-	}
-}
-
 // SddcDatastoreArrayInput is an input type that accepts SddcDatastoreArray and SddcDatastoreArrayOutput values.
 // You can construct a concrete instance of `SddcDatastoreArrayInput` via:
 //
@@ -86,12 +79,6 @@ func (i SddcDatastoreArray) ToSddcDatastoreArrayOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(SddcDatastoreArrayOutput)
 }
 
-func (i SddcDatastoreArray) ToOutput(ctx context.Context) pulumix.Output[[]SddcDatastore] {
-	return pulumix.Output[[]SddcDatastore]{
-		OutputState: i.ToSddcDatastoreArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type SddcDatastoreOutput struct{ *pulumi.OutputState }
 
 func (SddcDatastoreOutput) ElementType() reflect.Type {
@@ -104,12 +91,6 @@ func (o SddcDatastoreOutput) ToSddcDatastoreOutput() SddcDatastoreOutput {
 
 func (o SddcDatastoreOutput) ToSddcDatastoreOutputWithContext(ctx context.Context) SddcDatastoreOutput {
 	return o
-}
-
-func (o SddcDatastoreOutput) ToOutput(ctx context.Context) pulumix.Output[SddcDatastore] {
-	return pulumix.Output[SddcDatastore]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of Block Storage Volumes.
@@ -139,12 +120,6 @@ func (o SddcDatastoreArrayOutput) ToSddcDatastoreArrayOutput() SddcDatastoreArra
 
 func (o SddcDatastoreArrayOutput) ToSddcDatastoreArrayOutputWithContext(ctx context.Context) SddcDatastoreArrayOutput {
 	return o
-}
-
-func (o SddcDatastoreArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]SddcDatastore] {
-	return pulumix.Output[[]SddcDatastore]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o SddcDatastoreArrayOutput) Index(i pulumi.IntInput) SddcDatastoreOutput {
@@ -194,12 +169,6 @@ func (i SddcHcxOnPremLicenseArgs) ToSddcHcxOnPremLicenseOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(SddcHcxOnPremLicenseOutput)
 }
 
-func (i SddcHcxOnPremLicenseArgs) ToOutput(ctx context.Context) pulumix.Output[SddcHcxOnPremLicense] {
-	return pulumix.Output[SddcHcxOnPremLicense]{
-		OutputState: i.ToSddcHcxOnPremLicenseOutputWithContext(ctx).OutputState,
-	}
-}
-
 // SddcHcxOnPremLicenseArrayInput is an input type that accepts SddcHcxOnPremLicenseArray and SddcHcxOnPremLicenseArrayOutput values.
 // You can construct a concrete instance of `SddcHcxOnPremLicenseArrayInput` via:
 //
@@ -225,12 +194,6 @@ func (i SddcHcxOnPremLicenseArray) ToSddcHcxOnPremLicenseArrayOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(SddcHcxOnPremLicenseArrayOutput)
 }
 
-func (i SddcHcxOnPremLicenseArray) ToOutput(ctx context.Context) pulumix.Output[[]SddcHcxOnPremLicense] {
-	return pulumix.Output[[]SddcHcxOnPremLicense]{
-		OutputState: i.ToSddcHcxOnPremLicenseArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type SddcHcxOnPremLicenseOutput struct{ *pulumi.OutputState }
 
 func (SddcHcxOnPremLicenseOutput) ElementType() reflect.Type {
@@ -243,12 +206,6 @@ func (o SddcHcxOnPremLicenseOutput) ToSddcHcxOnPremLicenseOutput() SddcHcxOnPrem
 
 func (o SddcHcxOnPremLicenseOutput) ToSddcHcxOnPremLicenseOutputWithContext(ctx context.Context) SddcHcxOnPremLicenseOutput {
 	return o
-}
-
-func (o SddcHcxOnPremLicenseOutput) ToOutput(ctx context.Context) pulumix.Output[SddcHcxOnPremLicense] {
-	return pulumix.Output[SddcHcxOnPremLicense]{
-		OutputState: o.OutputState,
-	}
 }
 
 // HCX on-premise license key value.
@@ -278,12 +235,6 @@ func (o SddcHcxOnPremLicenseArrayOutput) ToSddcHcxOnPremLicenseArrayOutput() Sdd
 
 func (o SddcHcxOnPremLicenseArrayOutput) ToSddcHcxOnPremLicenseArrayOutputWithContext(ctx context.Context) SddcHcxOnPremLicenseArrayOutput {
 	return o
-}
-
-func (o SddcHcxOnPremLicenseArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]SddcHcxOnPremLicense] {
-	return pulumix.Output[[]SddcHcxOnPremLicense]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o SddcHcxOnPremLicenseArrayOutput) Index(i pulumi.IntInput) SddcHcxOnPremLicenseOutput {
@@ -329,12 +280,6 @@ func (i SddcUpgradeLicenseArgs) ToSddcUpgradeLicenseOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(SddcUpgradeLicenseOutput)
 }
 
-func (i SddcUpgradeLicenseArgs) ToOutput(ctx context.Context) pulumix.Output[SddcUpgradeLicense] {
-	return pulumix.Output[SddcUpgradeLicense]{
-		OutputState: i.ToSddcUpgradeLicenseOutputWithContext(ctx).OutputState,
-	}
-}
-
 // SddcUpgradeLicenseArrayInput is an input type that accepts SddcUpgradeLicenseArray and SddcUpgradeLicenseArrayOutput values.
 // You can construct a concrete instance of `SddcUpgradeLicenseArrayInput` via:
 //
@@ -360,12 +305,6 @@ func (i SddcUpgradeLicenseArray) ToSddcUpgradeLicenseArrayOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(SddcUpgradeLicenseArrayOutput)
 }
 
-func (i SddcUpgradeLicenseArray) ToOutput(ctx context.Context) pulumix.Output[[]SddcUpgradeLicense] {
-	return pulumix.Output[[]SddcUpgradeLicense]{
-		OutputState: i.ToSddcUpgradeLicenseArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type SddcUpgradeLicenseOutput struct{ *pulumi.OutputState }
 
 func (SddcUpgradeLicenseOutput) ElementType() reflect.Type {
@@ -378,12 +317,6 @@ func (o SddcUpgradeLicenseOutput) ToSddcUpgradeLicenseOutput() SddcUpgradeLicens
 
 func (o SddcUpgradeLicenseOutput) ToSddcUpgradeLicenseOutputWithContext(ctx context.Context) SddcUpgradeLicenseOutput {
 	return o
-}
-
-func (o SddcUpgradeLicenseOutput) ToOutput(ctx context.Context) pulumix.Output[SddcUpgradeLicense] {
-	return pulumix.Output[SddcUpgradeLicense]{
-		OutputState: o.OutputState,
-	}
 }
 
 // vSphere license key value.
@@ -408,12 +341,6 @@ func (o SddcUpgradeLicenseArrayOutput) ToSddcUpgradeLicenseArrayOutput() SddcUpg
 
 func (o SddcUpgradeLicenseArrayOutput) ToSddcUpgradeLicenseArrayOutputWithContext(ctx context.Context) SddcUpgradeLicenseArrayOutput {
 	return o
-}
-
-func (o SddcUpgradeLicenseArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]SddcUpgradeLicense] {
-	return pulumix.Output[[]SddcUpgradeLicense]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o SddcUpgradeLicenseArrayOutput) Index(i pulumi.IntInput) SddcUpgradeLicenseOutput {
@@ -459,12 +386,6 @@ func (i SddcVsphereUpgradeObjectArgs) ToSddcVsphereUpgradeObjectOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(SddcVsphereUpgradeObjectOutput)
 }
 
-func (i SddcVsphereUpgradeObjectArgs) ToOutput(ctx context.Context) pulumix.Output[SddcVsphereUpgradeObject] {
-	return pulumix.Output[SddcVsphereUpgradeObject]{
-		OutputState: i.ToSddcVsphereUpgradeObjectOutputWithContext(ctx).OutputState,
-	}
-}
-
 // SddcVsphereUpgradeObjectArrayInput is an input type that accepts SddcVsphereUpgradeObjectArray and SddcVsphereUpgradeObjectArrayOutput values.
 // You can construct a concrete instance of `SddcVsphereUpgradeObjectArrayInput` via:
 //
@@ -490,12 +411,6 @@ func (i SddcVsphereUpgradeObjectArray) ToSddcVsphereUpgradeObjectArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(SddcVsphereUpgradeObjectArrayOutput)
 }
 
-func (i SddcVsphereUpgradeObjectArray) ToOutput(ctx context.Context) pulumix.Output[[]SddcVsphereUpgradeObject] {
-	return pulumix.Output[[]SddcVsphereUpgradeObject]{
-		OutputState: i.ToSddcVsphereUpgradeObjectArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type SddcVsphereUpgradeObjectOutput struct{ *pulumi.OutputState }
 
 func (SddcVsphereUpgradeObjectOutput) ElementType() reflect.Type {
@@ -508,12 +423,6 @@ func (o SddcVsphereUpgradeObjectOutput) ToSddcVsphereUpgradeObjectOutput() SddcV
 
 func (o SddcVsphereUpgradeObjectOutput) ToSddcVsphereUpgradeObjectOutputWithContext(ctx context.Context) SddcVsphereUpgradeObjectOutput {
 	return o
-}
-
-func (o SddcVsphereUpgradeObjectOutput) ToOutput(ctx context.Context) pulumix.Output[SddcVsphereUpgradeObject] {
-	return pulumix.Output[SddcVsphereUpgradeObject]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Binary object download link.
@@ -540,12 +449,6 @@ func (o SddcVsphereUpgradeObjectArrayOutput) ToSddcVsphereUpgradeObjectArrayOutp
 	return o
 }
 
-func (o SddcVsphereUpgradeObjectArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]SddcVsphereUpgradeObject] {
-	return pulumix.Output[[]SddcVsphereUpgradeObject]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o SddcVsphereUpgradeObjectArrayOutput) Index(i pulumi.IntInput) SddcVsphereUpgradeObjectOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) SddcVsphereUpgradeObject {
 		return vs[0].([]SddcVsphereUpgradeObject)[vs[1].(int)]
@@ -554,71 +457,71 @@ func (o SddcVsphereUpgradeObjectArrayOutput) Index(i pulumi.IntInput) SddcVspher
 
 type GetExsiHostsEsxiHostCollection struct {
 	// Current billing cycle end date. If the value in `currentSku` and `nextSku` are different, the value specified in `nextSku` becomes the new `currentSKU` when the `contractEndDate` is reached. Example: `2016-08-25T21:10:29.600Z`
-	BillingContractEndDate string `pulumi:"billingContractEndDate"`
+	BillingContractEndDate *string `pulumi:"billingContractEndDate"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
 	//
 	// Deprecated: This 'billing_donor_host_id' argument has been deprecated and will be computed only.
-	BillingDonorHostId string `pulumi:"billingDonorHostId"`
+	BillingDonorHostId *string `pulumi:"billingDonorHostId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
-	CapacityReservationId string `pulumi:"capacityReservationId"`
+	CapacityReservationId *string `pulumi:"capacityReservationId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment as optional parameter.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The availability domain of the ESXi host.
-	ComputeAvailabilityDomain string `pulumi:"computeAvailabilityDomain"`
+	ComputeAvailabilityDomain *string `pulumi:"computeAvailabilityDomain"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute instance.
-	ComputeInstanceId string `pulumi:"computeInstanceId"`
+	ComputeInstanceId *string `pulumi:"computeInstanceId"`
 	// (**Deprecated**) The billing option currently used by the ESXi host. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
 	//
 	// Deprecated: The 'current_sku' field has been deprecated. It is no longer supported.
-	CurrentSku string `pulumi:"currentSku"`
+	CurrentSku *string `pulumi:"currentSku"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A filter to return only resources that match the given display name exactly.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that failed.
 	//
 	// Deprecated: This 'failed_esxi_host_id' argument has been deprecated and will be computed only.
-	FailedEsxiHostId string `pulumi:"failedEsxiHostId"`
+	FailedEsxiHostId *string `pulumi:"failedEsxiHostId"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The date and time when the new esxi host should start billing cycle. [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2021-07-25T21:10:29.600Z`
-	GracePeriodEndDate string `pulumi:"gracePeriodEndDate"`
+	GracePeriodEndDate *string `pulumi:"gracePeriodEndDate"`
 	// The OCPU count of the ESXi host.
-	HostOcpuCount float64 `pulumi:"hostOcpuCount"`
+	HostOcpuCount *float64 `pulumi:"hostOcpuCount"`
 	// The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
-	HostShapeName string `pulumi:"hostShapeName"`
+	HostShapeName *string `pulumi:"hostShapeName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Indicates whether this host is in the progress of billing continuation.
-	IsBillingContinuationInProgress bool `pulumi:"isBillingContinuationInProgress"`
+	IsBillingContinuationInProgress *bool `pulumi:"isBillingContinuationInProgress"`
 	// Indicates whether this host is in the progress of swapping billing.
-	IsBillingSwappingInProgress bool `pulumi:"isBillingSwappingInProgress"`
+	IsBillingSwappingInProgress *bool `pulumi:"isBillingSwappingInProgress"`
 	// (**Deprecated**) The billing option to switch to after the current billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
 	//
 	// Deprecated: The 'next_sku' field has been deprecated. It is no longer supported.
-	NextSku string `pulumi:"nextSku"`
+	NextSku *string `pulumi:"nextSku"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded.
 	//
 	// Deprecated: This 'non_upgraded_esxi_host_id' argument has been deprecated and will be computed only.
-	NonUpgradedEsxiHostId string `pulumi:"nonUpgradedEsxiHostId"`
+	NonUpgradedEsxiHostId *string `pulumi:"nonUpgradedEsxiHostId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is newly created to replace the failed node.
-	ReplacementEsxiHostId string `pulumi:"replacementEsxiHostId"`
+	ReplacementEsxiHostId *string `pulumi:"replacementEsxiHostId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC.
 	//
 	// Deprecated: The 'sddc_id' field has been deprecated. Please use 'cluster_id' instead.
-	SddcId string `pulumi:"sddcId"`
+	SddcId *string `pulumi:"sddcId"`
 	// The lifecycle state of the resource.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the active ESXi Host to swap billing with current host.
-	SwapBillingHostId string `pulumi:"swapBillingHostId"`
+	SwapBillingHostId *string `pulumi:"swapBillingHostId"`
 	// The date and time the ESXi host was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the ESXi host was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is newly created to upgrade the original host.
-	UpgradedReplacementEsxiHostId string `pulumi:"upgradedReplacementEsxiHostId"`
+	UpgradedReplacementEsxiHostId *string `pulumi:"upgradedReplacementEsxiHostId"`
 	// The version of VMware software that Oracle Cloud VMware Solution installed on the ESXi hosts.
-	VmwareSoftwareVersion string `pulumi:"vmwareSoftwareVersion"`
+	VmwareSoftwareVersion *string `pulumi:"vmwareSoftwareVersion"`
 }
 
 // GetExsiHostsEsxiHostCollectionInput is an input type that accepts GetExsiHostsEsxiHostCollectionArgs and GetExsiHostsEsxiHostCollectionOutput values.
@@ -634,71 +537,71 @@ type GetExsiHostsEsxiHostCollectionInput interface {
 
 type GetExsiHostsEsxiHostCollectionArgs struct {
 	// Current billing cycle end date. If the value in `currentSku` and `nextSku` are different, the value specified in `nextSku` becomes the new `currentSKU` when the `contractEndDate` is reached. Example: `2016-08-25T21:10:29.600Z`
-	BillingContractEndDate pulumi.StringInput `pulumi:"billingContractEndDate"`
+	BillingContractEndDate pulumi.StringPtrInput `pulumi:"billingContractEndDate"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
 	//
 	// Deprecated: This 'billing_donor_host_id' argument has been deprecated and will be computed only.
-	BillingDonorHostId pulumi.StringInput `pulumi:"billingDonorHostId"`
+	BillingDonorHostId pulumi.StringPtrInput `pulumi:"billingDonorHostId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
-	CapacityReservationId pulumi.StringInput `pulumi:"capacityReservationId"`
+	CapacityReservationId pulumi.StringPtrInput `pulumi:"capacityReservationId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment as optional parameter.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// The availability domain of the ESXi host.
-	ComputeAvailabilityDomain pulumi.StringInput `pulumi:"computeAvailabilityDomain"`
+	ComputeAvailabilityDomain pulumi.StringPtrInput `pulumi:"computeAvailabilityDomain"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute instance.
-	ComputeInstanceId pulumi.StringInput `pulumi:"computeInstanceId"`
+	ComputeInstanceId pulumi.StringPtrInput `pulumi:"computeInstanceId"`
 	// (**Deprecated**) The billing option currently used by the ESXi host. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
 	//
 	// Deprecated: The 'current_sku' field has been deprecated. It is no longer supported.
-	CurrentSku pulumi.StringInput `pulumi:"currentSku"`
+	CurrentSku pulumi.StringPtrInput `pulumi:"currentSku"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the given display name exactly.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that failed.
 	//
 	// Deprecated: This 'failed_esxi_host_id' argument has been deprecated and will be computed only.
-	FailedEsxiHostId pulumi.StringInput `pulumi:"failedEsxiHostId"`
+	FailedEsxiHostId pulumi.StringPtrInput `pulumi:"failedEsxiHostId"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The date and time when the new esxi host should start billing cycle. [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2021-07-25T21:10:29.600Z`
-	GracePeriodEndDate pulumi.StringInput `pulumi:"gracePeriodEndDate"`
+	GracePeriodEndDate pulumi.StringPtrInput `pulumi:"gracePeriodEndDate"`
 	// The OCPU count of the ESXi host.
-	HostOcpuCount pulumi.Float64Input `pulumi:"hostOcpuCount"`
+	HostOcpuCount pulumi.Float64PtrInput `pulumi:"hostOcpuCount"`
 	// The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
-	HostShapeName pulumi.StringInput `pulumi:"hostShapeName"`
+	HostShapeName pulumi.StringPtrInput `pulumi:"hostShapeName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Indicates whether this host is in the progress of billing continuation.
-	IsBillingContinuationInProgress pulumi.BoolInput `pulumi:"isBillingContinuationInProgress"`
+	IsBillingContinuationInProgress pulumi.BoolPtrInput `pulumi:"isBillingContinuationInProgress"`
 	// Indicates whether this host is in the progress of swapping billing.
-	IsBillingSwappingInProgress pulumi.BoolInput `pulumi:"isBillingSwappingInProgress"`
+	IsBillingSwappingInProgress pulumi.BoolPtrInput `pulumi:"isBillingSwappingInProgress"`
 	// (**Deprecated**) The billing option to switch to after the current billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
 	//
 	// Deprecated: The 'next_sku' field has been deprecated. It is no longer supported.
-	NextSku pulumi.StringInput `pulumi:"nextSku"`
+	NextSku pulumi.StringPtrInput `pulumi:"nextSku"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded.
 	//
 	// Deprecated: This 'non_upgraded_esxi_host_id' argument has been deprecated and will be computed only.
-	NonUpgradedEsxiHostId pulumi.StringInput `pulumi:"nonUpgradedEsxiHostId"`
+	NonUpgradedEsxiHostId pulumi.StringPtrInput `pulumi:"nonUpgradedEsxiHostId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is newly created to replace the failed node.
-	ReplacementEsxiHostId pulumi.StringInput `pulumi:"replacementEsxiHostId"`
+	ReplacementEsxiHostId pulumi.StringPtrInput `pulumi:"replacementEsxiHostId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC.
 	//
 	// Deprecated: The 'sddc_id' field has been deprecated. Please use 'cluster_id' instead.
-	SddcId pulumi.StringInput `pulumi:"sddcId"`
+	SddcId pulumi.StringPtrInput `pulumi:"sddcId"`
 	// The lifecycle state of the resource.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the active ESXi Host to swap billing with current host.
-	SwapBillingHostId pulumi.StringInput `pulumi:"swapBillingHostId"`
+	SwapBillingHostId pulumi.StringPtrInput `pulumi:"swapBillingHostId"`
 	// The date and time the ESXi host was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The date and time the ESXi host was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is newly created to upgrade the original host.
-	UpgradedReplacementEsxiHostId pulumi.StringInput `pulumi:"upgradedReplacementEsxiHostId"`
+	UpgradedReplacementEsxiHostId pulumi.StringPtrInput `pulumi:"upgradedReplacementEsxiHostId"`
 	// The version of VMware software that Oracle Cloud VMware Solution installed on the ESXi hosts.
-	VmwareSoftwareVersion pulumi.StringInput `pulumi:"vmwareSoftwareVersion"`
+	VmwareSoftwareVersion pulumi.StringPtrInput `pulumi:"vmwareSoftwareVersion"`
 }
 
 func (GetExsiHostsEsxiHostCollectionArgs) ElementType() reflect.Type {
@@ -711,12 +614,6 @@ func (i GetExsiHostsEsxiHostCollectionArgs) ToGetExsiHostsEsxiHostCollectionOutp
 
 func (i GetExsiHostsEsxiHostCollectionArgs) ToGetExsiHostsEsxiHostCollectionOutputWithContext(ctx context.Context) GetExsiHostsEsxiHostCollectionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetExsiHostsEsxiHostCollectionOutput)
-}
-
-func (i GetExsiHostsEsxiHostCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetExsiHostsEsxiHostCollection] {
-	return pulumix.Output[GetExsiHostsEsxiHostCollection]{
-		OutputState: i.ToGetExsiHostsEsxiHostCollectionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetExsiHostsEsxiHostCollectionArrayInput is an input type that accepts GetExsiHostsEsxiHostCollectionArray and GetExsiHostsEsxiHostCollectionArrayOutput values.
@@ -744,12 +641,6 @@ func (i GetExsiHostsEsxiHostCollectionArray) ToGetExsiHostsEsxiHostCollectionArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetExsiHostsEsxiHostCollectionArrayOutput)
 }
 
-func (i GetExsiHostsEsxiHostCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetExsiHostsEsxiHostCollection] {
-	return pulumix.Output[[]GetExsiHostsEsxiHostCollection]{
-		OutputState: i.ToGetExsiHostsEsxiHostCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetExsiHostsEsxiHostCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetExsiHostsEsxiHostCollectionOutput) ElementType() reflect.Type {
@@ -764,49 +655,43 @@ func (o GetExsiHostsEsxiHostCollectionOutput) ToGetExsiHostsEsxiHostCollectionOu
 	return o
 }
 
-func (o GetExsiHostsEsxiHostCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetExsiHostsEsxiHostCollection] {
-	return pulumix.Output[GetExsiHostsEsxiHostCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Current billing cycle end date. If the value in `currentSku` and `nextSku` are different, the value specified in `nextSku` becomes the new `currentSKU` when the `contractEndDate` is reached. Example: `2016-08-25T21:10:29.600Z`
-func (o GetExsiHostsEsxiHostCollectionOutput) BillingContractEndDate() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) string { return v.BillingContractEndDate }).(pulumi.StringOutput)
+func (o GetExsiHostsEsxiHostCollectionOutput) BillingContractEndDate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) *string { return v.BillingContractEndDate }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
 //
 // Deprecated: This 'billing_donor_host_id' argument has been deprecated and will be computed only.
-func (o GetExsiHostsEsxiHostCollectionOutput) BillingDonorHostId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) string { return v.BillingDonorHostId }).(pulumi.StringOutput)
+func (o GetExsiHostsEsxiHostCollectionOutput) BillingDonorHostId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) *string { return v.BillingDonorHostId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
-func (o GetExsiHostsEsxiHostCollectionOutput) CapacityReservationId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) string { return v.CapacityReservationId }).(pulumi.StringOutput)
+func (o GetExsiHostsEsxiHostCollectionOutput) CapacityReservationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) *string { return v.CapacityReservationId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment as optional parameter.
-func (o GetExsiHostsEsxiHostCollectionOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetExsiHostsEsxiHostCollectionOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The availability domain of the ESXi host.
-func (o GetExsiHostsEsxiHostCollectionOutput) ComputeAvailabilityDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) string { return v.ComputeAvailabilityDomain }).(pulumi.StringOutput)
+func (o GetExsiHostsEsxiHostCollectionOutput) ComputeAvailabilityDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) *string { return v.ComputeAvailabilityDomain }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute instance.
-func (o GetExsiHostsEsxiHostCollectionOutput) ComputeInstanceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) string { return v.ComputeInstanceId }).(pulumi.StringOutput)
+func (o GetExsiHostsEsxiHostCollectionOutput) ComputeInstanceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) *string { return v.ComputeInstanceId }).(pulumi.StringPtrOutput)
 }
 
 // (**Deprecated**) The billing option currently used by the ESXi host. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
 //
 // Deprecated: The 'current_sku' field has been deprecated. It is no longer supported.
-func (o GetExsiHostsEsxiHostCollectionOutput) CurrentSku() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) string { return v.CurrentSku }).(pulumi.StringOutput)
+func (o GetExsiHostsEsxiHostCollectionOutput) CurrentSku() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) *string { return v.CurrentSku }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -815,15 +700,15 @@ func (o GetExsiHostsEsxiHostCollectionOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // A filter to return only resources that match the given display name exactly.
-func (o GetExsiHostsEsxiHostCollectionOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetExsiHostsEsxiHostCollectionOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that failed.
 //
 // Deprecated: This 'failed_esxi_host_id' argument has been deprecated and will be computed only.
-func (o GetExsiHostsEsxiHostCollectionOutput) FailedEsxiHostId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) string { return v.FailedEsxiHostId }).(pulumi.StringOutput)
+func (o GetExsiHostsEsxiHostCollectionOutput) FailedEsxiHostId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) *string { return v.FailedEsxiHostId }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -832,89 +717,89 @@ func (o GetExsiHostsEsxiHostCollectionOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The date and time when the new esxi host should start billing cycle. [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2021-07-25T21:10:29.600Z`
-func (o GetExsiHostsEsxiHostCollectionOutput) GracePeriodEndDate() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) string { return v.GracePeriodEndDate }).(pulumi.StringOutput)
+func (o GetExsiHostsEsxiHostCollectionOutput) GracePeriodEndDate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) *string { return v.GracePeriodEndDate }).(pulumi.StringPtrOutput)
 }
 
 // The OCPU count of the ESXi host.
-func (o GetExsiHostsEsxiHostCollectionOutput) HostOcpuCount() pulumi.Float64Output {
-	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) float64 { return v.HostOcpuCount }).(pulumi.Float64Output)
+func (o GetExsiHostsEsxiHostCollectionOutput) HostOcpuCount() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) *float64 { return v.HostOcpuCount }).(pulumi.Float64PtrOutput)
 }
 
 // The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
-func (o GetExsiHostsEsxiHostCollectionOutput) HostShapeName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) string { return v.HostShapeName }).(pulumi.StringOutput)
+func (o GetExsiHostsEsxiHostCollectionOutput) HostShapeName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) *string { return v.HostShapeName }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host.
-func (o GetExsiHostsEsxiHostCollectionOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) string { return v.Id }).(pulumi.StringOutput)
+func (o GetExsiHostsEsxiHostCollectionOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Indicates whether this host is in the progress of billing continuation.
-func (o GetExsiHostsEsxiHostCollectionOutput) IsBillingContinuationInProgress() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) bool { return v.IsBillingContinuationInProgress }).(pulumi.BoolOutput)
+func (o GetExsiHostsEsxiHostCollectionOutput) IsBillingContinuationInProgress() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) *bool { return v.IsBillingContinuationInProgress }).(pulumi.BoolPtrOutput)
 }
 
 // Indicates whether this host is in the progress of swapping billing.
-func (o GetExsiHostsEsxiHostCollectionOutput) IsBillingSwappingInProgress() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) bool { return v.IsBillingSwappingInProgress }).(pulumi.BoolOutput)
+func (o GetExsiHostsEsxiHostCollectionOutput) IsBillingSwappingInProgress() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) *bool { return v.IsBillingSwappingInProgress }).(pulumi.BoolPtrOutput)
 }
 
 // (**Deprecated**) The billing option to switch to after the current billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
 //
 // Deprecated: The 'next_sku' field has been deprecated. It is no longer supported.
-func (o GetExsiHostsEsxiHostCollectionOutput) NextSku() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) string { return v.NextSku }).(pulumi.StringOutput)
+func (o GetExsiHostsEsxiHostCollectionOutput) NextSku() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) *string { return v.NextSku }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded.
 //
 // Deprecated: This 'non_upgraded_esxi_host_id' argument has been deprecated and will be computed only.
-func (o GetExsiHostsEsxiHostCollectionOutput) NonUpgradedEsxiHostId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) string { return v.NonUpgradedEsxiHostId }).(pulumi.StringOutput)
+func (o GetExsiHostsEsxiHostCollectionOutput) NonUpgradedEsxiHostId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) *string { return v.NonUpgradedEsxiHostId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is newly created to replace the failed node.
-func (o GetExsiHostsEsxiHostCollectionOutput) ReplacementEsxiHostId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) string { return v.ReplacementEsxiHostId }).(pulumi.StringOutput)
+func (o GetExsiHostsEsxiHostCollectionOutput) ReplacementEsxiHostId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) *string { return v.ReplacementEsxiHostId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC.
 //
 // Deprecated: The 'sddc_id' field has been deprecated. Please use 'cluster_id' instead.
-func (o GetExsiHostsEsxiHostCollectionOutput) SddcId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) string { return v.SddcId }).(pulumi.StringOutput)
+func (o GetExsiHostsEsxiHostCollectionOutput) SddcId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) *string { return v.SddcId }).(pulumi.StringPtrOutput)
 }
 
 // The lifecycle state of the resource.
-func (o GetExsiHostsEsxiHostCollectionOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) string { return v.State }).(pulumi.StringOutput)
+func (o GetExsiHostsEsxiHostCollectionOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the active ESXi Host to swap billing with current host.
-func (o GetExsiHostsEsxiHostCollectionOutput) SwapBillingHostId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) string { return v.SwapBillingHostId }).(pulumi.StringOutput)
+func (o GetExsiHostsEsxiHostCollectionOutput) SwapBillingHostId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) *string { return v.SwapBillingHostId }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the ESXi host was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-func (o GetExsiHostsEsxiHostCollectionOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetExsiHostsEsxiHostCollectionOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the ESXi host was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-func (o GetExsiHostsEsxiHostCollectionOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetExsiHostsEsxiHostCollectionOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is newly created to upgrade the original host.
-func (o GetExsiHostsEsxiHostCollectionOutput) UpgradedReplacementEsxiHostId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) string { return v.UpgradedReplacementEsxiHostId }).(pulumi.StringOutput)
+func (o GetExsiHostsEsxiHostCollectionOutput) UpgradedReplacementEsxiHostId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) *string { return v.UpgradedReplacementEsxiHostId }).(pulumi.StringPtrOutput)
 }
 
 // The version of VMware software that Oracle Cloud VMware Solution installed on the ESXi hosts.
-func (o GetExsiHostsEsxiHostCollectionOutput) VmwareSoftwareVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) string { return v.VmwareSoftwareVersion }).(pulumi.StringOutput)
+func (o GetExsiHostsEsxiHostCollectionOutput) VmwareSoftwareVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) *string { return v.VmwareSoftwareVersion }).(pulumi.StringPtrOutput)
 }
 
 type GetExsiHostsEsxiHostCollectionArrayOutput struct{ *pulumi.OutputState }
@@ -929,12 +814,6 @@ func (o GetExsiHostsEsxiHostCollectionArrayOutput) ToGetExsiHostsEsxiHostCollect
 
 func (o GetExsiHostsEsxiHostCollectionArrayOutput) ToGetExsiHostsEsxiHostCollectionArrayOutputWithContext(ctx context.Context) GetExsiHostsEsxiHostCollectionArrayOutput {
 	return o
-}
-
-func (o GetExsiHostsEsxiHostCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetExsiHostsEsxiHostCollection] {
-	return pulumix.Output[[]GetExsiHostsEsxiHostCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetExsiHostsEsxiHostCollectionArrayOutput) Index(i pulumi.IntInput) GetExsiHostsEsxiHostCollectionOutput {
@@ -978,12 +857,6 @@ func (i GetExsiHostsFilterArgs) ToGetExsiHostsFilterOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetExsiHostsFilterOutput)
 }
 
-func (i GetExsiHostsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetExsiHostsFilter] {
-	return pulumix.Output[GetExsiHostsFilter]{
-		OutputState: i.ToGetExsiHostsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetExsiHostsFilterArrayInput is an input type that accepts GetExsiHostsFilterArray and GetExsiHostsFilterArrayOutput values.
 // You can construct a concrete instance of `GetExsiHostsFilterArrayInput` via:
 //
@@ -1009,12 +882,6 @@ func (i GetExsiHostsFilterArray) ToGetExsiHostsFilterArrayOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetExsiHostsFilterArrayOutput)
 }
 
-func (i GetExsiHostsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetExsiHostsFilter] {
-	return pulumix.Output[[]GetExsiHostsFilter]{
-		OutputState: i.ToGetExsiHostsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetExsiHostsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetExsiHostsFilterOutput) ElementType() reflect.Type {
@@ -1027,12 +894,6 @@ func (o GetExsiHostsFilterOutput) ToGetExsiHostsFilterOutput() GetExsiHostsFilte
 
 func (o GetExsiHostsFilterOutput) ToGetExsiHostsFilterOutputWithContext(ctx context.Context) GetExsiHostsFilterOutput {
 	return o
-}
-
-func (o GetExsiHostsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetExsiHostsFilter] {
-	return pulumix.Output[GetExsiHostsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetExsiHostsFilterOutput) Name() pulumi.StringOutput {
@@ -1061,12 +922,6 @@ func (o GetExsiHostsFilterArrayOutput) ToGetExsiHostsFilterArrayOutputWithContex
 	return o
 }
 
-func (o GetExsiHostsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetExsiHostsFilter] {
-	return pulumix.Output[[]GetExsiHostsFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetExsiHostsFilterArrayOutput) Index(i pulumi.IntInput) GetExsiHostsFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExsiHostsFilter {
 		return vs[0].([]GetExsiHostsFilter)[vs[1].(int)]
@@ -1077,9 +932,9 @@ type GetSddcDatastore struct {
 	// A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of Block Storage Volumes.
 	BlockVolumeIds []string `pulumi:"blockVolumeIds"`
 	// Size of the Block Storage Volume in GB.
-	Capacity float64 `pulumi:"capacity"`
+	Capacity *float64 `pulumi:"capacity"`
 	// Type of the datastore.
-	DatastoreType string `pulumi:"datastoreType"`
+	DatastoreType *string `pulumi:"datastoreType"`
 }
 
 // GetSddcDatastoreInput is an input type that accepts GetSddcDatastoreArgs and GetSddcDatastoreOutput values.
@@ -1097,9 +952,9 @@ type GetSddcDatastoreArgs struct {
 	// A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of Block Storage Volumes.
 	BlockVolumeIds pulumi.StringArrayInput `pulumi:"blockVolumeIds"`
 	// Size of the Block Storage Volume in GB.
-	Capacity pulumi.Float64Input `pulumi:"capacity"`
+	Capacity pulumi.Float64PtrInput `pulumi:"capacity"`
 	// Type of the datastore.
-	DatastoreType pulumi.StringInput `pulumi:"datastoreType"`
+	DatastoreType pulumi.StringPtrInput `pulumi:"datastoreType"`
 }
 
 func (GetSddcDatastoreArgs) ElementType() reflect.Type {
@@ -1112,12 +967,6 @@ func (i GetSddcDatastoreArgs) ToGetSddcDatastoreOutput() GetSddcDatastoreOutput 
 
 func (i GetSddcDatastoreArgs) ToGetSddcDatastoreOutputWithContext(ctx context.Context) GetSddcDatastoreOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSddcDatastoreOutput)
-}
-
-func (i GetSddcDatastoreArgs) ToOutput(ctx context.Context) pulumix.Output[GetSddcDatastore] {
-	return pulumix.Output[GetSddcDatastore]{
-		OutputState: i.ToGetSddcDatastoreOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSddcDatastoreArrayInput is an input type that accepts GetSddcDatastoreArray and GetSddcDatastoreArrayOutput values.
@@ -1145,12 +994,6 @@ func (i GetSddcDatastoreArray) ToGetSddcDatastoreArrayOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetSddcDatastoreArrayOutput)
 }
 
-func (i GetSddcDatastoreArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSddcDatastore] {
-	return pulumix.Output[[]GetSddcDatastore]{
-		OutputState: i.ToGetSddcDatastoreArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSddcDatastoreOutput struct{ *pulumi.OutputState }
 
 func (GetSddcDatastoreOutput) ElementType() reflect.Type {
@@ -1165,25 +1008,19 @@ func (o GetSddcDatastoreOutput) ToGetSddcDatastoreOutputWithContext(ctx context.
 	return o
 }
 
-func (o GetSddcDatastoreOutput) ToOutput(ctx context.Context) pulumix.Output[GetSddcDatastore] {
-	return pulumix.Output[GetSddcDatastore]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of Block Storage Volumes.
 func (o GetSddcDatastoreOutput) BlockVolumeIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetSddcDatastore) []string { return v.BlockVolumeIds }).(pulumi.StringArrayOutput)
 }
 
 // Size of the Block Storage Volume in GB.
-func (o GetSddcDatastoreOutput) Capacity() pulumi.Float64Output {
-	return o.ApplyT(func(v GetSddcDatastore) float64 { return v.Capacity }).(pulumi.Float64Output)
+func (o GetSddcDatastoreOutput) Capacity() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetSddcDatastore) *float64 { return v.Capacity }).(pulumi.Float64PtrOutput)
 }
 
 // Type of the datastore.
-func (o GetSddcDatastoreOutput) DatastoreType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSddcDatastore) string { return v.DatastoreType }).(pulumi.StringOutput)
+func (o GetSddcDatastoreOutput) DatastoreType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSddcDatastore) *string { return v.DatastoreType }).(pulumi.StringPtrOutput)
 }
 
 type GetSddcDatastoreArrayOutput struct{ *pulumi.OutputState }
@@ -1200,12 +1037,6 @@ func (o GetSddcDatastoreArrayOutput) ToGetSddcDatastoreArrayOutputWithContext(ct
 	return o
 }
 
-func (o GetSddcDatastoreArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSddcDatastore] {
-	return pulumix.Output[[]GetSddcDatastore]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSddcDatastoreArrayOutput) Index(i pulumi.IntInput) GetSddcDatastoreOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSddcDatastore {
 		return vs[0].([]GetSddcDatastore)[vs[1].(int)]
@@ -1214,11 +1045,11 @@ func (o GetSddcDatastoreArrayOutput) Index(i pulumi.IntInput) GetSddcDatastoreOu
 
 type GetSddcHcxOnPremLicense struct {
 	// HCX on-premise license key value.
-	ActivationKey string `pulumi:"activationKey"`
+	ActivationKey *string `pulumi:"activationKey"`
 	// status of HCX on-premise license.
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 	// Name of the system that consumed the HCX on-premise license
-	SystemName string `pulumi:"systemName"`
+	SystemName *string `pulumi:"systemName"`
 }
 
 // GetSddcHcxOnPremLicenseInput is an input type that accepts GetSddcHcxOnPremLicenseArgs and GetSddcHcxOnPremLicenseOutput values.
@@ -1234,11 +1065,11 @@ type GetSddcHcxOnPremLicenseInput interface {
 
 type GetSddcHcxOnPremLicenseArgs struct {
 	// HCX on-premise license key value.
-	ActivationKey pulumi.StringInput `pulumi:"activationKey"`
+	ActivationKey pulumi.StringPtrInput `pulumi:"activationKey"`
 	// status of HCX on-premise license.
-	Status pulumi.StringInput `pulumi:"status"`
+	Status pulumi.StringPtrInput `pulumi:"status"`
 	// Name of the system that consumed the HCX on-premise license
-	SystemName pulumi.StringInput `pulumi:"systemName"`
+	SystemName pulumi.StringPtrInput `pulumi:"systemName"`
 }
 
 func (GetSddcHcxOnPremLicenseArgs) ElementType() reflect.Type {
@@ -1251,12 +1082,6 @@ func (i GetSddcHcxOnPremLicenseArgs) ToGetSddcHcxOnPremLicenseOutput() GetSddcHc
 
 func (i GetSddcHcxOnPremLicenseArgs) ToGetSddcHcxOnPremLicenseOutputWithContext(ctx context.Context) GetSddcHcxOnPremLicenseOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSddcHcxOnPremLicenseOutput)
-}
-
-func (i GetSddcHcxOnPremLicenseArgs) ToOutput(ctx context.Context) pulumix.Output[GetSddcHcxOnPremLicense] {
-	return pulumix.Output[GetSddcHcxOnPremLicense]{
-		OutputState: i.ToGetSddcHcxOnPremLicenseOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSddcHcxOnPremLicenseArrayInput is an input type that accepts GetSddcHcxOnPremLicenseArray and GetSddcHcxOnPremLicenseArrayOutput values.
@@ -1284,12 +1109,6 @@ func (i GetSddcHcxOnPremLicenseArray) ToGetSddcHcxOnPremLicenseArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetSddcHcxOnPremLicenseArrayOutput)
 }
 
-func (i GetSddcHcxOnPremLicenseArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSddcHcxOnPremLicense] {
-	return pulumix.Output[[]GetSddcHcxOnPremLicense]{
-		OutputState: i.ToGetSddcHcxOnPremLicenseArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSddcHcxOnPremLicenseOutput struct{ *pulumi.OutputState }
 
 func (GetSddcHcxOnPremLicenseOutput) ElementType() reflect.Type {
@@ -1304,25 +1123,19 @@ func (o GetSddcHcxOnPremLicenseOutput) ToGetSddcHcxOnPremLicenseOutputWithContex
 	return o
 }
 
-func (o GetSddcHcxOnPremLicenseOutput) ToOutput(ctx context.Context) pulumix.Output[GetSddcHcxOnPremLicense] {
-	return pulumix.Output[GetSddcHcxOnPremLicense]{
-		OutputState: o.OutputState,
-	}
-}
-
 // HCX on-premise license key value.
-func (o GetSddcHcxOnPremLicenseOutput) ActivationKey() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSddcHcxOnPremLicense) string { return v.ActivationKey }).(pulumi.StringOutput)
+func (o GetSddcHcxOnPremLicenseOutput) ActivationKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSddcHcxOnPremLicense) *string { return v.ActivationKey }).(pulumi.StringPtrOutput)
 }
 
 // status of HCX on-premise license.
-func (o GetSddcHcxOnPremLicenseOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSddcHcxOnPremLicense) string { return v.Status }).(pulumi.StringOutput)
+func (o GetSddcHcxOnPremLicenseOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSddcHcxOnPremLicense) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // Name of the system that consumed the HCX on-premise license
-func (o GetSddcHcxOnPremLicenseOutput) SystemName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSddcHcxOnPremLicense) string { return v.SystemName }).(pulumi.StringOutput)
+func (o GetSddcHcxOnPremLicenseOutput) SystemName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSddcHcxOnPremLicense) *string { return v.SystemName }).(pulumi.StringPtrOutput)
 }
 
 type GetSddcHcxOnPremLicenseArrayOutput struct{ *pulumi.OutputState }
@@ -1339,12 +1152,6 @@ func (o GetSddcHcxOnPremLicenseArrayOutput) ToGetSddcHcxOnPremLicenseArrayOutput
 	return o
 }
 
-func (o GetSddcHcxOnPremLicenseArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSddcHcxOnPremLicense] {
-	return pulumix.Output[[]GetSddcHcxOnPremLicense]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSddcHcxOnPremLicenseArrayOutput) Index(i pulumi.IntInput) GetSddcHcxOnPremLicenseOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSddcHcxOnPremLicense {
 		return vs[0].([]GetSddcHcxOnPremLicense)[vs[1].(int)]
@@ -1353,9 +1160,9 @@ func (o GetSddcHcxOnPremLicenseArrayOutput) Index(i pulumi.IntInput) GetSddcHcxO
 
 type GetSddcUpgradeLicense struct {
 	// vSphere license key value.
-	LicenseKey string `pulumi:"licenseKey"`
+	LicenseKey *string `pulumi:"licenseKey"`
 	// vSphere license type.
-	LicenseType string `pulumi:"licenseType"`
+	LicenseType *string `pulumi:"licenseType"`
 }
 
 // GetSddcUpgradeLicenseInput is an input type that accepts GetSddcUpgradeLicenseArgs and GetSddcUpgradeLicenseOutput values.
@@ -1371,9 +1178,9 @@ type GetSddcUpgradeLicenseInput interface {
 
 type GetSddcUpgradeLicenseArgs struct {
 	// vSphere license key value.
-	LicenseKey pulumi.StringInput `pulumi:"licenseKey"`
+	LicenseKey pulumi.StringPtrInput `pulumi:"licenseKey"`
 	// vSphere license type.
-	LicenseType pulumi.StringInput `pulumi:"licenseType"`
+	LicenseType pulumi.StringPtrInput `pulumi:"licenseType"`
 }
 
 func (GetSddcUpgradeLicenseArgs) ElementType() reflect.Type {
@@ -1386,12 +1193,6 @@ func (i GetSddcUpgradeLicenseArgs) ToGetSddcUpgradeLicenseOutput() GetSddcUpgrad
 
 func (i GetSddcUpgradeLicenseArgs) ToGetSddcUpgradeLicenseOutputWithContext(ctx context.Context) GetSddcUpgradeLicenseOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSddcUpgradeLicenseOutput)
-}
-
-func (i GetSddcUpgradeLicenseArgs) ToOutput(ctx context.Context) pulumix.Output[GetSddcUpgradeLicense] {
-	return pulumix.Output[GetSddcUpgradeLicense]{
-		OutputState: i.ToGetSddcUpgradeLicenseOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSddcUpgradeLicenseArrayInput is an input type that accepts GetSddcUpgradeLicenseArray and GetSddcUpgradeLicenseArrayOutput values.
@@ -1419,12 +1220,6 @@ func (i GetSddcUpgradeLicenseArray) ToGetSddcUpgradeLicenseArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetSddcUpgradeLicenseArrayOutput)
 }
 
-func (i GetSddcUpgradeLicenseArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSddcUpgradeLicense] {
-	return pulumix.Output[[]GetSddcUpgradeLicense]{
-		OutputState: i.ToGetSddcUpgradeLicenseArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSddcUpgradeLicenseOutput struct{ *pulumi.OutputState }
 
 func (GetSddcUpgradeLicenseOutput) ElementType() reflect.Type {
@@ -1439,20 +1234,14 @@ func (o GetSddcUpgradeLicenseOutput) ToGetSddcUpgradeLicenseOutputWithContext(ct
 	return o
 }
 
-func (o GetSddcUpgradeLicenseOutput) ToOutput(ctx context.Context) pulumix.Output[GetSddcUpgradeLicense] {
-	return pulumix.Output[GetSddcUpgradeLicense]{
-		OutputState: o.OutputState,
-	}
-}
-
 // vSphere license key value.
-func (o GetSddcUpgradeLicenseOutput) LicenseKey() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSddcUpgradeLicense) string { return v.LicenseKey }).(pulumi.StringOutput)
+func (o GetSddcUpgradeLicenseOutput) LicenseKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSddcUpgradeLicense) *string { return v.LicenseKey }).(pulumi.StringPtrOutput)
 }
 
 // vSphere license type.
-func (o GetSddcUpgradeLicenseOutput) LicenseType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSddcUpgradeLicense) string { return v.LicenseType }).(pulumi.StringOutput)
+func (o GetSddcUpgradeLicenseOutput) LicenseType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSddcUpgradeLicense) *string { return v.LicenseType }).(pulumi.StringPtrOutput)
 }
 
 type GetSddcUpgradeLicenseArrayOutput struct{ *pulumi.OutputState }
@@ -1469,12 +1258,6 @@ func (o GetSddcUpgradeLicenseArrayOutput) ToGetSddcUpgradeLicenseArrayOutputWith
 	return o
 }
 
-func (o GetSddcUpgradeLicenseArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSddcUpgradeLicense] {
-	return pulumix.Output[[]GetSddcUpgradeLicense]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSddcUpgradeLicenseArrayOutput) Index(i pulumi.IntInput) GetSddcUpgradeLicenseOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSddcUpgradeLicense {
 		return vs[0].([]GetSddcUpgradeLicense)[vs[1].(int)]
@@ -1483,9 +1266,9 @@ func (o GetSddcUpgradeLicenseArrayOutput) Index(i pulumi.IntInput) GetSddcUpgrad
 
 type GetSddcVsphereUpgradeObject struct {
 	// Binary object download link.
-	DownloadLink string `pulumi:"downloadLink"`
+	DownloadLink *string `pulumi:"downloadLink"`
 	// Binary object description.
-	LinkDescription string `pulumi:"linkDescription"`
+	LinkDescription *string `pulumi:"linkDescription"`
 }
 
 // GetSddcVsphereUpgradeObjectInput is an input type that accepts GetSddcVsphereUpgradeObjectArgs and GetSddcVsphereUpgradeObjectOutput values.
@@ -1501,9 +1284,9 @@ type GetSddcVsphereUpgradeObjectInput interface {
 
 type GetSddcVsphereUpgradeObjectArgs struct {
 	// Binary object download link.
-	DownloadLink pulumi.StringInput `pulumi:"downloadLink"`
+	DownloadLink pulumi.StringPtrInput `pulumi:"downloadLink"`
 	// Binary object description.
-	LinkDescription pulumi.StringInput `pulumi:"linkDescription"`
+	LinkDescription pulumi.StringPtrInput `pulumi:"linkDescription"`
 }
 
 func (GetSddcVsphereUpgradeObjectArgs) ElementType() reflect.Type {
@@ -1516,12 +1299,6 @@ func (i GetSddcVsphereUpgradeObjectArgs) ToGetSddcVsphereUpgradeObjectOutput() G
 
 func (i GetSddcVsphereUpgradeObjectArgs) ToGetSddcVsphereUpgradeObjectOutputWithContext(ctx context.Context) GetSddcVsphereUpgradeObjectOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSddcVsphereUpgradeObjectOutput)
-}
-
-func (i GetSddcVsphereUpgradeObjectArgs) ToOutput(ctx context.Context) pulumix.Output[GetSddcVsphereUpgradeObject] {
-	return pulumix.Output[GetSddcVsphereUpgradeObject]{
-		OutputState: i.ToGetSddcVsphereUpgradeObjectOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSddcVsphereUpgradeObjectArrayInput is an input type that accepts GetSddcVsphereUpgradeObjectArray and GetSddcVsphereUpgradeObjectArrayOutput values.
@@ -1549,12 +1326,6 @@ func (i GetSddcVsphereUpgradeObjectArray) ToGetSddcVsphereUpgradeObjectArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetSddcVsphereUpgradeObjectArrayOutput)
 }
 
-func (i GetSddcVsphereUpgradeObjectArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSddcVsphereUpgradeObject] {
-	return pulumix.Output[[]GetSddcVsphereUpgradeObject]{
-		OutputState: i.ToGetSddcVsphereUpgradeObjectArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSddcVsphereUpgradeObjectOutput struct{ *pulumi.OutputState }
 
 func (GetSddcVsphereUpgradeObjectOutput) ElementType() reflect.Type {
@@ -1569,20 +1340,14 @@ func (o GetSddcVsphereUpgradeObjectOutput) ToGetSddcVsphereUpgradeObjectOutputWi
 	return o
 }
 
-func (o GetSddcVsphereUpgradeObjectOutput) ToOutput(ctx context.Context) pulumix.Output[GetSddcVsphereUpgradeObject] {
-	return pulumix.Output[GetSddcVsphereUpgradeObject]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Binary object download link.
-func (o GetSddcVsphereUpgradeObjectOutput) DownloadLink() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSddcVsphereUpgradeObject) string { return v.DownloadLink }).(pulumi.StringOutput)
+func (o GetSddcVsphereUpgradeObjectOutput) DownloadLink() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSddcVsphereUpgradeObject) *string { return v.DownloadLink }).(pulumi.StringPtrOutput)
 }
 
 // Binary object description.
-func (o GetSddcVsphereUpgradeObjectOutput) LinkDescription() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSddcVsphereUpgradeObject) string { return v.LinkDescription }).(pulumi.StringOutput)
+func (o GetSddcVsphereUpgradeObjectOutput) LinkDescription() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSddcVsphereUpgradeObject) *string { return v.LinkDescription }).(pulumi.StringPtrOutput)
 }
 
 type GetSddcVsphereUpgradeObjectArrayOutput struct{ *pulumi.OutputState }
@@ -1597,12 +1362,6 @@ func (o GetSddcVsphereUpgradeObjectArrayOutput) ToGetSddcVsphereUpgradeObjectArr
 
 func (o GetSddcVsphereUpgradeObjectArrayOutput) ToGetSddcVsphereUpgradeObjectArrayOutputWithContext(ctx context.Context) GetSddcVsphereUpgradeObjectArrayOutput {
 	return o
-}
-
-func (o GetSddcVsphereUpgradeObjectArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSddcVsphereUpgradeObject] {
-	return pulumix.Output[[]GetSddcVsphereUpgradeObject]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSddcVsphereUpgradeObjectArrayOutput) Index(i pulumi.IntInput) GetSddcVsphereUpgradeObjectOutput {
@@ -1646,12 +1405,6 @@ func (i GetSddcsFilterArgs) ToGetSddcsFilterOutputWithContext(ctx context.Contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetSddcsFilterOutput)
 }
 
-func (i GetSddcsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetSddcsFilter] {
-	return pulumix.Output[GetSddcsFilter]{
-		OutputState: i.ToGetSddcsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetSddcsFilterArrayInput is an input type that accepts GetSddcsFilterArray and GetSddcsFilterArrayOutput values.
 // You can construct a concrete instance of `GetSddcsFilterArrayInput` via:
 //
@@ -1677,12 +1430,6 @@ func (i GetSddcsFilterArray) ToGetSddcsFilterArrayOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(GetSddcsFilterArrayOutput)
 }
 
-func (i GetSddcsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSddcsFilter] {
-	return pulumix.Output[[]GetSddcsFilter]{
-		OutputState: i.ToGetSddcsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSddcsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetSddcsFilterOutput) ElementType() reflect.Type {
@@ -1695,12 +1442,6 @@ func (o GetSddcsFilterOutput) ToGetSddcsFilterOutput() GetSddcsFilterOutput {
 
 func (o GetSddcsFilterOutput) ToGetSddcsFilterOutputWithContext(ctx context.Context) GetSddcsFilterOutput {
 	return o
-}
-
-func (o GetSddcsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetSddcsFilter] {
-	return pulumix.Output[GetSddcsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSddcsFilterOutput) Name() pulumi.StringOutput {
@@ -1729,12 +1470,6 @@ func (o GetSddcsFilterArrayOutput) ToGetSddcsFilterArrayOutputWithContext(ctx co
 	return o
 }
 
-func (o GetSddcsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSddcsFilter] {
-	return pulumix.Output[[]GetSddcsFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSddcsFilterArrayOutput) Index(i pulumi.IntInput) GetSddcsFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSddcsFilter {
 		return vs[0].([]GetSddcsFilter)[vs[1].(int)]
@@ -1745,17 +1480,17 @@ type GetSddcsSddcCollection struct {
 	// (**Deprecated**) The number of actual ESXi hosts in the SDDC on the cloud. This attribute will be different when esxi Host is added to an existing SDDC.
 	//
 	// Deprecated: The 'actual_esxi_hosts_count' field has been deprecated. Please use 'initial_configuration' instead.
-	ActualEsxiHostsCount int `pulumi:"actualEsxiHostsCount"`
+	ActualEsxiHostsCount *int `pulumi:"actualEsxiHostsCount"`
 	// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
 	//
 	// Deprecated: The 'capacity_reservation_id' field has been deprecated. Please use 'initial_configuration' instead.
-	CapacityReservationId string `pulumi:"capacityReservationId"`
+	CapacityReservationId *string `pulumi:"capacityReservationId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The name of the availability domain that the Compute instances are running in.  Example: `Uocm:PHX-AD-1`
 	//
 	// Deprecated: The 'compute_availability_domain' field has been deprecated. Please use 'initial_configuration' instead.
-	ComputeAvailabilityDomain string `pulumi:"computeAvailabilityDomain"`
+	ComputeAvailabilityDomain *string `pulumi:"computeAvailabilityDomain"`
 	// (**Deprecated**) Datastores used for the Sddc.
 	//
 	// Deprecated: The 'datastores' field has been deprecated. Please use 'initial_configuration' instead.
@@ -1763,152 +1498,152 @@ type GetSddcsSddcCollection struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A filter to return only resources that match the given display name exactly.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// (**Deprecated**) The number of ESXi hosts in the SDDC.
 	//
 	// Deprecated: The 'esxi_hosts_count' field has been deprecated. Please use 'initial_configuration' instead.
-	EsxiHostsCount int `pulumi:"esxiHostsCount"`
+	EsxiHostsCount *int `pulumi:"esxiHostsCount"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	HcxAction    string                 `pulumi:"hcxAction"`
+	HcxAction    *string                `pulumi:"hcxAction"`
 	// The FQDN for HCX Manager.  Example: `hcx-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
-	HcxFqdn string `pulumi:"hcxFqdn"`
+	HcxFqdn *string `pulumi:"hcxFqdn"`
 	// (**Deprecated**) The SDDC includes an administrator username and initial password for HCX Manager. Make sure to change this initial HCX Manager password to a different value.
 	//
 	// Deprecated: The 'hcx_initial_password' field has been deprecated. Please use the 'ocvp_sddc_password' data source instead.
-	HcxInitialPassword string `pulumi:"hcxInitialPassword"`
+	HcxInitialPassword *string `pulumi:"hcxInitialPassword"`
 	// (**Deprecated**) The activation keys to use on the on-premises HCX Enterprise appliances you site pair with HCX Manager in your VMware Solution. The number of keys provided depends on the HCX license type. HCX Advanced provides 3 activation keys. HCX Enterprise provides 10 activation keys.
 	//
 	// Deprecated: The 'hcx_on_prem_key' field has been deprecated and may be removed in a future version. Do not use this field.
-	HcxOnPremKey string `pulumi:"hcxOnPremKey"`
+	HcxOnPremKey *string `pulumi:"hcxOnPremKey"`
 	// The activation licenses to use on the on-premises HCX Enterprise appliance you site pair with HCX Manager in your VMware Solution.
 	HcxOnPremLicenses []GetSddcsSddcCollectionHcxOnPremLicense `pulumi:"hcxOnPremLicenses"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for HCX Manager. For information about `PrivateIp` objects, see the Core Services API.
-	HcxPrivateIpId string `pulumi:"hcxPrivateIpId"`
+	HcxPrivateIpId *string `pulumi:"hcxPrivateIpId"`
 	// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the HCX component of the VMware environment.
 	//
 	// Deprecated: The 'hcx_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
-	HcxVlanId string `pulumi:"hcxVlanId"`
+	HcxVlanId *string `pulumi:"hcxVlanId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// (**Deprecated**) The initial OCPU count of the SDDC's ESXi hosts.
 	//
 	// Deprecated: The 'initial_host_ocpu_count' field has been deprecated. Please use 'initial_configuration' instead.
-	InitialHostOcpuCount float64 `pulumi:"initialHostOcpuCount"`
+	InitialHostOcpuCount *float64 `pulumi:"initialHostOcpuCount"`
 	// (**Deprecated**) The initial compute shape of the SDDC's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
 	//
 	// Deprecated: The 'initial_host_shape_name' field has been deprecated. Please use 'initial_configuration' instead.
-	InitialHostShapeName string `pulumi:"initialHostShapeName"`
+	InitialHostShapeName *string `pulumi:"initialHostShapeName"`
 	// (**Deprecated**) The billing option selected during SDDC creation. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
 	//
 	// Deprecated: The 'initial_sku' field has been deprecated. Please use 'initial_configuration' instead.
-	InitialSku string `pulumi:"initialSku"`
+	InitialSku *string `pulumi:"initialSku"`
 	// (**Deprecated**) A prefix used in the name of each ESXi host and Compute instance in the SDDC. If this isn't set, the SDDC's `displayName` is used as the prefix.
 	//
 	// Deprecated: The 'instance_display_name_prefix' field has been deprecated. Please use 'initial_configuration' instead.
-	InstanceDisplayNamePrefix string `pulumi:"instanceDisplayNamePrefix"`
+	InstanceDisplayNamePrefix *string `pulumi:"instanceDisplayNamePrefix"`
 	// (**Deprecated**) Indicates whether HCX is enabled for this SDDC.
 	//
 	// Deprecated: The 'is_hcx_enabled' field has been deprecated. Please use 'hcx_mode' instead.
-	IsHcxEnabled bool `pulumi:"isHcxEnabled"`
+	IsHcxEnabled *bool `pulumi:"isHcxEnabled"`
 	// (**Deprecated**) Indicates whether HCX Enterprise is enabled for this SDDC.
 	//
 	// Deprecated: The 'is_hcx_enabled' field has been deprecated. Please use 'actual_hcx_mode' instead.
-	IsHcxEnterpriseEnabled bool `pulumi:"isHcxEnterpriseEnabled"`
+	IsHcxEnterpriseEnabled *bool `pulumi:"isHcxEnterpriseEnabled"`
 	// Indicates whether SDDC is pending downgrade from HCX Enterprise to HCX Advanced.
-	IsHcxPendingDowngrade bool `pulumi:"isHcxPendingDowngrade"`
+	IsHcxPendingDowngrade *bool `pulumi:"isHcxPendingDowngrade"`
 	// (**Deprecated**) Indicates whether shielded instance is enabled at the SDDC level.
 	//
 	// Deprecated: The 'is_shielded_instance_enabled' field has been deprecated. Please use 'initial_configuration' instead.
-	IsShieldedInstanceEnabled bool `pulumi:"isShieldedInstanceEnabled"`
+	IsShieldedInstanceEnabled *bool `pulumi:"isShieldedInstanceEnabled"`
 	// Indicates whether this SDDC is designated for only single ESXi host.
-	IsSingleHostSddc bool `pulumi:"isSingleHostSddc"`
+	IsSingleHostSddc *bool `pulumi:"isSingleHostSddc"`
 	// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX Edge Uplink 1 component of the VMware environment.
 	//
 	// Deprecated: The 'nsx_edge_uplink1vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
-	NsxEdgeUplink1vlanId string `pulumi:"nsxEdgeUplink1vlanId"`
+	NsxEdgeUplink1vlanId *string `pulumi:"nsxEdgeUplink1vlanId"`
 	// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX Edge Uplink 2 component of the VMware environment.
 	//
 	// Deprecated: The 'nsx_edge_uplink2vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
-	NsxEdgeUplink2vlanId string `pulumi:"nsxEdgeUplink2vlanId"`
+	NsxEdgeUplink2vlanId *string `pulumi:"nsxEdgeUplink2vlanId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for the NSX Edge Uplink. Use this OCID as the route target for route table rules when setting up connectivity between the SDDC and other networks. For information about `PrivateIp` objects, see the Core Services API.
-	NsxEdgeUplinkIpId string `pulumi:"nsxEdgeUplinkIpId"`
+	NsxEdgeUplinkIpId *string `pulumi:"nsxEdgeUplinkIpId"`
 	// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX Edge VTEP component of the VMware environment.
 	//
 	// Deprecated: The 'nsx_edge_vtep_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
-	NsxEdgeVtepVlanId string `pulumi:"nsxEdgeVtepVlanId"`
+	NsxEdgeVtepVlanId *string `pulumi:"nsxEdgeVtepVlanId"`
 	// The FQDN for NSX Manager.  Example: `nsx-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
-	NsxManagerFqdn string `pulumi:"nsxManagerFqdn"`
+	NsxManagerFqdn *string `pulumi:"nsxManagerFqdn"`
 	// (**Deprecated**) The SDDC includes an administrator username and initial password for NSX Manager. Make sure to change this initial NSX Manager password to a different value.
 	//
 	// Deprecated: The 'nsx_manager_initial_password' field has been deprecated. Please use the 'ocvp_sddc_password' data source instead.
-	NsxManagerInitialPassword string `pulumi:"nsxManagerInitialPassword"`
+	NsxManagerInitialPassword *string `pulumi:"nsxManagerInitialPassword"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for NSX Manager. For information about `PrivateIp` objects, see the Core Services API.
-	NsxManagerPrivateIpId string `pulumi:"nsxManagerPrivateIpId"`
+	NsxManagerPrivateIpId *string `pulumi:"nsxManagerPrivateIpId"`
 	// The SDDC includes an administrator username and initial password for NSX Manager. You can change this initial username to a different value in NSX Manager.
-	NsxManagerUsername string `pulumi:"nsxManagerUsername"`
+	NsxManagerUsername *string `pulumi:"nsxManagerUsername"`
 	// (**Deprecated**) The VMware NSX overlay workload segment to host your application. Connect to workload portgroup in vCenter to access this overlay segment.
 	//
 	// Deprecated: The 'nsx_overlay_segment_name' field has been deprecated and may be removed in a future version. Do not use this field.
-	NsxOverlaySegmentName string `pulumi:"nsxOverlaySegmentName"`
+	NsxOverlaySegmentName *string `pulumi:"nsxOverlaySegmentName"`
 	// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX VTEP component of the VMware environment.
 	//
 	// Deprecated: The 'nsx_vtep_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
-	NsxVtepVlanId string `pulumi:"nsxVtepVlanId"`
+	NsxVtepVlanId *string `pulumi:"nsxVtepVlanId"`
 	// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet used to provision the SDDC.
 	//
 	// Deprecated: The 'provisioning_subnet_id' field has been deprecated. Please use 'initial_configuration' instead.
-	ProvisioningSubnetId string `pulumi:"provisioningSubnetId"`
+	ProvisioningSubnetId *string `pulumi:"provisioningSubnetId"`
 	// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the Provisioning component of the VMware environment.
 	//
 	// Deprecated: The 'provisioning_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
-	ProvisioningVlanId      string `pulumi:"provisioningVlanId"`
-	RefreshHcxLicenseStatus bool   `pulumi:"refreshHcxLicenseStatus"`
+	ProvisioningVlanId      *string `pulumi:"provisioningVlanId"`
+	RefreshHcxLicenseStatus *bool   `pulumi:"refreshHcxLicenseStatus"`
 	// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere Replication component of the VMware environment.
 	//
 	// Deprecated: The 'replication_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
-	ReplicationVlanId                string   `pulumi:"replicationVlanId"`
+	ReplicationVlanId                *string  `pulumi:"replicationVlanId"`
 	ReservingHcxOnPremiseLicenseKeys []string `pulumi:"reservingHcxOnPremiseLicenseKeys"`
 	// One or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on each ESXi host. Use a newline character to separate multiple keys. The SSH keys must be in the format required for the `authorizedKeys` file.
-	SshAuthorizedKeys string `pulumi:"sshAuthorizedKeys"`
+	SshAuthorizedKeys *string `pulumi:"sshAuthorizedKeys"`
 	// The lifecycle state of the resource.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the SDDC was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time current HCX Enterprise billing cycle ends, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeHcxBillingCycleEnd string `pulumi:"timeHcxBillingCycleEnd"`
+	TimeHcxBillingCycleEnd *string `pulumi:"timeHcxBillingCycleEnd"`
 	// The date and time the SDDC's HCX on-premise license status was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeHcxLicenseStatusUpdated string `pulumi:"timeHcxLicenseStatusUpdated"`
+	TimeHcxLicenseStatusUpdated *string `pulumi:"timeHcxLicenseStatusUpdated"`
 	// The date and time the SDDC was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// (**Deprecated**) The vSphere licenses to use when upgrading the SDDC.
 	//
 	// Deprecated: The 'upgrade_licenses' field has been deprecated. Please use the 'ocvp_cluster_resource' resource instead.
 	UpgradeLicenses []GetSddcsSddcCollectionUpgradeLicense `pulumi:"upgradeLicenses"`
 	// The FQDN for vCenter.  Example: `vcenter-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
-	VcenterFqdn string `pulumi:"vcenterFqdn"`
+	VcenterFqdn *string `pulumi:"vcenterFqdn"`
 	// (**Deprecated**) The SDDC includes an administrator username and initial password for vCenter. Make sure to change this initial vCenter password to a different value.
 	//
 	// Deprecated: The 'vcenter_initial_password' field has been deprecated. Please use the 'ocvp_sddc_password' data source instead.
-	VcenterInitialPassword string `pulumi:"vcenterInitialPassword"`
+	VcenterInitialPassword *string `pulumi:"vcenterInitialPassword"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for vCenter. For information about `PrivateIp` objects, see the Core Services API.
-	VcenterPrivateIpId string `pulumi:"vcenterPrivateIpId"`
+	VcenterPrivateIpId *string `pulumi:"vcenterPrivateIpId"`
 	// The SDDC includes an administrator username and initial password for vCenter. You can change this initial username to a different value in vCenter.
-	VcenterUsername string `pulumi:"vcenterUsername"`
+	VcenterUsername *string `pulumi:"vcenterUsername"`
 	// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vMotion component of the VMware environment.
 	//
 	// Deprecated: The 'vmotion_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
-	VmotionVlanId string `pulumi:"vmotionVlanId"`
+	VmotionVlanId *string `pulumi:"vmotionVlanId"`
 	// In general, this is a specific version of bundled VMware software supported by Oracle Cloud VMware Solution (see [ListSupportedVmwareSoftwareVersions](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedVmwareSoftwareVersionSummary/ListSupportedVmwareSoftwareVersions)).
-	VmwareSoftwareVersion string `pulumi:"vmwareSoftwareVersion"`
+	VmwareSoftwareVersion *string `pulumi:"vmwareSoftwareVersion"`
 	// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSAN component of the VMware environment.
 	//
 	// Deprecated: The 'vsan_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
-	VsanVlanId string `pulumi:"vsanVlanId"`
+	VsanVlanId *string `pulumi:"vsanVlanId"`
 	// (**Deprecated**) The link to guidance for upgrading vSphere.
 	//
 	// Deprecated: The 'vsphere_upgrade_guide' field has been deprecated and may be removed in a future version. Do not use this field.
-	VsphereUpgradeGuide string `pulumi:"vsphereUpgradeGuide"`
+	VsphereUpgradeGuide *string `pulumi:"vsphereUpgradeGuide"`
 	// (**Deprecated**) The links to binary objects needed to upgrade vSphere.
 	//
 	// Deprecated: The 'upgrade_licenses' field has been deprecated. Please use the 'ocvp_cluster_resource' resource instead.
@@ -1916,11 +1651,11 @@ type GetSddcsSddcCollection struct {
 	// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere component of the VMware environment.
 	//
 	// Deprecated: The 'vsphere_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
-	VsphereVlanId string `pulumi:"vsphereVlanId"`
+	VsphereVlanId *string `pulumi:"vsphereVlanId"`
 	// (**Deprecated**) The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads.
 	//
 	// Deprecated: The 'workload_network_cidr' field has been deprecated. Please use 'initial_configuration' instead.
-	WorkloadNetworkCidr string `pulumi:"workloadNetworkCidr"`
+	WorkloadNetworkCidr *string `pulumi:"workloadNetworkCidr"`
 }
 
 // GetSddcsSddcCollectionInput is an input type that accepts GetSddcsSddcCollectionArgs and GetSddcsSddcCollectionOutput values.
@@ -1938,17 +1673,17 @@ type GetSddcsSddcCollectionArgs struct {
 	// (**Deprecated**) The number of actual ESXi hosts in the SDDC on the cloud. This attribute will be different when esxi Host is added to an existing SDDC.
 	//
 	// Deprecated: The 'actual_esxi_hosts_count' field has been deprecated. Please use 'initial_configuration' instead.
-	ActualEsxiHostsCount pulumi.IntInput `pulumi:"actualEsxiHostsCount"`
+	ActualEsxiHostsCount pulumi.IntPtrInput `pulumi:"actualEsxiHostsCount"`
 	// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
 	//
 	// Deprecated: The 'capacity_reservation_id' field has been deprecated. Please use 'initial_configuration' instead.
-	CapacityReservationId pulumi.StringInput `pulumi:"capacityReservationId"`
+	CapacityReservationId pulumi.StringPtrInput `pulumi:"capacityReservationId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// The name of the availability domain that the Compute instances are running in.  Example: `Uocm:PHX-AD-1`
 	//
 	// Deprecated: The 'compute_availability_domain' field has been deprecated. Please use 'initial_configuration' instead.
-	ComputeAvailabilityDomain pulumi.StringInput `pulumi:"computeAvailabilityDomain"`
+	ComputeAvailabilityDomain pulumi.StringPtrInput `pulumi:"computeAvailabilityDomain"`
 	// (**Deprecated**) Datastores used for the Sddc.
 	//
 	// Deprecated: The 'datastores' field has been deprecated. Please use 'initial_configuration' instead.
@@ -1956,152 +1691,152 @@ type GetSddcsSddcCollectionArgs struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the given display name exactly.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// (**Deprecated**) The number of ESXi hosts in the SDDC.
 	//
 	// Deprecated: The 'esxi_hosts_count' field has been deprecated. Please use 'initial_configuration' instead.
-	EsxiHostsCount pulumi.IntInput `pulumi:"esxiHostsCount"`
+	EsxiHostsCount pulumi.IntPtrInput `pulumi:"esxiHostsCount"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput    `pulumi:"freeformTags"`
-	HcxAction    pulumi.StringInput `pulumi:"hcxAction"`
+	FreeformTags pulumi.MapInput       `pulumi:"freeformTags"`
+	HcxAction    pulumi.StringPtrInput `pulumi:"hcxAction"`
 	// The FQDN for HCX Manager.  Example: `hcx-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
-	HcxFqdn pulumi.StringInput `pulumi:"hcxFqdn"`
+	HcxFqdn pulumi.StringPtrInput `pulumi:"hcxFqdn"`
 	// (**Deprecated**) The SDDC includes an administrator username and initial password for HCX Manager. Make sure to change this initial HCX Manager password to a different value.
 	//
 	// Deprecated: The 'hcx_initial_password' field has been deprecated. Please use the 'ocvp_sddc_password' data source instead.
-	HcxInitialPassword pulumi.StringInput `pulumi:"hcxInitialPassword"`
+	HcxInitialPassword pulumi.StringPtrInput `pulumi:"hcxInitialPassword"`
 	// (**Deprecated**) The activation keys to use on the on-premises HCX Enterprise appliances you site pair with HCX Manager in your VMware Solution. The number of keys provided depends on the HCX license type. HCX Advanced provides 3 activation keys. HCX Enterprise provides 10 activation keys.
 	//
 	// Deprecated: The 'hcx_on_prem_key' field has been deprecated and may be removed in a future version. Do not use this field.
-	HcxOnPremKey pulumi.StringInput `pulumi:"hcxOnPremKey"`
+	HcxOnPremKey pulumi.StringPtrInput `pulumi:"hcxOnPremKey"`
 	// The activation licenses to use on the on-premises HCX Enterprise appliance you site pair with HCX Manager in your VMware Solution.
 	HcxOnPremLicenses GetSddcsSddcCollectionHcxOnPremLicenseArrayInput `pulumi:"hcxOnPremLicenses"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for HCX Manager. For information about `PrivateIp` objects, see the Core Services API.
-	HcxPrivateIpId pulumi.StringInput `pulumi:"hcxPrivateIpId"`
+	HcxPrivateIpId pulumi.StringPtrInput `pulumi:"hcxPrivateIpId"`
 	// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the HCX component of the VMware environment.
 	//
 	// Deprecated: The 'hcx_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
-	HcxVlanId pulumi.StringInput `pulumi:"hcxVlanId"`
+	HcxVlanId pulumi.StringPtrInput `pulumi:"hcxVlanId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// (**Deprecated**) The initial OCPU count of the SDDC's ESXi hosts.
 	//
 	// Deprecated: The 'initial_host_ocpu_count' field has been deprecated. Please use 'initial_configuration' instead.
-	InitialHostOcpuCount pulumi.Float64Input `pulumi:"initialHostOcpuCount"`
+	InitialHostOcpuCount pulumi.Float64PtrInput `pulumi:"initialHostOcpuCount"`
 	// (**Deprecated**) The initial compute shape of the SDDC's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
 	//
 	// Deprecated: The 'initial_host_shape_name' field has been deprecated. Please use 'initial_configuration' instead.
-	InitialHostShapeName pulumi.StringInput `pulumi:"initialHostShapeName"`
+	InitialHostShapeName pulumi.StringPtrInput `pulumi:"initialHostShapeName"`
 	// (**Deprecated**) The billing option selected during SDDC creation. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
 	//
 	// Deprecated: The 'initial_sku' field has been deprecated. Please use 'initial_configuration' instead.
-	InitialSku pulumi.StringInput `pulumi:"initialSku"`
+	InitialSku pulumi.StringPtrInput `pulumi:"initialSku"`
 	// (**Deprecated**) A prefix used in the name of each ESXi host and Compute instance in the SDDC. If this isn't set, the SDDC's `displayName` is used as the prefix.
 	//
 	// Deprecated: The 'instance_display_name_prefix' field has been deprecated. Please use 'initial_configuration' instead.
-	InstanceDisplayNamePrefix pulumi.StringInput `pulumi:"instanceDisplayNamePrefix"`
+	InstanceDisplayNamePrefix pulumi.StringPtrInput `pulumi:"instanceDisplayNamePrefix"`
 	// (**Deprecated**) Indicates whether HCX is enabled for this SDDC.
 	//
 	// Deprecated: The 'is_hcx_enabled' field has been deprecated. Please use 'hcx_mode' instead.
-	IsHcxEnabled pulumi.BoolInput `pulumi:"isHcxEnabled"`
+	IsHcxEnabled pulumi.BoolPtrInput `pulumi:"isHcxEnabled"`
 	// (**Deprecated**) Indicates whether HCX Enterprise is enabled for this SDDC.
 	//
 	// Deprecated: The 'is_hcx_enabled' field has been deprecated. Please use 'actual_hcx_mode' instead.
-	IsHcxEnterpriseEnabled pulumi.BoolInput `pulumi:"isHcxEnterpriseEnabled"`
+	IsHcxEnterpriseEnabled pulumi.BoolPtrInput `pulumi:"isHcxEnterpriseEnabled"`
 	// Indicates whether SDDC is pending downgrade from HCX Enterprise to HCX Advanced.
-	IsHcxPendingDowngrade pulumi.BoolInput `pulumi:"isHcxPendingDowngrade"`
+	IsHcxPendingDowngrade pulumi.BoolPtrInput `pulumi:"isHcxPendingDowngrade"`
 	// (**Deprecated**) Indicates whether shielded instance is enabled at the SDDC level.
 	//
 	// Deprecated: The 'is_shielded_instance_enabled' field has been deprecated. Please use 'initial_configuration' instead.
-	IsShieldedInstanceEnabled pulumi.BoolInput `pulumi:"isShieldedInstanceEnabled"`
+	IsShieldedInstanceEnabled pulumi.BoolPtrInput `pulumi:"isShieldedInstanceEnabled"`
 	// Indicates whether this SDDC is designated for only single ESXi host.
-	IsSingleHostSddc pulumi.BoolInput `pulumi:"isSingleHostSddc"`
+	IsSingleHostSddc pulumi.BoolPtrInput `pulumi:"isSingleHostSddc"`
 	// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX Edge Uplink 1 component of the VMware environment.
 	//
 	// Deprecated: The 'nsx_edge_uplink1vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
-	NsxEdgeUplink1vlanId pulumi.StringInput `pulumi:"nsxEdgeUplink1vlanId"`
+	NsxEdgeUplink1vlanId pulumi.StringPtrInput `pulumi:"nsxEdgeUplink1vlanId"`
 	// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX Edge Uplink 2 component of the VMware environment.
 	//
 	// Deprecated: The 'nsx_edge_uplink2vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
-	NsxEdgeUplink2vlanId pulumi.StringInput `pulumi:"nsxEdgeUplink2vlanId"`
+	NsxEdgeUplink2vlanId pulumi.StringPtrInput `pulumi:"nsxEdgeUplink2vlanId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for the NSX Edge Uplink. Use this OCID as the route target for route table rules when setting up connectivity between the SDDC and other networks. For information about `PrivateIp` objects, see the Core Services API.
-	NsxEdgeUplinkIpId pulumi.StringInput `pulumi:"nsxEdgeUplinkIpId"`
+	NsxEdgeUplinkIpId pulumi.StringPtrInput `pulumi:"nsxEdgeUplinkIpId"`
 	// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX Edge VTEP component of the VMware environment.
 	//
 	// Deprecated: The 'nsx_edge_vtep_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
-	NsxEdgeVtepVlanId pulumi.StringInput `pulumi:"nsxEdgeVtepVlanId"`
+	NsxEdgeVtepVlanId pulumi.StringPtrInput `pulumi:"nsxEdgeVtepVlanId"`
 	// The FQDN for NSX Manager.  Example: `nsx-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
-	NsxManagerFqdn pulumi.StringInput `pulumi:"nsxManagerFqdn"`
+	NsxManagerFqdn pulumi.StringPtrInput `pulumi:"nsxManagerFqdn"`
 	// (**Deprecated**) The SDDC includes an administrator username and initial password for NSX Manager. Make sure to change this initial NSX Manager password to a different value.
 	//
 	// Deprecated: The 'nsx_manager_initial_password' field has been deprecated. Please use the 'ocvp_sddc_password' data source instead.
-	NsxManagerInitialPassword pulumi.StringInput `pulumi:"nsxManagerInitialPassword"`
+	NsxManagerInitialPassword pulumi.StringPtrInput `pulumi:"nsxManagerInitialPassword"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for NSX Manager. For information about `PrivateIp` objects, see the Core Services API.
-	NsxManagerPrivateIpId pulumi.StringInput `pulumi:"nsxManagerPrivateIpId"`
+	NsxManagerPrivateIpId pulumi.StringPtrInput `pulumi:"nsxManagerPrivateIpId"`
 	// The SDDC includes an administrator username and initial password for NSX Manager. You can change this initial username to a different value in NSX Manager.
-	NsxManagerUsername pulumi.StringInput `pulumi:"nsxManagerUsername"`
+	NsxManagerUsername pulumi.StringPtrInput `pulumi:"nsxManagerUsername"`
 	// (**Deprecated**) The VMware NSX overlay workload segment to host your application. Connect to workload portgroup in vCenter to access this overlay segment.
 	//
 	// Deprecated: The 'nsx_overlay_segment_name' field has been deprecated and may be removed in a future version. Do not use this field.
-	NsxOverlaySegmentName pulumi.StringInput `pulumi:"nsxOverlaySegmentName"`
+	NsxOverlaySegmentName pulumi.StringPtrInput `pulumi:"nsxOverlaySegmentName"`
 	// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX VTEP component of the VMware environment.
 	//
 	// Deprecated: The 'nsx_vtep_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
-	NsxVtepVlanId pulumi.StringInput `pulumi:"nsxVtepVlanId"`
+	NsxVtepVlanId pulumi.StringPtrInput `pulumi:"nsxVtepVlanId"`
 	// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet used to provision the SDDC.
 	//
 	// Deprecated: The 'provisioning_subnet_id' field has been deprecated. Please use 'initial_configuration' instead.
-	ProvisioningSubnetId pulumi.StringInput `pulumi:"provisioningSubnetId"`
+	ProvisioningSubnetId pulumi.StringPtrInput `pulumi:"provisioningSubnetId"`
 	// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the Provisioning component of the VMware environment.
 	//
 	// Deprecated: The 'provisioning_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
-	ProvisioningVlanId      pulumi.StringInput `pulumi:"provisioningVlanId"`
-	RefreshHcxLicenseStatus pulumi.BoolInput   `pulumi:"refreshHcxLicenseStatus"`
+	ProvisioningVlanId      pulumi.StringPtrInput `pulumi:"provisioningVlanId"`
+	RefreshHcxLicenseStatus pulumi.BoolPtrInput   `pulumi:"refreshHcxLicenseStatus"`
 	// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere Replication component of the VMware environment.
 	//
 	// Deprecated: The 'replication_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
-	ReplicationVlanId                pulumi.StringInput      `pulumi:"replicationVlanId"`
+	ReplicationVlanId                pulumi.StringPtrInput   `pulumi:"replicationVlanId"`
 	ReservingHcxOnPremiseLicenseKeys pulumi.StringArrayInput `pulumi:"reservingHcxOnPremiseLicenseKeys"`
 	// One or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on each ESXi host. Use a newline character to separate multiple keys. The SSH keys must be in the format required for the `authorizedKeys` file.
-	SshAuthorizedKeys pulumi.StringInput `pulumi:"sshAuthorizedKeys"`
+	SshAuthorizedKeys pulumi.StringPtrInput `pulumi:"sshAuthorizedKeys"`
 	// The lifecycle state of the resource.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The date and time the SDDC was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The date and time current HCX Enterprise billing cycle ends, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeHcxBillingCycleEnd pulumi.StringInput `pulumi:"timeHcxBillingCycleEnd"`
+	TimeHcxBillingCycleEnd pulumi.StringPtrInput `pulumi:"timeHcxBillingCycleEnd"`
 	// The date and time the SDDC's HCX on-premise license status was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeHcxLicenseStatusUpdated pulumi.StringInput `pulumi:"timeHcxLicenseStatusUpdated"`
+	TimeHcxLicenseStatusUpdated pulumi.StringPtrInput `pulumi:"timeHcxLicenseStatusUpdated"`
 	// The date and time the SDDC was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 	// (**Deprecated**) The vSphere licenses to use when upgrading the SDDC.
 	//
 	// Deprecated: The 'upgrade_licenses' field has been deprecated. Please use the 'ocvp_cluster_resource' resource instead.
 	UpgradeLicenses GetSddcsSddcCollectionUpgradeLicenseArrayInput `pulumi:"upgradeLicenses"`
 	// The FQDN for vCenter.  Example: `vcenter-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
-	VcenterFqdn pulumi.StringInput `pulumi:"vcenterFqdn"`
+	VcenterFqdn pulumi.StringPtrInput `pulumi:"vcenterFqdn"`
 	// (**Deprecated**) The SDDC includes an administrator username and initial password for vCenter. Make sure to change this initial vCenter password to a different value.
 	//
 	// Deprecated: The 'vcenter_initial_password' field has been deprecated. Please use the 'ocvp_sddc_password' data source instead.
-	VcenterInitialPassword pulumi.StringInput `pulumi:"vcenterInitialPassword"`
+	VcenterInitialPassword pulumi.StringPtrInput `pulumi:"vcenterInitialPassword"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for vCenter. For information about `PrivateIp` objects, see the Core Services API.
-	VcenterPrivateIpId pulumi.StringInput `pulumi:"vcenterPrivateIpId"`
+	VcenterPrivateIpId pulumi.StringPtrInput `pulumi:"vcenterPrivateIpId"`
 	// The SDDC includes an administrator username and initial password for vCenter. You can change this initial username to a different value in vCenter.
-	VcenterUsername pulumi.StringInput `pulumi:"vcenterUsername"`
+	VcenterUsername pulumi.StringPtrInput `pulumi:"vcenterUsername"`
 	// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vMotion component of the VMware environment.
 	//
 	// Deprecated: The 'vmotion_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
-	VmotionVlanId pulumi.StringInput `pulumi:"vmotionVlanId"`
+	VmotionVlanId pulumi.StringPtrInput `pulumi:"vmotionVlanId"`
 	// In general, this is a specific version of bundled VMware software supported by Oracle Cloud VMware Solution (see [ListSupportedVmwareSoftwareVersions](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedVmwareSoftwareVersionSummary/ListSupportedVmwareSoftwareVersions)).
-	VmwareSoftwareVersion pulumi.StringInput `pulumi:"vmwareSoftwareVersion"`
+	VmwareSoftwareVersion pulumi.StringPtrInput `pulumi:"vmwareSoftwareVersion"`
 	// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSAN component of the VMware environment.
 	//
 	// Deprecated: The 'vsan_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
-	VsanVlanId pulumi.StringInput `pulumi:"vsanVlanId"`
+	VsanVlanId pulumi.StringPtrInput `pulumi:"vsanVlanId"`
 	// (**Deprecated**) The link to guidance for upgrading vSphere.
 	//
 	// Deprecated: The 'vsphere_upgrade_guide' field has been deprecated and may be removed in a future version. Do not use this field.
-	VsphereUpgradeGuide pulumi.StringInput `pulumi:"vsphereUpgradeGuide"`
+	VsphereUpgradeGuide pulumi.StringPtrInput `pulumi:"vsphereUpgradeGuide"`
 	// (**Deprecated**) The links to binary objects needed to upgrade vSphere.
 	//
 	// Deprecated: The 'upgrade_licenses' field has been deprecated. Please use the 'ocvp_cluster_resource' resource instead.
@@ -2109,11 +1844,11 @@ type GetSddcsSddcCollectionArgs struct {
 	// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere component of the VMware environment.
 	//
 	// Deprecated: The 'vsphere_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
-	VsphereVlanId pulumi.StringInput `pulumi:"vsphereVlanId"`
+	VsphereVlanId pulumi.StringPtrInput `pulumi:"vsphereVlanId"`
 	// (**Deprecated**) The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads.
 	//
 	// Deprecated: The 'workload_network_cidr' field has been deprecated. Please use 'initial_configuration' instead.
-	WorkloadNetworkCidr pulumi.StringInput `pulumi:"workloadNetworkCidr"`
+	WorkloadNetworkCidr pulumi.StringPtrInput `pulumi:"workloadNetworkCidr"`
 }
 
 func (GetSddcsSddcCollectionArgs) ElementType() reflect.Type {
@@ -2126,12 +1861,6 @@ func (i GetSddcsSddcCollectionArgs) ToGetSddcsSddcCollectionOutput() GetSddcsSdd
 
 func (i GetSddcsSddcCollectionArgs) ToGetSddcsSddcCollectionOutputWithContext(ctx context.Context) GetSddcsSddcCollectionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSddcsSddcCollectionOutput)
-}
-
-func (i GetSddcsSddcCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetSddcsSddcCollection] {
-	return pulumix.Output[GetSddcsSddcCollection]{
-		OutputState: i.ToGetSddcsSddcCollectionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSddcsSddcCollectionArrayInput is an input type that accepts GetSddcsSddcCollectionArray and GetSddcsSddcCollectionArrayOutput values.
@@ -2159,12 +1888,6 @@ func (i GetSddcsSddcCollectionArray) ToGetSddcsSddcCollectionArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetSddcsSddcCollectionArrayOutput)
 }
 
-func (i GetSddcsSddcCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSddcsSddcCollection] {
-	return pulumix.Output[[]GetSddcsSddcCollection]{
-		OutputState: i.ToGetSddcsSddcCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSddcsSddcCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetSddcsSddcCollectionOutput) ElementType() reflect.Type {
@@ -2179,36 +1902,30 @@ func (o GetSddcsSddcCollectionOutput) ToGetSddcsSddcCollectionOutputWithContext(
 	return o
 }
 
-func (o GetSddcsSddcCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetSddcsSddcCollection] {
-	return pulumix.Output[GetSddcsSddcCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (**Deprecated**) The number of actual ESXi hosts in the SDDC on the cloud. This attribute will be different when esxi Host is added to an existing SDDC.
 //
 // Deprecated: The 'actual_esxi_hosts_count' field has been deprecated. Please use 'initial_configuration' instead.
-func (o GetSddcsSddcCollectionOutput) ActualEsxiHostsCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetSddcsSddcCollection) int { return v.ActualEsxiHostsCount }).(pulumi.IntOutput)
+func (o GetSddcsSddcCollectionOutput) ActualEsxiHostsCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollection) *int { return v.ActualEsxiHostsCount }).(pulumi.IntPtrOutput)
 }
 
 // (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
 //
 // Deprecated: The 'capacity_reservation_id' field has been deprecated. Please use 'initial_configuration' instead.
-func (o GetSddcsSddcCollectionOutput) CapacityReservationId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.CapacityReservationId }).(pulumi.StringOutput)
+func (o GetSddcsSddcCollectionOutput) CapacityReservationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollection) *string { return v.CapacityReservationId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-func (o GetSddcsSddcCollectionOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetSddcsSddcCollectionOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollection) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The name of the availability domain that the Compute instances are running in.  Example: `Uocm:PHX-AD-1`
 //
 // Deprecated: The 'compute_availability_domain' field has been deprecated. Please use 'initial_configuration' instead.
-func (o GetSddcsSddcCollectionOutput) ComputeAvailabilityDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.ComputeAvailabilityDomain }).(pulumi.StringOutput)
+func (o GetSddcsSddcCollectionOutput) ComputeAvailabilityDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollection) *string { return v.ComputeAvailabilityDomain }).(pulumi.StringPtrOutput)
 }
 
 // (**Deprecated**) Datastores used for the Sddc.
@@ -2224,15 +1941,15 @@ func (o GetSddcsSddcCollectionOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // A filter to return only resources that match the given display name exactly.
-func (o GetSddcsSddcCollectionOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetSddcsSddcCollectionOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollection) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (**Deprecated**) The number of ESXi hosts in the SDDC.
 //
 // Deprecated: The 'esxi_hosts_count' field has been deprecated. Please use 'initial_configuration' instead.
-func (o GetSddcsSddcCollectionOutput) EsxiHostsCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetSddcsSddcCollection) int { return v.EsxiHostsCount }).(pulumi.IntOutput)
+func (o GetSddcsSddcCollectionOutput) EsxiHostsCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollection) *int { return v.EsxiHostsCount }).(pulumi.IntPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -2240,27 +1957,27 @@ func (o GetSddcsSddcCollectionOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollection) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-func (o GetSddcsSddcCollectionOutput) HcxAction() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.HcxAction }).(pulumi.StringOutput)
+func (o GetSddcsSddcCollectionOutput) HcxAction() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollection) *string { return v.HcxAction }).(pulumi.StringPtrOutput)
 }
 
 // The FQDN for HCX Manager.  Example: `hcx-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
-func (o GetSddcsSddcCollectionOutput) HcxFqdn() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.HcxFqdn }).(pulumi.StringOutput)
+func (o GetSddcsSddcCollectionOutput) HcxFqdn() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollection) *string { return v.HcxFqdn }).(pulumi.StringPtrOutput)
 }
 
 // (**Deprecated**) The SDDC includes an administrator username and initial password for HCX Manager. Make sure to change this initial HCX Manager password to a different value.
 //
 // Deprecated: The 'hcx_initial_password' field has been deprecated. Please use the 'ocvp_sddc_password' data source instead.
-func (o GetSddcsSddcCollectionOutput) HcxInitialPassword() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.HcxInitialPassword }).(pulumi.StringOutput)
+func (o GetSddcsSddcCollectionOutput) HcxInitialPassword() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollection) *string { return v.HcxInitialPassword }).(pulumi.StringPtrOutput)
 }
 
 // (**Deprecated**) The activation keys to use on the on-premises HCX Enterprise appliances you site pair with HCX Manager in your VMware Solution. The number of keys provided depends on the HCX license type. HCX Advanced provides 3 activation keys. HCX Enterprise provides 10 activation keys.
 //
 // Deprecated: The 'hcx_on_prem_key' field has been deprecated and may be removed in a future version. Do not use this field.
-func (o GetSddcsSddcCollectionOutput) HcxOnPremKey() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.HcxOnPremKey }).(pulumi.StringOutput)
+func (o GetSddcsSddcCollectionOutput) HcxOnPremKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollection) *string { return v.HcxOnPremKey }).(pulumi.StringPtrOutput)
 }
 
 // The activation licenses to use on the on-premises HCX Enterprise appliance you site pair with HCX Manager in your VMware Solution.
@@ -2269,166 +1986,166 @@ func (o GetSddcsSddcCollectionOutput) HcxOnPremLicenses() GetSddcsSddcCollection
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for HCX Manager. For information about `PrivateIp` objects, see the Core Services API.
-func (o GetSddcsSddcCollectionOutput) HcxPrivateIpId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.HcxPrivateIpId }).(pulumi.StringOutput)
+func (o GetSddcsSddcCollectionOutput) HcxPrivateIpId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollection) *string { return v.HcxPrivateIpId }).(pulumi.StringPtrOutput)
 }
 
 // (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the HCX component of the VMware environment.
 //
 // Deprecated: The 'hcx_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
-func (o GetSddcsSddcCollectionOutput) HcxVlanId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.HcxVlanId }).(pulumi.StringOutput)
+func (o GetSddcsSddcCollectionOutput) HcxVlanId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollection) *string { return v.HcxVlanId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC.
-func (o GetSddcsSddcCollectionOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.Id }).(pulumi.StringOutput)
+func (o GetSddcsSddcCollectionOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollection) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // (**Deprecated**) The initial OCPU count of the SDDC's ESXi hosts.
 //
 // Deprecated: The 'initial_host_ocpu_count' field has been deprecated. Please use 'initial_configuration' instead.
-func (o GetSddcsSddcCollectionOutput) InitialHostOcpuCount() pulumi.Float64Output {
-	return o.ApplyT(func(v GetSddcsSddcCollection) float64 { return v.InitialHostOcpuCount }).(pulumi.Float64Output)
+func (o GetSddcsSddcCollectionOutput) InitialHostOcpuCount() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollection) *float64 { return v.InitialHostOcpuCount }).(pulumi.Float64PtrOutput)
 }
 
 // (**Deprecated**) The initial compute shape of the SDDC's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
 //
 // Deprecated: The 'initial_host_shape_name' field has been deprecated. Please use 'initial_configuration' instead.
-func (o GetSddcsSddcCollectionOutput) InitialHostShapeName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.InitialHostShapeName }).(pulumi.StringOutput)
+func (o GetSddcsSddcCollectionOutput) InitialHostShapeName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollection) *string { return v.InitialHostShapeName }).(pulumi.StringPtrOutput)
 }
 
 // (**Deprecated**) The billing option selected during SDDC creation. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
 //
 // Deprecated: The 'initial_sku' field has been deprecated. Please use 'initial_configuration' instead.
-func (o GetSddcsSddcCollectionOutput) InitialSku() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.InitialSku }).(pulumi.StringOutput)
+func (o GetSddcsSddcCollectionOutput) InitialSku() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollection) *string { return v.InitialSku }).(pulumi.StringPtrOutput)
 }
 
 // (**Deprecated**) A prefix used in the name of each ESXi host and Compute instance in the SDDC. If this isn't set, the SDDC's `displayName` is used as the prefix.
 //
 // Deprecated: The 'instance_display_name_prefix' field has been deprecated. Please use 'initial_configuration' instead.
-func (o GetSddcsSddcCollectionOutput) InstanceDisplayNamePrefix() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.InstanceDisplayNamePrefix }).(pulumi.StringOutput)
+func (o GetSddcsSddcCollectionOutput) InstanceDisplayNamePrefix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollection) *string { return v.InstanceDisplayNamePrefix }).(pulumi.StringPtrOutput)
 }
 
 // (**Deprecated**) Indicates whether HCX is enabled for this SDDC.
 //
 // Deprecated: The 'is_hcx_enabled' field has been deprecated. Please use 'hcx_mode' instead.
-func (o GetSddcsSddcCollectionOutput) IsHcxEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSddcsSddcCollection) bool { return v.IsHcxEnabled }).(pulumi.BoolOutput)
+func (o GetSddcsSddcCollectionOutput) IsHcxEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollection) *bool { return v.IsHcxEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // (**Deprecated**) Indicates whether HCX Enterprise is enabled for this SDDC.
 //
 // Deprecated: The 'is_hcx_enabled' field has been deprecated. Please use 'actual_hcx_mode' instead.
-func (o GetSddcsSddcCollectionOutput) IsHcxEnterpriseEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSddcsSddcCollection) bool { return v.IsHcxEnterpriseEnabled }).(pulumi.BoolOutput)
+func (o GetSddcsSddcCollectionOutput) IsHcxEnterpriseEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollection) *bool { return v.IsHcxEnterpriseEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // Indicates whether SDDC is pending downgrade from HCX Enterprise to HCX Advanced.
-func (o GetSddcsSddcCollectionOutput) IsHcxPendingDowngrade() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSddcsSddcCollection) bool { return v.IsHcxPendingDowngrade }).(pulumi.BoolOutput)
+func (o GetSddcsSddcCollectionOutput) IsHcxPendingDowngrade() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollection) *bool { return v.IsHcxPendingDowngrade }).(pulumi.BoolPtrOutput)
 }
 
 // (**Deprecated**) Indicates whether shielded instance is enabled at the SDDC level.
 //
 // Deprecated: The 'is_shielded_instance_enabled' field has been deprecated. Please use 'initial_configuration' instead.
-func (o GetSddcsSddcCollectionOutput) IsShieldedInstanceEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSddcsSddcCollection) bool { return v.IsShieldedInstanceEnabled }).(pulumi.BoolOutput)
+func (o GetSddcsSddcCollectionOutput) IsShieldedInstanceEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollection) *bool { return v.IsShieldedInstanceEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // Indicates whether this SDDC is designated for only single ESXi host.
-func (o GetSddcsSddcCollectionOutput) IsSingleHostSddc() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSddcsSddcCollection) bool { return v.IsSingleHostSddc }).(pulumi.BoolOutput)
+func (o GetSddcsSddcCollectionOutput) IsSingleHostSddc() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollection) *bool { return v.IsSingleHostSddc }).(pulumi.BoolPtrOutput)
 }
 
 // (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX Edge Uplink 1 component of the VMware environment.
 //
 // Deprecated: The 'nsx_edge_uplink1vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
-func (o GetSddcsSddcCollectionOutput) NsxEdgeUplink1vlanId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.NsxEdgeUplink1vlanId }).(pulumi.StringOutput)
+func (o GetSddcsSddcCollectionOutput) NsxEdgeUplink1vlanId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollection) *string { return v.NsxEdgeUplink1vlanId }).(pulumi.StringPtrOutput)
 }
 
 // (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX Edge Uplink 2 component of the VMware environment.
 //
 // Deprecated: The 'nsx_edge_uplink2vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
-func (o GetSddcsSddcCollectionOutput) NsxEdgeUplink2vlanId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.NsxEdgeUplink2vlanId }).(pulumi.StringOutput)
+func (o GetSddcsSddcCollectionOutput) NsxEdgeUplink2vlanId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollection) *string { return v.NsxEdgeUplink2vlanId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for the NSX Edge Uplink. Use this OCID as the route target for route table rules when setting up connectivity between the SDDC and other networks. For information about `PrivateIp` objects, see the Core Services API.
-func (o GetSddcsSddcCollectionOutput) NsxEdgeUplinkIpId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.NsxEdgeUplinkIpId }).(pulumi.StringOutput)
+func (o GetSddcsSddcCollectionOutput) NsxEdgeUplinkIpId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollection) *string { return v.NsxEdgeUplinkIpId }).(pulumi.StringPtrOutput)
 }
 
 // (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX Edge VTEP component of the VMware environment.
 //
 // Deprecated: The 'nsx_edge_vtep_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
-func (o GetSddcsSddcCollectionOutput) NsxEdgeVtepVlanId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.NsxEdgeVtepVlanId }).(pulumi.StringOutput)
+func (o GetSddcsSddcCollectionOutput) NsxEdgeVtepVlanId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollection) *string { return v.NsxEdgeVtepVlanId }).(pulumi.StringPtrOutput)
 }
 
 // The FQDN for NSX Manager.  Example: `nsx-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
-func (o GetSddcsSddcCollectionOutput) NsxManagerFqdn() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.NsxManagerFqdn }).(pulumi.StringOutput)
+func (o GetSddcsSddcCollectionOutput) NsxManagerFqdn() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollection) *string { return v.NsxManagerFqdn }).(pulumi.StringPtrOutput)
 }
 
 // (**Deprecated**) The SDDC includes an administrator username and initial password for NSX Manager. Make sure to change this initial NSX Manager password to a different value.
 //
 // Deprecated: The 'nsx_manager_initial_password' field has been deprecated. Please use the 'ocvp_sddc_password' data source instead.
-func (o GetSddcsSddcCollectionOutput) NsxManagerInitialPassword() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.NsxManagerInitialPassword }).(pulumi.StringOutput)
+func (o GetSddcsSddcCollectionOutput) NsxManagerInitialPassword() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollection) *string { return v.NsxManagerInitialPassword }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for NSX Manager. For information about `PrivateIp` objects, see the Core Services API.
-func (o GetSddcsSddcCollectionOutput) NsxManagerPrivateIpId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.NsxManagerPrivateIpId }).(pulumi.StringOutput)
+func (o GetSddcsSddcCollectionOutput) NsxManagerPrivateIpId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollection) *string { return v.NsxManagerPrivateIpId }).(pulumi.StringPtrOutput)
 }
 
 // The SDDC includes an administrator username and initial password for NSX Manager. You can change this initial username to a different value in NSX Manager.
-func (o GetSddcsSddcCollectionOutput) NsxManagerUsername() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.NsxManagerUsername }).(pulumi.StringOutput)
+func (o GetSddcsSddcCollectionOutput) NsxManagerUsername() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollection) *string { return v.NsxManagerUsername }).(pulumi.StringPtrOutput)
 }
 
 // (**Deprecated**) The VMware NSX overlay workload segment to host your application. Connect to workload portgroup in vCenter to access this overlay segment.
 //
 // Deprecated: The 'nsx_overlay_segment_name' field has been deprecated and may be removed in a future version. Do not use this field.
-func (o GetSddcsSddcCollectionOutput) NsxOverlaySegmentName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.NsxOverlaySegmentName }).(pulumi.StringOutput)
+func (o GetSddcsSddcCollectionOutput) NsxOverlaySegmentName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollection) *string { return v.NsxOverlaySegmentName }).(pulumi.StringPtrOutput)
 }
 
 // (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX VTEP component of the VMware environment.
 //
 // Deprecated: The 'nsx_vtep_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
-func (o GetSddcsSddcCollectionOutput) NsxVtepVlanId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.NsxVtepVlanId }).(pulumi.StringOutput)
+func (o GetSddcsSddcCollectionOutput) NsxVtepVlanId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollection) *string { return v.NsxVtepVlanId }).(pulumi.StringPtrOutput)
 }
 
 // (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet used to provision the SDDC.
 //
 // Deprecated: The 'provisioning_subnet_id' field has been deprecated. Please use 'initial_configuration' instead.
-func (o GetSddcsSddcCollectionOutput) ProvisioningSubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.ProvisioningSubnetId }).(pulumi.StringOutput)
+func (o GetSddcsSddcCollectionOutput) ProvisioningSubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollection) *string { return v.ProvisioningSubnetId }).(pulumi.StringPtrOutput)
 }
 
 // (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the Provisioning component of the VMware environment.
 //
 // Deprecated: The 'provisioning_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
-func (o GetSddcsSddcCollectionOutput) ProvisioningVlanId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.ProvisioningVlanId }).(pulumi.StringOutput)
+func (o GetSddcsSddcCollectionOutput) ProvisioningVlanId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollection) *string { return v.ProvisioningVlanId }).(pulumi.StringPtrOutput)
 }
 
-func (o GetSddcsSddcCollectionOutput) RefreshHcxLicenseStatus() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSddcsSddcCollection) bool { return v.RefreshHcxLicenseStatus }).(pulumi.BoolOutput)
+func (o GetSddcsSddcCollectionOutput) RefreshHcxLicenseStatus() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollection) *bool { return v.RefreshHcxLicenseStatus }).(pulumi.BoolPtrOutput)
 }
 
 // (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere Replication component of the VMware environment.
 //
 // Deprecated: The 'replication_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
-func (o GetSddcsSddcCollectionOutput) ReplicationVlanId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.ReplicationVlanId }).(pulumi.StringOutput)
+func (o GetSddcsSddcCollectionOutput) ReplicationVlanId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollection) *string { return v.ReplicationVlanId }).(pulumi.StringPtrOutput)
 }
 
 func (o GetSddcsSddcCollectionOutput) ReservingHcxOnPremiseLicenseKeys() pulumi.StringArrayOutput {
@@ -2436,33 +2153,33 @@ func (o GetSddcsSddcCollectionOutput) ReservingHcxOnPremiseLicenseKeys() pulumi.
 }
 
 // One or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on each ESXi host. Use a newline character to separate multiple keys. The SSH keys must be in the format required for the `authorizedKeys` file.
-func (o GetSddcsSddcCollectionOutput) SshAuthorizedKeys() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.SshAuthorizedKeys }).(pulumi.StringOutput)
+func (o GetSddcsSddcCollectionOutput) SshAuthorizedKeys() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollection) *string { return v.SshAuthorizedKeys }).(pulumi.StringPtrOutput)
 }
 
 // The lifecycle state of the resource.
-func (o GetSddcsSddcCollectionOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.State }).(pulumi.StringOutput)
+func (o GetSddcsSddcCollectionOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollection) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the SDDC was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-func (o GetSddcsSddcCollectionOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetSddcsSddcCollectionOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollection) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time current HCX Enterprise billing cycle ends, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-func (o GetSddcsSddcCollectionOutput) TimeHcxBillingCycleEnd() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.TimeHcxBillingCycleEnd }).(pulumi.StringOutput)
+func (o GetSddcsSddcCollectionOutput) TimeHcxBillingCycleEnd() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollection) *string { return v.TimeHcxBillingCycleEnd }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the SDDC's HCX on-premise license status was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-func (o GetSddcsSddcCollectionOutput) TimeHcxLicenseStatusUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.TimeHcxLicenseStatusUpdated }).(pulumi.StringOutput)
+func (o GetSddcsSddcCollectionOutput) TimeHcxLicenseStatusUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollection) *string { return v.TimeHcxLicenseStatusUpdated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the SDDC was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-func (o GetSddcsSddcCollectionOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetSddcsSddcCollectionOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollection) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // (**Deprecated**) The vSphere licenses to use when upgrading the SDDC.
@@ -2473,51 +2190,51 @@ func (o GetSddcsSddcCollectionOutput) UpgradeLicenses() GetSddcsSddcCollectionUp
 }
 
 // The FQDN for vCenter.  Example: `vcenter-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
-func (o GetSddcsSddcCollectionOutput) VcenterFqdn() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.VcenterFqdn }).(pulumi.StringOutput)
+func (o GetSddcsSddcCollectionOutput) VcenterFqdn() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollection) *string { return v.VcenterFqdn }).(pulumi.StringPtrOutput)
 }
 
 // (**Deprecated**) The SDDC includes an administrator username and initial password for vCenter. Make sure to change this initial vCenter password to a different value.
 //
 // Deprecated: The 'vcenter_initial_password' field has been deprecated. Please use the 'ocvp_sddc_password' data source instead.
-func (o GetSddcsSddcCollectionOutput) VcenterInitialPassword() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.VcenterInitialPassword }).(pulumi.StringOutput)
+func (o GetSddcsSddcCollectionOutput) VcenterInitialPassword() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollection) *string { return v.VcenterInitialPassword }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for vCenter. For information about `PrivateIp` objects, see the Core Services API.
-func (o GetSddcsSddcCollectionOutput) VcenterPrivateIpId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.VcenterPrivateIpId }).(pulumi.StringOutput)
+func (o GetSddcsSddcCollectionOutput) VcenterPrivateIpId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollection) *string { return v.VcenterPrivateIpId }).(pulumi.StringPtrOutput)
 }
 
 // The SDDC includes an administrator username and initial password for vCenter. You can change this initial username to a different value in vCenter.
-func (o GetSddcsSddcCollectionOutput) VcenterUsername() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.VcenterUsername }).(pulumi.StringOutput)
+func (o GetSddcsSddcCollectionOutput) VcenterUsername() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollection) *string { return v.VcenterUsername }).(pulumi.StringPtrOutput)
 }
 
 // (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vMotion component of the VMware environment.
 //
 // Deprecated: The 'vmotion_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
-func (o GetSddcsSddcCollectionOutput) VmotionVlanId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.VmotionVlanId }).(pulumi.StringOutput)
+func (o GetSddcsSddcCollectionOutput) VmotionVlanId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollection) *string { return v.VmotionVlanId }).(pulumi.StringPtrOutput)
 }
 
 // In general, this is a specific version of bundled VMware software supported by Oracle Cloud VMware Solution (see [ListSupportedVmwareSoftwareVersions](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedVmwareSoftwareVersionSummary/ListSupportedVmwareSoftwareVersions)).
-func (o GetSddcsSddcCollectionOutput) VmwareSoftwareVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.VmwareSoftwareVersion }).(pulumi.StringOutput)
+func (o GetSddcsSddcCollectionOutput) VmwareSoftwareVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollection) *string { return v.VmwareSoftwareVersion }).(pulumi.StringPtrOutput)
 }
 
 // (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSAN component of the VMware environment.
 //
 // Deprecated: The 'vsan_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
-func (o GetSddcsSddcCollectionOutput) VsanVlanId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.VsanVlanId }).(pulumi.StringOutput)
+func (o GetSddcsSddcCollectionOutput) VsanVlanId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollection) *string { return v.VsanVlanId }).(pulumi.StringPtrOutput)
 }
 
 // (**Deprecated**) The link to guidance for upgrading vSphere.
 //
 // Deprecated: The 'vsphere_upgrade_guide' field has been deprecated and may be removed in a future version. Do not use this field.
-func (o GetSddcsSddcCollectionOutput) VsphereUpgradeGuide() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.VsphereUpgradeGuide }).(pulumi.StringOutput)
+func (o GetSddcsSddcCollectionOutput) VsphereUpgradeGuide() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollection) *string { return v.VsphereUpgradeGuide }).(pulumi.StringPtrOutput)
 }
 
 // (**Deprecated**) The links to binary objects needed to upgrade vSphere.
@@ -2532,15 +2249,15 @@ func (o GetSddcsSddcCollectionOutput) VsphereUpgradeObjects() GetSddcsSddcCollec
 // (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere component of the VMware environment.
 //
 // Deprecated: The 'vsphere_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
-func (o GetSddcsSddcCollectionOutput) VsphereVlanId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.VsphereVlanId }).(pulumi.StringOutput)
+func (o GetSddcsSddcCollectionOutput) VsphereVlanId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollection) *string { return v.VsphereVlanId }).(pulumi.StringPtrOutput)
 }
 
 // (**Deprecated**) The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads.
 //
 // Deprecated: The 'workload_network_cidr' field has been deprecated. Please use 'initial_configuration' instead.
-func (o GetSddcsSddcCollectionOutput) WorkloadNetworkCidr() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.WorkloadNetworkCidr }).(pulumi.StringOutput)
+func (o GetSddcsSddcCollectionOutput) WorkloadNetworkCidr() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollection) *string { return v.WorkloadNetworkCidr }).(pulumi.StringPtrOutput)
 }
 
 type GetSddcsSddcCollectionArrayOutput struct{ *pulumi.OutputState }
@@ -2557,12 +2274,6 @@ func (o GetSddcsSddcCollectionArrayOutput) ToGetSddcsSddcCollectionArrayOutputWi
 	return o
 }
 
-func (o GetSddcsSddcCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSddcsSddcCollection] {
-	return pulumix.Output[[]GetSddcsSddcCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSddcsSddcCollectionArrayOutput) Index(i pulumi.IntInput) GetSddcsSddcCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSddcsSddcCollection {
 		return vs[0].([]GetSddcsSddcCollection)[vs[1].(int)]
@@ -2573,9 +2284,9 @@ type GetSddcsSddcCollectionDatastore struct {
 	// A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of Block Storage Volumes.
 	BlockVolumeIds []string `pulumi:"blockVolumeIds"`
 	// Size of the Block Storage Volume in GB.
-	Capacity float64 `pulumi:"capacity"`
+	Capacity *float64 `pulumi:"capacity"`
 	// Type of the datastore.
-	DatastoreType string `pulumi:"datastoreType"`
+	DatastoreType *string `pulumi:"datastoreType"`
 }
 
 // GetSddcsSddcCollectionDatastoreInput is an input type that accepts GetSddcsSddcCollectionDatastoreArgs and GetSddcsSddcCollectionDatastoreOutput values.
@@ -2593,9 +2304,9 @@ type GetSddcsSddcCollectionDatastoreArgs struct {
 	// A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of Block Storage Volumes.
 	BlockVolumeIds pulumi.StringArrayInput `pulumi:"blockVolumeIds"`
 	// Size of the Block Storage Volume in GB.
-	Capacity pulumi.Float64Input `pulumi:"capacity"`
+	Capacity pulumi.Float64PtrInput `pulumi:"capacity"`
 	// Type of the datastore.
-	DatastoreType pulumi.StringInput `pulumi:"datastoreType"`
+	DatastoreType pulumi.StringPtrInput `pulumi:"datastoreType"`
 }
 
 func (GetSddcsSddcCollectionDatastoreArgs) ElementType() reflect.Type {
@@ -2608,12 +2319,6 @@ func (i GetSddcsSddcCollectionDatastoreArgs) ToGetSddcsSddcCollectionDatastoreOu
 
 func (i GetSddcsSddcCollectionDatastoreArgs) ToGetSddcsSddcCollectionDatastoreOutputWithContext(ctx context.Context) GetSddcsSddcCollectionDatastoreOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSddcsSddcCollectionDatastoreOutput)
-}
-
-func (i GetSddcsSddcCollectionDatastoreArgs) ToOutput(ctx context.Context) pulumix.Output[GetSddcsSddcCollectionDatastore] {
-	return pulumix.Output[GetSddcsSddcCollectionDatastore]{
-		OutputState: i.ToGetSddcsSddcCollectionDatastoreOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSddcsSddcCollectionDatastoreArrayInput is an input type that accepts GetSddcsSddcCollectionDatastoreArray and GetSddcsSddcCollectionDatastoreArrayOutput values.
@@ -2641,12 +2346,6 @@ func (i GetSddcsSddcCollectionDatastoreArray) ToGetSddcsSddcCollectionDatastoreA
 	return pulumi.ToOutputWithContext(ctx, i).(GetSddcsSddcCollectionDatastoreArrayOutput)
 }
 
-func (i GetSddcsSddcCollectionDatastoreArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSddcsSddcCollectionDatastore] {
-	return pulumix.Output[[]GetSddcsSddcCollectionDatastore]{
-		OutputState: i.ToGetSddcsSddcCollectionDatastoreArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSddcsSddcCollectionDatastoreOutput struct{ *pulumi.OutputState }
 
 func (GetSddcsSddcCollectionDatastoreOutput) ElementType() reflect.Type {
@@ -2661,25 +2360,19 @@ func (o GetSddcsSddcCollectionDatastoreOutput) ToGetSddcsSddcCollectionDatastore
 	return o
 }
 
-func (o GetSddcsSddcCollectionDatastoreOutput) ToOutput(ctx context.Context) pulumix.Output[GetSddcsSddcCollectionDatastore] {
-	return pulumix.Output[GetSddcsSddcCollectionDatastore]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of Block Storage Volumes.
 func (o GetSddcsSddcCollectionDatastoreOutput) BlockVolumeIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollectionDatastore) []string { return v.BlockVolumeIds }).(pulumi.StringArrayOutput)
 }
 
 // Size of the Block Storage Volume in GB.
-func (o GetSddcsSddcCollectionDatastoreOutput) Capacity() pulumi.Float64Output {
-	return o.ApplyT(func(v GetSddcsSddcCollectionDatastore) float64 { return v.Capacity }).(pulumi.Float64Output)
+func (o GetSddcsSddcCollectionDatastoreOutput) Capacity() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollectionDatastore) *float64 { return v.Capacity }).(pulumi.Float64PtrOutput)
 }
 
 // Type of the datastore.
-func (o GetSddcsSddcCollectionDatastoreOutput) DatastoreType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSddcsSddcCollectionDatastore) string { return v.DatastoreType }).(pulumi.StringOutput)
+func (o GetSddcsSddcCollectionDatastoreOutput) DatastoreType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollectionDatastore) *string { return v.DatastoreType }).(pulumi.StringPtrOutput)
 }
 
 type GetSddcsSddcCollectionDatastoreArrayOutput struct{ *pulumi.OutputState }
@@ -2696,12 +2389,6 @@ func (o GetSddcsSddcCollectionDatastoreArrayOutput) ToGetSddcsSddcCollectionData
 	return o
 }
 
-func (o GetSddcsSddcCollectionDatastoreArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSddcsSddcCollectionDatastore] {
-	return pulumix.Output[[]GetSddcsSddcCollectionDatastore]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSddcsSddcCollectionDatastoreArrayOutput) Index(i pulumi.IntInput) GetSddcsSddcCollectionDatastoreOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSddcsSddcCollectionDatastore {
 		return vs[0].([]GetSddcsSddcCollectionDatastore)[vs[1].(int)]
@@ -2710,11 +2397,11 @@ func (o GetSddcsSddcCollectionDatastoreArrayOutput) Index(i pulumi.IntInput) Get
 
 type GetSddcsSddcCollectionHcxOnPremLicense struct {
 	// HCX on-premise license key value.
-	ActivationKey string `pulumi:"activationKey"`
+	ActivationKey *string `pulumi:"activationKey"`
 	// status of HCX on-premise license.
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 	// Name of the system that consumed the HCX on-premise license
-	SystemName string `pulumi:"systemName"`
+	SystemName *string `pulumi:"systemName"`
 }
 
 // GetSddcsSddcCollectionHcxOnPremLicenseInput is an input type that accepts GetSddcsSddcCollectionHcxOnPremLicenseArgs and GetSddcsSddcCollectionHcxOnPremLicenseOutput values.
@@ -2730,11 +2417,11 @@ type GetSddcsSddcCollectionHcxOnPremLicenseInput interface {
 
 type GetSddcsSddcCollectionHcxOnPremLicenseArgs struct {
 	// HCX on-premise license key value.
-	ActivationKey pulumi.StringInput `pulumi:"activationKey"`
+	ActivationKey pulumi.StringPtrInput `pulumi:"activationKey"`
 	// status of HCX on-premise license.
-	Status pulumi.StringInput `pulumi:"status"`
+	Status pulumi.StringPtrInput `pulumi:"status"`
 	// Name of the system that consumed the HCX on-premise license
-	SystemName pulumi.StringInput `pulumi:"systemName"`
+	SystemName pulumi.StringPtrInput `pulumi:"systemName"`
 }
 
 func (GetSddcsSddcCollectionHcxOnPremLicenseArgs) ElementType() reflect.Type {
@@ -2747,12 +2434,6 @@ func (i GetSddcsSddcCollectionHcxOnPremLicenseArgs) ToGetSddcsSddcCollectionHcxO
 
 func (i GetSddcsSddcCollectionHcxOnPremLicenseArgs) ToGetSddcsSddcCollectionHcxOnPremLicenseOutputWithContext(ctx context.Context) GetSddcsSddcCollectionHcxOnPremLicenseOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSddcsSddcCollectionHcxOnPremLicenseOutput)
-}
-
-func (i GetSddcsSddcCollectionHcxOnPremLicenseArgs) ToOutput(ctx context.Context) pulumix.Output[GetSddcsSddcCollectionHcxOnPremLicense] {
-	return pulumix.Output[GetSddcsSddcCollectionHcxOnPremLicense]{
-		OutputState: i.ToGetSddcsSddcCollectionHcxOnPremLicenseOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSddcsSddcCollectionHcxOnPremLicenseArrayInput is an input type that accepts GetSddcsSddcCollectionHcxOnPremLicenseArray and GetSddcsSddcCollectionHcxOnPremLicenseArrayOutput values.
@@ -2780,12 +2461,6 @@ func (i GetSddcsSddcCollectionHcxOnPremLicenseArray) ToGetSddcsSddcCollectionHcx
 	return pulumi.ToOutputWithContext(ctx, i).(GetSddcsSddcCollectionHcxOnPremLicenseArrayOutput)
 }
 
-func (i GetSddcsSddcCollectionHcxOnPremLicenseArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSddcsSddcCollectionHcxOnPremLicense] {
-	return pulumix.Output[[]GetSddcsSddcCollectionHcxOnPremLicense]{
-		OutputState: i.ToGetSddcsSddcCollectionHcxOnPremLicenseArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSddcsSddcCollectionHcxOnPremLicenseOutput struct{ *pulumi.OutputState }
 
 func (GetSddcsSddcCollectionHcxOnPremLicenseOutput) ElementType() reflect.Type {
@@ -2800,25 +2475,19 @@ func (o GetSddcsSddcCollectionHcxOnPremLicenseOutput) ToGetSddcsSddcCollectionHc
 	return o
 }
 
-func (o GetSddcsSddcCollectionHcxOnPremLicenseOutput) ToOutput(ctx context.Context) pulumix.Output[GetSddcsSddcCollectionHcxOnPremLicense] {
-	return pulumix.Output[GetSddcsSddcCollectionHcxOnPremLicense]{
-		OutputState: o.OutputState,
-	}
-}
-
 // HCX on-premise license key value.
-func (o GetSddcsSddcCollectionHcxOnPremLicenseOutput) ActivationKey() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSddcsSddcCollectionHcxOnPremLicense) string { return v.ActivationKey }).(pulumi.StringOutput)
+func (o GetSddcsSddcCollectionHcxOnPremLicenseOutput) ActivationKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollectionHcxOnPremLicense) *string { return v.ActivationKey }).(pulumi.StringPtrOutput)
 }
 
 // status of HCX on-premise license.
-func (o GetSddcsSddcCollectionHcxOnPremLicenseOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSddcsSddcCollectionHcxOnPremLicense) string { return v.Status }).(pulumi.StringOutput)
+func (o GetSddcsSddcCollectionHcxOnPremLicenseOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollectionHcxOnPremLicense) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // Name of the system that consumed the HCX on-premise license
-func (o GetSddcsSddcCollectionHcxOnPremLicenseOutput) SystemName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSddcsSddcCollectionHcxOnPremLicense) string { return v.SystemName }).(pulumi.StringOutput)
+func (o GetSddcsSddcCollectionHcxOnPremLicenseOutput) SystemName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollectionHcxOnPremLicense) *string { return v.SystemName }).(pulumi.StringPtrOutput)
 }
 
 type GetSddcsSddcCollectionHcxOnPremLicenseArrayOutput struct{ *pulumi.OutputState }
@@ -2835,12 +2504,6 @@ func (o GetSddcsSddcCollectionHcxOnPremLicenseArrayOutput) ToGetSddcsSddcCollect
 	return o
 }
 
-func (o GetSddcsSddcCollectionHcxOnPremLicenseArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSddcsSddcCollectionHcxOnPremLicense] {
-	return pulumix.Output[[]GetSddcsSddcCollectionHcxOnPremLicense]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSddcsSddcCollectionHcxOnPremLicenseArrayOutput) Index(i pulumi.IntInput) GetSddcsSddcCollectionHcxOnPremLicenseOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSddcsSddcCollectionHcxOnPremLicense {
 		return vs[0].([]GetSddcsSddcCollectionHcxOnPremLicense)[vs[1].(int)]
@@ -2849,9 +2512,9 @@ func (o GetSddcsSddcCollectionHcxOnPremLicenseArrayOutput) Index(i pulumi.IntInp
 
 type GetSddcsSddcCollectionUpgradeLicense struct {
 	// vSphere license key value.
-	LicenseKey string `pulumi:"licenseKey"`
+	LicenseKey *string `pulumi:"licenseKey"`
 	// vSphere license type.
-	LicenseType string `pulumi:"licenseType"`
+	LicenseType *string `pulumi:"licenseType"`
 }
 
 // GetSddcsSddcCollectionUpgradeLicenseInput is an input type that accepts GetSddcsSddcCollectionUpgradeLicenseArgs and GetSddcsSddcCollectionUpgradeLicenseOutput values.
@@ -2867,9 +2530,9 @@ type GetSddcsSddcCollectionUpgradeLicenseInput interface {
 
 type GetSddcsSddcCollectionUpgradeLicenseArgs struct {
 	// vSphere license key value.
-	LicenseKey pulumi.StringInput `pulumi:"licenseKey"`
+	LicenseKey pulumi.StringPtrInput `pulumi:"licenseKey"`
 	// vSphere license type.
-	LicenseType pulumi.StringInput `pulumi:"licenseType"`
+	LicenseType pulumi.StringPtrInput `pulumi:"licenseType"`
 }
 
 func (GetSddcsSddcCollectionUpgradeLicenseArgs) ElementType() reflect.Type {
@@ -2882,12 +2545,6 @@ func (i GetSddcsSddcCollectionUpgradeLicenseArgs) ToGetSddcsSddcCollectionUpgrad
 
 func (i GetSddcsSddcCollectionUpgradeLicenseArgs) ToGetSddcsSddcCollectionUpgradeLicenseOutputWithContext(ctx context.Context) GetSddcsSddcCollectionUpgradeLicenseOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSddcsSddcCollectionUpgradeLicenseOutput)
-}
-
-func (i GetSddcsSddcCollectionUpgradeLicenseArgs) ToOutput(ctx context.Context) pulumix.Output[GetSddcsSddcCollectionUpgradeLicense] {
-	return pulumix.Output[GetSddcsSddcCollectionUpgradeLicense]{
-		OutputState: i.ToGetSddcsSddcCollectionUpgradeLicenseOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSddcsSddcCollectionUpgradeLicenseArrayInput is an input type that accepts GetSddcsSddcCollectionUpgradeLicenseArray and GetSddcsSddcCollectionUpgradeLicenseArrayOutput values.
@@ -2915,12 +2572,6 @@ func (i GetSddcsSddcCollectionUpgradeLicenseArray) ToGetSddcsSddcCollectionUpgra
 	return pulumi.ToOutputWithContext(ctx, i).(GetSddcsSddcCollectionUpgradeLicenseArrayOutput)
 }
 
-func (i GetSddcsSddcCollectionUpgradeLicenseArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSddcsSddcCollectionUpgradeLicense] {
-	return pulumix.Output[[]GetSddcsSddcCollectionUpgradeLicense]{
-		OutputState: i.ToGetSddcsSddcCollectionUpgradeLicenseArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSddcsSddcCollectionUpgradeLicenseOutput struct{ *pulumi.OutputState }
 
 func (GetSddcsSddcCollectionUpgradeLicenseOutput) ElementType() reflect.Type {
@@ -2935,20 +2586,14 @@ func (o GetSddcsSddcCollectionUpgradeLicenseOutput) ToGetSddcsSddcCollectionUpgr
 	return o
 }
 
-func (o GetSddcsSddcCollectionUpgradeLicenseOutput) ToOutput(ctx context.Context) pulumix.Output[GetSddcsSddcCollectionUpgradeLicense] {
-	return pulumix.Output[GetSddcsSddcCollectionUpgradeLicense]{
-		OutputState: o.OutputState,
-	}
-}
-
 // vSphere license key value.
-func (o GetSddcsSddcCollectionUpgradeLicenseOutput) LicenseKey() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSddcsSddcCollectionUpgradeLicense) string { return v.LicenseKey }).(pulumi.StringOutput)
+func (o GetSddcsSddcCollectionUpgradeLicenseOutput) LicenseKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollectionUpgradeLicense) *string { return v.LicenseKey }).(pulumi.StringPtrOutput)
 }
 
 // vSphere license type.
-func (o GetSddcsSddcCollectionUpgradeLicenseOutput) LicenseType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSddcsSddcCollectionUpgradeLicense) string { return v.LicenseType }).(pulumi.StringOutput)
+func (o GetSddcsSddcCollectionUpgradeLicenseOutput) LicenseType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollectionUpgradeLicense) *string { return v.LicenseType }).(pulumi.StringPtrOutput)
 }
 
 type GetSddcsSddcCollectionUpgradeLicenseArrayOutput struct{ *pulumi.OutputState }
@@ -2965,12 +2610,6 @@ func (o GetSddcsSddcCollectionUpgradeLicenseArrayOutput) ToGetSddcsSddcCollectio
 	return o
 }
 
-func (o GetSddcsSddcCollectionUpgradeLicenseArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSddcsSddcCollectionUpgradeLicense] {
-	return pulumix.Output[[]GetSddcsSddcCollectionUpgradeLicense]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSddcsSddcCollectionUpgradeLicenseArrayOutput) Index(i pulumi.IntInput) GetSddcsSddcCollectionUpgradeLicenseOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSddcsSddcCollectionUpgradeLicense {
 		return vs[0].([]GetSddcsSddcCollectionUpgradeLicense)[vs[1].(int)]
@@ -2979,9 +2618,9 @@ func (o GetSddcsSddcCollectionUpgradeLicenseArrayOutput) Index(i pulumi.IntInput
 
 type GetSddcsSddcCollectionVsphereUpgradeObject struct {
 	// Binary object download link.
-	DownloadLink string `pulumi:"downloadLink"`
+	DownloadLink *string `pulumi:"downloadLink"`
 	// Binary object description.
-	LinkDescription string `pulumi:"linkDescription"`
+	LinkDescription *string `pulumi:"linkDescription"`
 }
 
 // GetSddcsSddcCollectionVsphereUpgradeObjectInput is an input type that accepts GetSddcsSddcCollectionVsphereUpgradeObjectArgs and GetSddcsSddcCollectionVsphereUpgradeObjectOutput values.
@@ -2997,9 +2636,9 @@ type GetSddcsSddcCollectionVsphereUpgradeObjectInput interface {
 
 type GetSddcsSddcCollectionVsphereUpgradeObjectArgs struct {
 	// Binary object download link.
-	DownloadLink pulumi.StringInput `pulumi:"downloadLink"`
+	DownloadLink pulumi.StringPtrInput `pulumi:"downloadLink"`
 	// Binary object description.
-	LinkDescription pulumi.StringInput `pulumi:"linkDescription"`
+	LinkDescription pulumi.StringPtrInput `pulumi:"linkDescription"`
 }
 
 func (GetSddcsSddcCollectionVsphereUpgradeObjectArgs) ElementType() reflect.Type {
@@ -3012,12 +2651,6 @@ func (i GetSddcsSddcCollectionVsphereUpgradeObjectArgs) ToGetSddcsSddcCollection
 
 func (i GetSddcsSddcCollectionVsphereUpgradeObjectArgs) ToGetSddcsSddcCollectionVsphereUpgradeObjectOutputWithContext(ctx context.Context) GetSddcsSddcCollectionVsphereUpgradeObjectOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSddcsSddcCollectionVsphereUpgradeObjectOutput)
-}
-
-func (i GetSddcsSddcCollectionVsphereUpgradeObjectArgs) ToOutput(ctx context.Context) pulumix.Output[GetSddcsSddcCollectionVsphereUpgradeObject] {
-	return pulumix.Output[GetSddcsSddcCollectionVsphereUpgradeObject]{
-		OutputState: i.ToGetSddcsSddcCollectionVsphereUpgradeObjectOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSddcsSddcCollectionVsphereUpgradeObjectArrayInput is an input type that accepts GetSddcsSddcCollectionVsphereUpgradeObjectArray and GetSddcsSddcCollectionVsphereUpgradeObjectArrayOutput values.
@@ -3045,12 +2678,6 @@ func (i GetSddcsSddcCollectionVsphereUpgradeObjectArray) ToGetSddcsSddcCollectio
 	return pulumi.ToOutputWithContext(ctx, i).(GetSddcsSddcCollectionVsphereUpgradeObjectArrayOutput)
 }
 
-func (i GetSddcsSddcCollectionVsphereUpgradeObjectArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSddcsSddcCollectionVsphereUpgradeObject] {
-	return pulumix.Output[[]GetSddcsSddcCollectionVsphereUpgradeObject]{
-		OutputState: i.ToGetSddcsSddcCollectionVsphereUpgradeObjectArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSddcsSddcCollectionVsphereUpgradeObjectOutput struct{ *pulumi.OutputState }
 
 func (GetSddcsSddcCollectionVsphereUpgradeObjectOutput) ElementType() reflect.Type {
@@ -3065,20 +2692,14 @@ func (o GetSddcsSddcCollectionVsphereUpgradeObjectOutput) ToGetSddcsSddcCollecti
 	return o
 }
 
-func (o GetSddcsSddcCollectionVsphereUpgradeObjectOutput) ToOutput(ctx context.Context) pulumix.Output[GetSddcsSddcCollectionVsphereUpgradeObject] {
-	return pulumix.Output[GetSddcsSddcCollectionVsphereUpgradeObject]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Binary object download link.
-func (o GetSddcsSddcCollectionVsphereUpgradeObjectOutput) DownloadLink() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSddcsSddcCollectionVsphereUpgradeObject) string { return v.DownloadLink }).(pulumi.StringOutput)
+func (o GetSddcsSddcCollectionVsphereUpgradeObjectOutput) DownloadLink() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollectionVsphereUpgradeObject) *string { return v.DownloadLink }).(pulumi.StringPtrOutput)
 }
 
 // Binary object description.
-func (o GetSddcsSddcCollectionVsphereUpgradeObjectOutput) LinkDescription() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSddcsSddcCollectionVsphereUpgradeObject) string { return v.LinkDescription }).(pulumi.StringOutput)
+func (o GetSddcsSddcCollectionVsphereUpgradeObjectOutput) LinkDescription() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollectionVsphereUpgradeObject) *string { return v.LinkDescription }).(pulumi.StringPtrOutput)
 }
 
 type GetSddcsSddcCollectionVsphereUpgradeObjectArrayOutput struct{ *pulumi.OutputState }
@@ -3093,12 +2714,6 @@ func (o GetSddcsSddcCollectionVsphereUpgradeObjectArrayOutput) ToGetSddcsSddcCol
 
 func (o GetSddcsSddcCollectionVsphereUpgradeObjectArrayOutput) ToGetSddcsSddcCollectionVsphereUpgradeObjectArrayOutputWithContext(ctx context.Context) GetSddcsSddcCollectionVsphereUpgradeObjectArrayOutput {
 	return o
-}
-
-func (o GetSddcsSddcCollectionVsphereUpgradeObjectArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSddcsSddcCollectionVsphereUpgradeObject] {
-	return pulumix.Output[[]GetSddcsSddcCollectionVsphereUpgradeObject]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSddcsSddcCollectionVsphereUpgradeObjectArrayOutput) Index(i pulumi.IntInput) GetSddcsSddcCollectionVsphereUpgradeObjectOutput {
@@ -3144,12 +2759,6 @@ func (i GetSupportedHostShapesFilterArgs) ToGetSupportedHostShapesFilterOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetSupportedHostShapesFilterOutput)
 }
 
-func (i GetSupportedHostShapesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetSupportedHostShapesFilter] {
-	return pulumix.Output[GetSupportedHostShapesFilter]{
-		OutputState: i.ToGetSupportedHostShapesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetSupportedHostShapesFilterArrayInput is an input type that accepts GetSupportedHostShapesFilterArray and GetSupportedHostShapesFilterArrayOutput values.
 // You can construct a concrete instance of `GetSupportedHostShapesFilterArrayInput` via:
 //
@@ -3175,12 +2784,6 @@ func (i GetSupportedHostShapesFilterArray) ToGetSupportedHostShapesFilterArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetSupportedHostShapesFilterArrayOutput)
 }
 
-func (i GetSupportedHostShapesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSupportedHostShapesFilter] {
-	return pulumix.Output[[]GetSupportedHostShapesFilter]{
-		OutputState: i.ToGetSupportedHostShapesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSupportedHostShapesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetSupportedHostShapesFilterOutput) ElementType() reflect.Type {
@@ -3193,12 +2796,6 @@ func (o GetSupportedHostShapesFilterOutput) ToGetSupportedHostShapesFilterOutput
 
 func (o GetSupportedHostShapesFilterOutput) ToGetSupportedHostShapesFilterOutputWithContext(ctx context.Context) GetSupportedHostShapesFilterOutput {
 	return o
-}
-
-func (o GetSupportedHostShapesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetSupportedHostShapesFilter] {
-	return pulumix.Output[GetSupportedHostShapesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A filter to return only resources that match the given name exactly.
@@ -3228,12 +2825,6 @@ func (o GetSupportedHostShapesFilterArrayOutput) ToGetSupportedHostShapesFilterA
 	return o
 }
 
-func (o GetSupportedHostShapesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSupportedHostShapesFilter] {
-	return pulumix.Output[[]GetSupportedHostShapesFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSupportedHostShapesFilterArrayOutput) Index(i pulumi.IntInput) GetSupportedHostShapesFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSupportedHostShapesFilter {
 		return vs[0].([]GetSupportedHostShapesFilter)[vs[1].(int)]
@@ -3242,17 +2833,17 @@ func (o GetSupportedHostShapesFilterArrayOutput) Index(i pulumi.IntInput) GetSup
 
 type GetSupportedHostShapesItem struct {
 	// The default OCPU count of the shape.
-	DefaultOcpuCount float64 `pulumi:"defaultOcpuCount"`
+	DefaultOcpuCount *float64 `pulumi:"defaultOcpuCount"`
 	// Description of the shape.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Whether the shape supports "MONTH" SKU.
-	IsSupportMonthlySku bool `pulumi:"isSupportMonthlySku"`
+	IsSupportMonthlySku *bool `pulumi:"isSupportMonthlySku"`
 	// Indicates whether the shape supports shielded instances.
-	IsSupportShieldedInstances bool `pulumi:"isSupportShieldedInstances"`
+	IsSupportShieldedInstances *bool `pulumi:"isSupportShieldedInstances"`
 	// A filter to return only resources that match the given name exactly.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The family of the shape. ESXi hosts of one SDDC must have the same shape family.
-	ShapeFamily string `pulumi:"shapeFamily"`
+	ShapeFamily *string `pulumi:"shapeFamily"`
 	// Support OCPU count of the shape.
 	SupportedOcpuCounts []float64 `pulumi:"supportedOcpuCounts"`
 	// The operations where you can use the shape. The operations can be CREATE_SDDC or CREATE_ESXI_HOST.
@@ -3278,17 +2869,17 @@ type GetSupportedHostShapesItemInput interface {
 
 type GetSupportedHostShapesItemArgs struct {
 	// The default OCPU count of the shape.
-	DefaultOcpuCount pulumi.Float64Input `pulumi:"defaultOcpuCount"`
+	DefaultOcpuCount pulumi.Float64PtrInput `pulumi:"defaultOcpuCount"`
 	// Description of the shape.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// Whether the shape supports "MONTH" SKU.
-	IsSupportMonthlySku pulumi.BoolInput `pulumi:"isSupportMonthlySku"`
+	IsSupportMonthlySku pulumi.BoolPtrInput `pulumi:"isSupportMonthlySku"`
 	// Indicates whether the shape supports shielded instances.
-	IsSupportShieldedInstances pulumi.BoolInput `pulumi:"isSupportShieldedInstances"`
+	IsSupportShieldedInstances pulumi.BoolPtrInput `pulumi:"isSupportShieldedInstances"`
 	// A filter to return only resources that match the given name exactly.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// The family of the shape. ESXi hosts of one SDDC must have the same shape family.
-	ShapeFamily pulumi.StringInput `pulumi:"shapeFamily"`
+	ShapeFamily pulumi.StringPtrInput `pulumi:"shapeFamily"`
 	// Support OCPU count of the shape.
 	SupportedOcpuCounts pulumi.Float64ArrayInput `pulumi:"supportedOcpuCounts"`
 	// The operations where you can use the shape. The operations can be CREATE_SDDC or CREATE_ESXI_HOST.
@@ -3311,12 +2902,6 @@ func (i GetSupportedHostShapesItemArgs) ToGetSupportedHostShapesItemOutput() Get
 
 func (i GetSupportedHostShapesItemArgs) ToGetSupportedHostShapesItemOutputWithContext(ctx context.Context) GetSupportedHostShapesItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSupportedHostShapesItemOutput)
-}
-
-func (i GetSupportedHostShapesItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetSupportedHostShapesItem] {
-	return pulumix.Output[GetSupportedHostShapesItem]{
-		OutputState: i.ToGetSupportedHostShapesItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSupportedHostShapesItemArrayInput is an input type that accepts GetSupportedHostShapesItemArray and GetSupportedHostShapesItemArrayOutput values.
@@ -3344,12 +2929,6 @@ func (i GetSupportedHostShapesItemArray) ToGetSupportedHostShapesItemArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetSupportedHostShapesItemArrayOutput)
 }
 
-func (i GetSupportedHostShapesItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSupportedHostShapesItem] {
-	return pulumix.Output[[]GetSupportedHostShapesItem]{
-		OutputState: i.ToGetSupportedHostShapesItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSupportedHostShapesItemOutput struct{ *pulumi.OutputState }
 
 func (GetSupportedHostShapesItemOutput) ElementType() reflect.Type {
@@ -3364,40 +2943,34 @@ func (o GetSupportedHostShapesItemOutput) ToGetSupportedHostShapesItemOutputWith
 	return o
 }
 
-func (o GetSupportedHostShapesItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetSupportedHostShapesItem] {
-	return pulumix.Output[GetSupportedHostShapesItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The default OCPU count of the shape.
-func (o GetSupportedHostShapesItemOutput) DefaultOcpuCount() pulumi.Float64Output {
-	return o.ApplyT(func(v GetSupportedHostShapesItem) float64 { return v.DefaultOcpuCount }).(pulumi.Float64Output)
+func (o GetSupportedHostShapesItemOutput) DefaultOcpuCount() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetSupportedHostShapesItem) *float64 { return v.DefaultOcpuCount }).(pulumi.Float64PtrOutput)
 }
 
 // Description of the shape.
-func (o GetSupportedHostShapesItemOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSupportedHostShapesItem) string { return v.Description }).(pulumi.StringOutput)
+func (o GetSupportedHostShapesItemOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSupportedHostShapesItem) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Whether the shape supports "MONTH" SKU.
-func (o GetSupportedHostShapesItemOutput) IsSupportMonthlySku() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSupportedHostShapesItem) bool { return v.IsSupportMonthlySku }).(pulumi.BoolOutput)
+func (o GetSupportedHostShapesItemOutput) IsSupportMonthlySku() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSupportedHostShapesItem) *bool { return v.IsSupportMonthlySku }).(pulumi.BoolPtrOutput)
 }
 
 // Indicates whether the shape supports shielded instances.
-func (o GetSupportedHostShapesItemOutput) IsSupportShieldedInstances() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSupportedHostShapesItem) bool { return v.IsSupportShieldedInstances }).(pulumi.BoolOutput)
+func (o GetSupportedHostShapesItemOutput) IsSupportShieldedInstances() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSupportedHostShapesItem) *bool { return v.IsSupportShieldedInstances }).(pulumi.BoolPtrOutput)
 }
 
 // A filter to return only resources that match the given name exactly.
-func (o GetSupportedHostShapesItemOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSupportedHostShapesItem) string { return v.Name }).(pulumi.StringOutput)
+func (o GetSupportedHostShapesItemOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSupportedHostShapesItem) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The family of the shape. ESXi hosts of one SDDC must have the same shape family.
-func (o GetSupportedHostShapesItemOutput) ShapeFamily() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSupportedHostShapesItem) string { return v.ShapeFamily }).(pulumi.StringOutput)
+func (o GetSupportedHostShapesItemOutput) ShapeFamily() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSupportedHostShapesItem) *string { return v.ShapeFamily }).(pulumi.StringPtrOutput)
 }
 
 // Support OCPU count of the shape.
@@ -3434,12 +3007,6 @@ func (o GetSupportedHostShapesItemArrayOutput) ToGetSupportedHostShapesItemArray
 
 func (o GetSupportedHostShapesItemArrayOutput) ToGetSupportedHostShapesItemArrayOutputWithContext(ctx context.Context) GetSupportedHostShapesItemArrayOutput {
 	return o
-}
-
-func (o GetSupportedHostShapesItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSupportedHostShapesItem] {
-	return pulumix.Output[[]GetSupportedHostShapesItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSupportedHostShapesItemArrayOutput) Index(i pulumi.IntInput) GetSupportedHostShapesItemOutput {
@@ -3485,12 +3052,6 @@ func (i GetSupportedSkusFilterArgs) ToGetSupportedSkusFilterOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetSupportedSkusFilterOutput)
 }
 
-func (i GetSupportedSkusFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetSupportedSkusFilter] {
-	return pulumix.Output[GetSupportedSkusFilter]{
-		OutputState: i.ToGetSupportedSkusFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetSupportedSkusFilterArrayInput is an input type that accepts GetSupportedSkusFilterArray and GetSupportedSkusFilterArrayOutput values.
 // You can construct a concrete instance of `GetSupportedSkusFilterArrayInput` via:
 //
@@ -3516,12 +3077,6 @@ func (i GetSupportedSkusFilterArray) ToGetSupportedSkusFilterArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetSupportedSkusFilterArrayOutput)
 }
 
-func (i GetSupportedSkusFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSupportedSkusFilter] {
-	return pulumix.Output[[]GetSupportedSkusFilter]{
-		OutputState: i.ToGetSupportedSkusFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSupportedSkusFilterOutput struct{ *pulumi.OutputState }
 
 func (GetSupportedSkusFilterOutput) ElementType() reflect.Type {
@@ -3534,12 +3089,6 @@ func (o GetSupportedSkusFilterOutput) ToGetSupportedSkusFilterOutput() GetSuppor
 
 func (o GetSupportedSkusFilterOutput) ToGetSupportedSkusFilterOutputWithContext(ctx context.Context) GetSupportedSkusFilterOutput {
 	return o
-}
-
-func (o GetSupportedSkusFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetSupportedSkusFilter] {
-	return pulumix.Output[GetSupportedSkusFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // name of SKU
@@ -3569,12 +3118,6 @@ func (o GetSupportedSkusFilterArrayOutput) ToGetSupportedSkusFilterArrayOutputWi
 	return o
 }
 
-func (o GetSupportedSkusFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSupportedSkusFilter] {
-	return pulumix.Output[[]GetSupportedSkusFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSupportedSkusFilterArrayOutput) Index(i pulumi.IntInput) GetSupportedSkusFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSupportedSkusFilter {
 		return vs[0].([]GetSupportedSkusFilter)[vs[1].(int)]
@@ -3583,7 +3126,7 @@ func (o GetSupportedSkusFilterArrayOutput) Index(i pulumi.IntInput) GetSupported
 
 type GetSupportedSkusItem struct {
 	// name of SKU
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 }
 
 // GetSupportedSkusItemInput is an input type that accepts GetSupportedSkusItemArgs and GetSupportedSkusItemOutput values.
@@ -3599,7 +3142,7 @@ type GetSupportedSkusItemInput interface {
 
 type GetSupportedSkusItemArgs struct {
 	// name of SKU
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 }
 
 func (GetSupportedSkusItemArgs) ElementType() reflect.Type {
@@ -3612,12 +3155,6 @@ func (i GetSupportedSkusItemArgs) ToGetSupportedSkusItemOutput() GetSupportedSku
 
 func (i GetSupportedSkusItemArgs) ToGetSupportedSkusItemOutputWithContext(ctx context.Context) GetSupportedSkusItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSupportedSkusItemOutput)
-}
-
-func (i GetSupportedSkusItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetSupportedSkusItem] {
-	return pulumix.Output[GetSupportedSkusItem]{
-		OutputState: i.ToGetSupportedSkusItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSupportedSkusItemArrayInput is an input type that accepts GetSupportedSkusItemArray and GetSupportedSkusItemArrayOutput values.
@@ -3645,12 +3182,6 @@ func (i GetSupportedSkusItemArray) ToGetSupportedSkusItemArrayOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetSupportedSkusItemArrayOutput)
 }
 
-func (i GetSupportedSkusItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSupportedSkusItem] {
-	return pulumix.Output[[]GetSupportedSkusItem]{
-		OutputState: i.ToGetSupportedSkusItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSupportedSkusItemOutput struct{ *pulumi.OutputState }
 
 func (GetSupportedSkusItemOutput) ElementType() reflect.Type {
@@ -3665,15 +3196,9 @@ func (o GetSupportedSkusItemOutput) ToGetSupportedSkusItemOutputWithContext(ctx 
 	return o
 }
 
-func (o GetSupportedSkusItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetSupportedSkusItem] {
-	return pulumix.Output[GetSupportedSkusItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // name of SKU
-func (o GetSupportedSkusItemOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSupportedSkusItem) string { return v.Name }).(pulumi.StringOutput)
+func (o GetSupportedSkusItemOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSupportedSkusItem) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 type GetSupportedSkusItemArrayOutput struct{ *pulumi.OutputState }
@@ -3688,12 +3213,6 @@ func (o GetSupportedSkusItemArrayOutput) ToGetSupportedSkusItemArrayOutput() Get
 
 func (o GetSupportedSkusItemArrayOutput) ToGetSupportedSkusItemArrayOutputWithContext(ctx context.Context) GetSupportedSkusItemArrayOutput {
 	return o
-}
-
-func (o GetSupportedSkusItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSupportedSkusItem] {
-	return pulumix.Output[[]GetSupportedSkusItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSupportedSkusItemArrayOutput) Index(i pulumi.IntInput) GetSupportedSkusItemOutput {
@@ -3737,12 +3256,6 @@ func (i GetSupportedVmwareSoftwareVersionsFilterArgs) ToGetSupportedVmwareSoftwa
 	return pulumi.ToOutputWithContext(ctx, i).(GetSupportedVmwareSoftwareVersionsFilterOutput)
 }
 
-func (i GetSupportedVmwareSoftwareVersionsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetSupportedVmwareSoftwareVersionsFilter] {
-	return pulumix.Output[GetSupportedVmwareSoftwareVersionsFilter]{
-		OutputState: i.ToGetSupportedVmwareSoftwareVersionsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetSupportedVmwareSoftwareVersionsFilterArrayInput is an input type that accepts GetSupportedVmwareSoftwareVersionsFilterArray and GetSupportedVmwareSoftwareVersionsFilterArrayOutput values.
 // You can construct a concrete instance of `GetSupportedVmwareSoftwareVersionsFilterArrayInput` via:
 //
@@ -3768,12 +3281,6 @@ func (i GetSupportedVmwareSoftwareVersionsFilterArray) ToGetSupportedVmwareSoftw
 	return pulumi.ToOutputWithContext(ctx, i).(GetSupportedVmwareSoftwareVersionsFilterArrayOutput)
 }
 
-func (i GetSupportedVmwareSoftwareVersionsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSupportedVmwareSoftwareVersionsFilter] {
-	return pulumix.Output[[]GetSupportedVmwareSoftwareVersionsFilter]{
-		OutputState: i.ToGetSupportedVmwareSoftwareVersionsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSupportedVmwareSoftwareVersionsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetSupportedVmwareSoftwareVersionsFilterOutput) ElementType() reflect.Type {
@@ -3786,12 +3293,6 @@ func (o GetSupportedVmwareSoftwareVersionsFilterOutput) ToGetSupportedVmwareSoft
 
 func (o GetSupportedVmwareSoftwareVersionsFilterOutput) ToGetSupportedVmwareSoftwareVersionsFilterOutputWithContext(ctx context.Context) GetSupportedVmwareSoftwareVersionsFilterOutput {
 	return o
-}
-
-func (o GetSupportedVmwareSoftwareVersionsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetSupportedVmwareSoftwareVersionsFilter] {
-	return pulumix.Output[GetSupportedVmwareSoftwareVersionsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSupportedVmwareSoftwareVersionsFilterOutput) Name() pulumi.StringOutput {
@@ -3820,12 +3321,6 @@ func (o GetSupportedVmwareSoftwareVersionsFilterArrayOutput) ToGetSupportedVmwar
 	return o
 }
 
-func (o GetSupportedVmwareSoftwareVersionsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSupportedVmwareSoftwareVersionsFilter] {
-	return pulumix.Output[[]GetSupportedVmwareSoftwareVersionsFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSupportedVmwareSoftwareVersionsFilterArrayOutput) Index(i pulumi.IntInput) GetSupportedVmwareSoftwareVersionsFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSupportedVmwareSoftwareVersionsFilter {
 		return vs[0].([]GetSupportedVmwareSoftwareVersionsFilter)[vs[1].(int)]
@@ -3834,9 +3329,9 @@ func (o GetSupportedVmwareSoftwareVersionsFilterArrayOutput) Index(i pulumi.IntI
 
 type GetSupportedVmwareSoftwareVersionsItem struct {
 	// A description of the software in the bundle.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// A short, unique string that identifies the version of bundled software.
-	Version string `pulumi:"version"`
+	Version *string `pulumi:"version"`
 }
 
 // GetSupportedVmwareSoftwareVersionsItemInput is an input type that accepts GetSupportedVmwareSoftwareVersionsItemArgs and GetSupportedVmwareSoftwareVersionsItemOutput values.
@@ -3852,9 +3347,9 @@ type GetSupportedVmwareSoftwareVersionsItemInput interface {
 
 type GetSupportedVmwareSoftwareVersionsItemArgs struct {
 	// A description of the software in the bundle.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// A short, unique string that identifies the version of bundled software.
-	Version pulumi.StringInput `pulumi:"version"`
+	Version pulumi.StringPtrInput `pulumi:"version"`
 }
 
 func (GetSupportedVmwareSoftwareVersionsItemArgs) ElementType() reflect.Type {
@@ -3867,12 +3362,6 @@ func (i GetSupportedVmwareSoftwareVersionsItemArgs) ToGetSupportedVmwareSoftware
 
 func (i GetSupportedVmwareSoftwareVersionsItemArgs) ToGetSupportedVmwareSoftwareVersionsItemOutputWithContext(ctx context.Context) GetSupportedVmwareSoftwareVersionsItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSupportedVmwareSoftwareVersionsItemOutput)
-}
-
-func (i GetSupportedVmwareSoftwareVersionsItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetSupportedVmwareSoftwareVersionsItem] {
-	return pulumix.Output[GetSupportedVmwareSoftwareVersionsItem]{
-		OutputState: i.ToGetSupportedVmwareSoftwareVersionsItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSupportedVmwareSoftwareVersionsItemArrayInput is an input type that accepts GetSupportedVmwareSoftwareVersionsItemArray and GetSupportedVmwareSoftwareVersionsItemArrayOutput values.
@@ -3900,12 +3389,6 @@ func (i GetSupportedVmwareSoftwareVersionsItemArray) ToGetSupportedVmwareSoftwar
 	return pulumi.ToOutputWithContext(ctx, i).(GetSupportedVmwareSoftwareVersionsItemArrayOutput)
 }
 
-func (i GetSupportedVmwareSoftwareVersionsItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSupportedVmwareSoftwareVersionsItem] {
-	return pulumix.Output[[]GetSupportedVmwareSoftwareVersionsItem]{
-		OutputState: i.ToGetSupportedVmwareSoftwareVersionsItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSupportedVmwareSoftwareVersionsItemOutput struct{ *pulumi.OutputState }
 
 func (GetSupportedVmwareSoftwareVersionsItemOutput) ElementType() reflect.Type {
@@ -3920,20 +3403,14 @@ func (o GetSupportedVmwareSoftwareVersionsItemOutput) ToGetSupportedVmwareSoftwa
 	return o
 }
 
-func (o GetSupportedVmwareSoftwareVersionsItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetSupportedVmwareSoftwareVersionsItem] {
-	return pulumix.Output[GetSupportedVmwareSoftwareVersionsItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A description of the software in the bundle.
-func (o GetSupportedVmwareSoftwareVersionsItemOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSupportedVmwareSoftwareVersionsItem) string { return v.Description }).(pulumi.StringOutput)
+func (o GetSupportedVmwareSoftwareVersionsItemOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSupportedVmwareSoftwareVersionsItem) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // A short, unique string that identifies the version of bundled software.
-func (o GetSupportedVmwareSoftwareVersionsItemOutput) Version() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSupportedVmwareSoftwareVersionsItem) string { return v.Version }).(pulumi.StringOutput)
+func (o GetSupportedVmwareSoftwareVersionsItemOutput) Version() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSupportedVmwareSoftwareVersionsItem) *string { return v.Version }).(pulumi.StringPtrOutput)
 }
 
 type GetSupportedVmwareSoftwareVersionsItemArrayOutput struct{ *pulumi.OutputState }
@@ -3948,12 +3425,6 @@ func (o GetSupportedVmwareSoftwareVersionsItemArrayOutput) ToGetSupportedVmwareS
 
 func (o GetSupportedVmwareSoftwareVersionsItemArrayOutput) ToGetSupportedVmwareSoftwareVersionsItemArrayOutputWithContext(ctx context.Context) GetSupportedVmwareSoftwareVersionsItemArrayOutput {
 	return o
-}
-
-func (o GetSupportedVmwareSoftwareVersionsItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSupportedVmwareSoftwareVersionsItem] {
-	return pulumix.Output[[]GetSupportedVmwareSoftwareVersionsItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSupportedVmwareSoftwareVersionsItemArrayOutput) Index(i pulumi.IntInput) GetSupportedVmwareSoftwareVersionsItemOutput {

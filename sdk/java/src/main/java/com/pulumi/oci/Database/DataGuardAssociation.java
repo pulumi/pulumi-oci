@@ -110,42 +110,42 @@ public class DataGuardAssociation extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="applyLag", refs={String.class}, tree="[0]")
-    private Output<String> applyLag;
+    private Output</* @Nullable */ String> applyLag;
 
     /**
      * @return The lag time between updates to the primary database and application of the redo data on the standby database, as computed by the reporting database.  Example: `9 seconds`
      * 
      */
-    public Output<String> applyLag() {
-        return this.applyLag;
+    public Output<Optional<String>> applyLag() {
+        return Codegen.optional(this.applyLag);
     }
     /**
      * The rate at which redo logs are synced between the associated databases.  Example: `180 Mb per second`
      * 
      */
     @Export(name="applyRate", refs={String.class}, tree="[0]")
-    private Output<String> applyRate;
+    private Output</* @Nullable */ String> applyRate;
 
     /**
      * @return The rate at which redo logs are synced between the associated databases.  Example: `180 Mb per second`
      * 
      */
-    public Output<String> applyRate() {
-        return this.applyRate;
+    public Output<Optional<String>> applyRate() {
+        return Codegen.optional(this.applyRate);
     }
     /**
      * The name of the availability domain that the standby database DB system will be located in. For example- &#34;Uocm:PHX-AD-1&#34;.
      * 
      */
     @Export(name="availabilityDomain", refs={String.class}, tree="[0]")
-    private Output<String> availabilityDomain;
+    private Output</* @Nullable */ String> availabilityDomain;
 
     /**
      * @return The name of the availability domain that the standby database DB system will be located in. For example- &#34;Uocm:PHX-AD-1&#34;.
      * 
      */
-    public Output<String> availabilityDomain() {
-        return this.availabilityDomain;
+    public Output<Optional<String>> availabilityDomain() {
+        return Codegen.optional(this.availabilityDomain);
     }
     /**
      * A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
@@ -166,14 +166,14 @@ public class DataGuardAssociation extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="cpuCoreCount", refs={Integer.class}, tree="[0]")
-    private Output<Integer> cpuCoreCount;
+    private Output</* @Nullable */ Integer> cpuCoreCount;
 
     /**
      * @return The number of OCPU cores available for AMD-based virtual machine DB systems.
      * 
      */
-    public Output<Integer> cpuCoreCount() {
-        return this.cpuCoreCount;
+    public Output<Optional<Integer>> cpuCoreCount() {
+        return Codegen.optional(this.cpuCoreCount);
     }
     @Export(name="createAsync", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> createAsync;
@@ -200,14 +200,14 @@ public class DataGuardAssociation extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="dataCollectionOptions", refs={DataGuardAssociationDataCollectionOptions.class}, tree="[0]")
-    private Output<DataGuardAssociationDataCollectionOptions> dataCollectionOptions;
+    private Output</* @Nullable */ DataGuardAssociationDataCollectionOptions> dataCollectionOptions;
 
     /**
      * @return Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
      * 
      */
-    public Output<DataGuardAssociationDataCollectionOptions> dataCollectionOptions() {
-        return this.dataCollectionOptions;
+    public Output<Optional<DataGuardAssociationDataCollectionOptions>> dataCollectionOptions() {
+        return Codegen.optional(this.dataCollectionOptions);
     }
     /**
      * (Updatable) A strong password for the `SYS`, `SYSTEM`, and `PDB Admin` users to apply during standby creation.
@@ -334,14 +334,14 @@ public class DataGuardAssociation extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return The user-friendly name of the DB system that will contain the the standby database. The display name does not have to be unique.
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     /**
      * A Fault Domain is a grouping of hardware and infrastructure within an availability domain. Fault Domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or maintenance that affects one Fault Domain does not affect DB systems in other Fault Domains.
@@ -378,14 +378,14 @@ public class DataGuardAssociation extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="hostname", refs={String.class}, tree="[0]")
-    private Output<String> hostname;
+    private Output</* @Nullable */ String> hostname;
 
     /**
      * @return The hostname for the DB node.
      * 
      */
-    public Output<String> hostname() {
-        return this.hostname;
+    public Output<Optional<String>> hostname() {
+        return Codegen.optional(this.hostname);
     }
     /**
      * (Updatable) True if active Data Guard is enabled.
@@ -420,14 +420,14 @@ public class DataGuardAssociation extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return Additional information about the current lifecycleState, if available.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * The number of nodes to launch for the DB system of the standby in the Data Guard association. For a 2-node RAC virtual machine DB system, specify either 1 or 2. If you do not supply this parameter, the default is the node count of the primary DB system.
@@ -464,56 +464,56 @@ public class DataGuardAssociation extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="peerDataGuardAssociationId", refs={String.class}, tree="[0]")
-    private Output<String> peerDataGuardAssociationId;
+    private Output</* @Nullable */ String> peerDataGuardAssociationId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer database&#39;s Data Guard association.
      * 
      */
-    public Output<String> peerDataGuardAssociationId() {
-        return this.peerDataGuardAssociationId;
+    public Output<Optional<String>> peerDataGuardAssociationId() {
+        return Codegen.optional(this.peerDataGuardAssociationId);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated peer database.
      * 
      */
     @Export(name="peerDatabaseId", refs={String.class}, tree="[0]")
-    private Output<String> peerDatabaseId;
+    private Output</* @Nullable */ String> peerDatabaseId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated peer database.
      * 
      */
-    public Output<String> peerDatabaseId() {
-        return this.peerDatabaseId;
+    public Output<Optional<String>> peerDatabaseId() {
+        return Codegen.optional(this.peerDatabaseId);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB home in which to create the standby database. You must supply this value to create standby database with an existing DB home
      * 
      */
     @Export(name="peerDbHomeId", refs={String.class}, tree="[0]")
-    private Output<String> peerDbHomeId;
+    private Output</* @Nullable */ String> peerDbHomeId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB home in which to create the standby database. You must supply this value to create standby database with an existing DB home
      * 
      */
-    public Output<String> peerDbHomeId() {
-        return this.peerDbHomeId;
+    public Output<Optional<String>> peerDbHomeId() {
+        return Codegen.optional(this.peerDbHomeId);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system in which to create the standby database. You must supply this value if creationType is `ExistingDbSystem`.
      * 
      */
     @Export(name="peerDbSystemId", refs={String.class}, tree="[0]")
-    private Output<String> peerDbSystemId;
+    private Output</* @Nullable */ String> peerDbSystemId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system in which to create the standby database. You must supply this value if creationType is `ExistingDbSystem`.
      * 
      */
-    public Output<String> peerDbSystemId() {
-        return this.peerDbSystemId;
+    public Output<Optional<String>> peerDbSystemId() {
+        return Codegen.optional(this.peerDbSystemId);
     }
     /**
      * Specifies the `DB_UNIQUE_NAME` of the peer database to be created.
@@ -534,14 +534,14 @@ public class DataGuardAssociation extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="peerRole", refs={String.class}, tree="[0]")
-    private Output<String> peerRole;
+    private Output</* @Nullable */ String> peerRole;
 
     /**
      * @return The role of the peer database in this Data Guard association.
      * 
      */
-    public Output<String> peerRole() {
-        return this.peerRole;
+    public Output<Optional<String>> peerRole() {
+        return Codegen.optional(this.peerRole);
     }
     /**
      * Specifies a prefix for the `Oracle SID` of the database to be created.
@@ -562,14 +562,14 @@ public class DataGuardAssociation extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="peerVmClusterId", refs={String.class}, tree="[0]")
-    private Output<String> peerVmClusterId;
+    private Output</* @Nullable */ String> peerVmClusterId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster in which to create the standby database. You must supply this value if creationType is `ExistingVmCluster`.
      * 
      */
-    public Output<String> peerVmClusterId() {
-        return this.peerVmClusterId;
+    public Output<Optional<String>> peerVmClusterId() {
+        return Codegen.optional(this.peerVmClusterId);
     }
     /**
      * The IPv4 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv4 address from the subnet.
@@ -608,14 +608,14 @@ public class DataGuardAssociation extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="role", refs={String.class}, tree="[0]")
-    private Output<String> role;
+    private Output</* @Nullable */ String> role;
 
     /**
      * @return The role of the reporting database in this Data Guard association.
      * 
      */
-    public Output<String> role() {
-        return this.role;
+    public Output<Optional<String>> role() {
+        return Codegen.optional(this.role);
     }
     /**
      * The virtual machine DB system shape to launch for the standby database in the Data Guard association. The shape determines the number of CPU cores and the amount of memory available for the DB system. Only virtual machine shapes are valid options. If you do not supply this parameter, the default shape is the shape of the primary DB system.
@@ -624,7 +624,7 @@ public class DataGuardAssociation extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="shape", refs={String.class}, tree="[0]")
-    private Output<String> shape;
+    private Output</* @Nullable */ String> shape;
 
     /**
      * @return The virtual machine DB system shape to launch for the standby database in the Data Guard association. The shape determines the number of CPU cores and the amount of memory available for the DB system. Only virtual machine shapes are valid options. If you do not supply this parameter, the default shape is the shape of the primary DB system.
@@ -632,36 +632,36 @@ public class DataGuardAssociation extends com.pulumi.resources.CustomResource {
      * To get a list of all shapes, use the [ListDbSystemShapes](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbSystemShapeSummary/ListDbSystemShapes) operation.
      * 
      */
-    public Output<String> shape() {
-        return this.shape;
+    public Output<Optional<String>> shape() {
+        return Codegen.optional(this.shape);
     }
     /**
      * The current state of the Data Guard association.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the Data Guard association.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The block storage volume performance level. Valid values are `BALANCED` and `HIGH_PERFORMANCE`. See [Block Volume Performance](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm) for more information.
      * 
      */
     @Export(name="storageVolumePerformanceMode", refs={String.class}, tree="[0]")
-    private Output<String> storageVolumePerformanceMode;
+    private Output</* @Nullable */ String> storageVolumePerformanceMode;
 
     /**
      * @return The block storage volume performance level. Valid values are `BALANCED` and `HIGH_PERFORMANCE`. See [Block Volume Performance](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm) for more information.
      * 
      */
-    public Output<String> storageVolumePerformanceMode() {
-        return this.storageVolumePerformanceMode;
+    public Output<Optional<String>> storageVolumePerformanceMode() {
+        return Codegen.optional(this.storageVolumePerformanceMode);
     }
     /**
      * The OCID of the subnet the DB system is associated with. **Subnet Restrictions:**
@@ -671,7 +671,7 @@ public class DataGuardAssociation extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="subnetId", refs={String.class}, tree="[0]")
-    private Output<String> subnetId;
+    private Output</* @Nullable */ String> subnetId;
 
     /**
      * @return The OCID of the subnet the DB system is associated with. **Subnet Restrictions:**
@@ -680,22 +680,22 @@ public class DataGuardAssociation extends com.pulumi.resources.CustomResource {
      * These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and backup subnet.
      * 
      */
-    public Output<String> subnetId() {
-        return this.subnetId;
+    public Output<Optional<String>> subnetId() {
+        return Codegen.optional(this.subnetId);
     }
     /**
      * The date and time the Data Guard association was created.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the Data Guard association was created.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The time zone of the dataguard standby DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).

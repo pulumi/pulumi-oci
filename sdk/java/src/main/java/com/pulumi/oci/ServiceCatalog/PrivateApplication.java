@@ -16,6 +16,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -95,14 +96,14 @@ public class PrivateApplication extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) The name of the private application.
@@ -123,56 +124,56 @@ public class PrivateApplication extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * (Updatable) Base64-encoded logo to use as the private application icon. Template icon file requirements: PNG format, 50 KB maximum, 130 x 130 pixels.
      * 
      */
     @Export(name="logoFileBase64encoded", refs={String.class}, tree="[0]")
-    private Output<String> logoFileBase64encoded;
+    private Output</* @Nullable */ String> logoFileBase64encoded;
 
     /**
      * @return (Updatable) Base64-encoded logo to use as the private application icon. Template icon file requirements: PNG format, 50 KB maximum, 130 x 130 pixels.
      * 
      */
-    public Output<String> logoFileBase64encoded() {
-        return this.logoFileBase64encoded;
+    public Output<Optional<String>> logoFileBase64encoded() {
+        return Codegen.optional(this.logoFileBase64encoded);
     }
     /**
      * The model for uploaded binary data, like logos and images.
      * 
      */
     @Export(name="logos", refs={List.class,PrivateApplicationLogo.class}, tree="[0,1]")
-    private Output<List<PrivateApplicationLogo>> logos;
+    private Output</* @Nullable */ List<PrivateApplicationLogo>> logos;
 
     /**
      * @return The model for uploaded binary data, like logos and images.
      * 
      */
-    public Output<List<PrivateApplicationLogo>> logos() {
-        return this.logos;
+    public Output<Optional<List<PrivateApplicationLogo>>> logos() {
+        return Codegen.optional(this.logos);
     }
     /**
      * (Updatable) A long description of the private application.
      * 
      */
     @Export(name="longDescription", refs={String.class}, tree="[0]")
-    private Output<String> longDescription;
+    private Output</* @Nullable */ String> longDescription;
 
     /**
      * @return (Updatable) A long description of the private application.
      * 
      */
-    public Output<String> longDescription() {
-        return this.longDescription;
+    public Output<Optional<String>> longDescription() {
+        return Codegen.optional(this.longDescription);
     }
     /**
      * A base object for creating a private application package.
@@ -193,14 +194,14 @@ public class PrivateApplication extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="packageType", refs={String.class}, tree="[0]")
-    private Output<String> packageType;
+    private Output</* @Nullable */ String> packageType;
 
     /**
      * @return The package&#39;s type.
      * 
      */
-    public Output<String> packageType() {
-        return this.packageType;
+    public Output<Optional<String>> packageType() {
+        return Codegen.optional(this.packageType);
     }
     /**
      * (Updatable) A short description of the private application.
@@ -227,42 +228,42 @@ public class PrivateApplication extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The lifecycle state of the private application.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The date and time the private application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-05-26T21:10:29.600Z`
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the private application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-05-26T21:10:29.600Z`
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The date and time the private application was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-12-10T05:10:29.721Z`
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The date and time the private application was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-12-10T05:10:29.721Z`
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
 
     /**

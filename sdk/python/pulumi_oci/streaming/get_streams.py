@@ -49,9 +49,6 @@ class GetStreamsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
-        """
-        The OCID of the compartment that contains the stream.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -62,41 +59,26 @@ class GetStreamsResult:
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        The OCID of the stream.
-        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        The name of the stream. Avoid entering confidential information.  Example: `TelemetryEvents`
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the stream.
-        """
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="streamPoolId")
     def stream_pool_id(self) -> Optional[str]:
-        """
-        The OCID of the stream pool that contains the stream.
-        """
         return pulumi.get(self, "stream_pool_id")
 
     @property
     @pulumi.getter
-    def streams(self) -> Sequence['outputs.GetStreamsStreamResult']:
-        """
-        The list of streams.
-        """
+    def streams(self) -> Optional[Sequence['outputs.GetStreamsStreamResult']]:
         return pulumi.get(self, "streams")
 
 
@@ -123,32 +105,7 @@ def get_streams(compartment_id: Optional[str] = None,
                 stream_pool_id: Optional[str] = None,
                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetStreamsResult:
     """
-    This data source provides the list of Streams in Oracle Cloud Infrastructure Streaming service.
-
-    Lists the streams in the given compartment id.
-    If the compartment id is specified, it will list streams in the compartment, regardless of their stream pool.
-    If the stream pool id is specified, the action will be scoped to that stream pool.
-    The compartment id and stream pool id cannot be specified at the same time.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_streams = oci.Streaming.get_streams(compartment_id=var["compartment_id"],
-        id=var["stream_id"],
-        name=var["stream_name"],
-        state=var["stream_state"],
-        stream_pool_id=oci_streaming_stream_pool["test_stream_pool"]["id"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment. Is exclusive with the `streamPoolId` parameter. One of them is required.
-    :param str id: A filter to return only resources that match the given ID exactly.
-    :param str name: A filter to return only resources that match the given name exactly.
-    :param str state: A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
-    :param str stream_pool_id: The OCID of the stream pool. Is exclusive with the `compartmentId` parameter. One of them is required.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -179,31 +136,6 @@ def get_streams_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = N
                        stream_pool_id: Optional[pulumi.Input[Optional[str]]] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetStreamsResult]:
     """
-    This data source provides the list of Streams in Oracle Cloud Infrastructure Streaming service.
-
-    Lists the streams in the given compartment id.
-    If the compartment id is specified, it will list streams in the compartment, regardless of their stream pool.
-    If the stream pool id is specified, the action will be scoped to that stream pool.
-    The compartment id and stream pool id cannot be specified at the same time.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_streams = oci.Streaming.get_streams(compartment_id=var["compartment_id"],
-        id=var["stream_id"],
-        name=var["stream_name"],
-        state=var["stream_state"],
-        stream_pool_id=oci_streaming_stream_pool["test_stream_pool"]["id"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment. Is exclusive with the `streamPoolId` parameter. One of them is required.
-    :param str id: A filter to return only resources that match the given ID exactly.
-    :param str name: A filter to return only resources that match the given name exactly.
-    :param str state: A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
-    :param str stream_pool_id: The OCID of the stream pool. Is exclusive with the `compartmentId` parameter. One of them is required.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -6,6 +6,8 @@ package com.pulumi.oci.DisasterRecovery.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociation {
@@ -13,39 +15,39 @@ public final class GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociati
      * @return The OCID of the peer DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      * 
      */
-    private String peerId;
+    private @Nullable String peerId;
     /**
      * @return The region of the peer DR protection group.  Example: `us-ashburn-1`
      * 
      */
-    private String peerRegion;
+    private @Nullable String peerRegion;
     /**
      * @return The DR protection group Role.
      * 
      */
-    private String role;
+    private @Nullable String role;
 
     private GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociation() {}
     /**
      * @return The OCID of the peer DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      * 
      */
-    public String peerId() {
-        return this.peerId;
+    public Optional<String> peerId() {
+        return Optional.ofNullable(this.peerId);
     }
     /**
      * @return The region of the peer DR protection group.  Example: `us-ashburn-1`
      * 
      */
-    public String peerRegion() {
-        return this.peerRegion;
+    public Optional<String> peerRegion() {
+        return Optional.ofNullable(this.peerRegion);
     }
     /**
      * @return The DR protection group Role.
      * 
      */
-    public String role() {
-        return this.role;
+    public Optional<String> role() {
+        return Optional.ofNullable(this.role);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociati
     }
     @CustomType.Builder
     public static final class Builder {
-        private String peerId;
-        private String peerRegion;
-        private String role;
+        private @Nullable String peerId;
+        private @Nullable String peerRegion;
+        private @Nullable String role;
         public Builder() {}
         public Builder(GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociation defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociati
         }
 
         @CustomType.Setter
-        public Builder peerId(String peerId) {
-            this.peerId = Objects.requireNonNull(peerId);
+        public Builder peerId(@Nullable String peerId) {
+            this.peerId = peerId;
             return this;
         }
         @CustomType.Setter
-        public Builder peerRegion(String peerRegion) {
-            this.peerRegion = Objects.requireNonNull(peerRegion);
+        public Builder peerRegion(@Nullable String peerRegion) {
+            this.peerRegion = peerRegion;
             return this;
         }
         @CustomType.Setter
-        public Builder role(String role) {
-            this.role = Objects.requireNonNull(role);
+        public Builder role(@Nullable String role) {
+            this.role = role;
             return this;
         }
         public GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociation build() {

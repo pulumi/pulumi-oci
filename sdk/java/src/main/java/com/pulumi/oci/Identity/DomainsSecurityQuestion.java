@@ -178,7 +178,7 @@ public class DomainsSecurityQuestion extends com.pulumi.resources.CustomResource
      * 
      */
     @Export(name="compartmentOcid", refs={String.class}, tree="[0]")
-    private Output<String> compartmentOcid;
+    private Output</* @Nullable */ String> compartmentOcid;
 
     /**
      * @return (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
@@ -194,8 +194,8 @@ public class DomainsSecurityQuestion extends com.pulumi.resources.CustomResource
      * * uniqueness: none
      * 
      */
-    public Output<String> compartmentOcid() {
-        return this.compartmentOcid;
+    public Output<Optional<String>> compartmentOcid() {
+        return Codegen.optional(this.compartmentOcid);
     }
     /**
      * (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
@@ -212,7 +212,7 @@ public class DomainsSecurityQuestion extends com.pulumi.resources.CustomResource
      * 
      */
     @Export(name="deleteInProgress", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> deleteInProgress;
+    private Output</* @Nullable */ Boolean> deleteInProgress;
 
     /**
      * @return (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
@@ -228,8 +228,8 @@ public class DomainsSecurityQuestion extends com.pulumi.resources.CustomResource
      * * uniqueness: none
      * 
      */
-    public Output<Boolean> deleteInProgress() {
-        return this.deleteInProgress;
+    public Output<Optional<Boolean>> deleteInProgress() {
+        return Codegen.optional(this.deleteInProgress);
     }
     /**
      * (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
@@ -246,7 +246,7 @@ public class DomainsSecurityQuestion extends com.pulumi.resources.CustomResource
      * 
      */
     @Export(name="domainOcid", refs={String.class}, tree="[0]")
-    private Output<String> domainOcid;
+    private Output</* @Nullable */ String> domainOcid;
 
     /**
      * @return (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
@@ -262,8 +262,8 @@ public class DomainsSecurityQuestion extends com.pulumi.resources.CustomResource
      * * uniqueness: none
      * 
      */
-    public Output<String> domainOcid() {
-        return this.domainOcid;
+    public Output<Optional<String>> domainOcid() {
+        return Codegen.optional(this.domainOcid);
     }
     /**
      * An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer&#39;s tenant.
@@ -280,7 +280,7 @@ public class DomainsSecurityQuestion extends com.pulumi.resources.CustomResource
      * 
      */
     @Export(name="externalId", refs={String.class}, tree="[0]")
-    private Output<String> externalId;
+    private Output</* @Nullable */ String> externalId;
 
     /**
      * @return An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer&#39;s tenant.
@@ -296,8 +296,8 @@ public class DomainsSecurityQuestion extends com.pulumi.resources.CustomResource
      * * uniqueness: none
      * 
      */
-    public Output<String> externalId() {
-        return this.externalId;
+    public Output<Optional<String>> externalId() {
+        return Codegen.optional(this.externalId);
     }
     /**
      * (Updatable) The User or App who created the Resource
@@ -312,7 +312,7 @@ public class DomainsSecurityQuestion extends com.pulumi.resources.CustomResource
      * 
      */
     @Export(name="idcsCreatedBies", refs={List.class,DomainsSecurityQuestionIdcsCreatedBy.class}, tree="[0,1]")
-    private Output<List<DomainsSecurityQuestionIdcsCreatedBy>> idcsCreatedBies;
+    private Output</* @Nullable */ List<DomainsSecurityQuestionIdcsCreatedBy>> idcsCreatedBies;
 
     /**
      * @return (Updatable) The User or App who created the Resource
@@ -326,8 +326,8 @@ public class DomainsSecurityQuestion extends com.pulumi.resources.CustomResource
      * * type: complex
      * 
      */
-    public Output<List<DomainsSecurityQuestionIdcsCreatedBy>> idcsCreatedBies() {
-        return this.idcsCreatedBies;
+    public Output<Optional<List<DomainsSecurityQuestionIdcsCreatedBy>>> idcsCreatedBies() {
+        return Codegen.optional(this.idcsCreatedBies);
     }
     /**
      * The basic endpoint for the identity domain
@@ -356,7 +356,7 @@ public class DomainsSecurityQuestion extends com.pulumi.resources.CustomResource
      * 
      */
     @Export(name="idcsLastModifiedBies", refs={List.class,DomainsSecurityQuestionIdcsLastModifiedBy.class}, tree="[0,1]")
-    private Output<List<DomainsSecurityQuestionIdcsLastModifiedBy>> idcsLastModifiedBies;
+    private Output</* @Nullable */ List<DomainsSecurityQuestionIdcsLastModifiedBy>> idcsLastModifiedBies;
 
     /**
      * @return (Updatable) The User or App who modified the Resource
@@ -370,8 +370,8 @@ public class DomainsSecurityQuestion extends com.pulumi.resources.CustomResource
      * * type: complex
      * 
      */
-    public Output<List<DomainsSecurityQuestionIdcsLastModifiedBy>> idcsLastModifiedBies() {
-        return this.idcsLastModifiedBies;
+    public Output<Optional<List<DomainsSecurityQuestionIdcsLastModifiedBy>>> idcsLastModifiedBies() {
+        return Codegen.optional(this.idcsLastModifiedBies);
     }
     /**
      * (Updatable) The release number when the resource was upgraded.
@@ -388,7 +388,7 @@ public class DomainsSecurityQuestion extends com.pulumi.resources.CustomResource
      * 
      */
     @Export(name="idcsLastUpgradedInRelease", refs={String.class}, tree="[0]")
-    private Output<String> idcsLastUpgradedInRelease;
+    private Output</* @Nullable */ String> idcsLastUpgradedInRelease;
 
     /**
      * @return (Updatable) The release number when the resource was upgraded.
@@ -404,8 +404,8 @@ public class DomainsSecurityQuestion extends com.pulumi.resources.CustomResource
      * * uniqueness: none
      * 
      */
-    public Output<String> idcsLastUpgradedInRelease() {
-        return this.idcsLastUpgradedInRelease;
+    public Output<Optional<String>> idcsLastUpgradedInRelease() {
+        return Codegen.optional(this.idcsLastUpgradedInRelease);
     }
     /**
      * (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
@@ -421,7 +421,7 @@ public class DomainsSecurityQuestion extends com.pulumi.resources.CustomResource
      * 
      */
     @Export(name="idcsPreventedOperations", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> idcsPreventedOperations;
+    private Output</* @Nullable */ List<String>> idcsPreventedOperations;
 
     /**
      * @return (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
@@ -436,8 +436,8 @@ public class DomainsSecurityQuestion extends com.pulumi.resources.CustomResource
      * * uniqueness: none
      * 
      */
-    public Output<List<String>> idcsPreventedOperations() {
-        return this.idcsPreventedOperations;
+    public Output<Optional<List<String>>> idcsPreventedOperations() {
+        return Codegen.optional(this.idcsPreventedOperations);
     }
     /**
      * (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
@@ -454,7 +454,7 @@ public class DomainsSecurityQuestion extends com.pulumi.resources.CustomResource
      * 
      */
     @Export(name="metas", refs={List.class,DomainsSecurityQuestionMeta.class}, tree="[0,1]")
-    private Output<List<DomainsSecurityQuestionMeta>> metas;
+    private Output</* @Nullable */ List<DomainsSecurityQuestionMeta>> metas;
 
     /**
      * @return (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
@@ -470,8 +470,8 @@ public class DomainsSecurityQuestion extends com.pulumi.resources.CustomResource
      * * type: complex
      * 
      */
-    public Output<List<DomainsSecurityQuestionMeta>> metas() {
-        return this.metas;
+    public Output<Optional<List<DomainsSecurityQuestionMeta>>> metas() {
+        return Codegen.optional(this.metas);
     }
     /**
      * Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
@@ -488,7 +488,7 @@ public class DomainsSecurityQuestion extends com.pulumi.resources.CustomResource
      * 
      */
     @Export(name="ocid", refs={String.class}, tree="[0]")
-    private Output<String> ocid;
+    private Output</* @Nullable */ String> ocid;
 
     /**
      * @return Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
@@ -504,8 +504,8 @@ public class DomainsSecurityQuestion extends com.pulumi.resources.CustomResource
      * * uniqueness: global
      * 
      */
-    public Output<String> ocid() {
-        return this.ocid;
+    public Output<Optional<String>> ocid() {
+        return Codegen.optional(this.ocid);
     }
     /**
      * Locale values for the Question
@@ -606,7 +606,7 @@ public class DomainsSecurityQuestion extends com.pulumi.resources.CustomResource
      * 
      */
     @Export(name="tags", refs={List.class,DomainsSecurityQuestionTag.class}, tree="[0,1]")
-    private Output<List<DomainsSecurityQuestionTag>> tags;
+    private Output</* @Nullable */ List<DomainsSecurityQuestionTag>> tags;
 
     /**
      * @return A list of tags on this resource.
@@ -622,8 +622,8 @@ public class DomainsSecurityQuestion extends com.pulumi.resources.CustomResource
      * * uniqueness: none
      * 
      */
-    public Output<List<DomainsSecurityQuestionTag>> tags() {
-        return this.tags;
+    public Output<Optional<List<DomainsSecurityQuestionTag>>> tags() {
+        return Codegen.optional(this.tags);
     }
     /**
      * (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
@@ -640,7 +640,7 @@ public class DomainsSecurityQuestion extends com.pulumi.resources.CustomResource
      * 
      */
     @Export(name="tenancyOcid", refs={String.class}, tree="[0]")
-    private Output<String> tenancyOcid;
+    private Output</* @Nullable */ String> tenancyOcid;
 
     /**
      * @return (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
@@ -656,8 +656,8 @@ public class DomainsSecurityQuestion extends com.pulumi.resources.CustomResource
      * * uniqueness: none
      * 
      */
-    public Output<String> tenancyOcid() {
-        return this.tenancyOcid;
+    public Output<Optional<String>> tenancyOcid() {
+        return Codegen.optional(this.tenancyOcid);
     }
     /**
      * This indicates if the question is a Custom Question added by the Security Admin.

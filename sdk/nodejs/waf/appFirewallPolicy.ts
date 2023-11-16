@@ -181,7 +181,7 @@ export class AppFirewallPolicy extends pulumi.CustomResource {
     /**
      * (Updatable) Predefined actions for use in multiple different rules. Not all actions are supported in every module. Some actions terminate further execution of modules and rules in a module and some do not. Actions names must be unique within this array.
      */
-    public readonly actions!: pulumi.Output<outputs.Waf.AppFirewallPolicyAction[]>;
+    public readonly actions!: pulumi.Output<outputs.Waf.AppFirewallPolicyAction[] | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
@@ -189,43 +189,43 @@ export class AppFirewallPolicy extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) WebAppFirewallPolicy display name, can be renamed.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    public readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in FAILED state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Module that allows inspection of HTTP request properties and to return a defined HTTP response. In this module, rules with the name 'Default Action' are not allowed, since this name is reserved for default action logs.
      */
-    public readonly requestAccessControl!: pulumi.Output<outputs.Waf.AppFirewallPolicyRequestAccessControl>;
+    public readonly requestAccessControl!: pulumi.Output<outputs.Waf.AppFirewallPolicyRequestAccessControl | undefined>;
     /**
      * (Updatable) Module that allows to enable OCI-managed protection capabilities for incoming HTTP requests.
      */
-    public readonly requestProtection!: pulumi.Output<outputs.Waf.AppFirewallPolicyRequestProtection>;
+    public readonly requestProtection!: pulumi.Output<outputs.Waf.AppFirewallPolicyRequestProtection | undefined>;
     /**
      * (Updatable) Module that allows inspection of HTTP connection properties and to limit requests frequency for a given key.
      */
-    public readonly requestRateLimiting!: pulumi.Output<outputs.Waf.AppFirewallPolicyRequestRateLimiting>;
+    public readonly requestRateLimiting!: pulumi.Output<outputs.Waf.AppFirewallPolicyRequestRateLimiting | undefined>;
     /**
      * (Updatable) Module that allows inspection of HTTP response properties and to return a defined HTTP response.
      */
-    public readonly responseAccessControl!: pulumi.Output<outputs.Waf.AppFirewallPolicyResponseAccessControl>;
+    public readonly responseAccessControl!: pulumi.Output<outputs.Waf.AppFirewallPolicyResponseAccessControl | undefined>;
     /**
      * (Updatable) Module that allows to enable OCI-managed protection capabilities for HTTP responses.
      */
-    public readonly responseProtection!: pulumi.Output<outputs.Waf.AppFirewallPolicyResponseProtection>;
+    public readonly responseProtection!: pulumi.Output<outputs.Waf.AppFirewallPolicyResponseProtection | undefined>;
     /**
      * The current state of the WebAppFirewallPolicy.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
      *
@@ -233,15 +233,15 @@ export class AppFirewallPolicy extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly systemTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The time the WebAppFirewallPolicy was created. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The time the WebAppFirewallPolicy was updated. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a AppFirewallPolicy resource with the given unique name, arguments, and options.

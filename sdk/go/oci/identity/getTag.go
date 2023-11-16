@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Tag resource in Oracle Cloud Infrastructure Identity service.
@@ -65,24 +64,24 @@ type LookupTagResult struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The description you assign to the tag.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the tag definition.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Indicates whether the tag is enabled for cost tracking.
-	IsCostTracking bool `pulumi:"isCostTracking"`
+	IsCostTracking *bool `pulumi:"isCostTracking"`
 	// Indicates whether the tag is retired. See [Retiring Key Definitions and Namespace Definitions](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/taggingoverview.htm#Retiring).
-	IsRetired bool `pulumi:"isRetired"`
+	IsRetired *bool `pulumi:"isRetired"`
 	// The name assigned to the tag during creation. This is the tag key definition. The name must be unique within the tag namespace and cannot be changed.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The tag's current state. After creating a tag, make sure its `lifecycleState` is ACTIVE before using it. After retiring a tag, make sure its `lifecycleState` is INACTIVE before using it. If you delete a tag, you cannot delete another tag until the deleted tag's `lifecycleState` changes from DELETING to DELETED.
-	State   string `pulumi:"state"`
-	TagName string `pulumi:"tagName"`
+	State   *string `pulumi:"state"`
+	TagName string  `pulumi:"tagName"`
 	// The OCID of the namespace that contains the tag definition.
 	TagNamespaceId string `pulumi:"tagNamespaceId"`
 	// Date and time the tag was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// Validates a definedTag value. Each validator performs validation steps in addition to the standard validation for definedTag values. For more information, see [Limits on Tags](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/taggingoverview.htm#Limits).
 	Validators []GetTagValidator `pulumi:"validators"`
 }
@@ -127,20 +126,14 @@ func (o LookupTagResultOutput) ToLookupTagResultOutputWithContext(ctx context.Co
 	return o
 }
 
-func (o LookupTagResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupTagResult] {
-	return pulumix.Output[LookupTagResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 func (o LookupTagResultOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupTagResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
 // The description you assign to the tag.
-func (o LookupTagResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupTagResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupTagResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupTagResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -149,28 +142,28 @@ func (o LookupTagResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The OCID of the tag definition.
-func (o LookupTagResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupTagResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupTagResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupTagResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Indicates whether the tag is enabled for cost tracking.
-func (o LookupTagResultOutput) IsCostTracking() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupTagResult) bool { return v.IsCostTracking }).(pulumi.BoolOutput)
+func (o LookupTagResultOutput) IsCostTracking() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupTagResult) *bool { return v.IsCostTracking }).(pulumi.BoolPtrOutput)
 }
 
 // Indicates whether the tag is retired. See [Retiring Key Definitions and Namespace Definitions](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/taggingoverview.htm#Retiring).
-func (o LookupTagResultOutput) IsRetired() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupTagResult) bool { return v.IsRetired }).(pulumi.BoolOutput)
+func (o LookupTagResultOutput) IsRetired() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupTagResult) *bool { return v.IsRetired }).(pulumi.BoolPtrOutput)
 }
 
 // The name assigned to the tag during creation. This is the tag key definition. The name must be unique within the tag namespace and cannot be changed.
-func (o LookupTagResultOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupTagResult) string { return v.Name }).(pulumi.StringOutput)
+func (o LookupTagResultOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupTagResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The tag's current state. After creating a tag, make sure its `lifecycleState` is ACTIVE before using it. After retiring a tag, make sure its `lifecycleState` is INACTIVE before using it. If you delete a tag, you cannot delete another tag until the deleted tag's `lifecycleState` changes from DELETING to DELETED.
-func (o LookupTagResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupTagResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupTagResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupTagResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupTagResultOutput) TagName() pulumi.StringOutput {
@@ -183,8 +176,8 @@ func (o LookupTagResultOutput) TagNamespaceId() pulumi.StringOutput {
 }
 
 // Date and time the tag was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-func (o LookupTagResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupTagResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupTagResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupTagResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // Validates a definedTag value. Each validator performs validation steps in addition to the standard validation for definedTag values. For more information, see [Limits on Tags](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/taggingoverview.htm#Limits).

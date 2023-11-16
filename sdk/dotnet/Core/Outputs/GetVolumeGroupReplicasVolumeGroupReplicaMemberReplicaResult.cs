@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// Membership state of the volume replica in relation to the volume group replica.
         /// </summary>
-        public readonly string MembershipState;
+        public readonly string? MembershipState;
         /// <summary>
         /// The volume replica ID.
         /// </summary>
-        public readonly string VolumeReplicaId;
+        public readonly string? VolumeReplicaId;
 
         [OutputConstructor]
         private GetVolumeGroupReplicasVolumeGroupReplicaMemberReplicaResult(
-            string membershipState,
+            string? membershipState,
 
-            string volumeReplicaId)
+            string? volumeReplicaId)
         {
             MembershipState = membershipState;
             VolumeReplicaId = volumeReplicaId;

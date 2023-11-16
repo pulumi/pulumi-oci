@@ -80,7 +80,7 @@ export interface GetProjectsResult {
     /**
      * The list of project_collection.
      */
-    readonly projectCollections: outputs.DevOps.GetProjectsProjectCollection[];
+    readonly projectCollections?: outputs.DevOps.GetProjectsProjectCollection[];
     /**
      * The current state of the project.
      */

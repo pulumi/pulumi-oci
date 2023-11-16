@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Mysql Configuration resource in Oracle Cloud Infrastructure MySQL Database service.
@@ -60,32 +59,32 @@ type LookupMysqlConfigurationArgs struct {
 // A collection of values returned by getMysqlConfiguration.
 type LookupMysqlConfigurationResult struct {
 	// OCID of the Compartment the Configuration exists in.
-	CompartmentId   string `pulumi:"compartmentId"`
-	ConfigurationId string `pulumi:"configurationId"`
+	CompartmentId   *string `pulumi:"compartmentId"`
+	ConfigurationId string  `pulumi:"configurationId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// User-provided data about the Configuration.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// The display name of the Configuration.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the Configuration.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
 	InitVariables []GetMysqlConfigurationInitVariable `pulumi:"initVariables"`
 	// The OCID of the Configuration from which this Configuration is "derived". This is entirely a metadata relationship. There is no relation between the values in this Configuration and its parent.
-	ParentConfigurationId string `pulumi:"parentConfigurationId"`
+	ParentConfigurationId *string `pulumi:"parentConfigurationId"`
 	// The name of the associated Shape.
-	ShapeName string `pulumi:"shapeName"`
+	ShapeName *string `pulumi:"shapeName"`
 	// The current state of the Configuration.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the Configuration was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the Configuration was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// The Configuration type, DEFAULT or CUSTOM.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 	// User-defined service variables.
 	Variables []GetMysqlConfigurationVariable `pulumi:"variables"`
 }
@@ -128,15 +127,9 @@ func (o LookupMysqlConfigurationResultOutput) ToLookupMysqlConfigurationResultOu
 	return o
 }
 
-func (o LookupMysqlConfigurationResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupMysqlConfigurationResult] {
-	return pulumix.Output[LookupMysqlConfigurationResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // OCID of the Compartment the Configuration exists in.
-func (o LookupMysqlConfigurationResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMysqlConfigurationResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupMysqlConfigurationResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMysqlConfigurationResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupMysqlConfigurationResultOutput) ConfigurationId() pulumi.StringOutput {
@@ -149,13 +142,13 @@ func (o LookupMysqlConfigurationResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // User-provided data about the Configuration.
-func (o LookupMysqlConfigurationResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMysqlConfigurationResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupMysqlConfigurationResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMysqlConfigurationResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // The display name of the Configuration.
-func (o LookupMysqlConfigurationResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMysqlConfigurationResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupMysqlConfigurationResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMysqlConfigurationResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -164,8 +157,8 @@ func (o LookupMysqlConfigurationResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The OCID of the Configuration.
-func (o LookupMysqlConfigurationResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMysqlConfigurationResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupMysqlConfigurationResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMysqlConfigurationResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
@@ -174,33 +167,33 @@ func (o LookupMysqlConfigurationResultOutput) InitVariables() GetMysqlConfigurat
 }
 
 // The OCID of the Configuration from which this Configuration is "derived". This is entirely a metadata relationship. There is no relation between the values in this Configuration and its parent.
-func (o LookupMysqlConfigurationResultOutput) ParentConfigurationId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMysqlConfigurationResult) string { return v.ParentConfigurationId }).(pulumi.StringOutput)
+func (o LookupMysqlConfigurationResultOutput) ParentConfigurationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMysqlConfigurationResult) *string { return v.ParentConfigurationId }).(pulumi.StringPtrOutput)
 }
 
 // The name of the associated Shape.
-func (o LookupMysqlConfigurationResultOutput) ShapeName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMysqlConfigurationResult) string { return v.ShapeName }).(pulumi.StringOutput)
+func (o LookupMysqlConfigurationResultOutput) ShapeName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMysqlConfigurationResult) *string { return v.ShapeName }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the Configuration.
-func (o LookupMysqlConfigurationResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMysqlConfigurationResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupMysqlConfigurationResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMysqlConfigurationResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the Configuration was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-func (o LookupMysqlConfigurationResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMysqlConfigurationResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupMysqlConfigurationResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMysqlConfigurationResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the Configuration was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-func (o LookupMysqlConfigurationResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMysqlConfigurationResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupMysqlConfigurationResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMysqlConfigurationResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // The Configuration type, DEFAULT or CUSTOM.
-func (o LookupMysqlConfigurationResultOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupMysqlConfigurationResult) string { return v.Type }).(pulumi.StringOutput)
+func (o LookupMysqlConfigurationResultOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupMysqlConfigurationResult) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 // User-defined service variables.

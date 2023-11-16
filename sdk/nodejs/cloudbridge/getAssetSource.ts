@@ -47,84 +47,84 @@ export interface GetAssetSourceResult {
     /**
      * Flag indicating whether historical metrics are collected for assets, originating from this asset source.
      */
-    readonly areHistoricalMetricsCollected: boolean;
+    readonly areHistoricalMetricsCollected?: boolean;
     /**
      * Flag indicating whether real-time metrics are collected for assets, originating from this asset source.
      */
-    readonly areRealtimeMetricsCollected: boolean;
+    readonly areRealtimeMetricsCollected?: boolean;
     readonly assetSourceId: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that is going to be used to create assets.
      */
-    readonly assetsCompartmentId: string;
+    readonly assetsCompartmentId?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for the resource.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * Credentials for an asset source.
      */
-    readonly discoveryCredentials: outputs.CloudBridge.GetAssetSourceDiscoveryCredential[];
+    readonly discoveryCredentials?: outputs.CloudBridge.GetAssetSourceDiscoveryCredential[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of an attached discovery schedule.
      */
-    readonly discoveryScheduleId: string;
+    readonly discoveryScheduleId?: string;
     /**
      * A user-friendly name for the asset source. Does not have to be unique, and it's mutable. Avoid entering confidential information.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the environment.
      */
-    readonly environmentId: string;
+    readonly environmentId?: string;
     /**
      * The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the inventory that will contain created assets.
      */
-    readonly inventoryId: string;
+    readonly inventoryId?: string;
     /**
      * The detailed state of the asset source.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * Credentials for an asset source.
      */
-    readonly replicationCredentials: outputs.CloudBridge.GetAssetSourceReplicationCredential[];
+    readonly replicationCredentials?: outputs.CloudBridge.GetAssetSourceReplicationCredential[];
     /**
      * The current state of the asset source.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * The time when the asset source was created in the RFC3339 format.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The point in time that the asset source was last updated in the RFC3339 format.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
     /**
      * The type of asset source. Indicates external origin of the assets that are read by assigning this asset source.
      */
-    readonly type: string;
+    readonly type?: string;
     /**
      * Endpoint for VMware asset discovery and replication in the form of ```https://<host>:<port>/sdk```
      */
-    readonly vcenterEndpoint: string;
+    readonly vcenterEndpoint?: string;
 }
 /**
  * This data source provides details about a specific Asset Source resource in Oracle Cloud Infrastructure Cloud Bridge service.

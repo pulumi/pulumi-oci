@@ -50,11 +50,11 @@ export interface GetVirtualCircuitAssociatedTunnelsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of virtual_circuit_associated_tunnel_details.
      */
-    readonly virtualCircuitAssociatedTunnelDetails: outputs.Core.GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetail[];
+    readonly virtualCircuitAssociatedTunnelDetails?: outputs.Core.GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetail[];
     readonly virtualCircuitId: string;
 }
 /**

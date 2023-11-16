@@ -27,11 +27,6 @@ class SddcDatastoreArgs:
                  block_volume_ids: pulumi.Input[Sequence[pulumi.Input[str]]],
                  datastore_type: pulumi.Input[str],
                  capacity: Optional[pulumi.Input[float]] = None):
-        """
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] block_volume_ids: A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of Block Storage Volumes.
-        :param pulumi.Input[str] datastore_type: Type of the datastore.
-        :param pulumi.Input[float] capacity: Size of the Block Storage Volume in GB.
-        """
         pulumi.set(__self__, "block_volume_ids", block_volume_ids)
         pulumi.set(__self__, "datastore_type", datastore_type)
         if capacity is not None:
@@ -40,9 +35,6 @@ class SddcDatastoreArgs:
     @property
     @pulumi.getter(name="blockVolumeIds")
     def block_volume_ids(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
-        """
-        A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of Block Storage Volumes.
-        """
         return pulumi.get(self, "block_volume_ids")
 
     @block_volume_ids.setter
@@ -52,9 +44,6 @@ class SddcDatastoreArgs:
     @property
     @pulumi.getter(name="datastoreType")
     def datastore_type(self) -> pulumi.Input[str]:
-        """
-        Type of the datastore.
-        """
         return pulumi.get(self, "datastore_type")
 
     @datastore_type.setter
@@ -64,9 +53,6 @@ class SddcDatastoreArgs:
     @property
     @pulumi.getter
     def capacity(self) -> Optional[pulumi.Input[float]]:
-        """
-        Size of the Block Storage Volume in GB.
-        """
         return pulumi.get(self, "capacity")
 
     @capacity.setter
@@ -80,11 +66,6 @@ class SddcHcxOnPremLicenseArgs:
                  activation_key: Optional[pulumi.Input[str]] = None,
                  status: Optional[pulumi.Input[str]] = None,
                  system_name: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] activation_key: HCX on-premise license key value.
-        :param pulumi.Input[str] status: status of HCX on-premise license.
-        :param pulumi.Input[str] system_name: Name of the system that consumed the HCX on-premise license
-        """
         if activation_key is not None:
             pulumi.set(__self__, "activation_key", activation_key)
         if status is not None:
@@ -95,9 +76,6 @@ class SddcHcxOnPremLicenseArgs:
     @property
     @pulumi.getter(name="activationKey")
     def activation_key(self) -> Optional[pulumi.Input[str]]:
-        """
-        HCX on-premise license key value.
-        """
         return pulumi.get(self, "activation_key")
 
     @activation_key.setter
@@ -107,9 +85,6 @@ class SddcHcxOnPremLicenseArgs:
     @property
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[str]]:
-        """
-        status of HCX on-premise license.
-        """
         return pulumi.get(self, "status")
 
     @status.setter
@@ -119,9 +94,6 @@ class SddcHcxOnPremLicenseArgs:
     @property
     @pulumi.getter(name="systemName")
     def system_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Name of the system that consumed the HCX on-premise license
-        """
         return pulumi.get(self, "system_name")
 
     @system_name.setter
@@ -134,10 +106,6 @@ class SddcUpgradeLicenseArgs:
     def __init__(__self__, *,
                  license_key: Optional[pulumi.Input[str]] = None,
                  license_type: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] license_key: vSphere license key value.
-        :param pulumi.Input[str] license_type: vSphere license type.
-        """
         if license_key is not None:
             pulumi.set(__self__, "license_key", license_key)
         if license_type is not None:
@@ -146,9 +114,6 @@ class SddcUpgradeLicenseArgs:
     @property
     @pulumi.getter(name="licenseKey")
     def license_key(self) -> Optional[pulumi.Input[str]]:
-        """
-        vSphere license key value.
-        """
         return pulumi.get(self, "license_key")
 
     @license_key.setter
@@ -158,9 +123,6 @@ class SddcUpgradeLicenseArgs:
     @property
     @pulumi.getter(name="licenseType")
     def license_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        vSphere license type.
-        """
         return pulumi.get(self, "license_type")
 
     @license_type.setter
@@ -173,10 +135,6 @@ class SddcVsphereUpgradeObjectArgs:
     def __init__(__self__, *,
                  download_link: Optional[pulumi.Input[str]] = None,
                  link_description: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] download_link: Binary object download link.
-        :param pulumi.Input[str] link_description: Binary object description.
-        """
         if download_link is not None:
             pulumi.set(__self__, "download_link", download_link)
         if link_description is not None:
@@ -185,9 +143,6 @@ class SddcVsphereUpgradeObjectArgs:
     @property
     @pulumi.getter(name="downloadLink")
     def download_link(self) -> Optional[pulumi.Input[str]]:
-        """
-        Binary object download link.
-        """
         return pulumi.get(self, "download_link")
 
     @download_link.setter
@@ -197,9 +152,6 @@ class SddcVsphereUpgradeObjectArgs:
     @property
     @pulumi.getter(name="linkDescription")
     def link_description(self) -> Optional[pulumi.Input[str]]:
-        """
-        Binary object description.
-        """
         return pulumi.get(self, "link_description")
 
     @link_description.setter
@@ -291,9 +243,6 @@ class GetSupportedHostShapesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: A filter to return only resources that match the given name exactly.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -302,9 +251,6 @@ class GetSupportedHostShapesFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        A filter to return only resources that match the given name exactly.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -336,9 +282,6 @@ class GetSupportedSkusFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: name of SKU
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -347,9 +290,6 @@ class GetSupportedSkusFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        name of SKU
-        """
         return pulumi.get(self, "name")
 
     @name.setter

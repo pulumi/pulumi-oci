@@ -16,17 +16,17 @@ namespace Pulumi.Oci.ApmConfig.Outputs
         /// <summary>
         /// The name of the metric. This must be a known metric name.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// This must not be set.
         /// </summary>
-        public readonly string ValueSource;
+        public readonly string? ValueSource;
 
         [OutputConstructor]
         private GetConfigsConfigCollectionItemDimensionResult(
-            string name,
+            string? name,
 
-            string valueSource)
+            string? valueSource)
         {
             Name = name;
             ValueSource = valueSource;

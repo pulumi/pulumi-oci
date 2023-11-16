@@ -9,6 +9,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSetting {
@@ -16,111 +18,111 @@ public final class GetDomainsAuthenticationFactorSettingUrnietfparamsscimschemas
      * @return Attribute used to define the type of attestation required.
      * 
      */
-    private String attestation;
+    private @Nullable String attestation;
     /**
      * @return Attribute used to define authenticator selection attachment.
      * 
      */
-    private String authenticatorSelectionAttachment;
+    private @Nullable String authenticatorSelectionAttachment;
     /**
      * @return Flag used to indicate authenticator selection is required or not
      * 
      */
-    private Boolean authenticatorSelectionRequireResidentKey;
+    private @Nullable Boolean authenticatorSelectionRequireResidentKey;
     /**
      * @return Attribute used to define authenticator selection resident key requirement.
      * 
      */
-    private String authenticatorSelectionResidentKey;
+    private @Nullable String authenticatorSelectionResidentKey;
     /**
      * @return Attribute used to define authenticator selection verification.
      * 
      */
-    private String authenticatorSelectionUserVerification;
+    private @Nullable String authenticatorSelectionUserVerification;
     /**
      * @return Number of domain levels Oracle Identity Cloud Service should use for origin comparision
      * 
      */
-    private Integer domainValidationLevel;
+    private @Nullable Integer domainValidationLevel;
     /**
      * @return Flag used to indicate whether we need to restrict creation of multiple credentials in same authenticator
      * 
      */
-    private Boolean excludeCredentials;
+    private @Nullable Boolean excludeCredentials;
     /**
      * @return List of server supported public key algorithms
      * 
      */
-    private List<String> publicKeyTypes;
+    private @Nullable List<String> publicKeyTypes;
     /**
      * @return Timeout for the fido authentication to complete
      * 
      */
-    private Integer timeout;
+    private @Nullable Integer timeout;
 
     private GetDomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSetting() {}
     /**
      * @return Attribute used to define the type of attestation required.
      * 
      */
-    public String attestation() {
-        return this.attestation;
+    public Optional<String> attestation() {
+        return Optional.ofNullable(this.attestation);
     }
     /**
      * @return Attribute used to define authenticator selection attachment.
      * 
      */
-    public String authenticatorSelectionAttachment() {
-        return this.authenticatorSelectionAttachment;
+    public Optional<String> authenticatorSelectionAttachment() {
+        return Optional.ofNullable(this.authenticatorSelectionAttachment);
     }
     /**
      * @return Flag used to indicate authenticator selection is required or not
      * 
      */
-    public Boolean authenticatorSelectionRequireResidentKey() {
-        return this.authenticatorSelectionRequireResidentKey;
+    public Optional<Boolean> authenticatorSelectionRequireResidentKey() {
+        return Optional.ofNullable(this.authenticatorSelectionRequireResidentKey);
     }
     /**
      * @return Attribute used to define authenticator selection resident key requirement.
      * 
      */
-    public String authenticatorSelectionResidentKey() {
-        return this.authenticatorSelectionResidentKey;
+    public Optional<String> authenticatorSelectionResidentKey() {
+        return Optional.ofNullable(this.authenticatorSelectionResidentKey);
     }
     /**
      * @return Attribute used to define authenticator selection verification.
      * 
      */
-    public String authenticatorSelectionUserVerification() {
-        return this.authenticatorSelectionUserVerification;
+    public Optional<String> authenticatorSelectionUserVerification() {
+        return Optional.ofNullable(this.authenticatorSelectionUserVerification);
     }
     /**
      * @return Number of domain levels Oracle Identity Cloud Service should use for origin comparision
      * 
      */
-    public Integer domainValidationLevel() {
-        return this.domainValidationLevel;
+    public Optional<Integer> domainValidationLevel() {
+        return Optional.ofNullable(this.domainValidationLevel);
     }
     /**
      * @return Flag used to indicate whether we need to restrict creation of multiple credentials in same authenticator
      * 
      */
-    public Boolean excludeCredentials() {
-        return this.excludeCredentials;
+    public Optional<Boolean> excludeCredentials() {
+        return Optional.ofNullable(this.excludeCredentials);
     }
     /**
      * @return List of server supported public key algorithms
      * 
      */
     public List<String> publicKeyTypes() {
-        return this.publicKeyTypes;
+        return this.publicKeyTypes == null ? List.of() : this.publicKeyTypes;
     }
     /**
      * @return Timeout for the fido authentication to complete
      * 
      */
-    public Integer timeout() {
-        return this.timeout;
+    public Optional<Integer> timeout() {
+        return Optional.ofNullable(this.timeout);
     }
 
     public static Builder builder() {
@@ -132,15 +134,15 @@ public final class GetDomainsAuthenticationFactorSettingUrnietfparamsscimschemas
     }
     @CustomType.Builder
     public static final class Builder {
-        private String attestation;
-        private String authenticatorSelectionAttachment;
-        private Boolean authenticatorSelectionRequireResidentKey;
-        private String authenticatorSelectionResidentKey;
-        private String authenticatorSelectionUserVerification;
-        private Integer domainValidationLevel;
-        private Boolean excludeCredentials;
-        private List<String> publicKeyTypes;
-        private Integer timeout;
+        private @Nullable String attestation;
+        private @Nullable String authenticatorSelectionAttachment;
+        private @Nullable Boolean authenticatorSelectionRequireResidentKey;
+        private @Nullable String authenticatorSelectionResidentKey;
+        private @Nullable String authenticatorSelectionUserVerification;
+        private @Nullable Integer domainValidationLevel;
+        private @Nullable Boolean excludeCredentials;
+        private @Nullable List<String> publicKeyTypes;
+        private @Nullable Integer timeout;
         public Builder() {}
         public Builder(GetDomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSetting defaults) {
     	      Objects.requireNonNull(defaults);
@@ -156,51 +158,51 @@ public final class GetDomainsAuthenticationFactorSettingUrnietfparamsscimschemas
         }
 
         @CustomType.Setter
-        public Builder attestation(String attestation) {
-            this.attestation = Objects.requireNonNull(attestation);
+        public Builder attestation(@Nullable String attestation) {
+            this.attestation = attestation;
             return this;
         }
         @CustomType.Setter
-        public Builder authenticatorSelectionAttachment(String authenticatorSelectionAttachment) {
-            this.authenticatorSelectionAttachment = Objects.requireNonNull(authenticatorSelectionAttachment);
+        public Builder authenticatorSelectionAttachment(@Nullable String authenticatorSelectionAttachment) {
+            this.authenticatorSelectionAttachment = authenticatorSelectionAttachment;
             return this;
         }
         @CustomType.Setter
-        public Builder authenticatorSelectionRequireResidentKey(Boolean authenticatorSelectionRequireResidentKey) {
-            this.authenticatorSelectionRequireResidentKey = Objects.requireNonNull(authenticatorSelectionRequireResidentKey);
+        public Builder authenticatorSelectionRequireResidentKey(@Nullable Boolean authenticatorSelectionRequireResidentKey) {
+            this.authenticatorSelectionRequireResidentKey = authenticatorSelectionRequireResidentKey;
             return this;
         }
         @CustomType.Setter
-        public Builder authenticatorSelectionResidentKey(String authenticatorSelectionResidentKey) {
-            this.authenticatorSelectionResidentKey = Objects.requireNonNull(authenticatorSelectionResidentKey);
+        public Builder authenticatorSelectionResidentKey(@Nullable String authenticatorSelectionResidentKey) {
+            this.authenticatorSelectionResidentKey = authenticatorSelectionResidentKey;
             return this;
         }
         @CustomType.Setter
-        public Builder authenticatorSelectionUserVerification(String authenticatorSelectionUserVerification) {
-            this.authenticatorSelectionUserVerification = Objects.requireNonNull(authenticatorSelectionUserVerification);
+        public Builder authenticatorSelectionUserVerification(@Nullable String authenticatorSelectionUserVerification) {
+            this.authenticatorSelectionUserVerification = authenticatorSelectionUserVerification;
             return this;
         }
         @CustomType.Setter
-        public Builder domainValidationLevel(Integer domainValidationLevel) {
-            this.domainValidationLevel = Objects.requireNonNull(domainValidationLevel);
+        public Builder domainValidationLevel(@Nullable Integer domainValidationLevel) {
+            this.domainValidationLevel = domainValidationLevel;
             return this;
         }
         @CustomType.Setter
-        public Builder excludeCredentials(Boolean excludeCredentials) {
-            this.excludeCredentials = Objects.requireNonNull(excludeCredentials);
+        public Builder excludeCredentials(@Nullable Boolean excludeCredentials) {
+            this.excludeCredentials = excludeCredentials;
             return this;
         }
         @CustomType.Setter
-        public Builder publicKeyTypes(List<String> publicKeyTypes) {
-            this.publicKeyTypes = Objects.requireNonNull(publicKeyTypes);
+        public Builder publicKeyTypes(@Nullable List<String> publicKeyTypes) {
+            this.publicKeyTypes = publicKeyTypes;
             return this;
         }
         public Builder publicKeyTypes(String... publicKeyTypes) {
             return publicKeyTypes(List.of(publicKeyTypes));
         }
         @CustomType.Setter
-        public Builder timeout(Integer timeout) {
-            this.timeout = Objects.requireNonNull(timeout);
+        public Builder timeout(@Nullable Integer timeout) {
+            this.timeout = timeout;
             return this;
         }
         public GetDomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSetting build() {

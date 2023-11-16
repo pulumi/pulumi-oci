@@ -8,6 +8,8 @@ import java.lang.Double;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDbSystemShapesDbSystemShape {
@@ -15,97 +17,97 @@ public final class GetDbSystemShapesDbSystemShape {
      * @return The maximum number of CPU cores that can be enabled on the DB system for this shape.
      * 
      */
-    private Integer availableCoreCount;
+    private @Nullable Integer availableCoreCount;
     /**
      * @return The maximum number of CPU cores per database node that can be enabled for this shape. Only applicable to the flex Exadata shape, ExaCC Elastic shapes and VM Flex shapes.
      * 
      */
-    private Integer availableCoreCountPerNode;
+    private @Nullable Integer availableCoreCountPerNode;
     /**
      * @return The maximum DATA storage that can be enabled for this shape.
      * 
      */
-    private Integer availableDataStorageInTbs;
+    private @Nullable Integer availableDataStorageInTbs;
     /**
      * @return The maximum data storage available per storage server for this shape. Only applicable to ExaCC Elastic shapes.
      * 
      */
-    private Double availableDataStoragePerServerInTbs;
+    private @Nullable Double availableDataStoragePerServerInTbs;
     /**
      * @return The maximum Db Node storage available per database node for this shape. Only applicable to ExaCC Elastic shapes.
      * 
      */
-    private Integer availableDbNodePerNodeInGbs;
+    private @Nullable Integer availableDbNodePerNodeInGbs;
     /**
      * @return The maximum Db Node storage that can be enabled for this shape.
      * 
      */
-    private Integer availableDbNodeStorageInGbs;
+    private @Nullable Integer availableDbNodeStorageInGbs;
     /**
      * @return The maximum memory that can be enabled for this shape.
      * 
      */
-    private Integer availableMemoryInGbs;
+    private @Nullable Integer availableMemoryInGbs;
     /**
      * @return The maximum memory available per database node for this shape. Only applicable to ExaCC Elastic shapes.
      * 
      */
-    private Integer availableMemoryPerNodeInGbs;
+    private @Nullable Integer availableMemoryPerNodeInGbs;
     /**
      * @return The discrete number by which the CPU core count for this shape can be increased or decreased.
      * 
      */
-    private Integer coreCountIncrement;
+    private @Nullable Integer coreCountIncrement;
     /**
      * @return The maximum number of Exadata storage servers available for the Exadata infrastructure.
      * 
      */
-    private Integer maxStorageCount;
+    private @Nullable Integer maxStorageCount;
     /**
      * @return The maximum number of compute servers available for this shape.
      * 
      */
-    private Integer maximumNodeCount;
+    private @Nullable Integer maximumNodeCount;
     /**
      * @return The minimum number of CPU cores that can be enabled per node for this shape.
      * 
      */
-    private Integer minCoreCountPerNode;
+    private @Nullable Integer minCoreCountPerNode;
     /**
      * @return The minimum data storage that need be allocated for this shape.
      * 
      */
-    private Integer minDataStorageInTbs;
+    private @Nullable Integer minDataStorageInTbs;
     /**
      * @return The minimum Db Node storage that need be allocated per node for this shape.
      * 
      */
-    private Integer minDbNodeStoragePerNodeInGbs;
+    private @Nullable Integer minDbNodeStoragePerNodeInGbs;
     /**
      * @return The minimum memory that need be allocated per node for this shape.
      * 
      */
-    private Integer minMemoryPerNodeInGbs;
+    private @Nullable Integer minMemoryPerNodeInGbs;
     /**
      * @return The minimum number of Exadata storage servers available for the Exadata infrastructure.
      * 
      */
-    private Integer minStorageCount;
+    private @Nullable Integer minStorageCount;
     /**
      * @return The minimum number of CPU cores that can be enabled on the DB system for this shape.
      * 
      */
-    private Integer minimumCoreCount;
+    private @Nullable Integer minimumCoreCount;
     /**
      * @return The minimum number of compute servers available for this shape.
      * 
      */
-    private Integer minimumNodeCount;
+    private @Nullable Integer minimumNodeCount;
     /**
      * @return The name of the shape used for the DB system.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return Deprecated. Use `name` instead of `shape`.
      * 
@@ -114,151 +116,151 @@ public final class GetDbSystemShapesDbSystemShape {
      * 
      */
     @Deprecated /* The 'shape' field has been deprecated. Please use 'name' instead. */
-    private String shape;
+    private @Nullable String shape;
     /**
      * @return The family of the shape used for the DB system.
      * 
      */
-    private String shapeFamily;
+    private @Nullable String shapeFamily;
     /**
      * @return The shape type for the virtual machine DB system. Shape type is determined by CPU hardware. Valid values are `AMD` , `INTEL` or `INTEL_FLEX_X9`.
      * 
      */
-    private String shapeType;
+    private @Nullable String shapeType;
 
     private GetDbSystemShapesDbSystemShape() {}
     /**
      * @return The maximum number of CPU cores that can be enabled on the DB system for this shape.
      * 
      */
-    public Integer availableCoreCount() {
-        return this.availableCoreCount;
+    public Optional<Integer> availableCoreCount() {
+        return Optional.ofNullable(this.availableCoreCount);
     }
     /**
      * @return The maximum number of CPU cores per database node that can be enabled for this shape. Only applicable to the flex Exadata shape, ExaCC Elastic shapes and VM Flex shapes.
      * 
      */
-    public Integer availableCoreCountPerNode() {
-        return this.availableCoreCountPerNode;
+    public Optional<Integer> availableCoreCountPerNode() {
+        return Optional.ofNullable(this.availableCoreCountPerNode);
     }
     /**
      * @return The maximum DATA storage that can be enabled for this shape.
      * 
      */
-    public Integer availableDataStorageInTbs() {
-        return this.availableDataStorageInTbs;
+    public Optional<Integer> availableDataStorageInTbs() {
+        return Optional.ofNullable(this.availableDataStorageInTbs);
     }
     /**
      * @return The maximum data storage available per storage server for this shape. Only applicable to ExaCC Elastic shapes.
      * 
      */
-    public Double availableDataStoragePerServerInTbs() {
-        return this.availableDataStoragePerServerInTbs;
+    public Optional<Double> availableDataStoragePerServerInTbs() {
+        return Optional.ofNullable(this.availableDataStoragePerServerInTbs);
     }
     /**
      * @return The maximum Db Node storage available per database node for this shape. Only applicable to ExaCC Elastic shapes.
      * 
      */
-    public Integer availableDbNodePerNodeInGbs() {
-        return this.availableDbNodePerNodeInGbs;
+    public Optional<Integer> availableDbNodePerNodeInGbs() {
+        return Optional.ofNullable(this.availableDbNodePerNodeInGbs);
     }
     /**
      * @return The maximum Db Node storage that can be enabled for this shape.
      * 
      */
-    public Integer availableDbNodeStorageInGbs() {
-        return this.availableDbNodeStorageInGbs;
+    public Optional<Integer> availableDbNodeStorageInGbs() {
+        return Optional.ofNullable(this.availableDbNodeStorageInGbs);
     }
     /**
      * @return The maximum memory that can be enabled for this shape.
      * 
      */
-    public Integer availableMemoryInGbs() {
-        return this.availableMemoryInGbs;
+    public Optional<Integer> availableMemoryInGbs() {
+        return Optional.ofNullable(this.availableMemoryInGbs);
     }
     /**
      * @return The maximum memory available per database node for this shape. Only applicable to ExaCC Elastic shapes.
      * 
      */
-    public Integer availableMemoryPerNodeInGbs() {
-        return this.availableMemoryPerNodeInGbs;
+    public Optional<Integer> availableMemoryPerNodeInGbs() {
+        return Optional.ofNullable(this.availableMemoryPerNodeInGbs);
     }
     /**
      * @return The discrete number by which the CPU core count for this shape can be increased or decreased.
      * 
      */
-    public Integer coreCountIncrement() {
-        return this.coreCountIncrement;
+    public Optional<Integer> coreCountIncrement() {
+        return Optional.ofNullable(this.coreCountIncrement);
     }
     /**
      * @return The maximum number of Exadata storage servers available for the Exadata infrastructure.
      * 
      */
-    public Integer maxStorageCount() {
-        return this.maxStorageCount;
+    public Optional<Integer> maxStorageCount() {
+        return Optional.ofNullable(this.maxStorageCount);
     }
     /**
      * @return The maximum number of compute servers available for this shape.
      * 
      */
-    public Integer maximumNodeCount() {
-        return this.maximumNodeCount;
+    public Optional<Integer> maximumNodeCount() {
+        return Optional.ofNullable(this.maximumNodeCount);
     }
     /**
      * @return The minimum number of CPU cores that can be enabled per node for this shape.
      * 
      */
-    public Integer minCoreCountPerNode() {
-        return this.minCoreCountPerNode;
+    public Optional<Integer> minCoreCountPerNode() {
+        return Optional.ofNullable(this.minCoreCountPerNode);
     }
     /**
      * @return The minimum data storage that need be allocated for this shape.
      * 
      */
-    public Integer minDataStorageInTbs() {
-        return this.minDataStorageInTbs;
+    public Optional<Integer> minDataStorageInTbs() {
+        return Optional.ofNullable(this.minDataStorageInTbs);
     }
     /**
      * @return The minimum Db Node storage that need be allocated per node for this shape.
      * 
      */
-    public Integer minDbNodeStoragePerNodeInGbs() {
-        return this.minDbNodeStoragePerNodeInGbs;
+    public Optional<Integer> minDbNodeStoragePerNodeInGbs() {
+        return Optional.ofNullable(this.minDbNodeStoragePerNodeInGbs);
     }
     /**
      * @return The minimum memory that need be allocated per node for this shape.
      * 
      */
-    public Integer minMemoryPerNodeInGbs() {
-        return this.minMemoryPerNodeInGbs;
+    public Optional<Integer> minMemoryPerNodeInGbs() {
+        return Optional.ofNullable(this.minMemoryPerNodeInGbs);
     }
     /**
      * @return The minimum number of Exadata storage servers available for the Exadata infrastructure.
      * 
      */
-    public Integer minStorageCount() {
-        return this.minStorageCount;
+    public Optional<Integer> minStorageCount() {
+        return Optional.ofNullable(this.minStorageCount);
     }
     /**
      * @return The minimum number of CPU cores that can be enabled on the DB system for this shape.
      * 
      */
-    public Integer minimumCoreCount() {
-        return this.minimumCoreCount;
+    public Optional<Integer> minimumCoreCount() {
+        return Optional.ofNullable(this.minimumCoreCount);
     }
     /**
      * @return The minimum number of compute servers available for this shape.
      * 
      */
-    public Integer minimumNodeCount() {
-        return this.minimumNodeCount;
+    public Optional<Integer> minimumNodeCount() {
+        return Optional.ofNullable(this.minimumNodeCount);
     }
     /**
      * @return The name of the shape used for the DB system.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return Deprecated. Use `name` instead of `shape`.
@@ -268,22 +270,22 @@ public final class GetDbSystemShapesDbSystemShape {
      * 
      */
     @Deprecated /* The 'shape' field has been deprecated. Please use 'name' instead. */
-    public String shape() {
-        return this.shape;
+    public Optional<String> shape() {
+        return Optional.ofNullable(this.shape);
     }
     /**
      * @return The family of the shape used for the DB system.
      * 
      */
-    public String shapeFamily() {
-        return this.shapeFamily;
+    public Optional<String> shapeFamily() {
+        return Optional.ofNullable(this.shapeFamily);
     }
     /**
      * @return The shape type for the virtual machine DB system. Shape type is determined by CPU hardware. Valid values are `AMD` , `INTEL` or `INTEL_FLEX_X9`.
      * 
      */
-    public String shapeType() {
-        return this.shapeType;
+    public Optional<String> shapeType() {
+        return Optional.ofNullable(this.shapeType);
     }
 
     public static Builder builder() {
@@ -295,28 +297,28 @@ public final class GetDbSystemShapesDbSystemShape {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer availableCoreCount;
-        private Integer availableCoreCountPerNode;
-        private Integer availableDataStorageInTbs;
-        private Double availableDataStoragePerServerInTbs;
-        private Integer availableDbNodePerNodeInGbs;
-        private Integer availableDbNodeStorageInGbs;
-        private Integer availableMemoryInGbs;
-        private Integer availableMemoryPerNodeInGbs;
-        private Integer coreCountIncrement;
-        private Integer maxStorageCount;
-        private Integer maximumNodeCount;
-        private Integer minCoreCountPerNode;
-        private Integer minDataStorageInTbs;
-        private Integer minDbNodeStoragePerNodeInGbs;
-        private Integer minMemoryPerNodeInGbs;
-        private Integer minStorageCount;
-        private Integer minimumCoreCount;
-        private Integer minimumNodeCount;
-        private String name;
-        private String shape;
-        private String shapeFamily;
-        private String shapeType;
+        private @Nullable Integer availableCoreCount;
+        private @Nullable Integer availableCoreCountPerNode;
+        private @Nullable Integer availableDataStorageInTbs;
+        private @Nullable Double availableDataStoragePerServerInTbs;
+        private @Nullable Integer availableDbNodePerNodeInGbs;
+        private @Nullable Integer availableDbNodeStorageInGbs;
+        private @Nullable Integer availableMemoryInGbs;
+        private @Nullable Integer availableMemoryPerNodeInGbs;
+        private @Nullable Integer coreCountIncrement;
+        private @Nullable Integer maxStorageCount;
+        private @Nullable Integer maximumNodeCount;
+        private @Nullable Integer minCoreCountPerNode;
+        private @Nullable Integer minDataStorageInTbs;
+        private @Nullable Integer minDbNodeStoragePerNodeInGbs;
+        private @Nullable Integer minMemoryPerNodeInGbs;
+        private @Nullable Integer minStorageCount;
+        private @Nullable Integer minimumCoreCount;
+        private @Nullable Integer minimumNodeCount;
+        private @Nullable String name;
+        private @Nullable String shape;
+        private @Nullable String shapeFamily;
+        private @Nullable String shapeType;
         public Builder() {}
         public Builder(GetDbSystemShapesDbSystemShape defaults) {
     	      Objects.requireNonNull(defaults);
@@ -345,113 +347,113 @@ public final class GetDbSystemShapesDbSystemShape {
         }
 
         @CustomType.Setter
-        public Builder availableCoreCount(Integer availableCoreCount) {
-            this.availableCoreCount = Objects.requireNonNull(availableCoreCount);
+        public Builder availableCoreCount(@Nullable Integer availableCoreCount) {
+            this.availableCoreCount = availableCoreCount;
             return this;
         }
         @CustomType.Setter
-        public Builder availableCoreCountPerNode(Integer availableCoreCountPerNode) {
-            this.availableCoreCountPerNode = Objects.requireNonNull(availableCoreCountPerNode);
+        public Builder availableCoreCountPerNode(@Nullable Integer availableCoreCountPerNode) {
+            this.availableCoreCountPerNode = availableCoreCountPerNode;
             return this;
         }
         @CustomType.Setter
-        public Builder availableDataStorageInTbs(Integer availableDataStorageInTbs) {
-            this.availableDataStorageInTbs = Objects.requireNonNull(availableDataStorageInTbs);
+        public Builder availableDataStorageInTbs(@Nullable Integer availableDataStorageInTbs) {
+            this.availableDataStorageInTbs = availableDataStorageInTbs;
             return this;
         }
         @CustomType.Setter
-        public Builder availableDataStoragePerServerInTbs(Double availableDataStoragePerServerInTbs) {
-            this.availableDataStoragePerServerInTbs = Objects.requireNonNull(availableDataStoragePerServerInTbs);
+        public Builder availableDataStoragePerServerInTbs(@Nullable Double availableDataStoragePerServerInTbs) {
+            this.availableDataStoragePerServerInTbs = availableDataStoragePerServerInTbs;
             return this;
         }
         @CustomType.Setter
-        public Builder availableDbNodePerNodeInGbs(Integer availableDbNodePerNodeInGbs) {
-            this.availableDbNodePerNodeInGbs = Objects.requireNonNull(availableDbNodePerNodeInGbs);
+        public Builder availableDbNodePerNodeInGbs(@Nullable Integer availableDbNodePerNodeInGbs) {
+            this.availableDbNodePerNodeInGbs = availableDbNodePerNodeInGbs;
             return this;
         }
         @CustomType.Setter
-        public Builder availableDbNodeStorageInGbs(Integer availableDbNodeStorageInGbs) {
-            this.availableDbNodeStorageInGbs = Objects.requireNonNull(availableDbNodeStorageInGbs);
+        public Builder availableDbNodeStorageInGbs(@Nullable Integer availableDbNodeStorageInGbs) {
+            this.availableDbNodeStorageInGbs = availableDbNodeStorageInGbs;
             return this;
         }
         @CustomType.Setter
-        public Builder availableMemoryInGbs(Integer availableMemoryInGbs) {
-            this.availableMemoryInGbs = Objects.requireNonNull(availableMemoryInGbs);
+        public Builder availableMemoryInGbs(@Nullable Integer availableMemoryInGbs) {
+            this.availableMemoryInGbs = availableMemoryInGbs;
             return this;
         }
         @CustomType.Setter
-        public Builder availableMemoryPerNodeInGbs(Integer availableMemoryPerNodeInGbs) {
-            this.availableMemoryPerNodeInGbs = Objects.requireNonNull(availableMemoryPerNodeInGbs);
+        public Builder availableMemoryPerNodeInGbs(@Nullable Integer availableMemoryPerNodeInGbs) {
+            this.availableMemoryPerNodeInGbs = availableMemoryPerNodeInGbs;
             return this;
         }
         @CustomType.Setter
-        public Builder coreCountIncrement(Integer coreCountIncrement) {
-            this.coreCountIncrement = Objects.requireNonNull(coreCountIncrement);
+        public Builder coreCountIncrement(@Nullable Integer coreCountIncrement) {
+            this.coreCountIncrement = coreCountIncrement;
             return this;
         }
         @CustomType.Setter
-        public Builder maxStorageCount(Integer maxStorageCount) {
-            this.maxStorageCount = Objects.requireNonNull(maxStorageCount);
+        public Builder maxStorageCount(@Nullable Integer maxStorageCount) {
+            this.maxStorageCount = maxStorageCount;
             return this;
         }
         @CustomType.Setter
-        public Builder maximumNodeCount(Integer maximumNodeCount) {
-            this.maximumNodeCount = Objects.requireNonNull(maximumNodeCount);
+        public Builder maximumNodeCount(@Nullable Integer maximumNodeCount) {
+            this.maximumNodeCount = maximumNodeCount;
             return this;
         }
         @CustomType.Setter
-        public Builder minCoreCountPerNode(Integer minCoreCountPerNode) {
-            this.minCoreCountPerNode = Objects.requireNonNull(minCoreCountPerNode);
+        public Builder minCoreCountPerNode(@Nullable Integer minCoreCountPerNode) {
+            this.minCoreCountPerNode = minCoreCountPerNode;
             return this;
         }
         @CustomType.Setter
-        public Builder minDataStorageInTbs(Integer minDataStorageInTbs) {
-            this.minDataStorageInTbs = Objects.requireNonNull(minDataStorageInTbs);
+        public Builder minDataStorageInTbs(@Nullable Integer minDataStorageInTbs) {
+            this.minDataStorageInTbs = minDataStorageInTbs;
             return this;
         }
         @CustomType.Setter
-        public Builder minDbNodeStoragePerNodeInGbs(Integer minDbNodeStoragePerNodeInGbs) {
-            this.minDbNodeStoragePerNodeInGbs = Objects.requireNonNull(minDbNodeStoragePerNodeInGbs);
+        public Builder minDbNodeStoragePerNodeInGbs(@Nullable Integer minDbNodeStoragePerNodeInGbs) {
+            this.minDbNodeStoragePerNodeInGbs = minDbNodeStoragePerNodeInGbs;
             return this;
         }
         @CustomType.Setter
-        public Builder minMemoryPerNodeInGbs(Integer minMemoryPerNodeInGbs) {
-            this.minMemoryPerNodeInGbs = Objects.requireNonNull(minMemoryPerNodeInGbs);
+        public Builder minMemoryPerNodeInGbs(@Nullable Integer minMemoryPerNodeInGbs) {
+            this.minMemoryPerNodeInGbs = minMemoryPerNodeInGbs;
             return this;
         }
         @CustomType.Setter
-        public Builder minStorageCount(Integer minStorageCount) {
-            this.minStorageCount = Objects.requireNonNull(minStorageCount);
+        public Builder minStorageCount(@Nullable Integer minStorageCount) {
+            this.minStorageCount = minStorageCount;
             return this;
         }
         @CustomType.Setter
-        public Builder minimumCoreCount(Integer minimumCoreCount) {
-            this.minimumCoreCount = Objects.requireNonNull(minimumCoreCount);
+        public Builder minimumCoreCount(@Nullable Integer minimumCoreCount) {
+            this.minimumCoreCount = minimumCoreCount;
             return this;
         }
         @CustomType.Setter
-        public Builder minimumNodeCount(Integer minimumNodeCount) {
-            this.minimumNodeCount = Objects.requireNonNull(minimumNodeCount);
+        public Builder minimumNodeCount(@Nullable Integer minimumNodeCount) {
+            this.minimumNodeCount = minimumNodeCount;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder shape(String shape) {
-            this.shape = Objects.requireNonNull(shape);
+        public Builder shape(@Nullable String shape) {
+            this.shape = shape;
             return this;
         }
         @CustomType.Setter
-        public Builder shapeFamily(String shapeFamily) {
-            this.shapeFamily = Objects.requireNonNull(shapeFamily);
+        public Builder shapeFamily(@Nullable String shapeFamily) {
+            this.shapeFamily = shapeFamily;
             return this;
         }
         @CustomType.Setter
-        public Builder shapeType(String shapeType) {
-            this.shapeType = Objects.requireNonNull(shapeType);
+        public Builder shapeType(@Nullable String shapeType) {
+            this.shapeType = shapeType;
             return this;
         }
         public GetDbSystemShapesDbSystemShape build() {

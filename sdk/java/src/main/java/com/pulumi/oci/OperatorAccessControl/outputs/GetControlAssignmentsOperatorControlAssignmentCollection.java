@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.OperatorAccessControl.outputs.GetControlAssignmentsOperatorControlAssignmentCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetControlAssignmentsOperatorControlAssignmentCollection {
-    private List<GetControlAssignmentsOperatorControlAssignmentCollectionItem> items;
+    private @Nullable List<GetControlAssignmentsOperatorControlAssignmentCollectionItem> items;
 
     private GetControlAssignmentsOperatorControlAssignmentCollection() {}
     public List<GetControlAssignmentsOperatorControlAssignmentCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetControlAssignmentsOperatorControlAssignmentCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetControlAssignmentsOperatorControlAssignmentCollectionItem> items;
+        private @Nullable List<GetControlAssignmentsOperatorControlAssignmentCollectionItem> items;
         public Builder() {}
         public Builder(GetControlAssignmentsOperatorControlAssignmentCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetControlAssignmentsOperatorControlAssignmentCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetControlAssignmentsOperatorControlAssignmentCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetControlAssignmentsOperatorControlAssignmentCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetControlAssignmentsOperatorControlAssignmentCollectionItem... items) {

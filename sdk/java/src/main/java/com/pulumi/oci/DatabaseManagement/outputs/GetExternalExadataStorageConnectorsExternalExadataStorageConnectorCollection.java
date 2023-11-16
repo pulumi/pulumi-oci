@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DatabaseManagement.outputs.GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollection {
-    private List<GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItem> items;
+    private @Nullable List<GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItem> items;
 
     private GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollection() {}
     public List<GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetExternalExadataStorageConnectorsExternalExadataStorageConn
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItem> items;
+        private @Nullable List<GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItem> items;
         public Builder() {}
         public Builder(GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetExternalExadataStorageConnectorsExternalExadataStorageConn
         }
 
         @CustomType.Setter
-        public Builder items(List<GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItem... items) {

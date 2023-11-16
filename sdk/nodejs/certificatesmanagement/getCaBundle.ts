@@ -43,43 +43,43 @@ export interface GetCaBundleArgs {
  */
 export interface GetCaBundleResult {
     readonly caBundleId: string;
-    readonly caBundlePem: string;
+    readonly caBundlePem?: string;
     /**
      * The OCID of the compartment for the CA bundle.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * A brief description of the CA bundle.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The OCID of the CA bundle.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Additional information about the current lifecycle state of the CA bundle.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * A user-friendly name for the CA bundle. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
      */
-    readonly name: string;
+    readonly name?: string;
     /**
      * The current lifecycle state of the CA bundle.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * A property indicating when the CA bundle was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
 }
 /**
  * This data source provides details about a specific Ca Bundle resource in Oracle Cloud Infrastructure Certificates Management service.

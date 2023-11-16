@@ -42,33 +42,33 @@ export interface GetPrivateApplicationPackageArgs {
  * A collection of values returned by getPrivateApplicationPackage.
  */
 export interface GetPrivateApplicationPackageResult {
-    readonly contentUrl: string;
+    readonly contentUrl?: string;
     /**
      * The display name of the package.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
-    readonly mimeType: string;
+    readonly id?: string;
+    readonly mimeType?: string;
     /**
      * The specified package's type.
      */
-    readonly packageType: string;
+    readonly packageType?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private application where the package is hosted.
      */
-    readonly privateApplicationId: string;
+    readonly privateApplicationId?: string;
     readonly privateApplicationPackageId: string;
     /**
      * The date and time the private application package was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-05-27T21:10:29.600Z`
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The package version.
      */
-    readonly version: string;
+    readonly version?: string;
 }
 /**
  * This data source provides details about a specific Private Application Package resource in Oracle Cloud Infrastructure Service Catalog service.

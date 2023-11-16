@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Model Provenance resource in Oracle Cloud Infrastructure Data Science service.
@@ -62,22 +61,22 @@ type ModelProvenance struct {
 	pulumi.CustomResourceState
 
 	// (Updatable) For model reproducibility purposes. Branch of the git repository associated with model training.
-	GitBranch pulumi.StringOutput `pulumi:"gitBranch"`
+	GitBranch pulumi.StringPtrOutput `pulumi:"gitBranch"`
 	// (Updatable) For model reproducibility purposes. Commit ID of the git repository associated with model training.
-	GitCommit pulumi.StringOutput `pulumi:"gitCommit"`
+	GitCommit pulumi.StringPtrOutput `pulumi:"gitCommit"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.
 	ModelId pulumi.StringOutput `pulumi:"modelId"`
 	// (Updatable) For model reproducibility purposes. URL of the git repository associated with model training.
-	RepositoryUrl pulumi.StringOutput `pulumi:"repositoryUrl"`
+	RepositoryUrl pulumi.StringPtrOutput `pulumi:"repositoryUrl"`
 	// (Updatable) For model reproducibility purposes. Path to model artifacts.
-	ScriptDir pulumi.StringOutput `pulumi:"scriptDir"`
+	ScriptDir pulumi.StringPtrOutput `pulumi:"scriptDir"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a training session(Job or NotebookSession) in which the model was trained. It is used for model reproducibility purposes.
-	TrainingId pulumi.StringOutput `pulumi:"trainingId"`
+	TrainingId pulumi.StringPtrOutput `pulumi:"trainingId"`
 	// (Updatable) For model reproducibility purposes. Path to the python script or notebook in which the model was trained."
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	TrainingScript pulumi.StringOutput `pulumi:"trainingScript"`
+	TrainingScript pulumi.StringPtrOutput `pulumi:"trainingScript"`
 }
 
 // NewModelProvenance registers a new resource with the given unique name, arguments, and options.
@@ -220,12 +219,6 @@ func (i *ModelProvenance) ToModelProvenanceOutputWithContext(ctx context.Context
 	return pulumi.ToOutputWithContext(ctx, i).(ModelProvenanceOutput)
 }
 
-func (i *ModelProvenance) ToOutput(ctx context.Context) pulumix.Output[*ModelProvenance] {
-	return pulumix.Output[*ModelProvenance]{
-		OutputState: i.ToModelProvenanceOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ModelProvenanceArrayInput is an input type that accepts ModelProvenanceArray and ModelProvenanceArrayOutput values.
 // You can construct a concrete instance of `ModelProvenanceArrayInput` via:
 //
@@ -249,12 +242,6 @@ func (i ModelProvenanceArray) ToModelProvenanceArrayOutput() ModelProvenanceArra
 
 func (i ModelProvenanceArray) ToModelProvenanceArrayOutputWithContext(ctx context.Context) ModelProvenanceArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ModelProvenanceArrayOutput)
-}
-
-func (i ModelProvenanceArray) ToOutput(ctx context.Context) pulumix.Output[[]*ModelProvenance] {
-	return pulumix.Output[[]*ModelProvenance]{
-		OutputState: i.ToModelProvenanceArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ModelProvenanceMapInput is an input type that accepts ModelProvenanceMap and ModelProvenanceMapOutput values.
@@ -282,12 +269,6 @@ func (i ModelProvenanceMap) ToModelProvenanceMapOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(ModelProvenanceMapOutput)
 }
 
-func (i ModelProvenanceMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ModelProvenance] {
-	return pulumix.Output[map[string]*ModelProvenance]{
-		OutputState: i.ToModelProvenanceMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ModelProvenanceOutput struct{ *pulumi.OutputState }
 
 func (ModelProvenanceOutput) ElementType() reflect.Type {
@@ -302,20 +283,14 @@ func (o ModelProvenanceOutput) ToModelProvenanceOutputWithContext(ctx context.Co
 	return o
 }
 
-func (o ModelProvenanceOutput) ToOutput(ctx context.Context) pulumix.Output[*ModelProvenance] {
-	return pulumix.Output[*ModelProvenance]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) For model reproducibility purposes. Branch of the git repository associated with model training.
-func (o ModelProvenanceOutput) GitBranch() pulumi.StringOutput {
-	return o.ApplyT(func(v *ModelProvenance) pulumi.StringOutput { return v.GitBranch }).(pulumi.StringOutput)
+func (o ModelProvenanceOutput) GitBranch() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ModelProvenance) pulumi.StringPtrOutput { return v.GitBranch }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) For model reproducibility purposes. Commit ID of the git repository associated with model training.
-func (o ModelProvenanceOutput) GitCommit() pulumi.StringOutput {
-	return o.ApplyT(func(v *ModelProvenance) pulumi.StringOutput { return v.GitCommit }).(pulumi.StringOutput)
+func (o ModelProvenanceOutput) GitCommit() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ModelProvenance) pulumi.StringPtrOutput { return v.GitCommit }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.
@@ -324,26 +299,26 @@ func (o ModelProvenanceOutput) ModelId() pulumi.StringOutput {
 }
 
 // (Updatable) For model reproducibility purposes. URL of the git repository associated with model training.
-func (o ModelProvenanceOutput) RepositoryUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v *ModelProvenance) pulumi.StringOutput { return v.RepositoryUrl }).(pulumi.StringOutput)
+func (o ModelProvenanceOutput) RepositoryUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ModelProvenance) pulumi.StringPtrOutput { return v.RepositoryUrl }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) For model reproducibility purposes. Path to model artifacts.
-func (o ModelProvenanceOutput) ScriptDir() pulumi.StringOutput {
-	return o.ApplyT(func(v *ModelProvenance) pulumi.StringOutput { return v.ScriptDir }).(pulumi.StringOutput)
+func (o ModelProvenanceOutput) ScriptDir() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ModelProvenance) pulumi.StringPtrOutput { return v.ScriptDir }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a training session(Job or NotebookSession) in which the model was trained. It is used for model reproducibility purposes.
-func (o ModelProvenanceOutput) TrainingId() pulumi.StringOutput {
-	return o.ApplyT(func(v *ModelProvenance) pulumi.StringOutput { return v.TrainingId }).(pulumi.StringOutput)
+func (o ModelProvenanceOutput) TrainingId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ModelProvenance) pulumi.StringPtrOutput { return v.TrainingId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) For model reproducibility purposes. Path to the python script or notebook in which the model was trained."
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o ModelProvenanceOutput) TrainingScript() pulumi.StringOutput {
-	return o.ApplyT(func(v *ModelProvenance) pulumi.StringOutput { return v.TrainingScript }).(pulumi.StringOutput)
+func (o ModelProvenanceOutput) TrainingScript() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ModelProvenance) pulumi.StringPtrOutput { return v.TrainingScript }).(pulumi.StringPtrOutput)
 }
 
 type ModelProvenanceArrayOutput struct{ *pulumi.OutputState }
@@ -358,12 +333,6 @@ func (o ModelProvenanceArrayOutput) ToModelProvenanceArrayOutput() ModelProvenan
 
 func (o ModelProvenanceArrayOutput) ToModelProvenanceArrayOutputWithContext(ctx context.Context) ModelProvenanceArrayOutput {
 	return o
-}
-
-func (o ModelProvenanceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ModelProvenance] {
-	return pulumix.Output[[]*ModelProvenance]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ModelProvenanceArrayOutput) Index(i pulumi.IntInput) ModelProvenanceOutput {
@@ -384,12 +353,6 @@ func (o ModelProvenanceMapOutput) ToModelProvenanceMapOutput() ModelProvenanceMa
 
 func (o ModelProvenanceMapOutput) ToModelProvenanceMapOutputWithContext(ctx context.Context) ModelProvenanceMapOutput {
 	return o
-}
-
-func (o ModelProvenanceMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ModelProvenance] {
-	return pulumix.Output[map[string]*ModelProvenance]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ModelProvenanceMapOutput) MapIndex(k pulumi.StringInput) ModelProvenanceOutput {

@@ -51,40 +51,40 @@ export interface GetIamWorkRequestResult {
     /**
      * The OCID of the compartment containing this IAM work request.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     readonly iamWorkRequestId: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The asynchronous operation tracked by this IAM work request.
      */
-    readonly operationType: string;
+    readonly operationType?: string;
     /**
      * How much progress the operation has made.
      */
-    readonly percentComplete: number;
+    readonly percentComplete?: number;
     /**
      * The resources this work request affects.
      */
-    readonly resources: outputs.Identity.GetIamWorkRequestResource[];
+    readonly resources?: outputs.Identity.GetIamWorkRequestResource[];
     /**
      * Status of the work request
      */
-    readonly status: string;
+    readonly status?: string;
     /**
      * Date and time the work was accepted, in the format defined by RFC3339. Example: `2016-08-25T21:10:29.600Z`
      */
-    readonly timeAccepted: string;
+    readonly timeAccepted?: string;
     /**
      * Date and time the work completed, in the format defined by RFC3339. Example: `2016-08-25T21:10:29.600Z`
      */
-    readonly timeFinished: string;
+    readonly timeFinished?: string;
     /**
      * Date and time the work started, in the format defined by RFC3339. Example: `2016-08-25T21:10:29.600Z`
      */
-    readonly timeStarted: string;
+    readonly timeStarted?: string;
 }
 /**
  * This data source provides details about a specific Iam Work Request resource in Oracle Cloud Infrastructure Identity service.

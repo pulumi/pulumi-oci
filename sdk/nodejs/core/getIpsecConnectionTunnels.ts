@@ -50,11 +50,11 @@ export interface GetIpsecConnectionTunnelsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of ip_sec_connection_tunnels.
      */
-    readonly ipSecConnectionTunnels: outputs.Core.GetIpsecConnectionTunnelsIpSecConnectionTunnel[];
+    readonly ipSecConnectionTunnels?: outputs.Core.GetIpsecConnectionTunnelsIpSecConnectionTunnel[];
     readonly ipsecId: string;
 }
 /**

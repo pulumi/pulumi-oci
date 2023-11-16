@@ -16,71 +16,71 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// A filter to return only a specific column based on column name.
         /// </summary>
-        public readonly string ColumnName;
+        public readonly string? ColumnName;
         /// <summary>
         /// A filter to return only the SDM masking policy difference columns that match the specified difference type
         /// </summary>
-        public readonly string DifferenceType;
+        public readonly string? DifferenceType;
         /// <summary>
         /// The unique key that identifies the SDM masking policy difference column.
         /// </summary>
-        public readonly string Key;
+        public readonly string? Key;
         /// <summary>
         /// The unique key that identifies the masking column represented by the SDM masking policy difference column.
         /// </summary>
-        public readonly string MaskingColumnkey;
+        public readonly string? MaskingColumnkey;
         /// <summary>
         /// A filter to return only items related to a specific object name.
         /// </summary>
-        public readonly string Object;
+        public readonly string? Object;
         /// <summary>
         /// A filter to return only the SDM masking policy difference columns that match the specified planned action.
         /// </summary>
-        public readonly string PlannedAction;
+        public readonly string? PlannedAction;
         /// <summary>
         /// A filter to return only items related to specific schema name.
         /// </summary>
-        public readonly string SchemaName;
+        public readonly string? SchemaName;
         /// <summary>
         /// The unique key that identifies the sensitive column represented by the SDM masking policy difference column.
         /// </summary>
-        public readonly string SensitiveColumnkey;
+        public readonly string? SensitiveColumnkey;
         /// <summary>
         /// The OCID of the sensitive type associated with the difference column.
         /// </summary>
-        public readonly string SensitiveTypeId;
+        public readonly string? SensitiveTypeId;
         /// <summary>
         /// A filter to return the SDM masking policy difference columns based on the value of their syncStatus attribute.
         /// </summary>
-        public readonly string SyncStatus;
+        public readonly string? SyncStatus;
         /// <summary>
         /// The date and time the SDM masking policy difference column was last synced, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
-        public readonly string TimeLastSynced;
+        public readonly string? TimeLastSynced;
 
         [OutputConstructor]
         private GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemResult(
-            string columnName,
+            string? columnName,
 
-            string differenceType,
+            string? differenceType,
 
-            string key,
+            string? key,
 
-            string maskingColumnkey,
+            string? maskingColumnkey,
 
-            string @object,
+            string? @object,
 
-            string plannedAction,
+            string? plannedAction,
 
-            string schemaName,
+            string? schemaName,
 
-            string sensitiveColumnkey,
+            string? sensitiveColumnkey,
 
-            string sensitiveTypeId,
+            string? sensitiveTypeId,
 
-            string syncStatus,
+            string? syncStatus,
 
-            string timeLastSynced)
+            string? timeLastSynced)
         {
             ColumnName = columnName;
             DifferenceType = differenceType;

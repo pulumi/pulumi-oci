@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionString {
@@ -14,51 +16,51 @@ public final class GetExternalDatabaseConnectorsExternalDatabaseConnectorConnect
      * @return The host name of the database.
      * 
      */
-    private String hostname;
+    private @Nullable String hostname;
     /**
      * @return The port used to connect to the database.
      * 
      */
-    private Integer port;
+    private @Nullable Integer port;
     /**
      * @return The protocol used to connect to the database.
      * 
      */
-    private String protocol;
+    private @Nullable String protocol;
     /**
      * @return The name of the service alias used to connect to the database.
      * 
      */
-    private String service;
+    private @Nullable String service;
 
     private GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionString() {}
     /**
      * @return The host name of the database.
      * 
      */
-    public String hostname() {
-        return this.hostname;
+    public Optional<String> hostname() {
+        return Optional.ofNullable(this.hostname);
     }
     /**
      * @return The port used to connect to the database.
      * 
      */
-    public Integer port() {
-        return this.port;
+    public Optional<Integer> port() {
+        return Optional.ofNullable(this.port);
     }
     /**
      * @return The protocol used to connect to the database.
      * 
      */
-    public String protocol() {
-        return this.protocol;
+    public Optional<String> protocol() {
+        return Optional.ofNullable(this.protocol);
     }
     /**
      * @return The name of the service alias used to connect to the database.
      * 
      */
-    public String service() {
-        return this.service;
+    public Optional<String> service() {
+        return Optional.ofNullable(this.service);
     }
 
     public static Builder builder() {
@@ -70,10 +72,10 @@ public final class GetExternalDatabaseConnectorsExternalDatabaseConnectorConnect
     }
     @CustomType.Builder
     public static final class Builder {
-        private String hostname;
-        private Integer port;
-        private String protocol;
-        private String service;
+        private @Nullable String hostname;
+        private @Nullable Integer port;
+        private @Nullable String protocol;
+        private @Nullable String service;
         public Builder() {}
         public Builder(GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionString defaults) {
     	      Objects.requireNonNull(defaults);
@@ -84,23 +86,23 @@ public final class GetExternalDatabaseConnectorsExternalDatabaseConnectorConnect
         }
 
         @CustomType.Setter
-        public Builder hostname(String hostname) {
-            this.hostname = Objects.requireNonNull(hostname);
+        public Builder hostname(@Nullable String hostname) {
+            this.hostname = hostname;
             return this;
         }
         @CustomType.Setter
-        public Builder port(Integer port) {
-            this.port = Objects.requireNonNull(port);
+        public Builder port(@Nullable Integer port) {
+            this.port = port;
             return this;
         }
         @CustomType.Setter
-        public Builder protocol(String protocol) {
-            this.protocol = Objects.requireNonNull(protocol);
+        public Builder protocol(@Nullable String protocol) {
+            this.protocol = protocol;
             return this;
         }
         @CustomType.Setter
-        public Builder service(String service) {
-            this.service = Objects.requireNonNull(service);
+        public Builder service(@Nullable String service) {
+            this.service = service;
             return this;
         }
         public GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionString build() {

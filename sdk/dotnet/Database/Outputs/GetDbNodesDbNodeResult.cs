@@ -16,153 +16,153 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// Additional information about the planned maintenance.
         /// </summary>
-        public readonly string AdditionalDetails;
+        public readonly string? AdditionalDetails;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup IP address associated with the database node. Use this OCID with either the [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IP address needed to make a database connection.
         /// </summary>
-        public readonly string BackupIpId;
+        public readonly string? BackupIpId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second backup VNIC.
         /// </summary>
-        public readonly string BackupVnic2id;
+        public readonly string? BackupVnic2id;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup VNIC.
         /// </summary>
-        public readonly string BackupVnicId;
+        public readonly string? BackupVnicId;
         /// <summary>
         /// The number of CPU cores enabled on the Db node.
         /// </summary>
-        public readonly int CpuCoreCount;
-        public readonly string DbNodeId;
+        public readonly int? CpuCoreCount;
+        public readonly string? DbNodeId;
         /// <summary>
         /// The allocated local node storage in GBs on the Db node.
         /// </summary>
-        public readonly int DbNodeStorageSizeInGbs;
+        public readonly int? DbNodeStorageSizeInGbs;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exacc Db server.
         /// </summary>
-        public readonly string DbServerId;
+        public readonly string? DbServerId;
         /// <summary>
         /// The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). If provided, filters the results to the set of database versions which are supported for the DB system.
         /// </summary>
-        public readonly string DbSystemId;
+        public readonly string? DbSystemId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// The name of the Fault Domain the instance is contained in.
         /// </summary>
-        public readonly string FaultDomain;
+        public readonly string? FaultDomain;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host IP address associated with the database node. Use this OCID with either the  [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IP address  needed to make a database connection.
         /// **Note:** Applies only to Exadata Cloud Service.
         /// </summary>
-        public readonly string HostIpId;
+        public readonly string? HostIpId;
         /// <summary>
         /// The host name for the database node.
         /// </summary>
-        public readonly string Hostname;
+        public readonly string? Hostname;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database node.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Information about the current lifecycle state.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// The type of database node maintenance.
         /// </summary>
-        public readonly string MaintenanceType;
+        public readonly string? MaintenanceType;
         /// <summary>
         /// The allocated memory in GBs on the Db node.
         /// </summary>
-        public readonly int MemorySizeInGbs;
+        public readonly int? MemorySizeInGbs;
         /// <summary>
         /// The size (in GB) of the block storage volume allocation for the DB system. This attribute applies only for virtual machine DB systems.
         /// </summary>
-        public readonly int SoftwareStorageSizeInGb;
+        public readonly int? SoftwareStorageSizeInGb;
         /// <summary>
         /// A filter to return only resources that match the given lifecycle state exactly.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The date and time that the database node was created.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// End date and time of maintenance window.
         /// </summary>
-        public readonly string TimeMaintenanceWindowEnd;
+        public readonly string? TimeMaintenanceWindowEnd;
         /// <summary>
         /// Start date and time of maintenance window.
         /// </summary>
-        public readonly string TimeMaintenanceWindowStart;
+        public readonly string? TimeMaintenanceWindowStart;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second VNIC.
         /// </summary>
-        public readonly string Vnic2id;
+        public readonly string? Vnic2id;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC.
         /// </summary>
-        public readonly string VnicId;
+        public readonly string? VnicId;
 
         [OutputConstructor]
         private GetDbNodesDbNodeResult(
-            string additionalDetails,
+            string? additionalDetails,
 
-            string backupIpId,
+            string? backupIpId,
 
-            string backupVnic2id,
+            string? backupVnic2id,
 
-            string backupVnicId,
+            string? backupVnicId,
 
-            int cpuCoreCount,
+            int? cpuCoreCount,
 
-            string dbNodeId,
+            string? dbNodeId,
 
-            int dbNodeStorageSizeInGbs,
+            int? dbNodeStorageSizeInGbs,
 
-            string dbServerId,
+            string? dbServerId,
 
-            string dbSystemId,
+            string? dbSystemId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string faultDomain,
+            string? faultDomain,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string hostIpId,
+            string? hostIpId,
 
-            string hostname,
+            string? hostname,
 
-            string id,
+            string? id,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string maintenanceType,
+            string? maintenanceType,
 
-            int memorySizeInGbs,
+            int? memorySizeInGbs,
 
-            int softwareStorageSizeInGb,
+            int? softwareStorageSizeInGb,
 
-            string state,
+            string? state,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeMaintenanceWindowEnd,
+            string? timeMaintenanceWindowEnd,
 
-            string timeMaintenanceWindowStart,
+            string? timeMaintenanceWindowStart,
 
-            string vnic2id,
+            string? vnic2id,
 
-            string vnicId)
+            string? vnicId)
         {
             AdditionalDetails = additionalDetails;
             BackupIpId = backupIpId;

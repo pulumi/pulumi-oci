@@ -59,106 +59,106 @@ export interface GetComputedUsageResult {
     /**
      * Subscribed service commitmentId.
      */
-    readonly commitmentServiceId: string;
+    readonly commitmentServiceId?: string;
     readonly compartmentId: string;
     /**
      * SPM Internal compute records source .
      */
-    readonly computeSource: string;
+    readonly computeSource?: string;
     readonly computedUsageId: string;
     /**
      * Computed Line Amount not rounded
      */
-    readonly cost: string;
+    readonly cost?: string;
     /**
      * Computed Line Amount rounded.
      */
-    readonly costRounded: string;
+    readonly costRounded?: string;
     /**
      * Currency code
      */
-    readonly currencyCode: string;
+    readonly currencyCode?: string;
     /**
      * Data Center Attribute as sent by MQS to SPM.
      */
-    readonly dataCenter: string;
+    readonly dataCenter?: string;
     readonly fields?: string[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Invoicing status for the aggregated compute usage
      */
-    readonly isInvoiced: boolean;
+    readonly isInvoiced?: boolean;
     /**
      * MQS Identfier send to SPM , SPM does not transform this attribute and is received as is.
      */
-    readonly mqsMessageId: string;
+    readonly mqsMessageId?: string;
     /**
      * Net Unit Price for the product in consideration, price actual.
      */
-    readonly netUnitPrice: string;
+    readonly netUnitPrice?: string;
     /**
      * SPM Internal Original usage Line number identifier in SPM coming from Metered Services entity.
      */
-    readonly originalUsageNumber: string;
+    readonly originalUsageNumber?: string;
     /**
      * Product description
      */
-    readonly parentProducts: outputs.OneSubsription.GetComputedUsageParentProduct[];
+    readonly parentProducts?: outputs.OneSubsription.GetComputedUsageParentProduct[];
     /**
      * Subscribed service line parent id
      */
-    readonly parentSubscribedServiceId: string;
+    readonly parentSubscribedServiceId?: string;
     /**
      * Subscription plan number
      */
-    readonly planNumber: string;
+    readonly planNumber?: string;
     /**
      * Product description
      */
-    readonly products: outputs.OneSubsription.GetComputedUsageProduct[];
+    readonly products?: outputs.OneSubsription.GetComputedUsageProduct[];
     /**
      * Total Quantity that was used for computation
      */
-    readonly quantity: string;
+    readonly quantity?: string;
     /**
      * Ratecard Id at subscribed service level
      */
-    readonly rateCardId: string;
+    readonly rateCardId?: string;
     /**
      * References the tier in the ratecard for that usage (OCI will be using the same reference to cross-reference for correctness on the usage csv report), comes from Entity OBSCNTR_IPT_PRODUCTTIER.
      */
-    readonly rateCardTierdId: string;
+    readonly rateCardTierdId?: string;
     /**
      * Computed Usage created time, expressed in RFC 3339 timestamp format.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * Metered Service date, expressed in RFC 3339 timestamp format.
      */
-    readonly timeMeteredOn: string;
+    readonly timeMeteredOn?: string;
     /**
      * Usae computation date, expressed in RFC 3339 timestamp format.
      */
-    readonly timeOfArrival: string;
+    readonly timeOfArrival?: string;
     /**
      * Computed Usage updated time, expressed in RFC 3339 timestamp format.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
     /**
      * Usage compute type in SPM.
      */
-    readonly type: string;
+    readonly type?: string;
     /**
      * Unit of Messure
      */
-    readonly unitOfMeasure: string;
+    readonly unitOfMeasure?: string;
     /**
      * SPM Internal usage Line number identifier in SPM coming from Metered Services entity.
      */
-    readonly usageNumber: string;
+    readonly usageNumber?: string;
 }
 /**
  * This data source provides details about a specific Computed Usage resource in Oracle Cloud Infrastructure Onesubscription service.

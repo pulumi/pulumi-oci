@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Boot Volume Backup resource in Oracle Cloud Infrastructure Core service.
@@ -69,41 +68,41 @@ type BootVolumeBackup struct {
 	pulumi.CustomResourceState
 
 	// The OCID of the boot volume that needs to be backed up. Cannot be defined if `sourceDetails` is defined.
-	BootVolumeId pulumi.StringOutput `pulumi:"bootVolumeId"`
+	BootVolumeId pulumi.StringPtrOutput `pulumi:"bootVolumeId"`
 	// (Updatable) The OCID of the compartment that contains the boot volume backup.
-	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// The date and time the volume backup will expire and be automatically deleted. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). This parameter will always be present for backups that were created automatically by a scheduled-backup policy. For manually created backups, it will be absent, signifying that there is no expiration time and the backup will last forever until manually deleted.
-	ExpirationTime pulumi.StringOutput `pulumi:"expirationTime"`
+	ExpirationTime pulumi.StringPtrOutput `pulumi:"expirationTime"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The image OCID used to create the boot volume the backup is taken from.
-	ImageId pulumi.StringOutput `pulumi:"imageId"`
+	ImageId pulumi.StringPtrOutput `pulumi:"imageId"`
 	// The OCID of the KMS key in the destination region which will be the master encryption key for the copied volume backup.
-	KmsKeyId pulumi.StringOutput `pulumi:"kmsKeyId"`
+	KmsKeyId pulumi.StringPtrOutput `pulumi:"kmsKeyId"`
 	// The size of the boot volume, in GBs.
-	SizeInGbs pulumi.StringOutput `pulumi:"sizeInGbs"`
+	SizeInGbs pulumi.StringPtrOutput `pulumi:"sizeInGbs"`
 	// The OCID of the source boot volume backup.
-	SourceBootVolumeBackupId pulumi.StringOutput `pulumi:"sourceBootVolumeBackupId"`
+	SourceBootVolumeBackupId pulumi.StringPtrOutput `pulumi:"sourceBootVolumeBackupId"`
 	// Details of the volume backup source in the cloud. Cannot be defined if `bootVolumeId` is defined.
 	SourceDetails BootVolumeBackupSourceDetailsPtrOutput `pulumi:"sourceDetails"`
 	// Specifies whether the backup was created manually, or via scheduled backup policy.
-	SourceType pulumi.StringOutput `pulumi:"sourceType"`
+	SourceType pulumi.StringPtrOutput `pulumi:"sourceType"`
 	// The current state of a boot volume backup.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The date and time the boot volume backup was created. This is the time the actual point-in-time image of the volume data was taken. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The date and time the request to create the boot volume backup was received. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-	TimeRequestReceived pulumi.StringOutput `pulumi:"timeRequestReceived"`
+	TimeRequestReceived pulumi.StringPtrOutput `pulumi:"timeRequestReceived"`
 	// The type of backup to create. If omitted, defaults to incremental. Supported values are 'FULL' or 'INCREMENTAL'.
-	Type pulumi.StringOutput `pulumi:"type"`
+	Type pulumi.StringPtrOutput `pulumi:"type"`
 	// The size used by the backup, in GBs. It is typically smaller than sizeInGBs, depending on the space consumed on the boot volume and whether the backup is full or incremental.
-	UniqueSizeInGbs pulumi.StringOutput `pulumi:"uniqueSizeInGbs"`
+	UniqueSizeInGbs pulumi.StringPtrOutput `pulumi:"uniqueSizeInGbs"`
 }
 
 // NewBootVolumeBackup registers a new resource with the given unique name, arguments, and options.
@@ -279,12 +278,6 @@ func (i *BootVolumeBackup) ToBootVolumeBackupOutputWithContext(ctx context.Conte
 	return pulumi.ToOutputWithContext(ctx, i).(BootVolumeBackupOutput)
 }
 
-func (i *BootVolumeBackup) ToOutput(ctx context.Context) pulumix.Output[*BootVolumeBackup] {
-	return pulumix.Output[*BootVolumeBackup]{
-		OutputState: i.ToBootVolumeBackupOutputWithContext(ctx).OutputState,
-	}
-}
-
 // BootVolumeBackupArrayInput is an input type that accepts BootVolumeBackupArray and BootVolumeBackupArrayOutput values.
 // You can construct a concrete instance of `BootVolumeBackupArrayInput` via:
 //
@@ -308,12 +301,6 @@ func (i BootVolumeBackupArray) ToBootVolumeBackupArrayOutput() BootVolumeBackupA
 
 func (i BootVolumeBackupArray) ToBootVolumeBackupArrayOutputWithContext(ctx context.Context) BootVolumeBackupArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(BootVolumeBackupArrayOutput)
-}
-
-func (i BootVolumeBackupArray) ToOutput(ctx context.Context) pulumix.Output[[]*BootVolumeBackup] {
-	return pulumix.Output[[]*BootVolumeBackup]{
-		OutputState: i.ToBootVolumeBackupArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // BootVolumeBackupMapInput is an input type that accepts BootVolumeBackupMap and BootVolumeBackupMapOutput values.
@@ -341,12 +328,6 @@ func (i BootVolumeBackupMap) ToBootVolumeBackupMapOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(BootVolumeBackupMapOutput)
 }
 
-func (i BootVolumeBackupMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*BootVolumeBackup] {
-	return pulumix.Output[map[string]*BootVolumeBackup]{
-		OutputState: i.ToBootVolumeBackupMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type BootVolumeBackupOutput struct{ *pulumi.OutputState }
 
 func (BootVolumeBackupOutput) ElementType() reflect.Type {
@@ -361,20 +342,14 @@ func (o BootVolumeBackupOutput) ToBootVolumeBackupOutputWithContext(ctx context.
 	return o
 }
 
-func (o BootVolumeBackupOutput) ToOutput(ctx context.Context) pulumix.Output[*BootVolumeBackup] {
-	return pulumix.Output[*BootVolumeBackup]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the boot volume that needs to be backed up. Cannot be defined if `sourceDetails` is defined.
-func (o BootVolumeBackupOutput) BootVolumeId() pulumi.StringOutput {
-	return o.ApplyT(func(v *BootVolumeBackup) pulumi.StringOutput { return v.BootVolumeId }).(pulumi.StringOutput)
+func (o BootVolumeBackupOutput) BootVolumeId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BootVolumeBackup) pulumi.StringPtrOutput { return v.BootVolumeId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The OCID of the compartment that contains the boot volume backup.
-func (o BootVolumeBackupOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *BootVolumeBackup) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
+func (o BootVolumeBackupOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BootVolumeBackup) pulumi.StringPtrOutput { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -383,13 +358,13 @@ func (o BootVolumeBackupOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-func (o BootVolumeBackupOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *BootVolumeBackup) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o BootVolumeBackupOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BootVolumeBackup) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the volume backup will expire and be automatically deleted. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). This parameter will always be present for backups that were created automatically by a scheduled-backup policy. For manually created backups, it will be absent, signifying that there is no expiration time and the backup will last forever until manually deleted.
-func (o BootVolumeBackupOutput) ExpirationTime() pulumi.StringOutput {
-	return o.ApplyT(func(v *BootVolumeBackup) pulumi.StringOutput { return v.ExpirationTime }).(pulumi.StringOutput)
+func (o BootVolumeBackupOutput) ExpirationTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BootVolumeBackup) pulumi.StringPtrOutput { return v.ExpirationTime }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -398,23 +373,23 @@ func (o BootVolumeBackupOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The image OCID used to create the boot volume the backup is taken from.
-func (o BootVolumeBackupOutput) ImageId() pulumi.StringOutput {
-	return o.ApplyT(func(v *BootVolumeBackup) pulumi.StringOutput { return v.ImageId }).(pulumi.StringOutput)
+func (o BootVolumeBackupOutput) ImageId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BootVolumeBackup) pulumi.StringPtrOutput { return v.ImageId }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the KMS key in the destination region which will be the master encryption key for the copied volume backup.
-func (o BootVolumeBackupOutput) KmsKeyId() pulumi.StringOutput {
-	return o.ApplyT(func(v *BootVolumeBackup) pulumi.StringOutput { return v.KmsKeyId }).(pulumi.StringOutput)
+func (o BootVolumeBackupOutput) KmsKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BootVolumeBackup) pulumi.StringPtrOutput { return v.KmsKeyId }).(pulumi.StringPtrOutput)
 }
 
 // The size of the boot volume, in GBs.
-func (o BootVolumeBackupOutput) SizeInGbs() pulumi.StringOutput {
-	return o.ApplyT(func(v *BootVolumeBackup) pulumi.StringOutput { return v.SizeInGbs }).(pulumi.StringOutput)
+func (o BootVolumeBackupOutput) SizeInGbs() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BootVolumeBackup) pulumi.StringPtrOutput { return v.SizeInGbs }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the source boot volume backup.
-func (o BootVolumeBackupOutput) SourceBootVolumeBackupId() pulumi.StringOutput {
-	return o.ApplyT(func(v *BootVolumeBackup) pulumi.StringOutput { return v.SourceBootVolumeBackupId }).(pulumi.StringOutput)
+func (o BootVolumeBackupOutput) SourceBootVolumeBackupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BootVolumeBackup) pulumi.StringPtrOutput { return v.SourceBootVolumeBackupId }).(pulumi.StringPtrOutput)
 }
 
 // Details of the volume backup source in the cloud. Cannot be defined if `bootVolumeId` is defined.
@@ -423,13 +398,13 @@ func (o BootVolumeBackupOutput) SourceDetails() BootVolumeBackupSourceDetailsPtr
 }
 
 // Specifies whether the backup was created manually, or via scheduled backup policy.
-func (o BootVolumeBackupOutput) SourceType() pulumi.StringOutput {
-	return o.ApplyT(func(v *BootVolumeBackup) pulumi.StringOutput { return v.SourceType }).(pulumi.StringOutput)
+func (o BootVolumeBackupOutput) SourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BootVolumeBackup) pulumi.StringPtrOutput { return v.SourceType }).(pulumi.StringPtrOutput)
 }
 
 // The current state of a boot volume backup.
-func (o BootVolumeBackupOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *BootVolumeBackup) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o BootVolumeBackupOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BootVolumeBackup) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -438,23 +413,23 @@ func (o BootVolumeBackupOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The date and time the boot volume backup was created. This is the time the actual point-in-time image of the volume data was taken. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-func (o BootVolumeBackupOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *BootVolumeBackup) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o BootVolumeBackupOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BootVolumeBackup) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the request to create the boot volume backup was received. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-func (o BootVolumeBackupOutput) TimeRequestReceived() pulumi.StringOutput {
-	return o.ApplyT(func(v *BootVolumeBackup) pulumi.StringOutput { return v.TimeRequestReceived }).(pulumi.StringOutput)
+func (o BootVolumeBackupOutput) TimeRequestReceived() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BootVolumeBackup) pulumi.StringPtrOutput { return v.TimeRequestReceived }).(pulumi.StringPtrOutput)
 }
 
 // The type of backup to create. If omitted, defaults to incremental. Supported values are 'FULL' or 'INCREMENTAL'.
-func (o BootVolumeBackupOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v *BootVolumeBackup) pulumi.StringOutput { return v.Type }).(pulumi.StringOutput)
+func (o BootVolumeBackupOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BootVolumeBackup) pulumi.StringPtrOutput { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 // The size used by the backup, in GBs. It is typically smaller than sizeInGBs, depending on the space consumed on the boot volume and whether the backup is full or incremental.
-func (o BootVolumeBackupOutput) UniqueSizeInGbs() pulumi.StringOutput {
-	return o.ApplyT(func(v *BootVolumeBackup) pulumi.StringOutput { return v.UniqueSizeInGbs }).(pulumi.StringOutput)
+func (o BootVolumeBackupOutput) UniqueSizeInGbs() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BootVolumeBackup) pulumi.StringPtrOutput { return v.UniqueSizeInGbs }).(pulumi.StringPtrOutput)
 }
 
 type BootVolumeBackupArrayOutput struct{ *pulumi.OutputState }
@@ -469,12 +444,6 @@ func (o BootVolumeBackupArrayOutput) ToBootVolumeBackupArrayOutput() BootVolumeB
 
 func (o BootVolumeBackupArrayOutput) ToBootVolumeBackupArrayOutputWithContext(ctx context.Context) BootVolumeBackupArrayOutput {
 	return o
-}
-
-func (o BootVolumeBackupArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*BootVolumeBackup] {
-	return pulumix.Output[[]*BootVolumeBackup]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o BootVolumeBackupArrayOutput) Index(i pulumi.IntInput) BootVolumeBackupOutput {
@@ -495,12 +464,6 @@ func (o BootVolumeBackupMapOutput) ToBootVolumeBackupMapOutput() BootVolumeBacku
 
 func (o BootVolumeBackupMapOutput) ToBootVolumeBackupMapOutputWithContext(ctx context.Context) BootVolumeBackupMapOutput {
 	return o
-}
-
-func (o BootVolumeBackupMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*BootVolumeBackup] {
-	return pulumix.Output[map[string]*BootVolumeBackup]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o BootVolumeBackupMapOutput) MapIndex(k pulumi.StringInput) BootVolumeBackupOutput {

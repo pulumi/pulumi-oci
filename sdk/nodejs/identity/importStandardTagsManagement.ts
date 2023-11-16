@@ -70,7 +70,7 @@ export class ImportStandardTagsManagement extends pulumi.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly standardTagNamespaceName!: pulumi.Output<string>;
-    public /*out*/ readonly workRequestId!: pulumi.Output<string>;
+    public /*out*/ readonly workRequestId!: pulumi.Output<string | undefined>;
 
     /**
      * Create a ImportStandardTagsManagement resource with the given unique name, arguments, and options.

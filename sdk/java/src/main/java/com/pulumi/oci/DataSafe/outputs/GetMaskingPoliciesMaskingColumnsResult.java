@@ -30,7 +30,7 @@ public final class GetMaskingPoliciesMaskingColumnsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Indicates whether data masking is enabled for the masking column.
      * 
@@ -41,7 +41,7 @@ public final class GetMaskingPoliciesMaskingColumnsResult {
      * @return The list of masking_column_collection.
      * 
      */
-    private List<GetMaskingPoliciesMaskingColumnsMaskingColumnCollection> maskingColumnCollections;
+    private @Nullable List<GetMaskingPoliciesMaskingColumnsMaskingColumnCollection> maskingColumnCollections;
     /**
      * @return The group of the masking column. All the columns in a group are masked together to ensure  that the masked data across these columns continue to retain the same logical relationship.  For more details, check &lt;a href=https://docs.oracle.com/en/cloud/paas/data-safe/udscs/group-masking1.html#GUID-755056B9-9540-48C0-9491-262A44A85037&gt;Group Masking in the Data Safe documentation.&lt;/a&gt;
      * 
@@ -100,8 +100,8 @@ public final class GetMaskingPoliciesMaskingColumnsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Indicates whether data masking is enabled for the masking column.
@@ -118,7 +118,7 @@ public final class GetMaskingPoliciesMaskingColumnsResult {
      * 
      */
     public List<GetMaskingPoliciesMaskingColumnsMaskingColumnCollection> maskingColumnCollections() {
-        return this.maskingColumnCollections;
+        return this.maskingColumnCollections == null ? List.of() : this.maskingColumnCollections;
     }
     /**
      * @return The group of the masking column. All the columns in a group are masked together to ensure  that the masked data across these columns continue to retain the same logical relationship.  For more details, check &lt;a href=https://docs.oracle.com/en/cloud/paas/data-safe/udscs/group-masking1.html#GUID-755056B9-9540-48C0-9491-262A44A85037&gt;Group Masking in the Data Safe documentation.&lt;/a&gt;
@@ -190,10 +190,10 @@ public final class GetMaskingPoliciesMaskingColumnsResult {
         private @Nullable List<String> columnNames;
         private @Nullable List<String> dataTypes;
         private @Nullable List<GetMaskingPoliciesMaskingColumnsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable Boolean isMaskingEnabled;
         private @Nullable Boolean isSeedRequired;
-        private List<GetMaskingPoliciesMaskingColumnsMaskingColumnCollection> maskingColumnCollections;
+        private @Nullable List<GetMaskingPoliciesMaskingColumnsMaskingColumnCollection> maskingColumnCollections;
         private @Nullable List<String> maskingColumnGroups;
         private @Nullable String maskingColumnLifecycleState;
         private String maskingPolicyId;
@@ -253,8 +253,8 @@ public final class GetMaskingPoliciesMaskingColumnsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -268,8 +268,8 @@ public final class GetMaskingPoliciesMaskingColumnsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder maskingColumnCollections(List<GetMaskingPoliciesMaskingColumnsMaskingColumnCollection> maskingColumnCollections) {
-            this.maskingColumnCollections = Objects.requireNonNull(maskingColumnCollections);
+        public Builder maskingColumnCollections(@Nullable List<GetMaskingPoliciesMaskingColumnsMaskingColumnCollection> maskingColumnCollections) {
+            this.maskingColumnCollections = maskingColumnCollections;
             return this;
         }
         public Builder maskingColumnCollections(GetMaskingPoliciesMaskingColumnsMaskingColumnCollection... maskingColumnCollections) {

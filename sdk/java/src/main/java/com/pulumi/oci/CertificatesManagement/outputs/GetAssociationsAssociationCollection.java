@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.CertificatesManagement.outputs.GetAssociationsAssociationCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAssociationsAssociationCollection {
-    private List<GetAssociationsAssociationCollectionItem> items;
+    private @Nullable List<GetAssociationsAssociationCollectionItem> items;
 
     private GetAssociationsAssociationCollection() {}
     public List<GetAssociationsAssociationCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetAssociationsAssociationCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetAssociationsAssociationCollectionItem> items;
+        private @Nullable List<GetAssociationsAssociationCollectionItem> items;
         public Builder() {}
         public Builder(GetAssociationsAssociationCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetAssociationsAssociationCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetAssociationsAssociationCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetAssociationsAssociationCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetAssociationsAssociationCollectionItem... items) {

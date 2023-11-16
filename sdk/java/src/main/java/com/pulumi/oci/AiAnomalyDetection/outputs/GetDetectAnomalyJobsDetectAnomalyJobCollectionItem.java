@@ -12,6 +12,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDetectAnomalyJobsDetectAnomalyJobCollectionItem {
@@ -19,207 +21,207 @@ public final class GetDetectAnomalyJobsDetectAnomalyJobCollectionItem {
      * @return The ID of the compartment in which to list resources.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return Detect anomaly job description.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return A filter to return only resources that match the entire display name given.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return Id of the job.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Input details for detect anomaly job.
      * 
      */
-    private List<GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetail> inputDetails;
+    private @Nullable List<GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetail> inputDetails;
     /**
      * @return The current state details of the batch document job.
      * 
      */
-    private String lifecycleStateDetails;
+    private @Nullable String lifecycleStateDetails;
     /**
      * @return The ID of the trained model for which to list the resources.
      * 
      */
-    private String modelId;
+    private @Nullable String modelId;
     /**
      * @return Output details for detect anomaly job.
      * 
      */
-    private List<GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetail> outputDetails;
+    private @Nullable List<GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetail> outputDetails;
     /**
      * @return The ID of the project for which to list the objects.
      * 
      */
-    private String projectId;
+    private @Nullable String projectId;
     /**
      * @return The value that customer can adjust to control the sensitivity of anomaly detection
      * 
      */
-    private Double sensitivity;
+    private @Nullable Double sensitivity;
     /**
      * @return &lt;b&gt;Filter&lt;/b&gt; results by the specified lifecycle state. Must be a valid state for the resource type.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private @Nullable Map<String,Object> systemTags;
     /**
      * @return Job accepted time
      * 
      */
-    private String timeAccepted;
+    private @Nullable String timeAccepted;
     /**
      * @return Job finished time
      * 
      */
-    private String timeFinished;
+    private @Nullable String timeFinished;
     /**
      * @return Job started time
      * 
      */
-    private String timeStarted;
+    private @Nullable String timeStarted;
 
     private GetDetectAnomalyJobsDetectAnomalyJobCollectionItem() {}
     /**
      * @return The ID of the compartment in which to list resources.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return Detect anomaly job description.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return A filter to return only resources that match the entire display name given.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return Id of the job.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Input details for detect anomaly job.
      * 
      */
     public List<GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetail> inputDetails() {
-        return this.inputDetails;
+        return this.inputDetails == null ? List.of() : this.inputDetails;
     }
     /**
      * @return The current state details of the batch document job.
      * 
      */
-    public String lifecycleStateDetails() {
-        return this.lifecycleStateDetails;
+    public Optional<String> lifecycleStateDetails() {
+        return Optional.ofNullable(this.lifecycleStateDetails);
     }
     /**
      * @return The ID of the trained model for which to list the resources.
      * 
      */
-    public String modelId() {
-        return this.modelId;
+    public Optional<String> modelId() {
+        return Optional.ofNullable(this.modelId);
     }
     /**
      * @return Output details for detect anomaly job.
      * 
      */
     public List<GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetail> outputDetails() {
-        return this.outputDetails;
+        return this.outputDetails == null ? List.of() : this.outputDetails;
     }
     /**
      * @return The ID of the project for which to list the objects.
      * 
      */
-    public String projectId() {
-        return this.projectId;
+    public Optional<String> projectId() {
+        return Optional.ofNullable(this.projectId);
     }
     /**
      * @return The value that customer can adjust to control the sensitivity of anomaly detection
      * 
      */
-    public Double sensitivity() {
-        return this.sensitivity;
+    public Optional<Double> sensitivity() {
+        return Optional.ofNullable(this.sensitivity);
     }
     /**
      * @return &lt;b&gt;Filter&lt;/b&gt; results by the specified lifecycle state. Must be a valid state for the resource type.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     public Map<String,Object> systemTags() {
-        return this.systemTags;
+        return this.systemTags == null ? Map.of() : this.systemTags;
     }
     /**
      * @return Job accepted time
      * 
      */
-    public String timeAccepted() {
-        return this.timeAccepted;
+    public Optional<String> timeAccepted() {
+        return Optional.ofNullable(this.timeAccepted);
     }
     /**
      * @return Job finished time
      * 
      */
-    public String timeFinished() {
-        return this.timeFinished;
+    public Optional<String> timeFinished() {
+        return Optional.ofNullable(this.timeFinished);
     }
     /**
      * @return Job started time
      * 
      */
-    public String timeStarted() {
-        return this.timeStarted;
+    public Optional<String> timeStarted() {
+        return Optional.ofNullable(this.timeStarted);
     }
 
     public static Builder builder() {
@@ -231,23 +233,23 @@ public final class GetDetectAnomalyJobsDetectAnomalyJobCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private Map<String,Object> definedTags;
-        private String description;
-        private String displayName;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private List<GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetail> inputDetails;
-        private String lifecycleStateDetails;
-        private String modelId;
-        private List<GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetail> outputDetails;
-        private String projectId;
-        private Double sensitivity;
-        private String state;
-        private Map<String,Object> systemTags;
-        private String timeAccepted;
-        private String timeFinished;
-        private String timeStarted;
+        private @Nullable String compartmentId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String description;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable List<GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetail> inputDetails;
+        private @Nullable String lifecycleStateDetails;
+        private @Nullable String modelId;
+        private @Nullable List<GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetail> outputDetails;
+        private @Nullable String projectId;
+        private @Nullable Double sensitivity;
+        private @Nullable String state;
+        private @Nullable Map<String,Object> systemTags;
+        private @Nullable String timeAccepted;
+        private @Nullable String timeFinished;
+        private @Nullable String timeStarted;
         public Builder() {}
         public Builder(GetDetectAnomalyJobsDetectAnomalyJobCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -271,94 +273,94 @@ public final class GetDetectAnomalyJobsDetectAnomalyJobCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder inputDetails(List<GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetail> inputDetails) {
-            this.inputDetails = Objects.requireNonNull(inputDetails);
+        public Builder inputDetails(@Nullable List<GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetail> inputDetails) {
+            this.inputDetails = inputDetails;
             return this;
         }
         public Builder inputDetails(GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetail... inputDetails) {
             return inputDetails(List.of(inputDetails));
         }
         @CustomType.Setter
-        public Builder lifecycleStateDetails(String lifecycleStateDetails) {
-            this.lifecycleStateDetails = Objects.requireNonNull(lifecycleStateDetails);
+        public Builder lifecycleStateDetails(@Nullable String lifecycleStateDetails) {
+            this.lifecycleStateDetails = lifecycleStateDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder modelId(String modelId) {
-            this.modelId = Objects.requireNonNull(modelId);
+        public Builder modelId(@Nullable String modelId) {
+            this.modelId = modelId;
             return this;
         }
         @CustomType.Setter
-        public Builder outputDetails(List<GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetail> outputDetails) {
-            this.outputDetails = Objects.requireNonNull(outputDetails);
+        public Builder outputDetails(@Nullable List<GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetail> outputDetails) {
+            this.outputDetails = outputDetails;
             return this;
         }
         public Builder outputDetails(GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetail... outputDetails) {
             return outputDetails(List.of(outputDetails));
         }
         @CustomType.Setter
-        public Builder projectId(String projectId) {
-            this.projectId = Objects.requireNonNull(projectId);
+        public Builder projectId(@Nullable String projectId) {
+            this.projectId = projectId;
             return this;
         }
         @CustomType.Setter
-        public Builder sensitivity(Double sensitivity) {
-            this.sensitivity = Objects.requireNonNull(sensitivity);
+        public Builder sensitivity(@Nullable Double sensitivity) {
+            this.sensitivity = sensitivity;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+        public Builder systemTags(@Nullable Map<String,Object> systemTags) {
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
-        public Builder timeAccepted(String timeAccepted) {
-            this.timeAccepted = Objects.requireNonNull(timeAccepted);
+        public Builder timeAccepted(@Nullable String timeAccepted) {
+            this.timeAccepted = timeAccepted;
             return this;
         }
         @CustomType.Setter
-        public Builder timeFinished(String timeFinished) {
-            this.timeFinished = Objects.requireNonNull(timeFinished);
+        public Builder timeFinished(@Nullable String timeFinished) {
+            this.timeFinished = timeFinished;
             return this;
         }
         @CustomType.Setter
-        public Builder timeStarted(String timeStarted) {
-            this.timeStarted = Objects.requireNonNull(timeStarted);
+        public Builder timeStarted(@Nullable String timeStarted) {
+            this.timeStarted = timeStarted;
             return this;
         }
         public GetDetectAnomalyJobsDetectAnomalyJobCollectionItem build() {

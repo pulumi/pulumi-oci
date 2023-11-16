@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.CloudMigrations.outputs.GetMigrationAssetsMigrationAssetCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMigrationAssetsMigrationAssetCollection {
-    private List<GetMigrationAssetsMigrationAssetCollectionItem> items;
+    private @Nullable List<GetMigrationAssetsMigrationAssetCollectionItem> items;
 
     private GetMigrationAssetsMigrationAssetCollection() {}
     public List<GetMigrationAssetsMigrationAssetCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetMigrationAssetsMigrationAssetCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetMigrationAssetsMigrationAssetCollectionItem> items;
+        private @Nullable List<GetMigrationAssetsMigrationAssetCollectionItem> items;
         public Builder() {}
         public Builder(GetMigrationAssetsMigrationAssetCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetMigrationAssetsMigrationAssetCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetMigrationAssetsMigrationAssetCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetMigrationAssetsMigrationAssetCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetMigrationAssetsMigrationAssetCollectionItem... items) {

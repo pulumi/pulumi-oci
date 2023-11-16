@@ -159,7 +159,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string? Name;
         /// <summary>
         /// The credential's current state. After creating a DB credential, make sure its `lifecycleState` changes from CREATING to ACTIVE before using it.
@@ -176,7 +176,7 @@ namespace Pulumi.Oci.Identity
 
             ImmutableArray<Outputs.GetDbCredentialsFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? name,
 

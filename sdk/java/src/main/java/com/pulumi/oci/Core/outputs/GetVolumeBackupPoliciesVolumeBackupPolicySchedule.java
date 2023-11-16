@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetVolumeBackupPoliciesVolumeBackupPolicySchedule {
@@ -14,123 +16,123 @@ public final class GetVolumeBackupPoliciesVolumeBackupPolicySchedule {
      * @return The type of volume backup to create.
      * 
      */
-    private String backupType;
+    private @Nullable String backupType;
     /**
      * @return The day of the month to schedule the volume backup.
      * 
      */
-    private Integer dayOfMonth;
+    private @Nullable Integer dayOfMonth;
     /**
      * @return The day of the week to schedule the volume backup.
      * 
      */
-    private String dayOfWeek;
+    private @Nullable String dayOfWeek;
     /**
      * @return The hour of the day to schedule the volume backup.
      * 
      */
-    private Integer hourOfDay;
+    private @Nullable Integer hourOfDay;
     /**
      * @return The month of the year to schedule the volume backup.
      * 
      */
-    private String month;
+    private @Nullable String month;
     /**
      * @return The number of seconds that the volume backup start time should be shifted from the default interval boundaries specified by the period. The volume backup start time is the frequency start time plus the offset.
      * 
      */
-    private Integer offsetSeconds;
+    private @Nullable Integer offsetSeconds;
     /**
      * @return Indicates how the offset is defined. If value is `STRUCTURED`, then `hourOfDay`, `dayOfWeek`, `dayOfMonth`, and `month` fields are used and `offsetSeconds` will be ignored in requests and users should ignore its value from the responses.
      * 
      */
-    private String offsetType;
+    private @Nullable String offsetType;
     /**
      * @return The volume backup frequency.
      * 
      */
-    private String period;
+    private @Nullable String period;
     /**
      * @return How long, in seconds, to keep the volume backups created by this schedule.
      * 
      */
-    private Integer retentionSeconds;
+    private @Nullable Integer retentionSeconds;
     /**
      * @return Specifies what time zone is the schedule in
      * 
      */
-    private String timeZone;
+    private @Nullable String timeZone;
 
     private GetVolumeBackupPoliciesVolumeBackupPolicySchedule() {}
     /**
      * @return The type of volume backup to create.
      * 
      */
-    public String backupType() {
-        return this.backupType;
+    public Optional<String> backupType() {
+        return Optional.ofNullable(this.backupType);
     }
     /**
      * @return The day of the month to schedule the volume backup.
      * 
      */
-    public Integer dayOfMonth() {
-        return this.dayOfMonth;
+    public Optional<Integer> dayOfMonth() {
+        return Optional.ofNullable(this.dayOfMonth);
     }
     /**
      * @return The day of the week to schedule the volume backup.
      * 
      */
-    public String dayOfWeek() {
-        return this.dayOfWeek;
+    public Optional<String> dayOfWeek() {
+        return Optional.ofNullable(this.dayOfWeek);
     }
     /**
      * @return The hour of the day to schedule the volume backup.
      * 
      */
-    public Integer hourOfDay() {
-        return this.hourOfDay;
+    public Optional<Integer> hourOfDay() {
+        return Optional.ofNullable(this.hourOfDay);
     }
     /**
      * @return The month of the year to schedule the volume backup.
      * 
      */
-    public String month() {
-        return this.month;
+    public Optional<String> month() {
+        return Optional.ofNullable(this.month);
     }
     /**
      * @return The number of seconds that the volume backup start time should be shifted from the default interval boundaries specified by the period. The volume backup start time is the frequency start time plus the offset.
      * 
      */
-    public Integer offsetSeconds() {
-        return this.offsetSeconds;
+    public Optional<Integer> offsetSeconds() {
+        return Optional.ofNullable(this.offsetSeconds);
     }
     /**
      * @return Indicates how the offset is defined. If value is `STRUCTURED`, then `hourOfDay`, `dayOfWeek`, `dayOfMonth`, and `month` fields are used and `offsetSeconds` will be ignored in requests and users should ignore its value from the responses.
      * 
      */
-    public String offsetType() {
-        return this.offsetType;
+    public Optional<String> offsetType() {
+        return Optional.ofNullable(this.offsetType);
     }
     /**
      * @return The volume backup frequency.
      * 
      */
-    public String period() {
-        return this.period;
+    public Optional<String> period() {
+        return Optional.ofNullable(this.period);
     }
     /**
      * @return How long, in seconds, to keep the volume backups created by this schedule.
      * 
      */
-    public Integer retentionSeconds() {
-        return this.retentionSeconds;
+    public Optional<Integer> retentionSeconds() {
+        return Optional.ofNullable(this.retentionSeconds);
     }
     /**
      * @return Specifies what time zone is the schedule in
      * 
      */
-    public String timeZone() {
-        return this.timeZone;
+    public Optional<String> timeZone() {
+        return Optional.ofNullable(this.timeZone);
     }
 
     public static Builder builder() {
@@ -142,16 +144,16 @@ public final class GetVolumeBackupPoliciesVolumeBackupPolicySchedule {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String backupType;
-        private Integer dayOfMonth;
-        private String dayOfWeek;
-        private Integer hourOfDay;
-        private String month;
-        private Integer offsetSeconds;
-        private String offsetType;
-        private String period;
-        private Integer retentionSeconds;
-        private String timeZone;
+        private @Nullable String backupType;
+        private @Nullable Integer dayOfMonth;
+        private @Nullable String dayOfWeek;
+        private @Nullable Integer hourOfDay;
+        private @Nullable String month;
+        private @Nullable Integer offsetSeconds;
+        private @Nullable String offsetType;
+        private @Nullable String period;
+        private @Nullable Integer retentionSeconds;
+        private @Nullable String timeZone;
         public Builder() {}
         public Builder(GetVolumeBackupPoliciesVolumeBackupPolicySchedule defaults) {
     	      Objects.requireNonNull(defaults);
@@ -168,53 +170,53 @@ public final class GetVolumeBackupPoliciesVolumeBackupPolicySchedule {
         }
 
         @CustomType.Setter
-        public Builder backupType(String backupType) {
-            this.backupType = Objects.requireNonNull(backupType);
+        public Builder backupType(@Nullable String backupType) {
+            this.backupType = backupType;
             return this;
         }
         @CustomType.Setter
-        public Builder dayOfMonth(Integer dayOfMonth) {
-            this.dayOfMonth = Objects.requireNonNull(dayOfMonth);
+        public Builder dayOfMonth(@Nullable Integer dayOfMonth) {
+            this.dayOfMonth = dayOfMonth;
             return this;
         }
         @CustomType.Setter
-        public Builder dayOfWeek(String dayOfWeek) {
-            this.dayOfWeek = Objects.requireNonNull(dayOfWeek);
+        public Builder dayOfWeek(@Nullable String dayOfWeek) {
+            this.dayOfWeek = dayOfWeek;
             return this;
         }
         @CustomType.Setter
-        public Builder hourOfDay(Integer hourOfDay) {
-            this.hourOfDay = Objects.requireNonNull(hourOfDay);
+        public Builder hourOfDay(@Nullable Integer hourOfDay) {
+            this.hourOfDay = hourOfDay;
             return this;
         }
         @CustomType.Setter
-        public Builder month(String month) {
-            this.month = Objects.requireNonNull(month);
+        public Builder month(@Nullable String month) {
+            this.month = month;
             return this;
         }
         @CustomType.Setter
-        public Builder offsetSeconds(Integer offsetSeconds) {
-            this.offsetSeconds = Objects.requireNonNull(offsetSeconds);
+        public Builder offsetSeconds(@Nullable Integer offsetSeconds) {
+            this.offsetSeconds = offsetSeconds;
             return this;
         }
         @CustomType.Setter
-        public Builder offsetType(String offsetType) {
-            this.offsetType = Objects.requireNonNull(offsetType);
+        public Builder offsetType(@Nullable String offsetType) {
+            this.offsetType = offsetType;
             return this;
         }
         @CustomType.Setter
-        public Builder period(String period) {
-            this.period = Objects.requireNonNull(period);
+        public Builder period(@Nullable String period) {
+            this.period = period;
             return this;
         }
         @CustomType.Setter
-        public Builder retentionSeconds(Integer retentionSeconds) {
-            this.retentionSeconds = Objects.requireNonNull(retentionSeconds);
+        public Builder retentionSeconds(@Nullable Integer retentionSeconds) {
+            this.retentionSeconds = retentionSeconds;
             return this;
         }
         @CustomType.Setter
-        public Builder timeZone(String timeZone) {
-            this.timeZone = Objects.requireNonNull(timeZone);
+        public Builder timeZone(@Nullable String timeZone) {
+            this.timeZone = timeZone;
             return this;
         }
         public GetVolumeBackupPoliciesVolumeBackupPolicySchedule build() {

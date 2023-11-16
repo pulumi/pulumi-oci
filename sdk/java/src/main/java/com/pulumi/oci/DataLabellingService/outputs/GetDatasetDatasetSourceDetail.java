@@ -6,6 +6,8 @@ package com.pulumi.oci.DataLabellingService.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDatasetDatasetSourceDetail {
@@ -13,51 +15,51 @@ public final class GetDatasetDatasetSourceDetail {
      * @return Bucket name
      * 
      */
-    private String bucket;
+    private @Nullable String bucket;
     /**
      * @return Bucket namespace name
      * 
      */
-    private String namespace;
+    private @Nullable String namespace;
     /**
      * @return A common path prefix shared by the objects that make up the dataset. Except for the CSV file type, records are not generated for the objects whose names exactly match with the prefix.
      * 
      */
-    private String prefix;
+    private @Nullable String prefix;
     /**
      * @return The type of data source. OBJECT_STORAGE - The source details for an object storage bucket.
      * 
      */
-    private String sourceType;
+    private @Nullable String sourceType;
 
     private GetDatasetDatasetSourceDetail() {}
     /**
      * @return Bucket name
      * 
      */
-    public String bucket() {
-        return this.bucket;
+    public Optional<String> bucket() {
+        return Optional.ofNullable(this.bucket);
     }
     /**
      * @return Bucket namespace name
      * 
      */
-    public String namespace() {
-        return this.namespace;
+    public Optional<String> namespace() {
+        return Optional.ofNullable(this.namespace);
     }
     /**
      * @return A common path prefix shared by the objects that make up the dataset. Except for the CSV file type, records are not generated for the objects whose names exactly match with the prefix.
      * 
      */
-    public String prefix() {
-        return this.prefix;
+    public Optional<String> prefix() {
+        return Optional.ofNullable(this.prefix);
     }
     /**
      * @return The type of data source. OBJECT_STORAGE - The source details for an object storage bucket.
      * 
      */
-    public String sourceType() {
-        return this.sourceType;
+    public Optional<String> sourceType() {
+        return Optional.ofNullable(this.sourceType);
     }
 
     public static Builder builder() {
@@ -69,10 +71,10 @@ public final class GetDatasetDatasetSourceDetail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String bucket;
-        private String namespace;
-        private String prefix;
-        private String sourceType;
+        private @Nullable String bucket;
+        private @Nullable String namespace;
+        private @Nullable String prefix;
+        private @Nullable String sourceType;
         public Builder() {}
         public Builder(GetDatasetDatasetSourceDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -83,23 +85,23 @@ public final class GetDatasetDatasetSourceDetail {
         }
 
         @CustomType.Setter
-        public Builder bucket(String bucket) {
-            this.bucket = Objects.requireNonNull(bucket);
+        public Builder bucket(@Nullable String bucket) {
+            this.bucket = bucket;
             return this;
         }
         @CustomType.Setter
-        public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+        public Builder namespace(@Nullable String namespace) {
+            this.namespace = namespace;
             return this;
         }
         @CustomType.Setter
-        public Builder prefix(String prefix) {
-            this.prefix = Objects.requireNonNull(prefix);
+        public Builder prefix(@Nullable String prefix) {
+            this.prefix = prefix;
             return this;
         }
         @CustomType.Setter
-        public Builder sourceType(String sourceType) {
-            this.sourceType = Objects.requireNonNull(sourceType);
+        public Builder sourceType(@Nullable String sourceType) {
+            this.sourceType = sourceType;
             return this;
         }
         public GetDatasetDatasetSourceDetail build() {

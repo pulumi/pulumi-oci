@@ -6,6 +6,8 @@ package com.pulumi.oci.Identity.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDevice {
@@ -13,111 +15,111 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
      * @return The authentication method.
      * 
      */
-    private String authenticationMethod;
+    private @Nullable String authenticationMethod;
     /**
      * @return A human readable name, primarily used for display purposes.
      * 
      */
-    private String display;
+    private @Nullable String display;
     /**
      * @return The device authentication factor status.
      * 
      */
-    private String factorStatus;
+    private @Nullable String factorStatus;
     /**
      * @return Authentication Factor Type
      * 
      */
-    private String factorType;
+    private @Nullable String factorType;
     /**
      * @return The last sync time for device.
      * 
      */
-    private String lastSyncTime;
+    private @Nullable String lastSyncTime;
     /**
      * @return User Token URI
      * 
      */
-    private String ref;
+    private @Nullable String ref;
     /**
      * @return A supplemental status indicating the reason why a user is disabled
      * 
      */
-    private String status;
+    private @Nullable String status;
     /**
      * @return The third-party factor vendor name.
      * 
      */
-    private String thirdPartyVendorName;
+    private @Nullable String thirdPartyVendorName;
     /**
      * @return The value of a X509 certificate.
      * 
      */
-    private String value;
+    private @Nullable String value;
 
     private GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDevice() {}
     /**
      * @return The authentication method.
      * 
      */
-    public String authenticationMethod() {
-        return this.authenticationMethod;
+    public Optional<String> authenticationMethod() {
+        return Optional.ofNullable(this.authenticationMethod);
     }
     /**
      * @return A human readable name, primarily used for display purposes.
      * 
      */
-    public String display() {
-        return this.display;
+    public Optional<String> display() {
+        return Optional.ofNullable(this.display);
     }
     /**
      * @return The device authentication factor status.
      * 
      */
-    public String factorStatus() {
-        return this.factorStatus;
+    public Optional<String> factorStatus() {
+        return Optional.ofNullable(this.factorStatus);
     }
     /**
      * @return Authentication Factor Type
      * 
      */
-    public String factorType() {
-        return this.factorType;
+    public Optional<String> factorType() {
+        return Optional.ofNullable(this.factorType);
     }
     /**
      * @return The last sync time for device.
      * 
      */
-    public String lastSyncTime() {
-        return this.lastSyncTime;
+    public Optional<String> lastSyncTime() {
+        return Optional.ofNullable(this.lastSyncTime);
     }
     /**
      * @return User Token URI
      * 
      */
-    public String ref() {
-        return this.ref;
+    public Optional<String> ref() {
+        return Optional.ofNullable(this.ref);
     }
     /**
      * @return A supplemental status indicating the reason why a user is disabled
      * 
      */
-    public String status() {
-        return this.status;
+    public Optional<String> status() {
+        return Optional.ofNullable(this.status);
     }
     /**
      * @return The third-party factor vendor name.
      * 
      */
-    public String thirdPartyVendorName() {
-        return this.thirdPartyVendorName;
+    public Optional<String> thirdPartyVendorName() {
+        return Optional.ofNullable(this.thirdPartyVendorName);
     }
     /**
      * @return The value of a X509 certificate.
      * 
      */
-    public String value() {
-        return this.value;
+    public Optional<String> value() {
+        return Optional.ofNullable(this.value);
     }
 
     public static Builder builder() {
@@ -129,15 +131,15 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
     }
     @CustomType.Builder
     public static final class Builder {
-        private String authenticationMethod;
-        private String display;
-        private String factorStatus;
-        private String factorType;
-        private String lastSyncTime;
-        private String ref;
-        private String status;
-        private String thirdPartyVendorName;
-        private String value;
+        private @Nullable String authenticationMethod;
+        private @Nullable String display;
+        private @Nullable String factorStatus;
+        private @Nullable String factorType;
+        private @Nullable String lastSyncTime;
+        private @Nullable String ref;
+        private @Nullable String status;
+        private @Nullable String thirdPartyVendorName;
+        private @Nullable String value;
         public Builder() {}
         public Builder(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDevice defaults) {
     	      Objects.requireNonNull(defaults);
@@ -153,48 +155,48 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
         }
 
         @CustomType.Setter
-        public Builder authenticationMethod(String authenticationMethod) {
-            this.authenticationMethod = Objects.requireNonNull(authenticationMethod);
+        public Builder authenticationMethod(@Nullable String authenticationMethod) {
+            this.authenticationMethod = authenticationMethod;
             return this;
         }
         @CustomType.Setter
-        public Builder display(String display) {
-            this.display = Objects.requireNonNull(display);
+        public Builder display(@Nullable String display) {
+            this.display = display;
             return this;
         }
         @CustomType.Setter
-        public Builder factorStatus(String factorStatus) {
-            this.factorStatus = Objects.requireNonNull(factorStatus);
+        public Builder factorStatus(@Nullable String factorStatus) {
+            this.factorStatus = factorStatus;
             return this;
         }
         @CustomType.Setter
-        public Builder factorType(String factorType) {
-            this.factorType = Objects.requireNonNull(factorType);
+        public Builder factorType(@Nullable String factorType) {
+            this.factorType = factorType;
             return this;
         }
         @CustomType.Setter
-        public Builder lastSyncTime(String lastSyncTime) {
-            this.lastSyncTime = Objects.requireNonNull(lastSyncTime);
+        public Builder lastSyncTime(@Nullable String lastSyncTime) {
+            this.lastSyncTime = lastSyncTime;
             return this;
         }
         @CustomType.Setter
-        public Builder ref(String ref) {
-            this.ref = Objects.requireNonNull(ref);
+        public Builder ref(@Nullable String ref) {
+            this.ref = ref;
             return this;
         }
         @CustomType.Setter
-        public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+        public Builder status(@Nullable String status) {
+            this.status = status;
             return this;
         }
         @CustomType.Setter
-        public Builder thirdPartyVendorName(String thirdPartyVendorName) {
-            this.thirdPartyVendorName = Objects.requireNonNull(thirdPartyVendorName);
+        public Builder thirdPartyVendorName(@Nullable String thirdPartyVendorName) {
+            this.thirdPartyVendorName = thirdPartyVendorName;
             return this;
         }
         @CustomType.Setter
-        public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+        public Builder value(@Nullable String value) {
+            this.value = value;
             return this;
         }
         public GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDevice build() {

@@ -56,11 +56,11 @@ export interface GetManagementAgentPluginCountResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * List in which each item describes an aggregation of Managment Agent Plugins
      */
-    readonly items: outputs.ManagementAgent.GetManagementAgentPluginCountItem[];
+    readonly items?: outputs.ManagementAgent.GetManagementAgentPluginCountItem[];
 }
 /**
  * This data source provides details about a specific Management Agent Plugin Count resource in Oracle Cloud Infrastructure Management Agent service.

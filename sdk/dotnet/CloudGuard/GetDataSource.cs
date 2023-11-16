@@ -108,7 +108,7 @@ namespace Pulumi.Oci.CloudGuard
         /// <summary>
         /// CompartmentId of Data source.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Details specific to the data source type.
         /// </summary>
@@ -120,24 +120,24 @@ namespace Pulumi.Oci.CloudGuard
         /// <summary>
         /// Possible type of dataSourceFeed Provider(LoggingQuery)
         /// </summary>
-        public readonly string DataSourceFeedProvider;
+        public readonly string? DataSourceFeedProvider;
         public readonly string DataSourceId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// DisplayName of Data source.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// Ocid for Data source
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Information about the region and status of query replication
         /// </summary>
@@ -145,55 +145,55 @@ namespace Pulumi.Oci.CloudGuard
         /// <summary>
         /// The current state of the resource.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// Status of data Source
         /// </summary>
-        public readonly string Status;
+        public readonly string? Status;
         /// <summary>
         /// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, object>? SystemTags;
         /// <summary>
         /// The date and time the Data source was created. Format defined by RFC3339.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The date and time the Data source was updated. Format defined by RFC3339.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
 
         [OutputConstructor]
         private GetDataSourceResult(
-            string compartmentId,
+            string? compartmentId,
 
             ImmutableArray<Outputs.GetDataSourceDataSourceDetailResult> dataSourceDetails,
 
             ImmutableArray<Outputs.GetDataSourceDataSourceDetectorMappingInfoResult> dataSourceDetectorMappingInfos,
 
-            string dataSourceFeedProvider,
+            string? dataSourceFeedProvider,
 
             string dataSourceId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetDataSourceRegionStatusDetailResult> regionStatusDetails,
 
-            string state,
+            string? state,
 
-            string status,
+            string? status,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, object>? systemTags,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated)
+            string? timeUpdated)
         {
             CompartmentId = compartmentId;
             DataSourceDetails = dataSourceDetails;

@@ -71,66 +71,42 @@ class GetLogResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment that the resource belongs to.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter
-    def configurations(self) -> Sequence['outputs.GetLogConfigurationResult']:
-        """
-        Log object configuration.
-        """
+    def configurations(self) -> Optional[Sequence['outputs.GetLogConfigurationResult']]:
         return pulumi.get(self, "configurations")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The user-friendly display name. This must be unique within the enclosing resource, and it's changeable. Avoid entering confidential information.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the resource.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isEnabled")
-    def is_enabled(self) -> bool:
-        """
-        Whether or not this resource is currently enabled.
-        """
+    def is_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_enabled")
 
     @property
     @pulumi.getter(name="logGroupId")
     def log_group_id(self) -> str:
-        """
-        Log group OCID.
-        """
         return pulumi.get(self, "log_group_id")
 
     @property
@@ -140,50 +116,32 @@ class GetLogResult:
 
     @property
     @pulumi.getter(name="logType")
-    def log_type(self) -> str:
-        """
-        The logType that the log object is for, whether custom or service.
-        """
+    def log_type(self) -> Optional[str]:
         return pulumi.get(self, "log_type")
 
     @property
     @pulumi.getter(name="retentionDuration")
-    def retention_duration(self) -> int:
-        """
-        Log retention duration in 30-day increments (30, 60, 90 and so on until 180).
-        """
+    def retention_duration(self) -> Optional[int]:
         return pulumi.get(self, "retention_duration")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The pipeline state.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="tenancyId")
-    def tenancy_id(self) -> str:
-        """
-        The OCID of the tenancy.
-        """
+    def tenancy_id(self) -> Optional[str]:
         return pulumi.get(self, "tenancy_id")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        Time the resource was created.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeLastModified")
-    def time_last_modified(self) -> str:
-        """
-        Time the resource was last modified.
-        """
+    def time_last_modified(self) -> Optional[str]:
         return pulumi.get(self, "time_last_modified")
 
 
@@ -214,23 +172,7 @@ def get_log(log_group_id: Optional[str] = None,
             log_id: Optional[str] = None,
             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetLogResult:
     """
-    This data source provides details about a specific Log resource in Oracle Cloud Infrastructure Logging service.
-
-    Gets the log object configuration for the log object OCID.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_log = oci.Logging.get_log(log_group_id=oci_logging_log_group["test_log_group"]["id"],
-        log_id=oci_logging_log["test_log"]["id"])
-    ```
-
-
-    :param str log_group_id: OCID of a log group to work with.
-    :param str log_id: OCID of a log to work with.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['logGroupId'] = log_group_id
@@ -261,22 +203,6 @@ def get_log_output(log_group_id: Optional[pulumi.Input[str]] = None,
                    log_id: Optional[pulumi.Input[str]] = None,
                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetLogResult]:
     """
-    This data source provides details about a specific Log resource in Oracle Cloud Infrastructure Logging service.
-
-    Gets the log object configuration for the log object OCID.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_log = oci.Logging.get_log(log_group_id=oci_logging_log_group["test_log_group"]["id"],
-        log_id=oci_logging_log["test_log"]["id"])
-    ```
-
-
-    :param str log_group_id: OCID of a log group to work with.
-    :param str log_id: OCID of a log to work with.
+    Use this data source to access information about an existing resource.
     """
     ...

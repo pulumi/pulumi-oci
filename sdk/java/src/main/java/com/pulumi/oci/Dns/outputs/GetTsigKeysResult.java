@@ -39,7 +39,7 @@ public final class GetTsigKeysResult {
      * @return The list of tsig_keys.
      * 
      */
-    private List<GetTsigKeysTsigKey> tsigKeys;
+    private @Nullable List<GetTsigKeysTsigKey> tsigKeys;
 
     private GetTsigKeysResult() {}
     /**
@@ -78,7 +78,7 @@ public final class GetTsigKeysResult {
      * 
      */
     public List<GetTsigKeysTsigKey> tsigKeys() {
-        return this.tsigKeys;
+        return this.tsigKeys == null ? List.of() : this.tsigKeys;
     }
 
     public static Builder builder() {
@@ -95,7 +95,7 @@ public final class GetTsigKeysResult {
         private @Nullable String id;
         private @Nullable String name;
         private @Nullable String state;
-        private List<GetTsigKeysTsigKey> tsigKeys;
+        private @Nullable List<GetTsigKeysTsigKey> tsigKeys;
         public Builder() {}
         public Builder(GetTsigKeysResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -136,8 +136,8 @@ public final class GetTsigKeysResult {
             return this;
         }
         @CustomType.Setter
-        public Builder tsigKeys(List<GetTsigKeysTsigKey> tsigKeys) {
-            this.tsigKeys = Objects.requireNonNull(tsigKeys);
+        public Builder tsigKeys(@Nullable List<GetTsigKeysTsigKey> tsigKeys) {
+            this.tsigKeys = tsigKeys;
             return this;
         }
         public Builder tsigKeys(GetTsigKeysTsigKey... tsigKeys) {

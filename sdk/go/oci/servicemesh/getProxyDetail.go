@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Proxy Detail resource in Oracle Cloud Infrastructure Service Mesh service.
@@ -52,9 +51,9 @@ func GetProxyDetail(ctx *pulumi.Context, opts ...pulumi.InvokeOption) (*GetProxy
 // A collection of values returned by getProxyDetail.
 type GetProxyDetailResult struct {
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Proxy container image version to be deployed.
-	ProxyImage string `pulumi:"proxyImage"`
+	ProxyImage *string `pulumi:"proxyImage"`
 }
 
 func GetProxyDetailOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetProxyDetailResultOutput {
@@ -83,20 +82,14 @@ func (o GetProxyDetailResultOutput) ToGetProxyDetailResultOutputWithContext(ctx 
 	return o
 }
 
-func (o GetProxyDetailResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetProxyDetailResult] {
-	return pulumix.Output[GetProxyDetailResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The provider-assigned unique ID for this managed resource.
-func (o GetProxyDetailResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProxyDetailResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetProxyDetailResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProxyDetailResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Proxy container image version to be deployed.
-func (o GetProxyDetailResultOutput) ProxyImage() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProxyDetailResult) string { return v.ProxyImage }).(pulumi.StringOutput)
+func (o GetProxyDetailResultOutput) ProxyImage() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProxyDetailResult) *string { return v.ProxyImage }).(pulumi.StringPtrOutput)
 }
 
 func init() {

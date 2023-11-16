@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type VirtualNetwork struct {
@@ -18,23 +17,23 @@ type VirtualNetwork struct {
 
 	Byoipv6cidrBlocks            pulumi.StringArrayOutput                   `pulumi:"byoipv6cidrBlocks"`
 	Byoipv6cidrDetails           VirtualNetworkByoipv6cidrDetailArrayOutput `pulumi:"byoipv6cidrDetails"`
-	CidrBlock                    pulumi.StringOutput                        `pulumi:"cidrBlock"`
+	CidrBlock                    pulumi.StringPtrOutput                     `pulumi:"cidrBlock"`
 	CidrBlocks                   pulumi.StringArrayOutput                   `pulumi:"cidrBlocks"`
 	CompartmentId                pulumi.StringOutput                        `pulumi:"compartmentId"`
-	DefaultDhcpOptionsId         pulumi.StringOutput                        `pulumi:"defaultDhcpOptionsId"`
-	DefaultRouteTableId          pulumi.StringOutput                        `pulumi:"defaultRouteTableId"`
-	DefaultSecurityListId        pulumi.StringOutput                        `pulumi:"defaultSecurityListId"`
+	DefaultDhcpOptionsId         pulumi.StringPtrOutput                     `pulumi:"defaultDhcpOptionsId"`
+	DefaultRouteTableId          pulumi.StringPtrOutput                     `pulumi:"defaultRouteTableId"`
+	DefaultSecurityListId        pulumi.StringPtrOutput                     `pulumi:"defaultSecurityListId"`
 	DefinedTags                  pulumi.MapOutput                           `pulumi:"definedTags"`
-	DisplayName                  pulumi.StringOutput                        `pulumi:"displayName"`
-	DnsLabel                     pulumi.StringOutput                        `pulumi:"dnsLabel"`
+	DisplayName                  pulumi.StringPtrOutput                     `pulumi:"displayName"`
+	DnsLabel                     pulumi.StringPtrOutput                     `pulumi:"dnsLabel"`
 	FreeformTags                 pulumi.MapOutput                           `pulumi:"freeformTags"`
 	Ipv6cidrBlocks               pulumi.StringArrayOutput                   `pulumi:"ipv6cidrBlocks"`
 	Ipv6privateCidrBlocks        pulumi.StringArrayOutput                   `pulumi:"ipv6privateCidrBlocks"`
-	IsIpv6enabled                pulumi.BoolOutput                          `pulumi:"isIpv6enabled"`
-	IsOracleGuaAllocationEnabled pulumi.BoolOutput                          `pulumi:"isOracleGuaAllocationEnabled"`
-	State                        pulumi.StringOutput                        `pulumi:"state"`
-	TimeCreated                  pulumi.StringOutput                        `pulumi:"timeCreated"`
-	VcnDomainName                pulumi.StringOutput                        `pulumi:"vcnDomainName"`
+	IsIpv6enabled                pulumi.BoolPtrOutput                       `pulumi:"isIpv6enabled"`
+	IsOracleGuaAllocationEnabled pulumi.BoolPtrOutput                       `pulumi:"isOracleGuaAllocationEnabled"`
+	State                        pulumi.StringPtrOutput                     `pulumi:"state"`
+	TimeCreated                  pulumi.StringPtrOutput                     `pulumi:"timeCreated"`
+	VcnDomainName                pulumi.StringPtrOutput                     `pulumi:"vcnDomainName"`
 }
 
 // NewVirtualNetwork registers a new resource with the given unique name, arguments, and options.
@@ -169,12 +168,6 @@ func (i *VirtualNetwork) ToVirtualNetworkOutputWithContext(ctx context.Context) 
 	return pulumi.ToOutputWithContext(ctx, i).(VirtualNetworkOutput)
 }
 
-func (i *VirtualNetwork) ToOutput(ctx context.Context) pulumix.Output[*VirtualNetwork] {
-	return pulumix.Output[*VirtualNetwork]{
-		OutputState: i.ToVirtualNetworkOutputWithContext(ctx).OutputState,
-	}
-}
-
 // VirtualNetworkArrayInput is an input type that accepts VirtualNetworkArray and VirtualNetworkArrayOutput values.
 // You can construct a concrete instance of `VirtualNetworkArrayInput` via:
 //
@@ -198,12 +191,6 @@ func (i VirtualNetworkArray) ToVirtualNetworkArrayOutput() VirtualNetworkArrayOu
 
 func (i VirtualNetworkArray) ToVirtualNetworkArrayOutputWithContext(ctx context.Context) VirtualNetworkArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(VirtualNetworkArrayOutput)
-}
-
-func (i VirtualNetworkArray) ToOutput(ctx context.Context) pulumix.Output[[]*VirtualNetwork] {
-	return pulumix.Output[[]*VirtualNetwork]{
-		OutputState: i.ToVirtualNetworkArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // VirtualNetworkMapInput is an input type that accepts VirtualNetworkMap and VirtualNetworkMapOutput values.
@@ -231,12 +218,6 @@ func (i VirtualNetworkMap) ToVirtualNetworkMapOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(VirtualNetworkMapOutput)
 }
 
-func (i VirtualNetworkMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*VirtualNetwork] {
-	return pulumix.Output[map[string]*VirtualNetwork]{
-		OutputState: i.ToVirtualNetworkMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type VirtualNetworkOutput struct{ *pulumi.OutputState }
 
 func (VirtualNetworkOutput) ElementType() reflect.Type {
@@ -251,12 +232,6 @@ func (o VirtualNetworkOutput) ToVirtualNetworkOutputWithContext(ctx context.Cont
 	return o
 }
 
-func (o VirtualNetworkOutput) ToOutput(ctx context.Context) pulumix.Output[*VirtualNetwork] {
-	return pulumix.Output[*VirtualNetwork]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o VirtualNetworkOutput) Byoipv6cidrBlocks() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *VirtualNetwork) pulumi.StringArrayOutput { return v.Byoipv6cidrBlocks }).(pulumi.StringArrayOutput)
 }
@@ -265,8 +240,8 @@ func (o VirtualNetworkOutput) Byoipv6cidrDetails() VirtualNetworkByoipv6cidrDeta
 	return o.ApplyT(func(v *VirtualNetwork) VirtualNetworkByoipv6cidrDetailArrayOutput { return v.Byoipv6cidrDetails }).(VirtualNetworkByoipv6cidrDetailArrayOutput)
 }
 
-func (o VirtualNetworkOutput) CidrBlock() pulumi.StringOutput {
-	return o.ApplyT(func(v *VirtualNetwork) pulumi.StringOutput { return v.CidrBlock }).(pulumi.StringOutput)
+func (o VirtualNetworkOutput) CidrBlock() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VirtualNetwork) pulumi.StringPtrOutput { return v.CidrBlock }).(pulumi.StringPtrOutput)
 }
 
 func (o VirtualNetworkOutput) CidrBlocks() pulumi.StringArrayOutput {
@@ -277,28 +252,28 @@ func (o VirtualNetworkOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *VirtualNetwork) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-func (o VirtualNetworkOutput) DefaultDhcpOptionsId() pulumi.StringOutput {
-	return o.ApplyT(func(v *VirtualNetwork) pulumi.StringOutput { return v.DefaultDhcpOptionsId }).(pulumi.StringOutput)
+func (o VirtualNetworkOutput) DefaultDhcpOptionsId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VirtualNetwork) pulumi.StringPtrOutput { return v.DefaultDhcpOptionsId }).(pulumi.StringPtrOutput)
 }
 
-func (o VirtualNetworkOutput) DefaultRouteTableId() pulumi.StringOutput {
-	return o.ApplyT(func(v *VirtualNetwork) pulumi.StringOutput { return v.DefaultRouteTableId }).(pulumi.StringOutput)
+func (o VirtualNetworkOutput) DefaultRouteTableId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VirtualNetwork) pulumi.StringPtrOutput { return v.DefaultRouteTableId }).(pulumi.StringPtrOutput)
 }
 
-func (o VirtualNetworkOutput) DefaultSecurityListId() pulumi.StringOutput {
-	return o.ApplyT(func(v *VirtualNetwork) pulumi.StringOutput { return v.DefaultSecurityListId }).(pulumi.StringOutput)
+func (o VirtualNetworkOutput) DefaultSecurityListId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VirtualNetwork) pulumi.StringPtrOutput { return v.DefaultSecurityListId }).(pulumi.StringPtrOutput)
 }
 
 func (o VirtualNetworkOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *VirtualNetwork) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
-func (o VirtualNetworkOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *VirtualNetwork) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o VirtualNetworkOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VirtualNetwork) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
-func (o VirtualNetworkOutput) DnsLabel() pulumi.StringOutput {
-	return o.ApplyT(func(v *VirtualNetwork) pulumi.StringOutput { return v.DnsLabel }).(pulumi.StringOutput)
+func (o VirtualNetworkOutput) DnsLabel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VirtualNetwork) pulumi.StringPtrOutput { return v.DnsLabel }).(pulumi.StringPtrOutput)
 }
 
 func (o VirtualNetworkOutput) FreeformTags() pulumi.MapOutput {
@@ -313,24 +288,24 @@ func (o VirtualNetworkOutput) Ipv6privateCidrBlocks() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *VirtualNetwork) pulumi.StringArrayOutput { return v.Ipv6privateCidrBlocks }).(pulumi.StringArrayOutput)
 }
 
-func (o VirtualNetworkOutput) IsIpv6enabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v *VirtualNetwork) pulumi.BoolOutput { return v.IsIpv6enabled }).(pulumi.BoolOutput)
+func (o VirtualNetworkOutput) IsIpv6enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *VirtualNetwork) pulumi.BoolPtrOutput { return v.IsIpv6enabled }).(pulumi.BoolPtrOutput)
 }
 
-func (o VirtualNetworkOutput) IsOracleGuaAllocationEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v *VirtualNetwork) pulumi.BoolOutput { return v.IsOracleGuaAllocationEnabled }).(pulumi.BoolOutput)
+func (o VirtualNetworkOutput) IsOracleGuaAllocationEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *VirtualNetwork) pulumi.BoolPtrOutput { return v.IsOracleGuaAllocationEnabled }).(pulumi.BoolPtrOutput)
 }
 
-func (o VirtualNetworkOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *VirtualNetwork) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o VirtualNetworkOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VirtualNetwork) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
-func (o VirtualNetworkOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *VirtualNetwork) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o VirtualNetworkOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VirtualNetwork) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
-func (o VirtualNetworkOutput) VcnDomainName() pulumi.StringOutput {
-	return o.ApplyT(func(v *VirtualNetwork) pulumi.StringOutput { return v.VcnDomainName }).(pulumi.StringOutput)
+func (o VirtualNetworkOutput) VcnDomainName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VirtualNetwork) pulumi.StringPtrOutput { return v.VcnDomainName }).(pulumi.StringPtrOutput)
 }
 
 type VirtualNetworkArrayOutput struct{ *pulumi.OutputState }
@@ -345,12 +320,6 @@ func (o VirtualNetworkArrayOutput) ToVirtualNetworkArrayOutput() VirtualNetworkA
 
 func (o VirtualNetworkArrayOutput) ToVirtualNetworkArrayOutputWithContext(ctx context.Context) VirtualNetworkArrayOutput {
 	return o
-}
-
-func (o VirtualNetworkArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*VirtualNetwork] {
-	return pulumix.Output[[]*VirtualNetwork]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o VirtualNetworkArrayOutput) Index(i pulumi.IntInput) VirtualNetworkOutput {
@@ -371,12 +340,6 @@ func (o VirtualNetworkMapOutput) ToVirtualNetworkMapOutput() VirtualNetworkMapOu
 
 func (o VirtualNetworkMapOutput) ToVirtualNetworkMapOutputWithContext(ctx context.Context) VirtualNetworkMapOutput {
 	return o
-}
-
-func (o VirtualNetworkMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*VirtualNetwork] {
-	return pulumix.Output[map[string]*VirtualNetwork]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o VirtualNetworkMapOutput) MapIndex(k pulumi.StringInput) VirtualNetworkOutput {

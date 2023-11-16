@@ -47,53 +47,53 @@ export interface GetFusionEnvironmentFamilyResult {
     /**
      * The OCID of the compartment where the environment family is located.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * A friendly name for the environment family. The name must contain only letters, numbers, dashes, and underscores. Can be changed later.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
      */
-    readonly familyMaintenancePolicies: outputs.Functions.GetFusionEnvironmentFamilyFamilyMaintenancePolicy[];
+    readonly familyMaintenancePolicies?: outputs.Functions.GetFusionEnvironmentFamilyFamilyMaintenancePolicy[];
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     readonly fusionEnvironmentFamilyId: string;
     /**
      * The unique identifier (OCID) of the environment family. Can't be changed after creation.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * When set to True, a subscription update is required for the environment family.
      */
-    readonly isSubscriptionUpdateNeeded: boolean;
+    readonly isSubscriptionUpdateNeeded?: boolean;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * The current state of the FusionEnvironmentFamily.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The list of the IDs of the applications subscriptions that are associated with the environment family.
      */
-    readonly subscriptionIds: string[];
+    readonly subscriptionIds?: string[];
     /**
      * Environment Specific Guid/ System Name
      */
-    readonly systemName: string;
+    readonly systemName?: string;
     /**
      * The time the the FusionEnvironmentFamily was created. An RFC3339 formatted datetime string.
      */
-    readonly timeCreated: string;
-    readonly timeUpdated: string;
+    readonly timeCreated?: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific Fusion Environment Family resource in Oracle Cloud Infrastructure Fusion Apps service.

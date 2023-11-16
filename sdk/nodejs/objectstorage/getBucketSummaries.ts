@@ -63,7 +63,7 @@ export interface GetBucketSummariesResult {
     /**
      * The list of bucket_summaries.
      */
-    readonly bucketSummaries: outputs.ObjectStorage.GetBucketSummariesBucketSummary[];
+    readonly bucketSummaries?: outputs.ObjectStorage.GetBucketSummariesBucketSummary[];
     /**
      * The compartment ID in which the bucket is authorized.
      */
@@ -72,7 +72,7 @@ export interface GetBucketSummariesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The Object Storage namespace in which the bucket resides.
      */

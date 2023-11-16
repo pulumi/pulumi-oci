@@ -59,50 +59,32 @@ class GetKeyStoreResult:
 
     @property
     @pulumi.getter(name="associatedDatabases")
-    def associated_databases(self) -> Sequence['outputs.GetKeyStoreAssociatedDatabaseResult']:
-        """
-        List of databases associated with the key store.
-        """
+    def associated_databases(self) -> Optional[Sequence['outputs.GetKeyStoreAssociatedDatabaseResult']]:
         return pulumi.get(self, "associated_databases")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The user-friendly name for the key store. The name does not need to be unique.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
@@ -112,34 +94,22 @@ class GetKeyStoreResult:
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        Additional information about the current lifecycle state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the key store.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time that the key store was created.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="typeDetails")
-    def type_details(self) -> Sequence['outputs.GetKeyStoreTypeDetailResult']:
-        """
-        Key store type details.
-        """
+    def type_details(self) -> Optional[Sequence['outputs.GetKeyStoreTypeDetailResult']]:
         return pulumi.get(self, "type_details")
 
 
@@ -165,21 +135,7 @@ class AwaitableGetKeyStoreResult(GetKeyStoreResult):
 def get_key_store(key_store_id: Optional[str] = None,
                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetKeyStoreResult:
     """
-    This data source provides details about a specific Key Store resource in Oracle Cloud Infrastructure Database service.
-
-    Gets information about the specified key store.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_key_store = oci.Database.get_key_store(key_store_id=oci_database_key_store["test_key_store"]["id"])
-    ```
-
-
-    :param str key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['keyStoreId'] = key_store_id
@@ -204,20 +160,6 @@ def get_key_store(key_store_id: Optional[str] = None,
 def get_key_store_output(key_store_id: Optional[pulumi.Input[str]] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetKeyStoreResult]:
     """
-    This data source provides details about a specific Key Store resource in Oracle Cloud Infrastructure Database service.
-
-    Gets information about the specified key store.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_key_store = oci.Database.get_key_store(key_store_id=oci_database_key_store["test_key_store"]["id"])
-    ```
-
-
-    :param str key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+    Use this data source to access information about an existing resource.
     """
     ...

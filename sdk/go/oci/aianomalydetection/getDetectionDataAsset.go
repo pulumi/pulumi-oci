@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Data Asset resource in Oracle Cloud Infrastructure Ai Anomaly Detection service.
@@ -60,32 +59,32 @@ type GetDetectionDataAssetArgs struct {
 // A collection of values returned by getDetectionDataAsset.
 type GetDetectionDataAssetResult struct {
 	// The OCID of the compartment containing the DataAsset.
-	CompartmentId string `pulumi:"compartmentId"`
-	DataAssetId   string `pulumi:"dataAssetId"`
+	CompartmentId *string `pulumi:"compartmentId"`
+	DataAssetId   string  `pulumi:"dataAssetId"`
 	// Possible data sources
 	DataSourceDetails []GetDetectionDataAssetDataSourceDetail `pulumi:"dataSourceDetails"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A short description of the data asset.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The Unique Oracle ID (OCID) that is immutable on creation.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// OCID of Private Endpoint.
-	PrivateEndpointId string `pulumi:"privateEndpointId"`
+	PrivateEndpointId *string `pulumi:"privateEndpointId"`
 	// The Unique project id which is created at project creation that is immutable on creation.
-	ProjectId string `pulumi:"projectId"`
+	ProjectId *string `pulumi:"projectId"`
 	// The lifecycle state of the Data Asset.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time the the DataAsset was created. An RFC3339 formatted datetime string
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the the DataAsset was updated. An RFC3339 formatted datetime string
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func GetDetectionDataAssetOutput(ctx *pulumi.Context, args GetDetectionDataAssetOutputArgs, opts ...pulumi.InvokeOption) GetDetectionDataAssetResultOutput {
@@ -126,15 +125,9 @@ func (o GetDetectionDataAssetResultOutput) ToGetDetectionDataAssetResultOutputWi
 	return o
 }
 
-func (o GetDetectionDataAssetResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDetectionDataAssetResult] {
-	return pulumix.Output[GetDetectionDataAssetResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment containing the DataAsset.
-func (o GetDetectionDataAssetResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionDataAssetResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetDetectionDataAssetResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionDataAssetResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 func (o GetDetectionDataAssetResultOutput) DataAssetId() pulumi.StringOutput {
@@ -154,13 +147,13 @@ func (o GetDetectionDataAssetResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // A short description of the data asset.
-func (o GetDetectionDataAssetResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionDataAssetResult) string { return v.Description }).(pulumi.StringOutput)
+func (o GetDetectionDataAssetResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionDataAssetResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-func (o GetDetectionDataAssetResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionDataAssetResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetDetectionDataAssetResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionDataAssetResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -169,23 +162,23 @@ func (o GetDetectionDataAssetResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The Unique Oracle ID (OCID) that is immutable on creation.
-func (o GetDetectionDataAssetResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionDataAssetResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDetectionDataAssetResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionDataAssetResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // OCID of Private Endpoint.
-func (o GetDetectionDataAssetResultOutput) PrivateEndpointId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionDataAssetResult) string { return v.PrivateEndpointId }).(pulumi.StringOutput)
+func (o GetDetectionDataAssetResultOutput) PrivateEndpointId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionDataAssetResult) *string { return v.PrivateEndpointId }).(pulumi.StringPtrOutput)
 }
 
 // The Unique project id which is created at project creation that is immutable on creation.
-func (o GetDetectionDataAssetResultOutput) ProjectId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionDataAssetResult) string { return v.ProjectId }).(pulumi.StringOutput)
+func (o GetDetectionDataAssetResultOutput) ProjectId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionDataAssetResult) *string { return v.ProjectId }).(pulumi.StringPtrOutput)
 }
 
 // The lifecycle state of the Data Asset.
-func (o GetDetectionDataAssetResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionDataAssetResult) string { return v.State }).(pulumi.StringOutput)
+func (o GetDetectionDataAssetResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionDataAssetResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -194,13 +187,13 @@ func (o GetDetectionDataAssetResultOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time the the DataAsset was created. An RFC3339 formatted datetime string
-func (o GetDetectionDataAssetResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionDataAssetResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetDetectionDataAssetResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionDataAssetResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the the DataAsset was updated. An RFC3339 formatted datetime string
-func (o GetDetectionDataAssetResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDetectionDataAssetResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetDetectionDataAssetResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDetectionDataAssetResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

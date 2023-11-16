@@ -6,6 +6,8 @@ package com.pulumi.oci.DataScience.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetJobJobStorageMountConfigurationDetailsList {
@@ -13,99 +15,99 @@ public final class GetJobJobStorageMountConfigurationDetailsList {
      * @return The object storage bucket
      * 
      */
-    private String bucket;
+    private @Nullable String bucket;
     /**
      * @return The local directory name to be mounted
      * 
      */
-    private String destinationDirectoryName;
+    private @Nullable String destinationDirectoryName;
     /**
      * @return The local path of the mounted directory, excluding directory name.
      * 
      */
-    private String destinationPath;
+    private @Nullable String destinationPath;
     /**
      * @return OCID of the export
      * 
      */
-    private String exportId;
+    private @Nullable String exportId;
     /**
      * @return OCID of the mount target
      * 
      */
-    private String mountTargetId;
+    private @Nullable String mountTargetId;
     /**
      * @return The object storage namespace
      * 
      */
-    private String namespace;
+    private @Nullable String namespace;
     /**
      * @return Prefix in the bucket to mount
      * 
      */
-    private String prefix;
+    private @Nullable String prefix;
     /**
      * @return The type of storage.
      * 
      */
-    private String storageType;
+    private @Nullable String storageType;
 
     private GetJobJobStorageMountConfigurationDetailsList() {}
     /**
      * @return The object storage bucket
      * 
      */
-    public String bucket() {
-        return this.bucket;
+    public Optional<String> bucket() {
+        return Optional.ofNullable(this.bucket);
     }
     /**
      * @return The local directory name to be mounted
      * 
      */
-    public String destinationDirectoryName() {
-        return this.destinationDirectoryName;
+    public Optional<String> destinationDirectoryName() {
+        return Optional.ofNullable(this.destinationDirectoryName);
     }
     /**
      * @return The local path of the mounted directory, excluding directory name.
      * 
      */
-    public String destinationPath() {
-        return this.destinationPath;
+    public Optional<String> destinationPath() {
+        return Optional.ofNullable(this.destinationPath);
     }
     /**
      * @return OCID of the export
      * 
      */
-    public String exportId() {
-        return this.exportId;
+    public Optional<String> exportId() {
+        return Optional.ofNullable(this.exportId);
     }
     /**
      * @return OCID of the mount target
      * 
      */
-    public String mountTargetId() {
-        return this.mountTargetId;
+    public Optional<String> mountTargetId() {
+        return Optional.ofNullable(this.mountTargetId);
     }
     /**
      * @return The object storage namespace
      * 
      */
-    public String namespace() {
-        return this.namespace;
+    public Optional<String> namespace() {
+        return Optional.ofNullable(this.namespace);
     }
     /**
      * @return Prefix in the bucket to mount
      * 
      */
-    public String prefix() {
-        return this.prefix;
+    public Optional<String> prefix() {
+        return Optional.ofNullable(this.prefix);
     }
     /**
      * @return The type of storage.
      * 
      */
-    public String storageType() {
-        return this.storageType;
+    public Optional<String> storageType() {
+        return Optional.ofNullable(this.storageType);
     }
 
     public static Builder builder() {
@@ -117,14 +119,14 @@ public final class GetJobJobStorageMountConfigurationDetailsList {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String bucket;
-        private String destinationDirectoryName;
-        private String destinationPath;
-        private String exportId;
-        private String mountTargetId;
-        private String namespace;
-        private String prefix;
-        private String storageType;
+        private @Nullable String bucket;
+        private @Nullable String destinationDirectoryName;
+        private @Nullable String destinationPath;
+        private @Nullable String exportId;
+        private @Nullable String mountTargetId;
+        private @Nullable String namespace;
+        private @Nullable String prefix;
+        private @Nullable String storageType;
         public Builder() {}
         public Builder(GetJobJobStorageMountConfigurationDetailsList defaults) {
     	      Objects.requireNonNull(defaults);
@@ -139,43 +141,43 @@ public final class GetJobJobStorageMountConfigurationDetailsList {
         }
 
         @CustomType.Setter
-        public Builder bucket(String bucket) {
-            this.bucket = Objects.requireNonNull(bucket);
+        public Builder bucket(@Nullable String bucket) {
+            this.bucket = bucket;
             return this;
         }
         @CustomType.Setter
-        public Builder destinationDirectoryName(String destinationDirectoryName) {
-            this.destinationDirectoryName = Objects.requireNonNull(destinationDirectoryName);
+        public Builder destinationDirectoryName(@Nullable String destinationDirectoryName) {
+            this.destinationDirectoryName = destinationDirectoryName;
             return this;
         }
         @CustomType.Setter
-        public Builder destinationPath(String destinationPath) {
-            this.destinationPath = Objects.requireNonNull(destinationPath);
+        public Builder destinationPath(@Nullable String destinationPath) {
+            this.destinationPath = destinationPath;
             return this;
         }
         @CustomType.Setter
-        public Builder exportId(String exportId) {
-            this.exportId = Objects.requireNonNull(exportId);
+        public Builder exportId(@Nullable String exportId) {
+            this.exportId = exportId;
             return this;
         }
         @CustomType.Setter
-        public Builder mountTargetId(String mountTargetId) {
-            this.mountTargetId = Objects.requireNonNull(mountTargetId);
+        public Builder mountTargetId(@Nullable String mountTargetId) {
+            this.mountTargetId = mountTargetId;
             return this;
         }
         @CustomType.Setter
-        public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+        public Builder namespace(@Nullable String namespace) {
+            this.namespace = namespace;
             return this;
         }
         @CustomType.Setter
-        public Builder prefix(String prefix) {
-            this.prefix = Objects.requireNonNull(prefix);
+        public Builder prefix(@Nullable String prefix) {
+            this.prefix = prefix;
             return this;
         }
         @CustomType.Setter
-        public Builder storageType(String storageType) {
-            this.storageType = Objects.requireNonNull(storageType);
+        public Builder storageType(@Nullable String storageType) {
+            this.storageType = storageType;
             return this;
         }
         public GetJobJobStorageMountConfigurationDetailsList build() {

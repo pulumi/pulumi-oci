@@ -6,6 +6,8 @@ package com.pulumi.oci.DataScience.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetModelsModelDefinedMetadataList {
@@ -13,12 +15,12 @@ public final class GetModelsModelDefinedMetadataList {
      * @return Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values &#34;Performance,Training Profile,Training and Validation Datasets,Training Environment,other&#34;.
      * 
      */
-    private String category;
+    private @Nullable String category;
     /**
      * @return A short description of the model.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return Key of the model Metadata. The key can either be user defined or Oracle Cloud Infrastructure defined. List of Oracle Cloud Infrastructure defined keys:
      * * useCaseType
@@ -29,27 +31,27 @@ public final class GetModelsModelDefinedMetadataList {
      * * testartifactresults
      * 
      */
-    private String key;
+    private @Nullable String key;
     /**
      * @return Allowed values for useCaseType: binary_classification, regression, multinomial_classification, clustering, recommender, dimensionality_reduction/representation, time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
      * 
      */
-    private String value;
+    private @Nullable String value;
 
     private GetModelsModelDefinedMetadataList() {}
     /**
      * @return Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values &#34;Performance,Training Profile,Training and Validation Datasets,Training Environment,other&#34;.
      * 
      */
-    public String category() {
-        return this.category;
+    public Optional<String> category() {
+        return Optional.ofNullable(this.category);
     }
     /**
      * @return A short description of the model.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return Key of the model Metadata. The key can either be user defined or Oracle Cloud Infrastructure defined. List of Oracle Cloud Infrastructure defined keys:
@@ -61,15 +63,15 @@ public final class GetModelsModelDefinedMetadataList {
      * * testartifactresults
      * 
      */
-    public String key() {
-        return this.key;
+    public Optional<String> key() {
+        return Optional.ofNullable(this.key);
     }
     /**
      * @return Allowed values for useCaseType: binary_classification, regression, multinomial_classification, clustering, recommender, dimensionality_reduction/representation, time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
      * 
      */
-    public String value() {
-        return this.value;
+    public Optional<String> value() {
+        return Optional.ofNullable(this.value);
     }
 
     public static Builder builder() {
@@ -81,10 +83,10 @@ public final class GetModelsModelDefinedMetadataList {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String category;
-        private String description;
-        private String key;
-        private String value;
+        private @Nullable String category;
+        private @Nullable String description;
+        private @Nullable String key;
+        private @Nullable String value;
         public Builder() {}
         public Builder(GetModelsModelDefinedMetadataList defaults) {
     	      Objects.requireNonNull(defaults);
@@ -95,23 +97,23 @@ public final class GetModelsModelDefinedMetadataList {
         }
 
         @CustomType.Setter
-        public Builder category(String category) {
-            this.category = Objects.requireNonNull(category);
+        public Builder category(@Nullable String category) {
+            this.category = category;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
+        public Builder key(@Nullable String key) {
+            this.key = key;
             return this;
         }
         @CustomType.Setter
-        public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+        public Builder value(@Nullable String value) {
+            this.value = value;
             return this;
         }
         public GetModelsModelDefinedMetadataList build() {

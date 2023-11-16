@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Managed Instance Group Available Software Sources in Oracle Cloud Infrastructure Os Management Hub service.
@@ -79,8 +78,8 @@ type GetManagedInstanceGroupAvailableSoftwareSourcesResult struct {
 	DisplayNames []string                                                `pulumi:"displayNames"`
 	Filters      []GetManagedInstanceGroupAvailableSoftwareSourcesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                     string `pulumi:"id"`
-	ManagedInstanceGroupId string `pulumi:"managedInstanceGroupId"`
+	Id                     *string `pulumi:"id"`
+	ManagedInstanceGroupId string  `pulumi:"managedInstanceGroupId"`
 }
 
 func GetManagedInstanceGroupAvailableSoftwareSourcesOutput(ctx *pulumi.Context, args GetManagedInstanceGroupAvailableSoftwareSourcesOutputArgs, opts ...pulumi.InvokeOption) GetManagedInstanceGroupAvailableSoftwareSourcesResultOutput {
@@ -128,12 +127,6 @@ func (o GetManagedInstanceGroupAvailableSoftwareSourcesResultOutput) ToGetManage
 	return o
 }
 
-func (o GetManagedInstanceGroupAvailableSoftwareSourcesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstanceGroupAvailableSoftwareSourcesResult] {
-	return pulumix.Output[GetManagedInstanceGroupAvailableSoftwareSourcesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The list of available_software_source_collection.
 func (o GetManagedInstanceGroupAvailableSoftwareSourcesResultOutput) AvailableSoftwareSourceCollections() GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionArrayOutput {
 	return o.ApplyT(func(v GetManagedInstanceGroupAvailableSoftwareSourcesResult) []GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollection {
@@ -162,8 +155,8 @@ func (o GetManagedInstanceGroupAvailableSoftwareSourcesResultOutput) Filters() G
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetManagedInstanceGroupAvailableSoftwareSourcesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedInstanceGroupAvailableSoftwareSourcesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetManagedInstanceGroupAvailableSoftwareSourcesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedInstanceGroupAvailableSoftwareSourcesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetManagedInstanceGroupAvailableSoftwareSourcesResultOutput) ManagedInstanceGroupId() pulumi.StringOutput {

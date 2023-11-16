@@ -11,6 +11,7 @@ import com.pulumi.oci.Identity.ImportStandardTagsManagementArgs;
 import com.pulumi.oci.Identity.inputs.ImportStandardTagsManagementState;
 import com.pulumi.oci.Utilities;
 import java.lang.String;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -96,10 +97,10 @@ public class ImportStandardTagsManagement extends com.pulumi.resources.CustomRes
         return this.standardTagNamespaceName;
     }
     @Export(name="workRequestId", refs={String.class}, tree="[0]")
-    private Output<String> workRequestId;
+    private Output</* @Nullable */ String> workRequestId;
 
-    public Output<String> workRequestId() {
-        return this.workRequestId;
+    public Output<Optional<String>> workRequestId() {
+        return Codegen.optional(this.workRequestId);
     }
 
     /**

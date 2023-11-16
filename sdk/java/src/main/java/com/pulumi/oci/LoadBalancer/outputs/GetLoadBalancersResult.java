@@ -30,12 +30,12 @@ public final class GetLoadBalancersResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of load_balancers.
      * 
      */
-    private List<GetLoadBalancersLoadBalancer> loadBalancers;
+    private @Nullable List<GetLoadBalancersLoadBalancer> loadBalancers;
     /**
      * @return The current state of the load balancer.
      * 
@@ -67,15 +67,15 @@ public final class GetLoadBalancersResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of load_balancers.
      * 
      */
     public List<GetLoadBalancersLoadBalancer> loadBalancers() {
-        return this.loadBalancers;
+        return this.loadBalancers == null ? List.of() : this.loadBalancers;
     }
     /**
      * @return The current state of the load balancer.
@@ -98,8 +98,8 @@ public final class GetLoadBalancersResult {
         private @Nullable String detail;
         private @Nullable String displayName;
         private @Nullable List<GetLoadBalancersFilter> filters;
-        private String id;
-        private List<GetLoadBalancersLoadBalancer> loadBalancers;
+        private @Nullable String id;
+        private @Nullable List<GetLoadBalancersLoadBalancer> loadBalancers;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetLoadBalancersResult defaults) {
@@ -137,13 +137,13 @@ public final class GetLoadBalancersResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder loadBalancers(List<GetLoadBalancersLoadBalancer> loadBalancers) {
-            this.loadBalancers = Objects.requireNonNull(loadBalancers);
+        public Builder loadBalancers(@Nullable List<GetLoadBalancersLoadBalancer> loadBalancers) {
+            this.loadBalancers = loadBalancers;
             return this;
         }
         public Builder loadBalancers(GetLoadBalancersLoadBalancer... loadBalancers) {

@@ -110,44 +110,44 @@ namespace Pulumi.Oci.DatabaseManagement
         /// <summary>
         /// The OCID of the compartment.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// MySQL Database Name
         /// </summary>
-        public readonly string DbName;
+        public readonly string? DbName;
         /// <summary>
         /// MySQL Database Version
         /// </summary>
-        public readonly string DbVersion;
+        public readonly string? DbVersion;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string ManagedMySqlDatabaseId;
         /// <summary>
         /// The name of the Managed MySQL Database.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The date and time the Managed Database was created.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
 
         [OutputConstructor]
         private GetManagedMySqlDatabaseResult(
-            string compartmentId,
+            string? compartmentId,
 
-            string dbName,
+            string? dbName,
 
-            string dbVersion,
+            string? dbVersion,
 
-            string id,
+            string? id,
 
             string managedMySqlDatabaseId,
 
-            string name,
+            string? name,
 
-            string timeCreated)
+            string? timeCreated)
         {
             CompartmentId = compartmentId;
             DbName = dbName;

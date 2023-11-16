@@ -80,11 +80,11 @@ export interface GetNewsReportsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of news_report_collection.
      */
-    readonly newsReportCollections: outputs.Opsi.GetNewsReportsNewsReportCollection[];
+    readonly newsReportCollections?: outputs.Opsi.GetNewsReportsNewsReportCollection[];
     readonly newsReportId?: string;
     /**
      * The current state of the news report.

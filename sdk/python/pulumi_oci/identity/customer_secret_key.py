@@ -18,12 +18,6 @@ class CustomerSecretKeyArgs:
                  user_id: pulumi.Input[str]):
         """
         The set of arguments for constructing a CustomerSecretKey resource.
-        :param pulumi.Input[str] display_name: (Updatable) The name you assign to the secret key during creation. Does not have to be unique, and it's changeable.
-        :param pulumi.Input[str] user_id: The OCID of the user.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "user_id", user_id)
@@ -31,9 +25,6 @@ class CustomerSecretKeyArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The name you assign to the secret key during creation. Does not have to be unique, and it's changeable.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -43,13 +34,6 @@ class CustomerSecretKeyArgs:
     @property
     @pulumi.getter(name="userId")
     def user_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of the user.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "user_id")
 
     @user_id.setter
@@ -69,17 +53,6 @@ class _CustomerSecretKeyState:
                  user_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering CustomerSecretKey resources.
-        :param pulumi.Input[str] display_name: (Updatable) The name you assign to the secret key during creation. Does not have to be unique, and it's changeable.
-        :param pulumi.Input[str] inactive_state: The detailed status of INACTIVE lifecycleState.
-        :param pulumi.Input[str] key: The secret key.
-        :param pulumi.Input[str] state: The secret key's current state.
-        :param pulumi.Input[str] time_created: Date and time the `CustomerSecretKey` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-        :param pulumi.Input[str] time_expires: Date and time when this password will expire, in the format defined by RFC3339. Null if it never expires.  Example: `2016-08-25T21:10:29.600Z`
-        :param pulumi.Input[str] user_id: The OCID of the user.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
@@ -99,9 +72,6 @@ class _CustomerSecretKeyState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The name you assign to the secret key during creation. Does not have to be unique, and it's changeable.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -111,9 +81,6 @@ class _CustomerSecretKeyState:
     @property
     @pulumi.getter(name="inactiveState")
     def inactive_state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The detailed status of INACTIVE lifecycleState.
-        """
         return pulumi.get(self, "inactive_state")
 
     @inactive_state.setter
@@ -123,9 +90,6 @@ class _CustomerSecretKeyState:
     @property
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
-        """
-        The secret key.
-        """
         return pulumi.get(self, "key")
 
     @key.setter
@@ -135,9 +99,6 @@ class _CustomerSecretKeyState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The secret key's current state.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -147,9 +108,6 @@ class _CustomerSecretKeyState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        Date and time the `CustomerSecretKey` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -159,9 +117,6 @@ class _CustomerSecretKeyState:
     @property
     @pulumi.getter(name="timeExpires")
     def time_expires(self) -> Optional[pulumi.Input[str]]:
-        """
-        Date and time when this password will expire, in the format defined by RFC3339. Null if it never expires.  Example: `2016-08-25T21:10:29.600Z`
-        """
         return pulumi.get(self, "time_expires")
 
     @time_expires.setter
@@ -171,13 +126,6 @@ class _CustomerSecretKeyState:
     @property
     @pulumi.getter(name="userId")
     def user_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the user.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "user_id")
 
     @user_id.setter
@@ -194,47 +142,9 @@ class CustomerSecretKey(pulumi.CustomResource):
                  user_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Customer Secret Key resource in Oracle Cloud Infrastructure Identity service.
-
-        Creates a new secret key for the specified user. Secret keys are used for authentication with the Object Storage Service's Amazon S3
-        compatible API. The secret key consists of an Access Key/Secret Key pair. For information, see
-        [Managing User Credentials](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcredentials.htm).
-
-        You must specify a *description* for the secret key (although it can be an empty string). It does not
-        have to be unique, and you can change it anytime with
-        [UpdateCustomerSecretKey](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/CustomerSecretKeySummary/UpdateCustomerSecretKey).
-
-        Every user has permission to create a secret key for *their own user ID*. An administrator in your organization
-        does not need to write a policy to give users this ability. To compare, administrators who have permission to the
-        tenancy can use this operation to create a secret key for any user, including themselves.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_customer_secret_key = oci.identity.CustomerSecretKey("testCustomerSecretKey",
-            display_name=var["customer_secret_key_display_name"],
-            user_id=oci_identity_user["test_user"]["id"])
-        ```
-
-        ## Import
-
-        CustomerSecretKeys can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Identity/customerSecretKey:CustomerSecretKey test_customer_secret_key "users/{userId}/customerSecretKeys/{customerSecretKeyId}"
-        ```
-
+        Create a CustomerSecretKey resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] display_name: (Updatable) The name you assign to the secret key during creation. Does not have to be unique, and it's changeable.
-        :param pulumi.Input[str] user_id: The OCID of the user.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -243,39 +153,7 @@ class CustomerSecretKey(pulumi.CustomResource):
                  args: CustomerSecretKeyArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Customer Secret Key resource in Oracle Cloud Infrastructure Identity service.
-
-        Creates a new secret key for the specified user. Secret keys are used for authentication with the Object Storage Service's Amazon S3
-        compatible API. The secret key consists of an Access Key/Secret Key pair. For information, see
-        [Managing User Credentials](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcredentials.htm).
-
-        You must specify a *description* for the secret key (although it can be an empty string). It does not
-        have to be unique, and you can change it anytime with
-        [UpdateCustomerSecretKey](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/CustomerSecretKeySummary/UpdateCustomerSecretKey).
-
-        Every user has permission to create a secret key for *their own user ID*. An administrator in your organization
-        does not need to write a policy to give users this ability. To compare, administrators who have permission to the
-        tenancy can use this operation to create a secret key for any user, including themselves.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_customer_secret_key = oci.identity.CustomerSecretKey("testCustomerSecretKey",
-            display_name=var["customer_secret_key_display_name"],
-            user_id=oci_identity_user["test_user"]["id"])
-        ```
-
-        ## Import
-
-        CustomerSecretKeys can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Identity/customerSecretKey:CustomerSecretKey test_customer_secret_key "users/{userId}/customerSecretKeys/{customerSecretKeyId}"
-        ```
-
+        Create a CustomerSecretKey resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param CustomerSecretKeyArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -337,17 +215,6 @@ class CustomerSecretKey(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] display_name: (Updatable) The name you assign to the secret key during creation. Does not have to be unique, and it's changeable.
-        :param pulumi.Input[str] inactive_state: The detailed status of INACTIVE lifecycleState.
-        :param pulumi.Input[str] key: The secret key.
-        :param pulumi.Input[str] state: The secret key's current state.
-        :param pulumi.Input[str] time_created: Date and time the `CustomerSecretKey` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-        :param pulumi.Input[str] time_expires: Date and time when this password will expire, in the format defined by RFC3339. Null if it never expires.  Example: `2016-08-25T21:10:29.600Z`
-        :param pulumi.Input[str] user_id: The OCID of the user.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -365,60 +232,35 @@ class CustomerSecretKey(pulumi.CustomResource):
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The name you assign to the secret key during creation. Does not have to be unique, and it's changeable.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="inactiveState")
-    def inactive_state(self) -> pulumi.Output[str]:
-        """
-        The detailed status of INACTIVE lifecycleState.
-        """
+    def inactive_state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "inactive_state")
 
     @property
     @pulumi.getter
-    def key(self) -> pulumi.Output[str]:
-        """
-        The secret key.
-        """
+    def key(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The secret key's current state.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        Date and time the `CustomerSecretKey` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeExpires")
-    def time_expires(self) -> pulumi.Output[str]:
-        """
-        Date and time when this password will expire, in the format defined by RFC3339. Null if it never expires.  Example: `2016-08-25T21:10:29.600Z`
-        """
+    def time_expires(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_expires")
 
     @property
     @pulumi.getter(name="userId")
     def user_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the user.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "user_id")
 

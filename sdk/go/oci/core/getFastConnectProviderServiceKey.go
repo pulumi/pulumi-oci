@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Fast Connect Provider Service Key resource in Oracle Cloud Infrastructure Core service.
@@ -64,15 +63,15 @@ type GetFastConnectProviderServiceKeyArgs struct {
 // A collection of values returned by getFastConnectProviderServiceKey.
 type GetFastConnectProviderServiceKeyResult struct {
 	// The provisioned data rate of the connection. To get a list of the available bandwidth levels (that is, shapes), see [ListFastConnectProviderServiceVirtualCircuitBandwidthShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderVirtualCircuitBandwidthShapes).  Example: `10 Gbps`
-	BandwidthShapeName string `pulumi:"bandwidthShapeName"`
+	BandwidthShapeName *string `pulumi:"bandwidthShapeName"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The service key that the provider gives you when you set up a virtual circuit connection from the provider to Oracle Cloud Infrastructure. Use this value as the `providerServiceKeyName` query parameter for [GetFastConnectProviderServiceKey](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderServiceKey/GetFastConnectProviderServiceKey).
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The provider's peering location.
-	PeeringLocation        string `pulumi:"peeringLocation"`
-	ProviderServiceId      string `pulumi:"providerServiceId"`
-	ProviderServiceKeyName string `pulumi:"providerServiceKeyName"`
+	PeeringLocation        *string `pulumi:"peeringLocation"`
+	ProviderServiceId      string  `pulumi:"providerServiceId"`
+	ProviderServiceKeyName string  `pulumi:"providerServiceKeyName"`
 }
 
 func GetFastConnectProviderServiceKeyOutput(ctx *pulumi.Context, args GetFastConnectProviderServiceKeyOutputArgs, opts ...pulumi.InvokeOption) GetFastConnectProviderServiceKeyResultOutput {
@@ -115,30 +114,24 @@ func (o GetFastConnectProviderServiceKeyResultOutput) ToGetFastConnectProviderSe
 	return o
 }
 
-func (o GetFastConnectProviderServiceKeyResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetFastConnectProviderServiceKeyResult] {
-	return pulumix.Output[GetFastConnectProviderServiceKeyResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The provisioned data rate of the connection. To get a list of the available bandwidth levels (that is, shapes), see [ListFastConnectProviderServiceVirtualCircuitBandwidthShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderVirtualCircuitBandwidthShapes).  Example: `10 Gbps`
-func (o GetFastConnectProviderServiceKeyResultOutput) BandwidthShapeName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFastConnectProviderServiceKeyResult) string { return v.BandwidthShapeName }).(pulumi.StringOutput)
+func (o GetFastConnectProviderServiceKeyResultOutput) BandwidthShapeName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFastConnectProviderServiceKeyResult) *string { return v.BandwidthShapeName }).(pulumi.StringPtrOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetFastConnectProviderServiceKeyResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFastConnectProviderServiceKeyResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetFastConnectProviderServiceKeyResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFastConnectProviderServiceKeyResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The service key that the provider gives you when you set up a virtual circuit connection from the provider to Oracle Cloud Infrastructure. Use this value as the `providerServiceKeyName` query parameter for [GetFastConnectProviderServiceKey](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderServiceKey/GetFastConnectProviderServiceKey).
-func (o GetFastConnectProviderServiceKeyResultOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFastConnectProviderServiceKeyResult) string { return v.Name }).(pulumi.StringOutput)
+func (o GetFastConnectProviderServiceKeyResultOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFastConnectProviderServiceKeyResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The provider's peering location.
-func (o GetFastConnectProviderServiceKeyResultOutput) PeeringLocation() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFastConnectProviderServiceKeyResult) string { return v.PeeringLocation }).(pulumi.StringOutput)
+func (o GetFastConnectProviderServiceKeyResultOutput) PeeringLocation() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFastConnectProviderServiceKeyResult) *string { return v.PeeringLocation }).(pulumi.StringPtrOutput)
 }
 
 func (o GetFastConnectProviderServiceKeyResultOutput) ProviderServiceId() pulumi.StringOutput {

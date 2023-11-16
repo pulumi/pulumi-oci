@@ -16,7 +16,7 @@ namespace Pulumi.Oci.ManagementAgent.Outputs
         /// <summary>
         /// The number of Management Agents in this group
         /// </summary>
-        public readonly int Count;
+        public readonly int? Count;
         /// <summary>
         /// The Aggregation of Management Agent Dimensions
         /// </summary>
@@ -24,7 +24,7 @@ namespace Pulumi.Oci.ManagementAgent.Outputs
 
         [OutputConstructor]
         private GetManagementAgentCountItemResult(
-            int count,
+            int? count,
 
             ImmutableArray<Outputs.GetManagementAgentCountItemDimensionResult> dimensions)
         {

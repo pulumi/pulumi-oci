@@ -74,9 +74,6 @@ class GetTargetDatabasesResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment which contains the Data Safe target database.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -87,17 +84,11 @@ class GetTargetDatabasesResult:
     @property
     @pulumi.getter(name="databaseType")
     def database_type(self) -> Optional[str]:
-        """
-        The database type.
-        """
         return pulumi.get(self, "database_type")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        The display name of the target database in Data Safe.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -107,7 +98,7 @@ class GetTargetDatabasesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -116,17 +107,11 @@ class GetTargetDatabasesResult:
     @property
     @pulumi.getter(name="infrastructureType")
     def infrastructure_type(self) -> Optional[str]:
-        """
-        The infrastructure type the database is running on.
-        """
         return pulumi.get(self, "infrastructure_type")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the target database in Data Safe.
-        """
         return pulumi.get(self, "state")
 
     @property
@@ -136,10 +121,7 @@ class GetTargetDatabasesResult:
 
     @property
     @pulumi.getter(name="targetDatabases")
-    def target_databases(self) -> Sequence['outputs.GetTargetDatabasesTargetDatabaseResult']:
-        """
-        The list of target_databases.
-        """
+    def target_databases(self) -> Optional[Sequence['outputs.GetTargetDatabasesTargetDatabaseResult']]:
         return pulumi.get(self, "target_databases")
 
 
@@ -175,37 +157,7 @@ def get_target_databases(access_level: Optional[str] = None,
                          target_database_id: Optional[str] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetTargetDatabasesResult:
     """
-    This data source provides the list of Target Databases in Oracle Cloud Infrastructure Data Safe service.
-
-    Returns the list of registered target databases in Data Safe.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_target_databases = oci.DataSafe.get_target_databases(compartment_id=var["compartment_id"],
-        access_level=var["target_database_access_level"],
-        associated_resource_id=oci_data_safe_associated_resource["test_associated_resource"]["id"],
-        compartment_id_in_subtree=var["target_database_compartment_id_in_subtree"],
-        database_type=var["target_database_database_type"],
-        display_name=var["target_database_display_name"],
-        infrastructure_type=var["target_database_infrastructure_type"],
-        state=var["target_database_state"],
-        target_database_id=oci_data_safe_target_database["test_target_database"]["id"])
-    ```
-
-
-    :param str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
-    :param str associated_resource_id: A filter to return the target databases that are associated to the resource id passed in as a parameter value.
-    :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
-    :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
-    :param str database_type: A filter to return only target databases that match the specified database type.
-    :param str display_name: A filter to return only resources that match the specified display name.
-    :param str infrastructure_type: A filter to return only target databases that match the specified infrastructure type.
-    :param str state: A filter to return only target databases that match the specified lifecycle state.
-    :param str target_database_id: A filter to return the target database that matches the specified OCID.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['accessLevel'] = access_level
@@ -249,36 +201,6 @@ def get_target_databases_output(access_level: Optional[pulumi.Input[Optional[str
                                 target_database_id: Optional[pulumi.Input[Optional[str]]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetTargetDatabasesResult]:
     """
-    This data source provides the list of Target Databases in Oracle Cloud Infrastructure Data Safe service.
-
-    Returns the list of registered target databases in Data Safe.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_target_databases = oci.DataSafe.get_target_databases(compartment_id=var["compartment_id"],
-        access_level=var["target_database_access_level"],
-        associated_resource_id=oci_data_safe_associated_resource["test_associated_resource"]["id"],
-        compartment_id_in_subtree=var["target_database_compartment_id_in_subtree"],
-        database_type=var["target_database_database_type"],
-        display_name=var["target_database_display_name"],
-        infrastructure_type=var["target_database_infrastructure_type"],
-        state=var["target_database_state"],
-        target_database_id=oci_data_safe_target_database["test_target_database"]["id"])
-    ```
-
-
-    :param str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
-    :param str associated_resource_id: A filter to return the target databases that are associated to the resource id passed in as a parameter value.
-    :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
-    :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
-    :param str database_type: A filter to return only target databases that match the specified database type.
-    :param str display_name: A filter to return only resources that match the specified display name.
-    :param str infrastructure_type: A filter to return only target databases that match the specified infrastructure type.
-    :param str state: A filter to return only target databases that match the specified lifecycle state.
-    :param str target_database_id: A filter to return the target database that matches the specified OCID.
+    Use this data source to access information about an existing resource.
     """
     ...

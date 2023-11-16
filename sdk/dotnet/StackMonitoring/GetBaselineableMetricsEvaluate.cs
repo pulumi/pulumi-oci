@@ -197,7 +197,7 @@ namespace Pulumi.Oci.StackMonitoring
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// List of Metric data
         /// </summary>
@@ -213,7 +213,7 @@ namespace Pulumi.Oci.StackMonitoring
 
             ImmutableArray<Outputs.GetBaselineableMetricsEvaluateDataPointResult> dataPoints,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetBaselineableMetricsEvaluateItemResult> items,
 

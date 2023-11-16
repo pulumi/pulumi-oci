@@ -16,47 +16,47 @@ namespace Pulumi.Oci.CloudBridge.Outputs
         /// <summary>
         /// Order of boot volumes.
         /// </summary>
-        public readonly int BootOrder;
+        public readonly int? BootOrder;
         /// <summary>
         /// Location of the boot/data volume.
         /// </summary>
-        public readonly string Location;
+        public readonly string? Location;
         /// <summary>
         /// The tag name.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The disk persistent mode.
         /// </summary>
-        public readonly string PersistentMode;
+        public readonly string? PersistentMode;
         /// <summary>
         /// The size of the volume in MBs.
         /// </summary>
-        public readonly string SizeInMbs;
+        public readonly string? SizeInMbs;
         /// <summary>
         /// Disk UUID for the virtual disk, if available.
         /// </summary>
-        public readonly string Uuid;
+        public readonly string? Uuid;
         /// <summary>
         /// Disk UUID LUN for the virtual disk, if available.
         /// </summary>
-        public readonly string UuidLun;
+        public readonly string? UuidLun;
 
         [OutputConstructor]
         private GetAssetComputeDiskResult(
-            int bootOrder,
+            int? bootOrder,
 
-            string location,
+            string? location,
 
-            string name,
+            string? name,
 
-            string persistentMode,
+            string? persistentMode,
 
-            string sizeInMbs,
+            string? sizeInMbs,
 
-            string uuid,
+            string? uuid,
 
-            string uuidLun)
+            string? uuidLun)
         {
             BootOrder = bootOrder;
             Location = location;

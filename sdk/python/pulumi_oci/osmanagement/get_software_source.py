@@ -95,154 +95,97 @@ class GetSoftwareSourceResult:
 
     @property
     @pulumi.getter(name="archType")
-    def arch_type(self) -> str:
-        """
-        The architecture type supported by the Software Source
-        """
+    def arch_type(self) -> Optional[str]:
         return pulumi.get(self, "arch_type")
 
     @property
     @pulumi.getter(name="associatedManagedInstances")
-    def associated_managed_instances(self) -> Sequence['outputs.GetSoftwareSourceAssociatedManagedInstanceResult']:
-        """
-        list of the Managed Instances associated with this Software Sources
-        """
+    def associated_managed_instances(self) -> Optional[Sequence['outputs.GetSoftwareSourceAssociatedManagedInstanceResult']]:
         return pulumi.get(self, "associated_managed_instances")
 
     @property
     @pulumi.getter(name="checksumType")
-    def checksum_type(self) -> str:
-        """
-        The yum repository checksum type used by this software source
-        """
+    def checksum_type(self) -> Optional[str]:
         return pulumi.get(self, "checksum_type")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        OCID for the Compartment
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Information specified by the user about the software source
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        User friendly name for the software source
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="gpgKeyFingerprint")
-    def gpg_key_fingerprint(self) -> str:
-        """
-        Fingerprint of the GPG key for this software source
-        """
+    def gpg_key_fingerprint(self) -> Optional[str]:
         return pulumi.get(self, "gpg_key_fingerprint")
 
     @property
     @pulumi.getter(name="gpgKeyId")
-    def gpg_key_id(self) -> str:
-        """
-        ID of the GPG key for this software source
-        """
+    def gpg_key_id(self) -> Optional[str]:
         return pulumi.get(self, "gpg_key_id")
 
     @property
     @pulumi.getter(name="gpgKeyUrl")
-    def gpg_key_url(self) -> str:
-        """
-        URL of the GPG key for this software source
-        """
+    def gpg_key_url(self) -> Optional[str]:
         return pulumi.get(self, "gpg_key_url")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        OCID for the Software Source
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="maintainerEmail")
-    def maintainer_email(self) -> str:
-        """
-        Email address of the person maintaining this software source
-        """
+    def maintainer_email(self) -> Optional[str]:
         return pulumi.get(self, "maintainer_email")
 
     @property
     @pulumi.getter(name="maintainerName")
-    def maintainer_name(self) -> str:
-        """
-        Name of the person maintaining this software source
-        """
+    def maintainer_name(self) -> Optional[str]:
         return pulumi.get(self, "maintainer_name")
 
     @property
     @pulumi.getter(name="maintainerPhone")
-    def maintainer_phone(self) -> str:
-        """
-        Phone number of the person maintaining this software source
-        """
+    def maintainer_phone(self) -> Optional[str]:
         return pulumi.get(self, "maintainer_phone")
 
     @property
     @pulumi.getter
-    def packages(self) -> int:
-        """
-        Number of packages
-        """
+    def packages(self) -> Optional[int]:
         return pulumi.get(self, "packages")
 
     @property
     @pulumi.getter(name="parentId")
-    def parent_id(self) -> str:
-        """
-        OCID for the parent software source, if there is one
-        """
+    def parent_id(self) -> Optional[str]:
         return pulumi.get(self, "parent_id")
 
     @property
     @pulumi.getter(name="parentName")
-    def parent_name(self) -> str:
-        """
-        Display name the parent software source, if there is one
-        """
+    def parent_name(self) -> Optional[str]:
         return pulumi.get(self, "parent_name")
 
     @property
     @pulumi.getter(name="repoType")
-    def repo_type(self) -> str:
-        """
-        Type of the Software Source
-        """
+    def repo_type(self) -> Optional[str]:
         return pulumi.get(self, "repo_type")
 
     @property
@@ -252,26 +195,17 @@ class GetSoftwareSourceResult:
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the Software Source.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter
-    def status(self) -> str:
-        """
-        status of the software source.
-        """
+    def status(self) -> Optional[str]:
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter
-    def url(self) -> str:
-        """
-        URL for the repostiory
-        """
+    def url(self) -> Optional[str]:
         return pulumi.get(self, "url")
 
 
@@ -309,21 +243,7 @@ class AwaitableGetSoftwareSourceResult(GetSoftwareSourceResult):
 def get_software_source(software_source_id: Optional[str] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSoftwareSourceResult:
     """
-    This data source provides details about a specific Software Source resource in Oracle Cloud Infrastructure OS Management service.
-
-    Returns a specific Software Source.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_software_source = oci.OsManagement.get_software_source(software_source_id=oci_osmanagement_software_source["test_software_source"]["id"])
-    ```
-
-
-    :param str software_source_id: The OCID of the software source.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['softwareSourceId'] = software_source_id
@@ -360,20 +280,6 @@ def get_software_source(software_source_id: Optional[str] = None,
 def get_software_source_output(software_source_id: Optional[pulumi.Input[str]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSoftwareSourceResult]:
     """
-    This data source provides details about a specific Software Source resource in Oracle Cloud Infrastructure OS Management service.
-
-    Returns a specific Software Source.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_software_source = oci.OsManagement.get_software_source(software_source_id=oci_osmanagement_software_source["test_software_source"]["id"])
-    ```
-
-
-    :param str software_source_id: The OCID of the software source.
+    Use this data source to access information about an existing resource.
     """
     ...

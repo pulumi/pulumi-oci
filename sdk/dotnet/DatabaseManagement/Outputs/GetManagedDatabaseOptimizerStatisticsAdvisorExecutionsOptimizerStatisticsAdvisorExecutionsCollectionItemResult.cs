@@ -20,15 +20,15 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// The errors in the Optimizer Statistics Advisor execution, if any.
         /// </summary>
-        public readonly string ErrorMessage;
+        public readonly string? ErrorMessage;
         /// <summary>
         /// The name of the Optimizer Statistics Advisor execution.
         /// </summary>
-        public readonly string ExecutionName;
+        public readonly string? ExecutionName;
         /// <summary>
         /// The list of findings for the rule.
         /// </summary>
-        public readonly int Findings;
+        public readonly int? Findings;
         /// <summary>
         /// A report that includes the rules, findings, recommendations, and actions discovered during the execution of the Optimizer Statistics Advisor.
         /// </summary>
@@ -36,45 +36,45 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// The status of the Optimizer Statistics Advisor execution.
         /// </summary>
-        public readonly string Status;
+        public readonly string? Status;
         /// <summary>
         /// The Optimizer Statistics Advisor execution status message, if any.
         /// </summary>
-        public readonly string StatusMessage;
+        public readonly string? StatusMessage;
         /// <summary>
         /// The name of the Optimizer Statistics Advisor task.
         /// </summary>
-        public readonly string TaskName;
+        public readonly string? TaskName;
         /// <summary>
         /// The end time of the time range to retrieve the Optimizer Statistics Advisor execution of a Managed Database in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
         /// </summary>
-        public readonly string TimeEnd;
+        public readonly string? TimeEnd;
         /// <summary>
         /// The start time of the time range to retrieve the Optimizer Statistics Advisor execution of a Managed Database in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
         /// </summary>
-        public readonly string TimeStart;
+        public readonly string? TimeStart;
 
         [OutputConstructor]
         private GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemResult(
             ImmutableArray<Outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabaseResult> databases,
 
-            string errorMessage,
+            string? errorMessage,
 
-            string executionName,
+            string? executionName,
 
-            int findings,
+            int? findings,
 
             ImmutableArray<Outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportResult> reports,
 
-            string status,
+            string? status,
 
-            string statusMessage,
+            string? statusMessage,
 
-            string taskName,
+            string? taskName,
 
-            string timeEnd,
+            string? timeEnd,
 
-            string timeStart)
+            string? timeStart)
         {
             Databases = databases;
             ErrorMessage = errorMessage;

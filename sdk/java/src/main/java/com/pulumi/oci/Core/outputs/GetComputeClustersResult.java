@@ -28,7 +28,7 @@ public final class GetComputeClustersResult {
      * @return The list of compute_cluster_collection.
      * 
      */
-    private List<GetComputeClustersComputeClusterCollection> computeClusterCollections;
+    private @Nullable List<GetComputeClustersComputeClusterCollection> computeClusterCollections;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
@@ -39,7 +39,7 @@ public final class GetComputeClustersResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
 
     private GetComputeClustersResult() {}
     /**
@@ -61,7 +61,7 @@ public final class GetComputeClustersResult {
      * 
      */
     public List<GetComputeClustersComputeClusterCollection> computeClusterCollections() {
-        return this.computeClusterCollections;
+        return this.computeClusterCollections == null ? List.of() : this.computeClusterCollections;
     }
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
@@ -77,8 +77,8 @@ public final class GetComputeClustersResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
 
     public static Builder builder() {
@@ -92,10 +92,10 @@ public final class GetComputeClustersResult {
     public static final class Builder {
         private @Nullable String availabilityDomain;
         private String compartmentId;
-        private List<GetComputeClustersComputeClusterCollection> computeClusterCollections;
+        private @Nullable List<GetComputeClustersComputeClusterCollection> computeClusterCollections;
         private @Nullable String displayName;
         private @Nullable List<GetComputeClustersFilter> filters;
-        private String id;
+        private @Nullable String id;
         public Builder() {}
         public Builder(GetComputeClustersResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -118,8 +118,8 @@ public final class GetComputeClustersResult {
             return this;
         }
         @CustomType.Setter
-        public Builder computeClusterCollections(List<GetComputeClustersComputeClusterCollection> computeClusterCollections) {
-            this.computeClusterCollections = Objects.requireNonNull(computeClusterCollections);
+        public Builder computeClusterCollections(@Nullable List<GetComputeClustersComputeClusterCollection> computeClusterCollections) {
+            this.computeClusterCollections = computeClusterCollections;
             return this;
         }
         public Builder computeClusterCollections(GetComputeClustersComputeClusterCollection... computeClusterCollections) {
@@ -139,8 +139,8 @@ public final class GetComputeClustersResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         public GetComputeClustersResult build() {

@@ -85,7 +85,7 @@ export interface GetStreamDistributionChannelsResult {
     /**
      * The list of stream_distribution_channel_collection.
      */
-    readonly streamDistributionChannelCollections: outputs.MediaServices.GetStreamDistributionChannelsStreamDistributionChannelCollection[];
+    readonly streamDistributionChannelCollections?: outputs.MediaServices.GetStreamDistributionChannelsStreamDistributionChannelCollection[];
 }
 /**
  * This data source provides the list of Stream Distribution Channels in Oracle Cloud Infrastructure Media Services service.

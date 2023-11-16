@@ -83,7 +83,7 @@ namespace Pulumi.Oci.Database
         /// The name of the availability domain that the cloud Exadata infrastructure resource is located in.
         /// </summary>
         [Output("availabilityDomain")]
-        public Output<string> AvailabilityDomain { get; private set; } = null!;
+        public Output<string?> AvailabilityDomain { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
@@ -107,7 +107,7 @@ namespace Pulumi.Oci.Database
         /// The cluster name for cloud VM cluster. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
         /// </summary>
         [Output("clusterName")]
-        public Output<string> ClusterName { get; private set; } = null!;
+        public Output<string?> ClusterName { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -135,25 +135,25 @@ namespace Pulumi.Oci.Database
         /// (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
         /// </summary>
         [Output("dataCollectionOptions")]
-        public Output<Outputs.CloudVmClusterDataCollectionOptions> DataCollectionOptions { get; private set; } = null!;
+        public Output<Outputs.CloudVmClusterDataCollectionOptions?> DataCollectionOptions { get; private set; } = null!;
 
         /// <summary>
         /// The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 35, 40, 60 and 80. The default is 80 percent assigned to DATA storage. See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
         /// </summary>
         [Output("dataStoragePercentage")]
-        public Output<int> DataStoragePercentage { get; private set; } = null!;
+        public Output<int?> DataStoragePercentage { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The data disk group size to be allocated in TBs.
         /// </summary>
         [Output("dataStorageSizeInTbs")]
-        public Output<double> DataStorageSizeInTbs { get; private set; } = null!;
+        public Output<double?> DataStorageSizeInTbs { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The local node storage to be allocated in GBs.
         /// </summary>
         [Output("dbNodeStorageSizeInGbs")]
-        public Output<int> DbNodeStorageSizeInGbs { get; private set; } = null!;
+        public Output<int?> DbNodeStorageSizeInGbs { get; private set; } = null!;
 
         /// <summary>
         /// The list of DB servers.
@@ -165,13 +165,13 @@ namespace Pulumi.Oci.Database
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// The type of redundancy configured for the cloud Vm cluster. NORMAL is 2-way redundancy. HIGH is 3-way redundancy.
         /// </summary>
         [Output("diskRedundancy")]
-        public Output<string> DiskRedundancy { get; private set; } = null!;
+        public Output<string?> DiskRedundancy { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The user-friendly name for the cloud VM cluster. The name does not need to be unique.
@@ -183,13 +183,13 @@ namespace Pulumi.Oci.Database
         /// A domain name used for the cloud VM cluster. If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted. Applies to Exadata Cloud Service instances only.
         /// </summary>
         [Output("domain")]
-        public Output<string> Domain { get; private set; } = null!;
+        public Output<string?> Domain { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// A valid Oracle Grid Infrastructure (GI) software version.
@@ -217,49 +217,49 @@ namespace Pulumi.Oci.Database
         /// If true, database backup on local Exadata storage is configured for the cloud VM cluster. If false, database backup on local Exadata storage is not available in the cloud VM cluster.
         /// </summary>
         [Output("isLocalBackupEnabled")]
-        public Output<bool> IsLocalBackupEnabled { get; private set; } = null!;
+        public Output<bool?> IsLocalBackupEnabled { get; private set; } = null!;
 
         /// <summary>
         /// If true, the sparse disk group is configured for the cloud VM cluster. If false, the sparse disk group is not created.
         /// </summary>
         [Output("isSparseDiskgroupEnabled")]
-        public Output<bool> IsSparseDiskgroupEnabled { get; private set; } = null!;
+        public Output<bool?> IsSparseDiskgroupEnabled { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history entry. This value is updated when a maintenance update starts.
         /// </summary>
         [Output("lastUpdateHistoryEntryId")]
-        public Output<string> LastUpdateHistoryEntryId { get; private set; } = null!;
+        public Output<string?> LastUpdateHistoryEntryId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The Oracle license model that applies to the cloud VM cluster. The default is BRING_YOUR_OWN_LICENSE.
         /// </summary>
         [Output("licenseModel")]
-        public Output<string> LicenseModel { get; private set; } = null!;
+        public Output<string?> LicenseModel { get; private set; } = null!;
 
         /// <summary>
         /// Additional information about the current lifecycle state.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// The port number configured for the listener on the cloud VM cluster.
         /// </summary>
         [Output("listenerPort")]
-        public Output<string> ListenerPort { get; private set; } = null!;
+        public Output<string?> ListenerPort { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The memory to be allocated in GBs.
         /// </summary>
         [Output("memorySizeInGbs")]
-        public Output<int> MemorySizeInGbs { get; private set; } = null!;
+        public Output<int?> MemorySizeInGbs { get; private set; } = null!;
 
         /// <summary>
         /// The number of nodes in the cloud VM cluster.
         /// </summary>
         [Output("nodeCount")]
-        public Output<int> NodeCount { get; private set; } = null!;
+        public Output<int?> NodeCount { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
@@ -272,25 +272,25 @@ namespace Pulumi.Oci.Database
         /// (Updatable) The number of OCPU cores to enable for a cloud VM cluster. Only 1 decimal place is allowed for the fractional part.
         /// </summary>
         [Output("ocpuCount")]
-        public Output<double> OcpuCount { get; private set; } = null!;
+        public Output<double?> OcpuCount { get; private set; } = null!;
 
         /// <summary>
         /// The private zone id in which DNS records need to be created.
         /// </summary>
         [Output("privateZoneId")]
-        public Output<string> PrivateZoneId { get; private set; } = null!;
+        public Output<string?> PrivateZoneId { get; private set; } = null!;
 
         /// <summary>
         /// The FQDN of the DNS record for the SCAN IP addresses that are associated with the cloud VM cluster.
         /// </summary>
         [Output("scanDnsName")]
-        public Output<string> ScanDnsName { get; private set; } = null!;
+        public Output<string?> ScanDnsName { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DNS record for the SCAN IP addresses that are associated with the cloud VM cluster.
         /// </summary>
         [Output("scanDnsRecordId")]
-        public Output<string> ScanDnsRecordId { get; private set; } = null!;
+        public Output<string?> ScanDnsRecordId { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the cloud VM cluster. SCAN IP addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
@@ -302,19 +302,19 @@ namespace Pulumi.Oci.Database
         /// The TCP Single Client Access Name (SCAN) port. The default port is 1521.
         /// </summary>
         [Output("scanListenerPortTcp")]
-        public Output<int> ScanListenerPortTcp { get; private set; } = null!;
+        public Output<int?> ScanListenerPortTcp { get; private set; } = null!;
 
         /// <summary>
         /// The TCPS Single Client Access Name (SCAN) port. The default port is 2484.
         /// </summary>
         [Output("scanListenerPortTcpSsl")]
-        public Output<int> ScanListenerPortTcpSsl { get; private set; } = null!;
+        public Output<int?> ScanListenerPortTcpSsl { get; private set; } = null!;
 
         /// <summary>
         /// The model name of the Exadata hardware running the cloud VM cluster.
         /// </summary>
         [Output("shape")]
-        public Output<string> Shape { get; private set; } = null!;
+        public Output<string?> Shape { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The public key portion of one or more key pairs used for SSH access to the cloud VM cluster.
@@ -326,13 +326,13 @@ namespace Pulumi.Oci.Database
         /// The current state of the cloud VM cluster.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The storage allocation for the disk group, in gigabytes (GB).
         /// </summary>
         [Output("storageSizeInGbs")]
-        public Output<int> StorageSizeInGbs { get; private set; } = null!;
+        public Output<int?> StorageSizeInGbs { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the cloud VM cluster.
@@ -344,13 +344,13 @@ namespace Pulumi.Oci.Database
         /// Operating system version of the image.
         /// </summary>
         [Output("systemVersion")]
-        public Output<string> SystemVersion { get; private set; } = null!;
+        public Output<string?> SystemVersion { get; private set; } = null!;
 
         /// <summary>
         /// The date and time that the cloud VM cluster was created.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm). 
@@ -360,7 +360,7 @@ namespace Pulumi.Oci.Database
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("timeZone")]
-        public Output<string> TimeZone { get; private set; } = null!;
+        public Output<string?> TimeZone { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
@@ -372,7 +372,7 @@ namespace Pulumi.Oci.Database
         /// The OCID of the zone the cloud VM cluster is associated with.
         /// </summary>
         [Output("zoneId")]
-        public Output<string> ZoneId { get; private set; } = null!;
+        public Output<string?> ZoneId { get; private set; } = null!;
 
 
         /// <summary>

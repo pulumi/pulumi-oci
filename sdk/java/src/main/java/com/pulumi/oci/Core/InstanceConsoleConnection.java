@@ -13,6 +13,7 @@ import com.pulumi.oci.Utilities;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -73,70 +74,70 @@ public class InstanceConsoleConnection extends com.pulumi.resources.CustomResour
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
-    private Output<String> compartmentId;
+    private Output</* @Nullable */ String> compartmentId;
 
     /**
      * @return The OCID of the compartment to contain the console connection.
      * 
      */
-    public Output<String> compartmentId() {
-        return this.compartmentId;
+    public Output<Optional<String>> compartmentId() {
+        return Codegen.optional(this.compartmentId);
     }
     /**
      * The SSH connection string for the console connection.
      * 
      */
     @Export(name="connectionString", refs={String.class}, tree="[0]")
-    private Output<String> connectionString;
+    private Output</* @Nullable */ String> connectionString;
 
     /**
      * @return The SSH connection string for the console connection.
      * 
      */
-    public Output<String> connectionString() {
-        return this.connectionString;
+    public Output<Optional<String>> connectionString() {
+        return Codegen.optional(this.connectionString);
     }
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * The SSH public key&#39;s fingerprint for client authentication to the console connection.
      * 
      */
     @Export(name="fingerprint", refs={String.class}, tree="[0]")
-    private Output<String> fingerprint;
+    private Output</* @Nullable */ String> fingerprint;
 
     /**
      * @return The SSH public key&#39;s fingerprint for client authentication to the console connection.
      * 
      */
-    public Output<String> fingerprint() {
-        return this.fingerprint;
+    public Output<Optional<String>> fingerprint() {
+        return Codegen.optional(this.fingerprint);
     }
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * The OCID of the instance to create the console connection to.
@@ -177,42 +178,42 @@ public class InstanceConsoleConnection extends com.pulumi.resources.CustomResour
      * 
      */
     @Export(name="serviceHostKeyFingerprint", refs={String.class}, tree="[0]")
-    private Output<String> serviceHostKeyFingerprint;
+    private Output</* @Nullable */ String> serviceHostKeyFingerprint;
 
     /**
      * @return The SSH public key&#39;s fingerprint for the console connection service host.
      * 
      */
-    public Output<String> serviceHostKeyFingerprint() {
-        return this.serviceHostKeyFingerprint;
+    public Output<Optional<String>> serviceHostKeyFingerprint() {
+        return Codegen.optional(this.serviceHostKeyFingerprint);
     }
     /**
      * The current state of the console connection.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the console connection.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The SSH connection string for the SSH tunnel used to connect to the console connection over VNC.
      * 
      */
     @Export(name="vncConnectionString", refs={String.class}, tree="[0]")
-    private Output<String> vncConnectionString;
+    private Output</* @Nullable */ String> vncConnectionString;
 
     /**
      * @return The SSH connection string for the SSH tunnel used to connect to the console connection over VNC.
      * 
      */
-    public Output<String> vncConnectionString() {
-        return this.vncConnectionString;
+    public Output<Optional<String>> vncConnectionString() {
+        return Codegen.optional(this.vncConnectionString);
     }
 
     /**

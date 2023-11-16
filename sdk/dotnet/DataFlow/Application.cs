@@ -99,7 +99,7 @@ namespace Pulumi.Oci.DataFlow
         /// (Updatable) Logging details of Application logs for Data Flow Run.
         /// </summary>
         [Output("applicationLogConfig")]
-        public Output<Outputs.ApplicationApplicationLogConfig> ApplicationLogConfig { get; private set; } = null!;
+        public Output<Outputs.ApplicationApplicationLogConfig?> ApplicationLogConfig { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, ``oci://path/to/a.zip,oci://path/to/b.zip``. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
@@ -129,19 +129,19 @@ namespace Pulumi.Oci.DataFlow
         /// (Updatable) The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
         /// </summary>
         [Output("configuration")]
-        public Output<ImmutableDictionary<string, object>> Configuration { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> Configuration { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A user-friendly description. Avoid entering confidential information.
         /// </summary>
         [Output("description")]
-        public Output<string> Description { get; private set; } = null!;
+        public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A user-friendly name. It does not have to be unique. Avoid entering confidential information.
@@ -159,13 +159,13 @@ namespace Pulumi.Oci.DataFlow
         /// (Updatable) This is used to configure the shape of the driver or executor if a flexible shape is used.
         /// </summary>
         [Output("driverShapeConfig")]
-        public Output<Outputs.ApplicationDriverShapeConfig> DriverShapeConfig { get; private set; } = null!;
+        public Output<Outputs.ApplicationDriverShapeConfig?> DriverShapeConfig { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The input used for spark-submit command. For more details see https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit. Supported options include ``--class``, ``--file``, ``--jars``, ``--conf``, ``--py-files``, and main application file with arguments. Example: ``--jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10`` Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit, Data Flow service will use derived information from execute input only.
         /// </summary>
         [Output("execute")]
-        public Output<string> Execute { get; private set; } = null!;
+        public Output<string?> Execute { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The VM shape for the executors. Sets the executor cores and memory.
@@ -177,25 +177,25 @@ namespace Pulumi.Oci.DataFlow
         /// (Updatable) This is used to configure the shape of the driver or executor if a flexible shape is used.
         /// </summary>
         [Output("executorShapeConfig")]
-        public Output<Outputs.ApplicationExecutorShapeConfig> ExecutorShapeConfig { get; private set; } = null!;
+        public Output<Outputs.ApplicationExecutorShapeConfig?> ExecutorShapeConfig { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) An Oracle Cloud Infrastructure URI of the file containing the application to execute. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
         /// </summary>
         [Output("fileUri")]
-        public Output<string> FileUri { get; private set; } = null!;
+        public Output<string?> FileUri { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity for this amount of time period. Note: This parameter is currently only applicable for Runs of type `SESSION`. Default value is 2880 minutes (2 days)
         /// </summary>
         [Output("idleTimeoutInMinutes")]
-        public Output<string> IdleTimeoutInMinutes { get; private set; } = null!;
+        public Output<string?> IdleTimeoutInMinutes { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The Spark language.
@@ -207,19 +207,19 @@ namespace Pulumi.Oci.DataFlow
         /// (Updatable) An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
         /// </summary>
         [Output("logsBucketUri")]
-        public Output<string> LogsBucketUri { get; private set; } = null!;
+        public Output<string?> LogsBucketUri { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The maximum duration in minutes for which an Application should run. Data Flow Run would be terminated once it reaches this duration from the time it transitions to `IN_PROGRESS` state.
         /// </summary>
         [Output("maxDurationInMinutes")]
-        public Output<string> MaxDurationInMinutes { get; private set; } = null!;
+        public Output<string?> MaxDurationInMinutes { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The OCID of Oracle Cloud Infrastructure Hive Metastore.
         /// </summary>
         [Output("metastoreId")]
-        public Output<string> MetastoreId { get; private set; } = null!;
+        public Output<string?> MetastoreId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The number of executor VMs requested.
@@ -231,13 +231,13 @@ namespace Pulumi.Oci.DataFlow
         /// The OCID of the user who created the resource.
         /// </summary>
         [Output("ownerPrincipalId")]
-        public Output<string> OwnerPrincipalId { get; private set; } = null!;
+        public Output<string?> OwnerPrincipalId { get; private set; } = null!;
 
         /// <summary>
         /// The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
         /// </summary>
         [Output("ownerUserName")]
-        public Output<string> OwnerUserName { get; private set; } = null!;
+        public Output<string?> OwnerUserName { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) An array of name/value pairs used to fill placeholders found in properties like `Application.arguments`.  The name must be a string of one or more word characters (a-z, A-Z, 0-9, _).  The value can be a string of 0 or more characters of any kind. Example:  [ { name: "iterations", value: "10"}, { name: "input_file", value: "mydata.xml" }, { name: "variable_x", value: "${x}"} ]
@@ -249,13 +249,13 @@ namespace Pulumi.Oci.DataFlow
         /// (Updatable) The OCID of a pool. Unique Id to indentify a dataflow pool resource.
         /// </summary>
         [Output("poolId")]
-        public Output<string> PoolId { get; private set; } = null!;
+        public Output<string?> PoolId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The OCID of a private endpoint.
         /// </summary>
         [Output("privateEndpointId")]
-        public Output<string> PrivateEndpointId { get; private set; } = null!;
+        public Output<string?> PrivateEndpointId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The Spark version utilized to run the application.
@@ -267,25 +267,25 @@ namespace Pulumi.Oci.DataFlow
         /// The current state of this application.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
         /// The Spark application processing type.
         /// </summary>
         [Output("type")]
-        public Output<string> Type { get; private set; } = null!;
+        public Output<string?> Type { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat. 
@@ -295,7 +295,7 @@ namespace Pulumi.Oci.DataFlow
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("warehouseBucketUri")]
-        public Output<string> WarehouseBucketUri { get; private set; } = null!;
+        public Output<string?> WarehouseBucketUri { get; private set; } = null!;
 
 
         /// <summary>

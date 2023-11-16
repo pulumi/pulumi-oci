@@ -16,11 +16,11 @@ namespace Pulumi.Oci.CloudMigrations.Outputs
         /// <summary>
         /// Gigabyte storage capacity per month.
         /// </summary>
-        public readonly double TotalGbPerMonth;
+        public readonly double? TotalGbPerMonth;
         /// <summary>
         /// Gigabyte storage capacity per month by subscription
         /// </summary>
-        public readonly double TotalGbPerMonthBySubscription;
+        public readonly double? TotalGbPerMonthBySubscription;
         /// <summary>
         /// Volume estimation
         /// </summary>
@@ -28,9 +28,9 @@ namespace Pulumi.Oci.CloudMigrations.Outputs
 
         [OutputConstructor]
         private GetTargetAssetEstimatedCostStorageResult(
-            double totalGbPerMonth,
+            double? totalGbPerMonth,
 
-            double totalGbPerMonthBySubscription,
+            double? totalGbPerMonthBySubscription,
 
             ImmutableArray<Outputs.GetTargetAssetEstimatedCostStorageVolumeResult> volumes)
         {

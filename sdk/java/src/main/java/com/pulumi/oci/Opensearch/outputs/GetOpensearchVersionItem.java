@@ -6,6 +6,8 @@ package com.pulumi.oci.Opensearch.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetOpensearchVersionItem {
@@ -13,15 +15,15 @@ public final class GetOpensearchVersionItem {
      * @return The version of OpenSearch.
      * 
      */
-    private String version;
+    private @Nullable String version;
 
     private GetOpensearchVersionItem() {}
     /**
      * @return The version of OpenSearch.
      * 
      */
-    public String version() {
-        return this.version;
+    public Optional<String> version() {
+        return Optional.ofNullable(this.version);
     }
 
     public static Builder builder() {
@@ -33,7 +35,7 @@ public final class GetOpensearchVersionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String version;
+        private @Nullable String version;
         public Builder() {}
         public Builder(GetOpensearchVersionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -41,8 +43,8 @@ public final class GetOpensearchVersionItem {
         }
 
         @CustomType.Setter
-        public Builder version(String version) {
-            this.version = Objects.requireNonNull(version);
+        public Builder version(@Nullable String version) {
+            this.version = version;
             return this;
         }
         public GetOpensearchVersionItem build() {

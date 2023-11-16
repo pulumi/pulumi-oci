@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DevOps.outputs.GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemDeployPipelineStageItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemDeployPipelineStage {
@@ -14,7 +15,7 @@ public final class GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactI
      * @return A list of stage predecessors for a stage.
      * 
      */
-    private List<GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemDeployPipelineStageItem> items;
+    private @Nullable List<GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemDeployPipelineStageItem> items;
 
     private GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemDeployPipelineStage() {}
     /**
@@ -22,7 +23,7 @@ public final class GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactI
      * 
      */
     public List<GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemDeployPipelineStageItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactI
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemDeployPipelineStageItem> items;
+        private @Nullable List<GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemDeployPipelineStageItem> items;
         public Builder() {}
         public Builder(GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemDeployPipelineStage defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactI
         }
 
         @CustomType.Setter
-        public Builder items(List<GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemDeployPipelineStageItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemDeployPipelineStageItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactItemDeployPipelineStageItem... items) {

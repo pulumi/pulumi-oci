@@ -68,7 +68,7 @@ export class NetworkFirewallPolicyServiceList extends pulumi.CustomResource {
     /**
      * OCID of the Network Firewall Policy this serviceList belongs to.
      */
-    public /*out*/ readonly parentResourceId!: pulumi.Output<string>;
+    public /*out*/ readonly parentResourceId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Collection of service names. The services referenced in the service list must already be present in the policy before being used in the service list. 
      *
@@ -80,7 +80,7 @@ export class NetworkFirewallPolicyServiceList extends pulumi.CustomResource {
     /**
      * Count of total services in the given service List.
      */
-    public /*out*/ readonly totalServices!: pulumi.Output<number>;
+    public /*out*/ readonly totalServices!: pulumi.Output<number | undefined>;
 
     /**
      * Create a NetworkFirewallPolicyServiceList resource with the given unique name, arguments, and options.

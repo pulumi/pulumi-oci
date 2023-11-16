@@ -9,6 +9,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMigrationDatapumpSettingDataPumpParameter {
@@ -16,75 +18,75 @@ public final class GetMigrationDatapumpSettingDataPumpParameter {
      * @return Estimate size of dumps that will be generated.
      * 
      */
-    private String estimate;
+    private @Nullable String estimate;
     /**
      * @return Exclude paratemers for Export and Import.
      * 
      */
-    private List<String> excludeParameters;
+    private @Nullable List<String> excludeParameters;
     /**
      * @return Maximum number of worker processes that can be used for a Data Pump Export job.
      * 
      */
-    private Integer exportParallelismDegree;
+    private @Nullable Integer exportParallelismDegree;
     /**
      * @return Maximum number of worker processes that can be used for a Data Pump Import job. For an Autonomous Database, ODMS will automatically query its CPU core count and set this property.
      * 
      */
-    private Integer importParallelismDegree;
+    private @Nullable Integer importParallelismDegree;
     /**
      * @return Set to false to force Data Pump worker processes to run on one instance.
      * 
      */
-    private Boolean isCluster;
+    private @Nullable Boolean isCluster;
     /**
      * @return IMPORT: Specifies the action to be performed when data is loaded into a preexisting table.
      * 
      */
-    private String tableExistsAction;
+    private @Nullable String tableExistsAction;
 
     private GetMigrationDatapumpSettingDataPumpParameter() {}
     /**
      * @return Estimate size of dumps that will be generated.
      * 
      */
-    public String estimate() {
-        return this.estimate;
+    public Optional<String> estimate() {
+        return Optional.ofNullable(this.estimate);
     }
     /**
      * @return Exclude paratemers for Export and Import.
      * 
      */
     public List<String> excludeParameters() {
-        return this.excludeParameters;
+        return this.excludeParameters == null ? List.of() : this.excludeParameters;
     }
     /**
      * @return Maximum number of worker processes that can be used for a Data Pump Export job.
      * 
      */
-    public Integer exportParallelismDegree() {
-        return this.exportParallelismDegree;
+    public Optional<Integer> exportParallelismDegree() {
+        return Optional.ofNullable(this.exportParallelismDegree);
     }
     /**
      * @return Maximum number of worker processes that can be used for a Data Pump Import job. For an Autonomous Database, ODMS will automatically query its CPU core count and set this property.
      * 
      */
-    public Integer importParallelismDegree() {
-        return this.importParallelismDegree;
+    public Optional<Integer> importParallelismDegree() {
+        return Optional.ofNullable(this.importParallelismDegree);
     }
     /**
      * @return Set to false to force Data Pump worker processes to run on one instance.
      * 
      */
-    public Boolean isCluster() {
-        return this.isCluster;
+    public Optional<Boolean> isCluster() {
+        return Optional.ofNullable(this.isCluster);
     }
     /**
      * @return IMPORT: Specifies the action to be performed when data is loaded into a preexisting table.
      * 
      */
-    public String tableExistsAction() {
-        return this.tableExistsAction;
+    public Optional<String> tableExistsAction() {
+        return Optional.ofNullable(this.tableExistsAction);
     }
 
     public static Builder builder() {
@@ -96,12 +98,12 @@ public final class GetMigrationDatapumpSettingDataPumpParameter {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String estimate;
-        private List<String> excludeParameters;
-        private Integer exportParallelismDegree;
-        private Integer importParallelismDegree;
-        private Boolean isCluster;
-        private String tableExistsAction;
+        private @Nullable String estimate;
+        private @Nullable List<String> excludeParameters;
+        private @Nullable Integer exportParallelismDegree;
+        private @Nullable Integer importParallelismDegree;
+        private @Nullable Boolean isCluster;
+        private @Nullable String tableExistsAction;
         public Builder() {}
         public Builder(GetMigrationDatapumpSettingDataPumpParameter defaults) {
     	      Objects.requireNonNull(defaults);
@@ -114,36 +116,36 @@ public final class GetMigrationDatapumpSettingDataPumpParameter {
         }
 
         @CustomType.Setter
-        public Builder estimate(String estimate) {
-            this.estimate = Objects.requireNonNull(estimate);
+        public Builder estimate(@Nullable String estimate) {
+            this.estimate = estimate;
             return this;
         }
         @CustomType.Setter
-        public Builder excludeParameters(List<String> excludeParameters) {
-            this.excludeParameters = Objects.requireNonNull(excludeParameters);
+        public Builder excludeParameters(@Nullable List<String> excludeParameters) {
+            this.excludeParameters = excludeParameters;
             return this;
         }
         public Builder excludeParameters(String... excludeParameters) {
             return excludeParameters(List.of(excludeParameters));
         }
         @CustomType.Setter
-        public Builder exportParallelismDegree(Integer exportParallelismDegree) {
-            this.exportParallelismDegree = Objects.requireNonNull(exportParallelismDegree);
+        public Builder exportParallelismDegree(@Nullable Integer exportParallelismDegree) {
+            this.exportParallelismDegree = exportParallelismDegree;
             return this;
         }
         @CustomType.Setter
-        public Builder importParallelismDegree(Integer importParallelismDegree) {
-            this.importParallelismDegree = Objects.requireNonNull(importParallelismDegree);
+        public Builder importParallelismDegree(@Nullable Integer importParallelismDegree) {
+            this.importParallelismDegree = importParallelismDegree;
             return this;
         }
         @CustomType.Setter
-        public Builder isCluster(Boolean isCluster) {
-            this.isCluster = Objects.requireNonNull(isCluster);
+        public Builder isCluster(@Nullable Boolean isCluster) {
+            this.isCluster = isCluster;
             return this;
         }
         @CustomType.Setter
-        public Builder tableExistsAction(String tableExistsAction) {
-            this.tableExistsAction = Objects.requireNonNull(tableExistsAction);
+        public Builder tableExistsAction(@Nullable String tableExistsAction) {
+            this.tableExistsAction = tableExistsAction;
             return this;
         }
         public GetMigrationDatapumpSettingDataPumpParameter build() {

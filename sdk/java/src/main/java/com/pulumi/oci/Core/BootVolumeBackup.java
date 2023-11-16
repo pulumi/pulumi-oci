@@ -78,140 +78,140 @@ public class BootVolumeBackup extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="bootVolumeId", refs={String.class}, tree="[0]")
-    private Output<String> bootVolumeId;
+    private Output</* @Nullable */ String> bootVolumeId;
 
     /**
      * @return The OCID of the boot volume that needs to be backed up. Cannot be defined if `source_details` is defined.
      * 
      */
-    public Output<String> bootVolumeId() {
-        return this.bootVolumeId;
+    public Output<Optional<String>> bootVolumeId() {
+        return Codegen.optional(this.bootVolumeId);
     }
     /**
      * (Updatable) The OCID of the compartment that contains the boot volume backup.
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
-    private Output<String> compartmentId;
+    private Output</* @Nullable */ String> compartmentId;
 
     /**
      * @return (Updatable) The OCID of the compartment that contains the boot volume backup.
      * 
      */
-    public Output<String> compartmentId() {
-        return this.compartmentId;
+    public Output<Optional<String>> compartmentId() {
+        return Codegen.optional(this.compartmentId);
     }
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     /**
      * The date and time the volume backup will expire and be automatically deleted. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). This parameter will always be present for backups that were created automatically by a scheduled-backup policy. For manually created backups, it will be absent, signifying that there is no expiration time and the backup will last forever until manually deleted.
      * 
      */
     @Export(name="expirationTime", refs={String.class}, tree="[0]")
-    private Output<String> expirationTime;
+    private Output</* @Nullable */ String> expirationTime;
 
     /**
      * @return The date and time the volume backup will expire and be automatically deleted. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). This parameter will always be present for backups that were created automatically by a scheduled-backup policy. For manually created backups, it will be absent, signifying that there is no expiration time and the backup will last forever until manually deleted.
      * 
      */
-    public Output<String> expirationTime() {
-        return this.expirationTime;
+    public Output<Optional<String>> expirationTime() {
+        return Codegen.optional(this.expirationTime);
     }
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * The image OCID used to create the boot volume the backup is taken from.
      * 
      */
     @Export(name="imageId", refs={String.class}, tree="[0]")
-    private Output<String> imageId;
+    private Output</* @Nullable */ String> imageId;
 
     /**
      * @return The image OCID used to create the boot volume the backup is taken from.
      * 
      */
-    public Output<String> imageId() {
-        return this.imageId;
+    public Output<Optional<String>> imageId() {
+        return Codegen.optional(this.imageId);
     }
     /**
      * The OCID of the KMS key in the destination region which will be the master encryption key for the copied volume backup.
      * 
      */
     @Export(name="kmsKeyId", refs={String.class}, tree="[0]")
-    private Output<String> kmsKeyId;
+    private Output</* @Nullable */ String> kmsKeyId;
 
     /**
      * @return The OCID of the KMS key in the destination region which will be the master encryption key for the copied volume backup.
      * 
      */
-    public Output<String> kmsKeyId() {
-        return this.kmsKeyId;
+    public Output<Optional<String>> kmsKeyId() {
+        return Codegen.optional(this.kmsKeyId);
     }
     /**
      * The size of the boot volume, in GBs.
      * 
      */
     @Export(name="sizeInGbs", refs={String.class}, tree="[0]")
-    private Output<String> sizeInGbs;
+    private Output</* @Nullable */ String> sizeInGbs;
 
     /**
      * @return The size of the boot volume, in GBs.
      * 
      */
-    public Output<String> sizeInGbs() {
-        return this.sizeInGbs;
+    public Output<Optional<String>> sizeInGbs() {
+        return Codegen.optional(this.sizeInGbs);
     }
     /**
      * The OCID of the source boot volume backup.
      * 
      */
     @Export(name="sourceBootVolumeBackupId", refs={String.class}, tree="[0]")
-    private Output<String> sourceBootVolumeBackupId;
+    private Output</* @Nullable */ String> sourceBootVolumeBackupId;
 
     /**
      * @return The OCID of the source boot volume backup.
      * 
      */
-    public Output<String> sourceBootVolumeBackupId() {
-        return this.sourceBootVolumeBackupId;
+    public Output<Optional<String>> sourceBootVolumeBackupId() {
+        return Codegen.optional(this.sourceBootVolumeBackupId);
     }
     /**
      * Details of the volume backup source in the cloud. Cannot be defined if `boot_volume_id` is defined.
@@ -232,98 +232,98 @@ public class BootVolumeBackup extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="sourceType", refs={String.class}, tree="[0]")
-    private Output<String> sourceType;
+    private Output</* @Nullable */ String> sourceType;
 
     /**
      * @return Specifies whether the backup was created manually, or via scheduled backup policy.
      * 
      */
-    public Output<String> sourceType() {
-        return this.sourceType;
+    public Output<Optional<String>> sourceType() {
+        return Codegen.optional(this.sourceType);
     }
     /**
      * The current state of a boot volume backup.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of a boot volume backup.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> systemTags;
+    private Output</* @Nullable */ Map<String,Object>> systemTags;
 
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> systemTags() {
-        return this.systemTags;
+    public Output<Optional<Map<String,Object>>> systemTags() {
+        return Codegen.optional(this.systemTags);
     }
     /**
      * The date and time the boot volume backup was created. This is the time the actual point-in-time image of the volume data was taken. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the boot volume backup was created. This is the time the actual point-in-time image of the volume data was taken. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The date and time the request to create the boot volume backup was received. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     @Export(name="timeRequestReceived", refs={String.class}, tree="[0]")
-    private Output<String> timeRequestReceived;
+    private Output</* @Nullable */ String> timeRequestReceived;
 
     /**
      * @return The date and time the request to create the boot volume backup was received. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    public Output<String> timeRequestReceived() {
-        return this.timeRequestReceived;
+    public Output<Optional<String>> timeRequestReceived() {
+        return Codegen.optional(this.timeRequestReceived);
     }
     /**
      * The type of backup to create. If omitted, defaults to incremental. Supported values are &#39;FULL&#39; or &#39;INCREMENTAL&#39;.
      * 
      */
     @Export(name="type", refs={String.class}, tree="[0]")
-    private Output<String> type;
+    private Output</* @Nullable */ String> type;
 
     /**
      * @return The type of backup to create. If omitted, defaults to incremental. Supported values are &#39;FULL&#39; or &#39;INCREMENTAL&#39;.
      * 
      */
-    public Output<String> type() {
-        return this.type;
+    public Output<Optional<String>> type() {
+        return Codegen.optional(this.type);
     }
     /**
      * The size used by the backup, in GBs. It is typically smaller than sizeInGBs, depending on the space consumed on the boot volume and whether the backup is full or incremental.
      * 
      */
     @Export(name="uniqueSizeInGbs", refs={String.class}, tree="[0]")
-    private Output<String> uniqueSizeInGbs;
+    private Output</* @Nullable */ String> uniqueSizeInGbs;
 
     /**
      * @return The size used by the backup, in GBs. It is typically smaller than sizeInGBs, depending on the space consumed on the boot volume and whether the backup is full or incremental.
      * 
      */
-    public Output<String> uniqueSizeInGbs() {
-        return this.uniqueSizeInGbs;
+    public Output<Optional<String>> uniqueSizeInGbs() {
+        return Codegen.optional(this.uniqueSizeInGbs);
     }
 
     /**

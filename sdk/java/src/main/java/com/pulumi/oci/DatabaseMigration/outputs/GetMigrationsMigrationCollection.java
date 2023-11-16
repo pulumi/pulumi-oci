@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DatabaseMigration.outputs.GetMigrationsMigrationCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMigrationsMigrationCollection {
-    private List<GetMigrationsMigrationCollectionItem> items;
+    private @Nullable List<GetMigrationsMigrationCollectionItem> items;
 
     private GetMigrationsMigrationCollection() {}
     public List<GetMigrationsMigrationCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetMigrationsMigrationCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetMigrationsMigrationCollectionItem> items;
+        private @Nullable List<GetMigrationsMigrationCollectionItem> items;
         public Builder() {}
         public Builder(GetMigrationsMigrationCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetMigrationsMigrationCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetMigrationsMigrationCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetMigrationsMigrationCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetMigrationsMigrationCollectionItem... items) {

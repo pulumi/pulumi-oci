@@ -29,12 +29,12 @@ public final class GetOdaPrivateEndpointsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of oda_private_endpoint_collection.
      * 
      */
-    private List<GetOdaPrivateEndpointsOdaPrivateEndpointCollection> odaPrivateEndpointCollections;
+    private @Nullable List<GetOdaPrivateEndpointsOdaPrivateEndpointCollection> odaPrivateEndpointCollections;
     /**
      * @return The current state of the ODA private endpoint.
      * 
@@ -63,15 +63,15 @@ public final class GetOdaPrivateEndpointsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of oda_private_endpoint_collection.
      * 
      */
     public List<GetOdaPrivateEndpointsOdaPrivateEndpointCollection> odaPrivateEndpointCollections() {
-        return this.odaPrivateEndpointCollections;
+        return this.odaPrivateEndpointCollections == null ? List.of() : this.odaPrivateEndpointCollections;
     }
     /**
      * @return The current state of the ODA private endpoint.
@@ -93,8 +93,8 @@ public final class GetOdaPrivateEndpointsResult {
         private String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetOdaPrivateEndpointsFilter> filters;
-        private String id;
-        private List<GetOdaPrivateEndpointsOdaPrivateEndpointCollection> odaPrivateEndpointCollections;
+        private @Nullable String id;
+        private @Nullable List<GetOdaPrivateEndpointsOdaPrivateEndpointCollection> odaPrivateEndpointCollections;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetOdaPrivateEndpointsResult defaults) {
@@ -126,13 +126,13 @@ public final class GetOdaPrivateEndpointsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder odaPrivateEndpointCollections(List<GetOdaPrivateEndpointsOdaPrivateEndpointCollection> odaPrivateEndpointCollections) {
-            this.odaPrivateEndpointCollections = Objects.requireNonNull(odaPrivateEndpointCollections);
+        public Builder odaPrivateEndpointCollections(@Nullable List<GetOdaPrivateEndpointsOdaPrivateEndpointCollection> odaPrivateEndpointCollections) {
+            this.odaPrivateEndpointCollections = odaPrivateEndpointCollections;
             return this;
         }
         public Builder odaPrivateEndpointCollections(GetOdaPrivateEndpointsOdaPrivateEndpointCollection... odaPrivateEndpointCollections) {

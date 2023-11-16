@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemModifiedAttribute {
@@ -14,12 +15,12 @@ public final class GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemModifi
      * @return Unique keys identifying the columns that are application-level (non-dictionary) children of the sensitive column.
      * 
      */
-    private List<String> appDefinedChildColumnKeys;
+    private @Nullable List<String> appDefinedChildColumnKeys;
     /**
      * @return Unique keys identifying the columns that are database-level (dictionary-defined) children of the sensitive column.
      * 
      */
-    private List<String> dbDefinedChildColumnKeys;
+    private @Nullable List<String> dbDefinedChildColumnKeys;
 
     private GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemModifiedAttribute() {}
     /**
@@ -27,14 +28,14 @@ public final class GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemModifi
      * 
      */
     public List<String> appDefinedChildColumnKeys() {
-        return this.appDefinedChildColumnKeys;
+        return this.appDefinedChildColumnKeys == null ? List.of() : this.appDefinedChildColumnKeys;
     }
     /**
      * @return Unique keys identifying the columns that are database-level (dictionary-defined) children of the sensitive column.
      * 
      */
     public List<String> dbDefinedChildColumnKeys() {
-        return this.dbDefinedChildColumnKeys;
+        return this.dbDefinedChildColumnKeys == null ? List.of() : this.dbDefinedChildColumnKeys;
     }
 
     public static Builder builder() {
@@ -46,8 +47,8 @@ public final class GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemModifi
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> appDefinedChildColumnKeys;
-        private List<String> dbDefinedChildColumnKeys;
+        private @Nullable List<String> appDefinedChildColumnKeys;
+        private @Nullable List<String> dbDefinedChildColumnKeys;
         public Builder() {}
         public Builder(GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemModifiedAttribute defaults) {
     	      Objects.requireNonNull(defaults);
@@ -56,16 +57,16 @@ public final class GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemModifi
         }
 
         @CustomType.Setter
-        public Builder appDefinedChildColumnKeys(List<String> appDefinedChildColumnKeys) {
-            this.appDefinedChildColumnKeys = Objects.requireNonNull(appDefinedChildColumnKeys);
+        public Builder appDefinedChildColumnKeys(@Nullable List<String> appDefinedChildColumnKeys) {
+            this.appDefinedChildColumnKeys = appDefinedChildColumnKeys;
             return this;
         }
         public Builder appDefinedChildColumnKeys(String... appDefinedChildColumnKeys) {
             return appDefinedChildColumnKeys(List.of(appDefinedChildColumnKeys));
         }
         @CustomType.Setter
-        public Builder dbDefinedChildColumnKeys(List<String> dbDefinedChildColumnKeys) {
-            this.dbDefinedChildColumnKeys = Objects.requireNonNull(dbDefinedChildColumnKeys);
+        public Builder dbDefinedChildColumnKeys(@Nullable List<String> dbDefinedChildColumnKeys) {
+            this.dbDefinedChildColumnKeys = dbDefinedChildColumnKeys;
             return this;
         }
         public Builder dbDefinedChildColumnKeys(String... dbDefinedChildColumnKeys) {

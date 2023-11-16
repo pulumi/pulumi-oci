@@ -46,9 +46,6 @@ class GetNetworkSourcesResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the tenancy containing the network source. The tenancy is the root compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -58,7 +55,7 @@ class GetNetworkSourcesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -67,25 +64,16 @@ class GetNetworkSourcesResult:
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        The name you assign to the network source during creation. The name must be unique across the tenancy and cannot be changed.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="networkSources")
-    def network_sources(self) -> Sequence['outputs.GetNetworkSourcesNetworkSourceResult']:
-        """
-        The list of network_sources.
-        """
+    def network_sources(self) -> Optional[Sequence['outputs.GetNetworkSourcesNetworkSourceResult']]:
         return pulumi.get(self, "network_sources")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The network source object's current state. After creating a network source, make sure its `lifecycleState` changes from CREATING to ACTIVE before using it.
-        """
         return pulumi.get(self, "state")
 
 
@@ -109,27 +97,7 @@ def get_network_sources(compartment_id: Optional[str] = None,
                         state: Optional[str] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNetworkSourcesResult:
     """
-    This data source provides the list of Network Sources in Oracle Cloud Infrastructure Identity service.
-
-    Lists the network sources in your tenancy. You must specify your tenancy's OCID as the value for
-    the compartment ID (remember that the tenancy is simply the root compartment).
-    See [Where to Get the Tenancy's OCID and User's OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_network_sources = oci.Identity.get_network_sources(compartment_id=var["tenancy_ocid"],
-        name=var["network_source_name"],
-        state=var["network_source_state"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment (remember that the tenancy is simply the root compartment).
-    :param str name: A filter to only return resources that match the given name exactly.
-    :param str state: A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -155,26 +123,6 @@ def get_network_sources_output(compartment_id: Optional[pulumi.Input[str]] = Non
                                state: Optional[pulumi.Input[Optional[str]]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNetworkSourcesResult]:
     """
-    This data source provides the list of Network Sources in Oracle Cloud Infrastructure Identity service.
-
-    Lists the network sources in your tenancy. You must specify your tenancy's OCID as the value for
-    the compartment ID (remember that the tenancy is simply the root compartment).
-    See [Where to Get the Tenancy's OCID and User's OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_network_sources = oci.Identity.get_network_sources(compartment_id=var["tenancy_ocid"],
-        name=var["network_source_name"],
-        state=var["network_source_state"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment (remember that the tenancy is simply the root compartment).
-    :param str name: A filter to only return resources that match the given name exactly.
-    :param str state: A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
+    Use this data source to access information about an existing resource.
     """
     ...

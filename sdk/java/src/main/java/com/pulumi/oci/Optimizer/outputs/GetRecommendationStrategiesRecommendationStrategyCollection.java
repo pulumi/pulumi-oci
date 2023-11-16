@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Optimizer.outputs.GetRecommendationStrategiesRecommendationStrategyCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetRecommendationStrategiesRecommendationStrategyCollection {
@@ -14,7 +15,7 @@ public final class GetRecommendationStrategiesRecommendationStrategyCollection {
      * @return A collection of recommendation strategy summaries.
      * 
      */
-    private List<GetRecommendationStrategiesRecommendationStrategyCollectionItem> items;
+    private @Nullable List<GetRecommendationStrategiesRecommendationStrategyCollectionItem> items;
 
     private GetRecommendationStrategiesRecommendationStrategyCollection() {}
     /**
@@ -22,7 +23,7 @@ public final class GetRecommendationStrategiesRecommendationStrategyCollection {
      * 
      */
     public List<GetRecommendationStrategiesRecommendationStrategyCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetRecommendationStrategiesRecommendationStrategyCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetRecommendationStrategiesRecommendationStrategyCollectionItem> items;
+        private @Nullable List<GetRecommendationStrategiesRecommendationStrategyCollectionItem> items;
         public Builder() {}
         public Builder(GetRecommendationStrategiesRecommendationStrategyCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetRecommendationStrategiesRecommendationStrategyCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetRecommendationStrategiesRecommendationStrategyCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetRecommendationStrategiesRecommendationStrategyCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetRecommendationStrategiesRecommendationStrategyCollectionItem... items) {

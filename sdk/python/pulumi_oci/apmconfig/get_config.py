@@ -105,164 +105,107 @@ class GetConfigResult:
 
     @property
     @pulumi.getter(name="configType")
-    def config_type(self) -> str:
-        """
-        The type of configuration item.
-        """
+    def config_type(self) -> Optional[str]:
         return pulumi.get(self, "config_type")
 
     @property
     @pulumi.getter(name="createdBy")
-    def created_by(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
-        """
+    def created_by(self) -> Optional[str]:
         return pulumi.get(self, "created_by")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        A description of the metric.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter
-    def dimensions(self) -> Sequence['outputs.GetConfigDimensionResult']:
-        """
-        A list of dimensions for the metric. This variable should not be used.
-        """
+    def dimensions(self) -> Optional[Sequence['outputs.GetConfigDimensionResult']]:
         return pulumi.get(self, "dimensions")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The name by which a configuration entity is displayed to the end user.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
-    def etag(self) -> str:
-        """
-        For optimistic concurrency control. See `if-match`.
-        """
+    def etag(self) -> Optional[str]:
         return pulumi.get(self, "etag")
 
     @property
     @pulumi.getter(name="filterId")
-    def filter_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is generated when a Span Filter is created.
-        """
+    def filter_id(self) -> Optional[str]:
         return pulumi.get(self, "filter_id")
 
     @property
     @pulumi.getter(name="filterText")
-    def filter_text(self) -> str:
-        """
-        The string that defines the Span Filter expression.
-        """
+    def filter_text(self) -> Optional[str]:
         return pulumi.get(self, "filter_text")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def group(self) -> str:
-        """
-        A string that specifies the group that an OPTIONS item belongs to.
-        """
+    def group(self) -> Optional[str]:
         return pulumi.get(self, "group")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID is generated when the item is created.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="inUseBies")
-    def in_use_bies(self) -> Sequence['outputs.GetConfigInUseByResult']:
-        """
-        The list of configuration items that reference the span filter.
-        """
+    def in_use_bies(self) -> Optional[Sequence['outputs.GetConfigInUseByResult']]:
         return pulumi.get(self, "in_use_bies")
 
     @property
     @pulumi.getter
-    def metrics(self) -> Sequence['outputs.GetConfigMetricResult']:
-        """
-        The list of metrics in this group.
-        """
+    def metrics(self) -> Optional[Sequence['outputs.GetConfigMetricResult']]:
         return pulumi.get(self, "metrics")
 
     @property
     @pulumi.getter
-    def namespace(self) -> str:
-        """
-        The namespace to which the metrics are published. It must be one of several predefined namespaces.
-        """
+    def namespace(self) -> Optional[str]:
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter(name="opcDryRun")
-    def opc_dry_run(self) -> str:
+    def opc_dry_run(self) -> Optional[str]:
         return pulumi.get(self, "opc_dry_run")
 
     @property
     @pulumi.getter
-    def options(self) -> str:
-        """
-        The options are stored here as JSON.
-        """
+    def options(self) -> Optional[str]:
         return pulumi.get(self, "options")
 
     @property
     @pulumi.getter
-    def rules(self) -> Sequence['outputs.GetConfigRuleResult']:
+    def rules(self) -> Optional[Sequence['outputs.GetConfigRuleResult']]:
         return pulumi.get(self, "rules")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="updatedBy")
-    def updated_by(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
-        """
+    def updated_by(self) -> Optional[str]:
         return pulumi.get(self, "updated_by")
 
 
@@ -301,23 +244,7 @@ def get_config(apm_domain_id: Optional[str] = None,
                config_id: Optional[str] = None,
                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetConfigResult:
     """
-    This data source provides details about a specific Config resource in Oracle Cloud Infrastructure Apm Config service.
-
-    Gets the configuration item identified by the OCID.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_config = oci.ApmConfig.get_config(apm_domain_id=oci_apm_apm_domain["test_apm_domain"]["id"],
-        config_id=oci_apm_config_config["test_config"]["id"])
-    ```
-
-
-    :param str apm_domain_id: The APM Domain ID the request is intended for.
-    :param str config_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['apmDomainId'] = apm_domain_id
@@ -356,22 +283,6 @@ def get_config_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
                       config_id: Optional[pulumi.Input[str]] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetConfigResult]:
     """
-    This data source provides details about a specific Config resource in Oracle Cloud Infrastructure Apm Config service.
-
-    Gets the configuration item identified by the OCID.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_config = oci.ApmConfig.get_config(apm_domain_id=oci_apm_apm_domain["test_apm_domain"]["id"],
-        config_id=oci_apm_config_config["test_config"]["id"])
-    ```
-
-
-    :param str apm_domain_id: The APM Domain ID the request is intended for.
-    :param str config_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item.
+    Use this data source to access information about an existing resource.
     """
     ...

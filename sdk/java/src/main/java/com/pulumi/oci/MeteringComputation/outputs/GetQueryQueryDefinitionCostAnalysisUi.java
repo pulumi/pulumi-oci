@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetQueryQueryDefinitionCostAnalysisUi {
@@ -14,27 +16,27 @@ public final class GetQueryQueryDefinitionCostAnalysisUi {
      * @return The graph type.
      * 
      */
-    private String graph;
+    private @Nullable String graph;
     /**
      * @return A cumulative graph.
      * 
      */
-    private Boolean isCumulativeGraph;
+    private @Nullable Boolean isCumulativeGraph;
 
     private GetQueryQueryDefinitionCostAnalysisUi() {}
     /**
      * @return The graph type.
      * 
      */
-    public String graph() {
-        return this.graph;
+    public Optional<String> graph() {
+        return Optional.ofNullable(this.graph);
     }
     /**
      * @return A cumulative graph.
      * 
      */
-    public Boolean isCumulativeGraph() {
-        return this.isCumulativeGraph;
+    public Optional<Boolean> isCumulativeGraph() {
+        return Optional.ofNullable(this.isCumulativeGraph);
     }
 
     public static Builder builder() {
@@ -46,8 +48,8 @@ public final class GetQueryQueryDefinitionCostAnalysisUi {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String graph;
-        private Boolean isCumulativeGraph;
+        private @Nullable String graph;
+        private @Nullable Boolean isCumulativeGraph;
         public Builder() {}
         public Builder(GetQueryQueryDefinitionCostAnalysisUi defaults) {
     	      Objects.requireNonNull(defaults);
@@ -56,13 +58,13 @@ public final class GetQueryQueryDefinitionCostAnalysisUi {
         }
 
         @CustomType.Setter
-        public Builder graph(String graph) {
-            this.graph = Objects.requireNonNull(graph);
+        public Builder graph(@Nullable String graph) {
+            this.graph = graph;
             return this;
         }
         @CustomType.Setter
-        public Builder isCumulativeGraph(Boolean isCumulativeGraph) {
-            this.isCumulativeGraph = Objects.requireNonNull(isCumulativeGraph);
+        public Builder isCumulativeGraph(@Nullable Boolean isCumulativeGraph) {
+            this.isCumulativeGraph = isCumulativeGraph;
             return this;
         }
         public GetQueryQueryDefinitionCostAnalysisUi build() {

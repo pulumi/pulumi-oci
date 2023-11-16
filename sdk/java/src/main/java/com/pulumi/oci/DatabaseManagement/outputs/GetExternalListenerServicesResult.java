@@ -9,6 +9,7 @@ import com.pulumi.oci.DatabaseManagement.outputs.GetExternalListenerServicesFilt
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -18,13 +19,13 @@ public final class GetExternalListenerServicesResult {
      * @return The list of external_listener_service_collection.
      * 
      */
-    private List<GetExternalListenerServicesExternalListenerServiceCollection> externalListenerServiceCollections;
+    private @Nullable List<GetExternalListenerServicesExternalListenerServiceCollection> externalListenerServiceCollections;
     private @Nullable List<GetExternalListenerServicesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      * 
@@ -40,7 +41,7 @@ public final class GetExternalListenerServicesResult {
      * 
      */
     public List<GetExternalListenerServicesExternalListenerServiceCollection> externalListenerServiceCollections() {
-        return this.externalListenerServiceCollections;
+        return this.externalListenerServiceCollections == null ? List.of() : this.externalListenerServiceCollections;
     }
     public List<GetExternalListenerServicesFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -49,8 +50,8 @@ public final class GetExternalListenerServicesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
@@ -70,9 +71,9 @@ public final class GetExternalListenerServicesResult {
     @CustomType.Builder
     public static final class Builder {
         private String externalListenerId;
-        private List<GetExternalListenerServicesExternalListenerServiceCollection> externalListenerServiceCollections;
+        private @Nullable List<GetExternalListenerServicesExternalListenerServiceCollection> externalListenerServiceCollections;
         private @Nullable List<GetExternalListenerServicesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private String managedDatabaseId;
         public Builder() {}
         public Builder(GetExternalListenerServicesResult defaults) {
@@ -90,8 +91,8 @@ public final class GetExternalListenerServicesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder externalListenerServiceCollections(List<GetExternalListenerServicesExternalListenerServiceCollection> externalListenerServiceCollections) {
-            this.externalListenerServiceCollections = Objects.requireNonNull(externalListenerServiceCollections);
+        public Builder externalListenerServiceCollections(@Nullable List<GetExternalListenerServicesExternalListenerServiceCollection> externalListenerServiceCollections) {
+            this.externalListenerServiceCollections = externalListenerServiceCollections;
             return this;
         }
         public Builder externalListenerServiceCollections(GetExternalListenerServicesExternalListenerServiceCollection... externalListenerServiceCollections) {
@@ -106,8 +107,8 @@ public final class GetExternalListenerServicesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

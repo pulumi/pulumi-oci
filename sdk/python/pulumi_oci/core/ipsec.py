@@ -25,31 +25,6 @@ class IpsecArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None):
         """
         The set of arguments for constructing a Ipsec resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the IPSec connection.
-        :param pulumi.Input[str] cpe_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [Cpe](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Cpe/) object.
-        :param pulumi.Input[str] drg_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] static_routes: (Updatable) Static routes to the CPE. A static route's CIDR must not be a multicast address or class E address.
-               
-               Used for routing a given IPSec tunnel's traffic only if the tunnel is using static routing. If you configure at least one tunnel to use static routing, then you must provide at least one valid static route. If you configure both tunnels to use BGP dynamic routing, you can provide an empty list for the static routes. For more information, see the important note in [IPSecConnection](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnection/).
-               
-               Example: `10.0.1.0/24`
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] cpe_local_identifier: (Updatable) Your identifier for your CPE device. Can be either an IP address or a hostname (specifically, the fully qualified domain name (FQDN)). The type of identifier you provide here must correspond to the value for `cpeLocalIdentifierType`.
-               
-               If you don't provide a value, the `ipAddress` attribute for the [Cpe](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Cpe/) object specified by `cpeId` is used as the `cpeLocalIdentifier`.
-               
-               For information about why you'd provide this value, see [If Your CPE Is Behind a NAT Device](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm#nat).
-               
-               Example IP address: `10.0.3.3`
-               
-               Example hostname: `cpe.example.com`
-        :param pulumi.Input[str] cpe_local_identifier_type: (Updatable) The type of identifier for your CPE device. The value you provide here must correspond to the value for `cpeLocalIdentifier`.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "cpe_id", cpe_id)
@@ -69,9 +44,6 @@ class IpsecArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the IPSec connection.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -81,9 +53,6 @@ class IpsecArgs:
     @property
     @pulumi.getter(name="cpeId")
     def cpe_id(self) -> pulumi.Input[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [Cpe](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Cpe/) object.
-        """
         return pulumi.get(self, "cpe_id")
 
     @cpe_id.setter
@@ -93,9 +62,6 @@ class IpsecArgs:
     @property
     @pulumi.getter(name="drgId")
     def drg_id(self) -> pulumi.Input[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
-        """
         return pulumi.get(self, "drg_id")
 
     @drg_id.setter
@@ -105,17 +71,6 @@ class IpsecArgs:
     @property
     @pulumi.getter(name="staticRoutes")
     def static_routes(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
-        """
-        (Updatable) Static routes to the CPE. A static route's CIDR must not be a multicast address or class E address.
-
-        Used for routing a given IPSec tunnel's traffic only if the tunnel is using static routing. If you configure at least one tunnel to use static routing, then you must provide at least one valid static route. If you configure both tunnels to use BGP dynamic routing, you can provide an empty list for the static routes. For more information, see the important note in [IPSecConnection](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnection/).
-
-        Example: `10.0.1.0/24`
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "static_routes")
 
     @static_routes.setter
@@ -125,17 +80,6 @@ class IpsecArgs:
     @property
     @pulumi.getter(name="cpeLocalIdentifier")
     def cpe_local_identifier(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Your identifier for your CPE device. Can be either an IP address or a hostname (specifically, the fully qualified domain name (FQDN)). The type of identifier you provide here must correspond to the value for `cpeLocalIdentifierType`.
-
-        If you don't provide a value, the `ipAddress` attribute for the [Cpe](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Cpe/) object specified by `cpeId` is used as the `cpeLocalIdentifier`.
-
-        For information about why you'd provide this value, see [If Your CPE Is Behind a NAT Device](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm#nat).
-
-        Example IP address: `10.0.3.3`
-
-        Example hostname: `cpe.example.com`
-        """
         return pulumi.get(self, "cpe_local_identifier")
 
     @cpe_local_identifier.setter
@@ -145,9 +89,6 @@ class IpsecArgs:
     @property
     @pulumi.getter(name="cpeLocalIdentifierType")
     def cpe_local_identifier_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The type of identifier for your CPE device. The value you provide here must correspond to the value for `cpeLocalIdentifier`.
-        """
         return pulumi.get(self, "cpe_local_identifier_type")
 
     @cpe_local_identifier_type.setter
@@ -157,9 +98,6 @@ class IpsecArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -169,9 +107,6 @@ class IpsecArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -181,9 +116,6 @@ class IpsecArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -208,34 +140,6 @@ class _IpsecState:
                  transport_type: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering Ipsec resources.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the IPSec connection.
-        :param pulumi.Input[str] cpe_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [Cpe](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Cpe/) object.
-        :param pulumi.Input[str] cpe_local_identifier: (Updatable) Your identifier for your CPE device. Can be either an IP address or a hostname (specifically, the fully qualified domain name (FQDN)). The type of identifier you provide here must correspond to the value for `cpeLocalIdentifierType`.
-               
-               If you don't provide a value, the `ipAddress` attribute for the [Cpe](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Cpe/) object specified by `cpeId` is used as the `cpeLocalIdentifier`.
-               
-               For information about why you'd provide this value, see [If Your CPE Is Behind a NAT Device](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm#nat).
-               
-               Example IP address: `10.0.3.3`
-               
-               Example hostname: `cpe.example.com`
-        :param pulumi.Input[str] cpe_local_identifier_type: (Updatable) The type of identifier for your CPE device. The value you provide here must correspond to the value for `cpeLocalIdentifier`.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[str] drg_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] state: The IPSec connection's current state.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] static_routes: (Updatable) Static routes to the CPE. A static route's CIDR must not be a multicast address or class E address.
-               
-               Used for routing a given IPSec tunnel's traffic only if the tunnel is using static routing. If you configure at least one tunnel to use static routing, then you must provide at least one valid static route. If you configure both tunnels to use BGP dynamic routing, you can provide an empty list for the static routes. For more information, see the important note in [IPSecConnection](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnection/).
-               
-               Example: `10.0.1.0/24`
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] time_created: The date and time the IPSec connection was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-        :param pulumi.Input[str] transport_type: The transport type used for the IPSec connection.
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -265,9 +169,6 @@ class _IpsecState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the IPSec connection.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -277,9 +178,6 @@ class _IpsecState:
     @property
     @pulumi.getter(name="cpeId")
     def cpe_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [Cpe](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Cpe/) object.
-        """
         return pulumi.get(self, "cpe_id")
 
     @cpe_id.setter
@@ -289,17 +187,6 @@ class _IpsecState:
     @property
     @pulumi.getter(name="cpeLocalIdentifier")
     def cpe_local_identifier(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Your identifier for your CPE device. Can be either an IP address or a hostname (specifically, the fully qualified domain name (FQDN)). The type of identifier you provide here must correspond to the value for `cpeLocalIdentifierType`.
-
-        If you don't provide a value, the `ipAddress` attribute for the [Cpe](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Cpe/) object specified by `cpeId` is used as the `cpeLocalIdentifier`.
-
-        For information about why you'd provide this value, see [If Your CPE Is Behind a NAT Device](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm#nat).
-
-        Example IP address: `10.0.3.3`
-
-        Example hostname: `cpe.example.com`
-        """
         return pulumi.get(self, "cpe_local_identifier")
 
     @cpe_local_identifier.setter
@@ -309,9 +196,6 @@ class _IpsecState:
     @property
     @pulumi.getter(name="cpeLocalIdentifierType")
     def cpe_local_identifier_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The type of identifier for your CPE device. The value you provide here must correspond to the value for `cpeLocalIdentifier`.
-        """
         return pulumi.get(self, "cpe_local_identifier_type")
 
     @cpe_local_identifier_type.setter
@@ -321,9 +205,6 @@ class _IpsecState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -333,9 +214,6 @@ class _IpsecState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -345,9 +223,6 @@ class _IpsecState:
     @property
     @pulumi.getter(name="drgId")
     def drg_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
-        """
         return pulumi.get(self, "drg_id")
 
     @drg_id.setter
@@ -357,9 +232,6 @@ class _IpsecState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -369,9 +241,6 @@ class _IpsecState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The IPSec connection's current state.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -381,17 +250,6 @@ class _IpsecState:
     @property
     @pulumi.getter(name="staticRoutes")
     def static_routes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) Static routes to the CPE. A static route's CIDR must not be a multicast address or class E address.
-
-        Used for routing a given IPSec tunnel's traffic only if the tunnel is using static routing. If you configure at least one tunnel to use static routing, then you must provide at least one valid static route. If you configure both tunnels to use BGP dynamic routing, you can provide an empty list for the static routes. For more information, see the important note in [IPSecConnection](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnection/).
-
-        Example: `10.0.1.0/24`
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "static_routes")
 
     @static_routes.setter
@@ -401,9 +259,6 @@ class _IpsecState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the IPSec connection was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -413,9 +268,6 @@ class _IpsecState:
     @property
     @pulumi.getter(name="transportType")
     def transport_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The transport type used for the IPSec connection.
-        """
         return pulumi.get(self, "transport_type")
 
     @transport_type.setter
@@ -439,94 +291,9 @@ class Ipsec(pulumi.CustomResource):
                  static_routes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  __props__=None):
         """
-        This resource provides the Ip Sec Connection resource in Oracle Cloud Infrastructure Core service.
-
-        Creates a new IPSec connection between the specified DRG and CPE. For more information, see
-        [Site-to-Site VPN Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm).
-
-        If you configure at least one tunnel to use static routing, then in the request you must provide
-        at least one valid static route (you're allowed a maximum of 10). For example: 10.0.0.0/16.
-        If you configure both tunnels to use BGP dynamic routing, you can provide an empty list for
-        the static routes. For more information, see the important note in
-        [IPSecConnection](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnection/).
-
-        For the purposes of access control, you must provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want the
-        IPSec connection to reside. Notice that the IPSec connection doesn't have to be in the same compartment
-        as the DRG, CPE, or other Networking Service components. If you're not sure which compartment to
-        use, put the IPSec connection in the same compartment as the DRG. For more information about
-        compartments and access control, see
-        [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
-
-        You may optionally specify a *display name* for the IPSec connection, otherwise a default is provided.
-        It does not have to be unique, and you can change it. Avoid entering confidential information.
-
-        After creating the IPSec connection, you need to configure your on-premises router
-        with tunnel-specific information. For tunnel status and the required configuration information, see:
-
-          * [IPSecConnectionTunnel](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnectionTunnel/)
-          * [IPSecConnectionTunnelSharedSecret](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnectionTunnelSharedSecret/)
-
-        For each tunnel, you need the IP address of Oracle's VPN headend and the shared secret
-        (that is, the pre-shared key). For more information, see
-        [CPE Configuration](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/configuringCPE.htm).
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_ip_sec_connection = oci.core.Ipsec("testIpSecConnection",
-            compartment_id=var["compartment_id"],
-            cpe_id=oci_core_cpe["test_cpe"]["id"],
-            drg_id=oci_core_drg["test_drg"]["id"],
-            static_routes=var["ip_sec_connection_static_routes"],
-            cpe_local_identifier=var["ip_sec_connection_cpe_local_identifier"],
-            cpe_local_identifier_type=var["ip_sec_connection_cpe_local_identifier_type"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            display_name=var["ip_sec_connection_display_name"],
-            freeform_tags={
-                "Department": "Finance",
-            })
-        ```
-
-        ## Import
-
-        IpSecConnections can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Core/ipsec:Ipsec test_ip_sec_connection "id"
-        ```
-
+        Create a Ipsec resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the IPSec connection.
-        :param pulumi.Input[str] cpe_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [Cpe](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Cpe/) object.
-        :param pulumi.Input[str] cpe_local_identifier: (Updatable) Your identifier for your CPE device. Can be either an IP address or a hostname (specifically, the fully qualified domain name (FQDN)). The type of identifier you provide here must correspond to the value for `cpeLocalIdentifierType`.
-               
-               If you don't provide a value, the `ipAddress` attribute for the [Cpe](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Cpe/) object specified by `cpeId` is used as the `cpeLocalIdentifier`.
-               
-               For information about why you'd provide this value, see [If Your CPE Is Behind a NAT Device](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm#nat).
-               
-               Example IP address: `10.0.3.3`
-               
-               Example hostname: `cpe.example.com`
-        :param pulumi.Input[str] cpe_local_identifier_type: (Updatable) The type of identifier for your CPE device. The value you provide here must correspond to the value for `cpeLocalIdentifier`.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[str] drg_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] static_routes: (Updatable) Static routes to the CPE. A static route's CIDR must not be a multicast address or class E address.
-               
-               Used for routing a given IPSec tunnel's traffic only if the tunnel is using static routing. If you configure at least one tunnel to use static routing, then you must provide at least one valid static route. If you configure both tunnels to use BGP dynamic routing, you can provide an empty list for the static routes. For more information, see the important note in [IPSecConnection](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnection/).
-               
-               Example: `10.0.1.0/24`
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -535,67 +302,7 @@ class Ipsec(pulumi.CustomResource):
                  args: IpsecArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Ip Sec Connection resource in Oracle Cloud Infrastructure Core service.
-
-        Creates a new IPSec connection between the specified DRG and CPE. For more information, see
-        [Site-to-Site VPN Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm).
-
-        If you configure at least one tunnel to use static routing, then in the request you must provide
-        at least one valid static route (you're allowed a maximum of 10). For example: 10.0.0.0/16.
-        If you configure both tunnels to use BGP dynamic routing, you can provide an empty list for
-        the static routes. For more information, see the important note in
-        [IPSecConnection](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnection/).
-
-        For the purposes of access control, you must provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want the
-        IPSec connection to reside. Notice that the IPSec connection doesn't have to be in the same compartment
-        as the DRG, CPE, or other Networking Service components. If you're not sure which compartment to
-        use, put the IPSec connection in the same compartment as the DRG. For more information about
-        compartments and access control, see
-        [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
-
-        You may optionally specify a *display name* for the IPSec connection, otherwise a default is provided.
-        It does not have to be unique, and you can change it. Avoid entering confidential information.
-
-        After creating the IPSec connection, you need to configure your on-premises router
-        with tunnel-specific information. For tunnel status and the required configuration information, see:
-
-          * [IPSecConnectionTunnel](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnectionTunnel/)
-          * [IPSecConnectionTunnelSharedSecret](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnectionTunnelSharedSecret/)
-
-        For each tunnel, you need the IP address of Oracle's VPN headend and the shared secret
-        (that is, the pre-shared key). For more information, see
-        [CPE Configuration](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/configuringCPE.htm).
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_ip_sec_connection = oci.core.Ipsec("testIpSecConnection",
-            compartment_id=var["compartment_id"],
-            cpe_id=oci_core_cpe["test_cpe"]["id"],
-            drg_id=oci_core_drg["test_drg"]["id"],
-            static_routes=var["ip_sec_connection_static_routes"],
-            cpe_local_identifier=var["ip_sec_connection_cpe_local_identifier"],
-            cpe_local_identifier_type=var["ip_sec_connection_cpe_local_identifier_type"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            display_name=var["ip_sec_connection_display_name"],
-            freeform_tags={
-                "Department": "Finance",
-            })
-        ```
-
-        ## Import
-
-        IpSecConnections can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Core/ipsec:Ipsec test_ip_sec_connection "id"
-        ```
-
+        Create a Ipsec resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param IpsecArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -678,34 +385,6 @@ class Ipsec(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the IPSec connection.
-        :param pulumi.Input[str] cpe_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [Cpe](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Cpe/) object.
-        :param pulumi.Input[str] cpe_local_identifier: (Updatable) Your identifier for your CPE device. Can be either an IP address or a hostname (specifically, the fully qualified domain name (FQDN)). The type of identifier you provide here must correspond to the value for `cpeLocalIdentifierType`.
-               
-               If you don't provide a value, the `ipAddress` attribute for the [Cpe](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Cpe/) object specified by `cpeId` is used as the `cpeLocalIdentifier`.
-               
-               For information about why you'd provide this value, see [If Your CPE Is Behind a NAT Device](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm#nat).
-               
-               Example IP address: `10.0.3.3`
-               
-               Example hostname: `cpe.example.com`
-        :param pulumi.Input[str] cpe_local_identifier_type: (Updatable) The type of identifier for your CPE device. The value you provide here must correspond to the value for `cpeLocalIdentifier`.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[str] drg_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] state: The IPSec connection's current state.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] static_routes: (Updatable) Static routes to the CPE. A static route's CIDR must not be a multicast address or class E address.
-               
-               Used for routing a given IPSec tunnel's traffic only if the tunnel is using static routing. If you configure at least one tunnel to use static routing, then you must provide at least one valid static route. If you configure both tunnels to use BGP dynamic routing, you can provide an empty list for the static routes. For more information, see the important note in [IPSecConnection](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnection/).
-               
-               Example: `10.0.1.0/24`
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] time_created: The date and time the IPSec connection was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-        :param pulumi.Input[str] transport_type: The transport type used for the IPSec connection.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -728,112 +407,60 @@ class Ipsec(pulumi.CustomResource):
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the IPSec connection.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="cpeId")
     def cpe_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [Cpe](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Cpe/) object.
-        """
         return pulumi.get(self, "cpe_id")
 
     @property
     @pulumi.getter(name="cpeLocalIdentifier")
-    def cpe_local_identifier(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Your identifier for your CPE device. Can be either an IP address or a hostname (specifically, the fully qualified domain name (FQDN)). The type of identifier you provide here must correspond to the value for `cpeLocalIdentifierType`.
-
-        If you don't provide a value, the `ipAddress` attribute for the [Cpe](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Cpe/) object specified by `cpeId` is used as the `cpeLocalIdentifier`.
-
-        For information about why you'd provide this value, see [If Your CPE Is Behind a NAT Device](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm#nat).
-
-        Example IP address: `10.0.3.3`
-
-        Example hostname: `cpe.example.com`
-        """
+    def cpe_local_identifier(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "cpe_local_identifier")
 
     @property
     @pulumi.getter(name="cpeLocalIdentifierType")
-    def cpe_local_identifier_type(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The type of identifier for your CPE device. The value you provide here must correspond to the value for `cpeLocalIdentifier`.
-        """
+    def cpe_local_identifier_type(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "cpe_local_identifier_type")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="drgId")
     def drg_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
-        """
         return pulumi.get(self, "drg_id")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The IPSec connection's current state.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="staticRoutes")
     def static_routes(self) -> pulumi.Output[Sequence[str]]:
-        """
-        (Updatable) Static routes to the CPE. A static route's CIDR must not be a multicast address or class E address.
-
-        Used for routing a given IPSec tunnel's traffic only if the tunnel is using static routing. If you configure at least one tunnel to use static routing, then you must provide at least one valid static route. If you configure both tunnels to use BGP dynamic routing, you can provide an empty list for the static routes. For more information, see the important note in [IPSecConnection](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnection/).
-
-        Example: `10.0.1.0/24`
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "static_routes")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The date and time the IPSec connection was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="transportType")
-    def transport_type(self) -> pulumi.Output[str]:
-        """
-        The transport type used for the IPSec connection.
-        """
+    def transport_type(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "transport_type")
 

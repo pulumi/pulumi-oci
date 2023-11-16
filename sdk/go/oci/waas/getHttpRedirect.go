@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Http Redirect resource in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
@@ -60,26 +59,26 @@ type LookupHttpRedirectArgs struct {
 // A collection of values returned by getHttpRedirect.
 type LookupHttpRedirectResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HTTP Redirect's compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The user-friendly name of the HTTP Redirect. The name can be changed and does not need to be unique.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The domain from which traffic will be redirected.
-	Domain string `pulumi:"domain"`
+	Domain *string `pulumi:"domain"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags   map[string]interface{} `pulumi:"freeformTags"`
 	HttpRedirectId string                 `pulumi:"httpRedirectId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HTTP Redirect.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The response code returned for the redirect to the client. For more information, see [RFC 7231](https://tools.ietf.org/html/rfc7231#section-6.4).
-	ResponseCode int `pulumi:"responseCode"`
+	ResponseCode *int `pulumi:"responseCode"`
 	// The current lifecycle state of the HTTP Redirect.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The redirect target object including all the redirect data.
 	Targets []GetHttpRedirectTarget `pulumi:"targets"`
 	// The date and time the policy was created, expressed in RFC 3339 timestamp format.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 }
 
 func LookupHttpRedirectOutput(ctx *pulumi.Context, args LookupHttpRedirectOutputArgs, opts ...pulumi.InvokeOption) LookupHttpRedirectResultOutput {
@@ -120,15 +119,9 @@ func (o LookupHttpRedirectResultOutput) ToLookupHttpRedirectResultOutputWithCont
 	return o
 }
 
-func (o LookupHttpRedirectResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupHttpRedirectResult] {
-	return pulumix.Output[LookupHttpRedirectResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HTTP Redirect's compartment.
-func (o LookupHttpRedirectResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupHttpRedirectResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupHttpRedirectResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupHttpRedirectResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -137,13 +130,13 @@ func (o LookupHttpRedirectResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // The user-friendly name of the HTTP Redirect. The name can be changed and does not need to be unique.
-func (o LookupHttpRedirectResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupHttpRedirectResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupHttpRedirectResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupHttpRedirectResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The domain from which traffic will be redirected.
-func (o LookupHttpRedirectResultOutput) Domain() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupHttpRedirectResult) string { return v.Domain }).(pulumi.StringOutput)
+func (o LookupHttpRedirectResultOutput) Domain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupHttpRedirectResult) *string { return v.Domain }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -156,18 +149,18 @@ func (o LookupHttpRedirectResultOutput) HttpRedirectId() pulumi.StringOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HTTP Redirect.
-func (o LookupHttpRedirectResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupHttpRedirectResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupHttpRedirectResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupHttpRedirectResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The response code returned for the redirect to the client. For more information, see [RFC 7231](https://tools.ietf.org/html/rfc7231#section-6.4).
-func (o LookupHttpRedirectResultOutput) ResponseCode() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupHttpRedirectResult) int { return v.ResponseCode }).(pulumi.IntOutput)
+func (o LookupHttpRedirectResultOutput) ResponseCode() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupHttpRedirectResult) *int { return v.ResponseCode }).(pulumi.IntPtrOutput)
 }
 
 // The current lifecycle state of the HTTP Redirect.
-func (o LookupHttpRedirectResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupHttpRedirectResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupHttpRedirectResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupHttpRedirectResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The redirect target object including all the redirect data.
@@ -176,8 +169,8 @@ func (o LookupHttpRedirectResultOutput) Targets() GetHttpRedirectTargetArrayOutp
 }
 
 // The date and time the policy was created, expressed in RFC 3339 timestamp format.
-func (o LookupHttpRedirectResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupHttpRedirectResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupHttpRedirectResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupHttpRedirectResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

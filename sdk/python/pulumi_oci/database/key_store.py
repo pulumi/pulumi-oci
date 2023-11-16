@@ -23,11 +23,6 @@ class KeyStoreArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None):
         """
         The set of arguments for constructing a KeyStore resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[str] display_name: The user-friendly name for the key store. The name does not need to be unique.
-        :param pulumi.Input['KeyStoreTypeDetailsArgs'] type_details: (Updatable) Key store type details.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "display_name", display_name)
@@ -40,9 +35,6 @@ class KeyStoreArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -52,9 +44,6 @@ class KeyStoreArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[str]:
-        """
-        The user-friendly name for the key store. The name does not need to be unique.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -64,9 +53,6 @@ class KeyStoreArgs:
     @property
     @pulumi.getter(name="typeDetails")
     def type_details(self) -> pulumi.Input['KeyStoreTypeDetailsArgs']:
-        """
-        (Updatable) Key store type details.
-        """
         return pulumi.get(self, "type_details")
 
     @type_details.setter
@@ -76,9 +62,6 @@ class KeyStoreArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -88,9 +71,6 @@ class KeyStoreArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -112,15 +92,6 @@ class _KeyStoreState:
                  type_details: Optional[pulumi.Input['KeyStoreTypeDetailsArgs']] = None):
         """
         Input properties used for looking up and filtering KeyStore resources.
-        :param pulumi.Input[Sequence[pulumi.Input['KeyStoreAssociatedDatabaseArgs']]] associated_databases: List of databases associated with the key store.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param pulumi.Input[str] display_name: The user-friendly name for the key store. The name does not need to be unique.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
-        :param pulumi.Input[str] state: The current state of the key store.
-        :param pulumi.Input[str] time_created: The date and time that the key store was created.
-        :param pulumi.Input['KeyStoreTypeDetailsArgs'] type_details: (Updatable) Key store type details.
         """
         if associated_databases is not None:
             pulumi.set(__self__, "associated_databases", associated_databases)
@@ -144,9 +115,6 @@ class _KeyStoreState:
     @property
     @pulumi.getter(name="associatedDatabases")
     def associated_databases(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['KeyStoreAssociatedDatabaseArgs']]]]:
-        """
-        List of databases associated with the key store.
-        """
         return pulumi.get(self, "associated_databases")
 
     @associated_databases.setter
@@ -156,9 +124,6 @@ class _KeyStoreState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -168,9 +133,6 @@ class _KeyStoreState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -180,9 +142,6 @@ class _KeyStoreState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The user-friendly name for the key store. The name does not need to be unique.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -192,9 +151,6 @@ class _KeyStoreState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -204,9 +160,6 @@ class _KeyStoreState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        Additional information about the current lifecycle state.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -216,9 +169,6 @@ class _KeyStoreState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the key store.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -228,9 +178,6 @@ class _KeyStoreState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time that the key store was created.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -240,9 +187,6 @@ class _KeyStoreState:
     @property
     @pulumi.getter(name="typeDetails")
     def type_details(self) -> Optional[pulumi.Input['KeyStoreTypeDetailsArgs']]:
-        """
-        (Updatable) Key store type details.
-        """
         return pulumi.get(self, "type_details")
 
     @type_details.setter
@@ -262,47 +206,9 @@ class KeyStore(pulumi.CustomResource):
                  type_details: Optional[pulumi.Input[pulumi.InputType['KeyStoreTypeDetailsArgs']]] = None,
                  __props__=None):
         """
-        This resource provides the Key Store resource in Oracle Cloud Infrastructure Database service.
-
-        Creates a Key Store.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_key_store = oci.database.KeyStore("testKeyStore",
-            compartment_id=var["compartment_id"],
-            display_name=var["key_store_display_name"],
-            type_details=oci.database.KeyStoreTypeDetailsArgs(
-                admin_username=var["key_store_type_details_admin_username"],
-                connection_ips=var["key_store_type_details_connection_ips"],
-                secret_id=oci_vault_secret["test_secret"]["id"],
-                type=var["key_store_type_details_type"],
-                vault_id=oci_kms_vault["test_vault"]["id"],
-            ),
-            defined_tags=var["key_store_defined_tags"],
-            freeform_tags={
-                "Department": "Finance",
-            })
-        ```
-
-        ## Import
-
-        KeyStores can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Database/keyStore:KeyStore test_key_store "id"
-        ```
-
+        Create a KeyStore resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param pulumi.Input[str] display_name: The user-friendly name for the key store. The name does not need to be unique.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[pulumi.InputType['KeyStoreTypeDetailsArgs']] type_details: (Updatable) Key store type details.
         """
         ...
     @overload
@@ -311,40 +217,7 @@ class KeyStore(pulumi.CustomResource):
                  args: KeyStoreArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Key Store resource in Oracle Cloud Infrastructure Database service.
-
-        Creates a Key Store.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_key_store = oci.database.KeyStore("testKeyStore",
-            compartment_id=var["compartment_id"],
-            display_name=var["key_store_display_name"],
-            type_details=oci.database.KeyStoreTypeDetailsArgs(
-                admin_username=var["key_store_type_details_admin_username"],
-                connection_ips=var["key_store_type_details_connection_ips"],
-                secret_id=oci_vault_secret["test_secret"]["id"],
-                type=var["key_store_type_details_type"],
-                vault_id=oci_kms_vault["test_vault"]["id"],
-            ),
-            defined_tags=var["key_store_defined_tags"],
-            freeform_tags={
-                "Department": "Finance",
-            })
-        ```
-
-        ## Import
-
-        KeyStores can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Database/keyStore:KeyStore test_key_store "id"
-        ```
-
+        Create a KeyStore resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param KeyStoreArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -415,15 +288,6 @@ class KeyStore(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['KeyStoreAssociatedDatabaseArgs']]]] associated_databases: List of databases associated with the key store.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param pulumi.Input[str] display_name: The user-friendly name for the key store. The name does not need to be unique.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
-        :param pulumi.Input[str] state: The current state of the key store.
-        :param pulumi.Input[str] time_created: The date and time that the key store was created.
-        :param pulumi.Input[pulumi.InputType['KeyStoreTypeDetailsArgs']] type_details: (Updatable) Key store type details.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -442,73 +306,46 @@ class KeyStore(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="associatedDatabases")
-    def associated_databases(self) -> pulumi.Output[Sequence['outputs.KeyStoreAssociatedDatabase']]:
-        """
-        List of databases associated with the key store.
-        """
+    def associated_databases(self) -> pulumi.Output[Optional[Sequence['outputs.KeyStoreAssociatedDatabase']]]:
         return pulumi.get(self, "associated_databases")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
-        """
-        The user-friendly name for the key store. The name does not need to be unique.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        Additional information about the current lifecycle state.
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the key store.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The date and time that the key store was created.
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="typeDetails")
     def type_details(self) -> pulumi.Output['outputs.KeyStoreTypeDetails']:
-        """
-        (Updatable) Key store type details.
-        """
         return pulumi.get(self, "type_details")
 

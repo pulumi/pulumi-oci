@@ -23,15 +23,6 @@ class DrPlanArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None):
         """
         The set of arguments for constructing a DrPlan resource.
-        :param pulumi.Input[str] display_name: (Updatable) The display name of the DR plan being created.  Example: `EBS Switchover PHX to IAD`
-        :param pulumi.Input[str] dr_protection_group_id: The OCID of the DR protection group to which this DR plan belongs.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
-        :param pulumi.Input[str] type: The type of DR plan to be created. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
         """
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "dr_protection_group_id", dr_protection_group_id)
@@ -44,9 +35,6 @@ class DrPlanArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The display name of the DR plan being created.  Example: `EBS Switchover PHX to IAD`
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -56,9 +44,6 @@ class DrPlanArgs:
     @property
     @pulumi.getter(name="drProtectionGroupId")
     def dr_protection_group_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of the DR protection group to which this DR plan belongs.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
-        """
         return pulumi.get(self, "dr_protection_group_id")
 
     @dr_protection_group_id.setter
@@ -68,13 +53,6 @@ class DrPlanArgs:
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
-        """
-        The type of DR plan to be created. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -84,9 +62,6 @@ class DrPlanArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -96,9 +71,6 @@ class DrPlanArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -125,24 +97,6 @@ class _DrPlanState:
                  type: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering DrPlan resources.
-        :param pulumi.Input[str] compartment_id: The OCID of the compartment containing the DR plan.  Example: `ocid1.compartment.oc1..uniqueID`
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) The display name of the DR plan being created.  Example: `EBS Switchover PHX to IAD`
-        :param pulumi.Input[str] dr_protection_group_id: The OCID of the DR protection group to which this DR plan belongs.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] life_cycle_details: A message describing the DR plan's current state in more detail.
-        :param pulumi.Input[str] peer_dr_protection_group_id: The OCID of the peer DR protection group associated with this plan's DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
-        :param pulumi.Input[str] peer_region: The region of the peer DR protection group associated with this plan's DR protection group.  Example: `us-ashburn-1`
-        :param pulumi.Input[Sequence[pulumi.Input['DrPlanPlanGroupArgs']]] plan_groups: The list of groups in this DR plan.
-        :param pulumi.Input[str] state: The current state of the DR plan.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: The date and time the DR plan was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
-        :param pulumi.Input[str] time_updated: The date and time the DR plan was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
-        :param pulumi.Input[str] type: The type of DR plan to be created. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -176,9 +130,6 @@ class _DrPlanState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the compartment containing the DR plan.  Example: `ocid1.compartment.oc1..uniqueID`
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -188,9 +139,6 @@ class _DrPlanState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -200,9 +148,6 @@ class _DrPlanState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The display name of the DR plan being created.  Example: `EBS Switchover PHX to IAD`
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -212,9 +157,6 @@ class _DrPlanState:
     @property
     @pulumi.getter(name="drProtectionGroupId")
     def dr_protection_group_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the DR protection group to which this DR plan belongs.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
-        """
         return pulumi.get(self, "dr_protection_group_id")
 
     @dr_protection_group_id.setter
@@ -224,9 +166,6 @@ class _DrPlanState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -236,9 +175,6 @@ class _DrPlanState:
     @property
     @pulumi.getter(name="lifeCycleDetails")
     def life_cycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        A message describing the DR plan's current state in more detail.
-        """
         return pulumi.get(self, "life_cycle_details")
 
     @life_cycle_details.setter
@@ -248,9 +184,6 @@ class _DrPlanState:
     @property
     @pulumi.getter(name="peerDrProtectionGroupId")
     def peer_dr_protection_group_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the peer DR protection group associated with this plan's DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
-        """
         return pulumi.get(self, "peer_dr_protection_group_id")
 
     @peer_dr_protection_group_id.setter
@@ -260,9 +193,6 @@ class _DrPlanState:
     @property
     @pulumi.getter(name="peerRegion")
     def peer_region(self) -> Optional[pulumi.Input[str]]:
-        """
-        The region of the peer DR protection group associated with this plan's DR protection group.  Example: `us-ashburn-1`
-        """
         return pulumi.get(self, "peer_region")
 
     @peer_region.setter
@@ -272,9 +202,6 @@ class _DrPlanState:
     @property
     @pulumi.getter(name="planGroups")
     def plan_groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DrPlanPlanGroupArgs']]]]:
-        """
-        The list of groups in this DR plan.
-        """
         return pulumi.get(self, "plan_groups")
 
     @plan_groups.setter
@@ -284,9 +211,6 @@ class _DrPlanState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the DR plan.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -296,9 +220,6 @@ class _DrPlanState:
     @property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
@@ -308,9 +229,6 @@ class _DrPlanState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the DR plan was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -320,9 +238,6 @@ class _DrPlanState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the DR plan was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -332,13 +247,6 @@ class _DrPlanState:
     @property
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The type of DR plan to be created. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -358,47 +266,9 @@ class DrPlan(pulumi.CustomResource):
                  type: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Dr Plan resource in Oracle Cloud Infrastructure Disaster Recovery service.
-
-        Create a DR plan of the specified DR plan type.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_dr_plan = oci.disaster_recovery.DrPlan("testDrPlan",
-            display_name=var["dr_plan_display_name"],
-            dr_protection_group_id=oci_disaster_recovery_dr_protection_group["test_dr_protection_group"]["id"],
-            type=var["dr_plan_type"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            freeform_tags={
-                "Department": "Finance",
-            })
-        ```
-
-        ## Import
-
-        DrPlans can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:DisasterRecovery/drPlan:DrPlan test_dr_plan "id"
-        ```
-
+        Create a DrPlan resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) The display name of the DR plan being created.  Example: `EBS Switchover PHX to IAD`
-        :param pulumi.Input[str] dr_protection_group_id: The OCID of the DR protection group to which this DR plan belongs.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] type: The type of DR plan to be created. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -407,36 +277,7 @@ class DrPlan(pulumi.CustomResource):
                  args: DrPlanArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Dr Plan resource in Oracle Cloud Infrastructure Disaster Recovery service.
-
-        Create a DR plan of the specified DR plan type.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_dr_plan = oci.disaster_recovery.DrPlan("testDrPlan",
-            display_name=var["dr_plan_display_name"],
-            dr_protection_group_id=oci_disaster_recovery_dr_protection_group["test_dr_protection_group"]["id"],
-            type=var["dr_plan_type"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            freeform_tags={
-                "Department": "Finance",
-            })
-        ```
-
-        ## Import
-
-        DrPlans can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:DisasterRecovery/drPlan:DrPlan test_dr_plan "id"
-        ```
-
+        Create a DrPlan resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param DrPlanArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -517,24 +358,6 @@ class DrPlan(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: The OCID of the compartment containing the DR plan.  Example: `ocid1.compartment.oc1..uniqueID`
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) The display name of the DR plan being created.  Example: `EBS Switchover PHX to IAD`
-        :param pulumi.Input[str] dr_protection_group_id: The OCID of the DR protection group to which this DR plan belongs.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] life_cycle_details: A message describing the DR plan's current state in more detail.
-        :param pulumi.Input[str] peer_dr_protection_group_id: The OCID of the peer DR protection group associated with this plan's DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
-        :param pulumi.Input[str] peer_region: The region of the peer DR protection group associated with this plan's DR protection group.  Example: `us-ashburn-1`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DrPlanPlanGroupArgs']]]] plan_groups: The list of groups in this DR plan.
-        :param pulumi.Input[str] state: The current state of the DR plan.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: The date and time the DR plan was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
-        :param pulumi.Input[str] time_updated: The date and time the DR plan was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
-        :param pulumi.Input[str] type: The type of DR plan to be created. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -558,117 +381,71 @@ class DrPlan(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the compartment containing the DR plan.  Example: `ocid1.compartment.oc1..uniqueID`
-        """
+    def compartment_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The display name of the DR plan being created.  Example: `EBS Switchover PHX to IAD`
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="drProtectionGroupId")
     def dr_protection_group_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the DR protection group to which this DR plan belongs.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
-        """
         return pulumi.get(self, "dr_protection_group_id")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="lifeCycleDetails")
-    def life_cycle_details(self) -> pulumi.Output[str]:
-        """
-        A message describing the DR plan's current state in more detail.
-        """
+    def life_cycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "life_cycle_details")
 
     @property
     @pulumi.getter(name="peerDrProtectionGroupId")
-    def peer_dr_protection_group_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the peer DR protection group associated with this plan's DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
-        """
+    def peer_dr_protection_group_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "peer_dr_protection_group_id")
 
     @property
     @pulumi.getter(name="peerRegion")
-    def peer_region(self) -> pulumi.Output[str]:
-        """
-        The region of the peer DR protection group associated with this plan's DR protection group.  Example: `us-ashburn-1`
-        """
+    def peer_region(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "peer_region")
 
     @property
     @pulumi.getter(name="planGroups")
-    def plan_groups(self) -> pulumi.Output[Sequence['outputs.DrPlanPlanGroup']]:
-        """
-        The list of groups in this DR plan.
-        """
+    def plan_groups(self) -> pulumi.Output[Optional[Sequence['outputs.DrPlanPlanGroup']]]:
         return pulumi.get(self, "plan_groups")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the DR plan.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The date and time the DR plan was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The date and time the DR plan was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter
     def type(self) -> pulumi.Output[str]:
-        """
-        The type of DR plan to be created. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "type")
 

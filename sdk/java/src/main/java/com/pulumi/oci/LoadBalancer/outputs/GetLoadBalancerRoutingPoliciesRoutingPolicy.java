@@ -8,6 +8,8 @@ import com.pulumi.oci.LoadBalancer.outputs.GetLoadBalancerRoutingPoliciesRouting
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetLoadBalancerRoutingPoliciesRoutingPolicy {
@@ -31,7 +33,7 @@ public final class GetLoadBalancerRoutingPoliciesRoutingPolicy {
      * 
      */
     private List<GetLoadBalancerRoutingPoliciesRoutingPolicyRule> rules;
-    private String state;
+    private @Nullable String state;
 
     private GetLoadBalancerRoutingPoliciesRoutingPolicy() {}
     /**
@@ -62,8 +64,8 @@ public final class GetLoadBalancerRoutingPoliciesRoutingPolicy {
     public List<GetLoadBalancerRoutingPoliciesRoutingPolicyRule> rules() {
         return this.rules;
     }
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
 
     public static Builder builder() {
@@ -79,7 +81,7 @@ public final class GetLoadBalancerRoutingPoliciesRoutingPolicy {
         private String loadBalancerId;
         private String name;
         private List<GetLoadBalancerRoutingPoliciesRoutingPolicyRule> rules;
-        private String state;
+        private @Nullable String state;
         public Builder() {}
         public Builder(GetLoadBalancerRoutingPoliciesRoutingPolicy defaults) {
     	      Objects.requireNonNull(defaults);
@@ -114,8 +116,8 @@ public final class GetLoadBalancerRoutingPoliciesRoutingPolicy {
             return rules(List.of(rules));
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         public GetLoadBalancerRoutingPoliciesRoutingPolicy build() {

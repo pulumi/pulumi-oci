@@ -6,6 +6,8 @@ package com.pulumi.oci.DataSafe.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAlertPolicyRuleItem {
@@ -13,39 +15,39 @@ public final class GetAlertPolicyRuleItem {
      * @return Describes the alert policy rule.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return The conditional expression of the alert policy rule which evaluates to boolean value.
      * 
      */
-    private String expression;
+    private @Nullable String expression;
     /**
      * @return The unique key of the alert policy rule.
      * 
      */
-    private String key;
+    private @Nullable String key;
 
     private GetAlertPolicyRuleItem() {}
     /**
      * @return Describes the alert policy rule.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return The conditional expression of the alert policy rule which evaluates to boolean value.
      * 
      */
-    public String expression() {
-        return this.expression;
+    public Optional<String> expression() {
+        return Optional.ofNullable(this.expression);
     }
     /**
      * @return The unique key of the alert policy rule.
      * 
      */
-    public String key() {
-        return this.key;
+    public Optional<String> key() {
+        return Optional.ofNullable(this.key);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetAlertPolicyRuleItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String description;
-        private String expression;
-        private String key;
+        private @Nullable String description;
+        private @Nullable String expression;
+        private @Nullable String key;
         public Builder() {}
         public Builder(GetAlertPolicyRuleItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetAlertPolicyRuleItem {
         }
 
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder expression(String expression) {
-            this.expression = Objects.requireNonNull(expression);
+        public Builder expression(@Nullable String expression) {
+            this.expression = expression;
             return this;
         }
         @CustomType.Setter
-        public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
+        public Builder key(@Nullable String key) {
+            this.key = key;
             return this;
         }
         public GetAlertPolicyRuleItem build() {

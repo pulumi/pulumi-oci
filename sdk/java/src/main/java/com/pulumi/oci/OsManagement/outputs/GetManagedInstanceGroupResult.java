@@ -11,6 +11,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedInstanceGroupResult {
@@ -18,95 +20,95 @@ public final class GetManagedInstanceGroupResult {
      * @return OCID for the Compartment
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return Information specified by the user about the managed instance group
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return User friendly name
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return unique identifier that is immutable on creation
      * 
      */
-    private String id;
-    private Integer managedInstanceCount;
+    private @Nullable String id;
+    private @Nullable Integer managedInstanceCount;
     private String managedInstanceGroupId;
     /**
      * @return list of Managed Instances in the group
      * 
      */
-    private List<GetManagedInstanceGroupManagedInstance> managedInstances;
+    private @Nullable List<GetManagedInstanceGroupManagedInstance> managedInstances;
     /**
      * @return The Operating System type of the managed instance.
      * 
      */
-    private String osFamily;
+    private @Nullable String osFamily;
     /**
      * @return The current state of the Software Source.
      * 
      */
-    private String state;
+    private @Nullable String state;
 
     private GetManagedInstanceGroupResult() {}
     /**
      * @return OCID for the Compartment
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return Information specified by the user about the managed instance group
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return User friendly name
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return unique identifier that is immutable on creation
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
-    public Integer managedInstanceCount() {
-        return this.managedInstanceCount;
+    public Optional<Integer> managedInstanceCount() {
+        return Optional.ofNullable(this.managedInstanceCount);
     }
     public String managedInstanceGroupId() {
         return this.managedInstanceGroupId;
@@ -116,21 +118,21 @@ public final class GetManagedInstanceGroupResult {
      * 
      */
     public List<GetManagedInstanceGroupManagedInstance> managedInstances() {
-        return this.managedInstances;
+        return this.managedInstances == null ? List.of() : this.managedInstances;
     }
     /**
      * @return The Operating System type of the managed instance.
      * 
      */
-    public String osFamily() {
-        return this.osFamily;
+    public Optional<String> osFamily() {
+        return Optional.ofNullable(this.osFamily);
     }
     /**
      * @return The current state of the Software Source.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
 
     public static Builder builder() {
@@ -142,17 +144,17 @@ public final class GetManagedInstanceGroupResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private Map<String,Object> definedTags;
-        private String description;
-        private String displayName;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private Integer managedInstanceCount;
+        private @Nullable String compartmentId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String description;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable Integer managedInstanceCount;
         private String managedInstanceGroupId;
-        private List<GetManagedInstanceGroupManagedInstance> managedInstances;
-        private String osFamily;
-        private String state;
+        private @Nullable List<GetManagedInstanceGroupManagedInstance> managedInstances;
+        private @Nullable String osFamily;
+        private @Nullable String state;
         public Builder() {}
         public Builder(GetManagedInstanceGroupResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -170,38 +172,38 @@ public final class GetManagedInstanceGroupResult {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder managedInstanceCount(Integer managedInstanceCount) {
-            this.managedInstanceCount = Objects.requireNonNull(managedInstanceCount);
+        public Builder managedInstanceCount(@Nullable Integer managedInstanceCount) {
+            this.managedInstanceCount = managedInstanceCount;
             return this;
         }
         @CustomType.Setter
@@ -210,21 +212,21 @@ public final class GetManagedInstanceGroupResult {
             return this;
         }
         @CustomType.Setter
-        public Builder managedInstances(List<GetManagedInstanceGroupManagedInstance> managedInstances) {
-            this.managedInstances = Objects.requireNonNull(managedInstances);
+        public Builder managedInstances(@Nullable List<GetManagedInstanceGroupManagedInstance> managedInstances) {
+            this.managedInstances = managedInstances;
             return this;
         }
         public Builder managedInstances(GetManagedInstanceGroupManagedInstance... managedInstances) {
             return managedInstances(List.of(managedInstances));
         }
         @CustomType.Setter
-        public Builder osFamily(String osFamily) {
-            this.osFamily = Objects.requireNonNull(osFamily);
+        public Builder osFamily(@Nullable String osFamily) {
+            this.osFamily = osFamily;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         public GetManagedInstanceGroupResult build() {

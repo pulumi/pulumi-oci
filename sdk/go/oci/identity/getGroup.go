@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Group resource in Oracle Cloud Infrastructure Identity service.
@@ -64,24 +63,24 @@ type LookupGroupArgs struct {
 // A collection of values returned by getGroup.
 type LookupGroupResult struct {
 	// The OCID of the tenancy containing the group.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The description you assign to the group. Does not have to be unique, and it's changeable.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	GroupId      string                 `pulumi:"groupId"`
 	// The OCID of the group.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The detailed status of INACTIVE lifecycleState.
-	InactiveState string `pulumi:"inactiveState"`
+	InactiveState *string `pulumi:"inactiveState"`
 	// The name you assign to the group during creation. The name must be unique across all groups in the tenancy and cannot be changed.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The group's current state.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Date and time the group was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 }
 
 func LookupGroupOutput(ctx *pulumi.Context, args LookupGroupOutputArgs, opts ...pulumi.InvokeOption) LookupGroupResultOutput {
@@ -122,15 +121,9 @@ func (o LookupGroupResultOutput) ToLookupGroupResultOutputWithContext(ctx contex
 	return o
 }
 
-func (o LookupGroupResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupGroupResult] {
-	return pulumix.Output[LookupGroupResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the tenancy containing the group.
-func (o LookupGroupResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupGroupResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupGroupResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupGroupResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -139,8 +132,8 @@ func (o LookupGroupResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // The description you assign to the group. Does not have to be unique, and it's changeable.
-func (o LookupGroupResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupGroupResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupGroupResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupGroupResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -153,28 +146,28 @@ func (o LookupGroupResultOutput) GroupId() pulumi.StringOutput {
 }
 
 // The OCID of the group.
-func (o LookupGroupResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupGroupResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupGroupResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupGroupResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The detailed status of INACTIVE lifecycleState.
-func (o LookupGroupResultOutput) InactiveState() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupGroupResult) string { return v.InactiveState }).(pulumi.StringOutput)
+func (o LookupGroupResultOutput) InactiveState() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupGroupResult) *string { return v.InactiveState }).(pulumi.StringPtrOutput)
 }
 
 // The name you assign to the group during creation. The name must be unique across all groups in the tenancy and cannot be changed.
-func (o LookupGroupResultOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupGroupResult) string { return v.Name }).(pulumi.StringOutput)
+func (o LookupGroupResultOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupGroupResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The group's current state.
-func (o LookupGroupResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupGroupResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupGroupResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupGroupResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Date and time the group was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-func (o LookupGroupResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupGroupResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupGroupResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupGroupResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

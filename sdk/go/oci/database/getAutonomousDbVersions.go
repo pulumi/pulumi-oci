@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Autonomous Db Versions in Oracle Cloud Infrastructure Database service.
@@ -74,7 +73,7 @@ type GetAutonomousDbVersionsResult struct {
 	DbWorkload *string                         `pulumi:"dbWorkload"`
 	Filters    []GetAutonomousDbVersionsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 func GetAutonomousDbVersionsOutput(ctx *pulumi.Context, args GetAutonomousDbVersionsOutputArgs, opts ...pulumi.InvokeOption) GetAutonomousDbVersionsResultOutput {
@@ -118,12 +117,6 @@ func (o GetAutonomousDbVersionsResultOutput) ToGetAutonomousDbVersionsResultOutp
 	return o
 }
 
-func (o GetAutonomousDbVersionsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAutonomousDbVersionsResult] {
-	return pulumix.Output[GetAutonomousDbVersionsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The list of autonomous_db_versions.
 func (o GetAutonomousDbVersionsResultOutput) AutonomousDbVersions() GetAutonomousDbVersionsAutonomousDbVersionArrayOutput {
 	return o.ApplyT(func(v GetAutonomousDbVersionsResult) []GetAutonomousDbVersionsAutonomousDbVersion {
@@ -149,8 +142,8 @@ func (o GetAutonomousDbVersionsResultOutput) Filters() GetAutonomousDbVersionsFi
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetAutonomousDbVersionsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAutonomousDbVersionsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetAutonomousDbVersionsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAutonomousDbVersionsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func init() {

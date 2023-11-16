@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Path Analyzer Test resource in Oracle Cloud Infrastructure Vn Monitoring service.
@@ -60,20 +59,20 @@ type LookupPathAnalyzerTestArgs struct {
 // A collection of values returned by GetPathAnalyzerTest.
 type LookupPathAnalyzerTestResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PathAnalyzerTest` resource's compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Information describing a source or destination in a `PathAnalyzerTest` resource.
 	DestinationEndpoints []GetPathAnalyzerTestDestinationEndpoint `pulumi:"destinationEndpoints"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// A unique identifier established when the resource is created. The identifier can't be changed later.
-	Id                 string `pulumi:"id"`
-	PathAnalyzerTestId string `pulumi:"pathAnalyzerTestId"`
+	Id                 *string `pulumi:"id"`
+	PathAnalyzerTestId string  `pulumi:"pathAnalyzerTestId"`
 	// The IP protocol to use for the `PathAnalyzerTest` resource.
-	Protocol int `pulumi:"protocol"`
+	Protocol *int `pulumi:"protocol"`
 	// Defines the IP protocol parameters for a `PathAnalyzerTest` resource.
 	ProtocolParameters []GetPathAnalyzerTestProtocolParameter `pulumi:"protocolParameters"`
 	// Defines the query options required for a `PathAnalyzerTest` resource.
@@ -81,13 +80,13 @@ type LookupPathAnalyzerTestResult struct {
 	// Information describing a source or destination in a `PathAnalyzerTest` resource.
 	SourceEndpoints []GetPathAnalyzerTestSourceEndpoint `pulumi:"sourceEndpoints"`
 	// The current state of the `PathAnalyzerTest` resource.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The date and time the `PathAnalyzerTest` resource was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the `PathAnalyzerTest` resource was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func LookupPathAnalyzerTestOutput(ctx *pulumi.Context, args LookupPathAnalyzerTestOutputArgs, opts ...pulumi.InvokeOption) LookupPathAnalyzerTestResultOutput {
@@ -128,15 +127,9 @@ func (o LookupPathAnalyzerTestResultOutput) ToLookupPathAnalyzerTestResultOutput
 	return o
 }
 
-func (o LookupPathAnalyzerTestResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupPathAnalyzerTestResult] {
-	return pulumix.Output[LookupPathAnalyzerTestResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PathAnalyzerTest` resource's compartment.
-func (o LookupPathAnalyzerTestResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPathAnalyzerTestResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupPathAnalyzerTestResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPathAnalyzerTestResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -152,8 +145,8 @@ func (o LookupPathAnalyzerTestResultOutput) DestinationEndpoints() GetPathAnalyz
 }
 
 // A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-func (o LookupPathAnalyzerTestResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPathAnalyzerTestResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupPathAnalyzerTestResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPathAnalyzerTestResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -162,8 +155,8 @@ func (o LookupPathAnalyzerTestResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // A unique identifier established when the resource is created. The identifier can't be changed later.
-func (o LookupPathAnalyzerTestResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPathAnalyzerTestResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupPathAnalyzerTestResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPathAnalyzerTestResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupPathAnalyzerTestResultOutput) PathAnalyzerTestId() pulumi.StringOutput {
@@ -171,8 +164,8 @@ func (o LookupPathAnalyzerTestResultOutput) PathAnalyzerTestId() pulumi.StringOu
 }
 
 // The IP protocol to use for the `PathAnalyzerTest` resource.
-func (o LookupPathAnalyzerTestResultOutput) Protocol() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupPathAnalyzerTestResult) int { return v.Protocol }).(pulumi.IntOutput)
+func (o LookupPathAnalyzerTestResultOutput) Protocol() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupPathAnalyzerTestResult) *int { return v.Protocol }).(pulumi.IntPtrOutput)
 }
 
 // Defines the IP protocol parameters for a `PathAnalyzerTest` resource.
@@ -193,8 +186,8 @@ func (o LookupPathAnalyzerTestResultOutput) SourceEndpoints() GetPathAnalyzerTes
 }
 
 // The current state of the `PathAnalyzerTest` resource.
-func (o LookupPathAnalyzerTestResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPathAnalyzerTestResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupPathAnalyzerTestResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPathAnalyzerTestResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -203,13 +196,13 @@ func (o LookupPathAnalyzerTestResultOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The date and time the `PathAnalyzerTest` resource was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-func (o LookupPathAnalyzerTestResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPathAnalyzerTestResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupPathAnalyzerTestResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPathAnalyzerTestResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the `PathAnalyzerTest` resource was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-func (o LookupPathAnalyzerTestResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPathAnalyzerTestResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupPathAnalyzerTestResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPathAnalyzerTestResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

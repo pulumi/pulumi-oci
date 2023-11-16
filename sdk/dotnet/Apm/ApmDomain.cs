@@ -64,19 +64,19 @@ namespace Pulumi.Oci.Apm
         /// The endpoint where the APM agents upload their observations and metrics.
         /// </summary>
         [Output("dataUploadEndpoint")]
-        public Output<string> DataUploadEndpoint { get; private set; } = null!;
+        public Output<string?> DataUploadEndpoint { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Description of the APM domain.
         /// </summary>
         [Output("description")]
-        public Output<string> Description { get; private set; } = null!;
+        public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Display name of the APM domain.
@@ -88,7 +88,7 @@ namespace Pulumi.Oci.Apm
         /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// Indicates whether this is an "Always Free" resource. The default value is false.
@@ -98,25 +98,25 @@ namespace Pulumi.Oci.Apm
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("isFreeTier")]
-        public Output<bool> IsFreeTier { get; private set; } = null!;
+        public Output<bool?> IsFreeTier { get; private set; } = null!;
 
         /// <summary>
         /// The current lifecycle state of the APM domain.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The time the APM domain was created, expressed in RFC 3339 timestamp format.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The time the APM domain was updated, expressed in RFC 3339 timestamp format.
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
 
         /// <summary>

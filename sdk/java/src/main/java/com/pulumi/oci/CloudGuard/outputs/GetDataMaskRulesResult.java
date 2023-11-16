@@ -24,7 +24,7 @@ public final class GetDataMaskRulesResult {
      * @return The list of data_mask_rule_collection.
      * 
      */
-    private List<GetDataMaskRulesDataMaskRuleCollection> dataMaskRuleCollections;
+    private @Nullable List<GetDataMaskRulesDataMaskRuleCollection> dataMaskRuleCollections;
     /**
      * @return The status of the dataMaskRule.
      * 
@@ -45,7 +45,7 @@ public final class GetDataMaskRulesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The current state of the DataMaskRule.
      * 
@@ -70,7 +70,7 @@ public final class GetDataMaskRulesResult {
      * 
      */
     public List<GetDataMaskRulesDataMaskRuleCollection> dataMaskRuleCollections() {
-        return this.dataMaskRuleCollections;
+        return this.dataMaskRuleCollections == null ? List.of() : this.dataMaskRuleCollections;
     }
     /**
      * @return The status of the dataMaskRule.
@@ -100,8 +100,8 @@ public final class GetDataMaskRulesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The current state of the DataMaskRule.
@@ -128,12 +128,12 @@ public final class GetDataMaskRulesResult {
     public static final class Builder {
         private @Nullable String accessLevel;
         private String compartmentId;
-        private List<GetDataMaskRulesDataMaskRuleCollection> dataMaskRuleCollections;
+        private @Nullable List<GetDataMaskRulesDataMaskRuleCollection> dataMaskRuleCollections;
         private @Nullable String dataMaskRuleStatus;
         private @Nullable String displayName;
         private @Nullable List<GetDataMaskRulesFilter> filters;
         private @Nullable String iamGroupId;
-        private String id;
+        private @Nullable String id;
         private @Nullable String state;
         private @Nullable String targetId;
         private @Nullable String targetType;
@@ -164,8 +164,8 @@ public final class GetDataMaskRulesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder dataMaskRuleCollections(List<GetDataMaskRulesDataMaskRuleCollection> dataMaskRuleCollections) {
-            this.dataMaskRuleCollections = Objects.requireNonNull(dataMaskRuleCollections);
+        public Builder dataMaskRuleCollections(@Nullable List<GetDataMaskRulesDataMaskRuleCollection> dataMaskRuleCollections) {
+            this.dataMaskRuleCollections = dataMaskRuleCollections;
             return this;
         }
         public Builder dataMaskRuleCollections(GetDataMaskRulesDataMaskRuleCollection... dataMaskRuleCollections) {
@@ -195,8 +195,8 @@ public final class GetDataMaskRulesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

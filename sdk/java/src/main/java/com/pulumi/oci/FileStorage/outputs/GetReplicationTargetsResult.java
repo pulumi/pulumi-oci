@@ -39,7 +39,7 @@ public final class GetReplicationTargetsResult {
      * @return The list of replication_targets.
      * 
      */
-    private List<GetReplicationTargetsReplicationTarget> replicationTargets;
+    private @Nullable List<GetReplicationTargetsReplicationTarget> replicationTargets;
     /**
      * @return The current state of this replication.
      * 
@@ -83,7 +83,7 @@ public final class GetReplicationTargetsResult {
      * 
      */
     public List<GetReplicationTargetsReplicationTarget> replicationTargets() {
-        return this.replicationTargets;
+        return this.replicationTargets == null ? List.of() : this.replicationTargets;
     }
     /**
      * @return The current state of this replication.
@@ -107,7 +107,7 @@ public final class GetReplicationTargetsResult {
         private @Nullable String displayName;
         private @Nullable List<GetReplicationTargetsFilter> filters;
         private @Nullable String id;
-        private List<GetReplicationTargetsReplicationTarget> replicationTargets;
+        private @Nullable List<GetReplicationTargetsReplicationTarget> replicationTargets;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetReplicationTargetsResult defaults) {
@@ -150,8 +150,8 @@ public final class GetReplicationTargetsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder replicationTargets(List<GetReplicationTargetsReplicationTarget> replicationTargets) {
-            this.replicationTargets = Objects.requireNonNull(replicationTargets);
+        public Builder replicationTargets(@Nullable List<GetReplicationTargetsReplicationTarget> replicationTargets) {
+            this.replicationTargets = replicationTargets;
             return this;
         }
         public Builder replicationTargets(GetReplicationTargetsReplicationTarget... replicationTargets) {

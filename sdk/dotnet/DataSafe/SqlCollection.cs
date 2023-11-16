@@ -73,25 +73,25 @@ namespace Pulumi.Oci.DataSafe
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The description of the SQL collection.
         /// </summary>
         [Output("description")]
-        public Output<string> Description { get; private set; } = null!;
+        public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The display name of the SQL collection. The name does not have to be unique, and it is changeable.
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) An optional property when incremented triggers Generate Sql Firewall Policy. Could be set to any integer value.
@@ -103,7 +103,7 @@ namespace Pulumi.Oci.DataSafe
         /// Details about the current state of the SQL collection in Data Safe.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) An optional property when incremented triggers Purge Logs. Could be set to any integer value.
@@ -121,7 +121,7 @@ namespace Pulumi.Oci.DataSafe
         /// Specifies the level of SQL that will be collected. USER_ISSUED_SQL - User issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
         /// </summary>
         [Output("sqlLevel")]
-        public Output<string> SqlLevel { get; private set; } = null!;
+        public Output<string?> SqlLevel { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) An optional property when incremented triggers Start. Could be set to any integer value.
@@ -133,13 +133,13 @@ namespace Pulumi.Oci.DataSafe
         /// The current state of the SQL collection.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// Specifies if the SqlCollection has to be started after creation. Enabled indicates that the SqlCollection will be started after creation.
         /// </summary>
         [Output("status")]
-        public Output<string> Status { get; private set; } = null!;
+        public Output<string?> Status { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) An optional property when incremented triggers Stop. Could be set to any integer value.
@@ -155,7 +155,7 @@ namespace Pulumi.Oci.DataSafe
         /// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
         [Output("systemTags")]
-        public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the target corresponding to the security policy deployment.
@@ -167,25 +167,25 @@ namespace Pulumi.Oci.DataSafe
         /// The time that the SQL collection was created, in the format defined by RFC3339.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The timestamp of the most recent SqlCollection start operation, in the format defined by RFC3339.
         /// </summary>
         [Output("timeLastStarted")]
-        public Output<string> TimeLastStarted { get; private set; } = null!;
+        public Output<string?> TimeLastStarted { get; private set; } = null!;
 
         /// <summary>
         /// The timestamp of the most recent SqlCollection stop operation, in the format defined by RFC3339.
         /// </summary>
         [Output("timeLastStopped")]
-        public Output<string> TimeLastStopped { get; private set; } = null!;
+        public Output<string?> TimeLastStopped { get; private set; } = null!;
 
         /// <summary>
         /// The last date and time the SQL collection was updated, in the format defined by RFC3339.
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
 
         /// <summary>

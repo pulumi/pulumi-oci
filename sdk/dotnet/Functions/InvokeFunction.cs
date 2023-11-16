@@ -50,19 +50,19 @@ namespace Pulumi.Oci.Functions
         /// Content of the response string, if any. If `base64_encode_content` is set to `true`, then this content will be base64 encoded.
         /// </summary>
         [Output("content")]
-        public Output<string> Content { get; private set; } = null!;
+        public Output<string?> Content { get; private set; } = null!;
 
         /// <summary>
         /// An optional intent header that indicates to the FDK the way the event should be interpreted. E.g. 'httprequest', 'cloudevent'.
         /// </summary>
         [Output("fnIntent")]
-        public Output<string> FnIntent { get; private set; } = null!;
+        public Output<string?> FnIntent { get; private set; } = null!;
 
         /// <summary>
         /// Indicates whether Oracle Functions should execute the request and return the result ('sync') of the execution,  or whether Oracle Functions should return as soon as processing has begun ('detached') and leave result handling to the function.
         /// </summary>
         [Output("fnInvokeType")]
-        public Output<string> FnInvokeType { get; private set; } = null!;
+        public Output<string?> FnInvokeType { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this function.
@@ -80,16 +80,16 @@ namespace Pulumi.Oci.Functions
         public Output<string?> InputBodySourcePath { get; private set; } = null!;
 
         [Output("invokeEndpoint")]
-        public Output<string> InvokeEndpoint { get; private set; } = null!;
+        public Output<string?> InvokeEndpoint { get; private set; } = null!;
 
         /// <summary>
         /// The body of the function invocation. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit. Cannot be defined if `input_body_source_path` or `invoke_function_body_base64_encoded` is defined.
         /// </summary>
         [Output("invokeFunctionBody")]
-        public Output<string> InvokeFunctionBody { get; private set; } = null!;
+        public Output<string?> InvokeFunctionBody { get; private set; } = null!;
 
         [Output("invokeFunctionBodyBase64Encoded")]
-        public Output<string> InvokeFunctionBodyBase64Encoded { get; private set; } = null!;
+        public Output<string?> InvokeFunctionBodyBase64Encoded { get; private set; } = null!;
 
 
         /// <summary>

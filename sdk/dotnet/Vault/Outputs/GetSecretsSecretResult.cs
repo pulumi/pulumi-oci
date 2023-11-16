@@ -16,44 +16,44 @@ namespace Pulumi.Oci.Vault.Outputs
         /// <summary>
         /// The OCID of the compartment.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The version number of the secret version that's currently in use.
         /// </summary>
-        public readonly string CurrentVersionNumber;
+        public readonly string? CurrentVersionNumber;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// A brief description of the secret. Avoid entering confidential information.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The OCID of the secret.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The OCID of the master encryption key that is used to encrypt the secret.
         /// </summary>
-        public readonly string KeyId;
+        public readonly string? KeyId;
         /// <summary>
         /// Additional information about the current lifecycle state of the secret.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// Additional metadata that you can use to provide context about how to use the secret or during rotation or other administrative tasks. For example, for a secret that you use to connect to a database, the additional metadata might specify the connection endpoint and the connection string. Provide additional metadata as key-value pairs.
         /// </summary>
-        public readonly ImmutableDictionary<string, object> Metadata;
+        public readonly ImmutableDictionary<string, object>? Metadata;
         public readonly ImmutableArray<Outputs.GetSecretsSecretSecretContentResult> SecretContents;
         /// <summary>
         /// The user-friendly name of the secret. Avoid entering confidential information.
         /// </summary>
-        public readonly string SecretName;
+        public readonly string? SecretName;
         /// <summary>
         /// A list of rules that control how the secret is used and managed.
         /// </summary>
@@ -61,59 +61,59 @@ namespace Pulumi.Oci.Vault.Outputs
         /// <summary>
         /// A filter that returns only resources that match the specified lifecycle state. The state value is case-insensitive.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// A property indicating when the secret was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// An optional property indicating when the current secret version will expire, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeOfCurrentVersionExpiry;
+        public readonly string? TimeOfCurrentVersionExpiry;
         /// <summary>
         /// An optional property indicating when to delete the secret, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeOfDeletion;
+        public readonly string? TimeOfDeletion;
         /// <summary>
         /// The OCID of the vault.
         /// </summary>
-        public readonly string VaultId;
+        public readonly string? VaultId;
 
         [OutputConstructor]
         private GetSecretsSecretResult(
-            string compartmentId,
+            string? compartmentId,
 
-            string currentVersionNumber,
+            string? currentVersionNumber,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string description,
+            string? description,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            string keyId,
+            string? keyId,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            ImmutableDictionary<string, object> metadata,
+            ImmutableDictionary<string, object>? metadata,
 
             ImmutableArray<Outputs.GetSecretsSecretSecretContentResult> secretContents,
 
-            string secretName,
+            string? secretName,
 
             ImmutableArray<Outputs.GetSecretsSecretSecretRuleResult> secretRules,
 
-            string state,
+            string? state,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeOfCurrentVersionExpiry,
+            string? timeOfCurrentVersionExpiry,
 
-            string timeOfDeletion,
+            string? timeOfDeletion,
 
-            string vaultId)
+            string? vaultId)
         {
             CompartmentId = compartmentId;
             CurrentVersionNumber = currentVersionNumber;

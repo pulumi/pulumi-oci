@@ -77,106 +77,67 @@ class GetTargetDatabaseResult:
 
     @property
     @pulumi.getter(name="associatedResourceIds")
-    def associated_resource_ids(self) -> Sequence[str]:
-        """
-        The OCIDs of associated resources like database, Data Safe private endpoint etc.
-        """
+    def associated_resource_ids(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "associated_resource_ids")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment which contains the Data Safe target database.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="connectionOptions")
-    def connection_options(self) -> Sequence['outputs.GetTargetDatabaseConnectionOptionResult']:
-        """
-        Types of connection supported by Data Safe.
-        """
+    def connection_options(self) -> Optional[Sequence['outputs.GetTargetDatabaseConnectionOptionResult']]:
         return pulumi.get(self, "connection_options")
 
     @property
     @pulumi.getter
-    def credentials(self) -> Sequence['outputs.GetTargetDatabaseCredentialResult']:
-        """
-        The database credentials required for Data Safe to connect to the database.
-        """
+    def credentials(self) -> Optional[Sequence['outputs.GetTargetDatabaseCredentialResult']]:
         return pulumi.get(self, "credentials")
 
     @property
     @pulumi.getter(name="databaseDetails")
-    def database_details(self) -> Sequence['outputs.GetTargetDatabaseDatabaseDetailResult']:
-        """
-        Details of the database for the registration in Data Safe.
-        """
+    def database_details(self) -> Optional[Sequence['outputs.GetTargetDatabaseDatabaseDetailResult']]:
         return pulumi.get(self, "database_details")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        The description of the target database in Data Safe.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The display name of the target database in Data Safe.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the Data Safe target database.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        Details about the current state of the target database in Data Safe.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the target database in Data Safe.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
@@ -186,26 +147,17 @@ class GetTargetDatabaseResult:
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the database was registered in Data Safe and created as a target database in Data Safe.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time of the target database update in Data Safe.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="tlsConfigs")
-    def tls_configs(self) -> Sequence['outputs.GetTargetDatabaseTlsConfigResult']:
-        """
-        The details required to establish a TLS enabled connection.
-        """
+    def tls_configs(self) -> Optional[Sequence['outputs.GetTargetDatabaseTlsConfigResult']]:
         return pulumi.get(self, "tls_configs")
 
 
@@ -237,21 +189,7 @@ class AwaitableGetTargetDatabaseResult(GetTargetDatabaseResult):
 def get_target_database(target_database_id: Optional[str] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetTargetDatabaseResult:
     """
-    This data source provides details about a specific Target Database resource in Oracle Cloud Infrastructure Data Safe service.
-
-    Returns the details of the specified Data Safe target database.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_target_database = oci.DataSafe.get_target_database(target_database_id=oci_data_safe_target_database["test_target_database"]["id"])
-    ```
-
-
-    :param str target_database_id: The OCID of the Data Safe target database.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['targetDatabaseId'] = target_database_id
@@ -282,20 +220,6 @@ def get_target_database(target_database_id: Optional[str] = None,
 def get_target_database_output(target_database_id: Optional[pulumi.Input[str]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetTargetDatabaseResult]:
     """
-    This data source provides details about a specific Target Database resource in Oracle Cloud Infrastructure Data Safe service.
-
-    Returns the details of the specified Data Safe target database.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_target_database = oci.DataSafe.get_target_database(target_database_id=oci_data_safe_target_database["test_target_database"]["id"])
-    ```
-
-
-    :param str target_database_id: The OCID of the Data Safe target database.
+    Use this data source to access information about an existing resource.
     """
     ...

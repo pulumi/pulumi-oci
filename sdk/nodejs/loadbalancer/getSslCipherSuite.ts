@@ -53,14 +53,14 @@ export interface GetSslCipherSuiteResult {
     /**
      * A list of SSL ciphers the load balancer must support for HTTPS or SSL connections.
      */
-    readonly ciphers: string[];
-    readonly id: string;
+    readonly ciphers?: string[];
+    readonly id?: string;
     readonly loadBalancerId: string;
     /**
      * A friendly name for the SSL cipher suite. It must be unique and it cannot be changed.
      */
     readonly name: string;
-    readonly state: string;
+    readonly state?: string;
 }
 /**
  * This data source provides details about a specific Ssl Cipher Suite resource in Oracle Cloud Infrastructure Load Balancer service.

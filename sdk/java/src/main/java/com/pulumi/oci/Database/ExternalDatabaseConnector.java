@@ -15,6 +15,7 @@ import com.pulumi.oci.Utilities;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -89,14 +90,14 @@ public class ExternalDatabaseConnector extends com.pulumi.resources.CustomResour
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
-    private Output<String> compartmentId;
+    private Output</* @Nullable */ String> compartmentId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    public Output<String> compartmentId() {
-        return this.compartmentId;
+    public Output<Optional<String>> compartmentId() {
+        return Codegen.optional(this.compartmentId);
     }
     /**
      * (Updatable) Credentials used to connect to the database. Currently only the `DETAILS` type is supported for creating MACS connector crendentials.
@@ -117,14 +118,14 @@ public class ExternalDatabaseConnector extends com.pulumi.resources.CustomResour
      * 
      */
     @Export(name="connectionStatus", refs={String.class}, tree="[0]")
-    private Output<String> connectionStatus;
+    private Output</* @Nullable */ String> connectionStatus;
 
     /**
      * @return The status of connectivity to the external database.
      * 
      */
-    public Output<String> connectionStatus() {
-        return this.connectionStatus;
+    public Output<Optional<String>> connectionStatus() {
+        return Codegen.optional(this.connectionStatus);
     }
     /**
      * (Updatable) The Oracle Database connection string.
@@ -159,28 +160,28 @@ public class ExternalDatabaseConnector extends com.pulumi.resources.CustomResour
      * 
      */
     @Export(name="connectorType", refs={String.class}, tree="[0]")
-    private Output<String> connectorType;
+    private Output</* @Nullable */ String> connectorType;
 
     /**
      * @return (Updatable) The type of connector used by the external database resource.
      * 
      */
-    public Output<String> connectorType() {
-        return this.connectorType;
+    public Output<Optional<String>> connectorType() {
+        return Codegen.optional(this.connectorType);
     }
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) The user-friendly name for the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails). The name does not have to be unique.
@@ -218,7 +219,7 @@ public class ExternalDatabaseConnector extends com.pulumi.resources.CustomResour
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
@@ -227,64 +228,64 @@ public class ExternalDatabaseConnector extends com.pulumi.resources.CustomResour
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * Additional information about the current lifecycle state.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return Additional information about the current lifecycle state.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * The current lifecycle state of the external database connector resource.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current lifecycle state of the external database connector resource.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The date and time the `connectionStatus` of this external connector was last updated.
      * 
      */
     @Export(name="timeConnectionStatusLastUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeConnectionStatusLastUpdated;
+    private Output</* @Nullable */ String> timeConnectionStatusLastUpdated;
 
     /**
      * @return The date and time the `connectionStatus` of this external connector was last updated.
      * 
      */
-    public Output<String> timeConnectionStatusLastUpdated() {
-        return this.timeConnectionStatusLastUpdated;
+    public Output<Optional<String>> timeConnectionStatusLastUpdated() {
+        return Codegen.optional(this.timeConnectionStatusLastUpdated);
     }
     /**
      * The date and time the external connector was created.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the external connector was created.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
 
     /**

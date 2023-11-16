@@ -16,7 +16,7 @@ namespace Pulumi.Oci.Functions.Outputs
         /// <summary>
         /// Minimum memory required by this PBF. The user should use memory greater than or equal to  this value while configuring the Function.
         /// </summary>
-        public readonly string MinMemoryRequiredInMbs;
+        public readonly string? MinMemoryRequiredInMbs;
         /// <summary>
         /// List of policies required for this PBF execution.
         /// </summary>
@@ -24,7 +24,7 @@ namespace Pulumi.Oci.Functions.Outputs
 
         [OutputConstructor]
         private GetPbfListingVersionRequirementResult(
-            string minMemoryRequiredInMbs,
+            string? minMemoryRequiredInMbs,
 
             ImmutableArray<Outputs.GetPbfListingVersionRequirementPolicyResult> policies)
         {

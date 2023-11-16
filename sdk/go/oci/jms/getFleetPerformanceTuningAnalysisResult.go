@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Fleet Performance Tuning Analysis Result resource in Oracle Cloud Infrastructure Jms service.
@@ -63,40 +62,40 @@ type GetFleetPerformanceTuningAnalysisResultArgs struct {
 // A collection of values returned by getFleetPerformanceTuningAnalysisResult.
 type GetFleetPerformanceTuningAnalysisResultResult struct {
 	// The OCID of the application for which the report has been generated.
-	ApplicationId string `pulumi:"applicationId"`
+	ApplicationId *string `pulumi:"applicationId"`
 	// The internal identifier of the application installation for which the report has been generated.
-	ApplicationInstallationId string `pulumi:"applicationInstallationId"`
+	ApplicationInstallationId *string `pulumi:"applicationInstallationId"`
 	// The installation path of the application for which the report has been generated.
-	ApplicationInstallationPath string `pulumi:"applicationInstallationPath"`
+	ApplicationInstallationPath *string `pulumi:"applicationInstallationPath"`
 	// The name of the application for which the report has been generated.
-	ApplicationName string `pulumi:"applicationName"`
+	ApplicationName *string `pulumi:"applicationName"`
 	// The Object Storage bucket name of this analysis result.
-	Bucket string `pulumi:"bucket"`
+	Bucket *string `pulumi:"bucket"`
 	// The fleet OCID.
 	FleetId string `pulumi:"fleetId"`
 	// The hostname of the managed instance.
-	HostName string `pulumi:"hostName"`
+	HostName *string `pulumi:"hostName"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The managed instance OCID.
-	ManagedInstanceId string `pulumi:"managedInstanceId"`
+	ManagedInstanceId *string `pulumi:"managedInstanceId"`
 	// The Object Storage namespace of this analysis result.
-	Namespace string `pulumi:"namespace"`
+	Namespace *string `pulumi:"namespace"`
 	// The Object Storage object name of this analysis result.
-	Object                            string `pulumi:"object"`
-	PerformanceTuningAnalysisResultId string `pulumi:"performanceTuningAnalysisResultId"`
+	Object                            *string `pulumi:"object"`
+	PerformanceTuningAnalysisResultId string  `pulumi:"performanceTuningAnalysisResultId"`
 	// Result of the analysis based on whether warnings have been found or not.
-	Result string `pulumi:"result"`
+	Result *string `pulumi:"result"`
 	// The time the result is compiled.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the JFR capture finished.
-	TimeFinished string `pulumi:"timeFinished"`
+	TimeFinished *string `pulumi:"timeFinished"`
 	// The time the JFR capture started.
-	TimeStarted string `pulumi:"timeStarted"`
+	TimeStarted *string `pulumi:"timeStarted"`
 	// Total number of warnings reported by the analysis.
-	WarningCount int `pulumi:"warningCount"`
+	WarningCount *int `pulumi:"warningCount"`
 	// The OCID of the work request to start the analysis.
-	WorkRequestId string `pulumi:"workRequestId"`
+	WorkRequestId *string `pulumi:"workRequestId"`
 }
 
 func GetFleetPerformanceTuningAnalysisResultOutput(ctx *pulumi.Context, args GetFleetPerformanceTuningAnalysisResultOutputArgs, opts ...pulumi.InvokeOption) GetFleetPerformanceTuningAnalysisResultResultOutput {
@@ -139,35 +138,29 @@ func (o GetFleetPerformanceTuningAnalysisResultResultOutput) ToGetFleetPerforman
 	return o
 }
 
-func (o GetFleetPerformanceTuningAnalysisResultResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetFleetPerformanceTuningAnalysisResultResult] {
-	return pulumix.Output[GetFleetPerformanceTuningAnalysisResultResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the application for which the report has been generated.
-func (o GetFleetPerformanceTuningAnalysisResultResultOutput) ApplicationId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultResult) string { return v.ApplicationId }).(pulumi.StringOutput)
+func (o GetFleetPerformanceTuningAnalysisResultResultOutput) ApplicationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultResult) *string { return v.ApplicationId }).(pulumi.StringPtrOutput)
 }
 
 // The internal identifier of the application installation for which the report has been generated.
-func (o GetFleetPerformanceTuningAnalysisResultResultOutput) ApplicationInstallationId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultResult) string { return v.ApplicationInstallationId }).(pulumi.StringOutput)
+func (o GetFleetPerformanceTuningAnalysisResultResultOutput) ApplicationInstallationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultResult) *string { return v.ApplicationInstallationId }).(pulumi.StringPtrOutput)
 }
 
 // The installation path of the application for which the report has been generated.
-func (o GetFleetPerformanceTuningAnalysisResultResultOutput) ApplicationInstallationPath() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultResult) string { return v.ApplicationInstallationPath }).(pulumi.StringOutput)
+func (o GetFleetPerformanceTuningAnalysisResultResultOutput) ApplicationInstallationPath() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultResult) *string { return v.ApplicationInstallationPath }).(pulumi.StringPtrOutput)
 }
 
 // The name of the application for which the report has been generated.
-func (o GetFleetPerformanceTuningAnalysisResultResultOutput) ApplicationName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultResult) string { return v.ApplicationName }).(pulumi.StringOutput)
+func (o GetFleetPerformanceTuningAnalysisResultResultOutput) ApplicationName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultResult) *string { return v.ApplicationName }).(pulumi.StringPtrOutput)
 }
 
 // The Object Storage bucket name of this analysis result.
-func (o GetFleetPerformanceTuningAnalysisResultResultOutput) Bucket() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultResult) string { return v.Bucket }).(pulumi.StringOutput)
+func (o GetFleetPerformanceTuningAnalysisResultResultOutput) Bucket() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultResult) *string { return v.Bucket }).(pulumi.StringPtrOutput)
 }
 
 // The fleet OCID.
@@ -176,28 +169,28 @@ func (o GetFleetPerformanceTuningAnalysisResultResultOutput) FleetId() pulumi.St
 }
 
 // The hostname of the managed instance.
-func (o GetFleetPerformanceTuningAnalysisResultResultOutput) HostName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultResult) string { return v.HostName }).(pulumi.StringOutput)
+func (o GetFleetPerformanceTuningAnalysisResultResultOutput) HostName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultResult) *string { return v.HostName }).(pulumi.StringPtrOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetFleetPerformanceTuningAnalysisResultResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetFleetPerformanceTuningAnalysisResultResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The managed instance OCID.
-func (o GetFleetPerformanceTuningAnalysisResultResultOutput) ManagedInstanceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultResult) string { return v.ManagedInstanceId }).(pulumi.StringOutput)
+func (o GetFleetPerformanceTuningAnalysisResultResultOutput) ManagedInstanceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultResult) *string { return v.ManagedInstanceId }).(pulumi.StringPtrOutput)
 }
 
 // The Object Storage namespace of this analysis result.
-func (o GetFleetPerformanceTuningAnalysisResultResultOutput) Namespace() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultResult) string { return v.Namespace }).(pulumi.StringOutput)
+func (o GetFleetPerformanceTuningAnalysisResultResultOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultResult) *string { return v.Namespace }).(pulumi.StringPtrOutput)
 }
 
 // The Object Storage object name of this analysis result.
-func (o GetFleetPerformanceTuningAnalysisResultResultOutput) Object() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultResult) string { return v.Object }).(pulumi.StringOutput)
+func (o GetFleetPerformanceTuningAnalysisResultResultOutput) Object() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultResult) *string { return v.Object }).(pulumi.StringPtrOutput)
 }
 
 func (o GetFleetPerformanceTuningAnalysisResultResultOutput) PerformanceTuningAnalysisResultId() pulumi.StringOutput {
@@ -207,33 +200,33 @@ func (o GetFleetPerformanceTuningAnalysisResultResultOutput) PerformanceTuningAn
 }
 
 // Result of the analysis based on whether warnings have been found or not.
-func (o GetFleetPerformanceTuningAnalysisResultResultOutput) Result() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultResult) string { return v.Result }).(pulumi.StringOutput)
+func (o GetFleetPerformanceTuningAnalysisResultResultOutput) Result() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultResult) *string { return v.Result }).(pulumi.StringPtrOutput)
 }
 
 // The time the result is compiled.
-func (o GetFleetPerformanceTuningAnalysisResultResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetFleetPerformanceTuningAnalysisResultResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the JFR capture finished.
-func (o GetFleetPerformanceTuningAnalysisResultResultOutput) TimeFinished() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultResult) string { return v.TimeFinished }).(pulumi.StringOutput)
+func (o GetFleetPerformanceTuningAnalysisResultResultOutput) TimeFinished() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultResult) *string { return v.TimeFinished }).(pulumi.StringPtrOutput)
 }
 
 // The time the JFR capture started.
-func (o GetFleetPerformanceTuningAnalysisResultResultOutput) TimeStarted() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultResult) string { return v.TimeStarted }).(pulumi.StringOutput)
+func (o GetFleetPerformanceTuningAnalysisResultResultOutput) TimeStarted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultResult) *string { return v.TimeStarted }).(pulumi.StringPtrOutput)
 }
 
 // Total number of warnings reported by the analysis.
-func (o GetFleetPerformanceTuningAnalysisResultResultOutput) WarningCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultResult) int { return v.WarningCount }).(pulumi.IntOutput)
+func (o GetFleetPerformanceTuningAnalysisResultResultOutput) WarningCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultResult) *int { return v.WarningCount }).(pulumi.IntPtrOutput)
 }
 
 // The OCID of the work request to start the analysis.
-func (o GetFleetPerformanceTuningAnalysisResultResultOutput) WorkRequestId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultResult) string { return v.WorkRequestId }).(pulumi.StringOutput)
+func (o GetFleetPerformanceTuningAnalysisResultResultOutput) WorkRequestId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetPerformanceTuningAnalysisResultResult) *string { return v.WorkRequestId }).(pulumi.StringPtrOutput)
 }
 
 func init() {

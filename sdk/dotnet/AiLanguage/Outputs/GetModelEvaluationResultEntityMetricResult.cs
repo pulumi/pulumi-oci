@@ -16,29 +16,29 @@ namespace Pulumi.Oci.AiLanguage.Outputs
         /// <summary>
         /// F1-score, is a measure of a model’s accuracy on a dataset
         /// </summary>
-        public readonly double F1;
+        public readonly double? F1;
         /// <summary>
         /// Entity label
         /// </summary>
-        public readonly string Label;
+        public readonly string? Label;
         /// <summary>
         /// Precision refers to the number of true positives divided by the total number of positive predictions (i.e., the number of true positives plus the number of false positives)
         /// </summary>
-        public readonly double Precision;
+        public readonly double? Precision;
         /// <summary>
         /// Measures the model's ability to predict actual positive classes. It is the ratio between the predicted true positives and what was actually tagged. The recall metric reveals how many of the predicted classes are correct.
         /// </summary>
-        public readonly double Recall;
+        public readonly double? Recall;
 
         [OutputConstructor]
         private GetModelEvaluationResultEntityMetricResult(
-            double f1,
+            double? f1,
 
-            string label,
+            string? label,
 
-            double precision,
+            double? precision,
 
-            double recall)
+            double? recall)
         {
             F1 = f1;
             Label = label;

@@ -77,11 +77,11 @@ export interface GetSecurityListsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of security_lists.
      */
-    readonly securityLists: outputs.Core.GetSecurityListsSecurityList[];
+    readonly securityLists?: outputs.Core.GetSecurityListsSecurityList[];
     /**
      * The security list's current state.
      */

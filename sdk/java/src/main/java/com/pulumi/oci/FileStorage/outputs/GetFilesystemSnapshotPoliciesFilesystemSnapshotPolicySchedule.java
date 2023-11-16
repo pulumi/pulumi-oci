@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicySchedule {
@@ -14,111 +16,111 @@ public final class GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicySchedule
      * @return The day of the month to create a scheduled snapshot. If the day does not exist for the month, snapshot creation will be skipped. Used for MONTHLY and YEARLY snapshot schedules.
      * 
      */
-    private Integer dayOfMonth;
+    private @Nullable Integer dayOfMonth;
     /**
      * @return The day of the week to create a scheduled snapshot. Used for WEEKLY snapshot schedules.
      * 
      */
-    private String dayOfWeek;
+    private @Nullable String dayOfWeek;
     /**
      * @return The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot. If not set, a value will be chosen at creation time.
      * 
      */
-    private Integer hourOfDay;
+    private @Nullable Integer hourOfDay;
     /**
      * @return The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules.
      * 
      */
-    private String month;
+    private @Nullable String month;
     /**
      * @return The frequency of scheduled snapshots.
      * 
      */
-    private String period;
+    private @Nullable String period;
     /**
      * @return The number of seconds to retain snapshots created with this schedule. Snapshot expiration time will not be set if this value is empty.
      * 
      */
-    private String retentionDurationInSeconds;
+    private @Nullable String retentionDurationInSeconds;
     /**
      * @return A name prefix to be applied to snapshots created by this schedule.  Example: `compliance1`
      * 
      */
-    private String schedulePrefix;
+    private @Nullable String schedulePrefix;
     /**
      * @return The starting point used to begin the scheduling of the snapshots based upon recurrence string in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. If no `timeScheduleStart` is provided, the value will be set to the time when the schedule was created.
      * 
      */
-    private String timeScheduleStart;
+    private @Nullable String timeScheduleStart;
     /**
      * @return Time zone used for scheduling the snapshot.
      * 
      */
-    private String timeZone;
+    private @Nullable String timeZone;
 
     private GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicySchedule() {}
     /**
      * @return The day of the month to create a scheduled snapshot. If the day does not exist for the month, snapshot creation will be skipped. Used for MONTHLY and YEARLY snapshot schedules.
      * 
      */
-    public Integer dayOfMonth() {
-        return this.dayOfMonth;
+    public Optional<Integer> dayOfMonth() {
+        return Optional.ofNullable(this.dayOfMonth);
     }
     /**
      * @return The day of the week to create a scheduled snapshot. Used for WEEKLY snapshot schedules.
      * 
      */
-    public String dayOfWeek() {
-        return this.dayOfWeek;
+    public Optional<String> dayOfWeek() {
+        return Optional.ofNullable(this.dayOfWeek);
     }
     /**
      * @return The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot. If not set, a value will be chosen at creation time.
      * 
      */
-    public Integer hourOfDay() {
-        return this.hourOfDay;
+    public Optional<Integer> hourOfDay() {
+        return Optional.ofNullable(this.hourOfDay);
     }
     /**
      * @return The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules.
      * 
      */
-    public String month() {
-        return this.month;
+    public Optional<String> month() {
+        return Optional.ofNullable(this.month);
     }
     /**
      * @return The frequency of scheduled snapshots.
      * 
      */
-    public String period() {
-        return this.period;
+    public Optional<String> period() {
+        return Optional.ofNullable(this.period);
     }
     /**
      * @return The number of seconds to retain snapshots created with this schedule. Snapshot expiration time will not be set if this value is empty.
      * 
      */
-    public String retentionDurationInSeconds() {
-        return this.retentionDurationInSeconds;
+    public Optional<String> retentionDurationInSeconds() {
+        return Optional.ofNullable(this.retentionDurationInSeconds);
     }
     /**
      * @return A name prefix to be applied to snapshots created by this schedule.  Example: `compliance1`
      * 
      */
-    public String schedulePrefix() {
-        return this.schedulePrefix;
+    public Optional<String> schedulePrefix() {
+        return Optional.ofNullable(this.schedulePrefix);
     }
     /**
      * @return The starting point used to begin the scheduling of the snapshots based upon recurrence string in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. If no `timeScheduleStart` is provided, the value will be set to the time when the schedule was created.
      * 
      */
-    public String timeScheduleStart() {
-        return this.timeScheduleStart;
+    public Optional<String> timeScheduleStart() {
+        return Optional.ofNullable(this.timeScheduleStart);
     }
     /**
      * @return Time zone used for scheduling the snapshot.
      * 
      */
-    public String timeZone() {
-        return this.timeZone;
+    public Optional<String> timeZone() {
+        return Optional.ofNullable(this.timeZone);
     }
 
     public static Builder builder() {
@@ -130,15 +132,15 @@ public final class GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicySchedule
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer dayOfMonth;
-        private String dayOfWeek;
-        private Integer hourOfDay;
-        private String month;
-        private String period;
-        private String retentionDurationInSeconds;
-        private String schedulePrefix;
-        private String timeScheduleStart;
-        private String timeZone;
+        private @Nullable Integer dayOfMonth;
+        private @Nullable String dayOfWeek;
+        private @Nullable Integer hourOfDay;
+        private @Nullable String month;
+        private @Nullable String period;
+        private @Nullable String retentionDurationInSeconds;
+        private @Nullable String schedulePrefix;
+        private @Nullable String timeScheduleStart;
+        private @Nullable String timeZone;
         public Builder() {}
         public Builder(GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicySchedule defaults) {
     	      Objects.requireNonNull(defaults);
@@ -154,48 +156,48 @@ public final class GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicySchedule
         }
 
         @CustomType.Setter
-        public Builder dayOfMonth(Integer dayOfMonth) {
-            this.dayOfMonth = Objects.requireNonNull(dayOfMonth);
+        public Builder dayOfMonth(@Nullable Integer dayOfMonth) {
+            this.dayOfMonth = dayOfMonth;
             return this;
         }
         @CustomType.Setter
-        public Builder dayOfWeek(String dayOfWeek) {
-            this.dayOfWeek = Objects.requireNonNull(dayOfWeek);
+        public Builder dayOfWeek(@Nullable String dayOfWeek) {
+            this.dayOfWeek = dayOfWeek;
             return this;
         }
         @CustomType.Setter
-        public Builder hourOfDay(Integer hourOfDay) {
-            this.hourOfDay = Objects.requireNonNull(hourOfDay);
+        public Builder hourOfDay(@Nullable Integer hourOfDay) {
+            this.hourOfDay = hourOfDay;
             return this;
         }
         @CustomType.Setter
-        public Builder month(String month) {
-            this.month = Objects.requireNonNull(month);
+        public Builder month(@Nullable String month) {
+            this.month = month;
             return this;
         }
         @CustomType.Setter
-        public Builder period(String period) {
-            this.period = Objects.requireNonNull(period);
+        public Builder period(@Nullable String period) {
+            this.period = period;
             return this;
         }
         @CustomType.Setter
-        public Builder retentionDurationInSeconds(String retentionDurationInSeconds) {
-            this.retentionDurationInSeconds = Objects.requireNonNull(retentionDurationInSeconds);
+        public Builder retentionDurationInSeconds(@Nullable String retentionDurationInSeconds) {
+            this.retentionDurationInSeconds = retentionDurationInSeconds;
             return this;
         }
         @CustomType.Setter
-        public Builder schedulePrefix(String schedulePrefix) {
-            this.schedulePrefix = Objects.requireNonNull(schedulePrefix);
+        public Builder schedulePrefix(@Nullable String schedulePrefix) {
+            this.schedulePrefix = schedulePrefix;
             return this;
         }
         @CustomType.Setter
-        public Builder timeScheduleStart(String timeScheduleStart) {
-            this.timeScheduleStart = Objects.requireNonNull(timeScheduleStart);
+        public Builder timeScheduleStart(@Nullable String timeScheduleStart) {
+            this.timeScheduleStart = timeScheduleStart;
             return this;
         }
         @CustomType.Setter
-        public Builder timeZone(String timeZone) {
-            this.timeZone = Objects.requireNonNull(timeZone);
+        public Builder timeZone(@Nullable String timeZone) {
+            this.timeZone = timeZone;
             return this;
         }
         public GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicySchedule build() {

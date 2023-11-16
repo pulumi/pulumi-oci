@@ -11,86 +11,88 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetVnicAttachmentsVnicAttachmentCreateVnicDetail {
-    private Boolean assignIpv6ip;
-    private Boolean assignPrivateDnsRecord;
-    private String assignPublicIp;
-    private Map<String,Object> definedTags;
+    private @Nullable Boolean assignIpv6ip;
+    private @Nullable Boolean assignPrivateDnsRecord;
+    private @Nullable String assignPublicIp;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private String displayName;
-    private Map<String,Object> freeformTags;
-    private String hostnameLabel;
-    private List<GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail> ipv6addressIpv6subnetCidrPairDetails;
-    private List<String> nsgIds;
-    private String privateIp;
-    private Boolean skipSourceDestCheck;
+    private @Nullable String displayName;
+    private @Nullable Map<String,Object> freeformTags;
+    private @Nullable String hostnameLabel;
+    private @Nullable List<GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail> ipv6addressIpv6subnetCidrPairDetails;
+    private @Nullable List<String> nsgIds;
+    private @Nullable String privateIp;
+    private @Nullable Boolean skipSourceDestCheck;
     /**
      * @return The OCID of the subnet to create the VNIC in.
      * 
      */
-    private String subnetId;
+    private @Nullable String subnetId;
     /**
      * @return The OCID of the VLAN to create the VNIC in. Creating the VNIC in a VLAN (instead of a subnet) is possible only if you are an Oracle Cloud VMware Solution customer. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
      * 
      */
-    private String vlanId;
+    private @Nullable String vlanId;
 
     private GetVnicAttachmentsVnicAttachmentCreateVnicDetail() {}
-    public Boolean assignIpv6ip() {
-        return this.assignIpv6ip;
+    public Optional<Boolean> assignIpv6ip() {
+        return Optional.ofNullable(this.assignIpv6ip);
     }
-    public Boolean assignPrivateDnsRecord() {
-        return this.assignPrivateDnsRecord;
+    public Optional<Boolean> assignPrivateDnsRecord() {
+        return Optional.ofNullable(this.assignPrivateDnsRecord);
     }
-    public String assignPublicIp() {
-        return this.assignPublicIp;
+    public Optional<String> assignPublicIp() {
+        return Optional.ofNullable(this.assignPublicIp);
     }
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
-    public String hostnameLabel() {
-        return this.hostnameLabel;
+    public Optional<String> hostnameLabel() {
+        return Optional.ofNullable(this.hostnameLabel);
     }
     public List<GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail> ipv6addressIpv6subnetCidrPairDetails() {
-        return this.ipv6addressIpv6subnetCidrPairDetails;
+        return this.ipv6addressIpv6subnetCidrPairDetails == null ? List.of() : this.ipv6addressIpv6subnetCidrPairDetails;
     }
     public List<String> nsgIds() {
-        return this.nsgIds;
+        return this.nsgIds == null ? List.of() : this.nsgIds;
     }
-    public String privateIp() {
-        return this.privateIp;
+    public Optional<String> privateIp() {
+        return Optional.ofNullable(this.privateIp);
     }
-    public Boolean skipSourceDestCheck() {
-        return this.skipSourceDestCheck;
+    public Optional<Boolean> skipSourceDestCheck() {
+        return Optional.ofNullable(this.skipSourceDestCheck);
     }
     /**
      * @return The OCID of the subnet to create the VNIC in.
      * 
      */
-    public String subnetId() {
-        return this.subnetId;
+    public Optional<String> subnetId() {
+        return Optional.ofNullable(this.subnetId);
     }
     /**
      * @return The OCID of the VLAN to create the VNIC in. Creating the VNIC in a VLAN (instead of a subnet) is possible only if you are an Oracle Cloud VMware Solution customer. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
      * 
      */
-    public String vlanId() {
-        return this.vlanId;
+    public Optional<String> vlanId() {
+        return Optional.ofNullable(this.vlanId);
     }
 
     public static Builder builder() {
@@ -102,19 +104,19 @@ public final class GetVnicAttachmentsVnicAttachmentCreateVnicDetail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Boolean assignIpv6ip;
-        private Boolean assignPrivateDnsRecord;
-        private String assignPublicIp;
-        private Map<String,Object> definedTags;
-        private String displayName;
-        private Map<String,Object> freeformTags;
-        private String hostnameLabel;
-        private List<GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail> ipv6addressIpv6subnetCidrPairDetails;
-        private List<String> nsgIds;
-        private String privateIp;
-        private Boolean skipSourceDestCheck;
-        private String subnetId;
-        private String vlanId;
+        private @Nullable Boolean assignIpv6ip;
+        private @Nullable Boolean assignPrivateDnsRecord;
+        private @Nullable String assignPublicIp;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String hostnameLabel;
+        private @Nullable List<GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail> ipv6addressIpv6subnetCidrPairDetails;
+        private @Nullable List<String> nsgIds;
+        private @Nullable String privateIp;
+        private @Nullable Boolean skipSourceDestCheck;
+        private @Nullable String subnetId;
+        private @Nullable String vlanId;
         public Builder() {}
         public Builder(GetVnicAttachmentsVnicAttachmentCreateVnicDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -134,74 +136,74 @@ public final class GetVnicAttachmentsVnicAttachmentCreateVnicDetail {
         }
 
         @CustomType.Setter
-        public Builder assignIpv6ip(Boolean assignIpv6ip) {
-            this.assignIpv6ip = Objects.requireNonNull(assignIpv6ip);
+        public Builder assignIpv6ip(@Nullable Boolean assignIpv6ip) {
+            this.assignIpv6ip = assignIpv6ip;
             return this;
         }
         @CustomType.Setter
-        public Builder assignPrivateDnsRecord(Boolean assignPrivateDnsRecord) {
-            this.assignPrivateDnsRecord = Objects.requireNonNull(assignPrivateDnsRecord);
+        public Builder assignPrivateDnsRecord(@Nullable Boolean assignPrivateDnsRecord) {
+            this.assignPrivateDnsRecord = assignPrivateDnsRecord;
             return this;
         }
         @CustomType.Setter
-        public Builder assignPublicIp(String assignPublicIp) {
-            this.assignPublicIp = Objects.requireNonNull(assignPublicIp);
+        public Builder assignPublicIp(@Nullable String assignPublicIp) {
+            this.assignPublicIp = assignPublicIp;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder hostnameLabel(String hostnameLabel) {
-            this.hostnameLabel = Objects.requireNonNull(hostnameLabel);
+        public Builder hostnameLabel(@Nullable String hostnameLabel) {
+            this.hostnameLabel = hostnameLabel;
             return this;
         }
         @CustomType.Setter
-        public Builder ipv6addressIpv6subnetCidrPairDetails(List<GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail> ipv6addressIpv6subnetCidrPairDetails) {
-            this.ipv6addressIpv6subnetCidrPairDetails = Objects.requireNonNull(ipv6addressIpv6subnetCidrPairDetails);
+        public Builder ipv6addressIpv6subnetCidrPairDetails(@Nullable List<GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail> ipv6addressIpv6subnetCidrPairDetails) {
+            this.ipv6addressIpv6subnetCidrPairDetails = ipv6addressIpv6subnetCidrPairDetails;
             return this;
         }
         public Builder ipv6addressIpv6subnetCidrPairDetails(GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail... ipv6addressIpv6subnetCidrPairDetails) {
             return ipv6addressIpv6subnetCidrPairDetails(List.of(ipv6addressIpv6subnetCidrPairDetails));
         }
         @CustomType.Setter
-        public Builder nsgIds(List<String> nsgIds) {
-            this.nsgIds = Objects.requireNonNull(nsgIds);
+        public Builder nsgIds(@Nullable List<String> nsgIds) {
+            this.nsgIds = nsgIds;
             return this;
         }
         public Builder nsgIds(String... nsgIds) {
             return nsgIds(List.of(nsgIds));
         }
         @CustomType.Setter
-        public Builder privateIp(String privateIp) {
-            this.privateIp = Objects.requireNonNull(privateIp);
+        public Builder privateIp(@Nullable String privateIp) {
+            this.privateIp = privateIp;
             return this;
         }
         @CustomType.Setter
-        public Builder skipSourceDestCheck(Boolean skipSourceDestCheck) {
-            this.skipSourceDestCheck = Objects.requireNonNull(skipSourceDestCheck);
+        public Builder skipSourceDestCheck(@Nullable Boolean skipSourceDestCheck) {
+            this.skipSourceDestCheck = skipSourceDestCheck;
             return this;
         }
         @CustomType.Setter
-        public Builder subnetId(String subnetId) {
-            this.subnetId = Objects.requireNonNull(subnetId);
+        public Builder subnetId(@Nullable String subnetId) {
+            this.subnetId = subnetId;
             return this;
         }
         @CustomType.Setter
-        public Builder vlanId(String vlanId) {
-            this.vlanId = Objects.requireNonNull(vlanId);
+        public Builder vlanId(@Nullable String vlanId) {
+            this.vlanId = vlanId;
             return this;
         }
         public GetVnicAttachmentsVnicAttachmentCreateVnicDetail build() {

@@ -6,6 +6,8 @@ package com.pulumi.oci.Mysql.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMysqlBackupDbSystemSnapshotMaintenance {
@@ -13,15 +15,15 @@ public final class GetMysqlBackupDbSystemSnapshotMaintenance {
      * @return The start time of the maintenance window.
      * 
      */
-    private String windowStartTime;
+    private @Nullable String windowStartTime;
 
     private GetMysqlBackupDbSystemSnapshotMaintenance() {}
     /**
      * @return The start time of the maintenance window.
      * 
      */
-    public String windowStartTime() {
-        return this.windowStartTime;
+    public Optional<String> windowStartTime() {
+        return Optional.ofNullable(this.windowStartTime);
     }
 
     public static Builder builder() {
@@ -33,7 +35,7 @@ public final class GetMysqlBackupDbSystemSnapshotMaintenance {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String windowStartTime;
+        private @Nullable String windowStartTime;
         public Builder() {}
         public Builder(GetMysqlBackupDbSystemSnapshotMaintenance defaults) {
     	      Objects.requireNonNull(defaults);
@@ -41,8 +43,8 @@ public final class GetMysqlBackupDbSystemSnapshotMaintenance {
         }
 
         @CustomType.Setter
-        public Builder windowStartTime(String windowStartTime) {
-            this.windowStartTime = Objects.requireNonNull(windowStartTime);
+        public Builder windowStartTime(@Nullable String windowStartTime) {
+            this.windowStartTime = windowStartTime;
             return this;
         }
         public GetMysqlBackupDbSystemSnapshotMaintenance build() {

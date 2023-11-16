@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Adm.outputs.GetRemediationRecipesRemediationRecipeCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetRemediationRecipesRemediationRecipeCollection {
-    private List<GetRemediationRecipesRemediationRecipeCollectionItem> items;
+    private @Nullable List<GetRemediationRecipesRemediationRecipeCollectionItem> items;
 
     private GetRemediationRecipesRemediationRecipeCollection() {}
     public List<GetRemediationRecipesRemediationRecipeCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetRemediationRecipesRemediationRecipeCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetRemediationRecipesRemediationRecipeCollectionItem> items;
+        private @Nullable List<GetRemediationRecipesRemediationRecipeCollectionItem> items;
         public Builder() {}
         public Builder(GetRemediationRecipesRemediationRecipeCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetRemediationRecipesRemediationRecipeCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetRemediationRecipesRemediationRecipeCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetRemediationRecipesRemediationRecipeCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetRemediationRecipesRemediationRecipeCollectionItem... items) {

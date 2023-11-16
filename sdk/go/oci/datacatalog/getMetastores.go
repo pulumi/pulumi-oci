@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Metastores in Oracle Cloud Infrastructure Data Catalog service.
@@ -72,7 +71,7 @@ type GetMetastoresResult struct {
 	DisplayName *string               `pulumi:"displayName"`
 	Filters     []GetMetastoresFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of metastores.
 	Metastores []GetMetastoresMetastore `pulumi:"metastores"`
 	// The current state of the metastore.
@@ -122,12 +121,6 @@ func (o GetMetastoresResultOutput) ToGetMetastoresResultOutputWithContext(ctx co
 	return o
 }
 
-func (o GetMetastoresResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetMetastoresResult] {
-	return pulumix.Output[GetMetastoresResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // OCID of the compartment which holds the metastore.
 func (o GetMetastoresResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMetastoresResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -143,8 +136,8 @@ func (o GetMetastoresResultOutput) Filters() GetMetastoresFilterArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetMetastoresResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMetastoresResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetMetastoresResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMetastoresResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of metastores.

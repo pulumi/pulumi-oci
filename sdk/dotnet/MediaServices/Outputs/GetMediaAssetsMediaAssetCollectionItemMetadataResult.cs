@@ -16,10 +16,10 @@ namespace Pulumi.Oci.MediaServices.Outputs
         /// <summary>
         /// JSON string containing the technial metadata for the media asset.
         /// </summary>
-        public readonly string Metadata;
+        public readonly string? Metadata;
 
         [OutputConstructor]
-        private GetMediaAssetsMediaAssetCollectionItemMetadataResult(string metadata)
+        private GetMediaAssetsMediaAssetCollectionItemMetadataResult(string? metadata)
         {
             Metadata = metadata;
         }

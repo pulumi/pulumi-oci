@@ -84,7 +84,7 @@ export interface GetEnterpriseManagerBridgesResult {
     /**
      * The list of enterprise_manager_bridge_collection.
      */
-    readonly enterpriseManagerBridgeCollections: outputs.Opsi.GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollection[];
+    readonly enterpriseManagerBridgeCollections?: outputs.Opsi.GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollection[];
     readonly filters?: outputs.Opsi.GetEnterpriseManagerBridgesFilter[];
     /**
      * Enterprise Manager bridge identifier

@@ -49,15 +49,12 @@ class GetInstancePoolLoadBalancerAttachmentResult:
 
     @property
     @pulumi.getter(name="backendSetName")
-    def backend_set_name(self) -> str:
-        """
-        The name of the backend set on the load balancer.
-        """
+    def backend_set_name(self) -> Optional[str]:
         return pulumi.get(self, "backend_set_name")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -66,9 +63,6 @@ class GetInstancePoolLoadBalancerAttachmentResult:
     @property
     @pulumi.getter(name="instancePoolId")
     def instance_pool_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool of the load balancer attachment.
-        """
         return pulumi.get(self, "instance_pool_id")
 
     @property
@@ -78,34 +72,22 @@ class GetInstancePoolLoadBalancerAttachmentResult:
 
     @property
     @pulumi.getter(name="loadBalancerId")
-    def load_balancer_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer attached to the instance pool.
-        """
+    def load_balancer_id(self) -> Optional[str]:
         return pulumi.get(self, "load_balancer_id")
 
     @property
     @pulumi.getter
-    def port(self) -> int:
-        """
-        The port value used for the backends.
-        """
+    def port(self) -> Optional[int]:
         return pulumi.get(self, "port")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The status of the interaction between the instance pool and the load balancer.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="vnicSelection")
-    def vnic_selection(self) -> str:
-        """
-        Indicates which VNIC on each instance in the instance pool should be used to associate with the load balancer. Possible values are "PrimaryVnic" or the displayName of one of the secondary VNICs on the instance configuration that is associated with the instance pool.
-        """
+    def vnic_selection(self) -> Optional[str]:
         return pulumi.get(self, "vnic_selection")
 
 
@@ -129,23 +111,7 @@ def get_instance_pool_load_balancer_attachment(instance_pool_id: Optional[str] =
                                                instance_pool_load_balancer_attachment_id: Optional[str] = None,
                                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetInstancePoolLoadBalancerAttachmentResult:
     """
-    This data source provides details about a specific Instance Pool Load Balancer Attachment resource in Oracle Cloud Infrastructure Core service.
-
-    Gets information about a load balancer that is attached to the specified instance pool.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_instance_pool_load_balancer_attachment = oci.Core.get_instance_pool_load_balancer_attachment(instance_pool_id=oci_core_instance_pool["test_instance_pool"]["id"],
-        instance_pool_load_balancer_attachment_id=oci_core_instance_pool_load_balancer_attachment["test_instance_pool_load_balancer_attachment"]["id"])
-    ```
-
-
-    :param str instance_pool_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool.
-    :param str instance_pool_load_balancer_attachment_id: The OCID of the load balancer attachment.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['instancePoolId'] = instance_pool_id
@@ -169,22 +135,6 @@ def get_instance_pool_load_balancer_attachment_output(instance_pool_id: Optional
                                                       instance_pool_load_balancer_attachment_id: Optional[pulumi.Input[str]] = None,
                                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetInstancePoolLoadBalancerAttachmentResult]:
     """
-    This data source provides details about a specific Instance Pool Load Balancer Attachment resource in Oracle Cloud Infrastructure Core service.
-
-    Gets information about a load balancer that is attached to the specified instance pool.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_instance_pool_load_balancer_attachment = oci.Core.get_instance_pool_load_balancer_attachment(instance_pool_id=oci_core_instance_pool["test_instance_pool"]["id"],
-        instance_pool_load_balancer_attachment_id=oci_core_instance_pool_load_balancer_attachment["test_instance_pool_load_balancer_attachment"]["id"])
-    ```
-
-
-    :param str instance_pool_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool.
-    :param str instance_pool_load_balancer_attachment_id: The OCID of the load balancer attachment.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Supported Skus in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.\
@@ -68,7 +67,7 @@ type GetSupportedSkusResult struct {
 	Filters       []GetSupportedSkusFilter `pulumi:"filters"`
 	HostShapeName *string                  `pulumi:"hostShapeName"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of the supported SKUs.
 	Items []GetSupportedSkusItem `pulumi:"items"`
 }
@@ -114,12 +113,6 @@ func (o GetSupportedSkusResultOutput) ToGetSupportedSkusResultOutputWithContext(
 	return o
 }
 
-func (o GetSupportedSkusResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetSupportedSkusResult] {
-	return pulumix.Output[GetSupportedSkusResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSupportedSkusResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSupportedSkusResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -133,8 +126,8 @@ func (o GetSupportedSkusResultOutput) HostShapeName() pulumi.StringPtrOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetSupportedSkusResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSupportedSkusResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetSupportedSkusResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSupportedSkusResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of the supported SKUs.

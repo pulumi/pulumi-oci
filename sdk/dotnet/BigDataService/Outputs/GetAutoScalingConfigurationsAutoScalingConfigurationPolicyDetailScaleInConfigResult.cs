@@ -14,16 +14,16 @@ namespace Pulumi.Oci.BigDataService.Outputs
     public sealed class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigResult
     {
         public readonly ImmutableArray<Outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricResult> Metrics;
-        public readonly int MinNodeCount;
-        public readonly int StepSize;
+        public readonly int? MinNodeCount;
+        public readonly int? StepSize;
 
         [OutputConstructor]
         private GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigResult(
             ImmutableArray<Outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricResult> metrics,
 
-            int minNodeCount,
+            int? minNodeCount,
 
-            int stepSize)
+            int? stepSize)
         {
             Metrics = metrics;
             MinNodeCount = minNodeCount;

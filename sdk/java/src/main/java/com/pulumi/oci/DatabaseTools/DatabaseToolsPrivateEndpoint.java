@@ -15,6 +15,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -76,14 +77,14 @@ public class DatabaseToolsPrivateEndpoint extends com.pulumi.resources.CustomRes
      * 
      */
     @Export(name="additionalFqdns", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> additionalFqdns;
+    private Output</* @Nullable */ List<String>> additionalFqdns;
 
     /**
      * @return A list of additional FQDNs that can be also be used for the private endpoint.
      * 
      */
-    public Output<List<String>> additionalFqdns() {
-        return this.additionalFqdns;
+    public Output<Optional<List<String>>> additionalFqdns() {
+        return Codegen.optional(this.additionalFqdns);
     }
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools private endpoint.
@@ -104,28 +105,28 @@ public class DatabaseToolsPrivateEndpoint extends com.pulumi.resources.CustomRes
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) A description of the Database Tools private endpoint.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
-    private Output<String> description;
+    private Output</* @Nullable */ String> description;
 
     /**
      * @return (Updatable) A description of the Database Tools private endpoint.
      * 
      */
-    public Output<String> description() {
-        return this.description;
+    public Output<Optional<String>> description() {
+        return Codegen.optional(this.description);
     }
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
@@ -146,14 +147,14 @@ public class DatabaseToolsPrivateEndpoint extends com.pulumi.resources.CustomRes
      * 
      */
     @Export(name="endpointFqdn", refs={String.class}, tree="[0]")
-    private Output<String> endpointFqdn;
+    private Output</* @Nullable */ String> endpointFqdn;
 
     /**
      * @return Then FQDN to use for the private endpoint.
      * 
      */
-    public Output<String> endpointFqdn() {
-        return this.endpointFqdn;
+    public Output<Optional<String>> endpointFqdn() {
+        return Codegen.optional(this.endpointFqdn);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `DatabaseToolsEndpointService`.
@@ -174,98 +175,98 @@ public class DatabaseToolsPrivateEndpoint extends com.pulumi.resources.CustomRes
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups that the private endpoint&#39;s VNIC belongs to.  For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
      * 
      */
     @Export(name="nsgIds", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> nsgIds;
+    private Output</* @Nullable */ List<String>> nsgIds;
 
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups that the private endpoint&#39;s VNIC belongs to.  For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
      * 
      */
-    public Output<List<String>> nsgIds() {
-        return this.nsgIds;
+    public Output<Optional<List<String>>> nsgIds() {
+        return Codegen.optional(this.nsgIds);
     }
     /**
      * The private IP address that represents the access point for the associated endpoint service.
      * 
      */
     @Export(name="privateEndpointIp", refs={String.class}, tree="[0]")
-    private Output<String> privateEndpointIp;
+    private Output</* @Nullable */ String> privateEndpointIp;
 
     /**
      * @return The private IP address that represents the access point for the associated endpoint service.
      * 
      */
-    public Output<String> privateEndpointIp() {
-        return this.privateEndpointIp;
+    public Output<Optional<String>> privateEndpointIp() {
+        return Codegen.optional(this.privateEndpointIp);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint&#39;s VNIC.
      * 
      */
     @Export(name="privateEndpointVnicId", refs={String.class}, tree="[0]")
-    private Output<String> privateEndpointVnicId;
+    private Output</* @Nullable */ String> privateEndpointVnicId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint&#39;s VNIC.
      * 
      */
-    public Output<String> privateEndpointVnicId() {
-        return this.privateEndpointVnicId;
+    public Output<Optional<String>> privateEndpointVnicId() {
+        return Codegen.optional(this.privateEndpointVnicId);
     }
     /**
      * Reverse connection configuration details of the private endpoint.
      * 
      */
     @Export(name="reverseConnectionConfigurations", refs={List.class,DatabaseToolsPrivateEndpointReverseConnectionConfiguration.class}, tree="[0,1]")
-    private Output<List<DatabaseToolsPrivateEndpointReverseConnectionConfiguration>> reverseConnectionConfigurations;
+    private Output</* @Nullable */ List<DatabaseToolsPrivateEndpointReverseConnectionConfiguration>> reverseConnectionConfigurations;
 
     /**
      * @return Reverse connection configuration details of the private endpoint.
      * 
      */
-    public Output<List<DatabaseToolsPrivateEndpointReverseConnectionConfiguration>> reverseConnectionConfigurations() {
-        return this.reverseConnectionConfigurations;
+    public Output<Optional<List<DatabaseToolsPrivateEndpointReverseConnectionConfiguration>>> reverseConnectionConfigurations() {
+        return Codegen.optional(this.reverseConnectionConfigurations);
     }
     /**
      * The current state of the Database Tools private endpoint.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the Database Tools private endpoint.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet that the private endpoint belongs to.
@@ -292,56 +293,56 @@ public class DatabaseToolsPrivateEndpoint extends com.pulumi.resources.CustomRes
      * 
      */
     @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> systemTags;
+    private Output</* @Nullable */ Map<String,Object>> systemTags;
 
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    public Output<Map<String,Object>> systemTags() {
-        return this.systemTags;
+    public Output<Optional<Map<String,Object>>> systemTags() {
+        return Codegen.optional(this.systemTags);
     }
     /**
      * The time the Database Tools private endpoint was created. An RFC3339 formatted datetime string
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The time the Database Tools private endpoint was created. An RFC3339 formatted datetime string
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The time the Database Tools private endpoint was updated. An RFC3339 formatted datetime string
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The time the Database Tools private endpoint was updated. An RFC3339 formatted datetime string
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN that the private endpoint belongs to.
      * 
      */
     @Export(name="vcnId", refs={String.class}, tree="[0]")
-    private Output<String> vcnId;
+    private Output</* @Nullable */ String> vcnId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN that the private endpoint belongs to.
      * 
      */
-    public Output<String> vcnId() {
-        return this.vcnId;
+    public Output<Optional<String>> vcnId() {
+        return Codegen.optional(this.vcnId);
     }
 
     /**

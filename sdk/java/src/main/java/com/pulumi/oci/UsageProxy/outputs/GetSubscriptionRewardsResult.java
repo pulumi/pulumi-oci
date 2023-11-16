@@ -9,6 +9,7 @@ import com.pulumi.oci.UsageProxy.outputs.GetSubscriptionRewardsRewardCollection;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -18,12 +19,12 @@ public final class GetSubscriptionRewardsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of reward_collection.
      * 
      */
-    private List<GetSubscriptionRewardsRewardCollection> rewardCollections;
+    private @Nullable List<GetSubscriptionRewardsRewardCollection> rewardCollections;
     /**
      * @return The entitlement ID from MQS, which is the same as the subcription ID.
      * 
@@ -43,15 +44,15 @@ public final class GetSubscriptionRewardsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of reward_collection.
      * 
      */
     public List<GetSubscriptionRewardsRewardCollection> rewardCollections() {
-        return this.rewardCollections;
+        return this.rewardCollections == null ? List.of() : this.rewardCollections;
     }
     /**
      * @return The entitlement ID from MQS, which is the same as the subcription ID.
@@ -78,8 +79,8 @@ public final class GetSubscriptionRewardsResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetSubscriptionRewardsFilter> filters;
-        private String id;
-        private List<GetSubscriptionRewardsRewardCollection> rewardCollections;
+        private @Nullable String id;
+        private @Nullable List<GetSubscriptionRewardsRewardCollection> rewardCollections;
         private String subscriptionId;
         private String tenancyId;
         public Builder() {}
@@ -101,13 +102,13 @@ public final class GetSubscriptionRewardsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder rewardCollections(List<GetSubscriptionRewardsRewardCollection> rewardCollections) {
-            this.rewardCollections = Objects.requireNonNull(rewardCollections);
+        public Builder rewardCollections(@Nullable List<GetSubscriptionRewardsRewardCollection> rewardCollections) {
+            this.rewardCollections = rewardCollections;
             return this;
         }
         public Builder rewardCollections(GetSubscriptionRewardsRewardCollection... rewardCollections) {

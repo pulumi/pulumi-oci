@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMountTargetsMountTargetLdapIdmap {
@@ -14,99 +16,99 @@ public final class GetMountTargetsMountTargetLdapIdmap {
      * @return The maximum amount of time the mount target is allowed to use a cached entry.
      * 
      */
-    private Integer cacheLifetimeSeconds;
+    private @Nullable Integer cacheLifetimeSeconds;
     /**
      * @return The amount of time that the mount target should allow an entry to persist in its cache before attempting to refresh the entry.
      * 
      */
-    private Integer cacheRefreshIntervalSeconds;
+    private @Nullable Integer cacheRefreshIntervalSeconds;
     /**
      * @return All LDAP searches are recursive starting at this group.  Example: `CN=Group,DC=domain,DC=com`
      * 
      */
-    private String groupSearchBase;
+    private @Nullable String groupSearchBase;
     /**
      * @return The amount of time that a mount target will maintain information that a user is not found in the ID mapping configuration.
      * 
      */
-    private Integer negativeCacheLifetimeSeconds;
+    private @Nullable Integer negativeCacheLifetimeSeconds;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the first connector to use to communicate with the LDAP server.
      * 
      */
-    private String outboundConnector1id;
+    private @Nullable String outboundConnector1id;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second connector to use to communicate with the LDAP server.
      * 
      */
-    private String outboundConnector2id;
+    private @Nullable String outboundConnector2id;
     /**
      * @return Schema type of the LDAP account.
      * 
      */
-    private String schemaType;
+    private @Nullable String schemaType;
     /**
      * @return All LDAP searches are recursive starting at this user.  Example: `CN=User,DC=domain,DC=com`
      * 
      */
-    private String userSearchBase;
+    private @Nullable String userSearchBase;
 
     private GetMountTargetsMountTargetLdapIdmap() {}
     /**
      * @return The maximum amount of time the mount target is allowed to use a cached entry.
      * 
      */
-    public Integer cacheLifetimeSeconds() {
-        return this.cacheLifetimeSeconds;
+    public Optional<Integer> cacheLifetimeSeconds() {
+        return Optional.ofNullable(this.cacheLifetimeSeconds);
     }
     /**
      * @return The amount of time that the mount target should allow an entry to persist in its cache before attempting to refresh the entry.
      * 
      */
-    public Integer cacheRefreshIntervalSeconds() {
-        return this.cacheRefreshIntervalSeconds;
+    public Optional<Integer> cacheRefreshIntervalSeconds() {
+        return Optional.ofNullable(this.cacheRefreshIntervalSeconds);
     }
     /**
      * @return All LDAP searches are recursive starting at this group.  Example: `CN=Group,DC=domain,DC=com`
      * 
      */
-    public String groupSearchBase() {
-        return this.groupSearchBase;
+    public Optional<String> groupSearchBase() {
+        return Optional.ofNullable(this.groupSearchBase);
     }
     /**
      * @return The amount of time that a mount target will maintain information that a user is not found in the ID mapping configuration.
      * 
      */
-    public Integer negativeCacheLifetimeSeconds() {
-        return this.negativeCacheLifetimeSeconds;
+    public Optional<Integer> negativeCacheLifetimeSeconds() {
+        return Optional.ofNullable(this.negativeCacheLifetimeSeconds);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the first connector to use to communicate with the LDAP server.
      * 
      */
-    public String outboundConnector1id() {
-        return this.outboundConnector1id;
+    public Optional<String> outboundConnector1id() {
+        return Optional.ofNullable(this.outboundConnector1id);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second connector to use to communicate with the LDAP server.
      * 
      */
-    public String outboundConnector2id() {
-        return this.outboundConnector2id;
+    public Optional<String> outboundConnector2id() {
+        return Optional.ofNullable(this.outboundConnector2id);
     }
     /**
      * @return Schema type of the LDAP account.
      * 
      */
-    public String schemaType() {
-        return this.schemaType;
+    public Optional<String> schemaType() {
+        return Optional.ofNullable(this.schemaType);
     }
     /**
      * @return All LDAP searches are recursive starting at this user.  Example: `CN=User,DC=domain,DC=com`
      * 
      */
-    public String userSearchBase() {
-        return this.userSearchBase;
+    public Optional<String> userSearchBase() {
+        return Optional.ofNullable(this.userSearchBase);
     }
 
     public static Builder builder() {
@@ -118,14 +120,14 @@ public final class GetMountTargetsMountTargetLdapIdmap {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer cacheLifetimeSeconds;
-        private Integer cacheRefreshIntervalSeconds;
-        private String groupSearchBase;
-        private Integer negativeCacheLifetimeSeconds;
-        private String outboundConnector1id;
-        private String outboundConnector2id;
-        private String schemaType;
-        private String userSearchBase;
+        private @Nullable Integer cacheLifetimeSeconds;
+        private @Nullable Integer cacheRefreshIntervalSeconds;
+        private @Nullable String groupSearchBase;
+        private @Nullable Integer negativeCacheLifetimeSeconds;
+        private @Nullable String outboundConnector1id;
+        private @Nullable String outboundConnector2id;
+        private @Nullable String schemaType;
+        private @Nullable String userSearchBase;
         public Builder() {}
         public Builder(GetMountTargetsMountTargetLdapIdmap defaults) {
     	      Objects.requireNonNull(defaults);
@@ -140,43 +142,43 @@ public final class GetMountTargetsMountTargetLdapIdmap {
         }
 
         @CustomType.Setter
-        public Builder cacheLifetimeSeconds(Integer cacheLifetimeSeconds) {
-            this.cacheLifetimeSeconds = Objects.requireNonNull(cacheLifetimeSeconds);
+        public Builder cacheLifetimeSeconds(@Nullable Integer cacheLifetimeSeconds) {
+            this.cacheLifetimeSeconds = cacheLifetimeSeconds;
             return this;
         }
         @CustomType.Setter
-        public Builder cacheRefreshIntervalSeconds(Integer cacheRefreshIntervalSeconds) {
-            this.cacheRefreshIntervalSeconds = Objects.requireNonNull(cacheRefreshIntervalSeconds);
+        public Builder cacheRefreshIntervalSeconds(@Nullable Integer cacheRefreshIntervalSeconds) {
+            this.cacheRefreshIntervalSeconds = cacheRefreshIntervalSeconds;
             return this;
         }
         @CustomType.Setter
-        public Builder groupSearchBase(String groupSearchBase) {
-            this.groupSearchBase = Objects.requireNonNull(groupSearchBase);
+        public Builder groupSearchBase(@Nullable String groupSearchBase) {
+            this.groupSearchBase = groupSearchBase;
             return this;
         }
         @CustomType.Setter
-        public Builder negativeCacheLifetimeSeconds(Integer negativeCacheLifetimeSeconds) {
-            this.negativeCacheLifetimeSeconds = Objects.requireNonNull(negativeCacheLifetimeSeconds);
+        public Builder negativeCacheLifetimeSeconds(@Nullable Integer negativeCacheLifetimeSeconds) {
+            this.negativeCacheLifetimeSeconds = negativeCacheLifetimeSeconds;
             return this;
         }
         @CustomType.Setter
-        public Builder outboundConnector1id(String outboundConnector1id) {
-            this.outboundConnector1id = Objects.requireNonNull(outboundConnector1id);
+        public Builder outboundConnector1id(@Nullable String outboundConnector1id) {
+            this.outboundConnector1id = outboundConnector1id;
             return this;
         }
         @CustomType.Setter
-        public Builder outboundConnector2id(String outboundConnector2id) {
-            this.outboundConnector2id = Objects.requireNonNull(outboundConnector2id);
+        public Builder outboundConnector2id(@Nullable String outboundConnector2id) {
+            this.outboundConnector2id = outboundConnector2id;
             return this;
         }
         @CustomType.Setter
-        public Builder schemaType(String schemaType) {
-            this.schemaType = Objects.requireNonNull(schemaType);
+        public Builder schemaType(@Nullable String schemaType) {
+            this.schemaType = schemaType;
             return this;
         }
         @CustomType.Setter
-        public Builder userSearchBase(String userSearchBase) {
-            this.userSearchBase = Objects.requireNonNull(userSearchBase);
+        public Builder userSearchBase(@Nullable String userSearchBase) {
+            this.userSearchBase = userSearchBase;
             return this;
         }
         public GetMountTargetsMountTargetLdapIdmap build() {

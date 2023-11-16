@@ -45,56 +45,56 @@ export interface GetExternalAsmInstanceResult {
     /**
      * The Automatic Diagnostic Repository (ADR) home directory for the ASM instance.
      */
-    readonly adrHomeDirectory: string;
+    readonly adrHomeDirectory?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * The name of the external ASM instance.
      */
-    readonly componentName: string;
+    readonly componentName?: string;
     /**
      * The user-friendly name for the ASM instance. The name does not have to be unique.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external ASM that the ASM instance belongs to.
      */
-    readonly externalAsmId: string;
+    readonly externalAsmId?: string;
     readonly externalAsmInstanceId: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB node on which the ASM instance is running.
      */
-    readonly externalDbNodeId: string;
+    readonly externalDbNodeId?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the ASM instance is a part of.
      */
-    readonly externalDbSystemId: string;
+    readonly externalDbSystemId?: string;
     /**
      * The name of the host on which the ASM instance is running.
      */
-    readonly hostName: string;
+    readonly hostName?: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Additional information about the current lifecycle state.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * The current lifecycle state of the external ASM instance.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The date and time the external ASM instance was created.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The date and time the external ASM instance was last updated.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific External Asm Instance resource in Oracle Cloud Infrastructure Database Management service.

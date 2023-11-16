@@ -20,6 +20,7 @@ import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -144,84 +145,84 @@ public class TargetAsset extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="blockVolumesPerformance", refs={Integer.class}, tree="[0]")
-    private Output<Integer> blockVolumesPerformance;
+    private Output</* @Nullable */ Integer> blockVolumesPerformance;
 
     /**
      * @return (Updatable) Performance of the block volumes.
      * 
      */
-    public Output<Integer> blockVolumesPerformance() {
-        return this.blockVolumesPerformance;
+    public Output<Optional<Integer>> blockVolumesPerformance() {
+        return Codegen.optional(this.blockVolumesPerformance);
     }
     /**
      * (Updatable) The OCID of the compartment.
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
-    private Output<String> compartmentId;
+    private Output</* @Nullable */ String> compartmentId;
 
     /**
      * @return (Updatable) The OCID of the compartment.
      * 
      */
-    public Output<String> compartmentId() {
-        return this.compartmentId;
+    public Output<Optional<String>> compartmentId() {
+        return Codegen.optional(this.compartmentId);
     }
     /**
      * Messages about the compatibility issues.
      * 
      */
     @Export(name="compatibilityMessages", refs={List.class,TargetAssetCompatibilityMessage.class}, tree="[0,1]")
-    private Output<List<TargetAssetCompatibilityMessage>> compatibilityMessages;
+    private Output</* @Nullable */ List<TargetAssetCompatibilityMessage>> compatibilityMessages;
 
     /**
      * @return Messages about the compatibility issues.
      * 
      */
-    public Output<List<TargetAssetCompatibilityMessage>> compatibilityMessages() {
-        return this.compatibilityMessages;
+    public Output<Optional<List<TargetAssetCompatibilityMessage>>> compatibilityMessages() {
+        return Codegen.optional(this.compatibilityMessages);
     }
     /**
      * Created resource identifier
      * 
      */
     @Export(name="createdResourceId", refs={String.class}, tree="[0]")
-    private Output<String> createdResourceId;
+    private Output</* @Nullable */ String> createdResourceId;
 
     /**
      * @return Created resource identifier
      * 
      */
-    public Output<String> createdResourceId() {
-        return this.createdResourceId;
+    public Output<Optional<String>> createdResourceId() {
+        return Codegen.optional(this.createdResourceId);
     }
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     /**
      * Cost estimation description
      * 
      */
     @Export(name="estimatedCosts", refs={List.class,TargetAssetEstimatedCost.class}, tree="[0,1]")
-    private Output<List<TargetAssetEstimatedCost>> estimatedCosts;
+    private Output</* @Nullable */ List<TargetAssetEstimatedCost>> estimatedCosts;
 
     /**
      * @return Cost estimation description
      * 
      */
-    public Output<List<TargetAssetEstimatedCost>> estimatedCosts() {
-        return this.estimatedCosts;
+    public Output<Optional<List<TargetAssetEstimatedCost>>> estimatedCosts() {
+        return Codegen.optional(this.estimatedCosts);
     }
     /**
      * (Updatable) A boolean indicating whether the asset should be migrated.
@@ -242,28 +243,28 @@ public class TargetAsset extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * Description of the migration asset.
      * 
      */
     @Export(name="migrationAssets", refs={List.class,TargetAssetMigrationAsset.class}, tree="[0,1]")
-    private Output<List<TargetAssetMigrationAsset>> migrationAssets;
+    private Output</* @Nullable */ List<TargetAssetMigrationAsset>> migrationAssets;
 
     /**
      * @return Description of the migration asset.
      * 
      */
-    public Output<List<TargetAssetMigrationAsset>> migrationAssets() {
-        return this.migrationAssets;
+    public Output<Optional<List<TargetAssetMigrationAsset>>> migrationAssets() {
+        return Codegen.optional(this.migrationAssets);
     }
     /**
      * OCID of the associated migration plan.
@@ -284,14 +285,14 @@ public class TargetAsset extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="msLicense", refs={String.class}, tree="[0]")
-    private Output<String> msLicense;
+    private Output</* @Nullable */ String> msLicense;
 
     /**
      * @return (Updatable) Microsoft license for the VM configuration.
      * 
      */
-    public Output<String> msLicense() {
-        return this.msLicense;
+    public Output<Optional<String>> msLicense() {
+        return Codegen.optional(this.msLicense);
     }
     /**
      * (Updatable) Preferred VM shape type that you provide.
@@ -312,84 +313,84 @@ public class TargetAsset extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="recommendedSpecs", refs={List.class,TargetAssetRecommendedSpec.class}, tree="[0,1]")
-    private Output<List<TargetAssetRecommendedSpec>> recommendedSpecs;
+    private Output</* @Nullable */ List<TargetAssetRecommendedSpec>> recommendedSpecs;
 
     /**
      * @return Instance launch details. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
      * 
      */
-    public Output<List<TargetAssetRecommendedSpec>> recommendedSpecs() {
-        return this.recommendedSpecs;
+    public Output<Optional<List<TargetAssetRecommendedSpec>>> recommendedSpecs() {
+        return Codegen.optional(this.recommendedSpecs);
     }
     /**
      * The current state of the target asset.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the target asset.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * Instance launch details. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
      * 
      */
     @Export(name="testSpecs", refs={List.class,TargetAssetTestSpec.class}, tree="[0,1]")
-    private Output<List<TargetAssetTestSpec>> testSpecs;
+    private Output</* @Nullable */ List<TargetAssetTestSpec>> testSpecs;
 
     /**
      * @return Instance launch details. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
      * 
      */
-    public Output<List<TargetAssetTestSpec>> testSpecs() {
-        return this.testSpecs;
+    public Output<Optional<List<TargetAssetTestSpec>>> testSpecs() {
+        return Codegen.optional(this.testSpecs);
     }
     /**
      * The time when the assessment was done. An RFC3339 formatted datetime string.
      * 
      */
     @Export(name="timeAssessed", refs={String.class}, tree="[0]")
-    private Output<String> timeAssessed;
+    private Output</* @Nullable */ String> timeAssessed;
 
     /**
      * @return The time when the assessment was done. An RFC3339 formatted datetime string.
      * 
      */
-    public Output<String> timeAssessed() {
-        return this.timeAssessed;
+    public Output<Optional<String>> timeAssessed() {
+        return Codegen.optional(this.timeAssessed);
     }
     /**
      * The time when the target asset was created. An RFC3339 formatted datetime string.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The time when the target asset was created. An RFC3339 formatted datetime string.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The time when the target asset was updated. An RFC3339 formatted datetime string.
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The time when the target asset was updated. An RFC3339 formatted datetime string.
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
     /**
      * (Updatable) The type of action to run when the instance is interrupted for eviction.

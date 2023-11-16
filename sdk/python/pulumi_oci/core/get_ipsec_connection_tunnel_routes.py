@@ -46,9 +46,6 @@ class GetIpsecConnectionTunnelRoutesResult:
     @property
     @pulumi.getter
     def advertiser(self) -> Optional[str]:
-        """
-        The source of the route advertisement.
-        """
         return pulumi.get(self, "advertiser")
 
     @property
@@ -58,7 +55,7 @@ class GetIpsecConnectionTunnelRoutesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -76,10 +73,7 @@ class GetIpsecConnectionTunnelRoutesResult:
 
     @property
     @pulumi.getter(name="tunnelRoutes")
-    def tunnel_routes(self) -> Sequence['outputs.GetIpsecConnectionTunnelRoutesTunnelRouteResult']:
-        """
-        The list of tunnel_routes.
-        """
+    def tunnel_routes(self) -> Optional[Sequence['outputs.GetIpsecConnectionTunnelRoutesTunnelRouteResult']]:
         return pulumi.get(self, "tunnel_routes")
 
 
@@ -103,25 +97,7 @@ def get_ipsec_connection_tunnel_routes(advertiser: Optional[str] = None,
                                        tunnel_id: Optional[str] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetIpsecConnectionTunnelRoutesResult:
     """
-    This data source provides the list of Ipsec Connection Tunnel Routes in Oracle Cloud Infrastructure Core service.
-
-    The routes advertised to the on-premises network and the routes received from the on-premises network.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_ipsec_connection_tunnel_routes = oci.Core.get_ipsec_connection_tunnel_routes(ipsec_id=oci_core_ipsec["test_ipsec"]["id"],
-        tunnel_id=oci_core_tunnel["test_tunnel"]["id"],
-        advertiser=var["ipsec_connection_tunnel_route_advertiser"])
-    ```
-
-
-    :param str advertiser: Specifies the advertiser of the routes. If set to `ORACLE`, this returns only the routes advertised by Oracle. When set to `CUSTOMER`, this returns only the routes advertised by the CPE.
-    :param str ipsec_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IPSec connection.
-    :param str tunnel_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tunnel.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['advertiser'] = advertiser
@@ -147,24 +123,6 @@ def get_ipsec_connection_tunnel_routes_output(advertiser: Optional[pulumi.Input[
                                               tunnel_id: Optional[pulumi.Input[str]] = None,
                                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetIpsecConnectionTunnelRoutesResult]:
     """
-    This data source provides the list of Ipsec Connection Tunnel Routes in Oracle Cloud Infrastructure Core service.
-
-    The routes advertised to the on-premises network and the routes received from the on-premises network.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_ipsec_connection_tunnel_routes = oci.Core.get_ipsec_connection_tunnel_routes(ipsec_id=oci_core_ipsec["test_ipsec"]["id"],
-        tunnel_id=oci_core_tunnel["test_tunnel"]["id"],
-        advertiser=var["ipsec_connection_tunnel_route_advertiser"])
-    ```
-
-
-    :param str advertiser: Specifies the advertiser of the routes. If set to `ORACLE`, this returns only the routes advertised by Oracle. When set to `CUSTOMER`, this returns only the routes advertised by the CPE.
-    :param str ipsec_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IPSec connection.
-    :param str tunnel_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tunnel.
+    Use this data source to access information about an existing resource.
     """
     ...

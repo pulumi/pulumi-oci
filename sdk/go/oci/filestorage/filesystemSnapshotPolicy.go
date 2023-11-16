@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Filesystem Snapshot Policy resource in Oracle Cloud Infrastructure File Storage service.
@@ -88,11 +87,11 @@ type FilesystemSnapshotPolicy struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `policy1`
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// (Updatable) The prefix to apply to all snapshots created by this policy.  Example: `acme`
-	PolicyPrefix pulumi.StringOutput `pulumi:"policyPrefix"`
+	PolicyPrefix pulumi.StringPtrOutput `pulumi:"policyPrefix"`
 	// (Updatable) The list of associated snapshot schedules. A maximum of 10 schedules can be associated with a policy.
 	//
 	// If using the CLI, provide the schedule as a list of JSON strings, with the list wrapped in quotation marks, i.e. ```--schedules '[{"timeZone":"UTC","period":"DAILY","hourOfDay":18},{"timeZone":"UTC","period":"HOURLY"}]'```
@@ -101,9 +100,9 @@ type FilesystemSnapshotPolicy struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The date and time the file system snapshot policy was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 }
 
 // NewFilesystemSnapshotPolicy registers a new resource with the given unique name, arguments, and options.
@@ -269,12 +268,6 @@ func (i *FilesystemSnapshotPolicy) ToFilesystemSnapshotPolicyOutputWithContext(c
 	return pulumi.ToOutputWithContext(ctx, i).(FilesystemSnapshotPolicyOutput)
 }
 
-func (i *FilesystemSnapshotPolicy) ToOutput(ctx context.Context) pulumix.Output[*FilesystemSnapshotPolicy] {
-	return pulumix.Output[*FilesystemSnapshotPolicy]{
-		OutputState: i.ToFilesystemSnapshotPolicyOutputWithContext(ctx).OutputState,
-	}
-}
-
 // FilesystemSnapshotPolicyArrayInput is an input type that accepts FilesystemSnapshotPolicyArray and FilesystemSnapshotPolicyArrayOutput values.
 // You can construct a concrete instance of `FilesystemSnapshotPolicyArrayInput` via:
 //
@@ -298,12 +291,6 @@ func (i FilesystemSnapshotPolicyArray) ToFilesystemSnapshotPolicyArrayOutput() F
 
 func (i FilesystemSnapshotPolicyArray) ToFilesystemSnapshotPolicyArrayOutputWithContext(ctx context.Context) FilesystemSnapshotPolicyArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(FilesystemSnapshotPolicyArrayOutput)
-}
-
-func (i FilesystemSnapshotPolicyArray) ToOutput(ctx context.Context) pulumix.Output[[]*FilesystemSnapshotPolicy] {
-	return pulumix.Output[[]*FilesystemSnapshotPolicy]{
-		OutputState: i.ToFilesystemSnapshotPolicyArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // FilesystemSnapshotPolicyMapInput is an input type that accepts FilesystemSnapshotPolicyMap and FilesystemSnapshotPolicyMapOutput values.
@@ -331,12 +318,6 @@ func (i FilesystemSnapshotPolicyMap) ToFilesystemSnapshotPolicyMapOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(FilesystemSnapshotPolicyMapOutput)
 }
 
-func (i FilesystemSnapshotPolicyMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*FilesystemSnapshotPolicy] {
-	return pulumix.Output[map[string]*FilesystemSnapshotPolicy]{
-		OutputState: i.ToFilesystemSnapshotPolicyMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type FilesystemSnapshotPolicyOutput struct{ *pulumi.OutputState }
 
 func (FilesystemSnapshotPolicyOutput) ElementType() reflect.Type {
@@ -349,12 +330,6 @@ func (o FilesystemSnapshotPolicyOutput) ToFilesystemSnapshotPolicyOutput() Files
 
 func (o FilesystemSnapshotPolicyOutput) ToFilesystemSnapshotPolicyOutputWithContext(ctx context.Context) FilesystemSnapshotPolicyOutput {
 	return o
-}
-
-func (o FilesystemSnapshotPolicyOutput) ToOutput(ctx context.Context) pulumix.Output[*FilesystemSnapshotPolicy] {
-	return pulumix.Output[*FilesystemSnapshotPolicy]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The availability domain that the file system snapshot policy is in.  Example: `Uocm:PHX-AD-1`
@@ -373,8 +348,8 @@ func (o FilesystemSnapshotPolicyOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `policy1`
-func (o FilesystemSnapshotPolicyOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *FilesystemSnapshotPolicy) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o FilesystemSnapshotPolicyOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FilesystemSnapshotPolicy) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -383,8 +358,8 @@ func (o FilesystemSnapshotPolicyOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // (Updatable) The prefix to apply to all snapshots created by this policy.  Example: `acme`
-func (o FilesystemSnapshotPolicyOutput) PolicyPrefix() pulumi.StringOutput {
-	return o.ApplyT(func(v *FilesystemSnapshotPolicy) pulumi.StringOutput { return v.PolicyPrefix }).(pulumi.StringOutput)
+func (o FilesystemSnapshotPolicyOutput) PolicyPrefix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FilesystemSnapshotPolicy) pulumi.StringPtrOutput { return v.PolicyPrefix }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The list of associated snapshot schedules. A maximum of 10 schedules can be associated with a policy.
@@ -398,13 +373,13 @@ func (o FilesystemSnapshotPolicyOutput) Schedules() FilesystemSnapshotPolicySche
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o FilesystemSnapshotPolicyOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *FilesystemSnapshotPolicy) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o FilesystemSnapshotPolicyOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FilesystemSnapshotPolicy) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the file system snapshot policy was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
-func (o FilesystemSnapshotPolicyOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *FilesystemSnapshotPolicy) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o FilesystemSnapshotPolicyOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FilesystemSnapshotPolicy) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 type FilesystemSnapshotPolicyArrayOutput struct{ *pulumi.OutputState }
@@ -419,12 +394,6 @@ func (o FilesystemSnapshotPolicyArrayOutput) ToFilesystemSnapshotPolicyArrayOutp
 
 func (o FilesystemSnapshotPolicyArrayOutput) ToFilesystemSnapshotPolicyArrayOutputWithContext(ctx context.Context) FilesystemSnapshotPolicyArrayOutput {
 	return o
-}
-
-func (o FilesystemSnapshotPolicyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*FilesystemSnapshotPolicy] {
-	return pulumix.Output[[]*FilesystemSnapshotPolicy]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o FilesystemSnapshotPolicyArrayOutput) Index(i pulumi.IntInput) FilesystemSnapshotPolicyOutput {
@@ -445,12 +414,6 @@ func (o FilesystemSnapshotPolicyMapOutput) ToFilesystemSnapshotPolicyMapOutput()
 
 func (o FilesystemSnapshotPolicyMapOutput) ToFilesystemSnapshotPolicyMapOutputWithContext(ctx context.Context) FilesystemSnapshotPolicyMapOutput {
 	return o
-}
-
-func (o FilesystemSnapshotPolicyMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*FilesystemSnapshotPolicy] {
-	return pulumix.Output[map[string]*FilesystemSnapshotPolicy]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o FilesystemSnapshotPolicyMapOutput) MapIndex(k pulumi.StringInput) FilesystemSnapshotPolicyOutput {

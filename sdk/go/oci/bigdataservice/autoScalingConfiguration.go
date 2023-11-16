@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Auto Scaling Configuration resource in Oracle Cloud Infrastructure Big Data Service service.
@@ -95,13 +94,13 @@ type AutoScalingConfiguration struct {
 	// (Updatable) Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
 	ClusterAdminPassword pulumi.StringOutput `pulumi:"clusterAdminPassword"`
 	// (Updatable) A user-friendly name. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) Whether the autoscale configuration is enabled.
 	IsEnabled pulumi.BoolOutput `pulumi:"isEnabled"`
 	// A node type that is managed by an autoscale configuration. The only supported types are WORKER, COMPUTE_ONLY_WORKER and KAFKA_BROKER.
 	NodeType pulumi.StringOutput `pulumi:"nodeType"`
 	// (Updatable) This model for autoscaling policy is deprecated and not supported for ODH clusters. Use the `AutoScalePolicyDetails` model to manage autoscale policy details for ODH clusters.
-	Policy AutoScalingConfigurationPolicyOutput `pulumi:"policy"`
+	Policy AutoScalingConfigurationPolicyPtrOutput `pulumi:"policy"`
 	// (Updatable) Policy definition for the autoscale configuration.
 	//
 	// An autoscaling policy is part of an autoscaling configuration. For more information, see [Autoscaling](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-autoscale)
@@ -113,13 +112,13 @@ type AutoScalingConfiguration struct {
 	// * **ScheduleBasedHorizontalScalingPolicy:** Horizontal autoscaling action is triggered at the specific times that you schedule.
 	//
 	// An autoscaling configuration can have one of above supported policies.
-	PolicyDetails AutoScalingConfigurationPolicyDetailsOutput `pulumi:"policyDetails"`
+	PolicyDetails AutoScalingConfigurationPolicyDetailsPtrOutput `pulumi:"policyDetails"`
 	// The state of the autoscale configuration.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The time the cluster was created, shown as an RFC 3339 formatted datetime string.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The time the autoscale configuration was updated, shown as an RFC 3339 formatted datetime string.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewAutoScalingConfiguration registers a new resource with the given unique name, arguments, and options.
@@ -318,12 +317,6 @@ func (i *AutoScalingConfiguration) ToAutoScalingConfigurationOutputWithContext(c
 	return pulumi.ToOutputWithContext(ctx, i).(AutoScalingConfigurationOutput)
 }
 
-func (i *AutoScalingConfiguration) ToOutput(ctx context.Context) pulumix.Output[*AutoScalingConfiguration] {
-	return pulumix.Output[*AutoScalingConfiguration]{
-		OutputState: i.ToAutoScalingConfigurationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AutoScalingConfigurationArrayInput is an input type that accepts AutoScalingConfigurationArray and AutoScalingConfigurationArrayOutput values.
 // You can construct a concrete instance of `AutoScalingConfigurationArrayInput` via:
 //
@@ -347,12 +340,6 @@ func (i AutoScalingConfigurationArray) ToAutoScalingConfigurationArrayOutput() A
 
 func (i AutoScalingConfigurationArray) ToAutoScalingConfigurationArrayOutputWithContext(ctx context.Context) AutoScalingConfigurationArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AutoScalingConfigurationArrayOutput)
-}
-
-func (i AutoScalingConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]*AutoScalingConfiguration] {
-	return pulumix.Output[[]*AutoScalingConfiguration]{
-		OutputState: i.ToAutoScalingConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // AutoScalingConfigurationMapInput is an input type that accepts AutoScalingConfigurationMap and AutoScalingConfigurationMapOutput values.
@@ -380,12 +367,6 @@ func (i AutoScalingConfigurationMap) ToAutoScalingConfigurationMapOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(AutoScalingConfigurationMapOutput)
 }
 
-func (i AutoScalingConfigurationMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AutoScalingConfiguration] {
-	return pulumix.Output[map[string]*AutoScalingConfiguration]{
-		OutputState: i.ToAutoScalingConfigurationMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AutoScalingConfigurationOutput struct{ *pulumi.OutputState }
 
 func (AutoScalingConfigurationOutput) ElementType() reflect.Type {
@@ -400,12 +381,6 @@ func (o AutoScalingConfigurationOutput) ToAutoScalingConfigurationOutputWithCont
 	return o
 }
 
-func (o AutoScalingConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[*AutoScalingConfiguration] {
-	return pulumix.Output[*AutoScalingConfiguration]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the cluster.
 func (o AutoScalingConfigurationOutput) BdsInstanceId() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutoScalingConfiguration) pulumi.StringOutput { return v.BdsInstanceId }).(pulumi.StringOutput)
@@ -417,8 +392,8 @@ func (o AutoScalingConfigurationOutput) ClusterAdminPassword() pulumi.StringOutp
 }
 
 // (Updatable) A user-friendly name. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
-func (o AutoScalingConfigurationOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *AutoScalingConfiguration) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o AutoScalingConfigurationOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AutoScalingConfiguration) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Whether the autoscale configuration is enabled.
@@ -432,8 +407,8 @@ func (o AutoScalingConfigurationOutput) NodeType() pulumi.StringOutput {
 }
 
 // (Updatable) This model for autoscaling policy is deprecated and not supported for ODH clusters. Use the `AutoScalePolicyDetails` model to manage autoscale policy details for ODH clusters.
-func (o AutoScalingConfigurationOutput) Policy() AutoScalingConfigurationPolicyOutput {
-	return o.ApplyT(func(v *AutoScalingConfiguration) AutoScalingConfigurationPolicyOutput { return v.Policy }).(AutoScalingConfigurationPolicyOutput)
+func (o AutoScalingConfigurationOutput) Policy() AutoScalingConfigurationPolicyPtrOutput {
+	return o.ApplyT(func(v *AutoScalingConfiguration) AutoScalingConfigurationPolicyPtrOutput { return v.Policy }).(AutoScalingConfigurationPolicyPtrOutput)
 }
 
 // (Updatable) Policy definition for the autoscale configuration.
@@ -447,23 +422,25 @@ func (o AutoScalingConfigurationOutput) Policy() AutoScalingConfigurationPolicyO
 // * **ScheduleBasedHorizontalScalingPolicy:** Horizontal autoscaling action is triggered at the specific times that you schedule.
 //
 // An autoscaling configuration can have one of above supported policies.
-func (o AutoScalingConfigurationOutput) PolicyDetails() AutoScalingConfigurationPolicyDetailsOutput {
-	return o.ApplyT(func(v *AutoScalingConfiguration) AutoScalingConfigurationPolicyDetailsOutput { return v.PolicyDetails }).(AutoScalingConfigurationPolicyDetailsOutput)
+func (o AutoScalingConfigurationOutput) PolicyDetails() AutoScalingConfigurationPolicyDetailsPtrOutput {
+	return o.ApplyT(func(v *AutoScalingConfiguration) AutoScalingConfigurationPolicyDetailsPtrOutput {
+		return v.PolicyDetails
+	}).(AutoScalingConfigurationPolicyDetailsPtrOutput)
 }
 
 // The state of the autoscale configuration.
-func (o AutoScalingConfigurationOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *AutoScalingConfiguration) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o AutoScalingConfigurationOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AutoScalingConfiguration) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The time the cluster was created, shown as an RFC 3339 formatted datetime string.
-func (o AutoScalingConfigurationOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *AutoScalingConfiguration) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o AutoScalingConfigurationOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AutoScalingConfiguration) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the autoscale configuration was updated, shown as an RFC 3339 formatted datetime string.
-func (o AutoScalingConfigurationOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *AutoScalingConfiguration) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o AutoScalingConfigurationOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AutoScalingConfiguration) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type AutoScalingConfigurationArrayOutput struct{ *pulumi.OutputState }
@@ -478,12 +455,6 @@ func (o AutoScalingConfigurationArrayOutput) ToAutoScalingConfigurationArrayOutp
 
 func (o AutoScalingConfigurationArrayOutput) ToAutoScalingConfigurationArrayOutputWithContext(ctx context.Context) AutoScalingConfigurationArrayOutput {
 	return o
-}
-
-func (o AutoScalingConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AutoScalingConfiguration] {
-	return pulumix.Output[[]*AutoScalingConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AutoScalingConfigurationArrayOutput) Index(i pulumi.IntInput) AutoScalingConfigurationOutput {
@@ -504,12 +475,6 @@ func (o AutoScalingConfigurationMapOutput) ToAutoScalingConfigurationMapOutput()
 
 func (o AutoScalingConfigurationMapOutput) ToAutoScalingConfigurationMapOutputWithContext(ctx context.Context) AutoScalingConfigurationMapOutput {
 	return o
-}
-
-func (o AutoScalingConfigurationMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AutoScalingConfiguration] {
-	return pulumix.Output[map[string]*AutoScalingConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AutoScalingConfigurationMapOutput) MapIndex(k pulumi.StringInput) AutoScalingConfigurationOutput {

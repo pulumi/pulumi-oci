@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Build Run resource in Oracle Cloud Infrastructure Devops service.
@@ -62,7 +61,7 @@ type LookupBuildRunResult struct {
 	// Outputs from the build.
 	BuildOutputs []GetBuildRunBuildOutput `pulumi:"buildOutputs"`
 	// The OCID of the build pipeline to be triggered.
-	BuildPipelineId string `pulumi:"buildPipelineId"`
+	BuildPipelineId *string `pulumi:"buildPipelineId"`
 	// Specifies list of arguments passed along with the build run.
 	BuildRunArguments []GetBuildRunBuildRunArgument `pulumi:"buildRunArguments"`
 	BuildRunId        string                        `pulumi:"buildRunId"`
@@ -73,27 +72,27 @@ type LookupBuildRunResult struct {
 	// Commit details that need to be used for the build run.
 	CommitInfos []GetBuildRunCommitInfo `pulumi:"commitInfos"`
 	// The OCID of the compartment where the build is running.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Build run display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Unique identifier that is immutable on creation.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The OCID of the DevOps project.
-	ProjectId string `pulumi:"projectId"`
+	ProjectId *string `pulumi:"projectId"`
 	// The current state of the build run.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time the build run was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the build run was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func LookupBuildRunOutput(ctx *pulumi.Context, args LookupBuildRunOutputArgs, opts ...pulumi.InvokeOption) LookupBuildRunResultOutput {
@@ -134,20 +133,14 @@ func (o LookupBuildRunResultOutput) ToLookupBuildRunResultOutputWithContext(ctx 
 	return o
 }
 
-func (o LookupBuildRunResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupBuildRunResult] {
-	return pulumix.Output[LookupBuildRunResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Outputs from the build.
 func (o LookupBuildRunResultOutput) BuildOutputs() GetBuildRunBuildOutputArrayOutput {
 	return o.ApplyT(func(v LookupBuildRunResult) []GetBuildRunBuildOutput { return v.BuildOutputs }).(GetBuildRunBuildOutputArrayOutput)
 }
 
 // The OCID of the build pipeline to be triggered.
-func (o LookupBuildRunResultOutput) BuildPipelineId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupBuildRunResult) string { return v.BuildPipelineId }).(pulumi.StringOutput)
+func (o LookupBuildRunResultOutput) BuildPipelineId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupBuildRunResult) *string { return v.BuildPipelineId }).(pulumi.StringPtrOutput)
 }
 
 // Specifies list of arguments passed along with the build run.
@@ -175,8 +168,8 @@ func (o LookupBuildRunResultOutput) CommitInfos() GetBuildRunCommitInfoArrayOutp
 }
 
 // The OCID of the compartment where the build is running.
-func (o LookupBuildRunResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupBuildRunResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupBuildRunResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupBuildRunResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
@@ -185,8 +178,8 @@ func (o LookupBuildRunResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // Build run display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
-func (o LookupBuildRunResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupBuildRunResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupBuildRunResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupBuildRunResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
@@ -195,23 +188,23 @@ func (o LookupBuildRunResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Unique identifier that is immutable on creation.
-func (o LookupBuildRunResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupBuildRunResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupBuildRunResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupBuildRunResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o LookupBuildRunResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupBuildRunResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupBuildRunResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupBuildRunResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the DevOps project.
-func (o LookupBuildRunResultOutput) ProjectId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupBuildRunResult) string { return v.ProjectId }).(pulumi.StringOutput)
+func (o LookupBuildRunResultOutput) ProjectId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupBuildRunResult) *string { return v.ProjectId }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the build run.
-func (o LookupBuildRunResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupBuildRunResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupBuildRunResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupBuildRunResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -220,13 +213,13 @@ func (o LookupBuildRunResultOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time the build run was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-func (o LookupBuildRunResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupBuildRunResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupBuildRunResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupBuildRunResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the build run was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-func (o LookupBuildRunResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupBuildRunResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupBuildRunResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupBuildRunResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

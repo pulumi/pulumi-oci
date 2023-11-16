@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.LogAnalytics.outputs.GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleSchedule;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetNamespaceScheduledTasksScheduledTaskCollectionItemSchedule {
-    private List<GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleSchedule> schedules;
+    private @Nullable List<GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleSchedule> schedules;
 
     private GetNamespaceScheduledTasksScheduledTaskCollectionItemSchedule() {}
     public List<GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleSchedule> schedules() {
-        return this.schedules;
+        return this.schedules == null ? List.of() : this.schedules;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetNamespaceScheduledTasksScheduledTaskCollectionItemSchedule
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleSchedule> schedules;
+        private @Nullable List<GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleSchedule> schedules;
         public Builder() {}
         public Builder(GetNamespaceScheduledTasksScheduledTaskCollectionItemSchedule defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetNamespaceScheduledTasksScheduledTaskCollectionItemSchedule
         }
 
         @CustomType.Setter
-        public Builder schedules(List<GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleSchedule> schedules) {
-            this.schedules = Objects.requireNonNull(schedules);
+        public Builder schedules(@Nullable List<GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleSchedule> schedules) {
+            this.schedules = schedules;
             return this;
         }
         public Builder schedules(GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleSchedule... schedules) {

@@ -16,23 +16,23 @@ namespace Pulumi.Oci.Autoscaling.Outputs
         /// <summary>
         /// For a threshold-based autoscaling policy, this value is the initial number of instances to launch in the instance pool immediately after autoscaling is enabled. After autoscaling retrieves performance metrics, the number of instances is automatically adjusted from this initial number to a number that is based on the limits that you set.
         /// </summary>
-        public readonly int Initial;
+        public readonly int? Initial;
         /// <summary>
         /// For a threshold-based autoscaling policy, this value is the maximum number of instances the instance pool is allowed to increase to (scale out).
         /// </summary>
-        public readonly int Max;
+        public readonly int? Max;
         /// <summary>
         /// For a threshold-based autoscaling policy, this value is the minimum number of instances the instance pool is allowed to decrease to (scale in).
         /// </summary>
-        public readonly int Min;
+        public readonly int? Min;
 
         [OutputConstructor]
         private GetAutoScalingConfigurationPolicyCapacityResult(
-            int initial,
+            int? initial,
 
-            int max,
+            int? max,
 
-            int min)
+            int? min)
         {
             Initial = initial;
             Max = max;

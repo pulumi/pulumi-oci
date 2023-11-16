@@ -81,7 +81,7 @@ export interface GetDatasetsResult {
     /**
      * The list of dataset_collection.
      */
-    readonly datasetCollections: outputs.DataLabellingService.GetDatasetsDatasetCollection[];
+    readonly datasetCollections?: outputs.DataLabellingService.GetDatasetsDatasetCollection[];
     /**
      * A user-friendly display name for the resource.
      */

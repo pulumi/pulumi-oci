@@ -9,6 +9,7 @@ import com.pulumi.oci.NetworkLoadBalancer.outputs.GetListenersListenerCollection
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -18,12 +19,12 @@ public final class GetListenersResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of listener_collection.
      * 
      */
-    private List<GetListenersListenerCollection> listenerCollections;
+    private @Nullable List<GetListenersListenerCollection> listenerCollections;
     private String networkLoadBalancerId;
 
     private GetListenersResult() {}
@@ -34,15 +35,15 @@ public final class GetListenersResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of listener_collection.
      * 
      */
     public List<GetListenersListenerCollection> listenerCollections() {
-        return this.listenerCollections;
+        return this.listenerCollections == null ? List.of() : this.listenerCollections;
     }
     public String networkLoadBalancerId() {
         return this.networkLoadBalancerId;
@@ -58,8 +59,8 @@ public final class GetListenersResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetListenersFilter> filters;
-        private String id;
-        private List<GetListenersListenerCollection> listenerCollections;
+        private @Nullable String id;
+        private @Nullable List<GetListenersListenerCollection> listenerCollections;
         private String networkLoadBalancerId;
         public Builder() {}
         public Builder(GetListenersResult defaults) {
@@ -79,13 +80,13 @@ public final class GetListenersResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder listenerCollections(List<GetListenersListenerCollection> listenerCollections) {
-            this.listenerCollections = Objects.requireNonNull(listenerCollections);
+        public Builder listenerCollections(@Nullable List<GetListenersListenerCollection> listenerCollections) {
+            this.listenerCollections = listenerCollections;
             return this;
         }
         public Builder listenerCollections(GetListenersListenerCollection... listenerCollections) {

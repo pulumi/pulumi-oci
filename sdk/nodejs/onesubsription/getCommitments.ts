@@ -55,13 +55,13 @@ export interface GetCommitmentsResult {
     /**
      * The list of commitments.
      */
-    readonly commitments: outputs.OneSubsription.GetCommitmentsCommitment[];
+    readonly commitments?: outputs.OneSubsription.GetCommitmentsCommitment[];
     readonly compartmentId: string;
     readonly filters?: outputs.OneSubsription.GetCommitmentsFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * SPM internal Subscribed Service ID
      */

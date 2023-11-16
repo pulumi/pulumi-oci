@@ -76,11 +76,11 @@ export class Budget extends pulumi.CustomResource {
     /**
      * The actual spend in currency for the current budget cycle.
      */
-    public /*out*/ readonly actualSpend!: pulumi.Output<number>;
+    public /*out*/ readonly actualSpend!: pulumi.Output<number | undefined>;
     /**
      * The total number of alert rules in the budget.
      */
-    public /*out*/ readonly alertRuleCount!: pulumi.Output<number>;
+    public /*out*/ readonly alertRuleCount!: pulumi.Output<number | undefined>;
     /**
      * (Updatable) The amount of the budget expressed as a whole number in the currency of the customer's rate card.
      */
@@ -88,7 +88,7 @@ export class Budget extends pulumi.CustomResource {
     /**
      * (Updatable) The number of days offset from the first day of the month, at which the budget processing period starts. In months that have fewer days than this value, processing will begin on the last day of that month. For example, for a value of 12, processing starts every month on the 12th at midnight.
      */
-    public readonly budgetProcessingPeriodStartOffset!: pulumi.Output<number>;
+    public readonly budgetProcessingPeriodStartOffset!: pulumi.Output<number | undefined>;
     /**
      * The OCID of the compartment.
      */
@@ -96,31 +96,31 @@ export class Budget extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) The description of the budget.
      */
-    public readonly description!: pulumi.Output<string>;
+    public readonly description!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The displayName of the budget. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    public readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The date when the one-time budget concludes. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
      */
-    public readonly endDate!: pulumi.Output<string>;
+    public readonly endDate!: pulumi.Output<string | undefined>;
     /**
      * The forecasted spend in currency by the end of the current budget cycle.
      */
-    public /*out*/ readonly forecastedSpend!: pulumi.Output<number>;
+    public /*out*/ readonly forecastedSpend!: pulumi.Output<number | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) The type of the budget processing period. Valid values are INVOICE, MONTH, and SINGLE_USE.
      */
-    public readonly processingPeriodType!: pulumi.Output<string>;
+    public readonly processingPeriodType!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The reset period for the budget. Valid value is MONTHLY.
      */
@@ -128,21 +128,21 @@ export class Budget extends pulumi.CustomResource {
     /**
      * (Updatable) The date when the one-time budget begins. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
      */
-    public readonly startDate!: pulumi.Output<string>;
+    public readonly startDate!: pulumi.Output<string | undefined>;
     /**
      * The current state of the budget.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * This is DEPRECATED. Set the target compartment ID in targets instead.
      *
      * @deprecated The 'target_compartment_id' field has been deprecated. Please use 'targets' instead.
      */
-    public readonly targetCompartmentId!: pulumi.Output<string>;
+    public readonly targetCompartmentId!: pulumi.Output<string | undefined>;
     /**
      * The type of target on which the budget is applied.
      */
-    public readonly targetType!: pulumi.Output<string>;
+    public readonly targetType!: pulumi.Output<string | undefined>;
     /**
      * The list of targets on which the budget is applied. If targetType is "COMPARTMENT", the targets contain the list of compartment OCIDs. If targetType is "TAG", the targets contain the list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}". Curerntly, the array should contain exactly one item. 
      *
@@ -150,23 +150,23 @@ export class Budget extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly targets!: pulumi.Output<string[]>;
+    public readonly targets!: pulumi.Output<string[] | undefined>;
     /**
      * The time that the budget was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The time that the budget spend was last computed.
      */
-    public /*out*/ readonly timeSpendComputed!: pulumi.Output<string>;
+    public /*out*/ readonly timeSpendComputed!: pulumi.Output<string | undefined>;
     /**
      * The time that the budget was updated.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
     /**
      * The version of the budget. Starts from 1 and increments by 1.
      */
-    public /*out*/ readonly version!: pulumi.Output<number>;
+    public /*out*/ readonly version!: pulumi.Output<number | undefined>;
 
     /**
      * Create a Budget resource with the given unique name, arguments, and options.

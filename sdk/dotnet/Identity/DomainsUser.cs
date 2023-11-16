@@ -40,7 +40,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("active")]
-        public Output<bool> Active { get; private set; } = null!;
+        public Output<bool?> Active { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A physical mailing address for this User, as described in (address Element). Canonical Type Values of work, home, and other. The value attribute is a complex type with the following sub-attributes.
@@ -91,7 +91,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("compartmentOcid")]
-        public Output<string> CompartmentOcid { get; private set; } = null!;
+        public Output<string?> CompartmentOcid { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
@@ -107,7 +107,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("deleteInProgress")]
-        public Output<bool> DeleteInProgress { get; private set; } = null!;
+        public Output<bool?> DeleteInProgress { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Description of the user
@@ -126,7 +126,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("description")]
-        public Output<string> Description { get; private set; } = null!;
+        public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The displayName of the User's manager. OPTIONAL and READ-ONLY.
@@ -141,7 +141,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
@@ -157,7 +157,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("domainOcid")]
-        public Output<string> DomainOcid { get; private set; } = null!;
+        public Output<string?> DomainOcid { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A complex attribute representing emails
@@ -206,7 +206,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("externalId")]
-        public Output<string> ExternalId { get; private set; } = null!;
+        public Output<string?> ExternalId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A list of groups that the user belongs to, either thorough direct membership, nested groups, or dynamically calculated
@@ -272,7 +272,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("idcsLastUpgradedInRelease")]
-        public Output<string> IdcsLastUpgradedInRelease { get; private set; } = null!;
+        public Output<string?> IdcsLastUpgradedInRelease { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
@@ -321,7 +321,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("locale")]
-        public Output<string> Locale { get; private set; } = null!;
+        public Output<string?> Locale { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
@@ -374,7 +374,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("nickName")]
-        public Output<string> NickName { get; private set; } = null!;
+        public Output<string?> NickName { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The OCID of the user's support account.
@@ -392,7 +392,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("ocid")]
-        public Output<string> Ocid { get; private set; } = null!;
+        public Output<string?> Ocid { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Password attribute. Max length for password is controlled via Password Policy.
@@ -411,7 +411,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("password")]
-        public Output<string> Password { get; private set; } = null!;
+        public Output<string?> Password { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Phone numbers
@@ -462,7 +462,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("preferredLanguage")]
-        public Output<string> PreferredLanguage { get; private set; } = null!;
+        public Output<string?> PreferredLanguage { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A fully-qualified URL to a page representing the User's online profile
@@ -481,7 +481,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("profileUrl")]
-        public Output<string> ProfileUrl { get; private set; } = null!;
+        public Output<string?> ProfileUrl { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
@@ -550,7 +550,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("tenancyOcid")]
-        public Output<string> TenancyOcid { get; private set; } = null!;
+        public Output<string?> TenancyOcid { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) User's timezone
@@ -570,7 +570,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("timezone")]
-        public Output<string> Timezone { get; private set; } = null!;
+        public Output<string?> Timezone { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Title
@@ -589,37 +589,37 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("title")]
-        public Output<string> Title { get; private set; } = null!;
+        public Output<string?> Title { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Enterprise User
         /// </summary>
         [Output("urnietfparamsscimschemasextensionenterprise20user")]
-        public Output<Outputs.DomainsUserUrnietfparamsscimschemasextensionenterprise20user> Urnietfparamsscimschemasextensionenterprise20user { get; private set; } = null!;
+        public Output<Outputs.DomainsUserUrnietfparamsscimschemasextensionenterprise20user?> Urnietfparamsscimschemasextensionenterprise20user { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Oracle Cloud Infrastructure Tags.
         /// </summary>
         [Output("urnietfparamsscimschemasoracleidcsextensionOciTags")]
-        public Output<Outputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTags> UrnietfparamsscimschemasoracleidcsextensionOciTags { get; private set; } = null!;
+        public Output<Outputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTags?> UrnietfparamsscimschemasoracleidcsextensionOciTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) This extension defines attributes to manage user's risk score.
         /// </summary>
         [Output("urnietfparamsscimschemasoracleidcsextensionadaptiveUser")]
-        public Output<Outputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUser> UrnietfparamsscimschemasoracleidcsextensionadaptiveUser { get; private set; } = null!;
+        public Output<Outputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUser?> UrnietfparamsscimschemasoracleidcsextensionadaptiveUser { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) User's Capabilities
         /// </summary>
         [Output("urnietfparamsscimschemasoracleidcsextensioncapabilitiesUser")]
-        public Output<Outputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser> UrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser { get; private set; } = null!;
+        public Output<Outputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser?> UrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The database credentials user extension.
         /// </summary>
         [Output("urnietfparamsscimschemasoracleidcsextensiondbCredentialsUser")]
-        public Output<Outputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser> UrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser { get; private set; } = null!;
+        public Output<Outputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser?> UrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) DB User extension
@@ -631,13 +631,13 @@ namespace Pulumi.Oci.Identity
         /// (Updatable) Kerberos User extension
         /// </summary>
         [Output("urnietfparamsscimschemasoracleidcsextensionkerberosUserUser")]
-        public Output<Outputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUser> UrnietfparamsscimschemasoracleidcsextensionkerberosUserUser { get; private set; } = null!;
+        public Output<Outputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUser?> UrnietfparamsscimschemasoracleidcsextensionkerberosUserUser { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) This extension defines attributes used to manage Multi-Factor Authentication within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use MFA.
         /// </summary>
         [Output("urnietfparamsscimschemasoracleidcsextensionmfaUser")]
-        public Output<Outputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser> UrnietfparamsscimschemasoracleidcsextensionmfaUser { get; private set; } = null!;
+        public Output<Outputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser?> UrnietfparamsscimschemasoracleidcsextensionmfaUser { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) This extension defines attributes used to manage account passwords within a Service Provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
@@ -649,49 +649,49 @@ namespace Pulumi.Oci.Identity
         /// (Updatable) This extension defines attributes used to manage Passwordless-Factor Authentication within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use MFA.
         /// </summary>
         [Output("urnietfparamsscimschemasoracleidcsextensionpasswordlessUser")]
-        public Output<Outputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUser> UrnietfparamsscimschemasoracleidcsextensionpasswordlessUser { get; private set; } = null!;
+        public Output<Outputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUser?> UrnietfparamsscimschemasoracleidcsextensionpasswordlessUser { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) POSIX User extension
         /// </summary>
         [Output("urnietfparamsscimschemasoracleidcsextensionposixUser")]
-        public Output<Outputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUser> UrnietfparamsscimschemasoracleidcsextensionposixUser { get; private set; } = null!;
+        public Output<Outputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUser?> UrnietfparamsscimschemasoracleidcsextensionposixUser { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) This extension defines the attributes used to store the security questions of a user.
         /// </summary>
         [Output("urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser")]
-        public Output<Outputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser> UrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser { get; private set; } = null!;
+        public Output<Outputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser?> UrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Controls whether a user can update themselves or not via User related APIs
         /// </summary>
         [Output("urnietfparamsscimschemasoracleidcsextensionselfChangeUser")]
-        public Output<Outputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUser> UrnietfparamsscimschemasoracleidcsextensionselfChangeUser { get; private set; } = null!;
+        public Output<Outputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUser?> UrnietfparamsscimschemasoracleidcsextensionselfChangeUser { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) This extension defines attributes used to manage self registration profile linked to the user.
         /// </summary>
         [Output("urnietfparamsscimschemasoracleidcsextensionselfRegistrationUser")]
-        public Output<Outputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUser> UrnietfparamsscimschemasoracleidcsextensionselfRegistrationUser { get; private set; } = null!;
+        public Output<Outputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUser?> UrnietfparamsscimschemasoracleidcsextensionselfRegistrationUser { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) SFF Auth Keys User extension
         /// </summary>
         [Output("urnietfparamsscimschemasoracleidcsextensionsffUser")]
-        public Output<Outputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUser> UrnietfparamsscimschemasoracleidcsextensionsffUser { get; private set; } = null!;
+        public Output<Outputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUser?> UrnietfparamsscimschemasoracleidcsextensionsffUser { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Social User extension
         /// </summary>
         [Output("urnietfparamsscimschemasoracleidcsextensionsocialAccountUser")]
-        public Output<Outputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUser> UrnietfparamsscimschemasoracleidcsextensionsocialAccountUser { get; private set; } = null!;
+        public Output<Outputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUser?> UrnietfparamsscimschemasoracleidcsextensionsocialAccountUser { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Terms Of Use extension
         /// </summary>
         [Output("urnietfparamsscimschemasoracleidcsextensiontermsOfUseUser")]
-        public Output<Outputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUser> UrnietfparamsscimschemasoracleidcsextensiontermsOfUseUser { get; private set; } = null!;
+        public Output<Outputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUser?> UrnietfparamsscimschemasoracleidcsextensiontermsOfUseUser { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) User's credentials
@@ -703,13 +703,13 @@ namespace Pulumi.Oci.Identity
         /// (Updatable) This extension defines the attributes used to manage account passwords within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
         /// </summary>
         [Output("urnietfparamsscimschemasoracleidcsextensionuserStateUser")]
-        public Output<Outputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUser> UrnietfparamsscimschemasoracleidcsextensionuserStateUser { get; private set; } = null!;
+        public Output<Outputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUser?> UrnietfparamsscimschemasoracleidcsextensionuserStateUser { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Oracle Identity Cloud Service User
         /// </summary>
         [Output("urnietfparamsscimschemasoracleidcsextensionuserUser")]
-        public Output<Outputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUser> UrnietfparamsscimschemasoracleidcsextensionuserUser { get; private set; } = null!;
+        public Output<Outputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUser?> UrnietfparamsscimschemasoracleidcsextensionuserUser { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) User name
@@ -747,7 +747,7 @@ namespace Pulumi.Oci.Identity
         /// * uniqueness: none
         /// </summary>
         [Output("userType")]
-        public Output<string> UserType { get; private set; } = null!;
+        public Output<string?> UserType { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A list of certificates issued to the User.

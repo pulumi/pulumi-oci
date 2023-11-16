@@ -68,11 +68,11 @@ export interface GetSubscriptionRedemptionsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of redemption_collection.
      */
-    readonly redemptionCollections: outputs.UsageProxy.GetSubscriptionRedemptionsRedemptionCollection[];
+    readonly redemptionCollections?: outputs.UsageProxy.GetSubscriptionRedemptionsRedemptionCollection[];
     readonly subscriptionId: string;
     readonly tenancyId: string;
     readonly timeRedeemedGreaterThanOrEqualTo?: string;

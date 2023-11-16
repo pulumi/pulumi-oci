@@ -197,7 +197,7 @@ namespace Pulumi.Oci.CertificatesManagement
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The OCID of the parent CA that issued this CA. If this is the root CA, then this value is null.
         /// </summary>
@@ -221,7 +221,7 @@ namespace Pulumi.Oci.CertificatesManagement
 
             ImmutableArray<Outputs.GetCertificateAuthoritiesFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? issuerCertificateAuthorityId,
 

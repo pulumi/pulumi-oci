@@ -62,13 +62,13 @@ namespace Pulumi.Oci.LicenseManager
         /// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where the license record is created.
         /// </summary>
         [Output("compartmentId")]
-        public Output<string> CompartmentId { get; private set; } = null!;
+        public Output<string?> CompartmentId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) License record name.
@@ -80,13 +80,13 @@ namespace Pulumi.Oci.LicenseManager
         /// (Updatable) The license record end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format. Example: `2018-09-12`
         /// </summary>
         [Output("expirationDate")]
-        public Output<string> ExpirationDate { get; private set; } = null!;
+        public Output<string?> ExpirationDate { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Specifies if the license record term is perpertual.
@@ -104,25 +104,25 @@ namespace Pulumi.Oci.LicenseManager
         /// (Updatable) The number of license units added by a user in a license record. Default 1
         /// </summary>
         [Output("licenseCount")]
-        public Output<int> LicenseCount { get; private set; } = null!;
+        public Output<int?> LicenseCount { get; private set; } = null!;
 
         /// <summary>
         /// The product license unit.
         /// </summary>
         [Output("licenseUnit")]
-        public Output<string> LicenseUnit { get; private set; } = null!;
+        public Output<string?> LicenseUnit { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The license record product ID.
         /// </summary>
         [Output("productId")]
-        public Output<string> ProductId { get; private set; } = null!;
+        public Output<string?> ProductId { get; private set; } = null!;
 
         /// <summary>
         /// The product license name with which the license record is associated.
         /// </summary>
         [Output("productLicense")]
-        public Output<string> ProductLicense { get; private set; } = null!;
+        public Output<string?> ProductLicense { get; private set; } = null!;
 
         /// <summary>
         /// Unique product license identifier.
@@ -134,7 +134,7 @@ namespace Pulumi.Oci.LicenseManager
         /// The current license record state.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The license record support end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format. Example: `2018-09-12` 
@@ -144,25 +144,25 @@ namespace Pulumi.Oci.LicenseManager
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("supportEndDate")]
-        public Output<string> SupportEndDate { get; private set; } = null!;
+        public Output<string?> SupportEndDate { get; private set; } = null!;
 
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
         [Output("systemTags")]
-        public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// The time the license record was created. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The time the license record was updated. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
 
         /// <summary>

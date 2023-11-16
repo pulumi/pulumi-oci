@@ -6,6 +6,8 @@ package com.pulumi.oci.DataIntegration.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetWorkspaceProjectMetadataCountStatisticObjectTypeCountList {
@@ -13,27 +15,27 @@ public final class GetWorkspaceProjectMetadataCountStatisticObjectTypeCountList 
      * @return The value for the count statistic object.
      * 
      */
-    private String objectCount;
+    private @Nullable String objectCount;
     /**
      * @return The type of object for the count statistic object.
      * 
      */
-    private String objectType;
+    private @Nullable String objectType;
 
     private GetWorkspaceProjectMetadataCountStatisticObjectTypeCountList() {}
     /**
      * @return The value for the count statistic object.
      * 
      */
-    public String objectCount() {
-        return this.objectCount;
+    public Optional<String> objectCount() {
+        return Optional.ofNullable(this.objectCount);
     }
     /**
      * @return The type of object for the count statistic object.
      * 
      */
-    public String objectType() {
-        return this.objectType;
+    public Optional<String> objectType() {
+        return Optional.ofNullable(this.objectType);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetWorkspaceProjectMetadataCountStatisticObjectTypeCountList 
     }
     @CustomType.Builder
     public static final class Builder {
-        private String objectCount;
-        private String objectType;
+        private @Nullable String objectCount;
+        private @Nullable String objectType;
         public Builder() {}
         public Builder(GetWorkspaceProjectMetadataCountStatisticObjectTypeCountList defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetWorkspaceProjectMetadataCountStatisticObjectTypeCountList 
         }
 
         @CustomType.Setter
-        public Builder objectCount(String objectCount) {
-            this.objectCount = Objects.requireNonNull(objectCount);
+        public Builder objectCount(@Nullable String objectCount) {
+            this.objectCount = objectCount;
             return this;
         }
         @CustomType.Setter
-        public Builder objectType(String objectType) {
-            this.objectType = Objects.requireNonNull(objectType);
+        public Builder objectType(@Nullable String objectType) {
+            this.objectType = objectType;
             return this;
         }
         public GetWorkspaceProjectMetadataCountStatisticObjectTypeCountList build() {

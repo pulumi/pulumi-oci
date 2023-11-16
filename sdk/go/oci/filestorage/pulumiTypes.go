@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -79,12 +78,6 @@ func (i ExportExportOptionArgs) ToExportExportOptionOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(ExportExportOptionOutput)
 }
 
-func (i ExportExportOptionArgs) ToOutput(ctx context.Context) pulumix.Output[ExportExportOption] {
-	return pulumix.Output[ExportExportOption]{
-		OutputState: i.ToExportExportOptionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ExportExportOptionArrayInput is an input type that accepts ExportExportOptionArray and ExportExportOptionArrayOutput values.
 // You can construct a concrete instance of `ExportExportOptionArrayInput` via:
 //
@@ -110,12 +103,6 @@ func (i ExportExportOptionArray) ToExportExportOptionArrayOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(ExportExportOptionArrayOutput)
 }
 
-func (i ExportExportOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]ExportExportOption] {
-	return pulumix.Output[[]ExportExportOption]{
-		OutputState: i.ToExportExportOptionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ExportExportOptionOutput struct{ *pulumi.OutputState }
 
 func (ExportExportOptionOutput) ElementType() reflect.Type {
@@ -128,12 +115,6 @@ func (o ExportExportOptionOutput) ToExportExportOptionOutput() ExportExportOptio
 
 func (o ExportExportOptionOutput) ToExportExportOptionOutputWithContext(ctx context.Context) ExportExportOptionOutput {
 	return o
-}
-
-func (o ExportExportOptionOutput) ToOutput(ctx context.Context) pulumix.Output[ExportExportOption] {
-	return pulumix.Output[ExportExportOption]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Type of access to grant clients using the file system through this export. If unspecified defaults to `READ_WRITE`.
@@ -192,12 +173,6 @@ func (o ExportExportOptionArrayOutput) ToExportExportOptionArrayOutputWithContex
 	return o
 }
 
-func (o ExportExportOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ExportExportOption] {
-	return pulumix.Output[[]ExportExportOption]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o ExportExportOptionArrayOutput) Index(i pulumi.IntInput) ExportExportOptionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ExportExportOption {
 		return vs[0].([]ExportExportOption)[vs[1].(int)]
@@ -247,12 +222,6 @@ func (i FileSystemSourceDetailArgs) ToFileSystemSourceDetailOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(FileSystemSourceDetailOutput)
 }
 
-func (i FileSystemSourceDetailArgs) ToOutput(ctx context.Context) pulumix.Output[FileSystemSourceDetail] {
-	return pulumix.Output[FileSystemSourceDetail]{
-		OutputState: i.ToFileSystemSourceDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // FileSystemSourceDetailArrayInput is an input type that accepts FileSystemSourceDetailArray and FileSystemSourceDetailArrayOutput values.
 // You can construct a concrete instance of `FileSystemSourceDetailArrayInput` via:
 //
@@ -278,12 +247,6 @@ func (i FileSystemSourceDetailArray) ToFileSystemSourceDetailArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(FileSystemSourceDetailArrayOutput)
 }
 
-func (i FileSystemSourceDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]FileSystemSourceDetail] {
-	return pulumix.Output[[]FileSystemSourceDetail]{
-		OutputState: i.ToFileSystemSourceDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type FileSystemSourceDetailOutput struct{ *pulumi.OutputState }
 
 func (FileSystemSourceDetailOutput) ElementType() reflect.Type {
@@ -296,12 +259,6 @@ func (o FileSystemSourceDetailOutput) ToFileSystemSourceDetailOutput() FileSyste
 
 func (o FileSystemSourceDetailOutput) ToFileSystemSourceDetailOutputWithContext(ctx context.Context) FileSystemSourceDetailOutput {
 	return o
-}
-
-func (o FileSystemSourceDetailOutput) ToOutput(ctx context.Context) pulumix.Output[FileSystemSourceDetail] {
-	return pulumix.Output[FileSystemSourceDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system that contains the source snapshot of a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
@@ -329,12 +286,6 @@ func (o FileSystemSourceDetailArrayOutput) ToFileSystemSourceDetailArrayOutput()
 
 func (o FileSystemSourceDetailArrayOutput) ToFileSystemSourceDetailArrayOutputWithContext(ctx context.Context) FileSystemSourceDetailArrayOutput {
 	return o
-}
-
-func (o FileSystemSourceDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]FileSystemSourceDetail] {
-	return pulumix.Output[[]FileSystemSourceDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o FileSystemSourceDetailArrayOutput) Index(i pulumi.IntInput) FileSystemSourceDetailOutput {
@@ -408,12 +359,6 @@ func (i FilesystemSnapshotPolicyScheduleArgs) ToFilesystemSnapshotPolicySchedule
 	return pulumi.ToOutputWithContext(ctx, i).(FilesystemSnapshotPolicyScheduleOutput)
 }
 
-func (i FilesystemSnapshotPolicyScheduleArgs) ToOutput(ctx context.Context) pulumix.Output[FilesystemSnapshotPolicySchedule] {
-	return pulumix.Output[FilesystemSnapshotPolicySchedule]{
-		OutputState: i.ToFilesystemSnapshotPolicyScheduleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // FilesystemSnapshotPolicyScheduleArrayInput is an input type that accepts FilesystemSnapshotPolicyScheduleArray and FilesystemSnapshotPolicyScheduleArrayOutput values.
 // You can construct a concrete instance of `FilesystemSnapshotPolicyScheduleArrayInput` via:
 //
@@ -439,12 +384,6 @@ func (i FilesystemSnapshotPolicyScheduleArray) ToFilesystemSnapshotPolicySchedul
 	return pulumi.ToOutputWithContext(ctx, i).(FilesystemSnapshotPolicyScheduleArrayOutput)
 }
 
-func (i FilesystemSnapshotPolicyScheduleArray) ToOutput(ctx context.Context) pulumix.Output[[]FilesystemSnapshotPolicySchedule] {
-	return pulumix.Output[[]FilesystemSnapshotPolicySchedule]{
-		OutputState: i.ToFilesystemSnapshotPolicyScheduleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type FilesystemSnapshotPolicyScheduleOutput struct{ *pulumi.OutputState }
 
 func (FilesystemSnapshotPolicyScheduleOutput) ElementType() reflect.Type {
@@ -457,12 +396,6 @@ func (o FilesystemSnapshotPolicyScheduleOutput) ToFilesystemSnapshotPolicySchedu
 
 func (o FilesystemSnapshotPolicyScheduleOutput) ToFilesystemSnapshotPolicyScheduleOutputWithContext(ctx context.Context) FilesystemSnapshotPolicyScheduleOutput {
 	return o
-}
-
-func (o FilesystemSnapshotPolicyScheduleOutput) ToOutput(ctx context.Context) pulumix.Output[FilesystemSnapshotPolicySchedule] {
-	return pulumix.Output[FilesystemSnapshotPolicySchedule]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The day of the month to create a scheduled snapshot. If the day does not exist for the month, snapshot creation will be skipped. Used for MONTHLY and YEARLY snapshot schedules.
@@ -524,12 +457,6 @@ func (o FilesystemSnapshotPolicyScheduleArrayOutput) ToFilesystemSnapshotPolicyS
 	return o
 }
 
-func (o FilesystemSnapshotPolicyScheduleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]FilesystemSnapshotPolicySchedule] {
-	return pulumix.Output[[]FilesystemSnapshotPolicySchedule]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o FilesystemSnapshotPolicyScheduleArrayOutput) Index(i pulumi.IntInput) FilesystemSnapshotPolicyScheduleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) FilesystemSnapshotPolicySchedule {
 		return vs[0].([]FilesystemSnapshotPolicySchedule)[vs[1].(int)]
@@ -585,12 +512,6 @@ func (i MountTargetKerberosArgs) ToMountTargetKerberosOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(MountTargetKerberosOutput)
 }
 
-func (i MountTargetKerberosArgs) ToOutput(ctx context.Context) pulumix.Output[MountTargetKerberos] {
-	return pulumix.Output[MountTargetKerberos]{
-		OutputState: i.ToMountTargetKerberosOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i MountTargetKerberosArgs) ToMountTargetKerberosPtrOutput() MountTargetKerberosPtrOutput {
 	return i.ToMountTargetKerberosPtrOutputWithContext(context.Background())
 }
@@ -632,12 +553,6 @@ func (i *mountTargetKerberosPtrType) ToMountTargetKerberosPtrOutputWithContext(c
 	return pulumi.ToOutputWithContext(ctx, i).(MountTargetKerberosPtrOutput)
 }
 
-func (i *mountTargetKerberosPtrType) ToOutput(ctx context.Context) pulumix.Output[*MountTargetKerberos] {
-	return pulumix.Output[*MountTargetKerberos]{
-		OutputState: i.ToMountTargetKerberosPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MountTargetKerberosOutput struct{ *pulumi.OutputState }
 
 func (MountTargetKerberosOutput) ElementType() reflect.Type {
@@ -660,12 +575,6 @@ func (o MountTargetKerberosOutput) ToMountTargetKerberosPtrOutputWithContext(ctx
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v MountTargetKerberos) *MountTargetKerberos {
 		return &v
 	}).(MountTargetKerberosPtrOutput)
-}
-
-func (o MountTargetKerberosOutput) ToOutput(ctx context.Context) pulumix.Output[MountTargetKerberos] {
-	return pulumix.Output[MountTargetKerberos]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Version of the keytab Secret in the Vault to use as a backup.
@@ -705,12 +614,6 @@ func (o MountTargetKerberosPtrOutput) ToMountTargetKerberosPtrOutput() MountTarg
 
 func (o MountTargetKerberosPtrOutput) ToMountTargetKerberosPtrOutputWithContext(ctx context.Context) MountTargetKerberosPtrOutput {
 	return o
-}
-
-func (o MountTargetKerberosPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*MountTargetKerberos] {
-	return pulumix.Output[*MountTargetKerberos]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MountTargetKerberosPtrOutput) Elem() MountTargetKerberosOutput {
@@ -834,12 +737,6 @@ func (i MountTargetLdapIdmapArgs) ToMountTargetLdapIdmapOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(MountTargetLdapIdmapOutput)
 }
 
-func (i MountTargetLdapIdmapArgs) ToOutput(ctx context.Context) pulumix.Output[MountTargetLdapIdmap] {
-	return pulumix.Output[MountTargetLdapIdmap]{
-		OutputState: i.ToMountTargetLdapIdmapOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i MountTargetLdapIdmapArgs) ToMountTargetLdapIdmapPtrOutput() MountTargetLdapIdmapPtrOutput {
 	return i.ToMountTargetLdapIdmapPtrOutputWithContext(context.Background())
 }
@@ -881,12 +778,6 @@ func (i *mountTargetLdapIdmapPtrType) ToMountTargetLdapIdmapPtrOutputWithContext
 	return pulumi.ToOutputWithContext(ctx, i).(MountTargetLdapIdmapPtrOutput)
 }
 
-func (i *mountTargetLdapIdmapPtrType) ToOutput(ctx context.Context) pulumix.Output[*MountTargetLdapIdmap] {
-	return pulumix.Output[*MountTargetLdapIdmap]{
-		OutputState: i.ToMountTargetLdapIdmapPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MountTargetLdapIdmapOutput struct{ *pulumi.OutputState }
 
 func (MountTargetLdapIdmapOutput) ElementType() reflect.Type {
@@ -909,12 +800,6 @@ func (o MountTargetLdapIdmapOutput) ToMountTargetLdapIdmapPtrOutputWithContext(c
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v MountTargetLdapIdmap) *MountTargetLdapIdmap {
 		return &v
 	}).(MountTargetLdapIdmapPtrOutput)
-}
-
-func (o MountTargetLdapIdmapOutput) ToOutput(ctx context.Context) pulumix.Output[MountTargetLdapIdmap] {
-	return pulumix.Output[MountTargetLdapIdmap]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The maximum amount of time the mount target is allowed to use a cached entry.
@@ -969,12 +854,6 @@ func (o MountTargetLdapIdmapPtrOutput) ToMountTargetLdapIdmapPtrOutput() MountTa
 
 func (o MountTargetLdapIdmapPtrOutput) ToMountTargetLdapIdmapPtrOutputWithContext(ctx context.Context) MountTargetLdapIdmapPtrOutput {
 	return o
-}
-
-func (o MountTargetLdapIdmapPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*MountTargetLdapIdmap] {
-	return pulumix.Output[*MountTargetLdapIdmap]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MountTargetLdapIdmapPtrOutput) Elem() MountTargetLdapIdmapOutput {
@@ -1104,12 +983,6 @@ func (i OutboundConnectorEndpointArgs) ToOutboundConnectorEndpointOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(OutboundConnectorEndpointOutput)
 }
 
-func (i OutboundConnectorEndpointArgs) ToOutput(ctx context.Context) pulumix.Output[OutboundConnectorEndpoint] {
-	return pulumix.Output[OutboundConnectorEndpoint]{
-		OutputState: i.ToOutboundConnectorEndpointOutputWithContext(ctx).OutputState,
-	}
-}
-
 // OutboundConnectorEndpointArrayInput is an input type that accepts OutboundConnectorEndpointArray and OutboundConnectorEndpointArrayOutput values.
 // You can construct a concrete instance of `OutboundConnectorEndpointArrayInput` via:
 //
@@ -1135,12 +1008,6 @@ func (i OutboundConnectorEndpointArray) ToOutboundConnectorEndpointArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(OutboundConnectorEndpointArrayOutput)
 }
 
-func (i OutboundConnectorEndpointArray) ToOutput(ctx context.Context) pulumix.Output[[]OutboundConnectorEndpoint] {
-	return pulumix.Output[[]OutboundConnectorEndpoint]{
-		OutputState: i.ToOutboundConnectorEndpointArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type OutboundConnectorEndpointOutput struct{ *pulumi.OutputState }
 
 func (OutboundConnectorEndpointOutput) ElementType() reflect.Type {
@@ -1153,12 +1020,6 @@ func (o OutboundConnectorEndpointOutput) ToOutboundConnectorEndpointOutput() Out
 
 func (o OutboundConnectorEndpointOutput) ToOutboundConnectorEndpointOutputWithContext(ctx context.Context) OutboundConnectorEndpointOutput {
 	return o
-}
-
-func (o OutboundConnectorEndpointOutput) ToOutput(ctx context.Context) pulumix.Output[OutboundConnectorEndpoint] {
-	return pulumix.Output[OutboundConnectorEndpoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Name of the DNS server.
@@ -1185,12 +1046,6 @@ func (o OutboundConnectorEndpointArrayOutput) ToOutboundConnectorEndpointArrayOu
 	return o
 }
 
-func (o OutboundConnectorEndpointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]OutboundConnectorEndpoint] {
-	return pulumix.Output[[]OutboundConnectorEndpoint]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o OutboundConnectorEndpointArrayOutput) Index(i pulumi.IntInput) OutboundConnectorEndpointOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) OutboundConnectorEndpoint {
 		return vs[0].([]OutboundConnectorEndpoint)[vs[1].(int)]
@@ -1199,24 +1054,24 @@ func (o OutboundConnectorEndpointArrayOutput) Index(i pulumi.IntInput) OutboundC
 
 type GetExportSetsExportSet struct {
 	// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
-	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	AvailabilityDomain *string `pulumi:"availabilityDomain"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// A user-friendly name. It does not have to be unique, and it is changeable.  Example: `My resource`
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Controls the maximum `tbytes`, `fbytes`, and `abytes`, values reported by `NFS FSSTAT` calls through any associated mount targets. This is an advanced feature. For most applications, use the default value. The `tbytes` value reported by `FSSTAT` will be `maxFsStatBytes`. The value of `fbytes` and `abytes` will be `maxFsStatBytes` minus the metered size of the file system. If the metered size is larger than `maxFsStatBytes`, then `fbytes` and `abytes` will both be '0'.
-	MaxFsStatBytes string `pulumi:"maxFsStatBytes"`
+	MaxFsStatBytes *string `pulumi:"maxFsStatBytes"`
 	// Controls the maximum `tfiles`, `ffiles`, and `afiles` values reported by `NFS FSSTAT` calls through any associated mount targets. This is an advanced feature. For most applications, use the default value. The `tfiles` value reported by `FSSTAT` will be `maxFsStatFiles`. The value of `ffiles` and `afiles` will be `maxFsStatFiles` minus the metered size of the file system. If the metered size is larger than `maxFsStatFiles`, then `ffiles` and `afiles` will both be '0'.
-	MaxFsStatFiles string `pulumi:"maxFsStatFiles"`
-	MountTargetId  string `pulumi:"mountTargetId"`
+	MaxFsStatFiles *string `pulumi:"maxFsStatFiles"`
+	MountTargetId  *string `pulumi:"mountTargetId"`
 	// Filter results by the specified lifecycle state. Must be a valid state for the resource type.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the export set was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual cloud network (VCN) the export set is in.
-	VcnId string `pulumi:"vcnId"`
+	VcnId *string `pulumi:"vcnId"`
 }
 
 // GetExportSetsExportSetInput is an input type that accepts GetExportSetsExportSetArgs and GetExportSetsExportSetOutput values.
@@ -1232,24 +1087,24 @@ type GetExportSetsExportSetInput interface {
 
 type GetExportSetsExportSetArgs struct {
 	// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
-	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
+	AvailabilityDomain pulumi.StringPtrInput `pulumi:"availabilityDomain"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// A user-friendly name. It does not have to be unique, and it is changeable.  Example: `My resource`
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Controls the maximum `tbytes`, `fbytes`, and `abytes`, values reported by `NFS FSSTAT` calls through any associated mount targets. This is an advanced feature. For most applications, use the default value. The `tbytes` value reported by `FSSTAT` will be `maxFsStatBytes`. The value of `fbytes` and `abytes` will be `maxFsStatBytes` minus the metered size of the file system. If the metered size is larger than `maxFsStatBytes`, then `fbytes` and `abytes` will both be '0'.
-	MaxFsStatBytes pulumi.StringInput `pulumi:"maxFsStatBytes"`
+	MaxFsStatBytes pulumi.StringPtrInput `pulumi:"maxFsStatBytes"`
 	// Controls the maximum `tfiles`, `ffiles`, and `afiles` values reported by `NFS FSSTAT` calls through any associated mount targets. This is an advanced feature. For most applications, use the default value. The `tfiles` value reported by `FSSTAT` will be `maxFsStatFiles`. The value of `ffiles` and `afiles` will be `maxFsStatFiles` minus the metered size of the file system. If the metered size is larger than `maxFsStatFiles`, then `ffiles` and `afiles` will both be '0'.
-	MaxFsStatFiles pulumi.StringInput `pulumi:"maxFsStatFiles"`
-	MountTargetId  pulumi.StringInput `pulumi:"mountTargetId"`
+	MaxFsStatFiles pulumi.StringPtrInput `pulumi:"maxFsStatFiles"`
+	MountTargetId  pulumi.StringPtrInput `pulumi:"mountTargetId"`
 	// Filter results by the specified lifecycle state. Must be a valid state for the resource type.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The date and time the export set was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual cloud network (VCN) the export set is in.
-	VcnId pulumi.StringInput `pulumi:"vcnId"`
+	VcnId pulumi.StringPtrInput `pulumi:"vcnId"`
 }
 
 func (GetExportSetsExportSetArgs) ElementType() reflect.Type {
@@ -1262,12 +1117,6 @@ func (i GetExportSetsExportSetArgs) ToGetExportSetsExportSetOutput() GetExportSe
 
 func (i GetExportSetsExportSetArgs) ToGetExportSetsExportSetOutputWithContext(ctx context.Context) GetExportSetsExportSetOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetExportSetsExportSetOutput)
-}
-
-func (i GetExportSetsExportSetArgs) ToOutput(ctx context.Context) pulumix.Output[GetExportSetsExportSet] {
-	return pulumix.Output[GetExportSetsExportSet]{
-		OutputState: i.ToGetExportSetsExportSetOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetExportSetsExportSetArrayInput is an input type that accepts GetExportSetsExportSetArray and GetExportSetsExportSetArrayOutput values.
@@ -1295,12 +1144,6 @@ func (i GetExportSetsExportSetArray) ToGetExportSetsExportSetArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetExportSetsExportSetArrayOutput)
 }
 
-func (i GetExportSetsExportSetArray) ToOutput(ctx context.Context) pulumix.Output[[]GetExportSetsExportSet] {
-	return pulumix.Output[[]GetExportSetsExportSet]{
-		OutputState: i.ToGetExportSetsExportSetArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetExportSetsExportSetOutput struct{ *pulumi.OutputState }
 
 func (GetExportSetsExportSetOutput) ElementType() reflect.Type {
@@ -1315,59 +1158,53 @@ func (o GetExportSetsExportSetOutput) ToGetExportSetsExportSetOutputWithContext(
 	return o
 }
 
-func (o GetExportSetsExportSetOutput) ToOutput(ctx context.Context) pulumix.Output[GetExportSetsExportSet] {
-	return pulumix.Output[GetExportSetsExportSet]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The name of the availability domain.  Example: `Uocm:PHX-AD-1`
-func (o GetExportSetsExportSetOutput) AvailabilityDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExportSetsExportSet) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
+func (o GetExportSetsExportSetOutput) AvailabilityDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExportSetsExportSet) *string { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-func (o GetExportSetsExportSetOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExportSetsExportSet) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetExportSetsExportSetOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExportSetsExportSet) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // A user-friendly name. It does not have to be unique, and it is changeable.  Example: `My resource`
-func (o GetExportSetsExportSetOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExportSetsExportSet) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetExportSetsExportSetOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExportSetsExportSet) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
-func (o GetExportSetsExportSetOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExportSetsExportSet) string { return v.Id }).(pulumi.StringOutput)
+func (o GetExportSetsExportSetOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExportSetsExportSet) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Controls the maximum `tbytes`, `fbytes`, and `abytes`, values reported by `NFS FSSTAT` calls through any associated mount targets. This is an advanced feature. For most applications, use the default value. The `tbytes` value reported by `FSSTAT` will be `maxFsStatBytes`. The value of `fbytes` and `abytes` will be `maxFsStatBytes` minus the metered size of the file system. If the metered size is larger than `maxFsStatBytes`, then `fbytes` and `abytes` will both be '0'.
-func (o GetExportSetsExportSetOutput) MaxFsStatBytes() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExportSetsExportSet) string { return v.MaxFsStatBytes }).(pulumi.StringOutput)
+func (o GetExportSetsExportSetOutput) MaxFsStatBytes() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExportSetsExportSet) *string { return v.MaxFsStatBytes }).(pulumi.StringPtrOutput)
 }
 
 // Controls the maximum `tfiles`, `ffiles`, and `afiles` values reported by `NFS FSSTAT` calls through any associated mount targets. This is an advanced feature. For most applications, use the default value. The `tfiles` value reported by `FSSTAT` will be `maxFsStatFiles`. The value of `ffiles` and `afiles` will be `maxFsStatFiles` minus the metered size of the file system. If the metered size is larger than `maxFsStatFiles`, then `ffiles` and `afiles` will both be '0'.
-func (o GetExportSetsExportSetOutput) MaxFsStatFiles() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExportSetsExportSet) string { return v.MaxFsStatFiles }).(pulumi.StringOutput)
+func (o GetExportSetsExportSetOutput) MaxFsStatFiles() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExportSetsExportSet) *string { return v.MaxFsStatFiles }).(pulumi.StringPtrOutput)
 }
 
-func (o GetExportSetsExportSetOutput) MountTargetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExportSetsExportSet) string { return v.MountTargetId }).(pulumi.StringOutput)
+func (o GetExportSetsExportSetOutput) MountTargetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExportSetsExportSet) *string { return v.MountTargetId }).(pulumi.StringPtrOutput)
 }
 
 // Filter results by the specified lifecycle state. Must be a valid state for the resource type.
-func (o GetExportSetsExportSetOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExportSetsExportSet) string { return v.State }).(pulumi.StringOutput)
+func (o GetExportSetsExportSetOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExportSetsExportSet) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the export set was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
-func (o GetExportSetsExportSetOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExportSetsExportSet) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetExportSetsExportSetOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExportSetsExportSet) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual cloud network (VCN) the export set is in.
-func (o GetExportSetsExportSetOutput) VcnId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExportSetsExportSet) string { return v.VcnId }).(pulumi.StringOutput)
+func (o GetExportSetsExportSetOutput) VcnId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExportSetsExportSet) *string { return v.VcnId }).(pulumi.StringPtrOutput)
 }
 
 type GetExportSetsExportSetArrayOutput struct{ *pulumi.OutputState }
@@ -1382,12 +1219,6 @@ func (o GetExportSetsExportSetArrayOutput) ToGetExportSetsExportSetArrayOutput()
 
 func (o GetExportSetsExportSetArrayOutput) ToGetExportSetsExportSetArrayOutputWithContext(ctx context.Context) GetExportSetsExportSetArrayOutput {
 	return o
-}
-
-func (o GetExportSetsExportSetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetExportSetsExportSet] {
-	return pulumix.Output[[]GetExportSetsExportSet]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetExportSetsExportSetArrayOutput) Index(i pulumi.IntInput) GetExportSetsExportSetOutput {
@@ -1431,12 +1262,6 @@ func (i GetExportSetsFilterArgs) ToGetExportSetsFilterOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetExportSetsFilterOutput)
 }
 
-func (i GetExportSetsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetExportSetsFilter] {
-	return pulumix.Output[GetExportSetsFilter]{
-		OutputState: i.ToGetExportSetsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetExportSetsFilterArrayInput is an input type that accepts GetExportSetsFilterArray and GetExportSetsFilterArrayOutput values.
 // You can construct a concrete instance of `GetExportSetsFilterArrayInput` via:
 //
@@ -1462,12 +1287,6 @@ func (i GetExportSetsFilterArray) ToGetExportSetsFilterArrayOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetExportSetsFilterArrayOutput)
 }
 
-func (i GetExportSetsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetExportSetsFilter] {
-	return pulumix.Output[[]GetExportSetsFilter]{
-		OutputState: i.ToGetExportSetsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetExportSetsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetExportSetsFilterOutput) ElementType() reflect.Type {
@@ -1480,12 +1299,6 @@ func (o GetExportSetsFilterOutput) ToGetExportSetsFilterOutput() GetExportSetsFi
 
 func (o GetExportSetsFilterOutput) ToGetExportSetsFilterOutputWithContext(ctx context.Context) GetExportSetsFilterOutput {
 	return o
-}
-
-func (o GetExportSetsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetExportSetsFilter] {
-	return pulumix.Output[GetExportSetsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetExportSetsFilterOutput) Name() pulumi.StringOutput {
@@ -1514,12 +1327,6 @@ func (o GetExportSetsFilterArrayOutput) ToGetExportSetsFilterArrayOutputWithCont
 	return o
 }
 
-func (o GetExportSetsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetExportSetsFilter] {
-	return pulumix.Output[[]GetExportSetsFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetExportSetsFilterArrayOutput) Index(i pulumi.IntInput) GetExportSetsFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExportSetsFilter {
 		return vs[0].([]GetExportSetsFilter)[vs[1].(int)]
@@ -1530,19 +1337,19 @@ type GetExportsExport struct {
 	// Policies that apply to NFS requests made through this export. `exportOptions` contains a sequential list of `ClientOptions`. Each `ClientOptions` item defines the export options that are applied to a specified set of clients.
 	ExportOptions []GetExportsExportExportOption `pulumi:"exportOptions"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export set.
-	ExportSetId string `pulumi:"exportSetId"`
+	ExportSetId *string `pulumi:"exportSetId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system.
-	FileSystemId string `pulumi:"fileSystemId"`
+	FileSystemId *string `pulumi:"fileSystemId"`
 	// Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Whether or not the export should use ID mapping for Unix groups rather than the group list provided within an NFS request's RPC header. When this flag is true the Unix UID from the RPC header is used to retrieve the list of secondary groups from a the ID mapping subsystem. The primary GID is always taken from the RPC header. If ID mapping is not configured, incorrectly configured, unavailable, or cannot be used to determine a list of secondary groups then an empty secondary group list is used for authorization. If the number of groups exceeds the limit of 256 groups, the list retrieved from LDAP is truncated to the first 256 groups read.
-	IsIdmapGroupsForSysAuth bool `pulumi:"isIdmapGroupsForSysAuth"`
+	IsIdmapGroupsForSysAuth *bool `pulumi:"isIdmapGroupsForSysAuth"`
 	// Path used to access the associated file system.
-	Path string `pulumi:"path"`
+	Path *string `pulumi:"path"`
 	// Filter results by the specified lifecycle state. Must be a valid state for the resource type.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the export was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 }
 
 // GetExportsExportInput is an input type that accepts GetExportsExportArgs and GetExportsExportOutput values.
@@ -1560,19 +1367,19 @@ type GetExportsExportArgs struct {
 	// Policies that apply to NFS requests made through this export. `exportOptions` contains a sequential list of `ClientOptions`. Each `ClientOptions` item defines the export options that are applied to a specified set of clients.
 	ExportOptions GetExportsExportExportOptionArrayInput `pulumi:"exportOptions"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export set.
-	ExportSetId pulumi.StringInput `pulumi:"exportSetId"`
+	ExportSetId pulumi.StringPtrInput `pulumi:"exportSetId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system.
-	FileSystemId pulumi.StringInput `pulumi:"fileSystemId"`
+	FileSystemId pulumi.StringPtrInput `pulumi:"fileSystemId"`
 	// Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Whether or not the export should use ID mapping for Unix groups rather than the group list provided within an NFS request's RPC header. When this flag is true the Unix UID from the RPC header is used to retrieve the list of secondary groups from a the ID mapping subsystem. The primary GID is always taken from the RPC header. If ID mapping is not configured, incorrectly configured, unavailable, or cannot be used to determine a list of secondary groups then an empty secondary group list is used for authorization. If the number of groups exceeds the limit of 256 groups, the list retrieved from LDAP is truncated to the first 256 groups read.
-	IsIdmapGroupsForSysAuth pulumi.BoolInput `pulumi:"isIdmapGroupsForSysAuth"`
+	IsIdmapGroupsForSysAuth pulumi.BoolPtrInput `pulumi:"isIdmapGroupsForSysAuth"`
 	// Path used to access the associated file system.
-	Path pulumi.StringInput `pulumi:"path"`
+	Path pulumi.StringPtrInput `pulumi:"path"`
 	// Filter results by the specified lifecycle state. Must be a valid state for the resource type.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The date and time the export was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 }
 
 func (GetExportsExportArgs) ElementType() reflect.Type {
@@ -1585,12 +1392,6 @@ func (i GetExportsExportArgs) ToGetExportsExportOutput() GetExportsExportOutput 
 
 func (i GetExportsExportArgs) ToGetExportsExportOutputWithContext(ctx context.Context) GetExportsExportOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetExportsExportOutput)
-}
-
-func (i GetExportsExportArgs) ToOutput(ctx context.Context) pulumix.Output[GetExportsExport] {
-	return pulumix.Output[GetExportsExport]{
-		OutputState: i.ToGetExportsExportOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetExportsExportArrayInput is an input type that accepts GetExportsExportArray and GetExportsExportArrayOutput values.
@@ -1618,12 +1419,6 @@ func (i GetExportsExportArray) ToGetExportsExportArrayOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetExportsExportArrayOutput)
 }
 
-func (i GetExportsExportArray) ToOutput(ctx context.Context) pulumix.Output[[]GetExportsExport] {
-	return pulumix.Output[[]GetExportsExport]{
-		OutputState: i.ToGetExportsExportArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetExportsExportOutput struct{ *pulumi.OutputState }
 
 func (GetExportsExportOutput) ElementType() reflect.Type {
@@ -1638,50 +1433,44 @@ func (o GetExportsExportOutput) ToGetExportsExportOutputWithContext(ctx context.
 	return o
 }
 
-func (o GetExportsExportOutput) ToOutput(ctx context.Context) pulumix.Output[GetExportsExport] {
-	return pulumix.Output[GetExportsExport]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Policies that apply to NFS requests made through this export. `exportOptions` contains a sequential list of `ClientOptions`. Each `ClientOptions` item defines the export options that are applied to a specified set of clients.
 func (o GetExportsExportOutput) ExportOptions() GetExportsExportExportOptionArrayOutput {
 	return o.ApplyT(func(v GetExportsExport) []GetExportsExportExportOption { return v.ExportOptions }).(GetExportsExportExportOptionArrayOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export set.
-func (o GetExportsExportOutput) ExportSetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExportsExport) string { return v.ExportSetId }).(pulumi.StringOutput)
+func (o GetExportsExportOutput) ExportSetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExportsExport) *string { return v.ExportSetId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system.
-func (o GetExportsExportOutput) FileSystemId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExportsExport) string { return v.FileSystemId }).(pulumi.StringOutput)
+func (o GetExportsExportOutput) FileSystemId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExportsExport) *string { return v.FileSystemId }).(pulumi.StringPtrOutput)
 }
 
 // Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
-func (o GetExportsExportOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExportsExport) string { return v.Id }).(pulumi.StringOutput)
+func (o GetExportsExportOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExportsExport) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Whether or not the export should use ID mapping for Unix groups rather than the group list provided within an NFS request's RPC header. When this flag is true the Unix UID from the RPC header is used to retrieve the list of secondary groups from a the ID mapping subsystem. The primary GID is always taken from the RPC header. If ID mapping is not configured, incorrectly configured, unavailable, or cannot be used to determine a list of secondary groups then an empty secondary group list is used for authorization. If the number of groups exceeds the limit of 256 groups, the list retrieved from LDAP is truncated to the first 256 groups read.
-func (o GetExportsExportOutput) IsIdmapGroupsForSysAuth() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetExportsExport) bool { return v.IsIdmapGroupsForSysAuth }).(pulumi.BoolOutput)
+func (o GetExportsExportOutput) IsIdmapGroupsForSysAuth() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetExportsExport) *bool { return v.IsIdmapGroupsForSysAuth }).(pulumi.BoolPtrOutput)
 }
 
 // Path used to access the associated file system.
-func (o GetExportsExportOutput) Path() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExportsExport) string { return v.Path }).(pulumi.StringOutput)
+func (o GetExportsExportOutput) Path() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExportsExport) *string { return v.Path }).(pulumi.StringPtrOutput)
 }
 
 // Filter results by the specified lifecycle state. Must be a valid state for the resource type.
-func (o GetExportsExportOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExportsExport) string { return v.State }).(pulumi.StringOutput)
+func (o GetExportsExportOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExportsExport) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the export was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
-func (o GetExportsExportOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExportsExport) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetExportsExportOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExportsExport) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 type GetExportsExportArrayOutput struct{ *pulumi.OutputState }
@@ -1698,12 +1487,6 @@ func (o GetExportsExportArrayOutput) ToGetExportsExportArrayOutputWithContext(ct
 	return o
 }
 
-func (o GetExportsExportArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetExportsExport] {
-	return pulumix.Output[[]GetExportsExport]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetExportsExportArrayOutput) Index(i pulumi.IntInput) GetExportsExportOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExportsExport {
 		return vs[0].([]GetExportsExport)[vs[1].(int)]
@@ -1712,21 +1495,21 @@ func (o GetExportsExportArrayOutput) Index(i pulumi.IntInput) GetExportsExportOu
 
 type GetExportsExportExportOption struct {
 	// Type of access to grant clients using the file system through this export. If unspecified defaults to `READ_WRITE`.
-	Access string `pulumi:"access"`
+	Access *string `pulumi:"access"`
 	// Array of allowed NFS authentication types.
 	AllowedAuths []string `pulumi:"allowedAuths"`
 	// GID value to remap to when squashing a client GID (see identitySquash for more details.) If unspecified defaults to `65534`.
-	AnonymousGid string `pulumi:"anonymousGid"`
+	AnonymousGid *string `pulumi:"anonymousGid"`
 	// UID value to remap to when squashing a client UID (see identitySquash for more details.) If unspecified, defaults to `65534`.
-	AnonymousUid string `pulumi:"anonymousUid"`
+	AnonymousUid *string `pulumi:"anonymousUid"`
 	// Used when clients accessing the file system through this export have their UID and GID remapped to 'anonymousUid' and 'anonymousGid'. If `ALL`, all users and groups are remapped; if `ROOT`, only the root user and group (UID/GID 0) are remapped; if `NONE`, no remapping is done. If unspecified, defaults to `ROOT`.
-	IdentitySquash string `pulumi:"identitySquash"`
+	IdentitySquash *string `pulumi:"identitySquash"`
 	// Whether or not to enable anonymous access to the file system through this export in cases where a user isn't found in the LDAP server used for ID mapping. If true, and the user is not found in the LDAP directory, the operation uses the Squash UID and Squash GID.
-	IsAnonymousAccessAllowed bool `pulumi:"isAnonymousAccessAllowed"`
+	IsAnonymousAccessAllowed *bool `pulumi:"isAnonymousAccessAllowed"`
 	// If `true`, clients accessing the file system through this export must connect from a privileged source port. If unspecified, defaults to `true`.
-	RequirePrivilegedSourcePort bool `pulumi:"requirePrivilegedSourcePort"`
+	RequirePrivilegedSourcePort *bool `pulumi:"requirePrivilegedSourcePort"`
 	// Clients these options should apply to. Must be a either single IPv4 address or single IPv4 CIDR block.
-	Source string `pulumi:"source"`
+	Source *string `pulumi:"source"`
 }
 
 // GetExportsExportExportOptionInput is an input type that accepts GetExportsExportExportOptionArgs and GetExportsExportExportOptionOutput values.
@@ -1742,21 +1525,21 @@ type GetExportsExportExportOptionInput interface {
 
 type GetExportsExportExportOptionArgs struct {
 	// Type of access to grant clients using the file system through this export. If unspecified defaults to `READ_WRITE`.
-	Access pulumi.StringInput `pulumi:"access"`
+	Access pulumi.StringPtrInput `pulumi:"access"`
 	// Array of allowed NFS authentication types.
 	AllowedAuths pulumi.StringArrayInput `pulumi:"allowedAuths"`
 	// GID value to remap to when squashing a client GID (see identitySquash for more details.) If unspecified defaults to `65534`.
-	AnonymousGid pulumi.StringInput `pulumi:"anonymousGid"`
+	AnonymousGid pulumi.StringPtrInput `pulumi:"anonymousGid"`
 	// UID value to remap to when squashing a client UID (see identitySquash for more details.) If unspecified, defaults to `65534`.
-	AnonymousUid pulumi.StringInput `pulumi:"anonymousUid"`
+	AnonymousUid pulumi.StringPtrInput `pulumi:"anonymousUid"`
 	// Used when clients accessing the file system through this export have their UID and GID remapped to 'anonymousUid' and 'anonymousGid'. If `ALL`, all users and groups are remapped; if `ROOT`, only the root user and group (UID/GID 0) are remapped; if `NONE`, no remapping is done. If unspecified, defaults to `ROOT`.
-	IdentitySquash pulumi.StringInput `pulumi:"identitySquash"`
+	IdentitySquash pulumi.StringPtrInput `pulumi:"identitySquash"`
 	// Whether or not to enable anonymous access to the file system through this export in cases where a user isn't found in the LDAP server used for ID mapping. If true, and the user is not found in the LDAP directory, the operation uses the Squash UID and Squash GID.
-	IsAnonymousAccessAllowed pulumi.BoolInput `pulumi:"isAnonymousAccessAllowed"`
+	IsAnonymousAccessAllowed pulumi.BoolPtrInput `pulumi:"isAnonymousAccessAllowed"`
 	// If `true`, clients accessing the file system through this export must connect from a privileged source port. If unspecified, defaults to `true`.
-	RequirePrivilegedSourcePort pulumi.BoolInput `pulumi:"requirePrivilegedSourcePort"`
+	RequirePrivilegedSourcePort pulumi.BoolPtrInput `pulumi:"requirePrivilegedSourcePort"`
 	// Clients these options should apply to. Must be a either single IPv4 address or single IPv4 CIDR block.
-	Source pulumi.StringInput `pulumi:"source"`
+	Source pulumi.StringPtrInput `pulumi:"source"`
 }
 
 func (GetExportsExportExportOptionArgs) ElementType() reflect.Type {
@@ -1769,12 +1552,6 @@ func (i GetExportsExportExportOptionArgs) ToGetExportsExportExportOptionOutput()
 
 func (i GetExportsExportExportOptionArgs) ToGetExportsExportExportOptionOutputWithContext(ctx context.Context) GetExportsExportExportOptionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetExportsExportExportOptionOutput)
-}
-
-func (i GetExportsExportExportOptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetExportsExportExportOption] {
-	return pulumix.Output[GetExportsExportExportOption]{
-		OutputState: i.ToGetExportsExportExportOptionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetExportsExportExportOptionArrayInput is an input type that accepts GetExportsExportExportOptionArray and GetExportsExportExportOptionArrayOutput values.
@@ -1802,12 +1579,6 @@ func (i GetExportsExportExportOptionArray) ToGetExportsExportExportOptionArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetExportsExportExportOptionArrayOutput)
 }
 
-func (i GetExportsExportExportOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetExportsExportExportOption] {
-	return pulumix.Output[[]GetExportsExportExportOption]{
-		OutputState: i.ToGetExportsExportExportOptionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetExportsExportExportOptionOutput struct{ *pulumi.OutputState }
 
 func (GetExportsExportExportOptionOutput) ElementType() reflect.Type {
@@ -1822,15 +1593,9 @@ func (o GetExportsExportExportOptionOutput) ToGetExportsExportExportOptionOutput
 	return o
 }
 
-func (o GetExportsExportExportOptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetExportsExportExportOption] {
-	return pulumix.Output[GetExportsExportExportOption]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Type of access to grant clients using the file system through this export. If unspecified defaults to `READ_WRITE`.
-func (o GetExportsExportExportOptionOutput) Access() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExportsExportExportOption) string { return v.Access }).(pulumi.StringOutput)
+func (o GetExportsExportExportOptionOutput) Access() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExportsExportExportOption) *string { return v.Access }).(pulumi.StringPtrOutput)
 }
 
 // Array of allowed NFS authentication types.
@@ -1839,33 +1604,33 @@ func (o GetExportsExportExportOptionOutput) AllowedAuths() pulumi.StringArrayOut
 }
 
 // GID value to remap to when squashing a client GID (see identitySquash for more details.) If unspecified defaults to `65534`.
-func (o GetExportsExportExportOptionOutput) AnonymousGid() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExportsExportExportOption) string { return v.AnonymousGid }).(pulumi.StringOutput)
+func (o GetExportsExportExportOptionOutput) AnonymousGid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExportsExportExportOption) *string { return v.AnonymousGid }).(pulumi.StringPtrOutput)
 }
 
 // UID value to remap to when squashing a client UID (see identitySquash for more details.) If unspecified, defaults to `65534`.
-func (o GetExportsExportExportOptionOutput) AnonymousUid() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExportsExportExportOption) string { return v.AnonymousUid }).(pulumi.StringOutput)
+func (o GetExportsExportExportOptionOutput) AnonymousUid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExportsExportExportOption) *string { return v.AnonymousUid }).(pulumi.StringPtrOutput)
 }
 
 // Used when clients accessing the file system through this export have their UID and GID remapped to 'anonymousUid' and 'anonymousGid'. If `ALL`, all users and groups are remapped; if `ROOT`, only the root user and group (UID/GID 0) are remapped; if `NONE`, no remapping is done. If unspecified, defaults to `ROOT`.
-func (o GetExportsExportExportOptionOutput) IdentitySquash() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExportsExportExportOption) string { return v.IdentitySquash }).(pulumi.StringOutput)
+func (o GetExportsExportExportOptionOutput) IdentitySquash() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExportsExportExportOption) *string { return v.IdentitySquash }).(pulumi.StringPtrOutput)
 }
 
 // Whether or not to enable anonymous access to the file system through this export in cases where a user isn't found in the LDAP server used for ID mapping. If true, and the user is not found in the LDAP directory, the operation uses the Squash UID and Squash GID.
-func (o GetExportsExportExportOptionOutput) IsAnonymousAccessAllowed() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetExportsExportExportOption) bool { return v.IsAnonymousAccessAllowed }).(pulumi.BoolOutput)
+func (o GetExportsExportExportOptionOutput) IsAnonymousAccessAllowed() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetExportsExportExportOption) *bool { return v.IsAnonymousAccessAllowed }).(pulumi.BoolPtrOutput)
 }
 
 // If `true`, clients accessing the file system through this export must connect from a privileged source port. If unspecified, defaults to `true`.
-func (o GetExportsExportExportOptionOutput) RequirePrivilegedSourcePort() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetExportsExportExportOption) bool { return v.RequirePrivilegedSourcePort }).(pulumi.BoolOutput)
+func (o GetExportsExportExportOptionOutput) RequirePrivilegedSourcePort() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetExportsExportExportOption) *bool { return v.RequirePrivilegedSourcePort }).(pulumi.BoolPtrOutput)
 }
 
 // Clients these options should apply to. Must be a either single IPv4 address or single IPv4 CIDR block.
-func (o GetExportsExportExportOptionOutput) Source() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExportsExportExportOption) string { return v.Source }).(pulumi.StringOutput)
+func (o GetExportsExportExportOptionOutput) Source() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExportsExportExportOption) *string { return v.Source }).(pulumi.StringPtrOutput)
 }
 
 type GetExportsExportExportOptionArrayOutput struct{ *pulumi.OutputState }
@@ -1880,12 +1645,6 @@ func (o GetExportsExportExportOptionArrayOutput) ToGetExportsExportExportOptionA
 
 func (o GetExportsExportExportOptionArrayOutput) ToGetExportsExportExportOptionArrayOutputWithContext(ctx context.Context) GetExportsExportExportOptionArrayOutput {
 	return o
-}
-
-func (o GetExportsExportExportOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetExportsExportExportOption] {
-	return pulumix.Output[[]GetExportsExportExportOption]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetExportsExportExportOptionArrayOutput) Index(i pulumi.IntInput) GetExportsExportExportOptionOutput {
@@ -1929,12 +1688,6 @@ func (i GetExportsFilterArgs) ToGetExportsFilterOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(GetExportsFilterOutput)
 }
 
-func (i GetExportsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetExportsFilter] {
-	return pulumix.Output[GetExportsFilter]{
-		OutputState: i.ToGetExportsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetExportsFilterArrayInput is an input type that accepts GetExportsFilterArray and GetExportsFilterArrayOutput values.
 // You can construct a concrete instance of `GetExportsFilterArrayInput` via:
 //
@@ -1960,12 +1713,6 @@ func (i GetExportsFilterArray) ToGetExportsFilterArrayOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetExportsFilterArrayOutput)
 }
 
-func (i GetExportsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetExportsFilter] {
-	return pulumix.Output[[]GetExportsFilter]{
-		OutputState: i.ToGetExportsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetExportsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetExportsFilterOutput) ElementType() reflect.Type {
@@ -1978,12 +1725,6 @@ func (o GetExportsFilterOutput) ToGetExportsFilterOutput() GetExportsFilterOutpu
 
 func (o GetExportsFilterOutput) ToGetExportsFilterOutputWithContext(ctx context.Context) GetExportsFilterOutput {
 	return o
-}
-
-func (o GetExportsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetExportsFilter] {
-	return pulumix.Output[GetExportsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetExportsFilterOutput) Name() pulumi.StringOutput {
@@ -2012,12 +1753,6 @@ func (o GetExportsFilterArrayOutput) ToGetExportsFilterArrayOutputWithContext(ct
 	return o
 }
 
-func (o GetExportsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetExportsFilter] {
-	return pulumix.Output[[]GetExportsFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetExportsFilterArrayOutput) Index(i pulumi.IntInput) GetExportsFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExportsFilter {
 		return vs[0].([]GetExportsFilter)[vs[1].(int)]
@@ -2026,41 +1761,41 @@ func (o GetExportsFilterArrayOutput) Index(i pulumi.IntInput) GetExportsFilterOu
 
 type GetFileSystemsFileSystem struct {
 	// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
-	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	AvailabilityDomain *string `pulumi:"availabilityDomain"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A user-friendly name. It does not have to be unique, and it is changeable.  Example: `My resource`
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that is associated with the file systems.
-	FilesystemSnapshotPolicyId string `pulumi:"filesystemSnapshotPolicyId"`
+	FilesystemSnapshotPolicyId *string `pulumi:"filesystemSnapshotPolicyId"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Specifies whether the file system has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
-	IsCloneParent bool `pulumi:"isCloneParent"`
+	IsCloneParent *bool `pulumi:"isCloneParent"`
 	// Specifies whether the data has finished copying from the source to the clone. Hydration can take up to several hours to complete depending on the size of the source. The source and clone remain available during hydration, but there may be some performance impact. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm#hydration).
-	IsHydrated bool `pulumi:"isHydrated"`
+	IsHydrated *bool `pulumi:"isHydrated"`
 	// Specifies whether the file system can be used as a target file system for replication. The system sets this value to `true` if the file system is unexported, hasn't yet been specified as a target file system in any replication resource, and has no user snapshots. After the file system has been specified as a target in a replication, or if the file system contains user snapshots, the system sets this value to `false`. For more information, see [Using Replication](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/using-replication.htm).
-	IsTargetable bool `pulumi:"isTargetable"`
+	IsTargetable *bool `pulumi:"isTargetable"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KMS key used to encrypt the encryption keys associated with this file system.
-	KmsKeyId string `pulumi:"kmsKeyId"`
+	KmsKeyId *string `pulumi:"kmsKeyId"`
 	// Additional information about the current 'lifecycleState'.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The number of bytes consumed by the file system, including any snapshots. This number reflects the metered size of the file system and is updated asynchronously with respect to updates to the file system. For more information, see [File System Usage and Metering](https://docs.cloud.oracle.com/iaas/Content/File/Concepts/FSutilization.htm).
-	MeteredBytes string `pulumi:"meteredBytes"`
+	MeteredBytes *string `pulumi:"meteredBytes"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the replication target associated with the file system. Empty if the file system is not being used as target in a replication.
-	ReplicationTargetId string `pulumi:"replicationTargetId"`
+	ReplicationTargetId *string `pulumi:"replicationTargetId"`
 	// Source information for the file system.
 	SourceDetails []GetFileSystemsFileSystemSourceDetail `pulumi:"sourceDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
-	SourceSnapshotId string `pulumi:"sourceSnapshotId"`
+	SourceSnapshotId *string `pulumi:"sourceSnapshotId"`
 	// Filter results by the specified lifecycle state. Must be a valid state for the resource type.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the file system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 }
 
 // GetFileSystemsFileSystemInput is an input type that accepts GetFileSystemsFileSystemArgs and GetFileSystemsFileSystemOutput values.
@@ -2076,41 +1811,41 @@ type GetFileSystemsFileSystemInput interface {
 
 type GetFileSystemsFileSystemArgs struct {
 	// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
-	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
+	AvailabilityDomain pulumi.StringPtrInput `pulumi:"availabilityDomain"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A user-friendly name. It does not have to be unique, and it is changeable.  Example: `My resource`
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that is associated with the file systems.
-	FilesystemSnapshotPolicyId pulumi.StringInput `pulumi:"filesystemSnapshotPolicyId"`
+	FilesystemSnapshotPolicyId pulumi.StringPtrInput `pulumi:"filesystemSnapshotPolicyId"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Specifies whether the file system has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
-	IsCloneParent pulumi.BoolInput `pulumi:"isCloneParent"`
+	IsCloneParent pulumi.BoolPtrInput `pulumi:"isCloneParent"`
 	// Specifies whether the data has finished copying from the source to the clone. Hydration can take up to several hours to complete depending on the size of the source. The source and clone remain available during hydration, but there may be some performance impact. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm#hydration).
-	IsHydrated pulumi.BoolInput `pulumi:"isHydrated"`
+	IsHydrated pulumi.BoolPtrInput `pulumi:"isHydrated"`
 	// Specifies whether the file system can be used as a target file system for replication. The system sets this value to `true` if the file system is unexported, hasn't yet been specified as a target file system in any replication resource, and has no user snapshots. After the file system has been specified as a target in a replication, or if the file system contains user snapshots, the system sets this value to `false`. For more information, see [Using Replication](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/using-replication.htm).
-	IsTargetable pulumi.BoolInput `pulumi:"isTargetable"`
+	IsTargetable pulumi.BoolPtrInput `pulumi:"isTargetable"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KMS key used to encrypt the encryption keys associated with this file system.
-	KmsKeyId pulumi.StringInput `pulumi:"kmsKeyId"`
+	KmsKeyId pulumi.StringPtrInput `pulumi:"kmsKeyId"`
 	// Additional information about the current 'lifecycleState'.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// The number of bytes consumed by the file system, including any snapshots. This number reflects the metered size of the file system and is updated asynchronously with respect to updates to the file system. For more information, see [File System Usage and Metering](https://docs.cloud.oracle.com/iaas/Content/File/Concepts/FSutilization.htm).
-	MeteredBytes pulumi.StringInput `pulumi:"meteredBytes"`
+	MeteredBytes pulumi.StringPtrInput `pulumi:"meteredBytes"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the replication target associated with the file system. Empty if the file system is not being used as target in a replication.
-	ReplicationTargetId pulumi.StringInput `pulumi:"replicationTargetId"`
+	ReplicationTargetId pulumi.StringPtrInput `pulumi:"replicationTargetId"`
 	// Source information for the file system.
 	SourceDetails GetFileSystemsFileSystemSourceDetailArrayInput `pulumi:"sourceDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
-	SourceSnapshotId pulumi.StringInput `pulumi:"sourceSnapshotId"`
+	SourceSnapshotId pulumi.StringPtrInput `pulumi:"sourceSnapshotId"`
 	// Filter results by the specified lifecycle state. Must be a valid state for the resource type.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The date and time the file system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 }
 
 func (GetFileSystemsFileSystemArgs) ElementType() reflect.Type {
@@ -2123,12 +1858,6 @@ func (i GetFileSystemsFileSystemArgs) ToGetFileSystemsFileSystemOutput() GetFile
 
 func (i GetFileSystemsFileSystemArgs) ToGetFileSystemsFileSystemOutputWithContext(ctx context.Context) GetFileSystemsFileSystemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetFileSystemsFileSystemOutput)
-}
-
-func (i GetFileSystemsFileSystemArgs) ToOutput(ctx context.Context) pulumix.Output[GetFileSystemsFileSystem] {
-	return pulumix.Output[GetFileSystemsFileSystem]{
-		OutputState: i.ToGetFileSystemsFileSystemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetFileSystemsFileSystemArrayInput is an input type that accepts GetFileSystemsFileSystemArray and GetFileSystemsFileSystemArrayOutput values.
@@ -2156,12 +1885,6 @@ func (i GetFileSystemsFileSystemArray) ToGetFileSystemsFileSystemArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetFileSystemsFileSystemArrayOutput)
 }
 
-func (i GetFileSystemsFileSystemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFileSystemsFileSystem] {
-	return pulumix.Output[[]GetFileSystemsFileSystem]{
-		OutputState: i.ToGetFileSystemsFileSystemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFileSystemsFileSystemOutput struct{ *pulumi.OutputState }
 
 func (GetFileSystemsFileSystemOutput) ElementType() reflect.Type {
@@ -2176,20 +1899,14 @@ func (o GetFileSystemsFileSystemOutput) ToGetFileSystemsFileSystemOutputWithCont
 	return o
 }
 
-func (o GetFileSystemsFileSystemOutput) ToOutput(ctx context.Context) pulumix.Output[GetFileSystemsFileSystem] {
-	return pulumix.Output[GetFileSystemsFileSystem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The name of the availability domain.  Example: `Uocm:PHX-AD-1`
-func (o GetFileSystemsFileSystemOutput) AvailabilityDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFileSystemsFileSystem) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
+func (o GetFileSystemsFileSystemOutput) AvailabilityDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFileSystemsFileSystem) *string { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-func (o GetFileSystemsFileSystemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFileSystemsFileSystem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetFileSystemsFileSystemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFileSystemsFileSystem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -2198,13 +1915,13 @@ func (o GetFileSystemsFileSystemOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // A user-friendly name. It does not have to be unique, and it is changeable.  Example: `My resource`
-func (o GetFileSystemsFileSystemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFileSystemsFileSystem) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetFileSystemsFileSystemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFileSystemsFileSystem) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that is associated with the file systems.
-func (o GetFileSystemsFileSystemOutput) FilesystemSnapshotPolicyId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFileSystemsFileSystem) string { return v.FilesystemSnapshotPolicyId }).(pulumi.StringOutput)
+func (o GetFileSystemsFileSystemOutput) FilesystemSnapshotPolicyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFileSystemsFileSystem) *string { return v.FilesystemSnapshotPolicyId }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -2213,43 +1930,43 @@ func (o GetFileSystemsFileSystemOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
-func (o GetFileSystemsFileSystemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFileSystemsFileSystem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetFileSystemsFileSystemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFileSystemsFileSystem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Specifies whether the file system has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
-func (o GetFileSystemsFileSystemOutput) IsCloneParent() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetFileSystemsFileSystem) bool { return v.IsCloneParent }).(pulumi.BoolOutput)
+func (o GetFileSystemsFileSystemOutput) IsCloneParent() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetFileSystemsFileSystem) *bool { return v.IsCloneParent }).(pulumi.BoolPtrOutput)
 }
 
 // Specifies whether the data has finished copying from the source to the clone. Hydration can take up to several hours to complete depending on the size of the source. The source and clone remain available during hydration, but there may be some performance impact. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm#hydration).
-func (o GetFileSystemsFileSystemOutput) IsHydrated() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetFileSystemsFileSystem) bool { return v.IsHydrated }).(pulumi.BoolOutput)
+func (o GetFileSystemsFileSystemOutput) IsHydrated() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetFileSystemsFileSystem) *bool { return v.IsHydrated }).(pulumi.BoolPtrOutput)
 }
 
 // Specifies whether the file system can be used as a target file system for replication. The system sets this value to `true` if the file system is unexported, hasn't yet been specified as a target file system in any replication resource, and has no user snapshots. After the file system has been specified as a target in a replication, or if the file system contains user snapshots, the system sets this value to `false`. For more information, see [Using Replication](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/using-replication.htm).
-func (o GetFileSystemsFileSystemOutput) IsTargetable() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetFileSystemsFileSystem) bool { return v.IsTargetable }).(pulumi.BoolOutput)
+func (o GetFileSystemsFileSystemOutput) IsTargetable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetFileSystemsFileSystem) *bool { return v.IsTargetable }).(pulumi.BoolPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KMS key used to encrypt the encryption keys associated with this file system.
-func (o GetFileSystemsFileSystemOutput) KmsKeyId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFileSystemsFileSystem) string { return v.KmsKeyId }).(pulumi.StringOutput)
+func (o GetFileSystemsFileSystemOutput) KmsKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFileSystemsFileSystem) *string { return v.KmsKeyId }).(pulumi.StringPtrOutput)
 }
 
 // Additional information about the current 'lifecycleState'.
-func (o GetFileSystemsFileSystemOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFileSystemsFileSystem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetFileSystemsFileSystemOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFileSystemsFileSystem) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The number of bytes consumed by the file system, including any snapshots. This number reflects the metered size of the file system and is updated asynchronously with respect to updates to the file system. For more information, see [File System Usage and Metering](https://docs.cloud.oracle.com/iaas/Content/File/Concepts/FSutilization.htm).
-func (o GetFileSystemsFileSystemOutput) MeteredBytes() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFileSystemsFileSystem) string { return v.MeteredBytes }).(pulumi.StringOutput)
+func (o GetFileSystemsFileSystemOutput) MeteredBytes() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFileSystemsFileSystem) *string { return v.MeteredBytes }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the replication target associated with the file system. Empty if the file system is not being used as target in a replication.
-func (o GetFileSystemsFileSystemOutput) ReplicationTargetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFileSystemsFileSystem) string { return v.ReplicationTargetId }).(pulumi.StringOutput)
+func (o GetFileSystemsFileSystemOutput) ReplicationTargetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFileSystemsFileSystem) *string { return v.ReplicationTargetId }).(pulumi.StringPtrOutput)
 }
 
 // Source information for the file system.
@@ -2258,18 +1975,18 @@ func (o GetFileSystemsFileSystemOutput) SourceDetails() GetFileSystemsFileSystem
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
-func (o GetFileSystemsFileSystemOutput) SourceSnapshotId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFileSystemsFileSystem) string { return v.SourceSnapshotId }).(pulumi.StringOutput)
+func (o GetFileSystemsFileSystemOutput) SourceSnapshotId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFileSystemsFileSystem) *string { return v.SourceSnapshotId }).(pulumi.StringPtrOutput)
 }
 
 // Filter results by the specified lifecycle state. Must be a valid state for the resource type.
-func (o GetFileSystemsFileSystemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFileSystemsFileSystem) string { return v.State }).(pulumi.StringOutput)
+func (o GetFileSystemsFileSystemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFileSystemsFileSystem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the file system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
-func (o GetFileSystemsFileSystemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFileSystemsFileSystem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetFileSystemsFileSystemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFileSystemsFileSystem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 type GetFileSystemsFileSystemArrayOutput struct{ *pulumi.OutputState }
@@ -2286,12 +2003,6 @@ func (o GetFileSystemsFileSystemArrayOutput) ToGetFileSystemsFileSystemArrayOutp
 	return o
 }
 
-func (o GetFileSystemsFileSystemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFileSystemsFileSystem] {
-	return pulumix.Output[[]GetFileSystemsFileSystem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetFileSystemsFileSystemArrayOutput) Index(i pulumi.IntInput) GetFileSystemsFileSystemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFileSystemsFileSystem {
 		return vs[0].([]GetFileSystemsFileSystem)[vs[1].(int)]
@@ -2300,9 +2011,9 @@ func (o GetFileSystemsFileSystemArrayOutput) Index(i pulumi.IntInput) GetFileSys
 
 type GetFileSystemsFileSystemSourceDetail struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system that contains the source snapshot of a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
-	ParentFileSystemId string `pulumi:"parentFileSystemId"`
+	ParentFileSystemId *string `pulumi:"parentFileSystemId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
-	SourceSnapshotId string `pulumi:"sourceSnapshotId"`
+	SourceSnapshotId *string `pulumi:"sourceSnapshotId"`
 }
 
 // GetFileSystemsFileSystemSourceDetailInput is an input type that accepts GetFileSystemsFileSystemSourceDetailArgs and GetFileSystemsFileSystemSourceDetailOutput values.
@@ -2318,9 +2029,9 @@ type GetFileSystemsFileSystemSourceDetailInput interface {
 
 type GetFileSystemsFileSystemSourceDetailArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system that contains the source snapshot of a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
-	ParentFileSystemId pulumi.StringInput `pulumi:"parentFileSystemId"`
+	ParentFileSystemId pulumi.StringPtrInput `pulumi:"parentFileSystemId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
-	SourceSnapshotId pulumi.StringInput `pulumi:"sourceSnapshotId"`
+	SourceSnapshotId pulumi.StringPtrInput `pulumi:"sourceSnapshotId"`
 }
 
 func (GetFileSystemsFileSystemSourceDetailArgs) ElementType() reflect.Type {
@@ -2333,12 +2044,6 @@ func (i GetFileSystemsFileSystemSourceDetailArgs) ToGetFileSystemsFileSystemSour
 
 func (i GetFileSystemsFileSystemSourceDetailArgs) ToGetFileSystemsFileSystemSourceDetailOutputWithContext(ctx context.Context) GetFileSystemsFileSystemSourceDetailOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetFileSystemsFileSystemSourceDetailOutput)
-}
-
-func (i GetFileSystemsFileSystemSourceDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetFileSystemsFileSystemSourceDetail] {
-	return pulumix.Output[GetFileSystemsFileSystemSourceDetail]{
-		OutputState: i.ToGetFileSystemsFileSystemSourceDetailOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetFileSystemsFileSystemSourceDetailArrayInput is an input type that accepts GetFileSystemsFileSystemSourceDetailArray and GetFileSystemsFileSystemSourceDetailArrayOutput values.
@@ -2366,12 +2071,6 @@ func (i GetFileSystemsFileSystemSourceDetailArray) ToGetFileSystemsFileSystemSou
 	return pulumi.ToOutputWithContext(ctx, i).(GetFileSystemsFileSystemSourceDetailArrayOutput)
 }
 
-func (i GetFileSystemsFileSystemSourceDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFileSystemsFileSystemSourceDetail] {
-	return pulumix.Output[[]GetFileSystemsFileSystemSourceDetail]{
-		OutputState: i.ToGetFileSystemsFileSystemSourceDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFileSystemsFileSystemSourceDetailOutput struct{ *pulumi.OutputState }
 
 func (GetFileSystemsFileSystemSourceDetailOutput) ElementType() reflect.Type {
@@ -2386,20 +2085,14 @@ func (o GetFileSystemsFileSystemSourceDetailOutput) ToGetFileSystemsFileSystemSo
 	return o
 }
 
-func (o GetFileSystemsFileSystemSourceDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetFileSystemsFileSystemSourceDetail] {
-	return pulumix.Output[GetFileSystemsFileSystemSourceDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system that contains the source snapshot of a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
-func (o GetFileSystemsFileSystemSourceDetailOutput) ParentFileSystemId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFileSystemsFileSystemSourceDetail) string { return v.ParentFileSystemId }).(pulumi.StringOutput)
+func (o GetFileSystemsFileSystemSourceDetailOutput) ParentFileSystemId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFileSystemsFileSystemSourceDetail) *string { return v.ParentFileSystemId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
-func (o GetFileSystemsFileSystemSourceDetailOutput) SourceSnapshotId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFileSystemsFileSystemSourceDetail) string { return v.SourceSnapshotId }).(pulumi.StringOutput)
+func (o GetFileSystemsFileSystemSourceDetailOutput) SourceSnapshotId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFileSystemsFileSystemSourceDetail) *string { return v.SourceSnapshotId }).(pulumi.StringPtrOutput)
 }
 
 type GetFileSystemsFileSystemSourceDetailArrayOutput struct{ *pulumi.OutputState }
@@ -2414,12 +2107,6 @@ func (o GetFileSystemsFileSystemSourceDetailArrayOutput) ToGetFileSystemsFileSys
 
 func (o GetFileSystemsFileSystemSourceDetailArrayOutput) ToGetFileSystemsFileSystemSourceDetailArrayOutputWithContext(ctx context.Context) GetFileSystemsFileSystemSourceDetailArrayOutput {
 	return o
-}
-
-func (o GetFileSystemsFileSystemSourceDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFileSystemsFileSystemSourceDetail] {
-	return pulumix.Output[[]GetFileSystemsFileSystemSourceDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFileSystemsFileSystemSourceDetailArrayOutput) Index(i pulumi.IntInput) GetFileSystemsFileSystemSourceDetailOutput {
@@ -2463,12 +2150,6 @@ func (i GetFileSystemsFilterArgs) ToGetFileSystemsFilterOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GetFileSystemsFilterOutput)
 }
 
-func (i GetFileSystemsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetFileSystemsFilter] {
-	return pulumix.Output[GetFileSystemsFilter]{
-		OutputState: i.ToGetFileSystemsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetFileSystemsFilterArrayInput is an input type that accepts GetFileSystemsFilterArray and GetFileSystemsFilterArrayOutput values.
 // You can construct a concrete instance of `GetFileSystemsFilterArrayInput` via:
 //
@@ -2494,12 +2175,6 @@ func (i GetFileSystemsFilterArray) ToGetFileSystemsFilterArrayOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetFileSystemsFilterArrayOutput)
 }
 
-func (i GetFileSystemsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFileSystemsFilter] {
-	return pulumix.Output[[]GetFileSystemsFilter]{
-		OutputState: i.ToGetFileSystemsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFileSystemsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetFileSystemsFilterOutput) ElementType() reflect.Type {
@@ -2512,12 +2187,6 @@ func (o GetFileSystemsFilterOutput) ToGetFileSystemsFilterOutput() GetFileSystem
 
 func (o GetFileSystemsFilterOutput) ToGetFileSystemsFilterOutputWithContext(ctx context.Context) GetFileSystemsFilterOutput {
 	return o
-}
-
-func (o GetFileSystemsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetFileSystemsFilter] {
-	return pulumix.Output[GetFileSystemsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFileSystemsFilterOutput) Name() pulumi.StringOutput {
@@ -2546,12 +2215,6 @@ func (o GetFileSystemsFilterArrayOutput) ToGetFileSystemsFilterArrayOutputWithCo
 	return o
 }
 
-func (o GetFileSystemsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFileSystemsFilter] {
-	return pulumix.Output[[]GetFileSystemsFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetFileSystemsFilterArrayOutput) Index(i pulumi.IntInput) GetFileSystemsFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFileSystemsFilter {
 		return vs[0].([]GetFileSystemsFilter)[vs[1].(int)]
@@ -2560,25 +2223,25 @@ func (o GetFileSystemsFilterArrayOutput) Index(i pulumi.IntInput) GetFileSystems
 
 type GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicy struct {
 	// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
-	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	AvailabilityDomain *string `pulumi:"availabilityDomain"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A user-friendly name. It does not have to be unique, and it is changeable.  Example: `My resource`
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The prefix to apply to all snapshots created by this policy.  Example: `acme`
-	PolicyPrefix string `pulumi:"policyPrefix"`
+	PolicyPrefix *string `pulumi:"policyPrefix"`
 	// The list of associated snapshot schedules. A maximum of 10 schedules can be associated with a policy.
 	Schedules []GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicySchedule `pulumi:"schedules"`
 	// Filter results by the specified lifecycle state. Must be a valid state for the resource type.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the file system snapshot policy was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 }
 
 // GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyInput is an input type that accepts GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyArgs and GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyOutput values.
@@ -2594,25 +2257,25 @@ type GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyInput interface {
 
 type GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyArgs struct {
 	// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
-	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
+	AvailabilityDomain pulumi.StringPtrInput `pulumi:"availabilityDomain"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A user-friendly name. It does not have to be unique, and it is changeable.  Example: `My resource`
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// The prefix to apply to all snapshots created by this policy.  Example: `acme`
-	PolicyPrefix pulumi.StringInput `pulumi:"policyPrefix"`
+	PolicyPrefix pulumi.StringPtrInput `pulumi:"policyPrefix"`
 	// The list of associated snapshot schedules. A maximum of 10 schedules can be associated with a policy.
 	Schedules GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleArrayInput `pulumi:"schedules"`
 	// Filter results by the specified lifecycle state. Must be a valid state for the resource type.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The date and time the file system snapshot policy was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 }
 
 func (GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyArgs) ElementType() reflect.Type {
@@ -2625,12 +2288,6 @@ func (i GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyArgs) ToGetFilesyst
 
 func (i GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyArgs) ToGetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyOutputWithContext(ctx context.Context) GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyOutput)
-}
-
-func (i GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyArgs) ToOutput(ctx context.Context) pulumix.Output[GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicy] {
-	return pulumix.Output[GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicy]{
-		OutputState: i.ToGetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyArrayInput is an input type that accepts GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyArray and GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyArrayOutput values.
@@ -2658,12 +2315,6 @@ func (i GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyArray) ToGetFilesys
 	return pulumi.ToOutputWithContext(ctx, i).(GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyArrayOutput)
 }
 
-func (i GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicy] {
-	return pulumix.Output[[]GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicy]{
-		OutputState: i.ToGetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyOutput struct{ *pulumi.OutputState }
 
 func (GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyOutput) ElementType() reflect.Type {
@@ -2678,20 +2329,14 @@ func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyOutput) ToGetFilesy
 	return o
 }
 
-func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyOutput) ToOutput(ctx context.Context) pulumix.Output[GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicy] {
-	return pulumix.Output[GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicy]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The name of the availability domain.  Example: `Uocm:PHX-AD-1`
-func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyOutput) AvailabilityDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicy) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
+func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyOutput) AvailabilityDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicy) *string { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicy) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicy) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -2702,8 +2347,8 @@ func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyOutput) DefinedTags
 }
 
 // A user-friendly name. It does not have to be unique, and it is changeable.  Example: `My resource`
-func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicy) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicy) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -2714,13 +2359,13 @@ func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyOutput) FreeformTag
 }
 
 // Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
-func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicy) string { return v.Id }).(pulumi.StringOutput)
+func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicy) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The prefix to apply to all snapshots created by this policy.  Example: `acme`
-func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyOutput) PolicyPrefix() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicy) string { return v.PolicyPrefix }).(pulumi.StringOutput)
+func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyOutput) PolicyPrefix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicy) *string { return v.PolicyPrefix }).(pulumi.StringPtrOutput)
 }
 
 // The list of associated snapshot schedules. A maximum of 10 schedules can be associated with a policy.
@@ -2731,13 +2376,13 @@ func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyOutput) Schedules()
 }
 
 // Filter results by the specified lifecycle state. Must be a valid state for the resource type.
-func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicy) string { return v.State }).(pulumi.StringOutput)
+func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicy) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the file system snapshot policy was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
-func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicy) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicy) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 type GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyArrayOutput struct{ *pulumi.OutputState }
@@ -2754,12 +2399,6 @@ func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyArrayOutput) ToGetF
 	return o
 }
 
-func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicy] {
-	return pulumix.Output[[]GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicy]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyArrayOutput) Index(i pulumi.IntInput) GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicy {
 		return vs[0].([]GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicy)[vs[1].(int)]
@@ -2768,23 +2407,23 @@ func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyArrayOutput) Index(
 
 type GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicySchedule struct {
 	// The day of the month to create a scheduled snapshot. If the day does not exist for the month, snapshot creation will be skipped. Used for MONTHLY and YEARLY snapshot schedules.
-	DayOfMonth int `pulumi:"dayOfMonth"`
+	DayOfMonth *int `pulumi:"dayOfMonth"`
 	// The day of the week to create a scheduled snapshot. Used for WEEKLY snapshot schedules.
-	DayOfWeek string `pulumi:"dayOfWeek"`
+	DayOfWeek *string `pulumi:"dayOfWeek"`
 	// The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot. If not set, a value will be chosen at creation time.
-	HourOfDay int `pulumi:"hourOfDay"`
+	HourOfDay *int `pulumi:"hourOfDay"`
 	// The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules.
-	Month string `pulumi:"month"`
+	Month *string `pulumi:"month"`
 	// The frequency of scheduled snapshots.
-	Period string `pulumi:"period"`
+	Period *string `pulumi:"period"`
 	// The number of seconds to retain snapshots created with this schedule. Snapshot expiration time will not be set if this value is empty.
-	RetentionDurationInSeconds string `pulumi:"retentionDurationInSeconds"`
+	RetentionDurationInSeconds *string `pulumi:"retentionDurationInSeconds"`
 	// A name prefix to be applied to snapshots created by this schedule.  Example: `compliance1`
-	SchedulePrefix string `pulumi:"schedulePrefix"`
+	SchedulePrefix *string `pulumi:"schedulePrefix"`
 	// The starting point used to begin the scheduling of the snapshots based upon recurrence string in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. If no `timeScheduleStart` is provided, the value will be set to the time when the schedule was created.
-	TimeScheduleStart string `pulumi:"timeScheduleStart"`
+	TimeScheduleStart *string `pulumi:"timeScheduleStart"`
 	// Time zone used for scheduling the snapshot.
-	TimeZone string `pulumi:"timeZone"`
+	TimeZone *string `pulumi:"timeZone"`
 }
 
 // GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleInput is an input type that accepts GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleArgs and GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleOutput values.
@@ -2800,23 +2439,23 @@ type GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleInput interfac
 
 type GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleArgs struct {
 	// The day of the month to create a scheduled snapshot. If the day does not exist for the month, snapshot creation will be skipped. Used for MONTHLY and YEARLY snapshot schedules.
-	DayOfMonth pulumi.IntInput `pulumi:"dayOfMonth"`
+	DayOfMonth pulumi.IntPtrInput `pulumi:"dayOfMonth"`
 	// The day of the week to create a scheduled snapshot. Used for WEEKLY snapshot schedules.
-	DayOfWeek pulumi.StringInput `pulumi:"dayOfWeek"`
+	DayOfWeek pulumi.StringPtrInput `pulumi:"dayOfWeek"`
 	// The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot. If not set, a value will be chosen at creation time.
-	HourOfDay pulumi.IntInput `pulumi:"hourOfDay"`
+	HourOfDay pulumi.IntPtrInput `pulumi:"hourOfDay"`
 	// The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules.
-	Month pulumi.StringInput `pulumi:"month"`
+	Month pulumi.StringPtrInput `pulumi:"month"`
 	// The frequency of scheduled snapshots.
-	Period pulumi.StringInput `pulumi:"period"`
+	Period pulumi.StringPtrInput `pulumi:"period"`
 	// The number of seconds to retain snapshots created with this schedule. Snapshot expiration time will not be set if this value is empty.
-	RetentionDurationInSeconds pulumi.StringInput `pulumi:"retentionDurationInSeconds"`
+	RetentionDurationInSeconds pulumi.StringPtrInput `pulumi:"retentionDurationInSeconds"`
 	// A name prefix to be applied to snapshots created by this schedule.  Example: `compliance1`
-	SchedulePrefix pulumi.StringInput `pulumi:"schedulePrefix"`
+	SchedulePrefix pulumi.StringPtrInput `pulumi:"schedulePrefix"`
 	// The starting point used to begin the scheduling of the snapshots based upon recurrence string in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. If no `timeScheduleStart` is provided, the value will be set to the time when the schedule was created.
-	TimeScheduleStart pulumi.StringInput `pulumi:"timeScheduleStart"`
+	TimeScheduleStart pulumi.StringPtrInput `pulumi:"timeScheduleStart"`
 	// Time zone used for scheduling the snapshot.
-	TimeZone pulumi.StringInput `pulumi:"timeZone"`
+	TimeZone pulumi.StringPtrInput `pulumi:"timeZone"`
 }
 
 func (GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleArgs) ElementType() reflect.Type {
@@ -2829,12 +2468,6 @@ func (i GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleArgs) ToGet
 
 func (i GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleArgs) ToGetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleOutputWithContext(ctx context.Context) GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleOutput)
-}
-
-func (i GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleArgs) ToOutput(ctx context.Context) pulumix.Output[GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicySchedule] {
-	return pulumix.Output[GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicySchedule]{
-		OutputState: i.ToGetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleArrayInput is an input type that accepts GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleArray and GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleArrayOutput values.
@@ -2862,12 +2495,6 @@ func (i GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleArray) ToGe
 	return pulumi.ToOutputWithContext(ctx, i).(GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleArrayOutput)
 }
 
-func (i GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicySchedule] {
-	return pulumix.Output[[]GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicySchedule]{
-		OutputState: i.ToGetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleOutput struct{ *pulumi.OutputState }
 
 func (GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleOutput) ElementType() reflect.Type {
@@ -2882,59 +2509,53 @@ func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleOutput) ToG
 	return o
 }
 
-func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleOutput) ToOutput(ctx context.Context) pulumix.Output[GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicySchedule] {
-	return pulumix.Output[GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicySchedule]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The day of the month to create a scheduled snapshot. If the day does not exist for the month, snapshot creation will be skipped. Used for MONTHLY and YEARLY snapshot schedules.
-func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleOutput) DayOfMonth() pulumi.IntOutput {
-	return o.ApplyT(func(v GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicySchedule) int { return v.DayOfMonth }).(pulumi.IntOutput)
+func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleOutput) DayOfMonth() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicySchedule) *int { return v.DayOfMonth }).(pulumi.IntPtrOutput)
 }
 
 // The day of the week to create a scheduled snapshot. Used for WEEKLY snapshot schedules.
-func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleOutput) DayOfWeek() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicySchedule) string { return v.DayOfWeek }).(pulumi.StringOutput)
+func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleOutput) DayOfWeek() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicySchedule) *string { return v.DayOfWeek }).(pulumi.StringPtrOutput)
 }
 
 // The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot. If not set, a value will be chosen at creation time.
-func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleOutput) HourOfDay() pulumi.IntOutput {
-	return o.ApplyT(func(v GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicySchedule) int { return v.HourOfDay }).(pulumi.IntOutput)
+func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleOutput) HourOfDay() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicySchedule) *int { return v.HourOfDay }).(pulumi.IntPtrOutput)
 }
 
 // The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules.
-func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleOutput) Month() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicySchedule) string { return v.Month }).(pulumi.StringOutput)
+func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleOutput) Month() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicySchedule) *string { return v.Month }).(pulumi.StringPtrOutput)
 }
 
 // The frequency of scheduled snapshots.
-func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleOutput) Period() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicySchedule) string { return v.Period }).(pulumi.StringOutput)
+func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleOutput) Period() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicySchedule) *string { return v.Period }).(pulumi.StringPtrOutput)
 }
 
 // The number of seconds to retain snapshots created with this schedule. Snapshot expiration time will not be set if this value is empty.
-func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleOutput) RetentionDurationInSeconds() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicySchedule) string {
+func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleOutput) RetentionDurationInSeconds() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicySchedule) *string {
 		return v.RetentionDurationInSeconds
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // A name prefix to be applied to snapshots created by this schedule.  Example: `compliance1`
-func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleOutput) SchedulePrefix() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicySchedule) string { return v.SchedulePrefix }).(pulumi.StringOutput)
+func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleOutput) SchedulePrefix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicySchedule) *string { return v.SchedulePrefix }).(pulumi.StringPtrOutput)
 }
 
 // The starting point used to begin the scheduling of the snapshots based upon recurrence string in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. If no `timeScheduleStart` is provided, the value will be set to the time when the schedule was created.
-func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleOutput) TimeScheduleStart() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicySchedule) string {
+func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleOutput) TimeScheduleStart() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicySchedule) *string {
 		return v.TimeScheduleStart
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Time zone used for scheduling the snapshot.
-func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleOutput) TimeZone() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicySchedule) string { return v.TimeZone }).(pulumi.StringOutput)
+func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleOutput) TimeZone() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicySchedule) *string { return v.TimeZone }).(pulumi.StringPtrOutput)
 }
 
 type GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleArrayOutput struct{ *pulumi.OutputState }
@@ -2949,12 +2570,6 @@ func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleArrayOutput
 
 func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleArrayOutput) ToGetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleArrayOutputWithContext(ctx context.Context) GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleArrayOutput {
 	return o
-}
-
-func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicySchedule] {
-	return pulumix.Output[[]GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicySchedule]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleArrayOutput) Index(i pulumi.IntInput) GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleOutput {
@@ -2998,12 +2613,6 @@ func (i GetFilesystemSnapshotPoliciesFilterArgs) ToGetFilesystemSnapshotPolicies
 	return pulumi.ToOutputWithContext(ctx, i).(GetFilesystemSnapshotPoliciesFilterOutput)
 }
 
-func (i GetFilesystemSnapshotPoliciesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetFilesystemSnapshotPoliciesFilter] {
-	return pulumix.Output[GetFilesystemSnapshotPoliciesFilter]{
-		OutputState: i.ToGetFilesystemSnapshotPoliciesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetFilesystemSnapshotPoliciesFilterArrayInput is an input type that accepts GetFilesystemSnapshotPoliciesFilterArray and GetFilesystemSnapshotPoliciesFilterArrayOutput values.
 // You can construct a concrete instance of `GetFilesystemSnapshotPoliciesFilterArrayInput` via:
 //
@@ -3029,12 +2638,6 @@ func (i GetFilesystemSnapshotPoliciesFilterArray) ToGetFilesystemSnapshotPolicie
 	return pulumi.ToOutputWithContext(ctx, i).(GetFilesystemSnapshotPoliciesFilterArrayOutput)
 }
 
-func (i GetFilesystemSnapshotPoliciesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFilesystemSnapshotPoliciesFilter] {
-	return pulumix.Output[[]GetFilesystemSnapshotPoliciesFilter]{
-		OutputState: i.ToGetFilesystemSnapshotPoliciesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFilesystemSnapshotPoliciesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetFilesystemSnapshotPoliciesFilterOutput) ElementType() reflect.Type {
@@ -3047,12 +2650,6 @@ func (o GetFilesystemSnapshotPoliciesFilterOutput) ToGetFilesystemSnapshotPolici
 
 func (o GetFilesystemSnapshotPoliciesFilterOutput) ToGetFilesystemSnapshotPoliciesFilterOutputWithContext(ctx context.Context) GetFilesystemSnapshotPoliciesFilterOutput {
 	return o
-}
-
-func (o GetFilesystemSnapshotPoliciesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetFilesystemSnapshotPoliciesFilter] {
-	return pulumix.Output[GetFilesystemSnapshotPoliciesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFilesystemSnapshotPoliciesFilterOutput) Name() pulumi.StringOutput {
@@ -3081,12 +2678,6 @@ func (o GetFilesystemSnapshotPoliciesFilterArrayOutput) ToGetFilesystemSnapshotP
 	return o
 }
 
-func (o GetFilesystemSnapshotPoliciesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFilesystemSnapshotPoliciesFilter] {
-	return pulumix.Output[[]GetFilesystemSnapshotPoliciesFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetFilesystemSnapshotPoliciesFilterArrayOutput) Index(i pulumi.IntInput) GetFilesystemSnapshotPoliciesFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFilesystemSnapshotPoliciesFilter {
 		return vs[0].([]GetFilesystemSnapshotPoliciesFilter)[vs[1].(int)]
@@ -3095,23 +2686,23 @@ func (o GetFilesystemSnapshotPoliciesFilterArrayOutput) Index(i pulumi.IntInput)
 
 type GetFilesystemSnapshotPolicySchedule struct {
 	// The day of the month to create a scheduled snapshot. If the day does not exist for the month, snapshot creation will be skipped. Used for MONTHLY and YEARLY snapshot schedules.
-	DayOfMonth int `pulumi:"dayOfMonth"`
+	DayOfMonth *int `pulumi:"dayOfMonth"`
 	// The day of the week to create a scheduled snapshot. Used for WEEKLY snapshot schedules.
-	DayOfWeek string `pulumi:"dayOfWeek"`
+	DayOfWeek *string `pulumi:"dayOfWeek"`
 	// The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot. If not set, a value will be chosen at creation time.
-	HourOfDay int `pulumi:"hourOfDay"`
+	HourOfDay *int `pulumi:"hourOfDay"`
 	// The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules.
-	Month string `pulumi:"month"`
+	Month *string `pulumi:"month"`
 	// The frequency of scheduled snapshots.
-	Period string `pulumi:"period"`
+	Period *string `pulumi:"period"`
 	// The number of seconds to retain snapshots created with this schedule. Snapshot expiration time will not be set if this value is empty.
-	RetentionDurationInSeconds string `pulumi:"retentionDurationInSeconds"`
+	RetentionDurationInSeconds *string `pulumi:"retentionDurationInSeconds"`
 	// A name prefix to be applied to snapshots created by this schedule.  Example: `compliance1`
-	SchedulePrefix string `pulumi:"schedulePrefix"`
+	SchedulePrefix *string `pulumi:"schedulePrefix"`
 	// The starting point used to begin the scheduling of the snapshots based upon recurrence string in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. If no `timeScheduleStart` is provided, the value will be set to the time when the schedule was created.
-	TimeScheduleStart string `pulumi:"timeScheduleStart"`
+	TimeScheduleStart *string `pulumi:"timeScheduleStart"`
 	// Time zone used for scheduling the snapshot.
-	TimeZone string `pulumi:"timeZone"`
+	TimeZone *string `pulumi:"timeZone"`
 }
 
 // GetFilesystemSnapshotPolicyScheduleInput is an input type that accepts GetFilesystemSnapshotPolicyScheduleArgs and GetFilesystemSnapshotPolicyScheduleOutput values.
@@ -3127,23 +2718,23 @@ type GetFilesystemSnapshotPolicyScheduleInput interface {
 
 type GetFilesystemSnapshotPolicyScheduleArgs struct {
 	// The day of the month to create a scheduled snapshot. If the day does not exist for the month, snapshot creation will be skipped. Used for MONTHLY and YEARLY snapshot schedules.
-	DayOfMonth pulumi.IntInput `pulumi:"dayOfMonth"`
+	DayOfMonth pulumi.IntPtrInput `pulumi:"dayOfMonth"`
 	// The day of the week to create a scheduled snapshot. Used for WEEKLY snapshot schedules.
-	DayOfWeek pulumi.StringInput `pulumi:"dayOfWeek"`
+	DayOfWeek pulumi.StringPtrInput `pulumi:"dayOfWeek"`
 	// The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot. If not set, a value will be chosen at creation time.
-	HourOfDay pulumi.IntInput `pulumi:"hourOfDay"`
+	HourOfDay pulumi.IntPtrInput `pulumi:"hourOfDay"`
 	// The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules.
-	Month pulumi.StringInput `pulumi:"month"`
+	Month pulumi.StringPtrInput `pulumi:"month"`
 	// The frequency of scheduled snapshots.
-	Period pulumi.StringInput `pulumi:"period"`
+	Period pulumi.StringPtrInput `pulumi:"period"`
 	// The number of seconds to retain snapshots created with this schedule. Snapshot expiration time will not be set if this value is empty.
-	RetentionDurationInSeconds pulumi.StringInput `pulumi:"retentionDurationInSeconds"`
+	RetentionDurationInSeconds pulumi.StringPtrInput `pulumi:"retentionDurationInSeconds"`
 	// A name prefix to be applied to snapshots created by this schedule.  Example: `compliance1`
-	SchedulePrefix pulumi.StringInput `pulumi:"schedulePrefix"`
+	SchedulePrefix pulumi.StringPtrInput `pulumi:"schedulePrefix"`
 	// The starting point used to begin the scheduling of the snapshots based upon recurrence string in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. If no `timeScheduleStart` is provided, the value will be set to the time when the schedule was created.
-	TimeScheduleStart pulumi.StringInput `pulumi:"timeScheduleStart"`
+	TimeScheduleStart pulumi.StringPtrInput `pulumi:"timeScheduleStart"`
 	// Time zone used for scheduling the snapshot.
-	TimeZone pulumi.StringInput `pulumi:"timeZone"`
+	TimeZone pulumi.StringPtrInput `pulumi:"timeZone"`
 }
 
 func (GetFilesystemSnapshotPolicyScheduleArgs) ElementType() reflect.Type {
@@ -3156,12 +2747,6 @@ func (i GetFilesystemSnapshotPolicyScheduleArgs) ToGetFilesystemSnapshotPolicySc
 
 func (i GetFilesystemSnapshotPolicyScheduleArgs) ToGetFilesystemSnapshotPolicyScheduleOutputWithContext(ctx context.Context) GetFilesystemSnapshotPolicyScheduleOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetFilesystemSnapshotPolicyScheduleOutput)
-}
-
-func (i GetFilesystemSnapshotPolicyScheduleArgs) ToOutput(ctx context.Context) pulumix.Output[GetFilesystemSnapshotPolicySchedule] {
-	return pulumix.Output[GetFilesystemSnapshotPolicySchedule]{
-		OutputState: i.ToGetFilesystemSnapshotPolicyScheduleOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetFilesystemSnapshotPolicyScheduleArrayInput is an input type that accepts GetFilesystemSnapshotPolicyScheduleArray and GetFilesystemSnapshotPolicyScheduleArrayOutput values.
@@ -3189,12 +2774,6 @@ func (i GetFilesystemSnapshotPolicyScheduleArray) ToGetFilesystemSnapshotPolicyS
 	return pulumi.ToOutputWithContext(ctx, i).(GetFilesystemSnapshotPolicyScheduleArrayOutput)
 }
 
-func (i GetFilesystemSnapshotPolicyScheduleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetFilesystemSnapshotPolicySchedule] {
-	return pulumix.Output[[]GetFilesystemSnapshotPolicySchedule]{
-		OutputState: i.ToGetFilesystemSnapshotPolicyScheduleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetFilesystemSnapshotPolicyScheduleOutput struct{ *pulumi.OutputState }
 
 func (GetFilesystemSnapshotPolicyScheduleOutput) ElementType() reflect.Type {
@@ -3209,55 +2788,49 @@ func (o GetFilesystemSnapshotPolicyScheduleOutput) ToGetFilesystemSnapshotPolicy
 	return o
 }
 
-func (o GetFilesystemSnapshotPolicyScheduleOutput) ToOutput(ctx context.Context) pulumix.Output[GetFilesystemSnapshotPolicySchedule] {
-	return pulumix.Output[GetFilesystemSnapshotPolicySchedule]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The day of the month to create a scheduled snapshot. If the day does not exist for the month, snapshot creation will be skipped. Used for MONTHLY and YEARLY snapshot schedules.
-func (o GetFilesystemSnapshotPolicyScheduleOutput) DayOfMonth() pulumi.IntOutput {
-	return o.ApplyT(func(v GetFilesystemSnapshotPolicySchedule) int { return v.DayOfMonth }).(pulumi.IntOutput)
+func (o GetFilesystemSnapshotPolicyScheduleOutput) DayOfMonth() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetFilesystemSnapshotPolicySchedule) *int { return v.DayOfMonth }).(pulumi.IntPtrOutput)
 }
 
 // The day of the week to create a scheduled snapshot. Used for WEEKLY snapshot schedules.
-func (o GetFilesystemSnapshotPolicyScheduleOutput) DayOfWeek() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFilesystemSnapshotPolicySchedule) string { return v.DayOfWeek }).(pulumi.StringOutput)
+func (o GetFilesystemSnapshotPolicyScheduleOutput) DayOfWeek() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFilesystemSnapshotPolicySchedule) *string { return v.DayOfWeek }).(pulumi.StringPtrOutput)
 }
 
 // The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot. If not set, a value will be chosen at creation time.
-func (o GetFilesystemSnapshotPolicyScheduleOutput) HourOfDay() pulumi.IntOutput {
-	return o.ApplyT(func(v GetFilesystemSnapshotPolicySchedule) int { return v.HourOfDay }).(pulumi.IntOutput)
+func (o GetFilesystemSnapshotPolicyScheduleOutput) HourOfDay() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetFilesystemSnapshotPolicySchedule) *int { return v.HourOfDay }).(pulumi.IntPtrOutput)
 }
 
 // The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules.
-func (o GetFilesystemSnapshotPolicyScheduleOutput) Month() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFilesystemSnapshotPolicySchedule) string { return v.Month }).(pulumi.StringOutput)
+func (o GetFilesystemSnapshotPolicyScheduleOutput) Month() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFilesystemSnapshotPolicySchedule) *string { return v.Month }).(pulumi.StringPtrOutput)
 }
 
 // The frequency of scheduled snapshots.
-func (o GetFilesystemSnapshotPolicyScheduleOutput) Period() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFilesystemSnapshotPolicySchedule) string { return v.Period }).(pulumi.StringOutput)
+func (o GetFilesystemSnapshotPolicyScheduleOutput) Period() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFilesystemSnapshotPolicySchedule) *string { return v.Period }).(pulumi.StringPtrOutput)
 }
 
 // The number of seconds to retain snapshots created with this schedule. Snapshot expiration time will not be set if this value is empty.
-func (o GetFilesystemSnapshotPolicyScheduleOutput) RetentionDurationInSeconds() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFilesystemSnapshotPolicySchedule) string { return v.RetentionDurationInSeconds }).(pulumi.StringOutput)
+func (o GetFilesystemSnapshotPolicyScheduleOutput) RetentionDurationInSeconds() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFilesystemSnapshotPolicySchedule) *string { return v.RetentionDurationInSeconds }).(pulumi.StringPtrOutput)
 }
 
 // A name prefix to be applied to snapshots created by this schedule.  Example: `compliance1`
-func (o GetFilesystemSnapshotPolicyScheduleOutput) SchedulePrefix() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFilesystemSnapshotPolicySchedule) string { return v.SchedulePrefix }).(pulumi.StringOutput)
+func (o GetFilesystemSnapshotPolicyScheduleOutput) SchedulePrefix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFilesystemSnapshotPolicySchedule) *string { return v.SchedulePrefix }).(pulumi.StringPtrOutput)
 }
 
 // The starting point used to begin the scheduling of the snapshots based upon recurrence string in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. If no `timeScheduleStart` is provided, the value will be set to the time when the schedule was created.
-func (o GetFilesystemSnapshotPolicyScheduleOutput) TimeScheduleStart() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFilesystemSnapshotPolicySchedule) string { return v.TimeScheduleStart }).(pulumi.StringOutput)
+func (o GetFilesystemSnapshotPolicyScheduleOutput) TimeScheduleStart() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFilesystemSnapshotPolicySchedule) *string { return v.TimeScheduleStart }).(pulumi.StringPtrOutput)
 }
 
 // Time zone used for scheduling the snapshot.
-func (o GetFilesystemSnapshotPolicyScheduleOutput) TimeZone() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFilesystemSnapshotPolicySchedule) string { return v.TimeZone }).(pulumi.StringOutput)
+func (o GetFilesystemSnapshotPolicyScheduleOutput) TimeZone() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFilesystemSnapshotPolicySchedule) *string { return v.TimeZone }).(pulumi.StringPtrOutput)
 }
 
 type GetFilesystemSnapshotPolicyScheduleArrayOutput struct{ *pulumi.OutputState }
@@ -3272,12 +2845,6 @@ func (o GetFilesystemSnapshotPolicyScheduleArrayOutput) ToGetFilesystemSnapshotP
 
 func (o GetFilesystemSnapshotPolicyScheduleArrayOutput) ToGetFilesystemSnapshotPolicyScheduleArrayOutputWithContext(ctx context.Context) GetFilesystemSnapshotPolicyScheduleArrayOutput {
 	return o
-}
-
-func (o GetFilesystemSnapshotPolicyScheduleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetFilesystemSnapshotPolicySchedule] {
-	return pulumix.Output[[]GetFilesystemSnapshotPolicySchedule]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFilesystemSnapshotPolicyScheduleArrayOutput) Index(i pulumi.IntInput) GetFilesystemSnapshotPolicyScheduleOutput {
@@ -3321,12 +2888,6 @@ func (i GetMountTargetsFilterArgs) ToGetMountTargetsFilterOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetMountTargetsFilterOutput)
 }
 
-func (i GetMountTargetsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetMountTargetsFilter] {
-	return pulumix.Output[GetMountTargetsFilter]{
-		OutputState: i.ToGetMountTargetsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMountTargetsFilterArrayInput is an input type that accepts GetMountTargetsFilterArray and GetMountTargetsFilterArrayOutput values.
 // You can construct a concrete instance of `GetMountTargetsFilterArrayInput` via:
 //
@@ -3352,12 +2913,6 @@ func (i GetMountTargetsFilterArray) ToGetMountTargetsFilterArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetMountTargetsFilterArrayOutput)
 }
 
-func (i GetMountTargetsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMountTargetsFilter] {
-	return pulumix.Output[[]GetMountTargetsFilter]{
-		OutputState: i.ToGetMountTargetsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMountTargetsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetMountTargetsFilterOutput) ElementType() reflect.Type {
@@ -3370,12 +2925,6 @@ func (o GetMountTargetsFilterOutput) ToGetMountTargetsFilterOutput() GetMountTar
 
 func (o GetMountTargetsFilterOutput) ToGetMountTargetsFilterOutputWithContext(ctx context.Context) GetMountTargetsFilterOutput {
 	return o
-}
-
-func (o GetMountTargetsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetMountTargetsFilter] {
-	return pulumix.Output[GetMountTargetsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMountTargetsFilterOutput) Name() pulumi.StringOutput {
@@ -3404,12 +2953,6 @@ func (o GetMountTargetsFilterArrayOutput) ToGetMountTargetsFilterArrayOutputWith
 	return o
 }
 
-func (o GetMountTargetsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMountTargetsFilter] {
-	return pulumix.Output[[]GetMountTargetsFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMountTargetsFilterArrayOutput) Index(i pulumi.IntInput) GetMountTargetsFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMountTargetsFilter {
 		return vs[0].([]GetMountTargetsFilter)[vs[1].(int)]
@@ -3418,39 +2961,39 @@ func (o GetMountTargetsFilterArrayOutput) Index(i pulumi.IntInput) GetMountTarge
 
 type GetMountTargetsMountTarget struct {
 	// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
-	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	AvailabilityDomain *string `pulumi:"availabilityDomain"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A user-friendly name. It does not have to be unique, and it is changeable.  Example: `My resource`
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export set.
-	ExportSetId string `pulumi:"exportSetId"`
+	ExportSetId *string `pulumi:"exportSetId"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags  map[string]interface{} `pulumi:"freeformTags"`
-	HostnameLabel string                 `pulumi:"hostnameLabel"`
+	HostnameLabel *string                `pulumi:"hostnameLabel"`
 	// Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The method used to map a Unix UID to secondary groups. If NONE, the mount target will not use the Unix UID for ID mapping.
-	IdmapType string `pulumi:"idmapType"`
-	IpAddress string `pulumi:"ipAddress"`
+	IdmapType *string `pulumi:"idmapType"`
+	IpAddress *string `pulumi:"ipAddress"`
 	// Allows administrator to configure a mount target to interact with the administrator's Kerberos infrastructure.
 	Kerberos []GetMountTargetsMountTargetKerbero `pulumi:"kerberos"`
 	// Mount target details about the LDAP ID mapping configuration.
 	LdapIdmaps []GetMountTargetsMountTargetLdapIdmap `pulumi:"ldapIdmaps"`
 	// Additional information about the current 'lifecycleState'.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this mount target. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the mount target from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
 	NsgIds []string `pulumi:"nsgIds"`
 	// The OCIDs of the private IP addresses associated with this mount target.
 	PrivateIpIds []string `pulumi:"privateIpIds"`
 	// Filter results by the specified lifecycle state. Must be a valid state for the resource type.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the mount target is in.
-	SubnetId string `pulumi:"subnetId"`
+	SubnetId *string `pulumi:"subnetId"`
 	// The date and time the mount target was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 }
 
 // GetMountTargetsMountTargetInput is an input type that accepts GetMountTargetsMountTargetArgs and GetMountTargetsMountTargetOutput values.
@@ -3466,39 +3009,39 @@ type GetMountTargetsMountTargetInput interface {
 
 type GetMountTargetsMountTargetArgs struct {
 	// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
-	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
+	AvailabilityDomain pulumi.StringPtrInput `pulumi:"availabilityDomain"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A user-friendly name. It does not have to be unique, and it is changeable.  Example: `My resource`
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export set.
-	ExportSetId pulumi.StringInput `pulumi:"exportSetId"`
+	ExportSetId pulumi.StringPtrInput `pulumi:"exportSetId"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags  pulumi.MapInput    `pulumi:"freeformTags"`
-	HostnameLabel pulumi.StringInput `pulumi:"hostnameLabel"`
+	FreeformTags  pulumi.MapInput       `pulumi:"freeformTags"`
+	HostnameLabel pulumi.StringPtrInput `pulumi:"hostnameLabel"`
 	// Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// The method used to map a Unix UID to secondary groups. If NONE, the mount target will not use the Unix UID for ID mapping.
-	IdmapType pulumi.StringInput `pulumi:"idmapType"`
-	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
+	IdmapType pulumi.StringPtrInput `pulumi:"idmapType"`
+	IpAddress pulumi.StringPtrInput `pulumi:"ipAddress"`
 	// Allows administrator to configure a mount target to interact with the administrator's Kerberos infrastructure.
 	Kerberos GetMountTargetsMountTargetKerberoArrayInput `pulumi:"kerberos"`
 	// Mount target details about the LDAP ID mapping configuration.
 	LdapIdmaps GetMountTargetsMountTargetLdapIdmapArrayInput `pulumi:"ldapIdmaps"`
 	// Additional information about the current 'lifecycleState'.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this mount target. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the mount target from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
 	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
 	// The OCIDs of the private IP addresses associated with this mount target.
 	PrivateIpIds pulumi.StringArrayInput `pulumi:"privateIpIds"`
 	// Filter results by the specified lifecycle state. Must be a valid state for the resource type.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the mount target is in.
-	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
 	// The date and time the mount target was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 }
 
 func (GetMountTargetsMountTargetArgs) ElementType() reflect.Type {
@@ -3511,12 +3054,6 @@ func (i GetMountTargetsMountTargetArgs) ToGetMountTargetsMountTargetOutput() Get
 
 func (i GetMountTargetsMountTargetArgs) ToGetMountTargetsMountTargetOutputWithContext(ctx context.Context) GetMountTargetsMountTargetOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMountTargetsMountTargetOutput)
-}
-
-func (i GetMountTargetsMountTargetArgs) ToOutput(ctx context.Context) pulumix.Output[GetMountTargetsMountTarget] {
-	return pulumix.Output[GetMountTargetsMountTarget]{
-		OutputState: i.ToGetMountTargetsMountTargetOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMountTargetsMountTargetArrayInput is an input type that accepts GetMountTargetsMountTargetArray and GetMountTargetsMountTargetArrayOutput values.
@@ -3544,12 +3081,6 @@ func (i GetMountTargetsMountTargetArray) ToGetMountTargetsMountTargetArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetMountTargetsMountTargetArrayOutput)
 }
 
-func (i GetMountTargetsMountTargetArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMountTargetsMountTarget] {
-	return pulumix.Output[[]GetMountTargetsMountTarget]{
-		OutputState: i.ToGetMountTargetsMountTargetArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMountTargetsMountTargetOutput struct{ *pulumi.OutputState }
 
 func (GetMountTargetsMountTargetOutput) ElementType() reflect.Type {
@@ -3564,20 +3095,14 @@ func (o GetMountTargetsMountTargetOutput) ToGetMountTargetsMountTargetOutputWith
 	return o
 }
 
-func (o GetMountTargetsMountTargetOutput) ToOutput(ctx context.Context) pulumix.Output[GetMountTargetsMountTarget] {
-	return pulumix.Output[GetMountTargetsMountTarget]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The name of the availability domain.  Example: `Uocm:PHX-AD-1`
-func (o GetMountTargetsMountTargetOutput) AvailabilityDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMountTargetsMountTarget) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
+func (o GetMountTargetsMountTargetOutput) AvailabilityDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMountTargetsMountTarget) *string { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-func (o GetMountTargetsMountTargetOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMountTargetsMountTarget) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetMountTargetsMountTargetOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMountTargetsMountTarget) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -3586,13 +3111,13 @@ func (o GetMountTargetsMountTargetOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // A user-friendly name. It does not have to be unique, and it is changeable.  Example: `My resource`
-func (o GetMountTargetsMountTargetOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMountTargetsMountTarget) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetMountTargetsMountTargetOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMountTargetsMountTarget) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export set.
-func (o GetMountTargetsMountTargetOutput) ExportSetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMountTargetsMountTarget) string { return v.ExportSetId }).(pulumi.StringOutput)
+func (o GetMountTargetsMountTargetOutput) ExportSetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMountTargetsMountTarget) *string { return v.ExportSetId }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -3600,22 +3125,22 @@ func (o GetMountTargetsMountTargetOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetMountTargetsMountTarget) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-func (o GetMountTargetsMountTargetOutput) HostnameLabel() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMountTargetsMountTarget) string { return v.HostnameLabel }).(pulumi.StringOutput)
+func (o GetMountTargetsMountTargetOutput) HostnameLabel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMountTargetsMountTarget) *string { return v.HostnameLabel }).(pulumi.StringPtrOutput)
 }
 
 // Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
-func (o GetMountTargetsMountTargetOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMountTargetsMountTarget) string { return v.Id }).(pulumi.StringOutput)
+func (o GetMountTargetsMountTargetOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMountTargetsMountTarget) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The method used to map a Unix UID to secondary groups. If NONE, the mount target will not use the Unix UID for ID mapping.
-func (o GetMountTargetsMountTargetOutput) IdmapType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMountTargetsMountTarget) string { return v.IdmapType }).(pulumi.StringOutput)
+func (o GetMountTargetsMountTargetOutput) IdmapType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMountTargetsMountTarget) *string { return v.IdmapType }).(pulumi.StringPtrOutput)
 }
 
-func (o GetMountTargetsMountTargetOutput) IpAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMountTargetsMountTarget) string { return v.IpAddress }).(pulumi.StringOutput)
+func (o GetMountTargetsMountTargetOutput) IpAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMountTargetsMountTarget) *string { return v.IpAddress }).(pulumi.StringPtrOutput)
 }
 
 // Allows administrator to configure a mount target to interact with the administrator's Kerberos infrastructure.
@@ -3629,8 +3154,8 @@ func (o GetMountTargetsMountTargetOutput) LdapIdmaps() GetMountTargetsMountTarge
 }
 
 // Additional information about the current 'lifecycleState'.
-func (o GetMountTargetsMountTargetOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMountTargetsMountTarget) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetMountTargetsMountTargetOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMountTargetsMountTarget) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this mount target. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the mount target from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
@@ -3644,18 +3169,18 @@ func (o GetMountTargetsMountTargetOutput) PrivateIpIds() pulumi.StringArrayOutpu
 }
 
 // Filter results by the specified lifecycle state. Must be a valid state for the resource type.
-func (o GetMountTargetsMountTargetOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMountTargetsMountTarget) string { return v.State }).(pulumi.StringOutput)
+func (o GetMountTargetsMountTargetOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMountTargetsMountTarget) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the mount target is in.
-func (o GetMountTargetsMountTargetOutput) SubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMountTargetsMountTarget) string { return v.SubnetId }).(pulumi.StringOutput)
+func (o GetMountTargetsMountTargetOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMountTargetsMountTarget) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the mount target was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
-func (o GetMountTargetsMountTargetOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMountTargetsMountTarget) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetMountTargetsMountTargetOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMountTargetsMountTarget) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 type GetMountTargetsMountTargetArrayOutput struct{ *pulumi.OutputState }
@@ -3672,12 +3197,6 @@ func (o GetMountTargetsMountTargetArrayOutput) ToGetMountTargetsMountTargetArray
 	return o
 }
 
-func (o GetMountTargetsMountTargetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMountTargetsMountTarget] {
-	return pulumix.Output[[]GetMountTargetsMountTarget]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMountTargetsMountTargetArrayOutput) Index(i pulumi.IntInput) GetMountTargetsMountTargetOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMountTargetsMountTarget {
 		return vs[0].([]GetMountTargetsMountTarget)[vs[1].(int)]
@@ -3686,15 +3205,15 @@ func (o GetMountTargetsMountTargetArrayOutput) Index(i pulumi.IntInput) GetMount
 
 type GetMountTargetsMountTargetKerbero struct {
 	// Version of the keytab secert in the Vault to use as a backup.
-	BackupKeyTabSecretVersion int `pulumi:"backupKeyTabSecretVersion"`
+	BackupKeyTabSecretVersion *int `pulumi:"backupKeyTabSecretVersion"`
 	// Version of the keytab secret in the Vault to use.
-	CurrentKeyTabSecretVersion int `pulumi:"currentKeyTabSecretVersion"`
+	CurrentKeyTabSecretVersion *int `pulumi:"currentKeyTabSecretVersion"`
 	// Specifies whether to enable or disable Kerberos.
-	IsKerberosEnabled bool `pulumi:"isKerberosEnabled"`
+	IsKerberosEnabled *bool `pulumi:"isKerberosEnabled"`
 	// The Kerberos realm that the mount target will join.
-	KerberosRealm string `pulumi:"kerberosRealm"`
+	KerberosRealm *string `pulumi:"kerberosRealm"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the keytab secret in the Vault.
-	KeyTabSecretId string `pulumi:"keyTabSecretId"`
+	KeyTabSecretId *string `pulumi:"keyTabSecretId"`
 }
 
 // GetMountTargetsMountTargetKerberoInput is an input type that accepts GetMountTargetsMountTargetKerberoArgs and GetMountTargetsMountTargetKerberoOutput values.
@@ -3710,15 +3229,15 @@ type GetMountTargetsMountTargetKerberoInput interface {
 
 type GetMountTargetsMountTargetKerberoArgs struct {
 	// Version of the keytab secert in the Vault to use as a backup.
-	BackupKeyTabSecretVersion pulumi.IntInput `pulumi:"backupKeyTabSecretVersion"`
+	BackupKeyTabSecretVersion pulumi.IntPtrInput `pulumi:"backupKeyTabSecretVersion"`
 	// Version of the keytab secret in the Vault to use.
-	CurrentKeyTabSecretVersion pulumi.IntInput `pulumi:"currentKeyTabSecretVersion"`
+	CurrentKeyTabSecretVersion pulumi.IntPtrInput `pulumi:"currentKeyTabSecretVersion"`
 	// Specifies whether to enable or disable Kerberos.
-	IsKerberosEnabled pulumi.BoolInput `pulumi:"isKerberosEnabled"`
+	IsKerberosEnabled pulumi.BoolPtrInput `pulumi:"isKerberosEnabled"`
 	// The Kerberos realm that the mount target will join.
-	KerberosRealm pulumi.StringInput `pulumi:"kerberosRealm"`
+	KerberosRealm pulumi.StringPtrInput `pulumi:"kerberosRealm"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the keytab secret in the Vault.
-	KeyTabSecretId pulumi.StringInput `pulumi:"keyTabSecretId"`
+	KeyTabSecretId pulumi.StringPtrInput `pulumi:"keyTabSecretId"`
 }
 
 func (GetMountTargetsMountTargetKerberoArgs) ElementType() reflect.Type {
@@ -3731,12 +3250,6 @@ func (i GetMountTargetsMountTargetKerberoArgs) ToGetMountTargetsMountTargetKerbe
 
 func (i GetMountTargetsMountTargetKerberoArgs) ToGetMountTargetsMountTargetKerberoOutputWithContext(ctx context.Context) GetMountTargetsMountTargetKerberoOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMountTargetsMountTargetKerberoOutput)
-}
-
-func (i GetMountTargetsMountTargetKerberoArgs) ToOutput(ctx context.Context) pulumix.Output[GetMountTargetsMountTargetKerbero] {
-	return pulumix.Output[GetMountTargetsMountTargetKerbero]{
-		OutputState: i.ToGetMountTargetsMountTargetKerberoOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMountTargetsMountTargetKerberoArrayInput is an input type that accepts GetMountTargetsMountTargetKerberoArray and GetMountTargetsMountTargetKerberoArrayOutput values.
@@ -3764,12 +3277,6 @@ func (i GetMountTargetsMountTargetKerberoArray) ToGetMountTargetsMountTargetKerb
 	return pulumi.ToOutputWithContext(ctx, i).(GetMountTargetsMountTargetKerberoArrayOutput)
 }
 
-func (i GetMountTargetsMountTargetKerberoArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMountTargetsMountTargetKerbero] {
-	return pulumix.Output[[]GetMountTargetsMountTargetKerbero]{
-		OutputState: i.ToGetMountTargetsMountTargetKerberoArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMountTargetsMountTargetKerberoOutput struct{ *pulumi.OutputState }
 
 func (GetMountTargetsMountTargetKerberoOutput) ElementType() reflect.Type {
@@ -3784,35 +3291,29 @@ func (o GetMountTargetsMountTargetKerberoOutput) ToGetMountTargetsMountTargetKer
 	return o
 }
 
-func (o GetMountTargetsMountTargetKerberoOutput) ToOutput(ctx context.Context) pulumix.Output[GetMountTargetsMountTargetKerbero] {
-	return pulumix.Output[GetMountTargetsMountTargetKerbero]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Version of the keytab secert in the Vault to use as a backup.
-func (o GetMountTargetsMountTargetKerberoOutput) BackupKeyTabSecretVersion() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMountTargetsMountTargetKerbero) int { return v.BackupKeyTabSecretVersion }).(pulumi.IntOutput)
+func (o GetMountTargetsMountTargetKerberoOutput) BackupKeyTabSecretVersion() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMountTargetsMountTargetKerbero) *int { return v.BackupKeyTabSecretVersion }).(pulumi.IntPtrOutput)
 }
 
 // Version of the keytab secret in the Vault to use.
-func (o GetMountTargetsMountTargetKerberoOutput) CurrentKeyTabSecretVersion() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMountTargetsMountTargetKerbero) int { return v.CurrentKeyTabSecretVersion }).(pulumi.IntOutput)
+func (o GetMountTargetsMountTargetKerberoOutput) CurrentKeyTabSecretVersion() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMountTargetsMountTargetKerbero) *int { return v.CurrentKeyTabSecretVersion }).(pulumi.IntPtrOutput)
 }
 
 // Specifies whether to enable or disable Kerberos.
-func (o GetMountTargetsMountTargetKerberoOutput) IsKerberosEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetMountTargetsMountTargetKerbero) bool { return v.IsKerberosEnabled }).(pulumi.BoolOutput)
+func (o GetMountTargetsMountTargetKerberoOutput) IsKerberosEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMountTargetsMountTargetKerbero) *bool { return v.IsKerberosEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // The Kerberos realm that the mount target will join.
-func (o GetMountTargetsMountTargetKerberoOutput) KerberosRealm() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMountTargetsMountTargetKerbero) string { return v.KerberosRealm }).(pulumi.StringOutput)
+func (o GetMountTargetsMountTargetKerberoOutput) KerberosRealm() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMountTargetsMountTargetKerbero) *string { return v.KerberosRealm }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the keytab secret in the Vault.
-func (o GetMountTargetsMountTargetKerberoOutput) KeyTabSecretId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMountTargetsMountTargetKerbero) string { return v.KeyTabSecretId }).(pulumi.StringOutput)
+func (o GetMountTargetsMountTargetKerberoOutput) KeyTabSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMountTargetsMountTargetKerbero) *string { return v.KeyTabSecretId }).(pulumi.StringPtrOutput)
 }
 
 type GetMountTargetsMountTargetKerberoArrayOutput struct{ *pulumi.OutputState }
@@ -3829,12 +3330,6 @@ func (o GetMountTargetsMountTargetKerberoArrayOutput) ToGetMountTargetsMountTarg
 	return o
 }
 
-func (o GetMountTargetsMountTargetKerberoArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMountTargetsMountTargetKerbero] {
-	return pulumix.Output[[]GetMountTargetsMountTargetKerbero]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMountTargetsMountTargetKerberoArrayOutput) Index(i pulumi.IntInput) GetMountTargetsMountTargetKerberoOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMountTargetsMountTargetKerbero {
 		return vs[0].([]GetMountTargetsMountTargetKerbero)[vs[1].(int)]
@@ -3843,21 +3338,21 @@ func (o GetMountTargetsMountTargetKerberoArrayOutput) Index(i pulumi.IntInput) G
 
 type GetMountTargetsMountTargetLdapIdmap struct {
 	// The maximum amount of time the mount target is allowed to use a cached entry.
-	CacheLifetimeSeconds int `pulumi:"cacheLifetimeSeconds"`
+	CacheLifetimeSeconds *int `pulumi:"cacheLifetimeSeconds"`
 	// The amount of time that the mount target should allow an entry to persist in its cache before attempting to refresh the entry.
-	CacheRefreshIntervalSeconds int `pulumi:"cacheRefreshIntervalSeconds"`
+	CacheRefreshIntervalSeconds *int `pulumi:"cacheRefreshIntervalSeconds"`
 	// All LDAP searches are recursive starting at this group.  Example: `CN=Group,DC=domain,DC=com`
-	GroupSearchBase string `pulumi:"groupSearchBase"`
+	GroupSearchBase *string `pulumi:"groupSearchBase"`
 	// The amount of time that a mount target will maintain information that a user is not found in the ID mapping configuration.
-	NegativeCacheLifetimeSeconds int `pulumi:"negativeCacheLifetimeSeconds"`
+	NegativeCacheLifetimeSeconds *int `pulumi:"negativeCacheLifetimeSeconds"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the first connector to use to communicate with the LDAP server.
-	OutboundConnector1id string `pulumi:"outboundConnector1id"`
+	OutboundConnector1id *string `pulumi:"outboundConnector1id"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second connector to use to communicate with the LDAP server.
-	OutboundConnector2id string `pulumi:"outboundConnector2id"`
+	OutboundConnector2id *string `pulumi:"outboundConnector2id"`
 	// Schema type of the LDAP account.
-	SchemaType string `pulumi:"schemaType"`
+	SchemaType *string `pulumi:"schemaType"`
 	// All LDAP searches are recursive starting at this user.  Example: `CN=User,DC=domain,DC=com`
-	UserSearchBase string `pulumi:"userSearchBase"`
+	UserSearchBase *string `pulumi:"userSearchBase"`
 }
 
 // GetMountTargetsMountTargetLdapIdmapInput is an input type that accepts GetMountTargetsMountTargetLdapIdmapArgs and GetMountTargetsMountTargetLdapIdmapOutput values.
@@ -3873,21 +3368,21 @@ type GetMountTargetsMountTargetLdapIdmapInput interface {
 
 type GetMountTargetsMountTargetLdapIdmapArgs struct {
 	// The maximum amount of time the mount target is allowed to use a cached entry.
-	CacheLifetimeSeconds pulumi.IntInput `pulumi:"cacheLifetimeSeconds"`
+	CacheLifetimeSeconds pulumi.IntPtrInput `pulumi:"cacheLifetimeSeconds"`
 	// The amount of time that the mount target should allow an entry to persist in its cache before attempting to refresh the entry.
-	CacheRefreshIntervalSeconds pulumi.IntInput `pulumi:"cacheRefreshIntervalSeconds"`
+	CacheRefreshIntervalSeconds pulumi.IntPtrInput `pulumi:"cacheRefreshIntervalSeconds"`
 	// All LDAP searches are recursive starting at this group.  Example: `CN=Group,DC=domain,DC=com`
-	GroupSearchBase pulumi.StringInput `pulumi:"groupSearchBase"`
+	GroupSearchBase pulumi.StringPtrInput `pulumi:"groupSearchBase"`
 	// The amount of time that a mount target will maintain information that a user is not found in the ID mapping configuration.
-	NegativeCacheLifetimeSeconds pulumi.IntInput `pulumi:"negativeCacheLifetimeSeconds"`
+	NegativeCacheLifetimeSeconds pulumi.IntPtrInput `pulumi:"negativeCacheLifetimeSeconds"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the first connector to use to communicate with the LDAP server.
-	OutboundConnector1id pulumi.StringInput `pulumi:"outboundConnector1id"`
+	OutboundConnector1id pulumi.StringPtrInput `pulumi:"outboundConnector1id"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second connector to use to communicate with the LDAP server.
-	OutboundConnector2id pulumi.StringInput `pulumi:"outboundConnector2id"`
+	OutboundConnector2id pulumi.StringPtrInput `pulumi:"outboundConnector2id"`
 	// Schema type of the LDAP account.
-	SchemaType pulumi.StringInput `pulumi:"schemaType"`
+	SchemaType pulumi.StringPtrInput `pulumi:"schemaType"`
 	// All LDAP searches are recursive starting at this user.  Example: `CN=User,DC=domain,DC=com`
-	UserSearchBase pulumi.StringInput `pulumi:"userSearchBase"`
+	UserSearchBase pulumi.StringPtrInput `pulumi:"userSearchBase"`
 }
 
 func (GetMountTargetsMountTargetLdapIdmapArgs) ElementType() reflect.Type {
@@ -3900,12 +3395,6 @@ func (i GetMountTargetsMountTargetLdapIdmapArgs) ToGetMountTargetsMountTargetLda
 
 func (i GetMountTargetsMountTargetLdapIdmapArgs) ToGetMountTargetsMountTargetLdapIdmapOutputWithContext(ctx context.Context) GetMountTargetsMountTargetLdapIdmapOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMountTargetsMountTargetLdapIdmapOutput)
-}
-
-func (i GetMountTargetsMountTargetLdapIdmapArgs) ToOutput(ctx context.Context) pulumix.Output[GetMountTargetsMountTargetLdapIdmap] {
-	return pulumix.Output[GetMountTargetsMountTargetLdapIdmap]{
-		OutputState: i.ToGetMountTargetsMountTargetLdapIdmapOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMountTargetsMountTargetLdapIdmapArrayInput is an input type that accepts GetMountTargetsMountTargetLdapIdmapArray and GetMountTargetsMountTargetLdapIdmapArrayOutput values.
@@ -3933,12 +3422,6 @@ func (i GetMountTargetsMountTargetLdapIdmapArray) ToGetMountTargetsMountTargetLd
 	return pulumi.ToOutputWithContext(ctx, i).(GetMountTargetsMountTargetLdapIdmapArrayOutput)
 }
 
-func (i GetMountTargetsMountTargetLdapIdmapArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMountTargetsMountTargetLdapIdmap] {
-	return pulumix.Output[[]GetMountTargetsMountTargetLdapIdmap]{
-		OutputState: i.ToGetMountTargetsMountTargetLdapIdmapArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMountTargetsMountTargetLdapIdmapOutput struct{ *pulumi.OutputState }
 
 func (GetMountTargetsMountTargetLdapIdmapOutput) ElementType() reflect.Type {
@@ -3953,50 +3436,44 @@ func (o GetMountTargetsMountTargetLdapIdmapOutput) ToGetMountTargetsMountTargetL
 	return o
 }
 
-func (o GetMountTargetsMountTargetLdapIdmapOutput) ToOutput(ctx context.Context) pulumix.Output[GetMountTargetsMountTargetLdapIdmap] {
-	return pulumix.Output[GetMountTargetsMountTargetLdapIdmap]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The maximum amount of time the mount target is allowed to use a cached entry.
-func (o GetMountTargetsMountTargetLdapIdmapOutput) CacheLifetimeSeconds() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMountTargetsMountTargetLdapIdmap) int { return v.CacheLifetimeSeconds }).(pulumi.IntOutput)
+func (o GetMountTargetsMountTargetLdapIdmapOutput) CacheLifetimeSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMountTargetsMountTargetLdapIdmap) *int { return v.CacheLifetimeSeconds }).(pulumi.IntPtrOutput)
 }
 
 // The amount of time that the mount target should allow an entry to persist in its cache before attempting to refresh the entry.
-func (o GetMountTargetsMountTargetLdapIdmapOutput) CacheRefreshIntervalSeconds() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMountTargetsMountTargetLdapIdmap) int { return v.CacheRefreshIntervalSeconds }).(pulumi.IntOutput)
+func (o GetMountTargetsMountTargetLdapIdmapOutput) CacheRefreshIntervalSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMountTargetsMountTargetLdapIdmap) *int { return v.CacheRefreshIntervalSeconds }).(pulumi.IntPtrOutput)
 }
 
 // All LDAP searches are recursive starting at this group.  Example: `CN=Group,DC=domain,DC=com`
-func (o GetMountTargetsMountTargetLdapIdmapOutput) GroupSearchBase() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMountTargetsMountTargetLdapIdmap) string { return v.GroupSearchBase }).(pulumi.StringOutput)
+func (o GetMountTargetsMountTargetLdapIdmapOutput) GroupSearchBase() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMountTargetsMountTargetLdapIdmap) *string { return v.GroupSearchBase }).(pulumi.StringPtrOutput)
 }
 
 // The amount of time that a mount target will maintain information that a user is not found in the ID mapping configuration.
-func (o GetMountTargetsMountTargetLdapIdmapOutput) NegativeCacheLifetimeSeconds() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMountTargetsMountTargetLdapIdmap) int { return v.NegativeCacheLifetimeSeconds }).(pulumi.IntOutput)
+func (o GetMountTargetsMountTargetLdapIdmapOutput) NegativeCacheLifetimeSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetMountTargetsMountTargetLdapIdmap) *int { return v.NegativeCacheLifetimeSeconds }).(pulumi.IntPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the first connector to use to communicate with the LDAP server.
-func (o GetMountTargetsMountTargetLdapIdmapOutput) OutboundConnector1id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMountTargetsMountTargetLdapIdmap) string { return v.OutboundConnector1id }).(pulumi.StringOutput)
+func (o GetMountTargetsMountTargetLdapIdmapOutput) OutboundConnector1id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMountTargetsMountTargetLdapIdmap) *string { return v.OutboundConnector1id }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second connector to use to communicate with the LDAP server.
-func (o GetMountTargetsMountTargetLdapIdmapOutput) OutboundConnector2id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMountTargetsMountTargetLdapIdmap) string { return v.OutboundConnector2id }).(pulumi.StringOutput)
+func (o GetMountTargetsMountTargetLdapIdmapOutput) OutboundConnector2id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMountTargetsMountTargetLdapIdmap) *string { return v.OutboundConnector2id }).(pulumi.StringPtrOutput)
 }
 
 // Schema type of the LDAP account.
-func (o GetMountTargetsMountTargetLdapIdmapOutput) SchemaType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMountTargetsMountTargetLdapIdmap) string { return v.SchemaType }).(pulumi.StringOutput)
+func (o GetMountTargetsMountTargetLdapIdmapOutput) SchemaType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMountTargetsMountTargetLdapIdmap) *string { return v.SchemaType }).(pulumi.StringPtrOutput)
 }
 
 // All LDAP searches are recursive starting at this user.  Example: `CN=User,DC=domain,DC=com`
-func (o GetMountTargetsMountTargetLdapIdmapOutput) UserSearchBase() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMountTargetsMountTargetLdapIdmap) string { return v.UserSearchBase }).(pulumi.StringOutput)
+func (o GetMountTargetsMountTargetLdapIdmapOutput) UserSearchBase() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMountTargetsMountTargetLdapIdmap) *string { return v.UserSearchBase }).(pulumi.StringPtrOutput)
 }
 
 type GetMountTargetsMountTargetLdapIdmapArrayOutput struct{ *pulumi.OutputState }
@@ -4013,12 +3490,6 @@ func (o GetMountTargetsMountTargetLdapIdmapArrayOutput) ToGetMountTargetsMountTa
 	return o
 }
 
-func (o GetMountTargetsMountTargetLdapIdmapArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMountTargetsMountTargetLdapIdmap] {
-	return pulumix.Output[[]GetMountTargetsMountTargetLdapIdmap]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMountTargetsMountTargetLdapIdmapArrayOutput) Index(i pulumi.IntInput) GetMountTargetsMountTargetLdapIdmapOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMountTargetsMountTargetLdapIdmap {
 		return vs[0].([]GetMountTargetsMountTargetLdapIdmap)[vs[1].(int)]
@@ -4027,9 +3498,9 @@ func (o GetMountTargetsMountTargetLdapIdmapArrayOutput) Index(i pulumi.IntInput)
 
 type GetOutboundConnectorEndpoint struct {
 	// Name of the DNS server.
-	Hostname string `pulumi:"hostname"`
+	Hostname *string `pulumi:"hostname"`
 	// Port of the DNS server.
-	Port string `pulumi:"port"`
+	Port *string `pulumi:"port"`
 }
 
 // GetOutboundConnectorEndpointInput is an input type that accepts GetOutboundConnectorEndpointArgs and GetOutboundConnectorEndpointOutput values.
@@ -4045,9 +3516,9 @@ type GetOutboundConnectorEndpointInput interface {
 
 type GetOutboundConnectorEndpointArgs struct {
 	// Name of the DNS server.
-	Hostname pulumi.StringInput `pulumi:"hostname"`
+	Hostname pulumi.StringPtrInput `pulumi:"hostname"`
 	// Port of the DNS server.
-	Port pulumi.StringInput `pulumi:"port"`
+	Port pulumi.StringPtrInput `pulumi:"port"`
 }
 
 func (GetOutboundConnectorEndpointArgs) ElementType() reflect.Type {
@@ -4060,12 +3531,6 @@ func (i GetOutboundConnectorEndpointArgs) ToGetOutboundConnectorEndpointOutput()
 
 func (i GetOutboundConnectorEndpointArgs) ToGetOutboundConnectorEndpointOutputWithContext(ctx context.Context) GetOutboundConnectorEndpointOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetOutboundConnectorEndpointOutput)
-}
-
-func (i GetOutboundConnectorEndpointArgs) ToOutput(ctx context.Context) pulumix.Output[GetOutboundConnectorEndpoint] {
-	return pulumix.Output[GetOutboundConnectorEndpoint]{
-		OutputState: i.ToGetOutboundConnectorEndpointOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetOutboundConnectorEndpointArrayInput is an input type that accepts GetOutboundConnectorEndpointArray and GetOutboundConnectorEndpointArrayOutput values.
@@ -4093,12 +3558,6 @@ func (i GetOutboundConnectorEndpointArray) ToGetOutboundConnectorEndpointArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetOutboundConnectorEndpointArrayOutput)
 }
 
-func (i GetOutboundConnectorEndpointArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOutboundConnectorEndpoint] {
-	return pulumix.Output[[]GetOutboundConnectorEndpoint]{
-		OutputState: i.ToGetOutboundConnectorEndpointArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetOutboundConnectorEndpointOutput struct{ *pulumi.OutputState }
 
 func (GetOutboundConnectorEndpointOutput) ElementType() reflect.Type {
@@ -4113,20 +3572,14 @@ func (o GetOutboundConnectorEndpointOutput) ToGetOutboundConnectorEndpointOutput
 	return o
 }
 
-func (o GetOutboundConnectorEndpointOutput) ToOutput(ctx context.Context) pulumix.Output[GetOutboundConnectorEndpoint] {
-	return pulumix.Output[GetOutboundConnectorEndpoint]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Name of the DNS server.
-func (o GetOutboundConnectorEndpointOutput) Hostname() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOutboundConnectorEndpoint) string { return v.Hostname }).(pulumi.StringOutput)
+func (o GetOutboundConnectorEndpointOutput) Hostname() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOutboundConnectorEndpoint) *string { return v.Hostname }).(pulumi.StringPtrOutput)
 }
 
 // Port of the DNS server.
-func (o GetOutboundConnectorEndpointOutput) Port() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOutboundConnectorEndpoint) string { return v.Port }).(pulumi.StringOutput)
+func (o GetOutboundConnectorEndpointOutput) Port() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOutboundConnectorEndpoint) *string { return v.Port }).(pulumi.StringPtrOutput)
 }
 
 type GetOutboundConnectorEndpointArrayOutput struct{ *pulumi.OutputState }
@@ -4141,12 +3594,6 @@ func (o GetOutboundConnectorEndpointArrayOutput) ToGetOutboundConnectorEndpointA
 
 func (o GetOutboundConnectorEndpointArrayOutput) ToGetOutboundConnectorEndpointArrayOutputWithContext(ctx context.Context) GetOutboundConnectorEndpointArrayOutput {
 	return o
-}
-
-func (o GetOutboundConnectorEndpointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOutboundConnectorEndpoint] {
-	return pulumix.Output[[]GetOutboundConnectorEndpoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetOutboundConnectorEndpointArrayOutput) Index(i pulumi.IntInput) GetOutboundConnectorEndpointOutput {
@@ -4190,12 +3637,6 @@ func (i GetOutboundConnectorsFilterArgs) ToGetOutboundConnectorsFilterOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetOutboundConnectorsFilterOutput)
 }
 
-func (i GetOutboundConnectorsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetOutboundConnectorsFilter] {
-	return pulumix.Output[GetOutboundConnectorsFilter]{
-		OutputState: i.ToGetOutboundConnectorsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetOutboundConnectorsFilterArrayInput is an input type that accepts GetOutboundConnectorsFilterArray and GetOutboundConnectorsFilterArrayOutput values.
 // You can construct a concrete instance of `GetOutboundConnectorsFilterArrayInput` via:
 //
@@ -4221,12 +3662,6 @@ func (i GetOutboundConnectorsFilterArray) ToGetOutboundConnectorsFilterArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetOutboundConnectorsFilterArrayOutput)
 }
 
-func (i GetOutboundConnectorsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOutboundConnectorsFilter] {
-	return pulumix.Output[[]GetOutboundConnectorsFilter]{
-		OutputState: i.ToGetOutboundConnectorsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetOutboundConnectorsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetOutboundConnectorsFilterOutput) ElementType() reflect.Type {
@@ -4239,12 +3674,6 @@ func (o GetOutboundConnectorsFilterOutput) ToGetOutboundConnectorsFilterOutput()
 
 func (o GetOutboundConnectorsFilterOutput) ToGetOutboundConnectorsFilterOutputWithContext(ctx context.Context) GetOutboundConnectorsFilterOutput {
 	return o
-}
-
-func (o GetOutboundConnectorsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetOutboundConnectorsFilter] {
-	return pulumix.Output[GetOutboundConnectorsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetOutboundConnectorsFilterOutput) Name() pulumi.StringOutput {
@@ -4273,12 +3702,6 @@ func (o GetOutboundConnectorsFilterArrayOutput) ToGetOutboundConnectorsFilterArr
 	return o
 }
 
-func (o GetOutboundConnectorsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOutboundConnectorsFilter] {
-	return pulumix.Output[[]GetOutboundConnectorsFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetOutboundConnectorsFilterArrayOutput) Index(i pulumi.IntInput) GetOutboundConnectorsFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOutboundConnectorsFilter {
 		return vs[0].([]GetOutboundConnectorsFilter)[vs[1].(int)]
@@ -4287,31 +3710,31 @@ func (o GetOutboundConnectorsFilterArrayOutput) Index(i pulumi.IntInput) GetOutb
 
 type GetOutboundConnectorsOutboundConnector struct {
 	// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
-	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	AvailabilityDomain *string `pulumi:"availabilityDomain"`
 	// The LDAP Distinguished Name of the account.
-	BindDistinguishedName string `pulumi:"bindDistinguishedName"`
+	BindDistinguishedName *string `pulumi:"bindDistinguishedName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The account type of this outbound connector.
-	ConnectorType string `pulumi:"connectorType"`
+	ConnectorType *string `pulumi:"connectorType"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A user-friendly name. It does not have to be unique, and it is changeable.  Example: `My resource`
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Array of server endpoints to use when connecting with the LDAP bind account.
 	Endpoints []GetOutboundConnectorsOutboundConnectorEndpoint `pulumi:"endpoints"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the password for the LDAP bind account in the Vault.
-	PasswordSecretId string `pulumi:"passwordSecretId"`
+	PasswordSecretId *string `pulumi:"passwordSecretId"`
 	// Version of the password secret in the Vault to use.
-	PasswordSecretVersion int `pulumi:"passwordSecretVersion"`
+	PasswordSecretVersion *int `pulumi:"passwordSecretVersion"`
 	// Filter results by the specified lifecycle state. Must be a valid state for the resource type.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the outbound connector was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 }
 
 // GetOutboundConnectorsOutboundConnectorInput is an input type that accepts GetOutboundConnectorsOutboundConnectorArgs and GetOutboundConnectorsOutboundConnectorOutput values.
@@ -4327,31 +3750,31 @@ type GetOutboundConnectorsOutboundConnectorInput interface {
 
 type GetOutboundConnectorsOutboundConnectorArgs struct {
 	// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
-	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
+	AvailabilityDomain pulumi.StringPtrInput `pulumi:"availabilityDomain"`
 	// The LDAP Distinguished Name of the account.
-	BindDistinguishedName pulumi.StringInput `pulumi:"bindDistinguishedName"`
+	BindDistinguishedName pulumi.StringPtrInput `pulumi:"bindDistinguishedName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// The account type of this outbound connector.
-	ConnectorType pulumi.StringInput `pulumi:"connectorType"`
+	ConnectorType pulumi.StringPtrInput `pulumi:"connectorType"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A user-friendly name. It does not have to be unique, and it is changeable.  Example: `My resource`
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Array of server endpoints to use when connecting with the LDAP bind account.
 	Endpoints GetOutboundConnectorsOutboundConnectorEndpointArrayInput `pulumi:"endpoints"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the password for the LDAP bind account in the Vault.
-	PasswordSecretId pulumi.StringInput `pulumi:"passwordSecretId"`
+	PasswordSecretId pulumi.StringPtrInput `pulumi:"passwordSecretId"`
 	// Version of the password secret in the Vault to use.
-	PasswordSecretVersion pulumi.IntInput `pulumi:"passwordSecretVersion"`
+	PasswordSecretVersion pulumi.IntPtrInput `pulumi:"passwordSecretVersion"`
 	// Filter results by the specified lifecycle state. Must be a valid state for the resource type.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The date and time the outbound connector was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 }
 
 func (GetOutboundConnectorsOutboundConnectorArgs) ElementType() reflect.Type {
@@ -4364,12 +3787,6 @@ func (i GetOutboundConnectorsOutboundConnectorArgs) ToGetOutboundConnectorsOutbo
 
 func (i GetOutboundConnectorsOutboundConnectorArgs) ToGetOutboundConnectorsOutboundConnectorOutputWithContext(ctx context.Context) GetOutboundConnectorsOutboundConnectorOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetOutboundConnectorsOutboundConnectorOutput)
-}
-
-func (i GetOutboundConnectorsOutboundConnectorArgs) ToOutput(ctx context.Context) pulumix.Output[GetOutboundConnectorsOutboundConnector] {
-	return pulumix.Output[GetOutboundConnectorsOutboundConnector]{
-		OutputState: i.ToGetOutboundConnectorsOutboundConnectorOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetOutboundConnectorsOutboundConnectorArrayInput is an input type that accepts GetOutboundConnectorsOutboundConnectorArray and GetOutboundConnectorsOutboundConnectorArrayOutput values.
@@ -4397,12 +3814,6 @@ func (i GetOutboundConnectorsOutboundConnectorArray) ToGetOutboundConnectorsOutb
 	return pulumi.ToOutputWithContext(ctx, i).(GetOutboundConnectorsOutboundConnectorArrayOutput)
 }
 
-func (i GetOutboundConnectorsOutboundConnectorArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOutboundConnectorsOutboundConnector] {
-	return pulumix.Output[[]GetOutboundConnectorsOutboundConnector]{
-		OutputState: i.ToGetOutboundConnectorsOutboundConnectorArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetOutboundConnectorsOutboundConnectorOutput struct{ *pulumi.OutputState }
 
 func (GetOutboundConnectorsOutboundConnectorOutput) ElementType() reflect.Type {
@@ -4417,30 +3828,24 @@ func (o GetOutboundConnectorsOutboundConnectorOutput) ToGetOutboundConnectorsOut
 	return o
 }
 
-func (o GetOutboundConnectorsOutboundConnectorOutput) ToOutput(ctx context.Context) pulumix.Output[GetOutboundConnectorsOutboundConnector] {
-	return pulumix.Output[GetOutboundConnectorsOutboundConnector]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The name of the availability domain.  Example: `Uocm:PHX-AD-1`
-func (o GetOutboundConnectorsOutboundConnectorOutput) AvailabilityDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOutboundConnectorsOutboundConnector) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
+func (o GetOutboundConnectorsOutboundConnectorOutput) AvailabilityDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOutboundConnectorsOutboundConnector) *string { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
 }
 
 // The LDAP Distinguished Name of the account.
-func (o GetOutboundConnectorsOutboundConnectorOutput) BindDistinguishedName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOutboundConnectorsOutboundConnector) string { return v.BindDistinguishedName }).(pulumi.StringOutput)
+func (o GetOutboundConnectorsOutboundConnectorOutput) BindDistinguishedName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOutboundConnectorsOutboundConnector) *string { return v.BindDistinguishedName }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-func (o GetOutboundConnectorsOutboundConnectorOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOutboundConnectorsOutboundConnector) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetOutboundConnectorsOutboundConnectorOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOutboundConnectorsOutboundConnector) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The account type of this outbound connector.
-func (o GetOutboundConnectorsOutboundConnectorOutput) ConnectorType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOutboundConnectorsOutboundConnector) string { return v.ConnectorType }).(pulumi.StringOutput)
+func (o GetOutboundConnectorsOutboundConnectorOutput) ConnectorType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOutboundConnectorsOutboundConnector) *string { return v.ConnectorType }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -4449,8 +3854,8 @@ func (o GetOutboundConnectorsOutboundConnectorOutput) DefinedTags() pulumi.MapOu
 }
 
 // A user-friendly name. It does not have to be unique, and it is changeable.  Example: `My resource`
-func (o GetOutboundConnectorsOutboundConnectorOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOutboundConnectorsOutboundConnector) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetOutboundConnectorsOutboundConnectorOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOutboundConnectorsOutboundConnector) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Array of server endpoints to use when connecting with the LDAP bind account.
@@ -4466,28 +3871,28 @@ func (o GetOutboundConnectorsOutboundConnectorOutput) FreeformTags() pulumi.MapO
 }
 
 // Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
-func (o GetOutboundConnectorsOutboundConnectorOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOutboundConnectorsOutboundConnector) string { return v.Id }).(pulumi.StringOutput)
+func (o GetOutboundConnectorsOutboundConnectorOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOutboundConnectorsOutboundConnector) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the password for the LDAP bind account in the Vault.
-func (o GetOutboundConnectorsOutboundConnectorOutput) PasswordSecretId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOutboundConnectorsOutboundConnector) string { return v.PasswordSecretId }).(pulumi.StringOutput)
+func (o GetOutboundConnectorsOutboundConnectorOutput) PasswordSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOutboundConnectorsOutboundConnector) *string { return v.PasswordSecretId }).(pulumi.StringPtrOutput)
 }
 
 // Version of the password secret in the Vault to use.
-func (o GetOutboundConnectorsOutboundConnectorOutput) PasswordSecretVersion() pulumi.IntOutput {
-	return o.ApplyT(func(v GetOutboundConnectorsOutboundConnector) int { return v.PasswordSecretVersion }).(pulumi.IntOutput)
+func (o GetOutboundConnectorsOutboundConnectorOutput) PasswordSecretVersion() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetOutboundConnectorsOutboundConnector) *int { return v.PasswordSecretVersion }).(pulumi.IntPtrOutput)
 }
 
 // Filter results by the specified lifecycle state. Must be a valid state for the resource type.
-func (o GetOutboundConnectorsOutboundConnectorOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOutboundConnectorsOutboundConnector) string { return v.State }).(pulumi.StringOutput)
+func (o GetOutboundConnectorsOutboundConnectorOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOutboundConnectorsOutboundConnector) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the outbound connector was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
-func (o GetOutboundConnectorsOutboundConnectorOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOutboundConnectorsOutboundConnector) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetOutboundConnectorsOutboundConnectorOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOutboundConnectorsOutboundConnector) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 type GetOutboundConnectorsOutboundConnectorArrayOutput struct{ *pulumi.OutputState }
@@ -4504,12 +3909,6 @@ func (o GetOutboundConnectorsOutboundConnectorArrayOutput) ToGetOutboundConnecto
 	return o
 }
 
-func (o GetOutboundConnectorsOutboundConnectorArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOutboundConnectorsOutboundConnector] {
-	return pulumix.Output[[]GetOutboundConnectorsOutboundConnector]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetOutboundConnectorsOutboundConnectorArrayOutput) Index(i pulumi.IntInput) GetOutboundConnectorsOutboundConnectorOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOutboundConnectorsOutboundConnector {
 		return vs[0].([]GetOutboundConnectorsOutboundConnector)[vs[1].(int)]
@@ -4518,9 +3917,9 @@ func (o GetOutboundConnectorsOutboundConnectorArrayOutput) Index(i pulumi.IntInp
 
 type GetOutboundConnectorsOutboundConnectorEndpoint struct {
 	// Name of the DNS server.
-	Hostname string `pulumi:"hostname"`
+	Hostname *string `pulumi:"hostname"`
 	// Port of the DNS server.
-	Port string `pulumi:"port"`
+	Port *string `pulumi:"port"`
 }
 
 // GetOutboundConnectorsOutboundConnectorEndpointInput is an input type that accepts GetOutboundConnectorsOutboundConnectorEndpointArgs and GetOutboundConnectorsOutboundConnectorEndpointOutput values.
@@ -4536,9 +3935,9 @@ type GetOutboundConnectorsOutboundConnectorEndpointInput interface {
 
 type GetOutboundConnectorsOutboundConnectorEndpointArgs struct {
 	// Name of the DNS server.
-	Hostname pulumi.StringInput `pulumi:"hostname"`
+	Hostname pulumi.StringPtrInput `pulumi:"hostname"`
 	// Port of the DNS server.
-	Port pulumi.StringInput `pulumi:"port"`
+	Port pulumi.StringPtrInput `pulumi:"port"`
 }
 
 func (GetOutboundConnectorsOutboundConnectorEndpointArgs) ElementType() reflect.Type {
@@ -4551,12 +3950,6 @@ func (i GetOutboundConnectorsOutboundConnectorEndpointArgs) ToGetOutboundConnect
 
 func (i GetOutboundConnectorsOutboundConnectorEndpointArgs) ToGetOutboundConnectorsOutboundConnectorEndpointOutputWithContext(ctx context.Context) GetOutboundConnectorsOutboundConnectorEndpointOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetOutboundConnectorsOutboundConnectorEndpointOutput)
-}
-
-func (i GetOutboundConnectorsOutboundConnectorEndpointArgs) ToOutput(ctx context.Context) pulumix.Output[GetOutboundConnectorsOutboundConnectorEndpoint] {
-	return pulumix.Output[GetOutboundConnectorsOutboundConnectorEndpoint]{
-		OutputState: i.ToGetOutboundConnectorsOutboundConnectorEndpointOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetOutboundConnectorsOutboundConnectorEndpointArrayInput is an input type that accepts GetOutboundConnectorsOutboundConnectorEndpointArray and GetOutboundConnectorsOutboundConnectorEndpointArrayOutput values.
@@ -4584,12 +3977,6 @@ func (i GetOutboundConnectorsOutboundConnectorEndpointArray) ToGetOutboundConnec
 	return pulumi.ToOutputWithContext(ctx, i).(GetOutboundConnectorsOutboundConnectorEndpointArrayOutput)
 }
 
-func (i GetOutboundConnectorsOutboundConnectorEndpointArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOutboundConnectorsOutboundConnectorEndpoint] {
-	return pulumix.Output[[]GetOutboundConnectorsOutboundConnectorEndpoint]{
-		OutputState: i.ToGetOutboundConnectorsOutboundConnectorEndpointArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetOutboundConnectorsOutboundConnectorEndpointOutput struct{ *pulumi.OutputState }
 
 func (GetOutboundConnectorsOutboundConnectorEndpointOutput) ElementType() reflect.Type {
@@ -4604,20 +3991,14 @@ func (o GetOutboundConnectorsOutboundConnectorEndpointOutput) ToGetOutboundConne
 	return o
 }
 
-func (o GetOutboundConnectorsOutboundConnectorEndpointOutput) ToOutput(ctx context.Context) pulumix.Output[GetOutboundConnectorsOutboundConnectorEndpoint] {
-	return pulumix.Output[GetOutboundConnectorsOutboundConnectorEndpoint]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Name of the DNS server.
-func (o GetOutboundConnectorsOutboundConnectorEndpointOutput) Hostname() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOutboundConnectorsOutboundConnectorEndpoint) string { return v.Hostname }).(pulumi.StringOutput)
+func (o GetOutboundConnectorsOutboundConnectorEndpointOutput) Hostname() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOutboundConnectorsOutboundConnectorEndpoint) *string { return v.Hostname }).(pulumi.StringPtrOutput)
 }
 
 // Port of the DNS server.
-func (o GetOutboundConnectorsOutboundConnectorEndpointOutput) Port() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOutboundConnectorsOutboundConnectorEndpoint) string { return v.Port }).(pulumi.StringOutput)
+func (o GetOutboundConnectorsOutboundConnectorEndpointOutput) Port() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOutboundConnectorsOutboundConnectorEndpoint) *string { return v.Port }).(pulumi.StringPtrOutput)
 }
 
 type GetOutboundConnectorsOutboundConnectorEndpointArrayOutput struct{ *pulumi.OutputState }
@@ -4632,12 +4013,6 @@ func (o GetOutboundConnectorsOutboundConnectorEndpointArrayOutput) ToGetOutbound
 
 func (o GetOutboundConnectorsOutboundConnectorEndpointArrayOutput) ToGetOutboundConnectorsOutboundConnectorEndpointArrayOutputWithContext(ctx context.Context) GetOutboundConnectorsOutboundConnectorEndpointArrayOutput {
 	return o
-}
-
-func (o GetOutboundConnectorsOutboundConnectorEndpointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOutboundConnectorsOutboundConnectorEndpoint] {
-	return pulumix.Output[[]GetOutboundConnectorsOutboundConnectorEndpoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetOutboundConnectorsOutboundConnectorEndpointArrayOutput) Index(i pulumi.IntInput) GetOutboundConnectorsOutboundConnectorEndpointOutput {
@@ -4681,12 +4056,6 @@ func (i GetReplicationTargetsFilterArgs) ToGetReplicationTargetsFilterOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetReplicationTargetsFilterOutput)
 }
 
-func (i GetReplicationTargetsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetReplicationTargetsFilter] {
-	return pulumix.Output[GetReplicationTargetsFilter]{
-		OutputState: i.ToGetReplicationTargetsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetReplicationTargetsFilterArrayInput is an input type that accepts GetReplicationTargetsFilterArray and GetReplicationTargetsFilterArrayOutput values.
 // You can construct a concrete instance of `GetReplicationTargetsFilterArrayInput` via:
 //
@@ -4712,12 +4081,6 @@ func (i GetReplicationTargetsFilterArray) ToGetReplicationTargetsFilterArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetReplicationTargetsFilterArrayOutput)
 }
 
-func (i GetReplicationTargetsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetReplicationTargetsFilter] {
-	return pulumix.Output[[]GetReplicationTargetsFilter]{
-		OutputState: i.ToGetReplicationTargetsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetReplicationTargetsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetReplicationTargetsFilterOutput) ElementType() reflect.Type {
@@ -4730,12 +4093,6 @@ func (o GetReplicationTargetsFilterOutput) ToGetReplicationTargetsFilterOutput()
 
 func (o GetReplicationTargetsFilterOutput) ToGetReplicationTargetsFilterOutputWithContext(ctx context.Context) GetReplicationTargetsFilterOutput {
 	return o
-}
-
-func (o GetReplicationTargetsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetReplicationTargetsFilter] {
-	return pulumix.Output[GetReplicationTargetsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetReplicationTargetsFilterOutput) Name() pulumi.StringOutput {
@@ -4764,12 +4121,6 @@ func (o GetReplicationTargetsFilterArrayOutput) ToGetReplicationTargetsFilterArr
 	return o
 }
 
-func (o GetReplicationTargetsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetReplicationTargetsFilter] {
-	return pulumix.Output[[]GetReplicationTargetsFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetReplicationTargetsFilterArrayOutput) Index(i pulumi.IntInput) GetReplicationTargetsFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetReplicationTargetsFilter {
 		return vs[0].([]GetReplicationTargetsFilter)[vs[1].(int)]
@@ -4778,37 +4129,37 @@ func (o GetReplicationTargetsFilterArrayOutput) Index(i pulumi.IntInput) GetRepl
 
 type GetReplicationTargetsReplicationTarget struct {
 	// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
-	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	AvailabilityDomain *string `pulumi:"availabilityDomain"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Percentage progress of the current replication cycle.
-	DeltaProgress string `pulumi:"deltaProgress"`
+	DeltaProgress *string `pulumi:"deltaProgress"`
 	// The current state of the snapshot during replication operations.
-	DeltaStatus string `pulumi:"deltaStatus"`
+	DeltaStatus *string `pulumi:"deltaStatus"`
 	// A user-friendly name. It does not have to be unique, and it is changeable.  Example: `My resource`
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last snapshot snapshot which was completely applied to the target file system. Empty while the initial snapshot is being applied.
-	LastSnapshotId string `pulumi:"lastSnapshotId"`
+	LastSnapshotId *string `pulumi:"lastSnapshotId"`
 	// Additional information about the current `lifecycleState`.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The snapshotTime of the most recent recoverable replication snapshot in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Example: `2021-04-04T20:01:29.100Z`
-	RecoveryPointTime string `pulumi:"recoveryPointTime"`
+	RecoveryPointTime *string `pulumi:"recoveryPointTime"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of replication.
-	ReplicationId string `pulumi:"replicationId"`
+	ReplicationId *string `pulumi:"replicationId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of source filesystem.
-	SourceId string `pulumi:"sourceId"`
+	SourceId *string `pulumi:"sourceId"`
 	// Filter results by the specified lifecycle state. Must be a valid state for the resource type.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of target filesystem.
-	TargetId string `pulumi:"targetId"`
+	TargetId *string `pulumi:"targetId"`
 	// The date and time the replication target was created in target region. in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Example: `2021-01-04T20:01:29.100Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 }
 
 // GetReplicationTargetsReplicationTargetInput is an input type that accepts GetReplicationTargetsReplicationTargetArgs and GetReplicationTargetsReplicationTargetOutput values.
@@ -4824,37 +4175,37 @@ type GetReplicationTargetsReplicationTargetInput interface {
 
 type GetReplicationTargetsReplicationTargetArgs struct {
 	// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
-	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
+	AvailabilityDomain pulumi.StringPtrInput `pulumi:"availabilityDomain"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// Percentage progress of the current replication cycle.
-	DeltaProgress pulumi.StringInput `pulumi:"deltaProgress"`
+	DeltaProgress pulumi.StringPtrInput `pulumi:"deltaProgress"`
 	// The current state of the snapshot during replication operations.
-	DeltaStatus pulumi.StringInput `pulumi:"deltaStatus"`
+	DeltaStatus pulumi.StringPtrInput `pulumi:"deltaStatus"`
 	// A user-friendly name. It does not have to be unique, and it is changeable.  Example: `My resource`
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last snapshot snapshot which was completely applied to the target file system. Empty while the initial snapshot is being applied.
-	LastSnapshotId pulumi.StringInput `pulumi:"lastSnapshotId"`
+	LastSnapshotId pulumi.StringPtrInput `pulumi:"lastSnapshotId"`
 	// Additional information about the current `lifecycleState`.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// The snapshotTime of the most recent recoverable replication snapshot in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Example: `2021-04-04T20:01:29.100Z`
-	RecoveryPointTime pulumi.StringInput `pulumi:"recoveryPointTime"`
+	RecoveryPointTime pulumi.StringPtrInput `pulumi:"recoveryPointTime"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of replication.
-	ReplicationId pulumi.StringInput `pulumi:"replicationId"`
+	ReplicationId pulumi.StringPtrInput `pulumi:"replicationId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of source filesystem.
-	SourceId pulumi.StringInput `pulumi:"sourceId"`
+	SourceId pulumi.StringPtrInput `pulumi:"sourceId"`
 	// Filter results by the specified lifecycle state. Must be a valid state for the resource type.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of target filesystem.
-	TargetId pulumi.StringInput `pulumi:"targetId"`
+	TargetId pulumi.StringPtrInput `pulumi:"targetId"`
 	// The date and time the replication target was created in target region. in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Example: `2021-01-04T20:01:29.100Z`
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 }
 
 func (GetReplicationTargetsReplicationTargetArgs) ElementType() reflect.Type {
@@ -4867,12 +4218,6 @@ func (i GetReplicationTargetsReplicationTargetArgs) ToGetReplicationTargetsRepli
 
 func (i GetReplicationTargetsReplicationTargetArgs) ToGetReplicationTargetsReplicationTargetOutputWithContext(ctx context.Context) GetReplicationTargetsReplicationTargetOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetReplicationTargetsReplicationTargetOutput)
-}
-
-func (i GetReplicationTargetsReplicationTargetArgs) ToOutput(ctx context.Context) pulumix.Output[GetReplicationTargetsReplicationTarget] {
-	return pulumix.Output[GetReplicationTargetsReplicationTarget]{
-		OutputState: i.ToGetReplicationTargetsReplicationTargetOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetReplicationTargetsReplicationTargetArrayInput is an input type that accepts GetReplicationTargetsReplicationTargetArray and GetReplicationTargetsReplicationTargetArrayOutput values.
@@ -4900,12 +4245,6 @@ func (i GetReplicationTargetsReplicationTargetArray) ToGetReplicationTargetsRepl
 	return pulumi.ToOutputWithContext(ctx, i).(GetReplicationTargetsReplicationTargetArrayOutput)
 }
 
-func (i GetReplicationTargetsReplicationTargetArray) ToOutput(ctx context.Context) pulumix.Output[[]GetReplicationTargetsReplicationTarget] {
-	return pulumix.Output[[]GetReplicationTargetsReplicationTarget]{
-		OutputState: i.ToGetReplicationTargetsReplicationTargetArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetReplicationTargetsReplicationTargetOutput struct{ *pulumi.OutputState }
 
 func (GetReplicationTargetsReplicationTargetOutput) ElementType() reflect.Type {
@@ -4920,20 +4259,14 @@ func (o GetReplicationTargetsReplicationTargetOutput) ToGetReplicationTargetsRep
 	return o
 }
 
-func (o GetReplicationTargetsReplicationTargetOutput) ToOutput(ctx context.Context) pulumix.Output[GetReplicationTargetsReplicationTarget] {
-	return pulumix.Output[GetReplicationTargetsReplicationTarget]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The name of the availability domain.  Example: `Uocm:PHX-AD-1`
-func (o GetReplicationTargetsReplicationTargetOutput) AvailabilityDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v GetReplicationTargetsReplicationTarget) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
+func (o GetReplicationTargetsReplicationTargetOutput) AvailabilityDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetReplicationTargetsReplicationTarget) *string { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-func (o GetReplicationTargetsReplicationTargetOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetReplicationTargetsReplicationTarget) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetReplicationTargetsReplicationTargetOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetReplicationTargetsReplicationTarget) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -4942,18 +4275,18 @@ func (o GetReplicationTargetsReplicationTargetOutput) DefinedTags() pulumi.MapOu
 }
 
 // Percentage progress of the current replication cycle.
-func (o GetReplicationTargetsReplicationTargetOutput) DeltaProgress() pulumi.StringOutput {
-	return o.ApplyT(func(v GetReplicationTargetsReplicationTarget) string { return v.DeltaProgress }).(pulumi.StringOutput)
+func (o GetReplicationTargetsReplicationTargetOutput) DeltaProgress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetReplicationTargetsReplicationTarget) *string { return v.DeltaProgress }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the snapshot during replication operations.
-func (o GetReplicationTargetsReplicationTargetOutput) DeltaStatus() pulumi.StringOutput {
-	return o.ApplyT(func(v GetReplicationTargetsReplicationTarget) string { return v.DeltaStatus }).(pulumi.StringOutput)
+func (o GetReplicationTargetsReplicationTargetOutput) DeltaStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetReplicationTargetsReplicationTarget) *string { return v.DeltaStatus }).(pulumi.StringPtrOutput)
 }
 
 // A user-friendly name. It does not have to be unique, and it is changeable.  Example: `My resource`
-func (o GetReplicationTargetsReplicationTargetOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetReplicationTargetsReplicationTarget) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetReplicationTargetsReplicationTargetOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetReplicationTargetsReplicationTarget) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -4962,48 +4295,48 @@ func (o GetReplicationTargetsReplicationTargetOutput) FreeformTags() pulumi.MapO
 }
 
 // Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
-func (o GetReplicationTargetsReplicationTargetOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetReplicationTargetsReplicationTarget) string { return v.Id }).(pulumi.StringOutput)
+func (o GetReplicationTargetsReplicationTargetOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetReplicationTargetsReplicationTarget) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last snapshot snapshot which was completely applied to the target file system. Empty while the initial snapshot is being applied.
-func (o GetReplicationTargetsReplicationTargetOutput) LastSnapshotId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetReplicationTargetsReplicationTarget) string { return v.LastSnapshotId }).(pulumi.StringOutput)
+func (o GetReplicationTargetsReplicationTargetOutput) LastSnapshotId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetReplicationTargetsReplicationTarget) *string { return v.LastSnapshotId }).(pulumi.StringPtrOutput)
 }
 
 // Additional information about the current `lifecycleState`.
-func (o GetReplicationTargetsReplicationTargetOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetReplicationTargetsReplicationTarget) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetReplicationTargetsReplicationTargetOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetReplicationTargetsReplicationTarget) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The snapshotTime of the most recent recoverable replication snapshot in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Example: `2021-04-04T20:01:29.100Z`
-func (o GetReplicationTargetsReplicationTargetOutput) RecoveryPointTime() pulumi.StringOutput {
-	return o.ApplyT(func(v GetReplicationTargetsReplicationTarget) string { return v.RecoveryPointTime }).(pulumi.StringOutput)
+func (o GetReplicationTargetsReplicationTargetOutput) RecoveryPointTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetReplicationTargetsReplicationTarget) *string { return v.RecoveryPointTime }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of replication.
-func (o GetReplicationTargetsReplicationTargetOutput) ReplicationId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetReplicationTargetsReplicationTarget) string { return v.ReplicationId }).(pulumi.StringOutput)
+func (o GetReplicationTargetsReplicationTargetOutput) ReplicationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetReplicationTargetsReplicationTarget) *string { return v.ReplicationId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of source filesystem.
-func (o GetReplicationTargetsReplicationTargetOutput) SourceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetReplicationTargetsReplicationTarget) string { return v.SourceId }).(pulumi.StringOutput)
+func (o GetReplicationTargetsReplicationTargetOutput) SourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetReplicationTargetsReplicationTarget) *string { return v.SourceId }).(pulumi.StringPtrOutput)
 }
 
 // Filter results by the specified lifecycle state. Must be a valid state for the resource type.
-func (o GetReplicationTargetsReplicationTargetOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetReplicationTargetsReplicationTarget) string { return v.State }).(pulumi.StringOutput)
+func (o GetReplicationTargetsReplicationTargetOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetReplicationTargetsReplicationTarget) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of target filesystem.
-func (o GetReplicationTargetsReplicationTargetOutput) TargetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetReplicationTargetsReplicationTarget) string { return v.TargetId }).(pulumi.StringOutput)
+func (o GetReplicationTargetsReplicationTargetOutput) TargetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetReplicationTargetsReplicationTarget) *string { return v.TargetId }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the replication target was created in target region. in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Example: `2021-01-04T20:01:29.100Z`
-func (o GetReplicationTargetsReplicationTargetOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetReplicationTargetsReplicationTarget) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetReplicationTargetsReplicationTargetOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetReplicationTargetsReplicationTarget) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 type GetReplicationTargetsReplicationTargetArrayOutput struct{ *pulumi.OutputState }
@@ -5018,12 +4351,6 @@ func (o GetReplicationTargetsReplicationTargetArrayOutput) ToGetReplicationTarge
 
 func (o GetReplicationTargetsReplicationTargetArrayOutput) ToGetReplicationTargetsReplicationTargetArrayOutputWithContext(ctx context.Context) GetReplicationTargetsReplicationTargetArrayOutput {
 	return o
-}
-
-func (o GetReplicationTargetsReplicationTargetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetReplicationTargetsReplicationTarget] {
-	return pulumix.Output[[]GetReplicationTargetsReplicationTarget]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetReplicationTargetsReplicationTargetArrayOutput) Index(i pulumi.IntInput) GetReplicationTargetsReplicationTargetOutput {
@@ -5067,12 +4394,6 @@ func (i GetReplicationsFilterArgs) ToGetReplicationsFilterOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetReplicationsFilterOutput)
 }
 
-func (i GetReplicationsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetReplicationsFilter] {
-	return pulumix.Output[GetReplicationsFilter]{
-		OutputState: i.ToGetReplicationsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetReplicationsFilterArrayInput is an input type that accepts GetReplicationsFilterArray and GetReplicationsFilterArrayOutput values.
 // You can construct a concrete instance of `GetReplicationsFilterArrayInput` via:
 //
@@ -5098,12 +4419,6 @@ func (i GetReplicationsFilterArray) ToGetReplicationsFilterArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetReplicationsFilterArrayOutput)
 }
 
-func (i GetReplicationsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetReplicationsFilter] {
-	return pulumix.Output[[]GetReplicationsFilter]{
-		OutputState: i.ToGetReplicationsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetReplicationsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetReplicationsFilterOutput) ElementType() reflect.Type {
@@ -5116,12 +4431,6 @@ func (o GetReplicationsFilterOutput) ToGetReplicationsFilterOutput() GetReplicat
 
 func (o GetReplicationsFilterOutput) ToGetReplicationsFilterOutputWithContext(ctx context.Context) GetReplicationsFilterOutput {
 	return o
-}
-
-func (o GetReplicationsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetReplicationsFilter] {
-	return pulumix.Output[GetReplicationsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetReplicationsFilterOutput) Name() pulumi.StringOutput {
@@ -5150,12 +4459,6 @@ func (o GetReplicationsFilterArrayOutput) ToGetReplicationsFilterArrayOutputWith
 	return o
 }
 
-func (o GetReplicationsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetReplicationsFilter] {
-	return pulumix.Output[[]GetReplicationsFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetReplicationsFilterArrayOutput) Index(i pulumi.IntInput) GetReplicationsFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetReplicationsFilter {
 		return vs[0].([]GetReplicationsFilter)[vs[1].(int)]
@@ -5164,39 +4467,39 @@ func (o GetReplicationsFilterArrayOutput) Index(i pulumi.IntInput) GetReplicatio
 
 type GetReplicationsReplication struct {
 	// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
-	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	AvailabilityDomain *string `pulumi:"availabilityDomain"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Percentage progress of the current replication cycle.
-	DeltaProgress string `pulumi:"deltaProgress"`
+	DeltaProgress *string `pulumi:"deltaProgress"`
 	// The current state of the snapshot during replication operations.
-	DeltaStatus string `pulumi:"deltaStatus"`
+	DeltaStatus *string `pulumi:"deltaStatus"`
 	// A user-friendly name. It does not have to be unique, and it is changeable.  Example: `My resource`
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last snapshot that has been replicated completely. Empty if the copy of the initial snapshot is not complete.
-	LastSnapshotId string `pulumi:"lastSnapshotId"`
+	LastSnapshotId *string `pulumi:"lastSnapshotId"`
 	// Additional information about the current 'lifecycleState'.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The [`snapshotTime`](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Snapshot/snapshotTime) of the most recent recoverable replication snapshot in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Example: `2021-04-04T20:01:29.100Z`
-	RecoveryPointTime string `pulumi:"recoveryPointTime"`
+	RecoveryPointTime *string `pulumi:"recoveryPointTime"`
 	// Duration in minutes between replication snapshots.
-	ReplicationInterval string `pulumi:"replicationInterval"`
+	ReplicationInterval *string `pulumi:"replicationInterval"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [`ReplicationTarget`](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ReplicationTarget).
-	ReplicationTargetId string `pulumi:"replicationTargetId"`
+	ReplicationTargetId *string `pulumi:"replicationTargetId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source file system.
-	SourceId string `pulumi:"sourceId"`
+	SourceId *string `pulumi:"sourceId"`
 	// Filter results by the specified lifecycle state. Must be a valid state for the resource type.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target file system.
-	TargetId string `pulumi:"targetId"`
+	TargetId *string `pulumi:"targetId"`
 	// The date and time the replication was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2021-01-04T20:01:29.100Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 }
 
 // GetReplicationsReplicationInput is an input type that accepts GetReplicationsReplicationArgs and GetReplicationsReplicationOutput values.
@@ -5212,39 +4515,39 @@ type GetReplicationsReplicationInput interface {
 
 type GetReplicationsReplicationArgs struct {
 	// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
-	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
+	AvailabilityDomain pulumi.StringPtrInput `pulumi:"availabilityDomain"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// Percentage progress of the current replication cycle.
-	DeltaProgress pulumi.StringInput `pulumi:"deltaProgress"`
+	DeltaProgress pulumi.StringPtrInput `pulumi:"deltaProgress"`
 	// The current state of the snapshot during replication operations.
-	DeltaStatus pulumi.StringInput `pulumi:"deltaStatus"`
+	DeltaStatus pulumi.StringPtrInput `pulumi:"deltaStatus"`
 	// A user-friendly name. It does not have to be unique, and it is changeable.  Example: `My resource`
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last snapshot that has been replicated completely. Empty if the copy of the initial snapshot is not complete.
-	LastSnapshotId pulumi.StringInput `pulumi:"lastSnapshotId"`
+	LastSnapshotId pulumi.StringPtrInput `pulumi:"lastSnapshotId"`
 	// Additional information about the current 'lifecycleState'.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// The [`snapshotTime`](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Snapshot/snapshotTime) of the most recent recoverable replication snapshot in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Example: `2021-04-04T20:01:29.100Z`
-	RecoveryPointTime pulumi.StringInput `pulumi:"recoveryPointTime"`
+	RecoveryPointTime pulumi.StringPtrInput `pulumi:"recoveryPointTime"`
 	// Duration in minutes between replication snapshots.
-	ReplicationInterval pulumi.StringInput `pulumi:"replicationInterval"`
+	ReplicationInterval pulumi.StringPtrInput `pulumi:"replicationInterval"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [`ReplicationTarget`](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ReplicationTarget).
-	ReplicationTargetId pulumi.StringInput `pulumi:"replicationTargetId"`
+	ReplicationTargetId pulumi.StringPtrInput `pulumi:"replicationTargetId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source file system.
-	SourceId pulumi.StringInput `pulumi:"sourceId"`
+	SourceId pulumi.StringPtrInput `pulumi:"sourceId"`
 	// Filter results by the specified lifecycle state. Must be a valid state for the resource type.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target file system.
-	TargetId pulumi.StringInput `pulumi:"targetId"`
+	TargetId pulumi.StringPtrInput `pulumi:"targetId"`
 	// The date and time the replication was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2021-01-04T20:01:29.100Z`
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 }
 
 func (GetReplicationsReplicationArgs) ElementType() reflect.Type {
@@ -5257,12 +4560,6 @@ func (i GetReplicationsReplicationArgs) ToGetReplicationsReplicationOutput() Get
 
 func (i GetReplicationsReplicationArgs) ToGetReplicationsReplicationOutputWithContext(ctx context.Context) GetReplicationsReplicationOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetReplicationsReplicationOutput)
-}
-
-func (i GetReplicationsReplicationArgs) ToOutput(ctx context.Context) pulumix.Output[GetReplicationsReplication] {
-	return pulumix.Output[GetReplicationsReplication]{
-		OutputState: i.ToGetReplicationsReplicationOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetReplicationsReplicationArrayInput is an input type that accepts GetReplicationsReplicationArray and GetReplicationsReplicationArrayOutput values.
@@ -5290,12 +4587,6 @@ func (i GetReplicationsReplicationArray) ToGetReplicationsReplicationArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetReplicationsReplicationArrayOutput)
 }
 
-func (i GetReplicationsReplicationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetReplicationsReplication] {
-	return pulumix.Output[[]GetReplicationsReplication]{
-		OutputState: i.ToGetReplicationsReplicationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetReplicationsReplicationOutput struct{ *pulumi.OutputState }
 
 func (GetReplicationsReplicationOutput) ElementType() reflect.Type {
@@ -5310,20 +4601,14 @@ func (o GetReplicationsReplicationOutput) ToGetReplicationsReplicationOutputWith
 	return o
 }
 
-func (o GetReplicationsReplicationOutput) ToOutput(ctx context.Context) pulumix.Output[GetReplicationsReplication] {
-	return pulumix.Output[GetReplicationsReplication]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The name of the availability domain.  Example: `Uocm:PHX-AD-1`
-func (o GetReplicationsReplicationOutput) AvailabilityDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v GetReplicationsReplication) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
+func (o GetReplicationsReplicationOutput) AvailabilityDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetReplicationsReplication) *string { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-func (o GetReplicationsReplicationOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetReplicationsReplication) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetReplicationsReplicationOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetReplicationsReplication) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -5332,18 +4617,18 @@ func (o GetReplicationsReplicationOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // Percentage progress of the current replication cycle.
-func (o GetReplicationsReplicationOutput) DeltaProgress() pulumi.StringOutput {
-	return o.ApplyT(func(v GetReplicationsReplication) string { return v.DeltaProgress }).(pulumi.StringOutput)
+func (o GetReplicationsReplicationOutput) DeltaProgress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetReplicationsReplication) *string { return v.DeltaProgress }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the snapshot during replication operations.
-func (o GetReplicationsReplicationOutput) DeltaStatus() pulumi.StringOutput {
-	return o.ApplyT(func(v GetReplicationsReplication) string { return v.DeltaStatus }).(pulumi.StringOutput)
+func (o GetReplicationsReplicationOutput) DeltaStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetReplicationsReplication) *string { return v.DeltaStatus }).(pulumi.StringPtrOutput)
 }
 
 // A user-friendly name. It does not have to be unique, and it is changeable.  Example: `My resource`
-func (o GetReplicationsReplicationOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetReplicationsReplication) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetReplicationsReplicationOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetReplicationsReplication) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -5352,53 +4637,53 @@ func (o GetReplicationsReplicationOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
-func (o GetReplicationsReplicationOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetReplicationsReplication) string { return v.Id }).(pulumi.StringOutput)
+func (o GetReplicationsReplicationOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetReplicationsReplication) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last snapshot that has been replicated completely. Empty if the copy of the initial snapshot is not complete.
-func (o GetReplicationsReplicationOutput) LastSnapshotId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetReplicationsReplication) string { return v.LastSnapshotId }).(pulumi.StringOutput)
+func (o GetReplicationsReplicationOutput) LastSnapshotId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetReplicationsReplication) *string { return v.LastSnapshotId }).(pulumi.StringPtrOutput)
 }
 
 // Additional information about the current 'lifecycleState'.
-func (o GetReplicationsReplicationOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetReplicationsReplication) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetReplicationsReplicationOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetReplicationsReplication) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The [`snapshotTime`](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Snapshot/snapshotTime) of the most recent recoverable replication snapshot in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Example: `2021-04-04T20:01:29.100Z`
-func (o GetReplicationsReplicationOutput) RecoveryPointTime() pulumi.StringOutput {
-	return o.ApplyT(func(v GetReplicationsReplication) string { return v.RecoveryPointTime }).(pulumi.StringOutput)
+func (o GetReplicationsReplicationOutput) RecoveryPointTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetReplicationsReplication) *string { return v.RecoveryPointTime }).(pulumi.StringPtrOutput)
 }
 
 // Duration in minutes between replication snapshots.
-func (o GetReplicationsReplicationOutput) ReplicationInterval() pulumi.StringOutput {
-	return o.ApplyT(func(v GetReplicationsReplication) string { return v.ReplicationInterval }).(pulumi.StringOutput)
+func (o GetReplicationsReplicationOutput) ReplicationInterval() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetReplicationsReplication) *string { return v.ReplicationInterval }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [`ReplicationTarget`](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ReplicationTarget).
-func (o GetReplicationsReplicationOutput) ReplicationTargetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetReplicationsReplication) string { return v.ReplicationTargetId }).(pulumi.StringOutput)
+func (o GetReplicationsReplicationOutput) ReplicationTargetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetReplicationsReplication) *string { return v.ReplicationTargetId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source file system.
-func (o GetReplicationsReplicationOutput) SourceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetReplicationsReplication) string { return v.SourceId }).(pulumi.StringOutput)
+func (o GetReplicationsReplicationOutput) SourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetReplicationsReplication) *string { return v.SourceId }).(pulumi.StringPtrOutput)
 }
 
 // Filter results by the specified lifecycle state. Must be a valid state for the resource type.
-func (o GetReplicationsReplicationOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetReplicationsReplication) string { return v.State }).(pulumi.StringOutput)
+func (o GetReplicationsReplicationOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetReplicationsReplication) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target file system.
-func (o GetReplicationsReplicationOutput) TargetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetReplicationsReplication) string { return v.TargetId }).(pulumi.StringOutput)
+func (o GetReplicationsReplicationOutput) TargetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetReplicationsReplication) *string { return v.TargetId }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the replication was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2021-01-04T20:01:29.100Z`
-func (o GetReplicationsReplicationOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetReplicationsReplication) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetReplicationsReplicationOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetReplicationsReplication) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 type GetReplicationsReplicationArrayOutput struct{ *pulumi.OutputState }
@@ -5413,12 +4698,6 @@ func (o GetReplicationsReplicationArrayOutput) ToGetReplicationsReplicationArray
 
 func (o GetReplicationsReplicationArrayOutput) ToGetReplicationsReplicationArrayOutputWithContext(ctx context.Context) GetReplicationsReplicationArrayOutput {
 	return o
-}
-
-func (o GetReplicationsReplicationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetReplicationsReplication] {
-	return pulumix.Output[[]GetReplicationsReplication]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetReplicationsReplicationArrayOutput) Index(i pulumi.IntInput) GetReplicationsReplicationOutput {
@@ -5464,12 +4743,6 @@ func (i GetSnapshotsFilterArgs) ToGetSnapshotsFilterOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetSnapshotsFilterOutput)
 }
 
-func (i GetSnapshotsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetSnapshotsFilter] {
-	return pulumix.Output[GetSnapshotsFilter]{
-		OutputState: i.ToGetSnapshotsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetSnapshotsFilterArrayInput is an input type that accepts GetSnapshotsFilterArray and GetSnapshotsFilterArrayOutput values.
 // You can construct a concrete instance of `GetSnapshotsFilterArrayInput` via:
 //
@@ -5495,12 +4768,6 @@ func (i GetSnapshotsFilterArray) ToGetSnapshotsFilterArrayOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetSnapshotsFilterArrayOutput)
 }
 
-func (i GetSnapshotsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSnapshotsFilter] {
-	return pulumix.Output[[]GetSnapshotsFilter]{
-		OutputState: i.ToGetSnapshotsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSnapshotsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetSnapshotsFilterOutput) ElementType() reflect.Type {
@@ -5513,12 +4780,6 @@ func (o GetSnapshotsFilterOutput) ToGetSnapshotsFilterOutput() GetSnapshotsFilte
 
 func (o GetSnapshotsFilterOutput) ToGetSnapshotsFilterOutputWithContext(ctx context.Context) GetSnapshotsFilterOutput {
 	return o
-}
-
-func (o GetSnapshotsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetSnapshotsFilter] {
-	return pulumix.Output[GetSnapshotsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Name of the snapshot. This value is immutable.
@@ -5548,12 +4809,6 @@ func (o GetSnapshotsFilterArrayOutput) ToGetSnapshotsFilterArrayOutputWithContex
 	return o
 }
 
-func (o GetSnapshotsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSnapshotsFilter] {
-	return pulumix.Output[[]GetSnapshotsFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSnapshotsFilterArrayOutput) Index(i pulumi.IntInput) GetSnapshotsFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSnapshotsFilter {
 		return vs[0].([]GetSnapshotsFilter)[vs[1].(int)]
@@ -5564,34 +4819,34 @@ type GetSnapshotsSnapshot struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The time when this snapshot will be deleted.
-	ExpirationTime string `pulumi:"expirationTime"`
+	ExpirationTime *string `pulumi:"expirationTime"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system.
-	FileSystemId string `pulumi:"fileSystemId"`
+	FileSystemId *string `pulumi:"fileSystemId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that is used to create the snapshots.
-	FilesystemSnapshotPolicyId string `pulumi:"filesystemSnapshotPolicyId"`
+	FilesystemSnapshotPolicyId *string `pulumi:"filesystemSnapshotPolicyId"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Specifies whether the snapshot has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
-	IsCloneSource bool `pulumi:"isCloneSource"`
+	IsCloneSource *bool `pulumi:"isCloneSource"`
 	// Additional information about the current `lifecycleState`.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Name of the snapshot. This value is immutable.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) identifying the parent from which this snapshot was cloned. If this snapshot was not cloned, then the `provenanceId` is the same as the snapshot `id` value. If this snapshot was cloned, then the `provenanceId` value is the parent's `provenanceId`. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
-	ProvenanceId string `pulumi:"provenanceId"`
+	ProvenanceId *string `pulumi:"provenanceId"`
 	// The date and time the snapshot was taken, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. This value might be the same or different from `timeCreated` depending on the following factors:
 	// * If the snapshot is created in the original file system directory.
 	// * If the snapshot is cloned from a file system.
 	// * If the snapshot is replicated from a file system.
-	SnapshotTime string `pulumi:"snapshotTime"`
+	SnapshotTime *string `pulumi:"snapshotTime"`
 	// Specifies the generation type of the snapshot.
-	SnapshotType string `pulumi:"snapshotType"`
+	SnapshotType *string `pulumi:"snapshotType"`
 	// Filter results by the specified lifecycle state. Must be a valid state for the resource type.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the snapshot was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 }
 
 // GetSnapshotsSnapshotInput is an input type that accepts GetSnapshotsSnapshotArgs and GetSnapshotsSnapshotOutput values.
@@ -5609,34 +4864,34 @@ type GetSnapshotsSnapshotArgs struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// The time when this snapshot will be deleted.
-	ExpirationTime pulumi.StringInput `pulumi:"expirationTime"`
+	ExpirationTime pulumi.StringPtrInput `pulumi:"expirationTime"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system.
-	FileSystemId pulumi.StringInput `pulumi:"fileSystemId"`
+	FileSystemId pulumi.StringPtrInput `pulumi:"fileSystemId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that is used to create the snapshots.
-	FilesystemSnapshotPolicyId pulumi.StringInput `pulumi:"filesystemSnapshotPolicyId"`
+	FilesystemSnapshotPolicyId pulumi.StringPtrInput `pulumi:"filesystemSnapshotPolicyId"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Specifies whether the snapshot has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
-	IsCloneSource pulumi.BoolInput `pulumi:"isCloneSource"`
+	IsCloneSource pulumi.BoolPtrInput `pulumi:"isCloneSource"`
 	// Additional information about the current `lifecycleState`.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// Name of the snapshot. This value is immutable.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) identifying the parent from which this snapshot was cloned. If this snapshot was not cloned, then the `provenanceId` is the same as the snapshot `id` value. If this snapshot was cloned, then the `provenanceId` value is the parent's `provenanceId`. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
-	ProvenanceId pulumi.StringInput `pulumi:"provenanceId"`
+	ProvenanceId pulumi.StringPtrInput `pulumi:"provenanceId"`
 	// The date and time the snapshot was taken, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. This value might be the same or different from `timeCreated` depending on the following factors:
 	// * If the snapshot is created in the original file system directory.
 	// * If the snapshot is cloned from a file system.
 	// * If the snapshot is replicated from a file system.
-	SnapshotTime pulumi.StringInput `pulumi:"snapshotTime"`
+	SnapshotTime pulumi.StringPtrInput `pulumi:"snapshotTime"`
 	// Specifies the generation type of the snapshot.
-	SnapshotType pulumi.StringInput `pulumi:"snapshotType"`
+	SnapshotType pulumi.StringPtrInput `pulumi:"snapshotType"`
 	// Filter results by the specified lifecycle state. Must be a valid state for the resource type.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The date and time the snapshot was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 }
 
 func (GetSnapshotsSnapshotArgs) ElementType() reflect.Type {
@@ -5649,12 +4904,6 @@ func (i GetSnapshotsSnapshotArgs) ToGetSnapshotsSnapshotOutput() GetSnapshotsSna
 
 func (i GetSnapshotsSnapshotArgs) ToGetSnapshotsSnapshotOutputWithContext(ctx context.Context) GetSnapshotsSnapshotOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSnapshotsSnapshotOutput)
-}
-
-func (i GetSnapshotsSnapshotArgs) ToOutput(ctx context.Context) pulumix.Output[GetSnapshotsSnapshot] {
-	return pulumix.Output[GetSnapshotsSnapshot]{
-		OutputState: i.ToGetSnapshotsSnapshotOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSnapshotsSnapshotArrayInput is an input type that accepts GetSnapshotsSnapshotArray and GetSnapshotsSnapshotArrayOutput values.
@@ -5682,12 +4931,6 @@ func (i GetSnapshotsSnapshotArray) ToGetSnapshotsSnapshotArrayOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetSnapshotsSnapshotArrayOutput)
 }
 
-func (i GetSnapshotsSnapshotArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSnapshotsSnapshot] {
-	return pulumix.Output[[]GetSnapshotsSnapshot]{
-		OutputState: i.ToGetSnapshotsSnapshotArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSnapshotsSnapshotOutput struct{ *pulumi.OutputState }
 
 func (GetSnapshotsSnapshotOutput) ElementType() reflect.Type {
@@ -5702,30 +4945,24 @@ func (o GetSnapshotsSnapshotOutput) ToGetSnapshotsSnapshotOutputWithContext(ctx 
 	return o
 }
 
-func (o GetSnapshotsSnapshotOutput) ToOutput(ctx context.Context) pulumix.Output[GetSnapshotsSnapshot] {
-	return pulumix.Output[GetSnapshotsSnapshot]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 func (o GetSnapshotsSnapshotOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetSnapshotsSnapshot) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
 // The time when this snapshot will be deleted.
-func (o GetSnapshotsSnapshotOutput) ExpirationTime() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSnapshotsSnapshot) string { return v.ExpirationTime }).(pulumi.StringOutput)
+func (o GetSnapshotsSnapshotOutput) ExpirationTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSnapshotsSnapshot) *string { return v.ExpirationTime }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system.
-func (o GetSnapshotsSnapshotOutput) FileSystemId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSnapshotsSnapshot) string { return v.FileSystemId }).(pulumi.StringOutput)
+func (o GetSnapshotsSnapshotOutput) FileSystemId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSnapshotsSnapshot) *string { return v.FileSystemId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that is used to create the snapshots.
-func (o GetSnapshotsSnapshotOutput) FilesystemSnapshotPolicyId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSnapshotsSnapshot) string { return v.FilesystemSnapshotPolicyId }).(pulumi.StringOutput)
+func (o GetSnapshotsSnapshotOutput) FilesystemSnapshotPolicyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSnapshotsSnapshot) *string { return v.FilesystemSnapshotPolicyId }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -5734,51 +4971,51 @@ func (o GetSnapshotsSnapshotOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
-func (o GetSnapshotsSnapshotOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSnapshotsSnapshot) string { return v.Id }).(pulumi.StringOutput)
+func (o GetSnapshotsSnapshotOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSnapshotsSnapshot) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Specifies whether the snapshot has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
-func (o GetSnapshotsSnapshotOutput) IsCloneSource() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSnapshotsSnapshot) bool { return v.IsCloneSource }).(pulumi.BoolOutput)
+func (o GetSnapshotsSnapshotOutput) IsCloneSource() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSnapshotsSnapshot) *bool { return v.IsCloneSource }).(pulumi.BoolPtrOutput)
 }
 
 // Additional information about the current `lifecycleState`.
-func (o GetSnapshotsSnapshotOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSnapshotsSnapshot) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetSnapshotsSnapshotOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSnapshotsSnapshot) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // Name of the snapshot. This value is immutable.
-func (o GetSnapshotsSnapshotOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSnapshotsSnapshot) string { return v.Name }).(pulumi.StringOutput)
+func (o GetSnapshotsSnapshotOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSnapshotsSnapshot) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) identifying the parent from which this snapshot was cloned. If this snapshot was not cloned, then the `provenanceId` is the same as the snapshot `id` value. If this snapshot was cloned, then the `provenanceId` value is the parent's `provenanceId`. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
-func (o GetSnapshotsSnapshotOutput) ProvenanceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSnapshotsSnapshot) string { return v.ProvenanceId }).(pulumi.StringOutput)
+func (o GetSnapshotsSnapshotOutput) ProvenanceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSnapshotsSnapshot) *string { return v.ProvenanceId }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the snapshot was taken, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. This value might be the same or different from `timeCreated` depending on the following factors:
 // * If the snapshot is created in the original file system directory.
 // * If the snapshot is cloned from a file system.
 // * If the snapshot is replicated from a file system.
-func (o GetSnapshotsSnapshotOutput) SnapshotTime() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSnapshotsSnapshot) string { return v.SnapshotTime }).(pulumi.StringOutput)
+func (o GetSnapshotsSnapshotOutput) SnapshotTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSnapshotsSnapshot) *string { return v.SnapshotTime }).(pulumi.StringPtrOutput)
 }
 
 // Specifies the generation type of the snapshot.
-func (o GetSnapshotsSnapshotOutput) SnapshotType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSnapshotsSnapshot) string { return v.SnapshotType }).(pulumi.StringOutput)
+func (o GetSnapshotsSnapshotOutput) SnapshotType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSnapshotsSnapshot) *string { return v.SnapshotType }).(pulumi.StringPtrOutput)
 }
 
 // Filter results by the specified lifecycle state. Must be a valid state for the resource type.
-func (o GetSnapshotsSnapshotOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSnapshotsSnapshot) string { return v.State }).(pulumi.StringOutput)
+func (o GetSnapshotsSnapshotOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSnapshotsSnapshot) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the snapshot was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
-func (o GetSnapshotsSnapshotOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSnapshotsSnapshot) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetSnapshotsSnapshotOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSnapshotsSnapshot) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 type GetSnapshotsSnapshotArrayOutput struct{ *pulumi.OutputState }
@@ -5793,12 +5030,6 @@ func (o GetSnapshotsSnapshotArrayOutput) ToGetSnapshotsSnapshotArrayOutput() Get
 
 func (o GetSnapshotsSnapshotArrayOutput) ToGetSnapshotsSnapshotArrayOutputWithContext(ctx context.Context) GetSnapshotsSnapshotArrayOutput {
 	return o
-}
-
-func (o GetSnapshotsSnapshotArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSnapshotsSnapshot] {
-	return pulumix.Output[[]GetSnapshotsSnapshot]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSnapshotsSnapshotArrayOutput) Index(i pulumi.IntInput) GetSnapshotsSnapshotOutput {

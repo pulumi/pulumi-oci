@@ -35,7 +35,7 @@ class GetConfigurationResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -43,10 +43,7 @@ class GetConfigurationResult:
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetConfigurationItemResult']:
-        """
-        The list of available configurations.
-        """
+    def items(self) -> Optional[Sequence['outputs.GetConfigurationItemResult']]:
         return pulumi.get(self, "items")
 
     @property
@@ -69,21 +66,7 @@ class AwaitableGetConfigurationResult(GetConfigurationResult):
 def get_configuration(tenant_id: Optional[str] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetConfigurationResult:
     """
-    This data source provides details about a specific Configuration resource in Oracle Cloud Infrastructure Metering Computation service.
-
-    Returns the configurations list for the UI drop-down list.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_configuration = oci.MeteringComputation.get_configuration(tenant_id=oci_metering_computation_tenant["test_tenant"]["id"])
-    ```
-
-
-    :param str tenant_id: tenant id
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['tenantId'] = tenant_id
@@ -100,20 +83,6 @@ def get_configuration(tenant_id: Optional[str] = None,
 def get_configuration_output(tenant_id: Optional[pulumi.Input[str]] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetConfigurationResult]:
     """
-    This data source provides details about a specific Configuration resource in Oracle Cloud Infrastructure Metering Computation service.
-
-    Returns the configurations list for the UI drop-down list.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_configuration = oci.MeteringComputation.get_configuration(tenant_id=oci_metering_computation_tenant["test_tenant"]["id"])
-    ```
-
-
-    :param str tenant_id: tenant id
+    Use this data source to access information about an existing resource.
     """
     ...

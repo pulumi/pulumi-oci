@@ -12,6 +12,7 @@ import com.pulumi.oci.DataSafe.inputs.SensitiveDataModelsSensitiveColumnState;
 import com.pulumi.oci.Utilities;
 import java.lang.String;
 import java.util.List;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -77,42 +78,42 @@ public class SensitiveDataModelsSensitiveColumn extends com.pulumi.resources.Cus
      * 
      */
     @Export(name="appDefinedChildColumnKeys", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> appDefinedChildColumnKeys;
+    private Output</* @Nullable */ List<String>> appDefinedChildColumnKeys;
 
     /**
      * @return (Updatable) Unique keys identifying the columns that are application-level (non-dictionary) children of the sensitive column. This attribute can be used to establish relationship between columns in a sensitive data model. Note that the child columns must be added to the sensitive data model before their keys can be specified here. If this attribute is provided, the parentColumnKeys and relationType attributes of the child columns are automatically updated to reflect the relationship.
      * 
      */
-    public Output<List<String>> appDefinedChildColumnKeys() {
-        return this.appDefinedChildColumnKeys;
+    public Output<Optional<List<String>>> appDefinedChildColumnKeys() {
+        return Codegen.optional(this.appDefinedChildColumnKeys);
     }
     /**
      * The name of the application associated with the sensitive column. It&#39;s useful when the application name is different from the schema name. Otherwise, it can be ignored. If this attribute is not provided, it&#39;s automatically populated with the value provided for the schemaName attribute.
      * 
      */
     @Export(name="appName", refs={String.class}, tree="[0]")
-    private Output<String> appName;
+    private Output</* @Nullable */ String> appName;
 
     /**
      * @return The name of the application associated with the sensitive column. It&#39;s useful when the application name is different from the schema name. Otherwise, it can be ignored. If this attribute is not provided, it&#39;s automatically populated with the value provided for the schemaName attribute.
      * 
      */
-    public Output<String> appName() {
-        return this.appName;
+    public Output<Optional<String>> appName() {
+        return Codegen.optional(this.appName);
     }
     /**
      * The composite key groups to which the sensitive column belongs. If the column is part of a composite key, it&#39;s assigned a column group. It helps identify and manage referential relationships that involve composite keys.
      * 
      */
     @Export(name="columnGroups", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> columnGroups;
+    private Output</* @Nullable */ List<String>> columnGroups;
 
     /**
      * @return The composite key groups to which the sensitive column belongs. If the column is part of a composite key, it&#39;s assigned a column group. It helps identify and manage referential relationships that involve composite keys.
      * 
      */
-    public Output<List<String>> columnGroups() {
-        return this.columnGroups;
+    public Output<Optional<List<String>>> columnGroups() {
+        return Codegen.optional(this.columnGroups);
     }
     /**
      * The name of the sensitive column.
@@ -133,70 +134,70 @@ public class SensitiveDataModelsSensitiveColumn extends com.pulumi.resources.Cus
      * 
      */
     @Export(name="dataType", refs={String.class}, tree="[0]")
-    private Output<String> dataType;
+    private Output</* @Nullable */ String> dataType;
 
     /**
      * @return (Updatable) The data type of the sensitive column.
      * 
      */
-    public Output<String> dataType() {
-        return this.dataType;
+    public Output<Optional<String>> dataType() {
+        return Codegen.optional(this.dataType);
     }
     /**
      * (Updatable) Unique keys identifying the columns that are database-level (dictionary-defined) children of the sensitive column. This attribute can be used to establish relationship between columns in a sensitive data model. Note that the child columns must be added to the sensitive data model before their keys can be specified here. If this attribute is provided, the parentColumnKeys and relationType attributes of the child columns are automatically updated to reflect the relationship.
      * 
      */
     @Export(name="dbDefinedChildColumnKeys", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> dbDefinedChildColumnKeys;
+    private Output</* @Nullable */ List<String>> dbDefinedChildColumnKeys;
 
     /**
      * @return (Updatable) Unique keys identifying the columns that are database-level (dictionary-defined) children of the sensitive column. This attribute can be used to establish relationship between columns in a sensitive data model. Note that the child columns must be added to the sensitive data model before their keys can be specified here. If this attribute is provided, the parentColumnKeys and relationType attributes of the child columns are automatically updated to reflect the relationship.
      * 
      */
-    public Output<List<String>> dbDefinedChildColumnKeys() {
-        return this.dbDefinedChildColumnKeys;
+    public Output<Optional<List<String>>> dbDefinedChildColumnKeys() {
+        return Codegen.optional(this.dbDefinedChildColumnKeys);
     }
     /**
      * The estimated number of data values the column has in the associated database.
      * 
      */
     @Export(name="estimatedDataValueCount", refs={String.class}, tree="[0]")
-    private Output<String> estimatedDataValueCount;
+    private Output</* @Nullable */ String> estimatedDataValueCount;
 
     /**
      * @return The estimated number of data values the column has in the associated database.
      * 
      */
-    public Output<String> estimatedDataValueCount() {
-        return this.estimatedDataValueCount;
+    public Output<Optional<String>> estimatedDataValueCount() {
+        return Codegen.optional(this.estimatedDataValueCount);
     }
     /**
      * The unique key that identifies the sensitive column. It&#39;s numeric and unique within a sensitive data model.
      * 
      */
     @Export(name="key", refs={String.class}, tree="[0]")
-    private Output<String> key;
+    private Output</* @Nullable */ String> key;
 
     /**
      * @return The unique key that identifies the sensitive column. It&#39;s numeric and unique within a sensitive data model.
      * 
      */
-    public Output<String> key() {
-        return this.key;
+    public Output<Optional<String>> key() {
+        return Codegen.optional(this.key);
     }
     /**
      * Details about the current state of the sensitive column.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return Details about the current state of the sensitive column.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * The database object that contains the sensitive column.
@@ -217,56 +218,56 @@ public class SensitiveDataModelsSensitiveColumn extends com.pulumi.resources.Cus
      * 
      */
     @Export(name="objectType", refs={String.class}, tree="[0]")
-    private Output<String> objectType;
+    private Output</* @Nullable */ String> objectType;
 
     /**
      * @return The type of the database object that contains the sensitive column.
      * 
      */
-    public Output<String> objectType() {
-        return this.objectType;
+    public Output<Optional<String>> objectType() {
+        return Codegen.optional(this.objectType);
     }
     /**
      * (Updatable) Unique keys identifying the columns that are parents of the sensitive column. At present, it accepts only one parent column key. This attribute can be used to establish relationship between columns in a sensitive data model. Note that the parent column must be added to the sensitive data model before its key can be specified here. If this attribute is provided, the appDefinedChildColumnKeys or dbDefinedChildColumnKeys attribute of the parent column is automatically updated to reflect the relationship.
      * 
      */
     @Export(name="parentColumnKeys", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> parentColumnKeys;
+    private Output</* @Nullable */ List<String>> parentColumnKeys;
 
     /**
      * @return (Updatable) Unique keys identifying the columns that are parents of the sensitive column. At present, it accepts only one parent column key. This attribute can be used to establish relationship between columns in a sensitive data model. Note that the parent column must be added to the sensitive data model before its key can be specified here. If this attribute is provided, the appDefinedChildColumnKeys or dbDefinedChildColumnKeys attribute of the parent column is automatically updated to reflect the relationship.
      * 
      */
-    public Output<List<String>> parentColumnKeys() {
-        return this.parentColumnKeys;
+    public Output<Optional<List<String>>> parentColumnKeys() {
+        return Codegen.optional(this.parentColumnKeys);
     }
     /**
      * (Updatable) The type of referential relationship the sensitive column has with its parent. NONE indicates that the sensitive column does not have a parent. DB_DEFINED indicates that the relationship is defined in the database dictionary. APP_DEFINED indicates that the relationship is defined at the application level and not in the database dictionary.
      * 
      */
     @Export(name="relationType", refs={String.class}, tree="[0]")
-    private Output<String> relationType;
+    private Output</* @Nullable */ String> relationType;
 
     /**
      * @return (Updatable) The type of referential relationship the sensitive column has with its parent. NONE indicates that the sensitive column does not have a parent. DB_DEFINED indicates that the relationship is defined in the database dictionary. APP_DEFINED indicates that the relationship is defined at the application level and not in the database dictionary.
      * 
      */
-    public Output<String> relationType() {
-        return this.relationType;
+    public Output<Optional<String>> relationType() {
+        return Codegen.optional(this.relationType);
     }
     /**
      * Original data values collected for the sensitive column from the associated database. Sample data helps review the column and ensure that it actually contains sensitive data. Note that sample data is retrieved by a data discovery job only if the isSampleDataCollectionEnabled attribute is set to true. At present, only one data value is collected per sensitive column.
      * 
      */
     @Export(name="sampleDataValues", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> sampleDataValues;
+    private Output</* @Nullable */ List<String>> sampleDataValues;
 
     /**
      * @return Original data values collected for the sensitive column from the associated database. Sample data helps review the column and ensure that it actually contains sensitive data. Note that sample data is retrieved by a data discovery job only if the isSampleDataCollectionEnabled attribute is set to true. At present, only one data value is collected per sensitive column.
      * 
      */
-    public Output<List<String>> sampleDataValues() {
-        return this.sampleDataValues;
+    public Output<Optional<List<String>>> sampleDataValues() {
+        return Codegen.optional(this.sampleDataValues);
     }
     /**
      * The database schema that contains the sensitive column.
@@ -301,42 +302,42 @@ public class SensitiveDataModelsSensitiveColumn extends com.pulumi.resources.Cus
      * 
      */
     @Export(name="sensitiveTypeId", refs={String.class}, tree="[0]")
-    private Output<String> sensitiveTypeId;
+    private Output</* @Nullable */ String> sensitiveTypeId;
 
     /**
      * @return (Updatable) The OCID of the sensitive type to be associated with the sensitive column.
      * 
      */
-    public Output<String> sensitiveTypeId() {
-        return this.sensitiveTypeId;
+    public Output<Optional<String>> sensitiveTypeId() {
+        return Codegen.optional(this.sensitiveTypeId);
     }
     /**
      * The source of the sensitive column. DISCOVERY indicates that the column was added to the sensitive data model using a data discovery job. MANUAL indicates that the column was added manually.
      * 
      */
     @Export(name="source", refs={String.class}, tree="[0]")
-    private Output<String> source;
+    private Output</* @Nullable */ String> source;
 
     /**
      * @return The source of the sensitive column. DISCOVERY indicates that the column was added to the sensitive data model using a data discovery job. MANUAL indicates that the column was added manually.
      * 
      */
-    public Output<String> source() {
-        return this.source;
+    public Output<Optional<String>> source() {
+        return Codegen.optional(this.source);
     }
     /**
      * The current state of the sensitive column.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the sensitive column.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * (Updatable) The status of the sensitive column. VALID means the column is considered sensitive. INVALID means the column is not considered sensitive. Tracking invalid columns in a sensitive data model helps ensure that an incremental data discovery job does not identify these columns as sensitive.
@@ -346,7 +347,7 @@ public class SensitiveDataModelsSensitiveColumn extends com.pulumi.resources.Cus
      * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
-    private Output<String> status;
+    private Output</* @Nullable */ String> status;
 
     /**
      * @return (Updatable) The status of the sensitive column. VALID means the column is considered sensitive. INVALID means the column is not considered sensitive. Tracking invalid columns in a sensitive data model helps ensure that an incremental data discovery job does not identify these columns as sensitive.
@@ -355,36 +356,36 @@ public class SensitiveDataModelsSensitiveColumn extends com.pulumi.resources.Cus
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> status() {
-        return this.status;
+    public Output<Optional<String>> status() {
+        return Codegen.optional(this.status);
     }
     /**
      * The date and time, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339), the sensitive column was created in the sensitive data model.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339), the sensitive column was created in the sensitive data model.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The date and time, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339), the sensitive column was last updated in the sensitive data model.
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The date and time, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339), the sensitive column was last updated in the sensitive data model.
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
 
     /**

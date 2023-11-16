@@ -6,30 +6,32 @@ package com.pulumi.oci.DataSafe.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetUserAssessmentsIgnoredTarget {
-    private String lifecycleState;
+    private @Nullable String lifecycleState;
     /**
      * @return A filter to return only items related to a specific target OCID.
      * 
      */
-    private String targetId;
-    private String userAssessmentId;
+    private @Nullable String targetId;
+    private @Nullable String userAssessmentId;
 
     private GetUserAssessmentsIgnoredTarget() {}
-    public String lifecycleState() {
-        return this.lifecycleState;
+    public Optional<String> lifecycleState() {
+        return Optional.ofNullable(this.lifecycleState);
     }
     /**
      * @return A filter to return only items related to a specific target OCID.
      * 
      */
-    public String targetId() {
-        return this.targetId;
+    public Optional<String> targetId() {
+        return Optional.ofNullable(this.targetId);
     }
-    public String userAssessmentId() {
-        return this.userAssessmentId;
+    public Optional<String> userAssessmentId() {
+        return Optional.ofNullable(this.userAssessmentId);
     }
 
     public static Builder builder() {
@@ -41,9 +43,9 @@ public final class GetUserAssessmentsIgnoredTarget {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String lifecycleState;
-        private String targetId;
-        private String userAssessmentId;
+        private @Nullable String lifecycleState;
+        private @Nullable String targetId;
+        private @Nullable String userAssessmentId;
         public Builder() {}
         public Builder(GetUserAssessmentsIgnoredTarget defaults) {
     	      Objects.requireNonNull(defaults);
@@ -53,18 +55,18 @@ public final class GetUserAssessmentsIgnoredTarget {
         }
 
         @CustomType.Setter
-        public Builder lifecycleState(String lifecycleState) {
-            this.lifecycleState = Objects.requireNonNull(lifecycleState);
+        public Builder lifecycleState(@Nullable String lifecycleState) {
+            this.lifecycleState = lifecycleState;
             return this;
         }
         @CustomType.Setter
-        public Builder targetId(String targetId) {
-            this.targetId = Objects.requireNonNull(targetId);
+        public Builder targetId(@Nullable String targetId) {
+            this.targetId = targetId;
             return this;
         }
         @CustomType.Setter
-        public Builder userAssessmentId(String userAssessmentId) {
-            this.userAssessmentId = Objects.requireNonNull(userAssessmentId);
+        public Builder userAssessmentId(@Nullable String userAssessmentId) {
+            this.userAssessmentId = userAssessmentId;
             return this;
         }
         public GetUserAssessmentsIgnoredTarget build() {

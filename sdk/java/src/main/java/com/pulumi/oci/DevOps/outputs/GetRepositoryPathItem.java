@@ -8,6 +8,8 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetRepositoryPathItem {
@@ -15,42 +17,42 @@ public final class GetRepositoryPathItem {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return Name of file or directory.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return Path to file or directory in a repository.
      * 
      */
-    private String path;
+    private @Nullable String path;
     /**
      * @return SHA-1 checksum of blob or tree.
      * 
      */
-    private String sha;
+    private @Nullable String sha;
     /**
      * @return Size of file or directory.
      * 
      */
-    private String sizeInBytes;
+    private @Nullable String sizeInBytes;
     /**
      * @return The git URL of the submodule.
      * 
      */
-    private String submoduleGitUrl;
+    private @Nullable String submoduleGitUrl;
     /**
      * @return File or directory.
      * 
      */
-    private String type;
+    private @Nullable String type;
 
     private GetRepositoryPathItem() {}
     /**
@@ -58,56 +60,56 @@ public final class GetRepositoryPathItem {
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return Name of file or directory.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return Path to file or directory in a repository.
      * 
      */
-    public String path() {
-        return this.path;
+    public Optional<String> path() {
+        return Optional.ofNullable(this.path);
     }
     /**
      * @return SHA-1 checksum of blob or tree.
      * 
      */
-    public String sha() {
-        return this.sha;
+    public Optional<String> sha() {
+        return Optional.ofNullable(this.sha);
     }
     /**
      * @return Size of file or directory.
      * 
      */
-    public String sizeInBytes() {
-        return this.sizeInBytes;
+    public Optional<String> sizeInBytes() {
+        return Optional.ofNullable(this.sizeInBytes);
     }
     /**
      * @return The git URL of the submodule.
      * 
      */
-    public String submoduleGitUrl() {
-        return this.submoduleGitUrl;
+    public Optional<String> submoduleGitUrl() {
+        return Optional.ofNullable(this.submoduleGitUrl);
     }
     /**
      * @return File or directory.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
 
     public static Builder builder() {
@@ -119,14 +121,14 @@ public final class GetRepositoryPathItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Map<String,Object> definedTags;
-        private Map<String,Object> freeformTags;
-        private String name;
-        private String path;
-        private String sha;
-        private String sizeInBytes;
-        private String submoduleGitUrl;
-        private String type;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String name;
+        private @Nullable String path;
+        private @Nullable String sha;
+        private @Nullable String sizeInBytes;
+        private @Nullable String submoduleGitUrl;
+        private @Nullable String type;
         public Builder() {}
         public Builder(GetRepositoryPathItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -141,43 +143,43 @@ public final class GetRepositoryPathItem {
         }
 
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder path(String path) {
-            this.path = Objects.requireNonNull(path);
+        public Builder path(@Nullable String path) {
+            this.path = path;
             return this;
         }
         @CustomType.Setter
-        public Builder sha(String sha) {
-            this.sha = Objects.requireNonNull(sha);
+        public Builder sha(@Nullable String sha) {
+            this.sha = sha;
             return this;
         }
         @CustomType.Setter
-        public Builder sizeInBytes(String sizeInBytes) {
-            this.sizeInBytes = Objects.requireNonNull(sizeInBytes);
+        public Builder sizeInBytes(@Nullable String sizeInBytes) {
+            this.sizeInBytes = sizeInBytes;
             return this;
         }
         @CustomType.Setter
-        public Builder submoduleGitUrl(String submoduleGitUrl) {
-            this.submoduleGitUrl = Objects.requireNonNull(submoduleGitUrl);
+        public Builder submoduleGitUrl(@Nullable String submoduleGitUrl) {
+            this.submoduleGitUrl = submoduleGitUrl;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         public GetRepositoryPathItem build() {

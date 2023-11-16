@@ -66,7 +66,7 @@ export interface GetComputeImageCapabilitySchemasResult {
     /**
      * The list of compute_image_capability_schemas.
      */
-    readonly computeImageCapabilitySchemas: outputs.Core.GetComputeImageCapabilitySchemasComputeImageCapabilitySchema[];
+    readonly computeImageCapabilitySchemas?: outputs.Core.GetComputeImageCapabilitySchemasComputeImageCapabilitySchema[];
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
@@ -75,7 +75,7 @@ export interface GetComputeImageCapabilitySchemasResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The OCID of the image associated with this compute image capability schema
      */

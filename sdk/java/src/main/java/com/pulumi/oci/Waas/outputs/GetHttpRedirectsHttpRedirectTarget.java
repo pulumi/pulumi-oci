@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetHttpRedirectsHttpRedirectTarget {
@@ -14,63 +16,63 @@ public final class GetHttpRedirectsHttpRedirectTarget {
      * @return The host portion of the redirect.
      * 
      */
-    private String host;
+    private @Nullable String host;
     /**
      * @return The path component of the target URL (e.g., &#34;/path/to/resource&#34; in &#34;https://target.example.com/path/to/resource?redirected&#34;), which can be empty, static, or request-copying, or request-prefixing. Use of \ is not permitted except to escape a following \, {, or }. An empty value is treated the same as static &#34;/&#34;. A static value must begin with a leading &#34;/&#34;, optionally followed by other path characters. A request-copying value must exactly match &#34;{path}&#34;, and will be replaced with the path component of the request URL (including its initial &#34;/&#34;). A request-prefixing value must start with &#34;/&#34; and end with a non-escaped &#34;{path}&#34;, which will be replaced with the path component of the request URL (including its initial &#34;/&#34;). Only one such replacement token is allowed.
      * 
      */
-    private String path;
+    private @Nullable String path;
     /**
      * @return Port number of the target destination of the redirect, default to match protocol
      * 
      */
-    private Integer port;
+    private @Nullable Integer port;
     /**
      * @return The protocol used for the target, http or https.
      * 
      */
-    private String protocol;
+    private @Nullable String protocol;
     /**
      * @return The query component of the target URL (e.g., &#34;?redirected&#34; in &#34;https://target.example.com/path/to/resource?redirected&#34;), which can be empty, static, or request-copying. Use of \ is not permitted except to escape a following \, {, or }. An empty value results in a redirection target URL with no query component. A static value must begin with a leading &#34;?&#34;, optionally followed by other query characters. A request-copying value must exactly match &#34;{query}&#34;, and will be replaced with the query component of the request URL (including a leading &#34;?&#34; if and only if the request URL includes a query component).
      * 
      */
-    private String query;
+    private @Nullable String query;
 
     private GetHttpRedirectsHttpRedirectTarget() {}
     /**
      * @return The host portion of the redirect.
      * 
      */
-    public String host() {
-        return this.host;
+    public Optional<String> host() {
+        return Optional.ofNullable(this.host);
     }
     /**
      * @return The path component of the target URL (e.g., &#34;/path/to/resource&#34; in &#34;https://target.example.com/path/to/resource?redirected&#34;), which can be empty, static, or request-copying, or request-prefixing. Use of \ is not permitted except to escape a following \, {, or }. An empty value is treated the same as static &#34;/&#34;. A static value must begin with a leading &#34;/&#34;, optionally followed by other path characters. A request-copying value must exactly match &#34;{path}&#34;, and will be replaced with the path component of the request URL (including its initial &#34;/&#34;). A request-prefixing value must start with &#34;/&#34; and end with a non-escaped &#34;{path}&#34;, which will be replaced with the path component of the request URL (including its initial &#34;/&#34;). Only one such replacement token is allowed.
      * 
      */
-    public String path() {
-        return this.path;
+    public Optional<String> path() {
+        return Optional.ofNullable(this.path);
     }
     /**
      * @return Port number of the target destination of the redirect, default to match protocol
      * 
      */
-    public Integer port() {
-        return this.port;
+    public Optional<Integer> port() {
+        return Optional.ofNullable(this.port);
     }
     /**
      * @return The protocol used for the target, http or https.
      * 
      */
-    public String protocol() {
-        return this.protocol;
+    public Optional<String> protocol() {
+        return Optional.ofNullable(this.protocol);
     }
     /**
      * @return The query component of the target URL (e.g., &#34;?redirected&#34; in &#34;https://target.example.com/path/to/resource?redirected&#34;), which can be empty, static, or request-copying. Use of \ is not permitted except to escape a following \, {, or }. An empty value results in a redirection target URL with no query component. A static value must begin with a leading &#34;?&#34;, optionally followed by other query characters. A request-copying value must exactly match &#34;{query}&#34;, and will be replaced with the query component of the request URL (including a leading &#34;?&#34; if and only if the request URL includes a query component).
      * 
      */
-    public String query() {
-        return this.query;
+    public Optional<String> query() {
+        return Optional.ofNullable(this.query);
     }
 
     public static Builder builder() {
@@ -82,11 +84,11 @@ public final class GetHttpRedirectsHttpRedirectTarget {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String host;
-        private String path;
-        private Integer port;
-        private String protocol;
-        private String query;
+        private @Nullable String host;
+        private @Nullable String path;
+        private @Nullable Integer port;
+        private @Nullable String protocol;
+        private @Nullable String query;
         public Builder() {}
         public Builder(GetHttpRedirectsHttpRedirectTarget defaults) {
     	      Objects.requireNonNull(defaults);
@@ -98,28 +100,28 @@ public final class GetHttpRedirectsHttpRedirectTarget {
         }
 
         @CustomType.Setter
-        public Builder host(String host) {
-            this.host = Objects.requireNonNull(host);
+        public Builder host(@Nullable String host) {
+            this.host = host;
             return this;
         }
         @CustomType.Setter
-        public Builder path(String path) {
-            this.path = Objects.requireNonNull(path);
+        public Builder path(@Nullable String path) {
+            this.path = path;
             return this;
         }
         @CustomType.Setter
-        public Builder port(Integer port) {
-            this.port = Objects.requireNonNull(port);
+        public Builder port(@Nullable Integer port) {
+            this.port = port;
             return this;
         }
         @CustomType.Setter
-        public Builder protocol(String protocol) {
-            this.protocol = Objects.requireNonNull(protocol);
+        public Builder protocol(@Nullable String protocol) {
+            this.protocol = protocol;
             return this;
         }
         @CustomType.Setter
-        public Builder query(String query) {
-            this.query = Objects.requireNonNull(query);
+        public Builder query(@Nullable String query) {
+            this.query = query;
             return this;
         }
         public GetHttpRedirectsHttpRedirectTarget build() {

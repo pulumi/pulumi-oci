@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Namespace Scheduled Task resource in Oracle Cloud Infrastructure Log Analytics service.
@@ -36,7 +35,7 @@ type NamespaceScheduledTask struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name that is changeable and that does not have to be unique. Format: a leading alphanumeric, followed by zero or more alphanumerics, underscores, spaces, backslashes, or hyphens in any order). No trailing spaces allowed.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// (Updatable) Discriminator.
@@ -44,27 +43,27 @@ type NamespaceScheduledTask struct {
 	// The Logging Analytics namespace used for the request.
 	Namespace pulumi.StringOutput `pulumi:"namespace"`
 	// Number of execution occurrences.
-	NumOccurrences pulumi.StringOutput `pulumi:"numOccurrences"`
+	NumOccurrences pulumi.StringPtrOutput `pulumi:"numOccurrences"`
 	// The ManagementSavedSearch id [OCID] to be accelerated.
-	SavedSearchId   pulumi.StringOutput `pulumi:"savedSearchId"`
-	ScheduledTaskId pulumi.StringOutput `pulumi:"scheduledTaskId"`
+	SavedSearchId   pulumi.StringPtrOutput `pulumi:"savedSearchId"`
+	ScheduledTaskId pulumi.StringPtrOutput `pulumi:"scheduledTaskId"`
 	// (Updatable) Schedules, typically a single schedule. Note there may only be a single schedule for SAVED_SEARCH and PURGE scheduled tasks.
 	Schedules NamespaceScheduledTaskSchedulesOutput `pulumi:"schedules"`
 	// The current state of the scheduled task.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// Status of the scheduled task. - PURGE_RESOURCE_NOT_FOUND
-	TaskStatus pulumi.StringOutput `pulumi:"taskStatus"`
+	TaskStatus pulumi.StringPtrOutput `pulumi:"taskStatus"`
 	// Task type.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TaskType pulumi.StringOutput `pulumi:"taskType"`
 	// The date and time the scheduled task was created, in the format defined by RFC3339.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The date and time the scheduled task was last updated, in the format defined by RFC3339.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 	// most recent Work Request Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
-	WorkRequestId pulumi.StringOutput `pulumi:"workRequestId"`
+	WorkRequestId pulumi.StringPtrOutput `pulumi:"workRequestId"`
 }
 
 // NewNamespaceScheduledTask registers a new resource with the given unique name, arguments, and options.
@@ -272,12 +271,6 @@ func (i *NamespaceScheduledTask) ToNamespaceScheduledTaskOutputWithContext(ctx c
 	return pulumi.ToOutputWithContext(ctx, i).(NamespaceScheduledTaskOutput)
 }
 
-func (i *NamespaceScheduledTask) ToOutput(ctx context.Context) pulumix.Output[*NamespaceScheduledTask] {
-	return pulumix.Output[*NamespaceScheduledTask]{
-		OutputState: i.ToNamespaceScheduledTaskOutputWithContext(ctx).OutputState,
-	}
-}
-
 // NamespaceScheduledTaskArrayInput is an input type that accepts NamespaceScheduledTaskArray and NamespaceScheduledTaskArrayOutput values.
 // You can construct a concrete instance of `NamespaceScheduledTaskArrayInput` via:
 //
@@ -301,12 +294,6 @@ func (i NamespaceScheduledTaskArray) ToNamespaceScheduledTaskArrayOutput() Names
 
 func (i NamespaceScheduledTaskArray) ToNamespaceScheduledTaskArrayOutputWithContext(ctx context.Context) NamespaceScheduledTaskArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(NamespaceScheduledTaskArrayOutput)
-}
-
-func (i NamespaceScheduledTaskArray) ToOutput(ctx context.Context) pulumix.Output[[]*NamespaceScheduledTask] {
-	return pulumix.Output[[]*NamespaceScheduledTask]{
-		OutputState: i.ToNamespaceScheduledTaskArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // NamespaceScheduledTaskMapInput is an input type that accepts NamespaceScheduledTaskMap and NamespaceScheduledTaskMapOutput values.
@@ -334,12 +321,6 @@ func (i NamespaceScheduledTaskMap) ToNamespaceScheduledTaskMapOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(NamespaceScheduledTaskMapOutput)
 }
 
-func (i NamespaceScheduledTaskMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*NamespaceScheduledTask] {
-	return pulumix.Output[map[string]*NamespaceScheduledTask]{
-		OutputState: i.ToNamespaceScheduledTaskMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type NamespaceScheduledTaskOutput struct{ *pulumi.OutputState }
 
 func (NamespaceScheduledTaskOutput) ElementType() reflect.Type {
@@ -352,12 +333,6 @@ func (o NamespaceScheduledTaskOutput) ToNamespaceScheduledTaskOutput() Namespace
 
 func (o NamespaceScheduledTaskOutput) ToNamespaceScheduledTaskOutputWithContext(ctx context.Context) NamespaceScheduledTaskOutput {
 	return o
-}
-
-func (o NamespaceScheduledTaskOutput) ToOutput(ctx context.Context) pulumix.Output[*NamespaceScheduledTask] {
-	return pulumix.Output[*NamespaceScheduledTask]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Action for scheduled task.
@@ -376,8 +351,8 @@ func (o NamespaceScheduledTaskOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) A user-friendly name that is changeable and that does not have to be unique. Format: a leading alphanumeric, followed by zero or more alphanumerics, underscores, spaces, backslashes, or hyphens in any order). No trailing spaces allowed.
-func (o NamespaceScheduledTaskOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *NamespaceScheduledTask) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o NamespaceScheduledTaskOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NamespaceScheduledTask) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -396,17 +371,17 @@ func (o NamespaceScheduledTaskOutput) Namespace() pulumi.StringOutput {
 }
 
 // Number of execution occurrences.
-func (o NamespaceScheduledTaskOutput) NumOccurrences() pulumi.StringOutput {
-	return o.ApplyT(func(v *NamespaceScheduledTask) pulumi.StringOutput { return v.NumOccurrences }).(pulumi.StringOutput)
+func (o NamespaceScheduledTaskOutput) NumOccurrences() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NamespaceScheduledTask) pulumi.StringPtrOutput { return v.NumOccurrences }).(pulumi.StringPtrOutput)
 }
 
 // The ManagementSavedSearch id [OCID] to be accelerated.
-func (o NamespaceScheduledTaskOutput) SavedSearchId() pulumi.StringOutput {
-	return o.ApplyT(func(v *NamespaceScheduledTask) pulumi.StringOutput { return v.SavedSearchId }).(pulumi.StringOutput)
+func (o NamespaceScheduledTaskOutput) SavedSearchId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NamespaceScheduledTask) pulumi.StringPtrOutput { return v.SavedSearchId }).(pulumi.StringPtrOutput)
 }
 
-func (o NamespaceScheduledTaskOutput) ScheduledTaskId() pulumi.StringOutput {
-	return o.ApplyT(func(v *NamespaceScheduledTask) pulumi.StringOutput { return v.ScheduledTaskId }).(pulumi.StringOutput)
+func (o NamespaceScheduledTaskOutput) ScheduledTaskId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NamespaceScheduledTask) pulumi.StringPtrOutput { return v.ScheduledTaskId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Schedules, typically a single schedule. Note there may only be a single schedule for SAVED_SEARCH and PURGE scheduled tasks.
@@ -415,13 +390,13 @@ func (o NamespaceScheduledTaskOutput) Schedules() NamespaceScheduledTaskSchedule
 }
 
 // The current state of the scheduled task.
-func (o NamespaceScheduledTaskOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *NamespaceScheduledTask) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o NamespaceScheduledTaskOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NamespaceScheduledTask) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Status of the scheduled task. - PURGE_RESOURCE_NOT_FOUND
-func (o NamespaceScheduledTaskOutput) TaskStatus() pulumi.StringOutput {
-	return o.ApplyT(func(v *NamespaceScheduledTask) pulumi.StringOutput { return v.TaskStatus }).(pulumi.StringOutput)
+func (o NamespaceScheduledTaskOutput) TaskStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NamespaceScheduledTask) pulumi.StringPtrOutput { return v.TaskStatus }).(pulumi.StringPtrOutput)
 }
 
 // Task type.
@@ -433,18 +408,18 @@ func (o NamespaceScheduledTaskOutput) TaskType() pulumi.StringOutput {
 }
 
 // The date and time the scheduled task was created, in the format defined by RFC3339.
-func (o NamespaceScheduledTaskOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *NamespaceScheduledTask) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o NamespaceScheduledTaskOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NamespaceScheduledTask) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the scheduled task was last updated, in the format defined by RFC3339.
-func (o NamespaceScheduledTaskOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *NamespaceScheduledTask) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o NamespaceScheduledTaskOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NamespaceScheduledTask) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // most recent Work Request Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
-func (o NamespaceScheduledTaskOutput) WorkRequestId() pulumi.StringOutput {
-	return o.ApplyT(func(v *NamespaceScheduledTask) pulumi.StringOutput { return v.WorkRequestId }).(pulumi.StringOutput)
+func (o NamespaceScheduledTaskOutput) WorkRequestId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NamespaceScheduledTask) pulumi.StringPtrOutput { return v.WorkRequestId }).(pulumi.StringPtrOutput)
 }
 
 type NamespaceScheduledTaskArrayOutput struct{ *pulumi.OutputState }
@@ -459,12 +434,6 @@ func (o NamespaceScheduledTaskArrayOutput) ToNamespaceScheduledTaskArrayOutput()
 
 func (o NamespaceScheduledTaskArrayOutput) ToNamespaceScheduledTaskArrayOutputWithContext(ctx context.Context) NamespaceScheduledTaskArrayOutput {
 	return o
-}
-
-func (o NamespaceScheduledTaskArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*NamespaceScheduledTask] {
-	return pulumix.Output[[]*NamespaceScheduledTask]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o NamespaceScheduledTaskArrayOutput) Index(i pulumi.IntInput) NamespaceScheduledTaskOutput {
@@ -485,12 +454,6 @@ func (o NamespaceScheduledTaskMapOutput) ToNamespaceScheduledTaskMapOutput() Nam
 
 func (o NamespaceScheduledTaskMapOutput) ToNamespaceScheduledTaskMapOutputWithContext(ctx context.Context) NamespaceScheduledTaskMapOutput {
 	return o
-}
-
-func (o NamespaceScheduledTaskMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*NamespaceScheduledTask] {
-	return pulumix.Output[map[string]*NamespaceScheduledTask]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o NamespaceScheduledTaskMapOutput) MapIndex(k pulumi.StringInput) NamespaceScheduledTaskOutput {

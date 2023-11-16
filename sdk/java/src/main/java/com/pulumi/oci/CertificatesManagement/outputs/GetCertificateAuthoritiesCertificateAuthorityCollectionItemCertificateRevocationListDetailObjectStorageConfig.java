@@ -6,6 +6,8 @@ package com.pulumi.oci.CertificatesManagement.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailObjectStorageConfig {
@@ -13,39 +15,39 @@ public final class GetCertificateAuthoritiesCertificateAuthorityCollectionItemCe
      * @return The name of the bucket where the CRL is stored.
      * 
      */
-    private String objectStorageBucketName;
+    private @Nullable String objectStorageBucketName;
     /**
      * @return The tenancy of the bucket where the CRL is stored.
      * 
      */
-    private String objectStorageNamespace;
+    private @Nullable String objectStorageNamespace;
     /**
      * @return The object name in the bucket where the CRL is stored, expressed using a format where the version number of the issuing CA is inserted as part of the Object Storage object name wherever you include a pair of curly braces. This versioning scheme helps avoid collisions when new CA versions are created. For example, myCrlFileIssuedFromCAVersion{}.crl becomes myCrlFileIssuedFromCAVersion2.crl for CA version 2.
      * 
      */
-    private String objectStorageObjectNameFormat;
+    private @Nullable String objectStorageObjectNameFormat;
 
     private GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailObjectStorageConfig() {}
     /**
      * @return The name of the bucket where the CRL is stored.
      * 
      */
-    public String objectStorageBucketName() {
-        return this.objectStorageBucketName;
+    public Optional<String> objectStorageBucketName() {
+        return Optional.ofNullable(this.objectStorageBucketName);
     }
     /**
      * @return The tenancy of the bucket where the CRL is stored.
      * 
      */
-    public String objectStorageNamespace() {
-        return this.objectStorageNamespace;
+    public Optional<String> objectStorageNamespace() {
+        return Optional.ofNullable(this.objectStorageNamespace);
     }
     /**
      * @return The object name in the bucket where the CRL is stored, expressed using a format where the version number of the issuing CA is inserted as part of the Object Storage object name wherever you include a pair of curly braces. This versioning scheme helps avoid collisions when new CA versions are created. For example, myCrlFileIssuedFromCAVersion{}.crl becomes myCrlFileIssuedFromCAVersion2.crl for CA version 2.
      * 
      */
-    public String objectStorageObjectNameFormat() {
-        return this.objectStorageObjectNameFormat;
+    public Optional<String> objectStorageObjectNameFormat() {
+        return Optional.ofNullable(this.objectStorageObjectNameFormat);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetCertificateAuthoritiesCertificateAuthorityCollectionItemCe
     }
     @CustomType.Builder
     public static final class Builder {
-        private String objectStorageBucketName;
-        private String objectStorageNamespace;
-        private String objectStorageObjectNameFormat;
+        private @Nullable String objectStorageBucketName;
+        private @Nullable String objectStorageNamespace;
+        private @Nullable String objectStorageObjectNameFormat;
         public Builder() {}
         public Builder(GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailObjectStorageConfig defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetCertificateAuthoritiesCertificateAuthorityCollectionItemCe
         }
 
         @CustomType.Setter
-        public Builder objectStorageBucketName(String objectStorageBucketName) {
-            this.objectStorageBucketName = Objects.requireNonNull(objectStorageBucketName);
+        public Builder objectStorageBucketName(@Nullable String objectStorageBucketName) {
+            this.objectStorageBucketName = objectStorageBucketName;
             return this;
         }
         @CustomType.Setter
-        public Builder objectStorageNamespace(String objectStorageNamespace) {
-            this.objectStorageNamespace = Objects.requireNonNull(objectStorageNamespace);
+        public Builder objectStorageNamespace(@Nullable String objectStorageNamespace) {
+            this.objectStorageNamespace = objectStorageNamespace;
             return this;
         }
         @CustomType.Setter
-        public Builder objectStorageObjectNameFormat(String objectStorageObjectNameFormat) {
-            this.objectStorageObjectNameFormat = Objects.requireNonNull(objectStorageObjectNameFormat);
+        public Builder objectStorageObjectNameFormat(@Nullable String objectStorageObjectNameFormat) {
+            this.objectStorageObjectNameFormat = objectStorageObjectNameFormat;
             return this;
         }
         public GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailObjectStorageConfig build() {

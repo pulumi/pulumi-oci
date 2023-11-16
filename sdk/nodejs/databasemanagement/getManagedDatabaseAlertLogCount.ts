@@ -90,12 +90,12 @@ export interface GetManagedDatabaseAlertLogCountResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly isRegularExpression?: boolean;
     /**
      * An array of the counts of different urgency or type of alert logs.
      */
-    readonly items: outputs.DatabaseManagement.GetManagedDatabaseAlertLogCountItem[];
+    readonly items?: outputs.DatabaseManagement.GetManagedDatabaseAlertLogCountItem[];
     readonly levelFilter?: string;
     readonly logSearchText?: string;
     /**

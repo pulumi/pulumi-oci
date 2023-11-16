@@ -67,10 +67,7 @@ class GetCatalogResult:
 
     @property
     @pulumi.getter(name="attachedCatalogPrivateEndpoints")
-    def attached_catalog_private_endpoints(self) -> Sequence[str]:
-        """
-        The list of private reverse connection endpoints attached to the catalog
-        """
+    def attached_catalog_private_endpoints(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "attached_catalog_private_endpoints")
 
     @property
@@ -80,98 +77,62 @@ class GetCatalogResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        Compartment identifier.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        Data catalog identifier, which can be renamed.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        Unique identifier that is immutable on creation.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        An message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in 'Failed' state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="numberOfObjects")
-    def number_of_objects(self) -> int:
-        """
-        The number of data objects added to the data catalog. Please see the data catalog documentation for further information on how this is calculated.
-        """
+    def number_of_objects(self) -> Optional[int]:
         return pulumi.get(self, "number_of_objects")
 
     @property
     @pulumi.getter(name="serviceApiUrl")
-    def service_api_url(self) -> str:
-        """
-        The REST front endpoint URL to the data catalog instance.
-        """
+    def service_api_url(self) -> Optional[str]:
         return pulumi.get(self, "service_api_url")
 
     @property
     @pulumi.getter(name="serviceConsoleUrl")
-    def service_console_url(self) -> str:
-        """
-        The console front endpoint URL to the data catalog instance.
-        """
+    def service_console_url(self) -> Optional[str]:
         return pulumi.get(self, "service_console_url")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the data catalog resource.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the data catalog was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the data catalog was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -200,21 +161,7 @@ class AwaitableGetCatalogResult(GetCatalogResult):
 def get_catalog(catalog_id: Optional[str] = None,
                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCatalogResult:
     """
-    This data source provides details about a specific Catalog resource in Oracle Cloud Infrastructure Data Catalog service.
-
-    Gets a data catalog by identifier.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_catalog = oci.DataCatalog.get_catalog(catalog_id=oci_datacatalog_catalog["test_catalog"]["id"])
-    ```
-
-
-    :param str catalog_id: Unique catalog identifier.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['catalogId'] = catalog_id
@@ -242,20 +189,6 @@ def get_catalog(catalog_id: Optional[str] = None,
 def get_catalog_output(catalog_id: Optional[pulumi.Input[str]] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCatalogResult]:
     """
-    This data source provides details about a specific Catalog resource in Oracle Cloud Infrastructure Data Catalog service.
-
-    Gets a data catalog by identifier.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_catalog = oci.DataCatalog.get_catalog(catalog_id=oci_datacatalog_catalog["test_catalog"]["id"])
-    ```
-
-
-    :param str catalog_id: Unique catalog identifier.
+    Use this data source to access information about an existing resource.
     """
     ...

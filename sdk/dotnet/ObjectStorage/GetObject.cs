@@ -256,33 +256,33 @@ namespace Pulumi.Oci.ObjectStorage
         /// The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
         /// </summary>
         public readonly string Bucket;
-        public readonly string CacheControl;
+        public readonly string? CacheControl;
         /// <summary>
         /// The object to upload to the object store.
         /// </summary>
-        public readonly string Content;
-        public readonly string ContentDisposition;
+        public readonly string? Content;
+        public readonly string? ContentDisposition;
         /// <summary>
         /// The content encoding of the object.
         /// </summary>
-        public readonly string ContentEncoding;
+        public readonly string? ContentEncoding;
         /// <summary>
         /// The content language of the object.
         /// </summary>
-        public readonly string ContentLanguage;
+        public readonly string? ContentLanguage;
         /// <summary>
         /// The content length of the body.
         /// </summary>
-        public readonly string ContentLength;
+        public readonly string? ContentLength;
         public readonly int? ContentLengthLimit;
         /// <summary>
         /// The base-64 encoded MD5 hash of the body.
         /// </summary>
-        public readonly string ContentMd5;
+        public readonly string? ContentMd5;
         /// <summary>
         /// The content type of the object.  Defaults to 'application/octet-stream' if not overridden during the PutObject call.
         /// </summary>
-        public readonly string ContentType;
+        public readonly string? ContentType;
         public readonly string? HttpResponseCacheControl;
         public readonly string? HttpResponseContentDisposition;
         public readonly string? HttpResponseContentEncoding;
@@ -292,11 +292,11 @@ namespace Pulumi.Oci.ObjectStorage
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Optional user-defined metadata key and value. Note: Metadata keys are case-insensitive and all returned keys will be lower case.
         /// </summary>
-        public readonly ImmutableDictionary<string, object> Metadata;
+        public readonly ImmutableDictionary<string, object>? Metadata;
         /// <summary>
         /// The top-level namespace used for the request.
         /// </summary>
@@ -308,8 +308,8 @@ namespace Pulumi.Oci.ObjectStorage
         /// <summary>
         /// The storage tier that the object is stored in.
         /// </summary>
-        public readonly string StorageTier;
-        public readonly string VersionId;
+        public readonly string? StorageTier;
+        public readonly string? VersionId;
 
         [OutputConstructor]
         private GetObjectResult(
@@ -317,23 +317,23 @@ namespace Pulumi.Oci.ObjectStorage
 
             string bucket,
 
-            string cacheControl,
+            string? cacheControl,
 
-            string content,
+            string? content,
 
-            string contentDisposition,
+            string? contentDisposition,
 
-            string contentEncoding,
+            string? contentEncoding,
 
-            string contentLanguage,
+            string? contentLanguage,
 
-            string contentLength,
+            string? contentLength,
 
             int? contentLengthLimit,
 
-            string contentMd5,
+            string? contentMd5,
 
-            string contentType,
+            string? contentType,
 
             string? httpResponseCacheControl,
 
@@ -347,17 +347,17 @@ namespace Pulumi.Oci.ObjectStorage
 
             string? httpResponseExpires,
 
-            string id,
+            string? id,
 
-            ImmutableDictionary<string, object> metadata,
+            ImmutableDictionary<string, object>? metadata,
 
             string @namespace,
 
             string @object,
 
-            string storageTier,
+            string? storageTier,
 
-            string versionId)
+            string? versionId)
         {
             Base64EncodeContent = base64EncodeContent;
             Bucket = bucket;

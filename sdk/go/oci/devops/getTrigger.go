@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Trigger resource in Oracle Cloud Infrastructure Devops service.
@@ -62,37 +61,37 @@ type LookupTriggerResult struct {
 	// The list of actions that are to be performed for this trigger.
 	Actions []GetTriggerAction `pulumi:"actions"`
 	// The OCID of the compartment that contains the trigger.
-	CompartmentId string `pulumi:"compartmentId"`
-	ConnectionId  string `pulumi:"connectionId"`
+	CompartmentId *string `pulumi:"compartmentId"`
+	ConnectionId  *string `pulumi:"connectionId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Description about the trigger.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Trigger display name. Avoid entering confidential information.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Unique identifier that is immutable on creation.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The OCID of the DevOps project to which the trigger belongs to.
-	ProjectId string `pulumi:"projectId"`
+	ProjectId *string `pulumi:"projectId"`
 	// The OCID of the DevOps code repository.
-	RepositoryId string `pulumi:"repositoryId"`
+	RepositoryId *string `pulumi:"repositoryId"`
 	// The current state of the trigger.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time the trigger was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the trigger was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-	TimeUpdated string `pulumi:"timeUpdated"`
-	TriggerId   string `pulumi:"triggerId"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
+	TriggerId   string  `pulumi:"triggerId"`
 	// Source of the trigger. Allowed values are, GITHUB and GITLAB.
-	TriggerSource string `pulumi:"triggerSource"`
+	TriggerSource *string `pulumi:"triggerSource"`
 	// The endpoint that listens to trigger events.
-	TriggerUrl string `pulumi:"triggerUrl"`
+	TriggerUrl *string `pulumi:"triggerUrl"`
 }
 
 func LookupTriggerOutput(ctx *pulumi.Context, args LookupTriggerOutputArgs, opts ...pulumi.InvokeOption) LookupTriggerResultOutput {
@@ -133,24 +132,18 @@ func (o LookupTriggerResultOutput) ToLookupTriggerResultOutputWithContext(ctx co
 	return o
 }
 
-func (o LookupTriggerResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupTriggerResult] {
-	return pulumix.Output[LookupTriggerResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The list of actions that are to be performed for this trigger.
 func (o LookupTriggerResultOutput) Actions() GetTriggerActionArrayOutput {
 	return o.ApplyT(func(v LookupTriggerResult) []GetTriggerAction { return v.Actions }).(GetTriggerActionArrayOutput)
 }
 
 // The OCID of the compartment that contains the trigger.
-func (o LookupTriggerResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupTriggerResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupTriggerResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupTriggerResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupTriggerResultOutput) ConnectionId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupTriggerResult) string { return v.ConnectionId }).(pulumi.StringOutput)
+func (o LookupTriggerResultOutput) ConnectionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupTriggerResult) *string { return v.ConnectionId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
@@ -159,13 +152,13 @@ func (o LookupTriggerResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // Description about the trigger.
-func (o LookupTriggerResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupTriggerResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupTriggerResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupTriggerResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Trigger display name. Avoid entering confidential information.
-func (o LookupTriggerResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupTriggerResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupTriggerResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupTriggerResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
@@ -174,28 +167,28 @@ func (o LookupTriggerResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Unique identifier that is immutable on creation.
-func (o LookupTriggerResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupTriggerResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupTriggerResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupTriggerResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o LookupTriggerResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupTriggerResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupTriggerResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupTriggerResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the DevOps project to which the trigger belongs to.
-func (o LookupTriggerResultOutput) ProjectId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupTriggerResult) string { return v.ProjectId }).(pulumi.StringOutput)
+func (o LookupTriggerResultOutput) ProjectId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupTriggerResult) *string { return v.ProjectId }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the DevOps code repository.
-func (o LookupTriggerResultOutput) RepositoryId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupTriggerResult) string { return v.RepositoryId }).(pulumi.StringOutput)
+func (o LookupTriggerResultOutput) RepositoryId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupTriggerResult) *string { return v.RepositoryId }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the trigger.
-func (o LookupTriggerResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupTriggerResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupTriggerResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupTriggerResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -204,13 +197,13 @@ func (o LookupTriggerResultOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time the trigger was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-func (o LookupTriggerResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupTriggerResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupTriggerResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupTriggerResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the trigger was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-func (o LookupTriggerResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupTriggerResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupTriggerResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupTriggerResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupTriggerResultOutput) TriggerId() pulumi.StringOutput {
@@ -218,13 +211,13 @@ func (o LookupTriggerResultOutput) TriggerId() pulumi.StringOutput {
 }
 
 // Source of the trigger. Allowed values are, GITHUB and GITLAB.
-func (o LookupTriggerResultOutput) TriggerSource() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupTriggerResult) string { return v.TriggerSource }).(pulumi.StringOutput)
+func (o LookupTriggerResultOutput) TriggerSource() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupTriggerResult) *string { return v.TriggerSource }).(pulumi.StringPtrOutput)
 }
 
 // The endpoint that listens to trigger events.
-func (o LookupTriggerResultOutput) TriggerUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupTriggerResult) string { return v.TriggerUrl }).(pulumi.StringOutput)
+func (o LookupTriggerResultOutput) TriggerUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupTriggerResult) *string { return v.TriggerUrl }).(pulumi.StringPtrOutput)
 }
 
 func init() {

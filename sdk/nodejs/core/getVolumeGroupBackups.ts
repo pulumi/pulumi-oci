@@ -71,11 +71,11 @@ export interface GetVolumeGroupBackupsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of volume_group_backups.
      */
-    readonly volumeGroupBackups: outputs.Core.GetVolumeGroupBackupsVolumeGroupBackup[];
+    readonly volumeGroupBackups?: outputs.Core.GetVolumeGroupBackupsVolumeGroupBackup[];
     /**
      * The OCID of the source volume group.
      */

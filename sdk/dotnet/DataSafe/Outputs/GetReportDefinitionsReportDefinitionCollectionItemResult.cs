@@ -16,7 +16,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// An optional filter to return only resources that match the specified category.
         /// </summary>
-        public readonly string Category;
+        public readonly string? Category;
         /// <summary>
         /// An array of columnFilter objects. A columnFilter object stores all information about a column filter including field name, an operator, one or more expressions, if the filter is enabled, or if the filter is hidden.
         /// </summary>
@@ -32,7 +32,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// A filter to return only resources that match the specified compartment OCID.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The list of the data protection regulations/standards used in the report that will help demonstrate compliance.
         /// </summary>
@@ -40,71 +40,71 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// Specifies the name of a resource that provides data for the report. For example  alerts, events.
         /// </summary>
-        public readonly string DataSource;
+        public readonly string? DataSource;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// A description of the report definition.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// The name of the report definition to query.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Specifies the order in which the summary must be displayed.
         /// </summary>
-        public readonly int DisplayOrder;
+        public readonly int? DisplayOrder;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The OCID of the report definition.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// A boolean flag indicating to list seeded report definitions. Set this parameter to get list of seeded report definitions.
         /// </summary>
-        public readonly bool IsSeeded;
+        public readonly bool? IsSeeded;
         /// <summary>
         /// The OCID of the parent report definition. In the case of seeded report definition, this is same as definition OCID.
         /// </summary>
-        public readonly string ParentId;
+        public readonly string? ParentId;
         /// <summary>
         /// The time span for the records in the report to be scheduled. &lt;period-value&gt;&lt;period&gt; Allowed period strings - "H","D","M","Y" Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
         /// </summary>
-        public readonly string RecordTimeSpan;
+        public readonly string? RecordTimeSpan;
         /// <summary>
         /// The schedule to generate the report periodically in the specified format: &lt;version-string&gt;;&lt;version-specific-schedule&gt;
         /// </summary>
-        public readonly string Schedule;
+        public readonly string? Schedule;
         /// <summary>
         /// The OCID of the compartment in which the scheduled resource should be created.
         /// </summary>
-        public readonly string ScheduledReportCompartmentId;
+        public readonly string? ScheduledReportCompartmentId;
         /// <summary>
         /// Specifies the format of the report ( either XLS or PDF )
         /// </summary>
-        public readonly string ScheduledReportMimeType;
+        public readonly string? ScheduledReportMimeType;
         /// <summary>
         /// The name of the report to be scheduled.
         /// </summary>
-        public readonly string ScheduledReportName;
+        public readonly string? ScheduledReportName;
         /// <summary>
         /// Specifies the limit on the number of rows in the report.
         /// </summary>
-        public readonly int ScheduledReportRowLimit;
+        public readonly int? ScheduledReportRowLimit;
         /// <summary>
         /// Additional scim filters used to get the specific summary.
         /// </summary>
-        public readonly string ScimFilter;
+        public readonly string? ScimFilter;
         /// <summary>
         /// An optional filter to return only resources that match the specified lifecycle state.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// An array of report summary objects in the order (left to right)  displayed in the report.  A  report summary object stores all information about summary of report to be displayed, including the name displayed on UI, the display order, corresponding group by and count of values, summary visibility (if the summary is visible to user).
         /// </summary>
@@ -112,19 +112,19 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, object>? SystemTags;
         /// <summary>
         /// Specifies the data and time the report definition was created.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The date and time the report definition was update.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
 
         [OutputConstructor]
         private GetReportDefinitionsReportDefinitionCollectionItemResult(
-            string category,
+            string? category,
 
             ImmutableArray<Outputs.GetReportDefinitionsReportDefinitionCollectionItemColumnFilterResult> columnFilters,
 
@@ -132,51 +132,51 @@ namespace Pulumi.Oci.DataSafe.Outputs
 
             ImmutableArray<Outputs.GetReportDefinitionsReportDefinitionCollectionItemColumnSortingResult> columnSortings,
 
-            string compartmentId,
+            string? compartmentId,
 
             ImmutableArray<string> complianceStandards,
 
-            string dataSource,
+            string? dataSource,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string description,
+            string? description,
 
-            string displayName,
+            string? displayName,
 
-            int displayOrder,
+            int? displayOrder,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            bool isSeeded,
+            bool? isSeeded,
 
-            string parentId,
+            string? parentId,
 
-            string recordTimeSpan,
+            string? recordTimeSpan,
 
-            string schedule,
+            string? schedule,
 
-            string scheduledReportCompartmentId,
+            string? scheduledReportCompartmentId,
 
-            string scheduledReportMimeType,
+            string? scheduledReportMimeType,
 
-            string scheduledReportName,
+            string? scheduledReportName,
 
-            int scheduledReportRowLimit,
+            int? scheduledReportRowLimit,
 
-            string scimFilter,
+            string? scimFilter,
 
-            string state,
+            string? state,
 
             ImmutableArray<Outputs.GetReportDefinitionsReportDefinitionCollectionItemSummaryResult> summaries,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, object>? systemTags,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated)
+            string? timeUpdated)
         {
             Category = category;
             ColumnFilters = columnFilters;

@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the My Support Account resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -42,7 +41,7 @@ type DomainsMySupportAccount struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	CompartmentOcid pulumi.StringOutput `pulumi:"compartmentOcid"`
+	CompartmentOcid pulumi.StringPtrOutput `pulumi:"compartmentOcid"`
 	// (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
 	//
 	// **SCIM++ Properties:**
@@ -54,7 +53,7 @@ type DomainsMySupportAccount struct {
 	// * returned: default
 	// * type: boolean
 	// * uniqueness: none
-	DeleteInProgress pulumi.BoolOutput `pulumi:"deleteInProgress"`
+	DeleteInProgress pulumi.BoolPtrOutput `pulumi:"deleteInProgress"`
 	// (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
 	//
 	// **SCIM++ Properties:**
@@ -66,7 +65,7 @@ type DomainsMySupportAccount struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	DomainOcid pulumi.StringOutput `pulumi:"domainOcid"`
+	DomainOcid pulumi.StringPtrOutput `pulumi:"domainOcid"`
 	// (Updatable) The User or App who created the Resource
 	//
 	// **SCIM++ Properties:**
@@ -100,7 +99,7 @@ type DomainsMySupportAccount struct {
 	// * returned: request
 	// * type: string
 	// * uniqueness: none
-	IdcsLastUpgradedInRelease pulumi.StringOutput `pulumi:"idcsLastUpgradedInRelease"`
+	IdcsLastUpgradedInRelease pulumi.StringPtrOutput `pulumi:"idcsLastUpgradedInRelease"`
 	// (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
 	//
 	// **SCIM++ Properties:**
@@ -137,7 +136,7 @@ type DomainsMySupportAccount struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	MySupportAccountProvider pulumi.StringOutput `pulumi:"mySupportAccountProvider"`
+	MySupportAccountProvider pulumi.StringPtrOutput `pulumi:"mySupportAccountProvider"`
 	// User's ocid
 	//
 	// **SCIM++ Properties:**
@@ -149,7 +148,7 @@ type DomainsMySupportAccount struct {
 	// * returned: always
 	// * type: string
 	// * uniqueness: none
-	Ocid pulumi.StringOutput `pulumi:"ocid"`
+	Ocid pulumi.StringPtrOutput `pulumi:"ocid"`
 	// An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
 	ResourceTypeSchemaVersion pulumi.StringPtrOutput `pulumi:"resourceTypeSchemaVersion"`
 	// REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
@@ -187,7 +186,7 @@ type DomainsMySupportAccount struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	TenancyOcid pulumi.StringOutput `pulumi:"tenancyOcid"`
+	TenancyOcid pulumi.StringPtrOutput `pulumi:"tenancyOcid"`
 	// User Support Account Token
 	//
 	// **Added In:** 2102181953
@@ -211,7 +210,7 @@ type DomainsMySupportAccount struct {
 	// * returned: default
 	// * type: complex
 	// * uniqueness: none
-	User DomainsMySupportAccountUserOutput `pulumi:"user"`
+	User DomainsMySupportAccountUserPtrOutput `pulumi:"user"`
 	// (Updatable) User Support User Id
 	//
 	// **Added In:** 2102181953
@@ -228,7 +227,7 @@ type DomainsMySupportAccount struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	UserId pulumi.StringOutput `pulumi:"userId"`
+	UserId pulumi.StringPtrOutput `pulumi:"userId"`
 }
 
 // NewDomainsMySupportAccount registers a new resource with the given unique name, arguments, and options.
@@ -841,12 +840,6 @@ func (i *DomainsMySupportAccount) ToDomainsMySupportAccountOutputWithContext(ctx
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsMySupportAccountOutput)
 }
 
-func (i *DomainsMySupportAccount) ToOutput(ctx context.Context) pulumix.Output[*DomainsMySupportAccount] {
-	return pulumix.Output[*DomainsMySupportAccount]{
-		OutputState: i.ToDomainsMySupportAccountOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DomainsMySupportAccountArrayInput is an input type that accepts DomainsMySupportAccountArray and DomainsMySupportAccountArrayOutput values.
 // You can construct a concrete instance of `DomainsMySupportAccountArrayInput` via:
 //
@@ -870,12 +863,6 @@ func (i DomainsMySupportAccountArray) ToDomainsMySupportAccountArrayOutput() Dom
 
 func (i DomainsMySupportAccountArray) ToDomainsMySupportAccountArrayOutputWithContext(ctx context.Context) DomainsMySupportAccountArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsMySupportAccountArrayOutput)
-}
-
-func (i DomainsMySupportAccountArray) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsMySupportAccount] {
-	return pulumix.Output[[]*DomainsMySupportAccount]{
-		OutputState: i.ToDomainsMySupportAccountArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DomainsMySupportAccountMapInput is an input type that accepts DomainsMySupportAccountMap and DomainsMySupportAccountMapOutput values.
@@ -903,12 +890,6 @@ func (i DomainsMySupportAccountMap) ToDomainsMySupportAccountMapOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsMySupportAccountMapOutput)
 }
 
-func (i DomainsMySupportAccountMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsMySupportAccount] {
-	return pulumix.Output[map[string]*DomainsMySupportAccount]{
-		OutputState: i.ToDomainsMySupportAccountMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DomainsMySupportAccountOutput struct{ *pulumi.OutputState }
 
 func (DomainsMySupportAccountOutput) ElementType() reflect.Type {
@@ -921,12 +902,6 @@ func (o DomainsMySupportAccountOutput) ToDomainsMySupportAccountOutput() Domains
 
 func (o DomainsMySupportAccountOutput) ToDomainsMySupportAccountOutputWithContext(ctx context.Context) DomainsMySupportAccountOutput {
 	return o
-}
-
-func (o DomainsMySupportAccountOutput) ToOutput(ctx context.Context) pulumix.Output[*DomainsMySupportAccount] {
-	return pulumix.Output[*DomainsMySupportAccount]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
@@ -945,8 +920,8 @@ func (o DomainsMySupportAccountOutput) Authorization() pulumi.StringPtrOutput {
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsMySupportAccountOutput) CompartmentOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsMySupportAccount) pulumi.StringOutput { return v.CompartmentOcid }).(pulumi.StringOutput)
+func (o DomainsMySupportAccountOutput) CompartmentOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsMySupportAccount) pulumi.StringPtrOutput { return v.CompartmentOcid }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
@@ -960,8 +935,8 @@ func (o DomainsMySupportAccountOutput) CompartmentOcid() pulumi.StringOutput {
 // * returned: default
 // * type: boolean
 // * uniqueness: none
-func (o DomainsMySupportAccountOutput) DeleteInProgress() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DomainsMySupportAccount) pulumi.BoolOutput { return v.DeleteInProgress }).(pulumi.BoolOutput)
+func (o DomainsMySupportAccountOutput) DeleteInProgress() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DomainsMySupportAccount) pulumi.BoolPtrOutput { return v.DeleteInProgress }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
@@ -975,8 +950,8 @@ func (o DomainsMySupportAccountOutput) DeleteInProgress() pulumi.BoolOutput {
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsMySupportAccountOutput) DomainOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsMySupportAccount) pulumi.StringOutput { return v.DomainOcid }).(pulumi.StringOutput)
+func (o DomainsMySupportAccountOutput) DomainOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsMySupportAccount) pulumi.StringPtrOutput { return v.DomainOcid }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The User or App who created the Resource
@@ -1025,8 +1000,8 @@ func (o DomainsMySupportAccountOutput) IdcsLastModifiedBies() DomainsMySupportAc
 // * returned: request
 // * type: string
 // * uniqueness: none
-func (o DomainsMySupportAccountOutput) IdcsLastUpgradedInRelease() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsMySupportAccount) pulumi.StringOutput { return v.IdcsLastUpgradedInRelease }).(pulumi.StringOutput)
+func (o DomainsMySupportAccountOutput) IdcsLastUpgradedInRelease() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsMySupportAccount) pulumi.StringPtrOutput { return v.IdcsLastUpgradedInRelease }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
@@ -1071,8 +1046,8 @@ func (o DomainsMySupportAccountOutput) Metas() DomainsMySupportAccountMetaArrayO
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsMySupportAccountOutput) MySupportAccountProvider() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsMySupportAccount) pulumi.StringOutput { return v.MySupportAccountProvider }).(pulumi.StringOutput)
+func (o DomainsMySupportAccountOutput) MySupportAccountProvider() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsMySupportAccount) pulumi.StringPtrOutput { return v.MySupportAccountProvider }).(pulumi.StringPtrOutput)
 }
 
 // User's ocid
@@ -1086,8 +1061,8 @@ func (o DomainsMySupportAccountOutput) MySupportAccountProvider() pulumi.StringO
 // * returned: always
 // * type: string
 // * uniqueness: none
-func (o DomainsMySupportAccountOutput) Ocid() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsMySupportAccount) pulumi.StringOutput { return v.Ocid }).(pulumi.StringOutput)
+func (o DomainsMySupportAccountOutput) Ocid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsMySupportAccount) pulumi.StringPtrOutput { return v.Ocid }).(pulumi.StringPtrOutput)
 }
 
 // An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
@@ -1136,8 +1111,8 @@ func (o DomainsMySupportAccountOutput) Tags() DomainsMySupportAccountTagArrayOut
 // * returned: default
 // * type: string
 // * uniqueness: none
-func (o DomainsMySupportAccountOutput) TenancyOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsMySupportAccount) pulumi.StringOutput { return v.TenancyOcid }).(pulumi.StringOutput)
+func (o DomainsMySupportAccountOutput) TenancyOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsMySupportAccount) pulumi.StringPtrOutput { return v.TenancyOcid }).(pulumi.StringPtrOutput)
 }
 
 // User Support Account Token
@@ -1166,8 +1141,8 @@ func (o DomainsMySupportAccountOutput) Token() pulumi.StringOutput {
 // * returned: default
 // * type: complex
 // * uniqueness: none
-func (o DomainsMySupportAccountOutput) User() DomainsMySupportAccountUserOutput {
-	return o.ApplyT(func(v *DomainsMySupportAccount) DomainsMySupportAccountUserOutput { return v.User }).(DomainsMySupportAccountUserOutput)
+func (o DomainsMySupportAccountOutput) User() DomainsMySupportAccountUserPtrOutput {
+	return o.ApplyT(func(v *DomainsMySupportAccount) DomainsMySupportAccountUserPtrOutput { return v.User }).(DomainsMySupportAccountUserPtrOutput)
 }
 
 // (Updatable) User Support User Id
@@ -1186,8 +1161,8 @@ func (o DomainsMySupportAccountOutput) User() DomainsMySupportAccountUserOutput 
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o DomainsMySupportAccountOutput) UserId() pulumi.StringOutput {
-	return o.ApplyT(func(v *DomainsMySupportAccount) pulumi.StringOutput { return v.UserId }).(pulumi.StringOutput)
+func (o DomainsMySupportAccountOutput) UserId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainsMySupportAccount) pulumi.StringPtrOutput { return v.UserId }).(pulumi.StringPtrOutput)
 }
 
 type DomainsMySupportAccountArrayOutput struct{ *pulumi.OutputState }
@@ -1202,12 +1177,6 @@ func (o DomainsMySupportAccountArrayOutput) ToDomainsMySupportAccountArrayOutput
 
 func (o DomainsMySupportAccountArrayOutput) ToDomainsMySupportAccountArrayOutputWithContext(ctx context.Context) DomainsMySupportAccountArrayOutput {
 	return o
-}
-
-func (o DomainsMySupportAccountArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsMySupportAccount] {
-	return pulumix.Output[[]*DomainsMySupportAccount]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DomainsMySupportAccountArrayOutput) Index(i pulumi.IntInput) DomainsMySupportAccountOutput {
@@ -1228,12 +1197,6 @@ func (o DomainsMySupportAccountMapOutput) ToDomainsMySupportAccountMapOutput() D
 
 func (o DomainsMySupportAccountMapOutput) ToDomainsMySupportAccountMapOutputWithContext(ctx context.Context) DomainsMySupportAccountMapOutput {
 	return o
-}
-
-func (o DomainsMySupportAccountMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsMySupportAccount] {
-	return pulumix.Output[map[string]*DomainsMySupportAccount]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DomainsMySupportAccountMapOutput) MapIndex(k pulumi.StringInput) DomainsMySupportAccountOutput {

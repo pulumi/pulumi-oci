@@ -16,6 +16,7 @@ import com.pulumi.oci.Utilities;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -91,98 +92,98 @@ public class ManagedInstanceManagement extends com.pulumi.resources.CustomResour
      * 
      */
     @Export(name="childSoftwareSources", refs={List.class,ManagedInstanceManagementChildSoftwareSource.class}, tree="[0,1]")
-    private Output<List<ManagedInstanceManagementChildSoftwareSource>> childSoftwareSources;
+    private Output</* @Nullable */ List<ManagedInstanceManagementChildSoftwareSource>> childSoftwareSources;
 
     /**
      * @return (Updatable) list of child Software Sources attached to the Managed Instance
      * 
      */
-    public Output<List<ManagedInstanceManagementChildSoftwareSource>> childSoftwareSources() {
-        return this.childSoftwareSources;
+    public Output<Optional<List<ManagedInstanceManagementChildSoftwareSource>>> childSoftwareSources() {
+        return Codegen.optional(this.childSoftwareSources);
     }
     /**
      * OCID for the Compartment
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
-    private Output<String> compartmentId;
+    private Output</* @Nullable */ String> compartmentId;
 
     /**
      * @return OCID for the Compartment
      * 
      */
-    public Output<String> compartmentId() {
-        return this.compartmentId;
+    public Output<Optional<String>> compartmentId() {
+        return Codegen.optional(this.compartmentId);
     }
     /**
      * Information specified by the user about the managed instance
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
-    private Output<String> description;
+    private Output</* @Nullable */ String> description;
 
     /**
      * @return Information specified by the user about the managed instance
      * 
      */
-    public Output<String> description() {
-        return this.description;
+    public Output<Optional<String>> description() {
+        return Codegen.optional(this.description);
     }
     /**
      * User friendly name
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return User friendly name
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     /**
      * Time at which the instance last booted
      * 
      */
     @Export(name="lastBoot", refs={String.class}, tree="[0]")
-    private Output<String> lastBoot;
+    private Output</* @Nullable */ String> lastBoot;
 
     /**
      * @return Time at which the instance last booted
      * 
      */
-    public Output<String> lastBoot() {
-        return this.lastBoot;
+    public Output<Optional<String>> lastBoot() {
+        return Codegen.optional(this.lastBoot);
     }
     /**
      * Time at which the instance last checked in
      * 
      */
     @Export(name="lastCheckin", refs={String.class}, tree="[0]")
-    private Output<String> lastCheckin;
+    private Output</* @Nullable */ String> lastCheckin;
 
     /**
      * @return Time at which the instance last checked in
      * 
      */
-    public Output<String> lastCheckin() {
-        return this.lastCheckin;
+    public Output<Optional<String>> lastCheckin() {
+        return Codegen.optional(this.lastCheckin);
     }
     /**
      * (Updatable) The ids of the managed instance groups of which this instance is a member.
      * 
      */
     @Export(name="managedInstanceGroups", refs={List.class,ManagedInstanceManagementManagedInstanceGroup.class}, tree="[0,1]")
-    private Output<List<ManagedInstanceManagementManagedInstanceGroup>> managedInstanceGroups;
+    private Output</* @Nullable */ List<ManagedInstanceManagementManagedInstanceGroup>> managedInstanceGroups;
 
     /**
      * @return (Updatable) The ids of the managed instance groups of which this instance is a member.
      * 
      */
-    public Output<List<ManagedInstanceManagementManagedInstanceGroup>> managedInstanceGroups() {
-        return this.managedInstanceGroups;
+    public Output<Optional<List<ManagedInstanceManagementManagedInstanceGroup>>> managedInstanceGroups() {
+        return Codegen.optional(this.managedInstanceGroups);
     }
     /**
      * OCID for the managed instance
@@ -203,84 +204,84 @@ public class ManagedInstanceManagement extends com.pulumi.resources.CustomResour
      * 
      */
     @Export(name="osKernelVersion", refs={String.class}, tree="[0]")
-    private Output<String> osKernelVersion;
+    private Output</* @Nullable */ String> osKernelVersion;
 
     /**
      * @return Operating System Kernel Version
      * 
      */
-    public Output<String> osKernelVersion() {
-        return this.osKernelVersion;
+    public Output<Optional<String>> osKernelVersion() {
+        return Codegen.optional(this.osKernelVersion);
     }
     /**
      * Operating System Name
      * 
      */
     @Export(name="osName", refs={String.class}, tree="[0]")
-    private Output<String> osName;
+    private Output</* @Nullable */ String> osName;
 
     /**
      * @return Operating System Name
      * 
      */
-    public Output<String> osName() {
-        return this.osName;
+    public Output<Optional<String>> osName() {
+        return Codegen.optional(this.osName);
     }
     /**
      * Operating System Version
      * 
      */
     @Export(name="osVersion", refs={String.class}, tree="[0]")
-    private Output<String> osVersion;
+    private Output</* @Nullable */ String> osVersion;
 
     /**
      * @return Operating System Version
      * 
      */
-    public Output<String> osVersion() {
-        return this.osVersion;
+    public Output<Optional<String>> osVersion() {
+        return Codegen.optional(this.osVersion);
     }
     /**
      * (Updatable) the parent (base) Software Source attached to the Managed Instance
      * 
      */
     @Export(name="parentSoftwareSource", refs={ManagedInstanceManagementParentSoftwareSource.class}, tree="[0]")
-    private Output<ManagedInstanceManagementParentSoftwareSource> parentSoftwareSource;
+    private Output</* @Nullable */ ManagedInstanceManagementParentSoftwareSource> parentSoftwareSource;
 
     /**
      * @return (Updatable) the parent (base) Software Source attached to the Managed Instance
      * 
      */
-    public Output<ManagedInstanceManagementParentSoftwareSource> parentSoftwareSource() {
-        return this.parentSoftwareSource;
+    public Output<Optional<ManagedInstanceManagementParentSoftwareSource>> parentSoftwareSource() {
+        return Codegen.optional(this.parentSoftwareSource);
     }
     /**
      * status of the managed instance.
      * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
-    private Output<String> status;
+    private Output</* @Nullable */ String> status;
 
     /**
      * @return status of the managed instance.
      * 
      */
-    public Output<String> status() {
-        return this.status;
+    public Output<Optional<String>> status() {
+        return Codegen.optional(this.status);
     }
     /**
      * Number of updates available to be installed
      * 
      */
     @Export(name="updatesAvailable", refs={Integer.class}, tree="[0]")
-    private Output<Integer> updatesAvailable;
+    private Output</* @Nullable */ Integer> updatesAvailable;
 
     /**
      * @return Number of updates available to be installed
      * 
      */
-    public Output<Integer> updatesAvailable() {
-        return this.updatesAvailable;
+    public Output<Optional<Integer>> updatesAvailable() {
+        return Codegen.optional(this.updatesAvailable);
     }
 
     /**

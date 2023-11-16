@@ -145,7 +145,7 @@ namespace Pulumi.Oci.ContainerInstances
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
 
         [OutputConstructor]
         private GetContainerInstanceShapesResult(
@@ -157,7 +157,7 @@ namespace Pulumi.Oci.ContainerInstances
 
             ImmutableArray<Outputs.GetContainerInstanceShapesFilterResult> filters,
 
-            string id)
+            string? id)
         {
             AvailabilityDomain = availabilityDomain;
             CompartmentId = compartmentId;

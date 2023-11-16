@@ -16,11 +16,11 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// A filter to only return the resources that match the entire display name.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// The basic information about an external Exadata Infrastructure.
         /// </summary>
@@ -28,17 +28,17 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
 
         [OutputConstructor]
         private GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoResult(
-            string compartmentId,
+            string? compartmentId,
 
-            string displayName,
+            string? displayName,
 
             ImmutableArray<Outputs.GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfoResult> exadataInfraInfos,
 
-            string id)
+            string? id)
         {
             CompartmentId = compartmentId;
             DisplayName = displayName;

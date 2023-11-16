@@ -122,83 +122,83 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// The name of the difference column.
         /// </summary>
-        public readonly string ColumnName;
+        public readonly string? ColumnName;
         public readonly string DifferenceColumnKey;
         /// <summary>
         /// The type of the SDM masking policy difference column. It can be one of the following three types: NEW: A new sensitive column in the sensitive data model that is not in the masking policy. DELETED: A column that is present in the masking policy but has been deleted from the sensitive data model. MODIFIED: A column that is present in the masking policy as well as the sensitive data model but some of its attributes have been modified.
         /// </summary>
-        public readonly string DifferenceType;
+        public readonly string? DifferenceType;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The unique key that identifies the SDM masking policy difference column.
         /// </summary>
-        public readonly string Key;
+        public readonly string? Key;
         /// <summary>
         /// The unique key that identifies the masking column represented by the SDM masking policy difference column.
         /// </summary>
-        public readonly string MaskingColumnkey;
+        public readonly string? MaskingColumnkey;
         /// <summary>
         /// The database object that contains the difference column.
         /// </summary>
-        public readonly string Object;
+        public readonly string? Object;
         /// <summary>
         /// Specifies how to process the difference column. It's set to SYNC by default. Use the PatchSdmMaskingPolicyDifferenceColumns operation to update this attribute. You can choose one of the following options: SYNC: To sync the difference column and update the masking policy to reflect the changes. NO_SYNC: To not sync the difference column so that it doesn't change the masking policy. After specifying the planned action, you can use the ApplySdmMaskingPolicyDifference operation to automatically process the difference columns.
         /// </summary>
-        public readonly string PlannedAction;
+        public readonly string? PlannedAction;
         /// <summary>
         /// The database schema that contains the difference column.
         /// </summary>
-        public readonly string SchemaName;
+        public readonly string? SchemaName;
         public readonly string SdmMaskingPolicyDifferenceId;
         /// <summary>
         /// The unique key that identifies the sensitive column represented by the SDM masking policy difference column.
         /// </summary>
-        public readonly string SensitiveColumnkey;
+        public readonly string? SensitiveColumnkey;
         /// <summary>
         /// The OCID of the sensitive type associated with the difference column.
         /// </summary>
-        public readonly string SensitiveTypeId;
+        public readonly string? SensitiveTypeId;
         /// <summary>
         /// Indicates if the difference column has been processed. Use GetDifferenceColumn operation to  track whether the difference column has already been processed and applied to the masking policy.
         /// </summary>
-        public readonly string SyncStatus;
+        public readonly string? SyncStatus;
         /// <summary>
         /// The date and time the SDM masking policy difference column was last synced, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
-        public readonly string TimeLastSynced;
+        public readonly string? TimeLastSynced;
 
         [OutputConstructor]
         private GetSdmMaskingPolicyDifferenceDifferenceColumnResult(
-            string columnName,
+            string? columnName,
 
             string differenceColumnKey,
 
-            string differenceType,
+            string? differenceType,
 
-            string id,
+            string? id,
 
-            string key,
+            string? key,
 
-            string maskingColumnkey,
+            string? maskingColumnkey,
 
-            string @object,
+            string? @object,
 
-            string plannedAction,
+            string? plannedAction,
 
-            string schemaName,
+            string? schemaName,
 
             string sdmMaskingPolicyDifferenceId,
 
-            string sensitiveColumnkey,
+            string? sensitiveColumnkey,
 
-            string sensitiveTypeId,
+            string? sensitiveTypeId,
 
-            string syncStatus,
+            string? syncStatus,
 
-            string timeLastSynced)
+            string? timeLastSynced)
         {
             ColumnName = columnName;
             DifferenceColumnKey = differenceColumnKey;

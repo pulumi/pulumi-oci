@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Addon resource in Oracle Cloud Infrastructure Container Engine service.
@@ -70,15 +69,15 @@ type LookupAddonResult struct {
 	// Addon configuration details.
 	Configurations []GetAddonConfiguration `pulumi:"configurations"`
 	// current installed version of the addon
-	CurrentInstalledVersion      string `pulumi:"currentInstalledVersion"`
-	Id                           string `pulumi:"id"`
-	RemoveAddonResourcesOnDelete bool   `pulumi:"removeAddonResourcesOnDelete"`
+	CurrentInstalledVersion      *string `pulumi:"currentInstalledVersion"`
+	Id                           *string `pulumi:"id"`
+	RemoveAddonResourcesOnDelete *bool   `pulumi:"removeAddonResourcesOnDelete"`
 	// The state of the addon.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The time the cluster was created.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// selected addon version, or null indicates autoUpdate
-	Version string `pulumi:"version"`
+	Version *string `pulumi:"version"`
 }
 
 func LookupAddonOutput(ctx *pulumi.Context, args LookupAddonOutputArgs, opts ...pulumi.InvokeOption) LookupAddonResultOutput {
@@ -121,12 +120,6 @@ func (o LookupAddonResultOutput) ToLookupAddonResultOutputWithContext(ctx contex
 	return o
 }
 
-func (o LookupAddonResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupAddonResult] {
-	return pulumix.Output[LookupAddonResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The error info of the addon.
 func (o LookupAddonResultOutput) AddonErrors() GetAddonAddonErrorArrayOutput {
 	return o.ApplyT(func(v LookupAddonResult) []GetAddonAddonError { return v.AddonErrors }).(GetAddonAddonErrorArrayOutput)
@@ -147,31 +140,31 @@ func (o LookupAddonResultOutput) Configurations() GetAddonConfigurationArrayOutp
 }
 
 // current installed version of the addon
-func (o LookupAddonResultOutput) CurrentInstalledVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAddonResult) string { return v.CurrentInstalledVersion }).(pulumi.StringOutput)
+func (o LookupAddonResultOutput) CurrentInstalledVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAddonResult) *string { return v.CurrentInstalledVersion }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupAddonResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAddonResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupAddonResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAddonResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupAddonResultOutput) RemoveAddonResourcesOnDelete() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupAddonResult) bool { return v.RemoveAddonResourcesOnDelete }).(pulumi.BoolOutput)
+func (o LookupAddonResultOutput) RemoveAddonResourcesOnDelete() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupAddonResult) *bool { return v.RemoveAddonResourcesOnDelete }).(pulumi.BoolPtrOutput)
 }
 
 // The state of the addon.
-func (o LookupAddonResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAddonResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupAddonResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAddonResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The time the cluster was created.
-func (o LookupAddonResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAddonResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupAddonResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAddonResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // selected addon version, or null indicates autoUpdate
-func (o LookupAddonResultOutput) Version() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAddonResult) string { return v.Version }).(pulumi.StringOutput)
+func (o LookupAddonResultOutput) Version() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAddonResult) *string { return v.Version }).(pulumi.StringPtrOutput)
 }
 
 func init() {

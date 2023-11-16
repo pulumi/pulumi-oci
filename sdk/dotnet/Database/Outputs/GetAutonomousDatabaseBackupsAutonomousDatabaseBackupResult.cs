@@ -16,7 +16,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
-        public readonly string AutonomousDatabaseId;
+        public readonly string? AutonomousDatabaseId;
         /// <summary>
         /// Backup destination details
         /// </summary>
@@ -24,132 +24,132 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The size of the database in terabytes at the time the backup was taken.
         /// </summary>
-        public readonly double DatabaseSizeInTbs;
+        public readonly double? DatabaseSizeInTbs;
         /// <summary>
         /// A valid Oracle Database version for Autonomous Database.
         /// </summary>
-        public readonly string DbVersion;
+        public readonly string? DbVersion;
         /// <summary>
         /// A filter to return only resources that match the entire display name given. The match is not case sensitive.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Indicates whether the backup is user-initiated or automatic.
         /// </summary>
-        public readonly bool IsAutomatic;
-        public readonly bool IsLongTermBackup;
+        public readonly bool? IsAutomatic;
+        public readonly bool? IsLongTermBackup;
         /// <summary>
         /// Indicates whether the backup can be used to restore the associated Autonomous Database.
         /// </summary>
-        public readonly bool IsRestorable;
+        public readonly bool? IsRestorable;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
         /// </summary>
-        public readonly string KeyStoreId;
+        public readonly string? KeyStoreId;
         /// <summary>
         /// The wallet name for Oracle Key Vault.
         /// </summary>
-        public readonly string KeyStoreWalletName;
+        public readonly string? KeyStoreWalletName;
         /// <summary>
         /// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         /// </summary>
-        public readonly string KmsKeyId;
+        public readonly string? KmsKeyId;
         /// <summary>
         /// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
         /// </summary>
-        public readonly string KmsKeyVersionId;
+        public readonly string? KmsKeyVersionId;
         /// <summary>
         /// Additional information about the current lifecycle state.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// Retention period, in days, for long-term backups
         /// </summary>
-        public readonly int RetentionPeriodInDays;
+        public readonly int? RetentionPeriodInDays;
         /// <summary>
         /// The backup size in terrabytes (TB).
         /// </summary>
-        public readonly double SizeInTbs;
+        public readonly double? SizeInTbs;
         /// <summary>
         /// A filter to return only resources that match the given lifecycle state exactly.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// Timestamp until when the backup will be available
         /// </summary>
-        public readonly string TimeAvailableTill;
+        public readonly string? TimeAvailableTill;
         /// <summary>
         /// The date and time the backup completed.
         /// </summary>
-        public readonly string TimeEnded;
+        public readonly string? TimeEnded;
         /// <summary>
         /// The date and time the backup started.
         /// </summary>
-        public readonly string TimeStarted;
+        public readonly string? TimeStarted;
         /// <summary>
         /// A filter to return only backups that matches with the given type of Backup.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         /// </summary>
-        public readonly string VaultId;
+        public readonly string? VaultId;
 
         [OutputConstructor]
         private GetAutonomousDatabaseBackupsAutonomousDatabaseBackupResult(
-            string autonomousDatabaseId,
+            string? autonomousDatabaseId,
 
             ImmutableArray<Outputs.GetAutonomousDatabaseBackupsAutonomousDatabaseBackupBackupDestinationDetailResult> backupDestinationDetails,
 
-            string compartmentId,
+            string? compartmentId,
 
-            double databaseSizeInTbs,
+            double? databaseSizeInTbs,
 
-            string dbVersion,
+            string? dbVersion,
 
-            string displayName,
+            string? displayName,
 
-            string id,
+            string? id,
 
-            bool isAutomatic,
+            bool? isAutomatic,
 
-            bool isLongTermBackup,
+            bool? isLongTermBackup,
 
-            bool isRestorable,
+            bool? isRestorable,
 
-            string keyStoreId,
+            string? keyStoreId,
 
-            string keyStoreWalletName,
+            string? keyStoreWalletName,
 
-            string kmsKeyId,
+            string? kmsKeyId,
 
-            string kmsKeyVersionId,
+            string? kmsKeyVersionId,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            int retentionPeriodInDays,
+            int? retentionPeriodInDays,
 
-            double sizeInTbs,
+            double? sizeInTbs,
 
-            string state,
+            string? state,
 
-            string timeAvailableTill,
+            string? timeAvailableTill,
 
-            string timeEnded,
+            string? timeEnded,
 
-            string timeStarted,
+            string? timeStarted,
 
-            string type,
+            string? type,
 
-            string vaultId)
+            string? vaultId)
         {
             AutonomousDatabaseId = autonomousDatabaseId;
             BackupDestinationDetails = backupDestinationDetails;

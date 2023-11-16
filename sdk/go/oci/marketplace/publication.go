@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Publication resource in Oracle Cloud Infrastructure Marketplace service.
@@ -100,23 +99,23 @@ type Publication struct {
 	// The publisher category to which the publication belongs. The publisher category informs where the listing appears for use.
 	ListingType pulumi.StringOutput `pulumi:"listingType"`
 	// (Updatable) A long description of the publication to use in the listing.
-	LongDescription pulumi.StringOutput `pulumi:"longDescription"`
+	LongDescription pulumi.StringPtrOutput `pulumi:"longDescription"`
 	// (Updatable) The name of the contact.
 	Name pulumi.StringOutput `pulumi:"name"`
 	// A base object for creating a publication package.
 	PackageDetails PublicationPackageDetailsOutput `pulumi:"packageDetails"`
 	// The package's type.
-	PackageType pulumi.StringOutput `pulumi:"packageType"`
+	PackageType pulumi.StringPtrOutput `pulumi:"packageType"`
 	// (Updatable) A short description of the publication to use in the listing.
 	ShortDescription pulumi.StringOutput `pulumi:"shortDescription"`
 	// The lifecycle state of the publication.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// (Updatable) Contact information for getting support from the publisher for the listing.
 	SupportContacts PublicationSupportContactArrayOutput `pulumi:"supportContacts"`
 	// The list of operating systems supported by the listing.
 	SupportedOperatingSystems PublicationSupportedOperatingSystemArrayOutput `pulumi:"supportedOperatingSystems"`
 	// The date and time the publication was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 }
 
 // NewPublication registers a new resource with the given unique name, arguments, and options.
@@ -306,12 +305,6 @@ func (i *Publication) ToPublicationOutputWithContext(ctx context.Context) Public
 	return pulumi.ToOutputWithContext(ctx, i).(PublicationOutput)
 }
 
-func (i *Publication) ToOutput(ctx context.Context) pulumix.Output[*Publication] {
-	return pulumix.Output[*Publication]{
-		OutputState: i.ToPublicationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // PublicationArrayInput is an input type that accepts PublicationArray and PublicationArrayOutput values.
 // You can construct a concrete instance of `PublicationArrayInput` via:
 //
@@ -335,12 +328,6 @@ func (i PublicationArray) ToPublicationArrayOutput() PublicationArrayOutput {
 
 func (i PublicationArray) ToPublicationArrayOutputWithContext(ctx context.Context) PublicationArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(PublicationArrayOutput)
-}
-
-func (i PublicationArray) ToOutput(ctx context.Context) pulumix.Output[[]*Publication] {
-	return pulumix.Output[[]*Publication]{
-		OutputState: i.ToPublicationArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // PublicationMapInput is an input type that accepts PublicationMap and PublicationMapOutput values.
@@ -368,12 +355,6 @@ func (i PublicationMap) ToPublicationMapOutputWithContext(ctx context.Context) P
 	return pulumi.ToOutputWithContext(ctx, i).(PublicationMapOutput)
 }
 
-func (i PublicationMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Publication] {
-	return pulumix.Output[map[string]*Publication]{
-		OutputState: i.ToPublicationMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type PublicationOutput struct{ *pulumi.OutputState }
 
 func (PublicationOutput) ElementType() reflect.Type {
@@ -386,12 +367,6 @@ func (o PublicationOutput) ToPublicationOutput() PublicationOutput {
 
 func (o PublicationOutput) ToPublicationOutputWithContext(ctx context.Context) PublicationOutput {
 	return o
-}
-
-func (o PublicationOutput) ToOutput(ctx context.Context) pulumix.Output[*Publication] {
-	return pulumix.Output[*Publication]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the publication.
@@ -425,8 +400,8 @@ func (o PublicationOutput) ListingType() pulumi.StringOutput {
 }
 
 // (Updatable) A long description of the publication to use in the listing.
-func (o PublicationOutput) LongDescription() pulumi.StringOutput {
-	return o.ApplyT(func(v *Publication) pulumi.StringOutput { return v.LongDescription }).(pulumi.StringOutput)
+func (o PublicationOutput) LongDescription() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Publication) pulumi.StringPtrOutput { return v.LongDescription }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The name of the contact.
@@ -440,8 +415,8 @@ func (o PublicationOutput) PackageDetails() PublicationPackageDetailsOutput {
 }
 
 // The package's type.
-func (o PublicationOutput) PackageType() pulumi.StringOutput {
-	return o.ApplyT(func(v *Publication) pulumi.StringOutput { return v.PackageType }).(pulumi.StringOutput)
+func (o PublicationOutput) PackageType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Publication) pulumi.StringPtrOutput { return v.PackageType }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A short description of the publication to use in the listing.
@@ -450,8 +425,8 @@ func (o PublicationOutput) ShortDescription() pulumi.StringOutput {
 }
 
 // The lifecycle state of the publication.
-func (o PublicationOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *Publication) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o PublicationOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Publication) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Contact information for getting support from the publisher for the listing.
@@ -467,8 +442,8 @@ func (o PublicationOutput) SupportedOperatingSystems() PublicationSupportedOpera
 }
 
 // The date and time the publication was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
-func (o PublicationOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Publication) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o PublicationOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Publication) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 type PublicationArrayOutput struct{ *pulumi.OutputState }
@@ -483,12 +458,6 @@ func (o PublicationArrayOutput) ToPublicationArrayOutput() PublicationArrayOutpu
 
 func (o PublicationArrayOutput) ToPublicationArrayOutputWithContext(ctx context.Context) PublicationArrayOutput {
 	return o
-}
-
-func (o PublicationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Publication] {
-	return pulumix.Output[[]*Publication]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PublicationArrayOutput) Index(i pulumi.IntInput) PublicationOutput {
@@ -509,12 +478,6 @@ func (o PublicationMapOutput) ToPublicationMapOutput() PublicationMapOutput {
 
 func (o PublicationMapOutput) ToPublicationMapOutputWithContext(ctx context.Context) PublicationMapOutput {
 	return o
-}
-
-func (o PublicationMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Publication] {
-	return pulumix.Output[map[string]*Publication]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PublicationMapOutput) MapIndex(k pulumi.StringInput) PublicationOutput {

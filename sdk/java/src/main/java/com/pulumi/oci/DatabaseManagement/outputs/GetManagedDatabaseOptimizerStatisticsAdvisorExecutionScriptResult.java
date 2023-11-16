@@ -6,6 +6,8 @@ package com.pulumi.oci.DatabaseManagement.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResult {
@@ -14,13 +16,13 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptRe
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String managedDatabaseId;
     /**
      * @return The Optimizer Statistics Advisor execution script.
      * 
      */
-    private String script;
+    private @Nullable String script;
     private String taskName;
 
     private GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResult() {}
@@ -31,8 +33,8 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptRe
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String managedDatabaseId() {
         return this.managedDatabaseId;
@@ -41,8 +43,8 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptRe
      * @return The Optimizer Statistics Advisor execution script.
      * 
      */
-    public String script() {
-        return this.script;
+    public Optional<String> script() {
+        return Optional.ofNullable(this.script);
     }
     public String taskName() {
         return this.taskName;
@@ -58,9 +60,9 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptRe
     @CustomType.Builder
     public static final class Builder {
         private String executionName;
-        private String id;
+        private @Nullable String id;
         private String managedDatabaseId;
-        private String script;
+        private @Nullable String script;
         private String taskName;
         public Builder() {}
         public Builder(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResult defaults) {
@@ -78,8 +80,8 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptRe
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -88,8 +90,8 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptRe
             return this;
         }
         @CustomType.Setter
-        public Builder script(String script) {
-            this.script = Objects.requireNonNull(script);
+        public Builder script(@Nullable String script) {
+            this.script = script;
             return this;
         }
         @CustomType.Setter

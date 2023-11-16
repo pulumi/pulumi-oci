@@ -92,7 +92,7 @@ export interface GetRemediationRunsResult {
     /**
      * The list of remediation_run_collection.
      */
-    readonly remediationRunCollections: outputs.Adm.GetRemediationRunsRemediationRunCollection[];
+    readonly remediationRunCollections?: outputs.Adm.GetRemediationRunsRemediationRunCollection[];
     /**
      * The current lifecycle state of the remediation run.
      */

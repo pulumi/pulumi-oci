@@ -6,6 +6,8 @@ package com.pulumi.oci.ApmSynthetics.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetResultResultDataSet {
@@ -13,51 +15,51 @@ public final class GetResultResultDataSet {
      * @return Data content in byte format. Example: Zip or Screenshot.
      * 
      */
-    private String byteContent;
+    private @Nullable String byteContent;
     /**
      * @return Name of the data.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return Data content in string format. Example: HAR.
      * 
      */
-    private String stringContent;
+    private @Nullable String stringContent;
     /**
      * @return The time when the data was generated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
      * 
      */
-    private String timestamp;
+    private @Nullable String timestamp;
 
     private GetResultResultDataSet() {}
     /**
      * @return Data content in byte format. Example: Zip or Screenshot.
      * 
      */
-    public String byteContent() {
-        return this.byteContent;
+    public Optional<String> byteContent() {
+        return Optional.ofNullable(this.byteContent);
     }
     /**
      * @return Name of the data.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return Data content in string format. Example: HAR.
      * 
      */
-    public String stringContent() {
-        return this.stringContent;
+    public Optional<String> stringContent() {
+        return Optional.ofNullable(this.stringContent);
     }
     /**
      * @return The time when the data was generated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
      * 
      */
-    public String timestamp() {
-        return this.timestamp;
+    public Optional<String> timestamp() {
+        return Optional.ofNullable(this.timestamp);
     }
 
     public static Builder builder() {
@@ -69,10 +71,10 @@ public final class GetResultResultDataSet {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String byteContent;
-        private String name;
-        private String stringContent;
-        private String timestamp;
+        private @Nullable String byteContent;
+        private @Nullable String name;
+        private @Nullable String stringContent;
+        private @Nullable String timestamp;
         public Builder() {}
         public Builder(GetResultResultDataSet defaults) {
     	      Objects.requireNonNull(defaults);
@@ -83,23 +85,23 @@ public final class GetResultResultDataSet {
         }
 
         @CustomType.Setter
-        public Builder byteContent(String byteContent) {
-            this.byteContent = Objects.requireNonNull(byteContent);
+        public Builder byteContent(@Nullable String byteContent) {
+            this.byteContent = byteContent;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder stringContent(String stringContent) {
-            this.stringContent = Objects.requireNonNull(stringContent);
+        public Builder stringContent(@Nullable String stringContent) {
+            this.stringContent = stringContent;
             return this;
         }
         @CustomType.Setter
-        public Builder timestamp(String timestamp) {
-            this.timestamp = Objects.requireNonNull(timestamp);
+        public Builder timestamp(@Nullable String timestamp) {
+            this.timestamp = timestamp;
             return this;
         }
         public GetResultResultDataSet build() {

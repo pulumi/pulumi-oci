@@ -10,6 +10,8 @@ import java.lang.Double;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetInvoiceLineComputedUsagesInvoicelineComputedUsage {
@@ -17,99 +19,99 @@ public final class GetInvoiceLineComputedUsagesInvoicelineComputedUsage {
      * @return Sum of Usage/Service Billing Line net Amount
      * 
      */
-    private Double cost;
+    private @Nullable Double cost;
     /**
      * @return Computed Line Amount rounded.
      * 
      */
-    private Double costRounded;
+    private @Nullable Double costRounded;
     /**
      * @return Net Unit Price for the product in consideration, price actual.
      * 
      */
-    private Double netUnitPrice;
+    private @Nullable Double netUnitPrice;
     /**
      * @return Product description
      * 
      */
-    private List<GetInvoiceLineComputedUsagesInvoicelineComputedUsageParentProduct> parentProducts;
+    private @Nullable List<GetInvoiceLineComputedUsagesInvoicelineComputedUsageParentProduct> parentProducts;
     /**
      * @return Product description
      * 
      */
-    private List<GetInvoiceLineComputedUsagesInvoicelineComputedUsageProduct> products;
+    private @Nullable List<GetInvoiceLineComputedUsagesInvoicelineComputedUsageProduct> products;
     /**
      * @return Total Quantity that was used for computation
      * 
      */
-    private Double quantity;
+    private @Nullable Double quantity;
     /**
      * @return Metered Service date.
      * 
      */
-    private String timeMeteredOn;
+    private @Nullable String timeMeteredOn;
     /**
      * @return Usage compute type in SPM.
      * 
      */
-    private String type;
+    private @Nullable String type;
 
     private GetInvoiceLineComputedUsagesInvoicelineComputedUsage() {}
     /**
      * @return Sum of Usage/Service Billing Line net Amount
      * 
      */
-    public Double cost() {
-        return this.cost;
+    public Optional<Double> cost() {
+        return Optional.ofNullable(this.cost);
     }
     /**
      * @return Computed Line Amount rounded.
      * 
      */
-    public Double costRounded() {
-        return this.costRounded;
+    public Optional<Double> costRounded() {
+        return Optional.ofNullable(this.costRounded);
     }
     /**
      * @return Net Unit Price for the product in consideration, price actual.
      * 
      */
-    public Double netUnitPrice() {
-        return this.netUnitPrice;
+    public Optional<Double> netUnitPrice() {
+        return Optional.ofNullable(this.netUnitPrice);
     }
     /**
      * @return Product description
      * 
      */
     public List<GetInvoiceLineComputedUsagesInvoicelineComputedUsageParentProduct> parentProducts() {
-        return this.parentProducts;
+        return this.parentProducts == null ? List.of() : this.parentProducts;
     }
     /**
      * @return Product description
      * 
      */
     public List<GetInvoiceLineComputedUsagesInvoicelineComputedUsageProduct> products() {
-        return this.products;
+        return this.products == null ? List.of() : this.products;
     }
     /**
      * @return Total Quantity that was used for computation
      * 
      */
-    public Double quantity() {
-        return this.quantity;
+    public Optional<Double> quantity() {
+        return Optional.ofNullable(this.quantity);
     }
     /**
      * @return Metered Service date.
      * 
      */
-    public String timeMeteredOn() {
-        return this.timeMeteredOn;
+    public Optional<String> timeMeteredOn() {
+        return Optional.ofNullable(this.timeMeteredOn);
     }
     /**
      * @return Usage compute type in SPM.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
 
     public static Builder builder() {
@@ -121,14 +123,14 @@ public final class GetInvoiceLineComputedUsagesInvoicelineComputedUsage {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Double cost;
-        private Double costRounded;
-        private Double netUnitPrice;
-        private List<GetInvoiceLineComputedUsagesInvoicelineComputedUsageParentProduct> parentProducts;
-        private List<GetInvoiceLineComputedUsagesInvoicelineComputedUsageProduct> products;
-        private Double quantity;
-        private String timeMeteredOn;
-        private String type;
+        private @Nullable Double cost;
+        private @Nullable Double costRounded;
+        private @Nullable Double netUnitPrice;
+        private @Nullable List<GetInvoiceLineComputedUsagesInvoicelineComputedUsageParentProduct> parentProducts;
+        private @Nullable List<GetInvoiceLineComputedUsagesInvoicelineComputedUsageProduct> products;
+        private @Nullable Double quantity;
+        private @Nullable String timeMeteredOn;
+        private @Nullable String type;
         public Builder() {}
         public Builder(GetInvoiceLineComputedUsagesInvoicelineComputedUsage defaults) {
     	      Objects.requireNonNull(defaults);
@@ -143,49 +145,49 @@ public final class GetInvoiceLineComputedUsagesInvoicelineComputedUsage {
         }
 
         @CustomType.Setter
-        public Builder cost(Double cost) {
-            this.cost = Objects.requireNonNull(cost);
+        public Builder cost(@Nullable Double cost) {
+            this.cost = cost;
             return this;
         }
         @CustomType.Setter
-        public Builder costRounded(Double costRounded) {
-            this.costRounded = Objects.requireNonNull(costRounded);
+        public Builder costRounded(@Nullable Double costRounded) {
+            this.costRounded = costRounded;
             return this;
         }
         @CustomType.Setter
-        public Builder netUnitPrice(Double netUnitPrice) {
-            this.netUnitPrice = Objects.requireNonNull(netUnitPrice);
+        public Builder netUnitPrice(@Nullable Double netUnitPrice) {
+            this.netUnitPrice = netUnitPrice;
             return this;
         }
         @CustomType.Setter
-        public Builder parentProducts(List<GetInvoiceLineComputedUsagesInvoicelineComputedUsageParentProduct> parentProducts) {
-            this.parentProducts = Objects.requireNonNull(parentProducts);
+        public Builder parentProducts(@Nullable List<GetInvoiceLineComputedUsagesInvoicelineComputedUsageParentProduct> parentProducts) {
+            this.parentProducts = parentProducts;
             return this;
         }
         public Builder parentProducts(GetInvoiceLineComputedUsagesInvoicelineComputedUsageParentProduct... parentProducts) {
             return parentProducts(List.of(parentProducts));
         }
         @CustomType.Setter
-        public Builder products(List<GetInvoiceLineComputedUsagesInvoicelineComputedUsageProduct> products) {
-            this.products = Objects.requireNonNull(products);
+        public Builder products(@Nullable List<GetInvoiceLineComputedUsagesInvoicelineComputedUsageProduct> products) {
+            this.products = products;
             return this;
         }
         public Builder products(GetInvoiceLineComputedUsagesInvoicelineComputedUsageProduct... products) {
             return products(List.of(products));
         }
         @CustomType.Setter
-        public Builder quantity(Double quantity) {
-            this.quantity = Objects.requireNonNull(quantity);
+        public Builder quantity(@Nullable Double quantity) {
+            this.quantity = quantity;
             return this;
         }
         @CustomType.Setter
-        public Builder timeMeteredOn(String timeMeteredOn) {
-            this.timeMeteredOn = Objects.requireNonNull(timeMeteredOn);
+        public Builder timeMeteredOn(@Nullable String timeMeteredOn) {
+            this.timeMeteredOn = timeMeteredOn;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         public GetInvoiceLineComputedUsagesInvoicelineComputedUsage build() {

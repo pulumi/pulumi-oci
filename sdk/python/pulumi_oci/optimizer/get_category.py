@@ -70,47 +70,32 @@ class GetCategoryResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the tenancy. The tenancy is the root compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="compartmentName")
-    def compartment_name(self) -> str:
-        """
-        The name associated with the compartment.
-        """
+    def compartment_name(self) -> Optional[str]:
         return pulumi.get(self, "compartment_name")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Text describing the category.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="estimatedCostSaving")
-    def estimated_cost_saving(self) -> float:
-        """
-        The estimated cost savings, in dollars, for the category.
-        """
+    def estimated_cost_saving(self) -> Optional[float]:
         return pulumi.get(self, "estimated_cost_saving")
 
     @property
     @pulumi.getter(name="extendedMetadata")
-    def extended_metadata(self) -> Mapping[str, Any]:
-        """
-        Additional metadata key/value pairs for the category.
-        """
+    def extended_metadata(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "extended_metadata")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -118,50 +103,32 @@ class GetCategoryResult:
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The name assigned to the category.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="recommendationCounts")
-    def recommendation_counts(self) -> Sequence['outputs.GetCategoryRecommendationCountResult']:
-        """
-        An array of `RecommendationCount` objects grouped by the level of importance assigned to the recommendation.
-        """
+    def recommendation_counts(self) -> Optional[Sequence['outputs.GetCategoryRecommendationCountResult']]:
         return pulumi.get(self, "recommendation_counts")
 
     @property
     @pulumi.getter(name="resourceCounts")
-    def resource_counts(self) -> Sequence['outputs.GetCategoryResourceCountResult']:
-        """
-        An array of `ResourceCount` objects grouped by the status of the recommendation.
-        """
+    def resource_counts(self) -> Optional[Sequence['outputs.GetCategoryResourceCountResult']]:
         return pulumi.get(self, "resource_counts")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The category's current state.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the category details were created, in the format defined by RFC3339.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time the category details were last updated, in the format defined by RFC3339.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -189,21 +156,7 @@ class AwaitableGetCategoryResult(GetCategoryResult):
 def get_category(category_id: Optional[str] = None,
                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCategoryResult:
     """
-    This data source provides details about a specific Category resource in Oracle Cloud Infrastructure Optimizer service.
-
-    Gets the category that corresponds to the specified OCID.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_category = oci.Optimizer.get_category(category_id=oci_optimizer_category["test_category"]["id"])
-    ```
-
-
-    :param str category_id: The unique OCID associated with the category.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['categoryId'] = category_id
@@ -230,20 +183,6 @@ def get_category(category_id: Optional[str] = None,
 def get_category_output(category_id: Optional[pulumi.Input[str]] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCategoryResult]:
     """
-    This data source provides details about a specific Category resource in Oracle Cloud Infrastructure Optimizer service.
-
-    Gets the category that corresponds to the specified OCID.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_category = oci.Optimizer.get_category(category_id=oci_optimizer_category["test_category"]["id"])
-    ```
-
-
-    :param str category_id: The unique OCID associated with the category.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -11,6 +11,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMediaWorkflowJobsMediaWorkflowJobCollectionItem {
@@ -18,227 +20,227 @@ public final class GetMediaWorkflowJobsMediaWorkflowJobCollectionItem {
      * @return The ID of the compartment in which to list resources.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return A filter to return only the resources that match the entire display name given.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return unique MediaWorkflowJob identifier
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The lifecycle details of MediaWorkflowJob task.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return Configurations to be applied to this run of the workflow.
      * 
      */
-    private List<String> mediaWorkflowConfigurationIds;
+    private @Nullable List<String> mediaWorkflowConfigurationIds;
     /**
      * @return Unique MediaWorkflow identifier.
      * 
      */
-    private String mediaWorkflowId;
-    private String mediaWorkflowName;
+    private @Nullable String mediaWorkflowId;
+    private @Nullable String mediaWorkflowName;
     /**
      * @return A list of JobOutput for the workflowJob.
      * 
      */
-    private List<GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutput> outputs;
+    private @Nullable List<GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutput> outputs;
     /**
      * @return Parameters that override parameters specified in MediaWorkflowTaskDeclarations, the MediaWorkflow, the MediaWorkflow&#39;s MediaWorkflowConfigurations and the MediaWorkflowConfigurations of this MediaWorkflowJob. The parameters are given as JSON.  The top level and 2nd level elements must be JSON objects (vs arrays, scalars, etc). The top level keys refer to a task&#39;s key and the 2nd level keys refer to a parameter&#39;s name.
      * 
      */
-    private String parameters;
+    private @Nullable String parameters;
     /**
      * @return A JSON representation of the job as it will be run by the system. All the task declarations, configurations and parameters are merged. Parameter values are all fully resolved.
      * 
      */
-    private String runnable;
+    private @Nullable String runnable;
     /**
      * @return A filter to return only the resources with lifecycleState matching the given lifecycleState.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private @Nullable Map<String,Object> systemTags;
     /**
      * @return Status of each task.
      * 
      */
-    private List<GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleState> taskLifecycleStates;
+    private @Nullable List<GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleState> taskLifecycleStates;
     /**
      * @return Creation time of the job. An RFC3339 formatted datetime string.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return Time when the job finished. An RFC3339 formatted datetime string.
      * 
      */
-    private String timeEnded;
+    private @Nullable String timeEnded;
     /**
      * @return Time when the job started to execute. An RFC3339 formatted datetime string.
      * 
      */
-    private String timeStarted;
+    private @Nullable String timeStarted;
     /**
      * @return Updated time of the job. An RFC3339 formatted datetime string.
      * 
      */
-    private String timeUpdated;
-    private String workflowIdentifierType;
+    private @Nullable String timeUpdated;
+    private @Nullable String workflowIdentifierType;
 
     private GetMediaWorkflowJobsMediaWorkflowJobCollectionItem() {}
     /**
      * @return The ID of the compartment in which to list resources.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return A filter to return only the resources that match the entire display name given.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return unique MediaWorkflowJob identifier
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The lifecycle details of MediaWorkflowJob task.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return Configurations to be applied to this run of the workflow.
      * 
      */
     public List<String> mediaWorkflowConfigurationIds() {
-        return this.mediaWorkflowConfigurationIds;
+        return this.mediaWorkflowConfigurationIds == null ? List.of() : this.mediaWorkflowConfigurationIds;
     }
     /**
      * @return Unique MediaWorkflow identifier.
      * 
      */
-    public String mediaWorkflowId() {
-        return this.mediaWorkflowId;
+    public Optional<String> mediaWorkflowId() {
+        return Optional.ofNullable(this.mediaWorkflowId);
     }
-    public String mediaWorkflowName() {
-        return this.mediaWorkflowName;
+    public Optional<String> mediaWorkflowName() {
+        return Optional.ofNullable(this.mediaWorkflowName);
     }
     /**
      * @return A list of JobOutput for the workflowJob.
      * 
      */
     public List<GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutput> outputs() {
-        return this.outputs;
+        return this.outputs == null ? List.of() : this.outputs;
     }
     /**
      * @return Parameters that override parameters specified in MediaWorkflowTaskDeclarations, the MediaWorkflow, the MediaWorkflow&#39;s MediaWorkflowConfigurations and the MediaWorkflowConfigurations of this MediaWorkflowJob. The parameters are given as JSON.  The top level and 2nd level elements must be JSON objects (vs arrays, scalars, etc). The top level keys refer to a task&#39;s key and the 2nd level keys refer to a parameter&#39;s name.
      * 
      */
-    public String parameters() {
-        return this.parameters;
+    public Optional<String> parameters() {
+        return Optional.ofNullable(this.parameters);
     }
     /**
      * @return A JSON representation of the job as it will be run by the system. All the task declarations, configurations and parameters are merged. Parameter values are all fully resolved.
      * 
      */
-    public String runnable() {
-        return this.runnable;
+    public Optional<String> runnable() {
+        return Optional.ofNullable(this.runnable);
     }
     /**
      * @return A filter to return only the resources with lifecycleState matching the given lifecycleState.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     public Map<String,Object> systemTags() {
-        return this.systemTags;
+        return this.systemTags == null ? Map.of() : this.systemTags;
     }
     /**
      * @return Status of each task.
      * 
      */
     public List<GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleState> taskLifecycleStates() {
-        return this.taskLifecycleStates;
+        return this.taskLifecycleStates == null ? List.of() : this.taskLifecycleStates;
     }
     /**
      * @return Creation time of the job. An RFC3339 formatted datetime string.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return Time when the job finished. An RFC3339 formatted datetime string.
      * 
      */
-    public String timeEnded() {
-        return this.timeEnded;
+    public Optional<String> timeEnded() {
+        return Optional.ofNullable(this.timeEnded);
     }
     /**
      * @return Time when the job started to execute. An RFC3339 formatted datetime string.
      * 
      */
-    public String timeStarted() {
-        return this.timeStarted;
+    public Optional<String> timeStarted() {
+        return Optional.ofNullable(this.timeStarted);
     }
     /**
      * @return Updated time of the job. An RFC3339 formatted datetime string.
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
-    public String workflowIdentifierType() {
-        return this.workflowIdentifierType;
+    public Optional<String> workflowIdentifierType() {
+        return Optional.ofNullable(this.workflowIdentifierType);
     }
 
     public static Builder builder() {
@@ -250,26 +252,26 @@ public final class GetMediaWorkflowJobsMediaWorkflowJobCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private Map<String,Object> definedTags;
-        private String displayName;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private String lifecycleDetails;
-        private List<String> mediaWorkflowConfigurationIds;
-        private String mediaWorkflowId;
-        private String mediaWorkflowName;
-        private List<GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutput> outputs;
-        private String parameters;
-        private String runnable;
-        private String state;
-        private Map<String,Object> systemTags;
-        private List<GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleState> taskLifecycleStates;
-        private String timeCreated;
-        private String timeEnded;
-        private String timeStarted;
-        private String timeUpdated;
-        private String workflowIdentifierType;
+        private @Nullable String compartmentId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable String lifecycleDetails;
+        private @Nullable List<String> mediaWorkflowConfigurationIds;
+        private @Nullable String mediaWorkflowId;
+        private @Nullable String mediaWorkflowName;
+        private @Nullable List<GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutput> outputs;
+        private @Nullable String parameters;
+        private @Nullable String runnable;
+        private @Nullable String state;
+        private @Nullable Map<String,Object> systemTags;
+        private @Nullable List<GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleState> taskLifecycleStates;
+        private @Nullable String timeCreated;
+        private @Nullable String timeEnded;
+        private @Nullable String timeStarted;
+        private @Nullable String timeUpdated;
+        private @Nullable String workflowIdentifierType;
         public Builder() {}
         public Builder(GetMediaWorkflowJobsMediaWorkflowJobCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -296,112 +298,112 @@ public final class GetMediaWorkflowJobsMediaWorkflowJobCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder mediaWorkflowConfigurationIds(List<String> mediaWorkflowConfigurationIds) {
-            this.mediaWorkflowConfigurationIds = Objects.requireNonNull(mediaWorkflowConfigurationIds);
+        public Builder mediaWorkflowConfigurationIds(@Nullable List<String> mediaWorkflowConfigurationIds) {
+            this.mediaWorkflowConfigurationIds = mediaWorkflowConfigurationIds;
             return this;
         }
         public Builder mediaWorkflowConfigurationIds(String... mediaWorkflowConfigurationIds) {
             return mediaWorkflowConfigurationIds(List.of(mediaWorkflowConfigurationIds));
         }
         @CustomType.Setter
-        public Builder mediaWorkflowId(String mediaWorkflowId) {
-            this.mediaWorkflowId = Objects.requireNonNull(mediaWorkflowId);
+        public Builder mediaWorkflowId(@Nullable String mediaWorkflowId) {
+            this.mediaWorkflowId = mediaWorkflowId;
             return this;
         }
         @CustomType.Setter
-        public Builder mediaWorkflowName(String mediaWorkflowName) {
-            this.mediaWorkflowName = Objects.requireNonNull(mediaWorkflowName);
+        public Builder mediaWorkflowName(@Nullable String mediaWorkflowName) {
+            this.mediaWorkflowName = mediaWorkflowName;
             return this;
         }
         @CustomType.Setter
-        public Builder outputs(List<GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutput> outputs) {
-            this.outputs = Objects.requireNonNull(outputs);
+        public Builder outputs(@Nullable List<GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutput> outputs) {
+            this.outputs = outputs;
             return this;
         }
         public Builder outputs(GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutput... outputs) {
             return outputs(List.of(outputs));
         }
         @CustomType.Setter
-        public Builder parameters(String parameters) {
-            this.parameters = Objects.requireNonNull(parameters);
+        public Builder parameters(@Nullable String parameters) {
+            this.parameters = parameters;
             return this;
         }
         @CustomType.Setter
-        public Builder runnable(String runnable) {
-            this.runnable = Objects.requireNonNull(runnable);
+        public Builder runnable(@Nullable String runnable) {
+            this.runnable = runnable;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+        public Builder systemTags(@Nullable Map<String,Object> systemTags) {
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
-        public Builder taskLifecycleStates(List<GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleState> taskLifecycleStates) {
-            this.taskLifecycleStates = Objects.requireNonNull(taskLifecycleStates);
+        public Builder taskLifecycleStates(@Nullable List<GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleState> taskLifecycleStates) {
+            this.taskLifecycleStates = taskLifecycleStates;
             return this;
         }
         public Builder taskLifecycleStates(GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleState... taskLifecycleStates) {
             return taskLifecycleStates(List.of(taskLifecycleStates));
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeEnded(String timeEnded) {
-            this.timeEnded = Objects.requireNonNull(timeEnded);
+        public Builder timeEnded(@Nullable String timeEnded) {
+            this.timeEnded = timeEnded;
             return this;
         }
         @CustomType.Setter
-        public Builder timeStarted(String timeStarted) {
-            this.timeStarted = Objects.requireNonNull(timeStarted);
+        public Builder timeStarted(@Nullable String timeStarted) {
+            this.timeStarted = timeStarted;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
-        public Builder workflowIdentifierType(String workflowIdentifierType) {
-            this.workflowIdentifierType = Objects.requireNonNull(workflowIdentifierType);
+        public Builder workflowIdentifierType(@Nullable String workflowIdentifierType) {
+            this.workflowIdentifierType = workflowIdentifierType;
             return this;
         }
         public GetMediaWorkflowJobsMediaWorkflowJobCollectionItem build() {

@@ -65,11 +65,11 @@ export interface GetCompatibleFormatsForSensitiveTypeResult {
     /**
      * An array of library masking formats compatible with the existing sensitive types.
      */
-    readonly formatsForSensitiveTypes: outputs.DataSafe.GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveType[];
+    readonly formatsForSensitiveTypes?: outputs.DataSafe.GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveType[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
 }
 /**
  * This data source provides details about a specific Compatible Formats For Sensitive Type resource in Oracle Cloud Infrastructure Data Safe service.

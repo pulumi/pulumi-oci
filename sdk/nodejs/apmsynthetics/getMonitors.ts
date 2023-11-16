@@ -97,13 +97,13 @@ export interface GetMonitorsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly isMaintenanceWindowActive?: boolean;
     readonly isMaintenanceWindowSet?: boolean;
     /**
      * The list of monitor_collection.
      */
-    readonly monitorCollections: outputs.ApmSynthetics.GetMonitorsMonitorCollection[];
+    readonly monitorCollections?: outputs.ApmSynthetics.GetMonitorsMonitorCollection[];
     /**
      * Type of monitor.
      */

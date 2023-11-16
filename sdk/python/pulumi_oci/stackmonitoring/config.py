@@ -24,18 +24,6 @@ class ConfigArgs:
                  resource_type: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a Config resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment in which the configuration is created.
-        :param pulumi.Input[str] config_type: The type of configuration. The only valid value is `"AUTO_PROMOTE"`.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) The display name of the configuration.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[bool] is_enabled: (Updatable) True if enterprise extensibility is enabled, false if it is not enabled.
-        :param pulumi.Input[str] license: (Updatable) License edition.
-        :param pulumi.Input[str] resource_type: The type of resource to configure for automatic promotion.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "config_type", config_type)
@@ -55,9 +43,6 @@ class ConfigArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Compartment in which the configuration is created.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -67,9 +52,6 @@ class ConfigArgs:
     @property
     @pulumi.getter(name="configType")
     def config_type(self) -> pulumi.Input[str]:
-        """
-        The type of configuration. The only valid value is `"AUTO_PROMOTE"`.
-        """
         return pulumi.get(self, "config_type")
 
     @config_type.setter
@@ -79,9 +61,6 @@ class ConfigArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -91,9 +70,6 @@ class ConfigArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The display name of the configuration.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -103,9 +79,6 @@ class ConfigArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -115,9 +88,6 @@ class ConfigArgs:
     @property
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) True if enterprise extensibility is enabled, false if it is not enabled.
-        """
         return pulumi.get(self, "is_enabled")
 
     @is_enabled.setter
@@ -127,9 +97,6 @@ class ConfigArgs:
     @property
     @pulumi.getter
     def license(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) License edition.
-        """
         return pulumi.get(self, "license")
 
     @license.setter
@@ -139,13 +106,6 @@ class ConfigArgs:
     @property
     @pulumi.getter(name="resourceType")
     def resource_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The type of resource to configure for automatic promotion.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "resource_type")
 
     @resource_type.setter
@@ -170,22 +130,6 @@ class _ConfigState:
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering Config resources.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment in which the configuration is created.
-        :param pulumi.Input[str] config_type: The type of configuration. The only valid value is `"AUTO_PROMOTE"`.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) The display name of the configuration.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[bool] is_enabled: (Updatable) True if enterprise extensibility is enabled, false if it is not enabled.
-        :param pulumi.Input[str] license: (Updatable) License edition.
-        :param pulumi.Input[str] resource_type: The type of resource to configure for automatic promotion.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] state: The current state of the configuration.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: The time the configuration was created. An RFC3339 formatted datetime string.
-        :param pulumi.Input[str] time_updated: The time the Config was updated.
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -215,9 +159,6 @@ class _ConfigState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Compartment in which the configuration is created.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -227,9 +168,6 @@ class _ConfigState:
     @property
     @pulumi.getter(name="configType")
     def config_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The type of configuration. The only valid value is `"AUTO_PROMOTE"`.
-        """
         return pulumi.get(self, "config_type")
 
     @config_type.setter
@@ -239,9 +177,6 @@ class _ConfigState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -251,9 +186,6 @@ class _ConfigState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The display name of the configuration.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -263,9 +195,6 @@ class _ConfigState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -275,9 +204,6 @@ class _ConfigState:
     @property
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) True if enterprise extensibility is enabled, false if it is not enabled.
-        """
         return pulumi.get(self, "is_enabled")
 
     @is_enabled.setter
@@ -287,9 +213,6 @@ class _ConfigState:
     @property
     @pulumi.getter
     def license(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) License edition.
-        """
         return pulumi.get(self, "license")
 
     @license.setter
@@ -299,13 +222,6 @@ class _ConfigState:
     @property
     @pulumi.getter(name="resourceType")
     def resource_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The type of resource to configure for automatic promotion.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "resource_type")
 
     @resource_type.setter
@@ -315,9 +231,6 @@ class _ConfigState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the configuration.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -327,9 +240,6 @@ class _ConfigState:
     @property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
@@ -339,9 +249,6 @@ class _ConfigState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the configuration was created. An RFC3339 formatted datetime string.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -351,9 +258,6 @@ class _ConfigState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the Config was updated.
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -376,59 +280,9 @@ class Config(pulumi.CustomResource):
                  resource_type: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Config resource in Oracle Cloud Infrastructure Stack Monitoring service.
-
-        Creates a configuration item, for example to define
-        whether resources of a specific type should be discovered automatically.
-
-        For example, when a new Management Agent gets registered in a certain compartment,
-        this Management Agent can potentially get promoted to a HOST resource.
-        The configuration item will determine if HOST resources in the selected compartment will be
-        discovered automatically.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_config = oci.stack_monitoring.Config("testConfig",
-            compartment_id=var["compartment_id"],
-            config_type=var["config_config_type"],
-            is_enabled=var["config_is_enabled"],
-            resource_type=var["config_resource_type"],
-            license=var["config_license"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            display_name=var["config_display_name"],
-            freeform_tags={
-                "bar-key": "value",
-            })
-        ```
-
-        ## Import
-
-        Configs can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:StackMonitoring/config:Config test_config "id"
-        ```
-
+        Create a Config resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment in which the configuration is created.
-        :param pulumi.Input[str] config_type: The type of configuration. The only valid value is `"AUTO_PROMOTE"`.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) The display name of the configuration.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[bool] is_enabled: (Updatable) True if enterprise extensibility is enabled, false if it is not enabled.
-        :param pulumi.Input[str] license: (Updatable) License edition.
-        :param pulumi.Input[str] resource_type: The type of resource to configure for automatic promotion.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -437,45 +291,7 @@ class Config(pulumi.CustomResource):
                  args: ConfigArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Config resource in Oracle Cloud Infrastructure Stack Monitoring service.
-
-        Creates a configuration item, for example to define
-        whether resources of a specific type should be discovered automatically.
-
-        For example, when a new Management Agent gets registered in a certain compartment,
-        this Management Agent can potentially get promoted to a HOST resource.
-        The configuration item will determine if HOST resources in the selected compartment will be
-        discovered automatically.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_config = oci.stack_monitoring.Config("testConfig",
-            compartment_id=var["compartment_id"],
-            config_type=var["config_config_type"],
-            is_enabled=var["config_is_enabled"],
-            resource_type=var["config_resource_type"],
-            license=var["config_license"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            display_name=var["config_display_name"],
-            freeform_tags={
-                "bar-key": "value",
-            })
-        ```
-
-        ## Import
-
-        Configs can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:StackMonitoring/config:Config test_config "id"
-        ```
-
+        Create a Config resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param ConfigArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -553,22 +369,6 @@ class Config(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment in which the configuration is created.
-        :param pulumi.Input[str] config_type: The type of configuration. The only valid value is `"AUTO_PROMOTE"`.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) The display name of the configuration.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[bool] is_enabled: (Updatable) True if enterprise extensibility is enabled, false if it is not enabled.
-        :param pulumi.Input[str] license: (Updatable) License edition.
-        :param pulumi.Input[str] resource_type: The type of resource to configure for automatic promotion.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] state: The current state of the configuration.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: The time the configuration was created. An RFC3339 formatted datetime string.
-        :param pulumi.Input[str] time_updated: The time the Config was updated.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -591,100 +391,60 @@ class Config(pulumi.CustomResource):
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Compartment in which the configuration is created.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="configType")
     def config_type(self) -> pulumi.Output[str]:
-        """
-        The type of configuration. The only valid value is `"AUTO_PROMOTE"`.
-        """
         return pulumi.get(self, "config_type")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The display name of the configuration.
-        """
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="isEnabled")
-    def is_enabled(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) True if enterprise extensibility is enabled, false if it is not enabled.
-        """
+    def is_enabled(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_enabled")
 
     @property
     @pulumi.getter
-    def license(self) -> pulumi.Output[str]:
-        """
-        (Updatable) License edition.
-        """
+    def license(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "license")
 
     @property
     @pulumi.getter(name="resourceType")
-    def resource_type(self) -> pulumi.Output[str]:
-        """
-        The type of resource to configure for automatic promotion.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
+    def resource_type(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "resource_type")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the configuration.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The time the configuration was created. An RFC3339 formatted datetime string.
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The time the Config was updated.
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 

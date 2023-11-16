@@ -6,6 +6,8 @@ package com.pulumi.oci.Identity.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsAuthenticationFactorSettingIdentityStoreSetting {
@@ -13,27 +15,27 @@ public final class GetDomainsAuthenticationFactorSettingIdentityStoreSetting {
      * @return If true, indicates that Multi-Factor Authentication should use the mobile number in the identity store
      * 
      */
-    private Boolean mobileNumberEnabled;
+    private @Nullable Boolean mobileNumberEnabled;
     /**
      * @return If true, indicates that the user can update the mobile number in the user&#39;s Multi-Factor Authentication profile
      * 
      */
-    private Boolean mobileNumberUpdateEnabled;
+    private @Nullable Boolean mobileNumberUpdateEnabled;
 
     private GetDomainsAuthenticationFactorSettingIdentityStoreSetting() {}
     /**
      * @return If true, indicates that Multi-Factor Authentication should use the mobile number in the identity store
      * 
      */
-    public Boolean mobileNumberEnabled() {
-        return this.mobileNumberEnabled;
+    public Optional<Boolean> mobileNumberEnabled() {
+        return Optional.ofNullable(this.mobileNumberEnabled);
     }
     /**
      * @return If true, indicates that the user can update the mobile number in the user&#39;s Multi-Factor Authentication profile
      * 
      */
-    public Boolean mobileNumberUpdateEnabled() {
-        return this.mobileNumberUpdateEnabled;
+    public Optional<Boolean> mobileNumberUpdateEnabled() {
+        return Optional.ofNullable(this.mobileNumberUpdateEnabled);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetDomainsAuthenticationFactorSettingIdentityStoreSetting {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Boolean mobileNumberEnabled;
-        private Boolean mobileNumberUpdateEnabled;
+        private @Nullable Boolean mobileNumberEnabled;
+        private @Nullable Boolean mobileNumberUpdateEnabled;
         public Builder() {}
         public Builder(GetDomainsAuthenticationFactorSettingIdentityStoreSetting defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetDomainsAuthenticationFactorSettingIdentityStoreSetting {
         }
 
         @CustomType.Setter
-        public Builder mobileNumberEnabled(Boolean mobileNumberEnabled) {
-            this.mobileNumberEnabled = Objects.requireNonNull(mobileNumberEnabled);
+        public Builder mobileNumberEnabled(@Nullable Boolean mobileNumberEnabled) {
+            this.mobileNumberEnabled = mobileNumberEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder mobileNumberUpdateEnabled(Boolean mobileNumberUpdateEnabled) {
-            this.mobileNumberUpdateEnabled = Objects.requireNonNull(mobileNumberUpdateEnabled);
+        public Builder mobileNumberUpdateEnabled(@Nullable Boolean mobileNumberUpdateEnabled) {
+            this.mobileNumberUpdateEnabled = mobileNumberUpdateEnabled;
             return this;
         }
         public GetDomainsAuthenticationFactorSettingIdentityStoreSetting build() {

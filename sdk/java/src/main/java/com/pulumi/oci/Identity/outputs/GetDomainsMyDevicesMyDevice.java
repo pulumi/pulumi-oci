@@ -19,6 +19,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsMyDevicesMyDevice {
@@ -26,223 +28,223 @@ public final class GetDomainsMyDevicesMyDevice {
      * @return Device additional attributes
      * 
      */
-    private List<GetDomainsMyDevicesMyDeviceAdditionalAttribute> additionalAttributes;
+    private @Nullable List<GetDomainsMyDevicesMyDeviceAdditionalAttribute> additionalAttributes;
     /**
      * @return Mobile Authenticator App Version
      * 
      */
-    private String appVersion;
+    private @Nullable String appVersion;
     /**
      * @return A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If &#39;attributes&#39; query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
      * 
      */
-    private List<String> attributeSets;
+    private @Nullable List<String> attributeSets;
     /**
      * @return A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
      * 
      */
-    private String attributes;
+    private @Nullable String attributes;
     /**
      * @return Authentication Factors
      * 
      */
-    private List<GetDomainsMyDevicesMyDeviceAuthenticationFactor> authenticationFactors;
+    private @Nullable List<GetDomainsMyDevicesMyDeviceAuthenticationFactor> authenticationFactors;
     /**
      * @return Authentication method used in device. For FIDO, it will contain SECURITY_KEY/WINDOWS_HELLO etc
      * 
      */
-    private String authenticationMethod;
+    private @Nullable String authenticationMethod;
     /**
      * @return The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
      * 
      */
-    private String authorization;
+    private @Nullable String authorization;
     /**
      * @return Device base public Key
      * 
      */
-    private String basePublicKey;
+    private @Nullable String basePublicKey;
     /**
      * @return Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
      * 
      */
-    private String compartmentOcid;
+    private @Nullable String compartmentOcid;
     /**
      * @return Country code of user&#39;s Phone Number
      * 
      */
-    private String countryCode;
+    private @Nullable String countryCode;
     /**
      * @return A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      * 
      */
-    private Boolean deleteInProgress;
+    private @Nullable Boolean deleteInProgress;
     /**
      * @return Device hardware name/model
      * 
      */
-    private String deviceType;
+    private @Nullable String deviceType;
     /**
      * @return Unique id sent from device
      * 
      */
-    private String deviceUuid;
+    private @Nullable String deviceUuid;
     /**
      * @return Device friendly display name
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      * 
      */
-    private String domainOcid;
+    private @Nullable String domainOcid;
     /**
      * @return Attribute added for replication log, it is not used by IDCS, just added as place holder
      * 
      */
-    private Integer expiresOn;
+    private @Nullable Integer expiresOn;
     /**
      * @return An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued be the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer&#39;s tenant.
      * 
      */
-    private String externalId;
+    private @Nullable String externalId;
     /**
      * @return Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider&#39;s entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The User or App who created the Resource
      * 
      */
-    private List<GetDomainsMyDevicesMyDeviceIdcsCreatedBy> idcsCreatedBies;
+    private @Nullable List<GetDomainsMyDevicesMyDeviceIdcsCreatedBy> idcsCreatedBies;
     /**
      * @return The basic endpoint for the identity domain
      * 
      */
-    private String idcsEndpoint;
+    private @Nullable String idcsEndpoint;
     /**
      * @return The User or App who modified the Resource
      * 
      */
-    private List<GetDomainsMyDevicesMyDeviceIdcsLastModifiedBy> idcsLastModifiedBies;
+    private @Nullable List<GetDomainsMyDevicesMyDeviceIdcsLastModifiedBy> idcsLastModifiedBies;
     /**
      * @return The release number when the resource was upgraded.
      * 
      */
-    private String idcsLastUpgradedInRelease;
+    private @Nullable String idcsLastUpgradedInRelease;
     /**
      * @return Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      * 
      */
-    private List<String> idcsPreventedOperations;
+    private @Nullable List<String> idcsPreventedOperations;
     /**
      * @return Flag that indicates whether the device is enrolled for account recovery
      * 
      */
-    private Boolean isAccRecEnabled;
+    private @Nullable Boolean isAccRecEnabled;
     /**
      * @return Device Compliance Status
      * 
      */
-    private Boolean isCompliant;
+    private @Nullable Boolean isCompliant;
     /**
      * @return Last Sync time for device
      * 
      */
-    private String lastSyncTime;
+    private @Nullable String lastSyncTime;
     /**
      * @return The most recent timestamp when the device was successfully validated using one time passcode
      * 
      */
-    private String lastValidatedTime;
+    private @Nullable String lastValidatedTime;
     /**
      * @return A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      * 
      */
-    private List<GetDomainsMyDevicesMyDeviceMeta> metas;
-    private String myDeviceId;
+    private @Nullable List<GetDomainsMyDevicesMyDeviceMeta> metas;
+    private @Nullable String myDeviceId;
     /**
      * @return Device Non Compliances
      * 
      */
-    private List<GetDomainsMyDevicesMyDeviceNonCompliance> nonCompliances;
+    private @Nullable List<GetDomainsMyDevicesMyDeviceNonCompliance> nonCompliances;
     /**
      * @return The OCID of the user
      * 
      */
-    private String ocid;
+    private @Nullable String ocid;
     /**
      * @return Mobile Authenticator App Package Id
      * 
      */
-    private String packageId;
+    private @Nullable String packageId;
     /**
      * @return User&#39;s Phone Number
      * 
      */
-    private String phoneNumber;
+    private @Nullable String phoneNumber;
     /**
      * @return Device Platform
      * 
      */
-    private String platform;
+    private @Nullable String platform;
     /**
      * @return Push Notification target. Reference to Device notification related resource
      * 
      */
-    private List<GetDomainsMyDevicesMyDevicePushNotificationTarget> pushNotificationTargets;
+    private @Nullable List<GetDomainsMyDevicesMyDevicePushNotificationTarget> pushNotificationTargets;
     /**
      * @return Additional comments/reasons for the change in device status
      * 
      */
-    private String reason;
+    private @Nullable String reason;
     /**
      * @return An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      * 
      */
-    private String resourceTypeSchemaVersion;
+    private @Nullable String resourceTypeSchemaVersion;
     /**
      * @return REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      * 
      */
-    private List<String> schemas;
+    private @Nullable List<String> schemas;
     /**
      * @return Attribute added for replication log, it is not used by IDCS, it is actual encrypted TOTP seed for the user
      * 
      */
-    private String seed;
+    private @Nullable String seed;
     /**
      * @return Attribute added for replication log, it is not used by IDCS, the DEK that encrypts the specific seed for that user
      * 
      */
-    private String seedDekId;
+    private @Nullable String seedDekId;
     /**
      * @return Device Status
      * 
      */
-    private String status;
+    private @Nullable String status;
     /**
      * @return A list of tags on this resource.
      * 
      */
-    private List<GetDomainsMyDevicesMyDeviceTag> tags;
+    private @Nullable List<GetDomainsMyDevicesMyDeviceTag> tags;
     /**
      * @return Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      * 
      */
-    private String tenancyOcid;
+    private @Nullable String tenancyOcid;
     /**
      * @return User&#39;s third-party authentication factor details
      * 
      */
-    private List<GetDomainsMyDevicesMyDeviceThirdPartyFactor> thirdPartyFactors;
+    private @Nullable List<GetDomainsMyDevicesMyDeviceThirdPartyFactor> thirdPartyFactors;
     /**
      * @return Device member
      * 
      */
-    private List<GetDomainsMyDevicesMyDeviceUser> users;
+    private @Nullable List<GetDomainsMyDevicesMyDeviceUser> users;
 
     private GetDomainsMyDevicesMyDevice() {}
     /**
@@ -250,311 +252,311 @@ public final class GetDomainsMyDevicesMyDevice {
      * 
      */
     public List<GetDomainsMyDevicesMyDeviceAdditionalAttribute> additionalAttributes() {
-        return this.additionalAttributes;
+        return this.additionalAttributes == null ? List.of() : this.additionalAttributes;
     }
     /**
      * @return Mobile Authenticator App Version
      * 
      */
-    public String appVersion() {
-        return this.appVersion;
+    public Optional<String> appVersion() {
+        return Optional.ofNullable(this.appVersion);
     }
     /**
      * @return A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If &#39;attributes&#39; query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
      * 
      */
     public List<String> attributeSets() {
-        return this.attributeSets;
+        return this.attributeSets == null ? List.of() : this.attributeSets;
     }
     /**
      * @return A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
      * 
      */
-    public String attributes() {
-        return this.attributes;
+    public Optional<String> attributes() {
+        return Optional.ofNullable(this.attributes);
     }
     /**
      * @return Authentication Factors
      * 
      */
     public List<GetDomainsMyDevicesMyDeviceAuthenticationFactor> authenticationFactors() {
-        return this.authenticationFactors;
+        return this.authenticationFactors == null ? List.of() : this.authenticationFactors;
     }
     /**
      * @return Authentication method used in device. For FIDO, it will contain SECURITY_KEY/WINDOWS_HELLO etc
      * 
      */
-    public String authenticationMethod() {
-        return this.authenticationMethod;
+    public Optional<String> authenticationMethod() {
+        return Optional.ofNullable(this.authenticationMethod);
     }
     /**
      * @return The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
      * 
      */
-    public String authorization() {
-        return this.authorization;
+    public Optional<String> authorization() {
+        return Optional.ofNullable(this.authorization);
     }
     /**
      * @return Device base public Key
      * 
      */
-    public String basePublicKey() {
-        return this.basePublicKey;
+    public Optional<String> basePublicKey() {
+        return Optional.ofNullable(this.basePublicKey);
     }
     /**
      * @return Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
      * 
      */
-    public String compartmentOcid() {
-        return this.compartmentOcid;
+    public Optional<String> compartmentOcid() {
+        return Optional.ofNullable(this.compartmentOcid);
     }
     /**
      * @return Country code of user&#39;s Phone Number
      * 
      */
-    public String countryCode() {
-        return this.countryCode;
+    public Optional<String> countryCode() {
+        return Optional.ofNullable(this.countryCode);
     }
     /**
      * @return A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      * 
      */
-    public Boolean deleteInProgress() {
-        return this.deleteInProgress;
+    public Optional<Boolean> deleteInProgress() {
+        return Optional.ofNullable(this.deleteInProgress);
     }
     /**
      * @return Device hardware name/model
      * 
      */
-    public String deviceType() {
-        return this.deviceType;
+    public Optional<String> deviceType() {
+        return Optional.ofNullable(this.deviceType);
     }
     /**
      * @return Unique id sent from device
      * 
      */
-    public String deviceUuid() {
-        return this.deviceUuid;
+    public Optional<String> deviceUuid() {
+        return Optional.ofNullable(this.deviceUuid);
     }
     /**
      * @return Device friendly display name
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      * 
      */
-    public String domainOcid() {
-        return this.domainOcid;
+    public Optional<String> domainOcid() {
+        return Optional.ofNullable(this.domainOcid);
     }
     /**
      * @return Attribute added for replication log, it is not used by IDCS, just added as place holder
      * 
      */
-    public Integer expiresOn() {
-        return this.expiresOn;
+    public Optional<Integer> expiresOn() {
+        return Optional.ofNullable(this.expiresOn);
     }
     /**
      * @return An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued be the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer&#39;s tenant.
      * 
      */
-    public String externalId() {
-        return this.externalId;
+    public Optional<String> externalId() {
+        return Optional.ofNullable(this.externalId);
     }
     /**
      * @return Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider&#39;s entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The User or App who created the Resource
      * 
      */
     public List<GetDomainsMyDevicesMyDeviceIdcsCreatedBy> idcsCreatedBies() {
-        return this.idcsCreatedBies;
+        return this.idcsCreatedBies == null ? List.of() : this.idcsCreatedBies;
     }
     /**
      * @return The basic endpoint for the identity domain
      * 
      */
-    public String idcsEndpoint() {
-        return this.idcsEndpoint;
+    public Optional<String> idcsEndpoint() {
+        return Optional.ofNullable(this.idcsEndpoint);
     }
     /**
      * @return The User or App who modified the Resource
      * 
      */
     public List<GetDomainsMyDevicesMyDeviceIdcsLastModifiedBy> idcsLastModifiedBies() {
-        return this.idcsLastModifiedBies;
+        return this.idcsLastModifiedBies == null ? List.of() : this.idcsLastModifiedBies;
     }
     /**
      * @return The release number when the resource was upgraded.
      * 
      */
-    public String idcsLastUpgradedInRelease() {
-        return this.idcsLastUpgradedInRelease;
+    public Optional<String> idcsLastUpgradedInRelease() {
+        return Optional.ofNullable(this.idcsLastUpgradedInRelease);
     }
     /**
      * @return Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      * 
      */
     public List<String> idcsPreventedOperations() {
-        return this.idcsPreventedOperations;
+        return this.idcsPreventedOperations == null ? List.of() : this.idcsPreventedOperations;
     }
     /**
      * @return Flag that indicates whether the device is enrolled for account recovery
      * 
      */
-    public Boolean isAccRecEnabled() {
-        return this.isAccRecEnabled;
+    public Optional<Boolean> isAccRecEnabled() {
+        return Optional.ofNullable(this.isAccRecEnabled);
     }
     /**
      * @return Device Compliance Status
      * 
      */
-    public Boolean isCompliant() {
-        return this.isCompliant;
+    public Optional<Boolean> isCompliant() {
+        return Optional.ofNullable(this.isCompliant);
     }
     /**
      * @return Last Sync time for device
      * 
      */
-    public String lastSyncTime() {
-        return this.lastSyncTime;
+    public Optional<String> lastSyncTime() {
+        return Optional.ofNullable(this.lastSyncTime);
     }
     /**
      * @return The most recent timestamp when the device was successfully validated using one time passcode
      * 
      */
-    public String lastValidatedTime() {
-        return this.lastValidatedTime;
+    public Optional<String> lastValidatedTime() {
+        return Optional.ofNullable(this.lastValidatedTime);
     }
     /**
      * @return A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      * 
      */
     public List<GetDomainsMyDevicesMyDeviceMeta> metas() {
-        return this.metas;
+        return this.metas == null ? List.of() : this.metas;
     }
-    public String myDeviceId() {
-        return this.myDeviceId;
+    public Optional<String> myDeviceId() {
+        return Optional.ofNullable(this.myDeviceId);
     }
     /**
      * @return Device Non Compliances
      * 
      */
     public List<GetDomainsMyDevicesMyDeviceNonCompliance> nonCompliances() {
-        return this.nonCompliances;
+        return this.nonCompliances == null ? List.of() : this.nonCompliances;
     }
     /**
      * @return The OCID of the user
      * 
      */
-    public String ocid() {
-        return this.ocid;
+    public Optional<String> ocid() {
+        return Optional.ofNullable(this.ocid);
     }
     /**
      * @return Mobile Authenticator App Package Id
      * 
      */
-    public String packageId() {
-        return this.packageId;
+    public Optional<String> packageId() {
+        return Optional.ofNullable(this.packageId);
     }
     /**
      * @return User&#39;s Phone Number
      * 
      */
-    public String phoneNumber() {
-        return this.phoneNumber;
+    public Optional<String> phoneNumber() {
+        return Optional.ofNullable(this.phoneNumber);
     }
     /**
      * @return Device Platform
      * 
      */
-    public String platform() {
-        return this.platform;
+    public Optional<String> platform() {
+        return Optional.ofNullable(this.platform);
     }
     /**
      * @return Push Notification target. Reference to Device notification related resource
      * 
      */
     public List<GetDomainsMyDevicesMyDevicePushNotificationTarget> pushNotificationTargets() {
-        return this.pushNotificationTargets;
+        return this.pushNotificationTargets == null ? List.of() : this.pushNotificationTargets;
     }
     /**
      * @return Additional comments/reasons for the change in device status
      * 
      */
-    public String reason() {
-        return this.reason;
+    public Optional<String> reason() {
+        return Optional.ofNullable(this.reason);
     }
     /**
      * @return An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      * 
      */
-    public String resourceTypeSchemaVersion() {
-        return this.resourceTypeSchemaVersion;
+    public Optional<String> resourceTypeSchemaVersion() {
+        return Optional.ofNullable(this.resourceTypeSchemaVersion);
     }
     /**
      * @return REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      * 
      */
     public List<String> schemas() {
-        return this.schemas;
+        return this.schemas == null ? List.of() : this.schemas;
     }
     /**
      * @return Attribute added for replication log, it is not used by IDCS, it is actual encrypted TOTP seed for the user
      * 
      */
-    public String seed() {
-        return this.seed;
+    public Optional<String> seed() {
+        return Optional.ofNullable(this.seed);
     }
     /**
      * @return Attribute added for replication log, it is not used by IDCS, the DEK that encrypts the specific seed for that user
      * 
      */
-    public String seedDekId() {
-        return this.seedDekId;
+    public Optional<String> seedDekId() {
+        return Optional.ofNullable(this.seedDekId);
     }
     /**
      * @return Device Status
      * 
      */
-    public String status() {
-        return this.status;
+    public Optional<String> status() {
+        return Optional.ofNullable(this.status);
     }
     /**
      * @return A list of tags on this resource.
      * 
      */
     public List<GetDomainsMyDevicesMyDeviceTag> tags() {
-        return this.tags;
+        return this.tags == null ? List.of() : this.tags;
     }
     /**
      * @return Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      * 
      */
-    public String tenancyOcid() {
-        return this.tenancyOcid;
+    public Optional<String> tenancyOcid() {
+        return Optional.ofNullable(this.tenancyOcid);
     }
     /**
      * @return User&#39;s third-party authentication factor details
      * 
      */
     public List<GetDomainsMyDevicesMyDeviceThirdPartyFactor> thirdPartyFactors() {
-        return this.thirdPartyFactors;
+        return this.thirdPartyFactors == null ? List.of() : this.thirdPartyFactors;
     }
     /**
      * @return Device member
      * 
      */
     public List<GetDomainsMyDevicesMyDeviceUser> users() {
-        return this.users;
+        return this.users == null ? List.of() : this.users;
     }
 
     public static Builder builder() {
@@ -566,51 +568,51 @@ public final class GetDomainsMyDevicesMyDevice {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetDomainsMyDevicesMyDeviceAdditionalAttribute> additionalAttributes;
-        private String appVersion;
-        private List<String> attributeSets;
-        private String attributes;
-        private List<GetDomainsMyDevicesMyDeviceAuthenticationFactor> authenticationFactors;
-        private String authenticationMethod;
-        private String authorization;
-        private String basePublicKey;
-        private String compartmentOcid;
-        private String countryCode;
-        private Boolean deleteInProgress;
-        private String deviceType;
-        private String deviceUuid;
-        private String displayName;
-        private String domainOcid;
-        private Integer expiresOn;
-        private String externalId;
-        private String id;
-        private List<GetDomainsMyDevicesMyDeviceIdcsCreatedBy> idcsCreatedBies;
-        private String idcsEndpoint;
-        private List<GetDomainsMyDevicesMyDeviceIdcsLastModifiedBy> idcsLastModifiedBies;
-        private String idcsLastUpgradedInRelease;
-        private List<String> idcsPreventedOperations;
-        private Boolean isAccRecEnabled;
-        private Boolean isCompliant;
-        private String lastSyncTime;
-        private String lastValidatedTime;
-        private List<GetDomainsMyDevicesMyDeviceMeta> metas;
-        private String myDeviceId;
-        private List<GetDomainsMyDevicesMyDeviceNonCompliance> nonCompliances;
-        private String ocid;
-        private String packageId;
-        private String phoneNumber;
-        private String platform;
-        private List<GetDomainsMyDevicesMyDevicePushNotificationTarget> pushNotificationTargets;
-        private String reason;
-        private String resourceTypeSchemaVersion;
-        private List<String> schemas;
-        private String seed;
-        private String seedDekId;
-        private String status;
-        private List<GetDomainsMyDevicesMyDeviceTag> tags;
-        private String tenancyOcid;
-        private List<GetDomainsMyDevicesMyDeviceThirdPartyFactor> thirdPartyFactors;
-        private List<GetDomainsMyDevicesMyDeviceUser> users;
+        private @Nullable List<GetDomainsMyDevicesMyDeviceAdditionalAttribute> additionalAttributes;
+        private @Nullable String appVersion;
+        private @Nullable List<String> attributeSets;
+        private @Nullable String attributes;
+        private @Nullable List<GetDomainsMyDevicesMyDeviceAuthenticationFactor> authenticationFactors;
+        private @Nullable String authenticationMethod;
+        private @Nullable String authorization;
+        private @Nullable String basePublicKey;
+        private @Nullable String compartmentOcid;
+        private @Nullable String countryCode;
+        private @Nullable Boolean deleteInProgress;
+        private @Nullable String deviceType;
+        private @Nullable String deviceUuid;
+        private @Nullable String displayName;
+        private @Nullable String domainOcid;
+        private @Nullable Integer expiresOn;
+        private @Nullable String externalId;
+        private @Nullable String id;
+        private @Nullable List<GetDomainsMyDevicesMyDeviceIdcsCreatedBy> idcsCreatedBies;
+        private @Nullable String idcsEndpoint;
+        private @Nullable List<GetDomainsMyDevicesMyDeviceIdcsLastModifiedBy> idcsLastModifiedBies;
+        private @Nullable String idcsLastUpgradedInRelease;
+        private @Nullable List<String> idcsPreventedOperations;
+        private @Nullable Boolean isAccRecEnabled;
+        private @Nullable Boolean isCompliant;
+        private @Nullable String lastSyncTime;
+        private @Nullable String lastValidatedTime;
+        private @Nullable List<GetDomainsMyDevicesMyDeviceMeta> metas;
+        private @Nullable String myDeviceId;
+        private @Nullable List<GetDomainsMyDevicesMyDeviceNonCompliance> nonCompliances;
+        private @Nullable String ocid;
+        private @Nullable String packageId;
+        private @Nullable String phoneNumber;
+        private @Nullable String platform;
+        private @Nullable List<GetDomainsMyDevicesMyDevicePushNotificationTarget> pushNotificationTargets;
+        private @Nullable String reason;
+        private @Nullable String resourceTypeSchemaVersion;
+        private @Nullable List<String> schemas;
+        private @Nullable String seed;
+        private @Nullable String seedDekId;
+        private @Nullable String status;
+        private @Nullable List<GetDomainsMyDevicesMyDeviceTag> tags;
+        private @Nullable String tenancyOcid;
+        private @Nullable List<GetDomainsMyDevicesMyDeviceThirdPartyFactor> thirdPartyFactors;
+        private @Nullable List<GetDomainsMyDevicesMyDeviceUser> users;
         public Builder() {}
         public Builder(GetDomainsMyDevicesMyDevice defaults) {
     	      Objects.requireNonNull(defaults);
@@ -662,264 +664,264 @@ public final class GetDomainsMyDevicesMyDevice {
         }
 
         @CustomType.Setter
-        public Builder additionalAttributes(List<GetDomainsMyDevicesMyDeviceAdditionalAttribute> additionalAttributes) {
-            this.additionalAttributes = Objects.requireNonNull(additionalAttributes);
+        public Builder additionalAttributes(@Nullable List<GetDomainsMyDevicesMyDeviceAdditionalAttribute> additionalAttributes) {
+            this.additionalAttributes = additionalAttributes;
             return this;
         }
         public Builder additionalAttributes(GetDomainsMyDevicesMyDeviceAdditionalAttribute... additionalAttributes) {
             return additionalAttributes(List.of(additionalAttributes));
         }
         @CustomType.Setter
-        public Builder appVersion(String appVersion) {
-            this.appVersion = Objects.requireNonNull(appVersion);
+        public Builder appVersion(@Nullable String appVersion) {
+            this.appVersion = appVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder attributeSets(List<String> attributeSets) {
-            this.attributeSets = Objects.requireNonNull(attributeSets);
+        public Builder attributeSets(@Nullable List<String> attributeSets) {
+            this.attributeSets = attributeSets;
             return this;
         }
         public Builder attributeSets(String... attributeSets) {
             return attributeSets(List.of(attributeSets));
         }
         @CustomType.Setter
-        public Builder attributes(String attributes) {
-            this.attributes = Objects.requireNonNull(attributes);
+        public Builder attributes(@Nullable String attributes) {
+            this.attributes = attributes;
             return this;
         }
         @CustomType.Setter
-        public Builder authenticationFactors(List<GetDomainsMyDevicesMyDeviceAuthenticationFactor> authenticationFactors) {
-            this.authenticationFactors = Objects.requireNonNull(authenticationFactors);
+        public Builder authenticationFactors(@Nullable List<GetDomainsMyDevicesMyDeviceAuthenticationFactor> authenticationFactors) {
+            this.authenticationFactors = authenticationFactors;
             return this;
         }
         public Builder authenticationFactors(GetDomainsMyDevicesMyDeviceAuthenticationFactor... authenticationFactors) {
             return authenticationFactors(List.of(authenticationFactors));
         }
         @CustomType.Setter
-        public Builder authenticationMethod(String authenticationMethod) {
-            this.authenticationMethod = Objects.requireNonNull(authenticationMethod);
+        public Builder authenticationMethod(@Nullable String authenticationMethod) {
+            this.authenticationMethod = authenticationMethod;
             return this;
         }
         @CustomType.Setter
-        public Builder authorization(String authorization) {
-            this.authorization = Objects.requireNonNull(authorization);
+        public Builder authorization(@Nullable String authorization) {
+            this.authorization = authorization;
             return this;
         }
         @CustomType.Setter
-        public Builder basePublicKey(String basePublicKey) {
-            this.basePublicKey = Objects.requireNonNull(basePublicKey);
+        public Builder basePublicKey(@Nullable String basePublicKey) {
+            this.basePublicKey = basePublicKey;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentOcid(String compartmentOcid) {
-            this.compartmentOcid = Objects.requireNonNull(compartmentOcid);
+        public Builder compartmentOcid(@Nullable String compartmentOcid) {
+            this.compartmentOcid = compartmentOcid;
             return this;
         }
         @CustomType.Setter
-        public Builder countryCode(String countryCode) {
-            this.countryCode = Objects.requireNonNull(countryCode);
+        public Builder countryCode(@Nullable String countryCode) {
+            this.countryCode = countryCode;
             return this;
         }
         @CustomType.Setter
-        public Builder deleteInProgress(Boolean deleteInProgress) {
-            this.deleteInProgress = Objects.requireNonNull(deleteInProgress);
+        public Builder deleteInProgress(@Nullable Boolean deleteInProgress) {
+            this.deleteInProgress = deleteInProgress;
             return this;
         }
         @CustomType.Setter
-        public Builder deviceType(String deviceType) {
-            this.deviceType = Objects.requireNonNull(deviceType);
+        public Builder deviceType(@Nullable String deviceType) {
+            this.deviceType = deviceType;
             return this;
         }
         @CustomType.Setter
-        public Builder deviceUuid(String deviceUuid) {
-            this.deviceUuid = Objects.requireNonNull(deviceUuid);
+        public Builder deviceUuid(@Nullable String deviceUuid) {
+            this.deviceUuid = deviceUuid;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder domainOcid(String domainOcid) {
-            this.domainOcid = Objects.requireNonNull(domainOcid);
+        public Builder domainOcid(@Nullable String domainOcid) {
+            this.domainOcid = domainOcid;
             return this;
         }
         @CustomType.Setter
-        public Builder expiresOn(Integer expiresOn) {
-            this.expiresOn = Objects.requireNonNull(expiresOn);
+        public Builder expiresOn(@Nullable Integer expiresOn) {
+            this.expiresOn = expiresOn;
             return this;
         }
         @CustomType.Setter
-        public Builder externalId(String externalId) {
-            this.externalId = Objects.requireNonNull(externalId);
+        public Builder externalId(@Nullable String externalId) {
+            this.externalId = externalId;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsCreatedBies(List<GetDomainsMyDevicesMyDeviceIdcsCreatedBy> idcsCreatedBies) {
-            this.idcsCreatedBies = Objects.requireNonNull(idcsCreatedBies);
+        public Builder idcsCreatedBies(@Nullable List<GetDomainsMyDevicesMyDeviceIdcsCreatedBy> idcsCreatedBies) {
+            this.idcsCreatedBies = idcsCreatedBies;
             return this;
         }
         public Builder idcsCreatedBies(GetDomainsMyDevicesMyDeviceIdcsCreatedBy... idcsCreatedBies) {
             return idcsCreatedBies(List.of(idcsCreatedBies));
         }
         @CustomType.Setter
-        public Builder idcsEndpoint(String idcsEndpoint) {
-            this.idcsEndpoint = Objects.requireNonNull(idcsEndpoint);
+        public Builder idcsEndpoint(@Nullable String idcsEndpoint) {
+            this.idcsEndpoint = idcsEndpoint;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsLastModifiedBies(List<GetDomainsMyDevicesMyDeviceIdcsLastModifiedBy> idcsLastModifiedBies) {
-            this.idcsLastModifiedBies = Objects.requireNonNull(idcsLastModifiedBies);
+        public Builder idcsLastModifiedBies(@Nullable List<GetDomainsMyDevicesMyDeviceIdcsLastModifiedBy> idcsLastModifiedBies) {
+            this.idcsLastModifiedBies = idcsLastModifiedBies;
             return this;
         }
         public Builder idcsLastModifiedBies(GetDomainsMyDevicesMyDeviceIdcsLastModifiedBy... idcsLastModifiedBies) {
             return idcsLastModifiedBies(List.of(idcsLastModifiedBies));
         }
         @CustomType.Setter
-        public Builder idcsLastUpgradedInRelease(String idcsLastUpgradedInRelease) {
-            this.idcsLastUpgradedInRelease = Objects.requireNonNull(idcsLastUpgradedInRelease);
+        public Builder idcsLastUpgradedInRelease(@Nullable String idcsLastUpgradedInRelease) {
+            this.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsPreventedOperations(List<String> idcsPreventedOperations) {
-            this.idcsPreventedOperations = Objects.requireNonNull(idcsPreventedOperations);
+        public Builder idcsPreventedOperations(@Nullable List<String> idcsPreventedOperations) {
+            this.idcsPreventedOperations = idcsPreventedOperations;
             return this;
         }
         public Builder idcsPreventedOperations(String... idcsPreventedOperations) {
             return idcsPreventedOperations(List.of(idcsPreventedOperations));
         }
         @CustomType.Setter
-        public Builder isAccRecEnabled(Boolean isAccRecEnabled) {
-            this.isAccRecEnabled = Objects.requireNonNull(isAccRecEnabled);
+        public Builder isAccRecEnabled(@Nullable Boolean isAccRecEnabled) {
+            this.isAccRecEnabled = isAccRecEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder isCompliant(Boolean isCompliant) {
-            this.isCompliant = Objects.requireNonNull(isCompliant);
+        public Builder isCompliant(@Nullable Boolean isCompliant) {
+            this.isCompliant = isCompliant;
             return this;
         }
         @CustomType.Setter
-        public Builder lastSyncTime(String lastSyncTime) {
-            this.lastSyncTime = Objects.requireNonNull(lastSyncTime);
+        public Builder lastSyncTime(@Nullable String lastSyncTime) {
+            this.lastSyncTime = lastSyncTime;
             return this;
         }
         @CustomType.Setter
-        public Builder lastValidatedTime(String lastValidatedTime) {
-            this.lastValidatedTime = Objects.requireNonNull(lastValidatedTime);
+        public Builder lastValidatedTime(@Nullable String lastValidatedTime) {
+            this.lastValidatedTime = lastValidatedTime;
             return this;
         }
         @CustomType.Setter
-        public Builder metas(List<GetDomainsMyDevicesMyDeviceMeta> metas) {
-            this.metas = Objects.requireNonNull(metas);
+        public Builder metas(@Nullable List<GetDomainsMyDevicesMyDeviceMeta> metas) {
+            this.metas = metas;
             return this;
         }
         public Builder metas(GetDomainsMyDevicesMyDeviceMeta... metas) {
             return metas(List.of(metas));
         }
         @CustomType.Setter
-        public Builder myDeviceId(String myDeviceId) {
-            this.myDeviceId = Objects.requireNonNull(myDeviceId);
+        public Builder myDeviceId(@Nullable String myDeviceId) {
+            this.myDeviceId = myDeviceId;
             return this;
         }
         @CustomType.Setter
-        public Builder nonCompliances(List<GetDomainsMyDevicesMyDeviceNonCompliance> nonCompliances) {
-            this.nonCompliances = Objects.requireNonNull(nonCompliances);
+        public Builder nonCompliances(@Nullable List<GetDomainsMyDevicesMyDeviceNonCompliance> nonCompliances) {
+            this.nonCompliances = nonCompliances;
             return this;
         }
         public Builder nonCompliances(GetDomainsMyDevicesMyDeviceNonCompliance... nonCompliances) {
             return nonCompliances(List.of(nonCompliances));
         }
         @CustomType.Setter
-        public Builder ocid(String ocid) {
-            this.ocid = Objects.requireNonNull(ocid);
+        public Builder ocid(@Nullable String ocid) {
+            this.ocid = ocid;
             return this;
         }
         @CustomType.Setter
-        public Builder packageId(String packageId) {
-            this.packageId = Objects.requireNonNull(packageId);
+        public Builder packageId(@Nullable String packageId) {
+            this.packageId = packageId;
             return this;
         }
         @CustomType.Setter
-        public Builder phoneNumber(String phoneNumber) {
-            this.phoneNumber = Objects.requireNonNull(phoneNumber);
+        public Builder phoneNumber(@Nullable String phoneNumber) {
+            this.phoneNumber = phoneNumber;
             return this;
         }
         @CustomType.Setter
-        public Builder platform(String platform) {
-            this.platform = Objects.requireNonNull(platform);
+        public Builder platform(@Nullable String platform) {
+            this.platform = platform;
             return this;
         }
         @CustomType.Setter
-        public Builder pushNotificationTargets(List<GetDomainsMyDevicesMyDevicePushNotificationTarget> pushNotificationTargets) {
-            this.pushNotificationTargets = Objects.requireNonNull(pushNotificationTargets);
+        public Builder pushNotificationTargets(@Nullable List<GetDomainsMyDevicesMyDevicePushNotificationTarget> pushNotificationTargets) {
+            this.pushNotificationTargets = pushNotificationTargets;
             return this;
         }
         public Builder pushNotificationTargets(GetDomainsMyDevicesMyDevicePushNotificationTarget... pushNotificationTargets) {
             return pushNotificationTargets(List.of(pushNotificationTargets));
         }
         @CustomType.Setter
-        public Builder reason(String reason) {
-            this.reason = Objects.requireNonNull(reason);
+        public Builder reason(@Nullable String reason) {
+            this.reason = reason;
             return this;
         }
         @CustomType.Setter
-        public Builder resourceTypeSchemaVersion(String resourceTypeSchemaVersion) {
-            this.resourceTypeSchemaVersion = Objects.requireNonNull(resourceTypeSchemaVersion);
+        public Builder resourceTypeSchemaVersion(@Nullable String resourceTypeSchemaVersion) {
+            this.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder schemas(List<String> schemas) {
-            this.schemas = Objects.requireNonNull(schemas);
+        public Builder schemas(@Nullable List<String> schemas) {
+            this.schemas = schemas;
             return this;
         }
         public Builder schemas(String... schemas) {
             return schemas(List.of(schemas));
         }
         @CustomType.Setter
-        public Builder seed(String seed) {
-            this.seed = Objects.requireNonNull(seed);
+        public Builder seed(@Nullable String seed) {
+            this.seed = seed;
             return this;
         }
         @CustomType.Setter
-        public Builder seedDekId(String seedDekId) {
-            this.seedDekId = Objects.requireNonNull(seedDekId);
+        public Builder seedDekId(@Nullable String seedDekId) {
+            this.seedDekId = seedDekId;
             return this;
         }
         @CustomType.Setter
-        public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+        public Builder status(@Nullable String status) {
+            this.status = status;
             return this;
         }
         @CustomType.Setter
-        public Builder tags(List<GetDomainsMyDevicesMyDeviceTag> tags) {
-            this.tags = Objects.requireNonNull(tags);
+        public Builder tags(@Nullable List<GetDomainsMyDevicesMyDeviceTag> tags) {
+            this.tags = tags;
             return this;
         }
         public Builder tags(GetDomainsMyDevicesMyDeviceTag... tags) {
             return tags(List.of(tags));
         }
         @CustomType.Setter
-        public Builder tenancyOcid(String tenancyOcid) {
-            this.tenancyOcid = Objects.requireNonNull(tenancyOcid);
+        public Builder tenancyOcid(@Nullable String tenancyOcid) {
+            this.tenancyOcid = tenancyOcid;
             return this;
         }
         @CustomType.Setter
-        public Builder thirdPartyFactors(List<GetDomainsMyDevicesMyDeviceThirdPartyFactor> thirdPartyFactors) {
-            this.thirdPartyFactors = Objects.requireNonNull(thirdPartyFactors);
+        public Builder thirdPartyFactors(@Nullable List<GetDomainsMyDevicesMyDeviceThirdPartyFactor> thirdPartyFactors) {
+            this.thirdPartyFactors = thirdPartyFactors;
             return this;
         }
         public Builder thirdPartyFactors(GetDomainsMyDevicesMyDeviceThirdPartyFactor... thirdPartyFactors) {
             return thirdPartyFactors(List.of(thirdPartyFactors));
         }
         @CustomType.Setter
-        public Builder users(List<GetDomainsMyDevicesMyDeviceUser> users) {
-            this.users = Objects.requireNonNull(users);
+        public Builder users(@Nullable List<GetDomainsMyDevicesMyDeviceUser> users) {
+            this.users = users;
             return this;
         }
         public Builder users(GetDomainsMyDevicesMyDeviceUser... users) {

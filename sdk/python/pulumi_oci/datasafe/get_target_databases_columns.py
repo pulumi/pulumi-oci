@@ -66,17 +66,11 @@ class GetTargetDatabasesColumnsResult:
     @property
     @pulumi.getter(name="columnNames")
     def column_names(self) -> Optional[Sequence[str]]:
-        """
-        Name of the column.
-        """
         return pulumi.get(self, "column_names")
 
     @property
     @pulumi.getter
-    def columns(self) -> Sequence['outputs.GetTargetDatabasesColumnsColumnResult']:
-        """
-        The list of columns.
-        """
+    def columns(self) -> Optional[Sequence['outputs.GetTargetDatabasesColumnsColumnResult']]:
         return pulumi.get(self, "columns")
 
     @property
@@ -91,7 +85,7 @@ class GetTargetDatabasesColumnsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -105,9 +99,6 @@ class GetTargetDatabasesColumnsResult:
     @property
     @pulumi.getter(name="schemaNames")
     def schema_names(self) -> Optional[Sequence[str]]:
-        """
-        Name of the schema.
-        """
         return pulumi.get(self, "schema_names")
 
     @property
@@ -118,9 +109,6 @@ class GetTargetDatabasesColumnsResult:
     @property
     @pulumi.getter(name="tableNames")
     def table_names(self) -> Optional[Sequence[str]]:
-        """
-        Name of the table.
-        """
         return pulumi.get(self, "table_names")
 
     @property
@@ -159,35 +147,7 @@ def get_target_databases_columns(column_name_contains: Optional[str] = None,
                                  target_database_id: Optional[str] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetTargetDatabasesColumnsResult:
     """
-    This data source provides the list of Target Databases Columns in Oracle Cloud Infrastructure Data Safe service.
-
-    Returns a list of column metadata objects.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_target_databases_columns = oci.DataSafe.get_target_databases_columns(target_database_id=oci_data_safe_target_database["test_target_database"]["id"],
-        column_names=var["target_databases_column_column_name"],
-        column_name_contains=var["target_databases_column_column_name_contains"],
-        datatypes=var["target_databases_column_datatype"],
-        schema_names=var["target_databases_column_schema_name"],
-        schema_name_contains=var["target_databases_column_schema_name_contains"],
-        table_names=oci_nosql_table["test_table"]["name"],
-        table_name_contains=var["target_databases_column_table_name_contains"])
-    ```
-
-
-    :param str column_name_contains: A filter to return only items if column name contains a specific string.
-    :param Sequence[str] column_names: A filter to return only a specific column based on column name.
-    :param Sequence[str] datatypes: A filter to return only items related to specific datatype.
-    :param str schema_name_contains: A filter to return only items if schema name contains a specific string.
-    :param Sequence[str] schema_names: A filter to return only items related to specific schema name.
-    :param str table_name_contains: A filter to return only items if table name contains a specific string.
-    :param Sequence[str] table_names: A filter to return only items related to specific table name.
-    :param str target_database_id: The OCID of the Data Safe target database.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['columnNameContains'] = column_name_contains
@@ -228,34 +188,6 @@ def get_target_databases_columns_output(column_name_contains: Optional[pulumi.In
                                         target_database_id: Optional[pulumi.Input[str]] = None,
                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetTargetDatabasesColumnsResult]:
     """
-    This data source provides the list of Target Databases Columns in Oracle Cloud Infrastructure Data Safe service.
-
-    Returns a list of column metadata objects.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_target_databases_columns = oci.DataSafe.get_target_databases_columns(target_database_id=oci_data_safe_target_database["test_target_database"]["id"],
-        column_names=var["target_databases_column_column_name"],
-        column_name_contains=var["target_databases_column_column_name_contains"],
-        datatypes=var["target_databases_column_datatype"],
-        schema_names=var["target_databases_column_schema_name"],
-        schema_name_contains=var["target_databases_column_schema_name_contains"],
-        table_names=oci_nosql_table["test_table"]["name"],
-        table_name_contains=var["target_databases_column_table_name_contains"])
-    ```
-
-
-    :param str column_name_contains: A filter to return only items if column name contains a specific string.
-    :param Sequence[str] column_names: A filter to return only a specific column based on column name.
-    :param Sequence[str] datatypes: A filter to return only items related to specific datatype.
-    :param str schema_name_contains: A filter to return only items if schema name contains a specific string.
-    :param Sequence[str] schema_names: A filter to return only items related to specific schema name.
-    :param str table_name_contains: A filter to return only items if table name contains a specific string.
-    :param Sequence[str] table_names: A filter to return only items related to specific table name.
-    :param str target_database_id: The OCID of the Data Safe target database.
+    Use this data source to access information about an existing resource.
     """
     ...

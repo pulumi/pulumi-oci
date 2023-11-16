@@ -47,104 +47,104 @@ export interface GetExternalListenerResult {
     /**
      * The additional details of the external listener defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
      */
-    readonly additionalDetails: {[key: string]: any};
+    readonly additionalDetails?: {[key: string]: any};
     /**
      * The directory that stores tracing and logging incidents when Automatic Diagnostic Repository (ADR) is enabled.
      */
-    readonly adrHomeDirectory: string;
+    readonly adrHomeDirectory?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external database resides.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * The name of the external listener.
      */
-    readonly componentName: string;
+    readonly componentName?: string;
     /**
      * The user-friendly name for the database. The name does not have to be unique.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * The list of protocol addresses the listener is configured to listen on.
      */
-    readonly endpoints: outputs.DatabaseManagement.GetExternalListenerEndpoint[];
+    readonly endpoints?: outputs.DatabaseManagement.GetExternalListenerEndpoint[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
      */
-    readonly externalConnectorId: string;
+    readonly externalConnectorId?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB home.
      */
-    readonly externalDbHomeId: string;
+    readonly externalDbHomeId?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB node.
      */
-    readonly externalDbNodeId: string;
+    readonly externalDbNodeId?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the listener is a part of.
      */
-    readonly externalDbSystemId: string;
+    readonly externalDbSystemId?: string;
     readonly externalListenerId: string;
     /**
      * The name of the host on which the external listener is running.
      */
-    readonly hostName: string;
+    readonly hostName?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Additional information about the current lifecycle state.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * The listener alias.
      */
-    readonly listenerAlias: string;
+    readonly listenerAlias?: string;
     /**
      * The location of the listener configuration file listener.ora.
      */
-    readonly listenerOraLocation: string;
+    readonly listenerOraLocation?: string;
     /**
      * The type of listener.
      */
-    readonly listenerType: string;
+    readonly listenerType?: string;
     /**
      * The destination directory of the listener log file.
      */
-    readonly logDirectory: string;
+    readonly logDirectory?: string;
     /**
      * The Oracle home location of the listener.
      */
-    readonly oracleHome: string;
+    readonly oracleHome?: string;
     /**
      * The list of ASMs that are serviced by the listener.
      */
-    readonly servicedAsms: outputs.DatabaseManagement.GetExternalListenerServicedAsm[];
+    readonly servicedAsms?: outputs.DatabaseManagement.GetExternalListenerServicedAsm[];
     /**
      * The list of databases that are serviced by the listener.
      */
-    readonly servicedDatabases: outputs.DatabaseManagement.GetExternalListenerServicedDatabase[];
+    readonly servicedDatabases?: outputs.DatabaseManagement.GetExternalListenerServicedDatabase[];
     /**
      * The current lifecycle state of the external listener.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The date and time the external listener was created.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The date and time the external listener was last updated.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
     /**
      * The destination directory of the listener trace file.
      */
-    readonly traceDirectory: string;
+    readonly traceDirectory?: string;
     /**
      * The listener version.
      */
-    readonly version: string;
+    readonly version?: string;
 }
 /**
  * This data source provides details about a specific External Listener resource in Oracle Cloud Infrastructure Database Management service.

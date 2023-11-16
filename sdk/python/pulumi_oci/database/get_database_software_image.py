@@ -82,10 +82,7 @@ class GetDatabaseSoftwareImageResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -95,135 +92,87 @@ class GetDatabaseSoftwareImageResult:
 
     @property
     @pulumi.getter(name="databaseSoftwareImageIncludedPatches")
-    def database_software_image_included_patches(self) -> Sequence[str]:
-        """
-        List of one-off patches for Database Homes.
-        """
+    def database_software_image_included_patches(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "database_software_image_included_patches")
 
     @property
     @pulumi.getter(name="databaseSoftwareImageOneOffPatches")
-    def database_software_image_one_off_patches(self) -> Sequence[str]:
-        """
-        List of one-off patches for Database Homes.
-        """
+    def database_software_image_one_off_patches(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "database_software_image_one_off_patches")
 
     @property
     @pulumi.getter(name="databaseVersion")
-    def database_version(self) -> str:
-        """
-        The database version with which the database software image is to be built.
-        """
+    def database_version(self) -> Optional[str]:
         return pulumi.get(self, "database_version")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The user-friendly name for the database software image. The name does not have to be unique.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database software image.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="imageShapeFamily")
-    def image_shape_family(self) -> str:
-        """
-        To what shape the image is meant for.
-        """
+    def image_shape_family(self) -> Optional[str]:
         return pulumi.get(self, "image_shape_family")
 
     @property
     @pulumi.getter(name="imageType")
-    def image_type(self) -> str:
-        """
-        The type of software image. Can be grid or database.
-        """
+    def image_type(self) -> Optional[str]:
         return pulumi.get(self, "image_type")
 
     @property
     @pulumi.getter(name="includedPatchesSummary")
-    def included_patches_summary(self) -> str:
-        """
-        The patches included in the image and the version of the image.
-        """
+    def included_patches_summary(self) -> Optional[str]:
         return pulumi.get(self, "included_patches_summary")
 
     @property
     @pulumi.getter(name="isUpgradeSupported")
-    def is_upgrade_supported(self) -> bool:
-        """
-        True if this Database software image is supported for Upgrade.
-        """
+    def is_upgrade_supported(self) -> Optional[bool]:
         return pulumi.get(self, "is_upgrade_supported")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        Detailed message for the lifecycle state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="lsInventory")
-    def ls_inventory(self) -> str:
-        """
-        The output from the OPatch lsInventory command, which is passed as a string.
-        """
+    def ls_inventory(self) -> Optional[str]:
         return pulumi.get(self, "ls_inventory")
 
     @property
     @pulumi.getter(name="patchSet")
-    def patch_set(self) -> str:
-        """
-        The PSU or PBP or Release Updates. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
-        """
+    def patch_set(self) -> Optional[str]:
         return pulumi.get(self, "patch_set")
 
     @property
     @pulumi.getter(name="sourceDbHomeId")
-    def source_db_home_id(self) -> str:
+    def source_db_home_id(self) -> Optional[str]:
         return pulumi.get(self, "source_db_home_id")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the database software image.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the database software image was created.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
 
@@ -257,21 +206,7 @@ class AwaitableGetDatabaseSoftwareImageResult(GetDatabaseSoftwareImageResult):
 def get_database_software_image(database_software_image_id: Optional[str] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDatabaseSoftwareImageResult:
     """
-    This data source provides details about a specific Database Software Image resource in Oracle Cloud Infrastructure Database service.
-
-    Gets information about the specified database software image.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_database_software_image = oci.Database.get_database_software_image(database_software_image_id=oci_database_database_software_image["test_database_software_image"]["id"])
-    ```
-
-
-    :param str database_software_image_id: The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['databaseSoftwareImageId'] = database_software_image_id
@@ -304,20 +239,6 @@ def get_database_software_image(database_software_image_id: Optional[str] = None
 def get_database_software_image_output(database_software_image_id: Optional[pulumi.Input[str]] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDatabaseSoftwareImageResult]:
     """
-    This data source provides details about a specific Database Software Image resource in Oracle Cloud Infrastructure Database service.
-
-    Gets information about the specified database software image.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_database_software_image = oci.Database.get_database_software_image(database_software_image_id=oci_database_database_software_image["test_database_software_image"]["id"])
-    ```
-
-
-    :param str database_software_image_id: The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     ...

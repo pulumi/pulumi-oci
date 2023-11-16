@@ -18,12 +18,6 @@ class CompareUserAssessmentArgs:
                  user_assessment_id: pulumi.Input[str]):
         """
         The set of arguments for constructing a CompareUserAssessment resource.
-        :param pulumi.Input[str] comparison_user_assessment_id: The OCID of the user assessment to be compared. You can compare with another user assessment, a latest assessment, or a baseline.
-        :param pulumi.Input[str] user_assessment_id: The OCID of the user assessment.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "comparison_user_assessment_id", comparison_user_assessment_id)
         pulumi.set(__self__, "user_assessment_id", user_assessment_id)
@@ -31,9 +25,6 @@ class CompareUserAssessmentArgs:
     @property
     @pulumi.getter(name="comparisonUserAssessmentId")
     def comparison_user_assessment_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of the user assessment to be compared. You can compare with another user assessment, a latest assessment, or a baseline.
-        """
         return pulumi.get(self, "comparison_user_assessment_id")
 
     @comparison_user_assessment_id.setter
@@ -43,13 +34,6 @@ class CompareUserAssessmentArgs:
     @property
     @pulumi.getter(name="userAssessmentId")
     def user_assessment_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of the user assessment.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "user_assessment_id")
 
     @user_assessment_id.setter
@@ -64,12 +48,6 @@ class _CompareUserAssessmentState:
                  user_assessment_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering CompareUserAssessment resources.
-        :param pulumi.Input[str] comparison_user_assessment_id: The OCID of the user assessment to be compared. You can compare with another user assessment, a latest assessment, or a baseline.
-        :param pulumi.Input[str] user_assessment_id: The OCID of the user assessment.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if comparison_user_assessment_id is not None:
             pulumi.set(__self__, "comparison_user_assessment_id", comparison_user_assessment_id)
@@ -79,9 +57,6 @@ class _CompareUserAssessmentState:
     @property
     @pulumi.getter(name="comparisonUserAssessmentId")
     def comparison_user_assessment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the user assessment to be compared. You can compare with another user assessment, a latest assessment, or a baseline.
-        """
         return pulumi.get(self, "comparison_user_assessment_id")
 
     @comparison_user_assessment_id.setter
@@ -91,13 +66,6 @@ class _CompareUserAssessmentState:
     @property
     @pulumi.getter(name="userAssessmentId")
     def user_assessment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the user assessment.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "user_assessment_id")
 
     @user_assessment_id.setter
@@ -114,38 +82,9 @@ class CompareUserAssessment(pulumi.CustomResource):
                  user_assessment_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Compare User Assessment resource in Oracle Cloud Infrastructure Data Safe service.
-
-        Compares two user assessments. For this comparison, a user assessment can be a saved, a latest assessment, or a baseline.
-        As an example, it can be used to compare a user assessment saved or a latest assessment with a baseline.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_compare_user_assessment = oci.data_safe.CompareUserAssessment("testCompareUserAssessment",
-            comparison_user_assessment_id=oci_data_safe_user_assessment["test_user_assessment"]["id"],
-            user_assessment_id=oci_data_safe_user_assessment["test_user_assessment"]["id"])
-        ```
-
-        ## Import
-
-        CompareUserAssessment can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:DataSafe/compareUserAssessment:CompareUserAssessment test_compare_user_assessment "id"
-        ```
-
+        Create a CompareUserAssessment resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] comparison_user_assessment_id: The OCID of the user assessment to be compared. You can compare with another user assessment, a latest assessment, or a baseline.
-        :param pulumi.Input[str] user_assessment_id: The OCID of the user assessment.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -154,30 +93,7 @@ class CompareUserAssessment(pulumi.CustomResource):
                  args: CompareUserAssessmentArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Compare User Assessment resource in Oracle Cloud Infrastructure Data Safe service.
-
-        Compares two user assessments. For this comparison, a user assessment can be a saved, a latest assessment, or a baseline.
-        As an example, it can be used to compare a user assessment saved or a latest assessment with a baseline.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_compare_user_assessment = oci.data_safe.CompareUserAssessment("testCompareUserAssessment",
-            comparison_user_assessment_id=oci_data_safe_user_assessment["test_user_assessment"]["id"],
-            user_assessment_id=oci_data_safe_user_assessment["test_user_assessment"]["id"])
-        ```
-
-        ## Import
-
-        CompareUserAssessment can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:DataSafe/compareUserAssessment:CompareUserAssessment test_compare_user_assessment "id"
-        ```
-
+        Create a CompareUserAssessment resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param CompareUserAssessmentArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -229,12 +145,6 @@ class CompareUserAssessment(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] comparison_user_assessment_id: The OCID of the user assessment to be compared. You can compare with another user assessment, a latest assessment, or a baseline.
-        :param pulumi.Input[str] user_assessment_id: The OCID of the user assessment.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -247,20 +157,10 @@ class CompareUserAssessment(pulumi.CustomResource):
     @property
     @pulumi.getter(name="comparisonUserAssessmentId")
     def comparison_user_assessment_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the user assessment to be compared. You can compare with another user assessment, a latest assessment, or a baseline.
-        """
         return pulumi.get(self, "comparison_user_assessment_id")
 
     @property
     @pulumi.getter(name="userAssessmentId")
     def user_assessment_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the user assessment.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "user_assessment_id")
 

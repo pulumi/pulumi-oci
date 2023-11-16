@@ -20,7 +20,7 @@ namespace Pulumi.Oci.Logging.Outputs
         /// <summary>
         /// The name key to tag this Grok pattern.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// Source parser object.
         /// </summary>
@@ -32,19 +32,19 @@ namespace Pulumi.Oci.Logging.Outputs
         /// <summary>
         /// Unified schema logging source type.
         /// </summary>
-        public readonly string SourceType;
+        public readonly string? SourceType;
 
         [OutputConstructor]
         private GetUnifiedAgentConfigurationServiceConfigurationSourceResult(
             ImmutableArray<string> channels,
 
-            string name,
+            string? name,
 
             ImmutableArray<Outputs.GetUnifiedAgentConfigurationServiceConfigurationSourceParserResult> parsers,
 
             ImmutableArray<string> paths,
 
-            string sourceType)
+            string? sourceType)
         {
             Channels = channels;
             Name = name;

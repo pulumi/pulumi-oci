@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Migration Plan Available Shape resource in Oracle Cloud Infrastructure Cloud Migrations service.
@@ -76,7 +75,7 @@ type GetMigrationPlanAvailableShapeResult struct {
 	CompartmentId      *string `pulumi:"compartmentId"`
 	DvhHostId          *string `pulumi:"dvhHostId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Available shapes list.
 	Items              []GetMigrationPlanAvailableShapeItem `pulumi:"items"`
 	MigrationPlanId    string                               `pulumi:"migrationPlanId"`
@@ -129,12 +128,6 @@ func (o GetMigrationPlanAvailableShapeResultOutput) ToGetMigrationPlanAvailableS
 	return o
 }
 
-func (o GetMigrationPlanAvailableShapeResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationPlanAvailableShapeResult] {
-	return pulumix.Output[GetMigrationPlanAvailableShapeResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Availability domain of the shape.
 func (o GetMigrationPlanAvailableShapeResultOutput) AvailabilityDomain() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetMigrationPlanAvailableShapeResult) *string { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
@@ -149,8 +142,8 @@ func (o GetMigrationPlanAvailableShapeResultOutput) DvhHostId() pulumi.StringPtr
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetMigrationPlanAvailableShapeResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMigrationPlanAvailableShapeResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetMigrationPlanAvailableShapeResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMigrationPlanAvailableShapeResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Available shapes list.

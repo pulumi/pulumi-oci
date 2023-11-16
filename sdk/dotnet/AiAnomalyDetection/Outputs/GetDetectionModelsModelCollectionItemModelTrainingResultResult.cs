@@ -16,18 +16,18 @@ namespace Pulumi.Oci.AiAnomalyDetection.Outputs
         /// <summary>
         /// Accuracy metric for a signal.
         /// </summary>
-        public readonly double Fap;
+        public readonly double? Fap;
         /// <summary>
         /// A boolean value to indicate if train goal/targetFap is achieved for trained model
         /// </summary>
-        public readonly bool IsTrainingGoalAchieved;
-        public readonly double Mae;
-        public readonly int MaxInferenceSyncRows;
+        public readonly bool? IsTrainingGoalAchieved;
+        public readonly double? Mae;
+        public readonly int? MaxInferenceSyncRows;
         /// <summary>
         /// The model accuracy metric on timestamp level.
         /// </summary>
-        public readonly double MultivariateFap;
-        public readonly double Rmse;
+        public readonly double? MultivariateFap;
+        public readonly double? Rmse;
         /// <summary>
         /// Information regarding how/what row reduction methods will be applied. If this property is not present or is null, then it means row reduction is not applied.
         /// </summary>
@@ -39,33 +39,33 @@ namespace Pulumi.Oci.AiAnomalyDetection.Outputs
         /// <summary>
         /// A warning message to explain the reason when targetFap cannot be achieved for trained model
         /// </summary>
-        public readonly string Warning;
+        public readonly string? Warning;
         /// <summary>
         /// Window size defined during training or deduced by the algorithm.
         /// </summary>
-        public readonly int WindowSize;
+        public readonly int? WindowSize;
 
         [OutputConstructor]
         private GetDetectionModelsModelCollectionItemModelTrainingResultResult(
-            double fap,
+            double? fap,
 
-            bool isTrainingGoalAchieved,
+            bool? isTrainingGoalAchieved,
 
-            double mae,
+            double? mae,
 
-            int maxInferenceSyncRows,
+            int? maxInferenceSyncRows,
 
-            double multivariateFap,
+            double? multivariateFap,
 
-            double rmse,
+            double? rmse,
 
             ImmutableArray<Outputs.GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetailResult> rowReductionDetails,
 
             ImmutableArray<Outputs.GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailResult> signalDetails,
 
-            string warning,
+            string? warning,
 
-            int windowSize)
+            int? windowSize)
         {
             Fap = fap;
             IsTrainingGoalAchieved = isTrainingGoalAchieved;

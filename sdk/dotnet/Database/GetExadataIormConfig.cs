@@ -128,19 +128,19 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly ImmutableArray<Outputs.GetExadataIormConfigDbPlanResult> DbPlans;
         public readonly string DbSystemId;
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Additional information about the current `lifecycleState`.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// The current value for the IORM objective. The default is `AUTO`.
         /// </summary>
-        public readonly string Objective;
+        public readonly string? Objective;
         /// <summary>
         /// The current state of IORM configuration for the Exadata DB system.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
 
         [OutputConstructor]
         private GetExadataIormConfigResult(
@@ -148,13 +148,13 @@ namespace Pulumi.Oci.Database
 
             string dbSystemId,
 
-            string id,
+            string? id,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string objective,
+            string? objective,
 
-            string state)
+            string? state)
         {
             DbPlans = dbPlans;
             DbSystemId = dbSystemId;

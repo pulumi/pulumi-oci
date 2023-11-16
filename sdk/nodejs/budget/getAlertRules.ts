@@ -61,7 +61,7 @@ export interface GetAlertRulesResult {
     /**
      * The list of alert_rules.
      */
-    readonly alertRules: outputs.Budget.GetAlertRulesAlertRule[];
+    readonly alertRules?: outputs.Budget.GetAlertRulesAlertRule[];
     /**
      * The OCID of the budget.
      */
@@ -74,7 +74,7 @@ export interface GetAlertRulesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The current state of the alert rule.
      */

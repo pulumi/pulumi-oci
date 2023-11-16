@@ -20,7 +20,7 @@ public final class GetPbfListingVersionsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private @Nullable Boolean isCurrentVersion;
     /**
      * @return A brief descriptive name for the PBF trigger.
@@ -37,7 +37,7 @@ public final class GetPbfListingVersionsResult {
      * @return The list of pbf_listing_versions_collection.
      * 
      */
-    private List<GetPbfListingVersionsPbfListingVersionsCollection> pbfListingVersionsCollections;
+    private @Nullable List<GetPbfListingVersionsPbfListingVersionsCollection> pbfListingVersionsCollections;
     /**
      * @return The current state of the PBF resource.
      * 
@@ -52,8 +52,8 @@ public final class GetPbfListingVersionsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public Optional<Boolean> isCurrentVersion() {
         return Optional.ofNullable(this.isCurrentVersion);
@@ -80,7 +80,7 @@ public final class GetPbfListingVersionsResult {
      * 
      */
     public List<GetPbfListingVersionsPbfListingVersionsCollection> pbfListingVersionsCollections() {
-        return this.pbfListingVersionsCollections;
+        return this.pbfListingVersionsCollections == null ? List.of() : this.pbfListingVersionsCollections;
     }
     /**
      * @return The current state of the PBF resource.
@@ -100,12 +100,12 @@ public final class GetPbfListingVersionsResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetPbfListingVersionsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable Boolean isCurrentVersion;
         private @Nullable String name;
         private String pbfListingId;
         private @Nullable String pbfListingVersionId;
-        private List<GetPbfListingVersionsPbfListingVersionsCollection> pbfListingVersionsCollections;
+        private @Nullable List<GetPbfListingVersionsPbfListingVersionsCollection> pbfListingVersionsCollections;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetPbfListingVersionsResult defaults) {
@@ -129,8 +129,8 @@ public final class GetPbfListingVersionsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -154,8 +154,8 @@ public final class GetPbfListingVersionsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder pbfListingVersionsCollections(List<GetPbfListingVersionsPbfListingVersionsCollection> pbfListingVersionsCollections) {
-            this.pbfListingVersionsCollections = Objects.requireNonNull(pbfListingVersionsCollections);
+        public Builder pbfListingVersionsCollections(@Nullable List<GetPbfListingVersionsPbfListingVersionsCollection> pbfListingVersionsCollections) {
+            this.pbfListingVersionsCollections = pbfListingVersionsCollections;
             return this;
         }
         public Builder pbfListingVersionsCollections(GetPbfListingVersionsPbfListingVersionsCollection... pbfListingVersionsCollections) {

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Software Source Vendors in Oracle Cloud Infrastructure Os Management Hub service.
@@ -67,7 +66,7 @@ type GetSoftwareSourceVendorsResult struct {
 	CompartmentId string                           `pulumi:"compartmentId"`
 	Filters       []GetSoftwareSourceVendorsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Name of the vendor providing the software source.
 	Name *string `pulumi:"name"`
 	// The list of software_source_vendor_collection.
@@ -115,12 +114,6 @@ func (o GetSoftwareSourceVendorsResultOutput) ToGetSoftwareSourceVendorsResultOu
 	return o
 }
 
-func (o GetSoftwareSourceVendorsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourceVendorsResult] {
-	return pulumix.Output[GetSoftwareSourceVendorsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSoftwareSourceVendorsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSoftwareSourceVendorsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -130,8 +123,8 @@ func (o GetSoftwareSourceVendorsResultOutput) Filters() GetSoftwareSourceVendors
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetSoftwareSourceVendorsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourceVendorsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetSoftwareSourceVendorsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourceVendorsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Name of the vendor providing the software source.

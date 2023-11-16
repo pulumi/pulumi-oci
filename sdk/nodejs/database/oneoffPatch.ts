@@ -75,7 +75,7 @@ export class OneoffPatch extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * One-off patch name.
      */
@@ -91,15 +91,15 @@ export class OneoffPatch extends pulumi.CustomResource {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * Detailed message for the lifecycle state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * List of one-off patches for Database Homes.
      */
-    public readonly oneOffPatches!: pulumi.Output<string[]>;
+    public readonly oneOffPatches!: pulumi.Output<string[] | undefined>;
     /**
      * The PSU or PBP or Release Updates. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
      */
@@ -107,27 +107,27 @@ export class OneoffPatch extends pulumi.CustomResource {
     /**
      * SHA-256 checksum of the one-off patch.
      */
-    public /*out*/ readonly sha256sum!: pulumi.Output<string>;
+    public /*out*/ readonly sha256sum!: pulumi.Output<string | undefined>;
     /**
      * The size of one-off patch in kilobytes.
      */
-    public /*out*/ readonly sizeInKbs!: pulumi.Output<number>;
+    public /*out*/ readonly sizeInKbs!: pulumi.Output<number | undefined>;
     /**
      * The current state of the one-off patch.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The date and time one-off patch was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The date and time until which the one-off patch will be available for download.
      */
-    public /*out*/ readonly timeOfExpiration!: pulumi.Output<string>;
+    public /*out*/ readonly timeOfExpiration!: pulumi.Output<string | undefined>;
     /**
      * The date and time one-off patch was updated.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a OneoffPatch resource with the given unique name, arguments, and options.

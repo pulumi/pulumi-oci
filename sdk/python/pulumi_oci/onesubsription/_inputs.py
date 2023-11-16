@@ -28,9 +28,6 @@ class GetAggregatedComputedUsagesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: Product name
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -39,9 +36,6 @@ class GetAggregatedComputedUsagesFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Product name
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -73,9 +67,6 @@ class GetBillingSchedulesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: Product name
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -84,9 +75,6 @@ class GetBillingSchedulesFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Product name
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -157,9 +145,6 @@ class GetComputedUsagesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: Product name
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -168,9 +153,6 @@ class GetComputedUsagesFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Product name
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -202,9 +184,6 @@ class GetInvoiceLineComputedUsagesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: Product name
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -213,9 +192,6 @@ class GetInvoiceLineComputedUsagesFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Product name
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -247,9 +223,6 @@ class GetInvoicesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: Payment Term name
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -258,9 +231,6 @@ class GetInvoicesFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Payment Term name
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -292,9 +262,6 @@ class GetOrganizationSubscriptionsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: Currency name
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -303,9 +270,6 @@ class GetOrganizationSubscriptionsFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Currency name
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -337,9 +301,6 @@ class GetRatecardsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: Product name
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -348,9 +309,6 @@ class GetRatecardsFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Product name
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -382,9 +340,6 @@ class GetSubscribedServicesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: Commercial name also called customer name.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -393,9 +348,6 @@ class GetSubscribedServicesFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Commercial name also called customer name.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -427,9 +379,6 @@ class GetSubscriptionsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: Product name
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -438,9 +387,6 @@ class GetSubscriptionsFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Product name
-        """
         return pulumi.get(self, "name")
 
     @name.setter

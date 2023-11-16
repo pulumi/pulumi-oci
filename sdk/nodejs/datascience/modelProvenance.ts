@@ -65,11 +65,11 @@ export class ModelProvenance extends pulumi.CustomResource {
     /**
      * (Updatable) For model reproducibility purposes. Branch of the git repository associated with model training.
      */
-    public readonly gitBranch!: pulumi.Output<string>;
+    public readonly gitBranch!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) For model reproducibility purposes. Commit ID of the git repository associated with model training.
      */
-    public readonly gitCommit!: pulumi.Output<string>;
+    public readonly gitCommit!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.
      */
@@ -77,15 +77,15 @@ export class ModelProvenance extends pulumi.CustomResource {
     /**
      * (Updatable) For model reproducibility purposes. URL of the git repository associated with model training.
      */
-    public readonly repositoryUrl!: pulumi.Output<string>;
+    public readonly repositoryUrl!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) For model reproducibility purposes. Path to model artifacts.
      */
-    public readonly scriptDir!: pulumi.Output<string>;
+    public readonly scriptDir!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a training session(Job or NotebookSession) in which the model was trained. It is used for model reproducibility purposes.
      */
-    public readonly trainingId!: pulumi.Output<string>;
+    public readonly trainingId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) For model reproducibility purposes. Path to the python script or notebook in which the model was trained." 
      *
@@ -93,7 +93,7 @@ export class ModelProvenance extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly trainingScript!: pulumi.Output<string>;
+    public readonly trainingScript!: pulumi.Output<string | undefined>;
 
     /**
      * Create a ModelProvenance resource with the given unique name, arguments, and options.

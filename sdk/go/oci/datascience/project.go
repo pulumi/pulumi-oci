@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Project resource in Oracle Cloud Infrastructure Data Science service.
@@ -66,22 +65,22 @@ type Project struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the project in.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created this project.
-	CreatedBy pulumi.StringOutput `pulumi:"createdBy"`
+	CreatedBy pulumi.StringPtrOutput `pulumi:"createdBy"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) A short description of the project.
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The state of the project.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 }
 
 // NewProject registers a new resource with the given unique name, arguments, and options.
@@ -220,12 +219,6 @@ func (i *Project) ToProjectOutputWithContext(ctx context.Context) ProjectOutput 
 	return pulumi.ToOutputWithContext(ctx, i).(ProjectOutput)
 }
 
-func (i *Project) ToOutput(ctx context.Context) pulumix.Output[*Project] {
-	return pulumix.Output[*Project]{
-		OutputState: i.ToProjectOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ProjectArrayInput is an input type that accepts ProjectArray and ProjectArrayOutput values.
 // You can construct a concrete instance of `ProjectArrayInput` via:
 //
@@ -249,12 +242,6 @@ func (i ProjectArray) ToProjectArrayOutput() ProjectArrayOutput {
 
 func (i ProjectArray) ToProjectArrayOutputWithContext(ctx context.Context) ProjectArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ProjectArrayOutput)
-}
-
-func (i ProjectArray) ToOutput(ctx context.Context) pulumix.Output[[]*Project] {
-	return pulumix.Output[[]*Project]{
-		OutputState: i.ToProjectArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ProjectMapInput is an input type that accepts ProjectMap and ProjectMapOutput values.
@@ -282,12 +269,6 @@ func (i ProjectMap) ToProjectMapOutputWithContext(ctx context.Context) ProjectMa
 	return pulumi.ToOutputWithContext(ctx, i).(ProjectMapOutput)
 }
 
-func (i ProjectMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Project] {
-	return pulumix.Output[map[string]*Project]{
-		OutputState: i.ToProjectMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ProjectOutput struct{ *pulumi.OutputState }
 
 func (ProjectOutput) ElementType() reflect.Type {
@@ -302,20 +283,14 @@ func (o ProjectOutput) ToProjectOutputWithContext(ctx context.Context) ProjectOu
 	return o
 }
 
-func (o ProjectOutput) ToOutput(ctx context.Context) pulumix.Output[*Project] {
-	return pulumix.Output[*Project]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the project in.
 func (o ProjectOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Project) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created this project.
-func (o ProjectOutput) CreatedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v *Project) pulumi.StringOutput { return v.CreatedBy }).(pulumi.StringOutput)
+func (o ProjectOutput) CreatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Project) pulumi.StringPtrOutput { return v.CreatedBy }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -324,13 +299,13 @@ func (o ProjectOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) A short description of the project.
-func (o ProjectOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *Project) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o ProjectOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Project) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information.
-func (o ProjectOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *Project) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o ProjectOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Project) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -342,13 +317,13 @@ func (o ProjectOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The state of the project.
-func (o ProjectOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *Project) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o ProjectOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Project) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
-func (o ProjectOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Project) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o ProjectOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Project) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 type ProjectArrayOutput struct{ *pulumi.OutputState }
@@ -363,12 +338,6 @@ func (o ProjectArrayOutput) ToProjectArrayOutput() ProjectArrayOutput {
 
 func (o ProjectArrayOutput) ToProjectArrayOutputWithContext(ctx context.Context) ProjectArrayOutput {
 	return o
-}
-
-func (o ProjectArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Project] {
-	return pulumix.Output[[]*Project]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ProjectArrayOutput) Index(i pulumi.IntInput) ProjectOutput {
@@ -389,12 +358,6 @@ func (o ProjectMapOutput) ToProjectMapOutput() ProjectMapOutput {
 
 func (o ProjectMapOutput) ToProjectMapOutputWithContext(ctx context.Context) ProjectMapOutput {
 	return o
-}
-
-func (o ProjectMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Project] {
-	return pulumix.Output[map[string]*Project]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ProjectMapOutput) MapIndex(k pulumi.StringInput) ProjectOutput {

@@ -57,12 +57,12 @@ export interface GetExadataInfrastructuresResult {
     /**
      * The list of exadata_infrastructures.
      */
-    readonly exadataInfrastructures: outputs.Database.GetExadataInfrastructuresExadataInfrastructure[];
+    readonly exadataInfrastructures?: outputs.Database.GetExadataInfrastructuresExadataInfrastructure[];
     readonly filters?: outputs.Database.GetExadataInfrastructuresFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The current lifecycle state of the Exadata infrastructure.
      */

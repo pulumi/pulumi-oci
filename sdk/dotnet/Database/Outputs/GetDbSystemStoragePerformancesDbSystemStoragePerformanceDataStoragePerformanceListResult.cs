@@ -24,7 +24,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// Size in GBs.
         /// </summary>
-        public readonly int SizeInGbs;
+        public readonly int? SizeInGbs;
 
         [OutputConstructor]
         private GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListResult(
@@ -32,7 +32,7 @@ namespace Pulumi.Oci.Database.Outputs
 
             ImmutableArray<Outputs.GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceListHighDiskPerformanceResult> highDiskPerformances,
 
-            int sizeInGbs)
+            int? sizeInGbs)
         {
             BalancedDiskPerformances = balancedDiskPerformances;
             HighDiskPerformances = highDiskPerformances;

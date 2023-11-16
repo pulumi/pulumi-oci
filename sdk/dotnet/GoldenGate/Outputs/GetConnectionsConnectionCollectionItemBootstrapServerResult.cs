@@ -16,23 +16,23 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// <summary>
         /// The name or address of a host.
         /// </summary>
-        public readonly string Host;
+        public readonly string? Host;
         /// <summary>
         /// The port of an endpoint usually specified for a connection.
         /// </summary>
-        public readonly int Port;
+        public readonly int? Port;
         /// <summary>
         /// The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
         /// </summary>
-        public readonly string PrivateIp;
+        public readonly string? PrivateIp;
 
         [OutputConstructor]
         private GetConnectionsConnectionCollectionItemBootstrapServerResult(
-            string host,
+            string? host,
 
-            int port,
+            int? port,
 
-            string privateIp)
+            string? privateIp)
         {
             Host = host;
             Port = port;

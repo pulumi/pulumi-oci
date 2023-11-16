@@ -66,17 +66,11 @@ class GetReportDefinitionsResult:
     @property
     @pulumi.getter
     def category(self) -> Optional[str]:
-        """
-        Specifies the name of the category that this report belongs to.
-        """
         return pulumi.get(self, "category")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment containing the report definition.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -87,17 +81,11 @@ class GetReportDefinitionsResult:
     @property
     @pulumi.getter(name="dataSource")
     def data_source(self) -> Optional[str]:
-        """
-        Specifies the name of a resource that provides data for the report. For example alerts, events.
-        """
         return pulumi.get(self, "data_source")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        Name of the report definition.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -107,7 +95,7 @@ class GetReportDefinitionsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -116,25 +104,16 @@ class GetReportDefinitionsResult:
     @property
     @pulumi.getter(name="isSeeded")
     def is_seeded(self) -> Optional[bool]:
-        """
-        Signifies whether the definition is seeded or user defined. Values can either be 'true' or 'false'.
-        """
         return pulumi.get(self, "is_seeded")
 
     @property
     @pulumi.getter(name="reportDefinitionCollections")
-    def report_definition_collections(self) -> Sequence['outputs.GetReportDefinitionsReportDefinitionCollectionResult']:
-        """
-        The list of report_definition_collection.
-        """
+    def report_definition_collections(self) -> Optional[Sequence['outputs.GetReportDefinitionsReportDefinitionCollectionResult']]:
         return pulumi.get(self, "report_definition_collections")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the report.
-        """
         return pulumi.get(self, "state")
 
 
@@ -168,37 +147,7 @@ def get_report_definitions(access_level: Optional[str] = None,
                            state: Optional[str] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetReportDefinitionsResult:
     """
-    This data source provides the list of Report Definitions in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets a list of report definitions.
-    The ListReportDefinitions operation returns only the report definitions in the specified `compartmentId`.
-    It also returns the seeded report definitions which are available to all the compartments.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_report_definitions = oci.DataSafe.get_report_definitions(compartment_id=var["compartment_id"],
-        access_level=var["report_definition_access_level"],
-        category=var["report_definition_category"],
-        compartment_id_in_subtree=var["report_definition_compartment_id_in_subtree"],
-        data_source=var["report_definition_data_source"],
-        display_name=var["report_definition_display_name"],
-        is_seeded=var["report_definition_is_seeded"],
-        state=var["report_definition_state"])
-    ```
-
-
-    :param str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
-    :param str category: An optional filter to return only resources that match the specified category.
-    :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
-    :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
-    :param str data_source: Specifies the name of a resource that provides data for the report. For example  alerts, events.
-    :param str display_name: The name of the report definition to query.
-    :param bool is_seeded: A boolean flag indicating to list seeded report definitions. Set this parameter to get list of seeded report definitions.
-    :param str state: An optional filter to return only resources that match the specified lifecycle state.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['accessLevel'] = access_level
@@ -239,36 +188,6 @@ def get_report_definitions_output(access_level: Optional[pulumi.Input[Optional[s
                                   state: Optional[pulumi.Input[Optional[str]]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetReportDefinitionsResult]:
     """
-    This data source provides the list of Report Definitions in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets a list of report definitions.
-    The ListReportDefinitions operation returns only the report definitions in the specified `compartmentId`.
-    It also returns the seeded report definitions which are available to all the compartments.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_report_definitions = oci.DataSafe.get_report_definitions(compartment_id=var["compartment_id"],
-        access_level=var["report_definition_access_level"],
-        category=var["report_definition_category"],
-        compartment_id_in_subtree=var["report_definition_compartment_id_in_subtree"],
-        data_source=var["report_definition_data_source"],
-        display_name=var["report_definition_display_name"],
-        is_seeded=var["report_definition_is_seeded"],
-        state=var["report_definition_state"])
-    ```
-
-
-    :param str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
-    :param str category: An optional filter to return only resources that match the specified category.
-    :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
-    :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
-    :param str data_source: Specifies the name of a resource that provides data for the report. For example  alerts, events.
-    :param str display_name: The name of the report definition to query.
-    :param bool is_seeded: A boolean flag indicating to list seeded report definitions. Set this parameter to get list of seeded report definitions.
-    :param str state: An optional filter to return only resources that match the specified lifecycle state.
+    Use this data source to access information about an existing resource.
     """
     ...

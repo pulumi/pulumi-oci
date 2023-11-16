@@ -9,6 +9,7 @@ import com.pulumi.oci.AiLanguage.outputs.GetModelEvaluationResultsFilter;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -17,13 +18,13 @@ public final class GetModelEvaluationResultsResult {
      * @return The list of evaluation_result_collection.
      * 
      */
-    private List<GetModelEvaluationResultsEvaluationResultCollection> evaluationResultCollections;
+    private @Nullable List<GetModelEvaluationResultsEvaluationResultCollection> evaluationResultCollections;
     private @Nullable List<GetModelEvaluationResultsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String modelId;
 
     private GetModelEvaluationResultsResult() {}
@@ -32,7 +33,7 @@ public final class GetModelEvaluationResultsResult {
      * 
      */
     public List<GetModelEvaluationResultsEvaluationResultCollection> evaluationResultCollections() {
-        return this.evaluationResultCollections;
+        return this.evaluationResultCollections == null ? List.of() : this.evaluationResultCollections;
     }
     public List<GetModelEvaluationResultsFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -41,8 +42,8 @@ public final class GetModelEvaluationResultsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String modelId() {
         return this.modelId;
@@ -57,9 +58,9 @@ public final class GetModelEvaluationResultsResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetModelEvaluationResultsEvaluationResultCollection> evaluationResultCollections;
+        private @Nullable List<GetModelEvaluationResultsEvaluationResultCollection> evaluationResultCollections;
         private @Nullable List<GetModelEvaluationResultsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private String modelId;
         public Builder() {}
         public Builder(GetModelEvaluationResultsResult defaults) {
@@ -71,8 +72,8 @@ public final class GetModelEvaluationResultsResult {
         }
 
         @CustomType.Setter
-        public Builder evaluationResultCollections(List<GetModelEvaluationResultsEvaluationResultCollection> evaluationResultCollections) {
-            this.evaluationResultCollections = Objects.requireNonNull(evaluationResultCollections);
+        public Builder evaluationResultCollections(@Nullable List<GetModelEvaluationResultsEvaluationResultCollection> evaluationResultCollections) {
+            this.evaluationResultCollections = evaluationResultCollections;
             return this;
         }
         public Builder evaluationResultCollections(GetModelEvaluationResultsEvaluationResultCollection... evaluationResultCollections) {
@@ -87,8 +88,8 @@ public final class GetModelEvaluationResultsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

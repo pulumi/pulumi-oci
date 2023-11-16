@@ -6,6 +6,8 @@ package com.pulumi.oci.FileStorage.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetOutboundConnectorsOutboundConnectorEndpoint {
@@ -13,27 +15,27 @@ public final class GetOutboundConnectorsOutboundConnectorEndpoint {
      * @return Name of the DNS server.
      * 
      */
-    private String hostname;
+    private @Nullable String hostname;
     /**
      * @return Port of the DNS server.
      * 
      */
-    private String port;
+    private @Nullable String port;
 
     private GetOutboundConnectorsOutboundConnectorEndpoint() {}
     /**
      * @return Name of the DNS server.
      * 
      */
-    public String hostname() {
-        return this.hostname;
+    public Optional<String> hostname() {
+        return Optional.ofNullable(this.hostname);
     }
     /**
      * @return Port of the DNS server.
      * 
      */
-    public String port() {
-        return this.port;
+    public Optional<String> port() {
+        return Optional.ofNullable(this.port);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetOutboundConnectorsOutboundConnectorEndpoint {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String hostname;
-        private String port;
+        private @Nullable String hostname;
+        private @Nullable String port;
         public Builder() {}
         public Builder(GetOutboundConnectorsOutboundConnectorEndpoint defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetOutboundConnectorsOutboundConnectorEndpoint {
         }
 
         @CustomType.Setter
-        public Builder hostname(String hostname) {
-            this.hostname = Objects.requireNonNull(hostname);
+        public Builder hostname(@Nullable String hostname) {
+            this.hostname = hostname;
             return this;
         }
         @CustomType.Setter
-        public Builder port(String port) {
-            this.port = Objects.requireNonNull(port);
+        public Builder port(@Nullable String port) {
+            this.port = port;
             return this;
         }
         public GetOutboundConnectorsOutboundConnectorEndpoint build() {

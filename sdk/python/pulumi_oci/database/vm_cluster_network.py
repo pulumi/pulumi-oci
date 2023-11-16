@@ -30,16 +30,6 @@ class VmClusterNetworkArgs:
                  validate_vm_cluster_network: Optional[pulumi.Input[bool]] = None):
         """
         The set of arguments for constructing a VmClusterNetwork resource.
-        :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[str] display_name: The user-friendly name for the Exadata Cloud@Customer VM cluster network. The name does not need to be unique.
-        :param pulumi.Input[str] exadata_infrastructure_id: The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[Sequence[pulumi.Input['VmClusterNetworkScanArgs']]] scans: (Updatable) The SCAN details.
-        :param pulumi.Input[Sequence[pulumi.Input['VmClusterNetworkVmNetworkArgs']]] vm_networks: (Updatable) Details of the client and backup networks.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] dns: (Updatable) The list of DNS server IP addresses. Maximum of 3 allowed.
-        :param pulumi.Input[Sequence[pulumi.Input['VmClusterNetworkDrScanArgs']]] dr_scans: (Updatable) The SCAN details for DR network
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] ntps: (Updatable) The list of NTP server IP addresses. Maximum of 3 allowed.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "display_name", display_name)
@@ -64,9 +54,6 @@ class VmClusterNetworkArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -76,9 +63,6 @@ class VmClusterNetworkArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[str]:
-        """
-        The user-friendly name for the Exadata Cloud@Customer VM cluster network. The name does not need to be unique.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -88,9 +72,6 @@ class VmClusterNetworkArgs:
     @property
     @pulumi.getter(name="exadataInfrastructureId")
     def exadata_infrastructure_id(self) -> pulumi.Input[str]:
-        """
-        The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
         return pulumi.get(self, "exadata_infrastructure_id")
 
     @exadata_infrastructure_id.setter
@@ -100,9 +81,6 @@ class VmClusterNetworkArgs:
     @property
     @pulumi.getter
     def scans(self) -> pulumi.Input[Sequence[pulumi.Input['VmClusterNetworkScanArgs']]]:
-        """
-        (Updatable) The SCAN details.
-        """
         return pulumi.get(self, "scans")
 
     @scans.setter
@@ -112,9 +90,6 @@ class VmClusterNetworkArgs:
     @property
     @pulumi.getter(name="vmNetworks")
     def vm_networks(self) -> pulumi.Input[Sequence[pulumi.Input['VmClusterNetworkVmNetworkArgs']]]:
-        """
-        (Updatable) Details of the client and backup networks.
-        """
         return pulumi.get(self, "vm_networks")
 
     @vm_networks.setter
@@ -133,9 +108,6 @@ class VmClusterNetworkArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -145,9 +117,6 @@ class VmClusterNetworkArgs:
     @property
     @pulumi.getter
     def dns(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) The list of DNS server IP addresses. Maximum of 3 allowed.
-        """
         return pulumi.get(self, "dns")
 
     @dns.setter
@@ -157,9 +126,6 @@ class VmClusterNetworkArgs:
     @property
     @pulumi.getter(name="drScans")
     def dr_scans(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VmClusterNetworkDrScanArgs']]]]:
-        """
-        (Updatable) The SCAN details for DR network
-        """
         return pulumi.get(self, "dr_scans")
 
     @dr_scans.setter
@@ -169,9 +135,6 @@ class VmClusterNetworkArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -181,9 +144,6 @@ class VmClusterNetworkArgs:
     @property
     @pulumi.getter
     def ntps(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) The list of NTP server IP addresses. Maximum of 3 allowed.
-        """
         return pulumi.get(self, "ntps")
 
     @ntps.setter
@@ -221,20 +181,6 @@ class _VmClusterNetworkState:
                  vm_networks: Optional[pulumi.Input[Sequence[pulumi.Input['VmClusterNetworkVmNetworkArgs']]]] = None):
         """
         Input properties used for looking up and filtering VmClusterNetwork resources.
-        :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param pulumi.Input[str] display_name: The user-friendly name for the Exadata Cloud@Customer VM cluster network. The name does not need to be unique.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] dns: (Updatable) The list of DNS server IP addresses. Maximum of 3 allowed.
-        :param pulumi.Input[Sequence[pulumi.Input['VmClusterNetworkDrScanArgs']]] dr_scans: (Updatable) The SCAN details for DR network
-        :param pulumi.Input[str] exadata_infrastructure_id: The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] ntps: (Updatable) The list of NTP server IP addresses. Maximum of 3 allowed.
-        :param pulumi.Input[Sequence[pulumi.Input['VmClusterNetworkScanArgs']]] scans: (Updatable) The SCAN details.
-        :param pulumi.Input[str] state: (Updatable) The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
-        :param pulumi.Input[str] time_created: The date and time when the VM cluster network was created.
-        :param pulumi.Input[str] vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated VM Cluster.
-        :param pulumi.Input[Sequence[pulumi.Input['VmClusterNetworkVmNetworkArgs']]] vm_networks: (Updatable) Details of the client and backup networks.
         """
         if action is not None:
             pulumi.set(__self__, "action", action)
@@ -281,9 +227,6 @@ class _VmClusterNetworkState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -293,9 +236,6 @@ class _VmClusterNetworkState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -305,9 +245,6 @@ class _VmClusterNetworkState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The user-friendly name for the Exadata Cloud@Customer VM cluster network. The name does not need to be unique.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -317,9 +254,6 @@ class _VmClusterNetworkState:
     @property
     @pulumi.getter
     def dns(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) The list of DNS server IP addresses. Maximum of 3 allowed.
-        """
         return pulumi.get(self, "dns")
 
     @dns.setter
@@ -329,9 +263,6 @@ class _VmClusterNetworkState:
     @property
     @pulumi.getter(name="drScans")
     def dr_scans(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VmClusterNetworkDrScanArgs']]]]:
-        """
-        (Updatable) The SCAN details for DR network
-        """
         return pulumi.get(self, "dr_scans")
 
     @dr_scans.setter
@@ -341,9 +272,6 @@ class _VmClusterNetworkState:
     @property
     @pulumi.getter(name="exadataInfrastructureId")
     def exadata_infrastructure_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
         return pulumi.get(self, "exadata_infrastructure_id")
 
     @exadata_infrastructure_id.setter
@@ -353,9 +281,6 @@ class _VmClusterNetworkState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -365,9 +290,6 @@ class _VmClusterNetworkState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        Additional information about the current lifecycle state.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -377,9 +299,6 @@ class _VmClusterNetworkState:
     @property
     @pulumi.getter
     def ntps(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) The list of NTP server IP addresses. Maximum of 3 allowed.
-        """
         return pulumi.get(self, "ntps")
 
     @ntps.setter
@@ -389,9 +308,6 @@ class _VmClusterNetworkState:
     @property
     @pulumi.getter
     def scans(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VmClusterNetworkScanArgs']]]]:
-        """
-        (Updatable) The SCAN details.
-        """
         return pulumi.get(self, "scans")
 
     @scans.setter
@@ -401,9 +317,6 @@ class _VmClusterNetworkState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -413,9 +326,6 @@ class _VmClusterNetworkState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time when the VM cluster network was created.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -434,9 +344,6 @@ class _VmClusterNetworkState:
     @property
     @pulumi.getter(name="vmClusterId")
     def vm_cluster_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated VM Cluster.
-        """
         return pulumi.get(self, "vm_cluster_id")
 
     @vm_cluster_id.setter
@@ -446,9 +353,6 @@ class _VmClusterNetworkState:
     @property
     @pulumi.getter(name="vmNetworks")
     def vm_networks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VmClusterNetworkVmNetworkArgs']]]]:
-        """
-        (Updatable) Details of the client and backup networks.
-        """
         return pulumi.get(self, "vm_networks")
 
     @vm_networks.setter
@@ -475,77 +379,9 @@ class VmClusterNetwork(pulumi.CustomResource):
                  vm_networks: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VmClusterNetworkVmNetworkArgs']]]]] = None,
                  __props__=None):
         """
-        This resource provides the Vm Cluster Network resource in Oracle Cloud Infrastructure Database service.
-
-        Creates the VM cluster network. Applies to Exadata Cloud@Customer instances only.
-        To create a cloud VM cluster in an Exadata Cloud Service instance, use the [CreateCloudVmCluster ](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudVmCluster/CreateCloudVmCluster) operation.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_vm_cluster_network = oci.database.VmClusterNetwork("testVmClusterNetwork",
-            compartment_id=var["compartment_id"],
-            display_name=var["vm_cluster_network_display_name"],
-            exadata_infrastructure_id=oci_database_exadata_infrastructure["test_exadata_infrastructure"]["id"],
-            scans=[oci.database.VmClusterNetworkScanArgs(
-                hostname=var["vm_cluster_network_scans_hostname"],
-                ips=var["vm_cluster_network_scans_ips"],
-                port=var["vm_cluster_network_scans_port"],
-                scan_listener_port_tcp=var["vm_cluster_network_scans_scan_listener_port_tcp"],
-                scan_listener_port_tcp_ssl=var["vm_cluster_network_scans_scan_listener_port_tcp_ssl"],
-            )],
-            vm_networks=[oci.database.VmClusterNetworkVmNetworkArgs(
-                network_type=var["vm_cluster_network_vm_networks_network_type"],
-                nodes=[oci.database.VmClusterNetworkVmNetworkNodeArgs(
-                    hostname=var["vm_cluster_network_vm_networks_nodes_hostname"],
-                    ip=var["vm_cluster_network_vm_networks_nodes_ip"],
-                    db_server_id=oci_database_db_server["test_db_server"]["id"],
-                    state=var["vm_cluster_network_vm_networks_nodes_state"],
-                    vip=var["vm_cluster_network_vm_networks_nodes_vip"],
-                    vip_hostname=var["vm_cluster_network_vm_networks_nodes_vip_hostname"],
-                )],
-                domain_name=oci_identity_domain["test_domain"]["name"],
-                gateway=var["vm_cluster_network_vm_networks_gateway"],
-                netmask=var["vm_cluster_network_vm_networks_netmask"],
-                vlan_id=var["vm_cluster_network_vm_networks_vlan_id"],
-            )],
-            defined_tags=var["vm_cluster_network_defined_tags"],
-            dns=var["vm_cluster_network_dns"],
-            dr_scans=[oci.database.VmClusterNetworkDrScanArgs(
-                hostname=var["vm_cluster_network_dr_scans_hostname"],
-                ips=var["vm_cluster_network_dr_scans_ips"],
-                scan_listener_port_tcp=var["vm_cluster_network_dr_scans_scan_listener_port_tcp"],
-            )],
-            freeform_tags={
-                "Department": "Finance",
-            },
-            ntps=var["vm_cluster_network_ntp"],
-            validate_vm_cluster_network=var["vm_cluster_network_validate_vm_cluster_network"])
-        ```
-
-        ## Import
-
-        VmClusterNetworks can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Database/vmClusterNetwork:VmClusterNetwork test_vm_cluster_network "exadataInfrastructures/{exadataInfrastructureId}/vmClusterNetworks/{vmClusterNetworkId}"
-        ```
-
+        Create a VmClusterNetwork resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param pulumi.Input[str] display_name: The user-friendly name for the Exadata Cloud@Customer VM cluster network. The name does not need to be unique.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] dns: (Updatable) The list of DNS server IP addresses. Maximum of 3 allowed.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VmClusterNetworkDrScanArgs']]]] dr_scans: (Updatable) The SCAN details for DR network
-        :param pulumi.Input[str] exadata_infrastructure_id: The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] ntps: (Updatable) The list of NTP server IP addresses. Maximum of 3 allowed.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VmClusterNetworkScanArgs']]]] scans: (Updatable) The SCAN details.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VmClusterNetworkVmNetworkArgs']]]] vm_networks: (Updatable) Details of the client and backup networks.
         """
         ...
     @overload
@@ -554,65 +390,7 @@ class VmClusterNetwork(pulumi.CustomResource):
                  args: VmClusterNetworkArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Vm Cluster Network resource in Oracle Cloud Infrastructure Database service.
-
-        Creates the VM cluster network. Applies to Exadata Cloud@Customer instances only.
-        To create a cloud VM cluster in an Exadata Cloud Service instance, use the [CreateCloudVmCluster ](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudVmCluster/CreateCloudVmCluster) operation.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_vm_cluster_network = oci.database.VmClusterNetwork("testVmClusterNetwork",
-            compartment_id=var["compartment_id"],
-            display_name=var["vm_cluster_network_display_name"],
-            exadata_infrastructure_id=oci_database_exadata_infrastructure["test_exadata_infrastructure"]["id"],
-            scans=[oci.database.VmClusterNetworkScanArgs(
-                hostname=var["vm_cluster_network_scans_hostname"],
-                ips=var["vm_cluster_network_scans_ips"],
-                port=var["vm_cluster_network_scans_port"],
-                scan_listener_port_tcp=var["vm_cluster_network_scans_scan_listener_port_tcp"],
-                scan_listener_port_tcp_ssl=var["vm_cluster_network_scans_scan_listener_port_tcp_ssl"],
-            )],
-            vm_networks=[oci.database.VmClusterNetworkVmNetworkArgs(
-                network_type=var["vm_cluster_network_vm_networks_network_type"],
-                nodes=[oci.database.VmClusterNetworkVmNetworkNodeArgs(
-                    hostname=var["vm_cluster_network_vm_networks_nodes_hostname"],
-                    ip=var["vm_cluster_network_vm_networks_nodes_ip"],
-                    db_server_id=oci_database_db_server["test_db_server"]["id"],
-                    state=var["vm_cluster_network_vm_networks_nodes_state"],
-                    vip=var["vm_cluster_network_vm_networks_nodes_vip"],
-                    vip_hostname=var["vm_cluster_network_vm_networks_nodes_vip_hostname"],
-                )],
-                domain_name=oci_identity_domain["test_domain"]["name"],
-                gateway=var["vm_cluster_network_vm_networks_gateway"],
-                netmask=var["vm_cluster_network_vm_networks_netmask"],
-                vlan_id=var["vm_cluster_network_vm_networks_vlan_id"],
-            )],
-            defined_tags=var["vm_cluster_network_defined_tags"],
-            dns=var["vm_cluster_network_dns"],
-            dr_scans=[oci.database.VmClusterNetworkDrScanArgs(
-                hostname=var["vm_cluster_network_dr_scans_hostname"],
-                ips=var["vm_cluster_network_dr_scans_ips"],
-                scan_listener_port_tcp=var["vm_cluster_network_dr_scans_scan_listener_port_tcp"],
-            )],
-            freeform_tags={
-                "Department": "Finance",
-            },
-            ntps=var["vm_cluster_network_ntp"],
-            validate_vm_cluster_network=var["vm_cluster_network_validate_vm_cluster_network"])
-        ```
-
-        ## Import
-
-        VmClusterNetworks can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Database/vmClusterNetwork:VmClusterNetwork test_vm_cluster_network "exadataInfrastructures/{exadataInfrastructureId}/vmClusterNetworks/{vmClusterNetworkId}"
-        ```
-
+        Create a VmClusterNetwork resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param VmClusterNetworkArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -708,20 +486,6 @@ class VmClusterNetwork(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param pulumi.Input[str] display_name: The user-friendly name for the Exadata Cloud@Customer VM cluster network. The name does not need to be unique.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] dns: (Updatable) The list of DNS server IP addresses. Maximum of 3 allowed.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VmClusterNetworkDrScanArgs']]]] dr_scans: (Updatable) The SCAN details for DR network
-        :param pulumi.Input[str] exadata_infrastructure_id: The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] ntps: (Updatable) The list of NTP server IP addresses. Maximum of 3 allowed.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VmClusterNetworkScanArgs']]]] scans: (Updatable) The SCAN details.
-        :param pulumi.Input[str] state: (Updatable) The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
-        :param pulumi.Input[str] time_created: The date and time when the VM cluster network was created.
-        :param pulumi.Input[str] vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated VM Cluster.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VmClusterNetworkVmNetworkArgs']]]] vm_networks: (Updatable) Details of the client and backup networks.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -753,97 +517,61 @@ class VmClusterNetwork(pulumi.CustomResource):
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
-        """
-        The user-friendly name for the Exadata Cloud@Customer VM cluster network. The name does not need to be unique.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
-    def dns(self) -> pulumi.Output[Sequence[str]]:
-        """
-        (Updatable) The list of DNS server IP addresses. Maximum of 3 allowed.
-        """
+    def dns(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "dns")
 
     @property
     @pulumi.getter(name="drScans")
-    def dr_scans(self) -> pulumi.Output[Sequence['outputs.VmClusterNetworkDrScan']]:
-        """
-        (Updatable) The SCAN details for DR network
-        """
+    def dr_scans(self) -> pulumi.Output[Optional[Sequence['outputs.VmClusterNetworkDrScan']]]:
         return pulumi.get(self, "dr_scans")
 
     @property
     @pulumi.getter(name="exadataInfrastructureId")
     def exadata_infrastructure_id(self) -> pulumi.Output[str]:
-        """
-        The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
         return pulumi.get(self, "exadata_infrastructure_id")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        Additional information about the current lifecycle state.
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
-    def ntps(self) -> pulumi.Output[Sequence[str]]:
-        """
-        (Updatable) The list of NTP server IP addresses. Maximum of 3 allowed.
-        """
+    def ntps(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "ntps")
 
     @property
     @pulumi.getter
     def scans(self) -> pulumi.Output[Sequence['outputs.VmClusterNetworkScan']]:
-        """
-        (Updatable) The SCAN details.
-        """
         return pulumi.get(self, "scans")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The date and time when the VM cluster network was created.
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
@@ -853,17 +581,11 @@ class VmClusterNetwork(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="vmClusterId")
-    def vm_cluster_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated VM Cluster.
-        """
+    def vm_cluster_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "vm_cluster_id")
 
     @property
     @pulumi.getter(name="vmNetworks")
     def vm_networks(self) -> pulumi.Output[Sequence['outputs.VmClusterNetworkVmNetwork']]:
-        """
-        (Updatable) Details of the client and backup networks.
-        """
         return pulumi.get(self, "vm_networks")
 

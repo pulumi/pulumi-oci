@@ -9,6 +9,7 @@ import com.pulumi.oci.DatabaseManagement.outputs.GetExternalAsmUsersFilter;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -18,13 +19,13 @@ public final class GetExternalAsmUsersResult {
      * @return The list of external_asm_user_collection.
      * 
      */
-    private List<GetExternalAsmUsersExternalAsmUserCollection> externalAsmUserCollections;
+    private @Nullable List<GetExternalAsmUsersExternalAsmUserCollection> externalAsmUserCollections;
     private @Nullable List<GetExternalAsmUsersFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
 
     private GetExternalAsmUsersResult() {}
     public String externalAsmId() {
@@ -35,7 +36,7 @@ public final class GetExternalAsmUsersResult {
      * 
      */
     public List<GetExternalAsmUsersExternalAsmUserCollection> externalAsmUserCollections() {
-        return this.externalAsmUserCollections;
+        return this.externalAsmUserCollections == null ? List.of() : this.externalAsmUserCollections;
     }
     public List<GetExternalAsmUsersFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -44,8 +45,8 @@ public final class GetExternalAsmUsersResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
 
     public static Builder builder() {
@@ -58,9 +59,9 @@ public final class GetExternalAsmUsersResult {
     @CustomType.Builder
     public static final class Builder {
         private String externalAsmId;
-        private List<GetExternalAsmUsersExternalAsmUserCollection> externalAsmUserCollections;
+        private @Nullable List<GetExternalAsmUsersExternalAsmUserCollection> externalAsmUserCollections;
         private @Nullable List<GetExternalAsmUsersFilter> filters;
-        private String id;
+        private @Nullable String id;
         public Builder() {}
         public Builder(GetExternalAsmUsersResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -76,8 +77,8 @@ public final class GetExternalAsmUsersResult {
             return this;
         }
         @CustomType.Setter
-        public Builder externalAsmUserCollections(List<GetExternalAsmUsersExternalAsmUserCollection> externalAsmUserCollections) {
-            this.externalAsmUserCollections = Objects.requireNonNull(externalAsmUserCollections);
+        public Builder externalAsmUserCollections(@Nullable List<GetExternalAsmUsersExternalAsmUserCollection> externalAsmUserCollections) {
+            this.externalAsmUserCollections = externalAsmUserCollections;
             return this;
         }
         public Builder externalAsmUserCollections(GetExternalAsmUsersExternalAsmUserCollection... externalAsmUserCollections) {
@@ -92,8 +93,8 @@ public final class GetExternalAsmUsersResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         public GetExternalAsmUsersResult build() {

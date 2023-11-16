@@ -69,9 +69,6 @@ class GetDatabaseSecurityConfigsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment containing the database security config.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -81,10 +78,7 @@ class GetDatabaseSecurityConfigsResult:
 
     @property
     @pulumi.getter(name="databaseSecurityConfigCollections")
-    def database_security_config_collections(self) -> Sequence['outputs.GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionResult']:
-        """
-        The list of database_security_config_collection.
-        """
+    def database_security_config_collections(self) -> Optional[Sequence['outputs.GetDatabaseSecurityConfigsDatabaseSecurityConfigCollectionResult']]:
         return pulumi.get(self, "database_security_config_collections")
 
     @property
@@ -95,9 +89,6 @@ class GetDatabaseSecurityConfigsResult:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        The display name of the database security config.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -107,7 +98,7 @@ class GetDatabaseSecurityConfigsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -116,17 +107,11 @@ class GetDatabaseSecurityConfigsResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the database security config.
-        """
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="targetId")
     def target_id(self) -> Optional[str]:
-        """
-        The target OCID corresponding to the database security config.
-        """
         return pulumi.get(self, "target_id")
 
     @property
@@ -172,54 +157,7 @@ def get_database_security_configs(access_level: Optional[str] = None,
                                   time_created_less_than: Optional[str] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDatabaseSecurityConfigsResult:
     """
-    This data source provides the list of Database Security Configs in Oracle Cloud Infrastructure Data Safe service.
-
-    Retrieves a list of all database security configurations in Data Safe.
-
-    The ListDatabaseSecurityConfigs operation returns only the database security configurations in the specified `compartmentId`.
-
-    The parameter `accessLevel` specifies whether to return only those compartments for which the
-    requestor has INSPECT permissions on at least one resource directly
-    or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
-    Principal doesn't have access to even one of the child compartments. This is valid only when
-    `compartmentIdInSubtree` is set to `true`.
-
-    The parameter `compartmentIdInSubtree` applies when you perform ListDatabaseSecurityConfigs on the
-    `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
-    To get a full list of all compartments and subcompartments in the tenancy (root compartment),
-    set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_database_security_configs = oci.DataSafe.get_database_security_configs(compartment_id=var["compartment_id"],
-        access_level=var["database_security_config_access_level"],
-        compartment_id_in_subtree=var["database_security_config_compartment_id_in_subtree"],
-        database_security_config_id=oci_data_safe_database_security_config["test_database_security_config"]["id"],
-        display_name=var["database_security_config_display_name"],
-        state=var["database_security_config_state"],
-        target_id=oci_cloud_guard_target["test_target"]["id"],
-        time_created_greater_than_or_equal_to=var["database_security_config_time_created_greater_than_or_equal_to"],
-        time_created_less_than=var["database_security_config_time_created_less_than"])
-    ```
-
-
-    :param str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
-    :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
-    :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
-    :param str database_security_config_id: An optional filter to return only resources that match the specified OCID of the database security configuration resource.
-    :param str display_name: A filter to return only resources that match the specified display name.
-    :param str state: The current state of the database security configuration.
-    :param str target_id: A filter to return only items related to a specific target OCID.
-    :param str time_created_greater_than_or_equal_to: A filter to return only the resources that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after that date.
-           
-           **Example:** 2016-12-19T16:39:57.600Z
-    :param str time_created_less_than: Search for resources that were created before a specific date. Specifying this parameter corresponding `timeCreatedLessThan` parameter will retrieve all resources created before the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
-           
-           **Example:** 2016-12-19T16:39:57.600Z
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['accessLevel'] = access_level
@@ -263,53 +201,6 @@ def get_database_security_configs_output(access_level: Optional[pulumi.Input[Opt
                                          time_created_less_than: Optional[pulumi.Input[Optional[str]]] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDatabaseSecurityConfigsResult]:
     """
-    This data source provides the list of Database Security Configs in Oracle Cloud Infrastructure Data Safe service.
-
-    Retrieves a list of all database security configurations in Data Safe.
-
-    The ListDatabaseSecurityConfigs operation returns only the database security configurations in the specified `compartmentId`.
-
-    The parameter `accessLevel` specifies whether to return only those compartments for which the
-    requestor has INSPECT permissions on at least one resource directly
-    or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
-    Principal doesn't have access to even one of the child compartments. This is valid only when
-    `compartmentIdInSubtree` is set to `true`.
-
-    The parameter `compartmentIdInSubtree` applies when you perform ListDatabaseSecurityConfigs on the
-    `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
-    To get a full list of all compartments and subcompartments in the tenancy (root compartment),
-    set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_database_security_configs = oci.DataSafe.get_database_security_configs(compartment_id=var["compartment_id"],
-        access_level=var["database_security_config_access_level"],
-        compartment_id_in_subtree=var["database_security_config_compartment_id_in_subtree"],
-        database_security_config_id=oci_data_safe_database_security_config["test_database_security_config"]["id"],
-        display_name=var["database_security_config_display_name"],
-        state=var["database_security_config_state"],
-        target_id=oci_cloud_guard_target["test_target"]["id"],
-        time_created_greater_than_or_equal_to=var["database_security_config_time_created_greater_than_or_equal_to"],
-        time_created_less_than=var["database_security_config_time_created_less_than"])
-    ```
-
-
-    :param str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
-    :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
-    :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
-    :param str database_security_config_id: An optional filter to return only resources that match the specified OCID of the database security configuration resource.
-    :param str display_name: A filter to return only resources that match the specified display name.
-    :param str state: The current state of the database security configuration.
-    :param str target_id: A filter to return only items related to a specific target OCID.
-    :param str time_created_greater_than_or_equal_to: A filter to return only the resources that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after that date.
-           
-           **Example:** 2016-12-19T16:39:57.600Z
-    :param str time_created_less_than: Search for resources that were created before a specific date. Specifying this parameter corresponding `timeCreatedLessThan` parameter will retrieve all resources created before the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
-           
-           **Example:** 2016-12-19T16:39:57.600Z
+    Use this data source to access information about an existing resource.
     """
     ...

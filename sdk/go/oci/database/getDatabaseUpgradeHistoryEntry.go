@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Database Upgrade History Entry resource in Oracle Cloud Infrastructure Database service.
@@ -63,33 +62,33 @@ type GetDatabaseUpgradeHistoryEntryArgs struct {
 // A collection of values returned by getDatabaseUpgradeHistoryEntry.
 type GetDatabaseUpgradeHistoryEntryResult struct {
 	// The database upgrade action.
-	Action     string `pulumi:"action"`
-	DatabaseId string `pulumi:"databaseId"`
+	Action     *string `pulumi:"action"`
+	DatabaseId string  `pulumi:"databaseId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Additional information about the current lifecycle state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Additional upgrade options supported by DBUA(Database Upgrade Assistant). Example: "-upgradeTimezone false -keepEvents"
-	Options string `pulumi:"options"`
+	Options *string `pulumi:"options"`
 	// The source of the Oracle Database software to be used for the upgrade.
 	// * Use `DB_VERSION` to specify a generally-available Oracle Database software version to upgrade the database.
 	// * Use `DB_SOFTWARE_IMAGE` to specify a [database software image](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/databasesoftwareimage.htm) to upgrade the database.
-	Source string `pulumi:"source"`
+	Source *string `pulumi:"source"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
-	SourceDbHomeId string `pulumi:"sourceDbHomeId"`
+	SourceDbHomeId *string `pulumi:"sourceDbHomeId"`
 	// Status of database upgrade history SUCCEEDED|IN_PROGRESS|FAILED.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// the database software image used for upgrading database.
-	TargetDatabaseSoftwareImageId string `pulumi:"targetDatabaseSoftwareImageId"`
+	TargetDatabaseSoftwareImageId *string `pulumi:"targetDatabaseSoftwareImageId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
-	TargetDbHomeId string `pulumi:"targetDbHomeId"`
+	TargetDbHomeId *string `pulumi:"targetDbHomeId"`
 	// A valid Oracle Database version. For a list of supported versions, use the ListDbVersions operation.
-	TargetDbVersion string `pulumi:"targetDbVersion"`
+	TargetDbVersion *string `pulumi:"targetDbVersion"`
 	// The date and time when the database upgrade ended.
-	TimeEnded string `pulumi:"timeEnded"`
+	TimeEnded *string `pulumi:"timeEnded"`
 	// The date and time when the database upgrade started.
-	TimeStarted           string `pulumi:"timeStarted"`
-	UpgradeHistoryEntryId string `pulumi:"upgradeHistoryEntryId"`
+	TimeStarted           *string `pulumi:"timeStarted"`
+	UpgradeHistoryEntryId string  `pulumi:"upgradeHistoryEntryId"`
 }
 
 func GetDatabaseUpgradeHistoryEntryOutput(ctx *pulumi.Context, args GetDatabaseUpgradeHistoryEntryOutputArgs, opts ...pulumi.InvokeOption) GetDatabaseUpgradeHistoryEntryResultOutput {
@@ -132,15 +131,9 @@ func (o GetDatabaseUpgradeHistoryEntryResultOutput) ToGetDatabaseUpgradeHistoryE
 	return o
 }
 
-func (o GetDatabaseUpgradeHistoryEntryResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseUpgradeHistoryEntryResult] {
-	return pulumix.Output[GetDatabaseUpgradeHistoryEntryResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The database upgrade action.
-func (o GetDatabaseUpgradeHistoryEntryResultOutput) Action() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabaseUpgradeHistoryEntryResult) string { return v.Action }).(pulumi.StringOutput)
+func (o GetDatabaseUpgradeHistoryEntryResultOutput) Action() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseUpgradeHistoryEntryResult) *string { return v.Action }).(pulumi.StringPtrOutput)
 }
 
 func (o GetDatabaseUpgradeHistoryEntryResultOutput) DatabaseId() pulumi.StringOutput {
@@ -148,60 +141,60 @@ func (o GetDatabaseUpgradeHistoryEntryResultOutput) DatabaseId() pulumi.StringOu
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetDatabaseUpgradeHistoryEntryResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabaseUpgradeHistoryEntryResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDatabaseUpgradeHistoryEntryResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseUpgradeHistoryEntryResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Additional information about the current lifecycle state.
-func (o GetDatabaseUpgradeHistoryEntryResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabaseUpgradeHistoryEntryResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetDatabaseUpgradeHistoryEntryResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseUpgradeHistoryEntryResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // Additional upgrade options supported by DBUA(Database Upgrade Assistant). Example: "-upgradeTimezone false -keepEvents"
-func (o GetDatabaseUpgradeHistoryEntryResultOutput) Options() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabaseUpgradeHistoryEntryResult) string { return v.Options }).(pulumi.StringOutput)
+func (o GetDatabaseUpgradeHistoryEntryResultOutput) Options() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseUpgradeHistoryEntryResult) *string { return v.Options }).(pulumi.StringPtrOutput)
 }
 
 // The source of the Oracle Database software to be used for the upgrade.
 // * Use `DB_VERSION` to specify a generally-available Oracle Database software version to upgrade the database.
 // * Use `DB_SOFTWARE_IMAGE` to specify a [database software image](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/databasesoftwareimage.htm) to upgrade the database.
-func (o GetDatabaseUpgradeHistoryEntryResultOutput) Source() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabaseUpgradeHistoryEntryResult) string { return v.Source }).(pulumi.StringOutput)
+func (o GetDatabaseUpgradeHistoryEntryResultOutput) Source() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseUpgradeHistoryEntryResult) *string { return v.Source }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
-func (o GetDatabaseUpgradeHistoryEntryResultOutput) SourceDbHomeId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabaseUpgradeHistoryEntryResult) string { return v.SourceDbHomeId }).(pulumi.StringOutput)
+func (o GetDatabaseUpgradeHistoryEntryResultOutput) SourceDbHomeId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseUpgradeHistoryEntryResult) *string { return v.SourceDbHomeId }).(pulumi.StringPtrOutput)
 }
 
 // Status of database upgrade history SUCCEEDED|IN_PROGRESS|FAILED.
-func (o GetDatabaseUpgradeHistoryEntryResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabaseUpgradeHistoryEntryResult) string { return v.State }).(pulumi.StringOutput)
+func (o GetDatabaseUpgradeHistoryEntryResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseUpgradeHistoryEntryResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // the database software image used for upgrading database.
-func (o GetDatabaseUpgradeHistoryEntryResultOutput) TargetDatabaseSoftwareImageId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabaseUpgradeHistoryEntryResult) string { return v.TargetDatabaseSoftwareImageId }).(pulumi.StringOutput)
+func (o GetDatabaseUpgradeHistoryEntryResultOutput) TargetDatabaseSoftwareImageId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseUpgradeHistoryEntryResult) *string { return v.TargetDatabaseSoftwareImageId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
-func (o GetDatabaseUpgradeHistoryEntryResultOutput) TargetDbHomeId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabaseUpgradeHistoryEntryResult) string { return v.TargetDbHomeId }).(pulumi.StringOutput)
+func (o GetDatabaseUpgradeHistoryEntryResultOutput) TargetDbHomeId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseUpgradeHistoryEntryResult) *string { return v.TargetDbHomeId }).(pulumi.StringPtrOutput)
 }
 
 // A valid Oracle Database version. For a list of supported versions, use the ListDbVersions operation.
-func (o GetDatabaseUpgradeHistoryEntryResultOutput) TargetDbVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabaseUpgradeHistoryEntryResult) string { return v.TargetDbVersion }).(pulumi.StringOutput)
+func (o GetDatabaseUpgradeHistoryEntryResultOutput) TargetDbVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseUpgradeHistoryEntryResult) *string { return v.TargetDbVersion }).(pulumi.StringPtrOutput)
 }
 
 // The date and time when the database upgrade ended.
-func (o GetDatabaseUpgradeHistoryEntryResultOutput) TimeEnded() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabaseUpgradeHistoryEntryResult) string { return v.TimeEnded }).(pulumi.StringOutput)
+func (o GetDatabaseUpgradeHistoryEntryResultOutput) TimeEnded() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseUpgradeHistoryEntryResult) *string { return v.TimeEnded }).(pulumi.StringPtrOutput)
 }
 
 // The date and time when the database upgrade started.
-func (o GetDatabaseUpgradeHistoryEntryResultOutput) TimeStarted() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabaseUpgradeHistoryEntryResult) string { return v.TimeStarted }).(pulumi.StringOutput)
+func (o GetDatabaseUpgradeHistoryEntryResultOutput) TimeStarted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseUpgradeHistoryEntryResult) *string { return v.TimeStarted }).(pulumi.StringPtrOutput)
 }
 
 func (o GetDatabaseUpgradeHistoryEntryResultOutput) UpgradeHistoryEntryId() pulumi.StringOutput {

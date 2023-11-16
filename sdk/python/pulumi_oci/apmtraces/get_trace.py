@@ -94,15 +94,12 @@ class GetTraceResult:
 
     @property
     @pulumi.getter(name="errorSpanCount")
-    def error_span_count(self) -> int:
-        """
-        The number of spans with errors that have been processed by the system for the trace. Note that the number of spans with errors will be less than or equal to the total number of spans in the trace.
-        """
+    def error_span_count(self) -> Optional[int]:
         return pulumi.get(self, "error_span_count")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -110,146 +107,92 @@ class GetTraceResult:
 
     @property
     @pulumi.getter(name="isFault")
-    def is_fault(self) -> bool:
-        """
-        Boolean flag that indicates whether the trace has an error.
-        """
+    def is_fault(self) -> Optional[bool]:
         return pulumi.get(self, "is_fault")
 
     @property
     @pulumi.getter
-    def key(self) -> str:
-        """
-        Unique identifier (spanId) for the span.  Note that this field is defined as spanKey in the API and it maps to the spanId in the trace data in Application Performance Monitoring.
-        """
+    def key(self) -> Optional[str]:
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter(name="rootSpanDurationInMs")
-    def root_span_duration_in_ms(self) -> int:
-        """
-        Time taken for the root span operation to complete in milliseconds.
-        """
+    def root_span_duration_in_ms(self) -> Optional[int]:
         return pulumi.get(self, "root_span_duration_in_ms")
 
     @property
     @pulumi.getter(name="rootSpanOperationName")
-    def root_span_operation_name(self) -> str:
-        """
-        Root span name associated with the trace. This is the flow start operation name. Null is displayed if the root span is not yet completed.
-        """
+    def root_span_operation_name(self) -> Optional[str]:
         return pulumi.get(self, "root_span_operation_name")
 
     @property
     @pulumi.getter(name="rootSpanServiceName")
-    def root_span_service_name(self) -> str:
-        """
-        Service associated with the trace.
-        """
+    def root_span_service_name(self) -> Optional[str]:
         return pulumi.get(self, "root_span_service_name")
 
     @property
     @pulumi.getter(name="serviceSummaries")
-    def service_summaries(self) -> Sequence['outputs.GetTraceServiceSummaryResult']:
-        """
-        A summary of the spans by service.
-        """
+    def service_summaries(self) -> Optional[Sequence['outputs.GetTraceServiceSummaryResult']]:
         return pulumi.get(self, "service_summaries")
 
     @property
     @pulumi.getter(name="spanCount")
-    def span_count(self) -> int:
-        """
-        The number of spans that have been processed by the system for the trace.  Note that there could be additional spans that have not been processed or reported yet if the trace is still in progress.
-        """
+    def span_count(self) -> Optional[int]:
         return pulumi.get(self, "span_count")
 
     @property
     @pulumi.getter(name="spanSummaries")
-    def span_summaries(self) -> Sequence['outputs.GetTraceSpanSummaryResult']:
-        """
-        Summary of the information pertaining to the spans in the trace window that is being queried.
-        """
+    def span_summaries(self) -> Optional[Sequence['outputs.GetTraceSpanSummaryResult']]:
         return pulumi.get(self, "span_summaries")
 
     @property
     @pulumi.getter
-    def spans(self) -> Sequence['outputs.GetTraceSpanResult']:
-        """
-        An array of spans in the trace.
-        """
+    def spans(self) -> Optional[Sequence['outputs.GetTraceSpanResult']]:
         return pulumi.get(self, "spans")
 
     @property
     @pulumi.getter(name="timeEarliestSpanStarted")
-    def time_earliest_span_started(self) -> str:
-        """
-        Start time of the earliest span in the span collection.
-        """
+    def time_earliest_span_started(self) -> Optional[str]:
         return pulumi.get(self, "time_earliest_span_started")
 
     @property
     @pulumi.getter(name="timeLatestSpanEnded")
-    def time_latest_span_ended(self) -> str:
-        """
-        End time of the span that most recently ended in the span collection.
-        """
+    def time_latest_span_ended(self) -> Optional[str]:
         return pulumi.get(self, "time_latest_span_ended")
 
     @property
     @pulumi.getter(name="timeRootSpanEnded")
-    def time_root_span_ended(self) -> str:
-        """
-        End time of the root span for the span collection.
-        """
+    def time_root_span_ended(self) -> Optional[str]:
         return pulumi.get(self, "time_root_span_ended")
 
     @property
     @pulumi.getter(name="timeRootSpanStarted")
-    def time_root_span_started(self) -> str:
-        """
-        Start time of the root span for the span collection.
-        """
+    def time_root_span_started(self) -> Optional[str]:
         return pulumi.get(self, "time_root_span_started")
 
     @property
     @pulumi.getter(name="traceDurationInMs")
-    def trace_duration_in_ms(self) -> int:
-        """
-        Time between the start of the earliest span and the end of the most recent span in milliseconds.
-        """
+    def trace_duration_in_ms(self) -> Optional[int]:
         return pulumi.get(self, "trace_duration_in_ms")
 
     @property
     @pulumi.getter(name="traceErrorCode")
-    def trace_error_code(self) -> str:
-        """
-        Error code of the trace.
-        """
+    def trace_error_code(self) -> Optional[str]:
         return pulumi.get(self, "trace_error_code")
 
     @property
     @pulumi.getter(name="traceErrorType")
-    def trace_error_type(self) -> str:
-        """
-        Error type of the trace.
-        """
+    def trace_error_type(self) -> Optional[str]:
         return pulumi.get(self, "trace_error_type")
 
     @property
     @pulumi.getter(name="traceKey")
     def trace_key(self) -> str:
-        """
-        Unique identifier for the trace.
-        """
         return pulumi.get(self, "trace_key")
 
     @property
     @pulumi.getter(name="traceStatus")
-    def trace_status(self) -> str:
-        """
-        The status of the trace. The trace statuses are defined as follows: complete - a root span has been recorded, but there is no information on the errors. success - a complete root span is recorded there is a successful error type and error code - HTTP 200. incomplete - the root span has not yet been received. error - the root span returned with an error. There may or may not be an associated error code or error type.
-        """
+    def trace_status(self) -> Optional[str]:
         return pulumi.get(self, "trace_status")
 
 
@@ -286,23 +229,7 @@ def get_trace(apm_domain_id: Optional[str] = None,
               trace_key: Optional[str] = None,
               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetTraceResult:
     """
-    This data source provides details about a specific Trace resource in Oracle Cloud Infrastructure Apm Traces service.
-
-    Gets the trace details identified by traceId.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_trace = oci.ApmTraces.get_trace(apm_domain_id=oci_apm_apm_domain["test_apm_domain"]["id"],
-        trace_key=var["trace_trace_key"])
-    ```
-
-
-    :param str apm_domain_id: The APM Domain ID the request is intended for.
-    :param str trace_key: Unique Application Performance Monitoring trace identifier (traceId).
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['apmDomainId'] = apm_domain_id
@@ -339,22 +266,6 @@ def get_trace_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
                      trace_key: Optional[pulumi.Input[str]] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetTraceResult]:
     """
-    This data source provides details about a specific Trace resource in Oracle Cloud Infrastructure Apm Traces service.
-
-    Gets the trace details identified by traceId.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_trace = oci.ApmTraces.get_trace(apm_domain_id=oci_apm_apm_domain["test_apm_domain"]["id"],
-        trace_key=var["trace_trace_key"])
-    ```
-
-
-    :param str apm_domain_id: The APM Domain ID the request is intended for.
-    :param str trace_key: Unique Application Performance Monitoring trace identifier (traceId).
+    Use this data source to access information about an existing resource.
     """
     ...

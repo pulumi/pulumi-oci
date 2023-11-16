@@ -49,40 +49,40 @@ export interface GetGroupResult {
     /**
      * The OCID of the tenancy containing the group.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * The description you assign to the group. Does not have to be unique, and it's changeable.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     readonly groupId: string;
     /**
      * The OCID of the group.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The detailed status of INACTIVE lifecycleState.
      */
-    readonly inactiveState: string;
+    readonly inactiveState?: string;
     /**
      * The name you assign to the group during creation. The name must be unique across all groups in the tenancy and cannot be changed.
      */
-    readonly name: string;
+    readonly name?: string;
     /**
      * The group's current state.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * Date and time the group was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
 }
 /**
  * This data source provides details about a specific Group resource in Oracle Cloud Infrastructure Identity service.

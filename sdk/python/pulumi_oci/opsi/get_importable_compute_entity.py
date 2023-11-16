@@ -36,14 +36,11 @@ class GetImportableComputeEntityResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -51,10 +48,7 @@ class GetImportableComputeEntityResult:
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetImportableComputeEntityItemResult']:
-        """
-        Array of importable compute entity objects.
-        """
+    def items(self) -> Optional[Sequence['outputs.GetImportableComputeEntityItemResult']]:
         return pulumi.get(self, "items")
 
 
@@ -72,27 +66,7 @@ class AwaitableGetImportableComputeEntityResult(GetImportableComputeEntityResult
 def get_importable_compute_entity(compartment_id: Optional[str] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetImportableComputeEntityResult:
     """
-    This data source provides details about a specific Importable Compute Entity resource in Oracle Cloud Infrastructure Opsi service.
-
-    Gets a list of available compute intances running cloud agent to add a new hostInsight.  An Compute entity is "available"
-    and will be shown if all the following conditions are true:
-       1. Compute is running OCA
-       2. Oracle Cloud Infrastructure Management Agent is not enabled or If Oracle Cloud Infrastructure Management Agent is enabled
-          2.1 The agent OCID is not already being used for an existing hostInsight.
-          2.2 The agent availabilityStatus = 'ACTIVE'
-          2.3 The agent lifecycleState = 'ACTIVE'
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_importable_compute_entity = oci.Opsi.get_importable_compute_entity(compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -109,26 +83,6 @@ def get_importable_compute_entity(compartment_id: Optional[str] = None,
 def get_importable_compute_entity_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetImportableComputeEntityResult]:
     """
-    This data source provides details about a specific Importable Compute Entity resource in Oracle Cloud Infrastructure Opsi service.
-
-    Gets a list of available compute intances running cloud agent to add a new hostInsight.  An Compute entity is "available"
-    and will be shown if all the following conditions are true:
-       1. Compute is running OCA
-       2. Oracle Cloud Infrastructure Management Agent is not enabled or If Oracle Cloud Infrastructure Management Agent is enabled
-          2.1 The agent OCID is not already being used for an existing hostInsight.
-          2.2 The agent availabilityStatus = 'ACTIVE'
-          2.3 The agent lifecycleState = 'ACTIVE'
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_importable_compute_entity = oci.Opsi.get_importable_compute_entity(compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+    Use this data source to access information about an existing resource.
     """
     ...

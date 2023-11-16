@@ -46,40 +46,40 @@ export interface GetAcceptedAgreementResult {
     /**
      * The unique identifier for the terms of use agreement itself.
      */
-    readonly agreementId: string;
+    readonly agreementId?: string;
     /**
      * The unique identifier for the compartment where the agreement was accepted.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * A display name for the accepted agreement.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The unique identifier for the acceptance of the agreement within a specific compartment.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The unique identifier for the listing associated with the agreement.
      */
-    readonly listingId: string;
+    readonly listingId?: string;
     /**
      * The package version associated with the agreement.
      */
-    readonly packageVersion: string;
-    readonly signature: string;
+    readonly packageVersion?: string;
+    readonly signature?: string;
     /**
      * The time the agreement was accepted.
      */
-    readonly timeAccepted: string;
+    readonly timeAccepted?: string;
 }
 /**
  * This data source provides details about a specific Accepted Agreement resource in Oracle Cloud Infrastructure Marketplace service.

@@ -76,7 +76,7 @@ export class DomainReplicationToRegion extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly replicaRegion!: pulumi.Output<string>;
+    public readonly replicaRegion!: pulumi.Output<string | undefined>;
 
     /**
      * Create a DomainReplicationToRegion resource with the given unique name, arguments, and options.

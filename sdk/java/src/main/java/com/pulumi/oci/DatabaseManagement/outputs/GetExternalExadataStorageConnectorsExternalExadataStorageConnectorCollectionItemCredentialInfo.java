@@ -6,30 +6,32 @@ package com.pulumi.oci.DatabaseManagement.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfo {
-    private String password;
-    private String sslTrustStoreLocation;
-    private String sslTrustStorePassword;
-    private String sslTrustStoreType;
-    private String username;
+    private @Nullable String password;
+    private @Nullable String sslTrustStoreLocation;
+    private @Nullable String sslTrustStorePassword;
+    private @Nullable String sslTrustStoreType;
+    private @Nullable String username;
 
     private GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfo() {}
-    public String password() {
-        return this.password;
+    public Optional<String> password() {
+        return Optional.ofNullable(this.password);
     }
-    public String sslTrustStoreLocation() {
-        return this.sslTrustStoreLocation;
+    public Optional<String> sslTrustStoreLocation() {
+        return Optional.ofNullable(this.sslTrustStoreLocation);
     }
-    public String sslTrustStorePassword() {
-        return this.sslTrustStorePassword;
+    public Optional<String> sslTrustStorePassword() {
+        return Optional.ofNullable(this.sslTrustStorePassword);
     }
-    public String sslTrustStoreType() {
-        return this.sslTrustStoreType;
+    public Optional<String> sslTrustStoreType() {
+        return Optional.ofNullable(this.sslTrustStoreType);
     }
-    public String username() {
-        return this.username;
+    public Optional<String> username() {
+        return Optional.ofNullable(this.username);
     }
 
     public static Builder builder() {
@@ -41,11 +43,11 @@ public final class GetExternalExadataStorageConnectorsExternalExadataStorageConn
     }
     @CustomType.Builder
     public static final class Builder {
-        private String password;
-        private String sslTrustStoreLocation;
-        private String sslTrustStorePassword;
-        private String sslTrustStoreType;
-        private String username;
+        private @Nullable String password;
+        private @Nullable String sslTrustStoreLocation;
+        private @Nullable String sslTrustStorePassword;
+        private @Nullable String sslTrustStoreType;
+        private @Nullable String username;
         public Builder() {}
         public Builder(GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfo defaults) {
     	      Objects.requireNonNull(defaults);
@@ -57,28 +59,28 @@ public final class GetExternalExadataStorageConnectorsExternalExadataStorageConn
         }
 
         @CustomType.Setter
-        public Builder password(String password) {
-            this.password = Objects.requireNonNull(password);
+        public Builder password(@Nullable String password) {
+            this.password = password;
             return this;
         }
         @CustomType.Setter
-        public Builder sslTrustStoreLocation(String sslTrustStoreLocation) {
-            this.sslTrustStoreLocation = Objects.requireNonNull(sslTrustStoreLocation);
+        public Builder sslTrustStoreLocation(@Nullable String sslTrustStoreLocation) {
+            this.sslTrustStoreLocation = sslTrustStoreLocation;
             return this;
         }
         @CustomType.Setter
-        public Builder sslTrustStorePassword(String sslTrustStorePassword) {
-            this.sslTrustStorePassword = Objects.requireNonNull(sslTrustStorePassword);
+        public Builder sslTrustStorePassword(@Nullable String sslTrustStorePassword) {
+            this.sslTrustStorePassword = sslTrustStorePassword;
             return this;
         }
         @CustomType.Setter
-        public Builder sslTrustStoreType(String sslTrustStoreType) {
-            this.sslTrustStoreType = Objects.requireNonNull(sslTrustStoreType);
+        public Builder sslTrustStoreType(@Nullable String sslTrustStoreType) {
+            this.sslTrustStoreType = sslTrustStoreType;
             return this;
         }
         @CustomType.Setter
-        public Builder username(String username) {
-            this.username = Objects.requireNonNull(username);
+        public Builder username(@Nullable String username) {
+            this.username = username;
             return this;
         }
         public GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfo build() {

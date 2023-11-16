@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Api resource in Oracle Cloud Infrastructure API Gateway service.
@@ -66,11 +65,11 @@ type Api struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the resource is created.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) API Specification content in json or yaml format
-	Content pulumi.StringOutput `pulumi:"content"`
+	Content pulumi.StringPtrOutput `pulumi:"content"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	//
 	// ** IMPORTANT **
@@ -84,15 +83,15 @@ type Api struct {
 	// * 'Error' the document has been validated and contains errors
 	// * 'Failed' the document validation failed
 	// * 'Canceled' the document validation was canceled
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// Type of API Specification file.
-	SpecificationType pulumi.StringOutput `pulumi:"specificationType"`
+	SpecificationType pulumi.StringPtrOutput `pulumi:"specificationType"`
 	// The current state of the API.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The time this resource was created. An RFC3339 formatted datetime string.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The time this resource was last updated. An RFC3339 formatted datetime string.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 	// Status of each feature available from the API.
 	ValidationResults ApiValidationResultArrayOutput `pulumi:"validationResults"`
 }
@@ -259,12 +258,6 @@ func (i *Api) ToApiOutputWithContext(ctx context.Context) ApiOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ApiOutput)
 }
 
-func (i *Api) ToOutput(ctx context.Context) pulumix.Output[*Api] {
-	return pulumix.Output[*Api]{
-		OutputState: i.ToApiOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ApiArrayInput is an input type that accepts ApiArray and ApiArrayOutput values.
 // You can construct a concrete instance of `ApiArrayInput` via:
 //
@@ -288,12 +281,6 @@ func (i ApiArray) ToApiArrayOutput() ApiArrayOutput {
 
 func (i ApiArray) ToApiArrayOutputWithContext(ctx context.Context) ApiArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ApiArrayOutput)
-}
-
-func (i ApiArray) ToOutput(ctx context.Context) pulumix.Output[[]*Api] {
-	return pulumix.Output[[]*Api]{
-		OutputState: i.ToApiArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ApiMapInput is an input type that accepts ApiMap and ApiMapOutput values.
@@ -321,12 +308,6 @@ func (i ApiMap) ToApiMapOutputWithContext(ctx context.Context) ApiMapOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ApiMapOutput)
 }
 
-func (i ApiMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Api] {
-	return pulumix.Output[map[string]*Api]{
-		OutputState: i.ToApiMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ApiOutput struct{ *pulumi.OutputState }
 
 func (ApiOutput) ElementType() reflect.Type {
@@ -341,20 +322,14 @@ func (o ApiOutput) ToApiOutputWithContext(ctx context.Context) ApiOutput {
 	return o
 }
 
-func (o ApiOutput) ToOutput(ctx context.Context) pulumix.Output[*Api] {
-	return pulumix.Output[*Api]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the resource is created.
 func (o ApiOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Api) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
 // (Updatable) API Specification content in json or yaml format
-func (o ApiOutput) Content() pulumi.StringOutput {
-	return o.ApplyT(func(v *Api) pulumi.StringOutput { return v.Content }).(pulumi.StringOutput)
+func (o ApiOutput) Content() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Api) pulumi.StringPtrOutput { return v.Content }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -363,8 +338,8 @@ func (o ApiOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
-func (o ApiOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *Api) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o ApiOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Api) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -383,28 +358,28 @@ func (o ApiOutput) FreeformTags() pulumi.MapOutput {
 // * 'Error' the document has been validated and contains errors
 // * 'Failed' the document validation failed
 // * 'Canceled' the document validation was canceled
-func (o ApiOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *Api) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o ApiOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Api) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // Type of API Specification file.
-func (o ApiOutput) SpecificationType() pulumi.StringOutput {
-	return o.ApplyT(func(v *Api) pulumi.StringOutput { return v.SpecificationType }).(pulumi.StringOutput)
+func (o ApiOutput) SpecificationType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Api) pulumi.StringPtrOutput { return v.SpecificationType }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the API.
-func (o ApiOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *Api) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o ApiOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Api) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The time this resource was created. An RFC3339 formatted datetime string.
-func (o ApiOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Api) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o ApiOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Api) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time this resource was last updated. An RFC3339 formatted datetime string.
-func (o ApiOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Api) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o ApiOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Api) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // Status of each feature available from the API.
@@ -426,12 +401,6 @@ func (o ApiArrayOutput) ToApiArrayOutputWithContext(ctx context.Context) ApiArra
 	return o
 }
 
-func (o ApiArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Api] {
-	return pulumix.Output[[]*Api]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o ApiArrayOutput) Index(i pulumi.IntInput) ApiOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *Api {
 		return vs[0].([]*Api)[vs[1].(int)]
@@ -450,12 +419,6 @@ func (o ApiMapOutput) ToApiMapOutput() ApiMapOutput {
 
 func (o ApiMapOutput) ToApiMapOutputWithContext(ctx context.Context) ApiMapOutput {
 	return o
-}
-
-func (o ApiMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Api] {
-	return pulumix.Output[map[string]*Api]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ApiMapOutput) MapIndex(k pulumi.StringInput) ApiOutput {

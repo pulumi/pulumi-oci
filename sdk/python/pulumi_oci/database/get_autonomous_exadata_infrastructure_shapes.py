@@ -42,10 +42,7 @@ class GetAutonomousExadataInfrastructureShapesResult:
 
     @property
     @pulumi.getter(name="autonomousExadataInfrastructureShapes")
-    def autonomous_exadata_infrastructure_shapes(self) -> Sequence['outputs.GetAutonomousExadataInfrastructureShapesAutonomousExadataInfrastructureShapeResult']:
-        """
-        The list of autonomous_exadata_infrastructure_shapes.
-        """
+    def autonomous_exadata_infrastructure_shapes(self) -> Optional[Sequence['outputs.GetAutonomousExadataInfrastructureShapesAutonomousExadataInfrastructureShapeResult']]:
         return pulumi.get(self, "autonomous_exadata_infrastructure_shapes")
 
     @property
@@ -65,7 +62,7 @@ class GetAutonomousExadataInfrastructureShapesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -90,23 +87,7 @@ def get_autonomous_exadata_infrastructure_shapes(availability_domain: Optional[s
                                                  filters: Optional[Sequence[pulumi.InputType['GetAutonomousExadataInfrastructureShapesFilterArgs']]] = None,
                                                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAutonomousExadataInfrastructureShapesResult:
     """
-    This data source provides the list of Autonomous Exadata Infrastructure Shapes in Oracle Cloud Infrastructure Database service.
-
-    **Deprecated.**
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_autonomous_exadata_infrastructure_shapes = oci.Database.get_autonomous_exadata_infrastructure_shapes(availability_domain=var["autonomous_exadata_infrastructure_shape_availability_domain"],
-        compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str availability_domain: The name of the Availability Domain.
-    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['availabilityDomain'] = availability_domain
@@ -129,22 +110,6 @@ def get_autonomous_exadata_infrastructure_shapes_output(availability_domain: Opt
                                                         filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetAutonomousExadataInfrastructureShapesFilterArgs']]]]] = None,
                                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAutonomousExadataInfrastructureShapesResult]:
     """
-    This data source provides the list of Autonomous Exadata Infrastructure Shapes in Oracle Cloud Infrastructure Database service.
-
-    **Deprecated.**
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_autonomous_exadata_infrastructure_shapes = oci.Database.get_autonomous_exadata_infrastructure_shapes(availability_domain=var["autonomous_exadata_infrastructure_shape_availability_domain"],
-        compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str availability_domain: The name of the Availability Domain.
-    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     ...

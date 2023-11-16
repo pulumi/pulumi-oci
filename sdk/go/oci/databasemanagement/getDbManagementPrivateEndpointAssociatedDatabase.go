@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Db Management Private Endpoint Associated Database resource in Oracle Cloud Infrastructure Database Management service.
@@ -66,7 +65,7 @@ type GetDbManagementPrivateEndpointAssociatedDatabaseResult struct {
 	CompartmentId                 string `pulumi:"compartmentId"`
 	DbManagementPrivateEndpointId string `pulumi:"dbManagementPrivateEndpointId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A list of databases using a Database Management private endpoint.
 	Items []GetDbManagementPrivateEndpointAssociatedDatabaseItem `pulumi:"items"`
 }
@@ -111,12 +110,6 @@ func (o GetDbManagementPrivateEndpointAssociatedDatabaseResultOutput) ToGetDbMan
 	return o
 }
 
-func (o GetDbManagementPrivateEndpointAssociatedDatabaseResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDbManagementPrivateEndpointAssociatedDatabaseResult] {
-	return pulumix.Output[GetDbManagementPrivateEndpointAssociatedDatabaseResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
 func (o GetDbManagementPrivateEndpointAssociatedDatabaseResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbManagementPrivateEndpointAssociatedDatabaseResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -129,8 +122,8 @@ func (o GetDbManagementPrivateEndpointAssociatedDatabaseResultOutput) DbManageme
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetDbManagementPrivateEndpointAssociatedDatabaseResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDbManagementPrivateEndpointAssociatedDatabaseResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDbManagementPrivateEndpointAssociatedDatabaseResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDbManagementPrivateEndpointAssociatedDatabaseResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A list of databases using a Database Management private endpoint.

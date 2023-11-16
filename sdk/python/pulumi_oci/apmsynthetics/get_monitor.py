@@ -106,82 +106,52 @@ class GetMonitorResult:
 
     @property
     @pulumi.getter(name="availabilityConfigurations")
-    def availability_configurations(self) -> Sequence['outputs.GetMonitorAvailabilityConfigurationResult']:
-        """
-        Monitor availability configuration details.
-        """
+    def availability_configurations(self) -> Optional[Sequence['outputs.GetMonitorAvailabilityConfigurationResult']]:
         return pulumi.get(self, "availability_configurations")
 
     @property
     @pulumi.getter(name="batchIntervalInSeconds")
-    def batch_interval_in_seconds(self) -> int:
-        """
-        Time interval between two runs in round robin batch mode (SchedulingPolicy - BATCHED_ROUND_ROBIN).
-        """
+    def batch_interval_in_seconds(self) -> Optional[int]:
         return pulumi.get(self, "batch_interval_in_seconds")
 
     @property
     @pulumi.getter
-    def configurations(self) -> Sequence['outputs.GetMonitorConfigurationResult']:
-        """
-        Details of monitor configuration.
-        """
+    def configurations(self) -> Optional[Sequence['outputs.GetMonitorConfigurationResult']]:
         return pulumi.get(self, "configurations")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        Unique name that can be edited. The name should not contain any confidential information.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitor.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isRunNow")
-    def is_run_now(self) -> bool:
-        """
-        If isRunNow is enabled, then the monitor will run immediately.
-        """
+    def is_run_now(self) -> Optional[bool]:
         return pulumi.get(self, "is_run_now")
 
     @property
     @pulumi.getter(name="isRunOnce")
-    def is_run_once(self) -> bool:
-        """
-        If runOnce is enabled, then the monitor will run once.
-        """
+    def is_run_once(self) -> Optional[bool]:
         return pulumi.get(self, "is_run_once")
 
     @property
     @pulumi.getter(name="maintenanceWindowSchedules")
-    def maintenance_window_schedules(self) -> Sequence['outputs.GetMonitorMaintenanceWindowScheduleResult']:
-        """
-        Details required to schedule maintenance window.
-        """
+    def maintenance_window_schedules(self) -> Optional[Sequence['outputs.GetMonitorMaintenanceWindowScheduleResult']]:
         return pulumi.get(self, "maintenance_window_schedules")
 
     @property
@@ -191,106 +161,67 @@ class GetMonitorResult:
 
     @property
     @pulumi.getter(name="monitorType")
-    def monitor_type(self) -> str:
-        """
-        Type of monitor.
-        """
+    def monitor_type(self) -> Optional[str]:
         return pulumi.get(self, "monitor_type")
 
     @property
     @pulumi.getter(name="repeatIntervalInSeconds")
-    def repeat_interval_in_seconds(self) -> int:
-        """
-        Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
-        """
+    def repeat_interval_in_seconds(self) -> Optional[int]:
         return pulumi.get(self, "repeat_interval_in_seconds")
 
     @property
     @pulumi.getter(name="schedulingPolicy")
-    def scheduling_policy(self) -> str:
-        """
-        Scheduling policy to decide the distribution of monitor executions on vantage points.
-        """
+    def scheduling_policy(self) -> Optional[str]:
         return pulumi.get(self, "scheduling_policy")
 
     @property
     @pulumi.getter(name="scriptId")
-    def script_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the script. scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null.
-        """
+    def script_id(self) -> Optional[str]:
         return pulumi.get(self, "script_id")
 
     @property
     @pulumi.getter(name="scriptName")
-    def script_name(self) -> str:
-        """
-        Name of the script.
-        """
+    def script_name(self) -> Optional[str]:
         return pulumi.get(self, "script_name")
 
     @property
     @pulumi.getter(name="scriptParameters")
-    def script_parameters(self) -> Sequence['outputs.GetMonitorScriptParameterResult']:
-        """
-        List of script parameters. Example: `[{"monitorScriptParameter": {"paramName": "userid", "paramValue":"testuser"}, "isSecret": false, "isOverwritten": false}]`
-        """
+    def script_parameters(self) -> Optional[Sequence['outputs.GetMonitorScriptParameterResult']]:
         return pulumi.get(self, "script_parameters")
 
     @property
     @pulumi.getter
-    def status(self) -> str:
-        """
-        Enables or disables the monitor.
-        """
+    def status(self) -> Optional[str]:
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter
-    def target(self) -> str:
-        """
-        Specify the endpoint on which to run the monitor. For BROWSER and REST monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
-        """
+    def target(self) -> Optional[str]:
         return pulumi.get(self, "target")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="timeoutInSeconds")
-    def timeout_in_seconds(self) -> int:
-        """
-        Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
-        """
+    def timeout_in_seconds(self) -> Optional[int]:
         return pulumi.get(self, "timeout_in_seconds")
 
     @property
     @pulumi.getter(name="vantagePointCount")
-    def vantage_point_count(self) -> int:
-        """
-        Number of vantage points where monitor is running.
-        """
+    def vantage_point_count(self) -> Optional[int]:
         return pulumi.get(self, "vantage_point_count")
 
     @property
     @pulumi.getter(name="vantagePoints")
-    def vantage_points(self) -> Sequence['outputs.GetMonitorVantagePointResult']:
-        """
-        List of public and dedicated vantage points where the monitor is running.
-        """
+    def vantage_points(self) -> Optional[Sequence['outputs.GetMonitorVantagePointResult']]:
         return pulumi.get(self, "vantage_points")
 
 
@@ -331,23 +262,7 @@ def get_monitor(apm_domain_id: Optional[str] = None,
                 monitor_id: Optional[str] = None,
                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMonitorResult:
     """
-    This data source provides details about a specific Monitor resource in Oracle Cloud Infrastructure Apm Synthetics service.
-
-    Gets the configuration of the monitor identified by the OCID.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_monitor = oci.ApmSynthetics.get_monitor(apm_domain_id=oci_apm_synthetics_apm_domain["test_apm_domain"]["id"],
-        monitor_id=oci_apm_synthetics_monitor["test_monitor"]["id"])
-    ```
-
-
-    :param str apm_domain_id: The APM domain ID the request is intended for.
-    :param str monitor_id: The OCID of the monitor.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['apmDomainId'] = apm_domain_id
@@ -388,22 +303,6 @@ def get_monitor_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
                        monitor_id: Optional[pulumi.Input[str]] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMonitorResult]:
     """
-    This data source provides details about a specific Monitor resource in Oracle Cloud Infrastructure Apm Synthetics service.
-
-    Gets the configuration of the monitor identified by the OCID.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_monitor = oci.ApmSynthetics.get_monitor(apm_domain_id=oci_apm_synthetics_apm_domain["test_apm_domain"]["id"],
-        monitor_id=oci_apm_synthetics_monitor["test_monitor"]["id"])
-    ```
-
-
-    :param str apm_domain_id: The APM domain ID the request is intended for.
-    :param str monitor_id: The OCID of the monitor.
+    Use this data source to access information about an existing resource.
     """
     ...

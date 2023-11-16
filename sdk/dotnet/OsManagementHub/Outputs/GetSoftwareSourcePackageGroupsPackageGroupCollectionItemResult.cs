@@ -16,31 +16,31 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         /// <summary>
         /// description of the package group.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// Indicates the order to display category or environment.
         /// </summary>
-        public readonly int DisplayOrder;
+        public readonly int? DisplayOrder;
         /// <summary>
         /// A filter to return only package groups of the specified type.
         /// </summary>
-        public readonly string GroupType;
+        public readonly string? GroupType;
         /// <summary>
         /// Package group identifier.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Indicates if this package group is the default.
         /// </summary>
-        public readonly bool IsDefault;
+        public readonly bool? IsDefault;
         /// <summary>
         /// Indicates if this package group is visible by users.
         /// </summary>
-        public readonly bool IsUserVisible;
+        public readonly bool? IsUserVisible;
         /// <summary>
         /// The name of the entity to be queried.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The list of packages in the package group.
         /// </summary>
@@ -52,19 +52,19 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
 
         [OutputConstructor]
         private GetSoftwareSourcePackageGroupsPackageGroupCollectionItemResult(
-            string description,
+            string? description,
 
-            int displayOrder,
+            int? displayOrder,
 
-            string groupType,
+            string? groupType,
 
-            string id,
+            string? id,
 
-            bool isDefault,
+            bool? isDefault,
 
-            bool isUserVisible,
+            bool? isUserVisible,
 
-            string name,
+            string? name,
 
             ImmutableArray<string> packages,
 

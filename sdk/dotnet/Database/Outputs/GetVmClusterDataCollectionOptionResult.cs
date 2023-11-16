@@ -16,23 +16,23 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
         /// </summary>
-        public readonly bool IsDiagnosticsEventsEnabled;
+        public readonly bool? IsDiagnosticsEventsEnabled;
         /// <summary>
         /// Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
         /// </summary>
-        public readonly bool IsHealthMonitoringEnabled;
+        public readonly bool? IsHealthMonitoringEnabled;
         /// <summary>
         /// Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
         /// </summary>
-        public readonly bool IsIncidentLogsEnabled;
+        public readonly bool? IsIncidentLogsEnabled;
 
         [OutputConstructor]
         private GetVmClusterDataCollectionOptionResult(
-            bool isDiagnosticsEventsEnabled,
+            bool? isDiagnosticsEventsEnabled,
 
-            bool isHealthMonitoringEnabled,
+            bool? isHealthMonitoringEnabled,
 
-            bool isIncidentLogsEnabled)
+            bool? isIncidentLogsEnabled)
         {
             IsDiagnosticsEventsEnabled = isDiagnosticsEventsEnabled;
             IsHealthMonitoringEnabled = isHealthMonitoringEnabled;

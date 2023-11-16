@@ -108,27 +108,27 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// The provisioned data rate of the connection. To get a list of the available bandwidth levels (that is, shapes), see [ListFastConnectProviderServiceVirtualCircuitBandwidthShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderVirtualCircuitBandwidthShapes).  Example: `10 Gbps`
         /// </summary>
-        public readonly string BandwidthShapeName;
+        public readonly string? BandwidthShapeName;
         /// <summary>
         /// Set to `ENABLED` (the default) to activate the BGP session of the virtual circuit, set to `DISABLED` to deactivate the virtual circuit.
         /// </summary>
-        public readonly string BgpAdminState;
+        public readonly string? BgpAdminState;
         /// <summary>
         /// The state of the Ipv6 BGP session associated with the virtual circuit.
         /// </summary>
-        public readonly string BgpIpv6sessionState;
+        public readonly string? BgpIpv6sessionState;
         /// <summary>
         /// Deprecated. Instead use the information in [FastConnectProviderService](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/).
         /// </summary>
-        public readonly string BgpManagement;
+        public readonly string? BgpManagement;
         /// <summary>
         /// The state of the Ipv4 BGP session associated with the virtual circuit.
         /// </summary>
-        public readonly string BgpSessionState;
+        public readonly string? BgpSessionState;
         /// <summary>
         /// The OCID of the compartment containing the virtual circuit.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// An array of mappings, each containing properties for a cross-connect or cross-connect group that is associated with this virtual circuit.
         /// </summary>
@@ -136,59 +136,59 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// The BGP ASN of the network at the other end of the BGP session from Oracle. If the session is between the customer's edge router and Oracle, the value is the customer's ASN. If the BGP session is between the provider's edge router and Oracle, the value is the provider's ASN. Can be a 2-byte or 4-byte ASN. Uses "asplain" format.
         /// </summary>
-        public readonly string CustomerAsn;
+        public readonly string? CustomerAsn;
         /// <summary>
         /// Deprecated. Instead use `customerAsn`. If you specify values for both, the request will be rejected.
         /// </summary>
-        public readonly int CustomerBgpAsn;
+        public readonly int? CustomerBgpAsn;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer's [dynamic routing gateway (DRG)](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Drg) that this virtual circuit uses. Applicable only to private virtual circuits.
         /// </summary>
-        public readonly string GatewayId;
+        public readonly string? GatewayId;
         /// <summary>
         /// The virtual circuit's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The layer 3 IP MTU to use on this virtual circuit.
         /// </summary>
-        public readonly string IpMtu;
+        public readonly string? IpMtu;
         /// <summary>
         /// Set to `true` to enable BFD for IPv4 BGP peering, or set to `false` to disable BFD. If this is not set, the default is `false`.
         /// </summary>
-        public readonly bool IsBfdEnabled;
+        public readonly bool? IsBfdEnabled;
         /// <summary>
         /// Set to `true` for the virtual circuit to carry only encrypted traffic, or set to `false` for the virtual circuit to carry unencrypted traffic. If this is not set, the default is `false`.
         /// </summary>
-        public readonly bool IsTransportMode;
+        public readonly bool? IsTransportMode;
         /// <summary>
         /// The Oracle BGP ASN.
         /// </summary>
-        public readonly int OracleBgpAsn;
+        public readonly int? OracleBgpAsn;
         /// <summary>
         /// The OCID of the service offered by the provider (if the customer is connecting via a provider).
         /// </summary>
-        public readonly string ProviderServiceId;
+        public readonly string? ProviderServiceId;
         /// <summary>
         /// The service key name offered by the provider (if the customer is connecting via a provider).
         /// </summary>
-        public readonly string ProviderServiceKeyName;
+        public readonly string? ProviderServiceKeyName;
         /// <summary>
         /// The provider's state in relation to this virtual circuit (if the customer is connecting via a provider). ACTIVE means the provider has provisioned the virtual circuit from their end. INACTIVE means the provider has not yet provisioned the virtual circuit, or has de-provisioned it.
         /// </summary>
-        public readonly string ProviderState;
+        public readonly string? ProviderState;
         /// <summary>
         /// For a public virtual circuit. The public IP prefixes (CIDRs) the customer wants to advertise across the connection. All prefix sizes are allowed.
         /// </summary>
@@ -196,11 +196,11 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// Provider-supplied reference information about this virtual circuit (if the customer is connecting via a provider).
         /// </summary>
-        public readonly string ReferenceComment;
+        public readonly string? ReferenceComment;
         /// <summary>
         /// The Oracle Cloud Infrastructure region where this virtual circuit is located.
         /// </summary>
-        public readonly string Region;
+        public readonly string? Region;
         /// <summary>
         /// The routing policy sets how routing information about the Oracle cloud is shared over a public virtual circuit. Policies available are: `ORACLE_SERVICE_NETWORK`, `REGIONAL`, `MARKET_LEVEL`, and `GLOBAL`. See [Route Filtering](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/routingonprem.htm#route_filtering) for details. By default, routing information is shared for all routes in the same market.
         /// </summary>
@@ -208,80 +208,80 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// Provider service type.
         /// </summary>
-        public readonly string ServiceType;
+        public readonly string? ServiceType;
         /// <summary>
         /// The virtual circuit's current state. For information about the different states, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The date and time the virtual circuit was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// Whether the virtual circuit supports private or public peering. For more information, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
         public readonly string VirtualCircuitId;
 
         [OutputConstructor]
         private GetVirtualCircuitResult(
-            string bandwidthShapeName,
+            string? bandwidthShapeName,
 
-            string bgpAdminState,
+            string? bgpAdminState,
 
-            string bgpIpv6sessionState,
+            string? bgpIpv6sessionState,
 
-            string bgpManagement,
+            string? bgpManagement,
 
-            string bgpSessionState,
+            string? bgpSessionState,
 
-            string compartmentId,
+            string? compartmentId,
 
             ImmutableArray<Outputs.GetVirtualCircuitCrossConnectMappingResult> crossConnectMappings,
 
-            string customerAsn,
+            string? customerAsn,
 
-            int customerBgpAsn,
+            int? customerBgpAsn,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string gatewayId,
+            string? gatewayId,
 
-            string id,
+            string? id,
 
-            string ipMtu,
+            string? ipMtu,
 
-            bool isBfdEnabled,
+            bool? isBfdEnabled,
 
-            bool isTransportMode,
+            bool? isTransportMode,
 
-            int oracleBgpAsn,
+            int? oracleBgpAsn,
 
-            string providerServiceId,
+            string? providerServiceId,
 
-            string providerServiceKeyName,
+            string? providerServiceKeyName,
 
-            string providerState,
+            string? providerState,
 
             ImmutableArray<Outputs.GetVirtualCircuitPublicPrefixResult> publicPrefixes,
 
-            string referenceComment,
+            string? referenceComment,
 
-            string region,
+            string? region,
 
             ImmutableArray<string> routingPolicies,
 
-            string serviceType,
+            string? serviceType,
 
-            string state,
+            string? state,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string type,
+            string? type,
 
             string virtualCircuitId)
         {

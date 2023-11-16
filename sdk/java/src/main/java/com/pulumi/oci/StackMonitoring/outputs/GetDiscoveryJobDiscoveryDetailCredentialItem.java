@@ -8,6 +8,8 @@ import com.pulumi.oci.StackMonitoring.outputs.GetDiscoveryJobDiscoveryDetailCred
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDiscoveryJobDiscoveryDetailCredentialItem {
@@ -15,39 +17,39 @@ public final class GetDiscoveryJobDiscoveryDetailCredentialItem {
      * @return Name of Credential
      * 
      */
-    private String credentialName;
+    private @Nullable String credentialName;
     /**
      * @return Name of Credential Type
      * 
      */
-    private String credentialType;
+    private @Nullable String credentialType;
     /**
      * @return Property Details
      * 
      */
-    private List<GetDiscoveryJobDiscoveryDetailCredentialItemProperty> properties;
+    private @Nullable List<GetDiscoveryJobDiscoveryDetailCredentialItemProperty> properties;
 
     private GetDiscoveryJobDiscoveryDetailCredentialItem() {}
     /**
      * @return Name of Credential
      * 
      */
-    public String credentialName() {
-        return this.credentialName;
+    public Optional<String> credentialName() {
+        return Optional.ofNullable(this.credentialName);
     }
     /**
      * @return Name of Credential Type
      * 
      */
-    public String credentialType() {
-        return this.credentialType;
+    public Optional<String> credentialType() {
+        return Optional.ofNullable(this.credentialType);
     }
     /**
      * @return Property Details
      * 
      */
     public List<GetDiscoveryJobDiscoveryDetailCredentialItemProperty> properties() {
-        return this.properties;
+        return this.properties == null ? List.of() : this.properties;
     }
 
     public static Builder builder() {
@@ -59,9 +61,9 @@ public final class GetDiscoveryJobDiscoveryDetailCredentialItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String credentialName;
-        private String credentialType;
-        private List<GetDiscoveryJobDiscoveryDetailCredentialItemProperty> properties;
+        private @Nullable String credentialName;
+        private @Nullable String credentialType;
+        private @Nullable List<GetDiscoveryJobDiscoveryDetailCredentialItemProperty> properties;
         public Builder() {}
         public Builder(GetDiscoveryJobDiscoveryDetailCredentialItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -71,18 +73,18 @@ public final class GetDiscoveryJobDiscoveryDetailCredentialItem {
         }
 
         @CustomType.Setter
-        public Builder credentialName(String credentialName) {
-            this.credentialName = Objects.requireNonNull(credentialName);
+        public Builder credentialName(@Nullable String credentialName) {
+            this.credentialName = credentialName;
             return this;
         }
         @CustomType.Setter
-        public Builder credentialType(String credentialType) {
-            this.credentialType = Objects.requireNonNull(credentialType);
+        public Builder credentialType(@Nullable String credentialType) {
+            this.credentialType = credentialType;
             return this;
         }
         @CustomType.Setter
-        public Builder properties(List<GetDiscoveryJobDiscoveryDetailCredentialItemProperty> properties) {
-            this.properties = Objects.requireNonNull(properties);
+        public Builder properties(@Nullable List<GetDiscoveryJobDiscoveryDetailCredentialItemProperty> properties) {
+            this.properties = properties;
             return this;
         }
         public Builder properties(GetDiscoveryJobDiscoveryDetailCredentialItemProperty... properties) {

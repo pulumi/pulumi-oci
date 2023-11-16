@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Service Catalog resource in Oracle Cloud Infrastructure Service Catalog service.
@@ -60,22 +59,22 @@ type GetServiceCatalogArgs struct {
 // A collection of values returned by getServiceCatalog.
 type GetServiceCatalogResult struct {
 	// The Compartment id where the service catalog exists
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The name of the service catalog.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The unique identifier for the Service catalog.
-	Id               string `pulumi:"id"`
-	ServiceCatalogId string `pulumi:"serviceCatalogId"`
+	Id               *string `pulumi:"id"`
+	ServiceCatalogId string  `pulumi:"serviceCatalogId"`
 	// The lifecycle state of the service catalog.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the service catalog was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-05-26T21:10:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the service catalog was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-12-10T05:10:29.721Z`
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func GetServiceCatalogOutput(ctx *pulumi.Context, args GetServiceCatalogOutputArgs, opts ...pulumi.InvokeOption) GetServiceCatalogResultOutput {
@@ -116,15 +115,9 @@ func (o GetServiceCatalogResultOutput) ToGetServiceCatalogResultOutputWithContex
 	return o
 }
 
-func (o GetServiceCatalogResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetServiceCatalogResult] {
-	return pulumix.Output[GetServiceCatalogResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The Compartment id where the service catalog exists
-func (o GetServiceCatalogResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetServiceCatalogResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetServiceCatalogResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServiceCatalogResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -133,8 +126,8 @@ func (o GetServiceCatalogResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // The name of the service catalog.
-func (o GetServiceCatalogResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetServiceCatalogResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetServiceCatalogResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServiceCatalogResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -143,8 +136,8 @@ func (o GetServiceCatalogResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The unique identifier for the Service catalog.
-func (o GetServiceCatalogResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetServiceCatalogResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetServiceCatalogResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServiceCatalogResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetServiceCatalogResultOutput) ServiceCatalogId() pulumi.StringOutput {
@@ -152,18 +145,18 @@ func (o GetServiceCatalogResultOutput) ServiceCatalogId() pulumi.StringOutput {
 }
 
 // The lifecycle state of the service catalog.
-func (o GetServiceCatalogResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetServiceCatalogResult) string { return v.State }).(pulumi.StringOutput)
+func (o GetServiceCatalogResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServiceCatalogResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the service catalog was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-05-26T21:10:29.600Z`
-func (o GetServiceCatalogResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetServiceCatalogResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetServiceCatalogResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServiceCatalogResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the service catalog was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-12-10T05:10:29.721Z`
-func (o GetServiceCatalogResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetServiceCatalogResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetServiceCatalogResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServiceCatalogResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

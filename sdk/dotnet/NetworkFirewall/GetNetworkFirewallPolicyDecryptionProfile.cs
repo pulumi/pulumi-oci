@@ -76,40 +76,40 @@ namespace Pulumi.Oci.NetworkFirewall
         /// <summary>
         /// Whether to block sessions if the server's certificate uses extensions other than key usage and/or extended key usage.
         /// </summary>
-        public readonly bool AreCertificateExtensionsRestricted;
-        public readonly string Id;
+        public readonly bool? AreCertificateExtensionsRestricted;
+        public readonly string? Id;
         /// <summary>
         /// Whether to automatically append SAN to impersonating certificate if server certificate is missing SAN.
         /// </summary>
-        public readonly bool IsAutoIncludeAltName;
+        public readonly bool? IsAutoIncludeAltName;
         /// <summary>
         /// Whether to block sessions if server's certificate is expired.
         /// </summary>
-        public readonly bool IsExpiredCertificateBlocked;
+        public readonly bool? IsExpiredCertificateBlocked;
         /// <summary>
         /// Whether to block sessions if the firewall is temporarily unable to decrypt their traffic.
         /// </summary>
-        public readonly bool IsOutOfCapacityBlocked;
+        public readonly bool? IsOutOfCapacityBlocked;
         /// <summary>
         /// Whether to block sessions if the revocation status check for server's certificate does not succeed within the maximum allowed time (defaulting to 5 seconds).
         /// </summary>
-        public readonly bool IsRevocationStatusTimeoutBlocked;
+        public readonly bool? IsRevocationStatusTimeoutBlocked;
         /// <summary>
         /// Whether to block sessions if the revocation status check for server's certificate results in "unknown".
         /// </summary>
-        public readonly bool IsUnknownRevocationStatusBlocked;
+        public readonly bool? IsUnknownRevocationStatusBlocked;
         /// <summary>
         /// Whether to block sessions if SSL cipher suite is not supported.
         /// </summary>
-        public readonly bool IsUnsupportedCipherBlocked;
+        public readonly bool? IsUnsupportedCipherBlocked;
         /// <summary>
         /// Whether to block sessions if SSL version is not supported.
         /// </summary>
-        public readonly bool IsUnsupportedVersionBlocked;
+        public readonly bool? IsUnsupportedVersionBlocked;
         /// <summary>
         /// Whether to block sessions if server's certificate is issued by an untrusted certificate authority (CA).
         /// </summary>
-        public readonly bool IsUntrustedIssuerBlocked;
+        public readonly bool? IsUntrustedIssuerBlocked;
         /// <summary>
         /// Unique Name of the decryption profile.
         /// </summary>
@@ -118,41 +118,41 @@ namespace Pulumi.Oci.NetworkFirewall
         /// <summary>
         /// OCID of the Network Firewall Policy this decryption profile belongs to.
         /// </summary>
-        public readonly string ParentResourceId;
+        public readonly string? ParentResourceId;
         /// <summary>
         /// Describes the type of Decryption Profile SslForwardProxy or SslInboundInspection.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
 
         [OutputConstructor]
         private GetNetworkFirewallPolicyDecryptionProfileResult(
-            bool areCertificateExtensionsRestricted,
+            bool? areCertificateExtensionsRestricted,
 
-            string id,
+            string? id,
 
-            bool isAutoIncludeAltName,
+            bool? isAutoIncludeAltName,
 
-            bool isExpiredCertificateBlocked,
+            bool? isExpiredCertificateBlocked,
 
-            bool isOutOfCapacityBlocked,
+            bool? isOutOfCapacityBlocked,
 
-            bool isRevocationStatusTimeoutBlocked,
+            bool? isRevocationStatusTimeoutBlocked,
 
-            bool isUnknownRevocationStatusBlocked,
+            bool? isUnknownRevocationStatusBlocked,
 
-            bool isUnsupportedCipherBlocked,
+            bool? isUnsupportedCipherBlocked,
 
-            bool isUnsupportedVersionBlocked,
+            bool? isUnsupportedVersionBlocked,
 
-            bool isUntrustedIssuerBlocked,
+            bool? isUntrustedIssuerBlocked,
 
             string name,
 
             string networkFirewallPolicyId,
 
-            string parentResourceId,
+            string? parentResourceId,
 
-            string type)
+            string? type)
         {
             AreCertificateExtensionsRestricted = areCertificateExtensionsRestricted;
             Id = id;

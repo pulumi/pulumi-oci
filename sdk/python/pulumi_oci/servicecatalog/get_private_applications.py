@@ -46,17 +46,11 @@ class GetPrivateApplicationsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the private application resides.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        The name used to refer to the uploaded data.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -66,7 +60,7 @@ class GetPrivateApplicationsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -74,10 +68,7 @@ class GetPrivateApplicationsResult:
 
     @property
     @pulumi.getter(name="privateApplicationCollections")
-    def private_application_collections(self) -> Sequence['outputs.GetPrivateApplicationsPrivateApplicationCollectionResult']:
-        """
-        The list of private_application_collection.
-        """
+    def private_application_collections(self) -> Optional[Sequence['outputs.GetPrivateApplicationsPrivateApplicationCollectionResult']]:
         return pulumi.get(self, "private_application_collections")
 
     @property
@@ -106,25 +97,7 @@ def get_private_applications(compartment_id: Optional[str] = None,
                              private_application_id: Optional[str] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPrivateApplicationsResult:
     """
-    This data source provides the list of Private Applications in Oracle Cloud Infrastructure Service Catalog service.
-
-    Lists all the private applications in a given compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_private_applications = oci.ServiceCatalog.get_private_applications(compartment_id=var["compartment_id"],
-        display_name=var["private_application_display_name"],
-        private_application_id=oci_service_catalog_private_application["test_private_application"]["id"])
-    ```
-
-
-    :param str compartment_id: The unique identifier for the compartment.
-    :param str display_name: Exact match name filter.
-    :param str private_application_id: The unique identifier for the private application.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -150,24 +123,6 @@ def get_private_applications_output(compartment_id: Optional[pulumi.Input[str]] 
                                     private_application_id: Optional[pulumi.Input[Optional[str]]] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPrivateApplicationsResult]:
     """
-    This data source provides the list of Private Applications in Oracle Cloud Infrastructure Service Catalog service.
-
-    Lists all the private applications in a given compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_private_applications = oci.ServiceCatalog.get_private_applications(compartment_id=var["compartment_id"],
-        display_name=var["private_application_display_name"],
-        private_application_id=oci_service_catalog_private_application["test_private_application"]["id"])
-    ```
-
-
-    :param str compartment_id: The unique identifier for the compartment.
-    :param str display_name: Exact match name filter.
-    :param str private_application_id: The unique identifier for the private application.
+    Use this data source to access information about an existing resource.
     """
     ...

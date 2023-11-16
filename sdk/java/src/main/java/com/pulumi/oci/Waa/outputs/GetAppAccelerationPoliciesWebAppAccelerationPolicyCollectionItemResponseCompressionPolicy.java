@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Waa.outputs.GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompression;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicy {
@@ -14,7 +15,7 @@ public final class GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionI
      * @return An object that specifies the gzip compression policy.
      * 
      */
-    private List<GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompression> gzipCompressions;
+    private @Nullable List<GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompression> gzipCompressions;
 
     private GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicy() {}
     /**
@@ -22,7 +23,7 @@ public final class GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionI
      * 
      */
     public List<GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompression> gzipCompressions() {
-        return this.gzipCompressions;
+        return this.gzipCompressions == null ? List.of() : this.gzipCompressions;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionI
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompression> gzipCompressions;
+        private @Nullable List<GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompression> gzipCompressions;
         public Builder() {}
         public Builder(GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicy defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionI
         }
 
         @CustomType.Setter
-        public Builder gzipCompressions(List<GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompression> gzipCompressions) {
-            this.gzipCompressions = Objects.requireNonNull(gzipCompressions);
+        public Builder gzipCompressions(@Nullable List<GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompression> gzipCompressions) {
+            this.gzipCompressions = gzipCompressions;
             return this;
         }
         public Builder gzipCompressions(GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompression... gzipCompressions) {

@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetCertificatesCertificatePublicKeyInfo {
@@ -14,39 +16,39 @@ public final class GetCertificatesCertificatePublicKeyInfo {
      * @return The algorithm identifier and parameters for the public key.
      * 
      */
-    private String algorithm;
+    private @Nullable String algorithm;
     /**
      * @return The private key exponent.
      * 
      */
-    private Integer exponent;
+    private @Nullable Integer exponent;
     /**
      * @return The number of bits in a key used by a cryptographic algorithm.
      * 
      */
-    private Integer keySize;
+    private @Nullable Integer keySize;
 
     private GetCertificatesCertificatePublicKeyInfo() {}
     /**
      * @return The algorithm identifier and parameters for the public key.
      * 
      */
-    public String algorithm() {
-        return this.algorithm;
+    public Optional<String> algorithm() {
+        return Optional.ofNullable(this.algorithm);
     }
     /**
      * @return The private key exponent.
      * 
      */
-    public Integer exponent() {
-        return this.exponent;
+    public Optional<Integer> exponent() {
+        return Optional.ofNullable(this.exponent);
     }
     /**
      * @return The number of bits in a key used by a cryptographic algorithm.
      * 
      */
-    public Integer keySize() {
-        return this.keySize;
+    public Optional<Integer> keySize() {
+        return Optional.ofNullable(this.keySize);
     }
 
     public static Builder builder() {
@@ -58,9 +60,9 @@ public final class GetCertificatesCertificatePublicKeyInfo {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String algorithm;
-        private Integer exponent;
-        private Integer keySize;
+        private @Nullable String algorithm;
+        private @Nullable Integer exponent;
+        private @Nullable Integer keySize;
         public Builder() {}
         public Builder(GetCertificatesCertificatePublicKeyInfo defaults) {
     	      Objects.requireNonNull(defaults);
@@ -70,18 +72,18 @@ public final class GetCertificatesCertificatePublicKeyInfo {
         }
 
         @CustomType.Setter
-        public Builder algorithm(String algorithm) {
-            this.algorithm = Objects.requireNonNull(algorithm);
+        public Builder algorithm(@Nullable String algorithm) {
+            this.algorithm = algorithm;
             return this;
         }
         @CustomType.Setter
-        public Builder exponent(Integer exponent) {
-            this.exponent = Objects.requireNonNull(exponent);
+        public Builder exponent(@Nullable Integer exponent) {
+            this.exponent = exponent;
             return this;
         }
         @CustomType.Setter
-        public Builder keySize(Integer keySize) {
-            this.keySize = Objects.requireNonNull(keySize);
+        public Builder keySize(@Nullable Integer keySize) {
+            this.keySize = keySize;
             return this;
         }
         public GetCertificatesCertificatePublicKeyInfo build() {

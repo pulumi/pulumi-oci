@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Job resource in Oracle Cloud Infrastructure Data Science service.
@@ -59,27 +58,27 @@ type LookupJobArgs struct {
 
 // A collection of values returned by getJob.
 type LookupJobResult struct {
-	ArtifactContentDisposition string `pulumi:"artifactContentDisposition"`
-	ArtifactContentLength      string `pulumi:"artifactContentLength"`
-	ArtifactContentMd5         string `pulumi:"artifactContentMd5"`
-	ArtifactLastModified       string `pulumi:"artifactLastModified"`
+	ArtifactContentDisposition *string `pulumi:"artifactContentDisposition"`
+	ArtifactContentLength      *string `pulumi:"artifactContentLength"`
+	ArtifactContentMd5         *string `pulumi:"artifactContentMd5"`
+	ArtifactLastModified       *string `pulumi:"artifactLastModified"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the project.
-	CreatedBy string `pulumi:"createdBy"`
+	CreatedBy *string `pulumi:"createdBy"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags          map[string]interface{} `pulumi:"definedTags"`
-	DeleteRelatedJobRuns bool                   `pulumi:"deleteRelatedJobRuns"`
+	DeleteRelatedJobRuns *bool                  `pulumi:"deleteRelatedJobRuns"`
 	// A short description of the job.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// A user-friendly display name for the resource.
-	DisplayName   string `pulumi:"displayName"`
-	EmptyArtifact bool   `pulumi:"emptyArtifact"`
+	DisplayName   *string `pulumi:"displayName"`
+	EmptyArtifact *bool   `pulumi:"emptyArtifact"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job.
-	Id          string `pulumi:"id"`
-	JobArtifact string `pulumi:"jobArtifact"`
+	Id          *string `pulumi:"id"`
+	JobArtifact *string `pulumi:"jobArtifact"`
 	// The job configuration details
 	JobConfigurationDetails []GetJobJobConfigurationDetail `pulumi:"jobConfigurationDetails"`
 	JobId                   string                         `pulumi:"jobId"`
@@ -90,13 +89,13 @@ type LookupJobResult struct {
 	// Collection of JobStorageMountConfigurationDetails.
 	JobStorageMountConfigurationDetailsLists []GetJobJobStorageMountConfigurationDetailsList `pulumi:"jobStorageMountConfigurationDetailsLists"`
 	// The state of the job.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
-	ProjectId string `pulumi:"projectId"`
+	ProjectId *string `pulumi:"projectId"`
 	// The state of the job.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 }
 
 func LookupJobOutput(ctx *pulumi.Context, args LookupJobOutputArgs, opts ...pulumi.InvokeOption) LookupJobResultOutput {
@@ -137,36 +136,30 @@ func (o LookupJobResultOutput) ToLookupJobResultOutputWithContext(ctx context.Co
 	return o
 }
 
-func (o LookupJobResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupJobResult] {
-	return pulumix.Output[LookupJobResult]{
-		OutputState: o.OutputState,
-	}
+func (o LookupJobResultOutput) ArtifactContentDisposition() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupJobResult) *string { return v.ArtifactContentDisposition }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupJobResultOutput) ArtifactContentDisposition() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupJobResult) string { return v.ArtifactContentDisposition }).(pulumi.StringOutput)
+func (o LookupJobResultOutput) ArtifactContentLength() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupJobResult) *string { return v.ArtifactContentLength }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupJobResultOutput) ArtifactContentLength() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupJobResult) string { return v.ArtifactContentLength }).(pulumi.StringOutput)
+func (o LookupJobResultOutput) ArtifactContentMd5() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupJobResult) *string { return v.ArtifactContentMd5 }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupJobResultOutput) ArtifactContentMd5() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupJobResult) string { return v.ArtifactContentMd5 }).(pulumi.StringOutput)
-}
-
-func (o LookupJobResultOutput) ArtifactLastModified() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupJobResult) string { return v.ArtifactLastModified }).(pulumi.StringOutput)
+func (o LookupJobResultOutput) ArtifactLastModified() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupJobResult) *string { return v.ArtifactLastModified }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job.
-func (o LookupJobResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupJobResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupJobResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupJobResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the project.
-func (o LookupJobResultOutput) CreatedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupJobResult) string { return v.CreatedBy }).(pulumi.StringOutput)
+func (o LookupJobResultOutput) CreatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupJobResult) *string { return v.CreatedBy }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -174,22 +167,22 @@ func (o LookupJobResultOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupJobResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
-func (o LookupJobResultOutput) DeleteRelatedJobRuns() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupJobResult) bool { return v.DeleteRelatedJobRuns }).(pulumi.BoolOutput)
+func (o LookupJobResultOutput) DeleteRelatedJobRuns() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupJobResult) *bool { return v.DeleteRelatedJobRuns }).(pulumi.BoolPtrOutput)
 }
 
 // A short description of the job.
-func (o LookupJobResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupJobResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupJobResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupJobResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // A user-friendly display name for the resource.
-func (o LookupJobResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupJobResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupJobResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupJobResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupJobResultOutput) EmptyArtifact() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupJobResult) bool { return v.EmptyArtifact }).(pulumi.BoolOutput)
+func (o LookupJobResultOutput) EmptyArtifact() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupJobResult) *bool { return v.EmptyArtifact }).(pulumi.BoolPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -198,12 +191,12 @@ func (o LookupJobResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job.
-func (o LookupJobResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupJobResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupJobResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupJobResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupJobResultOutput) JobArtifact() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupJobResult) string { return v.JobArtifact }).(pulumi.StringOutput)
+func (o LookupJobResultOutput) JobArtifact() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupJobResult) *string { return v.JobArtifact }).(pulumi.StringPtrOutput)
 }
 
 // The job configuration details
@@ -235,23 +228,23 @@ func (o LookupJobResultOutput) JobStorageMountConfigurationDetailsLists() GetJob
 }
 
 // The state of the job.
-func (o LookupJobResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupJobResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupJobResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupJobResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
-func (o LookupJobResultOutput) ProjectId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupJobResult) string { return v.ProjectId }).(pulumi.StringOutput)
+func (o LookupJobResultOutput) ProjectId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupJobResult) *string { return v.ProjectId }).(pulumi.StringPtrOutput)
 }
 
 // The state of the job.
-func (o LookupJobResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupJobResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupJobResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupJobResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z
-func (o LookupJobResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupJobResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupJobResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupJobResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

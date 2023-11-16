@@ -16,19 +16,19 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// <summary>
         /// The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The Minimum number of OCPUs to be made available for this Deployment.
         /// </summary>
-        public readonly int CpuCoreCount;
+        public readonly int? CpuCoreCount;
         /// <summary>
         /// Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup being referenced.
         /// </summary>
-        public readonly string DeploymentBackupId;
+        public readonly string? DeploymentBackupId;
         /// <summary>
         /// Information regarding the deployment diagnostic collection
         /// </summary>
@@ -36,63 +36,63 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// <summary>
         /// The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
         /// </summary>
-        public readonly string DeploymentType;
+        public readonly string? DeploymentType;
         /// <summary>
         /// The URL of a resource.
         /// </summary>
-        public readonly string DeploymentUrl;
+        public readonly string? DeploymentUrl;
         /// <summary>
         /// Metadata about this specific object.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// A filter to return only the resources that match the entire 'displayName' given.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// A filter to return only the resources that match the 'fqdn' given.
         /// </summary>
-        public readonly string Fqdn;
+        public readonly string? Fqdn;
         /// <summary>
         /// A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Indicates if auto scaling is enabled for the Deployment's CPU core count.
         /// </summary>
-        public readonly bool IsAutoScalingEnabled;
+        public readonly bool? IsAutoScalingEnabled;
         /// <summary>
         /// True if all of the aggregate resources are working correctly.
         /// </summary>
-        public readonly bool IsHealthy;
+        public readonly bool? IsHealthy;
         /// <summary>
         /// Indicates if the resource is the the latest available version.
         /// </summary>
-        public readonly bool IsLatestVersion;
+        public readonly bool? IsLatestVersion;
         /// <summary>
         /// True if this object is publicly available.
         /// </summary>
-        public readonly bool IsPublic;
+        public readonly bool? IsPublic;
         /// <summary>
         /// Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
         /// </summary>
-        public readonly bool IsStorageUtilizationLimitExceeded;
+        public readonly bool? IsStorageUtilizationLimitExceeded;
         /// <summary>
         /// The Oracle license model that applies to a Deployment.
         /// </summary>
-        public readonly string LicenseModel;
+        public readonly string? LicenseModel;
         /// <summary>
         /// Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// A filter to return only the resources that match the 'lifecycleSubState' given.
         /// </summary>
-        public readonly string LifecycleSubState;
+        public readonly string? LifecycleSubState;
         /// <summary>
         /// Attributes for configuring automatic deployment maintenance.
         /// </summary>
@@ -104,11 +104,11 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// <summary>
         /// Type of the next maintenance.
         /// </summary>
-        public readonly string NextMaintenanceActionType;
+        public readonly string? NextMaintenanceActionType;
         /// <summary>
         /// Description of the next maintenance.
         /// </summary>
-        public readonly string NextMaintenanceDescription;
+        public readonly string? NextMaintenanceDescription;
         /// <summary>
         /// An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
         /// </summary>
@@ -120,123 +120,123 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// <summary>
         /// The private IP address in the customer's VCN representing the access point for the associated endpoint service in the GoldenGate service VCN.
         /// </summary>
-        public readonly string PrivateIpAddress;
+        public readonly string? PrivateIpAddress;
         /// <summary>
         /// The public IP address representing the access point for the Deployment.
         /// </summary>
-        public readonly string PublicIpAddress;
+        public readonly string? PublicIpAddress;
         /// <summary>
         /// A filter to return only the resources that match the 'lifecycleState' given.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The amount of storage being utilized (in bytes)
         /// </summary>
-        public readonly string StorageUtilizationInBytes;
+        public readonly string? StorageUtilizationInBytes;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
         /// </summary>
-        public readonly string SubnetId;
+        public readonly string? SubnetId;
         /// <summary>
         /// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, object>? SystemTags;
         /// <summary>
         /// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The time of next maintenance schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         /// </summary>
-        public readonly string TimeOfNextMaintenance;
+        public readonly string? TimeOfNextMaintenance;
         /// <summary>
         /// The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         /// </summary>
-        public readonly string TimeOggVersionSupportedUntil;
+        public readonly string? TimeOggVersionSupportedUntil;
         /// <summary>
         /// The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
         /// <summary>
         /// Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records  to check, when deployment will be forced to upgrade to a newer version. Old description: The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         /// </summary>
-        public readonly string TimeUpgradeRequired;
+        public readonly string? TimeUpgradeRequired;
 
         [OutputConstructor]
         private GetDeploymentsDeploymentCollectionItemResult(
-            string compartmentId,
+            string? compartmentId,
 
-            int cpuCoreCount,
+            int? cpuCoreCount,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string deploymentBackupId,
+            string? deploymentBackupId,
 
             ImmutableArray<Outputs.GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataResult> deploymentDiagnosticDatas,
 
-            string deploymentType,
+            string? deploymentType,
 
-            string deploymentUrl,
+            string? deploymentUrl,
 
-            string description,
+            string? description,
 
-            string displayName,
+            string? displayName,
 
-            string fqdn,
+            string? fqdn,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            bool isAutoScalingEnabled,
+            bool? isAutoScalingEnabled,
 
-            bool isHealthy,
+            bool? isHealthy,
 
-            bool isLatestVersion,
+            bool? isLatestVersion,
 
-            bool isPublic,
+            bool? isPublic,
 
-            bool isStorageUtilizationLimitExceeded,
+            bool? isStorageUtilizationLimitExceeded,
 
-            string licenseModel,
+            string? licenseModel,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string lifecycleSubState,
+            string? lifecycleSubState,
 
             ImmutableArray<Outputs.GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationResult> maintenanceConfigurations,
 
             ImmutableArray<Outputs.GetDeploymentsDeploymentCollectionItemMaintenanceWindowResult> maintenanceWindows,
 
-            string nextMaintenanceActionType,
+            string? nextMaintenanceActionType,
 
-            string nextMaintenanceDescription,
+            string? nextMaintenanceDescription,
 
             ImmutableArray<string> nsgIds,
 
             ImmutableArray<Outputs.GetDeploymentsDeploymentCollectionItemOggDataResult> oggDatas,
 
-            string privateIpAddress,
+            string? privateIpAddress,
 
-            string publicIpAddress,
+            string? publicIpAddress,
 
-            string state,
+            string? state,
 
-            string storageUtilizationInBytes,
+            string? storageUtilizationInBytes,
 
-            string subnetId,
+            string? subnetId,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, object>? systemTags,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeOfNextMaintenance,
+            string? timeOfNextMaintenance,
 
-            string timeOggVersionSupportedUntil,
+            string? timeOggVersionSupportedUntil,
 
-            string timeUpdated,
+            string? timeUpdated,
 
-            string timeUpgradeRequired)
+            string? timeUpgradeRequired)
         {
             CompartmentId = compartmentId;
             CpuCoreCount = cpuCoreCount;

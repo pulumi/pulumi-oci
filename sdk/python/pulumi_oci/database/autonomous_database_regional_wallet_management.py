@@ -18,12 +18,6 @@ class AutonomousDatabaseRegionalWalletManagementArgs:
                  should_rotate: Optional[pulumi.Input[bool]] = None):
         """
         The set of arguments for constructing a AutonomousDatabaseRegionalWalletManagement resource.
-        :param pulumi.Input[int] grace_period: (Updatable) The number of hours that the old wallet can be used after it has been rotated. The old wallet will no longer be valid after the number of hours in the wallet rotation grace period has passed. During the grace period, both the old wallet and the current wallet can be used.
-        :param pulumi.Input[bool] should_rotate: (Updatable) Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if grace_period is not None:
             pulumi.set(__self__, "grace_period", grace_period)
@@ -33,9 +27,6 @@ class AutonomousDatabaseRegionalWalletManagementArgs:
     @property
     @pulumi.getter(name="gracePeriod")
     def grace_period(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The number of hours that the old wallet can be used after it has been rotated. The old wallet will no longer be valid after the number of hours in the wallet rotation grace period has passed. During the grace period, both the old wallet and the current wallet can be used.
-        """
         return pulumi.get(self, "grace_period")
 
     @grace_period.setter
@@ -45,13 +36,6 @@ class AutonomousDatabaseRegionalWalletManagementArgs:
     @property
     @pulumi.getter(name="shouldRotate")
     def should_rotate(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "should_rotate")
 
     @should_rotate.setter
@@ -68,14 +52,6 @@ class _AutonomousDatabaseRegionalWalletManagementState:
                  time_rotated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering AutonomousDatabaseRegionalWalletManagement resources.
-        :param pulumi.Input[int] grace_period: (Updatable) The number of hours that the old wallet can be used after it has been rotated. The old wallet will no longer be valid after the number of hours in the wallet rotation grace period has passed. During the grace period, both the old wallet and the current wallet can be used.
-        :param pulumi.Input[bool] should_rotate: (Updatable) Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] state: The current lifecycle state of the Autonomous Database wallet.
-        :param pulumi.Input[str] time_rotated: The date and time the wallet was last rotated.
         """
         if grace_period is not None:
             pulumi.set(__self__, "grace_period", grace_period)
@@ -89,9 +65,6 @@ class _AutonomousDatabaseRegionalWalletManagementState:
     @property
     @pulumi.getter(name="gracePeriod")
     def grace_period(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The number of hours that the old wallet can be used after it has been rotated. The old wallet will no longer be valid after the number of hours in the wallet rotation grace period has passed. During the grace period, both the old wallet and the current wallet can be used.
-        """
         return pulumi.get(self, "grace_period")
 
     @grace_period.setter
@@ -101,13 +74,6 @@ class _AutonomousDatabaseRegionalWalletManagementState:
     @property
     @pulumi.getter(name="shouldRotate")
     def should_rotate(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "should_rotate")
 
     @should_rotate.setter
@@ -117,9 +83,6 @@ class _AutonomousDatabaseRegionalWalletManagementState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current lifecycle state of the Autonomous Database wallet.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -129,9 +92,6 @@ class _AutonomousDatabaseRegionalWalletManagementState:
     @property
     @pulumi.getter(name="timeRotated")
     def time_rotated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the wallet was last rotated.
-        """
         return pulumi.get(self, "time_rotated")
 
     @time_rotated.setter
@@ -148,33 +108,9 @@ class AutonomousDatabaseRegionalWalletManagement(pulumi.CustomResource):
                  should_rotate: Optional[pulumi.Input[bool]] = None,
                  __props__=None):
         """
-        This resource provides the Autonomous Database Regional Wallet Management resource in Oracle Cloud Infrastructure Database service.
-
-        Updates the Autonomous Database regional wallet.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_autonomous_database_regional_wallet_management = oci.database.AutonomousDatabaseRegionalWalletManagement("testAutonomousDatabaseRegionalWalletManagement",
-            grace_period=var["autonomous_database_regional_wallet_management_grace_period"],
-            should_rotate=var["autonomous_database_regional_wallet_management_should_rotate"])
-        ```
-
-        ## Import
-
-        Import is not supported for this resource.
-
+        Create a AutonomousDatabaseRegionalWalletManagement resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[int] grace_period: (Updatable) The number of hours that the old wallet can be used after it has been rotated. The old wallet will no longer be valid after the number of hours in the wallet rotation grace period has passed. During the grace period, both the old wallet and the current wallet can be used.
-        :param pulumi.Input[bool] should_rotate: (Updatable) Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -183,25 +119,7 @@ class AutonomousDatabaseRegionalWalletManagement(pulumi.CustomResource):
                  args: Optional[AutonomousDatabaseRegionalWalletManagementArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Autonomous Database Regional Wallet Management resource in Oracle Cloud Infrastructure Database service.
-
-        Updates the Autonomous Database regional wallet.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_autonomous_database_regional_wallet_management = oci.database.AutonomousDatabaseRegionalWalletManagement("testAutonomousDatabaseRegionalWalletManagement",
-            grace_period=var["autonomous_database_regional_wallet_management_grace_period"],
-            should_rotate=var["autonomous_database_regional_wallet_management_should_rotate"])
-        ```
-
-        ## Import
-
-        Import is not supported for this resource.
-
+        Create a AutonomousDatabaseRegionalWalletManagement resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param AutonomousDatabaseRegionalWalletManagementArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -253,14 +171,6 @@ class AutonomousDatabaseRegionalWalletManagement(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[int] grace_period: (Updatable) The number of hours that the old wallet can be used after it has been rotated. The old wallet will no longer be valid after the number of hours in the wallet rotation grace period has passed. During the grace period, both the old wallet and the current wallet can be used.
-        :param pulumi.Input[bool] should_rotate: (Updatable) Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] state: The current lifecycle state of the Autonomous Database wallet.
-        :param pulumi.Input[str] time_rotated: The date and time the wallet was last rotated.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -274,37 +184,21 @@ class AutonomousDatabaseRegionalWalletManagement(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="gracePeriod")
-    def grace_period(self) -> pulumi.Output[int]:
-        """
-        (Updatable) The number of hours that the old wallet can be used after it has been rotated. The old wallet will no longer be valid after the number of hours in the wallet rotation grace period has passed. During the grace period, both the old wallet and the current wallet can be used.
-        """
+    def grace_period(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "grace_period")
 
     @property
     @pulumi.getter(name="shouldRotate")
     def should_rotate(self) -> pulumi.Output[Optional[bool]]:
-        """
-        (Updatable) Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "should_rotate")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current lifecycle state of the Autonomous Database wallet.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeRotated")
-    def time_rotated(self) -> pulumi.Output[str]:
-        """
-        The date and time the wallet was last rotated.
-        """
+    def time_rotated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_rotated")
 

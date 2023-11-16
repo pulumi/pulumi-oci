@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -67,12 +66,6 @@ func (i CertificateAuthorityCertificateAuthorityConfigArgs) ToCertificateAuthori
 	return pulumi.ToOutputWithContext(ctx, i).(CertificateAuthorityCertificateAuthorityConfigOutput)
 }
 
-func (i CertificateAuthorityCertificateAuthorityConfigArgs) ToOutput(ctx context.Context) pulumix.Output[CertificateAuthorityCertificateAuthorityConfig] {
-	return pulumix.Output[CertificateAuthorityCertificateAuthorityConfig]{
-		OutputState: i.ToCertificateAuthorityCertificateAuthorityConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i CertificateAuthorityCertificateAuthorityConfigArgs) ToCertificateAuthorityCertificateAuthorityConfigPtrOutput() CertificateAuthorityCertificateAuthorityConfigPtrOutput {
 	return i.ToCertificateAuthorityCertificateAuthorityConfigPtrOutputWithContext(context.Background())
 }
@@ -114,12 +107,6 @@ func (i *certificateAuthorityCertificateAuthorityConfigPtrType) ToCertificateAut
 	return pulumi.ToOutputWithContext(ctx, i).(CertificateAuthorityCertificateAuthorityConfigPtrOutput)
 }
 
-func (i *certificateAuthorityCertificateAuthorityConfigPtrType) ToOutput(ctx context.Context) pulumix.Output[*CertificateAuthorityCertificateAuthorityConfig] {
-	return pulumix.Output[*CertificateAuthorityCertificateAuthorityConfig]{
-		OutputState: i.ToCertificateAuthorityCertificateAuthorityConfigPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type CertificateAuthorityCertificateAuthorityConfigOutput struct{ *pulumi.OutputState }
 
 func (CertificateAuthorityCertificateAuthorityConfigOutput) ElementType() reflect.Type {
@@ -142,12 +129,6 @@ func (o CertificateAuthorityCertificateAuthorityConfigOutput) ToCertificateAutho
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v CertificateAuthorityCertificateAuthorityConfig) *CertificateAuthorityCertificateAuthorityConfig {
 		return &v
 	}).(CertificateAuthorityCertificateAuthorityConfigPtrOutput)
-}
-
-func (o CertificateAuthorityCertificateAuthorityConfigOutput) ToOutput(ctx context.Context) pulumix.Output[CertificateAuthorityCertificateAuthorityConfig] {
-	return pulumix.Output[CertificateAuthorityCertificateAuthorityConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The origin of the CA.
@@ -196,12 +177,6 @@ func (o CertificateAuthorityCertificateAuthorityConfigPtrOutput) ToCertificateAu
 
 func (o CertificateAuthorityCertificateAuthorityConfigPtrOutput) ToCertificateAuthorityCertificateAuthorityConfigPtrOutputWithContext(ctx context.Context) CertificateAuthorityCertificateAuthorityConfigPtrOutput {
 	return o
-}
-
-func (o CertificateAuthorityCertificateAuthorityConfigPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*CertificateAuthorityCertificateAuthorityConfig] {
-	return pulumix.Output[*CertificateAuthorityCertificateAuthorityConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o CertificateAuthorityCertificateAuthorityConfigPtrOutput) Elem() CertificateAuthorityCertificateAuthorityConfigOutput {
@@ -371,12 +346,6 @@ func (i CertificateAuthorityCertificateAuthorityConfigSubjectArgs) ToCertificate
 	return pulumi.ToOutputWithContext(ctx, i).(CertificateAuthorityCertificateAuthorityConfigSubjectOutput)
 }
 
-func (i CertificateAuthorityCertificateAuthorityConfigSubjectArgs) ToOutput(ctx context.Context) pulumix.Output[CertificateAuthorityCertificateAuthorityConfigSubject] {
-	return pulumix.Output[CertificateAuthorityCertificateAuthorityConfigSubject]{
-		OutputState: i.ToCertificateAuthorityCertificateAuthorityConfigSubjectOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i CertificateAuthorityCertificateAuthorityConfigSubjectArgs) ToCertificateAuthorityCertificateAuthorityConfigSubjectPtrOutput() CertificateAuthorityCertificateAuthorityConfigSubjectPtrOutput {
 	return i.ToCertificateAuthorityCertificateAuthorityConfigSubjectPtrOutputWithContext(context.Background())
 }
@@ -418,12 +387,6 @@ func (i *certificateAuthorityCertificateAuthorityConfigSubjectPtrType) ToCertifi
 	return pulumi.ToOutputWithContext(ctx, i).(CertificateAuthorityCertificateAuthorityConfigSubjectPtrOutput)
 }
 
-func (i *certificateAuthorityCertificateAuthorityConfigSubjectPtrType) ToOutput(ctx context.Context) pulumix.Output[*CertificateAuthorityCertificateAuthorityConfigSubject] {
-	return pulumix.Output[*CertificateAuthorityCertificateAuthorityConfigSubject]{
-		OutputState: i.ToCertificateAuthorityCertificateAuthorityConfigSubjectPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type CertificateAuthorityCertificateAuthorityConfigSubjectOutput struct{ *pulumi.OutputState }
 
 func (CertificateAuthorityCertificateAuthorityConfigSubjectOutput) ElementType() reflect.Type {
@@ -446,12 +409,6 @@ func (o CertificateAuthorityCertificateAuthorityConfigSubjectOutput) ToCertifica
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v CertificateAuthorityCertificateAuthorityConfigSubject) *CertificateAuthorityCertificateAuthorityConfigSubject {
 		return &v
 	}).(CertificateAuthorityCertificateAuthorityConfigSubjectPtrOutput)
-}
-
-func (o CertificateAuthorityCertificateAuthorityConfigSubjectOutput) ToOutput(ctx context.Context) pulumix.Output[CertificateAuthorityCertificateAuthorityConfigSubject] {
-	return pulumix.Output[CertificateAuthorityCertificateAuthorityConfigSubject]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Common name or fully-qualified domain name (RDN CN).
@@ -553,12 +510,6 @@ func (o CertificateAuthorityCertificateAuthorityConfigSubjectPtrOutput) ToCertif
 
 func (o CertificateAuthorityCertificateAuthorityConfigSubjectPtrOutput) ToCertificateAuthorityCertificateAuthorityConfigSubjectPtrOutputWithContext(ctx context.Context) CertificateAuthorityCertificateAuthorityConfigSubjectPtrOutput {
 	return o
-}
-
-func (o CertificateAuthorityCertificateAuthorityConfigSubjectPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*CertificateAuthorityCertificateAuthorityConfigSubject] {
-	return pulumix.Output[*CertificateAuthorityCertificateAuthorityConfigSubject]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o CertificateAuthorityCertificateAuthorityConfigSubjectPtrOutput) Elem() CertificateAuthorityCertificateAuthorityConfigSubjectOutput {
@@ -778,12 +729,6 @@ func (i CertificateAuthorityCertificateAuthorityConfigValidityArgs) ToCertificat
 	return pulumi.ToOutputWithContext(ctx, i).(CertificateAuthorityCertificateAuthorityConfigValidityOutput)
 }
 
-func (i CertificateAuthorityCertificateAuthorityConfigValidityArgs) ToOutput(ctx context.Context) pulumix.Output[CertificateAuthorityCertificateAuthorityConfigValidity] {
-	return pulumix.Output[CertificateAuthorityCertificateAuthorityConfigValidity]{
-		OutputState: i.ToCertificateAuthorityCertificateAuthorityConfigValidityOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i CertificateAuthorityCertificateAuthorityConfigValidityArgs) ToCertificateAuthorityCertificateAuthorityConfigValidityPtrOutput() CertificateAuthorityCertificateAuthorityConfigValidityPtrOutput {
 	return i.ToCertificateAuthorityCertificateAuthorityConfigValidityPtrOutputWithContext(context.Background())
 }
@@ -825,12 +770,6 @@ func (i *certificateAuthorityCertificateAuthorityConfigValidityPtrType) ToCertif
 	return pulumi.ToOutputWithContext(ctx, i).(CertificateAuthorityCertificateAuthorityConfigValidityPtrOutput)
 }
 
-func (i *certificateAuthorityCertificateAuthorityConfigValidityPtrType) ToOutput(ctx context.Context) pulumix.Output[*CertificateAuthorityCertificateAuthorityConfigValidity] {
-	return pulumix.Output[*CertificateAuthorityCertificateAuthorityConfigValidity]{
-		OutputState: i.ToCertificateAuthorityCertificateAuthorityConfigValidityPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type CertificateAuthorityCertificateAuthorityConfigValidityOutput struct{ *pulumi.OutputState }
 
 func (CertificateAuthorityCertificateAuthorityConfigValidityOutput) ElementType() reflect.Type {
@@ -853,12 +792,6 @@ func (o CertificateAuthorityCertificateAuthorityConfigValidityOutput) ToCertific
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v CertificateAuthorityCertificateAuthorityConfigValidity) *CertificateAuthorityCertificateAuthorityConfigValidity {
 		return &v
 	}).(CertificateAuthorityCertificateAuthorityConfigValidityPtrOutput)
-}
-
-func (o CertificateAuthorityCertificateAuthorityConfigValidityOutput) ToOutput(ctx context.Context) pulumix.Output[CertificateAuthorityCertificateAuthorityConfigValidity] {
-	return pulumix.Output[CertificateAuthorityCertificateAuthorityConfigValidity]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The date on which the certificate validity period ends, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
@@ -885,12 +818,6 @@ func (o CertificateAuthorityCertificateAuthorityConfigValidityPtrOutput) ToCerti
 
 func (o CertificateAuthorityCertificateAuthorityConfigValidityPtrOutput) ToCertificateAuthorityCertificateAuthorityConfigValidityPtrOutputWithContext(ctx context.Context) CertificateAuthorityCertificateAuthorityConfigValidityPtrOutput {
 	return o
-}
-
-func (o CertificateAuthorityCertificateAuthorityConfigValidityPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*CertificateAuthorityCertificateAuthorityConfigValidity] {
-	return pulumix.Output[*CertificateAuthorityCertificateAuthorityConfigValidity]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o CertificateAuthorityCertificateAuthorityConfigValidityPtrOutput) Elem() CertificateAuthorityCertificateAuthorityConfigValidityOutput {
@@ -964,12 +891,6 @@ func (i CertificateAuthorityCertificateAuthorityRuleArgs) ToCertificateAuthority
 	return pulumi.ToOutputWithContext(ctx, i).(CertificateAuthorityCertificateAuthorityRuleOutput)
 }
 
-func (i CertificateAuthorityCertificateAuthorityRuleArgs) ToOutput(ctx context.Context) pulumix.Output[CertificateAuthorityCertificateAuthorityRule] {
-	return pulumix.Output[CertificateAuthorityCertificateAuthorityRule]{
-		OutputState: i.ToCertificateAuthorityCertificateAuthorityRuleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // CertificateAuthorityCertificateAuthorityRuleArrayInput is an input type that accepts CertificateAuthorityCertificateAuthorityRuleArray and CertificateAuthorityCertificateAuthorityRuleArrayOutput values.
 // You can construct a concrete instance of `CertificateAuthorityCertificateAuthorityRuleArrayInput` via:
 //
@@ -995,12 +916,6 @@ func (i CertificateAuthorityCertificateAuthorityRuleArray) ToCertificateAuthorit
 	return pulumi.ToOutputWithContext(ctx, i).(CertificateAuthorityCertificateAuthorityRuleArrayOutput)
 }
 
-func (i CertificateAuthorityCertificateAuthorityRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]CertificateAuthorityCertificateAuthorityRule] {
-	return pulumix.Output[[]CertificateAuthorityCertificateAuthorityRule]{
-		OutputState: i.ToCertificateAuthorityCertificateAuthorityRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type CertificateAuthorityCertificateAuthorityRuleOutput struct{ *pulumi.OutputState }
 
 func (CertificateAuthorityCertificateAuthorityRuleOutput) ElementType() reflect.Type {
@@ -1013,12 +928,6 @@ func (o CertificateAuthorityCertificateAuthorityRuleOutput) ToCertificateAuthori
 
 func (o CertificateAuthorityCertificateAuthorityRuleOutput) ToCertificateAuthorityCertificateAuthorityRuleOutputWithContext(ctx context.Context) CertificateAuthorityCertificateAuthorityRuleOutput {
 	return o
-}
-
-func (o CertificateAuthorityCertificateAuthorityRuleOutput) ToOutput(ctx context.Context) pulumix.Output[CertificateAuthorityCertificateAuthorityRule] {
-	return pulumix.Output[CertificateAuthorityCertificateAuthorityRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) A property indicating the maximum validity duration, in days, of subordinate CA's issued by this CA. Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
@@ -1052,12 +961,6 @@ func (o CertificateAuthorityCertificateAuthorityRuleArrayOutput) ToCertificateAu
 
 func (o CertificateAuthorityCertificateAuthorityRuleArrayOutput) ToCertificateAuthorityCertificateAuthorityRuleArrayOutputWithContext(ctx context.Context) CertificateAuthorityCertificateAuthorityRuleArrayOutput {
 	return o
-}
-
-func (o CertificateAuthorityCertificateAuthorityRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]CertificateAuthorityCertificateAuthorityRule] {
-	return pulumix.Output[[]CertificateAuthorityCertificateAuthorityRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o CertificateAuthorityCertificateAuthorityRuleArrayOutput) Index(i pulumi.IntInput) CertificateAuthorityCertificateAuthorityRuleOutput {
@@ -1103,12 +1006,6 @@ func (i CertificateAuthorityCertificateRevocationListDetailsArgs) ToCertificateA
 	return pulumi.ToOutputWithContext(ctx, i).(CertificateAuthorityCertificateRevocationListDetailsOutput)
 }
 
-func (i CertificateAuthorityCertificateRevocationListDetailsArgs) ToOutput(ctx context.Context) pulumix.Output[CertificateAuthorityCertificateRevocationListDetails] {
-	return pulumix.Output[CertificateAuthorityCertificateRevocationListDetails]{
-		OutputState: i.ToCertificateAuthorityCertificateRevocationListDetailsOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i CertificateAuthorityCertificateRevocationListDetailsArgs) ToCertificateAuthorityCertificateRevocationListDetailsPtrOutput() CertificateAuthorityCertificateRevocationListDetailsPtrOutput {
 	return i.ToCertificateAuthorityCertificateRevocationListDetailsPtrOutputWithContext(context.Background())
 }
@@ -1150,12 +1047,6 @@ func (i *certificateAuthorityCertificateRevocationListDetailsPtrType) ToCertific
 	return pulumi.ToOutputWithContext(ctx, i).(CertificateAuthorityCertificateRevocationListDetailsPtrOutput)
 }
 
-func (i *certificateAuthorityCertificateRevocationListDetailsPtrType) ToOutput(ctx context.Context) pulumix.Output[*CertificateAuthorityCertificateRevocationListDetails] {
-	return pulumix.Output[*CertificateAuthorityCertificateRevocationListDetails]{
-		OutputState: i.ToCertificateAuthorityCertificateRevocationListDetailsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type CertificateAuthorityCertificateRevocationListDetailsOutput struct{ *pulumi.OutputState }
 
 func (CertificateAuthorityCertificateRevocationListDetailsOutput) ElementType() reflect.Type {
@@ -1178,12 +1069,6 @@ func (o CertificateAuthorityCertificateRevocationListDetailsOutput) ToCertificat
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v CertificateAuthorityCertificateRevocationListDetails) *CertificateAuthorityCertificateRevocationListDetails {
 		return &v
 	}).(CertificateAuthorityCertificateRevocationListDetailsPtrOutput)
-}
-
-func (o CertificateAuthorityCertificateRevocationListDetailsOutput) ToOutput(ctx context.Context) pulumix.Output[CertificateAuthorityCertificateRevocationListDetails] {
-	return pulumix.Output[CertificateAuthorityCertificateRevocationListDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Optional CRL access points, expressed using a format where the version number of the issuing CA is inserted wherever you include a pair of curly braces. This versioning scheme helps avoid collisions when new CA versions are created. For example, myCrlFileIssuedFromCAVersion{}.crl becomes myCrlFileIssuedFromCAVersion2.crl for CA version 2.
@@ -1210,12 +1095,6 @@ func (o CertificateAuthorityCertificateRevocationListDetailsPtrOutput) ToCertifi
 
 func (o CertificateAuthorityCertificateRevocationListDetailsPtrOutput) ToCertificateAuthorityCertificateRevocationListDetailsPtrOutputWithContext(ctx context.Context) CertificateAuthorityCertificateRevocationListDetailsPtrOutput {
 	return o
-}
-
-func (o CertificateAuthorityCertificateRevocationListDetailsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*CertificateAuthorityCertificateRevocationListDetails] {
-	return pulumix.Output[*CertificateAuthorityCertificateRevocationListDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o CertificateAuthorityCertificateRevocationListDetailsPtrOutput) Elem() CertificateAuthorityCertificateRevocationListDetailsOutput {
@@ -1289,12 +1168,6 @@ func (i CertificateAuthorityCertificateRevocationListDetailsObjectStorageConfigA
 	return pulumi.ToOutputWithContext(ctx, i).(CertificateAuthorityCertificateRevocationListDetailsObjectStorageConfigOutput)
 }
 
-func (i CertificateAuthorityCertificateRevocationListDetailsObjectStorageConfigArgs) ToOutput(ctx context.Context) pulumix.Output[CertificateAuthorityCertificateRevocationListDetailsObjectStorageConfig] {
-	return pulumix.Output[CertificateAuthorityCertificateRevocationListDetailsObjectStorageConfig]{
-		OutputState: i.ToCertificateAuthorityCertificateRevocationListDetailsObjectStorageConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i CertificateAuthorityCertificateRevocationListDetailsObjectStorageConfigArgs) ToCertificateAuthorityCertificateRevocationListDetailsObjectStorageConfigPtrOutput() CertificateAuthorityCertificateRevocationListDetailsObjectStorageConfigPtrOutput {
 	return i.ToCertificateAuthorityCertificateRevocationListDetailsObjectStorageConfigPtrOutputWithContext(context.Background())
 }
@@ -1336,12 +1209,6 @@ func (i *certificateAuthorityCertificateRevocationListDetailsObjectStorageConfig
 	return pulumi.ToOutputWithContext(ctx, i).(CertificateAuthorityCertificateRevocationListDetailsObjectStorageConfigPtrOutput)
 }
 
-func (i *certificateAuthorityCertificateRevocationListDetailsObjectStorageConfigPtrType) ToOutput(ctx context.Context) pulumix.Output[*CertificateAuthorityCertificateRevocationListDetailsObjectStorageConfig] {
-	return pulumix.Output[*CertificateAuthorityCertificateRevocationListDetailsObjectStorageConfig]{
-		OutputState: i.ToCertificateAuthorityCertificateRevocationListDetailsObjectStorageConfigPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type CertificateAuthorityCertificateRevocationListDetailsObjectStorageConfigOutput struct{ *pulumi.OutputState }
 
 func (CertificateAuthorityCertificateRevocationListDetailsObjectStorageConfigOutput) ElementType() reflect.Type {
@@ -1364,12 +1231,6 @@ func (o CertificateAuthorityCertificateRevocationListDetailsObjectStorageConfigO
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v CertificateAuthorityCertificateRevocationListDetailsObjectStorageConfig) *CertificateAuthorityCertificateRevocationListDetailsObjectStorageConfig {
 		return &v
 	}).(CertificateAuthorityCertificateRevocationListDetailsObjectStorageConfigPtrOutput)
-}
-
-func (o CertificateAuthorityCertificateRevocationListDetailsObjectStorageConfigOutput) ToOutput(ctx context.Context) pulumix.Output[CertificateAuthorityCertificateRevocationListDetailsObjectStorageConfig] {
-	return pulumix.Output[CertificateAuthorityCertificateRevocationListDetailsObjectStorageConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The name of the bucket where the CRL is stored.
@@ -1405,12 +1266,6 @@ func (o CertificateAuthorityCertificateRevocationListDetailsObjectStorageConfigP
 
 func (o CertificateAuthorityCertificateRevocationListDetailsObjectStorageConfigPtrOutput) ToCertificateAuthorityCertificateRevocationListDetailsObjectStorageConfigPtrOutputWithContext(ctx context.Context) CertificateAuthorityCertificateRevocationListDetailsObjectStorageConfigPtrOutput {
 	return o
-}
-
-func (o CertificateAuthorityCertificateRevocationListDetailsObjectStorageConfigPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*CertificateAuthorityCertificateRevocationListDetailsObjectStorageConfig] {
-	return pulumix.Output[*CertificateAuthorityCertificateRevocationListDetailsObjectStorageConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o CertificateAuthorityCertificateRevocationListDetailsObjectStorageConfigPtrOutput) Elem() CertificateAuthorityCertificateRevocationListDetailsObjectStorageConfigOutput {
@@ -1522,12 +1377,6 @@ func (i CertificateAuthorityCurrentVersionArgs) ToCertificateAuthorityCurrentVer
 	return pulumi.ToOutputWithContext(ctx, i).(CertificateAuthorityCurrentVersionOutput)
 }
 
-func (i CertificateAuthorityCurrentVersionArgs) ToOutput(ctx context.Context) pulumix.Output[CertificateAuthorityCurrentVersion] {
-	return pulumix.Output[CertificateAuthorityCurrentVersion]{
-		OutputState: i.ToCertificateAuthorityCurrentVersionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // CertificateAuthorityCurrentVersionArrayInput is an input type that accepts CertificateAuthorityCurrentVersionArray and CertificateAuthorityCurrentVersionArrayOutput values.
 // You can construct a concrete instance of `CertificateAuthorityCurrentVersionArrayInput` via:
 //
@@ -1553,12 +1402,6 @@ func (i CertificateAuthorityCurrentVersionArray) ToCertificateAuthorityCurrentVe
 	return pulumi.ToOutputWithContext(ctx, i).(CertificateAuthorityCurrentVersionArrayOutput)
 }
 
-func (i CertificateAuthorityCurrentVersionArray) ToOutput(ctx context.Context) pulumix.Output[[]CertificateAuthorityCurrentVersion] {
-	return pulumix.Output[[]CertificateAuthorityCurrentVersion]{
-		OutputState: i.ToCertificateAuthorityCurrentVersionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type CertificateAuthorityCurrentVersionOutput struct{ *pulumi.OutputState }
 
 func (CertificateAuthorityCurrentVersionOutput) ElementType() reflect.Type {
@@ -1571,12 +1414,6 @@ func (o CertificateAuthorityCurrentVersionOutput) ToCertificateAuthorityCurrentV
 
 func (o CertificateAuthorityCurrentVersionOutput) ToCertificateAuthorityCurrentVersionOutputWithContext(ctx context.Context) CertificateAuthorityCurrentVersionOutput {
 	return o
-}
-
-func (o CertificateAuthorityCurrentVersionOutput) ToOutput(ctx context.Context) pulumix.Output[CertificateAuthorityCurrentVersion] {
-	return pulumix.Output[CertificateAuthorityCurrentVersion]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the CA.
@@ -1647,12 +1484,6 @@ func (o CertificateAuthorityCurrentVersionArrayOutput) ToCertificateAuthorityCur
 	return o
 }
 
-func (o CertificateAuthorityCurrentVersionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]CertificateAuthorityCurrentVersion] {
-	return pulumix.Output[[]CertificateAuthorityCurrentVersion]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o CertificateAuthorityCurrentVersionArrayOutput) Index(i pulumi.IntInput) CertificateAuthorityCurrentVersionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) CertificateAuthorityCurrentVersion {
 		return vs[0].([]CertificateAuthorityCurrentVersion)[vs[1].(int)]
@@ -1696,12 +1527,6 @@ func (i CertificateAuthorityCurrentVersionRevocationStatusArgs) ToCertificateAut
 	return pulumi.ToOutputWithContext(ctx, i).(CertificateAuthorityCurrentVersionRevocationStatusOutput)
 }
 
-func (i CertificateAuthorityCurrentVersionRevocationStatusArgs) ToOutput(ctx context.Context) pulumix.Output[CertificateAuthorityCurrentVersionRevocationStatus] {
-	return pulumix.Output[CertificateAuthorityCurrentVersionRevocationStatus]{
-		OutputState: i.ToCertificateAuthorityCurrentVersionRevocationStatusOutputWithContext(ctx).OutputState,
-	}
-}
-
 // CertificateAuthorityCurrentVersionRevocationStatusArrayInput is an input type that accepts CertificateAuthorityCurrentVersionRevocationStatusArray and CertificateAuthorityCurrentVersionRevocationStatusArrayOutput values.
 // You can construct a concrete instance of `CertificateAuthorityCurrentVersionRevocationStatusArrayInput` via:
 //
@@ -1727,12 +1552,6 @@ func (i CertificateAuthorityCurrentVersionRevocationStatusArray) ToCertificateAu
 	return pulumi.ToOutputWithContext(ctx, i).(CertificateAuthorityCurrentVersionRevocationStatusArrayOutput)
 }
 
-func (i CertificateAuthorityCurrentVersionRevocationStatusArray) ToOutput(ctx context.Context) pulumix.Output[[]CertificateAuthorityCurrentVersionRevocationStatus] {
-	return pulumix.Output[[]CertificateAuthorityCurrentVersionRevocationStatus]{
-		OutputState: i.ToCertificateAuthorityCurrentVersionRevocationStatusArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type CertificateAuthorityCurrentVersionRevocationStatusOutput struct{ *pulumi.OutputState }
 
 func (CertificateAuthorityCurrentVersionRevocationStatusOutput) ElementType() reflect.Type {
@@ -1745,12 +1564,6 @@ func (o CertificateAuthorityCurrentVersionRevocationStatusOutput) ToCertificateA
 
 func (o CertificateAuthorityCurrentVersionRevocationStatusOutput) ToCertificateAuthorityCurrentVersionRevocationStatusOutputWithContext(ctx context.Context) CertificateAuthorityCurrentVersionRevocationStatusOutput {
 	return o
-}
-
-func (o CertificateAuthorityCurrentVersionRevocationStatusOutput) ToOutput(ctx context.Context) pulumix.Output[CertificateAuthorityCurrentVersionRevocationStatus] {
-	return pulumix.Output[CertificateAuthorityCurrentVersionRevocationStatus]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The reason the certificate or certificate authority (CA) was revoked.
@@ -1775,12 +1588,6 @@ func (o CertificateAuthorityCurrentVersionRevocationStatusArrayOutput) ToCertifi
 
 func (o CertificateAuthorityCurrentVersionRevocationStatusArrayOutput) ToCertificateAuthorityCurrentVersionRevocationStatusArrayOutputWithContext(ctx context.Context) CertificateAuthorityCurrentVersionRevocationStatusArrayOutput {
 	return o
-}
-
-func (o CertificateAuthorityCurrentVersionRevocationStatusArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]CertificateAuthorityCurrentVersionRevocationStatus] {
-	return pulumix.Output[[]CertificateAuthorityCurrentVersionRevocationStatus]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o CertificateAuthorityCurrentVersionRevocationStatusArrayOutput) Index(i pulumi.IntInput) CertificateAuthorityCurrentVersionRevocationStatusOutput {
@@ -1826,12 +1633,6 @@ func (i CertificateAuthorityCurrentVersionValidityArgs) ToCertificateAuthorityCu
 	return pulumi.ToOutputWithContext(ctx, i).(CertificateAuthorityCurrentVersionValidityOutput)
 }
 
-func (i CertificateAuthorityCurrentVersionValidityArgs) ToOutput(ctx context.Context) pulumix.Output[CertificateAuthorityCurrentVersionValidity] {
-	return pulumix.Output[CertificateAuthorityCurrentVersionValidity]{
-		OutputState: i.ToCertificateAuthorityCurrentVersionValidityOutputWithContext(ctx).OutputState,
-	}
-}
-
 // CertificateAuthorityCurrentVersionValidityArrayInput is an input type that accepts CertificateAuthorityCurrentVersionValidityArray and CertificateAuthorityCurrentVersionValidityArrayOutput values.
 // You can construct a concrete instance of `CertificateAuthorityCurrentVersionValidityArrayInput` via:
 //
@@ -1857,12 +1658,6 @@ func (i CertificateAuthorityCurrentVersionValidityArray) ToCertificateAuthorityC
 	return pulumi.ToOutputWithContext(ctx, i).(CertificateAuthorityCurrentVersionValidityArrayOutput)
 }
 
-func (i CertificateAuthorityCurrentVersionValidityArray) ToOutput(ctx context.Context) pulumix.Output[[]CertificateAuthorityCurrentVersionValidity] {
-	return pulumix.Output[[]CertificateAuthorityCurrentVersionValidity]{
-		OutputState: i.ToCertificateAuthorityCurrentVersionValidityArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type CertificateAuthorityCurrentVersionValidityOutput struct{ *pulumi.OutputState }
 
 func (CertificateAuthorityCurrentVersionValidityOutput) ElementType() reflect.Type {
@@ -1875,12 +1670,6 @@ func (o CertificateAuthorityCurrentVersionValidityOutput) ToCertificateAuthority
 
 func (o CertificateAuthorityCurrentVersionValidityOutput) ToCertificateAuthorityCurrentVersionValidityOutputWithContext(ctx context.Context) CertificateAuthorityCurrentVersionValidityOutput {
 	return o
-}
-
-func (o CertificateAuthorityCurrentVersionValidityOutput) ToOutput(ctx context.Context) pulumix.Output[CertificateAuthorityCurrentVersionValidity] {
-	return pulumix.Output[CertificateAuthorityCurrentVersionValidity]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The date on which the certificate validity period ends, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
@@ -1905,12 +1694,6 @@ func (o CertificateAuthorityCurrentVersionValidityArrayOutput) ToCertificateAuth
 
 func (o CertificateAuthorityCurrentVersionValidityArrayOutput) ToCertificateAuthorityCurrentVersionValidityArrayOutputWithContext(ctx context.Context) CertificateAuthorityCurrentVersionValidityArrayOutput {
 	return o
-}
-
-func (o CertificateAuthorityCurrentVersionValidityArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]CertificateAuthorityCurrentVersionValidity] {
-	return pulumix.Output[[]CertificateAuthorityCurrentVersionValidity]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o CertificateAuthorityCurrentVersionValidityArrayOutput) Index(i pulumi.IntInput) CertificateAuthorityCurrentVersionValidityOutput {
@@ -2016,12 +1799,6 @@ func (i CertificateAuthoritySubjectArgs) ToCertificateAuthoritySubjectOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(CertificateAuthoritySubjectOutput)
 }
 
-func (i CertificateAuthoritySubjectArgs) ToOutput(ctx context.Context) pulumix.Output[CertificateAuthoritySubject] {
-	return pulumix.Output[CertificateAuthoritySubject]{
-		OutputState: i.ToCertificateAuthoritySubjectOutputWithContext(ctx).OutputState,
-	}
-}
-
 // CertificateAuthoritySubjectArrayInput is an input type that accepts CertificateAuthoritySubjectArray and CertificateAuthoritySubjectArrayOutput values.
 // You can construct a concrete instance of `CertificateAuthoritySubjectArrayInput` via:
 //
@@ -2047,12 +1824,6 @@ func (i CertificateAuthoritySubjectArray) ToCertificateAuthoritySubjectArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(CertificateAuthoritySubjectArrayOutput)
 }
 
-func (i CertificateAuthoritySubjectArray) ToOutput(ctx context.Context) pulumix.Output[[]CertificateAuthoritySubject] {
-	return pulumix.Output[[]CertificateAuthoritySubject]{
-		OutputState: i.ToCertificateAuthoritySubjectArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type CertificateAuthoritySubjectOutput struct{ *pulumi.OutputState }
 
 func (CertificateAuthoritySubjectOutput) ElementType() reflect.Type {
@@ -2065,12 +1836,6 @@ func (o CertificateAuthoritySubjectOutput) ToCertificateAuthoritySubjectOutput()
 
 func (o CertificateAuthoritySubjectOutput) ToCertificateAuthoritySubjectOutputWithContext(ctx context.Context) CertificateAuthoritySubjectOutput {
 	return o
-}
-
-func (o CertificateAuthoritySubjectOutput) ToOutput(ctx context.Context) pulumix.Output[CertificateAuthoritySubject] {
-	return pulumix.Output[CertificateAuthoritySubject]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Common name or fully-qualified domain name (RDN CN).
@@ -2172,12 +1937,6 @@ func (o CertificateAuthoritySubjectArrayOutput) ToCertificateAuthoritySubjectArr
 	return o
 }
 
-func (o CertificateAuthoritySubjectArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]CertificateAuthoritySubject] {
-	return pulumix.Output[[]CertificateAuthoritySubject]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o CertificateAuthoritySubjectArrayOutput) Index(i pulumi.IntInput) CertificateAuthoritySubjectOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) CertificateAuthoritySubject {
 		return vs[0].([]CertificateAuthoritySubject)[vs[1].(int)]
@@ -2253,12 +2012,6 @@ func (i CertificateCertificateConfigArgs) ToCertificateCertificateConfigOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(CertificateCertificateConfigOutput)
 }
 
-func (i CertificateCertificateConfigArgs) ToOutput(ctx context.Context) pulumix.Output[CertificateCertificateConfig] {
-	return pulumix.Output[CertificateCertificateConfig]{
-		OutputState: i.ToCertificateCertificateConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i CertificateCertificateConfigArgs) ToCertificateCertificateConfigPtrOutput() CertificateCertificateConfigPtrOutput {
 	return i.ToCertificateCertificateConfigPtrOutputWithContext(context.Background())
 }
@@ -2300,12 +2053,6 @@ func (i *certificateCertificateConfigPtrType) ToCertificateCertificateConfigPtrO
 	return pulumi.ToOutputWithContext(ctx, i).(CertificateCertificateConfigPtrOutput)
 }
 
-func (i *certificateCertificateConfigPtrType) ToOutput(ctx context.Context) pulumix.Output[*CertificateCertificateConfig] {
-	return pulumix.Output[*CertificateCertificateConfig]{
-		OutputState: i.ToCertificateCertificateConfigPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type CertificateCertificateConfigOutput struct{ *pulumi.OutputState }
 
 func (CertificateCertificateConfigOutput) ElementType() reflect.Type {
@@ -2328,12 +2075,6 @@ func (o CertificateCertificateConfigOutput) ToCertificateCertificateConfigPtrOut
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v CertificateCertificateConfig) *CertificateCertificateConfig {
 		return &v
 	}).(CertificateCertificateConfigPtrOutput)
-}
-
-func (o CertificateCertificateConfigOutput) ToOutput(ctx context.Context) pulumix.Output[CertificateCertificateConfig] {
-	return pulumix.Output[CertificateCertificateConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The name of the profile used to create the certificate, which depends on the type of certificate you need.
@@ -2400,12 +2141,6 @@ func (o CertificateCertificateConfigPtrOutput) ToCertificateCertificateConfigPtr
 
 func (o CertificateCertificateConfigPtrOutput) ToCertificateCertificateConfigPtrOutputWithContext(ctx context.Context) CertificateCertificateConfigPtrOutput {
 	return o
-}
-
-func (o CertificateCertificateConfigPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*CertificateCertificateConfig] {
-	return pulumix.Output[*CertificateCertificateConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o CertificateCertificateConfigPtrOutput) Elem() CertificateCertificateConfigOutput {
@@ -2615,12 +2350,6 @@ func (i CertificateCertificateConfigSubjectArgs) ToCertificateCertificateConfigS
 	return pulumi.ToOutputWithContext(ctx, i).(CertificateCertificateConfigSubjectOutput)
 }
 
-func (i CertificateCertificateConfigSubjectArgs) ToOutput(ctx context.Context) pulumix.Output[CertificateCertificateConfigSubject] {
-	return pulumix.Output[CertificateCertificateConfigSubject]{
-		OutputState: i.ToCertificateCertificateConfigSubjectOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i CertificateCertificateConfigSubjectArgs) ToCertificateCertificateConfigSubjectPtrOutput() CertificateCertificateConfigSubjectPtrOutput {
 	return i.ToCertificateCertificateConfigSubjectPtrOutputWithContext(context.Background())
 }
@@ -2662,12 +2391,6 @@ func (i *certificateCertificateConfigSubjectPtrType) ToCertificateCertificateCon
 	return pulumi.ToOutputWithContext(ctx, i).(CertificateCertificateConfigSubjectPtrOutput)
 }
 
-func (i *certificateCertificateConfigSubjectPtrType) ToOutput(ctx context.Context) pulumix.Output[*CertificateCertificateConfigSubject] {
-	return pulumix.Output[*CertificateCertificateConfigSubject]{
-		OutputState: i.ToCertificateCertificateConfigSubjectPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type CertificateCertificateConfigSubjectOutput struct{ *pulumi.OutputState }
 
 func (CertificateCertificateConfigSubjectOutput) ElementType() reflect.Type {
@@ -2690,12 +2413,6 @@ func (o CertificateCertificateConfigSubjectOutput) ToCertificateCertificateConfi
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v CertificateCertificateConfigSubject) *CertificateCertificateConfigSubject {
 		return &v
 	}).(CertificateCertificateConfigSubjectPtrOutput)
-}
-
-func (o CertificateCertificateConfigSubjectOutput) ToOutput(ctx context.Context) pulumix.Output[CertificateCertificateConfigSubject] {
-	return pulumix.Output[CertificateCertificateConfigSubject]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Common name or fully-qualified domain name (RDN CN).
@@ -2795,12 +2512,6 @@ func (o CertificateCertificateConfigSubjectPtrOutput) ToCertificateCertificateCo
 
 func (o CertificateCertificateConfigSubjectPtrOutput) ToCertificateCertificateConfigSubjectPtrOutputWithContext(ctx context.Context) CertificateCertificateConfigSubjectPtrOutput {
 	return o
-}
-
-func (o CertificateCertificateConfigSubjectPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*CertificateCertificateConfigSubject] {
-	return pulumix.Output[*CertificateCertificateConfigSubject]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o CertificateCertificateConfigSubjectPtrOutput) Elem() CertificateCertificateConfigSubjectOutput {
@@ -3020,12 +2731,6 @@ func (i CertificateCertificateConfigSubjectAlternativeNameArgs) ToCertificateCer
 	return pulumi.ToOutputWithContext(ctx, i).(CertificateCertificateConfigSubjectAlternativeNameOutput)
 }
 
-func (i CertificateCertificateConfigSubjectAlternativeNameArgs) ToOutput(ctx context.Context) pulumix.Output[CertificateCertificateConfigSubjectAlternativeName] {
-	return pulumix.Output[CertificateCertificateConfigSubjectAlternativeName]{
-		OutputState: i.ToCertificateCertificateConfigSubjectAlternativeNameOutputWithContext(ctx).OutputState,
-	}
-}
-
 // CertificateCertificateConfigSubjectAlternativeNameArrayInput is an input type that accepts CertificateCertificateConfigSubjectAlternativeNameArray and CertificateCertificateConfigSubjectAlternativeNameArrayOutput values.
 // You can construct a concrete instance of `CertificateCertificateConfigSubjectAlternativeNameArrayInput` via:
 //
@@ -3051,12 +2756,6 @@ func (i CertificateCertificateConfigSubjectAlternativeNameArray) ToCertificateCe
 	return pulumi.ToOutputWithContext(ctx, i).(CertificateCertificateConfigSubjectAlternativeNameArrayOutput)
 }
 
-func (i CertificateCertificateConfigSubjectAlternativeNameArray) ToOutput(ctx context.Context) pulumix.Output[[]CertificateCertificateConfigSubjectAlternativeName] {
-	return pulumix.Output[[]CertificateCertificateConfigSubjectAlternativeName]{
-		OutputState: i.ToCertificateCertificateConfigSubjectAlternativeNameArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type CertificateCertificateConfigSubjectAlternativeNameOutput struct{ *pulumi.OutputState }
 
 func (CertificateCertificateConfigSubjectAlternativeNameOutput) ElementType() reflect.Type {
@@ -3069,12 +2768,6 @@ func (o CertificateCertificateConfigSubjectAlternativeNameOutput) ToCertificateC
 
 func (o CertificateCertificateConfigSubjectAlternativeNameOutput) ToCertificateCertificateConfigSubjectAlternativeNameOutputWithContext(ctx context.Context) CertificateCertificateConfigSubjectAlternativeNameOutput {
 	return o
-}
-
-func (o CertificateCertificateConfigSubjectAlternativeNameOutput) ToOutput(ctx context.Context) pulumix.Output[CertificateCertificateConfigSubjectAlternativeName] {
-	return pulumix.Output[CertificateCertificateConfigSubjectAlternativeName]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The subject alternative name type. Currently only DNS domain or host names and IP addresses are supported.
@@ -3099,12 +2792,6 @@ func (o CertificateCertificateConfigSubjectAlternativeNameArrayOutput) ToCertifi
 
 func (o CertificateCertificateConfigSubjectAlternativeNameArrayOutput) ToCertificateCertificateConfigSubjectAlternativeNameArrayOutputWithContext(ctx context.Context) CertificateCertificateConfigSubjectAlternativeNameArrayOutput {
 	return o
-}
-
-func (o CertificateCertificateConfigSubjectAlternativeNameArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]CertificateCertificateConfigSubjectAlternativeName] {
-	return pulumix.Output[[]CertificateCertificateConfigSubjectAlternativeName]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o CertificateCertificateConfigSubjectAlternativeNameArrayOutput) Index(i pulumi.IntInput) CertificateCertificateConfigSubjectAlternativeNameOutput {
@@ -3150,12 +2837,6 @@ func (i CertificateCertificateConfigValidityArgs) ToCertificateCertificateConfig
 	return pulumi.ToOutputWithContext(ctx, i).(CertificateCertificateConfigValidityOutput)
 }
 
-func (i CertificateCertificateConfigValidityArgs) ToOutput(ctx context.Context) pulumix.Output[CertificateCertificateConfigValidity] {
-	return pulumix.Output[CertificateCertificateConfigValidity]{
-		OutputState: i.ToCertificateCertificateConfigValidityOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i CertificateCertificateConfigValidityArgs) ToCertificateCertificateConfigValidityPtrOutput() CertificateCertificateConfigValidityPtrOutput {
 	return i.ToCertificateCertificateConfigValidityPtrOutputWithContext(context.Background())
 }
@@ -3197,12 +2878,6 @@ func (i *certificateCertificateConfigValidityPtrType) ToCertificateCertificateCo
 	return pulumi.ToOutputWithContext(ctx, i).(CertificateCertificateConfigValidityPtrOutput)
 }
 
-func (i *certificateCertificateConfigValidityPtrType) ToOutput(ctx context.Context) pulumix.Output[*CertificateCertificateConfigValidity] {
-	return pulumix.Output[*CertificateCertificateConfigValidity]{
-		OutputState: i.ToCertificateCertificateConfigValidityPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type CertificateCertificateConfigValidityOutput struct{ *pulumi.OutputState }
 
 func (CertificateCertificateConfigValidityOutput) ElementType() reflect.Type {
@@ -3227,12 +2902,6 @@ func (o CertificateCertificateConfigValidityOutput) ToCertificateCertificateConf
 	}).(CertificateCertificateConfigValidityPtrOutput)
 }
 
-func (o CertificateCertificateConfigValidityOutput) ToOutput(ctx context.Context) pulumix.Output[CertificateCertificateConfigValidity] {
-	return pulumix.Output[CertificateCertificateConfigValidity]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The date on which the certificate validity period ends, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
 func (o CertificateCertificateConfigValidityOutput) TimeOfValidityNotAfter() pulumi.StringOutput {
 	return o.ApplyT(func(v CertificateCertificateConfigValidity) string { return v.TimeOfValidityNotAfter }).(pulumi.StringOutput)
@@ -3255,12 +2924,6 @@ func (o CertificateCertificateConfigValidityPtrOutput) ToCertificateCertificateC
 
 func (o CertificateCertificateConfigValidityPtrOutput) ToCertificateCertificateConfigValidityPtrOutputWithContext(ctx context.Context) CertificateCertificateConfigValidityPtrOutput {
 	return o
-}
-
-func (o CertificateCertificateConfigValidityPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*CertificateCertificateConfigValidity] {
-	return pulumix.Output[*CertificateCertificateConfigValidity]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o CertificateCertificateConfigValidityPtrOutput) Elem() CertificateCertificateConfigValidityOutput {
@@ -3330,12 +2993,6 @@ func (i CertificateCertificateRevocationListDetailArgs) ToCertificateCertificate
 	return pulumi.ToOutputWithContext(ctx, i).(CertificateCertificateRevocationListDetailOutput)
 }
 
-func (i CertificateCertificateRevocationListDetailArgs) ToOutput(ctx context.Context) pulumix.Output[CertificateCertificateRevocationListDetail] {
-	return pulumix.Output[CertificateCertificateRevocationListDetail]{
-		OutputState: i.ToCertificateCertificateRevocationListDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // CertificateCertificateRevocationListDetailArrayInput is an input type that accepts CertificateCertificateRevocationListDetailArray and CertificateCertificateRevocationListDetailArrayOutput values.
 // You can construct a concrete instance of `CertificateCertificateRevocationListDetailArrayInput` via:
 //
@@ -3361,12 +3018,6 @@ func (i CertificateCertificateRevocationListDetailArray) ToCertificateCertificat
 	return pulumi.ToOutputWithContext(ctx, i).(CertificateCertificateRevocationListDetailArrayOutput)
 }
 
-func (i CertificateCertificateRevocationListDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]CertificateCertificateRevocationListDetail] {
-	return pulumix.Output[[]CertificateCertificateRevocationListDetail]{
-		OutputState: i.ToCertificateCertificateRevocationListDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type CertificateCertificateRevocationListDetailOutput struct{ *pulumi.OutputState }
 
 func (CertificateCertificateRevocationListDetailOutput) ElementType() reflect.Type {
@@ -3379,12 +3030,6 @@ func (o CertificateCertificateRevocationListDetailOutput) ToCertificateCertifica
 
 func (o CertificateCertificateRevocationListDetailOutput) ToCertificateCertificateRevocationListDetailOutputWithContext(ctx context.Context) CertificateCertificateRevocationListDetailOutput {
 	return o
-}
-
-func (o CertificateCertificateRevocationListDetailOutput) ToOutput(ctx context.Context) pulumix.Output[CertificateCertificateRevocationListDetail] {
-	return pulumix.Output[CertificateCertificateRevocationListDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Optional CRL access points, expressed using a format where the version number of the issuing CA is inserted wherever you include a pair of curly braces. This versioning scheme helps avoid collisions when new CA versions are created. For example, myCrlFileIssuedFromCAVersion{}.crl becomes myCrlFileIssuedFromCAVersion2.crl for CA version 2.
@@ -3411,12 +3056,6 @@ func (o CertificateCertificateRevocationListDetailArrayOutput) ToCertificateCert
 
 func (o CertificateCertificateRevocationListDetailArrayOutput) ToCertificateCertificateRevocationListDetailArrayOutputWithContext(ctx context.Context) CertificateCertificateRevocationListDetailArrayOutput {
 	return o
-}
-
-func (o CertificateCertificateRevocationListDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]CertificateCertificateRevocationListDetail] {
-	return pulumix.Output[[]CertificateCertificateRevocationListDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o CertificateCertificateRevocationListDetailArrayOutput) Index(i pulumi.IntInput) CertificateCertificateRevocationListDetailOutput {
@@ -3466,12 +3105,6 @@ func (i CertificateCertificateRevocationListDetailObjectStorageConfigArgs) ToCer
 	return pulumi.ToOutputWithContext(ctx, i).(CertificateCertificateRevocationListDetailObjectStorageConfigOutput)
 }
 
-func (i CertificateCertificateRevocationListDetailObjectStorageConfigArgs) ToOutput(ctx context.Context) pulumix.Output[CertificateCertificateRevocationListDetailObjectStorageConfig] {
-	return pulumix.Output[CertificateCertificateRevocationListDetailObjectStorageConfig]{
-		OutputState: i.ToCertificateCertificateRevocationListDetailObjectStorageConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 // CertificateCertificateRevocationListDetailObjectStorageConfigArrayInput is an input type that accepts CertificateCertificateRevocationListDetailObjectStorageConfigArray and CertificateCertificateRevocationListDetailObjectStorageConfigArrayOutput values.
 // You can construct a concrete instance of `CertificateCertificateRevocationListDetailObjectStorageConfigArrayInput` via:
 //
@@ -3497,12 +3130,6 @@ func (i CertificateCertificateRevocationListDetailObjectStorageConfigArray) ToCe
 	return pulumi.ToOutputWithContext(ctx, i).(CertificateCertificateRevocationListDetailObjectStorageConfigArrayOutput)
 }
 
-func (i CertificateCertificateRevocationListDetailObjectStorageConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]CertificateCertificateRevocationListDetailObjectStorageConfig] {
-	return pulumix.Output[[]CertificateCertificateRevocationListDetailObjectStorageConfig]{
-		OutputState: i.ToCertificateCertificateRevocationListDetailObjectStorageConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type CertificateCertificateRevocationListDetailObjectStorageConfigOutput struct{ *pulumi.OutputState }
 
 func (CertificateCertificateRevocationListDetailObjectStorageConfigOutput) ElementType() reflect.Type {
@@ -3515,12 +3142,6 @@ func (o CertificateCertificateRevocationListDetailObjectStorageConfigOutput) ToC
 
 func (o CertificateCertificateRevocationListDetailObjectStorageConfigOutput) ToCertificateCertificateRevocationListDetailObjectStorageConfigOutputWithContext(ctx context.Context) CertificateCertificateRevocationListDetailObjectStorageConfigOutput {
 	return o
-}
-
-func (o CertificateCertificateRevocationListDetailObjectStorageConfigOutput) ToOutput(ctx context.Context) pulumix.Output[CertificateCertificateRevocationListDetailObjectStorageConfig] {
-	return pulumix.Output[CertificateCertificateRevocationListDetailObjectStorageConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The name of the bucket where the CRL is stored.
@@ -3556,12 +3177,6 @@ func (o CertificateCertificateRevocationListDetailObjectStorageConfigArrayOutput
 
 func (o CertificateCertificateRevocationListDetailObjectStorageConfigArrayOutput) ToCertificateCertificateRevocationListDetailObjectStorageConfigArrayOutputWithContext(ctx context.Context) CertificateCertificateRevocationListDetailObjectStorageConfigArrayOutput {
 	return o
-}
-
-func (o CertificateCertificateRevocationListDetailObjectStorageConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]CertificateCertificateRevocationListDetailObjectStorageConfig] {
-	return pulumix.Output[[]CertificateCertificateRevocationListDetailObjectStorageConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o CertificateCertificateRevocationListDetailObjectStorageConfigArrayOutput) Index(i pulumi.IntInput) CertificateCertificateRevocationListDetailObjectStorageConfigOutput {
@@ -3611,12 +3226,6 @@ func (i CertificateCertificateRuleArgs) ToCertificateCertificateRuleOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(CertificateCertificateRuleOutput)
 }
 
-func (i CertificateCertificateRuleArgs) ToOutput(ctx context.Context) pulumix.Output[CertificateCertificateRule] {
-	return pulumix.Output[CertificateCertificateRule]{
-		OutputState: i.ToCertificateCertificateRuleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // CertificateCertificateRuleArrayInput is an input type that accepts CertificateCertificateRuleArray and CertificateCertificateRuleArrayOutput values.
 // You can construct a concrete instance of `CertificateCertificateRuleArrayInput` via:
 //
@@ -3642,12 +3251,6 @@ func (i CertificateCertificateRuleArray) ToCertificateCertificateRuleArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(CertificateCertificateRuleArrayOutput)
 }
 
-func (i CertificateCertificateRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]CertificateCertificateRule] {
-	return pulumix.Output[[]CertificateCertificateRule]{
-		OutputState: i.ToCertificateCertificateRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type CertificateCertificateRuleOutput struct{ *pulumi.OutputState }
 
 func (CertificateCertificateRuleOutput) ElementType() reflect.Type {
@@ -3660,12 +3263,6 @@ func (o CertificateCertificateRuleOutput) ToCertificateCertificateRuleOutput() C
 
 func (o CertificateCertificateRuleOutput) ToCertificateCertificateRuleOutputWithContext(ctx context.Context) CertificateCertificateRuleOutput {
 	return o
-}
-
-func (o CertificateCertificateRuleOutput) ToOutput(ctx context.Context) pulumix.Output[CertificateCertificateRule] {
-	return pulumix.Output[CertificateCertificateRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) A property specifying the period of time, in days, before the certificate's targeted renewal that the process should occur. Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
@@ -3695,12 +3292,6 @@ func (o CertificateCertificateRuleArrayOutput) ToCertificateCertificateRuleArray
 
 func (o CertificateCertificateRuleArrayOutput) ToCertificateCertificateRuleArrayOutputWithContext(ctx context.Context) CertificateCertificateRuleArrayOutput {
 	return o
-}
-
-func (o CertificateCertificateRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]CertificateCertificateRule] {
-	return pulumix.Output[[]CertificateCertificateRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o CertificateCertificateRuleArrayOutput) Index(i pulumi.IntInput) CertificateCertificateRuleOutput {
@@ -3782,12 +3373,6 @@ func (i CertificateCurrentVersionArgs) ToCertificateCurrentVersionOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(CertificateCurrentVersionOutput)
 }
 
-func (i CertificateCurrentVersionArgs) ToOutput(ctx context.Context) pulumix.Output[CertificateCurrentVersion] {
-	return pulumix.Output[CertificateCurrentVersion]{
-		OutputState: i.ToCertificateCurrentVersionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // CertificateCurrentVersionArrayInput is an input type that accepts CertificateCurrentVersionArray and CertificateCurrentVersionArrayOutput values.
 // You can construct a concrete instance of `CertificateCurrentVersionArrayInput` via:
 //
@@ -3813,12 +3398,6 @@ func (i CertificateCurrentVersionArray) ToCertificateCurrentVersionArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(CertificateCurrentVersionArrayOutput)
 }
 
-func (i CertificateCurrentVersionArray) ToOutput(ctx context.Context) pulumix.Output[[]CertificateCurrentVersion] {
-	return pulumix.Output[[]CertificateCurrentVersion]{
-		OutputState: i.ToCertificateCurrentVersionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type CertificateCurrentVersionOutput struct{ *pulumi.OutputState }
 
 func (CertificateCurrentVersionOutput) ElementType() reflect.Type {
@@ -3831,12 +3410,6 @@ func (o CertificateCurrentVersionOutput) ToCertificateCurrentVersionOutput() Cer
 
 func (o CertificateCurrentVersionOutput) ToCertificateCurrentVersionOutputWithContext(ctx context.Context) CertificateCurrentVersionOutput {
 	return o
-}
-
-func (o CertificateCurrentVersionOutput) ToOutput(ctx context.Context) pulumix.Output[CertificateCurrentVersion] {
-	return pulumix.Output[CertificateCurrentVersion]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the certificate.
@@ -3912,12 +3485,6 @@ func (o CertificateCurrentVersionArrayOutput) ToCertificateCurrentVersionArrayOu
 	return o
 }
 
-func (o CertificateCurrentVersionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]CertificateCurrentVersion] {
-	return pulumix.Output[[]CertificateCurrentVersion]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o CertificateCurrentVersionArrayOutput) Index(i pulumi.IntInput) CertificateCurrentVersionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) CertificateCurrentVersion {
 		return vs[0].([]CertificateCurrentVersion)[vs[1].(int)]
@@ -3961,12 +3528,6 @@ func (i CertificateCurrentVersionRevocationStatusArgs) ToCertificateCurrentVersi
 	return pulumi.ToOutputWithContext(ctx, i).(CertificateCurrentVersionRevocationStatusOutput)
 }
 
-func (i CertificateCurrentVersionRevocationStatusArgs) ToOutput(ctx context.Context) pulumix.Output[CertificateCurrentVersionRevocationStatus] {
-	return pulumix.Output[CertificateCurrentVersionRevocationStatus]{
-		OutputState: i.ToCertificateCurrentVersionRevocationStatusOutputWithContext(ctx).OutputState,
-	}
-}
-
 // CertificateCurrentVersionRevocationStatusArrayInput is an input type that accepts CertificateCurrentVersionRevocationStatusArray and CertificateCurrentVersionRevocationStatusArrayOutput values.
 // You can construct a concrete instance of `CertificateCurrentVersionRevocationStatusArrayInput` via:
 //
@@ -3992,12 +3553,6 @@ func (i CertificateCurrentVersionRevocationStatusArray) ToCertificateCurrentVers
 	return pulumi.ToOutputWithContext(ctx, i).(CertificateCurrentVersionRevocationStatusArrayOutput)
 }
 
-func (i CertificateCurrentVersionRevocationStatusArray) ToOutput(ctx context.Context) pulumix.Output[[]CertificateCurrentVersionRevocationStatus] {
-	return pulumix.Output[[]CertificateCurrentVersionRevocationStatus]{
-		OutputState: i.ToCertificateCurrentVersionRevocationStatusArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type CertificateCurrentVersionRevocationStatusOutput struct{ *pulumi.OutputState }
 
 func (CertificateCurrentVersionRevocationStatusOutput) ElementType() reflect.Type {
@@ -4010,12 +3565,6 @@ func (o CertificateCurrentVersionRevocationStatusOutput) ToCertificateCurrentVer
 
 func (o CertificateCurrentVersionRevocationStatusOutput) ToCertificateCurrentVersionRevocationStatusOutputWithContext(ctx context.Context) CertificateCurrentVersionRevocationStatusOutput {
 	return o
-}
-
-func (o CertificateCurrentVersionRevocationStatusOutput) ToOutput(ctx context.Context) pulumix.Output[CertificateCurrentVersionRevocationStatus] {
-	return pulumix.Output[CertificateCurrentVersionRevocationStatus]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The reason the certificate or certificate authority (CA) was revoked.
@@ -4040,12 +3589,6 @@ func (o CertificateCurrentVersionRevocationStatusArrayOutput) ToCertificateCurre
 
 func (o CertificateCurrentVersionRevocationStatusArrayOutput) ToCertificateCurrentVersionRevocationStatusArrayOutputWithContext(ctx context.Context) CertificateCurrentVersionRevocationStatusArrayOutput {
 	return o
-}
-
-func (o CertificateCurrentVersionRevocationStatusArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]CertificateCurrentVersionRevocationStatus] {
-	return pulumix.Output[[]CertificateCurrentVersionRevocationStatus]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o CertificateCurrentVersionRevocationStatusArrayOutput) Index(i pulumi.IntInput) CertificateCurrentVersionRevocationStatusOutput {
@@ -4091,12 +3634,6 @@ func (i CertificateCurrentVersionSubjectAlternativeNameArgs) ToCertificateCurren
 	return pulumi.ToOutputWithContext(ctx, i).(CertificateCurrentVersionSubjectAlternativeNameOutput)
 }
 
-func (i CertificateCurrentVersionSubjectAlternativeNameArgs) ToOutput(ctx context.Context) pulumix.Output[CertificateCurrentVersionSubjectAlternativeName] {
-	return pulumix.Output[CertificateCurrentVersionSubjectAlternativeName]{
-		OutputState: i.ToCertificateCurrentVersionSubjectAlternativeNameOutputWithContext(ctx).OutputState,
-	}
-}
-
 // CertificateCurrentVersionSubjectAlternativeNameArrayInput is an input type that accepts CertificateCurrentVersionSubjectAlternativeNameArray and CertificateCurrentVersionSubjectAlternativeNameArrayOutput values.
 // You can construct a concrete instance of `CertificateCurrentVersionSubjectAlternativeNameArrayInput` via:
 //
@@ -4122,12 +3659,6 @@ func (i CertificateCurrentVersionSubjectAlternativeNameArray) ToCertificateCurre
 	return pulumi.ToOutputWithContext(ctx, i).(CertificateCurrentVersionSubjectAlternativeNameArrayOutput)
 }
 
-func (i CertificateCurrentVersionSubjectAlternativeNameArray) ToOutput(ctx context.Context) pulumix.Output[[]CertificateCurrentVersionSubjectAlternativeName] {
-	return pulumix.Output[[]CertificateCurrentVersionSubjectAlternativeName]{
-		OutputState: i.ToCertificateCurrentVersionSubjectAlternativeNameArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type CertificateCurrentVersionSubjectAlternativeNameOutput struct{ *pulumi.OutputState }
 
 func (CertificateCurrentVersionSubjectAlternativeNameOutput) ElementType() reflect.Type {
@@ -4140,12 +3671,6 @@ func (o CertificateCurrentVersionSubjectAlternativeNameOutput) ToCertificateCurr
 
 func (o CertificateCurrentVersionSubjectAlternativeNameOutput) ToCertificateCurrentVersionSubjectAlternativeNameOutputWithContext(ctx context.Context) CertificateCurrentVersionSubjectAlternativeNameOutput {
 	return o
-}
-
-func (o CertificateCurrentVersionSubjectAlternativeNameOutput) ToOutput(ctx context.Context) pulumix.Output[CertificateCurrentVersionSubjectAlternativeName] {
-	return pulumix.Output[CertificateCurrentVersionSubjectAlternativeName]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The subject alternative name type. Currently only DNS domain or host names and IP addresses are supported.
@@ -4170,12 +3695,6 @@ func (o CertificateCurrentVersionSubjectAlternativeNameArrayOutput) ToCertificat
 
 func (o CertificateCurrentVersionSubjectAlternativeNameArrayOutput) ToCertificateCurrentVersionSubjectAlternativeNameArrayOutputWithContext(ctx context.Context) CertificateCurrentVersionSubjectAlternativeNameArrayOutput {
 	return o
-}
-
-func (o CertificateCurrentVersionSubjectAlternativeNameArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]CertificateCurrentVersionSubjectAlternativeName] {
-	return pulumix.Output[[]CertificateCurrentVersionSubjectAlternativeName]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o CertificateCurrentVersionSubjectAlternativeNameArrayOutput) Index(i pulumi.IntInput) CertificateCurrentVersionSubjectAlternativeNameOutput {
@@ -4221,12 +3740,6 @@ func (i CertificateCurrentVersionValidityArgs) ToCertificateCurrentVersionValidi
 	return pulumi.ToOutputWithContext(ctx, i).(CertificateCurrentVersionValidityOutput)
 }
 
-func (i CertificateCurrentVersionValidityArgs) ToOutput(ctx context.Context) pulumix.Output[CertificateCurrentVersionValidity] {
-	return pulumix.Output[CertificateCurrentVersionValidity]{
-		OutputState: i.ToCertificateCurrentVersionValidityOutputWithContext(ctx).OutputState,
-	}
-}
-
 // CertificateCurrentVersionValidityArrayInput is an input type that accepts CertificateCurrentVersionValidityArray and CertificateCurrentVersionValidityArrayOutput values.
 // You can construct a concrete instance of `CertificateCurrentVersionValidityArrayInput` via:
 //
@@ -4252,12 +3765,6 @@ func (i CertificateCurrentVersionValidityArray) ToCertificateCurrentVersionValid
 	return pulumi.ToOutputWithContext(ctx, i).(CertificateCurrentVersionValidityArrayOutput)
 }
 
-func (i CertificateCurrentVersionValidityArray) ToOutput(ctx context.Context) pulumix.Output[[]CertificateCurrentVersionValidity] {
-	return pulumix.Output[[]CertificateCurrentVersionValidity]{
-		OutputState: i.ToCertificateCurrentVersionValidityArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type CertificateCurrentVersionValidityOutput struct{ *pulumi.OutputState }
 
 func (CertificateCurrentVersionValidityOutput) ElementType() reflect.Type {
@@ -4270,12 +3777,6 @@ func (o CertificateCurrentVersionValidityOutput) ToCertificateCurrentVersionVali
 
 func (o CertificateCurrentVersionValidityOutput) ToCertificateCurrentVersionValidityOutputWithContext(ctx context.Context) CertificateCurrentVersionValidityOutput {
 	return o
-}
-
-func (o CertificateCurrentVersionValidityOutput) ToOutput(ctx context.Context) pulumix.Output[CertificateCurrentVersionValidity] {
-	return pulumix.Output[CertificateCurrentVersionValidity]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The date on which the certificate validity period ends, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
@@ -4300,12 +3801,6 @@ func (o CertificateCurrentVersionValidityArrayOutput) ToCertificateCurrentVersio
 
 func (o CertificateCurrentVersionValidityArrayOutput) ToCertificateCurrentVersionValidityArrayOutputWithContext(ctx context.Context) CertificateCurrentVersionValidityArrayOutput {
 	return o
-}
-
-func (o CertificateCurrentVersionValidityArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]CertificateCurrentVersionValidity] {
-	return pulumix.Output[[]CertificateCurrentVersionValidity]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o CertificateCurrentVersionValidityArrayOutput) Index(i pulumi.IntInput) CertificateCurrentVersionValidityOutput {
@@ -4411,12 +3906,6 @@ func (i CertificateSubjectArgs) ToCertificateSubjectOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(CertificateSubjectOutput)
 }
 
-func (i CertificateSubjectArgs) ToOutput(ctx context.Context) pulumix.Output[CertificateSubject] {
-	return pulumix.Output[CertificateSubject]{
-		OutputState: i.ToCertificateSubjectOutputWithContext(ctx).OutputState,
-	}
-}
-
 // CertificateSubjectArrayInput is an input type that accepts CertificateSubjectArray and CertificateSubjectArrayOutput values.
 // You can construct a concrete instance of `CertificateSubjectArrayInput` via:
 //
@@ -4442,12 +3931,6 @@ func (i CertificateSubjectArray) ToCertificateSubjectArrayOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(CertificateSubjectArrayOutput)
 }
 
-func (i CertificateSubjectArray) ToOutput(ctx context.Context) pulumix.Output[[]CertificateSubject] {
-	return pulumix.Output[[]CertificateSubject]{
-		OutputState: i.ToCertificateSubjectArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type CertificateSubjectOutput struct{ *pulumi.OutputState }
 
 func (CertificateSubjectOutput) ElementType() reflect.Type {
@@ -4460,12 +3943,6 @@ func (o CertificateSubjectOutput) ToCertificateSubjectOutput() CertificateSubjec
 
 func (o CertificateSubjectOutput) ToCertificateSubjectOutputWithContext(ctx context.Context) CertificateSubjectOutput {
 	return o
-}
-
-func (o CertificateSubjectOutput) ToOutput(ctx context.Context) pulumix.Output[CertificateSubject] {
-	return pulumix.Output[CertificateSubject]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Common name or fully-qualified domain name (RDN CN).
@@ -4567,12 +4044,6 @@ func (o CertificateSubjectArrayOutput) ToCertificateSubjectArrayOutputWithContex
 	return o
 }
 
-func (o CertificateSubjectArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]CertificateSubject] {
-	return pulumix.Output[[]CertificateSubject]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o CertificateSubjectArrayOutput) Index(i pulumi.IntInput) CertificateSubjectOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) CertificateSubject {
 		return vs[0].([]CertificateSubject)[vs[1].(int)]
@@ -4610,12 +4081,6 @@ func (i GetAssociationsAssociationCollectionArgs) ToGetAssociationsAssociationCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssociationsAssociationCollectionOutput)
 }
 
-func (i GetAssociationsAssociationCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetAssociationsAssociationCollection] {
-	return pulumix.Output[GetAssociationsAssociationCollection]{
-		OutputState: i.ToGetAssociationsAssociationCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAssociationsAssociationCollectionArrayInput is an input type that accepts GetAssociationsAssociationCollectionArray and GetAssociationsAssociationCollectionArrayOutput values.
 // You can construct a concrete instance of `GetAssociationsAssociationCollectionArrayInput` via:
 //
@@ -4641,12 +4106,6 @@ func (i GetAssociationsAssociationCollectionArray) ToGetAssociationsAssociationC
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssociationsAssociationCollectionArrayOutput)
 }
 
-func (i GetAssociationsAssociationCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAssociationsAssociationCollection] {
-	return pulumix.Output[[]GetAssociationsAssociationCollection]{
-		OutputState: i.ToGetAssociationsAssociationCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAssociationsAssociationCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetAssociationsAssociationCollectionOutput) ElementType() reflect.Type {
@@ -4659,12 +4118,6 @@ func (o GetAssociationsAssociationCollectionOutput) ToGetAssociationsAssociation
 
 func (o GetAssociationsAssociationCollectionOutput) ToGetAssociationsAssociationCollectionOutputWithContext(ctx context.Context) GetAssociationsAssociationCollectionOutput {
 	return o
-}
-
-func (o GetAssociationsAssociationCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetAssociationsAssociationCollection] {
-	return pulumix.Output[GetAssociationsAssociationCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAssociationsAssociationCollectionOutput) Items() GetAssociationsAssociationCollectionItemArrayOutput {
@@ -4687,12 +4140,6 @@ func (o GetAssociationsAssociationCollectionArrayOutput) ToGetAssociationsAssoci
 	return o
 }
 
-func (o GetAssociationsAssociationCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAssociationsAssociationCollection] {
-	return pulumix.Output[[]GetAssociationsAssociationCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAssociationsAssociationCollectionArrayOutput) Index(i pulumi.IntInput) GetAssociationsAssociationCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssociationsAssociationCollection {
 		return vs[0].([]GetAssociationsAssociationCollection)[vs[1].(int)]
@@ -4701,21 +4148,21 @@ func (o GetAssociationsAssociationCollectionArrayOutput) Index(i pulumi.IntInput
 
 type GetAssociationsAssociationCollectionItem struct {
 	// A filter that returns only resources that match the given OCID of an associated Oracle Cloud Infrastructure resource.
-	AssociatedResourceId string `pulumi:"associatedResourceId"`
+	AssociatedResourceId *string `pulumi:"associatedResourceId"`
 	// Type of associations to list. If the parameter is set to null, the service lists all types of associations.
-	AssociationType string `pulumi:"associationType"`
+	AssociationType *string `pulumi:"associationType"`
 	// A filter that returns only resources that match the given OCID of a certificate-related resource.
-	CertificatesResourceId string `pulumi:"certificatesResourceId"`
+	CertificatesResourceId *string `pulumi:"certificatesResourceId"`
 	// A filter that returns only resources that match the given compartment OCID.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The OCID of the association.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A filter that returns only resources that match the specified name.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The current lifecycle state of the association.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// A property indicating when the association was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 }
 
 // GetAssociationsAssociationCollectionItemInput is an input type that accepts GetAssociationsAssociationCollectionItemArgs and GetAssociationsAssociationCollectionItemOutput values.
@@ -4731,21 +4178,21 @@ type GetAssociationsAssociationCollectionItemInput interface {
 
 type GetAssociationsAssociationCollectionItemArgs struct {
 	// A filter that returns only resources that match the given OCID of an associated Oracle Cloud Infrastructure resource.
-	AssociatedResourceId pulumi.StringInput `pulumi:"associatedResourceId"`
+	AssociatedResourceId pulumi.StringPtrInput `pulumi:"associatedResourceId"`
 	// Type of associations to list. If the parameter is set to null, the service lists all types of associations.
-	AssociationType pulumi.StringInput `pulumi:"associationType"`
+	AssociationType pulumi.StringPtrInput `pulumi:"associationType"`
 	// A filter that returns only resources that match the given OCID of a certificate-related resource.
-	CertificatesResourceId pulumi.StringInput `pulumi:"certificatesResourceId"`
+	CertificatesResourceId pulumi.StringPtrInput `pulumi:"certificatesResourceId"`
 	// A filter that returns only resources that match the given compartment OCID.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// The OCID of the association.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// A filter that returns only resources that match the specified name.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// The current lifecycle state of the association.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// A property indicating when the association was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 }
 
 func (GetAssociationsAssociationCollectionItemArgs) ElementType() reflect.Type {
@@ -4758,12 +4205,6 @@ func (i GetAssociationsAssociationCollectionItemArgs) ToGetAssociationsAssociati
 
 func (i GetAssociationsAssociationCollectionItemArgs) ToGetAssociationsAssociationCollectionItemOutputWithContext(ctx context.Context) GetAssociationsAssociationCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssociationsAssociationCollectionItemOutput)
-}
-
-func (i GetAssociationsAssociationCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetAssociationsAssociationCollectionItem] {
-	return pulumix.Output[GetAssociationsAssociationCollectionItem]{
-		OutputState: i.ToGetAssociationsAssociationCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAssociationsAssociationCollectionItemArrayInput is an input type that accepts GetAssociationsAssociationCollectionItemArray and GetAssociationsAssociationCollectionItemArrayOutput values.
@@ -4791,12 +4232,6 @@ func (i GetAssociationsAssociationCollectionItemArray) ToGetAssociationsAssociat
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssociationsAssociationCollectionItemArrayOutput)
 }
 
-func (i GetAssociationsAssociationCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAssociationsAssociationCollectionItem] {
-	return pulumix.Output[[]GetAssociationsAssociationCollectionItem]{
-		OutputState: i.ToGetAssociationsAssociationCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAssociationsAssociationCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetAssociationsAssociationCollectionItemOutput) ElementType() reflect.Type {
@@ -4811,50 +4246,44 @@ func (o GetAssociationsAssociationCollectionItemOutput) ToGetAssociationsAssocia
 	return o
 }
 
-func (o GetAssociationsAssociationCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetAssociationsAssociationCollectionItem] {
-	return pulumix.Output[GetAssociationsAssociationCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A filter that returns only resources that match the given OCID of an associated Oracle Cloud Infrastructure resource.
-func (o GetAssociationsAssociationCollectionItemOutput) AssociatedResourceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssociationsAssociationCollectionItem) string { return v.AssociatedResourceId }).(pulumi.StringOutput)
+func (o GetAssociationsAssociationCollectionItemOutput) AssociatedResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssociationsAssociationCollectionItem) *string { return v.AssociatedResourceId }).(pulumi.StringPtrOutput)
 }
 
 // Type of associations to list. If the parameter is set to null, the service lists all types of associations.
-func (o GetAssociationsAssociationCollectionItemOutput) AssociationType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssociationsAssociationCollectionItem) string { return v.AssociationType }).(pulumi.StringOutput)
+func (o GetAssociationsAssociationCollectionItemOutput) AssociationType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssociationsAssociationCollectionItem) *string { return v.AssociationType }).(pulumi.StringPtrOutput)
 }
 
 // A filter that returns only resources that match the given OCID of a certificate-related resource.
-func (o GetAssociationsAssociationCollectionItemOutput) CertificatesResourceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssociationsAssociationCollectionItem) string { return v.CertificatesResourceId }).(pulumi.StringOutput)
+func (o GetAssociationsAssociationCollectionItemOutput) CertificatesResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssociationsAssociationCollectionItem) *string { return v.CertificatesResourceId }).(pulumi.StringPtrOutput)
 }
 
 // A filter that returns only resources that match the given compartment OCID.
-func (o GetAssociationsAssociationCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssociationsAssociationCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetAssociationsAssociationCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssociationsAssociationCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the association.
-func (o GetAssociationsAssociationCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssociationsAssociationCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetAssociationsAssociationCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssociationsAssociationCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A filter that returns only resources that match the specified name.
-func (o GetAssociationsAssociationCollectionItemOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssociationsAssociationCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+func (o GetAssociationsAssociationCollectionItemOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssociationsAssociationCollectionItem) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The current lifecycle state of the association.
-func (o GetAssociationsAssociationCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssociationsAssociationCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetAssociationsAssociationCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssociationsAssociationCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // A property indicating when the association was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-func (o GetAssociationsAssociationCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssociationsAssociationCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetAssociationsAssociationCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssociationsAssociationCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 type GetAssociationsAssociationCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -4869,12 +4298,6 @@ func (o GetAssociationsAssociationCollectionItemArrayOutput) ToGetAssociationsAs
 
 func (o GetAssociationsAssociationCollectionItemArrayOutput) ToGetAssociationsAssociationCollectionItemArrayOutputWithContext(ctx context.Context) GetAssociationsAssociationCollectionItemArrayOutput {
 	return o
-}
-
-func (o GetAssociationsAssociationCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAssociationsAssociationCollectionItem] {
-	return pulumix.Output[[]GetAssociationsAssociationCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAssociationsAssociationCollectionItemArrayOutput) Index(i pulumi.IntInput) GetAssociationsAssociationCollectionItemOutput {
@@ -4920,12 +4343,6 @@ func (i GetAssociationsFilterArgs) ToGetAssociationsFilterOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssociationsFilterOutput)
 }
 
-func (i GetAssociationsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetAssociationsFilter] {
-	return pulumix.Output[GetAssociationsFilter]{
-		OutputState: i.ToGetAssociationsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAssociationsFilterArrayInput is an input type that accepts GetAssociationsFilterArray and GetAssociationsFilterArrayOutput values.
 // You can construct a concrete instance of `GetAssociationsFilterArrayInput` via:
 //
@@ -4951,12 +4368,6 @@ func (i GetAssociationsFilterArray) ToGetAssociationsFilterArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssociationsFilterArrayOutput)
 }
 
-func (i GetAssociationsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAssociationsFilter] {
-	return pulumix.Output[[]GetAssociationsFilter]{
-		OutputState: i.ToGetAssociationsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAssociationsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetAssociationsFilterOutput) ElementType() reflect.Type {
@@ -4969,12 +4380,6 @@ func (o GetAssociationsFilterOutput) ToGetAssociationsFilterOutput() GetAssociat
 
 func (o GetAssociationsFilterOutput) ToGetAssociationsFilterOutputWithContext(ctx context.Context) GetAssociationsFilterOutput {
 	return o
-}
-
-func (o GetAssociationsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetAssociationsFilter] {
-	return pulumix.Output[GetAssociationsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A filter that returns only resources that match the specified name.
@@ -5002,12 +4407,6 @@ func (o GetAssociationsFilterArrayOutput) ToGetAssociationsFilterArrayOutput() G
 
 func (o GetAssociationsFilterArrayOutput) ToGetAssociationsFilterArrayOutputWithContext(ctx context.Context) GetAssociationsFilterArrayOutput {
 	return o
-}
-
-func (o GetAssociationsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAssociationsFilter] {
-	return pulumix.Output[[]GetAssociationsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAssociationsFilterArrayOutput) Index(i pulumi.IntInput) GetAssociationsFilterOutput {
@@ -5047,12 +4446,6 @@ func (i GetCaBundlesCaBundleCollectionArgs) ToGetCaBundlesCaBundleCollectionOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetCaBundlesCaBundleCollectionOutput)
 }
 
-func (i GetCaBundlesCaBundleCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetCaBundlesCaBundleCollection] {
-	return pulumix.Output[GetCaBundlesCaBundleCollection]{
-		OutputState: i.ToGetCaBundlesCaBundleCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetCaBundlesCaBundleCollectionArrayInput is an input type that accepts GetCaBundlesCaBundleCollectionArray and GetCaBundlesCaBundleCollectionArrayOutput values.
 // You can construct a concrete instance of `GetCaBundlesCaBundleCollectionArrayInput` via:
 //
@@ -5078,12 +4471,6 @@ func (i GetCaBundlesCaBundleCollectionArray) ToGetCaBundlesCaBundleCollectionArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetCaBundlesCaBundleCollectionArrayOutput)
 }
 
-func (i GetCaBundlesCaBundleCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCaBundlesCaBundleCollection] {
-	return pulumix.Output[[]GetCaBundlesCaBundleCollection]{
-		OutputState: i.ToGetCaBundlesCaBundleCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCaBundlesCaBundleCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetCaBundlesCaBundleCollectionOutput) ElementType() reflect.Type {
@@ -5096,12 +4483,6 @@ func (o GetCaBundlesCaBundleCollectionOutput) ToGetCaBundlesCaBundleCollectionOu
 
 func (o GetCaBundlesCaBundleCollectionOutput) ToGetCaBundlesCaBundleCollectionOutputWithContext(ctx context.Context) GetCaBundlesCaBundleCollectionOutput {
 	return o
-}
-
-func (o GetCaBundlesCaBundleCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetCaBundlesCaBundleCollection] {
-	return pulumix.Output[GetCaBundlesCaBundleCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetCaBundlesCaBundleCollectionOutput) Items() GetCaBundlesCaBundleCollectionItemArrayOutput {
@@ -5122,12 +4503,6 @@ func (o GetCaBundlesCaBundleCollectionArrayOutput) ToGetCaBundlesCaBundleCollect
 	return o
 }
 
-func (o GetCaBundlesCaBundleCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCaBundlesCaBundleCollection] {
-	return pulumix.Output[[]GetCaBundlesCaBundleCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCaBundlesCaBundleCollectionArrayOutput) Index(i pulumi.IntInput) GetCaBundlesCaBundleCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCaBundlesCaBundleCollection {
 		return vs[0].([]GetCaBundlesCaBundleCollection)[vs[1].(int)]
@@ -5135,25 +4510,25 @@ func (o GetCaBundlesCaBundleCollectionArrayOutput) Index(i pulumi.IntInput) GetC
 }
 
 type GetCaBundlesCaBundleCollectionItem struct {
-	CaBundlePem string `pulumi:"caBundlePem"`
+	CaBundlePem *string `pulumi:"caBundlePem"`
 	// A filter that returns only resources that match the given compartment OCID.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A brief description of the CA bundle.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the CA bundle.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Additional information about the current lifecycle state of the CA bundle.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// A filter that returns only resources that match the specified name.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// A filter that returns only resources that match the given lifecycle state. The state value is case-insensitive.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// A property indicating when the CA bundle was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 }
 
 // GetCaBundlesCaBundleCollectionItemInput is an input type that accepts GetCaBundlesCaBundleCollectionItemArgs and GetCaBundlesCaBundleCollectionItemOutput values.
@@ -5168,25 +4543,25 @@ type GetCaBundlesCaBundleCollectionItemInput interface {
 }
 
 type GetCaBundlesCaBundleCollectionItemArgs struct {
-	CaBundlePem pulumi.StringInput `pulumi:"caBundlePem"`
+	CaBundlePem pulumi.StringPtrInput `pulumi:"caBundlePem"`
 	// A filter that returns only resources that match the given compartment OCID.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A brief description of the CA bundle.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The OCID of the CA bundle.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Additional information about the current lifecycle state of the CA bundle.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// A filter that returns only resources that match the specified name.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// A filter that returns only resources that match the given lifecycle state. The state value is case-insensitive.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// A property indicating when the CA bundle was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 }
 
 func (GetCaBundlesCaBundleCollectionItemArgs) ElementType() reflect.Type {
@@ -5199,12 +4574,6 @@ func (i GetCaBundlesCaBundleCollectionItemArgs) ToGetCaBundlesCaBundleCollection
 
 func (i GetCaBundlesCaBundleCollectionItemArgs) ToGetCaBundlesCaBundleCollectionItemOutputWithContext(ctx context.Context) GetCaBundlesCaBundleCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetCaBundlesCaBundleCollectionItemOutput)
-}
-
-func (i GetCaBundlesCaBundleCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetCaBundlesCaBundleCollectionItem] {
-	return pulumix.Output[GetCaBundlesCaBundleCollectionItem]{
-		OutputState: i.ToGetCaBundlesCaBundleCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetCaBundlesCaBundleCollectionItemArrayInput is an input type that accepts GetCaBundlesCaBundleCollectionItemArray and GetCaBundlesCaBundleCollectionItemArrayOutput values.
@@ -5232,12 +4601,6 @@ func (i GetCaBundlesCaBundleCollectionItemArray) ToGetCaBundlesCaBundleCollectio
 	return pulumi.ToOutputWithContext(ctx, i).(GetCaBundlesCaBundleCollectionItemArrayOutput)
 }
 
-func (i GetCaBundlesCaBundleCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCaBundlesCaBundleCollectionItem] {
-	return pulumix.Output[[]GetCaBundlesCaBundleCollectionItem]{
-		OutputState: i.ToGetCaBundlesCaBundleCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCaBundlesCaBundleCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetCaBundlesCaBundleCollectionItemOutput) ElementType() reflect.Type {
@@ -5252,19 +4615,13 @@ func (o GetCaBundlesCaBundleCollectionItemOutput) ToGetCaBundlesCaBundleCollecti
 	return o
 }
 
-func (o GetCaBundlesCaBundleCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetCaBundlesCaBundleCollectionItem] {
-	return pulumix.Output[GetCaBundlesCaBundleCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
-func (o GetCaBundlesCaBundleCollectionItemOutput) CaBundlePem() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCaBundlesCaBundleCollectionItem) string { return v.CaBundlePem }).(pulumi.StringOutput)
+func (o GetCaBundlesCaBundleCollectionItemOutput) CaBundlePem() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCaBundlesCaBundleCollectionItem) *string { return v.CaBundlePem }).(pulumi.StringPtrOutput)
 }
 
 // A filter that returns only resources that match the given compartment OCID.
-func (o GetCaBundlesCaBundleCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCaBundlesCaBundleCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetCaBundlesCaBundleCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCaBundlesCaBundleCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -5273,8 +4630,8 @@ func (o GetCaBundlesCaBundleCollectionItemOutput) DefinedTags() pulumi.MapOutput
 }
 
 // A brief description of the CA bundle.
-func (o GetCaBundlesCaBundleCollectionItemOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCaBundlesCaBundleCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+func (o GetCaBundlesCaBundleCollectionItemOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCaBundlesCaBundleCollectionItem) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -5283,28 +4640,28 @@ func (o GetCaBundlesCaBundleCollectionItemOutput) FreeformTags() pulumi.MapOutpu
 }
 
 // The OCID of the CA bundle.
-func (o GetCaBundlesCaBundleCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCaBundlesCaBundleCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetCaBundlesCaBundleCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCaBundlesCaBundleCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Additional information about the current lifecycle state of the CA bundle.
-func (o GetCaBundlesCaBundleCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCaBundlesCaBundleCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetCaBundlesCaBundleCollectionItemOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCaBundlesCaBundleCollectionItem) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // A filter that returns only resources that match the specified name.
-func (o GetCaBundlesCaBundleCollectionItemOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCaBundlesCaBundleCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+func (o GetCaBundlesCaBundleCollectionItemOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCaBundlesCaBundleCollectionItem) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // A filter that returns only resources that match the given lifecycle state. The state value is case-insensitive.
-func (o GetCaBundlesCaBundleCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCaBundlesCaBundleCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetCaBundlesCaBundleCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCaBundlesCaBundleCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // A property indicating when the CA bundle was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-func (o GetCaBundlesCaBundleCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCaBundlesCaBundleCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetCaBundlesCaBundleCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCaBundlesCaBundleCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 type GetCaBundlesCaBundleCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -5319,12 +4676,6 @@ func (o GetCaBundlesCaBundleCollectionItemArrayOutput) ToGetCaBundlesCaBundleCol
 
 func (o GetCaBundlesCaBundleCollectionItemArrayOutput) ToGetCaBundlesCaBundleCollectionItemArrayOutputWithContext(ctx context.Context) GetCaBundlesCaBundleCollectionItemArrayOutput {
 	return o
-}
-
-func (o GetCaBundlesCaBundleCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCaBundlesCaBundleCollectionItem] {
-	return pulumix.Output[[]GetCaBundlesCaBundleCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetCaBundlesCaBundleCollectionItemArrayOutput) Index(i pulumi.IntInput) GetCaBundlesCaBundleCollectionItemOutput {
@@ -5370,12 +4721,6 @@ func (i GetCaBundlesFilterArgs) ToGetCaBundlesFilterOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetCaBundlesFilterOutput)
 }
 
-func (i GetCaBundlesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetCaBundlesFilter] {
-	return pulumix.Output[GetCaBundlesFilter]{
-		OutputState: i.ToGetCaBundlesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetCaBundlesFilterArrayInput is an input type that accepts GetCaBundlesFilterArray and GetCaBundlesFilterArrayOutput values.
 // You can construct a concrete instance of `GetCaBundlesFilterArrayInput` via:
 //
@@ -5401,12 +4746,6 @@ func (i GetCaBundlesFilterArray) ToGetCaBundlesFilterArrayOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetCaBundlesFilterArrayOutput)
 }
 
-func (i GetCaBundlesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCaBundlesFilter] {
-	return pulumix.Output[[]GetCaBundlesFilter]{
-		OutputState: i.ToGetCaBundlesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCaBundlesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetCaBundlesFilterOutput) ElementType() reflect.Type {
@@ -5419,12 +4758,6 @@ func (o GetCaBundlesFilterOutput) ToGetCaBundlesFilterOutput() GetCaBundlesFilte
 
 func (o GetCaBundlesFilterOutput) ToGetCaBundlesFilterOutputWithContext(ctx context.Context) GetCaBundlesFilterOutput {
 	return o
-}
-
-func (o GetCaBundlesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetCaBundlesFilter] {
-	return pulumix.Output[GetCaBundlesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A filter that returns only resources that match the specified name.
@@ -5452,12 +4785,6 @@ func (o GetCaBundlesFilterArrayOutput) ToGetCaBundlesFilterArrayOutput() GetCaBu
 
 func (o GetCaBundlesFilterArrayOutput) ToGetCaBundlesFilterArrayOutputWithContext(ctx context.Context) GetCaBundlesFilterArrayOutput {
 	return o
-}
-
-func (o GetCaBundlesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCaBundlesFilter] {
-	return pulumix.Output[[]GetCaBundlesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetCaBundlesFilterArrayOutput) Index(i pulumi.IntInput) GetCaBundlesFilterOutput {
@@ -5497,12 +4824,6 @@ func (i GetCertificateAuthoritiesCertificateAuthorityCollectionArgs) ToGetCertif
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateAuthoritiesCertificateAuthorityCollectionOutput)
 }
 
-func (i GetCertificateAuthoritiesCertificateAuthorityCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetCertificateAuthoritiesCertificateAuthorityCollection] {
-	return pulumix.Output[GetCertificateAuthoritiesCertificateAuthorityCollection]{
-		OutputState: i.ToGetCertificateAuthoritiesCertificateAuthorityCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetCertificateAuthoritiesCertificateAuthorityCollectionArrayInput is an input type that accepts GetCertificateAuthoritiesCertificateAuthorityCollectionArray and GetCertificateAuthoritiesCertificateAuthorityCollectionArrayOutput values.
 // You can construct a concrete instance of `GetCertificateAuthoritiesCertificateAuthorityCollectionArrayInput` via:
 //
@@ -5528,12 +4849,6 @@ func (i GetCertificateAuthoritiesCertificateAuthorityCollectionArray) ToGetCerti
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateAuthoritiesCertificateAuthorityCollectionArrayOutput)
 }
 
-func (i GetCertificateAuthoritiesCertificateAuthorityCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateAuthoritiesCertificateAuthorityCollection] {
-	return pulumix.Output[[]GetCertificateAuthoritiesCertificateAuthorityCollection]{
-		OutputState: i.ToGetCertificateAuthoritiesCertificateAuthorityCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCertificateAuthoritiesCertificateAuthorityCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetCertificateAuthoritiesCertificateAuthorityCollectionOutput) ElementType() reflect.Type {
@@ -5546,12 +4861,6 @@ func (o GetCertificateAuthoritiesCertificateAuthorityCollectionOutput) ToGetCert
 
 func (o GetCertificateAuthoritiesCertificateAuthorityCollectionOutput) ToGetCertificateAuthoritiesCertificateAuthorityCollectionOutputWithContext(ctx context.Context) GetCertificateAuthoritiesCertificateAuthorityCollectionOutput {
 	return o
-}
-
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificateAuthoritiesCertificateAuthorityCollection] {
-	return pulumix.Output[GetCertificateAuthoritiesCertificateAuthorityCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetCertificateAuthoritiesCertificateAuthorityCollectionOutput) Items() GetCertificateAuthoritiesCertificateAuthorityCollectionItemArrayOutput {
@@ -5574,12 +4883,6 @@ func (o GetCertificateAuthoritiesCertificateAuthorityCollectionArrayOutput) ToGe
 	return o
 }
 
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateAuthoritiesCertificateAuthorityCollection] {
-	return pulumix.Output[[]GetCertificateAuthoritiesCertificateAuthorityCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCertificateAuthoritiesCertificateAuthorityCollectionArrayOutput) Index(i pulumi.IntInput) GetCertificateAuthoritiesCertificateAuthorityCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCertificateAuthoritiesCertificateAuthorityCollection {
 		return vs[0].([]GetCertificateAuthoritiesCertificateAuthorityCollection)[vs[1].(int)]
@@ -5593,37 +4896,37 @@ type GetCertificateAuthoritiesCertificateAuthorityCollectionItem struct {
 	// The details of the certificate revocation list (CRL).
 	CertificateRevocationListDetails []GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetail `pulumi:"certificateRevocationListDetails"`
 	// A filter that returns only resources that match the given compartment OCID.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The origin of the CA.
-	ConfigType string `pulumi:"configType"`
+	ConfigType *string `pulumi:"configType"`
 	// The metadata details of the certificate authority (CA) version. This summary object does not contain the CA contents.
 	CurrentVersions []GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersion `pulumi:"currentVersions"`
 	// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A brief description of the CA.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the CA.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The OCID of the certificate authority (CA). If the parameter is set to null, the service lists all CAs.
-	IssuerCertificateAuthorityId string `pulumi:"issuerCertificateAuthorityId"`
+	IssuerCertificateAuthorityId *string `pulumi:"issuerCertificateAuthorityId"`
 	// The OCID of the Oracle Cloud Infrastructure Vault key used to encrypt the CA.
-	KmsKeyId string `pulumi:"kmsKeyId"`
+	KmsKeyId *string `pulumi:"kmsKeyId"`
 	// Additional information about the current CA lifecycle state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// A filter that returns only resources that match the specified name.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The algorithm used to sign public key certificates that the CA issues.
-	SigningAlgorithm string `pulumi:"signingAlgorithm"`
+	SigningAlgorithm *string `pulumi:"signingAlgorithm"`
 	// A filter that returns only resources that match the given lifecycle state. The state value is case-insensitive.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.
 	Subjects []GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubject `pulumi:"subjects"`
 	// A property indicating when the CA was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// An optional property indicating when to delete the CA version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfDeletion string `pulumi:"timeOfDeletion"`
+	TimeOfDeletion *string `pulumi:"timeOfDeletion"`
 }
 
 // GetCertificateAuthoritiesCertificateAuthorityCollectionItemInput is an input type that accepts GetCertificateAuthoritiesCertificateAuthorityCollectionItemArgs and GetCertificateAuthoritiesCertificateAuthorityCollectionItemOutput values.
@@ -5644,37 +4947,37 @@ type GetCertificateAuthoritiesCertificateAuthorityCollectionItemArgs struct {
 	// The details of the certificate revocation list (CRL).
 	CertificateRevocationListDetails GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailArrayInput `pulumi:"certificateRevocationListDetails"`
 	// A filter that returns only resources that match the given compartment OCID.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// The origin of the CA.
-	ConfigType pulumi.StringInput `pulumi:"configType"`
+	ConfigType pulumi.StringPtrInput `pulumi:"configType"`
 	// The metadata details of the certificate authority (CA) version. This summary object does not contain the CA contents.
 	CurrentVersions GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionArrayInput `pulumi:"currentVersions"`
 	// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A brief description of the CA.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The OCID of the CA.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// The OCID of the certificate authority (CA). If the parameter is set to null, the service lists all CAs.
-	IssuerCertificateAuthorityId pulumi.StringInput `pulumi:"issuerCertificateAuthorityId"`
+	IssuerCertificateAuthorityId pulumi.StringPtrInput `pulumi:"issuerCertificateAuthorityId"`
 	// The OCID of the Oracle Cloud Infrastructure Vault key used to encrypt the CA.
-	KmsKeyId pulumi.StringInput `pulumi:"kmsKeyId"`
+	KmsKeyId pulumi.StringPtrInput `pulumi:"kmsKeyId"`
 	// Additional information about the current CA lifecycle state.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// A filter that returns only resources that match the specified name.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// The algorithm used to sign public key certificates that the CA issues.
-	SigningAlgorithm pulumi.StringInput `pulumi:"signingAlgorithm"`
+	SigningAlgorithm pulumi.StringPtrInput `pulumi:"signingAlgorithm"`
 	// A filter that returns only resources that match the given lifecycle state. The state value is case-insensitive.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.
 	Subjects GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectArrayInput `pulumi:"subjects"`
 	// A property indicating when the CA was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// An optional property indicating when to delete the CA version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfDeletion pulumi.StringInput `pulumi:"timeOfDeletion"`
+	TimeOfDeletion pulumi.StringPtrInput `pulumi:"timeOfDeletion"`
 }
 
 func (GetCertificateAuthoritiesCertificateAuthorityCollectionItemArgs) ElementType() reflect.Type {
@@ -5687,12 +4990,6 @@ func (i GetCertificateAuthoritiesCertificateAuthorityCollectionItemArgs) ToGetCe
 
 func (i GetCertificateAuthoritiesCertificateAuthorityCollectionItemArgs) ToGetCertificateAuthoritiesCertificateAuthorityCollectionItemOutputWithContext(ctx context.Context) GetCertificateAuthoritiesCertificateAuthorityCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateAuthoritiesCertificateAuthorityCollectionItemOutput)
-}
-
-func (i GetCertificateAuthoritiesCertificateAuthorityCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetCertificateAuthoritiesCertificateAuthorityCollectionItem] {
-	return pulumix.Output[GetCertificateAuthoritiesCertificateAuthorityCollectionItem]{
-		OutputState: i.ToGetCertificateAuthoritiesCertificateAuthorityCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetCertificateAuthoritiesCertificateAuthorityCollectionItemArrayInput is an input type that accepts GetCertificateAuthoritiesCertificateAuthorityCollectionItemArray and GetCertificateAuthoritiesCertificateAuthorityCollectionItemArrayOutput values.
@@ -5720,12 +5017,6 @@ func (i GetCertificateAuthoritiesCertificateAuthorityCollectionItemArray) ToGetC
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateAuthoritiesCertificateAuthorityCollectionItemArrayOutput)
 }
 
-func (i GetCertificateAuthoritiesCertificateAuthorityCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateAuthoritiesCertificateAuthorityCollectionItem] {
-	return pulumix.Output[[]GetCertificateAuthoritiesCertificateAuthorityCollectionItem]{
-		OutputState: i.ToGetCertificateAuthoritiesCertificateAuthorityCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCertificateAuthoritiesCertificateAuthorityCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetCertificateAuthoritiesCertificateAuthorityCollectionItemOutput) ElementType() reflect.Type {
@@ -5738,12 +5029,6 @@ func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemOutput) ToGet
 
 func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemOutput) ToGetCertificateAuthoritiesCertificateAuthorityCollectionItemOutputWithContext(ctx context.Context) GetCertificateAuthoritiesCertificateAuthorityCollectionItemOutput {
 	return o
-}
-
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificateAuthoritiesCertificateAuthorityCollectionItem] {
-	return pulumix.Output[GetCertificateAuthoritiesCertificateAuthorityCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemOutput) CertificateAuthorityConfigs() GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigArrayOutput {
@@ -5767,13 +5052,13 @@ func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemOutput) Certi
 }
 
 // A filter that returns only resources that match the given compartment OCID.
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The origin of the CA.
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemOutput) ConfigType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItem) string { return v.ConfigType }).(pulumi.StringOutput)
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemOutput) ConfigType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItem) *string { return v.ConfigType }).(pulumi.StringPtrOutput)
 }
 
 // The metadata details of the certificate authority (CA) version. This summary object does not contain the CA contents.
@@ -5791,8 +5076,8 @@ func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemOutput) Defin
 }
 
 // A brief description of the CA.
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItem) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -5803,40 +5088,40 @@ func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemOutput) Freef
 }
 
 // The OCID of the CA.
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the certificate authority (CA). If the parameter is set to null, the service lists all CAs.
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemOutput) IssuerCertificateAuthorityId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItem) string {
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemOutput) IssuerCertificateAuthorityId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItem) *string {
 		return v.IssuerCertificateAuthorityId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the Oracle Cloud Infrastructure Vault key used to encrypt the CA.
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemOutput) KmsKeyId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItem) string { return v.KmsKeyId }).(pulumi.StringOutput)
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemOutput) KmsKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItem) *string { return v.KmsKeyId }).(pulumi.StringPtrOutput)
 }
 
 // Additional information about the current CA lifecycle state.
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItem) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // A filter that returns only resources that match the specified name.
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItem) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The algorithm used to sign public key certificates that the CA issues.
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemOutput) SigningAlgorithm() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItem) string { return v.SigningAlgorithm }).(pulumi.StringOutput)
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemOutput) SigningAlgorithm() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItem) *string { return v.SigningAlgorithm }).(pulumi.StringPtrOutput)
 }
 
 // A filter that returns only resources that match the given lifecycle state. The state value is case-insensitive.
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.
@@ -5847,13 +5132,13 @@ func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemOutput) Subje
 }
 
 // A property indicating when the CA was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // An optional property indicating when to delete the CA version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemOutput) TimeOfDeletion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItem) string { return v.TimeOfDeletion }).(pulumi.StringOutput)
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemOutput) TimeOfDeletion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItem) *string { return v.TimeOfDeletion }).(pulumi.StringPtrOutput)
 }
 
 type GetCertificateAuthoritiesCertificateAuthorityCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -5870,12 +5155,6 @@ func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemArrayOutput) 
 	return o
 }
 
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateAuthoritiesCertificateAuthorityCollectionItem] {
-	return pulumix.Output[[]GetCertificateAuthoritiesCertificateAuthorityCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemArrayOutput) Index(i pulumi.IntInput) GetCertificateAuthoritiesCertificateAuthorityCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCertificateAuthoritiesCertificateAuthorityCollectionItem {
 		return vs[0].([]GetCertificateAuthoritiesCertificateAuthorityCollectionItem)[vs[1].(int)]
@@ -5884,17 +5163,17 @@ func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemArrayOutput) 
 
 type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfig struct {
 	// The origin of the CA.
-	ConfigType string `pulumi:"configType"`
+	ConfigType *string `pulumi:"configType"`
 	// The OCID of the certificate authority (CA). If the parameter is set to null, the service lists all CAs.
-	IssuerCertificateAuthorityId string `pulumi:"issuerCertificateAuthorityId"`
+	IssuerCertificateAuthorityId *string `pulumi:"issuerCertificateAuthorityId"`
 	// The algorithm used to sign public key certificates that the CA issues.
-	SigningAlgorithm string `pulumi:"signingAlgorithm"`
+	SigningAlgorithm *string `pulumi:"signingAlgorithm"`
 	// The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.
 	Subjects []GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubject `pulumi:"subjects"`
 	// An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
 	Validities []GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigValidity `pulumi:"validities"`
 	// The name of the CA version. When this value is not null, the name is unique across CA versions for a given CA.
-	VersionName string `pulumi:"versionName"`
+	VersionName *string `pulumi:"versionName"`
 }
 
 // GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigInput is an input type that accepts GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigArgs and GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigOutput values.
@@ -5910,17 +5189,17 @@ type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAutho
 
 type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigArgs struct {
 	// The origin of the CA.
-	ConfigType pulumi.StringInput `pulumi:"configType"`
+	ConfigType pulumi.StringPtrInput `pulumi:"configType"`
 	// The OCID of the certificate authority (CA). If the parameter is set to null, the service lists all CAs.
-	IssuerCertificateAuthorityId pulumi.StringInput `pulumi:"issuerCertificateAuthorityId"`
+	IssuerCertificateAuthorityId pulumi.StringPtrInput `pulumi:"issuerCertificateAuthorityId"`
 	// The algorithm used to sign public key certificates that the CA issues.
-	SigningAlgorithm pulumi.StringInput `pulumi:"signingAlgorithm"`
+	SigningAlgorithm pulumi.StringPtrInput `pulumi:"signingAlgorithm"`
 	// The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.
 	Subjects GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubjectArrayInput `pulumi:"subjects"`
 	// An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
 	Validities GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigValidityArrayInput `pulumi:"validities"`
 	// The name of the CA version. When this value is not null, the name is unique across CA versions for a given CA.
-	VersionName pulumi.StringInput `pulumi:"versionName"`
+	VersionName pulumi.StringPtrInput `pulumi:"versionName"`
 }
 
 func (GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigArgs) ElementType() reflect.Type {
@@ -5933,12 +5212,6 @@ func (i GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAu
 
 func (i GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigArgs) ToGetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigOutputWithContext(ctx context.Context) GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigOutput)
-}
-
-func (i GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfig] {
-	return pulumix.Output[GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfig]{
-		OutputState: i.ToGetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigArrayInput is an input type that accepts GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigArray and GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigArrayOutput values.
@@ -5966,12 +5239,6 @@ func (i GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAu
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigArrayOutput)
 }
 
-func (i GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfig] {
-	return pulumix.Output[[]GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfig]{
-		OutputState: i.ToGetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigOutput struct{ *pulumi.OutputState }
 
 func (GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigOutput) ElementType() reflect.Type {
@@ -5986,31 +5253,25 @@ func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAu
 	return o
 }
 
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfig] {
-	return pulumix.Output[GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The origin of the CA.
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigOutput) ConfigType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfig) string {
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigOutput) ConfigType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfig) *string {
 		return v.ConfigType
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the certificate authority (CA). If the parameter is set to null, the service lists all CAs.
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigOutput) IssuerCertificateAuthorityId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfig) string {
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigOutput) IssuerCertificateAuthorityId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfig) *string {
 		return v.IssuerCertificateAuthorityId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The algorithm used to sign public key certificates that the CA issues.
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigOutput) SigningAlgorithm() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfig) string {
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigOutput) SigningAlgorithm() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfig) *string {
 		return v.SigningAlgorithm
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.
@@ -6028,10 +5289,10 @@ func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAu
 }
 
 // The name of the CA version. When this value is not null, the name is unique across CA versions for a given CA.
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigOutput) VersionName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfig) string {
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigOutput) VersionName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfig) *string {
 		return v.VersionName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigArrayOutput struct{ *pulumi.OutputState }
@@ -6048,12 +5309,6 @@ func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAu
 	return o
 }
 
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfig] {
-	return pulumix.Output[[]GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigArrayOutput) Index(i pulumi.IntInput) GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfig {
 		return vs[0].([]GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfig)[vs[1].(int)]
@@ -6062,39 +5317,39 @@ func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAu
 
 type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubject struct {
 	// Common name or fully-qualified domain name (RDN CN).
-	CommonName string `pulumi:"commonName"`
+	CommonName *string `pulumi:"commonName"`
 	// Country name (RDN C).
-	Country string `pulumi:"country"`
+	Country *string `pulumi:"country"`
 	// Distinguished name qualifier(RDN DNQ).
-	DistinguishedNameQualifier string `pulumi:"distinguishedNameQualifier"`
+	DistinguishedNameQualifier *string `pulumi:"distinguishedNameQualifier"`
 	// Domain component (RDN DC).
-	DomainComponent string `pulumi:"domainComponent"`
+	DomainComponent *string `pulumi:"domainComponent"`
 	// Personal generational qualifier (for example, Sr., Jr. 3rd, or IV).
-	GenerationQualifier string `pulumi:"generationQualifier"`
+	GenerationQualifier *string `pulumi:"generationQualifier"`
 	// Personal given name (RDN G or GN).
-	GivenName string `pulumi:"givenName"`
+	GivenName *string `pulumi:"givenName"`
 	// Personal initials.
-	Initials string `pulumi:"initials"`
+	Initials *string `pulumi:"initials"`
 	// Locality (RDN L).
-	LocalityName string `pulumi:"localityName"`
+	LocalityName *string `pulumi:"localityName"`
 	// Organization (RDN O).
-	Organization string `pulumi:"organization"`
+	Organization *string `pulumi:"organization"`
 	// Organizational unit (RDN OU).
-	OrganizationalUnit string `pulumi:"organizationalUnit"`
+	OrganizationalUnit *string `pulumi:"organizationalUnit"`
 	// Subject pseudonym.
-	Pseudonym string `pulumi:"pseudonym"`
+	Pseudonym *string `pulumi:"pseudonym"`
 	// Unique subject identifier, which is not the same as the certificate serial number (RDN SERIALNUMBER).
-	SerialNumber string `pulumi:"serialNumber"`
+	SerialNumber *string `pulumi:"serialNumber"`
 	// State or province name (RDN ST or S).
-	StateOrProvinceName string `pulumi:"stateOrProvinceName"`
+	StateOrProvinceName *string `pulumi:"stateOrProvinceName"`
 	// Street address (RDN STREET).
-	Street string `pulumi:"street"`
+	Street *string `pulumi:"street"`
 	// Personal surname (RDN SN).
-	Surname string `pulumi:"surname"`
+	Surname *string `pulumi:"surname"`
 	// Title (RDN T or TITLE).
-	Title string `pulumi:"title"`
+	Title *string `pulumi:"title"`
 	// User ID (RDN UID).
-	UserId string `pulumi:"userId"`
+	UserId *string `pulumi:"userId"`
 }
 
 // GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubjectInput is an input type that accepts GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubjectArgs and GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubjectOutput values.
@@ -6110,39 +5365,39 @@ type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAutho
 
 type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubjectArgs struct {
 	// Common name or fully-qualified domain name (RDN CN).
-	CommonName pulumi.StringInput `pulumi:"commonName"`
+	CommonName pulumi.StringPtrInput `pulumi:"commonName"`
 	// Country name (RDN C).
-	Country pulumi.StringInput `pulumi:"country"`
+	Country pulumi.StringPtrInput `pulumi:"country"`
 	// Distinguished name qualifier(RDN DNQ).
-	DistinguishedNameQualifier pulumi.StringInput `pulumi:"distinguishedNameQualifier"`
+	DistinguishedNameQualifier pulumi.StringPtrInput `pulumi:"distinguishedNameQualifier"`
 	// Domain component (RDN DC).
-	DomainComponent pulumi.StringInput `pulumi:"domainComponent"`
+	DomainComponent pulumi.StringPtrInput `pulumi:"domainComponent"`
 	// Personal generational qualifier (for example, Sr., Jr. 3rd, or IV).
-	GenerationQualifier pulumi.StringInput `pulumi:"generationQualifier"`
+	GenerationQualifier pulumi.StringPtrInput `pulumi:"generationQualifier"`
 	// Personal given name (RDN G or GN).
-	GivenName pulumi.StringInput `pulumi:"givenName"`
+	GivenName pulumi.StringPtrInput `pulumi:"givenName"`
 	// Personal initials.
-	Initials pulumi.StringInput `pulumi:"initials"`
+	Initials pulumi.StringPtrInput `pulumi:"initials"`
 	// Locality (RDN L).
-	LocalityName pulumi.StringInput `pulumi:"localityName"`
+	LocalityName pulumi.StringPtrInput `pulumi:"localityName"`
 	// Organization (RDN O).
-	Organization pulumi.StringInput `pulumi:"organization"`
+	Organization pulumi.StringPtrInput `pulumi:"organization"`
 	// Organizational unit (RDN OU).
-	OrganizationalUnit pulumi.StringInput `pulumi:"organizationalUnit"`
+	OrganizationalUnit pulumi.StringPtrInput `pulumi:"organizationalUnit"`
 	// Subject pseudonym.
-	Pseudonym pulumi.StringInput `pulumi:"pseudonym"`
+	Pseudonym pulumi.StringPtrInput `pulumi:"pseudonym"`
 	// Unique subject identifier, which is not the same as the certificate serial number (RDN SERIALNUMBER).
-	SerialNumber pulumi.StringInput `pulumi:"serialNumber"`
+	SerialNumber pulumi.StringPtrInput `pulumi:"serialNumber"`
 	// State or province name (RDN ST or S).
-	StateOrProvinceName pulumi.StringInput `pulumi:"stateOrProvinceName"`
+	StateOrProvinceName pulumi.StringPtrInput `pulumi:"stateOrProvinceName"`
 	// Street address (RDN STREET).
-	Street pulumi.StringInput `pulumi:"street"`
+	Street pulumi.StringPtrInput `pulumi:"street"`
 	// Personal surname (RDN SN).
-	Surname pulumi.StringInput `pulumi:"surname"`
+	Surname pulumi.StringPtrInput `pulumi:"surname"`
 	// Title (RDN T or TITLE).
-	Title pulumi.StringInput `pulumi:"title"`
+	Title pulumi.StringPtrInput `pulumi:"title"`
 	// User ID (RDN UID).
-	UserId pulumi.StringInput `pulumi:"userId"`
+	UserId pulumi.StringPtrInput `pulumi:"userId"`
 }
 
 func (GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubjectArgs) ElementType() reflect.Type {
@@ -6155,12 +5410,6 @@ func (i GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAu
 
 func (i GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubjectArgs) ToGetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubjectOutputWithContext(ctx context.Context) GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubjectOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubjectOutput)
-}
-
-func (i GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubjectArgs) ToOutput(ctx context.Context) pulumix.Output[GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubject] {
-	return pulumix.Output[GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubject]{
-		OutputState: i.ToGetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubjectOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubjectArrayInput is an input type that accepts GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubjectArray and GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubjectArrayOutput values.
@@ -6188,12 +5437,6 @@ func (i GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAu
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubjectArrayOutput)
 }
 
-func (i GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubjectArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubject] {
-	return pulumix.Output[[]GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubject]{
-		OutputState: i.ToGetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubjectArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubjectOutput struct{ *pulumi.OutputState }
 
 func (GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubjectOutput) ElementType() reflect.Type {
@@ -6208,129 +5451,123 @@ func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAu
 	return o
 }
 
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubjectOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubject] {
-	return pulumix.Output[GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubject]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Common name or fully-qualified domain name (RDN CN).
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubjectOutput) CommonName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubject) string {
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubjectOutput) CommonName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubject) *string {
 		return v.CommonName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Country name (RDN C).
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubjectOutput) Country() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubject) string {
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubjectOutput) Country() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubject) *string {
 		return v.Country
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Distinguished name qualifier(RDN DNQ).
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubjectOutput) DistinguishedNameQualifier() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubject) string {
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubjectOutput) DistinguishedNameQualifier() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubject) *string {
 		return v.DistinguishedNameQualifier
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Domain component (RDN DC).
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubjectOutput) DomainComponent() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubject) string {
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubjectOutput) DomainComponent() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubject) *string {
 		return v.DomainComponent
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Personal generational qualifier (for example, Sr., Jr. 3rd, or IV).
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubjectOutput) GenerationQualifier() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubject) string {
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubjectOutput) GenerationQualifier() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubject) *string {
 		return v.GenerationQualifier
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Personal given name (RDN G or GN).
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubjectOutput) GivenName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubject) string {
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubjectOutput) GivenName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubject) *string {
 		return v.GivenName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Personal initials.
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubjectOutput) Initials() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubject) string {
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubjectOutput) Initials() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubject) *string {
 		return v.Initials
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Locality (RDN L).
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubjectOutput) LocalityName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubject) string {
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubjectOutput) LocalityName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubject) *string {
 		return v.LocalityName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Organization (RDN O).
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubjectOutput) Organization() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubject) string {
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubjectOutput) Organization() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubject) *string {
 		return v.Organization
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Organizational unit (RDN OU).
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubjectOutput) OrganizationalUnit() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubject) string {
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubjectOutput) OrganizationalUnit() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubject) *string {
 		return v.OrganizationalUnit
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Subject pseudonym.
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubjectOutput) Pseudonym() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubject) string {
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubjectOutput) Pseudonym() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubject) *string {
 		return v.Pseudonym
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Unique subject identifier, which is not the same as the certificate serial number (RDN SERIALNUMBER).
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubjectOutput) SerialNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubject) string {
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubjectOutput) SerialNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubject) *string {
 		return v.SerialNumber
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // State or province name (RDN ST or S).
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubjectOutput) StateOrProvinceName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubject) string {
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubjectOutput) StateOrProvinceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubject) *string {
 		return v.StateOrProvinceName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Street address (RDN STREET).
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubjectOutput) Street() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubject) string {
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubjectOutput) Street() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubject) *string {
 		return v.Street
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Personal surname (RDN SN).
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubjectOutput) Surname() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubject) string {
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubjectOutput) Surname() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubject) *string {
 		return v.Surname
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Title (RDN T or TITLE).
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubjectOutput) Title() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubject) string {
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubjectOutput) Title() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubject) *string {
 		return v.Title
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // User ID (RDN UID).
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubjectOutput) UserId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubject) string {
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubjectOutput) UserId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubject) *string {
 		return v.UserId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubjectArrayOutput struct{ *pulumi.OutputState }
@@ -6347,12 +5584,6 @@ func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAu
 	return o
 }
 
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubjectArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubject] {
-	return pulumix.Output[[]GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubject]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubjectArrayOutput) Index(i pulumi.IntInput) GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubjectOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubject {
 		return vs[0].([]GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubject)[vs[1].(int)]
@@ -6361,9 +5592,9 @@ func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAu
 
 type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigValidity struct {
 	// The date on which the certificate validity period ends, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfValidityNotAfter string `pulumi:"timeOfValidityNotAfter"`
+	TimeOfValidityNotAfter *string `pulumi:"timeOfValidityNotAfter"`
 	// The date on which the certificate validity period begins, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfValidityNotBefore string `pulumi:"timeOfValidityNotBefore"`
+	TimeOfValidityNotBefore *string `pulumi:"timeOfValidityNotBefore"`
 }
 
 // GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigValidityInput is an input type that accepts GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigValidityArgs and GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigValidityOutput values.
@@ -6379,9 +5610,9 @@ type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAutho
 
 type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigValidityArgs struct {
 	// The date on which the certificate validity period ends, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfValidityNotAfter pulumi.StringInput `pulumi:"timeOfValidityNotAfter"`
+	TimeOfValidityNotAfter pulumi.StringPtrInput `pulumi:"timeOfValidityNotAfter"`
 	// The date on which the certificate validity period begins, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfValidityNotBefore pulumi.StringInput `pulumi:"timeOfValidityNotBefore"`
+	TimeOfValidityNotBefore pulumi.StringPtrInput `pulumi:"timeOfValidityNotBefore"`
 }
 
 func (GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigValidityArgs) ElementType() reflect.Type {
@@ -6394,12 +5625,6 @@ func (i GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAu
 
 func (i GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigValidityArgs) ToGetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigValidityOutputWithContext(ctx context.Context) GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigValidityOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigValidityOutput)
-}
-
-func (i GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigValidityArgs) ToOutput(ctx context.Context) pulumix.Output[GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigValidity] {
-	return pulumix.Output[GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigValidity]{
-		OutputState: i.ToGetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigValidityOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigValidityArrayInput is an input type that accepts GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigValidityArray and GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigValidityArrayOutput values.
@@ -6427,12 +5652,6 @@ func (i GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAu
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigValidityArrayOutput)
 }
 
-func (i GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigValidityArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigValidity] {
-	return pulumix.Output[[]GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigValidity]{
-		OutputState: i.ToGetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigValidityArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigValidityOutput struct{ *pulumi.OutputState }
 
 func (GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigValidityOutput) ElementType() reflect.Type {
@@ -6447,24 +5666,18 @@ func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAu
 	return o
 }
 
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigValidityOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigValidity] {
-	return pulumix.Output[GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigValidity]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The date on which the certificate validity period ends, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigValidityOutput) TimeOfValidityNotAfter() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigValidity) string {
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigValidityOutput) TimeOfValidityNotAfter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigValidity) *string {
 		return v.TimeOfValidityNotAfter
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The date on which the certificate validity period begins, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigValidityOutput) TimeOfValidityNotBefore() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigValidity) string {
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigValidityOutput) TimeOfValidityNotBefore() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigValidity) *string {
 		return v.TimeOfValidityNotBefore
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigValidityArrayOutput struct{ *pulumi.OutputState }
@@ -6481,12 +5694,6 @@ func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAu
 	return o
 }
 
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigValidityArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigValidity] {
-	return pulumix.Output[[]GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigValidity]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigValidityArrayOutput) Index(i pulumi.IntInput) GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigValidityOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigValidity {
 		return vs[0].([]GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigValidity)[vs[1].(int)]
@@ -6495,11 +5702,11 @@ func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAu
 
 type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRule struct {
 	// A property indicating the maximum validity duration, in days, of subordinate CA's issued by this CA. Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
-	CertificateAuthorityMaxValidityDuration string `pulumi:"certificateAuthorityMaxValidityDuration"`
+	CertificateAuthorityMaxValidityDuration *string `pulumi:"certificateAuthorityMaxValidityDuration"`
 	// A property indicating the maximum validity duration, in days, of leaf certificates issued by this CA. Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
-	LeafCertificateMaxValidityDuration string `pulumi:"leafCertificateMaxValidityDuration"`
+	LeafCertificateMaxValidityDuration *string `pulumi:"leafCertificateMaxValidityDuration"`
 	// The type of rule, whether a renewal rule regarding when to renew the CA or an issuance expiry rule that governs how long the certificates and CAs issued by the CA are valid. (For internal use only) An internal issuance rule defines the number and type of certificates that the CA can issue.
-	RuleType string `pulumi:"ruleType"`
+	RuleType *string `pulumi:"ruleType"`
 }
 
 // GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleInput is an input type that accepts GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleArgs and GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleOutput values.
@@ -6515,11 +5722,11 @@ type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAutho
 
 type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleArgs struct {
 	// A property indicating the maximum validity duration, in days, of subordinate CA's issued by this CA. Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
-	CertificateAuthorityMaxValidityDuration pulumi.StringInput `pulumi:"certificateAuthorityMaxValidityDuration"`
+	CertificateAuthorityMaxValidityDuration pulumi.StringPtrInput `pulumi:"certificateAuthorityMaxValidityDuration"`
 	// A property indicating the maximum validity duration, in days, of leaf certificates issued by this CA. Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
-	LeafCertificateMaxValidityDuration pulumi.StringInput `pulumi:"leafCertificateMaxValidityDuration"`
+	LeafCertificateMaxValidityDuration pulumi.StringPtrInput `pulumi:"leafCertificateMaxValidityDuration"`
 	// The type of rule, whether a renewal rule regarding when to renew the CA or an issuance expiry rule that governs how long the certificates and CAs issued by the CA are valid. (For internal use only) An internal issuance rule defines the number and type of certificates that the CA can issue.
-	RuleType pulumi.StringInput `pulumi:"ruleType"`
+	RuleType pulumi.StringPtrInput `pulumi:"ruleType"`
 }
 
 func (GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleArgs) ElementType() reflect.Type {
@@ -6532,12 +5739,6 @@ func (i GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAu
 
 func (i GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleArgs) ToGetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleOutputWithContext(ctx context.Context) GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleOutput)
-}
-
-func (i GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRule] {
-	return pulumix.Output[GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRule]{
-		OutputState: i.ToGetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleArrayInput is an input type that accepts GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleArray and GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleArrayOutput values.
@@ -6565,12 +5766,6 @@ func (i GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAu
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleArrayOutput)
 }
 
-func (i GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRule] {
-	return pulumix.Output[[]GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRule]{
-		OutputState: i.ToGetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleOutput struct{ *pulumi.OutputState }
 
 func (GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleOutput) ElementType() reflect.Type {
@@ -6585,31 +5780,25 @@ func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAu
 	return o
 }
 
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRule] {
-	return pulumix.Output[GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A property indicating the maximum validity duration, in days, of subordinate CA's issued by this CA. Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleOutput) CertificateAuthorityMaxValidityDuration() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRule) string {
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleOutput) CertificateAuthorityMaxValidityDuration() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRule) *string {
 		return v.CertificateAuthorityMaxValidityDuration
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // A property indicating the maximum validity duration, in days, of leaf certificates issued by this CA. Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleOutput) LeafCertificateMaxValidityDuration() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRule) string {
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleOutput) LeafCertificateMaxValidityDuration() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRule) *string {
 		return v.LeafCertificateMaxValidityDuration
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The type of rule, whether a renewal rule regarding when to renew the CA or an issuance expiry rule that governs how long the certificates and CAs issued by the CA are valid. (For internal use only) An internal issuance rule defines the number and type of certificates that the CA can issue.
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleOutput) RuleType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRule) string {
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleOutput) RuleType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRule) *string {
 		return v.RuleType
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleArrayOutput struct{ *pulumi.OutputState }
@@ -6624,12 +5813,6 @@ func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAu
 
 func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleArrayOutput) ToGetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleArrayOutputWithContext(ctx context.Context) GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleArrayOutput {
 	return o
-}
-
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRule] {
-	return pulumix.Output[[]GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleArrayOutput) Index(i pulumi.IntInput) GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleOutput {
@@ -6675,12 +5858,6 @@ func (i GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRe
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailOutput)
 }
 
-func (i GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetail] {
-	return pulumix.Output[GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetail]{
-		OutputState: i.ToGetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailArrayInput is an input type that accepts GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailArray and GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailArrayOutput values.
 // You can construct a concrete instance of `GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailArrayInput` via:
 //
@@ -6706,12 +5883,6 @@ func (i GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRe
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailArrayOutput)
 }
 
-func (i GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetail] {
-	return pulumix.Output[[]GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetail]{
-		OutputState: i.ToGetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailOutput struct{ *pulumi.OutputState }
 
 func (GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailOutput) ElementType() reflect.Type {
@@ -6724,12 +5895,6 @@ func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRe
 
 func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailOutput) ToGetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailOutputWithContext(ctx context.Context) GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailOutput {
 	return o
-}
-
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetail] {
-	return pulumix.Output[GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Optional CRL access points, expressed using a format where the version number of the issuing CA is inserted wherever you include a pair of curly braces. This versioning scheme helps avoid collisions when new CA versions are created. For example, myCrlFileIssuedFromCAVersion{}.crl becomes myCrlFileIssuedFromCAVersion2.crl for CA version 2.
@@ -6760,12 +5925,6 @@ func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRe
 	return o
 }
 
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetail] {
-	return pulumix.Output[[]GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailArrayOutput) Index(i pulumi.IntInput) GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetail {
 		return vs[0].([]GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetail)[vs[1].(int)]
@@ -6774,11 +5933,11 @@ func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRe
 
 type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailObjectStorageConfig struct {
 	// The name of the bucket where the CRL is stored.
-	ObjectStorageBucketName string `pulumi:"objectStorageBucketName"`
+	ObjectStorageBucketName *string `pulumi:"objectStorageBucketName"`
 	// The tenancy of the bucket where the CRL is stored.
-	ObjectStorageNamespace string `pulumi:"objectStorageNamespace"`
+	ObjectStorageNamespace *string `pulumi:"objectStorageNamespace"`
 	// The object name in the bucket where the CRL is stored, expressed using a format where the version number of the issuing CA is inserted as part of the Object Storage object name wherever you include a pair of curly braces. This versioning scheme helps avoid collisions when new CA versions are created. For example, myCrlFileIssuedFromCAVersion{}.crl becomes myCrlFileIssuedFromCAVersion2.crl for CA version 2.
-	ObjectStorageObjectNameFormat string `pulumi:"objectStorageObjectNameFormat"`
+	ObjectStorageObjectNameFormat *string `pulumi:"objectStorageObjectNameFormat"`
 }
 
 // GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailObjectStorageConfigInput is an input type that accepts GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailObjectStorageConfigArgs and GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailObjectStorageConfigOutput values.
@@ -6794,11 +5953,11 @@ type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevoc
 
 type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailObjectStorageConfigArgs struct {
 	// The name of the bucket where the CRL is stored.
-	ObjectStorageBucketName pulumi.StringInput `pulumi:"objectStorageBucketName"`
+	ObjectStorageBucketName pulumi.StringPtrInput `pulumi:"objectStorageBucketName"`
 	// The tenancy of the bucket where the CRL is stored.
-	ObjectStorageNamespace pulumi.StringInput `pulumi:"objectStorageNamespace"`
+	ObjectStorageNamespace pulumi.StringPtrInput `pulumi:"objectStorageNamespace"`
 	// The object name in the bucket where the CRL is stored, expressed using a format where the version number of the issuing CA is inserted as part of the Object Storage object name wherever you include a pair of curly braces. This versioning scheme helps avoid collisions when new CA versions are created. For example, myCrlFileIssuedFromCAVersion{}.crl becomes myCrlFileIssuedFromCAVersion2.crl for CA version 2.
-	ObjectStorageObjectNameFormat pulumi.StringInput `pulumi:"objectStorageObjectNameFormat"`
+	ObjectStorageObjectNameFormat pulumi.StringPtrInput `pulumi:"objectStorageObjectNameFormat"`
 }
 
 func (GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailObjectStorageConfigArgs) ElementType() reflect.Type {
@@ -6811,12 +5970,6 @@ func (i GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRe
 
 func (i GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailObjectStorageConfigArgs) ToGetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailObjectStorageConfigOutputWithContext(ctx context.Context) GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailObjectStorageConfigOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailObjectStorageConfigOutput)
-}
-
-func (i GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailObjectStorageConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailObjectStorageConfig] {
-	return pulumix.Output[GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailObjectStorageConfig]{
-		OutputState: i.ToGetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailObjectStorageConfigOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailObjectStorageConfigArrayInput is an input type that accepts GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailObjectStorageConfigArray and GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailObjectStorageConfigArrayOutput values.
@@ -6844,12 +5997,6 @@ func (i GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRe
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailObjectStorageConfigArrayOutput)
 }
 
-func (i GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailObjectStorageConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailObjectStorageConfig] {
-	return pulumix.Output[[]GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailObjectStorageConfig]{
-		OutputState: i.ToGetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailObjectStorageConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailObjectStorageConfigOutput struct{ *pulumi.OutputState }
 
 func (GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailObjectStorageConfigOutput) ElementType() reflect.Type {
@@ -6864,31 +6011,25 @@ func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRe
 	return o
 }
 
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailObjectStorageConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailObjectStorageConfig] {
-	return pulumix.Output[GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailObjectStorageConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The name of the bucket where the CRL is stored.
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailObjectStorageConfigOutput) ObjectStorageBucketName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailObjectStorageConfig) string {
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailObjectStorageConfigOutput) ObjectStorageBucketName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailObjectStorageConfig) *string {
 		return v.ObjectStorageBucketName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The tenancy of the bucket where the CRL is stored.
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailObjectStorageConfigOutput) ObjectStorageNamespace() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailObjectStorageConfig) string {
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailObjectStorageConfigOutput) ObjectStorageNamespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailObjectStorageConfig) *string {
 		return v.ObjectStorageNamespace
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The object name in the bucket where the CRL is stored, expressed using a format where the version number of the issuing CA is inserted as part of the Object Storage object name wherever you include a pair of curly braces. This versioning scheme helps avoid collisions when new CA versions are created. For example, myCrlFileIssuedFromCAVersion{}.crl becomes myCrlFileIssuedFromCAVersion2.crl for CA version 2.
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailObjectStorageConfigOutput) ObjectStorageObjectNameFormat() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailObjectStorageConfig) string {
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailObjectStorageConfigOutput) ObjectStorageObjectNameFormat() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailObjectStorageConfig) *string {
 		return v.ObjectStorageObjectNameFormat
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailObjectStorageConfigArrayOutput struct{ *pulumi.OutputState }
@@ -6905,12 +6046,6 @@ func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRe
 	return o
 }
 
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailObjectStorageConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailObjectStorageConfig] {
-	return pulumix.Output[[]GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailObjectStorageConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailObjectStorageConfigArrayOutput) Index(i pulumi.IntInput) GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailObjectStorageConfigOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailObjectStorageConfig {
 		return vs[0].([]GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailObjectStorageConfig)[vs[1].(int)]
@@ -6919,25 +6054,25 @@ func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRe
 
 type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersion struct {
 	// The OCID of the certificate authority (CA). If the parameter is set to null, the service lists all CAs.
-	CertificateAuthorityId string `pulumi:"certificateAuthorityId"`
+	CertificateAuthorityId *string `pulumi:"certificateAuthorityId"`
 	// The version number of the issuing CA.
-	IssuerCaVersionNumber string `pulumi:"issuerCaVersionNumber"`
+	IssuerCaVersionNumber *string `pulumi:"issuerCaVersionNumber"`
 	// The current revocation status of the entity.
 	RevocationStatuses []GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionRevocationStatus `pulumi:"revocationStatuses"`
 	// Unique subject identifier, which is not the same as the certificate serial number (RDN SERIALNUMBER).
-	SerialNumber string `pulumi:"serialNumber"`
+	SerialNumber *string `pulumi:"serialNumber"`
 	// A list of rotation states for this CA version.
 	Stages []string `pulumi:"stages"`
 	// A property indicating when the CA was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// An optional property indicating when to delete the CA version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfDeletion string `pulumi:"timeOfDeletion"`
+	TimeOfDeletion *string `pulumi:"timeOfDeletion"`
 	// An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
 	Validities []GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionValidity `pulumi:"validities"`
 	// The name of the CA version. When this value is not null, the name is unique across CA versions for a given CA.
-	VersionName string `pulumi:"versionName"`
+	VersionName *string `pulumi:"versionName"`
 	// The version number of the CA.
-	VersionNumber string `pulumi:"versionNumber"`
+	VersionNumber *string `pulumi:"versionNumber"`
 }
 
 // GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionInput is an input type that accepts GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionArgs and GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionOutput values.
@@ -6953,25 +6088,25 @@ type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionIn
 
 type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionArgs struct {
 	// The OCID of the certificate authority (CA). If the parameter is set to null, the service lists all CAs.
-	CertificateAuthorityId pulumi.StringInput `pulumi:"certificateAuthorityId"`
+	CertificateAuthorityId pulumi.StringPtrInput `pulumi:"certificateAuthorityId"`
 	// The version number of the issuing CA.
-	IssuerCaVersionNumber pulumi.StringInput `pulumi:"issuerCaVersionNumber"`
+	IssuerCaVersionNumber pulumi.StringPtrInput `pulumi:"issuerCaVersionNumber"`
 	// The current revocation status of the entity.
 	RevocationStatuses GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionRevocationStatusArrayInput `pulumi:"revocationStatuses"`
 	// Unique subject identifier, which is not the same as the certificate serial number (RDN SERIALNUMBER).
-	SerialNumber pulumi.StringInput `pulumi:"serialNumber"`
+	SerialNumber pulumi.StringPtrInput `pulumi:"serialNumber"`
 	// A list of rotation states for this CA version.
 	Stages pulumi.StringArrayInput `pulumi:"stages"`
 	// A property indicating when the CA was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// An optional property indicating when to delete the CA version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfDeletion pulumi.StringInput `pulumi:"timeOfDeletion"`
+	TimeOfDeletion pulumi.StringPtrInput `pulumi:"timeOfDeletion"`
 	// An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
 	Validities GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionValidityArrayInput `pulumi:"validities"`
 	// The name of the CA version. When this value is not null, the name is unique across CA versions for a given CA.
-	VersionName pulumi.StringInput `pulumi:"versionName"`
+	VersionName pulumi.StringPtrInput `pulumi:"versionName"`
 	// The version number of the CA.
-	VersionNumber pulumi.StringInput `pulumi:"versionNumber"`
+	VersionNumber pulumi.StringPtrInput `pulumi:"versionNumber"`
 }
 
 func (GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionArgs) ElementType() reflect.Type {
@@ -6984,12 +6119,6 @@ func (i GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersio
 
 func (i GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionArgs) ToGetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionOutputWithContext(ctx context.Context) GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionOutput)
-}
-
-func (i GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionArgs) ToOutput(ctx context.Context) pulumix.Output[GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersion] {
-	return pulumix.Output[GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersion]{
-		OutputState: i.ToGetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionArrayInput is an input type that accepts GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionArray and GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionArrayOutput values.
@@ -7017,12 +6146,6 @@ func (i GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersio
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionArrayOutput)
 }
 
-func (i GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersion] {
-	return pulumix.Output[[]GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersion]{
-		OutputState: i.ToGetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionOutput struct{ *pulumi.OutputState }
 
 func (GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionOutput) ElementType() reflect.Type {
@@ -7037,24 +6160,18 @@ func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersio
 	return o
 }
 
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersion] {
-	return pulumix.Output[GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersion]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the certificate authority (CA). If the parameter is set to null, the service lists all CAs.
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionOutput) CertificateAuthorityId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersion) string {
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionOutput) CertificateAuthorityId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersion) *string {
 		return v.CertificateAuthorityId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The version number of the issuing CA.
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionOutput) IssuerCaVersionNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersion) string {
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionOutput) IssuerCaVersionNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersion) *string {
 		return v.IssuerCaVersionNumber
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The current revocation status of the entity.
@@ -7065,10 +6182,10 @@ func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersio
 }
 
 // Unique subject identifier, which is not the same as the certificate serial number (RDN SERIALNUMBER).
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionOutput) SerialNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersion) string {
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionOutput) SerialNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersion) *string {
 		return v.SerialNumber
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // A list of rotation states for this CA version.
@@ -7079,17 +6196,17 @@ func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersio
 }
 
 // A property indicating when the CA was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersion) string {
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersion) *string {
 		return v.TimeCreated
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // An optional property indicating when to delete the CA version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionOutput) TimeOfDeletion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersion) string {
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionOutput) TimeOfDeletion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersion) *string {
 		return v.TimeOfDeletion
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
@@ -7100,17 +6217,17 @@ func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersio
 }
 
 // The name of the CA version. When this value is not null, the name is unique across CA versions for a given CA.
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionOutput) VersionName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersion) string {
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionOutput) VersionName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersion) *string {
 		return v.VersionName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The version number of the CA.
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionOutput) VersionNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersion) string {
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionOutput) VersionNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersion) *string {
 		return v.VersionNumber
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionArrayOutput struct{ *pulumi.OutputState }
@@ -7127,12 +6244,6 @@ func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersio
 	return o
 }
 
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersion] {
-	return pulumix.Output[[]GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersion]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionArrayOutput) Index(i pulumi.IntInput) GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersion {
 		return vs[0].([]GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersion)[vs[1].(int)]
@@ -7141,9 +6252,9 @@ func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersio
 
 type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionRevocationStatus struct {
 	// The reason the certificate or certificate authority (CA) was revoked.
-	RevocationReason string `pulumi:"revocationReason"`
+	RevocationReason *string `pulumi:"revocationReason"`
 	// The time when the entity was revoked, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfRevocation string `pulumi:"timeOfRevocation"`
+	TimeOfRevocation *string `pulumi:"timeOfRevocation"`
 }
 
 // GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionRevocationStatusInput is an input type that accepts GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionRevocationStatusArgs and GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionRevocationStatusOutput values.
@@ -7159,9 +6270,9 @@ type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionRe
 
 type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionRevocationStatusArgs struct {
 	// The reason the certificate or certificate authority (CA) was revoked.
-	RevocationReason pulumi.StringInput `pulumi:"revocationReason"`
+	RevocationReason pulumi.StringPtrInput `pulumi:"revocationReason"`
 	// The time when the entity was revoked, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfRevocation pulumi.StringInput `pulumi:"timeOfRevocation"`
+	TimeOfRevocation pulumi.StringPtrInput `pulumi:"timeOfRevocation"`
 }
 
 func (GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionRevocationStatusArgs) ElementType() reflect.Type {
@@ -7174,12 +6285,6 @@ func (i GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersio
 
 func (i GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionRevocationStatusArgs) ToGetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionRevocationStatusOutputWithContext(ctx context.Context) GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionRevocationStatusOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionRevocationStatusOutput)
-}
-
-func (i GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionRevocationStatusArgs) ToOutput(ctx context.Context) pulumix.Output[GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionRevocationStatus] {
-	return pulumix.Output[GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionRevocationStatus]{
-		OutputState: i.ToGetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionRevocationStatusOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionRevocationStatusArrayInput is an input type that accepts GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionRevocationStatusArray and GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionRevocationStatusArrayOutput values.
@@ -7207,12 +6312,6 @@ func (i GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersio
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionRevocationStatusArrayOutput)
 }
 
-func (i GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionRevocationStatusArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionRevocationStatus] {
-	return pulumix.Output[[]GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionRevocationStatus]{
-		OutputState: i.ToGetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionRevocationStatusArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionRevocationStatusOutput struct{ *pulumi.OutputState }
 
 func (GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionRevocationStatusOutput) ElementType() reflect.Type {
@@ -7227,24 +6326,18 @@ func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersio
 	return o
 }
 
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionRevocationStatusOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionRevocationStatus] {
-	return pulumix.Output[GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionRevocationStatus]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The reason the certificate or certificate authority (CA) was revoked.
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionRevocationStatusOutput) RevocationReason() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionRevocationStatus) string {
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionRevocationStatusOutput) RevocationReason() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionRevocationStatus) *string {
 		return v.RevocationReason
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The time when the entity was revoked, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionRevocationStatusOutput) TimeOfRevocation() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionRevocationStatus) string {
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionRevocationStatusOutput) TimeOfRevocation() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionRevocationStatus) *string {
 		return v.TimeOfRevocation
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionRevocationStatusArrayOutput struct{ *pulumi.OutputState }
@@ -7261,12 +6354,6 @@ func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersio
 	return o
 }
 
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionRevocationStatusArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionRevocationStatus] {
-	return pulumix.Output[[]GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionRevocationStatus]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionRevocationStatusArrayOutput) Index(i pulumi.IntInput) GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionRevocationStatusOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionRevocationStatus {
 		return vs[0].([]GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionRevocationStatus)[vs[1].(int)]
@@ -7275,9 +6362,9 @@ func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersio
 
 type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionValidity struct {
 	// The date on which the certificate validity period ends, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfValidityNotAfter string `pulumi:"timeOfValidityNotAfter"`
+	TimeOfValidityNotAfter *string `pulumi:"timeOfValidityNotAfter"`
 	// The date on which the certificate validity period begins, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfValidityNotBefore string `pulumi:"timeOfValidityNotBefore"`
+	TimeOfValidityNotBefore *string `pulumi:"timeOfValidityNotBefore"`
 }
 
 // GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionValidityInput is an input type that accepts GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionValidityArgs and GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionValidityOutput values.
@@ -7293,9 +6380,9 @@ type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionVa
 
 type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionValidityArgs struct {
 	// The date on which the certificate validity period ends, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfValidityNotAfter pulumi.StringInput `pulumi:"timeOfValidityNotAfter"`
+	TimeOfValidityNotAfter pulumi.StringPtrInput `pulumi:"timeOfValidityNotAfter"`
 	// The date on which the certificate validity period begins, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfValidityNotBefore pulumi.StringInput `pulumi:"timeOfValidityNotBefore"`
+	TimeOfValidityNotBefore pulumi.StringPtrInput `pulumi:"timeOfValidityNotBefore"`
 }
 
 func (GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionValidityArgs) ElementType() reflect.Type {
@@ -7308,12 +6395,6 @@ func (i GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersio
 
 func (i GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionValidityArgs) ToGetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionValidityOutputWithContext(ctx context.Context) GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionValidityOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionValidityOutput)
-}
-
-func (i GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionValidityArgs) ToOutput(ctx context.Context) pulumix.Output[GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionValidity] {
-	return pulumix.Output[GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionValidity]{
-		OutputState: i.ToGetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionValidityOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionValidityArrayInput is an input type that accepts GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionValidityArray and GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionValidityArrayOutput values.
@@ -7341,12 +6422,6 @@ func (i GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersio
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionValidityArrayOutput)
 }
 
-func (i GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionValidityArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionValidity] {
-	return pulumix.Output[[]GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionValidity]{
-		OutputState: i.ToGetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionValidityArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionValidityOutput struct{ *pulumi.OutputState }
 
 func (GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionValidityOutput) ElementType() reflect.Type {
@@ -7361,24 +6436,18 @@ func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersio
 	return o
 }
 
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionValidityOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionValidity] {
-	return pulumix.Output[GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionValidity]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The date on which the certificate validity period ends, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionValidityOutput) TimeOfValidityNotAfter() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionValidity) string {
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionValidityOutput) TimeOfValidityNotAfter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionValidity) *string {
 		return v.TimeOfValidityNotAfter
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The date on which the certificate validity period begins, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionValidityOutput) TimeOfValidityNotBefore() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionValidity) string {
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionValidityOutput) TimeOfValidityNotBefore() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionValidity) *string {
 		return v.TimeOfValidityNotBefore
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionValidityArrayOutput struct{ *pulumi.OutputState }
@@ -7395,12 +6464,6 @@ func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersio
 	return o
 }
 
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionValidityArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionValidity] {
-	return pulumix.Output[[]GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionValidity]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionValidityArrayOutput) Index(i pulumi.IntInput) GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionValidityOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionValidity {
 		return vs[0].([]GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionValidity)[vs[1].(int)]
@@ -7409,39 +6472,39 @@ func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersio
 
 type GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubject struct {
 	// Common name or fully-qualified domain name (RDN CN).
-	CommonName string `pulumi:"commonName"`
+	CommonName *string `pulumi:"commonName"`
 	// Country name (RDN C).
-	Country string `pulumi:"country"`
+	Country *string `pulumi:"country"`
 	// Distinguished name qualifier(RDN DNQ).
-	DistinguishedNameQualifier string `pulumi:"distinguishedNameQualifier"`
+	DistinguishedNameQualifier *string `pulumi:"distinguishedNameQualifier"`
 	// Domain component (RDN DC).
-	DomainComponent string `pulumi:"domainComponent"`
+	DomainComponent *string `pulumi:"domainComponent"`
 	// Personal generational qualifier (for example, Sr., Jr. 3rd, or IV).
-	GenerationQualifier string `pulumi:"generationQualifier"`
+	GenerationQualifier *string `pulumi:"generationQualifier"`
 	// Personal given name (RDN G or GN).
-	GivenName string `pulumi:"givenName"`
+	GivenName *string `pulumi:"givenName"`
 	// Personal initials.
-	Initials string `pulumi:"initials"`
+	Initials *string `pulumi:"initials"`
 	// Locality (RDN L).
-	LocalityName string `pulumi:"localityName"`
+	LocalityName *string `pulumi:"localityName"`
 	// Organization (RDN O).
-	Organization string `pulumi:"organization"`
+	Organization *string `pulumi:"organization"`
 	// Organizational unit (RDN OU).
-	OrganizationalUnit string `pulumi:"organizationalUnit"`
+	OrganizationalUnit *string `pulumi:"organizationalUnit"`
 	// Subject pseudonym.
-	Pseudonym string `pulumi:"pseudonym"`
+	Pseudonym *string `pulumi:"pseudonym"`
 	// Unique subject identifier, which is not the same as the certificate serial number (RDN SERIALNUMBER).
-	SerialNumber string `pulumi:"serialNumber"`
+	SerialNumber *string `pulumi:"serialNumber"`
 	// State or province name (RDN ST or S).
-	StateOrProvinceName string `pulumi:"stateOrProvinceName"`
+	StateOrProvinceName *string `pulumi:"stateOrProvinceName"`
 	// Street address (RDN STREET).
-	Street string `pulumi:"street"`
+	Street *string `pulumi:"street"`
 	// Personal surname (RDN SN).
-	Surname string `pulumi:"surname"`
+	Surname *string `pulumi:"surname"`
 	// Title (RDN T or TITLE).
-	Title string `pulumi:"title"`
+	Title *string `pulumi:"title"`
 	// User ID (RDN UID).
-	UserId string `pulumi:"userId"`
+	UserId *string `pulumi:"userId"`
 }
 
 // GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectInput is an input type that accepts GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectArgs and GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectOutput values.
@@ -7457,39 +6520,39 @@ type GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectInput int
 
 type GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectArgs struct {
 	// Common name or fully-qualified domain name (RDN CN).
-	CommonName pulumi.StringInput `pulumi:"commonName"`
+	CommonName pulumi.StringPtrInput `pulumi:"commonName"`
 	// Country name (RDN C).
-	Country pulumi.StringInput `pulumi:"country"`
+	Country pulumi.StringPtrInput `pulumi:"country"`
 	// Distinguished name qualifier(RDN DNQ).
-	DistinguishedNameQualifier pulumi.StringInput `pulumi:"distinguishedNameQualifier"`
+	DistinguishedNameQualifier pulumi.StringPtrInput `pulumi:"distinguishedNameQualifier"`
 	// Domain component (RDN DC).
-	DomainComponent pulumi.StringInput `pulumi:"domainComponent"`
+	DomainComponent pulumi.StringPtrInput `pulumi:"domainComponent"`
 	// Personal generational qualifier (for example, Sr., Jr. 3rd, or IV).
-	GenerationQualifier pulumi.StringInput `pulumi:"generationQualifier"`
+	GenerationQualifier pulumi.StringPtrInput `pulumi:"generationQualifier"`
 	// Personal given name (RDN G or GN).
-	GivenName pulumi.StringInput `pulumi:"givenName"`
+	GivenName pulumi.StringPtrInput `pulumi:"givenName"`
 	// Personal initials.
-	Initials pulumi.StringInput `pulumi:"initials"`
+	Initials pulumi.StringPtrInput `pulumi:"initials"`
 	// Locality (RDN L).
-	LocalityName pulumi.StringInput `pulumi:"localityName"`
+	LocalityName pulumi.StringPtrInput `pulumi:"localityName"`
 	// Organization (RDN O).
-	Organization pulumi.StringInput `pulumi:"organization"`
+	Organization pulumi.StringPtrInput `pulumi:"organization"`
 	// Organizational unit (RDN OU).
-	OrganizationalUnit pulumi.StringInput `pulumi:"organizationalUnit"`
+	OrganizationalUnit pulumi.StringPtrInput `pulumi:"organizationalUnit"`
 	// Subject pseudonym.
-	Pseudonym pulumi.StringInput `pulumi:"pseudonym"`
+	Pseudonym pulumi.StringPtrInput `pulumi:"pseudonym"`
 	// Unique subject identifier, which is not the same as the certificate serial number (RDN SERIALNUMBER).
-	SerialNumber pulumi.StringInput `pulumi:"serialNumber"`
+	SerialNumber pulumi.StringPtrInput `pulumi:"serialNumber"`
 	// State or province name (RDN ST or S).
-	StateOrProvinceName pulumi.StringInput `pulumi:"stateOrProvinceName"`
+	StateOrProvinceName pulumi.StringPtrInput `pulumi:"stateOrProvinceName"`
 	// Street address (RDN STREET).
-	Street pulumi.StringInput `pulumi:"street"`
+	Street pulumi.StringPtrInput `pulumi:"street"`
 	// Personal surname (RDN SN).
-	Surname pulumi.StringInput `pulumi:"surname"`
+	Surname pulumi.StringPtrInput `pulumi:"surname"`
 	// Title (RDN T or TITLE).
-	Title pulumi.StringInput `pulumi:"title"`
+	Title pulumi.StringPtrInput `pulumi:"title"`
 	// User ID (RDN UID).
-	UserId pulumi.StringInput `pulumi:"userId"`
+	UserId pulumi.StringPtrInput `pulumi:"userId"`
 }
 
 func (GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectArgs) ElementType() reflect.Type {
@@ -7502,12 +6565,6 @@ func (i GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectArgs) 
 
 func (i GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectArgs) ToGetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectOutputWithContext(ctx context.Context) GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectOutput)
-}
-
-func (i GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectArgs) ToOutput(ctx context.Context) pulumix.Output[GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubject] {
-	return pulumix.Output[GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubject]{
-		OutputState: i.ToGetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectArrayInput is an input type that accepts GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectArray and GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectArrayOutput values.
@@ -7535,12 +6592,6 @@ func (i GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectArray)
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectArrayOutput)
 }
 
-func (i GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubject] {
-	return pulumix.Output[[]GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubject]{
-		OutputState: i.ToGetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectOutput struct{ *pulumi.OutputState }
 
 func (GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectOutput) ElementType() reflect.Type {
@@ -7555,111 +6606,107 @@ func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectOutput
 	return o
 }
 
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubject] {
-	return pulumix.Output[GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubject]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Common name or fully-qualified domain name (RDN CN).
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectOutput) CommonName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubject) string { return v.CommonName }).(pulumi.StringOutput)
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectOutput) CommonName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubject) *string {
+		return v.CommonName
+	}).(pulumi.StringPtrOutput)
 }
 
 // Country name (RDN C).
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectOutput) Country() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubject) string { return v.Country }).(pulumi.StringOutput)
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectOutput) Country() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubject) *string { return v.Country }).(pulumi.StringPtrOutput)
 }
 
 // Distinguished name qualifier(RDN DNQ).
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectOutput) DistinguishedNameQualifier() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubject) string {
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectOutput) DistinguishedNameQualifier() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubject) *string {
 		return v.DistinguishedNameQualifier
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Domain component (RDN DC).
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectOutput) DomainComponent() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubject) string {
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectOutput) DomainComponent() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubject) *string {
 		return v.DomainComponent
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Personal generational qualifier (for example, Sr., Jr. 3rd, or IV).
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectOutput) GenerationQualifier() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubject) string {
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectOutput) GenerationQualifier() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubject) *string {
 		return v.GenerationQualifier
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Personal given name (RDN G or GN).
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectOutput) GivenName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubject) string { return v.GivenName }).(pulumi.StringOutput)
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectOutput) GivenName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubject) *string { return v.GivenName }).(pulumi.StringPtrOutput)
 }
 
 // Personal initials.
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectOutput) Initials() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubject) string { return v.Initials }).(pulumi.StringOutput)
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectOutput) Initials() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubject) *string { return v.Initials }).(pulumi.StringPtrOutput)
 }
 
 // Locality (RDN L).
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectOutput) LocalityName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubject) string {
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectOutput) LocalityName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubject) *string {
 		return v.LocalityName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Organization (RDN O).
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectOutput) Organization() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubject) string {
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectOutput) Organization() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubject) *string {
 		return v.Organization
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Organizational unit (RDN OU).
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectOutput) OrganizationalUnit() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubject) string {
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectOutput) OrganizationalUnit() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubject) *string {
 		return v.OrganizationalUnit
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Subject pseudonym.
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectOutput) Pseudonym() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubject) string { return v.Pseudonym }).(pulumi.StringOutput)
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectOutput) Pseudonym() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubject) *string { return v.Pseudonym }).(pulumi.StringPtrOutput)
 }
 
 // Unique subject identifier, which is not the same as the certificate serial number (RDN SERIALNUMBER).
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectOutput) SerialNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubject) string {
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectOutput) SerialNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubject) *string {
 		return v.SerialNumber
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // State or province name (RDN ST or S).
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectOutput) StateOrProvinceName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubject) string {
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectOutput) StateOrProvinceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubject) *string {
 		return v.StateOrProvinceName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Street address (RDN STREET).
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectOutput) Street() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubject) string { return v.Street }).(pulumi.StringOutput)
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectOutput) Street() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubject) *string { return v.Street }).(pulumi.StringPtrOutput)
 }
 
 // Personal surname (RDN SN).
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectOutput) Surname() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubject) string { return v.Surname }).(pulumi.StringOutput)
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectOutput) Surname() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubject) *string { return v.Surname }).(pulumi.StringPtrOutput)
 }
 
 // Title (RDN T or TITLE).
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectOutput) Title() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubject) string { return v.Title }).(pulumi.StringOutput)
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectOutput) Title() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubject) *string { return v.Title }).(pulumi.StringPtrOutput)
 }
 
 // User ID (RDN UID).
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectOutput) UserId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubject) string { return v.UserId }).(pulumi.StringOutput)
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectOutput) UserId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubject) *string { return v.UserId }).(pulumi.StringPtrOutput)
 }
 
 type GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectArrayOutput struct{ *pulumi.OutputState }
@@ -7674,12 +6721,6 @@ func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectArrayO
 
 func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectArrayOutput) ToGetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectArrayOutputWithContext(ctx context.Context) GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectArrayOutput {
 	return o
-}
-
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubject] {
-	return pulumix.Output[[]GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubject]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectArrayOutput) Index(i pulumi.IntInput) GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectOutput {
@@ -7725,12 +6766,6 @@ func (i GetCertificateAuthoritiesFilterArgs) ToGetCertificateAuthoritiesFilterOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateAuthoritiesFilterOutput)
 }
 
-func (i GetCertificateAuthoritiesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetCertificateAuthoritiesFilter] {
-	return pulumix.Output[GetCertificateAuthoritiesFilter]{
-		OutputState: i.ToGetCertificateAuthoritiesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetCertificateAuthoritiesFilterArrayInput is an input type that accepts GetCertificateAuthoritiesFilterArray and GetCertificateAuthoritiesFilterArrayOutput values.
 // You can construct a concrete instance of `GetCertificateAuthoritiesFilterArrayInput` via:
 //
@@ -7756,12 +6791,6 @@ func (i GetCertificateAuthoritiesFilterArray) ToGetCertificateAuthoritiesFilterA
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateAuthoritiesFilterArrayOutput)
 }
 
-func (i GetCertificateAuthoritiesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateAuthoritiesFilter] {
-	return pulumix.Output[[]GetCertificateAuthoritiesFilter]{
-		OutputState: i.ToGetCertificateAuthoritiesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCertificateAuthoritiesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetCertificateAuthoritiesFilterOutput) ElementType() reflect.Type {
@@ -7774,12 +6803,6 @@ func (o GetCertificateAuthoritiesFilterOutput) ToGetCertificateAuthoritiesFilter
 
 func (o GetCertificateAuthoritiesFilterOutput) ToGetCertificateAuthoritiesFilterOutputWithContext(ctx context.Context) GetCertificateAuthoritiesFilterOutput {
 	return o
-}
-
-func (o GetCertificateAuthoritiesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificateAuthoritiesFilter] {
-	return pulumix.Output[GetCertificateAuthoritiesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A filter that returns only resources that match the specified name.
@@ -7809,12 +6832,6 @@ func (o GetCertificateAuthoritiesFilterArrayOutput) ToGetCertificateAuthoritiesF
 	return o
 }
 
-func (o GetCertificateAuthoritiesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateAuthoritiesFilter] {
-	return pulumix.Output[[]GetCertificateAuthoritiesFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCertificateAuthoritiesFilterArrayOutput) Index(i pulumi.IntInput) GetCertificateAuthoritiesFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCertificateAuthoritiesFilter {
 		return vs[0].([]GetCertificateAuthoritiesFilter)[vs[1].(int)]
@@ -7823,17 +6840,17 @@ func (o GetCertificateAuthoritiesFilterArrayOutput) Index(i pulumi.IntInput) Get
 
 type GetCertificateAuthorityCertificateAuthorityConfig struct {
 	// The origin of the CA.
-	ConfigType string `pulumi:"configType"`
+	ConfigType *string `pulumi:"configType"`
 	// The OCID of the parent CA that issued this CA. If this is the root CA, then this value is null.
-	IssuerCertificateAuthorityId string `pulumi:"issuerCertificateAuthorityId"`
+	IssuerCertificateAuthorityId *string `pulumi:"issuerCertificateAuthorityId"`
 	// The algorithm used to sign public key certificates that the CA issues.
-	SigningAlgorithm string `pulumi:"signingAlgorithm"`
+	SigningAlgorithm *string `pulumi:"signingAlgorithm"`
 	// The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.
 	Subjects []GetCertificateAuthorityCertificateAuthorityConfigSubject `pulumi:"subjects"`
 	// An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
 	Validities []GetCertificateAuthorityCertificateAuthorityConfigValidity `pulumi:"validities"`
 	// The name of the CA version. When this value is not null, the name is unique across CA versions for a given CA.
-	VersionName string `pulumi:"versionName"`
+	VersionName *string `pulumi:"versionName"`
 }
 
 // GetCertificateAuthorityCertificateAuthorityConfigInput is an input type that accepts GetCertificateAuthorityCertificateAuthorityConfigArgs and GetCertificateAuthorityCertificateAuthorityConfigOutput values.
@@ -7849,17 +6866,17 @@ type GetCertificateAuthorityCertificateAuthorityConfigInput interface {
 
 type GetCertificateAuthorityCertificateAuthorityConfigArgs struct {
 	// The origin of the CA.
-	ConfigType pulumi.StringInput `pulumi:"configType"`
+	ConfigType pulumi.StringPtrInput `pulumi:"configType"`
 	// The OCID of the parent CA that issued this CA. If this is the root CA, then this value is null.
-	IssuerCertificateAuthorityId pulumi.StringInput `pulumi:"issuerCertificateAuthorityId"`
+	IssuerCertificateAuthorityId pulumi.StringPtrInput `pulumi:"issuerCertificateAuthorityId"`
 	// The algorithm used to sign public key certificates that the CA issues.
-	SigningAlgorithm pulumi.StringInput `pulumi:"signingAlgorithm"`
+	SigningAlgorithm pulumi.StringPtrInput `pulumi:"signingAlgorithm"`
 	// The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.
 	Subjects GetCertificateAuthorityCertificateAuthorityConfigSubjectArrayInput `pulumi:"subjects"`
 	// An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
 	Validities GetCertificateAuthorityCertificateAuthorityConfigValidityArrayInput `pulumi:"validities"`
 	// The name of the CA version. When this value is not null, the name is unique across CA versions for a given CA.
-	VersionName pulumi.StringInput `pulumi:"versionName"`
+	VersionName pulumi.StringPtrInput `pulumi:"versionName"`
 }
 
 func (GetCertificateAuthorityCertificateAuthorityConfigArgs) ElementType() reflect.Type {
@@ -7872,12 +6889,6 @@ func (i GetCertificateAuthorityCertificateAuthorityConfigArgs) ToGetCertificateA
 
 func (i GetCertificateAuthorityCertificateAuthorityConfigArgs) ToGetCertificateAuthorityCertificateAuthorityConfigOutputWithContext(ctx context.Context) GetCertificateAuthorityCertificateAuthorityConfigOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateAuthorityCertificateAuthorityConfigOutput)
-}
-
-func (i GetCertificateAuthorityCertificateAuthorityConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetCertificateAuthorityCertificateAuthorityConfig] {
-	return pulumix.Output[GetCertificateAuthorityCertificateAuthorityConfig]{
-		OutputState: i.ToGetCertificateAuthorityCertificateAuthorityConfigOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetCertificateAuthorityCertificateAuthorityConfigArrayInput is an input type that accepts GetCertificateAuthorityCertificateAuthorityConfigArray and GetCertificateAuthorityCertificateAuthorityConfigArrayOutput values.
@@ -7905,12 +6916,6 @@ func (i GetCertificateAuthorityCertificateAuthorityConfigArray) ToGetCertificate
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateAuthorityCertificateAuthorityConfigArrayOutput)
 }
 
-func (i GetCertificateAuthorityCertificateAuthorityConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateAuthorityCertificateAuthorityConfig] {
-	return pulumix.Output[[]GetCertificateAuthorityCertificateAuthorityConfig]{
-		OutputState: i.ToGetCertificateAuthorityCertificateAuthorityConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCertificateAuthorityCertificateAuthorityConfigOutput struct{ *pulumi.OutputState }
 
 func (GetCertificateAuthorityCertificateAuthorityConfigOutput) ElementType() reflect.Type {
@@ -7925,27 +6930,21 @@ func (o GetCertificateAuthorityCertificateAuthorityConfigOutput) ToGetCertificat
 	return o
 }
 
-func (o GetCertificateAuthorityCertificateAuthorityConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificateAuthorityCertificateAuthorityConfig] {
-	return pulumix.Output[GetCertificateAuthorityCertificateAuthorityConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The origin of the CA.
-func (o GetCertificateAuthorityCertificateAuthorityConfigOutput) ConfigType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthorityCertificateAuthorityConfig) string { return v.ConfigType }).(pulumi.StringOutput)
+func (o GetCertificateAuthorityCertificateAuthorityConfigOutput) ConfigType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthorityCertificateAuthorityConfig) *string { return v.ConfigType }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the parent CA that issued this CA. If this is the root CA, then this value is null.
-func (o GetCertificateAuthorityCertificateAuthorityConfigOutput) IssuerCertificateAuthorityId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthorityCertificateAuthorityConfig) string {
+func (o GetCertificateAuthorityCertificateAuthorityConfigOutput) IssuerCertificateAuthorityId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthorityCertificateAuthorityConfig) *string {
 		return v.IssuerCertificateAuthorityId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The algorithm used to sign public key certificates that the CA issues.
-func (o GetCertificateAuthorityCertificateAuthorityConfigOutput) SigningAlgorithm() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthorityCertificateAuthorityConfig) string { return v.SigningAlgorithm }).(pulumi.StringOutput)
+func (o GetCertificateAuthorityCertificateAuthorityConfigOutput) SigningAlgorithm() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthorityCertificateAuthorityConfig) *string { return v.SigningAlgorithm }).(pulumi.StringPtrOutput)
 }
 
 // The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.
@@ -7963,8 +6962,8 @@ func (o GetCertificateAuthorityCertificateAuthorityConfigOutput) Validities() Ge
 }
 
 // The name of the CA version. When this value is not null, the name is unique across CA versions for a given CA.
-func (o GetCertificateAuthorityCertificateAuthorityConfigOutput) VersionName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthorityCertificateAuthorityConfig) string { return v.VersionName }).(pulumi.StringOutput)
+func (o GetCertificateAuthorityCertificateAuthorityConfigOutput) VersionName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthorityCertificateAuthorityConfig) *string { return v.VersionName }).(pulumi.StringPtrOutput)
 }
 
 type GetCertificateAuthorityCertificateAuthorityConfigArrayOutput struct{ *pulumi.OutputState }
@@ -7981,12 +6980,6 @@ func (o GetCertificateAuthorityCertificateAuthorityConfigArrayOutput) ToGetCerti
 	return o
 }
 
-func (o GetCertificateAuthorityCertificateAuthorityConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateAuthorityCertificateAuthorityConfig] {
-	return pulumix.Output[[]GetCertificateAuthorityCertificateAuthorityConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCertificateAuthorityCertificateAuthorityConfigArrayOutput) Index(i pulumi.IntInput) GetCertificateAuthorityCertificateAuthorityConfigOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCertificateAuthorityCertificateAuthorityConfig {
 		return vs[0].([]GetCertificateAuthorityCertificateAuthorityConfig)[vs[1].(int)]
@@ -7995,39 +6988,39 @@ func (o GetCertificateAuthorityCertificateAuthorityConfigArrayOutput) Index(i pu
 
 type GetCertificateAuthorityCertificateAuthorityConfigSubject struct {
 	// Common name or fully-qualified domain name (RDN CN).
-	CommonName string `pulumi:"commonName"`
+	CommonName *string `pulumi:"commonName"`
 	// Country name (RDN C).
-	Country string `pulumi:"country"`
+	Country *string `pulumi:"country"`
 	// Distinguished name qualifier(RDN DNQ).
-	DistinguishedNameQualifier string `pulumi:"distinguishedNameQualifier"`
+	DistinguishedNameQualifier *string `pulumi:"distinguishedNameQualifier"`
 	// Domain component (RDN DC).
-	DomainComponent string `pulumi:"domainComponent"`
+	DomainComponent *string `pulumi:"domainComponent"`
 	// Personal generational qualifier (for example, Sr., Jr. 3rd, or IV).
-	GenerationQualifier string `pulumi:"generationQualifier"`
+	GenerationQualifier *string `pulumi:"generationQualifier"`
 	// Personal given name (RDN G or GN).
-	GivenName string `pulumi:"givenName"`
+	GivenName *string `pulumi:"givenName"`
 	// Personal initials.
-	Initials string `pulumi:"initials"`
+	Initials *string `pulumi:"initials"`
 	// Locality (RDN L).
-	LocalityName string `pulumi:"localityName"`
+	LocalityName *string `pulumi:"localityName"`
 	// Organization (RDN O).
-	Organization string `pulumi:"organization"`
+	Organization *string `pulumi:"organization"`
 	// Organizational unit (RDN OU).
-	OrganizationalUnit string `pulumi:"organizationalUnit"`
+	OrganizationalUnit *string `pulumi:"organizationalUnit"`
 	// Subject pseudonym.
-	Pseudonym string `pulumi:"pseudonym"`
+	Pseudonym *string `pulumi:"pseudonym"`
 	// Unique subject identifier, which is not the same as the certificate serial number (RDN SERIALNUMBER).
-	SerialNumber string `pulumi:"serialNumber"`
+	SerialNumber *string `pulumi:"serialNumber"`
 	// State or province name (RDN ST or S).
-	StateOrProvinceName string `pulumi:"stateOrProvinceName"`
+	StateOrProvinceName *string `pulumi:"stateOrProvinceName"`
 	// Street address (RDN STREET).
-	Street string `pulumi:"street"`
+	Street *string `pulumi:"street"`
 	// Personal surname (RDN SN).
-	Surname string `pulumi:"surname"`
+	Surname *string `pulumi:"surname"`
 	// Title (RDN T or TITLE).
-	Title string `pulumi:"title"`
+	Title *string `pulumi:"title"`
 	// User ID (RDN UID).
-	UserId string `pulumi:"userId"`
+	UserId *string `pulumi:"userId"`
 }
 
 // GetCertificateAuthorityCertificateAuthorityConfigSubjectInput is an input type that accepts GetCertificateAuthorityCertificateAuthorityConfigSubjectArgs and GetCertificateAuthorityCertificateAuthorityConfigSubjectOutput values.
@@ -8043,39 +7036,39 @@ type GetCertificateAuthorityCertificateAuthorityConfigSubjectInput interface {
 
 type GetCertificateAuthorityCertificateAuthorityConfigSubjectArgs struct {
 	// Common name or fully-qualified domain name (RDN CN).
-	CommonName pulumi.StringInput `pulumi:"commonName"`
+	CommonName pulumi.StringPtrInput `pulumi:"commonName"`
 	// Country name (RDN C).
-	Country pulumi.StringInput `pulumi:"country"`
+	Country pulumi.StringPtrInput `pulumi:"country"`
 	// Distinguished name qualifier(RDN DNQ).
-	DistinguishedNameQualifier pulumi.StringInput `pulumi:"distinguishedNameQualifier"`
+	DistinguishedNameQualifier pulumi.StringPtrInput `pulumi:"distinguishedNameQualifier"`
 	// Domain component (RDN DC).
-	DomainComponent pulumi.StringInput `pulumi:"domainComponent"`
+	DomainComponent pulumi.StringPtrInput `pulumi:"domainComponent"`
 	// Personal generational qualifier (for example, Sr., Jr. 3rd, or IV).
-	GenerationQualifier pulumi.StringInput `pulumi:"generationQualifier"`
+	GenerationQualifier pulumi.StringPtrInput `pulumi:"generationQualifier"`
 	// Personal given name (RDN G or GN).
-	GivenName pulumi.StringInput `pulumi:"givenName"`
+	GivenName pulumi.StringPtrInput `pulumi:"givenName"`
 	// Personal initials.
-	Initials pulumi.StringInput `pulumi:"initials"`
+	Initials pulumi.StringPtrInput `pulumi:"initials"`
 	// Locality (RDN L).
-	LocalityName pulumi.StringInput `pulumi:"localityName"`
+	LocalityName pulumi.StringPtrInput `pulumi:"localityName"`
 	// Organization (RDN O).
-	Organization pulumi.StringInput `pulumi:"organization"`
+	Organization pulumi.StringPtrInput `pulumi:"organization"`
 	// Organizational unit (RDN OU).
-	OrganizationalUnit pulumi.StringInput `pulumi:"organizationalUnit"`
+	OrganizationalUnit pulumi.StringPtrInput `pulumi:"organizationalUnit"`
 	// Subject pseudonym.
-	Pseudonym pulumi.StringInput `pulumi:"pseudonym"`
+	Pseudonym pulumi.StringPtrInput `pulumi:"pseudonym"`
 	// Unique subject identifier, which is not the same as the certificate serial number (RDN SERIALNUMBER).
-	SerialNumber pulumi.StringInput `pulumi:"serialNumber"`
+	SerialNumber pulumi.StringPtrInput `pulumi:"serialNumber"`
 	// State or province name (RDN ST or S).
-	StateOrProvinceName pulumi.StringInput `pulumi:"stateOrProvinceName"`
+	StateOrProvinceName pulumi.StringPtrInput `pulumi:"stateOrProvinceName"`
 	// Street address (RDN STREET).
-	Street pulumi.StringInput `pulumi:"street"`
+	Street pulumi.StringPtrInput `pulumi:"street"`
 	// Personal surname (RDN SN).
-	Surname pulumi.StringInput `pulumi:"surname"`
+	Surname pulumi.StringPtrInput `pulumi:"surname"`
 	// Title (RDN T or TITLE).
-	Title pulumi.StringInput `pulumi:"title"`
+	Title pulumi.StringPtrInput `pulumi:"title"`
 	// User ID (RDN UID).
-	UserId pulumi.StringInput `pulumi:"userId"`
+	UserId pulumi.StringPtrInput `pulumi:"userId"`
 }
 
 func (GetCertificateAuthorityCertificateAuthorityConfigSubjectArgs) ElementType() reflect.Type {
@@ -8088,12 +7081,6 @@ func (i GetCertificateAuthorityCertificateAuthorityConfigSubjectArgs) ToGetCerti
 
 func (i GetCertificateAuthorityCertificateAuthorityConfigSubjectArgs) ToGetCertificateAuthorityCertificateAuthorityConfigSubjectOutputWithContext(ctx context.Context) GetCertificateAuthorityCertificateAuthorityConfigSubjectOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateAuthorityCertificateAuthorityConfigSubjectOutput)
-}
-
-func (i GetCertificateAuthorityCertificateAuthorityConfigSubjectArgs) ToOutput(ctx context.Context) pulumix.Output[GetCertificateAuthorityCertificateAuthorityConfigSubject] {
-	return pulumix.Output[GetCertificateAuthorityCertificateAuthorityConfigSubject]{
-		OutputState: i.ToGetCertificateAuthorityCertificateAuthorityConfigSubjectOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetCertificateAuthorityCertificateAuthorityConfigSubjectArrayInput is an input type that accepts GetCertificateAuthorityCertificateAuthorityConfigSubjectArray and GetCertificateAuthorityCertificateAuthorityConfigSubjectArrayOutput values.
@@ -8121,12 +7108,6 @@ func (i GetCertificateAuthorityCertificateAuthorityConfigSubjectArray) ToGetCert
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateAuthorityCertificateAuthorityConfigSubjectArrayOutput)
 }
 
-func (i GetCertificateAuthorityCertificateAuthorityConfigSubjectArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateAuthorityCertificateAuthorityConfigSubject] {
-	return pulumix.Output[[]GetCertificateAuthorityCertificateAuthorityConfigSubject]{
-		OutputState: i.ToGetCertificateAuthorityCertificateAuthorityConfigSubjectArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCertificateAuthorityCertificateAuthorityConfigSubjectOutput struct{ *pulumi.OutputState }
 
 func (GetCertificateAuthorityCertificateAuthorityConfigSubjectOutput) ElementType() reflect.Type {
@@ -8141,97 +7122,91 @@ func (o GetCertificateAuthorityCertificateAuthorityConfigSubjectOutput) ToGetCer
 	return o
 }
 
-func (o GetCertificateAuthorityCertificateAuthorityConfigSubjectOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificateAuthorityCertificateAuthorityConfigSubject] {
-	return pulumix.Output[GetCertificateAuthorityCertificateAuthorityConfigSubject]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Common name or fully-qualified domain name (RDN CN).
-func (o GetCertificateAuthorityCertificateAuthorityConfigSubjectOutput) CommonName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthorityCertificateAuthorityConfigSubject) string { return v.CommonName }).(pulumi.StringOutput)
+func (o GetCertificateAuthorityCertificateAuthorityConfigSubjectOutput) CommonName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthorityCertificateAuthorityConfigSubject) *string { return v.CommonName }).(pulumi.StringPtrOutput)
 }
 
 // Country name (RDN C).
-func (o GetCertificateAuthorityCertificateAuthorityConfigSubjectOutput) Country() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthorityCertificateAuthorityConfigSubject) string { return v.Country }).(pulumi.StringOutput)
+func (o GetCertificateAuthorityCertificateAuthorityConfigSubjectOutput) Country() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthorityCertificateAuthorityConfigSubject) *string { return v.Country }).(pulumi.StringPtrOutput)
 }
 
 // Distinguished name qualifier(RDN DNQ).
-func (o GetCertificateAuthorityCertificateAuthorityConfigSubjectOutput) DistinguishedNameQualifier() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthorityCertificateAuthorityConfigSubject) string {
+func (o GetCertificateAuthorityCertificateAuthorityConfigSubjectOutput) DistinguishedNameQualifier() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthorityCertificateAuthorityConfigSubject) *string {
 		return v.DistinguishedNameQualifier
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Domain component (RDN DC).
-func (o GetCertificateAuthorityCertificateAuthorityConfigSubjectOutput) DomainComponent() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthorityCertificateAuthorityConfigSubject) string { return v.DomainComponent }).(pulumi.StringOutput)
+func (o GetCertificateAuthorityCertificateAuthorityConfigSubjectOutput) DomainComponent() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthorityCertificateAuthorityConfigSubject) *string { return v.DomainComponent }).(pulumi.StringPtrOutput)
 }
 
 // Personal generational qualifier (for example, Sr., Jr. 3rd, or IV).
-func (o GetCertificateAuthorityCertificateAuthorityConfigSubjectOutput) GenerationQualifier() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthorityCertificateAuthorityConfigSubject) string { return v.GenerationQualifier }).(pulumi.StringOutput)
+func (o GetCertificateAuthorityCertificateAuthorityConfigSubjectOutput) GenerationQualifier() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthorityCertificateAuthorityConfigSubject) *string { return v.GenerationQualifier }).(pulumi.StringPtrOutput)
 }
 
 // Personal given name (RDN G or GN).
-func (o GetCertificateAuthorityCertificateAuthorityConfigSubjectOutput) GivenName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthorityCertificateAuthorityConfigSubject) string { return v.GivenName }).(pulumi.StringOutput)
+func (o GetCertificateAuthorityCertificateAuthorityConfigSubjectOutput) GivenName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthorityCertificateAuthorityConfigSubject) *string { return v.GivenName }).(pulumi.StringPtrOutput)
 }
 
 // Personal initials.
-func (o GetCertificateAuthorityCertificateAuthorityConfigSubjectOutput) Initials() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthorityCertificateAuthorityConfigSubject) string { return v.Initials }).(pulumi.StringOutput)
+func (o GetCertificateAuthorityCertificateAuthorityConfigSubjectOutput) Initials() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthorityCertificateAuthorityConfigSubject) *string { return v.Initials }).(pulumi.StringPtrOutput)
 }
 
 // Locality (RDN L).
-func (o GetCertificateAuthorityCertificateAuthorityConfigSubjectOutput) LocalityName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthorityCertificateAuthorityConfigSubject) string { return v.LocalityName }).(pulumi.StringOutput)
+func (o GetCertificateAuthorityCertificateAuthorityConfigSubjectOutput) LocalityName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthorityCertificateAuthorityConfigSubject) *string { return v.LocalityName }).(pulumi.StringPtrOutput)
 }
 
 // Organization (RDN O).
-func (o GetCertificateAuthorityCertificateAuthorityConfigSubjectOutput) Organization() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthorityCertificateAuthorityConfigSubject) string { return v.Organization }).(pulumi.StringOutput)
+func (o GetCertificateAuthorityCertificateAuthorityConfigSubjectOutput) Organization() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthorityCertificateAuthorityConfigSubject) *string { return v.Organization }).(pulumi.StringPtrOutput)
 }
 
 // Organizational unit (RDN OU).
-func (o GetCertificateAuthorityCertificateAuthorityConfigSubjectOutput) OrganizationalUnit() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthorityCertificateAuthorityConfigSubject) string { return v.OrganizationalUnit }).(pulumi.StringOutput)
+func (o GetCertificateAuthorityCertificateAuthorityConfigSubjectOutput) OrganizationalUnit() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthorityCertificateAuthorityConfigSubject) *string { return v.OrganizationalUnit }).(pulumi.StringPtrOutput)
 }
 
 // Subject pseudonym.
-func (o GetCertificateAuthorityCertificateAuthorityConfigSubjectOutput) Pseudonym() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthorityCertificateAuthorityConfigSubject) string { return v.Pseudonym }).(pulumi.StringOutput)
+func (o GetCertificateAuthorityCertificateAuthorityConfigSubjectOutput) Pseudonym() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthorityCertificateAuthorityConfigSubject) *string { return v.Pseudonym }).(pulumi.StringPtrOutput)
 }
 
 // Unique subject identifier, which is not the same as the certificate serial number (RDN SERIALNUMBER).
-func (o GetCertificateAuthorityCertificateAuthorityConfigSubjectOutput) SerialNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthorityCertificateAuthorityConfigSubject) string { return v.SerialNumber }).(pulumi.StringOutput)
+func (o GetCertificateAuthorityCertificateAuthorityConfigSubjectOutput) SerialNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthorityCertificateAuthorityConfigSubject) *string { return v.SerialNumber }).(pulumi.StringPtrOutput)
 }
 
 // State or province name (RDN ST or S).
-func (o GetCertificateAuthorityCertificateAuthorityConfigSubjectOutput) StateOrProvinceName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthorityCertificateAuthorityConfigSubject) string { return v.StateOrProvinceName }).(pulumi.StringOutput)
+func (o GetCertificateAuthorityCertificateAuthorityConfigSubjectOutput) StateOrProvinceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthorityCertificateAuthorityConfigSubject) *string { return v.StateOrProvinceName }).(pulumi.StringPtrOutput)
 }
 
 // Street address (RDN STREET).
-func (o GetCertificateAuthorityCertificateAuthorityConfigSubjectOutput) Street() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthorityCertificateAuthorityConfigSubject) string { return v.Street }).(pulumi.StringOutput)
+func (o GetCertificateAuthorityCertificateAuthorityConfigSubjectOutput) Street() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthorityCertificateAuthorityConfigSubject) *string { return v.Street }).(pulumi.StringPtrOutput)
 }
 
 // Personal surname (RDN SN).
-func (o GetCertificateAuthorityCertificateAuthorityConfigSubjectOutput) Surname() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthorityCertificateAuthorityConfigSubject) string { return v.Surname }).(pulumi.StringOutput)
+func (o GetCertificateAuthorityCertificateAuthorityConfigSubjectOutput) Surname() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthorityCertificateAuthorityConfigSubject) *string { return v.Surname }).(pulumi.StringPtrOutput)
 }
 
 // Title (RDN T or TITLE).
-func (o GetCertificateAuthorityCertificateAuthorityConfigSubjectOutput) Title() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthorityCertificateAuthorityConfigSubject) string { return v.Title }).(pulumi.StringOutput)
+func (o GetCertificateAuthorityCertificateAuthorityConfigSubjectOutput) Title() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthorityCertificateAuthorityConfigSubject) *string { return v.Title }).(pulumi.StringPtrOutput)
 }
 
 // User ID (RDN UID).
-func (o GetCertificateAuthorityCertificateAuthorityConfigSubjectOutput) UserId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthorityCertificateAuthorityConfigSubject) string { return v.UserId }).(pulumi.StringOutput)
+func (o GetCertificateAuthorityCertificateAuthorityConfigSubjectOutput) UserId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthorityCertificateAuthorityConfigSubject) *string { return v.UserId }).(pulumi.StringPtrOutput)
 }
 
 type GetCertificateAuthorityCertificateAuthorityConfigSubjectArrayOutput struct{ *pulumi.OutputState }
@@ -8248,12 +7223,6 @@ func (o GetCertificateAuthorityCertificateAuthorityConfigSubjectArrayOutput) ToG
 	return o
 }
 
-func (o GetCertificateAuthorityCertificateAuthorityConfigSubjectArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateAuthorityCertificateAuthorityConfigSubject] {
-	return pulumix.Output[[]GetCertificateAuthorityCertificateAuthorityConfigSubject]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCertificateAuthorityCertificateAuthorityConfigSubjectArrayOutput) Index(i pulumi.IntInput) GetCertificateAuthorityCertificateAuthorityConfigSubjectOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCertificateAuthorityCertificateAuthorityConfigSubject {
 		return vs[0].([]GetCertificateAuthorityCertificateAuthorityConfigSubject)[vs[1].(int)]
@@ -8262,9 +7231,9 @@ func (o GetCertificateAuthorityCertificateAuthorityConfigSubjectArrayOutput) Ind
 
 type GetCertificateAuthorityCertificateAuthorityConfigValidity struct {
 	// The date on which the certificate validity period ends, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfValidityNotAfter string `pulumi:"timeOfValidityNotAfter"`
+	TimeOfValidityNotAfter *string `pulumi:"timeOfValidityNotAfter"`
 	// The date on which the certificate validity period begins, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfValidityNotBefore string `pulumi:"timeOfValidityNotBefore"`
+	TimeOfValidityNotBefore *string `pulumi:"timeOfValidityNotBefore"`
 }
 
 // GetCertificateAuthorityCertificateAuthorityConfigValidityInput is an input type that accepts GetCertificateAuthorityCertificateAuthorityConfigValidityArgs and GetCertificateAuthorityCertificateAuthorityConfigValidityOutput values.
@@ -8280,9 +7249,9 @@ type GetCertificateAuthorityCertificateAuthorityConfigValidityInput interface {
 
 type GetCertificateAuthorityCertificateAuthorityConfigValidityArgs struct {
 	// The date on which the certificate validity period ends, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfValidityNotAfter pulumi.StringInput `pulumi:"timeOfValidityNotAfter"`
+	TimeOfValidityNotAfter pulumi.StringPtrInput `pulumi:"timeOfValidityNotAfter"`
 	// The date on which the certificate validity period begins, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfValidityNotBefore pulumi.StringInput `pulumi:"timeOfValidityNotBefore"`
+	TimeOfValidityNotBefore pulumi.StringPtrInput `pulumi:"timeOfValidityNotBefore"`
 }
 
 func (GetCertificateAuthorityCertificateAuthorityConfigValidityArgs) ElementType() reflect.Type {
@@ -8295,12 +7264,6 @@ func (i GetCertificateAuthorityCertificateAuthorityConfigValidityArgs) ToGetCert
 
 func (i GetCertificateAuthorityCertificateAuthorityConfigValidityArgs) ToGetCertificateAuthorityCertificateAuthorityConfigValidityOutputWithContext(ctx context.Context) GetCertificateAuthorityCertificateAuthorityConfigValidityOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateAuthorityCertificateAuthorityConfigValidityOutput)
-}
-
-func (i GetCertificateAuthorityCertificateAuthorityConfigValidityArgs) ToOutput(ctx context.Context) pulumix.Output[GetCertificateAuthorityCertificateAuthorityConfigValidity] {
-	return pulumix.Output[GetCertificateAuthorityCertificateAuthorityConfigValidity]{
-		OutputState: i.ToGetCertificateAuthorityCertificateAuthorityConfigValidityOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetCertificateAuthorityCertificateAuthorityConfigValidityArrayInput is an input type that accepts GetCertificateAuthorityCertificateAuthorityConfigValidityArray and GetCertificateAuthorityCertificateAuthorityConfigValidityArrayOutput values.
@@ -8328,12 +7291,6 @@ func (i GetCertificateAuthorityCertificateAuthorityConfigValidityArray) ToGetCer
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateAuthorityCertificateAuthorityConfigValidityArrayOutput)
 }
 
-func (i GetCertificateAuthorityCertificateAuthorityConfigValidityArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateAuthorityCertificateAuthorityConfigValidity] {
-	return pulumix.Output[[]GetCertificateAuthorityCertificateAuthorityConfigValidity]{
-		OutputState: i.ToGetCertificateAuthorityCertificateAuthorityConfigValidityArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCertificateAuthorityCertificateAuthorityConfigValidityOutput struct{ *pulumi.OutputState }
 
 func (GetCertificateAuthorityCertificateAuthorityConfigValidityOutput) ElementType() reflect.Type {
@@ -8348,24 +7305,18 @@ func (o GetCertificateAuthorityCertificateAuthorityConfigValidityOutput) ToGetCe
 	return o
 }
 
-func (o GetCertificateAuthorityCertificateAuthorityConfigValidityOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificateAuthorityCertificateAuthorityConfigValidity] {
-	return pulumix.Output[GetCertificateAuthorityCertificateAuthorityConfigValidity]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The date on which the certificate validity period ends, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-func (o GetCertificateAuthorityCertificateAuthorityConfigValidityOutput) TimeOfValidityNotAfter() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthorityCertificateAuthorityConfigValidity) string {
+func (o GetCertificateAuthorityCertificateAuthorityConfigValidityOutput) TimeOfValidityNotAfter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthorityCertificateAuthorityConfigValidity) *string {
 		return v.TimeOfValidityNotAfter
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The date on which the certificate validity period begins, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-func (o GetCertificateAuthorityCertificateAuthorityConfigValidityOutput) TimeOfValidityNotBefore() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthorityCertificateAuthorityConfigValidity) string {
+func (o GetCertificateAuthorityCertificateAuthorityConfigValidityOutput) TimeOfValidityNotBefore() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthorityCertificateAuthorityConfigValidity) *string {
 		return v.TimeOfValidityNotBefore
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetCertificateAuthorityCertificateAuthorityConfigValidityArrayOutput struct{ *pulumi.OutputState }
@@ -8382,12 +7333,6 @@ func (o GetCertificateAuthorityCertificateAuthorityConfigValidityArrayOutput) To
 	return o
 }
 
-func (o GetCertificateAuthorityCertificateAuthorityConfigValidityArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateAuthorityCertificateAuthorityConfigValidity] {
-	return pulumix.Output[[]GetCertificateAuthorityCertificateAuthorityConfigValidity]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCertificateAuthorityCertificateAuthorityConfigValidityArrayOutput) Index(i pulumi.IntInput) GetCertificateAuthorityCertificateAuthorityConfigValidityOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCertificateAuthorityCertificateAuthorityConfigValidity {
 		return vs[0].([]GetCertificateAuthorityCertificateAuthorityConfigValidity)[vs[1].(int)]
@@ -8396,11 +7341,11 @@ func (o GetCertificateAuthorityCertificateAuthorityConfigValidityArrayOutput) In
 
 type GetCertificateAuthorityCertificateAuthorityRule struct {
 	// A property indicating the maximum validity duration, in days, of subordinate CA's issued by this CA. Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
-	CertificateAuthorityMaxValidityDuration string `pulumi:"certificateAuthorityMaxValidityDuration"`
+	CertificateAuthorityMaxValidityDuration *string `pulumi:"certificateAuthorityMaxValidityDuration"`
 	// A property indicating the maximum validity duration, in days, of leaf certificates issued by this CA. Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
-	LeafCertificateMaxValidityDuration string `pulumi:"leafCertificateMaxValidityDuration"`
+	LeafCertificateMaxValidityDuration *string `pulumi:"leafCertificateMaxValidityDuration"`
 	// The type of rule, whether a renewal rule regarding when to renew the CA or an issuance expiry rule that governs how long the certificates and CAs issued by the CA are valid. (For internal use only) An internal issuance rule defines the number and type of certificates that the CA can issue.
-	RuleType string `pulumi:"ruleType"`
+	RuleType *string `pulumi:"ruleType"`
 }
 
 // GetCertificateAuthorityCertificateAuthorityRuleInput is an input type that accepts GetCertificateAuthorityCertificateAuthorityRuleArgs and GetCertificateAuthorityCertificateAuthorityRuleOutput values.
@@ -8416,11 +7361,11 @@ type GetCertificateAuthorityCertificateAuthorityRuleInput interface {
 
 type GetCertificateAuthorityCertificateAuthorityRuleArgs struct {
 	// A property indicating the maximum validity duration, in days, of subordinate CA's issued by this CA. Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
-	CertificateAuthorityMaxValidityDuration pulumi.StringInput `pulumi:"certificateAuthorityMaxValidityDuration"`
+	CertificateAuthorityMaxValidityDuration pulumi.StringPtrInput `pulumi:"certificateAuthorityMaxValidityDuration"`
 	// A property indicating the maximum validity duration, in days, of leaf certificates issued by this CA. Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
-	LeafCertificateMaxValidityDuration pulumi.StringInput `pulumi:"leafCertificateMaxValidityDuration"`
+	LeafCertificateMaxValidityDuration pulumi.StringPtrInput `pulumi:"leafCertificateMaxValidityDuration"`
 	// The type of rule, whether a renewal rule regarding when to renew the CA or an issuance expiry rule that governs how long the certificates and CAs issued by the CA are valid. (For internal use only) An internal issuance rule defines the number and type of certificates that the CA can issue.
-	RuleType pulumi.StringInput `pulumi:"ruleType"`
+	RuleType pulumi.StringPtrInput `pulumi:"ruleType"`
 }
 
 func (GetCertificateAuthorityCertificateAuthorityRuleArgs) ElementType() reflect.Type {
@@ -8433,12 +7378,6 @@ func (i GetCertificateAuthorityCertificateAuthorityRuleArgs) ToGetCertificateAut
 
 func (i GetCertificateAuthorityCertificateAuthorityRuleArgs) ToGetCertificateAuthorityCertificateAuthorityRuleOutputWithContext(ctx context.Context) GetCertificateAuthorityCertificateAuthorityRuleOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateAuthorityCertificateAuthorityRuleOutput)
-}
-
-func (i GetCertificateAuthorityCertificateAuthorityRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetCertificateAuthorityCertificateAuthorityRule] {
-	return pulumix.Output[GetCertificateAuthorityCertificateAuthorityRule]{
-		OutputState: i.ToGetCertificateAuthorityCertificateAuthorityRuleOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetCertificateAuthorityCertificateAuthorityRuleArrayInput is an input type that accepts GetCertificateAuthorityCertificateAuthorityRuleArray and GetCertificateAuthorityCertificateAuthorityRuleArrayOutput values.
@@ -8466,12 +7405,6 @@ func (i GetCertificateAuthorityCertificateAuthorityRuleArray) ToGetCertificateAu
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateAuthorityCertificateAuthorityRuleArrayOutput)
 }
 
-func (i GetCertificateAuthorityCertificateAuthorityRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateAuthorityCertificateAuthorityRule] {
-	return pulumix.Output[[]GetCertificateAuthorityCertificateAuthorityRule]{
-		OutputState: i.ToGetCertificateAuthorityCertificateAuthorityRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCertificateAuthorityCertificateAuthorityRuleOutput struct{ *pulumi.OutputState }
 
 func (GetCertificateAuthorityCertificateAuthorityRuleOutput) ElementType() reflect.Type {
@@ -8486,29 +7419,23 @@ func (o GetCertificateAuthorityCertificateAuthorityRuleOutput) ToGetCertificateA
 	return o
 }
 
-func (o GetCertificateAuthorityCertificateAuthorityRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificateAuthorityCertificateAuthorityRule] {
-	return pulumix.Output[GetCertificateAuthorityCertificateAuthorityRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A property indicating the maximum validity duration, in days, of subordinate CA's issued by this CA. Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
-func (o GetCertificateAuthorityCertificateAuthorityRuleOutput) CertificateAuthorityMaxValidityDuration() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthorityCertificateAuthorityRule) string {
+func (o GetCertificateAuthorityCertificateAuthorityRuleOutput) CertificateAuthorityMaxValidityDuration() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthorityCertificateAuthorityRule) *string {
 		return v.CertificateAuthorityMaxValidityDuration
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // A property indicating the maximum validity duration, in days, of leaf certificates issued by this CA. Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
-func (o GetCertificateAuthorityCertificateAuthorityRuleOutput) LeafCertificateMaxValidityDuration() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthorityCertificateAuthorityRule) string {
+func (o GetCertificateAuthorityCertificateAuthorityRuleOutput) LeafCertificateMaxValidityDuration() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthorityCertificateAuthorityRule) *string {
 		return v.LeafCertificateMaxValidityDuration
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The type of rule, whether a renewal rule regarding when to renew the CA or an issuance expiry rule that governs how long the certificates and CAs issued by the CA are valid. (For internal use only) An internal issuance rule defines the number and type of certificates that the CA can issue.
-func (o GetCertificateAuthorityCertificateAuthorityRuleOutput) RuleType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthorityCertificateAuthorityRule) string { return v.RuleType }).(pulumi.StringOutput)
+func (o GetCertificateAuthorityCertificateAuthorityRuleOutput) RuleType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthorityCertificateAuthorityRule) *string { return v.RuleType }).(pulumi.StringPtrOutput)
 }
 
 type GetCertificateAuthorityCertificateAuthorityRuleArrayOutput struct{ *pulumi.OutputState }
@@ -8523,12 +7450,6 @@ func (o GetCertificateAuthorityCertificateAuthorityRuleArrayOutput) ToGetCertifi
 
 func (o GetCertificateAuthorityCertificateAuthorityRuleArrayOutput) ToGetCertificateAuthorityCertificateAuthorityRuleArrayOutputWithContext(ctx context.Context) GetCertificateAuthorityCertificateAuthorityRuleArrayOutput {
 	return o
-}
-
-func (o GetCertificateAuthorityCertificateAuthorityRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateAuthorityCertificateAuthorityRule] {
-	return pulumix.Output[[]GetCertificateAuthorityCertificateAuthorityRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetCertificateAuthorityCertificateAuthorityRuleArrayOutput) Index(i pulumi.IntInput) GetCertificateAuthorityCertificateAuthorityRuleOutput {
@@ -8574,12 +7495,6 @@ func (i GetCertificateAuthorityCertificateRevocationListDetailArgs) ToGetCertifi
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateAuthorityCertificateRevocationListDetailOutput)
 }
 
-func (i GetCertificateAuthorityCertificateRevocationListDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetCertificateAuthorityCertificateRevocationListDetail] {
-	return pulumix.Output[GetCertificateAuthorityCertificateRevocationListDetail]{
-		OutputState: i.ToGetCertificateAuthorityCertificateRevocationListDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetCertificateAuthorityCertificateRevocationListDetailArrayInput is an input type that accepts GetCertificateAuthorityCertificateRevocationListDetailArray and GetCertificateAuthorityCertificateRevocationListDetailArrayOutput values.
 // You can construct a concrete instance of `GetCertificateAuthorityCertificateRevocationListDetailArrayInput` via:
 //
@@ -8605,12 +7520,6 @@ func (i GetCertificateAuthorityCertificateRevocationListDetailArray) ToGetCertif
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateAuthorityCertificateRevocationListDetailArrayOutput)
 }
 
-func (i GetCertificateAuthorityCertificateRevocationListDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateAuthorityCertificateRevocationListDetail] {
-	return pulumix.Output[[]GetCertificateAuthorityCertificateRevocationListDetail]{
-		OutputState: i.ToGetCertificateAuthorityCertificateRevocationListDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCertificateAuthorityCertificateRevocationListDetailOutput struct{ *pulumi.OutputState }
 
 func (GetCertificateAuthorityCertificateRevocationListDetailOutput) ElementType() reflect.Type {
@@ -8623,12 +7532,6 @@ func (o GetCertificateAuthorityCertificateRevocationListDetailOutput) ToGetCerti
 
 func (o GetCertificateAuthorityCertificateRevocationListDetailOutput) ToGetCertificateAuthorityCertificateRevocationListDetailOutputWithContext(ctx context.Context) GetCertificateAuthorityCertificateRevocationListDetailOutput {
 	return o
-}
-
-func (o GetCertificateAuthorityCertificateRevocationListDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificateAuthorityCertificateRevocationListDetail] {
-	return pulumix.Output[GetCertificateAuthorityCertificateRevocationListDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Optional CRL access points, expressed using a format where the version number of the issuing CA is inserted wherever you include a pair of curly braces. This versioning scheme helps avoid collisions when new CA versions are created. For example, myCrlFileIssuedFromCAVersion{}.crl becomes myCrlFileIssuedFromCAVersion2.crl for CA version 2.
@@ -8657,12 +7560,6 @@ func (o GetCertificateAuthorityCertificateRevocationListDetailArrayOutput) ToGet
 	return o
 }
 
-func (o GetCertificateAuthorityCertificateRevocationListDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateAuthorityCertificateRevocationListDetail] {
-	return pulumix.Output[[]GetCertificateAuthorityCertificateRevocationListDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCertificateAuthorityCertificateRevocationListDetailArrayOutput) Index(i pulumi.IntInput) GetCertificateAuthorityCertificateRevocationListDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCertificateAuthorityCertificateRevocationListDetail {
 		return vs[0].([]GetCertificateAuthorityCertificateRevocationListDetail)[vs[1].(int)]
@@ -8671,11 +7568,11 @@ func (o GetCertificateAuthorityCertificateRevocationListDetailArrayOutput) Index
 
 type GetCertificateAuthorityCertificateRevocationListDetailObjectStorageConfig struct {
 	// The name of the bucket where the CRL is stored.
-	ObjectStorageBucketName string `pulumi:"objectStorageBucketName"`
+	ObjectStorageBucketName *string `pulumi:"objectStorageBucketName"`
 	// The tenancy of the bucket where the CRL is stored.
-	ObjectStorageNamespace string `pulumi:"objectStorageNamespace"`
+	ObjectStorageNamespace *string `pulumi:"objectStorageNamespace"`
 	// The object name in the bucket where the CRL is stored, expressed using a format where the version number of the issuing CA is inserted as part of the Object Storage object name wherever you include a pair of curly braces. This versioning scheme helps avoid collisions when new CA versions are created. For example, myCrlFileIssuedFromCAVersion{}.crl becomes myCrlFileIssuedFromCAVersion2.crl for CA version 2.
-	ObjectStorageObjectNameFormat string `pulumi:"objectStorageObjectNameFormat"`
+	ObjectStorageObjectNameFormat *string `pulumi:"objectStorageObjectNameFormat"`
 }
 
 // GetCertificateAuthorityCertificateRevocationListDetailObjectStorageConfigInput is an input type that accepts GetCertificateAuthorityCertificateRevocationListDetailObjectStorageConfigArgs and GetCertificateAuthorityCertificateRevocationListDetailObjectStorageConfigOutput values.
@@ -8691,11 +7588,11 @@ type GetCertificateAuthorityCertificateRevocationListDetailObjectStorageConfigIn
 
 type GetCertificateAuthorityCertificateRevocationListDetailObjectStorageConfigArgs struct {
 	// The name of the bucket where the CRL is stored.
-	ObjectStorageBucketName pulumi.StringInput `pulumi:"objectStorageBucketName"`
+	ObjectStorageBucketName pulumi.StringPtrInput `pulumi:"objectStorageBucketName"`
 	// The tenancy of the bucket where the CRL is stored.
-	ObjectStorageNamespace pulumi.StringInput `pulumi:"objectStorageNamespace"`
+	ObjectStorageNamespace pulumi.StringPtrInput `pulumi:"objectStorageNamespace"`
 	// The object name in the bucket where the CRL is stored, expressed using a format where the version number of the issuing CA is inserted as part of the Object Storage object name wherever you include a pair of curly braces. This versioning scheme helps avoid collisions when new CA versions are created. For example, myCrlFileIssuedFromCAVersion{}.crl becomes myCrlFileIssuedFromCAVersion2.crl for CA version 2.
-	ObjectStorageObjectNameFormat pulumi.StringInput `pulumi:"objectStorageObjectNameFormat"`
+	ObjectStorageObjectNameFormat pulumi.StringPtrInput `pulumi:"objectStorageObjectNameFormat"`
 }
 
 func (GetCertificateAuthorityCertificateRevocationListDetailObjectStorageConfigArgs) ElementType() reflect.Type {
@@ -8708,12 +7605,6 @@ func (i GetCertificateAuthorityCertificateRevocationListDetailObjectStorageConfi
 
 func (i GetCertificateAuthorityCertificateRevocationListDetailObjectStorageConfigArgs) ToGetCertificateAuthorityCertificateRevocationListDetailObjectStorageConfigOutputWithContext(ctx context.Context) GetCertificateAuthorityCertificateRevocationListDetailObjectStorageConfigOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateAuthorityCertificateRevocationListDetailObjectStorageConfigOutput)
-}
-
-func (i GetCertificateAuthorityCertificateRevocationListDetailObjectStorageConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetCertificateAuthorityCertificateRevocationListDetailObjectStorageConfig] {
-	return pulumix.Output[GetCertificateAuthorityCertificateRevocationListDetailObjectStorageConfig]{
-		OutputState: i.ToGetCertificateAuthorityCertificateRevocationListDetailObjectStorageConfigOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetCertificateAuthorityCertificateRevocationListDetailObjectStorageConfigArrayInput is an input type that accepts GetCertificateAuthorityCertificateRevocationListDetailObjectStorageConfigArray and GetCertificateAuthorityCertificateRevocationListDetailObjectStorageConfigArrayOutput values.
@@ -8741,12 +7632,6 @@ func (i GetCertificateAuthorityCertificateRevocationListDetailObjectStorageConfi
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateAuthorityCertificateRevocationListDetailObjectStorageConfigArrayOutput)
 }
 
-func (i GetCertificateAuthorityCertificateRevocationListDetailObjectStorageConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateAuthorityCertificateRevocationListDetailObjectStorageConfig] {
-	return pulumix.Output[[]GetCertificateAuthorityCertificateRevocationListDetailObjectStorageConfig]{
-		OutputState: i.ToGetCertificateAuthorityCertificateRevocationListDetailObjectStorageConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCertificateAuthorityCertificateRevocationListDetailObjectStorageConfigOutput struct{ *pulumi.OutputState }
 
 func (GetCertificateAuthorityCertificateRevocationListDetailObjectStorageConfigOutput) ElementType() reflect.Type {
@@ -8761,31 +7646,25 @@ func (o GetCertificateAuthorityCertificateRevocationListDetailObjectStorageConfi
 	return o
 }
 
-func (o GetCertificateAuthorityCertificateRevocationListDetailObjectStorageConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificateAuthorityCertificateRevocationListDetailObjectStorageConfig] {
-	return pulumix.Output[GetCertificateAuthorityCertificateRevocationListDetailObjectStorageConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The name of the bucket where the CRL is stored.
-func (o GetCertificateAuthorityCertificateRevocationListDetailObjectStorageConfigOutput) ObjectStorageBucketName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthorityCertificateRevocationListDetailObjectStorageConfig) string {
+func (o GetCertificateAuthorityCertificateRevocationListDetailObjectStorageConfigOutput) ObjectStorageBucketName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthorityCertificateRevocationListDetailObjectStorageConfig) *string {
 		return v.ObjectStorageBucketName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The tenancy of the bucket where the CRL is stored.
-func (o GetCertificateAuthorityCertificateRevocationListDetailObjectStorageConfigOutput) ObjectStorageNamespace() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthorityCertificateRevocationListDetailObjectStorageConfig) string {
+func (o GetCertificateAuthorityCertificateRevocationListDetailObjectStorageConfigOutput) ObjectStorageNamespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthorityCertificateRevocationListDetailObjectStorageConfig) *string {
 		return v.ObjectStorageNamespace
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The object name in the bucket where the CRL is stored, expressed using a format where the version number of the issuing CA is inserted as part of the Object Storage object name wherever you include a pair of curly braces. This versioning scheme helps avoid collisions when new CA versions are created. For example, myCrlFileIssuedFromCAVersion{}.crl becomes myCrlFileIssuedFromCAVersion2.crl for CA version 2.
-func (o GetCertificateAuthorityCertificateRevocationListDetailObjectStorageConfigOutput) ObjectStorageObjectNameFormat() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthorityCertificateRevocationListDetailObjectStorageConfig) string {
+func (o GetCertificateAuthorityCertificateRevocationListDetailObjectStorageConfigOutput) ObjectStorageObjectNameFormat() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthorityCertificateRevocationListDetailObjectStorageConfig) *string {
 		return v.ObjectStorageObjectNameFormat
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetCertificateAuthorityCertificateRevocationListDetailObjectStorageConfigArrayOutput struct{ *pulumi.OutputState }
@@ -8802,12 +7681,6 @@ func (o GetCertificateAuthorityCertificateRevocationListDetailObjectStorageConfi
 	return o
 }
 
-func (o GetCertificateAuthorityCertificateRevocationListDetailObjectStorageConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateAuthorityCertificateRevocationListDetailObjectStorageConfig] {
-	return pulumix.Output[[]GetCertificateAuthorityCertificateRevocationListDetailObjectStorageConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCertificateAuthorityCertificateRevocationListDetailObjectStorageConfigArrayOutput) Index(i pulumi.IntInput) GetCertificateAuthorityCertificateRevocationListDetailObjectStorageConfigOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCertificateAuthorityCertificateRevocationListDetailObjectStorageConfig {
 		return vs[0].([]GetCertificateAuthorityCertificateRevocationListDetailObjectStorageConfig)[vs[1].(int)]
@@ -8816,25 +7689,25 @@ func (o GetCertificateAuthorityCertificateRevocationListDetailObjectStorageConfi
 
 type GetCertificateAuthorityCurrentVersion struct {
 	// The OCID of the certificate authority (CA).
-	CertificateAuthorityId string `pulumi:"certificateAuthorityId"`
+	CertificateAuthorityId *string `pulumi:"certificateAuthorityId"`
 	// The version number of the issuing CA.
-	IssuerCaVersionNumber string `pulumi:"issuerCaVersionNumber"`
+	IssuerCaVersionNumber *string `pulumi:"issuerCaVersionNumber"`
 	// The current revocation status of the entity.
 	RevocationStatuses []GetCertificateAuthorityCurrentVersionRevocationStatus `pulumi:"revocationStatuses"`
 	// Unique subject identifier, which is not the same as the certificate serial number (RDN SERIALNUMBER).
-	SerialNumber string `pulumi:"serialNumber"`
+	SerialNumber *string `pulumi:"serialNumber"`
 	// A list of rotation states for this CA version.
 	Stages []string `pulumi:"stages"`
 	// A property indicating when the CA was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// An optional property indicating when to delete the CA version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfDeletion string `pulumi:"timeOfDeletion"`
+	TimeOfDeletion *string `pulumi:"timeOfDeletion"`
 	// An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
 	Validities []GetCertificateAuthorityCurrentVersionValidity `pulumi:"validities"`
 	// The name of the CA version. When this value is not null, the name is unique across CA versions for a given CA.
-	VersionName string `pulumi:"versionName"`
+	VersionName *string `pulumi:"versionName"`
 	// The version number of the CA.
-	VersionNumber string `pulumi:"versionNumber"`
+	VersionNumber *string `pulumi:"versionNumber"`
 }
 
 // GetCertificateAuthorityCurrentVersionInput is an input type that accepts GetCertificateAuthorityCurrentVersionArgs and GetCertificateAuthorityCurrentVersionOutput values.
@@ -8850,25 +7723,25 @@ type GetCertificateAuthorityCurrentVersionInput interface {
 
 type GetCertificateAuthorityCurrentVersionArgs struct {
 	// The OCID of the certificate authority (CA).
-	CertificateAuthorityId pulumi.StringInput `pulumi:"certificateAuthorityId"`
+	CertificateAuthorityId pulumi.StringPtrInput `pulumi:"certificateAuthorityId"`
 	// The version number of the issuing CA.
-	IssuerCaVersionNumber pulumi.StringInput `pulumi:"issuerCaVersionNumber"`
+	IssuerCaVersionNumber pulumi.StringPtrInput `pulumi:"issuerCaVersionNumber"`
 	// The current revocation status of the entity.
 	RevocationStatuses GetCertificateAuthorityCurrentVersionRevocationStatusArrayInput `pulumi:"revocationStatuses"`
 	// Unique subject identifier, which is not the same as the certificate serial number (RDN SERIALNUMBER).
-	SerialNumber pulumi.StringInput `pulumi:"serialNumber"`
+	SerialNumber pulumi.StringPtrInput `pulumi:"serialNumber"`
 	// A list of rotation states for this CA version.
 	Stages pulumi.StringArrayInput `pulumi:"stages"`
 	// A property indicating when the CA was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// An optional property indicating when to delete the CA version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfDeletion pulumi.StringInput `pulumi:"timeOfDeletion"`
+	TimeOfDeletion pulumi.StringPtrInput `pulumi:"timeOfDeletion"`
 	// An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
 	Validities GetCertificateAuthorityCurrentVersionValidityArrayInput `pulumi:"validities"`
 	// The name of the CA version. When this value is not null, the name is unique across CA versions for a given CA.
-	VersionName pulumi.StringInput `pulumi:"versionName"`
+	VersionName pulumi.StringPtrInput `pulumi:"versionName"`
 	// The version number of the CA.
-	VersionNumber pulumi.StringInput `pulumi:"versionNumber"`
+	VersionNumber pulumi.StringPtrInput `pulumi:"versionNumber"`
 }
 
 func (GetCertificateAuthorityCurrentVersionArgs) ElementType() reflect.Type {
@@ -8881,12 +7754,6 @@ func (i GetCertificateAuthorityCurrentVersionArgs) ToGetCertificateAuthorityCurr
 
 func (i GetCertificateAuthorityCurrentVersionArgs) ToGetCertificateAuthorityCurrentVersionOutputWithContext(ctx context.Context) GetCertificateAuthorityCurrentVersionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateAuthorityCurrentVersionOutput)
-}
-
-func (i GetCertificateAuthorityCurrentVersionArgs) ToOutput(ctx context.Context) pulumix.Output[GetCertificateAuthorityCurrentVersion] {
-	return pulumix.Output[GetCertificateAuthorityCurrentVersion]{
-		OutputState: i.ToGetCertificateAuthorityCurrentVersionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetCertificateAuthorityCurrentVersionArrayInput is an input type that accepts GetCertificateAuthorityCurrentVersionArray and GetCertificateAuthorityCurrentVersionArrayOutput values.
@@ -8914,12 +7781,6 @@ func (i GetCertificateAuthorityCurrentVersionArray) ToGetCertificateAuthorityCur
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateAuthorityCurrentVersionArrayOutput)
 }
 
-func (i GetCertificateAuthorityCurrentVersionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateAuthorityCurrentVersion] {
-	return pulumix.Output[[]GetCertificateAuthorityCurrentVersion]{
-		OutputState: i.ToGetCertificateAuthorityCurrentVersionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCertificateAuthorityCurrentVersionOutput struct{ *pulumi.OutputState }
 
 func (GetCertificateAuthorityCurrentVersionOutput) ElementType() reflect.Type {
@@ -8934,20 +7795,14 @@ func (o GetCertificateAuthorityCurrentVersionOutput) ToGetCertificateAuthorityCu
 	return o
 }
 
-func (o GetCertificateAuthorityCurrentVersionOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificateAuthorityCurrentVersion] {
-	return pulumix.Output[GetCertificateAuthorityCurrentVersion]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the certificate authority (CA).
-func (o GetCertificateAuthorityCurrentVersionOutput) CertificateAuthorityId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthorityCurrentVersion) string { return v.CertificateAuthorityId }).(pulumi.StringOutput)
+func (o GetCertificateAuthorityCurrentVersionOutput) CertificateAuthorityId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthorityCurrentVersion) *string { return v.CertificateAuthorityId }).(pulumi.StringPtrOutput)
 }
 
 // The version number of the issuing CA.
-func (o GetCertificateAuthorityCurrentVersionOutput) IssuerCaVersionNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthorityCurrentVersion) string { return v.IssuerCaVersionNumber }).(pulumi.StringOutput)
+func (o GetCertificateAuthorityCurrentVersionOutput) IssuerCaVersionNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthorityCurrentVersion) *string { return v.IssuerCaVersionNumber }).(pulumi.StringPtrOutput)
 }
 
 // The current revocation status of the entity.
@@ -8958,8 +7813,8 @@ func (o GetCertificateAuthorityCurrentVersionOutput) RevocationStatuses() GetCer
 }
 
 // Unique subject identifier, which is not the same as the certificate serial number (RDN SERIALNUMBER).
-func (o GetCertificateAuthorityCurrentVersionOutput) SerialNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthorityCurrentVersion) string { return v.SerialNumber }).(pulumi.StringOutput)
+func (o GetCertificateAuthorityCurrentVersionOutput) SerialNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthorityCurrentVersion) *string { return v.SerialNumber }).(pulumi.StringPtrOutput)
 }
 
 // A list of rotation states for this CA version.
@@ -8968,13 +7823,13 @@ func (o GetCertificateAuthorityCurrentVersionOutput) Stages() pulumi.StringArray
 }
 
 // A property indicating when the CA was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-func (o GetCertificateAuthorityCurrentVersionOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthorityCurrentVersion) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetCertificateAuthorityCurrentVersionOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthorityCurrentVersion) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // An optional property indicating when to delete the CA version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-func (o GetCertificateAuthorityCurrentVersionOutput) TimeOfDeletion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthorityCurrentVersion) string { return v.TimeOfDeletion }).(pulumi.StringOutput)
+func (o GetCertificateAuthorityCurrentVersionOutput) TimeOfDeletion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthorityCurrentVersion) *string { return v.TimeOfDeletion }).(pulumi.StringPtrOutput)
 }
 
 // An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
@@ -8985,13 +7840,13 @@ func (o GetCertificateAuthorityCurrentVersionOutput) Validities() GetCertificate
 }
 
 // The name of the CA version. When this value is not null, the name is unique across CA versions for a given CA.
-func (o GetCertificateAuthorityCurrentVersionOutput) VersionName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthorityCurrentVersion) string { return v.VersionName }).(pulumi.StringOutput)
+func (o GetCertificateAuthorityCurrentVersionOutput) VersionName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthorityCurrentVersion) *string { return v.VersionName }).(pulumi.StringPtrOutput)
 }
 
 // The version number of the CA.
-func (o GetCertificateAuthorityCurrentVersionOutput) VersionNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthorityCurrentVersion) string { return v.VersionNumber }).(pulumi.StringOutput)
+func (o GetCertificateAuthorityCurrentVersionOutput) VersionNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthorityCurrentVersion) *string { return v.VersionNumber }).(pulumi.StringPtrOutput)
 }
 
 type GetCertificateAuthorityCurrentVersionArrayOutput struct{ *pulumi.OutputState }
@@ -9008,12 +7863,6 @@ func (o GetCertificateAuthorityCurrentVersionArrayOutput) ToGetCertificateAuthor
 	return o
 }
 
-func (o GetCertificateAuthorityCurrentVersionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateAuthorityCurrentVersion] {
-	return pulumix.Output[[]GetCertificateAuthorityCurrentVersion]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCertificateAuthorityCurrentVersionArrayOutput) Index(i pulumi.IntInput) GetCertificateAuthorityCurrentVersionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCertificateAuthorityCurrentVersion {
 		return vs[0].([]GetCertificateAuthorityCurrentVersion)[vs[1].(int)]
@@ -9022,9 +7871,9 @@ func (o GetCertificateAuthorityCurrentVersionArrayOutput) Index(i pulumi.IntInpu
 
 type GetCertificateAuthorityCurrentVersionRevocationStatus struct {
 	// The reason the certificate or certificate authority (CA) was revoked.
-	RevocationReason string `pulumi:"revocationReason"`
+	RevocationReason *string `pulumi:"revocationReason"`
 	// The time when the entity was revoked, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfRevocation string `pulumi:"timeOfRevocation"`
+	TimeOfRevocation *string `pulumi:"timeOfRevocation"`
 }
 
 // GetCertificateAuthorityCurrentVersionRevocationStatusInput is an input type that accepts GetCertificateAuthorityCurrentVersionRevocationStatusArgs and GetCertificateAuthorityCurrentVersionRevocationStatusOutput values.
@@ -9040,9 +7889,9 @@ type GetCertificateAuthorityCurrentVersionRevocationStatusInput interface {
 
 type GetCertificateAuthorityCurrentVersionRevocationStatusArgs struct {
 	// The reason the certificate or certificate authority (CA) was revoked.
-	RevocationReason pulumi.StringInput `pulumi:"revocationReason"`
+	RevocationReason pulumi.StringPtrInput `pulumi:"revocationReason"`
 	// The time when the entity was revoked, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfRevocation pulumi.StringInput `pulumi:"timeOfRevocation"`
+	TimeOfRevocation pulumi.StringPtrInput `pulumi:"timeOfRevocation"`
 }
 
 func (GetCertificateAuthorityCurrentVersionRevocationStatusArgs) ElementType() reflect.Type {
@@ -9055,12 +7904,6 @@ func (i GetCertificateAuthorityCurrentVersionRevocationStatusArgs) ToGetCertific
 
 func (i GetCertificateAuthorityCurrentVersionRevocationStatusArgs) ToGetCertificateAuthorityCurrentVersionRevocationStatusOutputWithContext(ctx context.Context) GetCertificateAuthorityCurrentVersionRevocationStatusOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateAuthorityCurrentVersionRevocationStatusOutput)
-}
-
-func (i GetCertificateAuthorityCurrentVersionRevocationStatusArgs) ToOutput(ctx context.Context) pulumix.Output[GetCertificateAuthorityCurrentVersionRevocationStatus] {
-	return pulumix.Output[GetCertificateAuthorityCurrentVersionRevocationStatus]{
-		OutputState: i.ToGetCertificateAuthorityCurrentVersionRevocationStatusOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetCertificateAuthorityCurrentVersionRevocationStatusArrayInput is an input type that accepts GetCertificateAuthorityCurrentVersionRevocationStatusArray and GetCertificateAuthorityCurrentVersionRevocationStatusArrayOutput values.
@@ -9088,12 +7931,6 @@ func (i GetCertificateAuthorityCurrentVersionRevocationStatusArray) ToGetCertifi
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateAuthorityCurrentVersionRevocationStatusArrayOutput)
 }
 
-func (i GetCertificateAuthorityCurrentVersionRevocationStatusArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateAuthorityCurrentVersionRevocationStatus] {
-	return pulumix.Output[[]GetCertificateAuthorityCurrentVersionRevocationStatus]{
-		OutputState: i.ToGetCertificateAuthorityCurrentVersionRevocationStatusArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCertificateAuthorityCurrentVersionRevocationStatusOutput struct{ *pulumi.OutputState }
 
 func (GetCertificateAuthorityCurrentVersionRevocationStatusOutput) ElementType() reflect.Type {
@@ -9108,20 +7945,14 @@ func (o GetCertificateAuthorityCurrentVersionRevocationStatusOutput) ToGetCertif
 	return o
 }
 
-func (o GetCertificateAuthorityCurrentVersionRevocationStatusOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificateAuthorityCurrentVersionRevocationStatus] {
-	return pulumix.Output[GetCertificateAuthorityCurrentVersionRevocationStatus]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The reason the certificate or certificate authority (CA) was revoked.
-func (o GetCertificateAuthorityCurrentVersionRevocationStatusOutput) RevocationReason() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthorityCurrentVersionRevocationStatus) string { return v.RevocationReason }).(pulumi.StringOutput)
+func (o GetCertificateAuthorityCurrentVersionRevocationStatusOutput) RevocationReason() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthorityCurrentVersionRevocationStatus) *string { return v.RevocationReason }).(pulumi.StringPtrOutput)
 }
 
 // The time when the entity was revoked, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-func (o GetCertificateAuthorityCurrentVersionRevocationStatusOutput) TimeOfRevocation() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthorityCurrentVersionRevocationStatus) string { return v.TimeOfRevocation }).(pulumi.StringOutput)
+func (o GetCertificateAuthorityCurrentVersionRevocationStatusOutput) TimeOfRevocation() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthorityCurrentVersionRevocationStatus) *string { return v.TimeOfRevocation }).(pulumi.StringPtrOutput)
 }
 
 type GetCertificateAuthorityCurrentVersionRevocationStatusArrayOutput struct{ *pulumi.OutputState }
@@ -9138,12 +7969,6 @@ func (o GetCertificateAuthorityCurrentVersionRevocationStatusArrayOutput) ToGetC
 	return o
 }
 
-func (o GetCertificateAuthorityCurrentVersionRevocationStatusArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateAuthorityCurrentVersionRevocationStatus] {
-	return pulumix.Output[[]GetCertificateAuthorityCurrentVersionRevocationStatus]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCertificateAuthorityCurrentVersionRevocationStatusArrayOutput) Index(i pulumi.IntInput) GetCertificateAuthorityCurrentVersionRevocationStatusOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCertificateAuthorityCurrentVersionRevocationStatus {
 		return vs[0].([]GetCertificateAuthorityCurrentVersionRevocationStatus)[vs[1].(int)]
@@ -9152,9 +7977,9 @@ func (o GetCertificateAuthorityCurrentVersionRevocationStatusArrayOutput) Index(
 
 type GetCertificateAuthorityCurrentVersionValidity struct {
 	// The date on which the certificate validity period ends, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfValidityNotAfter string `pulumi:"timeOfValidityNotAfter"`
+	TimeOfValidityNotAfter *string `pulumi:"timeOfValidityNotAfter"`
 	// The date on which the certificate validity period begins, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfValidityNotBefore string `pulumi:"timeOfValidityNotBefore"`
+	TimeOfValidityNotBefore *string `pulumi:"timeOfValidityNotBefore"`
 }
 
 // GetCertificateAuthorityCurrentVersionValidityInput is an input type that accepts GetCertificateAuthorityCurrentVersionValidityArgs and GetCertificateAuthorityCurrentVersionValidityOutput values.
@@ -9170,9 +7995,9 @@ type GetCertificateAuthorityCurrentVersionValidityInput interface {
 
 type GetCertificateAuthorityCurrentVersionValidityArgs struct {
 	// The date on which the certificate validity period ends, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfValidityNotAfter pulumi.StringInput `pulumi:"timeOfValidityNotAfter"`
+	TimeOfValidityNotAfter pulumi.StringPtrInput `pulumi:"timeOfValidityNotAfter"`
 	// The date on which the certificate validity period begins, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfValidityNotBefore pulumi.StringInput `pulumi:"timeOfValidityNotBefore"`
+	TimeOfValidityNotBefore pulumi.StringPtrInput `pulumi:"timeOfValidityNotBefore"`
 }
 
 func (GetCertificateAuthorityCurrentVersionValidityArgs) ElementType() reflect.Type {
@@ -9185,12 +8010,6 @@ func (i GetCertificateAuthorityCurrentVersionValidityArgs) ToGetCertificateAutho
 
 func (i GetCertificateAuthorityCurrentVersionValidityArgs) ToGetCertificateAuthorityCurrentVersionValidityOutputWithContext(ctx context.Context) GetCertificateAuthorityCurrentVersionValidityOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateAuthorityCurrentVersionValidityOutput)
-}
-
-func (i GetCertificateAuthorityCurrentVersionValidityArgs) ToOutput(ctx context.Context) pulumix.Output[GetCertificateAuthorityCurrentVersionValidity] {
-	return pulumix.Output[GetCertificateAuthorityCurrentVersionValidity]{
-		OutputState: i.ToGetCertificateAuthorityCurrentVersionValidityOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetCertificateAuthorityCurrentVersionValidityArrayInput is an input type that accepts GetCertificateAuthorityCurrentVersionValidityArray and GetCertificateAuthorityCurrentVersionValidityArrayOutput values.
@@ -9218,12 +8037,6 @@ func (i GetCertificateAuthorityCurrentVersionValidityArray) ToGetCertificateAuth
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateAuthorityCurrentVersionValidityArrayOutput)
 }
 
-func (i GetCertificateAuthorityCurrentVersionValidityArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateAuthorityCurrentVersionValidity] {
-	return pulumix.Output[[]GetCertificateAuthorityCurrentVersionValidity]{
-		OutputState: i.ToGetCertificateAuthorityCurrentVersionValidityArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCertificateAuthorityCurrentVersionValidityOutput struct{ *pulumi.OutputState }
 
 func (GetCertificateAuthorityCurrentVersionValidityOutput) ElementType() reflect.Type {
@@ -9238,20 +8051,14 @@ func (o GetCertificateAuthorityCurrentVersionValidityOutput) ToGetCertificateAut
 	return o
 }
 
-func (o GetCertificateAuthorityCurrentVersionValidityOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificateAuthorityCurrentVersionValidity] {
-	return pulumix.Output[GetCertificateAuthorityCurrentVersionValidity]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The date on which the certificate validity period ends, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-func (o GetCertificateAuthorityCurrentVersionValidityOutput) TimeOfValidityNotAfter() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthorityCurrentVersionValidity) string { return v.TimeOfValidityNotAfter }).(pulumi.StringOutput)
+func (o GetCertificateAuthorityCurrentVersionValidityOutput) TimeOfValidityNotAfter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthorityCurrentVersionValidity) *string { return v.TimeOfValidityNotAfter }).(pulumi.StringPtrOutput)
 }
 
 // The date on which the certificate validity period begins, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-func (o GetCertificateAuthorityCurrentVersionValidityOutput) TimeOfValidityNotBefore() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthorityCurrentVersionValidity) string { return v.TimeOfValidityNotBefore }).(pulumi.StringOutput)
+func (o GetCertificateAuthorityCurrentVersionValidityOutput) TimeOfValidityNotBefore() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthorityCurrentVersionValidity) *string { return v.TimeOfValidityNotBefore }).(pulumi.StringPtrOutput)
 }
 
 type GetCertificateAuthorityCurrentVersionValidityArrayOutput struct{ *pulumi.OutputState }
@@ -9268,12 +8075,6 @@ func (o GetCertificateAuthorityCurrentVersionValidityArrayOutput) ToGetCertifica
 	return o
 }
 
-func (o GetCertificateAuthorityCurrentVersionValidityArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateAuthorityCurrentVersionValidity] {
-	return pulumix.Output[[]GetCertificateAuthorityCurrentVersionValidity]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCertificateAuthorityCurrentVersionValidityArrayOutput) Index(i pulumi.IntInput) GetCertificateAuthorityCurrentVersionValidityOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCertificateAuthorityCurrentVersionValidity {
 		return vs[0].([]GetCertificateAuthorityCurrentVersionValidity)[vs[1].(int)]
@@ -9282,39 +8083,39 @@ func (o GetCertificateAuthorityCurrentVersionValidityArrayOutput) Index(i pulumi
 
 type GetCertificateAuthoritySubject struct {
 	// Common name or fully-qualified domain name (RDN CN).
-	CommonName string `pulumi:"commonName"`
+	CommonName *string `pulumi:"commonName"`
 	// Country name (RDN C).
-	Country string `pulumi:"country"`
+	Country *string `pulumi:"country"`
 	// Distinguished name qualifier(RDN DNQ).
-	DistinguishedNameQualifier string `pulumi:"distinguishedNameQualifier"`
+	DistinguishedNameQualifier *string `pulumi:"distinguishedNameQualifier"`
 	// Domain component (RDN DC).
-	DomainComponent string `pulumi:"domainComponent"`
+	DomainComponent *string `pulumi:"domainComponent"`
 	// Personal generational qualifier (for example, Sr., Jr. 3rd, or IV).
-	GenerationQualifier string `pulumi:"generationQualifier"`
+	GenerationQualifier *string `pulumi:"generationQualifier"`
 	// Personal given name (RDN G or GN).
-	GivenName string `pulumi:"givenName"`
+	GivenName *string `pulumi:"givenName"`
 	// Personal initials.
-	Initials string `pulumi:"initials"`
+	Initials *string `pulumi:"initials"`
 	// Locality (RDN L).
-	LocalityName string `pulumi:"localityName"`
+	LocalityName *string `pulumi:"localityName"`
 	// Organization (RDN O).
-	Organization string `pulumi:"organization"`
+	Organization *string `pulumi:"organization"`
 	// Organizational unit (RDN OU).
-	OrganizationalUnit string `pulumi:"organizationalUnit"`
+	OrganizationalUnit *string `pulumi:"organizationalUnit"`
 	// Subject pseudonym.
-	Pseudonym string `pulumi:"pseudonym"`
+	Pseudonym *string `pulumi:"pseudonym"`
 	// Unique subject identifier, which is not the same as the certificate serial number (RDN SERIALNUMBER).
-	SerialNumber string `pulumi:"serialNumber"`
+	SerialNumber *string `pulumi:"serialNumber"`
 	// State or province name (RDN ST or S).
-	StateOrProvinceName string `pulumi:"stateOrProvinceName"`
+	StateOrProvinceName *string `pulumi:"stateOrProvinceName"`
 	// Street address (RDN STREET).
-	Street string `pulumi:"street"`
+	Street *string `pulumi:"street"`
 	// Personal surname (RDN SN).
-	Surname string `pulumi:"surname"`
+	Surname *string `pulumi:"surname"`
 	// Title (RDN T or TITLE).
-	Title string `pulumi:"title"`
+	Title *string `pulumi:"title"`
 	// User ID (RDN UID).
-	UserId string `pulumi:"userId"`
+	UserId *string `pulumi:"userId"`
 }
 
 // GetCertificateAuthoritySubjectInput is an input type that accepts GetCertificateAuthoritySubjectArgs and GetCertificateAuthoritySubjectOutput values.
@@ -9330,39 +8131,39 @@ type GetCertificateAuthoritySubjectInput interface {
 
 type GetCertificateAuthoritySubjectArgs struct {
 	// Common name or fully-qualified domain name (RDN CN).
-	CommonName pulumi.StringInput `pulumi:"commonName"`
+	CommonName pulumi.StringPtrInput `pulumi:"commonName"`
 	// Country name (RDN C).
-	Country pulumi.StringInput `pulumi:"country"`
+	Country pulumi.StringPtrInput `pulumi:"country"`
 	// Distinguished name qualifier(RDN DNQ).
-	DistinguishedNameQualifier pulumi.StringInput `pulumi:"distinguishedNameQualifier"`
+	DistinguishedNameQualifier pulumi.StringPtrInput `pulumi:"distinguishedNameQualifier"`
 	// Domain component (RDN DC).
-	DomainComponent pulumi.StringInput `pulumi:"domainComponent"`
+	DomainComponent pulumi.StringPtrInput `pulumi:"domainComponent"`
 	// Personal generational qualifier (for example, Sr., Jr. 3rd, or IV).
-	GenerationQualifier pulumi.StringInput `pulumi:"generationQualifier"`
+	GenerationQualifier pulumi.StringPtrInput `pulumi:"generationQualifier"`
 	// Personal given name (RDN G or GN).
-	GivenName pulumi.StringInput `pulumi:"givenName"`
+	GivenName pulumi.StringPtrInput `pulumi:"givenName"`
 	// Personal initials.
-	Initials pulumi.StringInput `pulumi:"initials"`
+	Initials pulumi.StringPtrInput `pulumi:"initials"`
 	// Locality (RDN L).
-	LocalityName pulumi.StringInput `pulumi:"localityName"`
+	LocalityName pulumi.StringPtrInput `pulumi:"localityName"`
 	// Organization (RDN O).
-	Organization pulumi.StringInput `pulumi:"organization"`
+	Organization pulumi.StringPtrInput `pulumi:"organization"`
 	// Organizational unit (RDN OU).
-	OrganizationalUnit pulumi.StringInput `pulumi:"organizationalUnit"`
+	OrganizationalUnit pulumi.StringPtrInput `pulumi:"organizationalUnit"`
 	// Subject pseudonym.
-	Pseudonym pulumi.StringInput `pulumi:"pseudonym"`
+	Pseudonym pulumi.StringPtrInput `pulumi:"pseudonym"`
 	// Unique subject identifier, which is not the same as the certificate serial number (RDN SERIALNUMBER).
-	SerialNumber pulumi.StringInput `pulumi:"serialNumber"`
+	SerialNumber pulumi.StringPtrInput `pulumi:"serialNumber"`
 	// State or province name (RDN ST or S).
-	StateOrProvinceName pulumi.StringInput `pulumi:"stateOrProvinceName"`
+	StateOrProvinceName pulumi.StringPtrInput `pulumi:"stateOrProvinceName"`
 	// Street address (RDN STREET).
-	Street pulumi.StringInput `pulumi:"street"`
+	Street pulumi.StringPtrInput `pulumi:"street"`
 	// Personal surname (RDN SN).
-	Surname pulumi.StringInput `pulumi:"surname"`
+	Surname pulumi.StringPtrInput `pulumi:"surname"`
 	// Title (RDN T or TITLE).
-	Title pulumi.StringInput `pulumi:"title"`
+	Title pulumi.StringPtrInput `pulumi:"title"`
 	// User ID (RDN UID).
-	UserId pulumi.StringInput `pulumi:"userId"`
+	UserId pulumi.StringPtrInput `pulumi:"userId"`
 }
 
 func (GetCertificateAuthoritySubjectArgs) ElementType() reflect.Type {
@@ -9375,12 +8176,6 @@ func (i GetCertificateAuthoritySubjectArgs) ToGetCertificateAuthoritySubjectOutp
 
 func (i GetCertificateAuthoritySubjectArgs) ToGetCertificateAuthoritySubjectOutputWithContext(ctx context.Context) GetCertificateAuthoritySubjectOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateAuthoritySubjectOutput)
-}
-
-func (i GetCertificateAuthoritySubjectArgs) ToOutput(ctx context.Context) pulumix.Output[GetCertificateAuthoritySubject] {
-	return pulumix.Output[GetCertificateAuthoritySubject]{
-		OutputState: i.ToGetCertificateAuthoritySubjectOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetCertificateAuthoritySubjectArrayInput is an input type that accepts GetCertificateAuthoritySubjectArray and GetCertificateAuthoritySubjectArrayOutput values.
@@ -9408,12 +8203,6 @@ func (i GetCertificateAuthoritySubjectArray) ToGetCertificateAuthoritySubjectArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateAuthoritySubjectArrayOutput)
 }
 
-func (i GetCertificateAuthoritySubjectArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateAuthoritySubject] {
-	return pulumix.Output[[]GetCertificateAuthoritySubject]{
-		OutputState: i.ToGetCertificateAuthoritySubjectArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCertificateAuthoritySubjectOutput struct{ *pulumi.OutputState }
 
 func (GetCertificateAuthoritySubjectOutput) ElementType() reflect.Type {
@@ -9428,95 +8217,89 @@ func (o GetCertificateAuthoritySubjectOutput) ToGetCertificateAuthoritySubjectOu
 	return o
 }
 
-func (o GetCertificateAuthoritySubjectOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificateAuthoritySubject] {
-	return pulumix.Output[GetCertificateAuthoritySubject]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Common name or fully-qualified domain name (RDN CN).
-func (o GetCertificateAuthoritySubjectOutput) CommonName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthoritySubject) string { return v.CommonName }).(pulumi.StringOutput)
+func (o GetCertificateAuthoritySubjectOutput) CommonName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritySubject) *string { return v.CommonName }).(pulumi.StringPtrOutput)
 }
 
 // Country name (RDN C).
-func (o GetCertificateAuthoritySubjectOutput) Country() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthoritySubject) string { return v.Country }).(pulumi.StringOutput)
+func (o GetCertificateAuthoritySubjectOutput) Country() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritySubject) *string { return v.Country }).(pulumi.StringPtrOutput)
 }
 
 // Distinguished name qualifier(RDN DNQ).
-func (o GetCertificateAuthoritySubjectOutput) DistinguishedNameQualifier() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthoritySubject) string { return v.DistinguishedNameQualifier }).(pulumi.StringOutput)
+func (o GetCertificateAuthoritySubjectOutput) DistinguishedNameQualifier() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritySubject) *string { return v.DistinguishedNameQualifier }).(pulumi.StringPtrOutput)
 }
 
 // Domain component (RDN DC).
-func (o GetCertificateAuthoritySubjectOutput) DomainComponent() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthoritySubject) string { return v.DomainComponent }).(pulumi.StringOutput)
+func (o GetCertificateAuthoritySubjectOutput) DomainComponent() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritySubject) *string { return v.DomainComponent }).(pulumi.StringPtrOutput)
 }
 
 // Personal generational qualifier (for example, Sr., Jr. 3rd, or IV).
-func (o GetCertificateAuthoritySubjectOutput) GenerationQualifier() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthoritySubject) string { return v.GenerationQualifier }).(pulumi.StringOutput)
+func (o GetCertificateAuthoritySubjectOutput) GenerationQualifier() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritySubject) *string { return v.GenerationQualifier }).(pulumi.StringPtrOutput)
 }
 
 // Personal given name (RDN G or GN).
-func (o GetCertificateAuthoritySubjectOutput) GivenName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthoritySubject) string { return v.GivenName }).(pulumi.StringOutput)
+func (o GetCertificateAuthoritySubjectOutput) GivenName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritySubject) *string { return v.GivenName }).(pulumi.StringPtrOutput)
 }
 
 // Personal initials.
-func (o GetCertificateAuthoritySubjectOutput) Initials() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthoritySubject) string { return v.Initials }).(pulumi.StringOutput)
+func (o GetCertificateAuthoritySubjectOutput) Initials() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritySubject) *string { return v.Initials }).(pulumi.StringPtrOutput)
 }
 
 // Locality (RDN L).
-func (o GetCertificateAuthoritySubjectOutput) LocalityName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthoritySubject) string { return v.LocalityName }).(pulumi.StringOutput)
+func (o GetCertificateAuthoritySubjectOutput) LocalityName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritySubject) *string { return v.LocalityName }).(pulumi.StringPtrOutput)
 }
 
 // Organization (RDN O).
-func (o GetCertificateAuthoritySubjectOutput) Organization() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthoritySubject) string { return v.Organization }).(pulumi.StringOutput)
+func (o GetCertificateAuthoritySubjectOutput) Organization() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritySubject) *string { return v.Organization }).(pulumi.StringPtrOutput)
 }
 
 // Organizational unit (RDN OU).
-func (o GetCertificateAuthoritySubjectOutput) OrganizationalUnit() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthoritySubject) string { return v.OrganizationalUnit }).(pulumi.StringOutput)
+func (o GetCertificateAuthoritySubjectOutput) OrganizationalUnit() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritySubject) *string { return v.OrganizationalUnit }).(pulumi.StringPtrOutput)
 }
 
 // Subject pseudonym.
-func (o GetCertificateAuthoritySubjectOutput) Pseudonym() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthoritySubject) string { return v.Pseudonym }).(pulumi.StringOutput)
+func (o GetCertificateAuthoritySubjectOutput) Pseudonym() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritySubject) *string { return v.Pseudonym }).(pulumi.StringPtrOutput)
 }
 
 // Unique subject identifier, which is not the same as the certificate serial number (RDN SERIALNUMBER).
-func (o GetCertificateAuthoritySubjectOutput) SerialNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthoritySubject) string { return v.SerialNumber }).(pulumi.StringOutput)
+func (o GetCertificateAuthoritySubjectOutput) SerialNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritySubject) *string { return v.SerialNumber }).(pulumi.StringPtrOutput)
 }
 
 // State or province name (RDN ST or S).
-func (o GetCertificateAuthoritySubjectOutput) StateOrProvinceName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthoritySubject) string { return v.StateOrProvinceName }).(pulumi.StringOutput)
+func (o GetCertificateAuthoritySubjectOutput) StateOrProvinceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritySubject) *string { return v.StateOrProvinceName }).(pulumi.StringPtrOutput)
 }
 
 // Street address (RDN STREET).
-func (o GetCertificateAuthoritySubjectOutput) Street() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthoritySubject) string { return v.Street }).(pulumi.StringOutput)
+func (o GetCertificateAuthoritySubjectOutput) Street() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritySubject) *string { return v.Street }).(pulumi.StringPtrOutput)
 }
 
 // Personal surname (RDN SN).
-func (o GetCertificateAuthoritySubjectOutput) Surname() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthoritySubject) string { return v.Surname }).(pulumi.StringOutput)
+func (o GetCertificateAuthoritySubjectOutput) Surname() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritySubject) *string { return v.Surname }).(pulumi.StringPtrOutput)
 }
 
 // Title (RDN T or TITLE).
-func (o GetCertificateAuthoritySubjectOutput) Title() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthoritySubject) string { return v.Title }).(pulumi.StringOutput)
+func (o GetCertificateAuthoritySubjectOutput) Title() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritySubject) *string { return v.Title }).(pulumi.StringPtrOutput)
 }
 
 // User ID (RDN UID).
-func (o GetCertificateAuthoritySubjectOutput) UserId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthoritySubject) string { return v.UserId }).(pulumi.StringOutput)
+func (o GetCertificateAuthoritySubjectOutput) UserId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritySubject) *string { return v.UserId }).(pulumi.StringPtrOutput)
 }
 
 type GetCertificateAuthoritySubjectArrayOutput struct{ *pulumi.OutputState }
@@ -9533,12 +8316,6 @@ func (o GetCertificateAuthoritySubjectArrayOutput) ToGetCertificateAuthoritySubj
 	return o
 }
 
-func (o GetCertificateAuthoritySubjectArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateAuthoritySubject] {
-	return pulumix.Output[[]GetCertificateAuthoritySubject]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCertificateAuthoritySubjectArrayOutput) Index(i pulumi.IntInput) GetCertificateAuthoritySubjectOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCertificateAuthoritySubject {
 		return vs[0].([]GetCertificateAuthoritySubject)[vs[1].(int)]
@@ -9547,9 +8324,9 @@ func (o GetCertificateAuthoritySubjectArrayOutput) Index(i pulumi.IntInput) GetC
 
 type GetCertificateAuthorityVersionRevocationStatus struct {
 	// The reason the certificate or certificate authority (CA) was revoked.
-	RevocationReason string `pulumi:"revocationReason"`
+	RevocationReason *string `pulumi:"revocationReason"`
 	// The time when the entity was revoked, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfRevocation string `pulumi:"timeOfRevocation"`
+	TimeOfRevocation *string `pulumi:"timeOfRevocation"`
 }
 
 // GetCertificateAuthorityVersionRevocationStatusInput is an input type that accepts GetCertificateAuthorityVersionRevocationStatusArgs and GetCertificateAuthorityVersionRevocationStatusOutput values.
@@ -9565,9 +8342,9 @@ type GetCertificateAuthorityVersionRevocationStatusInput interface {
 
 type GetCertificateAuthorityVersionRevocationStatusArgs struct {
 	// The reason the certificate or certificate authority (CA) was revoked.
-	RevocationReason pulumi.StringInput `pulumi:"revocationReason"`
+	RevocationReason pulumi.StringPtrInput `pulumi:"revocationReason"`
 	// The time when the entity was revoked, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfRevocation pulumi.StringInput `pulumi:"timeOfRevocation"`
+	TimeOfRevocation pulumi.StringPtrInput `pulumi:"timeOfRevocation"`
 }
 
 func (GetCertificateAuthorityVersionRevocationStatusArgs) ElementType() reflect.Type {
@@ -9580,12 +8357,6 @@ func (i GetCertificateAuthorityVersionRevocationStatusArgs) ToGetCertificateAuth
 
 func (i GetCertificateAuthorityVersionRevocationStatusArgs) ToGetCertificateAuthorityVersionRevocationStatusOutputWithContext(ctx context.Context) GetCertificateAuthorityVersionRevocationStatusOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateAuthorityVersionRevocationStatusOutput)
-}
-
-func (i GetCertificateAuthorityVersionRevocationStatusArgs) ToOutput(ctx context.Context) pulumix.Output[GetCertificateAuthorityVersionRevocationStatus] {
-	return pulumix.Output[GetCertificateAuthorityVersionRevocationStatus]{
-		OutputState: i.ToGetCertificateAuthorityVersionRevocationStatusOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetCertificateAuthorityVersionRevocationStatusArrayInput is an input type that accepts GetCertificateAuthorityVersionRevocationStatusArray and GetCertificateAuthorityVersionRevocationStatusArrayOutput values.
@@ -9613,12 +8384,6 @@ func (i GetCertificateAuthorityVersionRevocationStatusArray) ToGetCertificateAut
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateAuthorityVersionRevocationStatusArrayOutput)
 }
 
-func (i GetCertificateAuthorityVersionRevocationStatusArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateAuthorityVersionRevocationStatus] {
-	return pulumix.Output[[]GetCertificateAuthorityVersionRevocationStatus]{
-		OutputState: i.ToGetCertificateAuthorityVersionRevocationStatusArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCertificateAuthorityVersionRevocationStatusOutput struct{ *pulumi.OutputState }
 
 func (GetCertificateAuthorityVersionRevocationStatusOutput) ElementType() reflect.Type {
@@ -9633,20 +8398,14 @@ func (o GetCertificateAuthorityVersionRevocationStatusOutput) ToGetCertificateAu
 	return o
 }
 
-func (o GetCertificateAuthorityVersionRevocationStatusOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificateAuthorityVersionRevocationStatus] {
-	return pulumix.Output[GetCertificateAuthorityVersionRevocationStatus]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The reason the certificate or certificate authority (CA) was revoked.
-func (o GetCertificateAuthorityVersionRevocationStatusOutput) RevocationReason() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthorityVersionRevocationStatus) string { return v.RevocationReason }).(pulumi.StringOutput)
+func (o GetCertificateAuthorityVersionRevocationStatusOutput) RevocationReason() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthorityVersionRevocationStatus) *string { return v.RevocationReason }).(pulumi.StringPtrOutput)
 }
 
 // The time when the entity was revoked, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-func (o GetCertificateAuthorityVersionRevocationStatusOutput) TimeOfRevocation() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthorityVersionRevocationStatus) string { return v.TimeOfRevocation }).(pulumi.StringOutput)
+func (o GetCertificateAuthorityVersionRevocationStatusOutput) TimeOfRevocation() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthorityVersionRevocationStatus) *string { return v.TimeOfRevocation }).(pulumi.StringPtrOutput)
 }
 
 type GetCertificateAuthorityVersionRevocationStatusArrayOutput struct{ *pulumi.OutputState }
@@ -9663,12 +8422,6 @@ func (o GetCertificateAuthorityVersionRevocationStatusArrayOutput) ToGetCertific
 	return o
 }
 
-func (o GetCertificateAuthorityVersionRevocationStatusArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateAuthorityVersionRevocationStatus] {
-	return pulumix.Output[[]GetCertificateAuthorityVersionRevocationStatus]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCertificateAuthorityVersionRevocationStatusArrayOutput) Index(i pulumi.IntInput) GetCertificateAuthorityVersionRevocationStatusOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCertificateAuthorityVersionRevocationStatus {
 		return vs[0].([]GetCertificateAuthorityVersionRevocationStatus)[vs[1].(int)]
@@ -9676,8 +8429,8 @@ func (o GetCertificateAuthorityVersionRevocationStatusArrayOutput) Index(i pulum
 }
 
 type GetCertificateAuthorityVersionSubjectAlternativeName struct {
-	Type  string `pulumi:"type"`
-	Value string `pulumi:"value"`
+	Type  *string `pulumi:"type"`
+	Value *string `pulumi:"value"`
 }
 
 // GetCertificateAuthorityVersionSubjectAlternativeNameInput is an input type that accepts GetCertificateAuthorityVersionSubjectAlternativeNameArgs and GetCertificateAuthorityVersionSubjectAlternativeNameOutput values.
@@ -9692,8 +8445,8 @@ type GetCertificateAuthorityVersionSubjectAlternativeNameInput interface {
 }
 
 type GetCertificateAuthorityVersionSubjectAlternativeNameArgs struct {
-	Type  pulumi.StringInput `pulumi:"type"`
-	Value pulumi.StringInput `pulumi:"value"`
+	Type  pulumi.StringPtrInput `pulumi:"type"`
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (GetCertificateAuthorityVersionSubjectAlternativeNameArgs) ElementType() reflect.Type {
@@ -9706,12 +8459,6 @@ func (i GetCertificateAuthorityVersionSubjectAlternativeNameArgs) ToGetCertifica
 
 func (i GetCertificateAuthorityVersionSubjectAlternativeNameArgs) ToGetCertificateAuthorityVersionSubjectAlternativeNameOutputWithContext(ctx context.Context) GetCertificateAuthorityVersionSubjectAlternativeNameOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateAuthorityVersionSubjectAlternativeNameOutput)
-}
-
-func (i GetCertificateAuthorityVersionSubjectAlternativeNameArgs) ToOutput(ctx context.Context) pulumix.Output[GetCertificateAuthorityVersionSubjectAlternativeName] {
-	return pulumix.Output[GetCertificateAuthorityVersionSubjectAlternativeName]{
-		OutputState: i.ToGetCertificateAuthorityVersionSubjectAlternativeNameOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetCertificateAuthorityVersionSubjectAlternativeNameArrayInput is an input type that accepts GetCertificateAuthorityVersionSubjectAlternativeNameArray and GetCertificateAuthorityVersionSubjectAlternativeNameArrayOutput values.
@@ -9739,12 +8486,6 @@ func (i GetCertificateAuthorityVersionSubjectAlternativeNameArray) ToGetCertific
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateAuthorityVersionSubjectAlternativeNameArrayOutput)
 }
 
-func (i GetCertificateAuthorityVersionSubjectAlternativeNameArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateAuthorityVersionSubjectAlternativeName] {
-	return pulumix.Output[[]GetCertificateAuthorityVersionSubjectAlternativeName]{
-		OutputState: i.ToGetCertificateAuthorityVersionSubjectAlternativeNameArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCertificateAuthorityVersionSubjectAlternativeNameOutput struct{ *pulumi.OutputState }
 
 func (GetCertificateAuthorityVersionSubjectAlternativeNameOutput) ElementType() reflect.Type {
@@ -9759,18 +8500,12 @@ func (o GetCertificateAuthorityVersionSubjectAlternativeNameOutput) ToGetCertifi
 	return o
 }
 
-func (o GetCertificateAuthorityVersionSubjectAlternativeNameOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificateAuthorityVersionSubjectAlternativeName] {
-	return pulumix.Output[GetCertificateAuthorityVersionSubjectAlternativeName]{
-		OutputState: o.OutputState,
-	}
+func (o GetCertificateAuthorityVersionSubjectAlternativeNameOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthorityVersionSubjectAlternativeName) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
-func (o GetCertificateAuthorityVersionSubjectAlternativeNameOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthorityVersionSubjectAlternativeName) string { return v.Type }).(pulumi.StringOutput)
-}
-
-func (o GetCertificateAuthorityVersionSubjectAlternativeNameOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthorityVersionSubjectAlternativeName) string { return v.Value }).(pulumi.StringOutput)
+func (o GetCertificateAuthorityVersionSubjectAlternativeNameOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthorityVersionSubjectAlternativeName) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
 
 type GetCertificateAuthorityVersionSubjectAlternativeNameArrayOutput struct{ *pulumi.OutputState }
@@ -9787,12 +8522,6 @@ func (o GetCertificateAuthorityVersionSubjectAlternativeNameArrayOutput) ToGetCe
 	return o
 }
 
-func (o GetCertificateAuthorityVersionSubjectAlternativeNameArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateAuthorityVersionSubjectAlternativeName] {
-	return pulumix.Output[[]GetCertificateAuthorityVersionSubjectAlternativeName]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCertificateAuthorityVersionSubjectAlternativeNameArrayOutput) Index(i pulumi.IntInput) GetCertificateAuthorityVersionSubjectAlternativeNameOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCertificateAuthorityVersionSubjectAlternativeName {
 		return vs[0].([]GetCertificateAuthorityVersionSubjectAlternativeName)[vs[1].(int)]
@@ -9801,9 +8530,9 @@ func (o GetCertificateAuthorityVersionSubjectAlternativeNameArrayOutput) Index(i
 
 type GetCertificateAuthorityVersionValidity struct {
 	// The date on which the certificate validity period ends, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfValidityNotAfter string `pulumi:"timeOfValidityNotAfter"`
+	TimeOfValidityNotAfter *string `pulumi:"timeOfValidityNotAfter"`
 	// The date on which the certificate validity period begins, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfValidityNotBefore string `pulumi:"timeOfValidityNotBefore"`
+	TimeOfValidityNotBefore *string `pulumi:"timeOfValidityNotBefore"`
 }
 
 // GetCertificateAuthorityVersionValidityInput is an input type that accepts GetCertificateAuthorityVersionValidityArgs and GetCertificateAuthorityVersionValidityOutput values.
@@ -9819,9 +8548,9 @@ type GetCertificateAuthorityVersionValidityInput interface {
 
 type GetCertificateAuthorityVersionValidityArgs struct {
 	// The date on which the certificate validity period ends, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfValidityNotAfter pulumi.StringInput `pulumi:"timeOfValidityNotAfter"`
+	TimeOfValidityNotAfter pulumi.StringPtrInput `pulumi:"timeOfValidityNotAfter"`
 	// The date on which the certificate validity period begins, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfValidityNotBefore pulumi.StringInput `pulumi:"timeOfValidityNotBefore"`
+	TimeOfValidityNotBefore pulumi.StringPtrInput `pulumi:"timeOfValidityNotBefore"`
 }
 
 func (GetCertificateAuthorityVersionValidityArgs) ElementType() reflect.Type {
@@ -9834,12 +8563,6 @@ func (i GetCertificateAuthorityVersionValidityArgs) ToGetCertificateAuthorityVer
 
 func (i GetCertificateAuthorityVersionValidityArgs) ToGetCertificateAuthorityVersionValidityOutputWithContext(ctx context.Context) GetCertificateAuthorityVersionValidityOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateAuthorityVersionValidityOutput)
-}
-
-func (i GetCertificateAuthorityVersionValidityArgs) ToOutput(ctx context.Context) pulumix.Output[GetCertificateAuthorityVersionValidity] {
-	return pulumix.Output[GetCertificateAuthorityVersionValidity]{
-		OutputState: i.ToGetCertificateAuthorityVersionValidityOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetCertificateAuthorityVersionValidityArrayInput is an input type that accepts GetCertificateAuthorityVersionValidityArray and GetCertificateAuthorityVersionValidityArrayOutput values.
@@ -9867,12 +8590,6 @@ func (i GetCertificateAuthorityVersionValidityArray) ToGetCertificateAuthorityVe
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateAuthorityVersionValidityArrayOutput)
 }
 
-func (i GetCertificateAuthorityVersionValidityArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateAuthorityVersionValidity] {
-	return pulumix.Output[[]GetCertificateAuthorityVersionValidity]{
-		OutputState: i.ToGetCertificateAuthorityVersionValidityArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCertificateAuthorityVersionValidityOutput struct{ *pulumi.OutputState }
 
 func (GetCertificateAuthorityVersionValidityOutput) ElementType() reflect.Type {
@@ -9887,20 +8604,14 @@ func (o GetCertificateAuthorityVersionValidityOutput) ToGetCertificateAuthorityV
 	return o
 }
 
-func (o GetCertificateAuthorityVersionValidityOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificateAuthorityVersionValidity] {
-	return pulumix.Output[GetCertificateAuthorityVersionValidity]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The date on which the certificate validity period ends, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-func (o GetCertificateAuthorityVersionValidityOutput) TimeOfValidityNotAfter() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthorityVersionValidity) string { return v.TimeOfValidityNotAfter }).(pulumi.StringOutput)
+func (o GetCertificateAuthorityVersionValidityOutput) TimeOfValidityNotAfter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthorityVersionValidity) *string { return v.TimeOfValidityNotAfter }).(pulumi.StringPtrOutput)
 }
 
 // The date on which the certificate validity period begins, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-func (o GetCertificateAuthorityVersionValidityOutput) TimeOfValidityNotBefore() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthorityVersionValidity) string { return v.TimeOfValidityNotBefore }).(pulumi.StringOutput)
+func (o GetCertificateAuthorityVersionValidityOutput) TimeOfValidityNotBefore() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthorityVersionValidity) *string { return v.TimeOfValidityNotBefore }).(pulumi.StringPtrOutput)
 }
 
 type GetCertificateAuthorityVersionValidityArrayOutput struct{ *pulumi.OutputState }
@@ -9915,12 +8626,6 @@ func (o GetCertificateAuthorityVersionValidityArrayOutput) ToGetCertificateAutho
 
 func (o GetCertificateAuthorityVersionValidityArrayOutput) ToGetCertificateAuthorityVersionValidityArrayOutputWithContext(ctx context.Context) GetCertificateAuthorityVersionValidityArrayOutput {
 	return o
-}
-
-func (o GetCertificateAuthorityVersionValidityArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateAuthorityVersionValidity] {
-	return pulumix.Output[[]GetCertificateAuthorityVersionValidity]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetCertificateAuthorityVersionValidityArrayOutput) Index(i pulumi.IntInput) GetCertificateAuthorityVersionValidityOutput {
@@ -9962,12 +8667,6 @@ func (i GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionArgs
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionOutput)
 }
 
-func (i GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetCertificateAuthorityVersionsCertificateAuthorityVersionCollection] {
-	return pulumix.Output[GetCertificateAuthorityVersionsCertificateAuthorityVersionCollection]{
-		OutputState: i.ToGetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionArrayInput is an input type that accepts GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionArray and GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionArrayOutput values.
 // You can construct a concrete instance of `GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionArrayInput` via:
 //
@@ -9993,12 +8692,6 @@ func (i GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionArra
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionArrayOutput)
 }
 
-func (i GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateAuthorityVersionsCertificateAuthorityVersionCollection] {
-	return pulumix.Output[[]GetCertificateAuthorityVersionsCertificateAuthorityVersionCollection]{
-		OutputState: i.ToGetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionOutput) ElementType() reflect.Type {
@@ -10011,12 +8704,6 @@ func (o GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionOutp
 
 func (o GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionOutput) ToGetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionOutputWithContext(ctx context.Context) GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionOutput {
 	return o
-}
-
-func (o GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificateAuthorityVersionsCertificateAuthorityVersionCollection] {
-	return pulumix.Output[GetCertificateAuthorityVersionsCertificateAuthorityVersionCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A list of certificate authority version summary objects.
@@ -10040,12 +8727,6 @@ func (o GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionArra
 	return o
 }
 
-func (o GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateAuthorityVersionsCertificateAuthorityVersionCollection] {
-	return pulumix.Output[[]GetCertificateAuthorityVersionsCertificateAuthorityVersionCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionArrayOutput) Index(i pulumi.IntInput) GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCertificateAuthorityVersionsCertificateAuthorityVersionCollection {
 		return vs[0].([]GetCertificateAuthorityVersionsCertificateAuthorityVersionCollection)[vs[1].(int)]
@@ -10054,25 +8735,25 @@ func (o GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionArra
 
 type GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItem struct {
 	// The OCID of the certificate authority (CA).
-	CertificateAuthorityId string `pulumi:"certificateAuthorityId"`
+	CertificateAuthorityId *string `pulumi:"certificateAuthorityId"`
 	// The version number of the issuing CA.
-	IssuerCaVersionNumber string `pulumi:"issuerCaVersionNumber"`
+	IssuerCaVersionNumber *string `pulumi:"issuerCaVersionNumber"`
 	// The current revocation status of the entity.
 	RevocationStatuses []GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemRevocationStatus `pulumi:"revocationStatuses"`
 	// A unique certificate identifier used in certificate revocation tracking, formatted as octets. Example: `03 AC FC FA CC B3 CB 02 B8 F8 DE F5 85 E7 7B FF`
-	SerialNumber string `pulumi:"serialNumber"`
+	SerialNumber *string `pulumi:"serialNumber"`
 	// A list of rotation states for this CA version.
 	Stages []string `pulumi:"stages"`
 	// A optional property indicating when the CA version was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// An optional property indicating when to delete the CA version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfDeletion string `pulumi:"timeOfDeletion"`
+	TimeOfDeletion *string `pulumi:"timeOfDeletion"`
 	// An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
 	Validities []GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemValidity `pulumi:"validities"`
 	// The name of the CA version. When this value is not null, the name is unique across CA versions for a given CA.
-	VersionName string `pulumi:"versionName"`
+	VersionName *string `pulumi:"versionName"`
 	// A filter that returns only resources that match the specified version number. The default value is 0, which means that this filter is not applied.
-	VersionNumber string `pulumi:"versionNumber"`
+	VersionNumber *string `pulumi:"versionNumber"`
 }
 
 // GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemInput is an input type that accepts GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemArgs and GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemOutput values.
@@ -10088,25 +8769,25 @@ type GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemInp
 
 type GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemArgs struct {
 	// The OCID of the certificate authority (CA).
-	CertificateAuthorityId pulumi.StringInput `pulumi:"certificateAuthorityId"`
+	CertificateAuthorityId pulumi.StringPtrInput `pulumi:"certificateAuthorityId"`
 	// The version number of the issuing CA.
-	IssuerCaVersionNumber pulumi.StringInput `pulumi:"issuerCaVersionNumber"`
+	IssuerCaVersionNumber pulumi.StringPtrInput `pulumi:"issuerCaVersionNumber"`
 	// The current revocation status of the entity.
 	RevocationStatuses GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemRevocationStatusArrayInput `pulumi:"revocationStatuses"`
 	// A unique certificate identifier used in certificate revocation tracking, formatted as octets. Example: `03 AC FC FA CC B3 CB 02 B8 F8 DE F5 85 E7 7B FF`
-	SerialNumber pulumi.StringInput `pulumi:"serialNumber"`
+	SerialNumber pulumi.StringPtrInput `pulumi:"serialNumber"`
 	// A list of rotation states for this CA version.
 	Stages pulumi.StringArrayInput `pulumi:"stages"`
 	// A optional property indicating when the CA version was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// An optional property indicating when to delete the CA version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfDeletion pulumi.StringInput `pulumi:"timeOfDeletion"`
+	TimeOfDeletion pulumi.StringPtrInput `pulumi:"timeOfDeletion"`
 	// An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
 	Validities GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemValidityArrayInput `pulumi:"validities"`
 	// The name of the CA version. When this value is not null, the name is unique across CA versions for a given CA.
-	VersionName pulumi.StringInput `pulumi:"versionName"`
+	VersionName pulumi.StringPtrInput `pulumi:"versionName"`
 	// A filter that returns only resources that match the specified version number. The default value is 0, which means that this filter is not applied.
-	VersionNumber pulumi.StringInput `pulumi:"versionNumber"`
+	VersionNumber pulumi.StringPtrInput `pulumi:"versionNumber"`
 }
 
 func (GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemArgs) ElementType() reflect.Type {
@@ -10119,12 +8800,6 @@ func (i GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItem
 
 func (i GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemArgs) ToGetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemOutputWithContext(ctx context.Context) GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemOutput)
-}
-
-func (i GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItem] {
-	return pulumix.Output[GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItem]{
-		OutputState: i.ToGetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemArrayInput is an input type that accepts GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemArray and GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemArrayOutput values.
@@ -10152,12 +8827,6 @@ func (i GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItem
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemArrayOutput)
 }
 
-func (i GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItem] {
-	return pulumix.Output[[]GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItem]{
-		OutputState: i.ToGetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemOutput) ElementType() reflect.Type {
@@ -10172,24 +8841,18 @@ func (o GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItem
 	return o
 }
 
-func (o GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItem] {
-	return pulumix.Output[GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the certificate authority (CA).
-func (o GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemOutput) CertificateAuthorityId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItem) string {
+func (o GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemOutput) CertificateAuthorityId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItem) *string {
 		return v.CertificateAuthorityId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The version number of the issuing CA.
-func (o GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemOutput) IssuerCaVersionNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItem) string {
+func (o GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemOutput) IssuerCaVersionNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItem) *string {
 		return v.IssuerCaVersionNumber
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The current revocation status of the entity.
@@ -10200,10 +8863,10 @@ func (o GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItem
 }
 
 // A unique certificate identifier used in certificate revocation tracking, formatted as octets. Example: `03 AC FC FA CC B3 CB 02 B8 F8 DE F5 85 E7 7B FF`
-func (o GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemOutput) SerialNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItem) string {
+func (o GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemOutput) SerialNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItem) *string {
 		return v.SerialNumber
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // A list of rotation states for this CA version.
@@ -10214,17 +8877,17 @@ func (o GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItem
 }
 
 // A optional property indicating when the CA version was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-func (o GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItem) string {
+func (o GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItem) *string {
 		return v.TimeCreated
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // An optional property indicating when to delete the CA version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-func (o GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemOutput) TimeOfDeletion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItem) string {
+func (o GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemOutput) TimeOfDeletion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItem) *string {
 		return v.TimeOfDeletion
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
@@ -10235,17 +8898,17 @@ func (o GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItem
 }
 
 // The name of the CA version. When this value is not null, the name is unique across CA versions for a given CA.
-func (o GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemOutput) VersionName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItem) string {
+func (o GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemOutput) VersionName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItem) *string {
 		return v.VersionName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // A filter that returns only resources that match the specified version number. The default value is 0, which means that this filter is not applied.
-func (o GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemOutput) VersionNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItem) string {
+func (o GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemOutput) VersionNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItem) *string {
 		return v.VersionNumber
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -10262,12 +8925,6 @@ func (o GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItem
 	return o
 }
 
-func (o GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItem] {
-	return pulumix.Output[[]GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemArrayOutput) Index(i pulumi.IntInput) GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItem {
 		return vs[0].([]GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItem)[vs[1].(int)]
@@ -10276,9 +8933,9 @@ func (o GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItem
 
 type GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemRevocationStatus struct {
 	// The reason the certificate or certificate authority (CA) was revoked.
-	RevocationReason string `pulumi:"revocationReason"`
+	RevocationReason *string `pulumi:"revocationReason"`
 	// The time when the entity was revoked, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfRevocation string `pulumi:"timeOfRevocation"`
+	TimeOfRevocation *string `pulumi:"timeOfRevocation"`
 }
 
 // GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemRevocationStatusInput is an input type that accepts GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemRevocationStatusArgs and GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemRevocationStatusOutput values.
@@ -10294,9 +8951,9 @@ type GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemRev
 
 type GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemRevocationStatusArgs struct {
 	// The reason the certificate or certificate authority (CA) was revoked.
-	RevocationReason pulumi.StringInput `pulumi:"revocationReason"`
+	RevocationReason pulumi.StringPtrInput `pulumi:"revocationReason"`
 	// The time when the entity was revoked, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfRevocation pulumi.StringInput `pulumi:"timeOfRevocation"`
+	TimeOfRevocation pulumi.StringPtrInput `pulumi:"timeOfRevocation"`
 }
 
 func (GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemRevocationStatusArgs) ElementType() reflect.Type {
@@ -10309,12 +8966,6 @@ func (i GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItem
 
 func (i GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemRevocationStatusArgs) ToGetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemRevocationStatusOutputWithContext(ctx context.Context) GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemRevocationStatusOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemRevocationStatusOutput)
-}
-
-func (i GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemRevocationStatusArgs) ToOutput(ctx context.Context) pulumix.Output[GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemRevocationStatus] {
-	return pulumix.Output[GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemRevocationStatus]{
-		OutputState: i.ToGetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemRevocationStatusOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemRevocationStatusArrayInput is an input type that accepts GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemRevocationStatusArray and GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemRevocationStatusArrayOutput values.
@@ -10342,12 +8993,6 @@ func (i GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItem
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemRevocationStatusArrayOutput)
 }
 
-func (i GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemRevocationStatusArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemRevocationStatus] {
-	return pulumix.Output[[]GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemRevocationStatus]{
-		OutputState: i.ToGetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemRevocationStatusArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemRevocationStatusOutput struct{ *pulumi.OutputState }
 
 func (GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemRevocationStatusOutput) ElementType() reflect.Type {
@@ -10362,24 +9007,18 @@ func (o GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItem
 	return o
 }
 
-func (o GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemRevocationStatusOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemRevocationStatus] {
-	return pulumix.Output[GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemRevocationStatus]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The reason the certificate or certificate authority (CA) was revoked.
-func (o GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemRevocationStatusOutput) RevocationReason() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemRevocationStatus) string {
+func (o GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemRevocationStatusOutput) RevocationReason() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemRevocationStatus) *string {
 		return v.RevocationReason
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The time when the entity was revoked, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-func (o GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemRevocationStatusOutput) TimeOfRevocation() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemRevocationStatus) string {
+func (o GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemRevocationStatusOutput) TimeOfRevocation() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemRevocationStatus) *string {
 		return v.TimeOfRevocation
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemRevocationStatusArrayOutput struct{ *pulumi.OutputState }
@@ -10396,12 +9035,6 @@ func (o GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItem
 	return o
 }
 
-func (o GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemRevocationStatusArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemRevocationStatus] {
-	return pulumix.Output[[]GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemRevocationStatus]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemRevocationStatusArrayOutput) Index(i pulumi.IntInput) GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemRevocationStatusOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemRevocationStatus {
 		return vs[0].([]GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemRevocationStatus)[vs[1].(int)]
@@ -10410,9 +9043,9 @@ func (o GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItem
 
 type GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemValidity struct {
 	// The date on which the certificate validity period ends, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfValidityNotAfter string `pulumi:"timeOfValidityNotAfter"`
+	TimeOfValidityNotAfter *string `pulumi:"timeOfValidityNotAfter"`
 	// The date on which the certificate validity period begins, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfValidityNotBefore string `pulumi:"timeOfValidityNotBefore"`
+	TimeOfValidityNotBefore *string `pulumi:"timeOfValidityNotBefore"`
 }
 
 // GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemValidityInput is an input type that accepts GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemValidityArgs and GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemValidityOutput values.
@@ -10428,9 +9061,9 @@ type GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemVal
 
 type GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemValidityArgs struct {
 	// The date on which the certificate validity period ends, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfValidityNotAfter pulumi.StringInput `pulumi:"timeOfValidityNotAfter"`
+	TimeOfValidityNotAfter pulumi.StringPtrInput `pulumi:"timeOfValidityNotAfter"`
 	// The date on which the certificate validity period begins, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfValidityNotBefore pulumi.StringInput `pulumi:"timeOfValidityNotBefore"`
+	TimeOfValidityNotBefore pulumi.StringPtrInput `pulumi:"timeOfValidityNotBefore"`
 }
 
 func (GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemValidityArgs) ElementType() reflect.Type {
@@ -10443,12 +9076,6 @@ func (i GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItem
 
 func (i GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemValidityArgs) ToGetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemValidityOutputWithContext(ctx context.Context) GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemValidityOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemValidityOutput)
-}
-
-func (i GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemValidityArgs) ToOutput(ctx context.Context) pulumix.Output[GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemValidity] {
-	return pulumix.Output[GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemValidity]{
-		OutputState: i.ToGetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemValidityOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemValidityArrayInput is an input type that accepts GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemValidityArray and GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemValidityArrayOutput values.
@@ -10476,12 +9103,6 @@ func (i GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItem
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemValidityArrayOutput)
 }
 
-func (i GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemValidityArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemValidity] {
-	return pulumix.Output[[]GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemValidity]{
-		OutputState: i.ToGetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemValidityArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemValidityOutput struct{ *pulumi.OutputState }
 
 func (GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemValidityOutput) ElementType() reflect.Type {
@@ -10496,24 +9117,18 @@ func (o GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItem
 	return o
 }
 
-func (o GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemValidityOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemValidity] {
-	return pulumix.Output[GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemValidity]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The date on which the certificate validity period ends, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-func (o GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemValidityOutput) TimeOfValidityNotAfter() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemValidity) string {
+func (o GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemValidityOutput) TimeOfValidityNotAfter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemValidity) *string {
 		return v.TimeOfValidityNotAfter
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The date on which the certificate validity period begins, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-func (o GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemValidityOutput) TimeOfValidityNotBefore() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemValidity) string {
+func (o GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemValidityOutput) TimeOfValidityNotBefore() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemValidity) *string {
 		return v.TimeOfValidityNotBefore
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemValidityArrayOutput struct{ *pulumi.OutputState }
@@ -10528,12 +9143,6 @@ func (o GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItem
 
 func (o GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemValidityArrayOutput) ToGetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemValidityArrayOutputWithContext(ctx context.Context) GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemValidityArrayOutput {
 	return o
-}
-
-func (o GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemValidityArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemValidity] {
-	return pulumix.Output[[]GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemValidity]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemValidityArrayOutput) Index(i pulumi.IntInput) GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemValidityOutput {
@@ -10577,12 +9186,6 @@ func (i GetCertificateAuthorityVersionsFilterArgs) ToGetCertificateAuthorityVers
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateAuthorityVersionsFilterOutput)
 }
 
-func (i GetCertificateAuthorityVersionsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetCertificateAuthorityVersionsFilter] {
-	return pulumix.Output[GetCertificateAuthorityVersionsFilter]{
-		OutputState: i.ToGetCertificateAuthorityVersionsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetCertificateAuthorityVersionsFilterArrayInput is an input type that accepts GetCertificateAuthorityVersionsFilterArray and GetCertificateAuthorityVersionsFilterArrayOutput values.
 // You can construct a concrete instance of `GetCertificateAuthorityVersionsFilterArrayInput` via:
 //
@@ -10608,12 +9211,6 @@ func (i GetCertificateAuthorityVersionsFilterArray) ToGetCertificateAuthorityVer
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateAuthorityVersionsFilterArrayOutput)
 }
 
-func (i GetCertificateAuthorityVersionsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateAuthorityVersionsFilter] {
-	return pulumix.Output[[]GetCertificateAuthorityVersionsFilter]{
-		OutputState: i.ToGetCertificateAuthorityVersionsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCertificateAuthorityVersionsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetCertificateAuthorityVersionsFilterOutput) ElementType() reflect.Type {
@@ -10626,12 +9223,6 @@ func (o GetCertificateAuthorityVersionsFilterOutput) ToGetCertificateAuthorityVe
 
 func (o GetCertificateAuthorityVersionsFilterOutput) ToGetCertificateAuthorityVersionsFilterOutputWithContext(ctx context.Context) GetCertificateAuthorityVersionsFilterOutput {
 	return o
-}
-
-func (o GetCertificateAuthorityVersionsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificateAuthorityVersionsFilter] {
-	return pulumix.Output[GetCertificateAuthorityVersionsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetCertificateAuthorityVersionsFilterOutput) Name() pulumi.StringOutput {
@@ -10660,12 +9251,6 @@ func (o GetCertificateAuthorityVersionsFilterArrayOutput) ToGetCertificateAuthor
 	return o
 }
 
-func (o GetCertificateAuthorityVersionsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateAuthorityVersionsFilter] {
-	return pulumix.Output[[]GetCertificateAuthorityVersionsFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCertificateAuthorityVersionsFilterArrayOutput) Index(i pulumi.IntInput) GetCertificateAuthorityVersionsFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCertificateAuthorityVersionsFilter {
 		return vs[0].([]GetCertificateAuthorityVersionsFilter)[vs[1].(int)]
@@ -10674,16 +9259,16 @@ func (o GetCertificateAuthorityVersionsFilterArrayOutput) Index(i pulumi.IntInpu
 
 type GetCertificateCertificateConfig struct {
 	// The name of the profile used to create the certificate, which depends on the type of certificate you need.
-	CertificateProfileType string `pulumi:"certificateProfileType"`
+	CertificateProfileType *string `pulumi:"certificateProfileType"`
 	// The origin of the certificate.
-	ConfigType string `pulumi:"configType"`
-	CsrPem     string `pulumi:"csrPem"`
+	ConfigType *string `pulumi:"configType"`
+	CsrPem     *string `pulumi:"csrPem"`
 	// The OCID of the certificate authority (CA) that issued the certificate.
-	IssuerCertificateAuthorityId string `pulumi:"issuerCertificateAuthorityId"`
+	IssuerCertificateAuthorityId *string `pulumi:"issuerCertificateAuthorityId"`
 	// The algorithm used to create key pairs.
-	KeyAlgorithm string `pulumi:"keyAlgorithm"`
+	KeyAlgorithm *string `pulumi:"keyAlgorithm"`
 	// The algorithm used to sign the public key certificate.
-	SignatureAlgorithm string `pulumi:"signatureAlgorithm"`
+	SignatureAlgorithm *string `pulumi:"signatureAlgorithm"`
 	// A list of subject alternative names.
 	SubjectAlternativeNames []GetCertificateCertificateConfigSubjectAlternativeName `pulumi:"subjectAlternativeNames"`
 	// The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.
@@ -10691,7 +9276,7 @@ type GetCertificateCertificateConfig struct {
 	// An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
 	Validities []GetCertificateCertificateConfigValidity `pulumi:"validities"`
 	// The name of the certificate version. When the value is not null, a name is unique across versions of a given certificate.
-	VersionName string `pulumi:"versionName"`
+	VersionName *string `pulumi:"versionName"`
 }
 
 // GetCertificateCertificateConfigInput is an input type that accepts GetCertificateCertificateConfigArgs and GetCertificateCertificateConfigOutput values.
@@ -10707,16 +9292,16 @@ type GetCertificateCertificateConfigInput interface {
 
 type GetCertificateCertificateConfigArgs struct {
 	// The name of the profile used to create the certificate, which depends on the type of certificate you need.
-	CertificateProfileType pulumi.StringInput `pulumi:"certificateProfileType"`
+	CertificateProfileType pulumi.StringPtrInput `pulumi:"certificateProfileType"`
 	// The origin of the certificate.
-	ConfigType pulumi.StringInput `pulumi:"configType"`
-	CsrPem     pulumi.StringInput `pulumi:"csrPem"`
+	ConfigType pulumi.StringPtrInput `pulumi:"configType"`
+	CsrPem     pulumi.StringPtrInput `pulumi:"csrPem"`
 	// The OCID of the certificate authority (CA) that issued the certificate.
-	IssuerCertificateAuthorityId pulumi.StringInput `pulumi:"issuerCertificateAuthorityId"`
+	IssuerCertificateAuthorityId pulumi.StringPtrInput `pulumi:"issuerCertificateAuthorityId"`
 	// The algorithm used to create key pairs.
-	KeyAlgorithm pulumi.StringInput `pulumi:"keyAlgorithm"`
+	KeyAlgorithm pulumi.StringPtrInput `pulumi:"keyAlgorithm"`
 	// The algorithm used to sign the public key certificate.
-	SignatureAlgorithm pulumi.StringInput `pulumi:"signatureAlgorithm"`
+	SignatureAlgorithm pulumi.StringPtrInput `pulumi:"signatureAlgorithm"`
 	// A list of subject alternative names.
 	SubjectAlternativeNames GetCertificateCertificateConfigSubjectAlternativeNameArrayInput `pulumi:"subjectAlternativeNames"`
 	// The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.
@@ -10724,7 +9309,7 @@ type GetCertificateCertificateConfigArgs struct {
 	// An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
 	Validities GetCertificateCertificateConfigValidityArrayInput `pulumi:"validities"`
 	// The name of the certificate version. When the value is not null, a name is unique across versions of a given certificate.
-	VersionName pulumi.StringInput `pulumi:"versionName"`
+	VersionName pulumi.StringPtrInput `pulumi:"versionName"`
 }
 
 func (GetCertificateCertificateConfigArgs) ElementType() reflect.Type {
@@ -10737,12 +9322,6 @@ func (i GetCertificateCertificateConfigArgs) ToGetCertificateCertificateConfigOu
 
 func (i GetCertificateCertificateConfigArgs) ToGetCertificateCertificateConfigOutputWithContext(ctx context.Context) GetCertificateCertificateConfigOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateCertificateConfigOutput)
-}
-
-func (i GetCertificateCertificateConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetCertificateCertificateConfig] {
-	return pulumix.Output[GetCertificateCertificateConfig]{
-		OutputState: i.ToGetCertificateCertificateConfigOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetCertificateCertificateConfigArrayInput is an input type that accepts GetCertificateCertificateConfigArray and GetCertificateCertificateConfigArrayOutput values.
@@ -10770,12 +9349,6 @@ func (i GetCertificateCertificateConfigArray) ToGetCertificateCertificateConfigA
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateCertificateConfigArrayOutput)
 }
 
-func (i GetCertificateCertificateConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateCertificateConfig] {
-	return pulumix.Output[[]GetCertificateCertificateConfig]{
-		OutputState: i.ToGetCertificateCertificateConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCertificateCertificateConfigOutput struct{ *pulumi.OutputState }
 
 func (GetCertificateCertificateConfigOutput) ElementType() reflect.Type {
@@ -10790,39 +9363,33 @@ func (o GetCertificateCertificateConfigOutput) ToGetCertificateCertificateConfig
 	return o
 }
 
-func (o GetCertificateCertificateConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificateCertificateConfig] {
-	return pulumix.Output[GetCertificateCertificateConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The name of the profile used to create the certificate, which depends on the type of certificate you need.
-func (o GetCertificateCertificateConfigOutput) CertificateProfileType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateCertificateConfig) string { return v.CertificateProfileType }).(pulumi.StringOutput)
+func (o GetCertificateCertificateConfigOutput) CertificateProfileType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateCertificateConfig) *string { return v.CertificateProfileType }).(pulumi.StringPtrOutput)
 }
 
 // The origin of the certificate.
-func (o GetCertificateCertificateConfigOutput) ConfigType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateCertificateConfig) string { return v.ConfigType }).(pulumi.StringOutput)
+func (o GetCertificateCertificateConfigOutput) ConfigType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateCertificateConfig) *string { return v.ConfigType }).(pulumi.StringPtrOutput)
 }
 
-func (o GetCertificateCertificateConfigOutput) CsrPem() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateCertificateConfig) string { return v.CsrPem }).(pulumi.StringOutput)
+func (o GetCertificateCertificateConfigOutput) CsrPem() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateCertificateConfig) *string { return v.CsrPem }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the certificate authority (CA) that issued the certificate.
-func (o GetCertificateCertificateConfigOutput) IssuerCertificateAuthorityId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateCertificateConfig) string { return v.IssuerCertificateAuthorityId }).(pulumi.StringOutput)
+func (o GetCertificateCertificateConfigOutput) IssuerCertificateAuthorityId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateCertificateConfig) *string { return v.IssuerCertificateAuthorityId }).(pulumi.StringPtrOutput)
 }
 
 // The algorithm used to create key pairs.
-func (o GetCertificateCertificateConfigOutput) KeyAlgorithm() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateCertificateConfig) string { return v.KeyAlgorithm }).(pulumi.StringOutput)
+func (o GetCertificateCertificateConfigOutput) KeyAlgorithm() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateCertificateConfig) *string { return v.KeyAlgorithm }).(pulumi.StringPtrOutput)
 }
 
 // The algorithm used to sign the public key certificate.
-func (o GetCertificateCertificateConfigOutput) SignatureAlgorithm() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateCertificateConfig) string { return v.SignatureAlgorithm }).(pulumi.StringOutput)
+func (o GetCertificateCertificateConfigOutput) SignatureAlgorithm() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateCertificateConfig) *string { return v.SignatureAlgorithm }).(pulumi.StringPtrOutput)
 }
 
 // A list of subject alternative names.
@@ -10843,8 +9410,8 @@ func (o GetCertificateCertificateConfigOutput) Validities() GetCertificateCertif
 }
 
 // The name of the certificate version. When the value is not null, a name is unique across versions of a given certificate.
-func (o GetCertificateCertificateConfigOutput) VersionName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateCertificateConfig) string { return v.VersionName }).(pulumi.StringOutput)
+func (o GetCertificateCertificateConfigOutput) VersionName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateCertificateConfig) *string { return v.VersionName }).(pulumi.StringPtrOutput)
 }
 
 type GetCertificateCertificateConfigArrayOutput struct{ *pulumi.OutputState }
@@ -10861,12 +9428,6 @@ func (o GetCertificateCertificateConfigArrayOutput) ToGetCertificateCertificateC
 	return o
 }
 
-func (o GetCertificateCertificateConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateCertificateConfig] {
-	return pulumix.Output[[]GetCertificateCertificateConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCertificateCertificateConfigArrayOutput) Index(i pulumi.IntInput) GetCertificateCertificateConfigOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCertificateCertificateConfig {
 		return vs[0].([]GetCertificateCertificateConfig)[vs[1].(int)]
@@ -10875,39 +9436,39 @@ func (o GetCertificateCertificateConfigArrayOutput) Index(i pulumi.IntInput) Get
 
 type GetCertificateCertificateConfigSubject struct {
 	// Common name or fully-qualified domain name (RDN CN).
-	CommonName string `pulumi:"commonName"`
+	CommonName *string `pulumi:"commonName"`
 	// Country name (RDN C).
-	Country string `pulumi:"country"`
+	Country *string `pulumi:"country"`
 	// Distinguished name qualifier(RDN DNQ).
-	DistinguishedNameQualifier string `pulumi:"distinguishedNameQualifier"`
+	DistinguishedNameQualifier *string `pulumi:"distinguishedNameQualifier"`
 	// Domain component (RDN DC).
-	DomainComponent string `pulumi:"domainComponent"`
+	DomainComponent *string `pulumi:"domainComponent"`
 	// Personal generational qualifier (for example, Sr., Jr. 3rd, or IV).
-	GenerationQualifier string `pulumi:"generationQualifier"`
+	GenerationQualifier *string `pulumi:"generationQualifier"`
 	// Personal given name (RDN G or GN).
-	GivenName string `pulumi:"givenName"`
+	GivenName *string `pulumi:"givenName"`
 	// Personal initials.
-	Initials string `pulumi:"initials"`
+	Initials *string `pulumi:"initials"`
 	// Locality (RDN L).
-	LocalityName string `pulumi:"localityName"`
+	LocalityName *string `pulumi:"localityName"`
 	// Organization (RDN O).
-	Organization string `pulumi:"organization"`
+	Organization *string `pulumi:"organization"`
 	// Organizational unit (RDN OU).
-	OrganizationalUnit string `pulumi:"organizationalUnit"`
+	OrganizationalUnit *string `pulumi:"organizationalUnit"`
 	// Subject pseudonym.
-	Pseudonym string `pulumi:"pseudonym"`
+	Pseudonym *string `pulumi:"pseudonym"`
 	// Unique subject identifier, which is not the same as the certificate serial number (RDN SERIALNUMBER).
-	SerialNumber string `pulumi:"serialNumber"`
+	SerialNumber *string `pulumi:"serialNumber"`
 	// State or province name (RDN ST or S).
-	StateOrProvinceName string `pulumi:"stateOrProvinceName"`
+	StateOrProvinceName *string `pulumi:"stateOrProvinceName"`
 	// Street address (RDN STREET).
-	Street string `pulumi:"street"`
+	Street *string `pulumi:"street"`
 	// Personal surname (RDN SN).
-	Surname string `pulumi:"surname"`
+	Surname *string `pulumi:"surname"`
 	// Title (RDN T or TITLE).
-	Title string `pulumi:"title"`
+	Title *string `pulumi:"title"`
 	// User ID (RDN UID).
-	UserId string `pulumi:"userId"`
+	UserId *string `pulumi:"userId"`
 }
 
 // GetCertificateCertificateConfigSubjectInput is an input type that accepts GetCertificateCertificateConfigSubjectArgs and GetCertificateCertificateConfigSubjectOutput values.
@@ -10923,39 +9484,39 @@ type GetCertificateCertificateConfigSubjectInput interface {
 
 type GetCertificateCertificateConfigSubjectArgs struct {
 	// Common name or fully-qualified domain name (RDN CN).
-	CommonName pulumi.StringInput `pulumi:"commonName"`
+	CommonName pulumi.StringPtrInput `pulumi:"commonName"`
 	// Country name (RDN C).
-	Country pulumi.StringInput `pulumi:"country"`
+	Country pulumi.StringPtrInput `pulumi:"country"`
 	// Distinguished name qualifier(RDN DNQ).
-	DistinguishedNameQualifier pulumi.StringInput `pulumi:"distinguishedNameQualifier"`
+	DistinguishedNameQualifier pulumi.StringPtrInput `pulumi:"distinguishedNameQualifier"`
 	// Domain component (RDN DC).
-	DomainComponent pulumi.StringInput `pulumi:"domainComponent"`
+	DomainComponent pulumi.StringPtrInput `pulumi:"domainComponent"`
 	// Personal generational qualifier (for example, Sr., Jr. 3rd, or IV).
-	GenerationQualifier pulumi.StringInput `pulumi:"generationQualifier"`
+	GenerationQualifier pulumi.StringPtrInput `pulumi:"generationQualifier"`
 	// Personal given name (RDN G or GN).
-	GivenName pulumi.StringInput `pulumi:"givenName"`
+	GivenName pulumi.StringPtrInput `pulumi:"givenName"`
 	// Personal initials.
-	Initials pulumi.StringInput `pulumi:"initials"`
+	Initials pulumi.StringPtrInput `pulumi:"initials"`
 	// Locality (RDN L).
-	LocalityName pulumi.StringInput `pulumi:"localityName"`
+	LocalityName pulumi.StringPtrInput `pulumi:"localityName"`
 	// Organization (RDN O).
-	Organization pulumi.StringInput `pulumi:"organization"`
+	Organization pulumi.StringPtrInput `pulumi:"organization"`
 	// Organizational unit (RDN OU).
-	OrganizationalUnit pulumi.StringInput `pulumi:"organizationalUnit"`
+	OrganizationalUnit pulumi.StringPtrInput `pulumi:"organizationalUnit"`
 	// Subject pseudonym.
-	Pseudonym pulumi.StringInput `pulumi:"pseudonym"`
+	Pseudonym pulumi.StringPtrInput `pulumi:"pseudonym"`
 	// Unique subject identifier, which is not the same as the certificate serial number (RDN SERIALNUMBER).
-	SerialNumber pulumi.StringInput `pulumi:"serialNumber"`
+	SerialNumber pulumi.StringPtrInput `pulumi:"serialNumber"`
 	// State or province name (RDN ST or S).
-	StateOrProvinceName pulumi.StringInput `pulumi:"stateOrProvinceName"`
+	StateOrProvinceName pulumi.StringPtrInput `pulumi:"stateOrProvinceName"`
 	// Street address (RDN STREET).
-	Street pulumi.StringInput `pulumi:"street"`
+	Street pulumi.StringPtrInput `pulumi:"street"`
 	// Personal surname (RDN SN).
-	Surname pulumi.StringInput `pulumi:"surname"`
+	Surname pulumi.StringPtrInput `pulumi:"surname"`
 	// Title (RDN T or TITLE).
-	Title pulumi.StringInput `pulumi:"title"`
+	Title pulumi.StringPtrInput `pulumi:"title"`
 	// User ID (RDN UID).
-	UserId pulumi.StringInput `pulumi:"userId"`
+	UserId pulumi.StringPtrInput `pulumi:"userId"`
 }
 
 func (GetCertificateCertificateConfigSubjectArgs) ElementType() reflect.Type {
@@ -10968,12 +9529,6 @@ func (i GetCertificateCertificateConfigSubjectArgs) ToGetCertificateCertificateC
 
 func (i GetCertificateCertificateConfigSubjectArgs) ToGetCertificateCertificateConfigSubjectOutputWithContext(ctx context.Context) GetCertificateCertificateConfigSubjectOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateCertificateConfigSubjectOutput)
-}
-
-func (i GetCertificateCertificateConfigSubjectArgs) ToOutput(ctx context.Context) pulumix.Output[GetCertificateCertificateConfigSubject] {
-	return pulumix.Output[GetCertificateCertificateConfigSubject]{
-		OutputState: i.ToGetCertificateCertificateConfigSubjectOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetCertificateCertificateConfigSubjectArrayInput is an input type that accepts GetCertificateCertificateConfigSubjectArray and GetCertificateCertificateConfigSubjectArrayOutput values.
@@ -11001,12 +9556,6 @@ func (i GetCertificateCertificateConfigSubjectArray) ToGetCertificateCertificate
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateCertificateConfigSubjectArrayOutput)
 }
 
-func (i GetCertificateCertificateConfigSubjectArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateCertificateConfigSubject] {
-	return pulumix.Output[[]GetCertificateCertificateConfigSubject]{
-		OutputState: i.ToGetCertificateCertificateConfigSubjectArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCertificateCertificateConfigSubjectOutput struct{ *pulumi.OutputState }
 
 func (GetCertificateCertificateConfigSubjectOutput) ElementType() reflect.Type {
@@ -11021,95 +9570,89 @@ func (o GetCertificateCertificateConfigSubjectOutput) ToGetCertificateCertificat
 	return o
 }
 
-func (o GetCertificateCertificateConfigSubjectOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificateCertificateConfigSubject] {
-	return pulumix.Output[GetCertificateCertificateConfigSubject]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Common name or fully-qualified domain name (RDN CN).
-func (o GetCertificateCertificateConfigSubjectOutput) CommonName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateCertificateConfigSubject) string { return v.CommonName }).(pulumi.StringOutput)
+func (o GetCertificateCertificateConfigSubjectOutput) CommonName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateCertificateConfigSubject) *string { return v.CommonName }).(pulumi.StringPtrOutput)
 }
 
 // Country name (RDN C).
-func (o GetCertificateCertificateConfigSubjectOutput) Country() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateCertificateConfigSubject) string { return v.Country }).(pulumi.StringOutput)
+func (o GetCertificateCertificateConfigSubjectOutput) Country() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateCertificateConfigSubject) *string { return v.Country }).(pulumi.StringPtrOutput)
 }
 
 // Distinguished name qualifier(RDN DNQ).
-func (o GetCertificateCertificateConfigSubjectOutput) DistinguishedNameQualifier() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateCertificateConfigSubject) string { return v.DistinguishedNameQualifier }).(pulumi.StringOutput)
+func (o GetCertificateCertificateConfigSubjectOutput) DistinguishedNameQualifier() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateCertificateConfigSubject) *string { return v.DistinguishedNameQualifier }).(pulumi.StringPtrOutput)
 }
 
 // Domain component (RDN DC).
-func (o GetCertificateCertificateConfigSubjectOutput) DomainComponent() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateCertificateConfigSubject) string { return v.DomainComponent }).(pulumi.StringOutput)
+func (o GetCertificateCertificateConfigSubjectOutput) DomainComponent() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateCertificateConfigSubject) *string { return v.DomainComponent }).(pulumi.StringPtrOutput)
 }
 
 // Personal generational qualifier (for example, Sr., Jr. 3rd, or IV).
-func (o GetCertificateCertificateConfigSubjectOutput) GenerationQualifier() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateCertificateConfigSubject) string { return v.GenerationQualifier }).(pulumi.StringOutput)
+func (o GetCertificateCertificateConfigSubjectOutput) GenerationQualifier() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateCertificateConfigSubject) *string { return v.GenerationQualifier }).(pulumi.StringPtrOutput)
 }
 
 // Personal given name (RDN G or GN).
-func (o GetCertificateCertificateConfigSubjectOutput) GivenName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateCertificateConfigSubject) string { return v.GivenName }).(pulumi.StringOutput)
+func (o GetCertificateCertificateConfigSubjectOutput) GivenName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateCertificateConfigSubject) *string { return v.GivenName }).(pulumi.StringPtrOutput)
 }
 
 // Personal initials.
-func (o GetCertificateCertificateConfigSubjectOutput) Initials() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateCertificateConfigSubject) string { return v.Initials }).(pulumi.StringOutput)
+func (o GetCertificateCertificateConfigSubjectOutput) Initials() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateCertificateConfigSubject) *string { return v.Initials }).(pulumi.StringPtrOutput)
 }
 
 // Locality (RDN L).
-func (o GetCertificateCertificateConfigSubjectOutput) LocalityName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateCertificateConfigSubject) string { return v.LocalityName }).(pulumi.StringOutput)
+func (o GetCertificateCertificateConfigSubjectOutput) LocalityName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateCertificateConfigSubject) *string { return v.LocalityName }).(pulumi.StringPtrOutput)
 }
 
 // Organization (RDN O).
-func (o GetCertificateCertificateConfigSubjectOutput) Organization() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateCertificateConfigSubject) string { return v.Organization }).(pulumi.StringOutput)
+func (o GetCertificateCertificateConfigSubjectOutput) Organization() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateCertificateConfigSubject) *string { return v.Organization }).(pulumi.StringPtrOutput)
 }
 
 // Organizational unit (RDN OU).
-func (o GetCertificateCertificateConfigSubjectOutput) OrganizationalUnit() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateCertificateConfigSubject) string { return v.OrganizationalUnit }).(pulumi.StringOutput)
+func (o GetCertificateCertificateConfigSubjectOutput) OrganizationalUnit() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateCertificateConfigSubject) *string { return v.OrganizationalUnit }).(pulumi.StringPtrOutput)
 }
 
 // Subject pseudonym.
-func (o GetCertificateCertificateConfigSubjectOutput) Pseudonym() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateCertificateConfigSubject) string { return v.Pseudonym }).(pulumi.StringOutput)
+func (o GetCertificateCertificateConfigSubjectOutput) Pseudonym() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateCertificateConfigSubject) *string { return v.Pseudonym }).(pulumi.StringPtrOutput)
 }
 
 // Unique subject identifier, which is not the same as the certificate serial number (RDN SERIALNUMBER).
-func (o GetCertificateCertificateConfigSubjectOutput) SerialNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateCertificateConfigSubject) string { return v.SerialNumber }).(pulumi.StringOutput)
+func (o GetCertificateCertificateConfigSubjectOutput) SerialNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateCertificateConfigSubject) *string { return v.SerialNumber }).(pulumi.StringPtrOutput)
 }
 
 // State or province name (RDN ST or S).
-func (o GetCertificateCertificateConfigSubjectOutput) StateOrProvinceName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateCertificateConfigSubject) string { return v.StateOrProvinceName }).(pulumi.StringOutput)
+func (o GetCertificateCertificateConfigSubjectOutput) StateOrProvinceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateCertificateConfigSubject) *string { return v.StateOrProvinceName }).(pulumi.StringPtrOutput)
 }
 
 // Street address (RDN STREET).
-func (o GetCertificateCertificateConfigSubjectOutput) Street() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateCertificateConfigSubject) string { return v.Street }).(pulumi.StringOutput)
+func (o GetCertificateCertificateConfigSubjectOutput) Street() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateCertificateConfigSubject) *string { return v.Street }).(pulumi.StringPtrOutput)
 }
 
 // Personal surname (RDN SN).
-func (o GetCertificateCertificateConfigSubjectOutput) Surname() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateCertificateConfigSubject) string { return v.Surname }).(pulumi.StringOutput)
+func (o GetCertificateCertificateConfigSubjectOutput) Surname() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateCertificateConfigSubject) *string { return v.Surname }).(pulumi.StringPtrOutput)
 }
 
 // Title (RDN T or TITLE).
-func (o GetCertificateCertificateConfigSubjectOutput) Title() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateCertificateConfigSubject) string { return v.Title }).(pulumi.StringOutput)
+func (o GetCertificateCertificateConfigSubjectOutput) Title() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateCertificateConfigSubject) *string { return v.Title }).(pulumi.StringPtrOutput)
 }
 
 // User ID (RDN UID).
-func (o GetCertificateCertificateConfigSubjectOutput) UserId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateCertificateConfigSubject) string { return v.UserId }).(pulumi.StringOutput)
+func (o GetCertificateCertificateConfigSubjectOutput) UserId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateCertificateConfigSubject) *string { return v.UserId }).(pulumi.StringPtrOutput)
 }
 
 type GetCertificateCertificateConfigSubjectArrayOutput struct{ *pulumi.OutputState }
@@ -11126,12 +9669,6 @@ func (o GetCertificateCertificateConfigSubjectArrayOutput) ToGetCertificateCerti
 	return o
 }
 
-func (o GetCertificateCertificateConfigSubjectArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateCertificateConfigSubject] {
-	return pulumix.Output[[]GetCertificateCertificateConfigSubject]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCertificateCertificateConfigSubjectArrayOutput) Index(i pulumi.IntInput) GetCertificateCertificateConfigSubjectOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCertificateCertificateConfigSubject {
 		return vs[0].([]GetCertificateCertificateConfigSubject)[vs[1].(int)]
@@ -11140,9 +9677,9 @@ func (o GetCertificateCertificateConfigSubjectArrayOutput) Index(i pulumi.IntInp
 
 type GetCertificateCertificateConfigSubjectAlternativeName struct {
 	// The subject alternative name type. Currently only DNS domain or host names and IP addresses are supported.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 	// The subject alternative name.
-	Value string `pulumi:"value"`
+	Value *string `pulumi:"value"`
 }
 
 // GetCertificateCertificateConfigSubjectAlternativeNameInput is an input type that accepts GetCertificateCertificateConfigSubjectAlternativeNameArgs and GetCertificateCertificateConfigSubjectAlternativeNameOutput values.
@@ -11158,9 +9695,9 @@ type GetCertificateCertificateConfigSubjectAlternativeNameInput interface {
 
 type GetCertificateCertificateConfigSubjectAlternativeNameArgs struct {
 	// The subject alternative name type. Currently only DNS domain or host names and IP addresses are supported.
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 	// The subject alternative name.
-	Value pulumi.StringInput `pulumi:"value"`
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (GetCertificateCertificateConfigSubjectAlternativeNameArgs) ElementType() reflect.Type {
@@ -11173,12 +9710,6 @@ func (i GetCertificateCertificateConfigSubjectAlternativeNameArgs) ToGetCertific
 
 func (i GetCertificateCertificateConfigSubjectAlternativeNameArgs) ToGetCertificateCertificateConfigSubjectAlternativeNameOutputWithContext(ctx context.Context) GetCertificateCertificateConfigSubjectAlternativeNameOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateCertificateConfigSubjectAlternativeNameOutput)
-}
-
-func (i GetCertificateCertificateConfigSubjectAlternativeNameArgs) ToOutput(ctx context.Context) pulumix.Output[GetCertificateCertificateConfigSubjectAlternativeName] {
-	return pulumix.Output[GetCertificateCertificateConfigSubjectAlternativeName]{
-		OutputState: i.ToGetCertificateCertificateConfigSubjectAlternativeNameOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetCertificateCertificateConfigSubjectAlternativeNameArrayInput is an input type that accepts GetCertificateCertificateConfigSubjectAlternativeNameArray and GetCertificateCertificateConfigSubjectAlternativeNameArrayOutput values.
@@ -11206,12 +9737,6 @@ func (i GetCertificateCertificateConfigSubjectAlternativeNameArray) ToGetCertifi
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateCertificateConfigSubjectAlternativeNameArrayOutput)
 }
 
-func (i GetCertificateCertificateConfigSubjectAlternativeNameArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateCertificateConfigSubjectAlternativeName] {
-	return pulumix.Output[[]GetCertificateCertificateConfigSubjectAlternativeName]{
-		OutputState: i.ToGetCertificateCertificateConfigSubjectAlternativeNameArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCertificateCertificateConfigSubjectAlternativeNameOutput struct{ *pulumi.OutputState }
 
 func (GetCertificateCertificateConfigSubjectAlternativeNameOutput) ElementType() reflect.Type {
@@ -11226,20 +9751,14 @@ func (o GetCertificateCertificateConfigSubjectAlternativeNameOutput) ToGetCertif
 	return o
 }
 
-func (o GetCertificateCertificateConfigSubjectAlternativeNameOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificateCertificateConfigSubjectAlternativeName] {
-	return pulumix.Output[GetCertificateCertificateConfigSubjectAlternativeName]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The subject alternative name type. Currently only DNS domain or host names and IP addresses are supported.
-func (o GetCertificateCertificateConfigSubjectAlternativeNameOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateCertificateConfigSubjectAlternativeName) string { return v.Type }).(pulumi.StringOutput)
+func (o GetCertificateCertificateConfigSubjectAlternativeNameOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateCertificateConfigSubjectAlternativeName) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 // The subject alternative name.
-func (o GetCertificateCertificateConfigSubjectAlternativeNameOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateCertificateConfigSubjectAlternativeName) string { return v.Value }).(pulumi.StringOutput)
+func (o GetCertificateCertificateConfigSubjectAlternativeNameOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateCertificateConfigSubjectAlternativeName) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
 
 type GetCertificateCertificateConfigSubjectAlternativeNameArrayOutput struct{ *pulumi.OutputState }
@@ -11256,12 +9775,6 @@ func (o GetCertificateCertificateConfigSubjectAlternativeNameArrayOutput) ToGetC
 	return o
 }
 
-func (o GetCertificateCertificateConfigSubjectAlternativeNameArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateCertificateConfigSubjectAlternativeName] {
-	return pulumix.Output[[]GetCertificateCertificateConfigSubjectAlternativeName]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCertificateCertificateConfigSubjectAlternativeNameArrayOutput) Index(i pulumi.IntInput) GetCertificateCertificateConfigSubjectAlternativeNameOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCertificateCertificateConfigSubjectAlternativeName {
 		return vs[0].([]GetCertificateCertificateConfigSubjectAlternativeName)[vs[1].(int)]
@@ -11270,9 +9783,9 @@ func (o GetCertificateCertificateConfigSubjectAlternativeNameArrayOutput) Index(
 
 type GetCertificateCertificateConfigValidity struct {
 	// The date on which the certificate validity period ends, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfValidityNotAfter string `pulumi:"timeOfValidityNotAfter"`
+	TimeOfValidityNotAfter *string `pulumi:"timeOfValidityNotAfter"`
 	// The date on which the certificate validity period begins, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfValidityNotBefore string `pulumi:"timeOfValidityNotBefore"`
+	TimeOfValidityNotBefore *string `pulumi:"timeOfValidityNotBefore"`
 }
 
 // GetCertificateCertificateConfigValidityInput is an input type that accepts GetCertificateCertificateConfigValidityArgs and GetCertificateCertificateConfigValidityOutput values.
@@ -11288,9 +9801,9 @@ type GetCertificateCertificateConfigValidityInput interface {
 
 type GetCertificateCertificateConfigValidityArgs struct {
 	// The date on which the certificate validity period ends, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfValidityNotAfter pulumi.StringInput `pulumi:"timeOfValidityNotAfter"`
+	TimeOfValidityNotAfter pulumi.StringPtrInput `pulumi:"timeOfValidityNotAfter"`
 	// The date on which the certificate validity period begins, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfValidityNotBefore pulumi.StringInput `pulumi:"timeOfValidityNotBefore"`
+	TimeOfValidityNotBefore pulumi.StringPtrInput `pulumi:"timeOfValidityNotBefore"`
 }
 
 func (GetCertificateCertificateConfigValidityArgs) ElementType() reflect.Type {
@@ -11303,12 +9816,6 @@ func (i GetCertificateCertificateConfigValidityArgs) ToGetCertificateCertificate
 
 func (i GetCertificateCertificateConfigValidityArgs) ToGetCertificateCertificateConfigValidityOutputWithContext(ctx context.Context) GetCertificateCertificateConfigValidityOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateCertificateConfigValidityOutput)
-}
-
-func (i GetCertificateCertificateConfigValidityArgs) ToOutput(ctx context.Context) pulumix.Output[GetCertificateCertificateConfigValidity] {
-	return pulumix.Output[GetCertificateCertificateConfigValidity]{
-		OutputState: i.ToGetCertificateCertificateConfigValidityOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetCertificateCertificateConfigValidityArrayInput is an input type that accepts GetCertificateCertificateConfigValidityArray and GetCertificateCertificateConfigValidityArrayOutput values.
@@ -11336,12 +9843,6 @@ func (i GetCertificateCertificateConfigValidityArray) ToGetCertificateCertificat
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateCertificateConfigValidityArrayOutput)
 }
 
-func (i GetCertificateCertificateConfigValidityArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateCertificateConfigValidity] {
-	return pulumix.Output[[]GetCertificateCertificateConfigValidity]{
-		OutputState: i.ToGetCertificateCertificateConfigValidityArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCertificateCertificateConfigValidityOutput struct{ *pulumi.OutputState }
 
 func (GetCertificateCertificateConfigValidityOutput) ElementType() reflect.Type {
@@ -11356,20 +9857,14 @@ func (o GetCertificateCertificateConfigValidityOutput) ToGetCertificateCertifica
 	return o
 }
 
-func (o GetCertificateCertificateConfigValidityOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificateCertificateConfigValidity] {
-	return pulumix.Output[GetCertificateCertificateConfigValidity]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The date on which the certificate validity period ends, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-func (o GetCertificateCertificateConfigValidityOutput) TimeOfValidityNotAfter() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateCertificateConfigValidity) string { return v.TimeOfValidityNotAfter }).(pulumi.StringOutput)
+func (o GetCertificateCertificateConfigValidityOutput) TimeOfValidityNotAfter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateCertificateConfigValidity) *string { return v.TimeOfValidityNotAfter }).(pulumi.StringPtrOutput)
 }
 
 // The date on which the certificate validity period begins, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-func (o GetCertificateCertificateConfigValidityOutput) TimeOfValidityNotBefore() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateCertificateConfigValidity) string { return v.TimeOfValidityNotBefore }).(pulumi.StringOutput)
+func (o GetCertificateCertificateConfigValidityOutput) TimeOfValidityNotBefore() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateCertificateConfigValidity) *string { return v.TimeOfValidityNotBefore }).(pulumi.StringPtrOutput)
 }
 
 type GetCertificateCertificateConfigValidityArrayOutput struct{ *pulumi.OutputState }
@@ -11384,12 +9879,6 @@ func (o GetCertificateCertificateConfigValidityArrayOutput) ToGetCertificateCert
 
 func (o GetCertificateCertificateConfigValidityArrayOutput) ToGetCertificateCertificateConfigValidityArrayOutputWithContext(ctx context.Context) GetCertificateCertificateConfigValidityArrayOutput {
 	return o
-}
-
-func (o GetCertificateCertificateConfigValidityArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateCertificateConfigValidity] {
-	return pulumix.Output[[]GetCertificateCertificateConfigValidity]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetCertificateCertificateConfigValidityArrayOutput) Index(i pulumi.IntInput) GetCertificateCertificateConfigValidityOutput {
@@ -11435,12 +9924,6 @@ func (i GetCertificateCertificateRevocationListDetailArgs) ToGetCertificateCerti
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateCertificateRevocationListDetailOutput)
 }
 
-func (i GetCertificateCertificateRevocationListDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetCertificateCertificateRevocationListDetail] {
-	return pulumix.Output[GetCertificateCertificateRevocationListDetail]{
-		OutputState: i.ToGetCertificateCertificateRevocationListDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetCertificateCertificateRevocationListDetailArrayInput is an input type that accepts GetCertificateCertificateRevocationListDetailArray and GetCertificateCertificateRevocationListDetailArrayOutput values.
 // You can construct a concrete instance of `GetCertificateCertificateRevocationListDetailArrayInput` via:
 //
@@ -11466,12 +9949,6 @@ func (i GetCertificateCertificateRevocationListDetailArray) ToGetCertificateCert
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateCertificateRevocationListDetailArrayOutput)
 }
 
-func (i GetCertificateCertificateRevocationListDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateCertificateRevocationListDetail] {
-	return pulumix.Output[[]GetCertificateCertificateRevocationListDetail]{
-		OutputState: i.ToGetCertificateCertificateRevocationListDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCertificateCertificateRevocationListDetailOutput struct{ *pulumi.OutputState }
 
 func (GetCertificateCertificateRevocationListDetailOutput) ElementType() reflect.Type {
@@ -11484,12 +9961,6 @@ func (o GetCertificateCertificateRevocationListDetailOutput) ToGetCertificateCer
 
 func (o GetCertificateCertificateRevocationListDetailOutput) ToGetCertificateCertificateRevocationListDetailOutputWithContext(ctx context.Context) GetCertificateCertificateRevocationListDetailOutput {
 	return o
-}
-
-func (o GetCertificateCertificateRevocationListDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificateCertificateRevocationListDetail] {
-	return pulumix.Output[GetCertificateCertificateRevocationListDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Optional CRL access points, expressed using a format where the version number of the issuing CA is inserted wherever you include a pair of curly braces. This versioning scheme helps avoid collisions when new CA versions are created. For example, myCrlFileIssuedFromCAVersion{}.crl becomes myCrlFileIssuedFromCAVersion2.crl for CA version 2.
@@ -11518,12 +9989,6 @@ func (o GetCertificateCertificateRevocationListDetailArrayOutput) ToGetCertifica
 	return o
 }
 
-func (o GetCertificateCertificateRevocationListDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateCertificateRevocationListDetail] {
-	return pulumix.Output[[]GetCertificateCertificateRevocationListDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCertificateCertificateRevocationListDetailArrayOutput) Index(i pulumi.IntInput) GetCertificateCertificateRevocationListDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCertificateCertificateRevocationListDetail {
 		return vs[0].([]GetCertificateCertificateRevocationListDetail)[vs[1].(int)]
@@ -11532,11 +9997,11 @@ func (o GetCertificateCertificateRevocationListDetailArrayOutput) Index(i pulumi
 
 type GetCertificateCertificateRevocationListDetailObjectStorageConfig struct {
 	// The name of the bucket where the CRL is stored.
-	ObjectStorageBucketName string `pulumi:"objectStorageBucketName"`
+	ObjectStorageBucketName *string `pulumi:"objectStorageBucketName"`
 	// The tenancy of the bucket where the CRL is stored.
-	ObjectStorageNamespace string `pulumi:"objectStorageNamespace"`
+	ObjectStorageNamespace *string `pulumi:"objectStorageNamespace"`
 	// The object name in the bucket where the CRL is stored, expressed using a format where the version number of the issuing CA is inserted as part of the Object Storage object name wherever you include a pair of curly braces. This versioning scheme helps avoid collisions when new CA versions are created. For example, myCrlFileIssuedFromCAVersion{}.crl becomes myCrlFileIssuedFromCAVersion2.crl for CA version 2.
-	ObjectStorageObjectNameFormat string `pulumi:"objectStorageObjectNameFormat"`
+	ObjectStorageObjectNameFormat *string `pulumi:"objectStorageObjectNameFormat"`
 }
 
 // GetCertificateCertificateRevocationListDetailObjectStorageConfigInput is an input type that accepts GetCertificateCertificateRevocationListDetailObjectStorageConfigArgs and GetCertificateCertificateRevocationListDetailObjectStorageConfigOutput values.
@@ -11552,11 +10017,11 @@ type GetCertificateCertificateRevocationListDetailObjectStorageConfigInput inter
 
 type GetCertificateCertificateRevocationListDetailObjectStorageConfigArgs struct {
 	// The name of the bucket where the CRL is stored.
-	ObjectStorageBucketName pulumi.StringInput `pulumi:"objectStorageBucketName"`
+	ObjectStorageBucketName pulumi.StringPtrInput `pulumi:"objectStorageBucketName"`
 	// The tenancy of the bucket where the CRL is stored.
-	ObjectStorageNamespace pulumi.StringInput `pulumi:"objectStorageNamespace"`
+	ObjectStorageNamespace pulumi.StringPtrInput `pulumi:"objectStorageNamespace"`
 	// The object name in the bucket where the CRL is stored, expressed using a format where the version number of the issuing CA is inserted as part of the Object Storage object name wherever you include a pair of curly braces. This versioning scheme helps avoid collisions when new CA versions are created. For example, myCrlFileIssuedFromCAVersion{}.crl becomes myCrlFileIssuedFromCAVersion2.crl for CA version 2.
-	ObjectStorageObjectNameFormat pulumi.StringInput `pulumi:"objectStorageObjectNameFormat"`
+	ObjectStorageObjectNameFormat pulumi.StringPtrInput `pulumi:"objectStorageObjectNameFormat"`
 }
 
 func (GetCertificateCertificateRevocationListDetailObjectStorageConfigArgs) ElementType() reflect.Type {
@@ -11569,12 +10034,6 @@ func (i GetCertificateCertificateRevocationListDetailObjectStorageConfigArgs) To
 
 func (i GetCertificateCertificateRevocationListDetailObjectStorageConfigArgs) ToGetCertificateCertificateRevocationListDetailObjectStorageConfigOutputWithContext(ctx context.Context) GetCertificateCertificateRevocationListDetailObjectStorageConfigOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateCertificateRevocationListDetailObjectStorageConfigOutput)
-}
-
-func (i GetCertificateCertificateRevocationListDetailObjectStorageConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetCertificateCertificateRevocationListDetailObjectStorageConfig] {
-	return pulumix.Output[GetCertificateCertificateRevocationListDetailObjectStorageConfig]{
-		OutputState: i.ToGetCertificateCertificateRevocationListDetailObjectStorageConfigOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetCertificateCertificateRevocationListDetailObjectStorageConfigArrayInput is an input type that accepts GetCertificateCertificateRevocationListDetailObjectStorageConfigArray and GetCertificateCertificateRevocationListDetailObjectStorageConfigArrayOutput values.
@@ -11602,12 +10061,6 @@ func (i GetCertificateCertificateRevocationListDetailObjectStorageConfigArray) T
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateCertificateRevocationListDetailObjectStorageConfigArrayOutput)
 }
 
-func (i GetCertificateCertificateRevocationListDetailObjectStorageConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateCertificateRevocationListDetailObjectStorageConfig] {
-	return pulumix.Output[[]GetCertificateCertificateRevocationListDetailObjectStorageConfig]{
-		OutputState: i.ToGetCertificateCertificateRevocationListDetailObjectStorageConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCertificateCertificateRevocationListDetailObjectStorageConfigOutput struct{ *pulumi.OutputState }
 
 func (GetCertificateCertificateRevocationListDetailObjectStorageConfigOutput) ElementType() reflect.Type {
@@ -11622,31 +10075,25 @@ func (o GetCertificateCertificateRevocationListDetailObjectStorageConfigOutput) 
 	return o
 }
 
-func (o GetCertificateCertificateRevocationListDetailObjectStorageConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificateCertificateRevocationListDetailObjectStorageConfig] {
-	return pulumix.Output[GetCertificateCertificateRevocationListDetailObjectStorageConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The name of the bucket where the CRL is stored.
-func (o GetCertificateCertificateRevocationListDetailObjectStorageConfigOutput) ObjectStorageBucketName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateCertificateRevocationListDetailObjectStorageConfig) string {
+func (o GetCertificateCertificateRevocationListDetailObjectStorageConfigOutput) ObjectStorageBucketName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateCertificateRevocationListDetailObjectStorageConfig) *string {
 		return v.ObjectStorageBucketName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The tenancy of the bucket where the CRL is stored.
-func (o GetCertificateCertificateRevocationListDetailObjectStorageConfigOutput) ObjectStorageNamespace() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateCertificateRevocationListDetailObjectStorageConfig) string {
+func (o GetCertificateCertificateRevocationListDetailObjectStorageConfigOutput) ObjectStorageNamespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateCertificateRevocationListDetailObjectStorageConfig) *string {
 		return v.ObjectStorageNamespace
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The object name in the bucket where the CRL is stored, expressed using a format where the version number of the issuing CA is inserted as part of the Object Storage object name wherever you include a pair of curly braces. This versioning scheme helps avoid collisions when new CA versions are created. For example, myCrlFileIssuedFromCAVersion{}.crl becomes myCrlFileIssuedFromCAVersion2.crl for CA version 2.
-func (o GetCertificateCertificateRevocationListDetailObjectStorageConfigOutput) ObjectStorageObjectNameFormat() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateCertificateRevocationListDetailObjectStorageConfig) string {
+func (o GetCertificateCertificateRevocationListDetailObjectStorageConfigOutput) ObjectStorageObjectNameFormat() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateCertificateRevocationListDetailObjectStorageConfig) *string {
 		return v.ObjectStorageObjectNameFormat
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetCertificateCertificateRevocationListDetailObjectStorageConfigArrayOutput struct{ *pulumi.OutputState }
@@ -11663,12 +10110,6 @@ func (o GetCertificateCertificateRevocationListDetailObjectStorageConfigArrayOut
 	return o
 }
 
-func (o GetCertificateCertificateRevocationListDetailObjectStorageConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateCertificateRevocationListDetailObjectStorageConfig] {
-	return pulumix.Output[[]GetCertificateCertificateRevocationListDetailObjectStorageConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCertificateCertificateRevocationListDetailObjectStorageConfigArrayOutput) Index(i pulumi.IntInput) GetCertificateCertificateRevocationListDetailObjectStorageConfigOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCertificateCertificateRevocationListDetailObjectStorageConfig {
 		return vs[0].([]GetCertificateCertificateRevocationListDetailObjectStorageConfig)[vs[1].(int)]
@@ -11677,11 +10118,11 @@ func (o GetCertificateCertificateRevocationListDetailObjectStorageConfigArrayOut
 
 type GetCertificateCertificateRule struct {
 	// A property specifying the period of time, in days, before the certificate's targeted renewal that the process should occur. Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
-	AdvanceRenewalPeriod string `pulumi:"advanceRenewalPeriod"`
+	AdvanceRenewalPeriod *string `pulumi:"advanceRenewalPeriod"`
 	// A property specifying how often, in days, a certificate should be renewed. Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
-	RenewalInterval string `pulumi:"renewalInterval"`
+	RenewalInterval *string `pulumi:"renewalInterval"`
 	// The type of rule.
-	RuleType string `pulumi:"ruleType"`
+	RuleType *string `pulumi:"ruleType"`
 }
 
 // GetCertificateCertificateRuleInput is an input type that accepts GetCertificateCertificateRuleArgs and GetCertificateCertificateRuleOutput values.
@@ -11697,11 +10138,11 @@ type GetCertificateCertificateRuleInput interface {
 
 type GetCertificateCertificateRuleArgs struct {
 	// A property specifying the period of time, in days, before the certificate's targeted renewal that the process should occur. Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
-	AdvanceRenewalPeriod pulumi.StringInput `pulumi:"advanceRenewalPeriod"`
+	AdvanceRenewalPeriod pulumi.StringPtrInput `pulumi:"advanceRenewalPeriod"`
 	// A property specifying how often, in days, a certificate should be renewed. Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
-	RenewalInterval pulumi.StringInput `pulumi:"renewalInterval"`
+	RenewalInterval pulumi.StringPtrInput `pulumi:"renewalInterval"`
 	// The type of rule.
-	RuleType pulumi.StringInput `pulumi:"ruleType"`
+	RuleType pulumi.StringPtrInput `pulumi:"ruleType"`
 }
 
 func (GetCertificateCertificateRuleArgs) ElementType() reflect.Type {
@@ -11714,12 +10155,6 @@ func (i GetCertificateCertificateRuleArgs) ToGetCertificateCertificateRuleOutput
 
 func (i GetCertificateCertificateRuleArgs) ToGetCertificateCertificateRuleOutputWithContext(ctx context.Context) GetCertificateCertificateRuleOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateCertificateRuleOutput)
-}
-
-func (i GetCertificateCertificateRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetCertificateCertificateRule] {
-	return pulumix.Output[GetCertificateCertificateRule]{
-		OutputState: i.ToGetCertificateCertificateRuleOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetCertificateCertificateRuleArrayInput is an input type that accepts GetCertificateCertificateRuleArray and GetCertificateCertificateRuleArrayOutput values.
@@ -11747,12 +10182,6 @@ func (i GetCertificateCertificateRuleArray) ToGetCertificateCertificateRuleArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateCertificateRuleArrayOutput)
 }
 
-func (i GetCertificateCertificateRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateCertificateRule] {
-	return pulumix.Output[[]GetCertificateCertificateRule]{
-		OutputState: i.ToGetCertificateCertificateRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCertificateCertificateRuleOutput struct{ *pulumi.OutputState }
 
 func (GetCertificateCertificateRuleOutput) ElementType() reflect.Type {
@@ -11767,25 +10196,19 @@ func (o GetCertificateCertificateRuleOutput) ToGetCertificateCertificateRuleOutp
 	return o
 }
 
-func (o GetCertificateCertificateRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificateCertificateRule] {
-	return pulumix.Output[GetCertificateCertificateRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A property specifying the period of time, in days, before the certificate's targeted renewal that the process should occur. Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
-func (o GetCertificateCertificateRuleOutput) AdvanceRenewalPeriod() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateCertificateRule) string { return v.AdvanceRenewalPeriod }).(pulumi.StringOutput)
+func (o GetCertificateCertificateRuleOutput) AdvanceRenewalPeriod() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateCertificateRule) *string { return v.AdvanceRenewalPeriod }).(pulumi.StringPtrOutput)
 }
 
 // A property specifying how often, in days, a certificate should be renewed. Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
-func (o GetCertificateCertificateRuleOutput) RenewalInterval() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateCertificateRule) string { return v.RenewalInterval }).(pulumi.StringOutput)
+func (o GetCertificateCertificateRuleOutput) RenewalInterval() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateCertificateRule) *string { return v.RenewalInterval }).(pulumi.StringPtrOutput)
 }
 
 // The type of rule.
-func (o GetCertificateCertificateRuleOutput) RuleType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateCertificateRule) string { return v.RuleType }).(pulumi.StringOutput)
+func (o GetCertificateCertificateRuleOutput) RuleType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateCertificateRule) *string { return v.RuleType }).(pulumi.StringPtrOutput)
 }
 
 type GetCertificateCertificateRuleArrayOutput struct{ *pulumi.OutputState }
@@ -11802,12 +10225,6 @@ func (o GetCertificateCertificateRuleArrayOutput) ToGetCertificateCertificateRul
 	return o
 }
 
-func (o GetCertificateCertificateRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateCertificateRule] {
-	return pulumix.Output[[]GetCertificateCertificateRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCertificateCertificateRuleArrayOutput) Index(i pulumi.IntInput) GetCertificateCertificateRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCertificateCertificateRule {
 		return vs[0].([]GetCertificateCertificateRule)[vs[1].(int)]
@@ -11816,27 +10233,27 @@ func (o GetCertificateCertificateRuleArrayOutput) Index(i pulumi.IntInput) GetCe
 
 type GetCertificateCurrentVersion struct {
 	// The OCID of the certificate.
-	CertificateId string `pulumi:"certificateId"`
+	CertificateId *string `pulumi:"certificateId"`
 	// The version number of the issuing certificate authority (CA).
-	IssuerCaVersionNumber string `pulumi:"issuerCaVersionNumber"`
+	IssuerCaVersionNumber *string `pulumi:"issuerCaVersionNumber"`
 	// The current revocation status of the entity.
 	RevocationStatuses []GetCertificateCurrentVersionRevocationStatus `pulumi:"revocationStatuses"`
 	// Unique subject identifier, which is not the same as the certificate serial number (RDN SERIALNUMBER).
-	SerialNumber string `pulumi:"serialNumber"`
+	SerialNumber *string `pulumi:"serialNumber"`
 	// A list of rotation states for this certificate version.
 	Stages []string `pulumi:"stages"`
 	// A list of subject alternative names.
 	SubjectAlternativeNames []GetCertificateCurrentVersionSubjectAlternativeName `pulumi:"subjectAlternativeNames"`
 	// A property indicating when the certificate was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// An optional property indicating when to delete the certificate version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfDeletion string `pulumi:"timeOfDeletion"`
+	TimeOfDeletion *string `pulumi:"timeOfDeletion"`
 	// An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
 	Validities []GetCertificateCurrentVersionValidity `pulumi:"validities"`
 	// The name of the certificate version. When the value is not null, a name is unique across versions of a given certificate.
-	VersionName string `pulumi:"versionName"`
+	VersionName *string `pulumi:"versionName"`
 	// The version number of the certificate.
-	VersionNumber string `pulumi:"versionNumber"`
+	VersionNumber *string `pulumi:"versionNumber"`
 }
 
 // GetCertificateCurrentVersionInput is an input type that accepts GetCertificateCurrentVersionArgs and GetCertificateCurrentVersionOutput values.
@@ -11852,27 +10269,27 @@ type GetCertificateCurrentVersionInput interface {
 
 type GetCertificateCurrentVersionArgs struct {
 	// The OCID of the certificate.
-	CertificateId pulumi.StringInput `pulumi:"certificateId"`
+	CertificateId pulumi.StringPtrInput `pulumi:"certificateId"`
 	// The version number of the issuing certificate authority (CA).
-	IssuerCaVersionNumber pulumi.StringInput `pulumi:"issuerCaVersionNumber"`
+	IssuerCaVersionNumber pulumi.StringPtrInput `pulumi:"issuerCaVersionNumber"`
 	// The current revocation status of the entity.
 	RevocationStatuses GetCertificateCurrentVersionRevocationStatusArrayInput `pulumi:"revocationStatuses"`
 	// Unique subject identifier, which is not the same as the certificate serial number (RDN SERIALNUMBER).
-	SerialNumber pulumi.StringInput `pulumi:"serialNumber"`
+	SerialNumber pulumi.StringPtrInput `pulumi:"serialNumber"`
 	// A list of rotation states for this certificate version.
 	Stages pulumi.StringArrayInput `pulumi:"stages"`
 	// A list of subject alternative names.
 	SubjectAlternativeNames GetCertificateCurrentVersionSubjectAlternativeNameArrayInput `pulumi:"subjectAlternativeNames"`
 	// A property indicating when the certificate was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// An optional property indicating when to delete the certificate version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfDeletion pulumi.StringInput `pulumi:"timeOfDeletion"`
+	TimeOfDeletion pulumi.StringPtrInput `pulumi:"timeOfDeletion"`
 	// An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
 	Validities GetCertificateCurrentVersionValidityArrayInput `pulumi:"validities"`
 	// The name of the certificate version. When the value is not null, a name is unique across versions of a given certificate.
-	VersionName pulumi.StringInput `pulumi:"versionName"`
+	VersionName pulumi.StringPtrInput `pulumi:"versionName"`
 	// The version number of the certificate.
-	VersionNumber pulumi.StringInput `pulumi:"versionNumber"`
+	VersionNumber pulumi.StringPtrInput `pulumi:"versionNumber"`
 }
 
 func (GetCertificateCurrentVersionArgs) ElementType() reflect.Type {
@@ -11885,12 +10302,6 @@ func (i GetCertificateCurrentVersionArgs) ToGetCertificateCurrentVersionOutput()
 
 func (i GetCertificateCurrentVersionArgs) ToGetCertificateCurrentVersionOutputWithContext(ctx context.Context) GetCertificateCurrentVersionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateCurrentVersionOutput)
-}
-
-func (i GetCertificateCurrentVersionArgs) ToOutput(ctx context.Context) pulumix.Output[GetCertificateCurrentVersion] {
-	return pulumix.Output[GetCertificateCurrentVersion]{
-		OutputState: i.ToGetCertificateCurrentVersionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetCertificateCurrentVersionArrayInput is an input type that accepts GetCertificateCurrentVersionArray and GetCertificateCurrentVersionArrayOutput values.
@@ -11918,12 +10329,6 @@ func (i GetCertificateCurrentVersionArray) ToGetCertificateCurrentVersionArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateCurrentVersionArrayOutput)
 }
 
-func (i GetCertificateCurrentVersionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateCurrentVersion] {
-	return pulumix.Output[[]GetCertificateCurrentVersion]{
-		OutputState: i.ToGetCertificateCurrentVersionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCertificateCurrentVersionOutput struct{ *pulumi.OutputState }
 
 func (GetCertificateCurrentVersionOutput) ElementType() reflect.Type {
@@ -11938,20 +10343,14 @@ func (o GetCertificateCurrentVersionOutput) ToGetCertificateCurrentVersionOutput
 	return o
 }
 
-func (o GetCertificateCurrentVersionOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificateCurrentVersion] {
-	return pulumix.Output[GetCertificateCurrentVersion]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the certificate.
-func (o GetCertificateCurrentVersionOutput) CertificateId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateCurrentVersion) string { return v.CertificateId }).(pulumi.StringOutput)
+func (o GetCertificateCurrentVersionOutput) CertificateId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateCurrentVersion) *string { return v.CertificateId }).(pulumi.StringPtrOutput)
 }
 
 // The version number of the issuing certificate authority (CA).
-func (o GetCertificateCurrentVersionOutput) IssuerCaVersionNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateCurrentVersion) string { return v.IssuerCaVersionNumber }).(pulumi.StringOutput)
+func (o GetCertificateCurrentVersionOutput) IssuerCaVersionNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateCurrentVersion) *string { return v.IssuerCaVersionNumber }).(pulumi.StringPtrOutput)
 }
 
 // The current revocation status of the entity.
@@ -11962,8 +10361,8 @@ func (o GetCertificateCurrentVersionOutput) RevocationStatuses() GetCertificateC
 }
 
 // Unique subject identifier, which is not the same as the certificate serial number (RDN SERIALNUMBER).
-func (o GetCertificateCurrentVersionOutput) SerialNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateCurrentVersion) string { return v.SerialNumber }).(pulumi.StringOutput)
+func (o GetCertificateCurrentVersionOutput) SerialNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateCurrentVersion) *string { return v.SerialNumber }).(pulumi.StringPtrOutput)
 }
 
 // A list of rotation states for this certificate version.
@@ -11979,13 +10378,13 @@ func (o GetCertificateCurrentVersionOutput) SubjectAlternativeNames() GetCertifi
 }
 
 // A property indicating when the certificate was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-func (o GetCertificateCurrentVersionOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateCurrentVersion) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetCertificateCurrentVersionOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateCurrentVersion) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // An optional property indicating when to delete the certificate version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-func (o GetCertificateCurrentVersionOutput) TimeOfDeletion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateCurrentVersion) string { return v.TimeOfDeletion }).(pulumi.StringOutput)
+func (o GetCertificateCurrentVersionOutput) TimeOfDeletion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateCurrentVersion) *string { return v.TimeOfDeletion }).(pulumi.StringPtrOutput)
 }
 
 // An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
@@ -11994,13 +10393,13 @@ func (o GetCertificateCurrentVersionOutput) Validities() GetCertificateCurrentVe
 }
 
 // The name of the certificate version. When the value is not null, a name is unique across versions of a given certificate.
-func (o GetCertificateCurrentVersionOutput) VersionName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateCurrentVersion) string { return v.VersionName }).(pulumi.StringOutput)
+func (o GetCertificateCurrentVersionOutput) VersionName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateCurrentVersion) *string { return v.VersionName }).(pulumi.StringPtrOutput)
 }
 
 // The version number of the certificate.
-func (o GetCertificateCurrentVersionOutput) VersionNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateCurrentVersion) string { return v.VersionNumber }).(pulumi.StringOutput)
+func (o GetCertificateCurrentVersionOutput) VersionNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateCurrentVersion) *string { return v.VersionNumber }).(pulumi.StringPtrOutput)
 }
 
 type GetCertificateCurrentVersionArrayOutput struct{ *pulumi.OutputState }
@@ -12017,12 +10416,6 @@ func (o GetCertificateCurrentVersionArrayOutput) ToGetCertificateCurrentVersionA
 	return o
 }
 
-func (o GetCertificateCurrentVersionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateCurrentVersion] {
-	return pulumix.Output[[]GetCertificateCurrentVersion]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCertificateCurrentVersionArrayOutput) Index(i pulumi.IntInput) GetCertificateCurrentVersionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCertificateCurrentVersion {
 		return vs[0].([]GetCertificateCurrentVersion)[vs[1].(int)]
@@ -12031,9 +10424,9 @@ func (o GetCertificateCurrentVersionArrayOutput) Index(i pulumi.IntInput) GetCer
 
 type GetCertificateCurrentVersionRevocationStatus struct {
 	// The reason the certificate or certificate authority (CA) was revoked.
-	RevocationReason string `pulumi:"revocationReason"`
+	RevocationReason *string `pulumi:"revocationReason"`
 	// The time when the entity was revoked, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfRevocation string `pulumi:"timeOfRevocation"`
+	TimeOfRevocation *string `pulumi:"timeOfRevocation"`
 }
 
 // GetCertificateCurrentVersionRevocationStatusInput is an input type that accepts GetCertificateCurrentVersionRevocationStatusArgs and GetCertificateCurrentVersionRevocationStatusOutput values.
@@ -12049,9 +10442,9 @@ type GetCertificateCurrentVersionRevocationStatusInput interface {
 
 type GetCertificateCurrentVersionRevocationStatusArgs struct {
 	// The reason the certificate or certificate authority (CA) was revoked.
-	RevocationReason pulumi.StringInput `pulumi:"revocationReason"`
+	RevocationReason pulumi.StringPtrInput `pulumi:"revocationReason"`
 	// The time when the entity was revoked, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfRevocation pulumi.StringInput `pulumi:"timeOfRevocation"`
+	TimeOfRevocation pulumi.StringPtrInput `pulumi:"timeOfRevocation"`
 }
 
 func (GetCertificateCurrentVersionRevocationStatusArgs) ElementType() reflect.Type {
@@ -12064,12 +10457,6 @@ func (i GetCertificateCurrentVersionRevocationStatusArgs) ToGetCertificateCurren
 
 func (i GetCertificateCurrentVersionRevocationStatusArgs) ToGetCertificateCurrentVersionRevocationStatusOutputWithContext(ctx context.Context) GetCertificateCurrentVersionRevocationStatusOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateCurrentVersionRevocationStatusOutput)
-}
-
-func (i GetCertificateCurrentVersionRevocationStatusArgs) ToOutput(ctx context.Context) pulumix.Output[GetCertificateCurrentVersionRevocationStatus] {
-	return pulumix.Output[GetCertificateCurrentVersionRevocationStatus]{
-		OutputState: i.ToGetCertificateCurrentVersionRevocationStatusOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetCertificateCurrentVersionRevocationStatusArrayInput is an input type that accepts GetCertificateCurrentVersionRevocationStatusArray and GetCertificateCurrentVersionRevocationStatusArrayOutput values.
@@ -12097,12 +10484,6 @@ func (i GetCertificateCurrentVersionRevocationStatusArray) ToGetCertificateCurre
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateCurrentVersionRevocationStatusArrayOutput)
 }
 
-func (i GetCertificateCurrentVersionRevocationStatusArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateCurrentVersionRevocationStatus] {
-	return pulumix.Output[[]GetCertificateCurrentVersionRevocationStatus]{
-		OutputState: i.ToGetCertificateCurrentVersionRevocationStatusArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCertificateCurrentVersionRevocationStatusOutput struct{ *pulumi.OutputState }
 
 func (GetCertificateCurrentVersionRevocationStatusOutput) ElementType() reflect.Type {
@@ -12117,20 +10498,14 @@ func (o GetCertificateCurrentVersionRevocationStatusOutput) ToGetCertificateCurr
 	return o
 }
 
-func (o GetCertificateCurrentVersionRevocationStatusOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificateCurrentVersionRevocationStatus] {
-	return pulumix.Output[GetCertificateCurrentVersionRevocationStatus]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The reason the certificate or certificate authority (CA) was revoked.
-func (o GetCertificateCurrentVersionRevocationStatusOutput) RevocationReason() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateCurrentVersionRevocationStatus) string { return v.RevocationReason }).(pulumi.StringOutput)
+func (o GetCertificateCurrentVersionRevocationStatusOutput) RevocationReason() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateCurrentVersionRevocationStatus) *string { return v.RevocationReason }).(pulumi.StringPtrOutput)
 }
 
 // The time when the entity was revoked, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-func (o GetCertificateCurrentVersionRevocationStatusOutput) TimeOfRevocation() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateCurrentVersionRevocationStatus) string { return v.TimeOfRevocation }).(pulumi.StringOutput)
+func (o GetCertificateCurrentVersionRevocationStatusOutput) TimeOfRevocation() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateCurrentVersionRevocationStatus) *string { return v.TimeOfRevocation }).(pulumi.StringPtrOutput)
 }
 
 type GetCertificateCurrentVersionRevocationStatusArrayOutput struct{ *pulumi.OutputState }
@@ -12147,12 +10522,6 @@ func (o GetCertificateCurrentVersionRevocationStatusArrayOutput) ToGetCertificat
 	return o
 }
 
-func (o GetCertificateCurrentVersionRevocationStatusArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateCurrentVersionRevocationStatus] {
-	return pulumix.Output[[]GetCertificateCurrentVersionRevocationStatus]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCertificateCurrentVersionRevocationStatusArrayOutput) Index(i pulumi.IntInput) GetCertificateCurrentVersionRevocationStatusOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCertificateCurrentVersionRevocationStatus {
 		return vs[0].([]GetCertificateCurrentVersionRevocationStatus)[vs[1].(int)]
@@ -12161,9 +10530,9 @@ func (o GetCertificateCurrentVersionRevocationStatusArrayOutput) Index(i pulumi.
 
 type GetCertificateCurrentVersionSubjectAlternativeName struct {
 	// The subject alternative name type. Currently only DNS domain or host names and IP addresses are supported.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 	// The subject alternative name.
-	Value string `pulumi:"value"`
+	Value *string `pulumi:"value"`
 }
 
 // GetCertificateCurrentVersionSubjectAlternativeNameInput is an input type that accepts GetCertificateCurrentVersionSubjectAlternativeNameArgs and GetCertificateCurrentVersionSubjectAlternativeNameOutput values.
@@ -12179,9 +10548,9 @@ type GetCertificateCurrentVersionSubjectAlternativeNameInput interface {
 
 type GetCertificateCurrentVersionSubjectAlternativeNameArgs struct {
 	// The subject alternative name type. Currently only DNS domain or host names and IP addresses are supported.
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 	// The subject alternative name.
-	Value pulumi.StringInput `pulumi:"value"`
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (GetCertificateCurrentVersionSubjectAlternativeNameArgs) ElementType() reflect.Type {
@@ -12194,12 +10563,6 @@ func (i GetCertificateCurrentVersionSubjectAlternativeNameArgs) ToGetCertificate
 
 func (i GetCertificateCurrentVersionSubjectAlternativeNameArgs) ToGetCertificateCurrentVersionSubjectAlternativeNameOutputWithContext(ctx context.Context) GetCertificateCurrentVersionSubjectAlternativeNameOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateCurrentVersionSubjectAlternativeNameOutput)
-}
-
-func (i GetCertificateCurrentVersionSubjectAlternativeNameArgs) ToOutput(ctx context.Context) pulumix.Output[GetCertificateCurrentVersionSubjectAlternativeName] {
-	return pulumix.Output[GetCertificateCurrentVersionSubjectAlternativeName]{
-		OutputState: i.ToGetCertificateCurrentVersionSubjectAlternativeNameOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetCertificateCurrentVersionSubjectAlternativeNameArrayInput is an input type that accepts GetCertificateCurrentVersionSubjectAlternativeNameArray and GetCertificateCurrentVersionSubjectAlternativeNameArrayOutput values.
@@ -12227,12 +10590,6 @@ func (i GetCertificateCurrentVersionSubjectAlternativeNameArray) ToGetCertificat
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateCurrentVersionSubjectAlternativeNameArrayOutput)
 }
 
-func (i GetCertificateCurrentVersionSubjectAlternativeNameArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateCurrentVersionSubjectAlternativeName] {
-	return pulumix.Output[[]GetCertificateCurrentVersionSubjectAlternativeName]{
-		OutputState: i.ToGetCertificateCurrentVersionSubjectAlternativeNameArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCertificateCurrentVersionSubjectAlternativeNameOutput struct{ *pulumi.OutputState }
 
 func (GetCertificateCurrentVersionSubjectAlternativeNameOutput) ElementType() reflect.Type {
@@ -12247,20 +10604,14 @@ func (o GetCertificateCurrentVersionSubjectAlternativeNameOutput) ToGetCertifica
 	return o
 }
 
-func (o GetCertificateCurrentVersionSubjectAlternativeNameOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificateCurrentVersionSubjectAlternativeName] {
-	return pulumix.Output[GetCertificateCurrentVersionSubjectAlternativeName]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The subject alternative name type. Currently only DNS domain or host names and IP addresses are supported.
-func (o GetCertificateCurrentVersionSubjectAlternativeNameOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateCurrentVersionSubjectAlternativeName) string { return v.Type }).(pulumi.StringOutput)
+func (o GetCertificateCurrentVersionSubjectAlternativeNameOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateCurrentVersionSubjectAlternativeName) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 // The subject alternative name.
-func (o GetCertificateCurrentVersionSubjectAlternativeNameOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateCurrentVersionSubjectAlternativeName) string { return v.Value }).(pulumi.StringOutput)
+func (o GetCertificateCurrentVersionSubjectAlternativeNameOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateCurrentVersionSubjectAlternativeName) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
 
 type GetCertificateCurrentVersionSubjectAlternativeNameArrayOutput struct{ *pulumi.OutputState }
@@ -12277,12 +10628,6 @@ func (o GetCertificateCurrentVersionSubjectAlternativeNameArrayOutput) ToGetCert
 	return o
 }
 
-func (o GetCertificateCurrentVersionSubjectAlternativeNameArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateCurrentVersionSubjectAlternativeName] {
-	return pulumix.Output[[]GetCertificateCurrentVersionSubjectAlternativeName]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCertificateCurrentVersionSubjectAlternativeNameArrayOutput) Index(i pulumi.IntInput) GetCertificateCurrentVersionSubjectAlternativeNameOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCertificateCurrentVersionSubjectAlternativeName {
 		return vs[0].([]GetCertificateCurrentVersionSubjectAlternativeName)[vs[1].(int)]
@@ -12291,9 +10636,9 @@ func (o GetCertificateCurrentVersionSubjectAlternativeNameArrayOutput) Index(i p
 
 type GetCertificateCurrentVersionValidity struct {
 	// The date on which the certificate validity period ends, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfValidityNotAfter string `pulumi:"timeOfValidityNotAfter"`
+	TimeOfValidityNotAfter *string `pulumi:"timeOfValidityNotAfter"`
 	// The date on which the certificate validity period begins, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfValidityNotBefore string `pulumi:"timeOfValidityNotBefore"`
+	TimeOfValidityNotBefore *string `pulumi:"timeOfValidityNotBefore"`
 }
 
 // GetCertificateCurrentVersionValidityInput is an input type that accepts GetCertificateCurrentVersionValidityArgs and GetCertificateCurrentVersionValidityOutput values.
@@ -12309,9 +10654,9 @@ type GetCertificateCurrentVersionValidityInput interface {
 
 type GetCertificateCurrentVersionValidityArgs struct {
 	// The date on which the certificate validity period ends, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfValidityNotAfter pulumi.StringInput `pulumi:"timeOfValidityNotAfter"`
+	TimeOfValidityNotAfter pulumi.StringPtrInput `pulumi:"timeOfValidityNotAfter"`
 	// The date on which the certificate validity period begins, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfValidityNotBefore pulumi.StringInput `pulumi:"timeOfValidityNotBefore"`
+	TimeOfValidityNotBefore pulumi.StringPtrInput `pulumi:"timeOfValidityNotBefore"`
 }
 
 func (GetCertificateCurrentVersionValidityArgs) ElementType() reflect.Type {
@@ -12324,12 +10669,6 @@ func (i GetCertificateCurrentVersionValidityArgs) ToGetCertificateCurrentVersion
 
 func (i GetCertificateCurrentVersionValidityArgs) ToGetCertificateCurrentVersionValidityOutputWithContext(ctx context.Context) GetCertificateCurrentVersionValidityOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateCurrentVersionValidityOutput)
-}
-
-func (i GetCertificateCurrentVersionValidityArgs) ToOutput(ctx context.Context) pulumix.Output[GetCertificateCurrentVersionValidity] {
-	return pulumix.Output[GetCertificateCurrentVersionValidity]{
-		OutputState: i.ToGetCertificateCurrentVersionValidityOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetCertificateCurrentVersionValidityArrayInput is an input type that accepts GetCertificateCurrentVersionValidityArray and GetCertificateCurrentVersionValidityArrayOutput values.
@@ -12357,12 +10696,6 @@ func (i GetCertificateCurrentVersionValidityArray) ToGetCertificateCurrentVersio
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateCurrentVersionValidityArrayOutput)
 }
 
-func (i GetCertificateCurrentVersionValidityArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateCurrentVersionValidity] {
-	return pulumix.Output[[]GetCertificateCurrentVersionValidity]{
-		OutputState: i.ToGetCertificateCurrentVersionValidityArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCertificateCurrentVersionValidityOutput struct{ *pulumi.OutputState }
 
 func (GetCertificateCurrentVersionValidityOutput) ElementType() reflect.Type {
@@ -12377,20 +10710,14 @@ func (o GetCertificateCurrentVersionValidityOutput) ToGetCertificateCurrentVersi
 	return o
 }
 
-func (o GetCertificateCurrentVersionValidityOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificateCurrentVersionValidity] {
-	return pulumix.Output[GetCertificateCurrentVersionValidity]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The date on which the certificate validity period ends, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-func (o GetCertificateCurrentVersionValidityOutput) TimeOfValidityNotAfter() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateCurrentVersionValidity) string { return v.TimeOfValidityNotAfter }).(pulumi.StringOutput)
+func (o GetCertificateCurrentVersionValidityOutput) TimeOfValidityNotAfter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateCurrentVersionValidity) *string { return v.TimeOfValidityNotAfter }).(pulumi.StringPtrOutput)
 }
 
 // The date on which the certificate validity period begins, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-func (o GetCertificateCurrentVersionValidityOutput) TimeOfValidityNotBefore() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateCurrentVersionValidity) string { return v.TimeOfValidityNotBefore }).(pulumi.StringOutput)
+func (o GetCertificateCurrentVersionValidityOutput) TimeOfValidityNotBefore() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateCurrentVersionValidity) *string { return v.TimeOfValidityNotBefore }).(pulumi.StringPtrOutput)
 }
 
 type GetCertificateCurrentVersionValidityArrayOutput struct{ *pulumi.OutputState }
@@ -12407,12 +10734,6 @@ func (o GetCertificateCurrentVersionValidityArrayOutput) ToGetCertificateCurrent
 	return o
 }
 
-func (o GetCertificateCurrentVersionValidityArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateCurrentVersionValidity] {
-	return pulumix.Output[[]GetCertificateCurrentVersionValidity]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCertificateCurrentVersionValidityArrayOutput) Index(i pulumi.IntInput) GetCertificateCurrentVersionValidityOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCertificateCurrentVersionValidity {
 		return vs[0].([]GetCertificateCurrentVersionValidity)[vs[1].(int)]
@@ -12421,39 +10742,39 @@ func (o GetCertificateCurrentVersionValidityArrayOutput) Index(i pulumi.IntInput
 
 type GetCertificateSubject struct {
 	// Common name or fully-qualified domain name (RDN CN).
-	CommonName string `pulumi:"commonName"`
+	CommonName *string `pulumi:"commonName"`
 	// Country name (RDN C).
-	Country string `pulumi:"country"`
+	Country *string `pulumi:"country"`
 	// Distinguished name qualifier(RDN DNQ).
-	DistinguishedNameQualifier string `pulumi:"distinguishedNameQualifier"`
+	DistinguishedNameQualifier *string `pulumi:"distinguishedNameQualifier"`
 	// Domain component (RDN DC).
-	DomainComponent string `pulumi:"domainComponent"`
+	DomainComponent *string `pulumi:"domainComponent"`
 	// Personal generational qualifier (for example, Sr., Jr. 3rd, or IV).
-	GenerationQualifier string `pulumi:"generationQualifier"`
+	GenerationQualifier *string `pulumi:"generationQualifier"`
 	// Personal given name (RDN G or GN).
-	GivenName string `pulumi:"givenName"`
+	GivenName *string `pulumi:"givenName"`
 	// Personal initials.
-	Initials string `pulumi:"initials"`
+	Initials *string `pulumi:"initials"`
 	// Locality (RDN L).
-	LocalityName string `pulumi:"localityName"`
+	LocalityName *string `pulumi:"localityName"`
 	// Organization (RDN O).
-	Organization string `pulumi:"organization"`
+	Organization *string `pulumi:"organization"`
 	// Organizational unit (RDN OU).
-	OrganizationalUnit string `pulumi:"organizationalUnit"`
+	OrganizationalUnit *string `pulumi:"organizationalUnit"`
 	// Subject pseudonym.
-	Pseudonym string `pulumi:"pseudonym"`
+	Pseudonym *string `pulumi:"pseudonym"`
 	// Unique subject identifier, which is not the same as the certificate serial number (RDN SERIALNUMBER).
-	SerialNumber string `pulumi:"serialNumber"`
+	SerialNumber *string `pulumi:"serialNumber"`
 	// State or province name (RDN ST or S).
-	StateOrProvinceName string `pulumi:"stateOrProvinceName"`
+	StateOrProvinceName *string `pulumi:"stateOrProvinceName"`
 	// Street address (RDN STREET).
-	Street string `pulumi:"street"`
+	Street *string `pulumi:"street"`
 	// Personal surname (RDN SN).
-	Surname string `pulumi:"surname"`
+	Surname *string `pulumi:"surname"`
 	// Title (RDN T or TITLE).
-	Title string `pulumi:"title"`
+	Title *string `pulumi:"title"`
 	// User ID (RDN UID).
-	UserId string `pulumi:"userId"`
+	UserId *string `pulumi:"userId"`
 }
 
 // GetCertificateSubjectInput is an input type that accepts GetCertificateSubjectArgs and GetCertificateSubjectOutput values.
@@ -12469,39 +10790,39 @@ type GetCertificateSubjectInput interface {
 
 type GetCertificateSubjectArgs struct {
 	// Common name or fully-qualified domain name (RDN CN).
-	CommonName pulumi.StringInput `pulumi:"commonName"`
+	CommonName pulumi.StringPtrInput `pulumi:"commonName"`
 	// Country name (RDN C).
-	Country pulumi.StringInput `pulumi:"country"`
+	Country pulumi.StringPtrInput `pulumi:"country"`
 	// Distinguished name qualifier(RDN DNQ).
-	DistinguishedNameQualifier pulumi.StringInput `pulumi:"distinguishedNameQualifier"`
+	DistinguishedNameQualifier pulumi.StringPtrInput `pulumi:"distinguishedNameQualifier"`
 	// Domain component (RDN DC).
-	DomainComponent pulumi.StringInput `pulumi:"domainComponent"`
+	DomainComponent pulumi.StringPtrInput `pulumi:"domainComponent"`
 	// Personal generational qualifier (for example, Sr., Jr. 3rd, or IV).
-	GenerationQualifier pulumi.StringInput `pulumi:"generationQualifier"`
+	GenerationQualifier pulumi.StringPtrInput `pulumi:"generationQualifier"`
 	// Personal given name (RDN G or GN).
-	GivenName pulumi.StringInput `pulumi:"givenName"`
+	GivenName pulumi.StringPtrInput `pulumi:"givenName"`
 	// Personal initials.
-	Initials pulumi.StringInput `pulumi:"initials"`
+	Initials pulumi.StringPtrInput `pulumi:"initials"`
 	// Locality (RDN L).
-	LocalityName pulumi.StringInput `pulumi:"localityName"`
+	LocalityName pulumi.StringPtrInput `pulumi:"localityName"`
 	// Organization (RDN O).
-	Organization pulumi.StringInput `pulumi:"organization"`
+	Organization pulumi.StringPtrInput `pulumi:"organization"`
 	// Organizational unit (RDN OU).
-	OrganizationalUnit pulumi.StringInput `pulumi:"organizationalUnit"`
+	OrganizationalUnit pulumi.StringPtrInput `pulumi:"organizationalUnit"`
 	// Subject pseudonym.
-	Pseudonym pulumi.StringInput `pulumi:"pseudonym"`
+	Pseudonym pulumi.StringPtrInput `pulumi:"pseudonym"`
 	// Unique subject identifier, which is not the same as the certificate serial number (RDN SERIALNUMBER).
-	SerialNumber pulumi.StringInput `pulumi:"serialNumber"`
+	SerialNumber pulumi.StringPtrInput `pulumi:"serialNumber"`
 	// State or province name (RDN ST or S).
-	StateOrProvinceName pulumi.StringInput `pulumi:"stateOrProvinceName"`
+	StateOrProvinceName pulumi.StringPtrInput `pulumi:"stateOrProvinceName"`
 	// Street address (RDN STREET).
-	Street pulumi.StringInput `pulumi:"street"`
+	Street pulumi.StringPtrInput `pulumi:"street"`
 	// Personal surname (RDN SN).
-	Surname pulumi.StringInput `pulumi:"surname"`
+	Surname pulumi.StringPtrInput `pulumi:"surname"`
 	// Title (RDN T or TITLE).
-	Title pulumi.StringInput `pulumi:"title"`
+	Title pulumi.StringPtrInput `pulumi:"title"`
 	// User ID (RDN UID).
-	UserId pulumi.StringInput `pulumi:"userId"`
+	UserId pulumi.StringPtrInput `pulumi:"userId"`
 }
 
 func (GetCertificateSubjectArgs) ElementType() reflect.Type {
@@ -12514,12 +10835,6 @@ func (i GetCertificateSubjectArgs) ToGetCertificateSubjectOutput() GetCertificat
 
 func (i GetCertificateSubjectArgs) ToGetCertificateSubjectOutputWithContext(ctx context.Context) GetCertificateSubjectOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateSubjectOutput)
-}
-
-func (i GetCertificateSubjectArgs) ToOutput(ctx context.Context) pulumix.Output[GetCertificateSubject] {
-	return pulumix.Output[GetCertificateSubject]{
-		OutputState: i.ToGetCertificateSubjectOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetCertificateSubjectArrayInput is an input type that accepts GetCertificateSubjectArray and GetCertificateSubjectArrayOutput values.
@@ -12547,12 +10862,6 @@ func (i GetCertificateSubjectArray) ToGetCertificateSubjectArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateSubjectArrayOutput)
 }
 
-func (i GetCertificateSubjectArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateSubject] {
-	return pulumix.Output[[]GetCertificateSubject]{
-		OutputState: i.ToGetCertificateSubjectArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCertificateSubjectOutput struct{ *pulumi.OutputState }
 
 func (GetCertificateSubjectOutput) ElementType() reflect.Type {
@@ -12567,95 +10876,89 @@ func (o GetCertificateSubjectOutput) ToGetCertificateSubjectOutputWithContext(ct
 	return o
 }
 
-func (o GetCertificateSubjectOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificateSubject] {
-	return pulumix.Output[GetCertificateSubject]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Common name or fully-qualified domain name (RDN CN).
-func (o GetCertificateSubjectOutput) CommonName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateSubject) string { return v.CommonName }).(pulumi.StringOutput)
+func (o GetCertificateSubjectOutput) CommonName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateSubject) *string { return v.CommonName }).(pulumi.StringPtrOutput)
 }
 
 // Country name (RDN C).
-func (o GetCertificateSubjectOutput) Country() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateSubject) string { return v.Country }).(pulumi.StringOutput)
+func (o GetCertificateSubjectOutput) Country() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateSubject) *string { return v.Country }).(pulumi.StringPtrOutput)
 }
 
 // Distinguished name qualifier(RDN DNQ).
-func (o GetCertificateSubjectOutput) DistinguishedNameQualifier() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateSubject) string { return v.DistinguishedNameQualifier }).(pulumi.StringOutput)
+func (o GetCertificateSubjectOutput) DistinguishedNameQualifier() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateSubject) *string { return v.DistinguishedNameQualifier }).(pulumi.StringPtrOutput)
 }
 
 // Domain component (RDN DC).
-func (o GetCertificateSubjectOutput) DomainComponent() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateSubject) string { return v.DomainComponent }).(pulumi.StringOutput)
+func (o GetCertificateSubjectOutput) DomainComponent() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateSubject) *string { return v.DomainComponent }).(pulumi.StringPtrOutput)
 }
 
 // Personal generational qualifier (for example, Sr., Jr. 3rd, or IV).
-func (o GetCertificateSubjectOutput) GenerationQualifier() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateSubject) string { return v.GenerationQualifier }).(pulumi.StringOutput)
+func (o GetCertificateSubjectOutput) GenerationQualifier() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateSubject) *string { return v.GenerationQualifier }).(pulumi.StringPtrOutput)
 }
 
 // Personal given name (RDN G or GN).
-func (o GetCertificateSubjectOutput) GivenName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateSubject) string { return v.GivenName }).(pulumi.StringOutput)
+func (o GetCertificateSubjectOutput) GivenName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateSubject) *string { return v.GivenName }).(pulumi.StringPtrOutput)
 }
 
 // Personal initials.
-func (o GetCertificateSubjectOutput) Initials() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateSubject) string { return v.Initials }).(pulumi.StringOutput)
+func (o GetCertificateSubjectOutput) Initials() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateSubject) *string { return v.Initials }).(pulumi.StringPtrOutput)
 }
 
 // Locality (RDN L).
-func (o GetCertificateSubjectOutput) LocalityName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateSubject) string { return v.LocalityName }).(pulumi.StringOutput)
+func (o GetCertificateSubjectOutput) LocalityName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateSubject) *string { return v.LocalityName }).(pulumi.StringPtrOutput)
 }
 
 // Organization (RDN O).
-func (o GetCertificateSubjectOutput) Organization() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateSubject) string { return v.Organization }).(pulumi.StringOutput)
+func (o GetCertificateSubjectOutput) Organization() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateSubject) *string { return v.Organization }).(pulumi.StringPtrOutput)
 }
 
 // Organizational unit (RDN OU).
-func (o GetCertificateSubjectOutput) OrganizationalUnit() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateSubject) string { return v.OrganizationalUnit }).(pulumi.StringOutput)
+func (o GetCertificateSubjectOutput) OrganizationalUnit() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateSubject) *string { return v.OrganizationalUnit }).(pulumi.StringPtrOutput)
 }
 
 // Subject pseudonym.
-func (o GetCertificateSubjectOutput) Pseudonym() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateSubject) string { return v.Pseudonym }).(pulumi.StringOutput)
+func (o GetCertificateSubjectOutput) Pseudonym() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateSubject) *string { return v.Pseudonym }).(pulumi.StringPtrOutput)
 }
 
 // Unique subject identifier, which is not the same as the certificate serial number (RDN SERIALNUMBER).
-func (o GetCertificateSubjectOutput) SerialNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateSubject) string { return v.SerialNumber }).(pulumi.StringOutput)
+func (o GetCertificateSubjectOutput) SerialNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateSubject) *string { return v.SerialNumber }).(pulumi.StringPtrOutput)
 }
 
 // State or province name (RDN ST or S).
-func (o GetCertificateSubjectOutput) StateOrProvinceName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateSubject) string { return v.StateOrProvinceName }).(pulumi.StringOutput)
+func (o GetCertificateSubjectOutput) StateOrProvinceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateSubject) *string { return v.StateOrProvinceName }).(pulumi.StringPtrOutput)
 }
 
 // Street address (RDN STREET).
-func (o GetCertificateSubjectOutput) Street() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateSubject) string { return v.Street }).(pulumi.StringOutput)
+func (o GetCertificateSubjectOutput) Street() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateSubject) *string { return v.Street }).(pulumi.StringPtrOutput)
 }
 
 // Personal surname (RDN SN).
-func (o GetCertificateSubjectOutput) Surname() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateSubject) string { return v.Surname }).(pulumi.StringOutput)
+func (o GetCertificateSubjectOutput) Surname() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateSubject) *string { return v.Surname }).(pulumi.StringPtrOutput)
 }
 
 // Title (RDN T or TITLE).
-func (o GetCertificateSubjectOutput) Title() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateSubject) string { return v.Title }).(pulumi.StringOutput)
+func (o GetCertificateSubjectOutput) Title() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateSubject) *string { return v.Title }).(pulumi.StringPtrOutput)
 }
 
 // User ID (RDN UID).
-func (o GetCertificateSubjectOutput) UserId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateSubject) string { return v.UserId }).(pulumi.StringOutput)
+func (o GetCertificateSubjectOutput) UserId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateSubject) *string { return v.UserId }).(pulumi.StringPtrOutput)
 }
 
 type GetCertificateSubjectArrayOutput struct{ *pulumi.OutputState }
@@ -12672,12 +10975,6 @@ func (o GetCertificateSubjectArrayOutput) ToGetCertificateSubjectArrayOutputWith
 	return o
 }
 
-func (o GetCertificateSubjectArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateSubject] {
-	return pulumix.Output[[]GetCertificateSubject]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCertificateSubjectArrayOutput) Index(i pulumi.IntInput) GetCertificateSubjectOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCertificateSubject {
 		return vs[0].([]GetCertificateSubject)[vs[1].(int)]
@@ -12686,9 +10983,9 @@ func (o GetCertificateSubjectArrayOutput) Index(i pulumi.IntInput) GetCertificat
 
 type GetCertificateVersionRevocationStatus struct {
 	// The reason the certificate or certificate authority (CA) was revoked.
-	RevocationReason string `pulumi:"revocationReason"`
+	RevocationReason *string `pulumi:"revocationReason"`
 	// The time when the entity was revoked, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfRevocation string `pulumi:"timeOfRevocation"`
+	TimeOfRevocation *string `pulumi:"timeOfRevocation"`
 }
 
 // GetCertificateVersionRevocationStatusInput is an input type that accepts GetCertificateVersionRevocationStatusArgs and GetCertificateVersionRevocationStatusOutput values.
@@ -12704,9 +11001,9 @@ type GetCertificateVersionRevocationStatusInput interface {
 
 type GetCertificateVersionRevocationStatusArgs struct {
 	// The reason the certificate or certificate authority (CA) was revoked.
-	RevocationReason pulumi.StringInput `pulumi:"revocationReason"`
+	RevocationReason pulumi.StringPtrInput `pulumi:"revocationReason"`
 	// The time when the entity was revoked, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfRevocation pulumi.StringInput `pulumi:"timeOfRevocation"`
+	TimeOfRevocation pulumi.StringPtrInput `pulumi:"timeOfRevocation"`
 }
 
 func (GetCertificateVersionRevocationStatusArgs) ElementType() reflect.Type {
@@ -12719,12 +11016,6 @@ func (i GetCertificateVersionRevocationStatusArgs) ToGetCertificateVersionRevoca
 
 func (i GetCertificateVersionRevocationStatusArgs) ToGetCertificateVersionRevocationStatusOutputWithContext(ctx context.Context) GetCertificateVersionRevocationStatusOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateVersionRevocationStatusOutput)
-}
-
-func (i GetCertificateVersionRevocationStatusArgs) ToOutput(ctx context.Context) pulumix.Output[GetCertificateVersionRevocationStatus] {
-	return pulumix.Output[GetCertificateVersionRevocationStatus]{
-		OutputState: i.ToGetCertificateVersionRevocationStatusOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetCertificateVersionRevocationStatusArrayInput is an input type that accepts GetCertificateVersionRevocationStatusArray and GetCertificateVersionRevocationStatusArrayOutput values.
@@ -12752,12 +11043,6 @@ func (i GetCertificateVersionRevocationStatusArray) ToGetCertificateVersionRevoc
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateVersionRevocationStatusArrayOutput)
 }
 
-func (i GetCertificateVersionRevocationStatusArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateVersionRevocationStatus] {
-	return pulumix.Output[[]GetCertificateVersionRevocationStatus]{
-		OutputState: i.ToGetCertificateVersionRevocationStatusArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCertificateVersionRevocationStatusOutput struct{ *pulumi.OutputState }
 
 func (GetCertificateVersionRevocationStatusOutput) ElementType() reflect.Type {
@@ -12772,20 +11057,14 @@ func (o GetCertificateVersionRevocationStatusOutput) ToGetCertificateVersionRevo
 	return o
 }
 
-func (o GetCertificateVersionRevocationStatusOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificateVersionRevocationStatus] {
-	return pulumix.Output[GetCertificateVersionRevocationStatus]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The reason the certificate or certificate authority (CA) was revoked.
-func (o GetCertificateVersionRevocationStatusOutput) RevocationReason() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateVersionRevocationStatus) string { return v.RevocationReason }).(pulumi.StringOutput)
+func (o GetCertificateVersionRevocationStatusOutput) RevocationReason() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateVersionRevocationStatus) *string { return v.RevocationReason }).(pulumi.StringPtrOutput)
 }
 
 // The time when the entity was revoked, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-func (o GetCertificateVersionRevocationStatusOutput) TimeOfRevocation() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateVersionRevocationStatus) string { return v.TimeOfRevocation }).(pulumi.StringOutput)
+func (o GetCertificateVersionRevocationStatusOutput) TimeOfRevocation() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateVersionRevocationStatus) *string { return v.TimeOfRevocation }).(pulumi.StringPtrOutput)
 }
 
 type GetCertificateVersionRevocationStatusArrayOutput struct{ *pulumi.OutputState }
@@ -12802,12 +11081,6 @@ func (o GetCertificateVersionRevocationStatusArrayOutput) ToGetCertificateVersio
 	return o
 }
 
-func (o GetCertificateVersionRevocationStatusArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateVersionRevocationStatus] {
-	return pulumix.Output[[]GetCertificateVersionRevocationStatus]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCertificateVersionRevocationStatusArrayOutput) Index(i pulumi.IntInput) GetCertificateVersionRevocationStatusOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCertificateVersionRevocationStatus {
 		return vs[0].([]GetCertificateVersionRevocationStatus)[vs[1].(int)]
@@ -12816,9 +11089,9 @@ func (o GetCertificateVersionRevocationStatusArrayOutput) Index(i pulumi.IntInpu
 
 type GetCertificateVersionSubjectAlternativeName struct {
 	// The subject alternative name type. Currently only DNS domain or host names and IP addresses are supported.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 	// The subject alternative name.
-	Value string `pulumi:"value"`
+	Value *string `pulumi:"value"`
 }
 
 // GetCertificateVersionSubjectAlternativeNameInput is an input type that accepts GetCertificateVersionSubjectAlternativeNameArgs and GetCertificateVersionSubjectAlternativeNameOutput values.
@@ -12834,9 +11107,9 @@ type GetCertificateVersionSubjectAlternativeNameInput interface {
 
 type GetCertificateVersionSubjectAlternativeNameArgs struct {
 	// The subject alternative name type. Currently only DNS domain or host names and IP addresses are supported.
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 	// The subject alternative name.
-	Value pulumi.StringInput `pulumi:"value"`
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (GetCertificateVersionSubjectAlternativeNameArgs) ElementType() reflect.Type {
@@ -12849,12 +11122,6 @@ func (i GetCertificateVersionSubjectAlternativeNameArgs) ToGetCertificateVersion
 
 func (i GetCertificateVersionSubjectAlternativeNameArgs) ToGetCertificateVersionSubjectAlternativeNameOutputWithContext(ctx context.Context) GetCertificateVersionSubjectAlternativeNameOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateVersionSubjectAlternativeNameOutput)
-}
-
-func (i GetCertificateVersionSubjectAlternativeNameArgs) ToOutput(ctx context.Context) pulumix.Output[GetCertificateVersionSubjectAlternativeName] {
-	return pulumix.Output[GetCertificateVersionSubjectAlternativeName]{
-		OutputState: i.ToGetCertificateVersionSubjectAlternativeNameOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetCertificateVersionSubjectAlternativeNameArrayInput is an input type that accepts GetCertificateVersionSubjectAlternativeNameArray and GetCertificateVersionSubjectAlternativeNameArrayOutput values.
@@ -12882,12 +11149,6 @@ func (i GetCertificateVersionSubjectAlternativeNameArray) ToGetCertificateVersio
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateVersionSubjectAlternativeNameArrayOutput)
 }
 
-func (i GetCertificateVersionSubjectAlternativeNameArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateVersionSubjectAlternativeName] {
-	return pulumix.Output[[]GetCertificateVersionSubjectAlternativeName]{
-		OutputState: i.ToGetCertificateVersionSubjectAlternativeNameArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCertificateVersionSubjectAlternativeNameOutput struct{ *pulumi.OutputState }
 
 func (GetCertificateVersionSubjectAlternativeNameOutput) ElementType() reflect.Type {
@@ -12902,20 +11163,14 @@ func (o GetCertificateVersionSubjectAlternativeNameOutput) ToGetCertificateVersi
 	return o
 }
 
-func (o GetCertificateVersionSubjectAlternativeNameOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificateVersionSubjectAlternativeName] {
-	return pulumix.Output[GetCertificateVersionSubjectAlternativeName]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The subject alternative name type. Currently only DNS domain or host names and IP addresses are supported.
-func (o GetCertificateVersionSubjectAlternativeNameOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateVersionSubjectAlternativeName) string { return v.Type }).(pulumi.StringOutput)
+func (o GetCertificateVersionSubjectAlternativeNameOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateVersionSubjectAlternativeName) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 // The subject alternative name.
-func (o GetCertificateVersionSubjectAlternativeNameOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateVersionSubjectAlternativeName) string { return v.Value }).(pulumi.StringOutput)
+func (o GetCertificateVersionSubjectAlternativeNameOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateVersionSubjectAlternativeName) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
 
 type GetCertificateVersionSubjectAlternativeNameArrayOutput struct{ *pulumi.OutputState }
@@ -12932,12 +11187,6 @@ func (o GetCertificateVersionSubjectAlternativeNameArrayOutput) ToGetCertificate
 	return o
 }
 
-func (o GetCertificateVersionSubjectAlternativeNameArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateVersionSubjectAlternativeName] {
-	return pulumix.Output[[]GetCertificateVersionSubjectAlternativeName]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCertificateVersionSubjectAlternativeNameArrayOutput) Index(i pulumi.IntInput) GetCertificateVersionSubjectAlternativeNameOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCertificateVersionSubjectAlternativeName {
 		return vs[0].([]GetCertificateVersionSubjectAlternativeName)[vs[1].(int)]
@@ -12946,9 +11195,9 @@ func (o GetCertificateVersionSubjectAlternativeNameArrayOutput) Index(i pulumi.I
 
 type GetCertificateVersionValidity struct {
 	// The date on which the certificate validity period ends, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfValidityNotAfter string `pulumi:"timeOfValidityNotAfter"`
+	TimeOfValidityNotAfter *string `pulumi:"timeOfValidityNotAfter"`
 	// The date on which the certificate validity period begins, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfValidityNotBefore string `pulumi:"timeOfValidityNotBefore"`
+	TimeOfValidityNotBefore *string `pulumi:"timeOfValidityNotBefore"`
 }
 
 // GetCertificateVersionValidityInput is an input type that accepts GetCertificateVersionValidityArgs and GetCertificateVersionValidityOutput values.
@@ -12964,9 +11213,9 @@ type GetCertificateVersionValidityInput interface {
 
 type GetCertificateVersionValidityArgs struct {
 	// The date on which the certificate validity period ends, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfValidityNotAfter pulumi.StringInput `pulumi:"timeOfValidityNotAfter"`
+	TimeOfValidityNotAfter pulumi.StringPtrInput `pulumi:"timeOfValidityNotAfter"`
 	// The date on which the certificate validity period begins, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfValidityNotBefore pulumi.StringInput `pulumi:"timeOfValidityNotBefore"`
+	TimeOfValidityNotBefore pulumi.StringPtrInput `pulumi:"timeOfValidityNotBefore"`
 }
 
 func (GetCertificateVersionValidityArgs) ElementType() reflect.Type {
@@ -12979,12 +11228,6 @@ func (i GetCertificateVersionValidityArgs) ToGetCertificateVersionValidityOutput
 
 func (i GetCertificateVersionValidityArgs) ToGetCertificateVersionValidityOutputWithContext(ctx context.Context) GetCertificateVersionValidityOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateVersionValidityOutput)
-}
-
-func (i GetCertificateVersionValidityArgs) ToOutput(ctx context.Context) pulumix.Output[GetCertificateVersionValidity] {
-	return pulumix.Output[GetCertificateVersionValidity]{
-		OutputState: i.ToGetCertificateVersionValidityOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetCertificateVersionValidityArrayInput is an input type that accepts GetCertificateVersionValidityArray and GetCertificateVersionValidityArrayOutput values.
@@ -13012,12 +11255,6 @@ func (i GetCertificateVersionValidityArray) ToGetCertificateVersionValidityArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateVersionValidityArrayOutput)
 }
 
-func (i GetCertificateVersionValidityArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateVersionValidity] {
-	return pulumix.Output[[]GetCertificateVersionValidity]{
-		OutputState: i.ToGetCertificateVersionValidityArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCertificateVersionValidityOutput struct{ *pulumi.OutputState }
 
 func (GetCertificateVersionValidityOutput) ElementType() reflect.Type {
@@ -13032,20 +11269,14 @@ func (o GetCertificateVersionValidityOutput) ToGetCertificateVersionValidityOutp
 	return o
 }
 
-func (o GetCertificateVersionValidityOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificateVersionValidity] {
-	return pulumix.Output[GetCertificateVersionValidity]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The date on which the certificate validity period ends, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-func (o GetCertificateVersionValidityOutput) TimeOfValidityNotAfter() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateVersionValidity) string { return v.TimeOfValidityNotAfter }).(pulumi.StringOutput)
+func (o GetCertificateVersionValidityOutput) TimeOfValidityNotAfter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateVersionValidity) *string { return v.TimeOfValidityNotAfter }).(pulumi.StringPtrOutput)
 }
 
 // The date on which the certificate validity period begins, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-func (o GetCertificateVersionValidityOutput) TimeOfValidityNotBefore() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateVersionValidity) string { return v.TimeOfValidityNotBefore }).(pulumi.StringOutput)
+func (o GetCertificateVersionValidityOutput) TimeOfValidityNotBefore() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateVersionValidity) *string { return v.TimeOfValidityNotBefore }).(pulumi.StringPtrOutput)
 }
 
 type GetCertificateVersionValidityArrayOutput struct{ *pulumi.OutputState }
@@ -13060,12 +11291,6 @@ func (o GetCertificateVersionValidityArrayOutput) ToGetCertificateVersionValidit
 
 func (o GetCertificateVersionValidityArrayOutput) ToGetCertificateVersionValidityArrayOutputWithContext(ctx context.Context) GetCertificateVersionValidityArrayOutput {
 	return o
-}
-
-func (o GetCertificateVersionValidityArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateVersionValidity] {
-	return pulumix.Output[[]GetCertificateVersionValidity]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetCertificateVersionValidityArrayOutput) Index(i pulumi.IntInput) GetCertificateVersionValidityOutput {
@@ -13107,12 +11332,6 @@ func (i GetCertificateVersionsCertificateVersionCollectionArgs) ToGetCertificate
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateVersionsCertificateVersionCollectionOutput)
 }
 
-func (i GetCertificateVersionsCertificateVersionCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetCertificateVersionsCertificateVersionCollection] {
-	return pulumix.Output[GetCertificateVersionsCertificateVersionCollection]{
-		OutputState: i.ToGetCertificateVersionsCertificateVersionCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetCertificateVersionsCertificateVersionCollectionArrayInput is an input type that accepts GetCertificateVersionsCertificateVersionCollectionArray and GetCertificateVersionsCertificateVersionCollectionArrayOutput values.
 // You can construct a concrete instance of `GetCertificateVersionsCertificateVersionCollectionArrayInput` via:
 //
@@ -13138,12 +11357,6 @@ func (i GetCertificateVersionsCertificateVersionCollectionArray) ToGetCertificat
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateVersionsCertificateVersionCollectionArrayOutput)
 }
 
-func (i GetCertificateVersionsCertificateVersionCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateVersionsCertificateVersionCollection] {
-	return pulumix.Output[[]GetCertificateVersionsCertificateVersionCollection]{
-		OutputState: i.ToGetCertificateVersionsCertificateVersionCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCertificateVersionsCertificateVersionCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetCertificateVersionsCertificateVersionCollectionOutput) ElementType() reflect.Type {
@@ -13156,12 +11369,6 @@ func (o GetCertificateVersionsCertificateVersionCollectionOutput) ToGetCertifica
 
 func (o GetCertificateVersionsCertificateVersionCollectionOutput) ToGetCertificateVersionsCertificateVersionCollectionOutputWithContext(ctx context.Context) GetCertificateVersionsCertificateVersionCollectionOutput {
 	return o
-}
-
-func (o GetCertificateVersionsCertificateVersionCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificateVersionsCertificateVersionCollection] {
-	return pulumix.Output[GetCertificateVersionsCertificateVersionCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A list of certificate version summary objects.
@@ -13185,12 +11392,6 @@ func (o GetCertificateVersionsCertificateVersionCollectionArrayOutput) ToGetCert
 	return o
 }
 
-func (o GetCertificateVersionsCertificateVersionCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateVersionsCertificateVersionCollection] {
-	return pulumix.Output[[]GetCertificateVersionsCertificateVersionCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCertificateVersionsCertificateVersionCollectionArrayOutput) Index(i pulumi.IntInput) GetCertificateVersionsCertificateVersionCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCertificateVersionsCertificateVersionCollection {
 		return vs[0].([]GetCertificateVersionsCertificateVersionCollection)[vs[1].(int)]
@@ -13199,27 +11400,27 @@ func (o GetCertificateVersionsCertificateVersionCollectionArrayOutput) Index(i p
 
 type GetCertificateVersionsCertificateVersionCollectionItem struct {
 	// The OCID of the certificate.
-	CertificateId string `pulumi:"certificateId"`
+	CertificateId *string `pulumi:"certificateId"`
 	// The version number of the issuing certificate authority (CA).
-	IssuerCaVersionNumber string `pulumi:"issuerCaVersionNumber"`
+	IssuerCaVersionNumber *string `pulumi:"issuerCaVersionNumber"`
 	// The current revocation status of the entity.
 	RevocationStatuses []GetCertificateVersionsCertificateVersionCollectionItemRevocationStatus `pulumi:"revocationStatuses"`
 	// A unique certificate identifier used in certificate revocation tracking, formatted as octets. Example: `03 AC FC FA CC B3 CB 02 B8 F8 DE F5 85 E7 7B FF`
-	SerialNumber string `pulumi:"serialNumber"`
+	SerialNumber *string `pulumi:"serialNumber"`
 	// A list of rotation states for this certificate version.
 	Stages []string `pulumi:"stages"`
 	// A list of subject alternative names.
 	SubjectAlternativeNames []GetCertificateVersionsCertificateVersionCollectionItemSubjectAlternativeName `pulumi:"subjectAlternativeNames"`
 	// A optional property indicating the time when the certificate version was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// An optional property indicating when to delete the certificate version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfDeletion string `pulumi:"timeOfDeletion"`
+	TimeOfDeletion *string `pulumi:"timeOfDeletion"`
 	// An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
 	Validities []GetCertificateVersionsCertificateVersionCollectionItemValidity `pulumi:"validities"`
 	// The name of the certificate version. When the value is not null, a name is unique across versions of a given certificate.
-	VersionName string `pulumi:"versionName"`
+	VersionName *string `pulumi:"versionName"`
 	// A filter that returns only resources that match the specified version number. The default value is 0, which means that this filter is not applied.
-	VersionNumber string `pulumi:"versionNumber"`
+	VersionNumber *string `pulumi:"versionNumber"`
 }
 
 // GetCertificateVersionsCertificateVersionCollectionItemInput is an input type that accepts GetCertificateVersionsCertificateVersionCollectionItemArgs and GetCertificateVersionsCertificateVersionCollectionItemOutput values.
@@ -13235,27 +11436,27 @@ type GetCertificateVersionsCertificateVersionCollectionItemInput interface {
 
 type GetCertificateVersionsCertificateVersionCollectionItemArgs struct {
 	// The OCID of the certificate.
-	CertificateId pulumi.StringInput `pulumi:"certificateId"`
+	CertificateId pulumi.StringPtrInput `pulumi:"certificateId"`
 	// The version number of the issuing certificate authority (CA).
-	IssuerCaVersionNumber pulumi.StringInput `pulumi:"issuerCaVersionNumber"`
+	IssuerCaVersionNumber pulumi.StringPtrInput `pulumi:"issuerCaVersionNumber"`
 	// The current revocation status of the entity.
 	RevocationStatuses GetCertificateVersionsCertificateVersionCollectionItemRevocationStatusArrayInput `pulumi:"revocationStatuses"`
 	// A unique certificate identifier used in certificate revocation tracking, formatted as octets. Example: `03 AC FC FA CC B3 CB 02 B8 F8 DE F5 85 E7 7B FF`
-	SerialNumber pulumi.StringInput `pulumi:"serialNumber"`
+	SerialNumber pulumi.StringPtrInput `pulumi:"serialNumber"`
 	// A list of rotation states for this certificate version.
 	Stages pulumi.StringArrayInput `pulumi:"stages"`
 	// A list of subject alternative names.
 	SubjectAlternativeNames GetCertificateVersionsCertificateVersionCollectionItemSubjectAlternativeNameArrayInput `pulumi:"subjectAlternativeNames"`
 	// A optional property indicating the time when the certificate version was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// An optional property indicating when to delete the certificate version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfDeletion pulumi.StringInput `pulumi:"timeOfDeletion"`
+	TimeOfDeletion pulumi.StringPtrInput `pulumi:"timeOfDeletion"`
 	// An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
 	Validities GetCertificateVersionsCertificateVersionCollectionItemValidityArrayInput `pulumi:"validities"`
 	// The name of the certificate version. When the value is not null, a name is unique across versions of a given certificate.
-	VersionName pulumi.StringInput `pulumi:"versionName"`
+	VersionName pulumi.StringPtrInput `pulumi:"versionName"`
 	// A filter that returns only resources that match the specified version number. The default value is 0, which means that this filter is not applied.
-	VersionNumber pulumi.StringInput `pulumi:"versionNumber"`
+	VersionNumber pulumi.StringPtrInput `pulumi:"versionNumber"`
 }
 
 func (GetCertificateVersionsCertificateVersionCollectionItemArgs) ElementType() reflect.Type {
@@ -13268,12 +11469,6 @@ func (i GetCertificateVersionsCertificateVersionCollectionItemArgs) ToGetCertifi
 
 func (i GetCertificateVersionsCertificateVersionCollectionItemArgs) ToGetCertificateVersionsCertificateVersionCollectionItemOutputWithContext(ctx context.Context) GetCertificateVersionsCertificateVersionCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateVersionsCertificateVersionCollectionItemOutput)
-}
-
-func (i GetCertificateVersionsCertificateVersionCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetCertificateVersionsCertificateVersionCollectionItem] {
-	return pulumix.Output[GetCertificateVersionsCertificateVersionCollectionItem]{
-		OutputState: i.ToGetCertificateVersionsCertificateVersionCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetCertificateVersionsCertificateVersionCollectionItemArrayInput is an input type that accepts GetCertificateVersionsCertificateVersionCollectionItemArray and GetCertificateVersionsCertificateVersionCollectionItemArrayOutput values.
@@ -13301,12 +11496,6 @@ func (i GetCertificateVersionsCertificateVersionCollectionItemArray) ToGetCertif
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateVersionsCertificateVersionCollectionItemArrayOutput)
 }
 
-func (i GetCertificateVersionsCertificateVersionCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateVersionsCertificateVersionCollectionItem] {
-	return pulumix.Output[[]GetCertificateVersionsCertificateVersionCollectionItem]{
-		OutputState: i.ToGetCertificateVersionsCertificateVersionCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCertificateVersionsCertificateVersionCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetCertificateVersionsCertificateVersionCollectionItemOutput) ElementType() reflect.Type {
@@ -13321,20 +11510,14 @@ func (o GetCertificateVersionsCertificateVersionCollectionItemOutput) ToGetCerti
 	return o
 }
 
-func (o GetCertificateVersionsCertificateVersionCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificateVersionsCertificateVersionCollectionItem] {
-	return pulumix.Output[GetCertificateVersionsCertificateVersionCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the certificate.
-func (o GetCertificateVersionsCertificateVersionCollectionItemOutput) CertificateId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateVersionsCertificateVersionCollectionItem) string { return v.CertificateId }).(pulumi.StringOutput)
+func (o GetCertificateVersionsCertificateVersionCollectionItemOutput) CertificateId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateVersionsCertificateVersionCollectionItem) *string { return v.CertificateId }).(pulumi.StringPtrOutput)
 }
 
 // The version number of the issuing certificate authority (CA).
-func (o GetCertificateVersionsCertificateVersionCollectionItemOutput) IssuerCaVersionNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateVersionsCertificateVersionCollectionItem) string { return v.IssuerCaVersionNumber }).(pulumi.StringOutput)
+func (o GetCertificateVersionsCertificateVersionCollectionItemOutput) IssuerCaVersionNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateVersionsCertificateVersionCollectionItem) *string { return v.IssuerCaVersionNumber }).(pulumi.StringPtrOutput)
 }
 
 // The current revocation status of the entity.
@@ -13345,8 +11528,8 @@ func (o GetCertificateVersionsCertificateVersionCollectionItemOutput) Revocation
 }
 
 // A unique certificate identifier used in certificate revocation tracking, formatted as octets. Example: `03 AC FC FA CC B3 CB 02 B8 F8 DE F5 85 E7 7B FF`
-func (o GetCertificateVersionsCertificateVersionCollectionItemOutput) SerialNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateVersionsCertificateVersionCollectionItem) string { return v.SerialNumber }).(pulumi.StringOutput)
+func (o GetCertificateVersionsCertificateVersionCollectionItemOutput) SerialNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateVersionsCertificateVersionCollectionItem) *string { return v.SerialNumber }).(pulumi.StringPtrOutput)
 }
 
 // A list of rotation states for this certificate version.
@@ -13362,13 +11545,13 @@ func (o GetCertificateVersionsCertificateVersionCollectionItemOutput) SubjectAlt
 }
 
 // A optional property indicating the time when the certificate version was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-func (o GetCertificateVersionsCertificateVersionCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateVersionsCertificateVersionCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetCertificateVersionsCertificateVersionCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateVersionsCertificateVersionCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // An optional property indicating when to delete the certificate version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-func (o GetCertificateVersionsCertificateVersionCollectionItemOutput) TimeOfDeletion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateVersionsCertificateVersionCollectionItem) string { return v.TimeOfDeletion }).(pulumi.StringOutput)
+func (o GetCertificateVersionsCertificateVersionCollectionItemOutput) TimeOfDeletion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateVersionsCertificateVersionCollectionItem) *string { return v.TimeOfDeletion }).(pulumi.StringPtrOutput)
 }
 
 // An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
@@ -13379,13 +11562,13 @@ func (o GetCertificateVersionsCertificateVersionCollectionItemOutput) Validities
 }
 
 // The name of the certificate version. When the value is not null, a name is unique across versions of a given certificate.
-func (o GetCertificateVersionsCertificateVersionCollectionItemOutput) VersionName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateVersionsCertificateVersionCollectionItem) string { return v.VersionName }).(pulumi.StringOutput)
+func (o GetCertificateVersionsCertificateVersionCollectionItemOutput) VersionName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateVersionsCertificateVersionCollectionItem) *string { return v.VersionName }).(pulumi.StringPtrOutput)
 }
 
 // A filter that returns only resources that match the specified version number. The default value is 0, which means that this filter is not applied.
-func (o GetCertificateVersionsCertificateVersionCollectionItemOutput) VersionNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateVersionsCertificateVersionCollectionItem) string { return v.VersionNumber }).(pulumi.StringOutput)
+func (o GetCertificateVersionsCertificateVersionCollectionItemOutput) VersionNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateVersionsCertificateVersionCollectionItem) *string { return v.VersionNumber }).(pulumi.StringPtrOutput)
 }
 
 type GetCertificateVersionsCertificateVersionCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -13402,12 +11585,6 @@ func (o GetCertificateVersionsCertificateVersionCollectionItemArrayOutput) ToGet
 	return o
 }
 
-func (o GetCertificateVersionsCertificateVersionCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateVersionsCertificateVersionCollectionItem] {
-	return pulumix.Output[[]GetCertificateVersionsCertificateVersionCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCertificateVersionsCertificateVersionCollectionItemArrayOutput) Index(i pulumi.IntInput) GetCertificateVersionsCertificateVersionCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCertificateVersionsCertificateVersionCollectionItem {
 		return vs[0].([]GetCertificateVersionsCertificateVersionCollectionItem)[vs[1].(int)]
@@ -13416,9 +11593,9 @@ func (o GetCertificateVersionsCertificateVersionCollectionItemArrayOutput) Index
 
 type GetCertificateVersionsCertificateVersionCollectionItemRevocationStatus struct {
 	// The reason the certificate or certificate authority (CA) was revoked.
-	RevocationReason string `pulumi:"revocationReason"`
+	RevocationReason *string `pulumi:"revocationReason"`
 	// The time when the entity was revoked, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfRevocation string `pulumi:"timeOfRevocation"`
+	TimeOfRevocation *string `pulumi:"timeOfRevocation"`
 }
 
 // GetCertificateVersionsCertificateVersionCollectionItemRevocationStatusInput is an input type that accepts GetCertificateVersionsCertificateVersionCollectionItemRevocationStatusArgs and GetCertificateVersionsCertificateVersionCollectionItemRevocationStatusOutput values.
@@ -13434,9 +11611,9 @@ type GetCertificateVersionsCertificateVersionCollectionItemRevocationStatusInput
 
 type GetCertificateVersionsCertificateVersionCollectionItemRevocationStatusArgs struct {
 	// The reason the certificate or certificate authority (CA) was revoked.
-	RevocationReason pulumi.StringInput `pulumi:"revocationReason"`
+	RevocationReason pulumi.StringPtrInput `pulumi:"revocationReason"`
 	// The time when the entity was revoked, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfRevocation pulumi.StringInput `pulumi:"timeOfRevocation"`
+	TimeOfRevocation pulumi.StringPtrInput `pulumi:"timeOfRevocation"`
 }
 
 func (GetCertificateVersionsCertificateVersionCollectionItemRevocationStatusArgs) ElementType() reflect.Type {
@@ -13449,12 +11626,6 @@ func (i GetCertificateVersionsCertificateVersionCollectionItemRevocationStatusAr
 
 func (i GetCertificateVersionsCertificateVersionCollectionItemRevocationStatusArgs) ToGetCertificateVersionsCertificateVersionCollectionItemRevocationStatusOutputWithContext(ctx context.Context) GetCertificateVersionsCertificateVersionCollectionItemRevocationStatusOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateVersionsCertificateVersionCollectionItemRevocationStatusOutput)
-}
-
-func (i GetCertificateVersionsCertificateVersionCollectionItemRevocationStatusArgs) ToOutput(ctx context.Context) pulumix.Output[GetCertificateVersionsCertificateVersionCollectionItemRevocationStatus] {
-	return pulumix.Output[GetCertificateVersionsCertificateVersionCollectionItemRevocationStatus]{
-		OutputState: i.ToGetCertificateVersionsCertificateVersionCollectionItemRevocationStatusOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetCertificateVersionsCertificateVersionCollectionItemRevocationStatusArrayInput is an input type that accepts GetCertificateVersionsCertificateVersionCollectionItemRevocationStatusArray and GetCertificateVersionsCertificateVersionCollectionItemRevocationStatusArrayOutput values.
@@ -13482,12 +11653,6 @@ func (i GetCertificateVersionsCertificateVersionCollectionItemRevocationStatusAr
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateVersionsCertificateVersionCollectionItemRevocationStatusArrayOutput)
 }
 
-func (i GetCertificateVersionsCertificateVersionCollectionItemRevocationStatusArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateVersionsCertificateVersionCollectionItemRevocationStatus] {
-	return pulumix.Output[[]GetCertificateVersionsCertificateVersionCollectionItemRevocationStatus]{
-		OutputState: i.ToGetCertificateVersionsCertificateVersionCollectionItemRevocationStatusArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCertificateVersionsCertificateVersionCollectionItemRevocationStatusOutput struct{ *pulumi.OutputState }
 
 func (GetCertificateVersionsCertificateVersionCollectionItemRevocationStatusOutput) ElementType() reflect.Type {
@@ -13502,24 +11667,18 @@ func (o GetCertificateVersionsCertificateVersionCollectionItemRevocationStatusOu
 	return o
 }
 
-func (o GetCertificateVersionsCertificateVersionCollectionItemRevocationStatusOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificateVersionsCertificateVersionCollectionItemRevocationStatus] {
-	return pulumix.Output[GetCertificateVersionsCertificateVersionCollectionItemRevocationStatus]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The reason the certificate or certificate authority (CA) was revoked.
-func (o GetCertificateVersionsCertificateVersionCollectionItemRevocationStatusOutput) RevocationReason() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateVersionsCertificateVersionCollectionItemRevocationStatus) string {
+func (o GetCertificateVersionsCertificateVersionCollectionItemRevocationStatusOutput) RevocationReason() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateVersionsCertificateVersionCollectionItemRevocationStatus) *string {
 		return v.RevocationReason
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The time when the entity was revoked, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-func (o GetCertificateVersionsCertificateVersionCollectionItemRevocationStatusOutput) TimeOfRevocation() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateVersionsCertificateVersionCollectionItemRevocationStatus) string {
+func (o GetCertificateVersionsCertificateVersionCollectionItemRevocationStatusOutput) TimeOfRevocation() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateVersionsCertificateVersionCollectionItemRevocationStatus) *string {
 		return v.TimeOfRevocation
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetCertificateVersionsCertificateVersionCollectionItemRevocationStatusArrayOutput struct{ *pulumi.OutputState }
@@ -13536,12 +11695,6 @@ func (o GetCertificateVersionsCertificateVersionCollectionItemRevocationStatusAr
 	return o
 }
 
-func (o GetCertificateVersionsCertificateVersionCollectionItemRevocationStatusArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateVersionsCertificateVersionCollectionItemRevocationStatus] {
-	return pulumix.Output[[]GetCertificateVersionsCertificateVersionCollectionItemRevocationStatus]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCertificateVersionsCertificateVersionCollectionItemRevocationStatusArrayOutput) Index(i pulumi.IntInput) GetCertificateVersionsCertificateVersionCollectionItemRevocationStatusOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCertificateVersionsCertificateVersionCollectionItemRevocationStatus {
 		return vs[0].([]GetCertificateVersionsCertificateVersionCollectionItemRevocationStatus)[vs[1].(int)]
@@ -13550,9 +11703,9 @@ func (o GetCertificateVersionsCertificateVersionCollectionItemRevocationStatusAr
 
 type GetCertificateVersionsCertificateVersionCollectionItemSubjectAlternativeName struct {
 	// The subject alternative name type. Currently only DNS domain or host names and IP addresses are supported.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 	// The subject alternative name.
-	Value string `pulumi:"value"`
+	Value *string `pulumi:"value"`
 }
 
 // GetCertificateVersionsCertificateVersionCollectionItemSubjectAlternativeNameInput is an input type that accepts GetCertificateVersionsCertificateVersionCollectionItemSubjectAlternativeNameArgs and GetCertificateVersionsCertificateVersionCollectionItemSubjectAlternativeNameOutput values.
@@ -13568,9 +11721,9 @@ type GetCertificateVersionsCertificateVersionCollectionItemSubjectAlternativeNam
 
 type GetCertificateVersionsCertificateVersionCollectionItemSubjectAlternativeNameArgs struct {
 	// The subject alternative name type. Currently only DNS domain or host names and IP addresses are supported.
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 	// The subject alternative name.
-	Value pulumi.StringInput `pulumi:"value"`
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (GetCertificateVersionsCertificateVersionCollectionItemSubjectAlternativeNameArgs) ElementType() reflect.Type {
@@ -13583,12 +11736,6 @@ func (i GetCertificateVersionsCertificateVersionCollectionItemSubjectAlternative
 
 func (i GetCertificateVersionsCertificateVersionCollectionItemSubjectAlternativeNameArgs) ToGetCertificateVersionsCertificateVersionCollectionItemSubjectAlternativeNameOutputWithContext(ctx context.Context) GetCertificateVersionsCertificateVersionCollectionItemSubjectAlternativeNameOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateVersionsCertificateVersionCollectionItemSubjectAlternativeNameOutput)
-}
-
-func (i GetCertificateVersionsCertificateVersionCollectionItemSubjectAlternativeNameArgs) ToOutput(ctx context.Context) pulumix.Output[GetCertificateVersionsCertificateVersionCollectionItemSubjectAlternativeName] {
-	return pulumix.Output[GetCertificateVersionsCertificateVersionCollectionItemSubjectAlternativeName]{
-		OutputState: i.ToGetCertificateVersionsCertificateVersionCollectionItemSubjectAlternativeNameOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetCertificateVersionsCertificateVersionCollectionItemSubjectAlternativeNameArrayInput is an input type that accepts GetCertificateVersionsCertificateVersionCollectionItemSubjectAlternativeNameArray and GetCertificateVersionsCertificateVersionCollectionItemSubjectAlternativeNameArrayOutput values.
@@ -13616,12 +11763,6 @@ func (i GetCertificateVersionsCertificateVersionCollectionItemSubjectAlternative
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateVersionsCertificateVersionCollectionItemSubjectAlternativeNameArrayOutput)
 }
 
-func (i GetCertificateVersionsCertificateVersionCollectionItemSubjectAlternativeNameArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateVersionsCertificateVersionCollectionItemSubjectAlternativeName] {
-	return pulumix.Output[[]GetCertificateVersionsCertificateVersionCollectionItemSubjectAlternativeName]{
-		OutputState: i.ToGetCertificateVersionsCertificateVersionCollectionItemSubjectAlternativeNameArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCertificateVersionsCertificateVersionCollectionItemSubjectAlternativeNameOutput struct{ *pulumi.OutputState }
 
 func (GetCertificateVersionsCertificateVersionCollectionItemSubjectAlternativeNameOutput) ElementType() reflect.Type {
@@ -13636,24 +11777,18 @@ func (o GetCertificateVersionsCertificateVersionCollectionItemSubjectAlternative
 	return o
 }
 
-func (o GetCertificateVersionsCertificateVersionCollectionItemSubjectAlternativeNameOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificateVersionsCertificateVersionCollectionItemSubjectAlternativeName] {
-	return pulumix.Output[GetCertificateVersionsCertificateVersionCollectionItemSubjectAlternativeName]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The subject alternative name type. Currently only DNS domain or host names and IP addresses are supported.
-func (o GetCertificateVersionsCertificateVersionCollectionItemSubjectAlternativeNameOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateVersionsCertificateVersionCollectionItemSubjectAlternativeName) string {
+func (o GetCertificateVersionsCertificateVersionCollectionItemSubjectAlternativeNameOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateVersionsCertificateVersionCollectionItemSubjectAlternativeName) *string {
 		return v.Type
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The subject alternative name.
-func (o GetCertificateVersionsCertificateVersionCollectionItemSubjectAlternativeNameOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateVersionsCertificateVersionCollectionItemSubjectAlternativeName) string {
+func (o GetCertificateVersionsCertificateVersionCollectionItemSubjectAlternativeNameOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateVersionsCertificateVersionCollectionItemSubjectAlternativeName) *string {
 		return v.Value
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetCertificateVersionsCertificateVersionCollectionItemSubjectAlternativeNameArrayOutput struct{ *pulumi.OutputState }
@@ -13670,12 +11805,6 @@ func (o GetCertificateVersionsCertificateVersionCollectionItemSubjectAlternative
 	return o
 }
 
-func (o GetCertificateVersionsCertificateVersionCollectionItemSubjectAlternativeNameArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateVersionsCertificateVersionCollectionItemSubjectAlternativeName] {
-	return pulumix.Output[[]GetCertificateVersionsCertificateVersionCollectionItemSubjectAlternativeName]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCertificateVersionsCertificateVersionCollectionItemSubjectAlternativeNameArrayOutput) Index(i pulumi.IntInput) GetCertificateVersionsCertificateVersionCollectionItemSubjectAlternativeNameOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCertificateVersionsCertificateVersionCollectionItemSubjectAlternativeName {
 		return vs[0].([]GetCertificateVersionsCertificateVersionCollectionItemSubjectAlternativeName)[vs[1].(int)]
@@ -13684,9 +11813,9 @@ func (o GetCertificateVersionsCertificateVersionCollectionItemSubjectAlternative
 
 type GetCertificateVersionsCertificateVersionCollectionItemValidity struct {
 	// The date on which the certificate validity period ends, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfValidityNotAfter string `pulumi:"timeOfValidityNotAfter"`
+	TimeOfValidityNotAfter *string `pulumi:"timeOfValidityNotAfter"`
 	// The date on which the certificate validity period begins, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfValidityNotBefore string `pulumi:"timeOfValidityNotBefore"`
+	TimeOfValidityNotBefore *string `pulumi:"timeOfValidityNotBefore"`
 }
 
 // GetCertificateVersionsCertificateVersionCollectionItemValidityInput is an input type that accepts GetCertificateVersionsCertificateVersionCollectionItemValidityArgs and GetCertificateVersionsCertificateVersionCollectionItemValidityOutput values.
@@ -13702,9 +11831,9 @@ type GetCertificateVersionsCertificateVersionCollectionItemValidityInput interfa
 
 type GetCertificateVersionsCertificateVersionCollectionItemValidityArgs struct {
 	// The date on which the certificate validity period ends, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfValidityNotAfter pulumi.StringInput `pulumi:"timeOfValidityNotAfter"`
+	TimeOfValidityNotAfter pulumi.StringPtrInput `pulumi:"timeOfValidityNotAfter"`
 	// The date on which the certificate validity period begins, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfValidityNotBefore pulumi.StringInput `pulumi:"timeOfValidityNotBefore"`
+	TimeOfValidityNotBefore pulumi.StringPtrInput `pulumi:"timeOfValidityNotBefore"`
 }
 
 func (GetCertificateVersionsCertificateVersionCollectionItemValidityArgs) ElementType() reflect.Type {
@@ -13717,12 +11846,6 @@ func (i GetCertificateVersionsCertificateVersionCollectionItemValidityArgs) ToGe
 
 func (i GetCertificateVersionsCertificateVersionCollectionItemValidityArgs) ToGetCertificateVersionsCertificateVersionCollectionItemValidityOutputWithContext(ctx context.Context) GetCertificateVersionsCertificateVersionCollectionItemValidityOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateVersionsCertificateVersionCollectionItemValidityOutput)
-}
-
-func (i GetCertificateVersionsCertificateVersionCollectionItemValidityArgs) ToOutput(ctx context.Context) pulumix.Output[GetCertificateVersionsCertificateVersionCollectionItemValidity] {
-	return pulumix.Output[GetCertificateVersionsCertificateVersionCollectionItemValidity]{
-		OutputState: i.ToGetCertificateVersionsCertificateVersionCollectionItemValidityOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetCertificateVersionsCertificateVersionCollectionItemValidityArrayInput is an input type that accepts GetCertificateVersionsCertificateVersionCollectionItemValidityArray and GetCertificateVersionsCertificateVersionCollectionItemValidityArrayOutput values.
@@ -13750,12 +11873,6 @@ func (i GetCertificateVersionsCertificateVersionCollectionItemValidityArray) ToG
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateVersionsCertificateVersionCollectionItemValidityArrayOutput)
 }
 
-func (i GetCertificateVersionsCertificateVersionCollectionItemValidityArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateVersionsCertificateVersionCollectionItemValidity] {
-	return pulumix.Output[[]GetCertificateVersionsCertificateVersionCollectionItemValidity]{
-		OutputState: i.ToGetCertificateVersionsCertificateVersionCollectionItemValidityArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCertificateVersionsCertificateVersionCollectionItemValidityOutput struct{ *pulumi.OutputState }
 
 func (GetCertificateVersionsCertificateVersionCollectionItemValidityOutput) ElementType() reflect.Type {
@@ -13770,24 +11887,18 @@ func (o GetCertificateVersionsCertificateVersionCollectionItemValidityOutput) To
 	return o
 }
 
-func (o GetCertificateVersionsCertificateVersionCollectionItemValidityOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificateVersionsCertificateVersionCollectionItemValidity] {
-	return pulumix.Output[GetCertificateVersionsCertificateVersionCollectionItemValidity]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The date on which the certificate validity period ends, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-func (o GetCertificateVersionsCertificateVersionCollectionItemValidityOutput) TimeOfValidityNotAfter() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateVersionsCertificateVersionCollectionItemValidity) string {
+func (o GetCertificateVersionsCertificateVersionCollectionItemValidityOutput) TimeOfValidityNotAfter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateVersionsCertificateVersionCollectionItemValidity) *string {
 		return v.TimeOfValidityNotAfter
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The date on which the certificate validity period begins, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-func (o GetCertificateVersionsCertificateVersionCollectionItemValidityOutput) TimeOfValidityNotBefore() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateVersionsCertificateVersionCollectionItemValidity) string {
+func (o GetCertificateVersionsCertificateVersionCollectionItemValidityOutput) TimeOfValidityNotBefore() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateVersionsCertificateVersionCollectionItemValidity) *string {
 		return v.TimeOfValidityNotBefore
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetCertificateVersionsCertificateVersionCollectionItemValidityArrayOutput struct{ *pulumi.OutputState }
@@ -13802,12 +11913,6 @@ func (o GetCertificateVersionsCertificateVersionCollectionItemValidityArrayOutpu
 
 func (o GetCertificateVersionsCertificateVersionCollectionItemValidityArrayOutput) ToGetCertificateVersionsCertificateVersionCollectionItemValidityArrayOutputWithContext(ctx context.Context) GetCertificateVersionsCertificateVersionCollectionItemValidityArrayOutput {
 	return o
-}
-
-func (o GetCertificateVersionsCertificateVersionCollectionItemValidityArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateVersionsCertificateVersionCollectionItemValidity] {
-	return pulumix.Output[[]GetCertificateVersionsCertificateVersionCollectionItemValidity]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetCertificateVersionsCertificateVersionCollectionItemValidityArrayOutput) Index(i pulumi.IntInput) GetCertificateVersionsCertificateVersionCollectionItemValidityOutput {
@@ -13851,12 +11956,6 @@ func (i GetCertificateVersionsFilterArgs) ToGetCertificateVersionsFilterOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateVersionsFilterOutput)
 }
 
-func (i GetCertificateVersionsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetCertificateVersionsFilter] {
-	return pulumix.Output[GetCertificateVersionsFilter]{
-		OutputState: i.ToGetCertificateVersionsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetCertificateVersionsFilterArrayInput is an input type that accepts GetCertificateVersionsFilterArray and GetCertificateVersionsFilterArrayOutput values.
 // You can construct a concrete instance of `GetCertificateVersionsFilterArrayInput` via:
 //
@@ -13882,12 +11981,6 @@ func (i GetCertificateVersionsFilterArray) ToGetCertificateVersionsFilterArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateVersionsFilterArrayOutput)
 }
 
-func (i GetCertificateVersionsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateVersionsFilter] {
-	return pulumix.Output[[]GetCertificateVersionsFilter]{
-		OutputState: i.ToGetCertificateVersionsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCertificateVersionsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetCertificateVersionsFilterOutput) ElementType() reflect.Type {
@@ -13900,12 +11993,6 @@ func (o GetCertificateVersionsFilterOutput) ToGetCertificateVersionsFilterOutput
 
 func (o GetCertificateVersionsFilterOutput) ToGetCertificateVersionsFilterOutputWithContext(ctx context.Context) GetCertificateVersionsFilterOutput {
 	return o
-}
-
-func (o GetCertificateVersionsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificateVersionsFilter] {
-	return pulumix.Output[GetCertificateVersionsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetCertificateVersionsFilterOutput) Name() pulumi.StringOutput {
@@ -13932,12 +12019,6 @@ func (o GetCertificateVersionsFilterArrayOutput) ToGetCertificateVersionsFilterA
 
 func (o GetCertificateVersionsFilterArrayOutput) ToGetCertificateVersionsFilterArrayOutputWithContext(ctx context.Context) GetCertificateVersionsFilterArrayOutput {
 	return o
-}
-
-func (o GetCertificateVersionsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateVersionsFilter] {
-	return pulumix.Output[[]GetCertificateVersionsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetCertificateVersionsFilterArrayOutput) Index(i pulumi.IntInput) GetCertificateVersionsFilterOutput {
@@ -13977,12 +12058,6 @@ func (i GetCertificatesCertificateCollectionArgs) ToGetCertificatesCertificateCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificatesCertificateCollectionOutput)
 }
 
-func (i GetCertificatesCertificateCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetCertificatesCertificateCollection] {
-	return pulumix.Output[GetCertificatesCertificateCollection]{
-		OutputState: i.ToGetCertificatesCertificateCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetCertificatesCertificateCollectionArrayInput is an input type that accepts GetCertificatesCertificateCollectionArray and GetCertificatesCertificateCollectionArrayOutput values.
 // You can construct a concrete instance of `GetCertificatesCertificateCollectionArrayInput` via:
 //
@@ -14008,12 +12083,6 @@ func (i GetCertificatesCertificateCollectionArray) ToGetCertificatesCertificateC
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificatesCertificateCollectionArrayOutput)
 }
 
-func (i GetCertificatesCertificateCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificatesCertificateCollection] {
-	return pulumix.Output[[]GetCertificatesCertificateCollection]{
-		OutputState: i.ToGetCertificatesCertificateCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCertificatesCertificateCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetCertificatesCertificateCollectionOutput) ElementType() reflect.Type {
@@ -14026,12 +12095,6 @@ func (o GetCertificatesCertificateCollectionOutput) ToGetCertificatesCertificate
 
 func (o GetCertificatesCertificateCollectionOutput) ToGetCertificatesCertificateCollectionOutputWithContext(ctx context.Context) GetCertificatesCertificateCollectionOutput {
 	return o
-}
-
-func (o GetCertificatesCertificateCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificatesCertificateCollection] {
-	return pulumix.Output[GetCertificatesCertificateCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetCertificatesCertificateCollectionOutput) Items() GetCertificatesCertificateCollectionItemArrayOutput {
@@ -14054,12 +12117,6 @@ func (o GetCertificatesCertificateCollectionArrayOutput) ToGetCertificatesCertif
 	return o
 }
 
-func (o GetCertificatesCertificateCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificatesCertificateCollection] {
-	return pulumix.Output[[]GetCertificatesCertificateCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCertificatesCertificateCollectionArrayOutput) Index(i pulumi.IntInput) GetCertificatesCertificateCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCertificatesCertificateCollection {
 		return vs[0].([]GetCertificatesCertificateCollection)[vs[1].(int)]
@@ -14069,43 +12126,43 @@ func (o GetCertificatesCertificateCollectionArrayOutput) Index(i pulumi.IntInput
 type GetCertificatesCertificateCollectionItem struct {
 	CertificateConfigs []GetCertificatesCertificateCollectionItemCertificateConfig `pulumi:"certificateConfigs"`
 	// The name of the profile used to create the certificate, which depends on the type of certificate you need.
-	CertificateProfileType string `pulumi:"certificateProfileType"`
+	CertificateProfileType *string `pulumi:"certificateProfileType"`
 	// The details of the certificate revocation list (CRL).
 	CertificateRevocationListDetails []GetCertificatesCertificateCollectionItemCertificateRevocationListDetail `pulumi:"certificateRevocationListDetails"`
 	// A list of rules that control how the certificate is used and managed.
 	CertificateRules []GetCertificatesCertificateCollectionItemCertificateRule `pulumi:"certificateRules"`
 	// A filter that returns only resources that match the given compartment OCID.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The origin of the certificate.
-	ConfigType string `pulumi:"configType"`
+	ConfigType *string `pulumi:"configType"`
 	// The details of the certificate version. This object does not contain the certificate contents.
 	CurrentVersions []GetCertificatesCertificateCollectionItemCurrentVersion `pulumi:"currentVersions"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A brief description of the certificate. Avoid entering confidential information.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the certificate.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The OCID of the certificate authority (CA). If the parameter is set to null, the service lists all CAs.
-	IssuerCertificateAuthorityId string `pulumi:"issuerCertificateAuthorityId"`
+	IssuerCertificateAuthorityId *string `pulumi:"issuerCertificateAuthorityId"`
 	// The algorithm used to create key pairs.
-	KeyAlgorithm string `pulumi:"keyAlgorithm"`
+	KeyAlgorithm *string `pulumi:"keyAlgorithm"`
 	// Additional information about the current lifecycle state of the certificate.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// A filter that returns only resources that match the specified name.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The algorithm used to sign the public key certificate.
-	SignatureAlgorithm string `pulumi:"signatureAlgorithm"`
+	SignatureAlgorithm *string `pulumi:"signatureAlgorithm"`
 	// A filter that returns only resources that match the given lifecycle state. The state value is case-insensitive.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.
 	Subjects []GetCertificatesCertificateCollectionItemSubject `pulumi:"subjects"`
 	// A property indicating when the certificate was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// An optional property indicating when to delete the certificate version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfDeletion string `pulumi:"timeOfDeletion"`
+	TimeOfDeletion *string `pulumi:"timeOfDeletion"`
 }
 
 // GetCertificatesCertificateCollectionItemInput is an input type that accepts GetCertificatesCertificateCollectionItemArgs and GetCertificatesCertificateCollectionItemOutput values.
@@ -14122,43 +12179,43 @@ type GetCertificatesCertificateCollectionItemInput interface {
 type GetCertificatesCertificateCollectionItemArgs struct {
 	CertificateConfigs GetCertificatesCertificateCollectionItemCertificateConfigArrayInput `pulumi:"certificateConfigs"`
 	// The name of the profile used to create the certificate, which depends on the type of certificate you need.
-	CertificateProfileType pulumi.StringInput `pulumi:"certificateProfileType"`
+	CertificateProfileType pulumi.StringPtrInput `pulumi:"certificateProfileType"`
 	// The details of the certificate revocation list (CRL).
 	CertificateRevocationListDetails GetCertificatesCertificateCollectionItemCertificateRevocationListDetailArrayInput `pulumi:"certificateRevocationListDetails"`
 	// A list of rules that control how the certificate is used and managed.
 	CertificateRules GetCertificatesCertificateCollectionItemCertificateRuleArrayInput `pulumi:"certificateRules"`
 	// A filter that returns only resources that match the given compartment OCID.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// The origin of the certificate.
-	ConfigType pulumi.StringInput `pulumi:"configType"`
+	ConfigType pulumi.StringPtrInput `pulumi:"configType"`
 	// The details of the certificate version. This object does not contain the certificate contents.
 	CurrentVersions GetCertificatesCertificateCollectionItemCurrentVersionArrayInput `pulumi:"currentVersions"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A brief description of the certificate. Avoid entering confidential information.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The OCID of the certificate.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// The OCID of the certificate authority (CA). If the parameter is set to null, the service lists all CAs.
-	IssuerCertificateAuthorityId pulumi.StringInput `pulumi:"issuerCertificateAuthorityId"`
+	IssuerCertificateAuthorityId pulumi.StringPtrInput `pulumi:"issuerCertificateAuthorityId"`
 	// The algorithm used to create key pairs.
-	KeyAlgorithm pulumi.StringInput `pulumi:"keyAlgorithm"`
+	KeyAlgorithm pulumi.StringPtrInput `pulumi:"keyAlgorithm"`
 	// Additional information about the current lifecycle state of the certificate.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// A filter that returns only resources that match the specified name.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// The algorithm used to sign the public key certificate.
-	SignatureAlgorithm pulumi.StringInput `pulumi:"signatureAlgorithm"`
+	SignatureAlgorithm pulumi.StringPtrInput `pulumi:"signatureAlgorithm"`
 	// A filter that returns only resources that match the given lifecycle state. The state value is case-insensitive.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.
 	Subjects GetCertificatesCertificateCollectionItemSubjectArrayInput `pulumi:"subjects"`
 	// A property indicating when the certificate was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// An optional property indicating when to delete the certificate version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfDeletion pulumi.StringInput `pulumi:"timeOfDeletion"`
+	TimeOfDeletion pulumi.StringPtrInput `pulumi:"timeOfDeletion"`
 }
 
 func (GetCertificatesCertificateCollectionItemArgs) ElementType() reflect.Type {
@@ -14171,12 +12228,6 @@ func (i GetCertificatesCertificateCollectionItemArgs) ToGetCertificatesCertifica
 
 func (i GetCertificatesCertificateCollectionItemArgs) ToGetCertificatesCertificateCollectionItemOutputWithContext(ctx context.Context) GetCertificatesCertificateCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificatesCertificateCollectionItemOutput)
-}
-
-func (i GetCertificatesCertificateCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetCertificatesCertificateCollectionItem] {
-	return pulumix.Output[GetCertificatesCertificateCollectionItem]{
-		OutputState: i.ToGetCertificatesCertificateCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetCertificatesCertificateCollectionItemArrayInput is an input type that accepts GetCertificatesCertificateCollectionItemArray and GetCertificatesCertificateCollectionItemArrayOutput values.
@@ -14204,12 +12255,6 @@ func (i GetCertificatesCertificateCollectionItemArray) ToGetCertificatesCertific
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificatesCertificateCollectionItemArrayOutput)
 }
 
-func (i GetCertificatesCertificateCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificatesCertificateCollectionItem] {
-	return pulumix.Output[[]GetCertificatesCertificateCollectionItem]{
-		OutputState: i.ToGetCertificatesCertificateCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCertificatesCertificateCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetCertificatesCertificateCollectionItemOutput) ElementType() reflect.Type {
@@ -14224,12 +12269,6 @@ func (o GetCertificatesCertificateCollectionItemOutput) ToGetCertificatesCertifi
 	return o
 }
 
-func (o GetCertificatesCertificateCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificatesCertificateCollectionItem] {
-	return pulumix.Output[GetCertificatesCertificateCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCertificatesCertificateCollectionItemOutput) CertificateConfigs() GetCertificatesCertificateCollectionItemCertificateConfigArrayOutput {
 	return o.ApplyT(func(v GetCertificatesCertificateCollectionItem) []GetCertificatesCertificateCollectionItemCertificateConfig {
 		return v.CertificateConfigs
@@ -14237,8 +12276,8 @@ func (o GetCertificatesCertificateCollectionItemOutput) CertificateConfigs() Get
 }
 
 // The name of the profile used to create the certificate, which depends on the type of certificate you need.
-func (o GetCertificatesCertificateCollectionItemOutput) CertificateProfileType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateCollectionItem) string { return v.CertificateProfileType }).(pulumi.StringOutput)
+func (o GetCertificatesCertificateCollectionItemOutput) CertificateProfileType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateCollectionItem) *string { return v.CertificateProfileType }).(pulumi.StringPtrOutput)
 }
 
 // The details of the certificate revocation list (CRL).
@@ -14256,13 +12295,13 @@ func (o GetCertificatesCertificateCollectionItemOutput) CertificateRules() GetCe
 }
 
 // A filter that returns only resources that match the given compartment OCID.
-func (o GetCertificatesCertificateCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetCertificatesCertificateCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The origin of the certificate.
-func (o GetCertificatesCertificateCollectionItemOutput) ConfigType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateCollectionItem) string { return v.ConfigType }).(pulumi.StringOutput)
+func (o GetCertificatesCertificateCollectionItemOutput) ConfigType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateCollectionItem) *string { return v.ConfigType }).(pulumi.StringPtrOutput)
 }
 
 // The details of the certificate version. This object does not contain the certificate contents.
@@ -14278,8 +12317,8 @@ func (o GetCertificatesCertificateCollectionItemOutput) DefinedTags() pulumi.Map
 }
 
 // A brief description of the certificate. Avoid entering confidential information.
-func (o GetCertificatesCertificateCollectionItemOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+func (o GetCertificatesCertificateCollectionItemOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateCollectionItem) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -14288,38 +12327,38 @@ func (o GetCertificatesCertificateCollectionItemOutput) FreeformTags() pulumi.Ma
 }
 
 // The OCID of the certificate.
-func (o GetCertificatesCertificateCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetCertificatesCertificateCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the certificate authority (CA). If the parameter is set to null, the service lists all CAs.
-func (o GetCertificatesCertificateCollectionItemOutput) IssuerCertificateAuthorityId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateCollectionItem) string { return v.IssuerCertificateAuthorityId }).(pulumi.StringOutput)
+func (o GetCertificatesCertificateCollectionItemOutput) IssuerCertificateAuthorityId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateCollectionItem) *string { return v.IssuerCertificateAuthorityId }).(pulumi.StringPtrOutput)
 }
 
 // The algorithm used to create key pairs.
-func (o GetCertificatesCertificateCollectionItemOutput) KeyAlgorithm() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateCollectionItem) string { return v.KeyAlgorithm }).(pulumi.StringOutput)
+func (o GetCertificatesCertificateCollectionItemOutput) KeyAlgorithm() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateCollectionItem) *string { return v.KeyAlgorithm }).(pulumi.StringPtrOutput)
 }
 
 // Additional information about the current lifecycle state of the certificate.
-func (o GetCertificatesCertificateCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetCertificatesCertificateCollectionItemOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateCollectionItem) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // A filter that returns only resources that match the specified name.
-func (o GetCertificatesCertificateCollectionItemOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+func (o GetCertificatesCertificateCollectionItemOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateCollectionItem) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The algorithm used to sign the public key certificate.
-func (o GetCertificatesCertificateCollectionItemOutput) SignatureAlgorithm() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateCollectionItem) string { return v.SignatureAlgorithm }).(pulumi.StringOutput)
+func (o GetCertificatesCertificateCollectionItemOutput) SignatureAlgorithm() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateCollectionItem) *string { return v.SignatureAlgorithm }).(pulumi.StringPtrOutput)
 }
 
 // A filter that returns only resources that match the given lifecycle state. The state value is case-insensitive.
-func (o GetCertificatesCertificateCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetCertificatesCertificateCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.
@@ -14330,13 +12369,13 @@ func (o GetCertificatesCertificateCollectionItemOutput) Subjects() GetCertificat
 }
 
 // A property indicating when the certificate was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-func (o GetCertificatesCertificateCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetCertificatesCertificateCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // An optional property indicating when to delete the certificate version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-func (o GetCertificatesCertificateCollectionItemOutput) TimeOfDeletion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateCollectionItem) string { return v.TimeOfDeletion }).(pulumi.StringOutput)
+func (o GetCertificatesCertificateCollectionItemOutput) TimeOfDeletion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateCollectionItem) *string { return v.TimeOfDeletion }).(pulumi.StringPtrOutput)
 }
 
 type GetCertificatesCertificateCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -14353,12 +12392,6 @@ func (o GetCertificatesCertificateCollectionItemArrayOutput) ToGetCertificatesCe
 	return o
 }
 
-func (o GetCertificatesCertificateCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificatesCertificateCollectionItem] {
-	return pulumix.Output[[]GetCertificatesCertificateCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCertificatesCertificateCollectionItemArrayOutput) Index(i pulumi.IntInput) GetCertificatesCertificateCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCertificatesCertificateCollectionItem {
 		return vs[0].([]GetCertificatesCertificateCollectionItem)[vs[1].(int)]
@@ -14367,16 +12400,16 @@ func (o GetCertificatesCertificateCollectionItemArrayOutput) Index(i pulumi.IntI
 
 type GetCertificatesCertificateCollectionItemCertificateConfig struct {
 	// The name of the profile used to create the certificate, which depends on the type of certificate you need.
-	CertificateProfileType string `pulumi:"certificateProfileType"`
+	CertificateProfileType *string `pulumi:"certificateProfileType"`
 	// The origin of the certificate.
-	ConfigType string `pulumi:"configType"`
-	CsrPem     string `pulumi:"csrPem"`
+	ConfigType *string `pulumi:"configType"`
+	CsrPem     *string `pulumi:"csrPem"`
 	// The OCID of the certificate authority (CA). If the parameter is set to null, the service lists all CAs.
-	IssuerCertificateAuthorityId string `pulumi:"issuerCertificateAuthorityId"`
+	IssuerCertificateAuthorityId *string `pulumi:"issuerCertificateAuthorityId"`
 	// The algorithm used to create key pairs.
-	KeyAlgorithm string `pulumi:"keyAlgorithm"`
+	KeyAlgorithm *string `pulumi:"keyAlgorithm"`
 	// The algorithm used to sign the public key certificate.
-	SignatureAlgorithm string `pulumi:"signatureAlgorithm"`
+	SignatureAlgorithm *string `pulumi:"signatureAlgorithm"`
 	// A list of subject alternative names.
 	SubjectAlternativeNames []GetCertificatesCertificateCollectionItemCertificateConfigSubjectAlternativeName `pulumi:"subjectAlternativeNames"`
 	// The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.
@@ -14384,7 +12417,7 @@ type GetCertificatesCertificateCollectionItemCertificateConfig struct {
 	// An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
 	Validities []GetCertificatesCertificateCollectionItemCertificateConfigValidity `pulumi:"validities"`
 	// The name of the certificate version. When the value is not null, a name is unique across versions of a given certificate.
-	VersionName string `pulumi:"versionName"`
+	VersionName *string `pulumi:"versionName"`
 }
 
 // GetCertificatesCertificateCollectionItemCertificateConfigInput is an input type that accepts GetCertificatesCertificateCollectionItemCertificateConfigArgs and GetCertificatesCertificateCollectionItemCertificateConfigOutput values.
@@ -14400,16 +12433,16 @@ type GetCertificatesCertificateCollectionItemCertificateConfigInput interface {
 
 type GetCertificatesCertificateCollectionItemCertificateConfigArgs struct {
 	// The name of the profile used to create the certificate, which depends on the type of certificate you need.
-	CertificateProfileType pulumi.StringInput `pulumi:"certificateProfileType"`
+	CertificateProfileType pulumi.StringPtrInput `pulumi:"certificateProfileType"`
 	// The origin of the certificate.
-	ConfigType pulumi.StringInput `pulumi:"configType"`
-	CsrPem     pulumi.StringInput `pulumi:"csrPem"`
+	ConfigType pulumi.StringPtrInput `pulumi:"configType"`
+	CsrPem     pulumi.StringPtrInput `pulumi:"csrPem"`
 	// The OCID of the certificate authority (CA). If the parameter is set to null, the service lists all CAs.
-	IssuerCertificateAuthorityId pulumi.StringInput `pulumi:"issuerCertificateAuthorityId"`
+	IssuerCertificateAuthorityId pulumi.StringPtrInput `pulumi:"issuerCertificateAuthorityId"`
 	// The algorithm used to create key pairs.
-	KeyAlgorithm pulumi.StringInput `pulumi:"keyAlgorithm"`
+	KeyAlgorithm pulumi.StringPtrInput `pulumi:"keyAlgorithm"`
 	// The algorithm used to sign the public key certificate.
-	SignatureAlgorithm pulumi.StringInput `pulumi:"signatureAlgorithm"`
+	SignatureAlgorithm pulumi.StringPtrInput `pulumi:"signatureAlgorithm"`
 	// A list of subject alternative names.
 	SubjectAlternativeNames GetCertificatesCertificateCollectionItemCertificateConfigSubjectAlternativeNameArrayInput `pulumi:"subjectAlternativeNames"`
 	// The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.
@@ -14417,7 +12450,7 @@ type GetCertificatesCertificateCollectionItemCertificateConfigArgs struct {
 	// An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
 	Validities GetCertificatesCertificateCollectionItemCertificateConfigValidityArrayInput `pulumi:"validities"`
 	// The name of the certificate version. When the value is not null, a name is unique across versions of a given certificate.
-	VersionName pulumi.StringInput `pulumi:"versionName"`
+	VersionName pulumi.StringPtrInput `pulumi:"versionName"`
 }
 
 func (GetCertificatesCertificateCollectionItemCertificateConfigArgs) ElementType() reflect.Type {
@@ -14430,12 +12463,6 @@ func (i GetCertificatesCertificateCollectionItemCertificateConfigArgs) ToGetCert
 
 func (i GetCertificatesCertificateCollectionItemCertificateConfigArgs) ToGetCertificatesCertificateCollectionItemCertificateConfigOutputWithContext(ctx context.Context) GetCertificatesCertificateCollectionItemCertificateConfigOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificatesCertificateCollectionItemCertificateConfigOutput)
-}
-
-func (i GetCertificatesCertificateCollectionItemCertificateConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetCertificatesCertificateCollectionItemCertificateConfig] {
-	return pulumix.Output[GetCertificatesCertificateCollectionItemCertificateConfig]{
-		OutputState: i.ToGetCertificatesCertificateCollectionItemCertificateConfigOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetCertificatesCertificateCollectionItemCertificateConfigArrayInput is an input type that accepts GetCertificatesCertificateCollectionItemCertificateConfigArray and GetCertificatesCertificateCollectionItemCertificateConfigArrayOutput values.
@@ -14463,12 +12490,6 @@ func (i GetCertificatesCertificateCollectionItemCertificateConfigArray) ToGetCer
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificatesCertificateCollectionItemCertificateConfigArrayOutput)
 }
 
-func (i GetCertificatesCertificateCollectionItemCertificateConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificatesCertificateCollectionItemCertificateConfig] {
-	return pulumix.Output[[]GetCertificatesCertificateCollectionItemCertificateConfig]{
-		OutputState: i.ToGetCertificatesCertificateCollectionItemCertificateConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCertificatesCertificateCollectionItemCertificateConfigOutput struct{ *pulumi.OutputState }
 
 func (GetCertificatesCertificateCollectionItemCertificateConfigOutput) ElementType() reflect.Type {
@@ -14483,43 +12504,37 @@ func (o GetCertificatesCertificateCollectionItemCertificateConfigOutput) ToGetCe
 	return o
 }
 
-func (o GetCertificatesCertificateCollectionItemCertificateConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificatesCertificateCollectionItemCertificateConfig] {
-	return pulumix.Output[GetCertificatesCertificateCollectionItemCertificateConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The name of the profile used to create the certificate, which depends on the type of certificate you need.
-func (o GetCertificatesCertificateCollectionItemCertificateConfigOutput) CertificateProfileType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCertificateConfig) string {
+func (o GetCertificatesCertificateCollectionItemCertificateConfigOutput) CertificateProfileType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCertificateConfig) *string {
 		return v.CertificateProfileType
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The origin of the certificate.
-func (o GetCertificatesCertificateCollectionItemCertificateConfigOutput) ConfigType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCertificateConfig) string { return v.ConfigType }).(pulumi.StringOutput)
+func (o GetCertificatesCertificateCollectionItemCertificateConfigOutput) ConfigType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCertificateConfig) *string { return v.ConfigType }).(pulumi.StringPtrOutput)
 }
 
-func (o GetCertificatesCertificateCollectionItemCertificateConfigOutput) CsrPem() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCertificateConfig) string { return v.CsrPem }).(pulumi.StringOutput)
+func (o GetCertificatesCertificateCollectionItemCertificateConfigOutput) CsrPem() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCertificateConfig) *string { return v.CsrPem }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the certificate authority (CA). If the parameter is set to null, the service lists all CAs.
-func (o GetCertificatesCertificateCollectionItemCertificateConfigOutput) IssuerCertificateAuthorityId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCertificateConfig) string {
+func (o GetCertificatesCertificateCollectionItemCertificateConfigOutput) IssuerCertificateAuthorityId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCertificateConfig) *string {
 		return v.IssuerCertificateAuthorityId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The algorithm used to create key pairs.
-func (o GetCertificatesCertificateCollectionItemCertificateConfigOutput) KeyAlgorithm() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCertificateConfig) string { return v.KeyAlgorithm }).(pulumi.StringOutput)
+func (o GetCertificatesCertificateCollectionItemCertificateConfigOutput) KeyAlgorithm() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCertificateConfig) *string { return v.KeyAlgorithm }).(pulumi.StringPtrOutput)
 }
 
 // The algorithm used to sign the public key certificate.
-func (o GetCertificatesCertificateCollectionItemCertificateConfigOutput) SignatureAlgorithm() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCertificateConfig) string { return v.SignatureAlgorithm }).(pulumi.StringOutput)
+func (o GetCertificatesCertificateCollectionItemCertificateConfigOutput) SignatureAlgorithm() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCertificateConfig) *string { return v.SignatureAlgorithm }).(pulumi.StringPtrOutput)
 }
 
 // A list of subject alternative names.
@@ -14544,8 +12559,8 @@ func (o GetCertificatesCertificateCollectionItemCertificateConfigOutput) Validit
 }
 
 // The name of the certificate version. When the value is not null, a name is unique across versions of a given certificate.
-func (o GetCertificatesCertificateCollectionItemCertificateConfigOutput) VersionName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCertificateConfig) string { return v.VersionName }).(pulumi.StringOutput)
+func (o GetCertificatesCertificateCollectionItemCertificateConfigOutput) VersionName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCertificateConfig) *string { return v.VersionName }).(pulumi.StringPtrOutput)
 }
 
 type GetCertificatesCertificateCollectionItemCertificateConfigArrayOutput struct{ *pulumi.OutputState }
@@ -14562,12 +12577,6 @@ func (o GetCertificatesCertificateCollectionItemCertificateConfigArrayOutput) To
 	return o
 }
 
-func (o GetCertificatesCertificateCollectionItemCertificateConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificatesCertificateCollectionItemCertificateConfig] {
-	return pulumix.Output[[]GetCertificatesCertificateCollectionItemCertificateConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCertificatesCertificateCollectionItemCertificateConfigArrayOutput) Index(i pulumi.IntInput) GetCertificatesCertificateCollectionItemCertificateConfigOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCertificatesCertificateCollectionItemCertificateConfig {
 		return vs[0].([]GetCertificatesCertificateCollectionItemCertificateConfig)[vs[1].(int)]
@@ -14576,39 +12585,39 @@ func (o GetCertificatesCertificateCollectionItemCertificateConfigArrayOutput) In
 
 type GetCertificatesCertificateCollectionItemCertificateConfigSubject struct {
 	// Common name or fully-qualified domain name (RDN CN).
-	CommonName string `pulumi:"commonName"`
+	CommonName *string `pulumi:"commonName"`
 	// Country name (RDN C).
-	Country string `pulumi:"country"`
+	Country *string `pulumi:"country"`
 	// Distinguished name qualifier(RDN DNQ).
-	DistinguishedNameQualifier string `pulumi:"distinguishedNameQualifier"`
+	DistinguishedNameQualifier *string `pulumi:"distinguishedNameQualifier"`
 	// Domain component (RDN DC).
-	DomainComponent string `pulumi:"domainComponent"`
+	DomainComponent *string `pulumi:"domainComponent"`
 	// Personal generational qualifier (for example, Sr., Jr. 3rd, or IV).
-	GenerationQualifier string `pulumi:"generationQualifier"`
+	GenerationQualifier *string `pulumi:"generationQualifier"`
 	// Personal given name (RDN G or GN).
-	GivenName string `pulumi:"givenName"`
+	GivenName *string `pulumi:"givenName"`
 	// Personal initials.
-	Initials string `pulumi:"initials"`
+	Initials *string `pulumi:"initials"`
 	// Locality (RDN L).
-	LocalityName string `pulumi:"localityName"`
+	LocalityName *string `pulumi:"localityName"`
 	// Organization (RDN O).
-	Organization string `pulumi:"organization"`
+	Organization *string `pulumi:"organization"`
 	// Organizational unit (RDN OU).
-	OrganizationalUnit string `pulumi:"organizationalUnit"`
+	OrganizationalUnit *string `pulumi:"organizationalUnit"`
 	// Subject pseudonym.
-	Pseudonym string `pulumi:"pseudonym"`
+	Pseudonym *string `pulumi:"pseudonym"`
 	// Unique subject identifier, which is not the same as the certificate serial number (RDN SERIALNUMBER).
-	SerialNumber string `pulumi:"serialNumber"`
+	SerialNumber *string `pulumi:"serialNumber"`
 	// State or province name (RDN ST or S).
-	StateOrProvinceName string `pulumi:"stateOrProvinceName"`
+	StateOrProvinceName *string `pulumi:"stateOrProvinceName"`
 	// Street address (RDN STREET).
-	Street string `pulumi:"street"`
+	Street *string `pulumi:"street"`
 	// Personal surname (RDN SN).
-	Surname string `pulumi:"surname"`
+	Surname *string `pulumi:"surname"`
 	// Title (RDN T or TITLE).
-	Title string `pulumi:"title"`
+	Title *string `pulumi:"title"`
 	// User ID (RDN UID).
-	UserId string `pulumi:"userId"`
+	UserId *string `pulumi:"userId"`
 }
 
 // GetCertificatesCertificateCollectionItemCertificateConfigSubjectInput is an input type that accepts GetCertificatesCertificateCollectionItemCertificateConfigSubjectArgs and GetCertificatesCertificateCollectionItemCertificateConfigSubjectOutput values.
@@ -14624,39 +12633,39 @@ type GetCertificatesCertificateCollectionItemCertificateConfigSubjectInput inter
 
 type GetCertificatesCertificateCollectionItemCertificateConfigSubjectArgs struct {
 	// Common name or fully-qualified domain name (RDN CN).
-	CommonName pulumi.StringInput `pulumi:"commonName"`
+	CommonName pulumi.StringPtrInput `pulumi:"commonName"`
 	// Country name (RDN C).
-	Country pulumi.StringInput `pulumi:"country"`
+	Country pulumi.StringPtrInput `pulumi:"country"`
 	// Distinguished name qualifier(RDN DNQ).
-	DistinguishedNameQualifier pulumi.StringInput `pulumi:"distinguishedNameQualifier"`
+	DistinguishedNameQualifier pulumi.StringPtrInput `pulumi:"distinguishedNameQualifier"`
 	// Domain component (RDN DC).
-	DomainComponent pulumi.StringInput `pulumi:"domainComponent"`
+	DomainComponent pulumi.StringPtrInput `pulumi:"domainComponent"`
 	// Personal generational qualifier (for example, Sr., Jr. 3rd, or IV).
-	GenerationQualifier pulumi.StringInput `pulumi:"generationQualifier"`
+	GenerationQualifier pulumi.StringPtrInput `pulumi:"generationQualifier"`
 	// Personal given name (RDN G or GN).
-	GivenName pulumi.StringInput `pulumi:"givenName"`
+	GivenName pulumi.StringPtrInput `pulumi:"givenName"`
 	// Personal initials.
-	Initials pulumi.StringInput `pulumi:"initials"`
+	Initials pulumi.StringPtrInput `pulumi:"initials"`
 	// Locality (RDN L).
-	LocalityName pulumi.StringInput `pulumi:"localityName"`
+	LocalityName pulumi.StringPtrInput `pulumi:"localityName"`
 	// Organization (RDN O).
-	Organization pulumi.StringInput `pulumi:"organization"`
+	Organization pulumi.StringPtrInput `pulumi:"organization"`
 	// Organizational unit (RDN OU).
-	OrganizationalUnit pulumi.StringInput `pulumi:"organizationalUnit"`
+	OrganizationalUnit pulumi.StringPtrInput `pulumi:"organizationalUnit"`
 	// Subject pseudonym.
-	Pseudonym pulumi.StringInput `pulumi:"pseudonym"`
+	Pseudonym pulumi.StringPtrInput `pulumi:"pseudonym"`
 	// Unique subject identifier, which is not the same as the certificate serial number (RDN SERIALNUMBER).
-	SerialNumber pulumi.StringInput `pulumi:"serialNumber"`
+	SerialNumber pulumi.StringPtrInput `pulumi:"serialNumber"`
 	// State or province name (RDN ST or S).
-	StateOrProvinceName pulumi.StringInput `pulumi:"stateOrProvinceName"`
+	StateOrProvinceName pulumi.StringPtrInput `pulumi:"stateOrProvinceName"`
 	// Street address (RDN STREET).
-	Street pulumi.StringInput `pulumi:"street"`
+	Street pulumi.StringPtrInput `pulumi:"street"`
 	// Personal surname (RDN SN).
-	Surname pulumi.StringInput `pulumi:"surname"`
+	Surname pulumi.StringPtrInput `pulumi:"surname"`
 	// Title (RDN T or TITLE).
-	Title pulumi.StringInput `pulumi:"title"`
+	Title pulumi.StringPtrInput `pulumi:"title"`
 	// User ID (RDN UID).
-	UserId pulumi.StringInput `pulumi:"userId"`
+	UserId pulumi.StringPtrInput `pulumi:"userId"`
 }
 
 func (GetCertificatesCertificateCollectionItemCertificateConfigSubjectArgs) ElementType() reflect.Type {
@@ -14669,12 +12678,6 @@ func (i GetCertificatesCertificateCollectionItemCertificateConfigSubjectArgs) To
 
 func (i GetCertificatesCertificateCollectionItemCertificateConfigSubjectArgs) ToGetCertificatesCertificateCollectionItemCertificateConfigSubjectOutputWithContext(ctx context.Context) GetCertificatesCertificateCollectionItemCertificateConfigSubjectOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificatesCertificateCollectionItemCertificateConfigSubjectOutput)
-}
-
-func (i GetCertificatesCertificateCollectionItemCertificateConfigSubjectArgs) ToOutput(ctx context.Context) pulumix.Output[GetCertificatesCertificateCollectionItemCertificateConfigSubject] {
-	return pulumix.Output[GetCertificatesCertificateCollectionItemCertificateConfigSubject]{
-		OutputState: i.ToGetCertificatesCertificateCollectionItemCertificateConfigSubjectOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetCertificatesCertificateCollectionItemCertificateConfigSubjectArrayInput is an input type that accepts GetCertificatesCertificateCollectionItemCertificateConfigSubjectArray and GetCertificatesCertificateCollectionItemCertificateConfigSubjectArrayOutput values.
@@ -14702,12 +12705,6 @@ func (i GetCertificatesCertificateCollectionItemCertificateConfigSubjectArray) T
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificatesCertificateCollectionItemCertificateConfigSubjectArrayOutput)
 }
 
-func (i GetCertificatesCertificateCollectionItemCertificateConfigSubjectArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificatesCertificateCollectionItemCertificateConfigSubject] {
-	return pulumix.Output[[]GetCertificatesCertificateCollectionItemCertificateConfigSubject]{
-		OutputState: i.ToGetCertificatesCertificateCollectionItemCertificateConfigSubjectArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCertificatesCertificateCollectionItemCertificateConfigSubjectOutput struct{ *pulumi.OutputState }
 
 func (GetCertificatesCertificateCollectionItemCertificateConfigSubjectOutput) ElementType() reflect.Type {
@@ -14722,105 +12719,105 @@ func (o GetCertificatesCertificateCollectionItemCertificateConfigSubjectOutput) 
 	return o
 }
 
-func (o GetCertificatesCertificateCollectionItemCertificateConfigSubjectOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificatesCertificateCollectionItemCertificateConfigSubject] {
-	return pulumix.Output[GetCertificatesCertificateCollectionItemCertificateConfigSubject]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Common name or fully-qualified domain name (RDN CN).
-func (o GetCertificatesCertificateCollectionItemCertificateConfigSubjectOutput) CommonName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCertificateConfigSubject) string { return v.CommonName }).(pulumi.StringOutput)
+func (o GetCertificatesCertificateCollectionItemCertificateConfigSubjectOutput) CommonName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCertificateConfigSubject) *string { return v.CommonName }).(pulumi.StringPtrOutput)
 }
 
 // Country name (RDN C).
-func (o GetCertificatesCertificateCollectionItemCertificateConfigSubjectOutput) Country() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCertificateConfigSubject) string { return v.Country }).(pulumi.StringOutput)
+func (o GetCertificatesCertificateCollectionItemCertificateConfigSubjectOutput) Country() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCertificateConfigSubject) *string { return v.Country }).(pulumi.StringPtrOutput)
 }
 
 // Distinguished name qualifier(RDN DNQ).
-func (o GetCertificatesCertificateCollectionItemCertificateConfigSubjectOutput) DistinguishedNameQualifier() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCertificateConfigSubject) string {
+func (o GetCertificatesCertificateCollectionItemCertificateConfigSubjectOutput) DistinguishedNameQualifier() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCertificateConfigSubject) *string {
 		return v.DistinguishedNameQualifier
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Domain component (RDN DC).
-func (o GetCertificatesCertificateCollectionItemCertificateConfigSubjectOutput) DomainComponent() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCertificateConfigSubject) string {
+func (o GetCertificatesCertificateCollectionItemCertificateConfigSubjectOutput) DomainComponent() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCertificateConfigSubject) *string {
 		return v.DomainComponent
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Personal generational qualifier (for example, Sr., Jr. 3rd, or IV).
-func (o GetCertificatesCertificateCollectionItemCertificateConfigSubjectOutput) GenerationQualifier() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCertificateConfigSubject) string {
+func (o GetCertificatesCertificateCollectionItemCertificateConfigSubjectOutput) GenerationQualifier() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCertificateConfigSubject) *string {
 		return v.GenerationQualifier
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Personal given name (RDN G or GN).
-func (o GetCertificatesCertificateCollectionItemCertificateConfigSubjectOutput) GivenName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCertificateConfigSubject) string { return v.GivenName }).(pulumi.StringOutput)
+func (o GetCertificatesCertificateCollectionItemCertificateConfigSubjectOutput) GivenName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCertificateConfigSubject) *string { return v.GivenName }).(pulumi.StringPtrOutput)
 }
 
 // Personal initials.
-func (o GetCertificatesCertificateCollectionItemCertificateConfigSubjectOutput) Initials() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCertificateConfigSubject) string { return v.Initials }).(pulumi.StringOutput)
+func (o GetCertificatesCertificateCollectionItemCertificateConfigSubjectOutput) Initials() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCertificateConfigSubject) *string { return v.Initials }).(pulumi.StringPtrOutput)
 }
 
 // Locality (RDN L).
-func (o GetCertificatesCertificateCollectionItemCertificateConfigSubjectOutput) LocalityName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCertificateConfigSubject) string { return v.LocalityName }).(pulumi.StringOutput)
+func (o GetCertificatesCertificateCollectionItemCertificateConfigSubjectOutput) LocalityName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCertificateConfigSubject) *string {
+		return v.LocalityName
+	}).(pulumi.StringPtrOutput)
 }
 
 // Organization (RDN O).
-func (o GetCertificatesCertificateCollectionItemCertificateConfigSubjectOutput) Organization() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCertificateConfigSubject) string { return v.Organization }).(pulumi.StringOutput)
+func (o GetCertificatesCertificateCollectionItemCertificateConfigSubjectOutput) Organization() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCertificateConfigSubject) *string {
+		return v.Organization
+	}).(pulumi.StringPtrOutput)
 }
 
 // Organizational unit (RDN OU).
-func (o GetCertificatesCertificateCollectionItemCertificateConfigSubjectOutput) OrganizationalUnit() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCertificateConfigSubject) string {
+func (o GetCertificatesCertificateCollectionItemCertificateConfigSubjectOutput) OrganizationalUnit() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCertificateConfigSubject) *string {
 		return v.OrganizationalUnit
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Subject pseudonym.
-func (o GetCertificatesCertificateCollectionItemCertificateConfigSubjectOutput) Pseudonym() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCertificateConfigSubject) string { return v.Pseudonym }).(pulumi.StringOutput)
+func (o GetCertificatesCertificateCollectionItemCertificateConfigSubjectOutput) Pseudonym() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCertificateConfigSubject) *string { return v.Pseudonym }).(pulumi.StringPtrOutput)
 }
 
 // Unique subject identifier, which is not the same as the certificate serial number (RDN SERIALNUMBER).
-func (o GetCertificatesCertificateCollectionItemCertificateConfigSubjectOutput) SerialNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCertificateConfigSubject) string { return v.SerialNumber }).(pulumi.StringOutput)
+func (o GetCertificatesCertificateCollectionItemCertificateConfigSubjectOutput) SerialNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCertificateConfigSubject) *string {
+		return v.SerialNumber
+	}).(pulumi.StringPtrOutput)
 }
 
 // State or province name (RDN ST or S).
-func (o GetCertificatesCertificateCollectionItemCertificateConfigSubjectOutput) StateOrProvinceName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCertificateConfigSubject) string {
+func (o GetCertificatesCertificateCollectionItemCertificateConfigSubjectOutput) StateOrProvinceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCertificateConfigSubject) *string {
 		return v.StateOrProvinceName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Street address (RDN STREET).
-func (o GetCertificatesCertificateCollectionItemCertificateConfigSubjectOutput) Street() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCertificateConfigSubject) string { return v.Street }).(pulumi.StringOutput)
+func (o GetCertificatesCertificateCollectionItemCertificateConfigSubjectOutput) Street() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCertificateConfigSubject) *string { return v.Street }).(pulumi.StringPtrOutput)
 }
 
 // Personal surname (RDN SN).
-func (o GetCertificatesCertificateCollectionItemCertificateConfigSubjectOutput) Surname() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCertificateConfigSubject) string { return v.Surname }).(pulumi.StringOutput)
+func (o GetCertificatesCertificateCollectionItemCertificateConfigSubjectOutput) Surname() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCertificateConfigSubject) *string { return v.Surname }).(pulumi.StringPtrOutput)
 }
 
 // Title (RDN T or TITLE).
-func (o GetCertificatesCertificateCollectionItemCertificateConfigSubjectOutput) Title() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCertificateConfigSubject) string { return v.Title }).(pulumi.StringOutput)
+func (o GetCertificatesCertificateCollectionItemCertificateConfigSubjectOutput) Title() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCertificateConfigSubject) *string { return v.Title }).(pulumi.StringPtrOutput)
 }
 
 // User ID (RDN UID).
-func (o GetCertificatesCertificateCollectionItemCertificateConfigSubjectOutput) UserId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCertificateConfigSubject) string { return v.UserId }).(pulumi.StringOutput)
+func (o GetCertificatesCertificateCollectionItemCertificateConfigSubjectOutput) UserId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCertificateConfigSubject) *string { return v.UserId }).(pulumi.StringPtrOutput)
 }
 
 type GetCertificatesCertificateCollectionItemCertificateConfigSubjectArrayOutput struct{ *pulumi.OutputState }
@@ -14837,12 +12834,6 @@ func (o GetCertificatesCertificateCollectionItemCertificateConfigSubjectArrayOut
 	return o
 }
 
-func (o GetCertificatesCertificateCollectionItemCertificateConfigSubjectArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificatesCertificateCollectionItemCertificateConfigSubject] {
-	return pulumix.Output[[]GetCertificatesCertificateCollectionItemCertificateConfigSubject]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCertificatesCertificateCollectionItemCertificateConfigSubjectArrayOutput) Index(i pulumi.IntInput) GetCertificatesCertificateCollectionItemCertificateConfigSubjectOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCertificatesCertificateCollectionItemCertificateConfigSubject {
 		return vs[0].([]GetCertificatesCertificateCollectionItemCertificateConfigSubject)[vs[1].(int)]
@@ -14851,9 +12842,9 @@ func (o GetCertificatesCertificateCollectionItemCertificateConfigSubjectArrayOut
 
 type GetCertificatesCertificateCollectionItemCertificateConfigSubjectAlternativeName struct {
 	// The subject alternative name type. Currently only DNS domain or host names and IP addresses are supported.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 	// The subject alternative name.
-	Value string `pulumi:"value"`
+	Value *string `pulumi:"value"`
 }
 
 // GetCertificatesCertificateCollectionItemCertificateConfigSubjectAlternativeNameInput is an input type that accepts GetCertificatesCertificateCollectionItemCertificateConfigSubjectAlternativeNameArgs and GetCertificatesCertificateCollectionItemCertificateConfigSubjectAlternativeNameOutput values.
@@ -14869,9 +12860,9 @@ type GetCertificatesCertificateCollectionItemCertificateConfigSubjectAlternative
 
 type GetCertificatesCertificateCollectionItemCertificateConfigSubjectAlternativeNameArgs struct {
 	// The subject alternative name type. Currently only DNS domain or host names and IP addresses are supported.
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 	// The subject alternative name.
-	Value pulumi.StringInput `pulumi:"value"`
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (GetCertificatesCertificateCollectionItemCertificateConfigSubjectAlternativeNameArgs) ElementType() reflect.Type {
@@ -14884,12 +12875,6 @@ func (i GetCertificatesCertificateCollectionItemCertificateConfigSubjectAlternat
 
 func (i GetCertificatesCertificateCollectionItemCertificateConfigSubjectAlternativeNameArgs) ToGetCertificatesCertificateCollectionItemCertificateConfigSubjectAlternativeNameOutputWithContext(ctx context.Context) GetCertificatesCertificateCollectionItemCertificateConfigSubjectAlternativeNameOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificatesCertificateCollectionItemCertificateConfigSubjectAlternativeNameOutput)
-}
-
-func (i GetCertificatesCertificateCollectionItemCertificateConfigSubjectAlternativeNameArgs) ToOutput(ctx context.Context) pulumix.Output[GetCertificatesCertificateCollectionItemCertificateConfigSubjectAlternativeName] {
-	return pulumix.Output[GetCertificatesCertificateCollectionItemCertificateConfigSubjectAlternativeName]{
-		OutputState: i.ToGetCertificatesCertificateCollectionItemCertificateConfigSubjectAlternativeNameOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetCertificatesCertificateCollectionItemCertificateConfigSubjectAlternativeNameArrayInput is an input type that accepts GetCertificatesCertificateCollectionItemCertificateConfigSubjectAlternativeNameArray and GetCertificatesCertificateCollectionItemCertificateConfigSubjectAlternativeNameArrayOutput values.
@@ -14917,12 +12902,6 @@ func (i GetCertificatesCertificateCollectionItemCertificateConfigSubjectAlternat
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificatesCertificateCollectionItemCertificateConfigSubjectAlternativeNameArrayOutput)
 }
 
-func (i GetCertificatesCertificateCollectionItemCertificateConfigSubjectAlternativeNameArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificatesCertificateCollectionItemCertificateConfigSubjectAlternativeName] {
-	return pulumix.Output[[]GetCertificatesCertificateCollectionItemCertificateConfigSubjectAlternativeName]{
-		OutputState: i.ToGetCertificatesCertificateCollectionItemCertificateConfigSubjectAlternativeNameArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCertificatesCertificateCollectionItemCertificateConfigSubjectAlternativeNameOutput struct{ *pulumi.OutputState }
 
 func (GetCertificatesCertificateCollectionItemCertificateConfigSubjectAlternativeNameOutput) ElementType() reflect.Type {
@@ -14937,24 +12916,18 @@ func (o GetCertificatesCertificateCollectionItemCertificateConfigSubjectAlternat
 	return o
 }
 
-func (o GetCertificatesCertificateCollectionItemCertificateConfigSubjectAlternativeNameOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificatesCertificateCollectionItemCertificateConfigSubjectAlternativeName] {
-	return pulumix.Output[GetCertificatesCertificateCollectionItemCertificateConfigSubjectAlternativeName]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The subject alternative name type. Currently only DNS domain or host names and IP addresses are supported.
-func (o GetCertificatesCertificateCollectionItemCertificateConfigSubjectAlternativeNameOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCertificateConfigSubjectAlternativeName) string {
+func (o GetCertificatesCertificateCollectionItemCertificateConfigSubjectAlternativeNameOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCertificateConfigSubjectAlternativeName) *string {
 		return v.Type
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The subject alternative name.
-func (o GetCertificatesCertificateCollectionItemCertificateConfigSubjectAlternativeNameOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCertificateConfigSubjectAlternativeName) string {
+func (o GetCertificatesCertificateCollectionItemCertificateConfigSubjectAlternativeNameOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCertificateConfigSubjectAlternativeName) *string {
 		return v.Value
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetCertificatesCertificateCollectionItemCertificateConfigSubjectAlternativeNameArrayOutput struct{ *pulumi.OutputState }
@@ -14971,12 +12944,6 @@ func (o GetCertificatesCertificateCollectionItemCertificateConfigSubjectAlternat
 	return o
 }
 
-func (o GetCertificatesCertificateCollectionItemCertificateConfigSubjectAlternativeNameArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificatesCertificateCollectionItemCertificateConfigSubjectAlternativeName] {
-	return pulumix.Output[[]GetCertificatesCertificateCollectionItemCertificateConfigSubjectAlternativeName]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCertificatesCertificateCollectionItemCertificateConfigSubjectAlternativeNameArrayOutput) Index(i pulumi.IntInput) GetCertificatesCertificateCollectionItemCertificateConfigSubjectAlternativeNameOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCertificatesCertificateCollectionItemCertificateConfigSubjectAlternativeName {
 		return vs[0].([]GetCertificatesCertificateCollectionItemCertificateConfigSubjectAlternativeName)[vs[1].(int)]
@@ -14985,9 +12952,9 @@ func (o GetCertificatesCertificateCollectionItemCertificateConfigSubjectAlternat
 
 type GetCertificatesCertificateCollectionItemCertificateConfigValidity struct {
 	// The date on which the certificate validity period ends, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfValidityNotAfter string `pulumi:"timeOfValidityNotAfter"`
+	TimeOfValidityNotAfter *string `pulumi:"timeOfValidityNotAfter"`
 	// The date on which the certificate validity period begins, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfValidityNotBefore string `pulumi:"timeOfValidityNotBefore"`
+	TimeOfValidityNotBefore *string `pulumi:"timeOfValidityNotBefore"`
 }
 
 // GetCertificatesCertificateCollectionItemCertificateConfigValidityInput is an input type that accepts GetCertificatesCertificateCollectionItemCertificateConfigValidityArgs and GetCertificatesCertificateCollectionItemCertificateConfigValidityOutput values.
@@ -15003,9 +12970,9 @@ type GetCertificatesCertificateCollectionItemCertificateConfigValidityInput inte
 
 type GetCertificatesCertificateCollectionItemCertificateConfigValidityArgs struct {
 	// The date on which the certificate validity period ends, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfValidityNotAfter pulumi.StringInput `pulumi:"timeOfValidityNotAfter"`
+	TimeOfValidityNotAfter pulumi.StringPtrInput `pulumi:"timeOfValidityNotAfter"`
 	// The date on which the certificate validity period begins, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfValidityNotBefore pulumi.StringInput `pulumi:"timeOfValidityNotBefore"`
+	TimeOfValidityNotBefore pulumi.StringPtrInput `pulumi:"timeOfValidityNotBefore"`
 }
 
 func (GetCertificatesCertificateCollectionItemCertificateConfigValidityArgs) ElementType() reflect.Type {
@@ -15018,12 +12985,6 @@ func (i GetCertificatesCertificateCollectionItemCertificateConfigValidityArgs) T
 
 func (i GetCertificatesCertificateCollectionItemCertificateConfigValidityArgs) ToGetCertificatesCertificateCollectionItemCertificateConfigValidityOutputWithContext(ctx context.Context) GetCertificatesCertificateCollectionItemCertificateConfigValidityOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificatesCertificateCollectionItemCertificateConfigValidityOutput)
-}
-
-func (i GetCertificatesCertificateCollectionItemCertificateConfigValidityArgs) ToOutput(ctx context.Context) pulumix.Output[GetCertificatesCertificateCollectionItemCertificateConfigValidity] {
-	return pulumix.Output[GetCertificatesCertificateCollectionItemCertificateConfigValidity]{
-		OutputState: i.ToGetCertificatesCertificateCollectionItemCertificateConfigValidityOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetCertificatesCertificateCollectionItemCertificateConfigValidityArrayInput is an input type that accepts GetCertificatesCertificateCollectionItemCertificateConfigValidityArray and GetCertificatesCertificateCollectionItemCertificateConfigValidityArrayOutput values.
@@ -15051,12 +13012,6 @@ func (i GetCertificatesCertificateCollectionItemCertificateConfigValidityArray) 
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificatesCertificateCollectionItemCertificateConfigValidityArrayOutput)
 }
 
-func (i GetCertificatesCertificateCollectionItemCertificateConfigValidityArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificatesCertificateCollectionItemCertificateConfigValidity] {
-	return pulumix.Output[[]GetCertificatesCertificateCollectionItemCertificateConfigValidity]{
-		OutputState: i.ToGetCertificatesCertificateCollectionItemCertificateConfigValidityArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCertificatesCertificateCollectionItemCertificateConfigValidityOutput struct{ *pulumi.OutputState }
 
 func (GetCertificatesCertificateCollectionItemCertificateConfigValidityOutput) ElementType() reflect.Type {
@@ -15071,24 +13026,18 @@ func (o GetCertificatesCertificateCollectionItemCertificateConfigValidityOutput)
 	return o
 }
 
-func (o GetCertificatesCertificateCollectionItemCertificateConfigValidityOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificatesCertificateCollectionItemCertificateConfigValidity] {
-	return pulumix.Output[GetCertificatesCertificateCollectionItemCertificateConfigValidity]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The date on which the certificate validity period ends, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-func (o GetCertificatesCertificateCollectionItemCertificateConfigValidityOutput) TimeOfValidityNotAfter() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCertificateConfigValidity) string {
+func (o GetCertificatesCertificateCollectionItemCertificateConfigValidityOutput) TimeOfValidityNotAfter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCertificateConfigValidity) *string {
 		return v.TimeOfValidityNotAfter
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The date on which the certificate validity period begins, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-func (o GetCertificatesCertificateCollectionItemCertificateConfigValidityOutput) TimeOfValidityNotBefore() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCertificateConfigValidity) string {
+func (o GetCertificatesCertificateCollectionItemCertificateConfigValidityOutput) TimeOfValidityNotBefore() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCertificateConfigValidity) *string {
 		return v.TimeOfValidityNotBefore
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetCertificatesCertificateCollectionItemCertificateConfigValidityArrayOutput struct{ *pulumi.OutputState }
@@ -15103,12 +13052,6 @@ func (o GetCertificatesCertificateCollectionItemCertificateConfigValidityArrayOu
 
 func (o GetCertificatesCertificateCollectionItemCertificateConfigValidityArrayOutput) ToGetCertificatesCertificateCollectionItemCertificateConfigValidityArrayOutputWithContext(ctx context.Context) GetCertificatesCertificateCollectionItemCertificateConfigValidityArrayOutput {
 	return o
-}
-
-func (o GetCertificatesCertificateCollectionItemCertificateConfigValidityArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificatesCertificateCollectionItemCertificateConfigValidity] {
-	return pulumix.Output[[]GetCertificatesCertificateCollectionItemCertificateConfigValidity]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetCertificatesCertificateCollectionItemCertificateConfigValidityArrayOutput) Index(i pulumi.IntInput) GetCertificatesCertificateCollectionItemCertificateConfigValidityOutput {
@@ -15154,12 +13097,6 @@ func (i GetCertificatesCertificateCollectionItemCertificateRevocationListDetailA
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificatesCertificateCollectionItemCertificateRevocationListDetailOutput)
 }
 
-func (i GetCertificatesCertificateCollectionItemCertificateRevocationListDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetCertificatesCertificateCollectionItemCertificateRevocationListDetail] {
-	return pulumix.Output[GetCertificatesCertificateCollectionItemCertificateRevocationListDetail]{
-		OutputState: i.ToGetCertificatesCertificateCollectionItemCertificateRevocationListDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetCertificatesCertificateCollectionItemCertificateRevocationListDetailArrayInput is an input type that accepts GetCertificatesCertificateCollectionItemCertificateRevocationListDetailArray and GetCertificatesCertificateCollectionItemCertificateRevocationListDetailArrayOutput values.
 // You can construct a concrete instance of `GetCertificatesCertificateCollectionItemCertificateRevocationListDetailArrayInput` via:
 //
@@ -15185,12 +13122,6 @@ func (i GetCertificatesCertificateCollectionItemCertificateRevocationListDetailA
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificatesCertificateCollectionItemCertificateRevocationListDetailArrayOutput)
 }
 
-func (i GetCertificatesCertificateCollectionItemCertificateRevocationListDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificatesCertificateCollectionItemCertificateRevocationListDetail] {
-	return pulumix.Output[[]GetCertificatesCertificateCollectionItemCertificateRevocationListDetail]{
-		OutputState: i.ToGetCertificatesCertificateCollectionItemCertificateRevocationListDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCertificatesCertificateCollectionItemCertificateRevocationListDetailOutput struct{ *pulumi.OutputState }
 
 func (GetCertificatesCertificateCollectionItemCertificateRevocationListDetailOutput) ElementType() reflect.Type {
@@ -15203,12 +13134,6 @@ func (o GetCertificatesCertificateCollectionItemCertificateRevocationListDetailO
 
 func (o GetCertificatesCertificateCollectionItemCertificateRevocationListDetailOutput) ToGetCertificatesCertificateCollectionItemCertificateRevocationListDetailOutputWithContext(ctx context.Context) GetCertificatesCertificateCollectionItemCertificateRevocationListDetailOutput {
 	return o
-}
-
-func (o GetCertificatesCertificateCollectionItemCertificateRevocationListDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificatesCertificateCollectionItemCertificateRevocationListDetail] {
-	return pulumix.Output[GetCertificatesCertificateCollectionItemCertificateRevocationListDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Optional CRL access points, expressed using a format where the version number of the issuing CA is inserted wherever you include a pair of curly braces. This versioning scheme helps avoid collisions when new CA versions are created. For example, myCrlFileIssuedFromCAVersion{}.crl becomes myCrlFileIssuedFromCAVersion2.crl for CA version 2.
@@ -15239,12 +13164,6 @@ func (o GetCertificatesCertificateCollectionItemCertificateRevocationListDetailA
 	return o
 }
 
-func (o GetCertificatesCertificateCollectionItemCertificateRevocationListDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificatesCertificateCollectionItemCertificateRevocationListDetail] {
-	return pulumix.Output[[]GetCertificatesCertificateCollectionItemCertificateRevocationListDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCertificatesCertificateCollectionItemCertificateRevocationListDetailArrayOutput) Index(i pulumi.IntInput) GetCertificatesCertificateCollectionItemCertificateRevocationListDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCertificatesCertificateCollectionItemCertificateRevocationListDetail {
 		return vs[0].([]GetCertificatesCertificateCollectionItemCertificateRevocationListDetail)[vs[1].(int)]
@@ -15253,11 +13172,11 @@ func (o GetCertificatesCertificateCollectionItemCertificateRevocationListDetailA
 
 type GetCertificatesCertificateCollectionItemCertificateRevocationListDetailObjectStorageConfig struct {
 	// The name of the bucket where the CRL is stored.
-	ObjectStorageBucketName string `pulumi:"objectStorageBucketName"`
+	ObjectStorageBucketName *string `pulumi:"objectStorageBucketName"`
 	// The tenancy of the bucket where the CRL is stored.
-	ObjectStorageNamespace string `pulumi:"objectStorageNamespace"`
+	ObjectStorageNamespace *string `pulumi:"objectStorageNamespace"`
 	// The object name in the bucket where the CRL is stored, expressed using a format where the version number of the issuing CA is inserted as part of the Object Storage object name wherever you include a pair of curly braces. This versioning scheme helps avoid collisions when new CA versions are created. For example, myCrlFileIssuedFromCAVersion{}.crl becomes myCrlFileIssuedFromCAVersion2.crl for CA version 2.
-	ObjectStorageObjectNameFormat string `pulumi:"objectStorageObjectNameFormat"`
+	ObjectStorageObjectNameFormat *string `pulumi:"objectStorageObjectNameFormat"`
 }
 
 // GetCertificatesCertificateCollectionItemCertificateRevocationListDetailObjectStorageConfigInput is an input type that accepts GetCertificatesCertificateCollectionItemCertificateRevocationListDetailObjectStorageConfigArgs and GetCertificatesCertificateCollectionItemCertificateRevocationListDetailObjectStorageConfigOutput values.
@@ -15273,11 +13192,11 @@ type GetCertificatesCertificateCollectionItemCertificateRevocationListDetailObje
 
 type GetCertificatesCertificateCollectionItemCertificateRevocationListDetailObjectStorageConfigArgs struct {
 	// The name of the bucket where the CRL is stored.
-	ObjectStorageBucketName pulumi.StringInput `pulumi:"objectStorageBucketName"`
+	ObjectStorageBucketName pulumi.StringPtrInput `pulumi:"objectStorageBucketName"`
 	// The tenancy of the bucket where the CRL is stored.
-	ObjectStorageNamespace pulumi.StringInput `pulumi:"objectStorageNamespace"`
+	ObjectStorageNamespace pulumi.StringPtrInput `pulumi:"objectStorageNamespace"`
 	// The object name in the bucket where the CRL is stored, expressed using a format where the version number of the issuing CA is inserted as part of the Object Storage object name wherever you include a pair of curly braces. This versioning scheme helps avoid collisions when new CA versions are created. For example, myCrlFileIssuedFromCAVersion{}.crl becomes myCrlFileIssuedFromCAVersion2.crl for CA version 2.
-	ObjectStorageObjectNameFormat pulumi.StringInput `pulumi:"objectStorageObjectNameFormat"`
+	ObjectStorageObjectNameFormat pulumi.StringPtrInput `pulumi:"objectStorageObjectNameFormat"`
 }
 
 func (GetCertificatesCertificateCollectionItemCertificateRevocationListDetailObjectStorageConfigArgs) ElementType() reflect.Type {
@@ -15290,12 +13209,6 @@ func (i GetCertificatesCertificateCollectionItemCertificateRevocationListDetailO
 
 func (i GetCertificatesCertificateCollectionItemCertificateRevocationListDetailObjectStorageConfigArgs) ToGetCertificatesCertificateCollectionItemCertificateRevocationListDetailObjectStorageConfigOutputWithContext(ctx context.Context) GetCertificatesCertificateCollectionItemCertificateRevocationListDetailObjectStorageConfigOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificatesCertificateCollectionItemCertificateRevocationListDetailObjectStorageConfigOutput)
-}
-
-func (i GetCertificatesCertificateCollectionItemCertificateRevocationListDetailObjectStorageConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetCertificatesCertificateCollectionItemCertificateRevocationListDetailObjectStorageConfig] {
-	return pulumix.Output[GetCertificatesCertificateCollectionItemCertificateRevocationListDetailObjectStorageConfig]{
-		OutputState: i.ToGetCertificatesCertificateCollectionItemCertificateRevocationListDetailObjectStorageConfigOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetCertificatesCertificateCollectionItemCertificateRevocationListDetailObjectStorageConfigArrayInput is an input type that accepts GetCertificatesCertificateCollectionItemCertificateRevocationListDetailObjectStorageConfigArray and GetCertificatesCertificateCollectionItemCertificateRevocationListDetailObjectStorageConfigArrayOutput values.
@@ -15323,12 +13236,6 @@ func (i GetCertificatesCertificateCollectionItemCertificateRevocationListDetailO
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificatesCertificateCollectionItemCertificateRevocationListDetailObjectStorageConfigArrayOutput)
 }
 
-func (i GetCertificatesCertificateCollectionItemCertificateRevocationListDetailObjectStorageConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificatesCertificateCollectionItemCertificateRevocationListDetailObjectStorageConfig] {
-	return pulumix.Output[[]GetCertificatesCertificateCollectionItemCertificateRevocationListDetailObjectStorageConfig]{
-		OutputState: i.ToGetCertificatesCertificateCollectionItemCertificateRevocationListDetailObjectStorageConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCertificatesCertificateCollectionItemCertificateRevocationListDetailObjectStorageConfigOutput struct{ *pulumi.OutputState }
 
 func (GetCertificatesCertificateCollectionItemCertificateRevocationListDetailObjectStorageConfigOutput) ElementType() reflect.Type {
@@ -15343,31 +13250,25 @@ func (o GetCertificatesCertificateCollectionItemCertificateRevocationListDetailO
 	return o
 }
 
-func (o GetCertificatesCertificateCollectionItemCertificateRevocationListDetailObjectStorageConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificatesCertificateCollectionItemCertificateRevocationListDetailObjectStorageConfig] {
-	return pulumix.Output[GetCertificatesCertificateCollectionItemCertificateRevocationListDetailObjectStorageConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The name of the bucket where the CRL is stored.
-func (o GetCertificatesCertificateCollectionItemCertificateRevocationListDetailObjectStorageConfigOutput) ObjectStorageBucketName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCertificateRevocationListDetailObjectStorageConfig) string {
+func (o GetCertificatesCertificateCollectionItemCertificateRevocationListDetailObjectStorageConfigOutput) ObjectStorageBucketName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCertificateRevocationListDetailObjectStorageConfig) *string {
 		return v.ObjectStorageBucketName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The tenancy of the bucket where the CRL is stored.
-func (o GetCertificatesCertificateCollectionItemCertificateRevocationListDetailObjectStorageConfigOutput) ObjectStorageNamespace() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCertificateRevocationListDetailObjectStorageConfig) string {
+func (o GetCertificatesCertificateCollectionItemCertificateRevocationListDetailObjectStorageConfigOutput) ObjectStorageNamespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCertificateRevocationListDetailObjectStorageConfig) *string {
 		return v.ObjectStorageNamespace
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The object name in the bucket where the CRL is stored, expressed using a format where the version number of the issuing CA is inserted as part of the Object Storage object name wherever you include a pair of curly braces. This versioning scheme helps avoid collisions when new CA versions are created. For example, myCrlFileIssuedFromCAVersion{}.crl becomes myCrlFileIssuedFromCAVersion2.crl for CA version 2.
-func (o GetCertificatesCertificateCollectionItemCertificateRevocationListDetailObjectStorageConfigOutput) ObjectStorageObjectNameFormat() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCertificateRevocationListDetailObjectStorageConfig) string {
+func (o GetCertificatesCertificateCollectionItemCertificateRevocationListDetailObjectStorageConfigOutput) ObjectStorageObjectNameFormat() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCertificateRevocationListDetailObjectStorageConfig) *string {
 		return v.ObjectStorageObjectNameFormat
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetCertificatesCertificateCollectionItemCertificateRevocationListDetailObjectStorageConfigArrayOutput struct{ *pulumi.OutputState }
@@ -15384,12 +13285,6 @@ func (o GetCertificatesCertificateCollectionItemCertificateRevocationListDetailO
 	return o
 }
 
-func (o GetCertificatesCertificateCollectionItemCertificateRevocationListDetailObjectStorageConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificatesCertificateCollectionItemCertificateRevocationListDetailObjectStorageConfig] {
-	return pulumix.Output[[]GetCertificatesCertificateCollectionItemCertificateRevocationListDetailObjectStorageConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCertificatesCertificateCollectionItemCertificateRevocationListDetailObjectStorageConfigArrayOutput) Index(i pulumi.IntInput) GetCertificatesCertificateCollectionItemCertificateRevocationListDetailObjectStorageConfigOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCertificatesCertificateCollectionItemCertificateRevocationListDetailObjectStorageConfig {
 		return vs[0].([]GetCertificatesCertificateCollectionItemCertificateRevocationListDetailObjectStorageConfig)[vs[1].(int)]
@@ -15398,11 +13293,11 @@ func (o GetCertificatesCertificateCollectionItemCertificateRevocationListDetailO
 
 type GetCertificatesCertificateCollectionItemCertificateRule struct {
 	// A property specifying the period of time, in days, before the certificate's targeted renewal that the process should occur. Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
-	AdvanceRenewalPeriod string `pulumi:"advanceRenewalPeriod"`
+	AdvanceRenewalPeriod *string `pulumi:"advanceRenewalPeriod"`
 	// A property specifying how often, in days, a certificate should be renewed. Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
-	RenewalInterval string `pulumi:"renewalInterval"`
+	RenewalInterval *string `pulumi:"renewalInterval"`
 	// The type of rule.
-	RuleType string `pulumi:"ruleType"`
+	RuleType *string `pulumi:"ruleType"`
 }
 
 // GetCertificatesCertificateCollectionItemCertificateRuleInput is an input type that accepts GetCertificatesCertificateCollectionItemCertificateRuleArgs and GetCertificatesCertificateCollectionItemCertificateRuleOutput values.
@@ -15418,11 +13313,11 @@ type GetCertificatesCertificateCollectionItemCertificateRuleInput interface {
 
 type GetCertificatesCertificateCollectionItemCertificateRuleArgs struct {
 	// A property specifying the period of time, in days, before the certificate's targeted renewal that the process should occur. Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
-	AdvanceRenewalPeriod pulumi.StringInput `pulumi:"advanceRenewalPeriod"`
+	AdvanceRenewalPeriod pulumi.StringPtrInput `pulumi:"advanceRenewalPeriod"`
 	// A property specifying how often, in days, a certificate should be renewed. Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
-	RenewalInterval pulumi.StringInput `pulumi:"renewalInterval"`
+	RenewalInterval pulumi.StringPtrInput `pulumi:"renewalInterval"`
 	// The type of rule.
-	RuleType pulumi.StringInput `pulumi:"ruleType"`
+	RuleType pulumi.StringPtrInput `pulumi:"ruleType"`
 }
 
 func (GetCertificatesCertificateCollectionItemCertificateRuleArgs) ElementType() reflect.Type {
@@ -15435,12 +13330,6 @@ func (i GetCertificatesCertificateCollectionItemCertificateRuleArgs) ToGetCertif
 
 func (i GetCertificatesCertificateCollectionItemCertificateRuleArgs) ToGetCertificatesCertificateCollectionItemCertificateRuleOutputWithContext(ctx context.Context) GetCertificatesCertificateCollectionItemCertificateRuleOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificatesCertificateCollectionItemCertificateRuleOutput)
-}
-
-func (i GetCertificatesCertificateCollectionItemCertificateRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetCertificatesCertificateCollectionItemCertificateRule] {
-	return pulumix.Output[GetCertificatesCertificateCollectionItemCertificateRule]{
-		OutputState: i.ToGetCertificatesCertificateCollectionItemCertificateRuleOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetCertificatesCertificateCollectionItemCertificateRuleArrayInput is an input type that accepts GetCertificatesCertificateCollectionItemCertificateRuleArray and GetCertificatesCertificateCollectionItemCertificateRuleArrayOutput values.
@@ -15468,12 +13357,6 @@ func (i GetCertificatesCertificateCollectionItemCertificateRuleArray) ToGetCerti
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificatesCertificateCollectionItemCertificateRuleArrayOutput)
 }
 
-func (i GetCertificatesCertificateCollectionItemCertificateRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificatesCertificateCollectionItemCertificateRule] {
-	return pulumix.Output[[]GetCertificatesCertificateCollectionItemCertificateRule]{
-		OutputState: i.ToGetCertificatesCertificateCollectionItemCertificateRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCertificatesCertificateCollectionItemCertificateRuleOutput struct{ *pulumi.OutputState }
 
 func (GetCertificatesCertificateCollectionItemCertificateRuleOutput) ElementType() reflect.Type {
@@ -15488,25 +13371,19 @@ func (o GetCertificatesCertificateCollectionItemCertificateRuleOutput) ToGetCert
 	return o
 }
 
-func (o GetCertificatesCertificateCollectionItemCertificateRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificatesCertificateCollectionItemCertificateRule] {
-	return pulumix.Output[GetCertificatesCertificateCollectionItemCertificateRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A property specifying the period of time, in days, before the certificate's targeted renewal that the process should occur. Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
-func (o GetCertificatesCertificateCollectionItemCertificateRuleOutput) AdvanceRenewalPeriod() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCertificateRule) string { return v.AdvanceRenewalPeriod }).(pulumi.StringOutput)
+func (o GetCertificatesCertificateCollectionItemCertificateRuleOutput) AdvanceRenewalPeriod() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCertificateRule) *string { return v.AdvanceRenewalPeriod }).(pulumi.StringPtrOutput)
 }
 
 // A property specifying how often, in days, a certificate should be renewed. Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
-func (o GetCertificatesCertificateCollectionItemCertificateRuleOutput) RenewalInterval() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCertificateRule) string { return v.RenewalInterval }).(pulumi.StringOutput)
+func (o GetCertificatesCertificateCollectionItemCertificateRuleOutput) RenewalInterval() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCertificateRule) *string { return v.RenewalInterval }).(pulumi.StringPtrOutput)
 }
 
 // The type of rule.
-func (o GetCertificatesCertificateCollectionItemCertificateRuleOutput) RuleType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCertificateRule) string { return v.RuleType }).(pulumi.StringOutput)
+func (o GetCertificatesCertificateCollectionItemCertificateRuleOutput) RuleType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCertificateRule) *string { return v.RuleType }).(pulumi.StringPtrOutput)
 }
 
 type GetCertificatesCertificateCollectionItemCertificateRuleArrayOutput struct{ *pulumi.OutputState }
@@ -15523,12 +13400,6 @@ func (o GetCertificatesCertificateCollectionItemCertificateRuleArrayOutput) ToGe
 	return o
 }
 
-func (o GetCertificatesCertificateCollectionItemCertificateRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificatesCertificateCollectionItemCertificateRule] {
-	return pulumix.Output[[]GetCertificatesCertificateCollectionItemCertificateRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCertificatesCertificateCollectionItemCertificateRuleArrayOutput) Index(i pulumi.IntInput) GetCertificatesCertificateCollectionItemCertificateRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCertificatesCertificateCollectionItemCertificateRule {
 		return vs[0].([]GetCertificatesCertificateCollectionItemCertificateRule)[vs[1].(int)]
@@ -15537,27 +13408,27 @@ func (o GetCertificatesCertificateCollectionItemCertificateRuleArrayOutput) Inde
 
 type GetCertificatesCertificateCollectionItemCurrentVersion struct {
 	// The OCID of the certificate. If the parameter is set to null, the service lists all certificates.
-	CertificateId string `pulumi:"certificateId"`
+	CertificateId *string `pulumi:"certificateId"`
 	// The version number of the issuing certificate authority (CA).
-	IssuerCaVersionNumber string `pulumi:"issuerCaVersionNumber"`
+	IssuerCaVersionNumber *string `pulumi:"issuerCaVersionNumber"`
 	// The current revocation status of the entity.
 	RevocationStatuses []GetCertificatesCertificateCollectionItemCurrentVersionRevocationStatus `pulumi:"revocationStatuses"`
 	// Unique subject identifier, which is not the same as the certificate serial number (RDN SERIALNUMBER).
-	SerialNumber string `pulumi:"serialNumber"`
+	SerialNumber *string `pulumi:"serialNumber"`
 	// A list of rotation states for this certificate version.
 	Stages []string `pulumi:"stages"`
 	// A list of subject alternative names.
 	SubjectAlternativeNames []GetCertificatesCertificateCollectionItemCurrentVersionSubjectAlternativeName `pulumi:"subjectAlternativeNames"`
 	// A property indicating when the certificate was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// An optional property indicating when to delete the certificate version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfDeletion string `pulumi:"timeOfDeletion"`
+	TimeOfDeletion *string `pulumi:"timeOfDeletion"`
 	// An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
 	Validities []GetCertificatesCertificateCollectionItemCurrentVersionValidity `pulumi:"validities"`
 	// The name of the certificate version. When the value is not null, a name is unique across versions of a given certificate.
-	VersionName string `pulumi:"versionName"`
+	VersionName *string `pulumi:"versionName"`
 	// The version number of the certificate.
-	VersionNumber string `pulumi:"versionNumber"`
+	VersionNumber *string `pulumi:"versionNumber"`
 }
 
 // GetCertificatesCertificateCollectionItemCurrentVersionInput is an input type that accepts GetCertificatesCertificateCollectionItemCurrentVersionArgs and GetCertificatesCertificateCollectionItemCurrentVersionOutput values.
@@ -15573,27 +13444,27 @@ type GetCertificatesCertificateCollectionItemCurrentVersionInput interface {
 
 type GetCertificatesCertificateCollectionItemCurrentVersionArgs struct {
 	// The OCID of the certificate. If the parameter is set to null, the service lists all certificates.
-	CertificateId pulumi.StringInput `pulumi:"certificateId"`
+	CertificateId pulumi.StringPtrInput `pulumi:"certificateId"`
 	// The version number of the issuing certificate authority (CA).
-	IssuerCaVersionNumber pulumi.StringInput `pulumi:"issuerCaVersionNumber"`
+	IssuerCaVersionNumber pulumi.StringPtrInput `pulumi:"issuerCaVersionNumber"`
 	// The current revocation status of the entity.
 	RevocationStatuses GetCertificatesCertificateCollectionItemCurrentVersionRevocationStatusArrayInput `pulumi:"revocationStatuses"`
 	// Unique subject identifier, which is not the same as the certificate serial number (RDN SERIALNUMBER).
-	SerialNumber pulumi.StringInput `pulumi:"serialNumber"`
+	SerialNumber pulumi.StringPtrInput `pulumi:"serialNumber"`
 	// A list of rotation states for this certificate version.
 	Stages pulumi.StringArrayInput `pulumi:"stages"`
 	// A list of subject alternative names.
 	SubjectAlternativeNames GetCertificatesCertificateCollectionItemCurrentVersionSubjectAlternativeNameArrayInput `pulumi:"subjectAlternativeNames"`
 	// A property indicating when the certificate was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// An optional property indicating when to delete the certificate version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfDeletion pulumi.StringInput `pulumi:"timeOfDeletion"`
+	TimeOfDeletion pulumi.StringPtrInput `pulumi:"timeOfDeletion"`
 	// An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
 	Validities GetCertificatesCertificateCollectionItemCurrentVersionValidityArrayInput `pulumi:"validities"`
 	// The name of the certificate version. When the value is not null, a name is unique across versions of a given certificate.
-	VersionName pulumi.StringInput `pulumi:"versionName"`
+	VersionName pulumi.StringPtrInput `pulumi:"versionName"`
 	// The version number of the certificate.
-	VersionNumber pulumi.StringInput `pulumi:"versionNumber"`
+	VersionNumber pulumi.StringPtrInput `pulumi:"versionNumber"`
 }
 
 func (GetCertificatesCertificateCollectionItemCurrentVersionArgs) ElementType() reflect.Type {
@@ -15606,12 +13477,6 @@ func (i GetCertificatesCertificateCollectionItemCurrentVersionArgs) ToGetCertifi
 
 func (i GetCertificatesCertificateCollectionItemCurrentVersionArgs) ToGetCertificatesCertificateCollectionItemCurrentVersionOutputWithContext(ctx context.Context) GetCertificatesCertificateCollectionItemCurrentVersionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificatesCertificateCollectionItemCurrentVersionOutput)
-}
-
-func (i GetCertificatesCertificateCollectionItemCurrentVersionArgs) ToOutput(ctx context.Context) pulumix.Output[GetCertificatesCertificateCollectionItemCurrentVersion] {
-	return pulumix.Output[GetCertificatesCertificateCollectionItemCurrentVersion]{
-		OutputState: i.ToGetCertificatesCertificateCollectionItemCurrentVersionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetCertificatesCertificateCollectionItemCurrentVersionArrayInput is an input type that accepts GetCertificatesCertificateCollectionItemCurrentVersionArray and GetCertificatesCertificateCollectionItemCurrentVersionArrayOutput values.
@@ -15639,12 +13504,6 @@ func (i GetCertificatesCertificateCollectionItemCurrentVersionArray) ToGetCertif
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificatesCertificateCollectionItemCurrentVersionArrayOutput)
 }
 
-func (i GetCertificatesCertificateCollectionItemCurrentVersionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificatesCertificateCollectionItemCurrentVersion] {
-	return pulumix.Output[[]GetCertificatesCertificateCollectionItemCurrentVersion]{
-		OutputState: i.ToGetCertificatesCertificateCollectionItemCurrentVersionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCertificatesCertificateCollectionItemCurrentVersionOutput struct{ *pulumi.OutputState }
 
 func (GetCertificatesCertificateCollectionItemCurrentVersionOutput) ElementType() reflect.Type {
@@ -15659,20 +13518,14 @@ func (o GetCertificatesCertificateCollectionItemCurrentVersionOutput) ToGetCerti
 	return o
 }
 
-func (o GetCertificatesCertificateCollectionItemCurrentVersionOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificatesCertificateCollectionItemCurrentVersion] {
-	return pulumix.Output[GetCertificatesCertificateCollectionItemCurrentVersion]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the certificate. If the parameter is set to null, the service lists all certificates.
-func (o GetCertificatesCertificateCollectionItemCurrentVersionOutput) CertificateId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCurrentVersion) string { return v.CertificateId }).(pulumi.StringOutput)
+func (o GetCertificatesCertificateCollectionItemCurrentVersionOutput) CertificateId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCurrentVersion) *string { return v.CertificateId }).(pulumi.StringPtrOutput)
 }
 
 // The version number of the issuing certificate authority (CA).
-func (o GetCertificatesCertificateCollectionItemCurrentVersionOutput) IssuerCaVersionNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCurrentVersion) string { return v.IssuerCaVersionNumber }).(pulumi.StringOutput)
+func (o GetCertificatesCertificateCollectionItemCurrentVersionOutput) IssuerCaVersionNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCurrentVersion) *string { return v.IssuerCaVersionNumber }).(pulumi.StringPtrOutput)
 }
 
 // The current revocation status of the entity.
@@ -15683,8 +13536,8 @@ func (o GetCertificatesCertificateCollectionItemCurrentVersionOutput) Revocation
 }
 
 // Unique subject identifier, which is not the same as the certificate serial number (RDN SERIALNUMBER).
-func (o GetCertificatesCertificateCollectionItemCurrentVersionOutput) SerialNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCurrentVersion) string { return v.SerialNumber }).(pulumi.StringOutput)
+func (o GetCertificatesCertificateCollectionItemCurrentVersionOutput) SerialNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCurrentVersion) *string { return v.SerialNumber }).(pulumi.StringPtrOutput)
 }
 
 // A list of rotation states for this certificate version.
@@ -15700,13 +13553,13 @@ func (o GetCertificatesCertificateCollectionItemCurrentVersionOutput) SubjectAlt
 }
 
 // A property indicating when the certificate was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-func (o GetCertificatesCertificateCollectionItemCurrentVersionOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCurrentVersion) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetCertificatesCertificateCollectionItemCurrentVersionOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCurrentVersion) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // An optional property indicating when to delete the certificate version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-func (o GetCertificatesCertificateCollectionItemCurrentVersionOutput) TimeOfDeletion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCurrentVersion) string { return v.TimeOfDeletion }).(pulumi.StringOutput)
+func (o GetCertificatesCertificateCollectionItemCurrentVersionOutput) TimeOfDeletion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCurrentVersion) *string { return v.TimeOfDeletion }).(pulumi.StringPtrOutput)
 }
 
 // An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
@@ -15717,13 +13570,13 @@ func (o GetCertificatesCertificateCollectionItemCurrentVersionOutput) Validities
 }
 
 // The name of the certificate version. When the value is not null, a name is unique across versions of a given certificate.
-func (o GetCertificatesCertificateCollectionItemCurrentVersionOutput) VersionName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCurrentVersion) string { return v.VersionName }).(pulumi.StringOutput)
+func (o GetCertificatesCertificateCollectionItemCurrentVersionOutput) VersionName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCurrentVersion) *string { return v.VersionName }).(pulumi.StringPtrOutput)
 }
 
 // The version number of the certificate.
-func (o GetCertificatesCertificateCollectionItemCurrentVersionOutput) VersionNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCurrentVersion) string { return v.VersionNumber }).(pulumi.StringOutput)
+func (o GetCertificatesCertificateCollectionItemCurrentVersionOutput) VersionNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCurrentVersion) *string { return v.VersionNumber }).(pulumi.StringPtrOutput)
 }
 
 type GetCertificatesCertificateCollectionItemCurrentVersionArrayOutput struct{ *pulumi.OutputState }
@@ -15740,12 +13593,6 @@ func (o GetCertificatesCertificateCollectionItemCurrentVersionArrayOutput) ToGet
 	return o
 }
 
-func (o GetCertificatesCertificateCollectionItemCurrentVersionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificatesCertificateCollectionItemCurrentVersion] {
-	return pulumix.Output[[]GetCertificatesCertificateCollectionItemCurrentVersion]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCertificatesCertificateCollectionItemCurrentVersionArrayOutput) Index(i pulumi.IntInput) GetCertificatesCertificateCollectionItemCurrentVersionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCertificatesCertificateCollectionItemCurrentVersion {
 		return vs[0].([]GetCertificatesCertificateCollectionItemCurrentVersion)[vs[1].(int)]
@@ -15754,9 +13601,9 @@ func (o GetCertificatesCertificateCollectionItemCurrentVersionArrayOutput) Index
 
 type GetCertificatesCertificateCollectionItemCurrentVersionRevocationStatus struct {
 	// The reason the certificate or certificate authority (CA) was revoked.
-	RevocationReason string `pulumi:"revocationReason"`
+	RevocationReason *string `pulumi:"revocationReason"`
 	// The time when the entity was revoked, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfRevocation string `pulumi:"timeOfRevocation"`
+	TimeOfRevocation *string `pulumi:"timeOfRevocation"`
 }
 
 // GetCertificatesCertificateCollectionItemCurrentVersionRevocationStatusInput is an input type that accepts GetCertificatesCertificateCollectionItemCurrentVersionRevocationStatusArgs and GetCertificatesCertificateCollectionItemCurrentVersionRevocationStatusOutput values.
@@ -15772,9 +13619,9 @@ type GetCertificatesCertificateCollectionItemCurrentVersionRevocationStatusInput
 
 type GetCertificatesCertificateCollectionItemCurrentVersionRevocationStatusArgs struct {
 	// The reason the certificate or certificate authority (CA) was revoked.
-	RevocationReason pulumi.StringInput `pulumi:"revocationReason"`
+	RevocationReason pulumi.StringPtrInput `pulumi:"revocationReason"`
 	// The time when the entity was revoked, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfRevocation pulumi.StringInput `pulumi:"timeOfRevocation"`
+	TimeOfRevocation pulumi.StringPtrInput `pulumi:"timeOfRevocation"`
 }
 
 func (GetCertificatesCertificateCollectionItemCurrentVersionRevocationStatusArgs) ElementType() reflect.Type {
@@ -15787,12 +13634,6 @@ func (i GetCertificatesCertificateCollectionItemCurrentVersionRevocationStatusAr
 
 func (i GetCertificatesCertificateCollectionItemCurrentVersionRevocationStatusArgs) ToGetCertificatesCertificateCollectionItemCurrentVersionRevocationStatusOutputWithContext(ctx context.Context) GetCertificatesCertificateCollectionItemCurrentVersionRevocationStatusOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificatesCertificateCollectionItemCurrentVersionRevocationStatusOutput)
-}
-
-func (i GetCertificatesCertificateCollectionItemCurrentVersionRevocationStatusArgs) ToOutput(ctx context.Context) pulumix.Output[GetCertificatesCertificateCollectionItemCurrentVersionRevocationStatus] {
-	return pulumix.Output[GetCertificatesCertificateCollectionItemCurrentVersionRevocationStatus]{
-		OutputState: i.ToGetCertificatesCertificateCollectionItemCurrentVersionRevocationStatusOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetCertificatesCertificateCollectionItemCurrentVersionRevocationStatusArrayInput is an input type that accepts GetCertificatesCertificateCollectionItemCurrentVersionRevocationStatusArray and GetCertificatesCertificateCollectionItemCurrentVersionRevocationStatusArrayOutput values.
@@ -15820,12 +13661,6 @@ func (i GetCertificatesCertificateCollectionItemCurrentVersionRevocationStatusAr
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificatesCertificateCollectionItemCurrentVersionRevocationStatusArrayOutput)
 }
 
-func (i GetCertificatesCertificateCollectionItemCurrentVersionRevocationStatusArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificatesCertificateCollectionItemCurrentVersionRevocationStatus] {
-	return pulumix.Output[[]GetCertificatesCertificateCollectionItemCurrentVersionRevocationStatus]{
-		OutputState: i.ToGetCertificatesCertificateCollectionItemCurrentVersionRevocationStatusArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCertificatesCertificateCollectionItemCurrentVersionRevocationStatusOutput struct{ *pulumi.OutputState }
 
 func (GetCertificatesCertificateCollectionItemCurrentVersionRevocationStatusOutput) ElementType() reflect.Type {
@@ -15840,24 +13675,18 @@ func (o GetCertificatesCertificateCollectionItemCurrentVersionRevocationStatusOu
 	return o
 }
 
-func (o GetCertificatesCertificateCollectionItemCurrentVersionRevocationStatusOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificatesCertificateCollectionItemCurrentVersionRevocationStatus] {
-	return pulumix.Output[GetCertificatesCertificateCollectionItemCurrentVersionRevocationStatus]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The reason the certificate or certificate authority (CA) was revoked.
-func (o GetCertificatesCertificateCollectionItemCurrentVersionRevocationStatusOutput) RevocationReason() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCurrentVersionRevocationStatus) string {
+func (o GetCertificatesCertificateCollectionItemCurrentVersionRevocationStatusOutput) RevocationReason() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCurrentVersionRevocationStatus) *string {
 		return v.RevocationReason
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The time when the entity was revoked, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-func (o GetCertificatesCertificateCollectionItemCurrentVersionRevocationStatusOutput) TimeOfRevocation() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCurrentVersionRevocationStatus) string {
+func (o GetCertificatesCertificateCollectionItemCurrentVersionRevocationStatusOutput) TimeOfRevocation() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCurrentVersionRevocationStatus) *string {
 		return v.TimeOfRevocation
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetCertificatesCertificateCollectionItemCurrentVersionRevocationStatusArrayOutput struct{ *pulumi.OutputState }
@@ -15874,12 +13703,6 @@ func (o GetCertificatesCertificateCollectionItemCurrentVersionRevocationStatusAr
 	return o
 }
 
-func (o GetCertificatesCertificateCollectionItemCurrentVersionRevocationStatusArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificatesCertificateCollectionItemCurrentVersionRevocationStatus] {
-	return pulumix.Output[[]GetCertificatesCertificateCollectionItemCurrentVersionRevocationStatus]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCertificatesCertificateCollectionItemCurrentVersionRevocationStatusArrayOutput) Index(i pulumi.IntInput) GetCertificatesCertificateCollectionItemCurrentVersionRevocationStatusOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCertificatesCertificateCollectionItemCurrentVersionRevocationStatus {
 		return vs[0].([]GetCertificatesCertificateCollectionItemCurrentVersionRevocationStatus)[vs[1].(int)]
@@ -15888,9 +13711,9 @@ func (o GetCertificatesCertificateCollectionItemCurrentVersionRevocationStatusAr
 
 type GetCertificatesCertificateCollectionItemCurrentVersionSubjectAlternativeName struct {
 	// The subject alternative name type. Currently only DNS domain or host names and IP addresses are supported.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 	// The subject alternative name.
-	Value string `pulumi:"value"`
+	Value *string `pulumi:"value"`
 }
 
 // GetCertificatesCertificateCollectionItemCurrentVersionSubjectAlternativeNameInput is an input type that accepts GetCertificatesCertificateCollectionItemCurrentVersionSubjectAlternativeNameArgs and GetCertificatesCertificateCollectionItemCurrentVersionSubjectAlternativeNameOutput values.
@@ -15906,9 +13729,9 @@ type GetCertificatesCertificateCollectionItemCurrentVersionSubjectAlternativeNam
 
 type GetCertificatesCertificateCollectionItemCurrentVersionSubjectAlternativeNameArgs struct {
 	// The subject alternative name type. Currently only DNS domain or host names and IP addresses are supported.
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 	// The subject alternative name.
-	Value pulumi.StringInput `pulumi:"value"`
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (GetCertificatesCertificateCollectionItemCurrentVersionSubjectAlternativeNameArgs) ElementType() reflect.Type {
@@ -15921,12 +13744,6 @@ func (i GetCertificatesCertificateCollectionItemCurrentVersionSubjectAlternative
 
 func (i GetCertificatesCertificateCollectionItemCurrentVersionSubjectAlternativeNameArgs) ToGetCertificatesCertificateCollectionItemCurrentVersionSubjectAlternativeNameOutputWithContext(ctx context.Context) GetCertificatesCertificateCollectionItemCurrentVersionSubjectAlternativeNameOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificatesCertificateCollectionItemCurrentVersionSubjectAlternativeNameOutput)
-}
-
-func (i GetCertificatesCertificateCollectionItemCurrentVersionSubjectAlternativeNameArgs) ToOutput(ctx context.Context) pulumix.Output[GetCertificatesCertificateCollectionItemCurrentVersionSubjectAlternativeName] {
-	return pulumix.Output[GetCertificatesCertificateCollectionItemCurrentVersionSubjectAlternativeName]{
-		OutputState: i.ToGetCertificatesCertificateCollectionItemCurrentVersionSubjectAlternativeNameOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetCertificatesCertificateCollectionItemCurrentVersionSubjectAlternativeNameArrayInput is an input type that accepts GetCertificatesCertificateCollectionItemCurrentVersionSubjectAlternativeNameArray and GetCertificatesCertificateCollectionItemCurrentVersionSubjectAlternativeNameArrayOutput values.
@@ -15954,12 +13771,6 @@ func (i GetCertificatesCertificateCollectionItemCurrentVersionSubjectAlternative
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificatesCertificateCollectionItemCurrentVersionSubjectAlternativeNameArrayOutput)
 }
 
-func (i GetCertificatesCertificateCollectionItemCurrentVersionSubjectAlternativeNameArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificatesCertificateCollectionItemCurrentVersionSubjectAlternativeName] {
-	return pulumix.Output[[]GetCertificatesCertificateCollectionItemCurrentVersionSubjectAlternativeName]{
-		OutputState: i.ToGetCertificatesCertificateCollectionItemCurrentVersionSubjectAlternativeNameArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCertificatesCertificateCollectionItemCurrentVersionSubjectAlternativeNameOutput struct{ *pulumi.OutputState }
 
 func (GetCertificatesCertificateCollectionItemCurrentVersionSubjectAlternativeNameOutput) ElementType() reflect.Type {
@@ -15974,24 +13785,18 @@ func (o GetCertificatesCertificateCollectionItemCurrentVersionSubjectAlternative
 	return o
 }
 
-func (o GetCertificatesCertificateCollectionItemCurrentVersionSubjectAlternativeNameOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificatesCertificateCollectionItemCurrentVersionSubjectAlternativeName] {
-	return pulumix.Output[GetCertificatesCertificateCollectionItemCurrentVersionSubjectAlternativeName]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The subject alternative name type. Currently only DNS domain or host names and IP addresses are supported.
-func (o GetCertificatesCertificateCollectionItemCurrentVersionSubjectAlternativeNameOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCurrentVersionSubjectAlternativeName) string {
+func (o GetCertificatesCertificateCollectionItemCurrentVersionSubjectAlternativeNameOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCurrentVersionSubjectAlternativeName) *string {
 		return v.Type
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The subject alternative name.
-func (o GetCertificatesCertificateCollectionItemCurrentVersionSubjectAlternativeNameOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCurrentVersionSubjectAlternativeName) string {
+func (o GetCertificatesCertificateCollectionItemCurrentVersionSubjectAlternativeNameOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCurrentVersionSubjectAlternativeName) *string {
 		return v.Value
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetCertificatesCertificateCollectionItemCurrentVersionSubjectAlternativeNameArrayOutput struct{ *pulumi.OutputState }
@@ -16008,12 +13813,6 @@ func (o GetCertificatesCertificateCollectionItemCurrentVersionSubjectAlternative
 	return o
 }
 
-func (o GetCertificatesCertificateCollectionItemCurrentVersionSubjectAlternativeNameArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificatesCertificateCollectionItemCurrentVersionSubjectAlternativeName] {
-	return pulumix.Output[[]GetCertificatesCertificateCollectionItemCurrentVersionSubjectAlternativeName]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCertificatesCertificateCollectionItemCurrentVersionSubjectAlternativeNameArrayOutput) Index(i pulumi.IntInput) GetCertificatesCertificateCollectionItemCurrentVersionSubjectAlternativeNameOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCertificatesCertificateCollectionItemCurrentVersionSubjectAlternativeName {
 		return vs[0].([]GetCertificatesCertificateCollectionItemCurrentVersionSubjectAlternativeName)[vs[1].(int)]
@@ -16022,9 +13821,9 @@ func (o GetCertificatesCertificateCollectionItemCurrentVersionSubjectAlternative
 
 type GetCertificatesCertificateCollectionItemCurrentVersionValidity struct {
 	// The date on which the certificate validity period ends, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfValidityNotAfter string `pulumi:"timeOfValidityNotAfter"`
+	TimeOfValidityNotAfter *string `pulumi:"timeOfValidityNotAfter"`
 	// The date on which the certificate validity period begins, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfValidityNotBefore string `pulumi:"timeOfValidityNotBefore"`
+	TimeOfValidityNotBefore *string `pulumi:"timeOfValidityNotBefore"`
 }
 
 // GetCertificatesCertificateCollectionItemCurrentVersionValidityInput is an input type that accepts GetCertificatesCertificateCollectionItemCurrentVersionValidityArgs and GetCertificatesCertificateCollectionItemCurrentVersionValidityOutput values.
@@ -16040,9 +13839,9 @@ type GetCertificatesCertificateCollectionItemCurrentVersionValidityInput interfa
 
 type GetCertificatesCertificateCollectionItemCurrentVersionValidityArgs struct {
 	// The date on which the certificate validity period ends, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfValidityNotAfter pulumi.StringInput `pulumi:"timeOfValidityNotAfter"`
+	TimeOfValidityNotAfter pulumi.StringPtrInput `pulumi:"timeOfValidityNotAfter"`
 	// The date on which the certificate validity period begins, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfValidityNotBefore pulumi.StringInput `pulumi:"timeOfValidityNotBefore"`
+	TimeOfValidityNotBefore pulumi.StringPtrInput `pulumi:"timeOfValidityNotBefore"`
 }
 
 func (GetCertificatesCertificateCollectionItemCurrentVersionValidityArgs) ElementType() reflect.Type {
@@ -16055,12 +13854,6 @@ func (i GetCertificatesCertificateCollectionItemCurrentVersionValidityArgs) ToGe
 
 func (i GetCertificatesCertificateCollectionItemCurrentVersionValidityArgs) ToGetCertificatesCertificateCollectionItemCurrentVersionValidityOutputWithContext(ctx context.Context) GetCertificatesCertificateCollectionItemCurrentVersionValidityOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificatesCertificateCollectionItemCurrentVersionValidityOutput)
-}
-
-func (i GetCertificatesCertificateCollectionItemCurrentVersionValidityArgs) ToOutput(ctx context.Context) pulumix.Output[GetCertificatesCertificateCollectionItemCurrentVersionValidity] {
-	return pulumix.Output[GetCertificatesCertificateCollectionItemCurrentVersionValidity]{
-		OutputState: i.ToGetCertificatesCertificateCollectionItemCurrentVersionValidityOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetCertificatesCertificateCollectionItemCurrentVersionValidityArrayInput is an input type that accepts GetCertificatesCertificateCollectionItemCurrentVersionValidityArray and GetCertificatesCertificateCollectionItemCurrentVersionValidityArrayOutput values.
@@ -16088,12 +13881,6 @@ func (i GetCertificatesCertificateCollectionItemCurrentVersionValidityArray) ToG
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificatesCertificateCollectionItemCurrentVersionValidityArrayOutput)
 }
 
-func (i GetCertificatesCertificateCollectionItemCurrentVersionValidityArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificatesCertificateCollectionItemCurrentVersionValidity] {
-	return pulumix.Output[[]GetCertificatesCertificateCollectionItemCurrentVersionValidity]{
-		OutputState: i.ToGetCertificatesCertificateCollectionItemCurrentVersionValidityArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCertificatesCertificateCollectionItemCurrentVersionValidityOutput struct{ *pulumi.OutputState }
 
 func (GetCertificatesCertificateCollectionItemCurrentVersionValidityOutput) ElementType() reflect.Type {
@@ -16108,24 +13895,18 @@ func (o GetCertificatesCertificateCollectionItemCurrentVersionValidityOutput) To
 	return o
 }
 
-func (o GetCertificatesCertificateCollectionItemCurrentVersionValidityOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificatesCertificateCollectionItemCurrentVersionValidity] {
-	return pulumix.Output[GetCertificatesCertificateCollectionItemCurrentVersionValidity]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The date on which the certificate validity period ends, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-func (o GetCertificatesCertificateCollectionItemCurrentVersionValidityOutput) TimeOfValidityNotAfter() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCurrentVersionValidity) string {
+func (o GetCertificatesCertificateCollectionItemCurrentVersionValidityOutput) TimeOfValidityNotAfter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCurrentVersionValidity) *string {
 		return v.TimeOfValidityNotAfter
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The date on which the certificate validity period begins, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-func (o GetCertificatesCertificateCollectionItemCurrentVersionValidityOutput) TimeOfValidityNotBefore() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCurrentVersionValidity) string {
+func (o GetCertificatesCertificateCollectionItemCurrentVersionValidityOutput) TimeOfValidityNotBefore() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCurrentVersionValidity) *string {
 		return v.TimeOfValidityNotBefore
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetCertificatesCertificateCollectionItemCurrentVersionValidityArrayOutput struct{ *pulumi.OutputState }
@@ -16142,12 +13923,6 @@ func (o GetCertificatesCertificateCollectionItemCurrentVersionValidityArrayOutpu
 	return o
 }
 
-func (o GetCertificatesCertificateCollectionItemCurrentVersionValidityArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificatesCertificateCollectionItemCurrentVersionValidity] {
-	return pulumix.Output[[]GetCertificatesCertificateCollectionItemCurrentVersionValidity]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCertificatesCertificateCollectionItemCurrentVersionValidityArrayOutput) Index(i pulumi.IntInput) GetCertificatesCertificateCollectionItemCurrentVersionValidityOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCertificatesCertificateCollectionItemCurrentVersionValidity {
 		return vs[0].([]GetCertificatesCertificateCollectionItemCurrentVersionValidity)[vs[1].(int)]
@@ -16156,39 +13931,39 @@ func (o GetCertificatesCertificateCollectionItemCurrentVersionValidityArrayOutpu
 
 type GetCertificatesCertificateCollectionItemSubject struct {
 	// Common name or fully-qualified domain name (RDN CN).
-	CommonName string `pulumi:"commonName"`
+	CommonName *string `pulumi:"commonName"`
 	// Country name (RDN C).
-	Country string `pulumi:"country"`
+	Country *string `pulumi:"country"`
 	// Distinguished name qualifier(RDN DNQ).
-	DistinguishedNameQualifier string `pulumi:"distinguishedNameQualifier"`
+	DistinguishedNameQualifier *string `pulumi:"distinguishedNameQualifier"`
 	// Domain component (RDN DC).
-	DomainComponent string `pulumi:"domainComponent"`
+	DomainComponent *string `pulumi:"domainComponent"`
 	// Personal generational qualifier (for example, Sr., Jr. 3rd, or IV).
-	GenerationQualifier string `pulumi:"generationQualifier"`
+	GenerationQualifier *string `pulumi:"generationQualifier"`
 	// Personal given name (RDN G or GN).
-	GivenName string `pulumi:"givenName"`
+	GivenName *string `pulumi:"givenName"`
 	// Personal initials.
-	Initials string `pulumi:"initials"`
+	Initials *string `pulumi:"initials"`
 	// Locality (RDN L).
-	LocalityName string `pulumi:"localityName"`
+	LocalityName *string `pulumi:"localityName"`
 	// Organization (RDN O).
-	Organization string `pulumi:"organization"`
+	Organization *string `pulumi:"organization"`
 	// Organizational unit (RDN OU).
-	OrganizationalUnit string `pulumi:"organizationalUnit"`
+	OrganizationalUnit *string `pulumi:"organizationalUnit"`
 	// Subject pseudonym.
-	Pseudonym string `pulumi:"pseudonym"`
+	Pseudonym *string `pulumi:"pseudonym"`
 	// Unique subject identifier, which is not the same as the certificate serial number (RDN SERIALNUMBER).
-	SerialNumber string `pulumi:"serialNumber"`
+	SerialNumber *string `pulumi:"serialNumber"`
 	// State or province name (RDN ST or S).
-	StateOrProvinceName string `pulumi:"stateOrProvinceName"`
+	StateOrProvinceName *string `pulumi:"stateOrProvinceName"`
 	// Street address (RDN STREET).
-	Street string `pulumi:"street"`
+	Street *string `pulumi:"street"`
 	// Personal surname (RDN SN).
-	Surname string `pulumi:"surname"`
+	Surname *string `pulumi:"surname"`
 	// Title (RDN T or TITLE).
-	Title string `pulumi:"title"`
+	Title *string `pulumi:"title"`
 	// User ID (RDN UID).
-	UserId string `pulumi:"userId"`
+	UserId *string `pulumi:"userId"`
 }
 
 // GetCertificatesCertificateCollectionItemSubjectInput is an input type that accepts GetCertificatesCertificateCollectionItemSubjectArgs and GetCertificatesCertificateCollectionItemSubjectOutput values.
@@ -16204,39 +13979,39 @@ type GetCertificatesCertificateCollectionItemSubjectInput interface {
 
 type GetCertificatesCertificateCollectionItemSubjectArgs struct {
 	// Common name or fully-qualified domain name (RDN CN).
-	CommonName pulumi.StringInput `pulumi:"commonName"`
+	CommonName pulumi.StringPtrInput `pulumi:"commonName"`
 	// Country name (RDN C).
-	Country pulumi.StringInput `pulumi:"country"`
+	Country pulumi.StringPtrInput `pulumi:"country"`
 	// Distinguished name qualifier(RDN DNQ).
-	DistinguishedNameQualifier pulumi.StringInput `pulumi:"distinguishedNameQualifier"`
+	DistinguishedNameQualifier pulumi.StringPtrInput `pulumi:"distinguishedNameQualifier"`
 	// Domain component (RDN DC).
-	DomainComponent pulumi.StringInput `pulumi:"domainComponent"`
+	DomainComponent pulumi.StringPtrInput `pulumi:"domainComponent"`
 	// Personal generational qualifier (for example, Sr., Jr. 3rd, or IV).
-	GenerationQualifier pulumi.StringInput `pulumi:"generationQualifier"`
+	GenerationQualifier pulumi.StringPtrInput `pulumi:"generationQualifier"`
 	// Personal given name (RDN G or GN).
-	GivenName pulumi.StringInput `pulumi:"givenName"`
+	GivenName pulumi.StringPtrInput `pulumi:"givenName"`
 	// Personal initials.
-	Initials pulumi.StringInput `pulumi:"initials"`
+	Initials pulumi.StringPtrInput `pulumi:"initials"`
 	// Locality (RDN L).
-	LocalityName pulumi.StringInput `pulumi:"localityName"`
+	LocalityName pulumi.StringPtrInput `pulumi:"localityName"`
 	// Organization (RDN O).
-	Organization pulumi.StringInput `pulumi:"organization"`
+	Organization pulumi.StringPtrInput `pulumi:"organization"`
 	// Organizational unit (RDN OU).
-	OrganizationalUnit pulumi.StringInput `pulumi:"organizationalUnit"`
+	OrganizationalUnit pulumi.StringPtrInput `pulumi:"organizationalUnit"`
 	// Subject pseudonym.
-	Pseudonym pulumi.StringInput `pulumi:"pseudonym"`
+	Pseudonym pulumi.StringPtrInput `pulumi:"pseudonym"`
 	// Unique subject identifier, which is not the same as the certificate serial number (RDN SERIALNUMBER).
-	SerialNumber pulumi.StringInput `pulumi:"serialNumber"`
+	SerialNumber pulumi.StringPtrInput `pulumi:"serialNumber"`
 	// State or province name (RDN ST or S).
-	StateOrProvinceName pulumi.StringInput `pulumi:"stateOrProvinceName"`
+	StateOrProvinceName pulumi.StringPtrInput `pulumi:"stateOrProvinceName"`
 	// Street address (RDN STREET).
-	Street pulumi.StringInput `pulumi:"street"`
+	Street pulumi.StringPtrInput `pulumi:"street"`
 	// Personal surname (RDN SN).
-	Surname pulumi.StringInput `pulumi:"surname"`
+	Surname pulumi.StringPtrInput `pulumi:"surname"`
 	// Title (RDN T or TITLE).
-	Title pulumi.StringInput `pulumi:"title"`
+	Title pulumi.StringPtrInput `pulumi:"title"`
 	// User ID (RDN UID).
-	UserId pulumi.StringInput `pulumi:"userId"`
+	UserId pulumi.StringPtrInput `pulumi:"userId"`
 }
 
 func (GetCertificatesCertificateCollectionItemSubjectArgs) ElementType() reflect.Type {
@@ -16249,12 +14024,6 @@ func (i GetCertificatesCertificateCollectionItemSubjectArgs) ToGetCertificatesCe
 
 func (i GetCertificatesCertificateCollectionItemSubjectArgs) ToGetCertificatesCertificateCollectionItemSubjectOutputWithContext(ctx context.Context) GetCertificatesCertificateCollectionItemSubjectOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificatesCertificateCollectionItemSubjectOutput)
-}
-
-func (i GetCertificatesCertificateCollectionItemSubjectArgs) ToOutput(ctx context.Context) pulumix.Output[GetCertificatesCertificateCollectionItemSubject] {
-	return pulumix.Output[GetCertificatesCertificateCollectionItemSubject]{
-		OutputState: i.ToGetCertificatesCertificateCollectionItemSubjectOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetCertificatesCertificateCollectionItemSubjectArrayInput is an input type that accepts GetCertificatesCertificateCollectionItemSubjectArray and GetCertificatesCertificateCollectionItemSubjectArrayOutput values.
@@ -16282,12 +14051,6 @@ func (i GetCertificatesCertificateCollectionItemSubjectArray) ToGetCertificatesC
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificatesCertificateCollectionItemSubjectArrayOutput)
 }
 
-func (i GetCertificatesCertificateCollectionItemSubjectArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificatesCertificateCollectionItemSubject] {
-	return pulumix.Output[[]GetCertificatesCertificateCollectionItemSubject]{
-		OutputState: i.ToGetCertificatesCertificateCollectionItemSubjectArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCertificatesCertificateCollectionItemSubjectOutput struct{ *pulumi.OutputState }
 
 func (GetCertificatesCertificateCollectionItemSubjectOutput) ElementType() reflect.Type {
@@ -16302,95 +14065,89 @@ func (o GetCertificatesCertificateCollectionItemSubjectOutput) ToGetCertificates
 	return o
 }
 
-func (o GetCertificatesCertificateCollectionItemSubjectOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificatesCertificateCollectionItemSubject] {
-	return pulumix.Output[GetCertificatesCertificateCollectionItemSubject]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Common name or fully-qualified domain name (RDN CN).
-func (o GetCertificatesCertificateCollectionItemSubjectOutput) CommonName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemSubject) string { return v.CommonName }).(pulumi.StringOutput)
+func (o GetCertificatesCertificateCollectionItemSubjectOutput) CommonName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemSubject) *string { return v.CommonName }).(pulumi.StringPtrOutput)
 }
 
 // Country name (RDN C).
-func (o GetCertificatesCertificateCollectionItemSubjectOutput) Country() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemSubject) string { return v.Country }).(pulumi.StringOutput)
+func (o GetCertificatesCertificateCollectionItemSubjectOutput) Country() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemSubject) *string { return v.Country }).(pulumi.StringPtrOutput)
 }
 
 // Distinguished name qualifier(RDN DNQ).
-func (o GetCertificatesCertificateCollectionItemSubjectOutput) DistinguishedNameQualifier() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemSubject) string { return v.DistinguishedNameQualifier }).(pulumi.StringOutput)
+func (o GetCertificatesCertificateCollectionItemSubjectOutput) DistinguishedNameQualifier() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemSubject) *string { return v.DistinguishedNameQualifier }).(pulumi.StringPtrOutput)
 }
 
 // Domain component (RDN DC).
-func (o GetCertificatesCertificateCollectionItemSubjectOutput) DomainComponent() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemSubject) string { return v.DomainComponent }).(pulumi.StringOutput)
+func (o GetCertificatesCertificateCollectionItemSubjectOutput) DomainComponent() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemSubject) *string { return v.DomainComponent }).(pulumi.StringPtrOutput)
 }
 
 // Personal generational qualifier (for example, Sr., Jr. 3rd, or IV).
-func (o GetCertificatesCertificateCollectionItemSubjectOutput) GenerationQualifier() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemSubject) string { return v.GenerationQualifier }).(pulumi.StringOutput)
+func (o GetCertificatesCertificateCollectionItemSubjectOutput) GenerationQualifier() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemSubject) *string { return v.GenerationQualifier }).(pulumi.StringPtrOutput)
 }
 
 // Personal given name (RDN G or GN).
-func (o GetCertificatesCertificateCollectionItemSubjectOutput) GivenName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemSubject) string { return v.GivenName }).(pulumi.StringOutput)
+func (o GetCertificatesCertificateCollectionItemSubjectOutput) GivenName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemSubject) *string { return v.GivenName }).(pulumi.StringPtrOutput)
 }
 
 // Personal initials.
-func (o GetCertificatesCertificateCollectionItemSubjectOutput) Initials() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemSubject) string { return v.Initials }).(pulumi.StringOutput)
+func (o GetCertificatesCertificateCollectionItemSubjectOutput) Initials() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemSubject) *string { return v.Initials }).(pulumi.StringPtrOutput)
 }
 
 // Locality (RDN L).
-func (o GetCertificatesCertificateCollectionItemSubjectOutput) LocalityName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemSubject) string { return v.LocalityName }).(pulumi.StringOutput)
+func (o GetCertificatesCertificateCollectionItemSubjectOutput) LocalityName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemSubject) *string { return v.LocalityName }).(pulumi.StringPtrOutput)
 }
 
 // Organization (RDN O).
-func (o GetCertificatesCertificateCollectionItemSubjectOutput) Organization() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemSubject) string { return v.Organization }).(pulumi.StringOutput)
+func (o GetCertificatesCertificateCollectionItemSubjectOutput) Organization() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemSubject) *string { return v.Organization }).(pulumi.StringPtrOutput)
 }
 
 // Organizational unit (RDN OU).
-func (o GetCertificatesCertificateCollectionItemSubjectOutput) OrganizationalUnit() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemSubject) string { return v.OrganizationalUnit }).(pulumi.StringOutput)
+func (o GetCertificatesCertificateCollectionItemSubjectOutput) OrganizationalUnit() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemSubject) *string { return v.OrganizationalUnit }).(pulumi.StringPtrOutput)
 }
 
 // Subject pseudonym.
-func (o GetCertificatesCertificateCollectionItemSubjectOutput) Pseudonym() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemSubject) string { return v.Pseudonym }).(pulumi.StringOutput)
+func (o GetCertificatesCertificateCollectionItemSubjectOutput) Pseudonym() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemSubject) *string { return v.Pseudonym }).(pulumi.StringPtrOutput)
 }
 
 // Unique subject identifier, which is not the same as the certificate serial number (RDN SERIALNUMBER).
-func (o GetCertificatesCertificateCollectionItemSubjectOutput) SerialNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemSubject) string { return v.SerialNumber }).(pulumi.StringOutput)
+func (o GetCertificatesCertificateCollectionItemSubjectOutput) SerialNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemSubject) *string { return v.SerialNumber }).(pulumi.StringPtrOutput)
 }
 
 // State or province name (RDN ST or S).
-func (o GetCertificatesCertificateCollectionItemSubjectOutput) StateOrProvinceName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemSubject) string { return v.StateOrProvinceName }).(pulumi.StringOutput)
+func (o GetCertificatesCertificateCollectionItemSubjectOutput) StateOrProvinceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemSubject) *string { return v.StateOrProvinceName }).(pulumi.StringPtrOutput)
 }
 
 // Street address (RDN STREET).
-func (o GetCertificatesCertificateCollectionItemSubjectOutput) Street() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemSubject) string { return v.Street }).(pulumi.StringOutput)
+func (o GetCertificatesCertificateCollectionItemSubjectOutput) Street() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemSubject) *string { return v.Street }).(pulumi.StringPtrOutput)
 }
 
 // Personal surname (RDN SN).
-func (o GetCertificatesCertificateCollectionItemSubjectOutput) Surname() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemSubject) string { return v.Surname }).(pulumi.StringOutput)
+func (o GetCertificatesCertificateCollectionItemSubjectOutput) Surname() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemSubject) *string { return v.Surname }).(pulumi.StringPtrOutput)
 }
 
 // Title (RDN T or TITLE).
-func (o GetCertificatesCertificateCollectionItemSubjectOutput) Title() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemSubject) string { return v.Title }).(pulumi.StringOutput)
+func (o GetCertificatesCertificateCollectionItemSubjectOutput) Title() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemSubject) *string { return v.Title }).(pulumi.StringPtrOutput)
 }
 
 // User ID (RDN UID).
-func (o GetCertificatesCertificateCollectionItemSubjectOutput) UserId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemSubject) string { return v.UserId }).(pulumi.StringOutput)
+func (o GetCertificatesCertificateCollectionItemSubjectOutput) UserId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemSubject) *string { return v.UserId }).(pulumi.StringPtrOutput)
 }
 
 type GetCertificatesCertificateCollectionItemSubjectArrayOutput struct{ *pulumi.OutputState }
@@ -16405,12 +14162,6 @@ func (o GetCertificatesCertificateCollectionItemSubjectArrayOutput) ToGetCertifi
 
 func (o GetCertificatesCertificateCollectionItemSubjectArrayOutput) ToGetCertificatesCertificateCollectionItemSubjectArrayOutputWithContext(ctx context.Context) GetCertificatesCertificateCollectionItemSubjectArrayOutput {
 	return o
-}
-
-func (o GetCertificatesCertificateCollectionItemSubjectArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificatesCertificateCollectionItemSubject] {
-	return pulumix.Output[[]GetCertificatesCertificateCollectionItemSubject]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetCertificatesCertificateCollectionItemSubjectArrayOutput) Index(i pulumi.IntInput) GetCertificatesCertificateCollectionItemSubjectOutput {
@@ -16456,12 +14207,6 @@ func (i GetCertificatesFilterArgs) ToGetCertificatesFilterOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificatesFilterOutput)
 }
 
-func (i GetCertificatesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetCertificatesFilter] {
-	return pulumix.Output[GetCertificatesFilter]{
-		OutputState: i.ToGetCertificatesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetCertificatesFilterArrayInput is an input type that accepts GetCertificatesFilterArray and GetCertificatesFilterArrayOutput values.
 // You can construct a concrete instance of `GetCertificatesFilterArrayInput` via:
 //
@@ -16487,12 +14232,6 @@ func (i GetCertificatesFilterArray) ToGetCertificatesFilterArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificatesFilterArrayOutput)
 }
 
-func (i GetCertificatesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificatesFilter] {
-	return pulumix.Output[[]GetCertificatesFilter]{
-		OutputState: i.ToGetCertificatesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCertificatesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetCertificatesFilterOutput) ElementType() reflect.Type {
@@ -16505,12 +14244,6 @@ func (o GetCertificatesFilterOutput) ToGetCertificatesFilterOutput() GetCertific
 
 func (o GetCertificatesFilterOutput) ToGetCertificatesFilterOutputWithContext(ctx context.Context) GetCertificatesFilterOutput {
 	return o
-}
-
-func (o GetCertificatesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificatesFilter] {
-	return pulumix.Output[GetCertificatesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A filter that returns only resources that match the specified name.
@@ -16538,12 +14271,6 @@ func (o GetCertificatesFilterArrayOutput) ToGetCertificatesFilterArrayOutput() G
 
 func (o GetCertificatesFilterArrayOutput) ToGetCertificatesFilterArrayOutputWithContext(ctx context.Context) GetCertificatesFilterArrayOutput {
 	return o
-}
-
-func (o GetCertificatesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificatesFilter] {
-	return pulumix.Output[[]GetCertificatesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetCertificatesFilterArrayOutput) Index(i pulumi.IntInput) GetCertificatesFilterOutput {

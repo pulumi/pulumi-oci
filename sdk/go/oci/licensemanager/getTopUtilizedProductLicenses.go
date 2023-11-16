@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Top Utilized Product Licenses in Oracle Cloud Infrastructure License Manager service.
@@ -64,8 +63,8 @@ type GetTopUtilizedProductLicensesArgs struct {
 type GetTopUtilizedProductLicensesResult struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                       string `pulumi:"id"`
-	IsCompartmentIdInSubtree *bool  `pulumi:"isCompartmentIdInSubtree"`
+	Id                       *string `pulumi:"id"`
+	IsCompartmentIdInSubtree *bool   `pulumi:"isCompartmentIdInSubtree"`
 	// Collection of top utilized product licenses.
 	Items []GetTopUtilizedProductLicensesItem `pulumi:"items"`
 }
@@ -110,19 +109,13 @@ func (o GetTopUtilizedProductLicensesResultOutput) ToGetTopUtilizedProductLicens
 	return o
 }
 
-func (o GetTopUtilizedProductLicensesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetTopUtilizedProductLicensesResult] {
-	return pulumix.Output[GetTopUtilizedProductLicensesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetTopUtilizedProductLicensesResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTopUtilizedProductLicensesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetTopUtilizedProductLicensesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTopUtilizedProductLicensesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetTopUtilizedProductLicensesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTopUtilizedProductLicensesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetTopUtilizedProductLicensesResultOutput) IsCompartmentIdInSubtree() pulumi.BoolPtrOutput {

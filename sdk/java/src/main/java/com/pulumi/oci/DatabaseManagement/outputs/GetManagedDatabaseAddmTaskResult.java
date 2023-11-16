@@ -8,6 +8,8 @@ import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseAddmTaskItem;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedDatabaseAddmTaskResult {
@@ -15,12 +17,12 @@ public final class GetManagedDatabaseAddmTaskResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of ADDM task metadata.
      * 
      */
-    private List<GetManagedDatabaseAddmTaskItem> items;
+    private @Nullable List<GetManagedDatabaseAddmTaskItem> items;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      * 
@@ -34,15 +36,15 @@ public final class GetManagedDatabaseAddmTaskResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of ADDM task metadata.
      * 
      */
     public List<GetManagedDatabaseAddmTaskItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
@@ -67,8 +69,8 @@ public final class GetManagedDatabaseAddmTaskResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String id;
-        private List<GetManagedDatabaseAddmTaskItem> items;
+        private @Nullable String id;
+        private @Nullable List<GetManagedDatabaseAddmTaskItem> items;
         private String managedDatabaseId;
         private String timeEnd;
         private String timeStart;
@@ -83,13 +85,13 @@ public final class GetManagedDatabaseAddmTaskResult {
         }
 
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder items(List<GetManagedDatabaseAddmTaskItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetManagedDatabaseAddmTaskItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetManagedDatabaseAddmTaskItem... items) {

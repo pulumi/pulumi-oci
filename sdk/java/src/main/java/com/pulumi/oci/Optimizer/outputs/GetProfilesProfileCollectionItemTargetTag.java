@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Optimizer.outputs.GetProfilesProfileCollectionItemTargetTagItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetProfilesProfileCollectionItemTargetTag {
@@ -14,7 +15,7 @@ public final class GetProfilesProfileCollectionItemTargetTag {
      * @return The list of tags specified in the current profile override.
      * 
      */
-    private List<GetProfilesProfileCollectionItemTargetTagItem> items;
+    private @Nullable List<GetProfilesProfileCollectionItemTargetTagItem> items;
 
     private GetProfilesProfileCollectionItemTargetTag() {}
     /**
@@ -22,7 +23,7 @@ public final class GetProfilesProfileCollectionItemTargetTag {
      * 
      */
     public List<GetProfilesProfileCollectionItemTargetTagItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetProfilesProfileCollectionItemTargetTag {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetProfilesProfileCollectionItemTargetTagItem> items;
+        private @Nullable List<GetProfilesProfileCollectionItemTargetTagItem> items;
         public Builder() {}
         public Builder(GetProfilesProfileCollectionItemTargetTag defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetProfilesProfileCollectionItemTargetTag {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetProfilesProfileCollectionItemTargetTagItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetProfilesProfileCollectionItemTargetTagItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetProfilesProfileCollectionItemTargetTagItem... items) {

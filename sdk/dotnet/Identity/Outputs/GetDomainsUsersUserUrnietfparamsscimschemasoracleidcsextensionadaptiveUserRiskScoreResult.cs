@@ -16,47 +16,47 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// Last update timestamp for the risk score
         /// </summary>
-        public readonly string LastUpdateTimestamp;
+        public readonly string? LastUpdateTimestamp;
         /// <summary>
         /// User Token URI
         /// </summary>
-        public readonly string Ref;
+        public readonly string? Ref;
         /// <summary>
         /// Risk Level
         /// </summary>
-        public readonly string RiskLevel;
+        public readonly string? RiskLevel;
         /// <summary>
         /// Risk Score value
         /// </summary>
-        public readonly int Score;
+        public readonly int? Score;
         /// <summary>
         /// Risk Provider Profile Source
         /// </summary>
-        public readonly string Source;
+        public readonly string? Source;
         /// <summary>
         /// A supplemental status indicating the reason why a user is disabled
         /// </summary>
-        public readonly string Status;
+        public readonly string? Status;
         /// <summary>
         /// The value of a X509 certificate.
         /// </summary>
-        public readonly string Value;
+        public readonly string? Value;
 
         [OutputConstructor]
         private GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreResult(
-            string lastUpdateTimestamp,
+            string? lastUpdateTimestamp,
 
-            string @ref,
+            string? @ref,
 
-            string riskLevel,
+            string? riskLevel,
 
-            int score,
+            int? score,
 
-            string source,
+            string? source,
 
-            string status,
+            string? status,
 
-            string value)
+            string? value)
         {
             LastUpdateTimestamp = lastUpdateTimestamp;
             Ref = @ref;

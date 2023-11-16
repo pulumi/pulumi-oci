@@ -8,6 +8,7 @@ import com.pulumi.oci.ApiGateway.outputs.GetDeploymentsDeploymentCollectionSpeci
 import com.pulumi.oci.ApiGateway.outputs.GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyResponseCacheStore;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicy {
@@ -15,12 +16,12 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRouteResponseP
      * @return A set of transformations to apply to HTTP headers that pass through the gateway.
      * 
      */
-    private List<GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyHeaderTransformation> headerTransformations;
+    private @Nullable List<GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyHeaderTransformation> headerTransformations;
     /**
      * @return Base policy for how a response from a backend is cached in the Response Cache.
      * 
      */
-    private List<GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyResponseCacheStore> responseCacheStores;
+    private @Nullable List<GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyResponseCacheStore> responseCacheStores;
 
     private GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicy() {}
     /**
@@ -28,14 +29,14 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRouteResponseP
      * 
      */
     public List<GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyHeaderTransformation> headerTransformations() {
-        return this.headerTransformations;
+        return this.headerTransformations == null ? List.of() : this.headerTransformations;
     }
     /**
      * @return Base policy for how a response from a backend is cached in the Response Cache.
      * 
      */
     public List<GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyResponseCacheStore> responseCacheStores() {
-        return this.responseCacheStores;
+        return this.responseCacheStores == null ? List.of() : this.responseCacheStores;
     }
 
     public static Builder builder() {
@@ -47,8 +48,8 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRouteResponseP
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyHeaderTransformation> headerTransformations;
-        private List<GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyResponseCacheStore> responseCacheStores;
+        private @Nullable List<GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyHeaderTransformation> headerTransformations;
+        private @Nullable List<GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyResponseCacheStore> responseCacheStores;
         public Builder() {}
         public Builder(GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicy defaults) {
     	      Objects.requireNonNull(defaults);
@@ -57,16 +58,16 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRouteResponseP
         }
 
         @CustomType.Setter
-        public Builder headerTransformations(List<GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyHeaderTransformation> headerTransformations) {
-            this.headerTransformations = Objects.requireNonNull(headerTransformations);
+        public Builder headerTransformations(@Nullable List<GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyHeaderTransformation> headerTransformations) {
+            this.headerTransformations = headerTransformations;
             return this;
         }
         public Builder headerTransformations(GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyHeaderTransformation... headerTransformations) {
             return headerTransformations(List.of(headerTransformations));
         }
         @CustomType.Setter
-        public Builder responseCacheStores(List<GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyResponseCacheStore> responseCacheStores) {
-            this.responseCacheStores = Objects.requireNonNull(responseCacheStores);
+        public Builder responseCacheStores(@Nullable List<GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyResponseCacheStore> responseCacheStores) {
+            this.responseCacheStores = responseCacheStores;
             return this;
         }
         public Builder responseCacheStores(GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyResponseCacheStore... responseCacheStores) {

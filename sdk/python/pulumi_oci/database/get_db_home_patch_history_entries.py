@@ -49,7 +49,7 @@ class GetDbHomePatchHistoryEntriesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -57,10 +57,7 @@ class GetDbHomePatchHistoryEntriesResult:
 
     @property
     @pulumi.getter(name="patchHistoryEntries")
-    def patch_history_entries(self) -> Sequence['outputs.GetDbHomePatchHistoryEntriesPatchHistoryEntryResult']:
-        """
-        The list of patch_history_entries.
-        """
+    def patch_history_entries(self) -> Optional[Sequence['outputs.GetDbHomePatchHistoryEntriesPatchHistoryEntryResult']]:
         return pulumi.get(self, "patch_history_entries")
 
 
@@ -80,21 +77,7 @@ def get_db_home_patch_history_entries(db_home_id: Optional[str] = None,
                                       filters: Optional[Sequence[pulumi.InputType['GetDbHomePatchHistoryEntriesFilterArgs']]] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDbHomePatchHistoryEntriesResult:
     """
-    This data source provides the list of Db Home Patch History Entries in Oracle Cloud Infrastructure Database service.
-
-    Lists the history of patch operations on the specified Database Home.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_db_home_patch_history_entries = oci.Database.get_db_home_patch_history_entries(db_home_id=oci_database_db_home["test_db_home"]["id"])
-    ```
-
-
-    :param str db_home_id: The Database Home [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['dbHomeId'] = db_home_id
@@ -114,20 +97,6 @@ def get_db_home_patch_history_entries_output(db_home_id: Optional[pulumi.Input[s
                                              filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetDbHomePatchHistoryEntriesFilterArgs']]]]] = None,
                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDbHomePatchHistoryEntriesResult]:
     """
-    This data source provides the list of Db Home Patch History Entries in Oracle Cloud Infrastructure Database service.
-
-    Lists the history of patch operations on the specified Database Home.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_db_home_patch_history_entries = oci.Database.get_db_home_patch_history_entries(db_home_id=oci_database_db_home["test_db_home"]["id"])
-    ```
-
-
-    :param str db_home_id: The Database Home [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     ...

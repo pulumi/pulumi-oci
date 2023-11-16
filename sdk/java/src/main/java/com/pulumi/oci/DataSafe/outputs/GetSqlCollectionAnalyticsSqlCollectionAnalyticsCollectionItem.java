@@ -8,6 +8,8 @@ import com.pulumi.oci.DataSafe.outputs.GetSqlCollectionAnalyticsSqlCollectionAna
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItem {
@@ -15,12 +17,12 @@ public final class GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItem
      * @return The dimensions available for SQL collection analytics.
      * 
      */
-    private List<GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimension> dimensions;
+    private @Nullable List<GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimension> dimensions;
     /**
      * @return The total count of the aggregated metric.
      * 
      */
-    private String sqlCollectionAnalyticCount;
+    private @Nullable String sqlCollectionAnalyticCount;
 
     private GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItem() {}
     /**
@@ -28,14 +30,14 @@ public final class GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItem
      * 
      */
     public List<GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimension> dimensions() {
-        return this.dimensions;
+        return this.dimensions == null ? List.of() : this.dimensions;
     }
     /**
      * @return The total count of the aggregated metric.
      * 
      */
-    public String sqlCollectionAnalyticCount() {
-        return this.sqlCollectionAnalyticCount;
+    public Optional<String> sqlCollectionAnalyticCount() {
+        return Optional.ofNullable(this.sqlCollectionAnalyticCount);
     }
 
     public static Builder builder() {
@@ -47,8 +49,8 @@ public final class GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItem
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimension> dimensions;
-        private String sqlCollectionAnalyticCount;
+        private @Nullable List<GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimension> dimensions;
+        private @Nullable String sqlCollectionAnalyticCount;
         public Builder() {}
         public Builder(GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -57,16 +59,16 @@ public final class GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItem
         }
 
         @CustomType.Setter
-        public Builder dimensions(List<GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimension> dimensions) {
-            this.dimensions = Objects.requireNonNull(dimensions);
+        public Builder dimensions(@Nullable List<GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimension> dimensions) {
+            this.dimensions = dimensions;
             return this;
         }
         public Builder dimensions(GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemDimension... dimensions) {
             return dimensions(List.of(dimensions));
         }
         @CustomType.Setter
-        public Builder sqlCollectionAnalyticCount(String sqlCollectionAnalyticCount) {
-            this.sqlCollectionAnalyticCount = Objects.requireNonNull(sqlCollectionAnalyticCount);
+        public Builder sqlCollectionAnalyticCount(@Nullable String sqlCollectionAnalyticCount) {
+            this.sqlCollectionAnalyticCount = sqlCollectionAnalyticCount;
             return this;
         }
         public GetSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItem build() {

@@ -16,11 +16,11 @@ namespace Pulumi.Oci.ServiceMesh.Outputs
         /// <summary>
         /// Port on which ingress gateway is listening.
         /// </summary>
-        public readonly int Port;
+        public readonly int? Port;
         /// <summary>
         /// Type of protocol used.
         /// </summary>
-        public readonly string Protocol;
+        public readonly string? Protocol;
         /// <summary>
         /// TLS enforcement config for the ingress listener.
         /// </summary>
@@ -28,9 +28,9 @@ namespace Pulumi.Oci.ServiceMesh.Outputs
 
         [OutputConstructor]
         private GetIngressGatewayHostListenerResult(
-            int port,
+            int? port,
 
-            string protocol,
+            string? protocol,
 
             ImmutableArray<Outputs.GetIngressGatewayHostListenerTlResult> tls)
         {

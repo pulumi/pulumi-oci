@@ -8,6 +8,8 @@ import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetApiDeploymentSpecificationRouteBackendRoutingBackendKey {
@@ -15,63 +17,63 @@ public final class GetApiDeploymentSpecificationRouteBackendRoutingBackendKey {
      * @return String describing the expression with wildcards.
      * 
      */
-    private String expression;
+    private @Nullable String expression;
     /**
      * @return Information regarding whether this is the default branch.
      * 
      */
-    private Boolean isDefault;
+    private @Nullable Boolean isDefault;
     /**
      * @return The case-insensitive name of the header.  This name must be unique across transformation policies.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return Type of the Response Cache Store Policy.
      * 
      */
-    private String type;
+    private @Nullable String type;
     /**
      * @return A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
      * 
      */
-    private List<String> values;
+    private @Nullable List<String> values;
 
     private GetApiDeploymentSpecificationRouteBackendRoutingBackendKey() {}
     /**
      * @return String describing the expression with wildcards.
      * 
      */
-    public String expression() {
-        return this.expression;
+    public Optional<String> expression() {
+        return Optional.ofNullable(this.expression);
     }
     /**
      * @return Information regarding whether this is the default branch.
      * 
      */
-    public Boolean isDefault() {
-        return this.isDefault;
+    public Optional<Boolean> isDefault() {
+        return Optional.ofNullable(this.isDefault);
     }
     /**
      * @return The case-insensitive name of the header.  This name must be unique across transformation policies.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return Type of the Response Cache Store Policy.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
     /**
      * @return A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
      * 
      */
     public List<String> values() {
-        return this.values;
+        return this.values == null ? List.of() : this.values;
     }
 
     public static Builder builder() {
@@ -83,11 +85,11 @@ public final class GetApiDeploymentSpecificationRouteBackendRoutingBackendKey {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String expression;
-        private Boolean isDefault;
-        private String name;
-        private String type;
-        private List<String> values;
+        private @Nullable String expression;
+        private @Nullable Boolean isDefault;
+        private @Nullable String name;
+        private @Nullable String type;
+        private @Nullable List<String> values;
         public Builder() {}
         public Builder(GetApiDeploymentSpecificationRouteBackendRoutingBackendKey defaults) {
     	      Objects.requireNonNull(defaults);
@@ -99,28 +101,28 @@ public final class GetApiDeploymentSpecificationRouteBackendRoutingBackendKey {
         }
 
         @CustomType.Setter
-        public Builder expression(String expression) {
-            this.expression = Objects.requireNonNull(expression);
+        public Builder expression(@Nullable String expression) {
+            this.expression = expression;
             return this;
         }
         @CustomType.Setter
-        public Builder isDefault(Boolean isDefault) {
-            this.isDefault = Objects.requireNonNull(isDefault);
+        public Builder isDefault(@Nullable Boolean isDefault) {
+            this.isDefault = isDefault;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         @CustomType.Setter
-        public Builder values(List<String> values) {
-            this.values = Objects.requireNonNull(values);
+        public Builder values(@Nullable List<String> values) {
+            this.values = values;
             return this;
         }
         public Builder values(String... values) {

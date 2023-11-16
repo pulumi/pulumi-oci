@@ -29,7 +29,7 @@ public final class GetDomainsResult {
      * @return The list of domains.
      * 
      */
-    private List<GetDomainsDomain> domains;
+    private @Nullable List<GetDomainsDomain> domains;
     private @Nullable List<GetDomainsFilter> filters;
     /**
      * @return Region specific domain URL.
@@ -40,7 +40,7 @@ public final class GetDomainsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Indicates whether domain is hidden on login screen or not.
      * 
@@ -88,7 +88,7 @@ public final class GetDomainsResult {
      * 
      */
     public List<GetDomainsDomain> domains() {
-        return this.domains;
+        return this.domains == null ? List.of() : this.domains;
     }
     public List<GetDomainsFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -104,8 +104,8 @@ public final class GetDomainsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Indicates whether domain is hidden on login screen or not.
@@ -157,10 +157,10 @@ public final class GetDomainsResult {
     public static final class Builder {
         private String compartmentId;
         private @Nullable String displayName;
-        private List<GetDomainsDomain> domains;
+        private @Nullable List<GetDomainsDomain> domains;
         private @Nullable List<GetDomainsFilter> filters;
         private @Nullable String homeRegionUrl;
-        private String id;
+        private @Nullable String id;
         private @Nullable Boolean isHiddenOnLogin;
         private @Nullable String licenseType;
         private @Nullable String name;
@@ -195,8 +195,8 @@ public final class GetDomainsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder domains(List<GetDomainsDomain> domains) {
-            this.domains = Objects.requireNonNull(domains);
+        public Builder domains(@Nullable List<GetDomainsDomain> domains) {
+            this.domains = domains;
             return this;
         }
         public Builder domains(GetDomainsDomain... domains) {
@@ -216,8 +216,8 @@ public final class GetDomainsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

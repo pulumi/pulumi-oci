@@ -6,6 +6,8 @@ package com.pulumi.oci.CloudGuard.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDataSourceEventItemEventInfo {
@@ -13,31 +15,31 @@ public final class GetDataSourceEventItemEventInfo {
      * @return Possible type of dataSourceFeed Provider(LoggingQuery)
      * 
      */
-    private String dataSourceFeedProvider;
-    private String logResult;
-    private String observedValue;
-    private String operator;
-    private String triggerValue;
+    private @Nullable String dataSourceFeedProvider;
+    private @Nullable String logResult;
+    private @Nullable String observedValue;
+    private @Nullable String operator;
+    private @Nullable String triggerValue;
 
     private GetDataSourceEventItemEventInfo() {}
     /**
      * @return Possible type of dataSourceFeed Provider(LoggingQuery)
      * 
      */
-    public String dataSourceFeedProvider() {
-        return this.dataSourceFeedProvider;
+    public Optional<String> dataSourceFeedProvider() {
+        return Optional.ofNullable(this.dataSourceFeedProvider);
     }
-    public String logResult() {
-        return this.logResult;
+    public Optional<String> logResult() {
+        return Optional.ofNullable(this.logResult);
     }
-    public String observedValue() {
-        return this.observedValue;
+    public Optional<String> observedValue() {
+        return Optional.ofNullable(this.observedValue);
     }
-    public String operator() {
-        return this.operator;
+    public Optional<String> operator() {
+        return Optional.ofNullable(this.operator);
     }
-    public String triggerValue() {
-        return this.triggerValue;
+    public Optional<String> triggerValue() {
+        return Optional.ofNullable(this.triggerValue);
     }
 
     public static Builder builder() {
@@ -49,11 +51,11 @@ public final class GetDataSourceEventItemEventInfo {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String dataSourceFeedProvider;
-        private String logResult;
-        private String observedValue;
-        private String operator;
-        private String triggerValue;
+        private @Nullable String dataSourceFeedProvider;
+        private @Nullable String logResult;
+        private @Nullable String observedValue;
+        private @Nullable String operator;
+        private @Nullable String triggerValue;
         public Builder() {}
         public Builder(GetDataSourceEventItemEventInfo defaults) {
     	      Objects.requireNonNull(defaults);
@@ -65,28 +67,28 @@ public final class GetDataSourceEventItemEventInfo {
         }
 
         @CustomType.Setter
-        public Builder dataSourceFeedProvider(String dataSourceFeedProvider) {
-            this.dataSourceFeedProvider = Objects.requireNonNull(dataSourceFeedProvider);
+        public Builder dataSourceFeedProvider(@Nullable String dataSourceFeedProvider) {
+            this.dataSourceFeedProvider = dataSourceFeedProvider;
             return this;
         }
         @CustomType.Setter
-        public Builder logResult(String logResult) {
-            this.logResult = Objects.requireNonNull(logResult);
+        public Builder logResult(@Nullable String logResult) {
+            this.logResult = logResult;
             return this;
         }
         @CustomType.Setter
-        public Builder observedValue(String observedValue) {
-            this.observedValue = Objects.requireNonNull(observedValue);
+        public Builder observedValue(@Nullable String observedValue) {
+            this.observedValue = observedValue;
             return this;
         }
         @CustomType.Setter
-        public Builder operator(String operator) {
-            this.operator = Objects.requireNonNull(operator);
+        public Builder operator(@Nullable String operator) {
+            this.operator = operator;
             return this;
         }
         @CustomType.Setter
-        public Builder triggerValue(String triggerValue) {
-            this.triggerValue = Objects.requireNonNull(triggerValue);
+        public Builder triggerValue(@Nullable String triggerValue) {
+            this.triggerValue = triggerValue;
             return this;
         }
         public GetDataSourceEventItemEventInfo build() {

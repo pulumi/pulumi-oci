@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DataIntegration.outputs.GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountList;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatistic {
@@ -14,7 +15,7 @@ public final class GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCount
      * @return The array of statistics.
      * 
      */
-    private List<GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountList> objectTypeCountLists;
+    private @Nullable List<GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountList> objectTypeCountLists;
 
     private GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatistic() {}
     /**
@@ -22,7 +23,7 @@ public final class GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCount
      * 
      */
     public List<GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountList> objectTypeCountLists() {
-        return this.objectTypeCountLists;
+        return this.objectTypeCountLists == null ? List.of() : this.objectTypeCountLists;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCount
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountList> objectTypeCountLists;
+        private @Nullable List<GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountList> objectTypeCountLists;
         public Builder() {}
         public Builder(GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatistic defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCount
         }
 
         @CustomType.Setter
-        public Builder objectTypeCountLists(List<GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountList> objectTypeCountLists) {
-            this.objectTypeCountLists = Objects.requireNonNull(objectTypeCountLists);
+        public Builder objectTypeCountLists(@Nullable List<GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountList> objectTypeCountLists) {
+            this.objectTypeCountLists = objectTypeCountLists;
             return this;
         }
         public Builder objectTypeCountLists(GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountList... objectTypeCountLists) {

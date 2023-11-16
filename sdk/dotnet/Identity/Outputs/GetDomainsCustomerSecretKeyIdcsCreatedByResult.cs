@@ -16,35 +16,35 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// The user's display name.
         /// </summary>
-        public readonly string Display;
+        public readonly string? Display;
         /// <summary>
         /// The user's OCID.
         /// </summary>
-        public readonly string Ocid;
+        public readonly string? Ocid;
         /// <summary>
         /// The URI that corresponds to the user linked to this credential.
         /// </summary>
-        public readonly string Ref;
+        public readonly string? Ref;
         /// <summary>
         /// The type of resource, User or App, that modified this Resource
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
         /// <summary>
         /// The user's ID.
         /// </summary>
-        public readonly string Value;
+        public readonly string? Value;
 
         [OutputConstructor]
         private GetDomainsCustomerSecretKeyIdcsCreatedByResult(
-            string display,
+            string? display,
 
-            string ocid,
+            string? ocid,
 
-            string @ref,
+            string? @ref,
 
-            string type,
+            string? type,
 
-            string value)
+            string? value)
         {
             Display = display;
             Ocid = ocid;

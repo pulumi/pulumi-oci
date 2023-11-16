@@ -16,12 +16,12 @@ public final class GetNamespaceResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return (Computed) The name of the user&#39;s namespace.
      * 
      */
-    private String namespace;
+    private @Nullable String namespace;
 
     private GetNamespaceResult() {}
     public Optional<String> compartmentId() {
@@ -31,15 +31,15 @@ public final class GetNamespaceResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return (Computed) The name of the user&#39;s namespace.
      * 
      */
-    public String namespace() {
-        return this.namespace;
+    public Optional<String> namespace() {
+        return Optional.ofNullable(this.namespace);
     }
 
     public static Builder builder() {
@@ -52,8 +52,8 @@ public final class GetNamespaceResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String compartmentId;
-        private String id;
-        private String namespace;
+        private @Nullable String id;
+        private @Nullable String namespace;
         public Builder() {}
         public Builder(GetNamespaceResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -68,13 +68,13 @@ public final class GetNamespaceResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+        public Builder namespace(@Nullable String namespace) {
+            this.namespace = namespace;
             return this;
         }
         public GetNamespaceResult build() {

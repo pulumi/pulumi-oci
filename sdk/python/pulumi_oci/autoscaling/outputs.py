@@ -47,27 +47,17 @@ class AutoScalingConfigurationAutoScalingResources(dict):
     def __init__(__self__, *,
                  id: str,
                  type: str):
-        """
-        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is managed by the autoscaling configuration.
-        :param str type: The type of action to take.
-        """
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter
     def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is managed by the autoscaling configuration.
-        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
     def type(self) -> str:
-        """
-        The type of action to take.
-        """
         return pulumi.get(self, "type")
 
 
@@ -110,15 +100,6 @@ class AutoScalingConfigurationPolicy(dict):
                  resource_action: Optional['outputs.AutoScalingConfigurationPolicyResourceAction'] = None,
                  rules: Optional[Sequence['outputs.AutoScalingConfigurationPolicyRule']] = None,
                  time_created: Optional[str] = None):
-        """
-        :param str policy_type: The type of autoscaling policy.
-        :param 'AutoScalingConfigurationPolicyCapacityArgs' capacity: The capacity requirements of the autoscaling policy.
-        :param 'AutoScalingConfigurationPolicyExecutionScheduleArgs' execution_schedule: An execution schedule for an autoscaling policy.
-        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is managed by the autoscaling configuration.
-        :param bool is_enabled: Whether the autoscaling policy is enabled.
-        :param 'AutoScalingConfigurationPolicyResourceActionArgs' resource_action: An action that can be executed against a resource.
-        :param str time_created: The date and time the autoscaling configuration was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-        """
         pulumi.set(__self__, "policy_type", policy_type)
         if capacity is not None:
             pulumi.set(__self__, "capacity", capacity)
@@ -140,17 +121,11 @@ class AutoScalingConfigurationPolicy(dict):
     @property
     @pulumi.getter(name="policyType")
     def policy_type(self) -> str:
-        """
-        The type of autoscaling policy.
-        """
         return pulumi.get(self, "policy_type")
 
     @property
     @pulumi.getter
     def capacity(self) -> Optional['outputs.AutoScalingConfigurationPolicyCapacity']:
-        """
-        The capacity requirements of the autoscaling policy.
-        """
         return pulumi.get(self, "capacity")
 
     @property
@@ -161,33 +136,21 @@ class AutoScalingConfigurationPolicy(dict):
     @property
     @pulumi.getter(name="executionSchedule")
     def execution_schedule(self) -> Optional['outputs.AutoScalingConfigurationPolicyExecutionSchedule']:
-        """
-        An execution schedule for an autoscaling policy.
-        """
         return pulumi.get(self, "execution_schedule")
 
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is managed by the autoscaling configuration.
-        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> Optional[bool]:
-        """
-        Whether the autoscaling policy is enabled.
-        """
         return pulumi.get(self, "is_enabled")
 
     @property
     @pulumi.getter(name="resourceAction")
     def resource_action(self) -> Optional['outputs.AutoScalingConfigurationPolicyResourceAction']:
-        """
-        An action that can be executed against a resource.
-        """
         return pulumi.get(self, "resource_action")
 
     @property
@@ -198,9 +161,6 @@ class AutoScalingConfigurationPolicy(dict):
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[str]:
-        """
-        The date and time the autoscaling configuration was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-        """
         return pulumi.get(self, "time_created")
 
 
@@ -210,17 +170,6 @@ class AutoScalingConfigurationPolicyCapacity(dict):
                  initial: Optional[int] = None,
                  max: Optional[int] = None,
                  min: Optional[int] = None):
-        """
-        :param int initial: For a threshold-based autoscaling policy, this value is the initial number of instances to launch in the instance pool immediately after autoscaling is enabled. After autoscaling retrieves performance metrics, the number of instances is automatically adjusted from this initial number to a number that is based on the limits that you set.
-               
-               For a schedule-based autoscaling policy, this value is the target pool size to scale to when executing the schedule that's defined in the autoscaling policy.
-        :param int max: For a threshold-based autoscaling policy, this value is the maximum number of instances the instance pool is allowed to increase to (scale out).
-               
-               For a schedule-based autoscaling policy, this value is not used.
-        :param int min: For a threshold-based autoscaling policy, this value is the minimum number of instances the instance pool is allowed to decrease to (scale in).
-               
-               For a schedule-based autoscaling policy, this value is not used.
-        """
         if initial is not None:
             pulumi.set(__self__, "initial", initial)
         if max is not None:
@@ -231,31 +180,16 @@ class AutoScalingConfigurationPolicyCapacity(dict):
     @property
     @pulumi.getter
     def initial(self) -> Optional[int]:
-        """
-        For a threshold-based autoscaling policy, this value is the initial number of instances to launch in the instance pool immediately after autoscaling is enabled. After autoscaling retrieves performance metrics, the number of instances is automatically adjusted from this initial number to a number that is based on the limits that you set.
-
-        For a schedule-based autoscaling policy, this value is the target pool size to scale to when executing the schedule that's defined in the autoscaling policy.
-        """
         return pulumi.get(self, "initial")
 
     @property
     @pulumi.getter
     def max(self) -> Optional[int]:
-        """
-        For a threshold-based autoscaling policy, this value is the maximum number of instances the instance pool is allowed to increase to (scale out).
-
-        For a schedule-based autoscaling policy, this value is not used.
-        """
         return pulumi.get(self, "max")
 
     @property
     @pulumi.getter
     def min(self) -> Optional[int]:
-        """
-        For a threshold-based autoscaling policy, this value is the minimum number of instances the instance pool is allowed to decrease to (scale in).
-
-        For a schedule-based autoscaling policy, this value is not used.
-        """
         return pulumi.get(self, "min")
 
 
@@ -265,19 +199,6 @@ class AutoScalingConfigurationPolicyExecutionSchedule(dict):
                  expression: str,
                  timezone: str,
                  type: str):
-        """
-        :param str expression: A cron expression that represents the time at which to execute the autoscaling policy.
-               
-               Cron expressions have this format: `<second> <minute> <hour> <day of month> <month> <day of week> <year>`
-               
-               You can use special characters that are supported with the Quartz cron implementation.
-               
-               You must specify `0` as the value for seconds.
-               
-               Example: `0 15 10 ? * *`
-        :param str timezone: The time zone for the execution schedule.
-        :param str type: The type of action to take.
-        """
         pulumi.set(__self__, "expression", expression)
         pulumi.set(__self__, "timezone", timezone)
         pulumi.set(__self__, "type", type)
@@ -285,33 +206,16 @@ class AutoScalingConfigurationPolicyExecutionSchedule(dict):
     @property
     @pulumi.getter
     def expression(self) -> str:
-        """
-        A cron expression that represents the time at which to execute the autoscaling policy.
-
-        Cron expressions have this format: `<second> <minute> <hour> <day of month> <month> <day of week> <year>`
-
-        You can use special characters that are supported with the Quartz cron implementation.
-
-        You must specify `0` as the value for seconds.
-
-        Example: `0 15 10 ? * *`
-        """
         return pulumi.get(self, "expression")
 
     @property
     @pulumi.getter
     def timezone(self) -> str:
-        """
-        The time zone for the execution schedule.
-        """
         return pulumi.get(self, "timezone")
 
     @property
     @pulumi.getter
     def type(self) -> str:
-        """
-        The type of action to take.
-        """
         return pulumi.get(self, "type")
 
 
@@ -337,27 +241,17 @@ class AutoScalingConfigurationPolicyResourceAction(dict):
     def __init__(__self__, *,
                  action: str,
                  action_type: str):
-        """
-        :param str action: The action to take when autoscaling is triggered.
-        :param str action_type: The type of resource action.
-        """
         pulumi.set(__self__, "action", action)
         pulumi.set(__self__, "action_type", action_type)
 
     @property
     @pulumi.getter
     def action(self) -> str:
-        """
-        The action to take when autoscaling is triggered.
-        """
         return pulumi.get(self, "action")
 
     @property
     @pulumi.getter(name="actionType")
     def action_type(self) -> str:
-        """
-        The type of resource action.
-        """
         return pulumi.get(self, "action_type")
 
 
@@ -385,11 +279,6 @@ class AutoScalingConfigurationPolicyRule(dict):
                  action: Optional['outputs.AutoScalingConfigurationPolicyRuleAction'] = None,
                  id: Optional[str] = None,
                  metric: Optional['outputs.AutoScalingConfigurationPolicyRuleMetric'] = None):
-        """
-        :param 'AutoScalingConfigurationPolicyRuleActionArgs' action: The action to take when autoscaling is triggered.
-        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is managed by the autoscaling configuration.
-        :param 'AutoScalingConfigurationPolicyRuleMetricArgs' metric: Metric and threshold details for triggering an autoscaling action.
-        """
         pulumi.set(__self__, "display_name", display_name)
         if action is not None:
             pulumi.set(__self__, "action", action)
@@ -406,25 +295,16 @@ class AutoScalingConfigurationPolicyRule(dict):
     @property
     @pulumi.getter
     def action(self) -> Optional['outputs.AutoScalingConfigurationPolicyRuleAction']:
-        """
-        The action to take when autoscaling is triggered.
-        """
         return pulumi.get(self, "action")
 
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is managed by the autoscaling configuration.
-        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
     def metric(self) -> Optional['outputs.AutoScalingConfigurationPolicyRuleMetric']:
-        """
-        Metric and threshold details for triggering an autoscaling action.
-        """
         return pulumi.get(self, "metric")
 
 
@@ -433,11 +313,6 @@ class AutoScalingConfigurationPolicyRuleAction(dict):
     def __init__(__self__, *,
                  type: Optional[str] = None,
                  value: Optional[int] = None):
-        """
-        :param str type: The type of action to take.
-        :param int value: ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         if type is not None:
             pulumi.set(__self__, "type", type)
         if value is not None:
@@ -446,18 +321,11 @@ class AutoScalingConfigurationPolicyRuleAction(dict):
     @property
     @pulumi.getter
     def type(self) -> Optional[str]:
-        """
-        The type of action to take.
-        """
         return pulumi.get(self, "type")
 
     @property
     @pulumi.getter
     def value(self) -> Optional[int]:
-        """
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "value")
 
 
@@ -504,11 +372,6 @@ class AutoScalingConfigurationPolicyRuleMetricThreshold(dict):
     def __init__(__self__, *,
                  operator: Optional[str] = None,
                  value: Optional[int] = None):
-        """
-        :param str operator: The comparison operator to use. Options are greater than (`GT`), greater than or equal to (`GTE`), less than (`LT`), and less than or equal to (`LTE`).
-        :param int value: ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         if operator is not None:
             pulumi.set(__self__, "operator", operator)
         if value is not None:
@@ -517,877 +380,666 @@ class AutoScalingConfigurationPolicyRuleMetricThreshold(dict):
     @property
     @pulumi.getter
     def operator(self) -> Optional[str]:
-        """
-        The comparison operator to use. Options are greater than (`GT`), greater than or equal to (`GTE`), less than (`LT`), and less than or equal to (`LTE`).
-        """
         return pulumi.get(self, "operator")
 
     @property
     @pulumi.getter
     def value(self) -> Optional[int]:
-        """
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "value")
 
 
 @pulumi.output_type
 class GetAutoScalingConfigurationAutoScalingResourceResult(dict):
     def __init__(__self__, *,
-                 id: str,
-                 type: str):
-        """
-        :param str id: ID of the condition that is assigned after creation.
-        :param str type: The type of action to take.
-        """
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "type", type)
+                 id: Optional[str] = None,
+                 type: Optional[str] = None):
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        ID of the condition that is assigned after creation.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        The type of action to take.
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
 
 @pulumi.output_type
 class GetAutoScalingConfigurationPolicyResult(dict):
     def __init__(__self__, *,
-                 capacities: Sequence['outputs.GetAutoScalingConfigurationPolicyCapacityResult'],
-                 display_name: str,
-                 execution_schedules: Sequence['outputs.GetAutoScalingConfigurationPolicyExecutionScheduleResult'],
-                 id: str,
-                 is_enabled: bool,
-                 policy_type: str,
-                 resource_actions: Sequence['outputs.GetAutoScalingConfigurationPolicyResourceActionResult'],
-                 rules: Sequence['outputs.GetAutoScalingConfigurationPolicyRuleResult'],
-                 time_created: str):
-        """
-        :param Sequence['GetAutoScalingConfigurationPolicyCapacityArgs'] capacities: The capacity requirements of the autoscaling policy.
-        :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param Sequence['GetAutoScalingConfigurationPolicyExecutionScheduleArgs'] execution_schedules: The schedule for executing the autoscaling policy.
-        :param str id: ID of the condition that is assigned after creation.
-        :param bool is_enabled: Whether the autoscaling policy is enabled.
-        :param str policy_type: The type of autoscaling policy.
-        :param Sequence['GetAutoScalingConfigurationPolicyResourceActionArgs'] resource_actions: An action that can be executed against a resource.
-        :param str time_created: The date and time the autoscaling configuration was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-        """
-        pulumi.set(__self__, "capacities", capacities)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "execution_schedules", execution_schedules)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "policy_type", policy_type)
-        pulumi.set(__self__, "resource_actions", resource_actions)
-        pulumi.set(__self__, "rules", rules)
-        pulumi.set(__self__, "time_created", time_created)
+                 capacities: Optional[Sequence['outputs.GetAutoScalingConfigurationPolicyCapacityResult']] = None,
+                 display_name: Optional[str] = None,
+                 execution_schedules: Optional[Sequence['outputs.GetAutoScalingConfigurationPolicyExecutionScheduleResult']] = None,
+                 id: Optional[str] = None,
+                 is_enabled: Optional[bool] = None,
+                 policy_type: Optional[str] = None,
+                 resource_actions: Optional[Sequence['outputs.GetAutoScalingConfigurationPolicyResourceActionResult']] = None,
+                 rules: Optional[Sequence['outputs.GetAutoScalingConfigurationPolicyRuleResult']] = None,
+                 time_created: Optional[str] = None):
+        if capacities is not None:
+            pulumi.set(__self__, "capacities", capacities)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if execution_schedules is not None:
+            pulumi.set(__self__, "execution_schedules", execution_schedules)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if is_enabled is not None:
+            pulumi.set(__self__, "is_enabled", is_enabled)
+        if policy_type is not None:
+            pulumi.set(__self__, "policy_type", policy_type)
+        if resource_actions is not None:
+            pulumi.set(__self__, "resource_actions", resource_actions)
+        if rules is not None:
+            pulumi.set(__self__, "rules", rules)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
 
     @property
     @pulumi.getter
-    def capacities(self) -> Sequence['outputs.GetAutoScalingConfigurationPolicyCapacityResult']:
-        """
-        The capacity requirements of the autoscaling policy.
-        """
+    def capacities(self) -> Optional[Sequence['outputs.GetAutoScalingConfigurationPolicyCapacityResult']]:
         return pulumi.get(self, "capacities")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="executionSchedules")
-    def execution_schedules(self) -> Sequence['outputs.GetAutoScalingConfigurationPolicyExecutionScheduleResult']:
-        """
-        The schedule for executing the autoscaling policy.
-        """
+    def execution_schedules(self) -> Optional[Sequence['outputs.GetAutoScalingConfigurationPolicyExecutionScheduleResult']]:
         return pulumi.get(self, "execution_schedules")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        ID of the condition that is assigned after creation.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isEnabled")
-    def is_enabled(self) -> bool:
-        """
-        Whether the autoscaling policy is enabled.
-        """
+    def is_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_enabled")
 
     @property
     @pulumi.getter(name="policyType")
-    def policy_type(self) -> str:
-        """
-        The type of autoscaling policy.
-        """
+    def policy_type(self) -> Optional[str]:
         return pulumi.get(self, "policy_type")
 
     @property
     @pulumi.getter(name="resourceActions")
-    def resource_actions(self) -> Sequence['outputs.GetAutoScalingConfigurationPolicyResourceActionResult']:
-        """
-        An action that can be executed against a resource.
-        """
+    def resource_actions(self) -> Optional[Sequence['outputs.GetAutoScalingConfigurationPolicyResourceActionResult']]:
         return pulumi.get(self, "resource_actions")
 
     @property
     @pulumi.getter
-    def rules(self) -> Sequence['outputs.GetAutoScalingConfigurationPolicyRuleResult']:
+    def rules(self) -> Optional[Sequence['outputs.GetAutoScalingConfigurationPolicyRuleResult']]:
         return pulumi.get(self, "rules")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the autoscaling configuration was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
 
 @pulumi.output_type
 class GetAutoScalingConfigurationPolicyCapacityResult(dict):
     def __init__(__self__, *,
-                 initial: int,
-                 max: int,
-                 min: int):
-        """
-        :param int initial: For a threshold-based autoscaling policy, this value is the initial number of instances to launch in the instance pool immediately after autoscaling is enabled. After autoscaling retrieves performance metrics, the number of instances is automatically adjusted from this initial number to a number that is based on the limits that you set.
-        :param int max: For a threshold-based autoscaling policy, this value is the maximum number of instances the instance pool is allowed to increase to (scale out).
-        :param int min: For a threshold-based autoscaling policy, this value is the minimum number of instances the instance pool is allowed to decrease to (scale in).
-        """
-        pulumi.set(__self__, "initial", initial)
-        pulumi.set(__self__, "max", max)
-        pulumi.set(__self__, "min", min)
+                 initial: Optional[int] = None,
+                 max: Optional[int] = None,
+                 min: Optional[int] = None):
+        if initial is not None:
+            pulumi.set(__self__, "initial", initial)
+        if max is not None:
+            pulumi.set(__self__, "max", max)
+        if min is not None:
+            pulumi.set(__self__, "min", min)
 
     @property
     @pulumi.getter
-    def initial(self) -> int:
-        """
-        For a threshold-based autoscaling policy, this value is the initial number of instances to launch in the instance pool immediately after autoscaling is enabled. After autoscaling retrieves performance metrics, the number of instances is automatically adjusted from this initial number to a number that is based on the limits that you set.
-        """
+    def initial(self) -> Optional[int]:
         return pulumi.get(self, "initial")
 
     @property
     @pulumi.getter
-    def max(self) -> int:
-        """
-        For a threshold-based autoscaling policy, this value is the maximum number of instances the instance pool is allowed to increase to (scale out).
-        """
+    def max(self) -> Optional[int]:
         return pulumi.get(self, "max")
 
     @property
     @pulumi.getter
-    def min(self) -> int:
-        """
-        For a threshold-based autoscaling policy, this value is the minimum number of instances the instance pool is allowed to decrease to (scale in).
-        """
+    def min(self) -> Optional[int]:
         return pulumi.get(self, "min")
 
 
 @pulumi.output_type
 class GetAutoScalingConfigurationPolicyExecutionScheduleResult(dict):
     def __init__(__self__, *,
-                 expression: str,
-                 timezone: str,
-                 type: str):
-        """
-        :param str expression: A cron expression that represents the time at which to execute the autoscaling policy.
-        :param str timezone: The time zone for the execution schedule.
-        :param str type: The type of action to take.
-        """
-        pulumi.set(__self__, "expression", expression)
-        pulumi.set(__self__, "timezone", timezone)
-        pulumi.set(__self__, "type", type)
+                 expression: Optional[str] = None,
+                 timezone: Optional[str] = None,
+                 type: Optional[str] = None):
+        if expression is not None:
+            pulumi.set(__self__, "expression", expression)
+        if timezone is not None:
+            pulumi.set(__self__, "timezone", timezone)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter
-    def expression(self) -> str:
-        """
-        A cron expression that represents the time at which to execute the autoscaling policy.
-        """
+    def expression(self) -> Optional[str]:
         return pulumi.get(self, "expression")
 
     @property
     @pulumi.getter
-    def timezone(self) -> str:
-        """
-        The time zone for the execution schedule.
-        """
+    def timezone(self) -> Optional[str]:
         return pulumi.get(self, "timezone")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        The type of action to take.
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
 
 @pulumi.output_type
 class GetAutoScalingConfigurationPolicyResourceActionResult(dict):
     def __init__(__self__, *,
-                 action: str,
-                 action_type: str):
-        """
-        :param str action: The action to take when autoscaling is triggered.
-        :param str action_type: The type of resource action.
-        """
-        pulumi.set(__self__, "action", action)
-        pulumi.set(__self__, "action_type", action_type)
+                 action: Optional[str] = None,
+                 action_type: Optional[str] = None):
+        if action is not None:
+            pulumi.set(__self__, "action", action)
+        if action_type is not None:
+            pulumi.set(__self__, "action_type", action_type)
 
     @property
     @pulumi.getter
-    def action(self) -> str:
-        """
-        The action to take when autoscaling is triggered.
-        """
+    def action(self) -> Optional[str]:
         return pulumi.get(self, "action")
 
     @property
     @pulumi.getter(name="actionType")
-    def action_type(self) -> str:
-        """
-        The type of resource action.
-        """
+    def action_type(self) -> Optional[str]:
         return pulumi.get(self, "action_type")
 
 
 @pulumi.output_type
 class GetAutoScalingConfigurationPolicyRuleResult(dict):
     def __init__(__self__, *,
-                 actions: Sequence['outputs.GetAutoScalingConfigurationPolicyRuleActionResult'],
-                 display_name: str,
-                 id: str,
-                 metrics: Sequence['outputs.GetAutoScalingConfigurationPolicyRuleMetricResult']):
-        """
-        :param Sequence['GetAutoScalingConfigurationPolicyRuleActionArgs'] actions: The action to take when autoscaling is triggered.
-        :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param str id: ID of the condition that is assigned after creation.
-        :param Sequence['GetAutoScalingConfigurationPolicyRuleMetricArgs'] metrics: Metric and threshold details for triggering an autoscaling action.
-        """
-        pulumi.set(__self__, "actions", actions)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "metrics", metrics)
+                 actions: Optional[Sequence['outputs.GetAutoScalingConfigurationPolicyRuleActionResult']] = None,
+                 display_name: Optional[str] = None,
+                 id: Optional[str] = None,
+                 metrics: Optional[Sequence['outputs.GetAutoScalingConfigurationPolicyRuleMetricResult']] = None):
+        if actions is not None:
+            pulumi.set(__self__, "actions", actions)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if metrics is not None:
+            pulumi.set(__self__, "metrics", metrics)
 
     @property
     @pulumi.getter
-    def actions(self) -> Sequence['outputs.GetAutoScalingConfigurationPolicyRuleActionResult']:
-        """
-        The action to take when autoscaling is triggered.
-        """
+    def actions(self) -> Optional[Sequence['outputs.GetAutoScalingConfigurationPolicyRuleActionResult']]:
         return pulumi.get(self, "actions")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        ID of the condition that is assigned after creation.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
-    def metrics(self) -> Sequence['outputs.GetAutoScalingConfigurationPolicyRuleMetricResult']:
-        """
-        Metric and threshold details for triggering an autoscaling action.
-        """
+    def metrics(self) -> Optional[Sequence['outputs.GetAutoScalingConfigurationPolicyRuleMetricResult']]:
         return pulumi.get(self, "metrics")
 
 
 @pulumi.output_type
 class GetAutoScalingConfigurationPolicyRuleActionResult(dict):
     def __init__(__self__, *,
-                 type: str,
-                 value: int):
-        """
-        :param str type: The type of action to take.
-        """
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "value", value)
+                 type: Optional[str] = None,
+                 value: Optional[int] = None):
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        The type of action to take.
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
     @property
     @pulumi.getter
-    def value(self) -> int:
+    def value(self) -> Optional[int]:
         return pulumi.get(self, "value")
 
 
 @pulumi.output_type
 class GetAutoScalingConfigurationPolicyRuleMetricResult(dict):
     def __init__(__self__, *,
-                 metric_type: str,
-                 thresholds: Sequence['outputs.GetAutoScalingConfigurationPolicyRuleMetricThresholdResult']):
-        pulumi.set(__self__, "metric_type", metric_type)
-        pulumi.set(__self__, "thresholds", thresholds)
+                 metric_type: Optional[str] = None,
+                 thresholds: Optional[Sequence['outputs.GetAutoScalingConfigurationPolicyRuleMetricThresholdResult']] = None):
+        if metric_type is not None:
+            pulumi.set(__self__, "metric_type", metric_type)
+        if thresholds is not None:
+            pulumi.set(__self__, "thresholds", thresholds)
 
     @property
     @pulumi.getter(name="metricType")
-    def metric_type(self) -> str:
+    def metric_type(self) -> Optional[str]:
         return pulumi.get(self, "metric_type")
 
     @property
     @pulumi.getter
-    def thresholds(self) -> Sequence['outputs.GetAutoScalingConfigurationPolicyRuleMetricThresholdResult']:
+    def thresholds(self) -> Optional[Sequence['outputs.GetAutoScalingConfigurationPolicyRuleMetricThresholdResult']]:
         return pulumi.get(self, "thresholds")
 
 
 @pulumi.output_type
 class GetAutoScalingConfigurationPolicyRuleMetricThresholdResult(dict):
     def __init__(__self__, *,
-                 operator: str,
-                 value: int):
-        """
-        :param str operator: The comparison operator to use. Options are greater than (`GT`), greater than or equal to (`GTE`), less than (`LT`), and less than or equal to (`LTE`).
-        """
-        pulumi.set(__self__, "operator", operator)
-        pulumi.set(__self__, "value", value)
+                 operator: Optional[str] = None,
+                 value: Optional[int] = None):
+        if operator is not None:
+            pulumi.set(__self__, "operator", operator)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter
-    def operator(self) -> str:
-        """
-        The comparison operator to use. Options are greater than (`GT`), greater than or equal to (`GTE`), less than (`LT`), and less than or equal to (`LTE`).
-        """
+    def operator(self) -> Optional[str]:
         return pulumi.get(self, "operator")
 
     @property
     @pulumi.getter
-    def value(self) -> int:
+    def value(self) -> Optional[int]:
         return pulumi.get(self, "value")
 
 
 @pulumi.output_type
 class GetAutoScalingConfigurationsAutoScalingConfigurationResult(dict):
     def __init__(__self__, *,
-                 auto_scaling_resources: Sequence['outputs.GetAutoScalingConfigurationsAutoScalingConfigurationAutoScalingResourceResult'],
-                 compartment_id: str,
-                 cool_down_in_seconds: int,
-                 defined_tags: Mapping[str, Any],
-                 display_name: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 is_enabled: bool,
-                 max_resource_count: int,
-                 min_resource_count: int,
-                 policies: Sequence['outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyResult'],
-                 time_created: str):
-        """
-        :param Sequence['GetAutoScalingConfigurationsAutoScalingConfigurationAutoScalingResourceArgs'] auto_scaling_resources: A resource that is managed by an autoscaling configuration. The only supported type is "instancePool."
-        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the resources monitored by the metric that you are searching for. Use tenancyId to search in the root compartment.
-        :param int cool_down_in_seconds: For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize before rescaling. The minimum value is 300 seconds, which is also the default. The cooldown period starts when the instance pool reaches the running state.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param str display_name: A filter to return only resources that match the given display name exactly.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param str id: ID of the condition that is assigned after creation.
-        :param bool is_enabled: Whether the autoscaling policy is enabled.
-        :param int max_resource_count: The maximum number of resources to scale out to.
-        :param int min_resource_count: The minimum number of resources to scale in to.
-        :param Sequence['GetAutoScalingConfigurationsAutoScalingConfigurationPolicyArgs'] policies: Autoscaling policy definitions for the autoscaling configuration. An autoscaling policy defines the criteria that trigger autoscaling actions and the actions to take.
-        :param str time_created: The date and time the autoscaling configuration was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-        """
-        pulumi.set(__self__, "auto_scaling_resources", auto_scaling_resources)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "cool_down_in_seconds", cool_down_in_seconds)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "max_resource_count", max_resource_count)
-        pulumi.set(__self__, "min_resource_count", min_resource_count)
-        pulumi.set(__self__, "policies", policies)
-        pulumi.set(__self__, "time_created", time_created)
+                 auto_scaling_resources: Optional[Sequence['outputs.GetAutoScalingConfigurationsAutoScalingConfigurationAutoScalingResourceResult']] = None,
+                 compartment_id: Optional[str] = None,
+                 cool_down_in_seconds: Optional[int] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 display_name: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 is_enabled: Optional[bool] = None,
+                 max_resource_count: Optional[int] = None,
+                 min_resource_count: Optional[int] = None,
+                 policies: Optional[Sequence['outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyResult']] = None,
+                 time_created: Optional[str] = None):
+        if auto_scaling_resources is not None:
+            pulumi.set(__self__, "auto_scaling_resources", auto_scaling_resources)
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if cool_down_in_seconds is not None:
+            pulumi.set(__self__, "cool_down_in_seconds", cool_down_in_seconds)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if is_enabled is not None:
+            pulumi.set(__self__, "is_enabled", is_enabled)
+        if max_resource_count is not None:
+            pulumi.set(__self__, "max_resource_count", max_resource_count)
+        if min_resource_count is not None:
+            pulumi.set(__self__, "min_resource_count", min_resource_count)
+        if policies is not None:
+            pulumi.set(__self__, "policies", policies)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
 
     @property
     @pulumi.getter(name="autoScalingResources")
-    def auto_scaling_resources(self) -> Sequence['outputs.GetAutoScalingConfigurationsAutoScalingConfigurationAutoScalingResourceResult']:
-        """
-        A resource that is managed by an autoscaling configuration. The only supported type is "instancePool."
-        """
+    def auto_scaling_resources(self) -> Optional[Sequence['outputs.GetAutoScalingConfigurationsAutoScalingConfigurationAutoScalingResourceResult']]:
         return pulumi.get(self, "auto_scaling_resources")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the resources monitored by the metric that you are searching for. Use tenancyId to search in the root compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="coolDownInSeconds")
-    def cool_down_in_seconds(self) -> int:
-        """
-        For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize before rescaling. The minimum value is 300 seconds, which is also the default. The cooldown period starts when the instance pool reaches the running state.
-        """
+    def cool_down_in_seconds(self) -> Optional[int]:
         return pulumi.get(self, "cool_down_in_seconds")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return only resources that match the given display name exactly.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        ID of the condition that is assigned after creation.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isEnabled")
-    def is_enabled(self) -> bool:
-        """
-        Whether the autoscaling policy is enabled.
-        """
+    def is_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_enabled")
 
     @property
     @pulumi.getter(name="maxResourceCount")
-    def max_resource_count(self) -> int:
-        """
-        The maximum number of resources to scale out to.
-        """
+    def max_resource_count(self) -> Optional[int]:
         return pulumi.get(self, "max_resource_count")
 
     @property
     @pulumi.getter(name="minResourceCount")
-    def min_resource_count(self) -> int:
-        """
-        The minimum number of resources to scale in to.
-        """
+    def min_resource_count(self) -> Optional[int]:
         return pulumi.get(self, "min_resource_count")
 
     @property
     @pulumi.getter
-    def policies(self) -> Sequence['outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyResult']:
-        """
-        Autoscaling policy definitions for the autoscaling configuration. An autoscaling policy defines the criteria that trigger autoscaling actions and the actions to take.
-        """
+    def policies(self) -> Optional[Sequence['outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyResult']]:
         return pulumi.get(self, "policies")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the autoscaling configuration was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
 
 @pulumi.output_type
 class GetAutoScalingConfigurationsAutoScalingConfigurationAutoScalingResourceResult(dict):
     def __init__(__self__, *,
-                 id: str,
-                 type: str):
-        """
-        :param str id: ID of the condition that is assigned after creation.
-        :param str type: The type of action to take.
-        """
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "type", type)
+                 id: Optional[str] = None,
+                 type: Optional[str] = None):
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        ID of the condition that is assigned after creation.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        The type of action to take.
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
 
 @pulumi.output_type
 class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyResult(dict):
     def __init__(__self__, *,
-                 capacities: Sequence['outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyCapacityResult'],
-                 display_name: str,
-                 execution_schedules: Sequence['outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyExecutionScheduleResult'],
-                 id: str,
-                 is_enabled: bool,
-                 policy_type: str,
-                 resource_actions: Sequence['outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyResourceActionResult'],
-                 rules: Sequence['outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleResult'],
-                 time_created: str):
-        """
-        :param Sequence['GetAutoScalingConfigurationsAutoScalingConfigurationPolicyCapacityArgs'] capacities: The capacity requirements of the autoscaling policy.
-        :param str display_name: A filter to return only resources that match the given display name exactly.
-        :param Sequence['GetAutoScalingConfigurationsAutoScalingConfigurationPolicyExecutionScheduleArgs'] execution_schedules: The schedule for executing the autoscaling policy.
-        :param str id: ID of the condition that is assigned after creation.
-        :param bool is_enabled: Whether the autoscaling policy is enabled.
-        :param str policy_type: The type of autoscaling policy.
-        :param Sequence['GetAutoScalingConfigurationsAutoScalingConfigurationPolicyResourceActionArgs'] resource_actions: An action that can be executed against a resource.
-        :param str time_created: The date and time the autoscaling configuration was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-        """
-        pulumi.set(__self__, "capacities", capacities)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "execution_schedules", execution_schedules)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "policy_type", policy_type)
-        pulumi.set(__self__, "resource_actions", resource_actions)
-        pulumi.set(__self__, "rules", rules)
-        pulumi.set(__self__, "time_created", time_created)
+                 capacities: Optional[Sequence['outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyCapacityResult']] = None,
+                 display_name: Optional[str] = None,
+                 execution_schedules: Optional[Sequence['outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyExecutionScheduleResult']] = None,
+                 id: Optional[str] = None,
+                 is_enabled: Optional[bool] = None,
+                 policy_type: Optional[str] = None,
+                 resource_actions: Optional[Sequence['outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyResourceActionResult']] = None,
+                 rules: Optional[Sequence['outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleResult']] = None,
+                 time_created: Optional[str] = None):
+        if capacities is not None:
+            pulumi.set(__self__, "capacities", capacities)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if execution_schedules is not None:
+            pulumi.set(__self__, "execution_schedules", execution_schedules)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if is_enabled is not None:
+            pulumi.set(__self__, "is_enabled", is_enabled)
+        if policy_type is not None:
+            pulumi.set(__self__, "policy_type", policy_type)
+        if resource_actions is not None:
+            pulumi.set(__self__, "resource_actions", resource_actions)
+        if rules is not None:
+            pulumi.set(__self__, "rules", rules)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
 
     @property
     @pulumi.getter
-    def capacities(self) -> Sequence['outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyCapacityResult']:
-        """
-        The capacity requirements of the autoscaling policy.
-        """
+    def capacities(self) -> Optional[Sequence['outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyCapacityResult']]:
         return pulumi.get(self, "capacities")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return only resources that match the given display name exactly.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="executionSchedules")
-    def execution_schedules(self) -> Sequence['outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyExecutionScheduleResult']:
-        """
-        The schedule for executing the autoscaling policy.
-        """
+    def execution_schedules(self) -> Optional[Sequence['outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyExecutionScheduleResult']]:
         return pulumi.get(self, "execution_schedules")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        ID of the condition that is assigned after creation.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isEnabled")
-    def is_enabled(self) -> bool:
-        """
-        Whether the autoscaling policy is enabled.
-        """
+    def is_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_enabled")
 
     @property
     @pulumi.getter(name="policyType")
-    def policy_type(self) -> str:
-        """
-        The type of autoscaling policy.
-        """
+    def policy_type(self) -> Optional[str]:
         return pulumi.get(self, "policy_type")
 
     @property
     @pulumi.getter(name="resourceActions")
-    def resource_actions(self) -> Sequence['outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyResourceActionResult']:
-        """
-        An action that can be executed against a resource.
-        """
+    def resource_actions(self) -> Optional[Sequence['outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyResourceActionResult']]:
         return pulumi.get(self, "resource_actions")
 
     @property
     @pulumi.getter
-    def rules(self) -> Sequence['outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleResult']:
+    def rules(self) -> Optional[Sequence['outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleResult']]:
         return pulumi.get(self, "rules")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the autoscaling configuration was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
 
 @pulumi.output_type
 class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyCapacityResult(dict):
     def __init__(__self__, *,
-                 initial: int,
-                 max: int,
-                 min: int):
-        """
-        :param int initial: For a threshold-based autoscaling policy, this value is the initial number of instances to launch in the instance pool immediately after autoscaling is enabled. After autoscaling retrieves performance metrics, the number of instances is automatically adjusted from this initial number to a number that is based on the limits that you set.
-        :param int max: For a threshold-based autoscaling policy, this value is the maximum number of instances the instance pool is allowed to increase to (scale out).
-        :param int min: For a threshold-based autoscaling policy, this value is the minimum number of instances the instance pool is allowed to decrease to (scale in).
-        """
-        pulumi.set(__self__, "initial", initial)
-        pulumi.set(__self__, "max", max)
-        pulumi.set(__self__, "min", min)
+                 initial: Optional[int] = None,
+                 max: Optional[int] = None,
+                 min: Optional[int] = None):
+        if initial is not None:
+            pulumi.set(__self__, "initial", initial)
+        if max is not None:
+            pulumi.set(__self__, "max", max)
+        if min is not None:
+            pulumi.set(__self__, "min", min)
 
     @property
     @pulumi.getter
-    def initial(self) -> int:
-        """
-        For a threshold-based autoscaling policy, this value is the initial number of instances to launch in the instance pool immediately after autoscaling is enabled. After autoscaling retrieves performance metrics, the number of instances is automatically adjusted from this initial number to a number that is based on the limits that you set.
-        """
+    def initial(self) -> Optional[int]:
         return pulumi.get(self, "initial")
 
     @property
     @pulumi.getter
-    def max(self) -> int:
-        """
-        For a threshold-based autoscaling policy, this value is the maximum number of instances the instance pool is allowed to increase to (scale out).
-        """
+    def max(self) -> Optional[int]:
         return pulumi.get(self, "max")
 
     @property
     @pulumi.getter
-    def min(self) -> int:
-        """
-        For a threshold-based autoscaling policy, this value is the minimum number of instances the instance pool is allowed to decrease to (scale in).
-        """
+    def min(self) -> Optional[int]:
         return pulumi.get(self, "min")
 
 
 @pulumi.output_type
 class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyExecutionScheduleResult(dict):
     def __init__(__self__, *,
-                 expression: str,
-                 timezone: str,
-                 type: str):
-        """
-        :param str expression: A cron expression that represents the time at which to execute the autoscaling policy.
-        :param str timezone: The time zone for the execution schedule.
-        :param str type: The type of action to take.
-        """
-        pulumi.set(__self__, "expression", expression)
-        pulumi.set(__self__, "timezone", timezone)
-        pulumi.set(__self__, "type", type)
+                 expression: Optional[str] = None,
+                 timezone: Optional[str] = None,
+                 type: Optional[str] = None):
+        if expression is not None:
+            pulumi.set(__self__, "expression", expression)
+        if timezone is not None:
+            pulumi.set(__self__, "timezone", timezone)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter
-    def expression(self) -> str:
-        """
-        A cron expression that represents the time at which to execute the autoscaling policy.
-        """
+    def expression(self) -> Optional[str]:
         return pulumi.get(self, "expression")
 
     @property
     @pulumi.getter
-    def timezone(self) -> str:
-        """
-        The time zone for the execution schedule.
-        """
+    def timezone(self) -> Optional[str]:
         return pulumi.get(self, "timezone")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        The type of action to take.
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
 
 @pulumi.output_type
 class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyResourceActionResult(dict):
     def __init__(__self__, *,
-                 action: str,
-                 action_type: str):
-        """
-        :param str action: The action to take when autoscaling is triggered.
-        :param str action_type: The type of resource action.
-        """
-        pulumi.set(__self__, "action", action)
-        pulumi.set(__self__, "action_type", action_type)
+                 action: Optional[str] = None,
+                 action_type: Optional[str] = None):
+        if action is not None:
+            pulumi.set(__self__, "action", action)
+        if action_type is not None:
+            pulumi.set(__self__, "action_type", action_type)
 
     @property
     @pulumi.getter
-    def action(self) -> str:
-        """
-        The action to take when autoscaling is triggered.
-        """
+    def action(self) -> Optional[str]:
         return pulumi.get(self, "action")
 
     @property
     @pulumi.getter(name="actionType")
-    def action_type(self) -> str:
-        """
-        The type of resource action.
-        """
+    def action_type(self) -> Optional[str]:
         return pulumi.get(self, "action_type")
 
 
 @pulumi.output_type
 class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleResult(dict):
     def __init__(__self__, *,
-                 actions: Sequence['outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleActionResult'],
-                 display_name: str,
-                 id: str,
-                 metrics: Sequence['outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricResult']):
-        """
-        :param Sequence['GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleActionArgs'] actions: The action to take when autoscaling is triggered.
-        :param str display_name: A filter to return only resources that match the given display name exactly.
-        :param str id: ID of the condition that is assigned after creation.
-        :param Sequence['GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricArgs'] metrics: Metric and threshold details for triggering an autoscaling action.
-        """
-        pulumi.set(__self__, "actions", actions)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "metrics", metrics)
+                 actions: Optional[Sequence['outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleActionResult']] = None,
+                 display_name: Optional[str] = None,
+                 id: Optional[str] = None,
+                 metrics: Optional[Sequence['outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricResult']] = None):
+        if actions is not None:
+            pulumi.set(__self__, "actions", actions)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if metrics is not None:
+            pulumi.set(__self__, "metrics", metrics)
 
     @property
     @pulumi.getter
-    def actions(self) -> Sequence['outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleActionResult']:
-        """
-        The action to take when autoscaling is triggered.
-        """
+    def actions(self) -> Optional[Sequence['outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleActionResult']]:
         return pulumi.get(self, "actions")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return only resources that match the given display name exactly.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        ID of the condition that is assigned after creation.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
-    def metrics(self) -> Sequence['outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricResult']:
-        """
-        Metric and threshold details for triggering an autoscaling action.
-        """
+    def metrics(self) -> Optional[Sequence['outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricResult']]:
         return pulumi.get(self, "metrics")
 
 
 @pulumi.output_type
 class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleActionResult(dict):
     def __init__(__self__, *,
-                 type: str,
-                 value: int):
-        """
-        :param str type: The type of action to take.
-        """
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "value", value)
+                 type: Optional[str] = None,
+                 value: Optional[int] = None):
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        The type of action to take.
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
     @property
     @pulumi.getter
-    def value(self) -> int:
+    def value(self) -> Optional[int]:
         return pulumi.get(self, "value")
 
 
 @pulumi.output_type
 class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricResult(dict):
     def __init__(__self__, *,
-                 metric_type: str,
-                 thresholds: Sequence['outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricThresholdResult']):
-        pulumi.set(__self__, "metric_type", metric_type)
-        pulumi.set(__self__, "thresholds", thresholds)
+                 metric_type: Optional[str] = None,
+                 thresholds: Optional[Sequence['outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricThresholdResult']] = None):
+        if metric_type is not None:
+            pulumi.set(__self__, "metric_type", metric_type)
+        if thresholds is not None:
+            pulumi.set(__self__, "thresholds", thresholds)
 
     @property
     @pulumi.getter(name="metricType")
-    def metric_type(self) -> str:
+    def metric_type(self) -> Optional[str]:
         return pulumi.get(self, "metric_type")
 
     @property
     @pulumi.getter
-    def thresholds(self) -> Sequence['outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricThresholdResult']:
+    def thresholds(self) -> Optional[Sequence['outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricThresholdResult']]:
         return pulumi.get(self, "thresholds")
 
 
 @pulumi.output_type
 class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricThresholdResult(dict):
     def __init__(__self__, *,
-                 operator: str,
-                 value: int):
-        """
-        :param str operator: The comparison operator to use. Options are greater than (`GT`), greater than or equal to (`GTE`), less than (`LT`), and less than or equal to (`LTE`).
-        """
-        pulumi.set(__self__, "operator", operator)
-        pulumi.set(__self__, "value", value)
+                 operator: Optional[str] = None,
+                 value: Optional[int] = None):
+        if operator is not None:
+            pulumi.set(__self__, "operator", operator)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter
-    def operator(self) -> str:
-        """
-        The comparison operator to use. Options are greater than (`GT`), greater than or equal to (`GTE`), less than (`LT`), and less than or equal to (`LTE`).
-        """
+    def operator(self) -> Optional[str]:
         return pulumi.get(self, "operator")
 
     @property
     @pulumi.getter
-    def value(self) -> int:
+    def value(self) -> Optional[int]:
         return pulumi.get(self, "value")
 
 

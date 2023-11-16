@@ -16,23 +16,23 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
         /// <summary>
         /// If the parameter value is secret and should be kept confidential, then set isSecret to true.
         /// </summary>
-        public readonly bool IsSecret;
+        public readonly bool? IsSecret;
         /// <summary>
         /// Name of the parameter.
         /// </summary>
-        public readonly string ParamName;
+        public readonly string? ParamName;
         /// <summary>
         /// Value of the parameter.
         /// </summary>
-        public readonly string ParamValue;
+        public readonly string? ParamValue;
 
         [OutputConstructor]
         private GetScriptParameterScriptParameterResult(
-            bool isSecret,
+            bool? isSecret,
 
-            string paramName,
+            string? paramName,
 
-            string paramValue)
+            string? paramValue)
         {
             IsSecret = isSecret;
             ParamName = paramName;

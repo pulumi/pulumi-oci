@@ -6,6 +6,8 @@ package com.pulumi.oci.ContainerEngine.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMigrateToNativeVcnStatusResult {
@@ -14,9 +16,9 @@ public final class GetMigrateToNativeVcnStatusResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
-    private String state;
-    private String timeDecommissionScheduled;
+    private @Nullable String id;
+    private @Nullable String state;
+    private @Nullable String timeDecommissionScheduled;
 
     private GetMigrateToNativeVcnStatusResult() {}
     public String clusterId() {
@@ -26,14 +28,14 @@ public final class GetMigrateToNativeVcnStatusResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
-    public String timeDecommissionScheduled() {
-        return this.timeDecommissionScheduled;
+    public Optional<String> timeDecommissionScheduled() {
+        return Optional.ofNullable(this.timeDecommissionScheduled);
     }
 
     public static Builder builder() {
@@ -46,9 +48,9 @@ public final class GetMigrateToNativeVcnStatusResult {
     @CustomType.Builder
     public static final class Builder {
         private String clusterId;
-        private String id;
-        private String state;
-        private String timeDecommissionScheduled;
+        private @Nullable String id;
+        private @Nullable String state;
+        private @Nullable String timeDecommissionScheduled;
         public Builder() {}
         public Builder(GetMigrateToNativeVcnStatusResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -64,18 +66,18 @@ public final class GetMigrateToNativeVcnStatusResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeDecommissionScheduled(String timeDecommissionScheduled) {
-            this.timeDecommissionScheduled = Objects.requireNonNull(timeDecommissionScheduled);
+        public Builder timeDecommissionScheduled(@Nullable String timeDecommissionScheduled) {
+            this.timeDecommissionScheduled = timeDecommissionScheduled;
             return this;
         }
         public GetMigrateToNativeVcnStatusResult build() {

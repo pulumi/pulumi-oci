@@ -6,6 +6,8 @@ package com.pulumi.oci.DisasterRecovery.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetail {
@@ -13,15 +15,15 @@ public final class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlo
      * @return The physical mount point of the file system on a host.  Example: `/mnt/yourmountpoint`
      * 
      */
-    private String mountPoint;
+    private @Nullable String mountPoint;
 
     private GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetail() {}
     /**
      * @return The physical mount point of the file system on a host.  Example: `/mnt/yourmountpoint`
      * 
      */
-    public String mountPoint() {
-        return this.mountPoint;
+    public Optional<String> mountPoint() {
+        return Optional.ofNullable(this.mountPoint);
     }
 
     public static Builder builder() {
@@ -33,7 +35,7 @@ public final class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlo
     }
     @CustomType.Builder
     public static final class Builder {
-        private String mountPoint;
+        private @Nullable String mountPoint;
         public Builder() {}
         public Builder(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -41,8 +43,8 @@ public final class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlo
         }
 
         @CustomType.Setter
-        public Builder mountPoint(String mountPoint) {
-            this.mountPoint = Objects.requireNonNull(mountPoint);
+        public Builder mountPoint(@Nullable String mountPoint) {
+            this.mountPoint = mountPoint;
             return this;
         }
         public GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetail build() {

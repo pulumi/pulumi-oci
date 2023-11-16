@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Fusion Environment Data Masking Activity resource in Oracle Cloud Infrastructure Fusion Apps service.
@@ -66,14 +65,14 @@ type GetFusionEnvironmentDataMaskingActivityResult struct {
 	// Fusion Environment Identifier.
 	FusionEnvironmentId string `pulumi:"fusionEnvironmentId"`
 	// Unique identifier that is immutable on creation.
-	Id                  string `pulumi:"id"`
-	IsResumeDataMasking bool   `pulumi:"isResumeDataMasking"`
+	Id                  *string `pulumi:"id"`
+	IsResumeDataMasking *bool   `pulumi:"isResumeDataMasking"`
 	// The current state of the DataMaskingActivity.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The time the data masking activity ended. An RFC3339 formatted datetime string.
-	TimeMaskingFinish string `pulumi:"timeMaskingFinish"`
+	TimeMaskingFinish *string `pulumi:"timeMaskingFinish"`
 	// The time the data masking activity started. An RFC3339 formatted datetime string.
-	TimeMaskingStart string `pulumi:"timeMaskingStart"`
+	TimeMaskingStart *string `pulumi:"timeMaskingStart"`
 }
 
 func GetFusionEnvironmentDataMaskingActivityOutput(ctx *pulumi.Context, args GetFusionEnvironmentDataMaskingActivityOutputArgs, opts ...pulumi.InvokeOption) GetFusionEnvironmentDataMaskingActivityResultOutput {
@@ -116,12 +115,6 @@ func (o GetFusionEnvironmentDataMaskingActivityResultOutput) ToGetFusionEnvironm
 	return o
 }
 
-func (o GetFusionEnvironmentDataMaskingActivityResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentDataMaskingActivityResult] {
-	return pulumix.Output[GetFusionEnvironmentDataMaskingActivityResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetFusionEnvironmentDataMaskingActivityResultOutput) DataMaskingActivityId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFusionEnvironmentDataMaskingActivityResult) string { return v.DataMaskingActivityId }).(pulumi.StringOutput)
 }
@@ -132,27 +125,27 @@ func (o GetFusionEnvironmentDataMaskingActivityResultOutput) FusionEnvironmentId
 }
 
 // Unique identifier that is immutable on creation.
-func (o GetFusionEnvironmentDataMaskingActivityResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentDataMaskingActivityResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentDataMaskingActivityResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentDataMaskingActivityResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
-func (o GetFusionEnvironmentDataMaskingActivityResultOutput) IsResumeDataMasking() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentDataMaskingActivityResult) bool { return v.IsResumeDataMasking }).(pulumi.BoolOutput)
+func (o GetFusionEnvironmentDataMaskingActivityResultOutput) IsResumeDataMasking() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentDataMaskingActivityResult) *bool { return v.IsResumeDataMasking }).(pulumi.BoolPtrOutput)
 }
 
 // The current state of the DataMaskingActivity.
-func (o GetFusionEnvironmentDataMaskingActivityResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentDataMaskingActivityResult) string { return v.State }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentDataMaskingActivityResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentDataMaskingActivityResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The time the data masking activity ended. An RFC3339 formatted datetime string.
-func (o GetFusionEnvironmentDataMaskingActivityResultOutput) TimeMaskingFinish() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentDataMaskingActivityResult) string { return v.TimeMaskingFinish }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentDataMaskingActivityResultOutput) TimeMaskingFinish() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentDataMaskingActivityResult) *string { return v.TimeMaskingFinish }).(pulumi.StringPtrOutput)
 }
 
 // The time the data masking activity started. An RFC3339 formatted datetime string.
-func (o GetFusionEnvironmentDataMaskingActivityResultOutput) TimeMaskingStart() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentDataMaskingActivityResult) string { return v.TimeMaskingStart }).(pulumi.StringOutput)
+func (o GetFusionEnvironmentDataMaskingActivityResultOutput) TimeMaskingStart() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentDataMaskingActivityResult) *string { return v.TimeMaskingStart }).(pulumi.StringPtrOutput)
 }
 
 func init() {

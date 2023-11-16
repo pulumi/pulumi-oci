@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Core.outputs.GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionAction;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfig {
@@ -14,7 +15,7 @@ public final class GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreem
      * @return The action to run when the preemptible instance is interrupted for eviction.
      * 
      */
-    private List<GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionAction> preemptionActions;
+    private @Nullable List<GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionAction> preemptionActions;
 
     private GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfig() {}
     /**
@@ -22,7 +23,7 @@ public final class GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreem
      * 
      */
     public List<GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionAction> preemptionActions() {
-        return this.preemptionActions;
+        return this.preemptionActions == null ? List.of() : this.preemptionActions;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreem
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionAction> preemptionActions;
+        private @Nullable List<GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionAction> preemptionActions;
         public Builder() {}
         public Builder(GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfig defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreem
         }
 
         @CustomType.Setter
-        public Builder preemptionActions(List<GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionAction> preemptionActions) {
-            this.preemptionActions = Objects.requireNonNull(preemptionActions);
+        public Builder preemptionActions(@Nullable List<GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionAction> preemptionActions) {
+            this.preemptionActions = preemptionActions;
             return this;
         }
         public Builder preemptionActions(GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionAction... preemptionActions) {

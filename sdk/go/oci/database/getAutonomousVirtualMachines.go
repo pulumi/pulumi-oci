@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Autonomous Virtual Machines in Oracle Cloud Infrastructure Database service.
@@ -74,7 +73,7 @@ type GetAutonomousVirtualMachinesResult struct {
 	CompartmentId string                               `pulumi:"compartmentId"`
 	Filters       []GetAutonomousVirtualMachinesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The current state of the Autonomous Virtual Machine.
 	State *string `pulumi:"state"`
 }
@@ -122,12 +121,6 @@ func (o GetAutonomousVirtualMachinesResultOutput) ToGetAutonomousVirtualMachines
 	return o
 }
 
-func (o GetAutonomousVirtualMachinesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAutonomousVirtualMachinesResult] {
-	return pulumix.Output[GetAutonomousVirtualMachinesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The list of autonomous_virtual_machines.
 func (o GetAutonomousVirtualMachinesResultOutput) AutonomousVirtualMachines() GetAutonomousVirtualMachinesAutonomousVirtualMachineArrayOutput {
 	return o.ApplyT(func(v GetAutonomousVirtualMachinesResult) []GetAutonomousVirtualMachinesAutonomousVirtualMachine {
@@ -150,8 +143,8 @@ func (o GetAutonomousVirtualMachinesResultOutput) Filters() GetAutonomousVirtual
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetAutonomousVirtualMachinesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAutonomousVirtualMachinesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetAutonomousVirtualMachinesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAutonomousVirtualMachinesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the Autonomous Virtual Machine.

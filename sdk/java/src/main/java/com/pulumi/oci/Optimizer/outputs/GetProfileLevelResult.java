@@ -20,12 +20,12 @@ public final class GetProfileLevelResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return A collection of profile levels.
      * 
      */
-    private List<GetProfileLevelItem> items;
+    private @Nullable List<GetProfileLevelItem> items;
     /**
      * @return A unique name for the profile level.
      * 
@@ -48,15 +48,15 @@ public final class GetProfileLevelResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return A collection of profile levels.
      * 
      */
     public List<GetProfileLevelItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
     /**
      * @return A unique name for the profile level.
@@ -84,8 +84,8 @@ public final class GetProfileLevelResult {
     public static final class Builder {
         private String compartmentId;
         private Boolean compartmentIdInSubtree;
-        private String id;
-        private List<GetProfileLevelItem> items;
+        private @Nullable String id;
+        private @Nullable List<GetProfileLevelItem> items;
         private @Nullable String name;
         private @Nullable String recommendationName;
         public Builder() {}
@@ -110,13 +110,13 @@ public final class GetProfileLevelResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder items(List<GetProfileLevelItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetProfileLevelItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetProfileLevelItem... items) {

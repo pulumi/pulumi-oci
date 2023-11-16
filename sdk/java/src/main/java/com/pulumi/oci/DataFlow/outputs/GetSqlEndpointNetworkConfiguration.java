@@ -8,6 +8,8 @@ import com.pulumi.oci.DataFlow.outputs.GetSqlEndpointNetworkConfigurationAccessC
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSqlEndpointNetworkConfiguration {
@@ -15,37 +17,37 @@ public final class GetSqlEndpointNetworkConfiguration {
      * @return A list of SecureAccessControlRule&#39;s to which access is limited to
      * 
      */
-    private List<GetSqlEndpointNetworkConfigurationAccessControlRule> accessControlRules;
+    private @Nullable List<GetSqlEndpointNetworkConfigurationAccessControlRule> accessControlRules;
     /**
      * @return The host name prefix.
      * 
      */
-    private String hostNamePrefix;
+    private @Nullable String hostNamePrefix;
     /**
      * @return The type of network configuration.
      * 
      */
-    private String networkType;
+    private @Nullable String networkType;
     /**
      * @return Ip Address of private endpoint
      * 
      */
-    private String privateEndpointIp;
+    private @Nullable String privateEndpointIp;
     /**
      * @return Ip Address of public endpoint
      * 
      */
-    private String publicEndpointIp;
+    private @Nullable String publicEndpointIp;
     /**
      * @return The VCN Subnet OCID.
      * 
      */
-    private String subnetId;
+    private @Nullable String subnetId;
     /**
      * @return The VCN OCID.
      * 
      */
-    private String vcnId;
+    private @Nullable String vcnId;
 
     private GetSqlEndpointNetworkConfiguration() {}
     /**
@@ -53,49 +55,49 @@ public final class GetSqlEndpointNetworkConfiguration {
      * 
      */
     public List<GetSqlEndpointNetworkConfigurationAccessControlRule> accessControlRules() {
-        return this.accessControlRules;
+        return this.accessControlRules == null ? List.of() : this.accessControlRules;
     }
     /**
      * @return The host name prefix.
      * 
      */
-    public String hostNamePrefix() {
-        return this.hostNamePrefix;
+    public Optional<String> hostNamePrefix() {
+        return Optional.ofNullable(this.hostNamePrefix);
     }
     /**
      * @return The type of network configuration.
      * 
      */
-    public String networkType() {
-        return this.networkType;
+    public Optional<String> networkType() {
+        return Optional.ofNullable(this.networkType);
     }
     /**
      * @return Ip Address of private endpoint
      * 
      */
-    public String privateEndpointIp() {
-        return this.privateEndpointIp;
+    public Optional<String> privateEndpointIp() {
+        return Optional.ofNullable(this.privateEndpointIp);
     }
     /**
      * @return Ip Address of public endpoint
      * 
      */
-    public String publicEndpointIp() {
-        return this.publicEndpointIp;
+    public Optional<String> publicEndpointIp() {
+        return Optional.ofNullable(this.publicEndpointIp);
     }
     /**
      * @return The VCN Subnet OCID.
      * 
      */
-    public String subnetId() {
-        return this.subnetId;
+    public Optional<String> subnetId() {
+        return Optional.ofNullable(this.subnetId);
     }
     /**
      * @return The VCN OCID.
      * 
      */
-    public String vcnId() {
-        return this.vcnId;
+    public Optional<String> vcnId() {
+        return Optional.ofNullable(this.vcnId);
     }
 
     public static Builder builder() {
@@ -107,13 +109,13 @@ public final class GetSqlEndpointNetworkConfiguration {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetSqlEndpointNetworkConfigurationAccessControlRule> accessControlRules;
-        private String hostNamePrefix;
-        private String networkType;
-        private String privateEndpointIp;
-        private String publicEndpointIp;
-        private String subnetId;
-        private String vcnId;
+        private @Nullable List<GetSqlEndpointNetworkConfigurationAccessControlRule> accessControlRules;
+        private @Nullable String hostNamePrefix;
+        private @Nullable String networkType;
+        private @Nullable String privateEndpointIp;
+        private @Nullable String publicEndpointIp;
+        private @Nullable String subnetId;
+        private @Nullable String vcnId;
         public Builder() {}
         public Builder(GetSqlEndpointNetworkConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
@@ -127,41 +129,41 @@ public final class GetSqlEndpointNetworkConfiguration {
         }
 
         @CustomType.Setter
-        public Builder accessControlRules(List<GetSqlEndpointNetworkConfigurationAccessControlRule> accessControlRules) {
-            this.accessControlRules = Objects.requireNonNull(accessControlRules);
+        public Builder accessControlRules(@Nullable List<GetSqlEndpointNetworkConfigurationAccessControlRule> accessControlRules) {
+            this.accessControlRules = accessControlRules;
             return this;
         }
         public Builder accessControlRules(GetSqlEndpointNetworkConfigurationAccessControlRule... accessControlRules) {
             return accessControlRules(List.of(accessControlRules));
         }
         @CustomType.Setter
-        public Builder hostNamePrefix(String hostNamePrefix) {
-            this.hostNamePrefix = Objects.requireNonNull(hostNamePrefix);
+        public Builder hostNamePrefix(@Nullable String hostNamePrefix) {
+            this.hostNamePrefix = hostNamePrefix;
             return this;
         }
         @CustomType.Setter
-        public Builder networkType(String networkType) {
-            this.networkType = Objects.requireNonNull(networkType);
+        public Builder networkType(@Nullable String networkType) {
+            this.networkType = networkType;
             return this;
         }
         @CustomType.Setter
-        public Builder privateEndpointIp(String privateEndpointIp) {
-            this.privateEndpointIp = Objects.requireNonNull(privateEndpointIp);
+        public Builder privateEndpointIp(@Nullable String privateEndpointIp) {
+            this.privateEndpointIp = privateEndpointIp;
             return this;
         }
         @CustomType.Setter
-        public Builder publicEndpointIp(String publicEndpointIp) {
-            this.publicEndpointIp = Objects.requireNonNull(publicEndpointIp);
+        public Builder publicEndpointIp(@Nullable String publicEndpointIp) {
+            this.publicEndpointIp = publicEndpointIp;
             return this;
         }
         @CustomType.Setter
-        public Builder subnetId(String subnetId) {
-            this.subnetId = Objects.requireNonNull(subnetId);
+        public Builder subnetId(@Nullable String subnetId) {
+            this.subnetId = subnetId;
             return this;
         }
         @CustomType.Setter
-        public Builder vcnId(String vcnId) {
-            this.vcnId = Objects.requireNonNull(vcnId);
+        public Builder vcnId(@Nullable String vcnId) {
+            this.vcnId = vcnId;
             return this;
         }
         public GetSqlEndpointNetworkConfiguration build() {

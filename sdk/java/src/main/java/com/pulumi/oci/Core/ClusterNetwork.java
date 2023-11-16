@@ -17,6 +17,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -122,7 +123,7 @@ public class ClusterNetwork extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="clusterConfiguration", refs={ClusterNetworkClusterConfiguration.class}, tree="[0]")
-    private Output<ClusterNetworkClusterConfiguration> clusterConfiguration;
+    private Output</* @Nullable */ ClusterNetworkClusterConfiguration> clusterConfiguration;
 
     /**
      * @return The HPC cluster configuration requested when launching instances of a cluster network.
@@ -130,8 +131,8 @@ public class ClusterNetwork extends com.pulumi.resources.CustomResource {
      * If the parameter is provided, instances will only be placed within the HPC island and list of network blocks  that you specify. If a list of network blocks are missing or not provided, the instances will be placed in any  HPC blocks in the HPC island that you specify. If the values of HPC island or network block that you provide are  not valid, an error is returned.
      * 
      */
-    public Output<ClusterNetworkClusterConfiguration> clusterConfiguration() {
-        return this.clusterConfiguration;
+    public Output<Optional<ClusterNetworkClusterConfiguration>> clusterConfiguration() {
+        return Codegen.optional(this.clusterConfiguration);
     }
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
@@ -152,56 +153,56 @@ public class ClusterNetwork extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC island.
      * 
      */
     @Export(name="hpcIslandId", refs={String.class}, tree="[0]")
-    private Output<String> hpcIslandId;
+    private Output</* @Nullable */ String> hpcIslandId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC island.
      * 
      */
-    public Output<String> hpcIslandId() {
-        return this.hpcIslandId;
+    public Output<Optional<String>> hpcIslandId() {
+        return Codegen.optional(this.hpcIslandId);
     }
     /**
      * (Updatable) The data to create the instance pools in the cluster network.
@@ -226,14 +227,14 @@ public class ClusterNetwork extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="networkBlockIds", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> networkBlockIds;
+    private Output</* @Nullable */ List<String>> networkBlockIds;
 
     /**
      * @return The list of network block OCIDs.
      * 
      */
-    public Output<List<String>> networkBlockIds() {
-        return this.networkBlockIds;
+    public Output<Optional<List<String>>> networkBlockIds() {
+        return Codegen.optional(this.networkBlockIds);
     }
     /**
      * The location for where the instance pools in a cluster network will place instances.
@@ -254,42 +255,42 @@ public class ClusterNetwork extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the cluster network.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The date and time the resource was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the resource was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The date and time the resource was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The date and time the resource was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
 
     /**

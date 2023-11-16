@@ -9,6 +9,7 @@ import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseSqlTuningAdvi
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticStatementCount;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatistic {
@@ -16,17 +17,17 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatistic
      * @return The benefits of the findings in the SQL Tuning Advisor summary report.
      * 
      */
-    private List<GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingBenefit> findingBenefits;
+    private @Nullable List<GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingBenefit> findingBenefits;
     /**
      * @return The number of findings in the SQL Tuning Advisor summary report.
      * 
      */
-    private List<GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingCount> findingCounts;
+    private @Nullable List<GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingCount> findingCounts;
     /**
      * @return The number of statements in the SQL Tuning Advisor summary report.
      * 
      */
-    private List<GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticStatementCount> statementCounts;
+    private @Nullable List<GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticStatementCount> statementCounts;
 
     private GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatistic() {}
     /**
@@ -34,21 +35,21 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatistic
      * 
      */
     public List<GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingBenefit> findingBenefits() {
-        return this.findingBenefits;
+        return this.findingBenefits == null ? List.of() : this.findingBenefits;
     }
     /**
      * @return The number of findings in the SQL Tuning Advisor summary report.
      * 
      */
     public List<GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingCount> findingCounts() {
-        return this.findingCounts;
+        return this.findingCounts == null ? List.of() : this.findingCounts;
     }
     /**
      * @return The number of statements in the SQL Tuning Advisor summary report.
      * 
      */
     public List<GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticStatementCount> statementCounts() {
-        return this.statementCounts;
+        return this.statementCounts == null ? List.of() : this.statementCounts;
     }
 
     public static Builder builder() {
@@ -60,9 +61,9 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatistic
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingBenefit> findingBenefits;
-        private List<GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingCount> findingCounts;
-        private List<GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticStatementCount> statementCounts;
+        private @Nullable List<GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingBenefit> findingBenefits;
+        private @Nullable List<GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingCount> findingCounts;
+        private @Nullable List<GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticStatementCount> statementCounts;
         public Builder() {}
         public Builder(GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatistic defaults) {
     	      Objects.requireNonNull(defaults);
@@ -72,24 +73,24 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatistic
         }
 
         @CustomType.Setter
-        public Builder findingBenefits(List<GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingBenefit> findingBenefits) {
-            this.findingBenefits = Objects.requireNonNull(findingBenefits);
+        public Builder findingBenefits(@Nullable List<GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingBenefit> findingBenefits) {
+            this.findingBenefits = findingBenefits;
             return this;
         }
         public Builder findingBenefits(GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingBenefit... findingBenefits) {
             return findingBenefits(List.of(findingBenefits));
         }
         @CustomType.Setter
-        public Builder findingCounts(List<GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingCount> findingCounts) {
-            this.findingCounts = Objects.requireNonNull(findingCounts);
+        public Builder findingCounts(@Nullable List<GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingCount> findingCounts) {
+            this.findingCounts = findingCounts;
             return this;
         }
         public Builder findingCounts(GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingCount... findingCounts) {
             return findingCounts(List.of(findingCounts));
         }
         @CustomType.Setter
-        public Builder statementCounts(List<GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticStatementCount> statementCounts) {
-            this.statementCounts = Objects.requireNonNull(statementCounts);
+        public Builder statementCounts(@Nullable List<GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticStatementCount> statementCounts) {
+            this.statementCounts = statementCounts;
             return this;
         }
         public Builder statementCounts(GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticStatementCount... statementCounts) {

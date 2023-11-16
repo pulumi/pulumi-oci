@@ -124,19 +124,19 @@ namespace Pulumi.Oci.ApmConfig
         /// <summary>
         /// The type of configuration item.
         /// </summary>
-        public readonly string ConfigType;
+        public readonly string? ConfigType;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
         /// </summary>
-        public readonly string CreatedBy;
+        public readonly string? CreatedBy;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// A description of the metric.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// A list of dimensions for the metric. This variable should not be used.
         /// </summary>
@@ -144,31 +144,31 @@ namespace Pulumi.Oci.ApmConfig
         /// <summary>
         /// The name by which a configuration entity is displayed to the end user.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// For optimistic concurrency control. See `if-match`.
         /// </summary>
-        public readonly string Etag;
+        public readonly string? Etag;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is generated when a Span Filter is created.
         /// </summary>
-        public readonly string FilterId;
+        public readonly string? FilterId;
         /// <summary>
         /// The string that defines the Span Filter expression.
         /// </summary>
-        public readonly string FilterText;
+        public readonly string? FilterText;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// A string that specifies the group that an OPTIONS item belongs to.
         /// </summary>
-        public readonly string Group;
+        public readonly string? Group;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID is generated when the item is created.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The list of configuration items that reference the span filter.
         /// </summary>
@@ -180,25 +180,25 @@ namespace Pulumi.Oci.ApmConfig
         /// <summary>
         /// The namespace to which the metrics are published. It must be one of several predefined namespaces.
         /// </summary>
-        public readonly string Namespace;
-        public readonly string OpcDryRun;
+        public readonly string? Namespace;
+        public readonly string? OpcDryRun;
         /// <summary>
         /// The options are stored here as JSON.
         /// </summary>
-        public readonly string Options;
+        public readonly string? Options;
         public readonly ImmutableArray<Outputs.GetConfigRuleResult> Rules;
         /// <summary>
         /// The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
         /// </summary>
-        public readonly string UpdatedBy;
+        public readonly string? UpdatedBy;
 
         [OutputConstructor]
         private GetConfigResult(
@@ -206,47 +206,47 @@ namespace Pulumi.Oci.ApmConfig
 
             string configId,
 
-            string configType,
+            string? configType,
 
-            string createdBy,
+            string? createdBy,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string description,
+            string? description,
 
             ImmutableArray<Outputs.GetConfigDimensionResult> dimensions,
 
-            string displayName,
+            string? displayName,
 
-            string etag,
+            string? etag,
 
-            string filterId,
+            string? filterId,
 
-            string filterText,
+            string? filterText,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string group,
+            string? group,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetConfigInUseByResult> inUseBies,
 
             ImmutableArray<Outputs.GetConfigMetricResult> metrics,
 
-            string @namespace,
+            string? @namespace,
 
-            string opcDryRun,
+            string? opcDryRun,
 
-            string options,
+            string? options,
 
             ImmutableArray<Outputs.GetConfigRuleResult> rules,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated,
+            string? timeUpdated,
 
-            string updatedBy)
+            string? updatedBy)
         {
             ApmDomainId = apmDomainId;
             ConfigId = configId;

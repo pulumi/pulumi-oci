@@ -16,27 +16,27 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// A filter to return only resources that match the specified compartment OCID.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// The description of the user assessment.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// A filter to return only resources that match the specified display name.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The OCID of the user assessment.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
         /// </summary>
@@ -48,43 +48,43 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// A filter to return only user assessments that are set as baseline.
         /// </summary>
-        public readonly bool IsBaseline;
+        public readonly bool? IsBaseline;
         /// <summary>
         /// Indicates if the user assessment deviates from the baseline.
         /// </summary>
-        public readonly bool IsDeviatedFromBaseline;
+        public readonly bool? IsDeviatedFromBaseline;
         /// <summary>
         /// The OCID of the last user assessment baseline against which the latest assessment was compared.
         /// </summary>
-        public readonly string LastComparedBaselineId;
+        public readonly string? LastComparedBaselineId;
         /// <summary>
         /// Details about the current state of the user assessment.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// Schedule of the assessment that runs periodically in this specified format: &lt;version-string&gt;;&lt;version-specific-schedule&gt;
         /// </summary>
-        public readonly string Schedule;
+        public readonly string? Schedule;
         /// <summary>
         /// The OCID of the user assessment that is responsible for creating this scheduled save assessment.
         /// </summary>
-        public readonly string ScheduleAssessmentId;
+        public readonly string? ScheduleAssessmentId;
         /// <summary>
         /// The current state of the user assessment.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// Map that contains maps of values. Example: `{"Operations": {"CostCenter": "42"}}`
         /// </summary>
-        public readonly string Statistics;
+        public readonly string? Statistics;
         /// <summary>
         /// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, object>? SystemTags;
         /// <summary>
         /// A filter to return only items related to a specific target OCID.
         /// </summary>
-        public readonly string TargetId;
+        public readonly string? TargetId;
         /// <summary>
         /// Array of database target OCIDs.
         /// </summary>
@@ -92,73 +92,73 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// The date and time the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The date and time the user assessment was last executed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
-        public readonly string TimeLastAssessed;
+        public readonly string? TimeLastAssessed;
         /// <summary>
         /// The date and time the user assessment was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
         /// <summary>
         /// A filter to return user assessments that were created by either the system or by a user only.
         /// </summary>
-        public readonly string TriggeredBy;
+        public readonly string? TriggeredBy;
         /// <summary>
         /// A filter to return only items that match the specified assessment type.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
 
         [OutputConstructor]
         private GetUserAssessmentsUserAssessmentResult(
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string description,
+            string? description,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
             ImmutableArray<string> ignoredAssessmentIds,
 
             ImmutableArray<Outputs.GetUserAssessmentsUserAssessmentIgnoredTargetResult> ignoredTargets,
 
-            bool isBaseline,
+            bool? isBaseline,
 
-            bool isDeviatedFromBaseline,
+            bool? isDeviatedFromBaseline,
 
-            string lastComparedBaselineId,
+            string? lastComparedBaselineId,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string schedule,
+            string? schedule,
 
-            string scheduleAssessmentId,
+            string? scheduleAssessmentId,
 
-            string state,
+            string? state,
 
-            string statistics,
+            string? statistics,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, object>? systemTags,
 
-            string targetId,
+            string? targetId,
 
             ImmutableArray<string> targetIds,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeLastAssessed,
+            string? timeLastAssessed,
 
-            string timeUpdated,
+            string? timeUpdated,
 
-            string triggeredBy,
+            string? triggeredBy,
 
-            string type)
+            string? type)
         {
             CompartmentId = compartmentId;
             DefinedTags = definedTags;

@@ -16,41 +16,41 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// Emulation type for the boot volume.
         /// </summary>
-        public readonly string BootVolumeType;
+        public readonly string? BootVolumeType;
         /// <summary>
         /// Firmware used to boot VM. Select the option that matches your operating system.
         /// </summary>
-        public readonly string Firmware;
+        public readonly string? Firmware;
         /// <summary>
         /// Whether to enable consistent volume naming feature. Defaults to false.
         /// </summary>
-        public readonly bool IsConsistentVolumeNamingEnabled;
+        public readonly bool? IsConsistentVolumeNamingEnabled;
         /// <summary>
         /// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
         /// </summary>
-        public readonly bool IsPvEncryptionInTransitEnabled;
+        public readonly bool? IsPvEncryptionInTransitEnabled;
         /// <summary>
         /// Emulation type for the physical network interface card (NIC).
         /// </summary>
-        public readonly string NetworkType;
+        public readonly string? NetworkType;
         /// <summary>
         /// Emulation type for volume.
         /// </summary>
-        public readonly string RemoteDataVolumeType;
+        public readonly string? RemoteDataVolumeType;
 
         [OutputConstructor]
         private GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionResult(
-            string bootVolumeType,
+            string? bootVolumeType,
 
-            string firmware,
+            string? firmware,
 
-            bool isConsistentVolumeNamingEnabled,
+            bool? isConsistentVolumeNamingEnabled,
 
-            bool isPvEncryptionInTransitEnabled,
+            bool? isPvEncryptionInTransitEnabled,
 
-            string networkType,
+            string? networkType,
 
-            string remoteDataVolumeType)
+            string? remoteDataVolumeType)
         {
             BootVolumeType = bootVolumeType;
             Firmware = firmware;

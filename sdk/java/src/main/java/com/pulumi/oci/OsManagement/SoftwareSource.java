@@ -16,6 +16,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -95,28 +96,28 @@ public class SoftwareSource extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="associatedManagedInstances", refs={List.class,SoftwareSourceAssociatedManagedInstance.class}, tree="[0,1]")
-    private Output<List<SoftwareSourceAssociatedManagedInstance>> associatedManagedInstances;
+    private Output</* @Nullable */ List<SoftwareSourceAssociatedManagedInstance>> associatedManagedInstances;
 
     /**
      * @return list of the Managed Instances associated with this Software Sources
      * 
      */
-    public Output<List<SoftwareSourceAssociatedManagedInstance>> associatedManagedInstances() {
-        return this.associatedManagedInstances;
+    public Output<Optional<List<SoftwareSourceAssociatedManagedInstance>>> associatedManagedInstances() {
+        return Codegen.optional(this.associatedManagedInstances);
     }
     /**
      * (Updatable) The yum repository checksum type used by this software source
      * 
      */
     @Export(name="checksumType", refs={String.class}, tree="[0]")
-    private Output<String> checksumType;
+    private Output</* @Nullable */ String> checksumType;
 
     /**
      * @return (Updatable) The yum repository checksum type used by this software source
      * 
      */
-    public Output<String> checksumType() {
-        return this.checksumType;
+    public Output<Optional<String>> checksumType() {
+        return Codegen.optional(this.checksumType);
     }
     /**
      * (Updatable) OCID for the Compartment
@@ -137,28 +138,28 @@ public class SoftwareSource extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) Information specified by the user about the software source
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
-    private Output<String> description;
+    private Output</* @Nullable */ String> description;
 
     /**
      * @return (Updatable) Information specified by the user about the software source
      * 
      */
-    public Output<String> description() {
-        return this.description;
+    public Output<Optional<String>> description() {
+        return Codegen.optional(this.description);
     }
     /**
      * (Updatable) User friendly name for the software source
@@ -179,112 +180,112 @@ public class SoftwareSource extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * Fingerprint of the GPG key for this software source
      * 
      */
     @Export(name="gpgKeyFingerprint", refs={String.class}, tree="[0]")
-    private Output<String> gpgKeyFingerprint;
+    private Output</* @Nullable */ String> gpgKeyFingerprint;
 
     /**
      * @return Fingerprint of the GPG key for this software source
      * 
      */
-    public Output<String> gpgKeyFingerprint() {
-        return this.gpgKeyFingerprint;
+    public Output<Optional<String>> gpgKeyFingerprint() {
+        return Codegen.optional(this.gpgKeyFingerprint);
     }
     /**
      * ID of the GPG key for this software source
      * 
      */
     @Export(name="gpgKeyId", refs={String.class}, tree="[0]")
-    private Output<String> gpgKeyId;
+    private Output</* @Nullable */ String> gpgKeyId;
 
     /**
      * @return ID of the GPG key for this software source
      * 
      */
-    public Output<String> gpgKeyId() {
-        return this.gpgKeyId;
+    public Output<Optional<String>> gpgKeyId() {
+        return Codegen.optional(this.gpgKeyId);
     }
     /**
      * URL of the GPG key for this software source
      * 
      */
     @Export(name="gpgKeyUrl", refs={String.class}, tree="[0]")
-    private Output<String> gpgKeyUrl;
+    private Output</* @Nullable */ String> gpgKeyUrl;
 
     /**
      * @return URL of the GPG key for this software source
      * 
      */
-    public Output<String> gpgKeyUrl() {
-        return this.gpgKeyUrl;
+    public Output<Optional<String>> gpgKeyUrl() {
+        return Codegen.optional(this.gpgKeyUrl);
     }
     /**
      * (Updatable) Email address of the person maintaining this software source
      * 
      */
     @Export(name="maintainerEmail", refs={String.class}, tree="[0]")
-    private Output<String> maintainerEmail;
+    private Output</* @Nullable */ String> maintainerEmail;
 
     /**
      * @return (Updatable) Email address of the person maintaining this software source
      * 
      */
-    public Output<String> maintainerEmail() {
-        return this.maintainerEmail;
+    public Output<Optional<String>> maintainerEmail() {
+        return Codegen.optional(this.maintainerEmail);
     }
     /**
      * (Updatable) Name of the person maintaining this software source
      * 
      */
     @Export(name="maintainerName", refs={String.class}, tree="[0]")
-    private Output<String> maintainerName;
+    private Output</* @Nullable */ String> maintainerName;
 
     /**
      * @return (Updatable) Name of the person maintaining this software source
      * 
      */
-    public Output<String> maintainerName() {
-        return this.maintainerName;
+    public Output<Optional<String>> maintainerName() {
+        return Codegen.optional(this.maintainerName);
     }
     /**
      * (Updatable) Phone number of the person maintaining this software source
      * 
      */
     @Export(name="maintainerPhone", refs={String.class}, tree="[0]")
-    private Output<String> maintainerPhone;
+    private Output</* @Nullable */ String> maintainerPhone;
 
     /**
      * @return (Updatable) Phone number of the person maintaining this software source
      * 
      */
-    public Output<String> maintainerPhone() {
-        return this.maintainerPhone;
+    public Output<Optional<String>> maintainerPhone() {
+        return Codegen.optional(this.maintainerPhone);
     }
     /**
      * Number of packages
      * 
      */
     @Export(name="packages", refs={Integer.class}, tree="[0]")
-    private Output<Integer> packages;
+    private Output</* @Nullable */ Integer> packages;
 
     /**
      * @return Number of packages
      * 
      */
-    public Output<Integer> packages() {
-        return this.packages;
+    public Output<Optional<Integer>> packages() {
+        return Codegen.optional(this.packages);
     }
     /**
      * OCID for the parent software source, if there is one
@@ -294,7 +295,7 @@ public class SoftwareSource extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="parentId", refs={String.class}, tree="[0]")
-    private Output<String> parentId;
+    private Output</* @Nullable */ String> parentId;
 
     /**
      * @return OCID for the parent software source, if there is one
@@ -303,78 +304,78 @@ public class SoftwareSource extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> parentId() {
-        return this.parentId;
+    public Output<Optional<String>> parentId() {
+        return Codegen.optional(this.parentId);
     }
     /**
      * Display name the parent software source, if there is one
      * 
      */
     @Export(name="parentName", refs={String.class}, tree="[0]")
-    private Output<String> parentName;
+    private Output</* @Nullable */ String> parentName;
 
     /**
      * @return Display name the parent software source, if there is one
      * 
      */
-    public Output<String> parentName() {
-        return this.parentName;
+    public Output<Optional<String>> parentName() {
+        return Codegen.optional(this.parentName);
     }
     /**
      * Type of the Software Source
      * 
      */
     @Export(name="repoType", refs={String.class}, tree="[0]")
-    private Output<String> repoType;
+    private Output</* @Nullable */ String> repoType;
 
     /**
      * @return Type of the Software Source
      * 
      */
-    public Output<String> repoType() {
-        return this.repoType;
+    public Output<Optional<String>> repoType() {
+        return Codegen.optional(this.repoType);
     }
     /**
      * The current state of the Software Source.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the Software Source.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * status of the software source.
      * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
-    private Output<String> status;
+    private Output</* @Nullable */ String> status;
 
     /**
      * @return status of the software source.
      * 
      */
-    public Output<String> status() {
-        return this.status;
+    public Output<Optional<String>> status() {
+        return Codegen.optional(this.status);
     }
     /**
      * URL for the repostiory
      * 
      */
     @Export(name="url", refs={String.class}, tree="[0]")
-    private Output<String> url;
+    private Output</* @Nullable */ String> url;
 
     /**
      * @return URL for the repostiory
      * 
      */
-    public Output<String> url() {
-        return this.url;
+    public Output<Optional<String>> url() {
+        return Codegen.optional(this.url);
     }
 
     /**

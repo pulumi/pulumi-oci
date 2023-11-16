@@ -8,6 +8,8 @@ import com.pulumi.oci.BigDataService.outputs.GetAutoScalingConfigurationPolicyRu
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAutoScalingConfigurationPolicy {
@@ -15,27 +17,27 @@ public final class GetAutoScalingConfigurationPolicy {
      * @return Type of autoscaling policy.
      * 
      */
-    private String policyType;
+    private @Nullable String policyType;
     /**
      * @return The list of rules for autoscaling. If an action has multiple rules, the last rule in the array will be applied.
      * 
      */
-    private List<GetAutoScalingConfigurationPolicyRule> rules;
+    private @Nullable List<GetAutoScalingConfigurationPolicyRule> rules;
 
     private GetAutoScalingConfigurationPolicy() {}
     /**
      * @return Type of autoscaling policy.
      * 
      */
-    public String policyType() {
-        return this.policyType;
+    public Optional<String> policyType() {
+        return Optional.ofNullable(this.policyType);
     }
     /**
      * @return The list of rules for autoscaling. If an action has multiple rules, the last rule in the array will be applied.
      * 
      */
     public List<GetAutoScalingConfigurationPolicyRule> rules() {
-        return this.rules;
+        return this.rules == null ? List.of() : this.rules;
     }
 
     public static Builder builder() {
@@ -47,8 +49,8 @@ public final class GetAutoScalingConfigurationPolicy {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String policyType;
-        private List<GetAutoScalingConfigurationPolicyRule> rules;
+        private @Nullable String policyType;
+        private @Nullable List<GetAutoScalingConfigurationPolicyRule> rules;
         public Builder() {}
         public Builder(GetAutoScalingConfigurationPolicy defaults) {
     	      Objects.requireNonNull(defaults);
@@ -57,13 +59,13 @@ public final class GetAutoScalingConfigurationPolicy {
         }
 
         @CustomType.Setter
-        public Builder policyType(String policyType) {
-            this.policyType = Objects.requireNonNull(policyType);
+        public Builder policyType(@Nullable String policyType) {
+            this.policyType = policyType;
             return this;
         }
         @CustomType.Setter
-        public Builder rules(List<GetAutoScalingConfigurationPolicyRule> rules) {
-            this.rules = Objects.requireNonNull(rules);
+        public Builder rules(@Nullable List<GetAutoScalingConfigurationPolicyRule> rules) {
+            this.rules = rules;
             return this;
         }
         public Builder rules(GetAutoScalingConfigurationPolicyRule... rules) {

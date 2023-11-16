@@ -115,19 +115,19 @@ namespace Pulumi.Oci.ManagementDashboard
         /// <summary>
         /// String containing Array of Dashboards exported, check [ManagementDashboardExportDetails](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/managementdashboard/20200901/datatypes/ManagementDashboardExportDetails) for exact contents in the string value. The value of `export_details` can be used to pass as `import_details` (CompartmentIds may have to be changed) in `oci.ManagementDashboard.ManagementDashboardsImport` resource.
         /// </summary>
-        public readonly string ExportDetails;
+        public readonly string? ExportDetails;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
 
         [OutputConstructor]
         private GetManagementDashboardsExportResult(
             string exportDashboardId,
 
-            string exportDetails,
+            string? exportDetails,
 
-            string id)
+            string? id)
         {
             ExportDashboardId = exportDashboardId;
             ExportDetails = exportDetails;

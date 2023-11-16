@@ -51,26 +51,17 @@ class GetApplicationsResult:
 
     @property
     @pulumi.getter
-    def applications(self) -> Sequence['outputs.GetApplicationsApplicationResult']:
-        """
-        The list of applications.
-        """
+    def applications(self) -> Optional[Sequence['outputs.GetApplicationsApplicationResult']]:
         return pulumi.get(self, "applications")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of a compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A user-friendly name. This name is not necessarily unique.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -85,7 +76,7 @@ class GetApplicationsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -94,17 +85,11 @@ class GetApplicationsResult:
     @property
     @pulumi.getter(name="ownerPrincipalId")
     def owner_principal_id(self) -> Optional[str]:
-        """
-        The OCID of the user who created the resource.
-        """
         return pulumi.get(self, "owner_principal_id")
 
     @property
     @pulumi.getter(name="sparkVersion")
     def spark_version(self) -> Optional[str]:
-        """
-        The Spark version utilized to run the application.
-        """
         return pulumi.get(self, "spark_version")
 
 
@@ -132,29 +117,7 @@ def get_applications(compartment_id: Optional[str] = None,
                      spark_version: Optional[str] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetApplicationsResult:
     """
-    This data source provides the list of Applications in Oracle Cloud Infrastructure Data Flow service.
-
-    Lists all applications in the specified compartment. Only one parameter other than compartmentId may also be included in a query. The query must include compartmentId. If the query does not include compartmentId, or includes compartmentId but two or more other parameters an error is returned.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_applications = oci.DataFlow.get_applications(compartment_id=var["compartment_id"],
-        display_name=var["application_display_name"],
-        display_name_starts_with=var["application_display_name_starts_with"],
-        owner_principal_id=oci_dataflow_owner_principal["test_owner_principal"]["id"],
-        spark_version=var["application_spark_version"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment.
-    :param str display_name: The query parameter for the Spark application name.
-    :param str display_name_starts_with: The displayName prefix.
-    :param str owner_principal_id: The OCID of the user who created the resource.
-    :param str spark_version: The Spark version utilized to run the application.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -186,28 +149,6 @@ def get_applications_output(compartment_id: Optional[pulumi.Input[str]] = None,
                             spark_version: Optional[pulumi.Input[Optional[str]]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetApplicationsResult]:
     """
-    This data source provides the list of Applications in Oracle Cloud Infrastructure Data Flow service.
-
-    Lists all applications in the specified compartment. Only one parameter other than compartmentId may also be included in a query. The query must include compartmentId. If the query does not include compartmentId, or includes compartmentId but two or more other parameters an error is returned.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_applications = oci.DataFlow.get_applications(compartment_id=var["compartment_id"],
-        display_name=var["application_display_name"],
-        display_name_starts_with=var["application_display_name_starts_with"],
-        owner_principal_id=oci_dataflow_owner_principal["test_owner_principal"]["id"],
-        spark_version=var["application_spark_version"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment.
-    :param str display_name: The query parameter for the Spark application name.
-    :param str display_name_starts_with: The displayName prefix.
-    :param str owner_principal_id: The OCID of the user who created the resource.
-    :param str spark_version: The Spark version utilized to run the application.
+    Use this data source to access information about an existing resource.
     """
     ...

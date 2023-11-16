@@ -16,23 +16,23 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// The OCID of the user's support account.
         /// </summary>
-        public readonly string Ocid;
+        public readonly string? Ocid;
         /// <summary>
         /// User Token URI
         /// </summary>
-        public readonly string Ref;
+        public readonly string? Ref;
         /// <summary>
         /// The value of a X509 certificate.
         /// </summary>
-        public readonly string Value;
+        public readonly string? Value;
 
         [OutputConstructor]
         private GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredentialResult(
-            string ocid,
+            string? ocid,
 
-            string @ref,
+            string? @ref,
 
-            string value)
+            string? value)
         {
             Ocid = ocid;
             Ref = @ref;

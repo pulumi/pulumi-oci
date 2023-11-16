@@ -19,14 +19,14 @@ public final class GetAutonomousCharacterSetsResult {
      * @return The list of autonomous_database_character_sets.
      * 
      */
-    private List<GetAutonomousCharacterSetsAutonomousDatabaseCharacterSet> autonomousDatabaseCharacterSets;
+    private @Nullable List<GetAutonomousCharacterSetsAutonomousDatabaseCharacterSet> autonomousDatabaseCharacterSets;
     private @Nullable String characterSetType;
     private @Nullable List<GetAutonomousCharacterSetsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private @Nullable Boolean isDedicated;
     private @Nullable Boolean isShared;
 
@@ -36,7 +36,7 @@ public final class GetAutonomousCharacterSetsResult {
      * 
      */
     public List<GetAutonomousCharacterSetsAutonomousDatabaseCharacterSet> autonomousDatabaseCharacterSets() {
-        return this.autonomousDatabaseCharacterSets;
+        return this.autonomousDatabaseCharacterSets == null ? List.of() : this.autonomousDatabaseCharacterSets;
     }
     public Optional<String> characterSetType() {
         return Optional.ofNullable(this.characterSetType);
@@ -48,8 +48,8 @@ public final class GetAutonomousCharacterSetsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public Optional<Boolean> isDedicated() {
         return Optional.ofNullable(this.isDedicated);
@@ -67,10 +67,10 @@ public final class GetAutonomousCharacterSetsResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetAutonomousCharacterSetsAutonomousDatabaseCharacterSet> autonomousDatabaseCharacterSets;
+        private @Nullable List<GetAutonomousCharacterSetsAutonomousDatabaseCharacterSet> autonomousDatabaseCharacterSets;
         private @Nullable String characterSetType;
         private @Nullable List<GetAutonomousCharacterSetsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable Boolean isDedicated;
         private @Nullable Boolean isShared;
         public Builder() {}
@@ -85,8 +85,8 @@ public final class GetAutonomousCharacterSetsResult {
         }
 
         @CustomType.Setter
-        public Builder autonomousDatabaseCharacterSets(List<GetAutonomousCharacterSetsAutonomousDatabaseCharacterSet> autonomousDatabaseCharacterSets) {
-            this.autonomousDatabaseCharacterSets = Objects.requireNonNull(autonomousDatabaseCharacterSets);
+        public Builder autonomousDatabaseCharacterSets(@Nullable List<GetAutonomousCharacterSetsAutonomousDatabaseCharacterSet> autonomousDatabaseCharacterSets) {
+            this.autonomousDatabaseCharacterSets = autonomousDatabaseCharacterSets;
             return this;
         }
         public Builder autonomousDatabaseCharacterSets(GetAutonomousCharacterSetsAutonomousDatabaseCharacterSet... autonomousDatabaseCharacterSets) {
@@ -106,8 +106,8 @@ public final class GetAutonomousCharacterSetsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

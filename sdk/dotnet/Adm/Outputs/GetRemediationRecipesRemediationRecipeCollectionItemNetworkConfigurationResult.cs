@@ -20,13 +20,13 @@ namespace Pulumi.Oci.Adm.Outputs
         /// <summary>
         /// The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the subnet.
         /// </summary>
-        public readonly string SubnetId;
+        public readonly string? SubnetId;
 
         [OutputConstructor]
         private GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationResult(
             ImmutableArray<string> nsgIds,
 
-            string subnetId)
+            string? subnetId)
         {
             NsgIds = nsgIds;
             SubnetId = subnetId;

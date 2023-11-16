@@ -48,75 +48,75 @@ export interface GetAssetResult {
     /**
      * List of asset source OCID.
      */
-    readonly assetSourceIds: string[];
+    readonly assetSourceIds?: string[];
     /**
      * The type of asset.
      */
-    readonly assetType: string;
+    readonly assetType?: string;
     /**
      * The OCID of the compartment to which an asset belongs to.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Compute related properties.
      */
-    readonly computes: outputs.CloudBridge.GetAssetCompute[];
+    readonly computes?: outputs.CloudBridge.GetAssetCompute[];
     /**
      * The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * Asset display name.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * The key of the asset from the external environment.
      */
-    readonly externalAssetKey: string;
+    readonly externalAssetKey?: string;
     /**
      * The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * Asset OCID that is immutable on creation.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Inventory ID to which an asset belongs to.
      */
-    readonly inventoryId: string;
+    readonly inventoryId?: string;
     /**
      * The source key that the asset belongs to.
      */
-    readonly sourceKey: string;
+    readonly sourceKey?: string;
     /**
      * The current state of the asset.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * The time when the asset was created. An RFC3339 formatted datetime string.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The time when the asset was updated. An RFC3339 formatted datetime string.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
     /**
      * Virtual machine related properties.
      */
-    readonly vms: outputs.CloudBridge.GetAssetVm[];
+    readonly vms?: outputs.CloudBridge.GetAssetVm[];
     /**
      * VMware vCenter related properties.
      */
-    readonly vmwareVcenters: outputs.CloudBridge.GetAssetVmwareVcenter[];
+    readonly vmwareVcenters?: outputs.CloudBridge.GetAssetVmwareVcenter[];
     /**
      * VMware virtual machine related properties.
      */
-    readonly vmwareVms: outputs.CloudBridge.GetAssetVmwareVm[];
+    readonly vmwareVms?: outputs.CloudBridge.GetAssetVmwareVm[];
 }
 /**
  * This data source provides details about a specific Asset resource in Oracle Cloud Infrastructure Cloud Bridge service.

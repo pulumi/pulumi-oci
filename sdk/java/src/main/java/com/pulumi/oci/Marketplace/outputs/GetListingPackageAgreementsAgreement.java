@@ -6,6 +6,8 @@ package com.pulumi.oci.Marketplace.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetListingPackageAgreementsAgreement {
@@ -13,51 +15,51 @@ public final class GetListingPackageAgreementsAgreement {
      * @return Who authored the agreement.
      * 
      */
-    private String author;
+    private @Nullable String author;
     /**
      * @return The content URL of the agreement.
      * 
      */
-    private String contentUrl;
+    private @Nullable String contentUrl;
     /**
      * @return The unique identifier for the agreement.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Textual prompt to read and accept the agreement.
      * 
      */
-    private String prompt;
+    private @Nullable String prompt;
 
     private GetListingPackageAgreementsAgreement() {}
     /**
      * @return Who authored the agreement.
      * 
      */
-    public String author() {
-        return this.author;
+    public Optional<String> author() {
+        return Optional.ofNullable(this.author);
     }
     /**
      * @return The content URL of the agreement.
      * 
      */
-    public String contentUrl() {
-        return this.contentUrl;
+    public Optional<String> contentUrl() {
+        return Optional.ofNullable(this.contentUrl);
     }
     /**
      * @return The unique identifier for the agreement.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Textual prompt to read and accept the agreement.
      * 
      */
-    public String prompt() {
-        return this.prompt;
+    public Optional<String> prompt() {
+        return Optional.ofNullable(this.prompt);
     }
 
     public static Builder builder() {
@@ -69,10 +71,10 @@ public final class GetListingPackageAgreementsAgreement {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String author;
-        private String contentUrl;
-        private String id;
-        private String prompt;
+        private @Nullable String author;
+        private @Nullable String contentUrl;
+        private @Nullable String id;
+        private @Nullable String prompt;
         public Builder() {}
         public Builder(GetListingPackageAgreementsAgreement defaults) {
     	      Objects.requireNonNull(defaults);
@@ -83,23 +85,23 @@ public final class GetListingPackageAgreementsAgreement {
         }
 
         @CustomType.Setter
-        public Builder author(String author) {
-            this.author = Objects.requireNonNull(author);
+        public Builder author(@Nullable String author) {
+            this.author = author;
             return this;
         }
         @CustomType.Setter
-        public Builder contentUrl(String contentUrl) {
-            this.contentUrl = Objects.requireNonNull(contentUrl);
+        public Builder contentUrl(@Nullable String contentUrl) {
+            this.contentUrl = contentUrl;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder prompt(String prompt) {
-            this.prompt = Objects.requireNonNull(prompt);
+        public Builder prompt(@Nullable String prompt) {
+            this.prompt = prompt;
             return this;
         }
         public GetListingPackageAgreementsAgreement build() {

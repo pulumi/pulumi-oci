@@ -8,6 +8,8 @@ import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabasesDatabasePara
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedDatabasesDatabaseParametersDatabaseParametersCollection {
@@ -15,63 +17,63 @@ public final class GetManagedDatabasesDatabaseParametersDatabaseParametersCollec
      * @return The name of the Managed Database.
      * 
      */
-    private String databaseName;
+    private @Nullable String databaseName;
     /**
      * @return The subtype of the Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, or a Non-container Database.
      * 
      */
-    private String databaseSubType;
+    private @Nullable String databaseSubType;
     /**
      * @return The type of Oracle Database installation.
      * 
      */
-    private String databaseType;
+    private @Nullable String databaseType;
     /**
      * @return The Oracle Database version.
      * 
      */
-    private String databaseVersion;
+    private @Nullable String databaseVersion;
     /**
      * @return An array of DatabaseParameterSummary objects.
      * 
      */
-    private List<GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionItem> items;
+    private @Nullable List<GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionItem> items;
 
     private GetManagedDatabasesDatabaseParametersDatabaseParametersCollection() {}
     /**
      * @return The name of the Managed Database.
      * 
      */
-    public String databaseName() {
-        return this.databaseName;
+    public Optional<String> databaseName() {
+        return Optional.ofNullable(this.databaseName);
     }
     /**
      * @return The subtype of the Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, or a Non-container Database.
      * 
      */
-    public String databaseSubType() {
-        return this.databaseSubType;
+    public Optional<String> databaseSubType() {
+        return Optional.ofNullable(this.databaseSubType);
     }
     /**
      * @return The type of Oracle Database installation.
      * 
      */
-    public String databaseType() {
-        return this.databaseType;
+    public Optional<String> databaseType() {
+        return Optional.ofNullable(this.databaseType);
     }
     /**
      * @return The Oracle Database version.
      * 
      */
-    public String databaseVersion() {
-        return this.databaseVersion;
+    public Optional<String> databaseVersion() {
+        return Optional.ofNullable(this.databaseVersion);
     }
     /**
      * @return An array of DatabaseParameterSummary objects.
      * 
      */
     public List<GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -83,11 +85,11 @@ public final class GetManagedDatabasesDatabaseParametersDatabaseParametersCollec
     }
     @CustomType.Builder
     public static final class Builder {
-        private String databaseName;
-        private String databaseSubType;
-        private String databaseType;
-        private String databaseVersion;
-        private List<GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionItem> items;
+        private @Nullable String databaseName;
+        private @Nullable String databaseSubType;
+        private @Nullable String databaseType;
+        private @Nullable String databaseVersion;
+        private @Nullable List<GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionItem> items;
         public Builder() {}
         public Builder(GetManagedDatabasesDatabaseParametersDatabaseParametersCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -99,28 +101,28 @@ public final class GetManagedDatabasesDatabaseParametersDatabaseParametersCollec
         }
 
         @CustomType.Setter
-        public Builder databaseName(String databaseName) {
-            this.databaseName = Objects.requireNonNull(databaseName);
+        public Builder databaseName(@Nullable String databaseName) {
+            this.databaseName = databaseName;
             return this;
         }
         @CustomType.Setter
-        public Builder databaseSubType(String databaseSubType) {
-            this.databaseSubType = Objects.requireNonNull(databaseSubType);
+        public Builder databaseSubType(@Nullable String databaseSubType) {
+            this.databaseSubType = databaseSubType;
             return this;
         }
         @CustomType.Setter
-        public Builder databaseType(String databaseType) {
-            this.databaseType = Objects.requireNonNull(databaseType);
+        public Builder databaseType(@Nullable String databaseType) {
+            this.databaseType = databaseType;
             return this;
         }
         @CustomType.Setter
-        public Builder databaseVersion(String databaseVersion) {
-            this.databaseVersion = Objects.requireNonNull(databaseVersion);
+        public Builder databaseVersion(@Nullable String databaseVersion) {
+            this.databaseVersion = databaseVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder items(List<GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionItem... items) {

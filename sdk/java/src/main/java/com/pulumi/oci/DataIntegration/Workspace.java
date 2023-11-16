@@ -98,28 +98,28 @@ public class Workspace extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) A user defined description for the workspace.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
-    private Output<String> description;
+    private Output</* @Nullable */ String> description;
 
     /**
      * @return (Updatable) A user defined description for the workspace.
      * 
      */
-    public Output<String> description() {
-        return this.description;
+    public Output<Optional<String>> description() {
+        return Codegen.optional(this.description);
     }
     /**
      * (Updatable) A user-friendly display name for the workspace. Does not have to be unique, and can be modified. Avoid entering confidential information.
@@ -140,84 +140,84 @@ public class Workspace extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="dnsServerIp", refs={String.class}, tree="[0]")
-    private Output<String> dnsServerIp;
+    private Output</* @Nullable */ String> dnsServerIp;
 
     /**
      * @return The IP of the custom DNS.
      * 
      */
-    public Output<String> dnsServerIp() {
-        return this.dnsServerIp;
+    public Output<Optional<String>> dnsServerIp() {
+        return Codegen.optional(this.dnsServerIp);
     }
     /**
      * The DNS zone of the custom DNS to use to resolve names.
      * 
      */
     @Export(name="dnsServerZone", refs={String.class}, tree="[0]")
-    private Output<String> dnsServerZone;
+    private Output</* @Nullable */ String> dnsServerZone;
 
     /**
      * @return The DNS zone of the custom DNS to use to resolve names.
      * 
      */
-    public Output<String> dnsServerZone() {
-        return this.dnsServerZone;
+    public Output<Optional<String>> dnsServerZone() {
+        return Codegen.optional(this.dnsServerZone);
     }
     /**
      * DCMS PRivate Endpoint Compartment Identifier
      * 
      */
     @Export(name="endpointCompartmentId", refs={String.class}, tree="[0]")
-    private Output<String> endpointCompartmentId;
+    private Output</* @Nullable */ String> endpointCompartmentId;
 
     /**
      * @return DCMS PRivate Endpoint Compartment Identifier
      * 
      */
-    public Output<String> endpointCompartmentId() {
-        return this.endpointCompartmentId;
+    public Output<Optional<String>> endpointCompartmentId() {
+        return Codegen.optional(this.endpointCompartmentId);
     }
     /**
      * DCMS Private Endpoint ID associated with workspace if the pvt networking is enabled
      * 
      */
     @Export(name="endpointId", refs={String.class}, tree="[0]")
-    private Output<String> endpointId;
+    private Output</* @Nullable */ String> endpointId;
 
     /**
      * @return DCMS Private Endpoint ID associated with workspace if the pvt networking is enabled
      * 
      */
-    public Output<String> endpointId() {
-        return this.endpointId;
+    public Output<Optional<String>> endpointId() {
+        return Codegen.optional(this.endpointId);
     }
     /**
      * DCMS Private Endpoint Name
      * 
      */
     @Export(name="endpointName", refs={String.class}, tree="[0]")
-    private Output<String> endpointName;
+    private Output</* @Nullable */ String> endpointName;
 
     /**
      * @return DCMS Private Endpoint Name
      * 
      */
-    public Output<String> endpointName() {
-        return this.endpointName;
+    public Output<Optional<String>> endpointName() {
+        return Codegen.optional(this.endpointName);
     }
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     @Export(name="isForceOperation", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> isForceOperation;
@@ -230,132 +230,132 @@ public class Workspace extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="isPrivateNetworkEnabled", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isPrivateNetworkEnabled;
+    private Output</* @Nullable */ Boolean> isPrivateNetworkEnabled;
 
     /**
      * @return Specifies whether the private network connection is enabled or disabled.
      * 
      */
-    public Output<Boolean> isPrivateNetworkEnabled() {
-        return this.isPrivateNetworkEnabled;
+    public Output<Optional<Boolean>> isPrivateNetworkEnabled() {
+        return Codegen.optional(this.isPrivateNetworkEnabled);
     }
     @Export(name="quiesceTimeout", refs={Integer.class}, tree="[0]")
-    private Output<Integer> quiesceTimeout;
+    private Output</* @Nullable */ Integer> quiesceTimeout;
 
-    public Output<Integer> quiesceTimeout() {
-        return this.quiesceTimeout;
+    public Output<Optional<Integer>> quiesceTimeout() {
+        return Codegen.optional(this.quiesceTimeout);
     }
     /**
      * DCMS Data Asset Registry Compartment Identifier
      * 
      */
     @Export(name="registryCompartmentId", refs={String.class}, tree="[0]")
-    private Output<String> registryCompartmentId;
+    private Output</* @Nullable */ String> registryCompartmentId;
 
     /**
      * @return DCMS Data Asset Registry Compartment Identifier
      * 
      */
-    public Output<String> registryCompartmentId() {
-        return this.registryCompartmentId;
+    public Output<Optional<String>> registryCompartmentId() {
+        return Codegen.optional(this.registryCompartmentId);
     }
     /**
      * DCMS Data Asset Registry ID to which the workspace is associated
      * 
      */
     @Export(name="registryId", refs={String.class}, tree="[0]")
-    private Output<String> registryId;
+    private Output</* @Nullable */ String> registryId;
 
     /**
      * @return DCMS Data Asset Registry ID to which the workspace is associated
      * 
      */
-    public Output<String> registryId() {
-        return this.registryId;
+    public Output<Optional<String>> registryId() {
+        return Codegen.optional(this.registryId);
     }
     /**
      * DCMS Data Asset Registry display name
      * 
      */
     @Export(name="registryName", refs={String.class}, tree="[0]")
-    private Output<String> registryName;
+    private Output</* @Nullable */ String> registryName;
 
     /**
      * @return DCMS Data Asset Registry display name
      * 
      */
-    public Output<String> registryName() {
-        return this.registryName;
+    public Output<Optional<String>> registryName() {
+        return Codegen.optional(this.registryName);
     }
     /**
      * Lifecycle states for workspaces in Data Integration Service CREATING - The resource is being created and may not be usable until the entire metadata is defined UPDATING - The resource is being updated and may not be usable until all changes are commited DELETING - The resource is being deleted and might require deep cleanup of children. ACTIVE   - The resource is valid and available for access INACTIVE - The resource might be incomplete in its definition or might have been made unavailable for administrative reasons DELETED  - The resource has been deleted and isn&#39;t available FAILED   - The resource is in a failed state due to validation or other errors STARTING - The resource is being started and may not be usable until becomes ACTIVE again STOPPING - The resource is in the process of Stopping and may not be usable until it Stops or fails STOPPED  - The resource is in Stopped state due to stop operation.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return Lifecycle states for workspaces in Data Integration Service CREATING - The resource is being created and may not be usable until the entire metadata is defined UPDATING - The resource is being updated and may not be usable until all changes are commited DELETING - The resource is being deleted and might require deep cleanup of children. ACTIVE   - The resource is valid and available for access INACTIVE - The resource might be incomplete in its definition or might have been made unavailable for administrative reasons DELETED  - The resource has been deleted and isn&#39;t available FAILED   - The resource is in a failed state due to validation or other errors STARTING - The resource is being started and may not be usable until becomes ACTIVE again STOPPING - The resource is in the process of Stopping and may not be usable until it Stops or fails STOPPED  - The resource is in Stopped state due to stop operation.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in failed state.
      * 
      */
     @Export(name="stateMessage", refs={String.class}, tree="[0]")
-    private Output<String> stateMessage;
+    private Output</* @Nullable */ String> stateMessage;
 
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in failed state.
      * 
      */
-    public Output<String> stateMessage() {
-        return this.stateMessage;
+    public Output<Optional<String>> stateMessage() {
+        return Codegen.optional(this.stateMessage);
     }
     /**
      * The OCID of the subnet for customer connected databases.
      * 
      */
     @Export(name="subnetId", refs={String.class}, tree="[0]")
-    private Output<String> subnetId;
+    private Output</* @Nullable */ String> subnetId;
 
     /**
      * @return The OCID of the subnet for customer connected databases.
      * 
      */
-    public Output<String> subnetId() {
-        return this.subnetId;
+    public Output<Optional<String>> subnetId() {
+        return Codegen.optional(this.subnetId);
     }
     /**
      * The date and time the workspace was created, in the timestamp format defined by RFC3339.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the workspace was created, in the timestamp format defined by RFC3339.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The date and time the workspace was updated, in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The date and time the workspace was updated, in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
     /**
      * The OCID of the VCN the subnet is in.
@@ -365,7 +365,7 @@ public class Workspace extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="vcnId", refs={String.class}, tree="[0]")
-    private Output<String> vcnId;
+    private Output</* @Nullable */ String> vcnId;
 
     /**
      * @return The OCID of the VCN the subnet is in.
@@ -374,8 +374,8 @@ public class Workspace extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> vcnId() {
-        return this.vcnId;
+    public Output<Optional<String>> vcnId() {
+        return Codegen.optional(this.vcnId);
     }
 
     /**

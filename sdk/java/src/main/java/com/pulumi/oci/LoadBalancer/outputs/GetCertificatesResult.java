@@ -9,6 +9,7 @@ import com.pulumi.oci.LoadBalancer.outputs.GetCertificatesFilter;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -17,13 +18,13 @@ public final class GetCertificatesResult {
      * @return The list of certificates.
      * 
      */
-    private List<GetCertificatesCertificate> certificates;
+    private @Nullable List<GetCertificatesCertificate> certificates;
     private @Nullable List<GetCertificatesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String loadBalancerId;
 
     private GetCertificatesResult() {}
@@ -32,7 +33,7 @@ public final class GetCertificatesResult {
      * 
      */
     public List<GetCertificatesCertificate> certificates() {
-        return this.certificates;
+        return this.certificates == null ? List.of() : this.certificates;
     }
     public List<GetCertificatesFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -41,8 +42,8 @@ public final class GetCertificatesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String loadBalancerId() {
         return this.loadBalancerId;
@@ -57,9 +58,9 @@ public final class GetCertificatesResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetCertificatesCertificate> certificates;
+        private @Nullable List<GetCertificatesCertificate> certificates;
         private @Nullable List<GetCertificatesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private String loadBalancerId;
         public Builder() {}
         public Builder(GetCertificatesResult defaults) {
@@ -71,8 +72,8 @@ public final class GetCertificatesResult {
         }
 
         @CustomType.Setter
-        public Builder certificates(List<GetCertificatesCertificate> certificates) {
-            this.certificates = Objects.requireNonNull(certificates);
+        public Builder certificates(@Nullable List<GetCertificatesCertificate> certificates) {
+            this.certificates = certificates;
             return this;
         }
         public Builder certificates(GetCertificatesCertificate... certificates) {
@@ -87,8 +88,8 @@ public final class GetCertificatesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

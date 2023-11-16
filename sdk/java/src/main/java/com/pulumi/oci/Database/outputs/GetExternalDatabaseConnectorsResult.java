@@ -28,7 +28,7 @@ public final class GetExternalDatabaseConnectorsResult {
      * @return The list of external_database_connectors.
      * 
      */
-    private List<GetExternalDatabaseConnectorsExternalDatabaseConnector> externalDatabaseConnectors;
+    private @Nullable List<GetExternalDatabaseConnectorsExternalDatabaseConnector> externalDatabaseConnectors;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database resource.
      * 
@@ -39,7 +39,7 @@ public final class GetExternalDatabaseConnectorsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The current lifecycle state of the external database connector resource.
      * 
@@ -66,7 +66,7 @@ public final class GetExternalDatabaseConnectorsResult {
      * 
      */
     public List<GetExternalDatabaseConnectorsExternalDatabaseConnector> externalDatabaseConnectors() {
-        return this.externalDatabaseConnectors;
+        return this.externalDatabaseConnectors == null ? List.of() : this.externalDatabaseConnectors;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database resource.
@@ -82,8 +82,8 @@ public final class GetExternalDatabaseConnectorsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The current lifecycle state of the external database connector resource.
@@ -104,10 +104,10 @@ public final class GetExternalDatabaseConnectorsResult {
     public static final class Builder {
         private String compartmentId;
         private @Nullable String displayName;
-        private List<GetExternalDatabaseConnectorsExternalDatabaseConnector> externalDatabaseConnectors;
+        private @Nullable List<GetExternalDatabaseConnectorsExternalDatabaseConnector> externalDatabaseConnectors;
         private String externalDatabaseId;
         private @Nullable List<GetExternalDatabaseConnectorsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetExternalDatabaseConnectorsResult defaults) {
@@ -132,8 +132,8 @@ public final class GetExternalDatabaseConnectorsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder externalDatabaseConnectors(List<GetExternalDatabaseConnectorsExternalDatabaseConnector> externalDatabaseConnectors) {
-            this.externalDatabaseConnectors = Objects.requireNonNull(externalDatabaseConnectors);
+        public Builder externalDatabaseConnectors(@Nullable List<GetExternalDatabaseConnectorsExternalDatabaseConnector> externalDatabaseConnectors) {
+            this.externalDatabaseConnectors = externalDatabaseConnectors;
             return this;
         }
         public Builder externalDatabaseConnectors(GetExternalDatabaseConnectorsExternalDatabaseConnector... externalDatabaseConnectors) {
@@ -153,8 +153,8 @@ public final class GetExternalDatabaseConnectorsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

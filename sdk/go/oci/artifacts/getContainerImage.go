@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Container Image resource in Oracle Cloud Infrastructure Artifacts service.
@@ -60,42 +59,42 @@ type GetContainerImageArgs struct {
 // A collection of values returned by getContainerImage.
 type GetContainerImageResult struct {
 	// The compartment OCID to which the container image belongs. Inferred from the container repository.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The OCID of the user or principal that pushed the version.
-	CreatedBy string `pulumi:"createdBy"`
+	CreatedBy *string `pulumi:"createdBy"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The sha256 digest of the image layer.
-	Digest string `pulumi:"digest"`
+	Digest *string `pulumi:"digest"`
 	// The repository name and the most recent version associated with the image. If there are no versions associated with the image, then last known version and digest are used instead. If the last known version is unavailable, then 'unknown' is used instead of the version.  Example: `ubuntu:latest` or `ubuntu:latest@sha256:45b23dee08af5e43a7fea6c4cf9c25ccf269ee113168c19722f87876677c5cb2`
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The provider-assigned unique ID for this managed resource.
-	Id      string `pulumi:"id"`
-	ImageId string `pulumi:"imageId"`
+	Id      *string `pulumi:"id"`
+	ImageId string  `pulumi:"imageId"`
 	// Layers of which the image is composed, ordered by the layer digest.
 	Layers []GetContainerImageLayer `pulumi:"layers"`
 	// The total size of the container image layers in bytes.
-	LayersSizeInBytes string `pulumi:"layersSizeInBytes"`
+	LayersSizeInBytes *string `pulumi:"layersSizeInBytes"`
 	// The size of the container image manifest in bytes.
-	ManifestSizeInBytes int `pulumi:"manifestSizeInBytes"`
+	ManifestSizeInBytes *int `pulumi:"manifestSizeInBytes"`
 	// Total number of pulls.
-	PullCount string `pulumi:"pullCount"`
+	PullCount *string `pulumi:"pullCount"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container repository.
-	RepositoryId string `pulumi:"repositoryId"`
+	RepositoryId *string `pulumi:"repositoryId"`
 	// The container repository name.
-	RepositoryName string `pulumi:"repositoryName"`
+	RepositoryName *string `pulumi:"repositoryName"`
 	// The current state of the container image.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The creation time of the version.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// An RFC 3339 timestamp indicating when the image was last pulled.
-	TimeLastPulled string `pulumi:"timeLastPulled"`
+	TimeLastPulled *string `pulumi:"timeLastPulled"`
 	// The version name.
-	Version string `pulumi:"version"`
+	Version *string `pulumi:"version"`
 	// The versions associated with this image.
 	Versions []GetContainerImageVersion `pulumi:"versions"`
 }
@@ -138,20 +137,14 @@ func (o GetContainerImageResultOutput) ToGetContainerImageResultOutputWithContex
 	return o
 }
 
-func (o GetContainerImageResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetContainerImageResult] {
-	return pulumix.Output[GetContainerImageResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The compartment OCID to which the container image belongs. Inferred from the container repository.
-func (o GetContainerImageResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerImageResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetContainerImageResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetContainerImageResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the user or principal that pushed the version.
-func (o GetContainerImageResultOutput) CreatedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerImageResult) string { return v.CreatedBy }).(pulumi.StringOutput)
+func (o GetContainerImageResultOutput) CreatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetContainerImageResult) *string { return v.CreatedBy }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -160,13 +153,13 @@ func (o GetContainerImageResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // The sha256 digest of the image layer.
-func (o GetContainerImageResultOutput) Digest() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerImageResult) string { return v.Digest }).(pulumi.StringOutput)
+func (o GetContainerImageResultOutput) Digest() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetContainerImageResult) *string { return v.Digest }).(pulumi.StringPtrOutput)
 }
 
 // The repository name and the most recent version associated with the image. If there are no versions associated with the image, then last known version and digest are used instead. If the last known version is unavailable, then 'unknown' is used instead of the version.  Example: `ubuntu:latest` or `ubuntu:latest@sha256:45b23dee08af5e43a7fea6c4cf9c25ccf269ee113168c19722f87876677c5cb2`
-func (o GetContainerImageResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerImageResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetContainerImageResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetContainerImageResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -175,8 +168,8 @@ func (o GetContainerImageResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetContainerImageResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerImageResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetContainerImageResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetContainerImageResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetContainerImageResultOutput) ImageId() pulumi.StringOutput {
@@ -189,33 +182,33 @@ func (o GetContainerImageResultOutput) Layers() GetContainerImageLayerArrayOutpu
 }
 
 // The total size of the container image layers in bytes.
-func (o GetContainerImageResultOutput) LayersSizeInBytes() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerImageResult) string { return v.LayersSizeInBytes }).(pulumi.StringOutput)
+func (o GetContainerImageResultOutput) LayersSizeInBytes() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetContainerImageResult) *string { return v.LayersSizeInBytes }).(pulumi.StringPtrOutput)
 }
 
 // The size of the container image manifest in bytes.
-func (o GetContainerImageResultOutput) ManifestSizeInBytes() pulumi.IntOutput {
-	return o.ApplyT(func(v GetContainerImageResult) int { return v.ManifestSizeInBytes }).(pulumi.IntOutput)
+func (o GetContainerImageResultOutput) ManifestSizeInBytes() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetContainerImageResult) *int { return v.ManifestSizeInBytes }).(pulumi.IntPtrOutput)
 }
 
 // Total number of pulls.
-func (o GetContainerImageResultOutput) PullCount() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerImageResult) string { return v.PullCount }).(pulumi.StringOutput)
+func (o GetContainerImageResultOutput) PullCount() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetContainerImageResult) *string { return v.PullCount }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container repository.
-func (o GetContainerImageResultOutput) RepositoryId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerImageResult) string { return v.RepositoryId }).(pulumi.StringOutput)
+func (o GetContainerImageResultOutput) RepositoryId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetContainerImageResult) *string { return v.RepositoryId }).(pulumi.StringPtrOutput)
 }
 
 // The container repository name.
-func (o GetContainerImageResultOutput) RepositoryName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerImageResult) string { return v.RepositoryName }).(pulumi.StringOutput)
+func (o GetContainerImageResultOutput) RepositoryName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetContainerImageResult) *string { return v.RepositoryName }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the container image.
-func (o GetContainerImageResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerImageResult) string { return v.State }).(pulumi.StringOutput)
+func (o GetContainerImageResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetContainerImageResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -224,18 +217,18 @@ func (o GetContainerImageResultOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The creation time of the version.
-func (o GetContainerImageResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerImageResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetContainerImageResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetContainerImageResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // An RFC 3339 timestamp indicating when the image was last pulled.
-func (o GetContainerImageResultOutput) TimeLastPulled() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerImageResult) string { return v.TimeLastPulled }).(pulumi.StringOutput)
+func (o GetContainerImageResultOutput) TimeLastPulled() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetContainerImageResult) *string { return v.TimeLastPulled }).(pulumi.StringPtrOutput)
 }
 
 // The version name.
-func (o GetContainerImageResultOutput) Version() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerImageResult) string { return v.Version }).(pulumi.StringOutput)
+func (o GetContainerImageResultOutput) Version() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetContainerImageResult) *string { return v.Version }).(pulumi.StringPtrOutput)
 }
 
 // The versions associated with this image.

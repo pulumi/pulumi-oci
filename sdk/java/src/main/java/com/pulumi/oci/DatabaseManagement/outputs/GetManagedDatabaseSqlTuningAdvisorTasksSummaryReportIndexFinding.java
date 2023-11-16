@@ -8,6 +8,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportIndexFinding {
@@ -15,32 +17,32 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportIndexFind
      * @return Columns of the index.
      * 
      */
-    private List<String> indexColumns;
+    private @Nullable List<String> indexColumns;
     /**
      * @return Numerical representation of the index.
      * 
      */
-    private String indexHashValue;
+    private @Nullable String indexHashValue;
     /**
      * @return Name of the index.
      * 
      */
-    private String indexName;
+    private @Nullable String indexName;
     /**
      * @return The number of the times the object is referenced within the SQL Tuning advisor task findings.
      * 
      */
-    private Integer referenceCount;
+    private @Nullable Integer referenceCount;
     /**
      * @return Schema of the object.
      * 
      */
-    private String schema;
+    private @Nullable String schema;
     /**
      * @return Table&#39;s name related to the index.
      * 
      */
-    private String tableName;
+    private @Nullable String tableName;
 
     private GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportIndexFinding() {}
     /**
@@ -48,42 +50,42 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportIndexFind
      * 
      */
     public List<String> indexColumns() {
-        return this.indexColumns;
+        return this.indexColumns == null ? List.of() : this.indexColumns;
     }
     /**
      * @return Numerical representation of the index.
      * 
      */
-    public String indexHashValue() {
-        return this.indexHashValue;
+    public Optional<String> indexHashValue() {
+        return Optional.ofNullable(this.indexHashValue);
     }
     /**
      * @return Name of the index.
      * 
      */
-    public String indexName() {
-        return this.indexName;
+    public Optional<String> indexName() {
+        return Optional.ofNullable(this.indexName);
     }
     /**
      * @return The number of the times the object is referenced within the SQL Tuning advisor task findings.
      * 
      */
-    public Integer referenceCount() {
-        return this.referenceCount;
+    public Optional<Integer> referenceCount() {
+        return Optional.ofNullable(this.referenceCount);
     }
     /**
      * @return Schema of the object.
      * 
      */
-    public String schema() {
-        return this.schema;
+    public Optional<String> schema() {
+        return Optional.ofNullable(this.schema);
     }
     /**
      * @return Table&#39;s name related to the index.
      * 
      */
-    public String tableName() {
-        return this.tableName;
+    public Optional<String> tableName() {
+        return Optional.ofNullable(this.tableName);
     }
 
     public static Builder builder() {
@@ -95,12 +97,12 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportIndexFind
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> indexColumns;
-        private String indexHashValue;
-        private String indexName;
-        private Integer referenceCount;
-        private String schema;
-        private String tableName;
+        private @Nullable List<String> indexColumns;
+        private @Nullable String indexHashValue;
+        private @Nullable String indexName;
+        private @Nullable Integer referenceCount;
+        private @Nullable String schema;
+        private @Nullable String tableName;
         public Builder() {}
         public Builder(GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportIndexFinding defaults) {
     	      Objects.requireNonNull(defaults);
@@ -113,36 +115,36 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportIndexFind
         }
 
         @CustomType.Setter
-        public Builder indexColumns(List<String> indexColumns) {
-            this.indexColumns = Objects.requireNonNull(indexColumns);
+        public Builder indexColumns(@Nullable List<String> indexColumns) {
+            this.indexColumns = indexColumns;
             return this;
         }
         public Builder indexColumns(String... indexColumns) {
             return indexColumns(List.of(indexColumns));
         }
         @CustomType.Setter
-        public Builder indexHashValue(String indexHashValue) {
-            this.indexHashValue = Objects.requireNonNull(indexHashValue);
+        public Builder indexHashValue(@Nullable String indexHashValue) {
+            this.indexHashValue = indexHashValue;
             return this;
         }
         @CustomType.Setter
-        public Builder indexName(String indexName) {
-            this.indexName = Objects.requireNonNull(indexName);
+        public Builder indexName(@Nullable String indexName) {
+            this.indexName = indexName;
             return this;
         }
         @CustomType.Setter
-        public Builder referenceCount(Integer referenceCount) {
-            this.referenceCount = Objects.requireNonNull(referenceCount);
+        public Builder referenceCount(@Nullable Integer referenceCount) {
+            this.referenceCount = referenceCount;
             return this;
         }
         @CustomType.Setter
-        public Builder schema(String schema) {
-            this.schema = Objects.requireNonNull(schema);
+        public Builder schema(@Nullable String schema) {
+            this.schema = schema;
             return this;
         }
         @CustomType.Setter
-        public Builder tableName(String tableName) {
-            this.tableName = Objects.requireNonNull(tableName);
+        public Builder tableName(@Nullable String tableName) {
+            this.tableName = tableName;
             return this;
         }
         public GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportIndexFinding build() {

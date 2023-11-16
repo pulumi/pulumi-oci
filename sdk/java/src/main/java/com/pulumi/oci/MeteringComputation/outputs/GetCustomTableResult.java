@@ -8,6 +8,8 @@ import com.pulumi.oci.MeteringComputation.outputs.GetCustomTableSavedCustomTable
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetCustomTableResult {
@@ -15,31 +17,31 @@ public final class GetCustomTableResult {
      * @return The custom table compartment OCID.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     private String customTableId;
     /**
      * @return The custom table OCID.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The custom table for Cost Analysis UI rendering.
      * 
      */
-    private List<GetCustomTableSavedCustomTable> savedCustomTables;
+    private @Nullable List<GetCustomTableSavedCustomTable> savedCustomTables;
     /**
      * @return The custom table associated saved report OCID.
      * 
      */
-    private String savedReportId;
+    private @Nullable String savedReportId;
 
     private GetCustomTableResult() {}
     /**
      * @return The custom table compartment OCID.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     public String customTableId() {
         return this.customTableId;
@@ -48,22 +50,22 @@ public final class GetCustomTableResult {
      * @return The custom table OCID.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The custom table for Cost Analysis UI rendering.
      * 
      */
     public List<GetCustomTableSavedCustomTable> savedCustomTables() {
-        return this.savedCustomTables;
+        return this.savedCustomTables == null ? List.of() : this.savedCustomTables;
     }
     /**
      * @return The custom table associated saved report OCID.
      * 
      */
-    public String savedReportId() {
-        return this.savedReportId;
+    public Optional<String> savedReportId() {
+        return Optional.ofNullable(this.savedReportId);
     }
 
     public static Builder builder() {
@@ -75,11 +77,11 @@ public final class GetCustomTableResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
+        private @Nullable String compartmentId;
         private String customTableId;
-        private String id;
-        private List<GetCustomTableSavedCustomTable> savedCustomTables;
-        private String savedReportId;
+        private @Nullable String id;
+        private @Nullable List<GetCustomTableSavedCustomTable> savedCustomTables;
+        private @Nullable String savedReportId;
         public Builder() {}
         public Builder(GetCustomTableResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -91,8 +93,8 @@ public final class GetCustomTableResult {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
@@ -101,21 +103,21 @@ public final class GetCustomTableResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder savedCustomTables(List<GetCustomTableSavedCustomTable> savedCustomTables) {
-            this.savedCustomTables = Objects.requireNonNull(savedCustomTables);
+        public Builder savedCustomTables(@Nullable List<GetCustomTableSavedCustomTable> savedCustomTables) {
+            this.savedCustomTables = savedCustomTables;
             return this;
         }
         public Builder savedCustomTables(GetCustomTableSavedCustomTable... savedCustomTables) {
             return savedCustomTables(List.of(savedCustomTables));
         }
         @CustomType.Setter
-        public Builder savedReportId(String savedReportId) {
-            this.savedReportId = Objects.requireNonNull(savedReportId);
+        public Builder savedReportId(@Nullable String savedReportId) {
+            this.savedReportId = savedReportId;
             return this;
         }
         public GetCustomTableResult build() {

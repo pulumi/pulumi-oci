@@ -28,13 +28,13 @@ public final class GetConsoleHistoriesResult {
      * @return The list of console_histories.
      * 
      */
-    private List<GetConsoleHistoriesConsoleHistory> consoleHistories;
+    private @Nullable List<GetConsoleHistoriesConsoleHistory> consoleHistories;
     private @Nullable List<GetConsoleHistoriesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The OCID of the instance this console history was fetched from.
      * 
@@ -66,7 +66,7 @@ public final class GetConsoleHistoriesResult {
      * 
      */
     public List<GetConsoleHistoriesConsoleHistory> consoleHistories() {
-        return this.consoleHistories;
+        return this.consoleHistories == null ? List.of() : this.consoleHistories;
     }
     public List<GetConsoleHistoriesFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -75,8 +75,8 @@ public final class GetConsoleHistoriesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The OCID of the instance this console history was fetched from.
@@ -104,9 +104,9 @@ public final class GetConsoleHistoriesResult {
     public static final class Builder {
         private @Nullable String availabilityDomain;
         private String compartmentId;
-        private List<GetConsoleHistoriesConsoleHistory> consoleHistories;
+        private @Nullable List<GetConsoleHistoriesConsoleHistory> consoleHistories;
         private @Nullable List<GetConsoleHistoriesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String instanceId;
         private @Nullable String state;
         public Builder() {}
@@ -132,8 +132,8 @@ public final class GetConsoleHistoriesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder consoleHistories(List<GetConsoleHistoriesConsoleHistory> consoleHistories) {
-            this.consoleHistories = Objects.requireNonNull(consoleHistories);
+        public Builder consoleHistories(@Nullable List<GetConsoleHistoriesConsoleHistory> consoleHistories) {
+            this.consoleHistories = consoleHistories;
             return this;
         }
         public Builder consoleHistories(GetConsoleHistoriesConsoleHistory... consoleHistories) {
@@ -148,8 +148,8 @@ public final class GetConsoleHistoriesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

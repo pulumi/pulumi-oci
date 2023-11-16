@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Drg Route Distribution resource in Oracle Cloud Infrastructure Core service.
@@ -60,24 +59,24 @@ type LookupDrgRouteDistributionArgs struct {
 // A collection of values returned by getDrgRouteDistribution.
 type LookupDrgRouteDistributionResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the route distribution.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Whether this distribution defines how routes get imported into route tables or exported through DRG attachments.
-	DistributionType string `pulumi:"distributionType"`
+	DistributionType *string `pulumi:"distributionType"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG that contains this route distribution.
-	DrgId                  string `pulumi:"drgId"`
-	DrgRouteDistributionId string `pulumi:"drgRouteDistributionId"`
+	DrgId                  *string `pulumi:"drgId"`
+	DrgRouteDistributionId string  `pulumi:"drgRouteDistributionId"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The route distribution's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The route distribution's current state.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the route distribution was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 }
 
 func LookupDrgRouteDistributionOutput(ctx *pulumi.Context, args LookupDrgRouteDistributionOutputArgs, opts ...pulumi.InvokeOption) LookupDrgRouteDistributionResultOutput {
@@ -118,15 +117,9 @@ func (o LookupDrgRouteDistributionResultOutput) ToLookupDrgRouteDistributionResu
 	return o
 }
 
-func (o LookupDrgRouteDistributionResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupDrgRouteDistributionResult] {
-	return pulumix.Output[LookupDrgRouteDistributionResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the route distribution.
-func (o LookupDrgRouteDistributionResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDrgRouteDistributionResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupDrgRouteDistributionResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDrgRouteDistributionResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -135,18 +128,18 @@ func (o LookupDrgRouteDistributionResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-func (o LookupDrgRouteDistributionResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDrgRouteDistributionResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupDrgRouteDistributionResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDrgRouteDistributionResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Whether this distribution defines how routes get imported into route tables or exported through DRG attachments.
-func (o LookupDrgRouteDistributionResultOutput) DistributionType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDrgRouteDistributionResult) string { return v.DistributionType }).(pulumi.StringOutput)
+func (o LookupDrgRouteDistributionResultOutput) DistributionType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDrgRouteDistributionResult) *string { return v.DistributionType }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG that contains this route distribution.
-func (o LookupDrgRouteDistributionResultOutput) DrgId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDrgRouteDistributionResult) string { return v.DrgId }).(pulumi.StringOutput)
+func (o LookupDrgRouteDistributionResultOutput) DrgId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDrgRouteDistributionResult) *string { return v.DrgId }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupDrgRouteDistributionResultOutput) DrgRouteDistributionId() pulumi.StringOutput {
@@ -159,18 +152,18 @@ func (o LookupDrgRouteDistributionResultOutput) FreeformTags() pulumi.MapOutput 
 }
 
 // The route distribution's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
-func (o LookupDrgRouteDistributionResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDrgRouteDistributionResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupDrgRouteDistributionResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDrgRouteDistributionResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The route distribution's current state.
-func (o LookupDrgRouteDistributionResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDrgRouteDistributionResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupDrgRouteDistributionResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDrgRouteDistributionResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the route distribution was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-func (o LookupDrgRouteDistributionResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDrgRouteDistributionResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupDrgRouteDistributionResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDrgRouteDistributionResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

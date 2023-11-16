@@ -13,17 +13,17 @@ namespace Pulumi.Oci.DataSafe.Outputs
     [OutputType]
     public sealed class GetUserAssessmentComparisonSummaryBaselineResult
     {
-        public readonly string TargetId;
+        public readonly string? TargetId;
         /// <summary>
         /// The OCID of the user assessment.
         /// </summary>
-        public readonly string UserAssessmentId;
+        public readonly string? UserAssessmentId;
 
         [OutputConstructor]
         private GetUserAssessmentComparisonSummaryBaselineResult(
-            string targetId,
+            string? targetId,
 
-            string userAssessmentId)
+            string? userAssessmentId)
         {
             TargetId = targetId;
             UserAssessmentId = userAssessmentId;

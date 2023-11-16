@@ -16,41 +16,41 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// Display-name of the AppRole.
         /// </summary>
-        public readonly string Display;
+        public readonly string? Display;
         /// <summary>
         /// If true, the object class represents an account. The isAccountObjectClass attribute value 'true' MUST appear no more than once.
         /// </summary>
-        public readonly bool IsAccountObjectClass;
+        public readonly bool? IsAccountObjectClass;
         /// <summary>
         /// URI of the AppRole.
         /// </summary>
-        public readonly string Ref;
+        public readonly string? Ref;
         /// <summary>
         /// Object class resource type
         /// </summary>
-        public readonly string ResourceType;
+        public readonly string? ResourceType;
         /// <summary>
         /// Object Class type. Allowed values are AccountObjectClass, ManagedObjectClass.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
         /// <summary>
         /// ID of the AppRole.
         /// </summary>
-        public readonly string Value;
+        public readonly string? Value;
 
         [OutputConstructor]
         private GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppObjectClassResult(
-            string display,
+            string? display,
 
-            bool isAccountObjectClass,
+            bool? isAccountObjectClass,
 
-            string @ref,
+            string? @ref,
 
-            string resourceType,
+            string? resourceType,
 
-            string type,
+            string? type,
 
-            string value)
+            string? value)
         {
             Display = display;
             IsAccountObjectClass = isAccountObjectClass;

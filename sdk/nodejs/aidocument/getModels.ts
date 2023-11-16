@@ -87,7 +87,7 @@ export interface GetModelsResult {
     /**
      * The list of model_collection.
      */
-    readonly modelCollections: outputs.AiDocument.GetModelsModelCollection[];
+    readonly modelCollections?: outputs.AiDocument.GetModelsModelCollection[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project that contains the model.
      */

@@ -6,6 +6,8 @@ package com.pulumi.oci.Nosql.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetIndexesIndexCollectionKey {
@@ -13,39 +15,39 @@ public final class GetIndexesIndexCollectionKey {
      * @return The name of a column to be included as an index key.
      * 
      */
-    private String columnName;
+    private @Nullable String columnName;
     /**
      * @return If the specified column is of type JSON, jsonFieldType contains the type of the field indicated by jsonPath.
      * 
      */
-    private String jsonFieldType;
+    private @Nullable String jsonFieldType;
     /**
      * @return If the specified column is of type JSON, jsonPath contains a dotted path indicating the field within the JSON object that will be the index key.
      * 
      */
-    private String jsonPath;
+    private @Nullable String jsonPath;
 
     private GetIndexesIndexCollectionKey() {}
     /**
      * @return The name of a column to be included as an index key.
      * 
      */
-    public String columnName() {
-        return this.columnName;
+    public Optional<String> columnName() {
+        return Optional.ofNullable(this.columnName);
     }
     /**
      * @return If the specified column is of type JSON, jsonFieldType contains the type of the field indicated by jsonPath.
      * 
      */
-    public String jsonFieldType() {
-        return this.jsonFieldType;
+    public Optional<String> jsonFieldType() {
+        return Optional.ofNullable(this.jsonFieldType);
     }
     /**
      * @return If the specified column is of type JSON, jsonPath contains a dotted path indicating the field within the JSON object that will be the index key.
      * 
      */
-    public String jsonPath() {
-        return this.jsonPath;
+    public Optional<String> jsonPath() {
+        return Optional.ofNullable(this.jsonPath);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetIndexesIndexCollectionKey {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String columnName;
-        private String jsonFieldType;
-        private String jsonPath;
+        private @Nullable String columnName;
+        private @Nullable String jsonFieldType;
+        private @Nullable String jsonPath;
         public Builder() {}
         public Builder(GetIndexesIndexCollectionKey defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetIndexesIndexCollectionKey {
         }
 
         @CustomType.Setter
-        public Builder columnName(String columnName) {
-            this.columnName = Objects.requireNonNull(columnName);
+        public Builder columnName(@Nullable String columnName) {
+            this.columnName = columnName;
             return this;
         }
         @CustomType.Setter
-        public Builder jsonFieldType(String jsonFieldType) {
-            this.jsonFieldType = Objects.requireNonNull(jsonFieldType);
+        public Builder jsonFieldType(@Nullable String jsonFieldType) {
+            this.jsonFieldType = jsonFieldType;
             return this;
         }
         @CustomType.Setter
-        public Builder jsonPath(String jsonPath) {
-            this.jsonPath = Objects.requireNonNull(jsonPath);
+        public Builder jsonPath(@Nullable String jsonPath) {
+            this.jsonPath = jsonPath;
             return this;
         }
         public GetIndexesIndexCollectionKey build() {

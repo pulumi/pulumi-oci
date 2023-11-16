@@ -6,6 +6,8 @@ package com.pulumi.oci.Core.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetComputeCapacityReservationInstanceShapesComputeCapacityReservationInstanceShape {
@@ -13,27 +15,27 @@ public final class GetComputeCapacityReservationInstanceShapesComputeCapacityRes
      * @return The name of the availability domain.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    private String availabilityDomain;
+    private @Nullable String availabilityDomain;
     /**
      * @return The name of the available shape used to launch instances in a compute capacity reservation.
      * 
      */
-    private String instanceShape;
+    private @Nullable String instanceShape;
 
     private GetComputeCapacityReservationInstanceShapesComputeCapacityReservationInstanceShape() {}
     /**
      * @return The name of the availability domain.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    public String availabilityDomain() {
-        return this.availabilityDomain;
+    public Optional<String> availabilityDomain() {
+        return Optional.ofNullable(this.availabilityDomain);
     }
     /**
      * @return The name of the available shape used to launch instances in a compute capacity reservation.
      * 
      */
-    public String instanceShape() {
-        return this.instanceShape;
+    public Optional<String> instanceShape() {
+        return Optional.ofNullable(this.instanceShape);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetComputeCapacityReservationInstanceShapesComputeCapacityRes
     }
     @CustomType.Builder
     public static final class Builder {
-        private String availabilityDomain;
-        private String instanceShape;
+        private @Nullable String availabilityDomain;
+        private @Nullable String instanceShape;
         public Builder() {}
         public Builder(GetComputeCapacityReservationInstanceShapesComputeCapacityReservationInstanceShape defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetComputeCapacityReservationInstanceShapesComputeCapacityRes
         }
 
         @CustomType.Setter
-        public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+        public Builder availabilityDomain(@Nullable String availabilityDomain) {
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
-        public Builder instanceShape(String instanceShape) {
-            this.instanceShape = Objects.requireNonNull(instanceShape);
+        public Builder instanceShape(@Nullable String instanceShape) {
+            this.instanceShape = instanceShape;
             return this;
         }
         public GetComputeCapacityReservationInstanceShapesComputeCapacityReservationInstanceShape build() {

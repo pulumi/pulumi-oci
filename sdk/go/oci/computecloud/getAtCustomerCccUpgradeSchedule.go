@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Ccc Upgrade Schedule resource in Oracle Cloud Infrastructure Compute Cloud At Customer service.
@@ -62,31 +61,31 @@ type LookupAtCustomerCccUpgradeScheduleArgs struct {
 type LookupAtCustomerCccUpgradeScheduleResult struct {
 	CccUpgradeScheduleId string `pulumi:"cccUpgradeScheduleId"`
 	// Compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Compute Cloud@Customer upgrade schedule.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A description of the Compute Cloud@Customer upgrade schedule time block.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Compute Cloud@Customer upgrade schedule display name. Avoid entering confidential information.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// List of preferred times for Compute Cloud@Customer infrastructures associated with this schedule to be upgraded.
 	Events []GetAtCustomerCccUpgradeScheduleEvent `pulumi:"events"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Upgrade schedule [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This cannot be changed once created.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// List of Compute Cloud@Customer infrastructure [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that are using this upgrade schedule.
 	InfrastructureIds []string `pulumi:"infrastructureIds"`
 	// A message describing the current state in more detail. For example, the message can be used to provide actionable information for a resource in a Failed state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Lifecycle state of the resource.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time the upgrade schedule was created, using an RFC3339 formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the upgrade schedule was updated, using an RFC3339 formatted datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func LookupAtCustomerCccUpgradeScheduleOutput(ctx *pulumi.Context, args LookupAtCustomerCccUpgradeScheduleOutputArgs, opts ...pulumi.InvokeOption) LookupAtCustomerCccUpgradeScheduleResultOutput {
@@ -127,19 +126,13 @@ func (o LookupAtCustomerCccUpgradeScheduleResultOutput) ToLookupAtCustomerCccUpg
 	return o
 }
 
-func (o LookupAtCustomerCccUpgradeScheduleResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupAtCustomerCccUpgradeScheduleResult] {
-	return pulumix.Output[LookupAtCustomerCccUpgradeScheduleResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o LookupAtCustomerCccUpgradeScheduleResultOutput) CccUpgradeScheduleId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAtCustomerCccUpgradeScheduleResult) string { return v.CccUpgradeScheduleId }).(pulumi.StringOutput)
 }
 
 // Compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Compute Cloud@Customer upgrade schedule.
-func (o LookupAtCustomerCccUpgradeScheduleResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAtCustomerCccUpgradeScheduleResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupAtCustomerCccUpgradeScheduleResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAtCustomerCccUpgradeScheduleResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -148,13 +141,13 @@ func (o LookupAtCustomerCccUpgradeScheduleResultOutput) DefinedTags() pulumi.Map
 }
 
 // A description of the Compute Cloud@Customer upgrade schedule time block.
-func (o LookupAtCustomerCccUpgradeScheduleResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAtCustomerCccUpgradeScheduleResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupAtCustomerCccUpgradeScheduleResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAtCustomerCccUpgradeScheduleResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Compute Cloud@Customer upgrade schedule display name. Avoid entering confidential information.
-func (o LookupAtCustomerCccUpgradeScheduleResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAtCustomerCccUpgradeScheduleResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupAtCustomerCccUpgradeScheduleResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAtCustomerCccUpgradeScheduleResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // List of preferred times for Compute Cloud@Customer infrastructures associated with this schedule to be upgraded.
@@ -170,8 +163,8 @@ func (o LookupAtCustomerCccUpgradeScheduleResultOutput) FreeformTags() pulumi.Ma
 }
 
 // Upgrade schedule [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This cannot be changed once created.
-func (o LookupAtCustomerCccUpgradeScheduleResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAtCustomerCccUpgradeScheduleResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupAtCustomerCccUpgradeScheduleResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAtCustomerCccUpgradeScheduleResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // List of Compute Cloud@Customer infrastructure [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that are using this upgrade schedule.
@@ -180,13 +173,13 @@ func (o LookupAtCustomerCccUpgradeScheduleResultOutput) InfrastructureIds() pulu
 }
 
 // A message describing the current state in more detail. For example, the message can be used to provide actionable information for a resource in a Failed state.
-func (o LookupAtCustomerCccUpgradeScheduleResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAtCustomerCccUpgradeScheduleResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupAtCustomerCccUpgradeScheduleResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAtCustomerCccUpgradeScheduleResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // Lifecycle state of the resource.
-func (o LookupAtCustomerCccUpgradeScheduleResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAtCustomerCccUpgradeScheduleResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupAtCustomerCccUpgradeScheduleResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAtCustomerCccUpgradeScheduleResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -195,13 +188,13 @@ func (o LookupAtCustomerCccUpgradeScheduleResultOutput) SystemTags() pulumi.MapO
 }
 
 // The time the upgrade schedule was created, using an RFC3339 formatted datetime string.
-func (o LookupAtCustomerCccUpgradeScheduleResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAtCustomerCccUpgradeScheduleResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupAtCustomerCccUpgradeScheduleResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAtCustomerCccUpgradeScheduleResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the upgrade schedule was updated, using an RFC3339 formatted datetime string.
-func (o LookupAtCustomerCccUpgradeScheduleResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAtCustomerCccUpgradeScheduleResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupAtCustomerCccUpgradeScheduleResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAtCustomerCccUpgradeScheduleResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

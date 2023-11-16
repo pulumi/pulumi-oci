@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the details of a single Availability Domain in Oracle Cloud Infrastructure Identity service.
@@ -64,13 +63,13 @@ type GetAvailabilityDomainArgs struct {
 // A collection of values returned by getAvailabilityDomain.
 type GetAvailabilityDomainResult struct {
 	// The number of the Availability Domain. For example, the `adNumber` for YXol:US-ASHBURN-AD-1 would be "1"
-	AdNumber int `pulumi:"adNumber"`
+	AdNumber *int `pulumi:"adNumber"`
 	// The OCID of the tenancy.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The OCID of the Availability Domain.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The name of the Availability Domain.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 }
 
 func GetAvailabilityDomainOutput(ctx *pulumi.Context, args GetAvailabilityDomainOutputArgs, opts ...pulumi.InvokeOption) GetAvailabilityDomainResultOutput {
@@ -115,15 +114,9 @@ func (o GetAvailabilityDomainResultOutput) ToGetAvailabilityDomainResultOutputWi
 	return o
 }
 
-func (o GetAvailabilityDomainResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAvailabilityDomainResult] {
-	return pulumix.Output[GetAvailabilityDomainResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The number of the Availability Domain. For example, the `adNumber` for YXol:US-ASHBURN-AD-1 would be "1"
-func (o GetAvailabilityDomainResultOutput) AdNumber() pulumi.IntOutput {
-	return o.ApplyT(func(v GetAvailabilityDomainResult) int { return v.AdNumber }).(pulumi.IntOutput)
+func (o GetAvailabilityDomainResultOutput) AdNumber() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetAvailabilityDomainResult) *int { return v.AdNumber }).(pulumi.IntPtrOutput)
 }
 
 // The OCID of the tenancy.
@@ -132,13 +125,13 @@ func (o GetAvailabilityDomainResultOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // The OCID of the Availability Domain.
-func (o GetAvailabilityDomainResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAvailabilityDomainResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetAvailabilityDomainResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAvailabilityDomainResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The name of the Availability Domain.
-func (o GetAvailabilityDomainResultOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAvailabilityDomainResult) string { return v.Name }).(pulumi.StringOutput)
+func (o GetAvailabilityDomainResultOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAvailabilityDomainResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 func init() {

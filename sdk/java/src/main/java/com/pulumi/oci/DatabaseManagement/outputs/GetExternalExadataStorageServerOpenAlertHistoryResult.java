@@ -8,6 +8,8 @@ import com.pulumi.oci.DatabaseManagement.outputs.GetExternalExadataStorageServer
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetExternalExadataStorageServerOpenAlertHistoryResult {
@@ -15,13 +17,13 @@ public final class GetExternalExadataStorageServerOpenAlertHistoryResult {
      * @return A list of open alerts.
      * 
      */
-    private List<GetExternalExadataStorageServerOpenAlertHistoryAlert> alerts;
+    private @Nullable List<GetExternalExadataStorageServerOpenAlertHistoryAlert> alerts;
     private String externalExadataStorageServerId;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
 
     private GetExternalExadataStorageServerOpenAlertHistoryResult() {}
     /**
@@ -29,7 +31,7 @@ public final class GetExternalExadataStorageServerOpenAlertHistoryResult {
      * 
      */
     public List<GetExternalExadataStorageServerOpenAlertHistoryAlert> alerts() {
-        return this.alerts;
+        return this.alerts == null ? List.of() : this.alerts;
     }
     public String externalExadataStorageServerId() {
         return this.externalExadataStorageServerId;
@@ -38,8 +40,8 @@ public final class GetExternalExadataStorageServerOpenAlertHistoryResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
 
     public static Builder builder() {
@@ -51,9 +53,9 @@ public final class GetExternalExadataStorageServerOpenAlertHistoryResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetExternalExadataStorageServerOpenAlertHistoryAlert> alerts;
+        private @Nullable List<GetExternalExadataStorageServerOpenAlertHistoryAlert> alerts;
         private String externalExadataStorageServerId;
-        private String id;
+        private @Nullable String id;
         public Builder() {}
         public Builder(GetExternalExadataStorageServerOpenAlertHistoryResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -63,8 +65,8 @@ public final class GetExternalExadataStorageServerOpenAlertHistoryResult {
         }
 
         @CustomType.Setter
-        public Builder alerts(List<GetExternalExadataStorageServerOpenAlertHistoryAlert> alerts) {
-            this.alerts = Objects.requireNonNull(alerts);
+        public Builder alerts(@Nullable List<GetExternalExadataStorageServerOpenAlertHistoryAlert> alerts) {
+            this.alerts = alerts;
             return this;
         }
         public Builder alerts(GetExternalExadataStorageServerOpenAlertHistoryAlert... alerts) {
@@ -76,8 +78,8 @@ public final class GetExternalExadataStorageServerOpenAlertHistoryResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         public GetExternalExadataStorageServerOpenAlertHistoryResult build() {

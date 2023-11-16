@@ -26,15 +26,6 @@ class NetworkFirewallPolicyDecryptionRuleArgs:
                  secret: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a NetworkFirewallPolicyDecryptionRule resource.
-        :param pulumi.Input[str] action: (Updatable) Action:
-               * NO_DECRYPT - Matching traffic is not decrypted.
-               * DECRYPT - Matching traffic is decrypted with the specified `secret` according to the specified `decryptionProfile`.
-        :param pulumi.Input['NetworkFirewallPolicyDecryptionRuleConditionArgs'] condition: (Updatable) Match criteria used in Decryption Rule used on the firewall policy rules. The resources mentioned must already be present in the policy before being referenced in the rule.
-        :param pulumi.Input[str] network_firewall_policy_id: Unique Network Firewall Policy identifier
-        :param pulumi.Input[str] decryption_profile: (Updatable) The name of the decryption profile to use.
-        :param pulumi.Input[str] name: Name for the decryption rule, must be unique within the policy.
-        :param pulumi.Input['NetworkFirewallPolicyDecryptionRulePositionArgs'] position: (Updatable) An object which defines the position of the rule. Only one of `after_rule` or `before_rule` should be provided.
-        :param pulumi.Input[str] secret: (Updatable) The name of a mapped secret. Its `type` must match that of the specified decryption profile.
         """
         pulumi.set(__self__, "action", action)
         pulumi.set(__self__, "condition", condition)
@@ -53,11 +44,6 @@ class NetworkFirewallPolicyDecryptionRuleArgs:
     @property
     @pulumi.getter
     def action(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Action:
-        * NO_DECRYPT - Matching traffic is not decrypted.
-        * DECRYPT - Matching traffic is decrypted with the specified `secret` according to the specified `decryptionProfile`.
-        """
         return pulumi.get(self, "action")
 
     @action.setter
@@ -67,9 +53,6 @@ class NetworkFirewallPolicyDecryptionRuleArgs:
     @property
     @pulumi.getter
     def condition(self) -> pulumi.Input['NetworkFirewallPolicyDecryptionRuleConditionArgs']:
-        """
-        (Updatable) Match criteria used in Decryption Rule used on the firewall policy rules. The resources mentioned must already be present in the policy before being referenced in the rule.
-        """
         return pulumi.get(self, "condition")
 
     @condition.setter
@@ -79,9 +62,6 @@ class NetworkFirewallPolicyDecryptionRuleArgs:
     @property
     @pulumi.getter(name="networkFirewallPolicyId")
     def network_firewall_policy_id(self) -> pulumi.Input[str]:
-        """
-        Unique Network Firewall Policy identifier
-        """
         return pulumi.get(self, "network_firewall_policy_id")
 
     @network_firewall_policy_id.setter
@@ -91,9 +71,6 @@ class NetworkFirewallPolicyDecryptionRuleArgs:
     @property
     @pulumi.getter(name="decryptionProfile")
     def decryption_profile(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The name of the decryption profile to use.
-        """
         return pulumi.get(self, "decryption_profile")
 
     @decryption_profile.setter
@@ -103,9 +80,6 @@ class NetworkFirewallPolicyDecryptionRuleArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Name for the decryption rule, must be unique within the policy.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -115,9 +89,6 @@ class NetworkFirewallPolicyDecryptionRuleArgs:
     @property
     @pulumi.getter
     def position(self) -> Optional[pulumi.Input['NetworkFirewallPolicyDecryptionRulePositionArgs']]:
-        """
-        (Updatable) An object which defines the position of the rule. Only one of `after_rule` or `before_rule` should be provided.
-        """
         return pulumi.get(self, "position")
 
     @position.setter
@@ -136,9 +107,6 @@ class NetworkFirewallPolicyDecryptionRuleArgs:
     @property
     @pulumi.getter
     def secret(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The name of a mapped secret. Its `type` must match that of the specified decryption profile.
-        """
         return pulumi.get(self, "secret")
 
     @secret.setter
@@ -160,16 +128,6 @@ class _NetworkFirewallPolicyDecryptionRuleState:
                  secret: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering NetworkFirewallPolicyDecryptionRule resources.
-        :param pulumi.Input[str] action: (Updatable) Action:
-               * NO_DECRYPT - Matching traffic is not decrypted.
-               * DECRYPT - Matching traffic is decrypted with the specified `secret` according to the specified `decryptionProfile`.
-        :param pulumi.Input['NetworkFirewallPolicyDecryptionRuleConditionArgs'] condition: (Updatable) Match criteria used in Decryption Rule used on the firewall policy rules. The resources mentioned must already be present in the policy before being referenced in the rule.
-        :param pulumi.Input[str] decryption_profile: (Updatable) The name of the decryption profile to use.
-        :param pulumi.Input[str] name: Name for the decryption rule, must be unique within the policy.
-        :param pulumi.Input[str] network_firewall_policy_id: Unique Network Firewall Policy identifier
-        :param pulumi.Input[str] parent_resource_id: OCID of the Network Firewall Policy this decryption rule belongs to.
-        :param pulumi.Input['NetworkFirewallPolicyDecryptionRulePositionArgs'] position: (Updatable) An object which defines the position of the rule. Only one of `after_rule` or `before_rule` should be provided.
-        :param pulumi.Input[str] secret: (Updatable) The name of a mapped secret. Its `type` must match that of the specified decryption profile.
         """
         if action is not None:
             pulumi.set(__self__, "action", action)
@@ -193,11 +151,6 @@ class _NetworkFirewallPolicyDecryptionRuleState:
     @property
     @pulumi.getter
     def action(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Action:
-        * NO_DECRYPT - Matching traffic is not decrypted.
-        * DECRYPT - Matching traffic is decrypted with the specified `secret` according to the specified `decryptionProfile`.
-        """
         return pulumi.get(self, "action")
 
     @action.setter
@@ -207,9 +160,6 @@ class _NetworkFirewallPolicyDecryptionRuleState:
     @property
     @pulumi.getter
     def condition(self) -> Optional[pulumi.Input['NetworkFirewallPolicyDecryptionRuleConditionArgs']]:
-        """
-        (Updatable) Match criteria used in Decryption Rule used on the firewall policy rules. The resources mentioned must already be present in the policy before being referenced in the rule.
-        """
         return pulumi.get(self, "condition")
 
     @condition.setter
@@ -219,9 +169,6 @@ class _NetworkFirewallPolicyDecryptionRuleState:
     @property
     @pulumi.getter(name="decryptionProfile")
     def decryption_profile(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The name of the decryption profile to use.
-        """
         return pulumi.get(self, "decryption_profile")
 
     @decryption_profile.setter
@@ -231,9 +178,6 @@ class _NetworkFirewallPolicyDecryptionRuleState:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Name for the decryption rule, must be unique within the policy.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -243,9 +187,6 @@ class _NetworkFirewallPolicyDecryptionRuleState:
     @property
     @pulumi.getter(name="networkFirewallPolicyId")
     def network_firewall_policy_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        Unique Network Firewall Policy identifier
-        """
         return pulumi.get(self, "network_firewall_policy_id")
 
     @network_firewall_policy_id.setter
@@ -255,9 +196,6 @@ class _NetworkFirewallPolicyDecryptionRuleState:
     @property
     @pulumi.getter(name="parentResourceId")
     def parent_resource_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        OCID of the Network Firewall Policy this decryption rule belongs to.
-        """
         return pulumi.get(self, "parent_resource_id")
 
     @parent_resource_id.setter
@@ -267,9 +205,6 @@ class _NetworkFirewallPolicyDecryptionRuleState:
     @property
     @pulumi.getter
     def position(self) -> Optional[pulumi.Input['NetworkFirewallPolicyDecryptionRulePositionArgs']]:
-        """
-        (Updatable) An object which defines the position of the rule. Only one of `after_rule` or `before_rule` should be provided.
-        """
         return pulumi.get(self, "position")
 
     @position.setter
@@ -288,9 +223,6 @@ class _NetworkFirewallPolicyDecryptionRuleState:
     @property
     @pulumi.getter
     def secret(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The name of a mapped secret. Its `type` must match that of the specified decryption profile.
-        """
         return pulumi.get(self, "secret")
 
     @secret.setter
@@ -313,29 +245,9 @@ class NetworkFirewallPolicyDecryptionRule(pulumi.CustomResource):
                  secret: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Network Firewall Policy Decryption Rule resource in Oracle Cloud Infrastructure Network Firewall service.
-
-        Creates a new Decryption Rule for the Network Firewall Policy.
-
-        ## Import
-
-        NetworkFirewallPolicyDecryptionRules can be imported using the `name`, e.g.
-
-        ```sh
-         $ pulumi import oci:NetworkFirewall/networkFirewallPolicyDecryptionRule:NetworkFirewallPolicyDecryptionRule test_network_firewall_policy_decryption_rule "networkFirewallPolicies/{networkFirewallPolicyId}/decryptionRules/{decryptionRuleName}"
-        ```
-
+        Create a NetworkFirewallPolicyDecryptionRule resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] action: (Updatable) Action:
-               * NO_DECRYPT - Matching traffic is not decrypted.
-               * DECRYPT - Matching traffic is decrypted with the specified `secret` according to the specified `decryptionProfile`.
-        :param pulumi.Input[pulumi.InputType['NetworkFirewallPolicyDecryptionRuleConditionArgs']] condition: (Updatable) Match criteria used in Decryption Rule used on the firewall policy rules. The resources mentioned must already be present in the policy before being referenced in the rule.
-        :param pulumi.Input[str] decryption_profile: (Updatable) The name of the decryption profile to use.
-        :param pulumi.Input[str] name: Name for the decryption rule, must be unique within the policy.
-        :param pulumi.Input[str] network_firewall_policy_id: Unique Network Firewall Policy identifier
-        :param pulumi.Input[pulumi.InputType['NetworkFirewallPolicyDecryptionRulePositionArgs']] position: (Updatable) An object which defines the position of the rule. Only one of `after_rule` or `before_rule` should be provided.
-        :param pulumi.Input[str] secret: (Updatable) The name of a mapped secret. Its `type` must match that of the specified decryption profile.
         """
         ...
     @overload
@@ -344,18 +256,7 @@ class NetworkFirewallPolicyDecryptionRule(pulumi.CustomResource):
                  args: NetworkFirewallPolicyDecryptionRuleArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Network Firewall Policy Decryption Rule resource in Oracle Cloud Infrastructure Network Firewall service.
-
-        Creates a new Decryption Rule for the Network Firewall Policy.
-
-        ## Import
-
-        NetworkFirewallPolicyDecryptionRules can be imported using the `name`, e.g.
-
-        ```sh
-         $ pulumi import oci:NetworkFirewall/networkFirewallPolicyDecryptionRule:NetworkFirewallPolicyDecryptionRule test_network_firewall_policy_decryption_rule "networkFirewallPolicies/{networkFirewallPolicyId}/decryptionRules/{decryptionRuleName}"
-        ```
-
+        Create a NetworkFirewallPolicyDecryptionRule resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param NetworkFirewallPolicyDecryptionRuleArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -429,16 +330,6 @@ class NetworkFirewallPolicyDecryptionRule(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] action: (Updatable) Action:
-               * NO_DECRYPT - Matching traffic is not decrypted.
-               * DECRYPT - Matching traffic is decrypted with the specified `secret` according to the specified `decryptionProfile`.
-        :param pulumi.Input[pulumi.InputType['NetworkFirewallPolicyDecryptionRuleConditionArgs']] condition: (Updatable) Match criteria used in Decryption Rule used on the firewall policy rules. The resources mentioned must already be present in the policy before being referenced in the rule.
-        :param pulumi.Input[str] decryption_profile: (Updatable) The name of the decryption profile to use.
-        :param pulumi.Input[str] name: Name for the decryption rule, must be unique within the policy.
-        :param pulumi.Input[str] network_firewall_policy_id: Unique Network Firewall Policy identifier
-        :param pulumi.Input[str] parent_resource_id: OCID of the Network Firewall Policy this decryption rule belongs to.
-        :param pulumi.Input[pulumi.InputType['NetworkFirewallPolicyDecryptionRulePositionArgs']] position: (Updatable) An object which defines the position of the rule. Only one of `after_rule` or `before_rule` should be provided.
-        :param pulumi.Input[str] secret: (Updatable) The name of a mapped secret. Its `type` must match that of the specified decryption profile.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -458,59 +349,36 @@ class NetworkFirewallPolicyDecryptionRule(pulumi.CustomResource):
     @property
     @pulumi.getter
     def action(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Action:
-        * NO_DECRYPT - Matching traffic is not decrypted.
-        * DECRYPT - Matching traffic is decrypted with the specified `secret` according to the specified `decryptionProfile`.
-        """
         return pulumi.get(self, "action")
 
     @property
     @pulumi.getter
     def condition(self) -> pulumi.Output['outputs.NetworkFirewallPolicyDecryptionRuleCondition']:
-        """
-        (Updatable) Match criteria used in Decryption Rule used on the firewall policy rules. The resources mentioned must already be present in the policy before being referenced in the rule.
-        """
         return pulumi.get(self, "condition")
 
     @property
     @pulumi.getter(name="decryptionProfile")
     def decryption_profile(self) -> pulumi.Output[Optional[str]]:
-        """
-        (Updatable) The name of the decryption profile to use.
-        """
         return pulumi.get(self, "decryption_profile")
 
     @property
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
-        """
-        Name for the decryption rule, must be unique within the policy.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="networkFirewallPolicyId")
     def network_firewall_policy_id(self) -> pulumi.Output[str]:
-        """
-        Unique Network Firewall Policy identifier
-        """
         return pulumi.get(self, "network_firewall_policy_id")
 
     @property
     @pulumi.getter(name="parentResourceId")
-    def parent_resource_id(self) -> pulumi.Output[str]:
-        """
-        OCID of the Network Firewall Policy this decryption rule belongs to.
-        """
+    def parent_resource_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "parent_resource_id")
 
     @property
     @pulumi.getter
-    def position(self) -> pulumi.Output['outputs.NetworkFirewallPolicyDecryptionRulePosition']:
-        """
-        (Updatable) An object which defines the position of the rule. Only one of `after_rule` or `before_rule` should be provided.
-        """
+    def position(self) -> pulumi.Output[Optional['outputs.NetworkFirewallPolicyDecryptionRulePosition']]:
         return pulumi.get(self, "position")
 
     @property
@@ -521,8 +389,5 @@ class NetworkFirewallPolicyDecryptionRule(pulumi.CustomResource):
     @property
     @pulumi.getter
     def secret(self) -> pulumi.Output[Optional[str]]:
-        """
-        (Updatable) The name of a mapped secret. Its `type` must match that of the specified decryption profile.
-        """
         return pulumi.get(self, "secret")
 

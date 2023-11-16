@@ -109,7 +109,7 @@ namespace Pulumi.Oci.ApiGateway
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// API validation results.
         /// </summary>
@@ -119,7 +119,7 @@ namespace Pulumi.Oci.ApiGateway
         private GetApiValidationResult(
             string apiId,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetApiValidationValidationResult> validations)
         {

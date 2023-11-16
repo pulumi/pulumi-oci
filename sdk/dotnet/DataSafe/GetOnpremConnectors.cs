@@ -207,7 +207,7 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string? OnPremConnectorId;
         public readonly string? OnPremConnectorLifecycleState;
         /// <summary>
@@ -227,7 +227,7 @@ namespace Pulumi.Oci.DataSafe
 
             ImmutableArray<Outputs.GetOnpremConnectorsFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? onPremConnectorId,
 

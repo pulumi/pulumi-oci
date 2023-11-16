@@ -67,13 +67,13 @@ namespace Pulumi.Oci.Core
         /// The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
         /// </summary>
         [Output("availabilityDomain")]
-        public Output<string> AvailabilityDomain { get; private set; } = null!;
+        public Output<string?> AvailabilityDomain { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the compartment the VNIC attachment is in, which is the same compartment the instance is in.
         /// </summary>
         [Output("compartmentId")]
-        public Output<string> CompartmentId { get; private set; } = null!;
+        public Output<string?> CompartmentId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
@@ -85,7 +85,7 @@ namespace Pulumi.Oci.Core
         /// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the instance.
@@ -101,13 +101,13 @@ namespace Pulumi.Oci.Core
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("nicIndex")]
-        public Output<int> NicIndex { get; private set; } = null!;
+        public Output<int?> NicIndex { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the VNIC attachment.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create the VNIC in. When launching an instance, use this `subnetId` instead of the deprecated `subnetId` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/requests/LaunchInstanceDetails). At least one of them is required; if you provide both, the values must match.
@@ -115,13 +115,13 @@ namespace Pulumi.Oci.Core
         /// If you are an Oracle Cloud VMware Solution customer and creating a secondary VNIC in a VLAN instead of a subnet, provide a `vlanId` instead of a `subnetId`. If you provide both a `vlanId` and `subnetId`, the request fails.
         /// </summary>
         [Output("subnetId")]
-        public Output<string> SubnetId { get; private set; } = null!;
+        public Output<string?> SubnetId { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the VNIC attachment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// Provide this attribute only if you are an Oracle Cloud VMware Solution customer and creating a secondary VNIC in a VLAN. The value is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
@@ -129,19 +129,19 @@ namespace Pulumi.Oci.Core
         /// Provide a `vlanId` instead of a `subnetId`. If you provide both a `vlanId` and `subnetId`, the request fails.
         /// </summary>
         [Output("vlanId")]
-        public Output<string> VlanId { get; private set; } = null!;
+        public Output<string?> VlanId { get; private set; } = null!;
 
         /// <summary>
         /// The Oracle-assigned VLAN tag of the attached VNIC. Available after the attachment process is complete.
         /// </summary>
         [Output("vlanTag")]
-        public Output<int> VlanTag { get; private set; } = null!;
+        public Output<int?> VlanTag { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the VNIC. Available after the attachment process is complete.
         /// </summary>
         [Output("vnicId")]
-        public Output<string> VnicId { get; private set; } = null!;
+        public Output<string?> VnicId { get; private set; } = null!;
 
 
         /// <summary>

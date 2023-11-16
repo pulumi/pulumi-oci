@@ -16,11 +16,11 @@ namespace Pulumi.Oci.ManagementAgent.Outputs
         /// <summary>
         /// Name of the property
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// Unit for the property
         /// </summary>
-        public readonly string Units;
+        public readonly string? Units;
         /// <summary>
         /// Values of the property
         /// </summary>
@@ -28,9 +28,9 @@ namespace Pulumi.Oci.ManagementAgent.Outputs
 
         [OutputConstructor]
         private GetManagementAgentManagementAgentPropertyResult(
-            string name,
+            string? name,
 
-            string units,
+            string? units,
 
             ImmutableArray<string> values)
         {

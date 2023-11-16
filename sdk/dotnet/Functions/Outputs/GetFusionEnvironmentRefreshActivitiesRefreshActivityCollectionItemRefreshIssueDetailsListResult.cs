@@ -16,10 +16,10 @@ namespace Pulumi.Oci.Functions.Outputs
         /// <summary>
         /// Detail reasons of refresh failure or validation failure that needs to be shown to customer.
         /// </summary>
-        public readonly string RefreshIssues;
+        public readonly string? RefreshIssues;
 
         [OutputConstructor]
-        private GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListResult(string refreshIssues)
+        private GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListResult(string? refreshIssues)
         {
             RefreshIssues = refreshIssues;
         }

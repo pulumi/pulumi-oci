@@ -8,26 +8,28 @@ import com.pulumi.oci.ApiGateway.outputs.GetDeploymentsDeploymentCollectionSpeci
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderValidation {
-    private List<GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderValidationHeader> headers;
+    private @Nullable List<GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderValidationHeader> headers;
     /**
      * @return Validation behavior mode.
      * 
      */
-    private String validationMode;
+    private @Nullable String validationMode;
 
     private GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderValidation() {}
     public List<GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderValidationHeader> headers() {
-        return this.headers;
+        return this.headers == null ? List.of() : this.headers;
     }
     /**
      * @return Validation behavior mode.
      * 
      */
-    public String validationMode() {
-        return this.validationMode;
+    public Optional<String> validationMode() {
+        return Optional.ofNullable(this.validationMode);
     }
 
     public static Builder builder() {
@@ -39,8 +41,8 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPo
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderValidationHeader> headers;
-        private String validationMode;
+        private @Nullable List<GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderValidationHeader> headers;
+        private @Nullable String validationMode;
         public Builder() {}
         public Builder(GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderValidation defaults) {
     	      Objects.requireNonNull(defaults);
@@ -49,16 +51,16 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPo
         }
 
         @CustomType.Setter
-        public Builder headers(List<GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderValidationHeader> headers) {
-            this.headers = Objects.requireNonNull(headers);
+        public Builder headers(@Nullable List<GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderValidationHeader> headers) {
+            this.headers = headers;
             return this;
         }
         public Builder headers(GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderValidationHeader... headers) {
             return headers(List.of(headers));
         }
         @CustomType.Setter
-        public Builder validationMode(String validationMode) {
-            this.validationMode = Objects.requireNonNull(validationMode);
+        public Builder validationMode(@Nullable String validationMode) {
+            this.validationMode = validationMode;
             return this;
         }
         public GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderValidation build() {

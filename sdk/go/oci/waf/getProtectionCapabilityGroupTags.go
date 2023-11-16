@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Protection Capability Group Tags in Oracle Cloud Infrastructure Waf service.
@@ -69,7 +68,7 @@ type GetProtectionCapabilityGroupTagsResult struct {
 	CompartmentId string                                   `pulumi:"compartmentId"`
 	Filters       []GetProtectionCapabilityGroupTagsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Unique name of protection capability group tag.
 	Name *string `pulumi:"name"`
 	// The list of protection_capability_group_tag_collection.
@@ -120,12 +119,6 @@ func (o GetProtectionCapabilityGroupTagsResultOutput) ToGetProtectionCapabilityG
 	return o
 }
 
-func (o GetProtectionCapabilityGroupTagsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetProtectionCapabilityGroupTagsResult] {
-	return pulumix.Output[GetProtectionCapabilityGroupTagsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetProtectionCapabilityGroupTagsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetProtectionCapabilityGroupTagsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -137,8 +130,8 @@ func (o GetProtectionCapabilityGroupTagsResultOutput) Filters() GetProtectionCap
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetProtectionCapabilityGroupTagsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProtectionCapabilityGroupTagsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetProtectionCapabilityGroupTagsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProtectionCapabilityGroupTagsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Unique name of protection capability group tag.

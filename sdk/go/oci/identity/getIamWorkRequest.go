@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Iam Work Request resource in Oracle Cloud Infrastructure Identity service.
@@ -64,24 +63,24 @@ type GetIamWorkRequestArgs struct {
 // A collection of values returned by getIamWorkRequest.
 type GetIamWorkRequestResult struct {
 	// The OCID of the compartment containing this IAM work request.
-	CompartmentId    string `pulumi:"compartmentId"`
-	IamWorkRequestId string `pulumi:"iamWorkRequestId"`
+	CompartmentId    *string `pulumi:"compartmentId"`
+	IamWorkRequestId string  `pulumi:"iamWorkRequestId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The asynchronous operation tracked by this IAM work request.
-	OperationType string `pulumi:"operationType"`
+	OperationType *string `pulumi:"operationType"`
 	// How much progress the operation has made.
-	PercentComplete float64 `pulumi:"percentComplete"`
+	PercentComplete *float64 `pulumi:"percentComplete"`
 	// The resources this work request affects.
 	Resources []GetIamWorkRequestResource `pulumi:"resources"`
 	// Status of the work request
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 	// Date and time the work was accepted, in the format defined by RFC3339. Example: `2016-08-25T21:10:29.600Z`
-	TimeAccepted string `pulumi:"timeAccepted"`
+	TimeAccepted *string `pulumi:"timeAccepted"`
 	// Date and time the work completed, in the format defined by RFC3339. Example: `2016-08-25T21:10:29.600Z`
-	TimeFinished string `pulumi:"timeFinished"`
+	TimeFinished *string `pulumi:"timeFinished"`
 	// Date and time the work started, in the format defined by RFC3339. Example: `2016-08-25T21:10:29.600Z`
-	TimeStarted string `pulumi:"timeStarted"`
+	TimeStarted *string `pulumi:"timeStarted"`
 }
 
 func GetIamWorkRequestOutput(ctx *pulumi.Context, args GetIamWorkRequestOutputArgs, opts ...pulumi.InvokeOption) GetIamWorkRequestResultOutput {
@@ -122,15 +121,9 @@ func (o GetIamWorkRequestResultOutput) ToGetIamWorkRequestResultOutputWithContex
 	return o
 }
 
-func (o GetIamWorkRequestResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetIamWorkRequestResult] {
-	return pulumix.Output[GetIamWorkRequestResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment containing this IAM work request.
-func (o GetIamWorkRequestResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIamWorkRequestResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetIamWorkRequestResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIamWorkRequestResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 func (o GetIamWorkRequestResultOutput) IamWorkRequestId() pulumi.StringOutput {
@@ -138,18 +131,18 @@ func (o GetIamWorkRequestResultOutput) IamWorkRequestId() pulumi.StringOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetIamWorkRequestResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIamWorkRequestResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetIamWorkRequestResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIamWorkRequestResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The asynchronous operation tracked by this IAM work request.
-func (o GetIamWorkRequestResultOutput) OperationType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIamWorkRequestResult) string { return v.OperationType }).(pulumi.StringOutput)
+func (o GetIamWorkRequestResultOutput) OperationType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIamWorkRequestResult) *string { return v.OperationType }).(pulumi.StringPtrOutput)
 }
 
 // How much progress the operation has made.
-func (o GetIamWorkRequestResultOutput) PercentComplete() pulumi.Float64Output {
-	return o.ApplyT(func(v GetIamWorkRequestResult) float64 { return v.PercentComplete }).(pulumi.Float64Output)
+func (o GetIamWorkRequestResultOutput) PercentComplete() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetIamWorkRequestResult) *float64 { return v.PercentComplete }).(pulumi.Float64PtrOutput)
 }
 
 // The resources this work request affects.
@@ -158,23 +151,23 @@ func (o GetIamWorkRequestResultOutput) Resources() GetIamWorkRequestResourceArra
 }
 
 // Status of the work request
-func (o GetIamWorkRequestResultOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIamWorkRequestResult) string { return v.Status }).(pulumi.StringOutput)
+func (o GetIamWorkRequestResultOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIamWorkRequestResult) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // Date and time the work was accepted, in the format defined by RFC3339. Example: `2016-08-25T21:10:29.600Z`
-func (o GetIamWorkRequestResultOutput) TimeAccepted() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIamWorkRequestResult) string { return v.TimeAccepted }).(pulumi.StringOutput)
+func (o GetIamWorkRequestResultOutput) TimeAccepted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIamWorkRequestResult) *string { return v.TimeAccepted }).(pulumi.StringPtrOutput)
 }
 
 // Date and time the work completed, in the format defined by RFC3339. Example: `2016-08-25T21:10:29.600Z`
-func (o GetIamWorkRequestResultOutput) TimeFinished() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIamWorkRequestResult) string { return v.TimeFinished }).(pulumi.StringOutput)
+func (o GetIamWorkRequestResultOutput) TimeFinished() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIamWorkRequestResult) *string { return v.TimeFinished }).(pulumi.StringPtrOutput)
 }
 
 // Date and time the work started, in the format defined by RFC3339. Example: `2016-08-25T21:10:29.600Z`
-func (o GetIamWorkRequestResultOutput) TimeStarted() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIamWorkRequestResult) string { return v.TimeStarted }).(pulumi.StringOutput)
+func (o GetIamWorkRequestResultOutput) TimeStarted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIamWorkRequestResult) *string { return v.TimeStarted }).(pulumi.StringPtrOutput)
 }
 
 func init() {

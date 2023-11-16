@@ -86,50 +86,32 @@ class GetFunctionResult:
 
     @property
     @pulumi.getter(name="applicationId")
-    def application_id(self) -> str:
-        """
-        The OCID of the application the function belongs to.
-        """
+    def application_id(self) -> Optional[str]:
         return pulumi.get(self, "application_id")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment that contains the function.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter
-    def config(self) -> Mapping[str, Any]:
-        """
-        Function configuration. Overrides application configuration. Keys must be ASCII strings consisting solely of letters, digits, and the '_' (underscore) character, and must not begin with a digit. Values should be limited to printable unicode characters.  Example: `{"MY_FUNCTION_CONFIG": "ConfVal"}`
-        """
+    def config(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "config")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The display name of the function. The display name is unique within the application containing the function.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
@@ -139,106 +121,67 @@ class GetFunctionResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
-    def image(self) -> str:
-        """
-        The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. Example: `phx.ocir.io/ten/functions/function:0.0.1`
-        """
+    def image(self) -> Optional[str]:
         return pulumi.get(self, "image")
 
     @property
     @pulumi.getter(name="imageDigest")
-    def image_digest(self) -> str:
-        """
-        The image digest for the version of the image that will be pulled when invoking this function. If no value is specified, the digest currently associated with the image in the Oracle Cloud Infrastructure Registry will be used. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
-        """
+    def image_digest(self) -> Optional[str]:
         return pulumi.get(self, "image_digest")
 
     @property
     @pulumi.getter(name="invokeEndpoint")
-    def invoke_endpoint(self) -> str:
-        """
-        The base https invoke URL to set on a client in order to invoke a function. This URL will never change over the lifetime of the function and can be cached.
-        """
+    def invoke_endpoint(self) -> Optional[str]:
         return pulumi.get(self, "invoke_endpoint")
 
     @property
     @pulumi.getter(name="memoryInMbs")
-    def memory_in_mbs(self) -> str:
-        """
-        Maximum usable memory for the function (MiB).
-        """
+    def memory_in_mbs(self) -> Optional[str]:
         return pulumi.get(self, "memory_in_mbs")
 
     @property
     @pulumi.getter(name="provisionedConcurrencyConfigs")
-    def provisioned_concurrency_configs(self) -> Sequence['outputs.GetFunctionProvisionedConcurrencyConfigResult']:
-        """
-        Define the strategy for provisioned concurrency for the function.
-        """
+    def provisioned_concurrency_configs(self) -> Optional[Sequence['outputs.GetFunctionProvisionedConcurrencyConfigResult']]:
         return pulumi.get(self, "provisioned_concurrency_configs")
 
     @property
     @pulumi.getter
-    def shape(self) -> str:
-        """
-        The processor shape (`GENERIC_X86`/`GENERIC_ARM`) on which to run functions in the application, extracted from the image manifest.
-        """
+    def shape(self) -> Optional[str]:
         return pulumi.get(self, "shape")
 
     @property
     @pulumi.getter(name="sourceDetails")
-    def source_details(self) -> Sequence['outputs.GetFunctionSourceDetailResult']:
-        """
-        The source details for the Function. The function can be created from various sources.
-        """
+    def source_details(self) -> Optional[Sequence['outputs.GetFunctionSourceDetailResult']]:
         return pulumi.get(self, "source_details")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the function.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the function was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the function was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="timeoutInSeconds")
-    def timeout_in_seconds(self) -> int:
-        """
-        Timeout for executions of the function. Value in seconds.
-        """
+    def timeout_in_seconds(self) -> Optional[int]:
         return pulumi.get(self, "timeout_in_seconds")
 
     @property
     @pulumi.getter(name="traceConfigs")
-    def trace_configs(self) -> Sequence['outputs.GetFunctionTraceConfigResult']:
-        """
-        Define the tracing configuration for a function.
-        """
+    def trace_configs(self) -> Optional[Sequence['outputs.GetFunctionTraceConfigResult']]:
         return pulumi.get(self, "trace_configs")
 
 
@@ -273,21 +216,7 @@ class AwaitableGetFunctionResult(GetFunctionResult):
 def get_function(function_id: Optional[str] = None,
                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetFunctionResult:
     """
-    This data source provides details about a specific Function resource in Oracle Cloud Infrastructure Functions service.
-
-    Retrieves a function.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_function = oci.Functions.get_function(function_id=oci_functions_function["test_function"]["id"])
-    ```
-
-
-    :param str function_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this function.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['functionId'] = function_id
@@ -321,20 +250,6 @@ def get_function(function_id: Optional[str] = None,
 def get_function_output(function_id: Optional[pulumi.Input[str]] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFunctionResult]:
     """
-    This data source provides details about a specific Function resource in Oracle Cloud Infrastructure Functions service.
-
-    Retrieves a function.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_function = oci.Functions.get_function(function_id=oci_functions_function["test_function"]["id"])
-    ```
-
-
-    :param str function_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this function.
+    Use this data source to access information about an existing resource.
     """
     ...

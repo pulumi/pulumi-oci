@@ -8,6 +8,8 @@ import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetReportDefinitionsReportDefinitionCollectionItemColumnFilter {
@@ -15,27 +17,27 @@ public final class GetReportDefinitionsReportDefinitionCollectionItemColumnFilte
      * @return An array of expressions based on the operator type. A filter may have one or more expressions.
      * 
      */
-    private List<String> expressions;
+    private @Nullable List<String> expressions;
     /**
      * @return Name of the column that must be sorted.
      * 
      */
-    private String fieldName;
+    private @Nullable String fieldName;
     /**
      * @return Indicates whether the filter is enabled. Values can either be &#39;true&#39; or &#39;false&#39;.
      * 
      */
-    private Boolean isEnabled;
+    private @Nullable Boolean isEnabled;
     /**
      * @return Indicates if the summary is hidden. Values can either be &#39;true&#39; or &#39;false&#39;.
      * 
      */
-    private Boolean isHidden;
+    private @Nullable Boolean isHidden;
     /**
      * @return Specifies the type of operator that must be applied for example in, eq etc.
      * 
      */
-    private String operator;
+    private @Nullable String operator;
 
     private GetReportDefinitionsReportDefinitionCollectionItemColumnFilter() {}
     /**
@@ -43,35 +45,35 @@ public final class GetReportDefinitionsReportDefinitionCollectionItemColumnFilte
      * 
      */
     public List<String> expressions() {
-        return this.expressions;
+        return this.expressions == null ? List.of() : this.expressions;
     }
     /**
      * @return Name of the column that must be sorted.
      * 
      */
-    public String fieldName() {
-        return this.fieldName;
+    public Optional<String> fieldName() {
+        return Optional.ofNullable(this.fieldName);
     }
     /**
      * @return Indicates whether the filter is enabled. Values can either be &#39;true&#39; or &#39;false&#39;.
      * 
      */
-    public Boolean isEnabled() {
-        return this.isEnabled;
+    public Optional<Boolean> isEnabled() {
+        return Optional.ofNullable(this.isEnabled);
     }
     /**
      * @return Indicates if the summary is hidden. Values can either be &#39;true&#39; or &#39;false&#39;.
      * 
      */
-    public Boolean isHidden() {
-        return this.isHidden;
+    public Optional<Boolean> isHidden() {
+        return Optional.ofNullable(this.isHidden);
     }
     /**
      * @return Specifies the type of operator that must be applied for example in, eq etc.
      * 
      */
-    public String operator() {
-        return this.operator;
+    public Optional<String> operator() {
+        return Optional.ofNullable(this.operator);
     }
 
     public static Builder builder() {
@@ -83,11 +85,11 @@ public final class GetReportDefinitionsReportDefinitionCollectionItemColumnFilte
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> expressions;
-        private String fieldName;
-        private Boolean isEnabled;
-        private Boolean isHidden;
-        private String operator;
+        private @Nullable List<String> expressions;
+        private @Nullable String fieldName;
+        private @Nullable Boolean isEnabled;
+        private @Nullable Boolean isHidden;
+        private @Nullable String operator;
         public Builder() {}
         public Builder(GetReportDefinitionsReportDefinitionCollectionItemColumnFilter defaults) {
     	      Objects.requireNonNull(defaults);
@@ -99,31 +101,31 @@ public final class GetReportDefinitionsReportDefinitionCollectionItemColumnFilte
         }
 
         @CustomType.Setter
-        public Builder expressions(List<String> expressions) {
-            this.expressions = Objects.requireNonNull(expressions);
+        public Builder expressions(@Nullable List<String> expressions) {
+            this.expressions = expressions;
             return this;
         }
         public Builder expressions(String... expressions) {
             return expressions(List.of(expressions));
         }
         @CustomType.Setter
-        public Builder fieldName(String fieldName) {
-            this.fieldName = Objects.requireNonNull(fieldName);
+        public Builder fieldName(@Nullable String fieldName) {
+            this.fieldName = fieldName;
             return this;
         }
         @CustomType.Setter
-        public Builder isEnabled(Boolean isEnabled) {
-            this.isEnabled = Objects.requireNonNull(isEnabled);
+        public Builder isEnabled(@Nullable Boolean isEnabled) {
+            this.isEnabled = isEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder isHidden(Boolean isHidden) {
-            this.isHidden = Objects.requireNonNull(isHidden);
+        public Builder isHidden(@Nullable Boolean isHidden) {
+            this.isHidden = isHidden;
             return this;
         }
         @CustomType.Setter
-        public Builder operator(String operator) {
-            this.operator = Objects.requireNonNull(operator);
+        public Builder operator(@Nullable String operator) {
+            this.operator = operator;
             return this;
         }
         public GetReportDefinitionsReportDefinitionCollectionItemColumnFilter build() {

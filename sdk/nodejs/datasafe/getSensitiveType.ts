@@ -45,80 +45,80 @@ export interface GetSensitiveTypeResult {
     /**
      * A regular expression to be used by data discovery for matching column comments.
      */
-    readonly commentPattern: string;
+    readonly commentPattern?: string;
     /**
      * The OCID of the compartment that contains the sensitive type.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * A regular expression to be used by data discovery for matching column data values.
      */
-    readonly dataPattern: string;
+    readonly dataPattern?: string;
     /**
      * The OCID of the library masking format that should be used to mask the sensitive columns associated with the sensitive type.
      */
-    readonly defaultMaskingFormatId: string;
+    readonly defaultMaskingFormatId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * The description of the sensitive type.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * The display name of the sensitive type.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * The entity type. It can be either a sensitive type with regular expressions or a sensitive category used for grouping similar sensitive types.
      */
-    readonly entityType: string;
+    readonly entityType?: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The OCID of the sensitive type.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * A regular expression to be used by data discovery for matching column names.
      */
-    readonly namePattern: string;
+    readonly namePattern?: string;
     /**
      * The OCID of the parent sensitive category.
      */
-    readonly parentCategoryId: string;
+    readonly parentCategoryId?: string;
     /**
      * The search type indicating how the column name, comment and data patterns should be used by data discovery. [Learn more](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/sensitive-types.html#GUID-1D1AD98E-B93F-4FF2-80AE-CB7D8A14F6CC).
      */
-    readonly searchType: string;
+    readonly searchType?: string;
     readonly sensitiveTypeId: string;
     /**
      * The short name of the sensitive type.
      */
-    readonly shortName: string;
+    readonly shortName?: string;
     /**
      * Specifies whether the sensitive type is user-defined or predefined.
      */
-    readonly source: string;
+    readonly source?: string;
     /**
      * The current state of the sensitive type.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * The date and time the sensitive type was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The date and time the sensitive type was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific Sensitive Type resource in Oracle Cloud Infrastructure Data Safe service.

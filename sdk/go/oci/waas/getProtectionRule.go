@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Protection Rule resource in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
@@ -63,23 +62,23 @@ type LookupProtectionRuleArgs struct {
 // A collection of values returned by getProtectionRule.
 type LookupProtectionRuleResult struct {
 	// The action to take when the traffic is detected as malicious. If unspecified, defaults to `OFF`.
-	Action string `pulumi:"action"`
+	Action *string `pulumi:"action"`
 	// The description of the protection rule.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
 	Exclusions []GetProtectionRuleExclusion `pulumi:"exclusions"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The unique key of the protection rule.
-	Key string `pulumi:"key"`
+	Key *string `pulumi:"key"`
 	// The list of labels for the protection rule.
 	Labels []string `pulumi:"labels"`
 	// The list of the ModSecurity rule IDs that apply to this protection rule. For more information about ModSecurity's open source WAF rules, see [Mod Security's documentation](https://www.modsecurity.org/CRS/Documentation/index.html).
 	ModSecurityRuleIds []string `pulumi:"modSecurityRuleIds"`
 	// The name of the protection rule.
-	Name              string `pulumi:"name"`
-	ProtectionRuleKey string `pulumi:"protectionRuleKey"`
-	WaasPolicyId      string `pulumi:"waasPolicyId"`
+	Name              *string `pulumi:"name"`
+	ProtectionRuleKey string  `pulumi:"protectionRuleKey"`
+	WaasPolicyId      string  `pulumi:"waasPolicyId"`
 }
 
 func LookupProtectionRuleOutput(ctx *pulumi.Context, args LookupProtectionRuleOutputArgs, opts ...pulumi.InvokeOption) LookupProtectionRuleResultOutput {
@@ -122,20 +121,14 @@ func (o LookupProtectionRuleResultOutput) ToLookupProtectionRuleResultOutputWith
 	return o
 }
 
-func (o LookupProtectionRuleResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupProtectionRuleResult] {
-	return pulumix.Output[LookupProtectionRuleResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The action to take when the traffic is detected as malicious. If unspecified, defaults to `OFF`.
-func (o LookupProtectionRuleResultOutput) Action() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupProtectionRuleResult) string { return v.Action }).(pulumi.StringOutput)
+func (o LookupProtectionRuleResultOutput) Action() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupProtectionRuleResult) *string { return v.Action }).(pulumi.StringPtrOutput)
 }
 
 // The description of the protection rule.
-func (o LookupProtectionRuleResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupProtectionRuleResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupProtectionRuleResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupProtectionRuleResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
@@ -144,13 +137,13 @@ func (o LookupProtectionRuleResultOutput) Exclusions() GetProtectionRuleExclusio
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o LookupProtectionRuleResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupProtectionRuleResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupProtectionRuleResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupProtectionRuleResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The unique key of the protection rule.
-func (o LookupProtectionRuleResultOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupProtectionRuleResult) string { return v.Key }).(pulumi.StringOutput)
+func (o LookupProtectionRuleResultOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupProtectionRuleResult) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
 // The list of labels for the protection rule.
@@ -164,8 +157,8 @@ func (o LookupProtectionRuleResultOutput) ModSecurityRuleIds() pulumi.StringArra
 }
 
 // The name of the protection rule.
-func (o LookupProtectionRuleResultOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupProtectionRuleResult) string { return v.Name }).(pulumi.StringOutput)
+func (o LookupProtectionRuleResultOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupProtectionRuleResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupProtectionRuleResultOutput) ProtectionRuleKey() pulumi.StringOutput {

@@ -12,6 +12,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetClusterNetworkInstancePool {
@@ -19,143 +21,143 @@ public final class GetClusterNetworkInstancePool {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer attachment.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration associated with the instance pool.
      * 
      */
-    private String instanceConfigurationId;
-    private String instanceDisplayNameFormatter;
-    private String instanceHostnameFormatter;
+    private @Nullable String instanceConfigurationId;
+    private @Nullable String instanceDisplayNameFormatter;
+    private @Nullable String instanceHostnameFormatter;
     /**
      * @return The load balancers attached to the instance pool.
      * 
      */
-    private List<GetClusterNetworkInstancePoolLoadBalancer> loadBalancers;
+    private @Nullable List<GetClusterNetworkInstancePoolLoadBalancer> loadBalancers;
     /**
      * @return The placement configurations for the instance pool.
      * 
      */
-    private List<GetClusterNetworkInstancePoolPlacementConfiguration> placementConfigurations;
+    private @Nullable List<GetClusterNetworkInstancePoolPlacementConfiguration> placementConfigurations;
     /**
      * @return The number of instances that should be in the instance pool.
      * 
      */
-    private Integer size;
+    private @Nullable Integer size;
     /**
      * @return The current state of the cluster network.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The date and time the resource was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
 
     private GetClusterNetworkInstancePool() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer attachment.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration associated with the instance pool.
      * 
      */
-    public String instanceConfigurationId() {
-        return this.instanceConfigurationId;
+    public Optional<String> instanceConfigurationId() {
+        return Optional.ofNullable(this.instanceConfigurationId);
     }
-    public String instanceDisplayNameFormatter() {
-        return this.instanceDisplayNameFormatter;
+    public Optional<String> instanceDisplayNameFormatter() {
+        return Optional.ofNullable(this.instanceDisplayNameFormatter);
     }
-    public String instanceHostnameFormatter() {
-        return this.instanceHostnameFormatter;
+    public Optional<String> instanceHostnameFormatter() {
+        return Optional.ofNullable(this.instanceHostnameFormatter);
     }
     /**
      * @return The load balancers attached to the instance pool.
      * 
      */
     public List<GetClusterNetworkInstancePoolLoadBalancer> loadBalancers() {
-        return this.loadBalancers;
+        return this.loadBalancers == null ? List.of() : this.loadBalancers;
     }
     /**
      * @return The placement configurations for the instance pool.
      * 
      */
     public List<GetClusterNetworkInstancePoolPlacementConfiguration> placementConfigurations() {
-        return this.placementConfigurations;
+        return this.placementConfigurations == null ? List.of() : this.placementConfigurations;
     }
     /**
      * @return The number of instances that should be in the instance pool.
      * 
      */
-    public Integer size() {
-        return this.size;
+    public Optional<Integer> size() {
+        return Optional.ofNullable(this.size);
     }
     /**
      * @return The current state of the cluster network.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The date and time the resource was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
 
     public static Builder builder() {
@@ -167,19 +169,19 @@ public final class GetClusterNetworkInstancePool {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private Map<String,Object> definedTags;
-        private String displayName;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private String instanceConfigurationId;
-        private String instanceDisplayNameFormatter;
-        private String instanceHostnameFormatter;
-        private List<GetClusterNetworkInstancePoolLoadBalancer> loadBalancers;
-        private List<GetClusterNetworkInstancePoolPlacementConfiguration> placementConfigurations;
-        private Integer size;
-        private String state;
-        private String timeCreated;
+        private @Nullable String compartmentId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable String instanceConfigurationId;
+        private @Nullable String instanceDisplayNameFormatter;
+        private @Nullable String instanceHostnameFormatter;
+        private @Nullable List<GetClusterNetworkInstancePoolLoadBalancer> loadBalancers;
+        private @Nullable List<GetClusterNetworkInstancePoolPlacementConfiguration> placementConfigurations;
+        private @Nullable Integer size;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
         public Builder() {}
         public Builder(GetClusterNetworkInstancePool defaults) {
     	      Objects.requireNonNull(defaults);
@@ -199,74 +201,74 @@ public final class GetClusterNetworkInstancePool {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder instanceConfigurationId(String instanceConfigurationId) {
-            this.instanceConfigurationId = Objects.requireNonNull(instanceConfigurationId);
+        public Builder instanceConfigurationId(@Nullable String instanceConfigurationId) {
+            this.instanceConfigurationId = instanceConfigurationId;
             return this;
         }
         @CustomType.Setter
-        public Builder instanceDisplayNameFormatter(String instanceDisplayNameFormatter) {
-            this.instanceDisplayNameFormatter = Objects.requireNonNull(instanceDisplayNameFormatter);
+        public Builder instanceDisplayNameFormatter(@Nullable String instanceDisplayNameFormatter) {
+            this.instanceDisplayNameFormatter = instanceDisplayNameFormatter;
             return this;
         }
         @CustomType.Setter
-        public Builder instanceHostnameFormatter(String instanceHostnameFormatter) {
-            this.instanceHostnameFormatter = Objects.requireNonNull(instanceHostnameFormatter);
+        public Builder instanceHostnameFormatter(@Nullable String instanceHostnameFormatter) {
+            this.instanceHostnameFormatter = instanceHostnameFormatter;
             return this;
         }
         @CustomType.Setter
-        public Builder loadBalancers(List<GetClusterNetworkInstancePoolLoadBalancer> loadBalancers) {
-            this.loadBalancers = Objects.requireNonNull(loadBalancers);
+        public Builder loadBalancers(@Nullable List<GetClusterNetworkInstancePoolLoadBalancer> loadBalancers) {
+            this.loadBalancers = loadBalancers;
             return this;
         }
         public Builder loadBalancers(GetClusterNetworkInstancePoolLoadBalancer... loadBalancers) {
             return loadBalancers(List.of(loadBalancers));
         }
         @CustomType.Setter
-        public Builder placementConfigurations(List<GetClusterNetworkInstancePoolPlacementConfiguration> placementConfigurations) {
-            this.placementConfigurations = Objects.requireNonNull(placementConfigurations);
+        public Builder placementConfigurations(@Nullable List<GetClusterNetworkInstancePoolPlacementConfiguration> placementConfigurations) {
+            this.placementConfigurations = placementConfigurations;
             return this;
         }
         public Builder placementConfigurations(GetClusterNetworkInstancePoolPlacementConfiguration... placementConfigurations) {
             return placementConfigurations(List.of(placementConfigurations));
         }
         @CustomType.Setter
-        public Builder size(Integer size) {
-            this.size = Objects.requireNonNull(size);
+        public Builder size(@Nullable Integer size) {
+            this.size = size;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetClusterNetworkInstancePool build() {

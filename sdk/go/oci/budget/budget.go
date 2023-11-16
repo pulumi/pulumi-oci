@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Budget resource in Oracle Cloud Infrastructure Budget service.
@@ -73,54 +72,54 @@ type Budget struct {
 	pulumi.CustomResourceState
 
 	// The actual spend in currency for the current budget cycle.
-	ActualSpend pulumi.Float64Output `pulumi:"actualSpend"`
+	ActualSpend pulumi.Float64PtrOutput `pulumi:"actualSpend"`
 	// The total number of alert rules in the budget.
-	AlertRuleCount pulumi.IntOutput `pulumi:"alertRuleCount"`
+	AlertRuleCount pulumi.IntPtrOutput `pulumi:"alertRuleCount"`
 	// (Updatable) The amount of the budget expressed as a whole number in the currency of the customer's rate card.
 	Amount pulumi.IntOutput `pulumi:"amount"`
 	// (Updatable) The number of days offset from the first day of the month, at which the budget processing period starts. In months that have fewer days than this value, processing will begin on the last day of that month. For example, for a value of 12, processing starts every month on the 12th at midnight.
-	BudgetProcessingPeriodStartOffset pulumi.IntOutput `pulumi:"budgetProcessingPeriodStartOffset"`
+	BudgetProcessingPeriodStartOffset pulumi.IntPtrOutput `pulumi:"budgetProcessingPeriodStartOffset"`
 	// The OCID of the compartment.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) The description of the budget.
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) The displayName of the budget. Avoid entering confidential information.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) The date when the one-time budget concludes. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
-	EndDate pulumi.StringOutput `pulumi:"endDate"`
+	EndDate pulumi.StringPtrOutput `pulumi:"endDate"`
 	// The forecasted spend in currency by the end of the current budget cycle.
-	ForecastedSpend pulumi.Float64Output `pulumi:"forecastedSpend"`
+	ForecastedSpend pulumi.Float64PtrOutput `pulumi:"forecastedSpend"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// (Updatable) The type of the budget processing period. Valid values are INVOICE, MONTH, and SINGLE_USE.
-	ProcessingPeriodType pulumi.StringOutput `pulumi:"processingPeriodType"`
+	ProcessingPeriodType pulumi.StringPtrOutput `pulumi:"processingPeriodType"`
 	// (Updatable) The reset period for the budget. Valid value is MONTHLY.
 	ResetPeriod pulumi.StringOutput `pulumi:"resetPeriod"`
 	// (Updatable) The date when the one-time budget begins. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
-	StartDate pulumi.StringOutput `pulumi:"startDate"`
+	StartDate pulumi.StringPtrOutput `pulumi:"startDate"`
 	// The current state of the budget.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// This is DEPRECATED. Set the target compartment ID in targets instead.
 	//
 	// Deprecated: The 'target_compartment_id' field has been deprecated. Please use 'targets' instead.
-	TargetCompartmentId pulumi.StringOutput `pulumi:"targetCompartmentId"`
+	TargetCompartmentId pulumi.StringPtrOutput `pulumi:"targetCompartmentId"`
 	// The type of target on which the budget is applied.
-	TargetType pulumi.StringOutput `pulumi:"targetType"`
+	TargetType pulumi.StringPtrOutput `pulumi:"targetType"`
 	// The list of targets on which the budget is applied. If targetType is "COMPARTMENT", the targets contain the list of compartment OCIDs. If targetType is "TAG", the targets contain the list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}". Curerntly, the array should contain exactly one item.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Targets pulumi.StringArrayOutput `pulumi:"targets"`
 	// The time that the budget was created.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The time that the budget spend was last computed.
-	TimeSpendComputed pulumi.StringOutput `pulumi:"timeSpendComputed"`
+	TimeSpendComputed pulumi.StringPtrOutput `pulumi:"timeSpendComputed"`
 	// The time that the budget was updated.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 	// The version of the budget. Starts from 1 and increments by 1.
-	Version pulumi.IntOutput `pulumi:"version"`
+	Version pulumi.IntPtrOutput `pulumi:"version"`
 }
 
 // NewBudget registers a new resource with the given unique name, arguments, and options.
@@ -365,12 +364,6 @@ func (i *Budget) ToBudgetOutputWithContext(ctx context.Context) BudgetOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(BudgetOutput)
 }
 
-func (i *Budget) ToOutput(ctx context.Context) pulumix.Output[*Budget] {
-	return pulumix.Output[*Budget]{
-		OutputState: i.ToBudgetOutputWithContext(ctx).OutputState,
-	}
-}
-
 // BudgetArrayInput is an input type that accepts BudgetArray and BudgetArrayOutput values.
 // You can construct a concrete instance of `BudgetArrayInput` via:
 //
@@ -394,12 +387,6 @@ func (i BudgetArray) ToBudgetArrayOutput() BudgetArrayOutput {
 
 func (i BudgetArray) ToBudgetArrayOutputWithContext(ctx context.Context) BudgetArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(BudgetArrayOutput)
-}
-
-func (i BudgetArray) ToOutput(ctx context.Context) pulumix.Output[[]*Budget] {
-	return pulumix.Output[[]*Budget]{
-		OutputState: i.ToBudgetArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // BudgetMapInput is an input type that accepts BudgetMap and BudgetMapOutput values.
@@ -427,12 +414,6 @@ func (i BudgetMap) ToBudgetMapOutputWithContext(ctx context.Context) BudgetMapOu
 	return pulumi.ToOutputWithContext(ctx, i).(BudgetMapOutput)
 }
 
-func (i BudgetMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Budget] {
-	return pulumix.Output[map[string]*Budget]{
-		OutputState: i.ToBudgetMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type BudgetOutput struct{ *pulumi.OutputState }
 
 func (BudgetOutput) ElementType() reflect.Type {
@@ -447,20 +428,14 @@ func (o BudgetOutput) ToBudgetOutputWithContext(ctx context.Context) BudgetOutpu
 	return o
 }
 
-func (o BudgetOutput) ToOutput(ctx context.Context) pulumix.Output[*Budget] {
-	return pulumix.Output[*Budget]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The actual spend in currency for the current budget cycle.
-func (o BudgetOutput) ActualSpend() pulumi.Float64Output {
-	return o.ApplyT(func(v *Budget) pulumi.Float64Output { return v.ActualSpend }).(pulumi.Float64Output)
+func (o BudgetOutput) ActualSpend() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *Budget) pulumi.Float64PtrOutput { return v.ActualSpend }).(pulumi.Float64PtrOutput)
 }
 
 // The total number of alert rules in the budget.
-func (o BudgetOutput) AlertRuleCount() pulumi.IntOutput {
-	return o.ApplyT(func(v *Budget) pulumi.IntOutput { return v.AlertRuleCount }).(pulumi.IntOutput)
+func (o BudgetOutput) AlertRuleCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *Budget) pulumi.IntPtrOutput { return v.AlertRuleCount }).(pulumi.IntPtrOutput)
 }
 
 // (Updatable) The amount of the budget expressed as a whole number in the currency of the customer's rate card.
@@ -469,8 +444,8 @@ func (o BudgetOutput) Amount() pulumi.IntOutput {
 }
 
 // (Updatable) The number of days offset from the first day of the month, at which the budget processing period starts. In months that have fewer days than this value, processing will begin on the last day of that month. For example, for a value of 12, processing starts every month on the 12th at midnight.
-func (o BudgetOutput) BudgetProcessingPeriodStartOffset() pulumi.IntOutput {
-	return o.ApplyT(func(v *Budget) pulumi.IntOutput { return v.BudgetProcessingPeriodStartOffset }).(pulumi.IntOutput)
+func (o BudgetOutput) BudgetProcessingPeriodStartOffset() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *Budget) pulumi.IntPtrOutput { return v.BudgetProcessingPeriodStartOffset }).(pulumi.IntPtrOutput)
 }
 
 // The OCID of the compartment.
@@ -484,23 +459,23 @@ func (o BudgetOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) The description of the budget.
-func (o BudgetOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *Budget) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o BudgetOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Budget) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The displayName of the budget. Avoid entering confidential information.
-func (o BudgetOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *Budget) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o BudgetOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Budget) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The date when the one-time budget concludes. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
-func (o BudgetOutput) EndDate() pulumi.StringOutput {
-	return o.ApplyT(func(v *Budget) pulumi.StringOutput { return v.EndDate }).(pulumi.StringOutput)
+func (o BudgetOutput) EndDate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Budget) pulumi.StringPtrOutput { return v.EndDate }).(pulumi.StringPtrOutput)
 }
 
 // The forecasted spend in currency by the end of the current budget cycle.
-func (o BudgetOutput) ForecastedSpend() pulumi.Float64Output {
-	return o.ApplyT(func(v *Budget) pulumi.Float64Output { return v.ForecastedSpend }).(pulumi.Float64Output)
+func (o BudgetOutput) ForecastedSpend() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *Budget) pulumi.Float64PtrOutput { return v.ForecastedSpend }).(pulumi.Float64PtrOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -509,8 +484,8 @@ func (o BudgetOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // (Updatable) The type of the budget processing period. Valid values are INVOICE, MONTH, and SINGLE_USE.
-func (o BudgetOutput) ProcessingPeriodType() pulumi.StringOutput {
-	return o.ApplyT(func(v *Budget) pulumi.StringOutput { return v.ProcessingPeriodType }).(pulumi.StringOutput)
+func (o BudgetOutput) ProcessingPeriodType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Budget) pulumi.StringPtrOutput { return v.ProcessingPeriodType }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The reset period for the budget. Valid value is MONTHLY.
@@ -519,25 +494,25 @@ func (o BudgetOutput) ResetPeriod() pulumi.StringOutput {
 }
 
 // (Updatable) The date when the one-time budget begins. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
-func (o BudgetOutput) StartDate() pulumi.StringOutput {
-	return o.ApplyT(func(v *Budget) pulumi.StringOutput { return v.StartDate }).(pulumi.StringOutput)
+func (o BudgetOutput) StartDate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Budget) pulumi.StringPtrOutput { return v.StartDate }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the budget.
-func (o BudgetOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *Budget) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o BudgetOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Budget) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // This is DEPRECATED. Set the target compartment ID in targets instead.
 //
 // Deprecated: The 'target_compartment_id' field has been deprecated. Please use 'targets' instead.
-func (o BudgetOutput) TargetCompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Budget) pulumi.StringOutput { return v.TargetCompartmentId }).(pulumi.StringOutput)
+func (o BudgetOutput) TargetCompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Budget) pulumi.StringPtrOutput { return v.TargetCompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The type of target on which the budget is applied.
-func (o BudgetOutput) TargetType() pulumi.StringOutput {
-	return o.ApplyT(func(v *Budget) pulumi.StringOutput { return v.TargetType }).(pulumi.StringOutput)
+func (o BudgetOutput) TargetType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Budget) pulumi.StringPtrOutput { return v.TargetType }).(pulumi.StringPtrOutput)
 }
 
 // The list of targets on which the budget is applied. If targetType is "COMPARTMENT", the targets contain the list of compartment OCIDs. If targetType is "TAG", the targets contain the list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}". Curerntly, the array should contain exactly one item.
@@ -549,23 +524,23 @@ func (o BudgetOutput) Targets() pulumi.StringArrayOutput {
 }
 
 // The time that the budget was created.
-func (o BudgetOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Budget) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o BudgetOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Budget) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time that the budget spend was last computed.
-func (o BudgetOutput) TimeSpendComputed() pulumi.StringOutput {
-	return o.ApplyT(func(v *Budget) pulumi.StringOutput { return v.TimeSpendComputed }).(pulumi.StringOutput)
+func (o BudgetOutput) TimeSpendComputed() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Budget) pulumi.StringPtrOutput { return v.TimeSpendComputed }).(pulumi.StringPtrOutput)
 }
 
 // The time that the budget was updated.
-func (o BudgetOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Budget) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o BudgetOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Budget) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // The version of the budget. Starts from 1 and increments by 1.
-func (o BudgetOutput) Version() pulumi.IntOutput {
-	return o.ApplyT(func(v *Budget) pulumi.IntOutput { return v.Version }).(pulumi.IntOutput)
+func (o BudgetOutput) Version() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *Budget) pulumi.IntPtrOutput { return v.Version }).(pulumi.IntPtrOutput)
 }
 
 type BudgetArrayOutput struct{ *pulumi.OutputState }
@@ -580,12 +555,6 @@ func (o BudgetArrayOutput) ToBudgetArrayOutput() BudgetArrayOutput {
 
 func (o BudgetArrayOutput) ToBudgetArrayOutputWithContext(ctx context.Context) BudgetArrayOutput {
 	return o
-}
-
-func (o BudgetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Budget] {
-	return pulumix.Output[[]*Budget]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o BudgetArrayOutput) Index(i pulumi.IntInput) BudgetOutput {
@@ -606,12 +575,6 @@ func (o BudgetMapOutput) ToBudgetMapOutput() BudgetMapOutput {
 
 func (o BudgetMapOutput) ToBudgetMapOutputWithContext(ctx context.Context) BudgetMapOutput {
 	return o
-}
-
-func (o BudgetMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Budget] {
-	return pulumix.Output[map[string]*Budget]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o BudgetMapOutput) MapIndex(k pulumi.StringInput) BudgetOutput {

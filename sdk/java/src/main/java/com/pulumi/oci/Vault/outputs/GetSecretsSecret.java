@@ -11,6 +11,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSecretsSecret {
@@ -18,199 +20,199 @@ public final class GetSecretsSecret {
      * @return The OCID of the compartment.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The version number of the secret version that&#39;s currently in use.
      * 
      */
-    private String currentVersionNumber;
+    private @Nullable String currentVersionNumber;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return A brief description of the secret. Avoid entering confidential information.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The OCID of the secret.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The OCID of the master encryption key that is used to encrypt the secret.
      * 
      */
-    private String keyId;
+    private @Nullable String keyId;
     /**
      * @return Additional information about the current lifecycle state of the secret.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return Additional metadata that you can use to provide context about how to use the secret or during rotation or other administrative tasks. For example, for a secret that you use to connect to a database, the additional metadata might specify the connection endpoint and the connection string. Provide additional metadata as key-value pairs.
      * 
      */
-    private Map<String,Object> metadata;
-    private List<GetSecretsSecretSecretContent> secretContents;
+    private @Nullable Map<String,Object> metadata;
+    private @Nullable List<GetSecretsSecretSecretContent> secretContents;
     /**
      * @return The user-friendly name of the secret. Avoid entering confidential information.
      * 
      */
-    private String secretName;
+    private @Nullable String secretName;
     /**
      * @return A list of rules that control how the secret is used and managed.
      * 
      */
-    private List<GetSecretsSecretSecretRule> secretRules;
+    private @Nullable List<GetSecretsSecretSecretRule> secretRules;
     /**
      * @return A filter that returns only resources that match the specified lifecycle state. The state value is case-insensitive.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return A property indicating when the secret was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return An optional property indicating when the current secret version will expire, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      * 
      */
-    private String timeOfCurrentVersionExpiry;
+    private @Nullable String timeOfCurrentVersionExpiry;
     /**
      * @return An optional property indicating when to delete the secret, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      * 
      */
-    private String timeOfDeletion;
+    private @Nullable String timeOfDeletion;
     /**
      * @return The OCID of the vault.
      * 
      */
-    private String vaultId;
+    private @Nullable String vaultId;
 
     private GetSecretsSecret() {}
     /**
      * @return The OCID of the compartment.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The version number of the secret version that&#39;s currently in use.
      * 
      */
-    public String currentVersionNumber() {
-        return this.currentVersionNumber;
+    public Optional<String> currentVersionNumber() {
+        return Optional.ofNullable(this.currentVersionNumber);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return A brief description of the secret. Avoid entering confidential information.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The OCID of the secret.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The OCID of the master encryption key that is used to encrypt the secret.
      * 
      */
-    public String keyId() {
-        return this.keyId;
+    public Optional<String> keyId() {
+        return Optional.ofNullable(this.keyId);
     }
     /**
      * @return Additional information about the current lifecycle state of the secret.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return Additional metadata that you can use to provide context about how to use the secret or during rotation or other administrative tasks. For example, for a secret that you use to connect to a database, the additional metadata might specify the connection endpoint and the connection string. Provide additional metadata as key-value pairs.
      * 
      */
     public Map<String,Object> metadata() {
-        return this.metadata;
+        return this.metadata == null ? Map.of() : this.metadata;
     }
     public List<GetSecretsSecretSecretContent> secretContents() {
-        return this.secretContents;
+        return this.secretContents == null ? List.of() : this.secretContents;
     }
     /**
      * @return The user-friendly name of the secret. Avoid entering confidential information.
      * 
      */
-    public String secretName() {
-        return this.secretName;
+    public Optional<String> secretName() {
+        return Optional.ofNullable(this.secretName);
     }
     /**
      * @return A list of rules that control how the secret is used and managed.
      * 
      */
     public List<GetSecretsSecretSecretRule> secretRules() {
-        return this.secretRules;
+        return this.secretRules == null ? List.of() : this.secretRules;
     }
     /**
      * @return A filter that returns only resources that match the specified lifecycle state. The state value is case-insensitive.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return A property indicating when the secret was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return An optional property indicating when the current secret version will expire, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      * 
      */
-    public String timeOfCurrentVersionExpiry() {
-        return this.timeOfCurrentVersionExpiry;
+    public Optional<String> timeOfCurrentVersionExpiry() {
+        return Optional.ofNullable(this.timeOfCurrentVersionExpiry);
     }
     /**
      * @return An optional property indicating when to delete the secret, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      * 
      */
-    public String timeOfDeletion() {
-        return this.timeOfDeletion;
+    public Optional<String> timeOfDeletion() {
+        return Optional.ofNullable(this.timeOfDeletion);
     }
     /**
      * @return The OCID of the vault.
      * 
      */
-    public String vaultId() {
-        return this.vaultId;
+    public Optional<String> vaultId() {
+        return Optional.ofNullable(this.vaultId);
     }
 
     public static Builder builder() {
@@ -222,23 +224,23 @@ public final class GetSecretsSecret {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private String currentVersionNumber;
-        private Map<String,Object> definedTags;
-        private String description;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private String keyId;
-        private String lifecycleDetails;
-        private Map<String,Object> metadata;
-        private List<GetSecretsSecretSecretContent> secretContents;
-        private String secretName;
-        private List<GetSecretsSecretSecretRule> secretRules;
-        private String state;
-        private String timeCreated;
-        private String timeOfCurrentVersionExpiry;
-        private String timeOfDeletion;
-        private String vaultId;
+        private @Nullable String compartmentId;
+        private @Nullable String currentVersionNumber;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String description;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable String keyId;
+        private @Nullable String lifecycleDetails;
+        private @Nullable Map<String,Object> metadata;
+        private @Nullable List<GetSecretsSecretSecretContent> secretContents;
+        private @Nullable String secretName;
+        private @Nullable List<GetSecretsSecretSecretRule> secretRules;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
+        private @Nullable String timeOfCurrentVersionExpiry;
+        private @Nullable String timeOfDeletion;
+        private @Nullable String vaultId;
         public Builder() {}
         public Builder(GetSecretsSecret defaults) {
     	      Objects.requireNonNull(defaults);
@@ -262,94 +264,94 @@ public final class GetSecretsSecret {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder currentVersionNumber(String currentVersionNumber) {
-            this.currentVersionNumber = Objects.requireNonNull(currentVersionNumber);
+        public Builder currentVersionNumber(@Nullable String currentVersionNumber) {
+            this.currentVersionNumber = currentVersionNumber;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder keyId(String keyId) {
-            this.keyId = Objects.requireNonNull(keyId);
+        public Builder keyId(@Nullable String keyId) {
+            this.keyId = keyId;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder metadata(Map<String,Object> metadata) {
-            this.metadata = Objects.requireNonNull(metadata);
+        public Builder metadata(@Nullable Map<String,Object> metadata) {
+            this.metadata = metadata;
             return this;
         }
         @CustomType.Setter
-        public Builder secretContents(List<GetSecretsSecretSecretContent> secretContents) {
-            this.secretContents = Objects.requireNonNull(secretContents);
+        public Builder secretContents(@Nullable List<GetSecretsSecretSecretContent> secretContents) {
+            this.secretContents = secretContents;
             return this;
         }
         public Builder secretContents(GetSecretsSecretSecretContent... secretContents) {
             return secretContents(List.of(secretContents));
         }
         @CustomType.Setter
-        public Builder secretName(String secretName) {
-            this.secretName = Objects.requireNonNull(secretName);
+        public Builder secretName(@Nullable String secretName) {
+            this.secretName = secretName;
             return this;
         }
         @CustomType.Setter
-        public Builder secretRules(List<GetSecretsSecretSecretRule> secretRules) {
-            this.secretRules = Objects.requireNonNull(secretRules);
+        public Builder secretRules(@Nullable List<GetSecretsSecretSecretRule> secretRules) {
+            this.secretRules = secretRules;
             return this;
         }
         public Builder secretRules(GetSecretsSecretSecretRule... secretRules) {
             return secretRules(List.of(secretRules));
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeOfCurrentVersionExpiry(String timeOfCurrentVersionExpiry) {
-            this.timeOfCurrentVersionExpiry = Objects.requireNonNull(timeOfCurrentVersionExpiry);
+        public Builder timeOfCurrentVersionExpiry(@Nullable String timeOfCurrentVersionExpiry) {
+            this.timeOfCurrentVersionExpiry = timeOfCurrentVersionExpiry;
             return this;
         }
         @CustomType.Setter
-        public Builder timeOfDeletion(String timeOfDeletion) {
-            this.timeOfDeletion = Objects.requireNonNull(timeOfDeletion);
+        public Builder timeOfDeletion(@Nullable String timeOfDeletion) {
+            this.timeOfDeletion = timeOfDeletion;
             return this;
         }
         @CustomType.Setter
-        public Builder vaultId(String vaultId) {
-            this.vaultId = Objects.requireNonNull(vaultId);
+        public Builder vaultId(@Nullable String vaultId) {
+            this.vaultId = vaultId;
             return this;
         }
         public GetSecretsSecret build() {

@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceApp {
@@ -14,87 +16,87 @@ public final class GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensiono
      * @return Current Federation Mode
      * 
      */
-    private String currentFederationMode;
+    private @Nullable String currentFederationMode;
     /**
      * @return Current Synchronization Mode
      * 
      */
-    private String currentSynchronizationMode;
+    private @Nullable String currentSynchronizationMode;
     /**
      * @return If true, indicates that enablement is in progress started but not completed
      * 
      */
-    private Boolean enablingNextFedSyncModes;
+    private @Nullable Boolean enablingNextFedSyncModes;
     /**
      * @return Next Federation Mode
      * 
      */
-    private String nextFederationMode;
+    private @Nullable String nextFederationMode;
     /**
      * @return Next Synchronization Mode
      * 
      */
-    private String nextSynchronizationMode;
+    private @Nullable String nextSynchronizationMode;
     /**
      * @return This value identifies the OPC region in which the service is running.
      * 
      */
-    private String region;
+    private @Nullable String region;
     /**
      * @return This value specifies the unique identifier assigned to an instance of an Oracle Public Cloud service app.
      * 
      */
-    private String serviceInstanceIdentifier;
+    private @Nullable String serviceInstanceIdentifier;
 
     private GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceApp() {}
     /**
      * @return Current Federation Mode
      * 
      */
-    public String currentFederationMode() {
-        return this.currentFederationMode;
+    public Optional<String> currentFederationMode() {
+        return Optional.ofNullable(this.currentFederationMode);
     }
     /**
      * @return Current Synchronization Mode
      * 
      */
-    public String currentSynchronizationMode() {
-        return this.currentSynchronizationMode;
+    public Optional<String> currentSynchronizationMode() {
+        return Optional.ofNullable(this.currentSynchronizationMode);
     }
     /**
      * @return If true, indicates that enablement is in progress started but not completed
      * 
      */
-    public Boolean enablingNextFedSyncModes() {
-        return this.enablingNextFedSyncModes;
+    public Optional<Boolean> enablingNextFedSyncModes() {
+        return Optional.ofNullable(this.enablingNextFedSyncModes);
     }
     /**
      * @return Next Federation Mode
      * 
      */
-    public String nextFederationMode() {
-        return this.nextFederationMode;
+    public Optional<String> nextFederationMode() {
+        return Optional.ofNullable(this.nextFederationMode);
     }
     /**
      * @return Next Synchronization Mode
      * 
      */
-    public String nextSynchronizationMode() {
-        return this.nextSynchronizationMode;
+    public Optional<String> nextSynchronizationMode() {
+        return Optional.ofNullable(this.nextSynchronizationMode);
     }
     /**
      * @return This value identifies the OPC region in which the service is running.
      * 
      */
-    public String region() {
-        return this.region;
+    public Optional<String> region() {
+        return Optional.ofNullable(this.region);
     }
     /**
      * @return This value specifies the unique identifier assigned to an instance of an Oracle Public Cloud service app.
      * 
      */
-    public String serviceInstanceIdentifier() {
-        return this.serviceInstanceIdentifier;
+    public Optional<String> serviceInstanceIdentifier() {
+        return Optional.ofNullable(this.serviceInstanceIdentifier);
     }
 
     public static Builder builder() {
@@ -106,13 +108,13 @@ public final class GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensiono
     }
     @CustomType.Builder
     public static final class Builder {
-        private String currentFederationMode;
-        private String currentSynchronizationMode;
-        private Boolean enablingNextFedSyncModes;
-        private String nextFederationMode;
-        private String nextSynchronizationMode;
-        private String region;
-        private String serviceInstanceIdentifier;
+        private @Nullable String currentFederationMode;
+        private @Nullable String currentSynchronizationMode;
+        private @Nullable Boolean enablingNextFedSyncModes;
+        private @Nullable String nextFederationMode;
+        private @Nullable String nextSynchronizationMode;
+        private @Nullable String region;
+        private @Nullable String serviceInstanceIdentifier;
         public Builder() {}
         public Builder(GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceApp defaults) {
     	      Objects.requireNonNull(defaults);
@@ -126,38 +128,38 @@ public final class GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensiono
         }
 
         @CustomType.Setter
-        public Builder currentFederationMode(String currentFederationMode) {
-            this.currentFederationMode = Objects.requireNonNull(currentFederationMode);
+        public Builder currentFederationMode(@Nullable String currentFederationMode) {
+            this.currentFederationMode = currentFederationMode;
             return this;
         }
         @CustomType.Setter
-        public Builder currentSynchronizationMode(String currentSynchronizationMode) {
-            this.currentSynchronizationMode = Objects.requireNonNull(currentSynchronizationMode);
+        public Builder currentSynchronizationMode(@Nullable String currentSynchronizationMode) {
+            this.currentSynchronizationMode = currentSynchronizationMode;
             return this;
         }
         @CustomType.Setter
-        public Builder enablingNextFedSyncModes(Boolean enablingNextFedSyncModes) {
-            this.enablingNextFedSyncModes = Objects.requireNonNull(enablingNextFedSyncModes);
+        public Builder enablingNextFedSyncModes(@Nullable Boolean enablingNextFedSyncModes) {
+            this.enablingNextFedSyncModes = enablingNextFedSyncModes;
             return this;
         }
         @CustomType.Setter
-        public Builder nextFederationMode(String nextFederationMode) {
-            this.nextFederationMode = Objects.requireNonNull(nextFederationMode);
+        public Builder nextFederationMode(@Nullable String nextFederationMode) {
+            this.nextFederationMode = nextFederationMode;
             return this;
         }
         @CustomType.Setter
-        public Builder nextSynchronizationMode(String nextSynchronizationMode) {
-            this.nextSynchronizationMode = Objects.requireNonNull(nextSynchronizationMode);
+        public Builder nextSynchronizationMode(@Nullable String nextSynchronizationMode) {
+            this.nextSynchronizationMode = nextSynchronizationMode;
             return this;
         }
         @CustomType.Setter
-        public Builder region(String region) {
-            this.region = Objects.requireNonNull(region);
+        public Builder region(@Nullable String region) {
+            this.region = region;
             return this;
         }
         @CustomType.Setter
-        public Builder serviceInstanceIdentifier(String serviceInstanceIdentifier) {
-            this.serviceInstanceIdentifier = Objects.requireNonNull(serviceInstanceIdentifier);
+        public Builder serviceInstanceIdentifier(@Nullable String serviceInstanceIdentifier) {
+            this.serviceInstanceIdentifier = serviceInstanceIdentifier;
             return this;
         }
         public GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceApp build() {

@@ -54,9 +54,6 @@ class GetSqlFirewallViolationsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment containing the SQL violation.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -71,7 +68,7 @@ class GetSqlFirewallViolationsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -84,10 +81,7 @@ class GetSqlFirewallViolationsResult:
 
     @property
     @pulumi.getter(name="sqlFirewallViolationsCollections")
-    def sql_firewall_violations_collections(self) -> Sequence['outputs.GetSqlFirewallViolationsSqlFirewallViolationsCollectionResult']:
-        """
-        The list of sql_firewall_violations_collection.
-        """
+    def sql_firewall_violations_collections(self) -> Optional[Sequence['outputs.GetSqlFirewallViolationsSqlFirewallViolationsCollectionResult']]:
         return pulumi.get(self, "sql_firewall_violations_collections")
 
 
@@ -113,29 +107,7 @@ def get_sql_firewall_violations(access_level: Optional[str] = None,
                                 scim_query: Optional[str] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSqlFirewallViolationsResult:
     """
-    This data source provides the list of Sql Firewall Violations in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets a list of all the SQL firewall violations captured by the firewall.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_sql_firewall_violations = oci.DataSafe.get_sql_firewall_violations(compartment_id=var["compartment_id"],
-        access_level=var["sql_firewall_violation_access_level"],
-        compartment_id_in_subtree=var["sql_firewall_violation_compartment_id_in_subtree"],
-        scim_query=var["sql_firewall_violation_scim_query"])
-    ```
-
-
-    :param str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
-    :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
-    :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
-    :param str scim_query: The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification, which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions, text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format. (Numeric and boolean values should not be quoted.)
-           
-           **Example:** query=(operationTime ge '2021-06-04T01-00-26') and (violationAction eq 'BLOCKED')
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['accessLevel'] = access_level
@@ -164,28 +136,6 @@ def get_sql_firewall_violations_output(access_level: Optional[pulumi.Input[Optio
                                        scim_query: Optional[pulumi.Input[Optional[str]]] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSqlFirewallViolationsResult]:
     """
-    This data source provides the list of Sql Firewall Violations in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets a list of all the SQL firewall violations captured by the firewall.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_sql_firewall_violations = oci.DataSafe.get_sql_firewall_violations(compartment_id=var["compartment_id"],
-        access_level=var["sql_firewall_violation_access_level"],
-        compartment_id_in_subtree=var["sql_firewall_violation_compartment_id_in_subtree"],
-        scim_query=var["sql_firewall_violation_scim_query"])
-    ```
-
-
-    :param str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
-    :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
-    :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
-    :param str scim_query: The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification, which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions, text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format. (Numeric and boolean values should not be quoted.)
-           
-           **Example:** query=(operationTime ge '2021-06-04T01-00-26') and (violationAction eq 'BLOCKED')
+    Use this data source to access information about an existing resource.
     """
     ...

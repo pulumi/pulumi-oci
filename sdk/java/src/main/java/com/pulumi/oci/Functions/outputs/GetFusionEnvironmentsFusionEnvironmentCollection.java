@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Functions.outputs.GetFusionEnvironmentsFusionEnvironmentCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetFusionEnvironmentsFusionEnvironmentCollection {
-    private List<GetFusionEnvironmentsFusionEnvironmentCollectionItem> items;
+    private @Nullable List<GetFusionEnvironmentsFusionEnvironmentCollectionItem> items;
 
     private GetFusionEnvironmentsFusionEnvironmentCollection() {}
     public List<GetFusionEnvironmentsFusionEnvironmentCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetFusionEnvironmentsFusionEnvironmentCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetFusionEnvironmentsFusionEnvironmentCollectionItem> items;
+        private @Nullable List<GetFusionEnvironmentsFusionEnvironmentCollectionItem> items;
         public Builder() {}
         public Builder(GetFusionEnvironmentsFusionEnvironmentCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetFusionEnvironmentsFusionEnvironmentCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetFusionEnvironmentsFusionEnvironmentCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetFusionEnvironmentsFusionEnvironmentCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetFusionEnvironmentsFusionEnvironmentCollectionItem... items) {

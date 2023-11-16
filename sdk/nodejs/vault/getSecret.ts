@@ -47,69 +47,69 @@ export interface GetSecretResult {
     /**
      * The OCID of the compartment where you want to create the secret.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * The version number of the secret version that's currently in use.
      */
-    readonly currentVersionNumber: string;
+    readonly currentVersionNumber?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * A brief description of the secret. Avoid entering confidential information.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The OCID of the secret.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The OCID of the master encryption key that is used to encrypt the secret.
      */
-    readonly keyId: string;
+    readonly keyId?: string;
     /**
      * Additional information about the current lifecycle state of the secret.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * Additional metadata that you can use to provide context about how to use the secret or during rotation or other administrative tasks. For example, for a secret that you use to connect to a database, the additional metadata might specify the connection endpoint and the connection string. Provide additional metadata as key-value pairs.
      */
-    readonly metadata: {[key: string]: any};
-    readonly secretContents: outputs.Vault.GetSecretSecretContent[];
+    readonly metadata?: {[key: string]: any};
+    readonly secretContents?: outputs.Vault.GetSecretSecretContent[];
     readonly secretId: string;
     /**
      * The user-friendly name of the secret. Avoid entering confidential information.
      */
-    readonly secretName: string;
+    readonly secretName?: string;
     /**
      * A list of rules that control how the secret is used and managed.
      */
-    readonly secretRules: outputs.Vault.GetSecretSecretRule[];
+    readonly secretRules?: outputs.Vault.GetSecretSecretRule[];
     /**
      * The current lifecycle state of the secret.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * A property indicating when the secret was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * An optional property indicating when the current secret version will expire, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      */
-    readonly timeOfCurrentVersionExpiry: string;
+    readonly timeOfCurrentVersionExpiry?: string;
     /**
      * An optional property indicating when to delete the secret, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      */
-    readonly timeOfDeletion: string;
+    readonly timeOfDeletion?: string;
     /**
      * The OCID of the Vault in which the secret exists
      */
-    readonly vaultId: string;
+    readonly vaultId?: string;
 }
 /**
  * This data source provides details about a specific Secret resource in Oracle Cloud Infrastructure Vault service.

@@ -16,35 +16,35 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// The format of the certificate store.
         /// </summary>
-        public readonly string CertificateStoreType;
+        public readonly string? CertificateStoreType;
         /// <summary>
         /// Base64 encoded string of key store file content.
         /// </summary>
-        public readonly string KeyStoreContent;
+        public readonly string? KeyStoreContent;
         /// <summary>
         /// Status to represent whether the database connection is TLS enabled or not.
         /// </summary>
-        public readonly string Status;
+        public readonly string? Status;
         /// <summary>
         /// The password to read the trust store and key store files, if they are password protected.
         /// </summary>
-        public readonly string StorePassword;
+        public readonly string? StorePassword;
         /// <summary>
         /// Base64 encoded string of trust store file content.
         /// </summary>
-        public readonly string TrustStoreContent;
+        public readonly string? TrustStoreContent;
 
         [OutputConstructor]
         private GetTargetDatabaseTlsConfigResult(
-            string certificateStoreType,
+            string? certificateStoreType,
 
-            string keyStoreContent,
+            string? keyStoreContent,
 
-            string status,
+            string? status,
 
-            string storePassword,
+            string? storePassword,
 
-            string trustStoreContent)
+            string? trustStoreContent)
         {
             CertificateStoreType = certificateStoreType;
             KeyStoreContent = keyStoreContent;

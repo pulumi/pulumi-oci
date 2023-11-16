@@ -68,66 +68,42 @@ class GetMonitoredResourceTypeResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy containing the resource type.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        A friendly description.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        Monitored resource type display name.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        Monitored resource type identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
-    def metadatas(self) -> Sequence['outputs.GetMonitoredResourceTypeMetadataResult']:
-        """
-        The metadata details for resource type.
-        """
+    def metadatas(self) -> Optional[Sequence['outputs.GetMonitoredResourceTypeMetadataResult']]:
         return pulumi.get(self, "metadatas")
 
     @property
     @pulumi.getter(name="metricNamespace")
-    def metric_namespace(self) -> str:
-        """
-        Metric namespace for resource type.
-        """
+    def metric_namespace(self) -> Optional[str]:
         return pulumi.get(self, "metric_namespace")
 
     @property
@@ -137,42 +113,27 @@ class GetMonitoredResourceTypeResult:
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        A unique monitored resource type name. The name must be unique across tenancy.  Name can not be changed.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        Lifecycle state of the monitored resource type.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time when the monitored resource type was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time when the monitored resource was updated, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -201,21 +162,7 @@ class AwaitableGetMonitoredResourceTypeResult(GetMonitoredResourceTypeResult):
 def get_monitored_resource_type(monitored_resource_type_id: Optional[str] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMonitoredResourceTypeResult:
     """
-    This data source provides details about a specific Monitored Resource Type resource in Oracle Cloud Infrastructure Stack Monitoring service.
-
-    Gets a monitored resource type by identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_monitored_resource_type = oci.StackMonitoring.get_monitored_resource_type(monitored_resource_type_id=oci_stack_monitoring_monitored_resource_type["test_monitored_resource_type"]["id"])
-    ```
-
-
-    :param str monitored_resource_type_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource type.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['monitoredResourceTypeId'] = monitored_resource_type_id
@@ -243,20 +190,6 @@ def get_monitored_resource_type(monitored_resource_type_id: Optional[str] = None
 def get_monitored_resource_type_output(monitored_resource_type_id: Optional[pulumi.Input[str]] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMonitoredResourceTypeResult]:
     """
-    This data source provides details about a specific Monitored Resource Type resource in Oracle Cloud Infrastructure Stack Monitoring service.
-
-    Gets a monitored resource type by identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_monitored_resource_type = oci.StackMonitoring.get_monitored_resource_type(monitored_resource_type_id=oci_stack_monitoring_monitored_resource_type["test_monitored_resource_type"]["id"])
-    ```
-
-
-    :param str monitored_resource_type_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource type.
+    Use this data source to access information about an existing resource.
     """
     ...

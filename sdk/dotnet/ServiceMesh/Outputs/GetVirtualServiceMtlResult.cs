@@ -16,23 +16,23 @@ namespace Pulumi.Oci.ServiceMesh.Outputs
         /// <summary>
         /// The OCID of the certificate resource that will be used for mTLS authentication with other virtual services in the mesh.
         /// </summary>
-        public readonly string CertificateId;
+        public readonly string? CertificateId;
         /// <summary>
         /// The number of days the mTLS certificate is valid.  This value should be less than the Maximum Validity Duration  for Certificates (Days) setting on the Certificate Authority associated with this Mesh.  The certificate will be automatically renewed after 2/3 of the validity period, so a certificate with a maximum validity of 45 days will be renewed every 30 days.
         /// </summary>
-        public readonly int MaximumValidity;
+        public readonly int? MaximumValidity;
         /// <summary>
         /// DISABLED: Connection is not tunneled. PERMISSIVE: Connection can be either plaintext or an mTLS tunnel. STRICT: Connection is an mTLS tunnel.  Clients without a valid certificate will be rejected.
         /// </summary>
-        public readonly string Mode;
+        public readonly string? Mode;
 
         [OutputConstructor]
         private GetVirtualServiceMtlResult(
-            string certificateId,
+            string? certificateId,
 
-            int maximumValidity,
+            int? maximumValidity,
 
-            string mode)
+            string? mode)
         {
             CertificateId = certificateId;
             MaximumValidity = maximumValidity;

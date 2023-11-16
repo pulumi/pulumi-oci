@@ -16,29 +16,29 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// The audit data volume collected by Data Safe and is available in archive storage.
         /// </summary>
-        public readonly string ArchivedVolume;
+        public readonly string? ArchivedVolume;
         /// <summary>
         /// The OCID of the audit.
         /// </summary>
-        public readonly string AuditProfileId;
+        public readonly string? AuditProfileId;
         /// <summary>
         /// Represents the month under consideration in which the aggregated audit data volume collected by Data Safe is displayed. This field will be the UTC start of the day of the first day of the month for which the aggregate count corresponds to, in the format defined by RFC3339.. For instance, the value of 01-01-2021T00:00:00Z represents Jan 2021.
         /// </summary>
-        public readonly string MonthInConsideration;
+        public readonly string? MonthInConsideration;
         /// <summary>
         /// The audit data volume collected by Data Safe and is available online in repository.
         /// </summary>
-        public readonly string OnlineVolume;
+        public readonly string? OnlineVolume;
 
         [OutputConstructor]
         private GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItemResult(
-            string archivedVolume,
+            string? archivedVolume,
 
-            string auditProfileId,
+            string? auditProfileId,
 
-            string monthInConsideration,
+            string? monthInConsideration,
 
-            string onlineVolume)
+            string? onlineVolume)
         {
             ArchivedVolume = archivedVolume;
             AuditProfileId = auditProfileId;

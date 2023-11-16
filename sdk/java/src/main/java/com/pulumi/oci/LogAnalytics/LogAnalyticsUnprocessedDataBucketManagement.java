@@ -12,6 +12,7 @@ import com.pulumi.oci.LogAnalytics.inputs.LogAnalyticsUnprocessedDataBucketManag
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.String;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -78,14 +79,14 @@ public class LogAnalyticsUnprocessedDataBucketManagement extends com.pulumi.reso
      * 
      */
     @Export(name="isEnabled", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isEnabled;
+    private Output</* @Nullable */ Boolean> isEnabled;
 
     /**
      * @return Flag that specifies if this configuration is enabled or not.
      * 
      */
-    public Output<Boolean> isEnabled() {
-        return this.isEnabled;
+    public Output<Optional<Boolean>> isEnabled() {
+        return Codegen.optional(this.isEnabled);
     }
     /**
      * The Logging Analytics namespace used for the request.
@@ -112,28 +113,28 @@ public class LogAnalyticsUnprocessedDataBucketManagement extends com.pulumi.reso
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The time when this record is created. An RFC3339 formatted datetime string.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The latest time when this record is updated. An RFC3339 formatted datetime string.
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The latest time when this record is updated. An RFC3339 formatted datetime string.
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
 
     /**

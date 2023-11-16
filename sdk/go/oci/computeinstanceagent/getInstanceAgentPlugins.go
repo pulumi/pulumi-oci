@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Instance Agent Plugins in Oracle Cloud Infrastructure Compute Instance Agent service.
@@ -70,7 +69,7 @@ type GetInstanceAgentPluginsResult struct {
 	CompartmentId string                          `pulumi:"compartmentId"`
 	Filters       []GetInstanceAgentPluginsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of instance_agent_plugins.
 	InstanceAgentPlugins []GetInstanceAgentPluginsInstanceAgentPlugin `pulumi:"instanceAgentPlugins"`
 	InstanceagentId      string                                       `pulumi:"instanceagentId"`
@@ -124,12 +123,6 @@ func (o GetInstanceAgentPluginsResultOutput) ToGetInstanceAgentPluginsResultOutp
 	return o
 }
 
-func (o GetInstanceAgentPluginsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetInstanceAgentPluginsResult] {
-	return pulumix.Output[GetInstanceAgentPluginsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetInstanceAgentPluginsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceAgentPluginsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -139,8 +132,8 @@ func (o GetInstanceAgentPluginsResultOutput) Filters() GetInstanceAgentPluginsFi
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetInstanceAgentPluginsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceAgentPluginsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetInstanceAgentPluginsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInstanceAgentPluginsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of instance_agent_plugins.

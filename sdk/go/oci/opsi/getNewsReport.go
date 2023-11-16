@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific News Report resource in Oracle Cloud Infrastructure Opsi service.
@@ -60,38 +59,38 @@ type LookupNewsReportArgs struct {
 // A collection of values returned by getNewsReport.
 type LookupNewsReportResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Content types that the news report can handle.
 	ContentTypes []GetNewsReportContentType `pulumi:"contentTypes"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The description of the news report.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the news report resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Language of the news report.
-	Locale string `pulumi:"locale"`
+	Locale *string `pulumi:"locale"`
 	// The news report name.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// News report frequency.
-	NewsFrequency string `pulumi:"newsFrequency"`
-	NewsReportId  string `pulumi:"newsReportId"`
+	NewsFrequency *string `pulumi:"newsFrequency"`
+	NewsReportId  string  `pulumi:"newsReportId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ONS topic.
-	OnsTopicId string `pulumi:"onsTopicId"`
+	OnsTopicId *string `pulumi:"onsTopicId"`
 	// The current state of the news report.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Indicates the status of a news report in Operations Insights.
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time the the news report was first enabled. An RFC3339 formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the news report was updated. An RFC3339 formatted datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func LookupNewsReportOutput(ctx *pulumi.Context, args LookupNewsReportOutputArgs, opts ...pulumi.InvokeOption) LookupNewsReportResultOutput {
@@ -132,15 +131,9 @@ func (o LookupNewsReportResultOutput) ToLookupNewsReportResultOutputWithContext(
 	return o
 }
 
-func (o LookupNewsReportResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupNewsReportResult] {
-	return pulumix.Output[LookupNewsReportResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-func (o LookupNewsReportResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNewsReportResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupNewsReportResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNewsReportResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Content types that the news report can handle.
@@ -154,8 +147,8 @@ func (o LookupNewsReportResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // The description of the news report.
-func (o LookupNewsReportResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNewsReportResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupNewsReportResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNewsReportResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -164,28 +157,28 @@ func (o LookupNewsReportResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the news report resource.
-func (o LookupNewsReportResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNewsReportResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupNewsReportResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNewsReportResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o LookupNewsReportResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNewsReportResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupNewsReportResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNewsReportResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // Language of the news report.
-func (o LookupNewsReportResultOutput) Locale() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNewsReportResult) string { return v.Locale }).(pulumi.StringOutput)
+func (o LookupNewsReportResultOutput) Locale() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNewsReportResult) *string { return v.Locale }).(pulumi.StringPtrOutput)
 }
 
 // The news report name.
-func (o LookupNewsReportResultOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNewsReportResult) string { return v.Name }).(pulumi.StringOutput)
+func (o LookupNewsReportResultOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNewsReportResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // News report frequency.
-func (o LookupNewsReportResultOutput) NewsFrequency() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNewsReportResult) string { return v.NewsFrequency }).(pulumi.StringOutput)
+func (o LookupNewsReportResultOutput) NewsFrequency() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNewsReportResult) *string { return v.NewsFrequency }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupNewsReportResultOutput) NewsReportId() pulumi.StringOutput {
@@ -193,18 +186,18 @@ func (o LookupNewsReportResultOutput) NewsReportId() pulumi.StringOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ONS topic.
-func (o LookupNewsReportResultOutput) OnsTopicId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNewsReportResult) string { return v.OnsTopicId }).(pulumi.StringOutput)
+func (o LookupNewsReportResultOutput) OnsTopicId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNewsReportResult) *string { return v.OnsTopicId }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the news report.
-func (o LookupNewsReportResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNewsReportResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupNewsReportResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNewsReportResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Indicates the status of a news report in Operations Insights.
-func (o LookupNewsReportResultOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNewsReportResult) string { return v.Status }).(pulumi.StringOutput)
+func (o LookupNewsReportResultOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNewsReportResult) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -213,13 +206,13 @@ func (o LookupNewsReportResultOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time the the news report was first enabled. An RFC3339 formatted datetime string.
-func (o LookupNewsReportResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNewsReportResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupNewsReportResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNewsReportResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the news report was updated. An RFC3339 formatted datetime string.
-func (o LookupNewsReportResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNewsReportResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupNewsReportResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNewsReportResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

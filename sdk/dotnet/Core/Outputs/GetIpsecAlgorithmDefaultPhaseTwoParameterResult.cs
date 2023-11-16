@@ -24,7 +24,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// Default perfect forward secrecy Diffie-Hellman groups.
         /// </summary>
-        public readonly string DefaultPfsDhGroup;
+        public readonly string? DefaultPfsDhGroup;
 
         [OutputConstructor]
         private GetIpsecAlgorithmDefaultPhaseTwoParameterResult(
@@ -32,7 +32,7 @@ namespace Pulumi.Oci.Core.Outputs
 
             ImmutableArray<string> defaultEncryptionAlgorithms,
 
-            string defaultPfsDhGroup)
+            string? defaultPfsDhGroup)
         {
             DefaultAuthenticationAlgorithms = defaultAuthenticationAlgorithms;
             DefaultEncryptionAlgorithms = defaultEncryptionAlgorithms;

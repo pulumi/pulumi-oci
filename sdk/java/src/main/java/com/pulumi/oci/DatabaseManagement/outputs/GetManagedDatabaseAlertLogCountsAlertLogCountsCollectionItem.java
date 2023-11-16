@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItem {
@@ -14,27 +16,27 @@ public final class GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItem 
      * @return The category of different alert logs.
      * 
      */
-    private String category;
+    private @Nullable String category;
     /**
      * @return The count of alert logs with specific category.
      * 
      */
-    private Integer count;
+    private @Nullable Integer count;
 
     private GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItem() {}
     /**
      * @return The category of different alert logs.
      * 
      */
-    public String category() {
-        return this.category;
+    public Optional<String> category() {
+        return Optional.ofNullable(this.category);
     }
     /**
      * @return The count of alert logs with specific category.
      * 
      */
-    public Integer count() {
-        return this.count;
+    public Optional<Integer> count() {
+        return Optional.ofNullable(this.count);
     }
 
     public static Builder builder() {
@@ -46,8 +48,8 @@ public final class GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItem 
     }
     @CustomType.Builder
     public static final class Builder {
-        private String category;
-        private Integer count;
+        private @Nullable String category;
+        private @Nullable Integer count;
         public Builder() {}
         public Builder(GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -56,13 +58,13 @@ public final class GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItem 
         }
 
         @CustomType.Setter
-        public Builder category(String category) {
-            this.category = Objects.requireNonNull(category);
+        public Builder category(@Nullable String category) {
+            this.category = category;
             return this;
         }
         @CustomType.Setter
-        public Builder count(Integer count) {
-            this.count = Objects.requireNonNull(count);
+        public Builder count(@Nullable Integer count) {
+            this.count = count;
             return this;
         }
         public GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItem build() {

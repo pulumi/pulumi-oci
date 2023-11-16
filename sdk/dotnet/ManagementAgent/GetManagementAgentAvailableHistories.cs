@@ -157,7 +157,7 @@ namespace Pulumi.Oci.ManagementAgent
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// agent identifier
         /// </summary>
@@ -171,7 +171,7 @@ namespace Pulumi.Oci.ManagementAgent
 
             ImmutableArray<Outputs.GetManagementAgentAvailableHistoriesFilterResult> filters,
 
-            string id,
+            string? id,
 
             string managementAgentId,
 

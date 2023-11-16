@@ -126,7 +126,7 @@ namespace Pulumi.Oci.LoadBalancer
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The list of policies.
         /// </summary>
@@ -138,7 +138,7 @@ namespace Pulumi.Oci.LoadBalancer
 
             ImmutableArray<Outputs.GetPoliciesFilterResult> filters,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetPoliciesPolicyResult> policies)
         {

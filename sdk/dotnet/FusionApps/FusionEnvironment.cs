@@ -114,7 +114,7 @@ namespace Pulumi.Oci.FusionApps
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) FusionEnvironment Identifier can be renamed.
@@ -126,19 +126,19 @@ namespace Pulumi.Oci.FusionApps
         /// DNS prefix.
         /// </summary>
         [Output("dnsPrefix")]
-        public Output<string> DnsPrefix { get; private set; } = null!;
+        public Output<string?> DnsPrefix { get; private set; } = null!;
 
         /// <summary>
         /// The IDCS domain created for the fusion instance
         /// </summary>
         [Output("domainId")]
-        public Output<string> DomainId { get; private set; } = null!;
+        public Output<string?> DomainId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// The unique identifier (OCID) of the Fusion Environment Family that the Fusion Environment belongs to.
@@ -156,19 +156,19 @@ namespace Pulumi.Oci.FusionApps
         /// The IDCS Domain URL
         /// </summary>
         [Output("idcsDomainUrl")]
-        public Output<string> IdcsDomainUrl { get; private set; } = null!;
+        public Output<string?> IdcsDomainUrl { get; private set; } = null!;
 
         /// <summary>
         /// If it's true, then the Break Glass feature is enabled
         /// </summary>
         [Output("isBreakGlassEnabled")]
-        public Output<bool> IsBreakGlassEnabled { get; private set; } = null!;
+        public Output<bool?> IsBreakGlassEnabled { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) byok kms keyId
         /// </summary>
         [Output("kmsKeyId")]
-        public Output<string> KmsKeyId { get; private set; } = null!;
+        public Output<string?> KmsKeyId { get; private set; } = null!;
 
         /// <summary>
         /// BYOK key info
@@ -180,25 +180,25 @@ namespace Pulumi.Oci.FusionApps
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// The lockbox Id of this fusion environment. If there's no lockbox id, this field will be null
         /// </summary>
         [Output("lockboxId")]
-        public Output<string> LockboxId { get; private set; } = null!;
+        public Output<string?> LockboxId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
         /// </summary>
         [Output("maintenancePolicy")]
-        public Output<Outputs.FusionEnvironmentMaintenancePolicy> MaintenancePolicy { get; private set; } = null!;
+        public Output<Outputs.FusionEnvironmentMaintenancePolicy?> MaintenancePolicy { get; private set; } = null!;
 
         /// <summary>
         /// Public URL
         /// </summary>
         [Output("publicUrl")]
-        public Output<string> PublicUrl { get; private set; } = null!;
+        public Output<string?> PublicUrl { get; private set; } = null!;
 
         /// <summary>
         /// Describes a refresh of a fusion environment
@@ -216,7 +216,7 @@ namespace Pulumi.Oci.FusionApps
         /// The current state of the ServiceInstance.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// List of subscription IDs.
@@ -228,31 +228,31 @@ namespace Pulumi.Oci.FusionApps
         /// Environment Specific Guid/ System Name
         /// </summary>
         [Output("systemName")]
-        public Output<string> SystemName { get; private set; } = null!;
+        public Output<string?> SystemName { get; private set; } = null!;
 
         /// <summary>
         /// The time the the FusionEnvironment was created. An RFC3339 formatted datetime string
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The next maintenance for this environment
         /// </summary>
         [Output("timeUpcomingMaintenance")]
-        public Output<string> TimeUpcomingMaintenance { get; private set; } = null!;
+        public Output<string?> TimeUpcomingMaintenance { get; private set; } = null!;
 
         /// <summary>
         /// The time the FusionEnvironment was updated. An RFC3339 formatted datetime string
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
         /// Version of Fusion Apps used by this environment
         /// </summary>
         [Output("version")]
-        public Output<string> Version { get; private set; } = null!;
+        public Output<string?> Version { get; private set; } = null!;
 
 
         /// <summary>

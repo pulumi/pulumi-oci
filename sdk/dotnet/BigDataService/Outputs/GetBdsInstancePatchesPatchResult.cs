@@ -16,17 +16,17 @@ namespace Pulumi.Oci.BigDataService.Outputs
         /// <summary>
         /// The time when the patch was released.
         /// </summary>
-        public readonly string TimeReleased;
+        public readonly string? TimeReleased;
         /// <summary>
         /// The version of the patch.
         /// </summary>
-        public readonly string Version;
+        public readonly string? Version;
 
         [OutputConstructor]
         private GetBdsInstancePatchesPatchResult(
-            string timeReleased,
+            string? timeReleased,
 
-            string version)
+            string? version)
         {
             TimeReleased = timeReleased;
             Version = version;

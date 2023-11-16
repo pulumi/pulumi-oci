@@ -12,6 +12,7 @@ import com.pulumi.oci.CloudGuard.inputs.CloudGuardConfigurationState;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.String;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -92,14 +93,14 @@ public class CloudGuardConfiguration extends com.pulumi.resources.CustomResource
      * 
      */
     @Export(name="selfManageResources", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> selfManageResources;
+    private Output</* @Nullable */ Boolean> selfManageResources;
 
     /**
      * @return (Updatable) Identifies if Oracle managed resources will be created by customers. If no value is specified false is the default.
      * 
      */
-    public Output<Boolean> selfManageResources() {
-        return this.selfManageResources;
+    public Output<Optional<Boolean>> selfManageResources() {
+        return Codegen.optional(this.selfManageResources);
     }
     /**
      * (Updatable) Status of Cloud Guard Tenant

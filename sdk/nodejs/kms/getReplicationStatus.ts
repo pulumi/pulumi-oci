@@ -56,12 +56,12 @@ export interface GetReplicationStatusResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly managementEndpoint: string;
     /**
      * Replica Details.
      */
-    readonly replicaDetails: outputs.Kms.GetReplicationStatusReplicaDetail[];
+    readonly replicaDetails?: outputs.Kms.GetReplicationStatusReplicaDetail[];
     readonly replicationId: string;
 }
 /**

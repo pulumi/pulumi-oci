@@ -52,7 +52,7 @@ class GetListingTaxesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -65,10 +65,7 @@ class GetListingTaxesResult:
 
     @property
     @pulumi.getter
-    def taxes(self) -> Sequence['outputs.GetListingTaxesTaxResult']:
-        """
-        The list of taxes.
-        """
+    def taxes(self) -> Optional[Sequence['outputs.GetListingTaxesTaxResult']]:
         return pulumi.get(self, "taxes")
 
 
@@ -90,23 +87,7 @@ def get_listing_taxes(compartment_id: Optional[str] = None,
                       listing_id: Optional[str] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetListingTaxesResult:
     """
-    This data source provides the list of Listing Taxes in Oracle Cloud Infrastructure Marketplace service.
-
-    Returns list of all tax implications that current tenant may be liable to once they launch the listing.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_listing_taxes = oci.Marketplace.get_listing_taxes(listing_id=oci_marketplace_listing["test_listing"]["id"],
-        compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str compartment_id: The unique identifier for the compartment.
-    :param str listing_id: The unique identifier for the listing.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -129,22 +110,6 @@ def get_listing_taxes_output(compartment_id: Optional[pulumi.Input[Optional[str]
                              listing_id: Optional[pulumi.Input[str]] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetListingTaxesResult]:
     """
-    This data source provides the list of Listing Taxes in Oracle Cloud Infrastructure Marketplace service.
-
-    Returns list of all tax implications that current tenant may be liable to once they launch the listing.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_listing_taxes = oci.Marketplace.get_listing_taxes(listing_id=oci_marketplace_listing["test_listing"]["id"],
-        compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str compartment_id: The unique identifier for the compartment.
-    :param str listing_id: The unique identifier for the listing.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -85,11 +85,11 @@ export interface GetDatabaseMaintenanceRunHistoriesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of maintenance_run_histories.
      */
-    readonly maintenanceRunHistories: outputs.Database.GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistory[];
+    readonly maintenanceRunHistories?: outputs.Database.GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistory[];
     /**
      * Maintenance type.
      */

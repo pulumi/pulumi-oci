@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Audit Trails in Oracle Cloud Infrastructure Data Safe service.
@@ -105,7 +104,7 @@ type GetAuditTrailsResult struct {
 	DisplayName *string                `pulumi:"displayName"`
 	Filters     []GetAuditTrailsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The current state of the audit trail.
 	State *string `pulumi:"state"`
 	// The current sub-state of the audit trail.
@@ -167,12 +166,6 @@ func (o GetAuditTrailsResultOutput) ToGetAuditTrailsResultOutputWithContext(ctx 
 	return o
 }
 
-func (o GetAuditTrailsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAuditTrailsResult] {
-	return pulumix.Output[GetAuditTrailsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAuditTrailsResultOutput) AccessLevel() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetAuditTrailsResult) *string { return v.AccessLevel }).(pulumi.StringPtrOutput)
 }
@@ -205,8 +198,8 @@ func (o GetAuditTrailsResultOutput) Filters() GetAuditTrailsFilterArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetAuditTrailsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAuditTrailsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetAuditTrailsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAuditTrailsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the audit trail.

@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Double;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmCluster {
@@ -14,27 +16,27 @@ public final class GetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomo
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud Exadata infrastructure.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Total unallocated autonomous data storage in the Cloud Autonomous VM Cluster in TBs.
      * 
      */
-    private Double unAllocatedAdbStorageInTbs;
+    private @Nullable Double unAllocatedAdbStorageInTbs;
 
     private GetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmCluster() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud Exadata infrastructure.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Total unallocated autonomous data storage in the Cloud Autonomous VM Cluster in TBs.
      * 
      */
-    public Double unAllocatedAdbStorageInTbs() {
-        return this.unAllocatedAdbStorageInTbs;
+    public Optional<Double> unAllocatedAdbStorageInTbs() {
+        return Optional.ofNullable(this.unAllocatedAdbStorageInTbs);
     }
 
     public static Builder builder() {
@@ -46,8 +48,8 @@ public final class GetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomo
     }
     @CustomType.Builder
     public static final class Builder {
-        private String id;
-        private Double unAllocatedAdbStorageInTbs;
+        private @Nullable String id;
+        private @Nullable Double unAllocatedAdbStorageInTbs;
         public Builder() {}
         public Builder(GetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmCluster defaults) {
     	      Objects.requireNonNull(defaults);
@@ -56,13 +58,13 @@ public final class GetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomo
         }
 
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder unAllocatedAdbStorageInTbs(Double unAllocatedAdbStorageInTbs) {
-            this.unAllocatedAdbStorageInTbs = Objects.requireNonNull(unAllocatedAdbStorageInTbs);
+        public Builder unAllocatedAdbStorageInTbs(@Nullable Double unAllocatedAdbStorageInTbs) {
+            this.unAllocatedAdbStorageInTbs = unAllocatedAdbStorageInTbs;
             return this;
         }
         public GetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmCluster build() {

@@ -9,6 +9,8 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetExternalDbNodesExternalDbNodeCollectionItem {
@@ -16,78 +18,78 @@ public final class GetExternalDbNodesExternalDbNodeCollectionItem {
      * @return The additional details of the external DB node defined in `{&#34;key&#34;: &#34;value&#34;}` format. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> additionalDetails;
+    private @Nullable Map<String,Object> additionalDetails;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The name of the external DB node.
      * 
      */
-    private String componentName;
+    private @Nullable String componentName;
     /**
      * @return The number of CPU cores available on the DB node.
      * 
      */
-    private Double cpuCoreCount;
+    private @Nullable Double cpuCoreCount;
     /**
      * @return A filter to only return the resources that match the entire display name.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Name of the domain.
      * 
      */
-    private String domainName;
+    private @Nullable String domainName;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
      * 
      */
-    private String externalConnectorId;
-    private String externalDbNodeId;
+    private @Nullable String externalConnectorId;
+    private @Nullable String externalDbNodeId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
      * 
      */
-    private String externalDbSystemId;
+    private @Nullable String externalDbSystemId;
     /**
      * @return The host name for the DB node.
      * 
      */
-    private String hostName;
+    private @Nullable String hostName;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB node.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Additional information about the current lifecycle state.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return The total memory in gigabytes (GB) on the DB node.
      * 
      */
-    private Double memorySizeInGbs;
+    private @Nullable Double memorySizeInGbs;
     /**
      * @return The current lifecycle state of the external DB node.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The date and time the external DB node was created.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The date and time the external DB node was last updated.
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
 
     private GetExternalDbNodesExternalDbNodeCollectionItem() {}
     /**
@@ -95,108 +97,108 @@ public final class GetExternalDbNodesExternalDbNodeCollectionItem {
      * 
      */
     public Map<String,Object> additionalDetails() {
-        return this.additionalDetails;
+        return this.additionalDetails == null ? Map.of() : this.additionalDetails;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The name of the external DB node.
      * 
      */
-    public String componentName() {
-        return this.componentName;
+    public Optional<String> componentName() {
+        return Optional.ofNullable(this.componentName);
     }
     /**
      * @return The number of CPU cores available on the DB node.
      * 
      */
-    public Double cpuCoreCount() {
-        return this.cpuCoreCount;
+    public Optional<Double> cpuCoreCount() {
+        return Optional.ofNullable(this.cpuCoreCount);
     }
     /**
      * @return A filter to only return the resources that match the entire display name.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Name of the domain.
      * 
      */
-    public String domainName() {
-        return this.domainName;
+    public Optional<String> domainName() {
+        return Optional.ofNullable(this.domainName);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
      * 
      */
-    public String externalConnectorId() {
-        return this.externalConnectorId;
+    public Optional<String> externalConnectorId() {
+        return Optional.ofNullable(this.externalConnectorId);
     }
-    public String externalDbNodeId() {
-        return this.externalDbNodeId;
+    public Optional<String> externalDbNodeId() {
+        return Optional.ofNullable(this.externalDbNodeId);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
      * 
      */
-    public String externalDbSystemId() {
-        return this.externalDbSystemId;
+    public Optional<String> externalDbSystemId() {
+        return Optional.ofNullable(this.externalDbSystemId);
     }
     /**
      * @return The host name for the DB node.
      * 
      */
-    public String hostName() {
-        return this.hostName;
+    public Optional<String> hostName() {
+        return Optional.ofNullable(this.hostName);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB node.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Additional information about the current lifecycle state.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return The total memory in gigabytes (GB) on the DB node.
      * 
      */
-    public Double memorySizeInGbs() {
-        return this.memorySizeInGbs;
+    public Optional<Double> memorySizeInGbs() {
+        return Optional.ofNullable(this.memorySizeInGbs);
     }
     /**
      * @return The current lifecycle state of the external DB node.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The date and time the external DB node was created.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The date and time the external DB node was last updated.
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
 
     public static Builder builder() {
@@ -208,22 +210,22 @@ public final class GetExternalDbNodesExternalDbNodeCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Map<String,Object> additionalDetails;
-        private String compartmentId;
-        private String componentName;
-        private Double cpuCoreCount;
-        private String displayName;
-        private String domainName;
-        private String externalConnectorId;
-        private String externalDbNodeId;
-        private String externalDbSystemId;
-        private String hostName;
-        private String id;
-        private String lifecycleDetails;
-        private Double memorySizeInGbs;
-        private String state;
-        private String timeCreated;
-        private String timeUpdated;
+        private @Nullable Map<String,Object> additionalDetails;
+        private @Nullable String compartmentId;
+        private @Nullable String componentName;
+        private @Nullable Double cpuCoreCount;
+        private @Nullable String displayName;
+        private @Nullable String domainName;
+        private @Nullable String externalConnectorId;
+        private @Nullable String externalDbNodeId;
+        private @Nullable String externalDbSystemId;
+        private @Nullable String hostName;
+        private @Nullable String id;
+        private @Nullable String lifecycleDetails;
+        private @Nullable Double memorySizeInGbs;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
         public Builder() {}
         public Builder(GetExternalDbNodesExternalDbNodeCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -246,83 +248,83 @@ public final class GetExternalDbNodesExternalDbNodeCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder additionalDetails(Map<String,Object> additionalDetails) {
-            this.additionalDetails = Objects.requireNonNull(additionalDetails);
+        public Builder additionalDetails(@Nullable Map<String,Object> additionalDetails) {
+            this.additionalDetails = additionalDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder componentName(String componentName) {
-            this.componentName = Objects.requireNonNull(componentName);
+        public Builder componentName(@Nullable String componentName) {
+            this.componentName = componentName;
             return this;
         }
         @CustomType.Setter
-        public Builder cpuCoreCount(Double cpuCoreCount) {
-            this.cpuCoreCount = Objects.requireNonNull(cpuCoreCount);
+        public Builder cpuCoreCount(@Nullable Double cpuCoreCount) {
+            this.cpuCoreCount = cpuCoreCount;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder domainName(String domainName) {
-            this.domainName = Objects.requireNonNull(domainName);
+        public Builder domainName(@Nullable String domainName) {
+            this.domainName = domainName;
             return this;
         }
         @CustomType.Setter
-        public Builder externalConnectorId(String externalConnectorId) {
-            this.externalConnectorId = Objects.requireNonNull(externalConnectorId);
+        public Builder externalConnectorId(@Nullable String externalConnectorId) {
+            this.externalConnectorId = externalConnectorId;
             return this;
         }
         @CustomType.Setter
-        public Builder externalDbNodeId(String externalDbNodeId) {
-            this.externalDbNodeId = Objects.requireNonNull(externalDbNodeId);
+        public Builder externalDbNodeId(@Nullable String externalDbNodeId) {
+            this.externalDbNodeId = externalDbNodeId;
             return this;
         }
         @CustomType.Setter
-        public Builder externalDbSystemId(String externalDbSystemId) {
-            this.externalDbSystemId = Objects.requireNonNull(externalDbSystemId);
+        public Builder externalDbSystemId(@Nullable String externalDbSystemId) {
+            this.externalDbSystemId = externalDbSystemId;
             return this;
         }
         @CustomType.Setter
-        public Builder hostName(String hostName) {
-            this.hostName = Objects.requireNonNull(hostName);
+        public Builder hostName(@Nullable String hostName) {
+            this.hostName = hostName;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder memorySizeInGbs(Double memorySizeInGbs) {
-            this.memorySizeInGbs = Objects.requireNonNull(memorySizeInGbs);
+        public Builder memorySizeInGbs(@Nullable Double memorySizeInGbs) {
+            this.memorySizeInGbs = memorySizeInGbs;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetExternalDbNodesExternalDbNodeCollectionItem build() {

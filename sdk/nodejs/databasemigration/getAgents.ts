@@ -61,7 +61,7 @@ export interface GetAgentsResult {
     /**
      * The list of agent_collection.
      */
-    readonly agentCollections: outputs.DatabaseMigration.GetAgentsAgentCollection[];
+    readonly agentCollections?: outputs.DatabaseMigration.GetAgentsAgentCollection[];
     /**
      * OCID of the compartment
      */
@@ -74,7 +74,7 @@ export interface GetAgentsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The current state of the ODMS on-premises Agent.
      */

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -55,12 +54,6 @@ func (i CertificateExtensionArgs) ToCertificateExtensionOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(CertificateExtensionOutput)
 }
 
-func (i CertificateExtensionArgs) ToOutput(ctx context.Context) pulumix.Output[CertificateExtension] {
-	return pulumix.Output[CertificateExtension]{
-		OutputState: i.ToCertificateExtensionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // CertificateExtensionArrayInput is an input type that accepts CertificateExtensionArray and CertificateExtensionArrayOutput values.
 // You can construct a concrete instance of `CertificateExtensionArrayInput` via:
 //
@@ -86,12 +79,6 @@ func (i CertificateExtensionArray) ToCertificateExtensionArrayOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(CertificateExtensionArrayOutput)
 }
 
-func (i CertificateExtensionArray) ToOutput(ctx context.Context) pulumix.Output[[]CertificateExtension] {
-	return pulumix.Output[[]CertificateExtension]{
-		OutputState: i.ToCertificateExtensionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type CertificateExtensionOutput struct{ *pulumi.OutputState }
 
 func (CertificateExtensionOutput) ElementType() reflect.Type {
@@ -104,12 +91,6 @@ func (o CertificateExtensionOutput) ToCertificateExtensionOutput() CertificateEx
 
 func (o CertificateExtensionOutput) ToCertificateExtensionOutputWithContext(ctx context.Context) CertificateExtensionOutput {
 	return o
-}
-
-func (o CertificateExtensionOutput) ToOutput(ctx context.Context) pulumix.Output[CertificateExtension] {
-	return pulumix.Output[CertificateExtension]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The critical flag of the extension. Critical extensions must be processed, non-critical extensions can be ignored.
@@ -139,12 +120,6 @@ func (o CertificateExtensionArrayOutput) ToCertificateExtensionArrayOutput() Cer
 
 func (o CertificateExtensionArrayOutput) ToCertificateExtensionArrayOutputWithContext(ctx context.Context) CertificateExtensionArrayOutput {
 	return o
-}
-
-func (o CertificateExtensionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]CertificateExtension] {
-	return pulumix.Output[[]CertificateExtension]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o CertificateExtensionArrayOutput) Index(i pulumi.IntInput) CertificateExtensionOutput {
@@ -210,12 +185,6 @@ func (i CertificateIssuerNameArgs) ToCertificateIssuerNameOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(CertificateIssuerNameOutput)
 }
 
-func (i CertificateIssuerNameArgs) ToOutput(ctx context.Context) pulumix.Output[CertificateIssuerName] {
-	return pulumix.Output[CertificateIssuerName]{
-		OutputState: i.ToCertificateIssuerNameOutputWithContext(ctx).OutputState,
-	}
-}
-
 // CertificateIssuerNameArrayInput is an input type that accepts CertificateIssuerNameArray and CertificateIssuerNameArrayOutput values.
 // You can construct a concrete instance of `CertificateIssuerNameArrayInput` via:
 //
@@ -241,12 +210,6 @@ func (i CertificateIssuerNameArray) ToCertificateIssuerNameArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(CertificateIssuerNameArrayOutput)
 }
 
-func (i CertificateIssuerNameArray) ToOutput(ctx context.Context) pulumix.Output[[]CertificateIssuerName] {
-	return pulumix.Output[[]CertificateIssuerName]{
-		OutputState: i.ToCertificateIssuerNameArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type CertificateIssuerNameOutput struct{ *pulumi.OutputState }
 
 func (CertificateIssuerNameOutput) ElementType() reflect.Type {
@@ -259,12 +222,6 @@ func (o CertificateIssuerNameOutput) ToCertificateIssuerNameOutput() Certificate
 
 func (o CertificateIssuerNameOutput) ToCertificateIssuerNameOutputWithContext(ctx context.Context) CertificateIssuerNameOutput {
 	return o
-}
-
-func (o CertificateIssuerNameOutput) ToOutput(ctx context.Context) pulumix.Output[CertificateIssuerName] {
-	return pulumix.Output[CertificateIssuerName]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The fully qualified domain name used for DNS lookups of the server.
@@ -316,12 +273,6 @@ func (o CertificateIssuerNameArrayOutput) ToCertificateIssuerNameArrayOutputWith
 	return o
 }
 
-func (o CertificateIssuerNameArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]CertificateIssuerName] {
-	return pulumix.Output[[]CertificateIssuerName]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o CertificateIssuerNameArrayOutput) Index(i pulumi.IntInput) CertificateIssuerNameOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) CertificateIssuerName {
 		return vs[0].([]CertificateIssuerName)[vs[1].(int)]
@@ -369,12 +320,6 @@ func (i CertificatePublicKeyInfoArgs) ToCertificatePublicKeyInfoOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(CertificatePublicKeyInfoOutput)
 }
 
-func (i CertificatePublicKeyInfoArgs) ToOutput(ctx context.Context) pulumix.Output[CertificatePublicKeyInfo] {
-	return pulumix.Output[CertificatePublicKeyInfo]{
-		OutputState: i.ToCertificatePublicKeyInfoOutputWithContext(ctx).OutputState,
-	}
-}
-
 // CertificatePublicKeyInfoArrayInput is an input type that accepts CertificatePublicKeyInfoArray and CertificatePublicKeyInfoArrayOutput values.
 // You can construct a concrete instance of `CertificatePublicKeyInfoArrayInput` via:
 //
@@ -400,12 +345,6 @@ func (i CertificatePublicKeyInfoArray) ToCertificatePublicKeyInfoArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(CertificatePublicKeyInfoArrayOutput)
 }
 
-func (i CertificatePublicKeyInfoArray) ToOutput(ctx context.Context) pulumix.Output[[]CertificatePublicKeyInfo] {
-	return pulumix.Output[[]CertificatePublicKeyInfo]{
-		OutputState: i.ToCertificatePublicKeyInfoArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type CertificatePublicKeyInfoOutput struct{ *pulumi.OutputState }
 
 func (CertificatePublicKeyInfoOutput) ElementType() reflect.Type {
@@ -418,12 +357,6 @@ func (o CertificatePublicKeyInfoOutput) ToCertificatePublicKeyInfoOutput() Certi
 
 func (o CertificatePublicKeyInfoOutput) ToCertificatePublicKeyInfoOutputWithContext(ctx context.Context) CertificatePublicKeyInfoOutput {
 	return o
-}
-
-func (o CertificatePublicKeyInfoOutput) ToOutput(ctx context.Context) pulumix.Output[CertificatePublicKeyInfo] {
-	return pulumix.Output[CertificatePublicKeyInfo]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The algorithm identifier and parameters for the public key.
@@ -453,12 +386,6 @@ func (o CertificatePublicKeyInfoArrayOutput) ToCertificatePublicKeyInfoArrayOutp
 
 func (o CertificatePublicKeyInfoArrayOutput) ToCertificatePublicKeyInfoArrayOutputWithContext(ctx context.Context) CertificatePublicKeyInfoArrayOutput {
 	return o
-}
-
-func (o CertificatePublicKeyInfoArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]CertificatePublicKeyInfo] {
-	return pulumix.Output[[]CertificatePublicKeyInfo]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o CertificatePublicKeyInfoArrayOutput) Index(i pulumi.IntInput) CertificatePublicKeyInfoOutput {
@@ -524,12 +451,6 @@ func (i CertificateSubjectNameArgs) ToCertificateSubjectNameOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(CertificateSubjectNameOutput)
 }
 
-func (i CertificateSubjectNameArgs) ToOutput(ctx context.Context) pulumix.Output[CertificateSubjectName] {
-	return pulumix.Output[CertificateSubjectName]{
-		OutputState: i.ToCertificateSubjectNameOutputWithContext(ctx).OutputState,
-	}
-}
-
 // CertificateSubjectNameArrayInput is an input type that accepts CertificateSubjectNameArray and CertificateSubjectNameArrayOutput values.
 // You can construct a concrete instance of `CertificateSubjectNameArrayInput` via:
 //
@@ -555,12 +476,6 @@ func (i CertificateSubjectNameArray) ToCertificateSubjectNameArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(CertificateSubjectNameArrayOutput)
 }
 
-func (i CertificateSubjectNameArray) ToOutput(ctx context.Context) pulumix.Output[[]CertificateSubjectName] {
-	return pulumix.Output[[]CertificateSubjectName]{
-		OutputState: i.ToCertificateSubjectNameArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type CertificateSubjectNameOutput struct{ *pulumi.OutputState }
 
 func (CertificateSubjectNameOutput) ElementType() reflect.Type {
@@ -573,12 +488,6 @@ func (o CertificateSubjectNameOutput) ToCertificateSubjectNameOutput() Certifica
 
 func (o CertificateSubjectNameOutput) ToCertificateSubjectNameOutputWithContext(ctx context.Context) CertificateSubjectNameOutput {
 	return o
-}
-
-func (o CertificateSubjectNameOutput) ToOutput(ctx context.Context) pulumix.Output[CertificateSubjectName] {
-	return pulumix.Output[CertificateSubjectName]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The fully qualified domain name used for DNS lookups of the server.
@@ -628,12 +537,6 @@ func (o CertificateSubjectNameArrayOutput) ToCertificateSubjectNameArrayOutput()
 
 func (o CertificateSubjectNameArrayOutput) ToCertificateSubjectNameArrayOutputWithContext(ctx context.Context) CertificateSubjectNameArrayOutput {
 	return o
-}
-
-func (o CertificateSubjectNameArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]CertificateSubjectName] {
-	return pulumix.Output[[]CertificateSubjectName]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o CertificateSubjectNameArrayOutput) Index(i pulumi.IntInput) CertificateSubjectNameOutput {
@@ -697,12 +600,6 @@ func (i HttpRedirectTargetArgs) ToHttpRedirectTargetOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(HttpRedirectTargetOutput)
 }
 
-func (i HttpRedirectTargetArgs) ToOutput(ctx context.Context) pulumix.Output[HttpRedirectTarget] {
-	return pulumix.Output[HttpRedirectTarget]{
-		OutputState: i.ToHttpRedirectTargetOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i HttpRedirectTargetArgs) ToHttpRedirectTargetPtrOutput() HttpRedirectTargetPtrOutput {
 	return i.ToHttpRedirectTargetPtrOutputWithContext(context.Background())
 }
@@ -744,12 +641,6 @@ func (i *httpRedirectTargetPtrType) ToHttpRedirectTargetPtrOutputWithContext(ctx
 	return pulumi.ToOutputWithContext(ctx, i).(HttpRedirectTargetPtrOutput)
 }
 
-func (i *httpRedirectTargetPtrType) ToOutput(ctx context.Context) pulumix.Output[*HttpRedirectTarget] {
-	return pulumix.Output[*HttpRedirectTarget]{
-		OutputState: i.ToHttpRedirectTargetPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type HttpRedirectTargetOutput struct{ *pulumi.OutputState }
 
 func (HttpRedirectTargetOutput) ElementType() reflect.Type {
@@ -772,12 +663,6 @@ func (o HttpRedirectTargetOutput) ToHttpRedirectTargetPtrOutputWithContext(ctx c
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v HttpRedirectTarget) *HttpRedirectTarget {
 		return &v
 	}).(HttpRedirectTargetPtrOutput)
-}
-
-func (o HttpRedirectTargetOutput) ToOutput(ctx context.Context) pulumix.Output[HttpRedirectTarget] {
-	return pulumix.Output[HttpRedirectTarget]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The host portion of the redirect.
@@ -820,12 +705,6 @@ func (o HttpRedirectTargetPtrOutput) ToHttpRedirectTargetPtrOutput() HttpRedirec
 
 func (o HttpRedirectTargetPtrOutput) ToHttpRedirectTargetPtrOutputWithContext(ctx context.Context) HttpRedirectTargetPtrOutput {
 	return o
-}
-
-func (o HttpRedirectTargetPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*HttpRedirectTarget] {
-	return pulumix.Output[*HttpRedirectTarget]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o HttpRedirectTargetPtrOutput) Elem() HttpRedirectTargetOutput {
@@ -938,12 +817,6 @@ func (i PolicyOriginArgs) ToPolicyOriginOutputWithContext(ctx context.Context) P
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyOriginOutput)
 }
 
-func (i PolicyOriginArgs) ToOutput(ctx context.Context) pulumix.Output[PolicyOrigin] {
-	return pulumix.Output[PolicyOrigin]{
-		OutputState: i.ToPolicyOriginOutputWithContext(ctx).OutputState,
-	}
-}
-
 // PolicyOriginArrayInput is an input type that accepts PolicyOriginArray and PolicyOriginArrayOutput values.
 // You can construct a concrete instance of `PolicyOriginArrayInput` via:
 //
@@ -969,12 +842,6 @@ func (i PolicyOriginArray) ToPolicyOriginArrayOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyOriginArrayOutput)
 }
 
-func (i PolicyOriginArray) ToOutput(ctx context.Context) pulumix.Output[[]PolicyOrigin] {
-	return pulumix.Output[[]PolicyOrigin]{
-		OutputState: i.ToPolicyOriginArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type PolicyOriginOutput struct{ *pulumi.OutputState }
 
 func (PolicyOriginOutput) ElementType() reflect.Type {
@@ -987,12 +854,6 @@ func (o PolicyOriginOutput) ToPolicyOriginOutput() PolicyOriginOutput {
 
 func (o PolicyOriginOutput) ToPolicyOriginOutputWithContext(ctx context.Context) PolicyOriginOutput {
 	return o
-}
-
-func (o PolicyOriginOutput) ToOutput(ctx context.Context) pulumix.Output[PolicyOrigin] {
-	return pulumix.Output[PolicyOrigin]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) A list of HTTP headers to forward to your origin.
@@ -1031,12 +892,6 @@ func (o PolicyOriginArrayOutput) ToPolicyOriginArrayOutput() PolicyOriginArrayOu
 
 func (o PolicyOriginArrayOutput) ToPolicyOriginArrayOutputWithContext(ctx context.Context) PolicyOriginArrayOutput {
 	return o
-}
-
-func (o PolicyOriginArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]PolicyOrigin] {
-	return pulumix.Output[[]PolicyOrigin]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PolicyOriginArrayOutput) Index(i pulumi.IntInput) PolicyOriginOutput {
@@ -1088,12 +943,6 @@ func (i PolicyOriginCustomHeaderArgs) ToPolicyOriginCustomHeaderOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyOriginCustomHeaderOutput)
 }
 
-func (i PolicyOriginCustomHeaderArgs) ToOutput(ctx context.Context) pulumix.Output[PolicyOriginCustomHeader] {
-	return pulumix.Output[PolicyOriginCustomHeader]{
-		OutputState: i.ToPolicyOriginCustomHeaderOutputWithContext(ctx).OutputState,
-	}
-}
-
 // PolicyOriginCustomHeaderArrayInput is an input type that accepts PolicyOriginCustomHeaderArray and PolicyOriginCustomHeaderArrayOutput values.
 // You can construct a concrete instance of `PolicyOriginCustomHeaderArrayInput` via:
 //
@@ -1119,12 +968,6 @@ func (i PolicyOriginCustomHeaderArray) ToPolicyOriginCustomHeaderArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyOriginCustomHeaderArrayOutput)
 }
 
-func (i PolicyOriginCustomHeaderArray) ToOutput(ctx context.Context) pulumix.Output[[]PolicyOriginCustomHeader] {
-	return pulumix.Output[[]PolicyOriginCustomHeader]{
-		OutputState: i.ToPolicyOriginCustomHeaderArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type PolicyOriginCustomHeaderOutput struct{ *pulumi.OutputState }
 
 func (PolicyOriginCustomHeaderOutput) ElementType() reflect.Type {
@@ -1137,12 +980,6 @@ func (o PolicyOriginCustomHeaderOutput) ToPolicyOriginCustomHeaderOutput() Polic
 
 func (o PolicyOriginCustomHeaderOutput) ToPolicyOriginCustomHeaderOutputWithContext(ctx context.Context) PolicyOriginCustomHeaderOutput {
 	return o
-}
-
-func (o PolicyOriginCustomHeaderOutput) ToOutput(ctx context.Context) pulumix.Output[PolicyOriginCustomHeader] {
-	return pulumix.Output[PolicyOriginCustomHeader]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The unique name of the whitelist.
@@ -1170,12 +1007,6 @@ func (o PolicyOriginCustomHeaderArrayOutput) ToPolicyOriginCustomHeaderArrayOutp
 
 func (o PolicyOriginCustomHeaderArrayOutput) ToPolicyOriginCustomHeaderArrayOutputWithContext(ctx context.Context) PolicyOriginCustomHeaderArrayOutput {
 	return o
-}
-
-func (o PolicyOriginCustomHeaderArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]PolicyOriginCustomHeader] {
-	return pulumix.Output[[]PolicyOriginCustomHeader]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PolicyOriginCustomHeaderArrayOutput) Index(i pulumi.IntInput) PolicyOriginCustomHeaderOutput {
@@ -1217,12 +1048,6 @@ func (i PolicyOriginGroupArgs) ToPolicyOriginGroupOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyOriginGroupOutput)
 }
 
-func (i PolicyOriginGroupArgs) ToOutput(ctx context.Context) pulumix.Output[PolicyOriginGroup] {
-	return pulumix.Output[PolicyOriginGroup]{
-		OutputState: i.ToPolicyOriginGroupOutputWithContext(ctx).OutputState,
-	}
-}
-
 // PolicyOriginGroupArrayInput is an input type that accepts PolicyOriginGroupArray and PolicyOriginGroupArrayOutput values.
 // You can construct a concrete instance of `PolicyOriginGroupArrayInput` via:
 //
@@ -1248,12 +1073,6 @@ func (i PolicyOriginGroupArray) ToPolicyOriginGroupArrayOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyOriginGroupArrayOutput)
 }
 
-func (i PolicyOriginGroupArray) ToOutput(ctx context.Context) pulumix.Output[[]PolicyOriginGroup] {
-	return pulumix.Output[[]PolicyOriginGroup]{
-		OutputState: i.ToPolicyOriginGroupArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type PolicyOriginGroupOutput struct{ *pulumi.OutputState }
 
 func (PolicyOriginGroupOutput) ElementType() reflect.Type {
@@ -1266,12 +1085,6 @@ func (o PolicyOriginGroupOutput) ToPolicyOriginGroupOutput() PolicyOriginGroupOu
 
 func (o PolicyOriginGroupOutput) ToPolicyOriginGroupOutputWithContext(ctx context.Context) PolicyOriginGroupOutput {
 	return o
-}
-
-func (o PolicyOriginGroupOutput) ToOutput(ctx context.Context) pulumix.Output[PolicyOriginGroup] {
-	return pulumix.Output[PolicyOriginGroup]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PolicyOriginGroupOutput) Label() pulumi.StringOutput {
@@ -1294,12 +1107,6 @@ func (o PolicyOriginGroupArrayOutput) ToPolicyOriginGroupArrayOutput() PolicyOri
 
 func (o PolicyOriginGroupArrayOutput) ToPolicyOriginGroupArrayOutputWithContext(ctx context.Context) PolicyOriginGroupArrayOutput {
 	return o
-}
-
-func (o PolicyOriginGroupArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]PolicyOriginGroup] {
-	return pulumix.Output[[]PolicyOriginGroup]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PolicyOriginGroupArrayOutput) Index(i pulumi.IntInput) PolicyOriginGroupOutput {
@@ -1343,12 +1150,6 @@ func (i PolicyOriginGroupOriginGroupArgs) ToPolicyOriginGroupOriginGroupOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyOriginGroupOriginGroupOutput)
 }
 
-func (i PolicyOriginGroupOriginGroupArgs) ToOutput(ctx context.Context) pulumix.Output[PolicyOriginGroupOriginGroup] {
-	return pulumix.Output[PolicyOriginGroupOriginGroup]{
-		OutputState: i.ToPolicyOriginGroupOriginGroupOutputWithContext(ctx).OutputState,
-	}
-}
-
 // PolicyOriginGroupOriginGroupArrayInput is an input type that accepts PolicyOriginGroupOriginGroupArray and PolicyOriginGroupOriginGroupArrayOutput values.
 // You can construct a concrete instance of `PolicyOriginGroupOriginGroupArrayInput` via:
 //
@@ -1374,12 +1175,6 @@ func (i PolicyOriginGroupOriginGroupArray) ToPolicyOriginGroupOriginGroupArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyOriginGroupOriginGroupArrayOutput)
 }
 
-func (i PolicyOriginGroupOriginGroupArray) ToOutput(ctx context.Context) pulumix.Output[[]PolicyOriginGroupOriginGroup] {
-	return pulumix.Output[[]PolicyOriginGroupOriginGroup]{
-		OutputState: i.ToPolicyOriginGroupOriginGroupArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type PolicyOriginGroupOriginGroupOutput struct{ *pulumi.OutputState }
 
 func (PolicyOriginGroupOriginGroupOutput) ElementType() reflect.Type {
@@ -1392,12 +1187,6 @@ func (o PolicyOriginGroupOriginGroupOutput) ToPolicyOriginGroupOriginGroupOutput
 
 func (o PolicyOriginGroupOriginGroupOutput) ToPolicyOriginGroupOriginGroupOutputWithContext(ctx context.Context) PolicyOriginGroupOriginGroupOutput {
 	return o
-}
-
-func (o PolicyOriginGroupOriginGroupOutput) ToOutput(ctx context.Context) pulumix.Output[PolicyOriginGroupOriginGroup] {
-	return pulumix.Output[PolicyOriginGroupOriginGroup]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The key in the map of origins referencing the origin used for the Web Application Firewall. The origin must already be included in `Origins`. Required when creating the `WafConfig` resource, but is not required upon updating the configuration.
@@ -1421,12 +1210,6 @@ func (o PolicyOriginGroupOriginGroupArrayOutput) ToPolicyOriginGroupOriginGroupA
 
 func (o PolicyOriginGroupOriginGroupArrayOutput) ToPolicyOriginGroupOriginGroupArrayOutputWithContext(ctx context.Context) PolicyOriginGroupOriginGroupArrayOutput {
 	return o
-}
-
-func (o PolicyOriginGroupOriginGroupArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]PolicyOriginGroupOriginGroup] {
-	return pulumix.Output[[]PolicyOriginGroupOriginGroup]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PolicyOriginGroupOriginGroupArrayOutput) Index(i pulumi.IntInput) PolicyOriginGroupOriginGroupOutput {
@@ -1556,12 +1339,6 @@ func (i PolicyPolicyConfigArgs) ToPolicyPolicyConfigOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyPolicyConfigOutput)
 }
 
-func (i PolicyPolicyConfigArgs) ToOutput(ctx context.Context) pulumix.Output[PolicyPolicyConfig] {
-	return pulumix.Output[PolicyPolicyConfig]{
-		OutputState: i.ToPolicyPolicyConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i PolicyPolicyConfigArgs) ToPolicyPolicyConfigPtrOutput() PolicyPolicyConfigPtrOutput {
 	return i.ToPolicyPolicyConfigPtrOutputWithContext(context.Background())
 }
@@ -1603,12 +1380,6 @@ func (i *policyPolicyConfigPtrType) ToPolicyPolicyConfigPtrOutputWithContext(ctx
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyPolicyConfigPtrOutput)
 }
 
-func (i *policyPolicyConfigPtrType) ToOutput(ctx context.Context) pulumix.Output[*PolicyPolicyConfig] {
-	return pulumix.Output[*PolicyPolicyConfig]{
-		OutputState: i.ToPolicyPolicyConfigPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type PolicyPolicyConfigOutput struct{ *pulumi.OutputState }
 
 func (PolicyPolicyConfigOutput) ElementType() reflect.Type {
@@ -1631,12 +1402,6 @@ func (o PolicyPolicyConfigOutput) ToPolicyPolicyConfigPtrOutputWithContext(ctx c
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v PolicyPolicyConfig) *PolicyPolicyConfig {
 		return &v
 	}).(PolicyPolicyConfigPtrOutput)
-}
-
-func (o PolicyPolicyConfigOutput) ToOutput(ctx context.Context) pulumix.Output[PolicyPolicyConfig] {
-	return pulumix.Output[PolicyPolicyConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The OCID of the SSL certificate to use if HTTPS is supported.
@@ -1739,12 +1504,6 @@ func (o PolicyPolicyConfigPtrOutput) ToPolicyPolicyConfigPtrOutput() PolicyPolic
 
 func (o PolicyPolicyConfigPtrOutput) ToPolicyPolicyConfigPtrOutputWithContext(ctx context.Context) PolicyPolicyConfigPtrOutput {
 	return o
-}
-
-func (o PolicyPolicyConfigPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*PolicyPolicyConfig] {
-	return pulumix.Output[*PolicyPolicyConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PolicyPolicyConfigPtrOutput) Elem() PolicyPolicyConfigOutput {
@@ -2006,12 +1765,6 @@ func (i PolicyPolicyConfigHealthChecksArgs) ToPolicyPolicyConfigHealthChecksOutp
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyPolicyConfigHealthChecksOutput)
 }
 
-func (i PolicyPolicyConfigHealthChecksArgs) ToOutput(ctx context.Context) pulumix.Output[PolicyPolicyConfigHealthChecks] {
-	return pulumix.Output[PolicyPolicyConfigHealthChecks]{
-		OutputState: i.ToPolicyPolicyConfigHealthChecksOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i PolicyPolicyConfigHealthChecksArgs) ToPolicyPolicyConfigHealthChecksPtrOutput() PolicyPolicyConfigHealthChecksPtrOutput {
 	return i.ToPolicyPolicyConfigHealthChecksPtrOutputWithContext(context.Background())
 }
@@ -2053,12 +1806,6 @@ func (i *policyPolicyConfigHealthChecksPtrType) ToPolicyPolicyConfigHealthChecks
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyPolicyConfigHealthChecksPtrOutput)
 }
 
-func (i *policyPolicyConfigHealthChecksPtrType) ToOutput(ctx context.Context) pulumix.Output[*PolicyPolicyConfigHealthChecks] {
-	return pulumix.Output[*PolicyPolicyConfigHealthChecks]{
-		OutputState: i.ToPolicyPolicyConfigHealthChecksPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type PolicyPolicyConfigHealthChecksOutput struct{ *pulumi.OutputState }
 
 func (PolicyPolicyConfigHealthChecksOutput) ElementType() reflect.Type {
@@ -2081,12 +1828,6 @@ func (o PolicyPolicyConfigHealthChecksOutput) ToPolicyPolicyConfigHealthChecksPt
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v PolicyPolicyConfigHealthChecks) *PolicyPolicyConfigHealthChecks {
 		return &v
 	}).(PolicyPolicyConfigHealthChecksPtrOutput)
-}
-
-func (o PolicyPolicyConfigHealthChecksOutput) ToOutput(ctx context.Context) pulumix.Output[PolicyPolicyConfigHealthChecks] {
-	return pulumix.Output[PolicyPolicyConfigHealthChecks]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The HTTP response codes that signify a healthy state.
@@ -2165,12 +1906,6 @@ func (o PolicyPolicyConfigHealthChecksPtrOutput) ToPolicyPolicyConfigHealthCheck
 
 func (o PolicyPolicyConfigHealthChecksPtrOutput) ToPolicyPolicyConfigHealthChecksPtrOutputWithContext(ctx context.Context) PolicyPolicyConfigHealthChecksPtrOutput {
 	return o
-}
-
-func (o PolicyPolicyConfigHealthChecksPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*PolicyPolicyConfigHealthChecks] {
-	return pulumix.Output[*PolicyPolicyConfigHealthChecks]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PolicyPolicyConfigHealthChecksPtrOutput) Elem() PolicyPolicyConfigHealthChecksOutput {
@@ -2359,12 +2094,6 @@ func (i PolicyPolicyConfigLoadBalancingMethodArgs) ToPolicyPolicyConfigLoadBalan
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyPolicyConfigLoadBalancingMethodOutput)
 }
 
-func (i PolicyPolicyConfigLoadBalancingMethodArgs) ToOutput(ctx context.Context) pulumix.Output[PolicyPolicyConfigLoadBalancingMethod] {
-	return pulumix.Output[PolicyPolicyConfigLoadBalancingMethod]{
-		OutputState: i.ToPolicyPolicyConfigLoadBalancingMethodOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i PolicyPolicyConfigLoadBalancingMethodArgs) ToPolicyPolicyConfigLoadBalancingMethodPtrOutput() PolicyPolicyConfigLoadBalancingMethodPtrOutput {
 	return i.ToPolicyPolicyConfigLoadBalancingMethodPtrOutputWithContext(context.Background())
 }
@@ -2406,12 +2135,6 @@ func (i *policyPolicyConfigLoadBalancingMethodPtrType) ToPolicyPolicyConfigLoadB
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyPolicyConfigLoadBalancingMethodPtrOutput)
 }
 
-func (i *policyPolicyConfigLoadBalancingMethodPtrType) ToOutput(ctx context.Context) pulumix.Output[*PolicyPolicyConfigLoadBalancingMethod] {
-	return pulumix.Output[*PolicyPolicyConfigLoadBalancingMethod]{
-		OutputState: i.ToPolicyPolicyConfigLoadBalancingMethodPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type PolicyPolicyConfigLoadBalancingMethodOutput struct{ *pulumi.OutputState }
 
 func (PolicyPolicyConfigLoadBalancingMethodOutput) ElementType() reflect.Type {
@@ -2434,12 +2157,6 @@ func (o PolicyPolicyConfigLoadBalancingMethodOutput) ToPolicyPolicyConfigLoadBal
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v PolicyPolicyConfigLoadBalancingMethod) *PolicyPolicyConfigLoadBalancingMethod {
 		return &v
 	}).(PolicyPolicyConfigLoadBalancingMethodPtrOutput)
-}
-
-func (o PolicyPolicyConfigLoadBalancingMethodOutput) ToOutput(ctx context.Context) pulumix.Output[PolicyPolicyConfigLoadBalancingMethod] {
-	return pulumix.Output[PolicyPolicyConfigLoadBalancingMethod]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The domain for which the cookie is set, defaults to WAAS policy domain.
@@ -2480,12 +2197,6 @@ func (o PolicyPolicyConfigLoadBalancingMethodPtrOutput) ToPolicyPolicyConfigLoad
 
 func (o PolicyPolicyConfigLoadBalancingMethodPtrOutput) ToPolicyPolicyConfigLoadBalancingMethodPtrOutputWithContext(ctx context.Context) PolicyPolicyConfigLoadBalancingMethodPtrOutput {
 	return o
-}
-
-func (o PolicyPolicyConfigLoadBalancingMethodPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*PolicyPolicyConfigLoadBalancingMethod] {
-	return pulumix.Output[*PolicyPolicyConfigLoadBalancingMethod]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PolicyPolicyConfigLoadBalancingMethodPtrOutput) Elem() PolicyPolicyConfigLoadBalancingMethodOutput {
@@ -2621,12 +2332,6 @@ func (i PolicyWafConfigArgs) ToPolicyWafConfigOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyWafConfigOutput)
 }
 
-func (i PolicyWafConfigArgs) ToOutput(ctx context.Context) pulumix.Output[PolicyWafConfig] {
-	return pulumix.Output[PolicyWafConfig]{
-		OutputState: i.ToPolicyWafConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i PolicyWafConfigArgs) ToPolicyWafConfigPtrOutput() PolicyWafConfigPtrOutput {
 	return i.ToPolicyWafConfigPtrOutputWithContext(context.Background())
 }
@@ -2668,12 +2373,6 @@ func (i *policyWafConfigPtrType) ToPolicyWafConfigPtrOutputWithContext(ctx conte
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyWafConfigPtrOutput)
 }
 
-func (i *policyWafConfigPtrType) ToOutput(ctx context.Context) pulumix.Output[*PolicyWafConfig] {
-	return pulumix.Output[*PolicyWafConfig]{
-		OutputState: i.ToPolicyWafConfigPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type PolicyWafConfigOutput struct{ *pulumi.OutputState }
 
 func (PolicyWafConfigOutput) ElementType() reflect.Type {
@@ -2696,12 +2395,6 @@ func (o PolicyWafConfigOutput) ToPolicyWafConfigPtrOutputWithContext(ctx context
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v PolicyWafConfig) *PolicyWafConfig {
 		return &v
 	}).(PolicyWafConfigPtrOutput)
-}
-
-func (o PolicyWafConfigOutput) ToOutput(ctx context.Context) pulumix.Output[PolicyWafConfig] {
-	return pulumix.Output[PolicyWafConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The access rules applied to the Web Application Firewall. Access rules allow custom content access policies to be defined and `ALLOW`, `DETECT`, or `BLOCK` actions to be taken on a request when specified criteria are met.
@@ -2778,12 +2471,6 @@ func (o PolicyWafConfigPtrOutput) ToPolicyWafConfigPtrOutput() PolicyWafConfigPt
 
 func (o PolicyWafConfigPtrOutput) ToPolicyWafConfigPtrOutputWithContext(ctx context.Context) PolicyWafConfigPtrOutput {
 	return o
-}
-
-func (o PolicyWafConfigPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*PolicyWafConfig] {
-	return pulumix.Output[*PolicyWafConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PolicyWafConfigPtrOutput) Elem() PolicyWafConfigOutput {
@@ -3027,12 +2714,6 @@ func (i PolicyWafConfigAccessRuleArgs) ToPolicyWafConfigAccessRuleOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyWafConfigAccessRuleOutput)
 }
 
-func (i PolicyWafConfigAccessRuleArgs) ToOutput(ctx context.Context) pulumix.Output[PolicyWafConfigAccessRule] {
-	return pulumix.Output[PolicyWafConfigAccessRule]{
-		OutputState: i.ToPolicyWafConfigAccessRuleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // PolicyWafConfigAccessRuleArrayInput is an input type that accepts PolicyWafConfigAccessRuleArray and PolicyWafConfigAccessRuleArrayOutput values.
 // You can construct a concrete instance of `PolicyWafConfigAccessRuleArrayInput` via:
 //
@@ -3058,12 +2739,6 @@ func (i PolicyWafConfigAccessRuleArray) ToPolicyWafConfigAccessRuleArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyWafConfigAccessRuleArrayOutput)
 }
 
-func (i PolicyWafConfigAccessRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]PolicyWafConfigAccessRule] {
-	return pulumix.Output[[]PolicyWafConfigAccessRule]{
-		OutputState: i.ToPolicyWafConfigAccessRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type PolicyWafConfigAccessRuleOutput struct{ *pulumi.OutputState }
 
 func (PolicyWafConfigAccessRuleOutput) ElementType() reflect.Type {
@@ -3076,12 +2751,6 @@ func (o PolicyWafConfigAccessRuleOutput) ToPolicyWafConfigAccessRuleOutput() Pol
 
 func (o PolicyWafConfigAccessRuleOutput) ToPolicyWafConfigAccessRuleOutputWithContext(ctx context.Context) PolicyWafConfigAccessRuleOutput {
 	return o
-}
-
-func (o PolicyWafConfigAccessRuleOutput) ToOutput(ctx context.Context) pulumix.Output[PolicyWafConfigAccessRule] {
-	return pulumix.Output[PolicyWafConfigAccessRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
@@ -3189,12 +2858,6 @@ func (o PolicyWafConfigAccessRuleArrayOutput) ToPolicyWafConfigAccessRuleArrayOu
 	return o
 }
 
-func (o PolicyWafConfigAccessRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]PolicyWafConfigAccessRule] {
-	return pulumix.Output[[]PolicyWafConfigAccessRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o PolicyWafConfigAccessRuleArrayOutput) Index(i pulumi.IntInput) PolicyWafConfigAccessRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PolicyWafConfigAccessRule {
 		return vs[0].([]PolicyWafConfigAccessRule)[vs[1].(int)]
@@ -3292,12 +2955,6 @@ func (i PolicyWafConfigAccessRuleCriteriaArgs) ToPolicyWafConfigAccessRuleCriter
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyWafConfigAccessRuleCriteriaOutput)
 }
 
-func (i PolicyWafConfigAccessRuleCriteriaArgs) ToOutput(ctx context.Context) pulumix.Output[PolicyWafConfigAccessRuleCriteria] {
-	return pulumix.Output[PolicyWafConfigAccessRuleCriteria]{
-		OutputState: i.ToPolicyWafConfigAccessRuleCriteriaOutputWithContext(ctx).OutputState,
-	}
-}
-
 // PolicyWafConfigAccessRuleCriteriaArrayInput is an input type that accepts PolicyWafConfigAccessRuleCriteriaArray and PolicyWafConfigAccessRuleCriteriaArrayOutput values.
 // You can construct a concrete instance of `PolicyWafConfigAccessRuleCriteriaArrayInput` via:
 //
@@ -3323,12 +2980,6 @@ func (i PolicyWafConfigAccessRuleCriteriaArray) ToPolicyWafConfigAccessRuleCrite
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyWafConfigAccessRuleCriteriaArrayOutput)
 }
 
-func (i PolicyWafConfigAccessRuleCriteriaArray) ToOutput(ctx context.Context) pulumix.Output[[]PolicyWafConfigAccessRuleCriteria] {
-	return pulumix.Output[[]PolicyWafConfigAccessRuleCriteria]{
-		OutputState: i.ToPolicyWafConfigAccessRuleCriteriaArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type PolicyWafConfigAccessRuleCriteriaOutput struct{ *pulumi.OutputState }
 
 func (PolicyWafConfigAccessRuleCriteriaOutput) ElementType() reflect.Type {
@@ -3341,12 +2992,6 @@ func (o PolicyWafConfigAccessRuleCriteriaOutput) ToPolicyWafConfigAccessRuleCrit
 
 func (o PolicyWafConfigAccessRuleCriteriaOutput) ToPolicyWafConfigAccessRuleCriteriaOutputWithContext(ctx context.Context) PolicyWafConfigAccessRuleCriteriaOutput {
 	return o
-}
-
-func (o PolicyWafConfigAccessRuleCriteriaOutput) ToOutput(ctx context.Context) pulumix.Output[PolicyWafConfigAccessRuleCriteria] {
-	return pulumix.Output[PolicyWafConfigAccessRuleCriteria]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The criteria the access rule and JavaScript Challenge uses to determine if action should be taken on a request.
@@ -3403,12 +3048,6 @@ func (o PolicyWafConfigAccessRuleCriteriaArrayOutput) ToPolicyWafConfigAccessRul
 	return o
 }
 
-func (o PolicyWafConfigAccessRuleCriteriaArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]PolicyWafConfigAccessRuleCriteria] {
-	return pulumix.Output[[]PolicyWafConfigAccessRuleCriteria]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o PolicyWafConfigAccessRuleCriteriaArrayOutput) Index(i pulumi.IntInput) PolicyWafConfigAccessRuleCriteriaOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PolicyWafConfigAccessRuleCriteria {
 		return vs[0].([]PolicyWafConfigAccessRuleCriteria)[vs[1].(int)]
@@ -3456,12 +3095,6 @@ func (i PolicyWafConfigAccessRuleResponseHeaderManipulationArgs) ToPolicyWafConf
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyWafConfigAccessRuleResponseHeaderManipulationOutput)
 }
 
-func (i PolicyWafConfigAccessRuleResponseHeaderManipulationArgs) ToOutput(ctx context.Context) pulumix.Output[PolicyWafConfigAccessRuleResponseHeaderManipulation] {
-	return pulumix.Output[PolicyWafConfigAccessRuleResponseHeaderManipulation]{
-		OutputState: i.ToPolicyWafConfigAccessRuleResponseHeaderManipulationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // PolicyWafConfigAccessRuleResponseHeaderManipulationArrayInput is an input type that accepts PolicyWafConfigAccessRuleResponseHeaderManipulationArray and PolicyWafConfigAccessRuleResponseHeaderManipulationArrayOutput values.
 // You can construct a concrete instance of `PolicyWafConfigAccessRuleResponseHeaderManipulationArrayInput` via:
 //
@@ -3487,12 +3120,6 @@ func (i PolicyWafConfigAccessRuleResponseHeaderManipulationArray) ToPolicyWafCon
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyWafConfigAccessRuleResponseHeaderManipulationArrayOutput)
 }
 
-func (i PolicyWafConfigAccessRuleResponseHeaderManipulationArray) ToOutput(ctx context.Context) pulumix.Output[[]PolicyWafConfigAccessRuleResponseHeaderManipulation] {
-	return pulumix.Output[[]PolicyWafConfigAccessRuleResponseHeaderManipulation]{
-		OutputState: i.ToPolicyWafConfigAccessRuleResponseHeaderManipulationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type PolicyWafConfigAccessRuleResponseHeaderManipulationOutput struct{ *pulumi.OutputState }
 
 func (PolicyWafConfigAccessRuleResponseHeaderManipulationOutput) ElementType() reflect.Type {
@@ -3505,12 +3132,6 @@ func (o PolicyWafConfigAccessRuleResponseHeaderManipulationOutput) ToPolicyWafCo
 
 func (o PolicyWafConfigAccessRuleResponseHeaderManipulationOutput) ToPolicyWafConfigAccessRuleResponseHeaderManipulationOutputWithContext(ctx context.Context) PolicyWafConfigAccessRuleResponseHeaderManipulationOutput {
 	return o
-}
-
-func (o PolicyWafConfigAccessRuleResponseHeaderManipulationOutput) ToOutput(ctx context.Context) pulumix.Output[PolicyWafConfigAccessRuleResponseHeaderManipulation] {
-	return pulumix.Output[PolicyWafConfigAccessRuleResponseHeaderManipulation]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
@@ -3540,12 +3161,6 @@ func (o PolicyWafConfigAccessRuleResponseHeaderManipulationArrayOutput) ToPolicy
 
 func (o PolicyWafConfigAccessRuleResponseHeaderManipulationArrayOutput) ToPolicyWafConfigAccessRuleResponseHeaderManipulationArrayOutputWithContext(ctx context.Context) PolicyWafConfigAccessRuleResponseHeaderManipulationArrayOutput {
 	return o
-}
-
-func (o PolicyWafConfigAccessRuleResponseHeaderManipulationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]PolicyWafConfigAccessRuleResponseHeaderManipulation] {
-	return pulumix.Output[[]PolicyWafConfigAccessRuleResponseHeaderManipulation]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PolicyWafConfigAccessRuleResponseHeaderManipulationArrayOutput) Index(i pulumi.IntInput) PolicyWafConfigAccessRuleResponseHeaderManipulationOutput {
@@ -3599,12 +3214,6 @@ func (i PolicyWafConfigAddressRateLimitingArgs) ToPolicyWafConfigAddressRateLimi
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyWafConfigAddressRateLimitingOutput)
 }
 
-func (i PolicyWafConfigAddressRateLimitingArgs) ToOutput(ctx context.Context) pulumix.Output[PolicyWafConfigAddressRateLimiting] {
-	return pulumix.Output[PolicyWafConfigAddressRateLimiting]{
-		OutputState: i.ToPolicyWafConfigAddressRateLimitingOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i PolicyWafConfigAddressRateLimitingArgs) ToPolicyWafConfigAddressRateLimitingPtrOutput() PolicyWafConfigAddressRateLimitingPtrOutput {
 	return i.ToPolicyWafConfigAddressRateLimitingPtrOutputWithContext(context.Background())
 }
@@ -3646,12 +3255,6 @@ func (i *policyWafConfigAddressRateLimitingPtrType) ToPolicyWafConfigAddressRate
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyWafConfigAddressRateLimitingPtrOutput)
 }
 
-func (i *policyWafConfigAddressRateLimitingPtrType) ToOutput(ctx context.Context) pulumix.Output[*PolicyWafConfigAddressRateLimiting] {
-	return pulumix.Output[*PolicyWafConfigAddressRateLimiting]{
-		OutputState: i.ToPolicyWafConfigAddressRateLimitingPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type PolicyWafConfigAddressRateLimitingOutput struct{ *pulumi.OutputState }
 
 func (PolicyWafConfigAddressRateLimitingOutput) ElementType() reflect.Type {
@@ -3674,12 +3277,6 @@ func (o PolicyWafConfigAddressRateLimitingOutput) ToPolicyWafConfigAddressRateLi
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v PolicyWafConfigAddressRateLimiting) *PolicyWafConfigAddressRateLimiting {
 		return &v
 	}).(PolicyWafConfigAddressRateLimitingPtrOutput)
-}
-
-func (o PolicyWafConfigAddressRateLimitingOutput) ToOutput(ctx context.Context) pulumix.Output[PolicyWafConfigAddressRateLimiting] {
-	return pulumix.Output[PolicyWafConfigAddressRateLimiting]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The number of allowed requests per second from one IP address. If unspecified, defaults to `1`.
@@ -3714,12 +3311,6 @@ func (o PolicyWafConfigAddressRateLimitingPtrOutput) ToPolicyWafConfigAddressRat
 
 func (o PolicyWafConfigAddressRateLimitingPtrOutput) ToPolicyWafConfigAddressRateLimitingPtrOutputWithContext(ctx context.Context) PolicyWafConfigAddressRateLimitingPtrOutput {
 	return o
-}
-
-func (o PolicyWafConfigAddressRateLimitingPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*PolicyWafConfigAddressRateLimiting] {
-	return pulumix.Output[*PolicyWafConfigAddressRateLimiting]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PolicyWafConfigAddressRateLimitingPtrOutput) Elem() PolicyWafConfigAddressRateLimitingOutput {
@@ -3835,12 +3426,6 @@ func (i PolicyWafConfigCachingRuleArgs) ToPolicyWafConfigCachingRuleOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyWafConfigCachingRuleOutput)
 }
 
-func (i PolicyWafConfigCachingRuleArgs) ToOutput(ctx context.Context) pulumix.Output[PolicyWafConfigCachingRule] {
-	return pulumix.Output[PolicyWafConfigCachingRule]{
-		OutputState: i.ToPolicyWafConfigCachingRuleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // PolicyWafConfigCachingRuleArrayInput is an input type that accepts PolicyWafConfigCachingRuleArray and PolicyWafConfigCachingRuleArrayOutput values.
 // You can construct a concrete instance of `PolicyWafConfigCachingRuleArrayInput` via:
 //
@@ -3866,12 +3451,6 @@ func (i PolicyWafConfigCachingRuleArray) ToPolicyWafConfigCachingRuleArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyWafConfigCachingRuleArrayOutput)
 }
 
-func (i PolicyWafConfigCachingRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]PolicyWafConfigCachingRule] {
-	return pulumix.Output[[]PolicyWafConfigCachingRule]{
-		OutputState: i.ToPolicyWafConfigCachingRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type PolicyWafConfigCachingRuleOutput struct{ *pulumi.OutputState }
 
 func (PolicyWafConfigCachingRuleOutput) ElementType() reflect.Type {
@@ -3884,12 +3463,6 @@ func (o PolicyWafConfigCachingRuleOutput) ToPolicyWafConfigCachingRuleOutput() P
 
 func (o PolicyWafConfigCachingRuleOutput) ToPolicyWafConfigCachingRuleOutputWithContext(ctx context.Context) PolicyWafConfigCachingRuleOutput {
 	return o
-}
-
-func (o PolicyWafConfigCachingRuleOutput) ToOutput(ctx context.Context) pulumix.Output[PolicyWafConfigCachingRule] {
-	return pulumix.Output[PolicyWafConfigCachingRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
@@ -3942,12 +3515,6 @@ func (o PolicyWafConfigCachingRuleArrayOutput) ToPolicyWafConfigCachingRuleArray
 
 func (o PolicyWafConfigCachingRuleArrayOutput) ToPolicyWafConfigCachingRuleArrayOutputWithContext(ctx context.Context) PolicyWafConfigCachingRuleArrayOutput {
 	return o
-}
-
-func (o PolicyWafConfigCachingRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]PolicyWafConfigCachingRule] {
-	return pulumix.Output[[]PolicyWafConfigCachingRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PolicyWafConfigCachingRuleArrayOutput) Index(i pulumi.IntInput) PolicyWafConfigCachingRuleOutput {
@@ -4043,12 +3610,6 @@ func (i PolicyWafConfigCachingRuleCriteriaArgs) ToPolicyWafConfigCachingRuleCrit
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyWafConfigCachingRuleCriteriaOutput)
 }
 
-func (i PolicyWafConfigCachingRuleCriteriaArgs) ToOutput(ctx context.Context) pulumix.Output[PolicyWafConfigCachingRuleCriteria] {
-	return pulumix.Output[PolicyWafConfigCachingRuleCriteria]{
-		OutputState: i.ToPolicyWafConfigCachingRuleCriteriaOutputWithContext(ctx).OutputState,
-	}
-}
-
 // PolicyWafConfigCachingRuleCriteriaArrayInput is an input type that accepts PolicyWafConfigCachingRuleCriteriaArray and PolicyWafConfigCachingRuleCriteriaArrayOutput values.
 // You can construct a concrete instance of `PolicyWafConfigCachingRuleCriteriaArrayInput` via:
 //
@@ -4074,12 +3635,6 @@ func (i PolicyWafConfigCachingRuleCriteriaArray) ToPolicyWafConfigCachingRuleCri
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyWafConfigCachingRuleCriteriaArrayOutput)
 }
 
-func (i PolicyWafConfigCachingRuleCriteriaArray) ToOutput(ctx context.Context) pulumix.Output[[]PolicyWafConfigCachingRuleCriteria] {
-	return pulumix.Output[[]PolicyWafConfigCachingRuleCriteria]{
-		OutputState: i.ToPolicyWafConfigCachingRuleCriteriaArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type PolicyWafConfigCachingRuleCriteriaOutput struct{ *pulumi.OutputState }
 
 func (PolicyWafConfigCachingRuleCriteriaOutput) ElementType() reflect.Type {
@@ -4092,12 +3647,6 @@ func (o PolicyWafConfigCachingRuleCriteriaOutput) ToPolicyWafConfigCachingRuleCr
 
 func (o PolicyWafConfigCachingRuleCriteriaOutput) ToPolicyWafConfigCachingRuleCriteriaOutputWithContext(ctx context.Context) PolicyWafConfigCachingRuleCriteriaOutput {
 	return o
-}
-
-func (o PolicyWafConfigCachingRuleCriteriaOutput) ToOutput(ctx context.Context) pulumix.Output[PolicyWafConfigCachingRuleCriteria] {
-	return pulumix.Output[PolicyWafConfigCachingRuleCriteria]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The criteria the access rule and JavaScript Challenge uses to determine if action should be taken on a request.
@@ -4147,12 +3696,6 @@ func (o PolicyWafConfigCachingRuleCriteriaArrayOutput) ToPolicyWafConfigCachingR
 
 func (o PolicyWafConfigCachingRuleCriteriaArrayOutput) ToPolicyWafConfigCachingRuleCriteriaArrayOutputWithContext(ctx context.Context) PolicyWafConfigCachingRuleCriteriaArrayOutput {
 	return o
-}
-
-func (o PolicyWafConfigCachingRuleCriteriaArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]PolicyWafConfigCachingRuleCriteria] {
-	return pulumix.Output[[]PolicyWafConfigCachingRuleCriteria]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PolicyWafConfigCachingRuleCriteriaArrayOutput) Index(i pulumi.IntInput) PolicyWafConfigCachingRuleCriteriaOutput {
@@ -4218,12 +3761,6 @@ func (i PolicyWafConfigCaptchaArgs) ToPolicyWafConfigCaptchaOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyWafConfigCaptchaOutput)
 }
 
-func (i PolicyWafConfigCaptchaArgs) ToOutput(ctx context.Context) pulumix.Output[PolicyWafConfigCaptcha] {
-	return pulumix.Output[PolicyWafConfigCaptcha]{
-		OutputState: i.ToPolicyWafConfigCaptchaOutputWithContext(ctx).OutputState,
-	}
-}
-
 // PolicyWafConfigCaptchaArrayInput is an input type that accepts PolicyWafConfigCaptchaArray and PolicyWafConfigCaptchaArrayOutput values.
 // You can construct a concrete instance of `PolicyWafConfigCaptchaArrayInput` via:
 //
@@ -4249,12 +3786,6 @@ func (i PolicyWafConfigCaptchaArray) ToPolicyWafConfigCaptchaArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyWafConfigCaptchaArrayOutput)
 }
 
-func (i PolicyWafConfigCaptchaArray) ToOutput(ctx context.Context) pulumix.Output[[]PolicyWafConfigCaptcha] {
-	return pulumix.Output[[]PolicyWafConfigCaptcha]{
-		OutputState: i.ToPolicyWafConfigCaptchaArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type PolicyWafConfigCaptchaOutput struct{ *pulumi.OutputState }
 
 func (PolicyWafConfigCaptchaOutput) ElementType() reflect.Type {
@@ -4267,12 +3798,6 @@ func (o PolicyWafConfigCaptchaOutput) ToPolicyWafConfigCaptchaOutput() PolicyWaf
 
 func (o PolicyWafConfigCaptchaOutput) ToPolicyWafConfigCaptchaOutputWithContext(ctx context.Context) PolicyWafConfigCaptchaOutput {
 	return o
-}
-
-func (o PolicyWafConfigCaptchaOutput) ToOutput(ctx context.Context) pulumix.Output[PolicyWafConfigCaptcha] {
-	return pulumix.Output[PolicyWafConfigCaptcha]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The text to show when incorrect CAPTCHA text is entered. If unspecified, defaults to `The CAPTCHA was incorrect. Try again.`
@@ -4324,12 +3849,6 @@ func (o PolicyWafConfigCaptchaArrayOutput) ToPolicyWafConfigCaptchaArrayOutputWi
 	return o
 }
 
-func (o PolicyWafConfigCaptchaArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]PolicyWafConfigCaptcha] {
-	return pulumix.Output[[]PolicyWafConfigCaptcha]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o PolicyWafConfigCaptchaArrayOutput) Index(i pulumi.IntInput) PolicyWafConfigCaptchaOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PolicyWafConfigCaptcha {
 		return vs[0].([]PolicyWafConfigCaptcha)[vs[1].(int)]
@@ -4377,12 +3896,6 @@ func (i PolicyWafConfigCustomProtectionRuleArgs) ToPolicyWafConfigCustomProtecti
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyWafConfigCustomProtectionRuleOutput)
 }
 
-func (i PolicyWafConfigCustomProtectionRuleArgs) ToOutput(ctx context.Context) pulumix.Output[PolicyWafConfigCustomProtectionRule] {
-	return pulumix.Output[PolicyWafConfigCustomProtectionRule]{
-		OutputState: i.ToPolicyWafConfigCustomProtectionRuleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // PolicyWafConfigCustomProtectionRuleArrayInput is an input type that accepts PolicyWafConfigCustomProtectionRuleArray and PolicyWafConfigCustomProtectionRuleArrayOutput values.
 // You can construct a concrete instance of `PolicyWafConfigCustomProtectionRuleArrayInput` via:
 //
@@ -4408,12 +3921,6 @@ func (i PolicyWafConfigCustomProtectionRuleArray) ToPolicyWafConfigCustomProtect
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyWafConfigCustomProtectionRuleArrayOutput)
 }
 
-func (i PolicyWafConfigCustomProtectionRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]PolicyWafConfigCustomProtectionRule] {
-	return pulumix.Output[[]PolicyWafConfigCustomProtectionRule]{
-		OutputState: i.ToPolicyWafConfigCustomProtectionRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type PolicyWafConfigCustomProtectionRuleOutput struct{ *pulumi.OutputState }
 
 func (PolicyWafConfigCustomProtectionRuleOutput) ElementType() reflect.Type {
@@ -4426,12 +3933,6 @@ func (o PolicyWafConfigCustomProtectionRuleOutput) ToPolicyWafConfigCustomProtec
 
 func (o PolicyWafConfigCustomProtectionRuleOutput) ToPolicyWafConfigCustomProtectionRuleOutputWithContext(ctx context.Context) PolicyWafConfigCustomProtectionRuleOutput {
 	return o
-}
-
-func (o PolicyWafConfigCustomProtectionRuleOutput) ToOutput(ctx context.Context) pulumix.Output[PolicyWafConfigCustomProtectionRule] {
-	return pulumix.Output[PolicyWafConfigCustomProtectionRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
@@ -4463,12 +3964,6 @@ func (o PolicyWafConfigCustomProtectionRuleArrayOutput) ToPolicyWafConfigCustomP
 
 func (o PolicyWafConfigCustomProtectionRuleArrayOutput) ToPolicyWafConfigCustomProtectionRuleArrayOutputWithContext(ctx context.Context) PolicyWafConfigCustomProtectionRuleArrayOutput {
 	return o
-}
-
-func (o PolicyWafConfigCustomProtectionRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]PolicyWafConfigCustomProtectionRule] {
-	return pulumix.Output[[]PolicyWafConfigCustomProtectionRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PolicyWafConfigCustomProtectionRuleArrayOutput) Index(i pulumi.IntInput) PolicyWafConfigCustomProtectionRuleOutput {
@@ -4514,12 +4009,6 @@ func (i PolicyWafConfigCustomProtectionRuleExclusionArgs) ToPolicyWafConfigCusto
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyWafConfigCustomProtectionRuleExclusionOutput)
 }
 
-func (i PolicyWafConfigCustomProtectionRuleExclusionArgs) ToOutput(ctx context.Context) pulumix.Output[PolicyWafConfigCustomProtectionRuleExclusion] {
-	return pulumix.Output[PolicyWafConfigCustomProtectionRuleExclusion]{
-		OutputState: i.ToPolicyWafConfigCustomProtectionRuleExclusionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // PolicyWafConfigCustomProtectionRuleExclusionArrayInput is an input type that accepts PolicyWafConfigCustomProtectionRuleExclusionArray and PolicyWafConfigCustomProtectionRuleExclusionArrayOutput values.
 // You can construct a concrete instance of `PolicyWafConfigCustomProtectionRuleExclusionArrayInput` via:
 //
@@ -4545,12 +4034,6 @@ func (i PolicyWafConfigCustomProtectionRuleExclusionArray) ToPolicyWafConfigCust
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyWafConfigCustomProtectionRuleExclusionArrayOutput)
 }
 
-func (i PolicyWafConfigCustomProtectionRuleExclusionArray) ToOutput(ctx context.Context) pulumix.Output[[]PolicyWafConfigCustomProtectionRuleExclusion] {
-	return pulumix.Output[[]PolicyWafConfigCustomProtectionRuleExclusion]{
-		OutputState: i.ToPolicyWafConfigCustomProtectionRuleExclusionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type PolicyWafConfigCustomProtectionRuleExclusionOutput struct{ *pulumi.OutputState }
 
 func (PolicyWafConfigCustomProtectionRuleExclusionOutput) ElementType() reflect.Type {
@@ -4563,12 +4046,6 @@ func (o PolicyWafConfigCustomProtectionRuleExclusionOutput) ToPolicyWafConfigCus
 
 func (o PolicyWafConfigCustomProtectionRuleExclusionOutput) ToPolicyWafConfigCustomProtectionRuleExclusionOutputWithContext(ctx context.Context) PolicyWafConfigCustomProtectionRuleExclusionOutput {
 	return o
-}
-
-func (o PolicyWafConfigCustomProtectionRuleExclusionOutput) ToOutput(ctx context.Context) pulumix.Output[PolicyWafConfigCustomProtectionRuleExclusion] {
-	return pulumix.Output[PolicyWafConfigCustomProtectionRuleExclusion]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
@@ -4593,12 +4070,6 @@ func (o PolicyWafConfigCustomProtectionRuleExclusionArrayOutput) ToPolicyWafConf
 
 func (o PolicyWafConfigCustomProtectionRuleExclusionArrayOutput) ToPolicyWafConfigCustomProtectionRuleExclusionArrayOutputWithContext(ctx context.Context) PolicyWafConfigCustomProtectionRuleExclusionArrayOutput {
 	return o
-}
-
-func (o PolicyWafConfigCustomProtectionRuleExclusionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]PolicyWafConfigCustomProtectionRuleExclusion] {
-	return pulumix.Output[[]PolicyWafConfigCustomProtectionRuleExclusion]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PolicyWafConfigCustomProtectionRuleExclusionArrayOutput) Index(i pulumi.IntInput) PolicyWafConfigCustomProtectionRuleExclusionOutput {
@@ -4668,12 +4139,6 @@ func (i PolicyWafConfigDeviceFingerprintChallengeArgs) ToPolicyWafConfigDeviceFi
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyWafConfigDeviceFingerprintChallengeOutput)
 }
 
-func (i PolicyWafConfigDeviceFingerprintChallengeArgs) ToOutput(ctx context.Context) pulumix.Output[PolicyWafConfigDeviceFingerprintChallenge] {
-	return pulumix.Output[PolicyWafConfigDeviceFingerprintChallenge]{
-		OutputState: i.ToPolicyWafConfigDeviceFingerprintChallengeOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i PolicyWafConfigDeviceFingerprintChallengeArgs) ToPolicyWafConfigDeviceFingerprintChallengePtrOutput() PolicyWafConfigDeviceFingerprintChallengePtrOutput {
 	return i.ToPolicyWafConfigDeviceFingerprintChallengePtrOutputWithContext(context.Background())
 }
@@ -4715,12 +4180,6 @@ func (i *policyWafConfigDeviceFingerprintChallengePtrType) ToPolicyWafConfigDevi
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyWafConfigDeviceFingerprintChallengePtrOutput)
 }
 
-func (i *policyWafConfigDeviceFingerprintChallengePtrType) ToOutput(ctx context.Context) pulumix.Output[*PolicyWafConfigDeviceFingerprintChallenge] {
-	return pulumix.Output[*PolicyWafConfigDeviceFingerprintChallenge]{
-		OutputState: i.ToPolicyWafConfigDeviceFingerprintChallengePtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type PolicyWafConfigDeviceFingerprintChallengeOutput struct{ *pulumi.OutputState }
 
 func (PolicyWafConfigDeviceFingerprintChallengeOutput) ElementType() reflect.Type {
@@ -4743,12 +4202,6 @@ func (o PolicyWafConfigDeviceFingerprintChallengeOutput) ToPolicyWafConfigDevice
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v PolicyWafConfigDeviceFingerprintChallenge) *PolicyWafConfigDeviceFingerprintChallenge {
 		return &v
 	}).(PolicyWafConfigDeviceFingerprintChallengePtrOutput)
-}
-
-func (o PolicyWafConfigDeviceFingerprintChallengeOutput) ToOutput(ctx context.Context) pulumix.Output[PolicyWafConfigDeviceFingerprintChallenge] {
-	return pulumix.Output[PolicyWafConfigDeviceFingerprintChallenge]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
@@ -4805,12 +4258,6 @@ func (o PolicyWafConfigDeviceFingerprintChallengePtrOutput) ToPolicyWafConfigDev
 
 func (o PolicyWafConfigDeviceFingerprintChallengePtrOutput) ToPolicyWafConfigDeviceFingerprintChallengePtrOutputWithContext(ctx context.Context) PolicyWafConfigDeviceFingerprintChallengePtrOutput {
 	return o
-}
-
-func (o PolicyWafConfigDeviceFingerprintChallengePtrOutput) ToOutput(ctx context.Context) pulumix.Output[*PolicyWafConfigDeviceFingerprintChallenge] {
-	return pulumix.Output[*PolicyWafConfigDeviceFingerprintChallenge]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PolicyWafConfigDeviceFingerprintChallengePtrOutput) Elem() PolicyWafConfigDeviceFingerprintChallengeOutput {
@@ -4968,12 +4415,6 @@ func (i PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsArgs) ToPolicy
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsOutput)
 }
 
-func (i PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsArgs) ToOutput(ctx context.Context) pulumix.Output[PolicyWafConfigDeviceFingerprintChallengeChallengeSettings] {
-	return pulumix.Output[PolicyWafConfigDeviceFingerprintChallengeChallengeSettings]{
-		OutputState: i.ToPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsArgs) ToPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrOutput() PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrOutput {
 	return i.ToPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrOutputWithContext(context.Background())
 }
@@ -5015,12 +4456,6 @@ func (i *policyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrType) ToPo
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrOutput)
 }
 
-func (i *policyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrType) ToOutput(ctx context.Context) pulumix.Output[*PolicyWafConfigDeviceFingerprintChallengeChallengeSettings] {
-	return pulumix.Output[*PolicyWafConfigDeviceFingerprintChallengeChallengeSettings]{
-		OutputState: i.ToPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsOutput struct{ *pulumi.OutputState }
 
 func (PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsOutput) ElementType() reflect.Type {
@@ -5043,12 +4478,6 @@ func (o PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsOutput) ToPoli
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v PolicyWafConfigDeviceFingerprintChallengeChallengeSettings) *PolicyWafConfigDeviceFingerprintChallengeChallengeSettings {
 		return &v
 	}).(PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrOutput)
-}
-
-func (o PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsOutput) ToOutput(ctx context.Context) pulumix.Output[PolicyWafConfigDeviceFingerprintChallengeChallengeSettings] {
-	return pulumix.Output[PolicyWafConfigDeviceFingerprintChallengeChallengeSettings]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) If `action` is set to `BLOCK`, this specifies how the traffic is blocked when detected as malicious by a protection rule. If unspecified, defaults to `SET_RESPONSE_CODE`.
@@ -5116,12 +4545,6 @@ func (o PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrOutput) ToP
 
 func (o PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrOutput) ToPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrOutputWithContext(ctx context.Context) PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrOutput {
 	return o
-}
-
-func (o PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*PolicyWafConfigDeviceFingerprintChallengeChallengeSettings] {
-	return pulumix.Output[*PolicyWafConfigDeviceFingerprintChallengeChallengeSettings]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrOutput) Elem() PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsOutput {
@@ -5293,12 +4716,6 @@ func (i PolicyWafConfigHumanInteractionChallengeArgs) ToPolicyWafConfigHumanInte
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyWafConfigHumanInteractionChallengeOutput)
 }
 
-func (i PolicyWafConfigHumanInteractionChallengeArgs) ToOutput(ctx context.Context) pulumix.Output[PolicyWafConfigHumanInteractionChallenge] {
-	return pulumix.Output[PolicyWafConfigHumanInteractionChallenge]{
-		OutputState: i.ToPolicyWafConfigHumanInteractionChallengeOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i PolicyWafConfigHumanInteractionChallengeArgs) ToPolicyWafConfigHumanInteractionChallengePtrOutput() PolicyWafConfigHumanInteractionChallengePtrOutput {
 	return i.ToPolicyWafConfigHumanInteractionChallengePtrOutputWithContext(context.Background())
 }
@@ -5340,12 +4757,6 @@ func (i *policyWafConfigHumanInteractionChallengePtrType) ToPolicyWafConfigHuman
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyWafConfigHumanInteractionChallengePtrOutput)
 }
 
-func (i *policyWafConfigHumanInteractionChallengePtrType) ToOutput(ctx context.Context) pulumix.Output[*PolicyWafConfigHumanInteractionChallenge] {
-	return pulumix.Output[*PolicyWafConfigHumanInteractionChallenge]{
-		OutputState: i.ToPolicyWafConfigHumanInteractionChallengePtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type PolicyWafConfigHumanInteractionChallengeOutput struct{ *pulumi.OutputState }
 
 func (PolicyWafConfigHumanInteractionChallengeOutput) ElementType() reflect.Type {
@@ -5368,12 +4779,6 @@ func (o PolicyWafConfigHumanInteractionChallengeOutput) ToPolicyWafConfigHumanIn
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v PolicyWafConfigHumanInteractionChallenge) *PolicyWafConfigHumanInteractionChallenge {
 		return &v
 	}).(PolicyWafConfigHumanInteractionChallengePtrOutput)
-}
-
-func (o PolicyWafConfigHumanInteractionChallengeOutput) ToOutput(ctx context.Context) pulumix.Output[PolicyWafConfigHumanInteractionChallenge] {
-	return pulumix.Output[PolicyWafConfigHumanInteractionChallenge]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
@@ -5442,12 +4847,6 @@ func (o PolicyWafConfigHumanInteractionChallengePtrOutput) ToPolicyWafConfigHuma
 
 func (o PolicyWafConfigHumanInteractionChallengePtrOutput) ToPolicyWafConfigHumanInteractionChallengePtrOutputWithContext(ctx context.Context) PolicyWafConfigHumanInteractionChallengePtrOutput {
 	return o
-}
-
-func (o PolicyWafConfigHumanInteractionChallengePtrOutput) ToOutput(ctx context.Context) pulumix.Output[*PolicyWafConfigHumanInteractionChallenge] {
-	return pulumix.Output[*PolicyWafConfigHumanInteractionChallenge]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PolicyWafConfigHumanInteractionChallengePtrOutput) Elem() PolicyWafConfigHumanInteractionChallengeOutput {
@@ -5625,12 +5024,6 @@ func (i PolicyWafConfigHumanInteractionChallengeChallengeSettingsArgs) ToPolicyW
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyWafConfigHumanInteractionChallengeChallengeSettingsOutput)
 }
 
-func (i PolicyWafConfigHumanInteractionChallengeChallengeSettingsArgs) ToOutput(ctx context.Context) pulumix.Output[PolicyWafConfigHumanInteractionChallengeChallengeSettings] {
-	return pulumix.Output[PolicyWafConfigHumanInteractionChallengeChallengeSettings]{
-		OutputState: i.ToPolicyWafConfigHumanInteractionChallengeChallengeSettingsOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i PolicyWafConfigHumanInteractionChallengeChallengeSettingsArgs) ToPolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrOutput() PolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrOutput {
 	return i.ToPolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrOutputWithContext(context.Background())
 }
@@ -5672,12 +5065,6 @@ func (i *policyWafConfigHumanInteractionChallengeChallengeSettingsPtrType) ToPol
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrOutput)
 }
 
-func (i *policyWafConfigHumanInteractionChallengeChallengeSettingsPtrType) ToOutput(ctx context.Context) pulumix.Output[*PolicyWafConfigHumanInteractionChallengeChallengeSettings] {
-	return pulumix.Output[*PolicyWafConfigHumanInteractionChallengeChallengeSettings]{
-		OutputState: i.ToPolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type PolicyWafConfigHumanInteractionChallengeChallengeSettingsOutput struct{ *pulumi.OutputState }
 
 func (PolicyWafConfigHumanInteractionChallengeChallengeSettingsOutput) ElementType() reflect.Type {
@@ -5700,12 +5087,6 @@ func (o PolicyWafConfigHumanInteractionChallengeChallengeSettingsOutput) ToPolic
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v PolicyWafConfigHumanInteractionChallengeChallengeSettings) *PolicyWafConfigHumanInteractionChallengeChallengeSettings {
 		return &v
 	}).(PolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrOutput)
-}
-
-func (o PolicyWafConfigHumanInteractionChallengeChallengeSettingsOutput) ToOutput(ctx context.Context) pulumix.Output[PolicyWafConfigHumanInteractionChallengeChallengeSettings] {
-	return pulumix.Output[PolicyWafConfigHumanInteractionChallengeChallengeSettings]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) If `action` is set to `BLOCK`, this specifies how the traffic is blocked when detected as malicious by a protection rule. If unspecified, defaults to `SET_RESPONSE_CODE`.
@@ -5769,12 +5150,6 @@ func (o PolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrOutput) ToPo
 
 func (o PolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrOutput) ToPolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrOutputWithContext(ctx context.Context) PolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrOutput {
 	return o
-}
-
-func (o PolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*PolicyWafConfigHumanInteractionChallengeChallengeSettings] {
-	return pulumix.Output[*PolicyWafConfigHumanInteractionChallengeChallengeSettings]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrOutput) Elem() PolicyWafConfigHumanInteractionChallengeChallengeSettingsOutput {
@@ -5920,12 +5295,6 @@ func (i PolicyWafConfigHumanInteractionChallengeSetHttpHeaderArgs) ToPolicyWafCo
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyWafConfigHumanInteractionChallengeSetHttpHeaderOutput)
 }
 
-func (i PolicyWafConfigHumanInteractionChallengeSetHttpHeaderArgs) ToOutput(ctx context.Context) pulumix.Output[PolicyWafConfigHumanInteractionChallengeSetHttpHeader] {
-	return pulumix.Output[PolicyWafConfigHumanInteractionChallengeSetHttpHeader]{
-		OutputState: i.ToPolicyWafConfigHumanInteractionChallengeSetHttpHeaderOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i PolicyWafConfigHumanInteractionChallengeSetHttpHeaderArgs) ToPolicyWafConfigHumanInteractionChallengeSetHttpHeaderPtrOutput() PolicyWafConfigHumanInteractionChallengeSetHttpHeaderPtrOutput {
 	return i.ToPolicyWafConfigHumanInteractionChallengeSetHttpHeaderPtrOutputWithContext(context.Background())
 }
@@ -5967,12 +5336,6 @@ func (i *policyWafConfigHumanInteractionChallengeSetHttpHeaderPtrType) ToPolicyW
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyWafConfigHumanInteractionChallengeSetHttpHeaderPtrOutput)
 }
 
-func (i *policyWafConfigHumanInteractionChallengeSetHttpHeaderPtrType) ToOutput(ctx context.Context) pulumix.Output[*PolicyWafConfigHumanInteractionChallengeSetHttpHeader] {
-	return pulumix.Output[*PolicyWafConfigHumanInteractionChallengeSetHttpHeader]{
-		OutputState: i.ToPolicyWafConfigHumanInteractionChallengeSetHttpHeaderPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type PolicyWafConfigHumanInteractionChallengeSetHttpHeaderOutput struct{ *pulumi.OutputState }
 
 func (PolicyWafConfigHumanInteractionChallengeSetHttpHeaderOutput) ElementType() reflect.Type {
@@ -5995,12 +5358,6 @@ func (o PolicyWafConfigHumanInteractionChallengeSetHttpHeaderOutput) ToPolicyWaf
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v PolicyWafConfigHumanInteractionChallengeSetHttpHeader) *PolicyWafConfigHumanInteractionChallengeSetHttpHeader {
 		return &v
 	}).(PolicyWafConfigHumanInteractionChallengeSetHttpHeaderPtrOutput)
-}
-
-func (o PolicyWafConfigHumanInteractionChallengeSetHttpHeaderOutput) ToOutput(ctx context.Context) pulumix.Output[PolicyWafConfigHumanInteractionChallengeSetHttpHeader] {
-	return pulumix.Output[PolicyWafConfigHumanInteractionChallengeSetHttpHeader]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The unique name of the whitelist.
@@ -6028,12 +5385,6 @@ func (o PolicyWafConfigHumanInteractionChallengeSetHttpHeaderPtrOutput) ToPolicy
 
 func (o PolicyWafConfigHumanInteractionChallengeSetHttpHeaderPtrOutput) ToPolicyWafConfigHumanInteractionChallengeSetHttpHeaderPtrOutputWithContext(ctx context.Context) PolicyWafConfigHumanInteractionChallengeSetHttpHeaderPtrOutput {
 	return o
-}
-
-func (o PolicyWafConfigHumanInteractionChallengeSetHttpHeaderPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*PolicyWafConfigHumanInteractionChallengeSetHttpHeader] {
-	return pulumix.Output[*PolicyWafConfigHumanInteractionChallengeSetHttpHeader]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PolicyWafConfigHumanInteractionChallengeSetHttpHeaderPtrOutput) Elem() PolicyWafConfigHumanInteractionChallengeSetHttpHeaderOutput {
@@ -6134,12 +5485,6 @@ func (i PolicyWafConfigJsChallengeArgs) ToPolicyWafConfigJsChallengeOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyWafConfigJsChallengeOutput)
 }
 
-func (i PolicyWafConfigJsChallengeArgs) ToOutput(ctx context.Context) pulumix.Output[PolicyWafConfigJsChallenge] {
-	return pulumix.Output[PolicyWafConfigJsChallenge]{
-		OutputState: i.ToPolicyWafConfigJsChallengeOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i PolicyWafConfigJsChallengeArgs) ToPolicyWafConfigJsChallengePtrOutput() PolicyWafConfigJsChallengePtrOutput {
 	return i.ToPolicyWafConfigJsChallengePtrOutputWithContext(context.Background())
 }
@@ -6181,12 +5526,6 @@ func (i *policyWafConfigJsChallengePtrType) ToPolicyWafConfigJsChallengePtrOutpu
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyWafConfigJsChallengePtrOutput)
 }
 
-func (i *policyWafConfigJsChallengePtrType) ToOutput(ctx context.Context) pulumix.Output[*PolicyWafConfigJsChallenge] {
-	return pulumix.Output[*PolicyWafConfigJsChallenge]{
-		OutputState: i.ToPolicyWafConfigJsChallengePtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type PolicyWafConfigJsChallengeOutput struct{ *pulumi.OutputState }
 
 func (PolicyWafConfigJsChallengeOutput) ElementType() reflect.Type {
@@ -6209,12 +5548,6 @@ func (o PolicyWafConfigJsChallengeOutput) ToPolicyWafConfigJsChallengePtrOutputW
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v PolicyWafConfigJsChallenge) *PolicyWafConfigJsChallenge {
 		return &v
 	}).(PolicyWafConfigJsChallengePtrOutput)
-}
-
-func (o PolicyWafConfigJsChallengeOutput) ToOutput(ctx context.Context) pulumix.Output[PolicyWafConfigJsChallenge] {
-	return pulumix.Output[PolicyWafConfigJsChallenge]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
@@ -6276,12 +5609,6 @@ func (o PolicyWafConfigJsChallengePtrOutput) ToPolicyWafConfigJsChallengePtrOutp
 
 func (o PolicyWafConfigJsChallengePtrOutput) ToPolicyWafConfigJsChallengePtrOutputWithContext(ctx context.Context) PolicyWafConfigJsChallengePtrOutput {
 	return o
-}
-
-func (o PolicyWafConfigJsChallengePtrOutput) ToOutput(ctx context.Context) pulumix.Output[*PolicyWafConfigJsChallenge] {
-	return pulumix.Output[*PolicyWafConfigJsChallenge]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PolicyWafConfigJsChallengePtrOutput) Elem() PolicyWafConfigJsChallengeOutput {
@@ -6449,12 +5776,6 @@ func (i PolicyWafConfigJsChallengeChallengeSettingsArgs) ToPolicyWafConfigJsChal
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyWafConfigJsChallengeChallengeSettingsOutput)
 }
 
-func (i PolicyWafConfigJsChallengeChallengeSettingsArgs) ToOutput(ctx context.Context) pulumix.Output[PolicyWafConfigJsChallengeChallengeSettings] {
-	return pulumix.Output[PolicyWafConfigJsChallengeChallengeSettings]{
-		OutputState: i.ToPolicyWafConfigJsChallengeChallengeSettingsOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i PolicyWafConfigJsChallengeChallengeSettingsArgs) ToPolicyWafConfigJsChallengeChallengeSettingsPtrOutput() PolicyWafConfigJsChallengeChallengeSettingsPtrOutput {
 	return i.ToPolicyWafConfigJsChallengeChallengeSettingsPtrOutputWithContext(context.Background())
 }
@@ -6496,12 +5817,6 @@ func (i *policyWafConfigJsChallengeChallengeSettingsPtrType) ToPolicyWafConfigJs
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyWafConfigJsChallengeChallengeSettingsPtrOutput)
 }
 
-func (i *policyWafConfigJsChallengeChallengeSettingsPtrType) ToOutput(ctx context.Context) pulumix.Output[*PolicyWafConfigJsChallengeChallengeSettings] {
-	return pulumix.Output[*PolicyWafConfigJsChallengeChallengeSettings]{
-		OutputState: i.ToPolicyWafConfigJsChallengeChallengeSettingsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type PolicyWafConfigJsChallengeChallengeSettingsOutput struct{ *pulumi.OutputState }
 
 func (PolicyWafConfigJsChallengeChallengeSettingsOutput) ElementType() reflect.Type {
@@ -6524,12 +5839,6 @@ func (o PolicyWafConfigJsChallengeChallengeSettingsOutput) ToPolicyWafConfigJsCh
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v PolicyWafConfigJsChallengeChallengeSettings) *PolicyWafConfigJsChallengeChallengeSettings {
 		return &v
 	}).(PolicyWafConfigJsChallengeChallengeSettingsPtrOutput)
-}
-
-func (o PolicyWafConfigJsChallengeChallengeSettingsOutput) ToOutput(ctx context.Context) pulumix.Output[PolicyWafConfigJsChallengeChallengeSettings] {
-	return pulumix.Output[PolicyWafConfigJsChallengeChallengeSettings]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) If `action` is set to `BLOCK`, this specifies how the traffic is blocked when detected as malicious by a protection rule. If unspecified, defaults to `SET_RESPONSE_CODE`.
@@ -6589,12 +5898,6 @@ func (o PolicyWafConfigJsChallengeChallengeSettingsPtrOutput) ToPolicyWafConfigJ
 
 func (o PolicyWafConfigJsChallengeChallengeSettingsPtrOutput) ToPolicyWafConfigJsChallengeChallengeSettingsPtrOutputWithContext(ctx context.Context) PolicyWafConfigJsChallengeChallengeSettingsPtrOutput {
 	return o
-}
-
-func (o PolicyWafConfigJsChallengeChallengeSettingsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*PolicyWafConfigJsChallengeChallengeSettings] {
-	return pulumix.Output[*PolicyWafConfigJsChallengeChallengeSettings]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PolicyWafConfigJsChallengeChallengeSettingsPtrOutput) Elem() PolicyWafConfigJsChallengeChallengeSettingsOutput {
@@ -6788,12 +6091,6 @@ func (i PolicyWafConfigJsChallengeCriteriaArgs) ToPolicyWafConfigJsChallengeCrit
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyWafConfigJsChallengeCriteriaOutput)
 }
 
-func (i PolicyWafConfigJsChallengeCriteriaArgs) ToOutput(ctx context.Context) pulumix.Output[PolicyWafConfigJsChallengeCriteria] {
-	return pulumix.Output[PolicyWafConfigJsChallengeCriteria]{
-		OutputState: i.ToPolicyWafConfigJsChallengeCriteriaOutputWithContext(ctx).OutputState,
-	}
-}
-
 // PolicyWafConfigJsChallengeCriteriaArrayInput is an input type that accepts PolicyWafConfigJsChallengeCriteriaArray and PolicyWafConfigJsChallengeCriteriaArrayOutput values.
 // You can construct a concrete instance of `PolicyWafConfigJsChallengeCriteriaArrayInput` via:
 //
@@ -6819,12 +6116,6 @@ func (i PolicyWafConfigJsChallengeCriteriaArray) ToPolicyWafConfigJsChallengeCri
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyWafConfigJsChallengeCriteriaArrayOutput)
 }
 
-func (i PolicyWafConfigJsChallengeCriteriaArray) ToOutput(ctx context.Context) pulumix.Output[[]PolicyWafConfigJsChallengeCriteria] {
-	return pulumix.Output[[]PolicyWafConfigJsChallengeCriteria]{
-		OutputState: i.ToPolicyWafConfigJsChallengeCriteriaArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type PolicyWafConfigJsChallengeCriteriaOutput struct{ *pulumi.OutputState }
 
 func (PolicyWafConfigJsChallengeCriteriaOutput) ElementType() reflect.Type {
@@ -6837,12 +6128,6 @@ func (o PolicyWafConfigJsChallengeCriteriaOutput) ToPolicyWafConfigJsChallengeCr
 
 func (o PolicyWafConfigJsChallengeCriteriaOutput) ToPolicyWafConfigJsChallengeCriteriaOutputWithContext(ctx context.Context) PolicyWafConfigJsChallengeCriteriaOutput {
 	return o
-}
-
-func (o PolicyWafConfigJsChallengeCriteriaOutput) ToOutput(ctx context.Context) pulumix.Output[PolicyWafConfigJsChallengeCriteria] {
-	return pulumix.Output[PolicyWafConfigJsChallengeCriteria]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The criteria the access rule and JavaScript Challenge uses to determine if action should be taken on a request.
@@ -6899,12 +6184,6 @@ func (o PolicyWafConfigJsChallengeCriteriaArrayOutput) ToPolicyWafConfigJsChalle
 	return o
 }
 
-func (o PolicyWafConfigJsChallengeCriteriaArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]PolicyWafConfigJsChallengeCriteria] {
-	return pulumix.Output[[]PolicyWafConfigJsChallengeCriteria]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o PolicyWafConfigJsChallengeCriteriaArrayOutput) Index(i pulumi.IntInput) PolicyWafConfigJsChallengeCriteriaOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PolicyWafConfigJsChallengeCriteria {
 		return vs[0].([]PolicyWafConfigJsChallengeCriteria)[vs[1].(int)]
@@ -6954,12 +6233,6 @@ func (i PolicyWafConfigJsChallengeSetHttpHeaderArgs) ToPolicyWafConfigJsChalleng
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyWafConfigJsChallengeSetHttpHeaderOutput)
 }
 
-func (i PolicyWafConfigJsChallengeSetHttpHeaderArgs) ToOutput(ctx context.Context) pulumix.Output[PolicyWafConfigJsChallengeSetHttpHeader] {
-	return pulumix.Output[PolicyWafConfigJsChallengeSetHttpHeader]{
-		OutputState: i.ToPolicyWafConfigJsChallengeSetHttpHeaderOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i PolicyWafConfigJsChallengeSetHttpHeaderArgs) ToPolicyWafConfigJsChallengeSetHttpHeaderPtrOutput() PolicyWafConfigJsChallengeSetHttpHeaderPtrOutput {
 	return i.ToPolicyWafConfigJsChallengeSetHttpHeaderPtrOutputWithContext(context.Background())
 }
@@ -7001,12 +6274,6 @@ func (i *policyWafConfigJsChallengeSetHttpHeaderPtrType) ToPolicyWafConfigJsChal
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyWafConfigJsChallengeSetHttpHeaderPtrOutput)
 }
 
-func (i *policyWafConfigJsChallengeSetHttpHeaderPtrType) ToOutput(ctx context.Context) pulumix.Output[*PolicyWafConfigJsChallengeSetHttpHeader] {
-	return pulumix.Output[*PolicyWafConfigJsChallengeSetHttpHeader]{
-		OutputState: i.ToPolicyWafConfigJsChallengeSetHttpHeaderPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type PolicyWafConfigJsChallengeSetHttpHeaderOutput struct{ *pulumi.OutputState }
 
 func (PolicyWafConfigJsChallengeSetHttpHeaderOutput) ElementType() reflect.Type {
@@ -7029,12 +6296,6 @@ func (o PolicyWafConfigJsChallengeSetHttpHeaderOutput) ToPolicyWafConfigJsChalle
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v PolicyWafConfigJsChallengeSetHttpHeader) *PolicyWafConfigJsChallengeSetHttpHeader {
 		return &v
 	}).(PolicyWafConfigJsChallengeSetHttpHeaderPtrOutput)
-}
-
-func (o PolicyWafConfigJsChallengeSetHttpHeaderOutput) ToOutput(ctx context.Context) pulumix.Output[PolicyWafConfigJsChallengeSetHttpHeader] {
-	return pulumix.Output[PolicyWafConfigJsChallengeSetHttpHeader]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The unique name of the whitelist.
@@ -7062,12 +6323,6 @@ func (o PolicyWafConfigJsChallengeSetHttpHeaderPtrOutput) ToPolicyWafConfigJsCha
 
 func (o PolicyWafConfigJsChallengeSetHttpHeaderPtrOutput) ToPolicyWafConfigJsChallengeSetHttpHeaderPtrOutputWithContext(ctx context.Context) PolicyWafConfigJsChallengeSetHttpHeaderPtrOutput {
 	return o
-}
-
-func (o PolicyWafConfigJsChallengeSetHttpHeaderPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*PolicyWafConfigJsChallengeSetHttpHeader] {
-	return pulumix.Output[*PolicyWafConfigJsChallengeSetHttpHeader]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PolicyWafConfigJsChallengeSetHttpHeaderPtrOutput) Elem() PolicyWafConfigJsChallengeSetHttpHeaderOutput {
@@ -7232,12 +6487,6 @@ func (i PolicyWafConfigProtectionSettingsArgs) ToPolicyWafConfigProtectionSettin
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyWafConfigProtectionSettingsOutput)
 }
 
-func (i PolicyWafConfigProtectionSettingsArgs) ToOutput(ctx context.Context) pulumix.Output[PolicyWafConfigProtectionSettings] {
-	return pulumix.Output[PolicyWafConfigProtectionSettings]{
-		OutputState: i.ToPolicyWafConfigProtectionSettingsOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i PolicyWafConfigProtectionSettingsArgs) ToPolicyWafConfigProtectionSettingsPtrOutput() PolicyWafConfigProtectionSettingsPtrOutput {
 	return i.ToPolicyWafConfigProtectionSettingsPtrOutputWithContext(context.Background())
 }
@@ -7279,12 +6528,6 @@ func (i *policyWafConfigProtectionSettingsPtrType) ToPolicyWafConfigProtectionSe
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyWafConfigProtectionSettingsPtrOutput)
 }
 
-func (i *policyWafConfigProtectionSettingsPtrType) ToOutput(ctx context.Context) pulumix.Output[*PolicyWafConfigProtectionSettings] {
-	return pulumix.Output[*PolicyWafConfigProtectionSettings]{
-		OutputState: i.ToPolicyWafConfigProtectionSettingsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type PolicyWafConfigProtectionSettingsOutput struct{ *pulumi.OutputState }
 
 func (PolicyWafConfigProtectionSettingsOutput) ElementType() reflect.Type {
@@ -7307,12 +6550,6 @@ func (o PolicyWafConfigProtectionSettingsOutput) ToPolicyWafConfigProtectionSett
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v PolicyWafConfigProtectionSettings) *PolicyWafConfigProtectionSettings {
 		return &v
 	}).(PolicyWafConfigProtectionSettingsPtrOutput)
-}
-
-func (o PolicyWafConfigProtectionSettingsOutput) ToOutput(ctx context.Context) pulumix.Output[PolicyWafConfigProtectionSettings] {
-	return pulumix.Output[PolicyWafConfigProtectionSettings]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The list of allowed HTTP methods. If unspecified, default to `[OPTIONS, GET, HEAD, POST]`. This setting only applies if a corresponding protection rule is enabled, such as the "Restrict HTTP Request Methods" rule (key: 911100).
@@ -7416,12 +6653,6 @@ func (o PolicyWafConfigProtectionSettingsPtrOutput) ToPolicyWafConfigProtectionS
 
 func (o PolicyWafConfigProtectionSettingsPtrOutput) ToPolicyWafConfigProtectionSettingsPtrOutputWithContext(ctx context.Context) PolicyWafConfigProtectionSettingsPtrOutput {
 	return o
-}
-
-func (o PolicyWafConfigProtectionSettingsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*PolicyWafConfigProtectionSettings] {
-	return pulumix.Output[*PolicyWafConfigProtectionSettings]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PolicyWafConfigProtectionSettingsPtrOutput) Elem() PolicyWafConfigProtectionSettingsOutput {
@@ -7635,12 +6866,6 @@ func (i PolicyWafConfigWhitelistArgs) ToPolicyWafConfigWhitelistOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyWafConfigWhitelistOutput)
 }
 
-func (i PolicyWafConfigWhitelistArgs) ToOutput(ctx context.Context) pulumix.Output[PolicyWafConfigWhitelist] {
-	return pulumix.Output[PolicyWafConfigWhitelist]{
-		OutputState: i.ToPolicyWafConfigWhitelistOutputWithContext(ctx).OutputState,
-	}
-}
-
 // PolicyWafConfigWhitelistArrayInput is an input type that accepts PolicyWafConfigWhitelistArray and PolicyWafConfigWhitelistArrayOutput values.
 // You can construct a concrete instance of `PolicyWafConfigWhitelistArrayInput` via:
 //
@@ -7666,12 +6891,6 @@ func (i PolicyWafConfigWhitelistArray) ToPolicyWafConfigWhitelistArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyWafConfigWhitelistArrayOutput)
 }
 
-func (i PolicyWafConfigWhitelistArray) ToOutput(ctx context.Context) pulumix.Output[[]PolicyWafConfigWhitelist] {
-	return pulumix.Output[[]PolicyWafConfigWhitelist]{
-		OutputState: i.ToPolicyWafConfigWhitelistArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type PolicyWafConfigWhitelistOutput struct{ *pulumi.OutputState }
 
 func (PolicyWafConfigWhitelistOutput) ElementType() reflect.Type {
@@ -7684,12 +6903,6 @@ func (o PolicyWafConfigWhitelistOutput) ToPolicyWafConfigWhitelistOutput() Polic
 
 func (o PolicyWafConfigWhitelistOutput) ToPolicyWafConfigWhitelistOutputWithContext(ctx context.Context) PolicyWafConfigWhitelistOutput {
 	return o
-}
-
-func (o PolicyWafConfigWhitelistOutput) ToOutput(ctx context.Context) pulumix.Output[PolicyWafConfigWhitelist] {
-	return pulumix.Output[PolicyWafConfigWhitelist]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of IP address lists to include in the whitelist.
@@ -7722,12 +6935,6 @@ func (o PolicyWafConfigWhitelistArrayOutput) ToPolicyWafConfigWhitelistArrayOutp
 
 func (o PolicyWafConfigWhitelistArrayOutput) ToPolicyWafConfigWhitelistArrayOutputWithContext(ctx context.Context) PolicyWafConfigWhitelistArrayOutput {
 	return o
-}
-
-func (o PolicyWafConfigWhitelistArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]PolicyWafConfigWhitelist] {
-	return pulumix.Output[[]PolicyWafConfigWhitelist]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PolicyWafConfigWhitelistArrayOutput) Index(i pulumi.IntInput) PolicyWafConfigWhitelistOutput {
@@ -7779,12 +6986,6 @@ func (i ProtectionRuleExclusionArgs) ToProtectionRuleExclusionOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(ProtectionRuleExclusionOutput)
 }
 
-func (i ProtectionRuleExclusionArgs) ToOutput(ctx context.Context) pulumix.Output[ProtectionRuleExclusion] {
-	return pulumix.Output[ProtectionRuleExclusion]{
-		OutputState: i.ToProtectionRuleExclusionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ProtectionRuleExclusionArrayInput is an input type that accepts ProtectionRuleExclusionArray and ProtectionRuleExclusionArrayOutput values.
 // You can construct a concrete instance of `ProtectionRuleExclusionArrayInput` via:
 //
@@ -7810,12 +7011,6 @@ func (i ProtectionRuleExclusionArray) ToProtectionRuleExclusionArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(ProtectionRuleExclusionArrayOutput)
 }
 
-func (i ProtectionRuleExclusionArray) ToOutput(ctx context.Context) pulumix.Output[[]ProtectionRuleExclusion] {
-	return pulumix.Output[[]ProtectionRuleExclusion]{
-		OutputState: i.ToProtectionRuleExclusionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ProtectionRuleExclusionOutput struct{ *pulumi.OutputState }
 
 func (ProtectionRuleExclusionOutput) ElementType() reflect.Type {
@@ -7828,12 +7023,6 @@ func (o ProtectionRuleExclusionOutput) ToProtectionRuleExclusionOutput() Protect
 
 func (o ProtectionRuleExclusionOutput) ToProtectionRuleExclusionOutputWithContext(ctx context.Context) ProtectionRuleExclusionOutput {
 	return o
-}
-
-func (o ProtectionRuleExclusionOutput) ToOutput(ctx context.Context) pulumix.Output[ProtectionRuleExclusion] {
-	return pulumix.Output[ProtectionRuleExclusion]{
-		OutputState: o.OutputState,
-	}
 }
 
 // An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
@@ -7863,12 +7052,6 @@ func (o ProtectionRuleExclusionArrayOutput) ToProtectionRuleExclusionArrayOutput
 	return o
 }
 
-func (o ProtectionRuleExclusionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ProtectionRuleExclusion] {
-	return pulumix.Output[[]ProtectionRuleExclusion]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o ProtectionRuleExclusionArrayOutput) Index(i pulumi.IntInput) ProtectionRuleExclusionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ProtectionRuleExclusion {
 		return vs[0].([]ProtectionRuleExclusion)[vs[1].(int)]
@@ -7877,23 +7060,23 @@ func (o ProtectionRuleExclusionArrayOutput) Index(i pulumi.IntInput) ProtectionR
 
 type GetAddressListsAddressList struct {
 	// The total number of unique IP addresses in the address list.
-	AddressCount float64 `pulumi:"addressCount"`
+	AddressCount *float64 `pulumi:"addressCount"`
 	// The list of IP addresses or CIDR notations.
 	Addresses []string `pulumi:"addresses"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This number is generated when the compartment is created.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The user-friendly name of the address list.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the address list.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The current lifecycle state of the address list.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the address list was created, expressed in RFC 3339 timestamp format.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 }
 
 // GetAddressListsAddressListInput is an input type that accepts GetAddressListsAddressListArgs and GetAddressListsAddressListOutput values.
@@ -7909,23 +7092,23 @@ type GetAddressListsAddressListInput interface {
 
 type GetAddressListsAddressListArgs struct {
 	// The total number of unique IP addresses in the address list.
-	AddressCount pulumi.Float64Input `pulumi:"addressCount"`
+	AddressCount pulumi.Float64PtrInput `pulumi:"addressCount"`
 	// The list of IP addresses or CIDR notations.
 	Addresses pulumi.StringArrayInput `pulumi:"addresses"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This number is generated when the compartment is created.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// The user-friendly name of the address list.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the address list.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// The current lifecycle state of the address list.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The date and time the address list was created, expressed in RFC 3339 timestamp format.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 }
 
 func (GetAddressListsAddressListArgs) ElementType() reflect.Type {
@@ -7938,12 +7121,6 @@ func (i GetAddressListsAddressListArgs) ToGetAddressListsAddressListOutput() Get
 
 func (i GetAddressListsAddressListArgs) ToGetAddressListsAddressListOutputWithContext(ctx context.Context) GetAddressListsAddressListOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddressListsAddressListOutput)
-}
-
-func (i GetAddressListsAddressListArgs) ToOutput(ctx context.Context) pulumix.Output[GetAddressListsAddressList] {
-	return pulumix.Output[GetAddressListsAddressList]{
-		OutputState: i.ToGetAddressListsAddressListOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAddressListsAddressListArrayInput is an input type that accepts GetAddressListsAddressListArray and GetAddressListsAddressListArrayOutput values.
@@ -7971,12 +7148,6 @@ func (i GetAddressListsAddressListArray) ToGetAddressListsAddressListArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddressListsAddressListArrayOutput)
 }
 
-func (i GetAddressListsAddressListArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAddressListsAddressList] {
-	return pulumix.Output[[]GetAddressListsAddressList]{
-		OutputState: i.ToGetAddressListsAddressListArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAddressListsAddressListOutput struct{ *pulumi.OutputState }
 
 func (GetAddressListsAddressListOutput) ElementType() reflect.Type {
@@ -7991,15 +7162,9 @@ func (o GetAddressListsAddressListOutput) ToGetAddressListsAddressListOutputWith
 	return o
 }
 
-func (o GetAddressListsAddressListOutput) ToOutput(ctx context.Context) pulumix.Output[GetAddressListsAddressList] {
-	return pulumix.Output[GetAddressListsAddressList]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The total number of unique IP addresses in the address list.
-func (o GetAddressListsAddressListOutput) AddressCount() pulumi.Float64Output {
-	return o.ApplyT(func(v GetAddressListsAddressList) float64 { return v.AddressCount }).(pulumi.Float64Output)
+func (o GetAddressListsAddressListOutput) AddressCount() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetAddressListsAddressList) *float64 { return v.AddressCount }).(pulumi.Float64PtrOutput)
 }
 
 // The list of IP addresses or CIDR notations.
@@ -8008,8 +7173,8 @@ func (o GetAddressListsAddressListOutput) Addresses() pulumi.StringArrayOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This number is generated when the compartment is created.
-func (o GetAddressListsAddressListOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAddressListsAddressList) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetAddressListsAddressListOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAddressListsAddressList) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -8018,8 +7183,8 @@ func (o GetAddressListsAddressListOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // The user-friendly name of the address list.
-func (o GetAddressListsAddressListOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAddressListsAddressList) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetAddressListsAddressListOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAddressListsAddressList) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -8028,18 +7193,18 @@ func (o GetAddressListsAddressListOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the address list.
-func (o GetAddressListsAddressListOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAddressListsAddressList) string { return v.Id }).(pulumi.StringOutput)
+func (o GetAddressListsAddressListOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAddressListsAddressList) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The current lifecycle state of the address list.
-func (o GetAddressListsAddressListOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAddressListsAddressList) string { return v.State }).(pulumi.StringOutput)
+func (o GetAddressListsAddressListOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAddressListsAddressList) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the address list was created, expressed in RFC 3339 timestamp format.
-func (o GetAddressListsAddressListOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAddressListsAddressList) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetAddressListsAddressListOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAddressListsAddressList) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 type GetAddressListsAddressListArrayOutput struct{ *pulumi.OutputState }
@@ -8054,12 +7219,6 @@ func (o GetAddressListsAddressListArrayOutput) ToGetAddressListsAddressListArray
 
 func (o GetAddressListsAddressListArrayOutput) ToGetAddressListsAddressListArrayOutputWithContext(ctx context.Context) GetAddressListsAddressListArrayOutput {
 	return o
-}
-
-func (o GetAddressListsAddressListArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAddressListsAddressList] {
-	return pulumix.Output[[]GetAddressListsAddressList]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAddressListsAddressListArrayOutput) Index(i pulumi.IntInput) GetAddressListsAddressListOutput {
@@ -8103,12 +7262,6 @@ func (i GetAddressListsFilterArgs) ToGetAddressListsFilterOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddressListsFilterOutput)
 }
 
-func (i GetAddressListsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetAddressListsFilter] {
-	return pulumix.Output[GetAddressListsFilter]{
-		OutputState: i.ToGetAddressListsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAddressListsFilterArrayInput is an input type that accepts GetAddressListsFilterArray and GetAddressListsFilterArrayOutput values.
 // You can construct a concrete instance of `GetAddressListsFilterArrayInput` via:
 //
@@ -8134,12 +7287,6 @@ func (i GetAddressListsFilterArray) ToGetAddressListsFilterArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddressListsFilterArrayOutput)
 }
 
-func (i GetAddressListsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAddressListsFilter] {
-	return pulumix.Output[[]GetAddressListsFilter]{
-		OutputState: i.ToGetAddressListsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAddressListsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetAddressListsFilterOutput) ElementType() reflect.Type {
@@ -8152,12 +7299,6 @@ func (o GetAddressListsFilterOutput) ToGetAddressListsFilterOutput() GetAddressL
 
 func (o GetAddressListsFilterOutput) ToGetAddressListsFilterOutputWithContext(ctx context.Context) GetAddressListsFilterOutput {
 	return o
-}
-
-func (o GetAddressListsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetAddressListsFilter] {
-	return pulumix.Output[GetAddressListsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAddressListsFilterOutput) Name() pulumi.StringOutput {
@@ -8186,12 +7327,6 @@ func (o GetAddressListsFilterArrayOutput) ToGetAddressListsFilterArrayOutputWith
 	return o
 }
 
-func (o GetAddressListsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAddressListsFilter] {
-	return pulumix.Output[[]GetAddressListsFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAddressListsFilterArrayOutput) Index(i pulumi.IntInput) GetAddressListsFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAddressListsFilter {
 		return vs[0].([]GetAddressListsFilter)[vs[1].(int)]
@@ -8200,11 +7335,11 @@ func (o GetAddressListsFilterArrayOutput) Index(i pulumi.IntInput) GetAddressLis
 
 type GetCertificateExtension struct {
 	// The critical flag of the extension. Critical extensions must be processed, non-critical extensions can be ignored.
-	IsCritical bool `pulumi:"isCritical"`
+	IsCritical *bool `pulumi:"isCritical"`
 	// The certificate extension name.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The certificate extension value.
-	Value string `pulumi:"value"`
+	Value *string `pulumi:"value"`
 }
 
 // GetCertificateExtensionInput is an input type that accepts GetCertificateExtensionArgs and GetCertificateExtensionOutput values.
@@ -8220,11 +7355,11 @@ type GetCertificateExtensionInput interface {
 
 type GetCertificateExtensionArgs struct {
 	// The critical flag of the extension. Critical extensions must be processed, non-critical extensions can be ignored.
-	IsCritical pulumi.BoolInput `pulumi:"isCritical"`
+	IsCritical pulumi.BoolPtrInput `pulumi:"isCritical"`
 	// The certificate extension name.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// The certificate extension value.
-	Value pulumi.StringInput `pulumi:"value"`
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (GetCertificateExtensionArgs) ElementType() reflect.Type {
@@ -8237,12 +7372,6 @@ func (i GetCertificateExtensionArgs) ToGetCertificateExtensionOutput() GetCertif
 
 func (i GetCertificateExtensionArgs) ToGetCertificateExtensionOutputWithContext(ctx context.Context) GetCertificateExtensionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateExtensionOutput)
-}
-
-func (i GetCertificateExtensionArgs) ToOutput(ctx context.Context) pulumix.Output[GetCertificateExtension] {
-	return pulumix.Output[GetCertificateExtension]{
-		OutputState: i.ToGetCertificateExtensionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetCertificateExtensionArrayInput is an input type that accepts GetCertificateExtensionArray and GetCertificateExtensionArrayOutput values.
@@ -8270,12 +7399,6 @@ func (i GetCertificateExtensionArray) ToGetCertificateExtensionArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateExtensionArrayOutput)
 }
 
-func (i GetCertificateExtensionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateExtension] {
-	return pulumix.Output[[]GetCertificateExtension]{
-		OutputState: i.ToGetCertificateExtensionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCertificateExtensionOutput struct{ *pulumi.OutputState }
 
 func (GetCertificateExtensionOutput) ElementType() reflect.Type {
@@ -8290,25 +7413,19 @@ func (o GetCertificateExtensionOutput) ToGetCertificateExtensionOutputWithContex
 	return o
 }
 
-func (o GetCertificateExtensionOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificateExtension] {
-	return pulumix.Output[GetCertificateExtension]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The critical flag of the extension. Critical extensions must be processed, non-critical extensions can be ignored.
-func (o GetCertificateExtensionOutput) IsCritical() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetCertificateExtension) bool { return v.IsCritical }).(pulumi.BoolOutput)
+func (o GetCertificateExtensionOutput) IsCritical() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetCertificateExtension) *bool { return v.IsCritical }).(pulumi.BoolPtrOutput)
 }
 
 // The certificate extension name.
-func (o GetCertificateExtensionOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateExtension) string { return v.Name }).(pulumi.StringOutput)
+func (o GetCertificateExtensionOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateExtension) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The certificate extension value.
-func (o GetCertificateExtensionOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateExtension) string { return v.Value }).(pulumi.StringOutput)
+func (o GetCertificateExtensionOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateExtension) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
 
 type GetCertificateExtensionArrayOutput struct{ *pulumi.OutputState }
@@ -8325,12 +7442,6 @@ func (o GetCertificateExtensionArrayOutput) ToGetCertificateExtensionArrayOutput
 	return o
 }
 
-func (o GetCertificateExtensionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateExtension] {
-	return pulumix.Output[[]GetCertificateExtension]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCertificateExtensionArrayOutput) Index(i pulumi.IntInput) GetCertificateExtensionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCertificateExtension {
 		return vs[0].([]GetCertificateExtension)[vs[1].(int)]
@@ -8339,19 +7450,19 @@ func (o GetCertificateExtensionArrayOutput) Index(i pulumi.IntInput) GetCertific
 
 type GetCertificateIssuerName struct {
 	// The fully qualified domain name used for DNS lookups of the server.
-	CommonName string `pulumi:"commonName"`
+	CommonName *string `pulumi:"commonName"`
 	// ISO 3166-1 alpha-2 code of the country where the organization is located. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/).
-	Country string `pulumi:"country"`
+	Country *string `pulumi:"country"`
 	// The email address of the server's administrator.
-	EmailAddress string `pulumi:"emailAddress"`
+	EmailAddress *string `pulumi:"emailAddress"`
 	// The city in which the organization is located.
-	Locality string `pulumi:"locality"`
+	Locality *string `pulumi:"locality"`
 	// The organization name.
-	Organization string `pulumi:"organization"`
+	Organization *string `pulumi:"organization"`
 	// The field to differentiate between divisions within an organization.
-	OrganizationalUnit string `pulumi:"organizationalUnit"`
+	OrganizationalUnit *string `pulumi:"organizationalUnit"`
 	// The province where the organization is located.
-	StateProvince string `pulumi:"stateProvince"`
+	StateProvince *string `pulumi:"stateProvince"`
 }
 
 // GetCertificateIssuerNameInput is an input type that accepts GetCertificateIssuerNameArgs and GetCertificateIssuerNameOutput values.
@@ -8367,19 +7478,19 @@ type GetCertificateIssuerNameInput interface {
 
 type GetCertificateIssuerNameArgs struct {
 	// The fully qualified domain name used for DNS lookups of the server.
-	CommonName pulumi.StringInput `pulumi:"commonName"`
+	CommonName pulumi.StringPtrInput `pulumi:"commonName"`
 	// ISO 3166-1 alpha-2 code of the country where the organization is located. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/).
-	Country pulumi.StringInput `pulumi:"country"`
+	Country pulumi.StringPtrInput `pulumi:"country"`
 	// The email address of the server's administrator.
-	EmailAddress pulumi.StringInput `pulumi:"emailAddress"`
+	EmailAddress pulumi.StringPtrInput `pulumi:"emailAddress"`
 	// The city in which the organization is located.
-	Locality pulumi.StringInput `pulumi:"locality"`
+	Locality pulumi.StringPtrInput `pulumi:"locality"`
 	// The organization name.
-	Organization pulumi.StringInput `pulumi:"organization"`
+	Organization pulumi.StringPtrInput `pulumi:"organization"`
 	// The field to differentiate between divisions within an organization.
-	OrganizationalUnit pulumi.StringInput `pulumi:"organizationalUnit"`
+	OrganizationalUnit pulumi.StringPtrInput `pulumi:"organizationalUnit"`
 	// The province where the organization is located.
-	StateProvince pulumi.StringInput `pulumi:"stateProvince"`
+	StateProvince pulumi.StringPtrInput `pulumi:"stateProvince"`
 }
 
 func (GetCertificateIssuerNameArgs) ElementType() reflect.Type {
@@ -8392,12 +7503,6 @@ func (i GetCertificateIssuerNameArgs) ToGetCertificateIssuerNameOutput() GetCert
 
 func (i GetCertificateIssuerNameArgs) ToGetCertificateIssuerNameOutputWithContext(ctx context.Context) GetCertificateIssuerNameOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateIssuerNameOutput)
-}
-
-func (i GetCertificateIssuerNameArgs) ToOutput(ctx context.Context) pulumix.Output[GetCertificateIssuerName] {
-	return pulumix.Output[GetCertificateIssuerName]{
-		OutputState: i.ToGetCertificateIssuerNameOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetCertificateIssuerNameArrayInput is an input type that accepts GetCertificateIssuerNameArray and GetCertificateIssuerNameArrayOutput values.
@@ -8425,12 +7530,6 @@ func (i GetCertificateIssuerNameArray) ToGetCertificateIssuerNameArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateIssuerNameArrayOutput)
 }
 
-func (i GetCertificateIssuerNameArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateIssuerName] {
-	return pulumix.Output[[]GetCertificateIssuerName]{
-		OutputState: i.ToGetCertificateIssuerNameArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCertificateIssuerNameOutput struct{ *pulumi.OutputState }
 
 func (GetCertificateIssuerNameOutput) ElementType() reflect.Type {
@@ -8445,45 +7544,39 @@ func (o GetCertificateIssuerNameOutput) ToGetCertificateIssuerNameOutputWithCont
 	return o
 }
 
-func (o GetCertificateIssuerNameOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificateIssuerName] {
-	return pulumix.Output[GetCertificateIssuerName]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The fully qualified domain name used for DNS lookups of the server.
-func (o GetCertificateIssuerNameOutput) CommonName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateIssuerName) string { return v.CommonName }).(pulumi.StringOutput)
+func (o GetCertificateIssuerNameOutput) CommonName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateIssuerName) *string { return v.CommonName }).(pulumi.StringPtrOutput)
 }
 
 // ISO 3166-1 alpha-2 code of the country where the organization is located. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/).
-func (o GetCertificateIssuerNameOutput) Country() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateIssuerName) string { return v.Country }).(pulumi.StringOutput)
+func (o GetCertificateIssuerNameOutput) Country() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateIssuerName) *string { return v.Country }).(pulumi.StringPtrOutput)
 }
 
 // The email address of the server's administrator.
-func (o GetCertificateIssuerNameOutput) EmailAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateIssuerName) string { return v.EmailAddress }).(pulumi.StringOutput)
+func (o GetCertificateIssuerNameOutput) EmailAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateIssuerName) *string { return v.EmailAddress }).(pulumi.StringPtrOutput)
 }
 
 // The city in which the organization is located.
-func (o GetCertificateIssuerNameOutput) Locality() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateIssuerName) string { return v.Locality }).(pulumi.StringOutput)
+func (o GetCertificateIssuerNameOutput) Locality() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateIssuerName) *string { return v.Locality }).(pulumi.StringPtrOutput)
 }
 
 // The organization name.
-func (o GetCertificateIssuerNameOutput) Organization() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateIssuerName) string { return v.Organization }).(pulumi.StringOutput)
+func (o GetCertificateIssuerNameOutput) Organization() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateIssuerName) *string { return v.Organization }).(pulumi.StringPtrOutput)
 }
 
 // The field to differentiate between divisions within an organization.
-func (o GetCertificateIssuerNameOutput) OrganizationalUnit() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateIssuerName) string { return v.OrganizationalUnit }).(pulumi.StringOutput)
+func (o GetCertificateIssuerNameOutput) OrganizationalUnit() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateIssuerName) *string { return v.OrganizationalUnit }).(pulumi.StringPtrOutput)
 }
 
 // The province where the organization is located.
-func (o GetCertificateIssuerNameOutput) StateProvince() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateIssuerName) string { return v.StateProvince }).(pulumi.StringOutput)
+func (o GetCertificateIssuerNameOutput) StateProvince() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateIssuerName) *string { return v.StateProvince }).(pulumi.StringPtrOutput)
 }
 
 type GetCertificateIssuerNameArrayOutput struct{ *pulumi.OutputState }
@@ -8500,12 +7593,6 @@ func (o GetCertificateIssuerNameArrayOutput) ToGetCertificateIssuerNameArrayOutp
 	return o
 }
 
-func (o GetCertificateIssuerNameArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateIssuerName] {
-	return pulumix.Output[[]GetCertificateIssuerName]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCertificateIssuerNameArrayOutput) Index(i pulumi.IntInput) GetCertificateIssuerNameOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCertificateIssuerName {
 		return vs[0].([]GetCertificateIssuerName)[vs[1].(int)]
@@ -8514,11 +7601,11 @@ func (o GetCertificateIssuerNameArrayOutput) Index(i pulumi.IntInput) GetCertifi
 
 type GetCertificatePublicKeyInfo struct {
 	// The algorithm identifier and parameters for the public key.
-	Algorithm string `pulumi:"algorithm"`
+	Algorithm *string `pulumi:"algorithm"`
 	// The private key exponent.
-	Exponent int `pulumi:"exponent"`
+	Exponent *int `pulumi:"exponent"`
 	// The number of bits in a key used by a cryptographic algorithm.
-	KeySize int `pulumi:"keySize"`
+	KeySize *int `pulumi:"keySize"`
 }
 
 // GetCertificatePublicKeyInfoInput is an input type that accepts GetCertificatePublicKeyInfoArgs and GetCertificatePublicKeyInfoOutput values.
@@ -8534,11 +7621,11 @@ type GetCertificatePublicKeyInfoInput interface {
 
 type GetCertificatePublicKeyInfoArgs struct {
 	// The algorithm identifier and parameters for the public key.
-	Algorithm pulumi.StringInput `pulumi:"algorithm"`
+	Algorithm pulumi.StringPtrInput `pulumi:"algorithm"`
 	// The private key exponent.
-	Exponent pulumi.IntInput `pulumi:"exponent"`
+	Exponent pulumi.IntPtrInput `pulumi:"exponent"`
 	// The number of bits in a key used by a cryptographic algorithm.
-	KeySize pulumi.IntInput `pulumi:"keySize"`
+	KeySize pulumi.IntPtrInput `pulumi:"keySize"`
 }
 
 func (GetCertificatePublicKeyInfoArgs) ElementType() reflect.Type {
@@ -8551,12 +7638,6 @@ func (i GetCertificatePublicKeyInfoArgs) ToGetCertificatePublicKeyInfoOutput() G
 
 func (i GetCertificatePublicKeyInfoArgs) ToGetCertificatePublicKeyInfoOutputWithContext(ctx context.Context) GetCertificatePublicKeyInfoOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificatePublicKeyInfoOutput)
-}
-
-func (i GetCertificatePublicKeyInfoArgs) ToOutput(ctx context.Context) pulumix.Output[GetCertificatePublicKeyInfo] {
-	return pulumix.Output[GetCertificatePublicKeyInfo]{
-		OutputState: i.ToGetCertificatePublicKeyInfoOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetCertificatePublicKeyInfoArrayInput is an input type that accepts GetCertificatePublicKeyInfoArray and GetCertificatePublicKeyInfoArrayOutput values.
@@ -8584,12 +7665,6 @@ func (i GetCertificatePublicKeyInfoArray) ToGetCertificatePublicKeyInfoArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificatePublicKeyInfoArrayOutput)
 }
 
-func (i GetCertificatePublicKeyInfoArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificatePublicKeyInfo] {
-	return pulumix.Output[[]GetCertificatePublicKeyInfo]{
-		OutputState: i.ToGetCertificatePublicKeyInfoArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCertificatePublicKeyInfoOutput struct{ *pulumi.OutputState }
 
 func (GetCertificatePublicKeyInfoOutput) ElementType() reflect.Type {
@@ -8604,25 +7679,19 @@ func (o GetCertificatePublicKeyInfoOutput) ToGetCertificatePublicKeyInfoOutputWi
 	return o
 }
 
-func (o GetCertificatePublicKeyInfoOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificatePublicKeyInfo] {
-	return pulumix.Output[GetCertificatePublicKeyInfo]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The algorithm identifier and parameters for the public key.
-func (o GetCertificatePublicKeyInfoOutput) Algorithm() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatePublicKeyInfo) string { return v.Algorithm }).(pulumi.StringOutput)
+func (o GetCertificatePublicKeyInfoOutput) Algorithm() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatePublicKeyInfo) *string { return v.Algorithm }).(pulumi.StringPtrOutput)
 }
 
 // The private key exponent.
-func (o GetCertificatePublicKeyInfoOutput) Exponent() pulumi.IntOutput {
-	return o.ApplyT(func(v GetCertificatePublicKeyInfo) int { return v.Exponent }).(pulumi.IntOutput)
+func (o GetCertificatePublicKeyInfoOutput) Exponent() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetCertificatePublicKeyInfo) *int { return v.Exponent }).(pulumi.IntPtrOutput)
 }
 
 // The number of bits in a key used by a cryptographic algorithm.
-func (o GetCertificatePublicKeyInfoOutput) KeySize() pulumi.IntOutput {
-	return o.ApplyT(func(v GetCertificatePublicKeyInfo) int { return v.KeySize }).(pulumi.IntOutput)
+func (o GetCertificatePublicKeyInfoOutput) KeySize() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetCertificatePublicKeyInfo) *int { return v.KeySize }).(pulumi.IntPtrOutput)
 }
 
 type GetCertificatePublicKeyInfoArrayOutput struct{ *pulumi.OutputState }
@@ -8639,12 +7708,6 @@ func (o GetCertificatePublicKeyInfoArrayOutput) ToGetCertificatePublicKeyInfoArr
 	return o
 }
 
-func (o GetCertificatePublicKeyInfoArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificatePublicKeyInfo] {
-	return pulumix.Output[[]GetCertificatePublicKeyInfo]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCertificatePublicKeyInfoArrayOutput) Index(i pulumi.IntInput) GetCertificatePublicKeyInfoOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCertificatePublicKeyInfo {
 		return vs[0].([]GetCertificatePublicKeyInfo)[vs[1].(int)]
@@ -8653,19 +7716,19 @@ func (o GetCertificatePublicKeyInfoArrayOutput) Index(i pulumi.IntInput) GetCert
 
 type GetCertificateSubjectName struct {
 	// The fully qualified domain name used for DNS lookups of the server.
-	CommonName string `pulumi:"commonName"`
+	CommonName *string `pulumi:"commonName"`
 	// ISO 3166-1 alpha-2 code of the country where the organization is located. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/).
-	Country string `pulumi:"country"`
+	Country *string `pulumi:"country"`
 	// The email address of the server's administrator.
-	EmailAddress string `pulumi:"emailAddress"`
+	EmailAddress *string `pulumi:"emailAddress"`
 	// The city in which the organization is located.
-	Locality string `pulumi:"locality"`
+	Locality *string `pulumi:"locality"`
 	// The organization name.
-	Organization string `pulumi:"organization"`
+	Organization *string `pulumi:"organization"`
 	// The field to differentiate between divisions within an organization.
-	OrganizationalUnit string `pulumi:"organizationalUnit"`
+	OrganizationalUnit *string `pulumi:"organizationalUnit"`
 	// The province where the organization is located.
-	StateProvince string `pulumi:"stateProvince"`
+	StateProvince *string `pulumi:"stateProvince"`
 }
 
 // GetCertificateSubjectNameInput is an input type that accepts GetCertificateSubjectNameArgs and GetCertificateSubjectNameOutput values.
@@ -8681,19 +7744,19 @@ type GetCertificateSubjectNameInput interface {
 
 type GetCertificateSubjectNameArgs struct {
 	// The fully qualified domain name used for DNS lookups of the server.
-	CommonName pulumi.StringInput `pulumi:"commonName"`
+	CommonName pulumi.StringPtrInput `pulumi:"commonName"`
 	// ISO 3166-1 alpha-2 code of the country where the organization is located. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/).
-	Country pulumi.StringInput `pulumi:"country"`
+	Country pulumi.StringPtrInput `pulumi:"country"`
 	// The email address of the server's administrator.
-	EmailAddress pulumi.StringInput `pulumi:"emailAddress"`
+	EmailAddress pulumi.StringPtrInput `pulumi:"emailAddress"`
 	// The city in which the organization is located.
-	Locality pulumi.StringInput `pulumi:"locality"`
+	Locality pulumi.StringPtrInput `pulumi:"locality"`
 	// The organization name.
-	Organization pulumi.StringInput `pulumi:"organization"`
+	Organization pulumi.StringPtrInput `pulumi:"organization"`
 	// The field to differentiate between divisions within an organization.
-	OrganizationalUnit pulumi.StringInput `pulumi:"organizationalUnit"`
+	OrganizationalUnit pulumi.StringPtrInput `pulumi:"organizationalUnit"`
 	// The province where the organization is located.
-	StateProvince pulumi.StringInput `pulumi:"stateProvince"`
+	StateProvince pulumi.StringPtrInput `pulumi:"stateProvince"`
 }
 
 func (GetCertificateSubjectNameArgs) ElementType() reflect.Type {
@@ -8706,12 +7769,6 @@ func (i GetCertificateSubjectNameArgs) ToGetCertificateSubjectNameOutput() GetCe
 
 func (i GetCertificateSubjectNameArgs) ToGetCertificateSubjectNameOutputWithContext(ctx context.Context) GetCertificateSubjectNameOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateSubjectNameOutput)
-}
-
-func (i GetCertificateSubjectNameArgs) ToOutput(ctx context.Context) pulumix.Output[GetCertificateSubjectName] {
-	return pulumix.Output[GetCertificateSubjectName]{
-		OutputState: i.ToGetCertificateSubjectNameOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetCertificateSubjectNameArrayInput is an input type that accepts GetCertificateSubjectNameArray and GetCertificateSubjectNameArrayOutput values.
@@ -8739,12 +7796,6 @@ func (i GetCertificateSubjectNameArray) ToGetCertificateSubjectNameArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateSubjectNameArrayOutput)
 }
 
-func (i GetCertificateSubjectNameArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateSubjectName] {
-	return pulumix.Output[[]GetCertificateSubjectName]{
-		OutputState: i.ToGetCertificateSubjectNameArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCertificateSubjectNameOutput struct{ *pulumi.OutputState }
 
 func (GetCertificateSubjectNameOutput) ElementType() reflect.Type {
@@ -8759,45 +7810,39 @@ func (o GetCertificateSubjectNameOutput) ToGetCertificateSubjectNameOutputWithCo
 	return o
 }
 
-func (o GetCertificateSubjectNameOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificateSubjectName] {
-	return pulumix.Output[GetCertificateSubjectName]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The fully qualified domain name used for DNS lookups of the server.
-func (o GetCertificateSubjectNameOutput) CommonName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateSubjectName) string { return v.CommonName }).(pulumi.StringOutput)
+func (o GetCertificateSubjectNameOutput) CommonName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateSubjectName) *string { return v.CommonName }).(pulumi.StringPtrOutput)
 }
 
 // ISO 3166-1 alpha-2 code of the country where the organization is located. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/).
-func (o GetCertificateSubjectNameOutput) Country() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateSubjectName) string { return v.Country }).(pulumi.StringOutput)
+func (o GetCertificateSubjectNameOutput) Country() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateSubjectName) *string { return v.Country }).(pulumi.StringPtrOutput)
 }
 
 // The email address of the server's administrator.
-func (o GetCertificateSubjectNameOutput) EmailAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateSubjectName) string { return v.EmailAddress }).(pulumi.StringOutput)
+func (o GetCertificateSubjectNameOutput) EmailAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateSubjectName) *string { return v.EmailAddress }).(pulumi.StringPtrOutput)
 }
 
 // The city in which the organization is located.
-func (o GetCertificateSubjectNameOutput) Locality() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateSubjectName) string { return v.Locality }).(pulumi.StringOutput)
+func (o GetCertificateSubjectNameOutput) Locality() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateSubjectName) *string { return v.Locality }).(pulumi.StringPtrOutput)
 }
 
 // The organization name.
-func (o GetCertificateSubjectNameOutput) Organization() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateSubjectName) string { return v.Organization }).(pulumi.StringOutput)
+func (o GetCertificateSubjectNameOutput) Organization() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateSubjectName) *string { return v.Organization }).(pulumi.StringPtrOutput)
 }
 
 // The field to differentiate between divisions within an organization.
-func (o GetCertificateSubjectNameOutput) OrganizationalUnit() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateSubjectName) string { return v.OrganizationalUnit }).(pulumi.StringOutput)
+func (o GetCertificateSubjectNameOutput) OrganizationalUnit() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateSubjectName) *string { return v.OrganizationalUnit }).(pulumi.StringPtrOutput)
 }
 
 // The province where the organization is located.
-func (o GetCertificateSubjectNameOutput) StateProvince() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateSubjectName) string { return v.StateProvince }).(pulumi.StringOutput)
+func (o GetCertificateSubjectNameOutput) StateProvince() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateSubjectName) *string { return v.StateProvince }).(pulumi.StringPtrOutput)
 }
 
 type GetCertificateSubjectNameArrayOutput struct{ *pulumi.OutputState }
@@ -8814,12 +7859,6 @@ func (o GetCertificateSubjectNameArrayOutput) ToGetCertificateSubjectNameArrayOu
 	return o
 }
 
-func (o GetCertificateSubjectNameArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateSubjectName] {
-	return pulumix.Output[[]GetCertificateSubjectName]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCertificateSubjectNameArrayOutput) Index(i pulumi.IntInput) GetCertificateSubjectNameOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCertificateSubjectName {
 		return vs[0].([]GetCertificateSubjectName)[vs[1].(int)]
@@ -8828,43 +7867,43 @@ func (o GetCertificateSubjectNameArrayOutput) Index(i pulumi.IntInput) GetCertif
 
 type GetCertificatesCertificate struct {
 	// The data of the SSL certificate.
-	CertificateData string `pulumi:"certificateData"`
+	CertificateData *string `pulumi:"certificateData"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This number is generated when the compartment is created.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The user-friendly name of the SSL certificate.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Additional attributes associated with users or public keys for managing relationships between Certificate Authorities.
 	Extensions []GetCertificatesCertificateExtension `pulumi:"extensions"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SSL certificate.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// This indicates whether trust verification was disabled during the creation of SSL certificate. If `true` SSL certificate trust verification was disabled and this SSL certificate is most likely self-signed.
-	IsTrustVerificationDisabled bool   `pulumi:"isTrustVerificationDisabled"`
-	IssuedBy                    string `pulumi:"issuedBy"`
+	IsTrustVerificationDisabled *bool   `pulumi:"isTrustVerificationDisabled"`
+	IssuedBy                    *string `pulumi:"issuedBy"`
 	// The issuer of the certificate.
 	IssuerNames    []GetCertificatesCertificateIssuerName `pulumi:"issuerNames"`
-	PrivateKeyData string                                 `pulumi:"privateKeyData"`
+	PrivateKeyData *string                                `pulumi:"privateKeyData"`
 	// Information about the public key and the algorithm used by the public key.
 	PublicKeyInfos []GetCertificatesCertificatePublicKeyInfo `pulumi:"publicKeyInfos"`
 	// A unique, positive integer assigned by the Certificate Authority (CA). The issuer name and serial number identify a unique certificate.
-	SerialNumber string `pulumi:"serialNumber"`
+	SerialNumber *string `pulumi:"serialNumber"`
 	// The identifier for the cryptographic algorithm used by the Certificate Authority (CA) to sign this certificate.
-	SignatureAlgorithm string `pulumi:"signatureAlgorithm"`
+	SignatureAlgorithm *string `pulumi:"signatureAlgorithm"`
 	// The current lifecycle state of the SSL certificate.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The entity to be secured by the certificate.
 	SubjectNames []GetCertificatesCertificateSubjectName `pulumi:"subjectNames"`
 	// The date and time the certificate was created, expressed in RFC 3339 timestamp format.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the certificate will expire, expressed in RFC 3339 timestamp format.
-	TimeNotValidAfter string `pulumi:"timeNotValidAfter"`
+	TimeNotValidAfter *string `pulumi:"timeNotValidAfter"`
 	// The date and time the certificate will become valid, expressed in RFC 3339 timestamp format.
-	TimeNotValidBefore string `pulumi:"timeNotValidBefore"`
+	TimeNotValidBefore *string `pulumi:"timeNotValidBefore"`
 	// The version of the encoded certificate.
-	Version int `pulumi:"version"`
+	Version *int `pulumi:"version"`
 }
 
 // GetCertificatesCertificateInput is an input type that accepts GetCertificatesCertificateArgs and GetCertificatesCertificateOutput values.
@@ -8880,43 +7919,43 @@ type GetCertificatesCertificateInput interface {
 
 type GetCertificatesCertificateArgs struct {
 	// The data of the SSL certificate.
-	CertificateData pulumi.StringInput `pulumi:"certificateData"`
+	CertificateData pulumi.StringPtrInput `pulumi:"certificateData"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This number is generated when the compartment is created.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// The user-friendly name of the SSL certificate.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Additional attributes associated with users or public keys for managing relationships between Certificate Authorities.
 	Extensions GetCertificatesCertificateExtensionArrayInput `pulumi:"extensions"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SSL certificate.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// This indicates whether trust verification was disabled during the creation of SSL certificate. If `true` SSL certificate trust verification was disabled and this SSL certificate is most likely self-signed.
-	IsTrustVerificationDisabled pulumi.BoolInput   `pulumi:"isTrustVerificationDisabled"`
-	IssuedBy                    pulumi.StringInput `pulumi:"issuedBy"`
+	IsTrustVerificationDisabled pulumi.BoolPtrInput   `pulumi:"isTrustVerificationDisabled"`
+	IssuedBy                    pulumi.StringPtrInput `pulumi:"issuedBy"`
 	// The issuer of the certificate.
 	IssuerNames    GetCertificatesCertificateIssuerNameArrayInput `pulumi:"issuerNames"`
-	PrivateKeyData pulumi.StringInput                             `pulumi:"privateKeyData"`
+	PrivateKeyData pulumi.StringPtrInput                          `pulumi:"privateKeyData"`
 	// Information about the public key and the algorithm used by the public key.
 	PublicKeyInfos GetCertificatesCertificatePublicKeyInfoArrayInput `pulumi:"publicKeyInfos"`
 	// A unique, positive integer assigned by the Certificate Authority (CA). The issuer name and serial number identify a unique certificate.
-	SerialNumber pulumi.StringInput `pulumi:"serialNumber"`
+	SerialNumber pulumi.StringPtrInput `pulumi:"serialNumber"`
 	// The identifier for the cryptographic algorithm used by the Certificate Authority (CA) to sign this certificate.
-	SignatureAlgorithm pulumi.StringInput `pulumi:"signatureAlgorithm"`
+	SignatureAlgorithm pulumi.StringPtrInput `pulumi:"signatureAlgorithm"`
 	// The current lifecycle state of the SSL certificate.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The entity to be secured by the certificate.
 	SubjectNames GetCertificatesCertificateSubjectNameArrayInput `pulumi:"subjectNames"`
 	// The date and time the certificate was created, expressed in RFC 3339 timestamp format.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The date and time the certificate will expire, expressed in RFC 3339 timestamp format.
-	TimeNotValidAfter pulumi.StringInput `pulumi:"timeNotValidAfter"`
+	TimeNotValidAfter pulumi.StringPtrInput `pulumi:"timeNotValidAfter"`
 	// The date and time the certificate will become valid, expressed in RFC 3339 timestamp format.
-	TimeNotValidBefore pulumi.StringInput `pulumi:"timeNotValidBefore"`
+	TimeNotValidBefore pulumi.StringPtrInput `pulumi:"timeNotValidBefore"`
 	// The version of the encoded certificate.
-	Version pulumi.IntInput `pulumi:"version"`
+	Version pulumi.IntPtrInput `pulumi:"version"`
 }
 
 func (GetCertificatesCertificateArgs) ElementType() reflect.Type {
@@ -8929,12 +7968,6 @@ func (i GetCertificatesCertificateArgs) ToGetCertificatesCertificateOutput() Get
 
 func (i GetCertificatesCertificateArgs) ToGetCertificatesCertificateOutputWithContext(ctx context.Context) GetCertificatesCertificateOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificatesCertificateOutput)
-}
-
-func (i GetCertificatesCertificateArgs) ToOutput(ctx context.Context) pulumix.Output[GetCertificatesCertificate] {
-	return pulumix.Output[GetCertificatesCertificate]{
-		OutputState: i.ToGetCertificatesCertificateOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetCertificatesCertificateArrayInput is an input type that accepts GetCertificatesCertificateArray and GetCertificatesCertificateArrayOutput values.
@@ -8962,12 +7995,6 @@ func (i GetCertificatesCertificateArray) ToGetCertificatesCertificateArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificatesCertificateArrayOutput)
 }
 
-func (i GetCertificatesCertificateArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificatesCertificate] {
-	return pulumix.Output[[]GetCertificatesCertificate]{
-		OutputState: i.ToGetCertificatesCertificateArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCertificatesCertificateOutput struct{ *pulumi.OutputState }
 
 func (GetCertificatesCertificateOutput) ElementType() reflect.Type {
@@ -8982,20 +8009,14 @@ func (o GetCertificatesCertificateOutput) ToGetCertificatesCertificateOutputWith
 	return o
 }
 
-func (o GetCertificatesCertificateOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificatesCertificate] {
-	return pulumix.Output[GetCertificatesCertificate]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The data of the SSL certificate.
-func (o GetCertificatesCertificateOutput) CertificateData() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificate) string { return v.CertificateData }).(pulumi.StringOutput)
+func (o GetCertificatesCertificateOutput) CertificateData() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificate) *string { return v.CertificateData }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This number is generated when the compartment is created.
-func (o GetCertificatesCertificateOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificate) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetCertificatesCertificateOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificate) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -9004,8 +8025,8 @@ func (o GetCertificatesCertificateOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // The user-friendly name of the SSL certificate.
-func (o GetCertificatesCertificateOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificate) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetCertificatesCertificateOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificate) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Additional attributes associated with users or public keys for managing relationships between Certificate Authorities.
@@ -9019,17 +8040,17 @@ func (o GetCertificatesCertificateOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SSL certificate.
-func (o GetCertificatesCertificateOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificate) string { return v.Id }).(pulumi.StringOutput)
+func (o GetCertificatesCertificateOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificate) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // This indicates whether trust verification was disabled during the creation of SSL certificate. If `true` SSL certificate trust verification was disabled and this SSL certificate is most likely self-signed.
-func (o GetCertificatesCertificateOutput) IsTrustVerificationDisabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetCertificatesCertificate) bool { return v.IsTrustVerificationDisabled }).(pulumi.BoolOutput)
+func (o GetCertificatesCertificateOutput) IsTrustVerificationDisabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificate) *bool { return v.IsTrustVerificationDisabled }).(pulumi.BoolPtrOutput)
 }
 
-func (o GetCertificatesCertificateOutput) IssuedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificate) string { return v.IssuedBy }).(pulumi.StringOutput)
+func (o GetCertificatesCertificateOutput) IssuedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificate) *string { return v.IssuedBy }).(pulumi.StringPtrOutput)
 }
 
 // The issuer of the certificate.
@@ -9037,8 +8058,8 @@ func (o GetCertificatesCertificateOutput) IssuerNames() GetCertificatesCertifica
 	return o.ApplyT(func(v GetCertificatesCertificate) []GetCertificatesCertificateIssuerName { return v.IssuerNames }).(GetCertificatesCertificateIssuerNameArrayOutput)
 }
 
-func (o GetCertificatesCertificateOutput) PrivateKeyData() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificate) string { return v.PrivateKeyData }).(pulumi.StringOutput)
+func (o GetCertificatesCertificateOutput) PrivateKeyData() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificate) *string { return v.PrivateKeyData }).(pulumi.StringPtrOutput)
 }
 
 // Information about the public key and the algorithm used by the public key.
@@ -9047,18 +8068,18 @@ func (o GetCertificatesCertificateOutput) PublicKeyInfos() GetCertificatesCertif
 }
 
 // A unique, positive integer assigned by the Certificate Authority (CA). The issuer name and serial number identify a unique certificate.
-func (o GetCertificatesCertificateOutput) SerialNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificate) string { return v.SerialNumber }).(pulumi.StringOutput)
+func (o GetCertificatesCertificateOutput) SerialNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificate) *string { return v.SerialNumber }).(pulumi.StringPtrOutput)
 }
 
 // The identifier for the cryptographic algorithm used by the Certificate Authority (CA) to sign this certificate.
-func (o GetCertificatesCertificateOutput) SignatureAlgorithm() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificate) string { return v.SignatureAlgorithm }).(pulumi.StringOutput)
+func (o GetCertificatesCertificateOutput) SignatureAlgorithm() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificate) *string { return v.SignatureAlgorithm }).(pulumi.StringPtrOutput)
 }
 
 // The current lifecycle state of the SSL certificate.
-func (o GetCertificatesCertificateOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificate) string { return v.State }).(pulumi.StringOutput)
+func (o GetCertificatesCertificateOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificate) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The entity to be secured by the certificate.
@@ -9067,23 +8088,23 @@ func (o GetCertificatesCertificateOutput) SubjectNames() GetCertificatesCertific
 }
 
 // The date and time the certificate was created, expressed in RFC 3339 timestamp format.
-func (o GetCertificatesCertificateOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificate) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetCertificatesCertificateOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificate) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the certificate will expire, expressed in RFC 3339 timestamp format.
-func (o GetCertificatesCertificateOutput) TimeNotValidAfter() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificate) string { return v.TimeNotValidAfter }).(pulumi.StringOutput)
+func (o GetCertificatesCertificateOutput) TimeNotValidAfter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificate) *string { return v.TimeNotValidAfter }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the certificate will become valid, expressed in RFC 3339 timestamp format.
-func (o GetCertificatesCertificateOutput) TimeNotValidBefore() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificate) string { return v.TimeNotValidBefore }).(pulumi.StringOutput)
+func (o GetCertificatesCertificateOutput) TimeNotValidBefore() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificate) *string { return v.TimeNotValidBefore }).(pulumi.StringPtrOutput)
 }
 
 // The version of the encoded certificate.
-func (o GetCertificatesCertificateOutput) Version() pulumi.IntOutput {
-	return o.ApplyT(func(v GetCertificatesCertificate) int { return v.Version }).(pulumi.IntOutput)
+func (o GetCertificatesCertificateOutput) Version() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificate) *int { return v.Version }).(pulumi.IntPtrOutput)
 }
 
 type GetCertificatesCertificateArrayOutput struct{ *pulumi.OutputState }
@@ -9100,12 +8121,6 @@ func (o GetCertificatesCertificateArrayOutput) ToGetCertificatesCertificateArray
 	return o
 }
 
-func (o GetCertificatesCertificateArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificatesCertificate] {
-	return pulumix.Output[[]GetCertificatesCertificate]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCertificatesCertificateArrayOutput) Index(i pulumi.IntInput) GetCertificatesCertificateOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCertificatesCertificate {
 		return vs[0].([]GetCertificatesCertificate)[vs[1].(int)]
@@ -9114,11 +8129,11 @@ func (o GetCertificatesCertificateArrayOutput) Index(i pulumi.IntInput) GetCerti
 
 type GetCertificatesCertificateExtension struct {
 	// The critical flag of the extension. Critical extensions must be processed, non-critical extensions can be ignored.
-	IsCritical bool `pulumi:"isCritical"`
+	IsCritical *bool `pulumi:"isCritical"`
 	// The certificate extension name.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The certificate extension value.
-	Value string `pulumi:"value"`
+	Value *string `pulumi:"value"`
 }
 
 // GetCertificatesCertificateExtensionInput is an input type that accepts GetCertificatesCertificateExtensionArgs and GetCertificatesCertificateExtensionOutput values.
@@ -9134,11 +8149,11 @@ type GetCertificatesCertificateExtensionInput interface {
 
 type GetCertificatesCertificateExtensionArgs struct {
 	// The critical flag of the extension. Critical extensions must be processed, non-critical extensions can be ignored.
-	IsCritical pulumi.BoolInput `pulumi:"isCritical"`
+	IsCritical pulumi.BoolPtrInput `pulumi:"isCritical"`
 	// The certificate extension name.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// The certificate extension value.
-	Value pulumi.StringInput `pulumi:"value"`
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (GetCertificatesCertificateExtensionArgs) ElementType() reflect.Type {
@@ -9151,12 +8166,6 @@ func (i GetCertificatesCertificateExtensionArgs) ToGetCertificatesCertificateExt
 
 func (i GetCertificatesCertificateExtensionArgs) ToGetCertificatesCertificateExtensionOutputWithContext(ctx context.Context) GetCertificatesCertificateExtensionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificatesCertificateExtensionOutput)
-}
-
-func (i GetCertificatesCertificateExtensionArgs) ToOutput(ctx context.Context) pulumix.Output[GetCertificatesCertificateExtension] {
-	return pulumix.Output[GetCertificatesCertificateExtension]{
-		OutputState: i.ToGetCertificatesCertificateExtensionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetCertificatesCertificateExtensionArrayInput is an input type that accepts GetCertificatesCertificateExtensionArray and GetCertificatesCertificateExtensionArrayOutput values.
@@ -9184,12 +8193,6 @@ func (i GetCertificatesCertificateExtensionArray) ToGetCertificatesCertificateEx
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificatesCertificateExtensionArrayOutput)
 }
 
-func (i GetCertificatesCertificateExtensionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificatesCertificateExtension] {
-	return pulumix.Output[[]GetCertificatesCertificateExtension]{
-		OutputState: i.ToGetCertificatesCertificateExtensionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCertificatesCertificateExtensionOutput struct{ *pulumi.OutputState }
 
 func (GetCertificatesCertificateExtensionOutput) ElementType() reflect.Type {
@@ -9204,25 +8207,19 @@ func (o GetCertificatesCertificateExtensionOutput) ToGetCertificatesCertificateE
 	return o
 }
 
-func (o GetCertificatesCertificateExtensionOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificatesCertificateExtension] {
-	return pulumix.Output[GetCertificatesCertificateExtension]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The critical flag of the extension. Critical extensions must be processed, non-critical extensions can be ignored.
-func (o GetCertificatesCertificateExtensionOutput) IsCritical() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateExtension) bool { return v.IsCritical }).(pulumi.BoolOutput)
+func (o GetCertificatesCertificateExtensionOutput) IsCritical() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateExtension) *bool { return v.IsCritical }).(pulumi.BoolPtrOutput)
 }
 
 // The certificate extension name.
-func (o GetCertificatesCertificateExtensionOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateExtension) string { return v.Name }).(pulumi.StringOutput)
+func (o GetCertificatesCertificateExtensionOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateExtension) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The certificate extension value.
-func (o GetCertificatesCertificateExtensionOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateExtension) string { return v.Value }).(pulumi.StringOutput)
+func (o GetCertificatesCertificateExtensionOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateExtension) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
 
 type GetCertificatesCertificateExtensionArrayOutput struct{ *pulumi.OutputState }
@@ -9239,12 +8236,6 @@ func (o GetCertificatesCertificateExtensionArrayOutput) ToGetCertificatesCertifi
 	return o
 }
 
-func (o GetCertificatesCertificateExtensionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificatesCertificateExtension] {
-	return pulumix.Output[[]GetCertificatesCertificateExtension]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCertificatesCertificateExtensionArrayOutput) Index(i pulumi.IntInput) GetCertificatesCertificateExtensionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCertificatesCertificateExtension {
 		return vs[0].([]GetCertificatesCertificateExtension)[vs[1].(int)]
@@ -9253,19 +8244,19 @@ func (o GetCertificatesCertificateExtensionArrayOutput) Index(i pulumi.IntInput)
 
 type GetCertificatesCertificateIssuerName struct {
 	// The fully qualified domain name used for DNS lookups of the server.
-	CommonName string `pulumi:"commonName"`
+	CommonName *string `pulumi:"commonName"`
 	// ISO 3166-1 alpha-2 code of the country where the organization is located. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/).
-	Country string `pulumi:"country"`
+	Country *string `pulumi:"country"`
 	// The email address of the server's administrator.
-	EmailAddress string `pulumi:"emailAddress"`
+	EmailAddress *string `pulumi:"emailAddress"`
 	// The city in which the organization is located.
-	Locality string `pulumi:"locality"`
+	Locality *string `pulumi:"locality"`
 	// The organization name.
-	Organization string `pulumi:"organization"`
+	Organization *string `pulumi:"organization"`
 	// The field to differentiate between divisions within an organization.
-	OrganizationalUnit string `pulumi:"organizationalUnit"`
+	OrganizationalUnit *string `pulumi:"organizationalUnit"`
 	// The province where the organization is located.
-	StateProvince string `pulumi:"stateProvince"`
+	StateProvince *string `pulumi:"stateProvince"`
 }
 
 // GetCertificatesCertificateIssuerNameInput is an input type that accepts GetCertificatesCertificateIssuerNameArgs and GetCertificatesCertificateIssuerNameOutput values.
@@ -9281,19 +8272,19 @@ type GetCertificatesCertificateIssuerNameInput interface {
 
 type GetCertificatesCertificateIssuerNameArgs struct {
 	// The fully qualified domain name used for DNS lookups of the server.
-	CommonName pulumi.StringInput `pulumi:"commonName"`
+	CommonName pulumi.StringPtrInput `pulumi:"commonName"`
 	// ISO 3166-1 alpha-2 code of the country where the organization is located. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/).
-	Country pulumi.StringInput `pulumi:"country"`
+	Country pulumi.StringPtrInput `pulumi:"country"`
 	// The email address of the server's administrator.
-	EmailAddress pulumi.StringInput `pulumi:"emailAddress"`
+	EmailAddress pulumi.StringPtrInput `pulumi:"emailAddress"`
 	// The city in which the organization is located.
-	Locality pulumi.StringInput `pulumi:"locality"`
+	Locality pulumi.StringPtrInput `pulumi:"locality"`
 	// The organization name.
-	Organization pulumi.StringInput `pulumi:"organization"`
+	Organization pulumi.StringPtrInput `pulumi:"organization"`
 	// The field to differentiate between divisions within an organization.
-	OrganizationalUnit pulumi.StringInput `pulumi:"organizationalUnit"`
+	OrganizationalUnit pulumi.StringPtrInput `pulumi:"organizationalUnit"`
 	// The province where the organization is located.
-	StateProvince pulumi.StringInput `pulumi:"stateProvince"`
+	StateProvince pulumi.StringPtrInput `pulumi:"stateProvince"`
 }
 
 func (GetCertificatesCertificateIssuerNameArgs) ElementType() reflect.Type {
@@ -9306,12 +8297,6 @@ func (i GetCertificatesCertificateIssuerNameArgs) ToGetCertificatesCertificateIs
 
 func (i GetCertificatesCertificateIssuerNameArgs) ToGetCertificatesCertificateIssuerNameOutputWithContext(ctx context.Context) GetCertificatesCertificateIssuerNameOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificatesCertificateIssuerNameOutput)
-}
-
-func (i GetCertificatesCertificateIssuerNameArgs) ToOutput(ctx context.Context) pulumix.Output[GetCertificatesCertificateIssuerName] {
-	return pulumix.Output[GetCertificatesCertificateIssuerName]{
-		OutputState: i.ToGetCertificatesCertificateIssuerNameOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetCertificatesCertificateIssuerNameArrayInput is an input type that accepts GetCertificatesCertificateIssuerNameArray and GetCertificatesCertificateIssuerNameArrayOutput values.
@@ -9339,12 +8324,6 @@ func (i GetCertificatesCertificateIssuerNameArray) ToGetCertificatesCertificateI
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificatesCertificateIssuerNameArrayOutput)
 }
 
-func (i GetCertificatesCertificateIssuerNameArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificatesCertificateIssuerName] {
-	return pulumix.Output[[]GetCertificatesCertificateIssuerName]{
-		OutputState: i.ToGetCertificatesCertificateIssuerNameArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCertificatesCertificateIssuerNameOutput struct{ *pulumi.OutputState }
 
 func (GetCertificatesCertificateIssuerNameOutput) ElementType() reflect.Type {
@@ -9359,45 +8338,39 @@ func (o GetCertificatesCertificateIssuerNameOutput) ToGetCertificatesCertificate
 	return o
 }
 
-func (o GetCertificatesCertificateIssuerNameOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificatesCertificateIssuerName] {
-	return pulumix.Output[GetCertificatesCertificateIssuerName]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The fully qualified domain name used for DNS lookups of the server.
-func (o GetCertificatesCertificateIssuerNameOutput) CommonName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateIssuerName) string { return v.CommonName }).(pulumi.StringOutput)
+func (o GetCertificatesCertificateIssuerNameOutput) CommonName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateIssuerName) *string { return v.CommonName }).(pulumi.StringPtrOutput)
 }
 
 // ISO 3166-1 alpha-2 code of the country where the organization is located. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/).
-func (o GetCertificatesCertificateIssuerNameOutput) Country() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateIssuerName) string { return v.Country }).(pulumi.StringOutput)
+func (o GetCertificatesCertificateIssuerNameOutput) Country() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateIssuerName) *string { return v.Country }).(pulumi.StringPtrOutput)
 }
 
 // The email address of the server's administrator.
-func (o GetCertificatesCertificateIssuerNameOutput) EmailAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateIssuerName) string { return v.EmailAddress }).(pulumi.StringOutput)
+func (o GetCertificatesCertificateIssuerNameOutput) EmailAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateIssuerName) *string { return v.EmailAddress }).(pulumi.StringPtrOutput)
 }
 
 // The city in which the organization is located.
-func (o GetCertificatesCertificateIssuerNameOutput) Locality() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateIssuerName) string { return v.Locality }).(pulumi.StringOutput)
+func (o GetCertificatesCertificateIssuerNameOutput) Locality() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateIssuerName) *string { return v.Locality }).(pulumi.StringPtrOutput)
 }
 
 // The organization name.
-func (o GetCertificatesCertificateIssuerNameOutput) Organization() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateIssuerName) string { return v.Organization }).(pulumi.StringOutput)
+func (o GetCertificatesCertificateIssuerNameOutput) Organization() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateIssuerName) *string { return v.Organization }).(pulumi.StringPtrOutput)
 }
 
 // The field to differentiate between divisions within an organization.
-func (o GetCertificatesCertificateIssuerNameOutput) OrganizationalUnit() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateIssuerName) string { return v.OrganizationalUnit }).(pulumi.StringOutput)
+func (o GetCertificatesCertificateIssuerNameOutput) OrganizationalUnit() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateIssuerName) *string { return v.OrganizationalUnit }).(pulumi.StringPtrOutput)
 }
 
 // The province where the organization is located.
-func (o GetCertificatesCertificateIssuerNameOutput) StateProvince() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateIssuerName) string { return v.StateProvince }).(pulumi.StringOutput)
+func (o GetCertificatesCertificateIssuerNameOutput) StateProvince() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateIssuerName) *string { return v.StateProvince }).(pulumi.StringPtrOutput)
 }
 
 type GetCertificatesCertificateIssuerNameArrayOutput struct{ *pulumi.OutputState }
@@ -9414,12 +8387,6 @@ func (o GetCertificatesCertificateIssuerNameArrayOutput) ToGetCertificatesCertif
 	return o
 }
 
-func (o GetCertificatesCertificateIssuerNameArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificatesCertificateIssuerName] {
-	return pulumix.Output[[]GetCertificatesCertificateIssuerName]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCertificatesCertificateIssuerNameArrayOutput) Index(i pulumi.IntInput) GetCertificatesCertificateIssuerNameOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCertificatesCertificateIssuerName {
 		return vs[0].([]GetCertificatesCertificateIssuerName)[vs[1].(int)]
@@ -9428,11 +8395,11 @@ func (o GetCertificatesCertificateIssuerNameArrayOutput) Index(i pulumi.IntInput
 
 type GetCertificatesCertificatePublicKeyInfo struct {
 	// The algorithm identifier and parameters for the public key.
-	Algorithm string `pulumi:"algorithm"`
+	Algorithm *string `pulumi:"algorithm"`
 	// The private key exponent.
-	Exponent int `pulumi:"exponent"`
+	Exponent *int `pulumi:"exponent"`
 	// The number of bits in a key used by a cryptographic algorithm.
-	KeySize int `pulumi:"keySize"`
+	KeySize *int `pulumi:"keySize"`
 }
 
 // GetCertificatesCertificatePublicKeyInfoInput is an input type that accepts GetCertificatesCertificatePublicKeyInfoArgs and GetCertificatesCertificatePublicKeyInfoOutput values.
@@ -9448,11 +8415,11 @@ type GetCertificatesCertificatePublicKeyInfoInput interface {
 
 type GetCertificatesCertificatePublicKeyInfoArgs struct {
 	// The algorithm identifier and parameters for the public key.
-	Algorithm pulumi.StringInput `pulumi:"algorithm"`
+	Algorithm pulumi.StringPtrInput `pulumi:"algorithm"`
 	// The private key exponent.
-	Exponent pulumi.IntInput `pulumi:"exponent"`
+	Exponent pulumi.IntPtrInput `pulumi:"exponent"`
 	// The number of bits in a key used by a cryptographic algorithm.
-	KeySize pulumi.IntInput `pulumi:"keySize"`
+	KeySize pulumi.IntPtrInput `pulumi:"keySize"`
 }
 
 func (GetCertificatesCertificatePublicKeyInfoArgs) ElementType() reflect.Type {
@@ -9465,12 +8432,6 @@ func (i GetCertificatesCertificatePublicKeyInfoArgs) ToGetCertificatesCertificat
 
 func (i GetCertificatesCertificatePublicKeyInfoArgs) ToGetCertificatesCertificatePublicKeyInfoOutputWithContext(ctx context.Context) GetCertificatesCertificatePublicKeyInfoOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificatesCertificatePublicKeyInfoOutput)
-}
-
-func (i GetCertificatesCertificatePublicKeyInfoArgs) ToOutput(ctx context.Context) pulumix.Output[GetCertificatesCertificatePublicKeyInfo] {
-	return pulumix.Output[GetCertificatesCertificatePublicKeyInfo]{
-		OutputState: i.ToGetCertificatesCertificatePublicKeyInfoOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetCertificatesCertificatePublicKeyInfoArrayInput is an input type that accepts GetCertificatesCertificatePublicKeyInfoArray and GetCertificatesCertificatePublicKeyInfoArrayOutput values.
@@ -9498,12 +8459,6 @@ func (i GetCertificatesCertificatePublicKeyInfoArray) ToGetCertificatesCertifica
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificatesCertificatePublicKeyInfoArrayOutput)
 }
 
-func (i GetCertificatesCertificatePublicKeyInfoArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificatesCertificatePublicKeyInfo] {
-	return pulumix.Output[[]GetCertificatesCertificatePublicKeyInfo]{
-		OutputState: i.ToGetCertificatesCertificatePublicKeyInfoArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCertificatesCertificatePublicKeyInfoOutput struct{ *pulumi.OutputState }
 
 func (GetCertificatesCertificatePublicKeyInfoOutput) ElementType() reflect.Type {
@@ -9518,25 +8473,19 @@ func (o GetCertificatesCertificatePublicKeyInfoOutput) ToGetCertificatesCertific
 	return o
 }
 
-func (o GetCertificatesCertificatePublicKeyInfoOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificatesCertificatePublicKeyInfo] {
-	return pulumix.Output[GetCertificatesCertificatePublicKeyInfo]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The algorithm identifier and parameters for the public key.
-func (o GetCertificatesCertificatePublicKeyInfoOutput) Algorithm() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificatePublicKeyInfo) string { return v.Algorithm }).(pulumi.StringOutput)
+func (o GetCertificatesCertificatePublicKeyInfoOutput) Algorithm() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificatePublicKeyInfo) *string { return v.Algorithm }).(pulumi.StringPtrOutput)
 }
 
 // The private key exponent.
-func (o GetCertificatesCertificatePublicKeyInfoOutput) Exponent() pulumi.IntOutput {
-	return o.ApplyT(func(v GetCertificatesCertificatePublicKeyInfo) int { return v.Exponent }).(pulumi.IntOutput)
+func (o GetCertificatesCertificatePublicKeyInfoOutput) Exponent() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificatePublicKeyInfo) *int { return v.Exponent }).(pulumi.IntPtrOutput)
 }
 
 // The number of bits in a key used by a cryptographic algorithm.
-func (o GetCertificatesCertificatePublicKeyInfoOutput) KeySize() pulumi.IntOutput {
-	return o.ApplyT(func(v GetCertificatesCertificatePublicKeyInfo) int { return v.KeySize }).(pulumi.IntOutput)
+func (o GetCertificatesCertificatePublicKeyInfoOutput) KeySize() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificatePublicKeyInfo) *int { return v.KeySize }).(pulumi.IntPtrOutput)
 }
 
 type GetCertificatesCertificatePublicKeyInfoArrayOutput struct{ *pulumi.OutputState }
@@ -9553,12 +8502,6 @@ func (o GetCertificatesCertificatePublicKeyInfoArrayOutput) ToGetCertificatesCer
 	return o
 }
 
-func (o GetCertificatesCertificatePublicKeyInfoArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificatesCertificatePublicKeyInfo] {
-	return pulumix.Output[[]GetCertificatesCertificatePublicKeyInfo]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCertificatesCertificatePublicKeyInfoArrayOutput) Index(i pulumi.IntInput) GetCertificatesCertificatePublicKeyInfoOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCertificatesCertificatePublicKeyInfo {
 		return vs[0].([]GetCertificatesCertificatePublicKeyInfo)[vs[1].(int)]
@@ -9567,19 +8510,19 @@ func (o GetCertificatesCertificatePublicKeyInfoArrayOutput) Index(i pulumi.IntIn
 
 type GetCertificatesCertificateSubjectName struct {
 	// The fully qualified domain name used for DNS lookups of the server.
-	CommonName string `pulumi:"commonName"`
+	CommonName *string `pulumi:"commonName"`
 	// ISO 3166-1 alpha-2 code of the country where the organization is located. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/).
-	Country string `pulumi:"country"`
+	Country *string `pulumi:"country"`
 	// The email address of the server's administrator.
-	EmailAddress string `pulumi:"emailAddress"`
+	EmailAddress *string `pulumi:"emailAddress"`
 	// The city in which the organization is located.
-	Locality string `pulumi:"locality"`
+	Locality *string `pulumi:"locality"`
 	// The organization name.
-	Organization string `pulumi:"organization"`
+	Organization *string `pulumi:"organization"`
 	// The field to differentiate between divisions within an organization.
-	OrganizationalUnit string `pulumi:"organizationalUnit"`
+	OrganizationalUnit *string `pulumi:"organizationalUnit"`
 	// The province where the organization is located.
-	StateProvince string `pulumi:"stateProvince"`
+	StateProvince *string `pulumi:"stateProvince"`
 }
 
 // GetCertificatesCertificateSubjectNameInput is an input type that accepts GetCertificatesCertificateSubjectNameArgs and GetCertificatesCertificateSubjectNameOutput values.
@@ -9595,19 +8538,19 @@ type GetCertificatesCertificateSubjectNameInput interface {
 
 type GetCertificatesCertificateSubjectNameArgs struct {
 	// The fully qualified domain name used for DNS lookups of the server.
-	CommonName pulumi.StringInput `pulumi:"commonName"`
+	CommonName pulumi.StringPtrInput `pulumi:"commonName"`
 	// ISO 3166-1 alpha-2 code of the country where the organization is located. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/).
-	Country pulumi.StringInput `pulumi:"country"`
+	Country pulumi.StringPtrInput `pulumi:"country"`
 	// The email address of the server's administrator.
-	EmailAddress pulumi.StringInput `pulumi:"emailAddress"`
+	EmailAddress pulumi.StringPtrInput `pulumi:"emailAddress"`
 	// The city in which the organization is located.
-	Locality pulumi.StringInput `pulumi:"locality"`
+	Locality pulumi.StringPtrInput `pulumi:"locality"`
 	// The organization name.
-	Organization pulumi.StringInput `pulumi:"organization"`
+	Organization pulumi.StringPtrInput `pulumi:"organization"`
 	// The field to differentiate between divisions within an organization.
-	OrganizationalUnit pulumi.StringInput `pulumi:"organizationalUnit"`
+	OrganizationalUnit pulumi.StringPtrInput `pulumi:"organizationalUnit"`
 	// The province where the organization is located.
-	StateProvince pulumi.StringInput `pulumi:"stateProvince"`
+	StateProvince pulumi.StringPtrInput `pulumi:"stateProvince"`
 }
 
 func (GetCertificatesCertificateSubjectNameArgs) ElementType() reflect.Type {
@@ -9620,12 +8563,6 @@ func (i GetCertificatesCertificateSubjectNameArgs) ToGetCertificatesCertificateS
 
 func (i GetCertificatesCertificateSubjectNameArgs) ToGetCertificatesCertificateSubjectNameOutputWithContext(ctx context.Context) GetCertificatesCertificateSubjectNameOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificatesCertificateSubjectNameOutput)
-}
-
-func (i GetCertificatesCertificateSubjectNameArgs) ToOutput(ctx context.Context) pulumix.Output[GetCertificatesCertificateSubjectName] {
-	return pulumix.Output[GetCertificatesCertificateSubjectName]{
-		OutputState: i.ToGetCertificatesCertificateSubjectNameOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetCertificatesCertificateSubjectNameArrayInput is an input type that accepts GetCertificatesCertificateSubjectNameArray and GetCertificatesCertificateSubjectNameArrayOutput values.
@@ -9653,12 +8590,6 @@ func (i GetCertificatesCertificateSubjectNameArray) ToGetCertificatesCertificate
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificatesCertificateSubjectNameArrayOutput)
 }
 
-func (i GetCertificatesCertificateSubjectNameArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificatesCertificateSubjectName] {
-	return pulumix.Output[[]GetCertificatesCertificateSubjectName]{
-		OutputState: i.ToGetCertificatesCertificateSubjectNameArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCertificatesCertificateSubjectNameOutput struct{ *pulumi.OutputState }
 
 func (GetCertificatesCertificateSubjectNameOutput) ElementType() reflect.Type {
@@ -9673,45 +8604,39 @@ func (o GetCertificatesCertificateSubjectNameOutput) ToGetCertificatesCertificat
 	return o
 }
 
-func (o GetCertificatesCertificateSubjectNameOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificatesCertificateSubjectName] {
-	return pulumix.Output[GetCertificatesCertificateSubjectName]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The fully qualified domain name used for DNS lookups of the server.
-func (o GetCertificatesCertificateSubjectNameOutput) CommonName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateSubjectName) string { return v.CommonName }).(pulumi.StringOutput)
+func (o GetCertificatesCertificateSubjectNameOutput) CommonName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateSubjectName) *string { return v.CommonName }).(pulumi.StringPtrOutput)
 }
 
 // ISO 3166-1 alpha-2 code of the country where the organization is located. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/).
-func (o GetCertificatesCertificateSubjectNameOutput) Country() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateSubjectName) string { return v.Country }).(pulumi.StringOutput)
+func (o GetCertificatesCertificateSubjectNameOutput) Country() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateSubjectName) *string { return v.Country }).(pulumi.StringPtrOutput)
 }
 
 // The email address of the server's administrator.
-func (o GetCertificatesCertificateSubjectNameOutput) EmailAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateSubjectName) string { return v.EmailAddress }).(pulumi.StringOutput)
+func (o GetCertificatesCertificateSubjectNameOutput) EmailAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateSubjectName) *string { return v.EmailAddress }).(pulumi.StringPtrOutput)
 }
 
 // The city in which the organization is located.
-func (o GetCertificatesCertificateSubjectNameOutput) Locality() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateSubjectName) string { return v.Locality }).(pulumi.StringOutput)
+func (o GetCertificatesCertificateSubjectNameOutput) Locality() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateSubjectName) *string { return v.Locality }).(pulumi.StringPtrOutput)
 }
 
 // The organization name.
-func (o GetCertificatesCertificateSubjectNameOutput) Organization() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateSubjectName) string { return v.Organization }).(pulumi.StringOutput)
+func (o GetCertificatesCertificateSubjectNameOutput) Organization() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateSubjectName) *string { return v.Organization }).(pulumi.StringPtrOutput)
 }
 
 // The field to differentiate between divisions within an organization.
-func (o GetCertificatesCertificateSubjectNameOutput) OrganizationalUnit() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateSubjectName) string { return v.OrganizationalUnit }).(pulumi.StringOutput)
+func (o GetCertificatesCertificateSubjectNameOutput) OrganizationalUnit() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateSubjectName) *string { return v.OrganizationalUnit }).(pulumi.StringPtrOutput)
 }
 
 // The province where the organization is located.
-func (o GetCertificatesCertificateSubjectNameOutput) StateProvince() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateSubjectName) string { return v.StateProvince }).(pulumi.StringOutput)
+func (o GetCertificatesCertificateSubjectNameOutput) StateProvince() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateSubjectName) *string { return v.StateProvince }).(pulumi.StringPtrOutput)
 }
 
 type GetCertificatesCertificateSubjectNameArrayOutput struct{ *pulumi.OutputState }
@@ -9726,12 +8651,6 @@ func (o GetCertificatesCertificateSubjectNameArrayOutput) ToGetCertificatesCerti
 
 func (o GetCertificatesCertificateSubjectNameArrayOutput) ToGetCertificatesCertificateSubjectNameArrayOutputWithContext(ctx context.Context) GetCertificatesCertificateSubjectNameArrayOutput {
 	return o
-}
-
-func (o GetCertificatesCertificateSubjectNameArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificatesCertificateSubjectName] {
-	return pulumix.Output[[]GetCertificatesCertificateSubjectName]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetCertificatesCertificateSubjectNameArrayOutput) Index(i pulumi.IntInput) GetCertificatesCertificateSubjectNameOutput {
@@ -9777,12 +8696,6 @@ func (i GetCertificatesFilterArgs) ToGetCertificatesFilterOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificatesFilterOutput)
 }
 
-func (i GetCertificatesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetCertificatesFilter] {
-	return pulumix.Output[GetCertificatesFilter]{
-		OutputState: i.ToGetCertificatesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetCertificatesFilterArrayInput is an input type that accepts GetCertificatesFilterArray and GetCertificatesFilterArrayOutput values.
 // You can construct a concrete instance of `GetCertificatesFilterArrayInput` via:
 //
@@ -9808,12 +8721,6 @@ func (i GetCertificatesFilterArray) ToGetCertificatesFilterArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificatesFilterArrayOutput)
 }
 
-func (i GetCertificatesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificatesFilter] {
-	return pulumix.Output[[]GetCertificatesFilter]{
-		OutputState: i.ToGetCertificatesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCertificatesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetCertificatesFilterOutput) ElementType() reflect.Type {
@@ -9826,12 +8733,6 @@ func (o GetCertificatesFilterOutput) ToGetCertificatesFilterOutput() GetCertific
 
 func (o GetCertificatesFilterOutput) ToGetCertificatesFilterOutputWithContext(ctx context.Context) GetCertificatesFilterOutput {
 	return o
-}
-
-func (o GetCertificatesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificatesFilter] {
-	return pulumix.Output[GetCertificatesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The certificate extension name.
@@ -9861,12 +8762,6 @@ func (o GetCertificatesFilterArrayOutput) ToGetCertificatesFilterArrayOutputWith
 	return o
 }
 
-func (o GetCertificatesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificatesFilter] {
-	return pulumix.Output[[]GetCertificatesFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCertificatesFilterArrayOutput) Index(i pulumi.IntInput) GetCertificatesFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCertificatesFilter {
 		return vs[0].([]GetCertificatesFilter)[vs[1].(int)]
@@ -9875,25 +8770,25 @@ func (o GetCertificatesFilterArrayOutput) Index(i pulumi.IntInput) GetCertificat
 
 type GetCustomProtectionRulesCustomProtectionRule struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This number is generated when the compartment is created.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The description of the custom protection rule.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// The user-friendly name of the custom protection rule.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom protection rule.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The auto-generated ID for the custom protection rule. These IDs are referenced in logs.
 	ModSecurityRuleIds []string `pulumi:"modSecurityRuleIds"`
 	// The current lifecycle state of the custom protection rule.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The template text of the custom protection rule. All custom protection rules are expressed in ModSecurity Rule Language.
-	Template string `pulumi:"template"`
+	Template *string `pulumi:"template"`
 	// The date and time the protection rule was created, expressed in RFC 3339 timestamp format.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 }
 
 // GetCustomProtectionRulesCustomProtectionRuleInput is an input type that accepts GetCustomProtectionRulesCustomProtectionRuleArgs and GetCustomProtectionRulesCustomProtectionRuleOutput values.
@@ -9909,25 +8804,25 @@ type GetCustomProtectionRulesCustomProtectionRuleInput interface {
 
 type GetCustomProtectionRulesCustomProtectionRuleArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This number is generated when the compartment is created.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// The description of the custom protection rule.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// The user-friendly name of the custom protection rule.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom protection rule.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// The auto-generated ID for the custom protection rule. These IDs are referenced in logs.
 	ModSecurityRuleIds pulumi.StringArrayInput `pulumi:"modSecurityRuleIds"`
 	// The current lifecycle state of the custom protection rule.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The template text of the custom protection rule. All custom protection rules are expressed in ModSecurity Rule Language.
-	Template pulumi.StringInput `pulumi:"template"`
+	Template pulumi.StringPtrInput `pulumi:"template"`
 	// The date and time the protection rule was created, expressed in RFC 3339 timestamp format.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 }
 
 func (GetCustomProtectionRulesCustomProtectionRuleArgs) ElementType() reflect.Type {
@@ -9940,12 +8835,6 @@ func (i GetCustomProtectionRulesCustomProtectionRuleArgs) ToGetCustomProtectionR
 
 func (i GetCustomProtectionRulesCustomProtectionRuleArgs) ToGetCustomProtectionRulesCustomProtectionRuleOutputWithContext(ctx context.Context) GetCustomProtectionRulesCustomProtectionRuleOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetCustomProtectionRulesCustomProtectionRuleOutput)
-}
-
-func (i GetCustomProtectionRulesCustomProtectionRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetCustomProtectionRulesCustomProtectionRule] {
-	return pulumix.Output[GetCustomProtectionRulesCustomProtectionRule]{
-		OutputState: i.ToGetCustomProtectionRulesCustomProtectionRuleOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetCustomProtectionRulesCustomProtectionRuleArrayInput is an input type that accepts GetCustomProtectionRulesCustomProtectionRuleArray and GetCustomProtectionRulesCustomProtectionRuleArrayOutput values.
@@ -9973,12 +8862,6 @@ func (i GetCustomProtectionRulesCustomProtectionRuleArray) ToGetCustomProtection
 	return pulumi.ToOutputWithContext(ctx, i).(GetCustomProtectionRulesCustomProtectionRuleArrayOutput)
 }
 
-func (i GetCustomProtectionRulesCustomProtectionRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCustomProtectionRulesCustomProtectionRule] {
-	return pulumix.Output[[]GetCustomProtectionRulesCustomProtectionRule]{
-		OutputState: i.ToGetCustomProtectionRulesCustomProtectionRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCustomProtectionRulesCustomProtectionRuleOutput struct{ *pulumi.OutputState }
 
 func (GetCustomProtectionRulesCustomProtectionRuleOutput) ElementType() reflect.Type {
@@ -9993,15 +8876,9 @@ func (o GetCustomProtectionRulesCustomProtectionRuleOutput) ToGetCustomProtectio
 	return o
 }
 
-func (o GetCustomProtectionRulesCustomProtectionRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetCustomProtectionRulesCustomProtectionRule] {
-	return pulumix.Output[GetCustomProtectionRulesCustomProtectionRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This number is generated when the compartment is created.
-func (o GetCustomProtectionRulesCustomProtectionRuleOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCustomProtectionRulesCustomProtectionRule) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetCustomProtectionRulesCustomProtectionRuleOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCustomProtectionRulesCustomProtectionRule) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -10010,13 +8887,13 @@ func (o GetCustomProtectionRulesCustomProtectionRuleOutput) DefinedTags() pulumi
 }
 
 // The description of the custom protection rule.
-func (o GetCustomProtectionRulesCustomProtectionRuleOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCustomProtectionRulesCustomProtectionRule) string { return v.Description }).(pulumi.StringOutput)
+func (o GetCustomProtectionRulesCustomProtectionRuleOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCustomProtectionRulesCustomProtectionRule) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // The user-friendly name of the custom protection rule.
-func (o GetCustomProtectionRulesCustomProtectionRuleOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCustomProtectionRulesCustomProtectionRule) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetCustomProtectionRulesCustomProtectionRuleOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCustomProtectionRulesCustomProtectionRule) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -10025,8 +8902,8 @@ func (o GetCustomProtectionRulesCustomProtectionRuleOutput) FreeformTags() pulum
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom protection rule.
-func (o GetCustomProtectionRulesCustomProtectionRuleOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCustomProtectionRulesCustomProtectionRule) string { return v.Id }).(pulumi.StringOutput)
+func (o GetCustomProtectionRulesCustomProtectionRuleOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCustomProtectionRulesCustomProtectionRule) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The auto-generated ID for the custom protection rule. These IDs are referenced in logs.
@@ -10035,18 +8912,18 @@ func (o GetCustomProtectionRulesCustomProtectionRuleOutput) ModSecurityRuleIds()
 }
 
 // The current lifecycle state of the custom protection rule.
-func (o GetCustomProtectionRulesCustomProtectionRuleOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCustomProtectionRulesCustomProtectionRule) string { return v.State }).(pulumi.StringOutput)
+func (o GetCustomProtectionRulesCustomProtectionRuleOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCustomProtectionRulesCustomProtectionRule) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The template text of the custom protection rule. All custom protection rules are expressed in ModSecurity Rule Language.
-func (o GetCustomProtectionRulesCustomProtectionRuleOutput) Template() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCustomProtectionRulesCustomProtectionRule) string { return v.Template }).(pulumi.StringOutput)
+func (o GetCustomProtectionRulesCustomProtectionRuleOutput) Template() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCustomProtectionRulesCustomProtectionRule) *string { return v.Template }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the protection rule was created, expressed in RFC 3339 timestamp format.
-func (o GetCustomProtectionRulesCustomProtectionRuleOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCustomProtectionRulesCustomProtectionRule) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetCustomProtectionRulesCustomProtectionRuleOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCustomProtectionRulesCustomProtectionRule) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 type GetCustomProtectionRulesCustomProtectionRuleArrayOutput struct{ *pulumi.OutputState }
@@ -10061,12 +8938,6 @@ func (o GetCustomProtectionRulesCustomProtectionRuleArrayOutput) ToGetCustomProt
 
 func (o GetCustomProtectionRulesCustomProtectionRuleArrayOutput) ToGetCustomProtectionRulesCustomProtectionRuleArrayOutputWithContext(ctx context.Context) GetCustomProtectionRulesCustomProtectionRuleArrayOutput {
 	return o
-}
-
-func (o GetCustomProtectionRulesCustomProtectionRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCustomProtectionRulesCustomProtectionRule] {
-	return pulumix.Output[[]GetCustomProtectionRulesCustomProtectionRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetCustomProtectionRulesCustomProtectionRuleArrayOutput) Index(i pulumi.IntInput) GetCustomProtectionRulesCustomProtectionRuleOutput {
@@ -10110,12 +8981,6 @@ func (i GetCustomProtectionRulesFilterArgs) ToGetCustomProtectionRulesFilterOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetCustomProtectionRulesFilterOutput)
 }
 
-func (i GetCustomProtectionRulesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetCustomProtectionRulesFilter] {
-	return pulumix.Output[GetCustomProtectionRulesFilter]{
-		OutputState: i.ToGetCustomProtectionRulesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetCustomProtectionRulesFilterArrayInput is an input type that accepts GetCustomProtectionRulesFilterArray and GetCustomProtectionRulesFilterArrayOutput values.
 // You can construct a concrete instance of `GetCustomProtectionRulesFilterArrayInput` via:
 //
@@ -10141,12 +9006,6 @@ func (i GetCustomProtectionRulesFilterArray) ToGetCustomProtectionRulesFilterArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetCustomProtectionRulesFilterArrayOutput)
 }
 
-func (i GetCustomProtectionRulesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCustomProtectionRulesFilter] {
-	return pulumix.Output[[]GetCustomProtectionRulesFilter]{
-		OutputState: i.ToGetCustomProtectionRulesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCustomProtectionRulesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetCustomProtectionRulesFilterOutput) ElementType() reflect.Type {
@@ -10159,12 +9018,6 @@ func (o GetCustomProtectionRulesFilterOutput) ToGetCustomProtectionRulesFilterOu
 
 func (o GetCustomProtectionRulesFilterOutput) ToGetCustomProtectionRulesFilterOutputWithContext(ctx context.Context) GetCustomProtectionRulesFilterOutput {
 	return o
-}
-
-func (o GetCustomProtectionRulesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetCustomProtectionRulesFilter] {
-	return pulumix.Output[GetCustomProtectionRulesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetCustomProtectionRulesFilterOutput) Name() pulumi.StringOutput {
@@ -10193,12 +9046,6 @@ func (o GetCustomProtectionRulesFilterArrayOutput) ToGetCustomProtectionRulesFil
 	return o
 }
 
-func (o GetCustomProtectionRulesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCustomProtectionRulesFilter] {
-	return pulumix.Output[[]GetCustomProtectionRulesFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCustomProtectionRulesFilterArrayOutput) Index(i pulumi.IntInput) GetCustomProtectionRulesFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCustomProtectionRulesFilter {
 		return vs[0].([]GetCustomProtectionRulesFilter)[vs[1].(int)]
@@ -10207,11 +9054,11 @@ func (o GetCustomProtectionRulesFilterArrayOutput) Index(i pulumi.IntInput) GetC
 
 type GetEdgeSubnetsEdgeSubnet struct {
 	// An edge node subnet. This can include /24 or /8 addresses.
-	Cidr string `pulumi:"cidr"`
+	Cidr *string `pulumi:"cidr"`
 	// The name of the region containing the indicated subnet.
-	Region string `pulumi:"region"`
+	Region *string `pulumi:"region"`
 	// The date and time the last change was made to the indicated edge node subnet, expressed in RFC 3339 timestamp format.
-	TimeModified string `pulumi:"timeModified"`
+	TimeModified *string `pulumi:"timeModified"`
 }
 
 // GetEdgeSubnetsEdgeSubnetInput is an input type that accepts GetEdgeSubnetsEdgeSubnetArgs and GetEdgeSubnetsEdgeSubnetOutput values.
@@ -10227,11 +9074,11 @@ type GetEdgeSubnetsEdgeSubnetInput interface {
 
 type GetEdgeSubnetsEdgeSubnetArgs struct {
 	// An edge node subnet. This can include /24 or /8 addresses.
-	Cidr pulumi.StringInput `pulumi:"cidr"`
+	Cidr pulumi.StringPtrInput `pulumi:"cidr"`
 	// The name of the region containing the indicated subnet.
-	Region pulumi.StringInput `pulumi:"region"`
+	Region pulumi.StringPtrInput `pulumi:"region"`
 	// The date and time the last change was made to the indicated edge node subnet, expressed in RFC 3339 timestamp format.
-	TimeModified pulumi.StringInput `pulumi:"timeModified"`
+	TimeModified pulumi.StringPtrInput `pulumi:"timeModified"`
 }
 
 func (GetEdgeSubnetsEdgeSubnetArgs) ElementType() reflect.Type {
@@ -10244,12 +9091,6 @@ func (i GetEdgeSubnetsEdgeSubnetArgs) ToGetEdgeSubnetsEdgeSubnetOutput() GetEdge
 
 func (i GetEdgeSubnetsEdgeSubnetArgs) ToGetEdgeSubnetsEdgeSubnetOutputWithContext(ctx context.Context) GetEdgeSubnetsEdgeSubnetOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetEdgeSubnetsEdgeSubnetOutput)
-}
-
-func (i GetEdgeSubnetsEdgeSubnetArgs) ToOutput(ctx context.Context) pulumix.Output[GetEdgeSubnetsEdgeSubnet] {
-	return pulumix.Output[GetEdgeSubnetsEdgeSubnet]{
-		OutputState: i.ToGetEdgeSubnetsEdgeSubnetOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetEdgeSubnetsEdgeSubnetArrayInput is an input type that accepts GetEdgeSubnetsEdgeSubnetArray and GetEdgeSubnetsEdgeSubnetArrayOutput values.
@@ -10277,12 +9118,6 @@ func (i GetEdgeSubnetsEdgeSubnetArray) ToGetEdgeSubnetsEdgeSubnetArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetEdgeSubnetsEdgeSubnetArrayOutput)
 }
 
-func (i GetEdgeSubnetsEdgeSubnetArray) ToOutput(ctx context.Context) pulumix.Output[[]GetEdgeSubnetsEdgeSubnet] {
-	return pulumix.Output[[]GetEdgeSubnetsEdgeSubnet]{
-		OutputState: i.ToGetEdgeSubnetsEdgeSubnetArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetEdgeSubnetsEdgeSubnetOutput struct{ *pulumi.OutputState }
 
 func (GetEdgeSubnetsEdgeSubnetOutput) ElementType() reflect.Type {
@@ -10297,25 +9132,19 @@ func (o GetEdgeSubnetsEdgeSubnetOutput) ToGetEdgeSubnetsEdgeSubnetOutputWithCont
 	return o
 }
 
-func (o GetEdgeSubnetsEdgeSubnetOutput) ToOutput(ctx context.Context) pulumix.Output[GetEdgeSubnetsEdgeSubnet] {
-	return pulumix.Output[GetEdgeSubnetsEdgeSubnet]{
-		OutputState: o.OutputState,
-	}
-}
-
 // An edge node subnet. This can include /24 or /8 addresses.
-func (o GetEdgeSubnetsEdgeSubnetOutput) Cidr() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEdgeSubnetsEdgeSubnet) string { return v.Cidr }).(pulumi.StringOutput)
+func (o GetEdgeSubnetsEdgeSubnetOutput) Cidr() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEdgeSubnetsEdgeSubnet) *string { return v.Cidr }).(pulumi.StringPtrOutput)
 }
 
 // The name of the region containing the indicated subnet.
-func (o GetEdgeSubnetsEdgeSubnetOutput) Region() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEdgeSubnetsEdgeSubnet) string { return v.Region }).(pulumi.StringOutput)
+func (o GetEdgeSubnetsEdgeSubnetOutput) Region() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEdgeSubnetsEdgeSubnet) *string { return v.Region }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the last change was made to the indicated edge node subnet, expressed in RFC 3339 timestamp format.
-func (o GetEdgeSubnetsEdgeSubnetOutput) TimeModified() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEdgeSubnetsEdgeSubnet) string { return v.TimeModified }).(pulumi.StringOutput)
+func (o GetEdgeSubnetsEdgeSubnetOutput) TimeModified() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEdgeSubnetsEdgeSubnet) *string { return v.TimeModified }).(pulumi.StringPtrOutput)
 }
 
 type GetEdgeSubnetsEdgeSubnetArrayOutput struct{ *pulumi.OutputState }
@@ -10330,12 +9159,6 @@ func (o GetEdgeSubnetsEdgeSubnetArrayOutput) ToGetEdgeSubnetsEdgeSubnetArrayOutp
 
 func (o GetEdgeSubnetsEdgeSubnetArrayOutput) ToGetEdgeSubnetsEdgeSubnetArrayOutputWithContext(ctx context.Context) GetEdgeSubnetsEdgeSubnetArrayOutput {
 	return o
-}
-
-func (o GetEdgeSubnetsEdgeSubnetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetEdgeSubnetsEdgeSubnet] {
-	return pulumix.Output[[]GetEdgeSubnetsEdgeSubnet]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetEdgeSubnetsEdgeSubnetArrayOutput) Index(i pulumi.IntInput) GetEdgeSubnetsEdgeSubnetOutput {
@@ -10379,12 +9202,6 @@ func (i GetEdgeSubnetsFilterArgs) ToGetEdgeSubnetsFilterOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GetEdgeSubnetsFilterOutput)
 }
 
-func (i GetEdgeSubnetsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetEdgeSubnetsFilter] {
-	return pulumix.Output[GetEdgeSubnetsFilter]{
-		OutputState: i.ToGetEdgeSubnetsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetEdgeSubnetsFilterArrayInput is an input type that accepts GetEdgeSubnetsFilterArray and GetEdgeSubnetsFilterArrayOutput values.
 // You can construct a concrete instance of `GetEdgeSubnetsFilterArrayInput` via:
 //
@@ -10410,12 +9227,6 @@ func (i GetEdgeSubnetsFilterArray) ToGetEdgeSubnetsFilterArrayOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetEdgeSubnetsFilterArrayOutput)
 }
 
-func (i GetEdgeSubnetsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetEdgeSubnetsFilter] {
-	return pulumix.Output[[]GetEdgeSubnetsFilter]{
-		OutputState: i.ToGetEdgeSubnetsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetEdgeSubnetsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetEdgeSubnetsFilterOutput) ElementType() reflect.Type {
@@ -10428,12 +9239,6 @@ func (o GetEdgeSubnetsFilterOutput) ToGetEdgeSubnetsFilterOutput() GetEdgeSubnet
 
 func (o GetEdgeSubnetsFilterOutput) ToGetEdgeSubnetsFilterOutputWithContext(ctx context.Context) GetEdgeSubnetsFilterOutput {
 	return o
-}
-
-func (o GetEdgeSubnetsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetEdgeSubnetsFilter] {
-	return pulumix.Output[GetEdgeSubnetsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetEdgeSubnetsFilterOutput) Name() pulumi.StringOutput {
@@ -10462,12 +9267,6 @@ func (o GetEdgeSubnetsFilterArrayOutput) ToGetEdgeSubnetsFilterArrayOutputWithCo
 	return o
 }
 
-func (o GetEdgeSubnetsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetEdgeSubnetsFilter] {
-	return pulumix.Output[[]GetEdgeSubnetsFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetEdgeSubnetsFilterArrayOutput) Index(i pulumi.IntInput) GetEdgeSubnetsFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetEdgeSubnetsFilter {
 		return vs[0].([]GetEdgeSubnetsFilter)[vs[1].(int)]
@@ -10476,15 +9275,15 @@ func (o GetEdgeSubnetsFilterArrayOutput) Index(i pulumi.IntInput) GetEdgeSubnets
 
 type GetHttpRedirectTarget struct {
 	// The host portion of the redirect.
-	Host string `pulumi:"host"`
+	Host *string `pulumi:"host"`
 	// The path component of the target URL (e.g., "/path/to/resource" in "https://target.example.com/path/to/resource?redirected"), which can be empty, static, or request-copying, or request-prefixing. Use of \ is not permitted except to escape a following \, {, or }. An empty value is treated the same as static "/". A static value must begin with a leading "/", optionally followed by other path characters. A request-copying value must exactly match "{path}", and will be replaced with the path component of the request URL (including its initial "/"). A request-prefixing value must start with "/" and end with a non-escaped "{path}", which will be replaced with the path component of the request URL (including its initial "/"). Only one such replacement token is allowed.
-	Path string `pulumi:"path"`
+	Path *string `pulumi:"path"`
 	// Port number of the target destination of the redirect, default to match protocol
-	Port int `pulumi:"port"`
+	Port *int `pulumi:"port"`
 	// The protocol used for the target, http or https.
-	Protocol string `pulumi:"protocol"`
+	Protocol *string `pulumi:"protocol"`
 	// The query component of the target URL (e.g., "?redirected" in "https://target.example.com/path/to/resource?redirected"), which can be empty, static, or request-copying. Use of \ is not permitted except to escape a following \, {, or }. An empty value results in a redirection target URL with no query component. A static value must begin with a leading "?", optionally followed by other query characters. A request-copying value must exactly match "{query}", and will be replaced with the query component of the request URL (including a leading "?" if and only if the request URL includes a query component).
-	Query string `pulumi:"query"`
+	Query *string `pulumi:"query"`
 }
 
 // GetHttpRedirectTargetInput is an input type that accepts GetHttpRedirectTargetArgs and GetHttpRedirectTargetOutput values.
@@ -10500,15 +9299,15 @@ type GetHttpRedirectTargetInput interface {
 
 type GetHttpRedirectTargetArgs struct {
 	// The host portion of the redirect.
-	Host pulumi.StringInput `pulumi:"host"`
+	Host pulumi.StringPtrInput `pulumi:"host"`
 	// The path component of the target URL (e.g., "/path/to/resource" in "https://target.example.com/path/to/resource?redirected"), which can be empty, static, or request-copying, or request-prefixing. Use of \ is not permitted except to escape a following \, {, or }. An empty value is treated the same as static "/". A static value must begin with a leading "/", optionally followed by other path characters. A request-copying value must exactly match "{path}", and will be replaced with the path component of the request URL (including its initial "/"). A request-prefixing value must start with "/" and end with a non-escaped "{path}", which will be replaced with the path component of the request URL (including its initial "/"). Only one such replacement token is allowed.
-	Path pulumi.StringInput `pulumi:"path"`
+	Path pulumi.StringPtrInput `pulumi:"path"`
 	// Port number of the target destination of the redirect, default to match protocol
-	Port pulumi.IntInput `pulumi:"port"`
+	Port pulumi.IntPtrInput `pulumi:"port"`
 	// The protocol used for the target, http or https.
-	Protocol pulumi.StringInput `pulumi:"protocol"`
+	Protocol pulumi.StringPtrInput `pulumi:"protocol"`
 	// The query component of the target URL (e.g., "?redirected" in "https://target.example.com/path/to/resource?redirected"), which can be empty, static, or request-copying. Use of \ is not permitted except to escape a following \, {, or }. An empty value results in a redirection target URL with no query component. A static value must begin with a leading "?", optionally followed by other query characters. A request-copying value must exactly match "{query}", and will be replaced with the query component of the request URL (including a leading "?" if and only if the request URL includes a query component).
-	Query pulumi.StringInput `pulumi:"query"`
+	Query pulumi.StringPtrInput `pulumi:"query"`
 }
 
 func (GetHttpRedirectTargetArgs) ElementType() reflect.Type {
@@ -10521,12 +9320,6 @@ func (i GetHttpRedirectTargetArgs) ToGetHttpRedirectTargetOutput() GetHttpRedire
 
 func (i GetHttpRedirectTargetArgs) ToGetHttpRedirectTargetOutputWithContext(ctx context.Context) GetHttpRedirectTargetOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetHttpRedirectTargetOutput)
-}
-
-func (i GetHttpRedirectTargetArgs) ToOutput(ctx context.Context) pulumix.Output[GetHttpRedirectTarget] {
-	return pulumix.Output[GetHttpRedirectTarget]{
-		OutputState: i.ToGetHttpRedirectTargetOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetHttpRedirectTargetArrayInput is an input type that accepts GetHttpRedirectTargetArray and GetHttpRedirectTargetArrayOutput values.
@@ -10554,12 +9347,6 @@ func (i GetHttpRedirectTargetArray) ToGetHttpRedirectTargetArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetHttpRedirectTargetArrayOutput)
 }
 
-func (i GetHttpRedirectTargetArray) ToOutput(ctx context.Context) pulumix.Output[[]GetHttpRedirectTarget] {
-	return pulumix.Output[[]GetHttpRedirectTarget]{
-		OutputState: i.ToGetHttpRedirectTargetArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetHttpRedirectTargetOutput struct{ *pulumi.OutputState }
 
 func (GetHttpRedirectTargetOutput) ElementType() reflect.Type {
@@ -10574,35 +9361,29 @@ func (o GetHttpRedirectTargetOutput) ToGetHttpRedirectTargetOutputWithContext(ct
 	return o
 }
 
-func (o GetHttpRedirectTargetOutput) ToOutput(ctx context.Context) pulumix.Output[GetHttpRedirectTarget] {
-	return pulumix.Output[GetHttpRedirectTarget]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The host portion of the redirect.
-func (o GetHttpRedirectTargetOutput) Host() pulumi.StringOutput {
-	return o.ApplyT(func(v GetHttpRedirectTarget) string { return v.Host }).(pulumi.StringOutput)
+func (o GetHttpRedirectTargetOutput) Host() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetHttpRedirectTarget) *string { return v.Host }).(pulumi.StringPtrOutput)
 }
 
 // The path component of the target URL (e.g., "/path/to/resource" in "https://target.example.com/path/to/resource?redirected"), which can be empty, static, or request-copying, or request-prefixing. Use of \ is not permitted except to escape a following \, {, or }. An empty value is treated the same as static "/". A static value must begin with a leading "/", optionally followed by other path characters. A request-copying value must exactly match "{path}", and will be replaced with the path component of the request URL (including its initial "/"). A request-prefixing value must start with "/" and end with a non-escaped "{path}", which will be replaced with the path component of the request URL (including its initial "/"). Only one such replacement token is allowed.
-func (o GetHttpRedirectTargetOutput) Path() pulumi.StringOutput {
-	return o.ApplyT(func(v GetHttpRedirectTarget) string { return v.Path }).(pulumi.StringOutput)
+func (o GetHttpRedirectTargetOutput) Path() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetHttpRedirectTarget) *string { return v.Path }).(pulumi.StringPtrOutput)
 }
 
 // Port number of the target destination of the redirect, default to match protocol
-func (o GetHttpRedirectTargetOutput) Port() pulumi.IntOutput {
-	return o.ApplyT(func(v GetHttpRedirectTarget) int { return v.Port }).(pulumi.IntOutput)
+func (o GetHttpRedirectTargetOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetHttpRedirectTarget) *int { return v.Port }).(pulumi.IntPtrOutput)
 }
 
 // The protocol used for the target, http or https.
-func (o GetHttpRedirectTargetOutput) Protocol() pulumi.StringOutput {
-	return o.ApplyT(func(v GetHttpRedirectTarget) string { return v.Protocol }).(pulumi.StringOutput)
+func (o GetHttpRedirectTargetOutput) Protocol() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetHttpRedirectTarget) *string { return v.Protocol }).(pulumi.StringPtrOutput)
 }
 
 // The query component of the target URL (e.g., "?redirected" in "https://target.example.com/path/to/resource?redirected"), which can be empty, static, or request-copying. Use of \ is not permitted except to escape a following \, {, or }. An empty value results in a redirection target URL with no query component. A static value must begin with a leading "?", optionally followed by other query characters. A request-copying value must exactly match "{query}", and will be replaced with the query component of the request URL (including a leading "?" if and only if the request URL includes a query component).
-func (o GetHttpRedirectTargetOutput) Query() pulumi.StringOutput {
-	return o.ApplyT(func(v GetHttpRedirectTarget) string { return v.Query }).(pulumi.StringOutput)
+func (o GetHttpRedirectTargetOutput) Query() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetHttpRedirectTarget) *string { return v.Query }).(pulumi.StringPtrOutput)
 }
 
 type GetHttpRedirectTargetArrayOutput struct{ *pulumi.OutputState }
@@ -10617,12 +9398,6 @@ func (o GetHttpRedirectTargetArrayOutput) ToGetHttpRedirectTargetArrayOutput() G
 
 func (o GetHttpRedirectTargetArrayOutput) ToGetHttpRedirectTargetArrayOutputWithContext(ctx context.Context) GetHttpRedirectTargetArrayOutput {
 	return o
-}
-
-func (o GetHttpRedirectTargetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetHttpRedirectTarget] {
-	return pulumix.Output[[]GetHttpRedirectTarget]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetHttpRedirectTargetArrayOutput) Index(i pulumi.IntInput) GetHttpRedirectTargetOutput {
@@ -10666,12 +9441,6 @@ func (i GetHttpRedirectsFilterArgs) ToGetHttpRedirectsFilterOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetHttpRedirectsFilterOutput)
 }
 
-func (i GetHttpRedirectsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetHttpRedirectsFilter] {
-	return pulumix.Output[GetHttpRedirectsFilter]{
-		OutputState: i.ToGetHttpRedirectsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetHttpRedirectsFilterArrayInput is an input type that accepts GetHttpRedirectsFilterArray and GetHttpRedirectsFilterArrayOutput values.
 // You can construct a concrete instance of `GetHttpRedirectsFilterArrayInput` via:
 //
@@ -10697,12 +9466,6 @@ func (i GetHttpRedirectsFilterArray) ToGetHttpRedirectsFilterArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetHttpRedirectsFilterArrayOutput)
 }
 
-func (i GetHttpRedirectsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetHttpRedirectsFilter] {
-	return pulumix.Output[[]GetHttpRedirectsFilter]{
-		OutputState: i.ToGetHttpRedirectsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetHttpRedirectsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetHttpRedirectsFilterOutput) ElementType() reflect.Type {
@@ -10715,12 +9478,6 @@ func (o GetHttpRedirectsFilterOutput) ToGetHttpRedirectsFilterOutput() GetHttpRe
 
 func (o GetHttpRedirectsFilterOutput) ToGetHttpRedirectsFilterOutputWithContext(ctx context.Context) GetHttpRedirectsFilterOutput {
 	return o
-}
-
-func (o GetHttpRedirectsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetHttpRedirectsFilter] {
-	return pulumix.Output[GetHttpRedirectsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetHttpRedirectsFilterOutput) Name() pulumi.StringOutput {
@@ -10749,12 +9506,6 @@ func (o GetHttpRedirectsFilterArrayOutput) ToGetHttpRedirectsFilterArrayOutputWi
 	return o
 }
 
-func (o GetHttpRedirectsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetHttpRedirectsFilter] {
-	return pulumix.Output[[]GetHttpRedirectsFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetHttpRedirectsFilterArrayOutput) Index(i pulumi.IntInput) GetHttpRedirectsFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetHttpRedirectsFilter {
 		return vs[0].([]GetHttpRedirectsFilter)[vs[1].(int)]
@@ -10763,25 +9514,25 @@ func (o GetHttpRedirectsFilterArrayOutput) Index(i pulumi.IntInput) GetHttpRedir
 
 type GetHttpRedirectsHttpRedirect struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This number is generated when the compartment is created.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The user-friendly name of the HTTP Redirect. The name can be changed and does not need to be unique.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The domain from which traffic will be redirected.
-	Domain string `pulumi:"domain"`
+	Domain *string `pulumi:"domain"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HTTP Redirect.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The response code returned for the redirect to the client. For more information, see [RFC 7231](https://tools.ietf.org/html/rfc7231#section-6.4).
-	ResponseCode int `pulumi:"responseCode"`
+	ResponseCode *int `pulumi:"responseCode"`
 	// The current lifecycle state of the HTTP Redirect.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The redirect target object including all the redirect data.
 	Targets []GetHttpRedirectsHttpRedirectTarget `pulumi:"targets"`
 	// The date and time the policy was created, expressed in RFC 3339 timestamp format.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 }
 
 // GetHttpRedirectsHttpRedirectInput is an input type that accepts GetHttpRedirectsHttpRedirectArgs and GetHttpRedirectsHttpRedirectOutput values.
@@ -10797,25 +9548,25 @@ type GetHttpRedirectsHttpRedirectInput interface {
 
 type GetHttpRedirectsHttpRedirectArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This number is generated when the compartment is created.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// The user-friendly name of the HTTP Redirect. The name can be changed and does not need to be unique.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// The domain from which traffic will be redirected.
-	Domain pulumi.StringInput `pulumi:"domain"`
+	Domain pulumi.StringPtrInput `pulumi:"domain"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HTTP Redirect.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// The response code returned for the redirect to the client. For more information, see [RFC 7231](https://tools.ietf.org/html/rfc7231#section-6.4).
-	ResponseCode pulumi.IntInput `pulumi:"responseCode"`
+	ResponseCode pulumi.IntPtrInput `pulumi:"responseCode"`
 	// The current lifecycle state of the HTTP Redirect.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The redirect target object including all the redirect data.
 	Targets GetHttpRedirectsHttpRedirectTargetArrayInput `pulumi:"targets"`
 	// The date and time the policy was created, expressed in RFC 3339 timestamp format.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 }
 
 func (GetHttpRedirectsHttpRedirectArgs) ElementType() reflect.Type {
@@ -10828,12 +9579,6 @@ func (i GetHttpRedirectsHttpRedirectArgs) ToGetHttpRedirectsHttpRedirectOutput()
 
 func (i GetHttpRedirectsHttpRedirectArgs) ToGetHttpRedirectsHttpRedirectOutputWithContext(ctx context.Context) GetHttpRedirectsHttpRedirectOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetHttpRedirectsHttpRedirectOutput)
-}
-
-func (i GetHttpRedirectsHttpRedirectArgs) ToOutput(ctx context.Context) pulumix.Output[GetHttpRedirectsHttpRedirect] {
-	return pulumix.Output[GetHttpRedirectsHttpRedirect]{
-		OutputState: i.ToGetHttpRedirectsHttpRedirectOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetHttpRedirectsHttpRedirectArrayInput is an input type that accepts GetHttpRedirectsHttpRedirectArray and GetHttpRedirectsHttpRedirectArrayOutput values.
@@ -10861,12 +9606,6 @@ func (i GetHttpRedirectsHttpRedirectArray) ToGetHttpRedirectsHttpRedirectArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetHttpRedirectsHttpRedirectArrayOutput)
 }
 
-func (i GetHttpRedirectsHttpRedirectArray) ToOutput(ctx context.Context) pulumix.Output[[]GetHttpRedirectsHttpRedirect] {
-	return pulumix.Output[[]GetHttpRedirectsHttpRedirect]{
-		OutputState: i.ToGetHttpRedirectsHttpRedirectArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetHttpRedirectsHttpRedirectOutput struct{ *pulumi.OutputState }
 
 func (GetHttpRedirectsHttpRedirectOutput) ElementType() reflect.Type {
@@ -10881,15 +9620,9 @@ func (o GetHttpRedirectsHttpRedirectOutput) ToGetHttpRedirectsHttpRedirectOutput
 	return o
 }
 
-func (o GetHttpRedirectsHttpRedirectOutput) ToOutput(ctx context.Context) pulumix.Output[GetHttpRedirectsHttpRedirect] {
-	return pulumix.Output[GetHttpRedirectsHttpRedirect]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This number is generated when the compartment is created.
-func (o GetHttpRedirectsHttpRedirectOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetHttpRedirectsHttpRedirect) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetHttpRedirectsHttpRedirectOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetHttpRedirectsHttpRedirect) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -10898,13 +9631,13 @@ func (o GetHttpRedirectsHttpRedirectOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // The user-friendly name of the HTTP Redirect. The name can be changed and does not need to be unique.
-func (o GetHttpRedirectsHttpRedirectOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetHttpRedirectsHttpRedirect) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetHttpRedirectsHttpRedirectOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetHttpRedirectsHttpRedirect) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The domain from which traffic will be redirected.
-func (o GetHttpRedirectsHttpRedirectOutput) Domain() pulumi.StringOutput {
-	return o.ApplyT(func(v GetHttpRedirectsHttpRedirect) string { return v.Domain }).(pulumi.StringOutput)
+func (o GetHttpRedirectsHttpRedirectOutput) Domain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetHttpRedirectsHttpRedirect) *string { return v.Domain }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -10913,18 +9646,18 @@ func (o GetHttpRedirectsHttpRedirectOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HTTP Redirect.
-func (o GetHttpRedirectsHttpRedirectOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetHttpRedirectsHttpRedirect) string { return v.Id }).(pulumi.StringOutput)
+func (o GetHttpRedirectsHttpRedirectOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetHttpRedirectsHttpRedirect) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The response code returned for the redirect to the client. For more information, see [RFC 7231](https://tools.ietf.org/html/rfc7231#section-6.4).
-func (o GetHttpRedirectsHttpRedirectOutput) ResponseCode() pulumi.IntOutput {
-	return o.ApplyT(func(v GetHttpRedirectsHttpRedirect) int { return v.ResponseCode }).(pulumi.IntOutput)
+func (o GetHttpRedirectsHttpRedirectOutput) ResponseCode() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetHttpRedirectsHttpRedirect) *int { return v.ResponseCode }).(pulumi.IntPtrOutput)
 }
 
 // The current lifecycle state of the HTTP Redirect.
-func (o GetHttpRedirectsHttpRedirectOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetHttpRedirectsHttpRedirect) string { return v.State }).(pulumi.StringOutput)
+func (o GetHttpRedirectsHttpRedirectOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetHttpRedirectsHttpRedirect) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The redirect target object including all the redirect data.
@@ -10933,8 +9666,8 @@ func (o GetHttpRedirectsHttpRedirectOutput) Targets() GetHttpRedirectsHttpRedire
 }
 
 // The date and time the policy was created, expressed in RFC 3339 timestamp format.
-func (o GetHttpRedirectsHttpRedirectOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetHttpRedirectsHttpRedirect) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetHttpRedirectsHttpRedirectOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetHttpRedirectsHttpRedirect) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 type GetHttpRedirectsHttpRedirectArrayOutput struct{ *pulumi.OutputState }
@@ -10951,12 +9684,6 @@ func (o GetHttpRedirectsHttpRedirectArrayOutput) ToGetHttpRedirectsHttpRedirectA
 	return o
 }
 
-func (o GetHttpRedirectsHttpRedirectArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetHttpRedirectsHttpRedirect] {
-	return pulumix.Output[[]GetHttpRedirectsHttpRedirect]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetHttpRedirectsHttpRedirectArrayOutput) Index(i pulumi.IntInput) GetHttpRedirectsHttpRedirectOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetHttpRedirectsHttpRedirect {
 		return vs[0].([]GetHttpRedirectsHttpRedirect)[vs[1].(int)]
@@ -10965,15 +9692,15 @@ func (o GetHttpRedirectsHttpRedirectArrayOutput) Index(i pulumi.IntInput) GetHtt
 
 type GetHttpRedirectsHttpRedirectTarget struct {
 	// The host portion of the redirect.
-	Host string `pulumi:"host"`
+	Host *string `pulumi:"host"`
 	// The path component of the target URL (e.g., "/path/to/resource" in "https://target.example.com/path/to/resource?redirected"), which can be empty, static, or request-copying, or request-prefixing. Use of \ is not permitted except to escape a following \, {, or }. An empty value is treated the same as static "/". A static value must begin with a leading "/", optionally followed by other path characters. A request-copying value must exactly match "{path}", and will be replaced with the path component of the request URL (including its initial "/"). A request-prefixing value must start with "/" and end with a non-escaped "{path}", which will be replaced with the path component of the request URL (including its initial "/"). Only one such replacement token is allowed.
-	Path string `pulumi:"path"`
+	Path *string `pulumi:"path"`
 	// Port number of the target destination of the redirect, default to match protocol
-	Port int `pulumi:"port"`
+	Port *int `pulumi:"port"`
 	// The protocol used for the target, http or https.
-	Protocol string `pulumi:"protocol"`
+	Protocol *string `pulumi:"protocol"`
 	// The query component of the target URL (e.g., "?redirected" in "https://target.example.com/path/to/resource?redirected"), which can be empty, static, or request-copying. Use of \ is not permitted except to escape a following \, {, or }. An empty value results in a redirection target URL with no query component. A static value must begin with a leading "?", optionally followed by other query characters. A request-copying value must exactly match "{query}", and will be replaced with the query component of the request URL (including a leading "?" if and only if the request URL includes a query component).
-	Query string `pulumi:"query"`
+	Query *string `pulumi:"query"`
 }
 
 // GetHttpRedirectsHttpRedirectTargetInput is an input type that accepts GetHttpRedirectsHttpRedirectTargetArgs and GetHttpRedirectsHttpRedirectTargetOutput values.
@@ -10989,15 +9716,15 @@ type GetHttpRedirectsHttpRedirectTargetInput interface {
 
 type GetHttpRedirectsHttpRedirectTargetArgs struct {
 	// The host portion of the redirect.
-	Host pulumi.StringInput `pulumi:"host"`
+	Host pulumi.StringPtrInput `pulumi:"host"`
 	// The path component of the target URL (e.g., "/path/to/resource" in "https://target.example.com/path/to/resource?redirected"), which can be empty, static, or request-copying, or request-prefixing. Use of \ is not permitted except to escape a following \, {, or }. An empty value is treated the same as static "/". A static value must begin with a leading "/", optionally followed by other path characters. A request-copying value must exactly match "{path}", and will be replaced with the path component of the request URL (including its initial "/"). A request-prefixing value must start with "/" and end with a non-escaped "{path}", which will be replaced with the path component of the request URL (including its initial "/"). Only one such replacement token is allowed.
-	Path pulumi.StringInput `pulumi:"path"`
+	Path pulumi.StringPtrInput `pulumi:"path"`
 	// Port number of the target destination of the redirect, default to match protocol
-	Port pulumi.IntInput `pulumi:"port"`
+	Port pulumi.IntPtrInput `pulumi:"port"`
 	// The protocol used for the target, http or https.
-	Protocol pulumi.StringInput `pulumi:"protocol"`
+	Protocol pulumi.StringPtrInput `pulumi:"protocol"`
 	// The query component of the target URL (e.g., "?redirected" in "https://target.example.com/path/to/resource?redirected"), which can be empty, static, or request-copying. Use of \ is not permitted except to escape a following \, {, or }. An empty value results in a redirection target URL with no query component. A static value must begin with a leading "?", optionally followed by other query characters. A request-copying value must exactly match "{query}", and will be replaced with the query component of the request URL (including a leading "?" if and only if the request URL includes a query component).
-	Query pulumi.StringInput `pulumi:"query"`
+	Query pulumi.StringPtrInput `pulumi:"query"`
 }
 
 func (GetHttpRedirectsHttpRedirectTargetArgs) ElementType() reflect.Type {
@@ -11010,12 +9737,6 @@ func (i GetHttpRedirectsHttpRedirectTargetArgs) ToGetHttpRedirectsHttpRedirectTa
 
 func (i GetHttpRedirectsHttpRedirectTargetArgs) ToGetHttpRedirectsHttpRedirectTargetOutputWithContext(ctx context.Context) GetHttpRedirectsHttpRedirectTargetOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetHttpRedirectsHttpRedirectTargetOutput)
-}
-
-func (i GetHttpRedirectsHttpRedirectTargetArgs) ToOutput(ctx context.Context) pulumix.Output[GetHttpRedirectsHttpRedirectTarget] {
-	return pulumix.Output[GetHttpRedirectsHttpRedirectTarget]{
-		OutputState: i.ToGetHttpRedirectsHttpRedirectTargetOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetHttpRedirectsHttpRedirectTargetArrayInput is an input type that accepts GetHttpRedirectsHttpRedirectTargetArray and GetHttpRedirectsHttpRedirectTargetArrayOutput values.
@@ -11043,12 +9764,6 @@ func (i GetHttpRedirectsHttpRedirectTargetArray) ToGetHttpRedirectsHttpRedirectT
 	return pulumi.ToOutputWithContext(ctx, i).(GetHttpRedirectsHttpRedirectTargetArrayOutput)
 }
 
-func (i GetHttpRedirectsHttpRedirectTargetArray) ToOutput(ctx context.Context) pulumix.Output[[]GetHttpRedirectsHttpRedirectTarget] {
-	return pulumix.Output[[]GetHttpRedirectsHttpRedirectTarget]{
-		OutputState: i.ToGetHttpRedirectsHttpRedirectTargetArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetHttpRedirectsHttpRedirectTargetOutput struct{ *pulumi.OutputState }
 
 func (GetHttpRedirectsHttpRedirectTargetOutput) ElementType() reflect.Type {
@@ -11063,35 +9778,29 @@ func (o GetHttpRedirectsHttpRedirectTargetOutput) ToGetHttpRedirectsHttpRedirect
 	return o
 }
 
-func (o GetHttpRedirectsHttpRedirectTargetOutput) ToOutput(ctx context.Context) pulumix.Output[GetHttpRedirectsHttpRedirectTarget] {
-	return pulumix.Output[GetHttpRedirectsHttpRedirectTarget]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The host portion of the redirect.
-func (o GetHttpRedirectsHttpRedirectTargetOutput) Host() pulumi.StringOutput {
-	return o.ApplyT(func(v GetHttpRedirectsHttpRedirectTarget) string { return v.Host }).(pulumi.StringOutput)
+func (o GetHttpRedirectsHttpRedirectTargetOutput) Host() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetHttpRedirectsHttpRedirectTarget) *string { return v.Host }).(pulumi.StringPtrOutput)
 }
 
 // The path component of the target URL (e.g., "/path/to/resource" in "https://target.example.com/path/to/resource?redirected"), which can be empty, static, or request-copying, or request-prefixing. Use of \ is not permitted except to escape a following \, {, or }. An empty value is treated the same as static "/". A static value must begin with a leading "/", optionally followed by other path characters. A request-copying value must exactly match "{path}", and will be replaced with the path component of the request URL (including its initial "/"). A request-prefixing value must start with "/" and end with a non-escaped "{path}", which will be replaced with the path component of the request URL (including its initial "/"). Only one such replacement token is allowed.
-func (o GetHttpRedirectsHttpRedirectTargetOutput) Path() pulumi.StringOutput {
-	return o.ApplyT(func(v GetHttpRedirectsHttpRedirectTarget) string { return v.Path }).(pulumi.StringOutput)
+func (o GetHttpRedirectsHttpRedirectTargetOutput) Path() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetHttpRedirectsHttpRedirectTarget) *string { return v.Path }).(pulumi.StringPtrOutput)
 }
 
 // Port number of the target destination of the redirect, default to match protocol
-func (o GetHttpRedirectsHttpRedirectTargetOutput) Port() pulumi.IntOutput {
-	return o.ApplyT(func(v GetHttpRedirectsHttpRedirectTarget) int { return v.Port }).(pulumi.IntOutput)
+func (o GetHttpRedirectsHttpRedirectTargetOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetHttpRedirectsHttpRedirectTarget) *int { return v.Port }).(pulumi.IntPtrOutput)
 }
 
 // The protocol used for the target, http or https.
-func (o GetHttpRedirectsHttpRedirectTargetOutput) Protocol() pulumi.StringOutput {
-	return o.ApplyT(func(v GetHttpRedirectsHttpRedirectTarget) string { return v.Protocol }).(pulumi.StringOutput)
+func (o GetHttpRedirectsHttpRedirectTargetOutput) Protocol() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetHttpRedirectsHttpRedirectTarget) *string { return v.Protocol }).(pulumi.StringPtrOutput)
 }
 
 // The query component of the target URL (e.g., "?redirected" in "https://target.example.com/path/to/resource?redirected"), which can be empty, static, or request-copying. Use of \ is not permitted except to escape a following \, {, or }. An empty value results in a redirection target URL with no query component. A static value must begin with a leading "?", optionally followed by other query characters. A request-copying value must exactly match "{query}", and will be replaced with the query component of the request URL (including a leading "?" if and only if the request URL includes a query component).
-func (o GetHttpRedirectsHttpRedirectTargetOutput) Query() pulumi.StringOutput {
-	return o.ApplyT(func(v GetHttpRedirectsHttpRedirectTarget) string { return v.Query }).(pulumi.StringOutput)
+func (o GetHttpRedirectsHttpRedirectTargetOutput) Query() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetHttpRedirectsHttpRedirectTarget) *string { return v.Query }).(pulumi.StringPtrOutput)
 }
 
 type GetHttpRedirectsHttpRedirectTargetArrayOutput struct{ *pulumi.OutputState }
@@ -11108,12 +9817,6 @@ func (o GetHttpRedirectsHttpRedirectTargetArrayOutput) ToGetHttpRedirectsHttpRed
 	return o
 }
 
-func (o GetHttpRedirectsHttpRedirectTargetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetHttpRedirectsHttpRedirectTarget] {
-	return pulumix.Output[[]GetHttpRedirectsHttpRedirectTarget]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetHttpRedirectsHttpRedirectTargetArrayOutput) Index(i pulumi.IntInput) GetHttpRedirectsHttpRedirectTargetOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetHttpRedirectsHttpRedirectTarget {
 		return vs[0].([]GetHttpRedirectsHttpRedirectTarget)[vs[1].(int)]
@@ -11124,7 +9827,7 @@ type GetProtectionRuleExclusion struct {
 	// An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
 	Exclusions []string `pulumi:"exclusions"`
 	// The target of the exclusion.
-	Target string `pulumi:"target"`
+	Target *string `pulumi:"target"`
 }
 
 // GetProtectionRuleExclusionInput is an input type that accepts GetProtectionRuleExclusionArgs and GetProtectionRuleExclusionOutput values.
@@ -11142,7 +9845,7 @@ type GetProtectionRuleExclusionArgs struct {
 	// An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
 	Exclusions pulumi.StringArrayInput `pulumi:"exclusions"`
 	// The target of the exclusion.
-	Target pulumi.StringInput `pulumi:"target"`
+	Target pulumi.StringPtrInput `pulumi:"target"`
 }
 
 func (GetProtectionRuleExclusionArgs) ElementType() reflect.Type {
@@ -11155,12 +9858,6 @@ func (i GetProtectionRuleExclusionArgs) ToGetProtectionRuleExclusionOutput() Get
 
 func (i GetProtectionRuleExclusionArgs) ToGetProtectionRuleExclusionOutputWithContext(ctx context.Context) GetProtectionRuleExclusionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetProtectionRuleExclusionOutput)
-}
-
-func (i GetProtectionRuleExclusionArgs) ToOutput(ctx context.Context) pulumix.Output[GetProtectionRuleExclusion] {
-	return pulumix.Output[GetProtectionRuleExclusion]{
-		OutputState: i.ToGetProtectionRuleExclusionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetProtectionRuleExclusionArrayInput is an input type that accepts GetProtectionRuleExclusionArray and GetProtectionRuleExclusionArrayOutput values.
@@ -11188,12 +9885,6 @@ func (i GetProtectionRuleExclusionArray) ToGetProtectionRuleExclusionArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetProtectionRuleExclusionArrayOutput)
 }
 
-func (i GetProtectionRuleExclusionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProtectionRuleExclusion] {
-	return pulumix.Output[[]GetProtectionRuleExclusion]{
-		OutputState: i.ToGetProtectionRuleExclusionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetProtectionRuleExclusionOutput struct{ *pulumi.OutputState }
 
 func (GetProtectionRuleExclusionOutput) ElementType() reflect.Type {
@@ -11208,20 +9899,14 @@ func (o GetProtectionRuleExclusionOutput) ToGetProtectionRuleExclusionOutputWith
 	return o
 }
 
-func (o GetProtectionRuleExclusionOutput) ToOutput(ctx context.Context) pulumix.Output[GetProtectionRuleExclusion] {
-	return pulumix.Output[GetProtectionRuleExclusion]{
-		OutputState: o.OutputState,
-	}
-}
-
 // An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
 func (o GetProtectionRuleExclusionOutput) Exclusions() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetProtectionRuleExclusion) []string { return v.Exclusions }).(pulumi.StringArrayOutput)
 }
 
 // The target of the exclusion.
-func (o GetProtectionRuleExclusionOutput) Target() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProtectionRuleExclusion) string { return v.Target }).(pulumi.StringOutput)
+func (o GetProtectionRuleExclusionOutput) Target() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProtectionRuleExclusion) *string { return v.Target }).(pulumi.StringPtrOutput)
 }
 
 type GetProtectionRuleExclusionArrayOutput struct{ *pulumi.OutputState }
@@ -11236,12 +9921,6 @@ func (o GetProtectionRuleExclusionArrayOutput) ToGetProtectionRuleExclusionArray
 
 func (o GetProtectionRuleExclusionArrayOutput) ToGetProtectionRuleExclusionArrayOutputWithContext(ctx context.Context) GetProtectionRuleExclusionArrayOutput {
 	return o
-}
-
-func (o GetProtectionRuleExclusionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProtectionRuleExclusion] {
-	return pulumix.Output[[]GetProtectionRuleExclusion]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetProtectionRuleExclusionArrayOutput) Index(i pulumi.IntInput) GetProtectionRuleExclusionOutput {
@@ -11287,12 +9966,6 @@ func (i GetProtectionRulesFilterArgs) ToGetProtectionRulesFilterOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetProtectionRulesFilterOutput)
 }
 
-func (i GetProtectionRulesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetProtectionRulesFilter] {
-	return pulumix.Output[GetProtectionRulesFilter]{
-		OutputState: i.ToGetProtectionRulesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetProtectionRulesFilterArrayInput is an input type that accepts GetProtectionRulesFilterArray and GetProtectionRulesFilterArrayOutput values.
 // You can construct a concrete instance of `GetProtectionRulesFilterArrayInput` via:
 //
@@ -11318,12 +9991,6 @@ func (i GetProtectionRulesFilterArray) ToGetProtectionRulesFilterArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetProtectionRulesFilterArrayOutput)
 }
 
-func (i GetProtectionRulesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProtectionRulesFilter] {
-	return pulumix.Output[[]GetProtectionRulesFilter]{
-		OutputState: i.ToGetProtectionRulesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetProtectionRulesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetProtectionRulesFilterOutput) ElementType() reflect.Type {
@@ -11336,12 +10003,6 @@ func (o GetProtectionRulesFilterOutput) ToGetProtectionRulesFilterOutput() GetPr
 
 func (o GetProtectionRulesFilterOutput) ToGetProtectionRulesFilterOutputWithContext(ctx context.Context) GetProtectionRulesFilterOutput {
 	return o
-}
-
-func (o GetProtectionRulesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetProtectionRulesFilter] {
-	return pulumix.Output[GetProtectionRulesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The name of the protection rule.
@@ -11371,12 +10032,6 @@ func (o GetProtectionRulesFilterArrayOutput) ToGetProtectionRulesFilterArrayOutp
 	return o
 }
 
-func (o GetProtectionRulesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProtectionRulesFilter] {
-	return pulumix.Output[[]GetProtectionRulesFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetProtectionRulesFilterArrayOutput) Index(i pulumi.IntInput) GetProtectionRulesFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProtectionRulesFilter {
 		return vs[0].([]GetProtectionRulesFilter)[vs[1].(int)]
@@ -11385,9 +10040,9 @@ func (o GetProtectionRulesFilterArrayOutput) Index(i pulumi.IntInput) GetProtect
 
 type GetProtectionRulesProtectionRule struct {
 	// Filter rules using a list of actions.
-	Action string `pulumi:"action"`
+	Action *string `pulumi:"action"`
 	// The description of the protection rule.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
 	Exclusions []GetProtectionRulesProtectionRuleExclusion `pulumi:"exclusions"`
 	// The unique key of the protection rule.
@@ -11397,7 +10052,7 @@ type GetProtectionRulesProtectionRule struct {
 	// The list of the ModSecurity rule IDs that apply to this protection rule. For more information about ModSecurity's open source WAF rules, see [Mod Security's documentation](https://www.modsecurity.org/CRS/Documentation/index.html).
 	ModSecurityRuleIds []string `pulumi:"modSecurityRuleIds"`
 	// The name of the protection rule.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WAAS policy.
 	WaasPolicyId string `pulumi:"waasPolicyId"`
 }
@@ -11415,9 +10070,9 @@ type GetProtectionRulesProtectionRuleInput interface {
 
 type GetProtectionRulesProtectionRuleArgs struct {
 	// Filter rules using a list of actions.
-	Action pulumi.StringInput `pulumi:"action"`
+	Action pulumi.StringPtrInput `pulumi:"action"`
 	// The description of the protection rule.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
 	Exclusions GetProtectionRulesProtectionRuleExclusionArrayInput `pulumi:"exclusions"`
 	// The unique key of the protection rule.
@@ -11427,7 +10082,7 @@ type GetProtectionRulesProtectionRuleArgs struct {
 	// The list of the ModSecurity rule IDs that apply to this protection rule. For more information about ModSecurity's open source WAF rules, see [Mod Security's documentation](https://www.modsecurity.org/CRS/Documentation/index.html).
 	ModSecurityRuleIds pulumi.StringArrayInput `pulumi:"modSecurityRuleIds"`
 	// The name of the protection rule.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WAAS policy.
 	WaasPolicyId pulumi.StringInput `pulumi:"waasPolicyId"`
 }
@@ -11442,12 +10097,6 @@ func (i GetProtectionRulesProtectionRuleArgs) ToGetProtectionRulesProtectionRule
 
 func (i GetProtectionRulesProtectionRuleArgs) ToGetProtectionRulesProtectionRuleOutputWithContext(ctx context.Context) GetProtectionRulesProtectionRuleOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetProtectionRulesProtectionRuleOutput)
-}
-
-func (i GetProtectionRulesProtectionRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetProtectionRulesProtectionRule] {
-	return pulumix.Output[GetProtectionRulesProtectionRule]{
-		OutputState: i.ToGetProtectionRulesProtectionRuleOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetProtectionRulesProtectionRuleArrayInput is an input type that accepts GetProtectionRulesProtectionRuleArray and GetProtectionRulesProtectionRuleArrayOutput values.
@@ -11475,12 +10124,6 @@ func (i GetProtectionRulesProtectionRuleArray) ToGetProtectionRulesProtectionRul
 	return pulumi.ToOutputWithContext(ctx, i).(GetProtectionRulesProtectionRuleArrayOutput)
 }
 
-func (i GetProtectionRulesProtectionRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProtectionRulesProtectionRule] {
-	return pulumix.Output[[]GetProtectionRulesProtectionRule]{
-		OutputState: i.ToGetProtectionRulesProtectionRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetProtectionRulesProtectionRuleOutput struct{ *pulumi.OutputState }
 
 func (GetProtectionRulesProtectionRuleOutput) ElementType() reflect.Type {
@@ -11495,20 +10138,14 @@ func (o GetProtectionRulesProtectionRuleOutput) ToGetProtectionRulesProtectionRu
 	return o
 }
 
-func (o GetProtectionRulesProtectionRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetProtectionRulesProtectionRule] {
-	return pulumix.Output[GetProtectionRulesProtectionRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Filter rules using a list of actions.
-func (o GetProtectionRulesProtectionRuleOutput) Action() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProtectionRulesProtectionRule) string { return v.Action }).(pulumi.StringOutput)
+func (o GetProtectionRulesProtectionRuleOutput) Action() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProtectionRulesProtectionRule) *string { return v.Action }).(pulumi.StringPtrOutput)
 }
 
 // The description of the protection rule.
-func (o GetProtectionRulesProtectionRuleOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProtectionRulesProtectionRule) string { return v.Description }).(pulumi.StringOutput)
+func (o GetProtectionRulesProtectionRuleOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProtectionRulesProtectionRule) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
@@ -11534,8 +10171,8 @@ func (o GetProtectionRulesProtectionRuleOutput) ModSecurityRuleIds() pulumi.Stri
 }
 
 // The name of the protection rule.
-func (o GetProtectionRulesProtectionRuleOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProtectionRulesProtectionRule) string { return v.Name }).(pulumi.StringOutput)
+func (o GetProtectionRulesProtectionRuleOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProtectionRulesProtectionRule) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WAAS policy.
@@ -11557,12 +10194,6 @@ func (o GetProtectionRulesProtectionRuleArrayOutput) ToGetProtectionRulesProtect
 	return o
 }
 
-func (o GetProtectionRulesProtectionRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProtectionRulesProtectionRule] {
-	return pulumix.Output[[]GetProtectionRulesProtectionRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetProtectionRulesProtectionRuleArrayOutput) Index(i pulumi.IntInput) GetProtectionRulesProtectionRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProtectionRulesProtectionRule {
 		return vs[0].([]GetProtectionRulesProtectionRule)[vs[1].(int)]
@@ -11573,7 +10204,7 @@ type GetProtectionRulesProtectionRuleExclusion struct {
 	// An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
 	Exclusions []string `pulumi:"exclusions"`
 	// The target of the exclusion.
-	Target string `pulumi:"target"`
+	Target *string `pulumi:"target"`
 }
 
 // GetProtectionRulesProtectionRuleExclusionInput is an input type that accepts GetProtectionRulesProtectionRuleExclusionArgs and GetProtectionRulesProtectionRuleExclusionOutput values.
@@ -11591,7 +10222,7 @@ type GetProtectionRulesProtectionRuleExclusionArgs struct {
 	// An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
 	Exclusions pulumi.StringArrayInput `pulumi:"exclusions"`
 	// The target of the exclusion.
-	Target pulumi.StringInput `pulumi:"target"`
+	Target pulumi.StringPtrInput `pulumi:"target"`
 }
 
 func (GetProtectionRulesProtectionRuleExclusionArgs) ElementType() reflect.Type {
@@ -11604,12 +10235,6 @@ func (i GetProtectionRulesProtectionRuleExclusionArgs) ToGetProtectionRulesProte
 
 func (i GetProtectionRulesProtectionRuleExclusionArgs) ToGetProtectionRulesProtectionRuleExclusionOutputWithContext(ctx context.Context) GetProtectionRulesProtectionRuleExclusionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetProtectionRulesProtectionRuleExclusionOutput)
-}
-
-func (i GetProtectionRulesProtectionRuleExclusionArgs) ToOutput(ctx context.Context) pulumix.Output[GetProtectionRulesProtectionRuleExclusion] {
-	return pulumix.Output[GetProtectionRulesProtectionRuleExclusion]{
-		OutputState: i.ToGetProtectionRulesProtectionRuleExclusionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetProtectionRulesProtectionRuleExclusionArrayInput is an input type that accepts GetProtectionRulesProtectionRuleExclusionArray and GetProtectionRulesProtectionRuleExclusionArrayOutput values.
@@ -11637,12 +10262,6 @@ func (i GetProtectionRulesProtectionRuleExclusionArray) ToGetProtectionRulesProt
 	return pulumi.ToOutputWithContext(ctx, i).(GetProtectionRulesProtectionRuleExclusionArrayOutput)
 }
 
-func (i GetProtectionRulesProtectionRuleExclusionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProtectionRulesProtectionRuleExclusion] {
-	return pulumix.Output[[]GetProtectionRulesProtectionRuleExclusion]{
-		OutputState: i.ToGetProtectionRulesProtectionRuleExclusionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetProtectionRulesProtectionRuleExclusionOutput struct{ *pulumi.OutputState }
 
 func (GetProtectionRulesProtectionRuleExclusionOutput) ElementType() reflect.Type {
@@ -11657,20 +10276,14 @@ func (o GetProtectionRulesProtectionRuleExclusionOutput) ToGetProtectionRulesPro
 	return o
 }
 
-func (o GetProtectionRulesProtectionRuleExclusionOutput) ToOutput(ctx context.Context) pulumix.Output[GetProtectionRulesProtectionRuleExclusion] {
-	return pulumix.Output[GetProtectionRulesProtectionRuleExclusion]{
-		OutputState: o.OutputState,
-	}
-}
-
 // An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
 func (o GetProtectionRulesProtectionRuleExclusionOutput) Exclusions() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetProtectionRulesProtectionRuleExclusion) []string { return v.Exclusions }).(pulumi.StringArrayOutput)
 }
 
 // The target of the exclusion.
-func (o GetProtectionRulesProtectionRuleExclusionOutput) Target() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProtectionRulesProtectionRuleExclusion) string { return v.Target }).(pulumi.StringOutput)
+func (o GetProtectionRulesProtectionRuleExclusionOutput) Target() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProtectionRulesProtectionRuleExclusion) *string { return v.Target }).(pulumi.StringPtrOutput)
 }
 
 type GetProtectionRulesProtectionRuleExclusionArrayOutput struct{ *pulumi.OutputState }
@@ -11685,12 +10298,6 @@ func (o GetProtectionRulesProtectionRuleExclusionArrayOutput) ToGetProtectionRul
 
 func (o GetProtectionRulesProtectionRuleExclusionArrayOutput) ToGetProtectionRulesProtectionRuleExclusionArrayOutputWithContext(ctx context.Context) GetProtectionRulesProtectionRuleExclusionArrayOutput {
 	return o
-}
-
-func (o GetProtectionRulesProtectionRuleExclusionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProtectionRulesProtectionRuleExclusion] {
-	return pulumix.Output[[]GetProtectionRulesProtectionRuleExclusion]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetProtectionRulesProtectionRuleExclusionArrayOutput) Index(i pulumi.IntInput) GetProtectionRulesProtectionRuleExclusionOutput {
@@ -11736,12 +10343,6 @@ func (i GetWaasPoliciesFilterArgs) ToGetWaasPoliciesFilterOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesFilterOutput)
 }
 
-func (i GetWaasPoliciesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesFilter] {
-	return pulumix.Output[GetWaasPoliciesFilter]{
-		OutputState: i.ToGetWaasPoliciesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetWaasPoliciesFilterArrayInput is an input type that accepts GetWaasPoliciesFilterArray and GetWaasPoliciesFilterArrayOutput values.
 // You can construct a concrete instance of `GetWaasPoliciesFilterArrayInput` via:
 //
@@ -11767,12 +10368,6 @@ func (i GetWaasPoliciesFilterArray) ToGetWaasPoliciesFilterArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesFilterArrayOutput)
 }
 
-func (i GetWaasPoliciesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesFilter] {
-	return pulumix.Output[[]GetWaasPoliciesFilter]{
-		OutputState: i.ToGetWaasPoliciesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPoliciesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPoliciesFilterOutput) ElementType() reflect.Type {
@@ -11785,12 +10380,6 @@ func (o GetWaasPoliciesFilterOutput) ToGetWaasPoliciesFilterOutput() GetWaasPoli
 
 func (o GetWaasPoliciesFilterOutput) ToGetWaasPoliciesFilterOutputWithContext(ctx context.Context) GetWaasPoliciesFilterOutput {
 	return o
-}
-
-func (o GetWaasPoliciesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesFilter] {
-	return pulumix.Output[GetWaasPoliciesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The unique name of the whitelist.
@@ -11820,12 +10409,6 @@ func (o GetWaasPoliciesFilterArrayOutput) ToGetWaasPoliciesFilterArrayOutputWith
 	return o
 }
 
-func (o GetWaasPoliciesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesFilter] {
-	return pulumix.Output[[]GetWaasPoliciesFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWaasPoliciesFilterArrayOutput) Index(i pulumi.IntInput) GetWaasPoliciesFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWaasPoliciesFilter {
 		return vs[0].([]GetWaasPoliciesFilter)[vs[1].(int)]
@@ -11836,19 +10419,19 @@ type GetWaasPoliciesWaasPolicy struct {
 	// An array of additional domains for this web application.
 	AdditionalDomains []string `pulumi:"additionalDomains"`
 	// The CNAME record to add to your DNS configuration to route traffic for the domain, and all additional domains, through the WAF.
-	Cname string `pulumi:"cname"`
+	Cname *string `pulumi:"cname"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This number is generated when the compartment is created.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The user-friendly name of the WAAS policy. The name can be changed and does not need to be unique.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The domain for which the cookie is set, defaults to WAAS policy domain.
-	Domain string `pulumi:"domain"`
+	Domain *string `pulumi:"domain"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom protection rule.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The map of origin groups and their keys used to associate origins to the `wafConfig`. Origin groups allow you to apply weights to groups of origins for load balancing purposes. Origins with higher weights will receive larger proportions of client requests. To add additional origins to your WAAS policy, update the `origins` field of a `UpdateWaasPolicy` request.
 	OriginGroups []GetWaasPoliciesWaasPolicyOriginGroup `pulumi:"originGroups"`
 	// A map of host servers (origins) and their keys for the web application. Origin keys are used to associate origins to specific protection rules. The key should be a user-friendly name for the host. **Examples:** `primary` or `secondary`.
@@ -11856,9 +10439,9 @@ type GetWaasPoliciesWaasPolicy struct {
 	// The configuration details for the WAAS policy.
 	PolicyConfigs []GetWaasPoliciesWaasPolicyPolicyConfig `pulumi:"policyConfigs"`
 	// The current lifecycle state of the WAAS policy.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the policy was created, expressed in RFC 3339 timestamp format.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The Web Application Firewall configuration for the WAAS policy.
 	WafConfigs []GetWaasPoliciesWaasPolicyWafConfig `pulumi:"wafConfigs"`
 }
@@ -11878,19 +10461,19 @@ type GetWaasPoliciesWaasPolicyArgs struct {
 	// An array of additional domains for this web application.
 	AdditionalDomains pulumi.StringArrayInput `pulumi:"additionalDomains"`
 	// The CNAME record to add to your DNS configuration to route traffic for the domain, and all additional domains, through the WAF.
-	Cname pulumi.StringInput `pulumi:"cname"`
+	Cname pulumi.StringPtrInput `pulumi:"cname"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This number is generated when the compartment is created.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// The user-friendly name of the WAAS policy. The name can be changed and does not need to be unique.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// The domain for which the cookie is set, defaults to WAAS policy domain.
-	Domain pulumi.StringInput `pulumi:"domain"`
+	Domain pulumi.StringPtrInput `pulumi:"domain"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom protection rule.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// The map of origin groups and their keys used to associate origins to the `wafConfig`. Origin groups allow you to apply weights to groups of origins for load balancing purposes. Origins with higher weights will receive larger proportions of client requests. To add additional origins to your WAAS policy, update the `origins` field of a `UpdateWaasPolicy` request.
 	OriginGroups GetWaasPoliciesWaasPolicyOriginGroupArrayInput `pulumi:"originGroups"`
 	// A map of host servers (origins) and their keys for the web application. Origin keys are used to associate origins to specific protection rules. The key should be a user-friendly name for the host. **Examples:** `primary` or `secondary`.
@@ -11898,9 +10481,9 @@ type GetWaasPoliciesWaasPolicyArgs struct {
 	// The configuration details for the WAAS policy.
 	PolicyConfigs GetWaasPoliciesWaasPolicyPolicyConfigArrayInput `pulumi:"policyConfigs"`
 	// The current lifecycle state of the WAAS policy.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The date and time the policy was created, expressed in RFC 3339 timestamp format.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The Web Application Firewall configuration for the WAAS policy.
 	WafConfigs GetWaasPoliciesWaasPolicyWafConfigArrayInput `pulumi:"wafConfigs"`
 }
@@ -11915,12 +10498,6 @@ func (i GetWaasPoliciesWaasPolicyArgs) ToGetWaasPoliciesWaasPolicyOutput() GetWa
 
 func (i GetWaasPoliciesWaasPolicyArgs) ToGetWaasPoliciesWaasPolicyOutputWithContext(ctx context.Context) GetWaasPoliciesWaasPolicyOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyOutput)
-}
-
-func (i GetWaasPoliciesWaasPolicyArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicy] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicy]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetWaasPoliciesWaasPolicyArrayInput is an input type that accepts GetWaasPoliciesWaasPolicyArray and GetWaasPoliciesWaasPolicyArrayOutput values.
@@ -11948,12 +10525,6 @@ func (i GetWaasPoliciesWaasPolicyArray) ToGetWaasPoliciesWaasPolicyArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyArrayOutput)
 }
 
-func (i GetWaasPoliciesWaasPolicyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicy] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicy]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPoliciesWaasPolicyOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPoliciesWaasPolicyOutput) ElementType() reflect.Type {
@@ -11968,25 +10539,19 @@ func (o GetWaasPoliciesWaasPolicyOutput) ToGetWaasPoliciesWaasPolicyOutputWithCo
 	return o
 }
 
-func (o GetWaasPoliciesWaasPolicyOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicy] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicy]{
-		OutputState: o.OutputState,
-	}
-}
-
 // An array of additional domains for this web application.
 func (o GetWaasPoliciesWaasPolicyOutput) AdditionalDomains() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetWaasPoliciesWaasPolicy) []string { return v.AdditionalDomains }).(pulumi.StringArrayOutput)
 }
 
 // The CNAME record to add to your DNS configuration to route traffic for the domain, and all additional domains, through the WAF.
-func (o GetWaasPoliciesWaasPolicyOutput) Cname() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicy) string { return v.Cname }).(pulumi.StringOutput)
+func (o GetWaasPoliciesWaasPolicyOutput) Cname() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicy) *string { return v.Cname }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This number is generated when the compartment is created.
-func (o GetWaasPoliciesWaasPolicyOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicy) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetWaasPoliciesWaasPolicyOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicy) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -11995,13 +10560,13 @@ func (o GetWaasPoliciesWaasPolicyOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // The user-friendly name of the WAAS policy. The name can be changed and does not need to be unique.
-func (o GetWaasPoliciesWaasPolicyOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicy) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetWaasPoliciesWaasPolicyOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicy) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The domain for which the cookie is set, defaults to WAAS policy domain.
-func (o GetWaasPoliciesWaasPolicyOutput) Domain() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicy) string { return v.Domain }).(pulumi.StringOutput)
+func (o GetWaasPoliciesWaasPolicyOutput) Domain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicy) *string { return v.Domain }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -12010,8 +10575,8 @@ func (o GetWaasPoliciesWaasPolicyOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom protection rule.
-func (o GetWaasPoliciesWaasPolicyOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicy) string { return v.Id }).(pulumi.StringOutput)
+func (o GetWaasPoliciesWaasPolicyOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicy) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The map of origin groups and their keys used to associate origins to the `wafConfig`. Origin groups allow you to apply weights to groups of origins for load balancing purposes. Origins with higher weights will receive larger proportions of client requests. To add additional origins to your WAAS policy, update the `origins` field of a `UpdateWaasPolicy` request.
@@ -12030,13 +10595,13 @@ func (o GetWaasPoliciesWaasPolicyOutput) PolicyConfigs() GetWaasPoliciesWaasPoli
 }
 
 // The current lifecycle state of the WAAS policy.
-func (o GetWaasPoliciesWaasPolicyOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicy) string { return v.State }).(pulumi.StringOutput)
+func (o GetWaasPoliciesWaasPolicyOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicy) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the policy was created, expressed in RFC 3339 timestamp format.
-func (o GetWaasPoliciesWaasPolicyOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicy) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetWaasPoliciesWaasPolicyOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicy) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The Web Application Firewall configuration for the WAAS policy.
@@ -12058,12 +10623,6 @@ func (o GetWaasPoliciesWaasPolicyArrayOutput) ToGetWaasPoliciesWaasPolicyArrayOu
 	return o
 }
 
-func (o GetWaasPoliciesWaasPolicyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicy] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicy]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWaasPoliciesWaasPolicyArrayOutput) Index(i pulumi.IntInput) GetWaasPoliciesWaasPolicyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWaasPoliciesWaasPolicy {
 		return vs[0].([]GetWaasPoliciesWaasPolicy)[vs[1].(int)]
@@ -12074,12 +10633,12 @@ type GetWaasPoliciesWaasPolicyOrigin struct {
 	// A list of HTTP headers to forward to your origin.
 	CustomHeaders []GetWaasPoliciesWaasPolicyOriginCustomHeader `pulumi:"customHeaders"`
 	// The HTTP port on the origin that the web application listens on. If unspecified, defaults to `80`. If `0` is specified - the origin is not used for HTTP traffic.
-	HttpPort int `pulumi:"httpPort"`
+	HttpPort *int `pulumi:"httpPort"`
 	// The HTTPS port on the origin that the web application listens on. If unspecified, defaults to `443`. If `0` is specified - the origin is not used for HTTPS traffic.
-	HttpsPort int    `pulumi:"httpsPort"`
-	Label     string `pulumi:"label"`
+	HttpsPort *int    `pulumi:"httpsPort"`
+	Label     *string `pulumi:"label"`
 	// The URI of the origin. Does not support paths. Port numbers should be specified in the `httpPort` and `httpsPort` fields.
-	Uri string `pulumi:"uri"`
+	Uri *string `pulumi:"uri"`
 }
 
 // GetWaasPoliciesWaasPolicyOriginInput is an input type that accepts GetWaasPoliciesWaasPolicyOriginArgs and GetWaasPoliciesWaasPolicyOriginOutput values.
@@ -12097,12 +10656,12 @@ type GetWaasPoliciesWaasPolicyOriginArgs struct {
 	// A list of HTTP headers to forward to your origin.
 	CustomHeaders GetWaasPoliciesWaasPolicyOriginCustomHeaderArrayInput `pulumi:"customHeaders"`
 	// The HTTP port on the origin that the web application listens on. If unspecified, defaults to `80`. If `0` is specified - the origin is not used for HTTP traffic.
-	HttpPort pulumi.IntInput `pulumi:"httpPort"`
+	HttpPort pulumi.IntPtrInput `pulumi:"httpPort"`
 	// The HTTPS port on the origin that the web application listens on. If unspecified, defaults to `443`. If `0` is specified - the origin is not used for HTTPS traffic.
-	HttpsPort pulumi.IntInput    `pulumi:"httpsPort"`
-	Label     pulumi.StringInput `pulumi:"label"`
+	HttpsPort pulumi.IntPtrInput    `pulumi:"httpsPort"`
+	Label     pulumi.StringPtrInput `pulumi:"label"`
 	// The URI of the origin. Does not support paths. Port numbers should be specified in the `httpPort` and `httpsPort` fields.
-	Uri pulumi.StringInput `pulumi:"uri"`
+	Uri pulumi.StringPtrInput `pulumi:"uri"`
 }
 
 func (GetWaasPoliciesWaasPolicyOriginArgs) ElementType() reflect.Type {
@@ -12115,12 +10674,6 @@ func (i GetWaasPoliciesWaasPolicyOriginArgs) ToGetWaasPoliciesWaasPolicyOriginOu
 
 func (i GetWaasPoliciesWaasPolicyOriginArgs) ToGetWaasPoliciesWaasPolicyOriginOutputWithContext(ctx context.Context) GetWaasPoliciesWaasPolicyOriginOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyOriginOutput)
-}
-
-func (i GetWaasPoliciesWaasPolicyOriginArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyOrigin] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyOrigin]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyOriginOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetWaasPoliciesWaasPolicyOriginArrayInput is an input type that accepts GetWaasPoliciesWaasPolicyOriginArray and GetWaasPoliciesWaasPolicyOriginArrayOutput values.
@@ -12148,12 +10701,6 @@ func (i GetWaasPoliciesWaasPolicyOriginArray) ToGetWaasPoliciesWaasPolicyOriginA
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyOriginArrayOutput)
 }
 
-func (i GetWaasPoliciesWaasPolicyOriginArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyOrigin] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyOrigin]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyOriginArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPoliciesWaasPolicyOriginOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPoliciesWaasPolicyOriginOutput) ElementType() reflect.Type {
@@ -12168,12 +10715,6 @@ func (o GetWaasPoliciesWaasPolicyOriginOutput) ToGetWaasPoliciesWaasPolicyOrigin
 	return o
 }
 
-func (o GetWaasPoliciesWaasPolicyOriginOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyOrigin] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyOrigin]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A list of HTTP headers to forward to your origin.
 func (o GetWaasPoliciesWaasPolicyOriginOutput) CustomHeaders() GetWaasPoliciesWaasPolicyOriginCustomHeaderArrayOutput {
 	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyOrigin) []GetWaasPoliciesWaasPolicyOriginCustomHeader {
@@ -12182,22 +10723,22 @@ func (o GetWaasPoliciesWaasPolicyOriginOutput) CustomHeaders() GetWaasPoliciesWa
 }
 
 // The HTTP port on the origin that the web application listens on. If unspecified, defaults to `80`. If `0` is specified - the origin is not used for HTTP traffic.
-func (o GetWaasPoliciesWaasPolicyOriginOutput) HttpPort() pulumi.IntOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyOrigin) int { return v.HttpPort }).(pulumi.IntOutput)
+func (o GetWaasPoliciesWaasPolicyOriginOutput) HttpPort() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyOrigin) *int { return v.HttpPort }).(pulumi.IntPtrOutput)
 }
 
 // The HTTPS port on the origin that the web application listens on. If unspecified, defaults to `443`. If `0` is specified - the origin is not used for HTTPS traffic.
-func (o GetWaasPoliciesWaasPolicyOriginOutput) HttpsPort() pulumi.IntOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyOrigin) int { return v.HttpsPort }).(pulumi.IntOutput)
+func (o GetWaasPoliciesWaasPolicyOriginOutput) HttpsPort() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyOrigin) *int { return v.HttpsPort }).(pulumi.IntPtrOutput)
 }
 
-func (o GetWaasPoliciesWaasPolicyOriginOutput) Label() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyOrigin) string { return v.Label }).(pulumi.StringOutput)
+func (o GetWaasPoliciesWaasPolicyOriginOutput) Label() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyOrigin) *string { return v.Label }).(pulumi.StringPtrOutput)
 }
 
 // The URI of the origin. Does not support paths. Port numbers should be specified in the `httpPort` and `httpsPort` fields.
-func (o GetWaasPoliciesWaasPolicyOriginOutput) Uri() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyOrigin) string { return v.Uri }).(pulumi.StringOutput)
+func (o GetWaasPoliciesWaasPolicyOriginOutput) Uri() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyOrigin) *string { return v.Uri }).(pulumi.StringPtrOutput)
 }
 
 type GetWaasPoliciesWaasPolicyOriginArrayOutput struct{ *pulumi.OutputState }
@@ -12214,12 +10755,6 @@ func (o GetWaasPoliciesWaasPolicyOriginArrayOutput) ToGetWaasPoliciesWaasPolicyO
 	return o
 }
 
-func (o GetWaasPoliciesWaasPolicyOriginArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyOrigin] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyOrigin]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWaasPoliciesWaasPolicyOriginArrayOutput) Index(i pulumi.IntInput) GetWaasPoliciesWaasPolicyOriginOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWaasPoliciesWaasPolicyOrigin {
 		return vs[0].([]GetWaasPoliciesWaasPolicyOrigin)[vs[1].(int)]
@@ -12228,9 +10763,9 @@ func (o GetWaasPoliciesWaasPolicyOriginArrayOutput) Index(i pulumi.IntInput) Get
 
 type GetWaasPoliciesWaasPolicyOriginCustomHeader struct {
 	// The unique name of the whitelist.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The value of the header.
-	Value string `pulumi:"value"`
+	Value *string `pulumi:"value"`
 }
 
 // GetWaasPoliciesWaasPolicyOriginCustomHeaderInput is an input type that accepts GetWaasPoliciesWaasPolicyOriginCustomHeaderArgs and GetWaasPoliciesWaasPolicyOriginCustomHeaderOutput values.
@@ -12246,9 +10781,9 @@ type GetWaasPoliciesWaasPolicyOriginCustomHeaderInput interface {
 
 type GetWaasPoliciesWaasPolicyOriginCustomHeaderArgs struct {
 	// The unique name of the whitelist.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// The value of the header.
-	Value pulumi.StringInput `pulumi:"value"`
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (GetWaasPoliciesWaasPolicyOriginCustomHeaderArgs) ElementType() reflect.Type {
@@ -12261,12 +10796,6 @@ func (i GetWaasPoliciesWaasPolicyOriginCustomHeaderArgs) ToGetWaasPoliciesWaasPo
 
 func (i GetWaasPoliciesWaasPolicyOriginCustomHeaderArgs) ToGetWaasPoliciesWaasPolicyOriginCustomHeaderOutputWithContext(ctx context.Context) GetWaasPoliciesWaasPolicyOriginCustomHeaderOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyOriginCustomHeaderOutput)
-}
-
-func (i GetWaasPoliciesWaasPolicyOriginCustomHeaderArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyOriginCustomHeader] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyOriginCustomHeader]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyOriginCustomHeaderOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetWaasPoliciesWaasPolicyOriginCustomHeaderArrayInput is an input type that accepts GetWaasPoliciesWaasPolicyOriginCustomHeaderArray and GetWaasPoliciesWaasPolicyOriginCustomHeaderArrayOutput values.
@@ -12294,12 +10823,6 @@ func (i GetWaasPoliciesWaasPolicyOriginCustomHeaderArray) ToGetWaasPoliciesWaasP
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyOriginCustomHeaderArrayOutput)
 }
 
-func (i GetWaasPoliciesWaasPolicyOriginCustomHeaderArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyOriginCustomHeader] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyOriginCustomHeader]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyOriginCustomHeaderArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPoliciesWaasPolicyOriginCustomHeaderOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPoliciesWaasPolicyOriginCustomHeaderOutput) ElementType() reflect.Type {
@@ -12314,20 +10837,14 @@ func (o GetWaasPoliciesWaasPolicyOriginCustomHeaderOutput) ToGetWaasPoliciesWaas
 	return o
 }
 
-func (o GetWaasPoliciesWaasPolicyOriginCustomHeaderOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyOriginCustomHeader] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyOriginCustomHeader]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The unique name of the whitelist.
-func (o GetWaasPoliciesWaasPolicyOriginCustomHeaderOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyOriginCustomHeader) string { return v.Name }).(pulumi.StringOutput)
+func (o GetWaasPoliciesWaasPolicyOriginCustomHeaderOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyOriginCustomHeader) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The value of the header.
-func (o GetWaasPoliciesWaasPolicyOriginCustomHeaderOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyOriginCustomHeader) string { return v.Value }).(pulumi.StringOutput)
+func (o GetWaasPoliciesWaasPolicyOriginCustomHeaderOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyOriginCustomHeader) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
 
 type GetWaasPoliciesWaasPolicyOriginCustomHeaderArrayOutput struct{ *pulumi.OutputState }
@@ -12344,12 +10861,6 @@ func (o GetWaasPoliciesWaasPolicyOriginCustomHeaderArrayOutput) ToGetWaasPolicie
 	return o
 }
 
-func (o GetWaasPoliciesWaasPolicyOriginCustomHeaderArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyOriginCustomHeader] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyOriginCustomHeader]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWaasPoliciesWaasPolicyOriginCustomHeaderArrayOutput) Index(i pulumi.IntInput) GetWaasPoliciesWaasPolicyOriginCustomHeaderOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWaasPoliciesWaasPolicyOriginCustomHeader {
 		return vs[0].([]GetWaasPoliciesWaasPolicyOriginCustomHeader)[vs[1].(int)]
@@ -12357,7 +10868,7 @@ func (o GetWaasPoliciesWaasPolicyOriginCustomHeaderArrayOutput) Index(i pulumi.I
 }
 
 type GetWaasPoliciesWaasPolicyOriginGroup struct {
-	Label        string                                            `pulumi:"label"`
+	Label        *string                                           `pulumi:"label"`
 	OriginGroups []GetWaasPoliciesWaasPolicyOriginGroupOriginGroup `pulumi:"originGroups"`
 }
 
@@ -12373,7 +10884,7 @@ type GetWaasPoliciesWaasPolicyOriginGroupInput interface {
 }
 
 type GetWaasPoliciesWaasPolicyOriginGroupArgs struct {
-	Label        pulumi.StringInput                                        `pulumi:"label"`
+	Label        pulumi.StringPtrInput                                     `pulumi:"label"`
 	OriginGroups GetWaasPoliciesWaasPolicyOriginGroupOriginGroupArrayInput `pulumi:"originGroups"`
 }
 
@@ -12387,12 +10898,6 @@ func (i GetWaasPoliciesWaasPolicyOriginGroupArgs) ToGetWaasPoliciesWaasPolicyOri
 
 func (i GetWaasPoliciesWaasPolicyOriginGroupArgs) ToGetWaasPoliciesWaasPolicyOriginGroupOutputWithContext(ctx context.Context) GetWaasPoliciesWaasPolicyOriginGroupOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyOriginGroupOutput)
-}
-
-func (i GetWaasPoliciesWaasPolicyOriginGroupArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyOriginGroup] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyOriginGroup]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyOriginGroupOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetWaasPoliciesWaasPolicyOriginGroupArrayInput is an input type that accepts GetWaasPoliciesWaasPolicyOriginGroupArray and GetWaasPoliciesWaasPolicyOriginGroupArrayOutput values.
@@ -12420,12 +10925,6 @@ func (i GetWaasPoliciesWaasPolicyOriginGroupArray) ToGetWaasPoliciesWaasPolicyOr
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyOriginGroupArrayOutput)
 }
 
-func (i GetWaasPoliciesWaasPolicyOriginGroupArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyOriginGroup] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyOriginGroup]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyOriginGroupArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPoliciesWaasPolicyOriginGroupOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPoliciesWaasPolicyOriginGroupOutput) ElementType() reflect.Type {
@@ -12440,14 +10939,8 @@ func (o GetWaasPoliciesWaasPolicyOriginGroupOutput) ToGetWaasPoliciesWaasPolicyO
 	return o
 }
 
-func (o GetWaasPoliciesWaasPolicyOriginGroupOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyOriginGroup] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyOriginGroup]{
-		OutputState: o.OutputState,
-	}
-}
-
-func (o GetWaasPoliciesWaasPolicyOriginGroupOutput) Label() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyOriginGroup) string { return v.Label }).(pulumi.StringOutput)
+func (o GetWaasPoliciesWaasPolicyOriginGroupOutput) Label() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyOriginGroup) *string { return v.Label }).(pulumi.StringPtrOutput)
 }
 
 func (o GetWaasPoliciesWaasPolicyOriginGroupOutput) OriginGroups() GetWaasPoliciesWaasPolicyOriginGroupOriginGroupArrayOutput {
@@ -12470,12 +10963,6 @@ func (o GetWaasPoliciesWaasPolicyOriginGroupArrayOutput) ToGetWaasPoliciesWaasPo
 	return o
 }
 
-func (o GetWaasPoliciesWaasPolicyOriginGroupArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyOriginGroup] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyOriginGroup]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWaasPoliciesWaasPolicyOriginGroupArrayOutput) Index(i pulumi.IntInput) GetWaasPoliciesWaasPolicyOriginGroupOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWaasPoliciesWaasPolicyOriginGroup {
 		return vs[0].([]GetWaasPoliciesWaasPolicyOriginGroup)[vs[1].(int)]
@@ -12484,8 +10971,8 @@ func (o GetWaasPoliciesWaasPolicyOriginGroupArrayOutput) Index(i pulumi.IntInput
 
 type GetWaasPoliciesWaasPolicyOriginGroupOriginGroup struct {
 	// The key in the map of origins referencing the origin used for the Web Application Firewall. The origin must already be included in `Origins`. Required when creating the `WafConfig` resource, but not on update.
-	Origin string `pulumi:"origin"`
-	Weight int    `pulumi:"weight"`
+	Origin *string `pulumi:"origin"`
+	Weight *int    `pulumi:"weight"`
 }
 
 // GetWaasPoliciesWaasPolicyOriginGroupOriginGroupInput is an input type that accepts GetWaasPoliciesWaasPolicyOriginGroupOriginGroupArgs and GetWaasPoliciesWaasPolicyOriginGroupOriginGroupOutput values.
@@ -12501,8 +10988,8 @@ type GetWaasPoliciesWaasPolicyOriginGroupOriginGroupInput interface {
 
 type GetWaasPoliciesWaasPolicyOriginGroupOriginGroupArgs struct {
 	// The key in the map of origins referencing the origin used for the Web Application Firewall. The origin must already be included in `Origins`. Required when creating the `WafConfig` resource, but not on update.
-	Origin pulumi.StringInput `pulumi:"origin"`
-	Weight pulumi.IntInput    `pulumi:"weight"`
+	Origin pulumi.StringPtrInput `pulumi:"origin"`
+	Weight pulumi.IntPtrInput    `pulumi:"weight"`
 }
 
 func (GetWaasPoliciesWaasPolicyOriginGroupOriginGroupArgs) ElementType() reflect.Type {
@@ -12515,12 +11002,6 @@ func (i GetWaasPoliciesWaasPolicyOriginGroupOriginGroupArgs) ToGetWaasPoliciesWa
 
 func (i GetWaasPoliciesWaasPolicyOriginGroupOriginGroupArgs) ToGetWaasPoliciesWaasPolicyOriginGroupOriginGroupOutputWithContext(ctx context.Context) GetWaasPoliciesWaasPolicyOriginGroupOriginGroupOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyOriginGroupOriginGroupOutput)
-}
-
-func (i GetWaasPoliciesWaasPolicyOriginGroupOriginGroupArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyOriginGroupOriginGroup] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyOriginGroupOriginGroup]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyOriginGroupOriginGroupOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetWaasPoliciesWaasPolicyOriginGroupOriginGroupArrayInput is an input type that accepts GetWaasPoliciesWaasPolicyOriginGroupOriginGroupArray and GetWaasPoliciesWaasPolicyOriginGroupOriginGroupArrayOutput values.
@@ -12548,12 +11029,6 @@ func (i GetWaasPoliciesWaasPolicyOriginGroupOriginGroupArray) ToGetWaasPoliciesW
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyOriginGroupOriginGroupArrayOutput)
 }
 
-func (i GetWaasPoliciesWaasPolicyOriginGroupOriginGroupArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyOriginGroupOriginGroup] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyOriginGroupOriginGroup]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyOriginGroupOriginGroupArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPoliciesWaasPolicyOriginGroupOriginGroupOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPoliciesWaasPolicyOriginGroupOriginGroupOutput) ElementType() reflect.Type {
@@ -12568,19 +11043,13 @@ func (o GetWaasPoliciesWaasPolicyOriginGroupOriginGroupOutput) ToGetWaasPolicies
 	return o
 }
 
-func (o GetWaasPoliciesWaasPolicyOriginGroupOriginGroupOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyOriginGroupOriginGroup] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyOriginGroupOriginGroup]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The key in the map of origins referencing the origin used for the Web Application Firewall. The origin must already be included in `Origins`. Required when creating the `WafConfig` resource, but not on update.
-func (o GetWaasPoliciesWaasPolicyOriginGroupOriginGroupOutput) Origin() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyOriginGroupOriginGroup) string { return v.Origin }).(pulumi.StringOutput)
+func (o GetWaasPoliciesWaasPolicyOriginGroupOriginGroupOutput) Origin() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyOriginGroupOriginGroup) *string { return v.Origin }).(pulumi.StringPtrOutput)
 }
 
-func (o GetWaasPoliciesWaasPolicyOriginGroupOriginGroupOutput) Weight() pulumi.IntOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyOriginGroupOriginGroup) int { return v.Weight }).(pulumi.IntOutput)
+func (o GetWaasPoliciesWaasPolicyOriginGroupOriginGroupOutput) Weight() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyOriginGroupOriginGroup) *int { return v.Weight }).(pulumi.IntPtrOutput)
 }
 
 type GetWaasPoliciesWaasPolicyOriginGroupOriginGroupArrayOutput struct{ *pulumi.OutputState }
@@ -12597,12 +11066,6 @@ func (o GetWaasPoliciesWaasPolicyOriginGroupOriginGroupArrayOutput) ToGetWaasPol
 	return o
 }
 
-func (o GetWaasPoliciesWaasPolicyOriginGroupOriginGroupArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyOriginGroupOriginGroup] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyOriginGroupOriginGroup]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWaasPoliciesWaasPolicyOriginGroupOriginGroupArrayOutput) Index(i pulumi.IntInput) GetWaasPoliciesWaasPolicyOriginGroupOriginGroupOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWaasPoliciesWaasPolicyOriginGroupOriginGroup {
 		return vs[0].([]GetWaasPoliciesWaasPolicyOriginGroupOriginGroup)[vs[1].(int)]
@@ -12611,28 +11074,28 @@ func (o GetWaasPoliciesWaasPolicyOriginGroupOriginGroupArrayOutput) Index(i pulu
 
 type GetWaasPoliciesWaasPolicyPolicyConfig struct {
 	// The OCID of the SSL certificate to use if HTTPS is supported.
-	CertificateId string `pulumi:"certificateId"`
+	CertificateId *string `pulumi:"certificateId"`
 	// The set cipher group for the configured TLS protocol. This sets the configuration for the TLS connections between clients and edge nodes only.
 	// * **DEFAULT:** Cipher group supports TLS 1.0, TLS 1.1, TLS 1.2, TLS 1.3 protocols. It has the following ciphers enabled: `ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:DHE-DSS-AES128-GCM-SHA256:kEDH+AESGCM:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA:ECDHE-ECDSA-AES256-SHA:DHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA:DHE-DSS-AES128-SHA256:DHE-RSA-AES256-SHA256:DHE-DSS-AES256-SHA:DHE-RSA-AES256-SHA:AES128-GCM-SHA256:AES256-GCM-SHA384:AES128-SHA256:AES256-SHA256:AES128-SHA:AES256-SHA:AES:CAMELLIA:!DES-CBC3-SHA:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!aECDH:!EDH-DSS-DES-CBC3-SHA:!EDH-RSA-DES-CBC3-SHA:!KRB5-DES-CBC3-SHA`
-	CipherGroup string `pulumi:"cipherGroup"`
+	CipherGroup *string `pulumi:"cipherGroup"`
 	// Specifies an HTTP header name which is treated as the connecting client's IP address. Applicable only if `isBehindCdn` is enabled.
-	ClientAddressHeader string `pulumi:"clientAddressHeader"`
+	ClientAddressHeader *string `pulumi:"clientAddressHeader"`
 	// Health checks monitor the status of your origin servers and only route traffic to the origins that pass the health check. If the health check fails, origin is automatically removed from the load balancing. There is roughly one health check per EDGE POP per period. Any checks that pass will be reported as "healthy".
 	HealthChecks []GetWaasPoliciesWaasPolicyPolicyConfigHealthCheck `pulumi:"healthChecks"`
 	// Enabling `isBehindCdn` allows for the collection of IP addresses from client requests if the WAF is connected to a CDN.
-	IsBehindCdn bool `pulumi:"isBehindCdn"`
+	IsBehindCdn *bool `pulumi:"isBehindCdn"`
 	// Enable or disable automatic content caching based on the response `cache-control` header. This feature enables the origin to act as a proxy cache. Caching is usually defined using `cache-control` header. For example `cache-control: max-age=120` means that the returned resource is valid for 120 seconds. Caching rules will overwrite this setting.
-	IsCacheControlRespected bool `pulumi:"isCacheControlRespected"`
+	IsCacheControlRespected *bool `pulumi:"isCacheControlRespected"`
 	// Enable or disable HTTPS support. If true, a `certificateId` is required. If unspecified, defaults to `false`.
-	IsHttpsEnabled bool `pulumi:"isHttpsEnabled"`
+	IsHttpsEnabled *bool `pulumi:"isHttpsEnabled"`
 	// Force HTTP to HTTPS redirection. If unspecified, defaults to `false`.
-	IsHttpsForced bool `pulumi:"isHttpsForced"`
+	IsHttpsForced *bool `pulumi:"isHttpsForced"`
 	// Enable or disable GZIP compression of origin responses. If enabled, the header `Accept-Encoding: gzip` is sent to origin, otherwise, the empty `Accept-Encoding:` header is used.
-	IsOriginCompressionEnabled bool `pulumi:"isOriginCompressionEnabled"`
+	IsOriginCompressionEnabled *bool `pulumi:"isOriginCompressionEnabled"`
 	// Enable or disable buffering of responses from the origin. Buffering improves overall stability in case of network issues, but slightly increases Time To First Byte.
-	IsResponseBufferingEnabled bool `pulumi:"isResponseBufferingEnabled"`
+	IsResponseBufferingEnabled *bool `pulumi:"isResponseBufferingEnabled"`
 	// SNI stands for Server Name Indication and is an extension of the TLS protocol. It indicates which hostname is being contacted by the browser at the beginning of the 'handshake'-process. This allows a server to connect multiple SSL Certificates to one IP address and port.
-	IsSniEnabled bool `pulumi:"isSniEnabled"`
+	IsSniEnabled *bool `pulumi:"isSniEnabled"`
 	// An object that represents a load balancing method and its properties.
 	LoadBalancingMethods []GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethod `pulumi:"loadBalancingMethods"`
 	// A list of allowed TLS protocols. Only applicable when HTTPS support is enabled. The TLS protocol is negotiated while the request is connecting and the most recent protocol supported by both the edge node and client browser will be selected. If no such version exists, the connection will be aborted.
@@ -12658,28 +11121,28 @@ type GetWaasPoliciesWaasPolicyPolicyConfigInput interface {
 
 type GetWaasPoliciesWaasPolicyPolicyConfigArgs struct {
 	// The OCID of the SSL certificate to use if HTTPS is supported.
-	CertificateId pulumi.StringInput `pulumi:"certificateId"`
+	CertificateId pulumi.StringPtrInput `pulumi:"certificateId"`
 	// The set cipher group for the configured TLS protocol. This sets the configuration for the TLS connections between clients and edge nodes only.
 	// * **DEFAULT:** Cipher group supports TLS 1.0, TLS 1.1, TLS 1.2, TLS 1.3 protocols. It has the following ciphers enabled: `ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:DHE-DSS-AES128-GCM-SHA256:kEDH+AESGCM:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA:ECDHE-ECDSA-AES256-SHA:DHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA:DHE-DSS-AES128-SHA256:DHE-RSA-AES256-SHA256:DHE-DSS-AES256-SHA:DHE-RSA-AES256-SHA:AES128-GCM-SHA256:AES256-GCM-SHA384:AES128-SHA256:AES256-SHA256:AES128-SHA:AES256-SHA:AES:CAMELLIA:!DES-CBC3-SHA:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!aECDH:!EDH-DSS-DES-CBC3-SHA:!EDH-RSA-DES-CBC3-SHA:!KRB5-DES-CBC3-SHA`
-	CipherGroup pulumi.StringInput `pulumi:"cipherGroup"`
+	CipherGroup pulumi.StringPtrInput `pulumi:"cipherGroup"`
 	// Specifies an HTTP header name which is treated as the connecting client's IP address. Applicable only if `isBehindCdn` is enabled.
-	ClientAddressHeader pulumi.StringInput `pulumi:"clientAddressHeader"`
+	ClientAddressHeader pulumi.StringPtrInput `pulumi:"clientAddressHeader"`
 	// Health checks monitor the status of your origin servers and only route traffic to the origins that pass the health check. If the health check fails, origin is automatically removed from the load balancing. There is roughly one health check per EDGE POP per period. Any checks that pass will be reported as "healthy".
 	HealthChecks GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckArrayInput `pulumi:"healthChecks"`
 	// Enabling `isBehindCdn` allows for the collection of IP addresses from client requests if the WAF is connected to a CDN.
-	IsBehindCdn pulumi.BoolInput `pulumi:"isBehindCdn"`
+	IsBehindCdn pulumi.BoolPtrInput `pulumi:"isBehindCdn"`
 	// Enable or disable automatic content caching based on the response `cache-control` header. This feature enables the origin to act as a proxy cache. Caching is usually defined using `cache-control` header. For example `cache-control: max-age=120` means that the returned resource is valid for 120 seconds. Caching rules will overwrite this setting.
-	IsCacheControlRespected pulumi.BoolInput `pulumi:"isCacheControlRespected"`
+	IsCacheControlRespected pulumi.BoolPtrInput `pulumi:"isCacheControlRespected"`
 	// Enable or disable HTTPS support. If true, a `certificateId` is required. If unspecified, defaults to `false`.
-	IsHttpsEnabled pulumi.BoolInput `pulumi:"isHttpsEnabled"`
+	IsHttpsEnabled pulumi.BoolPtrInput `pulumi:"isHttpsEnabled"`
 	// Force HTTP to HTTPS redirection. If unspecified, defaults to `false`.
-	IsHttpsForced pulumi.BoolInput `pulumi:"isHttpsForced"`
+	IsHttpsForced pulumi.BoolPtrInput `pulumi:"isHttpsForced"`
 	// Enable or disable GZIP compression of origin responses. If enabled, the header `Accept-Encoding: gzip` is sent to origin, otherwise, the empty `Accept-Encoding:` header is used.
-	IsOriginCompressionEnabled pulumi.BoolInput `pulumi:"isOriginCompressionEnabled"`
+	IsOriginCompressionEnabled pulumi.BoolPtrInput `pulumi:"isOriginCompressionEnabled"`
 	// Enable or disable buffering of responses from the origin. Buffering improves overall stability in case of network issues, but slightly increases Time To First Byte.
-	IsResponseBufferingEnabled pulumi.BoolInput `pulumi:"isResponseBufferingEnabled"`
+	IsResponseBufferingEnabled pulumi.BoolPtrInput `pulumi:"isResponseBufferingEnabled"`
 	// SNI stands for Server Name Indication and is an extension of the TLS protocol. It indicates which hostname is being contacted by the browser at the beginning of the 'handshake'-process. This allows a server to connect multiple SSL Certificates to one IP address and port.
-	IsSniEnabled pulumi.BoolInput `pulumi:"isSniEnabled"`
+	IsSniEnabled pulumi.BoolPtrInput `pulumi:"isSniEnabled"`
 	// An object that represents a load balancing method and its properties.
 	LoadBalancingMethods GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethodArrayInput `pulumi:"loadBalancingMethods"`
 	// A list of allowed TLS protocols. Only applicable when HTTPS support is enabled. The TLS protocol is negotiated while the request is connecting and the most recent protocol supported by both the edge node and client browser will be selected. If no such version exists, the connection will be aborted.
@@ -12702,12 +11165,6 @@ func (i GetWaasPoliciesWaasPolicyPolicyConfigArgs) ToGetWaasPoliciesWaasPolicyPo
 
 func (i GetWaasPoliciesWaasPolicyPolicyConfigArgs) ToGetWaasPoliciesWaasPolicyPolicyConfigOutputWithContext(ctx context.Context) GetWaasPoliciesWaasPolicyPolicyConfigOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyPolicyConfigOutput)
-}
-
-func (i GetWaasPoliciesWaasPolicyPolicyConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyPolicyConfig] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyPolicyConfig]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyPolicyConfigOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetWaasPoliciesWaasPolicyPolicyConfigArrayInput is an input type that accepts GetWaasPoliciesWaasPolicyPolicyConfigArray and GetWaasPoliciesWaasPolicyPolicyConfigArrayOutput values.
@@ -12735,12 +11192,6 @@ func (i GetWaasPoliciesWaasPolicyPolicyConfigArray) ToGetWaasPoliciesWaasPolicyP
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyPolicyConfigArrayOutput)
 }
 
-func (i GetWaasPoliciesWaasPolicyPolicyConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyPolicyConfig] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyPolicyConfig]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyPolicyConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPoliciesWaasPolicyPolicyConfigOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPoliciesWaasPolicyPolicyConfigOutput) ElementType() reflect.Type {
@@ -12755,26 +11206,20 @@ func (o GetWaasPoliciesWaasPolicyPolicyConfigOutput) ToGetWaasPoliciesWaasPolicy
 	return o
 }
 
-func (o GetWaasPoliciesWaasPolicyPolicyConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyPolicyConfig] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyPolicyConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the SSL certificate to use if HTTPS is supported.
-func (o GetWaasPoliciesWaasPolicyPolicyConfigOutput) CertificateId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyPolicyConfig) string { return v.CertificateId }).(pulumi.StringOutput)
+func (o GetWaasPoliciesWaasPolicyPolicyConfigOutput) CertificateId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyPolicyConfig) *string { return v.CertificateId }).(pulumi.StringPtrOutput)
 }
 
 // The set cipher group for the configured TLS protocol. This sets the configuration for the TLS connections between clients and edge nodes only.
 // * **DEFAULT:** Cipher group supports TLS 1.0, TLS 1.1, TLS 1.2, TLS 1.3 protocols. It has the following ciphers enabled: `ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:DHE-DSS-AES128-GCM-SHA256:kEDH+AESGCM:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA:ECDHE-ECDSA-AES256-SHA:DHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA:DHE-DSS-AES128-SHA256:DHE-RSA-AES256-SHA256:DHE-DSS-AES256-SHA:DHE-RSA-AES256-SHA:AES128-GCM-SHA256:AES256-GCM-SHA384:AES128-SHA256:AES256-SHA256:AES128-SHA:AES256-SHA:AES:CAMELLIA:!DES-CBC3-SHA:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!aECDH:!EDH-DSS-DES-CBC3-SHA:!EDH-RSA-DES-CBC3-SHA:!KRB5-DES-CBC3-SHA`
-func (o GetWaasPoliciesWaasPolicyPolicyConfigOutput) CipherGroup() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyPolicyConfig) string { return v.CipherGroup }).(pulumi.StringOutput)
+func (o GetWaasPoliciesWaasPolicyPolicyConfigOutput) CipherGroup() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyPolicyConfig) *string { return v.CipherGroup }).(pulumi.StringPtrOutput)
 }
 
 // Specifies an HTTP header name which is treated as the connecting client's IP address. Applicable only if `isBehindCdn` is enabled.
-func (o GetWaasPoliciesWaasPolicyPolicyConfigOutput) ClientAddressHeader() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyPolicyConfig) string { return v.ClientAddressHeader }).(pulumi.StringOutput)
+func (o GetWaasPoliciesWaasPolicyPolicyConfigOutput) ClientAddressHeader() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyPolicyConfig) *string { return v.ClientAddressHeader }).(pulumi.StringPtrOutput)
 }
 
 // Health checks monitor the status of your origin servers and only route traffic to the origins that pass the health check. If the health check fails, origin is automatically removed from the load balancing. There is roughly one health check per EDGE POP per period. Any checks that pass will be reported as "healthy".
@@ -12785,38 +11230,38 @@ func (o GetWaasPoliciesWaasPolicyPolicyConfigOutput) HealthChecks() GetWaasPolic
 }
 
 // Enabling `isBehindCdn` allows for the collection of IP addresses from client requests if the WAF is connected to a CDN.
-func (o GetWaasPoliciesWaasPolicyPolicyConfigOutput) IsBehindCdn() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyPolicyConfig) bool { return v.IsBehindCdn }).(pulumi.BoolOutput)
+func (o GetWaasPoliciesWaasPolicyPolicyConfigOutput) IsBehindCdn() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyPolicyConfig) *bool { return v.IsBehindCdn }).(pulumi.BoolPtrOutput)
 }
 
 // Enable or disable automatic content caching based on the response `cache-control` header. This feature enables the origin to act as a proxy cache. Caching is usually defined using `cache-control` header. For example `cache-control: max-age=120` means that the returned resource is valid for 120 seconds. Caching rules will overwrite this setting.
-func (o GetWaasPoliciesWaasPolicyPolicyConfigOutput) IsCacheControlRespected() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyPolicyConfig) bool { return v.IsCacheControlRespected }).(pulumi.BoolOutput)
+func (o GetWaasPoliciesWaasPolicyPolicyConfigOutput) IsCacheControlRespected() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyPolicyConfig) *bool { return v.IsCacheControlRespected }).(pulumi.BoolPtrOutput)
 }
 
 // Enable or disable HTTPS support. If true, a `certificateId` is required. If unspecified, defaults to `false`.
-func (o GetWaasPoliciesWaasPolicyPolicyConfigOutput) IsHttpsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyPolicyConfig) bool { return v.IsHttpsEnabled }).(pulumi.BoolOutput)
+func (o GetWaasPoliciesWaasPolicyPolicyConfigOutput) IsHttpsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyPolicyConfig) *bool { return v.IsHttpsEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // Force HTTP to HTTPS redirection. If unspecified, defaults to `false`.
-func (o GetWaasPoliciesWaasPolicyPolicyConfigOutput) IsHttpsForced() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyPolicyConfig) bool { return v.IsHttpsForced }).(pulumi.BoolOutput)
+func (o GetWaasPoliciesWaasPolicyPolicyConfigOutput) IsHttpsForced() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyPolicyConfig) *bool { return v.IsHttpsForced }).(pulumi.BoolPtrOutput)
 }
 
 // Enable or disable GZIP compression of origin responses. If enabled, the header `Accept-Encoding: gzip` is sent to origin, otherwise, the empty `Accept-Encoding:` header is used.
-func (o GetWaasPoliciesWaasPolicyPolicyConfigOutput) IsOriginCompressionEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyPolicyConfig) bool { return v.IsOriginCompressionEnabled }).(pulumi.BoolOutput)
+func (o GetWaasPoliciesWaasPolicyPolicyConfigOutput) IsOriginCompressionEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyPolicyConfig) *bool { return v.IsOriginCompressionEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // Enable or disable buffering of responses from the origin. Buffering improves overall stability in case of network issues, but slightly increases Time To First Byte.
-func (o GetWaasPoliciesWaasPolicyPolicyConfigOutput) IsResponseBufferingEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyPolicyConfig) bool { return v.IsResponseBufferingEnabled }).(pulumi.BoolOutput)
+func (o GetWaasPoliciesWaasPolicyPolicyConfigOutput) IsResponseBufferingEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyPolicyConfig) *bool { return v.IsResponseBufferingEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // SNI stands for Server Name Indication and is an extension of the TLS protocol. It indicates which hostname is being contacted by the browser at the beginning of the 'handshake'-process. This allows a server to connect multiple SSL Certificates to one IP address and port.
-func (o GetWaasPoliciesWaasPolicyPolicyConfigOutput) IsSniEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyPolicyConfig) bool { return v.IsSniEnabled }).(pulumi.BoolOutput)
+func (o GetWaasPoliciesWaasPolicyPolicyConfigOutput) IsSniEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyPolicyConfig) *bool { return v.IsSniEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // An object that represents a load balancing method and its properties.
@@ -12854,12 +11299,6 @@ func (o GetWaasPoliciesWaasPolicyPolicyConfigArrayOutput) ToGetWaasPoliciesWaasP
 	return o
 }
 
-func (o GetWaasPoliciesWaasPolicyPolicyConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyPolicyConfig] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyPolicyConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWaasPoliciesWaasPolicyPolicyConfigArrayOutput) Index(i pulumi.IntInput) GetWaasPoliciesWaasPolicyPolicyConfigOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWaasPoliciesWaasPolicyPolicyConfig {
 		return vs[0].([]GetWaasPoliciesWaasPolicyPolicyConfig)[vs[1].(int)]
@@ -12874,28 +11313,28 @@ type GetWaasPoliciesWaasPolicyPolicyConfigHealthCheck struct {
 	// * **5XX:** Server errors response code group.
 	ExpectedResponseCodeGroups []string `pulumi:"expectedResponseCodeGroups"`
 	// Health check will search for the given text in a case-sensitive manner within the response body and will fail if the text is not found.
-	ExpectedResponseText string `pulumi:"expectedResponseText"`
+	ExpectedResponseText *string `pulumi:"expectedResponseText"`
 	// HTTP header fields to include in health check requests, expressed as `"name": "value"` properties. Because HTTP header field names are case-insensitive, any use of names that are case-insensitive equal to other names will be rejected. If Host is not specified, requests will include a Host header field with value matching the policy's protected domain. If User-Agent is not specified, requests will include a User-Agent header field with value "waf health checks".
 	Headers map[string]interface{} `pulumi:"headers"`
 	// Number of successful health checks after which the server is marked up.
-	HealthyThreshold int `pulumi:"healthyThreshold"`
+	HealthyThreshold *int `pulumi:"healthyThreshold"`
 	// Time between health checks of an individual origin server, in seconds.
-	IntervalInSeconds int `pulumi:"intervalInSeconds"`
+	IntervalInSeconds *int `pulumi:"intervalInSeconds"`
 	// Enables or disables the JavaScript challenge Web Application Firewall feature.
-	IsEnabled bool `pulumi:"isEnabled"`
+	IsEnabled *bool `pulumi:"isEnabled"`
 	// Enables or disables additional check for predefined text in addition to response code.
-	IsResponseTextCheckEnabled bool `pulumi:"isResponseTextCheckEnabled"`
+	IsResponseTextCheckEnabled *bool `pulumi:"isResponseTextCheckEnabled"`
 	// Load balancing methods are algorithms used to efficiently distribute traffic among origin servers.
 	// * **[IP_HASH](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/IPHashLoadBalancingMethod):** All the incoming requests from the same client IP address should go to the same content origination server. IP_HASH load balancing method uses origin weights when choosing which origin should the hash be assigned to initially.
 	// * **[ROUND_ROBIN](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/RoundRobinLoadBalancingMethod):** Forwards requests sequentially to the available origin servers. The first request - to the first origin server, the second request - to the next origin server, and so on. After it sends a request to the last origin server, it starts again with the first origin server. When using weights on origins, Weighted Round Robin assigns more requests to origins with a greater weight. Over a period of time, origins will receive a number of requests in proportion to their weight.
 	// * **[STICKY_COOKIE](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/StickyCookieLoadBalancingMethod):** Adds a session cookie to the first response from the origin server and identifies the server that sent the response. The client's next request contains the cookie value, and nginx routes the request to the origin server that responded to the first request. STICKY_COOKIE load balancing method falls back to Round Robin for the first request.
-	Method string `pulumi:"method"`
+	Method *string `pulumi:"method"`
 	// Path to visit on your origins when performing the health check.
-	Path string `pulumi:"path"`
+	Path *string `pulumi:"path"`
 	// Response timeout represents wait time until request is considered failed, in seconds.
-	TimeoutInSeconds int `pulumi:"timeoutInSeconds"`
+	TimeoutInSeconds *int `pulumi:"timeoutInSeconds"`
 	// Number of failed health checks after which the server is marked down.
-	UnhealthyThreshold int `pulumi:"unhealthyThreshold"`
+	UnhealthyThreshold *int `pulumi:"unhealthyThreshold"`
 }
 
 // GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckInput is an input type that accepts GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckArgs and GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckOutput values.
@@ -12917,28 +11356,28 @@ type GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckArgs struct {
 	// * **5XX:** Server errors response code group.
 	ExpectedResponseCodeGroups pulumi.StringArrayInput `pulumi:"expectedResponseCodeGroups"`
 	// Health check will search for the given text in a case-sensitive manner within the response body and will fail if the text is not found.
-	ExpectedResponseText pulumi.StringInput `pulumi:"expectedResponseText"`
+	ExpectedResponseText pulumi.StringPtrInput `pulumi:"expectedResponseText"`
 	// HTTP header fields to include in health check requests, expressed as `"name": "value"` properties. Because HTTP header field names are case-insensitive, any use of names that are case-insensitive equal to other names will be rejected. If Host is not specified, requests will include a Host header field with value matching the policy's protected domain. If User-Agent is not specified, requests will include a User-Agent header field with value "waf health checks".
 	Headers pulumi.MapInput `pulumi:"headers"`
 	// Number of successful health checks after which the server is marked up.
-	HealthyThreshold pulumi.IntInput `pulumi:"healthyThreshold"`
+	HealthyThreshold pulumi.IntPtrInput `pulumi:"healthyThreshold"`
 	// Time between health checks of an individual origin server, in seconds.
-	IntervalInSeconds pulumi.IntInput `pulumi:"intervalInSeconds"`
+	IntervalInSeconds pulumi.IntPtrInput `pulumi:"intervalInSeconds"`
 	// Enables or disables the JavaScript challenge Web Application Firewall feature.
-	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+	IsEnabled pulumi.BoolPtrInput `pulumi:"isEnabled"`
 	// Enables or disables additional check for predefined text in addition to response code.
-	IsResponseTextCheckEnabled pulumi.BoolInput `pulumi:"isResponseTextCheckEnabled"`
+	IsResponseTextCheckEnabled pulumi.BoolPtrInput `pulumi:"isResponseTextCheckEnabled"`
 	// Load balancing methods are algorithms used to efficiently distribute traffic among origin servers.
 	// * **[IP_HASH](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/IPHashLoadBalancingMethod):** All the incoming requests from the same client IP address should go to the same content origination server. IP_HASH load balancing method uses origin weights when choosing which origin should the hash be assigned to initially.
 	// * **[ROUND_ROBIN](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/RoundRobinLoadBalancingMethod):** Forwards requests sequentially to the available origin servers. The first request - to the first origin server, the second request - to the next origin server, and so on. After it sends a request to the last origin server, it starts again with the first origin server. When using weights on origins, Weighted Round Robin assigns more requests to origins with a greater weight. Over a period of time, origins will receive a number of requests in proportion to their weight.
 	// * **[STICKY_COOKIE](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/StickyCookieLoadBalancingMethod):** Adds a session cookie to the first response from the origin server and identifies the server that sent the response. The client's next request contains the cookie value, and nginx routes the request to the origin server that responded to the first request. STICKY_COOKIE load balancing method falls back to Round Robin for the first request.
-	Method pulumi.StringInput `pulumi:"method"`
+	Method pulumi.StringPtrInput `pulumi:"method"`
 	// Path to visit on your origins when performing the health check.
-	Path pulumi.StringInput `pulumi:"path"`
+	Path pulumi.StringPtrInput `pulumi:"path"`
 	// Response timeout represents wait time until request is considered failed, in seconds.
-	TimeoutInSeconds pulumi.IntInput `pulumi:"timeoutInSeconds"`
+	TimeoutInSeconds pulumi.IntPtrInput `pulumi:"timeoutInSeconds"`
 	// Number of failed health checks after which the server is marked down.
-	UnhealthyThreshold pulumi.IntInput `pulumi:"unhealthyThreshold"`
+	UnhealthyThreshold pulumi.IntPtrInput `pulumi:"unhealthyThreshold"`
 }
 
 func (GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckArgs) ElementType() reflect.Type {
@@ -12951,12 +11390,6 @@ func (i GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckArgs) ToGetWaasPoliciesW
 
 func (i GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckArgs) ToGetWaasPoliciesWaasPolicyPolicyConfigHealthCheckOutputWithContext(ctx context.Context) GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckOutput)
-}
-
-func (i GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyPolicyConfigHealthCheck] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyPolicyConfigHealthCheck]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyPolicyConfigHealthCheckOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckArrayInput is an input type that accepts GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckArray and GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckArrayOutput values.
@@ -12984,12 +11417,6 @@ func (i GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckArray) ToGetWaasPolicies
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckArrayOutput)
 }
 
-func (i GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyPolicyConfigHealthCheck] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyPolicyConfigHealthCheck]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyPolicyConfigHealthCheckArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckOutput) ElementType() reflect.Type {
@@ -13004,12 +11431,6 @@ func (o GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckOutput) ToGetWaasPolicie
 	return o
 }
 
-func (o GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyPolicyConfigHealthCheck] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyPolicyConfigHealthCheck]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The HTTP response codes that signify a healthy state.
 // * **2XX:** Success response code group.
 // * **3XX:** Redirection response code group.
@@ -13020,8 +11441,8 @@ func (o GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckOutput) ExpectedResponse
 }
 
 // Health check will search for the given text in a case-sensitive manner within the response body and will fail if the text is not found.
-func (o GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckOutput) ExpectedResponseText() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyPolicyConfigHealthCheck) string { return v.ExpectedResponseText }).(pulumi.StringOutput)
+func (o GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckOutput) ExpectedResponseText() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyPolicyConfigHealthCheck) *string { return v.ExpectedResponseText }).(pulumi.StringPtrOutput)
 }
 
 // HTTP header fields to include in health check requests, expressed as `"name": "value"` properties. Because HTTP header field names are case-insensitive, any use of names that are case-insensitive equal to other names will be rejected. If Host is not specified, requests will include a Host header field with value matching the policy's protected domain. If User-Agent is not specified, requests will include a User-Agent header field with value "waf health checks".
@@ -13030,46 +11451,46 @@ func (o GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckOutput) Headers() pulumi
 }
 
 // Number of successful health checks after which the server is marked up.
-func (o GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckOutput) HealthyThreshold() pulumi.IntOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyPolicyConfigHealthCheck) int { return v.HealthyThreshold }).(pulumi.IntOutput)
+func (o GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckOutput) HealthyThreshold() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyPolicyConfigHealthCheck) *int { return v.HealthyThreshold }).(pulumi.IntPtrOutput)
 }
 
 // Time between health checks of an individual origin server, in seconds.
-func (o GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckOutput) IntervalInSeconds() pulumi.IntOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyPolicyConfigHealthCheck) int { return v.IntervalInSeconds }).(pulumi.IntOutput)
+func (o GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckOutput) IntervalInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyPolicyConfigHealthCheck) *int { return v.IntervalInSeconds }).(pulumi.IntPtrOutput)
 }
 
 // Enables or disables the JavaScript challenge Web Application Firewall feature.
-func (o GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckOutput) IsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyPolicyConfigHealthCheck) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+func (o GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyPolicyConfigHealthCheck) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // Enables or disables additional check for predefined text in addition to response code.
-func (o GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckOutput) IsResponseTextCheckEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyPolicyConfigHealthCheck) bool { return v.IsResponseTextCheckEnabled }).(pulumi.BoolOutput)
+func (o GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckOutput) IsResponseTextCheckEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyPolicyConfigHealthCheck) *bool { return v.IsResponseTextCheckEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // Load balancing methods are algorithms used to efficiently distribute traffic among origin servers.
 // * **[IP_HASH](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/IPHashLoadBalancingMethod):** All the incoming requests from the same client IP address should go to the same content origination server. IP_HASH load balancing method uses origin weights when choosing which origin should the hash be assigned to initially.
 // * **[ROUND_ROBIN](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/RoundRobinLoadBalancingMethod):** Forwards requests sequentially to the available origin servers. The first request - to the first origin server, the second request - to the next origin server, and so on. After it sends a request to the last origin server, it starts again with the first origin server. When using weights on origins, Weighted Round Robin assigns more requests to origins with a greater weight. Over a period of time, origins will receive a number of requests in proportion to their weight.
 // * **[STICKY_COOKIE](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/StickyCookieLoadBalancingMethod):** Adds a session cookie to the first response from the origin server and identifies the server that sent the response. The client's next request contains the cookie value, and nginx routes the request to the origin server that responded to the first request. STICKY_COOKIE load balancing method falls back to Round Robin for the first request.
-func (o GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckOutput) Method() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyPolicyConfigHealthCheck) string { return v.Method }).(pulumi.StringOutput)
+func (o GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckOutput) Method() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyPolicyConfigHealthCheck) *string { return v.Method }).(pulumi.StringPtrOutput)
 }
 
 // Path to visit on your origins when performing the health check.
-func (o GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckOutput) Path() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyPolicyConfigHealthCheck) string { return v.Path }).(pulumi.StringOutput)
+func (o GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckOutput) Path() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyPolicyConfigHealthCheck) *string { return v.Path }).(pulumi.StringPtrOutput)
 }
 
 // Response timeout represents wait time until request is considered failed, in seconds.
-func (o GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckOutput) TimeoutInSeconds() pulumi.IntOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyPolicyConfigHealthCheck) int { return v.TimeoutInSeconds }).(pulumi.IntOutput)
+func (o GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckOutput) TimeoutInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyPolicyConfigHealthCheck) *int { return v.TimeoutInSeconds }).(pulumi.IntPtrOutput)
 }
 
 // Number of failed health checks after which the server is marked down.
-func (o GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckOutput) UnhealthyThreshold() pulumi.IntOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyPolicyConfigHealthCheck) int { return v.UnhealthyThreshold }).(pulumi.IntOutput)
+func (o GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckOutput) UnhealthyThreshold() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyPolicyConfigHealthCheck) *int { return v.UnhealthyThreshold }).(pulumi.IntPtrOutput)
 }
 
 type GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckArrayOutput struct{ *pulumi.OutputState }
@@ -13086,12 +11507,6 @@ func (o GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckArrayOutput) ToGetWaasPo
 	return o
 }
 
-func (o GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyPolicyConfigHealthCheck] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyPolicyConfigHealthCheck]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckArrayOutput) Index(i pulumi.IntInput) GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWaasPoliciesWaasPolicyPolicyConfigHealthCheck {
 		return vs[0].([]GetWaasPoliciesWaasPolicyPolicyConfigHealthCheck)[vs[1].(int)]
@@ -13100,16 +11515,16 @@ func (o GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckArrayOutput) Index(i pul
 
 type GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethod struct {
 	// The domain for which the cookie is set, defaults to WAAS policy domain.
-	Domain string `pulumi:"domain"`
+	Domain *string `pulumi:"domain"`
 	// The time for which a browser should keep the cookie in seconds. Empty value will cause the cookie to expire at the end of a browser session.
-	ExpirationTimeInSeconds int `pulumi:"expirationTimeInSeconds"`
+	ExpirationTimeInSeconds *int `pulumi:"expirationTimeInSeconds"`
 	// Load balancing methods are algorithms used to efficiently distribute traffic among origin servers.
 	// * **[IP_HASH](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/IPHashLoadBalancingMethod):** All the incoming requests from the same client IP address should go to the same content origination server. IP_HASH load balancing method uses origin weights when choosing which origin should the hash be assigned to initially.
 	// * **[ROUND_ROBIN](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/RoundRobinLoadBalancingMethod):** Forwards requests sequentially to the available origin servers. The first request - to the first origin server, the second request - to the next origin server, and so on. After it sends a request to the last origin server, it starts again with the first origin server. When using weights on origins, Weighted Round Robin assigns more requests to origins with a greater weight. Over a period of time, origins will receive a number of requests in proportion to their weight.
 	// * **[STICKY_COOKIE](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/StickyCookieLoadBalancingMethod):** Adds a session cookie to the first response from the origin server and identifies the server that sent the response. The client's next request contains the cookie value, and nginx routes the request to the origin server that responded to the first request. STICKY_COOKIE load balancing method falls back to Round Robin for the first request.
-	Method string `pulumi:"method"`
+	Method *string `pulumi:"method"`
 	// The unique name of the whitelist.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 }
 
 // GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethodInput is an input type that accepts GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethodArgs and GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethodOutput values.
@@ -13125,16 +11540,16 @@ type GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethodInput interface {
 
 type GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethodArgs struct {
 	// The domain for which the cookie is set, defaults to WAAS policy domain.
-	Domain pulumi.StringInput `pulumi:"domain"`
+	Domain pulumi.StringPtrInput `pulumi:"domain"`
 	// The time for which a browser should keep the cookie in seconds. Empty value will cause the cookie to expire at the end of a browser session.
-	ExpirationTimeInSeconds pulumi.IntInput `pulumi:"expirationTimeInSeconds"`
+	ExpirationTimeInSeconds pulumi.IntPtrInput `pulumi:"expirationTimeInSeconds"`
 	// Load balancing methods are algorithms used to efficiently distribute traffic among origin servers.
 	// * **[IP_HASH](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/IPHashLoadBalancingMethod):** All the incoming requests from the same client IP address should go to the same content origination server. IP_HASH load balancing method uses origin weights when choosing which origin should the hash be assigned to initially.
 	// * **[ROUND_ROBIN](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/RoundRobinLoadBalancingMethod):** Forwards requests sequentially to the available origin servers. The first request - to the first origin server, the second request - to the next origin server, and so on. After it sends a request to the last origin server, it starts again with the first origin server. When using weights on origins, Weighted Round Robin assigns more requests to origins with a greater weight. Over a period of time, origins will receive a number of requests in proportion to their weight.
 	// * **[STICKY_COOKIE](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/StickyCookieLoadBalancingMethod):** Adds a session cookie to the first response from the origin server and identifies the server that sent the response. The client's next request contains the cookie value, and nginx routes the request to the origin server that responded to the first request. STICKY_COOKIE load balancing method falls back to Round Robin for the first request.
-	Method pulumi.StringInput `pulumi:"method"`
+	Method pulumi.StringPtrInput `pulumi:"method"`
 	// The unique name of the whitelist.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 }
 
 func (GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethodArgs) ElementType() reflect.Type {
@@ -13147,12 +11562,6 @@ func (i GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethodArgs) ToGetWaasP
 
 func (i GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethodArgs) ToGetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethodOutputWithContext(ctx context.Context) GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethodOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethodOutput)
-}
-
-func (i GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethodArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethod] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethod]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethodOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethodArrayInput is an input type that accepts GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethodArray and GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethodArrayOutput values.
@@ -13180,12 +11589,6 @@ func (i GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethodArray) ToGetWaas
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethodArrayOutput)
 }
 
-func (i GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethodArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethod] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethod]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethodArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethodOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethodOutput) ElementType() reflect.Type {
@@ -13200,33 +11603,29 @@ func (o GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethodOutput) ToGetWaa
 	return o
 }
 
-func (o GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethodOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethod] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethod]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The domain for which the cookie is set, defaults to WAAS policy domain.
-func (o GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethodOutput) Domain() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethod) string { return v.Domain }).(pulumi.StringOutput)
+func (o GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethodOutput) Domain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethod) *string { return v.Domain }).(pulumi.StringPtrOutput)
 }
 
 // The time for which a browser should keep the cookie in seconds. Empty value will cause the cookie to expire at the end of a browser session.
-func (o GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethodOutput) ExpirationTimeInSeconds() pulumi.IntOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethod) int { return v.ExpirationTimeInSeconds }).(pulumi.IntOutput)
+func (o GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethodOutput) ExpirationTimeInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethod) *int {
+		return v.ExpirationTimeInSeconds
+	}).(pulumi.IntPtrOutput)
 }
 
 // Load balancing methods are algorithms used to efficiently distribute traffic among origin servers.
 // * **[IP_HASH](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/IPHashLoadBalancingMethod):** All the incoming requests from the same client IP address should go to the same content origination server. IP_HASH load balancing method uses origin weights when choosing which origin should the hash be assigned to initially.
 // * **[ROUND_ROBIN](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/RoundRobinLoadBalancingMethod):** Forwards requests sequentially to the available origin servers. The first request - to the first origin server, the second request - to the next origin server, and so on. After it sends a request to the last origin server, it starts again with the first origin server. When using weights on origins, Weighted Round Robin assigns more requests to origins with a greater weight. Over a period of time, origins will receive a number of requests in proportion to their weight.
 // * **[STICKY_COOKIE](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/StickyCookieLoadBalancingMethod):** Adds a session cookie to the first response from the origin server and identifies the server that sent the response. The client's next request contains the cookie value, and nginx routes the request to the origin server that responded to the first request. STICKY_COOKIE load balancing method falls back to Round Robin for the first request.
-func (o GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethodOutput) Method() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethod) string { return v.Method }).(pulumi.StringOutput)
+func (o GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethodOutput) Method() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethod) *string { return v.Method }).(pulumi.StringPtrOutput)
 }
 
 // The unique name of the whitelist.
-func (o GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethodOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethod) string { return v.Name }).(pulumi.StringOutput)
+func (o GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethodOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethod) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 type GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethodArrayOutput struct{ *pulumi.OutputState }
@@ -13241,12 +11640,6 @@ func (o GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethodArrayOutput) ToG
 
 func (o GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethodArrayOutput) ToGetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethodArrayOutputWithContext(ctx context.Context) GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethodArrayOutput {
 	return o
-}
-
-func (o GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethodArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethod] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethod]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethodArrayOutput) Index(i pulumi.IntInput) GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethodOutput {
@@ -13273,7 +11666,7 @@ type GetWaasPoliciesWaasPolicyWafConfig struct {
 	// The JavaScript challenge settings. Used to challenge requests with a JavaScript challenge and take the action if a browser has no JavaScript support in order to block bots.
 	JsChallenges []GetWaasPoliciesWaasPolicyWafConfigJsChallenge `pulumi:"jsChallenges"`
 	// The key in the map of origins referencing the origin used for the Web Application Firewall. The origin must already be included in `Origins`. Required when creating the `WafConfig` resource, but not on update.
-	Origin string `pulumi:"origin"`
+	Origin *string `pulumi:"origin"`
 	// The map of origin groups and their keys used to associate origins to the `wafConfig`. Origin groups allow you to apply weights to groups of origins for load balancing purposes. Origins with higher weights will receive larger proportions of client requests. To add additional origins to your WAAS policy, update the `origins` field of a `UpdateWaasPolicy` request.
 	OriginGroups []string `pulumi:"originGroups"`
 	// The settings to apply to protection rules.
@@ -13311,7 +11704,7 @@ type GetWaasPoliciesWaasPolicyWafConfigArgs struct {
 	// The JavaScript challenge settings. Used to challenge requests with a JavaScript challenge and take the action if a browser has no JavaScript support in order to block bots.
 	JsChallenges GetWaasPoliciesWaasPolicyWafConfigJsChallengeArrayInput `pulumi:"jsChallenges"`
 	// The key in the map of origins referencing the origin used for the Web Application Firewall. The origin must already be included in `Origins`. Required when creating the `WafConfig` resource, but not on update.
-	Origin pulumi.StringInput `pulumi:"origin"`
+	Origin pulumi.StringPtrInput `pulumi:"origin"`
 	// The map of origin groups and their keys used to associate origins to the `wafConfig`. Origin groups allow you to apply weights to groups of origins for load balancing purposes. Origins with higher weights will receive larger proportions of client requests. To add additional origins to your WAAS policy, update the `origins` field of a `UpdateWaasPolicy` request.
 	OriginGroups pulumi.StringArrayInput `pulumi:"originGroups"`
 	// The settings to apply to protection rules.
@@ -13330,12 +11723,6 @@ func (i GetWaasPoliciesWaasPolicyWafConfigArgs) ToGetWaasPoliciesWaasPolicyWafCo
 
 func (i GetWaasPoliciesWaasPolicyWafConfigArgs) ToGetWaasPoliciesWaasPolicyWafConfigOutputWithContext(ctx context.Context) GetWaasPoliciesWaasPolicyWafConfigOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyWafConfigOutput)
-}
-
-func (i GetWaasPoliciesWaasPolicyWafConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyWafConfig] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyWafConfig]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyWafConfigOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetWaasPoliciesWaasPolicyWafConfigArrayInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigArray and GetWaasPoliciesWaasPolicyWafConfigArrayOutput values.
@@ -13363,12 +11750,6 @@ func (i GetWaasPoliciesWaasPolicyWafConfigArray) ToGetWaasPoliciesWaasPolicyWafC
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyWafConfigArrayOutput)
 }
 
-func (i GetWaasPoliciesWaasPolicyWafConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfig] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfig]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyWafConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPoliciesWaasPolicyWafConfigOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPoliciesWaasPolicyWafConfigOutput) ElementType() reflect.Type {
@@ -13381,12 +11762,6 @@ func (o GetWaasPoliciesWaasPolicyWafConfigOutput) ToGetWaasPoliciesWaasPolicyWaf
 
 func (o GetWaasPoliciesWaasPolicyWafConfigOutput) ToGetWaasPoliciesWaasPolicyWafConfigOutputWithContext(ctx context.Context) GetWaasPoliciesWaasPolicyWafConfigOutput {
 	return o
-}
-
-func (o GetWaasPoliciesWaasPolicyWafConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyWafConfig] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyWafConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The access rules applied to the Web Application Firewall. Used for defining custom access policies with the combination of `ALLOW`, `DETECT`, and `BLOCK` rules, based on different criteria.
@@ -13446,8 +11821,8 @@ func (o GetWaasPoliciesWaasPolicyWafConfigOutput) JsChallenges() GetWaasPolicies
 }
 
 // The key in the map of origins referencing the origin used for the Web Application Firewall. The origin must already be included in `Origins`. Required when creating the `WafConfig` resource, but not on update.
-func (o GetWaasPoliciesWaasPolicyWafConfigOutput) Origin() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfig) string { return v.Origin }).(pulumi.StringOutput)
+func (o GetWaasPoliciesWaasPolicyWafConfigOutput) Origin() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfig) *string { return v.Origin }).(pulumi.StringPtrOutput)
 }
 
 // The map of origin groups and their keys used to associate origins to the `wafConfig`. Origin groups allow you to apply weights to groups of origins for load balancing purposes. Origins with higher weights will receive larger proportions of client requests. To add additional origins to your WAAS policy, update the `origins` field of a `UpdateWaasPolicy` request.
@@ -13483,12 +11858,6 @@ func (o GetWaasPoliciesWaasPolicyWafConfigArrayOutput) ToGetWaasPoliciesWaasPoli
 	return o
 }
 
-func (o GetWaasPoliciesWaasPolicyWafConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfig] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWaasPoliciesWaasPolicyWafConfigArrayOutput) Index(i pulumi.IntInput) GetWaasPoliciesWaasPolicyWafConfigOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWaasPoliciesWaasPolicyWafConfig {
 		return vs[0].([]GetWaasPoliciesWaasPolicyWafConfig)[vs[1].(int)]
@@ -13497,17 +11866,17 @@ func (o GetWaasPoliciesWaasPolicyWafConfigArrayOutput) Index(i pulumi.IntInput) 
 
 type GetWaasPoliciesWaasPolicyWafConfigAccessRule struct {
 	// The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
-	Action string `pulumi:"action"`
+	Action *string `pulumi:"action"`
 	// If `action` is set to `BLOCK`, this specifies how the traffic is blocked when detected as malicious by a protection rule. If unspecified, defaults to `SET_RESPONSE_CODE`.
-	BlockAction string `pulumi:"blockAction"`
+	BlockAction *string `pulumi:"blockAction"`
 	// The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`.
-	BlockErrorPageCode string `pulumi:"blockErrorPageCode"`
+	BlockErrorPageCode *string `pulumi:"blockErrorPageCode"`
 	// The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
-	BlockErrorPageDescription string `pulumi:"blockErrorPageDescription"`
+	BlockErrorPageDescription *string `pulumi:"blockErrorPageDescription"`
 	// The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to 'Access to the website is blocked.'
-	BlockErrorPageMessage string `pulumi:"blockErrorPageMessage"`
+	BlockErrorPageMessage *string `pulumi:"blockErrorPageMessage"`
 	// The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
-	BlockResponseCode int `pulumi:"blockResponseCode"`
+	BlockResponseCode *int `pulumi:"blockResponseCode"`
 	// The list of challenges to bypass when `action` is set to `BYPASS`. If unspecified or empty, all challenges are bypassed.
 	// * **JS_CHALLENGE:** Bypasses JavaScript Challenge.
 	// * **DEVICE_FINGERPRINT_CHALLENGE:** Bypasses Device Fingerprint Challenge.
@@ -13515,23 +11884,23 @@ type GetWaasPoliciesWaasPolicyWafConfigAccessRule struct {
 	// * **CAPTCHA:** Bypasses CAPTCHA Challenge.
 	BypassChallenges []string `pulumi:"bypassChallenges"`
 	// The text to show in the footer when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, default to `Enter the letters and numbers as they are shown in image above`.
-	CaptchaFooter string `pulumi:"captchaFooter"`
+	CaptchaFooter *string `pulumi:"captchaFooter"`
 	// The text to show in the header when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `We have detected an increased number of attempts to access this webapp. To help us keep this webapp secure, please let us know that you are not a robot by entering the text from captcha below.`
-	CaptchaHeader string `pulumi:"captchaHeader"`
+	CaptchaHeader *string `pulumi:"captchaHeader"`
 	// The text to show on the label of the CAPTCHA challenge submit button when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Yes, I am human`.
-	CaptchaSubmitLabel string `pulumi:"captchaSubmitLabel"`
+	CaptchaSubmitLabel *string `pulumi:"captchaSubmitLabel"`
 	// The title used when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Are you human?`
-	CaptchaTitle string `pulumi:"captchaTitle"`
+	CaptchaTitle *string `pulumi:"captchaTitle"`
 	// When defined, the JavaScript Challenge would be applied only for the requests that matched all the listed conditions.
 	Criterias []GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteria `pulumi:"criterias"`
 	// The unique name of the whitelist.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The response status code to return when `action` is set to `REDIRECT`.
 	// * **MOVED_PERMANENTLY:** Used for designating the permanent movement of a page (numerical code - 301).
 	// * **FOUND:** Used for designating the temporary movement of a page (numerical code - 302).
-	RedirectResponseCode string `pulumi:"redirectResponseCode"`
+	RedirectResponseCode *string `pulumi:"redirectResponseCode"`
 	// The target to which the request should be redirected, represented as a URI reference. Required when `action` is `REDIRECT`.
-	RedirectUrl string `pulumi:"redirectUrl"`
+	RedirectUrl *string `pulumi:"redirectUrl"`
 	// An object that represents an action to apply to an HTTP response headers if all rule criteria will be matched regardless of `action` value.
 	ResponseHeaderManipulations []GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulation `pulumi:"responseHeaderManipulations"`
 }
@@ -13549,17 +11918,17 @@ type GetWaasPoliciesWaasPolicyWafConfigAccessRuleInput interface {
 
 type GetWaasPoliciesWaasPolicyWafConfigAccessRuleArgs struct {
 	// The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
-	Action pulumi.StringInput `pulumi:"action"`
+	Action pulumi.StringPtrInput `pulumi:"action"`
 	// If `action` is set to `BLOCK`, this specifies how the traffic is blocked when detected as malicious by a protection rule. If unspecified, defaults to `SET_RESPONSE_CODE`.
-	BlockAction pulumi.StringInput `pulumi:"blockAction"`
+	BlockAction pulumi.StringPtrInput `pulumi:"blockAction"`
 	// The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`.
-	BlockErrorPageCode pulumi.StringInput `pulumi:"blockErrorPageCode"`
+	BlockErrorPageCode pulumi.StringPtrInput `pulumi:"blockErrorPageCode"`
 	// The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
-	BlockErrorPageDescription pulumi.StringInput `pulumi:"blockErrorPageDescription"`
+	BlockErrorPageDescription pulumi.StringPtrInput `pulumi:"blockErrorPageDescription"`
 	// The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to 'Access to the website is blocked.'
-	BlockErrorPageMessage pulumi.StringInput `pulumi:"blockErrorPageMessage"`
+	BlockErrorPageMessage pulumi.StringPtrInput `pulumi:"blockErrorPageMessage"`
 	// The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
-	BlockResponseCode pulumi.IntInput `pulumi:"blockResponseCode"`
+	BlockResponseCode pulumi.IntPtrInput `pulumi:"blockResponseCode"`
 	// The list of challenges to bypass when `action` is set to `BYPASS`. If unspecified or empty, all challenges are bypassed.
 	// * **JS_CHALLENGE:** Bypasses JavaScript Challenge.
 	// * **DEVICE_FINGERPRINT_CHALLENGE:** Bypasses Device Fingerprint Challenge.
@@ -13567,23 +11936,23 @@ type GetWaasPoliciesWaasPolicyWafConfigAccessRuleArgs struct {
 	// * **CAPTCHA:** Bypasses CAPTCHA Challenge.
 	BypassChallenges pulumi.StringArrayInput `pulumi:"bypassChallenges"`
 	// The text to show in the footer when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, default to `Enter the letters and numbers as they are shown in image above`.
-	CaptchaFooter pulumi.StringInput `pulumi:"captchaFooter"`
+	CaptchaFooter pulumi.StringPtrInput `pulumi:"captchaFooter"`
 	// The text to show in the header when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `We have detected an increased number of attempts to access this webapp. To help us keep this webapp secure, please let us know that you are not a robot by entering the text from captcha below.`
-	CaptchaHeader pulumi.StringInput `pulumi:"captchaHeader"`
+	CaptchaHeader pulumi.StringPtrInput `pulumi:"captchaHeader"`
 	// The text to show on the label of the CAPTCHA challenge submit button when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Yes, I am human`.
-	CaptchaSubmitLabel pulumi.StringInput `pulumi:"captchaSubmitLabel"`
+	CaptchaSubmitLabel pulumi.StringPtrInput `pulumi:"captchaSubmitLabel"`
 	// The title used when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Are you human?`
-	CaptchaTitle pulumi.StringInput `pulumi:"captchaTitle"`
+	CaptchaTitle pulumi.StringPtrInput `pulumi:"captchaTitle"`
 	// When defined, the JavaScript Challenge would be applied only for the requests that matched all the listed conditions.
 	Criterias GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteriaArrayInput `pulumi:"criterias"`
 	// The unique name of the whitelist.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// The response status code to return when `action` is set to `REDIRECT`.
 	// * **MOVED_PERMANENTLY:** Used for designating the permanent movement of a page (numerical code - 301).
 	// * **FOUND:** Used for designating the temporary movement of a page (numerical code - 302).
-	RedirectResponseCode pulumi.StringInput `pulumi:"redirectResponseCode"`
+	RedirectResponseCode pulumi.StringPtrInput `pulumi:"redirectResponseCode"`
 	// The target to which the request should be redirected, represented as a URI reference. Required when `action` is `REDIRECT`.
-	RedirectUrl pulumi.StringInput `pulumi:"redirectUrl"`
+	RedirectUrl pulumi.StringPtrInput `pulumi:"redirectUrl"`
 	// An object that represents an action to apply to an HTTP response headers if all rule criteria will be matched regardless of `action` value.
 	ResponseHeaderManipulations GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulationArrayInput `pulumi:"responseHeaderManipulations"`
 }
@@ -13598,12 +11967,6 @@ func (i GetWaasPoliciesWaasPolicyWafConfigAccessRuleArgs) ToGetWaasPoliciesWaasP
 
 func (i GetWaasPoliciesWaasPolicyWafConfigAccessRuleArgs) ToGetWaasPoliciesWaasPolicyWafConfigAccessRuleOutputWithContext(ctx context.Context) GetWaasPoliciesWaasPolicyWafConfigAccessRuleOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyWafConfigAccessRuleOutput)
-}
-
-func (i GetWaasPoliciesWaasPolicyWafConfigAccessRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigAccessRule] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigAccessRule]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyWafConfigAccessRuleOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetWaasPoliciesWaasPolicyWafConfigAccessRuleArrayInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigAccessRuleArray and GetWaasPoliciesWaasPolicyWafConfigAccessRuleArrayOutput values.
@@ -13631,12 +11994,6 @@ func (i GetWaasPoliciesWaasPolicyWafConfigAccessRuleArray) ToGetWaasPoliciesWaas
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyWafConfigAccessRuleArrayOutput)
 }
 
-func (i GetWaasPoliciesWaasPolicyWafConfigAccessRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigAccessRule] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigAccessRule]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyWafConfigAccessRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPoliciesWaasPolicyWafConfigAccessRuleOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPoliciesWaasPolicyWafConfigAccessRuleOutput) ElementType() reflect.Type {
@@ -13651,40 +12008,34 @@ func (o GetWaasPoliciesWaasPolicyWafConfigAccessRuleOutput) ToGetWaasPoliciesWaa
 	return o
 }
 
-func (o GetWaasPoliciesWaasPolicyWafConfigAccessRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigAccessRule] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigAccessRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
-func (o GetWaasPoliciesWaasPolicyWafConfigAccessRuleOutput) Action() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigAccessRule) string { return v.Action }).(pulumi.StringOutput)
+func (o GetWaasPoliciesWaasPolicyWafConfigAccessRuleOutput) Action() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigAccessRule) *string { return v.Action }).(pulumi.StringPtrOutput)
 }
 
 // If `action` is set to `BLOCK`, this specifies how the traffic is blocked when detected as malicious by a protection rule. If unspecified, defaults to `SET_RESPONSE_CODE`.
-func (o GetWaasPoliciesWaasPolicyWafConfigAccessRuleOutput) BlockAction() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigAccessRule) string { return v.BlockAction }).(pulumi.StringOutput)
+func (o GetWaasPoliciesWaasPolicyWafConfigAccessRuleOutput) BlockAction() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigAccessRule) *string { return v.BlockAction }).(pulumi.StringPtrOutput)
 }
 
 // The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`.
-func (o GetWaasPoliciesWaasPolicyWafConfigAccessRuleOutput) BlockErrorPageCode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigAccessRule) string { return v.BlockErrorPageCode }).(pulumi.StringOutput)
+func (o GetWaasPoliciesWaasPolicyWafConfigAccessRuleOutput) BlockErrorPageCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigAccessRule) *string { return v.BlockErrorPageCode }).(pulumi.StringPtrOutput)
 }
 
 // The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
-func (o GetWaasPoliciesWaasPolicyWafConfigAccessRuleOutput) BlockErrorPageDescription() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigAccessRule) string { return v.BlockErrorPageDescription }).(pulumi.StringOutput)
+func (o GetWaasPoliciesWaasPolicyWafConfigAccessRuleOutput) BlockErrorPageDescription() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigAccessRule) *string { return v.BlockErrorPageDescription }).(pulumi.StringPtrOutput)
 }
 
 // The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to 'Access to the website is blocked.'
-func (o GetWaasPoliciesWaasPolicyWafConfigAccessRuleOutput) BlockErrorPageMessage() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigAccessRule) string { return v.BlockErrorPageMessage }).(pulumi.StringOutput)
+func (o GetWaasPoliciesWaasPolicyWafConfigAccessRuleOutput) BlockErrorPageMessage() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigAccessRule) *string { return v.BlockErrorPageMessage }).(pulumi.StringPtrOutput)
 }
 
 // The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
-func (o GetWaasPoliciesWaasPolicyWafConfigAccessRuleOutput) BlockResponseCode() pulumi.IntOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigAccessRule) int { return v.BlockResponseCode }).(pulumi.IntOutput)
+func (o GetWaasPoliciesWaasPolicyWafConfigAccessRuleOutput) BlockResponseCode() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigAccessRule) *int { return v.BlockResponseCode }).(pulumi.IntPtrOutput)
 }
 
 // The list of challenges to bypass when `action` is set to `BYPASS`. If unspecified or empty, all challenges are bypassed.
@@ -13697,23 +12048,23 @@ func (o GetWaasPoliciesWaasPolicyWafConfigAccessRuleOutput) BypassChallenges() p
 }
 
 // The text to show in the footer when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, default to `Enter the letters and numbers as they are shown in image above`.
-func (o GetWaasPoliciesWaasPolicyWafConfigAccessRuleOutput) CaptchaFooter() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigAccessRule) string { return v.CaptchaFooter }).(pulumi.StringOutput)
+func (o GetWaasPoliciesWaasPolicyWafConfigAccessRuleOutput) CaptchaFooter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigAccessRule) *string { return v.CaptchaFooter }).(pulumi.StringPtrOutput)
 }
 
 // The text to show in the header when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `We have detected an increased number of attempts to access this webapp. To help us keep this webapp secure, please let us know that you are not a robot by entering the text from captcha below.`
-func (o GetWaasPoliciesWaasPolicyWafConfigAccessRuleOutput) CaptchaHeader() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigAccessRule) string { return v.CaptchaHeader }).(pulumi.StringOutput)
+func (o GetWaasPoliciesWaasPolicyWafConfigAccessRuleOutput) CaptchaHeader() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigAccessRule) *string { return v.CaptchaHeader }).(pulumi.StringPtrOutput)
 }
 
 // The text to show on the label of the CAPTCHA challenge submit button when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Yes, I am human`.
-func (o GetWaasPoliciesWaasPolicyWafConfigAccessRuleOutput) CaptchaSubmitLabel() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigAccessRule) string { return v.CaptchaSubmitLabel }).(pulumi.StringOutput)
+func (o GetWaasPoliciesWaasPolicyWafConfigAccessRuleOutput) CaptchaSubmitLabel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigAccessRule) *string { return v.CaptchaSubmitLabel }).(pulumi.StringPtrOutput)
 }
 
 // The title used when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Are you human?`
-func (o GetWaasPoliciesWaasPolicyWafConfigAccessRuleOutput) CaptchaTitle() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigAccessRule) string { return v.CaptchaTitle }).(pulumi.StringOutput)
+func (o GetWaasPoliciesWaasPolicyWafConfigAccessRuleOutput) CaptchaTitle() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigAccessRule) *string { return v.CaptchaTitle }).(pulumi.StringPtrOutput)
 }
 
 // When defined, the JavaScript Challenge would be applied only for the requests that matched all the listed conditions.
@@ -13724,20 +12075,20 @@ func (o GetWaasPoliciesWaasPolicyWafConfigAccessRuleOutput) Criterias() GetWaasP
 }
 
 // The unique name of the whitelist.
-func (o GetWaasPoliciesWaasPolicyWafConfigAccessRuleOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigAccessRule) string { return v.Name }).(pulumi.StringOutput)
+func (o GetWaasPoliciesWaasPolicyWafConfigAccessRuleOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigAccessRule) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The response status code to return when `action` is set to `REDIRECT`.
 // * **MOVED_PERMANENTLY:** Used for designating the permanent movement of a page (numerical code - 301).
 // * **FOUND:** Used for designating the temporary movement of a page (numerical code - 302).
-func (o GetWaasPoliciesWaasPolicyWafConfigAccessRuleOutput) RedirectResponseCode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigAccessRule) string { return v.RedirectResponseCode }).(pulumi.StringOutput)
+func (o GetWaasPoliciesWaasPolicyWafConfigAccessRuleOutput) RedirectResponseCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigAccessRule) *string { return v.RedirectResponseCode }).(pulumi.StringPtrOutput)
 }
 
 // The target to which the request should be redirected, represented as a URI reference. Required when `action` is `REDIRECT`.
-func (o GetWaasPoliciesWaasPolicyWafConfigAccessRuleOutput) RedirectUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigAccessRule) string { return v.RedirectUrl }).(pulumi.StringOutput)
+func (o GetWaasPoliciesWaasPolicyWafConfigAccessRuleOutput) RedirectUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigAccessRule) *string { return v.RedirectUrl }).(pulumi.StringPtrOutput)
 }
 
 // An object that represents an action to apply to an HTTP response headers if all rule criteria will be matched regardless of `action` value.
@@ -13759,12 +12110,6 @@ func (o GetWaasPoliciesWaasPolicyWafConfigAccessRuleArrayOutput) ToGetWaasPolici
 
 func (o GetWaasPoliciesWaasPolicyWafConfigAccessRuleArrayOutput) ToGetWaasPoliciesWaasPolicyWafConfigAccessRuleArrayOutputWithContext(ctx context.Context) GetWaasPoliciesWaasPolicyWafConfigAccessRuleArrayOutput {
 	return o
-}
-
-func (o GetWaasPoliciesWaasPolicyWafConfigAccessRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigAccessRule] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigAccessRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetWaasPoliciesWaasPolicyWafConfigAccessRuleArrayOutput) Index(i pulumi.IntInput) GetWaasPoliciesWaasPolicyWafConfigAccessRuleOutput {
@@ -13791,11 +12136,11 @@ type GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteria struct {
 	// * **IP_NOT_IN_LIST:** Matches if the request does not originate from any IP address contained in the referenced address list. The `value` field in this case is OCID of the address list.
 	// * **HTTP_HEADER_CONTAINS:** The HTTP_HEADER_CONTAINS criteria is defined using a compound value separated by a colon: a header field name and a header field value. `host:test.example.com` is an example of a criteria value where `host` is the header field name and `test.example.com` is the header field value. A request matches when the header field name is a case insensitive match and the header field value is a case insensitive, substring match. *Example:* With a criteria value of `host:test.example.com`, where `host` is the name of the field and `test.example.com` is the value of the host field, a request with the header values, `Host: www.test.example.com` will match, where as a request with header values of `host: www.example.com` or `host: test.sub.example.com` will not match.
 	// * **HTTP_METHOD_IS:** Matches if the request method is identical to one of the values listed in field. The `value` in this case is string with one or multiple HTTP methods separated by new line symbol \n The list of available methods: `GET`, `HEAD`, `POST`, `PUT`, `DELETE`, `CONNECT`, `OPTIONS`, `TRACE`, `PATCH`
-	Condition string `pulumi:"condition"`
+	Condition *string `pulumi:"condition"`
 	// When enabled, the condition will be matched with case-sensitive rules.
-	IsCaseSensitive bool `pulumi:"isCaseSensitive"`
+	IsCaseSensitive *bool `pulumi:"isCaseSensitive"`
 	// The value of the header.
-	Value string `pulumi:"value"`
+	Value *string `pulumi:"value"`
 }
 
 // GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteriaInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteriaArgs and GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteriaOutput values.
@@ -13827,11 +12172,11 @@ type GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteriaArgs struct {
 	// * **IP_NOT_IN_LIST:** Matches if the request does not originate from any IP address contained in the referenced address list. The `value` field in this case is OCID of the address list.
 	// * **HTTP_HEADER_CONTAINS:** The HTTP_HEADER_CONTAINS criteria is defined using a compound value separated by a colon: a header field name and a header field value. `host:test.example.com` is an example of a criteria value where `host` is the header field name and `test.example.com` is the header field value. A request matches when the header field name is a case insensitive match and the header field value is a case insensitive, substring match. *Example:* With a criteria value of `host:test.example.com`, where `host` is the name of the field and `test.example.com` is the value of the host field, a request with the header values, `Host: www.test.example.com` will match, where as a request with header values of `host: www.example.com` or `host: test.sub.example.com` will not match.
 	// * **HTTP_METHOD_IS:** Matches if the request method is identical to one of the values listed in field. The `value` in this case is string with one or multiple HTTP methods separated by new line symbol \n The list of available methods: `GET`, `HEAD`, `POST`, `PUT`, `DELETE`, `CONNECT`, `OPTIONS`, `TRACE`, `PATCH`
-	Condition pulumi.StringInput `pulumi:"condition"`
+	Condition pulumi.StringPtrInput `pulumi:"condition"`
 	// When enabled, the condition will be matched with case-sensitive rules.
-	IsCaseSensitive pulumi.BoolInput `pulumi:"isCaseSensitive"`
+	IsCaseSensitive pulumi.BoolPtrInput `pulumi:"isCaseSensitive"`
 	// The value of the header.
-	Value pulumi.StringInput `pulumi:"value"`
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteriaArgs) ElementType() reflect.Type {
@@ -13844,12 +12189,6 @@ func (i GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteriaArgs) ToGetWaasPolic
 
 func (i GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteriaArgs) ToGetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteriaOutputWithContext(ctx context.Context) GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteriaOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteriaOutput)
-}
-
-func (i GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteriaArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteria] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteria]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteriaOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteriaArrayInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteriaArray and GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteriaArrayOutput values.
@@ -13877,12 +12216,6 @@ func (i GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteriaArray) ToGetWaasPoli
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteriaArrayOutput)
 }
 
-func (i GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteriaArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteria] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteria]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteriaArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteriaOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteriaOutput) ElementType() reflect.Type {
@@ -13895,12 +12228,6 @@ func (o GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteriaOutput) ToGetWaasPol
 
 func (o GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteriaOutput) ToGetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteriaOutputWithContext(ctx context.Context) GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteriaOutput {
 	return o
-}
-
-func (o GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteriaOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteria] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteria]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The criteria the access rule and JavaScript Challenge uses to determine if action should be taken on a request.
@@ -13920,18 +12247,18 @@ func (o GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteriaOutput) ToOutput(ctx
 // * **IP_NOT_IN_LIST:** Matches if the request does not originate from any IP address contained in the referenced address list. The `value` field in this case is OCID of the address list.
 // * **HTTP_HEADER_CONTAINS:** The HTTP_HEADER_CONTAINS criteria is defined using a compound value separated by a colon: a header field name and a header field value. `host:test.example.com` is an example of a criteria value where `host` is the header field name and `test.example.com` is the header field value. A request matches when the header field name is a case insensitive match and the header field value is a case insensitive, substring match. *Example:* With a criteria value of `host:test.example.com`, where `host` is the name of the field and `test.example.com` is the value of the host field, a request with the header values, `Host: www.test.example.com` will match, where as a request with header values of `host: www.example.com` or `host: test.sub.example.com` will not match.
 // * **HTTP_METHOD_IS:** Matches if the request method is identical to one of the values listed in field. The `value` in this case is string with one or multiple HTTP methods separated by new line symbol \n The list of available methods: `GET`, `HEAD`, `POST`, `PUT`, `DELETE`, `CONNECT`, `OPTIONS`, `TRACE`, `PATCH`
-func (o GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteriaOutput) Condition() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteria) string { return v.Condition }).(pulumi.StringOutput)
+func (o GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteriaOutput) Condition() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteria) *string { return v.Condition }).(pulumi.StringPtrOutput)
 }
 
 // When enabled, the condition will be matched with case-sensitive rules.
-func (o GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteriaOutput) IsCaseSensitive() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteria) bool { return v.IsCaseSensitive }).(pulumi.BoolOutput)
+func (o GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteriaOutput) IsCaseSensitive() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteria) *bool { return v.IsCaseSensitive }).(pulumi.BoolPtrOutput)
 }
 
 // The value of the header.
-func (o GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteriaOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteria) string { return v.Value }).(pulumi.StringOutput)
+func (o GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteriaOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteria) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
 
 type GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteriaArrayOutput struct{ *pulumi.OutputState }
@@ -13948,12 +12275,6 @@ func (o GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteriaArrayOutput) ToGetWa
 	return o
 }
 
-func (o GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteriaArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteria] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteria]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteriaArrayOutput) Index(i pulumi.IntInput) GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteriaOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteria {
 		return vs[0].([]GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteria)[vs[1].(int)]
@@ -13962,11 +12283,11 @@ func (o GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteriaArrayOutput) Index(i
 
 type GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulation struct {
 	// The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
-	Action string `pulumi:"action"`
+	Action *string `pulumi:"action"`
 	// A header field name that conforms to RFC 7230.  Example: `exampleHeaderName`
-	Header string `pulumi:"header"`
+	Header *string `pulumi:"header"`
 	// The value of the header.
-	Value string `pulumi:"value"`
+	Value *string `pulumi:"value"`
 }
 
 // GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulationInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulationArgs and GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulationOutput values.
@@ -13982,11 +12303,11 @@ type GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulationInput
 
 type GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulationArgs struct {
 	// The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
-	Action pulumi.StringInput `pulumi:"action"`
+	Action pulumi.StringPtrInput `pulumi:"action"`
 	// A header field name that conforms to RFC 7230.  Example: `exampleHeaderName`
-	Header pulumi.StringInput `pulumi:"header"`
+	Header pulumi.StringPtrInput `pulumi:"header"`
 	// The value of the header.
-	Value pulumi.StringInput `pulumi:"value"`
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulationArgs) ElementType() reflect.Type {
@@ -13999,12 +12320,6 @@ func (i GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulationAr
 
 func (i GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulationArgs) ToGetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulationOutputWithContext(ctx context.Context) GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulationOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulationOutput)
-}
-
-func (i GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulationArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulation] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulation]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulationOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulationArrayInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulationArray and GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulationArrayOutput values.
@@ -14032,12 +12347,6 @@ func (i GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulationAr
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulationArrayOutput)
 }
 
-func (i GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulation] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulation]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulationOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulationOutput) ElementType() reflect.Type {
@@ -14052,25 +12361,23 @@ func (o GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulationOu
 	return o
 }
 
-func (o GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulationOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulation] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulation]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
-func (o GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulationOutput) Action() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulation) string { return v.Action }).(pulumi.StringOutput)
+func (o GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulationOutput) Action() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulation) *string {
+		return v.Action
+	}).(pulumi.StringPtrOutput)
 }
 
 // A header field name that conforms to RFC 7230.  Example: `exampleHeaderName`
-func (o GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulationOutput) Header() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulation) string { return v.Header }).(pulumi.StringOutput)
+func (o GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulationOutput) Header() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulation) *string {
+		return v.Header
+	}).(pulumi.StringPtrOutput)
 }
 
 // The value of the header.
-func (o GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulationOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulation) string { return v.Value }).(pulumi.StringOutput)
+func (o GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulationOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulation) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
 
 type GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulationArrayOutput struct{ *pulumi.OutputState }
@@ -14087,12 +12394,6 @@ func (o GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulationAr
 	return o
 }
 
-func (o GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulation] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulation]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulationArrayOutput) Index(i pulumi.IntInput) GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulation {
 		return vs[0].([]GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulation)[vs[1].(int)]
@@ -14101,13 +12402,13 @@ func (o GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulationAr
 
 type GetWaasPoliciesWaasPolicyWafConfigAddressRateLimiting struct {
 	// The number of allowed requests per second from one IP address. If unspecified, defaults to `1`.
-	AllowedRatePerAddress int `pulumi:"allowedRatePerAddress"`
+	AllowedRatePerAddress *int `pulumi:"allowedRatePerAddress"`
 	// The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
-	BlockResponseCode int `pulumi:"blockResponseCode"`
+	BlockResponseCode *int `pulumi:"blockResponseCode"`
 	// Enables or disables the JavaScript challenge Web Application Firewall feature.
-	IsEnabled bool `pulumi:"isEnabled"`
+	IsEnabled *bool `pulumi:"isEnabled"`
 	// The maximum number of requests allowed to be queued before subsequent requests are dropped. If unspecified, defaults to `10`.
-	MaxDelayedCountPerAddress int `pulumi:"maxDelayedCountPerAddress"`
+	MaxDelayedCountPerAddress *int `pulumi:"maxDelayedCountPerAddress"`
 }
 
 // GetWaasPoliciesWaasPolicyWafConfigAddressRateLimitingInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigAddressRateLimitingArgs and GetWaasPoliciesWaasPolicyWafConfigAddressRateLimitingOutput values.
@@ -14123,13 +12424,13 @@ type GetWaasPoliciesWaasPolicyWafConfigAddressRateLimitingInput interface {
 
 type GetWaasPoliciesWaasPolicyWafConfigAddressRateLimitingArgs struct {
 	// The number of allowed requests per second from one IP address. If unspecified, defaults to `1`.
-	AllowedRatePerAddress pulumi.IntInput `pulumi:"allowedRatePerAddress"`
+	AllowedRatePerAddress pulumi.IntPtrInput `pulumi:"allowedRatePerAddress"`
 	// The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
-	BlockResponseCode pulumi.IntInput `pulumi:"blockResponseCode"`
+	BlockResponseCode pulumi.IntPtrInput `pulumi:"blockResponseCode"`
 	// Enables or disables the JavaScript challenge Web Application Firewall feature.
-	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+	IsEnabled pulumi.BoolPtrInput `pulumi:"isEnabled"`
 	// The maximum number of requests allowed to be queued before subsequent requests are dropped. If unspecified, defaults to `10`.
-	MaxDelayedCountPerAddress pulumi.IntInput `pulumi:"maxDelayedCountPerAddress"`
+	MaxDelayedCountPerAddress pulumi.IntPtrInput `pulumi:"maxDelayedCountPerAddress"`
 }
 
 func (GetWaasPoliciesWaasPolicyWafConfigAddressRateLimitingArgs) ElementType() reflect.Type {
@@ -14142,12 +12443,6 @@ func (i GetWaasPoliciesWaasPolicyWafConfigAddressRateLimitingArgs) ToGetWaasPoli
 
 func (i GetWaasPoliciesWaasPolicyWafConfigAddressRateLimitingArgs) ToGetWaasPoliciesWaasPolicyWafConfigAddressRateLimitingOutputWithContext(ctx context.Context) GetWaasPoliciesWaasPolicyWafConfigAddressRateLimitingOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyWafConfigAddressRateLimitingOutput)
-}
-
-func (i GetWaasPoliciesWaasPolicyWafConfigAddressRateLimitingArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigAddressRateLimiting] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigAddressRateLimiting]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyWafConfigAddressRateLimitingOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetWaasPoliciesWaasPolicyWafConfigAddressRateLimitingArrayInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigAddressRateLimitingArray and GetWaasPoliciesWaasPolicyWafConfigAddressRateLimitingArrayOutput values.
@@ -14175,12 +12470,6 @@ func (i GetWaasPoliciesWaasPolicyWafConfigAddressRateLimitingArray) ToGetWaasPol
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyWafConfigAddressRateLimitingArrayOutput)
 }
 
-func (i GetWaasPoliciesWaasPolicyWafConfigAddressRateLimitingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigAddressRateLimiting] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigAddressRateLimiting]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyWafConfigAddressRateLimitingArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPoliciesWaasPolicyWafConfigAddressRateLimitingOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPoliciesWaasPolicyWafConfigAddressRateLimitingOutput) ElementType() reflect.Type {
@@ -14195,30 +12484,24 @@ func (o GetWaasPoliciesWaasPolicyWafConfigAddressRateLimitingOutput) ToGetWaasPo
 	return o
 }
 
-func (o GetWaasPoliciesWaasPolicyWafConfigAddressRateLimitingOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigAddressRateLimiting] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigAddressRateLimiting]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The number of allowed requests per second from one IP address. If unspecified, defaults to `1`.
-func (o GetWaasPoliciesWaasPolicyWafConfigAddressRateLimitingOutput) AllowedRatePerAddress() pulumi.IntOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigAddressRateLimiting) int { return v.AllowedRatePerAddress }).(pulumi.IntOutput)
+func (o GetWaasPoliciesWaasPolicyWafConfigAddressRateLimitingOutput) AllowedRatePerAddress() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigAddressRateLimiting) *int { return v.AllowedRatePerAddress }).(pulumi.IntPtrOutput)
 }
 
 // The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
-func (o GetWaasPoliciesWaasPolicyWafConfigAddressRateLimitingOutput) BlockResponseCode() pulumi.IntOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigAddressRateLimiting) int { return v.BlockResponseCode }).(pulumi.IntOutput)
+func (o GetWaasPoliciesWaasPolicyWafConfigAddressRateLimitingOutput) BlockResponseCode() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigAddressRateLimiting) *int { return v.BlockResponseCode }).(pulumi.IntPtrOutput)
 }
 
 // Enables or disables the JavaScript challenge Web Application Firewall feature.
-func (o GetWaasPoliciesWaasPolicyWafConfigAddressRateLimitingOutput) IsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigAddressRateLimiting) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+func (o GetWaasPoliciesWaasPolicyWafConfigAddressRateLimitingOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigAddressRateLimiting) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // The maximum number of requests allowed to be queued before subsequent requests are dropped. If unspecified, defaults to `10`.
-func (o GetWaasPoliciesWaasPolicyWafConfigAddressRateLimitingOutput) MaxDelayedCountPerAddress() pulumi.IntOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigAddressRateLimiting) int { return v.MaxDelayedCountPerAddress }).(pulumi.IntOutput)
+func (o GetWaasPoliciesWaasPolicyWafConfigAddressRateLimitingOutput) MaxDelayedCountPerAddress() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigAddressRateLimiting) *int { return v.MaxDelayedCountPerAddress }).(pulumi.IntPtrOutput)
 }
 
 type GetWaasPoliciesWaasPolicyWafConfigAddressRateLimitingArrayOutput struct{ *pulumi.OutputState }
@@ -14235,12 +12518,6 @@ func (o GetWaasPoliciesWaasPolicyWafConfigAddressRateLimitingArrayOutput) ToGetW
 	return o
 }
 
-func (o GetWaasPoliciesWaasPolicyWafConfigAddressRateLimitingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigAddressRateLimiting] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigAddressRateLimiting]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWaasPoliciesWaasPolicyWafConfigAddressRateLimitingArrayOutput) Index(i pulumi.IntInput) GetWaasPoliciesWaasPolicyWafConfigAddressRateLimitingOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWaasPoliciesWaasPolicyWafConfigAddressRateLimiting {
 		return vs[0].([]GetWaasPoliciesWaasPolicyWafConfigAddressRateLimiting)[vs[1].(int)]
@@ -14249,19 +12526,19 @@ func (o GetWaasPoliciesWaasPolicyWafConfigAddressRateLimitingArrayOutput) Index(
 
 type GetWaasPoliciesWaasPolicyWafConfigCachingRule struct {
 	// The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
-	Action string `pulumi:"action"`
+	Action *string `pulumi:"action"`
 	// The duration to cache content for the caching rule, specified in ISO 8601 extended format. Supported units: seconds, minutes, hours, days, weeks, months. The maximum value that can be set for any unit is `99`. Mixing of multiple units is not supported. Only applies when the `action` is set to `CACHE`. Example: `PT1H`
-	CachingDuration string `pulumi:"cachingDuration"`
+	CachingDuration *string `pulumi:"cachingDuration"`
 	// The duration to cache content in the user's browser, specified in ISO 8601 extended format. Supported units: seconds, minutes, hours, days, weeks, months. The maximum value that can be set for any unit is `99`. Mixing of multiple units is not supported. Only applies when the `action` is set to `CACHE`. Example: `PT1H`
-	ClientCachingDuration string `pulumi:"clientCachingDuration"`
+	ClientCachingDuration *string `pulumi:"clientCachingDuration"`
 	// When defined, the JavaScript Challenge would be applied only for the requests that matched all the listed conditions.
 	Criterias []GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteria `pulumi:"criterias"`
 	// Enables or disables client caching. Browsers use the `Cache-Control` header value for caching content locally in the browser. This setting overrides the addition of a `Cache-Control` header in responses.
-	IsClientCachingEnabled bool `pulumi:"isClientCachingEnabled"`
+	IsClientCachingEnabled *bool `pulumi:"isClientCachingEnabled"`
 	// The unique key for the caching rule.
-	Key string `pulumi:"key"`
+	Key *string `pulumi:"key"`
 	// The unique name of the whitelist.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 }
 
 // GetWaasPoliciesWaasPolicyWafConfigCachingRuleInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigCachingRuleArgs and GetWaasPoliciesWaasPolicyWafConfigCachingRuleOutput values.
@@ -14277,19 +12554,19 @@ type GetWaasPoliciesWaasPolicyWafConfigCachingRuleInput interface {
 
 type GetWaasPoliciesWaasPolicyWafConfigCachingRuleArgs struct {
 	// The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
-	Action pulumi.StringInput `pulumi:"action"`
+	Action pulumi.StringPtrInput `pulumi:"action"`
 	// The duration to cache content for the caching rule, specified in ISO 8601 extended format. Supported units: seconds, minutes, hours, days, weeks, months. The maximum value that can be set for any unit is `99`. Mixing of multiple units is not supported. Only applies when the `action` is set to `CACHE`. Example: `PT1H`
-	CachingDuration pulumi.StringInput `pulumi:"cachingDuration"`
+	CachingDuration pulumi.StringPtrInput `pulumi:"cachingDuration"`
 	// The duration to cache content in the user's browser, specified in ISO 8601 extended format. Supported units: seconds, minutes, hours, days, weeks, months. The maximum value that can be set for any unit is `99`. Mixing of multiple units is not supported. Only applies when the `action` is set to `CACHE`. Example: `PT1H`
-	ClientCachingDuration pulumi.StringInput `pulumi:"clientCachingDuration"`
+	ClientCachingDuration pulumi.StringPtrInput `pulumi:"clientCachingDuration"`
 	// When defined, the JavaScript Challenge would be applied only for the requests that matched all the listed conditions.
 	Criterias GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteriaArrayInput `pulumi:"criterias"`
 	// Enables or disables client caching. Browsers use the `Cache-Control` header value for caching content locally in the browser. This setting overrides the addition of a `Cache-Control` header in responses.
-	IsClientCachingEnabled pulumi.BoolInput `pulumi:"isClientCachingEnabled"`
+	IsClientCachingEnabled pulumi.BoolPtrInput `pulumi:"isClientCachingEnabled"`
 	// The unique key for the caching rule.
-	Key pulumi.StringInput `pulumi:"key"`
+	Key pulumi.StringPtrInput `pulumi:"key"`
 	// The unique name of the whitelist.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 }
 
 func (GetWaasPoliciesWaasPolicyWafConfigCachingRuleArgs) ElementType() reflect.Type {
@@ -14302,12 +12579,6 @@ func (i GetWaasPoliciesWaasPolicyWafConfigCachingRuleArgs) ToGetWaasPoliciesWaas
 
 func (i GetWaasPoliciesWaasPolicyWafConfigCachingRuleArgs) ToGetWaasPoliciesWaasPolicyWafConfigCachingRuleOutputWithContext(ctx context.Context) GetWaasPoliciesWaasPolicyWafConfigCachingRuleOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyWafConfigCachingRuleOutput)
-}
-
-func (i GetWaasPoliciesWaasPolicyWafConfigCachingRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigCachingRule] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigCachingRule]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyWafConfigCachingRuleOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetWaasPoliciesWaasPolicyWafConfigCachingRuleArrayInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigCachingRuleArray and GetWaasPoliciesWaasPolicyWafConfigCachingRuleArrayOutput values.
@@ -14335,12 +12606,6 @@ func (i GetWaasPoliciesWaasPolicyWafConfigCachingRuleArray) ToGetWaasPoliciesWaa
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyWafConfigCachingRuleArrayOutput)
 }
 
-func (i GetWaasPoliciesWaasPolicyWafConfigCachingRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigCachingRule] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigCachingRule]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyWafConfigCachingRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPoliciesWaasPolicyWafConfigCachingRuleOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPoliciesWaasPolicyWafConfigCachingRuleOutput) ElementType() reflect.Type {
@@ -14355,25 +12620,19 @@ func (o GetWaasPoliciesWaasPolicyWafConfigCachingRuleOutput) ToGetWaasPoliciesWa
 	return o
 }
 
-func (o GetWaasPoliciesWaasPolicyWafConfigCachingRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigCachingRule] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigCachingRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
-func (o GetWaasPoliciesWaasPolicyWafConfigCachingRuleOutput) Action() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigCachingRule) string { return v.Action }).(pulumi.StringOutput)
+func (o GetWaasPoliciesWaasPolicyWafConfigCachingRuleOutput) Action() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigCachingRule) *string { return v.Action }).(pulumi.StringPtrOutput)
 }
 
 // The duration to cache content for the caching rule, specified in ISO 8601 extended format. Supported units: seconds, minutes, hours, days, weeks, months. The maximum value that can be set for any unit is `99`. Mixing of multiple units is not supported. Only applies when the `action` is set to `CACHE`. Example: `PT1H`
-func (o GetWaasPoliciesWaasPolicyWafConfigCachingRuleOutput) CachingDuration() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigCachingRule) string { return v.CachingDuration }).(pulumi.StringOutput)
+func (o GetWaasPoliciesWaasPolicyWafConfigCachingRuleOutput) CachingDuration() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigCachingRule) *string { return v.CachingDuration }).(pulumi.StringPtrOutput)
 }
 
 // The duration to cache content in the user's browser, specified in ISO 8601 extended format. Supported units: seconds, minutes, hours, days, weeks, months. The maximum value that can be set for any unit is `99`. Mixing of multiple units is not supported. Only applies when the `action` is set to `CACHE`. Example: `PT1H`
-func (o GetWaasPoliciesWaasPolicyWafConfigCachingRuleOutput) ClientCachingDuration() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigCachingRule) string { return v.ClientCachingDuration }).(pulumi.StringOutput)
+func (o GetWaasPoliciesWaasPolicyWafConfigCachingRuleOutput) ClientCachingDuration() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigCachingRule) *string { return v.ClientCachingDuration }).(pulumi.StringPtrOutput)
 }
 
 // When defined, the JavaScript Challenge would be applied only for the requests that matched all the listed conditions.
@@ -14384,18 +12643,18 @@ func (o GetWaasPoliciesWaasPolicyWafConfigCachingRuleOutput) Criterias() GetWaas
 }
 
 // Enables or disables client caching. Browsers use the `Cache-Control` header value for caching content locally in the browser. This setting overrides the addition of a `Cache-Control` header in responses.
-func (o GetWaasPoliciesWaasPolicyWafConfigCachingRuleOutput) IsClientCachingEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigCachingRule) bool { return v.IsClientCachingEnabled }).(pulumi.BoolOutput)
+func (o GetWaasPoliciesWaasPolicyWafConfigCachingRuleOutput) IsClientCachingEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigCachingRule) *bool { return v.IsClientCachingEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // The unique key for the caching rule.
-func (o GetWaasPoliciesWaasPolicyWafConfigCachingRuleOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigCachingRule) string { return v.Key }).(pulumi.StringOutput)
+func (o GetWaasPoliciesWaasPolicyWafConfigCachingRuleOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigCachingRule) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
 // The unique name of the whitelist.
-func (o GetWaasPoliciesWaasPolicyWafConfigCachingRuleOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigCachingRule) string { return v.Name }).(pulumi.StringOutput)
+func (o GetWaasPoliciesWaasPolicyWafConfigCachingRuleOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigCachingRule) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 type GetWaasPoliciesWaasPolicyWafConfigCachingRuleArrayOutput struct{ *pulumi.OutputState }
@@ -14410,12 +12669,6 @@ func (o GetWaasPoliciesWaasPolicyWafConfigCachingRuleArrayOutput) ToGetWaasPolic
 
 func (o GetWaasPoliciesWaasPolicyWafConfigCachingRuleArrayOutput) ToGetWaasPoliciesWaasPolicyWafConfigCachingRuleArrayOutputWithContext(ctx context.Context) GetWaasPoliciesWaasPolicyWafConfigCachingRuleArrayOutput {
 	return o
-}
-
-func (o GetWaasPoliciesWaasPolicyWafConfigCachingRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigCachingRule] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigCachingRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetWaasPoliciesWaasPolicyWafConfigCachingRuleArrayOutput) Index(i pulumi.IntInput) GetWaasPoliciesWaasPolicyWafConfigCachingRuleOutput {
@@ -14442,9 +12695,9 @@ type GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteria struct {
 	// * **IP_NOT_IN_LIST:** Matches if the request does not originate from any IP address contained in the referenced address list. The `value` field in this case is OCID of the address list.
 	// * **HTTP_HEADER_CONTAINS:** The HTTP_HEADER_CONTAINS criteria is defined using a compound value separated by a colon: a header field name and a header field value. `host:test.example.com` is an example of a criteria value where `host` is the header field name and `test.example.com` is the header field value. A request matches when the header field name is a case insensitive match and the header field value is a case insensitive, substring match. *Example:* With a criteria value of `host:test.example.com`, where `host` is the name of the field and `test.example.com` is the value of the host field, a request with the header values, `Host: www.test.example.com` will match, where as a request with header values of `host: www.example.com` or `host: test.sub.example.com` will not match.
 	// * **HTTP_METHOD_IS:** Matches if the request method is identical to one of the values listed in field. The `value` in this case is string with one or multiple HTTP methods separated by new line symbol \n The list of available methods: `GET`, `HEAD`, `POST`, `PUT`, `DELETE`, `CONNECT`, `OPTIONS`, `TRACE`, `PATCH`
-	Condition string `pulumi:"condition"`
+	Condition *string `pulumi:"condition"`
 	// The value of the header.
-	Value string `pulumi:"value"`
+	Value *string `pulumi:"value"`
 }
 
 // GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteriaInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteriaArgs and GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteriaOutput values.
@@ -14476,9 +12729,9 @@ type GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteriaArgs struct {
 	// * **IP_NOT_IN_LIST:** Matches if the request does not originate from any IP address contained in the referenced address list. The `value` field in this case is OCID of the address list.
 	// * **HTTP_HEADER_CONTAINS:** The HTTP_HEADER_CONTAINS criteria is defined using a compound value separated by a colon: a header field name and a header field value. `host:test.example.com` is an example of a criteria value where `host` is the header field name and `test.example.com` is the header field value. A request matches when the header field name is a case insensitive match and the header field value is a case insensitive, substring match. *Example:* With a criteria value of `host:test.example.com`, where `host` is the name of the field and `test.example.com` is the value of the host field, a request with the header values, `Host: www.test.example.com` will match, where as a request with header values of `host: www.example.com` or `host: test.sub.example.com` will not match.
 	// * **HTTP_METHOD_IS:** Matches if the request method is identical to one of the values listed in field. The `value` in this case is string with one or multiple HTTP methods separated by new line symbol \n The list of available methods: `GET`, `HEAD`, `POST`, `PUT`, `DELETE`, `CONNECT`, `OPTIONS`, `TRACE`, `PATCH`
-	Condition pulumi.StringInput `pulumi:"condition"`
+	Condition pulumi.StringPtrInput `pulumi:"condition"`
 	// The value of the header.
-	Value pulumi.StringInput `pulumi:"value"`
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteriaArgs) ElementType() reflect.Type {
@@ -14491,12 +12744,6 @@ func (i GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteriaArgs) ToGetWaasPoli
 
 func (i GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteriaArgs) ToGetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteriaOutputWithContext(ctx context.Context) GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteriaOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteriaOutput)
-}
-
-func (i GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteriaArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteria] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteria]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteriaOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteriaArrayInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteriaArray and GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteriaArrayOutput values.
@@ -14524,12 +12771,6 @@ func (i GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteriaArray) ToGetWaasPol
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteriaArrayOutput)
 }
 
-func (i GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteriaArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteria] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteria]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteriaArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteriaOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteriaOutput) ElementType() reflect.Type {
@@ -14542,12 +12783,6 @@ func (o GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteriaOutput) ToGetWaasPo
 
 func (o GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteriaOutput) ToGetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteriaOutputWithContext(ctx context.Context) GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteriaOutput {
 	return o
-}
-
-func (o GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteriaOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteria] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteria]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The criteria the access rule and JavaScript Challenge uses to determine if action should be taken on a request.
@@ -14567,13 +12802,13 @@ func (o GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteriaOutput) ToOutput(ct
 // * **IP_NOT_IN_LIST:** Matches if the request does not originate from any IP address contained in the referenced address list. The `value` field in this case is OCID of the address list.
 // * **HTTP_HEADER_CONTAINS:** The HTTP_HEADER_CONTAINS criteria is defined using a compound value separated by a colon: a header field name and a header field value. `host:test.example.com` is an example of a criteria value where `host` is the header field name and `test.example.com` is the header field value. A request matches when the header field name is a case insensitive match and the header field value is a case insensitive, substring match. *Example:* With a criteria value of `host:test.example.com`, where `host` is the name of the field and `test.example.com` is the value of the host field, a request with the header values, `Host: www.test.example.com` will match, where as a request with header values of `host: www.example.com` or `host: test.sub.example.com` will not match.
 // * **HTTP_METHOD_IS:** Matches if the request method is identical to one of the values listed in field. The `value` in this case is string with one or multiple HTTP methods separated by new line symbol \n The list of available methods: `GET`, `HEAD`, `POST`, `PUT`, `DELETE`, `CONNECT`, `OPTIONS`, `TRACE`, `PATCH`
-func (o GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteriaOutput) Condition() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteria) string { return v.Condition }).(pulumi.StringOutput)
+func (o GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteriaOutput) Condition() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteria) *string { return v.Condition }).(pulumi.StringPtrOutput)
 }
 
 // The value of the header.
-func (o GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteriaOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteria) string { return v.Value }).(pulumi.StringOutput)
+func (o GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteriaOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteria) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
 
 type GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteriaArrayOutput struct{ *pulumi.OutputState }
@@ -14590,12 +12825,6 @@ func (o GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteriaArrayOutput) ToGetW
 	return o
 }
 
-func (o GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteriaArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteria] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteria]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteriaArrayOutput) Index(i pulumi.IntInput) GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteriaOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteria {
 		return vs[0].([]GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteria)[vs[1].(int)]
@@ -14604,19 +12833,19 @@ func (o GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteriaArrayOutput) Index(
 
 type GetWaasPoliciesWaasPolicyWafConfigCaptcha struct {
 	// The text to show when incorrect CAPTCHA text is entered. If unspecified, defaults to `The CAPTCHA was incorrect. Try again.`
-	FailureMessage string `pulumi:"failureMessage"`
+	FailureMessage *string `pulumi:"failureMessage"`
 	// The text to show in the footer when showing a CAPTCHA challenge. If unspecified, defaults to 'Enter the letters and numbers as they are shown in the image above.'
-	FooterText string `pulumi:"footerText"`
+	FooterText *string `pulumi:"footerText"`
 	// The text to show in the header when showing a CAPTCHA challenge. If unspecified, defaults to 'We have detected an increased number of attempts to access this website. To help us keep this site secure, please let us know that you are not a robot by entering the text from the image below.'
-	HeaderText string `pulumi:"headerText"`
+	HeaderText *string `pulumi:"headerText"`
 	// The amount of time before the CAPTCHA expires, in seconds. If unspecified, defaults to `300`.
-	SessionExpirationInSeconds int `pulumi:"sessionExpirationInSeconds"`
+	SessionExpirationInSeconds *int `pulumi:"sessionExpirationInSeconds"`
 	// The text to show on the label of the CAPTCHA challenge submit button. If unspecified, defaults to `Yes, I am human`.
-	SubmitLabel string `pulumi:"submitLabel"`
+	SubmitLabel *string `pulumi:"submitLabel"`
 	// The title used when displaying a CAPTCHA challenge. If unspecified, defaults to `Are you human?`
-	Title string `pulumi:"title"`
+	Title *string `pulumi:"title"`
 	// The unique URL path at which to show the CAPTCHA challenge.
-	Url string `pulumi:"url"`
+	Url *string `pulumi:"url"`
 }
 
 // GetWaasPoliciesWaasPolicyWafConfigCaptchaInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigCaptchaArgs and GetWaasPoliciesWaasPolicyWafConfigCaptchaOutput values.
@@ -14632,19 +12861,19 @@ type GetWaasPoliciesWaasPolicyWafConfigCaptchaInput interface {
 
 type GetWaasPoliciesWaasPolicyWafConfigCaptchaArgs struct {
 	// The text to show when incorrect CAPTCHA text is entered. If unspecified, defaults to `The CAPTCHA was incorrect. Try again.`
-	FailureMessage pulumi.StringInput `pulumi:"failureMessage"`
+	FailureMessage pulumi.StringPtrInput `pulumi:"failureMessage"`
 	// The text to show in the footer when showing a CAPTCHA challenge. If unspecified, defaults to 'Enter the letters and numbers as they are shown in the image above.'
-	FooterText pulumi.StringInput `pulumi:"footerText"`
+	FooterText pulumi.StringPtrInput `pulumi:"footerText"`
 	// The text to show in the header when showing a CAPTCHA challenge. If unspecified, defaults to 'We have detected an increased number of attempts to access this website. To help us keep this site secure, please let us know that you are not a robot by entering the text from the image below.'
-	HeaderText pulumi.StringInput `pulumi:"headerText"`
+	HeaderText pulumi.StringPtrInput `pulumi:"headerText"`
 	// The amount of time before the CAPTCHA expires, in seconds. If unspecified, defaults to `300`.
-	SessionExpirationInSeconds pulumi.IntInput `pulumi:"sessionExpirationInSeconds"`
+	SessionExpirationInSeconds pulumi.IntPtrInput `pulumi:"sessionExpirationInSeconds"`
 	// The text to show on the label of the CAPTCHA challenge submit button. If unspecified, defaults to `Yes, I am human`.
-	SubmitLabel pulumi.StringInput `pulumi:"submitLabel"`
+	SubmitLabel pulumi.StringPtrInput `pulumi:"submitLabel"`
 	// The title used when displaying a CAPTCHA challenge. If unspecified, defaults to `Are you human?`
-	Title pulumi.StringInput `pulumi:"title"`
+	Title pulumi.StringPtrInput `pulumi:"title"`
 	// The unique URL path at which to show the CAPTCHA challenge.
-	Url pulumi.StringInput `pulumi:"url"`
+	Url pulumi.StringPtrInput `pulumi:"url"`
 }
 
 func (GetWaasPoliciesWaasPolicyWafConfigCaptchaArgs) ElementType() reflect.Type {
@@ -14657,12 +12886,6 @@ func (i GetWaasPoliciesWaasPolicyWafConfigCaptchaArgs) ToGetWaasPoliciesWaasPoli
 
 func (i GetWaasPoliciesWaasPolicyWafConfigCaptchaArgs) ToGetWaasPoliciesWaasPolicyWafConfigCaptchaOutputWithContext(ctx context.Context) GetWaasPoliciesWaasPolicyWafConfigCaptchaOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyWafConfigCaptchaOutput)
-}
-
-func (i GetWaasPoliciesWaasPolicyWafConfigCaptchaArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigCaptcha] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigCaptcha]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyWafConfigCaptchaOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetWaasPoliciesWaasPolicyWafConfigCaptchaArrayInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigCaptchaArray and GetWaasPoliciesWaasPolicyWafConfigCaptchaArrayOutput values.
@@ -14690,12 +12913,6 @@ func (i GetWaasPoliciesWaasPolicyWafConfigCaptchaArray) ToGetWaasPoliciesWaasPol
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyWafConfigCaptchaArrayOutput)
 }
 
-func (i GetWaasPoliciesWaasPolicyWafConfigCaptchaArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigCaptcha] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigCaptcha]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyWafConfigCaptchaArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPoliciesWaasPolicyWafConfigCaptchaOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPoliciesWaasPolicyWafConfigCaptchaOutput) ElementType() reflect.Type {
@@ -14710,45 +12927,39 @@ func (o GetWaasPoliciesWaasPolicyWafConfigCaptchaOutput) ToGetWaasPoliciesWaasPo
 	return o
 }
 
-func (o GetWaasPoliciesWaasPolicyWafConfigCaptchaOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigCaptcha] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigCaptcha]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The text to show when incorrect CAPTCHA text is entered. If unspecified, defaults to `The CAPTCHA was incorrect. Try again.`
-func (o GetWaasPoliciesWaasPolicyWafConfigCaptchaOutput) FailureMessage() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigCaptcha) string { return v.FailureMessage }).(pulumi.StringOutput)
+func (o GetWaasPoliciesWaasPolicyWafConfigCaptchaOutput) FailureMessage() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigCaptcha) *string { return v.FailureMessage }).(pulumi.StringPtrOutput)
 }
 
 // The text to show in the footer when showing a CAPTCHA challenge. If unspecified, defaults to 'Enter the letters and numbers as they are shown in the image above.'
-func (o GetWaasPoliciesWaasPolicyWafConfigCaptchaOutput) FooterText() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigCaptcha) string { return v.FooterText }).(pulumi.StringOutput)
+func (o GetWaasPoliciesWaasPolicyWafConfigCaptchaOutput) FooterText() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigCaptcha) *string { return v.FooterText }).(pulumi.StringPtrOutput)
 }
 
 // The text to show in the header when showing a CAPTCHA challenge. If unspecified, defaults to 'We have detected an increased number of attempts to access this website. To help us keep this site secure, please let us know that you are not a robot by entering the text from the image below.'
-func (o GetWaasPoliciesWaasPolicyWafConfigCaptchaOutput) HeaderText() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigCaptcha) string { return v.HeaderText }).(pulumi.StringOutput)
+func (o GetWaasPoliciesWaasPolicyWafConfigCaptchaOutput) HeaderText() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigCaptcha) *string { return v.HeaderText }).(pulumi.StringPtrOutput)
 }
 
 // The amount of time before the CAPTCHA expires, in seconds. If unspecified, defaults to `300`.
-func (o GetWaasPoliciesWaasPolicyWafConfigCaptchaOutput) SessionExpirationInSeconds() pulumi.IntOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigCaptcha) int { return v.SessionExpirationInSeconds }).(pulumi.IntOutput)
+func (o GetWaasPoliciesWaasPolicyWafConfigCaptchaOutput) SessionExpirationInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigCaptcha) *int { return v.SessionExpirationInSeconds }).(pulumi.IntPtrOutput)
 }
 
 // The text to show on the label of the CAPTCHA challenge submit button. If unspecified, defaults to `Yes, I am human`.
-func (o GetWaasPoliciesWaasPolicyWafConfigCaptchaOutput) SubmitLabel() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigCaptcha) string { return v.SubmitLabel }).(pulumi.StringOutput)
+func (o GetWaasPoliciesWaasPolicyWafConfigCaptchaOutput) SubmitLabel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigCaptcha) *string { return v.SubmitLabel }).(pulumi.StringPtrOutput)
 }
 
 // The title used when displaying a CAPTCHA challenge. If unspecified, defaults to `Are you human?`
-func (o GetWaasPoliciesWaasPolicyWafConfigCaptchaOutput) Title() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigCaptcha) string { return v.Title }).(pulumi.StringOutput)
+func (o GetWaasPoliciesWaasPolicyWafConfigCaptchaOutput) Title() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigCaptcha) *string { return v.Title }).(pulumi.StringPtrOutput)
 }
 
 // The unique URL path at which to show the CAPTCHA challenge.
-func (o GetWaasPoliciesWaasPolicyWafConfigCaptchaOutput) Url() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigCaptcha) string { return v.Url }).(pulumi.StringOutput)
+func (o GetWaasPoliciesWaasPolicyWafConfigCaptchaOutput) Url() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigCaptcha) *string { return v.Url }).(pulumi.StringPtrOutput)
 }
 
 type GetWaasPoliciesWaasPolicyWafConfigCaptchaArrayOutput struct{ *pulumi.OutputState }
@@ -14765,12 +12976,6 @@ func (o GetWaasPoliciesWaasPolicyWafConfigCaptchaArrayOutput) ToGetWaasPoliciesW
 	return o
 }
 
-func (o GetWaasPoliciesWaasPolicyWafConfigCaptchaArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigCaptcha] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigCaptcha]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWaasPoliciesWaasPolicyWafConfigCaptchaArrayOutput) Index(i pulumi.IntInput) GetWaasPoliciesWaasPolicyWafConfigCaptchaOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWaasPoliciesWaasPolicyWafConfigCaptcha {
 		return vs[0].([]GetWaasPoliciesWaasPolicyWafConfigCaptcha)[vs[1].(int)]
@@ -14779,11 +12984,11 @@ func (o GetWaasPoliciesWaasPolicyWafConfigCaptchaArrayOutput) Index(i pulumi.Int
 
 type GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRule struct {
 	// The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
-	Action string `pulumi:"action"`
+	Action *string `pulumi:"action"`
 	// An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
 	Exclusions []GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusion `pulumi:"exclusions"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom protection rule.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 // GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleArgs and GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleOutput values.
@@ -14799,11 +13004,11 @@ type GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleInput interface {
 
 type GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleArgs struct {
 	// The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
-	Action pulumi.StringInput `pulumi:"action"`
+	Action pulumi.StringPtrInput `pulumi:"action"`
 	// An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
 	Exclusions GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusionArrayInput `pulumi:"exclusions"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom protection rule.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 }
 
 func (GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleArgs) ElementType() reflect.Type {
@@ -14816,12 +13021,6 @@ func (i GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleArgs) ToGetWaasPol
 
 func (i GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleArgs) ToGetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleOutputWithContext(ctx context.Context) GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleOutput)
-}
-
-func (i GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRule] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRule]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleArrayInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleArray and GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleArrayOutput values.
@@ -14849,12 +13048,6 @@ func (i GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleArray) ToGetWaasPo
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleArrayOutput)
 }
 
-func (i GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRule] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRule]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleOutput) ElementType() reflect.Type {
@@ -14869,15 +13062,9 @@ func (o GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleOutput) ToGetWaasP
 	return o
 }
 
-func (o GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRule] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
-func (o GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleOutput) Action() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRule) string { return v.Action }).(pulumi.StringOutput)
+func (o GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleOutput) Action() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRule) *string { return v.Action }).(pulumi.StringPtrOutput)
 }
 
 // An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
@@ -14888,8 +13075,8 @@ func (o GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleOutput) Exclusions
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom protection rule.
-func (o GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRule) string { return v.Id }).(pulumi.StringOutput)
+func (o GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRule) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 type GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleArrayOutput struct{ *pulumi.OutputState }
@@ -14906,12 +13093,6 @@ func (o GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleArrayOutput) ToGet
 	return o
 }
 
-func (o GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRule] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleArrayOutput) Index(i pulumi.IntInput) GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRule {
 		return vs[0].([]GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRule)[vs[1].(int)]
@@ -14922,7 +13103,7 @@ type GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusion struct {
 	// An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
 	Exclusions []string `pulumi:"exclusions"`
 	// The target of the exclusion.
-	Target string `pulumi:"target"`
+	Target *string `pulumi:"target"`
 }
 
 // GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusionInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusionArgs and GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusionOutput values.
@@ -14940,7 +13121,7 @@ type GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusionArgs struct 
 	// An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
 	Exclusions pulumi.StringArrayInput `pulumi:"exclusions"`
 	// The target of the exclusion.
-	Target pulumi.StringInput `pulumi:"target"`
+	Target pulumi.StringPtrInput `pulumi:"target"`
 }
 
 func (GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusionArgs) ElementType() reflect.Type {
@@ -14953,12 +13134,6 @@ func (i GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusionArgs) ToG
 
 func (i GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusionArgs) ToGetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusionOutputWithContext(ctx context.Context) GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusionOutput)
-}
-
-func (i GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusionArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusion] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusion]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusionArrayInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusionArray and GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusionArrayOutput values.
@@ -14986,12 +13161,6 @@ func (i GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusionArray) To
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusionArrayOutput)
 }
 
-func (i GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusion] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusion]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusionOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusionOutput) ElementType() reflect.Type {
@@ -15006,20 +13175,14 @@ func (o GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusionOutput) T
 	return o
 }
 
-func (o GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusionOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusion] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusion]{
-		OutputState: o.OutputState,
-	}
-}
-
 // An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
 func (o GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusionOutput) Exclusions() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusion) []string { return v.Exclusions }).(pulumi.StringArrayOutput)
 }
 
 // The target of the exclusion.
-func (o GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusionOutput) Target() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusion) string { return v.Target }).(pulumi.StringOutput)
+func (o GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusionOutput) Target() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusion) *string { return v.Target }).(pulumi.StringPtrOutput)
 }
 
 type GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusionArrayOutput struct{ *pulumi.OutputState }
@@ -15036,12 +13199,6 @@ func (o GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusionArrayOutp
 	return o
 }
 
-func (o GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusion] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusion]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusionArrayOutput) Index(i pulumi.IntInput) GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusion {
 		return vs[0].([]GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusion)[vs[1].(int)]
@@ -15050,21 +13207,21 @@ func (o GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusionArrayOutp
 
 type GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallenge struct {
 	// The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
-	Action string `pulumi:"action"`
+	Action *string `pulumi:"action"`
 	// The number of seconds between challenges from the same IP address. If unspecified, defaults to `60`.
-	ActionExpirationInSeconds int `pulumi:"actionExpirationInSeconds"`
+	ActionExpirationInSeconds *int `pulumi:"actionExpirationInSeconds"`
 	// The challenge settings if `action` is set to `BLOCK`.
 	ChallengeSettings []GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSetting `pulumi:"challengeSettings"`
 	// The number of failed requests before taking action. If unspecified, defaults to `10`.
-	FailureThreshold int `pulumi:"failureThreshold"`
+	FailureThreshold *int `pulumi:"failureThreshold"`
 	// The number of seconds before the failure threshold resets. If unspecified, defaults to  `60`.
-	FailureThresholdExpirationInSeconds int `pulumi:"failureThresholdExpirationInSeconds"`
+	FailureThresholdExpirationInSeconds *int `pulumi:"failureThresholdExpirationInSeconds"`
 	// Enables or disables the JavaScript challenge Web Application Firewall feature.
-	IsEnabled bool `pulumi:"isEnabled"`
+	IsEnabled *bool `pulumi:"isEnabled"`
 	// The maximum number of IP addresses permitted with the same device fingerprint. If unspecified, defaults to `20`.
-	MaxAddressCount int `pulumi:"maxAddressCount"`
+	MaxAddressCount *int `pulumi:"maxAddressCount"`
 	// The number of seconds before the maximum addresses count resets. If unspecified, defaults to `60`.
-	MaxAddressCountExpirationInSeconds int `pulumi:"maxAddressCountExpirationInSeconds"`
+	MaxAddressCountExpirationInSeconds *int `pulumi:"maxAddressCountExpirationInSeconds"`
 }
 
 // GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeArgs and GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeOutput values.
@@ -15080,21 +13237,21 @@ type GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeInput interface
 
 type GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeArgs struct {
 	// The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
-	Action pulumi.StringInput `pulumi:"action"`
+	Action pulumi.StringPtrInput `pulumi:"action"`
 	// The number of seconds between challenges from the same IP address. If unspecified, defaults to `60`.
-	ActionExpirationInSeconds pulumi.IntInput `pulumi:"actionExpirationInSeconds"`
+	ActionExpirationInSeconds pulumi.IntPtrInput `pulumi:"actionExpirationInSeconds"`
 	// The challenge settings if `action` is set to `BLOCK`.
 	ChallengeSettings GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingArrayInput `pulumi:"challengeSettings"`
 	// The number of failed requests before taking action. If unspecified, defaults to `10`.
-	FailureThreshold pulumi.IntInput `pulumi:"failureThreshold"`
+	FailureThreshold pulumi.IntPtrInput `pulumi:"failureThreshold"`
 	// The number of seconds before the failure threshold resets. If unspecified, defaults to  `60`.
-	FailureThresholdExpirationInSeconds pulumi.IntInput `pulumi:"failureThresholdExpirationInSeconds"`
+	FailureThresholdExpirationInSeconds pulumi.IntPtrInput `pulumi:"failureThresholdExpirationInSeconds"`
 	// Enables or disables the JavaScript challenge Web Application Firewall feature.
-	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+	IsEnabled pulumi.BoolPtrInput `pulumi:"isEnabled"`
 	// The maximum number of IP addresses permitted with the same device fingerprint. If unspecified, defaults to `20`.
-	MaxAddressCount pulumi.IntInput `pulumi:"maxAddressCount"`
+	MaxAddressCount pulumi.IntPtrInput `pulumi:"maxAddressCount"`
 	// The number of seconds before the maximum addresses count resets. If unspecified, defaults to `60`.
-	MaxAddressCountExpirationInSeconds pulumi.IntInput `pulumi:"maxAddressCountExpirationInSeconds"`
+	MaxAddressCountExpirationInSeconds pulumi.IntPtrInput `pulumi:"maxAddressCountExpirationInSeconds"`
 }
 
 func (GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeArgs) ElementType() reflect.Type {
@@ -15107,12 +13264,6 @@ func (i GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeArgs) ToGetW
 
 func (i GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeArgs) ToGetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeOutputWithContext(ctx context.Context) GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeOutput)
-}
-
-func (i GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallenge] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallenge]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeArrayInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeArray and GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeArrayOutput values.
@@ -15140,12 +13291,6 @@ func (i GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeArray) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeArrayOutput)
 }
 
-func (i GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallenge] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallenge]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeOutput) ElementType() reflect.Type {
@@ -15160,22 +13305,16 @@ func (o GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeOutput) ToGe
 	return o
 }
 
-func (o GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallenge] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallenge]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
-func (o GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeOutput) Action() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallenge) string { return v.Action }).(pulumi.StringOutput)
+func (o GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeOutput) Action() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallenge) *string { return v.Action }).(pulumi.StringPtrOutput)
 }
 
 // The number of seconds between challenges from the same IP address. If unspecified, defaults to `60`.
-func (o GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeOutput) ActionExpirationInSeconds() pulumi.IntOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallenge) int {
+func (o GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeOutput) ActionExpirationInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallenge) *int {
 		return v.ActionExpirationInSeconds
-	}).(pulumi.IntOutput)
+	}).(pulumi.IntPtrOutput)
 }
 
 // The challenge settings if `action` is set to `BLOCK`.
@@ -15186,32 +13325,32 @@ func (o GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeOutput) Chal
 }
 
 // The number of failed requests before taking action. If unspecified, defaults to `10`.
-func (o GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeOutput) FailureThreshold() pulumi.IntOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallenge) int { return v.FailureThreshold }).(pulumi.IntOutput)
+func (o GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeOutput) FailureThreshold() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallenge) *int { return v.FailureThreshold }).(pulumi.IntPtrOutput)
 }
 
 // The number of seconds before the failure threshold resets. If unspecified, defaults to  `60`.
-func (o GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeOutput) FailureThresholdExpirationInSeconds() pulumi.IntOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallenge) int {
+func (o GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeOutput) FailureThresholdExpirationInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallenge) *int {
 		return v.FailureThresholdExpirationInSeconds
-	}).(pulumi.IntOutput)
+	}).(pulumi.IntPtrOutput)
 }
 
 // Enables or disables the JavaScript challenge Web Application Firewall feature.
-func (o GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeOutput) IsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallenge) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+func (o GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallenge) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // The maximum number of IP addresses permitted with the same device fingerprint. If unspecified, defaults to `20`.
-func (o GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeOutput) MaxAddressCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallenge) int { return v.MaxAddressCount }).(pulumi.IntOutput)
+func (o GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeOutput) MaxAddressCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallenge) *int { return v.MaxAddressCount }).(pulumi.IntPtrOutput)
 }
 
 // The number of seconds before the maximum addresses count resets. If unspecified, defaults to `60`.
-func (o GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeOutput) MaxAddressCountExpirationInSeconds() pulumi.IntOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallenge) int {
+func (o GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeOutput) MaxAddressCountExpirationInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallenge) *int {
 		return v.MaxAddressCountExpirationInSeconds
-	}).(pulumi.IntOutput)
+	}).(pulumi.IntPtrOutput)
 }
 
 type GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeArrayOutput struct{ *pulumi.OutputState }
@@ -15228,12 +13367,6 @@ func (o GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeArrayOutput)
 	return o
 }
 
-func (o GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallenge] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallenge]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeArrayOutput) Index(i pulumi.IntInput) GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallenge {
 		return vs[0].([]GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallenge)[vs[1].(int)]
@@ -15242,23 +13375,23 @@ func (o GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeArrayOutput)
 
 type GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSetting struct {
 	// If `action` is set to `BLOCK`, this specifies how the traffic is blocked when detected as malicious by a protection rule. If unspecified, defaults to `SET_RESPONSE_CODE`.
-	BlockAction string `pulumi:"blockAction"`
+	BlockAction *string `pulumi:"blockAction"`
 	// The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`.
-	BlockErrorPageCode string `pulumi:"blockErrorPageCode"`
+	BlockErrorPageCode *string `pulumi:"blockErrorPageCode"`
 	// The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
-	BlockErrorPageDescription string `pulumi:"blockErrorPageDescription"`
+	BlockErrorPageDescription *string `pulumi:"blockErrorPageDescription"`
 	// The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to 'Access to the website is blocked.'
-	BlockErrorPageMessage string `pulumi:"blockErrorPageMessage"`
+	BlockErrorPageMessage *string `pulumi:"blockErrorPageMessage"`
 	// The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
-	BlockResponseCode int `pulumi:"blockResponseCode"`
+	BlockResponseCode *int `pulumi:"blockResponseCode"`
 	// The text to show in the footer when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, default to `Enter the letters and numbers as they are shown in image above`.
-	CaptchaFooter string `pulumi:"captchaFooter"`
+	CaptchaFooter *string `pulumi:"captchaFooter"`
 	// The text to show in the header when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `We have detected an increased number of attempts to access this webapp. To help us keep this webapp secure, please let us know that you are not a robot by entering the text from captcha below.`
-	CaptchaHeader string `pulumi:"captchaHeader"`
+	CaptchaHeader *string `pulumi:"captchaHeader"`
 	// The text to show on the label of the CAPTCHA challenge submit button when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Yes, I am human`.
-	CaptchaSubmitLabel string `pulumi:"captchaSubmitLabel"`
+	CaptchaSubmitLabel *string `pulumi:"captchaSubmitLabel"`
 	// The title used when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Are you human?`
-	CaptchaTitle string `pulumi:"captchaTitle"`
+	CaptchaTitle *string `pulumi:"captchaTitle"`
 }
 
 // GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingArgs and GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingOutput values.
@@ -15274,23 +13407,23 @@ type GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettin
 
 type GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingArgs struct {
 	// If `action` is set to `BLOCK`, this specifies how the traffic is blocked when detected as malicious by a protection rule. If unspecified, defaults to `SET_RESPONSE_CODE`.
-	BlockAction pulumi.StringInput `pulumi:"blockAction"`
+	BlockAction pulumi.StringPtrInput `pulumi:"blockAction"`
 	// The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`.
-	BlockErrorPageCode pulumi.StringInput `pulumi:"blockErrorPageCode"`
+	BlockErrorPageCode pulumi.StringPtrInput `pulumi:"blockErrorPageCode"`
 	// The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
-	BlockErrorPageDescription pulumi.StringInput `pulumi:"blockErrorPageDescription"`
+	BlockErrorPageDescription pulumi.StringPtrInput `pulumi:"blockErrorPageDescription"`
 	// The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to 'Access to the website is blocked.'
-	BlockErrorPageMessage pulumi.StringInput `pulumi:"blockErrorPageMessage"`
+	BlockErrorPageMessage pulumi.StringPtrInput `pulumi:"blockErrorPageMessage"`
 	// The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
-	BlockResponseCode pulumi.IntInput `pulumi:"blockResponseCode"`
+	BlockResponseCode pulumi.IntPtrInput `pulumi:"blockResponseCode"`
 	// The text to show in the footer when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, default to `Enter the letters and numbers as they are shown in image above`.
-	CaptchaFooter pulumi.StringInput `pulumi:"captchaFooter"`
+	CaptchaFooter pulumi.StringPtrInput `pulumi:"captchaFooter"`
 	// The text to show in the header when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `We have detected an increased number of attempts to access this webapp. To help us keep this webapp secure, please let us know that you are not a robot by entering the text from captcha below.`
-	CaptchaHeader pulumi.StringInput `pulumi:"captchaHeader"`
+	CaptchaHeader pulumi.StringPtrInput `pulumi:"captchaHeader"`
 	// The text to show on the label of the CAPTCHA challenge submit button when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Yes, I am human`.
-	CaptchaSubmitLabel pulumi.StringInput `pulumi:"captchaSubmitLabel"`
+	CaptchaSubmitLabel pulumi.StringPtrInput `pulumi:"captchaSubmitLabel"`
 	// The title used when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Are you human?`
-	CaptchaTitle pulumi.StringInput `pulumi:"captchaTitle"`
+	CaptchaTitle pulumi.StringPtrInput `pulumi:"captchaTitle"`
 }
 
 func (GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingArgs) ElementType() reflect.Type {
@@ -15303,12 +13436,6 @@ func (i GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSet
 
 func (i GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingArgs) ToGetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingOutputWithContext(ctx context.Context) GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingOutput)
-}
-
-func (i GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSetting] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSetting]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingArrayInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingArray and GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingArrayOutput values.
@@ -15336,12 +13463,6 @@ func (i GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSet
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingArrayOutput)
 }
 
-func (i GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSetting] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSetting]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingOutput) ElementType() reflect.Type {
@@ -15356,73 +13477,67 @@ func (o GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSet
 	return o
 }
 
-func (o GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSetting] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSetting]{
-		OutputState: o.OutputState,
-	}
-}
-
 // If `action` is set to `BLOCK`, this specifies how the traffic is blocked when detected as malicious by a protection rule. If unspecified, defaults to `SET_RESPONSE_CODE`.
-func (o GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingOutput) BlockAction() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSetting) string {
+func (o GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingOutput) BlockAction() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSetting) *string {
 		return v.BlockAction
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`.
-func (o GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingOutput) BlockErrorPageCode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSetting) string {
+func (o GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingOutput) BlockErrorPageCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSetting) *string {
 		return v.BlockErrorPageCode
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
-func (o GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingOutput) BlockErrorPageDescription() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSetting) string {
+func (o GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingOutput) BlockErrorPageDescription() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSetting) *string {
 		return v.BlockErrorPageDescription
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to 'Access to the website is blocked.'
-func (o GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingOutput) BlockErrorPageMessage() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSetting) string {
+func (o GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingOutput) BlockErrorPageMessage() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSetting) *string {
 		return v.BlockErrorPageMessage
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
-func (o GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingOutput) BlockResponseCode() pulumi.IntOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSetting) int {
+func (o GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingOutput) BlockResponseCode() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSetting) *int {
 		return v.BlockResponseCode
-	}).(pulumi.IntOutput)
+	}).(pulumi.IntPtrOutput)
 }
 
 // The text to show in the footer when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, default to `Enter the letters and numbers as they are shown in image above`.
-func (o GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingOutput) CaptchaFooter() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSetting) string {
+func (o GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingOutput) CaptchaFooter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSetting) *string {
 		return v.CaptchaFooter
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The text to show in the header when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `We have detected an increased number of attempts to access this webapp. To help us keep this webapp secure, please let us know that you are not a robot by entering the text from captcha below.`
-func (o GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingOutput) CaptchaHeader() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSetting) string {
+func (o GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingOutput) CaptchaHeader() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSetting) *string {
 		return v.CaptchaHeader
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The text to show on the label of the CAPTCHA challenge submit button when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Yes, I am human`.
-func (o GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingOutput) CaptchaSubmitLabel() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSetting) string {
+func (o GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingOutput) CaptchaSubmitLabel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSetting) *string {
 		return v.CaptchaSubmitLabel
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The title used when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Are you human?`
-func (o GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingOutput) CaptchaTitle() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSetting) string {
+func (o GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingOutput) CaptchaTitle() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSetting) *string {
 		return v.CaptchaTitle
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingArrayOutput struct{ *pulumi.OutputState }
@@ -15439,12 +13554,6 @@ func (o GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSet
 	return o
 }
 
-func (o GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSetting] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSetting]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingArrayOutput) Index(i pulumi.IntInput) GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSetting {
 		return vs[0].([]GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSetting)[vs[1].(int)]
@@ -15453,23 +13562,23 @@ func (o GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSet
 
 type GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallenge struct {
 	// The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
-	Action string `pulumi:"action"`
+	Action *string `pulumi:"action"`
 	// The number of seconds between challenges from the same IP address. If unspecified, defaults to `60`.
-	ActionExpirationInSeconds int `pulumi:"actionExpirationInSeconds"`
+	ActionExpirationInSeconds *int `pulumi:"actionExpirationInSeconds"`
 	// The challenge settings if `action` is set to `BLOCK`.
 	ChallengeSettings []GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSetting `pulumi:"challengeSettings"`
 	// The number of failed requests before taking action. If unspecified, defaults to `10`.
-	FailureThreshold int `pulumi:"failureThreshold"`
+	FailureThreshold *int `pulumi:"failureThreshold"`
 	// The number of seconds before the failure threshold resets. If unspecified, defaults to  `60`.
-	FailureThresholdExpirationInSeconds int `pulumi:"failureThresholdExpirationInSeconds"`
+	FailureThresholdExpirationInSeconds *int `pulumi:"failureThresholdExpirationInSeconds"`
 	// The number of interactions required to pass the challenge. If unspecified, defaults to `3`.
-	InteractionThreshold int `pulumi:"interactionThreshold"`
+	InteractionThreshold *int `pulumi:"interactionThreshold"`
 	// Enables or disables the JavaScript challenge Web Application Firewall feature.
-	IsEnabled bool `pulumi:"isEnabled"`
+	IsEnabled *bool `pulumi:"isEnabled"`
 	// When enabled, the user is identified not only by the IP address but also by an unique additional hash, which prevents blocking visitors with shared IP addresses.
-	IsNatEnabled bool `pulumi:"isNatEnabled"`
+	IsNatEnabled *bool `pulumi:"isNatEnabled"`
 	// The number of seconds to record the interactions from the user. If unspecified, defaults to `15`.
-	RecordingPeriodInSeconds int `pulumi:"recordingPeriodInSeconds"`
+	RecordingPeriodInSeconds *int `pulumi:"recordingPeriodInSeconds"`
 	// Adds an additional HTTP header to requests that fail the challenge before being passed to the origin. Only applicable when the `action` is set to `DETECT`.
 	SetHttpHeaders []GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeader `pulumi:"setHttpHeaders"`
 }
@@ -15487,23 +13596,23 @@ type GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeInput interface 
 
 type GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeArgs struct {
 	// The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
-	Action pulumi.StringInput `pulumi:"action"`
+	Action pulumi.StringPtrInput `pulumi:"action"`
 	// The number of seconds between challenges from the same IP address. If unspecified, defaults to `60`.
-	ActionExpirationInSeconds pulumi.IntInput `pulumi:"actionExpirationInSeconds"`
+	ActionExpirationInSeconds pulumi.IntPtrInput `pulumi:"actionExpirationInSeconds"`
 	// The challenge settings if `action` is set to `BLOCK`.
 	ChallengeSettings GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingArrayInput `pulumi:"challengeSettings"`
 	// The number of failed requests before taking action. If unspecified, defaults to `10`.
-	FailureThreshold pulumi.IntInput `pulumi:"failureThreshold"`
+	FailureThreshold pulumi.IntPtrInput `pulumi:"failureThreshold"`
 	// The number of seconds before the failure threshold resets. If unspecified, defaults to  `60`.
-	FailureThresholdExpirationInSeconds pulumi.IntInput `pulumi:"failureThresholdExpirationInSeconds"`
+	FailureThresholdExpirationInSeconds pulumi.IntPtrInput `pulumi:"failureThresholdExpirationInSeconds"`
 	// The number of interactions required to pass the challenge. If unspecified, defaults to `3`.
-	InteractionThreshold pulumi.IntInput `pulumi:"interactionThreshold"`
+	InteractionThreshold pulumi.IntPtrInput `pulumi:"interactionThreshold"`
 	// Enables or disables the JavaScript challenge Web Application Firewall feature.
-	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+	IsEnabled pulumi.BoolPtrInput `pulumi:"isEnabled"`
 	// When enabled, the user is identified not only by the IP address but also by an unique additional hash, which prevents blocking visitors with shared IP addresses.
-	IsNatEnabled pulumi.BoolInput `pulumi:"isNatEnabled"`
+	IsNatEnabled pulumi.BoolPtrInput `pulumi:"isNatEnabled"`
 	// The number of seconds to record the interactions from the user. If unspecified, defaults to `15`.
-	RecordingPeriodInSeconds pulumi.IntInput `pulumi:"recordingPeriodInSeconds"`
+	RecordingPeriodInSeconds pulumi.IntPtrInput `pulumi:"recordingPeriodInSeconds"`
 	// Adds an additional HTTP header to requests that fail the challenge before being passed to the origin. Only applicable when the `action` is set to `DETECT`.
 	SetHttpHeaders GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderArrayInput `pulumi:"setHttpHeaders"`
 }
@@ -15518,12 +13627,6 @@ func (i GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeArgs) ToGetWa
 
 func (i GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeArgs) ToGetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeOutputWithContext(ctx context.Context) GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeOutput)
-}
-
-func (i GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallenge] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallenge]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeArrayInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeArray and GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeArrayOutput values.
@@ -15551,12 +13654,6 @@ func (i GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeArray) ToGetW
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeArrayOutput)
 }
 
-func (i GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallenge] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallenge]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeOutput) ElementType() reflect.Type {
@@ -15571,22 +13668,16 @@ func (o GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeOutput) ToGet
 	return o
 }
 
-func (o GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallenge] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallenge]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
-func (o GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeOutput) Action() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallenge) string { return v.Action }).(pulumi.StringOutput)
+func (o GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeOutput) Action() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallenge) *string { return v.Action }).(pulumi.StringPtrOutput)
 }
 
 // The number of seconds between challenges from the same IP address. If unspecified, defaults to `60`.
-func (o GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeOutput) ActionExpirationInSeconds() pulumi.IntOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallenge) int {
+func (o GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeOutput) ActionExpirationInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallenge) *int {
 		return v.ActionExpirationInSeconds
-	}).(pulumi.IntOutput)
+	}).(pulumi.IntPtrOutput)
 }
 
 // The challenge settings if `action` is set to `BLOCK`.
@@ -15597,37 +13688,39 @@ func (o GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeOutput) Chall
 }
 
 // The number of failed requests before taking action. If unspecified, defaults to `10`.
-func (o GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeOutput) FailureThreshold() pulumi.IntOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallenge) int { return v.FailureThreshold }).(pulumi.IntOutput)
+func (o GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeOutput) FailureThreshold() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallenge) *int { return v.FailureThreshold }).(pulumi.IntPtrOutput)
 }
 
 // The number of seconds before the failure threshold resets. If unspecified, defaults to  `60`.
-func (o GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeOutput) FailureThresholdExpirationInSeconds() pulumi.IntOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallenge) int {
+func (o GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeOutput) FailureThresholdExpirationInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallenge) *int {
 		return v.FailureThresholdExpirationInSeconds
-	}).(pulumi.IntOutput)
+	}).(pulumi.IntPtrOutput)
 }
 
 // The number of interactions required to pass the challenge. If unspecified, defaults to `3`.
-func (o GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeOutput) InteractionThreshold() pulumi.IntOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallenge) int { return v.InteractionThreshold }).(pulumi.IntOutput)
+func (o GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeOutput) InteractionThreshold() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallenge) *int {
+		return v.InteractionThreshold
+	}).(pulumi.IntPtrOutput)
 }
 
 // Enables or disables the JavaScript challenge Web Application Firewall feature.
-func (o GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeOutput) IsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallenge) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+func (o GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallenge) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // When enabled, the user is identified not only by the IP address but also by an unique additional hash, which prevents blocking visitors with shared IP addresses.
-func (o GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeOutput) IsNatEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallenge) bool { return v.IsNatEnabled }).(pulumi.BoolOutput)
+func (o GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeOutput) IsNatEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallenge) *bool { return v.IsNatEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // The number of seconds to record the interactions from the user. If unspecified, defaults to `15`.
-func (o GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeOutput) RecordingPeriodInSeconds() pulumi.IntOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallenge) int {
+func (o GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeOutput) RecordingPeriodInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallenge) *int {
 		return v.RecordingPeriodInSeconds
-	}).(pulumi.IntOutput)
+	}).(pulumi.IntPtrOutput)
 }
 
 // Adds an additional HTTP header to requests that fail the challenge before being passed to the origin. Only applicable when the `action` is set to `DETECT`.
@@ -15651,12 +13744,6 @@ func (o GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeArrayOutput) 
 	return o
 }
 
-func (o GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallenge] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallenge]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeArrayOutput) Index(i pulumi.IntInput) GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallenge {
 		return vs[0].([]GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallenge)[vs[1].(int)]
@@ -15665,23 +13752,23 @@ func (o GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeArrayOutput) 
 
 type GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSetting struct {
 	// If `action` is set to `BLOCK`, this specifies how the traffic is blocked when detected as malicious by a protection rule. If unspecified, defaults to `SET_RESPONSE_CODE`.
-	BlockAction string `pulumi:"blockAction"`
+	BlockAction *string `pulumi:"blockAction"`
 	// The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`.
-	BlockErrorPageCode string `pulumi:"blockErrorPageCode"`
+	BlockErrorPageCode *string `pulumi:"blockErrorPageCode"`
 	// The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
-	BlockErrorPageDescription string `pulumi:"blockErrorPageDescription"`
+	BlockErrorPageDescription *string `pulumi:"blockErrorPageDescription"`
 	// The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to 'Access to the website is blocked.'
-	BlockErrorPageMessage string `pulumi:"blockErrorPageMessage"`
+	BlockErrorPageMessage *string `pulumi:"blockErrorPageMessage"`
 	// The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
-	BlockResponseCode int `pulumi:"blockResponseCode"`
+	BlockResponseCode *int `pulumi:"blockResponseCode"`
 	// The text to show in the footer when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, default to `Enter the letters and numbers as they are shown in image above`.
-	CaptchaFooter string `pulumi:"captchaFooter"`
+	CaptchaFooter *string `pulumi:"captchaFooter"`
 	// The text to show in the header when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `We have detected an increased number of attempts to access this webapp. To help us keep this webapp secure, please let us know that you are not a robot by entering the text from captcha below.`
-	CaptchaHeader string `pulumi:"captchaHeader"`
+	CaptchaHeader *string `pulumi:"captchaHeader"`
 	// The text to show on the label of the CAPTCHA challenge submit button when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Yes, I am human`.
-	CaptchaSubmitLabel string `pulumi:"captchaSubmitLabel"`
+	CaptchaSubmitLabel *string `pulumi:"captchaSubmitLabel"`
 	// The title used when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Are you human?`
-	CaptchaTitle string `pulumi:"captchaTitle"`
+	CaptchaTitle *string `pulumi:"captchaTitle"`
 }
 
 // GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingArgs and GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingOutput values.
@@ -15697,23 +13784,23 @@ type GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSetting
 
 type GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingArgs struct {
 	// If `action` is set to `BLOCK`, this specifies how the traffic is blocked when detected as malicious by a protection rule. If unspecified, defaults to `SET_RESPONSE_CODE`.
-	BlockAction pulumi.StringInput `pulumi:"blockAction"`
+	BlockAction pulumi.StringPtrInput `pulumi:"blockAction"`
 	// The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`.
-	BlockErrorPageCode pulumi.StringInput `pulumi:"blockErrorPageCode"`
+	BlockErrorPageCode pulumi.StringPtrInput `pulumi:"blockErrorPageCode"`
 	// The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
-	BlockErrorPageDescription pulumi.StringInput `pulumi:"blockErrorPageDescription"`
+	BlockErrorPageDescription pulumi.StringPtrInput `pulumi:"blockErrorPageDescription"`
 	// The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to 'Access to the website is blocked.'
-	BlockErrorPageMessage pulumi.StringInput `pulumi:"blockErrorPageMessage"`
+	BlockErrorPageMessage pulumi.StringPtrInput `pulumi:"blockErrorPageMessage"`
 	// The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
-	BlockResponseCode pulumi.IntInput `pulumi:"blockResponseCode"`
+	BlockResponseCode pulumi.IntPtrInput `pulumi:"blockResponseCode"`
 	// The text to show in the footer when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, default to `Enter the letters and numbers as they are shown in image above`.
-	CaptchaFooter pulumi.StringInput `pulumi:"captchaFooter"`
+	CaptchaFooter pulumi.StringPtrInput `pulumi:"captchaFooter"`
 	// The text to show in the header when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `We have detected an increased number of attempts to access this webapp. To help us keep this webapp secure, please let us know that you are not a robot by entering the text from captcha below.`
-	CaptchaHeader pulumi.StringInput `pulumi:"captchaHeader"`
+	CaptchaHeader pulumi.StringPtrInput `pulumi:"captchaHeader"`
 	// The text to show on the label of the CAPTCHA challenge submit button when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Yes, I am human`.
-	CaptchaSubmitLabel pulumi.StringInput `pulumi:"captchaSubmitLabel"`
+	CaptchaSubmitLabel pulumi.StringPtrInput `pulumi:"captchaSubmitLabel"`
 	// The title used when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Are you human?`
-	CaptchaTitle pulumi.StringInput `pulumi:"captchaTitle"`
+	CaptchaTitle pulumi.StringPtrInput `pulumi:"captchaTitle"`
 }
 
 func (GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingArgs) ElementType() reflect.Type {
@@ -15726,12 +13813,6 @@ func (i GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSett
 
 func (i GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingArgs) ToGetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingOutputWithContext(ctx context.Context) GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingOutput)
-}
-
-func (i GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSetting] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSetting]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingArrayInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingArray and GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingArrayOutput values.
@@ -15759,12 +13840,6 @@ func (i GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSett
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingArrayOutput)
 }
 
-func (i GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSetting] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSetting]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingOutput) ElementType() reflect.Type {
@@ -15779,73 +13854,67 @@ func (o GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSett
 	return o
 }
 
-func (o GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSetting] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSetting]{
-		OutputState: o.OutputState,
-	}
-}
-
 // If `action` is set to `BLOCK`, this specifies how the traffic is blocked when detected as malicious by a protection rule. If unspecified, defaults to `SET_RESPONSE_CODE`.
-func (o GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingOutput) BlockAction() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSetting) string {
+func (o GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingOutput) BlockAction() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSetting) *string {
 		return v.BlockAction
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`.
-func (o GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingOutput) BlockErrorPageCode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSetting) string {
+func (o GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingOutput) BlockErrorPageCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSetting) *string {
 		return v.BlockErrorPageCode
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
-func (o GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingOutput) BlockErrorPageDescription() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSetting) string {
+func (o GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingOutput) BlockErrorPageDescription() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSetting) *string {
 		return v.BlockErrorPageDescription
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to 'Access to the website is blocked.'
-func (o GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingOutput) BlockErrorPageMessage() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSetting) string {
+func (o GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingOutput) BlockErrorPageMessage() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSetting) *string {
 		return v.BlockErrorPageMessage
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
-func (o GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingOutput) BlockResponseCode() pulumi.IntOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSetting) int {
+func (o GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingOutput) BlockResponseCode() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSetting) *int {
 		return v.BlockResponseCode
-	}).(pulumi.IntOutput)
+	}).(pulumi.IntPtrOutput)
 }
 
 // The text to show in the footer when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, default to `Enter the letters and numbers as they are shown in image above`.
-func (o GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingOutput) CaptchaFooter() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSetting) string {
+func (o GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingOutput) CaptchaFooter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSetting) *string {
 		return v.CaptchaFooter
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The text to show in the header when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `We have detected an increased number of attempts to access this webapp. To help us keep this webapp secure, please let us know that you are not a robot by entering the text from captcha below.`
-func (o GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingOutput) CaptchaHeader() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSetting) string {
+func (o GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingOutput) CaptchaHeader() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSetting) *string {
 		return v.CaptchaHeader
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The text to show on the label of the CAPTCHA challenge submit button when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Yes, I am human`.
-func (o GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingOutput) CaptchaSubmitLabel() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSetting) string {
+func (o GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingOutput) CaptchaSubmitLabel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSetting) *string {
 		return v.CaptchaSubmitLabel
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The title used when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Are you human?`
-func (o GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingOutput) CaptchaTitle() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSetting) string {
+func (o GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingOutput) CaptchaTitle() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSetting) *string {
 		return v.CaptchaTitle
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingArrayOutput struct{ *pulumi.OutputState }
@@ -15862,12 +13931,6 @@ func (o GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSett
 	return o
 }
 
-func (o GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSetting] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSetting]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingArrayOutput) Index(i pulumi.IntInput) GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSetting {
 		return vs[0].([]GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSetting)[vs[1].(int)]
@@ -15876,9 +13939,9 @@ func (o GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSett
 
 type GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeader struct {
 	// The unique name of the whitelist.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The value of the header.
-	Value string `pulumi:"value"`
+	Value *string `pulumi:"value"`
 }
 
 // GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderArgs and GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderOutput values.
@@ -15894,9 +13957,9 @@ type GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderInp
 
 type GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderArgs struct {
 	// The unique name of the whitelist.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// The value of the header.
-	Value pulumi.StringInput `pulumi:"value"`
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderArgs) ElementType() reflect.Type {
@@ -15909,12 +13972,6 @@ func (i GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeader
 
 func (i GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderArgs) ToGetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderOutputWithContext(ctx context.Context) GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderOutput)
-}
-
-func (i GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeader] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeader]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderArrayInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderArray and GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderArrayOutput values.
@@ -15942,12 +13999,6 @@ func (i GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeader
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderArrayOutput)
 }
 
-func (i GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeader] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeader]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderOutput) ElementType() reflect.Type {
@@ -15962,22 +14013,18 @@ func (o GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeader
 	return o
 }
 
-func (o GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeader] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeader]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The unique name of the whitelist.
-func (o GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeader) string { return v.Name }).(pulumi.StringOutput)
+func (o GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeader) *string {
+		return v.Name
+	}).(pulumi.StringPtrOutput)
 }
 
 // The value of the header.
-func (o GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeader) string {
+func (o GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeader) *string {
 		return v.Value
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderArrayOutput struct{ *pulumi.OutputState }
@@ -15994,12 +14041,6 @@ func (o GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeader
 	return o
 }
 
-func (o GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeader] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeader]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderArrayOutput) Index(i pulumi.IntInput) GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeader {
 		return vs[0].([]GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeader)[vs[1].(int)]
@@ -16008,21 +14049,21 @@ func (o GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeader
 
 type GetWaasPoliciesWaasPolicyWafConfigJsChallenge struct {
 	// The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
-	Action string `pulumi:"action"`
+	Action *string `pulumi:"action"`
 	// The number of seconds between challenges from the same IP address. If unspecified, defaults to `60`.
-	ActionExpirationInSeconds int `pulumi:"actionExpirationInSeconds"`
+	ActionExpirationInSeconds *int `pulumi:"actionExpirationInSeconds"`
 	// When enabled, redirect responses from the origin will also be challenged. This will change HTTP 301/302 responses from origin to HTTP 200 with an HTML body containing JavaScript page redirection.
-	AreRedirectsChallenged bool `pulumi:"areRedirectsChallenged"`
+	AreRedirectsChallenged *bool `pulumi:"areRedirectsChallenged"`
 	// The challenge settings if `action` is set to `BLOCK`.
 	ChallengeSettings []GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSetting `pulumi:"challengeSettings"`
 	// When defined, the JavaScript Challenge would be applied only for the requests that matched all the listed conditions.
 	Criterias []GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteria `pulumi:"criterias"`
 	// The number of failed requests before taking action. If unspecified, defaults to `10`.
-	FailureThreshold int `pulumi:"failureThreshold"`
+	FailureThreshold *int `pulumi:"failureThreshold"`
 	// Enables or disables the JavaScript challenge Web Application Firewall feature.
-	IsEnabled bool `pulumi:"isEnabled"`
+	IsEnabled *bool `pulumi:"isEnabled"`
 	// When enabled, the user is identified not only by the IP address but also by an unique additional hash, which prevents blocking visitors with shared IP addresses.
-	IsNatEnabled bool `pulumi:"isNatEnabled"`
+	IsNatEnabled *bool `pulumi:"isNatEnabled"`
 	// Adds an additional HTTP header to requests that fail the challenge before being passed to the origin. Only applicable when the `action` is set to `DETECT`.
 	SetHttpHeaders []GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeader `pulumi:"setHttpHeaders"`
 }
@@ -16040,21 +14081,21 @@ type GetWaasPoliciesWaasPolicyWafConfigJsChallengeInput interface {
 
 type GetWaasPoliciesWaasPolicyWafConfigJsChallengeArgs struct {
 	// The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
-	Action pulumi.StringInput `pulumi:"action"`
+	Action pulumi.StringPtrInput `pulumi:"action"`
 	// The number of seconds between challenges from the same IP address. If unspecified, defaults to `60`.
-	ActionExpirationInSeconds pulumi.IntInput `pulumi:"actionExpirationInSeconds"`
+	ActionExpirationInSeconds pulumi.IntPtrInput `pulumi:"actionExpirationInSeconds"`
 	// When enabled, redirect responses from the origin will also be challenged. This will change HTTP 301/302 responses from origin to HTTP 200 with an HTML body containing JavaScript page redirection.
-	AreRedirectsChallenged pulumi.BoolInput `pulumi:"areRedirectsChallenged"`
+	AreRedirectsChallenged pulumi.BoolPtrInput `pulumi:"areRedirectsChallenged"`
 	// The challenge settings if `action` is set to `BLOCK`.
 	ChallengeSettings GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingArrayInput `pulumi:"challengeSettings"`
 	// When defined, the JavaScript Challenge would be applied only for the requests that matched all the listed conditions.
 	Criterias GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteriaArrayInput `pulumi:"criterias"`
 	// The number of failed requests before taking action. If unspecified, defaults to `10`.
-	FailureThreshold pulumi.IntInput `pulumi:"failureThreshold"`
+	FailureThreshold pulumi.IntPtrInput `pulumi:"failureThreshold"`
 	// Enables or disables the JavaScript challenge Web Application Firewall feature.
-	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+	IsEnabled pulumi.BoolPtrInput `pulumi:"isEnabled"`
 	// When enabled, the user is identified not only by the IP address but also by an unique additional hash, which prevents blocking visitors with shared IP addresses.
-	IsNatEnabled pulumi.BoolInput `pulumi:"isNatEnabled"`
+	IsNatEnabled pulumi.BoolPtrInput `pulumi:"isNatEnabled"`
 	// Adds an additional HTTP header to requests that fail the challenge before being passed to the origin. Only applicable when the `action` is set to `DETECT`.
 	SetHttpHeaders GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeaderArrayInput `pulumi:"setHttpHeaders"`
 }
@@ -16069,12 +14110,6 @@ func (i GetWaasPoliciesWaasPolicyWafConfigJsChallengeArgs) ToGetWaasPoliciesWaas
 
 func (i GetWaasPoliciesWaasPolicyWafConfigJsChallengeArgs) ToGetWaasPoliciesWaasPolicyWafConfigJsChallengeOutputWithContext(ctx context.Context) GetWaasPoliciesWaasPolicyWafConfigJsChallengeOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyWafConfigJsChallengeOutput)
-}
-
-func (i GetWaasPoliciesWaasPolicyWafConfigJsChallengeArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigJsChallenge] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigJsChallenge]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyWafConfigJsChallengeOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetWaasPoliciesWaasPolicyWafConfigJsChallengeArrayInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigJsChallengeArray and GetWaasPoliciesWaasPolicyWafConfigJsChallengeArrayOutput values.
@@ -16102,12 +14137,6 @@ func (i GetWaasPoliciesWaasPolicyWafConfigJsChallengeArray) ToGetWaasPoliciesWaa
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyWafConfigJsChallengeArrayOutput)
 }
 
-func (i GetWaasPoliciesWaasPolicyWafConfigJsChallengeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigJsChallenge] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigJsChallenge]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyWafConfigJsChallengeArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPoliciesWaasPolicyWafConfigJsChallengeOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPoliciesWaasPolicyWafConfigJsChallengeOutput) ElementType() reflect.Type {
@@ -16122,25 +14151,19 @@ func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeOutput) ToGetWaasPoliciesWa
 	return o
 }
 
-func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigJsChallenge] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigJsChallenge]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
-func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeOutput) Action() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigJsChallenge) string { return v.Action }).(pulumi.StringOutput)
+func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeOutput) Action() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigJsChallenge) *string { return v.Action }).(pulumi.StringPtrOutput)
 }
 
 // The number of seconds between challenges from the same IP address. If unspecified, defaults to `60`.
-func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeOutput) ActionExpirationInSeconds() pulumi.IntOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigJsChallenge) int { return v.ActionExpirationInSeconds }).(pulumi.IntOutput)
+func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeOutput) ActionExpirationInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigJsChallenge) *int { return v.ActionExpirationInSeconds }).(pulumi.IntPtrOutput)
 }
 
 // When enabled, redirect responses from the origin will also be challenged. This will change HTTP 301/302 responses from origin to HTTP 200 with an HTML body containing JavaScript page redirection.
-func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeOutput) AreRedirectsChallenged() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigJsChallenge) bool { return v.AreRedirectsChallenged }).(pulumi.BoolOutput)
+func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeOutput) AreRedirectsChallenged() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigJsChallenge) *bool { return v.AreRedirectsChallenged }).(pulumi.BoolPtrOutput)
 }
 
 // The challenge settings if `action` is set to `BLOCK`.
@@ -16158,18 +14181,18 @@ func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeOutput) Criterias() GetWaas
 }
 
 // The number of failed requests before taking action. If unspecified, defaults to `10`.
-func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeOutput) FailureThreshold() pulumi.IntOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigJsChallenge) int { return v.FailureThreshold }).(pulumi.IntOutput)
+func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeOutput) FailureThreshold() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigJsChallenge) *int { return v.FailureThreshold }).(pulumi.IntPtrOutput)
 }
 
 // Enables or disables the JavaScript challenge Web Application Firewall feature.
-func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeOutput) IsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigJsChallenge) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigJsChallenge) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // When enabled, the user is identified not only by the IP address but also by an unique additional hash, which prevents blocking visitors with shared IP addresses.
-func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeOutput) IsNatEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigJsChallenge) bool { return v.IsNatEnabled }).(pulumi.BoolOutput)
+func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeOutput) IsNatEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigJsChallenge) *bool { return v.IsNatEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // Adds an additional HTTP header to requests that fail the challenge before being passed to the origin. Only applicable when the `action` is set to `DETECT`.
@@ -16193,12 +14216,6 @@ func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeArrayOutput) ToGetWaasPolic
 	return o
 }
 
-func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigJsChallenge] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigJsChallenge]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeArrayOutput) Index(i pulumi.IntInput) GetWaasPoliciesWaasPolicyWafConfigJsChallengeOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWaasPoliciesWaasPolicyWafConfigJsChallenge {
 		return vs[0].([]GetWaasPoliciesWaasPolicyWafConfigJsChallenge)[vs[1].(int)]
@@ -16207,23 +14224,23 @@ func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeArrayOutput) Index(i pulumi
 
 type GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSetting struct {
 	// If `action` is set to `BLOCK`, this specifies how the traffic is blocked when detected as malicious by a protection rule. If unspecified, defaults to `SET_RESPONSE_CODE`.
-	BlockAction string `pulumi:"blockAction"`
+	BlockAction *string `pulumi:"blockAction"`
 	// The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`.
-	BlockErrorPageCode string `pulumi:"blockErrorPageCode"`
+	BlockErrorPageCode *string `pulumi:"blockErrorPageCode"`
 	// The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
-	BlockErrorPageDescription string `pulumi:"blockErrorPageDescription"`
+	BlockErrorPageDescription *string `pulumi:"blockErrorPageDescription"`
 	// The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to 'Access to the website is blocked.'
-	BlockErrorPageMessage string `pulumi:"blockErrorPageMessage"`
+	BlockErrorPageMessage *string `pulumi:"blockErrorPageMessage"`
 	// The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
-	BlockResponseCode int `pulumi:"blockResponseCode"`
+	BlockResponseCode *int `pulumi:"blockResponseCode"`
 	// The text to show in the footer when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, default to `Enter the letters and numbers as they are shown in image above`.
-	CaptchaFooter string `pulumi:"captchaFooter"`
+	CaptchaFooter *string `pulumi:"captchaFooter"`
 	// The text to show in the header when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `We have detected an increased number of attempts to access this webapp. To help us keep this webapp secure, please let us know that you are not a robot by entering the text from captcha below.`
-	CaptchaHeader string `pulumi:"captchaHeader"`
+	CaptchaHeader *string `pulumi:"captchaHeader"`
 	// The text to show on the label of the CAPTCHA challenge submit button when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Yes, I am human`.
-	CaptchaSubmitLabel string `pulumi:"captchaSubmitLabel"`
+	CaptchaSubmitLabel *string `pulumi:"captchaSubmitLabel"`
 	// The title used when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Are you human?`
-	CaptchaTitle string `pulumi:"captchaTitle"`
+	CaptchaTitle *string `pulumi:"captchaTitle"`
 }
 
 // GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingArgs and GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingOutput values.
@@ -16239,23 +14256,23 @@ type GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingInput interfac
 
 type GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingArgs struct {
 	// If `action` is set to `BLOCK`, this specifies how the traffic is blocked when detected as malicious by a protection rule. If unspecified, defaults to `SET_RESPONSE_CODE`.
-	BlockAction pulumi.StringInput `pulumi:"blockAction"`
+	BlockAction pulumi.StringPtrInput `pulumi:"blockAction"`
 	// The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`.
-	BlockErrorPageCode pulumi.StringInput `pulumi:"blockErrorPageCode"`
+	BlockErrorPageCode pulumi.StringPtrInput `pulumi:"blockErrorPageCode"`
 	// The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
-	BlockErrorPageDescription pulumi.StringInput `pulumi:"blockErrorPageDescription"`
+	BlockErrorPageDescription pulumi.StringPtrInput `pulumi:"blockErrorPageDescription"`
 	// The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to 'Access to the website is blocked.'
-	BlockErrorPageMessage pulumi.StringInput `pulumi:"blockErrorPageMessage"`
+	BlockErrorPageMessage pulumi.StringPtrInput `pulumi:"blockErrorPageMessage"`
 	// The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
-	BlockResponseCode pulumi.IntInput `pulumi:"blockResponseCode"`
+	BlockResponseCode pulumi.IntPtrInput `pulumi:"blockResponseCode"`
 	// The text to show in the footer when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, default to `Enter the letters and numbers as they are shown in image above`.
-	CaptchaFooter pulumi.StringInput `pulumi:"captchaFooter"`
+	CaptchaFooter pulumi.StringPtrInput `pulumi:"captchaFooter"`
 	// The text to show in the header when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `We have detected an increased number of attempts to access this webapp. To help us keep this webapp secure, please let us know that you are not a robot by entering the text from captcha below.`
-	CaptchaHeader pulumi.StringInput `pulumi:"captchaHeader"`
+	CaptchaHeader pulumi.StringPtrInput `pulumi:"captchaHeader"`
 	// The text to show on the label of the CAPTCHA challenge submit button when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Yes, I am human`.
-	CaptchaSubmitLabel pulumi.StringInput `pulumi:"captchaSubmitLabel"`
+	CaptchaSubmitLabel pulumi.StringPtrInput `pulumi:"captchaSubmitLabel"`
 	// The title used when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Are you human?`
-	CaptchaTitle pulumi.StringInput `pulumi:"captchaTitle"`
+	CaptchaTitle pulumi.StringPtrInput `pulumi:"captchaTitle"`
 }
 
 func (GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingArgs) ElementType() reflect.Type {
@@ -16268,12 +14285,6 @@ func (i GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingArgs) ToGet
 
 func (i GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingArgs) ToGetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingOutputWithContext(ctx context.Context) GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingOutput)
-}
-
-func (i GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSetting] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSetting]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingArrayInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingArray and GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingArrayOutput values.
@@ -16301,12 +14312,6 @@ func (i GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingArray) ToGe
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingArrayOutput)
 }
 
-func (i GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSetting] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSetting]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingOutput) ElementType() reflect.Type {
@@ -16321,63 +14326,57 @@ func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingOutput) ToG
 	return o
 }
 
-func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSetting] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSetting]{
-		OutputState: o.OutputState,
-	}
-}
-
 // If `action` is set to `BLOCK`, this specifies how the traffic is blocked when detected as malicious by a protection rule. If unspecified, defaults to `SET_RESPONSE_CODE`.
-func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingOutput) BlockAction() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSetting) string { return v.BlockAction }).(pulumi.StringOutput)
+func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingOutput) BlockAction() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSetting) *string { return v.BlockAction }).(pulumi.StringPtrOutput)
 }
 
 // The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`.
-func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingOutput) BlockErrorPageCode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSetting) string {
+func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingOutput) BlockErrorPageCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSetting) *string {
 		return v.BlockErrorPageCode
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
-func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingOutput) BlockErrorPageDescription() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSetting) string {
+func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingOutput) BlockErrorPageDescription() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSetting) *string {
 		return v.BlockErrorPageDescription
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to 'Access to the website is blocked.'
-func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingOutput) BlockErrorPageMessage() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSetting) string {
+func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingOutput) BlockErrorPageMessage() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSetting) *string {
 		return v.BlockErrorPageMessage
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
-func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingOutput) BlockResponseCode() pulumi.IntOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSetting) int { return v.BlockResponseCode }).(pulumi.IntOutput)
+func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingOutput) BlockResponseCode() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSetting) *int { return v.BlockResponseCode }).(pulumi.IntPtrOutput)
 }
 
 // The text to show in the footer when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, default to `Enter the letters and numbers as they are shown in image above`.
-func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingOutput) CaptchaFooter() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSetting) string { return v.CaptchaFooter }).(pulumi.StringOutput)
+func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingOutput) CaptchaFooter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSetting) *string { return v.CaptchaFooter }).(pulumi.StringPtrOutput)
 }
 
 // The text to show in the header when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `We have detected an increased number of attempts to access this webapp. To help us keep this webapp secure, please let us know that you are not a robot by entering the text from captcha below.`
-func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingOutput) CaptchaHeader() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSetting) string { return v.CaptchaHeader }).(pulumi.StringOutput)
+func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingOutput) CaptchaHeader() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSetting) *string { return v.CaptchaHeader }).(pulumi.StringPtrOutput)
 }
 
 // The text to show on the label of the CAPTCHA challenge submit button when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Yes, I am human`.
-func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingOutput) CaptchaSubmitLabel() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSetting) string {
+func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingOutput) CaptchaSubmitLabel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSetting) *string {
 		return v.CaptchaSubmitLabel
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The title used when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Are you human?`
-func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingOutput) CaptchaTitle() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSetting) string { return v.CaptchaTitle }).(pulumi.StringOutput)
+func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingOutput) CaptchaTitle() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSetting) *string { return v.CaptchaTitle }).(pulumi.StringPtrOutput)
 }
 
 type GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingArrayOutput struct{ *pulumi.OutputState }
@@ -16392,12 +14391,6 @@ func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingArrayOutput
 
 func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingArrayOutput) ToGetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingArrayOutputWithContext(ctx context.Context) GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingArrayOutput {
 	return o
-}
-
-func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSetting] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSetting]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingArrayOutput) Index(i pulumi.IntInput) GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingOutput {
@@ -16424,11 +14417,11 @@ type GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteria struct {
 	// * **IP_NOT_IN_LIST:** Matches if the request does not originate from any IP address contained in the referenced address list. The `value` field in this case is OCID of the address list.
 	// * **HTTP_HEADER_CONTAINS:** The HTTP_HEADER_CONTAINS criteria is defined using a compound value separated by a colon: a header field name and a header field value. `host:test.example.com` is an example of a criteria value where `host` is the header field name and `test.example.com` is the header field value. A request matches when the header field name is a case insensitive match and the header field value is a case insensitive, substring match. *Example:* With a criteria value of `host:test.example.com`, where `host` is the name of the field and `test.example.com` is the value of the host field, a request with the header values, `Host: www.test.example.com` will match, where as a request with header values of `host: www.example.com` or `host: test.sub.example.com` will not match.
 	// * **HTTP_METHOD_IS:** Matches if the request method is identical to one of the values listed in field. The `value` in this case is string with one or multiple HTTP methods separated by new line symbol \n The list of available methods: `GET`, `HEAD`, `POST`, `PUT`, `DELETE`, `CONNECT`, `OPTIONS`, `TRACE`, `PATCH`
-	Condition string `pulumi:"condition"`
+	Condition *string `pulumi:"condition"`
 	// When enabled, the condition will be matched with case-sensitive rules.
-	IsCaseSensitive bool `pulumi:"isCaseSensitive"`
+	IsCaseSensitive *bool `pulumi:"isCaseSensitive"`
 	// The value of the header.
-	Value string `pulumi:"value"`
+	Value *string `pulumi:"value"`
 }
 
 // GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteriaInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteriaArgs and GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteriaOutput values.
@@ -16460,11 +14453,11 @@ type GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteriaArgs struct {
 	// * **IP_NOT_IN_LIST:** Matches if the request does not originate from any IP address contained in the referenced address list. The `value` field in this case is OCID of the address list.
 	// * **HTTP_HEADER_CONTAINS:** The HTTP_HEADER_CONTAINS criteria is defined using a compound value separated by a colon: a header field name and a header field value. `host:test.example.com` is an example of a criteria value where `host` is the header field name and `test.example.com` is the header field value. A request matches when the header field name is a case insensitive match and the header field value is a case insensitive, substring match. *Example:* With a criteria value of `host:test.example.com`, where `host` is the name of the field and `test.example.com` is the value of the host field, a request with the header values, `Host: www.test.example.com` will match, where as a request with header values of `host: www.example.com` or `host: test.sub.example.com` will not match.
 	// * **HTTP_METHOD_IS:** Matches if the request method is identical to one of the values listed in field. The `value` in this case is string with one or multiple HTTP methods separated by new line symbol \n The list of available methods: `GET`, `HEAD`, `POST`, `PUT`, `DELETE`, `CONNECT`, `OPTIONS`, `TRACE`, `PATCH`
-	Condition pulumi.StringInput `pulumi:"condition"`
+	Condition pulumi.StringPtrInput `pulumi:"condition"`
 	// When enabled, the condition will be matched with case-sensitive rules.
-	IsCaseSensitive pulumi.BoolInput `pulumi:"isCaseSensitive"`
+	IsCaseSensitive pulumi.BoolPtrInput `pulumi:"isCaseSensitive"`
 	// The value of the header.
-	Value pulumi.StringInput `pulumi:"value"`
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteriaArgs) ElementType() reflect.Type {
@@ -16477,12 +14470,6 @@ func (i GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteriaArgs) ToGetWaasPoli
 
 func (i GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteriaArgs) ToGetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteriaOutputWithContext(ctx context.Context) GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteriaOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteriaOutput)
-}
-
-func (i GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteriaArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteria] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteria]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteriaOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteriaArrayInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteriaArray and GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteriaArrayOutput values.
@@ -16510,12 +14497,6 @@ func (i GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteriaArray) ToGetWaasPol
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteriaArrayOutput)
 }
 
-func (i GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteriaArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteria] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteria]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteriaArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteriaOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteriaOutput) ElementType() reflect.Type {
@@ -16528,12 +14509,6 @@ func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteriaOutput) ToGetWaasPo
 
 func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteriaOutput) ToGetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteriaOutputWithContext(ctx context.Context) GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteriaOutput {
 	return o
-}
-
-func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteriaOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteria] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteria]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The criteria the access rule and JavaScript Challenge uses to determine if action should be taken on a request.
@@ -16553,18 +14528,18 @@ func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteriaOutput) ToOutput(ct
 // * **IP_NOT_IN_LIST:** Matches if the request does not originate from any IP address contained in the referenced address list. The `value` field in this case is OCID of the address list.
 // * **HTTP_HEADER_CONTAINS:** The HTTP_HEADER_CONTAINS criteria is defined using a compound value separated by a colon: a header field name and a header field value. `host:test.example.com` is an example of a criteria value where `host` is the header field name and `test.example.com` is the header field value. A request matches when the header field name is a case insensitive match and the header field value is a case insensitive, substring match. *Example:* With a criteria value of `host:test.example.com`, where `host` is the name of the field and `test.example.com` is the value of the host field, a request with the header values, `Host: www.test.example.com` will match, where as a request with header values of `host: www.example.com` or `host: test.sub.example.com` will not match.
 // * **HTTP_METHOD_IS:** Matches if the request method is identical to one of the values listed in field. The `value` in this case is string with one or multiple HTTP methods separated by new line symbol \n The list of available methods: `GET`, `HEAD`, `POST`, `PUT`, `DELETE`, `CONNECT`, `OPTIONS`, `TRACE`, `PATCH`
-func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteriaOutput) Condition() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteria) string { return v.Condition }).(pulumi.StringOutput)
+func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteriaOutput) Condition() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteria) *string { return v.Condition }).(pulumi.StringPtrOutput)
 }
 
 // When enabled, the condition will be matched with case-sensitive rules.
-func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteriaOutput) IsCaseSensitive() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteria) bool { return v.IsCaseSensitive }).(pulumi.BoolOutput)
+func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteriaOutput) IsCaseSensitive() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteria) *bool { return v.IsCaseSensitive }).(pulumi.BoolPtrOutput)
 }
 
 // The value of the header.
-func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteriaOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteria) string { return v.Value }).(pulumi.StringOutput)
+func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteriaOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteria) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
 
 type GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteriaArrayOutput struct{ *pulumi.OutputState }
@@ -16581,12 +14556,6 @@ func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteriaArrayOutput) ToGetW
 	return o
 }
 
-func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteriaArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteria] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteria]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteriaArrayOutput) Index(i pulumi.IntInput) GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteriaOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteria {
 		return vs[0].([]GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteria)[vs[1].(int)]
@@ -16595,9 +14564,9 @@ func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteriaArrayOutput) Index(
 
 type GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeader struct {
 	// The unique name of the whitelist.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The value of the header.
-	Value string `pulumi:"value"`
+	Value *string `pulumi:"value"`
 }
 
 // GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeaderInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeaderArgs and GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeaderOutput values.
@@ -16613,9 +14582,9 @@ type GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeaderInput interface {
 
 type GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeaderArgs struct {
 	// The unique name of the whitelist.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// The value of the header.
-	Value pulumi.StringInput `pulumi:"value"`
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeaderArgs) ElementType() reflect.Type {
@@ -16628,12 +14597,6 @@ func (i GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeaderArgs) ToGetWaa
 
 func (i GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeaderArgs) ToGetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeaderOutputWithContext(ctx context.Context) GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeaderOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeaderOutput)
-}
-
-func (i GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeaderArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeader] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeader]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeaderOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeaderArrayInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeaderArray and GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeaderArrayOutput values.
@@ -16661,12 +14624,6 @@ func (i GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeaderArray) ToGetWa
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeaderArrayOutput)
 }
 
-func (i GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeaderArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeader] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeader]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeaderArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeaderOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeaderOutput) ElementType() reflect.Type {
@@ -16681,20 +14638,14 @@ func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeaderOutput) ToGetW
 	return o
 }
 
-func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeaderOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeader] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeader]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The unique name of the whitelist.
-func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeaderOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeader) string { return v.Name }).(pulumi.StringOutput)
+func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeaderOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeader) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The value of the header.
-func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeaderOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeader) string { return v.Value }).(pulumi.StringOutput)
+func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeaderOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeader) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
 
 type GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeaderArrayOutput struct{ *pulumi.OutputState }
@@ -16711,12 +14662,6 @@ func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeaderArrayOutput) T
 	return o
 }
 
-func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeaderArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeader] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeader]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeaderArrayOutput) Index(i pulumi.IntInput) GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeaderOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeader {
 		return vs[0].([]GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeader)[vs[1].(int)]
@@ -16727,29 +14672,29 @@ type GetWaasPoliciesWaasPolicyWafConfigProtectionSetting struct {
 	// The list of allowed HTTP methods. If unspecified, default to `[OPTIONS, GET, HEAD, POST]`. This setting only applies if a corresponding protection rule is enabled, such as the "Restrict HTTP Request Methods" rule (key: 911100).
 	AllowedHttpMethods []string `pulumi:"allowedHttpMethods"`
 	// If `action` is set to `BLOCK`, this specifies how the traffic is blocked when detected as malicious by a protection rule. If unspecified, defaults to `SET_RESPONSE_CODE`.
-	BlockAction string `pulumi:"blockAction"`
+	BlockAction *string `pulumi:"blockAction"`
 	// The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`.
-	BlockErrorPageCode string `pulumi:"blockErrorPageCode"`
+	BlockErrorPageCode *string `pulumi:"blockErrorPageCode"`
 	// The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
-	BlockErrorPageDescription string `pulumi:"blockErrorPageDescription"`
+	BlockErrorPageDescription *string `pulumi:"blockErrorPageDescription"`
 	// The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to 'Access to the website is blocked.'
-	BlockErrorPageMessage string `pulumi:"blockErrorPageMessage"`
+	BlockErrorPageMessage *string `pulumi:"blockErrorPageMessage"`
 	// The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
-	BlockResponseCode int `pulumi:"blockResponseCode"`
+	BlockResponseCode *int `pulumi:"blockResponseCode"`
 	// Inspects the response body of origin responses. Can be used to detect leakage of sensitive data. If unspecified, defaults to `false`.
-	IsResponseInspected bool `pulumi:"isResponseInspected"`
+	IsResponseInspected *bool `pulumi:"isResponseInspected"`
 	// The maximum number of arguments allowed to be passed to your application before an action is taken. Arguements are query parameters or body parameters in a PUT or POST request. If unspecified, defaults to `255`. This setting only applies if a corresponding protection rule is enabled, such as the "Number of Arguments Limits" rule (key: 960335).  Example: If `maxArgumentCount` to `2` for the Max Number of Arguments protection rule (key: 960335), the following requests would be blocked: `GET /myapp/path?query=one&query=two&query=three` `POST /myapp/path` with Body `{"argument1":"one","argument2":"two","argument3":"three"}`
-	MaxArgumentCount int `pulumi:"maxArgumentCount"`
+	MaxArgumentCount *int `pulumi:"maxArgumentCount"`
 	// The maximum length allowed for each argument name, in characters. Arguements are query parameters or body parameters in a PUT or POST request. If unspecified, defaults to `400`. This setting only applies if a corresponding protection rule is enabled, such as the "Values Limits" rule (key: 960208).
-	MaxNameLengthPerArgument int `pulumi:"maxNameLengthPerArgument"`
+	MaxNameLengthPerArgument *int `pulumi:"maxNameLengthPerArgument"`
 	// The maximum response size to be fully inspected, in binary kilobytes (KiB). Anything over this limit will be partially inspected. If unspecified, defaults to `1024`.
-	MaxResponseSizeInKiB int `pulumi:"maxResponseSizeInKiB"`
+	MaxResponseSizeInKiB *int `pulumi:"maxResponseSizeInKiB"`
 	// The maximum length allowed for the sum of the argument name and value, in characters. Arguements are query parameters or body parameters in a PUT or POST request. If unspecified, defaults to `64000`. This setting only applies if a corresponding protection rule is enabled, such as the "Total Arguments Limits" rule (key: 960341).
-	MaxTotalNameLengthOfArguments int `pulumi:"maxTotalNameLengthOfArguments"`
+	MaxTotalNameLengthOfArguments *int `pulumi:"maxTotalNameLengthOfArguments"`
 	// The list of media types to allow for inspection, if `isResponseInspected` is enabled. Only responses with MIME types in this list will be inspected. If unspecified, defaults to `["text/html", "text/plain", "text/xml"]`.
 	MediaTypes []string `pulumi:"mediaTypes"`
 	// The length of time to analyze traffic traffic, in days. After the analysis period, `WafRecommendations` will be populated. If unspecified, defaults to `10`.
-	RecommendationsPeriodInDays int `pulumi:"recommendationsPeriodInDays"`
+	RecommendationsPeriodInDays *int `pulumi:"recommendationsPeriodInDays"`
 }
 
 // GetWaasPoliciesWaasPolicyWafConfigProtectionSettingInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigProtectionSettingArgs and GetWaasPoliciesWaasPolicyWafConfigProtectionSettingOutput values.
@@ -16767,29 +14712,29 @@ type GetWaasPoliciesWaasPolicyWafConfigProtectionSettingArgs struct {
 	// The list of allowed HTTP methods. If unspecified, default to `[OPTIONS, GET, HEAD, POST]`. This setting only applies if a corresponding protection rule is enabled, such as the "Restrict HTTP Request Methods" rule (key: 911100).
 	AllowedHttpMethods pulumi.StringArrayInput `pulumi:"allowedHttpMethods"`
 	// If `action` is set to `BLOCK`, this specifies how the traffic is blocked when detected as malicious by a protection rule. If unspecified, defaults to `SET_RESPONSE_CODE`.
-	BlockAction pulumi.StringInput `pulumi:"blockAction"`
+	BlockAction pulumi.StringPtrInput `pulumi:"blockAction"`
 	// The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`.
-	BlockErrorPageCode pulumi.StringInput `pulumi:"blockErrorPageCode"`
+	BlockErrorPageCode pulumi.StringPtrInput `pulumi:"blockErrorPageCode"`
 	// The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
-	BlockErrorPageDescription pulumi.StringInput `pulumi:"blockErrorPageDescription"`
+	BlockErrorPageDescription pulumi.StringPtrInput `pulumi:"blockErrorPageDescription"`
 	// The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to 'Access to the website is blocked.'
-	BlockErrorPageMessage pulumi.StringInput `pulumi:"blockErrorPageMessage"`
+	BlockErrorPageMessage pulumi.StringPtrInput `pulumi:"blockErrorPageMessage"`
 	// The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
-	BlockResponseCode pulumi.IntInput `pulumi:"blockResponseCode"`
+	BlockResponseCode pulumi.IntPtrInput `pulumi:"blockResponseCode"`
 	// Inspects the response body of origin responses. Can be used to detect leakage of sensitive data. If unspecified, defaults to `false`.
-	IsResponseInspected pulumi.BoolInput `pulumi:"isResponseInspected"`
+	IsResponseInspected pulumi.BoolPtrInput `pulumi:"isResponseInspected"`
 	// The maximum number of arguments allowed to be passed to your application before an action is taken. Arguements are query parameters or body parameters in a PUT or POST request. If unspecified, defaults to `255`. This setting only applies if a corresponding protection rule is enabled, such as the "Number of Arguments Limits" rule (key: 960335).  Example: If `maxArgumentCount` to `2` for the Max Number of Arguments protection rule (key: 960335), the following requests would be blocked: `GET /myapp/path?query=one&query=two&query=three` `POST /myapp/path` with Body `{"argument1":"one","argument2":"two","argument3":"three"}`
-	MaxArgumentCount pulumi.IntInput `pulumi:"maxArgumentCount"`
+	MaxArgumentCount pulumi.IntPtrInput `pulumi:"maxArgumentCount"`
 	// The maximum length allowed for each argument name, in characters. Arguements are query parameters or body parameters in a PUT or POST request. If unspecified, defaults to `400`. This setting only applies if a corresponding protection rule is enabled, such as the "Values Limits" rule (key: 960208).
-	MaxNameLengthPerArgument pulumi.IntInput `pulumi:"maxNameLengthPerArgument"`
+	MaxNameLengthPerArgument pulumi.IntPtrInput `pulumi:"maxNameLengthPerArgument"`
 	// The maximum response size to be fully inspected, in binary kilobytes (KiB). Anything over this limit will be partially inspected. If unspecified, defaults to `1024`.
-	MaxResponseSizeInKiB pulumi.IntInput `pulumi:"maxResponseSizeInKiB"`
+	MaxResponseSizeInKiB pulumi.IntPtrInput `pulumi:"maxResponseSizeInKiB"`
 	// The maximum length allowed for the sum of the argument name and value, in characters. Arguements are query parameters or body parameters in a PUT or POST request. If unspecified, defaults to `64000`. This setting only applies if a corresponding protection rule is enabled, such as the "Total Arguments Limits" rule (key: 960341).
-	MaxTotalNameLengthOfArguments pulumi.IntInput `pulumi:"maxTotalNameLengthOfArguments"`
+	MaxTotalNameLengthOfArguments pulumi.IntPtrInput `pulumi:"maxTotalNameLengthOfArguments"`
 	// The list of media types to allow for inspection, if `isResponseInspected` is enabled. Only responses with MIME types in this list will be inspected. If unspecified, defaults to `["text/html", "text/plain", "text/xml"]`.
 	MediaTypes pulumi.StringArrayInput `pulumi:"mediaTypes"`
 	// The length of time to analyze traffic traffic, in days. After the analysis period, `WafRecommendations` will be populated. If unspecified, defaults to `10`.
-	RecommendationsPeriodInDays pulumi.IntInput `pulumi:"recommendationsPeriodInDays"`
+	RecommendationsPeriodInDays pulumi.IntPtrInput `pulumi:"recommendationsPeriodInDays"`
 }
 
 func (GetWaasPoliciesWaasPolicyWafConfigProtectionSettingArgs) ElementType() reflect.Type {
@@ -16802,12 +14747,6 @@ func (i GetWaasPoliciesWaasPolicyWafConfigProtectionSettingArgs) ToGetWaasPolici
 
 func (i GetWaasPoliciesWaasPolicyWafConfigProtectionSettingArgs) ToGetWaasPoliciesWaasPolicyWafConfigProtectionSettingOutputWithContext(ctx context.Context) GetWaasPoliciesWaasPolicyWafConfigProtectionSettingOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyWafConfigProtectionSettingOutput)
-}
-
-func (i GetWaasPoliciesWaasPolicyWafConfigProtectionSettingArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigProtectionSetting] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigProtectionSetting]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyWafConfigProtectionSettingOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetWaasPoliciesWaasPolicyWafConfigProtectionSettingArrayInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigProtectionSettingArray and GetWaasPoliciesWaasPolicyWafConfigProtectionSettingArrayOutput values.
@@ -16835,12 +14774,6 @@ func (i GetWaasPoliciesWaasPolicyWafConfigProtectionSettingArray) ToGetWaasPolic
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyWafConfigProtectionSettingArrayOutput)
 }
 
-func (i GetWaasPoliciesWaasPolicyWafConfigProtectionSettingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigProtectionSetting] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigProtectionSetting]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyWafConfigProtectionSettingArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPoliciesWaasPolicyWafConfigProtectionSettingOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPoliciesWaasPolicyWafConfigProtectionSettingOutput) ElementType() reflect.Type {
@@ -16855,67 +14788,63 @@ func (o GetWaasPoliciesWaasPolicyWafConfigProtectionSettingOutput) ToGetWaasPoli
 	return o
 }
 
-func (o GetWaasPoliciesWaasPolicyWafConfigProtectionSettingOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigProtectionSetting] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigProtectionSetting]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The list of allowed HTTP methods. If unspecified, default to `[OPTIONS, GET, HEAD, POST]`. This setting only applies if a corresponding protection rule is enabled, such as the "Restrict HTTP Request Methods" rule (key: 911100).
 func (o GetWaasPoliciesWaasPolicyWafConfigProtectionSettingOutput) AllowedHttpMethods() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigProtectionSetting) []string { return v.AllowedHttpMethods }).(pulumi.StringArrayOutput)
 }
 
 // If `action` is set to `BLOCK`, this specifies how the traffic is blocked when detected as malicious by a protection rule. If unspecified, defaults to `SET_RESPONSE_CODE`.
-func (o GetWaasPoliciesWaasPolicyWafConfigProtectionSettingOutput) BlockAction() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigProtectionSetting) string { return v.BlockAction }).(pulumi.StringOutput)
+func (o GetWaasPoliciesWaasPolicyWafConfigProtectionSettingOutput) BlockAction() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigProtectionSetting) *string { return v.BlockAction }).(pulumi.StringPtrOutput)
 }
 
 // The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`.
-func (o GetWaasPoliciesWaasPolicyWafConfigProtectionSettingOutput) BlockErrorPageCode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigProtectionSetting) string { return v.BlockErrorPageCode }).(pulumi.StringOutput)
+func (o GetWaasPoliciesWaasPolicyWafConfigProtectionSettingOutput) BlockErrorPageCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigProtectionSetting) *string { return v.BlockErrorPageCode }).(pulumi.StringPtrOutput)
 }
 
 // The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
-func (o GetWaasPoliciesWaasPolicyWafConfigProtectionSettingOutput) BlockErrorPageDescription() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigProtectionSetting) string { return v.BlockErrorPageDescription }).(pulumi.StringOutput)
+func (o GetWaasPoliciesWaasPolicyWafConfigProtectionSettingOutput) BlockErrorPageDescription() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigProtectionSetting) *string {
+		return v.BlockErrorPageDescription
+	}).(pulumi.StringPtrOutput)
 }
 
 // The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to 'Access to the website is blocked.'
-func (o GetWaasPoliciesWaasPolicyWafConfigProtectionSettingOutput) BlockErrorPageMessage() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigProtectionSetting) string { return v.BlockErrorPageMessage }).(pulumi.StringOutput)
+func (o GetWaasPoliciesWaasPolicyWafConfigProtectionSettingOutput) BlockErrorPageMessage() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigProtectionSetting) *string { return v.BlockErrorPageMessage }).(pulumi.StringPtrOutput)
 }
 
 // The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
-func (o GetWaasPoliciesWaasPolicyWafConfigProtectionSettingOutput) BlockResponseCode() pulumi.IntOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigProtectionSetting) int { return v.BlockResponseCode }).(pulumi.IntOutput)
+func (o GetWaasPoliciesWaasPolicyWafConfigProtectionSettingOutput) BlockResponseCode() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigProtectionSetting) *int { return v.BlockResponseCode }).(pulumi.IntPtrOutput)
 }
 
 // Inspects the response body of origin responses. Can be used to detect leakage of sensitive data. If unspecified, defaults to `false`.
-func (o GetWaasPoliciesWaasPolicyWafConfigProtectionSettingOutput) IsResponseInspected() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigProtectionSetting) bool { return v.IsResponseInspected }).(pulumi.BoolOutput)
+func (o GetWaasPoliciesWaasPolicyWafConfigProtectionSettingOutput) IsResponseInspected() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigProtectionSetting) *bool { return v.IsResponseInspected }).(pulumi.BoolPtrOutput)
 }
 
 // The maximum number of arguments allowed to be passed to your application before an action is taken. Arguements are query parameters or body parameters in a PUT or POST request. If unspecified, defaults to `255`. This setting only applies if a corresponding protection rule is enabled, such as the "Number of Arguments Limits" rule (key: 960335).  Example: If `maxArgumentCount` to `2` for the Max Number of Arguments protection rule (key: 960335), the following requests would be blocked: `GET /myapp/path?query=one&query=two&query=three` `POST /myapp/path` with Body `{"argument1":"one","argument2":"two","argument3":"three"}`
-func (o GetWaasPoliciesWaasPolicyWafConfigProtectionSettingOutput) MaxArgumentCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigProtectionSetting) int { return v.MaxArgumentCount }).(pulumi.IntOutput)
+func (o GetWaasPoliciesWaasPolicyWafConfigProtectionSettingOutput) MaxArgumentCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigProtectionSetting) *int { return v.MaxArgumentCount }).(pulumi.IntPtrOutput)
 }
 
 // The maximum length allowed for each argument name, in characters. Arguements are query parameters or body parameters in a PUT or POST request. If unspecified, defaults to `400`. This setting only applies if a corresponding protection rule is enabled, such as the "Values Limits" rule (key: 960208).
-func (o GetWaasPoliciesWaasPolicyWafConfigProtectionSettingOutput) MaxNameLengthPerArgument() pulumi.IntOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigProtectionSetting) int { return v.MaxNameLengthPerArgument }).(pulumi.IntOutput)
+func (o GetWaasPoliciesWaasPolicyWafConfigProtectionSettingOutput) MaxNameLengthPerArgument() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigProtectionSetting) *int { return v.MaxNameLengthPerArgument }).(pulumi.IntPtrOutput)
 }
 
 // The maximum response size to be fully inspected, in binary kilobytes (KiB). Anything over this limit will be partially inspected. If unspecified, defaults to `1024`.
-func (o GetWaasPoliciesWaasPolicyWafConfigProtectionSettingOutput) MaxResponseSizeInKiB() pulumi.IntOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigProtectionSetting) int { return v.MaxResponseSizeInKiB }).(pulumi.IntOutput)
+func (o GetWaasPoliciesWaasPolicyWafConfigProtectionSettingOutput) MaxResponseSizeInKiB() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigProtectionSetting) *int { return v.MaxResponseSizeInKiB }).(pulumi.IntPtrOutput)
 }
 
 // The maximum length allowed for the sum of the argument name and value, in characters. Arguements are query parameters or body parameters in a PUT or POST request. If unspecified, defaults to `64000`. This setting only applies if a corresponding protection rule is enabled, such as the "Total Arguments Limits" rule (key: 960341).
-func (o GetWaasPoliciesWaasPolicyWafConfigProtectionSettingOutput) MaxTotalNameLengthOfArguments() pulumi.IntOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigProtectionSetting) int {
+func (o GetWaasPoliciesWaasPolicyWafConfigProtectionSettingOutput) MaxTotalNameLengthOfArguments() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigProtectionSetting) *int {
 		return v.MaxTotalNameLengthOfArguments
-	}).(pulumi.IntOutput)
+	}).(pulumi.IntPtrOutput)
 }
 
 // The list of media types to allow for inspection, if `isResponseInspected` is enabled. Only responses with MIME types in this list will be inspected. If unspecified, defaults to `["text/html", "text/plain", "text/xml"]`.
@@ -16924,8 +14853,8 @@ func (o GetWaasPoliciesWaasPolicyWafConfigProtectionSettingOutput) MediaTypes() 
 }
 
 // The length of time to analyze traffic traffic, in days. After the analysis period, `WafRecommendations` will be populated. If unspecified, defaults to `10`.
-func (o GetWaasPoliciesWaasPolicyWafConfigProtectionSettingOutput) RecommendationsPeriodInDays() pulumi.IntOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigProtectionSetting) int { return v.RecommendationsPeriodInDays }).(pulumi.IntOutput)
+func (o GetWaasPoliciesWaasPolicyWafConfigProtectionSettingOutput) RecommendationsPeriodInDays() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigProtectionSetting) *int { return v.RecommendationsPeriodInDays }).(pulumi.IntPtrOutput)
 }
 
 type GetWaasPoliciesWaasPolicyWafConfigProtectionSettingArrayOutput struct{ *pulumi.OutputState }
@@ -16942,12 +14871,6 @@ func (o GetWaasPoliciesWaasPolicyWafConfigProtectionSettingArrayOutput) ToGetWaa
 	return o
 }
 
-func (o GetWaasPoliciesWaasPolicyWafConfigProtectionSettingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigProtectionSetting] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigProtectionSetting]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWaasPoliciesWaasPolicyWafConfigProtectionSettingArrayOutput) Index(i pulumi.IntInput) GetWaasPoliciesWaasPolicyWafConfigProtectionSettingOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWaasPoliciesWaasPolicyWafConfigProtectionSetting {
 		return vs[0].([]GetWaasPoliciesWaasPolicyWafConfigProtectionSetting)[vs[1].(int)]
@@ -16960,7 +14883,7 @@ type GetWaasPoliciesWaasPolicyWafConfigWhitelist struct {
 	// A set of IP addresses or CIDR notations to include in the whitelist.
 	Addresses []string `pulumi:"addresses"`
 	// The unique name of the whitelist.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 }
 
 // GetWaasPoliciesWaasPolicyWafConfigWhitelistInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigWhitelistArgs and GetWaasPoliciesWaasPolicyWafConfigWhitelistOutput values.
@@ -16980,7 +14903,7 @@ type GetWaasPoliciesWaasPolicyWafConfigWhitelistArgs struct {
 	// A set of IP addresses or CIDR notations to include in the whitelist.
 	Addresses pulumi.StringArrayInput `pulumi:"addresses"`
 	// The unique name of the whitelist.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 }
 
 func (GetWaasPoliciesWaasPolicyWafConfigWhitelistArgs) ElementType() reflect.Type {
@@ -16993,12 +14916,6 @@ func (i GetWaasPoliciesWaasPolicyWafConfigWhitelistArgs) ToGetWaasPoliciesWaasPo
 
 func (i GetWaasPoliciesWaasPolicyWafConfigWhitelistArgs) ToGetWaasPoliciesWaasPolicyWafConfigWhitelistOutputWithContext(ctx context.Context) GetWaasPoliciesWaasPolicyWafConfigWhitelistOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyWafConfigWhitelistOutput)
-}
-
-func (i GetWaasPoliciesWaasPolicyWafConfigWhitelistArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigWhitelist] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigWhitelist]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyWafConfigWhitelistOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetWaasPoliciesWaasPolicyWafConfigWhitelistArrayInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigWhitelistArray and GetWaasPoliciesWaasPolicyWafConfigWhitelistArrayOutput values.
@@ -17026,12 +14943,6 @@ func (i GetWaasPoliciesWaasPolicyWafConfigWhitelistArray) ToGetWaasPoliciesWaasP
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyWafConfigWhitelistArrayOutput)
 }
 
-func (i GetWaasPoliciesWaasPolicyWafConfigWhitelistArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigWhitelist] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigWhitelist]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyWafConfigWhitelistArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPoliciesWaasPolicyWafConfigWhitelistOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPoliciesWaasPolicyWafConfigWhitelistOutput) ElementType() reflect.Type {
@@ -17046,12 +14957,6 @@ func (o GetWaasPoliciesWaasPolicyWafConfigWhitelistOutput) ToGetWaasPoliciesWaas
 	return o
 }
 
-func (o GetWaasPoliciesWaasPolicyWafConfigWhitelistOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigWhitelist] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigWhitelist]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of IP address lists to include in the whitelist.
 func (o GetWaasPoliciesWaasPolicyWafConfigWhitelistOutput) AddressLists() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigWhitelist) []string { return v.AddressLists }).(pulumi.StringArrayOutput)
@@ -17063,8 +14968,8 @@ func (o GetWaasPoliciesWaasPolicyWafConfigWhitelistOutput) Addresses() pulumi.St
 }
 
 // The unique name of the whitelist.
-func (o GetWaasPoliciesWaasPolicyWafConfigWhitelistOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigWhitelist) string { return v.Name }).(pulumi.StringOutput)
+func (o GetWaasPoliciesWaasPolicyWafConfigWhitelistOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyWafConfigWhitelist) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 type GetWaasPoliciesWaasPolicyWafConfigWhitelistArrayOutput struct{ *pulumi.OutputState }
@@ -17079,12 +14984,6 @@ func (o GetWaasPoliciesWaasPolicyWafConfigWhitelistArrayOutput) ToGetWaasPolicie
 
 func (o GetWaasPoliciesWaasPolicyWafConfigWhitelistArrayOutput) ToGetWaasPoliciesWaasPolicyWafConfigWhitelistArrayOutputWithContext(ctx context.Context) GetWaasPoliciesWaasPolicyWafConfigWhitelistArrayOutput {
 	return o
-}
-
-func (o GetWaasPoliciesWaasPolicyWafConfigWhitelistArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigWhitelist] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigWhitelist]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetWaasPoliciesWaasPolicyWafConfigWhitelistArrayOutput) Index(i pulumi.IntInput) GetWaasPoliciesWaasPolicyWafConfigWhitelistOutput {
@@ -17140,12 +15039,6 @@ func (i GetWaasPolicyOriginArgs) ToGetWaasPolicyOriginOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyOriginOutput)
 }
 
-func (i GetWaasPolicyOriginArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyOrigin] {
-	return pulumix.Output[GetWaasPolicyOrigin]{
-		OutputState: i.ToGetWaasPolicyOriginOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetWaasPolicyOriginArrayInput is an input type that accepts GetWaasPolicyOriginArray and GetWaasPolicyOriginArrayOutput values.
 // You can construct a concrete instance of `GetWaasPolicyOriginArrayInput` via:
 //
@@ -17171,12 +15064,6 @@ func (i GetWaasPolicyOriginArray) ToGetWaasPolicyOriginArrayOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyOriginArrayOutput)
 }
 
-func (i GetWaasPolicyOriginArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPolicyOrigin] {
-	return pulumix.Output[[]GetWaasPolicyOrigin]{
-		OutputState: i.ToGetWaasPolicyOriginArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPolicyOriginOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPolicyOriginOutput) ElementType() reflect.Type {
@@ -17189,12 +15076,6 @@ func (o GetWaasPolicyOriginOutput) ToGetWaasPolicyOriginOutput() GetWaasPolicyOr
 
 func (o GetWaasPolicyOriginOutput) ToGetWaasPolicyOriginOutputWithContext(ctx context.Context) GetWaasPolicyOriginOutput {
 	return o
-}
-
-func (o GetWaasPolicyOriginOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyOrigin] {
-	return pulumix.Output[GetWaasPolicyOrigin]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A list of HTTP headers to forward to your origin.
@@ -17233,12 +15114,6 @@ func (o GetWaasPolicyOriginArrayOutput) ToGetWaasPolicyOriginArrayOutput() GetWa
 
 func (o GetWaasPolicyOriginArrayOutput) ToGetWaasPolicyOriginArrayOutputWithContext(ctx context.Context) GetWaasPolicyOriginArrayOutput {
 	return o
-}
-
-func (o GetWaasPolicyOriginArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPolicyOrigin] {
-	return pulumix.Output[[]GetWaasPolicyOrigin]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetWaasPolicyOriginArrayOutput) Index(i pulumi.IntInput) GetWaasPolicyOriginOutput {
@@ -17284,12 +15159,6 @@ func (i GetWaasPolicyOriginCustomHeaderArgs) ToGetWaasPolicyOriginCustomHeaderOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyOriginCustomHeaderOutput)
 }
 
-func (i GetWaasPolicyOriginCustomHeaderArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyOriginCustomHeader] {
-	return pulumix.Output[GetWaasPolicyOriginCustomHeader]{
-		OutputState: i.ToGetWaasPolicyOriginCustomHeaderOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetWaasPolicyOriginCustomHeaderArrayInput is an input type that accepts GetWaasPolicyOriginCustomHeaderArray and GetWaasPolicyOriginCustomHeaderArrayOutput values.
 // You can construct a concrete instance of `GetWaasPolicyOriginCustomHeaderArrayInput` via:
 //
@@ -17315,12 +15184,6 @@ func (i GetWaasPolicyOriginCustomHeaderArray) ToGetWaasPolicyOriginCustomHeaderA
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyOriginCustomHeaderArrayOutput)
 }
 
-func (i GetWaasPolicyOriginCustomHeaderArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPolicyOriginCustomHeader] {
-	return pulumix.Output[[]GetWaasPolicyOriginCustomHeader]{
-		OutputState: i.ToGetWaasPolicyOriginCustomHeaderArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPolicyOriginCustomHeaderOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPolicyOriginCustomHeaderOutput) ElementType() reflect.Type {
@@ -17333,12 +15196,6 @@ func (o GetWaasPolicyOriginCustomHeaderOutput) ToGetWaasPolicyOriginCustomHeader
 
 func (o GetWaasPolicyOriginCustomHeaderOutput) ToGetWaasPolicyOriginCustomHeaderOutputWithContext(ctx context.Context) GetWaasPolicyOriginCustomHeaderOutput {
 	return o
-}
-
-func (o GetWaasPolicyOriginCustomHeaderOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyOriginCustomHeader] {
-	return pulumix.Output[GetWaasPolicyOriginCustomHeader]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The unique name of the whitelist.
@@ -17365,12 +15222,6 @@ func (o GetWaasPolicyOriginCustomHeaderArrayOutput) ToGetWaasPolicyOriginCustomH
 	return o
 }
 
-func (o GetWaasPolicyOriginCustomHeaderArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPolicyOriginCustomHeader] {
-	return pulumix.Output[[]GetWaasPolicyOriginCustomHeader]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWaasPolicyOriginCustomHeaderArrayOutput) Index(i pulumi.IntInput) GetWaasPolicyOriginCustomHeaderOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWaasPolicyOriginCustomHeader {
 		return vs[0].([]GetWaasPolicyOriginCustomHeader)[vs[1].(int)]
@@ -17378,7 +15229,7 @@ func (o GetWaasPolicyOriginCustomHeaderArrayOutput) Index(i pulumi.IntInput) Get
 }
 
 type GetWaasPolicyOriginGroup struct {
-	Label        string                                `pulumi:"label"`
+	Label        *string                               `pulumi:"label"`
 	OriginGroups []GetWaasPolicyOriginGroupOriginGroup `pulumi:"originGroups"`
 }
 
@@ -17394,7 +15245,7 @@ type GetWaasPolicyOriginGroupInput interface {
 }
 
 type GetWaasPolicyOriginGroupArgs struct {
-	Label        pulumi.StringInput                            `pulumi:"label"`
+	Label        pulumi.StringPtrInput                         `pulumi:"label"`
 	OriginGroups GetWaasPolicyOriginGroupOriginGroupArrayInput `pulumi:"originGroups"`
 }
 
@@ -17408,12 +15259,6 @@ func (i GetWaasPolicyOriginGroupArgs) ToGetWaasPolicyOriginGroupOutput() GetWaas
 
 func (i GetWaasPolicyOriginGroupArgs) ToGetWaasPolicyOriginGroupOutputWithContext(ctx context.Context) GetWaasPolicyOriginGroupOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyOriginGroupOutput)
-}
-
-func (i GetWaasPolicyOriginGroupArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyOriginGroup] {
-	return pulumix.Output[GetWaasPolicyOriginGroup]{
-		OutputState: i.ToGetWaasPolicyOriginGroupOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetWaasPolicyOriginGroupArrayInput is an input type that accepts GetWaasPolicyOriginGroupArray and GetWaasPolicyOriginGroupArrayOutput values.
@@ -17441,12 +15286,6 @@ func (i GetWaasPolicyOriginGroupArray) ToGetWaasPolicyOriginGroupArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyOriginGroupArrayOutput)
 }
 
-func (i GetWaasPolicyOriginGroupArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPolicyOriginGroup] {
-	return pulumix.Output[[]GetWaasPolicyOriginGroup]{
-		OutputState: i.ToGetWaasPolicyOriginGroupArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPolicyOriginGroupOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPolicyOriginGroupOutput) ElementType() reflect.Type {
@@ -17461,14 +15300,8 @@ func (o GetWaasPolicyOriginGroupOutput) ToGetWaasPolicyOriginGroupOutputWithCont
 	return o
 }
 
-func (o GetWaasPolicyOriginGroupOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyOriginGroup] {
-	return pulumix.Output[GetWaasPolicyOriginGroup]{
-		OutputState: o.OutputState,
-	}
-}
-
-func (o GetWaasPolicyOriginGroupOutput) Label() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPolicyOriginGroup) string { return v.Label }).(pulumi.StringOutput)
+func (o GetWaasPolicyOriginGroupOutput) Label() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyOriginGroup) *string { return v.Label }).(pulumi.StringPtrOutput)
 }
 
 func (o GetWaasPolicyOriginGroupOutput) OriginGroups() GetWaasPolicyOriginGroupOriginGroupArrayOutput {
@@ -17489,12 +15322,6 @@ func (o GetWaasPolicyOriginGroupArrayOutput) ToGetWaasPolicyOriginGroupArrayOutp
 	return o
 }
 
-func (o GetWaasPolicyOriginGroupArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPolicyOriginGroup] {
-	return pulumix.Output[[]GetWaasPolicyOriginGroup]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWaasPolicyOriginGroupArrayOutput) Index(i pulumi.IntInput) GetWaasPolicyOriginGroupOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWaasPolicyOriginGroup {
 		return vs[0].([]GetWaasPolicyOriginGroup)[vs[1].(int)]
@@ -17503,8 +15330,8 @@ func (o GetWaasPolicyOriginGroupArrayOutput) Index(i pulumi.IntInput) GetWaasPol
 
 type GetWaasPolicyOriginGroupOriginGroup struct {
 	// The key in the map of origins referencing the origin used for the Web Application Firewall. The origin must already be included in `Origins`. Required when creating the `WafConfig` resource, but not on update.
-	Origin string `pulumi:"origin"`
-	Weight int    `pulumi:"weight"`
+	Origin *string `pulumi:"origin"`
+	Weight *int    `pulumi:"weight"`
 }
 
 // GetWaasPolicyOriginGroupOriginGroupInput is an input type that accepts GetWaasPolicyOriginGroupOriginGroupArgs and GetWaasPolicyOriginGroupOriginGroupOutput values.
@@ -17520,8 +15347,8 @@ type GetWaasPolicyOriginGroupOriginGroupInput interface {
 
 type GetWaasPolicyOriginGroupOriginGroupArgs struct {
 	// The key in the map of origins referencing the origin used for the Web Application Firewall. The origin must already be included in `Origins`. Required when creating the `WafConfig` resource, but not on update.
-	Origin pulumi.StringInput `pulumi:"origin"`
-	Weight pulumi.IntInput    `pulumi:"weight"`
+	Origin pulumi.StringPtrInput `pulumi:"origin"`
+	Weight pulumi.IntPtrInput    `pulumi:"weight"`
 }
 
 func (GetWaasPolicyOriginGroupOriginGroupArgs) ElementType() reflect.Type {
@@ -17534,12 +15361,6 @@ func (i GetWaasPolicyOriginGroupOriginGroupArgs) ToGetWaasPolicyOriginGroupOrigi
 
 func (i GetWaasPolicyOriginGroupOriginGroupArgs) ToGetWaasPolicyOriginGroupOriginGroupOutputWithContext(ctx context.Context) GetWaasPolicyOriginGroupOriginGroupOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyOriginGroupOriginGroupOutput)
-}
-
-func (i GetWaasPolicyOriginGroupOriginGroupArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyOriginGroupOriginGroup] {
-	return pulumix.Output[GetWaasPolicyOriginGroupOriginGroup]{
-		OutputState: i.ToGetWaasPolicyOriginGroupOriginGroupOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetWaasPolicyOriginGroupOriginGroupArrayInput is an input type that accepts GetWaasPolicyOriginGroupOriginGroupArray and GetWaasPolicyOriginGroupOriginGroupArrayOutput values.
@@ -17567,12 +15388,6 @@ func (i GetWaasPolicyOriginGroupOriginGroupArray) ToGetWaasPolicyOriginGroupOrig
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyOriginGroupOriginGroupArrayOutput)
 }
 
-func (i GetWaasPolicyOriginGroupOriginGroupArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPolicyOriginGroupOriginGroup] {
-	return pulumix.Output[[]GetWaasPolicyOriginGroupOriginGroup]{
-		OutputState: i.ToGetWaasPolicyOriginGroupOriginGroupArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPolicyOriginGroupOriginGroupOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPolicyOriginGroupOriginGroupOutput) ElementType() reflect.Type {
@@ -17587,19 +15402,13 @@ func (o GetWaasPolicyOriginGroupOriginGroupOutput) ToGetWaasPolicyOriginGroupOri
 	return o
 }
 
-func (o GetWaasPolicyOriginGroupOriginGroupOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyOriginGroupOriginGroup] {
-	return pulumix.Output[GetWaasPolicyOriginGroupOriginGroup]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The key in the map of origins referencing the origin used for the Web Application Firewall. The origin must already be included in `Origins`. Required when creating the `WafConfig` resource, but not on update.
-func (o GetWaasPolicyOriginGroupOriginGroupOutput) Origin() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPolicyOriginGroupOriginGroup) string { return v.Origin }).(pulumi.StringOutput)
+func (o GetWaasPolicyOriginGroupOriginGroupOutput) Origin() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyOriginGroupOriginGroup) *string { return v.Origin }).(pulumi.StringPtrOutput)
 }
 
-func (o GetWaasPolicyOriginGroupOriginGroupOutput) Weight() pulumi.IntOutput {
-	return o.ApplyT(func(v GetWaasPolicyOriginGroupOriginGroup) int { return v.Weight }).(pulumi.IntOutput)
+func (o GetWaasPolicyOriginGroupOriginGroupOutput) Weight() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyOriginGroupOriginGroup) *int { return v.Weight }).(pulumi.IntPtrOutput)
 }
 
 type GetWaasPolicyOriginGroupOriginGroupArrayOutput struct{ *pulumi.OutputState }
@@ -17616,12 +15425,6 @@ func (o GetWaasPolicyOriginGroupOriginGroupArrayOutput) ToGetWaasPolicyOriginGro
 	return o
 }
 
-func (o GetWaasPolicyOriginGroupOriginGroupArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPolicyOriginGroupOriginGroup] {
-	return pulumix.Output[[]GetWaasPolicyOriginGroupOriginGroup]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWaasPolicyOriginGroupOriginGroupArrayOutput) Index(i pulumi.IntInput) GetWaasPolicyOriginGroupOriginGroupOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWaasPolicyOriginGroupOriginGroup {
 		return vs[0].([]GetWaasPolicyOriginGroupOriginGroup)[vs[1].(int)]
@@ -17630,30 +15433,30 @@ func (o GetWaasPolicyOriginGroupOriginGroupArrayOutput) Index(i pulumi.IntInput)
 
 type GetWaasPolicyPolicyConfig struct {
 	// The OCID of the SSL certificate to use if HTTPS is supported.
-	CertificateId string `pulumi:"certificateId"`
+	CertificateId *string `pulumi:"certificateId"`
 	// The set cipher group for the configured TLS protocol. This sets the configuration for the TLS connections between clients and edge nodes only.
 	// * **DEFAULT:** Cipher group supports TLS 1.0, TLS 1.1, TLS 1.2, TLS 1.3 protocols. It has the following ciphers enabled: `ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:DHE-DSS-AES128-GCM-SHA256:kEDH+AESGCM:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA:ECDHE-ECDSA-AES256-SHA:DHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA:DHE-DSS-AES128-SHA256:DHE-RSA-AES256-SHA256:DHE-DSS-AES256-SHA:DHE-RSA-AES256-SHA:AES128-GCM-SHA256:AES256-GCM-SHA384:AES128-SHA256:AES256-SHA256:AES128-SHA:AES256-SHA:AES:CAMELLIA:!DES-CBC3-SHA:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!aECDH:!EDH-DSS-DES-CBC3-SHA:!EDH-RSA-DES-CBC3-SHA:!KRB5-DES-CBC3-SHA`
-	CipherGroup string `pulumi:"cipherGroup"`
+	CipherGroup *string `pulumi:"cipherGroup"`
 	// Specifies an HTTP header name which is treated as the connecting client's IP address. Applicable only if `isBehindCdn` is enabled.
-	ClientAddressHeader string `pulumi:"clientAddressHeader"`
+	ClientAddressHeader *string `pulumi:"clientAddressHeader"`
 	// Health checks monitor the status of your origin servers and only route traffic to the origins that pass the health check. If the health check fails, origin is automatically removed from the load balancing. There is roughly one health check per EDGE POP per period. Any checks that pass will be reported as "healthy".
-	HealthChecks GetWaasPolicyPolicyConfigHealthChecks `pulumi:"healthChecks"`
+	HealthChecks *GetWaasPolicyPolicyConfigHealthChecks `pulumi:"healthChecks"`
 	// Enabling `isBehindCdn` allows for the collection of IP addresses from client requests if the WAF is connected to a CDN.
-	IsBehindCdn bool `pulumi:"isBehindCdn"`
+	IsBehindCdn *bool `pulumi:"isBehindCdn"`
 	// Enable or disable automatic content caching based on the response `cache-control` header. This feature enables the origin to act as a proxy cache. Caching is usually defined using `cache-control` header. For example `cache-control: max-age=120` means that the returned resource is valid for 120 seconds. Caching rules will overwrite this setting.
-	IsCacheControlRespected bool `pulumi:"isCacheControlRespected"`
+	IsCacheControlRespected *bool `pulumi:"isCacheControlRespected"`
 	// Enable or disable HTTPS support. If true, a `certificateId` is required. If unspecified, defaults to `false`.
-	IsHttpsEnabled bool `pulumi:"isHttpsEnabled"`
+	IsHttpsEnabled *bool `pulumi:"isHttpsEnabled"`
 	// Force HTTP to HTTPS redirection. If unspecified, defaults to `false`.
-	IsHttpsForced bool `pulumi:"isHttpsForced"`
+	IsHttpsForced *bool `pulumi:"isHttpsForced"`
 	// Enable or disable GZIP compression of origin responses. If enabled, the header `Accept-Encoding: gzip` is sent to origin, otherwise, the empty `Accept-Encoding:` header is used.
-	IsOriginCompressionEnabled bool `pulumi:"isOriginCompressionEnabled"`
+	IsOriginCompressionEnabled *bool `pulumi:"isOriginCompressionEnabled"`
 	// Enable or disable buffering of responses from the origin. Buffering improves overall stability in case of network issues, but slightly increases Time To First Byte.
-	IsResponseBufferingEnabled bool `pulumi:"isResponseBufferingEnabled"`
+	IsResponseBufferingEnabled *bool `pulumi:"isResponseBufferingEnabled"`
 	// SNI stands for Server Name Indication and is an extension of the TLS protocol. It indicates which hostname is being contacted by the browser at the beginning of the 'handshake'-process. This allows a server to connect multiple SSL Certificates to one IP address and port.
-	IsSniEnabled bool `pulumi:"isSniEnabled"`
+	IsSniEnabled *bool `pulumi:"isSniEnabled"`
 	// An object that represents a load balancing method and its properties.
-	LoadBalancingMethod GetWaasPolicyPolicyConfigLoadBalancingMethod `pulumi:"loadBalancingMethod"`
+	LoadBalancingMethod *GetWaasPolicyPolicyConfigLoadBalancingMethod `pulumi:"loadBalancingMethod"`
 	// A list of allowed TLS protocols. Only applicable when HTTPS support is enabled. The TLS protocol is negotiated while the request is connecting and the most recent protocol supported by both the edge node and client browser will be selected. If no such version exists, the connection will be aborted.
 	// * **TLS_V1:** corresponds to TLS 1.0 specification.
 	// * **TLS_V1_1:** corresponds to TLS 1.1 specification.
@@ -17677,30 +15480,30 @@ type GetWaasPolicyPolicyConfigInput interface {
 
 type GetWaasPolicyPolicyConfigArgs struct {
 	// The OCID of the SSL certificate to use if HTTPS is supported.
-	CertificateId pulumi.StringInput `pulumi:"certificateId"`
+	CertificateId pulumi.StringPtrInput `pulumi:"certificateId"`
 	// The set cipher group for the configured TLS protocol. This sets the configuration for the TLS connections between clients and edge nodes only.
 	// * **DEFAULT:** Cipher group supports TLS 1.0, TLS 1.1, TLS 1.2, TLS 1.3 protocols. It has the following ciphers enabled: `ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:DHE-DSS-AES128-GCM-SHA256:kEDH+AESGCM:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA:ECDHE-ECDSA-AES256-SHA:DHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA:DHE-DSS-AES128-SHA256:DHE-RSA-AES256-SHA256:DHE-DSS-AES256-SHA:DHE-RSA-AES256-SHA:AES128-GCM-SHA256:AES256-GCM-SHA384:AES128-SHA256:AES256-SHA256:AES128-SHA:AES256-SHA:AES:CAMELLIA:!DES-CBC3-SHA:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!aECDH:!EDH-DSS-DES-CBC3-SHA:!EDH-RSA-DES-CBC3-SHA:!KRB5-DES-CBC3-SHA`
-	CipherGroup pulumi.StringInput `pulumi:"cipherGroup"`
+	CipherGroup pulumi.StringPtrInput `pulumi:"cipherGroup"`
 	// Specifies an HTTP header name which is treated as the connecting client's IP address. Applicable only if `isBehindCdn` is enabled.
-	ClientAddressHeader pulumi.StringInput `pulumi:"clientAddressHeader"`
+	ClientAddressHeader pulumi.StringPtrInput `pulumi:"clientAddressHeader"`
 	// Health checks monitor the status of your origin servers and only route traffic to the origins that pass the health check. If the health check fails, origin is automatically removed from the load balancing. There is roughly one health check per EDGE POP per period. Any checks that pass will be reported as "healthy".
-	HealthChecks GetWaasPolicyPolicyConfigHealthChecksInput `pulumi:"healthChecks"`
+	HealthChecks GetWaasPolicyPolicyConfigHealthChecksPtrInput `pulumi:"healthChecks"`
 	// Enabling `isBehindCdn` allows for the collection of IP addresses from client requests if the WAF is connected to a CDN.
-	IsBehindCdn pulumi.BoolInput `pulumi:"isBehindCdn"`
+	IsBehindCdn pulumi.BoolPtrInput `pulumi:"isBehindCdn"`
 	// Enable or disable automatic content caching based on the response `cache-control` header. This feature enables the origin to act as a proxy cache. Caching is usually defined using `cache-control` header. For example `cache-control: max-age=120` means that the returned resource is valid for 120 seconds. Caching rules will overwrite this setting.
-	IsCacheControlRespected pulumi.BoolInput `pulumi:"isCacheControlRespected"`
+	IsCacheControlRespected pulumi.BoolPtrInput `pulumi:"isCacheControlRespected"`
 	// Enable or disable HTTPS support. If true, a `certificateId` is required. If unspecified, defaults to `false`.
-	IsHttpsEnabled pulumi.BoolInput `pulumi:"isHttpsEnabled"`
+	IsHttpsEnabled pulumi.BoolPtrInput `pulumi:"isHttpsEnabled"`
 	// Force HTTP to HTTPS redirection. If unspecified, defaults to `false`.
-	IsHttpsForced pulumi.BoolInput `pulumi:"isHttpsForced"`
+	IsHttpsForced pulumi.BoolPtrInput `pulumi:"isHttpsForced"`
 	// Enable or disable GZIP compression of origin responses. If enabled, the header `Accept-Encoding: gzip` is sent to origin, otherwise, the empty `Accept-Encoding:` header is used.
-	IsOriginCompressionEnabled pulumi.BoolInput `pulumi:"isOriginCompressionEnabled"`
+	IsOriginCompressionEnabled pulumi.BoolPtrInput `pulumi:"isOriginCompressionEnabled"`
 	// Enable or disable buffering of responses from the origin. Buffering improves overall stability in case of network issues, but slightly increases Time To First Byte.
-	IsResponseBufferingEnabled pulumi.BoolInput `pulumi:"isResponseBufferingEnabled"`
+	IsResponseBufferingEnabled pulumi.BoolPtrInput `pulumi:"isResponseBufferingEnabled"`
 	// SNI stands for Server Name Indication and is an extension of the TLS protocol. It indicates which hostname is being contacted by the browser at the beginning of the 'handshake'-process. This allows a server to connect multiple SSL Certificates to one IP address and port.
-	IsSniEnabled pulumi.BoolInput `pulumi:"isSniEnabled"`
+	IsSniEnabled pulumi.BoolPtrInput `pulumi:"isSniEnabled"`
 	// An object that represents a load balancing method and its properties.
-	LoadBalancingMethod GetWaasPolicyPolicyConfigLoadBalancingMethodInput `pulumi:"loadBalancingMethod"`
+	LoadBalancingMethod GetWaasPolicyPolicyConfigLoadBalancingMethodPtrInput `pulumi:"loadBalancingMethod"`
 	// A list of allowed TLS protocols. Only applicable when HTTPS support is enabled. The TLS protocol is negotiated while the request is connecting and the most recent protocol supported by both the edge node and client browser will be selected. If no such version exists, the connection will be aborted.
 	// * **TLS_V1:** corresponds to TLS 1.0 specification.
 	// * **TLS_V1_1:** corresponds to TLS 1.1 specification.
@@ -17721,12 +15524,6 @@ func (i GetWaasPolicyPolicyConfigArgs) ToGetWaasPolicyPolicyConfigOutput() GetWa
 
 func (i GetWaasPolicyPolicyConfigArgs) ToGetWaasPolicyPolicyConfigOutputWithContext(ctx context.Context) GetWaasPolicyPolicyConfigOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyPolicyConfigOutput)
-}
-
-func (i GetWaasPolicyPolicyConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyPolicyConfig] {
-	return pulumix.Output[GetWaasPolicyPolicyConfig]{
-		OutputState: i.ToGetWaasPolicyPolicyConfigOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetWaasPolicyPolicyConfigArrayInput is an input type that accepts GetWaasPolicyPolicyConfigArray and GetWaasPolicyPolicyConfigArrayOutput values.
@@ -17754,12 +15551,6 @@ func (i GetWaasPolicyPolicyConfigArray) ToGetWaasPolicyPolicyConfigArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyPolicyConfigArrayOutput)
 }
 
-func (i GetWaasPolicyPolicyConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPolicyPolicyConfig] {
-	return pulumix.Output[[]GetWaasPolicyPolicyConfig]{
-		OutputState: i.ToGetWaasPolicyPolicyConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPolicyPolicyConfigOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPolicyPolicyConfigOutput) ElementType() reflect.Type {
@@ -17774,73 +15565,67 @@ func (o GetWaasPolicyPolicyConfigOutput) ToGetWaasPolicyPolicyConfigOutputWithCo
 	return o
 }
 
-func (o GetWaasPolicyPolicyConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyPolicyConfig] {
-	return pulumix.Output[GetWaasPolicyPolicyConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the SSL certificate to use if HTTPS is supported.
-func (o GetWaasPolicyPolicyConfigOutput) CertificateId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPolicyPolicyConfig) string { return v.CertificateId }).(pulumi.StringOutput)
+func (o GetWaasPolicyPolicyConfigOutput) CertificateId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyPolicyConfig) *string { return v.CertificateId }).(pulumi.StringPtrOutput)
 }
 
 // The set cipher group for the configured TLS protocol. This sets the configuration for the TLS connections between clients and edge nodes only.
 // * **DEFAULT:** Cipher group supports TLS 1.0, TLS 1.1, TLS 1.2, TLS 1.3 protocols. It has the following ciphers enabled: `ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:DHE-DSS-AES128-GCM-SHA256:kEDH+AESGCM:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA:ECDHE-ECDSA-AES256-SHA:DHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA:DHE-DSS-AES128-SHA256:DHE-RSA-AES256-SHA256:DHE-DSS-AES256-SHA:DHE-RSA-AES256-SHA:AES128-GCM-SHA256:AES256-GCM-SHA384:AES128-SHA256:AES256-SHA256:AES128-SHA:AES256-SHA:AES:CAMELLIA:!DES-CBC3-SHA:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!aECDH:!EDH-DSS-DES-CBC3-SHA:!EDH-RSA-DES-CBC3-SHA:!KRB5-DES-CBC3-SHA`
-func (o GetWaasPolicyPolicyConfigOutput) CipherGroup() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPolicyPolicyConfig) string { return v.CipherGroup }).(pulumi.StringOutput)
+func (o GetWaasPolicyPolicyConfigOutput) CipherGroup() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyPolicyConfig) *string { return v.CipherGroup }).(pulumi.StringPtrOutput)
 }
 
 // Specifies an HTTP header name which is treated as the connecting client's IP address. Applicable only if `isBehindCdn` is enabled.
-func (o GetWaasPolicyPolicyConfigOutput) ClientAddressHeader() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPolicyPolicyConfig) string { return v.ClientAddressHeader }).(pulumi.StringOutput)
+func (o GetWaasPolicyPolicyConfigOutput) ClientAddressHeader() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyPolicyConfig) *string { return v.ClientAddressHeader }).(pulumi.StringPtrOutput)
 }
 
 // Health checks monitor the status of your origin servers and only route traffic to the origins that pass the health check. If the health check fails, origin is automatically removed from the load balancing. There is roughly one health check per EDGE POP per period. Any checks that pass will be reported as "healthy".
-func (o GetWaasPolicyPolicyConfigOutput) HealthChecks() GetWaasPolicyPolicyConfigHealthChecksOutput {
-	return o.ApplyT(func(v GetWaasPolicyPolicyConfig) GetWaasPolicyPolicyConfigHealthChecks { return v.HealthChecks }).(GetWaasPolicyPolicyConfigHealthChecksOutput)
+func (o GetWaasPolicyPolicyConfigOutput) HealthChecks() GetWaasPolicyPolicyConfigHealthChecksPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyPolicyConfig) *GetWaasPolicyPolicyConfigHealthChecks { return v.HealthChecks }).(GetWaasPolicyPolicyConfigHealthChecksPtrOutput)
 }
 
 // Enabling `isBehindCdn` allows for the collection of IP addresses from client requests if the WAF is connected to a CDN.
-func (o GetWaasPolicyPolicyConfigOutput) IsBehindCdn() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetWaasPolicyPolicyConfig) bool { return v.IsBehindCdn }).(pulumi.BoolOutput)
+func (o GetWaasPolicyPolicyConfigOutput) IsBehindCdn() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyPolicyConfig) *bool { return v.IsBehindCdn }).(pulumi.BoolPtrOutput)
 }
 
 // Enable or disable automatic content caching based on the response `cache-control` header. This feature enables the origin to act as a proxy cache. Caching is usually defined using `cache-control` header. For example `cache-control: max-age=120` means that the returned resource is valid for 120 seconds. Caching rules will overwrite this setting.
-func (o GetWaasPolicyPolicyConfigOutput) IsCacheControlRespected() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetWaasPolicyPolicyConfig) bool { return v.IsCacheControlRespected }).(pulumi.BoolOutput)
+func (o GetWaasPolicyPolicyConfigOutput) IsCacheControlRespected() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyPolicyConfig) *bool { return v.IsCacheControlRespected }).(pulumi.BoolPtrOutput)
 }
 
 // Enable or disable HTTPS support. If true, a `certificateId` is required. If unspecified, defaults to `false`.
-func (o GetWaasPolicyPolicyConfigOutput) IsHttpsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetWaasPolicyPolicyConfig) bool { return v.IsHttpsEnabled }).(pulumi.BoolOutput)
+func (o GetWaasPolicyPolicyConfigOutput) IsHttpsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyPolicyConfig) *bool { return v.IsHttpsEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // Force HTTP to HTTPS redirection. If unspecified, defaults to `false`.
-func (o GetWaasPolicyPolicyConfigOutput) IsHttpsForced() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetWaasPolicyPolicyConfig) bool { return v.IsHttpsForced }).(pulumi.BoolOutput)
+func (o GetWaasPolicyPolicyConfigOutput) IsHttpsForced() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyPolicyConfig) *bool { return v.IsHttpsForced }).(pulumi.BoolPtrOutput)
 }
 
 // Enable or disable GZIP compression of origin responses. If enabled, the header `Accept-Encoding: gzip` is sent to origin, otherwise, the empty `Accept-Encoding:` header is used.
-func (o GetWaasPolicyPolicyConfigOutput) IsOriginCompressionEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetWaasPolicyPolicyConfig) bool { return v.IsOriginCompressionEnabled }).(pulumi.BoolOutput)
+func (o GetWaasPolicyPolicyConfigOutput) IsOriginCompressionEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyPolicyConfig) *bool { return v.IsOriginCompressionEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // Enable or disable buffering of responses from the origin. Buffering improves overall stability in case of network issues, but slightly increases Time To First Byte.
-func (o GetWaasPolicyPolicyConfigOutput) IsResponseBufferingEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetWaasPolicyPolicyConfig) bool { return v.IsResponseBufferingEnabled }).(pulumi.BoolOutput)
+func (o GetWaasPolicyPolicyConfigOutput) IsResponseBufferingEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyPolicyConfig) *bool { return v.IsResponseBufferingEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // SNI stands for Server Name Indication and is an extension of the TLS protocol. It indicates which hostname is being contacted by the browser at the beginning of the 'handshake'-process. This allows a server to connect multiple SSL Certificates to one IP address and port.
-func (o GetWaasPolicyPolicyConfigOutput) IsSniEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetWaasPolicyPolicyConfig) bool { return v.IsSniEnabled }).(pulumi.BoolOutput)
+func (o GetWaasPolicyPolicyConfigOutput) IsSniEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyPolicyConfig) *bool { return v.IsSniEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // An object that represents a load balancing method and its properties.
-func (o GetWaasPolicyPolicyConfigOutput) LoadBalancingMethod() GetWaasPolicyPolicyConfigLoadBalancingMethodOutput {
-	return o.ApplyT(func(v GetWaasPolicyPolicyConfig) GetWaasPolicyPolicyConfigLoadBalancingMethod {
+func (o GetWaasPolicyPolicyConfigOutput) LoadBalancingMethod() GetWaasPolicyPolicyConfigLoadBalancingMethodPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyPolicyConfig) *GetWaasPolicyPolicyConfigLoadBalancingMethod {
 		return v.LoadBalancingMethod
-	}).(GetWaasPolicyPolicyConfigLoadBalancingMethodOutput)
+	}).(GetWaasPolicyPolicyConfigLoadBalancingMethodPtrOutput)
 }
 
 // A list of allowed TLS protocols. Only applicable when HTTPS support is enabled. The TLS protocol is negotiated while the request is connecting and the most recent protocol supported by both the edge node and client browser will be selected. If no such version exists, the connection will be aborted.
@@ -17871,12 +15656,6 @@ func (o GetWaasPolicyPolicyConfigArrayOutput) ToGetWaasPolicyPolicyConfigArrayOu
 	return o
 }
 
-func (o GetWaasPolicyPolicyConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPolicyPolicyConfig] {
-	return pulumix.Output[[]GetWaasPolicyPolicyConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWaasPolicyPolicyConfigArrayOutput) Index(i pulumi.IntInput) GetWaasPolicyPolicyConfigOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWaasPolicyPolicyConfig {
 		return vs[0].([]GetWaasPolicyPolicyConfig)[vs[1].(int)]
@@ -17891,28 +15670,28 @@ type GetWaasPolicyPolicyConfigHealthChecks struct {
 	// * **5XX:** Server errors response code group.
 	ExpectedResponseCodeGroups []string `pulumi:"expectedResponseCodeGroups"`
 	// Health check will search for the given text in a case-sensitive manner within the response body and will fail if the text is not found.
-	ExpectedResponseText string `pulumi:"expectedResponseText"`
+	ExpectedResponseText *string `pulumi:"expectedResponseText"`
 	// HTTP header fields to include in health check requests, expressed as `"name": "value"` properties. Because HTTP header field names are case-insensitive, any use of names that are case-insensitive equal to other names will be rejected. If Host is not specified, requests will include a Host header field with value matching the policy's protected domain. If User-Agent is not specified, requests will include a User-Agent header field with value "waf health checks".
 	Headers map[string]interface{} `pulumi:"headers"`
 	// Number of successful health checks after which the server is marked up.
-	HealthyThreshold int `pulumi:"healthyThreshold"`
+	HealthyThreshold *int `pulumi:"healthyThreshold"`
 	// Time between health checks of an individual origin server, in seconds.
-	IntervalInSeconds int `pulumi:"intervalInSeconds"`
+	IntervalInSeconds *int `pulumi:"intervalInSeconds"`
 	// Enables or disables the JavaScript challenge Web Application Firewall feature.
-	IsEnabled bool `pulumi:"isEnabled"`
+	IsEnabled *bool `pulumi:"isEnabled"`
 	// Enables or disables additional check for predefined text in addition to response code.
-	IsResponseTextCheckEnabled bool `pulumi:"isResponseTextCheckEnabled"`
+	IsResponseTextCheckEnabled *bool `pulumi:"isResponseTextCheckEnabled"`
 	// Load balancing methods are algorithms used to efficiently distribute traffic among origin servers.
 	// * **[IP_HASH](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/IPHashLoadBalancingMethod):** All the incoming requests from the same client IP address should go to the same content origination server. IP_HASH load balancing method uses origin weights when choosing which origin should the hash be assigned to initially.
 	// * **[ROUND_ROBIN](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/RoundRobinLoadBalancingMethod):** Forwards requests sequentially to the available origin servers. The first request - to the first origin server, the second request - to the next origin server, and so on. After it sends a request to the last origin server, it starts again with the first origin server. When using weights on origins, Weighted Round Robin assigns more requests to origins with a greater weight. Over a period of time, origins will receive a number of requests in proportion to their weight.
 	// * **[STICKY_COOKIE](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/StickyCookieLoadBalancingMethod):** Adds a session cookie to the first response from the origin server and identifies the server that sent the response. The client's next request contains the cookie value, and nginx routes the request to the origin server that responded to the first request. STICKY_COOKIE load balancing method falls back to Round Robin for the first request.
-	Method string `pulumi:"method"`
+	Method *string `pulumi:"method"`
 	// Path to visit on your origins when performing the health check.
-	Path string `pulumi:"path"`
+	Path *string `pulumi:"path"`
 	// Response timeout represents wait time until request is considered failed, in seconds.
-	TimeoutInSeconds int `pulumi:"timeoutInSeconds"`
+	TimeoutInSeconds *int `pulumi:"timeoutInSeconds"`
 	// Number of failed health checks after which the server is marked down.
-	UnhealthyThreshold int `pulumi:"unhealthyThreshold"`
+	UnhealthyThreshold *int `pulumi:"unhealthyThreshold"`
 }
 
 // GetWaasPolicyPolicyConfigHealthChecksInput is an input type that accepts GetWaasPolicyPolicyConfigHealthChecksArgs and GetWaasPolicyPolicyConfigHealthChecksOutput values.
@@ -17934,28 +15713,28 @@ type GetWaasPolicyPolicyConfigHealthChecksArgs struct {
 	// * **5XX:** Server errors response code group.
 	ExpectedResponseCodeGroups pulumi.StringArrayInput `pulumi:"expectedResponseCodeGroups"`
 	// Health check will search for the given text in a case-sensitive manner within the response body and will fail if the text is not found.
-	ExpectedResponseText pulumi.StringInput `pulumi:"expectedResponseText"`
+	ExpectedResponseText pulumi.StringPtrInput `pulumi:"expectedResponseText"`
 	// HTTP header fields to include in health check requests, expressed as `"name": "value"` properties. Because HTTP header field names are case-insensitive, any use of names that are case-insensitive equal to other names will be rejected. If Host is not specified, requests will include a Host header field with value matching the policy's protected domain. If User-Agent is not specified, requests will include a User-Agent header field with value "waf health checks".
 	Headers pulumi.MapInput `pulumi:"headers"`
 	// Number of successful health checks after which the server is marked up.
-	HealthyThreshold pulumi.IntInput `pulumi:"healthyThreshold"`
+	HealthyThreshold pulumi.IntPtrInput `pulumi:"healthyThreshold"`
 	// Time between health checks of an individual origin server, in seconds.
-	IntervalInSeconds pulumi.IntInput `pulumi:"intervalInSeconds"`
+	IntervalInSeconds pulumi.IntPtrInput `pulumi:"intervalInSeconds"`
 	// Enables or disables the JavaScript challenge Web Application Firewall feature.
-	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+	IsEnabled pulumi.BoolPtrInput `pulumi:"isEnabled"`
 	// Enables or disables additional check for predefined text in addition to response code.
-	IsResponseTextCheckEnabled pulumi.BoolInput `pulumi:"isResponseTextCheckEnabled"`
+	IsResponseTextCheckEnabled pulumi.BoolPtrInput `pulumi:"isResponseTextCheckEnabled"`
 	// Load balancing methods are algorithms used to efficiently distribute traffic among origin servers.
 	// * **[IP_HASH](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/IPHashLoadBalancingMethod):** All the incoming requests from the same client IP address should go to the same content origination server. IP_HASH load balancing method uses origin weights when choosing which origin should the hash be assigned to initially.
 	// * **[ROUND_ROBIN](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/RoundRobinLoadBalancingMethod):** Forwards requests sequentially to the available origin servers. The first request - to the first origin server, the second request - to the next origin server, and so on. After it sends a request to the last origin server, it starts again with the first origin server. When using weights on origins, Weighted Round Robin assigns more requests to origins with a greater weight. Over a period of time, origins will receive a number of requests in proportion to their weight.
 	// * **[STICKY_COOKIE](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/StickyCookieLoadBalancingMethod):** Adds a session cookie to the first response from the origin server and identifies the server that sent the response. The client's next request contains the cookie value, and nginx routes the request to the origin server that responded to the first request. STICKY_COOKIE load balancing method falls back to Round Robin for the first request.
-	Method pulumi.StringInput `pulumi:"method"`
+	Method pulumi.StringPtrInput `pulumi:"method"`
 	// Path to visit on your origins when performing the health check.
-	Path pulumi.StringInput `pulumi:"path"`
+	Path pulumi.StringPtrInput `pulumi:"path"`
 	// Response timeout represents wait time until request is considered failed, in seconds.
-	TimeoutInSeconds pulumi.IntInput `pulumi:"timeoutInSeconds"`
+	TimeoutInSeconds pulumi.IntPtrInput `pulumi:"timeoutInSeconds"`
 	// Number of failed health checks after which the server is marked down.
-	UnhealthyThreshold pulumi.IntInput `pulumi:"unhealthyThreshold"`
+	UnhealthyThreshold pulumi.IntPtrInput `pulumi:"unhealthyThreshold"`
 }
 
 func (GetWaasPolicyPolicyConfigHealthChecksArgs) ElementType() reflect.Type {
@@ -17970,10 +15749,45 @@ func (i GetWaasPolicyPolicyConfigHealthChecksArgs) ToGetWaasPolicyPolicyConfigHe
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyPolicyConfigHealthChecksOutput)
 }
 
-func (i GetWaasPolicyPolicyConfigHealthChecksArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyPolicyConfigHealthChecks] {
-	return pulumix.Output[GetWaasPolicyPolicyConfigHealthChecks]{
-		OutputState: i.ToGetWaasPolicyPolicyConfigHealthChecksOutputWithContext(ctx).OutputState,
-	}
+func (i GetWaasPolicyPolicyConfigHealthChecksArgs) ToGetWaasPolicyPolicyConfigHealthChecksPtrOutput() GetWaasPolicyPolicyConfigHealthChecksPtrOutput {
+	return i.ToGetWaasPolicyPolicyConfigHealthChecksPtrOutputWithContext(context.Background())
+}
+
+func (i GetWaasPolicyPolicyConfigHealthChecksArgs) ToGetWaasPolicyPolicyConfigHealthChecksPtrOutputWithContext(ctx context.Context) GetWaasPolicyPolicyConfigHealthChecksPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyPolicyConfigHealthChecksOutput).ToGetWaasPolicyPolicyConfigHealthChecksPtrOutputWithContext(ctx)
+}
+
+// GetWaasPolicyPolicyConfigHealthChecksPtrInput is an input type that accepts GetWaasPolicyPolicyConfigHealthChecksArgs, GetWaasPolicyPolicyConfigHealthChecksPtr and GetWaasPolicyPolicyConfigHealthChecksPtrOutput values.
+// You can construct a concrete instance of `GetWaasPolicyPolicyConfigHealthChecksPtrInput` via:
+//
+//	        GetWaasPolicyPolicyConfigHealthChecksArgs{...}
+//
+//	or:
+//
+//	        nil
+type GetWaasPolicyPolicyConfigHealthChecksPtrInput interface {
+	pulumi.Input
+
+	ToGetWaasPolicyPolicyConfigHealthChecksPtrOutput() GetWaasPolicyPolicyConfigHealthChecksPtrOutput
+	ToGetWaasPolicyPolicyConfigHealthChecksPtrOutputWithContext(context.Context) GetWaasPolicyPolicyConfigHealthChecksPtrOutput
+}
+
+type getWaasPolicyPolicyConfigHealthChecksPtrType GetWaasPolicyPolicyConfigHealthChecksArgs
+
+func GetWaasPolicyPolicyConfigHealthChecksPtr(v *GetWaasPolicyPolicyConfigHealthChecksArgs) GetWaasPolicyPolicyConfigHealthChecksPtrInput {
+	return (*getWaasPolicyPolicyConfigHealthChecksPtrType)(v)
+}
+
+func (*getWaasPolicyPolicyConfigHealthChecksPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**GetWaasPolicyPolicyConfigHealthChecks)(nil)).Elem()
+}
+
+func (i *getWaasPolicyPolicyConfigHealthChecksPtrType) ToGetWaasPolicyPolicyConfigHealthChecksPtrOutput() GetWaasPolicyPolicyConfigHealthChecksPtrOutput {
+	return i.ToGetWaasPolicyPolicyConfigHealthChecksPtrOutputWithContext(context.Background())
+}
+
+func (i *getWaasPolicyPolicyConfigHealthChecksPtrType) ToGetWaasPolicyPolicyConfigHealthChecksPtrOutputWithContext(ctx context.Context) GetWaasPolicyPolicyConfigHealthChecksPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyPolicyConfigHealthChecksPtrOutput)
 }
 
 type GetWaasPolicyPolicyConfigHealthChecksOutput struct{ *pulumi.OutputState }
@@ -17990,10 +15804,14 @@ func (o GetWaasPolicyPolicyConfigHealthChecksOutput) ToGetWaasPolicyPolicyConfig
 	return o
 }
 
-func (o GetWaasPolicyPolicyConfigHealthChecksOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyPolicyConfigHealthChecks] {
-	return pulumix.Output[GetWaasPolicyPolicyConfigHealthChecks]{
-		OutputState: o.OutputState,
-	}
+func (o GetWaasPolicyPolicyConfigHealthChecksOutput) ToGetWaasPolicyPolicyConfigHealthChecksPtrOutput() GetWaasPolicyPolicyConfigHealthChecksPtrOutput {
+	return o.ToGetWaasPolicyPolicyConfigHealthChecksPtrOutputWithContext(context.Background())
+}
+
+func (o GetWaasPolicyPolicyConfigHealthChecksOutput) ToGetWaasPolicyPolicyConfigHealthChecksPtrOutputWithContext(ctx context.Context) GetWaasPolicyPolicyConfigHealthChecksPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v GetWaasPolicyPolicyConfigHealthChecks) *GetWaasPolicyPolicyConfigHealthChecks {
+		return &v
+	}).(GetWaasPolicyPolicyConfigHealthChecksPtrOutput)
 }
 
 // The HTTP response codes that signify a healthy state.
@@ -18006,8 +15824,8 @@ func (o GetWaasPolicyPolicyConfigHealthChecksOutput) ExpectedResponseCodeGroups(
 }
 
 // Health check will search for the given text in a case-sensitive manner within the response body and will fail if the text is not found.
-func (o GetWaasPolicyPolicyConfigHealthChecksOutput) ExpectedResponseText() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPolicyPolicyConfigHealthChecks) string { return v.ExpectedResponseText }).(pulumi.StringOutput)
+func (o GetWaasPolicyPolicyConfigHealthChecksOutput) ExpectedResponseText() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyPolicyConfigHealthChecks) *string { return v.ExpectedResponseText }).(pulumi.StringPtrOutput)
 }
 
 // HTTP header fields to include in health check requests, expressed as `"name": "value"` properties. Because HTTP header field names are case-insensitive, any use of names that are case-insensitive equal to other names will be rejected. If Host is not specified, requests will include a Host header field with value matching the policy's protected domain. If User-Agent is not specified, requests will include a User-Agent header field with value "waf health checks".
@@ -18016,60 +15834,201 @@ func (o GetWaasPolicyPolicyConfigHealthChecksOutput) Headers() pulumi.MapOutput 
 }
 
 // Number of successful health checks after which the server is marked up.
-func (o GetWaasPolicyPolicyConfigHealthChecksOutput) HealthyThreshold() pulumi.IntOutput {
-	return o.ApplyT(func(v GetWaasPolicyPolicyConfigHealthChecks) int { return v.HealthyThreshold }).(pulumi.IntOutput)
+func (o GetWaasPolicyPolicyConfigHealthChecksOutput) HealthyThreshold() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyPolicyConfigHealthChecks) *int { return v.HealthyThreshold }).(pulumi.IntPtrOutput)
 }
 
 // Time between health checks of an individual origin server, in seconds.
-func (o GetWaasPolicyPolicyConfigHealthChecksOutput) IntervalInSeconds() pulumi.IntOutput {
-	return o.ApplyT(func(v GetWaasPolicyPolicyConfigHealthChecks) int { return v.IntervalInSeconds }).(pulumi.IntOutput)
+func (o GetWaasPolicyPolicyConfigHealthChecksOutput) IntervalInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyPolicyConfigHealthChecks) *int { return v.IntervalInSeconds }).(pulumi.IntPtrOutput)
 }
 
 // Enables or disables the JavaScript challenge Web Application Firewall feature.
-func (o GetWaasPolicyPolicyConfigHealthChecksOutput) IsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetWaasPolicyPolicyConfigHealthChecks) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+func (o GetWaasPolicyPolicyConfigHealthChecksOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyPolicyConfigHealthChecks) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // Enables or disables additional check for predefined text in addition to response code.
-func (o GetWaasPolicyPolicyConfigHealthChecksOutput) IsResponseTextCheckEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetWaasPolicyPolicyConfigHealthChecks) bool { return v.IsResponseTextCheckEnabled }).(pulumi.BoolOutput)
+func (o GetWaasPolicyPolicyConfigHealthChecksOutput) IsResponseTextCheckEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyPolicyConfigHealthChecks) *bool { return v.IsResponseTextCheckEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // Load balancing methods are algorithms used to efficiently distribute traffic among origin servers.
 // * **[IP_HASH](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/IPHashLoadBalancingMethod):** All the incoming requests from the same client IP address should go to the same content origination server. IP_HASH load balancing method uses origin weights when choosing which origin should the hash be assigned to initially.
 // * **[ROUND_ROBIN](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/RoundRobinLoadBalancingMethod):** Forwards requests sequentially to the available origin servers. The first request - to the first origin server, the second request - to the next origin server, and so on. After it sends a request to the last origin server, it starts again with the first origin server. When using weights on origins, Weighted Round Robin assigns more requests to origins with a greater weight. Over a period of time, origins will receive a number of requests in proportion to their weight.
 // * **[STICKY_COOKIE](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/StickyCookieLoadBalancingMethod):** Adds a session cookie to the first response from the origin server and identifies the server that sent the response. The client's next request contains the cookie value, and nginx routes the request to the origin server that responded to the first request. STICKY_COOKIE load balancing method falls back to Round Robin for the first request.
-func (o GetWaasPolicyPolicyConfigHealthChecksOutput) Method() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPolicyPolicyConfigHealthChecks) string { return v.Method }).(pulumi.StringOutput)
+func (o GetWaasPolicyPolicyConfigHealthChecksOutput) Method() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyPolicyConfigHealthChecks) *string { return v.Method }).(pulumi.StringPtrOutput)
 }
 
 // Path to visit on your origins when performing the health check.
-func (o GetWaasPolicyPolicyConfigHealthChecksOutput) Path() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPolicyPolicyConfigHealthChecks) string { return v.Path }).(pulumi.StringOutput)
+func (o GetWaasPolicyPolicyConfigHealthChecksOutput) Path() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyPolicyConfigHealthChecks) *string { return v.Path }).(pulumi.StringPtrOutput)
 }
 
 // Response timeout represents wait time until request is considered failed, in seconds.
-func (o GetWaasPolicyPolicyConfigHealthChecksOutput) TimeoutInSeconds() pulumi.IntOutput {
-	return o.ApplyT(func(v GetWaasPolicyPolicyConfigHealthChecks) int { return v.TimeoutInSeconds }).(pulumi.IntOutput)
+func (o GetWaasPolicyPolicyConfigHealthChecksOutput) TimeoutInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyPolicyConfigHealthChecks) *int { return v.TimeoutInSeconds }).(pulumi.IntPtrOutput)
 }
 
 // Number of failed health checks after which the server is marked down.
-func (o GetWaasPolicyPolicyConfigHealthChecksOutput) UnhealthyThreshold() pulumi.IntOutput {
-	return o.ApplyT(func(v GetWaasPolicyPolicyConfigHealthChecks) int { return v.UnhealthyThreshold }).(pulumi.IntOutput)
+func (o GetWaasPolicyPolicyConfigHealthChecksOutput) UnhealthyThreshold() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyPolicyConfigHealthChecks) *int { return v.UnhealthyThreshold }).(pulumi.IntPtrOutput)
+}
+
+type GetWaasPolicyPolicyConfigHealthChecksPtrOutput struct{ *pulumi.OutputState }
+
+func (GetWaasPolicyPolicyConfigHealthChecksPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GetWaasPolicyPolicyConfigHealthChecks)(nil)).Elem()
+}
+
+func (o GetWaasPolicyPolicyConfigHealthChecksPtrOutput) ToGetWaasPolicyPolicyConfigHealthChecksPtrOutput() GetWaasPolicyPolicyConfigHealthChecksPtrOutput {
+	return o
+}
+
+func (o GetWaasPolicyPolicyConfigHealthChecksPtrOutput) ToGetWaasPolicyPolicyConfigHealthChecksPtrOutputWithContext(ctx context.Context) GetWaasPolicyPolicyConfigHealthChecksPtrOutput {
+	return o
+}
+
+func (o GetWaasPolicyPolicyConfigHealthChecksPtrOutput) Elem() GetWaasPolicyPolicyConfigHealthChecksOutput {
+	return o.ApplyT(func(v *GetWaasPolicyPolicyConfigHealthChecks) GetWaasPolicyPolicyConfigHealthChecks {
+		if v != nil {
+			return *v
+		}
+		var ret GetWaasPolicyPolicyConfigHealthChecks
+		return ret
+	}).(GetWaasPolicyPolicyConfigHealthChecksOutput)
+}
+
+// The HTTP response codes that signify a healthy state.
+// * **2XX:** Success response code group.
+// * **3XX:** Redirection response code group.
+// * **4XX:** Client errors response code group.
+// * **5XX:** Server errors response code group.
+func (o GetWaasPolicyPolicyConfigHealthChecksPtrOutput) ExpectedResponseCodeGroups() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *GetWaasPolicyPolicyConfigHealthChecks) []string {
+		if v == nil {
+			return nil
+		}
+		return v.ExpectedResponseCodeGroups
+	}).(pulumi.StringArrayOutput)
+}
+
+// Health check will search for the given text in a case-sensitive manner within the response body and will fail if the text is not found.
+func (o GetWaasPolicyPolicyConfigHealthChecksPtrOutput) ExpectedResponseText() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GetWaasPolicyPolicyConfigHealthChecks) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ExpectedResponseText
+	}).(pulumi.StringPtrOutput)
+}
+
+// HTTP header fields to include in health check requests, expressed as `"name": "value"` properties. Because HTTP header field names are case-insensitive, any use of names that are case-insensitive equal to other names will be rejected. If Host is not specified, requests will include a Host header field with value matching the policy's protected domain. If User-Agent is not specified, requests will include a User-Agent header field with value "waf health checks".
+func (o GetWaasPolicyPolicyConfigHealthChecksPtrOutput) Headers() pulumi.MapOutput {
+	return o.ApplyT(func(v *GetWaasPolicyPolicyConfigHealthChecks) map[string]interface{} {
+		if v == nil {
+			return nil
+		}
+		return v.Headers
+	}).(pulumi.MapOutput)
+}
+
+// Number of successful health checks after which the server is marked up.
+func (o GetWaasPolicyPolicyConfigHealthChecksPtrOutput) HealthyThreshold() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *GetWaasPolicyPolicyConfigHealthChecks) *int {
+		if v == nil {
+			return nil
+		}
+		return v.HealthyThreshold
+	}).(pulumi.IntPtrOutput)
+}
+
+// Time between health checks of an individual origin server, in seconds.
+func (o GetWaasPolicyPolicyConfigHealthChecksPtrOutput) IntervalInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *GetWaasPolicyPolicyConfigHealthChecks) *int {
+		if v == nil {
+			return nil
+		}
+		return v.IntervalInSeconds
+	}).(pulumi.IntPtrOutput)
+}
+
+// Enables or disables the JavaScript challenge Web Application Firewall feature.
+func (o GetWaasPolicyPolicyConfigHealthChecksPtrOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *GetWaasPolicyPolicyConfigHealthChecks) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsEnabled
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Enables or disables additional check for predefined text in addition to response code.
+func (o GetWaasPolicyPolicyConfigHealthChecksPtrOutput) IsResponseTextCheckEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *GetWaasPolicyPolicyConfigHealthChecks) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsResponseTextCheckEnabled
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Load balancing methods are algorithms used to efficiently distribute traffic among origin servers.
+// * **[IP_HASH](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/IPHashLoadBalancingMethod):** All the incoming requests from the same client IP address should go to the same content origination server. IP_HASH load balancing method uses origin weights when choosing which origin should the hash be assigned to initially.
+// * **[ROUND_ROBIN](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/RoundRobinLoadBalancingMethod):** Forwards requests sequentially to the available origin servers. The first request - to the first origin server, the second request - to the next origin server, and so on. After it sends a request to the last origin server, it starts again with the first origin server. When using weights on origins, Weighted Round Robin assigns more requests to origins with a greater weight. Over a period of time, origins will receive a number of requests in proportion to their weight.
+// * **[STICKY_COOKIE](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/StickyCookieLoadBalancingMethod):** Adds a session cookie to the first response from the origin server and identifies the server that sent the response. The client's next request contains the cookie value, and nginx routes the request to the origin server that responded to the first request. STICKY_COOKIE load balancing method falls back to Round Robin for the first request.
+func (o GetWaasPolicyPolicyConfigHealthChecksPtrOutput) Method() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GetWaasPolicyPolicyConfigHealthChecks) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Method
+	}).(pulumi.StringPtrOutput)
+}
+
+// Path to visit on your origins when performing the health check.
+func (o GetWaasPolicyPolicyConfigHealthChecksPtrOutput) Path() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GetWaasPolicyPolicyConfigHealthChecks) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Path
+	}).(pulumi.StringPtrOutput)
+}
+
+// Response timeout represents wait time until request is considered failed, in seconds.
+func (o GetWaasPolicyPolicyConfigHealthChecksPtrOutput) TimeoutInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *GetWaasPolicyPolicyConfigHealthChecks) *int {
+		if v == nil {
+			return nil
+		}
+		return v.TimeoutInSeconds
+	}).(pulumi.IntPtrOutput)
+}
+
+// Number of failed health checks after which the server is marked down.
+func (o GetWaasPolicyPolicyConfigHealthChecksPtrOutput) UnhealthyThreshold() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *GetWaasPolicyPolicyConfigHealthChecks) *int {
+		if v == nil {
+			return nil
+		}
+		return v.UnhealthyThreshold
+	}).(pulumi.IntPtrOutput)
 }
 
 type GetWaasPolicyPolicyConfigLoadBalancingMethod struct {
 	// The domain for which the cookie is set, defaults to WAAS policy domain.
-	Domain string `pulumi:"domain"`
+	Domain *string `pulumi:"domain"`
 	// The time for which a browser should keep the cookie in seconds. Empty value will cause the cookie to expire at the end of a browser session.
-	ExpirationTimeInSeconds int `pulumi:"expirationTimeInSeconds"`
+	ExpirationTimeInSeconds *int `pulumi:"expirationTimeInSeconds"`
 	// Load balancing methods are algorithms used to efficiently distribute traffic among origin servers.
 	// * **[IP_HASH](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/IPHashLoadBalancingMethod):** All the incoming requests from the same client IP address should go to the same content origination server. IP_HASH load balancing method uses origin weights when choosing which origin should the hash be assigned to initially.
 	// * **[ROUND_ROBIN](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/RoundRobinLoadBalancingMethod):** Forwards requests sequentially to the available origin servers. The first request - to the first origin server, the second request - to the next origin server, and so on. After it sends a request to the last origin server, it starts again with the first origin server. When using weights on origins, Weighted Round Robin assigns more requests to origins with a greater weight. Over a period of time, origins will receive a number of requests in proportion to their weight.
 	// * **[STICKY_COOKIE](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/StickyCookieLoadBalancingMethod):** Adds a session cookie to the first response from the origin server and identifies the server that sent the response. The client's next request contains the cookie value, and nginx routes the request to the origin server that responded to the first request. STICKY_COOKIE load balancing method falls back to Round Robin for the first request.
 	Method string `pulumi:"method"`
 	// The unique name of the whitelist.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 }
 
 // GetWaasPolicyPolicyConfigLoadBalancingMethodInput is an input type that accepts GetWaasPolicyPolicyConfigLoadBalancingMethodArgs and GetWaasPolicyPolicyConfigLoadBalancingMethodOutput values.
@@ -18085,16 +16044,16 @@ type GetWaasPolicyPolicyConfigLoadBalancingMethodInput interface {
 
 type GetWaasPolicyPolicyConfigLoadBalancingMethodArgs struct {
 	// The domain for which the cookie is set, defaults to WAAS policy domain.
-	Domain pulumi.StringInput `pulumi:"domain"`
+	Domain pulumi.StringPtrInput `pulumi:"domain"`
 	// The time for which a browser should keep the cookie in seconds. Empty value will cause the cookie to expire at the end of a browser session.
-	ExpirationTimeInSeconds pulumi.IntInput `pulumi:"expirationTimeInSeconds"`
+	ExpirationTimeInSeconds pulumi.IntPtrInput `pulumi:"expirationTimeInSeconds"`
 	// Load balancing methods are algorithms used to efficiently distribute traffic among origin servers.
 	// * **[IP_HASH](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/IPHashLoadBalancingMethod):** All the incoming requests from the same client IP address should go to the same content origination server. IP_HASH load balancing method uses origin weights when choosing which origin should the hash be assigned to initially.
 	// * **[ROUND_ROBIN](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/RoundRobinLoadBalancingMethod):** Forwards requests sequentially to the available origin servers. The first request - to the first origin server, the second request - to the next origin server, and so on. After it sends a request to the last origin server, it starts again with the first origin server. When using weights on origins, Weighted Round Robin assigns more requests to origins with a greater weight. Over a period of time, origins will receive a number of requests in proportion to their weight.
 	// * **[STICKY_COOKIE](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/StickyCookieLoadBalancingMethod):** Adds a session cookie to the first response from the origin server and identifies the server that sent the response. The client's next request contains the cookie value, and nginx routes the request to the origin server that responded to the first request. STICKY_COOKIE load balancing method falls back to Round Robin for the first request.
 	Method pulumi.StringInput `pulumi:"method"`
 	// The unique name of the whitelist.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 }
 
 func (GetWaasPolicyPolicyConfigLoadBalancingMethodArgs) ElementType() reflect.Type {
@@ -18109,10 +16068,45 @@ func (i GetWaasPolicyPolicyConfigLoadBalancingMethodArgs) ToGetWaasPolicyPolicyC
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyPolicyConfigLoadBalancingMethodOutput)
 }
 
-func (i GetWaasPolicyPolicyConfigLoadBalancingMethodArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyPolicyConfigLoadBalancingMethod] {
-	return pulumix.Output[GetWaasPolicyPolicyConfigLoadBalancingMethod]{
-		OutputState: i.ToGetWaasPolicyPolicyConfigLoadBalancingMethodOutputWithContext(ctx).OutputState,
-	}
+func (i GetWaasPolicyPolicyConfigLoadBalancingMethodArgs) ToGetWaasPolicyPolicyConfigLoadBalancingMethodPtrOutput() GetWaasPolicyPolicyConfigLoadBalancingMethodPtrOutput {
+	return i.ToGetWaasPolicyPolicyConfigLoadBalancingMethodPtrOutputWithContext(context.Background())
+}
+
+func (i GetWaasPolicyPolicyConfigLoadBalancingMethodArgs) ToGetWaasPolicyPolicyConfigLoadBalancingMethodPtrOutputWithContext(ctx context.Context) GetWaasPolicyPolicyConfigLoadBalancingMethodPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyPolicyConfigLoadBalancingMethodOutput).ToGetWaasPolicyPolicyConfigLoadBalancingMethodPtrOutputWithContext(ctx)
+}
+
+// GetWaasPolicyPolicyConfigLoadBalancingMethodPtrInput is an input type that accepts GetWaasPolicyPolicyConfigLoadBalancingMethodArgs, GetWaasPolicyPolicyConfigLoadBalancingMethodPtr and GetWaasPolicyPolicyConfigLoadBalancingMethodPtrOutput values.
+// You can construct a concrete instance of `GetWaasPolicyPolicyConfigLoadBalancingMethodPtrInput` via:
+//
+//	        GetWaasPolicyPolicyConfigLoadBalancingMethodArgs{...}
+//
+//	or:
+//
+//	        nil
+type GetWaasPolicyPolicyConfigLoadBalancingMethodPtrInput interface {
+	pulumi.Input
+
+	ToGetWaasPolicyPolicyConfigLoadBalancingMethodPtrOutput() GetWaasPolicyPolicyConfigLoadBalancingMethodPtrOutput
+	ToGetWaasPolicyPolicyConfigLoadBalancingMethodPtrOutputWithContext(context.Context) GetWaasPolicyPolicyConfigLoadBalancingMethodPtrOutput
+}
+
+type getWaasPolicyPolicyConfigLoadBalancingMethodPtrType GetWaasPolicyPolicyConfigLoadBalancingMethodArgs
+
+func GetWaasPolicyPolicyConfigLoadBalancingMethodPtr(v *GetWaasPolicyPolicyConfigLoadBalancingMethodArgs) GetWaasPolicyPolicyConfigLoadBalancingMethodPtrInput {
+	return (*getWaasPolicyPolicyConfigLoadBalancingMethodPtrType)(v)
+}
+
+func (*getWaasPolicyPolicyConfigLoadBalancingMethodPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**GetWaasPolicyPolicyConfigLoadBalancingMethod)(nil)).Elem()
+}
+
+func (i *getWaasPolicyPolicyConfigLoadBalancingMethodPtrType) ToGetWaasPolicyPolicyConfigLoadBalancingMethodPtrOutput() GetWaasPolicyPolicyConfigLoadBalancingMethodPtrOutput {
+	return i.ToGetWaasPolicyPolicyConfigLoadBalancingMethodPtrOutputWithContext(context.Background())
+}
+
+func (i *getWaasPolicyPolicyConfigLoadBalancingMethodPtrType) ToGetWaasPolicyPolicyConfigLoadBalancingMethodPtrOutputWithContext(ctx context.Context) GetWaasPolicyPolicyConfigLoadBalancingMethodPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyPolicyConfigLoadBalancingMethodPtrOutput)
 }
 
 type GetWaasPolicyPolicyConfigLoadBalancingMethodOutput struct{ *pulumi.OutputState }
@@ -18129,20 +16123,24 @@ func (o GetWaasPolicyPolicyConfigLoadBalancingMethodOutput) ToGetWaasPolicyPolic
 	return o
 }
 
-func (o GetWaasPolicyPolicyConfigLoadBalancingMethodOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyPolicyConfigLoadBalancingMethod] {
-	return pulumix.Output[GetWaasPolicyPolicyConfigLoadBalancingMethod]{
-		OutputState: o.OutputState,
-	}
+func (o GetWaasPolicyPolicyConfigLoadBalancingMethodOutput) ToGetWaasPolicyPolicyConfigLoadBalancingMethodPtrOutput() GetWaasPolicyPolicyConfigLoadBalancingMethodPtrOutput {
+	return o.ToGetWaasPolicyPolicyConfigLoadBalancingMethodPtrOutputWithContext(context.Background())
+}
+
+func (o GetWaasPolicyPolicyConfigLoadBalancingMethodOutput) ToGetWaasPolicyPolicyConfigLoadBalancingMethodPtrOutputWithContext(ctx context.Context) GetWaasPolicyPolicyConfigLoadBalancingMethodPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v GetWaasPolicyPolicyConfigLoadBalancingMethod) *GetWaasPolicyPolicyConfigLoadBalancingMethod {
+		return &v
+	}).(GetWaasPolicyPolicyConfigLoadBalancingMethodPtrOutput)
 }
 
 // The domain for which the cookie is set, defaults to WAAS policy domain.
-func (o GetWaasPolicyPolicyConfigLoadBalancingMethodOutput) Domain() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPolicyPolicyConfigLoadBalancingMethod) string { return v.Domain }).(pulumi.StringOutput)
+func (o GetWaasPolicyPolicyConfigLoadBalancingMethodOutput) Domain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyPolicyConfigLoadBalancingMethod) *string { return v.Domain }).(pulumi.StringPtrOutput)
 }
 
 // The time for which a browser should keep the cookie in seconds. Empty value will cause the cookie to expire at the end of a browser session.
-func (o GetWaasPolicyPolicyConfigLoadBalancingMethodOutput) ExpirationTimeInSeconds() pulumi.IntOutput {
-	return o.ApplyT(func(v GetWaasPolicyPolicyConfigLoadBalancingMethod) int { return v.ExpirationTimeInSeconds }).(pulumi.IntOutput)
+func (o GetWaasPolicyPolicyConfigLoadBalancingMethodOutput) ExpirationTimeInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyPolicyConfigLoadBalancingMethod) *int { return v.ExpirationTimeInSeconds }).(pulumi.IntPtrOutput)
 }
 
 // Load balancing methods are algorithms used to efficiently distribute traffic among origin servers.
@@ -18154,15 +16152,82 @@ func (o GetWaasPolicyPolicyConfigLoadBalancingMethodOutput) Method() pulumi.Stri
 }
 
 // The unique name of the whitelist.
-func (o GetWaasPolicyPolicyConfigLoadBalancingMethodOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPolicyPolicyConfigLoadBalancingMethod) string { return v.Name }).(pulumi.StringOutput)
+func (o GetWaasPolicyPolicyConfigLoadBalancingMethodOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyPolicyConfigLoadBalancingMethod) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+type GetWaasPolicyPolicyConfigLoadBalancingMethodPtrOutput struct{ *pulumi.OutputState }
+
+func (GetWaasPolicyPolicyConfigLoadBalancingMethodPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GetWaasPolicyPolicyConfigLoadBalancingMethod)(nil)).Elem()
+}
+
+func (o GetWaasPolicyPolicyConfigLoadBalancingMethodPtrOutput) ToGetWaasPolicyPolicyConfigLoadBalancingMethodPtrOutput() GetWaasPolicyPolicyConfigLoadBalancingMethodPtrOutput {
+	return o
+}
+
+func (o GetWaasPolicyPolicyConfigLoadBalancingMethodPtrOutput) ToGetWaasPolicyPolicyConfigLoadBalancingMethodPtrOutputWithContext(ctx context.Context) GetWaasPolicyPolicyConfigLoadBalancingMethodPtrOutput {
+	return o
+}
+
+func (o GetWaasPolicyPolicyConfigLoadBalancingMethodPtrOutput) Elem() GetWaasPolicyPolicyConfigLoadBalancingMethodOutput {
+	return o.ApplyT(func(v *GetWaasPolicyPolicyConfigLoadBalancingMethod) GetWaasPolicyPolicyConfigLoadBalancingMethod {
+		if v != nil {
+			return *v
+		}
+		var ret GetWaasPolicyPolicyConfigLoadBalancingMethod
+		return ret
+	}).(GetWaasPolicyPolicyConfigLoadBalancingMethodOutput)
+}
+
+// The domain for which the cookie is set, defaults to WAAS policy domain.
+func (o GetWaasPolicyPolicyConfigLoadBalancingMethodPtrOutput) Domain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GetWaasPolicyPolicyConfigLoadBalancingMethod) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Domain
+	}).(pulumi.StringPtrOutput)
+}
+
+// The time for which a browser should keep the cookie in seconds. Empty value will cause the cookie to expire at the end of a browser session.
+func (o GetWaasPolicyPolicyConfigLoadBalancingMethodPtrOutput) ExpirationTimeInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *GetWaasPolicyPolicyConfigLoadBalancingMethod) *int {
+		if v == nil {
+			return nil
+		}
+		return v.ExpirationTimeInSeconds
+	}).(pulumi.IntPtrOutput)
+}
+
+// Load balancing methods are algorithms used to efficiently distribute traffic among origin servers.
+// * **[IP_HASH](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/IPHashLoadBalancingMethod):** All the incoming requests from the same client IP address should go to the same content origination server. IP_HASH load balancing method uses origin weights when choosing which origin should the hash be assigned to initially.
+// * **[ROUND_ROBIN](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/RoundRobinLoadBalancingMethod):** Forwards requests sequentially to the available origin servers. The first request - to the first origin server, the second request - to the next origin server, and so on. After it sends a request to the last origin server, it starts again with the first origin server. When using weights on origins, Weighted Round Robin assigns more requests to origins with a greater weight. Over a period of time, origins will receive a number of requests in proportion to their weight.
+// * **[STICKY_COOKIE](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/StickyCookieLoadBalancingMethod):** Adds a session cookie to the first response from the origin server and identifies the server that sent the response. The client's next request contains the cookie value, and nginx routes the request to the origin server that responded to the first request. STICKY_COOKIE load balancing method falls back to Round Robin for the first request.
+func (o GetWaasPolicyPolicyConfigLoadBalancingMethodPtrOutput) Method() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GetWaasPolicyPolicyConfigLoadBalancingMethod) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Method
+	}).(pulumi.StringPtrOutput)
+}
+
+// The unique name of the whitelist.
+func (o GetWaasPolicyPolicyConfigLoadBalancingMethodPtrOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GetWaasPolicyPolicyConfigLoadBalancingMethod) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Name
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetWaasPolicyWafConfig struct {
 	// The access rules applied to the Web Application Firewall. Used for defining custom access policies with the combination of `ALLOW`, `DETECT`, and `BLOCK` rules, based on different criteria.
 	AccessRules []GetWaasPolicyWafConfigAccessRule `pulumi:"accessRules"`
 	// The IP address rate limiting settings used to limit the number of requests from an address.
-	AddressRateLimiting GetWaasPolicyWafConfigAddressRateLimiting `pulumi:"addressRateLimiting"`
+	AddressRateLimiting *GetWaasPolicyWafConfigAddressRateLimiting `pulumi:"addressRateLimiting"`
 	// A list of caching rules applied to the web application.
 	CachingRules []GetWaasPolicyWafConfigCachingRule `pulumi:"cachingRules"`
 	// A list of CAPTCHA challenge settings. These are used to challenge requests with a CAPTCHA to block bots.
@@ -18170,17 +16235,17 @@ type GetWaasPolicyWafConfig struct {
 	// A list of the custom protection rule OCIDs and their actions.
 	CustomProtectionRules []GetWaasPolicyWafConfigCustomProtectionRule `pulumi:"customProtectionRules"`
 	// The device fingerprint challenge settings. Used to detect unique devices based on the device fingerprint information collected in order to block bots.
-	DeviceFingerprintChallenge GetWaasPolicyWafConfigDeviceFingerprintChallenge `pulumi:"deviceFingerprintChallenge"`
+	DeviceFingerprintChallenge *GetWaasPolicyWafConfigDeviceFingerprintChallenge `pulumi:"deviceFingerprintChallenge"`
 	// The human interaction challenge settings. Used to look for natural human interactions such as mouse movements, time on site, and page scrolling to identify bots.
-	HumanInteractionChallenge GetWaasPolicyWafConfigHumanInteractionChallenge `pulumi:"humanInteractionChallenge"`
+	HumanInteractionChallenge *GetWaasPolicyWafConfigHumanInteractionChallenge `pulumi:"humanInteractionChallenge"`
 	// The JavaScript challenge settings. Used to challenge requests with a JavaScript challenge and take the action if a browser has no JavaScript support in order to block bots.
-	JsChallenge GetWaasPolicyWafConfigJsChallenge `pulumi:"jsChallenge"`
+	JsChallenge *GetWaasPolicyWafConfigJsChallenge `pulumi:"jsChallenge"`
 	// The key in the map of origins referencing the origin used for the Web Application Firewall. The origin must already be included in `Origins`. Required when creating the `WafConfig` resource, but not on update.
-	Origin string `pulumi:"origin"`
+	Origin *string `pulumi:"origin"`
 	// The map of origin groups and their keys used to associate origins to the `wafConfig`. Origin groups allow you to apply weights to groups of origins for load balancing purposes. Origins with higher weights will receive larger proportions of client requests. To add additional origins to your WAAS policy, update the `origins` field of a `UpdateWaasPolicy` request.
 	OriginGroups []string `pulumi:"originGroups"`
 	// The settings to apply to protection rules.
-	ProtectionSettings GetWaasPolicyWafConfigProtectionSettings `pulumi:"protectionSettings"`
+	ProtectionSettings *GetWaasPolicyWafConfigProtectionSettings `pulumi:"protectionSettings"`
 	// A list of IP addresses that bypass the Web Application Firewall.
 	Whitelists []GetWaasPolicyWafConfigWhitelist `pulumi:"whitelists"`
 }
@@ -18200,7 +16265,7 @@ type GetWaasPolicyWafConfigArgs struct {
 	// The access rules applied to the Web Application Firewall. Used for defining custom access policies with the combination of `ALLOW`, `DETECT`, and `BLOCK` rules, based on different criteria.
 	AccessRules GetWaasPolicyWafConfigAccessRuleArrayInput `pulumi:"accessRules"`
 	// The IP address rate limiting settings used to limit the number of requests from an address.
-	AddressRateLimiting GetWaasPolicyWafConfigAddressRateLimitingInput `pulumi:"addressRateLimiting"`
+	AddressRateLimiting GetWaasPolicyWafConfigAddressRateLimitingPtrInput `pulumi:"addressRateLimiting"`
 	// A list of caching rules applied to the web application.
 	CachingRules GetWaasPolicyWafConfigCachingRuleArrayInput `pulumi:"cachingRules"`
 	// A list of CAPTCHA challenge settings. These are used to challenge requests with a CAPTCHA to block bots.
@@ -18208,17 +16273,17 @@ type GetWaasPolicyWafConfigArgs struct {
 	// A list of the custom protection rule OCIDs and their actions.
 	CustomProtectionRules GetWaasPolicyWafConfigCustomProtectionRuleArrayInput `pulumi:"customProtectionRules"`
 	// The device fingerprint challenge settings. Used to detect unique devices based on the device fingerprint information collected in order to block bots.
-	DeviceFingerprintChallenge GetWaasPolicyWafConfigDeviceFingerprintChallengeInput `pulumi:"deviceFingerprintChallenge"`
+	DeviceFingerprintChallenge GetWaasPolicyWafConfigDeviceFingerprintChallengePtrInput `pulumi:"deviceFingerprintChallenge"`
 	// The human interaction challenge settings. Used to look for natural human interactions such as mouse movements, time on site, and page scrolling to identify bots.
-	HumanInteractionChallenge GetWaasPolicyWafConfigHumanInteractionChallengeInput `pulumi:"humanInteractionChallenge"`
+	HumanInteractionChallenge GetWaasPolicyWafConfigHumanInteractionChallengePtrInput `pulumi:"humanInteractionChallenge"`
 	// The JavaScript challenge settings. Used to challenge requests with a JavaScript challenge and take the action if a browser has no JavaScript support in order to block bots.
-	JsChallenge GetWaasPolicyWafConfigJsChallengeInput `pulumi:"jsChallenge"`
+	JsChallenge GetWaasPolicyWafConfigJsChallengePtrInput `pulumi:"jsChallenge"`
 	// The key in the map of origins referencing the origin used for the Web Application Firewall. The origin must already be included in `Origins`. Required when creating the `WafConfig` resource, but not on update.
-	Origin pulumi.StringInput `pulumi:"origin"`
+	Origin pulumi.StringPtrInput `pulumi:"origin"`
 	// The map of origin groups and their keys used to associate origins to the `wafConfig`. Origin groups allow you to apply weights to groups of origins for load balancing purposes. Origins with higher weights will receive larger proportions of client requests. To add additional origins to your WAAS policy, update the `origins` field of a `UpdateWaasPolicy` request.
 	OriginGroups pulumi.StringArrayInput `pulumi:"originGroups"`
 	// The settings to apply to protection rules.
-	ProtectionSettings GetWaasPolicyWafConfigProtectionSettingsInput `pulumi:"protectionSettings"`
+	ProtectionSettings GetWaasPolicyWafConfigProtectionSettingsPtrInput `pulumi:"protectionSettings"`
 	// A list of IP addresses that bypass the Web Application Firewall.
 	Whitelists GetWaasPolicyWafConfigWhitelistArrayInput `pulumi:"whitelists"`
 }
@@ -18233,12 +16298,6 @@ func (i GetWaasPolicyWafConfigArgs) ToGetWaasPolicyWafConfigOutput() GetWaasPoli
 
 func (i GetWaasPolicyWafConfigArgs) ToGetWaasPolicyWafConfigOutputWithContext(ctx context.Context) GetWaasPolicyWafConfigOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyWafConfigOutput)
-}
-
-func (i GetWaasPolicyWafConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyWafConfig] {
-	return pulumix.Output[GetWaasPolicyWafConfig]{
-		OutputState: i.ToGetWaasPolicyWafConfigOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetWaasPolicyWafConfigArrayInput is an input type that accepts GetWaasPolicyWafConfigArray and GetWaasPolicyWafConfigArrayOutput values.
@@ -18266,12 +16325,6 @@ func (i GetWaasPolicyWafConfigArray) ToGetWaasPolicyWafConfigArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyWafConfigArrayOutput)
 }
 
-func (i GetWaasPolicyWafConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPolicyWafConfig] {
-	return pulumix.Output[[]GetWaasPolicyWafConfig]{
-		OutputState: i.ToGetWaasPolicyWafConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPolicyWafConfigOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPolicyWafConfigOutput) ElementType() reflect.Type {
@@ -18286,20 +16339,16 @@ func (o GetWaasPolicyWafConfigOutput) ToGetWaasPolicyWafConfigOutputWithContext(
 	return o
 }
 
-func (o GetWaasPolicyWafConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyWafConfig] {
-	return pulumix.Output[GetWaasPolicyWafConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The access rules applied to the Web Application Firewall. Used for defining custom access policies with the combination of `ALLOW`, `DETECT`, and `BLOCK` rules, based on different criteria.
 func (o GetWaasPolicyWafConfigOutput) AccessRules() GetWaasPolicyWafConfigAccessRuleArrayOutput {
 	return o.ApplyT(func(v GetWaasPolicyWafConfig) []GetWaasPolicyWafConfigAccessRule { return v.AccessRules }).(GetWaasPolicyWafConfigAccessRuleArrayOutput)
 }
 
 // The IP address rate limiting settings used to limit the number of requests from an address.
-func (o GetWaasPolicyWafConfigOutput) AddressRateLimiting() GetWaasPolicyWafConfigAddressRateLimitingOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfig) GetWaasPolicyWafConfigAddressRateLimiting { return v.AddressRateLimiting }).(GetWaasPolicyWafConfigAddressRateLimitingOutput)
+func (o GetWaasPolicyWafConfigOutput) AddressRateLimiting() GetWaasPolicyWafConfigAddressRateLimitingPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfig) *GetWaasPolicyWafConfigAddressRateLimiting {
+		return v.AddressRateLimiting
+	}).(GetWaasPolicyWafConfigAddressRateLimitingPtrOutput)
 }
 
 // A list of caching rules applied to the web application.
@@ -18320,27 +16369,27 @@ func (o GetWaasPolicyWafConfigOutput) CustomProtectionRules() GetWaasPolicyWafCo
 }
 
 // The device fingerprint challenge settings. Used to detect unique devices based on the device fingerprint information collected in order to block bots.
-func (o GetWaasPolicyWafConfigOutput) DeviceFingerprintChallenge() GetWaasPolicyWafConfigDeviceFingerprintChallengeOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfig) GetWaasPolicyWafConfigDeviceFingerprintChallenge {
+func (o GetWaasPolicyWafConfigOutput) DeviceFingerprintChallenge() GetWaasPolicyWafConfigDeviceFingerprintChallengePtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfig) *GetWaasPolicyWafConfigDeviceFingerprintChallenge {
 		return v.DeviceFingerprintChallenge
-	}).(GetWaasPolicyWafConfigDeviceFingerprintChallengeOutput)
+	}).(GetWaasPolicyWafConfigDeviceFingerprintChallengePtrOutput)
 }
 
 // The human interaction challenge settings. Used to look for natural human interactions such as mouse movements, time on site, and page scrolling to identify bots.
-func (o GetWaasPolicyWafConfigOutput) HumanInteractionChallenge() GetWaasPolicyWafConfigHumanInteractionChallengeOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfig) GetWaasPolicyWafConfigHumanInteractionChallenge {
+func (o GetWaasPolicyWafConfigOutput) HumanInteractionChallenge() GetWaasPolicyWafConfigHumanInteractionChallengePtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfig) *GetWaasPolicyWafConfigHumanInteractionChallenge {
 		return v.HumanInteractionChallenge
-	}).(GetWaasPolicyWafConfigHumanInteractionChallengeOutput)
+	}).(GetWaasPolicyWafConfigHumanInteractionChallengePtrOutput)
 }
 
 // The JavaScript challenge settings. Used to challenge requests with a JavaScript challenge and take the action if a browser has no JavaScript support in order to block bots.
-func (o GetWaasPolicyWafConfigOutput) JsChallenge() GetWaasPolicyWafConfigJsChallengeOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfig) GetWaasPolicyWafConfigJsChallenge { return v.JsChallenge }).(GetWaasPolicyWafConfigJsChallengeOutput)
+func (o GetWaasPolicyWafConfigOutput) JsChallenge() GetWaasPolicyWafConfigJsChallengePtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfig) *GetWaasPolicyWafConfigJsChallenge { return v.JsChallenge }).(GetWaasPolicyWafConfigJsChallengePtrOutput)
 }
 
 // The key in the map of origins referencing the origin used for the Web Application Firewall. The origin must already be included in `Origins`. Required when creating the `WafConfig` resource, but not on update.
-func (o GetWaasPolicyWafConfigOutput) Origin() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfig) string { return v.Origin }).(pulumi.StringOutput)
+func (o GetWaasPolicyWafConfigOutput) Origin() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfig) *string { return v.Origin }).(pulumi.StringPtrOutput)
 }
 
 // The map of origin groups and their keys used to associate origins to the `wafConfig`. Origin groups allow you to apply weights to groups of origins for load balancing purposes. Origins with higher weights will receive larger proportions of client requests. To add additional origins to your WAAS policy, update the `origins` field of a `UpdateWaasPolicy` request.
@@ -18349,8 +16398,8 @@ func (o GetWaasPolicyWafConfigOutput) OriginGroups() pulumi.StringArrayOutput {
 }
 
 // The settings to apply to protection rules.
-func (o GetWaasPolicyWafConfigOutput) ProtectionSettings() GetWaasPolicyWafConfigProtectionSettingsOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfig) GetWaasPolicyWafConfigProtectionSettings { return v.ProtectionSettings }).(GetWaasPolicyWafConfigProtectionSettingsOutput)
+func (o GetWaasPolicyWafConfigOutput) ProtectionSettings() GetWaasPolicyWafConfigProtectionSettingsPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfig) *GetWaasPolicyWafConfigProtectionSettings { return v.ProtectionSettings }).(GetWaasPolicyWafConfigProtectionSettingsPtrOutput)
 }
 
 // A list of IP addresses that bypass the Web Application Firewall.
@@ -18372,12 +16421,6 @@ func (o GetWaasPolicyWafConfigArrayOutput) ToGetWaasPolicyWafConfigArrayOutputWi
 	return o
 }
 
-func (o GetWaasPolicyWafConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPolicyWafConfig] {
-	return pulumix.Output[[]GetWaasPolicyWafConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWaasPolicyWafConfigArrayOutput) Index(i pulumi.IntInput) GetWaasPolicyWafConfigOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWaasPolicyWafConfig {
 		return vs[0].([]GetWaasPolicyWafConfig)[vs[1].(int)]
@@ -18388,15 +16431,15 @@ type GetWaasPolicyWafConfigAccessRule struct {
 	// The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
 	Action string `pulumi:"action"`
 	// If `action` is set to `BLOCK`, this specifies how the traffic is blocked when detected as malicious by a protection rule. If unspecified, defaults to `SET_RESPONSE_CODE`.
-	BlockAction string `pulumi:"blockAction"`
+	BlockAction *string `pulumi:"blockAction"`
 	// The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`.
-	BlockErrorPageCode string `pulumi:"blockErrorPageCode"`
+	BlockErrorPageCode *string `pulumi:"blockErrorPageCode"`
 	// The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
-	BlockErrorPageDescription string `pulumi:"blockErrorPageDescription"`
+	BlockErrorPageDescription *string `pulumi:"blockErrorPageDescription"`
 	// The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to 'Access to the website is blocked.'
-	BlockErrorPageMessage string `pulumi:"blockErrorPageMessage"`
+	BlockErrorPageMessage *string `pulumi:"blockErrorPageMessage"`
 	// The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
-	BlockResponseCode int `pulumi:"blockResponseCode"`
+	BlockResponseCode *int `pulumi:"blockResponseCode"`
 	// The list of challenges to bypass when `action` is set to `BYPASS`. If unspecified or empty, all challenges are bypassed.
 	// * **JS_CHALLENGE:** Bypasses JavaScript Challenge.
 	// * **DEVICE_FINGERPRINT_CHALLENGE:** Bypasses Device Fingerprint Challenge.
@@ -18404,13 +16447,13 @@ type GetWaasPolicyWafConfigAccessRule struct {
 	// * **CAPTCHA:** Bypasses CAPTCHA Challenge.
 	BypassChallenges []string `pulumi:"bypassChallenges"`
 	// The text to show in the footer when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, default to `Enter the letters and numbers as they are shown in image above`.
-	CaptchaFooter string `pulumi:"captchaFooter"`
+	CaptchaFooter *string `pulumi:"captchaFooter"`
 	// The text to show in the header when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `We have detected an increased number of attempts to access this webapp. To help us keep this webapp secure, please let us know that you are not a robot by entering the text from captcha below.`
-	CaptchaHeader string `pulumi:"captchaHeader"`
+	CaptchaHeader *string `pulumi:"captchaHeader"`
 	// The text to show on the label of the CAPTCHA challenge submit button when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Yes, I am human`.
-	CaptchaSubmitLabel string `pulumi:"captchaSubmitLabel"`
+	CaptchaSubmitLabel *string `pulumi:"captchaSubmitLabel"`
 	// The title used when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Are you human?`
-	CaptchaTitle string `pulumi:"captchaTitle"`
+	CaptchaTitle *string `pulumi:"captchaTitle"`
 	// When defined, the JavaScript Challenge would be applied only for the requests that matched all the listed conditions.
 	Criterias []GetWaasPolicyWafConfigAccessRuleCriteria `pulumi:"criterias"`
 	// The unique name of the whitelist.
@@ -18418,9 +16461,9 @@ type GetWaasPolicyWafConfigAccessRule struct {
 	// The response status code to return when `action` is set to `REDIRECT`.
 	// * **MOVED_PERMANENTLY:** Used for designating the permanent movement of a page (numerical code - 301).
 	// * **FOUND:** Used for designating the temporary movement of a page (numerical code - 302).
-	RedirectResponseCode string `pulumi:"redirectResponseCode"`
+	RedirectResponseCode *string `pulumi:"redirectResponseCode"`
 	// The target to which the request should be redirected, represented as a URI reference. Required when `action` is `REDIRECT`.
-	RedirectUrl string `pulumi:"redirectUrl"`
+	RedirectUrl *string `pulumi:"redirectUrl"`
 	// An object that represents an action to apply to an HTTP response headers if all rule criteria will be matched regardless of `action` value.
 	ResponseHeaderManipulations []GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulation `pulumi:"responseHeaderManipulations"`
 }
@@ -18440,15 +16483,15 @@ type GetWaasPolicyWafConfigAccessRuleArgs struct {
 	// The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
 	Action pulumi.StringInput `pulumi:"action"`
 	// If `action` is set to `BLOCK`, this specifies how the traffic is blocked when detected as malicious by a protection rule. If unspecified, defaults to `SET_RESPONSE_CODE`.
-	BlockAction pulumi.StringInput `pulumi:"blockAction"`
+	BlockAction pulumi.StringPtrInput `pulumi:"blockAction"`
 	// The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`.
-	BlockErrorPageCode pulumi.StringInput `pulumi:"blockErrorPageCode"`
+	BlockErrorPageCode pulumi.StringPtrInput `pulumi:"blockErrorPageCode"`
 	// The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
-	BlockErrorPageDescription pulumi.StringInput `pulumi:"blockErrorPageDescription"`
+	BlockErrorPageDescription pulumi.StringPtrInput `pulumi:"blockErrorPageDescription"`
 	// The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to 'Access to the website is blocked.'
-	BlockErrorPageMessage pulumi.StringInput `pulumi:"blockErrorPageMessage"`
+	BlockErrorPageMessage pulumi.StringPtrInput `pulumi:"blockErrorPageMessage"`
 	// The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
-	BlockResponseCode pulumi.IntInput `pulumi:"blockResponseCode"`
+	BlockResponseCode pulumi.IntPtrInput `pulumi:"blockResponseCode"`
 	// The list of challenges to bypass when `action` is set to `BYPASS`. If unspecified or empty, all challenges are bypassed.
 	// * **JS_CHALLENGE:** Bypasses JavaScript Challenge.
 	// * **DEVICE_FINGERPRINT_CHALLENGE:** Bypasses Device Fingerprint Challenge.
@@ -18456,13 +16499,13 @@ type GetWaasPolicyWafConfigAccessRuleArgs struct {
 	// * **CAPTCHA:** Bypasses CAPTCHA Challenge.
 	BypassChallenges pulumi.StringArrayInput `pulumi:"bypassChallenges"`
 	// The text to show in the footer when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, default to `Enter the letters and numbers as they are shown in image above`.
-	CaptchaFooter pulumi.StringInput `pulumi:"captchaFooter"`
+	CaptchaFooter pulumi.StringPtrInput `pulumi:"captchaFooter"`
 	// The text to show in the header when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `We have detected an increased number of attempts to access this webapp. To help us keep this webapp secure, please let us know that you are not a robot by entering the text from captcha below.`
-	CaptchaHeader pulumi.StringInput `pulumi:"captchaHeader"`
+	CaptchaHeader pulumi.StringPtrInput `pulumi:"captchaHeader"`
 	// The text to show on the label of the CAPTCHA challenge submit button when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Yes, I am human`.
-	CaptchaSubmitLabel pulumi.StringInput `pulumi:"captchaSubmitLabel"`
+	CaptchaSubmitLabel pulumi.StringPtrInput `pulumi:"captchaSubmitLabel"`
 	// The title used when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Are you human?`
-	CaptchaTitle pulumi.StringInput `pulumi:"captchaTitle"`
+	CaptchaTitle pulumi.StringPtrInput `pulumi:"captchaTitle"`
 	// When defined, the JavaScript Challenge would be applied only for the requests that matched all the listed conditions.
 	Criterias GetWaasPolicyWafConfigAccessRuleCriteriaArrayInput `pulumi:"criterias"`
 	// The unique name of the whitelist.
@@ -18470,9 +16513,9 @@ type GetWaasPolicyWafConfigAccessRuleArgs struct {
 	// The response status code to return when `action` is set to `REDIRECT`.
 	// * **MOVED_PERMANENTLY:** Used for designating the permanent movement of a page (numerical code - 301).
 	// * **FOUND:** Used for designating the temporary movement of a page (numerical code - 302).
-	RedirectResponseCode pulumi.StringInput `pulumi:"redirectResponseCode"`
+	RedirectResponseCode pulumi.StringPtrInput `pulumi:"redirectResponseCode"`
 	// The target to which the request should be redirected, represented as a URI reference. Required when `action` is `REDIRECT`.
-	RedirectUrl pulumi.StringInput `pulumi:"redirectUrl"`
+	RedirectUrl pulumi.StringPtrInput `pulumi:"redirectUrl"`
 	// An object that represents an action to apply to an HTTP response headers if all rule criteria will be matched regardless of `action` value.
 	ResponseHeaderManipulations GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulationArrayInput `pulumi:"responseHeaderManipulations"`
 }
@@ -18487,12 +16530,6 @@ func (i GetWaasPolicyWafConfigAccessRuleArgs) ToGetWaasPolicyWafConfigAccessRule
 
 func (i GetWaasPolicyWafConfigAccessRuleArgs) ToGetWaasPolicyWafConfigAccessRuleOutputWithContext(ctx context.Context) GetWaasPolicyWafConfigAccessRuleOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyWafConfigAccessRuleOutput)
-}
-
-func (i GetWaasPolicyWafConfigAccessRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyWafConfigAccessRule] {
-	return pulumix.Output[GetWaasPolicyWafConfigAccessRule]{
-		OutputState: i.ToGetWaasPolicyWafConfigAccessRuleOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetWaasPolicyWafConfigAccessRuleArrayInput is an input type that accepts GetWaasPolicyWafConfigAccessRuleArray and GetWaasPolicyWafConfigAccessRuleArrayOutput values.
@@ -18520,12 +16557,6 @@ func (i GetWaasPolicyWafConfigAccessRuleArray) ToGetWaasPolicyWafConfigAccessRul
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyWafConfigAccessRuleArrayOutput)
 }
 
-func (i GetWaasPolicyWafConfigAccessRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPolicyWafConfigAccessRule] {
-	return pulumix.Output[[]GetWaasPolicyWafConfigAccessRule]{
-		OutputState: i.ToGetWaasPolicyWafConfigAccessRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPolicyWafConfigAccessRuleOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPolicyWafConfigAccessRuleOutput) ElementType() reflect.Type {
@@ -18540,40 +16571,34 @@ func (o GetWaasPolicyWafConfigAccessRuleOutput) ToGetWaasPolicyWafConfigAccessRu
 	return o
 }
 
-func (o GetWaasPolicyWafConfigAccessRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyWafConfigAccessRule] {
-	return pulumix.Output[GetWaasPolicyWafConfigAccessRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
 func (o GetWaasPolicyWafConfigAccessRuleOutput) Action() pulumi.StringOutput {
 	return o.ApplyT(func(v GetWaasPolicyWafConfigAccessRule) string { return v.Action }).(pulumi.StringOutput)
 }
 
 // If `action` is set to `BLOCK`, this specifies how the traffic is blocked when detected as malicious by a protection rule. If unspecified, defaults to `SET_RESPONSE_CODE`.
-func (o GetWaasPolicyWafConfigAccessRuleOutput) BlockAction() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfigAccessRule) string { return v.BlockAction }).(pulumi.StringOutput)
+func (o GetWaasPolicyWafConfigAccessRuleOutput) BlockAction() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfigAccessRule) *string { return v.BlockAction }).(pulumi.StringPtrOutput)
 }
 
 // The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`.
-func (o GetWaasPolicyWafConfigAccessRuleOutput) BlockErrorPageCode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfigAccessRule) string { return v.BlockErrorPageCode }).(pulumi.StringOutput)
+func (o GetWaasPolicyWafConfigAccessRuleOutput) BlockErrorPageCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfigAccessRule) *string { return v.BlockErrorPageCode }).(pulumi.StringPtrOutput)
 }
 
 // The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
-func (o GetWaasPolicyWafConfigAccessRuleOutput) BlockErrorPageDescription() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfigAccessRule) string { return v.BlockErrorPageDescription }).(pulumi.StringOutput)
+func (o GetWaasPolicyWafConfigAccessRuleOutput) BlockErrorPageDescription() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfigAccessRule) *string { return v.BlockErrorPageDescription }).(pulumi.StringPtrOutput)
 }
 
 // The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to 'Access to the website is blocked.'
-func (o GetWaasPolicyWafConfigAccessRuleOutput) BlockErrorPageMessage() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfigAccessRule) string { return v.BlockErrorPageMessage }).(pulumi.StringOutput)
+func (o GetWaasPolicyWafConfigAccessRuleOutput) BlockErrorPageMessage() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfigAccessRule) *string { return v.BlockErrorPageMessage }).(pulumi.StringPtrOutput)
 }
 
 // The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
-func (o GetWaasPolicyWafConfigAccessRuleOutput) BlockResponseCode() pulumi.IntOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfigAccessRule) int { return v.BlockResponseCode }).(pulumi.IntOutput)
+func (o GetWaasPolicyWafConfigAccessRuleOutput) BlockResponseCode() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfigAccessRule) *int { return v.BlockResponseCode }).(pulumi.IntPtrOutput)
 }
 
 // The list of challenges to bypass when `action` is set to `BYPASS`. If unspecified or empty, all challenges are bypassed.
@@ -18586,23 +16611,23 @@ func (o GetWaasPolicyWafConfigAccessRuleOutput) BypassChallenges() pulumi.String
 }
 
 // The text to show in the footer when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, default to `Enter the letters and numbers as they are shown in image above`.
-func (o GetWaasPolicyWafConfigAccessRuleOutput) CaptchaFooter() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfigAccessRule) string { return v.CaptchaFooter }).(pulumi.StringOutput)
+func (o GetWaasPolicyWafConfigAccessRuleOutput) CaptchaFooter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfigAccessRule) *string { return v.CaptchaFooter }).(pulumi.StringPtrOutput)
 }
 
 // The text to show in the header when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `We have detected an increased number of attempts to access this webapp. To help us keep this webapp secure, please let us know that you are not a robot by entering the text from captcha below.`
-func (o GetWaasPolicyWafConfigAccessRuleOutput) CaptchaHeader() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfigAccessRule) string { return v.CaptchaHeader }).(pulumi.StringOutput)
+func (o GetWaasPolicyWafConfigAccessRuleOutput) CaptchaHeader() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfigAccessRule) *string { return v.CaptchaHeader }).(pulumi.StringPtrOutput)
 }
 
 // The text to show on the label of the CAPTCHA challenge submit button when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Yes, I am human`.
-func (o GetWaasPolicyWafConfigAccessRuleOutput) CaptchaSubmitLabel() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfigAccessRule) string { return v.CaptchaSubmitLabel }).(pulumi.StringOutput)
+func (o GetWaasPolicyWafConfigAccessRuleOutput) CaptchaSubmitLabel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfigAccessRule) *string { return v.CaptchaSubmitLabel }).(pulumi.StringPtrOutput)
 }
 
 // The title used when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Are you human?`
-func (o GetWaasPolicyWafConfigAccessRuleOutput) CaptchaTitle() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfigAccessRule) string { return v.CaptchaTitle }).(pulumi.StringOutput)
+func (o GetWaasPolicyWafConfigAccessRuleOutput) CaptchaTitle() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfigAccessRule) *string { return v.CaptchaTitle }).(pulumi.StringPtrOutput)
 }
 
 // When defined, the JavaScript Challenge would be applied only for the requests that matched all the listed conditions.
@@ -18620,13 +16645,13 @@ func (o GetWaasPolicyWafConfigAccessRuleOutput) Name() pulumi.StringOutput {
 // The response status code to return when `action` is set to `REDIRECT`.
 // * **MOVED_PERMANENTLY:** Used for designating the permanent movement of a page (numerical code - 301).
 // * **FOUND:** Used for designating the temporary movement of a page (numerical code - 302).
-func (o GetWaasPolicyWafConfigAccessRuleOutput) RedirectResponseCode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfigAccessRule) string { return v.RedirectResponseCode }).(pulumi.StringOutput)
+func (o GetWaasPolicyWafConfigAccessRuleOutput) RedirectResponseCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfigAccessRule) *string { return v.RedirectResponseCode }).(pulumi.StringPtrOutput)
 }
 
 // The target to which the request should be redirected, represented as a URI reference. Required when `action` is `REDIRECT`.
-func (o GetWaasPolicyWafConfigAccessRuleOutput) RedirectUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfigAccessRule) string { return v.RedirectUrl }).(pulumi.StringOutput)
+func (o GetWaasPolicyWafConfigAccessRuleOutput) RedirectUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfigAccessRule) *string { return v.RedirectUrl }).(pulumi.StringPtrOutput)
 }
 
 // An object that represents an action to apply to an HTTP response headers if all rule criteria will be matched regardless of `action` value.
@@ -18648,12 +16673,6 @@ func (o GetWaasPolicyWafConfigAccessRuleArrayOutput) ToGetWaasPolicyWafConfigAcc
 
 func (o GetWaasPolicyWafConfigAccessRuleArrayOutput) ToGetWaasPolicyWafConfigAccessRuleArrayOutputWithContext(ctx context.Context) GetWaasPolicyWafConfigAccessRuleArrayOutput {
 	return o
-}
-
-func (o GetWaasPolicyWafConfigAccessRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPolicyWafConfigAccessRule] {
-	return pulumix.Output[[]GetWaasPolicyWafConfigAccessRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetWaasPolicyWafConfigAccessRuleArrayOutput) Index(i pulumi.IntInput) GetWaasPolicyWafConfigAccessRuleOutput {
@@ -18682,7 +16701,7 @@ type GetWaasPolicyWafConfigAccessRuleCriteria struct {
 	// * **HTTP_METHOD_IS:** Matches if the request method is identical to one of the values listed in field. The `value` in this case is string with one or multiple HTTP methods separated by new line symbol \n The list of available methods: `GET`, `HEAD`, `POST`, `PUT`, `DELETE`, `CONNECT`, `OPTIONS`, `TRACE`, `PATCH`
 	Condition string `pulumi:"condition"`
 	// When enabled, the condition will be matched with case-sensitive rules.
-	IsCaseSensitive bool `pulumi:"isCaseSensitive"`
+	IsCaseSensitive *bool `pulumi:"isCaseSensitive"`
 	// The value of the header.
 	Value string `pulumi:"value"`
 }
@@ -18718,7 +16737,7 @@ type GetWaasPolicyWafConfigAccessRuleCriteriaArgs struct {
 	// * **HTTP_METHOD_IS:** Matches if the request method is identical to one of the values listed in field. The `value` in this case is string with one or multiple HTTP methods separated by new line symbol \n The list of available methods: `GET`, `HEAD`, `POST`, `PUT`, `DELETE`, `CONNECT`, `OPTIONS`, `TRACE`, `PATCH`
 	Condition pulumi.StringInput `pulumi:"condition"`
 	// When enabled, the condition will be matched with case-sensitive rules.
-	IsCaseSensitive pulumi.BoolInput `pulumi:"isCaseSensitive"`
+	IsCaseSensitive pulumi.BoolPtrInput `pulumi:"isCaseSensitive"`
 	// The value of the header.
 	Value pulumi.StringInput `pulumi:"value"`
 }
@@ -18733,12 +16752,6 @@ func (i GetWaasPolicyWafConfigAccessRuleCriteriaArgs) ToGetWaasPolicyWafConfigAc
 
 func (i GetWaasPolicyWafConfigAccessRuleCriteriaArgs) ToGetWaasPolicyWafConfigAccessRuleCriteriaOutputWithContext(ctx context.Context) GetWaasPolicyWafConfigAccessRuleCriteriaOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyWafConfigAccessRuleCriteriaOutput)
-}
-
-func (i GetWaasPolicyWafConfigAccessRuleCriteriaArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyWafConfigAccessRuleCriteria] {
-	return pulumix.Output[GetWaasPolicyWafConfigAccessRuleCriteria]{
-		OutputState: i.ToGetWaasPolicyWafConfigAccessRuleCriteriaOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetWaasPolicyWafConfigAccessRuleCriteriaArrayInput is an input type that accepts GetWaasPolicyWafConfigAccessRuleCriteriaArray and GetWaasPolicyWafConfigAccessRuleCriteriaArrayOutput values.
@@ -18766,12 +16779,6 @@ func (i GetWaasPolicyWafConfigAccessRuleCriteriaArray) ToGetWaasPolicyWafConfigA
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyWafConfigAccessRuleCriteriaArrayOutput)
 }
 
-func (i GetWaasPolicyWafConfigAccessRuleCriteriaArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPolicyWafConfigAccessRuleCriteria] {
-	return pulumix.Output[[]GetWaasPolicyWafConfigAccessRuleCriteria]{
-		OutputState: i.ToGetWaasPolicyWafConfigAccessRuleCriteriaArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPolicyWafConfigAccessRuleCriteriaOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPolicyWafConfigAccessRuleCriteriaOutput) ElementType() reflect.Type {
@@ -18784,12 +16791,6 @@ func (o GetWaasPolicyWafConfigAccessRuleCriteriaOutput) ToGetWaasPolicyWafConfig
 
 func (o GetWaasPolicyWafConfigAccessRuleCriteriaOutput) ToGetWaasPolicyWafConfigAccessRuleCriteriaOutputWithContext(ctx context.Context) GetWaasPolicyWafConfigAccessRuleCriteriaOutput {
 	return o
-}
-
-func (o GetWaasPolicyWafConfigAccessRuleCriteriaOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyWafConfigAccessRuleCriteria] {
-	return pulumix.Output[GetWaasPolicyWafConfigAccessRuleCriteria]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The criteria the access rule and JavaScript Challenge uses to determine if action should be taken on a request.
@@ -18814,8 +16815,8 @@ func (o GetWaasPolicyWafConfigAccessRuleCriteriaOutput) Condition() pulumi.Strin
 }
 
 // When enabled, the condition will be matched with case-sensitive rules.
-func (o GetWaasPolicyWafConfigAccessRuleCriteriaOutput) IsCaseSensitive() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfigAccessRuleCriteria) bool { return v.IsCaseSensitive }).(pulumi.BoolOutput)
+func (o GetWaasPolicyWafConfigAccessRuleCriteriaOutput) IsCaseSensitive() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfigAccessRuleCriteria) *bool { return v.IsCaseSensitive }).(pulumi.BoolPtrOutput)
 }
 
 // The value of the header.
@@ -18837,12 +16838,6 @@ func (o GetWaasPolicyWafConfigAccessRuleCriteriaArrayOutput) ToGetWaasPolicyWafC
 	return o
 }
 
-func (o GetWaasPolicyWafConfigAccessRuleCriteriaArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPolicyWafConfigAccessRuleCriteria] {
-	return pulumix.Output[[]GetWaasPolicyWafConfigAccessRuleCriteria]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWaasPolicyWafConfigAccessRuleCriteriaArrayOutput) Index(i pulumi.IntInput) GetWaasPolicyWafConfigAccessRuleCriteriaOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWaasPolicyWafConfigAccessRuleCriteria {
 		return vs[0].([]GetWaasPolicyWafConfigAccessRuleCriteria)[vs[1].(int)]
@@ -18855,7 +16850,7 @@ type GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulation struct {
 	// A header field name that conforms to RFC 7230.  Example: `exampleHeaderName`
 	Header string `pulumi:"header"`
 	// The value of the header.
-	Value string `pulumi:"value"`
+	Value *string `pulumi:"value"`
 }
 
 // GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulationInput is an input type that accepts GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulationArgs and GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulationOutput values.
@@ -18875,7 +16870,7 @@ type GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulationArgs struct {
 	// A header field name that conforms to RFC 7230.  Example: `exampleHeaderName`
 	Header pulumi.StringInput `pulumi:"header"`
 	// The value of the header.
-	Value pulumi.StringInput `pulumi:"value"`
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulationArgs) ElementType() reflect.Type {
@@ -18888,12 +16883,6 @@ func (i GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulationArgs) ToGetWaa
 
 func (i GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulationArgs) ToGetWaasPolicyWafConfigAccessRuleResponseHeaderManipulationOutputWithContext(ctx context.Context) GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulationOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulationOutput)
-}
-
-func (i GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulationArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulation] {
-	return pulumix.Output[GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulation]{
-		OutputState: i.ToGetWaasPolicyWafConfigAccessRuleResponseHeaderManipulationOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulationArrayInput is an input type that accepts GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulationArray and GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulationArrayOutput values.
@@ -18921,12 +16910,6 @@ func (i GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulationArray) ToGetWa
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulationArrayOutput)
 }
 
-func (i GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulation] {
-	return pulumix.Output[[]GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulation]{
-		OutputState: i.ToGetWaasPolicyWafConfigAccessRuleResponseHeaderManipulationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulationOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulationOutput) ElementType() reflect.Type {
@@ -18941,12 +16924,6 @@ func (o GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulationOutput) ToGetW
 	return o
 }
 
-func (o GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulationOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulation] {
-	return pulumix.Output[GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulation]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
 func (o GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulationOutput) Action() pulumi.StringOutput {
 	return o.ApplyT(func(v GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulation) string { return v.Action }).(pulumi.StringOutput)
@@ -18958,8 +16935,8 @@ func (o GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulationOutput) Header
 }
 
 // The value of the header.
-func (o GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulationOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulation) string { return v.Value }).(pulumi.StringOutput)
+func (o GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulationOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulation) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
 
 type GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulationArrayOutput struct{ *pulumi.OutputState }
@@ -18976,12 +16953,6 @@ func (o GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulationArrayOutput) T
 	return o
 }
 
-func (o GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulation] {
-	return pulumix.Output[[]GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulation]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulationArrayOutput) Index(i pulumi.IntInput) GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulation {
 		return vs[0].([]GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulation)[vs[1].(int)]
@@ -18990,13 +16961,13 @@ func (o GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulationArrayOutput) I
 
 type GetWaasPolicyWafConfigAddressRateLimiting struct {
 	// The number of allowed requests per second from one IP address. If unspecified, defaults to `1`.
-	AllowedRatePerAddress int `pulumi:"allowedRatePerAddress"`
+	AllowedRatePerAddress *int `pulumi:"allowedRatePerAddress"`
 	// The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
-	BlockResponseCode int `pulumi:"blockResponseCode"`
+	BlockResponseCode *int `pulumi:"blockResponseCode"`
 	// Enables or disables the JavaScript challenge Web Application Firewall feature.
 	IsEnabled bool `pulumi:"isEnabled"`
 	// The maximum number of requests allowed to be queued before subsequent requests are dropped. If unspecified, defaults to `10`.
-	MaxDelayedCountPerAddress int `pulumi:"maxDelayedCountPerAddress"`
+	MaxDelayedCountPerAddress *int `pulumi:"maxDelayedCountPerAddress"`
 }
 
 // GetWaasPolicyWafConfigAddressRateLimitingInput is an input type that accepts GetWaasPolicyWafConfigAddressRateLimitingArgs and GetWaasPolicyWafConfigAddressRateLimitingOutput values.
@@ -19012,13 +16983,13 @@ type GetWaasPolicyWafConfigAddressRateLimitingInput interface {
 
 type GetWaasPolicyWafConfigAddressRateLimitingArgs struct {
 	// The number of allowed requests per second from one IP address. If unspecified, defaults to `1`.
-	AllowedRatePerAddress pulumi.IntInput `pulumi:"allowedRatePerAddress"`
+	AllowedRatePerAddress pulumi.IntPtrInput `pulumi:"allowedRatePerAddress"`
 	// The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
-	BlockResponseCode pulumi.IntInput `pulumi:"blockResponseCode"`
+	BlockResponseCode pulumi.IntPtrInput `pulumi:"blockResponseCode"`
 	// Enables or disables the JavaScript challenge Web Application Firewall feature.
 	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
 	// The maximum number of requests allowed to be queued before subsequent requests are dropped. If unspecified, defaults to `10`.
-	MaxDelayedCountPerAddress pulumi.IntInput `pulumi:"maxDelayedCountPerAddress"`
+	MaxDelayedCountPerAddress pulumi.IntPtrInput `pulumi:"maxDelayedCountPerAddress"`
 }
 
 func (GetWaasPolicyWafConfigAddressRateLimitingArgs) ElementType() reflect.Type {
@@ -19033,10 +17004,45 @@ func (i GetWaasPolicyWafConfigAddressRateLimitingArgs) ToGetWaasPolicyWafConfigA
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyWafConfigAddressRateLimitingOutput)
 }
 
-func (i GetWaasPolicyWafConfigAddressRateLimitingArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyWafConfigAddressRateLimiting] {
-	return pulumix.Output[GetWaasPolicyWafConfigAddressRateLimiting]{
-		OutputState: i.ToGetWaasPolicyWafConfigAddressRateLimitingOutputWithContext(ctx).OutputState,
-	}
+func (i GetWaasPolicyWafConfigAddressRateLimitingArgs) ToGetWaasPolicyWafConfigAddressRateLimitingPtrOutput() GetWaasPolicyWafConfigAddressRateLimitingPtrOutput {
+	return i.ToGetWaasPolicyWafConfigAddressRateLimitingPtrOutputWithContext(context.Background())
+}
+
+func (i GetWaasPolicyWafConfigAddressRateLimitingArgs) ToGetWaasPolicyWafConfigAddressRateLimitingPtrOutputWithContext(ctx context.Context) GetWaasPolicyWafConfigAddressRateLimitingPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyWafConfigAddressRateLimitingOutput).ToGetWaasPolicyWafConfigAddressRateLimitingPtrOutputWithContext(ctx)
+}
+
+// GetWaasPolicyWafConfigAddressRateLimitingPtrInput is an input type that accepts GetWaasPolicyWafConfigAddressRateLimitingArgs, GetWaasPolicyWafConfigAddressRateLimitingPtr and GetWaasPolicyWafConfigAddressRateLimitingPtrOutput values.
+// You can construct a concrete instance of `GetWaasPolicyWafConfigAddressRateLimitingPtrInput` via:
+//
+//	        GetWaasPolicyWafConfigAddressRateLimitingArgs{...}
+//
+//	or:
+//
+//	        nil
+type GetWaasPolicyWafConfigAddressRateLimitingPtrInput interface {
+	pulumi.Input
+
+	ToGetWaasPolicyWafConfigAddressRateLimitingPtrOutput() GetWaasPolicyWafConfigAddressRateLimitingPtrOutput
+	ToGetWaasPolicyWafConfigAddressRateLimitingPtrOutputWithContext(context.Context) GetWaasPolicyWafConfigAddressRateLimitingPtrOutput
+}
+
+type getWaasPolicyWafConfigAddressRateLimitingPtrType GetWaasPolicyWafConfigAddressRateLimitingArgs
+
+func GetWaasPolicyWafConfigAddressRateLimitingPtr(v *GetWaasPolicyWafConfigAddressRateLimitingArgs) GetWaasPolicyWafConfigAddressRateLimitingPtrInput {
+	return (*getWaasPolicyWafConfigAddressRateLimitingPtrType)(v)
+}
+
+func (*getWaasPolicyWafConfigAddressRateLimitingPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**GetWaasPolicyWafConfigAddressRateLimiting)(nil)).Elem()
+}
+
+func (i *getWaasPolicyWafConfigAddressRateLimitingPtrType) ToGetWaasPolicyWafConfigAddressRateLimitingPtrOutput() GetWaasPolicyWafConfigAddressRateLimitingPtrOutput {
+	return i.ToGetWaasPolicyWafConfigAddressRateLimitingPtrOutputWithContext(context.Background())
+}
+
+func (i *getWaasPolicyWafConfigAddressRateLimitingPtrType) ToGetWaasPolicyWafConfigAddressRateLimitingPtrOutputWithContext(ctx context.Context) GetWaasPolicyWafConfigAddressRateLimitingPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyWafConfigAddressRateLimitingPtrOutput)
 }
 
 type GetWaasPolicyWafConfigAddressRateLimitingOutput struct{ *pulumi.OutputState }
@@ -19053,20 +17059,24 @@ func (o GetWaasPolicyWafConfigAddressRateLimitingOutput) ToGetWaasPolicyWafConfi
 	return o
 }
 
-func (o GetWaasPolicyWafConfigAddressRateLimitingOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyWafConfigAddressRateLimiting] {
-	return pulumix.Output[GetWaasPolicyWafConfigAddressRateLimiting]{
-		OutputState: o.OutputState,
-	}
+func (o GetWaasPolicyWafConfigAddressRateLimitingOutput) ToGetWaasPolicyWafConfigAddressRateLimitingPtrOutput() GetWaasPolicyWafConfigAddressRateLimitingPtrOutput {
+	return o.ToGetWaasPolicyWafConfigAddressRateLimitingPtrOutputWithContext(context.Background())
+}
+
+func (o GetWaasPolicyWafConfigAddressRateLimitingOutput) ToGetWaasPolicyWafConfigAddressRateLimitingPtrOutputWithContext(ctx context.Context) GetWaasPolicyWafConfigAddressRateLimitingPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v GetWaasPolicyWafConfigAddressRateLimiting) *GetWaasPolicyWafConfigAddressRateLimiting {
+		return &v
+	}).(GetWaasPolicyWafConfigAddressRateLimitingPtrOutput)
 }
 
 // The number of allowed requests per second from one IP address. If unspecified, defaults to `1`.
-func (o GetWaasPolicyWafConfigAddressRateLimitingOutput) AllowedRatePerAddress() pulumi.IntOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfigAddressRateLimiting) int { return v.AllowedRatePerAddress }).(pulumi.IntOutput)
+func (o GetWaasPolicyWafConfigAddressRateLimitingOutput) AllowedRatePerAddress() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfigAddressRateLimiting) *int { return v.AllowedRatePerAddress }).(pulumi.IntPtrOutput)
 }
 
 // The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
-func (o GetWaasPolicyWafConfigAddressRateLimitingOutput) BlockResponseCode() pulumi.IntOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfigAddressRateLimiting) int { return v.BlockResponseCode }).(pulumi.IntOutput)
+func (o GetWaasPolicyWafConfigAddressRateLimitingOutput) BlockResponseCode() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfigAddressRateLimiting) *int { return v.BlockResponseCode }).(pulumi.IntPtrOutput)
 }
 
 // Enables or disables the JavaScript challenge Web Application Firewall feature.
@@ -19075,23 +17085,87 @@ func (o GetWaasPolicyWafConfigAddressRateLimitingOutput) IsEnabled() pulumi.Bool
 }
 
 // The maximum number of requests allowed to be queued before subsequent requests are dropped. If unspecified, defaults to `10`.
-func (o GetWaasPolicyWafConfigAddressRateLimitingOutput) MaxDelayedCountPerAddress() pulumi.IntOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfigAddressRateLimiting) int { return v.MaxDelayedCountPerAddress }).(pulumi.IntOutput)
+func (o GetWaasPolicyWafConfigAddressRateLimitingOutput) MaxDelayedCountPerAddress() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfigAddressRateLimiting) *int { return v.MaxDelayedCountPerAddress }).(pulumi.IntPtrOutput)
+}
+
+type GetWaasPolicyWafConfigAddressRateLimitingPtrOutput struct{ *pulumi.OutputState }
+
+func (GetWaasPolicyWafConfigAddressRateLimitingPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GetWaasPolicyWafConfigAddressRateLimiting)(nil)).Elem()
+}
+
+func (o GetWaasPolicyWafConfigAddressRateLimitingPtrOutput) ToGetWaasPolicyWafConfigAddressRateLimitingPtrOutput() GetWaasPolicyWafConfigAddressRateLimitingPtrOutput {
+	return o
+}
+
+func (o GetWaasPolicyWafConfigAddressRateLimitingPtrOutput) ToGetWaasPolicyWafConfigAddressRateLimitingPtrOutputWithContext(ctx context.Context) GetWaasPolicyWafConfigAddressRateLimitingPtrOutput {
+	return o
+}
+
+func (o GetWaasPolicyWafConfigAddressRateLimitingPtrOutput) Elem() GetWaasPolicyWafConfigAddressRateLimitingOutput {
+	return o.ApplyT(func(v *GetWaasPolicyWafConfigAddressRateLimiting) GetWaasPolicyWafConfigAddressRateLimiting {
+		if v != nil {
+			return *v
+		}
+		var ret GetWaasPolicyWafConfigAddressRateLimiting
+		return ret
+	}).(GetWaasPolicyWafConfigAddressRateLimitingOutput)
+}
+
+// The number of allowed requests per second from one IP address. If unspecified, defaults to `1`.
+func (o GetWaasPolicyWafConfigAddressRateLimitingPtrOutput) AllowedRatePerAddress() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *GetWaasPolicyWafConfigAddressRateLimiting) *int {
+		if v == nil {
+			return nil
+		}
+		return v.AllowedRatePerAddress
+	}).(pulumi.IntPtrOutput)
+}
+
+// The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
+func (o GetWaasPolicyWafConfigAddressRateLimitingPtrOutput) BlockResponseCode() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *GetWaasPolicyWafConfigAddressRateLimiting) *int {
+		if v == nil {
+			return nil
+		}
+		return v.BlockResponseCode
+	}).(pulumi.IntPtrOutput)
+}
+
+// Enables or disables the JavaScript challenge Web Application Firewall feature.
+func (o GetWaasPolicyWafConfigAddressRateLimitingPtrOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *GetWaasPolicyWafConfigAddressRateLimiting) *bool {
+		if v == nil {
+			return nil
+		}
+		return &v.IsEnabled
+	}).(pulumi.BoolPtrOutput)
+}
+
+// The maximum number of requests allowed to be queued before subsequent requests are dropped. If unspecified, defaults to `10`.
+func (o GetWaasPolicyWafConfigAddressRateLimitingPtrOutput) MaxDelayedCountPerAddress() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *GetWaasPolicyWafConfigAddressRateLimiting) *int {
+		if v == nil {
+			return nil
+		}
+		return v.MaxDelayedCountPerAddress
+	}).(pulumi.IntPtrOutput)
 }
 
 type GetWaasPolicyWafConfigCachingRule struct {
 	// The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
 	Action string `pulumi:"action"`
 	// The duration to cache content for the caching rule, specified in ISO 8601 extended format. Supported units: seconds, minutes, hours, days, weeks, months. The maximum value that can be set for any unit is `99`. Mixing of multiple units is not supported. Only applies when the `action` is set to `CACHE`. Example: `PT1H`
-	CachingDuration string `pulumi:"cachingDuration"`
+	CachingDuration *string `pulumi:"cachingDuration"`
 	// The duration to cache content in the user's browser, specified in ISO 8601 extended format. Supported units: seconds, minutes, hours, days, weeks, months. The maximum value that can be set for any unit is `99`. Mixing of multiple units is not supported. Only applies when the `action` is set to `CACHE`. Example: `PT1H`
-	ClientCachingDuration string `pulumi:"clientCachingDuration"`
+	ClientCachingDuration *string `pulumi:"clientCachingDuration"`
 	// When defined, the JavaScript Challenge would be applied only for the requests that matched all the listed conditions.
 	Criterias []GetWaasPolicyWafConfigCachingRuleCriteria `pulumi:"criterias"`
 	// Enables or disables client caching. Browsers use the `Cache-Control` header value for caching content locally in the browser. This setting overrides the addition of a `Cache-Control` header in responses.
-	IsClientCachingEnabled bool `pulumi:"isClientCachingEnabled"`
+	IsClientCachingEnabled *bool `pulumi:"isClientCachingEnabled"`
 	// The unique key for the caching rule.
-	Key string `pulumi:"key"`
+	Key *string `pulumi:"key"`
 	// The unique name of the whitelist.
 	Name string `pulumi:"name"`
 }
@@ -19111,15 +17185,15 @@ type GetWaasPolicyWafConfigCachingRuleArgs struct {
 	// The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
 	Action pulumi.StringInput `pulumi:"action"`
 	// The duration to cache content for the caching rule, specified in ISO 8601 extended format. Supported units: seconds, minutes, hours, days, weeks, months. The maximum value that can be set for any unit is `99`. Mixing of multiple units is not supported. Only applies when the `action` is set to `CACHE`. Example: `PT1H`
-	CachingDuration pulumi.StringInput `pulumi:"cachingDuration"`
+	CachingDuration pulumi.StringPtrInput `pulumi:"cachingDuration"`
 	// The duration to cache content in the user's browser, specified in ISO 8601 extended format. Supported units: seconds, minutes, hours, days, weeks, months. The maximum value that can be set for any unit is `99`. Mixing of multiple units is not supported. Only applies when the `action` is set to `CACHE`. Example: `PT1H`
-	ClientCachingDuration pulumi.StringInput `pulumi:"clientCachingDuration"`
+	ClientCachingDuration pulumi.StringPtrInput `pulumi:"clientCachingDuration"`
 	// When defined, the JavaScript Challenge would be applied only for the requests that matched all the listed conditions.
 	Criterias GetWaasPolicyWafConfigCachingRuleCriteriaArrayInput `pulumi:"criterias"`
 	// Enables or disables client caching. Browsers use the `Cache-Control` header value for caching content locally in the browser. This setting overrides the addition of a `Cache-Control` header in responses.
-	IsClientCachingEnabled pulumi.BoolInput `pulumi:"isClientCachingEnabled"`
+	IsClientCachingEnabled pulumi.BoolPtrInput `pulumi:"isClientCachingEnabled"`
 	// The unique key for the caching rule.
-	Key pulumi.StringInput `pulumi:"key"`
+	Key pulumi.StringPtrInput `pulumi:"key"`
 	// The unique name of the whitelist.
 	Name pulumi.StringInput `pulumi:"name"`
 }
@@ -19134,12 +17208,6 @@ func (i GetWaasPolicyWafConfigCachingRuleArgs) ToGetWaasPolicyWafConfigCachingRu
 
 func (i GetWaasPolicyWafConfigCachingRuleArgs) ToGetWaasPolicyWafConfigCachingRuleOutputWithContext(ctx context.Context) GetWaasPolicyWafConfigCachingRuleOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyWafConfigCachingRuleOutput)
-}
-
-func (i GetWaasPolicyWafConfigCachingRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyWafConfigCachingRule] {
-	return pulumix.Output[GetWaasPolicyWafConfigCachingRule]{
-		OutputState: i.ToGetWaasPolicyWafConfigCachingRuleOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetWaasPolicyWafConfigCachingRuleArrayInput is an input type that accepts GetWaasPolicyWafConfigCachingRuleArray and GetWaasPolicyWafConfigCachingRuleArrayOutput values.
@@ -19167,12 +17235,6 @@ func (i GetWaasPolicyWafConfigCachingRuleArray) ToGetWaasPolicyWafConfigCachingR
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyWafConfigCachingRuleArrayOutput)
 }
 
-func (i GetWaasPolicyWafConfigCachingRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPolicyWafConfigCachingRule] {
-	return pulumix.Output[[]GetWaasPolicyWafConfigCachingRule]{
-		OutputState: i.ToGetWaasPolicyWafConfigCachingRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPolicyWafConfigCachingRuleOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPolicyWafConfigCachingRuleOutput) ElementType() reflect.Type {
@@ -19187,25 +17249,19 @@ func (o GetWaasPolicyWafConfigCachingRuleOutput) ToGetWaasPolicyWafConfigCaching
 	return o
 }
 
-func (o GetWaasPolicyWafConfigCachingRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyWafConfigCachingRule] {
-	return pulumix.Output[GetWaasPolicyWafConfigCachingRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
 func (o GetWaasPolicyWafConfigCachingRuleOutput) Action() pulumi.StringOutput {
 	return o.ApplyT(func(v GetWaasPolicyWafConfigCachingRule) string { return v.Action }).(pulumi.StringOutput)
 }
 
 // The duration to cache content for the caching rule, specified in ISO 8601 extended format. Supported units: seconds, minutes, hours, days, weeks, months. The maximum value that can be set for any unit is `99`. Mixing of multiple units is not supported. Only applies when the `action` is set to `CACHE`. Example: `PT1H`
-func (o GetWaasPolicyWafConfigCachingRuleOutput) CachingDuration() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfigCachingRule) string { return v.CachingDuration }).(pulumi.StringOutput)
+func (o GetWaasPolicyWafConfigCachingRuleOutput) CachingDuration() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfigCachingRule) *string { return v.CachingDuration }).(pulumi.StringPtrOutput)
 }
 
 // The duration to cache content in the user's browser, specified in ISO 8601 extended format. Supported units: seconds, minutes, hours, days, weeks, months. The maximum value that can be set for any unit is `99`. Mixing of multiple units is not supported. Only applies when the `action` is set to `CACHE`. Example: `PT1H`
-func (o GetWaasPolicyWafConfigCachingRuleOutput) ClientCachingDuration() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfigCachingRule) string { return v.ClientCachingDuration }).(pulumi.StringOutput)
+func (o GetWaasPolicyWafConfigCachingRuleOutput) ClientCachingDuration() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfigCachingRule) *string { return v.ClientCachingDuration }).(pulumi.StringPtrOutput)
 }
 
 // When defined, the JavaScript Challenge would be applied only for the requests that matched all the listed conditions.
@@ -19216,13 +17272,13 @@ func (o GetWaasPolicyWafConfigCachingRuleOutput) Criterias() GetWaasPolicyWafCon
 }
 
 // Enables or disables client caching. Browsers use the `Cache-Control` header value for caching content locally in the browser. This setting overrides the addition of a `Cache-Control` header in responses.
-func (o GetWaasPolicyWafConfigCachingRuleOutput) IsClientCachingEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfigCachingRule) bool { return v.IsClientCachingEnabled }).(pulumi.BoolOutput)
+func (o GetWaasPolicyWafConfigCachingRuleOutput) IsClientCachingEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfigCachingRule) *bool { return v.IsClientCachingEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // The unique key for the caching rule.
-func (o GetWaasPolicyWafConfigCachingRuleOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfigCachingRule) string { return v.Key }).(pulumi.StringOutput)
+func (o GetWaasPolicyWafConfigCachingRuleOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfigCachingRule) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
 // The unique name of the whitelist.
@@ -19242,12 +17298,6 @@ func (o GetWaasPolicyWafConfigCachingRuleArrayOutput) ToGetWaasPolicyWafConfigCa
 
 func (o GetWaasPolicyWafConfigCachingRuleArrayOutput) ToGetWaasPolicyWafConfigCachingRuleArrayOutputWithContext(ctx context.Context) GetWaasPolicyWafConfigCachingRuleArrayOutput {
 	return o
-}
-
-func (o GetWaasPolicyWafConfigCachingRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPolicyWafConfigCachingRule] {
-	return pulumix.Output[[]GetWaasPolicyWafConfigCachingRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetWaasPolicyWafConfigCachingRuleArrayOutput) Index(i pulumi.IntInput) GetWaasPolicyWafConfigCachingRuleOutput {
@@ -19325,12 +17375,6 @@ func (i GetWaasPolicyWafConfigCachingRuleCriteriaArgs) ToGetWaasPolicyWafConfigC
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyWafConfigCachingRuleCriteriaOutput)
 }
 
-func (i GetWaasPolicyWafConfigCachingRuleCriteriaArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyWafConfigCachingRuleCriteria] {
-	return pulumix.Output[GetWaasPolicyWafConfigCachingRuleCriteria]{
-		OutputState: i.ToGetWaasPolicyWafConfigCachingRuleCriteriaOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetWaasPolicyWafConfigCachingRuleCriteriaArrayInput is an input type that accepts GetWaasPolicyWafConfigCachingRuleCriteriaArray and GetWaasPolicyWafConfigCachingRuleCriteriaArrayOutput values.
 // You can construct a concrete instance of `GetWaasPolicyWafConfigCachingRuleCriteriaArrayInput` via:
 //
@@ -19356,12 +17400,6 @@ func (i GetWaasPolicyWafConfigCachingRuleCriteriaArray) ToGetWaasPolicyWafConfig
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyWafConfigCachingRuleCriteriaArrayOutput)
 }
 
-func (i GetWaasPolicyWafConfigCachingRuleCriteriaArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPolicyWafConfigCachingRuleCriteria] {
-	return pulumix.Output[[]GetWaasPolicyWafConfigCachingRuleCriteria]{
-		OutputState: i.ToGetWaasPolicyWafConfigCachingRuleCriteriaArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPolicyWafConfigCachingRuleCriteriaOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPolicyWafConfigCachingRuleCriteriaOutput) ElementType() reflect.Type {
@@ -19374,12 +17412,6 @@ func (o GetWaasPolicyWafConfigCachingRuleCriteriaOutput) ToGetWaasPolicyWafConfi
 
 func (o GetWaasPolicyWafConfigCachingRuleCriteriaOutput) ToGetWaasPolicyWafConfigCachingRuleCriteriaOutputWithContext(ctx context.Context) GetWaasPolicyWafConfigCachingRuleCriteriaOutput {
 	return o
-}
-
-func (o GetWaasPolicyWafConfigCachingRuleCriteriaOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyWafConfigCachingRuleCriteria] {
-	return pulumix.Output[GetWaasPolicyWafConfigCachingRuleCriteria]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The criteria the access rule and JavaScript Challenge uses to determine if action should be taken on a request.
@@ -19422,12 +17454,6 @@ func (o GetWaasPolicyWafConfigCachingRuleCriteriaArrayOutput) ToGetWaasPolicyWaf
 	return o
 }
 
-func (o GetWaasPolicyWafConfigCachingRuleCriteriaArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPolicyWafConfigCachingRuleCriteria] {
-	return pulumix.Output[[]GetWaasPolicyWafConfigCachingRuleCriteria]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWaasPolicyWafConfigCachingRuleCriteriaArrayOutput) Index(i pulumi.IntInput) GetWaasPolicyWafConfigCachingRuleCriteriaOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWaasPolicyWafConfigCachingRuleCriteria {
 		return vs[0].([]GetWaasPolicyWafConfigCachingRuleCriteria)[vs[1].(int)]
@@ -19438,9 +17464,9 @@ type GetWaasPolicyWafConfigCaptcha struct {
 	// The text to show when incorrect CAPTCHA text is entered. If unspecified, defaults to `The CAPTCHA was incorrect. Try again.`
 	FailureMessage string `pulumi:"failureMessage"`
 	// The text to show in the footer when showing a CAPTCHA challenge. If unspecified, defaults to 'Enter the letters and numbers as they are shown in the image above.'
-	FooterText string `pulumi:"footerText"`
+	FooterText *string `pulumi:"footerText"`
 	// The text to show in the header when showing a CAPTCHA challenge. If unspecified, defaults to 'We have detected an increased number of attempts to access this website. To help us keep this site secure, please let us know that you are not a robot by entering the text from the image below.'
-	HeaderText string `pulumi:"headerText"`
+	HeaderText *string `pulumi:"headerText"`
 	// The amount of time before the CAPTCHA expires, in seconds. If unspecified, defaults to `300`.
 	SessionExpirationInSeconds int `pulumi:"sessionExpirationInSeconds"`
 	// The text to show on the label of the CAPTCHA challenge submit button. If unspecified, defaults to `Yes, I am human`.
@@ -19466,9 +17492,9 @@ type GetWaasPolicyWafConfigCaptchaArgs struct {
 	// The text to show when incorrect CAPTCHA text is entered. If unspecified, defaults to `The CAPTCHA was incorrect. Try again.`
 	FailureMessage pulumi.StringInput `pulumi:"failureMessage"`
 	// The text to show in the footer when showing a CAPTCHA challenge. If unspecified, defaults to 'Enter the letters and numbers as they are shown in the image above.'
-	FooterText pulumi.StringInput `pulumi:"footerText"`
+	FooterText pulumi.StringPtrInput `pulumi:"footerText"`
 	// The text to show in the header when showing a CAPTCHA challenge. If unspecified, defaults to 'We have detected an increased number of attempts to access this website. To help us keep this site secure, please let us know that you are not a robot by entering the text from the image below.'
-	HeaderText pulumi.StringInput `pulumi:"headerText"`
+	HeaderText pulumi.StringPtrInput `pulumi:"headerText"`
 	// The amount of time before the CAPTCHA expires, in seconds. If unspecified, defaults to `300`.
 	SessionExpirationInSeconds pulumi.IntInput `pulumi:"sessionExpirationInSeconds"`
 	// The text to show on the label of the CAPTCHA challenge submit button. If unspecified, defaults to `Yes, I am human`.
@@ -19489,12 +17515,6 @@ func (i GetWaasPolicyWafConfigCaptchaArgs) ToGetWaasPolicyWafConfigCaptchaOutput
 
 func (i GetWaasPolicyWafConfigCaptchaArgs) ToGetWaasPolicyWafConfigCaptchaOutputWithContext(ctx context.Context) GetWaasPolicyWafConfigCaptchaOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyWafConfigCaptchaOutput)
-}
-
-func (i GetWaasPolicyWafConfigCaptchaArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyWafConfigCaptcha] {
-	return pulumix.Output[GetWaasPolicyWafConfigCaptcha]{
-		OutputState: i.ToGetWaasPolicyWafConfigCaptchaOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetWaasPolicyWafConfigCaptchaArrayInput is an input type that accepts GetWaasPolicyWafConfigCaptchaArray and GetWaasPolicyWafConfigCaptchaArrayOutput values.
@@ -19522,12 +17542,6 @@ func (i GetWaasPolicyWafConfigCaptchaArray) ToGetWaasPolicyWafConfigCaptchaArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyWafConfigCaptchaArrayOutput)
 }
 
-func (i GetWaasPolicyWafConfigCaptchaArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPolicyWafConfigCaptcha] {
-	return pulumix.Output[[]GetWaasPolicyWafConfigCaptcha]{
-		OutputState: i.ToGetWaasPolicyWafConfigCaptchaArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPolicyWafConfigCaptchaOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPolicyWafConfigCaptchaOutput) ElementType() reflect.Type {
@@ -19542,25 +17556,19 @@ func (o GetWaasPolicyWafConfigCaptchaOutput) ToGetWaasPolicyWafConfigCaptchaOutp
 	return o
 }
 
-func (o GetWaasPolicyWafConfigCaptchaOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyWafConfigCaptcha] {
-	return pulumix.Output[GetWaasPolicyWafConfigCaptcha]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The text to show when incorrect CAPTCHA text is entered. If unspecified, defaults to `The CAPTCHA was incorrect. Try again.`
 func (o GetWaasPolicyWafConfigCaptchaOutput) FailureMessage() pulumi.StringOutput {
 	return o.ApplyT(func(v GetWaasPolicyWafConfigCaptcha) string { return v.FailureMessage }).(pulumi.StringOutput)
 }
 
 // The text to show in the footer when showing a CAPTCHA challenge. If unspecified, defaults to 'Enter the letters and numbers as they are shown in the image above.'
-func (o GetWaasPolicyWafConfigCaptchaOutput) FooterText() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfigCaptcha) string { return v.FooterText }).(pulumi.StringOutput)
+func (o GetWaasPolicyWafConfigCaptchaOutput) FooterText() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfigCaptcha) *string { return v.FooterText }).(pulumi.StringPtrOutput)
 }
 
 // The text to show in the header when showing a CAPTCHA challenge. If unspecified, defaults to 'We have detected an increased number of attempts to access this website. To help us keep this site secure, please let us know that you are not a robot by entering the text from the image below.'
-func (o GetWaasPolicyWafConfigCaptchaOutput) HeaderText() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfigCaptcha) string { return v.HeaderText }).(pulumi.StringOutput)
+func (o GetWaasPolicyWafConfigCaptchaOutput) HeaderText() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfigCaptcha) *string { return v.HeaderText }).(pulumi.StringPtrOutput)
 }
 
 // The amount of time before the CAPTCHA expires, in seconds. If unspecified, defaults to `300`.
@@ -19597,12 +17605,6 @@ func (o GetWaasPolicyWafConfigCaptchaArrayOutput) ToGetWaasPolicyWafConfigCaptch
 	return o
 }
 
-func (o GetWaasPolicyWafConfigCaptchaArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPolicyWafConfigCaptcha] {
-	return pulumix.Output[[]GetWaasPolicyWafConfigCaptcha]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWaasPolicyWafConfigCaptchaArrayOutput) Index(i pulumi.IntInput) GetWaasPolicyWafConfigCaptchaOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWaasPolicyWafConfigCaptcha {
 		return vs[0].([]GetWaasPolicyWafConfigCaptcha)[vs[1].(int)]
@@ -19611,11 +17613,11 @@ func (o GetWaasPolicyWafConfigCaptchaArrayOutput) Index(i pulumi.IntInput) GetWa
 
 type GetWaasPolicyWafConfigCustomProtectionRule struct {
 	// The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
-	Action string `pulumi:"action"`
+	Action *string `pulumi:"action"`
 	// An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
 	Exclusions []GetWaasPolicyWafConfigCustomProtectionRuleExclusion `pulumi:"exclusions"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom protection rule.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 // GetWaasPolicyWafConfigCustomProtectionRuleInput is an input type that accepts GetWaasPolicyWafConfigCustomProtectionRuleArgs and GetWaasPolicyWafConfigCustomProtectionRuleOutput values.
@@ -19631,11 +17633,11 @@ type GetWaasPolicyWafConfigCustomProtectionRuleInput interface {
 
 type GetWaasPolicyWafConfigCustomProtectionRuleArgs struct {
 	// The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
-	Action pulumi.StringInput `pulumi:"action"`
+	Action pulumi.StringPtrInput `pulumi:"action"`
 	// An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
 	Exclusions GetWaasPolicyWafConfigCustomProtectionRuleExclusionArrayInput `pulumi:"exclusions"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom protection rule.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 }
 
 func (GetWaasPolicyWafConfigCustomProtectionRuleArgs) ElementType() reflect.Type {
@@ -19648,12 +17650,6 @@ func (i GetWaasPolicyWafConfigCustomProtectionRuleArgs) ToGetWaasPolicyWafConfig
 
 func (i GetWaasPolicyWafConfigCustomProtectionRuleArgs) ToGetWaasPolicyWafConfigCustomProtectionRuleOutputWithContext(ctx context.Context) GetWaasPolicyWafConfigCustomProtectionRuleOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyWafConfigCustomProtectionRuleOutput)
-}
-
-func (i GetWaasPolicyWafConfigCustomProtectionRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyWafConfigCustomProtectionRule] {
-	return pulumix.Output[GetWaasPolicyWafConfigCustomProtectionRule]{
-		OutputState: i.ToGetWaasPolicyWafConfigCustomProtectionRuleOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetWaasPolicyWafConfigCustomProtectionRuleArrayInput is an input type that accepts GetWaasPolicyWafConfigCustomProtectionRuleArray and GetWaasPolicyWafConfigCustomProtectionRuleArrayOutput values.
@@ -19681,12 +17677,6 @@ func (i GetWaasPolicyWafConfigCustomProtectionRuleArray) ToGetWaasPolicyWafConfi
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyWafConfigCustomProtectionRuleArrayOutput)
 }
 
-func (i GetWaasPolicyWafConfigCustomProtectionRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPolicyWafConfigCustomProtectionRule] {
-	return pulumix.Output[[]GetWaasPolicyWafConfigCustomProtectionRule]{
-		OutputState: i.ToGetWaasPolicyWafConfigCustomProtectionRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPolicyWafConfigCustomProtectionRuleOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPolicyWafConfigCustomProtectionRuleOutput) ElementType() reflect.Type {
@@ -19701,15 +17691,9 @@ func (o GetWaasPolicyWafConfigCustomProtectionRuleOutput) ToGetWaasPolicyWafConf
 	return o
 }
 
-func (o GetWaasPolicyWafConfigCustomProtectionRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyWafConfigCustomProtectionRule] {
-	return pulumix.Output[GetWaasPolicyWafConfigCustomProtectionRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
-func (o GetWaasPolicyWafConfigCustomProtectionRuleOutput) Action() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfigCustomProtectionRule) string { return v.Action }).(pulumi.StringOutput)
+func (o GetWaasPolicyWafConfigCustomProtectionRuleOutput) Action() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfigCustomProtectionRule) *string { return v.Action }).(pulumi.StringPtrOutput)
 }
 
 // An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
@@ -19720,8 +17704,8 @@ func (o GetWaasPolicyWafConfigCustomProtectionRuleOutput) Exclusions() GetWaasPo
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom protection rule.
-func (o GetWaasPolicyWafConfigCustomProtectionRuleOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfigCustomProtectionRule) string { return v.Id }).(pulumi.StringOutput)
+func (o GetWaasPolicyWafConfigCustomProtectionRuleOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfigCustomProtectionRule) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 type GetWaasPolicyWafConfigCustomProtectionRuleArrayOutput struct{ *pulumi.OutputState }
@@ -19738,12 +17722,6 @@ func (o GetWaasPolicyWafConfigCustomProtectionRuleArrayOutput) ToGetWaasPolicyWa
 	return o
 }
 
-func (o GetWaasPolicyWafConfigCustomProtectionRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPolicyWafConfigCustomProtectionRule] {
-	return pulumix.Output[[]GetWaasPolicyWafConfigCustomProtectionRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWaasPolicyWafConfigCustomProtectionRuleArrayOutput) Index(i pulumi.IntInput) GetWaasPolicyWafConfigCustomProtectionRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWaasPolicyWafConfigCustomProtectionRule {
 		return vs[0].([]GetWaasPolicyWafConfigCustomProtectionRule)[vs[1].(int)]
@@ -19754,7 +17732,7 @@ type GetWaasPolicyWafConfigCustomProtectionRuleExclusion struct {
 	// An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
 	Exclusions []string `pulumi:"exclusions"`
 	// The target of the exclusion.
-	Target string `pulumi:"target"`
+	Target *string `pulumi:"target"`
 }
 
 // GetWaasPolicyWafConfigCustomProtectionRuleExclusionInput is an input type that accepts GetWaasPolicyWafConfigCustomProtectionRuleExclusionArgs and GetWaasPolicyWafConfigCustomProtectionRuleExclusionOutput values.
@@ -19772,7 +17750,7 @@ type GetWaasPolicyWafConfigCustomProtectionRuleExclusionArgs struct {
 	// An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
 	Exclusions pulumi.StringArrayInput `pulumi:"exclusions"`
 	// The target of the exclusion.
-	Target pulumi.StringInput `pulumi:"target"`
+	Target pulumi.StringPtrInput `pulumi:"target"`
 }
 
 func (GetWaasPolicyWafConfigCustomProtectionRuleExclusionArgs) ElementType() reflect.Type {
@@ -19785,12 +17763,6 @@ func (i GetWaasPolicyWafConfigCustomProtectionRuleExclusionArgs) ToGetWaasPolicy
 
 func (i GetWaasPolicyWafConfigCustomProtectionRuleExclusionArgs) ToGetWaasPolicyWafConfigCustomProtectionRuleExclusionOutputWithContext(ctx context.Context) GetWaasPolicyWafConfigCustomProtectionRuleExclusionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyWafConfigCustomProtectionRuleExclusionOutput)
-}
-
-func (i GetWaasPolicyWafConfigCustomProtectionRuleExclusionArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyWafConfigCustomProtectionRuleExclusion] {
-	return pulumix.Output[GetWaasPolicyWafConfigCustomProtectionRuleExclusion]{
-		OutputState: i.ToGetWaasPolicyWafConfigCustomProtectionRuleExclusionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetWaasPolicyWafConfigCustomProtectionRuleExclusionArrayInput is an input type that accepts GetWaasPolicyWafConfigCustomProtectionRuleExclusionArray and GetWaasPolicyWafConfigCustomProtectionRuleExclusionArrayOutput values.
@@ -19818,12 +17790,6 @@ func (i GetWaasPolicyWafConfigCustomProtectionRuleExclusionArray) ToGetWaasPolic
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyWafConfigCustomProtectionRuleExclusionArrayOutput)
 }
 
-func (i GetWaasPolicyWafConfigCustomProtectionRuleExclusionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPolicyWafConfigCustomProtectionRuleExclusion] {
-	return pulumix.Output[[]GetWaasPolicyWafConfigCustomProtectionRuleExclusion]{
-		OutputState: i.ToGetWaasPolicyWafConfigCustomProtectionRuleExclusionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPolicyWafConfigCustomProtectionRuleExclusionOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPolicyWafConfigCustomProtectionRuleExclusionOutput) ElementType() reflect.Type {
@@ -19838,20 +17804,14 @@ func (o GetWaasPolicyWafConfigCustomProtectionRuleExclusionOutput) ToGetWaasPoli
 	return o
 }
 
-func (o GetWaasPolicyWafConfigCustomProtectionRuleExclusionOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyWafConfigCustomProtectionRuleExclusion] {
-	return pulumix.Output[GetWaasPolicyWafConfigCustomProtectionRuleExclusion]{
-		OutputState: o.OutputState,
-	}
-}
-
 // An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
 func (o GetWaasPolicyWafConfigCustomProtectionRuleExclusionOutput) Exclusions() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetWaasPolicyWafConfigCustomProtectionRuleExclusion) []string { return v.Exclusions }).(pulumi.StringArrayOutput)
 }
 
 // The target of the exclusion.
-func (o GetWaasPolicyWafConfigCustomProtectionRuleExclusionOutput) Target() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfigCustomProtectionRuleExclusion) string { return v.Target }).(pulumi.StringOutput)
+func (o GetWaasPolicyWafConfigCustomProtectionRuleExclusionOutput) Target() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfigCustomProtectionRuleExclusion) *string { return v.Target }).(pulumi.StringPtrOutput)
 }
 
 type GetWaasPolicyWafConfigCustomProtectionRuleExclusionArrayOutput struct{ *pulumi.OutputState }
@@ -19868,12 +17828,6 @@ func (o GetWaasPolicyWafConfigCustomProtectionRuleExclusionArrayOutput) ToGetWaa
 	return o
 }
 
-func (o GetWaasPolicyWafConfigCustomProtectionRuleExclusionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPolicyWafConfigCustomProtectionRuleExclusion] {
-	return pulumix.Output[[]GetWaasPolicyWafConfigCustomProtectionRuleExclusion]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWaasPolicyWafConfigCustomProtectionRuleExclusionArrayOutput) Index(i pulumi.IntInput) GetWaasPolicyWafConfigCustomProtectionRuleExclusionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWaasPolicyWafConfigCustomProtectionRuleExclusion {
 		return vs[0].([]GetWaasPolicyWafConfigCustomProtectionRuleExclusion)[vs[1].(int)]
@@ -19882,21 +17836,21 @@ func (o GetWaasPolicyWafConfigCustomProtectionRuleExclusionArrayOutput) Index(i 
 
 type GetWaasPolicyWafConfigDeviceFingerprintChallenge struct {
 	// The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
-	Action string `pulumi:"action"`
+	Action *string `pulumi:"action"`
 	// The number of seconds between challenges from the same IP address. If unspecified, defaults to `60`.
-	ActionExpirationInSeconds int `pulumi:"actionExpirationInSeconds"`
+	ActionExpirationInSeconds *int `pulumi:"actionExpirationInSeconds"`
 	// The challenge settings if `action` is set to `BLOCK`.
-	ChallengeSettings GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettings `pulumi:"challengeSettings"`
+	ChallengeSettings *GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettings `pulumi:"challengeSettings"`
 	// The number of failed requests before taking action. If unspecified, defaults to `10`.
-	FailureThreshold int `pulumi:"failureThreshold"`
+	FailureThreshold *int `pulumi:"failureThreshold"`
 	// The number of seconds before the failure threshold resets. If unspecified, defaults to  `60`.
-	FailureThresholdExpirationInSeconds int `pulumi:"failureThresholdExpirationInSeconds"`
+	FailureThresholdExpirationInSeconds *int `pulumi:"failureThresholdExpirationInSeconds"`
 	// Enables or disables the JavaScript challenge Web Application Firewall feature.
 	IsEnabled bool `pulumi:"isEnabled"`
 	// The maximum number of IP addresses permitted with the same device fingerprint. If unspecified, defaults to `20`.
-	MaxAddressCount int `pulumi:"maxAddressCount"`
+	MaxAddressCount *int `pulumi:"maxAddressCount"`
 	// The number of seconds before the maximum addresses count resets. If unspecified, defaults to `60`.
-	MaxAddressCountExpirationInSeconds int `pulumi:"maxAddressCountExpirationInSeconds"`
+	MaxAddressCountExpirationInSeconds *int `pulumi:"maxAddressCountExpirationInSeconds"`
 }
 
 // GetWaasPolicyWafConfigDeviceFingerprintChallengeInput is an input type that accepts GetWaasPolicyWafConfigDeviceFingerprintChallengeArgs and GetWaasPolicyWafConfigDeviceFingerprintChallengeOutput values.
@@ -19912,21 +17866,21 @@ type GetWaasPolicyWafConfigDeviceFingerprintChallengeInput interface {
 
 type GetWaasPolicyWafConfigDeviceFingerprintChallengeArgs struct {
 	// The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
-	Action pulumi.StringInput `pulumi:"action"`
+	Action pulumi.StringPtrInput `pulumi:"action"`
 	// The number of seconds between challenges from the same IP address. If unspecified, defaults to `60`.
-	ActionExpirationInSeconds pulumi.IntInput `pulumi:"actionExpirationInSeconds"`
+	ActionExpirationInSeconds pulumi.IntPtrInput `pulumi:"actionExpirationInSeconds"`
 	// The challenge settings if `action` is set to `BLOCK`.
-	ChallengeSettings GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsInput `pulumi:"challengeSettings"`
+	ChallengeSettings GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrInput `pulumi:"challengeSettings"`
 	// The number of failed requests before taking action. If unspecified, defaults to `10`.
-	FailureThreshold pulumi.IntInput `pulumi:"failureThreshold"`
+	FailureThreshold pulumi.IntPtrInput `pulumi:"failureThreshold"`
 	// The number of seconds before the failure threshold resets. If unspecified, defaults to  `60`.
-	FailureThresholdExpirationInSeconds pulumi.IntInput `pulumi:"failureThresholdExpirationInSeconds"`
+	FailureThresholdExpirationInSeconds pulumi.IntPtrInput `pulumi:"failureThresholdExpirationInSeconds"`
 	// Enables or disables the JavaScript challenge Web Application Firewall feature.
 	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
 	// The maximum number of IP addresses permitted with the same device fingerprint. If unspecified, defaults to `20`.
-	MaxAddressCount pulumi.IntInput `pulumi:"maxAddressCount"`
+	MaxAddressCount pulumi.IntPtrInput `pulumi:"maxAddressCount"`
 	// The number of seconds before the maximum addresses count resets. If unspecified, defaults to `60`.
-	MaxAddressCountExpirationInSeconds pulumi.IntInput `pulumi:"maxAddressCountExpirationInSeconds"`
+	MaxAddressCountExpirationInSeconds pulumi.IntPtrInput `pulumi:"maxAddressCountExpirationInSeconds"`
 }
 
 func (GetWaasPolicyWafConfigDeviceFingerprintChallengeArgs) ElementType() reflect.Type {
@@ -19941,10 +17895,45 @@ func (i GetWaasPolicyWafConfigDeviceFingerprintChallengeArgs) ToGetWaasPolicyWaf
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyWafConfigDeviceFingerprintChallengeOutput)
 }
 
-func (i GetWaasPolicyWafConfigDeviceFingerprintChallengeArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyWafConfigDeviceFingerprintChallenge] {
-	return pulumix.Output[GetWaasPolicyWafConfigDeviceFingerprintChallenge]{
-		OutputState: i.ToGetWaasPolicyWafConfigDeviceFingerprintChallengeOutputWithContext(ctx).OutputState,
-	}
+func (i GetWaasPolicyWafConfigDeviceFingerprintChallengeArgs) ToGetWaasPolicyWafConfigDeviceFingerprintChallengePtrOutput() GetWaasPolicyWafConfigDeviceFingerprintChallengePtrOutput {
+	return i.ToGetWaasPolicyWafConfigDeviceFingerprintChallengePtrOutputWithContext(context.Background())
+}
+
+func (i GetWaasPolicyWafConfigDeviceFingerprintChallengeArgs) ToGetWaasPolicyWafConfigDeviceFingerprintChallengePtrOutputWithContext(ctx context.Context) GetWaasPolicyWafConfigDeviceFingerprintChallengePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyWafConfigDeviceFingerprintChallengeOutput).ToGetWaasPolicyWafConfigDeviceFingerprintChallengePtrOutputWithContext(ctx)
+}
+
+// GetWaasPolicyWafConfigDeviceFingerprintChallengePtrInput is an input type that accepts GetWaasPolicyWafConfigDeviceFingerprintChallengeArgs, GetWaasPolicyWafConfigDeviceFingerprintChallengePtr and GetWaasPolicyWafConfigDeviceFingerprintChallengePtrOutput values.
+// You can construct a concrete instance of `GetWaasPolicyWafConfigDeviceFingerprintChallengePtrInput` via:
+//
+//	        GetWaasPolicyWafConfigDeviceFingerprintChallengeArgs{...}
+//
+//	or:
+//
+//	        nil
+type GetWaasPolicyWafConfigDeviceFingerprintChallengePtrInput interface {
+	pulumi.Input
+
+	ToGetWaasPolicyWafConfigDeviceFingerprintChallengePtrOutput() GetWaasPolicyWafConfigDeviceFingerprintChallengePtrOutput
+	ToGetWaasPolicyWafConfigDeviceFingerprintChallengePtrOutputWithContext(context.Context) GetWaasPolicyWafConfigDeviceFingerprintChallengePtrOutput
+}
+
+type getWaasPolicyWafConfigDeviceFingerprintChallengePtrType GetWaasPolicyWafConfigDeviceFingerprintChallengeArgs
+
+func GetWaasPolicyWafConfigDeviceFingerprintChallengePtr(v *GetWaasPolicyWafConfigDeviceFingerprintChallengeArgs) GetWaasPolicyWafConfigDeviceFingerprintChallengePtrInput {
+	return (*getWaasPolicyWafConfigDeviceFingerprintChallengePtrType)(v)
+}
+
+func (*getWaasPolicyWafConfigDeviceFingerprintChallengePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**GetWaasPolicyWafConfigDeviceFingerprintChallenge)(nil)).Elem()
+}
+
+func (i *getWaasPolicyWafConfigDeviceFingerprintChallengePtrType) ToGetWaasPolicyWafConfigDeviceFingerprintChallengePtrOutput() GetWaasPolicyWafConfigDeviceFingerprintChallengePtrOutput {
+	return i.ToGetWaasPolicyWafConfigDeviceFingerprintChallengePtrOutputWithContext(context.Background())
+}
+
+func (i *getWaasPolicyWafConfigDeviceFingerprintChallengePtrType) ToGetWaasPolicyWafConfigDeviceFingerprintChallengePtrOutputWithContext(ctx context.Context) GetWaasPolicyWafConfigDeviceFingerprintChallengePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyWafConfigDeviceFingerprintChallengePtrOutput)
 }
 
 type GetWaasPolicyWafConfigDeviceFingerprintChallengeOutput struct{ *pulumi.OutputState }
@@ -19961,39 +17950,43 @@ func (o GetWaasPolicyWafConfigDeviceFingerprintChallengeOutput) ToGetWaasPolicyW
 	return o
 }
 
-func (o GetWaasPolicyWafConfigDeviceFingerprintChallengeOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyWafConfigDeviceFingerprintChallenge] {
-	return pulumix.Output[GetWaasPolicyWafConfigDeviceFingerprintChallenge]{
-		OutputState: o.OutputState,
-	}
+func (o GetWaasPolicyWafConfigDeviceFingerprintChallengeOutput) ToGetWaasPolicyWafConfigDeviceFingerprintChallengePtrOutput() GetWaasPolicyWafConfigDeviceFingerprintChallengePtrOutput {
+	return o.ToGetWaasPolicyWafConfigDeviceFingerprintChallengePtrOutputWithContext(context.Background())
+}
+
+func (o GetWaasPolicyWafConfigDeviceFingerprintChallengeOutput) ToGetWaasPolicyWafConfigDeviceFingerprintChallengePtrOutputWithContext(ctx context.Context) GetWaasPolicyWafConfigDeviceFingerprintChallengePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v GetWaasPolicyWafConfigDeviceFingerprintChallenge) *GetWaasPolicyWafConfigDeviceFingerprintChallenge {
+		return &v
+	}).(GetWaasPolicyWafConfigDeviceFingerprintChallengePtrOutput)
 }
 
 // The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
-func (o GetWaasPolicyWafConfigDeviceFingerprintChallengeOutput) Action() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfigDeviceFingerprintChallenge) string { return v.Action }).(pulumi.StringOutput)
+func (o GetWaasPolicyWafConfigDeviceFingerprintChallengeOutput) Action() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfigDeviceFingerprintChallenge) *string { return v.Action }).(pulumi.StringPtrOutput)
 }
 
 // The number of seconds between challenges from the same IP address. If unspecified, defaults to `60`.
-func (o GetWaasPolicyWafConfigDeviceFingerprintChallengeOutput) ActionExpirationInSeconds() pulumi.IntOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfigDeviceFingerprintChallenge) int { return v.ActionExpirationInSeconds }).(pulumi.IntOutput)
+func (o GetWaasPolicyWafConfigDeviceFingerprintChallengeOutput) ActionExpirationInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfigDeviceFingerprintChallenge) *int { return v.ActionExpirationInSeconds }).(pulumi.IntPtrOutput)
 }
 
 // The challenge settings if `action` is set to `BLOCK`.
-func (o GetWaasPolicyWafConfigDeviceFingerprintChallengeOutput) ChallengeSettings() GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfigDeviceFingerprintChallenge) GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettings {
+func (o GetWaasPolicyWafConfigDeviceFingerprintChallengeOutput) ChallengeSettings() GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfigDeviceFingerprintChallenge) *GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettings {
 		return v.ChallengeSettings
-	}).(GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsOutput)
+	}).(GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrOutput)
 }
 
 // The number of failed requests before taking action. If unspecified, defaults to `10`.
-func (o GetWaasPolicyWafConfigDeviceFingerprintChallengeOutput) FailureThreshold() pulumi.IntOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfigDeviceFingerprintChallenge) int { return v.FailureThreshold }).(pulumi.IntOutput)
+func (o GetWaasPolicyWafConfigDeviceFingerprintChallengeOutput) FailureThreshold() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfigDeviceFingerprintChallenge) *int { return v.FailureThreshold }).(pulumi.IntPtrOutput)
 }
 
 // The number of seconds before the failure threshold resets. If unspecified, defaults to  `60`.
-func (o GetWaasPolicyWafConfigDeviceFingerprintChallengeOutput) FailureThresholdExpirationInSeconds() pulumi.IntOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfigDeviceFingerprintChallenge) int {
+func (o GetWaasPolicyWafConfigDeviceFingerprintChallengeOutput) FailureThresholdExpirationInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfigDeviceFingerprintChallenge) *int {
 		return v.FailureThresholdExpirationInSeconds
-	}).(pulumi.IntOutput)
+	}).(pulumi.IntPtrOutput)
 }
 
 // Enables or disables the JavaScript challenge Web Application Firewall feature.
@@ -20002,36 +17995,140 @@ func (o GetWaasPolicyWafConfigDeviceFingerprintChallengeOutput) IsEnabled() pulu
 }
 
 // The maximum number of IP addresses permitted with the same device fingerprint. If unspecified, defaults to `20`.
-func (o GetWaasPolicyWafConfigDeviceFingerprintChallengeOutput) MaxAddressCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfigDeviceFingerprintChallenge) int { return v.MaxAddressCount }).(pulumi.IntOutput)
+func (o GetWaasPolicyWafConfigDeviceFingerprintChallengeOutput) MaxAddressCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfigDeviceFingerprintChallenge) *int { return v.MaxAddressCount }).(pulumi.IntPtrOutput)
 }
 
 // The number of seconds before the maximum addresses count resets. If unspecified, defaults to `60`.
-func (o GetWaasPolicyWafConfigDeviceFingerprintChallengeOutput) MaxAddressCountExpirationInSeconds() pulumi.IntOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfigDeviceFingerprintChallenge) int {
+func (o GetWaasPolicyWafConfigDeviceFingerprintChallengeOutput) MaxAddressCountExpirationInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfigDeviceFingerprintChallenge) *int {
 		return v.MaxAddressCountExpirationInSeconds
-	}).(pulumi.IntOutput)
+	}).(pulumi.IntPtrOutput)
+}
+
+type GetWaasPolicyWafConfigDeviceFingerprintChallengePtrOutput struct{ *pulumi.OutputState }
+
+func (GetWaasPolicyWafConfigDeviceFingerprintChallengePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GetWaasPolicyWafConfigDeviceFingerprintChallenge)(nil)).Elem()
+}
+
+func (o GetWaasPolicyWafConfigDeviceFingerprintChallengePtrOutput) ToGetWaasPolicyWafConfigDeviceFingerprintChallengePtrOutput() GetWaasPolicyWafConfigDeviceFingerprintChallengePtrOutput {
+	return o
+}
+
+func (o GetWaasPolicyWafConfigDeviceFingerprintChallengePtrOutput) ToGetWaasPolicyWafConfigDeviceFingerprintChallengePtrOutputWithContext(ctx context.Context) GetWaasPolicyWafConfigDeviceFingerprintChallengePtrOutput {
+	return o
+}
+
+func (o GetWaasPolicyWafConfigDeviceFingerprintChallengePtrOutput) Elem() GetWaasPolicyWafConfigDeviceFingerprintChallengeOutput {
+	return o.ApplyT(func(v *GetWaasPolicyWafConfigDeviceFingerprintChallenge) GetWaasPolicyWafConfigDeviceFingerprintChallenge {
+		if v != nil {
+			return *v
+		}
+		var ret GetWaasPolicyWafConfigDeviceFingerprintChallenge
+		return ret
+	}).(GetWaasPolicyWafConfigDeviceFingerprintChallengeOutput)
+}
+
+// The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
+func (o GetWaasPolicyWafConfigDeviceFingerprintChallengePtrOutput) Action() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GetWaasPolicyWafConfigDeviceFingerprintChallenge) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Action
+	}).(pulumi.StringPtrOutput)
+}
+
+// The number of seconds between challenges from the same IP address. If unspecified, defaults to `60`.
+func (o GetWaasPolicyWafConfigDeviceFingerprintChallengePtrOutput) ActionExpirationInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *GetWaasPolicyWafConfigDeviceFingerprintChallenge) *int {
+		if v == nil {
+			return nil
+		}
+		return v.ActionExpirationInSeconds
+	}).(pulumi.IntPtrOutput)
+}
+
+// The challenge settings if `action` is set to `BLOCK`.
+func (o GetWaasPolicyWafConfigDeviceFingerprintChallengePtrOutput) ChallengeSettings() GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrOutput {
+	return o.ApplyT(func(v *GetWaasPolicyWafConfigDeviceFingerprintChallenge) *GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettings {
+		if v == nil {
+			return nil
+		}
+		return v.ChallengeSettings
+	}).(GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrOutput)
+}
+
+// The number of failed requests before taking action. If unspecified, defaults to `10`.
+func (o GetWaasPolicyWafConfigDeviceFingerprintChallengePtrOutput) FailureThreshold() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *GetWaasPolicyWafConfigDeviceFingerprintChallenge) *int {
+		if v == nil {
+			return nil
+		}
+		return v.FailureThreshold
+	}).(pulumi.IntPtrOutput)
+}
+
+// The number of seconds before the failure threshold resets. If unspecified, defaults to  `60`.
+func (o GetWaasPolicyWafConfigDeviceFingerprintChallengePtrOutput) FailureThresholdExpirationInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *GetWaasPolicyWafConfigDeviceFingerprintChallenge) *int {
+		if v == nil {
+			return nil
+		}
+		return v.FailureThresholdExpirationInSeconds
+	}).(pulumi.IntPtrOutput)
+}
+
+// Enables or disables the JavaScript challenge Web Application Firewall feature.
+func (o GetWaasPolicyWafConfigDeviceFingerprintChallengePtrOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *GetWaasPolicyWafConfigDeviceFingerprintChallenge) *bool {
+		if v == nil {
+			return nil
+		}
+		return &v.IsEnabled
+	}).(pulumi.BoolPtrOutput)
+}
+
+// The maximum number of IP addresses permitted with the same device fingerprint. If unspecified, defaults to `20`.
+func (o GetWaasPolicyWafConfigDeviceFingerprintChallengePtrOutput) MaxAddressCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *GetWaasPolicyWafConfigDeviceFingerprintChallenge) *int {
+		if v == nil {
+			return nil
+		}
+		return v.MaxAddressCount
+	}).(pulumi.IntPtrOutput)
+}
+
+// The number of seconds before the maximum addresses count resets. If unspecified, defaults to `60`.
+func (o GetWaasPolicyWafConfigDeviceFingerprintChallengePtrOutput) MaxAddressCountExpirationInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *GetWaasPolicyWafConfigDeviceFingerprintChallenge) *int {
+		if v == nil {
+			return nil
+		}
+		return v.MaxAddressCountExpirationInSeconds
+	}).(pulumi.IntPtrOutput)
 }
 
 type GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettings struct {
 	// If `action` is set to `BLOCK`, this specifies how the traffic is blocked when detected as malicious by a protection rule. If unspecified, defaults to `SET_RESPONSE_CODE`.
-	BlockAction string `pulumi:"blockAction"`
+	BlockAction *string `pulumi:"blockAction"`
 	// The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`.
-	BlockErrorPageCode string `pulumi:"blockErrorPageCode"`
+	BlockErrorPageCode *string `pulumi:"blockErrorPageCode"`
 	// The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
-	BlockErrorPageDescription string `pulumi:"blockErrorPageDescription"`
+	BlockErrorPageDescription *string `pulumi:"blockErrorPageDescription"`
 	// The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to 'Access to the website is blocked.'
-	BlockErrorPageMessage string `pulumi:"blockErrorPageMessage"`
+	BlockErrorPageMessage *string `pulumi:"blockErrorPageMessage"`
 	// The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
-	BlockResponseCode int `pulumi:"blockResponseCode"`
+	BlockResponseCode *int `pulumi:"blockResponseCode"`
 	// The text to show in the footer when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, default to `Enter the letters and numbers as they are shown in image above`.
-	CaptchaFooter string `pulumi:"captchaFooter"`
+	CaptchaFooter *string `pulumi:"captchaFooter"`
 	// The text to show in the header when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `We have detected an increased number of attempts to access this webapp. To help us keep this webapp secure, please let us know that you are not a robot by entering the text from captcha below.`
-	CaptchaHeader string `pulumi:"captchaHeader"`
+	CaptchaHeader *string `pulumi:"captchaHeader"`
 	// The text to show on the label of the CAPTCHA challenge submit button when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Yes, I am human`.
-	CaptchaSubmitLabel string `pulumi:"captchaSubmitLabel"`
+	CaptchaSubmitLabel *string `pulumi:"captchaSubmitLabel"`
 	// The title used when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Are you human?`
-	CaptchaTitle string `pulumi:"captchaTitle"`
+	CaptchaTitle *string `pulumi:"captchaTitle"`
 }
 
 // GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsInput is an input type that accepts GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsArgs and GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsOutput values.
@@ -20047,23 +18144,23 @@ type GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsInput inte
 
 type GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsArgs struct {
 	// If `action` is set to `BLOCK`, this specifies how the traffic is blocked when detected as malicious by a protection rule. If unspecified, defaults to `SET_RESPONSE_CODE`.
-	BlockAction pulumi.StringInput `pulumi:"blockAction"`
+	BlockAction pulumi.StringPtrInput `pulumi:"blockAction"`
 	// The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`.
-	BlockErrorPageCode pulumi.StringInput `pulumi:"blockErrorPageCode"`
+	BlockErrorPageCode pulumi.StringPtrInput `pulumi:"blockErrorPageCode"`
 	// The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
-	BlockErrorPageDescription pulumi.StringInput `pulumi:"blockErrorPageDescription"`
+	BlockErrorPageDescription pulumi.StringPtrInput `pulumi:"blockErrorPageDescription"`
 	// The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to 'Access to the website is blocked.'
-	BlockErrorPageMessage pulumi.StringInput `pulumi:"blockErrorPageMessage"`
+	BlockErrorPageMessage pulumi.StringPtrInput `pulumi:"blockErrorPageMessage"`
 	// The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
-	BlockResponseCode pulumi.IntInput `pulumi:"blockResponseCode"`
+	BlockResponseCode pulumi.IntPtrInput `pulumi:"blockResponseCode"`
 	// The text to show in the footer when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, default to `Enter the letters and numbers as they are shown in image above`.
-	CaptchaFooter pulumi.StringInput `pulumi:"captchaFooter"`
+	CaptchaFooter pulumi.StringPtrInput `pulumi:"captchaFooter"`
 	// The text to show in the header when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `We have detected an increased number of attempts to access this webapp. To help us keep this webapp secure, please let us know that you are not a robot by entering the text from captcha below.`
-	CaptchaHeader pulumi.StringInput `pulumi:"captchaHeader"`
+	CaptchaHeader pulumi.StringPtrInput `pulumi:"captchaHeader"`
 	// The text to show on the label of the CAPTCHA challenge submit button when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Yes, I am human`.
-	CaptchaSubmitLabel pulumi.StringInput `pulumi:"captchaSubmitLabel"`
+	CaptchaSubmitLabel pulumi.StringPtrInput `pulumi:"captchaSubmitLabel"`
 	// The title used when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Are you human?`
-	CaptchaTitle pulumi.StringInput `pulumi:"captchaTitle"`
+	CaptchaTitle pulumi.StringPtrInput `pulumi:"captchaTitle"`
 }
 
 func (GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsArgs) ElementType() reflect.Type {
@@ -20078,10 +18175,45 @@ func (i GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsArgs) T
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsOutput)
 }
 
-func (i GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettings] {
-	return pulumix.Output[GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettings]{
-		OutputState: i.ToGetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsOutputWithContext(ctx).OutputState,
-	}
+func (i GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsArgs) ToGetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrOutput() GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrOutput {
+	return i.ToGetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrOutputWithContext(context.Background())
+}
+
+func (i GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsArgs) ToGetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrOutputWithContext(ctx context.Context) GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsOutput).ToGetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrOutputWithContext(ctx)
+}
+
+// GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrInput is an input type that accepts GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsArgs, GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtr and GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrOutput values.
+// You can construct a concrete instance of `GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrInput` via:
+//
+//	        GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsArgs{...}
+//
+//	or:
+//
+//	        nil
+type GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrInput interface {
+	pulumi.Input
+
+	ToGetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrOutput() GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrOutput
+	ToGetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrOutputWithContext(context.Context) GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrOutput
+}
+
+type getWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrType GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsArgs
+
+func GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtr(v *GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsArgs) GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrInput {
+	return (*getWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrType)(v)
+}
+
+func (*getWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettings)(nil)).Elem()
+}
+
+func (i *getWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrType) ToGetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrOutput() GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrOutput {
+	return i.ToGetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrOutputWithContext(context.Background())
+}
+
+func (i *getWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrType) ToGetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrOutputWithContext(ctx context.Context) GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrOutput)
 }
 
 type GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsOutput struct{ *pulumi.OutputState }
@@ -20098,94 +18230,214 @@ func (o GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsOutput)
 	return o
 }
 
-func (o GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettings] {
-	return pulumix.Output[GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettings]{
-		OutputState: o.OutputState,
-	}
+func (o GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsOutput) ToGetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrOutput() GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrOutput {
+	return o.ToGetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrOutputWithContext(context.Background())
+}
+
+func (o GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsOutput) ToGetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrOutputWithContext(ctx context.Context) GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettings) *GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettings {
+		return &v
+	}).(GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrOutput)
 }
 
 // If `action` is set to `BLOCK`, this specifies how the traffic is blocked when detected as malicious by a protection rule. If unspecified, defaults to `SET_RESPONSE_CODE`.
-func (o GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsOutput) BlockAction() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettings) string { return v.BlockAction }).(pulumi.StringOutput)
+func (o GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsOutput) BlockAction() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettings) *string {
+		return v.BlockAction
+	}).(pulumi.StringPtrOutput)
 }
 
 // The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`.
-func (o GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsOutput) BlockErrorPageCode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettings) string {
+func (o GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsOutput) BlockErrorPageCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettings) *string {
 		return v.BlockErrorPageCode
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
-func (o GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsOutput) BlockErrorPageDescription() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettings) string {
+func (o GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsOutput) BlockErrorPageDescription() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettings) *string {
 		return v.BlockErrorPageDescription
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to 'Access to the website is blocked.'
-func (o GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsOutput) BlockErrorPageMessage() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettings) string {
+func (o GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsOutput) BlockErrorPageMessage() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettings) *string {
 		return v.BlockErrorPageMessage
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
-func (o GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsOutput) BlockResponseCode() pulumi.IntOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettings) int {
+func (o GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsOutput) BlockResponseCode() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettings) *int {
 		return v.BlockResponseCode
-	}).(pulumi.IntOutput)
+	}).(pulumi.IntPtrOutput)
 }
 
 // The text to show in the footer when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, default to `Enter the letters and numbers as they are shown in image above`.
-func (o GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsOutput) CaptchaFooter() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettings) string {
+func (o GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsOutput) CaptchaFooter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettings) *string {
 		return v.CaptchaFooter
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The text to show in the header when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `We have detected an increased number of attempts to access this webapp. To help us keep this webapp secure, please let us know that you are not a robot by entering the text from captcha below.`
-func (o GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsOutput) CaptchaHeader() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettings) string {
+func (o GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsOutput) CaptchaHeader() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettings) *string {
 		return v.CaptchaHeader
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The text to show on the label of the CAPTCHA challenge submit button when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Yes, I am human`.
-func (o GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsOutput) CaptchaSubmitLabel() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettings) string {
+func (o GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsOutput) CaptchaSubmitLabel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettings) *string {
 		return v.CaptchaSubmitLabel
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The title used when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Are you human?`
-func (o GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsOutput) CaptchaTitle() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettings) string {
+func (o GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsOutput) CaptchaTitle() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettings) *string {
 		return v.CaptchaTitle
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
+}
+
+type GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrOutput struct{ *pulumi.OutputState }
+
+func (GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettings)(nil)).Elem()
+}
+
+func (o GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrOutput) ToGetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrOutput() GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrOutput {
+	return o
+}
+
+func (o GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrOutput) ToGetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrOutputWithContext(ctx context.Context) GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrOutput {
+	return o
+}
+
+func (o GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrOutput) Elem() GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsOutput {
+	return o.ApplyT(func(v *GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettings) GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettings {
+		if v != nil {
+			return *v
+		}
+		var ret GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettings
+		return ret
+	}).(GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsOutput)
+}
+
+// If `action` is set to `BLOCK`, this specifies how the traffic is blocked when detected as malicious by a protection rule. If unspecified, defaults to `SET_RESPONSE_CODE`.
+func (o GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrOutput) BlockAction() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettings) *string {
+		if v == nil {
+			return nil
+		}
+		return v.BlockAction
+	}).(pulumi.StringPtrOutput)
+}
+
+// The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`.
+func (o GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrOutput) BlockErrorPageCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettings) *string {
+		if v == nil {
+			return nil
+		}
+		return v.BlockErrorPageCode
+	}).(pulumi.StringPtrOutput)
+}
+
+// The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
+func (o GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrOutput) BlockErrorPageDescription() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettings) *string {
+		if v == nil {
+			return nil
+		}
+		return v.BlockErrorPageDescription
+	}).(pulumi.StringPtrOutput)
+}
+
+// The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to 'Access to the website is blocked.'
+func (o GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrOutput) BlockErrorPageMessage() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettings) *string {
+		if v == nil {
+			return nil
+		}
+		return v.BlockErrorPageMessage
+	}).(pulumi.StringPtrOutput)
+}
+
+// The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
+func (o GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrOutput) BlockResponseCode() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettings) *int {
+		if v == nil {
+			return nil
+		}
+		return v.BlockResponseCode
+	}).(pulumi.IntPtrOutput)
+}
+
+// The text to show in the footer when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, default to `Enter the letters and numbers as they are shown in image above`.
+func (o GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrOutput) CaptchaFooter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettings) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CaptchaFooter
+	}).(pulumi.StringPtrOutput)
+}
+
+// The text to show in the header when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `We have detected an increased number of attempts to access this webapp. To help us keep this webapp secure, please let us know that you are not a robot by entering the text from captcha below.`
+func (o GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrOutput) CaptchaHeader() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettings) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CaptchaHeader
+	}).(pulumi.StringPtrOutput)
+}
+
+// The text to show on the label of the CAPTCHA challenge submit button when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Yes, I am human`.
+func (o GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrOutput) CaptchaSubmitLabel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettings) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CaptchaSubmitLabel
+	}).(pulumi.StringPtrOutput)
+}
+
+// The title used when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Are you human?`
+func (o GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrOutput) CaptchaTitle() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettings) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CaptchaTitle
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetWaasPolicyWafConfigHumanInteractionChallenge struct {
 	// The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
-	Action string `pulumi:"action"`
+	Action *string `pulumi:"action"`
 	// The number of seconds between challenges from the same IP address. If unspecified, defaults to `60`.
-	ActionExpirationInSeconds int `pulumi:"actionExpirationInSeconds"`
+	ActionExpirationInSeconds *int `pulumi:"actionExpirationInSeconds"`
 	// The challenge settings if `action` is set to `BLOCK`.
-	ChallengeSettings GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettings `pulumi:"challengeSettings"`
+	ChallengeSettings *GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettings `pulumi:"challengeSettings"`
 	// The number of failed requests before taking action. If unspecified, defaults to `10`.
-	FailureThreshold int `pulumi:"failureThreshold"`
+	FailureThreshold *int `pulumi:"failureThreshold"`
 	// The number of seconds before the failure threshold resets. If unspecified, defaults to  `60`.
-	FailureThresholdExpirationInSeconds int `pulumi:"failureThresholdExpirationInSeconds"`
+	FailureThresholdExpirationInSeconds *int `pulumi:"failureThresholdExpirationInSeconds"`
 	// The number of interactions required to pass the challenge. If unspecified, defaults to `3`.
-	InteractionThreshold int `pulumi:"interactionThreshold"`
+	InteractionThreshold *int `pulumi:"interactionThreshold"`
 	// Enables or disables the JavaScript challenge Web Application Firewall feature.
 	IsEnabled bool `pulumi:"isEnabled"`
 	// When enabled, the user is identified not only by the IP address but also by an unique additional hash, which prevents blocking visitors with shared IP addresses.
-	IsNatEnabled bool `pulumi:"isNatEnabled"`
+	IsNatEnabled *bool `pulumi:"isNatEnabled"`
 	// The number of seconds to record the interactions from the user. If unspecified, defaults to `15`.
-	RecordingPeriodInSeconds int `pulumi:"recordingPeriodInSeconds"`
+	RecordingPeriodInSeconds *int `pulumi:"recordingPeriodInSeconds"`
 	// Adds an additional HTTP header to requests that fail the challenge before being passed to the origin. Only applicable when the `action` is set to `DETECT`.
-	SetHttpHeader GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeader `pulumi:"setHttpHeader"`
+	SetHttpHeader *GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeader `pulumi:"setHttpHeader"`
 }
 
 // GetWaasPolicyWafConfigHumanInteractionChallengeInput is an input type that accepts GetWaasPolicyWafConfigHumanInteractionChallengeArgs and GetWaasPolicyWafConfigHumanInteractionChallengeOutput values.
@@ -20201,25 +18453,25 @@ type GetWaasPolicyWafConfigHumanInteractionChallengeInput interface {
 
 type GetWaasPolicyWafConfigHumanInteractionChallengeArgs struct {
 	// The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
-	Action pulumi.StringInput `pulumi:"action"`
+	Action pulumi.StringPtrInput `pulumi:"action"`
 	// The number of seconds between challenges from the same IP address. If unspecified, defaults to `60`.
-	ActionExpirationInSeconds pulumi.IntInput `pulumi:"actionExpirationInSeconds"`
+	ActionExpirationInSeconds pulumi.IntPtrInput `pulumi:"actionExpirationInSeconds"`
 	// The challenge settings if `action` is set to `BLOCK`.
-	ChallengeSettings GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsInput `pulumi:"challengeSettings"`
+	ChallengeSettings GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrInput `pulumi:"challengeSettings"`
 	// The number of failed requests before taking action. If unspecified, defaults to `10`.
-	FailureThreshold pulumi.IntInput `pulumi:"failureThreshold"`
+	FailureThreshold pulumi.IntPtrInput `pulumi:"failureThreshold"`
 	// The number of seconds before the failure threshold resets. If unspecified, defaults to  `60`.
-	FailureThresholdExpirationInSeconds pulumi.IntInput `pulumi:"failureThresholdExpirationInSeconds"`
+	FailureThresholdExpirationInSeconds pulumi.IntPtrInput `pulumi:"failureThresholdExpirationInSeconds"`
 	// The number of interactions required to pass the challenge. If unspecified, defaults to `3`.
-	InteractionThreshold pulumi.IntInput `pulumi:"interactionThreshold"`
+	InteractionThreshold pulumi.IntPtrInput `pulumi:"interactionThreshold"`
 	// Enables or disables the JavaScript challenge Web Application Firewall feature.
 	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
 	// When enabled, the user is identified not only by the IP address but also by an unique additional hash, which prevents blocking visitors with shared IP addresses.
-	IsNatEnabled pulumi.BoolInput `pulumi:"isNatEnabled"`
+	IsNatEnabled pulumi.BoolPtrInput `pulumi:"isNatEnabled"`
 	// The number of seconds to record the interactions from the user. If unspecified, defaults to `15`.
-	RecordingPeriodInSeconds pulumi.IntInput `pulumi:"recordingPeriodInSeconds"`
+	RecordingPeriodInSeconds pulumi.IntPtrInput `pulumi:"recordingPeriodInSeconds"`
 	// Adds an additional HTTP header to requests that fail the challenge before being passed to the origin. Only applicable when the `action` is set to `DETECT`.
-	SetHttpHeader GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderInput `pulumi:"setHttpHeader"`
+	SetHttpHeader GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderPtrInput `pulumi:"setHttpHeader"`
 }
 
 func (GetWaasPolicyWafConfigHumanInteractionChallengeArgs) ElementType() reflect.Type {
@@ -20234,10 +18486,45 @@ func (i GetWaasPolicyWafConfigHumanInteractionChallengeArgs) ToGetWaasPolicyWafC
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyWafConfigHumanInteractionChallengeOutput)
 }
 
-func (i GetWaasPolicyWafConfigHumanInteractionChallengeArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyWafConfigHumanInteractionChallenge] {
-	return pulumix.Output[GetWaasPolicyWafConfigHumanInteractionChallenge]{
-		OutputState: i.ToGetWaasPolicyWafConfigHumanInteractionChallengeOutputWithContext(ctx).OutputState,
-	}
+func (i GetWaasPolicyWafConfigHumanInteractionChallengeArgs) ToGetWaasPolicyWafConfigHumanInteractionChallengePtrOutput() GetWaasPolicyWafConfigHumanInteractionChallengePtrOutput {
+	return i.ToGetWaasPolicyWafConfigHumanInteractionChallengePtrOutputWithContext(context.Background())
+}
+
+func (i GetWaasPolicyWafConfigHumanInteractionChallengeArgs) ToGetWaasPolicyWafConfigHumanInteractionChallengePtrOutputWithContext(ctx context.Context) GetWaasPolicyWafConfigHumanInteractionChallengePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyWafConfigHumanInteractionChallengeOutput).ToGetWaasPolicyWafConfigHumanInteractionChallengePtrOutputWithContext(ctx)
+}
+
+// GetWaasPolicyWafConfigHumanInteractionChallengePtrInput is an input type that accepts GetWaasPolicyWafConfigHumanInteractionChallengeArgs, GetWaasPolicyWafConfigHumanInteractionChallengePtr and GetWaasPolicyWafConfigHumanInteractionChallengePtrOutput values.
+// You can construct a concrete instance of `GetWaasPolicyWafConfigHumanInteractionChallengePtrInput` via:
+//
+//	        GetWaasPolicyWafConfigHumanInteractionChallengeArgs{...}
+//
+//	or:
+//
+//	        nil
+type GetWaasPolicyWafConfigHumanInteractionChallengePtrInput interface {
+	pulumi.Input
+
+	ToGetWaasPolicyWafConfigHumanInteractionChallengePtrOutput() GetWaasPolicyWafConfigHumanInteractionChallengePtrOutput
+	ToGetWaasPolicyWafConfigHumanInteractionChallengePtrOutputWithContext(context.Context) GetWaasPolicyWafConfigHumanInteractionChallengePtrOutput
+}
+
+type getWaasPolicyWafConfigHumanInteractionChallengePtrType GetWaasPolicyWafConfigHumanInteractionChallengeArgs
+
+func GetWaasPolicyWafConfigHumanInteractionChallengePtr(v *GetWaasPolicyWafConfigHumanInteractionChallengeArgs) GetWaasPolicyWafConfigHumanInteractionChallengePtrInput {
+	return (*getWaasPolicyWafConfigHumanInteractionChallengePtrType)(v)
+}
+
+func (*getWaasPolicyWafConfigHumanInteractionChallengePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**GetWaasPolicyWafConfigHumanInteractionChallenge)(nil)).Elem()
+}
+
+func (i *getWaasPolicyWafConfigHumanInteractionChallengePtrType) ToGetWaasPolicyWafConfigHumanInteractionChallengePtrOutput() GetWaasPolicyWafConfigHumanInteractionChallengePtrOutput {
+	return i.ToGetWaasPolicyWafConfigHumanInteractionChallengePtrOutputWithContext(context.Background())
+}
+
+func (i *getWaasPolicyWafConfigHumanInteractionChallengePtrType) ToGetWaasPolicyWafConfigHumanInteractionChallengePtrOutputWithContext(ctx context.Context) GetWaasPolicyWafConfigHumanInteractionChallengePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyWafConfigHumanInteractionChallengePtrOutput)
 }
 
 type GetWaasPolicyWafConfigHumanInteractionChallengeOutput struct{ *pulumi.OutputState }
@@ -20254,44 +18541,48 @@ func (o GetWaasPolicyWafConfigHumanInteractionChallengeOutput) ToGetWaasPolicyWa
 	return o
 }
 
-func (o GetWaasPolicyWafConfigHumanInteractionChallengeOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyWafConfigHumanInteractionChallenge] {
-	return pulumix.Output[GetWaasPolicyWafConfigHumanInteractionChallenge]{
-		OutputState: o.OutputState,
-	}
+func (o GetWaasPolicyWafConfigHumanInteractionChallengeOutput) ToGetWaasPolicyWafConfigHumanInteractionChallengePtrOutput() GetWaasPolicyWafConfigHumanInteractionChallengePtrOutput {
+	return o.ToGetWaasPolicyWafConfigHumanInteractionChallengePtrOutputWithContext(context.Background())
+}
+
+func (o GetWaasPolicyWafConfigHumanInteractionChallengeOutput) ToGetWaasPolicyWafConfigHumanInteractionChallengePtrOutputWithContext(ctx context.Context) GetWaasPolicyWafConfigHumanInteractionChallengePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v GetWaasPolicyWafConfigHumanInteractionChallenge) *GetWaasPolicyWafConfigHumanInteractionChallenge {
+		return &v
+	}).(GetWaasPolicyWafConfigHumanInteractionChallengePtrOutput)
 }
 
 // The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
-func (o GetWaasPolicyWafConfigHumanInteractionChallengeOutput) Action() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfigHumanInteractionChallenge) string { return v.Action }).(pulumi.StringOutput)
+func (o GetWaasPolicyWafConfigHumanInteractionChallengeOutput) Action() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfigHumanInteractionChallenge) *string { return v.Action }).(pulumi.StringPtrOutput)
 }
 
 // The number of seconds between challenges from the same IP address. If unspecified, defaults to `60`.
-func (o GetWaasPolicyWafConfigHumanInteractionChallengeOutput) ActionExpirationInSeconds() pulumi.IntOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfigHumanInteractionChallenge) int { return v.ActionExpirationInSeconds }).(pulumi.IntOutput)
+func (o GetWaasPolicyWafConfigHumanInteractionChallengeOutput) ActionExpirationInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfigHumanInteractionChallenge) *int { return v.ActionExpirationInSeconds }).(pulumi.IntPtrOutput)
 }
 
 // The challenge settings if `action` is set to `BLOCK`.
-func (o GetWaasPolicyWafConfigHumanInteractionChallengeOutput) ChallengeSettings() GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfigHumanInteractionChallenge) GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettings {
+func (o GetWaasPolicyWafConfigHumanInteractionChallengeOutput) ChallengeSettings() GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfigHumanInteractionChallenge) *GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettings {
 		return v.ChallengeSettings
-	}).(GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsOutput)
+	}).(GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrOutput)
 }
 
 // The number of failed requests before taking action. If unspecified, defaults to `10`.
-func (o GetWaasPolicyWafConfigHumanInteractionChallengeOutput) FailureThreshold() pulumi.IntOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfigHumanInteractionChallenge) int { return v.FailureThreshold }).(pulumi.IntOutput)
+func (o GetWaasPolicyWafConfigHumanInteractionChallengeOutput) FailureThreshold() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfigHumanInteractionChallenge) *int { return v.FailureThreshold }).(pulumi.IntPtrOutput)
 }
 
 // The number of seconds before the failure threshold resets. If unspecified, defaults to  `60`.
-func (o GetWaasPolicyWafConfigHumanInteractionChallengeOutput) FailureThresholdExpirationInSeconds() pulumi.IntOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfigHumanInteractionChallenge) int {
+func (o GetWaasPolicyWafConfigHumanInteractionChallengeOutput) FailureThresholdExpirationInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfigHumanInteractionChallenge) *int {
 		return v.FailureThresholdExpirationInSeconds
-	}).(pulumi.IntOutput)
+	}).(pulumi.IntPtrOutput)
 }
 
 // The number of interactions required to pass the challenge. If unspecified, defaults to `3`.
-func (o GetWaasPolicyWafConfigHumanInteractionChallengeOutput) InteractionThreshold() pulumi.IntOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfigHumanInteractionChallenge) int { return v.InteractionThreshold }).(pulumi.IntOutput)
+func (o GetWaasPolicyWafConfigHumanInteractionChallengeOutput) InteractionThreshold() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfigHumanInteractionChallenge) *int { return v.InteractionThreshold }).(pulumi.IntPtrOutput)
 }
 
 // Enables or disables the JavaScript challenge Web Application Firewall feature.
@@ -20300,41 +18591,165 @@ func (o GetWaasPolicyWafConfigHumanInteractionChallengeOutput) IsEnabled() pulum
 }
 
 // When enabled, the user is identified not only by the IP address but also by an unique additional hash, which prevents blocking visitors with shared IP addresses.
-func (o GetWaasPolicyWafConfigHumanInteractionChallengeOutput) IsNatEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfigHumanInteractionChallenge) bool { return v.IsNatEnabled }).(pulumi.BoolOutput)
+func (o GetWaasPolicyWafConfigHumanInteractionChallengeOutput) IsNatEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfigHumanInteractionChallenge) *bool { return v.IsNatEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // The number of seconds to record the interactions from the user. If unspecified, defaults to `15`.
-func (o GetWaasPolicyWafConfigHumanInteractionChallengeOutput) RecordingPeriodInSeconds() pulumi.IntOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfigHumanInteractionChallenge) int { return v.RecordingPeriodInSeconds }).(pulumi.IntOutput)
+func (o GetWaasPolicyWafConfigHumanInteractionChallengeOutput) RecordingPeriodInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfigHumanInteractionChallenge) *int { return v.RecordingPeriodInSeconds }).(pulumi.IntPtrOutput)
 }
 
 // Adds an additional HTTP header to requests that fail the challenge before being passed to the origin. Only applicable when the `action` is set to `DETECT`.
-func (o GetWaasPolicyWafConfigHumanInteractionChallengeOutput) SetHttpHeader() GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfigHumanInteractionChallenge) GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeader {
+func (o GetWaasPolicyWafConfigHumanInteractionChallengeOutput) SetHttpHeader() GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfigHumanInteractionChallenge) *GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeader {
 		return v.SetHttpHeader
-	}).(GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderOutput)
+	}).(GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderPtrOutput)
+}
+
+type GetWaasPolicyWafConfigHumanInteractionChallengePtrOutput struct{ *pulumi.OutputState }
+
+func (GetWaasPolicyWafConfigHumanInteractionChallengePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GetWaasPolicyWafConfigHumanInteractionChallenge)(nil)).Elem()
+}
+
+func (o GetWaasPolicyWafConfigHumanInteractionChallengePtrOutput) ToGetWaasPolicyWafConfigHumanInteractionChallengePtrOutput() GetWaasPolicyWafConfigHumanInteractionChallengePtrOutput {
+	return o
+}
+
+func (o GetWaasPolicyWafConfigHumanInteractionChallengePtrOutput) ToGetWaasPolicyWafConfigHumanInteractionChallengePtrOutputWithContext(ctx context.Context) GetWaasPolicyWafConfigHumanInteractionChallengePtrOutput {
+	return o
+}
+
+func (o GetWaasPolicyWafConfigHumanInteractionChallengePtrOutput) Elem() GetWaasPolicyWafConfigHumanInteractionChallengeOutput {
+	return o.ApplyT(func(v *GetWaasPolicyWafConfigHumanInteractionChallenge) GetWaasPolicyWafConfigHumanInteractionChallenge {
+		if v != nil {
+			return *v
+		}
+		var ret GetWaasPolicyWafConfigHumanInteractionChallenge
+		return ret
+	}).(GetWaasPolicyWafConfigHumanInteractionChallengeOutput)
+}
+
+// The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
+func (o GetWaasPolicyWafConfigHumanInteractionChallengePtrOutput) Action() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GetWaasPolicyWafConfigHumanInteractionChallenge) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Action
+	}).(pulumi.StringPtrOutput)
+}
+
+// The number of seconds between challenges from the same IP address. If unspecified, defaults to `60`.
+func (o GetWaasPolicyWafConfigHumanInteractionChallengePtrOutput) ActionExpirationInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *GetWaasPolicyWafConfigHumanInteractionChallenge) *int {
+		if v == nil {
+			return nil
+		}
+		return v.ActionExpirationInSeconds
+	}).(pulumi.IntPtrOutput)
+}
+
+// The challenge settings if `action` is set to `BLOCK`.
+func (o GetWaasPolicyWafConfigHumanInteractionChallengePtrOutput) ChallengeSettings() GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrOutput {
+	return o.ApplyT(func(v *GetWaasPolicyWafConfigHumanInteractionChallenge) *GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettings {
+		if v == nil {
+			return nil
+		}
+		return v.ChallengeSettings
+	}).(GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrOutput)
+}
+
+// The number of failed requests before taking action. If unspecified, defaults to `10`.
+func (o GetWaasPolicyWafConfigHumanInteractionChallengePtrOutput) FailureThreshold() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *GetWaasPolicyWafConfigHumanInteractionChallenge) *int {
+		if v == nil {
+			return nil
+		}
+		return v.FailureThreshold
+	}).(pulumi.IntPtrOutput)
+}
+
+// The number of seconds before the failure threshold resets. If unspecified, defaults to  `60`.
+func (o GetWaasPolicyWafConfigHumanInteractionChallengePtrOutput) FailureThresholdExpirationInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *GetWaasPolicyWafConfigHumanInteractionChallenge) *int {
+		if v == nil {
+			return nil
+		}
+		return v.FailureThresholdExpirationInSeconds
+	}).(pulumi.IntPtrOutput)
+}
+
+// The number of interactions required to pass the challenge. If unspecified, defaults to `3`.
+func (o GetWaasPolicyWafConfigHumanInteractionChallengePtrOutput) InteractionThreshold() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *GetWaasPolicyWafConfigHumanInteractionChallenge) *int {
+		if v == nil {
+			return nil
+		}
+		return v.InteractionThreshold
+	}).(pulumi.IntPtrOutput)
+}
+
+// Enables or disables the JavaScript challenge Web Application Firewall feature.
+func (o GetWaasPolicyWafConfigHumanInteractionChallengePtrOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *GetWaasPolicyWafConfigHumanInteractionChallenge) *bool {
+		if v == nil {
+			return nil
+		}
+		return &v.IsEnabled
+	}).(pulumi.BoolPtrOutput)
+}
+
+// When enabled, the user is identified not only by the IP address but also by an unique additional hash, which prevents blocking visitors with shared IP addresses.
+func (o GetWaasPolicyWafConfigHumanInteractionChallengePtrOutput) IsNatEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *GetWaasPolicyWafConfigHumanInteractionChallenge) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsNatEnabled
+	}).(pulumi.BoolPtrOutput)
+}
+
+// The number of seconds to record the interactions from the user. If unspecified, defaults to `15`.
+func (o GetWaasPolicyWafConfigHumanInteractionChallengePtrOutput) RecordingPeriodInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *GetWaasPolicyWafConfigHumanInteractionChallenge) *int {
+		if v == nil {
+			return nil
+		}
+		return v.RecordingPeriodInSeconds
+	}).(pulumi.IntPtrOutput)
+}
+
+// Adds an additional HTTP header to requests that fail the challenge before being passed to the origin. Only applicable when the `action` is set to `DETECT`.
+func (o GetWaasPolicyWafConfigHumanInteractionChallengePtrOutput) SetHttpHeader() GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderPtrOutput {
+	return o.ApplyT(func(v *GetWaasPolicyWafConfigHumanInteractionChallenge) *GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeader {
+		if v == nil {
+			return nil
+		}
+		return v.SetHttpHeader
+	}).(GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderPtrOutput)
 }
 
 type GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettings struct {
 	// If `action` is set to `BLOCK`, this specifies how the traffic is blocked when detected as malicious by a protection rule. If unspecified, defaults to `SET_RESPONSE_CODE`.
-	BlockAction string `pulumi:"blockAction"`
+	BlockAction *string `pulumi:"blockAction"`
 	// The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`.
-	BlockErrorPageCode string `pulumi:"blockErrorPageCode"`
+	BlockErrorPageCode *string `pulumi:"blockErrorPageCode"`
 	// The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
-	BlockErrorPageDescription string `pulumi:"blockErrorPageDescription"`
+	BlockErrorPageDescription *string `pulumi:"blockErrorPageDescription"`
 	// The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to 'Access to the website is blocked.'
-	BlockErrorPageMessage string `pulumi:"blockErrorPageMessage"`
+	BlockErrorPageMessage *string `pulumi:"blockErrorPageMessage"`
 	// The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
-	BlockResponseCode int `pulumi:"blockResponseCode"`
+	BlockResponseCode *int `pulumi:"blockResponseCode"`
 	// The text to show in the footer when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, default to `Enter the letters and numbers as they are shown in image above`.
-	CaptchaFooter string `pulumi:"captchaFooter"`
+	CaptchaFooter *string `pulumi:"captchaFooter"`
 	// The text to show in the header when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `We have detected an increased number of attempts to access this webapp. To help us keep this webapp secure, please let us know that you are not a robot by entering the text from captcha below.`
-	CaptchaHeader string `pulumi:"captchaHeader"`
+	CaptchaHeader *string `pulumi:"captchaHeader"`
 	// The text to show on the label of the CAPTCHA challenge submit button when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Yes, I am human`.
-	CaptchaSubmitLabel string `pulumi:"captchaSubmitLabel"`
+	CaptchaSubmitLabel *string `pulumi:"captchaSubmitLabel"`
 	// The title used when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Are you human?`
-	CaptchaTitle string `pulumi:"captchaTitle"`
+	CaptchaTitle *string `pulumi:"captchaTitle"`
 }
 
 // GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsInput is an input type that accepts GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsArgs and GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsOutput values.
@@ -20350,23 +18765,23 @@ type GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsInput inter
 
 type GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsArgs struct {
 	// If `action` is set to `BLOCK`, this specifies how the traffic is blocked when detected as malicious by a protection rule. If unspecified, defaults to `SET_RESPONSE_CODE`.
-	BlockAction pulumi.StringInput `pulumi:"blockAction"`
+	BlockAction pulumi.StringPtrInput `pulumi:"blockAction"`
 	// The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`.
-	BlockErrorPageCode pulumi.StringInput `pulumi:"blockErrorPageCode"`
+	BlockErrorPageCode pulumi.StringPtrInput `pulumi:"blockErrorPageCode"`
 	// The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
-	BlockErrorPageDescription pulumi.StringInput `pulumi:"blockErrorPageDescription"`
+	BlockErrorPageDescription pulumi.StringPtrInput `pulumi:"blockErrorPageDescription"`
 	// The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to 'Access to the website is blocked.'
-	BlockErrorPageMessage pulumi.StringInput `pulumi:"blockErrorPageMessage"`
+	BlockErrorPageMessage pulumi.StringPtrInput `pulumi:"blockErrorPageMessage"`
 	// The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
-	BlockResponseCode pulumi.IntInput `pulumi:"blockResponseCode"`
+	BlockResponseCode pulumi.IntPtrInput `pulumi:"blockResponseCode"`
 	// The text to show in the footer when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, default to `Enter the letters and numbers as they are shown in image above`.
-	CaptchaFooter pulumi.StringInput `pulumi:"captchaFooter"`
+	CaptchaFooter pulumi.StringPtrInput `pulumi:"captchaFooter"`
 	// The text to show in the header when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `We have detected an increased number of attempts to access this webapp. To help us keep this webapp secure, please let us know that you are not a robot by entering the text from captcha below.`
-	CaptchaHeader pulumi.StringInput `pulumi:"captchaHeader"`
+	CaptchaHeader pulumi.StringPtrInput `pulumi:"captchaHeader"`
 	// The text to show on the label of the CAPTCHA challenge submit button when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Yes, I am human`.
-	CaptchaSubmitLabel pulumi.StringInput `pulumi:"captchaSubmitLabel"`
+	CaptchaSubmitLabel pulumi.StringPtrInput `pulumi:"captchaSubmitLabel"`
 	// The title used when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Are you human?`
-	CaptchaTitle pulumi.StringInput `pulumi:"captchaTitle"`
+	CaptchaTitle pulumi.StringPtrInput `pulumi:"captchaTitle"`
 }
 
 func (GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsArgs) ElementType() reflect.Type {
@@ -20381,10 +18796,45 @@ func (i GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsArgs) To
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsOutput)
 }
 
-func (i GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettings] {
-	return pulumix.Output[GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettings]{
-		OutputState: i.ToGetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsOutputWithContext(ctx).OutputState,
-	}
+func (i GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsArgs) ToGetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrOutput() GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrOutput {
+	return i.ToGetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrOutputWithContext(context.Background())
+}
+
+func (i GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsArgs) ToGetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrOutputWithContext(ctx context.Context) GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsOutput).ToGetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrOutputWithContext(ctx)
+}
+
+// GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrInput is an input type that accepts GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsArgs, GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsPtr and GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrOutput values.
+// You can construct a concrete instance of `GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrInput` via:
+//
+//	        GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsArgs{...}
+//
+//	or:
+//
+//	        nil
+type GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrInput interface {
+	pulumi.Input
+
+	ToGetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrOutput() GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrOutput
+	ToGetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrOutputWithContext(context.Context) GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrOutput
+}
+
+type getWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrType GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsArgs
+
+func GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsPtr(v *GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsArgs) GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrInput {
+	return (*getWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrType)(v)
+}
+
+func (*getWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettings)(nil)).Elem()
+}
+
+func (i *getWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrType) ToGetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrOutput() GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrOutput {
+	return i.ToGetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrOutputWithContext(context.Background())
+}
+
+func (i *getWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrType) ToGetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrOutputWithContext(ctx context.Context) GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrOutput)
 }
 
 type GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsOutput struct{ *pulumi.OutputState }
@@ -20401,69 +18851,189 @@ func (o GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsOutput) 
 	return o
 }
 
-func (o GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettings] {
-	return pulumix.Output[GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettings]{
-		OutputState: o.OutputState,
-	}
+func (o GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsOutput) ToGetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrOutput() GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrOutput {
+	return o.ToGetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrOutputWithContext(context.Background())
+}
+
+func (o GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsOutput) ToGetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrOutputWithContext(ctx context.Context) GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettings) *GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettings {
+		return &v
+	}).(GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrOutput)
 }
 
 // If `action` is set to `BLOCK`, this specifies how the traffic is blocked when detected as malicious by a protection rule. If unspecified, defaults to `SET_RESPONSE_CODE`.
-func (o GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsOutput) BlockAction() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettings) string { return v.BlockAction }).(pulumi.StringOutput)
+func (o GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsOutput) BlockAction() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettings) *string { return v.BlockAction }).(pulumi.StringPtrOutput)
 }
 
 // The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`.
-func (o GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsOutput) BlockErrorPageCode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettings) string {
+func (o GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsOutput) BlockErrorPageCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettings) *string {
 		return v.BlockErrorPageCode
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
-func (o GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsOutput) BlockErrorPageDescription() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettings) string {
+func (o GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsOutput) BlockErrorPageDescription() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettings) *string {
 		return v.BlockErrorPageDescription
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to 'Access to the website is blocked.'
-func (o GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsOutput) BlockErrorPageMessage() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettings) string {
+func (o GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsOutput) BlockErrorPageMessage() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettings) *string {
 		return v.BlockErrorPageMessage
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
-func (o GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsOutput) BlockResponseCode() pulumi.IntOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettings) int {
+func (o GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsOutput) BlockResponseCode() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettings) *int {
 		return v.BlockResponseCode
-	}).(pulumi.IntOutput)
+	}).(pulumi.IntPtrOutput)
 }
 
 // The text to show in the footer when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, default to `Enter the letters and numbers as they are shown in image above`.
-func (o GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsOutput) CaptchaFooter() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettings) string {
+func (o GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsOutput) CaptchaFooter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettings) *string {
 		return v.CaptchaFooter
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The text to show in the header when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `We have detected an increased number of attempts to access this webapp. To help us keep this webapp secure, please let us know that you are not a robot by entering the text from captcha below.`
-func (o GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsOutput) CaptchaHeader() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettings) string {
+func (o GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsOutput) CaptchaHeader() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettings) *string {
 		return v.CaptchaHeader
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The text to show on the label of the CAPTCHA challenge submit button when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Yes, I am human`.
-func (o GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsOutput) CaptchaSubmitLabel() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettings) string {
+func (o GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsOutput) CaptchaSubmitLabel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettings) *string {
 		return v.CaptchaSubmitLabel
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The title used when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Are you human?`
-func (o GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsOutput) CaptchaTitle() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettings) string { return v.CaptchaTitle }).(pulumi.StringOutput)
+func (o GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsOutput) CaptchaTitle() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettings) *string {
+		return v.CaptchaTitle
+	}).(pulumi.StringPtrOutput)
+}
+
+type GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrOutput struct{ *pulumi.OutputState }
+
+func (GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettings)(nil)).Elem()
+}
+
+func (o GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrOutput) ToGetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrOutput() GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrOutput {
+	return o
+}
+
+func (o GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrOutput) ToGetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrOutputWithContext(ctx context.Context) GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrOutput {
+	return o
+}
+
+func (o GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrOutput) Elem() GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsOutput {
+	return o.ApplyT(func(v *GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettings) GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettings {
+		if v != nil {
+			return *v
+		}
+		var ret GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettings
+		return ret
+	}).(GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsOutput)
+}
+
+// If `action` is set to `BLOCK`, this specifies how the traffic is blocked when detected as malicious by a protection rule. If unspecified, defaults to `SET_RESPONSE_CODE`.
+func (o GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrOutput) BlockAction() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettings) *string {
+		if v == nil {
+			return nil
+		}
+		return v.BlockAction
+	}).(pulumi.StringPtrOutput)
+}
+
+// The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`.
+func (o GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrOutput) BlockErrorPageCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettings) *string {
+		if v == nil {
+			return nil
+		}
+		return v.BlockErrorPageCode
+	}).(pulumi.StringPtrOutput)
+}
+
+// The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
+func (o GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrOutput) BlockErrorPageDescription() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettings) *string {
+		if v == nil {
+			return nil
+		}
+		return v.BlockErrorPageDescription
+	}).(pulumi.StringPtrOutput)
+}
+
+// The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to 'Access to the website is blocked.'
+func (o GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrOutput) BlockErrorPageMessage() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettings) *string {
+		if v == nil {
+			return nil
+		}
+		return v.BlockErrorPageMessage
+	}).(pulumi.StringPtrOutput)
+}
+
+// The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
+func (o GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrOutput) BlockResponseCode() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettings) *int {
+		if v == nil {
+			return nil
+		}
+		return v.BlockResponseCode
+	}).(pulumi.IntPtrOutput)
+}
+
+// The text to show in the footer when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, default to `Enter the letters and numbers as they are shown in image above`.
+func (o GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrOutput) CaptchaFooter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettings) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CaptchaFooter
+	}).(pulumi.StringPtrOutput)
+}
+
+// The text to show in the header when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `We have detected an increased number of attempts to access this webapp. To help us keep this webapp secure, please let us know that you are not a robot by entering the text from captcha below.`
+func (o GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrOutput) CaptchaHeader() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettings) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CaptchaHeader
+	}).(pulumi.StringPtrOutput)
+}
+
+// The text to show on the label of the CAPTCHA challenge submit button when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Yes, I am human`.
+func (o GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrOutput) CaptchaSubmitLabel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettings) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CaptchaSubmitLabel
+	}).(pulumi.StringPtrOutput)
+}
+
+// The title used when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Are you human?`
+func (o GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrOutput) CaptchaTitle() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettings) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CaptchaTitle
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeader struct {
@@ -20503,10 +19073,45 @@ func (i GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderArgs) ToGetW
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderOutput)
 }
 
-func (i GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeader] {
-	return pulumix.Output[GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeader]{
-		OutputState: i.ToGetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderOutputWithContext(ctx).OutputState,
-	}
+func (i GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderArgs) ToGetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderPtrOutput() GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderPtrOutput {
+	return i.ToGetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderPtrOutputWithContext(context.Background())
+}
+
+func (i GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderArgs) ToGetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderPtrOutputWithContext(ctx context.Context) GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderOutput).ToGetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderPtrOutputWithContext(ctx)
+}
+
+// GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderPtrInput is an input type that accepts GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderArgs, GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderPtr and GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderPtrOutput values.
+// You can construct a concrete instance of `GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderPtrInput` via:
+//
+//	        GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderArgs{...}
+//
+//	or:
+//
+//	        nil
+type GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderPtrInput interface {
+	pulumi.Input
+
+	ToGetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderPtrOutput() GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderPtrOutput
+	ToGetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderPtrOutputWithContext(context.Context) GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderPtrOutput
+}
+
+type getWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderPtrType GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderArgs
+
+func GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderPtr(v *GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderArgs) GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderPtrInput {
+	return (*getWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderPtrType)(v)
+}
+
+func (*getWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeader)(nil)).Elem()
+}
+
+func (i *getWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderPtrType) ToGetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderPtrOutput() GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderPtrOutput {
+	return i.ToGetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderPtrOutputWithContext(context.Background())
+}
+
+func (i *getWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderPtrType) ToGetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderPtrOutputWithContext(ctx context.Context) GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderPtrOutput)
 }
 
 type GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderOutput struct{ *pulumi.OutputState }
@@ -20523,10 +19128,14 @@ func (o GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderOutput) ToGe
 	return o
 }
 
-func (o GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeader] {
-	return pulumix.Output[GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeader]{
-		OutputState: o.OutputState,
-	}
+func (o GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderOutput) ToGetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderPtrOutput() GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderPtrOutput {
+	return o.ToGetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderPtrOutputWithContext(context.Background())
+}
+
+func (o GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderOutput) ToGetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderPtrOutputWithContext(ctx context.Context) GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeader) *GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeader {
+		return &v
+	}).(GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderPtrOutput)
 }
 
 // The unique name of the whitelist.
@@ -20539,25 +19148,69 @@ func (o GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderOutput) Valu
 	return o.ApplyT(func(v GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeader) string { return v.Value }).(pulumi.StringOutput)
 }
 
+type GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderPtrOutput struct{ *pulumi.OutputState }
+
+func (GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeader)(nil)).Elem()
+}
+
+func (o GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderPtrOutput) ToGetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderPtrOutput() GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderPtrOutput {
+	return o
+}
+
+func (o GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderPtrOutput) ToGetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderPtrOutputWithContext(ctx context.Context) GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderPtrOutput {
+	return o
+}
+
+func (o GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderPtrOutput) Elem() GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderOutput {
+	return o.ApplyT(func(v *GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeader) GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeader {
+		if v != nil {
+			return *v
+		}
+		var ret GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeader
+		return ret
+	}).(GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderOutput)
+}
+
+// The unique name of the whitelist.
+func (o GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderPtrOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeader) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Name
+	}).(pulumi.StringPtrOutput)
+}
+
+// The value of the header.
+func (o GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderPtrOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeader) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Value
+	}).(pulumi.StringPtrOutput)
+}
+
 type GetWaasPolicyWafConfigJsChallenge struct {
 	// The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
-	Action string `pulumi:"action"`
+	Action *string `pulumi:"action"`
 	// The number of seconds between challenges from the same IP address. If unspecified, defaults to `60`.
-	ActionExpirationInSeconds int `pulumi:"actionExpirationInSeconds"`
+	ActionExpirationInSeconds *int `pulumi:"actionExpirationInSeconds"`
 	// When enabled, redirect responses from the origin will also be challenged. This will change HTTP 301/302 responses from origin to HTTP 200 with an HTML body containing JavaScript page redirection.
-	AreRedirectsChallenged bool `pulumi:"areRedirectsChallenged"`
+	AreRedirectsChallenged *bool `pulumi:"areRedirectsChallenged"`
 	// The challenge settings if `action` is set to `BLOCK`.
-	ChallengeSettings GetWaasPolicyWafConfigJsChallengeChallengeSettings `pulumi:"challengeSettings"`
+	ChallengeSettings *GetWaasPolicyWafConfigJsChallengeChallengeSettings `pulumi:"challengeSettings"`
 	// When defined, the JavaScript Challenge would be applied only for the requests that matched all the listed conditions.
 	Criterias []GetWaasPolicyWafConfigJsChallengeCriteria `pulumi:"criterias"`
 	// The number of failed requests before taking action. If unspecified, defaults to `10`.
-	FailureThreshold int `pulumi:"failureThreshold"`
+	FailureThreshold *int `pulumi:"failureThreshold"`
 	// Enables or disables the JavaScript challenge Web Application Firewall feature.
 	IsEnabled bool `pulumi:"isEnabled"`
 	// When enabled, the user is identified not only by the IP address but also by an unique additional hash, which prevents blocking visitors with shared IP addresses.
-	IsNatEnabled bool `pulumi:"isNatEnabled"`
+	IsNatEnabled *bool `pulumi:"isNatEnabled"`
 	// Adds an additional HTTP header to requests that fail the challenge before being passed to the origin. Only applicable when the `action` is set to `DETECT`.
-	SetHttpHeader GetWaasPolicyWafConfigJsChallengeSetHttpHeader `pulumi:"setHttpHeader"`
+	SetHttpHeader *GetWaasPolicyWafConfigJsChallengeSetHttpHeader `pulumi:"setHttpHeader"`
 }
 
 // GetWaasPolicyWafConfigJsChallengeInput is an input type that accepts GetWaasPolicyWafConfigJsChallengeArgs and GetWaasPolicyWafConfigJsChallengeOutput values.
@@ -20573,23 +19226,23 @@ type GetWaasPolicyWafConfigJsChallengeInput interface {
 
 type GetWaasPolicyWafConfigJsChallengeArgs struct {
 	// The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
-	Action pulumi.StringInput `pulumi:"action"`
+	Action pulumi.StringPtrInput `pulumi:"action"`
 	// The number of seconds between challenges from the same IP address. If unspecified, defaults to `60`.
-	ActionExpirationInSeconds pulumi.IntInput `pulumi:"actionExpirationInSeconds"`
+	ActionExpirationInSeconds pulumi.IntPtrInput `pulumi:"actionExpirationInSeconds"`
 	// When enabled, redirect responses from the origin will also be challenged. This will change HTTP 301/302 responses from origin to HTTP 200 with an HTML body containing JavaScript page redirection.
-	AreRedirectsChallenged pulumi.BoolInput `pulumi:"areRedirectsChallenged"`
+	AreRedirectsChallenged pulumi.BoolPtrInput `pulumi:"areRedirectsChallenged"`
 	// The challenge settings if `action` is set to `BLOCK`.
-	ChallengeSettings GetWaasPolicyWafConfigJsChallengeChallengeSettingsInput `pulumi:"challengeSettings"`
+	ChallengeSettings GetWaasPolicyWafConfigJsChallengeChallengeSettingsPtrInput `pulumi:"challengeSettings"`
 	// When defined, the JavaScript Challenge would be applied only for the requests that matched all the listed conditions.
 	Criterias GetWaasPolicyWafConfigJsChallengeCriteriaArrayInput `pulumi:"criterias"`
 	// The number of failed requests before taking action. If unspecified, defaults to `10`.
-	FailureThreshold pulumi.IntInput `pulumi:"failureThreshold"`
+	FailureThreshold pulumi.IntPtrInput `pulumi:"failureThreshold"`
 	// Enables or disables the JavaScript challenge Web Application Firewall feature.
 	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
 	// When enabled, the user is identified not only by the IP address but also by an unique additional hash, which prevents blocking visitors with shared IP addresses.
-	IsNatEnabled pulumi.BoolInput `pulumi:"isNatEnabled"`
+	IsNatEnabled pulumi.BoolPtrInput `pulumi:"isNatEnabled"`
 	// Adds an additional HTTP header to requests that fail the challenge before being passed to the origin. Only applicable when the `action` is set to `DETECT`.
-	SetHttpHeader GetWaasPolicyWafConfigJsChallengeSetHttpHeaderInput `pulumi:"setHttpHeader"`
+	SetHttpHeader GetWaasPolicyWafConfigJsChallengeSetHttpHeaderPtrInput `pulumi:"setHttpHeader"`
 }
 
 func (GetWaasPolicyWafConfigJsChallengeArgs) ElementType() reflect.Type {
@@ -20604,10 +19257,45 @@ func (i GetWaasPolicyWafConfigJsChallengeArgs) ToGetWaasPolicyWafConfigJsChallen
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyWafConfigJsChallengeOutput)
 }
 
-func (i GetWaasPolicyWafConfigJsChallengeArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyWafConfigJsChallenge] {
-	return pulumix.Output[GetWaasPolicyWafConfigJsChallenge]{
-		OutputState: i.ToGetWaasPolicyWafConfigJsChallengeOutputWithContext(ctx).OutputState,
-	}
+func (i GetWaasPolicyWafConfigJsChallengeArgs) ToGetWaasPolicyWafConfigJsChallengePtrOutput() GetWaasPolicyWafConfigJsChallengePtrOutput {
+	return i.ToGetWaasPolicyWafConfigJsChallengePtrOutputWithContext(context.Background())
+}
+
+func (i GetWaasPolicyWafConfigJsChallengeArgs) ToGetWaasPolicyWafConfigJsChallengePtrOutputWithContext(ctx context.Context) GetWaasPolicyWafConfigJsChallengePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyWafConfigJsChallengeOutput).ToGetWaasPolicyWafConfigJsChallengePtrOutputWithContext(ctx)
+}
+
+// GetWaasPolicyWafConfigJsChallengePtrInput is an input type that accepts GetWaasPolicyWafConfigJsChallengeArgs, GetWaasPolicyWafConfigJsChallengePtr and GetWaasPolicyWafConfigJsChallengePtrOutput values.
+// You can construct a concrete instance of `GetWaasPolicyWafConfigJsChallengePtrInput` via:
+//
+//	        GetWaasPolicyWafConfigJsChallengeArgs{...}
+//
+//	or:
+//
+//	        nil
+type GetWaasPolicyWafConfigJsChallengePtrInput interface {
+	pulumi.Input
+
+	ToGetWaasPolicyWafConfigJsChallengePtrOutput() GetWaasPolicyWafConfigJsChallengePtrOutput
+	ToGetWaasPolicyWafConfigJsChallengePtrOutputWithContext(context.Context) GetWaasPolicyWafConfigJsChallengePtrOutput
+}
+
+type getWaasPolicyWafConfigJsChallengePtrType GetWaasPolicyWafConfigJsChallengeArgs
+
+func GetWaasPolicyWafConfigJsChallengePtr(v *GetWaasPolicyWafConfigJsChallengeArgs) GetWaasPolicyWafConfigJsChallengePtrInput {
+	return (*getWaasPolicyWafConfigJsChallengePtrType)(v)
+}
+
+func (*getWaasPolicyWafConfigJsChallengePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**GetWaasPolicyWafConfigJsChallenge)(nil)).Elem()
+}
+
+func (i *getWaasPolicyWafConfigJsChallengePtrType) ToGetWaasPolicyWafConfigJsChallengePtrOutput() GetWaasPolicyWafConfigJsChallengePtrOutput {
+	return i.ToGetWaasPolicyWafConfigJsChallengePtrOutputWithContext(context.Background())
+}
+
+func (i *getWaasPolicyWafConfigJsChallengePtrType) ToGetWaasPolicyWafConfigJsChallengePtrOutputWithContext(ctx context.Context) GetWaasPolicyWafConfigJsChallengePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyWafConfigJsChallengePtrOutput)
 }
 
 type GetWaasPolicyWafConfigJsChallengeOutput struct{ *pulumi.OutputState }
@@ -20624,32 +19312,36 @@ func (o GetWaasPolicyWafConfigJsChallengeOutput) ToGetWaasPolicyWafConfigJsChall
 	return o
 }
 
-func (o GetWaasPolicyWafConfigJsChallengeOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyWafConfigJsChallenge] {
-	return pulumix.Output[GetWaasPolicyWafConfigJsChallenge]{
-		OutputState: o.OutputState,
-	}
+func (o GetWaasPolicyWafConfigJsChallengeOutput) ToGetWaasPolicyWafConfigJsChallengePtrOutput() GetWaasPolicyWafConfigJsChallengePtrOutput {
+	return o.ToGetWaasPolicyWafConfigJsChallengePtrOutputWithContext(context.Background())
+}
+
+func (o GetWaasPolicyWafConfigJsChallengeOutput) ToGetWaasPolicyWafConfigJsChallengePtrOutputWithContext(ctx context.Context) GetWaasPolicyWafConfigJsChallengePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v GetWaasPolicyWafConfigJsChallenge) *GetWaasPolicyWafConfigJsChallenge {
+		return &v
+	}).(GetWaasPolicyWafConfigJsChallengePtrOutput)
 }
 
 // The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
-func (o GetWaasPolicyWafConfigJsChallengeOutput) Action() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfigJsChallenge) string { return v.Action }).(pulumi.StringOutput)
+func (o GetWaasPolicyWafConfigJsChallengeOutput) Action() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfigJsChallenge) *string { return v.Action }).(pulumi.StringPtrOutput)
 }
 
 // The number of seconds between challenges from the same IP address. If unspecified, defaults to `60`.
-func (o GetWaasPolicyWafConfigJsChallengeOutput) ActionExpirationInSeconds() pulumi.IntOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfigJsChallenge) int { return v.ActionExpirationInSeconds }).(pulumi.IntOutput)
+func (o GetWaasPolicyWafConfigJsChallengeOutput) ActionExpirationInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfigJsChallenge) *int { return v.ActionExpirationInSeconds }).(pulumi.IntPtrOutput)
 }
 
 // When enabled, redirect responses from the origin will also be challenged. This will change HTTP 301/302 responses from origin to HTTP 200 with an HTML body containing JavaScript page redirection.
-func (o GetWaasPolicyWafConfigJsChallengeOutput) AreRedirectsChallenged() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfigJsChallenge) bool { return v.AreRedirectsChallenged }).(pulumi.BoolOutput)
+func (o GetWaasPolicyWafConfigJsChallengeOutput) AreRedirectsChallenged() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfigJsChallenge) *bool { return v.AreRedirectsChallenged }).(pulumi.BoolPtrOutput)
 }
 
 // The challenge settings if `action` is set to `BLOCK`.
-func (o GetWaasPolicyWafConfigJsChallengeOutput) ChallengeSettings() GetWaasPolicyWafConfigJsChallengeChallengeSettingsOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfigJsChallenge) GetWaasPolicyWafConfigJsChallengeChallengeSettings {
+func (o GetWaasPolicyWafConfigJsChallengeOutput) ChallengeSettings() GetWaasPolicyWafConfigJsChallengeChallengeSettingsPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfigJsChallenge) *GetWaasPolicyWafConfigJsChallengeChallengeSettings {
 		return v.ChallengeSettings
-	}).(GetWaasPolicyWafConfigJsChallengeChallengeSettingsOutput)
+	}).(GetWaasPolicyWafConfigJsChallengeChallengeSettingsPtrOutput)
 }
 
 // When defined, the JavaScript Challenge would be applied only for the requests that matched all the listed conditions.
@@ -20660,8 +19352,8 @@ func (o GetWaasPolicyWafConfigJsChallengeOutput) Criterias() GetWaasPolicyWafCon
 }
 
 // The number of failed requests before taking action. If unspecified, defaults to `10`.
-func (o GetWaasPolicyWafConfigJsChallengeOutput) FailureThreshold() pulumi.IntOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfigJsChallenge) int { return v.FailureThreshold }).(pulumi.IntOutput)
+func (o GetWaasPolicyWafConfigJsChallengeOutput) FailureThreshold() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfigJsChallenge) *int { return v.FailureThreshold }).(pulumi.IntPtrOutput)
 }
 
 // Enables or disables the JavaScript challenge Web Application Firewall feature.
@@ -20670,36 +19362,150 @@ func (o GetWaasPolicyWafConfigJsChallengeOutput) IsEnabled() pulumi.BoolOutput {
 }
 
 // When enabled, the user is identified not only by the IP address but also by an unique additional hash, which prevents blocking visitors with shared IP addresses.
-func (o GetWaasPolicyWafConfigJsChallengeOutput) IsNatEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfigJsChallenge) bool { return v.IsNatEnabled }).(pulumi.BoolOutput)
+func (o GetWaasPolicyWafConfigJsChallengeOutput) IsNatEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfigJsChallenge) *bool { return v.IsNatEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // Adds an additional HTTP header to requests that fail the challenge before being passed to the origin. Only applicable when the `action` is set to `DETECT`.
-func (o GetWaasPolicyWafConfigJsChallengeOutput) SetHttpHeader() GetWaasPolicyWafConfigJsChallengeSetHttpHeaderOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfigJsChallenge) GetWaasPolicyWafConfigJsChallengeSetHttpHeader {
+func (o GetWaasPolicyWafConfigJsChallengeOutput) SetHttpHeader() GetWaasPolicyWafConfigJsChallengeSetHttpHeaderPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfigJsChallenge) *GetWaasPolicyWafConfigJsChallengeSetHttpHeader {
 		return v.SetHttpHeader
-	}).(GetWaasPolicyWafConfigJsChallengeSetHttpHeaderOutput)
+	}).(GetWaasPolicyWafConfigJsChallengeSetHttpHeaderPtrOutput)
+}
+
+type GetWaasPolicyWafConfigJsChallengePtrOutput struct{ *pulumi.OutputState }
+
+func (GetWaasPolicyWafConfigJsChallengePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GetWaasPolicyWafConfigJsChallenge)(nil)).Elem()
+}
+
+func (o GetWaasPolicyWafConfigJsChallengePtrOutput) ToGetWaasPolicyWafConfigJsChallengePtrOutput() GetWaasPolicyWafConfigJsChallengePtrOutput {
+	return o
+}
+
+func (o GetWaasPolicyWafConfigJsChallengePtrOutput) ToGetWaasPolicyWafConfigJsChallengePtrOutputWithContext(ctx context.Context) GetWaasPolicyWafConfigJsChallengePtrOutput {
+	return o
+}
+
+func (o GetWaasPolicyWafConfigJsChallengePtrOutput) Elem() GetWaasPolicyWafConfigJsChallengeOutput {
+	return o.ApplyT(func(v *GetWaasPolicyWafConfigJsChallenge) GetWaasPolicyWafConfigJsChallenge {
+		if v != nil {
+			return *v
+		}
+		var ret GetWaasPolicyWafConfigJsChallenge
+		return ret
+	}).(GetWaasPolicyWafConfigJsChallengeOutput)
+}
+
+// The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
+func (o GetWaasPolicyWafConfigJsChallengePtrOutput) Action() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GetWaasPolicyWafConfigJsChallenge) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Action
+	}).(pulumi.StringPtrOutput)
+}
+
+// The number of seconds between challenges from the same IP address. If unspecified, defaults to `60`.
+func (o GetWaasPolicyWafConfigJsChallengePtrOutput) ActionExpirationInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *GetWaasPolicyWafConfigJsChallenge) *int {
+		if v == nil {
+			return nil
+		}
+		return v.ActionExpirationInSeconds
+	}).(pulumi.IntPtrOutput)
+}
+
+// When enabled, redirect responses from the origin will also be challenged. This will change HTTP 301/302 responses from origin to HTTP 200 with an HTML body containing JavaScript page redirection.
+func (o GetWaasPolicyWafConfigJsChallengePtrOutput) AreRedirectsChallenged() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *GetWaasPolicyWafConfigJsChallenge) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.AreRedirectsChallenged
+	}).(pulumi.BoolPtrOutput)
+}
+
+// The challenge settings if `action` is set to `BLOCK`.
+func (o GetWaasPolicyWafConfigJsChallengePtrOutput) ChallengeSettings() GetWaasPolicyWafConfigJsChallengeChallengeSettingsPtrOutput {
+	return o.ApplyT(func(v *GetWaasPolicyWafConfigJsChallenge) *GetWaasPolicyWafConfigJsChallengeChallengeSettings {
+		if v == nil {
+			return nil
+		}
+		return v.ChallengeSettings
+	}).(GetWaasPolicyWafConfigJsChallengeChallengeSettingsPtrOutput)
+}
+
+// When defined, the JavaScript Challenge would be applied only for the requests that matched all the listed conditions.
+func (o GetWaasPolicyWafConfigJsChallengePtrOutput) Criterias() GetWaasPolicyWafConfigJsChallengeCriteriaArrayOutput {
+	return o.ApplyT(func(v *GetWaasPolicyWafConfigJsChallenge) []GetWaasPolicyWafConfigJsChallengeCriteria {
+		if v == nil {
+			return nil
+		}
+		return v.Criterias
+	}).(GetWaasPolicyWafConfigJsChallengeCriteriaArrayOutput)
+}
+
+// The number of failed requests before taking action. If unspecified, defaults to `10`.
+func (o GetWaasPolicyWafConfigJsChallengePtrOutput) FailureThreshold() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *GetWaasPolicyWafConfigJsChallenge) *int {
+		if v == nil {
+			return nil
+		}
+		return v.FailureThreshold
+	}).(pulumi.IntPtrOutput)
+}
+
+// Enables or disables the JavaScript challenge Web Application Firewall feature.
+func (o GetWaasPolicyWafConfigJsChallengePtrOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *GetWaasPolicyWafConfigJsChallenge) *bool {
+		if v == nil {
+			return nil
+		}
+		return &v.IsEnabled
+	}).(pulumi.BoolPtrOutput)
+}
+
+// When enabled, the user is identified not only by the IP address but also by an unique additional hash, which prevents blocking visitors with shared IP addresses.
+func (o GetWaasPolicyWafConfigJsChallengePtrOutput) IsNatEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *GetWaasPolicyWafConfigJsChallenge) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsNatEnabled
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Adds an additional HTTP header to requests that fail the challenge before being passed to the origin. Only applicable when the `action` is set to `DETECT`.
+func (o GetWaasPolicyWafConfigJsChallengePtrOutput) SetHttpHeader() GetWaasPolicyWafConfigJsChallengeSetHttpHeaderPtrOutput {
+	return o.ApplyT(func(v *GetWaasPolicyWafConfigJsChallenge) *GetWaasPolicyWafConfigJsChallengeSetHttpHeader {
+		if v == nil {
+			return nil
+		}
+		return v.SetHttpHeader
+	}).(GetWaasPolicyWafConfigJsChallengeSetHttpHeaderPtrOutput)
 }
 
 type GetWaasPolicyWafConfigJsChallengeChallengeSettings struct {
 	// If `action` is set to `BLOCK`, this specifies how the traffic is blocked when detected as malicious by a protection rule. If unspecified, defaults to `SET_RESPONSE_CODE`.
-	BlockAction string `pulumi:"blockAction"`
+	BlockAction *string `pulumi:"blockAction"`
 	// The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`.
-	BlockErrorPageCode string `pulumi:"blockErrorPageCode"`
+	BlockErrorPageCode *string `pulumi:"blockErrorPageCode"`
 	// The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
-	BlockErrorPageDescription string `pulumi:"blockErrorPageDescription"`
+	BlockErrorPageDescription *string `pulumi:"blockErrorPageDescription"`
 	// The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to 'Access to the website is blocked.'
-	BlockErrorPageMessage string `pulumi:"blockErrorPageMessage"`
+	BlockErrorPageMessage *string `pulumi:"blockErrorPageMessage"`
 	// The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
-	BlockResponseCode int `pulumi:"blockResponseCode"`
+	BlockResponseCode *int `pulumi:"blockResponseCode"`
 	// The text to show in the footer when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, default to `Enter the letters and numbers as they are shown in image above`.
-	CaptchaFooter string `pulumi:"captchaFooter"`
+	CaptchaFooter *string `pulumi:"captchaFooter"`
 	// The text to show in the header when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `We have detected an increased number of attempts to access this webapp. To help us keep this webapp secure, please let us know that you are not a robot by entering the text from captcha below.`
-	CaptchaHeader string `pulumi:"captchaHeader"`
+	CaptchaHeader *string `pulumi:"captchaHeader"`
 	// The text to show on the label of the CAPTCHA challenge submit button when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Yes, I am human`.
-	CaptchaSubmitLabel string `pulumi:"captchaSubmitLabel"`
+	CaptchaSubmitLabel *string `pulumi:"captchaSubmitLabel"`
 	// The title used when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Are you human?`
-	CaptchaTitle string `pulumi:"captchaTitle"`
+	CaptchaTitle *string `pulumi:"captchaTitle"`
 }
 
 // GetWaasPolicyWafConfigJsChallengeChallengeSettingsInput is an input type that accepts GetWaasPolicyWafConfigJsChallengeChallengeSettingsArgs and GetWaasPolicyWafConfigJsChallengeChallengeSettingsOutput values.
@@ -20715,23 +19521,23 @@ type GetWaasPolicyWafConfigJsChallengeChallengeSettingsInput interface {
 
 type GetWaasPolicyWafConfigJsChallengeChallengeSettingsArgs struct {
 	// If `action` is set to `BLOCK`, this specifies how the traffic is blocked when detected as malicious by a protection rule. If unspecified, defaults to `SET_RESPONSE_CODE`.
-	BlockAction pulumi.StringInput `pulumi:"blockAction"`
+	BlockAction pulumi.StringPtrInput `pulumi:"blockAction"`
 	// The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`.
-	BlockErrorPageCode pulumi.StringInput `pulumi:"blockErrorPageCode"`
+	BlockErrorPageCode pulumi.StringPtrInput `pulumi:"blockErrorPageCode"`
 	// The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
-	BlockErrorPageDescription pulumi.StringInput `pulumi:"blockErrorPageDescription"`
+	BlockErrorPageDescription pulumi.StringPtrInput `pulumi:"blockErrorPageDescription"`
 	// The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to 'Access to the website is blocked.'
-	BlockErrorPageMessage pulumi.StringInput `pulumi:"blockErrorPageMessage"`
+	BlockErrorPageMessage pulumi.StringPtrInput `pulumi:"blockErrorPageMessage"`
 	// The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
-	BlockResponseCode pulumi.IntInput `pulumi:"blockResponseCode"`
+	BlockResponseCode pulumi.IntPtrInput `pulumi:"blockResponseCode"`
 	// The text to show in the footer when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, default to `Enter the letters and numbers as they are shown in image above`.
-	CaptchaFooter pulumi.StringInput `pulumi:"captchaFooter"`
+	CaptchaFooter pulumi.StringPtrInput `pulumi:"captchaFooter"`
 	// The text to show in the header when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `We have detected an increased number of attempts to access this webapp. To help us keep this webapp secure, please let us know that you are not a robot by entering the text from captcha below.`
-	CaptchaHeader pulumi.StringInput `pulumi:"captchaHeader"`
+	CaptchaHeader pulumi.StringPtrInput `pulumi:"captchaHeader"`
 	// The text to show on the label of the CAPTCHA challenge submit button when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Yes, I am human`.
-	CaptchaSubmitLabel pulumi.StringInput `pulumi:"captchaSubmitLabel"`
+	CaptchaSubmitLabel pulumi.StringPtrInput `pulumi:"captchaSubmitLabel"`
 	// The title used when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Are you human?`
-	CaptchaTitle pulumi.StringInput `pulumi:"captchaTitle"`
+	CaptchaTitle pulumi.StringPtrInput `pulumi:"captchaTitle"`
 }
 
 func (GetWaasPolicyWafConfigJsChallengeChallengeSettingsArgs) ElementType() reflect.Type {
@@ -20746,10 +19552,45 @@ func (i GetWaasPolicyWafConfigJsChallengeChallengeSettingsArgs) ToGetWaasPolicyW
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyWafConfigJsChallengeChallengeSettingsOutput)
 }
 
-func (i GetWaasPolicyWafConfigJsChallengeChallengeSettingsArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyWafConfigJsChallengeChallengeSettings] {
-	return pulumix.Output[GetWaasPolicyWafConfigJsChallengeChallengeSettings]{
-		OutputState: i.ToGetWaasPolicyWafConfigJsChallengeChallengeSettingsOutputWithContext(ctx).OutputState,
-	}
+func (i GetWaasPolicyWafConfigJsChallengeChallengeSettingsArgs) ToGetWaasPolicyWafConfigJsChallengeChallengeSettingsPtrOutput() GetWaasPolicyWafConfigJsChallengeChallengeSettingsPtrOutput {
+	return i.ToGetWaasPolicyWafConfigJsChallengeChallengeSettingsPtrOutputWithContext(context.Background())
+}
+
+func (i GetWaasPolicyWafConfigJsChallengeChallengeSettingsArgs) ToGetWaasPolicyWafConfigJsChallengeChallengeSettingsPtrOutputWithContext(ctx context.Context) GetWaasPolicyWafConfigJsChallengeChallengeSettingsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyWafConfigJsChallengeChallengeSettingsOutput).ToGetWaasPolicyWafConfigJsChallengeChallengeSettingsPtrOutputWithContext(ctx)
+}
+
+// GetWaasPolicyWafConfigJsChallengeChallengeSettingsPtrInput is an input type that accepts GetWaasPolicyWafConfigJsChallengeChallengeSettingsArgs, GetWaasPolicyWafConfigJsChallengeChallengeSettingsPtr and GetWaasPolicyWafConfigJsChallengeChallengeSettingsPtrOutput values.
+// You can construct a concrete instance of `GetWaasPolicyWafConfigJsChallengeChallengeSettingsPtrInput` via:
+//
+//	        GetWaasPolicyWafConfigJsChallengeChallengeSettingsArgs{...}
+//
+//	or:
+//
+//	        nil
+type GetWaasPolicyWafConfigJsChallengeChallengeSettingsPtrInput interface {
+	pulumi.Input
+
+	ToGetWaasPolicyWafConfigJsChallengeChallengeSettingsPtrOutput() GetWaasPolicyWafConfigJsChallengeChallengeSettingsPtrOutput
+	ToGetWaasPolicyWafConfigJsChallengeChallengeSettingsPtrOutputWithContext(context.Context) GetWaasPolicyWafConfigJsChallengeChallengeSettingsPtrOutput
+}
+
+type getWaasPolicyWafConfigJsChallengeChallengeSettingsPtrType GetWaasPolicyWafConfigJsChallengeChallengeSettingsArgs
+
+func GetWaasPolicyWafConfigJsChallengeChallengeSettingsPtr(v *GetWaasPolicyWafConfigJsChallengeChallengeSettingsArgs) GetWaasPolicyWafConfigJsChallengeChallengeSettingsPtrInput {
+	return (*getWaasPolicyWafConfigJsChallengeChallengeSettingsPtrType)(v)
+}
+
+func (*getWaasPolicyWafConfigJsChallengeChallengeSettingsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**GetWaasPolicyWafConfigJsChallengeChallengeSettings)(nil)).Elem()
+}
+
+func (i *getWaasPolicyWafConfigJsChallengeChallengeSettingsPtrType) ToGetWaasPolicyWafConfigJsChallengeChallengeSettingsPtrOutput() GetWaasPolicyWafConfigJsChallengeChallengeSettingsPtrOutput {
+	return i.ToGetWaasPolicyWafConfigJsChallengeChallengeSettingsPtrOutputWithContext(context.Background())
+}
+
+func (i *getWaasPolicyWafConfigJsChallengeChallengeSettingsPtrType) ToGetWaasPolicyWafConfigJsChallengeChallengeSettingsPtrOutputWithContext(ctx context.Context) GetWaasPolicyWafConfigJsChallengeChallengeSettingsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyWafConfigJsChallengeChallengeSettingsPtrOutput)
 }
 
 type GetWaasPolicyWafConfigJsChallengeChallengeSettingsOutput struct{ *pulumi.OutputState }
@@ -20766,55 +19607,173 @@ func (o GetWaasPolicyWafConfigJsChallengeChallengeSettingsOutput) ToGetWaasPolic
 	return o
 }
 
-func (o GetWaasPolicyWafConfigJsChallengeChallengeSettingsOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyWafConfigJsChallengeChallengeSettings] {
-	return pulumix.Output[GetWaasPolicyWafConfigJsChallengeChallengeSettings]{
-		OutputState: o.OutputState,
-	}
+func (o GetWaasPolicyWafConfigJsChallengeChallengeSettingsOutput) ToGetWaasPolicyWafConfigJsChallengeChallengeSettingsPtrOutput() GetWaasPolicyWafConfigJsChallengeChallengeSettingsPtrOutput {
+	return o.ToGetWaasPolicyWafConfigJsChallengeChallengeSettingsPtrOutputWithContext(context.Background())
+}
+
+func (o GetWaasPolicyWafConfigJsChallengeChallengeSettingsOutput) ToGetWaasPolicyWafConfigJsChallengeChallengeSettingsPtrOutputWithContext(ctx context.Context) GetWaasPolicyWafConfigJsChallengeChallengeSettingsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v GetWaasPolicyWafConfigJsChallengeChallengeSettings) *GetWaasPolicyWafConfigJsChallengeChallengeSettings {
+		return &v
+	}).(GetWaasPolicyWafConfigJsChallengeChallengeSettingsPtrOutput)
 }
 
 // If `action` is set to `BLOCK`, this specifies how the traffic is blocked when detected as malicious by a protection rule. If unspecified, defaults to `SET_RESPONSE_CODE`.
-func (o GetWaasPolicyWafConfigJsChallengeChallengeSettingsOutput) BlockAction() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfigJsChallengeChallengeSettings) string { return v.BlockAction }).(pulumi.StringOutput)
+func (o GetWaasPolicyWafConfigJsChallengeChallengeSettingsOutput) BlockAction() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfigJsChallengeChallengeSettings) *string { return v.BlockAction }).(pulumi.StringPtrOutput)
 }
 
 // The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`.
-func (o GetWaasPolicyWafConfigJsChallengeChallengeSettingsOutput) BlockErrorPageCode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfigJsChallengeChallengeSettings) string { return v.BlockErrorPageCode }).(pulumi.StringOutput)
+func (o GetWaasPolicyWafConfigJsChallengeChallengeSettingsOutput) BlockErrorPageCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfigJsChallengeChallengeSettings) *string { return v.BlockErrorPageCode }).(pulumi.StringPtrOutput)
 }
 
 // The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
-func (o GetWaasPolicyWafConfigJsChallengeChallengeSettingsOutput) BlockErrorPageDescription() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfigJsChallengeChallengeSettings) string { return v.BlockErrorPageDescription }).(pulumi.StringOutput)
+func (o GetWaasPolicyWafConfigJsChallengeChallengeSettingsOutput) BlockErrorPageDescription() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfigJsChallengeChallengeSettings) *string { return v.BlockErrorPageDescription }).(pulumi.StringPtrOutput)
 }
 
 // The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to 'Access to the website is blocked.'
-func (o GetWaasPolicyWafConfigJsChallengeChallengeSettingsOutput) BlockErrorPageMessage() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfigJsChallengeChallengeSettings) string { return v.BlockErrorPageMessage }).(pulumi.StringOutput)
+func (o GetWaasPolicyWafConfigJsChallengeChallengeSettingsOutput) BlockErrorPageMessage() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfigJsChallengeChallengeSettings) *string { return v.BlockErrorPageMessage }).(pulumi.StringPtrOutput)
 }
 
 // The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
-func (o GetWaasPolicyWafConfigJsChallengeChallengeSettingsOutput) BlockResponseCode() pulumi.IntOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfigJsChallengeChallengeSettings) int { return v.BlockResponseCode }).(pulumi.IntOutput)
+func (o GetWaasPolicyWafConfigJsChallengeChallengeSettingsOutput) BlockResponseCode() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfigJsChallengeChallengeSettings) *int { return v.BlockResponseCode }).(pulumi.IntPtrOutput)
 }
 
 // The text to show in the footer when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, default to `Enter the letters and numbers as they are shown in image above`.
-func (o GetWaasPolicyWafConfigJsChallengeChallengeSettingsOutput) CaptchaFooter() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfigJsChallengeChallengeSettings) string { return v.CaptchaFooter }).(pulumi.StringOutput)
+func (o GetWaasPolicyWafConfigJsChallengeChallengeSettingsOutput) CaptchaFooter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfigJsChallengeChallengeSettings) *string { return v.CaptchaFooter }).(pulumi.StringPtrOutput)
 }
 
 // The text to show in the header when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `We have detected an increased number of attempts to access this webapp. To help us keep this webapp secure, please let us know that you are not a robot by entering the text from captcha below.`
-func (o GetWaasPolicyWafConfigJsChallengeChallengeSettingsOutput) CaptchaHeader() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfigJsChallengeChallengeSettings) string { return v.CaptchaHeader }).(pulumi.StringOutput)
+func (o GetWaasPolicyWafConfigJsChallengeChallengeSettingsOutput) CaptchaHeader() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfigJsChallengeChallengeSettings) *string { return v.CaptchaHeader }).(pulumi.StringPtrOutput)
 }
 
 // The text to show on the label of the CAPTCHA challenge submit button when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Yes, I am human`.
-func (o GetWaasPolicyWafConfigJsChallengeChallengeSettingsOutput) CaptchaSubmitLabel() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfigJsChallengeChallengeSettings) string { return v.CaptchaSubmitLabel }).(pulumi.StringOutput)
+func (o GetWaasPolicyWafConfigJsChallengeChallengeSettingsOutput) CaptchaSubmitLabel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfigJsChallengeChallengeSettings) *string { return v.CaptchaSubmitLabel }).(pulumi.StringPtrOutput)
 }
 
 // The title used when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Are you human?`
-func (o GetWaasPolicyWafConfigJsChallengeChallengeSettingsOutput) CaptchaTitle() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfigJsChallengeChallengeSettings) string { return v.CaptchaTitle }).(pulumi.StringOutput)
+func (o GetWaasPolicyWafConfigJsChallengeChallengeSettingsOutput) CaptchaTitle() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfigJsChallengeChallengeSettings) *string { return v.CaptchaTitle }).(pulumi.StringPtrOutput)
+}
+
+type GetWaasPolicyWafConfigJsChallengeChallengeSettingsPtrOutput struct{ *pulumi.OutputState }
+
+func (GetWaasPolicyWafConfigJsChallengeChallengeSettingsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GetWaasPolicyWafConfigJsChallengeChallengeSettings)(nil)).Elem()
+}
+
+func (o GetWaasPolicyWafConfigJsChallengeChallengeSettingsPtrOutput) ToGetWaasPolicyWafConfigJsChallengeChallengeSettingsPtrOutput() GetWaasPolicyWafConfigJsChallengeChallengeSettingsPtrOutput {
+	return o
+}
+
+func (o GetWaasPolicyWafConfigJsChallengeChallengeSettingsPtrOutput) ToGetWaasPolicyWafConfigJsChallengeChallengeSettingsPtrOutputWithContext(ctx context.Context) GetWaasPolicyWafConfigJsChallengeChallengeSettingsPtrOutput {
+	return o
+}
+
+func (o GetWaasPolicyWafConfigJsChallengeChallengeSettingsPtrOutput) Elem() GetWaasPolicyWafConfigJsChallengeChallengeSettingsOutput {
+	return o.ApplyT(func(v *GetWaasPolicyWafConfigJsChallengeChallengeSettings) GetWaasPolicyWafConfigJsChallengeChallengeSettings {
+		if v != nil {
+			return *v
+		}
+		var ret GetWaasPolicyWafConfigJsChallengeChallengeSettings
+		return ret
+	}).(GetWaasPolicyWafConfigJsChallengeChallengeSettingsOutput)
+}
+
+// If `action` is set to `BLOCK`, this specifies how the traffic is blocked when detected as malicious by a protection rule. If unspecified, defaults to `SET_RESPONSE_CODE`.
+func (o GetWaasPolicyWafConfigJsChallengeChallengeSettingsPtrOutput) BlockAction() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GetWaasPolicyWafConfigJsChallengeChallengeSettings) *string {
+		if v == nil {
+			return nil
+		}
+		return v.BlockAction
+	}).(pulumi.StringPtrOutput)
+}
+
+// The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`.
+func (o GetWaasPolicyWafConfigJsChallengeChallengeSettingsPtrOutput) BlockErrorPageCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GetWaasPolicyWafConfigJsChallengeChallengeSettings) *string {
+		if v == nil {
+			return nil
+		}
+		return v.BlockErrorPageCode
+	}).(pulumi.StringPtrOutput)
+}
+
+// The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
+func (o GetWaasPolicyWafConfigJsChallengeChallengeSettingsPtrOutput) BlockErrorPageDescription() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GetWaasPolicyWafConfigJsChallengeChallengeSettings) *string {
+		if v == nil {
+			return nil
+		}
+		return v.BlockErrorPageDescription
+	}).(pulumi.StringPtrOutput)
+}
+
+// The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to 'Access to the website is blocked.'
+func (o GetWaasPolicyWafConfigJsChallengeChallengeSettingsPtrOutput) BlockErrorPageMessage() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GetWaasPolicyWafConfigJsChallengeChallengeSettings) *string {
+		if v == nil {
+			return nil
+		}
+		return v.BlockErrorPageMessage
+	}).(pulumi.StringPtrOutput)
+}
+
+// The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
+func (o GetWaasPolicyWafConfigJsChallengeChallengeSettingsPtrOutput) BlockResponseCode() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *GetWaasPolicyWafConfigJsChallengeChallengeSettings) *int {
+		if v == nil {
+			return nil
+		}
+		return v.BlockResponseCode
+	}).(pulumi.IntPtrOutput)
+}
+
+// The text to show in the footer when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, default to `Enter the letters and numbers as they are shown in image above`.
+func (o GetWaasPolicyWafConfigJsChallengeChallengeSettingsPtrOutput) CaptchaFooter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GetWaasPolicyWafConfigJsChallengeChallengeSettings) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CaptchaFooter
+	}).(pulumi.StringPtrOutput)
+}
+
+// The text to show in the header when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `We have detected an increased number of attempts to access this webapp. To help us keep this webapp secure, please let us know that you are not a robot by entering the text from captcha below.`
+func (o GetWaasPolicyWafConfigJsChallengeChallengeSettingsPtrOutput) CaptchaHeader() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GetWaasPolicyWafConfigJsChallengeChallengeSettings) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CaptchaHeader
+	}).(pulumi.StringPtrOutput)
+}
+
+// The text to show on the label of the CAPTCHA challenge submit button when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Yes, I am human`.
+func (o GetWaasPolicyWafConfigJsChallengeChallengeSettingsPtrOutput) CaptchaSubmitLabel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GetWaasPolicyWafConfigJsChallengeChallengeSettings) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CaptchaSubmitLabel
+	}).(pulumi.StringPtrOutput)
+}
+
+// The title used when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Are you human?`
+func (o GetWaasPolicyWafConfigJsChallengeChallengeSettingsPtrOutput) CaptchaTitle() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GetWaasPolicyWafConfigJsChallengeChallengeSettings) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CaptchaTitle
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetWaasPolicyWafConfigJsChallengeCriteria struct {
@@ -20837,7 +19796,7 @@ type GetWaasPolicyWafConfigJsChallengeCriteria struct {
 	// * **HTTP_METHOD_IS:** Matches if the request method is identical to one of the values listed in field. The `value` in this case is string with one or multiple HTTP methods separated by new line symbol \n The list of available methods: `GET`, `HEAD`, `POST`, `PUT`, `DELETE`, `CONNECT`, `OPTIONS`, `TRACE`, `PATCH`
 	Condition string `pulumi:"condition"`
 	// When enabled, the condition will be matched with case-sensitive rules.
-	IsCaseSensitive bool `pulumi:"isCaseSensitive"`
+	IsCaseSensitive *bool `pulumi:"isCaseSensitive"`
 	// The value of the header.
 	Value string `pulumi:"value"`
 }
@@ -20873,7 +19832,7 @@ type GetWaasPolicyWafConfigJsChallengeCriteriaArgs struct {
 	// * **HTTP_METHOD_IS:** Matches if the request method is identical to one of the values listed in field. The `value` in this case is string with one or multiple HTTP methods separated by new line symbol \n The list of available methods: `GET`, `HEAD`, `POST`, `PUT`, `DELETE`, `CONNECT`, `OPTIONS`, `TRACE`, `PATCH`
 	Condition pulumi.StringInput `pulumi:"condition"`
 	// When enabled, the condition will be matched with case-sensitive rules.
-	IsCaseSensitive pulumi.BoolInput `pulumi:"isCaseSensitive"`
+	IsCaseSensitive pulumi.BoolPtrInput `pulumi:"isCaseSensitive"`
 	// The value of the header.
 	Value pulumi.StringInput `pulumi:"value"`
 }
@@ -20888,12 +19847,6 @@ func (i GetWaasPolicyWafConfigJsChallengeCriteriaArgs) ToGetWaasPolicyWafConfigJ
 
 func (i GetWaasPolicyWafConfigJsChallengeCriteriaArgs) ToGetWaasPolicyWafConfigJsChallengeCriteriaOutputWithContext(ctx context.Context) GetWaasPolicyWafConfigJsChallengeCriteriaOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyWafConfigJsChallengeCriteriaOutput)
-}
-
-func (i GetWaasPolicyWafConfigJsChallengeCriteriaArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyWafConfigJsChallengeCriteria] {
-	return pulumix.Output[GetWaasPolicyWafConfigJsChallengeCriteria]{
-		OutputState: i.ToGetWaasPolicyWafConfigJsChallengeCriteriaOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetWaasPolicyWafConfigJsChallengeCriteriaArrayInput is an input type that accepts GetWaasPolicyWafConfigJsChallengeCriteriaArray and GetWaasPolicyWafConfigJsChallengeCriteriaArrayOutput values.
@@ -20921,12 +19874,6 @@ func (i GetWaasPolicyWafConfigJsChallengeCriteriaArray) ToGetWaasPolicyWafConfig
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyWafConfigJsChallengeCriteriaArrayOutput)
 }
 
-func (i GetWaasPolicyWafConfigJsChallengeCriteriaArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPolicyWafConfigJsChallengeCriteria] {
-	return pulumix.Output[[]GetWaasPolicyWafConfigJsChallengeCriteria]{
-		OutputState: i.ToGetWaasPolicyWafConfigJsChallengeCriteriaArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPolicyWafConfigJsChallengeCriteriaOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPolicyWafConfigJsChallengeCriteriaOutput) ElementType() reflect.Type {
@@ -20939,12 +19886,6 @@ func (o GetWaasPolicyWafConfigJsChallengeCriteriaOutput) ToGetWaasPolicyWafConfi
 
 func (o GetWaasPolicyWafConfigJsChallengeCriteriaOutput) ToGetWaasPolicyWafConfigJsChallengeCriteriaOutputWithContext(ctx context.Context) GetWaasPolicyWafConfigJsChallengeCriteriaOutput {
 	return o
-}
-
-func (o GetWaasPolicyWafConfigJsChallengeCriteriaOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyWafConfigJsChallengeCriteria] {
-	return pulumix.Output[GetWaasPolicyWafConfigJsChallengeCriteria]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The criteria the access rule and JavaScript Challenge uses to determine if action should be taken on a request.
@@ -20969,8 +19910,8 @@ func (o GetWaasPolicyWafConfigJsChallengeCriteriaOutput) Condition() pulumi.Stri
 }
 
 // When enabled, the condition will be matched with case-sensitive rules.
-func (o GetWaasPolicyWafConfigJsChallengeCriteriaOutput) IsCaseSensitive() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfigJsChallengeCriteria) bool { return v.IsCaseSensitive }).(pulumi.BoolOutput)
+func (o GetWaasPolicyWafConfigJsChallengeCriteriaOutput) IsCaseSensitive() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfigJsChallengeCriteria) *bool { return v.IsCaseSensitive }).(pulumi.BoolPtrOutput)
 }
 
 // The value of the header.
@@ -20990,12 +19931,6 @@ func (o GetWaasPolicyWafConfigJsChallengeCriteriaArrayOutput) ToGetWaasPolicyWaf
 
 func (o GetWaasPolicyWafConfigJsChallengeCriteriaArrayOutput) ToGetWaasPolicyWafConfigJsChallengeCriteriaArrayOutputWithContext(ctx context.Context) GetWaasPolicyWafConfigJsChallengeCriteriaArrayOutput {
 	return o
-}
-
-func (o GetWaasPolicyWafConfigJsChallengeCriteriaArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPolicyWafConfigJsChallengeCriteria] {
-	return pulumix.Output[[]GetWaasPolicyWafConfigJsChallengeCriteria]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetWaasPolicyWafConfigJsChallengeCriteriaArrayOutput) Index(i pulumi.IntInput) GetWaasPolicyWafConfigJsChallengeCriteriaOutput {
@@ -21041,10 +19976,45 @@ func (i GetWaasPolicyWafConfigJsChallengeSetHttpHeaderArgs) ToGetWaasPolicyWafCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyWafConfigJsChallengeSetHttpHeaderOutput)
 }
 
-func (i GetWaasPolicyWafConfigJsChallengeSetHttpHeaderArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyWafConfigJsChallengeSetHttpHeader] {
-	return pulumix.Output[GetWaasPolicyWafConfigJsChallengeSetHttpHeader]{
-		OutputState: i.ToGetWaasPolicyWafConfigJsChallengeSetHttpHeaderOutputWithContext(ctx).OutputState,
-	}
+func (i GetWaasPolicyWafConfigJsChallengeSetHttpHeaderArgs) ToGetWaasPolicyWafConfigJsChallengeSetHttpHeaderPtrOutput() GetWaasPolicyWafConfigJsChallengeSetHttpHeaderPtrOutput {
+	return i.ToGetWaasPolicyWafConfigJsChallengeSetHttpHeaderPtrOutputWithContext(context.Background())
+}
+
+func (i GetWaasPolicyWafConfigJsChallengeSetHttpHeaderArgs) ToGetWaasPolicyWafConfigJsChallengeSetHttpHeaderPtrOutputWithContext(ctx context.Context) GetWaasPolicyWafConfigJsChallengeSetHttpHeaderPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyWafConfigJsChallengeSetHttpHeaderOutput).ToGetWaasPolicyWafConfigJsChallengeSetHttpHeaderPtrOutputWithContext(ctx)
+}
+
+// GetWaasPolicyWafConfigJsChallengeSetHttpHeaderPtrInput is an input type that accepts GetWaasPolicyWafConfigJsChallengeSetHttpHeaderArgs, GetWaasPolicyWafConfigJsChallengeSetHttpHeaderPtr and GetWaasPolicyWafConfigJsChallengeSetHttpHeaderPtrOutput values.
+// You can construct a concrete instance of `GetWaasPolicyWafConfigJsChallengeSetHttpHeaderPtrInput` via:
+//
+//	        GetWaasPolicyWafConfigJsChallengeSetHttpHeaderArgs{...}
+//
+//	or:
+//
+//	        nil
+type GetWaasPolicyWafConfigJsChallengeSetHttpHeaderPtrInput interface {
+	pulumi.Input
+
+	ToGetWaasPolicyWafConfigJsChallengeSetHttpHeaderPtrOutput() GetWaasPolicyWafConfigJsChallengeSetHttpHeaderPtrOutput
+	ToGetWaasPolicyWafConfigJsChallengeSetHttpHeaderPtrOutputWithContext(context.Context) GetWaasPolicyWafConfigJsChallengeSetHttpHeaderPtrOutput
+}
+
+type getWaasPolicyWafConfigJsChallengeSetHttpHeaderPtrType GetWaasPolicyWafConfigJsChallengeSetHttpHeaderArgs
+
+func GetWaasPolicyWafConfigJsChallengeSetHttpHeaderPtr(v *GetWaasPolicyWafConfigJsChallengeSetHttpHeaderArgs) GetWaasPolicyWafConfigJsChallengeSetHttpHeaderPtrInput {
+	return (*getWaasPolicyWafConfigJsChallengeSetHttpHeaderPtrType)(v)
+}
+
+func (*getWaasPolicyWafConfigJsChallengeSetHttpHeaderPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**GetWaasPolicyWafConfigJsChallengeSetHttpHeader)(nil)).Elem()
+}
+
+func (i *getWaasPolicyWafConfigJsChallengeSetHttpHeaderPtrType) ToGetWaasPolicyWafConfigJsChallengeSetHttpHeaderPtrOutput() GetWaasPolicyWafConfigJsChallengeSetHttpHeaderPtrOutput {
+	return i.ToGetWaasPolicyWafConfigJsChallengeSetHttpHeaderPtrOutputWithContext(context.Background())
+}
+
+func (i *getWaasPolicyWafConfigJsChallengeSetHttpHeaderPtrType) ToGetWaasPolicyWafConfigJsChallengeSetHttpHeaderPtrOutputWithContext(ctx context.Context) GetWaasPolicyWafConfigJsChallengeSetHttpHeaderPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyWafConfigJsChallengeSetHttpHeaderPtrOutput)
 }
 
 type GetWaasPolicyWafConfigJsChallengeSetHttpHeaderOutput struct{ *pulumi.OutputState }
@@ -21061,10 +20031,14 @@ func (o GetWaasPolicyWafConfigJsChallengeSetHttpHeaderOutput) ToGetWaasPolicyWaf
 	return o
 }
 
-func (o GetWaasPolicyWafConfigJsChallengeSetHttpHeaderOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyWafConfigJsChallengeSetHttpHeader] {
-	return pulumix.Output[GetWaasPolicyWafConfigJsChallengeSetHttpHeader]{
-		OutputState: o.OutputState,
-	}
+func (o GetWaasPolicyWafConfigJsChallengeSetHttpHeaderOutput) ToGetWaasPolicyWafConfigJsChallengeSetHttpHeaderPtrOutput() GetWaasPolicyWafConfigJsChallengeSetHttpHeaderPtrOutput {
+	return o.ToGetWaasPolicyWafConfigJsChallengeSetHttpHeaderPtrOutputWithContext(context.Background())
+}
+
+func (o GetWaasPolicyWafConfigJsChallengeSetHttpHeaderOutput) ToGetWaasPolicyWafConfigJsChallengeSetHttpHeaderPtrOutputWithContext(ctx context.Context) GetWaasPolicyWafConfigJsChallengeSetHttpHeaderPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v GetWaasPolicyWafConfigJsChallengeSetHttpHeader) *GetWaasPolicyWafConfigJsChallengeSetHttpHeader {
+		return &v
+	}).(GetWaasPolicyWafConfigJsChallengeSetHttpHeaderPtrOutput)
 }
 
 // The unique name of the whitelist.
@@ -21077,33 +20051,77 @@ func (o GetWaasPolicyWafConfigJsChallengeSetHttpHeaderOutput) Value() pulumi.Str
 	return o.ApplyT(func(v GetWaasPolicyWafConfigJsChallengeSetHttpHeader) string { return v.Value }).(pulumi.StringOutput)
 }
 
+type GetWaasPolicyWafConfigJsChallengeSetHttpHeaderPtrOutput struct{ *pulumi.OutputState }
+
+func (GetWaasPolicyWafConfigJsChallengeSetHttpHeaderPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GetWaasPolicyWafConfigJsChallengeSetHttpHeader)(nil)).Elem()
+}
+
+func (o GetWaasPolicyWafConfigJsChallengeSetHttpHeaderPtrOutput) ToGetWaasPolicyWafConfigJsChallengeSetHttpHeaderPtrOutput() GetWaasPolicyWafConfigJsChallengeSetHttpHeaderPtrOutput {
+	return o
+}
+
+func (o GetWaasPolicyWafConfigJsChallengeSetHttpHeaderPtrOutput) ToGetWaasPolicyWafConfigJsChallengeSetHttpHeaderPtrOutputWithContext(ctx context.Context) GetWaasPolicyWafConfigJsChallengeSetHttpHeaderPtrOutput {
+	return o
+}
+
+func (o GetWaasPolicyWafConfigJsChallengeSetHttpHeaderPtrOutput) Elem() GetWaasPolicyWafConfigJsChallengeSetHttpHeaderOutput {
+	return o.ApplyT(func(v *GetWaasPolicyWafConfigJsChallengeSetHttpHeader) GetWaasPolicyWafConfigJsChallengeSetHttpHeader {
+		if v != nil {
+			return *v
+		}
+		var ret GetWaasPolicyWafConfigJsChallengeSetHttpHeader
+		return ret
+	}).(GetWaasPolicyWafConfigJsChallengeSetHttpHeaderOutput)
+}
+
+// The unique name of the whitelist.
+func (o GetWaasPolicyWafConfigJsChallengeSetHttpHeaderPtrOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GetWaasPolicyWafConfigJsChallengeSetHttpHeader) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Name
+	}).(pulumi.StringPtrOutput)
+}
+
+// The value of the header.
+func (o GetWaasPolicyWafConfigJsChallengeSetHttpHeaderPtrOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GetWaasPolicyWafConfigJsChallengeSetHttpHeader) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Value
+	}).(pulumi.StringPtrOutput)
+}
+
 type GetWaasPolicyWafConfigProtectionSettings struct {
 	// The list of allowed HTTP methods. If unspecified, default to `[OPTIONS, GET, HEAD, POST]`. This setting only applies if a corresponding protection rule is enabled, such as the "Restrict HTTP Request Methods" rule (key: 911100).
 	AllowedHttpMethods []string `pulumi:"allowedHttpMethods"`
 	// If `action` is set to `BLOCK`, this specifies how the traffic is blocked when detected as malicious by a protection rule. If unspecified, defaults to `SET_RESPONSE_CODE`.
-	BlockAction string `pulumi:"blockAction"`
+	BlockAction *string `pulumi:"blockAction"`
 	// The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`.
-	BlockErrorPageCode string `pulumi:"blockErrorPageCode"`
+	BlockErrorPageCode *string `pulumi:"blockErrorPageCode"`
 	// The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
-	BlockErrorPageDescription string `pulumi:"blockErrorPageDescription"`
+	BlockErrorPageDescription *string `pulumi:"blockErrorPageDescription"`
 	// The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to 'Access to the website is blocked.'
-	BlockErrorPageMessage string `pulumi:"blockErrorPageMessage"`
+	BlockErrorPageMessage *string `pulumi:"blockErrorPageMessage"`
 	// The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
-	BlockResponseCode int `pulumi:"blockResponseCode"`
+	BlockResponseCode *int `pulumi:"blockResponseCode"`
 	// Inspects the response body of origin responses. Can be used to detect leakage of sensitive data. If unspecified, defaults to `false`.
-	IsResponseInspected bool `pulumi:"isResponseInspected"`
+	IsResponseInspected *bool `pulumi:"isResponseInspected"`
 	// The maximum number of arguments allowed to be passed to your application before an action is taken. Arguements are query parameters or body parameters in a PUT or POST request. If unspecified, defaults to `255`. This setting only applies if a corresponding protection rule is enabled, such as the "Number of Arguments Limits" rule (key: 960335).  Example: If `maxArgumentCount` to `2` for the Max Number of Arguments protection rule (key: 960335), the following requests would be blocked: `GET /myapp/path?query=one&query=two&query=three` `POST /myapp/path` with Body `{"argument1":"one","argument2":"two","argument3":"three"}`
-	MaxArgumentCount int `pulumi:"maxArgumentCount"`
+	MaxArgumentCount *int `pulumi:"maxArgumentCount"`
 	// The maximum length allowed for each argument name, in characters. Arguements are query parameters or body parameters in a PUT or POST request. If unspecified, defaults to `400`. This setting only applies if a corresponding protection rule is enabled, such as the "Values Limits" rule (key: 960208).
-	MaxNameLengthPerArgument int `pulumi:"maxNameLengthPerArgument"`
+	MaxNameLengthPerArgument *int `pulumi:"maxNameLengthPerArgument"`
 	// The maximum response size to be fully inspected, in binary kilobytes (KiB). Anything over this limit will be partially inspected. If unspecified, defaults to `1024`.
-	MaxResponseSizeInKiB int `pulumi:"maxResponseSizeInKiB"`
+	MaxResponseSizeInKiB *int `pulumi:"maxResponseSizeInKiB"`
 	// The maximum length allowed for the sum of the argument name and value, in characters. Arguements are query parameters or body parameters in a PUT or POST request. If unspecified, defaults to `64000`. This setting only applies if a corresponding protection rule is enabled, such as the "Total Arguments Limits" rule (key: 960341).
-	MaxTotalNameLengthOfArguments int `pulumi:"maxTotalNameLengthOfArguments"`
+	MaxTotalNameLengthOfArguments *int `pulumi:"maxTotalNameLengthOfArguments"`
 	// The list of media types to allow for inspection, if `isResponseInspected` is enabled. Only responses with MIME types in this list will be inspected. If unspecified, defaults to `["text/html", "text/plain", "text/xml"]`.
 	MediaTypes []string `pulumi:"mediaTypes"`
 	// The length of time to analyze traffic traffic, in days. After the analysis period, `WafRecommendations` will be populated. If unspecified, defaults to `10`.
-	RecommendationsPeriodInDays int `pulumi:"recommendationsPeriodInDays"`
+	RecommendationsPeriodInDays *int `pulumi:"recommendationsPeriodInDays"`
 }
 
 // GetWaasPolicyWafConfigProtectionSettingsInput is an input type that accepts GetWaasPolicyWafConfigProtectionSettingsArgs and GetWaasPolicyWafConfigProtectionSettingsOutput values.
@@ -21121,29 +20139,29 @@ type GetWaasPolicyWafConfigProtectionSettingsArgs struct {
 	// The list of allowed HTTP methods. If unspecified, default to `[OPTIONS, GET, HEAD, POST]`. This setting only applies if a corresponding protection rule is enabled, such as the "Restrict HTTP Request Methods" rule (key: 911100).
 	AllowedHttpMethods pulumi.StringArrayInput `pulumi:"allowedHttpMethods"`
 	// If `action` is set to `BLOCK`, this specifies how the traffic is blocked when detected as malicious by a protection rule. If unspecified, defaults to `SET_RESPONSE_CODE`.
-	BlockAction pulumi.StringInput `pulumi:"blockAction"`
+	BlockAction pulumi.StringPtrInput `pulumi:"blockAction"`
 	// The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`.
-	BlockErrorPageCode pulumi.StringInput `pulumi:"blockErrorPageCode"`
+	BlockErrorPageCode pulumi.StringPtrInput `pulumi:"blockErrorPageCode"`
 	// The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
-	BlockErrorPageDescription pulumi.StringInput `pulumi:"blockErrorPageDescription"`
+	BlockErrorPageDescription pulumi.StringPtrInput `pulumi:"blockErrorPageDescription"`
 	// The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to 'Access to the website is blocked.'
-	BlockErrorPageMessage pulumi.StringInput `pulumi:"blockErrorPageMessage"`
+	BlockErrorPageMessage pulumi.StringPtrInput `pulumi:"blockErrorPageMessage"`
 	// The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
-	BlockResponseCode pulumi.IntInput `pulumi:"blockResponseCode"`
+	BlockResponseCode pulumi.IntPtrInput `pulumi:"blockResponseCode"`
 	// Inspects the response body of origin responses. Can be used to detect leakage of sensitive data. If unspecified, defaults to `false`.
-	IsResponseInspected pulumi.BoolInput `pulumi:"isResponseInspected"`
+	IsResponseInspected pulumi.BoolPtrInput `pulumi:"isResponseInspected"`
 	// The maximum number of arguments allowed to be passed to your application before an action is taken. Arguements are query parameters or body parameters in a PUT or POST request. If unspecified, defaults to `255`. This setting only applies if a corresponding protection rule is enabled, such as the "Number of Arguments Limits" rule (key: 960335).  Example: If `maxArgumentCount` to `2` for the Max Number of Arguments protection rule (key: 960335), the following requests would be blocked: `GET /myapp/path?query=one&query=two&query=three` `POST /myapp/path` with Body `{"argument1":"one","argument2":"two","argument3":"three"}`
-	MaxArgumentCount pulumi.IntInput `pulumi:"maxArgumentCount"`
+	MaxArgumentCount pulumi.IntPtrInput `pulumi:"maxArgumentCount"`
 	// The maximum length allowed for each argument name, in characters. Arguements are query parameters or body parameters in a PUT or POST request. If unspecified, defaults to `400`. This setting only applies if a corresponding protection rule is enabled, such as the "Values Limits" rule (key: 960208).
-	MaxNameLengthPerArgument pulumi.IntInput `pulumi:"maxNameLengthPerArgument"`
+	MaxNameLengthPerArgument pulumi.IntPtrInput `pulumi:"maxNameLengthPerArgument"`
 	// The maximum response size to be fully inspected, in binary kilobytes (KiB). Anything over this limit will be partially inspected. If unspecified, defaults to `1024`.
-	MaxResponseSizeInKiB pulumi.IntInput `pulumi:"maxResponseSizeInKiB"`
+	MaxResponseSizeInKiB pulumi.IntPtrInput `pulumi:"maxResponseSizeInKiB"`
 	// The maximum length allowed for the sum of the argument name and value, in characters. Arguements are query parameters or body parameters in a PUT or POST request. If unspecified, defaults to `64000`. This setting only applies if a corresponding protection rule is enabled, such as the "Total Arguments Limits" rule (key: 960341).
-	MaxTotalNameLengthOfArguments pulumi.IntInput `pulumi:"maxTotalNameLengthOfArguments"`
+	MaxTotalNameLengthOfArguments pulumi.IntPtrInput `pulumi:"maxTotalNameLengthOfArguments"`
 	// The list of media types to allow for inspection, if `isResponseInspected` is enabled. Only responses with MIME types in this list will be inspected. If unspecified, defaults to `["text/html", "text/plain", "text/xml"]`.
 	MediaTypes pulumi.StringArrayInput `pulumi:"mediaTypes"`
 	// The length of time to analyze traffic traffic, in days. After the analysis period, `WafRecommendations` will be populated. If unspecified, defaults to `10`.
-	RecommendationsPeriodInDays pulumi.IntInput `pulumi:"recommendationsPeriodInDays"`
+	RecommendationsPeriodInDays pulumi.IntPtrInput `pulumi:"recommendationsPeriodInDays"`
 }
 
 func (GetWaasPolicyWafConfigProtectionSettingsArgs) ElementType() reflect.Type {
@@ -21158,10 +20176,45 @@ func (i GetWaasPolicyWafConfigProtectionSettingsArgs) ToGetWaasPolicyWafConfigPr
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyWafConfigProtectionSettingsOutput)
 }
 
-func (i GetWaasPolicyWafConfigProtectionSettingsArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyWafConfigProtectionSettings] {
-	return pulumix.Output[GetWaasPolicyWafConfigProtectionSettings]{
-		OutputState: i.ToGetWaasPolicyWafConfigProtectionSettingsOutputWithContext(ctx).OutputState,
-	}
+func (i GetWaasPolicyWafConfigProtectionSettingsArgs) ToGetWaasPolicyWafConfigProtectionSettingsPtrOutput() GetWaasPolicyWafConfigProtectionSettingsPtrOutput {
+	return i.ToGetWaasPolicyWafConfigProtectionSettingsPtrOutputWithContext(context.Background())
+}
+
+func (i GetWaasPolicyWafConfigProtectionSettingsArgs) ToGetWaasPolicyWafConfigProtectionSettingsPtrOutputWithContext(ctx context.Context) GetWaasPolicyWafConfigProtectionSettingsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyWafConfigProtectionSettingsOutput).ToGetWaasPolicyWafConfigProtectionSettingsPtrOutputWithContext(ctx)
+}
+
+// GetWaasPolicyWafConfigProtectionSettingsPtrInput is an input type that accepts GetWaasPolicyWafConfigProtectionSettingsArgs, GetWaasPolicyWafConfigProtectionSettingsPtr and GetWaasPolicyWafConfigProtectionSettingsPtrOutput values.
+// You can construct a concrete instance of `GetWaasPolicyWafConfigProtectionSettingsPtrInput` via:
+//
+//	        GetWaasPolicyWafConfigProtectionSettingsArgs{...}
+//
+//	or:
+//
+//	        nil
+type GetWaasPolicyWafConfigProtectionSettingsPtrInput interface {
+	pulumi.Input
+
+	ToGetWaasPolicyWafConfigProtectionSettingsPtrOutput() GetWaasPolicyWafConfigProtectionSettingsPtrOutput
+	ToGetWaasPolicyWafConfigProtectionSettingsPtrOutputWithContext(context.Context) GetWaasPolicyWafConfigProtectionSettingsPtrOutput
+}
+
+type getWaasPolicyWafConfigProtectionSettingsPtrType GetWaasPolicyWafConfigProtectionSettingsArgs
+
+func GetWaasPolicyWafConfigProtectionSettingsPtr(v *GetWaasPolicyWafConfigProtectionSettingsArgs) GetWaasPolicyWafConfigProtectionSettingsPtrInput {
+	return (*getWaasPolicyWafConfigProtectionSettingsPtrType)(v)
+}
+
+func (*getWaasPolicyWafConfigProtectionSettingsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**GetWaasPolicyWafConfigProtectionSettings)(nil)).Elem()
+}
+
+func (i *getWaasPolicyWafConfigProtectionSettingsPtrType) ToGetWaasPolicyWafConfigProtectionSettingsPtrOutput() GetWaasPolicyWafConfigProtectionSettingsPtrOutput {
+	return i.ToGetWaasPolicyWafConfigProtectionSettingsPtrOutputWithContext(context.Background())
+}
+
+func (i *getWaasPolicyWafConfigProtectionSettingsPtrType) ToGetWaasPolicyWafConfigProtectionSettingsPtrOutputWithContext(ctx context.Context) GetWaasPolicyWafConfigProtectionSettingsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyWafConfigProtectionSettingsPtrOutput)
 }
 
 type GetWaasPolicyWafConfigProtectionSettingsOutput struct{ *pulumi.OutputState }
@@ -21178,10 +20231,14 @@ func (o GetWaasPolicyWafConfigProtectionSettingsOutput) ToGetWaasPolicyWafConfig
 	return o
 }
 
-func (o GetWaasPolicyWafConfigProtectionSettingsOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyWafConfigProtectionSettings] {
-	return pulumix.Output[GetWaasPolicyWafConfigProtectionSettings]{
-		OutputState: o.OutputState,
-	}
+func (o GetWaasPolicyWafConfigProtectionSettingsOutput) ToGetWaasPolicyWafConfigProtectionSettingsPtrOutput() GetWaasPolicyWafConfigProtectionSettingsPtrOutput {
+	return o.ToGetWaasPolicyWafConfigProtectionSettingsPtrOutputWithContext(context.Background())
+}
+
+func (o GetWaasPolicyWafConfigProtectionSettingsOutput) ToGetWaasPolicyWafConfigProtectionSettingsPtrOutputWithContext(ctx context.Context) GetWaasPolicyWafConfigProtectionSettingsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v GetWaasPolicyWafConfigProtectionSettings) *GetWaasPolicyWafConfigProtectionSettings {
+		return &v
+	}).(GetWaasPolicyWafConfigProtectionSettingsPtrOutput)
 }
 
 // The list of allowed HTTP methods. If unspecified, default to `[OPTIONS, GET, HEAD, POST]`. This setting only applies if a corresponding protection rule is enabled, such as the "Restrict HTTP Request Methods" rule (key: 911100).
@@ -21190,53 +20247,53 @@ func (o GetWaasPolicyWafConfigProtectionSettingsOutput) AllowedHttpMethods() pul
 }
 
 // If `action` is set to `BLOCK`, this specifies how the traffic is blocked when detected as malicious by a protection rule. If unspecified, defaults to `SET_RESPONSE_CODE`.
-func (o GetWaasPolicyWafConfigProtectionSettingsOutput) BlockAction() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfigProtectionSettings) string { return v.BlockAction }).(pulumi.StringOutput)
+func (o GetWaasPolicyWafConfigProtectionSettingsOutput) BlockAction() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfigProtectionSettings) *string { return v.BlockAction }).(pulumi.StringPtrOutput)
 }
 
 // The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`.
-func (o GetWaasPolicyWafConfigProtectionSettingsOutput) BlockErrorPageCode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfigProtectionSettings) string { return v.BlockErrorPageCode }).(pulumi.StringOutput)
+func (o GetWaasPolicyWafConfigProtectionSettingsOutput) BlockErrorPageCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfigProtectionSettings) *string { return v.BlockErrorPageCode }).(pulumi.StringPtrOutput)
 }
 
 // The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
-func (o GetWaasPolicyWafConfigProtectionSettingsOutput) BlockErrorPageDescription() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfigProtectionSettings) string { return v.BlockErrorPageDescription }).(pulumi.StringOutput)
+func (o GetWaasPolicyWafConfigProtectionSettingsOutput) BlockErrorPageDescription() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfigProtectionSettings) *string { return v.BlockErrorPageDescription }).(pulumi.StringPtrOutput)
 }
 
 // The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to 'Access to the website is blocked.'
-func (o GetWaasPolicyWafConfigProtectionSettingsOutput) BlockErrorPageMessage() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfigProtectionSettings) string { return v.BlockErrorPageMessage }).(pulumi.StringOutput)
+func (o GetWaasPolicyWafConfigProtectionSettingsOutput) BlockErrorPageMessage() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfigProtectionSettings) *string { return v.BlockErrorPageMessage }).(pulumi.StringPtrOutput)
 }
 
 // The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
-func (o GetWaasPolicyWafConfigProtectionSettingsOutput) BlockResponseCode() pulumi.IntOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfigProtectionSettings) int { return v.BlockResponseCode }).(pulumi.IntOutput)
+func (o GetWaasPolicyWafConfigProtectionSettingsOutput) BlockResponseCode() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfigProtectionSettings) *int { return v.BlockResponseCode }).(pulumi.IntPtrOutput)
 }
 
 // Inspects the response body of origin responses. Can be used to detect leakage of sensitive data. If unspecified, defaults to `false`.
-func (o GetWaasPolicyWafConfigProtectionSettingsOutput) IsResponseInspected() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfigProtectionSettings) bool { return v.IsResponseInspected }).(pulumi.BoolOutput)
+func (o GetWaasPolicyWafConfigProtectionSettingsOutput) IsResponseInspected() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfigProtectionSettings) *bool { return v.IsResponseInspected }).(pulumi.BoolPtrOutput)
 }
 
 // The maximum number of arguments allowed to be passed to your application before an action is taken. Arguements are query parameters or body parameters in a PUT or POST request. If unspecified, defaults to `255`. This setting only applies if a corresponding protection rule is enabled, such as the "Number of Arguments Limits" rule (key: 960335).  Example: If `maxArgumentCount` to `2` for the Max Number of Arguments protection rule (key: 960335), the following requests would be blocked: `GET /myapp/path?query=one&query=two&query=three` `POST /myapp/path` with Body `{"argument1":"one","argument2":"two","argument3":"three"}`
-func (o GetWaasPolicyWafConfigProtectionSettingsOutput) MaxArgumentCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfigProtectionSettings) int { return v.MaxArgumentCount }).(pulumi.IntOutput)
+func (o GetWaasPolicyWafConfigProtectionSettingsOutput) MaxArgumentCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfigProtectionSettings) *int { return v.MaxArgumentCount }).(pulumi.IntPtrOutput)
 }
 
 // The maximum length allowed for each argument name, in characters. Arguements are query parameters or body parameters in a PUT or POST request. If unspecified, defaults to `400`. This setting only applies if a corresponding protection rule is enabled, such as the "Values Limits" rule (key: 960208).
-func (o GetWaasPolicyWafConfigProtectionSettingsOutput) MaxNameLengthPerArgument() pulumi.IntOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfigProtectionSettings) int { return v.MaxNameLengthPerArgument }).(pulumi.IntOutput)
+func (o GetWaasPolicyWafConfigProtectionSettingsOutput) MaxNameLengthPerArgument() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfigProtectionSettings) *int { return v.MaxNameLengthPerArgument }).(pulumi.IntPtrOutput)
 }
 
 // The maximum response size to be fully inspected, in binary kilobytes (KiB). Anything over this limit will be partially inspected. If unspecified, defaults to `1024`.
-func (o GetWaasPolicyWafConfigProtectionSettingsOutput) MaxResponseSizeInKiB() pulumi.IntOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfigProtectionSettings) int { return v.MaxResponseSizeInKiB }).(pulumi.IntOutput)
+func (o GetWaasPolicyWafConfigProtectionSettingsOutput) MaxResponseSizeInKiB() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfigProtectionSettings) *int { return v.MaxResponseSizeInKiB }).(pulumi.IntPtrOutput)
 }
 
 // The maximum length allowed for the sum of the argument name and value, in characters. Arguements are query parameters or body parameters in a PUT or POST request. If unspecified, defaults to `64000`. This setting only applies if a corresponding protection rule is enabled, such as the "Total Arguments Limits" rule (key: 960341).
-func (o GetWaasPolicyWafConfigProtectionSettingsOutput) MaxTotalNameLengthOfArguments() pulumi.IntOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfigProtectionSettings) int { return v.MaxTotalNameLengthOfArguments }).(pulumi.IntOutput)
+func (o GetWaasPolicyWafConfigProtectionSettingsOutput) MaxTotalNameLengthOfArguments() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfigProtectionSettings) *int { return v.MaxTotalNameLengthOfArguments }).(pulumi.IntPtrOutput)
 }
 
 // The list of media types to allow for inspection, if `isResponseInspected` is enabled. Only responses with MIME types in this list will be inspected. If unspecified, defaults to `["text/html", "text/plain", "text/xml"]`.
@@ -21245,8 +20302,162 @@ func (o GetWaasPolicyWafConfigProtectionSettingsOutput) MediaTypes() pulumi.Stri
 }
 
 // The length of time to analyze traffic traffic, in days. After the analysis period, `WafRecommendations` will be populated. If unspecified, defaults to `10`.
-func (o GetWaasPolicyWafConfigProtectionSettingsOutput) RecommendationsPeriodInDays() pulumi.IntOutput {
-	return o.ApplyT(func(v GetWaasPolicyWafConfigProtectionSettings) int { return v.RecommendationsPeriodInDays }).(pulumi.IntOutput)
+func (o GetWaasPolicyWafConfigProtectionSettingsOutput) RecommendationsPeriodInDays() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetWaasPolicyWafConfigProtectionSettings) *int { return v.RecommendationsPeriodInDays }).(pulumi.IntPtrOutput)
+}
+
+type GetWaasPolicyWafConfigProtectionSettingsPtrOutput struct{ *pulumi.OutputState }
+
+func (GetWaasPolicyWafConfigProtectionSettingsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GetWaasPolicyWafConfigProtectionSettings)(nil)).Elem()
+}
+
+func (o GetWaasPolicyWafConfigProtectionSettingsPtrOutput) ToGetWaasPolicyWafConfigProtectionSettingsPtrOutput() GetWaasPolicyWafConfigProtectionSettingsPtrOutput {
+	return o
+}
+
+func (o GetWaasPolicyWafConfigProtectionSettingsPtrOutput) ToGetWaasPolicyWafConfigProtectionSettingsPtrOutputWithContext(ctx context.Context) GetWaasPolicyWafConfigProtectionSettingsPtrOutput {
+	return o
+}
+
+func (o GetWaasPolicyWafConfigProtectionSettingsPtrOutput) Elem() GetWaasPolicyWafConfigProtectionSettingsOutput {
+	return o.ApplyT(func(v *GetWaasPolicyWafConfigProtectionSettings) GetWaasPolicyWafConfigProtectionSettings {
+		if v != nil {
+			return *v
+		}
+		var ret GetWaasPolicyWafConfigProtectionSettings
+		return ret
+	}).(GetWaasPolicyWafConfigProtectionSettingsOutput)
+}
+
+// The list of allowed HTTP methods. If unspecified, default to `[OPTIONS, GET, HEAD, POST]`. This setting only applies if a corresponding protection rule is enabled, such as the "Restrict HTTP Request Methods" rule (key: 911100).
+func (o GetWaasPolicyWafConfigProtectionSettingsPtrOutput) AllowedHttpMethods() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *GetWaasPolicyWafConfigProtectionSettings) []string {
+		if v == nil {
+			return nil
+		}
+		return v.AllowedHttpMethods
+	}).(pulumi.StringArrayOutput)
+}
+
+// If `action` is set to `BLOCK`, this specifies how the traffic is blocked when detected as malicious by a protection rule. If unspecified, defaults to `SET_RESPONSE_CODE`.
+func (o GetWaasPolicyWafConfigProtectionSettingsPtrOutput) BlockAction() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GetWaasPolicyWafConfigProtectionSettings) *string {
+		if v == nil {
+			return nil
+		}
+		return v.BlockAction
+	}).(pulumi.StringPtrOutput)
+}
+
+// The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`.
+func (o GetWaasPolicyWafConfigProtectionSettingsPtrOutput) BlockErrorPageCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GetWaasPolicyWafConfigProtectionSettings) *string {
+		if v == nil {
+			return nil
+		}
+		return v.BlockErrorPageCode
+	}).(pulumi.StringPtrOutput)
+}
+
+// The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
+func (o GetWaasPolicyWafConfigProtectionSettingsPtrOutput) BlockErrorPageDescription() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GetWaasPolicyWafConfigProtectionSettings) *string {
+		if v == nil {
+			return nil
+		}
+		return v.BlockErrorPageDescription
+	}).(pulumi.StringPtrOutput)
+}
+
+// The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to 'Access to the website is blocked.'
+func (o GetWaasPolicyWafConfigProtectionSettingsPtrOutput) BlockErrorPageMessage() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GetWaasPolicyWafConfigProtectionSettings) *string {
+		if v == nil {
+			return nil
+		}
+		return v.BlockErrorPageMessage
+	}).(pulumi.StringPtrOutput)
+}
+
+// The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
+func (o GetWaasPolicyWafConfigProtectionSettingsPtrOutput) BlockResponseCode() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *GetWaasPolicyWafConfigProtectionSettings) *int {
+		if v == nil {
+			return nil
+		}
+		return v.BlockResponseCode
+	}).(pulumi.IntPtrOutput)
+}
+
+// Inspects the response body of origin responses. Can be used to detect leakage of sensitive data. If unspecified, defaults to `false`.
+func (o GetWaasPolicyWafConfigProtectionSettingsPtrOutput) IsResponseInspected() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *GetWaasPolicyWafConfigProtectionSettings) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsResponseInspected
+	}).(pulumi.BoolPtrOutput)
+}
+
+// The maximum number of arguments allowed to be passed to your application before an action is taken. Arguements are query parameters or body parameters in a PUT or POST request. If unspecified, defaults to `255`. This setting only applies if a corresponding protection rule is enabled, such as the "Number of Arguments Limits" rule (key: 960335).  Example: If `maxArgumentCount` to `2` for the Max Number of Arguments protection rule (key: 960335), the following requests would be blocked: `GET /myapp/path?query=one&query=two&query=three` `POST /myapp/path` with Body `{"argument1":"one","argument2":"two","argument3":"three"}`
+func (o GetWaasPolicyWafConfigProtectionSettingsPtrOutput) MaxArgumentCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *GetWaasPolicyWafConfigProtectionSettings) *int {
+		if v == nil {
+			return nil
+		}
+		return v.MaxArgumentCount
+	}).(pulumi.IntPtrOutput)
+}
+
+// The maximum length allowed for each argument name, in characters. Arguements are query parameters or body parameters in a PUT or POST request. If unspecified, defaults to `400`. This setting only applies if a corresponding protection rule is enabled, such as the "Values Limits" rule (key: 960208).
+func (o GetWaasPolicyWafConfigProtectionSettingsPtrOutput) MaxNameLengthPerArgument() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *GetWaasPolicyWafConfigProtectionSettings) *int {
+		if v == nil {
+			return nil
+		}
+		return v.MaxNameLengthPerArgument
+	}).(pulumi.IntPtrOutput)
+}
+
+// The maximum response size to be fully inspected, in binary kilobytes (KiB). Anything over this limit will be partially inspected. If unspecified, defaults to `1024`.
+func (o GetWaasPolicyWafConfigProtectionSettingsPtrOutput) MaxResponseSizeInKiB() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *GetWaasPolicyWafConfigProtectionSettings) *int {
+		if v == nil {
+			return nil
+		}
+		return v.MaxResponseSizeInKiB
+	}).(pulumi.IntPtrOutput)
+}
+
+// The maximum length allowed for the sum of the argument name and value, in characters. Arguements are query parameters or body parameters in a PUT or POST request. If unspecified, defaults to `64000`. This setting only applies if a corresponding protection rule is enabled, such as the "Total Arguments Limits" rule (key: 960341).
+func (o GetWaasPolicyWafConfigProtectionSettingsPtrOutput) MaxTotalNameLengthOfArguments() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *GetWaasPolicyWafConfigProtectionSettings) *int {
+		if v == nil {
+			return nil
+		}
+		return v.MaxTotalNameLengthOfArguments
+	}).(pulumi.IntPtrOutput)
+}
+
+// The list of media types to allow for inspection, if `isResponseInspected` is enabled. Only responses with MIME types in this list will be inspected. If unspecified, defaults to `["text/html", "text/plain", "text/xml"]`.
+func (o GetWaasPolicyWafConfigProtectionSettingsPtrOutput) MediaTypes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *GetWaasPolicyWafConfigProtectionSettings) []string {
+		if v == nil {
+			return nil
+		}
+		return v.MediaTypes
+	}).(pulumi.StringArrayOutput)
+}
+
+// The length of time to analyze traffic traffic, in days. After the analysis period, `WafRecommendations` will be populated. If unspecified, defaults to `10`.
+func (o GetWaasPolicyWafConfigProtectionSettingsPtrOutput) RecommendationsPeriodInDays() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *GetWaasPolicyWafConfigProtectionSettings) *int {
+		if v == nil {
+			return nil
+		}
+		return v.RecommendationsPeriodInDays
+	}).(pulumi.IntPtrOutput)
 }
 
 type GetWaasPolicyWafConfigWhitelist struct {
@@ -21290,12 +20501,6 @@ func (i GetWaasPolicyWafConfigWhitelistArgs) ToGetWaasPolicyWafConfigWhitelistOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyWafConfigWhitelistOutput)
 }
 
-func (i GetWaasPolicyWafConfigWhitelistArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyWafConfigWhitelist] {
-	return pulumix.Output[GetWaasPolicyWafConfigWhitelist]{
-		OutputState: i.ToGetWaasPolicyWafConfigWhitelistOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetWaasPolicyWafConfigWhitelistArrayInput is an input type that accepts GetWaasPolicyWafConfigWhitelistArray and GetWaasPolicyWafConfigWhitelistArrayOutput values.
 // You can construct a concrete instance of `GetWaasPolicyWafConfigWhitelistArrayInput` via:
 //
@@ -21321,12 +20526,6 @@ func (i GetWaasPolicyWafConfigWhitelistArray) ToGetWaasPolicyWafConfigWhitelistA
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyWafConfigWhitelistArrayOutput)
 }
 
-func (i GetWaasPolicyWafConfigWhitelistArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPolicyWafConfigWhitelist] {
-	return pulumix.Output[[]GetWaasPolicyWafConfigWhitelist]{
-		OutputState: i.ToGetWaasPolicyWafConfigWhitelistArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPolicyWafConfigWhitelistOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPolicyWafConfigWhitelistOutput) ElementType() reflect.Type {
@@ -21339,12 +20538,6 @@ func (o GetWaasPolicyWafConfigWhitelistOutput) ToGetWaasPolicyWafConfigWhitelist
 
 func (o GetWaasPolicyWafConfigWhitelistOutput) ToGetWaasPolicyWafConfigWhitelistOutputWithContext(ctx context.Context) GetWaasPolicyWafConfigWhitelistOutput {
 	return o
-}
-
-func (o GetWaasPolicyWafConfigWhitelistOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyWafConfigWhitelist] {
-	return pulumix.Output[GetWaasPolicyWafConfigWhitelist]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of IP address lists to include in the whitelist.
@@ -21374,12 +20567,6 @@ func (o GetWaasPolicyWafConfigWhitelistArrayOutput) ToGetWaasPolicyWafConfigWhit
 
 func (o GetWaasPolicyWafConfigWhitelistArrayOutput) ToGetWaasPolicyWafConfigWhitelistArrayOutputWithContext(ctx context.Context) GetWaasPolicyWafConfigWhitelistArrayOutput {
 	return o
-}
-
-func (o GetWaasPolicyWafConfigWhitelistArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPolicyWafConfigWhitelist] {
-	return pulumix.Output[[]GetWaasPolicyWafConfigWhitelist]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetWaasPolicyWafConfigWhitelistArrayOutput) Index(i pulumi.IntInput) GetWaasPolicyWafConfigWhitelistOutput {
@@ -21576,7 +20763,9 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWaasPolicyPolicyConfigInput)(nil)).Elem(), GetWaasPolicyPolicyConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWaasPolicyPolicyConfigArrayInput)(nil)).Elem(), GetWaasPolicyPolicyConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWaasPolicyPolicyConfigHealthChecksInput)(nil)).Elem(), GetWaasPolicyPolicyConfigHealthChecksArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWaasPolicyPolicyConfigHealthChecksPtrInput)(nil)).Elem(), GetWaasPolicyPolicyConfigHealthChecksArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWaasPolicyPolicyConfigLoadBalancingMethodInput)(nil)).Elem(), GetWaasPolicyPolicyConfigLoadBalancingMethodArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWaasPolicyPolicyConfigLoadBalancingMethodPtrInput)(nil)).Elem(), GetWaasPolicyPolicyConfigLoadBalancingMethodArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWaasPolicyWafConfigInput)(nil)).Elem(), GetWaasPolicyWafConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWaasPolicyWafConfigArrayInput)(nil)).Elem(), GetWaasPolicyWafConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWaasPolicyWafConfigAccessRuleInput)(nil)).Elem(), GetWaasPolicyWafConfigAccessRuleArgs{})
@@ -21586,6 +20775,7 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulationInput)(nil)).Elem(), GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulationArrayInput)(nil)).Elem(), GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWaasPolicyWafConfigAddressRateLimitingInput)(nil)).Elem(), GetWaasPolicyWafConfigAddressRateLimitingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWaasPolicyWafConfigAddressRateLimitingPtrInput)(nil)).Elem(), GetWaasPolicyWafConfigAddressRateLimitingArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWaasPolicyWafConfigCachingRuleInput)(nil)).Elem(), GetWaasPolicyWafConfigCachingRuleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWaasPolicyWafConfigCachingRuleArrayInput)(nil)).Elem(), GetWaasPolicyWafConfigCachingRuleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWaasPolicyWafConfigCachingRuleCriteriaInput)(nil)).Elem(), GetWaasPolicyWafConfigCachingRuleCriteriaArgs{})
@@ -21597,16 +20787,25 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWaasPolicyWafConfigCustomProtectionRuleExclusionInput)(nil)).Elem(), GetWaasPolicyWafConfigCustomProtectionRuleExclusionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWaasPolicyWafConfigCustomProtectionRuleExclusionArrayInput)(nil)).Elem(), GetWaasPolicyWafConfigCustomProtectionRuleExclusionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWaasPolicyWafConfigDeviceFingerprintChallengeInput)(nil)).Elem(), GetWaasPolicyWafConfigDeviceFingerprintChallengeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWaasPolicyWafConfigDeviceFingerprintChallengePtrInput)(nil)).Elem(), GetWaasPolicyWafConfigDeviceFingerprintChallengeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsInput)(nil)).Elem(), GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrInput)(nil)).Elem(), GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWaasPolicyWafConfigHumanInteractionChallengeInput)(nil)).Elem(), GetWaasPolicyWafConfigHumanInteractionChallengeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWaasPolicyWafConfigHumanInteractionChallengePtrInput)(nil)).Elem(), GetWaasPolicyWafConfigHumanInteractionChallengeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsInput)(nil)).Elem(), GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrInput)(nil)).Elem(), GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderInput)(nil)).Elem(), GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderPtrInput)(nil)).Elem(), GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWaasPolicyWafConfigJsChallengeInput)(nil)).Elem(), GetWaasPolicyWafConfigJsChallengeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWaasPolicyWafConfigJsChallengePtrInput)(nil)).Elem(), GetWaasPolicyWafConfigJsChallengeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWaasPolicyWafConfigJsChallengeChallengeSettingsInput)(nil)).Elem(), GetWaasPolicyWafConfigJsChallengeChallengeSettingsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWaasPolicyWafConfigJsChallengeChallengeSettingsPtrInput)(nil)).Elem(), GetWaasPolicyWafConfigJsChallengeChallengeSettingsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWaasPolicyWafConfigJsChallengeCriteriaInput)(nil)).Elem(), GetWaasPolicyWafConfigJsChallengeCriteriaArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWaasPolicyWafConfigJsChallengeCriteriaArrayInput)(nil)).Elem(), GetWaasPolicyWafConfigJsChallengeCriteriaArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWaasPolicyWafConfigJsChallengeSetHttpHeaderInput)(nil)).Elem(), GetWaasPolicyWafConfigJsChallengeSetHttpHeaderArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWaasPolicyWafConfigJsChallengeSetHttpHeaderPtrInput)(nil)).Elem(), GetWaasPolicyWafConfigJsChallengeSetHttpHeaderArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWaasPolicyWafConfigProtectionSettingsInput)(nil)).Elem(), GetWaasPolicyWafConfigProtectionSettingsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWaasPolicyWafConfigProtectionSettingsPtrInput)(nil)).Elem(), GetWaasPolicyWafConfigProtectionSettingsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWaasPolicyWafConfigWhitelistInput)(nil)).Elem(), GetWaasPolicyWafConfigWhitelistArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWaasPolicyWafConfigWhitelistArrayInput)(nil)).Elem(), GetWaasPolicyWafConfigWhitelistArray{})
 	pulumi.RegisterOutputType(CertificateExtensionOutput{})
@@ -21796,7 +20995,9 @@ func init() {
 	pulumi.RegisterOutputType(GetWaasPolicyPolicyConfigOutput{})
 	pulumi.RegisterOutputType(GetWaasPolicyPolicyConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetWaasPolicyPolicyConfigHealthChecksOutput{})
+	pulumi.RegisterOutputType(GetWaasPolicyPolicyConfigHealthChecksPtrOutput{})
 	pulumi.RegisterOutputType(GetWaasPolicyPolicyConfigLoadBalancingMethodOutput{})
+	pulumi.RegisterOutputType(GetWaasPolicyPolicyConfigLoadBalancingMethodPtrOutput{})
 	pulumi.RegisterOutputType(GetWaasPolicyWafConfigOutput{})
 	pulumi.RegisterOutputType(GetWaasPolicyWafConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetWaasPolicyWafConfigAccessRuleOutput{})
@@ -21806,6 +21007,7 @@ func init() {
 	pulumi.RegisterOutputType(GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulationOutput{})
 	pulumi.RegisterOutputType(GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulationArrayOutput{})
 	pulumi.RegisterOutputType(GetWaasPolicyWafConfigAddressRateLimitingOutput{})
+	pulumi.RegisterOutputType(GetWaasPolicyWafConfigAddressRateLimitingPtrOutput{})
 	pulumi.RegisterOutputType(GetWaasPolicyWafConfigCachingRuleOutput{})
 	pulumi.RegisterOutputType(GetWaasPolicyWafConfigCachingRuleArrayOutput{})
 	pulumi.RegisterOutputType(GetWaasPolicyWafConfigCachingRuleCriteriaOutput{})
@@ -21817,16 +21019,25 @@ func init() {
 	pulumi.RegisterOutputType(GetWaasPolicyWafConfigCustomProtectionRuleExclusionOutput{})
 	pulumi.RegisterOutputType(GetWaasPolicyWafConfigCustomProtectionRuleExclusionArrayOutput{})
 	pulumi.RegisterOutputType(GetWaasPolicyWafConfigDeviceFingerprintChallengeOutput{})
+	pulumi.RegisterOutputType(GetWaasPolicyWafConfigDeviceFingerprintChallengePtrOutput{})
 	pulumi.RegisterOutputType(GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsOutput{})
+	pulumi.RegisterOutputType(GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrOutput{})
 	pulumi.RegisterOutputType(GetWaasPolicyWafConfigHumanInteractionChallengeOutput{})
+	pulumi.RegisterOutputType(GetWaasPolicyWafConfigHumanInteractionChallengePtrOutput{})
 	pulumi.RegisterOutputType(GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsOutput{})
+	pulumi.RegisterOutputType(GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrOutput{})
 	pulumi.RegisterOutputType(GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderOutput{})
+	pulumi.RegisterOutputType(GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderPtrOutput{})
 	pulumi.RegisterOutputType(GetWaasPolicyWafConfigJsChallengeOutput{})
+	pulumi.RegisterOutputType(GetWaasPolicyWafConfigJsChallengePtrOutput{})
 	pulumi.RegisterOutputType(GetWaasPolicyWafConfigJsChallengeChallengeSettingsOutput{})
+	pulumi.RegisterOutputType(GetWaasPolicyWafConfigJsChallengeChallengeSettingsPtrOutput{})
 	pulumi.RegisterOutputType(GetWaasPolicyWafConfigJsChallengeCriteriaOutput{})
 	pulumi.RegisterOutputType(GetWaasPolicyWafConfigJsChallengeCriteriaArrayOutput{})
 	pulumi.RegisterOutputType(GetWaasPolicyWafConfigJsChallengeSetHttpHeaderOutput{})
+	pulumi.RegisterOutputType(GetWaasPolicyWafConfigJsChallengeSetHttpHeaderPtrOutput{})
 	pulumi.RegisterOutputType(GetWaasPolicyWafConfigProtectionSettingsOutput{})
+	pulumi.RegisterOutputType(GetWaasPolicyWafConfigProtectionSettingsPtrOutput{})
 	pulumi.RegisterOutputType(GetWaasPolicyWafConfigWhitelistOutput{})
 	pulumi.RegisterOutputType(GetWaasPolicyWafConfigWhitelistArrayOutput{})
 }

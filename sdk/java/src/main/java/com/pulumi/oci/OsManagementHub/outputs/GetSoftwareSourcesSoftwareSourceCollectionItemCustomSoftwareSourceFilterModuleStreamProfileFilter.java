@@ -6,6 +6,8 @@ package com.pulumi.oci.OsManagementHub.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterModuleStreamProfileFilter {
@@ -13,51 +15,51 @@ public final class GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareS
      * @return The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
      * 
      */
-    private String filterType;
+    private @Nullable String filterType;
     /**
      * @return Module name.
      * 
      */
-    private String moduleName;
+    private @Nullable String moduleName;
     /**
      * @return Profile name.
      * 
      */
-    private String profileName;
+    private @Nullable String profileName;
     /**
      * @return Stream name.
      * 
      */
-    private String streamName;
+    private @Nullable String streamName;
 
     private GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterModuleStreamProfileFilter() {}
     /**
      * @return The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
      * 
      */
-    public String filterType() {
-        return this.filterType;
+    public Optional<String> filterType() {
+        return Optional.ofNullable(this.filterType);
     }
     /**
      * @return Module name.
      * 
      */
-    public String moduleName() {
-        return this.moduleName;
+    public Optional<String> moduleName() {
+        return Optional.ofNullable(this.moduleName);
     }
     /**
      * @return Profile name.
      * 
      */
-    public String profileName() {
-        return this.profileName;
+    public Optional<String> profileName() {
+        return Optional.ofNullable(this.profileName);
     }
     /**
      * @return Stream name.
      * 
      */
-    public String streamName() {
-        return this.streamName;
+    public Optional<String> streamName() {
+        return Optional.ofNullable(this.streamName);
     }
 
     public static Builder builder() {
@@ -69,10 +71,10 @@ public final class GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareS
     }
     @CustomType.Builder
     public static final class Builder {
-        private String filterType;
-        private String moduleName;
-        private String profileName;
-        private String streamName;
+        private @Nullable String filterType;
+        private @Nullable String moduleName;
+        private @Nullable String profileName;
+        private @Nullable String streamName;
         public Builder() {}
         public Builder(GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterModuleStreamProfileFilter defaults) {
     	      Objects.requireNonNull(defaults);
@@ -83,23 +85,23 @@ public final class GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareS
         }
 
         @CustomType.Setter
-        public Builder filterType(String filterType) {
-            this.filterType = Objects.requireNonNull(filterType);
+        public Builder filterType(@Nullable String filterType) {
+            this.filterType = filterType;
             return this;
         }
         @CustomType.Setter
-        public Builder moduleName(String moduleName) {
-            this.moduleName = Objects.requireNonNull(moduleName);
+        public Builder moduleName(@Nullable String moduleName) {
+            this.moduleName = moduleName;
             return this;
         }
         @CustomType.Setter
-        public Builder profileName(String profileName) {
-            this.profileName = Objects.requireNonNull(profileName);
+        public Builder profileName(@Nullable String profileName) {
+            this.profileName = profileName;
             return this;
         }
         @CustomType.Setter
-        public Builder streamName(String streamName) {
-            this.streamName = Objects.requireNonNull(streamName);
+        public Builder streamName(@Nullable String streamName) {
+            this.streamName = streamName;
             return this;
         }
         public GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterModuleStreamProfileFilter build() {

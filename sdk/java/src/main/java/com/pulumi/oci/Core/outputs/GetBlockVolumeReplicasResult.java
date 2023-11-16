@@ -23,7 +23,7 @@ public final class GetBlockVolumeReplicasResult {
      * @return The list of block_volume_replicas.
      * 
      */
-    private List<GetBlockVolumeReplicasBlockVolumeReplica> blockVolumeReplicas;
+    private @Nullable List<GetBlockVolumeReplicasBlockVolumeReplica> blockVolumeReplicas;
     /**
      * @return The OCID of the compartment that contains the block volume replica.
      * 
@@ -39,7 +39,7 @@ public final class GetBlockVolumeReplicasResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The current state of a block volume replica.
      * 
@@ -60,7 +60,7 @@ public final class GetBlockVolumeReplicasResult {
      * 
      */
     public List<GetBlockVolumeReplicasBlockVolumeReplica> blockVolumeReplicas() {
-        return this.blockVolumeReplicas;
+        return this.blockVolumeReplicas == null ? List.of() : this.blockVolumeReplicas;
     }
     /**
      * @return The OCID of the compartment that contains the block volume replica.
@@ -83,8 +83,8 @@ public final class GetBlockVolumeReplicasResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The current state of a block volume replica.
@@ -107,11 +107,11 @@ public final class GetBlockVolumeReplicasResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String availabilityDomain;
-        private List<GetBlockVolumeReplicasBlockVolumeReplica> blockVolumeReplicas;
+        private @Nullable List<GetBlockVolumeReplicasBlockVolumeReplica> blockVolumeReplicas;
         private @Nullable String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetBlockVolumeReplicasFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String state;
         private @Nullable String volumeGroupReplicaId;
         public Builder() {}
@@ -133,8 +133,8 @@ public final class GetBlockVolumeReplicasResult {
             return this;
         }
         @CustomType.Setter
-        public Builder blockVolumeReplicas(List<GetBlockVolumeReplicasBlockVolumeReplica> blockVolumeReplicas) {
-            this.blockVolumeReplicas = Objects.requireNonNull(blockVolumeReplicas);
+        public Builder blockVolumeReplicas(@Nullable List<GetBlockVolumeReplicasBlockVolumeReplica> blockVolumeReplicas) {
+            this.blockVolumeReplicas = blockVolumeReplicas;
             return this;
         }
         public Builder blockVolumeReplicas(GetBlockVolumeReplicasBlockVolumeReplica... blockVolumeReplicas) {
@@ -159,8 +159,8 @@ public final class GetBlockVolumeReplicasResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

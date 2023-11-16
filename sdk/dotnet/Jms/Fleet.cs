@@ -74,31 +74,31 @@ namespace Pulumi.Oci.Jms
         /// The approximate count of all unique applications in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
         /// </summary>
         [Output("approximateApplicationCount")]
-        public Output<int> ApproximateApplicationCount { get; private set; } = null!;
+        public Output<int?> ApproximateApplicationCount { get; private set; } = null!;
 
         /// <summary>
         /// The approximate count of all unique Java installations in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
         /// </summary>
         [Output("approximateInstallationCount")]
-        public Output<int> ApproximateInstallationCount { get; private set; } = null!;
+        public Output<int?> ApproximateInstallationCount { get; private set; } = null!;
 
         /// <summary>
         /// The approximate count of all unique Java servers in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
         /// </summary>
         [Output("approximateJavaServerCount")]
-        public Output<int> ApproximateJavaServerCount { get; private set; } = null!;
+        public Output<int?> ApproximateJavaServerCount { get; private set; } = null!;
 
         /// <summary>
         /// The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
         /// </summary>
         [Output("approximateJreCount")]
-        public Output<int> ApproximateJreCount { get; private set; } = null!;
+        public Output<int?> ApproximateJreCount { get; private set; } = null!;
 
         /// <summary>
         /// The approximate count of all unique managed instances in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
         /// </summary>
         [Output("approximateManagedInstanceCount")]
-        public Output<int> ApproximateManagedInstanceCount { get; private set; } = null!;
+        public Output<int?> ApproximateManagedInstanceCount { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of the Fleet.
@@ -110,13 +110,13 @@ namespace Pulumi.Oci.Jms
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The Fleet's description. If nothing is provided, the Fleet description will be null.
         /// </summary>
         [Output("description")]
-        public Output<string> Description { get; private set; } = null!;
+        public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The name of the Fleet. The displayName must be unique for Fleets in the same compartment.
@@ -128,7 +128,7 @@ namespace Pulumi.Oci.Jms
         /// (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Custom Log for inventory or operation log.
@@ -140,31 +140,31 @@ namespace Pulumi.Oci.Jms
         /// (Updatable) Whether or not advanced features are enabled in this Fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` API instead.
         /// </summary>
         [Output("isAdvancedFeaturesEnabled")]
-        public Output<bool> IsAdvancedFeaturesEnabled { get; private set; } = null!;
+        public Output<bool?> IsAdvancedFeaturesEnabled { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Custom Log for inventory or operation log.
         /// </summary>
         [Output("operationLog")]
-        public Output<Outputs.FleetOperationLog> OperationLog { get; private set; } = null!;
+        public Output<Outputs.FleetOperationLog?> OperationLog { get; private set; } = null!;
 
         /// <summary>
         /// The lifecycle state of the Fleet.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
         [Output("systemTags")]
-        public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// The creation date and time of the Fleet (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
 
         /// <summary>

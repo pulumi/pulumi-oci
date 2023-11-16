@@ -173,7 +173,7 @@ namespace Pulumi.Oci.DevOps
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Unique reference name inside a repository.
         /// </summary>
@@ -197,7 +197,7 @@ namespace Pulumi.Oci.DevOps
 
             ImmutableArray<Outputs.GetRepositoryRefsFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? refName,
 

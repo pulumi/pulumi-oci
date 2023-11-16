@@ -9,82 +9,84 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetContainerInstanceContainerHealthCheck {
-    private List<String> commands;
-    private String failureAction;
-    private Integer failureThreshold;
-    private List<GetContainerInstanceContainerHealthCheckHeader> headers;
-    private String healthCheckType;
-    private Integer initialDelayInSeconds;
-    private Integer intervalInSeconds;
+    private @Nullable List<String> commands;
+    private @Nullable String failureAction;
+    private @Nullable Integer failureThreshold;
+    private @Nullable List<GetContainerInstanceContainerHealthCheckHeader> headers;
+    private @Nullable String healthCheckType;
+    private @Nullable Integer initialDelayInSeconds;
+    private @Nullable Integer intervalInSeconds;
     /**
      * @return The name of the volume. This must be unique within a single container instance.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return (Optional) Relative path for this file inside the volume mount directory. By default, the file is presented at the root of the volume mount path.
      * 
      */
-    private String path;
-    private Integer port;
-    private String status;
-    private String statusDetails;
-    private Integer successThreshold;
-    private Integer timeoutInSeconds;
+    private @Nullable String path;
+    private @Nullable Integer port;
+    private @Nullable String status;
+    private @Nullable String statusDetails;
+    private @Nullable Integer successThreshold;
+    private @Nullable Integer timeoutInSeconds;
 
     private GetContainerInstanceContainerHealthCheck() {}
     public List<String> commands() {
-        return this.commands;
+        return this.commands == null ? List.of() : this.commands;
     }
-    public String failureAction() {
-        return this.failureAction;
+    public Optional<String> failureAction() {
+        return Optional.ofNullable(this.failureAction);
     }
-    public Integer failureThreshold() {
-        return this.failureThreshold;
+    public Optional<Integer> failureThreshold() {
+        return Optional.ofNullable(this.failureThreshold);
     }
     public List<GetContainerInstanceContainerHealthCheckHeader> headers() {
-        return this.headers;
+        return this.headers == null ? List.of() : this.headers;
     }
-    public String healthCheckType() {
-        return this.healthCheckType;
+    public Optional<String> healthCheckType() {
+        return Optional.ofNullable(this.healthCheckType);
     }
-    public Integer initialDelayInSeconds() {
-        return this.initialDelayInSeconds;
+    public Optional<Integer> initialDelayInSeconds() {
+        return Optional.ofNullable(this.initialDelayInSeconds);
     }
-    public Integer intervalInSeconds() {
-        return this.intervalInSeconds;
+    public Optional<Integer> intervalInSeconds() {
+        return Optional.ofNullable(this.intervalInSeconds);
     }
     /**
      * @return The name of the volume. This must be unique within a single container instance.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return (Optional) Relative path for this file inside the volume mount directory. By default, the file is presented at the root of the volume mount path.
      * 
      */
-    public String path() {
-        return this.path;
+    public Optional<String> path() {
+        return Optional.ofNullable(this.path);
     }
-    public Integer port() {
-        return this.port;
+    public Optional<Integer> port() {
+        return Optional.ofNullable(this.port);
     }
-    public String status() {
-        return this.status;
+    public Optional<String> status() {
+        return Optional.ofNullable(this.status);
     }
-    public String statusDetails() {
-        return this.statusDetails;
+    public Optional<String> statusDetails() {
+        return Optional.ofNullable(this.statusDetails);
     }
-    public Integer successThreshold() {
-        return this.successThreshold;
+    public Optional<Integer> successThreshold() {
+        return Optional.ofNullable(this.successThreshold);
     }
-    public Integer timeoutInSeconds() {
-        return this.timeoutInSeconds;
+    public Optional<Integer> timeoutInSeconds() {
+        return Optional.ofNullable(this.timeoutInSeconds);
     }
 
     public static Builder builder() {
@@ -96,20 +98,20 @@ public final class GetContainerInstanceContainerHealthCheck {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> commands;
-        private String failureAction;
-        private Integer failureThreshold;
-        private List<GetContainerInstanceContainerHealthCheckHeader> headers;
-        private String healthCheckType;
-        private Integer initialDelayInSeconds;
-        private Integer intervalInSeconds;
-        private String name;
-        private String path;
-        private Integer port;
-        private String status;
-        private String statusDetails;
-        private Integer successThreshold;
-        private Integer timeoutInSeconds;
+        private @Nullable List<String> commands;
+        private @Nullable String failureAction;
+        private @Nullable Integer failureThreshold;
+        private @Nullable List<GetContainerInstanceContainerHealthCheckHeader> headers;
+        private @Nullable String healthCheckType;
+        private @Nullable Integer initialDelayInSeconds;
+        private @Nullable Integer intervalInSeconds;
+        private @Nullable String name;
+        private @Nullable String path;
+        private @Nullable Integer port;
+        private @Nullable String status;
+        private @Nullable String statusDetails;
+        private @Nullable Integer successThreshold;
+        private @Nullable Integer timeoutInSeconds;
         public Builder() {}
         public Builder(GetContainerInstanceContainerHealthCheck defaults) {
     	      Objects.requireNonNull(defaults);
@@ -130,79 +132,79 @@ public final class GetContainerInstanceContainerHealthCheck {
         }
 
         @CustomType.Setter
-        public Builder commands(List<String> commands) {
-            this.commands = Objects.requireNonNull(commands);
+        public Builder commands(@Nullable List<String> commands) {
+            this.commands = commands;
             return this;
         }
         public Builder commands(String... commands) {
             return commands(List.of(commands));
         }
         @CustomType.Setter
-        public Builder failureAction(String failureAction) {
-            this.failureAction = Objects.requireNonNull(failureAction);
+        public Builder failureAction(@Nullable String failureAction) {
+            this.failureAction = failureAction;
             return this;
         }
         @CustomType.Setter
-        public Builder failureThreshold(Integer failureThreshold) {
-            this.failureThreshold = Objects.requireNonNull(failureThreshold);
+        public Builder failureThreshold(@Nullable Integer failureThreshold) {
+            this.failureThreshold = failureThreshold;
             return this;
         }
         @CustomType.Setter
-        public Builder headers(List<GetContainerInstanceContainerHealthCheckHeader> headers) {
-            this.headers = Objects.requireNonNull(headers);
+        public Builder headers(@Nullable List<GetContainerInstanceContainerHealthCheckHeader> headers) {
+            this.headers = headers;
             return this;
         }
         public Builder headers(GetContainerInstanceContainerHealthCheckHeader... headers) {
             return headers(List.of(headers));
         }
         @CustomType.Setter
-        public Builder healthCheckType(String healthCheckType) {
-            this.healthCheckType = Objects.requireNonNull(healthCheckType);
+        public Builder healthCheckType(@Nullable String healthCheckType) {
+            this.healthCheckType = healthCheckType;
             return this;
         }
         @CustomType.Setter
-        public Builder initialDelayInSeconds(Integer initialDelayInSeconds) {
-            this.initialDelayInSeconds = Objects.requireNonNull(initialDelayInSeconds);
+        public Builder initialDelayInSeconds(@Nullable Integer initialDelayInSeconds) {
+            this.initialDelayInSeconds = initialDelayInSeconds;
             return this;
         }
         @CustomType.Setter
-        public Builder intervalInSeconds(Integer intervalInSeconds) {
-            this.intervalInSeconds = Objects.requireNonNull(intervalInSeconds);
+        public Builder intervalInSeconds(@Nullable Integer intervalInSeconds) {
+            this.intervalInSeconds = intervalInSeconds;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder path(String path) {
-            this.path = Objects.requireNonNull(path);
+        public Builder path(@Nullable String path) {
+            this.path = path;
             return this;
         }
         @CustomType.Setter
-        public Builder port(Integer port) {
-            this.port = Objects.requireNonNull(port);
+        public Builder port(@Nullable Integer port) {
+            this.port = port;
             return this;
         }
         @CustomType.Setter
-        public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+        public Builder status(@Nullable String status) {
+            this.status = status;
             return this;
         }
         @CustomType.Setter
-        public Builder statusDetails(String statusDetails) {
-            this.statusDetails = Objects.requireNonNull(statusDetails);
+        public Builder statusDetails(@Nullable String statusDetails) {
+            this.statusDetails = statusDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder successThreshold(Integer successThreshold) {
-            this.successThreshold = Objects.requireNonNull(successThreshold);
+        public Builder successThreshold(@Nullable Integer successThreshold) {
+            this.successThreshold = successThreshold;
             return this;
         }
         @CustomType.Setter
-        public Builder timeoutInSeconds(Integer timeoutInSeconds) {
-            this.timeoutInSeconds = Objects.requireNonNull(timeoutInSeconds);
+        public Builder timeoutInSeconds(@Nullable Integer timeoutInSeconds) {
+            this.timeoutInSeconds = timeoutInSeconds;
             return this;
         }
         public GetContainerInstanceContainerHealthCheck build() {

@@ -16,6 +16,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -103,56 +104,56 @@ public class User extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="capabilities", refs={List.class,UserCapability.class}, tree="[0,1]")
-    private Output<List<UserCapability>> capabilities;
+    private Output</* @Nullable */ List<UserCapability>> capabilities;
 
     /**
      * @return Properties indicating how the user is allowed to authenticate.
      * 
      */
-    public Output<List<UserCapability>> capabilities() {
-        return this.capabilities;
+    public Output<Optional<List<UserCapability>>> capabilities() {
+        return Codegen.optional(this.capabilities);
     }
     /**
      * The OCID of the tenancy containing the user.
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
-    private Output<String> compartmentId;
+    private Output</* @Nullable */ String> compartmentId;
 
     /**
      * @return The OCID of the tenancy containing the user.
      * 
      */
-    public Output<String> compartmentId() {
-        return this.compartmentId;
+    public Output<Optional<String>> compartmentId() {
+        return Codegen.optional(this.compartmentId);
     }
     /**
      * DB username of the DB credential. Has to be unique across the tenancy.
      * 
      */
     @Export(name="dbUserName", refs={String.class}, tree="[0]")
-    private Output<String> dbUserName;
+    private Output</* @Nullable */ String> dbUserName;
 
     /**
      * @return DB username of the DB credential. Has to be unique across the tenancy.
      * 
      */
-    public Output<String> dbUserName() {
-        return this.dbUserName;
+    public Output<Optional<String>> dbUserName() {
+        return Codegen.optional(this.dbUserName);
     }
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) The description you assign to the user during creation. Does not have to be unique, and it&#39;s changeable.
@@ -173,70 +174,70 @@ public class User extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="email", refs={String.class}, tree="[0]")
-    private Output<String> email;
+    private Output</* @Nullable */ String> email;
 
     /**
      * @return (Updatable) The email you assign to the user. Has to be unique across the tenancy.
      * 
      */
-    public Output<String> email() {
-        return this.email;
+    public Output<Optional<String>> email() {
+        return Codegen.optional(this.email);
     }
     /**
      * Whether the email address has been validated.
      * 
      */
     @Export(name="emailVerified", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> emailVerified;
+    private Output</* @Nullable */ Boolean> emailVerified;
 
     /**
      * @return Whether the email address has been validated.
      * 
      */
-    public Output<Boolean> emailVerified() {
-        return this.emailVerified;
+    public Output<Optional<Boolean>> emailVerified() {
+        return Codegen.optional(this.emailVerified);
     }
     /**
      * Identifier of the user in the identity provider
      * 
      */
     @Export(name="externalIdentifier", refs={String.class}, tree="[0]")
-    private Output<String> externalIdentifier;
+    private Output</* @Nullable */ String> externalIdentifier;
 
     /**
      * @return Identifier of the user in the identity provider
      * 
      */
-    public Output<String> externalIdentifier() {
-        return this.externalIdentifier;
+    public Output<Optional<String>> externalIdentifier() {
+        return Codegen.optional(this.externalIdentifier);
     }
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * The OCID of the `IdentityProvider` this user belongs to.
      * 
      */
     @Export(name="identityProviderId", refs={String.class}, tree="[0]")
-    private Output<String> identityProviderId;
+    private Output</* @Nullable */ String> identityProviderId;
 
     /**
      * @return The OCID of the `IdentityProvider` this user belongs to.
      * 
      */
-    public Output<String> identityProviderId() {
-        return this.identityProviderId;
+    public Output<Optional<String>> identityProviderId() {
+        return Codegen.optional(this.identityProviderId);
     }
     /**
      * Returned only if the user&#39;s `lifecycleState` is INACTIVE. A 16-bit value showing the reason why the user is inactive:
@@ -246,7 +247,7 @@ public class User extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="inactiveState", refs={String.class}, tree="[0]")
-    private Output<String> inactiveState;
+    private Output</* @Nullable */ String> inactiveState;
 
     /**
      * @return Returned only if the user&#39;s `lifecycleState` is INACTIVE. A 16-bit value showing the reason why the user is inactive:
@@ -255,22 +256,22 @@ public class User extends com.pulumi.resources.CustomResource {
      * * bit 2: BLOCKED (the user has exceeded the maximum number of failed login attempts for the Console)
      * 
      */
-    public Output<String> inactiveState() {
-        return this.inactiveState;
+    public Output<Optional<String>> inactiveState() {
+        return Codegen.optional(this.inactiveState);
     }
     /**
      * The date and time of when the user most recently logged in the format defined by RFC3339 (ex. `2016-08-25T21:10:29.600Z`). If there is no login history, this field is null.
      * 
      */
     @Export(name="lastSuccessfulLoginTime", refs={String.class}, tree="[0]")
-    private Output<String> lastSuccessfulLoginTime;
+    private Output</* @Nullable */ String> lastSuccessfulLoginTime;
 
     /**
      * @return The date and time of when the user most recently logged in the format defined by RFC3339 (ex. `2016-08-25T21:10:29.600Z`). If there is no login history, this field is null.
      * 
      */
-    public Output<String> lastSuccessfulLoginTime() {
-        return this.lastSuccessfulLoginTime;
+    public Output<Optional<String>> lastSuccessfulLoginTime() {
+        return Codegen.optional(this.lastSuccessfulLoginTime);
     }
     /**
      * The name you assign to the user during creation. This is the user&#39;s login for the Console. The name must be unique across all users in the tenancy and cannot be changed.
@@ -297,42 +298,42 @@ public class User extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="previousSuccessfulLoginTime", refs={String.class}, tree="[0]")
-    private Output<String> previousSuccessfulLoginTime;
+    private Output</* @Nullable */ String> previousSuccessfulLoginTime;
 
     /**
      * @return The date and time of when the user most recently logged in the format defined by RFC3339 (ex. `2016-08-25T21:10:29.600Z`). If there is no login history, this field is null.
      * 
      */
-    public Output<String> previousSuccessfulLoginTime() {
-        return this.previousSuccessfulLoginTime;
+    public Output<Optional<String>> previousSuccessfulLoginTime() {
+        return Codegen.optional(this.previousSuccessfulLoginTime);
     }
     /**
      * The user&#39;s current state.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The user&#39;s current state.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * Date and time the user was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return Date and time the user was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
 
     /**

@@ -16,23 +16,23 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// A filter to return only items related to a specific object name.
         /// </summary>
-        public readonly string Object;
+        public readonly string? Object;
         /// <summary>
         /// A filter to return only items related to a specific object type.
         /// </summary>
-        public readonly string ObjectType;
+        public readonly string? ObjectType;
         /// <summary>
         /// A filter to return only items related to specific schema name.
         /// </summary>
-        public readonly string SchemaName;
+        public readonly string? SchemaName;
 
         [OutputConstructor]
         private GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemResult(
-            string @object,
+            string? @object,
 
-            string objectType,
+            string? objectType,
 
-            string schemaName)
+            string? schemaName)
         {
             Object = @object;
             ObjectType = objectType;

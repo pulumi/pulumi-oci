@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.NetworkLoadBalancer.outputs.GetBackendSetsBackendSetCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetBackendSetsBackendSetCollection {
-    private List<GetBackendSetsBackendSetCollectionItem> items;
+    private @Nullable List<GetBackendSetsBackendSetCollectionItem> items;
 
     private GetBackendSetsBackendSetCollection() {}
     public List<GetBackendSetsBackendSetCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetBackendSetsBackendSetCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetBackendSetsBackendSetCollectionItem> items;
+        private @Nullable List<GetBackendSetsBackendSetCollectionItem> items;
         public Builder() {}
         public Builder(GetBackendSetsBackendSetCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetBackendSetsBackendSetCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetBackendSetsBackendSetCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetBackendSetsBackendSetCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetBackendSetsBackendSetCollectionItem... items) {

@@ -6,6 +6,8 @@ package com.pulumi.oci.Logging.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInput {
@@ -13,27 +15,27 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationDestinationOp
      * @return Namespace to emit the operational metrics.
      * 
      */
-    private String namespace;
+    private @Nullable String namespace;
     /**
      * @return Resource group to emit the operational metrics.
      * 
      */
-    private String resourceGroup;
+    private @Nullable String resourceGroup;
 
     private GetUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInput() {}
     /**
      * @return Namespace to emit the operational metrics.
      * 
      */
-    public String namespace() {
-        return this.namespace;
+    public Optional<String> namespace() {
+        return Optional.ofNullable(this.namespace);
     }
     /**
      * @return Resource group to emit the operational metrics.
      * 
      */
-    public String resourceGroup() {
-        return this.resourceGroup;
+    public Optional<String> resourceGroup() {
+        return Optional.ofNullable(this.resourceGroup);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationDestinationOp
     }
     @CustomType.Builder
     public static final class Builder {
-        private String namespace;
-        private String resourceGroup;
+        private @Nullable String namespace;
+        private @Nullable String resourceGroup;
         public Builder() {}
         public Builder(GetUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInput defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationDestinationOp
         }
 
         @CustomType.Setter
-        public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+        public Builder namespace(@Nullable String namespace) {
+            this.namespace = namespace;
             return this;
         }
         @CustomType.Setter
-        public Builder resourceGroup(String resourceGroup) {
-            this.resourceGroup = Objects.requireNonNull(resourceGroup);
+        public Builder resourceGroup(@Nullable String resourceGroup) {
+            this.resourceGroup = resourceGroup;
             return this;
         }
         public GetUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInput build() {

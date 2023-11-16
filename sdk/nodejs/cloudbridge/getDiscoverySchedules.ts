@@ -71,7 +71,7 @@ export interface GetDiscoverySchedulesResult {
     /**
      * The list of discovery_schedule_collection.
      */
-    readonly discoveryScheduleCollections: outputs.CloudBridge.GetDiscoverySchedulesDiscoveryScheduleCollection[];
+    readonly discoveryScheduleCollections?: outputs.CloudBridge.GetDiscoverySchedulesDiscoveryScheduleCollection[];
     readonly discoveryScheduleId?: string;
     /**
      * A user-friendly name for the discovery schedule. Does not have to be unique, and it's mutable. Avoid entering confidential information.
@@ -81,7 +81,7 @@ export interface GetDiscoverySchedulesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Current state of the discovery schedule.
      */

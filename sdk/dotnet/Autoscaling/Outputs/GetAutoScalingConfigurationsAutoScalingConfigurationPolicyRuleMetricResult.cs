@@ -13,12 +13,12 @@ namespace Pulumi.Oci.Autoscaling.Outputs
     [OutputType]
     public sealed class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricResult
     {
-        public readonly string MetricType;
+        public readonly string? MetricType;
         public readonly ImmutableArray<Outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricThresholdResult> Thresholds;
 
         [OutputConstructor]
         private GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricResult(
-            string metricType,
+            string? metricType,
 
             ImmutableArray<Outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricThresholdResult> thresholds)
         {

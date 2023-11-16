@@ -101,11 +101,11 @@ export class MonitoredResourcesSearch extends pulumi.CustomResource {
     /**
      * List of monitored resources.
      */
-    public /*out*/ readonly items!: pulumi.Output<outputs.StackMonitoring.MonitoredResourcesSearchItem[]>;
+    public /*out*/ readonly items!: pulumi.Output<outputs.StackMonitoring.MonitoredResourcesSearchItem[] | undefined>;
     /**
      * License edition of the monitored resource.
      */
-    public readonly license!: pulumi.Output<string>;
+    public readonly license!: pulumi.Output<string | undefined>;
     /**
      * A filter to return resources with matching management agent id.
      */

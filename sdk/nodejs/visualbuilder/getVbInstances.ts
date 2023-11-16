@@ -70,7 +70,7 @@ export interface GetVbInstancesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The current state of the vb instance.
      */
@@ -78,7 +78,7 @@ export interface GetVbInstancesResult {
     /**
      * The list of vb_instance_summary_collection.
      */
-    readonly vbInstanceSummaryCollections: outputs.VisualBuilder.GetVbInstancesVbInstanceSummaryCollection[];
+    readonly vbInstanceSummaryCollections?: outputs.VisualBuilder.GetVbInstancesVbInstanceSummaryCollection[];
 }
 /**
  * This data source provides the list of Vb Instances in Oracle Cloud Infrastructure Visual Builder service.

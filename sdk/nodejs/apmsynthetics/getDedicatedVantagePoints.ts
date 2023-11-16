@@ -68,7 +68,7 @@ export interface GetDedicatedVantagePointsResult {
     /**
      * The list of dedicated_vantage_point_collection.
      */
-    readonly dedicatedVantagePointCollections: outputs.ApmSynthetics.GetDedicatedVantagePointsDedicatedVantagePointCollection[];
+    readonly dedicatedVantagePointCollections?: outputs.ApmSynthetics.GetDedicatedVantagePointsDedicatedVantagePointCollection[];
     /**
      * Unique dedicated vantage point name that cannot be edited. The name should not contain any confidential information.
      */
@@ -77,7 +77,7 @@ export interface GetDedicatedVantagePointsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Unique permanent name of the dedicated vantage point. This is the same as the displayName.
      */

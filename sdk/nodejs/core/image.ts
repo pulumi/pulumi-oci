@@ -130,15 +130,15 @@ export class Image extends pulumi.CustomResource {
     /**
      * Oracle Cloud Agent features supported on the image.
      */
-    public /*out*/ readonly agentFeatures!: pulumi.Output<outputs.Core.ImageAgentFeature[]>;
+    public /*out*/ readonly agentFeatures!: pulumi.Output<outputs.Core.ImageAgentFeature[] | undefined>;
     /**
      * The OCID of the image originally used to launch the instance.
      */
-    public /*out*/ readonly baseImageId!: pulumi.Output<string>;
+    public /*out*/ readonly baseImageId!: pulumi.Output<string | undefined>;
     /**
      * The size of the internal storage for this image that is subject to billing (1 GB = 1,073,741,824 bytes).  Example: `100`
      */
-    public /*out*/ readonly billableSizeInGbs!: pulumi.Output<string>;
+    public /*out*/ readonly billableSizeInGbs!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The OCID of the compartment you want the image to be created in.
      */
@@ -146,11 +146,11 @@ export class Image extends pulumi.CustomResource {
     /**
      * Whether instances launched with this image can be used to create new images. For example, you cannot create an image of an Oracle Database instance.  Example: `true`
      */
-    public /*out*/ readonly createImageAllowed!: pulumi.Output<boolean>;
+    public /*out*/ readonly createImageAllowed!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) A user-friendly name for the image. It does not have to be unique, and it's changeable. Avoid entering confidential information.
      *
@@ -158,11 +158,11 @@ export class Image extends pulumi.CustomResource {
      *
      * Example: `My Oracle Linux image`
      */
-    public readonly displayName!: pulumi.Output<string>;
+    public readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     public readonly imageSourceDetails!: pulumi.Output<outputs.Core.ImageImageSourceDetails | undefined>;
     /**
      * The OCID of the instance you want to use as the basis for the image.
@@ -171,35 +171,35 @@ export class Image extends pulumi.CustomResource {
     /**
      * Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
      */
-    public readonly launchMode!: pulumi.Output<string>;
+    public readonly launchMode!: pulumi.Output<string | undefined>;
     /**
      * Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
      */
-    public /*out*/ readonly launchOptions!: pulumi.Output<outputs.Core.ImageLaunchOption[]>;
+    public /*out*/ readonly launchOptions!: pulumi.Output<outputs.Core.ImageLaunchOption[] | undefined>;
     /**
      * The listing type of the image. The default value is "NONE".
      */
-    public /*out*/ readonly listingType!: pulumi.Output<string>;
+    public /*out*/ readonly listingType!: pulumi.Output<string | undefined>;
     /**
      * The image's operating system.  Example: `Oracle Linux`
      */
-    public /*out*/ readonly operatingSystem!: pulumi.Output<string>;
+    public /*out*/ readonly operatingSystem!: pulumi.Output<string | undefined>;
     /**
      * The image's operating system version.  Example: `7.2`
      */
-    public /*out*/ readonly operatingSystemVersion!: pulumi.Output<string>;
+    public /*out*/ readonly operatingSystemVersion!: pulumi.Output<string | undefined>;
     /**
      * The boot volume size for an instance launched from this image (1 MB = 1,048,576 bytes). Note this is not the same as the size of the image when it was exported or the actual size of the image.  Example: `47694`
      */
-    public /*out*/ readonly sizeInMbs!: pulumi.Output<string>;
+    public /*out*/ readonly sizeInMbs!: pulumi.Output<string | undefined>;
     /**
      * The current state of the image.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The date and time the image was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a Image resource with the given unique name, arguments, and options.

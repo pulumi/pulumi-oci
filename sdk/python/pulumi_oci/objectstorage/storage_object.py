@@ -34,26 +34,6 @@ class StorageObjectArgs:
                  storage_tier: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a StorageObject resource.
-        :param pulumi.Input[str] bucket: The name of the bucket for the source object.
-        :param pulumi.Input[str] namespace: The top-level namespace of the source object.
-        :param pulumi.Input[str] object: The name of the source object.
-        :param pulumi.Input[str] cache_control: The optional Cache-Control header that defines the caching behavior value to be returned in GetObject and HeadObject responses. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to identify objects that require caching restrictions.
-        :param pulumi.Input[str] content: The object to upload to the object store. Cannot be defined if `source` or `source_uri_details` is defined.
-        :param pulumi.Input[str] content_disposition: The optional Content-Disposition header that defines presentational information for the object to be returned in GetObject and HeadObject responses. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to let users download objects with custom filenames in a browser.
-        :param pulumi.Input[str] content_encoding: The optional Content-Encoding header that defines the content encodings that were applied to the object to upload. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to determine what decoding mechanisms need to be applied to obtain the media-type specified by the Content-Type header of the object.
-        :param pulumi.Input[str] content_language: The optional Content-Language header that defines the content language of the object to upload. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to identify and differentiate objects based on a particular language.
-        :param pulumi.Input[str] content_md5: (Updatable) The optional base-64 header that defines the encoded MD5 hash of the body. If the optional Content-MD5 header is present, Object Storage performs an integrity check on the body of the HTTP request by computing the MD5 hash for the body and comparing it to the MD5 hash supplied in the header. If the two hashes do not match, the object is rejected and an HTTP-400 Unmatched Content MD5 error is returned with the message:
-               
-               "The computed MD5 of the request body (ACTUAL_MD5) does not match the Content-MD5 header (HEADER_MD5)"
-        :param pulumi.Input[str] content_type: The optional Content-Type header that defines the standard MIME type format of the object. Content type defaults to 'application/octet-stream' if not specified in the PutObject call. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to identify and perform special operations on text only objects.
-        :param pulumi.Input[bool] delete_all_object_versions: (Updatable) A boolean to delete all object versions for an object in a bucket that has or ever had versioning enabled.
-        :param pulumi.Input[Mapping[str, Any]] metadata: Optional user-defined metadata key and value.
-               Note: All specified keys must be in lower case.
-        :param pulumi.Input[str] opc_sse_kms_key_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
-        :param pulumi.Input[str] source: An absolute path to a file on the local system. Cannot be defined if `content` or `source_uri_details` is defined.
-        :param pulumi.Input['StorageObjectSourceUriDetailsArgs'] source_uri_details: Details of the source URI of the object in the cloud. Cannot be defined if `content` or `source` is defined. 
-               Note: To enable object copy, you must authorize the service to manage objects on your behalf.
-        :param pulumi.Input[str] storage_tier: (Updatable) The storage tier that the object should be stored in. If not specified, the object will be stored in the same storage tier as the bucket.
         """
         pulumi.set(__self__, "bucket", bucket)
         pulumi.set(__self__, "namespace", namespace)
@@ -88,9 +68,6 @@ class StorageObjectArgs:
     @property
     @pulumi.getter
     def bucket(self) -> pulumi.Input[str]:
-        """
-        The name of the bucket for the source object.
-        """
         return pulumi.get(self, "bucket")
 
     @bucket.setter
@@ -100,9 +77,6 @@ class StorageObjectArgs:
     @property
     @pulumi.getter
     def namespace(self) -> pulumi.Input[str]:
-        """
-        The top-level namespace of the source object.
-        """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
@@ -112,9 +86,6 @@ class StorageObjectArgs:
     @property
     @pulumi.getter
     def object(self) -> pulumi.Input[str]:
-        """
-        The name of the source object.
-        """
         return pulumi.get(self, "object")
 
     @object.setter
@@ -124,9 +95,6 @@ class StorageObjectArgs:
     @property
     @pulumi.getter(name="cacheControl")
     def cache_control(self) -> Optional[pulumi.Input[str]]:
-        """
-        The optional Cache-Control header that defines the caching behavior value to be returned in GetObject and HeadObject responses. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to identify objects that require caching restrictions.
-        """
         return pulumi.get(self, "cache_control")
 
     @cache_control.setter
@@ -136,9 +104,6 @@ class StorageObjectArgs:
     @property
     @pulumi.getter
     def content(self) -> Optional[pulumi.Input[str]]:
-        """
-        The object to upload to the object store. Cannot be defined if `source` or `source_uri_details` is defined.
-        """
         return pulumi.get(self, "content")
 
     @content.setter
@@ -148,9 +113,6 @@ class StorageObjectArgs:
     @property
     @pulumi.getter(name="contentDisposition")
     def content_disposition(self) -> Optional[pulumi.Input[str]]:
-        """
-        The optional Content-Disposition header that defines presentational information for the object to be returned in GetObject and HeadObject responses. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to let users download objects with custom filenames in a browser.
-        """
         return pulumi.get(self, "content_disposition")
 
     @content_disposition.setter
@@ -160,9 +122,6 @@ class StorageObjectArgs:
     @property
     @pulumi.getter(name="contentEncoding")
     def content_encoding(self) -> Optional[pulumi.Input[str]]:
-        """
-        The optional Content-Encoding header that defines the content encodings that were applied to the object to upload. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to determine what decoding mechanisms need to be applied to obtain the media-type specified by the Content-Type header of the object.
-        """
         return pulumi.get(self, "content_encoding")
 
     @content_encoding.setter
@@ -172,9 +131,6 @@ class StorageObjectArgs:
     @property
     @pulumi.getter(name="contentLanguage")
     def content_language(self) -> Optional[pulumi.Input[str]]:
-        """
-        The optional Content-Language header that defines the content language of the object to upload. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to identify and differentiate objects based on a particular language.
-        """
         return pulumi.get(self, "content_language")
 
     @content_language.setter
@@ -184,11 +140,6 @@ class StorageObjectArgs:
     @property
     @pulumi.getter(name="contentMd5")
     def content_md5(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The optional base-64 header that defines the encoded MD5 hash of the body. If the optional Content-MD5 header is present, Object Storage performs an integrity check on the body of the HTTP request by computing the MD5 hash for the body and comparing it to the MD5 hash supplied in the header. If the two hashes do not match, the object is rejected and an HTTP-400 Unmatched Content MD5 error is returned with the message:
-
-        "The computed MD5 of the request body (ACTUAL_MD5) does not match the Content-MD5 header (HEADER_MD5)"
-        """
         return pulumi.get(self, "content_md5")
 
     @content_md5.setter
@@ -198,9 +149,6 @@ class StorageObjectArgs:
     @property
     @pulumi.getter(name="contentType")
     def content_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The optional Content-Type header that defines the standard MIME type format of the object. Content type defaults to 'application/octet-stream' if not specified in the PutObject call. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to identify and perform special operations on text only objects.
-        """
         return pulumi.get(self, "content_type")
 
     @content_type.setter
@@ -210,9 +158,6 @@ class StorageObjectArgs:
     @property
     @pulumi.getter(name="deleteAllObjectVersions")
     def delete_all_object_versions(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) A boolean to delete all object versions for an object in a bucket that has or ever had versioning enabled.
-        """
         return pulumi.get(self, "delete_all_object_versions")
 
     @delete_all_object_versions.setter
@@ -222,10 +167,6 @@ class StorageObjectArgs:
     @property
     @pulumi.getter
     def metadata(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Optional user-defined metadata key and value.
-        Note: All specified keys must be in lower case.
-        """
         return pulumi.get(self, "metadata")
 
     @metadata.setter
@@ -235,9 +176,6 @@ class StorageObjectArgs:
     @property
     @pulumi.getter(name="opcSseKmsKeyId")
     def opc_sse_kms_key_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
-        """
         return pulumi.get(self, "opc_sse_kms_key_id")
 
     @opc_sse_kms_key_id.setter
@@ -247,9 +185,6 @@ class StorageObjectArgs:
     @property
     @pulumi.getter
     def source(self) -> Optional[pulumi.Input[str]]:
-        """
-        An absolute path to a file on the local system. Cannot be defined if `content` or `source_uri_details` is defined.
-        """
         return pulumi.get(self, "source")
 
     @source.setter
@@ -259,10 +194,6 @@ class StorageObjectArgs:
     @property
     @pulumi.getter(name="sourceUriDetails")
     def source_uri_details(self) -> Optional[pulumi.Input['StorageObjectSourceUriDetailsArgs']]:
-        """
-        Details of the source URI of the object in the cloud. Cannot be defined if `content` or `source` is defined. 
-        Note: To enable object copy, you must authorize the service to manage objects on your behalf.
-        """
         return pulumi.get(self, "source_uri_details")
 
     @source_uri_details.setter
@@ -272,9 +203,6 @@ class StorageObjectArgs:
     @property
     @pulumi.getter(name="storageTier")
     def storage_tier(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The storage tier that the object should be stored in. If not specified, the object will be stored in the same storage tier as the bucket.
-        """
         return pulumi.get(self, "storage_tier")
 
     @storage_tier.setter
@@ -307,27 +235,6 @@ class _StorageObjectState:
                  work_request_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering StorageObject resources.
-        :param pulumi.Input[str] bucket: The name of the bucket for the source object.
-        :param pulumi.Input[str] cache_control: The optional Cache-Control header that defines the caching behavior value to be returned in GetObject and HeadObject responses. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to identify objects that require caching restrictions.
-        :param pulumi.Input[str] content: The object to upload to the object store. Cannot be defined if `source` or `source_uri_details` is defined.
-        :param pulumi.Input[str] content_disposition: The optional Content-Disposition header that defines presentational information for the object to be returned in GetObject and HeadObject responses. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to let users download objects with custom filenames in a browser.
-        :param pulumi.Input[str] content_encoding: The optional Content-Encoding header that defines the content encodings that were applied to the object to upload. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to determine what decoding mechanisms need to be applied to obtain the media-type specified by the Content-Type header of the object.
-        :param pulumi.Input[str] content_language: The optional Content-Language header that defines the content language of the object to upload. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to identify and differentiate objects based on a particular language.
-        :param pulumi.Input[str] content_length: (Updatable) The content length of the body.
-        :param pulumi.Input[str] content_md5: (Updatable) The optional base-64 header that defines the encoded MD5 hash of the body. If the optional Content-MD5 header is present, Object Storage performs an integrity check on the body of the HTTP request by computing the MD5 hash for the body and comparing it to the MD5 hash supplied in the header. If the two hashes do not match, the object is rejected and an HTTP-400 Unmatched Content MD5 error is returned with the message:
-               
-               "The computed MD5 of the request body (ACTUAL_MD5) does not match the Content-MD5 header (HEADER_MD5)"
-        :param pulumi.Input[str] content_type: The optional Content-Type header that defines the standard MIME type format of the object. Content type defaults to 'application/octet-stream' if not specified in the PutObject call. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to identify and perform special operations on text only objects.
-        :param pulumi.Input[bool] delete_all_object_versions: (Updatable) A boolean to delete all object versions for an object in a bucket that has or ever had versioning enabled.
-        :param pulumi.Input[Mapping[str, Any]] metadata: Optional user-defined metadata key and value.
-               Note: All specified keys must be in lower case.
-        :param pulumi.Input[str] namespace: The top-level namespace of the source object.
-        :param pulumi.Input[str] object: The name of the source object.
-        :param pulumi.Input[str] opc_sse_kms_key_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
-        :param pulumi.Input[str] source: An absolute path to a file on the local system. Cannot be defined if `content` or `source_uri_details` is defined.
-        :param pulumi.Input['StorageObjectSourceUriDetailsArgs'] source_uri_details: Details of the source URI of the object in the cloud. Cannot be defined if `content` or `source` is defined. 
-               Note: To enable object copy, you must authorize the service to manage objects on your behalf.
-        :param pulumi.Input[str] storage_tier: (Updatable) The storage tier that the object should be stored in. If not specified, the object will be stored in the same storage tier as the bucket.
         """
         if bucket is not None:
             pulumi.set(__self__, "bucket", bucket)
@@ -373,9 +280,6 @@ class _StorageObjectState:
     @property
     @pulumi.getter
     def bucket(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name of the bucket for the source object.
-        """
         return pulumi.get(self, "bucket")
 
     @bucket.setter
@@ -385,9 +289,6 @@ class _StorageObjectState:
     @property
     @pulumi.getter(name="cacheControl")
     def cache_control(self) -> Optional[pulumi.Input[str]]:
-        """
-        The optional Cache-Control header that defines the caching behavior value to be returned in GetObject and HeadObject responses. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to identify objects that require caching restrictions.
-        """
         return pulumi.get(self, "cache_control")
 
     @cache_control.setter
@@ -397,9 +298,6 @@ class _StorageObjectState:
     @property
     @pulumi.getter
     def content(self) -> Optional[pulumi.Input[str]]:
-        """
-        The object to upload to the object store. Cannot be defined if `source` or `source_uri_details` is defined.
-        """
         return pulumi.get(self, "content")
 
     @content.setter
@@ -409,9 +307,6 @@ class _StorageObjectState:
     @property
     @pulumi.getter(name="contentDisposition")
     def content_disposition(self) -> Optional[pulumi.Input[str]]:
-        """
-        The optional Content-Disposition header that defines presentational information for the object to be returned in GetObject and HeadObject responses. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to let users download objects with custom filenames in a browser.
-        """
         return pulumi.get(self, "content_disposition")
 
     @content_disposition.setter
@@ -421,9 +316,6 @@ class _StorageObjectState:
     @property
     @pulumi.getter(name="contentEncoding")
     def content_encoding(self) -> Optional[pulumi.Input[str]]:
-        """
-        The optional Content-Encoding header that defines the content encodings that were applied to the object to upload. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to determine what decoding mechanisms need to be applied to obtain the media-type specified by the Content-Type header of the object.
-        """
         return pulumi.get(self, "content_encoding")
 
     @content_encoding.setter
@@ -433,9 +325,6 @@ class _StorageObjectState:
     @property
     @pulumi.getter(name="contentLanguage")
     def content_language(self) -> Optional[pulumi.Input[str]]:
-        """
-        The optional Content-Language header that defines the content language of the object to upload. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to identify and differentiate objects based on a particular language.
-        """
         return pulumi.get(self, "content_language")
 
     @content_language.setter
@@ -445,9 +334,6 @@ class _StorageObjectState:
     @property
     @pulumi.getter(name="contentLength")
     def content_length(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The content length of the body.
-        """
         return pulumi.get(self, "content_length")
 
     @content_length.setter
@@ -457,11 +343,6 @@ class _StorageObjectState:
     @property
     @pulumi.getter(name="contentMd5")
     def content_md5(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The optional base-64 header that defines the encoded MD5 hash of the body. If the optional Content-MD5 header is present, Object Storage performs an integrity check on the body of the HTTP request by computing the MD5 hash for the body and comparing it to the MD5 hash supplied in the header. If the two hashes do not match, the object is rejected and an HTTP-400 Unmatched Content MD5 error is returned with the message:
-
-        "The computed MD5 of the request body (ACTUAL_MD5) does not match the Content-MD5 header (HEADER_MD5)"
-        """
         return pulumi.get(self, "content_md5")
 
     @content_md5.setter
@@ -471,9 +352,6 @@ class _StorageObjectState:
     @property
     @pulumi.getter(name="contentType")
     def content_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The optional Content-Type header that defines the standard MIME type format of the object. Content type defaults to 'application/octet-stream' if not specified in the PutObject call. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to identify and perform special operations on text only objects.
-        """
         return pulumi.get(self, "content_type")
 
     @content_type.setter
@@ -483,9 +361,6 @@ class _StorageObjectState:
     @property
     @pulumi.getter(name="deleteAllObjectVersions")
     def delete_all_object_versions(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) A boolean to delete all object versions for an object in a bucket that has or ever had versioning enabled.
-        """
         return pulumi.get(self, "delete_all_object_versions")
 
     @delete_all_object_versions.setter
@@ -495,10 +370,6 @@ class _StorageObjectState:
     @property
     @pulumi.getter
     def metadata(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Optional user-defined metadata key and value.
-        Note: All specified keys must be in lower case.
-        """
         return pulumi.get(self, "metadata")
 
     @metadata.setter
@@ -508,9 +379,6 @@ class _StorageObjectState:
     @property
     @pulumi.getter
     def namespace(self) -> Optional[pulumi.Input[str]]:
-        """
-        The top-level namespace of the source object.
-        """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
@@ -520,9 +388,6 @@ class _StorageObjectState:
     @property
     @pulumi.getter
     def object(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name of the source object.
-        """
         return pulumi.get(self, "object")
 
     @object.setter
@@ -532,9 +397,6 @@ class _StorageObjectState:
     @property
     @pulumi.getter(name="opcSseKmsKeyId")
     def opc_sse_kms_key_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
-        """
         return pulumi.get(self, "opc_sse_kms_key_id")
 
     @opc_sse_kms_key_id.setter
@@ -544,9 +406,6 @@ class _StorageObjectState:
     @property
     @pulumi.getter
     def source(self) -> Optional[pulumi.Input[str]]:
-        """
-        An absolute path to a file on the local system. Cannot be defined if `content` or `source_uri_details` is defined.
-        """
         return pulumi.get(self, "source")
 
     @source.setter
@@ -556,10 +415,6 @@ class _StorageObjectState:
     @property
     @pulumi.getter(name="sourceUriDetails")
     def source_uri_details(self) -> Optional[pulumi.Input['StorageObjectSourceUriDetailsArgs']]:
-        """
-        Details of the source URI of the object in the cloud. Cannot be defined if `content` or `source` is defined. 
-        Note: To enable object copy, you must authorize the service to manage objects on your behalf.
-        """
         return pulumi.get(self, "source_uri_details")
 
     @source_uri_details.setter
@@ -578,9 +433,6 @@ class _StorageObjectState:
     @property
     @pulumi.getter(name="storageTier")
     def storage_tier(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The storage tier that the object should be stored in. If not specified, the object will be stored in the same storage tier as the bucket.
-        """
         return pulumi.get(self, "storage_tier")
 
     @storage_tier.setter
@@ -629,69 +481,9 @@ class StorageObject(pulumi.CustomResource):
                  storage_tier: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Object resource in Oracle Cloud Infrastructure Object Storage service.
-
-        Creates a new object or overwrites an existing object with the same name. The maximum object size allowed by
-        PutObject is 50 GiB.
-
-        See [Object Names](https://docs.cloud.oracle.com/iaas/Content/Object/Tasks/managingobjects.htm#namerequirements)
-        for object naming requirements.
-
-        See [Special Instructions for Object Storage PUT](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/signingrequests.htm#ObjectStoragePut)
-        for request signature requirements.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_object = oci.object_storage.StorageObject("testObject",
-            bucket=var["object_bucket"],
-            content=var["object_content"],
-            namespace=var["object_namespace"],
-            object=var["object_object"],
-            cache_control=var["object_cache_control"],
-            content_disposition=var["object_content_disposition"],
-            content_encoding=var["object_content_encoding"],
-            content_language=var["object_content_language"],
-            content_type=var["object_content_type"],
-            delete_all_object_versions=var["object_delete_all_object_versions"],
-            metadata=var["object_metadata"],
-            storage_tier=var["object_storage_tier"],
-            opc_sse_kms_key_id=var["object_opc_sse_kms_key_id"])
-        ```
-
-        ## Import
-
-        Objects can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:ObjectStorage/storageObject:StorageObject test_object "n/{namespaceName}/b/{bucketName}/o/{objectName}"
-        ```
-
+        Create a StorageObject resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] bucket: The name of the bucket for the source object.
-        :param pulumi.Input[str] cache_control: The optional Cache-Control header that defines the caching behavior value to be returned in GetObject and HeadObject responses. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to identify objects that require caching restrictions.
-        :param pulumi.Input[str] content: The object to upload to the object store. Cannot be defined if `source` or `source_uri_details` is defined.
-        :param pulumi.Input[str] content_disposition: The optional Content-Disposition header that defines presentational information for the object to be returned in GetObject and HeadObject responses. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to let users download objects with custom filenames in a browser.
-        :param pulumi.Input[str] content_encoding: The optional Content-Encoding header that defines the content encodings that were applied to the object to upload. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to determine what decoding mechanisms need to be applied to obtain the media-type specified by the Content-Type header of the object.
-        :param pulumi.Input[str] content_language: The optional Content-Language header that defines the content language of the object to upload. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to identify and differentiate objects based on a particular language.
-        :param pulumi.Input[str] content_md5: (Updatable) The optional base-64 header that defines the encoded MD5 hash of the body. If the optional Content-MD5 header is present, Object Storage performs an integrity check on the body of the HTTP request by computing the MD5 hash for the body and comparing it to the MD5 hash supplied in the header. If the two hashes do not match, the object is rejected and an HTTP-400 Unmatched Content MD5 error is returned with the message:
-               
-               "The computed MD5 of the request body (ACTUAL_MD5) does not match the Content-MD5 header (HEADER_MD5)"
-        :param pulumi.Input[str] content_type: The optional Content-Type header that defines the standard MIME type format of the object. Content type defaults to 'application/octet-stream' if not specified in the PutObject call. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to identify and perform special operations on text only objects.
-        :param pulumi.Input[bool] delete_all_object_versions: (Updatable) A boolean to delete all object versions for an object in a bucket that has or ever had versioning enabled.
-        :param pulumi.Input[Mapping[str, Any]] metadata: Optional user-defined metadata key and value.
-               Note: All specified keys must be in lower case.
-        :param pulumi.Input[str] namespace: The top-level namespace of the source object.
-        :param pulumi.Input[str] object: The name of the source object.
-        :param pulumi.Input[str] opc_sse_kms_key_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
-        :param pulumi.Input[str] source: An absolute path to a file on the local system. Cannot be defined if `content` or `source_uri_details` is defined.
-        :param pulumi.Input[pulumi.InputType['StorageObjectSourceUriDetailsArgs']] source_uri_details: Details of the source URI of the object in the cloud. Cannot be defined if `content` or `source` is defined. 
-               Note: To enable object copy, you must authorize the service to manage objects on your behalf.
-        :param pulumi.Input[str] storage_tier: (Updatable) The storage tier that the object should be stored in. If not specified, the object will be stored in the same storage tier as the bucket.
         """
         ...
     @overload
@@ -700,47 +492,7 @@ class StorageObject(pulumi.CustomResource):
                  args: StorageObjectArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Object resource in Oracle Cloud Infrastructure Object Storage service.
-
-        Creates a new object or overwrites an existing object with the same name. The maximum object size allowed by
-        PutObject is 50 GiB.
-
-        See [Object Names](https://docs.cloud.oracle.com/iaas/Content/Object/Tasks/managingobjects.htm#namerequirements)
-        for object naming requirements.
-
-        See [Special Instructions for Object Storage PUT](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/signingrequests.htm#ObjectStoragePut)
-        for request signature requirements.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_object = oci.object_storage.StorageObject("testObject",
-            bucket=var["object_bucket"],
-            content=var["object_content"],
-            namespace=var["object_namespace"],
-            object=var["object_object"],
-            cache_control=var["object_cache_control"],
-            content_disposition=var["object_content_disposition"],
-            content_encoding=var["object_content_encoding"],
-            content_language=var["object_content_language"],
-            content_type=var["object_content_type"],
-            delete_all_object_versions=var["object_delete_all_object_versions"],
-            metadata=var["object_metadata"],
-            storage_tier=var["object_storage_tier"],
-            opc_sse_kms_key_id=var["object_opc_sse_kms_key_id"])
-        ```
-
-        ## Import
-
-        Objects can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:ObjectStorage/storageObject:StorageObject test_object "n/{namespaceName}/b/{bucketName}/o/{objectName}"
-        ```
-
+        Create a StorageObject resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param StorageObjectArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -844,27 +596,6 @@ class StorageObject(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] bucket: The name of the bucket for the source object.
-        :param pulumi.Input[str] cache_control: The optional Cache-Control header that defines the caching behavior value to be returned in GetObject and HeadObject responses. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to identify objects that require caching restrictions.
-        :param pulumi.Input[str] content: The object to upload to the object store. Cannot be defined if `source` or `source_uri_details` is defined.
-        :param pulumi.Input[str] content_disposition: The optional Content-Disposition header that defines presentational information for the object to be returned in GetObject and HeadObject responses. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to let users download objects with custom filenames in a browser.
-        :param pulumi.Input[str] content_encoding: The optional Content-Encoding header that defines the content encodings that were applied to the object to upload. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to determine what decoding mechanisms need to be applied to obtain the media-type specified by the Content-Type header of the object.
-        :param pulumi.Input[str] content_language: The optional Content-Language header that defines the content language of the object to upload. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to identify and differentiate objects based on a particular language.
-        :param pulumi.Input[str] content_length: (Updatable) The content length of the body.
-        :param pulumi.Input[str] content_md5: (Updatable) The optional base-64 header that defines the encoded MD5 hash of the body. If the optional Content-MD5 header is present, Object Storage performs an integrity check on the body of the HTTP request by computing the MD5 hash for the body and comparing it to the MD5 hash supplied in the header. If the two hashes do not match, the object is rejected and an HTTP-400 Unmatched Content MD5 error is returned with the message:
-               
-               "The computed MD5 of the request body (ACTUAL_MD5) does not match the Content-MD5 header (HEADER_MD5)"
-        :param pulumi.Input[str] content_type: The optional Content-Type header that defines the standard MIME type format of the object. Content type defaults to 'application/octet-stream' if not specified in the PutObject call. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to identify and perform special operations on text only objects.
-        :param pulumi.Input[bool] delete_all_object_versions: (Updatable) A boolean to delete all object versions for an object in a bucket that has or ever had versioning enabled.
-        :param pulumi.Input[Mapping[str, Any]] metadata: Optional user-defined metadata key and value.
-               Note: All specified keys must be in lower case.
-        :param pulumi.Input[str] namespace: The top-level namespace of the source object.
-        :param pulumi.Input[str] object: The name of the source object.
-        :param pulumi.Input[str] opc_sse_kms_key_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
-        :param pulumi.Input[str] source: An absolute path to a file on the local system. Cannot be defined if `content` or `source_uri_details` is defined.
-        :param pulumi.Input[pulumi.InputType['StorageObjectSourceUriDetailsArgs']] source_uri_details: Details of the source URI of the object in the cloud. Cannot be defined if `content` or `source` is defined. 
-               Note: To enable object copy, you must authorize the service to manage objects on your behalf.
-        :param pulumi.Input[str] storage_tier: (Updatable) The storage tier that the object should be stored in. If not specified, the object will be stored in the same storage tier as the bucket.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -895,155 +626,100 @@ class StorageObject(pulumi.CustomResource):
     @property
     @pulumi.getter
     def bucket(self) -> pulumi.Output[str]:
-        """
-        The name of the bucket for the source object.
-        """
         return pulumi.get(self, "bucket")
 
     @property
     @pulumi.getter(name="cacheControl")
     def cache_control(self) -> pulumi.Output[Optional[str]]:
-        """
-        The optional Cache-Control header that defines the caching behavior value to be returned in GetObject and HeadObject responses. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to identify objects that require caching restrictions.
-        """
         return pulumi.get(self, "cache_control")
 
     @property
     @pulumi.getter
     def content(self) -> pulumi.Output[Optional[str]]:
-        """
-        The object to upload to the object store. Cannot be defined if `source` or `source_uri_details` is defined.
-        """
         return pulumi.get(self, "content")
 
     @property
     @pulumi.getter(name="contentDisposition")
     def content_disposition(self) -> pulumi.Output[Optional[str]]:
-        """
-        The optional Content-Disposition header that defines presentational information for the object to be returned in GetObject and HeadObject responses. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to let users download objects with custom filenames in a browser.
-        """
         return pulumi.get(self, "content_disposition")
 
     @property
     @pulumi.getter(name="contentEncoding")
     def content_encoding(self) -> pulumi.Output[Optional[str]]:
-        """
-        The optional Content-Encoding header that defines the content encodings that were applied to the object to upload. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to determine what decoding mechanisms need to be applied to obtain the media-type specified by the Content-Type header of the object.
-        """
         return pulumi.get(self, "content_encoding")
 
     @property
     @pulumi.getter(name="contentLanguage")
     def content_language(self) -> pulumi.Output[Optional[str]]:
-        """
-        The optional Content-Language header that defines the content language of the object to upload. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to identify and differentiate objects based on a particular language.
-        """
         return pulumi.get(self, "content_language")
 
     @property
     @pulumi.getter(name="contentLength")
-    def content_length(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The content length of the body.
-        """
+    def content_length(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "content_length")
 
     @property
     @pulumi.getter(name="contentMd5")
-    def content_md5(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The optional base-64 header that defines the encoded MD5 hash of the body. If the optional Content-MD5 header is present, Object Storage performs an integrity check on the body of the HTTP request by computing the MD5 hash for the body and comparing it to the MD5 hash supplied in the header. If the two hashes do not match, the object is rejected and an HTTP-400 Unmatched Content MD5 error is returned with the message:
-
-        "The computed MD5 of the request body (ACTUAL_MD5) does not match the Content-MD5 header (HEADER_MD5)"
-        """
+    def content_md5(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "content_md5")
 
     @property
     @pulumi.getter(name="contentType")
-    def content_type(self) -> pulumi.Output[str]:
-        """
-        The optional Content-Type header that defines the standard MIME type format of the object. Content type defaults to 'application/octet-stream' if not specified in the PutObject call. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to identify and perform special operations on text only objects.
-        """
+    def content_type(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "content_type")
 
     @property
     @pulumi.getter(name="deleteAllObjectVersions")
     def delete_all_object_versions(self) -> pulumi.Output[Optional[bool]]:
-        """
-        (Updatable) A boolean to delete all object versions for an object in a bucket that has or ever had versioning enabled.
-        """
         return pulumi.get(self, "delete_all_object_versions")
 
     @property
     @pulumi.getter
     def metadata(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
-        """
-        Optional user-defined metadata key and value.
-        Note: All specified keys must be in lower case.
-        """
         return pulumi.get(self, "metadata")
 
     @property
     @pulumi.getter
     def namespace(self) -> pulumi.Output[str]:
-        """
-        The top-level namespace of the source object.
-        """
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter
     def object(self) -> pulumi.Output[str]:
-        """
-        The name of the source object.
-        """
         return pulumi.get(self, "object")
 
     @property
     @pulumi.getter(name="opcSseKmsKeyId")
-    def opc_sse_kms_key_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
-        """
+    def opc_sse_kms_key_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "opc_sse_kms_key_id")
 
     @property
     @pulumi.getter
     def source(self) -> pulumi.Output[Optional[str]]:
-        """
-        An absolute path to a file on the local system. Cannot be defined if `content` or `source_uri_details` is defined.
-        """
         return pulumi.get(self, "source")
 
     @property
     @pulumi.getter(name="sourceUriDetails")
     def source_uri_details(self) -> pulumi.Output[Optional['outputs.StorageObjectSourceUriDetails']]:
-        """
-        Details of the source URI of the object in the cloud. Cannot be defined if `content` or `source` is defined. 
-        Note: To enable object copy, you must authorize the service to manage objects on your behalf.
-        """
         return pulumi.get(self, "source_uri_details")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="storageTier")
-    def storage_tier(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The storage tier that the object should be stored in. If not specified, the object will be stored in the same storage tier as the bucket.
-        """
+    def storage_tier(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "storage_tier")
 
     @property
     @pulumi.getter(name="versionId")
-    def version_id(self) -> pulumi.Output[str]:
+    def version_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "version_id")
 
     @property
     @pulumi.getter(name="workRequestId")
-    def work_request_id(self) -> pulumi.Output[str]:
+    def work_request_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "work_request_id")
 

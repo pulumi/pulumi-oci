@@ -47,11 +47,11 @@ export interface GetManagementAgentGetAutoUpgradableConfigResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * true if the agents can be upgraded automatically; false if they must be upgraded manually.
      */
-    readonly isAgentAutoUpgradable: boolean;
+    readonly isAgentAutoUpgradable?: boolean;
 }
 /**
  * This data source provides details about a specific Management Agent Get Auto Upgradable Config resource in Oracle Cloud Infrastructure Management Agent service.

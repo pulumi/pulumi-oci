@@ -99,23 +99,23 @@ export interface GetDomainsMyGroupsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly idcsEndpoint: string;
     /**
      * The number of resources returned in a list response page. REQUIRED when partial results returned due to pagination.
      */
-    readonly itemsPerPage: number;
+    readonly itemsPerPage?: number;
     readonly myGroupCount?: number;
     readonly myGroupFilter?: string;
     /**
      * The list of my_groups.
      */
-    readonly myGroups: outputs.Identity.GetDomainsMyGroupsMyGroup[];
+    readonly myGroups?: outputs.Identity.GetDomainsMyGroupsMyGroup[];
     readonly resourceTypeSchemaVersion?: string;
     /**
      * The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior. REQUIRED.
      */
-    readonly schemas: string[];
+    readonly schemas?: string[];
     readonly sortBy?: string;
     readonly sortOrder?: string;
     /**
@@ -125,7 +125,7 @@ export interface GetDomainsMyGroupsResult {
     /**
      * The total number of results returned by the list or query operation.  The value may be larger than the number of resources returned such as when returning a single page of results where multiple pages are available. REQUIRED.
      */
-    readonly totalResults: number;
+    readonly totalResults?: number;
 }
 /**
  * This data source provides the list of My Groups in Oracle Cloud Infrastructure Identity Domains service.

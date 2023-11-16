@@ -6,6 +6,8 @@ package com.pulumi.oci.Database.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDatabasesDatabaseDbBackupConfigBackupDestinationDetail {
@@ -13,43 +15,43 @@ public final class GetDatabasesDatabaseDbBackupConfigBackupDestinationDetail {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
      * 
      */
-    private String dbrsPolicyId;
+    private @Nullable String dbrsPolicyId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Type of the database backup destination.
      * 
      */
-    private String type;
-    private String vpcUser;
+    private @Nullable String type;
+    private @Nullable String vpcUser;
 
     private GetDatabasesDatabaseDbBackupConfigBackupDestinationDetail() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
      * 
      */
-    public String dbrsPolicyId() {
-        return this.dbrsPolicyId;
+    public Optional<String> dbrsPolicyId() {
+        return Optional.ofNullable(this.dbrsPolicyId);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Type of the database backup destination.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
-    public String vpcUser() {
-        return this.vpcUser;
+    public Optional<String> vpcUser() {
+        return Optional.ofNullable(this.vpcUser);
     }
 
     public static Builder builder() {
@@ -61,10 +63,10 @@ public final class GetDatabasesDatabaseDbBackupConfigBackupDestinationDetail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String dbrsPolicyId;
-        private String id;
-        private String type;
-        private String vpcUser;
+        private @Nullable String dbrsPolicyId;
+        private @Nullable String id;
+        private @Nullable String type;
+        private @Nullable String vpcUser;
         public Builder() {}
         public Builder(GetDatabasesDatabaseDbBackupConfigBackupDestinationDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -75,23 +77,23 @@ public final class GetDatabasesDatabaseDbBackupConfigBackupDestinationDetail {
         }
 
         @CustomType.Setter
-        public Builder dbrsPolicyId(String dbrsPolicyId) {
-            this.dbrsPolicyId = Objects.requireNonNull(dbrsPolicyId);
+        public Builder dbrsPolicyId(@Nullable String dbrsPolicyId) {
+            this.dbrsPolicyId = dbrsPolicyId;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         @CustomType.Setter
-        public Builder vpcUser(String vpcUser) {
-            this.vpcUser = Objects.requireNonNull(vpcUser);
+        public Builder vpcUser(@Nullable String vpcUser) {
+            this.vpcUser = vpcUser;
             return this;
         }
         public GetDatabasesDatabaseDbBackupConfigBackupDestinationDetail build() {

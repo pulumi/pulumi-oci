@@ -45,56 +45,56 @@ export interface GetSecurityZoneResult {
     /**
      * The OCID of the compartment for the security zone
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * The security zone's description
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * The security zone's name
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * Unique identifier that is immutable on creation
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * List of inherited compartments
      */
-    readonly inheritedByCompartments: string[];
+    readonly inheritedByCompartments?: string[];
     /**
      * A message describing the current state in more detail. For example, this can be used to provide actionable information for a zone in the `Failed` state.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     readonly securityZoneId: string;
     /**
      * The OCID of the recipe (`SecurityRecipe`) for the security zone
      */
-    readonly securityZoneRecipeId: string;
+    readonly securityZoneRecipeId?: string;
     /**
      * The OCID of the target associated with the security zone
      */
-    readonly securityZoneTargetId: string;
+    readonly securityZoneTargetId?: string;
     /**
      * The current state of the security zone
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The time the security zone was created. An RFC3339 formatted datetime string.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The time the security zone was last updated. An RFC3339 formatted datetime string.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific Security Zone resource in Oracle Cloud Infrastructure Cloud Guard service.

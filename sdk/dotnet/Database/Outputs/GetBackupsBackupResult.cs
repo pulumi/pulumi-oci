@@ -16,119 +16,119 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// The name of the availability domain where the database backup is stored.
         /// </summary>
-        public readonly string AvailabilityDomain;
+        public readonly string? AvailabilityDomain;
         /// <summary>
         /// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The Oracle Database edition of the DB system from which the database backup was taken.
         /// </summary>
-        public readonly string DatabaseEdition;
+        public readonly string? DatabaseEdition;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
         /// </summary>
-        public readonly string DatabaseId;
+        public readonly string? DatabaseId;
         /// <summary>
         /// The size of the database in gigabytes at the time the backup was taken.
         /// </summary>
-        public readonly double DatabaseSizeInGbs;
+        public readonly double? DatabaseSizeInGbs;
         /// <summary>
         /// The user-friendly name for the backup. The name does not have to be unique.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
         /// </summary>
-        public readonly string KeyStoreId;
+        public readonly string? KeyStoreId;
         /// <summary>
         /// The wallet name for Oracle Key Vault.
         /// </summary>
-        public readonly string KeyStoreWalletName;
+        public readonly string? KeyStoreWalletName;
         /// <summary>
         /// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         /// </summary>
-        public readonly string KmsKeyId;
+        public readonly string? KmsKeyId;
         /// <summary>
         /// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
         /// </summary>
-        public readonly string KmsKeyVersionId;
+        public readonly string? KmsKeyVersionId;
         /// <summary>
         /// Additional information about the current lifecycle state.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// Shape of the backup's source database.
         /// </summary>
-        public readonly string Shape;
+        public readonly string? Shape;
         /// <summary>
         /// The current state of the backup.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The date and time the backup was completed.
         /// </summary>
-        public readonly string TimeEnded;
+        public readonly string? TimeEnded;
         /// <summary>
         /// The date and time the backup started.
         /// </summary>
-        public readonly string TimeStarted;
+        public readonly string? TimeStarted;
         /// <summary>
         /// The type of backup.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         /// </summary>
-        public readonly string VaultId;
+        public readonly string? VaultId;
         /// <summary>
         /// Version of the backup's source database
         /// </summary>
-        public readonly string Version;
+        public readonly string? Version;
 
         [OutputConstructor]
         private GetBackupsBackupResult(
-            string availabilityDomain,
+            string? availabilityDomain,
 
-            string compartmentId,
+            string? compartmentId,
 
-            string databaseEdition,
+            string? databaseEdition,
 
-            string databaseId,
+            string? databaseId,
 
-            double databaseSizeInGbs,
+            double? databaseSizeInGbs,
 
-            string displayName,
+            string? displayName,
 
-            string id,
+            string? id,
 
-            string keyStoreId,
+            string? keyStoreId,
 
-            string keyStoreWalletName,
+            string? keyStoreWalletName,
 
-            string kmsKeyId,
+            string? kmsKeyId,
 
-            string kmsKeyVersionId,
+            string? kmsKeyVersionId,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string shape,
+            string? shape,
 
-            string state,
+            string? state,
 
-            string timeEnded,
+            string? timeEnded,
 
-            string timeStarted,
+            string? timeStarted,
 
-            string type,
+            string? type,
 
-            string vaultId,
+            string? vaultId,
 
-            string version)
+            string? version)
         {
             AvailabilityDomain = availabilityDomain;
             CompartmentId = compartmentId;

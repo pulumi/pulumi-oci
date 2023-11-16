@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Fleet Java Migration Analysis Results in Oracle Cloud Infrastructure Jms service.
@@ -73,7 +72,7 @@ type GetFleetJavaMigrationAnalysisResultsResult struct {
 	// The fleet OCID.
 	FleetId string `pulumi:"fleetId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of java_migration_analysis_result_collection.
 	JavaMigrationAnalysisResultCollections []GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollection `pulumi:"javaMigrationAnalysisResultCollections"`
 	// The managed instance OCID.
@@ -127,12 +126,6 @@ func (o GetFleetJavaMigrationAnalysisResultsResultOutput) ToGetFleetJavaMigratio
 	return o
 }
 
-func (o GetFleetJavaMigrationAnalysisResultsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetFleetJavaMigrationAnalysisResultsResult] {
-	return pulumix.Output[GetFleetJavaMigrationAnalysisResultsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetFleetJavaMigrationAnalysisResultsResultOutput) Filters() GetFleetJavaMigrationAnalysisResultsFilterArrayOutput {
 	return o.ApplyT(func(v GetFleetJavaMigrationAnalysisResultsResult) []GetFleetJavaMigrationAnalysisResultsFilter {
 		return v.Filters
@@ -145,8 +138,8 @@ func (o GetFleetJavaMigrationAnalysisResultsResultOutput) FleetId() pulumi.Strin
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetFleetJavaMigrationAnalysisResultsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetJavaMigrationAnalysisResultsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetFleetJavaMigrationAnalysisResultsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetFleetJavaMigrationAnalysisResultsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of java_migration_analysis_result_collection.

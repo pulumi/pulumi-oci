@@ -16,53 +16,53 @@ namespace Pulumi.Oci.OneSubsription.Outputs
         /// <summary>
         /// Email.
         /// </summary>
-        public readonly string Email;
+        public readonly string? Email;
         /// <summary>
         /// First name.
         /// </summary>
-        public readonly string FirstName;
+        public readonly string? FirstName;
         /// <summary>
         /// Last name.
         /// </summary>
-        public readonly string LastName;
+        public readonly string? LastName;
         /// <summary>
         /// Commercial name also called customer name.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// TCA contact ID.
         /// </summary>
-        public readonly string TcaContactId;
+        public readonly string? TcaContactId;
         /// <summary>
         /// TCA customer account site ID.
         /// </summary>
-        public readonly string TcaCustAccntSiteId;
+        public readonly string? TcaCustAccntSiteId;
         /// <summary>
         /// TCA party ID.
         /// </summary>
-        public readonly string TcaPartyId;
+        public readonly string? TcaPartyId;
         /// <summary>
         /// Username.
         /// </summary>
-        public readonly string Username;
+        public readonly string? Username;
 
         [OutputConstructor]
         private GetSubscribedServicesSubscribedServiceEndUserContactResult(
-            string email,
+            string? email,
 
-            string firstName,
+            string? firstName,
 
-            string lastName,
+            string? lastName,
 
-            string name,
+            string? name,
 
-            string tcaContactId,
+            string? tcaContactId,
 
-            string tcaCustAccntSiteId,
+            string? tcaCustAccntSiteId,
 
-            string tcaPartyId,
+            string? tcaPartyId,
 
-            string username)
+            string? username)
         {
             Email = email;
             FirstName = firstName;

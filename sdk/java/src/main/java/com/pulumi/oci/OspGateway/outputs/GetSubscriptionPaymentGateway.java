@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.OspGateway.outputs.GetSubscriptionPaymentGatewayMerchantDefinedData;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSubscriptionPaymentGateway {
@@ -14,7 +15,7 @@ public final class GetSubscriptionPaymentGateway {
      * @return Merchant details.
      * 
      */
-    private List<GetSubscriptionPaymentGatewayMerchantDefinedData> merchantDefinedDatas;
+    private @Nullable List<GetSubscriptionPaymentGatewayMerchantDefinedData> merchantDefinedDatas;
 
     private GetSubscriptionPaymentGateway() {}
     /**
@@ -22,7 +23,7 @@ public final class GetSubscriptionPaymentGateway {
      * 
      */
     public List<GetSubscriptionPaymentGatewayMerchantDefinedData> merchantDefinedDatas() {
-        return this.merchantDefinedDatas;
+        return this.merchantDefinedDatas == null ? List.of() : this.merchantDefinedDatas;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetSubscriptionPaymentGateway {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetSubscriptionPaymentGatewayMerchantDefinedData> merchantDefinedDatas;
+        private @Nullable List<GetSubscriptionPaymentGatewayMerchantDefinedData> merchantDefinedDatas;
         public Builder() {}
         public Builder(GetSubscriptionPaymentGateway defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetSubscriptionPaymentGateway {
         }
 
         @CustomType.Setter
-        public Builder merchantDefinedDatas(List<GetSubscriptionPaymentGatewayMerchantDefinedData> merchantDefinedDatas) {
-            this.merchantDefinedDatas = Objects.requireNonNull(merchantDefinedDatas);
+        public Builder merchantDefinedDatas(@Nullable List<GetSubscriptionPaymentGatewayMerchantDefinedData> merchantDefinedDatas) {
+            this.merchantDefinedDatas = merchantDefinedDatas;
             return this;
         }
         public Builder merchantDefinedDatas(GetSubscriptionPaymentGatewayMerchantDefinedData... merchantDefinedDatas) {

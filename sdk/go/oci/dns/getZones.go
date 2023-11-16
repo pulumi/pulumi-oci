@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Zones in Oracle Cloud Infrastructure DNS service.
@@ -99,7 +98,7 @@ type GetZonesResult struct {
 	CompartmentId string           `pulumi:"compartmentId"`
 	Filters       []GetZonesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The name of the zone.
 	Name         *string `pulumi:"name"`
 	NameContains *string `pulumi:"nameContains"`
@@ -183,12 +182,6 @@ func (o GetZonesResultOutput) ToGetZonesResultOutputWithContext(ctx context.Cont
 	return o
 }
 
-func (o GetZonesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetZonesResult] {
-	return pulumix.Output[GetZonesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment containing the zone.
 func (o GetZonesResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZonesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -199,8 +192,8 @@ func (o GetZonesResultOutput) Filters() GetZonesFilterArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetZonesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetZonesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetZonesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetZonesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The name of the zone.

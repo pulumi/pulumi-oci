@@ -13,7 +13,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
     [OutputType]
     public sealed class GetMaskingPoliciesMaskingPolicyCollectionItemResult
     {
-        public readonly int AddMaskingColumnsFromSdmTrigger;
+        public readonly int? AddMaskingColumnsFromSdmTrigger;
         /// <summary>
         /// The source of masking columns.
         /// </summary>
@@ -21,105 +21,105 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// A filter to return only resources that match the specified compartment OCID.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// The description of the masking policy.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// A filter to return only resources that match the specified display name.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The OCID of the masking policy.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Indicates if the temporary tables created during a masking operation should be dropped after masking. It's enabled by default. Set this attribute to false to preserve the temporary tables. Masking creates temporary tables that map the original sensitive  data values to mask values. By default, these temporary tables are dropped after masking. But, in some cases, you may want  to preserve this information to track how masking changed your data. Note that doing so compromises security. These tables  must be dropped before the database is available for unprivileged users.
         /// </summary>
-        public readonly bool IsDropTempTablesEnabled;
+        public readonly bool? IsDropTempTablesEnabled;
         /// <summary>
         /// Indicates if redo logging is enabled during a masking operation. It's disabled by default. Set this attribute to true to enable redo logging. By default, masking disables redo logging and flashback logging to purge any original unmasked  data from logs. However, in certain circumstances when you only want to test masking, rollback changes, and retry masking, you could enable logging and use a flashback database to retrieve the original unmasked data after it has been masked.
         /// </summary>
-        public readonly bool IsRedoLoggingEnabled;
+        public readonly bool? IsRedoLoggingEnabled;
         /// <summary>
         /// Indicates if statistics gathering is enabled. It's enabled by default. Set this attribute to false to disable statistics gathering. The masking process gathers statistics on masked database tables after masking completes.
         /// </summary>
-        public readonly bool IsRefreshStatsEnabled;
+        public readonly bool? IsRefreshStatsEnabled;
         /// <summary>
         /// Specifies options to enable parallel execution when running data masking. Allowed values are 'NONE' (no parallelism), 'DEFAULT' (the Oracle Database computes the optimum degree of parallelism) or an integer value to be used as the degree of parallelism. Parallel execution helps effectively use multiple CPUs and improve masking performance. Refer to the Oracle Database parallel execution framework when choosing an explicit degree of parallelism.
         /// </summary>
-        public readonly string ParallelDegree;
+        public readonly string? ParallelDegree;
         /// <summary>
         /// A post-masking script, which can contain SQL and PL/SQL statements. It's executed after the core masking script generated using the masking policy. It's usually used to perform additional transformation or cleanup work after masking.
         /// </summary>
-        public readonly string PostMaskingScript;
+        public readonly string? PostMaskingScript;
         /// <summary>
         /// A pre-masking script, which can contain SQL and PL/SQL statements. It's executed before  the core masking script generated using the masking policy. It's usually used to perform any preparation or prerequisite work before masking data.
         /// </summary>
-        public readonly string PreMaskingScript;
+        public readonly string? PreMaskingScript;
         /// <summary>
         /// Specifies how to recompile invalid objects post data masking. Allowed values are 'SERIAL' (recompile in serial),  'PARALLEL' (recompile in parallel), 'NONE' (do not recompile). If it's set to PARALLEL, the value of parallelDegree attribute is used. Use the built-in UTL_RECOMP package to recompile any remaining invalid objects after masking completes.
         /// </summary>
-        public readonly string Recompile;
+        public readonly string? Recompile;
         /// <summary>
         /// A filter to return only the resources that match the specified lifecycle states.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The date and time the masking policy was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The date and time the masking policy was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
 
         [OutputConstructor]
         private GetMaskingPoliciesMaskingPolicyCollectionItemResult(
-            int addMaskingColumnsFromSdmTrigger,
+            int? addMaskingColumnsFromSdmTrigger,
 
             ImmutableArray<Outputs.GetMaskingPoliciesMaskingPolicyCollectionItemColumnSourceResult> columnSources,
 
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string description,
+            string? description,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            bool isDropTempTablesEnabled,
+            bool? isDropTempTablesEnabled,
 
-            bool isRedoLoggingEnabled,
+            bool? isRedoLoggingEnabled,
 
-            bool isRefreshStatsEnabled,
+            bool? isRefreshStatsEnabled,
 
-            string parallelDegree,
+            string? parallelDegree,
 
-            string postMaskingScript,
+            string? postMaskingScript,
 
-            string preMaskingScript,
+            string? preMaskingScript,
 
-            string recompile,
+            string? recompile,
 
-            string state,
+            string? state,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated)
+            string? timeUpdated)
         {
             AddMaskingColumnsFromSdmTrigger = addMaskingColumnsFromSdmTrigger;
             ColumnSources = columnSources;

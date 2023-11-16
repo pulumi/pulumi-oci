@@ -20,26 +20,26 @@ public final class GetDomainsMyRequestableGroupsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String idcsEndpoint;
     /**
      * @return The number of resources returned in a list response page. REQUIRED when partial results returned due to pagination.
      * 
      */
-    private Integer itemsPerPage;
+    private @Nullable Integer itemsPerPage;
     private @Nullable Integer myRequestableGroupCount;
     private @Nullable String myRequestableGroupFilter;
     /**
      * @return The list of my_requestable_groups.
      * 
      */
-    private List<GetDomainsMyRequestableGroupsMyRequestableGroup> myRequestableGroups;
+    private @Nullable List<GetDomainsMyRequestableGroupsMyRequestableGroup> myRequestableGroups;
     private @Nullable String resourceTypeSchemaVersion;
     /**
      * @return The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior. REQUIRED.
      * 
      */
-    private List<String> schemas;
+    private @Nullable List<String> schemas;
     private @Nullable String sortBy;
     private @Nullable String sortOrder;
     /**
@@ -51,7 +51,7 @@ public final class GetDomainsMyRequestableGroupsResult {
      * @return The total number of results returned by the list or query operation.  The value may be larger than the number of resources returned such as when returning a single page of results where multiple pages are available. REQUIRED.
      * 
      */
-    private Integer totalResults;
+    private @Nullable Integer totalResults;
 
     private GetDomainsMyRequestableGroupsResult() {}
     public Optional<String> authorization() {
@@ -64,8 +64,8 @@ public final class GetDomainsMyRequestableGroupsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String idcsEndpoint() {
         return this.idcsEndpoint;
@@ -74,8 +74,8 @@ public final class GetDomainsMyRequestableGroupsResult {
      * @return The number of resources returned in a list response page. REQUIRED when partial results returned due to pagination.
      * 
      */
-    public Integer itemsPerPage() {
-        return this.itemsPerPage;
+    public Optional<Integer> itemsPerPage() {
+        return Optional.ofNullable(this.itemsPerPage);
     }
     public Optional<Integer> myRequestableGroupCount() {
         return Optional.ofNullable(this.myRequestableGroupCount);
@@ -88,7 +88,7 @@ public final class GetDomainsMyRequestableGroupsResult {
      * 
      */
     public List<GetDomainsMyRequestableGroupsMyRequestableGroup> myRequestableGroups() {
-        return this.myRequestableGroups;
+        return this.myRequestableGroups == null ? List.of() : this.myRequestableGroups;
     }
     public Optional<String> resourceTypeSchemaVersion() {
         return Optional.ofNullable(this.resourceTypeSchemaVersion);
@@ -98,7 +98,7 @@ public final class GetDomainsMyRequestableGroupsResult {
      * 
      */
     public List<String> schemas() {
-        return this.schemas;
+        return this.schemas == null ? List.of() : this.schemas;
     }
     public Optional<String> sortBy() {
         return Optional.ofNullable(this.sortBy);
@@ -117,8 +117,8 @@ public final class GetDomainsMyRequestableGroupsResult {
      * @return The total number of results returned by the list or query operation.  The value may be larger than the number of resources returned such as when returning a single page of results where multiple pages are available. REQUIRED.
      * 
      */
-    public Integer totalResults() {
-        return this.totalResults;
+    public Optional<Integer> totalResults() {
+        return Optional.ofNullable(this.totalResults);
     }
 
     public static Builder builder() {
@@ -132,18 +132,18 @@ public final class GetDomainsMyRequestableGroupsResult {
     public static final class Builder {
         private @Nullable String authorization;
         private @Nullable String compartmentId;
-        private String id;
+        private @Nullable String id;
         private String idcsEndpoint;
-        private Integer itemsPerPage;
+        private @Nullable Integer itemsPerPage;
         private @Nullable Integer myRequestableGroupCount;
         private @Nullable String myRequestableGroupFilter;
-        private List<GetDomainsMyRequestableGroupsMyRequestableGroup> myRequestableGroups;
+        private @Nullable List<GetDomainsMyRequestableGroupsMyRequestableGroup> myRequestableGroups;
         private @Nullable String resourceTypeSchemaVersion;
-        private List<String> schemas;
+        private @Nullable List<String> schemas;
         private @Nullable String sortBy;
         private @Nullable String sortOrder;
         private @Nullable Integer startIndex;
-        private Integer totalResults;
+        private @Nullable Integer totalResults;
         public Builder() {}
         public Builder(GetDomainsMyRequestableGroupsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -174,8 +174,8 @@ public final class GetDomainsMyRequestableGroupsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -184,8 +184,8 @@ public final class GetDomainsMyRequestableGroupsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder itemsPerPage(Integer itemsPerPage) {
-            this.itemsPerPage = Objects.requireNonNull(itemsPerPage);
+        public Builder itemsPerPage(@Nullable Integer itemsPerPage) {
+            this.itemsPerPage = itemsPerPage;
             return this;
         }
         @CustomType.Setter
@@ -199,8 +199,8 @@ public final class GetDomainsMyRequestableGroupsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder myRequestableGroups(List<GetDomainsMyRequestableGroupsMyRequestableGroup> myRequestableGroups) {
-            this.myRequestableGroups = Objects.requireNonNull(myRequestableGroups);
+        public Builder myRequestableGroups(@Nullable List<GetDomainsMyRequestableGroupsMyRequestableGroup> myRequestableGroups) {
+            this.myRequestableGroups = myRequestableGroups;
             return this;
         }
         public Builder myRequestableGroups(GetDomainsMyRequestableGroupsMyRequestableGroup... myRequestableGroups) {
@@ -212,8 +212,8 @@ public final class GetDomainsMyRequestableGroupsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder schemas(List<String> schemas) {
-            this.schemas = Objects.requireNonNull(schemas);
+        public Builder schemas(@Nullable List<String> schemas) {
+            this.schemas = schemas;
             return this;
         }
         public Builder schemas(String... schemas) {
@@ -235,8 +235,8 @@ public final class GetDomainsMyRequestableGroupsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder totalResults(Integer totalResults) {
-            this.totalResults = Objects.requireNonNull(totalResults);
+        public Builder totalResults(@Nullable Integer totalResults) {
+            this.totalResults = totalResults;
             return this;
         }
         public GetDomainsMyRequestableGroupsResult build() {

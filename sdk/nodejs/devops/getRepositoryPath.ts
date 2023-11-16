@@ -73,11 +73,11 @@ export interface GetRepositoryPathResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * List of objects describing files or directories in a repository.
      */
-    readonly items: outputs.DevOps.GetRepositoryPathItem[];
+    readonly items?: outputs.DevOps.GetRepositoryPathItem[];
     readonly pathsInSubtree?: boolean;
     readonly ref?: string;
     readonly repositoryId: string;

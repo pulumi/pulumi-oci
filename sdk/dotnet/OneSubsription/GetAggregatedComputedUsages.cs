@@ -147,7 +147,7 @@ namespace Pulumi.Oci.OneSubsription
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Product description
         /// </summary>
@@ -169,7 +169,7 @@ namespace Pulumi.Oci.OneSubsription
 
             string? grouping,
 
-            string id,
+            string? id,
 
             string? parentProduct,
 

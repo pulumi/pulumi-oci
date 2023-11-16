@@ -92,7 +92,7 @@ export interface GetModelVersionSetsResult {
     /**
      * The list of model_version_sets.
      */
-    readonly modelVersionSets: outputs.DataScience.GetModelVersionSetsModelVersionSet[];
+    readonly modelVersionSets?: outputs.DataScience.GetModelVersionSetsModelVersionSet[];
     /**
      * A user-friendly name for the resource. It must be unique and can't be modified.
      */

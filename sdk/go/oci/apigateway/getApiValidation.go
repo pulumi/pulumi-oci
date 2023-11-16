@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Api Validation resource in Oracle Cloud Infrastructure API Gateway service.
@@ -61,7 +60,7 @@ type LookupApiValidationArgs struct {
 type LookupApiValidationResult struct {
 	ApiId string `pulumi:"apiId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// API validation results.
 	Validations []GetApiValidationValidation `pulumi:"validations"`
 }
@@ -104,19 +103,13 @@ func (o LookupApiValidationResultOutput) ToLookupApiValidationResultOutputWithCo
 	return o
 }
 
-func (o LookupApiValidationResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupApiValidationResult] {
-	return pulumix.Output[LookupApiValidationResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o LookupApiValidationResultOutput) ApiId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupApiValidationResult) string { return v.ApiId }).(pulumi.StringOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o LookupApiValidationResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupApiValidationResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupApiValidationResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupApiValidationResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // API validation results.

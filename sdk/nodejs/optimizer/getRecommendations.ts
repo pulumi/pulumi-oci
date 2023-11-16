@@ -121,7 +121,7 @@ export interface GetRecommendationsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly includeOrganization?: boolean;
     /**
      * The name of the profile level.
@@ -130,7 +130,7 @@ export interface GetRecommendationsResult {
     /**
      * The list of recommendation_collection.
      */
-    readonly recommendationCollections: outputs.Optimizer.GetRecommendationsRecommendationCollection[];
+    readonly recommendationCollections?: outputs.Optimizer.GetRecommendationsRecommendationCollection[];
     /**
      * The recommendation's current state.
      */

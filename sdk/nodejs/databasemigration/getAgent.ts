@@ -46,55 +46,55 @@ export interface GetAgentResult {
     /**
      * OCID of the compartment
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * ODMS Agent name
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The OCID of the resource
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * ODMS Agent public key.
      */
-    readonly publicKey: string;
+    readonly publicKey?: string;
     /**
      * The current state of the ODMS on-premises Agent.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The OCID of the Stream
      */
-    readonly streamId: string;
+    readonly streamId?: string;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * The time the Agent was created. An RFC3339 formatted datetime string.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The time of the last Agent details update. An RFC3339 formatted datetime string.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
     /**
      * ODMS Agent version
      */
-    readonly version: string;
+    readonly version?: string;
 }
 /**
  * This data source provides details about a specific Agent resource in Oracle Cloud Infrastructure Database Migration service.

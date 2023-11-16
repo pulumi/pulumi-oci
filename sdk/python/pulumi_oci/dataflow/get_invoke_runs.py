@@ -61,25 +61,16 @@ class GetInvokeRunsResult:
     @property
     @pulumi.getter(name="applicationId")
     def application_id(self) -> Optional[str]:
-        """
-        The application ID.
-        """
         return pulumi.get(self, "application_id")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of a compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A user-friendly name. This name is not necessarily unique.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -94,7 +85,7 @@ class GetInvokeRunsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -103,33 +94,21 @@ class GetInvokeRunsResult:
     @property
     @pulumi.getter(name="ownerPrincipalId")
     def owner_principal_id(self) -> Optional[str]:
-        """
-        The OCID of the user who created the resource.
-        """
         return pulumi.get(self, "owner_principal_id")
 
     @property
     @pulumi.getter(name="poolId")
     def pool_id(self) -> Optional[str]:
-        """
-        The OCID of a pool. Unique Id to indentify a dataflow pool resource.
-        """
         return pulumi.get(self, "pool_id")
 
     @property
     @pulumi.getter
-    def runs(self) -> Sequence['outputs.GetInvokeRunsRunResult']:
-        """
-        The list of runs.
-        """
+    def runs(self) -> Optional[Sequence['outputs.GetInvokeRunsRunResult']]:
         return pulumi.get(self, "runs")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of this run.
-        """
         return pulumi.get(self, "state")
 
     @property
@@ -168,35 +147,7 @@ def get_invoke_runs(application_id: Optional[str] = None,
                     time_created_greater_than: Optional[str] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetInvokeRunsResult:
     """
-    This data source provides the list of Invoke Runs in Oracle Cloud Infrastructure Data Flow service.
-
-    Lists all runs of an application in the specified compartment.  Only one parameter other than compartmentId may also be included in a query. The query must include compartmentId. If the query does not include compartmentId, or includes compartmentId but two or more other parameters an error is returned.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_invoke_runs = oci.DataFlow.get_invoke_runs(compartment_id=var["compartment_id"],
-        application_id=oci_dataflow_application["test_application"]["id"],
-        display_name=var["invoke_run_display_name"],
-        display_name_starts_with=var["invoke_run_display_name_starts_with"],
-        owner_principal_id=oci_dataflow_owner_principal["test_owner_principal"]["id"],
-        pool_id=oci_dataflow_pool["test_pool"]["id"],
-        state=var["invoke_run_state"],
-        time_created_greater_than=var["invoke_run_time_created_greater_than"])
-    ```
-
-
-    :param str application_id: The ID of the application.
-    :param str compartment_id: The OCID of the compartment.
-    :param str display_name: The query parameter for the Spark application name.
-    :param str display_name_starts_with: The displayName prefix.
-    :param str owner_principal_id: The OCID of the user who created the resource.
-    :param str pool_id: The ID of the pool.
-    :param str state: The LifecycleState of the run.
-    :param str time_created_greater_than: The epoch time that the resource was created.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['applicationId'] = application_id
@@ -237,34 +188,6 @@ def get_invoke_runs_output(application_id: Optional[pulumi.Input[Optional[str]]]
                            time_created_greater_than: Optional[pulumi.Input[Optional[str]]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetInvokeRunsResult]:
     """
-    This data source provides the list of Invoke Runs in Oracle Cloud Infrastructure Data Flow service.
-
-    Lists all runs of an application in the specified compartment.  Only one parameter other than compartmentId may also be included in a query. The query must include compartmentId. If the query does not include compartmentId, or includes compartmentId but two or more other parameters an error is returned.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_invoke_runs = oci.DataFlow.get_invoke_runs(compartment_id=var["compartment_id"],
-        application_id=oci_dataflow_application["test_application"]["id"],
-        display_name=var["invoke_run_display_name"],
-        display_name_starts_with=var["invoke_run_display_name_starts_with"],
-        owner_principal_id=oci_dataflow_owner_principal["test_owner_principal"]["id"],
-        pool_id=oci_dataflow_pool["test_pool"]["id"],
-        state=var["invoke_run_state"],
-        time_created_greater_than=var["invoke_run_time_created_greater_than"])
-    ```
-
-
-    :param str application_id: The ID of the application.
-    :param str compartment_id: The OCID of the compartment.
-    :param str display_name: The query parameter for the Spark application name.
-    :param str display_name_starts_with: The displayName prefix.
-    :param str owner_principal_id: The OCID of the user who created the resource.
-    :param str pool_id: The ID of the pool.
-    :param str state: The LifecycleState of the run.
-    :param str time_created_greater_than: The epoch time that the resource was created.
+    Use this data source to access information about an existing resource.
     """
     ...

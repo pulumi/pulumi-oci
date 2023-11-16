@@ -8,6 +8,8 @@ import com.pulumi.oci.Identity.outputs.GetDomainsAppsAppUrnietfparamsscimschemas
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensiondbcsApp {
@@ -15,12 +17,12 @@ public final class GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensiond
      * @return Description:
      * 
      */
-    private List<GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppDomainApp> domainApps;
+    private @Nullable List<GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppDomainApp> domainApps;
     /**
      * @return The name of the Enterprise Domain that contains any number of DBInstances. If specified, the value must be unique.  A non-null value indicates that App represents a DBDomain. A value of null indicates that the App represents an DB-instance.
      * 
      */
-    private String domainName;
+    private @Nullable String domainName;
 
     private GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensiondbcsApp() {}
     /**
@@ -28,14 +30,14 @@ public final class GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensiond
      * 
      */
     public List<GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppDomainApp> domainApps() {
-        return this.domainApps;
+        return this.domainApps == null ? List.of() : this.domainApps;
     }
     /**
      * @return The name of the Enterprise Domain that contains any number of DBInstances. If specified, the value must be unique.  A non-null value indicates that App represents a DBDomain. A value of null indicates that the App represents an DB-instance.
      * 
      */
-    public String domainName() {
-        return this.domainName;
+    public Optional<String> domainName() {
+        return Optional.ofNullable(this.domainName);
     }
 
     public static Builder builder() {
@@ -47,8 +49,8 @@ public final class GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensiond
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppDomainApp> domainApps;
-        private String domainName;
+        private @Nullable List<GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppDomainApp> domainApps;
+        private @Nullable String domainName;
         public Builder() {}
         public Builder(GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensiondbcsApp defaults) {
     	      Objects.requireNonNull(defaults);
@@ -57,16 +59,16 @@ public final class GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensiond
         }
 
         @CustomType.Setter
-        public Builder domainApps(List<GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppDomainApp> domainApps) {
-            this.domainApps = Objects.requireNonNull(domainApps);
+        public Builder domainApps(@Nullable List<GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppDomainApp> domainApps) {
+            this.domainApps = domainApps;
             return this;
         }
         public Builder domainApps(GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppDomainApp... domainApps) {
             return domainApps(List.of(domainApps));
         }
         @CustomType.Setter
-        public Builder domainName(String domainName) {
-            this.domainName = Objects.requireNonNull(domainName);
+        public Builder domainName(@Nullable String domainName) {
+            this.domainName = domainName;
             return this;
         }
         public GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensiondbcsApp build() {

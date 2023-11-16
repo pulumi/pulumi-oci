@@ -12,6 +12,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMysqlBackupDbSystemSnapshotBackupPolicy {
@@ -19,32 +21,32 @@ public final class GetMysqlBackupDbSystemSnapshotBackupPolicy {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return Specifies if PITR is enabled or disabled.
      * 
      */
-    private Boolean isEnabled;
+    private @Nullable Boolean isEnabled;
     /**
      * @return The PITR policy for the DB System.
      * 
      */
-    private List<GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy> pitrPolicies;
+    private @Nullable List<GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy> pitrPolicies;
     /**
      * @return Number of days to retain this backup.
      * 
      */
-    private Integer retentionInDays;
+    private @Nullable Integer retentionInDays;
     /**
      * @return The start time of the maintenance window.
      * 
      */
-    private String windowStartTime;
+    private @Nullable String windowStartTime;
 
     private GetMysqlBackupDbSystemSnapshotBackupPolicy() {}
     /**
@@ -52,42 +54,42 @@ public final class GetMysqlBackupDbSystemSnapshotBackupPolicy {
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return Specifies if PITR is enabled or disabled.
      * 
      */
-    public Boolean isEnabled() {
-        return this.isEnabled;
+    public Optional<Boolean> isEnabled() {
+        return Optional.ofNullable(this.isEnabled);
     }
     /**
      * @return The PITR policy for the DB System.
      * 
      */
     public List<GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy> pitrPolicies() {
-        return this.pitrPolicies;
+        return this.pitrPolicies == null ? List.of() : this.pitrPolicies;
     }
     /**
      * @return Number of days to retain this backup.
      * 
      */
-    public Integer retentionInDays() {
-        return this.retentionInDays;
+    public Optional<Integer> retentionInDays() {
+        return Optional.ofNullable(this.retentionInDays);
     }
     /**
      * @return The start time of the maintenance window.
      * 
      */
-    public String windowStartTime() {
-        return this.windowStartTime;
+    public Optional<String> windowStartTime() {
+        return Optional.ofNullable(this.windowStartTime);
     }
 
     public static Builder builder() {
@@ -99,12 +101,12 @@ public final class GetMysqlBackupDbSystemSnapshotBackupPolicy {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Map<String,Object> definedTags;
-        private Map<String,Object> freeformTags;
-        private Boolean isEnabled;
-        private List<GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy> pitrPolicies;
-        private Integer retentionInDays;
-        private String windowStartTime;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable Boolean isEnabled;
+        private @Nullable List<GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy> pitrPolicies;
+        private @Nullable Integer retentionInDays;
+        private @Nullable String windowStartTime;
         public Builder() {}
         public Builder(GetMysqlBackupDbSystemSnapshotBackupPolicy defaults) {
     	      Objects.requireNonNull(defaults);
@@ -117,36 +119,36 @@ public final class GetMysqlBackupDbSystemSnapshotBackupPolicy {
         }
 
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder isEnabled(Boolean isEnabled) {
-            this.isEnabled = Objects.requireNonNull(isEnabled);
+        public Builder isEnabled(@Nullable Boolean isEnabled) {
+            this.isEnabled = isEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder pitrPolicies(List<GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy> pitrPolicies) {
-            this.pitrPolicies = Objects.requireNonNull(pitrPolicies);
+        public Builder pitrPolicies(@Nullable List<GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy> pitrPolicies) {
+            this.pitrPolicies = pitrPolicies;
             return this;
         }
         public Builder pitrPolicies(GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy... pitrPolicies) {
             return pitrPolicies(List.of(pitrPolicies));
         }
         @CustomType.Setter
-        public Builder retentionInDays(Integer retentionInDays) {
-            this.retentionInDays = Objects.requireNonNull(retentionInDays);
+        public Builder retentionInDays(@Nullable Integer retentionInDays) {
+            this.retentionInDays = retentionInDays;
             return this;
         }
         @CustomType.Setter
-        public Builder windowStartTime(String windowStartTime) {
-            this.windowStartTime = Objects.requireNonNull(windowStartTime);
+        public Builder windowStartTime(@Nullable String windowStartTime) {
+            this.windowStartTime = windowStartTime;
             return this;
         }
         public GetMysqlBackupDbSystemSnapshotBackupPolicy build() {

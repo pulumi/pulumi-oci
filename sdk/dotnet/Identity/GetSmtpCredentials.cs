@@ -129,7 +129,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The list of smtp_credentials.
         /// </summary>
@@ -143,7 +143,7 @@ namespace Pulumi.Oci.Identity
         private GetSmtpCredentialsResult(
             ImmutableArray<Outputs.GetSmtpCredentialsFilterResult> filters,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetSmtpCredentialsSmtpCredentialResult> smtpCredentials,
 

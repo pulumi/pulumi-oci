@@ -24,12 +24,12 @@ public final class GetControlAssignmentsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of operator_control_assignment_collection.
      * 
      */
-    private List<GetControlAssignmentsOperatorControlAssignmentCollection> operatorControlAssignmentCollections;
+    private @Nullable List<GetControlAssignmentsOperatorControlAssignmentCollection> operatorControlAssignmentCollections;
     private @Nullable String operatorControlName;
     /**
      * @return Name of the target resource.
@@ -62,15 +62,15 @@ public final class GetControlAssignmentsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of operator_control_assignment_collection.
      * 
      */
     public List<GetControlAssignmentsOperatorControlAssignmentCollection> operatorControlAssignmentCollections() {
-        return this.operatorControlAssignmentCollections;
+        return this.operatorControlAssignmentCollections == null ? List.of() : this.operatorControlAssignmentCollections;
     }
     public Optional<String> operatorControlName() {
         return Optional.ofNullable(this.operatorControlName);
@@ -108,8 +108,8 @@ public final class GetControlAssignmentsResult {
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetControlAssignmentsFilter> filters;
-        private String id;
-        private List<GetControlAssignmentsOperatorControlAssignmentCollection> operatorControlAssignmentCollections;
+        private @Nullable String id;
+        private @Nullable List<GetControlAssignmentsOperatorControlAssignmentCollection> operatorControlAssignmentCollections;
         private @Nullable String operatorControlName;
         private @Nullable String resourceName;
         private @Nullable String resourceType;
@@ -141,13 +141,13 @@ public final class GetControlAssignmentsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder operatorControlAssignmentCollections(List<GetControlAssignmentsOperatorControlAssignmentCollection> operatorControlAssignmentCollections) {
-            this.operatorControlAssignmentCollections = Objects.requireNonNull(operatorControlAssignmentCollections);
+        public Builder operatorControlAssignmentCollections(@Nullable List<GetControlAssignmentsOperatorControlAssignmentCollection> operatorControlAssignmentCollections) {
+            this.operatorControlAssignmentCollections = operatorControlAssignmentCollections;
             return this;
         }
         public Builder operatorControlAssignmentCollections(GetControlAssignmentsOperatorControlAssignmentCollection... operatorControlAssignmentCollections) {

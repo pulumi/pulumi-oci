@@ -28,7 +28,7 @@ public final class GetDataAssetsResult {
      * @return The list of data_asset_collection.
      * 
      */
-    private List<GetDataAssetsDataAssetCollection> dataAssetCollections;
+    private @Nullable List<GetDataAssetsDataAssetCollection> dataAssetCollections;
     /**
      * @return A user-friendly display name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
@@ -46,7 +46,7 @@ public final class GetDataAssetsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The current state of the data asset.
      * 
@@ -78,7 +78,7 @@ public final class GetDataAssetsResult {
      * 
      */
     public List<GetDataAssetsDataAssetCollection> dataAssetCollections() {
-        return this.dataAssetCollections;
+        return this.dataAssetCollections == null ? List.of() : this.dataAssetCollections;
     }
     /**
      * @return A user-friendly display name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
@@ -107,8 +107,8 @@ public final class GetDataAssetsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The current state of the data asset.
@@ -136,13 +136,13 @@ public final class GetDataAssetsResult {
     public static final class Builder {
         private String catalogId;
         private @Nullable String createdById;
-        private List<GetDataAssetsDataAssetCollection> dataAssetCollections;
+        private @Nullable List<GetDataAssetsDataAssetCollection> dataAssetCollections;
         private @Nullable String displayName;
         private @Nullable String displayNameContains;
         private @Nullable String externalKey;
         private @Nullable List<String> fields;
         private @Nullable List<GetDataAssetsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String state;
         private @Nullable String typeKey;
         public Builder() {}
@@ -172,8 +172,8 @@ public final class GetDataAssetsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder dataAssetCollections(List<GetDataAssetsDataAssetCollection> dataAssetCollections) {
-            this.dataAssetCollections = Objects.requireNonNull(dataAssetCollections);
+        public Builder dataAssetCollections(@Nullable List<GetDataAssetsDataAssetCollection> dataAssetCollections) {
+            this.dataAssetCollections = dataAssetCollections;
             return this;
         }
         public Builder dataAssetCollections(GetDataAssetsDataAssetCollection... dataAssetCollections) {
@@ -211,8 +211,8 @@ public final class GetDataAssetsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

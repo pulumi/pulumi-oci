@@ -82,11 +82,11 @@ export class ManagedInstanceGroup extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) Details about the managed instance group.
      */
-    public readonly description!: pulumi.Output<string>;
+    public readonly description!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) A user-friendly name for the managed instance group. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
@@ -94,15 +94,15 @@ export class ManagedInstanceGroup extends pulumi.CustomResource {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The number of Managed Instances in the managed instance group.
      */
-    public /*out*/ readonly managedInstanceCount!: pulumi.Output<number>;
+    public /*out*/ readonly managedInstanceCount!: pulumi.Output<number | undefined>;
     /**
      * The list of managed instance OCIDs to be added to the managed instance group.
      */
-    public readonly managedInstanceIds!: pulumi.Output<string[]>;
+    public readonly managedInstanceIds!: pulumi.Output<string[] | undefined>;
     /**
      * The operating system type of the managed instance(s) that this managed instance group will contain.
      */
@@ -110,7 +110,7 @@ export class ManagedInstanceGroup extends pulumi.CustomResource {
     /**
      * The number of scheduled jobs pending against the managed instance group.
      */
-    public /*out*/ readonly pendingJobCount!: pulumi.Output<number>;
+    public /*out*/ readonly pendingJobCount!: pulumi.Output<number | undefined>;
     /**
      * The list of software source OCIDs available to the managed instances in the managed instance group.
      */
@@ -118,23 +118,23 @@ export class ManagedInstanceGroup extends pulumi.CustomResource {
     /**
      * The list of software sources that the managed instance group will use.
      */
-    public /*out*/ readonly softwareSources!: pulumi.Output<outputs.OsManagementHub.ManagedInstanceGroupSoftwareSource[]>;
+    public /*out*/ readonly softwareSources!: pulumi.Output<outputs.OsManagementHub.ManagedInstanceGroupSoftwareSource[] | undefined>;
     /**
      * The current state of the managed instance group.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The time the managed instance group was created. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The time the managed instance group was last modified. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeModified!: pulumi.Output<string>;
+    public /*out*/ readonly timeModified!: pulumi.Output<string | undefined>;
     /**
      * The software source vendor name.
      *

@@ -85,11 +85,11 @@ export interface GetMetricExtensionsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of metric_extension_collection.
      */
-    readonly metricExtensionCollections: outputs.StackMonitoring.GetMetricExtensionsMetricExtensionCollection[];
+    readonly metricExtensionCollections?: outputs.StackMonitoring.GetMetricExtensionsMetricExtensionCollection[];
     /**
      * Name of the script file
      */

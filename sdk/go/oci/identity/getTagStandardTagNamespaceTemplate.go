@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Tag Standard Tag Namespace Template resource in Oracle Cloud Infrastructure Identity service.
@@ -64,13 +63,13 @@ type GetTagStandardTagNamespaceTemplateArgs struct {
 type GetTagStandardTagNamespaceTemplateResult struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// The default description of the tag namespace that users can use to create the tag definition
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The reserved name of this standard tag namespace
 	StandardTagNamespaceName string `pulumi:"standardTagNamespaceName"`
 	// The status of the standard tag namespace
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 	// The template of the tag definition. This object includes necessary details to create the provided standard tag definition.
 	TagDefinitionTemplates []GetTagStandardTagNamespaceTemplateTagDefinitionTemplate `pulumi:"tagDefinitionTemplates"`
 }
@@ -115,24 +114,18 @@ func (o GetTagStandardTagNamespaceTemplateResultOutput) ToGetTagStandardTagNames
 	return o
 }
 
-func (o GetTagStandardTagNamespaceTemplateResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetTagStandardTagNamespaceTemplateResult] {
-	return pulumix.Output[GetTagStandardTagNamespaceTemplateResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetTagStandardTagNamespaceTemplateResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTagStandardTagNamespaceTemplateResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
 // The default description of the tag namespace that users can use to create the tag definition
-func (o GetTagStandardTagNamespaceTemplateResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTagStandardTagNamespaceTemplateResult) string { return v.Description }).(pulumi.StringOutput)
+func (o GetTagStandardTagNamespaceTemplateResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTagStandardTagNamespaceTemplateResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetTagStandardTagNamespaceTemplateResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTagStandardTagNamespaceTemplateResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetTagStandardTagNamespaceTemplateResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTagStandardTagNamespaceTemplateResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The reserved name of this standard tag namespace
@@ -141,8 +134,8 @@ func (o GetTagStandardTagNamespaceTemplateResultOutput) StandardTagNamespaceName
 }
 
 // The status of the standard tag namespace
-func (o GetTagStandardTagNamespaceTemplateResultOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTagStandardTagNamespaceTemplateResult) string { return v.Status }).(pulumi.StringOutput)
+func (o GetTagStandardTagNamespaceTemplateResultOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTagStandardTagNamespaceTemplateResult) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // The template of the tag definition. This object includes necessary details to create the provided standard tag definition.

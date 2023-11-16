@@ -6,6 +6,8 @@ package com.pulumi.oci.DataSafe.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetail {
@@ -14,17 +16,17 @@ public final class GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityP
      * * FIREWALL_POLICY - The SQL firewall policy entry type.
      * 
      */
-    private String entryType;
+    private @Nullable String entryType;
     /**
      * @return The time the the SQL firewall policy was generated on the target database, in the format defined by RFC3339.
      * 
      */
-    private String timeGenerated;
+    private @Nullable String timeGenerated;
     /**
      * @return The last date and time the status of the SQL firewall policy was updated on the target database, in the format defined by RFC3339.
      * 
      */
-    private String timeStatusUpdated;
+    private @Nullable String timeStatusUpdated;
 
     private GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetail() {}
     /**
@@ -32,22 +34,22 @@ public final class GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityP
      * * FIREWALL_POLICY - The SQL firewall policy entry type.
      * 
      */
-    public String entryType() {
-        return this.entryType;
+    public Optional<String> entryType() {
+        return Optional.ofNullable(this.entryType);
     }
     /**
      * @return The time the the SQL firewall policy was generated on the target database, in the format defined by RFC3339.
      * 
      */
-    public String timeGenerated() {
-        return this.timeGenerated;
+    public Optional<String> timeGenerated() {
+        return Optional.ofNullable(this.timeGenerated);
     }
     /**
      * @return The last date and time the status of the SQL firewall policy was updated on the target database, in the format defined by RFC3339.
      * 
      */
-    public String timeStatusUpdated() {
-        return this.timeStatusUpdated;
+    public Optional<String> timeStatusUpdated() {
+        return Optional.ofNullable(this.timeStatusUpdated);
     }
 
     public static Builder builder() {
@@ -59,9 +61,9 @@ public final class GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityP
     }
     @CustomType.Builder
     public static final class Builder {
-        private String entryType;
-        private String timeGenerated;
-        private String timeStatusUpdated;
+        private @Nullable String entryType;
+        private @Nullable String timeGenerated;
+        private @Nullable String timeStatusUpdated;
         public Builder() {}
         public Builder(GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -71,18 +73,18 @@ public final class GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityP
         }
 
         @CustomType.Setter
-        public Builder entryType(String entryType) {
-            this.entryType = Objects.requireNonNull(entryType);
+        public Builder entryType(@Nullable String entryType) {
+            this.entryType = entryType;
             return this;
         }
         @CustomType.Setter
-        public Builder timeGenerated(String timeGenerated) {
-            this.timeGenerated = Objects.requireNonNull(timeGenerated);
+        public Builder timeGenerated(@Nullable String timeGenerated) {
+            this.timeGenerated = timeGenerated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeStatusUpdated(String timeStatusUpdated) {
-            this.timeStatusUpdated = Objects.requireNonNull(timeStatusUpdated);
+        public Builder timeStatusUpdated(@Nullable String timeStatusUpdated) {
+            this.timeStatusUpdated = timeStatusUpdated;
             return this;
         }
         public GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetail build() {

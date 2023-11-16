@@ -6,6 +6,8 @@ package com.pulumi.oci.DatabaseManagement.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationale {
@@ -13,15 +15,15 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimiz
      * @return The message of the rationale.
      * 
      */
-    private String message;
+    private @Nullable String message;
 
     private GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationale() {}
     /**
      * @return The message of the rationale.
      * 
      */
-    public String message() {
-        return this.message;
+    public Optional<String> message() {
+        return Optional.ofNullable(this.message);
     }
 
     public static Builder builder() {
@@ -33,7 +35,7 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimiz
     }
     @CustomType.Builder
     public static final class Builder {
-        private String message;
+        private @Nullable String message;
         public Builder() {}
         public Builder(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationale defaults) {
     	      Objects.requireNonNull(defaults);
@@ -41,8 +43,8 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimiz
         }
 
         @CustomType.Setter
-        public Builder message(String message) {
-            this.message = Objects.requireNonNull(message);
+        public Builder message(@Nullable String message) {
+            this.message = message;
             return this;
         }
         public GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingRecommendationRationale build() {

@@ -19,7 +19,7 @@ public final class GetManagedDatabasesUserProxyUsersResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String managedDatabaseId;
     /**
      * @return The name of a proxy user or the name of the client user.
@@ -30,7 +30,7 @@ public final class GetManagedDatabasesUserProxyUsersResult {
      * @return The list of proxy_user_collection.
      * 
      */
-    private List<GetManagedDatabasesUserProxyUsersProxyUserCollection> proxyUserCollections;
+    private @Nullable List<GetManagedDatabasesUserProxyUsersProxyUserCollection> proxyUserCollections;
     private String userName;
 
     private GetManagedDatabasesUserProxyUsersResult() {}
@@ -41,8 +41,8 @@ public final class GetManagedDatabasesUserProxyUsersResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String managedDatabaseId() {
         return this.managedDatabaseId;
@@ -59,7 +59,7 @@ public final class GetManagedDatabasesUserProxyUsersResult {
      * 
      */
     public List<GetManagedDatabasesUserProxyUsersProxyUserCollection> proxyUserCollections() {
-        return this.proxyUserCollections;
+        return this.proxyUserCollections == null ? List.of() : this.proxyUserCollections;
     }
     public String userName() {
         return this.userName;
@@ -75,10 +75,10 @@ public final class GetManagedDatabasesUserProxyUsersResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetManagedDatabasesUserProxyUsersFilter> filters;
-        private String id;
+        private @Nullable String id;
         private String managedDatabaseId;
         private @Nullable String name;
-        private List<GetManagedDatabasesUserProxyUsersProxyUserCollection> proxyUserCollections;
+        private @Nullable List<GetManagedDatabasesUserProxyUsersProxyUserCollection> proxyUserCollections;
         private String userName;
         public Builder() {}
         public Builder(GetManagedDatabasesUserProxyUsersResult defaults) {
@@ -100,8 +100,8 @@ public final class GetManagedDatabasesUserProxyUsersResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -115,8 +115,8 @@ public final class GetManagedDatabasesUserProxyUsersResult {
             return this;
         }
         @CustomType.Setter
-        public Builder proxyUserCollections(List<GetManagedDatabasesUserProxyUsersProxyUserCollection> proxyUserCollections) {
-            this.proxyUserCollections = Objects.requireNonNull(proxyUserCollections);
+        public Builder proxyUserCollections(@Nullable List<GetManagedDatabasesUserProxyUsersProxyUserCollection> proxyUserCollections) {
+            this.proxyUserCollections = proxyUserCollections;
             return this;
         }
         public Builder proxyUserCollections(GetManagedDatabasesUserProxyUsersProxyUserCollection... proxyUserCollections) {

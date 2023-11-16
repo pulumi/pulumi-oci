@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Importable Compute Entities in Oracle Cloud Infrastructure Opsi service.
@@ -68,7 +67,7 @@ type GetImportableComputeEntitiesResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Array of importable compute entity objects.
 	Items []GetImportableComputeEntitiesItem `pulumi:"items"`
 }
@@ -111,20 +110,14 @@ func (o GetImportableComputeEntitiesResultOutput) ToGetImportableComputeEntities
 	return o
 }
 
-func (o GetImportableComputeEntitiesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetImportableComputeEntitiesResult] {
-	return pulumix.Output[GetImportableComputeEntitiesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 func (o GetImportableComputeEntitiesResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetImportableComputeEntitiesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetImportableComputeEntitiesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetImportableComputeEntitiesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetImportableComputeEntitiesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetImportableComputeEntitiesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Array of importable compute entity objects.

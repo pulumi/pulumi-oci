@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -49,12 +48,6 @@ func (i GetOpensearchClustersFilterArgs) ToGetOpensearchClustersFilterOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetOpensearchClustersFilterOutput)
 }
 
-func (i GetOpensearchClustersFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetOpensearchClustersFilter] {
-	return pulumix.Output[GetOpensearchClustersFilter]{
-		OutputState: i.ToGetOpensearchClustersFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetOpensearchClustersFilterArrayInput is an input type that accepts GetOpensearchClustersFilterArray and GetOpensearchClustersFilterArrayOutput values.
 // You can construct a concrete instance of `GetOpensearchClustersFilterArrayInput` via:
 //
@@ -80,12 +73,6 @@ func (i GetOpensearchClustersFilterArray) ToGetOpensearchClustersFilterArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetOpensearchClustersFilterArrayOutput)
 }
 
-func (i GetOpensearchClustersFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOpensearchClustersFilter] {
-	return pulumix.Output[[]GetOpensearchClustersFilter]{
-		OutputState: i.ToGetOpensearchClustersFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetOpensearchClustersFilterOutput struct{ *pulumi.OutputState }
 
 func (GetOpensearchClustersFilterOutput) ElementType() reflect.Type {
@@ -98,12 +85,6 @@ func (o GetOpensearchClustersFilterOutput) ToGetOpensearchClustersFilterOutput()
 
 func (o GetOpensearchClustersFilterOutput) ToGetOpensearchClustersFilterOutputWithContext(ctx context.Context) GetOpensearchClustersFilterOutput {
 	return o
-}
-
-func (o GetOpensearchClustersFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetOpensearchClustersFilter] {
-	return pulumix.Output[GetOpensearchClustersFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetOpensearchClustersFilterOutput) Name() pulumi.StringOutput {
@@ -130,12 +111,6 @@ func (o GetOpensearchClustersFilterArrayOutput) ToGetOpensearchClustersFilterArr
 
 func (o GetOpensearchClustersFilterArrayOutput) ToGetOpensearchClustersFilterArrayOutputWithContext(ctx context.Context) GetOpensearchClustersFilterArrayOutput {
 	return o
-}
-
-func (o GetOpensearchClustersFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOpensearchClustersFilter] {
-	return pulumix.Output[[]GetOpensearchClustersFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetOpensearchClustersFilterArrayOutput) Index(i pulumi.IntInput) GetOpensearchClustersFilterOutput {
@@ -175,12 +150,6 @@ func (i GetOpensearchClustersOpensearchClusterCollectionArgs) ToGetOpensearchClu
 	return pulumi.ToOutputWithContext(ctx, i).(GetOpensearchClustersOpensearchClusterCollectionOutput)
 }
 
-func (i GetOpensearchClustersOpensearchClusterCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetOpensearchClustersOpensearchClusterCollection] {
-	return pulumix.Output[GetOpensearchClustersOpensearchClusterCollection]{
-		OutputState: i.ToGetOpensearchClustersOpensearchClusterCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetOpensearchClustersOpensearchClusterCollectionArrayInput is an input type that accepts GetOpensearchClustersOpensearchClusterCollectionArray and GetOpensearchClustersOpensearchClusterCollectionArrayOutput values.
 // You can construct a concrete instance of `GetOpensearchClustersOpensearchClusterCollectionArrayInput` via:
 //
@@ -206,12 +175,6 @@ func (i GetOpensearchClustersOpensearchClusterCollectionArray) ToGetOpensearchCl
 	return pulumi.ToOutputWithContext(ctx, i).(GetOpensearchClustersOpensearchClusterCollectionArrayOutput)
 }
 
-func (i GetOpensearchClustersOpensearchClusterCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOpensearchClustersOpensearchClusterCollection] {
-	return pulumix.Output[[]GetOpensearchClustersOpensearchClusterCollection]{
-		OutputState: i.ToGetOpensearchClustersOpensearchClusterCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetOpensearchClustersOpensearchClusterCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetOpensearchClustersOpensearchClusterCollectionOutput) ElementType() reflect.Type {
@@ -224,12 +187,6 @@ func (o GetOpensearchClustersOpensearchClusterCollectionOutput) ToGetOpensearchC
 
 func (o GetOpensearchClustersOpensearchClusterCollectionOutput) ToGetOpensearchClustersOpensearchClusterCollectionOutputWithContext(ctx context.Context) GetOpensearchClustersOpensearchClusterCollectionOutput {
 	return o
-}
-
-func (o GetOpensearchClustersOpensearchClusterCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetOpensearchClustersOpensearchClusterCollection] {
-	return pulumix.Output[GetOpensearchClustersOpensearchClusterCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetOpensearchClustersOpensearchClusterCollectionOutput) Items() GetOpensearchClustersOpensearchClusterCollectionItemArrayOutput {
@@ -252,12 +209,6 @@ func (o GetOpensearchClustersOpensearchClusterCollectionArrayOutput) ToGetOpense
 	return o
 }
 
-func (o GetOpensearchClustersOpensearchClusterCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOpensearchClustersOpensearchClusterCollection] {
-	return pulumix.Output[[]GetOpensearchClustersOpensearchClusterCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetOpensearchClustersOpensearchClusterCollectionArrayOutput) Index(i pulumi.IntInput) GetOpensearchClustersOpensearchClusterCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOpensearchClustersOpensearchClusterCollection {
 		return vs[0].([]GetOpensearchClustersOpensearchClusterCollection)[vs[1].(int)]
@@ -268,83 +219,83 @@ type GetOpensearchClustersOpensearchClusterCollectionItem struct {
 	// The availability domains to distribute the cluser nodes across.
 	AvailabilityDomains []string `pulumi:"availabilityDomains"`
 	// The ID of the compartment in which to list resources.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The number of data nodes configured for the cluster.
-	DataNodeCount int `pulumi:"dataNodeCount"`
+	DataNodeCount *int `pulumi:"dataNodeCount"`
 	// The bare metal shape for the cluster's data nodes.
-	DataNodeHostBareMetalShape string `pulumi:"dataNodeHostBareMetalShape"`
+	DataNodeHostBareMetalShape *string `pulumi:"dataNodeHostBareMetalShape"`
 	// The amount of memory in GB, for the cluster's data nodes.
-	DataNodeHostMemoryGb int `pulumi:"dataNodeHostMemoryGb"`
+	DataNodeHostMemoryGb *int `pulumi:"dataNodeHostMemoryGb"`
 	// The number of OCPUs configured for the cluster's data nodes.
-	DataNodeHostOcpuCount int `pulumi:"dataNodeHostOcpuCount"`
+	DataNodeHostOcpuCount *int `pulumi:"dataNodeHostOcpuCount"`
 	// The instance type for the cluster's data nodes.
-	DataNodeHostType string `pulumi:"dataNodeHostType"`
+	DataNodeHostType *string `pulumi:"dataNodeHostType"`
 	// The amount of storage in GB, to configure per node for the cluster's data nodes.
-	DataNodeStorageGb int `pulumi:"dataNodeStorageGb"`
+	DataNodeStorageGb *int `pulumi:"dataNodeStorageGb"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The fully qualified domain name (FQDN) for the cluster's API endpoint.
-	Fqdn string `pulumi:"fqdn"`
+	Fqdn *string `pulumi:"fqdn"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// unique OpensearchCluster identifier
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Additional information about the current lifecycle state of the cluster.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The number of master nodes configured for the cluster.
-	MasterNodeCount int `pulumi:"masterNodeCount"`
+	MasterNodeCount *int `pulumi:"masterNodeCount"`
 	// The bare metal shape for the cluster's master nodes.
-	MasterNodeHostBareMetalShape string `pulumi:"masterNodeHostBareMetalShape"`
+	MasterNodeHostBareMetalShape *string `pulumi:"masterNodeHostBareMetalShape"`
 	// The amount of memory in GB, for the cluster's master nodes.
-	MasterNodeHostMemoryGb int `pulumi:"masterNodeHostMemoryGb"`
+	MasterNodeHostMemoryGb *int `pulumi:"masterNodeHostMemoryGb"`
 	// The number of OCPUs configured for cluster's master nodes.
-	MasterNodeHostOcpuCount int `pulumi:"masterNodeHostOcpuCount"`
+	MasterNodeHostOcpuCount *int `pulumi:"masterNodeHostOcpuCount"`
 	// The instance type for the cluster's master nodes.
-	MasterNodeHostType string `pulumi:"masterNodeHostType"`
+	MasterNodeHostType *string `pulumi:"masterNodeHostType"`
 	// The fully qualified domain name (FQDN) for the cluster's OpenSearch Dashboard API endpoint.
-	OpendashboardFqdn string `pulumi:"opendashboardFqdn"`
+	OpendashboardFqdn *string `pulumi:"opendashboardFqdn"`
 	// The number of OpenSearch Dashboard nodes configured for the cluster.
-	OpendashboardNodeCount int `pulumi:"opendashboardNodeCount"`
+	OpendashboardNodeCount *int `pulumi:"opendashboardNodeCount"`
 	// The amount of memory in GB, for the cluster's OpenSearch Dashboard nodes.
-	OpendashboardNodeHostMemoryGb int `pulumi:"opendashboardNodeHostMemoryGb"`
+	OpendashboardNodeHostMemoryGb *int `pulumi:"opendashboardNodeHostMemoryGb"`
 	// The amount of memory in GB, for the cluster's OpenSearch Dashboard nodes.
-	OpendashboardNodeHostOcpuCount int `pulumi:"opendashboardNodeHostOcpuCount"`
+	OpendashboardNodeHostOcpuCount *int `pulumi:"opendashboardNodeHostOcpuCount"`
 	// The private IP address for the cluster's OpenSearch Dashboard.
-	OpendashboardPrivateIp string `pulumi:"opendashboardPrivateIp"`
+	OpendashboardPrivateIp *string `pulumi:"opendashboardPrivateIp"`
 	// The fully qualified domain name (FQDN) for the cluster's API endpoint.
-	OpensearchFqdn string `pulumi:"opensearchFqdn"`
+	OpensearchFqdn *string `pulumi:"opensearchFqdn"`
 	// The cluster's private IP address.
-	OpensearchPrivateIp string `pulumi:"opensearchPrivateIp"`
+	OpensearchPrivateIp *string `pulumi:"opensearchPrivateIp"`
 	// The name of the master user that are used to manage security config
-	SecurityMasterUserName string `pulumi:"securityMasterUserName"`
+	SecurityMasterUserName *string `pulumi:"securityMasterUserName"`
 	// The password hash of the master user that are used to manage security config
-	SecurityMasterUserPasswordHash string `pulumi:"securityMasterUserPasswordHash"`
+	SecurityMasterUserPasswordHash *string `pulumi:"securityMasterUserPasswordHash"`
 	// The security mode of the cluster.
-	SecurityMode string `pulumi:"securityMode"`
+	SecurityMode *string `pulumi:"securityMode"`
 	// The software version the cluster is running.
-	SoftwareVersion string `pulumi:"softwareVersion"`
+	SoftwareVersion *string `pulumi:"softwareVersion"`
 	// A filter to return only OpensearchClusters their lifecycleState matches the given lifecycleState.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The OCID for the compartment where the cluster's subnet is located.
-	SubnetCompartmentId string `pulumi:"subnetCompartmentId"`
+	SubnetCompartmentId *string `pulumi:"subnetCompartmentId"`
 	// The OCID of the cluster's subnet.
-	SubnetId string `pulumi:"subnetId"`
+	SubnetId *string `pulumi:"subnetId"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The amount of time in milliseconds since the cluster was created.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The amount of time in milliseconds since the cluster was updated.
-	TimeDeleted string `pulumi:"timeDeleted"`
+	TimeDeleted *string `pulumi:"timeDeleted"`
 	// The amount of time in milliseconds since the cluster was updated.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// The size in GB of the cluster's total storage.
-	TotalStorageGb int `pulumi:"totalStorageGb"`
+	TotalStorageGb *int `pulumi:"totalStorageGb"`
 	// The OCID for the compartment where the cluster's VCN is located.
-	VcnCompartmentId string `pulumi:"vcnCompartmentId"`
+	VcnCompartmentId *string `pulumi:"vcnCompartmentId"`
 	// The OCID of the cluster's VCN.
-	VcnId string `pulumi:"vcnId"`
+	VcnId *string `pulumi:"vcnId"`
 }
 
 // GetOpensearchClustersOpensearchClusterCollectionItemInput is an input type that accepts GetOpensearchClustersOpensearchClusterCollectionItemArgs and GetOpensearchClustersOpensearchClusterCollectionItemOutput values.
@@ -362,83 +313,83 @@ type GetOpensearchClustersOpensearchClusterCollectionItemArgs struct {
 	// The availability domains to distribute the cluser nodes across.
 	AvailabilityDomains pulumi.StringArrayInput `pulumi:"availabilityDomains"`
 	// The ID of the compartment in which to list resources.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// The number of data nodes configured for the cluster.
-	DataNodeCount pulumi.IntInput `pulumi:"dataNodeCount"`
+	DataNodeCount pulumi.IntPtrInput `pulumi:"dataNodeCount"`
 	// The bare metal shape for the cluster's data nodes.
-	DataNodeHostBareMetalShape pulumi.StringInput `pulumi:"dataNodeHostBareMetalShape"`
+	DataNodeHostBareMetalShape pulumi.StringPtrInput `pulumi:"dataNodeHostBareMetalShape"`
 	// The amount of memory in GB, for the cluster's data nodes.
-	DataNodeHostMemoryGb pulumi.IntInput `pulumi:"dataNodeHostMemoryGb"`
+	DataNodeHostMemoryGb pulumi.IntPtrInput `pulumi:"dataNodeHostMemoryGb"`
 	// The number of OCPUs configured for the cluster's data nodes.
-	DataNodeHostOcpuCount pulumi.IntInput `pulumi:"dataNodeHostOcpuCount"`
+	DataNodeHostOcpuCount pulumi.IntPtrInput `pulumi:"dataNodeHostOcpuCount"`
 	// The instance type for the cluster's data nodes.
-	DataNodeHostType pulumi.StringInput `pulumi:"dataNodeHostType"`
+	DataNodeHostType pulumi.StringPtrInput `pulumi:"dataNodeHostType"`
 	// The amount of storage in GB, to configure per node for the cluster's data nodes.
-	DataNodeStorageGb pulumi.IntInput `pulumi:"dataNodeStorageGb"`
+	DataNodeStorageGb pulumi.IntPtrInput `pulumi:"dataNodeStorageGb"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// The fully qualified domain name (FQDN) for the cluster's API endpoint.
-	Fqdn pulumi.StringInput `pulumi:"fqdn"`
+	Fqdn pulumi.StringPtrInput `pulumi:"fqdn"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// unique OpensearchCluster identifier
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Additional information about the current lifecycle state of the cluster.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// The number of master nodes configured for the cluster.
-	MasterNodeCount pulumi.IntInput `pulumi:"masterNodeCount"`
+	MasterNodeCount pulumi.IntPtrInput `pulumi:"masterNodeCount"`
 	// The bare metal shape for the cluster's master nodes.
-	MasterNodeHostBareMetalShape pulumi.StringInput `pulumi:"masterNodeHostBareMetalShape"`
+	MasterNodeHostBareMetalShape pulumi.StringPtrInput `pulumi:"masterNodeHostBareMetalShape"`
 	// The amount of memory in GB, for the cluster's master nodes.
-	MasterNodeHostMemoryGb pulumi.IntInput `pulumi:"masterNodeHostMemoryGb"`
+	MasterNodeHostMemoryGb pulumi.IntPtrInput `pulumi:"masterNodeHostMemoryGb"`
 	// The number of OCPUs configured for cluster's master nodes.
-	MasterNodeHostOcpuCount pulumi.IntInput `pulumi:"masterNodeHostOcpuCount"`
+	MasterNodeHostOcpuCount pulumi.IntPtrInput `pulumi:"masterNodeHostOcpuCount"`
 	// The instance type for the cluster's master nodes.
-	MasterNodeHostType pulumi.StringInput `pulumi:"masterNodeHostType"`
+	MasterNodeHostType pulumi.StringPtrInput `pulumi:"masterNodeHostType"`
 	// The fully qualified domain name (FQDN) for the cluster's OpenSearch Dashboard API endpoint.
-	OpendashboardFqdn pulumi.StringInput `pulumi:"opendashboardFqdn"`
+	OpendashboardFqdn pulumi.StringPtrInput `pulumi:"opendashboardFqdn"`
 	// The number of OpenSearch Dashboard nodes configured for the cluster.
-	OpendashboardNodeCount pulumi.IntInput `pulumi:"opendashboardNodeCount"`
+	OpendashboardNodeCount pulumi.IntPtrInput `pulumi:"opendashboardNodeCount"`
 	// The amount of memory in GB, for the cluster's OpenSearch Dashboard nodes.
-	OpendashboardNodeHostMemoryGb pulumi.IntInput `pulumi:"opendashboardNodeHostMemoryGb"`
+	OpendashboardNodeHostMemoryGb pulumi.IntPtrInput `pulumi:"opendashboardNodeHostMemoryGb"`
 	// The amount of memory in GB, for the cluster's OpenSearch Dashboard nodes.
-	OpendashboardNodeHostOcpuCount pulumi.IntInput `pulumi:"opendashboardNodeHostOcpuCount"`
+	OpendashboardNodeHostOcpuCount pulumi.IntPtrInput `pulumi:"opendashboardNodeHostOcpuCount"`
 	// The private IP address for the cluster's OpenSearch Dashboard.
-	OpendashboardPrivateIp pulumi.StringInput `pulumi:"opendashboardPrivateIp"`
+	OpendashboardPrivateIp pulumi.StringPtrInput `pulumi:"opendashboardPrivateIp"`
 	// The fully qualified domain name (FQDN) for the cluster's API endpoint.
-	OpensearchFqdn pulumi.StringInput `pulumi:"opensearchFqdn"`
+	OpensearchFqdn pulumi.StringPtrInput `pulumi:"opensearchFqdn"`
 	// The cluster's private IP address.
-	OpensearchPrivateIp pulumi.StringInput `pulumi:"opensearchPrivateIp"`
+	OpensearchPrivateIp pulumi.StringPtrInput `pulumi:"opensearchPrivateIp"`
 	// The name of the master user that are used to manage security config
-	SecurityMasterUserName pulumi.StringInput `pulumi:"securityMasterUserName"`
+	SecurityMasterUserName pulumi.StringPtrInput `pulumi:"securityMasterUserName"`
 	// The password hash of the master user that are used to manage security config
-	SecurityMasterUserPasswordHash pulumi.StringInput `pulumi:"securityMasterUserPasswordHash"`
+	SecurityMasterUserPasswordHash pulumi.StringPtrInput `pulumi:"securityMasterUserPasswordHash"`
 	// The security mode of the cluster.
-	SecurityMode pulumi.StringInput `pulumi:"securityMode"`
+	SecurityMode pulumi.StringPtrInput `pulumi:"securityMode"`
 	// The software version the cluster is running.
-	SoftwareVersion pulumi.StringInput `pulumi:"softwareVersion"`
+	SoftwareVersion pulumi.StringPtrInput `pulumi:"softwareVersion"`
 	// A filter to return only OpensearchClusters their lifecycleState matches the given lifecycleState.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The OCID for the compartment where the cluster's subnet is located.
-	SubnetCompartmentId pulumi.StringInput `pulumi:"subnetCompartmentId"`
+	SubnetCompartmentId pulumi.StringPtrInput `pulumi:"subnetCompartmentId"`
 	// The OCID of the cluster's subnet.
-	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// The amount of time in milliseconds since the cluster was created.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The amount of time in milliseconds since the cluster was updated.
-	TimeDeleted pulumi.StringInput `pulumi:"timeDeleted"`
+	TimeDeleted pulumi.StringPtrInput `pulumi:"timeDeleted"`
 	// The amount of time in milliseconds since the cluster was updated.
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 	// The size in GB of the cluster's total storage.
-	TotalStorageGb pulumi.IntInput `pulumi:"totalStorageGb"`
+	TotalStorageGb pulumi.IntPtrInput `pulumi:"totalStorageGb"`
 	// The OCID for the compartment where the cluster's VCN is located.
-	VcnCompartmentId pulumi.StringInput `pulumi:"vcnCompartmentId"`
+	VcnCompartmentId pulumi.StringPtrInput `pulumi:"vcnCompartmentId"`
 	// The OCID of the cluster's VCN.
-	VcnId pulumi.StringInput `pulumi:"vcnId"`
+	VcnId pulumi.StringPtrInput `pulumi:"vcnId"`
 }
 
 func (GetOpensearchClustersOpensearchClusterCollectionItemArgs) ElementType() reflect.Type {
@@ -451,12 +402,6 @@ func (i GetOpensearchClustersOpensearchClusterCollectionItemArgs) ToGetOpensearc
 
 func (i GetOpensearchClustersOpensearchClusterCollectionItemArgs) ToGetOpensearchClustersOpensearchClusterCollectionItemOutputWithContext(ctx context.Context) GetOpensearchClustersOpensearchClusterCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetOpensearchClustersOpensearchClusterCollectionItemOutput)
-}
-
-func (i GetOpensearchClustersOpensearchClusterCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetOpensearchClustersOpensearchClusterCollectionItem] {
-	return pulumix.Output[GetOpensearchClustersOpensearchClusterCollectionItem]{
-		OutputState: i.ToGetOpensearchClustersOpensearchClusterCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetOpensearchClustersOpensearchClusterCollectionItemArrayInput is an input type that accepts GetOpensearchClustersOpensearchClusterCollectionItemArray and GetOpensearchClustersOpensearchClusterCollectionItemArrayOutput values.
@@ -484,12 +429,6 @@ func (i GetOpensearchClustersOpensearchClusterCollectionItemArray) ToGetOpensear
 	return pulumi.ToOutputWithContext(ctx, i).(GetOpensearchClustersOpensearchClusterCollectionItemArrayOutput)
 }
 
-func (i GetOpensearchClustersOpensearchClusterCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOpensearchClustersOpensearchClusterCollectionItem] {
-	return pulumix.Output[[]GetOpensearchClustersOpensearchClusterCollectionItem]{
-		OutputState: i.ToGetOpensearchClustersOpensearchClusterCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetOpensearchClustersOpensearchClusterCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetOpensearchClustersOpensearchClusterCollectionItemOutput) ElementType() reflect.Type {
@@ -504,52 +443,46 @@ func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) ToGetOpensea
 	return o
 }
 
-func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetOpensearchClustersOpensearchClusterCollectionItem] {
-	return pulumix.Output[GetOpensearchClustersOpensearchClusterCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The availability domains to distribute the cluser nodes across.
 func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) AvailabilityDomains() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) []string { return v.AvailabilityDomains }).(pulumi.StringArrayOutput)
 }
 
 // The ID of the compartment in which to list resources.
-func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The number of data nodes configured for the cluster.
-func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) DataNodeCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) int { return v.DataNodeCount }).(pulumi.IntOutput)
+func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) DataNodeCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) *int { return v.DataNodeCount }).(pulumi.IntPtrOutput)
 }
 
 // The bare metal shape for the cluster's data nodes.
-func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) DataNodeHostBareMetalShape() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) string {
+func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) DataNodeHostBareMetalShape() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) *string {
 		return v.DataNodeHostBareMetalShape
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The amount of memory in GB, for the cluster's data nodes.
-func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) DataNodeHostMemoryGb() pulumi.IntOutput {
-	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) int { return v.DataNodeHostMemoryGb }).(pulumi.IntOutput)
+func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) DataNodeHostMemoryGb() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) *int { return v.DataNodeHostMemoryGb }).(pulumi.IntPtrOutput)
 }
 
 // The number of OCPUs configured for the cluster's data nodes.
-func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) DataNodeHostOcpuCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) int { return v.DataNodeHostOcpuCount }).(pulumi.IntOutput)
+func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) DataNodeHostOcpuCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) *int { return v.DataNodeHostOcpuCount }).(pulumi.IntPtrOutput)
 }
 
 // The instance type for the cluster's data nodes.
-func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) DataNodeHostType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) string { return v.DataNodeHostType }).(pulumi.StringOutput)
+func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) DataNodeHostType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) *string { return v.DataNodeHostType }).(pulumi.StringPtrOutput)
 }
 
 // The amount of storage in GB, to configure per node for the cluster's data nodes.
-func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) DataNodeStorageGb() pulumi.IntOutput {
-	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) int { return v.DataNodeStorageGb }).(pulumi.IntOutput)
+func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) DataNodeStorageGb() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) *int { return v.DataNodeStorageGb }).(pulumi.IntPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -560,13 +493,13 @@ func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) DefinedTags(
 }
 
 // A filter to return only resources that match the entire display name given.
-func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The fully qualified domain name (FQDN) for the cluster's API endpoint.
-func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) Fqdn() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) string { return v.Fqdn }).(pulumi.StringOutput)
+func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) Fqdn() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) *string { return v.Fqdn }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -577,116 +510,116 @@ func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) FreeformTags
 }
 
 // unique OpensearchCluster identifier
-func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Additional information about the current lifecycle state of the cluster.
-func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The number of master nodes configured for the cluster.
-func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) MasterNodeCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) int { return v.MasterNodeCount }).(pulumi.IntOutput)
+func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) MasterNodeCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) *int { return v.MasterNodeCount }).(pulumi.IntPtrOutput)
 }
 
 // The bare metal shape for the cluster's master nodes.
-func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) MasterNodeHostBareMetalShape() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) string {
+func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) MasterNodeHostBareMetalShape() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) *string {
 		return v.MasterNodeHostBareMetalShape
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The amount of memory in GB, for the cluster's master nodes.
-func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) MasterNodeHostMemoryGb() pulumi.IntOutput {
-	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) int { return v.MasterNodeHostMemoryGb }).(pulumi.IntOutput)
+func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) MasterNodeHostMemoryGb() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) *int { return v.MasterNodeHostMemoryGb }).(pulumi.IntPtrOutput)
 }
 
 // The number of OCPUs configured for cluster's master nodes.
-func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) MasterNodeHostOcpuCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) int { return v.MasterNodeHostOcpuCount }).(pulumi.IntOutput)
+func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) MasterNodeHostOcpuCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) *int { return v.MasterNodeHostOcpuCount }).(pulumi.IntPtrOutput)
 }
 
 // The instance type for the cluster's master nodes.
-func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) MasterNodeHostType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) string { return v.MasterNodeHostType }).(pulumi.StringOutput)
+func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) MasterNodeHostType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) *string { return v.MasterNodeHostType }).(pulumi.StringPtrOutput)
 }
 
 // The fully qualified domain name (FQDN) for the cluster's OpenSearch Dashboard API endpoint.
-func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) OpendashboardFqdn() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) string { return v.OpendashboardFqdn }).(pulumi.StringOutput)
+func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) OpendashboardFqdn() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) *string { return v.OpendashboardFqdn }).(pulumi.StringPtrOutput)
 }
 
 // The number of OpenSearch Dashboard nodes configured for the cluster.
-func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) OpendashboardNodeCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) int { return v.OpendashboardNodeCount }).(pulumi.IntOutput)
+func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) OpendashboardNodeCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) *int { return v.OpendashboardNodeCount }).(pulumi.IntPtrOutput)
 }
 
 // The amount of memory in GB, for the cluster's OpenSearch Dashboard nodes.
-func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) OpendashboardNodeHostMemoryGb() pulumi.IntOutput {
-	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) int {
+func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) OpendashboardNodeHostMemoryGb() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) *int {
 		return v.OpendashboardNodeHostMemoryGb
-	}).(pulumi.IntOutput)
+	}).(pulumi.IntPtrOutput)
 }
 
 // The amount of memory in GB, for the cluster's OpenSearch Dashboard nodes.
-func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) OpendashboardNodeHostOcpuCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) int {
+func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) OpendashboardNodeHostOcpuCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) *int {
 		return v.OpendashboardNodeHostOcpuCount
-	}).(pulumi.IntOutput)
+	}).(pulumi.IntPtrOutput)
 }
 
 // The private IP address for the cluster's OpenSearch Dashboard.
-func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) OpendashboardPrivateIp() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) string { return v.OpendashboardPrivateIp }).(pulumi.StringOutput)
+func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) OpendashboardPrivateIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) *string { return v.OpendashboardPrivateIp }).(pulumi.StringPtrOutput)
 }
 
 // The fully qualified domain name (FQDN) for the cluster's API endpoint.
-func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) OpensearchFqdn() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) string { return v.OpensearchFqdn }).(pulumi.StringOutput)
+func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) OpensearchFqdn() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) *string { return v.OpensearchFqdn }).(pulumi.StringPtrOutput)
 }
 
 // The cluster's private IP address.
-func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) OpensearchPrivateIp() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) string { return v.OpensearchPrivateIp }).(pulumi.StringOutput)
+func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) OpensearchPrivateIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) *string { return v.OpensearchPrivateIp }).(pulumi.StringPtrOutput)
 }
 
 // The name of the master user that are used to manage security config
-func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) SecurityMasterUserName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) string { return v.SecurityMasterUserName }).(pulumi.StringOutput)
+func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) SecurityMasterUserName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) *string { return v.SecurityMasterUserName }).(pulumi.StringPtrOutput)
 }
 
 // The password hash of the master user that are used to manage security config
-func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) SecurityMasterUserPasswordHash() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) string {
+func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) SecurityMasterUserPasswordHash() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) *string {
 		return v.SecurityMasterUserPasswordHash
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The security mode of the cluster.
-func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) SecurityMode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) string { return v.SecurityMode }).(pulumi.StringOutput)
+func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) SecurityMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) *string { return v.SecurityMode }).(pulumi.StringPtrOutput)
 }
 
 // The software version the cluster is running.
-func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) SoftwareVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) string { return v.SoftwareVersion }).(pulumi.StringOutput)
+func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) SoftwareVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) *string { return v.SoftwareVersion }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only OpensearchClusters their lifecycleState matches the given lifecycleState.
-func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The OCID for the compartment where the cluster's subnet is located.
-func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) SubnetCompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) string { return v.SubnetCompartmentId }).(pulumi.StringOutput)
+func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) SubnetCompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) *string { return v.SubnetCompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the cluster's subnet.
-func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) SubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) string { return v.SubnetId }).(pulumi.StringOutput)
+func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -697,33 +630,33 @@ func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) SystemTags()
 }
 
 // The amount of time in milliseconds since the cluster was created.
-func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The amount of time in milliseconds since the cluster was updated.
-func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) TimeDeleted() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) string { return v.TimeDeleted }).(pulumi.StringOutput)
+func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) TimeDeleted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) *string { return v.TimeDeleted }).(pulumi.StringPtrOutput)
 }
 
 // The amount of time in milliseconds since the cluster was updated.
-func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // The size in GB of the cluster's total storage.
-func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) TotalStorageGb() pulumi.IntOutput {
-	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) int { return v.TotalStorageGb }).(pulumi.IntOutput)
+func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) TotalStorageGb() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) *int { return v.TotalStorageGb }).(pulumi.IntPtrOutput)
 }
 
 // The OCID for the compartment where the cluster's VCN is located.
-func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) VcnCompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) string { return v.VcnCompartmentId }).(pulumi.StringOutput)
+func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) VcnCompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) *string { return v.VcnCompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the cluster's VCN.
-func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) VcnId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) string { return v.VcnId }).(pulumi.StringOutput)
+func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) VcnId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) *string { return v.VcnId }).(pulumi.StringPtrOutput)
 }
 
 type GetOpensearchClustersOpensearchClusterCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -740,12 +673,6 @@ func (o GetOpensearchClustersOpensearchClusterCollectionItemArrayOutput) ToGetOp
 	return o
 }
 
-func (o GetOpensearchClustersOpensearchClusterCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOpensearchClustersOpensearchClusterCollectionItem] {
-	return pulumix.Output[[]GetOpensearchClustersOpensearchClusterCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetOpensearchClustersOpensearchClusterCollectionItemArrayOutput) Index(i pulumi.IntInput) GetOpensearchClustersOpensearchClusterCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOpensearchClustersOpensearchClusterCollectionItem {
 		return vs[0].([]GetOpensearchClustersOpensearchClusterCollectionItem)[vs[1].(int)]
@@ -754,7 +681,7 @@ func (o GetOpensearchClustersOpensearchClusterCollectionItemArrayOutput) Index(i
 
 type GetOpensearchVersionItem struct {
 	// The version of OpenSearch.
-	Version string `pulumi:"version"`
+	Version *string `pulumi:"version"`
 }
 
 // GetOpensearchVersionItemInput is an input type that accepts GetOpensearchVersionItemArgs and GetOpensearchVersionItemOutput values.
@@ -770,7 +697,7 @@ type GetOpensearchVersionItemInput interface {
 
 type GetOpensearchVersionItemArgs struct {
 	// The version of OpenSearch.
-	Version pulumi.StringInput `pulumi:"version"`
+	Version pulumi.StringPtrInput `pulumi:"version"`
 }
 
 func (GetOpensearchVersionItemArgs) ElementType() reflect.Type {
@@ -783,12 +710,6 @@ func (i GetOpensearchVersionItemArgs) ToGetOpensearchVersionItemOutput() GetOpen
 
 func (i GetOpensearchVersionItemArgs) ToGetOpensearchVersionItemOutputWithContext(ctx context.Context) GetOpensearchVersionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetOpensearchVersionItemOutput)
-}
-
-func (i GetOpensearchVersionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetOpensearchVersionItem] {
-	return pulumix.Output[GetOpensearchVersionItem]{
-		OutputState: i.ToGetOpensearchVersionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetOpensearchVersionItemArrayInput is an input type that accepts GetOpensearchVersionItemArray and GetOpensearchVersionItemArrayOutput values.
@@ -816,12 +737,6 @@ func (i GetOpensearchVersionItemArray) ToGetOpensearchVersionItemArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetOpensearchVersionItemArrayOutput)
 }
 
-func (i GetOpensearchVersionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOpensearchVersionItem] {
-	return pulumix.Output[[]GetOpensearchVersionItem]{
-		OutputState: i.ToGetOpensearchVersionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetOpensearchVersionItemOutput struct{ *pulumi.OutputState }
 
 func (GetOpensearchVersionItemOutput) ElementType() reflect.Type {
@@ -836,15 +751,9 @@ func (o GetOpensearchVersionItemOutput) ToGetOpensearchVersionItemOutputWithCont
 	return o
 }
 
-func (o GetOpensearchVersionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetOpensearchVersionItem] {
-	return pulumix.Output[GetOpensearchVersionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The version of OpenSearch.
-func (o GetOpensearchVersionItemOutput) Version() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpensearchVersionItem) string { return v.Version }).(pulumi.StringOutput)
+func (o GetOpensearchVersionItemOutput) Version() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpensearchVersionItem) *string { return v.Version }).(pulumi.StringPtrOutput)
 }
 
 type GetOpensearchVersionItemArrayOutput struct{ *pulumi.OutputState }
@@ -859,12 +768,6 @@ func (o GetOpensearchVersionItemArrayOutput) ToGetOpensearchVersionItemArrayOutp
 
 func (o GetOpensearchVersionItemArrayOutput) ToGetOpensearchVersionItemArrayOutputWithContext(ctx context.Context) GetOpensearchVersionItemArrayOutput {
 	return o
-}
-
-func (o GetOpensearchVersionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOpensearchVersionItem] {
-	return pulumix.Output[[]GetOpensearchVersionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetOpensearchVersionItemArrayOutput) Index(i pulumi.IntInput) GetOpensearchVersionItemOutput {
@@ -908,12 +811,6 @@ func (i GetOpensearchVersionsFilterArgs) ToGetOpensearchVersionsFilterOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetOpensearchVersionsFilterOutput)
 }
 
-func (i GetOpensearchVersionsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetOpensearchVersionsFilter] {
-	return pulumix.Output[GetOpensearchVersionsFilter]{
-		OutputState: i.ToGetOpensearchVersionsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetOpensearchVersionsFilterArrayInput is an input type that accepts GetOpensearchVersionsFilterArray and GetOpensearchVersionsFilterArrayOutput values.
 // You can construct a concrete instance of `GetOpensearchVersionsFilterArrayInput` via:
 //
@@ -939,12 +836,6 @@ func (i GetOpensearchVersionsFilterArray) ToGetOpensearchVersionsFilterArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetOpensearchVersionsFilterArrayOutput)
 }
 
-func (i GetOpensearchVersionsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOpensearchVersionsFilter] {
-	return pulumix.Output[[]GetOpensearchVersionsFilter]{
-		OutputState: i.ToGetOpensearchVersionsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetOpensearchVersionsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetOpensearchVersionsFilterOutput) ElementType() reflect.Type {
@@ -957,12 +848,6 @@ func (o GetOpensearchVersionsFilterOutput) ToGetOpensearchVersionsFilterOutput()
 
 func (o GetOpensearchVersionsFilterOutput) ToGetOpensearchVersionsFilterOutputWithContext(ctx context.Context) GetOpensearchVersionsFilterOutput {
 	return o
-}
-
-func (o GetOpensearchVersionsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetOpensearchVersionsFilter] {
-	return pulumix.Output[GetOpensearchVersionsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetOpensearchVersionsFilterOutput) Name() pulumi.StringOutput {
@@ -989,12 +874,6 @@ func (o GetOpensearchVersionsFilterArrayOutput) ToGetOpensearchVersionsFilterArr
 
 func (o GetOpensearchVersionsFilterArrayOutput) ToGetOpensearchVersionsFilterArrayOutputWithContext(ctx context.Context) GetOpensearchVersionsFilterArrayOutput {
 	return o
-}
-
-func (o GetOpensearchVersionsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOpensearchVersionsFilter] {
-	return pulumix.Output[[]GetOpensearchVersionsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetOpensearchVersionsFilterArrayOutput) Index(i pulumi.IntInput) GetOpensearchVersionsFilterOutput {
@@ -1036,12 +915,6 @@ func (i GetOpensearchVersionsOpensearchVersionsCollectionArgs) ToGetOpensearchVe
 	return pulumi.ToOutputWithContext(ctx, i).(GetOpensearchVersionsOpensearchVersionsCollectionOutput)
 }
 
-func (i GetOpensearchVersionsOpensearchVersionsCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetOpensearchVersionsOpensearchVersionsCollection] {
-	return pulumix.Output[GetOpensearchVersionsOpensearchVersionsCollection]{
-		OutputState: i.ToGetOpensearchVersionsOpensearchVersionsCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetOpensearchVersionsOpensearchVersionsCollectionArrayInput is an input type that accepts GetOpensearchVersionsOpensearchVersionsCollectionArray and GetOpensearchVersionsOpensearchVersionsCollectionArrayOutput values.
 // You can construct a concrete instance of `GetOpensearchVersionsOpensearchVersionsCollectionArrayInput` via:
 //
@@ -1067,12 +940,6 @@ func (i GetOpensearchVersionsOpensearchVersionsCollectionArray) ToGetOpensearchV
 	return pulumi.ToOutputWithContext(ctx, i).(GetOpensearchVersionsOpensearchVersionsCollectionArrayOutput)
 }
 
-func (i GetOpensearchVersionsOpensearchVersionsCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOpensearchVersionsOpensearchVersionsCollection] {
-	return pulumix.Output[[]GetOpensearchVersionsOpensearchVersionsCollection]{
-		OutputState: i.ToGetOpensearchVersionsOpensearchVersionsCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetOpensearchVersionsOpensearchVersionsCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetOpensearchVersionsOpensearchVersionsCollectionOutput) ElementType() reflect.Type {
@@ -1085,12 +952,6 @@ func (o GetOpensearchVersionsOpensearchVersionsCollectionOutput) ToGetOpensearch
 
 func (o GetOpensearchVersionsOpensearchVersionsCollectionOutput) ToGetOpensearchVersionsOpensearchVersionsCollectionOutputWithContext(ctx context.Context) GetOpensearchVersionsOpensearchVersionsCollectionOutput {
 	return o
-}
-
-func (o GetOpensearchVersionsOpensearchVersionsCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetOpensearchVersionsOpensearchVersionsCollection] {
-	return pulumix.Output[GetOpensearchVersionsOpensearchVersionsCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A list of OpenSearch versions.
@@ -1114,12 +975,6 @@ func (o GetOpensearchVersionsOpensearchVersionsCollectionArrayOutput) ToGetOpens
 	return o
 }
 
-func (o GetOpensearchVersionsOpensearchVersionsCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOpensearchVersionsOpensearchVersionsCollection] {
-	return pulumix.Output[[]GetOpensearchVersionsOpensearchVersionsCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetOpensearchVersionsOpensearchVersionsCollectionArrayOutput) Index(i pulumi.IntInput) GetOpensearchVersionsOpensearchVersionsCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOpensearchVersionsOpensearchVersionsCollection {
 		return vs[0].([]GetOpensearchVersionsOpensearchVersionsCollection)[vs[1].(int)]
@@ -1128,7 +983,7 @@ func (o GetOpensearchVersionsOpensearchVersionsCollectionArrayOutput) Index(i pu
 
 type GetOpensearchVersionsOpensearchVersionsCollectionItem struct {
 	// The version of OpenSearch.
-	Version string `pulumi:"version"`
+	Version *string `pulumi:"version"`
 }
 
 // GetOpensearchVersionsOpensearchVersionsCollectionItemInput is an input type that accepts GetOpensearchVersionsOpensearchVersionsCollectionItemArgs and GetOpensearchVersionsOpensearchVersionsCollectionItemOutput values.
@@ -1144,7 +999,7 @@ type GetOpensearchVersionsOpensearchVersionsCollectionItemInput interface {
 
 type GetOpensearchVersionsOpensearchVersionsCollectionItemArgs struct {
 	// The version of OpenSearch.
-	Version pulumi.StringInput `pulumi:"version"`
+	Version pulumi.StringPtrInput `pulumi:"version"`
 }
 
 func (GetOpensearchVersionsOpensearchVersionsCollectionItemArgs) ElementType() reflect.Type {
@@ -1157,12 +1012,6 @@ func (i GetOpensearchVersionsOpensearchVersionsCollectionItemArgs) ToGetOpensear
 
 func (i GetOpensearchVersionsOpensearchVersionsCollectionItemArgs) ToGetOpensearchVersionsOpensearchVersionsCollectionItemOutputWithContext(ctx context.Context) GetOpensearchVersionsOpensearchVersionsCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetOpensearchVersionsOpensearchVersionsCollectionItemOutput)
-}
-
-func (i GetOpensearchVersionsOpensearchVersionsCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetOpensearchVersionsOpensearchVersionsCollectionItem] {
-	return pulumix.Output[GetOpensearchVersionsOpensearchVersionsCollectionItem]{
-		OutputState: i.ToGetOpensearchVersionsOpensearchVersionsCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetOpensearchVersionsOpensearchVersionsCollectionItemArrayInput is an input type that accepts GetOpensearchVersionsOpensearchVersionsCollectionItemArray and GetOpensearchVersionsOpensearchVersionsCollectionItemArrayOutput values.
@@ -1190,12 +1039,6 @@ func (i GetOpensearchVersionsOpensearchVersionsCollectionItemArray) ToGetOpensea
 	return pulumi.ToOutputWithContext(ctx, i).(GetOpensearchVersionsOpensearchVersionsCollectionItemArrayOutput)
 }
 
-func (i GetOpensearchVersionsOpensearchVersionsCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOpensearchVersionsOpensearchVersionsCollectionItem] {
-	return pulumix.Output[[]GetOpensearchVersionsOpensearchVersionsCollectionItem]{
-		OutputState: i.ToGetOpensearchVersionsOpensearchVersionsCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetOpensearchVersionsOpensearchVersionsCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetOpensearchVersionsOpensearchVersionsCollectionItemOutput) ElementType() reflect.Type {
@@ -1210,15 +1053,9 @@ func (o GetOpensearchVersionsOpensearchVersionsCollectionItemOutput) ToGetOpense
 	return o
 }
 
-func (o GetOpensearchVersionsOpensearchVersionsCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetOpensearchVersionsOpensearchVersionsCollectionItem] {
-	return pulumix.Output[GetOpensearchVersionsOpensearchVersionsCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The version of OpenSearch.
-func (o GetOpensearchVersionsOpensearchVersionsCollectionItemOutput) Version() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOpensearchVersionsOpensearchVersionsCollectionItem) string { return v.Version }).(pulumi.StringOutput)
+func (o GetOpensearchVersionsOpensearchVersionsCollectionItemOutput) Version() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOpensearchVersionsOpensearchVersionsCollectionItem) *string { return v.Version }).(pulumi.StringPtrOutput)
 }
 
 type GetOpensearchVersionsOpensearchVersionsCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -1233,12 +1070,6 @@ func (o GetOpensearchVersionsOpensearchVersionsCollectionItemArrayOutput) ToGetO
 
 func (o GetOpensearchVersionsOpensearchVersionsCollectionItemArrayOutput) ToGetOpensearchVersionsOpensearchVersionsCollectionItemArrayOutputWithContext(ctx context.Context) GetOpensearchVersionsOpensearchVersionsCollectionItemArrayOutput {
 	return o
-}
-
-func (o GetOpensearchVersionsOpensearchVersionsCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOpensearchVersionsOpensearchVersionsCollectionItem] {
-	return pulumix.Output[[]GetOpensearchVersionsOpensearchVersionsCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetOpensearchVersionsOpensearchVersionsCollectionItemArrayOutput) Index(i pulumi.IntInput) GetOpensearchVersionsOpensearchVersionsCollectionItemOutput {

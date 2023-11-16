@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// The BYOIP CIDR block range or subrange allocated to an IP pool. This could be all or part of a BYOIP CIDR block.
         /// </summary>
-        public readonly string CidrBlock;
+        public readonly string? CidrBlock;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IP pool containing the CIDR block.
         /// </summary>
-        public readonly string PublicIpPoolId;
+        public readonly string? PublicIpPoolId;
 
         [OutputConstructor]
         private GetByoipAllocatedRangesByoipAllocatedRangeCollectionItemResult(
-            string cidrBlock,
+            string? cidrBlock,
 
-            string publicIpPoolId)
+            string? publicIpPoolId)
         {
             CidrBlock = cidrBlock;
             PublicIpPoolId = publicIpPoolId;

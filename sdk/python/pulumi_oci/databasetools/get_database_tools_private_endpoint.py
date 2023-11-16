@@ -89,18 +89,12 @@ class GetDatabaseToolsPrivateEndpointResult:
 
     @property
     @pulumi.getter(name="additionalFqdns")
-    def additional_fqdns(self) -> Sequence[str]:
-        """
-        A list of additional FQDNs that can be also be used for the private endpoint.
-        """
+    def additional_fqdns(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "additional_fqdns")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools private endpoint.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -110,146 +104,92 @@ class GetDatabaseToolsPrivateEndpointResult:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        A description of the Database Tools private endpoint.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="endpointFqdn")
-    def endpoint_fqdn(self) -> str:
-        """
-        Then FQDN to use for the private endpoint.
-        """
+    def endpoint_fqdn(self) -> Optional[str]:
         return pulumi.get(self, "endpoint_fqdn")
 
     @property
     @pulumi.getter(name="endpointServiceId")
-    def endpoint_service_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools Endpoint Service.
-        """
+    def endpoint_service_id(self) -> Optional[str]:
         return pulumi.get(self, "endpoint_service_id")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="nsgIds")
-    def nsg_ids(self) -> Sequence[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups that the private endpoint's VNIC belongs to.  For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
-        """
+    def nsg_ids(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "nsg_ids")
 
     @property
     @pulumi.getter(name="privateEndpointIp")
-    def private_endpoint_ip(self) -> str:
-        """
-        The private IP address that represents the access point for the associated endpoint service.
-        """
+    def private_endpoint_ip(self) -> Optional[str]:
         return pulumi.get(self, "private_endpoint_ip")
 
     @property
     @pulumi.getter(name="privateEndpointVnicId")
-    def private_endpoint_vnic_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint's VNIC.
-        """
+    def private_endpoint_vnic_id(self) -> Optional[str]:
         return pulumi.get(self, "private_endpoint_vnic_id")
 
     @property
     @pulumi.getter(name="reverseConnectionConfigurations")
-    def reverse_connection_configurations(self) -> Sequence['outputs.GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationResult']:
-        """
-        Reverse connection configuration details of the private endpoint.
-        """
+    def reverse_connection_configurations(self) -> Optional[Sequence['outputs.GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationResult']]:
         return pulumi.get(self, "reverse_connection_configurations")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the Database Tools private endpoint.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet that the private endpoint belongs to.
-        """
+    def subnet_id(self) -> Optional[str]:
         return pulumi.get(self, "subnet_id")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the Database Tools private endpoint was created. An RFC3339 formatted datetime string
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the Database Tools private endpoint was updated. An RFC3339 formatted datetime string
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="vcnId")
-    def vcn_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN that the private endpoint belongs to.
-        """
+    def vcn_id(self) -> Optional[str]:
         return pulumi.get(self, "vcn_id")
 
 
@@ -285,21 +225,7 @@ class AwaitableGetDatabaseToolsPrivateEndpointResult(GetDatabaseToolsPrivateEndp
 def get_database_tools_private_endpoint(database_tools_private_endpoint_id: Optional[str] = None,
                                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDatabaseToolsPrivateEndpointResult:
     """
-    This data source provides details about a specific Database Tools Private Endpoint resource in Oracle Cloud Infrastructure Database Tools service.
-
-    Gets details of a specified Database Tools private endpoint.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_database_tools_private_endpoint = oci.DatabaseTools.get_database_tools_private_endpoint(database_tools_private_endpoint_id=oci_database_tools_database_tools_private_endpoint["test_database_tools_private_endpoint"]["id"])
-    ```
-
-
-    :param str database_tools_private_endpoint_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools private endpoint.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['databaseToolsPrivateEndpointId'] = database_tools_private_endpoint_id
@@ -334,20 +260,6 @@ def get_database_tools_private_endpoint(database_tools_private_endpoint_id: Opti
 def get_database_tools_private_endpoint_output(database_tools_private_endpoint_id: Optional[pulumi.Input[str]] = None,
                                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDatabaseToolsPrivateEndpointResult]:
     """
-    This data source provides details about a specific Database Tools Private Endpoint resource in Oracle Cloud Infrastructure Database Tools service.
-
-    Gets details of a specified Database Tools private endpoint.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_database_tools_private_endpoint = oci.DatabaseTools.get_database_tools_private_endpoint(database_tools_private_endpoint_id=oci_database_tools_database_tools_private_endpoint["test_database_tools_private_endpoint"]["id"])
-    ```
-
-
-    :param str database_tools_private_endpoint_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools private endpoint.
+    Use this data source to access information about an existing resource.
     """
     ...

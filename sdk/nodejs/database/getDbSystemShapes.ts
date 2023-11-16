@@ -57,12 +57,12 @@ export interface GetDbSystemShapesResult {
     /**
      * The list of db_system_shapes.
      */
-    readonly dbSystemShapes: outputs.Database.GetDbSystemShapesDbSystemShape[];
+    readonly dbSystemShapes?: outputs.Database.GetDbSystemShapesDbSystemShape[];
     readonly filters?: outputs.Database.GetDbSystemShapesFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
 }
 /**
  * This data source provides the list of Db System Shapes in Oracle Cloud Infrastructure Database service.

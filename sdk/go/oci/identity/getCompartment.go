@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Compartment resource in Oracle Cloud Infrastructure Identity service.
@@ -67,25 +66,25 @@ type LookupCompartmentArgs struct {
 // A collection of values returned by getCompartment.
 type LookupCompartmentResult struct {
 	// The OCID of the parent compartment containing the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The description you assign to the compartment. Does not have to be unique, and it's changeable.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the compartment.
 	Id string `pulumi:"id"`
 	// The detailed status of INACTIVE lifecycleState.
-	InactiveState string `pulumi:"inactiveState"`
+	InactiveState *string `pulumi:"inactiveState"`
 	// Indicates whether or not the compartment is accessible for the user making the request. Returns true when the user has INSPECT permissions directly on a resource in the compartment or indirectly (permissions can be on a resource in a subcompartment).
-	IsAccessible bool `pulumi:"isAccessible"`
+	IsAccessible *bool `pulumi:"isAccessible"`
 	// The name you assign to the compartment during creation. The name must be unique across all compartments in the parent. Avoid entering confidential information.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The compartment's current state.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Date and time the compartment was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 }
 
 func LookupCompartmentOutput(ctx *pulumi.Context, args LookupCompartmentOutputArgs, opts ...pulumi.InvokeOption) LookupCompartmentResultOutput {
@@ -126,15 +125,9 @@ func (o LookupCompartmentResultOutput) ToLookupCompartmentResultOutputWithContex
 	return o
 }
 
-func (o LookupCompartmentResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupCompartmentResult] {
-	return pulumix.Output[LookupCompartmentResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the parent compartment containing the compartment.
-func (o LookupCompartmentResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCompartmentResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupCompartmentResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCompartmentResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -143,8 +136,8 @@ func (o LookupCompartmentResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // The description you assign to the compartment. Does not have to be unique, and it's changeable.
-func (o LookupCompartmentResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCompartmentResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupCompartmentResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCompartmentResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -158,28 +151,28 @@ func (o LookupCompartmentResultOutput) Id() pulumi.StringOutput {
 }
 
 // The detailed status of INACTIVE lifecycleState.
-func (o LookupCompartmentResultOutput) InactiveState() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCompartmentResult) string { return v.InactiveState }).(pulumi.StringOutput)
+func (o LookupCompartmentResultOutput) InactiveState() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCompartmentResult) *string { return v.InactiveState }).(pulumi.StringPtrOutput)
 }
 
 // Indicates whether or not the compartment is accessible for the user making the request. Returns true when the user has INSPECT permissions directly on a resource in the compartment or indirectly (permissions can be on a resource in a subcompartment).
-func (o LookupCompartmentResultOutput) IsAccessible() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupCompartmentResult) bool { return v.IsAccessible }).(pulumi.BoolOutput)
+func (o LookupCompartmentResultOutput) IsAccessible() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupCompartmentResult) *bool { return v.IsAccessible }).(pulumi.BoolPtrOutput)
 }
 
 // The name you assign to the compartment during creation. The name must be unique across all compartments in the parent. Avoid entering confidential information.
-func (o LookupCompartmentResultOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCompartmentResult) string { return v.Name }).(pulumi.StringOutput)
+func (o LookupCompartmentResultOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCompartmentResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The compartment's current state.
-func (o LookupCompartmentResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCompartmentResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupCompartmentResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCompartmentResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Date and time the compartment was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-func (o LookupCompartmentResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCompartmentResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupCompartmentResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCompartmentResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

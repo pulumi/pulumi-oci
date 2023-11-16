@@ -8,6 +8,8 @@ import com.pulumi.oci.CloudGuard.outputs.GetResponderRecipeResponderRuleDetail;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetResponderRecipeResponderRule {
@@ -15,147 +17,147 @@ public final class GetResponderRecipeResponderRule {
      * @return Compartment Identifier
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return ResponderRule description.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return Details of ResponderRule.
      * 
      */
-    private List<GetResponderRecipeResponderRuleDetail> details;
+    private @Nullable List<GetResponderRecipeResponderRuleDetail> details;
     /**
      * @return ResponderRule display name.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return List of Policy
      * 
      */
-    private List<String> policies;
+    private @Nullable List<String> policies;
     /**
      * @return Identifier for ResponderRule.
      * 
      */
-    private String responderRuleId;
+    private @Nullable String responderRuleId;
     /**
      * @return The current state of the Example.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return Supported Execution Modes
      * 
      */
-    private List<String> supportedModes;
+    private @Nullable List<String> supportedModes;
     /**
      * @return The date and time the responder recipe was created. Format defined by RFC3339.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The date and time the responder recipe was updated. Format defined by RFC3339.
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
     /**
      * @return Type of Responder
      * 
      */
-    private String type;
+    private @Nullable String type;
 
     private GetResponderRecipeResponderRule() {}
     /**
      * @return Compartment Identifier
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return ResponderRule description.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return Details of ResponderRule.
      * 
      */
     public List<GetResponderRecipeResponderRuleDetail> details() {
-        return this.details;
+        return this.details == null ? List.of() : this.details;
     }
     /**
      * @return ResponderRule display name.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return List of Policy
      * 
      */
     public List<String> policies() {
-        return this.policies;
+        return this.policies == null ? List.of() : this.policies;
     }
     /**
      * @return Identifier for ResponderRule.
      * 
      */
-    public String responderRuleId() {
-        return this.responderRuleId;
+    public Optional<String> responderRuleId() {
+        return Optional.ofNullable(this.responderRuleId);
     }
     /**
      * @return The current state of the Example.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return Supported Execution Modes
      * 
      */
     public List<String> supportedModes() {
-        return this.supportedModes;
+        return this.supportedModes == null ? List.of() : this.supportedModes;
     }
     /**
      * @return The date and time the responder recipe was created. Format defined by RFC3339.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The date and time the responder recipe was updated. Format defined by RFC3339.
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
     /**
      * @return Type of Responder
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
 
     public static Builder builder() {
@@ -167,18 +169,18 @@ public final class GetResponderRecipeResponderRule {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private String description;
-        private List<GetResponderRecipeResponderRuleDetail> details;
-        private String displayName;
-        private String lifecycleDetails;
-        private List<String> policies;
-        private String responderRuleId;
-        private String state;
-        private List<String> supportedModes;
-        private String timeCreated;
-        private String timeUpdated;
-        private String type;
+        private @Nullable String compartmentId;
+        private @Nullable String description;
+        private @Nullable List<GetResponderRecipeResponderRuleDetail> details;
+        private @Nullable String displayName;
+        private @Nullable String lifecycleDetails;
+        private @Nullable List<String> policies;
+        private @Nullable String responderRuleId;
+        private @Nullable String state;
+        private @Nullable List<String> supportedModes;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
+        private @Nullable String type;
         public Builder() {}
         public Builder(GetResponderRecipeResponderRule defaults) {
     	      Objects.requireNonNull(defaults);
@@ -197,72 +199,72 @@ public final class GetResponderRecipeResponderRule {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder details(List<GetResponderRecipeResponderRuleDetail> details) {
-            this.details = Objects.requireNonNull(details);
+        public Builder details(@Nullable List<GetResponderRecipeResponderRuleDetail> details) {
+            this.details = details;
             return this;
         }
         public Builder details(GetResponderRecipeResponderRuleDetail... details) {
             return details(List.of(details));
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder policies(List<String> policies) {
-            this.policies = Objects.requireNonNull(policies);
+        public Builder policies(@Nullable List<String> policies) {
+            this.policies = policies;
             return this;
         }
         public Builder policies(String... policies) {
             return policies(List.of(policies));
         }
         @CustomType.Setter
-        public Builder responderRuleId(String responderRuleId) {
-            this.responderRuleId = Objects.requireNonNull(responderRuleId);
+        public Builder responderRuleId(@Nullable String responderRuleId) {
+            this.responderRuleId = responderRuleId;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder supportedModes(List<String> supportedModes) {
-            this.supportedModes = Objects.requireNonNull(supportedModes);
+        public Builder supportedModes(@Nullable List<String> supportedModes) {
+            this.supportedModes = supportedModes;
             return this;
         }
         public Builder supportedModes(String... supportedModes) {
             return supportedModes(List.of(supportedModes));
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         public GetResponderRecipeResponderRule build() {

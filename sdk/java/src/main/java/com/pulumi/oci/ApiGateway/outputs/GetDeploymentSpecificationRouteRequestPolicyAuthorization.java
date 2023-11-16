@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDeploymentSpecificationRouteRequestPolicyAuthorization {
@@ -14,12 +16,12 @@ public final class GetDeploymentSpecificationRouteRequestPolicyAuthorization {
      * @return A user whose scope includes any of these access ranges is allowed on this route. Access ranges are case-sensitive.
      * 
      */
-    private List<String> allowedScopes;
+    private @Nullable List<String> allowedScopes;
     /**
      * @return Type of the Response Cache Store Policy.
      * 
      */
-    private String type;
+    private @Nullable String type;
 
     private GetDeploymentSpecificationRouteRequestPolicyAuthorization() {}
     /**
@@ -27,14 +29,14 @@ public final class GetDeploymentSpecificationRouteRequestPolicyAuthorization {
      * 
      */
     public List<String> allowedScopes() {
-        return this.allowedScopes;
+        return this.allowedScopes == null ? List.of() : this.allowedScopes;
     }
     /**
      * @return Type of the Response Cache Store Policy.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
 
     public static Builder builder() {
@@ -46,8 +48,8 @@ public final class GetDeploymentSpecificationRouteRequestPolicyAuthorization {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> allowedScopes;
-        private String type;
+        private @Nullable List<String> allowedScopes;
+        private @Nullable String type;
         public Builder() {}
         public Builder(GetDeploymentSpecificationRouteRequestPolicyAuthorization defaults) {
     	      Objects.requireNonNull(defaults);
@@ -56,16 +58,16 @@ public final class GetDeploymentSpecificationRouteRequestPolicyAuthorization {
         }
 
         @CustomType.Setter
-        public Builder allowedScopes(List<String> allowedScopes) {
-            this.allowedScopes = Objects.requireNonNull(allowedScopes);
+        public Builder allowedScopes(@Nullable List<String> allowedScopes) {
+            this.allowedScopes = allowedScopes;
             return this;
         }
         public Builder allowedScopes(String... allowedScopes) {
             return allowedScopes(List.of(allowedScopes));
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         public GetDeploymentSpecificationRouteRequestPolicyAuthorization build() {

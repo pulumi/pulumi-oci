@@ -176,28 +176,28 @@ public class BdsInstance extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="bootstrapScriptUrl", refs={String.class}, tree="[0]")
-    private Output<String> bootstrapScriptUrl;
+    private Output</* @Nullable */ String> bootstrapScriptUrl;
 
     /**
      * @return (Updatable) Pre-authenticated URL of the script in Object Store that is downloaded and executed.
      * 
      */
-    public Output<String> bootstrapScriptUrl() {
-        return this.bootstrapScriptUrl;
+    public Output<Optional<String>> bootstrapScriptUrl() {
+        return Codegen.optional(this.bootstrapScriptUrl);
     }
     /**
      * The information about added Cloud SQL capability
      * 
      */
     @Export(name="cloudSqlDetails", refs={List.class,BdsInstanceCloudSqlDetail.class}, tree="[0,1]")
-    private Output<List<BdsInstanceCloudSqlDetail>> cloudSqlDetails;
+    private Output</* @Nullable */ List<BdsInstanceCloudSqlDetail>> cloudSqlDetails;
 
     /**
      * @return The information about added Cloud SQL capability
      * 
      */
-    public Output<List<BdsInstanceCloudSqlDetail>> cloudSqlDetails() {
-        return this.cloudSqlDetails;
+    public Output<Optional<List<BdsInstanceCloudSqlDetail>>> cloudSqlDetails() {
+        return Codegen.optional(this.cloudSqlDetails);
     }
     /**
      * Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
@@ -218,28 +218,28 @@ public class BdsInstance extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="clusterDetails", refs={List.class,BdsInstanceClusterDetail.class}, tree="[0,1]")
-    private Output<List<BdsInstanceClusterDetail>> clusterDetails;
+    private Output</* @Nullable */ List<BdsInstanceClusterDetail>> clusterDetails;
 
     /**
      * @return Specific info about a Hadoop cluster
      * 
      */
-    public Output<List<BdsInstanceClusterDetail>> clusterDetails() {
-        return this.clusterDetails;
+    public Output<Optional<List<BdsInstanceClusterDetail>>> clusterDetails() {
+        return Codegen.optional(this.clusterDetails);
     }
     /**
      * Profile of the Big Data Service cluster.
      * 
      */
     @Export(name="clusterProfile", refs={String.class}, tree="[0]")
-    private Output<String> clusterProfile;
+    private Output</* @Nullable */ String> clusterProfile;
 
     /**
      * @return Profile of the Big Data Service cluster.
      * 
      */
-    public Output<String> clusterProfile() {
-        return this.clusterProfile;
+    public Output<Optional<String>> clusterProfile() {
+        return Codegen.optional(this.clusterProfile);
     }
     /**
      * The SSH public key used to authenticate the cluster connection.
@@ -294,28 +294,28 @@ public class BdsInstance extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="createdBy", refs={String.class}, tree="[0]")
-    private Output<String> createdBy;
+    private Output</* @Nullable */ String> createdBy;
 
     /**
      * @return The user who created the cluster.
      * 
      */
-    public Output<String> createdBy() {
-        return this.createdBy;
+    public Output<Optional<String>> createdBy() {
+        return Codegen.optional(this.createdBy);
     }
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) Name of the BDS instance
@@ -342,28 +342,28 @@ public class BdsInstance extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
      * 
      */
     @Export(name="isCloudSqlConfigured", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isCloudSqlConfigured;
+    private Output</* @Nullable */ Boolean> isCloudSqlConfigured;
 
     /**
      * @return (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
      * 
      */
-    public Output<Boolean> isCloudSqlConfigured() {
-        return this.isCloudSqlConfigured;
+    public Output<Optional<Boolean>> isCloudSqlConfigured() {
+        return Codegen.optional(this.isCloudSqlConfigured);
     }
     /**
      * (Updatable) When setting state as `INACTIVE` for stopping a cluster, setting this flag to true forcefully stops the bds instance.
@@ -440,28 +440,28 @@ public class BdsInstance extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="kerberosRealmName", refs={String.class}, tree="[0]")
-    private Output<String> kerberosRealmName;
+    private Output</* @Nullable */ String> kerberosRealmName;
 
     /**
      * @return The user-defined kerberos realm name.
      * 
      */
-    public Output<String> kerberosRealmName() {
-        return this.kerberosRealmName;
+    public Output<Optional<String>> kerberosRealmName() {
+        return Codegen.optional(this.kerberosRealmName);
     }
     /**
      * (Updatable) The OCID of the Key Management master encryption key.
      * 
      */
     @Export(name="kmsKeyId", refs={String.class}, tree="[0]")
-    private Output<String> kmsKeyId;
+    private Output</* @Nullable */ String> kmsKeyId;
 
     /**
      * @return (Updatable) The OCID of the Key Management master encryption key.
      * 
      */
-    public Output<String> kmsKeyId() {
-        return this.kmsKeyId;
+    public Output<Optional<String>> kmsKeyId() {
+        return Codegen.optional(this.kmsKeyId);
     }
     /**
      * The master node in the BDS instance
@@ -482,56 +482,56 @@ public class BdsInstance extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="networkConfig", refs={BdsInstanceNetworkConfig.class}, tree="[0]")
-    private Output<BdsInstanceNetworkConfig> networkConfig;
+    private Output</* @Nullable */ BdsInstanceNetworkConfig> networkConfig;
 
     /**
      * @return Additional configuration of the user&#39;s network.
      * 
      */
-    public Output<BdsInstanceNetworkConfig> networkConfig() {
-        return this.networkConfig;
+    public Output<Optional<BdsInstanceNetworkConfig>> networkConfig() {
+        return Codegen.optional(this.networkConfig);
     }
     /**
      * The list of nodes in the Big Data Service cluster.
      * 
      */
     @Export(name="nodes", refs={List.class,BdsInstanceNode.class}, tree="[0,1]")
-    private Output<List<BdsInstanceNode>> nodes;
+    private Output</* @Nullable */ List<BdsInstanceNode>> nodes;
 
     /**
      * @return The list of nodes in the Big Data Service cluster.
      * 
      */
-    public Output<List<BdsInstanceNode>> nodes() {
-        return this.nodes;
+    public Output<Optional<List<BdsInstanceNode>>> nodes() {
+        return Codegen.optional(this.nodes);
     }
     /**
      * The amount of worker nodes should be created
      * 
      */
     @Export(name="numberOfNodes", refs={Integer.class}, tree="[0]")
-    private Output<Integer> numberOfNodes;
+    private Output</* @Nullable */ Integer> numberOfNodes;
 
     /**
      * @return The amount of worker nodes should be created
      * 
      */
-    public Output<Integer> numberOfNodes() {
-        return this.numberOfNodes;
+    public Output<Optional<Integer>> numberOfNodes() {
+        return Codegen.optional(this.numberOfNodes);
     }
     /**
      * Number of nodes that require a maintenance reboot
      * 
      */
     @Export(name="numberOfNodesRequiringMaintenanceReboot", refs={Integer.class}, tree="[0]")
-    private Output<Integer> numberOfNodesRequiringMaintenanceReboot;
+    private Output</* @Nullable */ Integer> numberOfNodesRequiringMaintenanceReboot;
 
     /**
      * @return Number of nodes that require a maintenance reboot
      * 
      */
-    public Output<Integer> numberOfNodesRequiringMaintenanceReboot() {
-        return this.numberOfNodesRequiringMaintenanceReboot;
+    public Output<Optional<Integer>> numberOfNodesRequiringMaintenanceReboot() {
+        return Codegen.optional(this.numberOfNodesRequiringMaintenanceReboot);
     }
     /**
      * (Updatable) The version of the patch to be upated.
@@ -552,42 +552,42 @@ public class BdsInstance extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The time the BDS instance was created. An RFC3339 formatted datetime string
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The time the BDS instance was created. An RFC3339 formatted datetime string
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The time the BDS instance was updated. An RFC3339 formatted datetime string
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The time the BDS instance was updated. An RFC3339 formatted datetime string
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
     /**
      * The utility node in the BDS instance

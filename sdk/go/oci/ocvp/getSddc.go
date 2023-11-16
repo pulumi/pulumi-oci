@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Sddc resource in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
@@ -62,17 +61,17 @@ type LookupSddcResult struct {
 	// (**Deprecated**) The number of actual ESXi hosts in the SDDC on the cloud. This attribute will be different when esxi Host is added to an existing SDDC.
 	//
 	// Deprecated: The 'actual_esxi_hosts_count' field has been deprecated. Please use 'initial_configuration' instead.
-	ActualEsxiHostsCount int `pulumi:"actualEsxiHostsCount"`
+	ActualEsxiHostsCount *int `pulumi:"actualEsxiHostsCount"`
 	// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
 	//
 	// Deprecated: The 'capacity_reservation_id' field has been deprecated. Please use 'initial_configuration' instead.
-	CapacityReservationId string `pulumi:"capacityReservationId"`
+	CapacityReservationId *string `pulumi:"capacityReservationId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the SDDC.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// (**Deprecated**) The availability domain the ESXi hosts are running in. For Multi-AD SDDC, it is `multi-AD`.  Example: `Uocm:PHX-AD-1`, `multi-AD`
 	//
 	// Deprecated: The 'compute_availability_domain' field has been deprecated. Please use 'initial_configuration' instead.
-	ComputeAvailabilityDomain string `pulumi:"computeAvailabilityDomain"`
+	ComputeAvailabilityDomain *string `pulumi:"computeAvailabilityDomain"`
 	// (**Deprecated**) Datastores used for the Sddc.
 	//
 	// Deprecated: The 'datastores' field has been deprecated. Please use 'initial_configuration' instead.
@@ -80,153 +79,153 @@ type LookupSddcResult struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A descriptive name for the SDDC. It must be unique, start with a letter, and contain only letters, digits, whitespaces, dashes and underscores. Avoid entering confidential information.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// (**Deprecated**) The number of ESXi hosts in the SDDC.
 	//
 	// Deprecated: The 'esxi_hosts_count' field has been deprecated. Please use 'initial_configuration' instead.
-	EsxiHostsCount int `pulumi:"esxiHostsCount"`
+	EsxiHostsCount *int `pulumi:"esxiHostsCount"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	HcxAction    string                 `pulumi:"hcxAction"`
+	HcxAction    *string                `pulumi:"hcxAction"`
 	// The FQDN for HCX Manager.  Example: `hcx-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
-	HcxFqdn string `pulumi:"hcxFqdn"`
+	HcxFqdn *string `pulumi:"hcxFqdn"`
 	// (**Deprecated**) The SDDC includes an administrator username and initial password for HCX Manager. Make sure to change this initial HCX Manager password to a different value.
 	//
 	// Deprecated: The 'hcx_initial_password' field has been deprecated. Please use the 'ocvp_sddc_password' data source instead.
-	HcxInitialPassword string `pulumi:"hcxInitialPassword"`
+	HcxInitialPassword *string `pulumi:"hcxInitialPassword"`
 	// (**Deprecated**) The activation keys to use on the on-premises HCX Enterprise appliances you site pair with HCX Manager in your VMware Solution. The number of keys provided depends on the HCX license type. HCX Advanced provides 3 activation keys. HCX Enterprise provides 10 activation keys.
 	//
 	// Deprecated: The 'hcx_on_prem_key' field has been deprecated and may be removed in a future version. Do not use this field.
-	HcxOnPremKey string `pulumi:"hcxOnPremKey"`
+	HcxOnPremKey *string `pulumi:"hcxOnPremKey"`
 	// The activation licenses to use on the on-premises HCX Enterprise appliance you site pair with HCX Manager in your VMware Solution.
 	HcxOnPremLicenses []GetSddcHcxOnPremLicense `pulumi:"hcxOnPremLicenses"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for HCX Manager. For information about `PrivateIp` objects, see the Core Services API.
-	HcxPrivateIpId string `pulumi:"hcxPrivateIpId"`
+	HcxPrivateIpId *string `pulumi:"hcxPrivateIpId"`
 	// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the HCX component of the VMware environment.
 	//
 	// Deprecated: The 'hcx_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
-	HcxVlanId string `pulumi:"hcxVlanId"`
+	HcxVlanId *string `pulumi:"hcxVlanId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// (**Deprecated**) The initial OCPU count of the SDDC's ESXi hosts.
 	//
 	// Deprecated: The 'initial_host_ocpu_count' field has been deprecated. Please use 'initial_configuration' instead.
-	InitialHostOcpuCount float64 `pulumi:"initialHostOcpuCount"`
+	InitialHostOcpuCount *float64 `pulumi:"initialHostOcpuCount"`
 	// (**Deprecated**) The initial compute shape of the SDDC's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
 	//
 	// Deprecated: The 'initial_host_shape_name' field has been deprecated. Please use 'initial_configuration' instead.
-	InitialHostShapeName string `pulumi:"initialHostShapeName"`
+	InitialHostShapeName *string `pulumi:"initialHostShapeName"`
 	// (**Deprecated**) The billing option selected during SDDC creation. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
 	//
 	// Deprecated: The 'initial_sku' field has been deprecated. Please use 'initial_configuration' instead.
-	InitialSku string `pulumi:"initialSku"`
+	InitialSku *string `pulumi:"initialSku"`
 	// (**Deprecated**) A prefix used in the name of each ESXi host and Compute instance in the SDDC. If this isn't set, the SDDC's `displayName` is used as the prefix.
 	//
 	// Deprecated: The 'instance_display_name_prefix' field has been deprecated. Please use 'initial_configuration' instead.
-	InstanceDisplayNamePrefix string `pulumi:"instanceDisplayNamePrefix"`
+	InstanceDisplayNamePrefix *string `pulumi:"instanceDisplayNamePrefix"`
 	// (**Deprecated**) Indicates whether HCX is enabled for this SDDC.
 	//
 	// Deprecated: The 'is_hcx_enabled' field has been deprecated. Please use 'hcx_mode' instead.
-	IsHcxEnabled bool `pulumi:"isHcxEnabled"`
+	IsHcxEnabled *bool `pulumi:"isHcxEnabled"`
 	// (**Deprecated**) Indicates whether HCX Enterprise is enabled for this SDDC.
 	//
 	// Deprecated: The 'is_hcx_enabled' field has been deprecated. Please use 'actual_hcx_mode' instead.
-	IsHcxEnterpriseEnabled bool `pulumi:"isHcxEnterpriseEnabled"`
+	IsHcxEnterpriseEnabled *bool `pulumi:"isHcxEnterpriseEnabled"`
 	// Indicates whether SDDC is pending downgrade from HCX Enterprise to HCX Advanced.
-	IsHcxPendingDowngrade bool `pulumi:"isHcxPendingDowngrade"`
+	IsHcxPendingDowngrade *bool `pulumi:"isHcxPendingDowngrade"`
 	// (**Deprecated**) Indicates whether shielded instance is enabled at the SDDC level.
 	//
 	// Deprecated: The 'is_shielded_instance_enabled' field has been deprecated. Please use 'initial_configuration' instead.
-	IsShieldedInstanceEnabled bool `pulumi:"isShieldedInstanceEnabled"`
+	IsShieldedInstanceEnabled *bool `pulumi:"isShieldedInstanceEnabled"`
 	// Indicates whether this SDDC is designated for only single ESXi host.
-	IsSingleHostSddc bool `pulumi:"isSingleHostSddc"`
+	IsSingleHostSddc *bool `pulumi:"isSingleHostSddc"`
 	// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX Edge Uplink 1 component of the VMware environment.
 	//
 	// Deprecated: The 'nsx_edge_uplink1vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
-	NsxEdgeUplink1vlanId string `pulumi:"nsxEdgeUplink1vlanId"`
+	NsxEdgeUplink1vlanId *string `pulumi:"nsxEdgeUplink1vlanId"`
 	// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX Edge Uplink 2 component of the VMware environment.
 	//
 	// Deprecated: The 'nsx_edge_uplink2vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
-	NsxEdgeUplink2vlanId string `pulumi:"nsxEdgeUplink2vlanId"`
+	NsxEdgeUplink2vlanId *string `pulumi:"nsxEdgeUplink2vlanId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for the NSX Edge Uplink. Use this OCID as the route target for route table rules when setting up connectivity between the SDDC and other networks. For information about `PrivateIp` objects, see the Core Services API.
-	NsxEdgeUplinkIpId string `pulumi:"nsxEdgeUplinkIpId"`
+	NsxEdgeUplinkIpId *string `pulumi:"nsxEdgeUplinkIpId"`
 	// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX Edge VTEP component of the VMware environment.
 	//
 	// Deprecated: The 'nsx_edge_vtep_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
-	NsxEdgeVtepVlanId string `pulumi:"nsxEdgeVtepVlanId"`
+	NsxEdgeVtepVlanId *string `pulumi:"nsxEdgeVtepVlanId"`
 	// The FQDN for NSX Manager.  Example: `nsx-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
-	NsxManagerFqdn string `pulumi:"nsxManagerFqdn"`
+	NsxManagerFqdn *string `pulumi:"nsxManagerFqdn"`
 	// (**Deprecated**) The SDDC includes an administrator username and initial password for NSX Manager. Make sure to change this initial NSX Manager password to a different value.
 	//
 	// Deprecated: The 'nsx_manager_initial_password' field has been deprecated. Please use the 'ocvp_sddc_password' data source instead.
-	NsxManagerInitialPassword string `pulumi:"nsxManagerInitialPassword"`
+	NsxManagerInitialPassword *string `pulumi:"nsxManagerInitialPassword"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for NSX Manager. For information about `PrivateIp` objects, see the Core Services API.
-	NsxManagerPrivateIpId string `pulumi:"nsxManagerPrivateIpId"`
+	NsxManagerPrivateIpId *string `pulumi:"nsxManagerPrivateIpId"`
 	// The SDDC includes an administrator username and initial password for NSX Manager. You can change this initial username to a different value in NSX Manager.
-	NsxManagerUsername string `pulumi:"nsxManagerUsername"`
+	NsxManagerUsername *string `pulumi:"nsxManagerUsername"`
 	// (**Deprecated**) The VMware NSX overlay workload segment to host your application. Connect to workload portgroup in vCenter to access this overlay segment.
 	//
 	// Deprecated: The 'nsx_overlay_segment_name' field has been deprecated and may be removed in a future version. Do not use this field.
-	NsxOverlaySegmentName string `pulumi:"nsxOverlaySegmentName"`
+	NsxOverlaySegmentName *string `pulumi:"nsxOverlaySegmentName"`
 	// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX VTEP component of the VMware environment.
 	//
 	// Deprecated: The 'nsx_vtep_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
-	NsxVtepVlanId string `pulumi:"nsxVtepVlanId"`
+	NsxVtepVlanId *string `pulumi:"nsxVtepVlanId"`
 	// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet used to provision the SDDC.
 	//
 	// Deprecated: The 'provisioning_subnet_id' field has been deprecated. Please use 'initial_configuration' instead.
-	ProvisioningSubnetId string `pulumi:"provisioningSubnetId"`
+	ProvisioningSubnetId *string `pulumi:"provisioningSubnetId"`
 	// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the Provisioning component of the VMware environment.
 	//
 	// Deprecated: The 'provisioning_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
-	ProvisioningVlanId      string `pulumi:"provisioningVlanId"`
-	RefreshHcxLicenseStatus bool   `pulumi:"refreshHcxLicenseStatus"`
+	ProvisioningVlanId      *string `pulumi:"provisioningVlanId"`
+	RefreshHcxLicenseStatus *bool   `pulumi:"refreshHcxLicenseStatus"`
 	// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere Replication component of the VMware environment.
 	//
 	// Deprecated: The 'replication_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
-	ReplicationVlanId                string   `pulumi:"replicationVlanId"`
+	ReplicationVlanId                *string  `pulumi:"replicationVlanId"`
 	ReservingHcxOnPremiseLicenseKeys []string `pulumi:"reservingHcxOnPremiseLicenseKeys"`
 	SddcId                           string   `pulumi:"sddcId"`
 	// One or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on each ESXi host. Use a newline character to separate multiple keys. The SSH keys must be in the format required for the `authorizedKeys` file.
-	SshAuthorizedKeys string `pulumi:"sshAuthorizedKeys"`
+	SshAuthorizedKeys *string `pulumi:"sshAuthorizedKeys"`
 	// The current state of the SDDC.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the SDDC was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time current HCX Enterprise billing cycle ends, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeHcxBillingCycleEnd string `pulumi:"timeHcxBillingCycleEnd"`
+	TimeHcxBillingCycleEnd *string `pulumi:"timeHcxBillingCycleEnd"`
 	// The date and time the SDDC's HCX on-premise license status was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeHcxLicenseStatusUpdated string `pulumi:"timeHcxLicenseStatusUpdated"`
+	TimeHcxLicenseStatusUpdated *string `pulumi:"timeHcxLicenseStatusUpdated"`
 	// The date and time the SDDC was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// (**Deprecated**) The vSphere licenses to use when upgrading the SDDC.
 	//
 	// Deprecated: The 'upgrade_licenses' field has been deprecated. Please use the 'ocvp_cluster_resource' resource instead.
 	UpgradeLicenses []GetSddcUpgradeLicense `pulumi:"upgradeLicenses"`
 	// The FQDN for vCenter.  Example: `vcenter-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
-	VcenterFqdn string `pulumi:"vcenterFqdn"`
+	VcenterFqdn *string `pulumi:"vcenterFqdn"`
 	// (**Deprecated**) The SDDC includes an administrator username and initial password for vCenter. Make sure to change this initial vCenter password to a different value.
 	//
 	// Deprecated: The 'vcenter_initial_password' field has been deprecated. Please use the 'ocvp_sddc_password' data source instead.
-	VcenterInitialPassword string `pulumi:"vcenterInitialPassword"`
+	VcenterInitialPassword *string `pulumi:"vcenterInitialPassword"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for vCenter. For information about `PrivateIp` objects, see the Core Services API.
-	VcenterPrivateIpId string `pulumi:"vcenterPrivateIpId"`
+	VcenterPrivateIpId *string `pulumi:"vcenterPrivateIpId"`
 	// The SDDC includes an administrator username and initial password for vCenter. You can change this initial username to a different value in vCenter.
-	VcenterUsername string `pulumi:"vcenterUsername"`
+	VcenterUsername *string `pulumi:"vcenterUsername"`
 	// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vMotion component of the VMware environment.
 	//
 	// Deprecated: The 'vmotion_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
-	VmotionVlanId string `pulumi:"vmotionVlanId"`
+	VmotionVlanId *string `pulumi:"vmotionVlanId"`
 	// In general, this is a specific version of bundled VMware software supported by Oracle Cloud VMware Solution (see [ListSupportedVmwareSoftwareVersions](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedVmwareSoftwareVersionSummary/ListSupportedVmwareSoftwareVersions)).
-	VmwareSoftwareVersion string `pulumi:"vmwareSoftwareVersion"`
+	VmwareSoftwareVersion *string `pulumi:"vmwareSoftwareVersion"`
 	// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSAN component of the VMware environment.
 	//
 	// Deprecated: The 'vsan_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
-	VsanVlanId string `pulumi:"vsanVlanId"`
+	VsanVlanId *string `pulumi:"vsanVlanId"`
 	// (**Deprecated**) The link to guidance for upgrading vSphere.
 	//
 	// Deprecated: The 'vsphere_upgrade_guide' field has been deprecated and may be removed in a future version. Do not use this field.
-	VsphereUpgradeGuide string `pulumi:"vsphereUpgradeGuide"`
+	VsphereUpgradeGuide *string `pulumi:"vsphereUpgradeGuide"`
 	// (**Deprecated**) The links to binary objects needed to upgrade vSphere.
 	//
 	// Deprecated: The 'upgrade_licenses' field has been deprecated. Please use the 'ocvp_cluster_resource' resource instead.
@@ -234,11 +233,11 @@ type LookupSddcResult struct {
 	// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere component of the VMware environment.
 	//
 	// Deprecated: The 'vsphere_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
-	VsphereVlanId string `pulumi:"vsphereVlanId"`
+	VsphereVlanId *string `pulumi:"vsphereVlanId"`
 	// (**Deprecated**) The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads.
 	//
 	// Deprecated: The 'workload_network_cidr' field has been deprecated. Please use 'initial_configuration' instead.
-	WorkloadNetworkCidr string `pulumi:"workloadNetworkCidr"`
+	WorkloadNetworkCidr *string `pulumi:"workloadNetworkCidr"`
 }
 
 func LookupSddcOutput(ctx *pulumi.Context, args LookupSddcOutputArgs, opts ...pulumi.InvokeOption) LookupSddcResultOutput {
@@ -279,36 +278,30 @@ func (o LookupSddcResultOutput) ToLookupSddcResultOutputWithContext(ctx context.
 	return o
 }
 
-func (o LookupSddcResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupSddcResult] {
-	return pulumix.Output[LookupSddcResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (**Deprecated**) The number of actual ESXi hosts in the SDDC on the cloud. This attribute will be different when esxi Host is added to an existing SDDC.
 //
 // Deprecated: The 'actual_esxi_hosts_count' field has been deprecated. Please use 'initial_configuration' instead.
-func (o LookupSddcResultOutput) ActualEsxiHostsCount() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupSddcResult) int { return v.ActualEsxiHostsCount }).(pulumi.IntOutput)
+func (o LookupSddcResultOutput) ActualEsxiHostsCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupSddcResult) *int { return v.ActualEsxiHostsCount }).(pulumi.IntPtrOutput)
 }
 
 // (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
 //
 // Deprecated: The 'capacity_reservation_id' field has been deprecated. Please use 'initial_configuration' instead.
-func (o LookupSddcResultOutput) CapacityReservationId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSddcResult) string { return v.CapacityReservationId }).(pulumi.StringOutput)
+func (o LookupSddcResultOutput) CapacityReservationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSddcResult) *string { return v.CapacityReservationId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the SDDC.
-func (o LookupSddcResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSddcResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupSddcResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSddcResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // (**Deprecated**) The availability domain the ESXi hosts are running in. For Multi-AD SDDC, it is `multi-AD`.  Example: `Uocm:PHX-AD-1`, `multi-AD`
 //
 // Deprecated: The 'compute_availability_domain' field has been deprecated. Please use 'initial_configuration' instead.
-func (o LookupSddcResultOutput) ComputeAvailabilityDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSddcResult) string { return v.ComputeAvailabilityDomain }).(pulumi.StringOutput)
+func (o LookupSddcResultOutput) ComputeAvailabilityDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSddcResult) *string { return v.ComputeAvailabilityDomain }).(pulumi.StringPtrOutput)
 }
 
 // (**Deprecated**) Datastores used for the Sddc.
@@ -324,15 +317,15 @@ func (o LookupSddcResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // A descriptive name for the SDDC. It must be unique, start with a letter, and contain only letters, digits, whitespaces, dashes and underscores. Avoid entering confidential information.
-func (o LookupSddcResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSddcResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupSddcResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSddcResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (**Deprecated**) The number of ESXi hosts in the SDDC.
 //
 // Deprecated: The 'esxi_hosts_count' field has been deprecated. Please use 'initial_configuration' instead.
-func (o LookupSddcResultOutput) EsxiHostsCount() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupSddcResult) int { return v.EsxiHostsCount }).(pulumi.IntOutput)
+func (o LookupSddcResultOutput) EsxiHostsCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupSddcResult) *int { return v.EsxiHostsCount }).(pulumi.IntPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -340,27 +333,27 @@ func (o LookupSddcResultOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupSddcResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-func (o LookupSddcResultOutput) HcxAction() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSddcResult) string { return v.HcxAction }).(pulumi.StringOutput)
+func (o LookupSddcResultOutput) HcxAction() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSddcResult) *string { return v.HcxAction }).(pulumi.StringPtrOutput)
 }
 
 // The FQDN for HCX Manager.  Example: `hcx-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
-func (o LookupSddcResultOutput) HcxFqdn() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSddcResult) string { return v.HcxFqdn }).(pulumi.StringOutput)
+func (o LookupSddcResultOutput) HcxFqdn() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSddcResult) *string { return v.HcxFqdn }).(pulumi.StringPtrOutput)
 }
 
 // (**Deprecated**) The SDDC includes an administrator username and initial password for HCX Manager. Make sure to change this initial HCX Manager password to a different value.
 //
 // Deprecated: The 'hcx_initial_password' field has been deprecated. Please use the 'ocvp_sddc_password' data source instead.
-func (o LookupSddcResultOutput) HcxInitialPassword() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSddcResult) string { return v.HcxInitialPassword }).(pulumi.StringOutput)
+func (o LookupSddcResultOutput) HcxInitialPassword() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSddcResult) *string { return v.HcxInitialPassword }).(pulumi.StringPtrOutput)
 }
 
 // (**Deprecated**) The activation keys to use on the on-premises HCX Enterprise appliances you site pair with HCX Manager in your VMware Solution. The number of keys provided depends on the HCX license type. HCX Advanced provides 3 activation keys. HCX Enterprise provides 10 activation keys.
 //
 // Deprecated: The 'hcx_on_prem_key' field has been deprecated and may be removed in a future version. Do not use this field.
-func (o LookupSddcResultOutput) HcxOnPremKey() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSddcResult) string { return v.HcxOnPremKey }).(pulumi.StringOutput)
+func (o LookupSddcResultOutput) HcxOnPremKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSddcResult) *string { return v.HcxOnPremKey }).(pulumi.StringPtrOutput)
 }
 
 // The activation licenses to use on the on-premises HCX Enterprise appliance you site pair with HCX Manager in your VMware Solution.
@@ -369,166 +362,166 @@ func (o LookupSddcResultOutput) HcxOnPremLicenses() GetSddcHcxOnPremLicenseArray
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for HCX Manager. For information about `PrivateIp` objects, see the Core Services API.
-func (o LookupSddcResultOutput) HcxPrivateIpId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSddcResult) string { return v.HcxPrivateIpId }).(pulumi.StringOutput)
+func (o LookupSddcResultOutput) HcxPrivateIpId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSddcResult) *string { return v.HcxPrivateIpId }).(pulumi.StringPtrOutput)
 }
 
 // (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the HCX component of the VMware environment.
 //
 // Deprecated: The 'hcx_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
-func (o LookupSddcResultOutput) HcxVlanId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSddcResult) string { return v.HcxVlanId }).(pulumi.StringOutput)
+func (o LookupSddcResultOutput) HcxVlanId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSddcResult) *string { return v.HcxVlanId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC.
-func (o LookupSddcResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSddcResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupSddcResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSddcResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // (**Deprecated**) The initial OCPU count of the SDDC's ESXi hosts.
 //
 // Deprecated: The 'initial_host_ocpu_count' field has been deprecated. Please use 'initial_configuration' instead.
-func (o LookupSddcResultOutput) InitialHostOcpuCount() pulumi.Float64Output {
-	return o.ApplyT(func(v LookupSddcResult) float64 { return v.InitialHostOcpuCount }).(pulumi.Float64Output)
+func (o LookupSddcResultOutput) InitialHostOcpuCount() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v LookupSddcResult) *float64 { return v.InitialHostOcpuCount }).(pulumi.Float64PtrOutput)
 }
 
 // (**Deprecated**) The initial compute shape of the SDDC's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
 //
 // Deprecated: The 'initial_host_shape_name' field has been deprecated. Please use 'initial_configuration' instead.
-func (o LookupSddcResultOutput) InitialHostShapeName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSddcResult) string { return v.InitialHostShapeName }).(pulumi.StringOutput)
+func (o LookupSddcResultOutput) InitialHostShapeName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSddcResult) *string { return v.InitialHostShapeName }).(pulumi.StringPtrOutput)
 }
 
 // (**Deprecated**) The billing option selected during SDDC creation. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
 //
 // Deprecated: The 'initial_sku' field has been deprecated. Please use 'initial_configuration' instead.
-func (o LookupSddcResultOutput) InitialSku() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSddcResult) string { return v.InitialSku }).(pulumi.StringOutput)
+func (o LookupSddcResultOutput) InitialSku() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSddcResult) *string { return v.InitialSku }).(pulumi.StringPtrOutput)
 }
 
 // (**Deprecated**) A prefix used in the name of each ESXi host and Compute instance in the SDDC. If this isn't set, the SDDC's `displayName` is used as the prefix.
 //
 // Deprecated: The 'instance_display_name_prefix' field has been deprecated. Please use 'initial_configuration' instead.
-func (o LookupSddcResultOutput) InstanceDisplayNamePrefix() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSddcResult) string { return v.InstanceDisplayNamePrefix }).(pulumi.StringOutput)
+func (o LookupSddcResultOutput) InstanceDisplayNamePrefix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSddcResult) *string { return v.InstanceDisplayNamePrefix }).(pulumi.StringPtrOutput)
 }
 
 // (**Deprecated**) Indicates whether HCX is enabled for this SDDC.
 //
 // Deprecated: The 'is_hcx_enabled' field has been deprecated. Please use 'hcx_mode' instead.
-func (o LookupSddcResultOutput) IsHcxEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupSddcResult) bool { return v.IsHcxEnabled }).(pulumi.BoolOutput)
+func (o LookupSddcResultOutput) IsHcxEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupSddcResult) *bool { return v.IsHcxEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // (**Deprecated**) Indicates whether HCX Enterprise is enabled for this SDDC.
 //
 // Deprecated: The 'is_hcx_enabled' field has been deprecated. Please use 'actual_hcx_mode' instead.
-func (o LookupSddcResultOutput) IsHcxEnterpriseEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupSddcResult) bool { return v.IsHcxEnterpriseEnabled }).(pulumi.BoolOutput)
+func (o LookupSddcResultOutput) IsHcxEnterpriseEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupSddcResult) *bool { return v.IsHcxEnterpriseEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // Indicates whether SDDC is pending downgrade from HCX Enterprise to HCX Advanced.
-func (o LookupSddcResultOutput) IsHcxPendingDowngrade() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupSddcResult) bool { return v.IsHcxPendingDowngrade }).(pulumi.BoolOutput)
+func (o LookupSddcResultOutput) IsHcxPendingDowngrade() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupSddcResult) *bool { return v.IsHcxPendingDowngrade }).(pulumi.BoolPtrOutput)
 }
 
 // (**Deprecated**) Indicates whether shielded instance is enabled at the SDDC level.
 //
 // Deprecated: The 'is_shielded_instance_enabled' field has been deprecated. Please use 'initial_configuration' instead.
-func (o LookupSddcResultOutput) IsShieldedInstanceEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupSddcResult) bool { return v.IsShieldedInstanceEnabled }).(pulumi.BoolOutput)
+func (o LookupSddcResultOutput) IsShieldedInstanceEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupSddcResult) *bool { return v.IsShieldedInstanceEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // Indicates whether this SDDC is designated for only single ESXi host.
-func (o LookupSddcResultOutput) IsSingleHostSddc() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupSddcResult) bool { return v.IsSingleHostSddc }).(pulumi.BoolOutput)
+func (o LookupSddcResultOutput) IsSingleHostSddc() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupSddcResult) *bool { return v.IsSingleHostSddc }).(pulumi.BoolPtrOutput)
 }
 
 // (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX Edge Uplink 1 component of the VMware environment.
 //
 // Deprecated: The 'nsx_edge_uplink1vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
-func (o LookupSddcResultOutput) NsxEdgeUplink1vlanId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSddcResult) string { return v.NsxEdgeUplink1vlanId }).(pulumi.StringOutput)
+func (o LookupSddcResultOutput) NsxEdgeUplink1vlanId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSddcResult) *string { return v.NsxEdgeUplink1vlanId }).(pulumi.StringPtrOutput)
 }
 
 // (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX Edge Uplink 2 component of the VMware environment.
 //
 // Deprecated: The 'nsx_edge_uplink2vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
-func (o LookupSddcResultOutput) NsxEdgeUplink2vlanId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSddcResult) string { return v.NsxEdgeUplink2vlanId }).(pulumi.StringOutput)
+func (o LookupSddcResultOutput) NsxEdgeUplink2vlanId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSddcResult) *string { return v.NsxEdgeUplink2vlanId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for the NSX Edge Uplink. Use this OCID as the route target for route table rules when setting up connectivity between the SDDC and other networks. For information about `PrivateIp` objects, see the Core Services API.
-func (o LookupSddcResultOutput) NsxEdgeUplinkIpId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSddcResult) string { return v.NsxEdgeUplinkIpId }).(pulumi.StringOutput)
+func (o LookupSddcResultOutput) NsxEdgeUplinkIpId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSddcResult) *string { return v.NsxEdgeUplinkIpId }).(pulumi.StringPtrOutput)
 }
 
 // (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX Edge VTEP component of the VMware environment.
 //
 // Deprecated: The 'nsx_edge_vtep_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
-func (o LookupSddcResultOutput) NsxEdgeVtepVlanId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSddcResult) string { return v.NsxEdgeVtepVlanId }).(pulumi.StringOutput)
+func (o LookupSddcResultOutput) NsxEdgeVtepVlanId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSddcResult) *string { return v.NsxEdgeVtepVlanId }).(pulumi.StringPtrOutput)
 }
 
 // The FQDN for NSX Manager.  Example: `nsx-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
-func (o LookupSddcResultOutput) NsxManagerFqdn() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSddcResult) string { return v.NsxManagerFqdn }).(pulumi.StringOutput)
+func (o LookupSddcResultOutput) NsxManagerFqdn() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSddcResult) *string { return v.NsxManagerFqdn }).(pulumi.StringPtrOutput)
 }
 
 // (**Deprecated**) The SDDC includes an administrator username and initial password for NSX Manager. Make sure to change this initial NSX Manager password to a different value.
 //
 // Deprecated: The 'nsx_manager_initial_password' field has been deprecated. Please use the 'ocvp_sddc_password' data source instead.
-func (o LookupSddcResultOutput) NsxManagerInitialPassword() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSddcResult) string { return v.NsxManagerInitialPassword }).(pulumi.StringOutput)
+func (o LookupSddcResultOutput) NsxManagerInitialPassword() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSddcResult) *string { return v.NsxManagerInitialPassword }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for NSX Manager. For information about `PrivateIp` objects, see the Core Services API.
-func (o LookupSddcResultOutput) NsxManagerPrivateIpId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSddcResult) string { return v.NsxManagerPrivateIpId }).(pulumi.StringOutput)
+func (o LookupSddcResultOutput) NsxManagerPrivateIpId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSddcResult) *string { return v.NsxManagerPrivateIpId }).(pulumi.StringPtrOutput)
 }
 
 // The SDDC includes an administrator username and initial password for NSX Manager. You can change this initial username to a different value in NSX Manager.
-func (o LookupSddcResultOutput) NsxManagerUsername() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSddcResult) string { return v.NsxManagerUsername }).(pulumi.StringOutput)
+func (o LookupSddcResultOutput) NsxManagerUsername() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSddcResult) *string { return v.NsxManagerUsername }).(pulumi.StringPtrOutput)
 }
 
 // (**Deprecated**) The VMware NSX overlay workload segment to host your application. Connect to workload portgroup in vCenter to access this overlay segment.
 //
 // Deprecated: The 'nsx_overlay_segment_name' field has been deprecated and may be removed in a future version. Do not use this field.
-func (o LookupSddcResultOutput) NsxOverlaySegmentName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSddcResult) string { return v.NsxOverlaySegmentName }).(pulumi.StringOutput)
+func (o LookupSddcResultOutput) NsxOverlaySegmentName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSddcResult) *string { return v.NsxOverlaySegmentName }).(pulumi.StringPtrOutput)
 }
 
 // (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX VTEP component of the VMware environment.
 //
 // Deprecated: The 'nsx_vtep_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
-func (o LookupSddcResultOutput) NsxVtepVlanId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSddcResult) string { return v.NsxVtepVlanId }).(pulumi.StringOutput)
+func (o LookupSddcResultOutput) NsxVtepVlanId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSddcResult) *string { return v.NsxVtepVlanId }).(pulumi.StringPtrOutput)
 }
 
 // (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet used to provision the SDDC.
 //
 // Deprecated: The 'provisioning_subnet_id' field has been deprecated. Please use 'initial_configuration' instead.
-func (o LookupSddcResultOutput) ProvisioningSubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSddcResult) string { return v.ProvisioningSubnetId }).(pulumi.StringOutput)
+func (o LookupSddcResultOutput) ProvisioningSubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSddcResult) *string { return v.ProvisioningSubnetId }).(pulumi.StringPtrOutput)
 }
 
 // (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the Provisioning component of the VMware environment.
 //
 // Deprecated: The 'provisioning_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
-func (o LookupSddcResultOutput) ProvisioningVlanId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSddcResult) string { return v.ProvisioningVlanId }).(pulumi.StringOutput)
+func (o LookupSddcResultOutput) ProvisioningVlanId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSddcResult) *string { return v.ProvisioningVlanId }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupSddcResultOutput) RefreshHcxLicenseStatus() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupSddcResult) bool { return v.RefreshHcxLicenseStatus }).(pulumi.BoolOutput)
+func (o LookupSddcResultOutput) RefreshHcxLicenseStatus() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupSddcResult) *bool { return v.RefreshHcxLicenseStatus }).(pulumi.BoolPtrOutput)
 }
 
 // (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere Replication component of the VMware environment.
 //
 // Deprecated: The 'replication_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
-func (o LookupSddcResultOutput) ReplicationVlanId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSddcResult) string { return v.ReplicationVlanId }).(pulumi.StringOutput)
+func (o LookupSddcResultOutput) ReplicationVlanId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSddcResult) *string { return v.ReplicationVlanId }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupSddcResultOutput) ReservingHcxOnPremiseLicenseKeys() pulumi.StringArrayOutput {
@@ -540,33 +533,33 @@ func (o LookupSddcResultOutput) SddcId() pulumi.StringOutput {
 }
 
 // One or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on each ESXi host. Use a newline character to separate multiple keys. The SSH keys must be in the format required for the `authorizedKeys` file.
-func (o LookupSddcResultOutput) SshAuthorizedKeys() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSddcResult) string { return v.SshAuthorizedKeys }).(pulumi.StringOutput)
+func (o LookupSddcResultOutput) SshAuthorizedKeys() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSddcResult) *string { return v.SshAuthorizedKeys }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the SDDC.
-func (o LookupSddcResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSddcResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupSddcResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSddcResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the SDDC was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-func (o LookupSddcResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSddcResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupSddcResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSddcResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time current HCX Enterprise billing cycle ends, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-func (o LookupSddcResultOutput) TimeHcxBillingCycleEnd() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSddcResult) string { return v.TimeHcxBillingCycleEnd }).(pulumi.StringOutput)
+func (o LookupSddcResultOutput) TimeHcxBillingCycleEnd() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSddcResult) *string { return v.TimeHcxBillingCycleEnd }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the SDDC's HCX on-premise license status was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-func (o LookupSddcResultOutput) TimeHcxLicenseStatusUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSddcResult) string { return v.TimeHcxLicenseStatusUpdated }).(pulumi.StringOutput)
+func (o LookupSddcResultOutput) TimeHcxLicenseStatusUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSddcResult) *string { return v.TimeHcxLicenseStatusUpdated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the SDDC was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-func (o LookupSddcResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSddcResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupSddcResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSddcResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // (**Deprecated**) The vSphere licenses to use when upgrading the SDDC.
@@ -577,51 +570,51 @@ func (o LookupSddcResultOutput) UpgradeLicenses() GetSddcUpgradeLicenseArrayOutp
 }
 
 // The FQDN for vCenter.  Example: `vcenter-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
-func (o LookupSddcResultOutput) VcenterFqdn() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSddcResult) string { return v.VcenterFqdn }).(pulumi.StringOutput)
+func (o LookupSddcResultOutput) VcenterFqdn() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSddcResult) *string { return v.VcenterFqdn }).(pulumi.StringPtrOutput)
 }
 
 // (**Deprecated**) The SDDC includes an administrator username and initial password for vCenter. Make sure to change this initial vCenter password to a different value.
 //
 // Deprecated: The 'vcenter_initial_password' field has been deprecated. Please use the 'ocvp_sddc_password' data source instead.
-func (o LookupSddcResultOutput) VcenterInitialPassword() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSddcResult) string { return v.VcenterInitialPassword }).(pulumi.StringOutput)
+func (o LookupSddcResultOutput) VcenterInitialPassword() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSddcResult) *string { return v.VcenterInitialPassword }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for vCenter. For information about `PrivateIp` objects, see the Core Services API.
-func (o LookupSddcResultOutput) VcenterPrivateIpId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSddcResult) string { return v.VcenterPrivateIpId }).(pulumi.StringOutput)
+func (o LookupSddcResultOutput) VcenterPrivateIpId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSddcResult) *string { return v.VcenterPrivateIpId }).(pulumi.StringPtrOutput)
 }
 
 // The SDDC includes an administrator username and initial password for vCenter. You can change this initial username to a different value in vCenter.
-func (o LookupSddcResultOutput) VcenterUsername() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSddcResult) string { return v.VcenterUsername }).(pulumi.StringOutput)
+func (o LookupSddcResultOutput) VcenterUsername() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSddcResult) *string { return v.VcenterUsername }).(pulumi.StringPtrOutput)
 }
 
 // (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vMotion component of the VMware environment.
 //
 // Deprecated: The 'vmotion_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
-func (o LookupSddcResultOutput) VmotionVlanId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSddcResult) string { return v.VmotionVlanId }).(pulumi.StringOutput)
+func (o LookupSddcResultOutput) VmotionVlanId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSddcResult) *string { return v.VmotionVlanId }).(pulumi.StringPtrOutput)
 }
 
 // In general, this is a specific version of bundled VMware software supported by Oracle Cloud VMware Solution (see [ListSupportedVmwareSoftwareVersions](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedVmwareSoftwareVersionSummary/ListSupportedVmwareSoftwareVersions)).
-func (o LookupSddcResultOutput) VmwareSoftwareVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSddcResult) string { return v.VmwareSoftwareVersion }).(pulumi.StringOutput)
+func (o LookupSddcResultOutput) VmwareSoftwareVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSddcResult) *string { return v.VmwareSoftwareVersion }).(pulumi.StringPtrOutput)
 }
 
 // (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSAN component of the VMware environment.
 //
 // Deprecated: The 'vsan_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
-func (o LookupSddcResultOutput) VsanVlanId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSddcResult) string { return v.VsanVlanId }).(pulumi.StringOutput)
+func (o LookupSddcResultOutput) VsanVlanId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSddcResult) *string { return v.VsanVlanId }).(pulumi.StringPtrOutput)
 }
 
 // (**Deprecated**) The link to guidance for upgrading vSphere.
 //
 // Deprecated: The 'vsphere_upgrade_guide' field has been deprecated and may be removed in a future version. Do not use this field.
-func (o LookupSddcResultOutput) VsphereUpgradeGuide() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSddcResult) string { return v.VsphereUpgradeGuide }).(pulumi.StringOutput)
+func (o LookupSddcResultOutput) VsphereUpgradeGuide() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSddcResult) *string { return v.VsphereUpgradeGuide }).(pulumi.StringPtrOutput)
 }
 
 // (**Deprecated**) The links to binary objects needed to upgrade vSphere.
@@ -634,15 +627,15 @@ func (o LookupSddcResultOutput) VsphereUpgradeObjects() GetSddcVsphereUpgradeObj
 // (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere component of the VMware environment.
 //
 // Deprecated: The 'vsphere_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
-func (o LookupSddcResultOutput) VsphereVlanId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSddcResult) string { return v.VsphereVlanId }).(pulumi.StringOutput)
+func (o LookupSddcResultOutput) VsphereVlanId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSddcResult) *string { return v.VsphereVlanId }).(pulumi.StringPtrOutput)
 }
 
 // (**Deprecated**) The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads.
 //
 // Deprecated: The 'workload_network_cidr' field has been deprecated. Please use 'initial_configuration' instead.
-func (o LookupSddcResultOutput) WorkloadNetworkCidr() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSddcResult) string { return v.WorkloadNetworkCidr }).(pulumi.StringOutput)
+func (o LookupSddcResultOutput) WorkloadNetworkCidr() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSddcResult) *string { return v.WorkloadNetworkCidr }).(pulumi.StringPtrOutput)
 }
 
 func init() {

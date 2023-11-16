@@ -52,24 +52,24 @@ export interface GetLicenseMetricResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly isCompartmentIdInSubtree?: boolean;
     /**
      * Total number of license records that will expire within 90 days in a particular compartment.
      */
-    readonly licenseRecordExpiringSoonCount: number;
+    readonly licenseRecordExpiringSoonCount?: number;
     /**
      * Total number of BYOL instances in a particular compartment.
      */
-    readonly totalByolInstanceCount: number;
+    readonly totalByolInstanceCount?: number;
     /**
      * Total number of License Included (LI) instances in a particular compartment.
      */
-    readonly totalLicenseIncludedInstanceCount: number;
+    readonly totalLicenseIncludedInstanceCount?: number;
     /**
      * Total number of product licenses in a particular compartment.
      */
-    readonly totalProductLicenseCount: number;
+    readonly totalProductLicenseCount?: number;
 }
 /**
  * This data source provides details about a specific License Metric resource in Oracle Cloud Infrastructure License Manager service.

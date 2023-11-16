@@ -83,25 +83,25 @@ namespace Pulumi.Oci.ObjectStorage
         /// The approximate number of objects in the bucket. Count statistics are reported periodically. You will see a lag between what is displayed and the actual object count.
         /// </summary>
         [Output("approximateCount")]
-        public Output<string> ApproximateCount { get; private set; } = null!;
+        public Output<string?> ApproximateCount { get; private set; } = null!;
 
         /// <summary>
         /// The approximate total size in bytes of all objects in the bucket. Size statistics are reported periodically. You will see a lag between what is displayed and the actual size of the bucket.
         /// </summary>
         [Output("approximateSize")]
-        public Output<string> ApproximateSize { get; private set; } = null!;
+        public Output<string?> ApproximateSize { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Set the auto tiering status on the bucket. By default, a bucket is created with auto tiering `Disabled`. Use this option to enable auto tiering during bucket creation. Objects in a bucket with auto tiering set to `InfrequentAccess` are transitioned automatically between the 'Standard' and 'InfrequentAccess' tiers based on the access pattern of the objects.
         /// </summary>
         [Output("autoTiering")]
-        public Output<string> AutoTiering { get; private set; } = null!;
+        public Output<string?> AutoTiering { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the bucket which is a Oracle assigned unique identifier for this resource type (bucket). `bucket_id` cannot be used for bucket lookup.
         /// </summary>
         [Output("bucketId")]
-        public Output<string> BucketId { get; private set; } = null!;
+        public Output<string?> BucketId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The ID of the compartment in which to create the bucket.
@@ -113,37 +113,37 @@ namespace Pulumi.Oci.ObjectStorage
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the bucket.
         /// </summary>
         [Output("createdBy")]
-        public Output<string> CreatedBy { get; private set; } = null!;
+        public Output<string?> CreatedBy { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// The entity tag (ETag) for the bucket.
         /// </summary>
         [Output("etag")]
-        public Output<string> Etag { get; private set; } = null!;
+        public Output<string?> Etag { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// Whether or not this bucket is read only. By default, `isReadOnly` is set to `false`. This will be set to 'true' when this bucket is configured as a destination in a replication policy.
         /// </summary>
         [Output("isReadOnly")]
-        public Output<bool> IsReadOnly { get; private set; } = null!;
+        public Output<bool?> IsReadOnly { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
         /// </summary>
         [Output("kmsKeyId")]
-        public Output<string> KmsKeyId { get; private set; } = null!;
+        public Output<string?> KmsKeyId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Arbitrary string, up to 4KB, of keys and values for user-defined metadata.
@@ -167,19 +167,19 @@ namespace Pulumi.Oci.ObjectStorage
         /// (Updatable) Whether or not events are emitted for object state changes in this bucket. By default, `objectEventsEnabled` is set to `false`. Set `objectEventsEnabled` to `true` to emit events for object state changes. For more information about events, see [Overview of Events](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/eventsoverview.htm).
         /// </summary>
         [Output("objectEventsEnabled")]
-        public Output<bool> ObjectEventsEnabled { get; private set; } = null!;
+        public Output<bool?> ObjectEventsEnabled { get; private set; } = null!;
 
         /// <summary>
         /// The entity tag (ETag) for the live object lifecycle policy on the bucket.
         /// </summary>
         [Output("objectLifecyclePolicyEtag")]
-        public Output<string> ObjectLifecyclePolicyEtag { get; private set; } = null!;
+        public Output<string?> ObjectLifecyclePolicyEtag { get; private set; } = null!;
 
         /// <summary>
         /// Whether or not this bucket is a replication source. By default, `replicationEnabled` is set to `false`. This will be set to 'true' when you create a replication policy for the bucket.
         /// </summary>
         [Output("replicationEnabled")]
-        public Output<bool> ReplicationEnabled { get; private set; } = null!;
+        public Output<bool?> ReplicationEnabled { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Creates a new retention rule in the specified bucket. The new rule will take effect typically within 30 seconds. Note that a maximum of 100 rules are supported on a bucket.
@@ -191,13 +191,13 @@ namespace Pulumi.Oci.ObjectStorage
         /// The type of storage tier of this bucket. A bucket is set to 'Standard' tier by default, which means the bucket will be put in the standard storage tier. When 'Archive' tier type is set explicitly, the bucket is put in the Archive Storage tier. The 'storageTier' property is immutable after bucket is created.
         /// </summary>
         [Output("storageTier")]
-        public Output<string> StorageTier { get; private set; } = null!;
+        public Output<string?> StorageTier { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the bucket was created, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Set the versioning status on the bucket. By default, a bucket is created with versioning `Disabled`. Use this option to enable versioning during bucket creation. Objects in a version enabled bucket are protected from overwrites and deletions. Previous versions of the same object will be available in the bucket. Allowed Create values: Enabled, Disabled. Allowed Update values: Enabled, Suspended.
@@ -207,7 +207,7 @@ namespace Pulumi.Oci.ObjectStorage
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("versioning")]
-        public Output<string> Versioning { get; private set; } = null!;
+        public Output<string?> Versioning { get; private set; } = null!;
 
 
         /// <summary>

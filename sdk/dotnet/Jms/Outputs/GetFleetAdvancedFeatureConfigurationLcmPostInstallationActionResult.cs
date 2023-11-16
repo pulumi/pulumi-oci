@@ -16,7 +16,7 @@ namespace Pulumi.Oci.Jms.Outputs
         /// <summary>
         /// Sets FileHandler and ConsoleHandler as handlers in logging.properties file.
         /// </summary>
-        public readonly bool AddLoggingHandler;
+        public readonly bool? AddLoggingHandler;
         /// <summary>
         /// The following post JRE installation actions are supported by the field:
         /// * Disable TLS 1.0 , TLS 1.1
@@ -25,7 +25,7 @@ namespace Pulumi.Oci.Jms.Outputs
         /// <summary>
         /// Sets the logging level in logging.properties file.
         /// </summary>
-        public readonly string GlobalLoggingLevel;
+        public readonly string? GlobalLoggingLevel;
         /// <summary>
         /// test
         /// </summary>
@@ -38,21 +38,21 @@ namespace Pulumi.Oci.Jms.Outputs
         /// Restores JDK root certificates with the certificates that are available in the operating system. The following action is supported by the field:
         /// * Replace JDK root certificates with a list provided by the operating system.
         /// </summary>
-        public readonly bool ShouldReplaceCertificatesOperatingSystem;
+        public readonly bool? ShouldReplaceCertificatesOperatingSystem;
 
         [OutputConstructor]
         private GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionResult(
-            bool addLoggingHandler,
+            bool? addLoggingHandler,
 
             ImmutableArray<string> disabledTlsVersions,
 
-            string globalLoggingLevel,
+            string? globalLoggingLevel,
 
             ImmutableArray<Outputs.GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingResult> minimumKeySizeSettings,
 
             ImmutableArray<Outputs.GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyResult> proxies,
 
-            bool shouldReplaceCertificatesOperatingSystem)
+            bool? shouldReplaceCertificatesOperatingSystem)
         {
             AddLoggingHandler = addLoggingHandler;
             DisabledTlsVersions = disabledTlsVersions;

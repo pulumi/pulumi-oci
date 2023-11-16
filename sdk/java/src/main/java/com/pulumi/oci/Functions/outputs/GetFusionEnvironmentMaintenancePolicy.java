@@ -8,6 +8,8 @@ import com.pulumi.oci.Functions.outputs.GetFusionEnvironmentMaintenancePolicyQua
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetFusionEnvironmentMaintenancePolicy {
@@ -15,39 +17,39 @@ public final class GetFusionEnvironmentMaintenancePolicy {
      * @return User choice to upgrade both production and non-production environments at the same time. Overrides the Fusion environment family setting.
      * 
      */
-    private String environmentMaintenanceOverride;
+    private @Nullable String environmentMaintenanceOverride;
     /**
      * @return Whether the Fusion environment will be updated monthly or updated on the quarterly cycle. This setting overrides the monthly patching setting of its Fusion environment family.
      * 
      */
-    private String monthlyPatchingOverride;
+    private @Nullable String monthlyPatchingOverride;
     /**
      * @return Determines the quarterly upgrade begin times (monthly maintenance group schedule ) of the Fusion environment.
      * 
      */
-    private List<GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTime> quarterlyUpgradeBeginTimes;
+    private @Nullable List<GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTime> quarterlyUpgradeBeginTimes;
 
     private GetFusionEnvironmentMaintenancePolicy() {}
     /**
      * @return User choice to upgrade both production and non-production environments at the same time. Overrides the Fusion environment family setting.
      * 
      */
-    public String environmentMaintenanceOverride() {
-        return this.environmentMaintenanceOverride;
+    public Optional<String> environmentMaintenanceOverride() {
+        return Optional.ofNullable(this.environmentMaintenanceOverride);
     }
     /**
      * @return Whether the Fusion environment will be updated monthly or updated on the quarterly cycle. This setting overrides the monthly patching setting of its Fusion environment family.
      * 
      */
-    public String monthlyPatchingOverride() {
-        return this.monthlyPatchingOverride;
+    public Optional<String> monthlyPatchingOverride() {
+        return Optional.ofNullable(this.monthlyPatchingOverride);
     }
     /**
      * @return Determines the quarterly upgrade begin times (monthly maintenance group schedule ) of the Fusion environment.
      * 
      */
     public List<GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTime> quarterlyUpgradeBeginTimes() {
-        return this.quarterlyUpgradeBeginTimes;
+        return this.quarterlyUpgradeBeginTimes == null ? List.of() : this.quarterlyUpgradeBeginTimes;
     }
 
     public static Builder builder() {
@@ -59,9 +61,9 @@ public final class GetFusionEnvironmentMaintenancePolicy {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String environmentMaintenanceOverride;
-        private String monthlyPatchingOverride;
-        private List<GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTime> quarterlyUpgradeBeginTimes;
+        private @Nullable String environmentMaintenanceOverride;
+        private @Nullable String monthlyPatchingOverride;
+        private @Nullable List<GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTime> quarterlyUpgradeBeginTimes;
         public Builder() {}
         public Builder(GetFusionEnvironmentMaintenancePolicy defaults) {
     	      Objects.requireNonNull(defaults);
@@ -71,18 +73,18 @@ public final class GetFusionEnvironmentMaintenancePolicy {
         }
 
         @CustomType.Setter
-        public Builder environmentMaintenanceOverride(String environmentMaintenanceOverride) {
-            this.environmentMaintenanceOverride = Objects.requireNonNull(environmentMaintenanceOverride);
+        public Builder environmentMaintenanceOverride(@Nullable String environmentMaintenanceOverride) {
+            this.environmentMaintenanceOverride = environmentMaintenanceOverride;
             return this;
         }
         @CustomType.Setter
-        public Builder monthlyPatchingOverride(String monthlyPatchingOverride) {
-            this.monthlyPatchingOverride = Objects.requireNonNull(monthlyPatchingOverride);
+        public Builder monthlyPatchingOverride(@Nullable String monthlyPatchingOverride) {
+            this.monthlyPatchingOverride = monthlyPatchingOverride;
             return this;
         }
         @CustomType.Setter
-        public Builder quarterlyUpgradeBeginTimes(List<GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTime> quarterlyUpgradeBeginTimes) {
-            this.quarterlyUpgradeBeginTimes = Objects.requireNonNull(quarterlyUpgradeBeginTimes);
+        public Builder quarterlyUpgradeBeginTimes(@Nullable List<GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTime> quarterlyUpgradeBeginTimes) {
+            this.quarterlyUpgradeBeginTimes = quarterlyUpgradeBeginTimes;
             return this;
         }
         public Builder quarterlyUpgradeBeginTimes(GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTime... quarterlyUpgradeBeginTimes) {

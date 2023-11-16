@@ -16,35 +16,35 @@ namespace Pulumi.Oci.ManagementAgent.Outputs
         /// <summary>
         /// Object content SHA256 Hash
         /// </summary>
-        public readonly string Checksum;
+        public readonly string? Checksum;
         /// <summary>
         /// Objectstorage object name reference providing the original location of this object
         /// </summary>
-        public readonly string Object;
+        public readonly string? Object;
         /// <summary>
         /// Objectstorage bucket reference providing the original location of this object
         /// </summary>
-        public readonly string ObjectBucket;
+        public readonly string? ObjectBucket;
         /// <summary>
         /// Objectstorage namespace reference providing the original location of this object
         /// </summary>
-        public readonly string ObjectNamespace;
+        public readonly string? ObjectNamespace;
         /// <summary>
         /// Object storage URL for download
         /// </summary>
-        public readonly string ObjectUrl;
+        public readonly string? ObjectUrl;
 
         [OutputConstructor]
         private GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailResult(
-            string checksum,
+            string? checksum,
 
-            string @object,
+            string? @object,
 
-            string objectBucket,
+            string? objectBucket,
 
-            string objectNamespace,
+            string? objectNamespace,
 
-            string objectUrl)
+            string? objectUrl)
         {
             Checksum = checksum;
             Object = @object;

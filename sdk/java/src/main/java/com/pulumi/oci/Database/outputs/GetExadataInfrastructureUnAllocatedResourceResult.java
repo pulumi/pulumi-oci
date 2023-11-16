@@ -10,6 +10,7 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -18,39 +19,39 @@ public final class GetExadataInfrastructureUnAllocatedResourceResult {
      * @return The list of Autonomous VM Clusters on the Infra and their associated unallocated resources details
      * 
      */
-    private List<GetExadataInfrastructureUnAllocatedResourceAutonomousVmCluster> autonomousVmClusters;
+    private @Nullable List<GetExadataInfrastructureUnAllocatedResourceAutonomousVmCluster> autonomousVmClusters;
     private @Nullable List<String> dbServers;
     /**
      * @return The user-friendly name for the Exadata Cloud@Customer infrastructure. The name does not need to be unique.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     private String exadataInfrastructureId;
     /**
      * @return Total unallocated exadata storage in the infrastructure in TBs.
      * 
      */
-    private Double exadataStorageInTbs;
+    private @Nullable Double exadataStorageInTbs;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The minimum amount of un allocated storage that is available across all nodes in the infrastructure.
      * 
      */
-    private Integer localStorageInGbs;
+    private @Nullable Integer localStorageInGbs;
     /**
      * @return The minimum amount of un allocated memory that is available across all nodes in the infrastructure.
      * 
      */
-    private Integer memoryInGbs;
+    private @Nullable Integer memoryInGbs;
     /**
      * @return The minimum amount of un allocated ocpus that is available across all nodes in the infrastructure.
      * 
      */
-    private Integer ocpus;
+    private @Nullable Integer ocpus;
 
     private GetExadataInfrastructureUnAllocatedResourceResult() {}
     /**
@@ -58,7 +59,7 @@ public final class GetExadataInfrastructureUnAllocatedResourceResult {
      * 
      */
     public List<GetExadataInfrastructureUnAllocatedResourceAutonomousVmCluster> autonomousVmClusters() {
-        return this.autonomousVmClusters;
+        return this.autonomousVmClusters == null ? List.of() : this.autonomousVmClusters;
     }
     public List<String> dbServers() {
         return this.dbServers == null ? List.of() : this.dbServers;
@@ -67,8 +68,8 @@ public final class GetExadataInfrastructureUnAllocatedResourceResult {
      * @return The user-friendly name for the Exadata Cloud@Customer infrastructure. The name does not need to be unique.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     public String exadataInfrastructureId() {
         return this.exadataInfrastructureId;
@@ -77,36 +78,36 @@ public final class GetExadataInfrastructureUnAllocatedResourceResult {
      * @return Total unallocated exadata storage in the infrastructure in TBs.
      * 
      */
-    public Double exadataStorageInTbs() {
-        return this.exadataStorageInTbs;
+    public Optional<Double> exadataStorageInTbs() {
+        return Optional.ofNullable(this.exadataStorageInTbs);
     }
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The minimum amount of un allocated storage that is available across all nodes in the infrastructure.
      * 
      */
-    public Integer localStorageInGbs() {
-        return this.localStorageInGbs;
+    public Optional<Integer> localStorageInGbs() {
+        return Optional.ofNullable(this.localStorageInGbs);
     }
     /**
      * @return The minimum amount of un allocated memory that is available across all nodes in the infrastructure.
      * 
      */
-    public Integer memoryInGbs() {
-        return this.memoryInGbs;
+    public Optional<Integer> memoryInGbs() {
+        return Optional.ofNullable(this.memoryInGbs);
     }
     /**
      * @return The minimum amount of un allocated ocpus that is available across all nodes in the infrastructure.
      * 
      */
-    public Integer ocpus() {
-        return this.ocpus;
+    public Optional<Integer> ocpus() {
+        return Optional.ofNullable(this.ocpus);
     }
 
     public static Builder builder() {
@@ -118,15 +119,15 @@ public final class GetExadataInfrastructureUnAllocatedResourceResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetExadataInfrastructureUnAllocatedResourceAutonomousVmCluster> autonomousVmClusters;
+        private @Nullable List<GetExadataInfrastructureUnAllocatedResourceAutonomousVmCluster> autonomousVmClusters;
         private @Nullable List<String> dbServers;
-        private String displayName;
+        private @Nullable String displayName;
         private String exadataInfrastructureId;
-        private Double exadataStorageInTbs;
-        private String id;
-        private Integer localStorageInGbs;
-        private Integer memoryInGbs;
-        private Integer ocpus;
+        private @Nullable Double exadataStorageInTbs;
+        private @Nullable String id;
+        private @Nullable Integer localStorageInGbs;
+        private @Nullable Integer memoryInGbs;
+        private @Nullable Integer ocpus;
         public Builder() {}
         public Builder(GetExadataInfrastructureUnAllocatedResourceResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -142,8 +143,8 @@ public final class GetExadataInfrastructureUnAllocatedResourceResult {
         }
 
         @CustomType.Setter
-        public Builder autonomousVmClusters(List<GetExadataInfrastructureUnAllocatedResourceAutonomousVmCluster> autonomousVmClusters) {
-            this.autonomousVmClusters = Objects.requireNonNull(autonomousVmClusters);
+        public Builder autonomousVmClusters(@Nullable List<GetExadataInfrastructureUnAllocatedResourceAutonomousVmCluster> autonomousVmClusters) {
+            this.autonomousVmClusters = autonomousVmClusters;
             return this;
         }
         public Builder autonomousVmClusters(GetExadataInfrastructureUnAllocatedResourceAutonomousVmCluster... autonomousVmClusters) {
@@ -158,8 +159,8 @@ public final class GetExadataInfrastructureUnAllocatedResourceResult {
             return dbServers(List.of(dbServers));
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
@@ -168,28 +169,28 @@ public final class GetExadataInfrastructureUnAllocatedResourceResult {
             return this;
         }
         @CustomType.Setter
-        public Builder exadataStorageInTbs(Double exadataStorageInTbs) {
-            this.exadataStorageInTbs = Objects.requireNonNull(exadataStorageInTbs);
+        public Builder exadataStorageInTbs(@Nullable Double exadataStorageInTbs) {
+            this.exadataStorageInTbs = exadataStorageInTbs;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder localStorageInGbs(Integer localStorageInGbs) {
-            this.localStorageInGbs = Objects.requireNonNull(localStorageInGbs);
+        public Builder localStorageInGbs(@Nullable Integer localStorageInGbs) {
+            this.localStorageInGbs = localStorageInGbs;
             return this;
         }
         @CustomType.Setter
-        public Builder memoryInGbs(Integer memoryInGbs) {
-            this.memoryInGbs = Objects.requireNonNull(memoryInGbs);
+        public Builder memoryInGbs(@Nullable Integer memoryInGbs) {
+            this.memoryInGbs = memoryInGbs;
             return this;
         }
         @CustomType.Setter
-        public Builder ocpus(Integer ocpus) {
-            this.ocpus = Objects.requireNonNull(ocpus);
+        public Builder ocpus(@Nullable Integer ocpus) {
+            this.ocpus = ocpus;
             return this;
         }
         public GetExadataInfrastructureUnAllocatedResourceResult build() {

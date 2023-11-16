@@ -67,11 +67,11 @@ export interface GetLogAnalyticsCategoriesListResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * An array of categories.
      */
-    readonly items: outputs.LogAnalytics.GetLogAnalyticsCategoriesListItem[];
+    readonly items?: outputs.LogAnalytics.GetLogAnalyticsCategoriesListItem[];
     /**
      * The unique name that identifies the category.
      */

@@ -19,7 +19,7 @@ public final class GetVmClusterUpdatesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The current state of the maintenance update. Dependent on value of `lastAction`.
      * 
@@ -35,7 +35,7 @@ public final class GetVmClusterUpdatesResult {
      * @return The list of vm_cluster_updates.
      * 
      */
-    private List<GetVmClusterUpdatesVmClusterUpdate> vmClusterUpdates;
+    private @Nullable List<GetVmClusterUpdatesVmClusterUpdate> vmClusterUpdates;
 
     private GetVmClusterUpdatesResult() {}
     public List<GetVmClusterUpdatesFilter> filters() {
@@ -45,8 +45,8 @@ public final class GetVmClusterUpdatesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The current state of the maintenance update. Dependent on value of `lastAction`.
@@ -70,7 +70,7 @@ public final class GetVmClusterUpdatesResult {
      * 
      */
     public List<GetVmClusterUpdatesVmClusterUpdate> vmClusterUpdates() {
-        return this.vmClusterUpdates;
+        return this.vmClusterUpdates == null ? List.of() : this.vmClusterUpdates;
     }
 
     public static Builder builder() {
@@ -83,11 +83,11 @@ public final class GetVmClusterUpdatesResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetVmClusterUpdatesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String state;
         private @Nullable String updateType;
         private String vmClusterId;
-        private List<GetVmClusterUpdatesVmClusterUpdate> vmClusterUpdates;
+        private @Nullable List<GetVmClusterUpdatesVmClusterUpdate> vmClusterUpdates;
         public Builder() {}
         public Builder(GetVmClusterUpdatesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -108,8 +108,8 @@ public final class GetVmClusterUpdatesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -128,8 +128,8 @@ public final class GetVmClusterUpdatesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder vmClusterUpdates(List<GetVmClusterUpdatesVmClusterUpdate> vmClusterUpdates) {
-            this.vmClusterUpdates = Objects.requireNonNull(vmClusterUpdates);
+        public Builder vmClusterUpdates(@Nullable List<GetVmClusterUpdatesVmClusterUpdate> vmClusterUpdates) {
+            this.vmClusterUpdates = vmClusterUpdates;
             return this;
         }
         public Builder vmClusterUpdates(GetVmClusterUpdatesVmClusterUpdate... vmClusterUpdates) {

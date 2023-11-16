@@ -16,17 +16,17 @@ namespace Pulumi.Oci.MediaServices.Outputs
         /// <summary>
         /// The type of the media asset.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
         /// <summary>
         /// Tag of the MediaAsset.
         /// </summary>
-        public readonly string Value;
+        public readonly string? Value;
 
         [OutputConstructor]
         private GetMediaAssetMediaAssetTagResult(
-            string type,
+            string? type,
 
-            string value)
+            string? value)
         {
             Type = type;
             Value = value;

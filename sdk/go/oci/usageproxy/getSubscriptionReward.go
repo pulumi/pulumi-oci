@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Subscription Reward resource in Oracle Cloud Infrastructure Usage Proxy service.
@@ -63,7 +62,7 @@ type GetSubscriptionRewardArgs struct {
 // A collection of values returned by getSubscriptionReward.
 type GetSubscriptionRewardResult struct {
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The monthly summary of rewards.
 	Items []GetSubscriptionRewardItem `pulumi:"items"`
 	// The entitlement ID from MQS, which is the same as the subcription ID.
@@ -114,15 +113,9 @@ func (o GetSubscriptionRewardResultOutput) ToGetSubscriptionRewardResultOutputWi
 	return o
 }
 
-func (o GetSubscriptionRewardResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionRewardResult] {
-	return pulumix.Output[GetSubscriptionRewardResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The provider-assigned unique ID for this managed resource.
-func (o GetSubscriptionRewardResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionRewardResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetSubscriptionRewardResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionRewardResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The monthly summary of rewards.

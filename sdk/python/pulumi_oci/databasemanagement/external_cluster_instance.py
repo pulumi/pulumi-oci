@@ -18,12 +18,6 @@ class ExternalClusterInstanceArgs:
                  external_connector_id: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a ExternalClusterInstance resource.
-        :param pulumi.Input[str] external_cluster_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external cluster instance.
-        :param pulumi.Input[str] external_connector_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "external_cluster_instance_id", external_cluster_instance_id)
         if external_connector_id is not None:
@@ -32,9 +26,6 @@ class ExternalClusterInstanceArgs:
     @property
     @pulumi.getter(name="externalClusterInstanceId")
     def external_cluster_instance_id(self) -> pulumi.Input[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external cluster instance.
-        """
         return pulumi.get(self, "external_cluster_instance_id")
 
     @external_cluster_instance_id.setter
@@ -44,13 +35,6 @@ class ExternalClusterInstanceArgs:
     @property
     @pulumi.getter(name="externalConnectorId")
     def external_connector_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "external_connector_id")
 
     @external_connector_id.setter
@@ -79,26 +63,6 @@ class _ExternalClusterInstanceState:
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering ExternalClusterInstance resources.
-        :param pulumi.Input[str] adr_home_directory: The Automatic Diagnostic Repository (ADR) home directory for the cluster instance.
-        :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[str] component_name: The name of the external cluster instance.
-        :param pulumi.Input[str] crs_base_directory: The Oracle base location of Cluster Ready Services (CRS).
-        :param pulumi.Input[str] display_name: The user-friendly name for the cluster instance. The name does not have to be unique.
-        :param pulumi.Input[str] external_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external cluster that the cluster instance belongs to.
-        :param pulumi.Input[str] external_cluster_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external cluster instance.
-        :param pulumi.Input[str] external_connector_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] external_db_node_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB node.
-        :param pulumi.Input[str] external_db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the cluster instance is a part of.
-        :param pulumi.Input[str] host_name: The name of the host on which the cluster instance is running.
-        :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
-        :param pulumi.Input[str] node_role: The role of the cluster node.
-        :param pulumi.Input[str] state: The current lifecycle state of the external cluster instance.
-        :param pulumi.Input[str] time_created: The date and time the external cluster instance was created.
-        :param pulumi.Input[str] time_updated: The date and time the external cluster instance was last updated.
         """
         if adr_home_directory is not None:
             pulumi.set(__self__, "adr_home_directory", adr_home_directory)
@@ -136,9 +100,6 @@ class _ExternalClusterInstanceState:
     @property
     @pulumi.getter(name="adrHomeDirectory")
     def adr_home_directory(self) -> Optional[pulumi.Input[str]]:
-        """
-        The Automatic Diagnostic Repository (ADR) home directory for the cluster instance.
-        """
         return pulumi.get(self, "adr_home_directory")
 
     @adr_home_directory.setter
@@ -148,9 +109,6 @@ class _ExternalClusterInstanceState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -160,9 +118,6 @@ class _ExternalClusterInstanceState:
     @property
     @pulumi.getter(name="componentName")
     def component_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name of the external cluster instance.
-        """
         return pulumi.get(self, "component_name")
 
     @component_name.setter
@@ -172,9 +127,6 @@ class _ExternalClusterInstanceState:
     @property
     @pulumi.getter(name="crsBaseDirectory")
     def crs_base_directory(self) -> Optional[pulumi.Input[str]]:
-        """
-        The Oracle base location of Cluster Ready Services (CRS).
-        """
         return pulumi.get(self, "crs_base_directory")
 
     @crs_base_directory.setter
@@ -184,9 +136,6 @@ class _ExternalClusterInstanceState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The user-friendly name for the cluster instance. The name does not have to be unique.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -196,9 +145,6 @@ class _ExternalClusterInstanceState:
     @property
     @pulumi.getter(name="externalClusterId")
     def external_cluster_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external cluster that the cluster instance belongs to.
-        """
         return pulumi.get(self, "external_cluster_id")
 
     @external_cluster_id.setter
@@ -208,9 +154,6 @@ class _ExternalClusterInstanceState:
     @property
     @pulumi.getter(name="externalClusterInstanceId")
     def external_cluster_instance_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external cluster instance.
-        """
         return pulumi.get(self, "external_cluster_instance_id")
 
     @external_cluster_instance_id.setter
@@ -220,13 +163,6 @@ class _ExternalClusterInstanceState:
     @property
     @pulumi.getter(name="externalConnectorId")
     def external_connector_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "external_connector_id")
 
     @external_connector_id.setter
@@ -236,9 +172,6 @@ class _ExternalClusterInstanceState:
     @property
     @pulumi.getter(name="externalDbNodeId")
     def external_db_node_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB node.
-        """
         return pulumi.get(self, "external_db_node_id")
 
     @external_db_node_id.setter
@@ -248,9 +181,6 @@ class _ExternalClusterInstanceState:
     @property
     @pulumi.getter(name="externalDbSystemId")
     def external_db_system_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the cluster instance is a part of.
-        """
         return pulumi.get(self, "external_db_system_id")
 
     @external_db_system_id.setter
@@ -260,9 +190,6 @@ class _ExternalClusterInstanceState:
     @property
     @pulumi.getter(name="hostName")
     def host_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name of the host on which the cluster instance is running.
-        """
         return pulumi.get(self, "host_name")
 
     @host_name.setter
@@ -272,9 +199,6 @@ class _ExternalClusterInstanceState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        Additional information about the current lifecycle state.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -284,9 +208,6 @@ class _ExternalClusterInstanceState:
     @property
     @pulumi.getter(name="nodeRole")
     def node_role(self) -> Optional[pulumi.Input[str]]:
-        """
-        The role of the cluster node.
-        """
         return pulumi.get(self, "node_role")
 
     @node_role.setter
@@ -296,9 +217,6 @@ class _ExternalClusterInstanceState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current lifecycle state of the external cluster instance.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -308,9 +226,6 @@ class _ExternalClusterInstanceState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the external cluster instance was created.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -320,9 +235,6 @@ class _ExternalClusterInstanceState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the external cluster instance was last updated.
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -339,26 +251,9 @@ class ExternalClusterInstance(pulumi.CustomResource):
                  external_connector_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the External Cluster Instance resource in Oracle Cloud Infrastructure Database Management service.
-
-        Updates the external cluster instance specified by `externalClusterInstanceId`.
-
-        ## Import
-
-        ExternalClusterInstances can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:DatabaseManagement/externalClusterInstance:ExternalClusterInstance test_external_cluster_instance "id"
-        ```
-
+        Create a ExternalClusterInstance resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] external_cluster_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external cluster instance.
-        :param pulumi.Input[str] external_connector_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -367,18 +262,7 @@ class ExternalClusterInstance(pulumi.CustomResource):
                  args: ExternalClusterInstanceArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the External Cluster Instance resource in Oracle Cloud Infrastructure Database Management service.
-
-        Updates the external cluster instance specified by `externalClusterInstanceId`.
-
-        ## Import
-
-        ExternalClusterInstances can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:DatabaseManagement/externalClusterInstance:ExternalClusterInstance test_external_cluster_instance "id"
-        ```
-
+        Create a ExternalClusterInstance resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param ExternalClusterInstanceArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -456,26 +340,6 @@ class ExternalClusterInstance(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] adr_home_directory: The Automatic Diagnostic Repository (ADR) home directory for the cluster instance.
-        :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[str] component_name: The name of the external cluster instance.
-        :param pulumi.Input[str] crs_base_directory: The Oracle base location of Cluster Ready Services (CRS).
-        :param pulumi.Input[str] display_name: The user-friendly name for the cluster instance. The name does not have to be unique.
-        :param pulumi.Input[str] external_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external cluster that the cluster instance belongs to.
-        :param pulumi.Input[str] external_cluster_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external cluster instance.
-        :param pulumi.Input[str] external_connector_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] external_db_node_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB node.
-        :param pulumi.Input[str] external_db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the cluster instance is a part of.
-        :param pulumi.Input[str] host_name: The name of the host on which the cluster instance is running.
-        :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
-        :param pulumi.Input[str] node_role: The role of the cluster node.
-        :param pulumi.Input[str] state: The current lifecycle state of the external cluster instance.
-        :param pulumi.Input[str] time_created: The date and time the external cluster instance was created.
-        :param pulumi.Input[str] time_updated: The date and time the external cluster instance was last updated.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -501,133 +365,81 @@ class ExternalClusterInstance(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="adrHomeDirectory")
-    def adr_home_directory(self) -> pulumi.Output[str]:
-        """
-        The Automatic Diagnostic Repository (ADR) home directory for the cluster instance.
-        """
+    def adr_home_directory(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "adr_home_directory")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
+    def compartment_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="componentName")
-    def component_name(self) -> pulumi.Output[str]:
-        """
-        The name of the external cluster instance.
-        """
+    def component_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "component_name")
 
     @property
     @pulumi.getter(name="crsBaseDirectory")
-    def crs_base_directory(self) -> pulumi.Output[str]:
-        """
-        The Oracle base location of Cluster Ready Services (CRS).
-        """
+    def crs_base_directory(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "crs_base_directory")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
-        """
-        The user-friendly name for the cluster instance. The name does not have to be unique.
-        """
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="externalClusterId")
-    def external_cluster_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external cluster that the cluster instance belongs to.
-        """
+    def external_cluster_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "external_cluster_id")
 
     @property
     @pulumi.getter(name="externalClusterInstanceId")
     def external_cluster_instance_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external cluster instance.
-        """
         return pulumi.get(self, "external_cluster_instance_id")
 
     @property
     @pulumi.getter(name="externalConnectorId")
-    def external_connector_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
+    def external_connector_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "external_connector_id")
 
     @property
     @pulumi.getter(name="externalDbNodeId")
-    def external_db_node_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB node.
-        """
+    def external_db_node_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "external_db_node_id")
 
     @property
     @pulumi.getter(name="externalDbSystemId")
-    def external_db_system_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the cluster instance is a part of.
-        """
+    def external_db_system_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "external_db_system_id")
 
     @property
     @pulumi.getter(name="hostName")
-    def host_name(self) -> pulumi.Output[str]:
-        """
-        The name of the host on which the cluster instance is running.
-        """
+    def host_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "host_name")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        Additional information about the current lifecycle state.
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="nodeRole")
-    def node_role(self) -> pulumi.Output[str]:
-        """
-        The role of the cluster node.
-        """
+    def node_role(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "node_role")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current lifecycle state of the external cluster instance.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The date and time the external cluster instance was created.
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The date and time the external cluster instance was last updated.
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 

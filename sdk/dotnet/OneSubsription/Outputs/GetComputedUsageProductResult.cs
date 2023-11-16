@@ -16,47 +16,47 @@ namespace Pulumi.Oci.OneSubsription.Outputs
         /// <summary>
         /// Metered service billing category
         /// </summary>
-        public readonly string BillingCategory;
+        public readonly string? BillingCategory;
         /// <summary>
         /// Product name
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// Product part number
         /// </summary>
-        public readonly string PartNumber;
+        public readonly string? PartNumber;
         /// <summary>
         /// Product category
         /// </summary>
-        public readonly string ProductCategory;
+        public readonly string? ProductCategory;
         /// <summary>
         /// Product provisioning group
         /// </summary>
-        public readonly string ProvisioningGroup;
+        public readonly string? ProvisioningGroup;
         /// <summary>
         /// Rate card part type of Product
         /// </summary>
-        public readonly string UcmRateCardPartType;
+        public readonly string? UcmRateCardPartType;
         /// <summary>
         /// Unit of Messure
         /// </summary>
-        public readonly string UnitOfMeasure;
+        public readonly string? UnitOfMeasure;
 
         [OutputConstructor]
         private GetComputedUsageProductResult(
-            string billingCategory,
+            string? billingCategory,
 
-            string name,
+            string? name,
 
-            string partNumber,
+            string? partNumber,
 
-            string productCategory,
+            string? productCategory,
 
-            string provisioningGroup,
+            string? provisioningGroup,
 
-            string ucmRateCardPartType,
+            string? ucmRateCardPartType,
 
-            string unitOfMeasure)
+            string? unitOfMeasure)
         {
             BillingCategory = billingCategory;
             Name = name;

@@ -45,112 +45,112 @@ export interface GetHostInsightResult {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
      */
-    readonly computeId: string;
+    readonly computeId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * OPSI Enterprise Manager Bridge OCID
      */
-    readonly enterpriseManagerBridgeId: string;
+    readonly enterpriseManagerBridgeId?: string;
     /**
      * Enterprise Manager Entity Display Name
      */
-    readonly enterpriseManagerEntityDisplayName: string;
+    readonly enterpriseManagerEntityDisplayName?: string;
     /**
      * Enterprise Manager Entity Unique Identifier
      */
-    readonly enterpriseManagerEntityIdentifier: string;
+    readonly enterpriseManagerEntityIdentifier?: string;
     /**
      * Enterprise Manager Entity Name
      */
-    readonly enterpriseManagerEntityName: string;
+    readonly enterpriseManagerEntityName?: string;
     /**
      * Enterprise Manager Entity Type
      */
-    readonly enterpriseManagerEntityType: string;
+    readonly enterpriseManagerEntityType?: string;
     /**
      * Enterprise Manager Unique Identifier
      */
-    readonly enterpriseManagerIdentifier: string;
+    readonly enterpriseManagerIdentifier?: string;
     /**
      * Source of the host entity.
      */
-    readonly entitySource: string;
+    readonly entitySource?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata insight.
      */
-    readonly exadataInsightId: string;
+    readonly exadataInsightId?: string;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The user-friendly name for the host. The name does not have to be unique.
      */
-    readonly hostDisplayName: string;
+    readonly hostDisplayName?: string;
     readonly hostInsightId: string;
     /**
      * The host name. The host name is unique amongst the hosts managed by the same management agent.
      */
-    readonly hostName: string;
+    readonly hostName?: string;
     /**
      * Operations Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
      */
-    readonly hostType: string;
+    readonly hostType?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host insight resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
      */
-    readonly managementAgentId: string;
+    readonly managementAgentId?: string;
     /**
      * Platform name.
      */
-    readonly platformName: string;
+    readonly platformName?: string;
     /**
      * Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX].
      */
-    readonly platformType: string;
+    readonly platformType?: string;
     /**
      * Platform version.
      */
-    readonly platformVersion: string;
+    readonly platformVersion?: string;
     /**
      * Processor count. This is the OCPU count for Autonomous Database and CPU core count for other database types.
      */
-    readonly processorCount: number;
+    readonly processorCount?: number;
     /**
      * The current state of the host.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * Indicates the status of a host insight in Operations Insights
      */
-    readonly status: string;
+    readonly status?: string;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * The time the the host insight was first enabled. An RFC3339 formatted datetime string
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The time the host insight was updated. An RFC3339 formatted datetime string
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific Host Insight resource in Oracle Cloud Infrastructure Opsi service.

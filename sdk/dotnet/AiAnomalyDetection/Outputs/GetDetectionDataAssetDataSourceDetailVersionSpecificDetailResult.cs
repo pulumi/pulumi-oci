@@ -16,35 +16,35 @@ namespace Pulumi.Oci.AiAnomalyDetection.Outputs
         /// <summary>
         /// Bucket Name for influx connection
         /// </summary>
-        public readonly string Bucket;
+        public readonly string? Bucket;
         /// <summary>
         /// DB Name for influx connection
         /// </summary>
-        public readonly string DatabaseName;
+        public readonly string? DatabaseName;
         /// <summary>
         /// Data source type where actually data asset is being stored
         /// </summary>
-        public readonly string InfluxVersion;
+        public readonly string? InfluxVersion;
         /// <summary>
         /// Org name for the influx db
         /// </summary>
-        public readonly string OrganizationName;
+        public readonly string? OrganizationName;
         /// <summary>
         /// retention policy is how long the bucket would last
         /// </summary>
-        public readonly string RetentionPolicyName;
+        public readonly string? RetentionPolicyName;
 
         [OutputConstructor]
         private GetDetectionDataAssetDataSourceDetailVersionSpecificDetailResult(
-            string bucket,
+            string? bucket,
 
-            string databaseName,
+            string? databaseName,
 
-            string influxVersion,
+            string? influxVersion,
 
-            string organizationName,
+            string? organizationName,
 
-            string retentionPolicyName)
+            string? retentionPolicyName)
         {
             Bucket = bucket;
             DatabaseName = databaseName;

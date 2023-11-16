@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Invoices Invoice Lines in Oracle Cloud Infrastructure Osp Gateway service.
@@ -69,8 +68,8 @@ type GetInvoicesInvoiceLinesResult struct {
 	CompartmentId string                          `pulumi:"compartmentId"`
 	Filters       []GetInvoicesInvoiceLinesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                string `pulumi:"id"`
-	InternalInvoiceId string `pulumi:"internalInvoiceId"`
+	Id                *string `pulumi:"id"`
+	InternalInvoiceId string  `pulumi:"internalInvoiceId"`
 	// The list of invoice_line_collection.
 	InvoiceLineCollections []GetInvoicesInvoiceLinesInvoiceLineCollection `pulumi:"invoiceLineCollections"`
 	OspHomeRegion          string                                         `pulumi:"ospHomeRegion"`
@@ -119,12 +118,6 @@ func (o GetInvoicesInvoiceLinesResultOutput) ToGetInvoicesInvoiceLinesResultOutp
 	return o
 }
 
-func (o GetInvoicesInvoiceLinesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetInvoicesInvoiceLinesResult] {
-	return pulumix.Output[GetInvoicesInvoiceLinesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetInvoicesInvoiceLinesResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInvoicesInvoiceLinesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -134,8 +127,8 @@ func (o GetInvoicesInvoiceLinesResultOutput) Filters() GetInvoicesInvoiceLinesFi
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetInvoicesInvoiceLinesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceLinesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceLinesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceLinesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetInvoicesInvoiceLinesResultOutput) InternalInvoiceId() pulumi.StringOutput {

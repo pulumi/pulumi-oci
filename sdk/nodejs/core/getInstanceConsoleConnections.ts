@@ -62,11 +62,11 @@ export interface GetInstanceConsoleConnectionsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of instance_console_connections.
      */
-    readonly instanceConsoleConnections: outputs.Core.GetInstanceConsoleConnectionsInstanceConsoleConnection[];
+    readonly instanceConsoleConnections?: outputs.Core.GetInstanceConsoleConnectionsInstanceConsoleConnection[];
     /**
      * The OCID of the instance the console connection connects to.
      */

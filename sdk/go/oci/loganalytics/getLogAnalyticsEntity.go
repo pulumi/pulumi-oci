@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Log Analytics Entity resource in Oracle Cloud Infrastructure Log Analytics service.
@@ -63,47 +62,47 @@ type LookupLogAnalyticsEntityArgs struct {
 // A collection of values returned by getLogAnalyticsEntity.
 type LookupLogAnalyticsEntityResult struct {
 	// The Boolean flag to indicate if logs are collected for an entity for log analytics usage.
-	AreLogsCollected bool `pulumi:"areLogsCollected"`
+	AreLogsCollected *bool `pulumi:"areLogsCollected"`
 	// The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
-	CloudResourceId string `pulumi:"cloudResourceId"`
+	CloudResourceId *string `pulumi:"cloudResourceId"`
 	// Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Internal name for the log analytics entity type.
-	EntityTypeInternalName string `pulumi:"entityTypeInternalName"`
+	EntityTypeInternalName *string `pulumi:"entityTypeInternalName"`
 	// Log analytics entity type name.
-	EntityTypeName string `pulumi:"entityTypeName"`
+	EntityTypeName *string `pulumi:"entityTypeName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The hostname where the entity represented here is actually present. This would be the output one would get if they run `echo $HOSTNAME` on Linux or an equivalent OS command. This may be different from management agents host since logs may be collected remotely.
-	Hostname string `pulumi:"hostname"`
+	Hostname *string `pulumi:"hostname"`
 	// The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// lifecycleDetails has additional information regarding substeps such as management agent plugin deployment.
-	LifecycleDetails     string `pulumi:"lifecycleDetails"`
-	LogAnalyticsEntityId string `pulumi:"logAnalyticsEntityId"`
+	LifecycleDetails     *string `pulumi:"lifecycleDetails"`
+	LogAnalyticsEntityId string  `pulumi:"logAnalyticsEntityId"`
 	// Management agent (management-agents resource kind) compartment OCID
-	ManagementAgentCompartmentId string `pulumi:"managementAgentCompartmentId"`
+	ManagementAgentCompartmentId *string `pulumi:"managementAgentCompartmentId"`
 	// Management agent (management-agents resource kind) display name
-	ManagementAgentDisplayName string `pulumi:"managementAgentDisplayName"`
+	ManagementAgentDisplayName *string `pulumi:"managementAgentDisplayName"`
 	// The OCID of the Management Agent.
-	ManagementAgentId string `pulumi:"managementAgentId"`
+	ManagementAgentId *string `pulumi:"managementAgentId"`
 	// Log analytics entity name.
-	Name      string `pulumi:"name"`
-	Namespace string `pulumi:"namespace"`
+	Name      *string `pulumi:"name"`
+	Namespace string  `pulumi:"namespace"`
 	// The name/value pairs for parameter values to be used in file patterns specified in log sources.
 	Properties map[string]interface{} `pulumi:"properties"`
 	// This indicates the type of source. It is primarily for Enterprise Manager Repository ID.
-	SourceId string `pulumi:"sourceId"`
+	SourceId *string `pulumi:"sourceId"`
 	// The current state of the log analytics entity.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the resource was created, in the format defined by RFC3339.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the resource was last updated, in the format defined by RFC3339.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// The timezone region of the log analytics entity.
-	TimezoneRegion string `pulumi:"timezoneRegion"`
+	TimezoneRegion *string `pulumi:"timezoneRegion"`
 }
 
 func LookupLogAnalyticsEntityOutput(ctx *pulumi.Context, args LookupLogAnalyticsEntityOutputArgs, opts ...pulumi.InvokeOption) LookupLogAnalyticsEntityResultOutput {
@@ -146,25 +145,19 @@ func (o LookupLogAnalyticsEntityResultOutput) ToLookupLogAnalyticsEntityResultOu
 	return o
 }
 
-func (o LookupLogAnalyticsEntityResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupLogAnalyticsEntityResult] {
-	return pulumix.Output[LookupLogAnalyticsEntityResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The Boolean flag to indicate if logs are collected for an entity for log analytics usage.
-func (o LookupLogAnalyticsEntityResultOutput) AreLogsCollected() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupLogAnalyticsEntityResult) bool { return v.AreLogsCollected }).(pulumi.BoolOutput)
+func (o LookupLogAnalyticsEntityResultOutput) AreLogsCollected() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupLogAnalyticsEntityResult) *bool { return v.AreLogsCollected }).(pulumi.BoolPtrOutput)
 }
 
 // The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
-func (o LookupLogAnalyticsEntityResultOutput) CloudResourceId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupLogAnalyticsEntityResult) string { return v.CloudResourceId }).(pulumi.StringOutput)
+func (o LookupLogAnalyticsEntityResultOutput) CloudResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupLogAnalyticsEntityResult) *string { return v.CloudResourceId }).(pulumi.StringPtrOutput)
 }
 
 // Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-func (o LookupLogAnalyticsEntityResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupLogAnalyticsEntityResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupLogAnalyticsEntityResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupLogAnalyticsEntityResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -173,13 +166,13 @@ func (o LookupLogAnalyticsEntityResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // Internal name for the log analytics entity type.
-func (o LookupLogAnalyticsEntityResultOutput) EntityTypeInternalName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupLogAnalyticsEntityResult) string { return v.EntityTypeInternalName }).(pulumi.StringOutput)
+func (o LookupLogAnalyticsEntityResultOutput) EntityTypeInternalName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupLogAnalyticsEntityResult) *string { return v.EntityTypeInternalName }).(pulumi.StringPtrOutput)
 }
 
 // Log analytics entity type name.
-func (o LookupLogAnalyticsEntityResultOutput) EntityTypeName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupLogAnalyticsEntityResult) string { return v.EntityTypeName }).(pulumi.StringOutput)
+func (o LookupLogAnalyticsEntityResultOutput) EntityTypeName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupLogAnalyticsEntityResult) *string { return v.EntityTypeName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -188,18 +181,18 @@ func (o LookupLogAnalyticsEntityResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The hostname where the entity represented here is actually present. This would be the output one would get if they run `echo $HOSTNAME` on Linux or an equivalent OS command. This may be different from management agents host since logs may be collected remotely.
-func (o LookupLogAnalyticsEntityResultOutput) Hostname() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupLogAnalyticsEntityResult) string { return v.Hostname }).(pulumi.StringOutput)
+func (o LookupLogAnalyticsEntityResultOutput) Hostname() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupLogAnalyticsEntityResult) *string { return v.Hostname }).(pulumi.StringPtrOutput)
 }
 
 // The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
-func (o LookupLogAnalyticsEntityResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupLogAnalyticsEntityResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupLogAnalyticsEntityResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupLogAnalyticsEntityResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // lifecycleDetails has additional information regarding substeps such as management agent plugin deployment.
-func (o LookupLogAnalyticsEntityResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupLogAnalyticsEntityResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupLogAnalyticsEntityResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupLogAnalyticsEntityResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupLogAnalyticsEntityResultOutput) LogAnalyticsEntityId() pulumi.StringOutput {
@@ -207,23 +200,23 @@ func (o LookupLogAnalyticsEntityResultOutput) LogAnalyticsEntityId() pulumi.Stri
 }
 
 // Management agent (management-agents resource kind) compartment OCID
-func (o LookupLogAnalyticsEntityResultOutput) ManagementAgentCompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupLogAnalyticsEntityResult) string { return v.ManagementAgentCompartmentId }).(pulumi.StringOutput)
+func (o LookupLogAnalyticsEntityResultOutput) ManagementAgentCompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupLogAnalyticsEntityResult) *string { return v.ManagementAgentCompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Management agent (management-agents resource kind) display name
-func (o LookupLogAnalyticsEntityResultOutput) ManagementAgentDisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupLogAnalyticsEntityResult) string { return v.ManagementAgentDisplayName }).(pulumi.StringOutput)
+func (o LookupLogAnalyticsEntityResultOutput) ManagementAgentDisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupLogAnalyticsEntityResult) *string { return v.ManagementAgentDisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the Management Agent.
-func (o LookupLogAnalyticsEntityResultOutput) ManagementAgentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupLogAnalyticsEntityResult) string { return v.ManagementAgentId }).(pulumi.StringOutput)
+func (o LookupLogAnalyticsEntityResultOutput) ManagementAgentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupLogAnalyticsEntityResult) *string { return v.ManagementAgentId }).(pulumi.StringPtrOutput)
 }
 
 // Log analytics entity name.
-func (o LookupLogAnalyticsEntityResultOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupLogAnalyticsEntityResult) string { return v.Name }).(pulumi.StringOutput)
+func (o LookupLogAnalyticsEntityResultOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupLogAnalyticsEntityResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupLogAnalyticsEntityResultOutput) Namespace() pulumi.StringOutput {
@@ -236,28 +229,28 @@ func (o LookupLogAnalyticsEntityResultOutput) Properties() pulumi.MapOutput {
 }
 
 // This indicates the type of source. It is primarily for Enterprise Manager Repository ID.
-func (o LookupLogAnalyticsEntityResultOutput) SourceId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupLogAnalyticsEntityResult) string { return v.SourceId }).(pulumi.StringOutput)
+func (o LookupLogAnalyticsEntityResultOutput) SourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupLogAnalyticsEntityResult) *string { return v.SourceId }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the log analytics entity.
-func (o LookupLogAnalyticsEntityResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupLogAnalyticsEntityResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupLogAnalyticsEntityResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupLogAnalyticsEntityResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was created, in the format defined by RFC3339.
-func (o LookupLogAnalyticsEntityResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupLogAnalyticsEntityResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupLogAnalyticsEntityResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupLogAnalyticsEntityResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was last updated, in the format defined by RFC3339.
-func (o LookupLogAnalyticsEntityResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupLogAnalyticsEntityResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupLogAnalyticsEntityResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupLogAnalyticsEntityResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // The timezone region of the log analytics entity.
-func (o LookupLogAnalyticsEntityResultOutput) TimezoneRegion() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupLogAnalyticsEntityResult) string { return v.TimezoneRegion }).(pulumi.StringOutput)
+func (o LookupLogAnalyticsEntityResultOutput) TimezoneRegion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupLogAnalyticsEntityResult) *string { return v.TimezoneRegion }).(pulumi.StringPtrOutput)
 }
 
 func init() {

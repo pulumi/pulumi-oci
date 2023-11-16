@@ -12,170 +12,172 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMaskingPolicyResult {
-    private Integer addMaskingColumnsFromSdmTrigger;
+    private @Nullable Integer addMaskingColumnsFromSdmTrigger;
     /**
      * @return The source of masking columns.
      * 
      */
-    private List<GetMaskingPolicyColumnSource> columnSources;
+    private @Nullable List<GetMaskingPolicyColumnSource> columnSources;
     /**
      * @return The OCID of the compartment that contains the masking policy.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return The description of the masking policy.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return The display name of the masking policy.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The OCID of the masking policy.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Indicates if the temporary tables created during a masking operation should be dropped after masking. It&#39;s enabled by default. Set this attribute to false to preserve the temporary tables. Masking creates temporary tables that map the original sensitive  data values to mask values. By default, these temporary tables are dropped after masking. But, in some cases, you may want  to preserve this information to track how masking changed your data. Note that doing so compromises security. These tables  must be dropped before the database is available for unprivileged users.
      * 
      */
-    private Boolean isDropTempTablesEnabled;
+    private @Nullable Boolean isDropTempTablesEnabled;
     /**
      * @return Indicates if redo logging is enabled during a masking operation. It&#39;s disabled by default. Set this attribute to true to enable redo logging. By default, masking disables redo logging and flashback logging to purge any original unmasked  data from logs. However, in certain circumstances when you only want to test masking, rollback changes, and retry masking, you could enable logging and use a flashback database to retrieve the original unmasked data after it has been masked.
      * 
      */
-    private Boolean isRedoLoggingEnabled;
+    private @Nullable Boolean isRedoLoggingEnabled;
     /**
      * @return Indicates if statistics gathering is enabled. It&#39;s enabled by default. Set this attribute to false to disable statistics gathering. The masking process gathers statistics on masked database tables after masking completes.
      * 
      */
-    private Boolean isRefreshStatsEnabled;
+    private @Nullable Boolean isRefreshStatsEnabled;
     private String maskingPolicyId;
     /**
      * @return Specifies options to enable parallel execution when running data masking. Allowed values are &#39;NONE&#39; (no parallelism), &#39;DEFAULT&#39; (the Oracle Database computes the optimum degree of parallelism) or an integer value to be used as the degree of parallelism. Parallel execution helps effectively use multiple CPUs and improve masking performance. Refer to the Oracle Database parallel execution framework when choosing an explicit degree of parallelism.
      * 
      */
-    private String parallelDegree;
+    private @Nullable String parallelDegree;
     /**
      * @return A post-masking script, which can contain SQL and PL/SQL statements. It&#39;s executed after the core masking script generated using the masking policy. It&#39;s usually used to perform additional transformation or cleanup work after masking.
      * 
      */
-    private String postMaskingScript;
+    private @Nullable String postMaskingScript;
     /**
      * @return A pre-masking script, which can contain SQL and PL/SQL statements. It&#39;s executed before  the core masking script generated using the masking policy. It&#39;s usually used to perform any preparation or prerequisite work before masking data.
      * 
      */
-    private String preMaskingScript;
+    private @Nullable String preMaskingScript;
     /**
      * @return Specifies how to recompile invalid objects post data masking. Allowed values are &#39;SERIAL&#39; (recompile in serial),  &#39;PARALLEL&#39; (recompile in parallel), &#39;NONE&#39; (do not recompile). If it&#39;s set to PARALLEL, the value of parallelDegree attribute is used. Use the built-in UTL_RECOMP package to recompile any remaining invalid objects after masking completes.
      * 
      */
-    private String recompile;
+    private @Nullable String recompile;
     /**
      * @return The current state of the masking policy.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The date and time the masking policy was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The date and time the masking policy was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
 
     private GetMaskingPolicyResult() {}
-    public Integer addMaskingColumnsFromSdmTrigger() {
-        return this.addMaskingColumnsFromSdmTrigger;
+    public Optional<Integer> addMaskingColumnsFromSdmTrigger() {
+        return Optional.ofNullable(this.addMaskingColumnsFromSdmTrigger);
     }
     /**
      * @return The source of masking columns.
      * 
      */
     public List<GetMaskingPolicyColumnSource> columnSources() {
-        return this.columnSources;
+        return this.columnSources == null ? List.of() : this.columnSources;
     }
     /**
      * @return The OCID of the compartment that contains the masking policy.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return The description of the masking policy.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return The display name of the masking policy.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The OCID of the masking policy.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Indicates if the temporary tables created during a masking operation should be dropped after masking. It&#39;s enabled by default. Set this attribute to false to preserve the temporary tables. Masking creates temporary tables that map the original sensitive  data values to mask values. By default, these temporary tables are dropped after masking. But, in some cases, you may want  to preserve this information to track how masking changed your data. Note that doing so compromises security. These tables  must be dropped before the database is available for unprivileged users.
      * 
      */
-    public Boolean isDropTempTablesEnabled() {
-        return this.isDropTempTablesEnabled;
+    public Optional<Boolean> isDropTempTablesEnabled() {
+        return Optional.ofNullable(this.isDropTempTablesEnabled);
     }
     /**
      * @return Indicates if redo logging is enabled during a masking operation. It&#39;s disabled by default. Set this attribute to true to enable redo logging. By default, masking disables redo logging and flashback logging to purge any original unmasked  data from logs. However, in certain circumstances when you only want to test masking, rollback changes, and retry masking, you could enable logging and use a flashback database to retrieve the original unmasked data after it has been masked.
      * 
      */
-    public Boolean isRedoLoggingEnabled() {
-        return this.isRedoLoggingEnabled;
+    public Optional<Boolean> isRedoLoggingEnabled() {
+        return Optional.ofNullable(this.isRedoLoggingEnabled);
     }
     /**
      * @return Indicates if statistics gathering is enabled. It&#39;s enabled by default. Set this attribute to false to disable statistics gathering. The masking process gathers statistics on masked database tables after masking completes.
      * 
      */
-    public Boolean isRefreshStatsEnabled() {
-        return this.isRefreshStatsEnabled;
+    public Optional<Boolean> isRefreshStatsEnabled() {
+        return Optional.ofNullable(this.isRefreshStatsEnabled);
     }
     public String maskingPolicyId() {
         return this.maskingPolicyId;
@@ -184,50 +186,50 @@ public final class GetMaskingPolicyResult {
      * @return Specifies options to enable parallel execution when running data masking. Allowed values are &#39;NONE&#39; (no parallelism), &#39;DEFAULT&#39; (the Oracle Database computes the optimum degree of parallelism) or an integer value to be used as the degree of parallelism. Parallel execution helps effectively use multiple CPUs and improve masking performance. Refer to the Oracle Database parallel execution framework when choosing an explicit degree of parallelism.
      * 
      */
-    public String parallelDegree() {
-        return this.parallelDegree;
+    public Optional<String> parallelDegree() {
+        return Optional.ofNullable(this.parallelDegree);
     }
     /**
      * @return A post-masking script, which can contain SQL and PL/SQL statements. It&#39;s executed after the core masking script generated using the masking policy. It&#39;s usually used to perform additional transformation or cleanup work after masking.
      * 
      */
-    public String postMaskingScript() {
-        return this.postMaskingScript;
+    public Optional<String> postMaskingScript() {
+        return Optional.ofNullable(this.postMaskingScript);
     }
     /**
      * @return A pre-masking script, which can contain SQL and PL/SQL statements. It&#39;s executed before  the core masking script generated using the masking policy. It&#39;s usually used to perform any preparation or prerequisite work before masking data.
      * 
      */
-    public String preMaskingScript() {
-        return this.preMaskingScript;
+    public Optional<String> preMaskingScript() {
+        return Optional.ofNullable(this.preMaskingScript);
     }
     /**
      * @return Specifies how to recompile invalid objects post data masking. Allowed values are &#39;SERIAL&#39; (recompile in serial),  &#39;PARALLEL&#39; (recompile in parallel), &#39;NONE&#39; (do not recompile). If it&#39;s set to PARALLEL, the value of parallelDegree attribute is used. Use the built-in UTL_RECOMP package to recompile any remaining invalid objects after masking completes.
      * 
      */
-    public String recompile() {
-        return this.recompile;
+    public Optional<String> recompile() {
+        return Optional.ofNullable(this.recompile);
     }
     /**
      * @return The current state of the masking policy.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The date and time the masking policy was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The date and time the masking policy was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
 
     public static Builder builder() {
@@ -239,25 +241,25 @@ public final class GetMaskingPolicyResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer addMaskingColumnsFromSdmTrigger;
-        private List<GetMaskingPolicyColumnSource> columnSources;
-        private String compartmentId;
-        private Map<String,Object> definedTags;
-        private String description;
-        private String displayName;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private Boolean isDropTempTablesEnabled;
-        private Boolean isRedoLoggingEnabled;
-        private Boolean isRefreshStatsEnabled;
+        private @Nullable Integer addMaskingColumnsFromSdmTrigger;
+        private @Nullable List<GetMaskingPolicyColumnSource> columnSources;
+        private @Nullable String compartmentId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String description;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable Boolean isDropTempTablesEnabled;
+        private @Nullable Boolean isRedoLoggingEnabled;
+        private @Nullable Boolean isRefreshStatsEnabled;
         private String maskingPolicyId;
-        private String parallelDegree;
-        private String postMaskingScript;
-        private String preMaskingScript;
-        private String recompile;
-        private String state;
-        private String timeCreated;
-        private String timeUpdated;
+        private @Nullable String parallelDegree;
+        private @Nullable String postMaskingScript;
+        private @Nullable String preMaskingScript;
+        private @Nullable String recompile;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
         public Builder() {}
         public Builder(GetMaskingPolicyResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -283,61 +285,61 @@ public final class GetMaskingPolicyResult {
         }
 
         @CustomType.Setter
-        public Builder addMaskingColumnsFromSdmTrigger(Integer addMaskingColumnsFromSdmTrigger) {
-            this.addMaskingColumnsFromSdmTrigger = Objects.requireNonNull(addMaskingColumnsFromSdmTrigger);
+        public Builder addMaskingColumnsFromSdmTrigger(@Nullable Integer addMaskingColumnsFromSdmTrigger) {
+            this.addMaskingColumnsFromSdmTrigger = addMaskingColumnsFromSdmTrigger;
             return this;
         }
         @CustomType.Setter
-        public Builder columnSources(List<GetMaskingPolicyColumnSource> columnSources) {
-            this.columnSources = Objects.requireNonNull(columnSources);
+        public Builder columnSources(@Nullable List<GetMaskingPolicyColumnSource> columnSources) {
+            this.columnSources = columnSources;
             return this;
         }
         public Builder columnSources(GetMaskingPolicyColumnSource... columnSources) {
             return columnSources(List.of(columnSources));
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder isDropTempTablesEnabled(Boolean isDropTempTablesEnabled) {
-            this.isDropTempTablesEnabled = Objects.requireNonNull(isDropTempTablesEnabled);
+        public Builder isDropTempTablesEnabled(@Nullable Boolean isDropTempTablesEnabled) {
+            this.isDropTempTablesEnabled = isDropTempTablesEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder isRedoLoggingEnabled(Boolean isRedoLoggingEnabled) {
-            this.isRedoLoggingEnabled = Objects.requireNonNull(isRedoLoggingEnabled);
+        public Builder isRedoLoggingEnabled(@Nullable Boolean isRedoLoggingEnabled) {
+            this.isRedoLoggingEnabled = isRedoLoggingEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder isRefreshStatsEnabled(Boolean isRefreshStatsEnabled) {
-            this.isRefreshStatsEnabled = Objects.requireNonNull(isRefreshStatsEnabled);
+        public Builder isRefreshStatsEnabled(@Nullable Boolean isRefreshStatsEnabled) {
+            this.isRefreshStatsEnabled = isRefreshStatsEnabled;
             return this;
         }
         @CustomType.Setter
@@ -346,38 +348,38 @@ public final class GetMaskingPolicyResult {
             return this;
         }
         @CustomType.Setter
-        public Builder parallelDegree(String parallelDegree) {
-            this.parallelDegree = Objects.requireNonNull(parallelDegree);
+        public Builder parallelDegree(@Nullable String parallelDegree) {
+            this.parallelDegree = parallelDegree;
             return this;
         }
         @CustomType.Setter
-        public Builder postMaskingScript(String postMaskingScript) {
-            this.postMaskingScript = Objects.requireNonNull(postMaskingScript);
+        public Builder postMaskingScript(@Nullable String postMaskingScript) {
+            this.postMaskingScript = postMaskingScript;
             return this;
         }
         @CustomType.Setter
-        public Builder preMaskingScript(String preMaskingScript) {
-            this.preMaskingScript = Objects.requireNonNull(preMaskingScript);
+        public Builder preMaskingScript(@Nullable String preMaskingScript) {
+            this.preMaskingScript = preMaskingScript;
             return this;
         }
         @CustomType.Setter
-        public Builder recompile(String recompile) {
-            this.recompile = Objects.requireNonNull(recompile);
+        public Builder recompile(@Nullable String recompile) {
+            this.recompile = recompile;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetMaskingPolicyResult build() {

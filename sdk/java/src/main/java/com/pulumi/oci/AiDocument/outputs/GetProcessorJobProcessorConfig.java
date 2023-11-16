@@ -9,6 +9,8 @@ import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetProcessorJobProcessorConfig {
@@ -16,63 +18,63 @@ public final class GetProcessorJobProcessorConfig {
      * @return The document type.
      * 
      */
-    private String documentType;
+    private @Nullable String documentType;
     /**
      * @return The types of document analysis requested.
      * 
      */
-    private List<GetProcessorJobProcessorConfigFeature> features;
+    private @Nullable List<GetProcessorJobProcessorConfigFeature> features;
     /**
      * @return Whether or not to generate a ZIP file containing the results.
      * 
      */
-    private Boolean isZipOutputEnabled;
+    private @Nullable Boolean isZipOutputEnabled;
     /**
      * @return The document language, abbreviated according to the BCP 47 Language-Tag syntax.
      * 
      */
-    private String language;
+    private @Nullable String language;
     /**
      * @return The type of the processor.
      * 
      */
-    private String processorType;
+    private @Nullable String processorType;
 
     private GetProcessorJobProcessorConfig() {}
     /**
      * @return The document type.
      * 
      */
-    public String documentType() {
-        return this.documentType;
+    public Optional<String> documentType() {
+        return Optional.ofNullable(this.documentType);
     }
     /**
      * @return The types of document analysis requested.
      * 
      */
     public List<GetProcessorJobProcessorConfigFeature> features() {
-        return this.features;
+        return this.features == null ? List.of() : this.features;
     }
     /**
      * @return Whether or not to generate a ZIP file containing the results.
      * 
      */
-    public Boolean isZipOutputEnabled() {
-        return this.isZipOutputEnabled;
+    public Optional<Boolean> isZipOutputEnabled() {
+        return Optional.ofNullable(this.isZipOutputEnabled);
     }
     /**
      * @return The document language, abbreviated according to the BCP 47 Language-Tag syntax.
      * 
      */
-    public String language() {
-        return this.language;
+    public Optional<String> language() {
+        return Optional.ofNullable(this.language);
     }
     /**
      * @return The type of the processor.
      * 
      */
-    public String processorType() {
-        return this.processorType;
+    public Optional<String> processorType() {
+        return Optional.ofNullable(this.processorType);
     }
 
     public static Builder builder() {
@@ -84,11 +86,11 @@ public final class GetProcessorJobProcessorConfig {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String documentType;
-        private List<GetProcessorJobProcessorConfigFeature> features;
-        private Boolean isZipOutputEnabled;
-        private String language;
-        private String processorType;
+        private @Nullable String documentType;
+        private @Nullable List<GetProcessorJobProcessorConfigFeature> features;
+        private @Nullable Boolean isZipOutputEnabled;
+        private @Nullable String language;
+        private @Nullable String processorType;
         public Builder() {}
         public Builder(GetProcessorJobProcessorConfig defaults) {
     	      Objects.requireNonNull(defaults);
@@ -100,31 +102,31 @@ public final class GetProcessorJobProcessorConfig {
         }
 
         @CustomType.Setter
-        public Builder documentType(String documentType) {
-            this.documentType = Objects.requireNonNull(documentType);
+        public Builder documentType(@Nullable String documentType) {
+            this.documentType = documentType;
             return this;
         }
         @CustomType.Setter
-        public Builder features(List<GetProcessorJobProcessorConfigFeature> features) {
-            this.features = Objects.requireNonNull(features);
+        public Builder features(@Nullable List<GetProcessorJobProcessorConfigFeature> features) {
+            this.features = features;
             return this;
         }
         public Builder features(GetProcessorJobProcessorConfigFeature... features) {
             return features(List.of(features));
         }
         @CustomType.Setter
-        public Builder isZipOutputEnabled(Boolean isZipOutputEnabled) {
-            this.isZipOutputEnabled = Objects.requireNonNull(isZipOutputEnabled);
+        public Builder isZipOutputEnabled(@Nullable Boolean isZipOutputEnabled) {
+            this.isZipOutputEnabled = isZipOutputEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder language(String language) {
-            this.language = Objects.requireNonNull(language);
+        public Builder language(@Nullable String language) {
+            this.language = language;
             return this;
         }
         @CustomType.Setter
-        public Builder processorType(String processorType) {
-            this.processorType = Objects.requireNonNull(processorType);
+        public Builder processorType(@Nullable String processorType) {
+            this.processorType = processorType;
             return this;
         }
         public GetProcessorJobProcessorConfig build() {

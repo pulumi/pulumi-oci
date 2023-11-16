@@ -41,7 +41,7 @@ class GetManagedDatabaseUserProxiedForUserResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -49,10 +49,7 @@ class GetManagedDatabaseUserProxiedForUserResult:
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetManagedDatabaseUserProxiedForUserItemResult']:
-        """
-        An array of user resources.
-        """
+    def items(self) -> Optional[Sequence['outputs.GetManagedDatabaseUserProxiedForUserItemResult']]:
         return pulumi.get(self, "items")
 
     @property
@@ -63,9 +60,6 @@ class GetManagedDatabaseUserProxiedForUserResult:
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        The name of a proxy user or the name of the client user.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -92,25 +86,7 @@ def get_managed_database_user_proxied_for_user(managed_database_id: Optional[str
                                                user_name: Optional[str] = None,
                                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagedDatabaseUserProxiedForUserResult:
     """
-    This data source provides details about a specific Managed Database User Proxied For User resource in Oracle Cloud Infrastructure Database Management service.
-
-    Gets the list of users on whose behalf the current user acts as proxy.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_database_user_proxied_for_user = oci.DatabaseManagement.get_managed_database_user_proxied_for_user(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        user_name=oci_identity_user["test_user"]["name"],
-        name=var["managed_database_user_proxied_for_user_name"])
-    ```
-
-
-    :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
-    :param str name: A filter to return only resources that match the entire name.
-    :param str user_name: The name of the user whose details are to be viewed.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['managedDatabaseId'] = managed_database_id
@@ -133,24 +109,6 @@ def get_managed_database_user_proxied_for_user_output(managed_database_id: Optio
                                                       user_name: Optional[pulumi.Input[str]] = None,
                                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedDatabaseUserProxiedForUserResult]:
     """
-    This data source provides details about a specific Managed Database User Proxied For User resource in Oracle Cloud Infrastructure Database Management service.
-
-    Gets the list of users on whose behalf the current user acts as proxy.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_database_user_proxied_for_user = oci.DatabaseManagement.get_managed_database_user_proxied_for_user(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        user_name=oci_identity_user["test_user"]["name"],
-        name=var["managed_database_user_proxied_for_user_name"])
-    ```
-
-
-    :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
-    :param str name: A filter to return only resources that match the entire name.
-    :param str user_name: The name of the user whose details are to be viewed.
+    Use this data source to access information about an existing resource.
     """
     ...

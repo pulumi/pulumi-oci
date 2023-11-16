@@ -16,128 +16,128 @@ namespace Pulumi.Oci.DataIntegration.Outputs
         /// <summary>
         /// The OCID of the compartment containing the resources you want to list.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// A user defined description for the workspace.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// A user-friendly display name for the workspace. Does not have to be unique, and can be modified. Avoid entering confidential information.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// The IP of the custom DNS.
         /// </summary>
-        public readonly string DnsServerIp;
+        public readonly string? DnsServerIp;
         /// <summary>
         /// The DNS zone of the custom DNS to use to resolve names.
         /// </summary>
-        public readonly string DnsServerZone;
-        public readonly string EndpointCompartmentId;
+        public readonly string? DnsServerZone;
+        public readonly string? EndpointCompartmentId;
         /// <summary>
         /// DCMS endpoint associated with the container/workspace. Returns null if there is none.
         /// </summary>
-        public readonly string EndpointId;
+        public readonly string? EndpointId;
         /// <summary>
         /// Name of the private endpoint associated with the container/workspace. Returns null if there is none.
         /// </summary>
-        public readonly string EndpointName;
+        public readonly string? EndpointName;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// A system-generated and immutable identifier assigned to the workspace upon creation.
         /// </summary>
-        public readonly string Id;
-        public readonly bool IsForceOperation;
+        public readonly string? Id;
+        public readonly bool? IsForceOperation;
         /// <summary>
         /// Specifies whether the private network connection is enabled or disabled.
         /// </summary>
-        public readonly bool IsPrivateNetworkEnabled;
-        public readonly int QuiesceTimeout;
-        public readonly string RegistryCompartmentId;
+        public readonly bool? IsPrivateNetworkEnabled;
+        public readonly int? QuiesceTimeout;
+        public readonly string? RegistryCompartmentId;
         /// <summary>
         /// DCMS registry associated with the container/workspace. Returns null if there is none.
         /// </summary>
-        public readonly string RegistryId;
-        public readonly string RegistryName;
+        public readonly string? RegistryId;
+        public readonly string? RegistryName;
         /// <summary>
         /// The lifecycle state of a resource. When specified, the operation only returns resources that match the given lifecycle state. When not specified, all lifecycle states are processed as a match.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in failed state.
         /// </summary>
-        public readonly string StateMessage;
+        public readonly string? StateMessage;
         /// <summary>
         /// The OCID of the subnet for customer connected databases.
         /// </summary>
-        public readonly string SubnetId;
+        public readonly string? SubnetId;
         /// <summary>
         /// The date and time the workspace was created, in the timestamp format defined by RFC3339.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The date and time the workspace was updated, in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
         /// <summary>
         /// The OCID of the VCN the subnet is in.
         /// </summary>
-        public readonly string VcnId;
+        public readonly string? VcnId;
 
         [OutputConstructor]
         private GetWorkspacesWorkspaceResult(
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string description,
+            string? description,
 
-            string displayName,
+            string? displayName,
 
-            string dnsServerIp,
+            string? dnsServerIp,
 
-            string dnsServerZone,
+            string? dnsServerZone,
 
-            string endpointCompartmentId,
+            string? endpointCompartmentId,
 
-            string endpointId,
+            string? endpointId,
 
-            string endpointName,
+            string? endpointName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            bool isForceOperation,
+            bool? isForceOperation,
 
-            bool isPrivateNetworkEnabled,
+            bool? isPrivateNetworkEnabled,
 
-            int quiesceTimeout,
+            int? quiesceTimeout,
 
-            string registryCompartmentId,
+            string? registryCompartmentId,
 
-            string registryId,
+            string? registryId,
 
-            string registryName,
+            string? registryName,
 
-            string state,
+            string? state,
 
-            string stateMessage,
+            string? stateMessage,
 
-            string subnetId,
+            string? subnetId,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated,
+            string? timeUpdated,
 
-            string vcnId)
+            string? vcnId)
         {
             CompartmentId = compartmentId;
             DefinedTags = definedTags;

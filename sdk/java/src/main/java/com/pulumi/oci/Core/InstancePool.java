@@ -17,6 +17,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -110,14 +111,14 @@ public class InstancePool extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="actualSize", refs={Integer.class}, tree="[0]")
-    private Output<Integer> actualSize;
+    private Output</* @Nullable */ Integer> actualSize;
 
     /**
      * @return The number of actual instances in the instance pool on the cloud. This attribute will be different when instance pool is used along with autoScaling Configuration.
      * 
      */
-    public Output<Integer> actualSize() {
-        return this.actualSize;
+    public Output<Optional<Integer>> actualSize() {
+        return Codegen.optional(this.actualSize);
     }
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
@@ -138,42 +139,42 @@ public class InstancePool extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return (Updatable) The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration associated with the instance pool.
@@ -194,42 +195,42 @@ public class InstancePool extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="instanceDisplayNameFormatter", refs={String.class}, tree="[0]")
-    private Output<String> instanceDisplayNameFormatter;
+    private Output</* @Nullable */ String> instanceDisplayNameFormatter;
 
     /**
      * @return (Updatable) A user-friendly formatter for the instance pool&#39;s instances. Instance displaynames follow the format. The formatter does not retroactively change instance&#39;s displaynames, only instance displaynames in the future follow the format
      * 
      */
-    public Output<String> instanceDisplayNameFormatter() {
-        return this.instanceDisplayNameFormatter;
+    public Output<Optional<String>> instanceDisplayNameFormatter() {
+        return Codegen.optional(this.instanceDisplayNameFormatter);
     }
     /**
      * (Updatable) A user-friendly formatter for the instance pool&#39;s instances. Instance hostnames follow the format. The formatter does not retroactively change instance&#39;s hostnames, only instance hostnames in the future follow the format
      * 
      */
     @Export(name="instanceHostnameFormatter", refs={String.class}, tree="[0]")
-    private Output<String> instanceHostnameFormatter;
+    private Output</* @Nullable */ String> instanceHostnameFormatter;
 
     /**
      * @return (Updatable) A user-friendly formatter for the instance pool&#39;s instances. Instance hostnames follow the format. The formatter does not retroactively change instance&#39;s hostnames, only instance hostnames in the future follow the format
      * 
      */
-    public Output<String> instanceHostnameFormatter() {
-        return this.instanceHostnameFormatter;
+    public Output<Optional<String>> instanceHostnameFormatter() {
+        return Codegen.optional(this.instanceHostnameFormatter);
     }
     /**
      * The load balancers to attach to the instance pool.
      * 
      */
     @Export(name="loadBalancers", refs={List.class,InstancePoolLoadBalancer.class}, tree="[0,1]")
-    private Output<List<InstancePoolLoadBalancer>> loadBalancers;
+    private Output</* @Nullable */ List<InstancePoolLoadBalancer>> loadBalancers;
 
     /**
      * @return The load balancers to attach to the instance pool.
      * 
      */
-    public Output<List<InstancePoolLoadBalancer>> loadBalancers() {
-        return this.loadBalancers;
+    public Output<Optional<List<InstancePoolLoadBalancer>>> loadBalancers() {
+        return Codegen.optional(this.loadBalancers);
     }
     /**
      * (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.
@@ -271,7 +272,7 @@ public class InstancePool extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return (Updatable) The target state for the instance pool update operation (ignored at create time and should not be set). Could be set to RUNNING or STOPPED.
@@ -280,22 +281,22 @@ public class InstancePool extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The date and time the instance pool was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the instance pool was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
 
     /**

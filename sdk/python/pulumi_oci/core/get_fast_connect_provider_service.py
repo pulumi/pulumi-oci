@@ -64,31 +64,22 @@ class GetFastConnectProviderServiceResult:
 
     @property
     @pulumi.getter(name="bandwithShapeManagement")
-    def bandwith_shape_management(self) -> str:
-        """
-        Who is responsible for managing the virtual circuit bandwidth.
-        """
+    def bandwith_shape_management(self) -> Optional[str]:
         return pulumi.get(self, "bandwith_shape_management")
 
     @property
     @pulumi.getter(name="customerAsnManagement")
-    def customer_asn_management(self) -> str:
-        """
-        Who is responsible for managing the ASN information for the network at the other end of the connection from Oracle.
-        """
+    def customer_asn_management(self) -> Optional[str]:
         return pulumi.get(self, "customer_asn_management")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        The location of the provider's website or portal. This portal is where you can get information about the provider service, create a virtual circuit connection from the provider to Oracle Cloud Infrastructure, and retrieve your provider service key for that virtual circuit connection.  Example: `https://example.com`
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -96,18 +87,12 @@ class GetFastConnectProviderServiceResult:
 
     @property
     @pulumi.getter(name="privatePeeringBgpManagement")
-    def private_peering_bgp_management(self) -> str:
-        """
-        Who is responsible for managing the private peering BGP information.
-        """
+    def private_peering_bgp_management(self) -> Optional[str]:
         return pulumi.get(self, "private_peering_bgp_management")
 
     @property
     @pulumi.getter(name="providerName")
-    def provider_name(self) -> str:
-        """
-        The name of the provider.
-        """
+    def provider_name(self) -> Optional[str]:
         return pulumi.get(self, "provider_name")
 
     @property
@@ -117,50 +102,32 @@ class GetFastConnectProviderServiceResult:
 
     @property
     @pulumi.getter(name="providerServiceKeyManagement")
-    def provider_service_key_management(self) -> str:
-        """
-        Who is responsible for managing the provider service key.
-        """
+    def provider_service_key_management(self) -> Optional[str]:
         return pulumi.get(self, "provider_service_key_management")
 
     @property
     @pulumi.getter(name="providerServiceName")
-    def provider_service_name(self) -> str:
-        """
-        The name of the service offered by the provider.
-        """
+    def provider_service_name(self) -> Optional[str]:
         return pulumi.get(self, "provider_service_name")
 
     @property
     @pulumi.getter(name="publicPeeringBgpManagement")
-    def public_peering_bgp_management(self) -> str:
-        """
-        Who is responsible for managing the public peering BGP information.
-        """
+    def public_peering_bgp_management(self) -> Optional[str]:
         return pulumi.get(self, "public_peering_bgp_management")
 
     @property
     @pulumi.getter(name="requiredTotalCrossConnects")
-    def required_total_cross_connects(self) -> int:
-        """
-        Total number of cross-connect or cross-connect groups required for the virtual circuit.
-        """
+    def required_total_cross_connects(self) -> Optional[int]:
         return pulumi.get(self, "required_total_cross_connects")
 
     @property
     @pulumi.getter(name="supportedVirtualCircuitTypes")
-    def supported_virtual_circuit_types(self) -> Sequence[str]:
-        """
-        An array of virtual circuit types supported by this service.
-        """
+    def supported_virtual_circuit_types(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "supported_virtual_circuit_types")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        Provider service type.
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
 
@@ -188,22 +155,7 @@ class AwaitableGetFastConnectProviderServiceResult(GetFastConnectProviderService
 def get_fast_connect_provider_service(provider_service_id: Optional[str] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetFastConnectProviderServiceResult:
     """
-    This data source provides details about a specific Fast Connect Provider Service resource in Oracle Cloud Infrastructure Core service.
-
-    Gets the specified provider service.
-    For more information, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_fast_connect_provider_service = oci.Core.get_fast_connect_provider_service(provider_service_id=data["oci_core_fast_connect_provider_services"]["test_fast_connect_provider_services"]["fast_connect_provider_services"][0]["id"])
-    ```
-
-
-    :param str provider_service_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the provider service.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['providerServiceId'] = provider_service_id
@@ -230,21 +182,6 @@ def get_fast_connect_provider_service(provider_service_id: Optional[str] = None,
 def get_fast_connect_provider_service_output(provider_service_id: Optional[pulumi.Input[str]] = None,
                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFastConnectProviderServiceResult]:
     """
-    This data source provides details about a specific Fast Connect Provider Service resource in Oracle Cloud Infrastructure Core service.
-
-    Gets the specified provider service.
-    For more information, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_fast_connect_provider_service = oci.Core.get_fast_connect_provider_service(provider_service_id=data["oci_core_fast_connect_provider_services"]["test_fast_connect_provider_services"]["fast_connect_provider_services"][0]["id"])
-    ```
-
-
-    :param str provider_service_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the provider service.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DataIntegration.outputs.GetWorkspaceFoldersFolderSummaryCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetWorkspaceFoldersFolderSummaryCollection {
-    private List<GetWorkspaceFoldersFolderSummaryCollectionItem> items;
+    private @Nullable List<GetWorkspaceFoldersFolderSummaryCollectionItem> items;
 
     private GetWorkspaceFoldersFolderSummaryCollection() {}
     public List<GetWorkspaceFoldersFolderSummaryCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetWorkspaceFoldersFolderSummaryCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetWorkspaceFoldersFolderSummaryCollectionItem> items;
+        private @Nullable List<GetWorkspaceFoldersFolderSummaryCollectionItem> items;
         public Builder() {}
         public Builder(GetWorkspaceFoldersFolderSummaryCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetWorkspaceFoldersFolderSummaryCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetWorkspaceFoldersFolderSummaryCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetWorkspaceFoldersFolderSummaryCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetWorkspaceFoldersFolderSummaryCollectionItem... items) {

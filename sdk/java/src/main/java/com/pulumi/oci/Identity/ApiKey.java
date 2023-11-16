@@ -11,6 +11,7 @@ import com.pulumi.oci.Identity.ApiKeyArgs;
 import com.pulumi.oci.Identity.inputs.ApiKeyState;
 import com.pulumi.oci.Utilities;
 import java.lang.String;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -76,28 +77,28 @@ public class ApiKey extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="fingerprint", refs={String.class}, tree="[0]")
-    private Output<String> fingerprint;
+    private Output</* @Nullable */ String> fingerprint;
 
     /**
      * @return The key&#39;s fingerprint (e.g., 12:34:56:78:90:ab:cd:ef:12:34:56:78:90:ab:cd:ef).
      * 
      */
-    public Output<String> fingerprint() {
-        return this.fingerprint;
+    public Output<Optional<String>> fingerprint() {
+        return Codegen.optional(this.fingerprint);
     }
     /**
      * The detailed status of INACTIVE lifecycleState.
      * 
      */
     @Export(name="inactiveStatus", refs={String.class}, tree="[0]")
-    private Output<String> inactiveStatus;
+    private Output</* @Nullable */ String> inactiveStatus;
 
     /**
      * @return The detailed status of INACTIVE lifecycleState.
      * 
      */
-    public Output<String> inactiveStatus() {
-        return this.inactiveStatus;
+    public Output<Optional<String>> inactiveStatus() {
+        return Codegen.optional(this.inactiveStatus);
     }
     /**
      * The public key.  Must be an RSA key in PEM format.
@@ -118,28 +119,28 @@ public class ApiKey extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The API key&#39;s current state.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * Date and time the `ApiKey` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return Date and time the `ApiKey` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The OCID of the user.

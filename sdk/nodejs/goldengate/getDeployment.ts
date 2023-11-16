@@ -47,152 +47,152 @@ export interface GetDeploymentResult {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * The Minimum number of OCPUs to be made available for this Deployment.
      */
-    readonly cpuCoreCount: number;
+    readonly cpuCoreCount?: number;
     /**
      * Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup being referenced.
      */
-    readonly deploymentBackupId: string;
+    readonly deploymentBackupId?: string;
     /**
      * Information regarding the deployment diagnostic collection
      */
-    readonly deploymentDiagnosticDatas: outputs.GoldenGate.GetDeploymentDeploymentDiagnosticData[];
+    readonly deploymentDiagnosticDatas?: outputs.GoldenGate.GetDeploymentDeploymentDiagnosticData[];
     readonly deploymentId: string;
     /**
      * The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
      */
-    readonly deploymentType: string;
+    readonly deploymentType?: string;
     /**
      * The URL of a resource.
      */
-    readonly deploymentUrl: string;
+    readonly deploymentUrl?: string;
     /**
      * Metadata about this specific object.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * An object's Display Name.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * A three-label Fully Qualified Domain Name (FQDN) for a resource.
      */
-    readonly fqdn: string;
+    readonly fqdn?: string;
     /**
      * A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Indicates if auto scaling is enabled for the Deployment's CPU core count.
      */
-    readonly isAutoScalingEnabled: boolean;
+    readonly isAutoScalingEnabled?: boolean;
     /**
      * True if all of the aggregate resources are working correctly.
      */
-    readonly isHealthy: boolean;
+    readonly isHealthy?: boolean;
     /**
      * Indicates if the resource is the the latest available version.
      */
-    readonly isLatestVersion: boolean;
+    readonly isLatestVersion?: boolean;
     /**
      * True if this object is publicly available.
      */
-    readonly isPublic: boolean;
+    readonly isPublic?: boolean;
     /**
      * Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
      */
-    readonly isStorageUtilizationLimitExceeded: boolean;
+    readonly isStorageUtilizationLimitExceeded?: boolean;
     /**
      * The Oracle license model that applies to a Deployment.
      */
-    readonly licenseModel: string;
+    readonly licenseModel?: string;
     /**
      * Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * Possible GGS lifecycle sub-states.
      */
-    readonly lifecycleSubState: string;
+    readonly lifecycleSubState?: string;
     /**
      * Attributes for configuring automatic deployment maintenance.
      */
-    readonly maintenanceConfigurations: outputs.GoldenGate.GetDeploymentMaintenanceConfiguration[];
+    readonly maintenanceConfigurations?: outputs.GoldenGate.GetDeploymentMaintenanceConfiguration[];
     /**
      * Defines the maintenance window, when automatic actions can be performed.
      */
-    readonly maintenanceWindows: outputs.GoldenGate.GetDeploymentMaintenanceWindow[];
+    readonly maintenanceWindows?: outputs.GoldenGate.GetDeploymentMaintenanceWindow[];
     /**
      * Type of the next maintenance.
      */
-    readonly nextMaintenanceActionType: string;
+    readonly nextMaintenanceActionType?: string;
     /**
      * Description of the next maintenance.
      */
-    readonly nextMaintenanceDescription: string;
+    readonly nextMaintenanceDescription?: string;
     /**
      * An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
      */
-    readonly nsgIds: string[];
+    readonly nsgIds?: string[];
     /**
      * Deployment Data for an OggDeployment
      */
-    readonly oggDatas: outputs.GoldenGate.GetDeploymentOggData[];
+    readonly oggDatas?: outputs.GoldenGate.GetDeploymentOggData[];
     /**
      * The private IP address in the customer's VCN representing the access point for the associated endpoint service in the GoldenGate service VCN.
      */
-    readonly privateIpAddress: string;
+    readonly privateIpAddress?: string;
     /**
      * The public IP address representing the access point for the Deployment.
      */
-    readonly publicIpAddress: string;
+    readonly publicIpAddress?: string;
     /**
      * Possible lifecycle states.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The amount of storage being utilized (in bytes)
      */
-    readonly storageUtilizationInBytes: string;
+    readonly storageUtilizationInBytes?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
      */
-    readonly subnetId: string;
+    readonly subnetId?: string;
     /**
      * The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The time of next maintenance schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */
-    readonly timeOfNextMaintenance: string;
+    readonly timeOfNextMaintenance?: string;
     /**
      * The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */
-    readonly timeOggVersionSupportedUntil: string;
+    readonly timeOggVersionSupportedUntil?: string;
     /**
      * The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
     /**
      * Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records  to check, when deployment will be forced to upgrade to a newer version. Old description: The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */
-    readonly timeUpgradeRequired: string;
+    readonly timeUpgradeRequired?: string;
 }
 /**
  * This data source provides details about a specific Deployment resource in Oracle Cloud Infrastructure Golden Gate service.

@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.ApiGateway.outputs.GetApisApiCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetApisApiCollection {
-    private List<GetApisApiCollectionItem> items;
+    private @Nullable List<GetApisApiCollectionItem> items;
 
     private GetApisApiCollection() {}
     public List<GetApisApiCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetApisApiCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetApisApiCollectionItem> items;
+        private @Nullable List<GetApisApiCollectionItem> items;
         public Builder() {}
         public Builder(GetApisApiCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetApisApiCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetApisApiCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetApisApiCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetApisApiCollectionItem... items) {

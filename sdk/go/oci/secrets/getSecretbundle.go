@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Secretbundle resource in Oracle Cloud Infrastructure Secrets service.
@@ -70,7 +69,7 @@ type GetSecretbundleArgs struct {
 // A collection of values returned by getSecretbundle.
 type GetSecretbundleResult struct {
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Customer-provided contextual metadata for the secret.
 	Metadata map[string]interface{} `pulumi:"metadata"`
 	// The contents of the secret.
@@ -82,15 +81,15 @@ type GetSecretbundleResult struct {
 	// A list of possible rotation states for the secret version.
 	Stages []string `pulumi:"stages"`
 	// The time when the secret bundle was created.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// An optional property indicating when to delete the secret version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfDeletion string `pulumi:"timeOfDeletion"`
+	TimeOfDeletion *string `pulumi:"timeOfDeletion"`
 	// An optional property indicating when the secret version will expire, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfExpiry string `pulumi:"timeOfExpiry"`
+	TimeOfExpiry *string `pulumi:"timeOfExpiry"`
 	// The name of the secret version. Labels are unique across the different versions of a particular secret.
-	VersionName string `pulumi:"versionName"`
+	VersionName *string `pulumi:"versionName"`
 	// The version number of the secret.
-	VersionNumber string `pulumi:"versionNumber"`
+	VersionNumber *string `pulumi:"versionNumber"`
 }
 
 func GetSecretbundleOutput(ctx *pulumi.Context, args GetSecretbundleOutputArgs, opts ...pulumi.InvokeOption) GetSecretbundleResultOutput {
@@ -137,15 +136,9 @@ func (o GetSecretbundleResultOutput) ToGetSecretbundleResultOutputWithContext(ct
 	return o
 }
 
-func (o GetSecretbundleResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecretbundleResult] {
-	return pulumix.Output[GetSecretbundleResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The provider-assigned unique ID for this managed resource.
-func (o GetSecretbundleResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSecretbundleResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetSecretbundleResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSecretbundleResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Customer-provided contextual metadata for the secret.
@@ -177,28 +170,28 @@ func (o GetSecretbundleResultOutput) Stages() pulumi.StringArrayOutput {
 }
 
 // The time when the secret bundle was created.
-func (o GetSecretbundleResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSecretbundleResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetSecretbundleResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSecretbundleResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // An optional property indicating when to delete the secret version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-func (o GetSecretbundleResultOutput) TimeOfDeletion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSecretbundleResult) string { return v.TimeOfDeletion }).(pulumi.StringOutput)
+func (o GetSecretbundleResultOutput) TimeOfDeletion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSecretbundleResult) *string { return v.TimeOfDeletion }).(pulumi.StringPtrOutput)
 }
 
 // An optional property indicating when the secret version will expire, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-func (o GetSecretbundleResultOutput) TimeOfExpiry() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSecretbundleResult) string { return v.TimeOfExpiry }).(pulumi.StringOutput)
+func (o GetSecretbundleResultOutput) TimeOfExpiry() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSecretbundleResult) *string { return v.TimeOfExpiry }).(pulumi.StringPtrOutput)
 }
 
 // The name of the secret version. Labels are unique across the different versions of a particular secret.
-func (o GetSecretbundleResultOutput) VersionName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSecretbundleResult) string { return v.VersionName }).(pulumi.StringOutput)
+func (o GetSecretbundleResultOutput) VersionName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSecretbundleResult) *string { return v.VersionName }).(pulumi.StringPtrOutput)
 }
 
 // The version number of the secret.
-func (o GetSecretbundleResultOutput) VersionNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSecretbundleResult) string { return v.VersionNumber }).(pulumi.StringOutput)
+func (o GetSecretbundleResultOutput) VersionNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSecretbundleResult) *string { return v.VersionNumber }).(pulumi.StringPtrOutput)
 }
 
 func init() {

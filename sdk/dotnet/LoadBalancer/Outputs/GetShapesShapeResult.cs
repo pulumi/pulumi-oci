@@ -16,10 +16,10 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
         /// <summary>
         /// The name of the shape.  Example: `100Mbps`
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
 
         [OutputConstructor]
-        private GetShapesShapeResult(string name)
+        private GetShapesShapeResult(string? name)
         {
             Name = name;
         }

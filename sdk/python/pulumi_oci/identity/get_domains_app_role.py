@@ -122,10 +122,7 @@ class GetDomainsAppRoleResult:
 
     @property
     @pulumi.getter(name="adminRole")
-    def admin_role(self) -> bool:
-        """
-        If true, the role provides administrative access privileges.
-        """
+    def admin_role(self) -> Optional[bool]:
         return pulumi.get(self, "admin_role")
 
     @property
@@ -135,10 +132,7 @@ class GetDomainsAppRoleResult:
 
     @property
     @pulumi.getter
-    def apps(self) -> Sequence['outputs.GetDomainsAppRoleAppResult']:
-        """
-        A unique identifier for the application that references this role.
-        """
+    def apps(self) -> Optional[Sequence['outputs.GetDomainsAppRoleAppResult']]:
         return pulumi.get(self, "apps")
 
     @property
@@ -158,82 +152,52 @@ class GetDomainsAppRoleResult:
 
     @property
     @pulumi.getter(name="availableToClients")
-    def available_to_clients(self) -> bool:
-        """
-        If true, this AppRole can be granted to Apps.
-        """
+    def available_to_clients(self) -> Optional[bool]:
         return pulumi.get(self, "available_to_clients")
 
     @property
     @pulumi.getter(name="availableToGroups")
-    def available_to_groups(self) -> bool:
-        """
-        If true, this AppRole can be granted to Groups.
-        """
+    def available_to_groups(self) -> Optional[bool]:
         return pulumi.get(self, "available_to_groups")
 
     @property
     @pulumi.getter(name="availableToUsers")
-    def available_to_users(self) -> bool:
-        """
-        If true, this AppRole can be granted to Users.
-        """
+    def available_to_users(self) -> Optional[bool]:
         return pulumi.get(self, "available_to_users")
 
     @property
     @pulumi.getter(name="compartmentOcid")
-    def compartment_ocid(self) -> str:
-        """
-        Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
-        """
+    def compartment_ocid(self) -> Optional[str]:
         return pulumi.get(self, "compartment_ocid")
 
     @property
     @pulumi.getter(name="deleteInProgress")
-    def delete_in_progress(self) -> bool:
-        """
-        A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
-        """
+    def delete_in_progress(self) -> Optional[bool]:
         return pulumi.get(self, "delete_in_progress")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        AppRole description
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        AppRole name
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="domainOcid")
-    def domain_ocid(self) -> str:
-        """
-        Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
-        """
+    def domain_ocid(self) -> Optional[str]:
         return pulumi.get(self, "domain_ocid")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="idcsCreatedBies")
-    def idcs_created_bies(self) -> Sequence['outputs.GetDomainsAppRoleIdcsCreatedByResult']:
-        """
-        The User or App who created the Resource
-        """
+    def idcs_created_bies(self) -> Optional[Sequence['outputs.GetDomainsAppRoleIdcsCreatedByResult']]:
         return pulumi.get(self, "idcs_created_bies")
 
     @property
@@ -243,82 +207,52 @@ class GetDomainsAppRoleResult:
 
     @property
     @pulumi.getter(name="idcsLastModifiedBies")
-    def idcs_last_modified_bies(self) -> Sequence['outputs.GetDomainsAppRoleIdcsLastModifiedByResult']:
-        """
-        The User or App who modified the Resource
-        """
+    def idcs_last_modified_bies(self) -> Optional[Sequence['outputs.GetDomainsAppRoleIdcsLastModifiedByResult']]:
         return pulumi.get(self, "idcs_last_modified_bies")
 
     @property
     @pulumi.getter(name="idcsLastUpgradedInRelease")
-    def idcs_last_upgraded_in_release(self) -> str:
-        """
-        The release number when the resource was upgraded.
-        """
+    def idcs_last_upgraded_in_release(self) -> Optional[str]:
         return pulumi.get(self, "idcs_last_upgraded_in_release")
 
     @property
     @pulumi.getter(name="idcsPreventedOperations")
-    def idcs_prevented_operations(self) -> Sequence[str]:
-        """
-        Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
-        """
+    def idcs_prevented_operations(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "idcs_prevented_operations")
 
     @property
     @pulumi.getter(name="legacyGroupName")
-    def legacy_group_name(self) -> str:
-        """
-        The name of the legacy group associated with this AppRole.
-        """
+    def legacy_group_name(self) -> Optional[str]:
         return pulumi.get(self, "legacy_group_name")
 
     @property
     @pulumi.getter(name="limitedToOneOrMoreGroups")
-    def limited_to_one_or_more_groups(self) -> bool:
-        """
-        If true, indicates that this Oracle Identity Cloud Service AppRole can be granted to a delegated administrator whose scope is limited to users that are members of one or more groups.
-        """
+    def limited_to_one_or_more_groups(self) -> Optional[bool]:
         return pulumi.get(self, "limited_to_one_or_more_groups")
 
     @property
     @pulumi.getter(name="localizedDisplayName")
-    def localized_display_name(self) -> str:
-        """
-        AppRole localization name
-        """
+    def localized_display_name(self) -> Optional[str]:
         return pulumi.get(self, "localized_display_name")
 
     @property
     @pulumi.getter
-    def members(self) -> Sequence['outputs.GetDomainsAppRoleMemberResult']:
-        """
-        AppRole members - when requesting members attribute, it is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%26count=10]
-        """
+    def members(self) -> Optional[Sequence['outputs.GetDomainsAppRoleMemberResult']]:
         return pulumi.get(self, "members")
 
     @property
     @pulumi.getter
-    def metas(self) -> Sequence['outputs.GetDomainsAppRoleMetaResult']:
-        """
-        A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
-        """
+    def metas(self) -> Optional[Sequence['outputs.GetDomainsAppRoleMetaResult']]:
         return pulumi.get(self, "metas")
 
     @property
     @pulumi.getter
-    def ocid(self) -> str:
-        """
-        Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
-        """
+    def ocid(self) -> Optional[str]:
         return pulumi.get(self, "ocid")
 
     @property
     @pulumi.getter
-    def public(self) -> bool:
-        """
-        If true, this AppRole is available automatically to every Oracle Identity Cloud Service User in this tenancy. There is no need to grant it to individual Users or Groups.
-        """
+    def public(self) -> Optional[bool]:
         return pulumi.get(self, "public")
 
     @property
@@ -328,34 +262,22 @@ class GetDomainsAppRoleResult:
 
     @property
     @pulumi.getter
-    def schemas(self) -> Sequence[str]:
-        """
-        REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
-        """
+    def schemas(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "schemas")
 
     @property
     @pulumi.getter
-    def tags(self) -> Sequence['outputs.GetDomainsAppRoleTagResult']:
-        """
-        A list of tags on this resource.
-        """
+    def tags(self) -> Optional[Sequence['outputs.GetDomainsAppRoleTagResult']]:
         return pulumi.get(self, "tags")
 
     @property
     @pulumi.getter(name="tenancyOcid")
-    def tenancy_ocid(self) -> str:
-        """
-        Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
-        """
+    def tenancy_ocid(self) -> Optional[str]:
         return pulumi.get(self, "tenancy_ocid")
 
     @property
     @pulumi.getter(name="uniqueName")
-    def unique_name(self) -> str:
-        """
-        AppRole unique name
-        """
+    def unique_name(self) -> Optional[str]:
         return pulumi.get(self, "unique_name")
 
 
@@ -407,31 +329,7 @@ def get_domains_app_role(app_role_id: Optional[str] = None,
                          resource_type_schema_version: Optional[str] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDomainsAppRoleResult:
     """
-    This data source provides details about a specific App Role resource in Oracle Cloud Infrastructure Identity Domains service.
-
-    Get an AppRole
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_app_role = oci.Identity.get_domains_app_role(app_role_id=oci_identity_domains_app_role["test_app_role"]["id"],
-        idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        attribute_sets=["all"],
-        attributes="",
-        authorization=var["app_role_authorization"],
-        resource_type_schema_version=var["app_role_resource_type_schema_version"])
-    ```
-
-
-    :param str app_role_id: ID of the resource
-    :param Sequence[str] attribute_sets: A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
-    :param str attributes: A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
-    :param str authorization: The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
-    :param str idcs_endpoint: The basic endpoint for the identity domain
-    :param str resource_type_schema_version: An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['appRoleId'] = app_role_id
@@ -487,30 +385,6 @@ def get_domains_app_role_output(app_role_id: Optional[pulumi.Input[str]] = None,
                                 resource_type_schema_version: Optional[pulumi.Input[Optional[str]]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDomainsAppRoleResult]:
     """
-    This data source provides details about a specific App Role resource in Oracle Cloud Infrastructure Identity Domains service.
-
-    Get an AppRole
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_app_role = oci.Identity.get_domains_app_role(app_role_id=oci_identity_domains_app_role["test_app_role"]["id"],
-        idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        attribute_sets=["all"],
-        attributes="",
-        authorization=var["app_role_authorization"],
-        resource_type_schema_version=var["app_role_resource_type_schema_version"])
-    ```
-
-
-    :param str app_role_id: ID of the resource
-    :param Sequence[str] attribute_sets: A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
-    :param str attributes: A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
-    :param str authorization: The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
-    :param str idcs_endpoint: The basic endpoint for the identity domain
-    :param str resource_type_schema_version: An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Managed Databases Database Parameter resource in Oracle Cloud Infrastructure Database Management service.
@@ -69,16 +68,16 @@ type GetManagedDatabasesDatabaseParameterArgs struct {
 // A collection of values returned by getManagedDatabasesDatabaseParameter.
 type GetManagedDatabasesDatabaseParameterResult struct {
 	// The name of the Managed Database.
-	DatabaseName string `pulumi:"databaseName"`
+	DatabaseName *string `pulumi:"databaseName"`
 	// The subtype of the Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, or a Non-container Database.
-	DatabaseSubType string `pulumi:"databaseSubType"`
+	DatabaseSubType *string `pulumi:"databaseSubType"`
 	// The type of Oracle Database installation.
-	DatabaseType string `pulumi:"databaseType"`
+	DatabaseType *string `pulumi:"databaseType"`
 	// The Oracle Database version.
-	DatabaseVersion string `pulumi:"databaseVersion"`
+	DatabaseVersion *string `pulumi:"databaseVersion"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                      string `pulumi:"id"`
-	IsAllowedValuesIncluded *bool  `pulumi:"isAllowedValuesIncluded"`
+	Id                      *string `pulumi:"id"`
+	IsAllowedValuesIncluded *bool   `pulumi:"isAllowedValuesIncluded"`
 	// An array of DatabaseParameterSummary objects.
 	Items             []GetManagedDatabasesDatabaseParameterItem `pulumi:"items"`
 	ManagedDatabaseId string                                     `pulumi:"managedDatabaseId"`
@@ -131,35 +130,29 @@ func (o GetManagedDatabasesDatabaseParameterResultOutput) ToGetManagedDatabasesD
 	return o
 }
 
-func (o GetManagedDatabasesDatabaseParameterResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedDatabasesDatabaseParameterResult] {
-	return pulumix.Output[GetManagedDatabasesDatabaseParameterResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The name of the Managed Database.
-func (o GetManagedDatabasesDatabaseParameterResultOutput) DatabaseName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabasesDatabaseParameterResult) string { return v.DatabaseName }).(pulumi.StringOutput)
+func (o GetManagedDatabasesDatabaseParameterResultOutput) DatabaseName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabasesDatabaseParameterResult) *string { return v.DatabaseName }).(pulumi.StringPtrOutput)
 }
 
 // The subtype of the Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, or a Non-container Database.
-func (o GetManagedDatabasesDatabaseParameterResultOutput) DatabaseSubType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabasesDatabaseParameterResult) string { return v.DatabaseSubType }).(pulumi.StringOutput)
+func (o GetManagedDatabasesDatabaseParameterResultOutput) DatabaseSubType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabasesDatabaseParameterResult) *string { return v.DatabaseSubType }).(pulumi.StringPtrOutput)
 }
 
 // The type of Oracle Database installation.
-func (o GetManagedDatabasesDatabaseParameterResultOutput) DatabaseType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabasesDatabaseParameterResult) string { return v.DatabaseType }).(pulumi.StringOutput)
+func (o GetManagedDatabasesDatabaseParameterResultOutput) DatabaseType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabasesDatabaseParameterResult) *string { return v.DatabaseType }).(pulumi.StringPtrOutput)
 }
 
 // The Oracle Database version.
-func (o GetManagedDatabasesDatabaseParameterResultOutput) DatabaseVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabasesDatabaseParameterResult) string { return v.DatabaseVersion }).(pulumi.StringOutput)
+func (o GetManagedDatabasesDatabaseParameterResultOutput) DatabaseVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabasesDatabaseParameterResult) *string { return v.DatabaseVersion }).(pulumi.StringPtrOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetManagedDatabasesDatabaseParameterResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabasesDatabaseParameterResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetManagedDatabasesDatabaseParameterResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabasesDatabaseParameterResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetManagedDatabasesDatabaseParameterResultOutput) IsAllowedValuesIncluded() pulumi.BoolPtrOutput {

@@ -110,44 +110,44 @@ namespace Pulumi.Oci.DatabaseManagement
         /// <summary>
         /// The additional details of the external cluster defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> AdditionalDetails;
+        public readonly ImmutableDictionary<string, object>? AdditionalDetails;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The name of the external cluster.
         /// </summary>
-        public readonly string ComponentName;
+        public readonly string? ComponentName;
         /// <summary>
         /// The user-friendly name for the external cluster. The name does not have to be unique.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         public readonly string ExternalClusterId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
         /// </summary>
-        public readonly string ExternalConnectorId;
+        public readonly string? ExternalConnectorId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the cluster is a part of.
         /// </summary>
-        public readonly string ExternalDbSystemId;
+        public readonly string? ExternalDbSystemId;
         /// <summary>
         /// The directory in which Oracle Grid Infrastructure is installed.
         /// </summary>
-        public readonly string GridHome;
+        public readonly string? GridHome;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external cluster.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Indicates whether the cluster is Oracle Flex Cluster or not.
         /// </summary>
-        public readonly bool IsFlexCluster;
+        public readonly bool? IsFlexCluster;
         /// <summary>
         /// Additional information about the current lifecycle state.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// The list of network address configurations of the external cluster.
         /// </summary>
@@ -155,7 +155,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// <summary>
         /// The location of the Oracle Cluster Registry (OCR).
         /// </summary>
-        public readonly string OcrFileLocation;
+        public readonly string? OcrFileLocation;
         /// <summary>
         /// The list of Single Client Access Name (SCAN) configurations of the external cluster.
         /// </summary>
@@ -163,19 +163,19 @@ namespace Pulumi.Oci.DatabaseManagement
         /// <summary>
         /// The current lifecycle state of the external cluster.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The date and time the external cluster was created.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The date and time the external cluster was last updated.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
         /// <summary>
         /// The cluster version.
         /// </summary>
-        public readonly string Version;
+        public readonly string? Version;
         /// <summary>
         /// The list of Virtual IP (VIP) configurations of the external cluster.
         /// </summary>
@@ -183,41 +183,41 @@ namespace Pulumi.Oci.DatabaseManagement
 
         [OutputConstructor]
         private GetExternalClusterResult(
-            ImmutableDictionary<string, object> additionalDetails,
+            ImmutableDictionary<string, object>? additionalDetails,
 
-            string compartmentId,
+            string? compartmentId,
 
-            string componentName,
+            string? componentName,
 
-            string displayName,
+            string? displayName,
 
             string externalClusterId,
 
-            string externalConnectorId,
+            string? externalConnectorId,
 
-            string externalDbSystemId,
+            string? externalDbSystemId,
 
-            string gridHome,
+            string? gridHome,
 
-            string id,
+            string? id,
 
-            bool isFlexCluster,
+            bool? isFlexCluster,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
             ImmutableArray<Outputs.GetExternalClusterNetworkConfigurationResult> networkConfigurations,
 
-            string ocrFileLocation,
+            string? ocrFileLocation,
 
             ImmutableArray<Outputs.GetExternalClusterScanConfigurationResult> scanConfigurations,
 
-            string state,
+            string? state,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated,
+            string? timeUpdated,
 
-            string version,
+            string? version,
 
             ImmutableArray<Outputs.GetExternalClusterVipConfigurationResult> vipConfigurations)
         {

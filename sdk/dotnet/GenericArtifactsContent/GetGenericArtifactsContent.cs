@@ -109,13 +109,13 @@ namespace Pulumi.Oci.GenericArtifactsContent
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
 
         [OutputConstructor]
         private GetGenericArtifactsContentResult(
             string artifactId,
 
-            string id)
+            string? id)
         {
             ArtifactId = artifactId;
             Id = id;

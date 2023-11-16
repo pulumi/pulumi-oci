@@ -76,82 +76,52 @@ class GetScriptResult:
 
     @property
     @pulumi.getter
-    def content(self) -> str:
-        """
-        The content of the script. It may contain custom-defined tags that can be used for setting dynamic parameters. The format to set dynamic parameters is: `<ORAP><ON>param name</ON><OV>param value</OV><OS>isParamValueSecret(true/false)</OS></ORAP>`. Param value and isParamValueSecret are optional, the default value for isParamValueSecret is false. Examples: With mandatory param name : `<ORAP><ON>param name</ON></ORAP>` With parameter name and value : `<ORAP><ON>param name</ON><OV>param value</OV></ORAP>` Note that the content is valid if it matches the given content type. For example, if the content type is SIDE, then the content should be in Side script format. If the content type is JS, then the content should be in JavaScript format.
-        """
+    def content(self) -> Optional[str]:
         return pulumi.get(self, "content")
 
     @property
     @pulumi.getter(name="contentFileName")
-    def content_file_name(self) -> str:
-        """
-        File name of the uploaded script content.
-        """
+    def content_file_name(self) -> Optional[str]:
         return pulumi.get(self, "content_file_name")
 
     @property
     @pulumi.getter(name="contentSizeInBytes")
-    def content_size_in_bytes(self) -> int:
-        """
-        Size of the script content.
-        """
+    def content_size_in_bytes(self) -> Optional[int]:
         return pulumi.get(self, "content_size_in_bytes")
 
     @property
     @pulumi.getter(name="contentType")
-    def content_type(self) -> str:
-        """
-        Content type of the script.
-        """
+    def content_type(self) -> Optional[str]:
         return pulumi.get(self, "content_type")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        Unique name that can be edited. The name should not contain any confidential information.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the script. scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="monitorStatusCountMaps")
-    def monitor_status_count_maps(self) -> Sequence['outputs.GetScriptMonitorStatusCountMapResult']:
-        """
-        Details of the monitor count per state. Example: `{ "total" : 5, "enabled" : 3 , "disabled" : 2, "invalid" : 0 }`
-        """
+    def monitor_status_count_maps(self) -> Optional[Sequence['outputs.GetScriptMonitorStatusCountMapResult']]:
         return pulumi.get(self, "monitor_status_count_maps")
 
     @property
     @pulumi.getter
-    def parameters(self) -> Sequence['outputs.GetScriptParameterResult']:
-        """
-        List of script parameters. Example: `[{"scriptParameter": {"paramName": "userid", "paramValue":"testuser", "isSecret": false}, "isOverwritten": false}]`
-        """
+    def parameters(self) -> Optional[Sequence['outputs.GetScriptParameterResult']]:
         return pulumi.get(self, "parameters")
 
     @property
@@ -161,26 +131,17 @@ class GetScriptResult:
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="timeUploaded")
-    def time_uploaded(self) -> str:
-        """
-        The time the script was uploaded.
-        """
+    def time_uploaded(self) -> Optional[str]:
         return pulumi.get(self, "time_uploaded")
 
 
@@ -211,23 +172,7 @@ def get_script(apm_domain_id: Optional[str] = None,
                script_id: Optional[str] = None,
                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetScriptResult:
     """
-    This data source provides details about a specific Script resource in Oracle Cloud Infrastructure Apm Synthetics service.
-
-    Gets the configuration of the script identified by the OCID.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_script = oci.ApmSynthetics.get_script(apm_domain_id=oci_apm_synthetics_apm_domain["test_apm_domain"]["id"],
-        script_id=oci_apm_synthetics_script["test_script"]["id"])
-    ```
-
-
-    :param str apm_domain_id: The APM domain ID the request is intended for.
-    :param str script_id: The OCID of the script.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['apmDomainId'] = apm_domain_id
@@ -258,22 +203,6 @@ def get_script_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
                       script_id: Optional[pulumi.Input[str]] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetScriptResult]:
     """
-    This data source provides details about a specific Script resource in Oracle Cloud Infrastructure Apm Synthetics service.
-
-    Gets the configuration of the script identified by the OCID.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_script = oci.ApmSynthetics.get_script(apm_domain_id=oci_apm_synthetics_apm_domain["test_apm_domain"]["id"],
-        script_id=oci_apm_synthetics_script["test_script"]["id"])
-    ```
-
-
-    :param str apm_domain_id: The APM domain ID the request is intended for.
-    :param str script_id: The OCID of the script.
+    Use this data source to access information about an existing resource.
     """
     ...

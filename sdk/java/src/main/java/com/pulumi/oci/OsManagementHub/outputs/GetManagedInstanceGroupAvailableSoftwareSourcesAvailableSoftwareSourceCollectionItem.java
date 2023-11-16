@@ -6,6 +6,8 @@ package com.pulumi.oci.OsManagementHub.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItem {
@@ -13,39 +15,39 @@ public final class GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftw
      * @return The OCID of the compartment that contains the resources to list.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return A filter to return resources that match the given display names.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return unique identifier that is immutable on creation.
      * 
      */
-    private String id;
+    private @Nullable String id;
 
     private GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItem() {}
     /**
      * @return The OCID of the compartment that contains the resources to list.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return A filter to return resources that match the given display names.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return unique identifier that is immutable on creation.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftw
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private String displayName;
-        private String id;
+        private @Nullable String compartmentId;
+        private @Nullable String displayName;
+        private @Nullable String id;
         public Builder() {}
         public Builder(GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftw
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         public GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItem build() {

@@ -25,12 +25,12 @@ public final class GetHttpRedirectsResult {
      * @return The list of http_redirects.
      * 
      */
-    private List<GetHttpRedirectsHttpRedirect> httpRedirects;
+    private @Nullable List<GetHttpRedirectsHttpRedirect> httpRedirects;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private @Nullable List<String> ids;
     private @Nullable List<String> states;
     private @Nullable String timeCreatedGreaterThanOrEqualTo;
@@ -55,14 +55,14 @@ public final class GetHttpRedirectsResult {
      * 
      */
     public List<GetHttpRedirectsHttpRedirect> httpRedirects() {
-        return this.httpRedirects;
+        return this.httpRedirects == null ? List.of() : this.httpRedirects;
     }
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public List<String> ids() {
         return this.ids == null ? List.of() : this.ids;
@@ -89,8 +89,8 @@ public final class GetHttpRedirectsResult {
         private String compartmentId;
         private @Nullable List<String> displayNames;
         private @Nullable List<GetHttpRedirectsFilter> filters;
-        private List<GetHttpRedirectsHttpRedirect> httpRedirects;
-        private String id;
+        private @Nullable List<GetHttpRedirectsHttpRedirect> httpRedirects;
+        private @Nullable String id;
         private @Nullable List<String> ids;
         private @Nullable List<String> states;
         private @Nullable String timeCreatedGreaterThanOrEqualTo;
@@ -131,16 +131,16 @@ public final class GetHttpRedirectsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder httpRedirects(List<GetHttpRedirectsHttpRedirect> httpRedirects) {
-            this.httpRedirects = Objects.requireNonNull(httpRedirects);
+        public Builder httpRedirects(@Nullable List<GetHttpRedirectsHttpRedirect> httpRedirects) {
+            this.httpRedirects = httpRedirects;
             return this;
         }
         public Builder httpRedirects(GetHttpRedirectsHttpRedirect... httpRedirects) {
             return httpRedirects(List.of(httpRedirects));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

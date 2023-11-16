@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -79,12 +78,6 @@ func (i AgentPluginListArgs) ToAgentPluginListOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(AgentPluginListOutput)
 }
 
-func (i AgentPluginListArgs) ToOutput(ctx context.Context) pulumix.Output[AgentPluginList] {
-	return pulumix.Output[AgentPluginList]{
-		OutputState: i.ToAgentPluginListOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AgentPluginListArrayInput is an input type that accepts AgentPluginListArray and AgentPluginListArrayOutput values.
 // You can construct a concrete instance of `AgentPluginListArrayInput` via:
 //
@@ -110,12 +103,6 @@ func (i AgentPluginListArray) ToAgentPluginListArrayOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(AgentPluginListArrayOutput)
 }
 
-func (i AgentPluginListArray) ToOutput(ctx context.Context) pulumix.Output[[]AgentPluginList] {
-	return pulumix.Output[[]AgentPluginList]{
-		OutputState: i.ToAgentPluginListArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AgentPluginListOutput struct{ *pulumi.OutputState }
 
 func (AgentPluginListOutput) ElementType() reflect.Type {
@@ -128,12 +115,6 @@ func (o AgentPluginListOutput) ToAgentPluginListOutput() AgentPluginListOutput {
 
 func (o AgentPluginListOutput) ToAgentPluginListOutputWithContext(ctx context.Context) AgentPluginListOutput {
 	return o
-}
-
-func (o AgentPluginListOutput) ToOutput(ctx context.Context) pulumix.Output[AgentPluginList] {
-	return pulumix.Output[AgentPluginList]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Agent identifier.
@@ -193,12 +174,6 @@ func (o AgentPluginListArrayOutput) ToAgentPluginListArrayOutput() AgentPluginLi
 
 func (o AgentPluginListArrayOutput) ToAgentPluginListArrayOutputWithContext(ctx context.Context) AgentPluginListArrayOutput {
 	return o
-}
-
-func (o AgentPluginListArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]AgentPluginList] {
-	return pulumix.Output[[]AgentPluginList]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AgentPluginListArrayOutput) Index(i pulumi.IntInput) AgentPluginListOutput {
@@ -352,12 +327,6 @@ func (i AssetComputeArgs) ToAssetComputeOutputWithContext(ctx context.Context) A
 	return pulumi.ToOutputWithContext(ctx, i).(AssetComputeOutput)
 }
 
-func (i AssetComputeArgs) ToOutput(ctx context.Context) pulumix.Output[AssetCompute] {
-	return pulumix.Output[AssetCompute]{
-		OutputState: i.ToAssetComputeOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i AssetComputeArgs) ToAssetComputePtrOutput() AssetComputePtrOutput {
 	return i.ToAssetComputePtrOutputWithContext(context.Background())
 }
@@ -399,12 +368,6 @@ func (i *assetComputePtrType) ToAssetComputePtrOutputWithContext(ctx context.Con
 	return pulumi.ToOutputWithContext(ctx, i).(AssetComputePtrOutput)
 }
 
-func (i *assetComputePtrType) ToOutput(ctx context.Context) pulumix.Output[*AssetCompute] {
-	return pulumix.Output[*AssetCompute]{
-		OutputState: i.ToAssetComputePtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AssetComputeOutput struct{ *pulumi.OutputState }
 
 func (AssetComputeOutput) ElementType() reflect.Type {
@@ -427,12 +390,6 @@ func (o AssetComputeOutput) ToAssetComputePtrOutputWithContext(ctx context.Conte
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v AssetCompute) *AssetCompute {
 		return &v
 	}).(AssetComputePtrOutput)
-}
-
-func (o AssetComputeOutput) ToOutput(ctx context.Context) pulumix.Output[AssetCompute] {
-	return pulumix.Output[AssetCompute]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Number of connected networks.
@@ -592,12 +549,6 @@ func (o AssetComputePtrOutput) ToAssetComputePtrOutput() AssetComputePtrOutput {
 
 func (o AssetComputePtrOutput) ToAssetComputePtrOutputWithContext(ctx context.Context) AssetComputePtrOutput {
 	return o
-}
-
-func (o AssetComputePtrOutput) ToOutput(ctx context.Context) pulumix.Output[*AssetCompute] {
-	return pulumix.Output[*AssetCompute]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AssetComputePtrOutput) Elem() AssetComputeOutput {
@@ -957,12 +908,6 @@ func (i AssetComputeDiskArgs) ToAssetComputeDiskOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(AssetComputeDiskOutput)
 }
 
-func (i AssetComputeDiskArgs) ToOutput(ctx context.Context) pulumix.Output[AssetComputeDisk] {
-	return pulumix.Output[AssetComputeDisk]{
-		OutputState: i.ToAssetComputeDiskOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AssetComputeDiskArrayInput is an input type that accepts AssetComputeDiskArray and AssetComputeDiskArrayOutput values.
 // You can construct a concrete instance of `AssetComputeDiskArrayInput` via:
 //
@@ -988,12 +933,6 @@ func (i AssetComputeDiskArray) ToAssetComputeDiskArrayOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(AssetComputeDiskArrayOutput)
 }
 
-func (i AssetComputeDiskArray) ToOutput(ctx context.Context) pulumix.Output[[]AssetComputeDisk] {
-	return pulumix.Output[[]AssetComputeDisk]{
-		OutputState: i.ToAssetComputeDiskArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AssetComputeDiskOutput struct{ *pulumi.OutputState }
 
 func (AssetComputeDiskOutput) ElementType() reflect.Type {
@@ -1006,12 +945,6 @@ func (o AssetComputeDiskOutput) ToAssetComputeDiskOutput() AssetComputeDiskOutpu
 
 func (o AssetComputeDiskOutput) ToAssetComputeDiskOutputWithContext(ctx context.Context) AssetComputeDiskOutput {
 	return o
-}
-
-func (o AssetComputeDiskOutput) ToOutput(ctx context.Context) pulumix.Output[AssetComputeDisk] {
-	return pulumix.Output[AssetComputeDisk]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Order of boot volumes.
@@ -1061,12 +994,6 @@ func (o AssetComputeDiskArrayOutput) ToAssetComputeDiskArrayOutput() AssetComput
 
 func (o AssetComputeDiskArrayOutput) ToAssetComputeDiskArrayOutputWithContext(ctx context.Context) AssetComputeDiskArrayOutput {
 	return o
-}
-
-func (o AssetComputeDiskArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]AssetComputeDisk] {
-	return pulumix.Output[[]AssetComputeDisk]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AssetComputeDiskArrayOutput) Index(i pulumi.IntInput) AssetComputeDiskOutput {
@@ -1124,12 +1051,6 @@ func (i AssetComputeGpuDeviceArgs) ToAssetComputeGpuDeviceOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(AssetComputeGpuDeviceOutput)
 }
 
-func (i AssetComputeGpuDeviceArgs) ToOutput(ctx context.Context) pulumix.Output[AssetComputeGpuDevice] {
-	return pulumix.Output[AssetComputeGpuDevice]{
-		OutputState: i.ToAssetComputeGpuDeviceOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AssetComputeGpuDeviceArrayInput is an input type that accepts AssetComputeGpuDeviceArray and AssetComputeGpuDeviceArrayOutput values.
 // You can construct a concrete instance of `AssetComputeGpuDeviceArrayInput` via:
 //
@@ -1155,12 +1076,6 @@ func (i AssetComputeGpuDeviceArray) ToAssetComputeGpuDeviceArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(AssetComputeGpuDeviceArrayOutput)
 }
 
-func (i AssetComputeGpuDeviceArray) ToOutput(ctx context.Context) pulumix.Output[[]AssetComputeGpuDevice] {
-	return pulumix.Output[[]AssetComputeGpuDevice]{
-		OutputState: i.ToAssetComputeGpuDeviceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AssetComputeGpuDeviceOutput struct{ *pulumi.OutputState }
 
 func (AssetComputeGpuDeviceOutput) ElementType() reflect.Type {
@@ -1173,12 +1088,6 @@ func (o AssetComputeGpuDeviceOutput) ToAssetComputeGpuDeviceOutput() AssetComput
 
 func (o AssetComputeGpuDeviceOutput) ToAssetComputeGpuDeviceOutputWithContext(ctx context.Context) AssetComputeGpuDeviceOutput {
 	return o
-}
-
-func (o AssetComputeGpuDeviceOutput) ToOutput(ctx context.Context) pulumix.Output[AssetComputeGpuDevice] {
-	return pulumix.Output[AssetComputeGpuDevice]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Number of GPU cores.
@@ -1218,12 +1127,6 @@ func (o AssetComputeGpuDeviceArrayOutput) ToAssetComputeGpuDeviceArrayOutput() A
 
 func (o AssetComputeGpuDeviceArrayOutput) ToAssetComputeGpuDeviceArrayOutputWithContext(ctx context.Context) AssetComputeGpuDeviceArrayOutput {
 	return o
-}
-
-func (o AssetComputeGpuDeviceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]AssetComputeGpuDevice] {
-	return pulumix.Output[[]AssetComputeGpuDevice]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AssetComputeGpuDeviceArrayOutput) Index(i pulumi.IntInput) AssetComputeGpuDeviceOutput {
@@ -1285,12 +1188,6 @@ func (i AssetComputeNicArgs) ToAssetComputeNicOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(AssetComputeNicOutput)
 }
 
-func (i AssetComputeNicArgs) ToOutput(ctx context.Context) pulumix.Output[AssetComputeNic] {
-	return pulumix.Output[AssetComputeNic]{
-		OutputState: i.ToAssetComputeNicOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AssetComputeNicArrayInput is an input type that accepts AssetComputeNicArray and AssetComputeNicArrayOutput values.
 // You can construct a concrete instance of `AssetComputeNicArrayInput` via:
 //
@@ -1316,12 +1213,6 @@ func (i AssetComputeNicArray) ToAssetComputeNicArrayOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(AssetComputeNicArrayOutput)
 }
 
-func (i AssetComputeNicArray) ToOutput(ctx context.Context) pulumix.Output[[]AssetComputeNic] {
-	return pulumix.Output[[]AssetComputeNic]{
-		OutputState: i.ToAssetComputeNicArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AssetComputeNicOutput struct{ *pulumi.OutputState }
 
 func (AssetComputeNicOutput) ElementType() reflect.Type {
@@ -1334,12 +1225,6 @@ func (o AssetComputeNicOutput) ToAssetComputeNicOutput() AssetComputeNicOutput {
 
 func (o AssetComputeNicOutput) ToAssetComputeNicOutputWithContext(ctx context.Context) AssetComputeNicOutput {
 	return o
-}
-
-func (o AssetComputeNicOutput) ToOutput(ctx context.Context) pulumix.Output[AssetComputeNic] {
-	return pulumix.Output[AssetComputeNic]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) List of IP addresses.
@@ -1384,12 +1269,6 @@ func (o AssetComputeNicArrayOutput) ToAssetComputeNicArrayOutput() AssetComputeN
 
 func (o AssetComputeNicArrayOutput) ToAssetComputeNicArrayOutputWithContext(ctx context.Context) AssetComputeNicArrayOutput {
 	return o
-}
-
-func (o AssetComputeNicArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]AssetComputeNic] {
-	return pulumix.Output[[]AssetComputeNic]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AssetComputeNicArrayOutput) Index(i pulumi.IntInput) AssetComputeNicOutput {
@@ -1439,12 +1318,6 @@ func (i AssetComputeNvdimmArgs) ToAssetComputeNvdimmOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(AssetComputeNvdimmOutput)
 }
 
-func (i AssetComputeNvdimmArgs) ToOutput(ctx context.Context) pulumix.Output[AssetComputeNvdimm] {
-	return pulumix.Output[AssetComputeNvdimm]{
-		OutputState: i.ToAssetComputeNvdimmOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AssetComputeNvdimmArrayInput is an input type that accepts AssetComputeNvdimmArray and AssetComputeNvdimmArrayOutput values.
 // You can construct a concrete instance of `AssetComputeNvdimmArrayInput` via:
 //
@@ -1470,12 +1343,6 @@ func (i AssetComputeNvdimmArray) ToAssetComputeNvdimmArrayOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(AssetComputeNvdimmArrayOutput)
 }
 
-func (i AssetComputeNvdimmArray) ToOutput(ctx context.Context) pulumix.Output[[]AssetComputeNvdimm] {
-	return pulumix.Output[[]AssetComputeNvdimm]{
-		OutputState: i.ToAssetComputeNvdimmArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AssetComputeNvdimmOutput struct{ *pulumi.OutputState }
 
 func (AssetComputeNvdimmOutput) ElementType() reflect.Type {
@@ -1488,12 +1355,6 @@ func (o AssetComputeNvdimmOutput) ToAssetComputeNvdimmOutput() AssetComputeNvdim
 
 func (o AssetComputeNvdimmOutput) ToAssetComputeNvdimmOutputWithContext(ctx context.Context) AssetComputeNvdimmOutput {
 	return o
-}
-
-func (o AssetComputeNvdimmOutput) ToOutput(ctx context.Context) pulumix.Output[AssetComputeNvdimm] {
-	return pulumix.Output[AssetComputeNvdimm]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Controller key.
@@ -1523,12 +1384,6 @@ func (o AssetComputeNvdimmArrayOutput) ToAssetComputeNvdimmArrayOutput() AssetCo
 
 func (o AssetComputeNvdimmArrayOutput) ToAssetComputeNvdimmArrayOutputWithContext(ctx context.Context) AssetComputeNvdimmArrayOutput {
 	return o
-}
-
-func (o AssetComputeNvdimmArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]AssetComputeNvdimm] {
-	return pulumix.Output[[]AssetComputeNvdimm]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AssetComputeNvdimmArrayOutput) Index(i pulumi.IntInput) AssetComputeNvdimmOutput {
@@ -1574,12 +1429,6 @@ func (i AssetComputeNvdimmControllerArgs) ToAssetComputeNvdimmControllerOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(AssetComputeNvdimmControllerOutput)
 }
 
-func (i AssetComputeNvdimmControllerArgs) ToOutput(ctx context.Context) pulumix.Output[AssetComputeNvdimmController] {
-	return pulumix.Output[AssetComputeNvdimmController]{
-		OutputState: i.ToAssetComputeNvdimmControllerOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i AssetComputeNvdimmControllerArgs) ToAssetComputeNvdimmControllerPtrOutput() AssetComputeNvdimmControllerPtrOutput {
 	return i.ToAssetComputeNvdimmControllerPtrOutputWithContext(context.Background())
 }
@@ -1621,12 +1470,6 @@ func (i *assetComputeNvdimmControllerPtrType) ToAssetComputeNvdimmControllerPtrO
 	return pulumi.ToOutputWithContext(ctx, i).(AssetComputeNvdimmControllerPtrOutput)
 }
 
-func (i *assetComputeNvdimmControllerPtrType) ToOutput(ctx context.Context) pulumix.Output[*AssetComputeNvdimmController] {
-	return pulumix.Output[*AssetComputeNvdimmController]{
-		OutputState: i.ToAssetComputeNvdimmControllerPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AssetComputeNvdimmControllerOutput struct{ *pulumi.OutputState }
 
 func (AssetComputeNvdimmControllerOutput) ElementType() reflect.Type {
@@ -1651,12 +1494,6 @@ func (o AssetComputeNvdimmControllerOutput) ToAssetComputeNvdimmControllerPtrOut
 	}).(AssetComputeNvdimmControllerPtrOutput)
 }
 
-func (o AssetComputeNvdimmControllerOutput) ToOutput(ctx context.Context) pulumix.Output[AssetComputeNvdimmController] {
-	return pulumix.Output[AssetComputeNvdimmController]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) Bus number.
 func (o AssetComputeNvdimmControllerOutput) BusNumber() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v AssetComputeNvdimmController) *int { return v.BusNumber }).(pulumi.IntPtrOutput)
@@ -1679,12 +1516,6 @@ func (o AssetComputeNvdimmControllerPtrOutput) ToAssetComputeNvdimmControllerPtr
 
 func (o AssetComputeNvdimmControllerPtrOutput) ToAssetComputeNvdimmControllerPtrOutputWithContext(ctx context.Context) AssetComputeNvdimmControllerPtrOutput {
 	return o
-}
-
-func (o AssetComputeNvdimmControllerPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*AssetComputeNvdimmController] {
-	return pulumix.Output[*AssetComputeNvdimmController]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AssetComputeNvdimmControllerPtrOutput) Elem() AssetComputeNvdimmControllerOutput {
@@ -1758,12 +1589,6 @@ func (i AssetComputeScsiControllerArgs) ToAssetComputeScsiControllerOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(AssetComputeScsiControllerOutput)
 }
 
-func (i AssetComputeScsiControllerArgs) ToOutput(ctx context.Context) pulumix.Output[AssetComputeScsiController] {
-	return pulumix.Output[AssetComputeScsiController]{
-		OutputState: i.ToAssetComputeScsiControllerOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i AssetComputeScsiControllerArgs) ToAssetComputeScsiControllerPtrOutput() AssetComputeScsiControllerPtrOutput {
 	return i.ToAssetComputeScsiControllerPtrOutputWithContext(context.Background())
 }
@@ -1805,12 +1630,6 @@ func (i *assetComputeScsiControllerPtrType) ToAssetComputeScsiControllerPtrOutpu
 	return pulumi.ToOutputWithContext(ctx, i).(AssetComputeScsiControllerPtrOutput)
 }
 
-func (i *assetComputeScsiControllerPtrType) ToOutput(ctx context.Context) pulumix.Output[*AssetComputeScsiController] {
-	return pulumix.Output[*AssetComputeScsiController]{
-		OutputState: i.ToAssetComputeScsiControllerPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AssetComputeScsiControllerOutput struct{ *pulumi.OutputState }
 
 func (AssetComputeScsiControllerOutput) ElementType() reflect.Type {
@@ -1833,12 +1652,6 @@ func (o AssetComputeScsiControllerOutput) ToAssetComputeScsiControllerPtrOutputW
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v AssetComputeScsiController) *AssetComputeScsiController {
 		return &v
 	}).(AssetComputeScsiControllerPtrOutput)
-}
-
-func (o AssetComputeScsiControllerOutput) ToOutput(ctx context.Context) pulumix.Output[AssetComputeScsiController] {
-	return pulumix.Output[AssetComputeScsiController]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Provides a label and summary information for the device.
@@ -1868,12 +1681,6 @@ func (o AssetComputeScsiControllerPtrOutput) ToAssetComputeScsiControllerPtrOutp
 
 func (o AssetComputeScsiControllerPtrOutput) ToAssetComputeScsiControllerPtrOutputWithContext(ctx context.Context) AssetComputeScsiControllerPtrOutput {
 	return o
-}
-
-func (o AssetComputeScsiControllerPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*AssetComputeScsiController] {
-	return pulumix.Output[*AssetComputeScsiController]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AssetComputeScsiControllerPtrOutput) Elem() AssetComputeScsiControllerOutput {
@@ -1953,12 +1760,6 @@ func (i AssetSourceDiscoveryCredentialsArgs) ToAssetSourceDiscoveryCredentialsOu
 	return pulumi.ToOutputWithContext(ctx, i).(AssetSourceDiscoveryCredentialsOutput)
 }
 
-func (i AssetSourceDiscoveryCredentialsArgs) ToOutput(ctx context.Context) pulumix.Output[AssetSourceDiscoveryCredentials] {
-	return pulumix.Output[AssetSourceDiscoveryCredentials]{
-		OutputState: i.ToAssetSourceDiscoveryCredentialsOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i AssetSourceDiscoveryCredentialsArgs) ToAssetSourceDiscoveryCredentialsPtrOutput() AssetSourceDiscoveryCredentialsPtrOutput {
 	return i.ToAssetSourceDiscoveryCredentialsPtrOutputWithContext(context.Background())
 }
@@ -2000,12 +1801,6 @@ func (i *assetSourceDiscoveryCredentialsPtrType) ToAssetSourceDiscoveryCredentia
 	return pulumi.ToOutputWithContext(ctx, i).(AssetSourceDiscoveryCredentialsPtrOutput)
 }
 
-func (i *assetSourceDiscoveryCredentialsPtrType) ToOutput(ctx context.Context) pulumix.Output[*AssetSourceDiscoveryCredentials] {
-	return pulumix.Output[*AssetSourceDiscoveryCredentials]{
-		OutputState: i.ToAssetSourceDiscoveryCredentialsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AssetSourceDiscoveryCredentialsOutput struct{ *pulumi.OutputState }
 
 func (AssetSourceDiscoveryCredentialsOutput) ElementType() reflect.Type {
@@ -2030,12 +1825,6 @@ func (o AssetSourceDiscoveryCredentialsOutput) ToAssetSourceDiscoveryCredentials
 	}).(AssetSourceDiscoveryCredentialsPtrOutput)
 }
 
-func (o AssetSourceDiscoveryCredentialsOutput) ToOutput(ctx context.Context) pulumix.Output[AssetSourceDiscoveryCredentials] {
-	return pulumix.Output[AssetSourceDiscoveryCredentials]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the the type of the credentials is BASIC` , the secret must contain the username and password in JSON format, which is in the form of  `{ "username": "<VMwareUser>", "password": "<VMwarePassword>" }`.
 func (o AssetSourceDiscoveryCredentialsOutput) SecretId() pulumi.StringOutput {
 	return o.ApplyT(func(v AssetSourceDiscoveryCredentials) string { return v.SecretId }).(pulumi.StringOutput)
@@ -2058,12 +1847,6 @@ func (o AssetSourceDiscoveryCredentialsPtrOutput) ToAssetSourceDiscoveryCredenti
 
 func (o AssetSourceDiscoveryCredentialsPtrOutput) ToAssetSourceDiscoveryCredentialsPtrOutputWithContext(ctx context.Context) AssetSourceDiscoveryCredentialsPtrOutput {
 	return o
-}
-
-func (o AssetSourceDiscoveryCredentialsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*AssetSourceDiscoveryCredentials] {
-	return pulumix.Output[*AssetSourceDiscoveryCredentials]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AssetSourceDiscoveryCredentialsPtrOutput) Elem() AssetSourceDiscoveryCredentialsOutput {
@@ -2133,12 +1916,6 @@ func (i AssetSourceReplicationCredentialsArgs) ToAssetSourceReplicationCredentia
 	return pulumi.ToOutputWithContext(ctx, i).(AssetSourceReplicationCredentialsOutput)
 }
 
-func (i AssetSourceReplicationCredentialsArgs) ToOutput(ctx context.Context) pulumix.Output[AssetSourceReplicationCredentials] {
-	return pulumix.Output[AssetSourceReplicationCredentials]{
-		OutputState: i.ToAssetSourceReplicationCredentialsOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i AssetSourceReplicationCredentialsArgs) ToAssetSourceReplicationCredentialsPtrOutput() AssetSourceReplicationCredentialsPtrOutput {
 	return i.ToAssetSourceReplicationCredentialsPtrOutputWithContext(context.Background())
 }
@@ -2180,12 +1957,6 @@ func (i *assetSourceReplicationCredentialsPtrType) ToAssetSourceReplicationCrede
 	return pulumi.ToOutputWithContext(ctx, i).(AssetSourceReplicationCredentialsPtrOutput)
 }
 
-func (i *assetSourceReplicationCredentialsPtrType) ToOutput(ctx context.Context) pulumix.Output[*AssetSourceReplicationCredentials] {
-	return pulumix.Output[*AssetSourceReplicationCredentials]{
-		OutputState: i.ToAssetSourceReplicationCredentialsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AssetSourceReplicationCredentialsOutput struct{ *pulumi.OutputState }
 
 func (AssetSourceReplicationCredentialsOutput) ElementType() reflect.Type {
@@ -2210,12 +1981,6 @@ func (o AssetSourceReplicationCredentialsOutput) ToAssetSourceReplicationCredent
 	}).(AssetSourceReplicationCredentialsPtrOutput)
 }
 
-func (o AssetSourceReplicationCredentialsOutput) ToOutput(ctx context.Context) pulumix.Output[AssetSourceReplicationCredentials] {
-	return pulumix.Output[AssetSourceReplicationCredentials]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the the type of the credentials is BASIC` , the secret must contain the username and password in JSON format, which is in the form of  `{ "username": "<VMwareUser>", "password": "<VMwarePassword>" }`.
 func (o AssetSourceReplicationCredentialsOutput) SecretId() pulumi.StringOutput {
 	return o.ApplyT(func(v AssetSourceReplicationCredentials) string { return v.SecretId }).(pulumi.StringOutput)
@@ -2238,12 +2003,6 @@ func (o AssetSourceReplicationCredentialsPtrOutput) ToAssetSourceReplicationCred
 
 func (o AssetSourceReplicationCredentialsPtrOutput) ToAssetSourceReplicationCredentialsPtrOutputWithContext(ctx context.Context) AssetSourceReplicationCredentialsPtrOutput {
 	return o
-}
-
-func (o AssetSourceReplicationCredentialsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*AssetSourceReplicationCredentials] {
-	return pulumix.Output[*AssetSourceReplicationCredentials]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AssetSourceReplicationCredentialsPtrOutput) Elem() AssetSourceReplicationCredentialsOutput {
@@ -2317,12 +2076,6 @@ func (i AssetVmArgs) ToAssetVmOutputWithContext(ctx context.Context) AssetVmOutp
 	return pulumi.ToOutputWithContext(ctx, i).(AssetVmOutput)
 }
 
-func (i AssetVmArgs) ToOutput(ctx context.Context) pulumix.Output[AssetVm] {
-	return pulumix.Output[AssetVm]{
-		OutputState: i.ToAssetVmOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i AssetVmArgs) ToAssetVmPtrOutput() AssetVmPtrOutput {
 	return i.ToAssetVmPtrOutputWithContext(context.Background())
 }
@@ -2364,12 +2117,6 @@ func (i *assetVmPtrType) ToAssetVmPtrOutputWithContext(ctx context.Context) Asse
 	return pulumi.ToOutputWithContext(ctx, i).(AssetVmPtrOutput)
 }
 
-func (i *assetVmPtrType) ToOutput(ctx context.Context) pulumix.Output[*AssetVm] {
-	return pulumix.Output[*AssetVm]{
-		OutputState: i.ToAssetVmPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AssetVmOutput struct{ *pulumi.OutputState }
 
 func (AssetVmOutput) ElementType() reflect.Type {
@@ -2392,12 +2139,6 @@ func (o AssetVmOutput) ToAssetVmPtrOutputWithContext(ctx context.Context) AssetV
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v AssetVm) *AssetVm {
 		return &v
 	}).(AssetVmPtrOutput)
-}
-
-func (o AssetVmOutput) ToOutput(ctx context.Context) pulumix.Output[AssetVm] {
-	return pulumix.Output[AssetVm]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Host name/IP address of VM on which the host is running.
@@ -2427,12 +2168,6 @@ func (o AssetVmPtrOutput) ToAssetVmPtrOutput() AssetVmPtrOutput {
 
 func (o AssetVmPtrOutput) ToAssetVmPtrOutputWithContext(ctx context.Context) AssetVmPtrOutput {
 	return o
-}
-
-func (o AssetVmPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*AssetVm] {
-	return pulumix.Output[*AssetVm]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AssetVmPtrOutput) Elem() AssetVmOutput {
@@ -2516,12 +2251,6 @@ func (i AssetVmwareVcenterArgs) ToAssetVmwareVcenterOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(AssetVmwareVcenterOutput)
 }
 
-func (i AssetVmwareVcenterArgs) ToOutput(ctx context.Context) pulumix.Output[AssetVmwareVcenter] {
-	return pulumix.Output[AssetVmwareVcenter]{
-		OutputState: i.ToAssetVmwareVcenterOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i AssetVmwareVcenterArgs) ToAssetVmwareVcenterPtrOutput() AssetVmwareVcenterPtrOutput {
 	return i.ToAssetVmwareVcenterPtrOutputWithContext(context.Background())
 }
@@ -2563,12 +2292,6 @@ func (i *assetVmwareVcenterPtrType) ToAssetVmwareVcenterPtrOutputWithContext(ctx
 	return pulumi.ToOutputWithContext(ctx, i).(AssetVmwareVcenterPtrOutput)
 }
 
-func (i *assetVmwareVcenterPtrType) ToOutput(ctx context.Context) pulumix.Output[*AssetVmwareVcenter] {
-	return pulumix.Output[*AssetVmwareVcenter]{
-		OutputState: i.ToAssetVmwareVcenterPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AssetVmwareVcenterOutput struct{ *pulumi.OutputState }
 
 func (AssetVmwareVcenterOutput) ElementType() reflect.Type {
@@ -2591,12 +2314,6 @@ func (o AssetVmwareVcenterOutput) ToAssetVmwareVcenterPtrOutputWithContext(ctx c
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v AssetVmwareVcenter) *AssetVmwareVcenter {
 		return &v
 	}).(AssetVmwareVcenterPtrOutput)
-}
-
-func (o AssetVmwareVcenterOutput) ToOutput(ctx context.Context) pulumix.Output[AssetVmwareVcenter] {
-	return pulumix.Output[AssetVmwareVcenter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Data center name.
@@ -2626,12 +2343,6 @@ func (o AssetVmwareVcenterPtrOutput) ToAssetVmwareVcenterPtrOutput() AssetVmware
 
 func (o AssetVmwareVcenterPtrOutput) ToAssetVmwareVcenterPtrOutputWithContext(ctx context.Context) AssetVmwareVcenterPtrOutput {
 	return o
-}
-
-func (o AssetVmwareVcenterPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*AssetVmwareVcenter] {
-	return pulumix.Output[*AssetVmwareVcenter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AssetVmwareVcenterPtrOutput) Elem() AssetVmwareVcenterOutput {
@@ -2753,12 +2464,6 @@ func (i AssetVmwareVmArgs) ToAssetVmwareVmOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(AssetVmwareVmOutput)
 }
 
-func (i AssetVmwareVmArgs) ToOutput(ctx context.Context) pulumix.Output[AssetVmwareVm] {
-	return pulumix.Output[AssetVmwareVm]{
-		OutputState: i.ToAssetVmwareVmOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i AssetVmwareVmArgs) ToAssetVmwareVmPtrOutput() AssetVmwareVmPtrOutput {
 	return i.ToAssetVmwareVmPtrOutputWithContext(context.Background())
 }
@@ -2800,12 +2505,6 @@ func (i *assetVmwareVmPtrType) ToAssetVmwareVmPtrOutputWithContext(ctx context.C
 	return pulumi.ToOutputWithContext(ctx, i).(AssetVmwareVmPtrOutput)
 }
 
-func (i *assetVmwareVmPtrType) ToOutput(ctx context.Context) pulumix.Output[*AssetVmwareVm] {
-	return pulumix.Output[*AssetVmwareVm]{
-		OutputState: i.ToAssetVmwareVmPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AssetVmwareVmOutput struct{ *pulumi.OutputState }
 
 func (AssetVmwareVmOutput) ElementType() reflect.Type {
@@ -2828,12 +2527,6 @@ func (o AssetVmwareVmOutput) ToAssetVmwareVmPtrOutputWithContext(ctx context.Con
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v AssetVmwareVm) *AssetVmwareVm {
 		return &v
 	}).(AssetVmwareVmPtrOutput)
-}
-
-func (o AssetVmwareVmOutput) ToOutput(ctx context.Context) pulumix.Output[AssetVmwareVm] {
-	return pulumix.Output[AssetVmwareVm]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Cluster name.
@@ -2906,12 +2599,6 @@ func (o AssetVmwareVmPtrOutput) ToAssetVmwareVmPtrOutput() AssetVmwareVmPtrOutpu
 
 func (o AssetVmwareVmPtrOutput) ToAssetVmwareVmPtrOutputWithContext(ctx context.Context) AssetVmwareVmPtrOutput {
 	return o
-}
-
-func (o AssetVmwareVmPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*AssetVmwareVm] {
-	return pulumix.Output[*AssetVmwareVm]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AssetVmwareVmPtrOutput) Elem() AssetVmwareVmOutput {
@@ -3074,12 +2761,6 @@ func (i AssetVmwareVmCustomerTagArgs) ToAssetVmwareVmCustomerTagOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(AssetVmwareVmCustomerTagOutput)
 }
 
-func (i AssetVmwareVmCustomerTagArgs) ToOutput(ctx context.Context) pulumix.Output[AssetVmwareVmCustomerTag] {
-	return pulumix.Output[AssetVmwareVmCustomerTag]{
-		OutputState: i.ToAssetVmwareVmCustomerTagOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AssetVmwareVmCustomerTagArrayInput is an input type that accepts AssetVmwareVmCustomerTagArray and AssetVmwareVmCustomerTagArrayOutput values.
 // You can construct a concrete instance of `AssetVmwareVmCustomerTagArrayInput` via:
 //
@@ -3105,12 +2786,6 @@ func (i AssetVmwareVmCustomerTagArray) ToAssetVmwareVmCustomerTagArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(AssetVmwareVmCustomerTagArrayOutput)
 }
 
-func (i AssetVmwareVmCustomerTagArray) ToOutput(ctx context.Context) pulumix.Output[[]AssetVmwareVmCustomerTag] {
-	return pulumix.Output[[]AssetVmwareVmCustomerTag]{
-		OutputState: i.ToAssetVmwareVmCustomerTagArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AssetVmwareVmCustomerTagOutput struct{ *pulumi.OutputState }
 
 func (AssetVmwareVmCustomerTagOutput) ElementType() reflect.Type {
@@ -3123,12 +2798,6 @@ func (o AssetVmwareVmCustomerTagOutput) ToAssetVmwareVmCustomerTagOutput() Asset
 
 func (o AssetVmwareVmCustomerTagOutput) ToAssetVmwareVmCustomerTagOutputWithContext(ctx context.Context) AssetVmwareVmCustomerTagOutput {
 	return o
-}
-
-func (o AssetVmwareVmCustomerTagOutput) ToOutput(ctx context.Context) pulumix.Output[AssetVmwareVmCustomerTag] {
-	return pulumix.Output[AssetVmwareVmCustomerTag]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The tag description.
@@ -3153,12 +2822,6 @@ func (o AssetVmwareVmCustomerTagArrayOutput) ToAssetVmwareVmCustomerTagArrayOutp
 
 func (o AssetVmwareVmCustomerTagArrayOutput) ToAssetVmwareVmCustomerTagArrayOutputWithContext(ctx context.Context) AssetVmwareVmCustomerTagArrayOutput {
 	return o
-}
-
-func (o AssetVmwareVmCustomerTagArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]AssetVmwareVmCustomerTag] {
-	return pulumix.Output[[]AssetVmwareVmCustomerTag]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AssetVmwareVmCustomerTagArrayOutput) Index(i pulumi.IntInput) AssetVmwareVmCustomerTagOutput {
@@ -3198,12 +2861,6 @@ func (i GetAgentDependenciesAgentDependencyCollectionArgs) ToGetAgentDependencie
 	return pulumi.ToOutputWithContext(ctx, i).(GetAgentDependenciesAgentDependencyCollectionOutput)
 }
 
-func (i GetAgentDependenciesAgentDependencyCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetAgentDependenciesAgentDependencyCollection] {
-	return pulumix.Output[GetAgentDependenciesAgentDependencyCollection]{
-		OutputState: i.ToGetAgentDependenciesAgentDependencyCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAgentDependenciesAgentDependencyCollectionArrayInput is an input type that accepts GetAgentDependenciesAgentDependencyCollectionArray and GetAgentDependenciesAgentDependencyCollectionArrayOutput values.
 // You can construct a concrete instance of `GetAgentDependenciesAgentDependencyCollectionArrayInput` via:
 //
@@ -3229,12 +2886,6 @@ func (i GetAgentDependenciesAgentDependencyCollectionArray) ToGetAgentDependenci
 	return pulumi.ToOutputWithContext(ctx, i).(GetAgentDependenciesAgentDependencyCollectionArrayOutput)
 }
 
-func (i GetAgentDependenciesAgentDependencyCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAgentDependenciesAgentDependencyCollection] {
-	return pulumix.Output[[]GetAgentDependenciesAgentDependencyCollection]{
-		OutputState: i.ToGetAgentDependenciesAgentDependencyCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAgentDependenciesAgentDependencyCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetAgentDependenciesAgentDependencyCollectionOutput) ElementType() reflect.Type {
@@ -3247,12 +2898,6 @@ func (o GetAgentDependenciesAgentDependencyCollectionOutput) ToGetAgentDependenc
 
 func (o GetAgentDependenciesAgentDependencyCollectionOutput) ToGetAgentDependenciesAgentDependencyCollectionOutputWithContext(ctx context.Context) GetAgentDependenciesAgentDependencyCollectionOutput {
 	return o
-}
-
-func (o GetAgentDependenciesAgentDependencyCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetAgentDependenciesAgentDependencyCollection] {
-	return pulumix.Output[GetAgentDependenciesAgentDependencyCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAgentDependenciesAgentDependencyCollectionOutput) Items() GetAgentDependenciesAgentDependencyCollectionItemArrayOutput {
@@ -3275,12 +2920,6 @@ func (o GetAgentDependenciesAgentDependencyCollectionArrayOutput) ToGetAgentDepe
 	return o
 }
 
-func (o GetAgentDependenciesAgentDependencyCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAgentDependenciesAgentDependencyCollection] {
-	return pulumix.Output[[]GetAgentDependenciesAgentDependencyCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAgentDependenciesAgentDependencyCollectionArrayOutput) Index(i pulumi.IntInput) GetAgentDependenciesAgentDependencyCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentDependenciesAgentDependencyCollection {
 		return vs[0].([]GetAgentDependenciesAgentDependencyCollection)[vs[1].(int)]
@@ -3289,39 +2928,39 @@ func (o GetAgentDependenciesAgentDependencyCollectionArrayOutput) Index(i pulumi
 
 type GetAgentDependenciesAgentDependencyCollectionItem struct {
 	// Object storage bucket where the Agent dependency is uploaded.
-	Bucket string `pulumi:"bucket"`
+	Bucket *string `pulumi:"bucket"`
 	// The checksum associated with the dependency object returned by Object Storage.
-	Checksum string `pulumi:"checksum"`
+	Checksum *string `pulumi:"checksum"`
 	// The ID of the compartment in which to list resources.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Name of the dependency type. This should match the whitelisted enum of dependency names.
-	DependencyName string `pulumi:"dependencyName"`
+	DependencyName *string `pulumi:"dependencyName"`
 	// Version of the Agent dependency.
-	DependencyVersion string `pulumi:"dependencyVersion"`
+	DependencyVersion *string `pulumi:"dependencyVersion"`
 	// Description about the Agent dependency.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// A filter to return only resources that match the entire display name given.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The eTag associated with the dependency object returned by Object Storage.
-	ETag string `pulumi:"eTag"`
+	ETag *string `pulumi:"eTag"`
 	// The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Unique identifier that is immutable on creation.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Object storage namespace associated with the customer's tenancy.
-	Namespace string `pulumi:"namespace"`
+	Namespace *string `pulumi:"namespace"`
 	// Name of the dependency object uploaded by the customer.
-	Object string `pulumi:"object"`
+	Object *string `pulumi:"object"`
 	// A filter to return only resources their lifecycleState matches the given lifecycleState.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time when the AgentDependency was created. An RFC3339 formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 }
 
 // GetAgentDependenciesAgentDependencyCollectionItemInput is an input type that accepts GetAgentDependenciesAgentDependencyCollectionItemArgs and GetAgentDependenciesAgentDependencyCollectionItemOutput values.
@@ -3337,39 +2976,39 @@ type GetAgentDependenciesAgentDependencyCollectionItemInput interface {
 
 type GetAgentDependenciesAgentDependencyCollectionItemArgs struct {
 	// Object storage bucket where the Agent dependency is uploaded.
-	Bucket pulumi.StringInput `pulumi:"bucket"`
+	Bucket pulumi.StringPtrInput `pulumi:"bucket"`
 	// The checksum associated with the dependency object returned by Object Storage.
-	Checksum pulumi.StringInput `pulumi:"checksum"`
+	Checksum pulumi.StringPtrInput `pulumi:"checksum"`
 	// The ID of the compartment in which to list resources.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// Name of the dependency type. This should match the whitelisted enum of dependency names.
-	DependencyName pulumi.StringInput `pulumi:"dependencyName"`
+	DependencyName pulumi.StringPtrInput `pulumi:"dependencyName"`
 	// Version of the Agent dependency.
-	DependencyVersion pulumi.StringInput `pulumi:"dependencyVersion"`
+	DependencyVersion pulumi.StringPtrInput `pulumi:"dependencyVersion"`
 	// Description about the Agent dependency.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// A filter to return only resources that match the entire display name given.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// The eTag associated with the dependency object returned by Object Storage.
-	ETag pulumi.StringInput `pulumi:"eTag"`
+	ETag pulumi.StringPtrInput `pulumi:"eTag"`
 	// The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// Unique identifier that is immutable on creation.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// Object storage namespace associated with the customer's tenancy.
-	Namespace pulumi.StringInput `pulumi:"namespace"`
+	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
 	// Name of the dependency object uploaded by the customer.
-	Object pulumi.StringInput `pulumi:"object"`
+	Object pulumi.StringPtrInput `pulumi:"object"`
 	// A filter to return only resources their lifecycleState matches the given lifecycleState.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// The time when the AgentDependency was created. An RFC3339 formatted datetime string.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 }
 
 func (GetAgentDependenciesAgentDependencyCollectionItemArgs) ElementType() reflect.Type {
@@ -3382,12 +3021,6 @@ func (i GetAgentDependenciesAgentDependencyCollectionItemArgs) ToGetAgentDepende
 
 func (i GetAgentDependenciesAgentDependencyCollectionItemArgs) ToGetAgentDependenciesAgentDependencyCollectionItemOutputWithContext(ctx context.Context) GetAgentDependenciesAgentDependencyCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAgentDependenciesAgentDependencyCollectionItemOutput)
-}
-
-func (i GetAgentDependenciesAgentDependencyCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetAgentDependenciesAgentDependencyCollectionItem] {
-	return pulumix.Output[GetAgentDependenciesAgentDependencyCollectionItem]{
-		OutputState: i.ToGetAgentDependenciesAgentDependencyCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAgentDependenciesAgentDependencyCollectionItemArrayInput is an input type that accepts GetAgentDependenciesAgentDependencyCollectionItemArray and GetAgentDependenciesAgentDependencyCollectionItemArrayOutput values.
@@ -3415,12 +3048,6 @@ func (i GetAgentDependenciesAgentDependencyCollectionItemArray) ToGetAgentDepend
 	return pulumi.ToOutputWithContext(ctx, i).(GetAgentDependenciesAgentDependencyCollectionItemArrayOutput)
 }
 
-func (i GetAgentDependenciesAgentDependencyCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAgentDependenciesAgentDependencyCollectionItem] {
-	return pulumix.Output[[]GetAgentDependenciesAgentDependencyCollectionItem]{
-		OutputState: i.ToGetAgentDependenciesAgentDependencyCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAgentDependenciesAgentDependencyCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetAgentDependenciesAgentDependencyCollectionItemOutput) ElementType() reflect.Type {
@@ -3435,25 +3062,19 @@ func (o GetAgentDependenciesAgentDependencyCollectionItemOutput) ToGetAgentDepen
 	return o
 }
 
-func (o GetAgentDependenciesAgentDependencyCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetAgentDependenciesAgentDependencyCollectionItem] {
-	return pulumix.Output[GetAgentDependenciesAgentDependencyCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Object storage bucket where the Agent dependency is uploaded.
-func (o GetAgentDependenciesAgentDependencyCollectionItemOutput) Bucket() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAgentDependenciesAgentDependencyCollectionItem) string { return v.Bucket }).(pulumi.StringOutput)
+func (o GetAgentDependenciesAgentDependencyCollectionItemOutput) Bucket() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAgentDependenciesAgentDependencyCollectionItem) *string { return v.Bucket }).(pulumi.StringPtrOutput)
 }
 
 // The checksum associated with the dependency object returned by Object Storage.
-func (o GetAgentDependenciesAgentDependencyCollectionItemOutput) Checksum() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAgentDependenciesAgentDependencyCollectionItem) string { return v.Checksum }).(pulumi.StringOutput)
+func (o GetAgentDependenciesAgentDependencyCollectionItemOutput) Checksum() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAgentDependenciesAgentDependencyCollectionItem) *string { return v.Checksum }).(pulumi.StringPtrOutput)
 }
 
 // The ID of the compartment in which to list resources.
-func (o GetAgentDependenciesAgentDependencyCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAgentDependenciesAgentDependencyCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetAgentDependenciesAgentDependencyCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAgentDependenciesAgentDependencyCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -3462,28 +3083,28 @@ func (o GetAgentDependenciesAgentDependencyCollectionItemOutput) DefinedTags() p
 }
 
 // Name of the dependency type. This should match the whitelisted enum of dependency names.
-func (o GetAgentDependenciesAgentDependencyCollectionItemOutput) DependencyName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAgentDependenciesAgentDependencyCollectionItem) string { return v.DependencyName }).(pulumi.StringOutput)
+func (o GetAgentDependenciesAgentDependencyCollectionItemOutput) DependencyName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAgentDependenciesAgentDependencyCollectionItem) *string { return v.DependencyName }).(pulumi.StringPtrOutput)
 }
 
 // Version of the Agent dependency.
-func (o GetAgentDependenciesAgentDependencyCollectionItemOutput) DependencyVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAgentDependenciesAgentDependencyCollectionItem) string { return v.DependencyVersion }).(pulumi.StringOutput)
+func (o GetAgentDependenciesAgentDependencyCollectionItemOutput) DependencyVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAgentDependenciesAgentDependencyCollectionItem) *string { return v.DependencyVersion }).(pulumi.StringPtrOutput)
 }
 
 // Description about the Agent dependency.
-func (o GetAgentDependenciesAgentDependencyCollectionItemOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAgentDependenciesAgentDependencyCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+func (o GetAgentDependenciesAgentDependencyCollectionItemOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAgentDependenciesAgentDependencyCollectionItem) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only resources that match the entire display name given.
-func (o GetAgentDependenciesAgentDependencyCollectionItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAgentDependenciesAgentDependencyCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetAgentDependenciesAgentDependencyCollectionItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAgentDependenciesAgentDependencyCollectionItem) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The eTag associated with the dependency object returned by Object Storage.
-func (o GetAgentDependenciesAgentDependencyCollectionItemOutput) ETag() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAgentDependenciesAgentDependencyCollectionItem) string { return v.ETag }).(pulumi.StringOutput)
+func (o GetAgentDependenciesAgentDependencyCollectionItemOutput) ETag() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAgentDependenciesAgentDependencyCollectionItem) *string { return v.ETag }).(pulumi.StringPtrOutput)
 }
 
 // The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -3494,28 +3115,28 @@ func (o GetAgentDependenciesAgentDependencyCollectionItemOutput) FreeformTags() 
 }
 
 // Unique identifier that is immutable on creation.
-func (o GetAgentDependenciesAgentDependencyCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAgentDependenciesAgentDependencyCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetAgentDependenciesAgentDependencyCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAgentDependenciesAgentDependencyCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
-func (o GetAgentDependenciesAgentDependencyCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAgentDependenciesAgentDependencyCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetAgentDependenciesAgentDependencyCollectionItemOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAgentDependenciesAgentDependencyCollectionItem) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // Object storage namespace associated with the customer's tenancy.
-func (o GetAgentDependenciesAgentDependencyCollectionItemOutput) Namespace() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAgentDependenciesAgentDependencyCollectionItem) string { return v.Namespace }).(pulumi.StringOutput)
+func (o GetAgentDependenciesAgentDependencyCollectionItemOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAgentDependenciesAgentDependencyCollectionItem) *string { return v.Namespace }).(pulumi.StringPtrOutput)
 }
 
 // Name of the dependency object uploaded by the customer.
-func (o GetAgentDependenciesAgentDependencyCollectionItemOutput) Object() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAgentDependenciesAgentDependencyCollectionItem) string { return v.Object }).(pulumi.StringOutput)
+func (o GetAgentDependenciesAgentDependencyCollectionItemOutput) Object() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAgentDependenciesAgentDependencyCollectionItem) *string { return v.Object }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only resources their lifecycleState matches the given lifecycleState.
-func (o GetAgentDependenciesAgentDependencyCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAgentDependenciesAgentDependencyCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetAgentDependenciesAgentDependencyCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAgentDependenciesAgentDependencyCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
@@ -3524,8 +3145,8 @@ func (o GetAgentDependenciesAgentDependencyCollectionItemOutput) SystemTags() pu
 }
 
 // The time when the AgentDependency was created. An RFC3339 formatted datetime string.
-func (o GetAgentDependenciesAgentDependencyCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAgentDependenciesAgentDependencyCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetAgentDependenciesAgentDependencyCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAgentDependenciesAgentDependencyCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 type GetAgentDependenciesAgentDependencyCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -3540,12 +3161,6 @@ func (o GetAgentDependenciesAgentDependencyCollectionItemArrayOutput) ToGetAgent
 
 func (o GetAgentDependenciesAgentDependencyCollectionItemArrayOutput) ToGetAgentDependenciesAgentDependencyCollectionItemArrayOutputWithContext(ctx context.Context) GetAgentDependenciesAgentDependencyCollectionItemArrayOutput {
 	return o
-}
-
-func (o GetAgentDependenciesAgentDependencyCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAgentDependenciesAgentDependencyCollectionItem] {
-	return pulumix.Output[[]GetAgentDependenciesAgentDependencyCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAgentDependenciesAgentDependencyCollectionItemArrayOutput) Index(i pulumi.IntInput) GetAgentDependenciesAgentDependencyCollectionItemOutput {
@@ -3589,12 +3204,6 @@ func (i GetAgentDependenciesFilterArgs) ToGetAgentDependenciesFilterOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetAgentDependenciesFilterOutput)
 }
 
-func (i GetAgentDependenciesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetAgentDependenciesFilter] {
-	return pulumix.Output[GetAgentDependenciesFilter]{
-		OutputState: i.ToGetAgentDependenciesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAgentDependenciesFilterArrayInput is an input type that accepts GetAgentDependenciesFilterArray and GetAgentDependenciesFilterArrayOutput values.
 // You can construct a concrete instance of `GetAgentDependenciesFilterArrayInput` via:
 //
@@ -3620,12 +3229,6 @@ func (i GetAgentDependenciesFilterArray) ToGetAgentDependenciesFilterArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetAgentDependenciesFilterArrayOutput)
 }
 
-func (i GetAgentDependenciesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAgentDependenciesFilter] {
-	return pulumix.Output[[]GetAgentDependenciesFilter]{
-		OutputState: i.ToGetAgentDependenciesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAgentDependenciesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetAgentDependenciesFilterOutput) ElementType() reflect.Type {
@@ -3638,12 +3241,6 @@ func (o GetAgentDependenciesFilterOutput) ToGetAgentDependenciesFilterOutput() G
 
 func (o GetAgentDependenciesFilterOutput) ToGetAgentDependenciesFilterOutputWithContext(ctx context.Context) GetAgentDependenciesFilterOutput {
 	return o
-}
-
-func (o GetAgentDependenciesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetAgentDependenciesFilter] {
-	return pulumix.Output[GetAgentDependenciesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAgentDependenciesFilterOutput) Name() pulumi.StringOutput {
@@ -3672,12 +3269,6 @@ func (o GetAgentDependenciesFilterArrayOutput) ToGetAgentDependenciesFilterArray
 	return o
 }
 
-func (o GetAgentDependenciesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAgentDependenciesFilter] {
-	return pulumix.Output[[]GetAgentDependenciesFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAgentDependenciesFilterArrayOutput) Index(i pulumi.IntInput) GetAgentDependenciesFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentDependenciesFilter {
 		return vs[0].([]GetAgentDependenciesFilter)[vs[1].(int)]
@@ -3686,23 +3277,23 @@ func (o GetAgentDependenciesFilterArrayOutput) Index(i pulumi.IntInput) GetAgent
 
 type GetAgentPluginList struct {
 	// Unique Agent identifier path parameter.
-	AgentId string `pulumi:"agentId"`
+	AgentId *string `pulumi:"agentId"`
 	// The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Plugin identifier, which can be renamed.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Plugin version.
-	PluginVersion string `pulumi:"pluginVersion"`
+	PluginVersion *string `pulumi:"pluginVersion"`
 	// The current state of the Agent.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The time when the Agent was created. An RFC3339 formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time when the Agent was updated. An RFC3339 formatted datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 // GetAgentPluginListInput is an input type that accepts GetAgentPluginListArgs and GetAgentPluginListOutput values.
@@ -3718,23 +3309,23 @@ type GetAgentPluginListInput interface {
 
 type GetAgentPluginListArgs struct {
 	// Unique Agent identifier path parameter.
-	AgentId pulumi.StringInput `pulumi:"agentId"`
+	AgentId pulumi.StringPtrInput `pulumi:"agentId"`
 	// The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// Plugin identifier, which can be renamed.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Plugin version.
-	PluginVersion pulumi.StringInput `pulumi:"pluginVersion"`
+	PluginVersion pulumi.StringPtrInput `pulumi:"pluginVersion"`
 	// The current state of the Agent.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The time when the Agent was created. An RFC3339 formatted datetime string.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The time when the Agent was updated. An RFC3339 formatted datetime string.
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 }
 
 func (GetAgentPluginListArgs) ElementType() reflect.Type {
@@ -3747,12 +3338,6 @@ func (i GetAgentPluginListArgs) ToGetAgentPluginListOutput() GetAgentPluginListO
 
 func (i GetAgentPluginListArgs) ToGetAgentPluginListOutputWithContext(ctx context.Context) GetAgentPluginListOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAgentPluginListOutput)
-}
-
-func (i GetAgentPluginListArgs) ToOutput(ctx context.Context) pulumix.Output[GetAgentPluginList] {
-	return pulumix.Output[GetAgentPluginList]{
-		OutputState: i.ToGetAgentPluginListOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAgentPluginListArrayInput is an input type that accepts GetAgentPluginListArray and GetAgentPluginListArrayOutput values.
@@ -3780,12 +3365,6 @@ func (i GetAgentPluginListArray) ToGetAgentPluginListArrayOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetAgentPluginListArrayOutput)
 }
 
-func (i GetAgentPluginListArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAgentPluginList] {
-	return pulumix.Output[[]GetAgentPluginList]{
-		OutputState: i.ToGetAgentPluginListArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAgentPluginListOutput struct{ *pulumi.OutputState }
 
 func (GetAgentPluginListOutput) ElementType() reflect.Type {
@@ -3800,15 +3379,9 @@ func (o GetAgentPluginListOutput) ToGetAgentPluginListOutputWithContext(ctx cont
 	return o
 }
 
-func (o GetAgentPluginListOutput) ToOutput(ctx context.Context) pulumix.Output[GetAgentPluginList] {
-	return pulumix.Output[GetAgentPluginList]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Unique Agent identifier path parameter.
-func (o GetAgentPluginListOutput) AgentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAgentPluginList) string { return v.AgentId }).(pulumi.StringOutput)
+func (o GetAgentPluginListOutput) AgentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAgentPluginList) *string { return v.AgentId }).(pulumi.StringPtrOutput)
 }
 
 // The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -3822,33 +3395,33 @@ func (o GetAgentPluginListOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
-func (o GetAgentPluginListOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAgentPluginList) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetAgentPluginListOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAgentPluginList) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // Plugin identifier, which can be renamed.
-func (o GetAgentPluginListOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAgentPluginList) string { return v.Name }).(pulumi.StringOutput)
+func (o GetAgentPluginListOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAgentPluginList) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Plugin version.
-func (o GetAgentPluginListOutput) PluginVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAgentPluginList) string { return v.PluginVersion }).(pulumi.StringOutput)
+func (o GetAgentPluginListOutput) PluginVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAgentPluginList) *string { return v.PluginVersion }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the Agent.
-func (o GetAgentPluginListOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAgentPluginList) string { return v.State }).(pulumi.StringOutput)
+func (o GetAgentPluginListOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAgentPluginList) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The time when the Agent was created. An RFC3339 formatted datetime string.
-func (o GetAgentPluginListOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAgentPluginList) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetAgentPluginListOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAgentPluginList) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time when the Agent was updated. An RFC3339 formatted datetime string.
-func (o GetAgentPluginListOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAgentPluginList) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetAgentPluginListOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAgentPluginList) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type GetAgentPluginListArrayOutput struct{ *pulumi.OutputState }
@@ -3863,12 +3436,6 @@ func (o GetAgentPluginListArrayOutput) ToGetAgentPluginListArrayOutput() GetAgen
 
 func (o GetAgentPluginListArrayOutput) ToGetAgentPluginListArrayOutputWithContext(ctx context.Context) GetAgentPluginListArrayOutput {
 	return o
-}
-
-func (o GetAgentPluginListArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAgentPluginList] {
-	return pulumix.Output[[]GetAgentPluginList]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAgentPluginListArrayOutput) Index(i pulumi.IntInput) GetAgentPluginListOutput {
@@ -3908,12 +3475,6 @@ func (i GetAgentsAgentCollectionArgs) ToGetAgentsAgentCollectionOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetAgentsAgentCollectionOutput)
 }
 
-func (i GetAgentsAgentCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetAgentsAgentCollection] {
-	return pulumix.Output[GetAgentsAgentCollection]{
-		OutputState: i.ToGetAgentsAgentCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAgentsAgentCollectionArrayInput is an input type that accepts GetAgentsAgentCollectionArray and GetAgentsAgentCollectionArrayOutput values.
 // You can construct a concrete instance of `GetAgentsAgentCollectionArrayInput` via:
 //
@@ -3939,12 +3500,6 @@ func (i GetAgentsAgentCollectionArray) ToGetAgentsAgentCollectionArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetAgentsAgentCollectionArrayOutput)
 }
 
-func (i GetAgentsAgentCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAgentsAgentCollection] {
-	return pulumix.Output[[]GetAgentsAgentCollection]{
-		OutputState: i.ToGetAgentsAgentCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAgentsAgentCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetAgentsAgentCollectionOutput) ElementType() reflect.Type {
@@ -3957,12 +3512,6 @@ func (o GetAgentsAgentCollectionOutput) ToGetAgentsAgentCollectionOutput() GetAg
 
 func (o GetAgentsAgentCollectionOutput) ToGetAgentsAgentCollectionOutputWithContext(ctx context.Context) GetAgentsAgentCollectionOutput {
 	return o
-}
-
-func (o GetAgentsAgentCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetAgentsAgentCollection] {
-	return pulumix.Output[GetAgentsAgentCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAgentsAgentCollectionOutput) Items() GetAgentsAgentCollectionItemArrayOutput {
@@ -3983,12 +3532,6 @@ func (o GetAgentsAgentCollectionArrayOutput) ToGetAgentsAgentCollectionArrayOutp
 	return o
 }
 
-func (o GetAgentsAgentCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAgentsAgentCollection] {
-	return pulumix.Output[[]GetAgentsAgentCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAgentsAgentCollectionArrayOutput) Index(i pulumi.IntInput) GetAgentsAgentCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentsAgentCollection {
 		return vs[0].([]GetAgentsAgentCollection)[vs[1].(int)]
@@ -3997,43 +3540,43 @@ func (o GetAgentsAgentCollectionArrayOutput) Index(i pulumi.IntInput) GetAgentsA
 
 type GetAgentsAgentCollectionItem struct {
 	// Resource principal public key.
-	AgentPubKey string `pulumi:"agentPubKey"`
+	AgentPubKey *string `pulumi:"agentPubKey"`
 	// Type of the Agent.
-	AgentType string `pulumi:"agentType"`
+	AgentType *string `pulumi:"agentType"`
 	// Agent identifier.
-	AgentVersion string `pulumi:"agentVersion"`
+	AgentVersion *string `pulumi:"agentVersion"`
 	// The ID of the compartment in which to list resources.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// A filter to return only resources that match the given environment ID.
-	EnvironmentId string `pulumi:"environmentId"`
+	EnvironmentId *string `pulumi:"environmentId"`
 	// The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The current heartbeat status of the Agent based on its timeLastSyncReceived value.
-	HeartBeatStatus string `pulumi:"heartBeatStatus"`
+	HeartBeatStatus *string `pulumi:"heartBeatStatus"`
 	// Unique identifier that is immutable on creation.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// OS version.
-	OsVersion string `pulumi:"osVersion"`
+	OsVersion *string `pulumi:"osVersion"`
 	// List of plugins associated with the agent.
 	PluginLists []GetAgentsAgentCollectionItemPluginList `pulumi:"pluginLists"`
 	// A filter to return only resources their lifecycleState matches the given lifecycleState.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time when the Agent was created. An RFC3339 formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time since epoch for when the public key will expire. An RFC3339 formatted datetime string.
-	TimeExpireAgentKeyInMs string `pulumi:"timeExpireAgentKeyInMs"`
+	TimeExpireAgentKeyInMs *string `pulumi:"timeExpireAgentKeyInMs"`
 	// The time when the last heartbeat of the Agent was noted. An RFC3339 formatted datetime string.
-	TimeLastSyncReceived string `pulumi:"timeLastSyncReceived"`
+	TimeLastSyncReceived *string `pulumi:"timeLastSyncReceived"`
 	// The time when the Agent was updated. An RFC3339 formatted datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 // GetAgentsAgentCollectionItemInput is an input type that accepts GetAgentsAgentCollectionItemArgs and GetAgentsAgentCollectionItemOutput values.
@@ -4049,43 +3592,43 @@ type GetAgentsAgentCollectionItemInput interface {
 
 type GetAgentsAgentCollectionItemArgs struct {
 	// Resource principal public key.
-	AgentPubKey pulumi.StringInput `pulumi:"agentPubKey"`
+	AgentPubKey pulumi.StringPtrInput `pulumi:"agentPubKey"`
 	// Type of the Agent.
-	AgentType pulumi.StringInput `pulumi:"agentType"`
+	AgentType pulumi.StringPtrInput `pulumi:"agentType"`
 	// Agent identifier.
-	AgentVersion pulumi.StringInput `pulumi:"agentVersion"`
+	AgentVersion pulumi.StringPtrInput `pulumi:"agentVersion"`
 	// The ID of the compartment in which to list resources.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// A filter to return only resources that match the given environment ID.
-	EnvironmentId pulumi.StringInput `pulumi:"environmentId"`
+	EnvironmentId pulumi.StringPtrInput `pulumi:"environmentId"`
 	// The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The current heartbeat status of the Agent based on its timeLastSyncReceived value.
-	HeartBeatStatus pulumi.StringInput `pulumi:"heartBeatStatus"`
+	HeartBeatStatus pulumi.StringPtrInput `pulumi:"heartBeatStatus"`
 	// Unique identifier that is immutable on creation.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// OS version.
-	OsVersion pulumi.StringInput `pulumi:"osVersion"`
+	OsVersion pulumi.StringPtrInput `pulumi:"osVersion"`
 	// List of plugins associated with the agent.
 	PluginLists GetAgentsAgentCollectionItemPluginListArrayInput `pulumi:"pluginLists"`
 	// A filter to return only resources their lifecycleState matches the given lifecycleState.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// The time when the Agent was created. An RFC3339 formatted datetime string.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The time since epoch for when the public key will expire. An RFC3339 formatted datetime string.
-	TimeExpireAgentKeyInMs pulumi.StringInput `pulumi:"timeExpireAgentKeyInMs"`
+	TimeExpireAgentKeyInMs pulumi.StringPtrInput `pulumi:"timeExpireAgentKeyInMs"`
 	// The time when the last heartbeat of the Agent was noted. An RFC3339 formatted datetime string.
-	TimeLastSyncReceived pulumi.StringInput `pulumi:"timeLastSyncReceived"`
+	TimeLastSyncReceived pulumi.StringPtrInput `pulumi:"timeLastSyncReceived"`
 	// The time when the Agent was updated. An RFC3339 formatted datetime string.
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 }
 
 func (GetAgentsAgentCollectionItemArgs) ElementType() reflect.Type {
@@ -4098,12 +3641,6 @@ func (i GetAgentsAgentCollectionItemArgs) ToGetAgentsAgentCollectionItemOutput()
 
 func (i GetAgentsAgentCollectionItemArgs) ToGetAgentsAgentCollectionItemOutputWithContext(ctx context.Context) GetAgentsAgentCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAgentsAgentCollectionItemOutput)
-}
-
-func (i GetAgentsAgentCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetAgentsAgentCollectionItem] {
-	return pulumix.Output[GetAgentsAgentCollectionItem]{
-		OutputState: i.ToGetAgentsAgentCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAgentsAgentCollectionItemArrayInput is an input type that accepts GetAgentsAgentCollectionItemArray and GetAgentsAgentCollectionItemArrayOutput values.
@@ -4131,12 +3668,6 @@ func (i GetAgentsAgentCollectionItemArray) ToGetAgentsAgentCollectionItemArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetAgentsAgentCollectionItemArrayOutput)
 }
 
-func (i GetAgentsAgentCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAgentsAgentCollectionItem] {
-	return pulumix.Output[[]GetAgentsAgentCollectionItem]{
-		OutputState: i.ToGetAgentsAgentCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAgentsAgentCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetAgentsAgentCollectionItemOutput) ElementType() reflect.Type {
@@ -4151,30 +3682,24 @@ func (o GetAgentsAgentCollectionItemOutput) ToGetAgentsAgentCollectionItemOutput
 	return o
 }
 
-func (o GetAgentsAgentCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetAgentsAgentCollectionItem] {
-	return pulumix.Output[GetAgentsAgentCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Resource principal public key.
-func (o GetAgentsAgentCollectionItemOutput) AgentPubKey() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAgentsAgentCollectionItem) string { return v.AgentPubKey }).(pulumi.StringOutput)
+func (o GetAgentsAgentCollectionItemOutput) AgentPubKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAgentsAgentCollectionItem) *string { return v.AgentPubKey }).(pulumi.StringPtrOutput)
 }
 
 // Type of the Agent.
-func (o GetAgentsAgentCollectionItemOutput) AgentType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAgentsAgentCollectionItem) string { return v.AgentType }).(pulumi.StringOutput)
+func (o GetAgentsAgentCollectionItemOutput) AgentType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAgentsAgentCollectionItem) *string { return v.AgentType }).(pulumi.StringPtrOutput)
 }
 
 // Agent identifier.
-func (o GetAgentsAgentCollectionItemOutput) AgentVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAgentsAgentCollectionItem) string { return v.AgentVersion }).(pulumi.StringOutput)
+func (o GetAgentsAgentCollectionItemOutput) AgentVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAgentsAgentCollectionItem) *string { return v.AgentVersion }).(pulumi.StringPtrOutput)
 }
 
 // The ID of the compartment in which to list resources.
-func (o GetAgentsAgentCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAgentsAgentCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetAgentsAgentCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAgentsAgentCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -4183,13 +3708,13 @@ func (o GetAgentsAgentCollectionItemOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // A filter to return only resources that match the entire display name given.
-func (o GetAgentsAgentCollectionItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAgentsAgentCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetAgentsAgentCollectionItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAgentsAgentCollectionItem) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only resources that match the given environment ID.
-func (o GetAgentsAgentCollectionItemOutput) EnvironmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAgentsAgentCollectionItem) string { return v.EnvironmentId }).(pulumi.StringOutput)
+func (o GetAgentsAgentCollectionItemOutput) EnvironmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAgentsAgentCollectionItem) *string { return v.EnvironmentId }).(pulumi.StringPtrOutput)
 }
 
 // The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -4198,23 +3723,23 @@ func (o GetAgentsAgentCollectionItemOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The current heartbeat status of the Agent based on its timeLastSyncReceived value.
-func (o GetAgentsAgentCollectionItemOutput) HeartBeatStatus() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAgentsAgentCollectionItem) string { return v.HeartBeatStatus }).(pulumi.StringOutput)
+func (o GetAgentsAgentCollectionItemOutput) HeartBeatStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAgentsAgentCollectionItem) *string { return v.HeartBeatStatus }).(pulumi.StringPtrOutput)
 }
 
 // Unique identifier that is immutable on creation.
-func (o GetAgentsAgentCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAgentsAgentCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetAgentsAgentCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAgentsAgentCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
-func (o GetAgentsAgentCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAgentsAgentCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetAgentsAgentCollectionItemOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAgentsAgentCollectionItem) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // OS version.
-func (o GetAgentsAgentCollectionItemOutput) OsVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAgentsAgentCollectionItem) string { return v.OsVersion }).(pulumi.StringOutput)
+func (o GetAgentsAgentCollectionItemOutput) OsVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAgentsAgentCollectionItem) *string { return v.OsVersion }).(pulumi.StringPtrOutput)
 }
 
 // List of plugins associated with the agent.
@@ -4223,8 +3748,8 @@ func (o GetAgentsAgentCollectionItemOutput) PluginLists() GetAgentsAgentCollecti
 }
 
 // A filter to return only resources their lifecycleState matches the given lifecycleState.
-func (o GetAgentsAgentCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAgentsAgentCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetAgentsAgentCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAgentsAgentCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
@@ -4233,23 +3758,23 @@ func (o GetAgentsAgentCollectionItemOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time when the Agent was created. An RFC3339 formatted datetime string.
-func (o GetAgentsAgentCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAgentsAgentCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetAgentsAgentCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAgentsAgentCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time since epoch for when the public key will expire. An RFC3339 formatted datetime string.
-func (o GetAgentsAgentCollectionItemOutput) TimeExpireAgentKeyInMs() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAgentsAgentCollectionItem) string { return v.TimeExpireAgentKeyInMs }).(pulumi.StringOutput)
+func (o GetAgentsAgentCollectionItemOutput) TimeExpireAgentKeyInMs() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAgentsAgentCollectionItem) *string { return v.TimeExpireAgentKeyInMs }).(pulumi.StringPtrOutput)
 }
 
 // The time when the last heartbeat of the Agent was noted. An RFC3339 formatted datetime string.
-func (o GetAgentsAgentCollectionItemOutput) TimeLastSyncReceived() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAgentsAgentCollectionItem) string { return v.TimeLastSyncReceived }).(pulumi.StringOutput)
+func (o GetAgentsAgentCollectionItemOutput) TimeLastSyncReceived() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAgentsAgentCollectionItem) *string { return v.TimeLastSyncReceived }).(pulumi.StringPtrOutput)
 }
 
 // The time when the Agent was updated. An RFC3339 formatted datetime string.
-func (o GetAgentsAgentCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAgentsAgentCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetAgentsAgentCollectionItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAgentsAgentCollectionItem) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type GetAgentsAgentCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -4266,12 +3791,6 @@ func (o GetAgentsAgentCollectionItemArrayOutput) ToGetAgentsAgentCollectionItemA
 	return o
 }
 
-func (o GetAgentsAgentCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAgentsAgentCollectionItem] {
-	return pulumix.Output[[]GetAgentsAgentCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAgentsAgentCollectionItemArrayOutput) Index(i pulumi.IntInput) GetAgentsAgentCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentsAgentCollectionItem {
 		return vs[0].([]GetAgentsAgentCollectionItem)[vs[1].(int)]
@@ -4280,23 +3799,23 @@ func (o GetAgentsAgentCollectionItemArrayOutput) Index(i pulumi.IntInput) GetAge
 
 type GetAgentsAgentCollectionItemPluginList struct {
 	// A filter to return only resources that match the given Agent ID.
-	AgentId string `pulumi:"agentId"`
+	AgentId *string `pulumi:"agentId"`
 	// The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Plugin identifier, which can be renamed.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Plugin version.
-	PluginVersion string `pulumi:"pluginVersion"`
+	PluginVersion *string `pulumi:"pluginVersion"`
 	// A filter to return only resources their lifecycleState matches the given lifecycleState.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The time when the Agent was created. An RFC3339 formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time when the Agent was updated. An RFC3339 formatted datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 // GetAgentsAgentCollectionItemPluginListInput is an input type that accepts GetAgentsAgentCollectionItemPluginListArgs and GetAgentsAgentCollectionItemPluginListOutput values.
@@ -4312,23 +3831,23 @@ type GetAgentsAgentCollectionItemPluginListInput interface {
 
 type GetAgentsAgentCollectionItemPluginListArgs struct {
 	// A filter to return only resources that match the given Agent ID.
-	AgentId pulumi.StringInput `pulumi:"agentId"`
+	AgentId pulumi.StringPtrInput `pulumi:"agentId"`
 	// The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// Plugin identifier, which can be renamed.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Plugin version.
-	PluginVersion pulumi.StringInput `pulumi:"pluginVersion"`
+	PluginVersion pulumi.StringPtrInput `pulumi:"pluginVersion"`
 	// A filter to return only resources their lifecycleState matches the given lifecycleState.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The time when the Agent was created. An RFC3339 formatted datetime string.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The time when the Agent was updated. An RFC3339 formatted datetime string.
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 }
 
 func (GetAgentsAgentCollectionItemPluginListArgs) ElementType() reflect.Type {
@@ -4341,12 +3860,6 @@ func (i GetAgentsAgentCollectionItemPluginListArgs) ToGetAgentsAgentCollectionIt
 
 func (i GetAgentsAgentCollectionItemPluginListArgs) ToGetAgentsAgentCollectionItemPluginListOutputWithContext(ctx context.Context) GetAgentsAgentCollectionItemPluginListOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAgentsAgentCollectionItemPluginListOutput)
-}
-
-func (i GetAgentsAgentCollectionItemPluginListArgs) ToOutput(ctx context.Context) pulumix.Output[GetAgentsAgentCollectionItemPluginList] {
-	return pulumix.Output[GetAgentsAgentCollectionItemPluginList]{
-		OutputState: i.ToGetAgentsAgentCollectionItemPluginListOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAgentsAgentCollectionItemPluginListArrayInput is an input type that accepts GetAgentsAgentCollectionItemPluginListArray and GetAgentsAgentCollectionItemPluginListArrayOutput values.
@@ -4374,12 +3887,6 @@ func (i GetAgentsAgentCollectionItemPluginListArray) ToGetAgentsAgentCollectionI
 	return pulumi.ToOutputWithContext(ctx, i).(GetAgentsAgentCollectionItemPluginListArrayOutput)
 }
 
-func (i GetAgentsAgentCollectionItemPluginListArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAgentsAgentCollectionItemPluginList] {
-	return pulumix.Output[[]GetAgentsAgentCollectionItemPluginList]{
-		OutputState: i.ToGetAgentsAgentCollectionItemPluginListArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAgentsAgentCollectionItemPluginListOutput struct{ *pulumi.OutputState }
 
 func (GetAgentsAgentCollectionItemPluginListOutput) ElementType() reflect.Type {
@@ -4394,15 +3901,9 @@ func (o GetAgentsAgentCollectionItemPluginListOutput) ToGetAgentsAgentCollection
 	return o
 }
 
-func (o GetAgentsAgentCollectionItemPluginListOutput) ToOutput(ctx context.Context) pulumix.Output[GetAgentsAgentCollectionItemPluginList] {
-	return pulumix.Output[GetAgentsAgentCollectionItemPluginList]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A filter to return only resources that match the given Agent ID.
-func (o GetAgentsAgentCollectionItemPluginListOutput) AgentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAgentsAgentCollectionItemPluginList) string { return v.AgentId }).(pulumi.StringOutput)
+func (o GetAgentsAgentCollectionItemPluginListOutput) AgentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAgentsAgentCollectionItemPluginList) *string { return v.AgentId }).(pulumi.StringPtrOutput)
 }
 
 // The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -4416,33 +3917,33 @@ func (o GetAgentsAgentCollectionItemPluginListOutput) FreeformTags() pulumi.MapO
 }
 
 // A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
-func (o GetAgentsAgentCollectionItemPluginListOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAgentsAgentCollectionItemPluginList) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetAgentsAgentCollectionItemPluginListOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAgentsAgentCollectionItemPluginList) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // Plugin identifier, which can be renamed.
-func (o GetAgentsAgentCollectionItemPluginListOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAgentsAgentCollectionItemPluginList) string { return v.Name }).(pulumi.StringOutput)
+func (o GetAgentsAgentCollectionItemPluginListOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAgentsAgentCollectionItemPluginList) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Plugin version.
-func (o GetAgentsAgentCollectionItemPluginListOutput) PluginVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAgentsAgentCollectionItemPluginList) string { return v.PluginVersion }).(pulumi.StringOutput)
+func (o GetAgentsAgentCollectionItemPluginListOutput) PluginVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAgentsAgentCollectionItemPluginList) *string { return v.PluginVersion }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only resources their lifecycleState matches the given lifecycleState.
-func (o GetAgentsAgentCollectionItemPluginListOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAgentsAgentCollectionItemPluginList) string { return v.State }).(pulumi.StringOutput)
+func (o GetAgentsAgentCollectionItemPluginListOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAgentsAgentCollectionItemPluginList) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The time when the Agent was created. An RFC3339 formatted datetime string.
-func (o GetAgentsAgentCollectionItemPluginListOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAgentsAgentCollectionItemPluginList) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetAgentsAgentCollectionItemPluginListOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAgentsAgentCollectionItemPluginList) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time when the Agent was updated. An RFC3339 formatted datetime string.
-func (o GetAgentsAgentCollectionItemPluginListOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAgentsAgentCollectionItemPluginList) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetAgentsAgentCollectionItemPluginListOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAgentsAgentCollectionItemPluginList) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type GetAgentsAgentCollectionItemPluginListArrayOutput struct{ *pulumi.OutputState }
@@ -4457,12 +3958,6 @@ func (o GetAgentsAgentCollectionItemPluginListArrayOutput) ToGetAgentsAgentColle
 
 func (o GetAgentsAgentCollectionItemPluginListArrayOutput) ToGetAgentsAgentCollectionItemPluginListArrayOutputWithContext(ctx context.Context) GetAgentsAgentCollectionItemPluginListArrayOutput {
 	return o
-}
-
-func (o GetAgentsAgentCollectionItemPluginListArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAgentsAgentCollectionItemPluginList] {
-	return pulumix.Output[[]GetAgentsAgentCollectionItemPluginList]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAgentsAgentCollectionItemPluginListArrayOutput) Index(i pulumi.IntInput) GetAgentsAgentCollectionItemPluginListOutput {
@@ -4508,12 +4003,6 @@ func (i GetAgentsFilterArgs) ToGetAgentsFilterOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetAgentsFilterOutput)
 }
 
-func (i GetAgentsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetAgentsFilter] {
-	return pulumix.Output[GetAgentsFilter]{
-		OutputState: i.ToGetAgentsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAgentsFilterArrayInput is an input type that accepts GetAgentsFilterArray and GetAgentsFilterArrayOutput values.
 // You can construct a concrete instance of `GetAgentsFilterArrayInput` via:
 //
@@ -4539,12 +4028,6 @@ func (i GetAgentsFilterArray) ToGetAgentsFilterArrayOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetAgentsFilterArrayOutput)
 }
 
-func (i GetAgentsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAgentsFilter] {
-	return pulumix.Output[[]GetAgentsFilter]{
-		OutputState: i.ToGetAgentsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAgentsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetAgentsFilterOutput) ElementType() reflect.Type {
@@ -4557,12 +4040,6 @@ func (o GetAgentsFilterOutput) ToGetAgentsFilterOutput() GetAgentsFilterOutput {
 
 func (o GetAgentsFilterOutput) ToGetAgentsFilterOutputWithContext(ctx context.Context) GetAgentsFilterOutput {
 	return o
-}
-
-func (o GetAgentsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetAgentsFilter] {
-	return pulumix.Output[GetAgentsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Plugin identifier, which can be renamed.
@@ -4592,12 +4069,6 @@ func (o GetAgentsFilterArrayOutput) ToGetAgentsFilterArrayOutputWithContext(ctx 
 	return o
 }
 
-func (o GetAgentsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAgentsFilter] {
-	return pulumix.Output[[]GetAgentsFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAgentsFilterArrayOutput) Index(i pulumi.IntInput) GetAgentsFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentsFilter {
 		return vs[0].([]GetAgentsFilter)[vs[1].(int)]
@@ -4606,33 +4077,33 @@ func (o GetAgentsFilterArrayOutput) Index(i pulumi.IntInput) GetAgentsFilterOutp
 
 type GetApplianceImageItem struct {
 	// The checksum of the image file.
-	Checksum string `pulumi:"checksum"`
+	Checksum *string `pulumi:"checksum"`
 	// The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The URL from which the appliance image can be downloaded.
-	DownloadUrl string `pulumi:"downloadUrl"`
+	DownloadUrl *string `pulumi:"downloadUrl"`
 	// The name of the appliance Image file.
-	FileName string `pulumi:"fileName"`
+	FileName *string `pulumi:"fileName"`
 	// The file format of the image file.
-	Format string `pulumi:"format"`
+	Format *string `pulumi:"format"`
 	// The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Unique identifier that is immutable on creation.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The virtualization platform that the image file supports.
-	Platform string `pulumi:"platform"`
+	Platform *string `pulumi:"platform"`
 	// The size of the image file in megabytes.
-	SizeInMbs string `pulumi:"sizeInMbs"`
+	SizeInMbs *string `pulumi:"sizeInMbs"`
 	// The current state of the appliance image.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The time when the appliance image was created.An RFC3339 formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time when the appliance image was last updated. An RFC3339 formatted datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// The version of the image file.
-	Version string `pulumi:"version"`
+	Version *string `pulumi:"version"`
 }
 
 // GetApplianceImageItemInput is an input type that accepts GetApplianceImageItemArgs and GetApplianceImageItemOutput values.
@@ -4648,33 +4119,33 @@ type GetApplianceImageItemInput interface {
 
 type GetApplianceImageItemArgs struct {
 	// The checksum of the image file.
-	Checksum pulumi.StringInput `pulumi:"checksum"`
+	Checksum pulumi.StringPtrInput `pulumi:"checksum"`
 	// The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// The URL from which the appliance image can be downloaded.
-	DownloadUrl pulumi.StringInput `pulumi:"downloadUrl"`
+	DownloadUrl pulumi.StringPtrInput `pulumi:"downloadUrl"`
 	// The name of the appliance Image file.
-	FileName pulumi.StringInput `pulumi:"fileName"`
+	FileName pulumi.StringPtrInput `pulumi:"fileName"`
 	// The file format of the image file.
-	Format pulumi.StringInput `pulumi:"format"`
+	Format pulumi.StringPtrInput `pulumi:"format"`
 	// The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// Unique identifier that is immutable on creation.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// The virtualization platform that the image file supports.
-	Platform pulumi.StringInput `pulumi:"platform"`
+	Platform pulumi.StringPtrInput `pulumi:"platform"`
 	// The size of the image file in megabytes.
-	SizeInMbs pulumi.StringInput `pulumi:"sizeInMbs"`
+	SizeInMbs pulumi.StringPtrInput `pulumi:"sizeInMbs"`
 	// The current state of the appliance image.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The time when the appliance image was created.An RFC3339 formatted datetime string.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The time when the appliance image was last updated. An RFC3339 formatted datetime string.
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 	// The version of the image file.
-	Version pulumi.StringInput `pulumi:"version"`
+	Version pulumi.StringPtrInput `pulumi:"version"`
 }
 
 func (GetApplianceImageItemArgs) ElementType() reflect.Type {
@@ -4687,12 +4158,6 @@ func (i GetApplianceImageItemArgs) ToGetApplianceImageItemOutput() GetApplianceI
 
 func (i GetApplianceImageItemArgs) ToGetApplianceImageItemOutputWithContext(ctx context.Context) GetApplianceImageItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetApplianceImageItemOutput)
-}
-
-func (i GetApplianceImageItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetApplianceImageItem] {
-	return pulumix.Output[GetApplianceImageItem]{
-		OutputState: i.ToGetApplianceImageItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetApplianceImageItemArrayInput is an input type that accepts GetApplianceImageItemArray and GetApplianceImageItemArrayOutput values.
@@ -4720,12 +4185,6 @@ func (i GetApplianceImageItemArray) ToGetApplianceImageItemArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetApplianceImageItemArrayOutput)
 }
 
-func (i GetApplianceImageItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetApplianceImageItem] {
-	return pulumix.Output[[]GetApplianceImageItem]{
-		OutputState: i.ToGetApplianceImageItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetApplianceImageItemOutput struct{ *pulumi.OutputState }
 
 func (GetApplianceImageItemOutput) ElementType() reflect.Type {
@@ -4740,15 +4199,9 @@ func (o GetApplianceImageItemOutput) ToGetApplianceImageItemOutputWithContext(ct
 	return o
 }
 
-func (o GetApplianceImageItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetApplianceImageItem] {
-	return pulumix.Output[GetApplianceImageItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The checksum of the image file.
-func (o GetApplianceImageItemOutput) Checksum() pulumi.StringOutput {
-	return o.ApplyT(func(v GetApplianceImageItem) string { return v.Checksum }).(pulumi.StringOutput)
+func (o GetApplianceImageItemOutput) Checksum() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetApplianceImageItem) *string { return v.Checksum }).(pulumi.StringPtrOutput)
 }
 
 // The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -4757,23 +4210,23 @@ func (o GetApplianceImageItemOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // A filter to return only resources that match the entire display name given.
-func (o GetApplianceImageItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetApplianceImageItem) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetApplianceImageItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetApplianceImageItem) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The URL from which the appliance image can be downloaded.
-func (o GetApplianceImageItemOutput) DownloadUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v GetApplianceImageItem) string { return v.DownloadUrl }).(pulumi.StringOutput)
+func (o GetApplianceImageItemOutput) DownloadUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetApplianceImageItem) *string { return v.DownloadUrl }).(pulumi.StringPtrOutput)
 }
 
 // The name of the appliance Image file.
-func (o GetApplianceImageItemOutput) FileName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetApplianceImageItem) string { return v.FileName }).(pulumi.StringOutput)
+func (o GetApplianceImageItemOutput) FileName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetApplianceImageItem) *string { return v.FileName }).(pulumi.StringPtrOutput)
 }
 
 // The file format of the image file.
-func (o GetApplianceImageItemOutput) Format() pulumi.StringOutput {
-	return o.ApplyT(func(v GetApplianceImageItem) string { return v.Format }).(pulumi.StringOutput)
+func (o GetApplianceImageItemOutput) Format() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetApplianceImageItem) *string { return v.Format }).(pulumi.StringPtrOutput)
 }
 
 // The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -4782,38 +4235,38 @@ func (o GetApplianceImageItemOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Unique identifier that is immutable on creation.
-func (o GetApplianceImageItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetApplianceImageItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetApplianceImageItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetApplianceImageItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The virtualization platform that the image file supports.
-func (o GetApplianceImageItemOutput) Platform() pulumi.StringOutput {
-	return o.ApplyT(func(v GetApplianceImageItem) string { return v.Platform }).(pulumi.StringOutput)
+func (o GetApplianceImageItemOutput) Platform() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetApplianceImageItem) *string { return v.Platform }).(pulumi.StringPtrOutput)
 }
 
 // The size of the image file in megabytes.
-func (o GetApplianceImageItemOutput) SizeInMbs() pulumi.StringOutput {
-	return o.ApplyT(func(v GetApplianceImageItem) string { return v.SizeInMbs }).(pulumi.StringOutput)
+func (o GetApplianceImageItemOutput) SizeInMbs() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetApplianceImageItem) *string { return v.SizeInMbs }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the appliance image.
-func (o GetApplianceImageItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetApplianceImageItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetApplianceImageItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetApplianceImageItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The time when the appliance image was created.An RFC3339 formatted datetime string.
-func (o GetApplianceImageItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetApplianceImageItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetApplianceImageItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetApplianceImageItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time when the appliance image was last updated. An RFC3339 formatted datetime string.
-func (o GetApplianceImageItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetApplianceImageItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetApplianceImageItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetApplianceImageItem) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // The version of the image file.
-func (o GetApplianceImageItemOutput) Version() pulumi.StringOutput {
-	return o.ApplyT(func(v GetApplianceImageItem) string { return v.Version }).(pulumi.StringOutput)
+func (o GetApplianceImageItemOutput) Version() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetApplianceImageItem) *string { return v.Version }).(pulumi.StringPtrOutput)
 }
 
 type GetApplianceImageItemArrayOutput struct{ *pulumi.OutputState }
@@ -4828,12 +4281,6 @@ func (o GetApplianceImageItemArrayOutput) ToGetApplianceImageItemArrayOutput() G
 
 func (o GetApplianceImageItemArrayOutput) ToGetApplianceImageItemArrayOutputWithContext(ctx context.Context) GetApplianceImageItemArrayOutput {
 	return o
-}
-
-func (o GetApplianceImageItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetApplianceImageItem] {
-	return pulumix.Output[[]GetApplianceImageItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetApplianceImageItemArrayOutput) Index(i pulumi.IntInput) GetApplianceImageItemOutput {
@@ -4875,12 +4322,6 @@ func (i GetApplianceImagesApplianceImageCollectionArgs) ToGetApplianceImagesAppl
 	return pulumi.ToOutputWithContext(ctx, i).(GetApplianceImagesApplianceImageCollectionOutput)
 }
 
-func (i GetApplianceImagesApplianceImageCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetApplianceImagesApplianceImageCollection] {
-	return pulumix.Output[GetApplianceImagesApplianceImageCollection]{
-		OutputState: i.ToGetApplianceImagesApplianceImageCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetApplianceImagesApplianceImageCollectionArrayInput is an input type that accepts GetApplianceImagesApplianceImageCollectionArray and GetApplianceImagesApplianceImageCollectionArrayOutput values.
 // You can construct a concrete instance of `GetApplianceImagesApplianceImageCollectionArrayInput` via:
 //
@@ -4906,12 +4347,6 @@ func (i GetApplianceImagesApplianceImageCollectionArray) ToGetApplianceImagesApp
 	return pulumi.ToOutputWithContext(ctx, i).(GetApplianceImagesApplianceImageCollectionArrayOutput)
 }
 
-func (i GetApplianceImagesApplianceImageCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetApplianceImagesApplianceImageCollection] {
-	return pulumix.Output[[]GetApplianceImagesApplianceImageCollection]{
-		OutputState: i.ToGetApplianceImagesApplianceImageCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetApplianceImagesApplianceImageCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetApplianceImagesApplianceImageCollectionOutput) ElementType() reflect.Type {
@@ -4924,12 +4359,6 @@ func (o GetApplianceImagesApplianceImageCollectionOutput) ToGetApplianceImagesAp
 
 func (o GetApplianceImagesApplianceImageCollectionOutput) ToGetApplianceImagesApplianceImageCollectionOutputWithContext(ctx context.Context) GetApplianceImagesApplianceImageCollectionOutput {
 	return o
-}
-
-func (o GetApplianceImagesApplianceImageCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetApplianceImagesApplianceImageCollection] {
-	return pulumix.Output[GetApplianceImagesApplianceImageCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 // List of appliance images.
@@ -4953,12 +4382,6 @@ func (o GetApplianceImagesApplianceImageCollectionArrayOutput) ToGetApplianceIma
 	return o
 }
 
-func (o GetApplianceImagesApplianceImageCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetApplianceImagesApplianceImageCollection] {
-	return pulumix.Output[[]GetApplianceImagesApplianceImageCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetApplianceImagesApplianceImageCollectionArrayOutput) Index(i pulumi.IntInput) GetApplianceImagesApplianceImageCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetApplianceImagesApplianceImageCollection {
 		return vs[0].([]GetApplianceImagesApplianceImageCollection)[vs[1].(int)]
@@ -4967,33 +4390,33 @@ func (o GetApplianceImagesApplianceImageCollectionArrayOutput) Index(i pulumi.In
 
 type GetApplianceImagesApplianceImageCollectionItem struct {
 	// The checksum of the image file.
-	Checksum string `pulumi:"checksum"`
+	Checksum *string `pulumi:"checksum"`
 	// The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The URL from which the appliance image can be downloaded.
-	DownloadUrl string `pulumi:"downloadUrl"`
+	DownloadUrl *string `pulumi:"downloadUrl"`
 	// The name of the appliance Image file.
-	FileName string `pulumi:"fileName"`
+	FileName *string `pulumi:"fileName"`
 	// The file format of the image file.
-	Format string `pulumi:"format"`
+	Format *string `pulumi:"format"`
 	// The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Unique identifier that is immutable on creation.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The virtualization platform that the image file supports.
-	Platform string `pulumi:"platform"`
+	Platform *string `pulumi:"platform"`
 	// The size of the image file in megabytes.
-	SizeInMbs string `pulumi:"sizeInMbs"`
+	SizeInMbs *string `pulumi:"sizeInMbs"`
 	// The current state of the appliance image.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The time when the appliance image was created.An RFC3339 formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time when the appliance image was last updated. An RFC3339 formatted datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// The version of the image file.
-	Version string `pulumi:"version"`
+	Version *string `pulumi:"version"`
 }
 
 // GetApplianceImagesApplianceImageCollectionItemInput is an input type that accepts GetApplianceImagesApplianceImageCollectionItemArgs and GetApplianceImagesApplianceImageCollectionItemOutput values.
@@ -5009,33 +4432,33 @@ type GetApplianceImagesApplianceImageCollectionItemInput interface {
 
 type GetApplianceImagesApplianceImageCollectionItemArgs struct {
 	// The checksum of the image file.
-	Checksum pulumi.StringInput `pulumi:"checksum"`
+	Checksum pulumi.StringPtrInput `pulumi:"checksum"`
 	// The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// The URL from which the appliance image can be downloaded.
-	DownloadUrl pulumi.StringInput `pulumi:"downloadUrl"`
+	DownloadUrl pulumi.StringPtrInput `pulumi:"downloadUrl"`
 	// The name of the appliance Image file.
-	FileName pulumi.StringInput `pulumi:"fileName"`
+	FileName pulumi.StringPtrInput `pulumi:"fileName"`
 	// The file format of the image file.
-	Format pulumi.StringInput `pulumi:"format"`
+	Format pulumi.StringPtrInput `pulumi:"format"`
 	// The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// Unique identifier that is immutable on creation.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// The virtualization platform that the image file supports.
-	Platform pulumi.StringInput `pulumi:"platform"`
+	Platform pulumi.StringPtrInput `pulumi:"platform"`
 	// The size of the image file in megabytes.
-	SizeInMbs pulumi.StringInput `pulumi:"sizeInMbs"`
+	SizeInMbs pulumi.StringPtrInput `pulumi:"sizeInMbs"`
 	// The current state of the appliance image.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The time when the appliance image was created.An RFC3339 formatted datetime string.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The time when the appliance image was last updated. An RFC3339 formatted datetime string.
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 	// The version of the image file.
-	Version pulumi.StringInput `pulumi:"version"`
+	Version pulumi.StringPtrInput `pulumi:"version"`
 }
 
 func (GetApplianceImagesApplianceImageCollectionItemArgs) ElementType() reflect.Type {
@@ -5048,12 +4471,6 @@ func (i GetApplianceImagesApplianceImageCollectionItemArgs) ToGetApplianceImages
 
 func (i GetApplianceImagesApplianceImageCollectionItemArgs) ToGetApplianceImagesApplianceImageCollectionItemOutputWithContext(ctx context.Context) GetApplianceImagesApplianceImageCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetApplianceImagesApplianceImageCollectionItemOutput)
-}
-
-func (i GetApplianceImagesApplianceImageCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetApplianceImagesApplianceImageCollectionItem] {
-	return pulumix.Output[GetApplianceImagesApplianceImageCollectionItem]{
-		OutputState: i.ToGetApplianceImagesApplianceImageCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetApplianceImagesApplianceImageCollectionItemArrayInput is an input type that accepts GetApplianceImagesApplianceImageCollectionItemArray and GetApplianceImagesApplianceImageCollectionItemArrayOutput values.
@@ -5081,12 +4498,6 @@ func (i GetApplianceImagesApplianceImageCollectionItemArray) ToGetApplianceImage
 	return pulumi.ToOutputWithContext(ctx, i).(GetApplianceImagesApplianceImageCollectionItemArrayOutput)
 }
 
-func (i GetApplianceImagesApplianceImageCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetApplianceImagesApplianceImageCollectionItem] {
-	return pulumix.Output[[]GetApplianceImagesApplianceImageCollectionItem]{
-		OutputState: i.ToGetApplianceImagesApplianceImageCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetApplianceImagesApplianceImageCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetApplianceImagesApplianceImageCollectionItemOutput) ElementType() reflect.Type {
@@ -5101,15 +4512,9 @@ func (o GetApplianceImagesApplianceImageCollectionItemOutput) ToGetApplianceImag
 	return o
 }
 
-func (o GetApplianceImagesApplianceImageCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetApplianceImagesApplianceImageCollectionItem] {
-	return pulumix.Output[GetApplianceImagesApplianceImageCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The checksum of the image file.
-func (o GetApplianceImagesApplianceImageCollectionItemOutput) Checksum() pulumi.StringOutput {
-	return o.ApplyT(func(v GetApplianceImagesApplianceImageCollectionItem) string { return v.Checksum }).(pulumi.StringOutput)
+func (o GetApplianceImagesApplianceImageCollectionItemOutput) Checksum() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetApplianceImagesApplianceImageCollectionItem) *string { return v.Checksum }).(pulumi.StringPtrOutput)
 }
 
 // The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -5118,23 +4523,23 @@ func (o GetApplianceImagesApplianceImageCollectionItemOutput) DefinedTags() pulu
 }
 
 // A filter to return only resources that match the entire display name given.
-func (o GetApplianceImagesApplianceImageCollectionItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetApplianceImagesApplianceImageCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetApplianceImagesApplianceImageCollectionItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetApplianceImagesApplianceImageCollectionItem) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The URL from which the appliance image can be downloaded.
-func (o GetApplianceImagesApplianceImageCollectionItemOutput) DownloadUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v GetApplianceImagesApplianceImageCollectionItem) string { return v.DownloadUrl }).(pulumi.StringOutput)
+func (o GetApplianceImagesApplianceImageCollectionItemOutput) DownloadUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetApplianceImagesApplianceImageCollectionItem) *string { return v.DownloadUrl }).(pulumi.StringPtrOutput)
 }
 
 // The name of the appliance Image file.
-func (o GetApplianceImagesApplianceImageCollectionItemOutput) FileName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetApplianceImagesApplianceImageCollectionItem) string { return v.FileName }).(pulumi.StringOutput)
+func (o GetApplianceImagesApplianceImageCollectionItemOutput) FileName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetApplianceImagesApplianceImageCollectionItem) *string { return v.FileName }).(pulumi.StringPtrOutput)
 }
 
 // The file format of the image file.
-func (o GetApplianceImagesApplianceImageCollectionItemOutput) Format() pulumi.StringOutput {
-	return o.ApplyT(func(v GetApplianceImagesApplianceImageCollectionItem) string { return v.Format }).(pulumi.StringOutput)
+func (o GetApplianceImagesApplianceImageCollectionItemOutput) Format() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetApplianceImagesApplianceImageCollectionItem) *string { return v.Format }).(pulumi.StringPtrOutput)
 }
 
 // The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -5143,38 +4548,38 @@ func (o GetApplianceImagesApplianceImageCollectionItemOutput) FreeformTags() pul
 }
 
 // Unique identifier that is immutable on creation.
-func (o GetApplianceImagesApplianceImageCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetApplianceImagesApplianceImageCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetApplianceImagesApplianceImageCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetApplianceImagesApplianceImageCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The virtualization platform that the image file supports.
-func (o GetApplianceImagesApplianceImageCollectionItemOutput) Platform() pulumi.StringOutput {
-	return o.ApplyT(func(v GetApplianceImagesApplianceImageCollectionItem) string { return v.Platform }).(pulumi.StringOutput)
+func (o GetApplianceImagesApplianceImageCollectionItemOutput) Platform() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetApplianceImagesApplianceImageCollectionItem) *string { return v.Platform }).(pulumi.StringPtrOutput)
 }
 
 // The size of the image file in megabytes.
-func (o GetApplianceImagesApplianceImageCollectionItemOutput) SizeInMbs() pulumi.StringOutput {
-	return o.ApplyT(func(v GetApplianceImagesApplianceImageCollectionItem) string { return v.SizeInMbs }).(pulumi.StringOutput)
+func (o GetApplianceImagesApplianceImageCollectionItemOutput) SizeInMbs() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetApplianceImagesApplianceImageCollectionItem) *string { return v.SizeInMbs }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the appliance image.
-func (o GetApplianceImagesApplianceImageCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetApplianceImagesApplianceImageCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetApplianceImagesApplianceImageCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetApplianceImagesApplianceImageCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The time when the appliance image was created.An RFC3339 formatted datetime string.
-func (o GetApplianceImagesApplianceImageCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetApplianceImagesApplianceImageCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetApplianceImagesApplianceImageCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetApplianceImagesApplianceImageCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time when the appliance image was last updated. An RFC3339 formatted datetime string.
-func (o GetApplianceImagesApplianceImageCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetApplianceImagesApplianceImageCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetApplianceImagesApplianceImageCollectionItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetApplianceImagesApplianceImageCollectionItem) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // The version of the image file.
-func (o GetApplianceImagesApplianceImageCollectionItemOutput) Version() pulumi.StringOutput {
-	return o.ApplyT(func(v GetApplianceImagesApplianceImageCollectionItem) string { return v.Version }).(pulumi.StringOutput)
+func (o GetApplianceImagesApplianceImageCollectionItemOutput) Version() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetApplianceImagesApplianceImageCollectionItem) *string { return v.Version }).(pulumi.StringPtrOutput)
 }
 
 type GetApplianceImagesApplianceImageCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -5189,12 +4594,6 @@ func (o GetApplianceImagesApplianceImageCollectionItemArrayOutput) ToGetApplianc
 
 func (o GetApplianceImagesApplianceImageCollectionItemArrayOutput) ToGetApplianceImagesApplianceImageCollectionItemArrayOutputWithContext(ctx context.Context) GetApplianceImagesApplianceImageCollectionItemArrayOutput {
 	return o
-}
-
-func (o GetApplianceImagesApplianceImageCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetApplianceImagesApplianceImageCollectionItem] {
-	return pulumix.Output[[]GetApplianceImagesApplianceImageCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetApplianceImagesApplianceImageCollectionItemArrayOutput) Index(i pulumi.IntInput) GetApplianceImagesApplianceImageCollectionItemOutput {
@@ -5238,12 +4637,6 @@ func (i GetApplianceImagesFilterArgs) ToGetApplianceImagesFilterOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetApplianceImagesFilterOutput)
 }
 
-func (i GetApplianceImagesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetApplianceImagesFilter] {
-	return pulumix.Output[GetApplianceImagesFilter]{
-		OutputState: i.ToGetApplianceImagesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetApplianceImagesFilterArrayInput is an input type that accepts GetApplianceImagesFilterArray and GetApplianceImagesFilterArrayOutput values.
 // You can construct a concrete instance of `GetApplianceImagesFilterArrayInput` via:
 //
@@ -5269,12 +4662,6 @@ func (i GetApplianceImagesFilterArray) ToGetApplianceImagesFilterArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetApplianceImagesFilterArrayOutput)
 }
 
-func (i GetApplianceImagesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetApplianceImagesFilter] {
-	return pulumix.Output[[]GetApplianceImagesFilter]{
-		OutputState: i.ToGetApplianceImagesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetApplianceImagesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetApplianceImagesFilterOutput) ElementType() reflect.Type {
@@ -5287,12 +4674,6 @@ func (o GetApplianceImagesFilterOutput) ToGetApplianceImagesFilterOutput() GetAp
 
 func (o GetApplianceImagesFilterOutput) ToGetApplianceImagesFilterOutputWithContext(ctx context.Context) GetApplianceImagesFilterOutput {
 	return o
-}
-
-func (o GetApplianceImagesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetApplianceImagesFilter] {
-	return pulumix.Output[GetApplianceImagesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetApplianceImagesFilterOutput) Name() pulumi.StringOutput {
@@ -5321,12 +4702,6 @@ func (o GetApplianceImagesFilterArrayOutput) ToGetApplianceImagesFilterArrayOutp
 	return o
 }
 
-func (o GetApplianceImagesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetApplianceImagesFilter] {
-	return pulumix.Output[[]GetApplianceImagesFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetApplianceImagesFilterArrayOutput) Index(i pulumi.IntInput) GetApplianceImagesFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetApplianceImagesFilter {
 		return vs[0].([]GetApplianceImagesFilter)[vs[1].(int)]
@@ -5335,63 +4710,63 @@ func (o GetApplianceImagesFilterArrayOutput) Index(i pulumi.IntInput) GetApplian
 
 type GetAssetCompute struct {
 	// Number of connected networks.
-	ConnectedNetworks int `pulumi:"connectedNetworks"`
+	ConnectedNetworks *int `pulumi:"connectedNetworks"`
 	// Number of GPU cores.
-	CoresCount int `pulumi:"coresCount"`
+	CoresCount *int `pulumi:"coresCount"`
 	// CPU model name.
-	CpuModel string `pulumi:"cpuModel"`
+	CpuModel *string `pulumi:"cpuModel"`
 	// The tag description.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Lists the set of disks belonging to the virtual machine. This list is unordered.
 	Disks []GetAssetComputeDisk `pulumi:"disks"`
 	// Number of disks.
-	DisksCount int `pulumi:"disksCount"`
+	DisksCount *int `pulumi:"disksCount"`
 	// Fully Qualified DNS Name.
-	DnsName string `pulumi:"dnsName"`
+	DnsName *string `pulumi:"dnsName"`
 	// Information about firmware type for this virtual machine.
-	Firmware string `pulumi:"firmware"`
+	Firmware *string `pulumi:"firmware"`
 	// List of GPU devices attached to a virtual machine.
 	GpuDevices []GetAssetComputeGpuDevice `pulumi:"gpuDevices"`
 	// Number of GPU devices.
-	GpuDevicesCount int `pulumi:"gpuDevicesCount"`
+	GpuDevicesCount *int `pulumi:"gpuDevicesCount"`
 	// Guest state.
-	GuestState string `pulumi:"guestState"`
+	GuestState *string `pulumi:"guestState"`
 	// Hardware version.
-	HardwareVersion string `pulumi:"hardwareVersion"`
+	HardwareVersion *string `pulumi:"hardwareVersion"`
 	// Host name of the VM.
-	HostName string `pulumi:"hostName"`
+	HostName *string `pulumi:"hostName"`
 	// Whether Pmem is enabled. Decides if NVDIMMs are used as a permanent memory.
-	IsPmemEnabled bool `pulumi:"isPmemEnabled"`
+	IsPmemEnabled *bool `pulumi:"isPmemEnabled"`
 	// Whether Trusted Platform Module (TPM) is enabled.
-	IsTpmEnabled bool `pulumi:"isTpmEnabled"`
+	IsTpmEnabled *bool `pulumi:"isTpmEnabled"`
 	// Latency sensitivity.
-	LatencySensitivity string `pulumi:"latencySensitivity"`
+	LatencySensitivity *string `pulumi:"latencySensitivity"`
 	// Memory size in MBs.
-	MemoryInMbs string `pulumi:"memoryInMbs"`
+	MemoryInMbs *string `pulumi:"memoryInMbs"`
 	// List of network ethernet cards attached to a virtual machine.
 	Nics []GetAssetComputeNic `pulumi:"nics"`
 	// Number of network ethernet cards.
-	NicsCount int `pulumi:"nicsCount"`
+	NicsCount *int `pulumi:"nicsCount"`
 	// The asset's NVDIMM configuration.
 	NvdimmControllers []GetAssetComputeNvdimmController `pulumi:"nvdimmControllers"`
 	// The properties of the NVDIMMs attached to a virtual machine.
 	Nvdimms []GetAssetComputeNvdimm `pulumi:"nvdimms"`
 	// Operating system.
-	OperatingSystem string `pulumi:"operatingSystem"`
+	OperatingSystem *string `pulumi:"operatingSystem"`
 	// Operating system version.
-	OperatingSystemVersion string `pulumi:"operatingSystemVersion"`
+	OperatingSystemVersion *string `pulumi:"operatingSystemVersion"`
 	// Pmem size in MBs.
-	PmemInMbs string `pulumi:"pmemInMbs"`
+	PmemInMbs *string `pulumi:"pmemInMbs"`
 	// The current power state of the virtual machine.
-	PowerState string `pulumi:"powerState"`
+	PowerState *string `pulumi:"powerState"`
 	// Primary IP address of the compute instance.
-	PrimaryIp string `pulumi:"primaryIp"`
+	PrimaryIp *string `pulumi:"primaryIp"`
 	// The assets SCSI controller.
 	ScsiControllers []GetAssetComputeScsiController `pulumi:"scsiControllers"`
 	// Provision storage size in MBs.
-	StorageProvisionedInMbs string `pulumi:"storageProvisionedInMbs"`
+	StorageProvisionedInMbs *string `pulumi:"storageProvisionedInMbs"`
 	// Number of threads per core.
-	ThreadsPerCoreCount int `pulumi:"threadsPerCoreCount"`
+	ThreadsPerCoreCount *int `pulumi:"threadsPerCoreCount"`
 }
 
 // GetAssetComputeInput is an input type that accepts GetAssetComputeArgs and GetAssetComputeOutput values.
@@ -5407,63 +4782,63 @@ type GetAssetComputeInput interface {
 
 type GetAssetComputeArgs struct {
 	// Number of connected networks.
-	ConnectedNetworks pulumi.IntInput `pulumi:"connectedNetworks"`
+	ConnectedNetworks pulumi.IntPtrInput `pulumi:"connectedNetworks"`
 	// Number of GPU cores.
-	CoresCount pulumi.IntInput `pulumi:"coresCount"`
+	CoresCount pulumi.IntPtrInput `pulumi:"coresCount"`
 	// CPU model name.
-	CpuModel pulumi.StringInput `pulumi:"cpuModel"`
+	CpuModel pulumi.StringPtrInput `pulumi:"cpuModel"`
 	// The tag description.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// Lists the set of disks belonging to the virtual machine. This list is unordered.
 	Disks GetAssetComputeDiskArrayInput `pulumi:"disks"`
 	// Number of disks.
-	DisksCount pulumi.IntInput `pulumi:"disksCount"`
+	DisksCount pulumi.IntPtrInput `pulumi:"disksCount"`
 	// Fully Qualified DNS Name.
-	DnsName pulumi.StringInput `pulumi:"dnsName"`
+	DnsName pulumi.StringPtrInput `pulumi:"dnsName"`
 	// Information about firmware type for this virtual machine.
-	Firmware pulumi.StringInput `pulumi:"firmware"`
+	Firmware pulumi.StringPtrInput `pulumi:"firmware"`
 	// List of GPU devices attached to a virtual machine.
 	GpuDevices GetAssetComputeGpuDeviceArrayInput `pulumi:"gpuDevices"`
 	// Number of GPU devices.
-	GpuDevicesCount pulumi.IntInput `pulumi:"gpuDevicesCount"`
+	GpuDevicesCount pulumi.IntPtrInput `pulumi:"gpuDevicesCount"`
 	// Guest state.
-	GuestState pulumi.StringInput `pulumi:"guestState"`
+	GuestState pulumi.StringPtrInput `pulumi:"guestState"`
 	// Hardware version.
-	HardwareVersion pulumi.StringInput `pulumi:"hardwareVersion"`
+	HardwareVersion pulumi.StringPtrInput `pulumi:"hardwareVersion"`
 	// Host name of the VM.
-	HostName pulumi.StringInput `pulumi:"hostName"`
+	HostName pulumi.StringPtrInput `pulumi:"hostName"`
 	// Whether Pmem is enabled. Decides if NVDIMMs are used as a permanent memory.
-	IsPmemEnabled pulumi.BoolInput `pulumi:"isPmemEnabled"`
+	IsPmemEnabled pulumi.BoolPtrInput `pulumi:"isPmemEnabled"`
 	// Whether Trusted Platform Module (TPM) is enabled.
-	IsTpmEnabled pulumi.BoolInput `pulumi:"isTpmEnabled"`
+	IsTpmEnabled pulumi.BoolPtrInput `pulumi:"isTpmEnabled"`
 	// Latency sensitivity.
-	LatencySensitivity pulumi.StringInput `pulumi:"latencySensitivity"`
+	LatencySensitivity pulumi.StringPtrInput `pulumi:"latencySensitivity"`
 	// Memory size in MBs.
-	MemoryInMbs pulumi.StringInput `pulumi:"memoryInMbs"`
+	MemoryInMbs pulumi.StringPtrInput `pulumi:"memoryInMbs"`
 	// List of network ethernet cards attached to a virtual machine.
 	Nics GetAssetComputeNicArrayInput `pulumi:"nics"`
 	// Number of network ethernet cards.
-	NicsCount pulumi.IntInput `pulumi:"nicsCount"`
+	NicsCount pulumi.IntPtrInput `pulumi:"nicsCount"`
 	// The asset's NVDIMM configuration.
 	NvdimmControllers GetAssetComputeNvdimmControllerArrayInput `pulumi:"nvdimmControllers"`
 	// The properties of the NVDIMMs attached to a virtual machine.
 	Nvdimms GetAssetComputeNvdimmArrayInput `pulumi:"nvdimms"`
 	// Operating system.
-	OperatingSystem pulumi.StringInput `pulumi:"operatingSystem"`
+	OperatingSystem pulumi.StringPtrInput `pulumi:"operatingSystem"`
 	// Operating system version.
-	OperatingSystemVersion pulumi.StringInput `pulumi:"operatingSystemVersion"`
+	OperatingSystemVersion pulumi.StringPtrInput `pulumi:"operatingSystemVersion"`
 	// Pmem size in MBs.
-	PmemInMbs pulumi.StringInput `pulumi:"pmemInMbs"`
+	PmemInMbs pulumi.StringPtrInput `pulumi:"pmemInMbs"`
 	// The current power state of the virtual machine.
-	PowerState pulumi.StringInput `pulumi:"powerState"`
+	PowerState pulumi.StringPtrInput `pulumi:"powerState"`
 	// Primary IP address of the compute instance.
-	PrimaryIp pulumi.StringInput `pulumi:"primaryIp"`
+	PrimaryIp pulumi.StringPtrInput `pulumi:"primaryIp"`
 	// The assets SCSI controller.
 	ScsiControllers GetAssetComputeScsiControllerArrayInput `pulumi:"scsiControllers"`
 	// Provision storage size in MBs.
-	StorageProvisionedInMbs pulumi.StringInput `pulumi:"storageProvisionedInMbs"`
+	StorageProvisionedInMbs pulumi.StringPtrInput `pulumi:"storageProvisionedInMbs"`
 	// Number of threads per core.
-	ThreadsPerCoreCount pulumi.IntInput `pulumi:"threadsPerCoreCount"`
+	ThreadsPerCoreCount pulumi.IntPtrInput `pulumi:"threadsPerCoreCount"`
 }
 
 func (GetAssetComputeArgs) ElementType() reflect.Type {
@@ -5476,12 +4851,6 @@ func (i GetAssetComputeArgs) ToGetAssetComputeOutput() GetAssetComputeOutput {
 
 func (i GetAssetComputeArgs) ToGetAssetComputeOutputWithContext(ctx context.Context) GetAssetComputeOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetComputeOutput)
-}
-
-func (i GetAssetComputeArgs) ToOutput(ctx context.Context) pulumix.Output[GetAssetCompute] {
-	return pulumix.Output[GetAssetCompute]{
-		OutputState: i.ToGetAssetComputeOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAssetComputeArrayInput is an input type that accepts GetAssetComputeArray and GetAssetComputeArrayOutput values.
@@ -5509,12 +4878,6 @@ func (i GetAssetComputeArray) ToGetAssetComputeArrayOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetComputeArrayOutput)
 }
 
-func (i GetAssetComputeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetCompute] {
-	return pulumix.Output[[]GetAssetCompute]{
-		OutputState: i.ToGetAssetComputeArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAssetComputeOutput struct{ *pulumi.OutputState }
 
 func (GetAssetComputeOutput) ElementType() reflect.Type {
@@ -5529,30 +4892,24 @@ func (o GetAssetComputeOutput) ToGetAssetComputeOutputWithContext(ctx context.Co
 	return o
 }
 
-func (o GetAssetComputeOutput) ToOutput(ctx context.Context) pulumix.Output[GetAssetCompute] {
-	return pulumix.Output[GetAssetCompute]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Number of connected networks.
-func (o GetAssetComputeOutput) ConnectedNetworks() pulumi.IntOutput {
-	return o.ApplyT(func(v GetAssetCompute) int { return v.ConnectedNetworks }).(pulumi.IntOutput)
+func (o GetAssetComputeOutput) ConnectedNetworks() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetAssetCompute) *int { return v.ConnectedNetworks }).(pulumi.IntPtrOutput)
 }
 
 // Number of GPU cores.
-func (o GetAssetComputeOutput) CoresCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetAssetCompute) int { return v.CoresCount }).(pulumi.IntOutput)
+func (o GetAssetComputeOutput) CoresCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetAssetCompute) *int { return v.CoresCount }).(pulumi.IntPtrOutput)
 }
 
 // CPU model name.
-func (o GetAssetComputeOutput) CpuModel() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetCompute) string { return v.CpuModel }).(pulumi.StringOutput)
+func (o GetAssetComputeOutput) CpuModel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetCompute) *string { return v.CpuModel }).(pulumi.StringPtrOutput)
 }
 
 // The tag description.
-func (o GetAssetComputeOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetCompute) string { return v.Description }).(pulumi.StringOutput)
+func (o GetAssetComputeOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetCompute) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Lists the set of disks belonging to the virtual machine. This list is unordered.
@@ -5561,18 +4918,18 @@ func (o GetAssetComputeOutput) Disks() GetAssetComputeDiskArrayOutput {
 }
 
 // Number of disks.
-func (o GetAssetComputeOutput) DisksCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetAssetCompute) int { return v.DisksCount }).(pulumi.IntOutput)
+func (o GetAssetComputeOutput) DisksCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetAssetCompute) *int { return v.DisksCount }).(pulumi.IntPtrOutput)
 }
 
 // Fully Qualified DNS Name.
-func (o GetAssetComputeOutput) DnsName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetCompute) string { return v.DnsName }).(pulumi.StringOutput)
+func (o GetAssetComputeOutput) DnsName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetCompute) *string { return v.DnsName }).(pulumi.StringPtrOutput)
 }
 
 // Information about firmware type for this virtual machine.
-func (o GetAssetComputeOutput) Firmware() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetCompute) string { return v.Firmware }).(pulumi.StringOutput)
+func (o GetAssetComputeOutput) Firmware() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetCompute) *string { return v.Firmware }).(pulumi.StringPtrOutput)
 }
 
 // List of GPU devices attached to a virtual machine.
@@ -5581,43 +4938,43 @@ func (o GetAssetComputeOutput) GpuDevices() GetAssetComputeGpuDeviceArrayOutput 
 }
 
 // Number of GPU devices.
-func (o GetAssetComputeOutput) GpuDevicesCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetAssetCompute) int { return v.GpuDevicesCount }).(pulumi.IntOutput)
+func (o GetAssetComputeOutput) GpuDevicesCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetAssetCompute) *int { return v.GpuDevicesCount }).(pulumi.IntPtrOutput)
 }
 
 // Guest state.
-func (o GetAssetComputeOutput) GuestState() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetCompute) string { return v.GuestState }).(pulumi.StringOutput)
+func (o GetAssetComputeOutput) GuestState() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetCompute) *string { return v.GuestState }).(pulumi.StringPtrOutput)
 }
 
 // Hardware version.
-func (o GetAssetComputeOutput) HardwareVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetCompute) string { return v.HardwareVersion }).(pulumi.StringOutput)
+func (o GetAssetComputeOutput) HardwareVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetCompute) *string { return v.HardwareVersion }).(pulumi.StringPtrOutput)
 }
 
 // Host name of the VM.
-func (o GetAssetComputeOutput) HostName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetCompute) string { return v.HostName }).(pulumi.StringOutput)
+func (o GetAssetComputeOutput) HostName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetCompute) *string { return v.HostName }).(pulumi.StringPtrOutput)
 }
 
 // Whether Pmem is enabled. Decides if NVDIMMs are used as a permanent memory.
-func (o GetAssetComputeOutput) IsPmemEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetAssetCompute) bool { return v.IsPmemEnabled }).(pulumi.BoolOutput)
+func (o GetAssetComputeOutput) IsPmemEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetAssetCompute) *bool { return v.IsPmemEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // Whether Trusted Platform Module (TPM) is enabled.
-func (o GetAssetComputeOutput) IsTpmEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetAssetCompute) bool { return v.IsTpmEnabled }).(pulumi.BoolOutput)
+func (o GetAssetComputeOutput) IsTpmEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetAssetCompute) *bool { return v.IsTpmEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // Latency sensitivity.
-func (o GetAssetComputeOutput) LatencySensitivity() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetCompute) string { return v.LatencySensitivity }).(pulumi.StringOutput)
+func (o GetAssetComputeOutput) LatencySensitivity() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetCompute) *string { return v.LatencySensitivity }).(pulumi.StringPtrOutput)
 }
 
 // Memory size in MBs.
-func (o GetAssetComputeOutput) MemoryInMbs() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetCompute) string { return v.MemoryInMbs }).(pulumi.StringOutput)
+func (o GetAssetComputeOutput) MemoryInMbs() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetCompute) *string { return v.MemoryInMbs }).(pulumi.StringPtrOutput)
 }
 
 // List of network ethernet cards attached to a virtual machine.
@@ -5626,8 +4983,8 @@ func (o GetAssetComputeOutput) Nics() GetAssetComputeNicArrayOutput {
 }
 
 // Number of network ethernet cards.
-func (o GetAssetComputeOutput) NicsCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetAssetCompute) int { return v.NicsCount }).(pulumi.IntOutput)
+func (o GetAssetComputeOutput) NicsCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetAssetCompute) *int { return v.NicsCount }).(pulumi.IntPtrOutput)
 }
 
 // The asset's NVDIMM configuration.
@@ -5641,28 +4998,28 @@ func (o GetAssetComputeOutput) Nvdimms() GetAssetComputeNvdimmArrayOutput {
 }
 
 // Operating system.
-func (o GetAssetComputeOutput) OperatingSystem() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetCompute) string { return v.OperatingSystem }).(pulumi.StringOutput)
+func (o GetAssetComputeOutput) OperatingSystem() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetCompute) *string { return v.OperatingSystem }).(pulumi.StringPtrOutput)
 }
 
 // Operating system version.
-func (o GetAssetComputeOutput) OperatingSystemVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetCompute) string { return v.OperatingSystemVersion }).(pulumi.StringOutput)
+func (o GetAssetComputeOutput) OperatingSystemVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetCompute) *string { return v.OperatingSystemVersion }).(pulumi.StringPtrOutput)
 }
 
 // Pmem size in MBs.
-func (o GetAssetComputeOutput) PmemInMbs() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetCompute) string { return v.PmemInMbs }).(pulumi.StringOutput)
+func (o GetAssetComputeOutput) PmemInMbs() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetCompute) *string { return v.PmemInMbs }).(pulumi.StringPtrOutput)
 }
 
 // The current power state of the virtual machine.
-func (o GetAssetComputeOutput) PowerState() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetCompute) string { return v.PowerState }).(pulumi.StringOutput)
+func (o GetAssetComputeOutput) PowerState() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetCompute) *string { return v.PowerState }).(pulumi.StringPtrOutput)
 }
 
 // Primary IP address of the compute instance.
-func (o GetAssetComputeOutput) PrimaryIp() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetCompute) string { return v.PrimaryIp }).(pulumi.StringOutput)
+func (o GetAssetComputeOutput) PrimaryIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetCompute) *string { return v.PrimaryIp }).(pulumi.StringPtrOutput)
 }
 
 // The assets SCSI controller.
@@ -5671,13 +5028,13 @@ func (o GetAssetComputeOutput) ScsiControllers() GetAssetComputeScsiControllerAr
 }
 
 // Provision storage size in MBs.
-func (o GetAssetComputeOutput) StorageProvisionedInMbs() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetCompute) string { return v.StorageProvisionedInMbs }).(pulumi.StringOutput)
+func (o GetAssetComputeOutput) StorageProvisionedInMbs() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetCompute) *string { return v.StorageProvisionedInMbs }).(pulumi.StringPtrOutput)
 }
 
 // Number of threads per core.
-func (o GetAssetComputeOutput) ThreadsPerCoreCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetAssetCompute) int { return v.ThreadsPerCoreCount }).(pulumi.IntOutput)
+func (o GetAssetComputeOutput) ThreadsPerCoreCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetAssetCompute) *int { return v.ThreadsPerCoreCount }).(pulumi.IntPtrOutput)
 }
 
 type GetAssetComputeArrayOutput struct{ *pulumi.OutputState }
@@ -5694,12 +5051,6 @@ func (o GetAssetComputeArrayOutput) ToGetAssetComputeArrayOutputWithContext(ctx 
 	return o
 }
 
-func (o GetAssetComputeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetCompute] {
-	return pulumix.Output[[]GetAssetCompute]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAssetComputeArrayOutput) Index(i pulumi.IntInput) GetAssetComputeOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssetCompute {
 		return vs[0].([]GetAssetCompute)[vs[1].(int)]
@@ -5708,19 +5059,19 @@ func (o GetAssetComputeArrayOutput) Index(i pulumi.IntInput) GetAssetComputeOutp
 
 type GetAssetComputeDisk struct {
 	// Order of boot volumes.
-	BootOrder int `pulumi:"bootOrder"`
+	BootOrder *int `pulumi:"bootOrder"`
 	// Location of the boot/data volume.
-	Location string `pulumi:"location"`
+	Location *string `pulumi:"location"`
 	// The tag name.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The disk persistent mode.
-	PersistentMode string `pulumi:"persistentMode"`
+	PersistentMode *string `pulumi:"persistentMode"`
 	// The size of the volume in MBs.
-	SizeInMbs string `pulumi:"sizeInMbs"`
+	SizeInMbs *string `pulumi:"sizeInMbs"`
 	// Disk UUID for the virtual disk, if available.
-	Uuid string `pulumi:"uuid"`
+	Uuid *string `pulumi:"uuid"`
 	// Disk UUID LUN for the virtual disk, if available.
-	UuidLun string `pulumi:"uuidLun"`
+	UuidLun *string `pulumi:"uuidLun"`
 }
 
 // GetAssetComputeDiskInput is an input type that accepts GetAssetComputeDiskArgs and GetAssetComputeDiskOutput values.
@@ -5736,19 +5087,19 @@ type GetAssetComputeDiskInput interface {
 
 type GetAssetComputeDiskArgs struct {
 	// Order of boot volumes.
-	BootOrder pulumi.IntInput `pulumi:"bootOrder"`
+	BootOrder pulumi.IntPtrInput `pulumi:"bootOrder"`
 	// Location of the boot/data volume.
-	Location pulumi.StringInput `pulumi:"location"`
+	Location pulumi.StringPtrInput `pulumi:"location"`
 	// The tag name.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// The disk persistent mode.
-	PersistentMode pulumi.StringInput `pulumi:"persistentMode"`
+	PersistentMode pulumi.StringPtrInput `pulumi:"persistentMode"`
 	// The size of the volume in MBs.
-	SizeInMbs pulumi.StringInput `pulumi:"sizeInMbs"`
+	SizeInMbs pulumi.StringPtrInput `pulumi:"sizeInMbs"`
 	// Disk UUID for the virtual disk, if available.
-	Uuid pulumi.StringInput `pulumi:"uuid"`
+	Uuid pulumi.StringPtrInput `pulumi:"uuid"`
 	// Disk UUID LUN for the virtual disk, if available.
-	UuidLun pulumi.StringInput `pulumi:"uuidLun"`
+	UuidLun pulumi.StringPtrInput `pulumi:"uuidLun"`
 }
 
 func (GetAssetComputeDiskArgs) ElementType() reflect.Type {
@@ -5761,12 +5112,6 @@ func (i GetAssetComputeDiskArgs) ToGetAssetComputeDiskOutput() GetAssetComputeDi
 
 func (i GetAssetComputeDiskArgs) ToGetAssetComputeDiskOutputWithContext(ctx context.Context) GetAssetComputeDiskOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetComputeDiskOutput)
-}
-
-func (i GetAssetComputeDiskArgs) ToOutput(ctx context.Context) pulumix.Output[GetAssetComputeDisk] {
-	return pulumix.Output[GetAssetComputeDisk]{
-		OutputState: i.ToGetAssetComputeDiskOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAssetComputeDiskArrayInput is an input type that accepts GetAssetComputeDiskArray and GetAssetComputeDiskArrayOutput values.
@@ -5794,12 +5139,6 @@ func (i GetAssetComputeDiskArray) ToGetAssetComputeDiskArrayOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetComputeDiskArrayOutput)
 }
 
-func (i GetAssetComputeDiskArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetComputeDisk] {
-	return pulumix.Output[[]GetAssetComputeDisk]{
-		OutputState: i.ToGetAssetComputeDiskArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAssetComputeDiskOutput struct{ *pulumi.OutputState }
 
 func (GetAssetComputeDiskOutput) ElementType() reflect.Type {
@@ -5814,45 +5153,39 @@ func (o GetAssetComputeDiskOutput) ToGetAssetComputeDiskOutputWithContext(ctx co
 	return o
 }
 
-func (o GetAssetComputeDiskOutput) ToOutput(ctx context.Context) pulumix.Output[GetAssetComputeDisk] {
-	return pulumix.Output[GetAssetComputeDisk]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Order of boot volumes.
-func (o GetAssetComputeDiskOutput) BootOrder() pulumi.IntOutput {
-	return o.ApplyT(func(v GetAssetComputeDisk) int { return v.BootOrder }).(pulumi.IntOutput)
+func (o GetAssetComputeDiskOutput) BootOrder() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetAssetComputeDisk) *int { return v.BootOrder }).(pulumi.IntPtrOutput)
 }
 
 // Location of the boot/data volume.
-func (o GetAssetComputeDiskOutput) Location() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetComputeDisk) string { return v.Location }).(pulumi.StringOutput)
+func (o GetAssetComputeDiskOutput) Location() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetComputeDisk) *string { return v.Location }).(pulumi.StringPtrOutput)
 }
 
 // The tag name.
-func (o GetAssetComputeDiskOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetComputeDisk) string { return v.Name }).(pulumi.StringOutput)
+func (o GetAssetComputeDiskOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetComputeDisk) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The disk persistent mode.
-func (o GetAssetComputeDiskOutput) PersistentMode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetComputeDisk) string { return v.PersistentMode }).(pulumi.StringOutput)
+func (o GetAssetComputeDiskOutput) PersistentMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetComputeDisk) *string { return v.PersistentMode }).(pulumi.StringPtrOutput)
 }
 
 // The size of the volume in MBs.
-func (o GetAssetComputeDiskOutput) SizeInMbs() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetComputeDisk) string { return v.SizeInMbs }).(pulumi.StringOutput)
+func (o GetAssetComputeDiskOutput) SizeInMbs() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetComputeDisk) *string { return v.SizeInMbs }).(pulumi.StringPtrOutput)
 }
 
 // Disk UUID for the virtual disk, if available.
-func (o GetAssetComputeDiskOutput) Uuid() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetComputeDisk) string { return v.Uuid }).(pulumi.StringOutput)
+func (o GetAssetComputeDiskOutput) Uuid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetComputeDisk) *string { return v.Uuid }).(pulumi.StringPtrOutput)
 }
 
 // Disk UUID LUN for the virtual disk, if available.
-func (o GetAssetComputeDiskOutput) UuidLun() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetComputeDisk) string { return v.UuidLun }).(pulumi.StringOutput)
+func (o GetAssetComputeDiskOutput) UuidLun() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetComputeDisk) *string { return v.UuidLun }).(pulumi.StringPtrOutput)
 }
 
 type GetAssetComputeDiskArrayOutput struct{ *pulumi.OutputState }
@@ -5869,12 +5202,6 @@ func (o GetAssetComputeDiskArrayOutput) ToGetAssetComputeDiskArrayOutputWithCont
 	return o
 }
 
-func (o GetAssetComputeDiskArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetComputeDisk] {
-	return pulumix.Output[[]GetAssetComputeDisk]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAssetComputeDiskArrayOutput) Index(i pulumi.IntInput) GetAssetComputeDiskOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssetComputeDisk {
 		return vs[0].([]GetAssetComputeDisk)[vs[1].(int)]
@@ -5883,15 +5210,15 @@ func (o GetAssetComputeDiskArrayOutput) Index(i pulumi.IntInput) GetAssetCompute
 
 type GetAssetComputeGpuDevice struct {
 	// Number of GPU cores.
-	CoresCount int `pulumi:"coresCount"`
+	CoresCount *int `pulumi:"coresCount"`
 	// The tag description.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// The manufacturer of GPU.
-	Manufacturer string `pulumi:"manufacturer"`
+	Manufacturer *string `pulumi:"manufacturer"`
 	// Memory size in MBs.
-	MemoryInMbs string `pulumi:"memoryInMbs"`
+	MemoryInMbs *string `pulumi:"memoryInMbs"`
 	// The tag name.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 }
 
 // GetAssetComputeGpuDeviceInput is an input type that accepts GetAssetComputeGpuDeviceArgs and GetAssetComputeGpuDeviceOutput values.
@@ -5907,15 +5234,15 @@ type GetAssetComputeGpuDeviceInput interface {
 
 type GetAssetComputeGpuDeviceArgs struct {
 	// Number of GPU cores.
-	CoresCount pulumi.IntInput `pulumi:"coresCount"`
+	CoresCount pulumi.IntPtrInput `pulumi:"coresCount"`
 	// The tag description.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// The manufacturer of GPU.
-	Manufacturer pulumi.StringInput `pulumi:"manufacturer"`
+	Manufacturer pulumi.StringPtrInput `pulumi:"manufacturer"`
 	// Memory size in MBs.
-	MemoryInMbs pulumi.StringInput `pulumi:"memoryInMbs"`
+	MemoryInMbs pulumi.StringPtrInput `pulumi:"memoryInMbs"`
 	// The tag name.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 }
 
 func (GetAssetComputeGpuDeviceArgs) ElementType() reflect.Type {
@@ -5928,12 +5255,6 @@ func (i GetAssetComputeGpuDeviceArgs) ToGetAssetComputeGpuDeviceOutput() GetAsse
 
 func (i GetAssetComputeGpuDeviceArgs) ToGetAssetComputeGpuDeviceOutputWithContext(ctx context.Context) GetAssetComputeGpuDeviceOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetComputeGpuDeviceOutput)
-}
-
-func (i GetAssetComputeGpuDeviceArgs) ToOutput(ctx context.Context) pulumix.Output[GetAssetComputeGpuDevice] {
-	return pulumix.Output[GetAssetComputeGpuDevice]{
-		OutputState: i.ToGetAssetComputeGpuDeviceOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAssetComputeGpuDeviceArrayInput is an input type that accepts GetAssetComputeGpuDeviceArray and GetAssetComputeGpuDeviceArrayOutput values.
@@ -5961,12 +5282,6 @@ func (i GetAssetComputeGpuDeviceArray) ToGetAssetComputeGpuDeviceArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetComputeGpuDeviceArrayOutput)
 }
 
-func (i GetAssetComputeGpuDeviceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetComputeGpuDevice] {
-	return pulumix.Output[[]GetAssetComputeGpuDevice]{
-		OutputState: i.ToGetAssetComputeGpuDeviceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAssetComputeGpuDeviceOutput struct{ *pulumi.OutputState }
 
 func (GetAssetComputeGpuDeviceOutput) ElementType() reflect.Type {
@@ -5981,35 +5296,29 @@ func (o GetAssetComputeGpuDeviceOutput) ToGetAssetComputeGpuDeviceOutputWithCont
 	return o
 }
 
-func (o GetAssetComputeGpuDeviceOutput) ToOutput(ctx context.Context) pulumix.Output[GetAssetComputeGpuDevice] {
-	return pulumix.Output[GetAssetComputeGpuDevice]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Number of GPU cores.
-func (o GetAssetComputeGpuDeviceOutput) CoresCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetAssetComputeGpuDevice) int { return v.CoresCount }).(pulumi.IntOutput)
+func (o GetAssetComputeGpuDeviceOutput) CoresCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetAssetComputeGpuDevice) *int { return v.CoresCount }).(pulumi.IntPtrOutput)
 }
 
 // The tag description.
-func (o GetAssetComputeGpuDeviceOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetComputeGpuDevice) string { return v.Description }).(pulumi.StringOutput)
+func (o GetAssetComputeGpuDeviceOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetComputeGpuDevice) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // The manufacturer of GPU.
-func (o GetAssetComputeGpuDeviceOutput) Manufacturer() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetComputeGpuDevice) string { return v.Manufacturer }).(pulumi.StringOutput)
+func (o GetAssetComputeGpuDeviceOutput) Manufacturer() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetComputeGpuDevice) *string { return v.Manufacturer }).(pulumi.StringPtrOutput)
 }
 
 // Memory size in MBs.
-func (o GetAssetComputeGpuDeviceOutput) MemoryInMbs() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetComputeGpuDevice) string { return v.MemoryInMbs }).(pulumi.StringOutput)
+func (o GetAssetComputeGpuDeviceOutput) MemoryInMbs() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetComputeGpuDevice) *string { return v.MemoryInMbs }).(pulumi.StringPtrOutput)
 }
 
 // The tag name.
-func (o GetAssetComputeGpuDeviceOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetComputeGpuDevice) string { return v.Name }).(pulumi.StringOutput)
+func (o GetAssetComputeGpuDeviceOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetComputeGpuDevice) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 type GetAssetComputeGpuDeviceArrayOutput struct{ *pulumi.OutputState }
@@ -6026,12 +5335,6 @@ func (o GetAssetComputeGpuDeviceArrayOutput) ToGetAssetComputeGpuDeviceArrayOutp
 	return o
 }
 
-func (o GetAssetComputeGpuDeviceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetComputeGpuDevice] {
-	return pulumix.Output[[]GetAssetComputeGpuDevice]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAssetComputeGpuDeviceArrayOutput) Index(i pulumi.IntInput) GetAssetComputeGpuDeviceOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssetComputeGpuDevice {
 		return vs[0].([]GetAssetComputeGpuDevice)[vs[1].(int)]
@@ -6042,15 +5345,15 @@ type GetAssetComputeNic struct {
 	// List of IP addresses.
 	IpAddresses []string `pulumi:"ipAddresses"`
 	// Provides a label and summary information for the device.
-	Label string `pulumi:"label"`
+	Label *string `pulumi:"label"`
 	// Mac address of the VM.
-	MacAddress string `pulumi:"macAddress"`
+	MacAddress *string `pulumi:"macAddress"`
 	// Mac address type.
-	MacAddressType string `pulumi:"macAddressType"`
+	MacAddressType *string `pulumi:"macAddressType"`
 	// Network name.
-	NetworkName string `pulumi:"networkName"`
+	NetworkName *string `pulumi:"networkName"`
 	// Switch name.
-	SwitchName string `pulumi:"switchName"`
+	SwitchName *string `pulumi:"switchName"`
 }
 
 // GetAssetComputeNicInput is an input type that accepts GetAssetComputeNicArgs and GetAssetComputeNicOutput values.
@@ -6068,15 +5371,15 @@ type GetAssetComputeNicArgs struct {
 	// List of IP addresses.
 	IpAddresses pulumi.StringArrayInput `pulumi:"ipAddresses"`
 	// Provides a label and summary information for the device.
-	Label pulumi.StringInput `pulumi:"label"`
+	Label pulumi.StringPtrInput `pulumi:"label"`
 	// Mac address of the VM.
-	MacAddress pulumi.StringInput `pulumi:"macAddress"`
+	MacAddress pulumi.StringPtrInput `pulumi:"macAddress"`
 	// Mac address type.
-	MacAddressType pulumi.StringInput `pulumi:"macAddressType"`
+	MacAddressType pulumi.StringPtrInput `pulumi:"macAddressType"`
 	// Network name.
-	NetworkName pulumi.StringInput `pulumi:"networkName"`
+	NetworkName pulumi.StringPtrInput `pulumi:"networkName"`
 	// Switch name.
-	SwitchName pulumi.StringInput `pulumi:"switchName"`
+	SwitchName pulumi.StringPtrInput `pulumi:"switchName"`
 }
 
 func (GetAssetComputeNicArgs) ElementType() reflect.Type {
@@ -6089,12 +5392,6 @@ func (i GetAssetComputeNicArgs) ToGetAssetComputeNicOutput() GetAssetComputeNicO
 
 func (i GetAssetComputeNicArgs) ToGetAssetComputeNicOutputWithContext(ctx context.Context) GetAssetComputeNicOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetComputeNicOutput)
-}
-
-func (i GetAssetComputeNicArgs) ToOutput(ctx context.Context) pulumix.Output[GetAssetComputeNic] {
-	return pulumix.Output[GetAssetComputeNic]{
-		OutputState: i.ToGetAssetComputeNicOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAssetComputeNicArrayInput is an input type that accepts GetAssetComputeNicArray and GetAssetComputeNicArrayOutput values.
@@ -6122,12 +5419,6 @@ func (i GetAssetComputeNicArray) ToGetAssetComputeNicArrayOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetComputeNicArrayOutput)
 }
 
-func (i GetAssetComputeNicArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetComputeNic] {
-	return pulumix.Output[[]GetAssetComputeNic]{
-		OutputState: i.ToGetAssetComputeNicArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAssetComputeNicOutput struct{ *pulumi.OutputState }
 
 func (GetAssetComputeNicOutput) ElementType() reflect.Type {
@@ -6142,40 +5433,34 @@ func (o GetAssetComputeNicOutput) ToGetAssetComputeNicOutputWithContext(ctx cont
 	return o
 }
 
-func (o GetAssetComputeNicOutput) ToOutput(ctx context.Context) pulumix.Output[GetAssetComputeNic] {
-	return pulumix.Output[GetAssetComputeNic]{
-		OutputState: o.OutputState,
-	}
-}
-
 // List of IP addresses.
 func (o GetAssetComputeNicOutput) IpAddresses() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetAssetComputeNic) []string { return v.IpAddresses }).(pulumi.StringArrayOutput)
 }
 
 // Provides a label and summary information for the device.
-func (o GetAssetComputeNicOutput) Label() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetComputeNic) string { return v.Label }).(pulumi.StringOutput)
+func (o GetAssetComputeNicOutput) Label() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetComputeNic) *string { return v.Label }).(pulumi.StringPtrOutput)
 }
 
 // Mac address of the VM.
-func (o GetAssetComputeNicOutput) MacAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetComputeNic) string { return v.MacAddress }).(pulumi.StringOutput)
+func (o GetAssetComputeNicOutput) MacAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetComputeNic) *string { return v.MacAddress }).(pulumi.StringPtrOutput)
 }
 
 // Mac address type.
-func (o GetAssetComputeNicOutput) MacAddressType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetComputeNic) string { return v.MacAddressType }).(pulumi.StringOutput)
+func (o GetAssetComputeNicOutput) MacAddressType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetComputeNic) *string { return v.MacAddressType }).(pulumi.StringPtrOutput)
 }
 
 // Network name.
-func (o GetAssetComputeNicOutput) NetworkName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetComputeNic) string { return v.NetworkName }).(pulumi.StringOutput)
+func (o GetAssetComputeNicOutput) NetworkName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetComputeNic) *string { return v.NetworkName }).(pulumi.StringPtrOutput)
 }
 
 // Switch name.
-func (o GetAssetComputeNicOutput) SwitchName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetComputeNic) string { return v.SwitchName }).(pulumi.StringOutput)
+func (o GetAssetComputeNicOutput) SwitchName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetComputeNic) *string { return v.SwitchName }).(pulumi.StringPtrOutput)
 }
 
 type GetAssetComputeNicArrayOutput struct{ *pulumi.OutputState }
@@ -6192,12 +5477,6 @@ func (o GetAssetComputeNicArrayOutput) ToGetAssetComputeNicArrayOutputWithContex
 	return o
 }
 
-func (o GetAssetComputeNicArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetComputeNic] {
-	return pulumix.Output[[]GetAssetComputeNic]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAssetComputeNicArrayOutput) Index(i pulumi.IntInput) GetAssetComputeNicOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssetComputeNic {
 		return vs[0].([]GetAssetComputeNic)[vs[1].(int)]
@@ -6206,11 +5485,11 @@ func (o GetAssetComputeNicArrayOutput) Index(i pulumi.IntInput) GetAssetComputeN
 
 type GetAssetComputeNvdimm struct {
 	// Controller key.
-	ControllerKey int `pulumi:"controllerKey"`
+	ControllerKey *int `pulumi:"controllerKey"`
 	// Provides a label and summary information for the device.
-	Label string `pulumi:"label"`
+	Label *string `pulumi:"label"`
 	// The unit number of the SCSI controller.
-	UnitNumber int `pulumi:"unitNumber"`
+	UnitNumber *int `pulumi:"unitNumber"`
 }
 
 // GetAssetComputeNvdimmInput is an input type that accepts GetAssetComputeNvdimmArgs and GetAssetComputeNvdimmOutput values.
@@ -6226,11 +5505,11 @@ type GetAssetComputeNvdimmInput interface {
 
 type GetAssetComputeNvdimmArgs struct {
 	// Controller key.
-	ControllerKey pulumi.IntInput `pulumi:"controllerKey"`
+	ControllerKey pulumi.IntPtrInput `pulumi:"controllerKey"`
 	// Provides a label and summary information for the device.
-	Label pulumi.StringInput `pulumi:"label"`
+	Label pulumi.StringPtrInput `pulumi:"label"`
 	// The unit number of the SCSI controller.
-	UnitNumber pulumi.IntInput `pulumi:"unitNumber"`
+	UnitNumber pulumi.IntPtrInput `pulumi:"unitNumber"`
 }
 
 func (GetAssetComputeNvdimmArgs) ElementType() reflect.Type {
@@ -6243,12 +5522,6 @@ func (i GetAssetComputeNvdimmArgs) ToGetAssetComputeNvdimmOutput() GetAssetCompu
 
 func (i GetAssetComputeNvdimmArgs) ToGetAssetComputeNvdimmOutputWithContext(ctx context.Context) GetAssetComputeNvdimmOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetComputeNvdimmOutput)
-}
-
-func (i GetAssetComputeNvdimmArgs) ToOutput(ctx context.Context) pulumix.Output[GetAssetComputeNvdimm] {
-	return pulumix.Output[GetAssetComputeNvdimm]{
-		OutputState: i.ToGetAssetComputeNvdimmOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAssetComputeNvdimmArrayInput is an input type that accepts GetAssetComputeNvdimmArray and GetAssetComputeNvdimmArrayOutput values.
@@ -6276,12 +5549,6 @@ func (i GetAssetComputeNvdimmArray) ToGetAssetComputeNvdimmArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetComputeNvdimmArrayOutput)
 }
 
-func (i GetAssetComputeNvdimmArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetComputeNvdimm] {
-	return pulumix.Output[[]GetAssetComputeNvdimm]{
-		OutputState: i.ToGetAssetComputeNvdimmArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAssetComputeNvdimmOutput struct{ *pulumi.OutputState }
 
 func (GetAssetComputeNvdimmOutput) ElementType() reflect.Type {
@@ -6296,25 +5563,19 @@ func (o GetAssetComputeNvdimmOutput) ToGetAssetComputeNvdimmOutputWithContext(ct
 	return o
 }
 
-func (o GetAssetComputeNvdimmOutput) ToOutput(ctx context.Context) pulumix.Output[GetAssetComputeNvdimm] {
-	return pulumix.Output[GetAssetComputeNvdimm]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Controller key.
-func (o GetAssetComputeNvdimmOutput) ControllerKey() pulumi.IntOutput {
-	return o.ApplyT(func(v GetAssetComputeNvdimm) int { return v.ControllerKey }).(pulumi.IntOutput)
+func (o GetAssetComputeNvdimmOutput) ControllerKey() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetAssetComputeNvdimm) *int { return v.ControllerKey }).(pulumi.IntPtrOutput)
 }
 
 // Provides a label and summary information for the device.
-func (o GetAssetComputeNvdimmOutput) Label() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetComputeNvdimm) string { return v.Label }).(pulumi.StringOutput)
+func (o GetAssetComputeNvdimmOutput) Label() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetComputeNvdimm) *string { return v.Label }).(pulumi.StringPtrOutput)
 }
 
 // The unit number of the SCSI controller.
-func (o GetAssetComputeNvdimmOutput) UnitNumber() pulumi.IntOutput {
-	return o.ApplyT(func(v GetAssetComputeNvdimm) int { return v.UnitNumber }).(pulumi.IntOutput)
+func (o GetAssetComputeNvdimmOutput) UnitNumber() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetAssetComputeNvdimm) *int { return v.UnitNumber }).(pulumi.IntPtrOutput)
 }
 
 type GetAssetComputeNvdimmArrayOutput struct{ *pulumi.OutputState }
@@ -6331,12 +5592,6 @@ func (o GetAssetComputeNvdimmArrayOutput) ToGetAssetComputeNvdimmArrayOutputWith
 	return o
 }
 
-func (o GetAssetComputeNvdimmArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetComputeNvdimm] {
-	return pulumix.Output[[]GetAssetComputeNvdimm]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAssetComputeNvdimmArrayOutput) Index(i pulumi.IntInput) GetAssetComputeNvdimmOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssetComputeNvdimm {
 		return vs[0].([]GetAssetComputeNvdimm)[vs[1].(int)]
@@ -6345,9 +5600,9 @@ func (o GetAssetComputeNvdimmArrayOutput) Index(i pulumi.IntInput) GetAssetCompu
 
 type GetAssetComputeNvdimmController struct {
 	// Bus number.
-	BusNumber int `pulumi:"busNumber"`
+	BusNumber *int `pulumi:"busNumber"`
 	// Provides a label and summary information for the device.
-	Label string `pulumi:"label"`
+	Label *string `pulumi:"label"`
 }
 
 // GetAssetComputeNvdimmControllerInput is an input type that accepts GetAssetComputeNvdimmControllerArgs and GetAssetComputeNvdimmControllerOutput values.
@@ -6363,9 +5618,9 @@ type GetAssetComputeNvdimmControllerInput interface {
 
 type GetAssetComputeNvdimmControllerArgs struct {
 	// Bus number.
-	BusNumber pulumi.IntInput `pulumi:"busNumber"`
+	BusNumber pulumi.IntPtrInput `pulumi:"busNumber"`
 	// Provides a label and summary information for the device.
-	Label pulumi.StringInput `pulumi:"label"`
+	Label pulumi.StringPtrInput `pulumi:"label"`
 }
 
 func (GetAssetComputeNvdimmControllerArgs) ElementType() reflect.Type {
@@ -6378,12 +5633,6 @@ func (i GetAssetComputeNvdimmControllerArgs) ToGetAssetComputeNvdimmControllerOu
 
 func (i GetAssetComputeNvdimmControllerArgs) ToGetAssetComputeNvdimmControllerOutputWithContext(ctx context.Context) GetAssetComputeNvdimmControllerOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetComputeNvdimmControllerOutput)
-}
-
-func (i GetAssetComputeNvdimmControllerArgs) ToOutput(ctx context.Context) pulumix.Output[GetAssetComputeNvdimmController] {
-	return pulumix.Output[GetAssetComputeNvdimmController]{
-		OutputState: i.ToGetAssetComputeNvdimmControllerOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAssetComputeNvdimmControllerArrayInput is an input type that accepts GetAssetComputeNvdimmControllerArray and GetAssetComputeNvdimmControllerArrayOutput values.
@@ -6411,12 +5660,6 @@ func (i GetAssetComputeNvdimmControllerArray) ToGetAssetComputeNvdimmControllerA
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetComputeNvdimmControllerArrayOutput)
 }
 
-func (i GetAssetComputeNvdimmControllerArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetComputeNvdimmController] {
-	return pulumix.Output[[]GetAssetComputeNvdimmController]{
-		OutputState: i.ToGetAssetComputeNvdimmControllerArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAssetComputeNvdimmControllerOutput struct{ *pulumi.OutputState }
 
 func (GetAssetComputeNvdimmControllerOutput) ElementType() reflect.Type {
@@ -6431,20 +5674,14 @@ func (o GetAssetComputeNvdimmControllerOutput) ToGetAssetComputeNvdimmController
 	return o
 }
 
-func (o GetAssetComputeNvdimmControllerOutput) ToOutput(ctx context.Context) pulumix.Output[GetAssetComputeNvdimmController] {
-	return pulumix.Output[GetAssetComputeNvdimmController]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Bus number.
-func (o GetAssetComputeNvdimmControllerOutput) BusNumber() pulumi.IntOutput {
-	return o.ApplyT(func(v GetAssetComputeNvdimmController) int { return v.BusNumber }).(pulumi.IntOutput)
+func (o GetAssetComputeNvdimmControllerOutput) BusNumber() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetAssetComputeNvdimmController) *int { return v.BusNumber }).(pulumi.IntPtrOutput)
 }
 
 // Provides a label and summary information for the device.
-func (o GetAssetComputeNvdimmControllerOutput) Label() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetComputeNvdimmController) string { return v.Label }).(pulumi.StringOutput)
+func (o GetAssetComputeNvdimmControllerOutput) Label() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetComputeNvdimmController) *string { return v.Label }).(pulumi.StringPtrOutput)
 }
 
 type GetAssetComputeNvdimmControllerArrayOutput struct{ *pulumi.OutputState }
@@ -6461,12 +5698,6 @@ func (o GetAssetComputeNvdimmControllerArrayOutput) ToGetAssetComputeNvdimmContr
 	return o
 }
 
-func (o GetAssetComputeNvdimmControllerArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetComputeNvdimmController] {
-	return pulumix.Output[[]GetAssetComputeNvdimmController]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAssetComputeNvdimmControllerArrayOutput) Index(i pulumi.IntInput) GetAssetComputeNvdimmControllerOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssetComputeNvdimmController {
 		return vs[0].([]GetAssetComputeNvdimmController)[vs[1].(int)]
@@ -6475,11 +5706,11 @@ func (o GetAssetComputeNvdimmControllerArrayOutput) Index(i pulumi.IntInput) Get
 
 type GetAssetComputeScsiController struct {
 	// Provides a label and summary information for the device.
-	Label string `pulumi:"label"`
+	Label *string `pulumi:"label"`
 	// Shared bus.
-	SharedBus string `pulumi:"sharedBus"`
+	SharedBus *string `pulumi:"sharedBus"`
 	// The unit number of the SCSI controller.
-	UnitNumber int `pulumi:"unitNumber"`
+	UnitNumber *int `pulumi:"unitNumber"`
 }
 
 // GetAssetComputeScsiControllerInput is an input type that accepts GetAssetComputeScsiControllerArgs and GetAssetComputeScsiControllerOutput values.
@@ -6495,11 +5726,11 @@ type GetAssetComputeScsiControllerInput interface {
 
 type GetAssetComputeScsiControllerArgs struct {
 	// Provides a label and summary information for the device.
-	Label pulumi.StringInput `pulumi:"label"`
+	Label pulumi.StringPtrInput `pulumi:"label"`
 	// Shared bus.
-	SharedBus pulumi.StringInput `pulumi:"sharedBus"`
+	SharedBus pulumi.StringPtrInput `pulumi:"sharedBus"`
 	// The unit number of the SCSI controller.
-	UnitNumber pulumi.IntInput `pulumi:"unitNumber"`
+	UnitNumber pulumi.IntPtrInput `pulumi:"unitNumber"`
 }
 
 func (GetAssetComputeScsiControllerArgs) ElementType() reflect.Type {
@@ -6512,12 +5743,6 @@ func (i GetAssetComputeScsiControllerArgs) ToGetAssetComputeScsiControllerOutput
 
 func (i GetAssetComputeScsiControllerArgs) ToGetAssetComputeScsiControllerOutputWithContext(ctx context.Context) GetAssetComputeScsiControllerOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetComputeScsiControllerOutput)
-}
-
-func (i GetAssetComputeScsiControllerArgs) ToOutput(ctx context.Context) pulumix.Output[GetAssetComputeScsiController] {
-	return pulumix.Output[GetAssetComputeScsiController]{
-		OutputState: i.ToGetAssetComputeScsiControllerOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAssetComputeScsiControllerArrayInput is an input type that accepts GetAssetComputeScsiControllerArray and GetAssetComputeScsiControllerArrayOutput values.
@@ -6545,12 +5770,6 @@ func (i GetAssetComputeScsiControllerArray) ToGetAssetComputeScsiControllerArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetComputeScsiControllerArrayOutput)
 }
 
-func (i GetAssetComputeScsiControllerArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetComputeScsiController] {
-	return pulumix.Output[[]GetAssetComputeScsiController]{
-		OutputState: i.ToGetAssetComputeScsiControllerArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAssetComputeScsiControllerOutput struct{ *pulumi.OutputState }
 
 func (GetAssetComputeScsiControllerOutput) ElementType() reflect.Type {
@@ -6565,25 +5784,19 @@ func (o GetAssetComputeScsiControllerOutput) ToGetAssetComputeScsiControllerOutp
 	return o
 }
 
-func (o GetAssetComputeScsiControllerOutput) ToOutput(ctx context.Context) pulumix.Output[GetAssetComputeScsiController] {
-	return pulumix.Output[GetAssetComputeScsiController]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Provides a label and summary information for the device.
-func (o GetAssetComputeScsiControllerOutput) Label() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetComputeScsiController) string { return v.Label }).(pulumi.StringOutput)
+func (o GetAssetComputeScsiControllerOutput) Label() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetComputeScsiController) *string { return v.Label }).(pulumi.StringPtrOutput)
 }
 
 // Shared bus.
-func (o GetAssetComputeScsiControllerOutput) SharedBus() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetComputeScsiController) string { return v.SharedBus }).(pulumi.StringOutput)
+func (o GetAssetComputeScsiControllerOutput) SharedBus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetComputeScsiController) *string { return v.SharedBus }).(pulumi.StringPtrOutput)
 }
 
 // The unit number of the SCSI controller.
-func (o GetAssetComputeScsiControllerOutput) UnitNumber() pulumi.IntOutput {
-	return o.ApplyT(func(v GetAssetComputeScsiController) int { return v.UnitNumber }).(pulumi.IntOutput)
+func (o GetAssetComputeScsiControllerOutput) UnitNumber() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetAssetComputeScsiController) *int { return v.UnitNumber }).(pulumi.IntPtrOutput)
 }
 
 type GetAssetComputeScsiControllerArrayOutput struct{ *pulumi.OutputState }
@@ -6600,12 +5813,6 @@ func (o GetAssetComputeScsiControllerArrayOutput) ToGetAssetComputeScsiControlle
 	return o
 }
 
-func (o GetAssetComputeScsiControllerArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetComputeScsiController] {
-	return pulumix.Output[[]GetAssetComputeScsiController]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAssetComputeScsiControllerArrayOutput) Index(i pulumi.IntInput) GetAssetComputeScsiControllerOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssetComputeScsiController {
 		return vs[0].([]GetAssetComputeScsiController)[vs[1].(int)]
@@ -6614,9 +5821,9 @@ func (o GetAssetComputeScsiControllerArrayOutput) Index(i pulumi.IntInput) GetAs
 
 type GetAssetSourceDiscoveryCredential struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the the type of the credentials is BASIC` , the secret must contain the username and password in JSON format, which is in the form of  `{ "username": "<VMwareUser>", "password": "<VMwarePassword>" }`.
-	SecretId string `pulumi:"secretId"`
+	SecretId *string `pulumi:"secretId"`
 	// The type of asset source. Indicates external origin of the assets that are read by assigning this asset source.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 }
 
 // GetAssetSourceDiscoveryCredentialInput is an input type that accepts GetAssetSourceDiscoveryCredentialArgs and GetAssetSourceDiscoveryCredentialOutput values.
@@ -6632,9 +5839,9 @@ type GetAssetSourceDiscoveryCredentialInput interface {
 
 type GetAssetSourceDiscoveryCredentialArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the the type of the credentials is BASIC` , the secret must contain the username and password in JSON format, which is in the form of  `{ "username": "<VMwareUser>", "password": "<VMwarePassword>" }`.
-	SecretId pulumi.StringInput `pulumi:"secretId"`
+	SecretId pulumi.StringPtrInput `pulumi:"secretId"`
 	// The type of asset source. Indicates external origin of the assets that are read by assigning this asset source.
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
 func (GetAssetSourceDiscoveryCredentialArgs) ElementType() reflect.Type {
@@ -6647,12 +5854,6 @@ func (i GetAssetSourceDiscoveryCredentialArgs) ToGetAssetSourceDiscoveryCredenti
 
 func (i GetAssetSourceDiscoveryCredentialArgs) ToGetAssetSourceDiscoveryCredentialOutputWithContext(ctx context.Context) GetAssetSourceDiscoveryCredentialOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetSourceDiscoveryCredentialOutput)
-}
-
-func (i GetAssetSourceDiscoveryCredentialArgs) ToOutput(ctx context.Context) pulumix.Output[GetAssetSourceDiscoveryCredential] {
-	return pulumix.Output[GetAssetSourceDiscoveryCredential]{
-		OutputState: i.ToGetAssetSourceDiscoveryCredentialOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAssetSourceDiscoveryCredentialArrayInput is an input type that accepts GetAssetSourceDiscoveryCredentialArray and GetAssetSourceDiscoveryCredentialArrayOutput values.
@@ -6680,12 +5881,6 @@ func (i GetAssetSourceDiscoveryCredentialArray) ToGetAssetSourceDiscoveryCredent
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetSourceDiscoveryCredentialArrayOutput)
 }
 
-func (i GetAssetSourceDiscoveryCredentialArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetSourceDiscoveryCredential] {
-	return pulumix.Output[[]GetAssetSourceDiscoveryCredential]{
-		OutputState: i.ToGetAssetSourceDiscoveryCredentialArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAssetSourceDiscoveryCredentialOutput struct{ *pulumi.OutputState }
 
 func (GetAssetSourceDiscoveryCredentialOutput) ElementType() reflect.Type {
@@ -6700,20 +5895,14 @@ func (o GetAssetSourceDiscoveryCredentialOutput) ToGetAssetSourceDiscoveryCreden
 	return o
 }
 
-func (o GetAssetSourceDiscoveryCredentialOutput) ToOutput(ctx context.Context) pulumix.Output[GetAssetSourceDiscoveryCredential] {
-	return pulumix.Output[GetAssetSourceDiscoveryCredential]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the the type of the credentials is BASIC` , the secret must contain the username and password in JSON format, which is in the form of  `{ "username": "<VMwareUser>", "password": "<VMwarePassword>" }`.
-func (o GetAssetSourceDiscoveryCredentialOutput) SecretId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetSourceDiscoveryCredential) string { return v.SecretId }).(pulumi.StringOutput)
+func (o GetAssetSourceDiscoveryCredentialOutput) SecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetSourceDiscoveryCredential) *string { return v.SecretId }).(pulumi.StringPtrOutput)
 }
 
 // The type of asset source. Indicates external origin of the assets that are read by assigning this asset source.
-func (o GetAssetSourceDiscoveryCredentialOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetSourceDiscoveryCredential) string { return v.Type }).(pulumi.StringOutput)
+func (o GetAssetSourceDiscoveryCredentialOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetSourceDiscoveryCredential) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 type GetAssetSourceDiscoveryCredentialArrayOutput struct{ *pulumi.OutputState }
@@ -6730,12 +5919,6 @@ func (o GetAssetSourceDiscoveryCredentialArrayOutput) ToGetAssetSourceDiscoveryC
 	return o
 }
 
-func (o GetAssetSourceDiscoveryCredentialArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetSourceDiscoveryCredential] {
-	return pulumix.Output[[]GetAssetSourceDiscoveryCredential]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAssetSourceDiscoveryCredentialArrayOutput) Index(i pulumi.IntInput) GetAssetSourceDiscoveryCredentialOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssetSourceDiscoveryCredential {
 		return vs[0].([]GetAssetSourceDiscoveryCredential)[vs[1].(int)]
@@ -6744,9 +5927,9 @@ func (o GetAssetSourceDiscoveryCredentialArrayOutput) Index(i pulumi.IntInput) G
 
 type GetAssetSourceReplicationCredential struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the the type of the credentials is BASIC` , the secret must contain the username and password in JSON format, which is in the form of  `{ "username": "<VMwareUser>", "password": "<VMwarePassword>" }`.
-	SecretId string `pulumi:"secretId"`
+	SecretId *string `pulumi:"secretId"`
 	// The type of asset source. Indicates external origin of the assets that are read by assigning this asset source.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 }
 
 // GetAssetSourceReplicationCredentialInput is an input type that accepts GetAssetSourceReplicationCredentialArgs and GetAssetSourceReplicationCredentialOutput values.
@@ -6762,9 +5945,9 @@ type GetAssetSourceReplicationCredentialInput interface {
 
 type GetAssetSourceReplicationCredentialArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the the type of the credentials is BASIC` , the secret must contain the username and password in JSON format, which is in the form of  `{ "username": "<VMwareUser>", "password": "<VMwarePassword>" }`.
-	SecretId pulumi.StringInput `pulumi:"secretId"`
+	SecretId pulumi.StringPtrInput `pulumi:"secretId"`
 	// The type of asset source. Indicates external origin of the assets that are read by assigning this asset source.
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
 func (GetAssetSourceReplicationCredentialArgs) ElementType() reflect.Type {
@@ -6777,12 +5960,6 @@ func (i GetAssetSourceReplicationCredentialArgs) ToGetAssetSourceReplicationCred
 
 func (i GetAssetSourceReplicationCredentialArgs) ToGetAssetSourceReplicationCredentialOutputWithContext(ctx context.Context) GetAssetSourceReplicationCredentialOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetSourceReplicationCredentialOutput)
-}
-
-func (i GetAssetSourceReplicationCredentialArgs) ToOutput(ctx context.Context) pulumix.Output[GetAssetSourceReplicationCredential] {
-	return pulumix.Output[GetAssetSourceReplicationCredential]{
-		OutputState: i.ToGetAssetSourceReplicationCredentialOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAssetSourceReplicationCredentialArrayInput is an input type that accepts GetAssetSourceReplicationCredentialArray and GetAssetSourceReplicationCredentialArrayOutput values.
@@ -6810,12 +5987,6 @@ func (i GetAssetSourceReplicationCredentialArray) ToGetAssetSourceReplicationCre
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetSourceReplicationCredentialArrayOutput)
 }
 
-func (i GetAssetSourceReplicationCredentialArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetSourceReplicationCredential] {
-	return pulumix.Output[[]GetAssetSourceReplicationCredential]{
-		OutputState: i.ToGetAssetSourceReplicationCredentialArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAssetSourceReplicationCredentialOutput struct{ *pulumi.OutputState }
 
 func (GetAssetSourceReplicationCredentialOutput) ElementType() reflect.Type {
@@ -6830,20 +6001,14 @@ func (o GetAssetSourceReplicationCredentialOutput) ToGetAssetSourceReplicationCr
 	return o
 }
 
-func (o GetAssetSourceReplicationCredentialOutput) ToOutput(ctx context.Context) pulumix.Output[GetAssetSourceReplicationCredential] {
-	return pulumix.Output[GetAssetSourceReplicationCredential]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the the type of the credentials is BASIC` , the secret must contain the username and password in JSON format, which is in the form of  `{ "username": "<VMwareUser>", "password": "<VMwarePassword>" }`.
-func (o GetAssetSourceReplicationCredentialOutput) SecretId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetSourceReplicationCredential) string { return v.SecretId }).(pulumi.StringOutput)
+func (o GetAssetSourceReplicationCredentialOutput) SecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetSourceReplicationCredential) *string { return v.SecretId }).(pulumi.StringPtrOutput)
 }
 
 // The type of asset source. Indicates external origin of the assets that are read by assigning this asset source.
-func (o GetAssetSourceReplicationCredentialOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetSourceReplicationCredential) string { return v.Type }).(pulumi.StringOutput)
+func (o GetAssetSourceReplicationCredentialOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetSourceReplicationCredential) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 type GetAssetSourceReplicationCredentialArrayOutput struct{ *pulumi.OutputState }
@@ -6858,12 +6023,6 @@ func (o GetAssetSourceReplicationCredentialArrayOutput) ToGetAssetSourceReplicat
 
 func (o GetAssetSourceReplicationCredentialArrayOutput) ToGetAssetSourceReplicationCredentialArrayOutputWithContext(ctx context.Context) GetAssetSourceReplicationCredentialArrayOutput {
 	return o
-}
-
-func (o GetAssetSourceReplicationCredentialArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetSourceReplicationCredential] {
-	return pulumix.Output[[]GetAssetSourceReplicationCredential]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAssetSourceReplicationCredentialArrayOutput) Index(i pulumi.IntInput) GetAssetSourceReplicationCredentialOutput {
@@ -6903,12 +6062,6 @@ func (i GetAssetSourcesAssetSourceCollectionArgs) ToGetAssetSourcesAssetSourceCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetSourcesAssetSourceCollectionOutput)
 }
 
-func (i GetAssetSourcesAssetSourceCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetAssetSourcesAssetSourceCollection] {
-	return pulumix.Output[GetAssetSourcesAssetSourceCollection]{
-		OutputState: i.ToGetAssetSourcesAssetSourceCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAssetSourcesAssetSourceCollectionArrayInput is an input type that accepts GetAssetSourcesAssetSourceCollectionArray and GetAssetSourcesAssetSourceCollectionArrayOutput values.
 // You can construct a concrete instance of `GetAssetSourcesAssetSourceCollectionArrayInput` via:
 //
@@ -6934,12 +6087,6 @@ func (i GetAssetSourcesAssetSourceCollectionArray) ToGetAssetSourcesAssetSourceC
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetSourcesAssetSourceCollectionArrayOutput)
 }
 
-func (i GetAssetSourcesAssetSourceCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetSourcesAssetSourceCollection] {
-	return pulumix.Output[[]GetAssetSourcesAssetSourceCollection]{
-		OutputState: i.ToGetAssetSourcesAssetSourceCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAssetSourcesAssetSourceCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetAssetSourcesAssetSourceCollectionOutput) ElementType() reflect.Type {
@@ -6952,12 +6099,6 @@ func (o GetAssetSourcesAssetSourceCollectionOutput) ToGetAssetSourcesAssetSource
 
 func (o GetAssetSourcesAssetSourceCollectionOutput) ToGetAssetSourcesAssetSourceCollectionOutputWithContext(ctx context.Context) GetAssetSourcesAssetSourceCollectionOutput {
 	return o
-}
-
-func (o GetAssetSourcesAssetSourceCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetAssetSourcesAssetSourceCollection] {
-	return pulumix.Output[GetAssetSourcesAssetSourceCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAssetSourcesAssetSourceCollectionOutput) Items() GetAssetSourcesAssetSourceCollectionItemArrayOutput {
@@ -6980,12 +6121,6 @@ func (o GetAssetSourcesAssetSourceCollectionArrayOutput) ToGetAssetSourcesAssetS
 	return o
 }
 
-func (o GetAssetSourcesAssetSourceCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetSourcesAssetSourceCollection] {
-	return pulumix.Output[[]GetAssetSourcesAssetSourceCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAssetSourcesAssetSourceCollectionArrayOutput) Index(i pulumi.IntInput) GetAssetSourcesAssetSourceCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssetSourcesAssetSourceCollection {
 		return vs[0].([]GetAssetSourcesAssetSourceCollection)[vs[1].(int)]
@@ -6994,45 +6129,45 @@ func (o GetAssetSourcesAssetSourceCollectionArrayOutput) Index(i pulumi.IntInput
 
 type GetAssetSourcesAssetSourceCollectionItem struct {
 	// Flag indicating whether historical metrics are collected for assets, originating from this asset source.
-	AreHistoricalMetricsCollected bool `pulumi:"areHistoricalMetricsCollected"`
+	AreHistoricalMetricsCollected *bool `pulumi:"areHistoricalMetricsCollected"`
 	// Flag indicating whether real-time metrics are collected for assets, originating from this asset source.
-	AreRealtimeMetricsCollected bool `pulumi:"areRealtimeMetricsCollected"`
+	AreRealtimeMetricsCollected *bool `pulumi:"areRealtimeMetricsCollected"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that is going to be used to create assets.
-	AssetsCompartmentId string `pulumi:"assetsCompartmentId"`
+	AssetsCompartmentId *string `pulumi:"assetsCompartmentId"`
 	// The ID of the compartment in which to list resources.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Credentials for an asset source.
 	DiscoveryCredentials []GetAssetSourcesAssetSourceCollectionItemDiscoveryCredential `pulumi:"discoveryCredentials"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of an attached discovery schedule.
-	DiscoveryScheduleId string `pulumi:"discoveryScheduleId"`
+	DiscoveryScheduleId *string `pulumi:"discoveryScheduleId"`
 	// A filter to return only resources that match the entire display name given.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the environment.
-	EnvironmentId string `pulumi:"environmentId"`
+	EnvironmentId *string `pulumi:"environmentId"`
 	// The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the inventory that will contain created assets.
-	InventoryId string `pulumi:"inventoryId"`
+	InventoryId *string `pulumi:"inventoryId"`
 	// The detailed state of the asset source.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Credentials for an asset source.
 	ReplicationCredentials []GetAssetSourcesAssetSourceCollectionItemReplicationCredential `pulumi:"replicationCredentials"`
 	// The current state of the asset source.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time when the asset source was created in the RFC3339 format.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The point in time that the asset source was last updated in the RFC3339 format.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// The type of asset source. Indicates external origin of the assets that are read by assigning this asset source.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 	// Endpoint for VMware asset discovery and replication in the form of ```https://<host>:<port>/sdk```
-	VcenterEndpoint string `pulumi:"vcenterEndpoint"`
+	VcenterEndpoint *string `pulumi:"vcenterEndpoint"`
 }
 
 // GetAssetSourcesAssetSourceCollectionItemInput is an input type that accepts GetAssetSourcesAssetSourceCollectionItemArgs and GetAssetSourcesAssetSourceCollectionItemOutput values.
@@ -7048,45 +6183,45 @@ type GetAssetSourcesAssetSourceCollectionItemInput interface {
 
 type GetAssetSourcesAssetSourceCollectionItemArgs struct {
 	// Flag indicating whether historical metrics are collected for assets, originating from this asset source.
-	AreHistoricalMetricsCollected pulumi.BoolInput `pulumi:"areHistoricalMetricsCollected"`
+	AreHistoricalMetricsCollected pulumi.BoolPtrInput `pulumi:"areHistoricalMetricsCollected"`
 	// Flag indicating whether real-time metrics are collected for assets, originating from this asset source.
-	AreRealtimeMetricsCollected pulumi.BoolInput `pulumi:"areRealtimeMetricsCollected"`
+	AreRealtimeMetricsCollected pulumi.BoolPtrInput `pulumi:"areRealtimeMetricsCollected"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that is going to be used to create assets.
-	AssetsCompartmentId pulumi.StringInput `pulumi:"assetsCompartmentId"`
+	AssetsCompartmentId pulumi.StringPtrInput `pulumi:"assetsCompartmentId"`
 	// The ID of the compartment in which to list resources.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// Credentials for an asset source.
 	DiscoveryCredentials GetAssetSourcesAssetSourceCollectionItemDiscoveryCredentialArrayInput `pulumi:"discoveryCredentials"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of an attached discovery schedule.
-	DiscoveryScheduleId pulumi.StringInput `pulumi:"discoveryScheduleId"`
+	DiscoveryScheduleId pulumi.StringPtrInput `pulumi:"discoveryScheduleId"`
 	// A filter to return only resources that match the entire display name given.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the environment.
-	EnvironmentId pulumi.StringInput `pulumi:"environmentId"`
+	EnvironmentId pulumi.StringPtrInput `pulumi:"environmentId"`
 	// The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the inventory that will contain created assets.
-	InventoryId pulumi.StringInput `pulumi:"inventoryId"`
+	InventoryId pulumi.StringPtrInput `pulumi:"inventoryId"`
 	// The detailed state of the asset source.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// Credentials for an asset source.
 	ReplicationCredentials GetAssetSourcesAssetSourceCollectionItemReplicationCredentialArrayInput `pulumi:"replicationCredentials"`
 	// The current state of the asset source.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// The time when the asset source was created in the RFC3339 format.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The point in time that the asset source was last updated in the RFC3339 format.
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 	// The type of asset source. Indicates external origin of the assets that are read by assigning this asset source.
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 	// Endpoint for VMware asset discovery and replication in the form of ```https://<host>:<port>/sdk```
-	VcenterEndpoint pulumi.StringInput `pulumi:"vcenterEndpoint"`
+	VcenterEndpoint pulumi.StringPtrInput `pulumi:"vcenterEndpoint"`
 }
 
 func (GetAssetSourcesAssetSourceCollectionItemArgs) ElementType() reflect.Type {
@@ -7099,12 +6234,6 @@ func (i GetAssetSourcesAssetSourceCollectionItemArgs) ToGetAssetSourcesAssetSour
 
 func (i GetAssetSourcesAssetSourceCollectionItemArgs) ToGetAssetSourcesAssetSourceCollectionItemOutputWithContext(ctx context.Context) GetAssetSourcesAssetSourceCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetSourcesAssetSourceCollectionItemOutput)
-}
-
-func (i GetAssetSourcesAssetSourceCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetAssetSourcesAssetSourceCollectionItem] {
-	return pulumix.Output[GetAssetSourcesAssetSourceCollectionItem]{
-		OutputState: i.ToGetAssetSourcesAssetSourceCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAssetSourcesAssetSourceCollectionItemArrayInput is an input type that accepts GetAssetSourcesAssetSourceCollectionItemArray and GetAssetSourcesAssetSourceCollectionItemArrayOutput values.
@@ -7132,12 +6261,6 @@ func (i GetAssetSourcesAssetSourceCollectionItemArray) ToGetAssetSourcesAssetSou
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetSourcesAssetSourceCollectionItemArrayOutput)
 }
 
-func (i GetAssetSourcesAssetSourceCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetSourcesAssetSourceCollectionItem] {
-	return pulumix.Output[[]GetAssetSourcesAssetSourceCollectionItem]{
-		OutputState: i.ToGetAssetSourcesAssetSourceCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAssetSourcesAssetSourceCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetAssetSourcesAssetSourceCollectionItemOutput) ElementType() reflect.Type {
@@ -7152,30 +6275,24 @@ func (o GetAssetSourcesAssetSourceCollectionItemOutput) ToGetAssetSourcesAssetSo
 	return o
 }
 
-func (o GetAssetSourcesAssetSourceCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetAssetSourcesAssetSourceCollectionItem] {
-	return pulumix.Output[GetAssetSourcesAssetSourceCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Flag indicating whether historical metrics are collected for assets, originating from this asset source.
-func (o GetAssetSourcesAssetSourceCollectionItemOutput) AreHistoricalMetricsCollected() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetAssetSourcesAssetSourceCollectionItem) bool { return v.AreHistoricalMetricsCollected }).(pulumi.BoolOutput)
+func (o GetAssetSourcesAssetSourceCollectionItemOutput) AreHistoricalMetricsCollected() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetAssetSourcesAssetSourceCollectionItem) *bool { return v.AreHistoricalMetricsCollected }).(pulumi.BoolPtrOutput)
 }
 
 // Flag indicating whether real-time metrics are collected for assets, originating from this asset source.
-func (o GetAssetSourcesAssetSourceCollectionItemOutput) AreRealtimeMetricsCollected() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetAssetSourcesAssetSourceCollectionItem) bool { return v.AreRealtimeMetricsCollected }).(pulumi.BoolOutput)
+func (o GetAssetSourcesAssetSourceCollectionItemOutput) AreRealtimeMetricsCollected() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetAssetSourcesAssetSourceCollectionItem) *bool { return v.AreRealtimeMetricsCollected }).(pulumi.BoolPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that is going to be used to create assets.
-func (o GetAssetSourcesAssetSourceCollectionItemOutput) AssetsCompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetSourcesAssetSourceCollectionItem) string { return v.AssetsCompartmentId }).(pulumi.StringOutput)
+func (o GetAssetSourcesAssetSourceCollectionItemOutput) AssetsCompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetSourcesAssetSourceCollectionItem) *string { return v.AssetsCompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The ID of the compartment in which to list resources.
-func (o GetAssetSourcesAssetSourceCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetSourcesAssetSourceCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetAssetSourcesAssetSourceCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetSourcesAssetSourceCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -7191,18 +6308,18 @@ func (o GetAssetSourcesAssetSourceCollectionItemOutput) DiscoveryCredentials() G
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of an attached discovery schedule.
-func (o GetAssetSourcesAssetSourceCollectionItemOutput) DiscoveryScheduleId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetSourcesAssetSourceCollectionItem) string { return v.DiscoveryScheduleId }).(pulumi.StringOutput)
+func (o GetAssetSourcesAssetSourceCollectionItemOutput) DiscoveryScheduleId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetSourcesAssetSourceCollectionItem) *string { return v.DiscoveryScheduleId }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only resources that match the entire display name given.
-func (o GetAssetSourcesAssetSourceCollectionItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetSourcesAssetSourceCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetAssetSourcesAssetSourceCollectionItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetSourcesAssetSourceCollectionItem) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the environment.
-func (o GetAssetSourcesAssetSourceCollectionItemOutput) EnvironmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetSourcesAssetSourceCollectionItem) string { return v.EnvironmentId }).(pulumi.StringOutput)
+func (o GetAssetSourcesAssetSourceCollectionItemOutput) EnvironmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetSourcesAssetSourceCollectionItem) *string { return v.EnvironmentId }).(pulumi.StringPtrOutput)
 }
 
 // The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -7211,18 +6328,18 @@ func (o GetAssetSourcesAssetSourceCollectionItemOutput) FreeformTags() pulumi.Ma
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
-func (o GetAssetSourcesAssetSourceCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetSourcesAssetSourceCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetAssetSourcesAssetSourceCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetSourcesAssetSourceCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the inventory that will contain created assets.
-func (o GetAssetSourcesAssetSourceCollectionItemOutput) InventoryId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetSourcesAssetSourceCollectionItem) string { return v.InventoryId }).(pulumi.StringOutput)
+func (o GetAssetSourcesAssetSourceCollectionItemOutput) InventoryId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetSourcesAssetSourceCollectionItem) *string { return v.InventoryId }).(pulumi.StringPtrOutput)
 }
 
 // The detailed state of the asset source.
-func (o GetAssetSourcesAssetSourceCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetSourcesAssetSourceCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetAssetSourcesAssetSourceCollectionItemOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetSourcesAssetSourceCollectionItem) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // Credentials for an asset source.
@@ -7233,8 +6350,8 @@ func (o GetAssetSourcesAssetSourceCollectionItemOutput) ReplicationCredentials()
 }
 
 // The current state of the asset source.
-func (o GetAssetSourcesAssetSourceCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetSourcesAssetSourceCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetAssetSourcesAssetSourceCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetSourcesAssetSourceCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
@@ -7243,23 +6360,23 @@ func (o GetAssetSourcesAssetSourceCollectionItemOutput) SystemTags() pulumi.MapO
 }
 
 // The time when the asset source was created in the RFC3339 format.
-func (o GetAssetSourcesAssetSourceCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetSourcesAssetSourceCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetAssetSourcesAssetSourceCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetSourcesAssetSourceCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The point in time that the asset source was last updated in the RFC3339 format.
-func (o GetAssetSourcesAssetSourceCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetSourcesAssetSourceCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetAssetSourcesAssetSourceCollectionItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetSourcesAssetSourceCollectionItem) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // The type of asset source. Indicates external origin of the assets that are read by assigning this asset source.
-func (o GetAssetSourcesAssetSourceCollectionItemOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetSourcesAssetSourceCollectionItem) string { return v.Type }).(pulumi.StringOutput)
+func (o GetAssetSourcesAssetSourceCollectionItemOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetSourcesAssetSourceCollectionItem) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 // Endpoint for VMware asset discovery and replication in the form of ```https://<host>:<port>/sdk```
-func (o GetAssetSourcesAssetSourceCollectionItemOutput) VcenterEndpoint() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetSourcesAssetSourceCollectionItem) string { return v.VcenterEndpoint }).(pulumi.StringOutput)
+func (o GetAssetSourcesAssetSourceCollectionItemOutput) VcenterEndpoint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetSourcesAssetSourceCollectionItem) *string { return v.VcenterEndpoint }).(pulumi.StringPtrOutput)
 }
 
 type GetAssetSourcesAssetSourceCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -7276,12 +6393,6 @@ func (o GetAssetSourcesAssetSourceCollectionItemArrayOutput) ToGetAssetSourcesAs
 	return o
 }
 
-func (o GetAssetSourcesAssetSourceCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetSourcesAssetSourceCollectionItem] {
-	return pulumix.Output[[]GetAssetSourcesAssetSourceCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAssetSourcesAssetSourceCollectionItemArrayOutput) Index(i pulumi.IntInput) GetAssetSourcesAssetSourceCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssetSourcesAssetSourceCollectionItem {
 		return vs[0].([]GetAssetSourcesAssetSourceCollectionItem)[vs[1].(int)]
@@ -7290,9 +6401,9 @@ func (o GetAssetSourcesAssetSourceCollectionItemArrayOutput) Index(i pulumi.IntI
 
 type GetAssetSourcesAssetSourceCollectionItemDiscoveryCredential struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the the type of the credentials is BASIC` , the secret must contain the username and password in JSON format, which is in the form of  `{ "username": "<VMwareUser>", "password": "<VMwarePassword>" }`.
-	SecretId string `pulumi:"secretId"`
+	SecretId *string `pulumi:"secretId"`
 	// The type of asset source. Indicates external origin of the assets that are read by assigning this asset source.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 }
 
 // GetAssetSourcesAssetSourceCollectionItemDiscoveryCredentialInput is an input type that accepts GetAssetSourcesAssetSourceCollectionItemDiscoveryCredentialArgs and GetAssetSourcesAssetSourceCollectionItemDiscoveryCredentialOutput values.
@@ -7308,9 +6419,9 @@ type GetAssetSourcesAssetSourceCollectionItemDiscoveryCredentialInput interface 
 
 type GetAssetSourcesAssetSourceCollectionItemDiscoveryCredentialArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the the type of the credentials is BASIC` , the secret must contain the username and password in JSON format, which is in the form of  `{ "username": "<VMwareUser>", "password": "<VMwarePassword>" }`.
-	SecretId pulumi.StringInput `pulumi:"secretId"`
+	SecretId pulumi.StringPtrInput `pulumi:"secretId"`
 	// The type of asset source. Indicates external origin of the assets that are read by assigning this asset source.
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
 func (GetAssetSourcesAssetSourceCollectionItemDiscoveryCredentialArgs) ElementType() reflect.Type {
@@ -7323,12 +6434,6 @@ func (i GetAssetSourcesAssetSourceCollectionItemDiscoveryCredentialArgs) ToGetAs
 
 func (i GetAssetSourcesAssetSourceCollectionItemDiscoveryCredentialArgs) ToGetAssetSourcesAssetSourceCollectionItemDiscoveryCredentialOutputWithContext(ctx context.Context) GetAssetSourcesAssetSourceCollectionItemDiscoveryCredentialOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetSourcesAssetSourceCollectionItemDiscoveryCredentialOutput)
-}
-
-func (i GetAssetSourcesAssetSourceCollectionItemDiscoveryCredentialArgs) ToOutput(ctx context.Context) pulumix.Output[GetAssetSourcesAssetSourceCollectionItemDiscoveryCredential] {
-	return pulumix.Output[GetAssetSourcesAssetSourceCollectionItemDiscoveryCredential]{
-		OutputState: i.ToGetAssetSourcesAssetSourceCollectionItemDiscoveryCredentialOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAssetSourcesAssetSourceCollectionItemDiscoveryCredentialArrayInput is an input type that accepts GetAssetSourcesAssetSourceCollectionItemDiscoveryCredentialArray and GetAssetSourcesAssetSourceCollectionItemDiscoveryCredentialArrayOutput values.
@@ -7356,12 +6461,6 @@ func (i GetAssetSourcesAssetSourceCollectionItemDiscoveryCredentialArray) ToGetA
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetSourcesAssetSourceCollectionItemDiscoveryCredentialArrayOutput)
 }
 
-func (i GetAssetSourcesAssetSourceCollectionItemDiscoveryCredentialArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetSourcesAssetSourceCollectionItemDiscoveryCredential] {
-	return pulumix.Output[[]GetAssetSourcesAssetSourceCollectionItemDiscoveryCredential]{
-		OutputState: i.ToGetAssetSourcesAssetSourceCollectionItemDiscoveryCredentialArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAssetSourcesAssetSourceCollectionItemDiscoveryCredentialOutput struct{ *pulumi.OutputState }
 
 func (GetAssetSourcesAssetSourceCollectionItemDiscoveryCredentialOutput) ElementType() reflect.Type {
@@ -7376,20 +6475,14 @@ func (o GetAssetSourcesAssetSourceCollectionItemDiscoveryCredentialOutput) ToGet
 	return o
 }
 
-func (o GetAssetSourcesAssetSourceCollectionItemDiscoveryCredentialOutput) ToOutput(ctx context.Context) pulumix.Output[GetAssetSourcesAssetSourceCollectionItemDiscoveryCredential] {
-	return pulumix.Output[GetAssetSourcesAssetSourceCollectionItemDiscoveryCredential]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the the type of the credentials is BASIC` , the secret must contain the username and password in JSON format, which is in the form of  `{ "username": "<VMwareUser>", "password": "<VMwarePassword>" }`.
-func (o GetAssetSourcesAssetSourceCollectionItemDiscoveryCredentialOutput) SecretId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetSourcesAssetSourceCollectionItemDiscoveryCredential) string { return v.SecretId }).(pulumi.StringOutput)
+func (o GetAssetSourcesAssetSourceCollectionItemDiscoveryCredentialOutput) SecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetSourcesAssetSourceCollectionItemDiscoveryCredential) *string { return v.SecretId }).(pulumi.StringPtrOutput)
 }
 
 // The type of asset source. Indicates external origin of the assets that are read by assigning this asset source.
-func (o GetAssetSourcesAssetSourceCollectionItemDiscoveryCredentialOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetSourcesAssetSourceCollectionItemDiscoveryCredential) string { return v.Type }).(pulumi.StringOutput)
+func (o GetAssetSourcesAssetSourceCollectionItemDiscoveryCredentialOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetSourcesAssetSourceCollectionItemDiscoveryCredential) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 type GetAssetSourcesAssetSourceCollectionItemDiscoveryCredentialArrayOutput struct{ *pulumi.OutputState }
@@ -7406,12 +6499,6 @@ func (o GetAssetSourcesAssetSourceCollectionItemDiscoveryCredentialArrayOutput) 
 	return o
 }
 
-func (o GetAssetSourcesAssetSourceCollectionItemDiscoveryCredentialArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetSourcesAssetSourceCollectionItemDiscoveryCredential] {
-	return pulumix.Output[[]GetAssetSourcesAssetSourceCollectionItemDiscoveryCredential]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAssetSourcesAssetSourceCollectionItemDiscoveryCredentialArrayOutput) Index(i pulumi.IntInput) GetAssetSourcesAssetSourceCollectionItemDiscoveryCredentialOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssetSourcesAssetSourceCollectionItemDiscoveryCredential {
 		return vs[0].([]GetAssetSourcesAssetSourceCollectionItemDiscoveryCredential)[vs[1].(int)]
@@ -7420,9 +6507,9 @@ func (o GetAssetSourcesAssetSourceCollectionItemDiscoveryCredentialArrayOutput) 
 
 type GetAssetSourcesAssetSourceCollectionItemReplicationCredential struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the the type of the credentials is BASIC` , the secret must contain the username and password in JSON format, which is in the form of  `{ "username": "<VMwareUser>", "password": "<VMwarePassword>" }`.
-	SecretId string `pulumi:"secretId"`
+	SecretId *string `pulumi:"secretId"`
 	// The type of asset source. Indicates external origin of the assets that are read by assigning this asset source.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 }
 
 // GetAssetSourcesAssetSourceCollectionItemReplicationCredentialInput is an input type that accepts GetAssetSourcesAssetSourceCollectionItemReplicationCredentialArgs and GetAssetSourcesAssetSourceCollectionItemReplicationCredentialOutput values.
@@ -7438,9 +6525,9 @@ type GetAssetSourcesAssetSourceCollectionItemReplicationCredentialInput interfac
 
 type GetAssetSourcesAssetSourceCollectionItemReplicationCredentialArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the the type of the credentials is BASIC` , the secret must contain the username and password in JSON format, which is in the form of  `{ "username": "<VMwareUser>", "password": "<VMwarePassword>" }`.
-	SecretId pulumi.StringInput `pulumi:"secretId"`
+	SecretId pulumi.StringPtrInput `pulumi:"secretId"`
 	// The type of asset source. Indicates external origin of the assets that are read by assigning this asset source.
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
 func (GetAssetSourcesAssetSourceCollectionItemReplicationCredentialArgs) ElementType() reflect.Type {
@@ -7453,12 +6540,6 @@ func (i GetAssetSourcesAssetSourceCollectionItemReplicationCredentialArgs) ToGet
 
 func (i GetAssetSourcesAssetSourceCollectionItemReplicationCredentialArgs) ToGetAssetSourcesAssetSourceCollectionItemReplicationCredentialOutputWithContext(ctx context.Context) GetAssetSourcesAssetSourceCollectionItemReplicationCredentialOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetSourcesAssetSourceCollectionItemReplicationCredentialOutput)
-}
-
-func (i GetAssetSourcesAssetSourceCollectionItemReplicationCredentialArgs) ToOutput(ctx context.Context) pulumix.Output[GetAssetSourcesAssetSourceCollectionItemReplicationCredential] {
-	return pulumix.Output[GetAssetSourcesAssetSourceCollectionItemReplicationCredential]{
-		OutputState: i.ToGetAssetSourcesAssetSourceCollectionItemReplicationCredentialOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAssetSourcesAssetSourceCollectionItemReplicationCredentialArrayInput is an input type that accepts GetAssetSourcesAssetSourceCollectionItemReplicationCredentialArray and GetAssetSourcesAssetSourceCollectionItemReplicationCredentialArrayOutput values.
@@ -7486,12 +6567,6 @@ func (i GetAssetSourcesAssetSourceCollectionItemReplicationCredentialArray) ToGe
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetSourcesAssetSourceCollectionItemReplicationCredentialArrayOutput)
 }
 
-func (i GetAssetSourcesAssetSourceCollectionItemReplicationCredentialArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetSourcesAssetSourceCollectionItemReplicationCredential] {
-	return pulumix.Output[[]GetAssetSourcesAssetSourceCollectionItemReplicationCredential]{
-		OutputState: i.ToGetAssetSourcesAssetSourceCollectionItemReplicationCredentialArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAssetSourcesAssetSourceCollectionItemReplicationCredentialOutput struct{ *pulumi.OutputState }
 
 func (GetAssetSourcesAssetSourceCollectionItemReplicationCredentialOutput) ElementType() reflect.Type {
@@ -7506,20 +6581,14 @@ func (o GetAssetSourcesAssetSourceCollectionItemReplicationCredentialOutput) ToG
 	return o
 }
 
-func (o GetAssetSourcesAssetSourceCollectionItemReplicationCredentialOutput) ToOutput(ctx context.Context) pulumix.Output[GetAssetSourcesAssetSourceCollectionItemReplicationCredential] {
-	return pulumix.Output[GetAssetSourcesAssetSourceCollectionItemReplicationCredential]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the the type of the credentials is BASIC` , the secret must contain the username and password in JSON format, which is in the form of  `{ "username": "<VMwareUser>", "password": "<VMwarePassword>" }`.
-func (o GetAssetSourcesAssetSourceCollectionItemReplicationCredentialOutput) SecretId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetSourcesAssetSourceCollectionItemReplicationCredential) string { return v.SecretId }).(pulumi.StringOutput)
+func (o GetAssetSourcesAssetSourceCollectionItemReplicationCredentialOutput) SecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetSourcesAssetSourceCollectionItemReplicationCredential) *string { return v.SecretId }).(pulumi.StringPtrOutput)
 }
 
 // The type of asset source. Indicates external origin of the assets that are read by assigning this asset source.
-func (o GetAssetSourcesAssetSourceCollectionItemReplicationCredentialOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetSourcesAssetSourceCollectionItemReplicationCredential) string { return v.Type }).(pulumi.StringOutput)
+func (o GetAssetSourcesAssetSourceCollectionItemReplicationCredentialOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetSourcesAssetSourceCollectionItemReplicationCredential) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 type GetAssetSourcesAssetSourceCollectionItemReplicationCredentialArrayOutput struct{ *pulumi.OutputState }
@@ -7534,12 +6603,6 @@ func (o GetAssetSourcesAssetSourceCollectionItemReplicationCredentialArrayOutput
 
 func (o GetAssetSourcesAssetSourceCollectionItemReplicationCredentialArrayOutput) ToGetAssetSourcesAssetSourceCollectionItemReplicationCredentialArrayOutputWithContext(ctx context.Context) GetAssetSourcesAssetSourceCollectionItemReplicationCredentialArrayOutput {
 	return o
-}
-
-func (o GetAssetSourcesAssetSourceCollectionItemReplicationCredentialArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetSourcesAssetSourceCollectionItemReplicationCredential] {
-	return pulumix.Output[[]GetAssetSourcesAssetSourceCollectionItemReplicationCredential]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAssetSourcesAssetSourceCollectionItemReplicationCredentialArrayOutput) Index(i pulumi.IntInput) GetAssetSourcesAssetSourceCollectionItemReplicationCredentialOutput {
@@ -7583,12 +6646,6 @@ func (i GetAssetSourcesFilterArgs) ToGetAssetSourcesFilterOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetSourcesFilterOutput)
 }
 
-func (i GetAssetSourcesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetAssetSourcesFilter] {
-	return pulumix.Output[GetAssetSourcesFilter]{
-		OutputState: i.ToGetAssetSourcesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAssetSourcesFilterArrayInput is an input type that accepts GetAssetSourcesFilterArray and GetAssetSourcesFilterArrayOutput values.
 // You can construct a concrete instance of `GetAssetSourcesFilterArrayInput` via:
 //
@@ -7614,12 +6671,6 @@ func (i GetAssetSourcesFilterArray) ToGetAssetSourcesFilterArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetSourcesFilterArrayOutput)
 }
 
-func (i GetAssetSourcesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetSourcesFilter] {
-	return pulumix.Output[[]GetAssetSourcesFilter]{
-		OutputState: i.ToGetAssetSourcesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAssetSourcesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetAssetSourcesFilterOutput) ElementType() reflect.Type {
@@ -7632,12 +6683,6 @@ func (o GetAssetSourcesFilterOutput) ToGetAssetSourcesFilterOutput() GetAssetSou
 
 func (o GetAssetSourcesFilterOutput) ToGetAssetSourcesFilterOutputWithContext(ctx context.Context) GetAssetSourcesFilterOutput {
 	return o
-}
-
-func (o GetAssetSourcesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetAssetSourcesFilter] {
-	return pulumix.Output[GetAssetSourcesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAssetSourcesFilterOutput) Name() pulumi.StringOutput {
@@ -7666,12 +6711,6 @@ func (o GetAssetSourcesFilterArrayOutput) ToGetAssetSourcesFilterArrayOutputWith
 	return o
 }
 
-func (o GetAssetSourcesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetSourcesFilter] {
-	return pulumix.Output[[]GetAssetSourcesFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAssetSourcesFilterArrayOutput) Index(i pulumi.IntInput) GetAssetSourcesFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssetSourcesFilter {
 		return vs[0].([]GetAssetSourcesFilter)[vs[1].(int)]
@@ -7680,11 +6719,11 @@ func (o GetAssetSourcesFilterArrayOutput) Index(i pulumi.IntInput) GetAssetSourc
 
 type GetAssetVm struct {
 	// Host name/IP address of VM on which the host is running.
-	HypervisorHost string `pulumi:"hypervisorHost"`
+	HypervisorHost *string `pulumi:"hypervisorHost"`
 	// Hypervisor vendor.
-	HypervisorVendor string `pulumi:"hypervisorVendor"`
+	HypervisorVendor *string `pulumi:"hypervisorVendor"`
 	// Hypervisor version.
-	HypervisorVersion string `pulumi:"hypervisorVersion"`
+	HypervisorVersion *string `pulumi:"hypervisorVersion"`
 }
 
 // GetAssetVmInput is an input type that accepts GetAssetVmArgs and GetAssetVmOutput values.
@@ -7700,11 +6739,11 @@ type GetAssetVmInput interface {
 
 type GetAssetVmArgs struct {
 	// Host name/IP address of VM on which the host is running.
-	HypervisorHost pulumi.StringInput `pulumi:"hypervisorHost"`
+	HypervisorHost pulumi.StringPtrInput `pulumi:"hypervisorHost"`
 	// Hypervisor vendor.
-	HypervisorVendor pulumi.StringInput `pulumi:"hypervisorVendor"`
+	HypervisorVendor pulumi.StringPtrInput `pulumi:"hypervisorVendor"`
 	// Hypervisor version.
-	HypervisorVersion pulumi.StringInput `pulumi:"hypervisorVersion"`
+	HypervisorVersion pulumi.StringPtrInput `pulumi:"hypervisorVersion"`
 }
 
 func (GetAssetVmArgs) ElementType() reflect.Type {
@@ -7717,12 +6756,6 @@ func (i GetAssetVmArgs) ToGetAssetVmOutput() GetAssetVmOutput {
 
 func (i GetAssetVmArgs) ToGetAssetVmOutputWithContext(ctx context.Context) GetAssetVmOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetVmOutput)
-}
-
-func (i GetAssetVmArgs) ToOutput(ctx context.Context) pulumix.Output[GetAssetVm] {
-	return pulumix.Output[GetAssetVm]{
-		OutputState: i.ToGetAssetVmOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAssetVmArrayInput is an input type that accepts GetAssetVmArray and GetAssetVmArrayOutput values.
@@ -7750,12 +6783,6 @@ func (i GetAssetVmArray) ToGetAssetVmArrayOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetVmArrayOutput)
 }
 
-func (i GetAssetVmArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetVm] {
-	return pulumix.Output[[]GetAssetVm]{
-		OutputState: i.ToGetAssetVmArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAssetVmOutput struct{ *pulumi.OutputState }
 
 func (GetAssetVmOutput) ElementType() reflect.Type {
@@ -7770,25 +6797,19 @@ func (o GetAssetVmOutput) ToGetAssetVmOutputWithContext(ctx context.Context) Get
 	return o
 }
 
-func (o GetAssetVmOutput) ToOutput(ctx context.Context) pulumix.Output[GetAssetVm] {
-	return pulumix.Output[GetAssetVm]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Host name/IP address of VM on which the host is running.
-func (o GetAssetVmOutput) HypervisorHost() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetVm) string { return v.HypervisorHost }).(pulumi.StringOutput)
+func (o GetAssetVmOutput) HypervisorHost() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetVm) *string { return v.HypervisorHost }).(pulumi.StringPtrOutput)
 }
 
 // Hypervisor vendor.
-func (o GetAssetVmOutput) HypervisorVendor() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetVm) string { return v.HypervisorVendor }).(pulumi.StringOutput)
+func (o GetAssetVmOutput) HypervisorVendor() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetVm) *string { return v.HypervisorVendor }).(pulumi.StringPtrOutput)
 }
 
 // Hypervisor version.
-func (o GetAssetVmOutput) HypervisorVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetVm) string { return v.HypervisorVersion }).(pulumi.StringOutput)
+func (o GetAssetVmOutput) HypervisorVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetVm) *string { return v.HypervisorVersion }).(pulumi.StringPtrOutput)
 }
 
 type GetAssetVmArrayOutput struct{ *pulumi.OutputState }
@@ -7805,12 +6826,6 @@ func (o GetAssetVmArrayOutput) ToGetAssetVmArrayOutputWithContext(ctx context.Co
 	return o
 }
 
-func (o GetAssetVmArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetVm] {
-	return pulumix.Output[[]GetAssetVm]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAssetVmArrayOutput) Index(i pulumi.IntInput) GetAssetVmOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssetVm {
 		return vs[0].([]GetAssetVm)[vs[1].(int)]
@@ -7819,11 +6834,11 @@ func (o GetAssetVmArrayOutput) Index(i pulumi.IntInput) GetAssetVmOutput {
 
 type GetAssetVmwareVcenter struct {
 	// Data center name.
-	DataCenter string `pulumi:"dataCenter"`
+	DataCenter *string `pulumi:"dataCenter"`
 	// vCenter unique key.
-	VcenterKey string `pulumi:"vcenterKey"`
+	VcenterKey *string `pulumi:"vcenterKey"`
 	// Dot-separated version string.
-	VcenterVersion string `pulumi:"vcenterVersion"`
+	VcenterVersion *string `pulumi:"vcenterVersion"`
 }
 
 // GetAssetVmwareVcenterInput is an input type that accepts GetAssetVmwareVcenterArgs and GetAssetVmwareVcenterOutput values.
@@ -7839,11 +6854,11 @@ type GetAssetVmwareVcenterInput interface {
 
 type GetAssetVmwareVcenterArgs struct {
 	// Data center name.
-	DataCenter pulumi.StringInput `pulumi:"dataCenter"`
+	DataCenter pulumi.StringPtrInput `pulumi:"dataCenter"`
 	// vCenter unique key.
-	VcenterKey pulumi.StringInput `pulumi:"vcenterKey"`
+	VcenterKey pulumi.StringPtrInput `pulumi:"vcenterKey"`
 	// Dot-separated version string.
-	VcenterVersion pulumi.StringInput `pulumi:"vcenterVersion"`
+	VcenterVersion pulumi.StringPtrInput `pulumi:"vcenterVersion"`
 }
 
 func (GetAssetVmwareVcenterArgs) ElementType() reflect.Type {
@@ -7856,12 +6871,6 @@ func (i GetAssetVmwareVcenterArgs) ToGetAssetVmwareVcenterOutput() GetAssetVmwar
 
 func (i GetAssetVmwareVcenterArgs) ToGetAssetVmwareVcenterOutputWithContext(ctx context.Context) GetAssetVmwareVcenterOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetVmwareVcenterOutput)
-}
-
-func (i GetAssetVmwareVcenterArgs) ToOutput(ctx context.Context) pulumix.Output[GetAssetVmwareVcenter] {
-	return pulumix.Output[GetAssetVmwareVcenter]{
-		OutputState: i.ToGetAssetVmwareVcenterOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAssetVmwareVcenterArrayInput is an input type that accepts GetAssetVmwareVcenterArray and GetAssetVmwareVcenterArrayOutput values.
@@ -7889,12 +6898,6 @@ func (i GetAssetVmwareVcenterArray) ToGetAssetVmwareVcenterArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetVmwareVcenterArrayOutput)
 }
 
-func (i GetAssetVmwareVcenterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetVmwareVcenter] {
-	return pulumix.Output[[]GetAssetVmwareVcenter]{
-		OutputState: i.ToGetAssetVmwareVcenterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAssetVmwareVcenterOutput struct{ *pulumi.OutputState }
 
 func (GetAssetVmwareVcenterOutput) ElementType() reflect.Type {
@@ -7909,25 +6912,19 @@ func (o GetAssetVmwareVcenterOutput) ToGetAssetVmwareVcenterOutputWithContext(ct
 	return o
 }
 
-func (o GetAssetVmwareVcenterOutput) ToOutput(ctx context.Context) pulumix.Output[GetAssetVmwareVcenter] {
-	return pulumix.Output[GetAssetVmwareVcenter]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Data center name.
-func (o GetAssetVmwareVcenterOutput) DataCenter() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetVmwareVcenter) string { return v.DataCenter }).(pulumi.StringOutput)
+func (o GetAssetVmwareVcenterOutput) DataCenter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetVmwareVcenter) *string { return v.DataCenter }).(pulumi.StringPtrOutput)
 }
 
 // vCenter unique key.
-func (o GetAssetVmwareVcenterOutput) VcenterKey() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetVmwareVcenter) string { return v.VcenterKey }).(pulumi.StringOutput)
+func (o GetAssetVmwareVcenterOutput) VcenterKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetVmwareVcenter) *string { return v.VcenterKey }).(pulumi.StringPtrOutput)
 }
 
 // Dot-separated version string.
-func (o GetAssetVmwareVcenterOutput) VcenterVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetVmwareVcenter) string { return v.VcenterVersion }).(pulumi.StringOutput)
+func (o GetAssetVmwareVcenterOutput) VcenterVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetVmwareVcenter) *string { return v.VcenterVersion }).(pulumi.StringPtrOutput)
 }
 
 type GetAssetVmwareVcenterArrayOutput struct{ *pulumi.OutputState }
@@ -7944,12 +6941,6 @@ func (o GetAssetVmwareVcenterArrayOutput) ToGetAssetVmwareVcenterArrayOutputWith
 	return o
 }
 
-func (o GetAssetVmwareVcenterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetVmwareVcenter] {
-	return pulumix.Output[[]GetAssetVmwareVcenter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAssetVmwareVcenterArrayOutput) Index(i pulumi.IntInput) GetAssetVmwareVcenterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssetVmwareVcenter {
 		return vs[0].([]GetAssetVmwareVcenter)[vs[1].(int)]
@@ -7958,27 +6949,27 @@ func (o GetAssetVmwareVcenterArrayOutput) Index(i pulumi.IntInput) GetAssetVmwar
 
 type GetAssetVmwareVm struct {
 	// Cluster name.
-	Cluster string `pulumi:"cluster"`
+	Cluster *string `pulumi:"cluster"`
 	// Customer fields.
 	CustomerFields []string `pulumi:"customerFields"`
 	// Customer defined tags.
 	CustomerTags []GetAssetVmwareVmCustomerTag `pulumi:"customerTags"`
 	// Fault tolerance bandwidth.
-	FaultToleranceBandwidth int `pulumi:"faultToleranceBandwidth"`
+	FaultToleranceBandwidth *int `pulumi:"faultToleranceBandwidth"`
 	// Fault tolerance to secondary latency.
-	FaultToleranceSecondaryLatency int `pulumi:"faultToleranceSecondaryLatency"`
+	FaultToleranceSecondaryLatency *int `pulumi:"faultToleranceSecondaryLatency"`
 	// Fault tolerance state.
-	FaultToleranceState string `pulumi:"faultToleranceState"`
+	FaultToleranceState *string `pulumi:"faultToleranceState"`
 	// vCenter-specific identifier of the virtual machine.
-	InstanceUuid string `pulumi:"instanceUuid"`
+	InstanceUuid *string `pulumi:"instanceUuid"`
 	// Indicates that change tracking is supported for virtual disks of this virtual machine. However, even if change tracking is supported, it might not be available for all disks of the virtual machine.
-	IsDisksCbtEnabled bool `pulumi:"isDisksCbtEnabled"`
+	IsDisksCbtEnabled *bool `pulumi:"isDisksCbtEnabled"`
 	// Whether changed block tracking for this VM's disk is active.
-	IsDisksUuidEnabled bool `pulumi:"isDisksUuidEnabled"`
+	IsDisksUuidEnabled *bool `pulumi:"isDisksUuidEnabled"`
 	// Path directory of the asset.
-	Path string `pulumi:"path"`
+	Path *string `pulumi:"path"`
 	// VMware tools status.
-	VmwareToolsStatus string `pulumi:"vmwareToolsStatus"`
+	VmwareToolsStatus *string `pulumi:"vmwareToolsStatus"`
 }
 
 // GetAssetVmwareVmInput is an input type that accepts GetAssetVmwareVmArgs and GetAssetVmwareVmOutput values.
@@ -7994,27 +6985,27 @@ type GetAssetVmwareVmInput interface {
 
 type GetAssetVmwareVmArgs struct {
 	// Cluster name.
-	Cluster pulumi.StringInput `pulumi:"cluster"`
+	Cluster pulumi.StringPtrInput `pulumi:"cluster"`
 	// Customer fields.
 	CustomerFields pulumi.StringArrayInput `pulumi:"customerFields"`
 	// Customer defined tags.
 	CustomerTags GetAssetVmwareVmCustomerTagArrayInput `pulumi:"customerTags"`
 	// Fault tolerance bandwidth.
-	FaultToleranceBandwidth pulumi.IntInput `pulumi:"faultToleranceBandwidth"`
+	FaultToleranceBandwidth pulumi.IntPtrInput `pulumi:"faultToleranceBandwidth"`
 	// Fault tolerance to secondary latency.
-	FaultToleranceSecondaryLatency pulumi.IntInput `pulumi:"faultToleranceSecondaryLatency"`
+	FaultToleranceSecondaryLatency pulumi.IntPtrInput `pulumi:"faultToleranceSecondaryLatency"`
 	// Fault tolerance state.
-	FaultToleranceState pulumi.StringInput `pulumi:"faultToleranceState"`
+	FaultToleranceState pulumi.StringPtrInput `pulumi:"faultToleranceState"`
 	// vCenter-specific identifier of the virtual machine.
-	InstanceUuid pulumi.StringInput `pulumi:"instanceUuid"`
+	InstanceUuid pulumi.StringPtrInput `pulumi:"instanceUuid"`
 	// Indicates that change tracking is supported for virtual disks of this virtual machine. However, even if change tracking is supported, it might not be available for all disks of the virtual machine.
-	IsDisksCbtEnabled pulumi.BoolInput `pulumi:"isDisksCbtEnabled"`
+	IsDisksCbtEnabled pulumi.BoolPtrInput `pulumi:"isDisksCbtEnabled"`
 	// Whether changed block tracking for this VM's disk is active.
-	IsDisksUuidEnabled pulumi.BoolInput `pulumi:"isDisksUuidEnabled"`
+	IsDisksUuidEnabled pulumi.BoolPtrInput `pulumi:"isDisksUuidEnabled"`
 	// Path directory of the asset.
-	Path pulumi.StringInput `pulumi:"path"`
+	Path pulumi.StringPtrInput `pulumi:"path"`
 	// VMware tools status.
-	VmwareToolsStatus pulumi.StringInput `pulumi:"vmwareToolsStatus"`
+	VmwareToolsStatus pulumi.StringPtrInput `pulumi:"vmwareToolsStatus"`
 }
 
 func (GetAssetVmwareVmArgs) ElementType() reflect.Type {
@@ -8027,12 +7018,6 @@ func (i GetAssetVmwareVmArgs) ToGetAssetVmwareVmOutput() GetAssetVmwareVmOutput 
 
 func (i GetAssetVmwareVmArgs) ToGetAssetVmwareVmOutputWithContext(ctx context.Context) GetAssetVmwareVmOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetVmwareVmOutput)
-}
-
-func (i GetAssetVmwareVmArgs) ToOutput(ctx context.Context) pulumix.Output[GetAssetVmwareVm] {
-	return pulumix.Output[GetAssetVmwareVm]{
-		OutputState: i.ToGetAssetVmwareVmOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAssetVmwareVmArrayInput is an input type that accepts GetAssetVmwareVmArray and GetAssetVmwareVmArrayOutput values.
@@ -8060,12 +7045,6 @@ func (i GetAssetVmwareVmArray) ToGetAssetVmwareVmArrayOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetVmwareVmArrayOutput)
 }
 
-func (i GetAssetVmwareVmArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetVmwareVm] {
-	return pulumix.Output[[]GetAssetVmwareVm]{
-		OutputState: i.ToGetAssetVmwareVmArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAssetVmwareVmOutput struct{ *pulumi.OutputState }
 
 func (GetAssetVmwareVmOutput) ElementType() reflect.Type {
@@ -8080,15 +7059,9 @@ func (o GetAssetVmwareVmOutput) ToGetAssetVmwareVmOutputWithContext(ctx context.
 	return o
 }
 
-func (o GetAssetVmwareVmOutput) ToOutput(ctx context.Context) pulumix.Output[GetAssetVmwareVm] {
-	return pulumix.Output[GetAssetVmwareVm]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Cluster name.
-func (o GetAssetVmwareVmOutput) Cluster() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetVmwareVm) string { return v.Cluster }).(pulumi.StringOutput)
+func (o GetAssetVmwareVmOutput) Cluster() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetVmwareVm) *string { return v.Cluster }).(pulumi.StringPtrOutput)
 }
 
 // Customer fields.
@@ -8102,43 +7075,43 @@ func (o GetAssetVmwareVmOutput) CustomerTags() GetAssetVmwareVmCustomerTagArrayO
 }
 
 // Fault tolerance bandwidth.
-func (o GetAssetVmwareVmOutput) FaultToleranceBandwidth() pulumi.IntOutput {
-	return o.ApplyT(func(v GetAssetVmwareVm) int { return v.FaultToleranceBandwidth }).(pulumi.IntOutput)
+func (o GetAssetVmwareVmOutput) FaultToleranceBandwidth() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetAssetVmwareVm) *int { return v.FaultToleranceBandwidth }).(pulumi.IntPtrOutput)
 }
 
 // Fault tolerance to secondary latency.
-func (o GetAssetVmwareVmOutput) FaultToleranceSecondaryLatency() pulumi.IntOutput {
-	return o.ApplyT(func(v GetAssetVmwareVm) int { return v.FaultToleranceSecondaryLatency }).(pulumi.IntOutput)
+func (o GetAssetVmwareVmOutput) FaultToleranceSecondaryLatency() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetAssetVmwareVm) *int { return v.FaultToleranceSecondaryLatency }).(pulumi.IntPtrOutput)
 }
 
 // Fault tolerance state.
-func (o GetAssetVmwareVmOutput) FaultToleranceState() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetVmwareVm) string { return v.FaultToleranceState }).(pulumi.StringOutput)
+func (o GetAssetVmwareVmOutput) FaultToleranceState() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetVmwareVm) *string { return v.FaultToleranceState }).(pulumi.StringPtrOutput)
 }
 
 // vCenter-specific identifier of the virtual machine.
-func (o GetAssetVmwareVmOutput) InstanceUuid() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetVmwareVm) string { return v.InstanceUuid }).(pulumi.StringOutput)
+func (o GetAssetVmwareVmOutput) InstanceUuid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetVmwareVm) *string { return v.InstanceUuid }).(pulumi.StringPtrOutput)
 }
 
 // Indicates that change tracking is supported for virtual disks of this virtual machine. However, even if change tracking is supported, it might not be available for all disks of the virtual machine.
-func (o GetAssetVmwareVmOutput) IsDisksCbtEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetAssetVmwareVm) bool { return v.IsDisksCbtEnabled }).(pulumi.BoolOutput)
+func (o GetAssetVmwareVmOutput) IsDisksCbtEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetAssetVmwareVm) *bool { return v.IsDisksCbtEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // Whether changed block tracking for this VM's disk is active.
-func (o GetAssetVmwareVmOutput) IsDisksUuidEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetAssetVmwareVm) bool { return v.IsDisksUuidEnabled }).(pulumi.BoolOutput)
+func (o GetAssetVmwareVmOutput) IsDisksUuidEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetAssetVmwareVm) *bool { return v.IsDisksUuidEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // Path directory of the asset.
-func (o GetAssetVmwareVmOutput) Path() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetVmwareVm) string { return v.Path }).(pulumi.StringOutput)
+func (o GetAssetVmwareVmOutput) Path() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetVmwareVm) *string { return v.Path }).(pulumi.StringPtrOutput)
 }
 
 // VMware tools status.
-func (o GetAssetVmwareVmOutput) VmwareToolsStatus() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetVmwareVm) string { return v.VmwareToolsStatus }).(pulumi.StringOutput)
+func (o GetAssetVmwareVmOutput) VmwareToolsStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetVmwareVm) *string { return v.VmwareToolsStatus }).(pulumi.StringPtrOutput)
 }
 
 type GetAssetVmwareVmArrayOutput struct{ *pulumi.OutputState }
@@ -8155,12 +7128,6 @@ func (o GetAssetVmwareVmArrayOutput) ToGetAssetVmwareVmArrayOutputWithContext(ct
 	return o
 }
 
-func (o GetAssetVmwareVmArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetVmwareVm] {
-	return pulumix.Output[[]GetAssetVmwareVm]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAssetVmwareVmArrayOutput) Index(i pulumi.IntInput) GetAssetVmwareVmOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssetVmwareVm {
 		return vs[0].([]GetAssetVmwareVm)[vs[1].(int)]
@@ -8169,9 +7136,9 @@ func (o GetAssetVmwareVmArrayOutput) Index(i pulumi.IntInput) GetAssetVmwareVmOu
 
 type GetAssetVmwareVmCustomerTag struct {
 	// The tag description.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// The tag name.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 }
 
 // GetAssetVmwareVmCustomerTagInput is an input type that accepts GetAssetVmwareVmCustomerTagArgs and GetAssetVmwareVmCustomerTagOutput values.
@@ -8187,9 +7154,9 @@ type GetAssetVmwareVmCustomerTagInput interface {
 
 type GetAssetVmwareVmCustomerTagArgs struct {
 	// The tag description.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// The tag name.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 }
 
 func (GetAssetVmwareVmCustomerTagArgs) ElementType() reflect.Type {
@@ -8202,12 +7169,6 @@ func (i GetAssetVmwareVmCustomerTagArgs) ToGetAssetVmwareVmCustomerTagOutput() G
 
 func (i GetAssetVmwareVmCustomerTagArgs) ToGetAssetVmwareVmCustomerTagOutputWithContext(ctx context.Context) GetAssetVmwareVmCustomerTagOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetVmwareVmCustomerTagOutput)
-}
-
-func (i GetAssetVmwareVmCustomerTagArgs) ToOutput(ctx context.Context) pulumix.Output[GetAssetVmwareVmCustomerTag] {
-	return pulumix.Output[GetAssetVmwareVmCustomerTag]{
-		OutputState: i.ToGetAssetVmwareVmCustomerTagOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAssetVmwareVmCustomerTagArrayInput is an input type that accepts GetAssetVmwareVmCustomerTagArray and GetAssetVmwareVmCustomerTagArrayOutput values.
@@ -8235,12 +7196,6 @@ func (i GetAssetVmwareVmCustomerTagArray) ToGetAssetVmwareVmCustomerTagArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetVmwareVmCustomerTagArrayOutput)
 }
 
-func (i GetAssetVmwareVmCustomerTagArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetVmwareVmCustomerTag] {
-	return pulumix.Output[[]GetAssetVmwareVmCustomerTag]{
-		OutputState: i.ToGetAssetVmwareVmCustomerTagArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAssetVmwareVmCustomerTagOutput struct{ *pulumi.OutputState }
 
 func (GetAssetVmwareVmCustomerTagOutput) ElementType() reflect.Type {
@@ -8255,20 +7210,14 @@ func (o GetAssetVmwareVmCustomerTagOutput) ToGetAssetVmwareVmCustomerTagOutputWi
 	return o
 }
 
-func (o GetAssetVmwareVmCustomerTagOutput) ToOutput(ctx context.Context) pulumix.Output[GetAssetVmwareVmCustomerTag] {
-	return pulumix.Output[GetAssetVmwareVmCustomerTag]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The tag description.
-func (o GetAssetVmwareVmCustomerTagOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetVmwareVmCustomerTag) string { return v.Description }).(pulumi.StringOutput)
+func (o GetAssetVmwareVmCustomerTagOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetVmwareVmCustomerTag) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // The tag name.
-func (o GetAssetVmwareVmCustomerTagOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetVmwareVmCustomerTag) string { return v.Name }).(pulumi.StringOutput)
+func (o GetAssetVmwareVmCustomerTagOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetVmwareVmCustomerTag) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 type GetAssetVmwareVmCustomerTagArrayOutput struct{ *pulumi.OutputState }
@@ -8283,12 +7232,6 @@ func (o GetAssetVmwareVmCustomerTagArrayOutput) ToGetAssetVmwareVmCustomerTagArr
 
 func (o GetAssetVmwareVmCustomerTagArrayOutput) ToGetAssetVmwareVmCustomerTagArrayOutputWithContext(ctx context.Context) GetAssetVmwareVmCustomerTagArrayOutput {
 	return o
-}
-
-func (o GetAssetVmwareVmCustomerTagArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetVmwareVmCustomerTag] {
-	return pulumix.Output[[]GetAssetVmwareVmCustomerTag]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAssetVmwareVmCustomerTagArrayOutput) Index(i pulumi.IntInput) GetAssetVmwareVmCustomerTagOutput {
@@ -8328,12 +7271,6 @@ func (i GetAssetsAssetCollectionArgs) ToGetAssetsAssetCollectionOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetsAssetCollectionOutput)
 }
 
-func (i GetAssetsAssetCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetAssetsAssetCollection] {
-	return pulumix.Output[GetAssetsAssetCollection]{
-		OutputState: i.ToGetAssetsAssetCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAssetsAssetCollectionArrayInput is an input type that accepts GetAssetsAssetCollectionArray and GetAssetsAssetCollectionArrayOutput values.
 // You can construct a concrete instance of `GetAssetsAssetCollectionArrayInput` via:
 //
@@ -8359,12 +7296,6 @@ func (i GetAssetsAssetCollectionArray) ToGetAssetsAssetCollectionArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetsAssetCollectionArrayOutput)
 }
 
-func (i GetAssetsAssetCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetsAssetCollection] {
-	return pulumix.Output[[]GetAssetsAssetCollection]{
-		OutputState: i.ToGetAssetsAssetCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAssetsAssetCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetAssetsAssetCollectionOutput) ElementType() reflect.Type {
@@ -8377,12 +7308,6 @@ func (o GetAssetsAssetCollectionOutput) ToGetAssetsAssetCollectionOutput() GetAs
 
 func (o GetAssetsAssetCollectionOutput) ToGetAssetsAssetCollectionOutputWithContext(ctx context.Context) GetAssetsAssetCollectionOutput {
 	return o
-}
-
-func (o GetAssetsAssetCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetAssetsAssetCollection] {
-	return pulumix.Output[GetAssetsAssetCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAssetsAssetCollectionOutput) Items() GetAssetsAssetCollectionItemArrayOutput {
@@ -8403,12 +7328,6 @@ func (o GetAssetsAssetCollectionArrayOutput) ToGetAssetsAssetCollectionArrayOutp
 	return o
 }
 
-func (o GetAssetsAssetCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetsAssetCollection] {
-	return pulumix.Output[[]GetAssetsAssetCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAssetsAssetCollectionArrayOutput) Index(i pulumi.IntInput) GetAssetsAssetCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssetsAssetCollection {
 		return vs[0].([]GetAssetsAssetCollection)[vs[1].(int)]
@@ -8419,33 +7338,33 @@ type GetAssetsAssetCollectionItem struct {
 	// List of asset source OCID.
 	AssetSourceIds []string `pulumi:"assetSourceIds"`
 	// The type of asset.
-	AssetType string `pulumi:"assetType"`
+	AssetType *string `pulumi:"assetType"`
 	// The ID of the compartment in which to list resources.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Compute related properties.
 	Computes []GetAssetsAssetCollectionItemCompute `pulumi:"computes"`
 	// The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// External asset key.
-	ExternalAssetKey string `pulumi:"externalAssetKey"`
+	ExternalAssetKey *string `pulumi:"externalAssetKey"`
 	// The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Asset OCID that is immutable on creation.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Unique Inventory identifier.
-	InventoryId string `pulumi:"inventoryId"`
+	InventoryId *string `pulumi:"inventoryId"`
 	// Source key from where the assets originate.
-	SourceKey string `pulumi:"sourceKey"`
+	SourceKey *string `pulumi:"sourceKey"`
 	// A filter to return only assets whose lifecycleState matches the given lifecycleState.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time when the asset was created. An RFC3339 formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time when the asset was updated. An RFC3339 formatted datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// Virtual machine related properties.
 	Vms []GetAssetsAssetCollectionItemVm `pulumi:"vms"`
 	// VMware vCenter related properties.
@@ -8469,33 +7388,33 @@ type GetAssetsAssetCollectionItemArgs struct {
 	// List of asset source OCID.
 	AssetSourceIds pulumi.StringArrayInput `pulumi:"assetSourceIds"`
 	// The type of asset.
-	AssetType pulumi.StringInput `pulumi:"assetType"`
+	AssetType pulumi.StringPtrInput `pulumi:"assetType"`
 	// The ID of the compartment in which to list resources.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Compute related properties.
 	Computes GetAssetsAssetCollectionItemComputeArrayInput `pulumi:"computes"`
 	// The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// External asset key.
-	ExternalAssetKey pulumi.StringInput `pulumi:"externalAssetKey"`
+	ExternalAssetKey pulumi.StringPtrInput `pulumi:"externalAssetKey"`
 	// The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// Asset OCID that is immutable on creation.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Unique Inventory identifier.
-	InventoryId pulumi.StringInput `pulumi:"inventoryId"`
+	InventoryId pulumi.StringPtrInput `pulumi:"inventoryId"`
 	// Source key from where the assets originate.
-	SourceKey pulumi.StringInput `pulumi:"sourceKey"`
+	SourceKey pulumi.StringPtrInput `pulumi:"sourceKey"`
 	// A filter to return only assets whose lifecycleState matches the given lifecycleState.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// The time when the asset was created. An RFC3339 formatted datetime string.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The time when the asset was updated. An RFC3339 formatted datetime string.
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 	// Virtual machine related properties.
 	Vms GetAssetsAssetCollectionItemVmArrayInput `pulumi:"vms"`
 	// VMware vCenter related properties.
@@ -8514,12 +7433,6 @@ func (i GetAssetsAssetCollectionItemArgs) ToGetAssetsAssetCollectionItemOutput()
 
 func (i GetAssetsAssetCollectionItemArgs) ToGetAssetsAssetCollectionItemOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetsAssetCollectionItemOutput)
-}
-
-func (i GetAssetsAssetCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetAssetsAssetCollectionItem] {
-	return pulumix.Output[GetAssetsAssetCollectionItem]{
-		OutputState: i.ToGetAssetsAssetCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAssetsAssetCollectionItemArrayInput is an input type that accepts GetAssetsAssetCollectionItemArray and GetAssetsAssetCollectionItemArrayOutput values.
@@ -8547,12 +7460,6 @@ func (i GetAssetsAssetCollectionItemArray) ToGetAssetsAssetCollectionItemArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetsAssetCollectionItemArrayOutput)
 }
 
-func (i GetAssetsAssetCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetsAssetCollectionItem] {
-	return pulumix.Output[[]GetAssetsAssetCollectionItem]{
-		OutputState: i.ToGetAssetsAssetCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAssetsAssetCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetAssetsAssetCollectionItemOutput) ElementType() reflect.Type {
@@ -8567,25 +7474,19 @@ func (o GetAssetsAssetCollectionItemOutput) ToGetAssetsAssetCollectionItemOutput
 	return o
 }
 
-func (o GetAssetsAssetCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetAssetsAssetCollectionItem] {
-	return pulumix.Output[GetAssetsAssetCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // List of asset source OCID.
 func (o GetAssetsAssetCollectionItemOutput) AssetSourceIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetAssetsAssetCollectionItem) []string { return v.AssetSourceIds }).(pulumi.StringArrayOutput)
 }
 
 // The type of asset.
-func (o GetAssetsAssetCollectionItemOutput) AssetType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetsAssetCollectionItem) string { return v.AssetType }).(pulumi.StringOutput)
+func (o GetAssetsAssetCollectionItemOutput) AssetType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItem) *string { return v.AssetType }).(pulumi.StringPtrOutput)
 }
 
 // The ID of the compartment in which to list resources.
-func (o GetAssetsAssetCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetsAssetCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetAssetsAssetCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Compute related properties.
@@ -8599,13 +7500,13 @@ func (o GetAssetsAssetCollectionItemOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // A filter to return only resources that match the entire display name given.
-func (o GetAssetsAssetCollectionItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetsAssetCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetAssetsAssetCollectionItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItem) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // External asset key.
-func (o GetAssetsAssetCollectionItemOutput) ExternalAssetKey() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetsAssetCollectionItem) string { return v.ExternalAssetKey }).(pulumi.StringOutput)
+func (o GetAssetsAssetCollectionItemOutput) ExternalAssetKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItem) *string { return v.ExternalAssetKey }).(pulumi.StringPtrOutput)
 }
 
 // The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -8614,23 +7515,23 @@ func (o GetAssetsAssetCollectionItemOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Asset OCID that is immutable on creation.
-func (o GetAssetsAssetCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetsAssetCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetAssetsAssetCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Unique Inventory identifier.
-func (o GetAssetsAssetCollectionItemOutput) InventoryId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetsAssetCollectionItem) string { return v.InventoryId }).(pulumi.StringOutput)
+func (o GetAssetsAssetCollectionItemOutput) InventoryId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItem) *string { return v.InventoryId }).(pulumi.StringPtrOutput)
 }
 
 // Source key from where the assets originate.
-func (o GetAssetsAssetCollectionItemOutput) SourceKey() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetsAssetCollectionItem) string { return v.SourceKey }).(pulumi.StringOutput)
+func (o GetAssetsAssetCollectionItemOutput) SourceKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItem) *string { return v.SourceKey }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only assets whose lifecycleState matches the given lifecycleState.
-func (o GetAssetsAssetCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetsAssetCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetAssetsAssetCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
@@ -8639,13 +7540,13 @@ func (o GetAssetsAssetCollectionItemOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time when the asset was created. An RFC3339 formatted datetime string.
-func (o GetAssetsAssetCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetsAssetCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetAssetsAssetCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time when the asset was updated. An RFC3339 formatted datetime string.
-func (o GetAssetsAssetCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetsAssetCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetAssetsAssetCollectionItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItem) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // Virtual machine related properties.
@@ -8679,12 +7580,6 @@ func (o GetAssetsAssetCollectionItemArrayOutput) ToGetAssetsAssetCollectionItemA
 	return o
 }
 
-func (o GetAssetsAssetCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetsAssetCollectionItem] {
-	return pulumix.Output[[]GetAssetsAssetCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAssetsAssetCollectionItemArrayOutput) Index(i pulumi.IntInput) GetAssetsAssetCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssetsAssetCollectionItem {
 		return vs[0].([]GetAssetsAssetCollectionItem)[vs[1].(int)]
@@ -8693,63 +7588,63 @@ func (o GetAssetsAssetCollectionItemArrayOutput) Index(i pulumi.IntInput) GetAss
 
 type GetAssetsAssetCollectionItemCompute struct {
 	// Number of connected networks.
-	ConnectedNetworks int `pulumi:"connectedNetworks"`
+	ConnectedNetworks *int `pulumi:"connectedNetworks"`
 	// Number of GPU cores.
-	CoresCount int `pulumi:"coresCount"`
+	CoresCount *int `pulumi:"coresCount"`
 	// CPU model name.
-	CpuModel string `pulumi:"cpuModel"`
+	CpuModel *string `pulumi:"cpuModel"`
 	// The tag description.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Lists the set of disks belonging to the virtual machine. This list is unordered.
 	Disks []GetAssetsAssetCollectionItemComputeDisk `pulumi:"disks"`
 	// Number of disks.
-	DisksCount int `pulumi:"disksCount"`
+	DisksCount *int `pulumi:"disksCount"`
 	// Fully Qualified DNS Name.
-	DnsName string `pulumi:"dnsName"`
+	DnsName *string `pulumi:"dnsName"`
 	// Information about firmware type for this virtual machine.
-	Firmware string `pulumi:"firmware"`
+	Firmware *string `pulumi:"firmware"`
 	// List of GPU devices attached to a virtual machine.
 	GpuDevices []GetAssetsAssetCollectionItemComputeGpuDevice `pulumi:"gpuDevices"`
 	// Number of GPU devices.
-	GpuDevicesCount int `pulumi:"gpuDevicesCount"`
+	GpuDevicesCount *int `pulumi:"gpuDevicesCount"`
 	// Guest state.
-	GuestState string `pulumi:"guestState"`
+	GuestState *string `pulumi:"guestState"`
 	// Hardware version.
-	HardwareVersion string `pulumi:"hardwareVersion"`
+	HardwareVersion *string `pulumi:"hardwareVersion"`
 	// Host name of the VM.
-	HostName string `pulumi:"hostName"`
+	HostName *string `pulumi:"hostName"`
 	// Whether Pmem is enabled. Decides if NVDIMMs are used as a permanent memory.
-	IsPmemEnabled bool `pulumi:"isPmemEnabled"`
+	IsPmemEnabled *bool `pulumi:"isPmemEnabled"`
 	// Whether Trusted Platform Module (TPM) is enabled.
-	IsTpmEnabled bool `pulumi:"isTpmEnabled"`
+	IsTpmEnabled *bool `pulumi:"isTpmEnabled"`
 	// Latency sensitivity.
-	LatencySensitivity string `pulumi:"latencySensitivity"`
+	LatencySensitivity *string `pulumi:"latencySensitivity"`
 	// Memory size in MBs.
-	MemoryInMbs string `pulumi:"memoryInMbs"`
+	MemoryInMbs *string `pulumi:"memoryInMbs"`
 	// List of network ethernet cards attached to a virtual machine.
 	Nics []GetAssetsAssetCollectionItemComputeNic `pulumi:"nics"`
 	// Number of network ethernet cards.
-	NicsCount int `pulumi:"nicsCount"`
+	NicsCount *int `pulumi:"nicsCount"`
 	// The asset's NVDIMM configuration.
 	NvdimmControllers []GetAssetsAssetCollectionItemComputeNvdimmController `pulumi:"nvdimmControllers"`
 	// The properties of the NVDIMMs attached to a virtual machine.
 	Nvdimms []GetAssetsAssetCollectionItemComputeNvdimm `pulumi:"nvdimms"`
 	// Operating system.
-	OperatingSystem string `pulumi:"operatingSystem"`
+	OperatingSystem *string `pulumi:"operatingSystem"`
 	// Operating system version.
-	OperatingSystemVersion string `pulumi:"operatingSystemVersion"`
+	OperatingSystemVersion *string `pulumi:"operatingSystemVersion"`
 	// Pmem size in MBs.
-	PmemInMbs string `pulumi:"pmemInMbs"`
+	PmemInMbs *string `pulumi:"pmemInMbs"`
 	// The current power state of the virtual machine.
-	PowerState string `pulumi:"powerState"`
+	PowerState *string `pulumi:"powerState"`
 	// Primary IP address of the compute instance.
-	PrimaryIp string `pulumi:"primaryIp"`
+	PrimaryIp *string `pulumi:"primaryIp"`
 	// The assets SCSI controller.
 	ScsiControllers []GetAssetsAssetCollectionItemComputeScsiController `pulumi:"scsiControllers"`
 	// Provision storage size in MBs.
-	StorageProvisionedInMbs string `pulumi:"storageProvisionedInMbs"`
+	StorageProvisionedInMbs *string `pulumi:"storageProvisionedInMbs"`
 	// Number of threads per core.
-	ThreadsPerCoreCount int `pulumi:"threadsPerCoreCount"`
+	ThreadsPerCoreCount *int `pulumi:"threadsPerCoreCount"`
 }
 
 // GetAssetsAssetCollectionItemComputeInput is an input type that accepts GetAssetsAssetCollectionItemComputeArgs and GetAssetsAssetCollectionItemComputeOutput values.
@@ -8765,63 +7660,63 @@ type GetAssetsAssetCollectionItemComputeInput interface {
 
 type GetAssetsAssetCollectionItemComputeArgs struct {
 	// Number of connected networks.
-	ConnectedNetworks pulumi.IntInput `pulumi:"connectedNetworks"`
+	ConnectedNetworks pulumi.IntPtrInput `pulumi:"connectedNetworks"`
 	// Number of GPU cores.
-	CoresCount pulumi.IntInput `pulumi:"coresCount"`
+	CoresCount pulumi.IntPtrInput `pulumi:"coresCount"`
 	// CPU model name.
-	CpuModel pulumi.StringInput `pulumi:"cpuModel"`
+	CpuModel pulumi.StringPtrInput `pulumi:"cpuModel"`
 	// The tag description.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// Lists the set of disks belonging to the virtual machine. This list is unordered.
 	Disks GetAssetsAssetCollectionItemComputeDiskArrayInput `pulumi:"disks"`
 	// Number of disks.
-	DisksCount pulumi.IntInput `pulumi:"disksCount"`
+	DisksCount pulumi.IntPtrInput `pulumi:"disksCount"`
 	// Fully Qualified DNS Name.
-	DnsName pulumi.StringInput `pulumi:"dnsName"`
+	DnsName pulumi.StringPtrInput `pulumi:"dnsName"`
 	// Information about firmware type for this virtual machine.
-	Firmware pulumi.StringInput `pulumi:"firmware"`
+	Firmware pulumi.StringPtrInput `pulumi:"firmware"`
 	// List of GPU devices attached to a virtual machine.
 	GpuDevices GetAssetsAssetCollectionItemComputeGpuDeviceArrayInput `pulumi:"gpuDevices"`
 	// Number of GPU devices.
-	GpuDevicesCount pulumi.IntInput `pulumi:"gpuDevicesCount"`
+	GpuDevicesCount pulumi.IntPtrInput `pulumi:"gpuDevicesCount"`
 	// Guest state.
-	GuestState pulumi.StringInput `pulumi:"guestState"`
+	GuestState pulumi.StringPtrInput `pulumi:"guestState"`
 	// Hardware version.
-	HardwareVersion pulumi.StringInput `pulumi:"hardwareVersion"`
+	HardwareVersion pulumi.StringPtrInput `pulumi:"hardwareVersion"`
 	// Host name of the VM.
-	HostName pulumi.StringInput `pulumi:"hostName"`
+	HostName pulumi.StringPtrInput `pulumi:"hostName"`
 	// Whether Pmem is enabled. Decides if NVDIMMs are used as a permanent memory.
-	IsPmemEnabled pulumi.BoolInput `pulumi:"isPmemEnabled"`
+	IsPmemEnabled pulumi.BoolPtrInput `pulumi:"isPmemEnabled"`
 	// Whether Trusted Platform Module (TPM) is enabled.
-	IsTpmEnabled pulumi.BoolInput `pulumi:"isTpmEnabled"`
+	IsTpmEnabled pulumi.BoolPtrInput `pulumi:"isTpmEnabled"`
 	// Latency sensitivity.
-	LatencySensitivity pulumi.StringInput `pulumi:"latencySensitivity"`
+	LatencySensitivity pulumi.StringPtrInput `pulumi:"latencySensitivity"`
 	// Memory size in MBs.
-	MemoryInMbs pulumi.StringInput `pulumi:"memoryInMbs"`
+	MemoryInMbs pulumi.StringPtrInput `pulumi:"memoryInMbs"`
 	// List of network ethernet cards attached to a virtual machine.
 	Nics GetAssetsAssetCollectionItemComputeNicArrayInput `pulumi:"nics"`
 	// Number of network ethernet cards.
-	NicsCount pulumi.IntInput `pulumi:"nicsCount"`
+	NicsCount pulumi.IntPtrInput `pulumi:"nicsCount"`
 	// The asset's NVDIMM configuration.
 	NvdimmControllers GetAssetsAssetCollectionItemComputeNvdimmControllerArrayInput `pulumi:"nvdimmControllers"`
 	// The properties of the NVDIMMs attached to a virtual machine.
 	Nvdimms GetAssetsAssetCollectionItemComputeNvdimmArrayInput `pulumi:"nvdimms"`
 	// Operating system.
-	OperatingSystem pulumi.StringInput `pulumi:"operatingSystem"`
+	OperatingSystem pulumi.StringPtrInput `pulumi:"operatingSystem"`
 	// Operating system version.
-	OperatingSystemVersion pulumi.StringInput `pulumi:"operatingSystemVersion"`
+	OperatingSystemVersion pulumi.StringPtrInput `pulumi:"operatingSystemVersion"`
 	// Pmem size in MBs.
-	PmemInMbs pulumi.StringInput `pulumi:"pmemInMbs"`
+	PmemInMbs pulumi.StringPtrInput `pulumi:"pmemInMbs"`
 	// The current power state of the virtual machine.
-	PowerState pulumi.StringInput `pulumi:"powerState"`
+	PowerState pulumi.StringPtrInput `pulumi:"powerState"`
 	// Primary IP address of the compute instance.
-	PrimaryIp pulumi.StringInput `pulumi:"primaryIp"`
+	PrimaryIp pulumi.StringPtrInput `pulumi:"primaryIp"`
 	// The assets SCSI controller.
 	ScsiControllers GetAssetsAssetCollectionItemComputeScsiControllerArrayInput `pulumi:"scsiControllers"`
 	// Provision storage size in MBs.
-	StorageProvisionedInMbs pulumi.StringInput `pulumi:"storageProvisionedInMbs"`
+	StorageProvisionedInMbs pulumi.StringPtrInput `pulumi:"storageProvisionedInMbs"`
 	// Number of threads per core.
-	ThreadsPerCoreCount pulumi.IntInput `pulumi:"threadsPerCoreCount"`
+	ThreadsPerCoreCount pulumi.IntPtrInput `pulumi:"threadsPerCoreCount"`
 }
 
 func (GetAssetsAssetCollectionItemComputeArgs) ElementType() reflect.Type {
@@ -8834,12 +7729,6 @@ func (i GetAssetsAssetCollectionItemComputeArgs) ToGetAssetsAssetCollectionItemC
 
 func (i GetAssetsAssetCollectionItemComputeArgs) ToGetAssetsAssetCollectionItemComputeOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemComputeOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetsAssetCollectionItemComputeOutput)
-}
-
-func (i GetAssetsAssetCollectionItemComputeArgs) ToOutput(ctx context.Context) pulumix.Output[GetAssetsAssetCollectionItemCompute] {
-	return pulumix.Output[GetAssetsAssetCollectionItemCompute]{
-		OutputState: i.ToGetAssetsAssetCollectionItemComputeOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAssetsAssetCollectionItemComputeArrayInput is an input type that accepts GetAssetsAssetCollectionItemComputeArray and GetAssetsAssetCollectionItemComputeArrayOutput values.
@@ -8867,12 +7756,6 @@ func (i GetAssetsAssetCollectionItemComputeArray) ToGetAssetsAssetCollectionItem
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetsAssetCollectionItemComputeArrayOutput)
 }
 
-func (i GetAssetsAssetCollectionItemComputeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetsAssetCollectionItemCompute] {
-	return pulumix.Output[[]GetAssetsAssetCollectionItemCompute]{
-		OutputState: i.ToGetAssetsAssetCollectionItemComputeArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAssetsAssetCollectionItemComputeOutput struct{ *pulumi.OutputState }
 
 func (GetAssetsAssetCollectionItemComputeOutput) ElementType() reflect.Type {
@@ -8887,30 +7770,24 @@ func (o GetAssetsAssetCollectionItemComputeOutput) ToGetAssetsAssetCollectionIte
 	return o
 }
 
-func (o GetAssetsAssetCollectionItemComputeOutput) ToOutput(ctx context.Context) pulumix.Output[GetAssetsAssetCollectionItemCompute] {
-	return pulumix.Output[GetAssetsAssetCollectionItemCompute]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Number of connected networks.
-func (o GetAssetsAssetCollectionItemComputeOutput) ConnectedNetworks() pulumi.IntOutput {
-	return o.ApplyT(func(v GetAssetsAssetCollectionItemCompute) int { return v.ConnectedNetworks }).(pulumi.IntOutput)
+func (o GetAssetsAssetCollectionItemComputeOutput) ConnectedNetworks() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemCompute) *int { return v.ConnectedNetworks }).(pulumi.IntPtrOutput)
 }
 
 // Number of GPU cores.
-func (o GetAssetsAssetCollectionItemComputeOutput) CoresCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetAssetsAssetCollectionItemCompute) int { return v.CoresCount }).(pulumi.IntOutput)
+func (o GetAssetsAssetCollectionItemComputeOutput) CoresCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemCompute) *int { return v.CoresCount }).(pulumi.IntPtrOutput)
 }
 
 // CPU model name.
-func (o GetAssetsAssetCollectionItemComputeOutput) CpuModel() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetsAssetCollectionItemCompute) string { return v.CpuModel }).(pulumi.StringOutput)
+func (o GetAssetsAssetCollectionItemComputeOutput) CpuModel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemCompute) *string { return v.CpuModel }).(pulumi.StringPtrOutput)
 }
 
 // The tag description.
-func (o GetAssetsAssetCollectionItemComputeOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetsAssetCollectionItemCompute) string { return v.Description }).(pulumi.StringOutput)
+func (o GetAssetsAssetCollectionItemComputeOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemCompute) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Lists the set of disks belonging to the virtual machine. This list is unordered.
@@ -8919,18 +7796,18 @@ func (o GetAssetsAssetCollectionItemComputeOutput) Disks() GetAssetsAssetCollect
 }
 
 // Number of disks.
-func (o GetAssetsAssetCollectionItemComputeOutput) DisksCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetAssetsAssetCollectionItemCompute) int { return v.DisksCount }).(pulumi.IntOutput)
+func (o GetAssetsAssetCollectionItemComputeOutput) DisksCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemCompute) *int { return v.DisksCount }).(pulumi.IntPtrOutput)
 }
 
 // Fully Qualified DNS Name.
-func (o GetAssetsAssetCollectionItemComputeOutput) DnsName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetsAssetCollectionItemCompute) string { return v.DnsName }).(pulumi.StringOutput)
+func (o GetAssetsAssetCollectionItemComputeOutput) DnsName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemCompute) *string { return v.DnsName }).(pulumi.StringPtrOutput)
 }
 
 // Information about firmware type for this virtual machine.
-func (o GetAssetsAssetCollectionItemComputeOutput) Firmware() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetsAssetCollectionItemCompute) string { return v.Firmware }).(pulumi.StringOutput)
+func (o GetAssetsAssetCollectionItemComputeOutput) Firmware() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemCompute) *string { return v.Firmware }).(pulumi.StringPtrOutput)
 }
 
 // List of GPU devices attached to a virtual machine.
@@ -8941,43 +7818,43 @@ func (o GetAssetsAssetCollectionItemComputeOutput) GpuDevices() GetAssetsAssetCo
 }
 
 // Number of GPU devices.
-func (o GetAssetsAssetCollectionItemComputeOutput) GpuDevicesCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetAssetsAssetCollectionItemCompute) int { return v.GpuDevicesCount }).(pulumi.IntOutput)
+func (o GetAssetsAssetCollectionItemComputeOutput) GpuDevicesCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemCompute) *int { return v.GpuDevicesCount }).(pulumi.IntPtrOutput)
 }
 
 // Guest state.
-func (o GetAssetsAssetCollectionItemComputeOutput) GuestState() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetsAssetCollectionItemCompute) string { return v.GuestState }).(pulumi.StringOutput)
+func (o GetAssetsAssetCollectionItemComputeOutput) GuestState() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemCompute) *string { return v.GuestState }).(pulumi.StringPtrOutput)
 }
 
 // Hardware version.
-func (o GetAssetsAssetCollectionItemComputeOutput) HardwareVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetsAssetCollectionItemCompute) string { return v.HardwareVersion }).(pulumi.StringOutput)
+func (o GetAssetsAssetCollectionItemComputeOutput) HardwareVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemCompute) *string { return v.HardwareVersion }).(pulumi.StringPtrOutput)
 }
 
 // Host name of the VM.
-func (o GetAssetsAssetCollectionItemComputeOutput) HostName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetsAssetCollectionItemCompute) string { return v.HostName }).(pulumi.StringOutput)
+func (o GetAssetsAssetCollectionItemComputeOutput) HostName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemCompute) *string { return v.HostName }).(pulumi.StringPtrOutput)
 }
 
 // Whether Pmem is enabled. Decides if NVDIMMs are used as a permanent memory.
-func (o GetAssetsAssetCollectionItemComputeOutput) IsPmemEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetAssetsAssetCollectionItemCompute) bool { return v.IsPmemEnabled }).(pulumi.BoolOutput)
+func (o GetAssetsAssetCollectionItemComputeOutput) IsPmemEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemCompute) *bool { return v.IsPmemEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // Whether Trusted Platform Module (TPM) is enabled.
-func (o GetAssetsAssetCollectionItemComputeOutput) IsTpmEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetAssetsAssetCollectionItemCompute) bool { return v.IsTpmEnabled }).(pulumi.BoolOutput)
+func (o GetAssetsAssetCollectionItemComputeOutput) IsTpmEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemCompute) *bool { return v.IsTpmEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // Latency sensitivity.
-func (o GetAssetsAssetCollectionItemComputeOutput) LatencySensitivity() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetsAssetCollectionItemCompute) string { return v.LatencySensitivity }).(pulumi.StringOutput)
+func (o GetAssetsAssetCollectionItemComputeOutput) LatencySensitivity() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemCompute) *string { return v.LatencySensitivity }).(pulumi.StringPtrOutput)
 }
 
 // Memory size in MBs.
-func (o GetAssetsAssetCollectionItemComputeOutput) MemoryInMbs() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetsAssetCollectionItemCompute) string { return v.MemoryInMbs }).(pulumi.StringOutput)
+func (o GetAssetsAssetCollectionItemComputeOutput) MemoryInMbs() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemCompute) *string { return v.MemoryInMbs }).(pulumi.StringPtrOutput)
 }
 
 // List of network ethernet cards attached to a virtual machine.
@@ -8986,8 +7863,8 @@ func (o GetAssetsAssetCollectionItemComputeOutput) Nics() GetAssetsAssetCollecti
 }
 
 // Number of network ethernet cards.
-func (o GetAssetsAssetCollectionItemComputeOutput) NicsCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetAssetsAssetCollectionItemCompute) int { return v.NicsCount }).(pulumi.IntOutput)
+func (o GetAssetsAssetCollectionItemComputeOutput) NicsCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemCompute) *int { return v.NicsCount }).(pulumi.IntPtrOutput)
 }
 
 // The asset's NVDIMM configuration.
@@ -9005,28 +7882,28 @@ func (o GetAssetsAssetCollectionItemComputeOutput) Nvdimms() GetAssetsAssetColle
 }
 
 // Operating system.
-func (o GetAssetsAssetCollectionItemComputeOutput) OperatingSystem() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetsAssetCollectionItemCompute) string { return v.OperatingSystem }).(pulumi.StringOutput)
+func (o GetAssetsAssetCollectionItemComputeOutput) OperatingSystem() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemCompute) *string { return v.OperatingSystem }).(pulumi.StringPtrOutput)
 }
 
 // Operating system version.
-func (o GetAssetsAssetCollectionItemComputeOutput) OperatingSystemVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetsAssetCollectionItemCompute) string { return v.OperatingSystemVersion }).(pulumi.StringOutput)
+func (o GetAssetsAssetCollectionItemComputeOutput) OperatingSystemVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemCompute) *string { return v.OperatingSystemVersion }).(pulumi.StringPtrOutput)
 }
 
 // Pmem size in MBs.
-func (o GetAssetsAssetCollectionItemComputeOutput) PmemInMbs() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetsAssetCollectionItemCompute) string { return v.PmemInMbs }).(pulumi.StringOutput)
+func (o GetAssetsAssetCollectionItemComputeOutput) PmemInMbs() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemCompute) *string { return v.PmemInMbs }).(pulumi.StringPtrOutput)
 }
 
 // The current power state of the virtual machine.
-func (o GetAssetsAssetCollectionItemComputeOutput) PowerState() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetsAssetCollectionItemCompute) string { return v.PowerState }).(pulumi.StringOutput)
+func (o GetAssetsAssetCollectionItemComputeOutput) PowerState() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemCompute) *string { return v.PowerState }).(pulumi.StringPtrOutput)
 }
 
 // Primary IP address of the compute instance.
-func (o GetAssetsAssetCollectionItemComputeOutput) PrimaryIp() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetsAssetCollectionItemCompute) string { return v.PrimaryIp }).(pulumi.StringOutput)
+func (o GetAssetsAssetCollectionItemComputeOutput) PrimaryIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemCompute) *string { return v.PrimaryIp }).(pulumi.StringPtrOutput)
 }
 
 // The assets SCSI controller.
@@ -9037,13 +7914,13 @@ func (o GetAssetsAssetCollectionItemComputeOutput) ScsiControllers() GetAssetsAs
 }
 
 // Provision storage size in MBs.
-func (o GetAssetsAssetCollectionItemComputeOutput) StorageProvisionedInMbs() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetsAssetCollectionItemCompute) string { return v.StorageProvisionedInMbs }).(pulumi.StringOutput)
+func (o GetAssetsAssetCollectionItemComputeOutput) StorageProvisionedInMbs() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemCompute) *string { return v.StorageProvisionedInMbs }).(pulumi.StringPtrOutput)
 }
 
 // Number of threads per core.
-func (o GetAssetsAssetCollectionItemComputeOutput) ThreadsPerCoreCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetAssetsAssetCollectionItemCompute) int { return v.ThreadsPerCoreCount }).(pulumi.IntOutput)
+func (o GetAssetsAssetCollectionItemComputeOutput) ThreadsPerCoreCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemCompute) *int { return v.ThreadsPerCoreCount }).(pulumi.IntPtrOutput)
 }
 
 type GetAssetsAssetCollectionItemComputeArrayOutput struct{ *pulumi.OutputState }
@@ -9060,12 +7937,6 @@ func (o GetAssetsAssetCollectionItemComputeArrayOutput) ToGetAssetsAssetCollecti
 	return o
 }
 
-func (o GetAssetsAssetCollectionItemComputeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetsAssetCollectionItemCompute] {
-	return pulumix.Output[[]GetAssetsAssetCollectionItemCompute]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAssetsAssetCollectionItemComputeArrayOutput) Index(i pulumi.IntInput) GetAssetsAssetCollectionItemComputeOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssetsAssetCollectionItemCompute {
 		return vs[0].([]GetAssetsAssetCollectionItemCompute)[vs[1].(int)]
@@ -9074,19 +7945,19 @@ func (o GetAssetsAssetCollectionItemComputeArrayOutput) Index(i pulumi.IntInput)
 
 type GetAssetsAssetCollectionItemComputeDisk struct {
 	// Order of boot volumes.
-	BootOrder int `pulumi:"bootOrder"`
+	BootOrder *int `pulumi:"bootOrder"`
 	// Location of the boot/data volume.
-	Location string `pulumi:"location"`
+	Location *string `pulumi:"location"`
 	// The tag name.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The disk persistent mode.
-	PersistentMode string `pulumi:"persistentMode"`
+	PersistentMode *string `pulumi:"persistentMode"`
 	// The size of the volume in MBs.
-	SizeInMbs string `pulumi:"sizeInMbs"`
+	SizeInMbs *string `pulumi:"sizeInMbs"`
 	// Disk UUID for the virtual disk, if available.
-	Uuid string `pulumi:"uuid"`
+	Uuid *string `pulumi:"uuid"`
 	// Disk UUID LUN for the virtual disk, if available.
-	UuidLun string `pulumi:"uuidLun"`
+	UuidLun *string `pulumi:"uuidLun"`
 }
 
 // GetAssetsAssetCollectionItemComputeDiskInput is an input type that accepts GetAssetsAssetCollectionItemComputeDiskArgs and GetAssetsAssetCollectionItemComputeDiskOutput values.
@@ -9102,19 +7973,19 @@ type GetAssetsAssetCollectionItemComputeDiskInput interface {
 
 type GetAssetsAssetCollectionItemComputeDiskArgs struct {
 	// Order of boot volumes.
-	BootOrder pulumi.IntInput `pulumi:"bootOrder"`
+	BootOrder pulumi.IntPtrInput `pulumi:"bootOrder"`
 	// Location of the boot/data volume.
-	Location pulumi.StringInput `pulumi:"location"`
+	Location pulumi.StringPtrInput `pulumi:"location"`
 	// The tag name.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// The disk persistent mode.
-	PersistentMode pulumi.StringInput `pulumi:"persistentMode"`
+	PersistentMode pulumi.StringPtrInput `pulumi:"persistentMode"`
 	// The size of the volume in MBs.
-	SizeInMbs pulumi.StringInput `pulumi:"sizeInMbs"`
+	SizeInMbs pulumi.StringPtrInput `pulumi:"sizeInMbs"`
 	// Disk UUID for the virtual disk, if available.
-	Uuid pulumi.StringInput `pulumi:"uuid"`
+	Uuid pulumi.StringPtrInput `pulumi:"uuid"`
 	// Disk UUID LUN for the virtual disk, if available.
-	UuidLun pulumi.StringInput `pulumi:"uuidLun"`
+	UuidLun pulumi.StringPtrInput `pulumi:"uuidLun"`
 }
 
 func (GetAssetsAssetCollectionItemComputeDiskArgs) ElementType() reflect.Type {
@@ -9127,12 +7998,6 @@ func (i GetAssetsAssetCollectionItemComputeDiskArgs) ToGetAssetsAssetCollectionI
 
 func (i GetAssetsAssetCollectionItemComputeDiskArgs) ToGetAssetsAssetCollectionItemComputeDiskOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemComputeDiskOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetsAssetCollectionItemComputeDiskOutput)
-}
-
-func (i GetAssetsAssetCollectionItemComputeDiskArgs) ToOutput(ctx context.Context) pulumix.Output[GetAssetsAssetCollectionItemComputeDisk] {
-	return pulumix.Output[GetAssetsAssetCollectionItemComputeDisk]{
-		OutputState: i.ToGetAssetsAssetCollectionItemComputeDiskOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAssetsAssetCollectionItemComputeDiskArrayInput is an input type that accepts GetAssetsAssetCollectionItemComputeDiskArray and GetAssetsAssetCollectionItemComputeDiskArrayOutput values.
@@ -9160,12 +8025,6 @@ func (i GetAssetsAssetCollectionItemComputeDiskArray) ToGetAssetsAssetCollection
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetsAssetCollectionItemComputeDiskArrayOutput)
 }
 
-func (i GetAssetsAssetCollectionItemComputeDiskArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetsAssetCollectionItemComputeDisk] {
-	return pulumix.Output[[]GetAssetsAssetCollectionItemComputeDisk]{
-		OutputState: i.ToGetAssetsAssetCollectionItemComputeDiskArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAssetsAssetCollectionItemComputeDiskOutput struct{ *pulumi.OutputState }
 
 func (GetAssetsAssetCollectionItemComputeDiskOutput) ElementType() reflect.Type {
@@ -9180,45 +8039,39 @@ func (o GetAssetsAssetCollectionItemComputeDiskOutput) ToGetAssetsAssetCollectio
 	return o
 }
 
-func (o GetAssetsAssetCollectionItemComputeDiskOutput) ToOutput(ctx context.Context) pulumix.Output[GetAssetsAssetCollectionItemComputeDisk] {
-	return pulumix.Output[GetAssetsAssetCollectionItemComputeDisk]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Order of boot volumes.
-func (o GetAssetsAssetCollectionItemComputeDiskOutput) BootOrder() pulumi.IntOutput {
-	return o.ApplyT(func(v GetAssetsAssetCollectionItemComputeDisk) int { return v.BootOrder }).(pulumi.IntOutput)
+func (o GetAssetsAssetCollectionItemComputeDiskOutput) BootOrder() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemComputeDisk) *int { return v.BootOrder }).(pulumi.IntPtrOutput)
 }
 
 // Location of the boot/data volume.
-func (o GetAssetsAssetCollectionItemComputeDiskOutput) Location() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetsAssetCollectionItemComputeDisk) string { return v.Location }).(pulumi.StringOutput)
+func (o GetAssetsAssetCollectionItemComputeDiskOutput) Location() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemComputeDisk) *string { return v.Location }).(pulumi.StringPtrOutput)
 }
 
 // The tag name.
-func (o GetAssetsAssetCollectionItemComputeDiskOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetsAssetCollectionItemComputeDisk) string { return v.Name }).(pulumi.StringOutput)
+func (o GetAssetsAssetCollectionItemComputeDiskOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemComputeDisk) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The disk persistent mode.
-func (o GetAssetsAssetCollectionItemComputeDiskOutput) PersistentMode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetsAssetCollectionItemComputeDisk) string { return v.PersistentMode }).(pulumi.StringOutput)
+func (o GetAssetsAssetCollectionItemComputeDiskOutput) PersistentMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemComputeDisk) *string { return v.PersistentMode }).(pulumi.StringPtrOutput)
 }
 
 // The size of the volume in MBs.
-func (o GetAssetsAssetCollectionItemComputeDiskOutput) SizeInMbs() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetsAssetCollectionItemComputeDisk) string { return v.SizeInMbs }).(pulumi.StringOutput)
+func (o GetAssetsAssetCollectionItemComputeDiskOutput) SizeInMbs() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemComputeDisk) *string { return v.SizeInMbs }).(pulumi.StringPtrOutput)
 }
 
 // Disk UUID for the virtual disk, if available.
-func (o GetAssetsAssetCollectionItemComputeDiskOutput) Uuid() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetsAssetCollectionItemComputeDisk) string { return v.Uuid }).(pulumi.StringOutput)
+func (o GetAssetsAssetCollectionItemComputeDiskOutput) Uuid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemComputeDisk) *string { return v.Uuid }).(pulumi.StringPtrOutput)
 }
 
 // Disk UUID LUN for the virtual disk, if available.
-func (o GetAssetsAssetCollectionItemComputeDiskOutput) UuidLun() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetsAssetCollectionItemComputeDisk) string { return v.UuidLun }).(pulumi.StringOutput)
+func (o GetAssetsAssetCollectionItemComputeDiskOutput) UuidLun() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemComputeDisk) *string { return v.UuidLun }).(pulumi.StringPtrOutput)
 }
 
 type GetAssetsAssetCollectionItemComputeDiskArrayOutput struct{ *pulumi.OutputState }
@@ -9235,12 +8088,6 @@ func (o GetAssetsAssetCollectionItemComputeDiskArrayOutput) ToGetAssetsAssetColl
 	return o
 }
 
-func (o GetAssetsAssetCollectionItemComputeDiskArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetsAssetCollectionItemComputeDisk] {
-	return pulumix.Output[[]GetAssetsAssetCollectionItemComputeDisk]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAssetsAssetCollectionItemComputeDiskArrayOutput) Index(i pulumi.IntInput) GetAssetsAssetCollectionItemComputeDiskOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssetsAssetCollectionItemComputeDisk {
 		return vs[0].([]GetAssetsAssetCollectionItemComputeDisk)[vs[1].(int)]
@@ -9249,15 +8096,15 @@ func (o GetAssetsAssetCollectionItemComputeDiskArrayOutput) Index(i pulumi.IntIn
 
 type GetAssetsAssetCollectionItemComputeGpuDevice struct {
 	// Number of GPU cores.
-	CoresCount int `pulumi:"coresCount"`
+	CoresCount *int `pulumi:"coresCount"`
 	// The tag description.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// The manufacturer of GPU.
-	Manufacturer string `pulumi:"manufacturer"`
+	Manufacturer *string `pulumi:"manufacturer"`
 	// Memory size in MBs.
-	MemoryInMbs string `pulumi:"memoryInMbs"`
+	MemoryInMbs *string `pulumi:"memoryInMbs"`
 	// The tag name.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 }
 
 // GetAssetsAssetCollectionItemComputeGpuDeviceInput is an input type that accepts GetAssetsAssetCollectionItemComputeGpuDeviceArgs and GetAssetsAssetCollectionItemComputeGpuDeviceOutput values.
@@ -9273,15 +8120,15 @@ type GetAssetsAssetCollectionItemComputeGpuDeviceInput interface {
 
 type GetAssetsAssetCollectionItemComputeGpuDeviceArgs struct {
 	// Number of GPU cores.
-	CoresCount pulumi.IntInput `pulumi:"coresCount"`
+	CoresCount pulumi.IntPtrInput `pulumi:"coresCount"`
 	// The tag description.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// The manufacturer of GPU.
-	Manufacturer pulumi.StringInput `pulumi:"manufacturer"`
+	Manufacturer pulumi.StringPtrInput `pulumi:"manufacturer"`
 	// Memory size in MBs.
-	MemoryInMbs pulumi.StringInput `pulumi:"memoryInMbs"`
+	MemoryInMbs pulumi.StringPtrInput `pulumi:"memoryInMbs"`
 	// The tag name.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 }
 
 func (GetAssetsAssetCollectionItemComputeGpuDeviceArgs) ElementType() reflect.Type {
@@ -9294,12 +8141,6 @@ func (i GetAssetsAssetCollectionItemComputeGpuDeviceArgs) ToGetAssetsAssetCollec
 
 func (i GetAssetsAssetCollectionItemComputeGpuDeviceArgs) ToGetAssetsAssetCollectionItemComputeGpuDeviceOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemComputeGpuDeviceOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetsAssetCollectionItemComputeGpuDeviceOutput)
-}
-
-func (i GetAssetsAssetCollectionItemComputeGpuDeviceArgs) ToOutput(ctx context.Context) pulumix.Output[GetAssetsAssetCollectionItemComputeGpuDevice] {
-	return pulumix.Output[GetAssetsAssetCollectionItemComputeGpuDevice]{
-		OutputState: i.ToGetAssetsAssetCollectionItemComputeGpuDeviceOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAssetsAssetCollectionItemComputeGpuDeviceArrayInput is an input type that accepts GetAssetsAssetCollectionItemComputeGpuDeviceArray and GetAssetsAssetCollectionItemComputeGpuDeviceArrayOutput values.
@@ -9327,12 +8168,6 @@ func (i GetAssetsAssetCollectionItemComputeGpuDeviceArray) ToGetAssetsAssetColle
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetsAssetCollectionItemComputeGpuDeviceArrayOutput)
 }
 
-func (i GetAssetsAssetCollectionItemComputeGpuDeviceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetsAssetCollectionItemComputeGpuDevice] {
-	return pulumix.Output[[]GetAssetsAssetCollectionItemComputeGpuDevice]{
-		OutputState: i.ToGetAssetsAssetCollectionItemComputeGpuDeviceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAssetsAssetCollectionItemComputeGpuDeviceOutput struct{ *pulumi.OutputState }
 
 func (GetAssetsAssetCollectionItemComputeGpuDeviceOutput) ElementType() reflect.Type {
@@ -9347,35 +8182,29 @@ func (o GetAssetsAssetCollectionItemComputeGpuDeviceOutput) ToGetAssetsAssetColl
 	return o
 }
 
-func (o GetAssetsAssetCollectionItemComputeGpuDeviceOutput) ToOutput(ctx context.Context) pulumix.Output[GetAssetsAssetCollectionItemComputeGpuDevice] {
-	return pulumix.Output[GetAssetsAssetCollectionItemComputeGpuDevice]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Number of GPU cores.
-func (o GetAssetsAssetCollectionItemComputeGpuDeviceOutput) CoresCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetAssetsAssetCollectionItemComputeGpuDevice) int { return v.CoresCount }).(pulumi.IntOutput)
+func (o GetAssetsAssetCollectionItemComputeGpuDeviceOutput) CoresCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemComputeGpuDevice) *int { return v.CoresCount }).(pulumi.IntPtrOutput)
 }
 
 // The tag description.
-func (o GetAssetsAssetCollectionItemComputeGpuDeviceOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetsAssetCollectionItemComputeGpuDevice) string { return v.Description }).(pulumi.StringOutput)
+func (o GetAssetsAssetCollectionItemComputeGpuDeviceOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemComputeGpuDevice) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // The manufacturer of GPU.
-func (o GetAssetsAssetCollectionItemComputeGpuDeviceOutput) Manufacturer() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetsAssetCollectionItemComputeGpuDevice) string { return v.Manufacturer }).(pulumi.StringOutput)
+func (o GetAssetsAssetCollectionItemComputeGpuDeviceOutput) Manufacturer() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemComputeGpuDevice) *string { return v.Manufacturer }).(pulumi.StringPtrOutput)
 }
 
 // Memory size in MBs.
-func (o GetAssetsAssetCollectionItemComputeGpuDeviceOutput) MemoryInMbs() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetsAssetCollectionItemComputeGpuDevice) string { return v.MemoryInMbs }).(pulumi.StringOutput)
+func (o GetAssetsAssetCollectionItemComputeGpuDeviceOutput) MemoryInMbs() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemComputeGpuDevice) *string { return v.MemoryInMbs }).(pulumi.StringPtrOutput)
 }
 
 // The tag name.
-func (o GetAssetsAssetCollectionItemComputeGpuDeviceOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetsAssetCollectionItemComputeGpuDevice) string { return v.Name }).(pulumi.StringOutput)
+func (o GetAssetsAssetCollectionItemComputeGpuDeviceOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemComputeGpuDevice) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 type GetAssetsAssetCollectionItemComputeGpuDeviceArrayOutput struct{ *pulumi.OutputState }
@@ -9392,12 +8221,6 @@ func (o GetAssetsAssetCollectionItemComputeGpuDeviceArrayOutput) ToGetAssetsAsse
 	return o
 }
 
-func (o GetAssetsAssetCollectionItemComputeGpuDeviceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetsAssetCollectionItemComputeGpuDevice] {
-	return pulumix.Output[[]GetAssetsAssetCollectionItemComputeGpuDevice]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAssetsAssetCollectionItemComputeGpuDeviceArrayOutput) Index(i pulumi.IntInput) GetAssetsAssetCollectionItemComputeGpuDeviceOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssetsAssetCollectionItemComputeGpuDevice {
 		return vs[0].([]GetAssetsAssetCollectionItemComputeGpuDevice)[vs[1].(int)]
@@ -9408,15 +8231,15 @@ type GetAssetsAssetCollectionItemComputeNic struct {
 	// List of IP addresses.
 	IpAddresses []string `pulumi:"ipAddresses"`
 	// Provides a label and summary information for the device.
-	Label string `pulumi:"label"`
+	Label *string `pulumi:"label"`
 	// Mac address of the VM.
-	MacAddress string `pulumi:"macAddress"`
+	MacAddress *string `pulumi:"macAddress"`
 	// Mac address type.
-	MacAddressType string `pulumi:"macAddressType"`
+	MacAddressType *string `pulumi:"macAddressType"`
 	// Network name.
-	NetworkName string `pulumi:"networkName"`
+	NetworkName *string `pulumi:"networkName"`
 	// Switch name.
-	SwitchName string `pulumi:"switchName"`
+	SwitchName *string `pulumi:"switchName"`
 }
 
 // GetAssetsAssetCollectionItemComputeNicInput is an input type that accepts GetAssetsAssetCollectionItemComputeNicArgs and GetAssetsAssetCollectionItemComputeNicOutput values.
@@ -9434,15 +8257,15 @@ type GetAssetsAssetCollectionItemComputeNicArgs struct {
 	// List of IP addresses.
 	IpAddresses pulumi.StringArrayInput `pulumi:"ipAddresses"`
 	// Provides a label and summary information for the device.
-	Label pulumi.StringInput `pulumi:"label"`
+	Label pulumi.StringPtrInput `pulumi:"label"`
 	// Mac address of the VM.
-	MacAddress pulumi.StringInput `pulumi:"macAddress"`
+	MacAddress pulumi.StringPtrInput `pulumi:"macAddress"`
 	// Mac address type.
-	MacAddressType pulumi.StringInput `pulumi:"macAddressType"`
+	MacAddressType pulumi.StringPtrInput `pulumi:"macAddressType"`
 	// Network name.
-	NetworkName pulumi.StringInput `pulumi:"networkName"`
+	NetworkName pulumi.StringPtrInput `pulumi:"networkName"`
 	// Switch name.
-	SwitchName pulumi.StringInput `pulumi:"switchName"`
+	SwitchName pulumi.StringPtrInput `pulumi:"switchName"`
 }
 
 func (GetAssetsAssetCollectionItemComputeNicArgs) ElementType() reflect.Type {
@@ -9455,12 +8278,6 @@ func (i GetAssetsAssetCollectionItemComputeNicArgs) ToGetAssetsAssetCollectionIt
 
 func (i GetAssetsAssetCollectionItemComputeNicArgs) ToGetAssetsAssetCollectionItemComputeNicOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemComputeNicOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetsAssetCollectionItemComputeNicOutput)
-}
-
-func (i GetAssetsAssetCollectionItemComputeNicArgs) ToOutput(ctx context.Context) pulumix.Output[GetAssetsAssetCollectionItemComputeNic] {
-	return pulumix.Output[GetAssetsAssetCollectionItemComputeNic]{
-		OutputState: i.ToGetAssetsAssetCollectionItemComputeNicOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAssetsAssetCollectionItemComputeNicArrayInput is an input type that accepts GetAssetsAssetCollectionItemComputeNicArray and GetAssetsAssetCollectionItemComputeNicArrayOutput values.
@@ -9488,12 +8305,6 @@ func (i GetAssetsAssetCollectionItemComputeNicArray) ToGetAssetsAssetCollectionI
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetsAssetCollectionItemComputeNicArrayOutput)
 }
 
-func (i GetAssetsAssetCollectionItemComputeNicArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetsAssetCollectionItemComputeNic] {
-	return pulumix.Output[[]GetAssetsAssetCollectionItemComputeNic]{
-		OutputState: i.ToGetAssetsAssetCollectionItemComputeNicArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAssetsAssetCollectionItemComputeNicOutput struct{ *pulumi.OutputState }
 
 func (GetAssetsAssetCollectionItemComputeNicOutput) ElementType() reflect.Type {
@@ -9508,40 +8319,34 @@ func (o GetAssetsAssetCollectionItemComputeNicOutput) ToGetAssetsAssetCollection
 	return o
 }
 
-func (o GetAssetsAssetCollectionItemComputeNicOutput) ToOutput(ctx context.Context) pulumix.Output[GetAssetsAssetCollectionItemComputeNic] {
-	return pulumix.Output[GetAssetsAssetCollectionItemComputeNic]{
-		OutputState: o.OutputState,
-	}
-}
-
 // List of IP addresses.
 func (o GetAssetsAssetCollectionItemComputeNicOutput) IpAddresses() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetAssetsAssetCollectionItemComputeNic) []string { return v.IpAddresses }).(pulumi.StringArrayOutput)
 }
 
 // Provides a label and summary information for the device.
-func (o GetAssetsAssetCollectionItemComputeNicOutput) Label() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetsAssetCollectionItemComputeNic) string { return v.Label }).(pulumi.StringOutput)
+func (o GetAssetsAssetCollectionItemComputeNicOutput) Label() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemComputeNic) *string { return v.Label }).(pulumi.StringPtrOutput)
 }
 
 // Mac address of the VM.
-func (o GetAssetsAssetCollectionItemComputeNicOutput) MacAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetsAssetCollectionItemComputeNic) string { return v.MacAddress }).(pulumi.StringOutput)
+func (o GetAssetsAssetCollectionItemComputeNicOutput) MacAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemComputeNic) *string { return v.MacAddress }).(pulumi.StringPtrOutput)
 }
 
 // Mac address type.
-func (o GetAssetsAssetCollectionItemComputeNicOutput) MacAddressType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetsAssetCollectionItemComputeNic) string { return v.MacAddressType }).(pulumi.StringOutput)
+func (o GetAssetsAssetCollectionItemComputeNicOutput) MacAddressType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemComputeNic) *string { return v.MacAddressType }).(pulumi.StringPtrOutput)
 }
 
 // Network name.
-func (o GetAssetsAssetCollectionItemComputeNicOutput) NetworkName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetsAssetCollectionItemComputeNic) string { return v.NetworkName }).(pulumi.StringOutput)
+func (o GetAssetsAssetCollectionItemComputeNicOutput) NetworkName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemComputeNic) *string { return v.NetworkName }).(pulumi.StringPtrOutput)
 }
 
 // Switch name.
-func (o GetAssetsAssetCollectionItemComputeNicOutput) SwitchName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetsAssetCollectionItemComputeNic) string { return v.SwitchName }).(pulumi.StringOutput)
+func (o GetAssetsAssetCollectionItemComputeNicOutput) SwitchName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemComputeNic) *string { return v.SwitchName }).(pulumi.StringPtrOutput)
 }
 
 type GetAssetsAssetCollectionItemComputeNicArrayOutput struct{ *pulumi.OutputState }
@@ -9558,12 +8363,6 @@ func (o GetAssetsAssetCollectionItemComputeNicArrayOutput) ToGetAssetsAssetColle
 	return o
 }
 
-func (o GetAssetsAssetCollectionItemComputeNicArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetsAssetCollectionItemComputeNic] {
-	return pulumix.Output[[]GetAssetsAssetCollectionItemComputeNic]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAssetsAssetCollectionItemComputeNicArrayOutput) Index(i pulumi.IntInput) GetAssetsAssetCollectionItemComputeNicOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssetsAssetCollectionItemComputeNic {
 		return vs[0].([]GetAssetsAssetCollectionItemComputeNic)[vs[1].(int)]
@@ -9572,11 +8371,11 @@ func (o GetAssetsAssetCollectionItemComputeNicArrayOutput) Index(i pulumi.IntInp
 
 type GetAssetsAssetCollectionItemComputeNvdimm struct {
 	// Controller key.
-	ControllerKey int `pulumi:"controllerKey"`
+	ControllerKey *int `pulumi:"controllerKey"`
 	// Provides a label and summary information for the device.
-	Label string `pulumi:"label"`
+	Label *string `pulumi:"label"`
 	// The unit number of the SCSI controller.
-	UnitNumber int `pulumi:"unitNumber"`
+	UnitNumber *int `pulumi:"unitNumber"`
 }
 
 // GetAssetsAssetCollectionItemComputeNvdimmInput is an input type that accepts GetAssetsAssetCollectionItemComputeNvdimmArgs and GetAssetsAssetCollectionItemComputeNvdimmOutput values.
@@ -9592,11 +8391,11 @@ type GetAssetsAssetCollectionItemComputeNvdimmInput interface {
 
 type GetAssetsAssetCollectionItemComputeNvdimmArgs struct {
 	// Controller key.
-	ControllerKey pulumi.IntInput `pulumi:"controllerKey"`
+	ControllerKey pulumi.IntPtrInput `pulumi:"controllerKey"`
 	// Provides a label and summary information for the device.
-	Label pulumi.StringInput `pulumi:"label"`
+	Label pulumi.StringPtrInput `pulumi:"label"`
 	// The unit number of the SCSI controller.
-	UnitNumber pulumi.IntInput `pulumi:"unitNumber"`
+	UnitNumber pulumi.IntPtrInput `pulumi:"unitNumber"`
 }
 
 func (GetAssetsAssetCollectionItemComputeNvdimmArgs) ElementType() reflect.Type {
@@ -9609,12 +8408,6 @@ func (i GetAssetsAssetCollectionItemComputeNvdimmArgs) ToGetAssetsAssetCollectio
 
 func (i GetAssetsAssetCollectionItemComputeNvdimmArgs) ToGetAssetsAssetCollectionItemComputeNvdimmOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemComputeNvdimmOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetsAssetCollectionItemComputeNvdimmOutput)
-}
-
-func (i GetAssetsAssetCollectionItemComputeNvdimmArgs) ToOutput(ctx context.Context) pulumix.Output[GetAssetsAssetCollectionItemComputeNvdimm] {
-	return pulumix.Output[GetAssetsAssetCollectionItemComputeNvdimm]{
-		OutputState: i.ToGetAssetsAssetCollectionItemComputeNvdimmOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAssetsAssetCollectionItemComputeNvdimmArrayInput is an input type that accepts GetAssetsAssetCollectionItemComputeNvdimmArray and GetAssetsAssetCollectionItemComputeNvdimmArrayOutput values.
@@ -9642,12 +8435,6 @@ func (i GetAssetsAssetCollectionItemComputeNvdimmArray) ToGetAssetsAssetCollecti
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetsAssetCollectionItemComputeNvdimmArrayOutput)
 }
 
-func (i GetAssetsAssetCollectionItemComputeNvdimmArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetsAssetCollectionItemComputeNvdimm] {
-	return pulumix.Output[[]GetAssetsAssetCollectionItemComputeNvdimm]{
-		OutputState: i.ToGetAssetsAssetCollectionItemComputeNvdimmArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAssetsAssetCollectionItemComputeNvdimmOutput struct{ *pulumi.OutputState }
 
 func (GetAssetsAssetCollectionItemComputeNvdimmOutput) ElementType() reflect.Type {
@@ -9662,25 +8449,19 @@ func (o GetAssetsAssetCollectionItemComputeNvdimmOutput) ToGetAssetsAssetCollect
 	return o
 }
 
-func (o GetAssetsAssetCollectionItemComputeNvdimmOutput) ToOutput(ctx context.Context) pulumix.Output[GetAssetsAssetCollectionItemComputeNvdimm] {
-	return pulumix.Output[GetAssetsAssetCollectionItemComputeNvdimm]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Controller key.
-func (o GetAssetsAssetCollectionItemComputeNvdimmOutput) ControllerKey() pulumi.IntOutput {
-	return o.ApplyT(func(v GetAssetsAssetCollectionItemComputeNvdimm) int { return v.ControllerKey }).(pulumi.IntOutput)
+func (o GetAssetsAssetCollectionItemComputeNvdimmOutput) ControllerKey() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemComputeNvdimm) *int { return v.ControllerKey }).(pulumi.IntPtrOutput)
 }
 
 // Provides a label and summary information for the device.
-func (o GetAssetsAssetCollectionItemComputeNvdimmOutput) Label() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetsAssetCollectionItemComputeNvdimm) string { return v.Label }).(pulumi.StringOutput)
+func (o GetAssetsAssetCollectionItemComputeNvdimmOutput) Label() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemComputeNvdimm) *string { return v.Label }).(pulumi.StringPtrOutput)
 }
 
 // The unit number of the SCSI controller.
-func (o GetAssetsAssetCollectionItemComputeNvdimmOutput) UnitNumber() pulumi.IntOutput {
-	return o.ApplyT(func(v GetAssetsAssetCollectionItemComputeNvdimm) int { return v.UnitNumber }).(pulumi.IntOutput)
+func (o GetAssetsAssetCollectionItemComputeNvdimmOutput) UnitNumber() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemComputeNvdimm) *int { return v.UnitNumber }).(pulumi.IntPtrOutput)
 }
 
 type GetAssetsAssetCollectionItemComputeNvdimmArrayOutput struct{ *pulumi.OutputState }
@@ -9697,12 +8478,6 @@ func (o GetAssetsAssetCollectionItemComputeNvdimmArrayOutput) ToGetAssetsAssetCo
 	return o
 }
 
-func (o GetAssetsAssetCollectionItemComputeNvdimmArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetsAssetCollectionItemComputeNvdimm] {
-	return pulumix.Output[[]GetAssetsAssetCollectionItemComputeNvdimm]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAssetsAssetCollectionItemComputeNvdimmArrayOutput) Index(i pulumi.IntInput) GetAssetsAssetCollectionItemComputeNvdimmOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssetsAssetCollectionItemComputeNvdimm {
 		return vs[0].([]GetAssetsAssetCollectionItemComputeNvdimm)[vs[1].(int)]
@@ -9711,9 +8486,9 @@ func (o GetAssetsAssetCollectionItemComputeNvdimmArrayOutput) Index(i pulumi.Int
 
 type GetAssetsAssetCollectionItemComputeNvdimmController struct {
 	// Bus number.
-	BusNumber int `pulumi:"busNumber"`
+	BusNumber *int `pulumi:"busNumber"`
 	// Provides a label and summary information for the device.
-	Label string `pulumi:"label"`
+	Label *string `pulumi:"label"`
 }
 
 // GetAssetsAssetCollectionItemComputeNvdimmControllerInput is an input type that accepts GetAssetsAssetCollectionItemComputeNvdimmControllerArgs and GetAssetsAssetCollectionItemComputeNvdimmControllerOutput values.
@@ -9729,9 +8504,9 @@ type GetAssetsAssetCollectionItemComputeNvdimmControllerInput interface {
 
 type GetAssetsAssetCollectionItemComputeNvdimmControllerArgs struct {
 	// Bus number.
-	BusNumber pulumi.IntInput `pulumi:"busNumber"`
+	BusNumber pulumi.IntPtrInput `pulumi:"busNumber"`
 	// Provides a label and summary information for the device.
-	Label pulumi.StringInput `pulumi:"label"`
+	Label pulumi.StringPtrInput `pulumi:"label"`
 }
 
 func (GetAssetsAssetCollectionItemComputeNvdimmControllerArgs) ElementType() reflect.Type {
@@ -9744,12 +8519,6 @@ func (i GetAssetsAssetCollectionItemComputeNvdimmControllerArgs) ToGetAssetsAsse
 
 func (i GetAssetsAssetCollectionItemComputeNvdimmControllerArgs) ToGetAssetsAssetCollectionItemComputeNvdimmControllerOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemComputeNvdimmControllerOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetsAssetCollectionItemComputeNvdimmControllerOutput)
-}
-
-func (i GetAssetsAssetCollectionItemComputeNvdimmControllerArgs) ToOutput(ctx context.Context) pulumix.Output[GetAssetsAssetCollectionItemComputeNvdimmController] {
-	return pulumix.Output[GetAssetsAssetCollectionItemComputeNvdimmController]{
-		OutputState: i.ToGetAssetsAssetCollectionItemComputeNvdimmControllerOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAssetsAssetCollectionItemComputeNvdimmControllerArrayInput is an input type that accepts GetAssetsAssetCollectionItemComputeNvdimmControllerArray and GetAssetsAssetCollectionItemComputeNvdimmControllerArrayOutput values.
@@ -9777,12 +8546,6 @@ func (i GetAssetsAssetCollectionItemComputeNvdimmControllerArray) ToGetAssetsAss
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetsAssetCollectionItemComputeNvdimmControllerArrayOutput)
 }
 
-func (i GetAssetsAssetCollectionItemComputeNvdimmControllerArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetsAssetCollectionItemComputeNvdimmController] {
-	return pulumix.Output[[]GetAssetsAssetCollectionItemComputeNvdimmController]{
-		OutputState: i.ToGetAssetsAssetCollectionItemComputeNvdimmControllerArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAssetsAssetCollectionItemComputeNvdimmControllerOutput struct{ *pulumi.OutputState }
 
 func (GetAssetsAssetCollectionItemComputeNvdimmControllerOutput) ElementType() reflect.Type {
@@ -9797,20 +8560,14 @@ func (o GetAssetsAssetCollectionItemComputeNvdimmControllerOutput) ToGetAssetsAs
 	return o
 }
 
-func (o GetAssetsAssetCollectionItemComputeNvdimmControllerOutput) ToOutput(ctx context.Context) pulumix.Output[GetAssetsAssetCollectionItemComputeNvdimmController] {
-	return pulumix.Output[GetAssetsAssetCollectionItemComputeNvdimmController]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Bus number.
-func (o GetAssetsAssetCollectionItemComputeNvdimmControllerOutput) BusNumber() pulumi.IntOutput {
-	return o.ApplyT(func(v GetAssetsAssetCollectionItemComputeNvdimmController) int { return v.BusNumber }).(pulumi.IntOutput)
+func (o GetAssetsAssetCollectionItemComputeNvdimmControllerOutput) BusNumber() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemComputeNvdimmController) *int { return v.BusNumber }).(pulumi.IntPtrOutput)
 }
 
 // Provides a label and summary information for the device.
-func (o GetAssetsAssetCollectionItemComputeNvdimmControllerOutput) Label() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetsAssetCollectionItemComputeNvdimmController) string { return v.Label }).(pulumi.StringOutput)
+func (o GetAssetsAssetCollectionItemComputeNvdimmControllerOutput) Label() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemComputeNvdimmController) *string { return v.Label }).(pulumi.StringPtrOutput)
 }
 
 type GetAssetsAssetCollectionItemComputeNvdimmControllerArrayOutput struct{ *pulumi.OutputState }
@@ -9827,12 +8584,6 @@ func (o GetAssetsAssetCollectionItemComputeNvdimmControllerArrayOutput) ToGetAss
 	return o
 }
 
-func (o GetAssetsAssetCollectionItemComputeNvdimmControllerArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetsAssetCollectionItemComputeNvdimmController] {
-	return pulumix.Output[[]GetAssetsAssetCollectionItemComputeNvdimmController]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAssetsAssetCollectionItemComputeNvdimmControllerArrayOutput) Index(i pulumi.IntInput) GetAssetsAssetCollectionItemComputeNvdimmControllerOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssetsAssetCollectionItemComputeNvdimmController {
 		return vs[0].([]GetAssetsAssetCollectionItemComputeNvdimmController)[vs[1].(int)]
@@ -9841,11 +8592,11 @@ func (o GetAssetsAssetCollectionItemComputeNvdimmControllerArrayOutput) Index(i 
 
 type GetAssetsAssetCollectionItemComputeScsiController struct {
 	// Provides a label and summary information for the device.
-	Label string `pulumi:"label"`
+	Label *string `pulumi:"label"`
 	// Shared bus.
-	SharedBus string `pulumi:"sharedBus"`
+	SharedBus *string `pulumi:"sharedBus"`
 	// The unit number of the SCSI controller.
-	UnitNumber int `pulumi:"unitNumber"`
+	UnitNumber *int `pulumi:"unitNumber"`
 }
 
 // GetAssetsAssetCollectionItemComputeScsiControllerInput is an input type that accepts GetAssetsAssetCollectionItemComputeScsiControllerArgs and GetAssetsAssetCollectionItemComputeScsiControllerOutput values.
@@ -9861,11 +8612,11 @@ type GetAssetsAssetCollectionItemComputeScsiControllerInput interface {
 
 type GetAssetsAssetCollectionItemComputeScsiControllerArgs struct {
 	// Provides a label and summary information for the device.
-	Label pulumi.StringInput `pulumi:"label"`
+	Label pulumi.StringPtrInput `pulumi:"label"`
 	// Shared bus.
-	SharedBus pulumi.StringInput `pulumi:"sharedBus"`
+	SharedBus pulumi.StringPtrInput `pulumi:"sharedBus"`
 	// The unit number of the SCSI controller.
-	UnitNumber pulumi.IntInput `pulumi:"unitNumber"`
+	UnitNumber pulumi.IntPtrInput `pulumi:"unitNumber"`
 }
 
 func (GetAssetsAssetCollectionItemComputeScsiControllerArgs) ElementType() reflect.Type {
@@ -9878,12 +8629,6 @@ func (i GetAssetsAssetCollectionItemComputeScsiControllerArgs) ToGetAssetsAssetC
 
 func (i GetAssetsAssetCollectionItemComputeScsiControllerArgs) ToGetAssetsAssetCollectionItemComputeScsiControllerOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemComputeScsiControllerOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetsAssetCollectionItemComputeScsiControllerOutput)
-}
-
-func (i GetAssetsAssetCollectionItemComputeScsiControllerArgs) ToOutput(ctx context.Context) pulumix.Output[GetAssetsAssetCollectionItemComputeScsiController] {
-	return pulumix.Output[GetAssetsAssetCollectionItemComputeScsiController]{
-		OutputState: i.ToGetAssetsAssetCollectionItemComputeScsiControllerOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAssetsAssetCollectionItemComputeScsiControllerArrayInput is an input type that accepts GetAssetsAssetCollectionItemComputeScsiControllerArray and GetAssetsAssetCollectionItemComputeScsiControllerArrayOutput values.
@@ -9911,12 +8656,6 @@ func (i GetAssetsAssetCollectionItemComputeScsiControllerArray) ToGetAssetsAsset
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetsAssetCollectionItemComputeScsiControllerArrayOutput)
 }
 
-func (i GetAssetsAssetCollectionItemComputeScsiControllerArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetsAssetCollectionItemComputeScsiController] {
-	return pulumix.Output[[]GetAssetsAssetCollectionItemComputeScsiController]{
-		OutputState: i.ToGetAssetsAssetCollectionItemComputeScsiControllerArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAssetsAssetCollectionItemComputeScsiControllerOutput struct{ *pulumi.OutputState }
 
 func (GetAssetsAssetCollectionItemComputeScsiControllerOutput) ElementType() reflect.Type {
@@ -9931,25 +8670,19 @@ func (o GetAssetsAssetCollectionItemComputeScsiControllerOutput) ToGetAssetsAsse
 	return o
 }
 
-func (o GetAssetsAssetCollectionItemComputeScsiControllerOutput) ToOutput(ctx context.Context) pulumix.Output[GetAssetsAssetCollectionItemComputeScsiController] {
-	return pulumix.Output[GetAssetsAssetCollectionItemComputeScsiController]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Provides a label and summary information for the device.
-func (o GetAssetsAssetCollectionItemComputeScsiControllerOutput) Label() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetsAssetCollectionItemComputeScsiController) string { return v.Label }).(pulumi.StringOutput)
+func (o GetAssetsAssetCollectionItemComputeScsiControllerOutput) Label() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemComputeScsiController) *string { return v.Label }).(pulumi.StringPtrOutput)
 }
 
 // Shared bus.
-func (o GetAssetsAssetCollectionItemComputeScsiControllerOutput) SharedBus() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetsAssetCollectionItemComputeScsiController) string { return v.SharedBus }).(pulumi.StringOutput)
+func (o GetAssetsAssetCollectionItemComputeScsiControllerOutput) SharedBus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemComputeScsiController) *string { return v.SharedBus }).(pulumi.StringPtrOutput)
 }
 
 // The unit number of the SCSI controller.
-func (o GetAssetsAssetCollectionItemComputeScsiControllerOutput) UnitNumber() pulumi.IntOutput {
-	return o.ApplyT(func(v GetAssetsAssetCollectionItemComputeScsiController) int { return v.UnitNumber }).(pulumi.IntOutput)
+func (o GetAssetsAssetCollectionItemComputeScsiControllerOutput) UnitNumber() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemComputeScsiController) *int { return v.UnitNumber }).(pulumi.IntPtrOutput)
 }
 
 type GetAssetsAssetCollectionItemComputeScsiControllerArrayOutput struct{ *pulumi.OutputState }
@@ -9966,12 +8699,6 @@ func (o GetAssetsAssetCollectionItemComputeScsiControllerArrayOutput) ToGetAsset
 	return o
 }
 
-func (o GetAssetsAssetCollectionItemComputeScsiControllerArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetsAssetCollectionItemComputeScsiController] {
-	return pulumix.Output[[]GetAssetsAssetCollectionItemComputeScsiController]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAssetsAssetCollectionItemComputeScsiControllerArrayOutput) Index(i pulumi.IntInput) GetAssetsAssetCollectionItemComputeScsiControllerOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssetsAssetCollectionItemComputeScsiController {
 		return vs[0].([]GetAssetsAssetCollectionItemComputeScsiController)[vs[1].(int)]
@@ -9980,11 +8707,11 @@ func (o GetAssetsAssetCollectionItemComputeScsiControllerArrayOutput) Index(i pu
 
 type GetAssetsAssetCollectionItemVm struct {
 	// Host name/IP address of VM on which the host is running.
-	HypervisorHost string `pulumi:"hypervisorHost"`
+	HypervisorHost *string `pulumi:"hypervisorHost"`
 	// Hypervisor vendor.
-	HypervisorVendor string `pulumi:"hypervisorVendor"`
+	HypervisorVendor *string `pulumi:"hypervisorVendor"`
 	// Hypervisor version.
-	HypervisorVersion string `pulumi:"hypervisorVersion"`
+	HypervisorVersion *string `pulumi:"hypervisorVersion"`
 }
 
 // GetAssetsAssetCollectionItemVmInput is an input type that accepts GetAssetsAssetCollectionItemVmArgs and GetAssetsAssetCollectionItemVmOutput values.
@@ -10000,11 +8727,11 @@ type GetAssetsAssetCollectionItemVmInput interface {
 
 type GetAssetsAssetCollectionItemVmArgs struct {
 	// Host name/IP address of VM on which the host is running.
-	HypervisorHost pulumi.StringInput `pulumi:"hypervisorHost"`
+	HypervisorHost pulumi.StringPtrInput `pulumi:"hypervisorHost"`
 	// Hypervisor vendor.
-	HypervisorVendor pulumi.StringInput `pulumi:"hypervisorVendor"`
+	HypervisorVendor pulumi.StringPtrInput `pulumi:"hypervisorVendor"`
 	// Hypervisor version.
-	HypervisorVersion pulumi.StringInput `pulumi:"hypervisorVersion"`
+	HypervisorVersion pulumi.StringPtrInput `pulumi:"hypervisorVersion"`
 }
 
 func (GetAssetsAssetCollectionItemVmArgs) ElementType() reflect.Type {
@@ -10017,12 +8744,6 @@ func (i GetAssetsAssetCollectionItemVmArgs) ToGetAssetsAssetCollectionItemVmOutp
 
 func (i GetAssetsAssetCollectionItemVmArgs) ToGetAssetsAssetCollectionItemVmOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemVmOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetsAssetCollectionItemVmOutput)
-}
-
-func (i GetAssetsAssetCollectionItemVmArgs) ToOutput(ctx context.Context) pulumix.Output[GetAssetsAssetCollectionItemVm] {
-	return pulumix.Output[GetAssetsAssetCollectionItemVm]{
-		OutputState: i.ToGetAssetsAssetCollectionItemVmOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAssetsAssetCollectionItemVmArrayInput is an input type that accepts GetAssetsAssetCollectionItemVmArray and GetAssetsAssetCollectionItemVmArrayOutput values.
@@ -10050,12 +8771,6 @@ func (i GetAssetsAssetCollectionItemVmArray) ToGetAssetsAssetCollectionItemVmArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetsAssetCollectionItemVmArrayOutput)
 }
 
-func (i GetAssetsAssetCollectionItemVmArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetsAssetCollectionItemVm] {
-	return pulumix.Output[[]GetAssetsAssetCollectionItemVm]{
-		OutputState: i.ToGetAssetsAssetCollectionItemVmArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAssetsAssetCollectionItemVmOutput struct{ *pulumi.OutputState }
 
 func (GetAssetsAssetCollectionItemVmOutput) ElementType() reflect.Type {
@@ -10070,25 +8785,19 @@ func (o GetAssetsAssetCollectionItemVmOutput) ToGetAssetsAssetCollectionItemVmOu
 	return o
 }
 
-func (o GetAssetsAssetCollectionItemVmOutput) ToOutput(ctx context.Context) pulumix.Output[GetAssetsAssetCollectionItemVm] {
-	return pulumix.Output[GetAssetsAssetCollectionItemVm]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Host name/IP address of VM on which the host is running.
-func (o GetAssetsAssetCollectionItemVmOutput) HypervisorHost() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetsAssetCollectionItemVm) string { return v.HypervisorHost }).(pulumi.StringOutput)
+func (o GetAssetsAssetCollectionItemVmOutput) HypervisorHost() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemVm) *string { return v.HypervisorHost }).(pulumi.StringPtrOutput)
 }
 
 // Hypervisor vendor.
-func (o GetAssetsAssetCollectionItemVmOutput) HypervisorVendor() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetsAssetCollectionItemVm) string { return v.HypervisorVendor }).(pulumi.StringOutput)
+func (o GetAssetsAssetCollectionItemVmOutput) HypervisorVendor() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemVm) *string { return v.HypervisorVendor }).(pulumi.StringPtrOutput)
 }
 
 // Hypervisor version.
-func (o GetAssetsAssetCollectionItemVmOutput) HypervisorVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetsAssetCollectionItemVm) string { return v.HypervisorVersion }).(pulumi.StringOutput)
+func (o GetAssetsAssetCollectionItemVmOutput) HypervisorVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemVm) *string { return v.HypervisorVersion }).(pulumi.StringPtrOutput)
 }
 
 type GetAssetsAssetCollectionItemVmArrayOutput struct{ *pulumi.OutputState }
@@ -10105,12 +8814,6 @@ func (o GetAssetsAssetCollectionItemVmArrayOutput) ToGetAssetsAssetCollectionIte
 	return o
 }
 
-func (o GetAssetsAssetCollectionItemVmArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetsAssetCollectionItemVm] {
-	return pulumix.Output[[]GetAssetsAssetCollectionItemVm]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAssetsAssetCollectionItemVmArrayOutput) Index(i pulumi.IntInput) GetAssetsAssetCollectionItemVmOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssetsAssetCollectionItemVm {
 		return vs[0].([]GetAssetsAssetCollectionItemVm)[vs[1].(int)]
@@ -10119,11 +8822,11 @@ func (o GetAssetsAssetCollectionItemVmArrayOutput) Index(i pulumi.IntInput) GetA
 
 type GetAssetsAssetCollectionItemVmwareVcenter struct {
 	// Data center name.
-	DataCenter string `pulumi:"dataCenter"`
+	DataCenter *string `pulumi:"dataCenter"`
 	// vCenter unique key.
-	VcenterKey string `pulumi:"vcenterKey"`
+	VcenterKey *string `pulumi:"vcenterKey"`
 	// Dot-separated version string.
-	VcenterVersion string `pulumi:"vcenterVersion"`
+	VcenterVersion *string `pulumi:"vcenterVersion"`
 }
 
 // GetAssetsAssetCollectionItemVmwareVcenterInput is an input type that accepts GetAssetsAssetCollectionItemVmwareVcenterArgs and GetAssetsAssetCollectionItemVmwareVcenterOutput values.
@@ -10139,11 +8842,11 @@ type GetAssetsAssetCollectionItemVmwareVcenterInput interface {
 
 type GetAssetsAssetCollectionItemVmwareVcenterArgs struct {
 	// Data center name.
-	DataCenter pulumi.StringInput `pulumi:"dataCenter"`
+	DataCenter pulumi.StringPtrInput `pulumi:"dataCenter"`
 	// vCenter unique key.
-	VcenterKey pulumi.StringInput `pulumi:"vcenterKey"`
+	VcenterKey pulumi.StringPtrInput `pulumi:"vcenterKey"`
 	// Dot-separated version string.
-	VcenterVersion pulumi.StringInput `pulumi:"vcenterVersion"`
+	VcenterVersion pulumi.StringPtrInput `pulumi:"vcenterVersion"`
 }
 
 func (GetAssetsAssetCollectionItemVmwareVcenterArgs) ElementType() reflect.Type {
@@ -10156,12 +8859,6 @@ func (i GetAssetsAssetCollectionItemVmwareVcenterArgs) ToGetAssetsAssetCollectio
 
 func (i GetAssetsAssetCollectionItemVmwareVcenterArgs) ToGetAssetsAssetCollectionItemVmwareVcenterOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemVmwareVcenterOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetsAssetCollectionItemVmwareVcenterOutput)
-}
-
-func (i GetAssetsAssetCollectionItemVmwareVcenterArgs) ToOutput(ctx context.Context) pulumix.Output[GetAssetsAssetCollectionItemVmwareVcenter] {
-	return pulumix.Output[GetAssetsAssetCollectionItemVmwareVcenter]{
-		OutputState: i.ToGetAssetsAssetCollectionItemVmwareVcenterOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAssetsAssetCollectionItemVmwareVcenterArrayInput is an input type that accepts GetAssetsAssetCollectionItemVmwareVcenterArray and GetAssetsAssetCollectionItemVmwareVcenterArrayOutput values.
@@ -10189,12 +8886,6 @@ func (i GetAssetsAssetCollectionItemVmwareVcenterArray) ToGetAssetsAssetCollecti
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetsAssetCollectionItemVmwareVcenterArrayOutput)
 }
 
-func (i GetAssetsAssetCollectionItemVmwareVcenterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetsAssetCollectionItemVmwareVcenter] {
-	return pulumix.Output[[]GetAssetsAssetCollectionItemVmwareVcenter]{
-		OutputState: i.ToGetAssetsAssetCollectionItemVmwareVcenterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAssetsAssetCollectionItemVmwareVcenterOutput struct{ *pulumi.OutputState }
 
 func (GetAssetsAssetCollectionItemVmwareVcenterOutput) ElementType() reflect.Type {
@@ -10209,25 +8900,19 @@ func (o GetAssetsAssetCollectionItemVmwareVcenterOutput) ToGetAssetsAssetCollect
 	return o
 }
 
-func (o GetAssetsAssetCollectionItemVmwareVcenterOutput) ToOutput(ctx context.Context) pulumix.Output[GetAssetsAssetCollectionItemVmwareVcenter] {
-	return pulumix.Output[GetAssetsAssetCollectionItemVmwareVcenter]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Data center name.
-func (o GetAssetsAssetCollectionItemVmwareVcenterOutput) DataCenter() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetsAssetCollectionItemVmwareVcenter) string { return v.DataCenter }).(pulumi.StringOutput)
+func (o GetAssetsAssetCollectionItemVmwareVcenterOutput) DataCenter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemVmwareVcenter) *string { return v.DataCenter }).(pulumi.StringPtrOutput)
 }
 
 // vCenter unique key.
-func (o GetAssetsAssetCollectionItemVmwareVcenterOutput) VcenterKey() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetsAssetCollectionItemVmwareVcenter) string { return v.VcenterKey }).(pulumi.StringOutput)
+func (o GetAssetsAssetCollectionItemVmwareVcenterOutput) VcenterKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemVmwareVcenter) *string { return v.VcenterKey }).(pulumi.StringPtrOutput)
 }
 
 // Dot-separated version string.
-func (o GetAssetsAssetCollectionItemVmwareVcenterOutput) VcenterVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetsAssetCollectionItemVmwareVcenter) string { return v.VcenterVersion }).(pulumi.StringOutput)
+func (o GetAssetsAssetCollectionItemVmwareVcenterOutput) VcenterVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemVmwareVcenter) *string { return v.VcenterVersion }).(pulumi.StringPtrOutput)
 }
 
 type GetAssetsAssetCollectionItemVmwareVcenterArrayOutput struct{ *pulumi.OutputState }
@@ -10244,12 +8929,6 @@ func (o GetAssetsAssetCollectionItemVmwareVcenterArrayOutput) ToGetAssetsAssetCo
 	return o
 }
 
-func (o GetAssetsAssetCollectionItemVmwareVcenterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetsAssetCollectionItemVmwareVcenter] {
-	return pulumix.Output[[]GetAssetsAssetCollectionItemVmwareVcenter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAssetsAssetCollectionItemVmwareVcenterArrayOutput) Index(i pulumi.IntInput) GetAssetsAssetCollectionItemVmwareVcenterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssetsAssetCollectionItemVmwareVcenter {
 		return vs[0].([]GetAssetsAssetCollectionItemVmwareVcenter)[vs[1].(int)]
@@ -10258,27 +8937,27 @@ func (o GetAssetsAssetCollectionItemVmwareVcenterArrayOutput) Index(i pulumi.Int
 
 type GetAssetsAssetCollectionItemVmwareVm struct {
 	// Cluster name.
-	Cluster string `pulumi:"cluster"`
+	Cluster *string `pulumi:"cluster"`
 	// Customer fields.
 	CustomerFields []string `pulumi:"customerFields"`
 	// Customer defined tags.
 	CustomerTags []GetAssetsAssetCollectionItemVmwareVmCustomerTag `pulumi:"customerTags"`
 	// Fault tolerance bandwidth.
-	FaultToleranceBandwidth int `pulumi:"faultToleranceBandwidth"`
+	FaultToleranceBandwidth *int `pulumi:"faultToleranceBandwidth"`
 	// Fault tolerance to secondary latency.
-	FaultToleranceSecondaryLatency int `pulumi:"faultToleranceSecondaryLatency"`
+	FaultToleranceSecondaryLatency *int `pulumi:"faultToleranceSecondaryLatency"`
 	// Fault tolerance state.
-	FaultToleranceState string `pulumi:"faultToleranceState"`
+	FaultToleranceState *string `pulumi:"faultToleranceState"`
 	// vCenter-specific identifier of the virtual machine.
-	InstanceUuid string `pulumi:"instanceUuid"`
+	InstanceUuid *string `pulumi:"instanceUuid"`
 	// Indicates that change tracking is supported for virtual disks of this virtual machine. However, even if change tracking is supported, it might not be available for all disks of the virtual machine.
-	IsDisksCbtEnabled bool `pulumi:"isDisksCbtEnabled"`
+	IsDisksCbtEnabled *bool `pulumi:"isDisksCbtEnabled"`
 	// Whether changed block tracking for this VM's disk is active.
-	IsDisksUuidEnabled bool `pulumi:"isDisksUuidEnabled"`
+	IsDisksUuidEnabled *bool `pulumi:"isDisksUuidEnabled"`
 	// Path directory of the asset.
-	Path string `pulumi:"path"`
+	Path *string `pulumi:"path"`
 	// VMware tools status.
-	VmwareToolsStatus string `pulumi:"vmwareToolsStatus"`
+	VmwareToolsStatus *string `pulumi:"vmwareToolsStatus"`
 }
 
 // GetAssetsAssetCollectionItemVmwareVmInput is an input type that accepts GetAssetsAssetCollectionItemVmwareVmArgs and GetAssetsAssetCollectionItemVmwareVmOutput values.
@@ -10294,27 +8973,27 @@ type GetAssetsAssetCollectionItemVmwareVmInput interface {
 
 type GetAssetsAssetCollectionItemVmwareVmArgs struct {
 	// Cluster name.
-	Cluster pulumi.StringInput `pulumi:"cluster"`
+	Cluster pulumi.StringPtrInput `pulumi:"cluster"`
 	// Customer fields.
 	CustomerFields pulumi.StringArrayInput `pulumi:"customerFields"`
 	// Customer defined tags.
 	CustomerTags GetAssetsAssetCollectionItemVmwareVmCustomerTagArrayInput `pulumi:"customerTags"`
 	// Fault tolerance bandwidth.
-	FaultToleranceBandwidth pulumi.IntInput `pulumi:"faultToleranceBandwidth"`
+	FaultToleranceBandwidth pulumi.IntPtrInput `pulumi:"faultToleranceBandwidth"`
 	// Fault tolerance to secondary latency.
-	FaultToleranceSecondaryLatency pulumi.IntInput `pulumi:"faultToleranceSecondaryLatency"`
+	FaultToleranceSecondaryLatency pulumi.IntPtrInput `pulumi:"faultToleranceSecondaryLatency"`
 	// Fault tolerance state.
-	FaultToleranceState pulumi.StringInput `pulumi:"faultToleranceState"`
+	FaultToleranceState pulumi.StringPtrInput `pulumi:"faultToleranceState"`
 	// vCenter-specific identifier of the virtual machine.
-	InstanceUuid pulumi.StringInput `pulumi:"instanceUuid"`
+	InstanceUuid pulumi.StringPtrInput `pulumi:"instanceUuid"`
 	// Indicates that change tracking is supported for virtual disks of this virtual machine. However, even if change tracking is supported, it might not be available for all disks of the virtual machine.
-	IsDisksCbtEnabled pulumi.BoolInput `pulumi:"isDisksCbtEnabled"`
+	IsDisksCbtEnabled pulumi.BoolPtrInput `pulumi:"isDisksCbtEnabled"`
 	// Whether changed block tracking for this VM's disk is active.
-	IsDisksUuidEnabled pulumi.BoolInput `pulumi:"isDisksUuidEnabled"`
+	IsDisksUuidEnabled pulumi.BoolPtrInput `pulumi:"isDisksUuidEnabled"`
 	// Path directory of the asset.
-	Path pulumi.StringInput `pulumi:"path"`
+	Path pulumi.StringPtrInput `pulumi:"path"`
 	// VMware tools status.
-	VmwareToolsStatus pulumi.StringInput `pulumi:"vmwareToolsStatus"`
+	VmwareToolsStatus pulumi.StringPtrInput `pulumi:"vmwareToolsStatus"`
 }
 
 func (GetAssetsAssetCollectionItemVmwareVmArgs) ElementType() reflect.Type {
@@ -10327,12 +9006,6 @@ func (i GetAssetsAssetCollectionItemVmwareVmArgs) ToGetAssetsAssetCollectionItem
 
 func (i GetAssetsAssetCollectionItemVmwareVmArgs) ToGetAssetsAssetCollectionItemVmwareVmOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemVmwareVmOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetsAssetCollectionItemVmwareVmOutput)
-}
-
-func (i GetAssetsAssetCollectionItemVmwareVmArgs) ToOutput(ctx context.Context) pulumix.Output[GetAssetsAssetCollectionItemVmwareVm] {
-	return pulumix.Output[GetAssetsAssetCollectionItemVmwareVm]{
-		OutputState: i.ToGetAssetsAssetCollectionItemVmwareVmOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAssetsAssetCollectionItemVmwareVmArrayInput is an input type that accepts GetAssetsAssetCollectionItemVmwareVmArray and GetAssetsAssetCollectionItemVmwareVmArrayOutput values.
@@ -10360,12 +9033,6 @@ func (i GetAssetsAssetCollectionItemVmwareVmArray) ToGetAssetsAssetCollectionIte
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetsAssetCollectionItemVmwareVmArrayOutput)
 }
 
-func (i GetAssetsAssetCollectionItemVmwareVmArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetsAssetCollectionItemVmwareVm] {
-	return pulumix.Output[[]GetAssetsAssetCollectionItemVmwareVm]{
-		OutputState: i.ToGetAssetsAssetCollectionItemVmwareVmArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAssetsAssetCollectionItemVmwareVmOutput struct{ *pulumi.OutputState }
 
 func (GetAssetsAssetCollectionItemVmwareVmOutput) ElementType() reflect.Type {
@@ -10380,15 +9047,9 @@ func (o GetAssetsAssetCollectionItemVmwareVmOutput) ToGetAssetsAssetCollectionIt
 	return o
 }
 
-func (o GetAssetsAssetCollectionItemVmwareVmOutput) ToOutput(ctx context.Context) pulumix.Output[GetAssetsAssetCollectionItemVmwareVm] {
-	return pulumix.Output[GetAssetsAssetCollectionItemVmwareVm]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Cluster name.
-func (o GetAssetsAssetCollectionItemVmwareVmOutput) Cluster() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetsAssetCollectionItemVmwareVm) string { return v.Cluster }).(pulumi.StringOutput)
+func (o GetAssetsAssetCollectionItemVmwareVmOutput) Cluster() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemVmwareVm) *string { return v.Cluster }).(pulumi.StringPtrOutput)
 }
 
 // Customer fields.
@@ -10404,43 +9065,43 @@ func (o GetAssetsAssetCollectionItemVmwareVmOutput) CustomerTags() GetAssetsAsse
 }
 
 // Fault tolerance bandwidth.
-func (o GetAssetsAssetCollectionItemVmwareVmOutput) FaultToleranceBandwidth() pulumi.IntOutput {
-	return o.ApplyT(func(v GetAssetsAssetCollectionItemVmwareVm) int { return v.FaultToleranceBandwidth }).(pulumi.IntOutput)
+func (o GetAssetsAssetCollectionItemVmwareVmOutput) FaultToleranceBandwidth() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemVmwareVm) *int { return v.FaultToleranceBandwidth }).(pulumi.IntPtrOutput)
 }
 
 // Fault tolerance to secondary latency.
-func (o GetAssetsAssetCollectionItemVmwareVmOutput) FaultToleranceSecondaryLatency() pulumi.IntOutput {
-	return o.ApplyT(func(v GetAssetsAssetCollectionItemVmwareVm) int { return v.FaultToleranceSecondaryLatency }).(pulumi.IntOutput)
+func (o GetAssetsAssetCollectionItemVmwareVmOutput) FaultToleranceSecondaryLatency() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemVmwareVm) *int { return v.FaultToleranceSecondaryLatency }).(pulumi.IntPtrOutput)
 }
 
 // Fault tolerance state.
-func (o GetAssetsAssetCollectionItemVmwareVmOutput) FaultToleranceState() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetsAssetCollectionItemVmwareVm) string { return v.FaultToleranceState }).(pulumi.StringOutput)
+func (o GetAssetsAssetCollectionItemVmwareVmOutput) FaultToleranceState() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemVmwareVm) *string { return v.FaultToleranceState }).(pulumi.StringPtrOutput)
 }
 
 // vCenter-specific identifier of the virtual machine.
-func (o GetAssetsAssetCollectionItemVmwareVmOutput) InstanceUuid() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetsAssetCollectionItemVmwareVm) string { return v.InstanceUuid }).(pulumi.StringOutput)
+func (o GetAssetsAssetCollectionItemVmwareVmOutput) InstanceUuid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemVmwareVm) *string { return v.InstanceUuid }).(pulumi.StringPtrOutput)
 }
 
 // Indicates that change tracking is supported for virtual disks of this virtual machine. However, even if change tracking is supported, it might not be available for all disks of the virtual machine.
-func (o GetAssetsAssetCollectionItemVmwareVmOutput) IsDisksCbtEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetAssetsAssetCollectionItemVmwareVm) bool { return v.IsDisksCbtEnabled }).(pulumi.BoolOutput)
+func (o GetAssetsAssetCollectionItemVmwareVmOutput) IsDisksCbtEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemVmwareVm) *bool { return v.IsDisksCbtEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // Whether changed block tracking for this VM's disk is active.
-func (o GetAssetsAssetCollectionItemVmwareVmOutput) IsDisksUuidEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetAssetsAssetCollectionItemVmwareVm) bool { return v.IsDisksUuidEnabled }).(pulumi.BoolOutput)
+func (o GetAssetsAssetCollectionItemVmwareVmOutput) IsDisksUuidEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemVmwareVm) *bool { return v.IsDisksUuidEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // Path directory of the asset.
-func (o GetAssetsAssetCollectionItemVmwareVmOutput) Path() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetsAssetCollectionItemVmwareVm) string { return v.Path }).(pulumi.StringOutput)
+func (o GetAssetsAssetCollectionItemVmwareVmOutput) Path() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemVmwareVm) *string { return v.Path }).(pulumi.StringPtrOutput)
 }
 
 // VMware tools status.
-func (o GetAssetsAssetCollectionItemVmwareVmOutput) VmwareToolsStatus() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetsAssetCollectionItemVmwareVm) string { return v.VmwareToolsStatus }).(pulumi.StringOutput)
+func (o GetAssetsAssetCollectionItemVmwareVmOutput) VmwareToolsStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemVmwareVm) *string { return v.VmwareToolsStatus }).(pulumi.StringPtrOutput)
 }
 
 type GetAssetsAssetCollectionItemVmwareVmArrayOutput struct{ *pulumi.OutputState }
@@ -10457,12 +9118,6 @@ func (o GetAssetsAssetCollectionItemVmwareVmArrayOutput) ToGetAssetsAssetCollect
 	return o
 }
 
-func (o GetAssetsAssetCollectionItemVmwareVmArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetsAssetCollectionItemVmwareVm] {
-	return pulumix.Output[[]GetAssetsAssetCollectionItemVmwareVm]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAssetsAssetCollectionItemVmwareVmArrayOutput) Index(i pulumi.IntInput) GetAssetsAssetCollectionItemVmwareVmOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAssetsAssetCollectionItemVmwareVm {
 		return vs[0].([]GetAssetsAssetCollectionItemVmwareVm)[vs[1].(int)]
@@ -10471,9 +9126,9 @@ func (o GetAssetsAssetCollectionItemVmwareVmArrayOutput) Index(i pulumi.IntInput
 
 type GetAssetsAssetCollectionItemVmwareVmCustomerTag struct {
 	// The tag description.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// The tag name.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 }
 
 // GetAssetsAssetCollectionItemVmwareVmCustomerTagInput is an input type that accepts GetAssetsAssetCollectionItemVmwareVmCustomerTagArgs and GetAssetsAssetCollectionItemVmwareVmCustomerTagOutput values.
@@ -10489,9 +9144,9 @@ type GetAssetsAssetCollectionItemVmwareVmCustomerTagInput interface {
 
 type GetAssetsAssetCollectionItemVmwareVmCustomerTagArgs struct {
 	// The tag description.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// The tag name.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 }
 
 func (GetAssetsAssetCollectionItemVmwareVmCustomerTagArgs) ElementType() reflect.Type {
@@ -10504,12 +9159,6 @@ func (i GetAssetsAssetCollectionItemVmwareVmCustomerTagArgs) ToGetAssetsAssetCol
 
 func (i GetAssetsAssetCollectionItemVmwareVmCustomerTagArgs) ToGetAssetsAssetCollectionItemVmwareVmCustomerTagOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemVmwareVmCustomerTagOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetsAssetCollectionItemVmwareVmCustomerTagOutput)
-}
-
-func (i GetAssetsAssetCollectionItemVmwareVmCustomerTagArgs) ToOutput(ctx context.Context) pulumix.Output[GetAssetsAssetCollectionItemVmwareVmCustomerTag] {
-	return pulumix.Output[GetAssetsAssetCollectionItemVmwareVmCustomerTag]{
-		OutputState: i.ToGetAssetsAssetCollectionItemVmwareVmCustomerTagOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAssetsAssetCollectionItemVmwareVmCustomerTagArrayInput is an input type that accepts GetAssetsAssetCollectionItemVmwareVmCustomerTagArray and GetAssetsAssetCollectionItemVmwareVmCustomerTagArrayOutput values.
@@ -10537,12 +9186,6 @@ func (i GetAssetsAssetCollectionItemVmwareVmCustomerTagArray) ToGetAssetsAssetCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetsAssetCollectionItemVmwareVmCustomerTagArrayOutput)
 }
 
-func (i GetAssetsAssetCollectionItemVmwareVmCustomerTagArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetsAssetCollectionItemVmwareVmCustomerTag] {
-	return pulumix.Output[[]GetAssetsAssetCollectionItemVmwareVmCustomerTag]{
-		OutputState: i.ToGetAssetsAssetCollectionItemVmwareVmCustomerTagArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAssetsAssetCollectionItemVmwareVmCustomerTagOutput struct{ *pulumi.OutputState }
 
 func (GetAssetsAssetCollectionItemVmwareVmCustomerTagOutput) ElementType() reflect.Type {
@@ -10557,20 +9200,14 @@ func (o GetAssetsAssetCollectionItemVmwareVmCustomerTagOutput) ToGetAssetsAssetC
 	return o
 }
 
-func (o GetAssetsAssetCollectionItemVmwareVmCustomerTagOutput) ToOutput(ctx context.Context) pulumix.Output[GetAssetsAssetCollectionItemVmwareVmCustomerTag] {
-	return pulumix.Output[GetAssetsAssetCollectionItemVmwareVmCustomerTag]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The tag description.
-func (o GetAssetsAssetCollectionItemVmwareVmCustomerTagOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetsAssetCollectionItemVmwareVmCustomerTag) string { return v.Description }).(pulumi.StringOutput)
+func (o GetAssetsAssetCollectionItemVmwareVmCustomerTagOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemVmwareVmCustomerTag) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // The tag name.
-func (o GetAssetsAssetCollectionItemVmwareVmCustomerTagOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAssetsAssetCollectionItemVmwareVmCustomerTag) string { return v.Name }).(pulumi.StringOutput)
+func (o GetAssetsAssetCollectionItemVmwareVmCustomerTagOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAssetsAssetCollectionItemVmwareVmCustomerTag) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 type GetAssetsAssetCollectionItemVmwareVmCustomerTagArrayOutput struct{ *pulumi.OutputState }
@@ -10585,12 +9222,6 @@ func (o GetAssetsAssetCollectionItemVmwareVmCustomerTagArrayOutput) ToGetAssetsA
 
 func (o GetAssetsAssetCollectionItemVmwareVmCustomerTagArrayOutput) ToGetAssetsAssetCollectionItemVmwareVmCustomerTagArrayOutputWithContext(ctx context.Context) GetAssetsAssetCollectionItemVmwareVmCustomerTagArrayOutput {
 	return o
-}
-
-func (o GetAssetsAssetCollectionItemVmwareVmCustomerTagArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetsAssetCollectionItemVmwareVmCustomerTag] {
-	return pulumix.Output[[]GetAssetsAssetCollectionItemVmwareVmCustomerTag]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAssetsAssetCollectionItemVmwareVmCustomerTagArrayOutput) Index(i pulumi.IntInput) GetAssetsAssetCollectionItemVmwareVmCustomerTagOutput {
@@ -10636,12 +9267,6 @@ func (i GetAssetsFilterArgs) ToGetAssetsFilterOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetsFilterOutput)
 }
 
-func (i GetAssetsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetAssetsFilter] {
-	return pulumix.Output[GetAssetsFilter]{
-		OutputState: i.ToGetAssetsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAssetsFilterArrayInput is an input type that accepts GetAssetsFilterArray and GetAssetsFilterArrayOutput values.
 // You can construct a concrete instance of `GetAssetsFilterArrayInput` via:
 //
@@ -10667,12 +9292,6 @@ func (i GetAssetsFilterArray) ToGetAssetsFilterArrayOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetAssetsFilterArrayOutput)
 }
 
-func (i GetAssetsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetsFilter] {
-	return pulumix.Output[[]GetAssetsFilter]{
-		OutputState: i.ToGetAssetsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAssetsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetAssetsFilterOutput) ElementType() reflect.Type {
@@ -10685,12 +9304,6 @@ func (o GetAssetsFilterOutput) ToGetAssetsFilterOutput() GetAssetsFilterOutput {
 
 func (o GetAssetsFilterOutput) ToGetAssetsFilterOutputWithContext(ctx context.Context) GetAssetsFilterOutput {
 	return o
-}
-
-func (o GetAssetsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetAssetsFilter] {
-	return pulumix.Output[GetAssetsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The tag name.
@@ -10718,12 +9331,6 @@ func (o GetAssetsFilterArrayOutput) ToGetAssetsFilterArrayOutput() GetAssetsFilt
 
 func (o GetAssetsFilterArrayOutput) ToGetAssetsFilterArrayOutputWithContext(ctx context.Context) GetAssetsFilterArrayOutput {
 	return o
-}
-
-func (o GetAssetsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAssetsFilter] {
-	return pulumix.Output[[]GetAssetsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAssetsFilterArrayOutput) Index(i pulumi.IntInput) GetAssetsFilterOutput {
@@ -10763,12 +9370,6 @@ func (i GetDiscoverySchedulesDiscoveryScheduleCollectionArgs) ToGetDiscoverySche
 	return pulumi.ToOutputWithContext(ctx, i).(GetDiscoverySchedulesDiscoveryScheduleCollectionOutput)
 }
 
-func (i GetDiscoverySchedulesDiscoveryScheduleCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetDiscoverySchedulesDiscoveryScheduleCollection] {
-	return pulumix.Output[GetDiscoverySchedulesDiscoveryScheduleCollection]{
-		OutputState: i.ToGetDiscoverySchedulesDiscoveryScheduleCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDiscoverySchedulesDiscoveryScheduleCollectionArrayInput is an input type that accepts GetDiscoverySchedulesDiscoveryScheduleCollectionArray and GetDiscoverySchedulesDiscoveryScheduleCollectionArrayOutput values.
 // You can construct a concrete instance of `GetDiscoverySchedulesDiscoveryScheduleCollectionArrayInput` via:
 //
@@ -10794,12 +9395,6 @@ func (i GetDiscoverySchedulesDiscoveryScheduleCollectionArray) ToGetDiscoverySch
 	return pulumi.ToOutputWithContext(ctx, i).(GetDiscoverySchedulesDiscoveryScheduleCollectionArrayOutput)
 }
 
-func (i GetDiscoverySchedulesDiscoveryScheduleCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDiscoverySchedulesDiscoveryScheduleCollection] {
-	return pulumix.Output[[]GetDiscoverySchedulesDiscoveryScheduleCollection]{
-		OutputState: i.ToGetDiscoverySchedulesDiscoveryScheduleCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDiscoverySchedulesDiscoveryScheduleCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetDiscoverySchedulesDiscoveryScheduleCollectionOutput) ElementType() reflect.Type {
@@ -10812,12 +9407,6 @@ func (o GetDiscoverySchedulesDiscoveryScheduleCollectionOutput) ToGetDiscoverySc
 
 func (o GetDiscoverySchedulesDiscoveryScheduleCollectionOutput) ToGetDiscoverySchedulesDiscoveryScheduleCollectionOutputWithContext(ctx context.Context) GetDiscoverySchedulesDiscoveryScheduleCollectionOutput {
 	return o
-}
-
-func (o GetDiscoverySchedulesDiscoveryScheduleCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetDiscoverySchedulesDiscoveryScheduleCollection] {
-	return pulumix.Output[GetDiscoverySchedulesDiscoveryScheduleCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDiscoverySchedulesDiscoveryScheduleCollectionOutput) Items() GetDiscoverySchedulesDiscoveryScheduleCollectionItemArrayOutput {
@@ -10840,12 +9429,6 @@ func (o GetDiscoverySchedulesDiscoveryScheduleCollectionArrayOutput) ToGetDiscov
 	return o
 }
 
-func (o GetDiscoverySchedulesDiscoveryScheduleCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDiscoverySchedulesDiscoveryScheduleCollection] {
-	return pulumix.Output[[]GetDiscoverySchedulesDiscoveryScheduleCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDiscoverySchedulesDiscoveryScheduleCollectionArrayOutput) Index(i pulumi.IntInput) GetDiscoverySchedulesDiscoveryScheduleCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDiscoverySchedulesDiscoveryScheduleCollection {
 		return vs[0].([]GetDiscoverySchedulesDiscoveryScheduleCollection)[vs[1].(int)]
@@ -10854,27 +9437,27 @@ func (o GetDiscoverySchedulesDiscoveryScheduleCollectionArrayOutput) Index(i pul
 
 type GetDiscoverySchedulesDiscoveryScheduleCollectionItem struct {
 	// The ID of the compartment in which to list resources.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Recurrence specification for the discovery schedule execution.
-	ExecutionRecurrences string `pulumi:"executionRecurrences"`
+	ExecutionRecurrences *string `pulumi:"executionRecurrences"`
 	// The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the discovery schedule.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The detailed state of the discovery schedule.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The current state of the discovery schedule.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time when the discovery schedule was created in RFC3339 format.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time when the discovery schedule was last updated in RFC3339 format.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 // GetDiscoverySchedulesDiscoveryScheduleCollectionItemInput is an input type that accepts GetDiscoverySchedulesDiscoveryScheduleCollectionItemArgs and GetDiscoverySchedulesDiscoveryScheduleCollectionItemOutput values.
@@ -10890,27 +9473,27 @@ type GetDiscoverySchedulesDiscoveryScheduleCollectionItemInput interface {
 
 type GetDiscoverySchedulesDiscoveryScheduleCollectionItemArgs struct {
 	// The ID of the compartment in which to list resources.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Recurrence specification for the discovery schedule execution.
-	ExecutionRecurrences pulumi.StringInput `pulumi:"executionRecurrences"`
+	ExecutionRecurrences pulumi.StringPtrInput `pulumi:"executionRecurrences"`
 	// The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the discovery schedule.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// The detailed state of the discovery schedule.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// The current state of the discovery schedule.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// The time when the discovery schedule was created in RFC3339 format.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The time when the discovery schedule was last updated in RFC3339 format.
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 }
 
 func (GetDiscoverySchedulesDiscoveryScheduleCollectionItemArgs) ElementType() reflect.Type {
@@ -10923,12 +9506,6 @@ func (i GetDiscoverySchedulesDiscoveryScheduleCollectionItemArgs) ToGetDiscovery
 
 func (i GetDiscoverySchedulesDiscoveryScheduleCollectionItemArgs) ToGetDiscoverySchedulesDiscoveryScheduleCollectionItemOutputWithContext(ctx context.Context) GetDiscoverySchedulesDiscoveryScheduleCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetDiscoverySchedulesDiscoveryScheduleCollectionItemOutput)
-}
-
-func (i GetDiscoverySchedulesDiscoveryScheduleCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetDiscoverySchedulesDiscoveryScheduleCollectionItem] {
-	return pulumix.Output[GetDiscoverySchedulesDiscoveryScheduleCollectionItem]{
-		OutputState: i.ToGetDiscoverySchedulesDiscoveryScheduleCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetDiscoverySchedulesDiscoveryScheduleCollectionItemArrayInput is an input type that accepts GetDiscoverySchedulesDiscoveryScheduleCollectionItemArray and GetDiscoverySchedulesDiscoveryScheduleCollectionItemArrayOutput values.
@@ -10956,12 +9533,6 @@ func (i GetDiscoverySchedulesDiscoveryScheduleCollectionItemArray) ToGetDiscover
 	return pulumi.ToOutputWithContext(ctx, i).(GetDiscoverySchedulesDiscoveryScheduleCollectionItemArrayOutput)
 }
 
-func (i GetDiscoverySchedulesDiscoveryScheduleCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDiscoverySchedulesDiscoveryScheduleCollectionItem] {
-	return pulumix.Output[[]GetDiscoverySchedulesDiscoveryScheduleCollectionItem]{
-		OutputState: i.ToGetDiscoverySchedulesDiscoveryScheduleCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDiscoverySchedulesDiscoveryScheduleCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetDiscoverySchedulesDiscoveryScheduleCollectionItemOutput) ElementType() reflect.Type {
@@ -10976,15 +9547,9 @@ func (o GetDiscoverySchedulesDiscoveryScheduleCollectionItemOutput) ToGetDiscove
 	return o
 }
 
-func (o GetDiscoverySchedulesDiscoveryScheduleCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetDiscoverySchedulesDiscoveryScheduleCollectionItem] {
-	return pulumix.Output[GetDiscoverySchedulesDiscoveryScheduleCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The ID of the compartment in which to list resources.
-func (o GetDiscoverySchedulesDiscoveryScheduleCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDiscoverySchedulesDiscoveryScheduleCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetDiscoverySchedulesDiscoveryScheduleCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDiscoverySchedulesDiscoveryScheduleCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -10995,13 +9560,13 @@ func (o GetDiscoverySchedulesDiscoveryScheduleCollectionItemOutput) DefinedTags(
 }
 
 // A filter to return only resources that match the entire display name given.
-func (o GetDiscoverySchedulesDiscoveryScheduleCollectionItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDiscoverySchedulesDiscoveryScheduleCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetDiscoverySchedulesDiscoveryScheduleCollectionItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDiscoverySchedulesDiscoveryScheduleCollectionItem) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Recurrence specification for the discovery schedule execution.
-func (o GetDiscoverySchedulesDiscoveryScheduleCollectionItemOutput) ExecutionRecurrences() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDiscoverySchedulesDiscoveryScheduleCollectionItem) string { return v.ExecutionRecurrences }).(pulumi.StringOutput)
+func (o GetDiscoverySchedulesDiscoveryScheduleCollectionItemOutput) ExecutionRecurrences() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDiscoverySchedulesDiscoveryScheduleCollectionItem) *string { return v.ExecutionRecurrences }).(pulumi.StringPtrOutput)
 }
 
 // The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -11012,18 +9577,18 @@ func (o GetDiscoverySchedulesDiscoveryScheduleCollectionItemOutput) FreeformTags
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the discovery schedule.
-func (o GetDiscoverySchedulesDiscoveryScheduleCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDiscoverySchedulesDiscoveryScheduleCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDiscoverySchedulesDiscoveryScheduleCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDiscoverySchedulesDiscoveryScheduleCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The detailed state of the discovery schedule.
-func (o GetDiscoverySchedulesDiscoveryScheduleCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDiscoverySchedulesDiscoveryScheduleCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetDiscoverySchedulesDiscoveryScheduleCollectionItemOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDiscoverySchedulesDiscoveryScheduleCollectionItem) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the discovery schedule.
-func (o GetDiscoverySchedulesDiscoveryScheduleCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDiscoverySchedulesDiscoveryScheduleCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetDiscoverySchedulesDiscoveryScheduleCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDiscoverySchedulesDiscoveryScheduleCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
@@ -11034,13 +9599,13 @@ func (o GetDiscoverySchedulesDiscoveryScheduleCollectionItemOutput) SystemTags()
 }
 
 // The time when the discovery schedule was created in RFC3339 format.
-func (o GetDiscoverySchedulesDiscoveryScheduleCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDiscoverySchedulesDiscoveryScheduleCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetDiscoverySchedulesDiscoveryScheduleCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDiscoverySchedulesDiscoveryScheduleCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time when the discovery schedule was last updated in RFC3339 format.
-func (o GetDiscoverySchedulesDiscoveryScheduleCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDiscoverySchedulesDiscoveryScheduleCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetDiscoverySchedulesDiscoveryScheduleCollectionItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDiscoverySchedulesDiscoveryScheduleCollectionItem) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type GetDiscoverySchedulesDiscoveryScheduleCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -11055,12 +9620,6 @@ func (o GetDiscoverySchedulesDiscoveryScheduleCollectionItemArrayOutput) ToGetDi
 
 func (o GetDiscoverySchedulesDiscoveryScheduleCollectionItemArrayOutput) ToGetDiscoverySchedulesDiscoveryScheduleCollectionItemArrayOutputWithContext(ctx context.Context) GetDiscoverySchedulesDiscoveryScheduleCollectionItemArrayOutput {
 	return o
-}
-
-func (o GetDiscoverySchedulesDiscoveryScheduleCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDiscoverySchedulesDiscoveryScheduleCollectionItem] {
-	return pulumix.Output[[]GetDiscoverySchedulesDiscoveryScheduleCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDiscoverySchedulesDiscoveryScheduleCollectionItemArrayOutput) Index(i pulumi.IntInput) GetDiscoverySchedulesDiscoveryScheduleCollectionItemOutput {
@@ -11104,12 +9663,6 @@ func (i GetDiscoverySchedulesFilterArgs) ToGetDiscoverySchedulesFilterOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetDiscoverySchedulesFilterOutput)
 }
 
-func (i GetDiscoverySchedulesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetDiscoverySchedulesFilter] {
-	return pulumix.Output[GetDiscoverySchedulesFilter]{
-		OutputState: i.ToGetDiscoverySchedulesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDiscoverySchedulesFilterArrayInput is an input type that accepts GetDiscoverySchedulesFilterArray and GetDiscoverySchedulesFilterArrayOutput values.
 // You can construct a concrete instance of `GetDiscoverySchedulesFilterArrayInput` via:
 //
@@ -11135,12 +9688,6 @@ func (i GetDiscoverySchedulesFilterArray) ToGetDiscoverySchedulesFilterArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetDiscoverySchedulesFilterArrayOutput)
 }
 
-func (i GetDiscoverySchedulesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDiscoverySchedulesFilter] {
-	return pulumix.Output[[]GetDiscoverySchedulesFilter]{
-		OutputState: i.ToGetDiscoverySchedulesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDiscoverySchedulesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetDiscoverySchedulesFilterOutput) ElementType() reflect.Type {
@@ -11153,12 +9700,6 @@ func (o GetDiscoverySchedulesFilterOutput) ToGetDiscoverySchedulesFilterOutput()
 
 func (o GetDiscoverySchedulesFilterOutput) ToGetDiscoverySchedulesFilterOutputWithContext(ctx context.Context) GetDiscoverySchedulesFilterOutput {
 	return o
-}
-
-func (o GetDiscoverySchedulesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetDiscoverySchedulesFilter] {
-	return pulumix.Output[GetDiscoverySchedulesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDiscoverySchedulesFilterOutput) Name() pulumi.StringOutput {
@@ -11185,12 +9726,6 @@ func (o GetDiscoverySchedulesFilterArrayOutput) ToGetDiscoverySchedulesFilterArr
 
 func (o GetDiscoverySchedulesFilterArrayOutput) ToGetDiscoverySchedulesFilterArrayOutputWithContext(ctx context.Context) GetDiscoverySchedulesFilterArrayOutput {
 	return o
-}
-
-func (o GetDiscoverySchedulesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDiscoverySchedulesFilter] {
-	return pulumix.Output[[]GetDiscoverySchedulesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDiscoverySchedulesFilterArrayOutput) Index(i pulumi.IntInput) GetDiscoverySchedulesFilterOutput {
@@ -11230,12 +9765,6 @@ func (i GetEnvironmentsEnvironmentCollectionArgs) ToGetEnvironmentsEnvironmentCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetEnvironmentsEnvironmentCollectionOutput)
 }
 
-func (i GetEnvironmentsEnvironmentCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetEnvironmentsEnvironmentCollection] {
-	return pulumix.Output[GetEnvironmentsEnvironmentCollection]{
-		OutputState: i.ToGetEnvironmentsEnvironmentCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetEnvironmentsEnvironmentCollectionArrayInput is an input type that accepts GetEnvironmentsEnvironmentCollectionArray and GetEnvironmentsEnvironmentCollectionArrayOutput values.
 // You can construct a concrete instance of `GetEnvironmentsEnvironmentCollectionArrayInput` via:
 //
@@ -11261,12 +9790,6 @@ func (i GetEnvironmentsEnvironmentCollectionArray) ToGetEnvironmentsEnvironmentC
 	return pulumi.ToOutputWithContext(ctx, i).(GetEnvironmentsEnvironmentCollectionArrayOutput)
 }
 
-func (i GetEnvironmentsEnvironmentCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetEnvironmentsEnvironmentCollection] {
-	return pulumix.Output[[]GetEnvironmentsEnvironmentCollection]{
-		OutputState: i.ToGetEnvironmentsEnvironmentCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetEnvironmentsEnvironmentCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetEnvironmentsEnvironmentCollectionOutput) ElementType() reflect.Type {
@@ -11279,12 +9802,6 @@ func (o GetEnvironmentsEnvironmentCollectionOutput) ToGetEnvironmentsEnvironment
 
 func (o GetEnvironmentsEnvironmentCollectionOutput) ToGetEnvironmentsEnvironmentCollectionOutputWithContext(ctx context.Context) GetEnvironmentsEnvironmentCollectionOutput {
 	return o
-}
-
-func (o GetEnvironmentsEnvironmentCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetEnvironmentsEnvironmentCollection] {
-	return pulumix.Output[GetEnvironmentsEnvironmentCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetEnvironmentsEnvironmentCollectionOutput) Items() GetEnvironmentsEnvironmentCollectionItemArrayOutput {
@@ -11307,12 +9824,6 @@ func (o GetEnvironmentsEnvironmentCollectionArrayOutput) ToGetEnvironmentsEnviro
 	return o
 }
 
-func (o GetEnvironmentsEnvironmentCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetEnvironmentsEnvironmentCollection] {
-	return pulumix.Output[[]GetEnvironmentsEnvironmentCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetEnvironmentsEnvironmentCollectionArrayOutput) Index(i pulumi.IntInput) GetEnvironmentsEnvironmentCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetEnvironmentsEnvironmentCollection {
 		return vs[0].([]GetEnvironmentsEnvironmentCollection)[vs[1].(int)]
@@ -11321,25 +9832,25 @@ func (o GetEnvironmentsEnvironmentCollectionArrayOutput) Index(i pulumi.IntInput
 
 type GetEnvironmentsEnvironmentCollectionItem struct {
 	// The ID of the compartment in which to list resources.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Unique identifier that is immutable on creation.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// A filter to return only resources where their lifecycleState matches the given lifecycleState.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time when the source environment was created. An RFC3339 formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time when the source environment was updated. An RFC3339 formatted datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 // GetEnvironmentsEnvironmentCollectionItemInput is an input type that accepts GetEnvironmentsEnvironmentCollectionItemArgs and GetEnvironmentsEnvironmentCollectionItemOutput values.
@@ -11355,25 +9866,25 @@ type GetEnvironmentsEnvironmentCollectionItemInput interface {
 
 type GetEnvironmentsEnvironmentCollectionItemArgs struct {
 	// The ID of the compartment in which to list resources.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// Unique identifier that is immutable on creation.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// A filter to return only resources where their lifecycleState matches the given lifecycleState.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// The time when the source environment was created. An RFC3339 formatted datetime string.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The time when the source environment was updated. An RFC3339 formatted datetime string.
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 }
 
 func (GetEnvironmentsEnvironmentCollectionItemArgs) ElementType() reflect.Type {
@@ -11386,12 +9897,6 @@ func (i GetEnvironmentsEnvironmentCollectionItemArgs) ToGetEnvironmentsEnvironme
 
 func (i GetEnvironmentsEnvironmentCollectionItemArgs) ToGetEnvironmentsEnvironmentCollectionItemOutputWithContext(ctx context.Context) GetEnvironmentsEnvironmentCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetEnvironmentsEnvironmentCollectionItemOutput)
-}
-
-func (i GetEnvironmentsEnvironmentCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetEnvironmentsEnvironmentCollectionItem] {
-	return pulumix.Output[GetEnvironmentsEnvironmentCollectionItem]{
-		OutputState: i.ToGetEnvironmentsEnvironmentCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetEnvironmentsEnvironmentCollectionItemArrayInput is an input type that accepts GetEnvironmentsEnvironmentCollectionItemArray and GetEnvironmentsEnvironmentCollectionItemArrayOutput values.
@@ -11419,12 +9924,6 @@ func (i GetEnvironmentsEnvironmentCollectionItemArray) ToGetEnvironmentsEnvironm
 	return pulumi.ToOutputWithContext(ctx, i).(GetEnvironmentsEnvironmentCollectionItemArrayOutput)
 }
 
-func (i GetEnvironmentsEnvironmentCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetEnvironmentsEnvironmentCollectionItem] {
-	return pulumix.Output[[]GetEnvironmentsEnvironmentCollectionItem]{
-		OutputState: i.ToGetEnvironmentsEnvironmentCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetEnvironmentsEnvironmentCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetEnvironmentsEnvironmentCollectionItemOutput) ElementType() reflect.Type {
@@ -11439,15 +9938,9 @@ func (o GetEnvironmentsEnvironmentCollectionItemOutput) ToGetEnvironmentsEnviron
 	return o
 }
 
-func (o GetEnvironmentsEnvironmentCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetEnvironmentsEnvironmentCollectionItem] {
-	return pulumix.Output[GetEnvironmentsEnvironmentCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The ID of the compartment in which to list resources.
-func (o GetEnvironmentsEnvironmentCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEnvironmentsEnvironmentCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetEnvironmentsEnvironmentCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEnvironmentsEnvironmentCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -11456,8 +9949,8 @@ func (o GetEnvironmentsEnvironmentCollectionItemOutput) DefinedTags() pulumi.Map
 }
 
 // A filter to return only resources that match the entire display name given.
-func (o GetEnvironmentsEnvironmentCollectionItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEnvironmentsEnvironmentCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetEnvironmentsEnvironmentCollectionItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEnvironmentsEnvironmentCollectionItem) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -11466,18 +9959,18 @@ func (o GetEnvironmentsEnvironmentCollectionItemOutput) FreeformTags() pulumi.Ma
 }
 
 // Unique identifier that is immutable on creation.
-func (o GetEnvironmentsEnvironmentCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEnvironmentsEnvironmentCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetEnvironmentsEnvironmentCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEnvironmentsEnvironmentCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
-func (o GetEnvironmentsEnvironmentCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEnvironmentsEnvironmentCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetEnvironmentsEnvironmentCollectionItemOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEnvironmentsEnvironmentCollectionItem) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only resources where their lifecycleState matches the given lifecycleState.
-func (o GetEnvironmentsEnvironmentCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEnvironmentsEnvironmentCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetEnvironmentsEnvironmentCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEnvironmentsEnvironmentCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
@@ -11486,13 +9979,13 @@ func (o GetEnvironmentsEnvironmentCollectionItemOutput) SystemTags() pulumi.MapO
 }
 
 // The time when the source environment was created. An RFC3339 formatted datetime string.
-func (o GetEnvironmentsEnvironmentCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEnvironmentsEnvironmentCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetEnvironmentsEnvironmentCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEnvironmentsEnvironmentCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time when the source environment was updated. An RFC3339 formatted datetime string.
-func (o GetEnvironmentsEnvironmentCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEnvironmentsEnvironmentCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetEnvironmentsEnvironmentCollectionItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEnvironmentsEnvironmentCollectionItem) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type GetEnvironmentsEnvironmentCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -11507,12 +10000,6 @@ func (o GetEnvironmentsEnvironmentCollectionItemArrayOutput) ToGetEnvironmentsEn
 
 func (o GetEnvironmentsEnvironmentCollectionItemArrayOutput) ToGetEnvironmentsEnvironmentCollectionItemArrayOutputWithContext(ctx context.Context) GetEnvironmentsEnvironmentCollectionItemArrayOutput {
 	return o
-}
-
-func (o GetEnvironmentsEnvironmentCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetEnvironmentsEnvironmentCollectionItem] {
-	return pulumix.Output[[]GetEnvironmentsEnvironmentCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetEnvironmentsEnvironmentCollectionItemArrayOutput) Index(i pulumi.IntInput) GetEnvironmentsEnvironmentCollectionItemOutput {
@@ -11556,12 +10043,6 @@ func (i GetEnvironmentsFilterArgs) ToGetEnvironmentsFilterOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetEnvironmentsFilterOutput)
 }
 
-func (i GetEnvironmentsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetEnvironmentsFilter] {
-	return pulumix.Output[GetEnvironmentsFilter]{
-		OutputState: i.ToGetEnvironmentsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetEnvironmentsFilterArrayInput is an input type that accepts GetEnvironmentsFilterArray and GetEnvironmentsFilterArrayOutput values.
 // You can construct a concrete instance of `GetEnvironmentsFilterArrayInput` via:
 //
@@ -11587,12 +10068,6 @@ func (i GetEnvironmentsFilterArray) ToGetEnvironmentsFilterArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetEnvironmentsFilterArrayOutput)
 }
 
-func (i GetEnvironmentsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetEnvironmentsFilter] {
-	return pulumix.Output[[]GetEnvironmentsFilter]{
-		OutputState: i.ToGetEnvironmentsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetEnvironmentsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetEnvironmentsFilterOutput) ElementType() reflect.Type {
@@ -11605,12 +10080,6 @@ func (o GetEnvironmentsFilterOutput) ToGetEnvironmentsFilterOutput() GetEnvironm
 
 func (o GetEnvironmentsFilterOutput) ToGetEnvironmentsFilterOutputWithContext(ctx context.Context) GetEnvironmentsFilterOutput {
 	return o
-}
-
-func (o GetEnvironmentsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetEnvironmentsFilter] {
-	return pulumix.Output[GetEnvironmentsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetEnvironmentsFilterOutput) Name() pulumi.StringOutput {
@@ -11637,12 +10106,6 @@ func (o GetEnvironmentsFilterArrayOutput) ToGetEnvironmentsFilterArrayOutput() G
 
 func (o GetEnvironmentsFilterArrayOutput) ToGetEnvironmentsFilterArrayOutputWithContext(ctx context.Context) GetEnvironmentsFilterArrayOutput {
 	return o
-}
-
-func (o GetEnvironmentsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetEnvironmentsFilter] {
-	return pulumix.Output[[]GetEnvironmentsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetEnvironmentsFilterArrayOutput) Index(i pulumi.IntInput) GetEnvironmentsFilterOutput {
@@ -11686,12 +10149,6 @@ func (i GetInventoriesFilterArgs) ToGetInventoriesFilterOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GetInventoriesFilterOutput)
 }
 
-func (i GetInventoriesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetInventoriesFilter] {
-	return pulumix.Output[GetInventoriesFilter]{
-		OutputState: i.ToGetInventoriesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetInventoriesFilterArrayInput is an input type that accepts GetInventoriesFilterArray and GetInventoriesFilterArrayOutput values.
 // You can construct a concrete instance of `GetInventoriesFilterArrayInput` via:
 //
@@ -11717,12 +10174,6 @@ func (i GetInventoriesFilterArray) ToGetInventoriesFilterArrayOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetInventoriesFilterArrayOutput)
 }
 
-func (i GetInventoriesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInventoriesFilter] {
-	return pulumix.Output[[]GetInventoriesFilter]{
-		OutputState: i.ToGetInventoriesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetInventoriesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetInventoriesFilterOutput) ElementType() reflect.Type {
@@ -11735,12 +10186,6 @@ func (o GetInventoriesFilterOutput) ToGetInventoriesFilterOutput() GetInventorie
 
 func (o GetInventoriesFilterOutput) ToGetInventoriesFilterOutputWithContext(ctx context.Context) GetInventoriesFilterOutput {
 	return o
-}
-
-func (o GetInventoriesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetInventoriesFilter] {
-	return pulumix.Output[GetInventoriesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetInventoriesFilterOutput) Name() pulumi.StringOutput {
@@ -11767,12 +10212,6 @@ func (o GetInventoriesFilterArrayOutput) ToGetInventoriesFilterArrayOutput() Get
 
 func (o GetInventoriesFilterArrayOutput) ToGetInventoriesFilterArrayOutputWithContext(ctx context.Context) GetInventoriesFilterArrayOutput {
 	return o
-}
-
-func (o GetInventoriesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInventoriesFilter] {
-	return pulumix.Output[[]GetInventoriesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetInventoriesFilterArrayOutput) Index(i pulumi.IntInput) GetInventoriesFilterOutput {
@@ -11812,12 +10251,6 @@ func (i GetInventoriesInventoryCollectionArgs) ToGetInventoriesInventoryCollecti
 	return pulumi.ToOutputWithContext(ctx, i).(GetInventoriesInventoryCollectionOutput)
 }
 
-func (i GetInventoriesInventoryCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetInventoriesInventoryCollection] {
-	return pulumix.Output[GetInventoriesInventoryCollection]{
-		OutputState: i.ToGetInventoriesInventoryCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetInventoriesInventoryCollectionArrayInput is an input type that accepts GetInventoriesInventoryCollectionArray and GetInventoriesInventoryCollectionArrayOutput values.
 // You can construct a concrete instance of `GetInventoriesInventoryCollectionArrayInput` via:
 //
@@ -11843,12 +10276,6 @@ func (i GetInventoriesInventoryCollectionArray) ToGetInventoriesInventoryCollect
 	return pulumi.ToOutputWithContext(ctx, i).(GetInventoriesInventoryCollectionArrayOutput)
 }
 
-func (i GetInventoriesInventoryCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInventoriesInventoryCollection] {
-	return pulumix.Output[[]GetInventoriesInventoryCollection]{
-		OutputState: i.ToGetInventoriesInventoryCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetInventoriesInventoryCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetInventoriesInventoryCollectionOutput) ElementType() reflect.Type {
@@ -11861,12 +10288,6 @@ func (o GetInventoriesInventoryCollectionOutput) ToGetInventoriesInventoryCollec
 
 func (o GetInventoriesInventoryCollectionOutput) ToGetInventoriesInventoryCollectionOutputWithContext(ctx context.Context) GetInventoriesInventoryCollectionOutput {
 	return o
-}
-
-func (o GetInventoriesInventoryCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetInventoriesInventoryCollection] {
-	return pulumix.Output[GetInventoriesInventoryCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetInventoriesInventoryCollectionOutput) Items() GetInventoriesInventoryCollectionItemArrayOutput {
@@ -11887,12 +10308,6 @@ func (o GetInventoriesInventoryCollectionArrayOutput) ToGetInventoriesInventoryC
 	return o
 }
 
-func (o GetInventoriesInventoryCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInventoriesInventoryCollection] {
-	return pulumix.Output[[]GetInventoriesInventoryCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetInventoriesInventoryCollectionArrayOutput) Index(i pulumi.IntInput) GetInventoriesInventoryCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInventoriesInventoryCollection {
 		return vs[0].([]GetInventoriesInventoryCollection)[vs[1].(int)]
@@ -11901,25 +10316,25 @@ func (o GetInventoriesInventoryCollectionArrayOutput) Index(i pulumi.IntInput) G
 
 type GetInventoriesInventoryCollectionItem struct {
 	// The ID of the compartment in which to list resources.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Inventory display name.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Inventory OCID.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// A filter to return inventory if the lifecycleState matches the given lifecycleState.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time when the inventory was created. An RFC3339 formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time when the inventory was updated. An RFC3339 formatted datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 // GetInventoriesInventoryCollectionItemInput is an input type that accepts GetInventoriesInventoryCollectionItemArgs and GetInventoriesInventoryCollectionItemOutput values.
@@ -11935,25 +10350,25 @@ type GetInventoriesInventoryCollectionItemInput interface {
 
 type GetInventoriesInventoryCollectionItemArgs struct {
 	// The ID of the compartment in which to list resources.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// Inventory display name.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// Inventory OCID.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// A filter to return inventory if the lifecycleState matches the given lifecycleState.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// The time when the inventory was created. An RFC3339 formatted datetime string.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The time when the inventory was updated. An RFC3339 formatted datetime string.
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 }
 
 func (GetInventoriesInventoryCollectionItemArgs) ElementType() reflect.Type {
@@ -11966,12 +10381,6 @@ func (i GetInventoriesInventoryCollectionItemArgs) ToGetInventoriesInventoryColl
 
 func (i GetInventoriesInventoryCollectionItemArgs) ToGetInventoriesInventoryCollectionItemOutputWithContext(ctx context.Context) GetInventoriesInventoryCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetInventoriesInventoryCollectionItemOutput)
-}
-
-func (i GetInventoriesInventoryCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetInventoriesInventoryCollectionItem] {
-	return pulumix.Output[GetInventoriesInventoryCollectionItem]{
-		OutputState: i.ToGetInventoriesInventoryCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetInventoriesInventoryCollectionItemArrayInput is an input type that accepts GetInventoriesInventoryCollectionItemArray and GetInventoriesInventoryCollectionItemArrayOutput values.
@@ -11999,12 +10408,6 @@ func (i GetInventoriesInventoryCollectionItemArray) ToGetInventoriesInventoryCol
 	return pulumi.ToOutputWithContext(ctx, i).(GetInventoriesInventoryCollectionItemArrayOutput)
 }
 
-func (i GetInventoriesInventoryCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInventoriesInventoryCollectionItem] {
-	return pulumix.Output[[]GetInventoriesInventoryCollectionItem]{
-		OutputState: i.ToGetInventoriesInventoryCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetInventoriesInventoryCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetInventoriesInventoryCollectionItemOutput) ElementType() reflect.Type {
@@ -12019,15 +10422,9 @@ func (o GetInventoriesInventoryCollectionItemOutput) ToGetInventoriesInventoryCo
 	return o
 }
 
-func (o GetInventoriesInventoryCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetInventoriesInventoryCollectionItem] {
-	return pulumix.Output[GetInventoriesInventoryCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The ID of the compartment in which to list resources.
-func (o GetInventoriesInventoryCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInventoriesInventoryCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetInventoriesInventoryCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInventoriesInventoryCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -12036,8 +10433,8 @@ func (o GetInventoriesInventoryCollectionItemOutput) DefinedTags() pulumi.MapOut
 }
 
 // Inventory display name.
-func (o GetInventoriesInventoryCollectionItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInventoriesInventoryCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetInventoriesInventoryCollectionItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInventoriesInventoryCollectionItem) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -12046,18 +10443,18 @@ func (o GetInventoriesInventoryCollectionItemOutput) FreeformTags() pulumi.MapOu
 }
 
 // Inventory OCID.
-func (o GetInventoriesInventoryCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInventoriesInventoryCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetInventoriesInventoryCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInventoriesInventoryCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
-func (o GetInventoriesInventoryCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInventoriesInventoryCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetInventoriesInventoryCollectionItemOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInventoriesInventoryCollectionItem) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return inventory if the lifecycleState matches the given lifecycleState.
-func (o GetInventoriesInventoryCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInventoriesInventoryCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetInventoriesInventoryCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInventoriesInventoryCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
@@ -12066,13 +10463,13 @@ func (o GetInventoriesInventoryCollectionItemOutput) SystemTags() pulumi.MapOutp
 }
 
 // The time when the inventory was created. An RFC3339 formatted datetime string.
-func (o GetInventoriesInventoryCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInventoriesInventoryCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetInventoriesInventoryCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInventoriesInventoryCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time when the inventory was updated. An RFC3339 formatted datetime string.
-func (o GetInventoriesInventoryCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInventoriesInventoryCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetInventoriesInventoryCollectionItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInventoriesInventoryCollectionItem) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type GetInventoriesInventoryCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -12087,12 +10484,6 @@ func (o GetInventoriesInventoryCollectionItemArrayOutput) ToGetInventoriesInvent
 
 func (o GetInventoriesInventoryCollectionItemArrayOutput) ToGetInventoriesInventoryCollectionItemArrayOutputWithContext(ctx context.Context) GetInventoriesInventoryCollectionItemArrayOutput {
 	return o
-}
-
-func (o GetInventoriesInventoryCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInventoriesInventoryCollectionItem] {
-	return pulumix.Output[[]GetInventoriesInventoryCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetInventoriesInventoryCollectionItemArrayOutput) Index(i pulumi.IntInput) GetInventoriesInventoryCollectionItemOutput {

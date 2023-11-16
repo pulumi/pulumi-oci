@@ -16,11 +16,11 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// <summary>
         /// The OCID of the compartment in which to list resources.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// Specifies the list of artifact override arguments at the time of deployment.
         /// </summary>
@@ -36,11 +36,11 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// <summary>
         /// The ID of the parent pipeline.
         /// </summary>
-        public readonly string DeployPipelineId;
+        public readonly string? DeployPipelineId;
         /// <summary>
         /// The OCID of the stage.
         /// </summary>
-        public readonly string DeployStageId;
+        public readonly string? DeployStageId;
         /// <summary>
         /// Specifies the list of arguments to be overriden per Stage at the time of deployment.
         /// </summary>
@@ -56,54 +56,54 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// <summary>
         /// Specifies type of Deployment
         /// </summary>
-        public readonly string DeploymentType;
+        public readonly string? DeploymentType;
         /// <summary>
         /// A filter to return only resources that match the entire display name given.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// Unique identifier or OCID for listing a single resource by ID.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// Specifies the OCID of the previous deployment to be redeployed.
         /// </summary>
-        public readonly string PreviousDeploymentId;
+        public readonly string? PreviousDeploymentId;
         /// <summary>
         /// unique project identifier
         /// </summary>
-        public readonly string ProjectId;
+        public readonly string? ProjectId;
         /// <summary>
         /// A filter to return only Deployments that matches the given lifecycleState.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, object>? SystemTags;
         /// <summary>
         /// Time the deployment was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// Time the deployment was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         /// </summary>
-        public readonly string TimeUpdated;
-        public readonly bool TriggerNewDevopsDeployment;
+        public readonly string? TimeUpdated;
+        public readonly bool? TriggerNewDevopsDeployment;
 
         [OutputConstructor]
         private GetDeploymentsDeploymentCollectionItemResult(
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
             ImmutableArray<Outputs.GetDeploymentsDeploymentCollectionItemDeployArtifactOverrideArgumentResult> deployArtifactOverrideArguments,
 
@@ -111,9 +111,9 @@ namespace Pulumi.Oci.DevOps.Outputs
 
             ImmutableArray<Outputs.GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentResult> deployPipelineEnvironments,
 
-            string deployPipelineId,
+            string? deployPipelineId,
 
-            string deployStageId,
+            string? deployStageId,
 
             ImmutableArray<Outputs.GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentResult> deployStageOverrideArguments,
 
@@ -121,29 +121,29 @@ namespace Pulumi.Oci.DevOps.Outputs
 
             ImmutableArray<Outputs.GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressResult> deploymentExecutionProgresses,
 
-            string deploymentType,
+            string? deploymentType,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string previousDeploymentId,
+            string? previousDeploymentId,
 
-            string projectId,
+            string? projectId,
 
-            string state,
+            string? state,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, object>? systemTags,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated,
+            string? timeUpdated,
 
-            bool triggerNewDevopsDeployment)
+            bool? triggerNewDevopsDeployment)
         {
             CompartmentId = compartmentId;
             DefinedTags = definedTags;

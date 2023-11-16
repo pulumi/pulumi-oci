@@ -47,68 +47,68 @@ export interface GetScheduleResult {
     /**
      * The customer tenancy.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * The description of the schedule.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The OCID representing a unique shedule.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The unique name of the schedule created by the user.
      */
-    readonly name: string;
+    readonly name?: string;
     /**
      * Specifies supported output file format.
      */
-    readonly outputFileFormat: string;
+    readonly outputFileFormat?: string;
     /**
      * The query properties.
      */
-    readonly queryProperties: outputs.MeteringComputation.GetScheduleQueryProperty[];
+    readonly queryProperties?: outputs.MeteringComputation.GetScheduleQueryProperty[];
     /**
      * The location where usage or cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
      */
-    readonly resultLocations: outputs.MeteringComputation.GetScheduleResultLocation[];
+    readonly resultLocations?: outputs.MeteringComputation.GetScheduleResultLocation[];
     /**
      * The saved report id which can also be used to generate query.
      */
-    readonly savedReportId: string;
+    readonly savedReportId?: string;
     readonly scheduleId: string;
     /**
      * Specifies the frequency according to when the schedule will be run,  in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
      */
-    readonly scheduleRecurrences: string;
+    readonly scheduleRecurrences?: string;
     /**
      * The schedule lifecycle state.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * The date and time the schedule was created.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The date and time of the next job execution.
      */
-    readonly timeNextRun: string;
+    readonly timeNextRun?: string;
     /**
      * The date and time of the first time job execution.
      */
-    readonly timeScheduled: string;
+    readonly timeScheduled?: string;
 }
 /**
  * This data source provides details about a specific Schedule resource in Oracle Cloud Infrastructure Metering Computation service.

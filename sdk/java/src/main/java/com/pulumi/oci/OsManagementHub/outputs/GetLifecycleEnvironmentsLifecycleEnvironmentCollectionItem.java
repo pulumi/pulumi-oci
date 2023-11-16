@@ -11,6 +11,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItem {
@@ -18,183 +20,183 @@ public final class GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItem {
      * @return A filter to return only profiles that match the given archType.
      * 
      */
-    private String archType;
+    private @Nullable String archType;
     /**
      * @return The OCID of the compartment that contains the resources to list.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return Software source description.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return A filter to return resources that match the given display names.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The OCID of the software source.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of managed instances specified lifecycle stage.
      * 
      */
-    private List<GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemManagedInstanceId> managedInstanceIds;
+    private @Nullable List<GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemManagedInstanceId> managedInstanceIds;
     /**
      * @return A filter to return only profiles that match the given osFamily.
      * 
      */
-    private String osFamily;
+    private @Nullable String osFamily;
     /**
      * @return User specified list of lifecycle stages to be created for the lifecycle environment.
      * 
      */
-    private List<GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStage> stages;
+    private @Nullable List<GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStage> stages;
     /**
      * @return A filter to return only the lifecycle environments that match the display name given.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private @Nullable Map<String,Object> systemTags;
     /**
      * @return The time the lifecycle environment was created. An RFC3339 formatted datetime string.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The time the lifecycle environment was last modified. An RFC3339 formatted datetime string.
      * 
      */
-    private String timeModified;
+    private @Nullable String timeModified;
     /**
      * @return The software source vendor name.
      * 
      */
-    private String vendorName;
+    private @Nullable String vendorName;
 
     private GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItem() {}
     /**
      * @return A filter to return only profiles that match the given archType.
      * 
      */
-    public String archType() {
-        return this.archType;
+    public Optional<String> archType() {
+        return Optional.ofNullable(this.archType);
     }
     /**
      * @return The OCID of the compartment that contains the resources to list.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return Software source description.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return A filter to return resources that match the given display names.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The OCID of the software source.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of managed instances specified lifecycle stage.
      * 
      */
     public List<GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemManagedInstanceId> managedInstanceIds() {
-        return this.managedInstanceIds;
+        return this.managedInstanceIds == null ? List.of() : this.managedInstanceIds;
     }
     /**
      * @return A filter to return only profiles that match the given osFamily.
      * 
      */
-    public String osFamily() {
-        return this.osFamily;
+    public Optional<String> osFamily() {
+        return Optional.ofNullable(this.osFamily);
     }
     /**
      * @return User specified list of lifecycle stages to be created for the lifecycle environment.
      * 
      */
     public List<GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStage> stages() {
-        return this.stages;
+        return this.stages == null ? List.of() : this.stages;
     }
     /**
      * @return A filter to return only the lifecycle environments that match the display name given.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     public Map<String,Object> systemTags() {
-        return this.systemTags;
+        return this.systemTags == null ? Map.of() : this.systemTags;
     }
     /**
      * @return The time the lifecycle environment was created. An RFC3339 formatted datetime string.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The time the lifecycle environment was last modified. An RFC3339 formatted datetime string.
      * 
      */
-    public String timeModified() {
-        return this.timeModified;
+    public Optional<String> timeModified() {
+        return Optional.ofNullable(this.timeModified);
     }
     /**
      * @return The software source vendor name.
      * 
      */
-    public String vendorName() {
-        return this.vendorName;
+    public Optional<String> vendorName() {
+        return Optional.ofNullable(this.vendorName);
     }
 
     public static Builder builder() {
@@ -206,21 +208,21 @@ public final class GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String archType;
-        private String compartmentId;
-        private Map<String,Object> definedTags;
-        private String description;
-        private String displayName;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private List<GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemManagedInstanceId> managedInstanceIds;
-        private String osFamily;
-        private List<GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStage> stages;
-        private String state;
-        private Map<String,Object> systemTags;
-        private String timeCreated;
-        private String timeModified;
-        private String vendorName;
+        private @Nullable String archType;
+        private @Nullable String compartmentId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String description;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable List<GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemManagedInstanceId> managedInstanceIds;
+        private @Nullable String osFamily;
+        private @Nullable List<GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStage> stages;
+        private @Nullable String state;
+        private @Nullable Map<String,Object> systemTags;
+        private @Nullable String timeCreated;
+        private @Nullable String timeModified;
+        private @Nullable String vendorName;
         public Builder() {}
         public Builder(GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -242,84 +244,84 @@ public final class GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder archType(String archType) {
-            this.archType = Objects.requireNonNull(archType);
+        public Builder archType(@Nullable String archType) {
+            this.archType = archType;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder managedInstanceIds(List<GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemManagedInstanceId> managedInstanceIds) {
-            this.managedInstanceIds = Objects.requireNonNull(managedInstanceIds);
+        public Builder managedInstanceIds(@Nullable List<GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemManagedInstanceId> managedInstanceIds) {
+            this.managedInstanceIds = managedInstanceIds;
             return this;
         }
         public Builder managedInstanceIds(GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemManagedInstanceId... managedInstanceIds) {
             return managedInstanceIds(List.of(managedInstanceIds));
         }
         @CustomType.Setter
-        public Builder osFamily(String osFamily) {
-            this.osFamily = Objects.requireNonNull(osFamily);
+        public Builder osFamily(@Nullable String osFamily) {
+            this.osFamily = osFamily;
             return this;
         }
         @CustomType.Setter
-        public Builder stages(List<GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStage> stages) {
-            this.stages = Objects.requireNonNull(stages);
+        public Builder stages(@Nullable List<GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStage> stages) {
+            this.stages = stages;
             return this;
         }
         public Builder stages(GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStage... stages) {
             return stages(List.of(stages));
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+        public Builder systemTags(@Nullable Map<String,Object> systemTags) {
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeModified(String timeModified) {
-            this.timeModified = Objects.requireNonNull(timeModified);
+        public Builder timeModified(@Nullable String timeModified) {
+            this.timeModified = timeModified;
             return this;
         }
         @CustomType.Setter
-        public Builder vendorName(String vendorName) {
-            this.vendorName = Objects.requireNonNull(vendorName);
+        public Builder vendorName(@Nullable String vendorName) {
+            this.vendorName = vendorName;
             return this;
         }
         public GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItem build() {

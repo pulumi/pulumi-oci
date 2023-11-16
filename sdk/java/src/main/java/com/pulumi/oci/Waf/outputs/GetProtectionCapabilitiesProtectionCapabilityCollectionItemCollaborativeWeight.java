@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetProtectionCapabilitiesProtectionCapabilityCollectionItemCollaborativeWeight {
@@ -14,39 +16,39 @@ public final class GetProtectionCapabilitiesProtectionCapabilityCollectionItemCo
      * @return A filter to return only resources that match the entire display name given.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return The unique key of protection capability to filter by.
      * 
      */
-    private String key;
+    private @Nullable String key;
     /**
      * @return The weight of contributing protection capability.
      * 
      */
-    private Integer weight;
+    private @Nullable Integer weight;
 
     private GetProtectionCapabilitiesProtectionCapabilityCollectionItemCollaborativeWeight() {}
     /**
      * @return A filter to return only resources that match the entire display name given.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return The unique key of protection capability to filter by.
      * 
      */
-    public String key() {
-        return this.key;
+    public Optional<String> key() {
+        return Optional.ofNullable(this.key);
     }
     /**
      * @return The weight of contributing protection capability.
      * 
      */
-    public Integer weight() {
-        return this.weight;
+    public Optional<Integer> weight() {
+        return Optional.ofNullable(this.weight);
     }
 
     public static Builder builder() {
@@ -58,9 +60,9 @@ public final class GetProtectionCapabilitiesProtectionCapabilityCollectionItemCo
     }
     @CustomType.Builder
     public static final class Builder {
-        private String displayName;
-        private String key;
-        private Integer weight;
+        private @Nullable String displayName;
+        private @Nullable String key;
+        private @Nullable Integer weight;
         public Builder() {}
         public Builder(GetProtectionCapabilitiesProtectionCapabilityCollectionItemCollaborativeWeight defaults) {
     	      Objects.requireNonNull(defaults);
@@ -70,18 +72,18 @@ public final class GetProtectionCapabilitiesProtectionCapabilityCollectionItemCo
         }
 
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
+        public Builder key(@Nullable String key) {
+            this.key = key;
             return this;
         }
         @CustomType.Setter
-        public Builder weight(Integer weight) {
-            this.weight = Objects.requireNonNull(weight);
+        public Builder weight(@Nullable Integer weight) {
+            this.weight = weight;
             return this;
         }
         public GetProtectionCapabilitiesProtectionCapabilityCollectionItemCollaborativeWeight build() {

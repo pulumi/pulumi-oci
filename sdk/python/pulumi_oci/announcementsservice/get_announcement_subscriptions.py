@@ -45,26 +45,17 @@ class GetAnnouncementSubscriptionsResult:
 
     @property
     @pulumi.getter(name="announcementSubscriptionCollections")
-    def announcement_subscription_collections(self) -> Sequence['outputs.GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionResult']:
-        """
-        The list of announcement_subscription_collection.
-        """
+    def announcement_subscription_collections(self) -> Optional[Sequence['outputs.GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionResult']]:
         return pulumi.get(self, "announcement_subscription_collections")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment that contains the announcement subscription.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A user-friendly name for the announcement subscription. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -75,17 +66,11 @@ class GetAnnouncementSubscriptionsResult:
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the announcement subscription.
-        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current lifecycle state of the announcement subscription.
-        """
         return pulumi.get(self, "state")
 
 
@@ -110,29 +95,7 @@ def get_announcement_subscriptions(compartment_id: Optional[str] = None,
                                    state: Optional[str] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAnnouncementSubscriptionsResult:
     """
-    This data source provides the list of Announcement Subscriptions in Oracle Cloud Infrastructure Announcements Service service.
-
-    Gets a list of all announcement subscriptions in the specified compartment.
-
-    This call is subject to an Announcements limit that applies to the total number of requests across all read or write operations. Announcements might throttle this call to reject an otherwise valid request when the total rate of operations exceeds 20 requests per second for a given user. The service might also throttle this call to reject an otherwise valid request when the total rate of operations exceeds 100 requests per second for a given tenancy.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_announcement_subscriptions = oci.AnnouncementsService.get_announcement_subscriptions(compartment_id=var["compartment_id"],
-        display_name=var["announcement_subscription_display_name"],
-        id=var["announcement_subscription_id"],
-        state=var["announcement_subscription_state"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str id: The OCID of the announcement subscription.
-    :param str state: A filter to return only announcement subscriptions that match the given lifecycle state.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -160,28 +123,6 @@ def get_announcement_subscriptions_output(compartment_id: Optional[pulumi.Input[
                                           state: Optional[pulumi.Input[Optional[str]]] = None,
                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAnnouncementSubscriptionsResult]:
     """
-    This data source provides the list of Announcement Subscriptions in Oracle Cloud Infrastructure Announcements Service service.
-
-    Gets a list of all announcement subscriptions in the specified compartment.
-
-    This call is subject to an Announcements limit that applies to the total number of requests across all read or write operations. Announcements might throttle this call to reject an otherwise valid request when the total rate of operations exceeds 20 requests per second for a given user. The service might also throttle this call to reject an otherwise valid request when the total rate of operations exceeds 100 requests per second for a given tenancy.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_announcement_subscriptions = oci.AnnouncementsService.get_announcement_subscriptions(compartment_id=var["compartment_id"],
-        display_name=var["announcement_subscription_display_name"],
-        id=var["announcement_subscription_id"],
-        state=var["announcement_subscription_state"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str id: The OCID of the announcement subscription.
-    :param str state: A filter to return only announcement subscriptions that match the given lifecycle state.
+    Use this data source to access information about an existing resource.
     """
     ...

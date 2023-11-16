@@ -67,11 +67,11 @@ export class SteeringPolicyAttachment extends pulumi.CustomResource {
     /**
      * The OCID of the compartment containing the steering policy attachment.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    public /*out*/ readonly compartmentId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) A user-friendly name for the steering policy attachment. Does not have to be unique and can be changed. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    public readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * The attached domain within the attached zone. `domainName` is case insensitive.
      */
@@ -79,15 +79,15 @@ export class SteeringPolicyAttachment extends pulumi.CustomResource {
     /**
      * The record types covered by the attachment at the domain. The set of record types is determined by aggregating the record types from the answers defined in the steering policy.
      */
-    public /*out*/ readonly rtypes!: pulumi.Output<string[]>;
+    public /*out*/ readonly rtypes!: pulumi.Output<string[] | undefined>;
     /**
      * The canonical absolute URL of the resource.
      */
-    public /*out*/ readonly self!: pulumi.Output<string>;
+    public /*out*/ readonly self!: pulumi.Output<string | undefined>;
     /**
      * The current state of the resource.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The OCID of the attached steering policy.
      */
@@ -95,7 +95,7 @@ export class SteeringPolicyAttachment extends pulumi.CustomResource {
     /**
      * The date and time the resource was created, expressed in RFC 3339 timestamp format.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The OCID of the attached zone.
      *

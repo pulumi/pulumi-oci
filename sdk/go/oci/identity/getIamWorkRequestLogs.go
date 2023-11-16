@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Iam Work Request Logs in Oracle Cloud Infrastructure Identity service.
@@ -69,7 +68,7 @@ type GetIamWorkRequestLogsResult struct {
 	// The list of iam_work_request_logs.
 	IamWorkRequestLogs []GetIamWorkRequestLogsIamWorkRequestLog `pulumi:"iamWorkRequestLogs"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 func GetIamWorkRequestLogsOutput(ctx *pulumi.Context, args GetIamWorkRequestLogsOutputArgs, opts ...pulumi.InvokeOption) GetIamWorkRequestLogsResultOutput {
@@ -111,12 +110,6 @@ func (o GetIamWorkRequestLogsResultOutput) ToGetIamWorkRequestLogsResultOutputWi
 	return o
 }
 
-func (o GetIamWorkRequestLogsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetIamWorkRequestLogsResult] {
-	return pulumix.Output[GetIamWorkRequestLogsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetIamWorkRequestLogsResultOutput) Filters() GetIamWorkRequestLogsFilterArrayOutput {
 	return o.ApplyT(func(v GetIamWorkRequestLogsResult) []GetIamWorkRequestLogsFilter { return v.Filters }).(GetIamWorkRequestLogsFilterArrayOutput)
 }
@@ -133,8 +126,8 @@ func (o GetIamWorkRequestLogsResultOutput) IamWorkRequestLogs() GetIamWorkReques
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetIamWorkRequestLogsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIamWorkRequestLogsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetIamWorkRequestLogsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIamWorkRequestLogsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func init() {

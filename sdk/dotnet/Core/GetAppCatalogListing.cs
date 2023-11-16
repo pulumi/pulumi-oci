@@ -108,19 +108,19 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// Listing's contact URL.
         /// </summary>
-        public readonly string ContactUrl;
+        public readonly string? ContactUrl;
         /// <summary>
         /// Description of the listing.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// the region free ocid of the listing resource.
         /// </summary>
@@ -128,39 +128,39 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// Publisher's logo URL.
         /// </summary>
-        public readonly string PublisherLogoUrl;
+        public readonly string? PublisherLogoUrl;
         /// <summary>
         /// The name of the publisher who published this listing.
         /// </summary>
-        public readonly string PublisherName;
+        public readonly string? PublisherName;
         /// <summary>
         /// The short summary for the listing.
         /// </summary>
-        public readonly string Summary;
+        public readonly string? Summary;
         /// <summary>
         /// Date and time the listing was published, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z`
         /// </summary>
-        public readonly string TimePublished;
+        public readonly string? TimePublished;
 
         [OutputConstructor]
         private GetAppCatalogListingResult(
-            string contactUrl,
+            string? contactUrl,
 
-            string description,
+            string? description,
 
-            string displayName,
+            string? displayName,
 
-            string id,
+            string? id,
 
             string listingId,
 
-            string publisherLogoUrl,
+            string? publisherLogoUrl,
 
-            string publisherName,
+            string? publisherName,
 
-            string summary,
+            string? summary,
 
-            string timePublished)
+            string? timePublished)
         {
             ContactUrl = contactUrl;
             Description = description;

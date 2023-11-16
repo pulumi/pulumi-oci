@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagementAgentGetAutoUpgradableConfigResult {
@@ -15,12 +17,12 @@ public final class GetManagementAgentGetAutoUpgradableConfigResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return true if the agents can be upgraded automatically; false if they must be upgraded manually.
      * 
      */
-    private Boolean isAgentAutoUpgradable;
+    private @Nullable Boolean isAgentAutoUpgradable;
 
     private GetManagementAgentGetAutoUpgradableConfigResult() {}
     public String compartmentId() {
@@ -30,15 +32,15 @@ public final class GetManagementAgentGetAutoUpgradableConfigResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return true if the agents can be upgraded automatically; false if they must be upgraded manually.
      * 
      */
-    public Boolean isAgentAutoUpgradable() {
-        return this.isAgentAutoUpgradable;
+    public Optional<Boolean> isAgentAutoUpgradable() {
+        return Optional.ofNullable(this.isAgentAutoUpgradable);
     }
 
     public static Builder builder() {
@@ -51,8 +53,8 @@ public final class GetManagementAgentGetAutoUpgradableConfigResult {
     @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
-        private String id;
-        private Boolean isAgentAutoUpgradable;
+        private @Nullable String id;
+        private @Nullable Boolean isAgentAutoUpgradable;
         public Builder() {}
         public Builder(GetManagementAgentGetAutoUpgradableConfigResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -67,13 +69,13 @@ public final class GetManagementAgentGetAutoUpgradableConfigResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder isAgentAutoUpgradable(Boolean isAgentAutoUpgradable) {
-            this.isAgentAutoUpgradable = Objects.requireNonNull(isAgentAutoUpgradable);
+        public Builder isAgentAutoUpgradable(@Nullable Boolean isAgentAutoUpgradable) {
+            this.isAgentAutoUpgradable = isAgentAutoUpgradable;
             return this;
         }
         public GetManagementAgentGetAutoUpgradableConfigResult build() {

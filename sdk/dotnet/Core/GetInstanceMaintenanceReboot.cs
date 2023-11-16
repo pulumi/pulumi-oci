@@ -112,20 +112,20 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string InstanceId;
         /// <summary>
         /// The maximum extension date and time for the maintenance reboot, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). The range for the maintenance extension is between 1 and 14 days from the initial scheduled maintenance date. Example: `2018-05-25T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeMaintenanceRebootDueMax;
+        public readonly string? TimeMaintenanceRebootDueMax;
 
         [OutputConstructor]
         private GetInstanceMaintenanceRebootResult(
-            string id,
+            string? id,
 
             string instanceId,
 
-            string timeMaintenanceRebootDueMax)
+            string? timeMaintenanceRebootDueMax)
         {
             Id = id;
             InstanceId = instanceId;

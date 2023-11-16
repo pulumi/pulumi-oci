@@ -64,58 +64,37 @@ class GetSdmMaskingPolicyDifferenceResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment that contains the SDM masking policy difference.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="differenceType")
-    def difference_type(self) -> str:
-        """
-        The type of the SDM masking policy difference. It defines the difference scope. NEW identifies new sensitive columns in the sensitive data model that are not in the masking policy. DELETED identifies columns that are present in the masking policy but have been deleted from the sensitive data model. MODIFIED identifies columns that are present in the sensitive data model as well as the masking policy but some of their attributes have been modified. ALL covers all the above three scenarios and reports new, deleted and modified columns.
-        """
+    def difference_type(self) -> Optional[str]:
         return pulumi.get(self, "difference_type")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The display name of the SDM masking policy difference.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the SDM masking policy difference.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="maskingPolicyId")
-    def masking_policy_id(self) -> str:
-        """
-        The OCID of the masking policy associated with the SDM masking policy difference.
-        """
+    def masking_policy_id(self) -> Optional[str]:
         return pulumi.get(self, "masking_policy_id")
 
     @property
@@ -125,42 +104,27 @@ class GetSdmMaskingPolicyDifferenceResult:
 
     @property
     @pulumi.getter(name="sensitiveDataModelId")
-    def sensitive_data_model_id(self) -> str:
-        """
-        The OCID of the sensitive data model associated with the SDM masking policy difference.
-        """
+    def sensitive_data_model_id(self) -> Optional[str]:
         return pulumi.get(self, "sensitive_data_model_id")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the SDM masking policy difference.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the SDM masking policy difference was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeCreationStarted")
-    def time_creation_started(self) -> str:
-        """
-        The date and time the SDM masking policy difference creation started, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
+    def time_creation_started(self) -> Optional[str]:
         return pulumi.get(self, "time_creation_started")
 
 
@@ -188,21 +152,7 @@ class AwaitableGetSdmMaskingPolicyDifferenceResult(GetSdmMaskingPolicyDifference
 def get_sdm_masking_policy_difference(sdm_masking_policy_difference_id: Optional[str] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSdmMaskingPolicyDifferenceResult:
     """
-    This data source provides details about a specific Sdm Masking Policy Difference resource in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets the details of the specified SDM Masking policy difference.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_sdm_masking_policy_difference = oci.DataSafe.get_sdm_masking_policy_difference(sdm_masking_policy_difference_id=oci_data_safe_sdm_masking_policy_difference["test_sdm_masking_policy_difference"]["id"])
-    ```
-
-
-    :param str sdm_masking_policy_difference_id: The OCID of the SDM masking policy difference.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['sdmMaskingPolicyDifferenceId'] = sdm_masking_policy_difference_id
@@ -229,20 +179,6 @@ def get_sdm_masking_policy_difference(sdm_masking_policy_difference_id: Optional
 def get_sdm_masking_policy_difference_output(sdm_masking_policy_difference_id: Optional[pulumi.Input[str]] = None,
                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSdmMaskingPolicyDifferenceResult]:
     """
-    This data source provides details about a specific Sdm Masking Policy Difference resource in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets the details of the specified SDM Masking policy difference.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_sdm_masking_policy_difference = oci.DataSafe.get_sdm_masking_policy_difference(sdm_masking_policy_difference_id=oci_data_safe_sdm_masking_policy_difference["test_sdm_masking_policy_difference"]["id"])
-    ```
-
-
-    :param str sdm_masking_policy_difference_id: The OCID of the SDM masking policy difference.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Double;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetInvoicesInvoiceCollectionItemBillToAddressCountry {
@@ -14,63 +16,63 @@ public final class GetInvoicesInvoiceCollectionItemBillToAddressCountry {
      * @return Country code in ISO-3166-1 3-letter format
      * 
      */
-    private String ascii3countryCode;
+    private @Nullable String ascii3countryCode;
     /**
      * @return Country code in ISO-3166-1 2-letter format
      * 
      */
-    private String countryCode;
+    private @Nullable String countryCode;
     /**
      * @return Indentifier of the country. This is a DB side unique id which was generated when the entity was created in the table
      * 
      */
-    private Double countryId;
+    private @Nullable Double countryId;
     /**
      * @return Name of the country
      * 
      */
-    private String countryName;
+    private @Nullable String countryName;
     /**
      * @return Language identifier
      * 
      */
-    private Double languageId;
+    private @Nullable Double languageId;
 
     private GetInvoicesInvoiceCollectionItemBillToAddressCountry() {}
     /**
      * @return Country code in ISO-3166-1 3-letter format
      * 
      */
-    public String ascii3countryCode() {
-        return this.ascii3countryCode;
+    public Optional<String> ascii3countryCode() {
+        return Optional.ofNullable(this.ascii3countryCode);
     }
     /**
      * @return Country code in ISO-3166-1 2-letter format
      * 
      */
-    public String countryCode() {
-        return this.countryCode;
+    public Optional<String> countryCode() {
+        return Optional.ofNullable(this.countryCode);
     }
     /**
      * @return Indentifier of the country. This is a DB side unique id which was generated when the entity was created in the table
      * 
      */
-    public Double countryId() {
-        return this.countryId;
+    public Optional<Double> countryId() {
+        return Optional.ofNullable(this.countryId);
     }
     /**
      * @return Name of the country
      * 
      */
-    public String countryName() {
-        return this.countryName;
+    public Optional<String> countryName() {
+        return Optional.ofNullable(this.countryName);
     }
     /**
      * @return Language identifier
      * 
      */
-    public Double languageId() {
-        return this.languageId;
+    public Optional<Double> languageId() {
+        return Optional.ofNullable(this.languageId);
     }
 
     public static Builder builder() {
@@ -82,11 +84,11 @@ public final class GetInvoicesInvoiceCollectionItemBillToAddressCountry {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String ascii3countryCode;
-        private String countryCode;
-        private Double countryId;
-        private String countryName;
-        private Double languageId;
+        private @Nullable String ascii3countryCode;
+        private @Nullable String countryCode;
+        private @Nullable Double countryId;
+        private @Nullable String countryName;
+        private @Nullable Double languageId;
         public Builder() {}
         public Builder(GetInvoicesInvoiceCollectionItemBillToAddressCountry defaults) {
     	      Objects.requireNonNull(defaults);
@@ -98,28 +100,28 @@ public final class GetInvoicesInvoiceCollectionItemBillToAddressCountry {
         }
 
         @CustomType.Setter
-        public Builder ascii3countryCode(String ascii3countryCode) {
-            this.ascii3countryCode = Objects.requireNonNull(ascii3countryCode);
+        public Builder ascii3countryCode(@Nullable String ascii3countryCode) {
+            this.ascii3countryCode = ascii3countryCode;
             return this;
         }
         @CustomType.Setter
-        public Builder countryCode(String countryCode) {
-            this.countryCode = Objects.requireNonNull(countryCode);
+        public Builder countryCode(@Nullable String countryCode) {
+            this.countryCode = countryCode;
             return this;
         }
         @CustomType.Setter
-        public Builder countryId(Double countryId) {
-            this.countryId = Objects.requireNonNull(countryId);
+        public Builder countryId(@Nullable Double countryId) {
+            this.countryId = countryId;
             return this;
         }
         @CustomType.Setter
-        public Builder countryName(String countryName) {
-            this.countryName = Objects.requireNonNull(countryName);
+        public Builder countryName(@Nullable String countryName) {
+            this.countryName = countryName;
             return this;
         }
         @CustomType.Setter
-        public Builder languageId(Double languageId) {
-            this.languageId = Objects.requireNonNull(languageId);
+        public Builder languageId(@Nullable Double languageId) {
+            this.languageId = languageId;
             return this;
         }
         public GetInvoicesInvoiceCollectionItemBillToAddressCountry build() {

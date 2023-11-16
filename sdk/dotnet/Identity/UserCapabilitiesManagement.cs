@@ -54,25 +54,25 @@ namespace Pulumi.Oci.Identity
         /// (Updatable) Indicates if the user can use API keys.
         /// </summary>
         [Output("canUseApiKeys")]
-        public Output<bool> CanUseApiKeys { get; private set; } = null!;
+        public Output<bool?> CanUseApiKeys { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Indicates if the user can use SWIFT passwords / auth tokens.
         /// </summary>
         [Output("canUseAuthTokens")]
-        public Output<bool> CanUseAuthTokens { get; private set; } = null!;
+        public Output<bool?> CanUseAuthTokens { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Indicates if the user can log in to the console.
         /// </summary>
         [Output("canUseConsolePassword")]
-        public Output<bool> CanUseConsolePassword { get; private set; } = null!;
+        public Output<bool?> CanUseConsolePassword { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Indicates if the user can use SigV4 symmetric keys.
         /// </summary>
         [Output("canUseCustomerSecretKeys")]
-        public Output<bool> CanUseCustomerSecretKeys { get; private set; } = null!;
+        public Output<bool?> CanUseCustomerSecretKeys { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Indicates if the user can use SMTP passwords.
@@ -82,7 +82,7 @@ namespace Pulumi.Oci.Identity
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("canUseSmtpCredentials")]
-        public Output<bool> CanUseSmtpCredentials { get; private set; } = null!;
+        public Output<bool?> CanUseSmtpCredentials { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the user.

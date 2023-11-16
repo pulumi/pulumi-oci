@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Aggregated Computed Usages in Oracle Cloud Infrastructure Onesubscription service.
@@ -50,7 +49,7 @@ type GetAggregatedComputedUsagesResult struct {
 	Filters                  []GetAggregatedComputedUsagesFilter                  `pulumi:"filters"`
 	Grouping                 *string                                              `pulumi:"grouping"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Product description
 	ParentProduct *string `pulumi:"parentProduct"`
 	// Subscription Id is an identifier associated to the service used for filter the Computed Usage in SPM
@@ -108,12 +107,6 @@ func (o GetAggregatedComputedUsagesResultOutput) ToGetAggregatedComputedUsagesRe
 	return o
 }
 
-func (o GetAggregatedComputedUsagesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAggregatedComputedUsagesResult] {
-	return pulumix.Output[GetAggregatedComputedUsagesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Aggregation of computed usages for the subscribed service.
 func (o GetAggregatedComputedUsagesResultOutput) AggregatedComputedUsages() GetAggregatedComputedUsagesAggregatedComputedUsageArrayOutput {
 	return o.ApplyT(func(v GetAggregatedComputedUsagesResult) []GetAggregatedComputedUsagesAggregatedComputedUsage {
@@ -134,8 +127,8 @@ func (o GetAggregatedComputedUsagesResultOutput) Grouping() pulumi.StringPtrOutp
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetAggregatedComputedUsagesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAggregatedComputedUsagesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetAggregatedComputedUsagesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAggregatedComputedUsagesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Product description

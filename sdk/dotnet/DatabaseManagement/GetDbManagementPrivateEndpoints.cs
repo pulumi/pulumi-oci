@@ -191,7 +191,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Specifies whether the Database Management private endpoint can be used for Oracle Databases in a cluster.
         /// </summary>
@@ -217,7 +217,7 @@ namespace Pulumi.Oci.DatabaseManagement
 
             ImmutableArray<Outputs.GetDbManagementPrivateEndpointsFilterResult> filters,
 
-            string id,
+            string? id,
 
             bool? isCluster,
 

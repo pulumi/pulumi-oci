@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DevOps.outputs.GetBuildPipelineStageBuildSourceCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetBuildPipelineStageBuildSourceCollection {
@@ -14,7 +15,7 @@ public final class GetBuildPipelineStageBuildSourceCollection {
      * @return Collection of artifacts that were generated in the Build stage and need to be pushed to the artifactory stores. In case of UPDATE operation, replaces existing artifacts list. Merging with existing artifacts is not supported.
      * 
      */
-    private List<GetBuildPipelineStageBuildSourceCollectionItem> items;
+    private @Nullable List<GetBuildPipelineStageBuildSourceCollectionItem> items;
 
     private GetBuildPipelineStageBuildSourceCollection() {}
     /**
@@ -22,7 +23,7 @@ public final class GetBuildPipelineStageBuildSourceCollection {
      * 
      */
     public List<GetBuildPipelineStageBuildSourceCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetBuildPipelineStageBuildSourceCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetBuildPipelineStageBuildSourceCollectionItem> items;
+        private @Nullable List<GetBuildPipelineStageBuildSourceCollectionItem> items;
         public Builder() {}
         public Builder(GetBuildPipelineStageBuildSourceCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetBuildPipelineStageBuildSourceCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetBuildPipelineStageBuildSourceCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetBuildPipelineStageBuildSourceCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetBuildPipelineStageBuildSourceCollectionItem... items) {

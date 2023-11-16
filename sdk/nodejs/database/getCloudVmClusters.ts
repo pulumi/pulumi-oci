@@ -71,7 +71,7 @@ export interface GetCloudVmClustersResult {
     /**
      * The list of cloud_vm_clusters.
      */
-    readonly cloudVmClusters: outputs.Database.GetCloudVmClustersCloudVmCluster[];
+    readonly cloudVmClusters?: outputs.Database.GetCloudVmClustersCloudVmCluster[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
@@ -84,7 +84,7 @@ export interface GetCloudVmClustersResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The current state of the cloud VM cluster.
      */

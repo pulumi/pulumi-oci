@@ -8,6 +8,8 @@ import com.pulumi.oci.DisasterRecovery.outputs.GetDrPlansDrPlanCollectionItemPla
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep {
@@ -15,111 +17,111 @@ public final class GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep {
      * @return The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1..uniqueID`
      * 
      */
-    private String functionId;
+    private @Nullable String functionId;
     /**
      * @return The region in which the function is deployed.  Example: `us-ashburn-1`
      * 
      */
-    private String functionRegion;
+    private @Nullable String functionRegion;
     /**
      * @return The details of an object storage script location for a user-defined step in a DR plan.
      * 
      */
-    private List<GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocation> objectStorageScriptLocations;
+    private @Nullable List<GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocation> objectStorageScriptLocations;
     /**
      * @return The request body for the function.  Example: `{ &#34;FnParam1&#34;, &#34;FnParam2&#34; }`
      * 
      */
-    private String requestBody;
+    private @Nullable String requestBody;
     /**
      * @return The userid on the instance to be used for executing the script or command.  Example: `opc`
      * 
      */
-    private String runAsUser;
+    private @Nullable String runAsUser;
     /**
      * @return The OCID of the instance on which this script or command should be executed.
      * 
      */
-    private String runOnInstanceId;
+    private @Nullable String runOnInstanceId;
     /**
      * @return The region of the instance where this script or command should be executed.  Example: `us-ashburn-1`
      * 
      */
-    private String runOnInstanceRegion;
+    private @Nullable String runOnInstanceRegion;
     /**
      * @return The script name and arguments.  Example: `/usr/bin/python3 /home/opc/scripts/my_app_script.py arg1 arg2 arg3`
      * 
      */
-    private String scriptCommand;
+    private @Nullable String scriptCommand;
     /**
      * @return The type of the user-defined step.
      * 
      */
-    private String stepType;
+    private @Nullable String stepType;
 
     private GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep() {}
     /**
      * @return The OCID of function to be invoked.  Example: `ocid1.fnfunc.oc1..uniqueID`
      * 
      */
-    public String functionId() {
-        return this.functionId;
+    public Optional<String> functionId() {
+        return Optional.ofNullable(this.functionId);
     }
     /**
      * @return The region in which the function is deployed.  Example: `us-ashburn-1`
      * 
      */
-    public String functionRegion() {
-        return this.functionRegion;
+    public Optional<String> functionRegion() {
+        return Optional.ofNullable(this.functionRegion);
     }
     /**
      * @return The details of an object storage script location for a user-defined step in a DR plan.
      * 
      */
     public List<GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocation> objectStorageScriptLocations() {
-        return this.objectStorageScriptLocations;
+        return this.objectStorageScriptLocations == null ? List.of() : this.objectStorageScriptLocations;
     }
     /**
      * @return The request body for the function.  Example: `{ &#34;FnParam1&#34;, &#34;FnParam2&#34; }`
      * 
      */
-    public String requestBody() {
-        return this.requestBody;
+    public Optional<String> requestBody() {
+        return Optional.ofNullable(this.requestBody);
     }
     /**
      * @return The userid on the instance to be used for executing the script or command.  Example: `opc`
      * 
      */
-    public String runAsUser() {
-        return this.runAsUser;
+    public Optional<String> runAsUser() {
+        return Optional.ofNullable(this.runAsUser);
     }
     /**
      * @return The OCID of the instance on which this script or command should be executed.
      * 
      */
-    public String runOnInstanceId() {
-        return this.runOnInstanceId;
+    public Optional<String> runOnInstanceId() {
+        return Optional.ofNullable(this.runOnInstanceId);
     }
     /**
      * @return The region of the instance where this script or command should be executed.  Example: `us-ashburn-1`
      * 
      */
-    public String runOnInstanceRegion() {
-        return this.runOnInstanceRegion;
+    public Optional<String> runOnInstanceRegion() {
+        return Optional.ofNullable(this.runOnInstanceRegion);
     }
     /**
      * @return The script name and arguments.  Example: `/usr/bin/python3 /home/opc/scripts/my_app_script.py arg1 arg2 arg3`
      * 
      */
-    public String scriptCommand() {
-        return this.scriptCommand;
+    public Optional<String> scriptCommand() {
+        return Optional.ofNullable(this.scriptCommand);
     }
     /**
      * @return The type of the user-defined step.
      * 
      */
-    public String stepType() {
-        return this.stepType;
+    public Optional<String> stepType() {
+        return Optional.ofNullable(this.stepType);
     }
 
     public static Builder builder() {
@@ -131,15 +133,15 @@ public final class GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String functionId;
-        private String functionRegion;
-        private List<GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocation> objectStorageScriptLocations;
-        private String requestBody;
-        private String runAsUser;
-        private String runOnInstanceId;
-        private String runOnInstanceRegion;
-        private String scriptCommand;
-        private String stepType;
+        private @Nullable String functionId;
+        private @Nullable String functionRegion;
+        private @Nullable List<GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocation> objectStorageScriptLocations;
+        private @Nullable String requestBody;
+        private @Nullable String runAsUser;
+        private @Nullable String runOnInstanceId;
+        private @Nullable String runOnInstanceRegion;
+        private @Nullable String scriptCommand;
+        private @Nullable String stepType;
         public Builder() {}
         public Builder(GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep defaults) {
     	      Objects.requireNonNull(defaults);
@@ -155,51 +157,51 @@ public final class GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep {
         }
 
         @CustomType.Setter
-        public Builder functionId(String functionId) {
-            this.functionId = Objects.requireNonNull(functionId);
+        public Builder functionId(@Nullable String functionId) {
+            this.functionId = functionId;
             return this;
         }
         @CustomType.Setter
-        public Builder functionRegion(String functionRegion) {
-            this.functionRegion = Objects.requireNonNull(functionRegion);
+        public Builder functionRegion(@Nullable String functionRegion) {
+            this.functionRegion = functionRegion;
             return this;
         }
         @CustomType.Setter
-        public Builder objectStorageScriptLocations(List<GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocation> objectStorageScriptLocations) {
-            this.objectStorageScriptLocations = Objects.requireNonNull(objectStorageScriptLocations);
+        public Builder objectStorageScriptLocations(@Nullable List<GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocation> objectStorageScriptLocations) {
+            this.objectStorageScriptLocations = objectStorageScriptLocations;
             return this;
         }
         public Builder objectStorageScriptLocations(GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocation... objectStorageScriptLocations) {
             return objectStorageScriptLocations(List.of(objectStorageScriptLocations));
         }
         @CustomType.Setter
-        public Builder requestBody(String requestBody) {
-            this.requestBody = Objects.requireNonNull(requestBody);
+        public Builder requestBody(@Nullable String requestBody) {
+            this.requestBody = requestBody;
             return this;
         }
         @CustomType.Setter
-        public Builder runAsUser(String runAsUser) {
-            this.runAsUser = Objects.requireNonNull(runAsUser);
+        public Builder runAsUser(@Nullable String runAsUser) {
+            this.runAsUser = runAsUser;
             return this;
         }
         @CustomType.Setter
-        public Builder runOnInstanceId(String runOnInstanceId) {
-            this.runOnInstanceId = Objects.requireNonNull(runOnInstanceId);
+        public Builder runOnInstanceId(@Nullable String runOnInstanceId) {
+            this.runOnInstanceId = runOnInstanceId;
             return this;
         }
         @CustomType.Setter
-        public Builder runOnInstanceRegion(String runOnInstanceRegion) {
-            this.runOnInstanceRegion = Objects.requireNonNull(runOnInstanceRegion);
+        public Builder runOnInstanceRegion(@Nullable String runOnInstanceRegion) {
+            this.runOnInstanceRegion = runOnInstanceRegion;
             return this;
         }
         @CustomType.Setter
-        public Builder scriptCommand(String scriptCommand) {
-            this.scriptCommand = Objects.requireNonNull(scriptCommand);
+        public Builder scriptCommand(@Nullable String scriptCommand) {
+            this.scriptCommand = scriptCommand;
             return this;
         }
         @CustomType.Setter
-        public Builder stepType(String stepType) {
-            this.stepType = Objects.requireNonNull(stepType);
+        public Builder stepType(@Nullable String stepType) {
+            this.stepType = stepType;
             return this;
         }
         public GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep build() {

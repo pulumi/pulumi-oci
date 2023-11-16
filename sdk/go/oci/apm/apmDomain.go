@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Apm Domain resource in Oracle Cloud Infrastructure Apm service.
@@ -67,11 +66,11 @@ type ApmDomain struct {
 	// (Updatable) The OCID of the compartment corresponding to the APM domain.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// The endpoint where the APM agents upload their observations and metrics.
-	DataUploadEndpoint pulumi.StringOutput `pulumi:"dataUploadEndpoint"`
+	DataUploadEndpoint pulumi.StringPtrOutput `pulumi:"dataUploadEndpoint"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) Description of the APM domain.
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) Display name of the APM domain.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -80,13 +79,13 @@ type ApmDomain struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	IsFreeTier pulumi.BoolOutput `pulumi:"isFreeTier"`
+	IsFreeTier pulumi.BoolPtrOutput `pulumi:"isFreeTier"`
 	// The current lifecycle state of the APM domain.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The time the APM domain was created, expressed in RFC 3339 timestamp format.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The time the APM domain was updated, expressed in RFC 3339 timestamp format.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewApmDomain registers a new resource with the given unique name, arguments, and options.
@@ -240,12 +239,6 @@ func (i *ApmDomain) ToApmDomainOutputWithContext(ctx context.Context) ApmDomainO
 	return pulumi.ToOutputWithContext(ctx, i).(ApmDomainOutput)
 }
 
-func (i *ApmDomain) ToOutput(ctx context.Context) pulumix.Output[*ApmDomain] {
-	return pulumix.Output[*ApmDomain]{
-		OutputState: i.ToApmDomainOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ApmDomainArrayInput is an input type that accepts ApmDomainArray and ApmDomainArrayOutput values.
 // You can construct a concrete instance of `ApmDomainArrayInput` via:
 //
@@ -269,12 +262,6 @@ func (i ApmDomainArray) ToApmDomainArrayOutput() ApmDomainArrayOutput {
 
 func (i ApmDomainArray) ToApmDomainArrayOutputWithContext(ctx context.Context) ApmDomainArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ApmDomainArrayOutput)
-}
-
-func (i ApmDomainArray) ToOutput(ctx context.Context) pulumix.Output[[]*ApmDomain] {
-	return pulumix.Output[[]*ApmDomain]{
-		OutputState: i.ToApmDomainArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ApmDomainMapInput is an input type that accepts ApmDomainMap and ApmDomainMapOutput values.
@@ -302,12 +289,6 @@ func (i ApmDomainMap) ToApmDomainMapOutputWithContext(ctx context.Context) ApmDo
 	return pulumi.ToOutputWithContext(ctx, i).(ApmDomainMapOutput)
 }
 
-func (i ApmDomainMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ApmDomain] {
-	return pulumix.Output[map[string]*ApmDomain]{
-		OutputState: i.ToApmDomainMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ApmDomainOutput struct{ *pulumi.OutputState }
 
 func (ApmDomainOutput) ElementType() reflect.Type {
@@ -322,20 +303,14 @@ func (o ApmDomainOutput) ToApmDomainOutputWithContext(ctx context.Context) ApmDo
 	return o
 }
 
-func (o ApmDomainOutput) ToOutput(ctx context.Context) pulumix.Output[*ApmDomain] {
-	return pulumix.Output[*ApmDomain]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The OCID of the compartment corresponding to the APM domain.
 func (o ApmDomainOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ApmDomain) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
 // The endpoint where the APM agents upload their observations and metrics.
-func (o ApmDomainOutput) DataUploadEndpoint() pulumi.StringOutput {
-	return o.ApplyT(func(v *ApmDomain) pulumi.StringOutput { return v.DataUploadEndpoint }).(pulumi.StringOutput)
+func (o ApmDomainOutput) DataUploadEndpoint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ApmDomain) pulumi.StringPtrOutput { return v.DataUploadEndpoint }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -344,8 +319,8 @@ func (o ApmDomainOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) Description of the APM domain.
-func (o ApmDomainOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *ApmDomain) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o ApmDomainOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ApmDomain) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Display name of the APM domain.
@@ -362,23 +337,23 @@ func (o ApmDomainOutput) FreeformTags() pulumi.MapOutput {
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o ApmDomainOutput) IsFreeTier() pulumi.BoolOutput {
-	return o.ApplyT(func(v *ApmDomain) pulumi.BoolOutput { return v.IsFreeTier }).(pulumi.BoolOutput)
+func (o ApmDomainOutput) IsFreeTier() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ApmDomain) pulumi.BoolPtrOutput { return v.IsFreeTier }).(pulumi.BoolPtrOutput)
 }
 
 // The current lifecycle state of the APM domain.
-func (o ApmDomainOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *ApmDomain) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o ApmDomainOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ApmDomain) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The time the APM domain was created, expressed in RFC 3339 timestamp format.
-func (o ApmDomainOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *ApmDomain) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o ApmDomainOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ApmDomain) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the APM domain was updated, expressed in RFC 3339 timestamp format.
-func (o ApmDomainOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *ApmDomain) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o ApmDomainOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ApmDomain) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type ApmDomainArrayOutput struct{ *pulumi.OutputState }
@@ -393,12 +368,6 @@ func (o ApmDomainArrayOutput) ToApmDomainArrayOutput() ApmDomainArrayOutput {
 
 func (o ApmDomainArrayOutput) ToApmDomainArrayOutputWithContext(ctx context.Context) ApmDomainArrayOutput {
 	return o
-}
-
-func (o ApmDomainArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ApmDomain] {
-	return pulumix.Output[[]*ApmDomain]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ApmDomainArrayOutput) Index(i pulumi.IntInput) ApmDomainOutput {
@@ -419,12 +388,6 @@ func (o ApmDomainMapOutput) ToApmDomainMapOutput() ApmDomainMapOutput {
 
 func (o ApmDomainMapOutput) ToApmDomainMapOutputWithContext(ctx context.Context) ApmDomainMapOutput {
 	return o
-}
-
-func (o ApmDomainMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ApmDomain] {
-	return pulumix.Output[map[string]*ApmDomain]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ApmDomainMapOutput) MapIndex(k pulumi.StringInput) ApmDomainOutput {

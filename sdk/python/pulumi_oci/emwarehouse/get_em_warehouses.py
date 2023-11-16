@@ -49,25 +49,16 @@ class GetEmWarehousesResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
-        """
-        Compartment Identifier
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        EmWarehouse Identifier, can be renamed
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="emWarehouseCollections")
-    def em_warehouse_collections(self) -> Sequence['outputs.GetEmWarehousesEmWarehouseCollectionResult']:
-        """
-        The list of em_warehouse_collection.
-        """
+    def em_warehouse_collections(self) -> Optional[Sequence['outputs.GetEmWarehousesEmWarehouseCollectionResult']]:
         return pulumi.get(self, "em_warehouse_collections")
 
     @property
@@ -78,25 +69,16 @@ class GetEmWarehousesResult:
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        Unique identifier that is immutable on creation
-        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="operationsInsightsWarehouseId")
     def operations_insights_warehouse_id(self) -> Optional[str]:
-        """
-        operations Insights Warehouse Identifier
-        """
         return pulumi.get(self, "operations_insights_warehouse_id")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the EmWarehouse.
-        """
         return pulumi.get(self, "state")
 
 
@@ -123,29 +105,7 @@ def get_em_warehouses(compartment_id: Optional[str] = None,
                       state: Optional[str] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetEmWarehousesResult:
     """
-    This data source provides the list of Em Warehouses in Oracle Cloud Infrastructure Em Warehouse service.
-
-    Returns a list of EmWarehouses.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_em_warehouses = oci.EmWarehouse.get_em_warehouses(compartment_id=var["compartment_id"],
-        display_name=var["em_warehouse_display_name"],
-        id=var["em_warehouse_id"],
-        operations_insights_warehouse_id=oci_opsi_operations_insights_warehouse["test_operations_insights_warehouse"]["id"],
-        state=var["em_warehouse_state"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str id: unique EmWarehouse identifier
-    :param str operations_insights_warehouse_id: unique operationsInsightsWarehouseId identifier
-    :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -176,28 +136,6 @@ def get_em_warehouses_output(compartment_id: Optional[pulumi.Input[Optional[str]
                              state: Optional[pulumi.Input[Optional[str]]] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetEmWarehousesResult]:
     """
-    This data source provides the list of Em Warehouses in Oracle Cloud Infrastructure Em Warehouse service.
-
-    Returns a list of EmWarehouses.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_em_warehouses = oci.EmWarehouse.get_em_warehouses(compartment_id=var["compartment_id"],
-        display_name=var["em_warehouse_display_name"],
-        id=var["em_warehouse_id"],
-        operations_insights_warehouse_id=oci_opsi_operations_insights_warehouse["test_operations_insights_warehouse"]["id"],
-        state=var["em_warehouse_state"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str id: unique EmWarehouse identifier
-    :param str operations_insights_warehouse_id: unique operationsInsightsWarehouseId identifier
-    :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
+    Use this data source to access information about an existing resource.
     """
     ...

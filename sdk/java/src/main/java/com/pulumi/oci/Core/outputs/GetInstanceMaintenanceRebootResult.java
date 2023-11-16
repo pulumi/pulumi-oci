@@ -6,6 +6,8 @@ package com.pulumi.oci.Core.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetInstanceMaintenanceRebootResult {
@@ -13,21 +15,21 @@ public final class GetInstanceMaintenanceRebootResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String instanceId;
     /**
      * @return The maximum extension date and time for the maintenance reboot, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). The range for the maintenance extension is between 1 and 14 days from the initial scheduled maintenance date. Example: `2018-05-25T21:10:29.600Z`
      * 
      */
-    private String timeMaintenanceRebootDueMax;
+    private @Nullable String timeMaintenanceRebootDueMax;
 
     private GetInstanceMaintenanceRebootResult() {}
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String instanceId() {
         return this.instanceId;
@@ -36,8 +38,8 @@ public final class GetInstanceMaintenanceRebootResult {
      * @return The maximum extension date and time for the maintenance reboot, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). The range for the maintenance extension is between 1 and 14 days from the initial scheduled maintenance date. Example: `2018-05-25T21:10:29.600Z`
      * 
      */
-    public String timeMaintenanceRebootDueMax() {
-        return this.timeMaintenanceRebootDueMax;
+    public Optional<String> timeMaintenanceRebootDueMax() {
+        return Optional.ofNullable(this.timeMaintenanceRebootDueMax);
     }
 
     public static Builder builder() {
@@ -49,9 +51,9 @@ public final class GetInstanceMaintenanceRebootResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String id;
+        private @Nullable String id;
         private String instanceId;
-        private String timeMaintenanceRebootDueMax;
+        private @Nullable String timeMaintenanceRebootDueMax;
         public Builder() {}
         public Builder(GetInstanceMaintenanceRebootResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -61,8 +63,8 @@ public final class GetInstanceMaintenanceRebootResult {
         }
 
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -71,8 +73,8 @@ public final class GetInstanceMaintenanceRebootResult {
             return this;
         }
         @CustomType.Setter
-        public Builder timeMaintenanceRebootDueMax(String timeMaintenanceRebootDueMax) {
-            this.timeMaintenanceRebootDueMax = Objects.requireNonNull(timeMaintenanceRebootDueMax);
+        public Builder timeMaintenanceRebootDueMax(@Nullable String timeMaintenanceRebootDueMax) {
+            this.timeMaintenanceRebootDueMax = timeMaintenanceRebootDueMax;
             return this;
         }
         public GetInstanceMaintenanceRebootResult build() {

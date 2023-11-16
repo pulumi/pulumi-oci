@@ -16,11 +16,11 @@ namespace Pulumi.Oci.Waas.Outputs
         /// <summary>
         /// Filter rules using a list of actions.
         /// </summary>
-        public readonly string Action;
+        public readonly string? Action;
         /// <summary>
         /// The description of the protection rule.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
         /// </summary>
@@ -40,7 +40,7 @@ namespace Pulumi.Oci.Waas.Outputs
         /// <summary>
         /// The name of the protection rule.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WAAS policy.
         /// </summary>
@@ -48,9 +48,9 @@ namespace Pulumi.Oci.Waas.Outputs
 
         [OutputConstructor]
         private GetProtectionRulesProtectionRuleResult(
-            string action,
+            string? action,
 
-            string description,
+            string? description,
 
             ImmutableArray<Outputs.GetProtectionRulesProtectionRuleExclusionResult> exclusions,
 
@@ -60,7 +60,7 @@ namespace Pulumi.Oci.Waas.Outputs
 
             ImmutableArray<string> modSecurityRuleIds,
 
-            string name,
+            string? name,
 
             string waasPolicyId)
         {

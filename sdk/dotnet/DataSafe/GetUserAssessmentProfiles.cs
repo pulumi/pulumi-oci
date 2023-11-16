@@ -401,7 +401,7 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string? InactiveAccountTimeGreaterThanOrEqual;
         public readonly string? InactiveAccountTimeLessThan;
         /// <summary>
@@ -449,7 +449,7 @@ namespace Pulumi.Oci.DataSafe
 
             ImmutableArray<Outputs.GetUserAssessmentProfilesFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? inactiveAccountTimeGreaterThanOrEqual,
 

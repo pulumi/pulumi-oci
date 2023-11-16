@@ -49,7 +49,7 @@ class GetSupportedVmwareSoftwareVersionsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -57,10 +57,7 @@ class GetSupportedVmwareSoftwareVersionsResult:
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetSupportedVmwareSoftwareVersionsItemResult']:
-        """
-        A list of the supported versions of bundled VMware software.
-        """
+    def items(self) -> Optional[Sequence['outputs.GetSupportedVmwareSoftwareVersionsItemResult']]:
         return pulumi.get(self, "items")
 
 
@@ -80,22 +77,7 @@ def get_supported_vmware_software_versions(compartment_id: Optional[str] = None,
                                            filters: Optional[Sequence[pulumi.InputType['GetSupportedVmwareSoftwareVersionsFilterArgs']]] = None,
                                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSupportedVmwareSoftwareVersionsResult:
     """
-    This data source provides the list of Supported Vmware Software Versions in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
-
-    Lists the versions of bundled VMware software supported by the Oracle Cloud
-    VMware Solution.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_supported_vmware_software_versions = oci.Ocvp.get_supported_vmware_software_versions(compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -115,21 +97,6 @@ def get_supported_vmware_software_versions_output(compartment_id: Optional[pulum
                                                   filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetSupportedVmwareSoftwareVersionsFilterArgs']]]]] = None,
                                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSupportedVmwareSoftwareVersionsResult]:
     """
-    This data source provides the list of Supported Vmware Software Versions in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
-
-    Lists the versions of bundled VMware software supported by the Oracle Cloud
-    VMware Solution.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_supported_vmware_software_versions = oci.Ocvp.get_supported_vmware_software_versions(compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+    Use this data source to access information about an existing resource.
     """
     ...

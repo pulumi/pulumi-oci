@@ -51,11 +51,11 @@ export interface GetAutonomousContainerDatabaseDataguardAssociationResult {
     /**
      * The lag time between updates to the primary Autonomous Container Database and application of the redo data on the standby Autonomous Container Database, as computed by the reporting database.  Example: `9 seconds`
      */
-    readonly applyLag: string;
+    readonly applyLag?: string;
     /**
      * The rate at which redo logs are synchronized between the associated Autonomous Container Databases.  Example: `180 Mb per second`
      */
-    readonly applyRate: string;
+    readonly applyRate?: string;
     readonly autonomousContainerDatabaseDataguardAssociationId: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database.
@@ -64,63 +64,63 @@ export interface GetAutonomousContainerDatabaseDataguardAssociationResult {
     /**
      * The lag time for my preference based on data loss tolerance in seconds.
      */
-    readonly fastStartFailOverLagLimitInSeconds: number;
+    readonly fastStartFailOverLagLimitInSeconds?: number;
     /**
      * The OCID of the Autonomous Data Guard created for a given Autonomous Container Database.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Output DataType: boolean. Example : isAutomaticFailoverEnabled = true.
      */
-    readonly isAutomaticFailoverEnabled: boolean;
+    readonly isAutomaticFailoverEnabled?: boolean;
     /**
      * Additional information about the current lifecycleState, if available.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * The OCID of the peer Autonomous Container Database-Autonomous Data Guard association.
      */
-    readonly peerAutonomousContainerDatabaseDataguardAssociationId: string;
+    readonly peerAutonomousContainerDatabaseDataguardAssociationId?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Container Database.
      */
-    readonly peerAutonomousContainerDatabaseId: string;
+    readonly peerAutonomousContainerDatabaseId?: string;
     /**
      * The current state of Autonomous Data Guard.
      */
-    readonly peerLifecycleState: string;
+    readonly peerLifecycleState?: string;
     /**
      * The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
      */
-    readonly peerRole: string;
+    readonly peerRole?: string;
     /**
      * The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
      */
-    readonly protectionMode: string;
+    readonly protectionMode?: string;
     /**
      * The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
      */
-    readonly role: string;
+    readonly role?: string;
     /**
      * The current state of Autonomous Data Guard.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The date and time the Autonomous DataGuard association was created.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The date and time when the last role change action happened.
      */
-    readonly timeLastRoleChanged: string;
+    readonly timeLastRoleChanged?: string;
     /**
      * The date and time of the last update to the apply lag, apply rate, and transport lag values.
      */
-    readonly timeLastSynced: string;
+    readonly timeLastSynced?: string;
     /**
      * The approximate number of seconds of redo data not yet available on the standby Autonomous Container Database, as computed by the reporting database.  Example: `7 seconds`
      */
-    readonly transportLag: string;
+    readonly transportLag?: string;
 }
 /**
  * This data source provides details about a specific Autonomous Container Database Dataguard Association resource in Oracle Cloud Infrastructure Database service.

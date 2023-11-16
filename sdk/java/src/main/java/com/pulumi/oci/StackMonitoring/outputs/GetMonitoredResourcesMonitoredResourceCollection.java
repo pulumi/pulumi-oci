@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.StackMonitoring.outputs.GetMonitoredResourcesMonitoredResourceCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMonitoredResourcesMonitoredResourceCollection {
-    private List<GetMonitoredResourcesMonitoredResourceCollectionItem> items;
+    private @Nullable List<GetMonitoredResourcesMonitoredResourceCollectionItem> items;
 
     private GetMonitoredResourcesMonitoredResourceCollection() {}
     public List<GetMonitoredResourcesMonitoredResourceCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetMonitoredResourcesMonitoredResourceCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetMonitoredResourcesMonitoredResourceCollectionItem> items;
+        private @Nullable List<GetMonitoredResourcesMonitoredResourceCollectionItem> items;
         public Builder() {}
         public Builder(GetMonitoredResourcesMonitoredResourceCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetMonitoredResourcesMonitoredResourceCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetMonitoredResourcesMonitoredResourceCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetMonitoredResourcesMonitoredResourceCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetMonitoredResourcesMonitoredResourceCollectionItem... items) {

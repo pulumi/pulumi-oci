@@ -16,59 +16,59 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// If true, then this granted AppRole confers administrative privileges within the App that defines it. Otherwise, the granted AppRole confers only functional privileges.
         /// </summary>
-        public readonly bool AdminRole;
+        public readonly bool? AdminRole;
         /// <summary>
         /// ID of the resource
         /// </summary>
-        public readonly string AppId;
+        public readonly string? AppId;
         /// <summary>
         /// The name of the App that defines this AppRole, which is granted to this App. The App that defines the AppRole acts as the producer; the App to which the AppRole is granted acts as a consumer.
         /// </summary>
-        public readonly string AppName;
+        public readonly string? AppName;
         /// <summary>
         /// Display-name of the AppRole.
         /// </summary>
-        public readonly string Display;
+        public readonly string? Display;
         /// <summary>
         /// The name of the legacy group associated with this AppRole.
         /// </summary>
-        public readonly string LegacyGroupName;
+        public readonly string? LegacyGroupName;
         /// <summary>
         /// If true, indicates that this value must be protected.
         /// </summary>
-        public readonly bool ReadOnly;
+        public readonly bool? ReadOnly;
         /// <summary>
         /// URI of the AppRole.
         /// </summary>
-        public readonly string Ref;
+        public readonly string? Ref;
         /// <summary>
         /// Object Class type. Allowed values are AccountObjectClass, ManagedObjectClass.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
         /// <summary>
         /// ID of the AppRole.
         /// </summary>
-        public readonly string Value;
+        public readonly string? Value;
 
         [OutputConstructor]
         private GetDomainsAppGrantedAppRoleResult(
-            bool adminRole,
+            bool? adminRole,
 
-            string appId,
+            string? appId,
 
-            string appName,
+            string? appName,
 
-            string display,
+            string? display,
 
-            string legacyGroupName,
+            string? legacyGroupName,
 
-            bool readOnly,
+            bool? readOnly,
 
-            string @ref,
+            string? @ref,
 
-            string type,
+            string? type,
 
-            string value)
+            string? value)
         {
             AdminRole = adminRole;
             AppId = appId;

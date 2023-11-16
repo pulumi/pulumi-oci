@@ -6,6 +6,8 @@ package com.pulumi.oci.DataIntegration.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetWorkspaceApplicationMetadataAggregator {
@@ -13,63 +15,63 @@ public final class GetWorkspaceApplicationMetadataAggregator {
      * @return The description of the aggregator.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
      * 
      */
-    private String identifier;
+    private @Nullable String identifier;
     /**
      * @return The key of the object.
      * 
      */
-    private String key;
+    private @Nullable String key;
     /**
      * @return Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return The type of the object in patch.
      * 
      */
-    private String type;
+    private @Nullable String type;
 
     private GetWorkspaceApplicationMetadataAggregator() {}
     /**
      * @return The description of the aggregator.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
      * 
      */
-    public String identifier() {
-        return this.identifier;
+    public Optional<String> identifier() {
+        return Optional.ofNullable(this.identifier);
     }
     /**
      * @return The key of the object.
      * 
      */
-    public String key() {
-        return this.key;
+    public Optional<String> key() {
+        return Optional.ofNullable(this.key);
     }
     /**
      * @return Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return The type of the object in patch.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
 
     public static Builder builder() {
@@ -81,11 +83,11 @@ public final class GetWorkspaceApplicationMetadataAggregator {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String description;
-        private String identifier;
-        private String key;
-        private String name;
-        private String type;
+        private @Nullable String description;
+        private @Nullable String identifier;
+        private @Nullable String key;
+        private @Nullable String name;
+        private @Nullable String type;
         public Builder() {}
         public Builder(GetWorkspaceApplicationMetadataAggregator defaults) {
     	      Objects.requireNonNull(defaults);
@@ -97,28 +99,28 @@ public final class GetWorkspaceApplicationMetadataAggregator {
         }
 
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder identifier(String identifier) {
-            this.identifier = Objects.requireNonNull(identifier);
+        public Builder identifier(@Nullable String identifier) {
+            this.identifier = identifier;
             return this;
         }
         @CustomType.Setter
-        public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
+        public Builder key(@Nullable String key) {
+            this.key = key;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         public GetWorkspaceApplicationMetadataAggregator build() {

@@ -76,15 +76,15 @@ export class CloudVmClusterIormConfig extends pulumi.CustomResource {
     /**
      * Additional information about the current `lifecycleState`.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Value for the IORM objective Default is "Auto"
      */
-    public readonly objective!: pulumi.Output<string>;
+    public readonly objective!: pulumi.Output<string | undefined>;
     /**
      * The current state of IORM configuration for the Exadata DB system.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
 
     /**
      * Create a CloudVmClusterIormConfig resource with the given unique name, arguments, and options.

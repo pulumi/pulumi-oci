@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetExternalDbSystemStackMonitoringConfig {
@@ -14,27 +16,27 @@ public final class GetExternalDbSystemStackMonitoringConfig {
      * @return The status of the associated service.
      * 
      */
-    private Boolean isEnabled;
+    private @Nullable Boolean isEnabled;
     /**
      * @return The associated service-specific inputs in JSON string format, which Database Management can identify.
      * 
      */
-    private String metadata;
+    private @Nullable String metadata;
 
     private GetExternalDbSystemStackMonitoringConfig() {}
     /**
      * @return The status of the associated service.
      * 
      */
-    public Boolean isEnabled() {
-        return this.isEnabled;
+    public Optional<Boolean> isEnabled() {
+        return Optional.ofNullable(this.isEnabled);
     }
     /**
      * @return The associated service-specific inputs in JSON string format, which Database Management can identify.
      * 
      */
-    public String metadata() {
-        return this.metadata;
+    public Optional<String> metadata() {
+        return Optional.ofNullable(this.metadata);
     }
 
     public static Builder builder() {
@@ -46,8 +48,8 @@ public final class GetExternalDbSystemStackMonitoringConfig {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Boolean isEnabled;
-        private String metadata;
+        private @Nullable Boolean isEnabled;
+        private @Nullable String metadata;
         public Builder() {}
         public Builder(GetExternalDbSystemStackMonitoringConfig defaults) {
     	      Objects.requireNonNull(defaults);
@@ -56,13 +58,13 @@ public final class GetExternalDbSystemStackMonitoringConfig {
         }
 
         @CustomType.Setter
-        public Builder isEnabled(Boolean isEnabled) {
-            this.isEnabled = Objects.requireNonNull(isEnabled);
+        public Builder isEnabled(@Nullable Boolean isEnabled) {
+            this.isEnabled = isEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder metadata(String metadata) {
-            this.metadata = Objects.requireNonNull(metadata);
+        public Builder metadata(@Nullable String metadata) {
+            this.metadata = metadata;
             return this;
         }
         public GetExternalDbSystemStackMonitoringConfig build() {

@@ -34,7 +34,7 @@ public final class GetRedisClustersResult {
      * @return The list of redis_cluster_collection.
      * 
      */
-    private List<GetRedisClustersRedisClusterCollection> redisClusterCollections;
+    private @Nullable List<GetRedisClustersRedisClusterCollection> redisClusterCollections;
     /**
      * @return The current state of the Redis cluster.
      * 
@@ -71,7 +71,7 @@ public final class GetRedisClustersResult {
      * 
      */
     public List<GetRedisClustersRedisClusterCollection> redisClusterCollections() {
-        return this.redisClusterCollections;
+        return this.redisClusterCollections == null ? List.of() : this.redisClusterCollections;
     }
     /**
      * @return The current state of the Redis cluster.
@@ -94,7 +94,7 @@ public final class GetRedisClustersResult {
         private @Nullable String displayName;
         private @Nullable List<GetRedisClustersFilter> filters;
         private @Nullable String id;
-        private List<GetRedisClustersRedisClusterCollection> redisClusterCollections;
+        private @Nullable List<GetRedisClustersRedisClusterCollection> redisClusterCollections;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetRedisClustersResult defaults) {
@@ -131,8 +131,8 @@ public final class GetRedisClustersResult {
             return this;
         }
         @CustomType.Setter
-        public Builder redisClusterCollections(List<GetRedisClustersRedisClusterCollection> redisClusterCollections) {
-            this.redisClusterCollections = Objects.requireNonNull(redisClusterCollections);
+        public Builder redisClusterCollections(@Nullable List<GetRedisClustersRedisClusterCollection> redisClusterCollections) {
+            this.redisClusterCollections = redisClusterCollections;
             return this;
         }
         public Builder redisClusterCollections(GetRedisClustersRedisClusterCollection... redisClusterCollections) {

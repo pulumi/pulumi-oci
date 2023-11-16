@@ -73,11 +73,6 @@ class SubscriptionRedeemableUserItem(dict):
                  email_id: str,
                  first_name: Optional[str] = None,
                  last_name: Optional[str] = None):
-        """
-        :param str email_id: The email ID for a user that can redeem rewards.
-        :param str first_name: The first name of the user that can redeem rewards.
-        :param str last_name: The last name of the user that can redeem rewards.
-        """
         pulumi.set(__self__, "email_id", email_id)
         if first_name is not None:
             pulumi.set(__self__, "first_name", first_name)
@@ -87,25 +82,16 @@ class SubscriptionRedeemableUserItem(dict):
     @property
     @pulumi.getter(name="emailId")
     def email_id(self) -> str:
-        """
-        The email ID for a user that can redeem rewards.
-        """
         return pulumi.get(self, "email_id")
 
     @property
     @pulumi.getter(name="firstName")
     def first_name(self) -> Optional[str]:
-        """
-        The first name of the user that can redeem rewards.
-        """
         return pulumi.get(self, "first_name")
 
     @property
     @pulumi.getter(name="lastName")
     def last_name(self) -> Optional[str]:
-        """
-        The last name of the user that can redeem rewards.
-        """
         return pulumi.get(self, "last_name")
 
 
@@ -115,9 +101,6 @@ class GetResourceQuotasFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The resource name.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -126,9 +109,6 @@ class GetResourceQuotasFilterResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The resource name.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -145,124 +125,90 @@ class GetResourceQuotasFilterResult(dict):
 @pulumi.output_type
 class GetResourceQuotasResourceQuotumCollectionResult(dict):
     def __init__(__self__, *,
-                 is_allowed: bool,
-                 items: Sequence['outputs.GetResourceQuotasResourceQuotumCollectionItemResult']):
-        """
-        :param bool is_allowed: Used to indicate if further quota consumption isAllowed.
-        :param Sequence['GetResourceQuotasResourceQuotumCollectionItemArgs'] items: The list of resource quota details.
-        """
-        pulumi.set(__self__, "is_allowed", is_allowed)
-        pulumi.set(__self__, "items", items)
+                 is_allowed: Optional[bool] = None,
+                 items: Optional[Sequence['outputs.GetResourceQuotasResourceQuotumCollectionItemResult']] = None):
+        if is_allowed is not None:
+            pulumi.set(__self__, "is_allowed", is_allowed)
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter(name="isAllowed")
-    def is_allowed(self) -> bool:
-        """
-        Used to indicate if further quota consumption isAllowed.
-        """
+    def is_allowed(self) -> Optional[bool]:
         return pulumi.get(self, "is_allowed")
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetResourceQuotasResourceQuotumCollectionItemResult']:
-        """
-        The list of resource quota details.
-        """
+    def items(self) -> Optional[Sequence['outputs.GetResourceQuotasResourceQuotumCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetResourceQuotasResourceQuotumCollectionItemResult(dict):
     def __init__(__self__, *,
-                 affected_resource: str,
-                 balance: float,
-                 is_allowed: bool,
-                 is_dependency: bool,
-                 is_overage: bool,
-                 name: str,
-                 purchased_limit: float,
-                 service: str):
-        """
-        :param str affected_resource: The affected resource name.
-        :param float balance: The quota balance.
-        :param bool is_allowed: Used to indicate if further quota consumption isAllowed.
-        :param bool is_dependency: Used to indicate any resource dependencies.
-        :param bool is_overage: Used to indicate if overages are incurred.
-        :param str name: The resource name.
-        :param float purchased_limit: The purchased quota limit.
-        :param str service: The service name.
-        """
-        pulumi.set(__self__, "affected_resource", affected_resource)
-        pulumi.set(__self__, "balance", balance)
-        pulumi.set(__self__, "is_allowed", is_allowed)
-        pulumi.set(__self__, "is_dependency", is_dependency)
-        pulumi.set(__self__, "is_overage", is_overage)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "purchased_limit", purchased_limit)
-        pulumi.set(__self__, "service", service)
+                 affected_resource: Optional[str] = None,
+                 balance: Optional[float] = None,
+                 is_allowed: Optional[bool] = None,
+                 is_dependency: Optional[bool] = None,
+                 is_overage: Optional[bool] = None,
+                 name: Optional[str] = None,
+                 purchased_limit: Optional[float] = None,
+                 service: Optional[str] = None):
+        if affected_resource is not None:
+            pulumi.set(__self__, "affected_resource", affected_resource)
+        if balance is not None:
+            pulumi.set(__self__, "balance", balance)
+        if is_allowed is not None:
+            pulumi.set(__self__, "is_allowed", is_allowed)
+        if is_dependency is not None:
+            pulumi.set(__self__, "is_dependency", is_dependency)
+        if is_overage is not None:
+            pulumi.set(__self__, "is_overage", is_overage)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if purchased_limit is not None:
+            pulumi.set(__self__, "purchased_limit", purchased_limit)
+        if service is not None:
+            pulumi.set(__self__, "service", service)
 
     @property
     @pulumi.getter(name="affectedResource")
-    def affected_resource(self) -> str:
-        """
-        The affected resource name.
-        """
+    def affected_resource(self) -> Optional[str]:
         return pulumi.get(self, "affected_resource")
 
     @property
     @pulumi.getter
-    def balance(self) -> float:
-        """
-        The quota balance.
-        """
+    def balance(self) -> Optional[float]:
         return pulumi.get(self, "balance")
 
     @property
     @pulumi.getter(name="isAllowed")
-    def is_allowed(self) -> bool:
-        """
-        Used to indicate if further quota consumption isAllowed.
-        """
+    def is_allowed(self) -> Optional[bool]:
         return pulumi.get(self, "is_allowed")
 
     @property
     @pulumi.getter(name="isDependency")
-    def is_dependency(self) -> bool:
-        """
-        Used to indicate any resource dependencies.
-        """
+    def is_dependency(self) -> Optional[bool]:
         return pulumi.get(self, "is_dependency")
 
     @property
     @pulumi.getter(name="isOverage")
-    def is_overage(self) -> bool:
-        """
-        Used to indicate if overages are incurred.
-        """
+    def is_overage(self) -> Optional[bool]:
         return pulumi.get(self, "is_overage")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The resource name.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="purchasedLimit")
-    def purchased_limit(self) -> float:
-        """
-        The purchased quota limit.
-        """
+    def purchased_limit(self) -> Optional[float]:
         return pulumi.get(self, "purchased_limit")
 
     @property
     @pulumi.getter
-    def service(self) -> str:
-        """
-        The service name.
-        """
+    def service(self) -> Optional[str]:
         return pulumi.get(self, "service")
 
 
@@ -272,9 +218,6 @@ class GetResourcesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: Name of the resource.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -283,9 +226,6 @@ class GetResourcesFilterResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Name of the resource.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -302,248 +242,180 @@ class GetResourcesFilterResult(dict):
 @pulumi.output_type
 class GetResourcesResourcesCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetResourcesResourcesCollectionItemResult']):
-        """
-        :param Sequence['GetResourcesResourcesCollectionItemArgs'] items: The list of resource details for a service.
-        """
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetResourcesResourcesCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetResourcesResourcesCollectionItemResult']:
-        """
-        The list of resource details for a service.
-        """
+    def items(self) -> Optional[Sequence['outputs.GetResourcesResourcesCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetResourcesResourcesCollectionItemResult(dict):
     def __init__(__self__, *,
-                 child_resources: Sequence[str],
-                 daily_unit_display_name: str,
-                 description: str,
-                 hourly_unit_display_name: str,
-                 instance_type: str,
-                 is_purchased: bool,
-                 name: str,
-                 raw_unit_display_name: str,
-                 servicename: str,
-                 skuses: Sequence['outputs.GetResourcesResourcesCollectionItemSkusResult'],
-                 usage_data_type: str):
-        """
-        :param Sequence[str] child_resources: The details of any child resources.
-        :param str daily_unit_display_name: Units to be used for daily aggregated data.
-        :param str description: Description of the resource.
-        :param str hourly_unit_display_name: Units to be used for hourly aggregated data.
-        :param str instance_type: Instance type for the resource.
-        :param bool is_purchased: Indicates if the SKU was purchased
-        :param str name: Name of the resource.
-        :param str raw_unit_display_name: Default units to use when unspecified.
-        :param str servicename: Name of the service.
-        :param Sequence['GetResourcesResourcesCollectionItemSkusArgs'] skuses: The details of resource Skus.
-        :param str usage_data_type: Usage data type of the resource.
-        """
-        pulumi.set(__self__, "child_resources", child_resources)
-        pulumi.set(__self__, "daily_unit_display_name", daily_unit_display_name)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "hourly_unit_display_name", hourly_unit_display_name)
-        pulumi.set(__self__, "instance_type", instance_type)
-        pulumi.set(__self__, "is_purchased", is_purchased)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "raw_unit_display_name", raw_unit_display_name)
-        pulumi.set(__self__, "servicename", servicename)
-        pulumi.set(__self__, "skuses", skuses)
-        pulumi.set(__self__, "usage_data_type", usage_data_type)
+                 child_resources: Optional[Sequence[str]] = None,
+                 daily_unit_display_name: Optional[str] = None,
+                 description: Optional[str] = None,
+                 hourly_unit_display_name: Optional[str] = None,
+                 instance_type: Optional[str] = None,
+                 is_purchased: Optional[bool] = None,
+                 name: Optional[str] = None,
+                 raw_unit_display_name: Optional[str] = None,
+                 servicename: Optional[str] = None,
+                 skuses: Optional[Sequence['outputs.GetResourcesResourcesCollectionItemSkusResult']] = None,
+                 usage_data_type: Optional[str] = None):
+        if child_resources is not None:
+            pulumi.set(__self__, "child_resources", child_resources)
+        if daily_unit_display_name is not None:
+            pulumi.set(__self__, "daily_unit_display_name", daily_unit_display_name)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if hourly_unit_display_name is not None:
+            pulumi.set(__self__, "hourly_unit_display_name", hourly_unit_display_name)
+        if instance_type is not None:
+            pulumi.set(__self__, "instance_type", instance_type)
+        if is_purchased is not None:
+            pulumi.set(__self__, "is_purchased", is_purchased)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if raw_unit_display_name is not None:
+            pulumi.set(__self__, "raw_unit_display_name", raw_unit_display_name)
+        if servicename is not None:
+            pulumi.set(__self__, "servicename", servicename)
+        if skuses is not None:
+            pulumi.set(__self__, "skuses", skuses)
+        if usage_data_type is not None:
+            pulumi.set(__self__, "usage_data_type", usage_data_type)
 
     @property
     @pulumi.getter(name="childResources")
-    def child_resources(self) -> Sequence[str]:
-        """
-        The details of any child resources.
-        """
+    def child_resources(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "child_resources")
 
     @property
     @pulumi.getter(name="dailyUnitDisplayName")
-    def daily_unit_display_name(self) -> str:
-        """
-        Units to be used for daily aggregated data.
-        """
+    def daily_unit_display_name(self) -> Optional[str]:
         return pulumi.get(self, "daily_unit_display_name")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Description of the resource.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="hourlyUnitDisplayName")
-    def hourly_unit_display_name(self) -> str:
-        """
-        Units to be used for hourly aggregated data.
-        """
+    def hourly_unit_display_name(self) -> Optional[str]:
         return pulumi.get(self, "hourly_unit_display_name")
 
     @property
     @pulumi.getter(name="instanceType")
-    def instance_type(self) -> str:
-        """
-        Instance type for the resource.
-        """
+    def instance_type(self) -> Optional[str]:
         return pulumi.get(self, "instance_type")
 
     @property
     @pulumi.getter(name="isPurchased")
-    def is_purchased(self) -> bool:
-        """
-        Indicates if the SKU was purchased
-        """
+    def is_purchased(self) -> Optional[bool]:
         return pulumi.get(self, "is_purchased")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Name of the resource.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="rawUnitDisplayName")
-    def raw_unit_display_name(self) -> str:
-        """
-        Default units to use when unspecified.
-        """
+    def raw_unit_display_name(self) -> Optional[str]:
         return pulumi.get(self, "raw_unit_display_name")
 
     @property
     @pulumi.getter
-    def servicename(self) -> str:
-        """
-        Name of the service.
-        """
+    def servicename(self) -> Optional[str]:
         return pulumi.get(self, "servicename")
 
     @property
     @pulumi.getter
-    def skuses(self) -> Sequence['outputs.GetResourcesResourcesCollectionItemSkusResult']:
-        """
-        The details of resource Skus.
-        """
+    def skuses(self) -> Optional[Sequence['outputs.GetResourcesResourcesCollectionItemSkusResult']]:
         return pulumi.get(self, "skuses")
 
     @property
     @pulumi.getter(name="usageDataType")
-    def usage_data_type(self) -> str:
-        """
-        Usage data type of the resource.
-        """
+    def usage_data_type(self) -> Optional[str]:
         return pulumi.get(self, "usage_data_type")
 
 
 @pulumi.output_type
 class GetResourcesResourcesCollectionItemSkusResult(dict):
     def __init__(__self__, *,
-                 cloud_credit_type: str,
-                 sku_id: str,
-                 sku_type: str):
-        """
-        :param str cloud_credit_type: The cloud credit type for the resource.
-        :param str sku_id: The Sku Id for the resource.
-        :param str sku_type: The Sku type for the resource.
-        """
-        pulumi.set(__self__, "cloud_credit_type", cloud_credit_type)
-        pulumi.set(__self__, "sku_id", sku_id)
-        pulumi.set(__self__, "sku_type", sku_type)
+                 cloud_credit_type: Optional[str] = None,
+                 sku_id: Optional[str] = None,
+                 sku_type: Optional[str] = None):
+        if cloud_credit_type is not None:
+            pulumi.set(__self__, "cloud_credit_type", cloud_credit_type)
+        if sku_id is not None:
+            pulumi.set(__self__, "sku_id", sku_id)
+        if sku_type is not None:
+            pulumi.set(__self__, "sku_type", sku_type)
 
     @property
     @pulumi.getter(name="cloudCreditType")
-    def cloud_credit_type(self) -> str:
-        """
-        The cloud credit type for the resource.
-        """
+    def cloud_credit_type(self) -> Optional[str]:
         return pulumi.get(self, "cloud_credit_type")
 
     @property
     @pulumi.getter(name="skuId")
-    def sku_id(self) -> str:
-        """
-        The Sku Id for the resource.
-        """
+    def sku_id(self) -> Optional[str]:
         return pulumi.get(self, "sku_id")
 
     @property
     @pulumi.getter(name="skuType")
-    def sku_type(self) -> str:
-        """
-        The Sku type for the resource.
-        """
+    def sku_type(self) -> Optional[str]:
         return pulumi.get(self, "sku_type")
 
 
 @pulumi.output_type
 class GetSubscriptionProductItemResult(dict):
     def __init__(__self__, *,
-                 earned_rewards: float,
-                 is_eligible_to_earn_rewards: bool,
-                 product_name: str,
-                 product_number: str,
-                 usage_amount: float):
-        """
-        :param float earned_rewards: The earned rewards for the product.
-        :param bool is_eligible_to_earn_rewards: The boolean parameter to indicate if the product is eligible to earn rewards.
-        :param str product_name: The rate card product name.
-        :param str product_number: The rate card product number.
-        :param float usage_amount: The rate card product usage amount.
-        """
-        pulumi.set(__self__, "earned_rewards", earned_rewards)
-        pulumi.set(__self__, "is_eligible_to_earn_rewards", is_eligible_to_earn_rewards)
-        pulumi.set(__self__, "product_name", product_name)
-        pulumi.set(__self__, "product_number", product_number)
-        pulumi.set(__self__, "usage_amount", usage_amount)
+                 earned_rewards: Optional[float] = None,
+                 is_eligible_to_earn_rewards: Optional[bool] = None,
+                 product_name: Optional[str] = None,
+                 product_number: Optional[str] = None,
+                 usage_amount: Optional[float] = None):
+        if earned_rewards is not None:
+            pulumi.set(__self__, "earned_rewards", earned_rewards)
+        if is_eligible_to_earn_rewards is not None:
+            pulumi.set(__self__, "is_eligible_to_earn_rewards", is_eligible_to_earn_rewards)
+        if product_name is not None:
+            pulumi.set(__self__, "product_name", product_name)
+        if product_number is not None:
+            pulumi.set(__self__, "product_number", product_number)
+        if usage_amount is not None:
+            pulumi.set(__self__, "usage_amount", usage_amount)
 
     @property
     @pulumi.getter(name="earnedRewards")
-    def earned_rewards(self) -> float:
-        """
-        The earned rewards for the product.
-        """
+    def earned_rewards(self) -> Optional[float]:
         return pulumi.get(self, "earned_rewards")
 
     @property
     @pulumi.getter(name="isEligibleToEarnRewards")
-    def is_eligible_to_earn_rewards(self) -> bool:
-        """
-        The boolean parameter to indicate if the product is eligible to earn rewards.
-        """
+    def is_eligible_to_earn_rewards(self) -> Optional[bool]:
         return pulumi.get(self, "is_eligible_to_earn_rewards")
 
     @property
     @pulumi.getter(name="productName")
-    def product_name(self) -> str:
-        """
-        The rate card product name.
-        """
+    def product_name(self) -> Optional[str]:
         return pulumi.get(self, "product_name")
 
     @property
     @pulumi.getter(name="productNumber")
-    def product_number(self) -> str:
-        """
-        The rate card product number.
-        """
+    def product_number(self) -> Optional[str]:
         return pulumi.get(self, "product_number")
 
     @property
     @pulumi.getter(name="usageAmount")
-    def usage_amount(self) -> float:
-        """
-        The rate card product usage amount.
-        """
+    def usage_amount(self) -> Optional[float]:
         return pulumi.get(self, "usage_amount")
 
 
@@ -577,138 +449,100 @@ class GetSubscriptionProductsFilterResult(dict):
 @pulumi.output_type
 class GetSubscriptionProductsProductCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetSubscriptionProductsProductCollectionItemResult']):
-        """
-        :param Sequence['GetSubscriptionProductsProductCollectionItemArgs'] items: The list of product rewards summaries.
-        """
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetSubscriptionProductsProductCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetSubscriptionProductsProductCollectionItemResult']:
-        """
-        The list of product rewards summaries.
-        """
+    def items(self) -> Optional[Sequence['outputs.GetSubscriptionProductsProductCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetSubscriptionProductsProductCollectionItemResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetSubscriptionProductsProductCollectionItemItemResult']):
-        """
-        :param Sequence['GetSubscriptionProductsProductCollectionItemItemArgs'] items: The list of product rewards summaries.
-        """
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetSubscriptionProductsProductCollectionItemItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetSubscriptionProductsProductCollectionItemItemResult']:
-        """
-        The list of product rewards summaries.
-        """
+    def items(self) -> Optional[Sequence['outputs.GetSubscriptionProductsProductCollectionItemItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetSubscriptionProductsProductCollectionItemItemResult(dict):
     def __init__(__self__, *,
-                 earned_rewards: float,
-                 is_eligible_to_earn_rewards: bool,
-                 product_name: str,
-                 product_number: str,
-                 usage_amount: float):
-        """
-        :param float earned_rewards: The earned rewards for the product.
-        :param bool is_eligible_to_earn_rewards: The boolean parameter to indicate if the product is eligible to earn rewards.
-        :param str product_name: The rate card product name.
-        :param str product_number: The rate card product number.
-        :param float usage_amount: The rate card product usage amount.
-        """
-        pulumi.set(__self__, "earned_rewards", earned_rewards)
-        pulumi.set(__self__, "is_eligible_to_earn_rewards", is_eligible_to_earn_rewards)
-        pulumi.set(__self__, "product_name", product_name)
-        pulumi.set(__self__, "product_number", product_number)
-        pulumi.set(__self__, "usage_amount", usage_amount)
+                 earned_rewards: Optional[float] = None,
+                 is_eligible_to_earn_rewards: Optional[bool] = None,
+                 product_name: Optional[str] = None,
+                 product_number: Optional[str] = None,
+                 usage_amount: Optional[float] = None):
+        if earned_rewards is not None:
+            pulumi.set(__self__, "earned_rewards", earned_rewards)
+        if is_eligible_to_earn_rewards is not None:
+            pulumi.set(__self__, "is_eligible_to_earn_rewards", is_eligible_to_earn_rewards)
+        if product_name is not None:
+            pulumi.set(__self__, "product_name", product_name)
+        if product_number is not None:
+            pulumi.set(__self__, "product_number", product_number)
+        if usage_amount is not None:
+            pulumi.set(__self__, "usage_amount", usage_amount)
 
     @property
     @pulumi.getter(name="earnedRewards")
-    def earned_rewards(self) -> float:
-        """
-        The earned rewards for the product.
-        """
+    def earned_rewards(self) -> Optional[float]:
         return pulumi.get(self, "earned_rewards")
 
     @property
     @pulumi.getter(name="isEligibleToEarnRewards")
-    def is_eligible_to_earn_rewards(self) -> bool:
-        """
-        The boolean parameter to indicate if the product is eligible to earn rewards.
-        """
+    def is_eligible_to_earn_rewards(self) -> Optional[bool]:
         return pulumi.get(self, "is_eligible_to_earn_rewards")
 
     @property
     @pulumi.getter(name="productName")
-    def product_name(self) -> str:
-        """
-        The rate card product name.
-        """
+    def product_name(self) -> Optional[str]:
         return pulumi.get(self, "product_name")
 
     @property
     @pulumi.getter(name="productNumber")
-    def product_number(self) -> str:
-        """
-        The rate card product number.
-        """
+    def product_number(self) -> Optional[str]:
         return pulumi.get(self, "product_number")
 
     @property
     @pulumi.getter(name="usageAmount")
-    def usage_amount(self) -> float:
-        """
-        The rate card product usage amount.
-        """
+    def usage_amount(self) -> Optional[float]:
         return pulumi.get(self, "usage_amount")
 
 
 @pulumi.output_type
 class GetSubscriptionRedeemableUserItemResult(dict):
     def __init__(__self__, *,
-                 email_id: str,
-                 first_name: str,
-                 last_name: str):
-        """
-        :param str email_id: The email ID of the user that can redeem rewards.
-        :param str first_name: The first name of the user that can redeem rewards.
-        :param str last_name: The last name of the user that can redeem rewards.
-        """
-        pulumi.set(__self__, "email_id", email_id)
-        pulumi.set(__self__, "first_name", first_name)
-        pulumi.set(__self__, "last_name", last_name)
+                 email_id: Optional[str] = None,
+                 first_name: Optional[str] = None,
+                 last_name: Optional[str] = None):
+        if email_id is not None:
+            pulumi.set(__self__, "email_id", email_id)
+        if first_name is not None:
+            pulumi.set(__self__, "first_name", first_name)
+        if last_name is not None:
+            pulumi.set(__self__, "last_name", last_name)
 
     @property
     @pulumi.getter(name="emailId")
-    def email_id(self) -> str:
-        """
-        The email ID of the user that can redeem rewards.
-        """
+    def email_id(self) -> Optional[str]:
         return pulumi.get(self, "email_id")
 
     @property
     @pulumi.getter(name="firstName")
-    def first_name(self) -> str:
-        """
-        The first name of the user that can redeem rewards.
-        """
+    def first_name(self) -> Optional[str]:
         return pulumi.get(self, "first_name")
 
     @property
     @pulumi.getter(name="lastName")
-    def last_name(self) -> str:
-        """
-        The last name of the user that can redeem rewards.
-        """
+    def last_name(self) -> Optional[str]:
         return pulumi.get(self, "last_name")
 
 
@@ -742,18 +576,13 @@ class GetSubscriptionRedeemableUsersFilterResult(dict):
 @pulumi.output_type
 class GetSubscriptionRedeemableUsersRedeemableUserCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetSubscriptionRedeemableUsersRedeemableUserCollectionItemResult']):
-        """
-        :param Sequence['GetSubscriptionRedeemableUsersRedeemableUserCollectionItemArgs'] items: The list of user summary that can redeem rewards.
-        """
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetSubscriptionRedeemableUsersRedeemableUserCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetSubscriptionRedeemableUsersRedeemableUserCollectionItemResult']:
-        """
-        The list of user summary that can redeem rewards.
-        """
+    def items(self) -> Optional[Sequence['outputs.GetSubscriptionRedeemableUsersRedeemableUserCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
@@ -763,44 +592,31 @@ class GetSubscriptionRedeemableUsersRedeemableUserCollectionItemResult(dict):
                  items: Sequence['outputs.GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItemResult'],
                  subscription_id: str,
                  tenancy_id: str,
-                 user_id: str):
-        """
-        :param Sequence['GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItemArgs'] items: The list of user summary that can redeem rewards.
-        :param str subscription_id: The subscription ID for which rewards information is requested for.
-        :param str tenancy_id: The OCID of the tenancy.
-        """
+                 user_id: Optional[str] = None):
         pulumi.set(__self__, "items", items)
         pulumi.set(__self__, "subscription_id", subscription_id)
         pulumi.set(__self__, "tenancy_id", tenancy_id)
-        pulumi.set(__self__, "user_id", user_id)
+        if user_id is not None:
+            pulumi.set(__self__, "user_id", user_id)
 
     @property
     @pulumi.getter
     def items(self) -> Sequence['outputs.GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItemResult']:
-        """
-        The list of user summary that can redeem rewards.
-        """
         return pulumi.get(self, "items")
 
     @property
     @pulumi.getter(name="subscriptionId")
     def subscription_id(self) -> str:
-        """
-        The subscription ID for which rewards information is requested for.
-        """
         return pulumi.get(self, "subscription_id")
 
     @property
     @pulumi.getter(name="tenancyId")
     def tenancy_id(self) -> str:
-        """
-        The OCID of the tenancy.
-        """
         return pulumi.get(self, "tenancy_id")
 
     @property
     @pulumi.getter(name="userId")
-    def user_id(self) -> str:
+    def user_id(self) -> Optional[str]:
         return pulumi.get(self, "user_id")
 
 
@@ -808,156 +624,112 @@ class GetSubscriptionRedeemableUsersRedeemableUserCollectionItemResult(dict):
 class GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItemResult(dict):
     def __init__(__self__, *,
                  email_id: str,
-                 first_name: str,
-                 last_name: str):
-        """
-        :param str email_id: The email ID of the user that can redeem rewards.
-        :param str first_name: The first name of the user that can redeem rewards.
-        :param str last_name: The last name of the user that can redeem rewards.
-        """
+                 first_name: Optional[str] = None,
+                 last_name: Optional[str] = None):
         pulumi.set(__self__, "email_id", email_id)
-        pulumi.set(__self__, "first_name", first_name)
-        pulumi.set(__self__, "last_name", last_name)
+        if first_name is not None:
+            pulumi.set(__self__, "first_name", first_name)
+        if last_name is not None:
+            pulumi.set(__self__, "last_name", last_name)
 
     @property
     @pulumi.getter(name="emailId")
     def email_id(self) -> str:
-        """
-        The email ID of the user that can redeem rewards.
-        """
         return pulumi.get(self, "email_id")
 
     @property
     @pulumi.getter(name="firstName")
-    def first_name(self) -> str:
-        """
-        The first name of the user that can redeem rewards.
-        """
+    def first_name(self) -> Optional[str]:
         return pulumi.get(self, "first_name")
 
     @property
     @pulumi.getter(name="lastName")
-    def last_name(self) -> str:
-        """
-        The last name of the user that can redeem rewards.
-        """
+    def last_name(self) -> Optional[str]:
         return pulumi.get(self, "last_name")
 
 
 @pulumi.output_type
 class GetSubscriptionRedemptionItemResult(dict):
     def __init__(__self__, *,
-                 base_rewards: float,
-                 fx_rate: float,
-                 invoice_currency: str,
-                 invoice_number: str,
-                 invoice_total_amount: float,
-                 redeemed_rewards: float,
-                 redemption_code: str,
-                 redemption_email: str,
-                 time_invoiced: str,
-                 time_redeemed: str):
-        """
-        :param float base_rewards: It provides the redeemed rewards in base/subscription currency.
-        :param float fx_rate: It provides the fxRate between invoice currency and subscription currency.
-        :param str invoice_currency: The currency associated with invoice.
-        :param str invoice_number: It provides the invoice number against the redemption.
-        :param float invoice_total_amount: It provides the invoice total amount of given redemption.
-        :param float redeemed_rewards: It provides the redeemed rewards in invoice currency.
-        :param str redemption_code: The redemption code used in the Billing Center during the reward redemption process.
-        :param str redemption_email: It provides the redemption email id.
-        :param str time_invoiced: It provides the invoice date.
-        :param str time_redeemed: It provides redeem date.
-        """
-        pulumi.set(__self__, "base_rewards", base_rewards)
-        pulumi.set(__self__, "fx_rate", fx_rate)
-        pulumi.set(__self__, "invoice_currency", invoice_currency)
-        pulumi.set(__self__, "invoice_number", invoice_number)
-        pulumi.set(__self__, "invoice_total_amount", invoice_total_amount)
-        pulumi.set(__self__, "redeemed_rewards", redeemed_rewards)
-        pulumi.set(__self__, "redemption_code", redemption_code)
-        pulumi.set(__self__, "redemption_email", redemption_email)
-        pulumi.set(__self__, "time_invoiced", time_invoiced)
-        pulumi.set(__self__, "time_redeemed", time_redeemed)
+                 base_rewards: Optional[float] = None,
+                 fx_rate: Optional[float] = None,
+                 invoice_currency: Optional[str] = None,
+                 invoice_number: Optional[str] = None,
+                 invoice_total_amount: Optional[float] = None,
+                 redeemed_rewards: Optional[float] = None,
+                 redemption_code: Optional[str] = None,
+                 redemption_email: Optional[str] = None,
+                 time_invoiced: Optional[str] = None,
+                 time_redeemed: Optional[str] = None):
+        if base_rewards is not None:
+            pulumi.set(__self__, "base_rewards", base_rewards)
+        if fx_rate is not None:
+            pulumi.set(__self__, "fx_rate", fx_rate)
+        if invoice_currency is not None:
+            pulumi.set(__self__, "invoice_currency", invoice_currency)
+        if invoice_number is not None:
+            pulumi.set(__self__, "invoice_number", invoice_number)
+        if invoice_total_amount is not None:
+            pulumi.set(__self__, "invoice_total_amount", invoice_total_amount)
+        if redeemed_rewards is not None:
+            pulumi.set(__self__, "redeemed_rewards", redeemed_rewards)
+        if redemption_code is not None:
+            pulumi.set(__self__, "redemption_code", redemption_code)
+        if redemption_email is not None:
+            pulumi.set(__self__, "redemption_email", redemption_email)
+        if time_invoiced is not None:
+            pulumi.set(__self__, "time_invoiced", time_invoiced)
+        if time_redeemed is not None:
+            pulumi.set(__self__, "time_redeemed", time_redeemed)
 
     @property
     @pulumi.getter(name="baseRewards")
-    def base_rewards(self) -> float:
-        """
-        It provides the redeemed rewards in base/subscription currency.
-        """
+    def base_rewards(self) -> Optional[float]:
         return pulumi.get(self, "base_rewards")
 
     @property
     @pulumi.getter(name="fxRate")
-    def fx_rate(self) -> float:
-        """
-        It provides the fxRate between invoice currency and subscription currency.
-        """
+    def fx_rate(self) -> Optional[float]:
         return pulumi.get(self, "fx_rate")
 
     @property
     @pulumi.getter(name="invoiceCurrency")
-    def invoice_currency(self) -> str:
-        """
-        The currency associated with invoice.
-        """
+    def invoice_currency(self) -> Optional[str]:
         return pulumi.get(self, "invoice_currency")
 
     @property
     @pulumi.getter(name="invoiceNumber")
-    def invoice_number(self) -> str:
-        """
-        It provides the invoice number against the redemption.
-        """
+    def invoice_number(self) -> Optional[str]:
         return pulumi.get(self, "invoice_number")
 
     @property
     @pulumi.getter(name="invoiceTotalAmount")
-    def invoice_total_amount(self) -> float:
-        """
-        It provides the invoice total amount of given redemption.
-        """
+    def invoice_total_amount(self) -> Optional[float]:
         return pulumi.get(self, "invoice_total_amount")
 
     @property
     @pulumi.getter(name="redeemedRewards")
-    def redeemed_rewards(self) -> float:
-        """
-        It provides the redeemed rewards in invoice currency.
-        """
+    def redeemed_rewards(self) -> Optional[float]:
         return pulumi.get(self, "redeemed_rewards")
 
     @property
     @pulumi.getter(name="redemptionCode")
-    def redemption_code(self) -> str:
-        """
-        The redemption code used in the Billing Center during the reward redemption process.
-        """
+    def redemption_code(self) -> Optional[str]:
         return pulumi.get(self, "redemption_code")
 
     @property
     @pulumi.getter(name="redemptionEmail")
-    def redemption_email(self) -> str:
-        """
-        It provides the redemption email id.
-        """
+    def redemption_email(self) -> Optional[str]:
         return pulumi.get(self, "redemption_email")
 
     @property
     @pulumi.getter(name="timeInvoiced")
-    def time_invoiced(self) -> str:
-        """
-        It provides the invoice date.
-        """
+    def time_invoiced(self) -> Optional[str]:
         return pulumi.get(self, "time_invoiced")
 
     @property
     @pulumi.getter(name="timeRedeemed")
-    def time_redeemed(self) -> str:
-        """
-        It provides redeem date.
-        """
+    def time_redeemed(self) -> Optional[str]:
         return pulumi.get(self, "time_redeemed")
 
 
@@ -991,365 +763,265 @@ class GetSubscriptionRedemptionsFilterResult(dict):
 @pulumi.output_type
 class GetSubscriptionRedemptionsRedemptionCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetSubscriptionRedemptionsRedemptionCollectionItemResult']):
-        """
-        :param Sequence['GetSubscriptionRedemptionsRedemptionCollectionItemArgs'] items: The list of redemption summary.
-        """
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetSubscriptionRedemptionsRedemptionCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetSubscriptionRedemptionsRedemptionCollectionItemResult']:
-        """
-        The list of redemption summary.
-        """
+    def items(self) -> Optional[Sequence['outputs.GetSubscriptionRedemptionsRedemptionCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetSubscriptionRedemptionsRedemptionCollectionItemResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetSubscriptionRedemptionsRedemptionCollectionItemItemResult']):
-        """
-        :param Sequence['GetSubscriptionRedemptionsRedemptionCollectionItemItemArgs'] items: The list of redemption summary.
-        """
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetSubscriptionRedemptionsRedemptionCollectionItemItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetSubscriptionRedemptionsRedemptionCollectionItemItemResult']:
-        """
-        The list of redemption summary.
-        """
+    def items(self) -> Optional[Sequence['outputs.GetSubscriptionRedemptionsRedemptionCollectionItemItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetSubscriptionRedemptionsRedemptionCollectionItemItemResult(dict):
     def __init__(__self__, *,
-                 base_rewards: float,
-                 fx_rate: float,
-                 invoice_currency: str,
-                 invoice_number: str,
-                 invoice_total_amount: float,
-                 redeemed_rewards: float,
-                 redemption_code: str,
-                 redemption_email: str,
-                 time_invoiced: str,
-                 time_redeemed: str):
-        """
-        :param float base_rewards: It provides the redeemed rewards in base/subscription currency.
-        :param float fx_rate: It provides the fxRate between invoice currency and subscription currency.
-        :param str invoice_currency: The currency associated with invoice.
-        :param str invoice_number: It provides the invoice number against the redemption.
-        :param float invoice_total_amount: It provides the invoice total amount of given redemption.
-        :param float redeemed_rewards: It provides the redeemed rewards in invoice currency.
-        :param str redemption_code: The redemption code used in the Billing Center during the reward redemption process.
-        :param str redemption_email: It provides the redemption email id.
-        :param str time_invoiced: It provides the invoice date.
-        :param str time_redeemed: It provides redeem date.
-        """
-        pulumi.set(__self__, "base_rewards", base_rewards)
-        pulumi.set(__self__, "fx_rate", fx_rate)
-        pulumi.set(__self__, "invoice_currency", invoice_currency)
-        pulumi.set(__self__, "invoice_number", invoice_number)
-        pulumi.set(__self__, "invoice_total_amount", invoice_total_amount)
-        pulumi.set(__self__, "redeemed_rewards", redeemed_rewards)
-        pulumi.set(__self__, "redemption_code", redemption_code)
-        pulumi.set(__self__, "redemption_email", redemption_email)
-        pulumi.set(__self__, "time_invoiced", time_invoiced)
-        pulumi.set(__self__, "time_redeemed", time_redeemed)
+                 base_rewards: Optional[float] = None,
+                 fx_rate: Optional[float] = None,
+                 invoice_currency: Optional[str] = None,
+                 invoice_number: Optional[str] = None,
+                 invoice_total_amount: Optional[float] = None,
+                 redeemed_rewards: Optional[float] = None,
+                 redemption_code: Optional[str] = None,
+                 redemption_email: Optional[str] = None,
+                 time_invoiced: Optional[str] = None,
+                 time_redeemed: Optional[str] = None):
+        if base_rewards is not None:
+            pulumi.set(__self__, "base_rewards", base_rewards)
+        if fx_rate is not None:
+            pulumi.set(__self__, "fx_rate", fx_rate)
+        if invoice_currency is not None:
+            pulumi.set(__self__, "invoice_currency", invoice_currency)
+        if invoice_number is not None:
+            pulumi.set(__self__, "invoice_number", invoice_number)
+        if invoice_total_amount is not None:
+            pulumi.set(__self__, "invoice_total_amount", invoice_total_amount)
+        if redeemed_rewards is not None:
+            pulumi.set(__self__, "redeemed_rewards", redeemed_rewards)
+        if redemption_code is not None:
+            pulumi.set(__self__, "redemption_code", redemption_code)
+        if redemption_email is not None:
+            pulumi.set(__self__, "redemption_email", redemption_email)
+        if time_invoiced is not None:
+            pulumi.set(__self__, "time_invoiced", time_invoiced)
+        if time_redeemed is not None:
+            pulumi.set(__self__, "time_redeemed", time_redeemed)
 
     @property
     @pulumi.getter(name="baseRewards")
-    def base_rewards(self) -> float:
-        """
-        It provides the redeemed rewards in base/subscription currency.
-        """
+    def base_rewards(self) -> Optional[float]:
         return pulumi.get(self, "base_rewards")
 
     @property
     @pulumi.getter(name="fxRate")
-    def fx_rate(self) -> float:
-        """
-        It provides the fxRate between invoice currency and subscription currency.
-        """
+    def fx_rate(self) -> Optional[float]:
         return pulumi.get(self, "fx_rate")
 
     @property
     @pulumi.getter(name="invoiceCurrency")
-    def invoice_currency(self) -> str:
-        """
-        The currency associated with invoice.
-        """
+    def invoice_currency(self) -> Optional[str]:
         return pulumi.get(self, "invoice_currency")
 
     @property
     @pulumi.getter(name="invoiceNumber")
-    def invoice_number(self) -> str:
-        """
-        It provides the invoice number against the redemption.
-        """
+    def invoice_number(self) -> Optional[str]:
         return pulumi.get(self, "invoice_number")
 
     @property
     @pulumi.getter(name="invoiceTotalAmount")
-    def invoice_total_amount(self) -> float:
-        """
-        It provides the invoice total amount of given redemption.
-        """
+    def invoice_total_amount(self) -> Optional[float]:
         return pulumi.get(self, "invoice_total_amount")
 
     @property
     @pulumi.getter(name="redeemedRewards")
-    def redeemed_rewards(self) -> float:
-        """
-        It provides the redeemed rewards in invoice currency.
-        """
+    def redeemed_rewards(self) -> Optional[float]:
         return pulumi.get(self, "redeemed_rewards")
 
     @property
     @pulumi.getter(name="redemptionCode")
-    def redemption_code(self) -> str:
-        """
-        The redemption code used in the Billing Center during the reward redemption process.
-        """
+    def redemption_code(self) -> Optional[str]:
         return pulumi.get(self, "redemption_code")
 
     @property
     @pulumi.getter(name="redemptionEmail")
-    def redemption_email(self) -> str:
-        """
-        It provides the redemption email id.
-        """
+    def redemption_email(self) -> Optional[str]:
         return pulumi.get(self, "redemption_email")
 
     @property
     @pulumi.getter(name="timeInvoiced")
-    def time_invoiced(self) -> str:
-        """
-        It provides the invoice date.
-        """
+    def time_invoiced(self) -> Optional[str]:
         return pulumi.get(self, "time_invoiced")
 
     @property
     @pulumi.getter(name="timeRedeemed")
-    def time_redeemed(self) -> str:
-        """
-        It provides redeem date.
-        """
+    def time_redeemed(self) -> Optional[str]:
         return pulumi.get(self, "time_redeemed")
 
 
 @pulumi.output_type
 class GetSubscriptionRewardItemResult(dict):
     def __init__(__self__, *,
-                 available_rewards: float,
-                 earned_rewards: float,
-                 eligible_usage_amount: float,
-                 ineligible_usage_amount: float,
-                 is_manual: bool,
-                 redeemed_rewards: float,
-                 time_rewards_earned: str,
-                 time_rewards_expired: str,
-                 time_usage_ended: str,
-                 time_usage_started: str,
-                 usage_amount: float,
-                 usage_period_key: str):
-        """
-        :param float available_rewards: The number of rewards available for a specific usage period.
-        :param float earned_rewards: The number of rewards earned for the specific usage period.
-        :param float eligible_usage_amount: The eligible usage amount for the usage period.
-        :param float ineligible_usage_amount: The ineligible usage amount for the usage period.
-        :param bool is_manual: The boolean parameter to indicate whether or not the available rewards are manually posted.
-        :param float redeemed_rewards: The number of rewards redeemed for a specific month.
-        :param str time_rewards_earned: The date and time when rewards accrue.
-        :param str time_rewards_expired: The date and time when rewards expire.
-        :param str time_usage_ended: The end date and time for the usage period.
-        :param str time_usage_started: The start date and time for the usage period.
-        :param float usage_amount: The usage amount for the usage period.
-        :param str usage_period_key: The usage period ID.
-        """
-        pulumi.set(__self__, "available_rewards", available_rewards)
-        pulumi.set(__self__, "earned_rewards", earned_rewards)
-        pulumi.set(__self__, "eligible_usage_amount", eligible_usage_amount)
-        pulumi.set(__self__, "ineligible_usage_amount", ineligible_usage_amount)
-        pulumi.set(__self__, "is_manual", is_manual)
-        pulumi.set(__self__, "redeemed_rewards", redeemed_rewards)
-        pulumi.set(__self__, "time_rewards_earned", time_rewards_earned)
-        pulumi.set(__self__, "time_rewards_expired", time_rewards_expired)
-        pulumi.set(__self__, "time_usage_ended", time_usage_ended)
-        pulumi.set(__self__, "time_usage_started", time_usage_started)
-        pulumi.set(__self__, "usage_amount", usage_amount)
-        pulumi.set(__self__, "usage_period_key", usage_period_key)
+                 available_rewards: Optional[float] = None,
+                 earned_rewards: Optional[float] = None,
+                 eligible_usage_amount: Optional[float] = None,
+                 ineligible_usage_amount: Optional[float] = None,
+                 is_manual: Optional[bool] = None,
+                 redeemed_rewards: Optional[float] = None,
+                 time_rewards_earned: Optional[str] = None,
+                 time_rewards_expired: Optional[str] = None,
+                 time_usage_ended: Optional[str] = None,
+                 time_usage_started: Optional[str] = None,
+                 usage_amount: Optional[float] = None,
+                 usage_period_key: Optional[str] = None):
+        if available_rewards is not None:
+            pulumi.set(__self__, "available_rewards", available_rewards)
+        if earned_rewards is not None:
+            pulumi.set(__self__, "earned_rewards", earned_rewards)
+        if eligible_usage_amount is not None:
+            pulumi.set(__self__, "eligible_usage_amount", eligible_usage_amount)
+        if ineligible_usage_amount is not None:
+            pulumi.set(__self__, "ineligible_usage_amount", ineligible_usage_amount)
+        if is_manual is not None:
+            pulumi.set(__self__, "is_manual", is_manual)
+        if redeemed_rewards is not None:
+            pulumi.set(__self__, "redeemed_rewards", redeemed_rewards)
+        if time_rewards_earned is not None:
+            pulumi.set(__self__, "time_rewards_earned", time_rewards_earned)
+        if time_rewards_expired is not None:
+            pulumi.set(__self__, "time_rewards_expired", time_rewards_expired)
+        if time_usage_ended is not None:
+            pulumi.set(__self__, "time_usage_ended", time_usage_ended)
+        if time_usage_started is not None:
+            pulumi.set(__self__, "time_usage_started", time_usage_started)
+        if usage_amount is not None:
+            pulumi.set(__self__, "usage_amount", usage_amount)
+        if usage_period_key is not None:
+            pulumi.set(__self__, "usage_period_key", usage_period_key)
 
     @property
     @pulumi.getter(name="availableRewards")
-    def available_rewards(self) -> float:
-        """
-        The number of rewards available for a specific usage period.
-        """
+    def available_rewards(self) -> Optional[float]:
         return pulumi.get(self, "available_rewards")
 
     @property
     @pulumi.getter(name="earnedRewards")
-    def earned_rewards(self) -> float:
-        """
-        The number of rewards earned for the specific usage period.
-        """
+    def earned_rewards(self) -> Optional[float]:
         return pulumi.get(self, "earned_rewards")
 
     @property
     @pulumi.getter(name="eligibleUsageAmount")
-    def eligible_usage_amount(self) -> float:
-        """
-        The eligible usage amount for the usage period.
-        """
+    def eligible_usage_amount(self) -> Optional[float]:
         return pulumi.get(self, "eligible_usage_amount")
 
     @property
     @pulumi.getter(name="ineligibleUsageAmount")
-    def ineligible_usage_amount(self) -> float:
-        """
-        The ineligible usage amount for the usage period.
-        """
+    def ineligible_usage_amount(self) -> Optional[float]:
         return pulumi.get(self, "ineligible_usage_amount")
 
     @property
     @pulumi.getter(name="isManual")
-    def is_manual(self) -> bool:
-        """
-        The boolean parameter to indicate whether or not the available rewards are manually posted.
-        """
+    def is_manual(self) -> Optional[bool]:
         return pulumi.get(self, "is_manual")
 
     @property
     @pulumi.getter(name="redeemedRewards")
-    def redeemed_rewards(self) -> float:
-        """
-        The number of rewards redeemed for a specific month.
-        """
+    def redeemed_rewards(self) -> Optional[float]:
         return pulumi.get(self, "redeemed_rewards")
 
     @property
     @pulumi.getter(name="timeRewardsEarned")
-    def time_rewards_earned(self) -> str:
-        """
-        The date and time when rewards accrue.
-        """
+    def time_rewards_earned(self) -> Optional[str]:
         return pulumi.get(self, "time_rewards_earned")
 
     @property
     @pulumi.getter(name="timeRewardsExpired")
-    def time_rewards_expired(self) -> str:
-        """
-        The date and time when rewards expire.
-        """
+    def time_rewards_expired(self) -> Optional[str]:
         return pulumi.get(self, "time_rewards_expired")
 
     @property
     @pulumi.getter(name="timeUsageEnded")
-    def time_usage_ended(self) -> str:
-        """
-        The end date and time for the usage period.
-        """
+    def time_usage_ended(self) -> Optional[str]:
         return pulumi.get(self, "time_usage_ended")
 
     @property
     @pulumi.getter(name="timeUsageStarted")
-    def time_usage_started(self) -> str:
-        """
-        The start date and time for the usage period.
-        """
+    def time_usage_started(self) -> Optional[str]:
         return pulumi.get(self, "time_usage_started")
 
     @property
     @pulumi.getter(name="usageAmount")
-    def usage_amount(self) -> float:
-        """
-        The usage amount for the usage period.
-        """
+    def usage_amount(self) -> Optional[float]:
         return pulumi.get(self, "usage_amount")
 
     @property
     @pulumi.getter(name="usagePeriodKey")
-    def usage_period_key(self) -> str:
-        """
-        The usage period ID.
-        """
+    def usage_period_key(self) -> Optional[str]:
         return pulumi.get(self, "usage_period_key")
 
 
 @pulumi.output_type
 class GetSubscriptionRewardSummaryResult(dict):
     def __init__(__self__, *,
-                 currency: str,
-                 redemption_code: str,
-                 rewards_rate: float,
-                 subscription_id: str,
-                 tenancy_id: str,
-                 total_rewards_available: float):
-        """
-        :param str currency: The currency unit for the reward amount.
-        :param str redemption_code: The redemption code used in the Billing Center during the reward redemption process.
-        :param float rewards_rate: The current Rewards percentage in decimal format.
-        :param str subscription_id: The subscription ID for which rewards information is requested for.
-        :param str tenancy_id: The OCID of the tenancy.
-        :param float total_rewards_available: The total number of available rewards for a given subscription ID.
-        """
-        pulumi.set(__self__, "currency", currency)
-        pulumi.set(__self__, "redemption_code", redemption_code)
-        pulumi.set(__self__, "rewards_rate", rewards_rate)
-        pulumi.set(__self__, "subscription_id", subscription_id)
-        pulumi.set(__self__, "tenancy_id", tenancy_id)
-        pulumi.set(__self__, "total_rewards_available", total_rewards_available)
+                 currency: Optional[str] = None,
+                 redemption_code: Optional[str] = None,
+                 rewards_rate: Optional[float] = None,
+                 subscription_id: Optional[str] = None,
+                 tenancy_id: Optional[str] = None,
+                 total_rewards_available: Optional[float] = None):
+        if currency is not None:
+            pulumi.set(__self__, "currency", currency)
+        if redemption_code is not None:
+            pulumi.set(__self__, "redemption_code", redemption_code)
+        if rewards_rate is not None:
+            pulumi.set(__self__, "rewards_rate", rewards_rate)
+        if subscription_id is not None:
+            pulumi.set(__self__, "subscription_id", subscription_id)
+        if tenancy_id is not None:
+            pulumi.set(__self__, "tenancy_id", tenancy_id)
+        if total_rewards_available is not None:
+            pulumi.set(__self__, "total_rewards_available", total_rewards_available)
 
     @property
     @pulumi.getter
-    def currency(self) -> str:
-        """
-        The currency unit for the reward amount.
-        """
+    def currency(self) -> Optional[str]:
         return pulumi.get(self, "currency")
 
     @property
     @pulumi.getter(name="redemptionCode")
-    def redemption_code(self) -> str:
-        """
-        The redemption code used in the Billing Center during the reward redemption process.
-        """
+    def redemption_code(self) -> Optional[str]:
         return pulumi.get(self, "redemption_code")
 
     @property
     @pulumi.getter(name="rewardsRate")
-    def rewards_rate(self) -> float:
-        """
-        The current Rewards percentage in decimal format.
-        """
+    def rewards_rate(self) -> Optional[float]:
         return pulumi.get(self, "rewards_rate")
 
     @property
     @pulumi.getter(name="subscriptionId")
-    def subscription_id(self) -> str:
-        """
-        The subscription ID for which rewards information is requested for.
-        """
+    def subscription_id(self) -> Optional[str]:
         return pulumi.get(self, "subscription_id")
 
     @property
     @pulumi.getter(name="tenancyId")
-    def tenancy_id(self) -> str:
-        """
-        The OCID of the tenancy.
-        """
+    def tenancy_id(self) -> Optional[str]:
         return pulumi.get(self, "tenancy_id")
 
     @property
     @pulumi.getter(name="totalRewardsAvailable")
-    def total_rewards_available(self) -> float:
-        """
-        The total number of available rewards for a given subscription ID.
-        """
+    def total_rewards_available(self) -> Optional[float]:
         return pulumi.get(self, "total_rewards_available")
 
 
@@ -1383,259 +1055,188 @@ class GetSubscriptionRewardsFilterResult(dict):
 @pulumi.output_type
 class GetSubscriptionRewardsRewardCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetSubscriptionRewardsRewardCollectionItemResult']):
-        """
-        :param Sequence['GetSubscriptionRewardsRewardCollectionItemArgs'] items: The monthly summary of rewards.
-        """
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetSubscriptionRewardsRewardCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetSubscriptionRewardsRewardCollectionItemResult']:
-        """
-        The monthly summary of rewards.
-        """
+    def items(self) -> Optional[Sequence['outputs.GetSubscriptionRewardsRewardCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetSubscriptionRewardsRewardCollectionItemResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetSubscriptionRewardsRewardCollectionItemItemResult'],
-                 summaries: Sequence['outputs.GetSubscriptionRewardsRewardCollectionItemSummaryResult']):
-        """
-        :param Sequence['GetSubscriptionRewardsRewardCollectionItemItemArgs'] items: The monthly summary of rewards.
-        :param Sequence['GetSubscriptionRewardsRewardCollectionItemSummaryArgs'] summaries: The overall monthly reward summary.
-        """
-        pulumi.set(__self__, "items", items)
-        pulumi.set(__self__, "summaries", summaries)
+                 items: Optional[Sequence['outputs.GetSubscriptionRewardsRewardCollectionItemItemResult']] = None,
+                 summaries: Optional[Sequence['outputs.GetSubscriptionRewardsRewardCollectionItemSummaryResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
+        if summaries is not None:
+            pulumi.set(__self__, "summaries", summaries)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetSubscriptionRewardsRewardCollectionItemItemResult']:
-        """
-        The monthly summary of rewards.
-        """
+    def items(self) -> Optional[Sequence['outputs.GetSubscriptionRewardsRewardCollectionItemItemResult']]:
         return pulumi.get(self, "items")
 
     @property
     @pulumi.getter
-    def summaries(self) -> Sequence['outputs.GetSubscriptionRewardsRewardCollectionItemSummaryResult']:
-        """
-        The overall monthly reward summary.
-        """
+    def summaries(self) -> Optional[Sequence['outputs.GetSubscriptionRewardsRewardCollectionItemSummaryResult']]:
         return pulumi.get(self, "summaries")
 
 
 @pulumi.output_type
 class GetSubscriptionRewardsRewardCollectionItemItemResult(dict):
     def __init__(__self__, *,
-                 available_rewards: float,
-                 earned_rewards: float,
-                 eligible_usage_amount: float,
-                 ineligible_usage_amount: float,
-                 is_manual: bool,
-                 redeemed_rewards: float,
-                 time_rewards_earned: str,
-                 time_rewards_expired: str,
-                 time_usage_ended: str,
-                 time_usage_started: str,
-                 usage_amount: float,
-                 usage_period_key: str):
-        """
-        :param float available_rewards: The number of rewards available for a specific usage period.
-        :param float earned_rewards: The number of rewards earned for the specific usage period.
-        :param float eligible_usage_amount: The eligible usage amount for the usage period.
-        :param float ineligible_usage_amount: The ineligible usage amount for the usage period.
-        :param bool is_manual: The boolean parameter to indicate whether or not the available rewards are manually posted.
-        :param float redeemed_rewards: The number of rewards redeemed for a specific month.
-        :param str time_rewards_earned: The date and time when rewards accrue.
-        :param str time_rewards_expired: The date and time when rewards expire.
-        :param str time_usage_ended: The end date and time for the usage period.
-        :param str time_usage_started: The start date and time for the usage period.
-        :param float usage_amount: The usage amount for the usage period.
-        :param str usage_period_key: The usage period ID.
-        """
-        pulumi.set(__self__, "available_rewards", available_rewards)
-        pulumi.set(__self__, "earned_rewards", earned_rewards)
-        pulumi.set(__self__, "eligible_usage_amount", eligible_usage_amount)
-        pulumi.set(__self__, "ineligible_usage_amount", ineligible_usage_amount)
-        pulumi.set(__self__, "is_manual", is_manual)
-        pulumi.set(__self__, "redeemed_rewards", redeemed_rewards)
-        pulumi.set(__self__, "time_rewards_earned", time_rewards_earned)
-        pulumi.set(__self__, "time_rewards_expired", time_rewards_expired)
-        pulumi.set(__self__, "time_usage_ended", time_usage_ended)
-        pulumi.set(__self__, "time_usage_started", time_usage_started)
-        pulumi.set(__self__, "usage_amount", usage_amount)
-        pulumi.set(__self__, "usage_period_key", usage_period_key)
+                 available_rewards: Optional[float] = None,
+                 earned_rewards: Optional[float] = None,
+                 eligible_usage_amount: Optional[float] = None,
+                 ineligible_usage_amount: Optional[float] = None,
+                 is_manual: Optional[bool] = None,
+                 redeemed_rewards: Optional[float] = None,
+                 time_rewards_earned: Optional[str] = None,
+                 time_rewards_expired: Optional[str] = None,
+                 time_usage_ended: Optional[str] = None,
+                 time_usage_started: Optional[str] = None,
+                 usage_amount: Optional[float] = None,
+                 usage_period_key: Optional[str] = None):
+        if available_rewards is not None:
+            pulumi.set(__self__, "available_rewards", available_rewards)
+        if earned_rewards is not None:
+            pulumi.set(__self__, "earned_rewards", earned_rewards)
+        if eligible_usage_amount is not None:
+            pulumi.set(__self__, "eligible_usage_amount", eligible_usage_amount)
+        if ineligible_usage_amount is not None:
+            pulumi.set(__self__, "ineligible_usage_amount", ineligible_usage_amount)
+        if is_manual is not None:
+            pulumi.set(__self__, "is_manual", is_manual)
+        if redeemed_rewards is not None:
+            pulumi.set(__self__, "redeemed_rewards", redeemed_rewards)
+        if time_rewards_earned is not None:
+            pulumi.set(__self__, "time_rewards_earned", time_rewards_earned)
+        if time_rewards_expired is not None:
+            pulumi.set(__self__, "time_rewards_expired", time_rewards_expired)
+        if time_usage_ended is not None:
+            pulumi.set(__self__, "time_usage_ended", time_usage_ended)
+        if time_usage_started is not None:
+            pulumi.set(__self__, "time_usage_started", time_usage_started)
+        if usage_amount is not None:
+            pulumi.set(__self__, "usage_amount", usage_amount)
+        if usage_period_key is not None:
+            pulumi.set(__self__, "usage_period_key", usage_period_key)
 
     @property
     @pulumi.getter(name="availableRewards")
-    def available_rewards(self) -> float:
-        """
-        The number of rewards available for a specific usage period.
-        """
+    def available_rewards(self) -> Optional[float]:
         return pulumi.get(self, "available_rewards")
 
     @property
     @pulumi.getter(name="earnedRewards")
-    def earned_rewards(self) -> float:
-        """
-        The number of rewards earned for the specific usage period.
-        """
+    def earned_rewards(self) -> Optional[float]:
         return pulumi.get(self, "earned_rewards")
 
     @property
     @pulumi.getter(name="eligibleUsageAmount")
-    def eligible_usage_amount(self) -> float:
-        """
-        The eligible usage amount for the usage period.
-        """
+    def eligible_usage_amount(self) -> Optional[float]:
         return pulumi.get(self, "eligible_usage_amount")
 
     @property
     @pulumi.getter(name="ineligibleUsageAmount")
-    def ineligible_usage_amount(self) -> float:
-        """
-        The ineligible usage amount for the usage period.
-        """
+    def ineligible_usage_amount(self) -> Optional[float]:
         return pulumi.get(self, "ineligible_usage_amount")
 
     @property
     @pulumi.getter(name="isManual")
-    def is_manual(self) -> bool:
-        """
-        The boolean parameter to indicate whether or not the available rewards are manually posted.
-        """
+    def is_manual(self) -> Optional[bool]:
         return pulumi.get(self, "is_manual")
 
     @property
     @pulumi.getter(name="redeemedRewards")
-    def redeemed_rewards(self) -> float:
-        """
-        The number of rewards redeemed for a specific month.
-        """
+    def redeemed_rewards(self) -> Optional[float]:
         return pulumi.get(self, "redeemed_rewards")
 
     @property
     @pulumi.getter(name="timeRewardsEarned")
-    def time_rewards_earned(self) -> str:
-        """
-        The date and time when rewards accrue.
-        """
+    def time_rewards_earned(self) -> Optional[str]:
         return pulumi.get(self, "time_rewards_earned")
 
     @property
     @pulumi.getter(name="timeRewardsExpired")
-    def time_rewards_expired(self) -> str:
-        """
-        The date and time when rewards expire.
-        """
+    def time_rewards_expired(self) -> Optional[str]:
         return pulumi.get(self, "time_rewards_expired")
 
     @property
     @pulumi.getter(name="timeUsageEnded")
-    def time_usage_ended(self) -> str:
-        """
-        The end date and time for the usage period.
-        """
+    def time_usage_ended(self) -> Optional[str]:
         return pulumi.get(self, "time_usage_ended")
 
     @property
     @pulumi.getter(name="timeUsageStarted")
-    def time_usage_started(self) -> str:
-        """
-        The start date and time for the usage period.
-        """
+    def time_usage_started(self) -> Optional[str]:
         return pulumi.get(self, "time_usage_started")
 
     @property
     @pulumi.getter(name="usageAmount")
-    def usage_amount(self) -> float:
-        """
-        The usage amount for the usage period.
-        """
+    def usage_amount(self) -> Optional[float]:
         return pulumi.get(self, "usage_amount")
 
     @property
     @pulumi.getter(name="usagePeriodKey")
-    def usage_period_key(self) -> str:
-        """
-        The usage period ID.
-        """
+    def usage_period_key(self) -> Optional[str]:
         return pulumi.get(self, "usage_period_key")
 
 
 @pulumi.output_type
 class GetSubscriptionRewardsRewardCollectionItemSummaryResult(dict):
     def __init__(__self__, *,
-                 currency: str,
-                 redemption_code: str,
-                 rewards_rate: float,
-                 subscription_id: str,
-                 tenancy_id: str,
-                 total_rewards_available: float):
-        """
-        :param str currency: The currency unit for the reward amount.
-        :param str redemption_code: The redemption code used in the Billing Center during the reward redemption process.
-        :param float rewards_rate: The current Rewards percentage in decimal format.
-        :param str subscription_id: The subscription ID for which rewards information is requested for.
-        :param str tenancy_id: The OCID of the tenancy.
-        :param float total_rewards_available: The total number of available rewards for a given subscription ID.
-        """
-        pulumi.set(__self__, "currency", currency)
-        pulumi.set(__self__, "redemption_code", redemption_code)
-        pulumi.set(__self__, "rewards_rate", rewards_rate)
-        pulumi.set(__self__, "subscription_id", subscription_id)
-        pulumi.set(__self__, "tenancy_id", tenancy_id)
-        pulumi.set(__self__, "total_rewards_available", total_rewards_available)
+                 currency: Optional[str] = None,
+                 redemption_code: Optional[str] = None,
+                 rewards_rate: Optional[float] = None,
+                 subscription_id: Optional[str] = None,
+                 tenancy_id: Optional[str] = None,
+                 total_rewards_available: Optional[float] = None):
+        if currency is not None:
+            pulumi.set(__self__, "currency", currency)
+        if redemption_code is not None:
+            pulumi.set(__self__, "redemption_code", redemption_code)
+        if rewards_rate is not None:
+            pulumi.set(__self__, "rewards_rate", rewards_rate)
+        if subscription_id is not None:
+            pulumi.set(__self__, "subscription_id", subscription_id)
+        if tenancy_id is not None:
+            pulumi.set(__self__, "tenancy_id", tenancy_id)
+        if total_rewards_available is not None:
+            pulumi.set(__self__, "total_rewards_available", total_rewards_available)
 
     @property
     @pulumi.getter
-    def currency(self) -> str:
-        """
-        The currency unit for the reward amount.
-        """
+    def currency(self) -> Optional[str]:
         return pulumi.get(self, "currency")
 
     @property
     @pulumi.getter(name="redemptionCode")
-    def redemption_code(self) -> str:
-        """
-        The redemption code used in the Billing Center during the reward redemption process.
-        """
+    def redemption_code(self) -> Optional[str]:
         return pulumi.get(self, "redemption_code")
 
     @property
     @pulumi.getter(name="rewardsRate")
-    def rewards_rate(self) -> float:
-        """
-        The current Rewards percentage in decimal format.
-        """
+    def rewards_rate(self) -> Optional[float]:
         return pulumi.get(self, "rewards_rate")
 
     @property
     @pulumi.getter(name="subscriptionId")
-    def subscription_id(self) -> str:
-        """
-        The subscription ID for which rewards information is requested for.
-        """
+    def subscription_id(self) -> Optional[str]:
         return pulumi.get(self, "subscription_id")
 
     @property
     @pulumi.getter(name="tenancyId")
-    def tenancy_id(self) -> str:
-        """
-        The OCID of the tenancy.
-        """
+    def tenancy_id(self) -> Optional[str]:
         return pulumi.get(self, "tenancy_id")
 
     @property
     @pulumi.getter(name="totalRewardsAvailable")
-    def total_rewards_available(self) -> float:
-        """
-        The total number of available rewards for a given subscription ID.
-        """
+    def total_rewards_available(self) -> Optional[float]:
         return pulumi.get(self, "total_rewards_available")
 
 
@@ -1669,197 +1270,146 @@ class GetUsagelimitsFilterResult(dict):
 @pulumi.output_type
 class GetUsagelimitsUsageLimitCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetUsagelimitsUsageLimitCollectionItemResult']):
-        """
-        :param Sequence['GetUsagelimitsUsageLimitCollectionItemArgs'] items: The list of usage limits.
-        """
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetUsagelimitsUsageLimitCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetUsagelimitsUsageLimitCollectionItemResult']:
-        """
-        The list of usage limits.
-        """
+    def items(self) -> Optional[Sequence['outputs.GetUsagelimitsUsageLimitCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetUsagelimitsUsageLimitCollectionItemResult(dict):
     def __init__(__self__, *,
-                 action: str,
-                 alert_level: float,
-                 created_by: str,
-                 entitlement_id: str,
-                 id: str,
-                 limit: str,
-                 limit_type: str,
-                 max_hard_limit: str,
-                 modified_by: str,
-                 resource_name: str,
-                 service_name: str,
-                 sku_part_id: str,
-                 state: str,
-                 time_created: str,
-                 time_modified: str,
-                 value_type: str):
-        """
-        :param str action: The action when usage limit is hit
-        :param float alert_level: The alert level of the usage limit
-        :param str created_by: The user who created the limit
-        :param str entitlement_id: Entitlement ID of the usage limit
-        :param str id: The usage limit ID
-        :param str limit_type: Hard or soft limit. Hard limits lead to breaches, soft to alerts.
-        :param str max_hard_limit: The maximum hard limit set for the usage limit
-        :param str modified_by: The user who modified the limit
-        :param str resource_name: The resource for which the limit is defined
-        :param str service_name: The service for which the limit is defined
-        :param str sku_part_id: The SKU for which the usage limit is set
-        :param str state: The usage limit lifecycle state.
-        :param str time_created: Time when the usage limit was created
-        :param str time_modified: Time when the usage limit was modified
-        :param str value_type: The value type of the usage limit
-        """
-        pulumi.set(__self__, "action", action)
-        pulumi.set(__self__, "alert_level", alert_level)
-        pulumi.set(__self__, "created_by", created_by)
-        pulumi.set(__self__, "entitlement_id", entitlement_id)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "limit", limit)
-        pulumi.set(__self__, "limit_type", limit_type)
-        pulumi.set(__self__, "max_hard_limit", max_hard_limit)
-        pulumi.set(__self__, "modified_by", modified_by)
-        pulumi.set(__self__, "resource_name", resource_name)
-        pulumi.set(__self__, "service_name", service_name)
-        pulumi.set(__self__, "sku_part_id", sku_part_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_modified", time_modified)
-        pulumi.set(__self__, "value_type", value_type)
+                 action: Optional[str] = None,
+                 alert_level: Optional[float] = None,
+                 created_by: Optional[str] = None,
+                 entitlement_id: Optional[str] = None,
+                 id: Optional[str] = None,
+                 limit: Optional[str] = None,
+                 limit_type: Optional[str] = None,
+                 max_hard_limit: Optional[str] = None,
+                 modified_by: Optional[str] = None,
+                 resource_name: Optional[str] = None,
+                 service_name: Optional[str] = None,
+                 sku_part_id: Optional[str] = None,
+                 state: Optional[str] = None,
+                 time_created: Optional[str] = None,
+                 time_modified: Optional[str] = None,
+                 value_type: Optional[str] = None):
+        if action is not None:
+            pulumi.set(__self__, "action", action)
+        if alert_level is not None:
+            pulumi.set(__self__, "alert_level", alert_level)
+        if created_by is not None:
+            pulumi.set(__self__, "created_by", created_by)
+        if entitlement_id is not None:
+            pulumi.set(__self__, "entitlement_id", entitlement_id)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if limit is not None:
+            pulumi.set(__self__, "limit", limit)
+        if limit_type is not None:
+            pulumi.set(__self__, "limit_type", limit_type)
+        if max_hard_limit is not None:
+            pulumi.set(__self__, "max_hard_limit", max_hard_limit)
+        if modified_by is not None:
+            pulumi.set(__self__, "modified_by", modified_by)
+        if resource_name is not None:
+            pulumi.set(__self__, "resource_name", resource_name)
+        if service_name is not None:
+            pulumi.set(__self__, "service_name", service_name)
+        if sku_part_id is not None:
+            pulumi.set(__self__, "sku_part_id", sku_part_id)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_modified is not None:
+            pulumi.set(__self__, "time_modified", time_modified)
+        if value_type is not None:
+            pulumi.set(__self__, "value_type", value_type)
 
     @property
     @pulumi.getter
-    def action(self) -> str:
-        """
-        The action when usage limit is hit
-        """
+    def action(self) -> Optional[str]:
         return pulumi.get(self, "action")
 
     @property
     @pulumi.getter(name="alertLevel")
-    def alert_level(self) -> float:
-        """
-        The alert level of the usage limit
-        """
+    def alert_level(self) -> Optional[float]:
         return pulumi.get(self, "alert_level")
 
     @property
     @pulumi.getter(name="createdBy")
-    def created_by(self) -> str:
-        """
-        The user who created the limit
-        """
+    def created_by(self) -> Optional[str]:
         return pulumi.get(self, "created_by")
 
     @property
     @pulumi.getter(name="entitlementId")
-    def entitlement_id(self) -> str:
-        """
-        Entitlement ID of the usage limit
-        """
+    def entitlement_id(self) -> Optional[str]:
         return pulumi.get(self, "entitlement_id")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The usage limit ID
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
-    def limit(self) -> str:
+    def limit(self) -> Optional[str]:
         return pulumi.get(self, "limit")
 
     @property
     @pulumi.getter(name="limitType")
-    def limit_type(self) -> str:
-        """
-        Hard or soft limit. Hard limits lead to breaches, soft to alerts.
-        """
+    def limit_type(self) -> Optional[str]:
         return pulumi.get(self, "limit_type")
 
     @property
     @pulumi.getter(name="maxHardLimit")
-    def max_hard_limit(self) -> str:
-        """
-        The maximum hard limit set for the usage limit
-        """
+    def max_hard_limit(self) -> Optional[str]:
         return pulumi.get(self, "max_hard_limit")
 
     @property
     @pulumi.getter(name="modifiedBy")
-    def modified_by(self) -> str:
-        """
-        The user who modified the limit
-        """
+    def modified_by(self) -> Optional[str]:
         return pulumi.get(self, "modified_by")
 
     @property
     @pulumi.getter(name="resourceName")
-    def resource_name(self) -> str:
-        """
-        The resource for which the limit is defined
-        """
+    def resource_name(self) -> Optional[str]:
         return pulumi.get(self, "resource_name")
 
     @property
     @pulumi.getter(name="serviceName")
-    def service_name(self) -> str:
-        """
-        The service for which the limit is defined
-        """
+    def service_name(self) -> Optional[str]:
         return pulumi.get(self, "service_name")
 
     @property
     @pulumi.getter(name="skuPartId")
-    def sku_part_id(self) -> str:
-        """
-        The SKU for which the usage limit is set
-        """
+    def sku_part_id(self) -> Optional[str]:
         return pulumi.get(self, "sku_part_id")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The usage limit lifecycle state.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        Time when the usage limit was created
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeModified")
-    def time_modified(self) -> str:
-        """
-        Time when the usage limit was modified
-        """
+    def time_modified(self) -> Optional[str]:
         return pulumi.get(self, "time_modified")
 
     @property
     @pulumi.getter(name="valueType")
-    def value_type(self) -> str:
-        """
-        The value type of the usage limit
-        """
+    def value_type(self) -> Optional[str]:
         return pulumi.get(self, "value_type")
 
 

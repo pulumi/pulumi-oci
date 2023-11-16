@@ -41,7 +41,7 @@ class GetServicesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -49,10 +49,7 @@ class GetServicesResult:
 
     @property
     @pulumi.getter
-    def services(self) -> Sequence['outputs.GetServicesServiceResult']:
-        """
-        The list of services.
-        """
+    def services(self) -> Optional[Sequence['outputs.GetServicesServiceResult']]:
         return pulumi.get(self, "services")
 
 
@@ -70,19 +67,7 @@ class AwaitableGetServicesResult(GetServicesResult):
 def get_services(filters: Optional[Sequence[pulumi.InputType['GetServicesFilterArgs']]] = None,
                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetServicesResult:
     """
-    This data source provides the list of Services in Oracle Cloud Infrastructure Core service.
-
-    Lists the available [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) objects that you can enable for a
-    service gateway in this region.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_services = oci.Core.get_services()
-    ```
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -99,18 +84,6 @@ def get_services(filters: Optional[Sequence[pulumi.InputType['GetServicesFilterA
 def get_services_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetServicesFilterArgs']]]]] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetServicesResult]:
     """
-    This data source provides the list of Services in Oracle Cloud Infrastructure Core service.
-
-    Lists the available [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) objects that you can enable for a
-    service gateway in this region.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_services = oci.Core.get_services()
-    ```
+    Use this data source to access information about an existing resource.
     """
     ...

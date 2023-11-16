@@ -10,6 +10,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetTableSchema {
@@ -17,27 +19,27 @@ public final class GetTableSchema {
      * @return The columns of a table.
      * 
      */
-    private List<GetTableSchemaColumn> columns;
+    private @Nullable List<GetTableSchemaColumn> columns;
     /**
      * @return The identity properties of a table, if any.
      * 
      */
-    private List<GetTableSchemaIdentity> identities;
+    private @Nullable List<GetTableSchemaIdentity> identities;
     /**
      * @return A list of column names that make up a key.
      * 
      */
-    private List<String> primaryKeys;
+    private @Nullable List<String> primaryKeys;
     /**
      * @return A list of column names that make up a key.
      * 
      */
-    private List<String> shardKeys;
+    private @Nullable List<String> shardKeys;
     /**
      * @return The default Time-to-Live for the table, in days.
      * 
      */
-    private Integer ttl;
+    private @Nullable Integer ttl;
 
     private GetTableSchema() {}
     /**
@@ -45,35 +47,35 @@ public final class GetTableSchema {
      * 
      */
     public List<GetTableSchemaColumn> columns() {
-        return this.columns;
+        return this.columns == null ? List.of() : this.columns;
     }
     /**
      * @return The identity properties of a table, if any.
      * 
      */
     public List<GetTableSchemaIdentity> identities() {
-        return this.identities;
+        return this.identities == null ? List.of() : this.identities;
     }
     /**
      * @return A list of column names that make up a key.
      * 
      */
     public List<String> primaryKeys() {
-        return this.primaryKeys;
+        return this.primaryKeys == null ? List.of() : this.primaryKeys;
     }
     /**
      * @return A list of column names that make up a key.
      * 
      */
     public List<String> shardKeys() {
-        return this.shardKeys;
+        return this.shardKeys == null ? List.of() : this.shardKeys;
     }
     /**
      * @return The default Time-to-Live for the table, in days.
      * 
      */
-    public Integer ttl() {
-        return this.ttl;
+    public Optional<Integer> ttl() {
+        return Optional.ofNullable(this.ttl);
     }
 
     public static Builder builder() {
@@ -85,11 +87,11 @@ public final class GetTableSchema {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetTableSchemaColumn> columns;
-        private List<GetTableSchemaIdentity> identities;
-        private List<String> primaryKeys;
-        private List<String> shardKeys;
-        private Integer ttl;
+        private @Nullable List<GetTableSchemaColumn> columns;
+        private @Nullable List<GetTableSchemaIdentity> identities;
+        private @Nullable List<String> primaryKeys;
+        private @Nullable List<String> shardKeys;
+        private @Nullable Integer ttl;
         public Builder() {}
         public Builder(GetTableSchema defaults) {
     	      Objects.requireNonNull(defaults);
@@ -101,40 +103,40 @@ public final class GetTableSchema {
         }
 
         @CustomType.Setter
-        public Builder columns(List<GetTableSchemaColumn> columns) {
-            this.columns = Objects.requireNonNull(columns);
+        public Builder columns(@Nullable List<GetTableSchemaColumn> columns) {
+            this.columns = columns;
             return this;
         }
         public Builder columns(GetTableSchemaColumn... columns) {
             return columns(List.of(columns));
         }
         @CustomType.Setter
-        public Builder identities(List<GetTableSchemaIdentity> identities) {
-            this.identities = Objects.requireNonNull(identities);
+        public Builder identities(@Nullable List<GetTableSchemaIdentity> identities) {
+            this.identities = identities;
             return this;
         }
         public Builder identities(GetTableSchemaIdentity... identities) {
             return identities(List.of(identities));
         }
         @CustomType.Setter
-        public Builder primaryKeys(List<String> primaryKeys) {
-            this.primaryKeys = Objects.requireNonNull(primaryKeys);
+        public Builder primaryKeys(@Nullable List<String> primaryKeys) {
+            this.primaryKeys = primaryKeys;
             return this;
         }
         public Builder primaryKeys(String... primaryKeys) {
             return primaryKeys(List.of(primaryKeys));
         }
         @CustomType.Setter
-        public Builder shardKeys(List<String> shardKeys) {
-            this.shardKeys = Objects.requireNonNull(shardKeys);
+        public Builder shardKeys(@Nullable List<String> shardKeys) {
+            this.shardKeys = shardKeys;
             return this;
         }
         public Builder shardKeys(String... shardKeys) {
             return shardKeys(List.of(shardKeys));
         }
         @CustomType.Setter
-        public Builder ttl(Integer ttl) {
-            this.ttl = Objects.requireNonNull(ttl);
+        public Builder ttl(@Nullable Integer ttl) {
+            this.ttl = ttl;
             return this;
         }
         public GetTableSchema build() {

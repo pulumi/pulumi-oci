@@ -16,10 +16,10 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         /// <summary>
         /// The OCID of the resource on which Metric Extension is enabled
         /// </summary>
-        public readonly string ResourceId;
+        public readonly string? ResourceId;
 
         [OutputConstructor]
-        private GetMetricExtensionEnabledOnResourceResult(string resourceId)
+        private GetMetricExtensionEnabledOnResourceResult(string? resourceId)
         {
             ResourceId = resourceId;
         }

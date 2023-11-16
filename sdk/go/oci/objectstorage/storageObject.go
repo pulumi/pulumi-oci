@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Object resource in Oracle Cloud Infrastructure Object Storage service.
@@ -87,13 +86,13 @@ type StorageObject struct {
 	// The optional Content-Language header that defines the content language of the object to upload. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to identify and differentiate objects based on a particular language.
 	ContentLanguage pulumi.StringPtrOutput `pulumi:"contentLanguage"`
 	// (Updatable) The content length of the body.
-	ContentLength pulumi.StringOutput `pulumi:"contentLength"`
+	ContentLength pulumi.StringPtrOutput `pulumi:"contentLength"`
 	// (Updatable) The optional base-64 header that defines the encoded MD5 hash of the body. If the optional Content-MD5 header is present, Object Storage performs an integrity check on the body of the HTTP request by computing the MD5 hash for the body and comparing it to the MD5 hash supplied in the header. If the two hashes do not match, the object is rejected and an HTTP-400 Unmatched Content MD5 error is returned with the message:
 	//
 	// "The computed MD5 of the request body (ACTUAL_MD5) does not match the Content-MD5 header (HEADER_MD5)"
-	ContentMd5 pulumi.StringOutput `pulumi:"contentMd5"`
+	ContentMd5 pulumi.StringPtrOutput `pulumi:"contentMd5"`
 	// The optional Content-Type header that defines the standard MIME type format of the object. Content type defaults to 'application/octet-stream' if not specified in the PutObject call. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to identify and perform special operations on text only objects.
-	ContentType pulumi.StringOutput `pulumi:"contentType"`
+	ContentType pulumi.StringPtrOutput `pulumi:"contentType"`
 	// (Updatable) A boolean to delete all object versions for an object in a bucket that has or ever had versioning enabled.
 	DeleteAllObjectVersions pulumi.BoolPtrOutput `pulumi:"deleteAllObjectVersions"`
 	// Optional user-defined metadata key and value.
@@ -104,17 +103,17 @@ type StorageObject struct {
 	// The name of the source object.
 	Object pulumi.StringOutput `pulumi:"object"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
-	OpcSseKmsKeyId pulumi.StringOutput `pulumi:"opcSseKmsKeyId"`
+	OpcSseKmsKeyId pulumi.StringPtrOutput `pulumi:"opcSseKmsKeyId"`
 	// An absolute path to a file on the local system. Cannot be defined if `content` or `sourceUriDetails` is defined.
 	Source pulumi.StringPtrOutput `pulumi:"source"`
 	// Details of the source URI of the object in the cloud. Cannot be defined if `content` or `source` is defined.
 	// Note: To enable object copy, you must authorize the service to manage objects on your behalf.
 	SourceUriDetails StorageObjectSourceUriDetailsPtrOutput `pulumi:"sourceUriDetails"`
-	State            pulumi.StringOutput                    `pulumi:"state"`
+	State            pulumi.StringPtrOutput                 `pulumi:"state"`
 	// (Updatable) The storage tier that the object should be stored in. If not specified, the object will be stored in the same storage tier as the bucket.
-	StorageTier   pulumi.StringOutput `pulumi:"storageTier"`
-	VersionId     pulumi.StringOutput `pulumi:"versionId"`
-	WorkRequestId pulumi.StringOutput `pulumi:"workRequestId"`
+	StorageTier   pulumi.StringPtrOutput `pulumi:"storageTier"`
+	VersionId     pulumi.StringPtrOutput `pulumi:"versionId"`
+	WorkRequestId pulumi.StringPtrOutput `pulumi:"workRequestId"`
 }
 
 // NewStorageObject registers a new resource with the given unique name, arguments, and options.
@@ -349,12 +348,6 @@ func (i *StorageObject) ToStorageObjectOutputWithContext(ctx context.Context) St
 	return pulumi.ToOutputWithContext(ctx, i).(StorageObjectOutput)
 }
 
-func (i *StorageObject) ToOutput(ctx context.Context) pulumix.Output[*StorageObject] {
-	return pulumix.Output[*StorageObject]{
-		OutputState: i.ToStorageObjectOutputWithContext(ctx).OutputState,
-	}
-}
-
 // StorageObjectArrayInput is an input type that accepts StorageObjectArray and StorageObjectArrayOutput values.
 // You can construct a concrete instance of `StorageObjectArrayInput` via:
 //
@@ -378,12 +371,6 @@ func (i StorageObjectArray) ToStorageObjectArrayOutput() StorageObjectArrayOutpu
 
 func (i StorageObjectArray) ToStorageObjectArrayOutputWithContext(ctx context.Context) StorageObjectArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(StorageObjectArrayOutput)
-}
-
-func (i StorageObjectArray) ToOutput(ctx context.Context) pulumix.Output[[]*StorageObject] {
-	return pulumix.Output[[]*StorageObject]{
-		OutputState: i.ToStorageObjectArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // StorageObjectMapInput is an input type that accepts StorageObjectMap and StorageObjectMapOutput values.
@@ -411,12 +398,6 @@ func (i StorageObjectMap) ToStorageObjectMapOutputWithContext(ctx context.Contex
 	return pulumi.ToOutputWithContext(ctx, i).(StorageObjectMapOutput)
 }
 
-func (i StorageObjectMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*StorageObject] {
-	return pulumix.Output[map[string]*StorageObject]{
-		OutputState: i.ToStorageObjectMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type StorageObjectOutput struct{ *pulumi.OutputState }
 
 func (StorageObjectOutput) ElementType() reflect.Type {
@@ -429,12 +410,6 @@ func (o StorageObjectOutput) ToStorageObjectOutput() StorageObjectOutput {
 
 func (o StorageObjectOutput) ToStorageObjectOutputWithContext(ctx context.Context) StorageObjectOutput {
 	return o
-}
-
-func (o StorageObjectOutput) ToOutput(ctx context.Context) pulumix.Output[*StorageObject] {
-	return pulumix.Output[*StorageObject]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The name of the bucket for the source object.
@@ -468,20 +443,20 @@ func (o StorageObjectOutput) ContentLanguage() pulumi.StringPtrOutput {
 }
 
 // (Updatable) The content length of the body.
-func (o StorageObjectOutput) ContentLength() pulumi.StringOutput {
-	return o.ApplyT(func(v *StorageObject) pulumi.StringOutput { return v.ContentLength }).(pulumi.StringOutput)
+func (o StorageObjectOutput) ContentLength() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *StorageObject) pulumi.StringPtrOutput { return v.ContentLength }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The optional base-64 header that defines the encoded MD5 hash of the body. If the optional Content-MD5 header is present, Object Storage performs an integrity check on the body of the HTTP request by computing the MD5 hash for the body and comparing it to the MD5 hash supplied in the header. If the two hashes do not match, the object is rejected and an HTTP-400 Unmatched Content MD5 error is returned with the message:
 //
 // "The computed MD5 of the request body (ACTUAL_MD5) does not match the Content-MD5 header (HEADER_MD5)"
-func (o StorageObjectOutput) ContentMd5() pulumi.StringOutput {
-	return o.ApplyT(func(v *StorageObject) pulumi.StringOutput { return v.ContentMd5 }).(pulumi.StringOutput)
+func (o StorageObjectOutput) ContentMd5() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *StorageObject) pulumi.StringPtrOutput { return v.ContentMd5 }).(pulumi.StringPtrOutput)
 }
 
 // The optional Content-Type header that defines the standard MIME type format of the object. Content type defaults to 'application/octet-stream' if not specified in the PutObject call. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to identify and perform special operations on text only objects.
-func (o StorageObjectOutput) ContentType() pulumi.StringOutput {
-	return o.ApplyT(func(v *StorageObject) pulumi.StringOutput { return v.ContentType }).(pulumi.StringOutput)
+func (o StorageObjectOutput) ContentType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *StorageObject) pulumi.StringPtrOutput { return v.ContentType }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A boolean to delete all object versions for an object in a bucket that has or ever had versioning enabled.
@@ -506,8 +481,8 @@ func (o StorageObjectOutput) Object() pulumi.StringOutput {
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
-func (o StorageObjectOutput) OpcSseKmsKeyId() pulumi.StringOutput {
-	return o.ApplyT(func(v *StorageObject) pulumi.StringOutput { return v.OpcSseKmsKeyId }).(pulumi.StringOutput)
+func (o StorageObjectOutput) OpcSseKmsKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *StorageObject) pulumi.StringPtrOutput { return v.OpcSseKmsKeyId }).(pulumi.StringPtrOutput)
 }
 
 // An absolute path to a file on the local system. Cannot be defined if `content` or `sourceUriDetails` is defined.
@@ -521,21 +496,21 @@ func (o StorageObjectOutput) SourceUriDetails() StorageObjectSourceUriDetailsPtr
 	return o.ApplyT(func(v *StorageObject) StorageObjectSourceUriDetailsPtrOutput { return v.SourceUriDetails }).(StorageObjectSourceUriDetailsPtrOutput)
 }
 
-func (o StorageObjectOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *StorageObject) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o StorageObjectOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *StorageObject) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The storage tier that the object should be stored in. If not specified, the object will be stored in the same storage tier as the bucket.
-func (o StorageObjectOutput) StorageTier() pulumi.StringOutput {
-	return o.ApplyT(func(v *StorageObject) pulumi.StringOutput { return v.StorageTier }).(pulumi.StringOutput)
+func (o StorageObjectOutput) StorageTier() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *StorageObject) pulumi.StringPtrOutput { return v.StorageTier }).(pulumi.StringPtrOutput)
 }
 
-func (o StorageObjectOutput) VersionId() pulumi.StringOutput {
-	return o.ApplyT(func(v *StorageObject) pulumi.StringOutput { return v.VersionId }).(pulumi.StringOutput)
+func (o StorageObjectOutput) VersionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *StorageObject) pulumi.StringPtrOutput { return v.VersionId }).(pulumi.StringPtrOutput)
 }
 
-func (o StorageObjectOutput) WorkRequestId() pulumi.StringOutput {
-	return o.ApplyT(func(v *StorageObject) pulumi.StringOutput { return v.WorkRequestId }).(pulumi.StringOutput)
+func (o StorageObjectOutput) WorkRequestId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *StorageObject) pulumi.StringPtrOutput { return v.WorkRequestId }).(pulumi.StringPtrOutput)
 }
 
 type StorageObjectArrayOutput struct{ *pulumi.OutputState }
@@ -550,12 +525,6 @@ func (o StorageObjectArrayOutput) ToStorageObjectArrayOutput() StorageObjectArra
 
 func (o StorageObjectArrayOutput) ToStorageObjectArrayOutputWithContext(ctx context.Context) StorageObjectArrayOutput {
 	return o
-}
-
-func (o StorageObjectArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*StorageObject] {
-	return pulumix.Output[[]*StorageObject]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o StorageObjectArrayOutput) Index(i pulumi.IntInput) StorageObjectOutput {
@@ -576,12 +545,6 @@ func (o StorageObjectMapOutput) ToStorageObjectMapOutput() StorageObjectMapOutpu
 
 func (o StorageObjectMapOutput) ToStorageObjectMapOutputWithContext(ctx context.Context) StorageObjectMapOutput {
 	return o
-}
-
-func (o StorageObjectMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*StorageObject] {
-	return pulumix.Output[map[string]*StorageObject]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o StorageObjectMapOutput) MapIndex(k pulumi.StringInput) StorageObjectOutput {

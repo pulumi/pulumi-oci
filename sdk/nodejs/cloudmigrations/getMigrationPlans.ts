@@ -83,7 +83,7 @@ export interface GetMigrationPlansResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The OCID of the associated migration.
      */
@@ -91,7 +91,7 @@ export interface GetMigrationPlansResult {
     /**
      * The list of migration_plan_collection.
      */
-    readonly migrationPlanCollections: outputs.CloudMigrations.GetMigrationPlansMigrationPlanCollection[];
+    readonly migrationPlanCollections?: outputs.CloudMigrations.GetMigrationPlansMigrationPlanCollection[];
     readonly migrationPlanId?: string;
     /**
      * The current state of the migration plan.

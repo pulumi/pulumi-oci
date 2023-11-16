@@ -20,15 +20,6 @@ class AutonomousDatabaseWalletArgs:
                  generate_type: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a AutonomousDatabaseWallet resource.
-        :param pulumi.Input[str] autonomous_database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[str] password: The password to encrypt the keys inside the wallet. The password must be at least 8 characters long and must include at least 1 letter and either 1 numeric character or 1 special character.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] generate_type: The type of wallet to generate.
-               
-               **Serverless instance usage:**
         """
         pulumi.set(__self__, "autonomous_database_id", autonomous_database_id)
         pulumi.set(__self__, "password", password)
@@ -40,9 +31,6 @@ class AutonomousDatabaseWalletArgs:
     @property
     @pulumi.getter(name="autonomousDatabaseId")
     def autonomous_database_id(self) -> pulumi.Input[str]:
-        """
-        The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
         return pulumi.get(self, "autonomous_database_id")
 
     @autonomous_database_id.setter
@@ -52,13 +40,6 @@ class AutonomousDatabaseWalletArgs:
     @property
     @pulumi.getter
     def password(self) -> pulumi.Input[str]:
-        """
-        The password to encrypt the keys inside the wallet. The password must be at least 8 characters long and must include at least 1 letter and either 1 numeric character or 1 special character.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "password")
 
     @password.setter
@@ -77,11 +58,6 @@ class AutonomousDatabaseWalletArgs:
     @property
     @pulumi.getter(name="generateType")
     def generate_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The type of wallet to generate.
-
-        **Serverless instance usage:**
-        """
         return pulumi.get(self, "generate_type")
 
     @generate_type.setter
@@ -99,16 +75,6 @@ class _AutonomousDatabaseWalletState:
                  password: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering AutonomousDatabaseWallet resources.
-        :param pulumi.Input[str] autonomous_database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[str] content: content of the downloaded zipped wallet for the Autonomous Database. If `base64_encode_content` is set to `true`, then this content will be base64 encoded.
-        :param pulumi.Input[str] generate_type: The type of wallet to generate.
-               
-               **Serverless instance usage:**
-        :param pulumi.Input[str] password: The password to encrypt the keys inside the wallet. The password must be at least 8 characters long and must include at least 1 letter and either 1 numeric character or 1 special character.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if autonomous_database_id is not None:
             pulumi.set(__self__, "autonomous_database_id", autonomous_database_id)
@@ -124,9 +90,6 @@ class _AutonomousDatabaseWalletState:
     @property
     @pulumi.getter(name="autonomousDatabaseId")
     def autonomous_database_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
         return pulumi.get(self, "autonomous_database_id")
 
     @autonomous_database_id.setter
@@ -145,9 +108,6 @@ class _AutonomousDatabaseWalletState:
     @property
     @pulumi.getter
     def content(self) -> Optional[pulumi.Input[str]]:
-        """
-        content of the downloaded zipped wallet for the Autonomous Database. If `base64_encode_content` is set to `true`, then this content will be base64 encoded.
-        """
         return pulumi.get(self, "content")
 
     @content.setter
@@ -157,11 +117,6 @@ class _AutonomousDatabaseWalletState:
     @property
     @pulumi.getter(name="generateType")
     def generate_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The type of wallet to generate.
-
-        **Serverless instance usage:**
-        """
         return pulumi.get(self, "generate_type")
 
     @generate_type.setter
@@ -171,13 +126,6 @@ class _AutonomousDatabaseWalletState:
     @property
     @pulumi.getter
     def password(self) -> Optional[pulumi.Input[str]]:
-        """
-        The password to encrypt the keys inside the wallet. The password must be at least 8 characters long and must include at least 1 letter and either 1 numeric character or 1 special character.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "password")
 
     @password.setter
@@ -196,34 +144,9 @@ class AutonomousDatabaseWallet(pulumi.CustomResource):
                  password: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_autonomous_database_wallet = oci.database.AutonomousDatabaseWallet("testAutonomousDatabaseWallet",
-            autonomous_database_id=oci_database_autonomous_database["test_autonomous_database"]["id"],
-            password=var["autonomous_database_wallet_password"],
-            base64_encode_content=False,
-            generate_type=var["autonomous_database_wallet_generate_type"])
-        ```
-
-        ## Import
-
-        Import is not supported for this resource.
-
+        Create a AutonomousDatabaseWallet resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] autonomous_database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[str] generate_type: The type of wallet to generate.
-               
-               **Serverless instance usage:**
-        :param pulumi.Input[str] password: The password to encrypt the keys inside the wallet. The password must be at least 8 characters long and must include at least 1 letter and either 1 numeric character or 1 special character.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -232,23 +155,7 @@ class AutonomousDatabaseWallet(pulumi.CustomResource):
                  args: AutonomousDatabaseWalletArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_autonomous_database_wallet = oci.database.AutonomousDatabaseWallet("testAutonomousDatabaseWallet",
-            autonomous_database_id=oci_database_autonomous_database["test_autonomous_database"]["id"],
-            password=var["autonomous_database_wallet_password"],
-            base64_encode_content=False,
-            generate_type=var["autonomous_database_wallet_generate_type"])
-        ```
-
-        ## Import
-
-        Import is not supported for this resource.
-
+        Create a AutonomousDatabaseWallet resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param AutonomousDatabaseWalletArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -310,16 +217,6 @@ class AutonomousDatabaseWallet(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] autonomous_database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[str] content: content of the downloaded zipped wallet for the Autonomous Database. If `base64_encode_content` is set to `true`, then this content will be base64 encoded.
-        :param pulumi.Input[str] generate_type: The type of wallet to generate.
-               
-               **Serverless instance usage:**
-        :param pulumi.Input[str] password: The password to encrypt the keys inside the wallet. The password must be at least 8 characters long and must include at least 1 letter and either 1 numeric character or 1 special character.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -335,9 +232,6 @@ class AutonomousDatabaseWallet(pulumi.CustomResource):
     @property
     @pulumi.getter(name="autonomousDatabaseId")
     def autonomous_database_id(self) -> pulumi.Output[str]:
-        """
-        The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
         return pulumi.get(self, "autonomous_database_id")
 
     @property
@@ -347,31 +241,16 @@ class AutonomousDatabaseWallet(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def content(self) -> pulumi.Output[str]:
-        """
-        content of the downloaded zipped wallet for the Autonomous Database. If `base64_encode_content` is set to `true`, then this content will be base64 encoded.
-        """
+    def content(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "content")
 
     @property
     @pulumi.getter(name="generateType")
     def generate_type(self) -> pulumi.Output[Optional[str]]:
-        """
-        The type of wallet to generate.
-
-        **Serverless instance usage:**
-        """
         return pulumi.get(self, "generate_type")
 
     @property
     @pulumi.getter
     def password(self) -> pulumi.Output[str]:
-        """
-        The password to encrypt the keys inside the wallet. The password must be at least 8 characters long and must include at least 1 letter and either 1 numeric character or 1 special character.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "password")
 

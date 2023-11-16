@@ -16,23 +16,23 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// The OCID of the compartment (remember that the tenancy is simply the root compartment).
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The OCID of the Availability Domain.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The name of the Availability Domain.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
 
         [OutputConstructor]
         private GetAvailabilityDomainsAvailabilityDomainResult(
-            string compartmentId,
+            string? compartmentId,
 
-            string id,
+            string? id,
 
-            string name)
+            string? name)
         {
             CompartmentId = compartmentId;
             Id = id;

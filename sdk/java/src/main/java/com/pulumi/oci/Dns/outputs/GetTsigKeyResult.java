@@ -8,6 +8,8 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetTsigKeyResult {
@@ -15,57 +17,57 @@ public final class GetTsigKeyResult {
      * @return TSIG key algorithms are encoded as domain names, but most consist of only one non-empty label, which is not required to be explicitly absolute. Applicable algorithms include: hmac-sha1, hmac-sha224, hmac-sha256, hmac-sha512. For more information on these algorithms, see [RFC 4635](https://tools.ietf.org/html/rfc4635#section-2).
      * 
      */
-    private String algorithm;
+    private @Nullable String algorithm;
     /**
      * @return The OCID of the compartment containing the TSIG key.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The OCID of the resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return A globally unique domain name identifying the key for a given pair of hosts.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return A base64 string encoding the binary shared secret.
      * 
      */
-    private String secret;
+    private @Nullable String secret;
     /**
      * @return The canonical absolute URL of the resource.
      * 
      */
-    private String self;
+    private @Nullable String self;
     /**
      * @return The current state of the resource.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The date and time the resource was created, expressed in RFC 3339 timestamp format.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The date and time the resource was last updated, expressed in RFC 3339 timestamp format.
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
     private String tsigKeyId;
 
     private GetTsigKeyResult() {}
@@ -73,78 +75,78 @@ public final class GetTsigKeyResult {
      * @return TSIG key algorithms are encoded as domain names, but most consist of only one non-empty label, which is not required to be explicitly absolute. Applicable algorithms include: hmac-sha1, hmac-sha224, hmac-sha256, hmac-sha512. For more information on these algorithms, see [RFC 4635](https://tools.ietf.org/html/rfc4635#section-2).
      * 
      */
-    public String algorithm() {
-        return this.algorithm;
+    public Optional<String> algorithm() {
+        return Optional.ofNullable(this.algorithm);
     }
     /**
      * @return The OCID of the compartment containing the TSIG key.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The OCID of the resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return A globally unique domain name identifying the key for a given pair of hosts.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return A base64 string encoding the binary shared secret.
      * 
      */
-    public String secret() {
-        return this.secret;
+    public Optional<String> secret() {
+        return Optional.ofNullable(this.secret);
     }
     /**
      * @return The canonical absolute URL of the resource.
      * 
      */
-    public String self() {
-        return this.self;
+    public Optional<String> self() {
+        return Optional.ofNullable(this.self);
     }
     /**
      * @return The current state of the resource.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The date and time the resource was created, expressed in RFC 3339 timestamp format.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The date and time the resource was last updated, expressed in RFC 3339 timestamp format.
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
     public String tsigKeyId() {
         return this.tsigKeyId;
@@ -159,17 +161,17 @@ public final class GetTsigKeyResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String algorithm;
-        private String compartmentId;
-        private Map<String,Object> definedTags;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private String name;
-        private String secret;
-        private String self;
-        private String state;
-        private String timeCreated;
-        private String timeUpdated;
+        private @Nullable String algorithm;
+        private @Nullable String compartmentId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable String name;
+        private @Nullable String secret;
+        private @Nullable String self;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
         private String tsigKeyId;
         public Builder() {}
         public Builder(GetTsigKeyResult defaults) {
@@ -189,58 +191,58 @@ public final class GetTsigKeyResult {
         }
 
         @CustomType.Setter
-        public Builder algorithm(String algorithm) {
-            this.algorithm = Objects.requireNonNull(algorithm);
+        public Builder algorithm(@Nullable String algorithm) {
+            this.algorithm = algorithm;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder secret(String secret) {
-            this.secret = Objects.requireNonNull(secret);
+        public Builder secret(@Nullable String secret) {
+            this.secret = secret;
             return this;
         }
         @CustomType.Setter
-        public Builder self(String self) {
-            this.self = Objects.requireNonNull(self);
+        public Builder self(@Nullable String self) {
+            this.self = self;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter

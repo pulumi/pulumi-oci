@@ -16,7 +16,7 @@ namespace Pulumi.Oci.DataIntegration.Outputs
         /// <summary>
         /// The owning object key for this object.
         /// </summary>
-        public readonly string AggregatorKey;
+        public readonly string? AggregatorKey;
         /// <summary>
         /// A summary type containing information about the object's aggregator including its type, key, name and description.
         /// </summary>
@@ -28,23 +28,23 @@ namespace Pulumi.Oci.DataIntegration.Outputs
         /// <summary>
         /// The user that created the object.
         /// </summary>
-        public readonly string CreatedBy;
+        public readonly string? CreatedBy;
         /// <summary>
         /// The user that created the object.
         /// </summary>
-        public readonly string CreatedByName;
+        public readonly string? CreatedByName;
         /// <summary>
         /// The full path to identify this object.
         /// </summary>
-        public readonly string IdentifierPath;
+        public readonly string? IdentifierPath;
         /// <summary>
         /// Information property fields.
         /// </summary>
-        public readonly ImmutableDictionary<string, object> InfoFields;
+        public readonly ImmutableDictionary<string, object>? InfoFields;
         /// <summary>
         /// Specifies whether this object is a favorite or not.
         /// </summary>
-        public readonly bool IsFavorite;
+        public readonly bool? IsFavorite;
         /// <summary>
         /// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
         /// </summary>
@@ -52,53 +52,53 @@ namespace Pulumi.Oci.DataIntegration.Outputs
         /// <summary>
         /// The registry version of the object.
         /// </summary>
-        public readonly int RegistryVersion;
+        public readonly int? RegistryVersion;
         /// <summary>
         /// The date and time that the object was created.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The date and time that the object was updated.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
         /// <summary>
         /// The user that updated the object.
         /// </summary>
-        public readonly string UpdatedBy;
+        public readonly string? UpdatedBy;
         /// <summary>
         /// The user that updated the object.
         /// </summary>
-        public readonly string UpdatedByName;
+        public readonly string? UpdatedByName;
 
         [OutputConstructor]
         private GetWorkspaceProjectMetadataResult(
-            string aggregatorKey,
+            string? aggregatorKey,
 
             ImmutableArray<Outputs.GetWorkspaceProjectMetadataAggregatorResult> aggregators,
 
             ImmutableArray<Outputs.GetWorkspaceProjectMetadataCountStatisticResult> countStatistics,
 
-            string createdBy,
+            string? createdBy,
 
-            string createdByName,
+            string? createdByName,
 
-            string identifierPath,
+            string? identifierPath,
 
-            ImmutableDictionary<string, object> infoFields,
+            ImmutableDictionary<string, object>? infoFields,
 
-            bool isFavorite,
+            bool? isFavorite,
 
             ImmutableArray<string> labels,
 
-            int registryVersion,
+            int? registryVersion,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated,
+            string? timeUpdated,
 
-            string updatedBy,
+            string? updatedBy,
 
-            string updatedByName)
+            string? updatedByName)
         {
             AggregatorKey = aggregatorKey;
             Aggregators = aggregators;

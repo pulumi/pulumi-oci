@@ -37,9 +37,9 @@ export interface GetVirtualNetworksResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly state?: string;
-    readonly virtualNetworks: outputs.Core.GetVirtualNetworksVirtualNetwork[];
+    readonly virtualNetworks?: outputs.Core.GetVirtualNetworksVirtualNetwork[];
 }
 export function getVirtualNetworksOutput(args: GetVirtualNetworksOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVirtualNetworksResult> {
     return pulumi.output(args).apply((a: any) => getVirtualNetworks(a, opts))

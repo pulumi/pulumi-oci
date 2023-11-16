@@ -9,6 +9,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetListJreUsageItem {
@@ -16,231 +18,231 @@ public final class GetListJreUsageItem {
      * @return The approximate count of the applications running on this Java Runtime.
      * 
      */
-    private Integer approximateApplicationCount;
+    private @Nullable Integer approximateApplicationCount;
     /**
      * @return The approximate count of installations that are installations of this Java Runtime.
      * 
      */
-    private Integer approximateInstallationCount;
+    private @Nullable Integer approximateInstallationCount;
     /**
      * @return The approximate count of the managed instances that report this Java Runtime.
      * 
      */
-    private Integer approximateManagedInstanceCount;
+    private @Nullable Integer approximateManagedInstanceCount;
     /**
      * @return The approximate count of work requests working on this Java Runtime.
      * 
      */
-    private Integer approximatePendingWorkRequestCount;
+    private @Nullable Integer approximatePendingWorkRequestCount;
     /**
      * @return The number of days since this release has been under the security baseline.
      * 
      */
-    private Integer daysUnderSecurityBaseline;
+    private @Nullable Integer daysUnderSecurityBaseline;
     /**
      * @return The distribution of a Java Runtime is the name of the lineage of product to which it belongs, for example _Java(TM) SE Runtime Environment_.
      * 
      */
-    private String distribution;
+    private @Nullable String distribution;
     /**
      * @return The End of Support Life (EOSL) date of the Java Runtime (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      * 
      */
-    private String endOfSupportLifeDate;
+    private @Nullable String endOfSupportLifeDate;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related fleet.
      * 
      */
-    private String fleetId;
+    private @Nullable String fleetId;
     /**
      * @return The internal identifier of the Java Runtime.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance. This property value is present only for /listJreUsage.
      * 
      */
-    private String managedInstanceId;
+    private @Nullable String managedInstanceId;
     /**
      * @return The operating systems that have this Java Runtime installed.
      * 
      */
-    private List<GetListJreUsageItemOperatingSystem> operatingSystems;
+    private @Nullable List<GetListJreUsageItemOperatingSystem> operatingSystems;
     /**
      * @return The release date of the Java Runtime (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      * 
      */
-    private String releaseDate;
+    private @Nullable String releaseDate;
     /**
      * @return The security status of the Java Runtime.
      * 
      */
-    private String securityStatus;
+    private @Nullable String securityStatus;
     /**
      * @return The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      * 
      */
-    private String timeEnd;
+    private @Nullable String timeEnd;
     /**
      * @return The date and time the resource was _first_ reported to JMS. This is potentially _before_ the specified time period provided by the filters. For example, a resource can be first reported to JMS before the start of a specified time period, if it is also reported during the time period.
      * 
      */
-    private String timeFirstSeen;
+    private @Nullable String timeFirstSeen;
     /**
      * @return The date and time the resource was _last_ reported to JMS. This is potentially _after_ the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
      * 
      */
-    private String timeLastSeen;
+    private @Nullable String timeLastSeen;
     /**
      * @return The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      * 
      */
-    private String timeStart;
+    private @Nullable String timeStart;
     /**
      * @return The vendor of the Java Runtime.
      * 
      */
-    private String vendor;
+    private @Nullable String vendor;
     /**
      * @return The version of the Java Runtime.
      * 
      */
-    private String version;
+    private @Nullable String version;
 
     private GetListJreUsageItem() {}
     /**
      * @return The approximate count of the applications running on this Java Runtime.
      * 
      */
-    public Integer approximateApplicationCount() {
-        return this.approximateApplicationCount;
+    public Optional<Integer> approximateApplicationCount() {
+        return Optional.ofNullable(this.approximateApplicationCount);
     }
     /**
      * @return The approximate count of installations that are installations of this Java Runtime.
      * 
      */
-    public Integer approximateInstallationCount() {
-        return this.approximateInstallationCount;
+    public Optional<Integer> approximateInstallationCount() {
+        return Optional.ofNullable(this.approximateInstallationCount);
     }
     /**
      * @return The approximate count of the managed instances that report this Java Runtime.
      * 
      */
-    public Integer approximateManagedInstanceCount() {
-        return this.approximateManagedInstanceCount;
+    public Optional<Integer> approximateManagedInstanceCount() {
+        return Optional.ofNullable(this.approximateManagedInstanceCount);
     }
     /**
      * @return The approximate count of work requests working on this Java Runtime.
      * 
      */
-    public Integer approximatePendingWorkRequestCount() {
-        return this.approximatePendingWorkRequestCount;
+    public Optional<Integer> approximatePendingWorkRequestCount() {
+        return Optional.ofNullable(this.approximatePendingWorkRequestCount);
     }
     /**
      * @return The number of days since this release has been under the security baseline.
      * 
      */
-    public Integer daysUnderSecurityBaseline() {
-        return this.daysUnderSecurityBaseline;
+    public Optional<Integer> daysUnderSecurityBaseline() {
+        return Optional.ofNullable(this.daysUnderSecurityBaseline);
     }
     /**
      * @return The distribution of a Java Runtime is the name of the lineage of product to which it belongs, for example _Java(TM) SE Runtime Environment_.
      * 
      */
-    public String distribution() {
-        return this.distribution;
+    public Optional<String> distribution() {
+        return Optional.ofNullable(this.distribution);
     }
     /**
      * @return The End of Support Life (EOSL) date of the Java Runtime (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      * 
      */
-    public String endOfSupportLifeDate() {
-        return this.endOfSupportLifeDate;
+    public Optional<String> endOfSupportLifeDate() {
+        return Optional.ofNullable(this.endOfSupportLifeDate);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related fleet.
      * 
      */
-    public String fleetId() {
-        return this.fleetId;
+    public Optional<String> fleetId() {
+        return Optional.ofNullable(this.fleetId);
     }
     /**
      * @return The internal identifier of the Java Runtime.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance. This property value is present only for /listJreUsage.
      * 
      */
-    public String managedInstanceId() {
-        return this.managedInstanceId;
+    public Optional<String> managedInstanceId() {
+        return Optional.ofNullable(this.managedInstanceId);
     }
     /**
      * @return The operating systems that have this Java Runtime installed.
      * 
      */
     public List<GetListJreUsageItemOperatingSystem> operatingSystems() {
-        return this.operatingSystems;
+        return this.operatingSystems == null ? List.of() : this.operatingSystems;
     }
     /**
      * @return The release date of the Java Runtime (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      * 
      */
-    public String releaseDate() {
-        return this.releaseDate;
+    public Optional<String> releaseDate() {
+        return Optional.ofNullable(this.releaseDate);
     }
     /**
      * @return The security status of the Java Runtime.
      * 
      */
-    public String securityStatus() {
-        return this.securityStatus;
+    public Optional<String> securityStatus() {
+        return Optional.ofNullable(this.securityStatus);
     }
     /**
      * @return The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      * 
      */
-    public String timeEnd() {
-        return this.timeEnd;
+    public Optional<String> timeEnd() {
+        return Optional.ofNullable(this.timeEnd);
     }
     /**
      * @return The date and time the resource was _first_ reported to JMS. This is potentially _before_ the specified time period provided by the filters. For example, a resource can be first reported to JMS before the start of a specified time period, if it is also reported during the time period.
      * 
      */
-    public String timeFirstSeen() {
-        return this.timeFirstSeen;
+    public Optional<String> timeFirstSeen() {
+        return Optional.ofNullable(this.timeFirstSeen);
     }
     /**
      * @return The date and time the resource was _last_ reported to JMS. This is potentially _after_ the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
      * 
      */
-    public String timeLastSeen() {
-        return this.timeLastSeen;
+    public Optional<String> timeLastSeen() {
+        return Optional.ofNullable(this.timeLastSeen);
     }
     /**
      * @return The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      * 
      */
-    public String timeStart() {
-        return this.timeStart;
+    public Optional<String> timeStart() {
+        return Optional.ofNullable(this.timeStart);
     }
     /**
      * @return The vendor of the Java Runtime.
      * 
      */
-    public String vendor() {
-        return this.vendor;
+    public Optional<String> vendor() {
+        return Optional.ofNullable(this.vendor);
     }
     /**
      * @return The version of the Java Runtime.
      * 
      */
-    public String version() {
-        return this.version;
+    public Optional<String> version() {
+        return Optional.ofNullable(this.version);
     }
 
     public static Builder builder() {
@@ -252,25 +254,25 @@ public final class GetListJreUsageItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer approximateApplicationCount;
-        private Integer approximateInstallationCount;
-        private Integer approximateManagedInstanceCount;
-        private Integer approximatePendingWorkRequestCount;
-        private Integer daysUnderSecurityBaseline;
-        private String distribution;
-        private String endOfSupportLifeDate;
-        private String fleetId;
-        private String id;
-        private String managedInstanceId;
-        private List<GetListJreUsageItemOperatingSystem> operatingSystems;
-        private String releaseDate;
-        private String securityStatus;
-        private String timeEnd;
-        private String timeFirstSeen;
-        private String timeLastSeen;
-        private String timeStart;
-        private String vendor;
-        private String version;
+        private @Nullable Integer approximateApplicationCount;
+        private @Nullable Integer approximateInstallationCount;
+        private @Nullable Integer approximateManagedInstanceCount;
+        private @Nullable Integer approximatePendingWorkRequestCount;
+        private @Nullable Integer daysUnderSecurityBaseline;
+        private @Nullable String distribution;
+        private @Nullable String endOfSupportLifeDate;
+        private @Nullable String fleetId;
+        private @Nullable String id;
+        private @Nullable String managedInstanceId;
+        private @Nullable List<GetListJreUsageItemOperatingSystem> operatingSystems;
+        private @Nullable String releaseDate;
+        private @Nullable String securityStatus;
+        private @Nullable String timeEnd;
+        private @Nullable String timeFirstSeen;
+        private @Nullable String timeLastSeen;
+        private @Nullable String timeStart;
+        private @Nullable String vendor;
+        private @Nullable String version;
         public Builder() {}
         public Builder(GetListJreUsageItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -296,101 +298,101 @@ public final class GetListJreUsageItem {
         }
 
         @CustomType.Setter
-        public Builder approximateApplicationCount(Integer approximateApplicationCount) {
-            this.approximateApplicationCount = Objects.requireNonNull(approximateApplicationCount);
+        public Builder approximateApplicationCount(@Nullable Integer approximateApplicationCount) {
+            this.approximateApplicationCount = approximateApplicationCount;
             return this;
         }
         @CustomType.Setter
-        public Builder approximateInstallationCount(Integer approximateInstallationCount) {
-            this.approximateInstallationCount = Objects.requireNonNull(approximateInstallationCount);
+        public Builder approximateInstallationCount(@Nullable Integer approximateInstallationCount) {
+            this.approximateInstallationCount = approximateInstallationCount;
             return this;
         }
         @CustomType.Setter
-        public Builder approximateManagedInstanceCount(Integer approximateManagedInstanceCount) {
-            this.approximateManagedInstanceCount = Objects.requireNonNull(approximateManagedInstanceCount);
+        public Builder approximateManagedInstanceCount(@Nullable Integer approximateManagedInstanceCount) {
+            this.approximateManagedInstanceCount = approximateManagedInstanceCount;
             return this;
         }
         @CustomType.Setter
-        public Builder approximatePendingWorkRequestCount(Integer approximatePendingWorkRequestCount) {
-            this.approximatePendingWorkRequestCount = Objects.requireNonNull(approximatePendingWorkRequestCount);
+        public Builder approximatePendingWorkRequestCount(@Nullable Integer approximatePendingWorkRequestCount) {
+            this.approximatePendingWorkRequestCount = approximatePendingWorkRequestCount;
             return this;
         }
         @CustomType.Setter
-        public Builder daysUnderSecurityBaseline(Integer daysUnderSecurityBaseline) {
-            this.daysUnderSecurityBaseline = Objects.requireNonNull(daysUnderSecurityBaseline);
+        public Builder daysUnderSecurityBaseline(@Nullable Integer daysUnderSecurityBaseline) {
+            this.daysUnderSecurityBaseline = daysUnderSecurityBaseline;
             return this;
         }
         @CustomType.Setter
-        public Builder distribution(String distribution) {
-            this.distribution = Objects.requireNonNull(distribution);
+        public Builder distribution(@Nullable String distribution) {
+            this.distribution = distribution;
             return this;
         }
         @CustomType.Setter
-        public Builder endOfSupportLifeDate(String endOfSupportLifeDate) {
-            this.endOfSupportLifeDate = Objects.requireNonNull(endOfSupportLifeDate);
+        public Builder endOfSupportLifeDate(@Nullable String endOfSupportLifeDate) {
+            this.endOfSupportLifeDate = endOfSupportLifeDate;
             return this;
         }
         @CustomType.Setter
-        public Builder fleetId(String fleetId) {
-            this.fleetId = Objects.requireNonNull(fleetId);
+        public Builder fleetId(@Nullable String fleetId) {
+            this.fleetId = fleetId;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder managedInstanceId(String managedInstanceId) {
-            this.managedInstanceId = Objects.requireNonNull(managedInstanceId);
+        public Builder managedInstanceId(@Nullable String managedInstanceId) {
+            this.managedInstanceId = managedInstanceId;
             return this;
         }
         @CustomType.Setter
-        public Builder operatingSystems(List<GetListJreUsageItemOperatingSystem> operatingSystems) {
-            this.operatingSystems = Objects.requireNonNull(operatingSystems);
+        public Builder operatingSystems(@Nullable List<GetListJreUsageItemOperatingSystem> operatingSystems) {
+            this.operatingSystems = operatingSystems;
             return this;
         }
         public Builder operatingSystems(GetListJreUsageItemOperatingSystem... operatingSystems) {
             return operatingSystems(List.of(operatingSystems));
         }
         @CustomType.Setter
-        public Builder releaseDate(String releaseDate) {
-            this.releaseDate = Objects.requireNonNull(releaseDate);
+        public Builder releaseDate(@Nullable String releaseDate) {
+            this.releaseDate = releaseDate;
             return this;
         }
         @CustomType.Setter
-        public Builder securityStatus(String securityStatus) {
-            this.securityStatus = Objects.requireNonNull(securityStatus);
+        public Builder securityStatus(@Nullable String securityStatus) {
+            this.securityStatus = securityStatus;
             return this;
         }
         @CustomType.Setter
-        public Builder timeEnd(String timeEnd) {
-            this.timeEnd = Objects.requireNonNull(timeEnd);
+        public Builder timeEnd(@Nullable String timeEnd) {
+            this.timeEnd = timeEnd;
             return this;
         }
         @CustomType.Setter
-        public Builder timeFirstSeen(String timeFirstSeen) {
-            this.timeFirstSeen = Objects.requireNonNull(timeFirstSeen);
+        public Builder timeFirstSeen(@Nullable String timeFirstSeen) {
+            this.timeFirstSeen = timeFirstSeen;
             return this;
         }
         @CustomType.Setter
-        public Builder timeLastSeen(String timeLastSeen) {
-            this.timeLastSeen = Objects.requireNonNull(timeLastSeen);
+        public Builder timeLastSeen(@Nullable String timeLastSeen) {
+            this.timeLastSeen = timeLastSeen;
             return this;
         }
         @CustomType.Setter
-        public Builder timeStart(String timeStart) {
-            this.timeStart = Objects.requireNonNull(timeStart);
+        public Builder timeStart(@Nullable String timeStart) {
+            this.timeStart = timeStart;
             return this;
         }
         @CustomType.Setter
-        public Builder vendor(String vendor) {
-            this.vendor = Objects.requireNonNull(vendor);
+        public Builder vendor(@Nullable String vendor) {
+            this.vendor = vendor;
             return this;
         }
         @CustomType.Setter
-        public Builder version(String version) {
-            this.version = Objects.requireNonNull(version);
+        public Builder version(@Nullable String version) {
+            this.version = version;
             return this;
         }
         public GetListJreUsageItem build() {

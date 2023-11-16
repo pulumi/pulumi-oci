@@ -16,17 +16,17 @@ namespace Pulumi.Oci.DatabaseMigration.Outputs
         /// <summary>
         /// True to not interrupt migration execution due to Pre-Migration Advisor errors. Default is false.
         /// </summary>
-        public readonly bool IsIgnoreErrors;
+        public readonly bool? IsIgnoreErrors;
         /// <summary>
         /// True to skip the Pre-Migration Advisor execution. Default is false.
         /// </summary>
-        public readonly bool IsSkipAdvisor;
+        public readonly bool? IsSkipAdvisor;
 
         [OutputConstructor]
         private GetMigrationsMigrationCollectionItemAdvisorSettingResult(
-            bool isIgnoreErrors,
+            bool? isIgnoreErrors,
 
-            bool isSkipAdvisor)
+            bool? isSkipAdvisor)
         {
             IsIgnoreErrors = isIgnoreErrors;
             IsSkipAdvisor = isSkipAdvisor;

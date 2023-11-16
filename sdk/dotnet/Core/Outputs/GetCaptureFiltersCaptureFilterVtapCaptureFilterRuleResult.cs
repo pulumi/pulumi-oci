@@ -16,7 +16,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// Traffic sent to this CIDR block through the VTAP source will be mirrored to the VTAP target.
         /// </summary>
-        public readonly string DestinationCidr;
+        public readonly string? DestinationCidr;
         /// <summary>
         /// Optional and valid only for ICMP and ICMPv6. Use to specify a particular ICMP type and code as defined in:
         /// * [ICMP Parameters](http://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml)
@@ -29,15 +29,15 @@ namespace Pulumi.Oci.Core.Outputs
         /// * 6 = TCP
         /// * 17 = UDP
         /// </summary>
-        public readonly string Protocol;
+        public readonly string? Protocol;
         /// <summary>
         /// Include or exclude packets meeting this definition from mirrored traffic.
         /// </summary>
-        public readonly string RuleAction;
+        public readonly string? RuleAction;
         /// <summary>
         /// Traffic from this CIDR block to the VTAP source will be mirrored to the VTAP target.
         /// </summary>
-        public readonly string SourceCidr;
+        public readonly string? SourceCidr;
         /// <summary>
         /// Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed.
         /// </summary>
@@ -45,7 +45,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// The traffic direction the VTAP is configured to mirror.
         /// </summary>
-        public readonly string TrafficDirection;
+        public readonly string? TrafficDirection;
         /// <summary>
         /// Optional and valid only for UDP. Use to specify particular destination ports for UDP rules. If you specify UDP as the protocol but omit this object, then all destination ports are allowed.
         /// </summary>
@@ -53,19 +53,19 @@ namespace Pulumi.Oci.Core.Outputs
 
         [OutputConstructor]
         private GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleResult(
-            string destinationCidr,
+            string? destinationCidr,
 
             ImmutableArray<Outputs.GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleIcmpOptionResult> icmpOptions,
 
-            string protocol,
+            string? protocol,
 
-            string ruleAction,
+            string? ruleAction,
 
-            string sourceCidr,
+            string? sourceCidr,
 
             ImmutableArray<Outputs.GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleTcpOptionResult> tcpOptions,
 
-            string trafficDirection,
+            string? trafficDirection,
 
             ImmutableArray<Outputs.GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleUdpOptionResult> udpOptions)
         {

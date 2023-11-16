@@ -6,6 +6,8 @@ package com.pulumi.oci.Database.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry {
@@ -13,99 +15,99 @@ public final class GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance update history entry.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Descriptive text providing additional details about the lifecycle state.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return A filter to return only resources that match the given lifecycle state exactly.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The date and time when the maintenance update action completed.
      * 
      */
-    private String timeCompleted;
+    private @Nullable String timeCompleted;
     /**
      * @return The date and time when the maintenance update action started.
      * 
      */
-    private String timeStarted;
+    private @Nullable String timeStarted;
     /**
      * @return The update action performed using this maintenance update.
      * 
      */
-    private String updateAction;
+    private @Nullable String updateAction;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance update.
      * 
      */
-    private String updateId;
+    private @Nullable String updateId;
     /**
      * @return A filter to return only resources that match the given update type exactly.
      * 
      */
-    private String updateType;
+    private @Nullable String updateType;
 
     private GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance update history entry.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Descriptive text providing additional details about the lifecycle state.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return A filter to return only resources that match the given lifecycle state exactly.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The date and time when the maintenance update action completed.
      * 
      */
-    public String timeCompleted() {
-        return this.timeCompleted;
+    public Optional<String> timeCompleted() {
+        return Optional.ofNullable(this.timeCompleted);
     }
     /**
      * @return The date and time when the maintenance update action started.
      * 
      */
-    public String timeStarted() {
-        return this.timeStarted;
+    public Optional<String> timeStarted() {
+        return Optional.ofNullable(this.timeStarted);
     }
     /**
      * @return The update action performed using this maintenance update.
      * 
      */
-    public String updateAction() {
-        return this.updateAction;
+    public Optional<String> updateAction() {
+        return Optional.ofNullable(this.updateAction);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance update.
      * 
      */
-    public String updateId() {
-        return this.updateId;
+    public Optional<String> updateId() {
+        return Optional.ofNullable(this.updateId);
     }
     /**
      * @return A filter to return only resources that match the given update type exactly.
      * 
      */
-    public String updateType() {
-        return this.updateType;
+    public Optional<String> updateType() {
+        return Optional.ofNullable(this.updateType);
     }
 
     public static Builder builder() {
@@ -117,14 +119,14 @@ public final class GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String id;
-        private String lifecycleDetails;
-        private String state;
-        private String timeCompleted;
-        private String timeStarted;
-        private String updateAction;
-        private String updateId;
-        private String updateType;
+        private @Nullable String id;
+        private @Nullable String lifecycleDetails;
+        private @Nullable String state;
+        private @Nullable String timeCompleted;
+        private @Nullable String timeStarted;
+        private @Nullable String updateAction;
+        private @Nullable String updateId;
+        private @Nullable String updateType;
         public Builder() {}
         public Builder(GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry defaults) {
     	      Objects.requireNonNull(defaults);
@@ -139,43 +141,43 @@ public final class GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry {
         }
 
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCompleted(String timeCompleted) {
-            this.timeCompleted = Objects.requireNonNull(timeCompleted);
+        public Builder timeCompleted(@Nullable String timeCompleted) {
+            this.timeCompleted = timeCompleted;
             return this;
         }
         @CustomType.Setter
-        public Builder timeStarted(String timeStarted) {
-            this.timeStarted = Objects.requireNonNull(timeStarted);
+        public Builder timeStarted(@Nullable String timeStarted) {
+            this.timeStarted = timeStarted;
             return this;
         }
         @CustomType.Setter
-        public Builder updateAction(String updateAction) {
-            this.updateAction = Objects.requireNonNull(updateAction);
+        public Builder updateAction(@Nullable String updateAction) {
+            this.updateAction = updateAction;
             return this;
         }
         @CustomType.Setter
-        public Builder updateId(String updateId) {
-            this.updateId = Objects.requireNonNull(updateId);
+        public Builder updateId(@Nullable String updateId) {
+            this.updateId = updateId;
             return this;
         }
         @CustomType.Setter
-        public Builder updateType(String updateType) {
-            this.updateType = Objects.requireNonNull(updateType);
+        public Builder updateType(@Nullable String updateType) {
+            this.updateType = updateType;
             return this;
         }
         public GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry build() {

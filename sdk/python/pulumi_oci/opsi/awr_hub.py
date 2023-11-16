@@ -22,16 +22,6 @@ class AwrHubArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None):
         """
         The set of arguments for constructing a AwrHub resource.
-        :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[str] display_name: (Updatable) User-friedly name of AWR Hub that does not have to be unique.
-        :param pulumi.Input[str] object_storage_bucket_name: Object Storage Bucket Name
-        :param pulumi.Input[str] operations_insights_warehouse_id: OPSI Warehouse OCID
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "display_name", display_name)
@@ -45,9 +35,6 @@ class AwrHubArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -57,9 +44,6 @@ class AwrHubArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) User-friedly name of AWR Hub that does not have to be unique.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -69,9 +53,6 @@ class AwrHubArgs:
     @property
     @pulumi.getter(name="objectStorageBucketName")
     def object_storage_bucket_name(self) -> pulumi.Input[str]:
-        """
-        Object Storage Bucket Name
-        """
         return pulumi.get(self, "object_storage_bucket_name")
 
     @object_storage_bucket_name.setter
@@ -81,13 +62,6 @@ class AwrHubArgs:
     @property
     @pulumi.getter(name="operationsInsightsWarehouseId")
     def operations_insights_warehouse_id(self) -> pulumi.Input[str]:
-        """
-        OPSI Warehouse OCID
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "operations_insights_warehouse_id")
 
     @operations_insights_warehouse_id.setter
@@ -97,9 +71,6 @@ class AwrHubArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -109,9 +80,6 @@ class AwrHubArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -136,22 +104,6 @@ class _AwrHubState:
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering AwrHub resources.
-        :param pulumi.Input[str] awr_mailbox_url: Mailbox URL required for AWR hub and AWR source setup.
-        :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) User-friedly name of AWR Hub that does not have to be unique.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[str] object_storage_bucket_name: Object Storage Bucket Name
-        :param pulumi.Input[str] operations_insights_warehouse_id: OPSI Warehouse OCID
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] state: Possible lifecycle states
-        :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: The time at which the resource was first created. An RFC3339 formatted datetime string
-        :param pulumi.Input[str] time_updated: The time at which the resource was last updated. An RFC3339 formatted datetime string
         """
         if awr_mailbox_url is not None:
             pulumi.set(__self__, "awr_mailbox_url", awr_mailbox_url)
@@ -181,9 +133,6 @@ class _AwrHubState:
     @property
     @pulumi.getter(name="awrMailboxUrl")
     def awr_mailbox_url(self) -> Optional[pulumi.Input[str]]:
-        """
-        Mailbox URL required for AWR hub and AWR source setup.
-        """
         return pulumi.get(self, "awr_mailbox_url")
 
     @awr_mailbox_url.setter
@@ -193,9 +142,6 @@ class _AwrHubState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -205,9 +151,6 @@ class _AwrHubState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -217,9 +160,6 @@ class _AwrHubState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) User-friedly name of AWR Hub that does not have to be unique.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -229,9 +169,6 @@ class _AwrHubState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -241,9 +178,6 @@ class _AwrHubState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -253,9 +187,6 @@ class _AwrHubState:
     @property
     @pulumi.getter(name="objectStorageBucketName")
     def object_storage_bucket_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Object Storage Bucket Name
-        """
         return pulumi.get(self, "object_storage_bucket_name")
 
     @object_storage_bucket_name.setter
@@ -265,13 +196,6 @@ class _AwrHubState:
     @property
     @pulumi.getter(name="operationsInsightsWarehouseId")
     def operations_insights_warehouse_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        OPSI Warehouse OCID
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "operations_insights_warehouse_id")
 
     @operations_insights_warehouse_id.setter
@@ -281,9 +205,6 @@ class _AwrHubState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        Possible lifecycle states
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -293,9 +214,6 @@ class _AwrHubState:
     @property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
@@ -305,9 +223,6 @@ class _AwrHubState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time at which the resource was first created. An RFC3339 formatted datetime string
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -317,9 +232,6 @@ class _AwrHubState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time at which the resource was last updated. An RFC3339 formatted datetime string
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -340,50 +252,9 @@ class AwrHub(pulumi.CustomResource):
                  operations_insights_warehouse_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Awr Hub resource in Oracle Cloud Infrastructure Opsi service.
-
-        Create a AWR hub resource for the tenant in Operations Insights.
-        This resource will be created in root compartment.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_awr_hub = oci.opsi.AwrHub("testAwrHub",
-            compartment_id=var["compartment_id"],
-            display_name=var["awr_hub_display_name"],
-            object_storage_bucket_name=oci_objectstorage_bucket["test_bucket"]["name"],
-            operations_insights_warehouse_id=oci_opsi_operations_insights_warehouse["test_operations_insights_warehouse"]["id"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            freeform_tags={
-                "bar-key": "value",
-            })
-        ```
-
-        ## Import
-
-        AwrHubs can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Opsi/awrHub:AwrHub test_awr_hub "id"
-        ```
-
+        Create a AwrHub resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) User-friedly name of AWR Hub that does not have to be unique.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] object_storage_bucket_name: Object Storage Bucket Name
-        :param pulumi.Input[str] operations_insights_warehouse_id: OPSI Warehouse OCID
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -392,38 +263,7 @@ class AwrHub(pulumi.CustomResource):
                  args: AwrHubArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Awr Hub resource in Oracle Cloud Infrastructure Opsi service.
-
-        Create a AWR hub resource for the tenant in Operations Insights.
-        This resource will be created in root compartment.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_awr_hub = oci.opsi.AwrHub("testAwrHub",
-            compartment_id=var["compartment_id"],
-            display_name=var["awr_hub_display_name"],
-            object_storage_bucket_name=oci_objectstorage_bucket["test_bucket"]["name"],
-            operations_insights_warehouse_id=oci_opsi_operations_insights_warehouse["test_operations_insights_warehouse"]["id"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            freeform_tags={
-                "bar-key": "value",
-            })
-        ```
-
-        ## Import
-
-        AwrHubs can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Opsi/awrHub:AwrHub test_awr_hub "id"
-        ```
-
+        Create a AwrHub resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param AwrHubArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -503,22 +343,6 @@ class AwrHub(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] awr_mailbox_url: Mailbox URL required for AWR hub and AWR source setup.
-        :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) User-friedly name of AWR Hub that does not have to be unique.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[str] object_storage_bucket_name: Object Storage Bucket Name
-        :param pulumi.Input[str] operations_insights_warehouse_id: OPSI Warehouse OCID
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] state: Possible lifecycle states
-        :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: The time at which the resource was first created. An RFC3339 formatted datetime string
-        :param pulumi.Input[str] time_updated: The time at which the resource was last updated. An RFC3339 formatted datetime string
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -540,101 +364,61 @@ class AwrHub(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="awrMailboxUrl")
-    def awr_mailbox_url(self) -> pulumi.Output[str]:
-        """
-        Mailbox URL required for AWR hub and AWR source setup.
-        """
+    def awr_mailbox_url(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "awr_mailbox_url")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) User-friedly name of AWR Hub that does not have to be unique.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="objectStorageBucketName")
     def object_storage_bucket_name(self) -> pulumi.Output[str]:
-        """
-        Object Storage Bucket Name
-        """
         return pulumi.get(self, "object_storage_bucket_name")
 
     @property
     @pulumi.getter(name="operationsInsightsWarehouseId")
     def operations_insights_warehouse_id(self) -> pulumi.Output[str]:
-        """
-        OPSI Warehouse OCID
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "operations_insights_warehouse_id")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        Possible lifecycle states
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The time at which the resource was first created. An RFC3339 formatted datetime string
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The time at which the resource was last updated. An RFC3339 formatted datetime string
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 

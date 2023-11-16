@@ -11,6 +11,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetOpaInstancesOpaInstanceCollectionItem {
@@ -18,103 +20,103 @@ public final class GetOpaInstancesOpaInstanceCollectionItem {
      * @return A list of associated attachments to other services
      * 
      */
-    private List<GetOpaInstancesOpaInstanceCollectionItemAttachment> attachments;
+    private @Nullable List<GetOpaInstancesOpaInstanceCollectionItemAttachment> attachments;
     /**
      * @return The ID of the compartment in which to list resources.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The entitlement used for billing purposes
      * 
      */
-    private String consumptionModel;
+    private @Nullable String consumptionModel;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return Description of the Process Automation instance.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return A filter to return only resources that match the entire display name given.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return unique OpaInstance identifier
      * 
      */
-    private String id;
-    private String idcsAt;
+    private @Nullable String id;
+    private @Nullable String idcsAt;
     /**
      * @return This property specifies the name of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this OPA instance for users within the identity domain.
      * 
      */
-    private String identityAppDisplayName;
+    private @Nullable String identityAppDisplayName;
     /**
      * @return This property specifies the GUID of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user role mappings to grant access to this OPA instance for users within the identity domain.
      * 
      */
-    private String identityAppGuid;
+    private @Nullable String identityAppGuid;
     /**
      * @return This property specifies the OPC Service Instance GUID of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this OPA instance for users within the identity domain.
      * 
      */
-    private String identityAppOpcServiceInstanceGuid;
+    private @Nullable String identityAppOpcServiceInstanceGuid;
     /**
      * @return This property specifies the domain url of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this OPA instance for users within the identity domain.
      * 
      */
-    private String identityDomainUrl;
+    private @Nullable String identityDomainUrl;
     /**
      * @return OPA Instance URL
      * 
      */
-    private String instanceUrl;
+    private @Nullable String instanceUrl;
     /**
      * @return indicates if breakGlass is enabled for the opa instance.
      * 
      */
-    private Boolean isBreakglassEnabled;
+    private @Nullable Boolean isBreakglassEnabled;
     /**
      * @return MeteringType Identifier
      * 
      */
-    private String meteringType;
+    private @Nullable String meteringType;
     /**
      * @return Shape of the instance.
      * 
      */
-    private String shapeName;
+    private @Nullable String shapeName;
     /**
      * @return A filter to return only resources their lifecycleState matches the given lifecycleState.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private @Nullable Map<String,Object> systemTags;
     /**
      * @return The time when OpaInstance was created. An RFC3339 formatted datetime string
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The time the OpaInstance was updated. An RFC3339 formatted datetime string
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
 
     private GetOpaInstancesOpaInstanceCollectionItem() {}
     /**
@@ -122,143 +124,143 @@ public final class GetOpaInstancesOpaInstanceCollectionItem {
      * 
      */
     public List<GetOpaInstancesOpaInstanceCollectionItemAttachment> attachments() {
-        return this.attachments;
+        return this.attachments == null ? List.of() : this.attachments;
     }
     /**
      * @return The ID of the compartment in which to list resources.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The entitlement used for billing purposes
      * 
      */
-    public String consumptionModel() {
-        return this.consumptionModel;
+    public Optional<String> consumptionModel() {
+        return Optional.ofNullable(this.consumptionModel);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return Description of the Process Automation instance.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return A filter to return only resources that match the entire display name given.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return unique OpaInstance identifier
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
-    public String idcsAt() {
-        return this.idcsAt;
+    public Optional<String> idcsAt() {
+        return Optional.ofNullable(this.idcsAt);
     }
     /**
      * @return This property specifies the name of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this OPA instance for users within the identity domain.
      * 
      */
-    public String identityAppDisplayName() {
-        return this.identityAppDisplayName;
+    public Optional<String> identityAppDisplayName() {
+        return Optional.ofNullable(this.identityAppDisplayName);
     }
     /**
      * @return This property specifies the GUID of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user role mappings to grant access to this OPA instance for users within the identity domain.
      * 
      */
-    public String identityAppGuid() {
-        return this.identityAppGuid;
+    public Optional<String> identityAppGuid() {
+        return Optional.ofNullable(this.identityAppGuid);
     }
     /**
      * @return This property specifies the OPC Service Instance GUID of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this OPA instance for users within the identity domain.
      * 
      */
-    public String identityAppOpcServiceInstanceGuid() {
-        return this.identityAppOpcServiceInstanceGuid;
+    public Optional<String> identityAppOpcServiceInstanceGuid() {
+        return Optional.ofNullable(this.identityAppOpcServiceInstanceGuid);
     }
     /**
      * @return This property specifies the domain url of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this OPA instance for users within the identity domain.
      * 
      */
-    public String identityDomainUrl() {
-        return this.identityDomainUrl;
+    public Optional<String> identityDomainUrl() {
+        return Optional.ofNullable(this.identityDomainUrl);
     }
     /**
      * @return OPA Instance URL
      * 
      */
-    public String instanceUrl() {
-        return this.instanceUrl;
+    public Optional<String> instanceUrl() {
+        return Optional.ofNullable(this.instanceUrl);
     }
     /**
      * @return indicates if breakGlass is enabled for the opa instance.
      * 
      */
-    public Boolean isBreakglassEnabled() {
-        return this.isBreakglassEnabled;
+    public Optional<Boolean> isBreakglassEnabled() {
+        return Optional.ofNullable(this.isBreakglassEnabled);
     }
     /**
      * @return MeteringType Identifier
      * 
      */
-    public String meteringType() {
-        return this.meteringType;
+    public Optional<String> meteringType() {
+        return Optional.ofNullable(this.meteringType);
     }
     /**
      * @return Shape of the instance.
      * 
      */
-    public String shapeName() {
-        return this.shapeName;
+    public Optional<String> shapeName() {
+        return Optional.ofNullable(this.shapeName);
     }
     /**
      * @return A filter to return only resources their lifecycleState matches the given lifecycleState.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     public Map<String,Object> systemTags() {
-        return this.systemTags;
+        return this.systemTags == null ? Map.of() : this.systemTags;
     }
     /**
      * @return The time when OpaInstance was created. An RFC3339 formatted datetime string
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The time the OpaInstance was updated. An RFC3339 formatted datetime string
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
 
     public static Builder builder() {
@@ -270,27 +272,27 @@ public final class GetOpaInstancesOpaInstanceCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetOpaInstancesOpaInstanceCollectionItemAttachment> attachments;
-        private String compartmentId;
-        private String consumptionModel;
-        private Map<String,Object> definedTags;
-        private String description;
-        private String displayName;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private String idcsAt;
-        private String identityAppDisplayName;
-        private String identityAppGuid;
-        private String identityAppOpcServiceInstanceGuid;
-        private String identityDomainUrl;
-        private String instanceUrl;
-        private Boolean isBreakglassEnabled;
-        private String meteringType;
-        private String shapeName;
-        private String state;
-        private Map<String,Object> systemTags;
-        private String timeCreated;
-        private String timeUpdated;
+        private @Nullable List<GetOpaInstancesOpaInstanceCollectionItemAttachment> attachments;
+        private @Nullable String compartmentId;
+        private @Nullable String consumptionModel;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String description;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable String idcsAt;
+        private @Nullable String identityAppDisplayName;
+        private @Nullable String identityAppGuid;
+        private @Nullable String identityAppOpcServiceInstanceGuid;
+        private @Nullable String identityDomainUrl;
+        private @Nullable String instanceUrl;
+        private @Nullable Boolean isBreakglassEnabled;
+        private @Nullable String meteringType;
+        private @Nullable String shapeName;
+        private @Nullable String state;
+        private @Nullable Map<String,Object> systemTags;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
         public Builder() {}
         public Builder(GetOpaInstancesOpaInstanceCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -318,111 +320,111 @@ public final class GetOpaInstancesOpaInstanceCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder attachments(List<GetOpaInstancesOpaInstanceCollectionItemAttachment> attachments) {
-            this.attachments = Objects.requireNonNull(attachments);
+        public Builder attachments(@Nullable List<GetOpaInstancesOpaInstanceCollectionItemAttachment> attachments) {
+            this.attachments = attachments;
             return this;
         }
         public Builder attachments(GetOpaInstancesOpaInstanceCollectionItemAttachment... attachments) {
             return attachments(List.of(attachments));
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder consumptionModel(String consumptionModel) {
-            this.consumptionModel = Objects.requireNonNull(consumptionModel);
+        public Builder consumptionModel(@Nullable String consumptionModel) {
+            this.consumptionModel = consumptionModel;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsAt(String idcsAt) {
-            this.idcsAt = Objects.requireNonNull(idcsAt);
+        public Builder idcsAt(@Nullable String idcsAt) {
+            this.idcsAt = idcsAt;
             return this;
         }
         @CustomType.Setter
-        public Builder identityAppDisplayName(String identityAppDisplayName) {
-            this.identityAppDisplayName = Objects.requireNonNull(identityAppDisplayName);
+        public Builder identityAppDisplayName(@Nullable String identityAppDisplayName) {
+            this.identityAppDisplayName = identityAppDisplayName;
             return this;
         }
         @CustomType.Setter
-        public Builder identityAppGuid(String identityAppGuid) {
-            this.identityAppGuid = Objects.requireNonNull(identityAppGuid);
+        public Builder identityAppGuid(@Nullable String identityAppGuid) {
+            this.identityAppGuid = identityAppGuid;
             return this;
         }
         @CustomType.Setter
-        public Builder identityAppOpcServiceInstanceGuid(String identityAppOpcServiceInstanceGuid) {
-            this.identityAppOpcServiceInstanceGuid = Objects.requireNonNull(identityAppOpcServiceInstanceGuid);
+        public Builder identityAppOpcServiceInstanceGuid(@Nullable String identityAppOpcServiceInstanceGuid) {
+            this.identityAppOpcServiceInstanceGuid = identityAppOpcServiceInstanceGuid;
             return this;
         }
         @CustomType.Setter
-        public Builder identityDomainUrl(String identityDomainUrl) {
-            this.identityDomainUrl = Objects.requireNonNull(identityDomainUrl);
+        public Builder identityDomainUrl(@Nullable String identityDomainUrl) {
+            this.identityDomainUrl = identityDomainUrl;
             return this;
         }
         @CustomType.Setter
-        public Builder instanceUrl(String instanceUrl) {
-            this.instanceUrl = Objects.requireNonNull(instanceUrl);
+        public Builder instanceUrl(@Nullable String instanceUrl) {
+            this.instanceUrl = instanceUrl;
             return this;
         }
         @CustomType.Setter
-        public Builder isBreakglassEnabled(Boolean isBreakglassEnabled) {
-            this.isBreakglassEnabled = Objects.requireNonNull(isBreakglassEnabled);
+        public Builder isBreakglassEnabled(@Nullable Boolean isBreakglassEnabled) {
+            this.isBreakglassEnabled = isBreakglassEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder meteringType(String meteringType) {
-            this.meteringType = Objects.requireNonNull(meteringType);
+        public Builder meteringType(@Nullable String meteringType) {
+            this.meteringType = meteringType;
             return this;
         }
         @CustomType.Setter
-        public Builder shapeName(String shapeName) {
-            this.shapeName = Objects.requireNonNull(shapeName);
+        public Builder shapeName(@Nullable String shapeName) {
+            this.shapeName = shapeName;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+        public Builder systemTags(@Nullable Map<String,Object> systemTags) {
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetOpaInstancesOpaInstanceCollectionItem build() {

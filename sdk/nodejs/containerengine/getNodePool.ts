@@ -47,67 +47,67 @@ export interface GetNodePoolResult {
     /**
      * The OCID of the cluster to which this node pool is attached.
      */
-    readonly clusterId: string;
+    readonly clusterId?: string;
     /**
      * The OCID of the compartment in which the node pool exists.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The OCID of the compute instance backing this node.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * A list of key/value pairs to add to nodes after they join the Kubernetes cluster.
      */
-    readonly initialNodeLabels: outputs.ContainerEngine.GetNodePoolInitialNodeLabel[];
+    readonly initialNodeLabels?: outputs.ContainerEngine.GetNodePoolInitialNodeLabel[];
     /**
      * The version of Kubernetes this node is running.
      */
-    readonly kubernetesVersion: string;
+    readonly kubernetesVersion?: string;
     /**
      * Details about the state of the node.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * The name of the node.
      */
-    readonly name: string;
+    readonly name?: string;
     /**
      * The configuration of nodes in the node pool.
      */
-    readonly nodeConfigDetails: outputs.ContainerEngine.GetNodePoolNodeConfigDetail[];
+    readonly nodeConfigDetails?: outputs.ContainerEngine.GetNodePoolNodeConfigDetail[];
     /**
      * Node Eviction Details configuration
      */
-    readonly nodeEvictionNodePoolSettings: outputs.ContainerEngine.GetNodePoolNodeEvictionNodePoolSetting[];
+    readonly nodeEvictionNodePoolSettings?: outputs.ContainerEngine.GetNodePoolNodeEvictionNodePoolSetting[];
     /**
      * Deprecated. see `nodeSource`. The OCID of the image running on the nodes in the node pool.
      *
      * @deprecated The 'node_image_id' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used.
      */
-    readonly nodeImageId: string;
+    readonly nodeImageId?: string;
     /**
      * Deprecated. see `nodeSource`. The name of the image running on the nodes in the node pool.
      *
      * @deprecated The 'node_image_name' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used.
      */
-    readonly nodeImageName: string;
+    readonly nodeImageName?: string;
     /**
      * A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool on launch.
      */
-    readonly nodeMetadata: {[key: string]: any};
+    readonly nodeMetadata?: {[key: string]: any};
     /**
      * Node Pool Cycling Details
      */
-    readonly nodePoolCyclingDetails: outputs.ContainerEngine.GetNodePoolNodePoolCyclingDetail[];
+    readonly nodePoolCyclingDetails?: outputs.ContainerEngine.GetNodePoolNodePoolCyclingDetail[];
     /**
      * The OCID of the node pool to which this node belongs.
      */
@@ -115,39 +115,39 @@ export interface GetNodePoolResult {
     /**
      * The name of the node shape of the nodes in the node pool.
      */
-    readonly nodeShape: string;
+    readonly nodeShape?: string;
     /**
      * The shape configuration of the nodes.
      */
-    readonly nodeShapeConfigs: outputs.ContainerEngine.GetNodePoolNodeShapeConfig[];
+    readonly nodeShapeConfigs?: outputs.ContainerEngine.GetNodePoolNodeShapeConfig[];
     /**
      * Source running on the nodes in the node pool.
      */
-    readonly nodeSourceDetails: outputs.ContainerEngine.GetNodePoolNodeSourceDetail[];
+    readonly nodeSourceDetails?: outputs.ContainerEngine.GetNodePoolNodeSourceDetail[];
     /**
      * Deprecated. see `nodeSourceDetails`. Source running on the nodes in the node pool.
      */
-    readonly nodeSources: outputs.ContainerEngine.GetNodePoolNodeSource[];
+    readonly nodeSources?: outputs.ContainerEngine.GetNodePoolNodeSource[];
     /**
      * The nodes in the node pool.
      */
-    readonly nodes: outputs.ContainerEngine.GetNodePoolNode[];
+    readonly nodes?: outputs.ContainerEngine.GetNodePoolNode[];
     /**
      * The number of nodes in each subnet.
      */
-    readonly quantityPerSubnet: number;
+    readonly quantityPerSubnet?: number;
     /**
      * The SSH public key on each node in the node pool on launch.
      */
-    readonly sshPublicKey: string;
+    readonly sshPublicKey?: string;
     /**
      * The state of the nodepool.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The OCIDs of the subnets in which to place nodes for this node pool.
      */
-    readonly subnetIds: string[];
+    readonly subnetIds?: string[];
 }
 /**
  * This data source provides details about a specific Node Pool resource in Oracle Cloud Infrastructure Container Engine service.

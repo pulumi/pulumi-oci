@@ -92,82 +92,52 @@ class GetMetricExtensionResult:
 
     @property
     @pulumi.getter(name="collectionMethod")
-    def collection_method(self) -> str:
-        """
-        Type of possible collection methods.
-        """
+    def collection_method(self) -> Optional[str]:
         return pulumi.get(self, "collection_method")
 
     @property
     @pulumi.getter(name="collectionRecurrences")
-    def collection_recurrences(self) -> str:
-        """
-        Schedule of metric extension should use RFC 5545 format > recur-rule-part = "FREQ";"INTERVAL" where FREQ rule part identifies the type of recurrence rule. Valid values are "MINUTELY","HOURLY","DAILY" to specify repeating events based on an interval of a minute, an hour and a day or more. Example- FREQ=DAILY;INTERVAL=1
-        """
+    def collection_recurrences(self) -> Optional[str]:
         return pulumi.get(self, "collection_recurrences")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="createdBy")
-    def created_by(self) -> str:
-        """
-        Created by user
-        """
+    def created_by(self) -> Optional[str]:
         return pulumi.get(self, "created_by")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Description of the metric extension.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        Display name of the metric.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="enabledOnResources")
-    def enabled_on_resources(self) -> Sequence['outputs.GetMetricExtensionEnabledOnResourceResult']:
-        """
-        List of resource objects on which this metric extension is enabled.
-        """
+    def enabled_on_resources(self) -> Optional[Sequence['outputs.GetMetricExtensionEnabledOnResourceResult']]:
         return pulumi.get(self, "enabled_on_resources")
 
     @property
     @pulumi.getter(name="enabledOnResourcesCount")
-    def enabled_on_resources_count(self) -> int:
-        """
-        Count of resources on which this metric extension is enabled.
-        """
+    def enabled_on_resources_count(self) -> Optional[int]:
         return pulumi.get(self, "enabled_on_resources_count")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Metric Extension resource
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lastUpdatedBy")
-    def last_updated_by(self) -> str:
-        """
-        Last updated by user
-        """
+    def last_updated_by(self) -> Optional[str]:
         return pulumi.get(self, "last_updated_by")
 
     @property
@@ -177,87 +147,57 @@ class GetMetricExtensionResult:
 
     @property
     @pulumi.getter(name="metricLists")
-    def metric_lists(self) -> Sequence['outputs.GetMetricExtensionMetricListResult']:
-        """
-        List of metrics which are part of this metric extension
-        """
+    def metric_lists(self) -> Optional[Sequence['outputs.GetMetricExtensionMetricListResult']]:
         return pulumi.get(self, "metric_lists")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Name of the script file
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="publishTrigger")
-    def publish_trigger(self) -> bool:
+    def publish_trigger(self) -> Optional[bool]:
         return pulumi.get(self, "publish_trigger")
 
     @property
     @pulumi.getter(name="queryProperties")
-    def query_properties(self) -> Sequence['outputs.GetMetricExtensionQueryPropertyResult']:
-        """
-        Collection method and query properties details of metric extension
-        """
+    def query_properties(self) -> Optional[Sequence['outputs.GetMetricExtensionQueryPropertyResult']]:
         return pulumi.get(self, "query_properties")
 
     @property
     @pulumi.getter(name="resourceType")
-    def resource_type(self) -> str:
-        """
-        Resource type to which Metric Extension applies
-        """
+    def resource_type(self) -> Optional[str]:
         return pulumi.get(self, "resource_type")
 
     @property
     @pulumi.getter(name="resourceUri")
-    def resource_uri(self) -> str:
-        """
-        The URI path that the user can do a GET on to access the metric extension metadata
-        """
+    def resource_uri(self) -> Optional[str]:
         return pulumi.get(self, "resource_uri")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current lifecycle state of the metric extension
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter
-    def status(self) -> str:
-        """
-        The current status of the metric extension i.e. whether it is Draft or Published
-        """
+    def status(self) -> Optional[str]:
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter(name="tenantId")
-    def tenant_id(self) -> str:
-        """
-        Tenant Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-        """
+    def tenant_id(self) -> Optional[str]:
         return pulumi.get(self, "tenant_id")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        Metric Extension creation time. An RFC3339 formatted datetime string.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        Metric Extension update time. An RFC3339 formatted datetime string.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -294,21 +234,7 @@ class AwaitableGetMetricExtensionResult(GetMetricExtensionResult):
 def get_metric_extension(metric_extension_id: Optional[str] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMetricExtensionResult:
     """
-    This data source provides details about a specific Metric Extension resource in Oracle Cloud Infrastructure Stack Monitoring service.
-
-    Gets a Metric Extension by identifier
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_metric_extension = oci.StackMonitoring.get_metric_extension(metric_extension_id=oci_stack_monitoring_metric_extension["test_metric_extension"]["id"])
-    ```
-
-
-    :param str metric_extension_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the metric extension resource.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['metricExtensionId'] = metric_extension_id
@@ -344,20 +270,6 @@ def get_metric_extension(metric_extension_id: Optional[str] = None,
 def get_metric_extension_output(metric_extension_id: Optional[pulumi.Input[str]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMetricExtensionResult]:
     """
-    This data source provides details about a specific Metric Extension resource in Oracle Cloud Infrastructure Stack Monitoring service.
-
-    Gets a Metric Extension by identifier
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_metric_extension = oci.StackMonitoring.get_metric_extension(metric_extension_id=oci_stack_monitoring_metric_extension["test_metric_extension"]["id"])
-    ```
-
-
-    :param str metric_extension_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the metric extension resource.
+    Use this data source to access information about an existing resource.
     """
     ...

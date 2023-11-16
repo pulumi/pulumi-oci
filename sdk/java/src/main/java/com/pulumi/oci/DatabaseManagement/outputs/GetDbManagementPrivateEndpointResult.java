@@ -8,6 +8,8 @@ import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDbManagementPrivateEndpointResult {
@@ -15,66 +17,66 @@ public final class GetDbManagementPrivateEndpointResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     private String dbManagementPrivateEndpointId;
     /**
      * @return The description of the Database Management private endpoint.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Specifies whether the Database Management private endpoint can be used for Oracle Databases in a cluster.
      * 
      */
-    private Boolean isCluster;
+    private @Nullable Boolean isCluster;
     /**
      * @return The display name of the Database Management private endpoint.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return The OCIDs of the Network Security Groups to which the Database Management private endpoint belongs.
      * 
      */
-    private List<String> nsgIds;
+    private @Nullable List<String> nsgIds;
     /**
      * @return The IP addresses assigned to the Database Management private endpoint.
      * 
      */
-    private String privateIp;
+    private @Nullable String privateIp;
     /**
      * @return The current lifecycle state of the Database Management private endpoint.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
      * 
      */
-    private String subnetId;
+    private @Nullable String subnetId;
     /**
      * @return The date and time the Database Managament private endpoint was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
      * 
      */
-    private String vcnId;
+    private @Nullable String vcnId;
 
     private GetDbManagementPrivateEndpointResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     public String dbManagementPrivateEndpointId() {
         return this.dbManagementPrivateEndpointId;
@@ -83,71 +85,71 @@ public final class GetDbManagementPrivateEndpointResult {
      * @return The description of the Database Management private endpoint.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Specifies whether the Database Management private endpoint can be used for Oracle Databases in a cluster.
      * 
      */
-    public Boolean isCluster() {
-        return this.isCluster;
+    public Optional<Boolean> isCluster() {
+        return Optional.ofNullable(this.isCluster);
     }
     /**
      * @return The display name of the Database Management private endpoint.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return The OCIDs of the Network Security Groups to which the Database Management private endpoint belongs.
      * 
      */
     public List<String> nsgIds() {
-        return this.nsgIds;
+        return this.nsgIds == null ? List.of() : this.nsgIds;
     }
     /**
      * @return The IP addresses assigned to the Database Management private endpoint.
      * 
      */
-    public String privateIp() {
-        return this.privateIp;
+    public Optional<String> privateIp() {
+        return Optional.ofNullable(this.privateIp);
     }
     /**
      * @return The current lifecycle state of the Database Management private endpoint.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
      * 
      */
-    public String subnetId() {
-        return this.subnetId;
+    public Optional<String> subnetId() {
+        return Optional.ofNullable(this.subnetId);
     }
     /**
      * @return The date and time the Database Managament private endpoint was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
      * 
      */
-    public String vcnId() {
-        return this.vcnId;
+    public Optional<String> vcnId() {
+        return Optional.ofNullable(this.vcnId);
     }
 
     public static Builder builder() {
@@ -159,18 +161,18 @@ public final class GetDbManagementPrivateEndpointResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
+        private @Nullable String compartmentId;
         private String dbManagementPrivateEndpointId;
-        private String description;
-        private String id;
-        private Boolean isCluster;
-        private String name;
-        private List<String> nsgIds;
-        private String privateIp;
-        private String state;
-        private String subnetId;
-        private String timeCreated;
-        private String vcnId;
+        private @Nullable String description;
+        private @Nullable String id;
+        private @Nullable Boolean isCluster;
+        private @Nullable String name;
+        private @Nullable List<String> nsgIds;
+        private @Nullable String privateIp;
+        private @Nullable String state;
+        private @Nullable String subnetId;
+        private @Nullable String timeCreated;
+        private @Nullable String vcnId;
         public Builder() {}
         public Builder(GetDbManagementPrivateEndpointResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -189,8 +191,8 @@ public final class GetDbManagementPrivateEndpointResult {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
@@ -199,56 +201,56 @@ public final class GetDbManagementPrivateEndpointResult {
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder isCluster(Boolean isCluster) {
-            this.isCluster = Objects.requireNonNull(isCluster);
+        public Builder isCluster(@Nullable Boolean isCluster) {
+            this.isCluster = isCluster;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder nsgIds(List<String> nsgIds) {
-            this.nsgIds = Objects.requireNonNull(nsgIds);
+        public Builder nsgIds(@Nullable List<String> nsgIds) {
+            this.nsgIds = nsgIds;
             return this;
         }
         public Builder nsgIds(String... nsgIds) {
             return nsgIds(List.of(nsgIds));
         }
         @CustomType.Setter
-        public Builder privateIp(String privateIp) {
-            this.privateIp = Objects.requireNonNull(privateIp);
+        public Builder privateIp(@Nullable String privateIp) {
+            this.privateIp = privateIp;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder subnetId(String subnetId) {
-            this.subnetId = Objects.requireNonNull(subnetId);
+        public Builder subnetId(@Nullable String subnetId) {
+            this.subnetId = subnetId;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder vcnId(String vcnId) {
-            this.vcnId = Objects.requireNonNull(vcnId);
+        public Builder vcnId(@Nullable String vcnId) {
+            this.vcnId = vcnId;
             return this;
         }
         public GetDbManagementPrivateEndpointResult build() {

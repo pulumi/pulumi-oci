@@ -56,24 +56,24 @@ export class KeyVersion extends pulumi.CustomResource {
     /**
      * The OCID of the compartment that contains this key version.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    public /*out*/ readonly compartmentId!: pulumi.Output<string | undefined>;
     /**
      * Key reference data to be returned to the customer as a response.
      */
-    public /*out*/ readonly externalKeyReferenceDetails!: pulumi.Output<outputs.Kms.KeyVersionExternalKeyReferenceDetail[]>;
+    public /*out*/ readonly externalKeyReferenceDetails!: pulumi.Output<outputs.Kms.KeyVersionExternalKeyReferenceDetail[] | undefined>;
     /**
      * Key version ID associated with the external key.
      */
-    public readonly externalKeyVersionId!: pulumi.Output<string>;
+    public readonly externalKeyVersionId!: pulumi.Output<string | undefined>;
     /**
      * A Boolean value that indicates whether the KeyVersion belongs to primary Vault or replica Vault.
      */
-    public /*out*/ readonly isPrimary!: pulumi.Output<boolean>;
+    public /*out*/ readonly isPrimary!: pulumi.Output<boolean | undefined>;
     /**
      * The OCID of the key.
      */
     public readonly keyId!: pulumi.Output<string>;
-    public /*out*/ readonly keyVersionId!: pulumi.Output<string>;
+    public /*out*/ readonly keyVersionId!: pulumi.Output<string | undefined>;
     /**
      * The service endpoint to perform management operations against. Management operations include 'Create,' 'Update,' 'List,' 'Get,' and 'Delete' operations. See Vault Management endpoint.
      */
@@ -81,35 +81,35 @@ export class KeyVersion extends pulumi.CustomResource {
     /**
      * The public key in PEM format. (This value pertains only to RSA and ECDSA keys.)
      */
-    public /*out*/ readonly publicKey!: pulumi.Output<string>;
+    public /*out*/ readonly publicKey!: pulumi.Output<string | undefined>;
     /**
      * KeyVersion replica details
      */
-    public /*out*/ readonly replicaDetails!: pulumi.Output<outputs.Kms.KeyVersionReplicaDetail[]>;
-    public /*out*/ readonly restoredFromKeyId!: pulumi.Output<string>;
+    public /*out*/ readonly replicaDetails!: pulumi.Output<outputs.Kms.KeyVersionReplicaDetail[] | undefined>;
+    public /*out*/ readonly restoredFromKeyId!: pulumi.Output<string | undefined>;
     /**
      * The OCID of the key version from which this key version was restored.
      */
-    public /*out*/ readonly restoredFromKeyVersionId!: pulumi.Output<string>;
+    public /*out*/ readonly restoredFromKeyVersionId!: pulumi.Output<string | undefined>;
     /**
      * The key version's current lifecycle state.  Example: `ENABLED`
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The date and time this key version was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: "2018-04-03T21:10:29.600Z"
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) An optional property for the deletion time of the key version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly timeOfDeletion!: pulumi.Output<string>;
+    public readonly timeOfDeletion!: pulumi.Output<string | undefined>;
     /**
      * The OCID of the vault that contains this key version.
      */
-    public /*out*/ readonly vaultId!: pulumi.Output<string>;
+    public /*out*/ readonly vaultId!: pulumi.Output<string | undefined>;
 
     /**
      * Create a KeyVersion resource with the given unique name, arguments, and options.

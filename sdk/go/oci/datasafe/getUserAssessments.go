@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of User Assessments in Oracle Cloud Infrastructure Data Safe service.
@@ -122,7 +121,7 @@ type GetUserAssessmentsResult struct {
 	DisplayName *string                    `pulumi:"displayName"`
 	Filters     []GetUserAssessmentsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
 	IgnoredTargets []GetUserAssessmentsIgnoredTarget `pulumi:"ignoredTargets"`
 	// Indicates if the user assessment is set as a baseline. This is applicable only to saved user assessments.
@@ -209,12 +208,6 @@ func (o GetUserAssessmentsResultOutput) ToGetUserAssessmentsResultOutputWithCont
 	return o
 }
 
-func (o GetUserAssessmentsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetUserAssessmentsResult] {
-	return pulumix.Output[GetUserAssessmentsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetUserAssessmentsResultOutput) AccessLevel() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetUserAssessmentsResult) *string { return v.AccessLevel }).(pulumi.StringPtrOutput)
 }
@@ -238,8 +231,8 @@ func (o GetUserAssessmentsResultOutput) Filters() GetUserAssessmentsFilterArrayO
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetUserAssessmentsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetUserAssessmentsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetUserAssessmentsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetUserAssessmentsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`

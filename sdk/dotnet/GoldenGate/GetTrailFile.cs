@@ -143,7 +143,7 @@ namespace Pulumi.Oci.GoldenGate
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// An array of TrailFiles.
         /// </summary>
@@ -151,7 +151,7 @@ namespace Pulumi.Oci.GoldenGate
         /// <summary>
         /// The time the data was last fetched from the deployment. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         /// </summary>
-        public readonly string TimeLastFetched;
+        public readonly string? TimeLastFetched;
         /// <summary>
         /// The TrailFile Id.
         /// </summary>
@@ -163,11 +163,11 @@ namespace Pulumi.Oci.GoldenGate
 
             string? displayName,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetTrailFileItemResult> items,
 
-            string timeLastFetched,
+            string? timeLastFetched,
 
             string trailFileId)
         {

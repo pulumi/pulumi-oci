@@ -54,75 +54,75 @@ export interface GetTraceResult {
     /**
      * The number of spans with errors that have been processed by the system for the trace. Note that the number of spans with errors will be less than or equal to the total number of spans in the trace.
      */
-    readonly errorSpanCount: number;
+    readonly errorSpanCount?: number;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Boolean flag that indicates whether the trace has an error.
      */
-    readonly isFault: boolean;
+    readonly isFault?: boolean;
     /**
      * Unique identifier (spanId) for the span.  Note that this field is defined as spanKey in the API and it maps to the spanId in the trace data in Application Performance Monitoring.
      */
-    readonly key: string;
+    readonly key?: string;
     /**
      * Time taken for the root span operation to complete in milliseconds.
      */
-    readonly rootSpanDurationInMs: number;
+    readonly rootSpanDurationInMs?: number;
     /**
      * Root span name associated with the trace. This is the flow start operation name. Null is displayed if the root span is not yet completed.
      */
-    readonly rootSpanOperationName: string;
+    readonly rootSpanOperationName?: string;
     /**
      * Service associated with the trace.
      */
-    readonly rootSpanServiceName: string;
+    readonly rootSpanServiceName?: string;
     /**
      * A summary of the spans by service.
      */
-    readonly serviceSummaries: outputs.ApmTraces.GetTraceServiceSummary[];
+    readonly serviceSummaries?: outputs.ApmTraces.GetTraceServiceSummary[];
     /**
      * The number of spans that have been processed by the system for the trace.  Note that there could be additional spans that have not been processed or reported yet if the trace is still in progress.
      */
-    readonly spanCount: number;
+    readonly spanCount?: number;
     /**
      * Summary of the information pertaining to the spans in the trace window that is being queried.
      */
-    readonly spanSummaries: outputs.ApmTraces.GetTraceSpanSummary[];
+    readonly spanSummaries?: outputs.ApmTraces.GetTraceSpanSummary[];
     /**
      * An array of spans in the trace.
      */
-    readonly spans: outputs.ApmTraces.GetTraceSpan[];
+    readonly spans?: outputs.ApmTraces.GetTraceSpan[];
     /**
      * Start time of the earliest span in the span collection.
      */
-    readonly timeEarliestSpanStarted: string;
+    readonly timeEarliestSpanStarted?: string;
     /**
      * End time of the span that most recently ended in the span collection.
      */
-    readonly timeLatestSpanEnded: string;
+    readonly timeLatestSpanEnded?: string;
     /**
      * End time of the root span for the span collection.
      */
-    readonly timeRootSpanEnded: string;
+    readonly timeRootSpanEnded?: string;
     /**
      * Start time of the root span for the span collection.
      */
-    readonly timeRootSpanStarted: string;
+    readonly timeRootSpanStarted?: string;
     /**
      * Time between the start of the earliest span and the end of the most recent span in milliseconds.
      */
-    readonly traceDurationInMs: number;
+    readonly traceDurationInMs?: number;
     /**
      * Error code of the trace.
      */
-    readonly traceErrorCode: string;
+    readonly traceErrorCode?: string;
     /**
      * Error type of the trace.
      */
-    readonly traceErrorType: string;
+    readonly traceErrorType?: string;
     /**
      * Unique identifier for the trace.
      */
@@ -130,7 +130,7 @@ export interface GetTraceResult {
     /**
      * The status of the trace. The trace statuses are defined as follows: complete - a root span has been recorded, but there is no information on the errors. success - a complete root span is recorded there is a successful error type and error code - HTTP 200. incomplete - the root span has not yet been received. error - the root span returned with an error. There may or may not be an associated error code or error type.
      */
-    readonly traceStatus: string;
+    readonly traceStatus?: string;
 }
 /**
  * This data source provides details about a specific Trace resource in Oracle Cloud Infrastructure Apm Traces service.

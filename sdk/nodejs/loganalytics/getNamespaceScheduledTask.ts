@@ -53,31 +53,31 @@ export interface GetNamespaceScheduledTaskResult {
     /**
      * Action for scheduled task.
      */
-    readonly actions: outputs.LogAnalytics.GetNamespaceScheduledTaskAction[];
+    readonly actions?: outputs.LogAnalytics.GetNamespaceScheduledTaskAction[];
     /**
      * Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * A user-friendly name that is changeable and that does not have to be unique. Format: a leading alphanumeric, followed by zero or more alphanumerics, underscores, spaces, backslashes, or hyphens in any order). No trailing spaces allowed.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the data plane resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Discriminator.
      */
-    readonly kind: string;
+    readonly kind?: string;
     /**
      * The namespace of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters and underscores (_).
      */
@@ -85,40 +85,40 @@ export interface GetNamespaceScheduledTaskResult {
     /**
      * Number of execution occurrences.
      */
-    readonly numOccurrences: string;
+    readonly numOccurrences?: string;
     /**
      * The ManagementSavedSearch id [OCID] utilized in the action.
      */
-    readonly savedSearchId: string;
+    readonly savedSearchId?: string;
     readonly scheduledTaskId: string;
     /**
      * Schedules.
      */
-    readonly schedules: outputs.LogAnalytics.GetNamespaceScheduledTaskSchedule[];
+    readonly schedules?: outputs.LogAnalytics.GetNamespaceScheduledTaskSchedule[];
     /**
      * The current state of the scheduled task.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * Status of the scheduled task. - PURGE_RESOURCE_NOT_FOUND
      */
-    readonly taskStatus: string;
+    readonly taskStatus?: string;
     /**
      * Task type.
      */
-    readonly taskType: string;
+    readonly taskType?: string;
     /**
      * The date and time the scheduled task was created, in the format defined by RFC3339.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The date and time the scheduled task was last updated, in the format defined by RFC3339.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
     /**
      * most recent Work Request Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
      */
-    readonly workRequestId: string;
+    readonly workRequestId?: string;
 }
 /**
  * This data source provides details about a specific Namespace Scheduled Task resource in Oracle Cloud Infrastructure Log Analytics service.

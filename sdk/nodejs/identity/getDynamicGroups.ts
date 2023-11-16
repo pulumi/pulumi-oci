@@ -67,12 +67,12 @@ export interface GetDynamicGroupsResult {
     /**
      * The list of dynamic_groups.
      */
-    readonly dynamicGroups: outputs.Identity.GetDynamicGroupsDynamicGroup[];
+    readonly dynamicGroups?: outputs.Identity.GetDynamicGroupsDynamicGroup[];
     readonly filters?: outputs.Identity.GetDynamicGroupsFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The name you assign to the group during creation. The name must be unique across all groups in the tenancy and cannot be changed.
      */

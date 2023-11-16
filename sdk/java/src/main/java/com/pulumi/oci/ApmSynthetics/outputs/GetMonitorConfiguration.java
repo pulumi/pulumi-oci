@@ -15,6 +15,8 @@ import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMonitorConfiguration {
@@ -22,87 +24,87 @@ public final class GetMonitorConfiguration {
      * @return Details for client certificate.
      * 
      */
-    private List<GetMonitorConfigurationClientCertificateDetail> clientCertificateDetails;
+    private @Nullable List<GetMonitorConfigurationClientCertificateDetail> clientCertificateDetails;
     /**
      * @return Type of configuration.
      * 
      */
-    private String configType;
+    private @Nullable String configType;
     /**
      * @return Information about the DNS settings.
      * 
      */
-    private List<GetMonitorConfigurationDnsConfiguration> dnsConfigurations;
+    private @Nullable List<GetMonitorConfigurationDnsConfiguration> dnsConfigurations;
     /**
      * @return If certificate validation is enabled, then the call will fail in case of certification errors.
      * 
      */
-    private Boolean isCertificateValidationEnabled;
+    private @Nullable Boolean isCertificateValidationEnabled;
     /**
      * @return If disabled, auto snapshots are not collected.
      * 
      */
-    private Boolean isDefaultSnapshotEnabled;
+    private @Nullable Boolean isDefaultSnapshotEnabled;
     /**
      * @return If isFailureRetried is enabled, then a failed call will be retried.
      * 
      */
-    private Boolean isFailureRetried;
+    private @Nullable Boolean isFailureRetried;
     /**
      * @return If redirection is enabled, then redirects will be allowed while accessing target URL.
      * 
      */
-    private Boolean isRedirectionEnabled;
+    private @Nullable Boolean isRedirectionEnabled;
     /**
      * @return Details of the network configuration.
      * 
      */
-    private List<GetMonitorConfigurationNetworkConfiguration> networkConfigurations;
+    private @Nullable List<GetMonitorConfigurationNetworkConfiguration> networkConfigurations;
     /**
      * @return Details for request HTTP authentication.
      * 
      */
-    private List<GetMonitorConfigurationReqAuthenticationDetail> reqAuthenticationDetails;
+    private @Nullable List<GetMonitorConfigurationReqAuthenticationDetail> reqAuthenticationDetails;
     /**
      * @return Request HTTP authentication scheme.
      * 
      */
-    private String reqAuthenticationScheme;
+    private @Nullable String reqAuthenticationScheme;
     /**
      * @return List of request headers. Example: `[{&#34;headerName&#34;: &#34;content-type&#34;, &#34;headerValue&#34;:&#34;json&#34;}]`
      * 
      */
-    private List<GetMonitorConfigurationRequestHeader> requestHeaders;
+    private @Nullable List<GetMonitorConfigurationRequestHeader> requestHeaders;
     /**
      * @return Request HTTP method.
      * 
      */
-    private String requestMethod;
+    private @Nullable String requestMethod;
     /**
      * @return Request post body content.
      * 
      */
-    private String requestPostBody;
+    private @Nullable String requestPostBody;
     /**
      * @return List of request query params. Example: `[{&#34;paramName&#34;: &#34;sortOrder&#34;, &#34;paramValue&#34;: &#34;asc&#34;}]`
      * 
      */
-    private List<GetMonitorConfigurationRequestQueryParam> requestQueryParams;
+    private @Nullable List<GetMonitorConfigurationRequestQueryParam> requestQueryParams;
     /**
      * @return Expected HTTP response codes. For status code range, set values such as 2xx, 3xx.
      * 
      */
-    private List<String> verifyResponseCodes;
+    private @Nullable List<String> verifyResponseCodes;
     /**
      * @return Verify response content against regular expression based string. If response content does not match the verifyResponseContent value, then it will be considered a failure.
      * 
      */
-    private String verifyResponseContent;
+    private @Nullable String verifyResponseContent;
     /**
      * @return Verifies all the search strings present in the response. If any search string is not present in the response, then it will be considered as a failure.
      * 
      */
-    private List<GetMonitorConfigurationVerifyText> verifyTexts;
+    private @Nullable List<GetMonitorConfigurationVerifyText> verifyTexts;
 
     private GetMonitorConfiguration() {}
     /**
@@ -110,119 +112,119 @@ public final class GetMonitorConfiguration {
      * 
      */
     public List<GetMonitorConfigurationClientCertificateDetail> clientCertificateDetails() {
-        return this.clientCertificateDetails;
+        return this.clientCertificateDetails == null ? List.of() : this.clientCertificateDetails;
     }
     /**
      * @return Type of configuration.
      * 
      */
-    public String configType() {
-        return this.configType;
+    public Optional<String> configType() {
+        return Optional.ofNullable(this.configType);
     }
     /**
      * @return Information about the DNS settings.
      * 
      */
     public List<GetMonitorConfigurationDnsConfiguration> dnsConfigurations() {
-        return this.dnsConfigurations;
+        return this.dnsConfigurations == null ? List.of() : this.dnsConfigurations;
     }
     /**
      * @return If certificate validation is enabled, then the call will fail in case of certification errors.
      * 
      */
-    public Boolean isCertificateValidationEnabled() {
-        return this.isCertificateValidationEnabled;
+    public Optional<Boolean> isCertificateValidationEnabled() {
+        return Optional.ofNullable(this.isCertificateValidationEnabled);
     }
     /**
      * @return If disabled, auto snapshots are not collected.
      * 
      */
-    public Boolean isDefaultSnapshotEnabled() {
-        return this.isDefaultSnapshotEnabled;
+    public Optional<Boolean> isDefaultSnapshotEnabled() {
+        return Optional.ofNullable(this.isDefaultSnapshotEnabled);
     }
     /**
      * @return If isFailureRetried is enabled, then a failed call will be retried.
      * 
      */
-    public Boolean isFailureRetried() {
-        return this.isFailureRetried;
+    public Optional<Boolean> isFailureRetried() {
+        return Optional.ofNullable(this.isFailureRetried);
     }
     /**
      * @return If redirection is enabled, then redirects will be allowed while accessing target URL.
      * 
      */
-    public Boolean isRedirectionEnabled() {
-        return this.isRedirectionEnabled;
+    public Optional<Boolean> isRedirectionEnabled() {
+        return Optional.ofNullable(this.isRedirectionEnabled);
     }
     /**
      * @return Details of the network configuration.
      * 
      */
     public List<GetMonitorConfigurationNetworkConfiguration> networkConfigurations() {
-        return this.networkConfigurations;
+        return this.networkConfigurations == null ? List.of() : this.networkConfigurations;
     }
     /**
      * @return Details for request HTTP authentication.
      * 
      */
     public List<GetMonitorConfigurationReqAuthenticationDetail> reqAuthenticationDetails() {
-        return this.reqAuthenticationDetails;
+        return this.reqAuthenticationDetails == null ? List.of() : this.reqAuthenticationDetails;
     }
     /**
      * @return Request HTTP authentication scheme.
      * 
      */
-    public String reqAuthenticationScheme() {
-        return this.reqAuthenticationScheme;
+    public Optional<String> reqAuthenticationScheme() {
+        return Optional.ofNullable(this.reqAuthenticationScheme);
     }
     /**
      * @return List of request headers. Example: `[{&#34;headerName&#34;: &#34;content-type&#34;, &#34;headerValue&#34;:&#34;json&#34;}]`
      * 
      */
     public List<GetMonitorConfigurationRequestHeader> requestHeaders() {
-        return this.requestHeaders;
+        return this.requestHeaders == null ? List.of() : this.requestHeaders;
     }
     /**
      * @return Request HTTP method.
      * 
      */
-    public String requestMethod() {
-        return this.requestMethod;
+    public Optional<String> requestMethod() {
+        return Optional.ofNullable(this.requestMethod);
     }
     /**
      * @return Request post body content.
      * 
      */
-    public String requestPostBody() {
-        return this.requestPostBody;
+    public Optional<String> requestPostBody() {
+        return Optional.ofNullable(this.requestPostBody);
     }
     /**
      * @return List of request query params. Example: `[{&#34;paramName&#34;: &#34;sortOrder&#34;, &#34;paramValue&#34;: &#34;asc&#34;}]`
      * 
      */
     public List<GetMonitorConfigurationRequestQueryParam> requestQueryParams() {
-        return this.requestQueryParams;
+        return this.requestQueryParams == null ? List.of() : this.requestQueryParams;
     }
     /**
      * @return Expected HTTP response codes. For status code range, set values such as 2xx, 3xx.
      * 
      */
     public List<String> verifyResponseCodes() {
-        return this.verifyResponseCodes;
+        return this.verifyResponseCodes == null ? List.of() : this.verifyResponseCodes;
     }
     /**
      * @return Verify response content against regular expression based string. If response content does not match the verifyResponseContent value, then it will be considered a failure.
      * 
      */
-    public String verifyResponseContent() {
-        return this.verifyResponseContent;
+    public Optional<String> verifyResponseContent() {
+        return Optional.ofNullable(this.verifyResponseContent);
     }
     /**
      * @return Verifies all the search strings present in the response. If any search string is not present in the response, then it will be considered as a failure.
      * 
      */
     public List<GetMonitorConfigurationVerifyText> verifyTexts() {
-        return this.verifyTexts;
+        return this.verifyTexts == null ? List.of() : this.verifyTexts;
     }
 
     public static Builder builder() {
@@ -234,23 +236,23 @@ public final class GetMonitorConfiguration {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetMonitorConfigurationClientCertificateDetail> clientCertificateDetails;
-        private String configType;
-        private List<GetMonitorConfigurationDnsConfiguration> dnsConfigurations;
-        private Boolean isCertificateValidationEnabled;
-        private Boolean isDefaultSnapshotEnabled;
-        private Boolean isFailureRetried;
-        private Boolean isRedirectionEnabled;
-        private List<GetMonitorConfigurationNetworkConfiguration> networkConfigurations;
-        private List<GetMonitorConfigurationReqAuthenticationDetail> reqAuthenticationDetails;
-        private String reqAuthenticationScheme;
-        private List<GetMonitorConfigurationRequestHeader> requestHeaders;
-        private String requestMethod;
-        private String requestPostBody;
-        private List<GetMonitorConfigurationRequestQueryParam> requestQueryParams;
-        private List<String> verifyResponseCodes;
-        private String verifyResponseContent;
-        private List<GetMonitorConfigurationVerifyText> verifyTexts;
+        private @Nullable List<GetMonitorConfigurationClientCertificateDetail> clientCertificateDetails;
+        private @Nullable String configType;
+        private @Nullable List<GetMonitorConfigurationDnsConfiguration> dnsConfigurations;
+        private @Nullable Boolean isCertificateValidationEnabled;
+        private @Nullable Boolean isDefaultSnapshotEnabled;
+        private @Nullable Boolean isFailureRetried;
+        private @Nullable Boolean isRedirectionEnabled;
+        private @Nullable List<GetMonitorConfigurationNetworkConfiguration> networkConfigurations;
+        private @Nullable List<GetMonitorConfigurationReqAuthenticationDetail> reqAuthenticationDetails;
+        private @Nullable String reqAuthenticationScheme;
+        private @Nullable List<GetMonitorConfigurationRequestHeader> requestHeaders;
+        private @Nullable String requestMethod;
+        private @Nullable String requestPostBody;
+        private @Nullable List<GetMonitorConfigurationRequestQueryParam> requestQueryParams;
+        private @Nullable List<String> verifyResponseCodes;
+        private @Nullable String verifyResponseContent;
+        private @Nullable List<GetMonitorConfigurationVerifyText> verifyTexts;
         public Builder() {}
         public Builder(GetMonitorConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
@@ -274,109 +276,109 @@ public final class GetMonitorConfiguration {
         }
 
         @CustomType.Setter
-        public Builder clientCertificateDetails(List<GetMonitorConfigurationClientCertificateDetail> clientCertificateDetails) {
-            this.clientCertificateDetails = Objects.requireNonNull(clientCertificateDetails);
+        public Builder clientCertificateDetails(@Nullable List<GetMonitorConfigurationClientCertificateDetail> clientCertificateDetails) {
+            this.clientCertificateDetails = clientCertificateDetails;
             return this;
         }
         public Builder clientCertificateDetails(GetMonitorConfigurationClientCertificateDetail... clientCertificateDetails) {
             return clientCertificateDetails(List.of(clientCertificateDetails));
         }
         @CustomType.Setter
-        public Builder configType(String configType) {
-            this.configType = Objects.requireNonNull(configType);
+        public Builder configType(@Nullable String configType) {
+            this.configType = configType;
             return this;
         }
         @CustomType.Setter
-        public Builder dnsConfigurations(List<GetMonitorConfigurationDnsConfiguration> dnsConfigurations) {
-            this.dnsConfigurations = Objects.requireNonNull(dnsConfigurations);
+        public Builder dnsConfigurations(@Nullable List<GetMonitorConfigurationDnsConfiguration> dnsConfigurations) {
+            this.dnsConfigurations = dnsConfigurations;
             return this;
         }
         public Builder dnsConfigurations(GetMonitorConfigurationDnsConfiguration... dnsConfigurations) {
             return dnsConfigurations(List.of(dnsConfigurations));
         }
         @CustomType.Setter
-        public Builder isCertificateValidationEnabled(Boolean isCertificateValidationEnabled) {
-            this.isCertificateValidationEnabled = Objects.requireNonNull(isCertificateValidationEnabled);
+        public Builder isCertificateValidationEnabled(@Nullable Boolean isCertificateValidationEnabled) {
+            this.isCertificateValidationEnabled = isCertificateValidationEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder isDefaultSnapshotEnabled(Boolean isDefaultSnapshotEnabled) {
-            this.isDefaultSnapshotEnabled = Objects.requireNonNull(isDefaultSnapshotEnabled);
+        public Builder isDefaultSnapshotEnabled(@Nullable Boolean isDefaultSnapshotEnabled) {
+            this.isDefaultSnapshotEnabled = isDefaultSnapshotEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder isFailureRetried(Boolean isFailureRetried) {
-            this.isFailureRetried = Objects.requireNonNull(isFailureRetried);
+        public Builder isFailureRetried(@Nullable Boolean isFailureRetried) {
+            this.isFailureRetried = isFailureRetried;
             return this;
         }
         @CustomType.Setter
-        public Builder isRedirectionEnabled(Boolean isRedirectionEnabled) {
-            this.isRedirectionEnabled = Objects.requireNonNull(isRedirectionEnabled);
+        public Builder isRedirectionEnabled(@Nullable Boolean isRedirectionEnabled) {
+            this.isRedirectionEnabled = isRedirectionEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder networkConfigurations(List<GetMonitorConfigurationNetworkConfiguration> networkConfigurations) {
-            this.networkConfigurations = Objects.requireNonNull(networkConfigurations);
+        public Builder networkConfigurations(@Nullable List<GetMonitorConfigurationNetworkConfiguration> networkConfigurations) {
+            this.networkConfigurations = networkConfigurations;
             return this;
         }
         public Builder networkConfigurations(GetMonitorConfigurationNetworkConfiguration... networkConfigurations) {
             return networkConfigurations(List.of(networkConfigurations));
         }
         @CustomType.Setter
-        public Builder reqAuthenticationDetails(List<GetMonitorConfigurationReqAuthenticationDetail> reqAuthenticationDetails) {
-            this.reqAuthenticationDetails = Objects.requireNonNull(reqAuthenticationDetails);
+        public Builder reqAuthenticationDetails(@Nullable List<GetMonitorConfigurationReqAuthenticationDetail> reqAuthenticationDetails) {
+            this.reqAuthenticationDetails = reqAuthenticationDetails;
             return this;
         }
         public Builder reqAuthenticationDetails(GetMonitorConfigurationReqAuthenticationDetail... reqAuthenticationDetails) {
             return reqAuthenticationDetails(List.of(reqAuthenticationDetails));
         }
         @CustomType.Setter
-        public Builder reqAuthenticationScheme(String reqAuthenticationScheme) {
-            this.reqAuthenticationScheme = Objects.requireNonNull(reqAuthenticationScheme);
+        public Builder reqAuthenticationScheme(@Nullable String reqAuthenticationScheme) {
+            this.reqAuthenticationScheme = reqAuthenticationScheme;
             return this;
         }
         @CustomType.Setter
-        public Builder requestHeaders(List<GetMonitorConfigurationRequestHeader> requestHeaders) {
-            this.requestHeaders = Objects.requireNonNull(requestHeaders);
+        public Builder requestHeaders(@Nullable List<GetMonitorConfigurationRequestHeader> requestHeaders) {
+            this.requestHeaders = requestHeaders;
             return this;
         }
         public Builder requestHeaders(GetMonitorConfigurationRequestHeader... requestHeaders) {
             return requestHeaders(List.of(requestHeaders));
         }
         @CustomType.Setter
-        public Builder requestMethod(String requestMethod) {
-            this.requestMethod = Objects.requireNonNull(requestMethod);
+        public Builder requestMethod(@Nullable String requestMethod) {
+            this.requestMethod = requestMethod;
             return this;
         }
         @CustomType.Setter
-        public Builder requestPostBody(String requestPostBody) {
-            this.requestPostBody = Objects.requireNonNull(requestPostBody);
+        public Builder requestPostBody(@Nullable String requestPostBody) {
+            this.requestPostBody = requestPostBody;
             return this;
         }
         @CustomType.Setter
-        public Builder requestQueryParams(List<GetMonitorConfigurationRequestQueryParam> requestQueryParams) {
-            this.requestQueryParams = Objects.requireNonNull(requestQueryParams);
+        public Builder requestQueryParams(@Nullable List<GetMonitorConfigurationRequestQueryParam> requestQueryParams) {
+            this.requestQueryParams = requestQueryParams;
             return this;
         }
         public Builder requestQueryParams(GetMonitorConfigurationRequestQueryParam... requestQueryParams) {
             return requestQueryParams(List.of(requestQueryParams));
         }
         @CustomType.Setter
-        public Builder verifyResponseCodes(List<String> verifyResponseCodes) {
-            this.verifyResponseCodes = Objects.requireNonNull(verifyResponseCodes);
+        public Builder verifyResponseCodes(@Nullable List<String> verifyResponseCodes) {
+            this.verifyResponseCodes = verifyResponseCodes;
             return this;
         }
         public Builder verifyResponseCodes(String... verifyResponseCodes) {
             return verifyResponseCodes(List.of(verifyResponseCodes));
         }
         @CustomType.Setter
-        public Builder verifyResponseContent(String verifyResponseContent) {
-            this.verifyResponseContent = Objects.requireNonNull(verifyResponseContent);
+        public Builder verifyResponseContent(@Nullable String verifyResponseContent) {
+            this.verifyResponseContent = verifyResponseContent;
             return this;
         }
         @CustomType.Setter
-        public Builder verifyTexts(List<GetMonitorConfigurationVerifyText> verifyTexts) {
-            this.verifyTexts = Objects.requireNonNull(verifyTexts);
+        public Builder verifyTexts(@Nullable List<GetMonitorConfigurationVerifyText> verifyTexts) {
+            this.verifyTexts = verifyTexts;
             return this;
         }
         public Builder verifyTexts(GetMonitorConfigurationVerifyText... verifyTexts) {

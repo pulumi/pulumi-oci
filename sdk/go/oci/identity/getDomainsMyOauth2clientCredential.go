@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific My O Auth2 Client Credential resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -70,46 +69,46 @@ type LookupDomainsMyOauth2clientCredentialArgs struct {
 type LookupDomainsMyOauth2clientCredentialResult struct {
 	Authorization *string `pulumi:"authorization"`
 	// Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
-	CompartmentOcid string `pulumi:"compartmentOcid"`
+	CompartmentOcid *string `pulumi:"compartmentOcid"`
 	// A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
-	DeleteInProgress bool `pulumi:"deleteInProgress"`
+	DeleteInProgress *bool `pulumi:"deleteInProgress"`
 	// Description
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
-	DomainOcid string `pulumi:"domainOcid"`
+	DomainOcid *string `pulumi:"domainOcid"`
 	// When the user's credentials expire.
-	ExpiresOn string `pulumi:"expiresOn"`
+	ExpiresOn *string `pulumi:"expiresOn"`
 	// Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The User or App who created the Resource
 	IdcsCreatedBies []GetDomainsMyOauth2clientCredentialIdcsCreatedBy `pulumi:"idcsCreatedBies"`
 	IdcsEndpoint    string                                            `pulumi:"idcsEndpoint"`
 	// The User or App who modified the Resource
 	IdcsLastModifiedBies []GetDomainsMyOauth2clientCredentialIdcsLastModifiedBy `pulumi:"idcsLastModifiedBies"`
 	// The release number when the resource was upgraded.
-	IdcsLastUpgradedInRelease string `pulumi:"idcsLastUpgradedInRelease"`
+	IdcsLastUpgradedInRelease *string `pulumi:"idcsLastUpgradedInRelease"`
 	// Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
 	IdcsPreventedOperations []string `pulumi:"idcsPreventedOperations"`
 	// Specifies whether the secret must be reset.
-	IsResetSecret bool `pulumi:"isResetSecret"`
+	IsResetSecret *bool `pulumi:"isResetSecret"`
 	// A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
 	Metas                      []GetDomainsMyOauth2clientCredentialMeta `pulumi:"metas"`
 	MyOauth2clientCredentialId string                                   `pulumi:"myOauth2clientCredentialId"`
 	// The username.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The user's OCID.
-	Ocid                      string  `pulumi:"ocid"`
+	Ocid                      *string `pulumi:"ocid"`
 	ResourceTypeSchemaVersion *string `pulumi:"resourceTypeSchemaVersion"`
 	// REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
 	Schemas []string `pulumi:"schemas"`
 	// Scopes
 	Scopes []GetDomainsMyOauth2clientCredentialScope `pulumi:"scopes"`
 	// The user's credential status.
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 	// A list of tags on this resource.
 	Tags []GetDomainsMyOauth2clientCredentialTag `pulumi:"tags"`
 	// Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
-	TenancyOcid string `pulumi:"tenancyOcid"`
+	TenancyOcid *string `pulumi:"tenancyOcid"`
 	// The user linked to the OAuth2 client credential.
 	Users []GetDomainsMyOauth2clientCredentialUser `pulumi:"users"`
 }
@@ -158,44 +157,38 @@ func (o LookupDomainsMyOauth2clientCredentialResultOutput) ToLookupDomainsMyOaut
 	return o
 }
 
-func (o LookupDomainsMyOauth2clientCredentialResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupDomainsMyOauth2clientCredentialResult] {
-	return pulumix.Output[LookupDomainsMyOauth2clientCredentialResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o LookupDomainsMyOauth2clientCredentialResultOutput) Authorization() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v LookupDomainsMyOauth2clientCredentialResult) *string { return v.Authorization }).(pulumi.StringPtrOutput)
 }
 
 // Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
-func (o LookupDomainsMyOauth2clientCredentialResultOutput) CompartmentOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsMyOauth2clientCredentialResult) string { return v.CompartmentOcid }).(pulumi.StringOutput)
+func (o LookupDomainsMyOauth2clientCredentialResultOutput) CompartmentOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsMyOauth2clientCredentialResult) *string { return v.CompartmentOcid }).(pulumi.StringPtrOutput)
 }
 
 // A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
-func (o LookupDomainsMyOauth2clientCredentialResultOutput) DeleteInProgress() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDomainsMyOauth2clientCredentialResult) bool { return v.DeleteInProgress }).(pulumi.BoolOutput)
+func (o LookupDomainsMyOauth2clientCredentialResultOutput) DeleteInProgress() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDomainsMyOauth2clientCredentialResult) *bool { return v.DeleteInProgress }).(pulumi.BoolPtrOutput)
 }
 
 // Description
-func (o LookupDomainsMyOauth2clientCredentialResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsMyOauth2clientCredentialResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupDomainsMyOauth2clientCredentialResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsMyOauth2clientCredentialResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
-func (o LookupDomainsMyOauth2clientCredentialResultOutput) DomainOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsMyOauth2clientCredentialResult) string { return v.DomainOcid }).(pulumi.StringOutput)
+func (o LookupDomainsMyOauth2clientCredentialResultOutput) DomainOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsMyOauth2clientCredentialResult) *string { return v.DomainOcid }).(pulumi.StringPtrOutput)
 }
 
 // When the user's credentials expire.
-func (o LookupDomainsMyOauth2clientCredentialResultOutput) ExpiresOn() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsMyOauth2clientCredentialResult) string { return v.ExpiresOn }).(pulumi.StringOutput)
+func (o LookupDomainsMyOauth2clientCredentialResultOutput) ExpiresOn() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsMyOauth2clientCredentialResult) *string { return v.ExpiresOn }).(pulumi.StringPtrOutput)
 }
 
 // Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
-func (o LookupDomainsMyOauth2clientCredentialResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsMyOauth2clientCredentialResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupDomainsMyOauth2clientCredentialResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsMyOauth2clientCredentialResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The User or App who created the Resource
@@ -217,8 +210,8 @@ func (o LookupDomainsMyOauth2clientCredentialResultOutput) IdcsLastModifiedBies(
 }
 
 // The release number when the resource was upgraded.
-func (o LookupDomainsMyOauth2clientCredentialResultOutput) IdcsLastUpgradedInRelease() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsMyOauth2clientCredentialResult) string { return v.IdcsLastUpgradedInRelease }).(pulumi.StringOutput)
+func (o LookupDomainsMyOauth2clientCredentialResultOutput) IdcsLastUpgradedInRelease() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsMyOauth2clientCredentialResult) *string { return v.IdcsLastUpgradedInRelease }).(pulumi.StringPtrOutput)
 }
 
 // Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
@@ -227,8 +220,8 @@ func (o LookupDomainsMyOauth2clientCredentialResultOutput) IdcsPreventedOperatio
 }
 
 // Specifies whether the secret must be reset.
-func (o LookupDomainsMyOauth2clientCredentialResultOutput) IsResetSecret() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDomainsMyOauth2clientCredentialResult) bool { return v.IsResetSecret }).(pulumi.BoolOutput)
+func (o LookupDomainsMyOauth2clientCredentialResultOutput) IsResetSecret() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDomainsMyOauth2clientCredentialResult) *bool { return v.IsResetSecret }).(pulumi.BoolPtrOutput)
 }
 
 // A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
@@ -243,13 +236,13 @@ func (o LookupDomainsMyOauth2clientCredentialResultOutput) MyOauth2clientCredent
 }
 
 // The username.
-func (o LookupDomainsMyOauth2clientCredentialResultOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsMyOauth2clientCredentialResult) string { return v.Name }).(pulumi.StringOutput)
+func (o LookupDomainsMyOauth2clientCredentialResultOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsMyOauth2clientCredentialResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The user's OCID.
-func (o LookupDomainsMyOauth2clientCredentialResultOutput) Ocid() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsMyOauth2clientCredentialResult) string { return v.Ocid }).(pulumi.StringOutput)
+func (o LookupDomainsMyOauth2clientCredentialResultOutput) Ocid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsMyOauth2clientCredentialResult) *string { return v.Ocid }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupDomainsMyOauth2clientCredentialResultOutput) ResourceTypeSchemaVersion() pulumi.StringPtrOutput {
@@ -269,8 +262,8 @@ func (o LookupDomainsMyOauth2clientCredentialResultOutput) Scopes() GetDomainsMy
 }
 
 // The user's credential status.
-func (o LookupDomainsMyOauth2clientCredentialResultOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsMyOauth2clientCredentialResult) string { return v.Status }).(pulumi.StringOutput)
+func (o LookupDomainsMyOauth2clientCredentialResultOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsMyOauth2clientCredentialResult) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // A list of tags on this resource.
@@ -281,8 +274,8 @@ func (o LookupDomainsMyOauth2clientCredentialResultOutput) Tags() GetDomainsMyOa
 }
 
 // Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
-func (o LookupDomainsMyOauth2clientCredentialResultOutput) TenancyOcid() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDomainsMyOauth2clientCredentialResult) string { return v.TenancyOcid }).(pulumi.StringOutput)
+func (o LookupDomainsMyOauth2clientCredentialResultOutput) TenancyOcid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDomainsMyOauth2clientCredentialResult) *string { return v.TenancyOcid }).(pulumi.StringPtrOutput)
 }
 
 // The user linked to the OAuth2 client credential.

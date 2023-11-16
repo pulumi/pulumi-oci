@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Announcements in Oracle Cloud Infrastructure Jms service.
@@ -70,7 +69,7 @@ type GetAnnouncementsResult struct {
 	AnnouncementCollections []GetAnnouncementsAnnouncementCollection `pulumi:"announcementCollections"`
 	Filters                 []GetAnnouncementsFilter                 `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id              string  `pulumi:"id"`
+	Id              *string `pulumi:"id"`
 	SummaryContains *string `pulumi:"summaryContains"`
 	TimeEnd         *string `pulumi:"timeEnd"`
 	TimeStart       *string `pulumi:"timeStart"`
@@ -119,12 +118,6 @@ func (o GetAnnouncementsResultOutput) ToGetAnnouncementsResultOutputWithContext(
 	return o
 }
 
-func (o GetAnnouncementsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAnnouncementsResult] {
-	return pulumix.Output[GetAnnouncementsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The list of announcement_collection.
 func (o GetAnnouncementsResultOutput) AnnouncementCollections() GetAnnouncementsAnnouncementCollectionArrayOutput {
 	return o.ApplyT(func(v GetAnnouncementsResult) []GetAnnouncementsAnnouncementCollection {
@@ -137,8 +130,8 @@ func (o GetAnnouncementsResultOutput) Filters() GetAnnouncementsFilterArrayOutpu
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetAnnouncementsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAnnouncementsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetAnnouncementsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAnnouncementsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetAnnouncementsResultOutput) SummaryContains() pulumi.StringPtrOutput {

@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchema {
@@ -14,27 +16,27 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimiz
      * @return The name of the rule.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return The names of schema objects.
      * 
      */
-    private List<String> objects;
+    private @Nullable List<String> objects;
 
     private GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchema() {}
     /**
      * @return The name of the rule.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return The names of schema objects.
      * 
      */
     public List<String> objects() {
-        return this.objects;
+        return this.objects == null ? List.of() : this.objects;
     }
 
     public static Builder builder() {
@@ -46,8 +48,8 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimiz
     }
     @CustomType.Builder
     public static final class Builder {
-        private String name;
-        private List<String> objects;
+        private @Nullable String name;
+        private @Nullable List<String> objects;
         public Builder() {}
         public Builder(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetailSchema defaults) {
     	      Objects.requireNonNull(defaults);
@@ -56,13 +58,13 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimiz
         }
 
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder objects(List<String> objects) {
-            this.objects = Objects.requireNonNull(objects);
+        public Builder objects(@Nullable List<String> objects) {
+            this.objects = objects;
             return this;
         }
         public Builder objects(String... objects) {

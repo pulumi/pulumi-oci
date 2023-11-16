@@ -8,6 +8,8 @@ import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseSqlTuningAdvi
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanResult {
@@ -20,13 +22,13 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanResult
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String managedDatabaseId;
     /**
      * @return A SQL execution plan as a list of steps.
      * 
      */
-    private List<GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlan> plans;
+    private @Nullable List<GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlan> plans;
     private String sqlObjectId;
     private String sqlTuningAdvisorTaskId;
 
@@ -42,8 +44,8 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanResult
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String managedDatabaseId() {
         return this.managedDatabaseId;
@@ -53,7 +55,7 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanResult
      * 
      */
     public List<GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlan> plans() {
-        return this.plans;
+        return this.plans == null ? List.of() : this.plans;
     }
     public String sqlObjectId() {
         return this.sqlObjectId;
@@ -72,9 +74,9 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanResult
     @CustomType.Builder
     public static final class Builder {
         private String attribute;
-        private String id;
+        private @Nullable String id;
         private String managedDatabaseId;
-        private List<GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlan> plans;
+        private @Nullable List<GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlan> plans;
         private String sqlObjectId;
         private String sqlTuningAdvisorTaskId;
         public Builder() {}
@@ -94,8 +96,8 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanResult
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -104,8 +106,8 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanResult
             return this;
         }
         @CustomType.Setter
-        public Builder plans(List<GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlan> plans) {
-            this.plans = Objects.requireNonNull(plans);
+        public Builder plans(@Nullable List<GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlan> plans) {
+            this.plans = plans;
             return this;
         }
         public Builder plans(GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlan... plans) {

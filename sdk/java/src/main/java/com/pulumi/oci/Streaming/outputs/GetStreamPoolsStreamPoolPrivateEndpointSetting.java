@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetStreamPoolsStreamPoolPrivateEndpointSetting {
@@ -14,17 +16,17 @@ public final class GetStreamPoolsStreamPoolPrivateEndpointSetting {
      * @return The optional list of network security groups that are associated with the private endpoint of the stream pool.
      * 
      */
-    private List<String> nsgIds;
+    private @Nullable List<String> nsgIds;
     /**
      * @return The private IP associated with the stream pool in the associated subnetId. The stream pool&#39;s FQDN resolves to that IP and should be used - instead of the private IP - in order to not trigger any TLS issues.
      * 
      */
-    private String privateEndpointIp;
+    private @Nullable String privateEndpointIp;
     /**
      * @return The subnet id from which the private stream pool can be accessed. Trying to access the streams from another network location will result in an error.
      * 
      */
-    private String subnetId;
+    private @Nullable String subnetId;
 
     private GetStreamPoolsStreamPoolPrivateEndpointSetting() {}
     /**
@@ -32,21 +34,21 @@ public final class GetStreamPoolsStreamPoolPrivateEndpointSetting {
      * 
      */
     public List<String> nsgIds() {
-        return this.nsgIds;
+        return this.nsgIds == null ? List.of() : this.nsgIds;
     }
     /**
      * @return The private IP associated with the stream pool in the associated subnetId. The stream pool&#39;s FQDN resolves to that IP and should be used - instead of the private IP - in order to not trigger any TLS issues.
      * 
      */
-    public String privateEndpointIp() {
-        return this.privateEndpointIp;
+    public Optional<String> privateEndpointIp() {
+        return Optional.ofNullable(this.privateEndpointIp);
     }
     /**
      * @return The subnet id from which the private stream pool can be accessed. Trying to access the streams from another network location will result in an error.
      * 
      */
-    public String subnetId() {
-        return this.subnetId;
+    public Optional<String> subnetId() {
+        return Optional.ofNullable(this.subnetId);
     }
 
     public static Builder builder() {
@@ -58,9 +60,9 @@ public final class GetStreamPoolsStreamPoolPrivateEndpointSetting {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> nsgIds;
-        private String privateEndpointIp;
-        private String subnetId;
+        private @Nullable List<String> nsgIds;
+        private @Nullable String privateEndpointIp;
+        private @Nullable String subnetId;
         public Builder() {}
         public Builder(GetStreamPoolsStreamPoolPrivateEndpointSetting defaults) {
     	      Objects.requireNonNull(defaults);
@@ -70,21 +72,21 @@ public final class GetStreamPoolsStreamPoolPrivateEndpointSetting {
         }
 
         @CustomType.Setter
-        public Builder nsgIds(List<String> nsgIds) {
-            this.nsgIds = Objects.requireNonNull(nsgIds);
+        public Builder nsgIds(@Nullable List<String> nsgIds) {
+            this.nsgIds = nsgIds;
             return this;
         }
         public Builder nsgIds(String... nsgIds) {
             return nsgIds(List.of(nsgIds));
         }
         @CustomType.Setter
-        public Builder privateEndpointIp(String privateEndpointIp) {
-            this.privateEndpointIp = Objects.requireNonNull(privateEndpointIp);
+        public Builder privateEndpointIp(@Nullable String privateEndpointIp) {
+            this.privateEndpointIp = privateEndpointIp;
             return this;
         }
         @CustomType.Setter
-        public Builder subnetId(String subnetId) {
-            this.subnetId = Objects.requireNonNull(subnetId);
+        public Builder subnetId(@Nullable String subnetId) {
+            this.subnetId = subnetId;
             return this;
         }
         public GetStreamPoolsStreamPoolPrivateEndpointSetting build() {

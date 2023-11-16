@@ -110,11 +110,11 @@ export class MysqlDbSystem extends pulumi.CustomResource {
     /**
      * The password for the administrative user. The password must be between 8 and 32 characters long, and must contain at least 1 numeric character, 1 lowercase character, 1 uppercase character, and 1 special (nonalphanumeric) character.
      */
-    public readonly adminPassword!: pulumi.Output<string>;
+    public readonly adminPassword!: pulumi.Output<string | undefined>;
     /**
      * The username for the administrative user.
      */
-    public readonly adminUsername!: pulumi.Output<string>;
+    public readonly adminUsername!: pulumi.Output<string | undefined>;
     /**
      * The availability domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
      *
@@ -126,11 +126,11 @@ export class MysqlDbSystem extends pulumi.CustomResource {
     /**
      * (Updatable) Backup policy as optionally used for DB System Creation.
      */
-    public readonly backupPolicy!: pulumi.Output<outputs.Mysql.MysqlDbSystemBackupPolicy>;
+    public readonly backupPolicy!: pulumi.Output<outputs.Mysql.MysqlDbSystemBackupPolicy | undefined>;
     /**
      * A list with a summary of all the Channels attached to the DB System.
      */
-    public /*out*/ readonly channels!: pulumi.Output<outputs.Mysql.MysqlDbSystemChannel[]>;
+    public /*out*/ readonly channels!: pulumi.Output<outputs.Mysql.MysqlDbSystemChannel[] | undefined>;
     /**
      * The OCID of the compartment.
      */
@@ -138,43 +138,43 @@ export class MysqlDbSystem extends pulumi.CustomResource {
     /**
      * (Updatable) The OCID of the Configuration to be used for this DB System.
      */
-    public readonly configurationId!: pulumi.Output<string>;
+    public readonly configurationId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled, and whether to enable or disable syncing of the Binary Logs.
      */
-    public readonly crashRecovery!: pulumi.Output<string>;
+    public readonly crashRecovery!: pulumi.Output<string | undefined>;
     /**
      * The availability domain and fault domain a DB System is placed in.
      */
-    public /*out*/ readonly currentPlacements!: pulumi.Output<outputs.Mysql.MysqlDbSystemCurrentPlacement[]>;
+    public /*out*/ readonly currentPlacements!: pulumi.Output<outputs.Mysql.MysqlDbSystemCurrentPlacement[] | undefined>;
     /**
      * (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
      */
-    public readonly dataStorageSizeInGb!: pulumi.Output<number>;
+    public readonly dataStorageSizeInGb!: pulumi.Output<number | undefined>;
     /**
      * (Updatable) Whether to enable monitoring via the Database Management service.
      */
-    public readonly databaseManagement!: pulumi.Output<string>;
+    public readonly databaseManagement!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) Policy for how the DB System and related resources should be handled at the time of its deletion.
      */
-    public readonly deletionPolicies!: pulumi.Output<outputs.Mysql.MysqlDbSystemDeletionPolicy[]>;
+    public readonly deletionPolicies!: pulumi.Output<outputs.Mysql.MysqlDbSystemDeletionPolicy[] | undefined>;
     /**
      * (Updatable) User-provided data about the DB System.
      */
-    public readonly description!: pulumi.Output<string>;
+    public readonly description!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The user-friendly name for the DB System. It does not have to be unique.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    public readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * The network endpoints available for this DB System.
      */
-    public /*out*/ readonly endpoints!: pulumi.Output<outputs.Mysql.MysqlDbSystemEndpoint[]>;
+    public /*out*/ readonly endpoints!: pulumi.Output<outputs.Mysql.MysqlDbSystemEndpoint[] | undefined>;
     /**
      * The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
      *
@@ -182,15 +182,15 @@ export class MysqlDbSystem extends pulumi.CustomResource {
      *
      * For a standalone DB System, this defines the fault domain in which the DB System is placed.
      */
-    public readonly faultDomain!: pulumi.Output<string>;
+    public readonly faultDomain!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * A summary of a HeatWave cluster.
      */
-    public /*out*/ readonly heatWaveClusters!: pulumi.Output<outputs.Mysql.MysqlDbSystemHeatWaveCluster[]>;
+    public /*out*/ readonly heatWaveClusters!: pulumi.Output<outputs.Mysql.MysqlDbSystemHeatWaveCluster[] | undefined>;
     /**
      * The hostname for the primary endpoint of the DB System. Used for DNS.
      *
@@ -198,45 +198,45 @@ export class MysqlDbSystem extends pulumi.CustomResource {
      *
      * Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
      */
-    public readonly hostnameLabel!: pulumi.Output<string>;
+    public readonly hostnameLabel!: pulumi.Output<string | undefined>;
     /**
      * The IP address the DB System is configured to listen on. A private IP address of your choice to assign to the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
      */
-    public readonly ipAddress!: pulumi.Output<string>;
+    public readonly ipAddress!: pulumi.Output<string | undefined>;
     /**
      * If the DB System has a HeatWave Cluster attached.
      */
-    public /*out*/ readonly isHeatWaveClusterAttached!: pulumi.Output<boolean>;
+    public /*out*/ readonly isHeatWaveClusterAttached!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) Specifies if the DB System is highly available.
      *
      * When creating a DB System with High Availability, three instances are created and placed according to your region- and subnet-type. The secondaries are placed automatically in the other two availability or fault domains.  You can choose the preferred location of your primary instance, only.
      */
-    public readonly isHighlyAvailable!: pulumi.Output<boolean>;
+    public readonly isHighlyAvailable!: pulumi.Output<boolean | undefined>;
     /**
      * Additional information about the current lifecycleState.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The Maintenance Policy for the DB System or Read Replica that this model is included in. `maintenance` and `backupPolicy` cannot be updated in the same request.
      */
-    public readonly maintenance!: pulumi.Output<outputs.Mysql.MysqlDbSystemMaintenance>;
+    public readonly maintenance!: pulumi.Output<outputs.Mysql.MysqlDbSystemMaintenance | undefined>;
     /**
      * The specific MySQL version identifier.
      */
-    public readonly mysqlVersion!: pulumi.Output<string>;
+    public readonly mysqlVersion!: pulumi.Output<string | undefined>;
     /**
      * Point-in-time Recovery details like earliest and latest recovery time point for the DB System.
      */
-    public /*out*/ readonly pointInTimeRecoveryDetails!: pulumi.Output<outputs.Mysql.MysqlDbSystemPointInTimeRecoveryDetail[]>;
+    public /*out*/ readonly pointInTimeRecoveryDetails!: pulumi.Output<outputs.Mysql.MysqlDbSystemPointInTimeRecoveryDetail[] | undefined>;
     /**
      * The port for primary endpoint of the DB System to listen on.
      */
-    public readonly port!: pulumi.Output<number>;
+    public readonly port!: pulumi.Output<number | undefined>;
     /**
      * The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
      */
-    public readonly portX!: pulumi.Output<number>;
+    public readonly portX!: pulumi.Output<number | undefined>;
     /**
      * (Updatable) The name of the shape. The shape determines the resources allocated
      * * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
@@ -252,11 +252,11 @@ export class MysqlDbSystem extends pulumi.CustomResource {
     /**
      * Parameters detailing how to provision the initial data of the system.
      */
-    public readonly source!: pulumi.Output<outputs.Mysql.MysqlDbSystemSource>;
+    public readonly source!: pulumi.Output<outputs.Mysql.MysqlDbSystemSource | undefined>;
     /**
      * (Updatable) The target state for the DB System. Could be set to `ACTIVE` or `INACTIVE`.
      */
-    public readonly state!: pulumi.Output<string>;
+    public readonly state!: pulumi.Output<string | undefined>;
     /**
      * The OCID of the subnet the DB System is associated with.
      */
@@ -264,11 +264,11 @@ export class MysqlDbSystem extends pulumi.CustomResource {
     /**
      * The date and time the DB System was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The time the DB System was last updated.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a MysqlDbSystem resource with the given unique name, arguments, and options.

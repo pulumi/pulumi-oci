@@ -46,17 +46,11 @@ class GetRedisClustersResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the Redis cluster.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A user-friendly name of a Redis cluster node.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -67,25 +61,16 @@ class GetRedisClustersResult:
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster.
-        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="redisClusterCollections")
-    def redis_cluster_collections(self) -> Sequence['outputs.GetRedisClustersRedisClusterCollectionResult']:
-        """
-        The list of redis_cluster_collection.
-        """
+    def redis_cluster_collections(self) -> Optional[Sequence['outputs.GetRedisClustersRedisClusterCollectionResult']]:
         return pulumi.get(self, "redis_cluster_collections")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the Redis cluster.
-        """
         return pulumi.get(self, "state")
 
 
@@ -110,27 +95,7 @@ def get_redis_clusters(compartment_id: Optional[str] = None,
                        state: Optional[str] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetRedisClustersResult:
     """
-    This data source provides the list of Redis Clusters in Oracle Cloud Infrastructure Redis service.
-
-    Lists the Redis clusters in the specified compartment. A Redis cluster is a memory-based storage solution. For more information, see [OCI Caching Service with Redis](https://docs.cloud.oracle.com/iaas/Content/redis/home.htm).
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_redis_clusters = oci.Redis.get_redis_clusters(compartment_id=var["compartment_id"],
-        display_name=var["redis_cluster_display_name"],
-        id=var["redis_cluster_id"],
-        state=var["redis_cluster_state"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster.
-    :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -158,26 +123,6 @@ def get_redis_clusters_output(compartment_id: Optional[pulumi.Input[Optional[str
                               state: Optional[pulumi.Input[Optional[str]]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRedisClustersResult]:
     """
-    This data source provides the list of Redis Clusters in Oracle Cloud Infrastructure Redis service.
-
-    Lists the Redis clusters in the specified compartment. A Redis cluster is a memory-based storage solution. For more information, see [OCI Caching Service with Redis](https://docs.cloud.oracle.com/iaas/Content/redis/home.htm).
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_redis_clusters = oci.Redis.get_redis_clusters(compartment_id=var["compartment_id"],
-        display_name=var["redis_cluster_display_name"],
-        id=var["redis_cluster_id"],
-        state=var["redis_cluster_state"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster.
-    :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
+    Use this data source to access information about an existing resource.
     """
     ...

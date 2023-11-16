@@ -300,7 +300,7 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Indicates whether audit retention settings like online and offline months is set at the target level overriding the global audit retention settings.
         /// </summary>
@@ -336,7 +336,7 @@ namespace Pulumi.Oci.DataSafe
 
             ImmutableArray<Outputs.GetAuditProfilesFilterResult> filters,
 
-            string id,
+            string? id,
 
             bool? isOverrideGlobalRetentionSetting,
 

@@ -46,83 +46,83 @@ export interface GetBastionResult {
     /**
      * The type of bastion.
      */
-    readonly bastionType: string;
+    readonly bastionType?: string;
     /**
      * A list of address ranges in CIDR notation that you want to allow to connect to sessions hosted by this bastion.
      */
-    readonly clientCidrBlockAllowLists: string[];
+    readonly clientCidrBlockAllowLists?: string[];
     /**
      * The unique identifier (OCID) of the compartment where the bastion is located.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * Flag to enable FQDN and SOCKS5 Proxy Support. Example: `ENABLED`, `DISABLED`
      */
-    readonly dnsProxyStatus: string;
+    readonly dnsProxyStatus?: string;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The unique identifier (OCID) of the bastion, which can't be changed after creation.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * A message describing the current state in more detail.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * The maximum amount of time that any session on the bastion can remain active.
      */
-    readonly maxSessionTtlInSeconds: number;
+    readonly maxSessionTtlInSeconds?: number;
     /**
      * The maximum number of active sessions allowed on the bastion.
      */
-    readonly maxSessionsAllowed: number;
+    readonly maxSessionsAllowed?: number;
     /**
      * The name of the bastion, which can't be changed after creation.
      */
-    readonly name: string;
+    readonly name?: string;
     /**
      * The phonebook entry of the customer's team, which can't be changed after creation. Not applicable to `standard` bastions.
      */
-    readonly phoneBookEntry: string;
+    readonly phoneBookEntry?: string;
     /**
      * The private IP address of the created private endpoint.
      */
-    readonly privateEndpointIpAddress: string;
+    readonly privateEndpointIpAddress?: string;
     /**
      * The current state of the bastion.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * A list of IP addresses of the hosts that the bastion has access to. Not applicable to `standard` bastions.
      */
-    readonly staticJumpHostIpAddresses: string[];
+    readonly staticJumpHostIpAddresses?: string[];
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * The unique identifier (OCID) of the subnet that the bastion connects to.
      */
-    readonly targetSubnetId: string;
+    readonly targetSubnetId?: string;
     /**
      * The unique identifier (OCID) of the virtual cloud network (VCN) that the bastion connects to.
      */
-    readonly targetVcnId: string;
+    readonly targetVcnId?: string;
     /**
      * The time the bastion was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The time the bastion was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific Bastion resource in Oracle Cloud Infrastructure Bastion service.

@@ -16,47 +16,47 @@ namespace Pulumi.Oci.DataCatalog.Outputs
         /// <summary>
         /// Unique catalog identifier.
         /// </summary>
-        public readonly string CatalogId;
+        public readonly string? CatalogId;
         /// <summary>
         /// Detailed description of the type.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// Unique type key that is immutable.
         /// </summary>
-        public readonly string Key;
+        public readonly string? Key;
         /// <summary>
         /// Immutable resource name.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// Indicates the category of this type . For example, data assets or connections.
         /// </summary>
-        public readonly string TypeCategory;
+        public readonly string? TypeCategory;
         /// <summary>
         /// URI to the type instance in the API.
         /// </summary>
-        public readonly string Uri;
+        public readonly string? Uri;
 
         [OutputConstructor]
         private GetCatalogTypesTypeCollectionItemResult(
-            string catalogId,
+            string? catalogId,
 
-            string description,
+            string? description,
 
-            string key,
+            string? key,
 
-            string name,
+            string? name,
 
-            string state,
+            string? state,
 
-            string typeCategory,
+            string? typeCategory,
 
-            string uri)
+            string? uri)
         {
             CatalogId = catalogId;
             Description = description;

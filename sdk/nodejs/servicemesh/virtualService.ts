@@ -81,27 +81,27 @@ export class VirtualService extends pulumi.CustomResource {
     /**
      * (Updatable) Routing policy for the virtual service.
      */
-    public readonly defaultRoutingPolicy!: pulumi.Output<outputs.ServiceMesh.VirtualServiceDefaultRoutingPolicy>;
+    public readonly defaultRoutingPolicy!: pulumi.Output<outputs.ServiceMesh.VirtualServiceDefaultRoutingPolicy | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
      */
-    public readonly description!: pulumi.Output<string>;
+    public readonly description!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) The DNS hostnames of the virtual service that is used by its callers. Wildcard hostnames are supported in the prefix form. Examples of valid hostnames are "www.example.com", "*.example.com", "*.com". Can be omitted if the virtual service will only have TCP virtual deployments.
      */
-    public readonly hosts!: pulumi.Output<string[]>;
+    public readonly hosts!: pulumi.Output<string[] | undefined>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * The OCID of the service mesh in which this virtual service is created.
      */
@@ -109,7 +109,7 @@ export class VirtualService extends pulumi.CustomResource {
     /**
      * (Updatable) The mTLS authentication mode to use when receiving requests from other virtual services or ingress gateways within the mesh.
      */
-    public readonly mtls!: pulumi.Output<outputs.ServiceMesh.VirtualServiceMtls>;
+    public readonly mtls!: pulumi.Output<outputs.ServiceMesh.VirtualServiceMtls | undefined>;
     /**
      * A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name` 
      *
@@ -121,19 +121,19 @@ export class VirtualService extends pulumi.CustomResource {
     /**
      * The current state of the Resource.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The time when this resource was created in an RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The time when this resource was updated in an RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a VirtualService resource with the given unique name, arguments, and options.

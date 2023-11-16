@@ -8,6 +8,8 @@ import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSoftwareSourceModuleStreamProfileResult {
@@ -15,17 +17,17 @@ public final class GetSoftwareSourceModuleStreamProfileResult {
      * @return A description of the contents of the module stream profile
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Indicates if this profile is the default for its module stream.
      * 
      */
-    private Boolean isDefault;
+    private @Nullable Boolean isDefault;
     /**
      * @return The name of the module that contains the stream profile
      * 
@@ -35,7 +37,7 @@ public final class GetSoftwareSourceModuleStreamProfileResult {
      * @return A list of packages that constitute the profile.  Each element in the list is the name of a package.  The name is suitable to use as an argument to other OS Management APIs that interact directly with packages.
      * 
      */
-    private List<String> packages;
+    private @Nullable List<String> packages;
     /**
      * @return The name of the profile
      * 
@@ -53,22 +55,22 @@ public final class GetSoftwareSourceModuleStreamProfileResult {
      * @return A description of the contents of the module stream profile
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Indicates if this profile is the default for its module stream.
      * 
      */
-    public Boolean isDefault() {
-        return this.isDefault;
+    public Optional<Boolean> isDefault() {
+        return Optional.ofNullable(this.isDefault);
     }
     /**
      * @return The name of the module that contains the stream profile
@@ -82,7 +84,7 @@ public final class GetSoftwareSourceModuleStreamProfileResult {
      * 
      */
     public List<String> packages() {
-        return this.packages;
+        return this.packages == null ? List.of() : this.packages;
     }
     /**
      * @return The name of the profile
@@ -111,11 +113,11 @@ public final class GetSoftwareSourceModuleStreamProfileResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String description;
-        private String id;
-        private Boolean isDefault;
+        private @Nullable String description;
+        private @Nullable String id;
+        private @Nullable Boolean isDefault;
         private String moduleName;
-        private List<String> packages;
+        private @Nullable List<String> packages;
         private String profileName;
         private String softwareSourceId;
         private String streamName;
@@ -133,18 +135,18 @@ public final class GetSoftwareSourceModuleStreamProfileResult {
         }
 
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder isDefault(Boolean isDefault) {
-            this.isDefault = Objects.requireNonNull(isDefault);
+        public Builder isDefault(@Nullable Boolean isDefault) {
+            this.isDefault = isDefault;
             return this;
         }
         @CustomType.Setter
@@ -153,8 +155,8 @@ public final class GetSoftwareSourceModuleStreamProfileResult {
             return this;
         }
         @CustomType.Setter
-        public Builder packages(List<String> packages) {
-            this.packages = Objects.requireNonNull(packages);
+        public Builder packages(@Nullable List<String> packages) {
+            this.packages = packages;
             return this;
         }
         public Builder packages(String... packages) {

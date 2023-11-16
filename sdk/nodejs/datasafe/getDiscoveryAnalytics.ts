@@ -77,13 +77,13 @@ export interface GetDiscoveryAnalyticsResult {
     /**
      * The list of discovery_analytics_collection.
      */
-    readonly discoveryAnalyticsCollections: outputs.DataSafe.GetDiscoveryAnalyticsDiscoveryAnalyticsCollection[];
+    readonly discoveryAnalyticsCollections?: outputs.DataSafe.GetDiscoveryAnalyticsDiscoveryAnalyticsCollection[];
     readonly filters?: outputs.DataSafe.GetDiscoveryAnalyticsFilter[];
     readonly groupBy?: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The OCID of the sensitive data model.
      */

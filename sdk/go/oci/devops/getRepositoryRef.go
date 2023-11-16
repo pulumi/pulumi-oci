@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Repository Ref resource in Oracle Cloud Infrastructure Devops service.
@@ -63,20 +62,20 @@ type LookupRepositoryRefArgs struct {
 // A collection of values returned by getRepositoryRef.
 type LookupRepositoryRefResult struct {
 	// Commit ID pointed to by the new branch.
-	CommitId string `pulumi:"commitId"`
+	CommitId *string `pulumi:"commitId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Unique full reference name inside a repository.
-	FullRefName string `pulumi:"fullRefName"`
-	Id          string `pulumi:"id"`
+	FullRefName *string `pulumi:"fullRefName"`
+	Id          *string `pulumi:"id"`
 	// SHA-1 hash value of the object pointed to by the tag.
-	ObjectId string `pulumi:"objectId"`
+	ObjectId *string `pulumi:"objectId"`
 	// Unique reference name inside a repository.
 	RefName string `pulumi:"refName"`
 	// The type of reference (BRANCH or TAG).
-	RefType string `pulumi:"refType"`
+	RefType *string `pulumi:"refType"`
 	// The OCID of the repository containing the reference.
 	RepositoryId string `pulumi:"repositoryId"`
 }
@@ -121,15 +120,9 @@ func (o LookupRepositoryRefResultOutput) ToLookupRepositoryRefResultOutputWithCo
 	return o
 }
 
-func (o LookupRepositoryRefResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupRepositoryRefResult] {
-	return pulumix.Output[LookupRepositoryRefResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Commit ID pointed to by the new branch.
-func (o LookupRepositoryRefResultOutput) CommitId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupRepositoryRefResult) string { return v.CommitId }).(pulumi.StringOutput)
+func (o LookupRepositoryRefResultOutput) CommitId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupRepositoryRefResult) *string { return v.CommitId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
@@ -143,17 +136,17 @@ func (o LookupRepositoryRefResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Unique full reference name inside a repository.
-func (o LookupRepositoryRefResultOutput) FullRefName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupRepositoryRefResult) string { return v.FullRefName }).(pulumi.StringOutput)
+func (o LookupRepositoryRefResultOutput) FullRefName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupRepositoryRefResult) *string { return v.FullRefName }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupRepositoryRefResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupRepositoryRefResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupRepositoryRefResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupRepositoryRefResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // SHA-1 hash value of the object pointed to by the tag.
-func (o LookupRepositoryRefResultOutput) ObjectId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupRepositoryRefResult) string { return v.ObjectId }).(pulumi.StringOutput)
+func (o LookupRepositoryRefResultOutput) ObjectId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupRepositoryRefResult) *string { return v.ObjectId }).(pulumi.StringPtrOutput)
 }
 
 // Unique reference name inside a repository.
@@ -162,8 +155,8 @@ func (o LookupRepositoryRefResultOutput) RefName() pulumi.StringOutput {
 }
 
 // The type of reference (BRANCH or TAG).
-func (o LookupRepositoryRefResultOutput) RefType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupRepositoryRefResult) string { return v.RefType }).(pulumi.StringOutput)
+func (o LookupRepositoryRefResultOutput) RefType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupRepositoryRefResult) *string { return v.RefType }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the repository containing the reference.

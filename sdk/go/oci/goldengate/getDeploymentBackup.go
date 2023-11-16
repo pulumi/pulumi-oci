@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Deployment Backup resource in Oracle Cloud Infrastructure Golden Gate service.
@@ -60,46 +59,46 @@ type LookupDeploymentBackupArgs struct {
 // A collection of values returned by getDeploymentBackup.
 type LookupDeploymentBackupResult struct {
 	// Possible Deployment backup types.
-	BackupType string `pulumi:"backupType"`
+	BackupType *string `pulumi:"backupType"`
 	// Name of the bucket where the object is to be uploaded in the object storage
-	Bucket string `pulumi:"bucket"`
+	Bucket *string `pulumi:"bucket"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags        map[string]interface{} `pulumi:"definedTags"`
 	DeploymentBackupId string                 `pulumi:"deploymentBackupId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
-	DeploymentId string `pulumi:"deploymentId"`
+	DeploymentId *string `pulumi:"deploymentId"`
 	// An object's Display Name.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup being referenced.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// True if this object is automatically created
-	IsAutomatic bool `pulumi:"isAutomatic"`
+	IsAutomatic *bool `pulumi:"isAutomatic"`
 	// Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Name of namespace that serves as a container for all of your buckets
-	Namespace string `pulumi:"namespace"`
+	Namespace *string `pulumi:"namespace"`
 	// Name of the object to be uploaded to object storage
-	Object string `pulumi:"object"`
+	Object *string `pulumi:"object"`
 	// Version of OGG
-	OggVersion string `pulumi:"oggVersion"`
+	OggVersion *string `pulumi:"oggVersion"`
 	// The size of the backup stored in object storage (in bytes)
-	SizeInBytes float64 `pulumi:"sizeInBytes"`
+	SizeInBytes *float64 `pulumi:"sizeInBytes"`
 	// Possible lifecycle states.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time of the resource backup finish. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-	TimeBackupFinished string `pulumi:"timeBackupFinished"`
+	TimeBackupFinished *string `pulumi:"timeBackupFinished"`
 	// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time of the resource backup. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-	TimeOfBackup string `pulumi:"timeOfBackup"`
+	TimeOfBackup *string `pulumi:"timeOfBackup"`
 	// The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func LookupDeploymentBackupOutput(ctx *pulumi.Context, args LookupDeploymentBackupOutputArgs, opts ...pulumi.InvokeOption) LookupDeploymentBackupResultOutput {
@@ -140,25 +139,19 @@ func (o LookupDeploymentBackupResultOutput) ToLookupDeploymentBackupResultOutput
 	return o
 }
 
-func (o LookupDeploymentBackupResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupDeploymentBackupResult] {
-	return pulumix.Output[LookupDeploymentBackupResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Possible Deployment backup types.
-func (o LookupDeploymentBackupResultOutput) BackupType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDeploymentBackupResult) string { return v.BackupType }).(pulumi.StringOutput)
+func (o LookupDeploymentBackupResultOutput) BackupType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDeploymentBackupResult) *string { return v.BackupType }).(pulumi.StringPtrOutput)
 }
 
 // Name of the bucket where the object is to be uploaded in the object storage
-func (o LookupDeploymentBackupResultOutput) Bucket() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDeploymentBackupResult) string { return v.Bucket }).(pulumi.StringOutput)
+func (o LookupDeploymentBackupResultOutput) Bucket() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDeploymentBackupResult) *string { return v.Bucket }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
-func (o LookupDeploymentBackupResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDeploymentBackupResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupDeploymentBackupResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDeploymentBackupResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
@@ -171,13 +164,13 @@ func (o LookupDeploymentBackupResultOutput) DeploymentBackupId() pulumi.StringOu
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
-func (o LookupDeploymentBackupResultOutput) DeploymentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDeploymentBackupResult) string { return v.DeploymentId }).(pulumi.StringOutput)
+func (o LookupDeploymentBackupResultOutput) DeploymentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDeploymentBackupResult) *string { return v.DeploymentId }).(pulumi.StringPtrOutput)
 }
 
 // An object's Display Name.
-func (o LookupDeploymentBackupResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDeploymentBackupResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupDeploymentBackupResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDeploymentBackupResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
@@ -186,43 +179,43 @@ func (o LookupDeploymentBackupResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup being referenced.
-func (o LookupDeploymentBackupResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDeploymentBackupResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupDeploymentBackupResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDeploymentBackupResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // True if this object is automatically created
-func (o LookupDeploymentBackupResultOutput) IsAutomatic() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupDeploymentBackupResult) bool { return v.IsAutomatic }).(pulumi.BoolOutput)
+func (o LookupDeploymentBackupResultOutput) IsAutomatic() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupDeploymentBackupResult) *bool { return v.IsAutomatic }).(pulumi.BoolPtrOutput)
 }
 
 // Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
-func (o LookupDeploymentBackupResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDeploymentBackupResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupDeploymentBackupResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDeploymentBackupResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // Name of namespace that serves as a container for all of your buckets
-func (o LookupDeploymentBackupResultOutput) Namespace() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDeploymentBackupResult) string { return v.Namespace }).(pulumi.StringOutput)
+func (o LookupDeploymentBackupResultOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDeploymentBackupResult) *string { return v.Namespace }).(pulumi.StringPtrOutput)
 }
 
 // Name of the object to be uploaded to object storage
-func (o LookupDeploymentBackupResultOutput) Object() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDeploymentBackupResult) string { return v.Object }).(pulumi.StringOutput)
+func (o LookupDeploymentBackupResultOutput) Object() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDeploymentBackupResult) *string { return v.Object }).(pulumi.StringPtrOutput)
 }
 
 // Version of OGG
-func (o LookupDeploymentBackupResultOutput) OggVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDeploymentBackupResult) string { return v.OggVersion }).(pulumi.StringOutput)
+func (o LookupDeploymentBackupResultOutput) OggVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDeploymentBackupResult) *string { return v.OggVersion }).(pulumi.StringPtrOutput)
 }
 
 // The size of the backup stored in object storage (in bytes)
-func (o LookupDeploymentBackupResultOutput) SizeInBytes() pulumi.Float64Output {
-	return o.ApplyT(func(v LookupDeploymentBackupResult) float64 { return v.SizeInBytes }).(pulumi.Float64Output)
+func (o LookupDeploymentBackupResultOutput) SizeInBytes() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v LookupDeploymentBackupResult) *float64 { return v.SizeInBytes }).(pulumi.Float64PtrOutput)
 }
 
 // Possible lifecycle states.
-func (o LookupDeploymentBackupResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDeploymentBackupResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupDeploymentBackupResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDeploymentBackupResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
@@ -231,23 +224,23 @@ func (o LookupDeploymentBackupResultOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time of the resource backup finish. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-func (o LookupDeploymentBackupResultOutput) TimeBackupFinished() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDeploymentBackupResult) string { return v.TimeBackupFinished }).(pulumi.StringOutput)
+func (o LookupDeploymentBackupResultOutput) TimeBackupFinished() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDeploymentBackupResult) *string { return v.TimeBackupFinished }).(pulumi.StringPtrOutput)
 }
 
 // The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-func (o LookupDeploymentBackupResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDeploymentBackupResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupDeploymentBackupResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDeploymentBackupResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time of the resource backup. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-func (o LookupDeploymentBackupResultOutput) TimeOfBackup() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDeploymentBackupResult) string { return v.TimeOfBackup }).(pulumi.StringOutput)
+func (o LookupDeploymentBackupResultOutput) TimeOfBackup() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDeploymentBackupResult) *string { return v.TimeOfBackup }).(pulumi.StringPtrOutput)
 }
 
 // The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-func (o LookupDeploymentBackupResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDeploymentBackupResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupDeploymentBackupResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDeploymentBackupResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

@@ -55,7 +55,7 @@ class GetDatabasePdbConversionHistoryEntriesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -68,18 +68,12 @@ class GetDatabasePdbConversionHistoryEntriesResult:
 
     @property
     @pulumi.getter(name="pdbConversionHistoryEntries")
-    def pdb_conversion_history_entries(self) -> Sequence['outputs.GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryResult']:
-        """
-        The list of pdb_conversion_history_entries.
-        """
+    def pdb_conversion_history_entries(self) -> Optional[Sequence['outputs.GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryResult']]:
         return pulumi.get(self, "pdb_conversion_history_entries")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        Status of an operation performed during the conversion of a non-container database to a pluggable database.
-        """
         return pulumi.get(self, "state")
 
 
@@ -103,25 +97,7 @@ def get_database_pdb_conversion_history_entries(database_id: Optional[str] = Non
                                                 state: Optional[str] = None,
                                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDatabasePdbConversionHistoryEntriesResult:
     """
-    This data source provides the list of Database Pdb Conversion History Entries in Oracle Cloud Infrastructure Database service.
-
-    Gets the pluggable database conversion history for a specified database in a bare metal or virtual machine DB system.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_database_pdb_conversion_history_entries = oci.Database.get_database_pdb_conversion_history_entries(database_id=oci_database_database["test_database"]["id"],
-        pdb_conversion_action=var["database_pdb_conversion_history_entry_pdb_conversion_action"],
-        state=var["database_pdb_conversion_history_entry_state"])
-    ```
-
-
-    :param str database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str pdb_conversion_action: A filter to return only the pluggable database conversion history entries that match the specified conversion action. For example, you can use this filter to return only entries for the precheck operation.
-    :param str state: A filter to return only the pluggable database conversion history entries that match the specified lifecycle state. For example, you can use this filter to return only entries in the "failed" lifecycle state.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['databaseId'] = database_id
@@ -147,24 +123,6 @@ def get_database_pdb_conversion_history_entries_output(database_id: Optional[pul
                                                        state: Optional[pulumi.Input[Optional[str]]] = None,
                                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDatabasePdbConversionHistoryEntriesResult]:
     """
-    This data source provides the list of Database Pdb Conversion History Entries in Oracle Cloud Infrastructure Database service.
-
-    Gets the pluggable database conversion history for a specified database in a bare metal or virtual machine DB system.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_database_pdb_conversion_history_entries = oci.Database.get_database_pdb_conversion_history_entries(database_id=oci_database_database["test_database"]["id"],
-        pdb_conversion_action=var["database_pdb_conversion_history_entry_pdb_conversion_action"],
-        state=var["database_pdb_conversion_history_entry_state"])
-    ```
-
-
-    :param str database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str pdb_conversion_action: A filter to return only the pluggable database conversion history entries that match the specified conversion action. For example, you can use this filter to return only entries for the precheck operation.
-    :param str state: A filter to return only the pluggable database conversion history entries that match the specified lifecycle state. For example, you can use this filter to return only entries in the "failed" lifecycle state.
+    Use this data source to access information about an existing resource.
     """
     ...

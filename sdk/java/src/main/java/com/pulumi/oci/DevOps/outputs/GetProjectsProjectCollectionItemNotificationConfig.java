@@ -6,6 +6,8 @@ package com.pulumi.oci.DevOps.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetProjectsProjectCollectionItemNotificationConfig {
@@ -13,15 +15,15 @@ public final class GetProjectsProjectCollectionItemNotificationConfig {
      * @return The topic ID for notifications.
      * 
      */
-    private String topicId;
+    private @Nullable String topicId;
 
     private GetProjectsProjectCollectionItemNotificationConfig() {}
     /**
      * @return The topic ID for notifications.
      * 
      */
-    public String topicId() {
-        return this.topicId;
+    public Optional<String> topicId() {
+        return Optional.ofNullable(this.topicId);
     }
 
     public static Builder builder() {
@@ -33,7 +35,7 @@ public final class GetProjectsProjectCollectionItemNotificationConfig {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String topicId;
+        private @Nullable String topicId;
         public Builder() {}
         public Builder(GetProjectsProjectCollectionItemNotificationConfig defaults) {
     	      Objects.requireNonNull(defaults);
@@ -41,8 +43,8 @@ public final class GetProjectsProjectCollectionItemNotificationConfig {
         }
 
         @CustomType.Setter
-        public Builder topicId(String topicId) {
-            this.topicId = Objects.requireNonNull(topicId);
+        public Builder topicId(@Nullable String topicId) {
+            this.topicId = topicId;
             return this;
         }
         public GetProjectsProjectCollectionItemNotificationConfig build() {

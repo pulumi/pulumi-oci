@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// User Token URI
         /// </summary>
-        public readonly string Ref;
+        public readonly string? Ref;
         /// <summary>
         /// The value of a X509 certificate.
         /// </summary>
-        public readonly string Value;
+        public readonly string? Value;
 
         [OutputConstructor]
         private GetDomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentResult(
-            string @ref,
+            string? @ref,
 
-            string value)
+            string? value)
         {
             Ref = @ref;
             Value = value;

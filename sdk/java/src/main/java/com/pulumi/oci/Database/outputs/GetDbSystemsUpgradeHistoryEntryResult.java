@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDbSystemsUpgradeHistoryEntryResult {
@@ -14,48 +16,48 @@ public final class GetDbSystemsUpgradeHistoryEntryResult {
      * @return The operating system upgrade action.
      * 
      */
-    private String action;
+    private @Nullable String action;
     private String dbSystemId;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return A descriptive text associated with the lifecycleState. Typically contains additional displayable text.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return A valid Oracle Grid Infrastructure (GI) software version.
      * 
      */
-    private String newGiVersion;
+    private @Nullable String newGiVersion;
     /**
      * @return A valid Oracle Grid Infrastructure (GI) software version.
      * 
      */
-    private String oldGiVersion;
+    private @Nullable String oldGiVersion;
     /**
      * @return The retention period, in days, for the snapshot that allows you to perform a rollback of the upgrade operation. After this number of days passes, you cannot roll back the upgrade.
      * 
      */
-    private Integer snapshotRetentionPeriodInDays;
+    private @Nullable Integer snapshotRetentionPeriodInDays;
     /**
      * @return The current state of the action.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The date and time when the upgrade action completed
      * 
      */
-    private String timeEnded;
+    private @Nullable String timeEnded;
     /**
      * @return The date and time when the upgrade action started.
      * 
      */
-    private String timeStarted;
+    private @Nullable String timeStarted;
     private String upgradeHistoryEntryId;
 
     private GetDbSystemsUpgradeHistoryEntryResult() {}
@@ -63,8 +65,8 @@ public final class GetDbSystemsUpgradeHistoryEntryResult {
      * @return The operating system upgrade action.
      * 
      */
-    public String action() {
-        return this.action;
+    public Optional<String> action() {
+        return Optional.ofNullable(this.action);
     }
     public String dbSystemId() {
         return this.dbSystemId;
@@ -73,57 +75,57 @@ public final class GetDbSystemsUpgradeHistoryEntryResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return A descriptive text associated with the lifecycleState. Typically contains additional displayable text.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return A valid Oracle Grid Infrastructure (GI) software version.
      * 
      */
-    public String newGiVersion() {
-        return this.newGiVersion;
+    public Optional<String> newGiVersion() {
+        return Optional.ofNullable(this.newGiVersion);
     }
     /**
      * @return A valid Oracle Grid Infrastructure (GI) software version.
      * 
      */
-    public String oldGiVersion() {
-        return this.oldGiVersion;
+    public Optional<String> oldGiVersion() {
+        return Optional.ofNullable(this.oldGiVersion);
     }
     /**
      * @return The retention period, in days, for the snapshot that allows you to perform a rollback of the upgrade operation. After this number of days passes, you cannot roll back the upgrade.
      * 
      */
-    public Integer snapshotRetentionPeriodInDays() {
-        return this.snapshotRetentionPeriodInDays;
+    public Optional<Integer> snapshotRetentionPeriodInDays() {
+        return Optional.ofNullable(this.snapshotRetentionPeriodInDays);
     }
     /**
      * @return The current state of the action.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The date and time when the upgrade action completed
      * 
      */
-    public String timeEnded() {
-        return this.timeEnded;
+    public Optional<String> timeEnded() {
+        return Optional.ofNullable(this.timeEnded);
     }
     /**
      * @return The date and time when the upgrade action started.
      * 
      */
-    public String timeStarted() {
-        return this.timeStarted;
+    public Optional<String> timeStarted() {
+        return Optional.ofNullable(this.timeStarted);
     }
     public String upgradeHistoryEntryId() {
         return this.upgradeHistoryEntryId;
@@ -138,16 +140,16 @@ public final class GetDbSystemsUpgradeHistoryEntryResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String action;
+        private @Nullable String action;
         private String dbSystemId;
-        private String id;
-        private String lifecycleDetails;
-        private String newGiVersion;
-        private String oldGiVersion;
-        private Integer snapshotRetentionPeriodInDays;
-        private String state;
-        private String timeEnded;
-        private String timeStarted;
+        private @Nullable String id;
+        private @Nullable String lifecycleDetails;
+        private @Nullable String newGiVersion;
+        private @Nullable String oldGiVersion;
+        private @Nullable Integer snapshotRetentionPeriodInDays;
+        private @Nullable String state;
+        private @Nullable String timeEnded;
+        private @Nullable String timeStarted;
         private String upgradeHistoryEntryId;
         public Builder() {}
         public Builder(GetDbSystemsUpgradeHistoryEntryResult defaults) {
@@ -166,8 +168,8 @@ public final class GetDbSystemsUpgradeHistoryEntryResult {
         }
 
         @CustomType.Setter
-        public Builder action(String action) {
-            this.action = Objects.requireNonNull(action);
+        public Builder action(@Nullable String action) {
+            this.action = action;
             return this;
         }
         @CustomType.Setter
@@ -176,43 +178,43 @@ public final class GetDbSystemsUpgradeHistoryEntryResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder newGiVersion(String newGiVersion) {
-            this.newGiVersion = Objects.requireNonNull(newGiVersion);
+        public Builder newGiVersion(@Nullable String newGiVersion) {
+            this.newGiVersion = newGiVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder oldGiVersion(String oldGiVersion) {
-            this.oldGiVersion = Objects.requireNonNull(oldGiVersion);
+        public Builder oldGiVersion(@Nullable String oldGiVersion) {
+            this.oldGiVersion = oldGiVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder snapshotRetentionPeriodInDays(Integer snapshotRetentionPeriodInDays) {
-            this.snapshotRetentionPeriodInDays = Objects.requireNonNull(snapshotRetentionPeriodInDays);
+        public Builder snapshotRetentionPeriodInDays(@Nullable Integer snapshotRetentionPeriodInDays) {
+            this.snapshotRetentionPeriodInDays = snapshotRetentionPeriodInDays;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeEnded(String timeEnded) {
-            this.timeEnded = Objects.requireNonNull(timeEnded);
+        public Builder timeEnded(@Nullable String timeEnded) {
+            this.timeEnded = timeEnded;
             return this;
         }
         @CustomType.Setter
-        public Builder timeStarted(String timeStarted) {
-            this.timeStarted = Objects.requireNonNull(timeStarted);
+        public Builder timeStarted(@Nullable String timeStarted) {
+            this.timeStarted = timeStarted;
             return this;
         }
         @CustomType.Setter

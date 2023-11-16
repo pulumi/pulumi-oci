@@ -16,10 +16,10 @@ namespace Pulumi.Oci.Functions.Outputs
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the KMS key that will be used to verify the image signature.
         /// </summary>
-        public readonly string KmsKeyId;
+        public readonly string? KmsKeyId;
 
         [OutputConstructor]
-        private GetApplicationImagePolicyConfigKeyDetailResult(string kmsKeyId)
+        private GetApplicationImagePolicyConfigKeyDetailResult(string? kmsKeyId)
         {
             KmsKeyId = kmsKeyId;
         }

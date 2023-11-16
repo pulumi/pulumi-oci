@@ -66,33 +66,21 @@ class GetDataMaskRulesResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        Compartment Identifier where the resource is created.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="dataMaskRuleCollections")
-    def data_mask_rule_collections(self) -> Sequence['outputs.GetDataMaskRulesDataMaskRuleCollectionResult']:
-        """
-        The list of data_mask_rule_collection.
-        """
+    def data_mask_rule_collections(self) -> Optional[Sequence['outputs.GetDataMaskRulesDataMaskRuleCollectionResult']]:
         return pulumi.get(self, "data_mask_rule_collections")
 
     @property
     @pulumi.getter(name="dataMaskRuleStatus")
     def data_mask_rule_status(self) -> Optional[str]:
-        """
-        The status of the dataMaskRule.
-        """
         return pulumi.get(self, "data_mask_rule_status")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        Data Mask Rule Identifier, can be renamed.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -103,14 +91,11 @@ class GetDataMaskRulesResult:
     @property
     @pulumi.getter(name="iamGroupId")
     def iam_group_id(self) -> Optional[str]:
-        """
-        IAM Group id associated with the data mask rule
-        """
         return pulumi.get(self, "iam_group_id")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -119,9 +104,6 @@ class GetDataMaskRulesResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the DataMaskRule.
-        """
         return pulumi.get(self, "state")
 
     @property
@@ -165,35 +147,7 @@ def get_data_mask_rules(access_level: Optional[str] = None,
                         target_type: Optional[str] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDataMaskRulesResult:
     """
-    This data source provides the list of Data Mask Rules in Oracle Cloud Infrastructure Cloud Guard service.
-
-    Returns a list of all Data Mask Rules in the root 'compartmentId' passed.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_data_mask_rules = oci.CloudGuard.get_data_mask_rules(compartment_id=var["compartment_id"],
-        access_level=var["data_mask_rule_access_level"],
-        data_mask_rule_status=var["data_mask_rule_data_mask_rule_status"],
-        display_name=var["data_mask_rule_display_name"],
-        iam_group_id=oci_identity_group["test_group"]["id"],
-        state=var["data_mask_rule_state"],
-        target_id=oci_cloud_guard_target["test_target"]["id"],
-        target_type=var["data_mask_rule_target_type"])
-    ```
-
-
-    :param str access_level: Valid values are `RESTRICTED` and `ACCESSIBLE`. Default is `RESTRICTED`. Setting this to `ACCESSIBLE` returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to `RESTRICTED` permissions are checked and no partial results are displayed.
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str data_mask_rule_status: The status of the dataMaskRule.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str iam_group_id: OCID of iamGroup
-    :param str state: The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
-    :param str target_id: OCID of target
-    :param str target_type: Type of target
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['accessLevel'] = access_level
@@ -234,34 +188,6 @@ def get_data_mask_rules_output(access_level: Optional[pulumi.Input[Optional[str]
                                target_type: Optional[pulumi.Input[Optional[str]]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDataMaskRulesResult]:
     """
-    This data source provides the list of Data Mask Rules in Oracle Cloud Infrastructure Cloud Guard service.
-
-    Returns a list of all Data Mask Rules in the root 'compartmentId' passed.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_data_mask_rules = oci.CloudGuard.get_data_mask_rules(compartment_id=var["compartment_id"],
-        access_level=var["data_mask_rule_access_level"],
-        data_mask_rule_status=var["data_mask_rule_data_mask_rule_status"],
-        display_name=var["data_mask_rule_display_name"],
-        iam_group_id=oci_identity_group["test_group"]["id"],
-        state=var["data_mask_rule_state"],
-        target_id=oci_cloud_guard_target["test_target"]["id"],
-        target_type=var["data_mask_rule_target_type"])
-    ```
-
-
-    :param str access_level: Valid values are `RESTRICTED` and `ACCESSIBLE`. Default is `RESTRICTED`. Setting this to `ACCESSIBLE` returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to `RESTRICTED` permissions are checked and no partial results are displayed.
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str data_mask_rule_status: The status of the dataMaskRule.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str iam_group_id: OCID of iamGroup
-    :param str state: The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
-    :param str target_id: OCID of target
-    :param str target_type: Type of target
+    Use this data source to access information about an existing resource.
     """
     ...

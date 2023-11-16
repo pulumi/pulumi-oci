@@ -16,10 +16,10 @@ namespace Pulumi.Oci.ServiceMesh.Outputs
         /// <summary>
         /// Unique identifier that is immutable on creation.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
 
         [OutputConstructor]
-        private GetMeshCertificateAuthorityResult(string id)
+        private GetMeshCertificateAuthorityResult(string? id)
         {
             Id = id;
         }

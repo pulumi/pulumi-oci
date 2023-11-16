@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Namespace resource in Oracle Cloud Infrastructure Object Storage service.
@@ -67,9 +66,9 @@ type GetNamespaceArgs struct {
 type GetNamespaceResult struct {
 	CompartmentId *string `pulumi:"compartmentId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// (Computed) The name of the user's namespace.
-	Namespace string `pulumi:"namespace"`
+	Namespace *string `pulumi:"namespace"`
 }
 
 func GetNamespaceOutput(ctx *pulumi.Context, args GetNamespaceOutputArgs, opts ...pulumi.InvokeOption) GetNamespaceResultOutput {
@@ -110,24 +109,18 @@ func (o GetNamespaceResultOutput) ToGetNamespaceResultOutputWithContext(ctx cont
 	return o
 }
 
-func (o GetNamespaceResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceResult] {
-	return pulumix.Output[GetNamespaceResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetNamespaceResultOutput) CompartmentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetNamespaceResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetNamespaceResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetNamespaceResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // (Computed) The name of the user's namespace.
-func (o GetNamespaceResultOutput) Namespace() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNamespaceResult) string { return v.Namespace }).(pulumi.StringOutput)
+func (o GetNamespaceResultOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNamespaceResult) *string { return v.Namespace }).(pulumi.StringPtrOutput)
 }
 
 func init() {

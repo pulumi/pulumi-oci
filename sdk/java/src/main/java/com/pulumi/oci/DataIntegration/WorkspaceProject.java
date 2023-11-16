@@ -18,6 +18,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -84,14 +85,14 @@ public class WorkspaceProject extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
-    private Output<String> description;
+    private Output</* @Nullable */ String> description;
 
     /**
      * @return (Updatable) A user defined description for the project.
      * 
      */
-    public Output<String> description() {
-        return this.description;
+    public Output<Optional<String>> description() {
+        return Codegen.optional(this.description);
     }
     /**
      * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
@@ -112,70 +113,70 @@ public class WorkspaceProject extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="key", refs={String.class}, tree="[0]")
-    private Output<String> key;
+    private Output</* @Nullable */ String> key;
 
     /**
      * @return (Updatable) The identifying key for the object.
      * 
      */
-    public Output<String> key() {
-        return this.key;
+    public Output<Optional<String>> key() {
+        return Codegen.optional(this.key);
     }
     /**
      * A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
      * 
      */
     @Export(name="keyMap", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> keyMap;
+    private Output</* @Nullable */ Map<String,Object>> keyMap;
 
     /**
      * @return A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
      * 
      */
-    public Output<Map<String,Object>> keyMap() {
-        return this.keyMap;
+    public Output<Optional<Map<String,Object>>> keyMap() {
+        return Codegen.optional(this.keyMap);
     }
     /**
      * A summary type containing information about the object including its key, name and when/who created/updated it.
      * 
      */
     @Export(name="metadatas", refs={List.class,WorkspaceProjectMetadata.class}, tree="[0,1]")
-    private Output<List<WorkspaceProjectMetadata>> metadatas;
+    private Output</* @Nullable */ List<WorkspaceProjectMetadata>> metadatas;
 
     /**
      * @return A summary type containing information about the object including its key, name and when/who created/updated it.
      * 
      */
-    public Output<List<WorkspaceProjectMetadata>> metadatas() {
-        return this.metadatas;
+    public Output<Optional<List<WorkspaceProjectMetadata>>> metadatas() {
+        return Codegen.optional(this.metadatas);
     }
     /**
      * The type of the object.
      * 
      */
     @Export(name="modelType", refs={String.class}, tree="[0]")
-    private Output<String> modelType;
+    private Output</* @Nullable */ String> modelType;
 
     /**
      * @return The type of the object.
      * 
      */
-    public Output<String> modelType() {
-        return this.modelType;
+    public Output<Optional<String>> modelType() {
+        return Codegen.optional(this.modelType);
     }
     /**
      * (Updatable) The model version of an object.
      * 
      */
     @Export(name="modelVersion", refs={String.class}, tree="[0]")
-    private Output<String> modelVersion;
+    private Output</* @Nullable */ String> modelVersion;
 
     /**
      * @return (Updatable) The model version of an object.
      * 
      */
-    public Output<String> modelVersion() {
-        return this.modelVersion;
+    public Output<Optional<String>> modelVersion() {
+        return Codegen.optional(this.modelVersion);
     }
     /**
      * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
@@ -196,62 +197,62 @@ public class WorkspaceProject extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="objectStatus", refs={Integer.class}, tree="[0]")
-    private Output<Integer> objectStatus;
+    private Output</* @Nullable */ Integer> objectStatus;
 
     /**
      * @return (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
      * 
      */
-    public Output<Integer> objectStatus() {
-        return this.objectStatus;
+    public Output<Optional<Integer>> objectStatus() {
+        return Codegen.optional(this.objectStatus);
     }
     /**
      * The version of the object that is used to track changes in the object instance.
      * 
      */
     @Export(name="objectVersion", refs={Integer.class}, tree="[0]")
-    private Output<Integer> objectVersion;
+    private Output</* @Nullable */ Integer> objectVersion;
 
     /**
      * @return The version of the object that is used to track changes in the object instance.
      * 
      */
-    public Output<Integer> objectVersion() {
-        return this.objectVersion;
+    public Output<Optional<Integer>> objectVersion() {
+        return Codegen.optional(this.objectVersion);
     }
     /**
      * A reference to the object&#39;s parent.
      * 
      */
     @Export(name="parentReves", refs={List.class,WorkspaceProjectParentRef.class}, tree="[0,1]")
-    private Output<List<WorkspaceProjectParentRef>> parentReves;
+    private Output</* @Nullable */ List<WorkspaceProjectParentRef>> parentReves;
 
     /**
      * @return A reference to the object&#39;s parent.
      * 
      */
-    public Output<List<WorkspaceProjectParentRef>> parentReves() {
-        return this.parentReves;
+    public Output<Optional<List<WorkspaceProjectParentRef>>> parentReves() {
+        return Codegen.optional(this.parentReves);
     }
     @Export(name="projectKey", refs={String.class}, tree="[0]")
-    private Output<String> projectKey;
+    private Output</* @Nullable */ String> projectKey;
 
-    public Output<String> projectKey() {
-        return this.projectKey;
+    public Output<Optional<String>> projectKey() {
+        return Codegen.optional(this.projectKey);
     }
     /**
      * (Updatable) Information about the object and its parent.
      * 
      */
     @Export(name="registryMetadata", refs={WorkspaceProjectRegistryMetadata.class}, tree="[0]")
-    private Output<WorkspaceProjectRegistryMetadata> registryMetadata;
+    private Output</* @Nullable */ WorkspaceProjectRegistryMetadata> registryMetadata;
 
     /**
      * @return (Updatable) Information about the object and its parent.
      * 
      */
-    public Output<WorkspaceProjectRegistryMetadata> registryMetadata() {
-        return this.registryMetadata;
+    public Output<Optional<WorkspaceProjectRegistryMetadata>> registryMetadata() {
+        return Codegen.optional(this.registryMetadata);
     }
     /**
      * The workspace ID.

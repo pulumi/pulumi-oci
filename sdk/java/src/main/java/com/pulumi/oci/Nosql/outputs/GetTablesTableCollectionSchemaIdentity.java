@@ -7,22 +7,24 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetTablesTableCollectionSchemaIdentity {
-    private String columnName;
-    private Boolean isAlways;
-    private Boolean isNull;
+    private @Nullable String columnName;
+    private @Nullable Boolean isAlways;
+    private @Nullable Boolean isNull;
 
     private GetTablesTableCollectionSchemaIdentity() {}
-    public String columnName() {
-        return this.columnName;
+    public Optional<String> columnName() {
+        return Optional.ofNullable(this.columnName);
     }
-    public Boolean isAlways() {
-        return this.isAlways;
+    public Optional<Boolean> isAlways() {
+        return Optional.ofNullable(this.isAlways);
     }
-    public Boolean isNull() {
-        return this.isNull;
+    public Optional<Boolean> isNull() {
+        return Optional.ofNullable(this.isNull);
     }
 
     public static Builder builder() {
@@ -34,9 +36,9 @@ public final class GetTablesTableCollectionSchemaIdentity {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String columnName;
-        private Boolean isAlways;
-        private Boolean isNull;
+        private @Nullable String columnName;
+        private @Nullable Boolean isAlways;
+        private @Nullable Boolean isNull;
         public Builder() {}
         public Builder(GetTablesTableCollectionSchemaIdentity defaults) {
     	      Objects.requireNonNull(defaults);
@@ -46,18 +48,18 @@ public final class GetTablesTableCollectionSchemaIdentity {
         }
 
         @CustomType.Setter
-        public Builder columnName(String columnName) {
-            this.columnName = Objects.requireNonNull(columnName);
+        public Builder columnName(@Nullable String columnName) {
+            this.columnName = columnName;
             return this;
         }
         @CustomType.Setter
-        public Builder isAlways(Boolean isAlways) {
-            this.isAlways = Objects.requireNonNull(isAlways);
+        public Builder isAlways(@Nullable Boolean isAlways) {
+            this.isAlways = isAlways;
             return this;
         }
         @CustomType.Setter
-        public Builder isNull(Boolean isNull) {
-            this.isNull = Objects.requireNonNull(isNull);
+        public Builder isNull(@Nullable Boolean isNull) {
+            this.isNull = isNull;
             return this;
         }
         public GetTablesTableCollectionSchemaIdentity build() {

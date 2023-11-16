@@ -71,7 +71,7 @@ class GetInvoicesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -79,10 +79,7 @@ class GetInvoicesResult:
 
     @property
     @pulumi.getter
-    def invoices(self) -> Sequence['outputs.GetInvoicesInvoiceResult']:
-        """
-        The list of invoices.
-        """
+    def invoices(self) -> Optional[Sequence['outputs.GetInvoicesInvoiceResult']]:
         return pulumi.get(self, "invoices")
 
     @property
@@ -120,29 +117,7 @@ def get_invoices(ar_customer_transaction_id: Optional[str] = None,
                  time_to: Optional[str] = None,
                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetInvoicesResult:
     """
-    This data source provides the list of Invoices in Oracle Cloud Infrastructure Onesubscription service.
-
-    This is a collection API which returns a list of Invoices for given filters.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_invoices = oci.OneSubsription.get_invoices(ar_customer_transaction_id=oci_onesubscription_ar_customer_transaction["test_ar_customer_transaction"]["id"],
-        compartment_id=var["compartment_id"],
-        fields=var["invoice_fields"],
-        time_from=var["invoice_time_from"],
-        time_to=var["invoice_time_to"])
-    ```
-
-
-    :param str ar_customer_transaction_id: AR Unique identifier for an invoice .
-    :param str compartment_id: The OCID of the root compartment.
-    :param Sequence[str] fields: Partial response refers to an optimization technique offered by the RESTful web APIs to return only the information  (fields) required by the client. This parameter is used to control what fields to return.
-    :param str time_from: Initial date to filter Invoice data in SPM.
-    :param str time_to: Final date to filter Invoice data in SPM.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['arCustomerTransactionId'] = ar_customer_transaction_id
@@ -174,28 +149,6 @@ def get_invoices_output(ar_customer_transaction_id: Optional[pulumi.Input[str]] 
                         time_to: Optional[pulumi.Input[Optional[str]]] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetInvoicesResult]:
     """
-    This data source provides the list of Invoices in Oracle Cloud Infrastructure Onesubscription service.
-
-    This is a collection API which returns a list of Invoices for given filters.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_invoices = oci.OneSubsription.get_invoices(ar_customer_transaction_id=oci_onesubscription_ar_customer_transaction["test_ar_customer_transaction"]["id"],
-        compartment_id=var["compartment_id"],
-        fields=var["invoice_fields"],
-        time_from=var["invoice_time_from"],
-        time_to=var["invoice_time_to"])
-    ```
-
-
-    :param str ar_customer_transaction_id: AR Unique identifier for an invoice .
-    :param str compartment_id: The OCID of the root compartment.
-    :param Sequence[str] fields: Partial response refers to an optimization technique offered by the RESTful web APIs to return only the information  (fields) required by the client. This parameter is used to control what fields to return.
-    :param str time_from: Initial date to filter Invoice data in SPM.
-    :param str time_to: Final date to filter Invoice data in SPM.
+    Use this data source to access information about an existing resource.
     """
     ...

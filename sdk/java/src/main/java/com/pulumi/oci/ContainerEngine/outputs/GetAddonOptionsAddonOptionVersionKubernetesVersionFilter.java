@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAddonOptionsAddonOptionVersionKubernetesVersionFilter {
@@ -14,17 +16,17 @@ public final class GetAddonOptionsAddonOptionVersionKubernetesVersionFilter {
      * @return The exact version of kubernetes that are compatible.
      * 
      */
-    private List<String> exactKubernetesVersions;
+    private @Nullable List<String> exactKubernetesVersions;
     /**
      * @return The latest kubernetes version.
      * 
      */
-    private String maximumVersion;
+    private @Nullable String maximumVersion;
     /**
      * @return The earliest kubernetes version.
      * 
      */
-    private String minimalVersion;
+    private @Nullable String minimalVersion;
 
     private GetAddonOptionsAddonOptionVersionKubernetesVersionFilter() {}
     /**
@@ -32,21 +34,21 @@ public final class GetAddonOptionsAddonOptionVersionKubernetesVersionFilter {
      * 
      */
     public List<String> exactKubernetesVersions() {
-        return this.exactKubernetesVersions;
+        return this.exactKubernetesVersions == null ? List.of() : this.exactKubernetesVersions;
     }
     /**
      * @return The latest kubernetes version.
      * 
      */
-    public String maximumVersion() {
-        return this.maximumVersion;
+    public Optional<String> maximumVersion() {
+        return Optional.ofNullable(this.maximumVersion);
     }
     /**
      * @return The earliest kubernetes version.
      * 
      */
-    public String minimalVersion() {
-        return this.minimalVersion;
+    public Optional<String> minimalVersion() {
+        return Optional.ofNullable(this.minimalVersion);
     }
 
     public static Builder builder() {
@@ -58,9 +60,9 @@ public final class GetAddonOptionsAddonOptionVersionKubernetesVersionFilter {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> exactKubernetesVersions;
-        private String maximumVersion;
-        private String minimalVersion;
+        private @Nullable List<String> exactKubernetesVersions;
+        private @Nullable String maximumVersion;
+        private @Nullable String minimalVersion;
         public Builder() {}
         public Builder(GetAddonOptionsAddonOptionVersionKubernetesVersionFilter defaults) {
     	      Objects.requireNonNull(defaults);
@@ -70,21 +72,21 @@ public final class GetAddonOptionsAddonOptionVersionKubernetesVersionFilter {
         }
 
         @CustomType.Setter
-        public Builder exactKubernetesVersions(List<String> exactKubernetesVersions) {
-            this.exactKubernetesVersions = Objects.requireNonNull(exactKubernetesVersions);
+        public Builder exactKubernetesVersions(@Nullable List<String> exactKubernetesVersions) {
+            this.exactKubernetesVersions = exactKubernetesVersions;
             return this;
         }
         public Builder exactKubernetesVersions(String... exactKubernetesVersions) {
             return exactKubernetesVersions(List.of(exactKubernetesVersions));
         }
         @CustomType.Setter
-        public Builder maximumVersion(String maximumVersion) {
-            this.maximumVersion = Objects.requireNonNull(maximumVersion);
+        public Builder maximumVersion(@Nullable String maximumVersion) {
+            this.maximumVersion = maximumVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder minimalVersion(String minimalVersion) {
-            this.minimalVersion = Objects.requireNonNull(minimalVersion);
+        public Builder minimalVersion(@Nullable String minimalVersion) {
+            this.minimalVersion = minimalVersion;
             return this;
         }
         public GetAddonOptionsAddonOptionVersionKubernetesVersionFilter build() {

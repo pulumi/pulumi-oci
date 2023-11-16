@@ -53,50 +53,32 @@ class GetRunStatementResult:
 
     @property
     @pulumi.getter
-    def code(self) -> str:
-        """
-        The statement code to execute. Example: `println(sc.version)`
-        """
+    def code(self) -> Optional[str]:
         return pulumi.get(self, "code")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The statement ID.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
-    def outputs(self) -> Sequence['outputs.GetRunStatementOutputResult']:
-        """
-        The execution output of a statement.
-        """
+    def outputs(self) -> Optional[Sequence['outputs.GetRunStatementOutputResult']]:
         return pulumi.get(self, "outputs")
 
     @property
     @pulumi.getter
-    def progress(self) -> float:
-        """
-        The execution progress.
-        """
+    def progress(self) -> Optional[float]:
         return pulumi.get(self, "progress")
 
     @property
     @pulumi.getter(name="runId")
     def run_id(self) -> str:
-        """
-        The ID of a run.
-        """
         return pulumi.get(self, "run_id")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of this statement.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
@@ -106,18 +88,12 @@ class GetRunStatementResult:
 
     @property
     @pulumi.getter(name="timeCompleted")
-    def time_completed(self) -> str:
-        """
-        The date and time a statement execution was completed, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2022-05-31T21:10:29.600Z`
-        """
+    def time_completed(self) -> Optional[str]:
         return pulumi.get(self, "time_completed")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
 
@@ -142,23 +118,7 @@ def get_run_statement(run_id: Optional[str] = None,
                       statement_id: Optional[str] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetRunStatementResult:
     """
-    This data source provides details about a specific Run Statement resource in Oracle Cloud Infrastructure Data Flow service.
-
-    Retrieves the statement corresponding to the `statementId` for a Session run specified by `runId`.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_run_statement = oci.DataFlow.get_run_statement(run_id=oci_dataflow_run["test_run"]["id"],
-        statement_id=oci_dataflow_statement["test_statement"]["id"])
-    ```
-
-
-    :param str run_id: The unique ID for the run
-    :param str statement_id: The unique ID for the statement.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['runId'] = run_id
@@ -183,22 +143,6 @@ def get_run_statement_output(run_id: Optional[pulumi.Input[str]] = None,
                              statement_id: Optional[pulumi.Input[str]] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRunStatementResult]:
     """
-    This data source provides details about a specific Run Statement resource in Oracle Cloud Infrastructure Data Flow service.
-
-    Retrieves the statement corresponding to the `statementId` for a Session run specified by `runId`.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_run_statement = oci.DataFlow.get_run_statement(run_id=oci_dataflow_run["test_run"]["id"],
-        statement_id=oci_dataflow_statement["test_statement"]["id"])
-    ```
-
-
-    :param str run_id: The unique ID for the run
-    :param str statement_id: The unique ID for the statement.
+    Use this data source to access information about an existing resource.
     """
     ...

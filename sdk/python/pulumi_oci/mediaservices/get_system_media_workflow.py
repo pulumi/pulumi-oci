@@ -43,7 +43,7 @@ class GetSystemMediaWorkflowResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -51,18 +51,12 @@ class GetSystemMediaWorkflowResult:
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetSystemMediaWorkflowItemResult']:
-        """
-        List of SytemMediaWorkflow items.
-        """
+    def items(self) -> Optional[Sequence['outputs.GetSystemMediaWorkflowItemResult']]:
         return pulumi.get(self, "items")
 
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        System provided unique identifier for this static media workflow.
-        """
         return pulumi.get(self, "name")
 
 
@@ -82,23 +76,7 @@ def get_system_media_workflow(compartment_id: Optional[str] = None,
                               name: Optional[str] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSystemMediaWorkflowResult:
     """
-    This data source provides details about a specific System Media Workflow resource in Oracle Cloud Infrastructure Media Services service.
-
-    Lists the SystemMediaWorkflows that can be used to run a job by name or as a template to create a MediaWorkflow.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_system_media_workflow = oci.MediaServices.get_system_media_workflow(compartment_id=var["compartment_id"],
-        name=var["system_media_workflow_name"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str name: A filter to return only the resources with their system defined, unique name matching the given name.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -118,22 +96,6 @@ def get_system_media_workflow_output(compartment_id: Optional[pulumi.Input[Optio
                                      name: Optional[pulumi.Input[Optional[str]]] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSystemMediaWorkflowResult]:
     """
-    This data source provides details about a specific System Media Workflow resource in Oracle Cloud Infrastructure Media Services service.
-
-    Lists the SystemMediaWorkflows that can be used to run a job by name or as a template to create a MediaWorkflow.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_system_media_workflow = oci.MediaServices.get_system_media_workflow(compartment_id=var["compartment_id"],
-        name=var["system_media_workflow_name"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str name: A filter to return only the resources with their system defined, unique name matching the given name.
+    Use this data source to access information about an existing resource.
     """
     ...

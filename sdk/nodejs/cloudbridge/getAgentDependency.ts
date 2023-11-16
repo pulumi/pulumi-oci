@@ -46,71 +46,71 @@ export interface GetAgentDependencyResult {
     /**
      * Object storage bucket where the Agent dependency is uploaded.
      */
-    readonly bucket: string;
+    readonly bucket?: string;
     /**
      * The checksum associated with the dependency object returned by Object Storage.
      */
-    readonly checksum: string;
+    readonly checksum?: string;
     /**
      * Compartment identifier
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * Name of the dependency type. This should match the whitelisted enum of dependency names.
      */
-    readonly dependencyName: string;
+    readonly dependencyName?: string;
     /**
      * Version of the Agent dependency.
      */
-    readonly dependencyVersion: string;
+    readonly dependencyVersion?: string;
     /**
      * Description about the Agent dependency.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * Display name of the Agent dependency.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * The eTag associated with the dependency object returned by Object Storage.
      */
-    readonly eTag: string;
+    readonly eTag?: string;
     /**
      * The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * Unique identifier that is immutable on creation.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * Object storage namespace associated with the customer's tenancy.
      */
-    readonly namespace: string;
+    readonly namespace?: string;
     /**
      * Name of the dependency object uploaded by the customer.
      */
-    readonly object: string;
+    readonly object?: string;
     /**
      * The current state of AgentDependency.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * The time when the AgentDependency was created. An RFC3339 formatted datetime string.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
 }
 /**
  * This data source provides details about a specific Agent Dependency resource in Oracle Cloud Infrastructure Cloud Bridge service.

@@ -8,6 +8,8 @@ import com.pulumi.oci.StackMonitoring.outputs.GetMonitoredResourceAliasCredentia
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMonitoredResourceAlias {
@@ -15,17 +17,17 @@ public final class GetMonitoredResourceAlias {
      * @return Monitored Resource Alias Reference Source Credential.
      * 
      */
-    private List<GetMonitoredResourceAliasCredential> credentials;
+    private @Nullable List<GetMonitoredResourceAliasCredential> credentials;
     /**
      * @return Property Name.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
      * 
      */
-    private String source;
+    private @Nullable String source;
 
     private GetMonitoredResourceAlias() {}
     /**
@@ -33,21 +35,21 @@ public final class GetMonitoredResourceAlias {
      * 
      */
     public List<GetMonitoredResourceAliasCredential> credentials() {
-        return this.credentials;
+        return this.credentials == null ? List.of() : this.credentials;
     }
     /**
      * @return Property Name.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
      * 
      */
-    public String source() {
-        return this.source;
+    public Optional<String> source() {
+        return Optional.ofNullable(this.source);
     }
 
     public static Builder builder() {
@@ -59,9 +61,9 @@ public final class GetMonitoredResourceAlias {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetMonitoredResourceAliasCredential> credentials;
-        private String name;
-        private String source;
+        private @Nullable List<GetMonitoredResourceAliasCredential> credentials;
+        private @Nullable String name;
+        private @Nullable String source;
         public Builder() {}
         public Builder(GetMonitoredResourceAlias defaults) {
     	      Objects.requireNonNull(defaults);
@@ -71,21 +73,21 @@ public final class GetMonitoredResourceAlias {
         }
 
         @CustomType.Setter
-        public Builder credentials(List<GetMonitoredResourceAliasCredential> credentials) {
-            this.credentials = Objects.requireNonNull(credentials);
+        public Builder credentials(@Nullable List<GetMonitoredResourceAliasCredential> credentials) {
+            this.credentials = credentials;
             return this;
         }
         public Builder credentials(GetMonitoredResourceAliasCredential... credentials) {
             return credentials(List.of(credentials));
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder source(String source) {
-            this.source = Objects.requireNonNull(source);
+        public Builder source(@Nullable String source) {
+            this.source = source;
             return this;
         }
         public GetMonitoredResourceAlias build() {

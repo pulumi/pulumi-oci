@@ -6,6 +6,8 @@ package com.pulumi.oci.Identity.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsAppRoleApp {
@@ -13,63 +15,63 @@ public final class GetDomainsAppRoleApp {
      * @return Member display name
      * 
      */
-    private String display;
+    private @Nullable String display;
     /**
      * @return Application name
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return The URI corresponding to the member Resource of this Group
      * 
      */
-    private String ref;
+    private @Nullable String ref;
     /**
      * @return The serviceInstanceIdentifier of the App that defines this AppRole. This value will match the opcServiceInstanceGUID of any service-instance that the App represents.
      * 
      */
-    private String serviceInstanceIdentifier;
+    private @Nullable String serviceInstanceIdentifier;
     /**
      * @return Value of the tag.
      * 
      */
-    private String value;
+    private @Nullable String value;
 
     private GetDomainsAppRoleApp() {}
     /**
      * @return Member display name
      * 
      */
-    public String display() {
-        return this.display;
+    public Optional<String> display() {
+        return Optional.ofNullable(this.display);
     }
     /**
      * @return Application name
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return The URI corresponding to the member Resource of this Group
      * 
      */
-    public String ref() {
-        return this.ref;
+    public Optional<String> ref() {
+        return Optional.ofNullable(this.ref);
     }
     /**
      * @return The serviceInstanceIdentifier of the App that defines this AppRole. This value will match the opcServiceInstanceGUID of any service-instance that the App represents.
      * 
      */
-    public String serviceInstanceIdentifier() {
-        return this.serviceInstanceIdentifier;
+    public Optional<String> serviceInstanceIdentifier() {
+        return Optional.ofNullable(this.serviceInstanceIdentifier);
     }
     /**
      * @return Value of the tag.
      * 
      */
-    public String value() {
-        return this.value;
+    public Optional<String> value() {
+        return Optional.ofNullable(this.value);
     }
 
     public static Builder builder() {
@@ -81,11 +83,11 @@ public final class GetDomainsAppRoleApp {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String display;
-        private String name;
-        private String ref;
-        private String serviceInstanceIdentifier;
-        private String value;
+        private @Nullable String display;
+        private @Nullable String name;
+        private @Nullable String ref;
+        private @Nullable String serviceInstanceIdentifier;
+        private @Nullable String value;
         public Builder() {}
         public Builder(GetDomainsAppRoleApp defaults) {
     	      Objects.requireNonNull(defaults);
@@ -97,28 +99,28 @@ public final class GetDomainsAppRoleApp {
         }
 
         @CustomType.Setter
-        public Builder display(String display) {
-            this.display = Objects.requireNonNull(display);
+        public Builder display(@Nullable String display) {
+            this.display = display;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder ref(String ref) {
-            this.ref = Objects.requireNonNull(ref);
+        public Builder ref(@Nullable String ref) {
+            this.ref = ref;
             return this;
         }
         @CustomType.Setter
-        public Builder serviceInstanceIdentifier(String serviceInstanceIdentifier) {
-            this.serviceInstanceIdentifier = Objects.requireNonNull(serviceInstanceIdentifier);
+        public Builder serviceInstanceIdentifier(@Nullable String serviceInstanceIdentifier) {
+            this.serviceInstanceIdentifier = serviceInstanceIdentifier;
             return this;
         }
         @CustomType.Setter
-        public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+        public Builder value(@Nullable String value) {
+            this.value = value;
             return this;
         }
         public GetDomainsAppRoleApp build() {

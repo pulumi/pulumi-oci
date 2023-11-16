@@ -6,6 +6,8 @@ package com.pulumi.oci.ServiceCatalog.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPrivateApplicationLogo {
@@ -13,39 +15,39 @@ public final class GetPrivateApplicationLogo {
      * @return The content URL of the uploaded data.
      * 
      */
-    private String contentUrl;
+    private @Nullable String contentUrl;
     /**
      * @return The name used to refer to the uploaded data.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return The MIME type of the uploaded data.
      * 
      */
-    private String mimeType;
+    private @Nullable String mimeType;
 
     private GetPrivateApplicationLogo() {}
     /**
      * @return The content URL of the uploaded data.
      * 
      */
-    public String contentUrl() {
-        return this.contentUrl;
+    public Optional<String> contentUrl() {
+        return Optional.ofNullable(this.contentUrl);
     }
     /**
      * @return The name used to refer to the uploaded data.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return The MIME type of the uploaded data.
      * 
      */
-    public String mimeType() {
-        return this.mimeType;
+    public Optional<String> mimeType() {
+        return Optional.ofNullable(this.mimeType);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetPrivateApplicationLogo {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String contentUrl;
-        private String displayName;
-        private String mimeType;
+        private @Nullable String contentUrl;
+        private @Nullable String displayName;
+        private @Nullable String mimeType;
         public Builder() {}
         public Builder(GetPrivateApplicationLogo defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetPrivateApplicationLogo {
         }
 
         @CustomType.Setter
-        public Builder contentUrl(String contentUrl) {
-            this.contentUrl = Objects.requireNonNull(contentUrl);
+        public Builder contentUrl(@Nullable String contentUrl) {
+            this.contentUrl = contentUrl;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder mimeType(String mimeType) {
-            this.mimeType = Objects.requireNonNull(mimeType);
+        public Builder mimeType(@Nullable String mimeType) {
+            this.mimeType = mimeType;
             return this;
         }
         public GetPrivateApplicationLogo build() {

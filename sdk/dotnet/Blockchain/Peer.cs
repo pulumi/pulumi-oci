@@ -60,7 +60,7 @@ namespace Pulumi.Oci.Blockchain
         /// peer alias
         /// </summary>
         [Output("alias")]
-        public Output<string> Alias { get; private set; } = null!;
+        public Output<string?> Alias { get; private set; } = null!;
 
         /// <summary>
         /// Unique service identifier.
@@ -72,7 +72,7 @@ namespace Pulumi.Oci.Blockchain
         /// Host on which the Peer exists
         /// </summary>
         [Output("host")]
-        public Output<string> Host { get; private set; } = null!;
+        public Output<string?> Host { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) OCPU allocation parameter
@@ -84,7 +84,7 @@ namespace Pulumi.Oci.Blockchain
         /// peer identifier
         /// </summary>
         [Output("peerKey")]
-        public Output<string> PeerKey { get; private set; } = null!;
+        public Output<string?> PeerKey { get; private set; } = null!;
 
         /// <summary>
         /// Peer role
@@ -100,7 +100,7 @@ namespace Pulumi.Oci.Blockchain
         /// The current state of the peer.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
 
         /// <summary>

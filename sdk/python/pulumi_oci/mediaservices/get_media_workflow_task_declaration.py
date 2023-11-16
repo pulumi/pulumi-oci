@@ -49,7 +49,7 @@ class GetMediaWorkflowTaskDeclarationResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -62,26 +62,17 @@ class GetMediaWorkflowTaskDeclarationResult:
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetMediaWorkflowTaskDeclarationItemResult']:
-        """
-        List of MediaWorkflowTaskDeclaration objects.
-        """
+    def items(self) -> Optional[Sequence['outputs.GetMediaWorkflowTaskDeclarationItemResult']]:
         return pulumi.get(self, "items")
 
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        MediaWorkflowTaskDeclaration identifier. The name and version should be unique among MediaWorkflowTaskDeclarations.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
     def version(self) -> Optional[int]:
-        """
-        The version of MediaWorkflowTaskDeclaration, incremented whenever the team implementing the task processor modifies the JSON schema of this declaration's definitions, parameters or list of required parameters.
-        """
         return pulumi.get(self, "version")
 
 
@@ -105,27 +96,7 @@ def get_media_workflow_task_declaration(compartment_id: Optional[str] = None,
                                         version: Optional[int] = None,
                                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMediaWorkflowTaskDeclarationResult:
     """
-    This data source provides details about a specific Media Workflow Task Declaration resource in Oracle Cloud Infrastructure Media Services service.
-
-    Returns a list of MediaWorkflowTaskDeclarations.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_media_workflow_task_declaration = oci.MediaServices.get_media_workflow_task_declaration(compartment_id=var["compartment_id"],
-        is_current=var["media_workflow_task_declaration_is_current"],
-        name=var["media_workflow_task_declaration_name"],
-        version=var["media_workflow_task_declaration_version"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param bool is_current: A filter to only select the newest version for each MediaWorkflowTaskDeclaration name.
-    :param str name: A filter to return only the resources with their system defined, unique name matching the given name.
-    :param int version: A filter to select MediaWorkflowTaskDeclaration by version.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -151,26 +122,6 @@ def get_media_workflow_task_declaration_output(compartment_id: Optional[pulumi.I
                                                version: Optional[pulumi.Input[Optional[int]]] = None,
                                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMediaWorkflowTaskDeclarationResult]:
     """
-    This data source provides details about a specific Media Workflow Task Declaration resource in Oracle Cloud Infrastructure Media Services service.
-
-    Returns a list of MediaWorkflowTaskDeclarations.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_media_workflow_task_declaration = oci.MediaServices.get_media_workflow_task_declaration(compartment_id=var["compartment_id"],
-        is_current=var["media_workflow_task_declaration_is_current"],
-        name=var["media_workflow_task_declaration_name"],
-        version=var["media_workflow_task_declaration_version"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param bool is_current: A filter to only select the newest version for each MediaWorkflowTaskDeclaration name.
-    :param str name: A filter to return only the resources with their system defined, unique name matching the given name.
-    :param int version: A filter to select MediaWorkflowTaskDeclaration by version.
+    Use this data source to access information about an existing resource.
     """
     ...

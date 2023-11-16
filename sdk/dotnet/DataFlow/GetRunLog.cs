@@ -131,15 +131,15 @@ namespace Pulumi.Oci.DataFlow
         /// <summary>
         /// The content of the run log.
         /// </summary>
-        public readonly string Content;
+        public readonly string? Content;
         /// <summary>
         /// The content type of the run log.
         /// </summary>
-        public readonly string ContentType;
+        public readonly string? ContentType;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string Name;
         public readonly string RunId;
 
@@ -147,11 +147,11 @@ namespace Pulumi.Oci.DataFlow
         private GetRunLogResult(
             bool? base64EncodeContent,
 
-            string content,
+            string? content,
 
-            string contentType,
+            string? contentType,
 
-            string id,
+            string? id,
 
             string name,
 

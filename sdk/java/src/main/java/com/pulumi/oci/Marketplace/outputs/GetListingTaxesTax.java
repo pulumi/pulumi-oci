@@ -6,6 +6,8 @@ package com.pulumi.oci.Marketplace.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetListingTaxesTax {
@@ -13,51 +15,51 @@ public final class GetListingTaxesTax {
      * @return Unique code for the tax.
      * 
      */
-    private String code;
+    private @Nullable String code;
     /**
      * @return Country, which imposes the tax.
      * 
      */
-    private String country;
+    private @Nullable String country;
     /**
      * @return Name of the tax code.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return The URL with more details about this tax.
      * 
      */
-    private String url;
+    private @Nullable String url;
 
     private GetListingTaxesTax() {}
     /**
      * @return Unique code for the tax.
      * 
      */
-    public String code() {
-        return this.code;
+    public Optional<String> code() {
+        return Optional.ofNullable(this.code);
     }
     /**
      * @return Country, which imposes the tax.
      * 
      */
-    public String country() {
-        return this.country;
+    public Optional<String> country() {
+        return Optional.ofNullable(this.country);
     }
     /**
      * @return Name of the tax code.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return The URL with more details about this tax.
      * 
      */
-    public String url() {
-        return this.url;
+    public Optional<String> url() {
+        return Optional.ofNullable(this.url);
     }
 
     public static Builder builder() {
@@ -69,10 +71,10 @@ public final class GetListingTaxesTax {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String code;
-        private String country;
-        private String name;
-        private String url;
+        private @Nullable String code;
+        private @Nullable String country;
+        private @Nullable String name;
+        private @Nullable String url;
         public Builder() {}
         public Builder(GetListingTaxesTax defaults) {
     	      Objects.requireNonNull(defaults);
@@ -83,23 +85,23 @@ public final class GetListingTaxesTax {
         }
 
         @CustomType.Setter
-        public Builder code(String code) {
-            this.code = Objects.requireNonNull(code);
+        public Builder code(@Nullable String code) {
+            this.code = code;
             return this;
         }
         @CustomType.Setter
-        public Builder country(String country) {
-            this.country = Objects.requireNonNull(country);
+        public Builder country(@Nullable String country) {
+            this.country = country;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder url(String url) {
-            this.url = Objects.requireNonNull(url);
+        public Builder url(@Nullable String url) {
+            this.url = url;
             return this;
         }
         public GetListingTaxesTax build() {

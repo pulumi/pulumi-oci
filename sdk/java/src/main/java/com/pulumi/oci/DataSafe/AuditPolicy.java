@@ -42,14 +42,14 @@ public class AuditPolicy extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="auditConditions", refs={List.class,AuditPolicyAuditCondition.class}, tree="[0,1]")
-    private Output<List<AuditPolicyAuditCondition>> auditConditions;
+    private Output</* @Nullable */ List<AuditPolicyAuditCondition>> auditConditions;
 
     /**
      * @return Lists the audit policy provisioning conditions for the target database.
      * 
      */
-    public Output<List<AuditPolicyAuditCondition>> auditConditions() {
-        return this.auditConditions;
+    public Output<Optional<List<AuditPolicyAuditCondition>>> auditConditions() {
+        return Codegen.optional(this.auditConditions);
     }
     /**
      * Unique audit policy identifier.
@@ -70,112 +70,112 @@ public class AuditPolicy extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="auditSpecifications", refs={List.class,AuditPolicyAuditSpecification.class}, tree="[0,1]")
-    private Output<List<AuditPolicyAuditSpecification>> auditSpecifications;
+    private Output</* @Nullable */ List<AuditPolicyAuditSpecification>> auditSpecifications;
 
     /**
      * @return Represents all available audit policy specifications relevant for the target database. For more details on available audit polcies, refer to [documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827).
      * 
      */
-    public Output<List<AuditPolicyAuditSpecification>> auditSpecifications() {
-        return this.auditSpecifications;
+    public Output<Optional<List<AuditPolicyAuditSpecification>>> auditSpecifications() {
+        return Codegen.optional(this.auditSpecifications);
     }
     /**
      * (Updatable) The OCID of the compartment containing the audit policy.
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
-    private Output<String> compartmentId;
+    private Output</* @Nullable */ String> compartmentId;
 
     /**
      * @return (Updatable) The OCID of the compartment containing the audit policy.
      * 
      */
-    public Output<String> compartmentId() {
-        return this.compartmentId;
+    public Output<Optional<String>> compartmentId() {
+        return Codegen.optional(this.compartmentId);
     }
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) The description of the audit policy.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
-    private Output<String> description;
+    private Output</* @Nullable */ String> description;
 
     /**
      * @return (Updatable) The description of the audit policy.
      * 
      */
-    public Output<String> description() {
-        return this.description;
+    public Output<Optional<String>> description() {
+        return Codegen.optional(this.description);
     }
     /**
      * (Updatable) The display name of the audit policy. The name does not have to be unique, and it is changeable.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return (Updatable) The display name of the audit policy. The name does not have to be unique, and it is changeable.
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * Option provided to users at the target to indicate whether the Data Safe service account has to be excluded while provisioning the audit policies.
      * 
      */
     @Export(name="isDataSafeServiceAccountExcluded", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isDataSafeServiceAccountExcluded;
+    private Output</* @Nullable */ Boolean> isDataSafeServiceAccountExcluded;
 
     /**
      * @return Option provided to users at the target to indicate whether the Data Safe service account has to be excluded while provisioning the audit policies.
      * 
      */
-    public Output<Boolean> isDataSafeServiceAccountExcluded() {
-        return this.isDataSafeServiceAccountExcluded;
+    public Output<Optional<Boolean>> isDataSafeServiceAccountExcluded() {
+        return Codegen.optional(this.isDataSafeServiceAccountExcluded);
     }
     /**
      * Details about the current state of the audit policy in Data Safe.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return Details about the current state of the audit policy in Data Safe.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * (Updatable) An optional property when incremented triggers Provision. Could be set to any integer value.
@@ -216,98 +216,98 @@ public class AuditPolicy extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the audit policy.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> systemTags;
+    private Output</* @Nullable */ Map<String,Object>> systemTags;
 
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    public Output<Map<String,Object>> systemTags() {
-        return this.systemTags;
+    public Output<Optional<Map<String,Object>>> systemTags() {
+        return Codegen.optional(this.systemTags);
     }
     /**
      * The OCID of the target for which the audit policy is created.
      * 
      */
     @Export(name="targetId", refs={String.class}, tree="[0]")
-    private Output<String> targetId;
+    private Output</* @Nullable */ String> targetId;
 
     /**
      * @return The OCID of the target for which the audit policy is created.
      * 
      */
-    public Output<String> targetId() {
-        return this.targetId;
+    public Output<Optional<String>> targetId() {
+        return Codegen.optional(this.targetId);
     }
     /**
      * The time the the audit policy was created, in the format defined by RFC3339.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The time the the audit policy was created, in the format defined by RFC3339.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * Indicates the last provisioning time of audit policies on the target, in the format defined by RFC3339.
      * 
      */
     @Export(name="timeLastProvisioned", refs={String.class}, tree="[0]")
-    private Output<String> timeLastProvisioned;
+    private Output</* @Nullable */ String> timeLastProvisioned;
 
     /**
      * @return Indicates the last provisioning time of audit policies on the target, in the format defined by RFC3339.
      * 
      */
-    public Output<String> timeLastProvisioned() {
-        return this.timeLastProvisioned;
+    public Output<Optional<String>> timeLastProvisioned() {
+        return Codegen.optional(this.timeLastProvisioned);
     }
     /**
      * The time when the audit policies was last retrieved from this target, in the format defined by RFC3339.
      * 
      */
     @Export(name="timeLastRetrieved", refs={String.class}, tree="[0]")
-    private Output<String> timeLastRetrieved;
+    private Output</* @Nullable */ String> timeLastRetrieved;
 
     /**
      * @return The time when the audit policies was last retrieved from this target, in the format defined by RFC3339.
      * 
      */
-    public Output<String> timeLastRetrieved() {
-        return this.timeLastRetrieved;
+    public Output<Optional<String>> timeLastRetrieved() {
+        return Codegen.optional(this.timeLastRetrieved);
     }
     /**
      * The last date and time the audit policy was updated, in the format defined by RFC3339.
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The last date and time the audit policy was updated, in the format defined by RFC3339.
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
 
     /**

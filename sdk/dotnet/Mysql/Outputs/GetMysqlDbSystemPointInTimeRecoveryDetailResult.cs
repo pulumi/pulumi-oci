@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// <summary>
         /// Earliest recovery time point for the DB System, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         /// </summary>
-        public readonly string TimeEarliestRecoveryPoint;
+        public readonly string? TimeEarliestRecoveryPoint;
         /// <summary>
         /// Latest recovery time point for the DB System, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         /// </summary>
-        public readonly string TimeLatestRecoveryPoint;
+        public readonly string? TimeLatestRecoveryPoint;
 
         [OutputConstructor]
         private GetMysqlDbSystemPointInTimeRecoveryDetailResult(
-            string timeEarliestRecoveryPoint,
+            string? timeEarliestRecoveryPoint,
 
-            string timeLatestRecoveryPoint)
+            string? timeLatestRecoveryPoint)
         {
             TimeEarliestRecoveryPoint = timeEarliestRecoveryPoint;
             TimeLatestRecoveryPoint = timeLatestRecoveryPoint;

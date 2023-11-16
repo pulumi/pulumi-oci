@@ -181,7 +181,7 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Indicates if the schema is oracle supplied.
         /// </summary>
@@ -201,7 +201,7 @@ namespace Pulumi.Oci.DataSafe
         private GetTargetDatabasesSchemasResult(
             ImmutableArray<Outputs.GetTargetDatabasesSchemasFilterResult> filters,
 
-            string id,
+            string? id,
 
             bool? isOracleMaintained,
 

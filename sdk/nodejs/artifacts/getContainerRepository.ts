@@ -47,76 +47,76 @@ export interface GetContainerRepositoryResult {
     /**
      * Total storage size in GBs that will be charged.
      */
-    readonly billableSizeInGbs: string;
+    readonly billableSizeInGbs?: string;
     /**
      * The OCID of the compartment in which the container repository exists.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * The id of the user or principal that created the resource.
      */
-    readonly createdBy: string;
+    readonly createdBy?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * The container repository name.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container repository.  Example: `ocid1.containerrepo.oc1..exampleuniqueID`
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Total number of images.
      */
-    readonly imageCount: number;
+    readonly imageCount?: number;
     /**
      * Whether the repository is immutable. Images cannot be overwritten in an immutable repository.
      */
-    readonly isImmutable: boolean;
+    readonly isImmutable?: boolean;
     /**
      * Whether the repository is public. A public repository allows unauthenticated access.
      */
-    readonly isPublic: boolean;
+    readonly isPublic?: boolean;
     /**
      * Total number of layers.
      */
-    readonly layerCount: number;
+    readonly layerCount?: number;
     /**
      * Total storage in bytes consumed by layers.
      */
-    readonly layersSizeInBytes: string;
+    readonly layersSizeInBytes?: string;
     /**
      * The tenancy namespace used in the container repository path.
      */
-    readonly namespace: string;
+    readonly namespace?: string;
     /**
      * Container repository readme.
      */
-    readonly readmes: outputs.Artifacts.GetContainerRepositoryReadme[];
+    readonly readmes?: outputs.Artifacts.GetContainerRepositoryReadme[];
     readonly repositoryId: string;
     /**
      * The current state of the container repository.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * An RFC 3339 timestamp indicating when the repository was created.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * An RFC 3339 timestamp indicating when an image was last pushed to the repository.
      */
-    readonly timeLastPushed: string;
+    readonly timeLastPushed?: string;
 }
 /**
  * This data source provides details about a specific Container Repository resource in Oracle Cloud Infrastructure Artifacts service.

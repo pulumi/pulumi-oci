@@ -34,25 +34,25 @@ export class VirtualNetwork extends pulumi.CustomResource {
         return obj['__pulumiType'] === VirtualNetwork.__pulumiType;
     }
 
-    public /*out*/ readonly byoipv6cidrBlocks!: pulumi.Output<string[]>;
-    public readonly byoipv6cidrDetails!: pulumi.Output<outputs.Core.VirtualNetworkByoipv6cidrDetail[]>;
-    public readonly cidrBlock!: pulumi.Output<string>;
-    public readonly cidrBlocks!: pulumi.Output<string[]>;
+    public /*out*/ readonly byoipv6cidrBlocks!: pulumi.Output<string[] | undefined>;
+    public readonly byoipv6cidrDetails!: pulumi.Output<outputs.Core.VirtualNetworkByoipv6cidrDetail[] | undefined>;
+    public readonly cidrBlock!: pulumi.Output<string | undefined>;
+    public readonly cidrBlocks!: pulumi.Output<string[] | undefined>;
     public readonly compartmentId!: pulumi.Output<string>;
-    public /*out*/ readonly defaultDhcpOptionsId!: pulumi.Output<string>;
-    public /*out*/ readonly defaultRouteTableId!: pulumi.Output<string>;
-    public /*out*/ readonly defaultSecurityListId!: pulumi.Output<string>;
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
-    public readonly displayName!: pulumi.Output<string>;
-    public readonly dnsLabel!: pulumi.Output<string>;
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
-    public /*out*/ readonly ipv6cidrBlocks!: pulumi.Output<string[]>;
-    public readonly ipv6privateCidrBlocks!: pulumi.Output<string[]>;
-    public readonly isIpv6enabled!: pulumi.Output<boolean>;
-    public readonly isOracleGuaAllocationEnabled!: pulumi.Output<boolean>;
-    public /*out*/ readonly state!: pulumi.Output<string>;
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
-    public /*out*/ readonly vcnDomainName!: pulumi.Output<string>;
+    public /*out*/ readonly defaultDhcpOptionsId!: pulumi.Output<string | undefined>;
+    public /*out*/ readonly defaultRouteTableId!: pulumi.Output<string | undefined>;
+    public /*out*/ readonly defaultSecurityListId!: pulumi.Output<string | undefined>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
+    public readonly displayName!: pulumi.Output<string | undefined>;
+    public readonly dnsLabel!: pulumi.Output<string | undefined>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
+    public /*out*/ readonly ipv6cidrBlocks!: pulumi.Output<string[] | undefined>;
+    public readonly ipv6privateCidrBlocks!: pulumi.Output<string[] | undefined>;
+    public readonly isIpv6enabled!: pulumi.Output<boolean | undefined>;
+    public readonly isOracleGuaAllocationEnabled!: pulumi.Output<boolean | undefined>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
+    public /*out*/ readonly vcnDomainName!: pulumi.Output<string | undefined>;
 
     /**
      * Create a VirtualNetwork resource with the given unique name, arguments, and options.

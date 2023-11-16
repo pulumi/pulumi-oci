@@ -34,7 +34,7 @@ public final class GetRemediationRecipesResult {
      * @return The list of remediation_recipe_collection.
      * 
      */
-    private List<GetRemediationRecipesRemediationRecipeCollection> remediationRecipeCollections;
+    private @Nullable List<GetRemediationRecipesRemediationRecipeCollection> remediationRecipeCollections;
     /**
      * @return The current lifecycle state of the Remediation Recipe.
      * 
@@ -71,7 +71,7 @@ public final class GetRemediationRecipesResult {
      * 
      */
     public List<GetRemediationRecipesRemediationRecipeCollection> remediationRecipeCollections() {
-        return this.remediationRecipeCollections;
+        return this.remediationRecipeCollections == null ? List.of() : this.remediationRecipeCollections;
     }
     /**
      * @return The current lifecycle state of the Remediation Recipe.
@@ -94,7 +94,7 @@ public final class GetRemediationRecipesResult {
         private @Nullable String displayName;
         private @Nullable List<GetRemediationRecipesFilter> filters;
         private @Nullable String id;
-        private List<GetRemediationRecipesRemediationRecipeCollection> remediationRecipeCollections;
+        private @Nullable List<GetRemediationRecipesRemediationRecipeCollection> remediationRecipeCollections;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetRemediationRecipesResult defaults) {
@@ -131,8 +131,8 @@ public final class GetRemediationRecipesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder remediationRecipeCollections(List<GetRemediationRecipesRemediationRecipeCollection> remediationRecipeCollections) {
-            this.remediationRecipeCollections = Objects.requireNonNull(remediationRecipeCollections);
+        public Builder remediationRecipeCollections(@Nullable List<GetRemediationRecipesRemediationRecipeCollection> remediationRecipeCollections) {
+            this.remediationRecipeCollections = remediationRecipeCollections;
             return this;
         }
         public Builder remediationRecipeCollections(GetRemediationRecipesRemediationRecipeCollection... remediationRecipeCollections) {

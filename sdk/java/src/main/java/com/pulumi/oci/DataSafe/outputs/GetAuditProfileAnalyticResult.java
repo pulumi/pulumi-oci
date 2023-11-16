@@ -22,12 +22,12 @@ public final class GetAuditProfileAnalyticResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Array of audit profile aggregration data.
      * 
      */
-    private List<GetAuditProfileAnalyticItem> items;
+    private @Nullable List<GetAuditProfileAnalyticItem> items;
 
     private GetAuditProfileAnalyticResult() {}
     public Optional<String> accessLevel() {
@@ -46,15 +46,15 @@ public final class GetAuditProfileAnalyticResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Array of audit profile aggregration data.
      * 
      */
     public List<GetAuditProfileAnalyticItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -70,8 +70,8 @@ public final class GetAuditProfileAnalyticResult {
         private String compartmentId;
         private @Nullable Boolean compartmentIdInSubtree;
         private @Nullable List<String> groupBies;
-        private String id;
-        private List<GetAuditProfileAnalyticItem> items;
+        private @Nullable String id;
+        private @Nullable List<GetAuditProfileAnalyticItem> items;
         public Builder() {}
         public Builder(GetAuditProfileAnalyticResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -107,13 +107,13 @@ public final class GetAuditProfileAnalyticResult {
             return groupBies(List.of(groupBies));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder items(List<GetAuditProfileAnalyticItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetAuditProfileAnalyticItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetAuditProfileAnalyticItem... items) {

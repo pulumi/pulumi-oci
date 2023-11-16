@@ -6,6 +6,8 @@ package com.pulumi.oci.CloudGuard.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDataSourceDataSourceDetailQueryStartTime {
@@ -13,27 +15,27 @@ public final class GetDataSourceDataSourceDetailQueryStartTime {
      * @return Time when the query can start, if not specified it can start immediately.
      * 
      */
-    private String queryStartTime;
+    private @Nullable String queryStartTime;
     /**
      * @return policy used for deciding the query start time
      * 
      */
-    private String startPolicyType;
+    private @Nullable String startPolicyType;
 
     private GetDataSourceDataSourceDetailQueryStartTime() {}
     /**
      * @return Time when the query can start, if not specified it can start immediately.
      * 
      */
-    public String queryStartTime() {
-        return this.queryStartTime;
+    public Optional<String> queryStartTime() {
+        return Optional.ofNullable(this.queryStartTime);
     }
     /**
      * @return policy used for deciding the query start time
      * 
      */
-    public String startPolicyType() {
-        return this.startPolicyType;
+    public Optional<String> startPolicyType() {
+        return Optional.ofNullable(this.startPolicyType);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetDataSourceDataSourceDetailQueryStartTime {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String queryStartTime;
-        private String startPolicyType;
+        private @Nullable String queryStartTime;
+        private @Nullable String startPolicyType;
         public Builder() {}
         public Builder(GetDataSourceDataSourceDetailQueryStartTime defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetDataSourceDataSourceDetailQueryStartTime {
         }
 
         @CustomType.Setter
-        public Builder queryStartTime(String queryStartTime) {
-            this.queryStartTime = Objects.requireNonNull(queryStartTime);
+        public Builder queryStartTime(@Nullable String queryStartTime) {
+            this.queryStartTime = queryStartTime;
             return this;
         }
         @CustomType.Setter
-        public Builder startPolicyType(String startPolicyType) {
-            this.startPolicyType = Objects.requireNonNull(startPolicyType);
+        public Builder startPolicyType(@Nullable String startPolicyType) {
+            this.startPolicyType = startPolicyType;
             return this;
         }
         public GetDataSourceDataSourceDetailQueryStartTime build() {

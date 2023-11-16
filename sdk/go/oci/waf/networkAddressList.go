@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Network Address List resource in Oracle Cloud Infrastructure Waf service.
@@ -78,19 +77,19 @@ type NetworkAddressList struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) NetworkAddressList display name, can be renamed.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in FAILED state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// The current state of the NetworkAddressList.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The time the NetworkAddressList was created. An RFC3339 formatted datetime string.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The time the NetworkAddressList was updated. An RFC3339 formatted datetime string.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 	// (Updatable) Type of NetworkAddressList.
 	Type pulumi.StringOutput `pulumi:"type"`
 	// (Updatable) A list of private address prefixes, each associated with a particular VCN. To specify all addresses in a VCN, use "0.0.0.0/0" for IPv4 and "::/0" for IPv6.
@@ -252,12 +251,6 @@ func (i *NetworkAddressList) ToNetworkAddressListOutputWithContext(ctx context.C
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkAddressListOutput)
 }
 
-func (i *NetworkAddressList) ToOutput(ctx context.Context) pulumix.Output[*NetworkAddressList] {
-	return pulumix.Output[*NetworkAddressList]{
-		OutputState: i.ToNetworkAddressListOutputWithContext(ctx).OutputState,
-	}
-}
-
 // NetworkAddressListArrayInput is an input type that accepts NetworkAddressListArray and NetworkAddressListArrayOutput values.
 // You can construct a concrete instance of `NetworkAddressListArrayInput` via:
 //
@@ -281,12 +274,6 @@ func (i NetworkAddressListArray) ToNetworkAddressListArrayOutput() NetworkAddres
 
 func (i NetworkAddressListArray) ToNetworkAddressListArrayOutputWithContext(ctx context.Context) NetworkAddressListArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkAddressListArrayOutput)
-}
-
-func (i NetworkAddressListArray) ToOutput(ctx context.Context) pulumix.Output[[]*NetworkAddressList] {
-	return pulumix.Output[[]*NetworkAddressList]{
-		OutputState: i.ToNetworkAddressListArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // NetworkAddressListMapInput is an input type that accepts NetworkAddressListMap and NetworkAddressListMapOutput values.
@@ -314,12 +301,6 @@ func (i NetworkAddressListMap) ToNetworkAddressListMapOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkAddressListMapOutput)
 }
 
-func (i NetworkAddressListMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*NetworkAddressList] {
-	return pulumix.Output[map[string]*NetworkAddressList]{
-		OutputState: i.ToNetworkAddressListMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type NetworkAddressListOutput struct{ *pulumi.OutputState }
 
 func (NetworkAddressListOutput) ElementType() reflect.Type {
@@ -332,12 +313,6 @@ func (o NetworkAddressListOutput) ToNetworkAddressListOutput() NetworkAddressLis
 
 func (o NetworkAddressListOutput) ToNetworkAddressListOutputWithContext(ctx context.Context) NetworkAddressListOutput {
 	return o
-}
-
-func (o NetworkAddressListOutput) ToOutput(ctx context.Context) pulumix.Output[*NetworkAddressList] {
-	return pulumix.Output[*NetworkAddressList]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) A private IP address or CIDR IP address range.
@@ -356,8 +331,8 @@ func (o NetworkAddressListOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) NetworkAddressList display name, can be renamed.
-func (o NetworkAddressListOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *NetworkAddressList) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o NetworkAddressListOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NetworkAddressList) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -366,13 +341,13 @@ func (o NetworkAddressListOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in FAILED state.
-func (o NetworkAddressListOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *NetworkAddressList) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o NetworkAddressListOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NetworkAddressList) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the NetworkAddressList.
-func (o NetworkAddressListOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *NetworkAddressList) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o NetworkAddressListOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NetworkAddressList) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -381,13 +356,13 @@ func (o NetworkAddressListOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time the NetworkAddressList was created. An RFC3339 formatted datetime string.
-func (o NetworkAddressListOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *NetworkAddressList) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o NetworkAddressListOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NetworkAddressList) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the NetworkAddressList was updated. An RFC3339 formatted datetime string.
-func (o NetworkAddressListOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *NetworkAddressList) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o NetworkAddressListOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NetworkAddressList) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Type of NetworkAddressList.
@@ -414,12 +389,6 @@ func (o NetworkAddressListArrayOutput) ToNetworkAddressListArrayOutputWithContex
 	return o
 }
 
-func (o NetworkAddressListArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*NetworkAddressList] {
-	return pulumix.Output[[]*NetworkAddressList]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o NetworkAddressListArrayOutput) Index(i pulumi.IntInput) NetworkAddressListOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *NetworkAddressList {
 		return vs[0].([]*NetworkAddressList)[vs[1].(int)]
@@ -438,12 +407,6 @@ func (o NetworkAddressListMapOutput) ToNetworkAddressListMapOutput() NetworkAddr
 
 func (o NetworkAddressListMapOutput) ToNetworkAddressListMapOutputWithContext(ctx context.Context) NetworkAddressListMapOutput {
 	return o
-}
-
-func (o NetworkAddressListMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*NetworkAddressList] {
-	return pulumix.Output[map[string]*NetworkAddressList]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o NetworkAddressListMapOutput) MapIndex(k pulumi.StringInput) NetworkAddressListOutput {

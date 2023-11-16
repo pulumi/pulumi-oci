@@ -47,7 +47,7 @@ class GetSensitiveDataModelSensitiveSchemasResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -56,9 +56,6 @@ class GetSensitiveDataModelSensitiveSchemasResult:
     @property
     @pulumi.getter(name="schemaNames")
     def schema_names(self) -> Optional[Sequence[str]]:
-        """
-        The database schema that contains the sensitive column.
-        """
         return pulumi.get(self, "schema_names")
 
     @property
@@ -68,10 +65,7 @@ class GetSensitiveDataModelSensitiveSchemasResult:
 
     @property
     @pulumi.getter(name="sensitiveSchemaCollections")
-    def sensitive_schema_collections(self) -> Sequence['outputs.GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionResult']:
-        """
-        The list of sensitive_schema_collection.
-        """
+    def sensitive_schema_collections(self) -> Optional[Sequence['outputs.GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionResult']]:
         return pulumi.get(self, "sensitive_schema_collections")
 
 
@@ -93,23 +87,7 @@ def get_sensitive_data_model_sensitive_schemas(filters: Optional[Sequence[pulumi
                                                sensitive_data_model_id: Optional[str] = None,
                                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSensitiveDataModelSensitiveSchemasResult:
     """
-    This data source provides the list of Sensitive Data Model Sensitive Schemas in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets a list of sensitive schemas present in the specified sensitive data model based on the specified query parameters.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_sensitive_data_model_sensitive_schemas = oci.DataSafe.get_sensitive_data_model_sensitive_schemas(sensitive_data_model_id=oci_data_safe_sensitive_data_model["test_sensitive_data_model"]["id"],
-        schema_names=var["sensitive_data_model_sensitive_schema_schema_name"])
-    ```
-
-
-    :param Sequence[str] schema_names: A filter to return only items related to specific schema name.
-    :param str sensitive_data_model_id: The OCID of the sensitive data model.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -132,22 +110,6 @@ def get_sensitive_data_model_sensitive_schemas_output(filters: Optional[pulumi.I
                                                       sensitive_data_model_id: Optional[pulumi.Input[str]] = None,
                                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSensitiveDataModelSensitiveSchemasResult]:
     """
-    This data source provides the list of Sensitive Data Model Sensitive Schemas in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets a list of sensitive schemas present in the specified sensitive data model based on the specified query parameters.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_sensitive_data_model_sensitive_schemas = oci.DataSafe.get_sensitive_data_model_sensitive_schemas(sensitive_data_model_id=oci_data_safe_sensitive_data_model["test_sensitive_data_model"]["id"],
-        schema_names=var["sensitive_data_model_sensitive_schema_schema_name"])
-    ```
-
-
-    :param Sequence[str] schema_names: A filter to return only items related to specific schema name.
-    :param str sensitive_data_model_id: The OCID of the sensitive data model.
+    Use this data source to access information about an existing resource.
     """
     ...

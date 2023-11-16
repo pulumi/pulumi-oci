@@ -174,7 +174,7 @@ namespace Pulumi.Oci.Oce
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The list of oce_instances.
         /// </summary>
@@ -196,7 +196,7 @@ namespace Pulumi.Oci.Oce
 
             ImmutableArray<Outputs.GetOceInstancesFilterResult> filters,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetOceInstancesOceInstanceResult> oceInstances,
 

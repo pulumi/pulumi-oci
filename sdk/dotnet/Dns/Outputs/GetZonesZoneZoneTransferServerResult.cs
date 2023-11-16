@@ -16,29 +16,29 @@ namespace Pulumi.Oci.Dns.Outputs
         /// <summary>
         /// The server's IP address (IPv4 or IPv6).
         /// </summary>
-        public readonly string Address;
+        public readonly string? Address;
         /// <summary>
         /// A Boolean flag indicating whether or not the server is a zone data transfer destination.
         /// </summary>
-        public readonly bool IsTransferDestination;
+        public readonly bool? IsTransferDestination;
         /// <summary>
         /// A Boolean flag indicating whether or not the server is a zone data transfer source.
         /// </summary>
-        public readonly bool IsTransferSource;
+        public readonly bool? IsTransferSource;
         /// <summary>
         /// The server's port. Port value must be a value of 53, otherwise omit the port value.
         /// </summary>
-        public readonly int Port;
+        public readonly int? Port;
 
         [OutputConstructor]
         private GetZonesZoneZoneTransferServerResult(
-            string address,
+            string? address,
 
-            bool isTransferDestination,
+            bool? isTransferDestination,
 
-            bool isTransferSource,
+            bool? isTransferSource,
 
-            int port)
+            int? port)
         {
             Address = address;
             IsTransferDestination = isTransferDestination;

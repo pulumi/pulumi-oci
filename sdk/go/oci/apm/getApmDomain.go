@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Apm Domain resource in Oracle Cloud Infrastructure Apm service.
@@ -61,27 +60,27 @@ type LookupApmDomainArgs struct {
 type LookupApmDomainResult struct {
 	ApmDomainId string `pulumi:"apmDomainId"`
 	// The OCID of the compartment corresponding to the APM domain.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The endpoint where the APM agents upload their observations and metrics.
-	DataUploadEndpoint string `pulumi:"dataUploadEndpoint"`
+	DataUploadEndpoint *string `pulumi:"dataUploadEndpoint"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Description of the APM domain.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Display name of the APM domain, which can be updated.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Unique identifier that is immutable on creation.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Indicates if this is an Always Free resource.
-	IsFreeTier bool `pulumi:"isFreeTier"`
+	IsFreeTier *bool `pulumi:"isFreeTier"`
 	// The current lifecycle state of the APM domain.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The time the APM domain was created, expressed in RFC 3339 timestamp format.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the APM domain was updated, expressed in RFC 3339 timestamp format.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func LookupApmDomainOutput(ctx *pulumi.Context, args LookupApmDomainOutputArgs, opts ...pulumi.InvokeOption) LookupApmDomainResultOutput {
@@ -122,24 +121,18 @@ func (o LookupApmDomainResultOutput) ToLookupApmDomainResultOutputWithContext(ct
 	return o
 }
 
-func (o LookupApmDomainResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupApmDomainResult] {
-	return pulumix.Output[LookupApmDomainResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o LookupApmDomainResultOutput) ApmDomainId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupApmDomainResult) string { return v.ApmDomainId }).(pulumi.StringOutput)
 }
 
 // The OCID of the compartment corresponding to the APM domain.
-func (o LookupApmDomainResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupApmDomainResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupApmDomainResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupApmDomainResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The endpoint where the APM agents upload their observations and metrics.
-func (o LookupApmDomainResultOutput) DataUploadEndpoint() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupApmDomainResult) string { return v.DataUploadEndpoint }).(pulumi.StringOutput)
+func (o LookupApmDomainResultOutput) DataUploadEndpoint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupApmDomainResult) *string { return v.DataUploadEndpoint }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -148,13 +141,13 @@ func (o LookupApmDomainResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // Description of the APM domain.
-func (o LookupApmDomainResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupApmDomainResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupApmDomainResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupApmDomainResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Display name of the APM domain, which can be updated.
-func (o LookupApmDomainResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupApmDomainResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupApmDomainResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupApmDomainResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -163,28 +156,28 @@ func (o LookupApmDomainResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Unique identifier that is immutable on creation.
-func (o LookupApmDomainResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupApmDomainResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupApmDomainResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupApmDomainResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Indicates if this is an Always Free resource.
-func (o LookupApmDomainResultOutput) IsFreeTier() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupApmDomainResult) bool { return v.IsFreeTier }).(pulumi.BoolOutput)
+func (o LookupApmDomainResultOutput) IsFreeTier() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupApmDomainResult) *bool { return v.IsFreeTier }).(pulumi.BoolPtrOutput)
 }
 
 // The current lifecycle state of the APM domain.
-func (o LookupApmDomainResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupApmDomainResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupApmDomainResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupApmDomainResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The time the APM domain was created, expressed in RFC 3339 timestamp format.
-func (o LookupApmDomainResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupApmDomainResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupApmDomainResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupApmDomainResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the APM domain was updated, expressed in RFC 3339 timestamp format.
-func (o LookupApmDomainResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupApmDomainResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupApmDomainResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupApmDomainResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

@@ -16,23 +16,23 @@ namespace Pulumi.Oci.ObjectStorage.Outputs
         /// <summary>
         /// The name of the policy.
         /// </summary>
-        public readonly string PolicyName;
+        public readonly string? PolicyName;
         /// <summary>
         /// The source bucket replicating data from.
         /// </summary>
-        public readonly string SourceBucketName;
+        public readonly string? SourceBucketName;
         /// <summary>
         /// The source region replicating data from, for example "us-ashburn-1".
         /// </summary>
-        public readonly string SourceRegionName;
+        public readonly string? SourceRegionName;
 
         [OutputConstructor]
         private GetReplicationSourcesReplicationSourceResult(
-            string policyName,
+            string? policyName,
 
-            string sourceBucketName,
+            string? sourceBucketName,
 
-            string sourceRegionName)
+            string? sourceRegionName)
         {
             PolicyName = policyName;
             SourceBucketName = sourceBucketName;

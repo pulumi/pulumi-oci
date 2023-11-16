@@ -16,107 +16,107 @@ namespace Pulumi.Oci.Jms.Outputs
         /// <summary>
         /// The Fleet-unique identifier of the related application.
         /// </summary>
-        public readonly string ApplicationId;
+        public readonly string? ApplicationId;
         /// <summary>
         /// The internal identifier of the application installation for which the report has been generated.
         /// </summary>
-        public readonly string ApplicationInstallationId;
+        public readonly string? ApplicationInstallationId;
         /// <summary>
         /// The installation path of the application for which the report has been generated.
         /// </summary>
-        public readonly string ApplicationInstallationPath;
+        public readonly string? ApplicationInstallationPath;
         /// <summary>
         /// The name of the application for which the report has been generated.
         /// </summary>
-        public readonly string ApplicationName;
+        public readonly string? ApplicationName;
         /// <summary>
         /// The Object Storage bucket name of this analysis result.
         /// </summary>
-        public readonly string Bucket;
+        public readonly string? Bucket;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
         /// </summary>
-        public readonly string FleetId;
+        public readonly string? FleetId;
         /// <summary>
         /// The hostname of the managed instance.
         /// </summary>
-        public readonly string HostName;
+        public readonly string? HostName;
         /// <summary>
         /// The OCID to identify this analysis results.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The Fleet-unique identifier of the related managed instance.
         /// </summary>
-        public readonly string ManagedInstanceId;
+        public readonly string? ManagedInstanceId;
         /// <summary>
         /// The Object Storage namespace of this analysis result.
         /// </summary>
-        public readonly string Namespace;
+        public readonly string? Namespace;
         /// <summary>
         /// The Object Storage object name of this analysis result.
         /// </summary>
-        public readonly string Object;
+        public readonly string? Object;
         /// <summary>
         /// Result of the analysis based on whether warnings have been found or not.
         /// </summary>
-        public readonly string Result;
+        public readonly string? Result;
         /// <summary>
         /// The time the result is compiled.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The time the JFR capture finished.
         /// </summary>
-        public readonly string TimeFinished;
+        public readonly string? TimeFinished;
         /// <summary>
         /// The time the JFR capture started.
         /// </summary>
-        public readonly string TimeStarted;
+        public readonly string? TimeStarted;
         /// <summary>
         /// Total number of warnings reported by the analysis.
         /// </summary>
-        public readonly int WarningCount;
+        public readonly int? WarningCount;
         /// <summary>
         /// The OCID of the work request to start the analysis.
         /// </summary>
-        public readonly string WorkRequestId;
+        public readonly string? WorkRequestId;
 
         [OutputConstructor]
         private GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemResult(
-            string applicationId,
+            string? applicationId,
 
-            string applicationInstallationId,
+            string? applicationInstallationId,
 
-            string applicationInstallationPath,
+            string? applicationInstallationPath,
 
-            string applicationName,
+            string? applicationName,
 
-            string bucket,
+            string? bucket,
 
-            string fleetId,
+            string? fleetId,
 
-            string hostName,
+            string? hostName,
 
-            string id,
+            string? id,
 
-            string managedInstanceId,
+            string? managedInstanceId,
 
-            string @namespace,
+            string? @namespace,
 
-            string @object,
+            string? @object,
 
-            string result,
+            string? result,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeFinished,
+            string? timeFinished,
 
-            string timeStarted,
+            string? timeStarted,
 
-            int warningCount,
+            int? warningCount,
 
-            string workRequestId)
+            string? workRequestId)
         {
             ApplicationId = applicationId;
             ApplicationInstallationId = applicationInstallationId;

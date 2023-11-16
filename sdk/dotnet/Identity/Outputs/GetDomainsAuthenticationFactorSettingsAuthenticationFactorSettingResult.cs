@@ -20,20 +20,20 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
         /// </summary>
-        public readonly string Attributes;
-        public readonly string AuthenticationFactorSettingId;
+        public readonly string? Attributes;
+        public readonly string? AuthenticationFactorSettingId;
         /// <summary>
         /// The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
         /// </summary>
-        public readonly string Authorization;
+        public readonly string? Authorization;
         /// <summary>
         /// If true, indicates that email will not be enrolled as a MFA factor automatically if it a account recovery factor
         /// </summary>
-        public readonly bool AutoEnrollEmailFactorDisabled;
+        public readonly bool? AutoEnrollEmailFactorDisabled;
         /// <summary>
         /// If true, indicates that Bypass Code is enabled for authentication
         /// </summary>
-        public readonly bool BypassCodeEnabled;
+        public readonly bool? BypassCodeEnabled;
         /// <summary>
         /// Settings related to the bypass code, such as bypass code length, bypass code expiry, max active bypass codes, and so on
         /// </summary>
@@ -45,7 +45,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
         /// </summary>
-        public readonly string CompartmentOcid;
+        public readonly string? CompartmentOcid;
         /// <summary>
         /// Compliance Policy that defines actions to be taken when a condition is violated
         /// </summary>
@@ -53,15 +53,15 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
         /// </summary>
-        public readonly bool DeleteInProgress;
+        public readonly bool? DeleteInProgress;
         /// <summary>
         /// Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
         /// </summary>
-        public readonly string DomainOcid;
+        public readonly string? DomainOcid;
         /// <summary>
         /// If true, indicates that the EMAIL channel is enabled for authentication
         /// </summary>
-        public readonly bool EmailEnabled;
+        public readonly bool? EmailEnabled;
         /// <summary>
         /// Settings related to Email Factor, such as enabled email magic link factor, custom url for Email Link
         /// </summary>
@@ -73,15 +73,15 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// If true, indicates that the Fido Authenticator channels are enabled for authentication
         /// </summary>
-        public readonly bool FidoAuthenticatorEnabled;
+        public readonly bool? FidoAuthenticatorEnabled;
         /// <summary>
         /// If true, indicates that 'Show backup factor(s)' button will be hidden during authentication
         /// </summary>
-        public readonly bool HideBackupFactorEnabled;
+        public readonly bool? HideBackupFactorEnabled;
         /// <summary>
         /// Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The User or App who created the Resource
         /// </summary>
@@ -89,7 +89,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// The basic endpoint for the identity domain
         /// </summary>
-        public readonly string IdcsEndpoint;
+        public readonly string? IdcsEndpoint;
         /// <summary>
         /// The User or App who modified the Resource
         /// </summary>
@@ -97,7 +97,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// The release number when the resource was upgraded.
         /// </summary>
-        public readonly string IdcsLastUpgradedInRelease;
+        public readonly string? IdcsLastUpgradedInRelease;
         /// <summary>
         /// Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
         /// </summary>
@@ -113,11 +113,11 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// Specifies the category of people for whom Multi-Factor Authentication is enabled. This is a readOnly attribute which reflects the value of mfaEnabledCategory attribute in SsoSettings
         /// </summary>
-        public readonly string MfaEnabledCategory;
+        public readonly string? MfaEnabledCategory;
         /// <summary>
         /// Specifies if Multi-Factor Authentication enrollment is mandatory or optional for a user
         /// </summary>
-        public readonly string MfaEnrollmentType;
+        public readonly string? MfaEnrollmentType;
         /// <summary>
         /// Settings related to the Mobile App Notification channel, such as pull
         /// </summary>
@@ -125,19 +125,19 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
         /// </summary>
-        public readonly string Ocid;
+        public readonly string? Ocid;
         /// <summary>
         /// If true, indicates that the phone (PHONE_CALL) channel is enabled for authentication
         /// </summary>
-        public readonly bool PhoneCallEnabled;
+        public readonly bool? PhoneCallEnabled;
         /// <summary>
         /// If true, indicates that the Mobile App Push Notification channel is enabled for authentication
         /// </summary>
-        public readonly bool PushEnabled;
+        public readonly bool? PushEnabled;
         /// <summary>
         /// An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
         /// </summary>
-        public readonly string ResourceTypeSchemaVersion;
+        public readonly string? ResourceTypeSchemaVersion;
         /// <summary>
         /// REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
         /// </summary>
@@ -145,11 +145,11 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// If true, indicates that Security Questions are enabled for authentication
         /// </summary>
-        public readonly bool SecurityQuestionsEnabled;
+        public readonly bool? SecurityQuestionsEnabled;
         /// <summary>
         /// If true, indicates that the Short Message Service (SMS) channel is enabled for authentication
         /// </summary>
-        public readonly bool SmsEnabled;
+        public readonly bool? SmsEnabled;
         /// <summary>
         /// A list of tags on this resource.
         /// </summary>
@@ -157,7 +157,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
         /// </summary>
-        public readonly string TenancyOcid;
+        public readonly string? TenancyOcid;
         /// <summary>
         /// Settings related to third-party factor
         /// </summary>
@@ -165,7 +165,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// If true, indicates that the Mobile App One Time Passcode channel is enabled for authentication
         /// </summary>
-        public readonly bool TotpEnabled;
+        public readonly bool? TotpEnabled;
         /// <summary>
         /// Settings related to Time-Based One-Time Passcodes (TOTP), such as hashing algo, totp time step, passcode length, and so on
         /// </summary>
@@ -185,53 +185,53 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// If true, indicates that the Yubico OTP is enabled for authentication
         /// </summary>
-        public readonly bool YubicoOtpEnabled;
+        public readonly bool? YubicoOtpEnabled;
 
         [OutputConstructor]
         private GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingResult(
             ImmutableArray<string> attributeSets,
 
-            string attributes,
+            string? attributes,
 
-            string authenticationFactorSettingId,
+            string? authenticationFactorSettingId,
 
-            string authorization,
+            string? authorization,
 
-            bool autoEnrollEmailFactorDisabled,
+            bool? autoEnrollEmailFactorDisabled,
 
-            bool bypassCodeEnabled,
+            bool? bypassCodeEnabled,
 
             ImmutableArray<Outputs.GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingBypassCodeSettingResult> bypassCodeSettings,
 
             ImmutableArray<Outputs.GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingClientAppSettingResult> clientAppSettings,
 
-            string compartmentOcid,
+            string? compartmentOcid,
 
             ImmutableArray<Outputs.GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingCompliancePolicyResult> compliancePolicies,
 
-            bool deleteInProgress,
+            bool? deleteInProgress,
 
-            string domainOcid,
+            string? domainOcid,
 
-            bool emailEnabled,
+            bool? emailEnabled,
 
             ImmutableArray<Outputs.GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingEmailSettingResult> emailSettings,
 
             ImmutableArray<Outputs.GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingEndpointRestrictionResult> endpointRestrictions,
 
-            bool fidoAuthenticatorEnabled,
+            bool? fidoAuthenticatorEnabled,
 
-            bool hideBackupFactorEnabled,
+            bool? hideBackupFactorEnabled,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingIdcsCreatedByResult> idcsCreatedBies,
 
-            string idcsEndpoint,
+            string? idcsEndpoint,
 
             ImmutableArray<Outputs.GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingIdcsLastModifiedByResult> idcsLastModifiedBies,
 
-            string idcsLastUpgradedInRelease,
+            string? idcsLastUpgradedInRelease,
 
             ImmutableArray<string> idcsPreventedOperations,
 
@@ -239,33 +239,33 @@ namespace Pulumi.Oci.Identity.Outputs
 
             ImmutableArray<Outputs.GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingMetaResult> metas,
 
-            string mfaEnabledCategory,
+            string? mfaEnabledCategory,
 
-            string mfaEnrollmentType,
+            string? mfaEnrollmentType,
 
             ImmutableArray<Outputs.GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingNotificationSettingResult> notificationSettings,
 
-            string ocid,
+            string? ocid,
 
-            bool phoneCallEnabled,
+            bool? phoneCallEnabled,
 
-            bool pushEnabled,
+            bool? pushEnabled,
 
-            string resourceTypeSchemaVersion,
+            string? resourceTypeSchemaVersion,
 
             ImmutableArray<string> schemas,
 
-            bool securityQuestionsEnabled,
+            bool? securityQuestionsEnabled,
 
-            bool smsEnabled,
+            bool? smsEnabled,
 
             ImmutableArray<Outputs.GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingTagResult> tags,
 
-            string tenancyOcid,
+            string? tenancyOcid,
 
             ImmutableArray<Outputs.GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingThirdPartyFactorResult> thirdPartyFactors,
 
-            bool totpEnabled,
+            bool? totpEnabled,
 
             ImmutableArray<Outputs.GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingTotpSettingResult> totpSettings,
 
@@ -275,7 +275,7 @@ namespace Pulumi.Oci.Identity.Outputs
 
             ImmutableArray<string> userEnrollmentDisabledFactors,
 
-            bool yubicoOtpEnabled)
+            bool? yubicoOtpEnabled)
         {
             AttributeSets = attributeSets;
             Attributes = attributes;

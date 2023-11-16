@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Domains in Oracle Cloud Infrastructure Identity service.
@@ -95,7 +94,7 @@ type GetDomainsResult struct {
 	// Region specific domain URL.
 	HomeRegionUrl *string `pulumi:"homeRegionUrl"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Indicates whether domain is hidden on login screen or not.
 	IsHiddenOnLogin *bool `pulumi:"isHiddenOnLogin"`
 	// The License type of Domain
@@ -164,12 +163,6 @@ func (o GetDomainsResultOutput) ToGetDomainsResultOutputWithContext(ctx context.
 	return o
 }
 
-func (o GetDomainsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsResult] {
-	return pulumix.Output[GetDomainsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment containing the domain.
 func (o GetDomainsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDomainsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -195,8 +188,8 @@ func (o GetDomainsResultOutput) HomeRegionUrl() pulumi.StringPtrOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetDomainsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDomainsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDomainsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDomainsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Indicates whether domain is hidden on login screen or not.

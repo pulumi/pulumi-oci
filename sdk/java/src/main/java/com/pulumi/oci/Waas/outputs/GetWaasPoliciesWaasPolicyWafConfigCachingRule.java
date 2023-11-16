@@ -9,6 +9,8 @@ import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetWaasPoliciesWaasPolicyWafConfigCachingRule {
@@ -16,87 +18,87 @@ public final class GetWaasPoliciesWaasPolicyWafConfigCachingRule {
      * @return The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
      * 
      */
-    private String action;
+    private @Nullable String action;
     /**
      * @return The duration to cache content for the caching rule, specified in ISO 8601 extended format. Supported units: seconds, minutes, hours, days, weeks, months. The maximum value that can be set for any unit is `99`. Mixing of multiple units is not supported. Only applies when the `action` is set to `CACHE`. Example: `PT1H`
      * 
      */
-    private String cachingDuration;
+    private @Nullable String cachingDuration;
     /**
      * @return The duration to cache content in the user&#39;s browser, specified in ISO 8601 extended format. Supported units: seconds, minutes, hours, days, weeks, months. The maximum value that can be set for any unit is `99`. Mixing of multiple units is not supported. Only applies when the `action` is set to `CACHE`. Example: `PT1H`
      * 
      */
-    private String clientCachingDuration;
+    private @Nullable String clientCachingDuration;
     /**
      * @return When defined, the JavaScript Challenge would be applied only for the requests that matched all the listed conditions.
      * 
      */
-    private List<GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteria> criterias;
+    private @Nullable List<GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteria> criterias;
     /**
      * @return Enables or disables client caching. Browsers use the `Cache-Control` header value for caching content locally in the browser. This setting overrides the addition of a `Cache-Control` header in responses.
      * 
      */
-    private Boolean isClientCachingEnabled;
+    private @Nullable Boolean isClientCachingEnabled;
     /**
      * @return The unique key for the caching rule.
      * 
      */
-    private String key;
+    private @Nullable String key;
     /**
      * @return The unique name of the whitelist.
      * 
      */
-    private String name;
+    private @Nullable String name;
 
     private GetWaasPoliciesWaasPolicyWafConfigCachingRule() {}
     /**
      * @return The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
      * 
      */
-    public String action() {
-        return this.action;
+    public Optional<String> action() {
+        return Optional.ofNullable(this.action);
     }
     /**
      * @return The duration to cache content for the caching rule, specified in ISO 8601 extended format. Supported units: seconds, minutes, hours, days, weeks, months. The maximum value that can be set for any unit is `99`. Mixing of multiple units is not supported. Only applies when the `action` is set to `CACHE`. Example: `PT1H`
      * 
      */
-    public String cachingDuration() {
-        return this.cachingDuration;
+    public Optional<String> cachingDuration() {
+        return Optional.ofNullable(this.cachingDuration);
     }
     /**
      * @return The duration to cache content in the user&#39;s browser, specified in ISO 8601 extended format. Supported units: seconds, minutes, hours, days, weeks, months. The maximum value that can be set for any unit is `99`. Mixing of multiple units is not supported. Only applies when the `action` is set to `CACHE`. Example: `PT1H`
      * 
      */
-    public String clientCachingDuration() {
-        return this.clientCachingDuration;
+    public Optional<String> clientCachingDuration() {
+        return Optional.ofNullable(this.clientCachingDuration);
     }
     /**
      * @return When defined, the JavaScript Challenge would be applied only for the requests that matched all the listed conditions.
      * 
      */
     public List<GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteria> criterias() {
-        return this.criterias;
+        return this.criterias == null ? List.of() : this.criterias;
     }
     /**
      * @return Enables or disables client caching. Browsers use the `Cache-Control` header value for caching content locally in the browser. This setting overrides the addition of a `Cache-Control` header in responses.
      * 
      */
-    public Boolean isClientCachingEnabled() {
-        return this.isClientCachingEnabled;
+    public Optional<Boolean> isClientCachingEnabled() {
+        return Optional.ofNullable(this.isClientCachingEnabled);
     }
     /**
      * @return The unique key for the caching rule.
      * 
      */
-    public String key() {
-        return this.key;
+    public Optional<String> key() {
+        return Optional.ofNullable(this.key);
     }
     /**
      * @return The unique name of the whitelist.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
 
     public static Builder builder() {
@@ -108,13 +110,13 @@ public final class GetWaasPoliciesWaasPolicyWafConfigCachingRule {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String action;
-        private String cachingDuration;
-        private String clientCachingDuration;
-        private List<GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteria> criterias;
-        private Boolean isClientCachingEnabled;
-        private String key;
-        private String name;
+        private @Nullable String action;
+        private @Nullable String cachingDuration;
+        private @Nullable String clientCachingDuration;
+        private @Nullable List<GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteria> criterias;
+        private @Nullable Boolean isClientCachingEnabled;
+        private @Nullable String key;
+        private @Nullable String name;
         public Builder() {}
         public Builder(GetWaasPoliciesWaasPolicyWafConfigCachingRule defaults) {
     	      Objects.requireNonNull(defaults);
@@ -128,41 +130,41 @@ public final class GetWaasPoliciesWaasPolicyWafConfigCachingRule {
         }
 
         @CustomType.Setter
-        public Builder action(String action) {
-            this.action = Objects.requireNonNull(action);
+        public Builder action(@Nullable String action) {
+            this.action = action;
             return this;
         }
         @CustomType.Setter
-        public Builder cachingDuration(String cachingDuration) {
-            this.cachingDuration = Objects.requireNonNull(cachingDuration);
+        public Builder cachingDuration(@Nullable String cachingDuration) {
+            this.cachingDuration = cachingDuration;
             return this;
         }
         @CustomType.Setter
-        public Builder clientCachingDuration(String clientCachingDuration) {
-            this.clientCachingDuration = Objects.requireNonNull(clientCachingDuration);
+        public Builder clientCachingDuration(@Nullable String clientCachingDuration) {
+            this.clientCachingDuration = clientCachingDuration;
             return this;
         }
         @CustomType.Setter
-        public Builder criterias(List<GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteria> criterias) {
-            this.criterias = Objects.requireNonNull(criterias);
+        public Builder criterias(@Nullable List<GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteria> criterias) {
+            this.criterias = criterias;
             return this;
         }
         public Builder criterias(GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteria... criterias) {
             return criterias(List.of(criterias));
         }
         @CustomType.Setter
-        public Builder isClientCachingEnabled(Boolean isClientCachingEnabled) {
-            this.isClientCachingEnabled = Objects.requireNonNull(isClientCachingEnabled);
+        public Builder isClientCachingEnabled(@Nullable Boolean isClientCachingEnabled) {
+            this.isClientCachingEnabled = isClientCachingEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
+        public Builder key(@Nullable String key) {
+            this.key = key;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         public GetWaasPoliciesWaasPolicyWafConfigCachingRule build() {

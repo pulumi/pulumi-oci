@@ -16,7 +16,7 @@ namespace Pulumi.Oci.ContainerInstances.Outputs
         /// <summary>
         /// The volume type of the empty directory, can be either File Storage or Memory.
         /// </summary>
-        public readonly string BackingStore;
+        public readonly string? BackingStore;
         /// <summary>
         /// Contains string key value pairs which can be mounted as individual files inside the container. The value needs to be base64 encoded. It is decoded to plain text before the mount.
         /// </summary>
@@ -24,21 +24,21 @@ namespace Pulumi.Oci.ContainerInstances.Outputs
         /// <summary>
         /// The name of the volume. This must be unique within a single container instance.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The type of volume.
         /// </summary>
-        public readonly string VolumeType;
+        public readonly string? VolumeType;
 
         [OutputConstructor]
         private GetContainerInstancesContainerInstanceCollectionItemVolumeResult(
-            string backingStore,
+            string? backingStore,
 
             ImmutableArray<Outputs.GetContainerInstancesContainerInstanceCollectionItemVolumeConfigResult> configs,
 
-            string name,
+            string? name,
 
-            string volumeType)
+            string? volumeType)
         {
             BackingStore = backingStore;
             Configs = configs;

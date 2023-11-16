@@ -16,29 +16,29 @@ namespace Pulumi.Oci.Waas.Outputs
         /// <summary>
         /// The number of allowed requests per second from one IP address. If unspecified, defaults to `1`.
         /// </summary>
-        public readonly int AllowedRatePerAddress;
+        public readonly int? AllowedRatePerAddress;
         /// <summary>
         /// The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
         /// </summary>
-        public readonly int BlockResponseCode;
+        public readonly int? BlockResponseCode;
         /// <summary>
         /// Enables or disables the JavaScript challenge Web Application Firewall feature.
         /// </summary>
-        public readonly bool IsEnabled;
+        public readonly bool? IsEnabled;
         /// <summary>
         /// The maximum number of requests allowed to be queued before subsequent requests are dropped. If unspecified, defaults to `10`.
         /// </summary>
-        public readonly int MaxDelayedCountPerAddress;
+        public readonly int? MaxDelayedCountPerAddress;
 
         [OutputConstructor]
         private GetWaasPoliciesWaasPolicyWafConfigAddressRateLimitingResult(
-            int allowedRatePerAddress,
+            int? allowedRatePerAddress,
 
-            int blockResponseCode,
+            int? blockResponseCode,
 
-            bool isEnabled,
+            bool? isEnabled,
 
-            int maxDelayedCountPerAddress)
+            int? maxDelayedCountPerAddress)
         {
             AllowedRatePerAddress = allowedRatePerAddress;
             BlockResponseCode = blockResponseCode;

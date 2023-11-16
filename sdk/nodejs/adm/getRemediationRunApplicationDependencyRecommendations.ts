@@ -55,7 +55,7 @@ export interface GetRemediationRunApplicationDependencyRecommendationsResult {
     /**
      * The list of application_dependency_recommendation_collection.
      */
-    readonly applicationDependencyRecommendationCollections: outputs.Adm.GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollection[];
+    readonly applicationDependencyRecommendationCollections?: outputs.Adm.GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollection[];
     readonly filters?: outputs.Adm.GetRemediationRunApplicationDependencyRecommendationsFilter[];
     /**
      * Unique Group Artifact Version (GAV) identifier in the format _Group:Artifact:Version_, e.g. org.graalvm.nativeimage:svm:21.1.0.
@@ -64,7 +64,7 @@ export interface GetRemediationRunApplicationDependencyRecommendationsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly remediationRunId: string;
 }
 /**

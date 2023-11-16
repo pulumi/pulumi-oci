@@ -29,12 +29,12 @@ public final class GetDetectionModelsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of model_collection.
      * 
      */
-    private List<GetDetectionModelsModelCollection> modelCollections;
+    private @Nullable List<GetDetectionModelsModelCollection> modelCollections;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
      * 
@@ -68,15 +68,15 @@ public final class GetDetectionModelsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of model_collection.
      * 
      */
     public List<GetDetectionModelsModelCollection> modelCollections() {
-        return this.modelCollections;
+        return this.modelCollections == null ? List.of() : this.modelCollections;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
@@ -105,8 +105,8 @@ public final class GetDetectionModelsResult {
         private String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetDetectionModelsFilter> filters;
-        private String id;
-        private List<GetDetectionModelsModelCollection> modelCollections;
+        private @Nullable String id;
+        private @Nullable List<GetDetectionModelsModelCollection> modelCollections;
         private @Nullable String projectId;
         private @Nullable String state;
         public Builder() {}
@@ -140,13 +140,13 @@ public final class GetDetectionModelsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder modelCollections(List<GetDetectionModelsModelCollection> modelCollections) {
-            this.modelCollections = Objects.requireNonNull(modelCollections);
+        public Builder modelCollections(@Nullable List<GetDetectionModelsModelCollection> modelCollections) {
+            this.modelCollections = modelCollections;
             return this;
         }
         public Builder modelCollections(GetDetectionModelsModelCollection... modelCollections) {

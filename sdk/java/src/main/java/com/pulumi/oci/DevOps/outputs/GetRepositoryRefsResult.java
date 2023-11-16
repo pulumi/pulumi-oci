@@ -24,7 +24,7 @@ public final class GetRepositoryRefsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Unique reference name inside a repository.
      * 
@@ -44,7 +44,7 @@ public final class GetRepositoryRefsResult {
      * @return The list of repository_ref_collection.
      * 
      */
-    private List<GetRepositoryRefsRepositoryRefCollection> repositoryRefCollections;
+    private @Nullable List<GetRepositoryRefsRepositoryRefCollection> repositoryRefCollections;
 
     private GetRepositoryRefsResult() {}
     /**
@@ -61,8 +61,8 @@ public final class GetRepositoryRefsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Unique reference name inside a repository.
@@ -90,7 +90,7 @@ public final class GetRepositoryRefsResult {
      * 
      */
     public List<GetRepositoryRefsRepositoryRefCollection> repositoryRefCollections() {
-        return this.repositoryRefCollections;
+        return this.repositoryRefCollections == null ? List.of() : this.repositoryRefCollections;
     }
 
     public static Builder builder() {
@@ -104,11 +104,11 @@ public final class GetRepositoryRefsResult {
     public static final class Builder {
         private @Nullable String commitId;
         private @Nullable List<GetRepositoryRefsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String refName;
         private @Nullable String refType;
         private String repositoryId;
-        private List<GetRepositoryRefsRepositoryRefCollection> repositoryRefCollections;
+        private @Nullable List<GetRepositoryRefsRepositoryRefCollection> repositoryRefCollections;
         public Builder() {}
         public Builder(GetRepositoryRefsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -135,8 +135,8 @@ public final class GetRepositoryRefsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -155,8 +155,8 @@ public final class GetRepositoryRefsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder repositoryRefCollections(List<GetRepositoryRefsRepositoryRefCollection> repositoryRefCollections) {
-            this.repositoryRefCollections = Objects.requireNonNull(repositoryRefCollections);
+        public Builder repositoryRefCollections(@Nullable List<GetRepositoryRefsRepositoryRefCollection> repositoryRefCollections) {
+            this.repositoryRefCollections = repositoryRefCollections;
             return this;
         }
         public Builder repositoryRefCollections(GetRepositoryRefsRepositoryRefCollection... repositoryRefCollections) {

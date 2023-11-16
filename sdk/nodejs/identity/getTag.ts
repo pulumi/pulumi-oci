@@ -53,35 +53,35 @@ export interface GetTagResult {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * The description you assign to the tag.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The OCID of the tag definition.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Indicates whether the tag is enabled for cost tracking.
      */
-    readonly isCostTracking: boolean;
+    readonly isCostTracking?: boolean;
     /**
      * Indicates whether the tag is retired. See [Retiring Key Definitions and Namespace Definitions](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/taggingoverview.htm#Retiring).
      */
-    readonly isRetired: boolean;
+    readonly isRetired?: boolean;
     /**
      * The name assigned to the tag during creation. This is the tag key definition. The name must be unique within the tag namespace and cannot be changed.
      */
-    readonly name: string;
+    readonly name?: string;
     /**
      * The tag's current state. After creating a tag, make sure its `lifecycleState` is ACTIVE before using it. After retiring a tag, make sure its `lifecycleState` is INACTIVE before using it. If you delete a tag, you cannot delete another tag until the deleted tag's `lifecycleState` changes from DELETING to DELETED.
      */
-    readonly state: string;
+    readonly state?: string;
     readonly tagName: string;
     /**
      * The OCID of the namespace that contains the tag definition.
@@ -90,11 +90,11 @@ export interface GetTagResult {
     /**
      * Date and time the tag was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * Validates a definedTag value. Each validator performs validation steps in addition to the standard validation for definedTag values. For more information, see [Limits on Tags](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/taggingoverview.htm#Limits).
      */
-    readonly validators: outputs.Identity.GetTagValidator[];
+    readonly validators?: outputs.Identity.GetTagValidator[];
 }
 /**
  * This data source provides details about a specific Tag resource in Oracle Cloud Infrastructure Identity service.

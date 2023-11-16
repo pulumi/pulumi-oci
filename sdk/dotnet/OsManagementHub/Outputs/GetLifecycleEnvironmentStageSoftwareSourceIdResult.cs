@@ -16,29 +16,29 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         /// <summary>
         /// Software source description.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// Software source name.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// The OCID of the software source.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Type of the software source.
         /// </summary>
-        public readonly string SoftwareSourceType;
+        public readonly string? SoftwareSourceType;
 
         [OutputConstructor]
         private GetLifecycleEnvironmentStageSoftwareSourceIdResult(
-            string description,
+            string? description,
 
-            string displayName,
+            string? displayName,
 
-            string id,
+            string? id,
 
-            string softwareSourceType)
+            string? softwareSourceType)
         {
             Description = description;
             DisplayName = displayName;

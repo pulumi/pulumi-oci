@@ -58,9 +58,6 @@ class GetMonitoredResourceTypesResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy containing the resource type.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -80,7 +77,7 @@ class GetMonitoredResourceTypesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -94,25 +91,16 @@ class GetMonitoredResourceTypesResult:
     @property
     @pulumi.getter(name="metricNamespace")
     def metric_namespace(self) -> Optional[str]:
-        """
-        Metric namespace for resource type.
-        """
         return pulumi.get(self, "metric_namespace")
 
     @property
     @pulumi.getter(name="monitoredResourceTypesCollections")
-    def monitored_resource_types_collections(self) -> Sequence['outputs.GetMonitoredResourceTypesMonitoredResourceTypesCollectionResult']:
-        """
-        The list of monitored_resource_types_collection.
-        """
+    def monitored_resource_types_collections(self) -> Optional[Sequence['outputs.GetMonitoredResourceTypesMonitoredResourceTypesCollectionResult']]:
         return pulumi.get(self, "monitored_resource_types_collections")
 
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        A unique monitored resource type name. The name must be unique across tenancy.  Name can not be changed.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -149,40 +137,7 @@ def get_monitored_resource_types(compartment_id: Optional[str] = None,
                                  status: Optional[str] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMonitoredResourceTypesResult:
     """
-    This data source provides the list of Monitored Resource Types in Oracle Cloud Infrastructure Stack Monitoring service.
-
-    Returns list of resource types accessible to the customer.
-    There are two types of resource types - System resource types and User resource types.
-    System resource types are available out of the box in the stack monitoring resource service
-    and are accessible to all the tenant users. User resource types are created in the context
-    of a tenancy and are visible only for the tenancy. By default, both System resource types
-    and User resource types are returned.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_monitored_resource_types = oci.StackMonitoring.get_monitored_resource_types(compartment_id=var["compartment_id"],
-        exclude_fields=var["monitored_resource_type_exclude_fields"],
-        fields=var["monitored_resource_type_fields"],
-        is_exclude_system_types=var["monitored_resource_type_is_exclude_system_types"],
-        metric_namespace=var["monitored_resource_type_metric_namespace"],
-        name=var["monitored_resource_type_name"],
-        status=var["monitored_resource_type_status"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy for which  monitored resource types should be listed.
-    :param Sequence[str] exclude_fields: Partial response refers to an optimization technique offered by the RESTful web APIs, to return all the information except the fields requested to be excluded (excludeFields) by the client. In this mechanism, the client sends the exclude field names as the query parameters for an API to the server, and the server trims down the default response content by removing the fields that are not required by the client. The parameter controls which fields to exlude and to return and should be a query string parameter called "excludeFields" of an array type, provide the values as enums, and use collectionFormat.
-    :param Sequence[str] fields: Partial response refers to an optimization technique offered by the RESTful web APIs, to return only the information (fields) required by the client. In this mechanism, the client sends the required field names as the query parameters for an API to the server, and the server trims down the default response content by removing the fields that are not required by the client. The parameter controls which fields to return and should be a query string parameter called "fields" of an array type, provide the values as enums, and use collectionFormat.
-           
-           MonitoredResourceType Id, name and compartment will be added by default.
-    :param bool is_exclude_system_types: A filter to exclude system resource types. If set to true, system resource types will be excluded.
-    :param str metric_namespace: A filter to return monitored resource types that has the matching namespace.
-    :param str name: A filter to return monitored resource types that match exactly with the resource type name given.
-    :param str status: A filter to return only resources that matches with lifecycleState given.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -220,39 +175,6 @@ def get_monitored_resource_types_output(compartment_id: Optional[pulumi.Input[st
                                         status: Optional[pulumi.Input[Optional[str]]] = None,
                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMonitoredResourceTypesResult]:
     """
-    This data source provides the list of Monitored Resource Types in Oracle Cloud Infrastructure Stack Monitoring service.
-
-    Returns list of resource types accessible to the customer.
-    There are two types of resource types - System resource types and User resource types.
-    System resource types are available out of the box in the stack monitoring resource service
-    and are accessible to all the tenant users. User resource types are created in the context
-    of a tenancy and are visible only for the tenancy. By default, both System resource types
-    and User resource types are returned.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_monitored_resource_types = oci.StackMonitoring.get_monitored_resource_types(compartment_id=var["compartment_id"],
-        exclude_fields=var["monitored_resource_type_exclude_fields"],
-        fields=var["monitored_resource_type_fields"],
-        is_exclude_system_types=var["monitored_resource_type_is_exclude_system_types"],
-        metric_namespace=var["monitored_resource_type_metric_namespace"],
-        name=var["monitored_resource_type_name"],
-        status=var["monitored_resource_type_status"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy for which  monitored resource types should be listed.
-    :param Sequence[str] exclude_fields: Partial response refers to an optimization technique offered by the RESTful web APIs, to return all the information except the fields requested to be excluded (excludeFields) by the client. In this mechanism, the client sends the exclude field names as the query parameters for an API to the server, and the server trims down the default response content by removing the fields that are not required by the client. The parameter controls which fields to exlude and to return and should be a query string parameter called "excludeFields" of an array type, provide the values as enums, and use collectionFormat.
-    :param Sequence[str] fields: Partial response refers to an optimization technique offered by the RESTful web APIs, to return only the information (fields) required by the client. In this mechanism, the client sends the required field names as the query parameters for an API to the server, and the server trims down the default response content by removing the fields that are not required by the client. The parameter controls which fields to return and should be a query string parameter called "fields" of an array type, provide the values as enums, and use collectionFormat.
-           
-           MonitoredResourceType Id, name and compartment will be added by default.
-    :param bool is_exclude_system_types: A filter to exclude system resource types. If set to true, system resource types will be excluded.
-    :param str metric_namespace: A filter to return monitored resource types that has the matching namespace.
-    :param str name: A filter to return monitored resource types that match exactly with the resource type name given.
-    :param str status: A filter to return only resources that matches with lifecycleState given.
+    Use this data source to access information about an existing resource.
     """
     ...

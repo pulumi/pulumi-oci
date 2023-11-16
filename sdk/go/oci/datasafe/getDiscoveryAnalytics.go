@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Discovery Analytics in Oracle Cloud Infrastructure Data Safe service.
@@ -81,7 +80,7 @@ type GetDiscoveryAnalyticsResult struct {
 	Filters                       []GetDiscoveryAnalyticsFilter                       `pulumi:"filters"`
 	GroupBy                       *string                                             `pulumi:"groupBy"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The OCID of the sensitive data model.
 	SensitiveDataModelId *string `pulumi:"sensitiveDataModelId"`
 	// The OCID of the target database.
@@ -135,12 +134,6 @@ func (o GetDiscoveryAnalyticsResultOutput) ToGetDiscoveryAnalyticsResultOutputWi
 	return o
 }
 
-func (o GetDiscoveryAnalyticsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDiscoveryAnalyticsResult] {
-	return pulumix.Output[GetDiscoveryAnalyticsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDiscoveryAnalyticsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDiscoveryAnalyticsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -165,8 +158,8 @@ func (o GetDiscoveryAnalyticsResultOutput) GroupBy() pulumi.StringPtrOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetDiscoveryAnalyticsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDiscoveryAnalyticsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDiscoveryAnalyticsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDiscoveryAnalyticsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the sensitive data model.

@@ -170,7 +170,7 @@ namespace Pulumi.Oci.ManagementAgent
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string? InstallType;
         /// <summary>
         /// The list of management_agent_images.
@@ -188,7 +188,7 @@ namespace Pulumi.Oci.ManagementAgent
 
             ImmutableArray<Outputs.GetManagementAgentImagesFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? installType,
 

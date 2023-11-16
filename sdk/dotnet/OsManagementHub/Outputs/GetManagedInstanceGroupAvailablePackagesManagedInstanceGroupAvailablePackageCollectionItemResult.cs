@@ -16,19 +16,19 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         /// <summary>
         /// The architecture for which this package was built.
         /// </summary>
-        public readonly string Architecture;
+        public readonly string? Architecture;
         /// <summary>
         /// A filter to return resources that match the given display names.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// A boolean variable that is used to list only the latest versions of packages, module streams, and stream profiles when set to true. All packages, module streams, and stream profiles are returned when set to false.
         /// </summary>
-        public readonly bool IsLatest;
+        public readonly bool? IsLatest;
         /// <summary>
         /// Unique identifier for the package. NOTE - This is not an OCID.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// List of software sources that provide the software package.
         /// </summary>
@@ -36,27 +36,27 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         /// <summary>
         /// Type of the package.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
         /// <summary>
         /// Version of the installed package.
         /// </summary>
-        public readonly string Version;
+        public readonly string? Version;
 
         [OutputConstructor]
         private GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemResult(
-            string architecture,
+            string? architecture,
 
-            string displayName,
+            string? displayName,
 
-            bool isLatest,
+            bool? isLatest,
 
-            string name,
+            string? name,
 
             ImmutableArray<Outputs.GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemSoftwareSourceResult> softwareSources,
 
-            string type,
+            string? type,
 
-            string version)
+            string? version)
         {
             Architecture = architecture;
             DisplayName = displayName;

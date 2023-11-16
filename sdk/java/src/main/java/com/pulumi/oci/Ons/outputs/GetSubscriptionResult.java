@@ -8,6 +8,8 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSubscriptionResult {
@@ -15,129 +17,129 @@ public final class GetSubscriptionResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for the subscription.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The time when this suscription was created.
      * 
      */
-    private String createdTime;
+    private @Nullable String createdTime;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return The delivery policy of the subscription. Stored as a JSON string.
      * 
      */
-    private String deliveryPolicy;
+    private @Nullable String deliveryPolicy;
     /**
      * @return A locator that corresponds to the subscription protocol. For example, an email address for a subscription that uses the `EMAIL` protocol, or a URL for a subscription that uses an HTTP-based protocol.
      * 
      */
-    private String endpoint;
+    private @Nullable String endpoint;
     /**
      * @return For optimistic concurrency control. See `if-match`.
      * 
      */
-    private String etag;
+    private @Nullable String etag;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The protocol used for the subscription.
      * 
      */
-    private String protocol;
+    private @Nullable String protocol;
     /**
      * @return The lifecycle state of the subscription. The status of a new subscription is PENDING; when confirmed, the subscription status changes to ACTIVE.
      * 
      */
-    private String state;
+    private @Nullable String state;
     private String subscriptionId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated topic.
      * 
      */
-    private String topicId;
+    private @Nullable String topicId;
 
     private GetSubscriptionResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for the subscription.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The time when this suscription was created.
      * 
      */
-    public String createdTime() {
-        return this.createdTime;
+    public Optional<String> createdTime() {
+        return Optional.ofNullable(this.createdTime);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return The delivery policy of the subscription. Stored as a JSON string.
      * 
      */
-    public String deliveryPolicy() {
-        return this.deliveryPolicy;
+    public Optional<String> deliveryPolicy() {
+        return Optional.ofNullable(this.deliveryPolicy);
     }
     /**
      * @return A locator that corresponds to the subscription protocol. For example, an email address for a subscription that uses the `EMAIL` protocol, or a URL for a subscription that uses an HTTP-based protocol.
      * 
      */
-    public String endpoint() {
-        return this.endpoint;
+    public Optional<String> endpoint() {
+        return Optional.ofNullable(this.endpoint);
     }
     /**
      * @return For optimistic concurrency control. See `if-match`.
      * 
      */
-    public String etag() {
-        return this.etag;
+    public Optional<String> etag() {
+        return Optional.ofNullable(this.etag);
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The protocol used for the subscription.
      * 
      */
-    public String protocol() {
-        return this.protocol;
+    public Optional<String> protocol() {
+        return Optional.ofNullable(this.protocol);
     }
     /**
      * @return The lifecycle state of the subscription. The status of a new subscription is PENDING; when confirmed, the subscription status changes to ACTIVE.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     public String subscriptionId() {
         return this.subscriptionId;
@@ -146,8 +148,8 @@ public final class GetSubscriptionResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated topic.
      * 
      */
-    public String topicId() {
-        return this.topicId;
+    public Optional<String> topicId() {
+        return Optional.ofNullable(this.topicId);
     }
 
     public static Builder builder() {
@@ -159,18 +161,18 @@ public final class GetSubscriptionResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private String createdTime;
-        private Map<String,Object> definedTags;
-        private String deliveryPolicy;
-        private String endpoint;
-        private String etag;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private String protocol;
-        private String state;
+        private @Nullable String compartmentId;
+        private @Nullable String createdTime;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String deliveryPolicy;
+        private @Nullable String endpoint;
+        private @Nullable String etag;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable String protocol;
+        private @Nullable String state;
         private String subscriptionId;
-        private String topicId;
+        private @Nullable String topicId;
         public Builder() {}
         public Builder(GetSubscriptionResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -189,53 +191,53 @@ public final class GetSubscriptionResult {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder createdTime(String createdTime) {
-            this.createdTime = Objects.requireNonNull(createdTime);
+        public Builder createdTime(@Nullable String createdTime) {
+            this.createdTime = createdTime;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder deliveryPolicy(String deliveryPolicy) {
-            this.deliveryPolicy = Objects.requireNonNull(deliveryPolicy);
+        public Builder deliveryPolicy(@Nullable String deliveryPolicy) {
+            this.deliveryPolicy = deliveryPolicy;
             return this;
         }
         @CustomType.Setter
-        public Builder endpoint(String endpoint) {
-            this.endpoint = Objects.requireNonNull(endpoint);
+        public Builder endpoint(@Nullable String endpoint) {
+            this.endpoint = endpoint;
             return this;
         }
         @CustomType.Setter
-        public Builder etag(String etag) {
-            this.etag = Objects.requireNonNull(etag);
+        public Builder etag(@Nullable String etag) {
+            this.etag = etag;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder protocol(String protocol) {
-            this.protocol = Objects.requireNonNull(protocol);
+        public Builder protocol(@Nullable String protocol) {
+            this.protocol = protocol;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
@@ -244,8 +246,8 @@ public final class GetSubscriptionResult {
             return this;
         }
         @CustomType.Setter
-        public Builder topicId(String topicId) {
-            this.topicId = Objects.requireNonNull(topicId);
+        public Builder topicId(@Nullable String topicId) {
+            this.topicId = topicId;
             return this;
         }
         public GetSubscriptionResult build() {

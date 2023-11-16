@@ -49,17 +49,11 @@ class GetDiscoverySchedulesResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the discovery schedule exists.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="discoveryScheduleCollections")
-    def discovery_schedule_collections(self) -> Sequence['outputs.GetDiscoverySchedulesDiscoveryScheduleCollectionResult']:
-        """
-        The list of discovery_schedule_collection.
-        """
+    def discovery_schedule_collections(self) -> Optional[Sequence['outputs.GetDiscoverySchedulesDiscoveryScheduleCollectionResult']]:
         return pulumi.get(self, "discovery_schedule_collections")
 
     @property
@@ -70,9 +64,6 @@ class GetDiscoverySchedulesResult:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A user-friendly name for the discovery schedule. Does not have to be unique, and it's mutable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -82,7 +73,7 @@ class GetDiscoverySchedulesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -91,9 +82,6 @@ class GetDiscoverySchedulesResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        Current state of the discovery schedule.
-        """
         return pulumi.get(self, "state")
 
 
@@ -119,27 +107,7 @@ def get_discovery_schedules(compartment_id: Optional[str] = None,
                             state: Optional[str] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDiscoverySchedulesResult:
     """
-    This data source provides the list of Discovery Schedules in Oracle Cloud Infrastructure Cloud Bridge service.
-
-    Lists discovery schedules.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_discovery_schedules = oci.CloudBridge.get_discovery_schedules(compartment_id=var["compartment_id"],
-        discovery_schedule_id=oci_cloud_bridge_discovery_schedule["test_discovery_schedule"]["id"],
-        display_name=var["discovery_schedule_display_name"],
-        state=var["discovery_schedule_state"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str discovery_schedule_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the discovery schedule.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str state: The current state of the discovery schedule.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -168,26 +136,6 @@ def get_discovery_schedules_output(compartment_id: Optional[pulumi.Input[str]] =
                                    state: Optional[pulumi.Input[Optional[str]]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDiscoverySchedulesResult]:
     """
-    This data source provides the list of Discovery Schedules in Oracle Cloud Infrastructure Cloud Bridge service.
-
-    Lists discovery schedules.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_discovery_schedules = oci.CloudBridge.get_discovery_schedules(compartment_id=var["compartment_id"],
-        discovery_schedule_id=oci_cloud_bridge_discovery_schedule["test_discovery_schedule"]["id"],
-        display_name=var["discovery_schedule_display_name"],
-        state=var["discovery_schedule_state"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str discovery_schedule_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the discovery schedule.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str state: The current state of the discovery schedule.
+    Use this data source to access information about an existing resource.
     """
     ...

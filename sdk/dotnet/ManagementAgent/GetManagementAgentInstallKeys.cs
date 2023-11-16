@@ -193,7 +193,7 @@ namespace Pulumi.Oci.ManagementAgent
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The list of management_agent_install_keys.
         /// </summary>
@@ -215,7 +215,7 @@ namespace Pulumi.Oci.ManagementAgent
 
             ImmutableArray<Outputs.GetManagementAgentInstallKeysFilterResult> filters,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetManagementAgentInstallKeysManagementAgentInstallKeyResult> managementAgentInstallKeys,
 

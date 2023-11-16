@@ -16,10 +16,10 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// A groupBy can only be used in combination with summaryField parameter. A groupBy value has to be a subset of the values mentioned in summaryField parameter.
         /// </summary>
-        public readonly ImmutableDictionary<string, object> GroupBy;
+        public readonly ImmutableDictionary<string, object>? GroupBy;
 
         [OutputConstructor]
-        private GetAlertAnalyticItemDimensionResult(ImmutableDictionary<string, object> groupBy)
+        private GetAlertAnalyticItemDimensionResult(ImmutableDictionary<string, object>? groupBy)
         {
             GroupBy = groupBy;
         }

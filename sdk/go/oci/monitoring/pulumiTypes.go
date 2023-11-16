@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -69,12 +68,6 @@ func (i AlarmSuppressionArgs) ToAlarmSuppressionOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(AlarmSuppressionOutput)
 }
 
-func (i AlarmSuppressionArgs) ToOutput(ctx context.Context) pulumix.Output[AlarmSuppression] {
-	return pulumix.Output[AlarmSuppression]{
-		OutputState: i.ToAlarmSuppressionOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i AlarmSuppressionArgs) ToAlarmSuppressionPtrOutput() AlarmSuppressionPtrOutput {
 	return i.ToAlarmSuppressionPtrOutputWithContext(context.Background())
 }
@@ -116,12 +109,6 @@ func (i *alarmSuppressionPtrType) ToAlarmSuppressionPtrOutputWithContext(ctx con
 	return pulumi.ToOutputWithContext(ctx, i).(AlarmSuppressionPtrOutput)
 }
 
-func (i *alarmSuppressionPtrType) ToOutput(ctx context.Context) pulumix.Output[*AlarmSuppression] {
-	return pulumix.Output[*AlarmSuppression]{
-		OutputState: i.ToAlarmSuppressionPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AlarmSuppressionOutput struct{ *pulumi.OutputState }
 
 func (AlarmSuppressionOutput) ElementType() reflect.Type {
@@ -144,12 +131,6 @@ func (o AlarmSuppressionOutput) ToAlarmSuppressionPtrOutputWithContext(ctx conte
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v AlarmSuppression) *AlarmSuppression {
 		return &v
 	}).(AlarmSuppressionPtrOutput)
-}
-
-func (o AlarmSuppressionOutput) ToOutput(ctx context.Context) pulumix.Output[AlarmSuppression] {
-	return pulumix.Output[AlarmSuppression]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Human-readable reason for suppressing alarm notifications. It does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -186,12 +167,6 @@ func (o AlarmSuppressionPtrOutput) ToAlarmSuppressionPtrOutput() AlarmSuppressio
 
 func (o AlarmSuppressionPtrOutput) ToAlarmSuppressionPtrOutputWithContext(ctx context.Context) AlarmSuppressionPtrOutput {
 	return o
-}
-
-func (o AlarmSuppressionPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*AlarmSuppression] {
-	return pulumix.Output[*AlarmSuppression]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AlarmSuppressionPtrOutput) Elem() AlarmSuppressionOutput {
@@ -243,11 +218,11 @@ func (o AlarmSuppressionPtrOutput) TimeSuppressUntil() pulumi.StringPtrOutput {
 
 type GetAlarmHistoryCollectionEntry struct {
 	// Description for this alarm history entry.
-	Summary string `pulumi:"summary"`
+	Summary *string `pulumi:"summary"`
 	// Timestamp for this alarm history entry. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
-	Timestamp string `pulumi:"timestamp"`
+	Timestamp *string `pulumi:"timestamp"`
 	// Timestamp for the transition of the alarm state. For example, the time when the alarm transitioned from OK to Firing. Available for state transition entries only. Note: A three-minute lag for this value accounts for any late-arriving metrics.  Example: `2019-02-01T0:59:00.789Z`
-	TimestampTriggered string `pulumi:"timestampTriggered"`
+	TimestampTriggered *string `pulumi:"timestampTriggered"`
 }
 
 // GetAlarmHistoryCollectionEntryInput is an input type that accepts GetAlarmHistoryCollectionEntryArgs and GetAlarmHistoryCollectionEntryOutput values.
@@ -263,11 +238,11 @@ type GetAlarmHistoryCollectionEntryInput interface {
 
 type GetAlarmHistoryCollectionEntryArgs struct {
 	// Description for this alarm history entry.
-	Summary pulumi.StringInput `pulumi:"summary"`
+	Summary pulumi.StringPtrInput `pulumi:"summary"`
 	// Timestamp for this alarm history entry. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
-	Timestamp pulumi.StringInput `pulumi:"timestamp"`
+	Timestamp pulumi.StringPtrInput `pulumi:"timestamp"`
 	// Timestamp for the transition of the alarm state. For example, the time when the alarm transitioned from OK to Firing. Available for state transition entries only. Note: A three-minute lag for this value accounts for any late-arriving metrics.  Example: `2019-02-01T0:59:00.789Z`
-	TimestampTriggered pulumi.StringInput `pulumi:"timestampTriggered"`
+	TimestampTriggered pulumi.StringPtrInput `pulumi:"timestampTriggered"`
 }
 
 func (GetAlarmHistoryCollectionEntryArgs) ElementType() reflect.Type {
@@ -280,12 +255,6 @@ func (i GetAlarmHistoryCollectionEntryArgs) ToGetAlarmHistoryCollectionEntryOutp
 
 func (i GetAlarmHistoryCollectionEntryArgs) ToGetAlarmHistoryCollectionEntryOutputWithContext(ctx context.Context) GetAlarmHistoryCollectionEntryOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAlarmHistoryCollectionEntryOutput)
-}
-
-func (i GetAlarmHistoryCollectionEntryArgs) ToOutput(ctx context.Context) pulumix.Output[GetAlarmHistoryCollectionEntry] {
-	return pulumix.Output[GetAlarmHistoryCollectionEntry]{
-		OutputState: i.ToGetAlarmHistoryCollectionEntryOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAlarmHistoryCollectionEntryArrayInput is an input type that accepts GetAlarmHistoryCollectionEntryArray and GetAlarmHistoryCollectionEntryArrayOutput values.
@@ -313,12 +282,6 @@ func (i GetAlarmHistoryCollectionEntryArray) ToGetAlarmHistoryCollectionEntryArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetAlarmHistoryCollectionEntryArrayOutput)
 }
 
-func (i GetAlarmHistoryCollectionEntryArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAlarmHistoryCollectionEntry] {
-	return pulumix.Output[[]GetAlarmHistoryCollectionEntry]{
-		OutputState: i.ToGetAlarmHistoryCollectionEntryArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAlarmHistoryCollectionEntryOutput struct{ *pulumi.OutputState }
 
 func (GetAlarmHistoryCollectionEntryOutput) ElementType() reflect.Type {
@@ -333,25 +296,19 @@ func (o GetAlarmHistoryCollectionEntryOutput) ToGetAlarmHistoryCollectionEntryOu
 	return o
 }
 
-func (o GetAlarmHistoryCollectionEntryOutput) ToOutput(ctx context.Context) pulumix.Output[GetAlarmHistoryCollectionEntry] {
-	return pulumix.Output[GetAlarmHistoryCollectionEntry]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Description for this alarm history entry.
-func (o GetAlarmHistoryCollectionEntryOutput) Summary() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAlarmHistoryCollectionEntry) string { return v.Summary }).(pulumi.StringOutput)
+func (o GetAlarmHistoryCollectionEntryOutput) Summary() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAlarmHistoryCollectionEntry) *string { return v.Summary }).(pulumi.StringPtrOutput)
 }
 
 // Timestamp for this alarm history entry. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
-func (o GetAlarmHistoryCollectionEntryOutput) Timestamp() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAlarmHistoryCollectionEntry) string { return v.Timestamp }).(pulumi.StringOutput)
+func (o GetAlarmHistoryCollectionEntryOutput) Timestamp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAlarmHistoryCollectionEntry) *string { return v.Timestamp }).(pulumi.StringPtrOutput)
 }
 
 // Timestamp for the transition of the alarm state. For example, the time when the alarm transitioned from OK to Firing. Available for state transition entries only. Note: A three-minute lag for this value accounts for any late-arriving metrics.  Example: `2019-02-01T0:59:00.789Z`
-func (o GetAlarmHistoryCollectionEntryOutput) TimestampTriggered() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAlarmHistoryCollectionEntry) string { return v.TimestampTriggered }).(pulumi.StringOutput)
+func (o GetAlarmHistoryCollectionEntryOutput) TimestampTriggered() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAlarmHistoryCollectionEntry) *string { return v.TimestampTriggered }).(pulumi.StringPtrOutput)
 }
 
 type GetAlarmHistoryCollectionEntryArrayOutput struct{ *pulumi.OutputState }
@@ -368,12 +325,6 @@ func (o GetAlarmHistoryCollectionEntryArrayOutput) ToGetAlarmHistoryCollectionEn
 	return o
 }
 
-func (o GetAlarmHistoryCollectionEntryArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAlarmHistoryCollectionEntry] {
-	return pulumix.Output[[]GetAlarmHistoryCollectionEntry]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAlarmHistoryCollectionEntryArrayOutput) Index(i pulumi.IntInput) GetAlarmHistoryCollectionEntryOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAlarmHistoryCollectionEntry {
 		return vs[0].([]GetAlarmHistoryCollectionEntry)[vs[1].(int)]
@@ -382,17 +333,17 @@ func (o GetAlarmHistoryCollectionEntryArrayOutput) Index(i pulumi.IntInput) GetA
 
 type GetAlarmStatusesAlarmStatus struct {
 	// A filter to return only resources that match the given display name exactly. Use this filter to list an alarm by name. Alternatively, when you know the alarm OCID, use the GetAlarm operation.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The configured severity of the alarm.  Example: `CRITICAL`
-	Severity string `pulumi:"severity"`
+	Severity *string `pulumi:"severity"`
 	// The status of the metric stream to use for alarm filtering. For example, set `StatusQueryParam` to "FIRING" to filter results to metric streams of the alarm with that status. Default behaviour is to return alarms irrespective of metric streams' status.  Example: `FIRING`
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 	// The configuration details for suppressing an alarm.
 	Suppressions []GetAlarmStatusesAlarmStatusSuppression `pulumi:"suppressions"`
 	// Timestamp for the transition of the alarm state. For example, the time when the alarm transitioned from OK to Firing. Note: A three-minute lag for this value accounts for any late-arriving metrics.  Example: `2019-02-01T01:02:29.600Z`
-	TimestampTriggered string `pulumi:"timestampTriggered"`
+	TimestampTriggered *string `pulumi:"timestampTriggered"`
 }
 
 // GetAlarmStatusesAlarmStatusInput is an input type that accepts GetAlarmStatusesAlarmStatusArgs and GetAlarmStatusesAlarmStatusOutput values.
@@ -408,17 +359,17 @@ type GetAlarmStatusesAlarmStatusInput interface {
 
 type GetAlarmStatusesAlarmStatusArgs struct {
 	// A filter to return only resources that match the given display name exactly. Use this filter to list an alarm by name. Alternatively, when you know the alarm OCID, use the GetAlarm operation.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// The configured severity of the alarm.  Example: `CRITICAL`
-	Severity pulumi.StringInput `pulumi:"severity"`
+	Severity pulumi.StringPtrInput `pulumi:"severity"`
 	// The status of the metric stream to use for alarm filtering. For example, set `StatusQueryParam` to "FIRING" to filter results to metric streams of the alarm with that status. Default behaviour is to return alarms irrespective of metric streams' status.  Example: `FIRING`
-	Status pulumi.StringInput `pulumi:"status"`
+	Status pulumi.StringPtrInput `pulumi:"status"`
 	// The configuration details for suppressing an alarm.
 	Suppressions GetAlarmStatusesAlarmStatusSuppressionArrayInput `pulumi:"suppressions"`
 	// Timestamp for the transition of the alarm state. For example, the time when the alarm transitioned from OK to Firing. Note: A three-minute lag for this value accounts for any late-arriving metrics.  Example: `2019-02-01T01:02:29.600Z`
-	TimestampTriggered pulumi.StringInput `pulumi:"timestampTriggered"`
+	TimestampTriggered pulumi.StringPtrInput `pulumi:"timestampTriggered"`
 }
 
 func (GetAlarmStatusesAlarmStatusArgs) ElementType() reflect.Type {
@@ -431,12 +382,6 @@ func (i GetAlarmStatusesAlarmStatusArgs) ToGetAlarmStatusesAlarmStatusOutput() G
 
 func (i GetAlarmStatusesAlarmStatusArgs) ToGetAlarmStatusesAlarmStatusOutputWithContext(ctx context.Context) GetAlarmStatusesAlarmStatusOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAlarmStatusesAlarmStatusOutput)
-}
-
-func (i GetAlarmStatusesAlarmStatusArgs) ToOutput(ctx context.Context) pulumix.Output[GetAlarmStatusesAlarmStatus] {
-	return pulumix.Output[GetAlarmStatusesAlarmStatus]{
-		OutputState: i.ToGetAlarmStatusesAlarmStatusOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAlarmStatusesAlarmStatusArrayInput is an input type that accepts GetAlarmStatusesAlarmStatusArray and GetAlarmStatusesAlarmStatusArrayOutput values.
@@ -464,12 +409,6 @@ func (i GetAlarmStatusesAlarmStatusArray) ToGetAlarmStatusesAlarmStatusArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetAlarmStatusesAlarmStatusArrayOutput)
 }
 
-func (i GetAlarmStatusesAlarmStatusArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAlarmStatusesAlarmStatus] {
-	return pulumix.Output[[]GetAlarmStatusesAlarmStatus]{
-		OutputState: i.ToGetAlarmStatusesAlarmStatusArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAlarmStatusesAlarmStatusOutput struct{ *pulumi.OutputState }
 
 func (GetAlarmStatusesAlarmStatusOutput) ElementType() reflect.Type {
@@ -484,30 +423,24 @@ func (o GetAlarmStatusesAlarmStatusOutput) ToGetAlarmStatusesAlarmStatusOutputWi
 	return o
 }
 
-func (o GetAlarmStatusesAlarmStatusOutput) ToOutput(ctx context.Context) pulumix.Output[GetAlarmStatusesAlarmStatus] {
-	return pulumix.Output[GetAlarmStatusesAlarmStatus]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A filter to return only resources that match the given display name exactly. Use this filter to list an alarm by name. Alternatively, when you know the alarm OCID, use the GetAlarm operation.
-func (o GetAlarmStatusesAlarmStatusOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAlarmStatusesAlarmStatus) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetAlarmStatusesAlarmStatusOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAlarmStatusesAlarmStatus) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm.
-func (o GetAlarmStatusesAlarmStatusOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAlarmStatusesAlarmStatus) string { return v.Id }).(pulumi.StringOutput)
+func (o GetAlarmStatusesAlarmStatusOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAlarmStatusesAlarmStatus) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The configured severity of the alarm.  Example: `CRITICAL`
-func (o GetAlarmStatusesAlarmStatusOutput) Severity() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAlarmStatusesAlarmStatus) string { return v.Severity }).(pulumi.StringOutput)
+func (o GetAlarmStatusesAlarmStatusOutput) Severity() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAlarmStatusesAlarmStatus) *string { return v.Severity }).(pulumi.StringPtrOutput)
 }
 
 // The status of the metric stream to use for alarm filtering. For example, set `StatusQueryParam` to "FIRING" to filter results to metric streams of the alarm with that status. Default behaviour is to return alarms irrespective of metric streams' status.  Example: `FIRING`
-func (o GetAlarmStatusesAlarmStatusOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAlarmStatusesAlarmStatus) string { return v.Status }).(pulumi.StringOutput)
+func (o GetAlarmStatusesAlarmStatusOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAlarmStatusesAlarmStatus) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // The configuration details for suppressing an alarm.
@@ -516,8 +449,8 @@ func (o GetAlarmStatusesAlarmStatusOutput) Suppressions() GetAlarmStatusesAlarmS
 }
 
 // Timestamp for the transition of the alarm state. For example, the time when the alarm transitioned from OK to Firing. Note: A three-minute lag for this value accounts for any late-arriving metrics.  Example: `2019-02-01T01:02:29.600Z`
-func (o GetAlarmStatusesAlarmStatusOutput) TimestampTriggered() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAlarmStatusesAlarmStatus) string { return v.TimestampTriggered }).(pulumi.StringOutput)
+func (o GetAlarmStatusesAlarmStatusOutput) TimestampTriggered() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAlarmStatusesAlarmStatus) *string { return v.TimestampTriggered }).(pulumi.StringPtrOutput)
 }
 
 type GetAlarmStatusesAlarmStatusArrayOutput struct{ *pulumi.OutputState }
@@ -534,12 +467,6 @@ func (o GetAlarmStatusesAlarmStatusArrayOutput) ToGetAlarmStatusesAlarmStatusArr
 	return o
 }
 
-func (o GetAlarmStatusesAlarmStatusArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAlarmStatusesAlarmStatus] {
-	return pulumix.Output[[]GetAlarmStatusesAlarmStatus]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAlarmStatusesAlarmStatusArrayOutput) Index(i pulumi.IntInput) GetAlarmStatusesAlarmStatusOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAlarmStatusesAlarmStatus {
 		return vs[0].([]GetAlarmStatusesAlarmStatus)[vs[1].(int)]
@@ -548,11 +475,11 @@ func (o GetAlarmStatusesAlarmStatusArrayOutput) Index(i pulumi.IntInput) GetAlar
 
 type GetAlarmStatusesAlarmStatusSuppression struct {
 	// Human-readable reason for suppressing alarm notifications. It does not have to be unique, and it's changeable. Avoid entering confidential information.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
-	TimeSuppressFrom string `pulumi:"timeSuppressFrom"`
+	TimeSuppressFrom *string `pulumi:"timeSuppressFrom"`
 	// The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2019-02-01T02:02:29.600Z`
-	TimeSuppressUntil string `pulumi:"timeSuppressUntil"`
+	TimeSuppressUntil *string `pulumi:"timeSuppressUntil"`
 }
 
 // GetAlarmStatusesAlarmStatusSuppressionInput is an input type that accepts GetAlarmStatusesAlarmStatusSuppressionArgs and GetAlarmStatusesAlarmStatusSuppressionOutput values.
@@ -568,11 +495,11 @@ type GetAlarmStatusesAlarmStatusSuppressionInput interface {
 
 type GetAlarmStatusesAlarmStatusSuppressionArgs struct {
 	// Human-readable reason for suppressing alarm notifications. It does not have to be unique, and it's changeable. Avoid entering confidential information.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
-	TimeSuppressFrom pulumi.StringInput `pulumi:"timeSuppressFrom"`
+	TimeSuppressFrom pulumi.StringPtrInput `pulumi:"timeSuppressFrom"`
 	// The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2019-02-01T02:02:29.600Z`
-	TimeSuppressUntil pulumi.StringInput `pulumi:"timeSuppressUntil"`
+	TimeSuppressUntil pulumi.StringPtrInput `pulumi:"timeSuppressUntil"`
 }
 
 func (GetAlarmStatusesAlarmStatusSuppressionArgs) ElementType() reflect.Type {
@@ -585,12 +512,6 @@ func (i GetAlarmStatusesAlarmStatusSuppressionArgs) ToGetAlarmStatusesAlarmStatu
 
 func (i GetAlarmStatusesAlarmStatusSuppressionArgs) ToGetAlarmStatusesAlarmStatusSuppressionOutputWithContext(ctx context.Context) GetAlarmStatusesAlarmStatusSuppressionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAlarmStatusesAlarmStatusSuppressionOutput)
-}
-
-func (i GetAlarmStatusesAlarmStatusSuppressionArgs) ToOutput(ctx context.Context) pulumix.Output[GetAlarmStatusesAlarmStatusSuppression] {
-	return pulumix.Output[GetAlarmStatusesAlarmStatusSuppression]{
-		OutputState: i.ToGetAlarmStatusesAlarmStatusSuppressionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAlarmStatusesAlarmStatusSuppressionArrayInput is an input type that accepts GetAlarmStatusesAlarmStatusSuppressionArray and GetAlarmStatusesAlarmStatusSuppressionArrayOutput values.
@@ -618,12 +539,6 @@ func (i GetAlarmStatusesAlarmStatusSuppressionArray) ToGetAlarmStatusesAlarmStat
 	return pulumi.ToOutputWithContext(ctx, i).(GetAlarmStatusesAlarmStatusSuppressionArrayOutput)
 }
 
-func (i GetAlarmStatusesAlarmStatusSuppressionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAlarmStatusesAlarmStatusSuppression] {
-	return pulumix.Output[[]GetAlarmStatusesAlarmStatusSuppression]{
-		OutputState: i.ToGetAlarmStatusesAlarmStatusSuppressionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAlarmStatusesAlarmStatusSuppressionOutput struct{ *pulumi.OutputState }
 
 func (GetAlarmStatusesAlarmStatusSuppressionOutput) ElementType() reflect.Type {
@@ -638,25 +553,19 @@ func (o GetAlarmStatusesAlarmStatusSuppressionOutput) ToGetAlarmStatusesAlarmSta
 	return o
 }
 
-func (o GetAlarmStatusesAlarmStatusSuppressionOutput) ToOutput(ctx context.Context) pulumix.Output[GetAlarmStatusesAlarmStatusSuppression] {
-	return pulumix.Output[GetAlarmStatusesAlarmStatusSuppression]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Human-readable reason for suppressing alarm notifications. It does not have to be unique, and it's changeable. Avoid entering confidential information.
-func (o GetAlarmStatusesAlarmStatusSuppressionOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAlarmStatusesAlarmStatusSuppression) string { return v.Description }).(pulumi.StringOutput)
+func (o GetAlarmStatusesAlarmStatusSuppressionOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAlarmStatusesAlarmStatusSuppression) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
-func (o GetAlarmStatusesAlarmStatusSuppressionOutput) TimeSuppressFrom() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAlarmStatusesAlarmStatusSuppression) string { return v.TimeSuppressFrom }).(pulumi.StringOutput)
+func (o GetAlarmStatusesAlarmStatusSuppressionOutput) TimeSuppressFrom() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAlarmStatusesAlarmStatusSuppression) *string { return v.TimeSuppressFrom }).(pulumi.StringPtrOutput)
 }
 
 // The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2019-02-01T02:02:29.600Z`
-func (o GetAlarmStatusesAlarmStatusSuppressionOutput) TimeSuppressUntil() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAlarmStatusesAlarmStatusSuppression) string { return v.TimeSuppressUntil }).(pulumi.StringOutput)
+func (o GetAlarmStatusesAlarmStatusSuppressionOutput) TimeSuppressUntil() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAlarmStatusesAlarmStatusSuppression) *string { return v.TimeSuppressUntil }).(pulumi.StringPtrOutput)
 }
 
 type GetAlarmStatusesAlarmStatusSuppressionArrayOutput struct{ *pulumi.OutputState }
@@ -671,12 +580,6 @@ func (o GetAlarmStatusesAlarmStatusSuppressionArrayOutput) ToGetAlarmStatusesAla
 
 func (o GetAlarmStatusesAlarmStatusSuppressionArrayOutput) ToGetAlarmStatusesAlarmStatusSuppressionArrayOutputWithContext(ctx context.Context) GetAlarmStatusesAlarmStatusSuppressionArrayOutput {
 	return o
-}
-
-func (o GetAlarmStatusesAlarmStatusSuppressionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAlarmStatusesAlarmStatusSuppression] {
-	return pulumix.Output[[]GetAlarmStatusesAlarmStatusSuppression]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAlarmStatusesAlarmStatusSuppressionArrayOutput) Index(i pulumi.IntInput) GetAlarmStatusesAlarmStatusSuppressionOutput {
@@ -720,12 +623,6 @@ func (i GetAlarmStatusesFilterArgs) ToGetAlarmStatusesFilterOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetAlarmStatusesFilterOutput)
 }
 
-func (i GetAlarmStatusesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetAlarmStatusesFilter] {
-	return pulumix.Output[GetAlarmStatusesFilter]{
-		OutputState: i.ToGetAlarmStatusesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAlarmStatusesFilterArrayInput is an input type that accepts GetAlarmStatusesFilterArray and GetAlarmStatusesFilterArrayOutput values.
 // You can construct a concrete instance of `GetAlarmStatusesFilterArrayInput` via:
 //
@@ -751,12 +648,6 @@ func (i GetAlarmStatusesFilterArray) ToGetAlarmStatusesFilterArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetAlarmStatusesFilterArrayOutput)
 }
 
-func (i GetAlarmStatusesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAlarmStatusesFilter] {
-	return pulumix.Output[[]GetAlarmStatusesFilter]{
-		OutputState: i.ToGetAlarmStatusesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAlarmStatusesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetAlarmStatusesFilterOutput) ElementType() reflect.Type {
@@ -769,12 +660,6 @@ func (o GetAlarmStatusesFilterOutput) ToGetAlarmStatusesFilterOutput() GetAlarmS
 
 func (o GetAlarmStatusesFilterOutput) ToGetAlarmStatusesFilterOutputWithContext(ctx context.Context) GetAlarmStatusesFilterOutput {
 	return o
-}
-
-func (o GetAlarmStatusesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetAlarmStatusesFilter] {
-	return pulumix.Output[GetAlarmStatusesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAlarmStatusesFilterOutput) Name() pulumi.StringOutput {
@@ -803,12 +688,6 @@ func (o GetAlarmStatusesFilterArrayOutput) ToGetAlarmStatusesFilterArrayOutputWi
 	return o
 }
 
-func (o GetAlarmStatusesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAlarmStatusesFilter] {
-	return pulumix.Output[[]GetAlarmStatusesFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAlarmStatusesFilterArrayOutput) Index(i pulumi.IntInput) GetAlarmStatusesFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAlarmStatusesFilter {
 		return vs[0].([]GetAlarmStatusesFilter)[vs[1].(int)]
@@ -817,11 +696,11 @@ func (o GetAlarmStatusesFilterArrayOutput) Index(i pulumi.IntInput) GetAlarmStat
 
 type GetAlarmSuppression struct {
 	// Human-readable reason for suppressing alarm notifications. It does not have to be unique, and it's changeable. Avoid entering confidential information.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
-	TimeSuppressFrom string `pulumi:"timeSuppressFrom"`
+	TimeSuppressFrom *string `pulumi:"timeSuppressFrom"`
 	// The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2019-02-01T02:02:29.600Z`
-	TimeSuppressUntil string `pulumi:"timeSuppressUntil"`
+	TimeSuppressUntil *string `pulumi:"timeSuppressUntil"`
 }
 
 // GetAlarmSuppressionInput is an input type that accepts GetAlarmSuppressionArgs and GetAlarmSuppressionOutput values.
@@ -837,11 +716,11 @@ type GetAlarmSuppressionInput interface {
 
 type GetAlarmSuppressionArgs struct {
 	// Human-readable reason for suppressing alarm notifications. It does not have to be unique, and it's changeable. Avoid entering confidential information.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
-	TimeSuppressFrom pulumi.StringInput `pulumi:"timeSuppressFrom"`
+	TimeSuppressFrom pulumi.StringPtrInput `pulumi:"timeSuppressFrom"`
 	// The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2019-02-01T02:02:29.600Z`
-	TimeSuppressUntil pulumi.StringInput `pulumi:"timeSuppressUntil"`
+	TimeSuppressUntil pulumi.StringPtrInput `pulumi:"timeSuppressUntil"`
 }
 
 func (GetAlarmSuppressionArgs) ElementType() reflect.Type {
@@ -854,12 +733,6 @@ func (i GetAlarmSuppressionArgs) ToGetAlarmSuppressionOutput() GetAlarmSuppressi
 
 func (i GetAlarmSuppressionArgs) ToGetAlarmSuppressionOutputWithContext(ctx context.Context) GetAlarmSuppressionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAlarmSuppressionOutput)
-}
-
-func (i GetAlarmSuppressionArgs) ToOutput(ctx context.Context) pulumix.Output[GetAlarmSuppression] {
-	return pulumix.Output[GetAlarmSuppression]{
-		OutputState: i.ToGetAlarmSuppressionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAlarmSuppressionArrayInput is an input type that accepts GetAlarmSuppressionArray and GetAlarmSuppressionArrayOutput values.
@@ -887,12 +760,6 @@ func (i GetAlarmSuppressionArray) ToGetAlarmSuppressionArrayOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetAlarmSuppressionArrayOutput)
 }
 
-func (i GetAlarmSuppressionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAlarmSuppression] {
-	return pulumix.Output[[]GetAlarmSuppression]{
-		OutputState: i.ToGetAlarmSuppressionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAlarmSuppressionOutput struct{ *pulumi.OutputState }
 
 func (GetAlarmSuppressionOutput) ElementType() reflect.Type {
@@ -907,25 +774,19 @@ func (o GetAlarmSuppressionOutput) ToGetAlarmSuppressionOutputWithContext(ctx co
 	return o
 }
 
-func (o GetAlarmSuppressionOutput) ToOutput(ctx context.Context) pulumix.Output[GetAlarmSuppression] {
-	return pulumix.Output[GetAlarmSuppression]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Human-readable reason for suppressing alarm notifications. It does not have to be unique, and it's changeable. Avoid entering confidential information.
-func (o GetAlarmSuppressionOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAlarmSuppression) string { return v.Description }).(pulumi.StringOutput)
+func (o GetAlarmSuppressionOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAlarmSuppression) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
-func (o GetAlarmSuppressionOutput) TimeSuppressFrom() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAlarmSuppression) string { return v.TimeSuppressFrom }).(pulumi.StringOutput)
+func (o GetAlarmSuppressionOutput) TimeSuppressFrom() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAlarmSuppression) *string { return v.TimeSuppressFrom }).(pulumi.StringPtrOutput)
 }
 
 // The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2019-02-01T02:02:29.600Z`
-func (o GetAlarmSuppressionOutput) TimeSuppressUntil() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAlarmSuppression) string { return v.TimeSuppressUntil }).(pulumi.StringOutput)
+func (o GetAlarmSuppressionOutput) TimeSuppressUntil() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAlarmSuppression) *string { return v.TimeSuppressUntil }).(pulumi.StringPtrOutput)
 }
 
 type GetAlarmSuppressionArrayOutput struct{ *pulumi.OutputState }
@@ -942,12 +803,6 @@ func (o GetAlarmSuppressionArrayOutput) ToGetAlarmSuppressionArrayOutputWithCont
 	return o
 }
 
-func (o GetAlarmSuppressionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAlarmSuppression] {
-	return pulumix.Output[[]GetAlarmSuppression]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAlarmSuppressionArrayOutput) Index(i pulumi.IntInput) GetAlarmSuppressionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAlarmSuppression {
 		return vs[0].([]GetAlarmSuppression)[vs[1].(int)]
@@ -956,51 +811,51 @@ func (o GetAlarmSuppressionArrayOutput) Index(i pulumi.IntInput) GetAlarmSuppres
 
 type GetAlarmsAlarm struct {
 	// The human-readable content of the delivered alarm notification. Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices.  Example: `High CPU usage alert. Follow runbook instructions for resolution.`
-	Body string `pulumi:"body"`
+	Body *string `pulumi:"body"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the resources monitored by the metric that you are searching for. Use tenancyId to search in the root compartment.  Example: `ocid1.compartment.oc1..exampleuniqueID`
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A list of destinations for alarm notifications. Each destination is represented by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a related resource, such as a [topic](https://docs.cloud.oracle.com/iaas/api/#/en/notification/latest/NotificationTopic). Supported destination services: Notifications , Streaming.           Limit: One destination per supported destination service.
 	Destinations []string `pulumi:"destinations"`
 	// A filter to return only resources that match the given display name exactly. Use this filter to list an alarm by name. Alternatively, when you know the alarm OCID, use the GetAlarm operation.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Whether the alarm is enabled.  Example: `true`
-	IsEnabled bool `pulumi:"isEnabled"`
+	IsEnabled *bool `pulumi:"isEnabled"`
 	// When set to `true`, splits alarm notifications per metric stream. When set to `false`, groups alarm notifications across metric streams.
-	IsNotificationsPerMetricDimensionEnabled bool `pulumi:"isNotificationsPerMetricDimensionEnabled"`
+	IsNotificationsPerMetricDimensionEnabled *bool `pulumi:"isNotificationsPerMetricDimensionEnabled"`
 	// The format to use for alarm notifications. The formats are:
-	MessageFormat string `pulumi:"messageFormat"`
+	MessageFormat *string `pulumi:"messageFormat"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric being evaluated by the alarm.
-	MetricCompartmentId string `pulumi:"metricCompartmentId"`
+	MetricCompartmentId *string `pulumi:"metricCompartmentId"`
 	// When true, the alarm evaluates metrics from all compartments and subcompartments. The parameter can only be set to true when metricCompartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, the alarm evaluates metrics from only the compartment specified in metricCompartmentId. Default is false.  Example: `true`
-	MetricCompartmentIdInSubtree bool `pulumi:"metricCompartmentIdInSubtree"`
+	MetricCompartmentIdInSubtree *bool `pulumi:"metricCompartmentIdInSubtree"`
 	// The source service or application emitting the metric that is evaluated by the alarm.  Example: `ociComputeagent`
-	Namespace string `pulumi:"namespace"`
+	Namespace *string `pulumi:"namespace"`
 	// The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING". For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING".
-	PendingDuration string `pulumi:"pendingDuration"`
+	PendingDuration *string `pulumi:"pendingDuration"`
 	// The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`. For information about writing MQL expressions, see [Editing the MQL Expression for a Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm). For details about MQL, see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available dimensions, review the metric definition for the supported service. See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
-	Query string `pulumi:"query"`
+	Query *string `pulumi:"query"`
 	// The frequency for re-submitting alarm notifications, if the alarm keeps firing without interruption. Format defined by ISO 8601. For example, `PT4H` indicates four hours. Minimum: PT1M. Maximum: P30D.
-	RepeatNotificationDuration string `pulumi:"repeatNotificationDuration"`
+	RepeatNotificationDuration *string `pulumi:"repeatNotificationDuration"`
 	// The time between calculated aggregation windows for the alarm. Supported value: `1m`
-	Resolution string `pulumi:"resolution"`
+	Resolution *string `pulumi:"resolution"`
 	// Resource group to match for metric data retrieved by the alarm. A resource group is a custom string that you can match when retrieving custom metrics. Only one resource group can be applied per metric. A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).  Example: `frontend-fleet`
-	ResourceGroup string `pulumi:"resourceGroup"`
+	ResourceGroup *string `pulumi:"resourceGroup"`
 	// The perceived type of response required when the alarm is in the "FIRING" state.  Example: `CRITICAL`
-	Severity string `pulumi:"severity"`
+	Severity *string `pulumi:"severity"`
 	// A filter to return only alarms that match the given lifecycle state exactly. When not specified, only alarms in the ACTIVE lifecycle state are listed.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The configuration details for suppressing an alarm.
 	Suppressions []GetAlarmsAlarmSuppression `pulumi:"suppressions"`
 	// The date and time the alarm was created. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the alarm was last updated. Format defined by RFC3339.  Example: `2019-02-03T01:02:29.600Z`
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 // GetAlarmsAlarmInput is an input type that accepts GetAlarmsAlarmArgs and GetAlarmsAlarmOutput values.
@@ -1016,51 +871,51 @@ type GetAlarmsAlarmInput interface {
 
 type GetAlarmsAlarmArgs struct {
 	// The human-readable content of the delivered alarm notification. Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices.  Example: `High CPU usage alert. Follow runbook instructions for resolution.`
-	Body pulumi.StringInput `pulumi:"body"`
+	Body pulumi.StringPtrInput `pulumi:"body"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the resources monitored by the metric that you are searching for. Use tenancyId to search in the root compartment.  Example: `ocid1.compartment.oc1..exampleuniqueID`
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A list of destinations for alarm notifications. Each destination is represented by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a related resource, such as a [topic](https://docs.cloud.oracle.com/iaas/api/#/en/notification/latest/NotificationTopic). Supported destination services: Notifications , Streaming.           Limit: One destination per supported destination service.
 	Destinations pulumi.StringArrayInput `pulumi:"destinations"`
 	// A filter to return only resources that match the given display name exactly. Use this filter to list an alarm by name. Alternatively, when you know the alarm OCID, use the GetAlarm operation.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Whether the alarm is enabled.  Example: `true`
-	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+	IsEnabled pulumi.BoolPtrInput `pulumi:"isEnabled"`
 	// When set to `true`, splits alarm notifications per metric stream. When set to `false`, groups alarm notifications across metric streams.
-	IsNotificationsPerMetricDimensionEnabled pulumi.BoolInput `pulumi:"isNotificationsPerMetricDimensionEnabled"`
+	IsNotificationsPerMetricDimensionEnabled pulumi.BoolPtrInput `pulumi:"isNotificationsPerMetricDimensionEnabled"`
 	// The format to use for alarm notifications. The formats are:
-	MessageFormat pulumi.StringInput `pulumi:"messageFormat"`
+	MessageFormat pulumi.StringPtrInput `pulumi:"messageFormat"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric being evaluated by the alarm.
-	MetricCompartmentId pulumi.StringInput `pulumi:"metricCompartmentId"`
+	MetricCompartmentId pulumi.StringPtrInput `pulumi:"metricCompartmentId"`
 	// When true, the alarm evaluates metrics from all compartments and subcompartments. The parameter can only be set to true when metricCompartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, the alarm evaluates metrics from only the compartment specified in metricCompartmentId. Default is false.  Example: `true`
-	MetricCompartmentIdInSubtree pulumi.BoolInput `pulumi:"metricCompartmentIdInSubtree"`
+	MetricCompartmentIdInSubtree pulumi.BoolPtrInput `pulumi:"metricCompartmentIdInSubtree"`
 	// The source service or application emitting the metric that is evaluated by the alarm.  Example: `ociComputeagent`
-	Namespace pulumi.StringInput `pulumi:"namespace"`
+	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
 	// The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING". For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING".
-	PendingDuration pulumi.StringInput `pulumi:"pendingDuration"`
+	PendingDuration pulumi.StringPtrInput `pulumi:"pendingDuration"`
 	// The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`. For information about writing MQL expressions, see [Editing the MQL Expression for a Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm). For details about MQL, see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available dimensions, review the metric definition for the supported service. See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
-	Query pulumi.StringInput `pulumi:"query"`
+	Query pulumi.StringPtrInput `pulumi:"query"`
 	// The frequency for re-submitting alarm notifications, if the alarm keeps firing without interruption. Format defined by ISO 8601. For example, `PT4H` indicates four hours. Minimum: PT1M. Maximum: P30D.
-	RepeatNotificationDuration pulumi.StringInput `pulumi:"repeatNotificationDuration"`
+	RepeatNotificationDuration pulumi.StringPtrInput `pulumi:"repeatNotificationDuration"`
 	// The time between calculated aggregation windows for the alarm. Supported value: `1m`
-	Resolution pulumi.StringInput `pulumi:"resolution"`
+	Resolution pulumi.StringPtrInput `pulumi:"resolution"`
 	// Resource group to match for metric data retrieved by the alarm. A resource group is a custom string that you can match when retrieving custom metrics. Only one resource group can be applied per metric. A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).  Example: `frontend-fleet`
-	ResourceGroup pulumi.StringInput `pulumi:"resourceGroup"`
+	ResourceGroup pulumi.StringPtrInput `pulumi:"resourceGroup"`
 	// The perceived type of response required when the alarm is in the "FIRING" state.  Example: `CRITICAL`
-	Severity pulumi.StringInput `pulumi:"severity"`
+	Severity pulumi.StringPtrInput `pulumi:"severity"`
 	// A filter to return only alarms that match the given lifecycle state exactly. When not specified, only alarms in the ACTIVE lifecycle state are listed.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The configuration details for suppressing an alarm.
 	Suppressions GetAlarmsAlarmSuppressionArrayInput `pulumi:"suppressions"`
 	// The date and time the alarm was created. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The date and time the alarm was last updated. Format defined by RFC3339.  Example: `2019-02-03T01:02:29.600Z`
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 }
 
 func (GetAlarmsAlarmArgs) ElementType() reflect.Type {
@@ -1073,12 +928,6 @@ func (i GetAlarmsAlarmArgs) ToGetAlarmsAlarmOutput() GetAlarmsAlarmOutput {
 
 func (i GetAlarmsAlarmArgs) ToGetAlarmsAlarmOutputWithContext(ctx context.Context) GetAlarmsAlarmOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAlarmsAlarmOutput)
-}
-
-func (i GetAlarmsAlarmArgs) ToOutput(ctx context.Context) pulumix.Output[GetAlarmsAlarm] {
-	return pulumix.Output[GetAlarmsAlarm]{
-		OutputState: i.ToGetAlarmsAlarmOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAlarmsAlarmArrayInput is an input type that accepts GetAlarmsAlarmArray and GetAlarmsAlarmArrayOutput values.
@@ -1106,12 +955,6 @@ func (i GetAlarmsAlarmArray) ToGetAlarmsAlarmArrayOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(GetAlarmsAlarmArrayOutput)
 }
 
-func (i GetAlarmsAlarmArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAlarmsAlarm] {
-	return pulumix.Output[[]GetAlarmsAlarm]{
-		OutputState: i.ToGetAlarmsAlarmArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAlarmsAlarmOutput struct{ *pulumi.OutputState }
 
 func (GetAlarmsAlarmOutput) ElementType() reflect.Type {
@@ -1126,20 +969,14 @@ func (o GetAlarmsAlarmOutput) ToGetAlarmsAlarmOutputWithContext(ctx context.Cont
 	return o
 }
 
-func (o GetAlarmsAlarmOutput) ToOutput(ctx context.Context) pulumix.Output[GetAlarmsAlarm] {
-	return pulumix.Output[GetAlarmsAlarm]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The human-readable content of the delivered alarm notification. Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices.  Example: `High CPU usage alert. Follow runbook instructions for resolution.`
-func (o GetAlarmsAlarmOutput) Body() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAlarmsAlarm) string { return v.Body }).(pulumi.StringOutput)
+func (o GetAlarmsAlarmOutput) Body() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAlarmsAlarm) *string { return v.Body }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the resources monitored by the metric that you are searching for. Use tenancyId to search in the root compartment.  Example: `ocid1.compartment.oc1..exampleuniqueID`
-func (o GetAlarmsAlarmOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAlarmsAlarm) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetAlarmsAlarmOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAlarmsAlarm) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"Operations.CostCenter": "42"}`
@@ -1153,8 +990,8 @@ func (o GetAlarmsAlarmOutput) Destinations() pulumi.StringArrayOutput {
 }
 
 // A filter to return only resources that match the given display name exactly. Use this filter to list an alarm by name. Alternatively, when you know the alarm OCID, use the GetAlarm operation.
-func (o GetAlarmsAlarmOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAlarmsAlarm) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetAlarmsAlarmOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAlarmsAlarm) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
@@ -1163,73 +1000,73 @@ func (o GetAlarmsAlarmOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm.
-func (o GetAlarmsAlarmOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAlarmsAlarm) string { return v.Id }).(pulumi.StringOutput)
+func (o GetAlarmsAlarmOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAlarmsAlarm) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Whether the alarm is enabled.  Example: `true`
-func (o GetAlarmsAlarmOutput) IsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetAlarmsAlarm) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+func (o GetAlarmsAlarmOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetAlarmsAlarm) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // When set to `true`, splits alarm notifications per metric stream. When set to `false`, groups alarm notifications across metric streams.
-func (o GetAlarmsAlarmOutput) IsNotificationsPerMetricDimensionEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetAlarmsAlarm) bool { return v.IsNotificationsPerMetricDimensionEnabled }).(pulumi.BoolOutput)
+func (o GetAlarmsAlarmOutput) IsNotificationsPerMetricDimensionEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetAlarmsAlarm) *bool { return v.IsNotificationsPerMetricDimensionEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // The format to use for alarm notifications. The formats are:
-func (o GetAlarmsAlarmOutput) MessageFormat() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAlarmsAlarm) string { return v.MessageFormat }).(pulumi.StringOutput)
+func (o GetAlarmsAlarmOutput) MessageFormat() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAlarmsAlarm) *string { return v.MessageFormat }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric being evaluated by the alarm.
-func (o GetAlarmsAlarmOutput) MetricCompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAlarmsAlarm) string { return v.MetricCompartmentId }).(pulumi.StringOutput)
+func (o GetAlarmsAlarmOutput) MetricCompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAlarmsAlarm) *string { return v.MetricCompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // When true, the alarm evaluates metrics from all compartments and subcompartments. The parameter can only be set to true when metricCompartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, the alarm evaluates metrics from only the compartment specified in metricCompartmentId. Default is false.  Example: `true`
-func (o GetAlarmsAlarmOutput) MetricCompartmentIdInSubtree() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetAlarmsAlarm) bool { return v.MetricCompartmentIdInSubtree }).(pulumi.BoolOutput)
+func (o GetAlarmsAlarmOutput) MetricCompartmentIdInSubtree() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetAlarmsAlarm) *bool { return v.MetricCompartmentIdInSubtree }).(pulumi.BoolPtrOutput)
 }
 
 // The source service or application emitting the metric that is evaluated by the alarm.  Example: `ociComputeagent`
-func (o GetAlarmsAlarmOutput) Namespace() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAlarmsAlarm) string { return v.Namespace }).(pulumi.StringOutput)
+func (o GetAlarmsAlarmOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAlarmsAlarm) *string { return v.Namespace }).(pulumi.StringPtrOutput)
 }
 
 // The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING". For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING".
-func (o GetAlarmsAlarmOutput) PendingDuration() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAlarmsAlarm) string { return v.PendingDuration }).(pulumi.StringOutput)
+func (o GetAlarmsAlarmOutput) PendingDuration() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAlarmsAlarm) *string { return v.PendingDuration }).(pulumi.StringPtrOutput)
 }
 
 // The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`. For information about writing MQL expressions, see [Editing the MQL Expression for a Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm). For details about MQL, see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available dimensions, review the metric definition for the supported service. See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
-func (o GetAlarmsAlarmOutput) Query() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAlarmsAlarm) string { return v.Query }).(pulumi.StringOutput)
+func (o GetAlarmsAlarmOutput) Query() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAlarmsAlarm) *string { return v.Query }).(pulumi.StringPtrOutput)
 }
 
 // The frequency for re-submitting alarm notifications, if the alarm keeps firing without interruption. Format defined by ISO 8601. For example, `PT4H` indicates four hours. Minimum: PT1M. Maximum: P30D.
-func (o GetAlarmsAlarmOutput) RepeatNotificationDuration() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAlarmsAlarm) string { return v.RepeatNotificationDuration }).(pulumi.StringOutput)
+func (o GetAlarmsAlarmOutput) RepeatNotificationDuration() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAlarmsAlarm) *string { return v.RepeatNotificationDuration }).(pulumi.StringPtrOutput)
 }
 
 // The time between calculated aggregation windows for the alarm. Supported value: `1m`
-func (o GetAlarmsAlarmOutput) Resolution() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAlarmsAlarm) string { return v.Resolution }).(pulumi.StringOutput)
+func (o GetAlarmsAlarmOutput) Resolution() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAlarmsAlarm) *string { return v.Resolution }).(pulumi.StringPtrOutput)
 }
 
 // Resource group to match for metric data retrieved by the alarm. A resource group is a custom string that you can match when retrieving custom metrics. Only one resource group can be applied per metric. A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).  Example: `frontend-fleet`
-func (o GetAlarmsAlarmOutput) ResourceGroup() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAlarmsAlarm) string { return v.ResourceGroup }).(pulumi.StringOutput)
+func (o GetAlarmsAlarmOutput) ResourceGroup() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAlarmsAlarm) *string { return v.ResourceGroup }).(pulumi.StringPtrOutput)
 }
 
 // The perceived type of response required when the alarm is in the "FIRING" state.  Example: `CRITICAL`
-func (o GetAlarmsAlarmOutput) Severity() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAlarmsAlarm) string { return v.Severity }).(pulumi.StringOutput)
+func (o GetAlarmsAlarmOutput) Severity() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAlarmsAlarm) *string { return v.Severity }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only alarms that match the given lifecycle state exactly. When not specified, only alarms in the ACTIVE lifecycle state are listed.
-func (o GetAlarmsAlarmOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAlarmsAlarm) string { return v.State }).(pulumi.StringOutput)
+func (o GetAlarmsAlarmOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAlarmsAlarm) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The configuration details for suppressing an alarm.
@@ -1238,13 +1075,13 @@ func (o GetAlarmsAlarmOutput) Suppressions() GetAlarmsAlarmSuppressionArrayOutpu
 }
 
 // The date and time the alarm was created. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
-func (o GetAlarmsAlarmOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAlarmsAlarm) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetAlarmsAlarmOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAlarmsAlarm) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the alarm was last updated. Format defined by RFC3339.  Example: `2019-02-03T01:02:29.600Z`
-func (o GetAlarmsAlarmOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAlarmsAlarm) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetAlarmsAlarmOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAlarmsAlarm) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type GetAlarmsAlarmArrayOutput struct{ *pulumi.OutputState }
@@ -1261,12 +1098,6 @@ func (o GetAlarmsAlarmArrayOutput) ToGetAlarmsAlarmArrayOutputWithContext(ctx co
 	return o
 }
 
-func (o GetAlarmsAlarmArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAlarmsAlarm] {
-	return pulumix.Output[[]GetAlarmsAlarm]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAlarmsAlarmArrayOutput) Index(i pulumi.IntInput) GetAlarmsAlarmOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAlarmsAlarm {
 		return vs[0].([]GetAlarmsAlarm)[vs[1].(int)]
@@ -1275,11 +1106,11 @@ func (o GetAlarmsAlarmArrayOutput) Index(i pulumi.IntInput) GetAlarmsAlarmOutput
 
 type GetAlarmsAlarmSuppression struct {
 	// Human-readable reason for suppressing alarm notifications. It does not have to be unique, and it's changeable. Avoid entering confidential information.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
-	TimeSuppressFrom string `pulumi:"timeSuppressFrom"`
+	TimeSuppressFrom *string `pulumi:"timeSuppressFrom"`
 	// The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2019-02-01T02:02:29.600Z`
-	TimeSuppressUntil string `pulumi:"timeSuppressUntil"`
+	TimeSuppressUntil *string `pulumi:"timeSuppressUntil"`
 }
 
 // GetAlarmsAlarmSuppressionInput is an input type that accepts GetAlarmsAlarmSuppressionArgs and GetAlarmsAlarmSuppressionOutput values.
@@ -1295,11 +1126,11 @@ type GetAlarmsAlarmSuppressionInput interface {
 
 type GetAlarmsAlarmSuppressionArgs struct {
 	// Human-readable reason for suppressing alarm notifications. It does not have to be unique, and it's changeable. Avoid entering confidential information.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
-	TimeSuppressFrom pulumi.StringInput `pulumi:"timeSuppressFrom"`
+	TimeSuppressFrom pulumi.StringPtrInput `pulumi:"timeSuppressFrom"`
 	// The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2019-02-01T02:02:29.600Z`
-	TimeSuppressUntil pulumi.StringInput `pulumi:"timeSuppressUntil"`
+	TimeSuppressUntil pulumi.StringPtrInput `pulumi:"timeSuppressUntil"`
 }
 
 func (GetAlarmsAlarmSuppressionArgs) ElementType() reflect.Type {
@@ -1312,12 +1143,6 @@ func (i GetAlarmsAlarmSuppressionArgs) ToGetAlarmsAlarmSuppressionOutput() GetAl
 
 func (i GetAlarmsAlarmSuppressionArgs) ToGetAlarmsAlarmSuppressionOutputWithContext(ctx context.Context) GetAlarmsAlarmSuppressionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAlarmsAlarmSuppressionOutput)
-}
-
-func (i GetAlarmsAlarmSuppressionArgs) ToOutput(ctx context.Context) pulumix.Output[GetAlarmsAlarmSuppression] {
-	return pulumix.Output[GetAlarmsAlarmSuppression]{
-		OutputState: i.ToGetAlarmsAlarmSuppressionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAlarmsAlarmSuppressionArrayInput is an input type that accepts GetAlarmsAlarmSuppressionArray and GetAlarmsAlarmSuppressionArrayOutput values.
@@ -1345,12 +1170,6 @@ func (i GetAlarmsAlarmSuppressionArray) ToGetAlarmsAlarmSuppressionArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetAlarmsAlarmSuppressionArrayOutput)
 }
 
-func (i GetAlarmsAlarmSuppressionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAlarmsAlarmSuppression] {
-	return pulumix.Output[[]GetAlarmsAlarmSuppression]{
-		OutputState: i.ToGetAlarmsAlarmSuppressionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAlarmsAlarmSuppressionOutput struct{ *pulumi.OutputState }
 
 func (GetAlarmsAlarmSuppressionOutput) ElementType() reflect.Type {
@@ -1365,25 +1184,19 @@ func (o GetAlarmsAlarmSuppressionOutput) ToGetAlarmsAlarmSuppressionOutputWithCo
 	return o
 }
 
-func (o GetAlarmsAlarmSuppressionOutput) ToOutput(ctx context.Context) pulumix.Output[GetAlarmsAlarmSuppression] {
-	return pulumix.Output[GetAlarmsAlarmSuppression]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Human-readable reason for suppressing alarm notifications. It does not have to be unique, and it's changeable. Avoid entering confidential information.
-func (o GetAlarmsAlarmSuppressionOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAlarmsAlarmSuppression) string { return v.Description }).(pulumi.StringOutput)
+func (o GetAlarmsAlarmSuppressionOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAlarmsAlarmSuppression) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
-func (o GetAlarmsAlarmSuppressionOutput) TimeSuppressFrom() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAlarmsAlarmSuppression) string { return v.TimeSuppressFrom }).(pulumi.StringOutput)
+func (o GetAlarmsAlarmSuppressionOutput) TimeSuppressFrom() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAlarmsAlarmSuppression) *string { return v.TimeSuppressFrom }).(pulumi.StringPtrOutput)
 }
 
 // The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2019-02-01T02:02:29.600Z`
-func (o GetAlarmsAlarmSuppressionOutput) TimeSuppressUntil() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAlarmsAlarmSuppression) string { return v.TimeSuppressUntil }).(pulumi.StringOutput)
+func (o GetAlarmsAlarmSuppressionOutput) TimeSuppressUntil() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAlarmsAlarmSuppression) *string { return v.TimeSuppressUntil }).(pulumi.StringPtrOutput)
 }
 
 type GetAlarmsAlarmSuppressionArrayOutput struct{ *pulumi.OutputState }
@@ -1398,12 +1211,6 @@ func (o GetAlarmsAlarmSuppressionArrayOutput) ToGetAlarmsAlarmSuppressionArrayOu
 
 func (o GetAlarmsAlarmSuppressionArrayOutput) ToGetAlarmsAlarmSuppressionArrayOutputWithContext(ctx context.Context) GetAlarmsAlarmSuppressionArrayOutput {
 	return o
-}
-
-func (o GetAlarmsAlarmSuppressionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAlarmsAlarmSuppression] {
-	return pulumix.Output[[]GetAlarmsAlarmSuppression]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAlarmsAlarmSuppressionArrayOutput) Index(i pulumi.IntInput) GetAlarmsAlarmSuppressionOutput {
@@ -1447,12 +1254,6 @@ func (i GetAlarmsFilterArgs) ToGetAlarmsFilterOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetAlarmsFilterOutput)
 }
 
-func (i GetAlarmsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetAlarmsFilter] {
-	return pulumix.Output[GetAlarmsFilter]{
-		OutputState: i.ToGetAlarmsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAlarmsFilterArrayInput is an input type that accepts GetAlarmsFilterArray and GetAlarmsFilterArrayOutput values.
 // You can construct a concrete instance of `GetAlarmsFilterArrayInput` via:
 //
@@ -1478,12 +1279,6 @@ func (i GetAlarmsFilterArray) ToGetAlarmsFilterArrayOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetAlarmsFilterArrayOutput)
 }
 
-func (i GetAlarmsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAlarmsFilter] {
-	return pulumix.Output[[]GetAlarmsFilter]{
-		OutputState: i.ToGetAlarmsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAlarmsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetAlarmsFilterOutput) ElementType() reflect.Type {
@@ -1496,12 +1291,6 @@ func (o GetAlarmsFilterOutput) ToGetAlarmsFilterOutput() GetAlarmsFilterOutput {
 
 func (o GetAlarmsFilterOutput) ToGetAlarmsFilterOutputWithContext(ctx context.Context) GetAlarmsFilterOutput {
 	return o
-}
-
-func (o GetAlarmsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetAlarmsFilter] {
-	return pulumix.Output[GetAlarmsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAlarmsFilterOutput) Name() pulumi.StringOutput {
@@ -1528,12 +1317,6 @@ func (o GetAlarmsFilterArrayOutput) ToGetAlarmsFilterArrayOutput() GetAlarmsFilt
 
 func (o GetAlarmsFilterArrayOutput) ToGetAlarmsFilterArrayOutputWithContext(ctx context.Context) GetAlarmsFilterArrayOutput {
 	return o
-}
-
-func (o GetAlarmsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAlarmsFilter] {
-	return pulumix.Output[[]GetAlarmsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAlarmsFilterArrayOutput) Index(i pulumi.IntInput) GetAlarmsFilterOutput {
@@ -1579,12 +1362,6 @@ func (i GetMetricDataFilterArgs) ToGetMetricDataFilterOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetMetricDataFilterOutput)
 }
 
-func (i GetMetricDataFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetMetricDataFilter] {
-	return pulumix.Output[GetMetricDataFilter]{
-		OutputState: i.ToGetMetricDataFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMetricDataFilterArrayInput is an input type that accepts GetMetricDataFilterArray and GetMetricDataFilterArrayOutput values.
 // You can construct a concrete instance of `GetMetricDataFilterArrayInput` via:
 //
@@ -1610,12 +1387,6 @@ func (i GetMetricDataFilterArray) ToGetMetricDataFilterArrayOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetMetricDataFilterArrayOutput)
 }
 
-func (i GetMetricDataFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMetricDataFilter] {
-	return pulumix.Output[[]GetMetricDataFilter]{
-		OutputState: i.ToGetMetricDataFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMetricDataFilterOutput struct{ *pulumi.OutputState }
 
 func (GetMetricDataFilterOutput) ElementType() reflect.Type {
@@ -1628,12 +1399,6 @@ func (o GetMetricDataFilterOutput) ToGetMetricDataFilterOutput() GetMetricDataFi
 
 func (o GetMetricDataFilterOutput) ToGetMetricDataFilterOutputWithContext(ctx context.Context) GetMetricDataFilterOutput {
 	return o
-}
-
-func (o GetMetricDataFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetMetricDataFilter] {
-	return pulumix.Output[GetMetricDataFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The name of the metric.  Example: `CpuUtilization`
@@ -1663,12 +1428,6 @@ func (o GetMetricDataFilterArrayOutput) ToGetMetricDataFilterArrayOutputWithCont
 	return o
 }
 
-func (o GetMetricDataFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMetricDataFilter] {
-	return pulumix.Output[[]GetMetricDataFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMetricDataFilterArrayOutput) Index(i pulumi.IntInput) GetMetricDataFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMetricDataFilter {
 		return vs[0].([]GetMetricDataFilter)[vs[1].(int)]
@@ -1681,15 +1440,15 @@ type GetMetricDataMetricData struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the resources monitored by the metric that you are searching for. Use tenancyId to search in the root compartment.  Example: `ocid1.compartment.oc1..exampleuniqueID`
 	CompartmentId string `pulumi:"compartmentId"`
 	// When true, returns resources from all compartments and subcompartments. The parameter can only be set to true when compartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, returns resources from only the compartment specified in compartmentId. Default is false.
-	CompartmentIdInSubtree bool `pulumi:"compartmentIdInSubtree"`
+	CompartmentIdInSubtree *bool `pulumi:"compartmentIdInSubtree"`
 	// Qualifiers provided in the definition of the returned metric. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `"resourceId": "ocid1.instance.region1.phx.exampleuniqueID"`
 	Dimensions map[string]interface{} `pulumi:"dimensions"`
 	// The end of the time range to use when searching for metric data points. Format is defined by RFC3339. The response excludes metric data points for the endTime. Default value: the timestamp representing when the call was sent.  Example: `2019-02-01T02:02:29.600Z`
-	EndTime string `pulumi:"endTime"`
+	EndTime *string `pulumi:"endTime"`
 	// The references provided in a metric definition to indicate extra information about the metric.  Example: `"unit": "bytes"`
 	Metadata map[string]interface{} `pulumi:"metadata"`
 	// The name of the metric.  Example: `CpuUtilization`
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The source service or application to use when searching for metric data points to aggregate.  Example: `ociComputeagent`
 	Namespace string `pulumi:"namespace"`
 	// The Monitoring Query Language (MQL) expression to use when searching for metric data points to aggregate. The query must specify a metric, statistic, and interval. Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
@@ -1701,11 +1460,11 @@ type GetMetricDataMetricData struct {
 	// Example: `CpuUtilization[1m].sum()`
 	Query string `pulumi:"query"`
 	// The time between calculated aggregation windows. Use with the query interval to vary the frequency for returning aggregated data points. For example, use a query interval of 5 minutes with a resolution of 1 minute to retrieve five-minute aggregations at a one-minute frequency. The resolution must be equal or less than the interval in the query. The default resolution is 1m (one minute). Supported values: `1m`-`60m`, `1h`-`24h`, `1d`.  Example: `5m`
-	Resolution string `pulumi:"resolution"`
+	Resolution *string `pulumi:"resolution"`
 	// Resource group that you want to match. A null value returns only metric data that has no resource groups. The specified resource group must exist in the definition of the posted metric. Only one resource group can be applied per metric. A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).  Example: `frontend-fleet`
-	ResourceGroup string `pulumi:"resourceGroup"`
+	ResourceGroup *string `pulumi:"resourceGroup"`
 	// The beginning of the time range to use when searching for metric data points. Format is defined by RFC3339. The response includes metric data points for the startTime. Default value: the timestamp 3 hours before the call was sent.  Example: `2019-02-01T01:02:29.600Z`
-	StartTime string `pulumi:"startTime"`
+	StartTime *string `pulumi:"startTime"`
 }
 
 // GetMetricDataMetricDataInput is an input type that accepts GetMetricDataMetricDataArgs and GetMetricDataMetricDataOutput values.
@@ -1725,15 +1484,15 @@ type GetMetricDataMetricDataArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the resources monitored by the metric that you are searching for. Use tenancyId to search in the root compartment.  Example: `ocid1.compartment.oc1..exampleuniqueID`
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// When true, returns resources from all compartments and subcompartments. The parameter can only be set to true when compartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, returns resources from only the compartment specified in compartmentId. Default is false.
-	CompartmentIdInSubtree pulumi.BoolInput `pulumi:"compartmentIdInSubtree"`
+	CompartmentIdInSubtree pulumi.BoolPtrInput `pulumi:"compartmentIdInSubtree"`
 	// Qualifiers provided in the definition of the returned metric. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `"resourceId": "ocid1.instance.region1.phx.exampleuniqueID"`
 	Dimensions pulumi.MapInput `pulumi:"dimensions"`
 	// The end of the time range to use when searching for metric data points. Format is defined by RFC3339. The response excludes metric data points for the endTime. Default value: the timestamp representing when the call was sent.  Example: `2019-02-01T02:02:29.600Z`
-	EndTime pulumi.StringInput `pulumi:"endTime"`
+	EndTime pulumi.StringPtrInput `pulumi:"endTime"`
 	// The references provided in a metric definition to indicate extra information about the metric.  Example: `"unit": "bytes"`
 	Metadata pulumi.MapInput `pulumi:"metadata"`
 	// The name of the metric.  Example: `CpuUtilization`
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// The source service or application to use when searching for metric data points to aggregate.  Example: `ociComputeagent`
 	Namespace pulumi.StringInput `pulumi:"namespace"`
 	// The Monitoring Query Language (MQL) expression to use when searching for metric data points to aggregate. The query must specify a metric, statistic, and interval. Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
@@ -1745,11 +1504,11 @@ type GetMetricDataMetricDataArgs struct {
 	// Example: `CpuUtilization[1m].sum()`
 	Query pulumi.StringInput `pulumi:"query"`
 	// The time between calculated aggregation windows. Use with the query interval to vary the frequency for returning aggregated data points. For example, use a query interval of 5 minutes with a resolution of 1 minute to retrieve five-minute aggregations at a one-minute frequency. The resolution must be equal or less than the interval in the query. The default resolution is 1m (one minute). Supported values: `1m`-`60m`, `1h`-`24h`, `1d`.  Example: `5m`
-	Resolution pulumi.StringInput `pulumi:"resolution"`
+	Resolution pulumi.StringPtrInput `pulumi:"resolution"`
 	// Resource group that you want to match. A null value returns only metric data that has no resource groups. The specified resource group must exist in the definition of the posted metric. Only one resource group can be applied per metric. A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).  Example: `frontend-fleet`
-	ResourceGroup pulumi.StringInput `pulumi:"resourceGroup"`
+	ResourceGroup pulumi.StringPtrInput `pulumi:"resourceGroup"`
 	// The beginning of the time range to use when searching for metric data points. Format is defined by RFC3339. The response includes metric data points for the startTime. Default value: the timestamp 3 hours before the call was sent.  Example: `2019-02-01T01:02:29.600Z`
-	StartTime pulumi.StringInput `pulumi:"startTime"`
+	StartTime pulumi.StringPtrInput `pulumi:"startTime"`
 }
 
 func (GetMetricDataMetricDataArgs) ElementType() reflect.Type {
@@ -1762,12 +1521,6 @@ func (i GetMetricDataMetricDataArgs) ToGetMetricDataMetricDataOutput() GetMetric
 
 func (i GetMetricDataMetricDataArgs) ToGetMetricDataMetricDataOutputWithContext(ctx context.Context) GetMetricDataMetricDataOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMetricDataMetricDataOutput)
-}
-
-func (i GetMetricDataMetricDataArgs) ToOutput(ctx context.Context) pulumix.Output[GetMetricDataMetricData] {
-	return pulumix.Output[GetMetricDataMetricData]{
-		OutputState: i.ToGetMetricDataMetricDataOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMetricDataMetricDataArrayInput is an input type that accepts GetMetricDataMetricDataArray and GetMetricDataMetricDataArrayOutput values.
@@ -1795,12 +1548,6 @@ func (i GetMetricDataMetricDataArray) ToGetMetricDataMetricDataArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetMetricDataMetricDataArrayOutput)
 }
 
-func (i GetMetricDataMetricDataArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMetricDataMetricData] {
-	return pulumix.Output[[]GetMetricDataMetricData]{
-		OutputState: i.ToGetMetricDataMetricDataArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMetricDataMetricDataOutput struct{ *pulumi.OutputState }
 
 func (GetMetricDataMetricDataOutput) ElementType() reflect.Type {
@@ -1813,12 +1560,6 @@ func (o GetMetricDataMetricDataOutput) ToGetMetricDataMetricDataOutput() GetMetr
 
 func (o GetMetricDataMetricDataOutput) ToGetMetricDataMetricDataOutputWithContext(ctx context.Context) GetMetricDataMetricDataOutput {
 	return o
-}
-
-func (o GetMetricDataMetricDataOutput) ToOutput(ctx context.Context) pulumix.Output[GetMetricDataMetricData] {
-	return pulumix.Output[GetMetricDataMetricData]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The list of timestamp-value pairs returned for the specified request. Metric values are rolled up to the start time specified in the request. For important limits information related to data points, see MetricData Reference at the top of this page.
@@ -1834,8 +1575,8 @@ func (o GetMetricDataMetricDataOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // When true, returns resources from all compartments and subcompartments. The parameter can only be set to true when compartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, returns resources from only the compartment specified in compartmentId. Default is false.
-func (o GetMetricDataMetricDataOutput) CompartmentIdInSubtree() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetMetricDataMetricData) bool { return v.CompartmentIdInSubtree }).(pulumi.BoolOutput)
+func (o GetMetricDataMetricDataOutput) CompartmentIdInSubtree() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMetricDataMetricData) *bool { return v.CompartmentIdInSubtree }).(pulumi.BoolPtrOutput)
 }
 
 // Qualifiers provided in the definition of the returned metric. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `"resourceId": "ocid1.instance.region1.phx.exampleuniqueID"`
@@ -1844,8 +1585,8 @@ func (o GetMetricDataMetricDataOutput) Dimensions() pulumi.MapOutput {
 }
 
 // The end of the time range to use when searching for metric data points. Format is defined by RFC3339. The response excludes metric data points for the endTime. Default value: the timestamp representing when the call was sent.  Example: `2019-02-01T02:02:29.600Z`
-func (o GetMetricDataMetricDataOutput) EndTime() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMetricDataMetricData) string { return v.EndTime }).(pulumi.StringOutput)
+func (o GetMetricDataMetricDataOutput) EndTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMetricDataMetricData) *string { return v.EndTime }).(pulumi.StringPtrOutput)
 }
 
 // The references provided in a metric definition to indicate extra information about the metric.  Example: `"unit": "bytes"`
@@ -1854,8 +1595,8 @@ func (o GetMetricDataMetricDataOutput) Metadata() pulumi.MapOutput {
 }
 
 // The name of the metric.  Example: `CpuUtilization`
-func (o GetMetricDataMetricDataOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMetricDataMetricData) string { return v.Name }).(pulumi.StringOutput)
+func (o GetMetricDataMetricDataOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMetricDataMetricData) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The source service or application to use when searching for metric data points to aggregate.  Example: `ociComputeagent`
@@ -1875,18 +1616,18 @@ func (o GetMetricDataMetricDataOutput) Query() pulumi.StringOutput {
 }
 
 // The time between calculated aggregation windows. Use with the query interval to vary the frequency for returning aggregated data points. For example, use a query interval of 5 minutes with a resolution of 1 minute to retrieve five-minute aggregations at a one-minute frequency. The resolution must be equal or less than the interval in the query. The default resolution is 1m (one minute). Supported values: `1m`-`60m`, `1h`-`24h`, `1d`.  Example: `5m`
-func (o GetMetricDataMetricDataOutput) Resolution() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMetricDataMetricData) string { return v.Resolution }).(pulumi.StringOutput)
+func (o GetMetricDataMetricDataOutput) Resolution() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMetricDataMetricData) *string { return v.Resolution }).(pulumi.StringPtrOutput)
 }
 
 // Resource group that you want to match. A null value returns only metric data that has no resource groups. The specified resource group must exist in the definition of the posted metric. Only one resource group can be applied per metric. A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).  Example: `frontend-fleet`
-func (o GetMetricDataMetricDataOutput) ResourceGroup() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMetricDataMetricData) string { return v.ResourceGroup }).(pulumi.StringOutput)
+func (o GetMetricDataMetricDataOutput) ResourceGroup() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMetricDataMetricData) *string { return v.ResourceGroup }).(pulumi.StringPtrOutput)
 }
 
 // The beginning of the time range to use when searching for metric data points. Format is defined by RFC3339. The response includes metric data points for the startTime. Default value: the timestamp 3 hours before the call was sent.  Example: `2019-02-01T01:02:29.600Z`
-func (o GetMetricDataMetricDataOutput) StartTime() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMetricDataMetricData) string { return v.StartTime }).(pulumi.StringOutput)
+func (o GetMetricDataMetricDataOutput) StartTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMetricDataMetricData) *string { return v.StartTime }).(pulumi.StringPtrOutput)
 }
 
 type GetMetricDataMetricDataArrayOutput struct{ *pulumi.OutputState }
@@ -1903,12 +1644,6 @@ func (o GetMetricDataMetricDataArrayOutput) ToGetMetricDataMetricDataArrayOutput
 	return o
 }
 
-func (o GetMetricDataMetricDataArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMetricDataMetricData] {
-	return pulumix.Output[[]GetMetricDataMetricData]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMetricDataMetricDataArrayOutput) Index(i pulumi.IntInput) GetMetricDataMetricDataOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMetricDataMetricData {
 		return vs[0].([]GetMetricDataMetricData)[vs[1].(int)]
@@ -1917,9 +1652,9 @@ func (o GetMetricDataMetricDataArrayOutput) Index(i pulumi.IntInput) GetMetricDa
 
 type GetMetricDataMetricDataAggregatedDatapoint struct {
 	// The date and time associated with the value of this data point. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
-	Timestamp string `pulumi:"timestamp"`
+	Timestamp *string `pulumi:"timestamp"`
 	// Numeric value of the metric.  Example: `10.4`
-	Value float64 `pulumi:"value"`
+	Value *float64 `pulumi:"value"`
 }
 
 // GetMetricDataMetricDataAggregatedDatapointInput is an input type that accepts GetMetricDataMetricDataAggregatedDatapointArgs and GetMetricDataMetricDataAggregatedDatapointOutput values.
@@ -1935,9 +1670,9 @@ type GetMetricDataMetricDataAggregatedDatapointInput interface {
 
 type GetMetricDataMetricDataAggregatedDatapointArgs struct {
 	// The date and time associated with the value of this data point. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
-	Timestamp pulumi.StringInput `pulumi:"timestamp"`
+	Timestamp pulumi.StringPtrInput `pulumi:"timestamp"`
 	// Numeric value of the metric.  Example: `10.4`
-	Value pulumi.Float64Input `pulumi:"value"`
+	Value pulumi.Float64PtrInput `pulumi:"value"`
 }
 
 func (GetMetricDataMetricDataAggregatedDatapointArgs) ElementType() reflect.Type {
@@ -1950,12 +1685,6 @@ func (i GetMetricDataMetricDataAggregatedDatapointArgs) ToGetMetricDataMetricDat
 
 func (i GetMetricDataMetricDataAggregatedDatapointArgs) ToGetMetricDataMetricDataAggregatedDatapointOutputWithContext(ctx context.Context) GetMetricDataMetricDataAggregatedDatapointOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMetricDataMetricDataAggregatedDatapointOutput)
-}
-
-func (i GetMetricDataMetricDataAggregatedDatapointArgs) ToOutput(ctx context.Context) pulumix.Output[GetMetricDataMetricDataAggregatedDatapoint] {
-	return pulumix.Output[GetMetricDataMetricDataAggregatedDatapoint]{
-		OutputState: i.ToGetMetricDataMetricDataAggregatedDatapointOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMetricDataMetricDataAggregatedDatapointArrayInput is an input type that accepts GetMetricDataMetricDataAggregatedDatapointArray and GetMetricDataMetricDataAggregatedDatapointArrayOutput values.
@@ -1983,12 +1712,6 @@ func (i GetMetricDataMetricDataAggregatedDatapointArray) ToGetMetricDataMetricDa
 	return pulumi.ToOutputWithContext(ctx, i).(GetMetricDataMetricDataAggregatedDatapointArrayOutput)
 }
 
-func (i GetMetricDataMetricDataAggregatedDatapointArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMetricDataMetricDataAggregatedDatapoint] {
-	return pulumix.Output[[]GetMetricDataMetricDataAggregatedDatapoint]{
-		OutputState: i.ToGetMetricDataMetricDataAggregatedDatapointArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMetricDataMetricDataAggregatedDatapointOutput struct{ *pulumi.OutputState }
 
 func (GetMetricDataMetricDataAggregatedDatapointOutput) ElementType() reflect.Type {
@@ -2003,20 +1726,14 @@ func (o GetMetricDataMetricDataAggregatedDatapointOutput) ToGetMetricDataMetricD
 	return o
 }
 
-func (o GetMetricDataMetricDataAggregatedDatapointOutput) ToOutput(ctx context.Context) pulumix.Output[GetMetricDataMetricDataAggregatedDatapoint] {
-	return pulumix.Output[GetMetricDataMetricDataAggregatedDatapoint]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The date and time associated with the value of this data point. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
-func (o GetMetricDataMetricDataAggregatedDatapointOutput) Timestamp() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMetricDataMetricDataAggregatedDatapoint) string { return v.Timestamp }).(pulumi.StringOutput)
+func (o GetMetricDataMetricDataAggregatedDatapointOutput) Timestamp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMetricDataMetricDataAggregatedDatapoint) *string { return v.Timestamp }).(pulumi.StringPtrOutput)
 }
 
 // Numeric value of the metric.  Example: `10.4`
-func (o GetMetricDataMetricDataAggregatedDatapointOutput) Value() pulumi.Float64Output {
-	return o.ApplyT(func(v GetMetricDataMetricDataAggregatedDatapoint) float64 { return v.Value }).(pulumi.Float64Output)
+func (o GetMetricDataMetricDataAggregatedDatapointOutput) Value() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetMetricDataMetricDataAggregatedDatapoint) *float64 { return v.Value }).(pulumi.Float64PtrOutput)
 }
 
 type GetMetricDataMetricDataAggregatedDatapointArrayOutput struct{ *pulumi.OutputState }
@@ -2031,12 +1748,6 @@ func (o GetMetricDataMetricDataAggregatedDatapointArrayOutput) ToGetMetricDataMe
 
 func (o GetMetricDataMetricDataAggregatedDatapointArrayOutput) ToGetMetricDataMetricDataAggregatedDatapointArrayOutputWithContext(ctx context.Context) GetMetricDataMetricDataAggregatedDatapointArrayOutput {
 	return o
-}
-
-func (o GetMetricDataMetricDataAggregatedDatapointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMetricDataMetricDataAggregatedDatapoint] {
-	return pulumix.Output[[]GetMetricDataMetricDataAggregatedDatapoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMetricDataMetricDataAggregatedDatapointArrayOutput) Index(i pulumi.IntInput) GetMetricDataMetricDataAggregatedDatapointOutput {
@@ -2082,12 +1793,6 @@ func (i GetMetricsFilterArgs) ToGetMetricsFilterOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(GetMetricsFilterOutput)
 }
 
-func (i GetMetricsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetMetricsFilter] {
-	return pulumix.Output[GetMetricsFilter]{
-		OutputState: i.ToGetMetricsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMetricsFilterArrayInput is an input type that accepts GetMetricsFilterArray and GetMetricsFilterArrayOutput values.
 // You can construct a concrete instance of `GetMetricsFilterArrayInput` via:
 //
@@ -2113,12 +1818,6 @@ func (i GetMetricsFilterArray) ToGetMetricsFilterArrayOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetMetricsFilterArrayOutput)
 }
 
-func (i GetMetricsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMetricsFilter] {
-	return pulumix.Output[[]GetMetricsFilter]{
-		OutputState: i.ToGetMetricsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMetricsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetMetricsFilterOutput) ElementType() reflect.Type {
@@ -2131,12 +1830,6 @@ func (o GetMetricsFilterOutput) ToGetMetricsFilterOutput() GetMetricsFilterOutpu
 
 func (o GetMetricsFilterOutput) ToGetMetricsFilterOutputWithContext(ctx context.Context) GetMetricsFilterOutput {
 	return o
-}
-
-func (o GetMetricsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetMetricsFilter] {
-	return pulumix.Output[GetMetricsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The metric name to use when searching for metric definitions.  Example: `CpuUtilization`
@@ -2166,12 +1859,6 @@ func (o GetMetricsFilterArrayOutput) ToGetMetricsFilterArrayOutputWithContext(ct
 	return o
 }
 
-func (o GetMetricsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMetricsFilter] {
-	return pulumix.Output[[]GetMetricsFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMetricsFilterArrayOutput) Index(i pulumi.IntInput) GetMetricsFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMetricsFilter {
 		return vs[0].([]GetMetricsFilter)[vs[1].(int)]
@@ -2182,7 +1869,7 @@ type GetMetricsMetric struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the resources monitored by the metric that you are searching for. Use tenancyId to search in the root compartment.  Example: `ocid1.compartment.oc1..exampleuniqueID`
 	CompartmentId string `pulumi:"compartmentId"`
 	// When true, returns resources from all compartments and subcompartments. The parameter can only be set to true when compartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, returns resources from only the compartment specified in compartmentId. Default is false.
-	CompartmentIdInSubtree bool `pulumi:"compartmentIdInSubtree"`
+	CompartmentIdInSubtree *bool `pulumi:"compartmentIdInSubtree"`
 	// Qualifiers that you want to use when searching for metric definitions. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `"resourceId": "ocid1.instance.region1.phx.exampleuniqueID"`
 	DimensionFilters map[string]interface{} `pulumi:"dimensionFilters"`
 	// Qualifiers provided in a metric definition. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `"resourceId": "ocid1.instance.region1.phx.exampleuniqueID"`
@@ -2192,11 +1879,11 @@ type GetMetricsMetric struct {
 	// Example - group by namespace: `[ "namespace" ]`
 	GroupBies []string `pulumi:"groupBies"`
 	// The metric name to use when searching for metric definitions.  Example: `CpuUtilization`
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The source service or application to use when searching for metric definitions.  Example: `ociComputeagent`
-	Namespace string `pulumi:"namespace"`
+	Namespace *string `pulumi:"namespace"`
 	// Resource group that you want to match. A null value returns only metric data that has no resource groups. The specified resource group must exist in the definition of the posted metric. Only one resource group can be applied per metric. A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).  Example: `frontend-fleet`
-	ResourceGroup string `pulumi:"resourceGroup"`
+	ResourceGroup *string `pulumi:"resourceGroup"`
 }
 
 // GetMetricsMetricInput is an input type that accepts GetMetricsMetricArgs and GetMetricsMetricOutput values.
@@ -2214,7 +1901,7 @@ type GetMetricsMetricArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the resources monitored by the metric that you are searching for. Use tenancyId to search in the root compartment.  Example: `ocid1.compartment.oc1..exampleuniqueID`
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// When true, returns resources from all compartments and subcompartments. The parameter can only be set to true when compartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, returns resources from only the compartment specified in compartmentId. Default is false.
-	CompartmentIdInSubtree pulumi.BoolInput `pulumi:"compartmentIdInSubtree"`
+	CompartmentIdInSubtree pulumi.BoolPtrInput `pulumi:"compartmentIdInSubtree"`
 	// Qualifiers that you want to use when searching for metric definitions. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `"resourceId": "ocid1.instance.region1.phx.exampleuniqueID"`
 	DimensionFilters pulumi.MapInput `pulumi:"dimensionFilters"`
 	// Qualifiers provided in a metric definition. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `"resourceId": "ocid1.instance.region1.phx.exampleuniqueID"`
@@ -2224,11 +1911,11 @@ type GetMetricsMetricArgs struct {
 	// Example - group by namespace: `[ "namespace" ]`
 	GroupBies pulumi.StringArrayInput `pulumi:"groupBies"`
 	// The metric name to use when searching for metric definitions.  Example: `CpuUtilization`
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// The source service or application to use when searching for metric definitions.  Example: `ociComputeagent`
-	Namespace pulumi.StringInput `pulumi:"namespace"`
+	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
 	// Resource group that you want to match. A null value returns only metric data that has no resource groups. The specified resource group must exist in the definition of the posted metric. Only one resource group can be applied per metric. A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).  Example: `frontend-fleet`
-	ResourceGroup pulumi.StringInput `pulumi:"resourceGroup"`
+	ResourceGroup pulumi.StringPtrInput `pulumi:"resourceGroup"`
 }
 
 func (GetMetricsMetricArgs) ElementType() reflect.Type {
@@ -2241,12 +1928,6 @@ func (i GetMetricsMetricArgs) ToGetMetricsMetricOutput() GetMetricsMetricOutput 
 
 func (i GetMetricsMetricArgs) ToGetMetricsMetricOutputWithContext(ctx context.Context) GetMetricsMetricOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetMetricsMetricOutput)
-}
-
-func (i GetMetricsMetricArgs) ToOutput(ctx context.Context) pulumix.Output[GetMetricsMetric] {
-	return pulumix.Output[GetMetricsMetric]{
-		OutputState: i.ToGetMetricsMetricOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetMetricsMetricArrayInput is an input type that accepts GetMetricsMetricArray and GetMetricsMetricArrayOutput values.
@@ -2274,12 +1955,6 @@ func (i GetMetricsMetricArray) ToGetMetricsMetricArrayOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetMetricsMetricArrayOutput)
 }
 
-func (i GetMetricsMetricArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMetricsMetric] {
-	return pulumix.Output[[]GetMetricsMetric]{
-		OutputState: i.ToGetMetricsMetricArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMetricsMetricOutput struct{ *pulumi.OutputState }
 
 func (GetMetricsMetricOutput) ElementType() reflect.Type {
@@ -2294,20 +1969,14 @@ func (o GetMetricsMetricOutput) ToGetMetricsMetricOutputWithContext(ctx context.
 	return o
 }
 
-func (o GetMetricsMetricOutput) ToOutput(ctx context.Context) pulumix.Output[GetMetricsMetric] {
-	return pulumix.Output[GetMetricsMetric]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the resources monitored by the metric that you are searching for. Use tenancyId to search in the root compartment.  Example: `ocid1.compartment.oc1..exampleuniqueID`
 func (o GetMetricsMetricOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMetricsMetric) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
 // When true, returns resources from all compartments and subcompartments. The parameter can only be set to true when compartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, returns resources from only the compartment specified in compartmentId. Default is false.
-func (o GetMetricsMetricOutput) CompartmentIdInSubtree() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetMetricsMetric) bool { return v.CompartmentIdInSubtree }).(pulumi.BoolOutput)
+func (o GetMetricsMetricOutput) CompartmentIdInSubtree() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMetricsMetric) *bool { return v.CompartmentIdInSubtree }).(pulumi.BoolPtrOutput)
 }
 
 // Qualifiers that you want to use when searching for metric definitions. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `"resourceId": "ocid1.instance.region1.phx.exampleuniqueID"`
@@ -2328,18 +1997,18 @@ func (o GetMetricsMetricOutput) GroupBies() pulumi.StringArrayOutput {
 }
 
 // The metric name to use when searching for metric definitions.  Example: `CpuUtilization`
-func (o GetMetricsMetricOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMetricsMetric) string { return v.Name }).(pulumi.StringOutput)
+func (o GetMetricsMetricOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMetricsMetric) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The source service or application to use when searching for metric definitions.  Example: `ociComputeagent`
-func (o GetMetricsMetricOutput) Namespace() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMetricsMetric) string { return v.Namespace }).(pulumi.StringOutput)
+func (o GetMetricsMetricOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMetricsMetric) *string { return v.Namespace }).(pulumi.StringPtrOutput)
 }
 
 // Resource group that you want to match. A null value returns only metric data that has no resource groups. The specified resource group must exist in the definition of the posted metric. Only one resource group can be applied per metric. A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).  Example: `frontend-fleet`
-func (o GetMetricsMetricOutput) ResourceGroup() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMetricsMetric) string { return v.ResourceGroup }).(pulumi.StringOutput)
+func (o GetMetricsMetricOutput) ResourceGroup() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMetricsMetric) *string { return v.ResourceGroup }).(pulumi.StringPtrOutput)
 }
 
 type GetMetricsMetricArrayOutput struct{ *pulumi.OutputState }
@@ -2354,12 +2023,6 @@ func (o GetMetricsMetricArrayOutput) ToGetMetricsMetricArrayOutput() GetMetricsM
 
 func (o GetMetricsMetricArrayOutput) ToGetMetricsMetricArrayOutputWithContext(ctx context.Context) GetMetricsMetricArrayOutput {
 	return o
-}
-
-func (o GetMetricsMetricArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMetricsMetric] {
-	return pulumix.Output[[]GetMetricsMetric]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMetricsMetricArrayOutput) Index(i pulumi.IntInput) GetMetricsMetricOutput {

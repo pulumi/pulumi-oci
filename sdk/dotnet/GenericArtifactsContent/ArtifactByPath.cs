@@ -42,7 +42,7 @@ namespace Pulumi.Oci.GenericArtifactsContent
     public partial class ArtifactByPath : global::Pulumi.CustomResource
     {
         [Output("artifactId")]
-        public Output<string> ArtifactId { get; private set; } = null!;
+        public Output<string?> ArtifactId { get; private set; } = null!;
 
         /// <summary>
         /// A user-defined path to describe the location of an artifact. You can use slashes to organize the repository, but slashes do not create a directory structure. An artifact path does not include an artifact version.
@@ -54,7 +54,7 @@ namespace Pulumi.Oci.GenericArtifactsContent
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the repository's compartment.
         /// </summary>
         [Output("compartmentId")]
-        public Output<string> CompartmentId { get; private set; } = null!;
+        public Output<string?> CompartmentId { get; private set; } = null!;
 
         /// <summary>
         /// Content to be uploaded as the artifact. Cannot be defined if `source` is defined.
@@ -70,19 +70,19 @@ namespace Pulumi.Oci.GenericArtifactsContent
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// The artifact name with the format of `&lt;artifact-path&gt;:&lt;artifact-version&gt;`. The artifact name is truncated to a maximum length of 255.  Example: `project01/my-web-app/artifact-abc:1.0.0`
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://www.terraform.io/iaas/Content/General/Concepts/identifiers.htm) of the repository.
@@ -94,13 +94,13 @@ namespace Pulumi.Oci.GenericArtifactsContent
         /// The SHA256 digest for the artifact. When you upload an artifact to the repository, a SHA256 digest is calculated and added to the artifact properties.
         /// </summary>
         [Output("sha256")]
-        public Output<string> Sha256 { get; private set; } = null!;
+        public Output<string?> Sha256 { get; private set; } = null!;
 
         /// <summary>
         /// The size of the artifact in bytes.
         /// </summary>
         [Output("sizeInBytes")]
-        public Output<string> SizeInBytes { get; private set; } = null!;
+        public Output<string?> SizeInBytes { get; private set; } = null!;
 
         /// <summary>
         /// A path to a file on the local system to be uploaded as the artifact. Cannot be defined if `content` is defined.
@@ -112,13 +112,13 @@ namespace Pulumi.Oci.GenericArtifactsContent
         /// The current state of the artifact.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// An RFC 3339 timestamp indicating when the repository was created.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// A user-defined string to describe the artifact version. Example: `1.1.0` or `1.2-beta-2`

@@ -64,74 +64,47 @@ class GetSecurityRecipeResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The id of the compartment that contains the recipe
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        The recipe's description
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The recipe's name
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        Unique identifier that is immutable on creation
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A message describing the current state in more detail. For example, this can be used to provide actionable information for a recipe in the `Failed` state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
-    def owner(self) -> str:
-        """
-        The owner of the recipe
-        """
+    def owner(self) -> Optional[str]:
         return pulumi.get(self, "owner")
 
     @property
     @pulumi.getter(name="securityPolicies")
-    def security_policies(self) -> Sequence[str]:
-        """
-        The list of `SecurityPolicy` ids that are included in the recipe
-        """
+    def security_policies(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "security_policies")
 
     @property
@@ -141,26 +114,17 @@ class GetSecurityRecipeResult:
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the recipe
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the recipe was created. An RFC3339 formatted datetime string.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the recipe was last updated. An RFC3339 formatted datetime string.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -188,21 +152,7 @@ class AwaitableGetSecurityRecipeResult(GetSecurityRecipeResult):
 def get_security_recipe(security_recipe_id: Optional[str] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSecurityRecipeResult:
     """
-    This data source provides details about a specific Security Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
-
-    Gets a security zone recipe by identifier. A security zone recipe is a collection of security zone policies.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_security_recipe = oci.CloudGuard.get_security_recipe(security_recipe_id=oci_cloud_guard_security_recipe["test_security_recipe"]["id"])
-    ```
-
-
-    :param str security_recipe_id: The unique identifier of the security zone recipe (`SecurityRecipe`)
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['securityRecipeId'] = security_recipe_id
@@ -229,20 +179,6 @@ def get_security_recipe(security_recipe_id: Optional[str] = None,
 def get_security_recipe_output(security_recipe_id: Optional[pulumi.Input[str]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSecurityRecipeResult]:
     """
-    This data source provides details about a specific Security Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
-
-    Gets a security zone recipe by identifier. A security zone recipe is a collection of security zone policies.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_security_recipe = oci.CloudGuard.get_security_recipe(security_recipe_id=oci_cloud_guard_security_recipe["test_security_recipe"]["id"])
-    ```
-
-
-    :param str security_recipe_id: The unique identifier of the security zone recipe (`SecurityRecipe`)
+    Use this data source to access information about an existing resource.
     """
     ...

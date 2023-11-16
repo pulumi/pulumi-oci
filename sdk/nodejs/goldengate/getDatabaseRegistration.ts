@@ -46,102 +46,102 @@ export interface GetDatabaseRegistrationResult {
     /**
      * Credential store alias.
      */
-    readonly aliasName: string;
+    readonly aliasName?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Connect descriptor or Easy Connect Naming method used to connect to a database.
      */
-    readonly connectionString: string;
+    readonly connectionString?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
      */
-    readonly databaseId: string;
+    readonly databaseId?: string;
     readonly databaseRegistrationId: string;
     /**
      * Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * Metadata about this specific object.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * An object's Display Name.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * A three-label Fully Qualified Domain Name (FQDN) for a resource.
      */
-    readonly fqdn: string;
+    readonly fqdn?: string;
     /**
      * A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the databaseRegistration being referenced.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The private IP address in the customer's VCN of the customer's endpoint, typically a database.
      */
-    readonly ipAddress: string;
+    readonly ipAddress?: string;
     /**
      * Refers to the customer's master key OCID.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
      */
-    readonly keyId: string;
+    readonly keyId?: string;
     /**
      * Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
      */
-    readonly lifecycleDetails: string;
-    readonly password: string;
+    readonly lifecycleDetails?: string;
+    readonly password?: string;
     /**
      * A Private Endpoint IP address created in the customer's subnet.  A customer database can expect network traffic initiated by GoldenGate Service from this IP address.  It can also send network traffic to this IP address, typically in response to requests from GoldenGate Service.  The customer may use this IP address in Security Lists or Network Security Groups (NSG) as needed.
      */
-    readonly rcePrivateIp: string;
+    readonly rcePrivateIp?: string;
     /**
      * The OCID of the compartment where the GoldenGate Secret will be created.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
      */
-    readonly secretCompartmentId: string;
+    readonly secretCompartmentId?: string;
     /**
      * The OCID of the customer's GoldenGate Service Secret.  If provided, it references a key that customers will be required to ensure the policies are established  to permit GoldenGate to use this Secret.
      */
-    readonly secretId: string;
+    readonly secretId?: string;
     /**
      * The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
      */
-    readonly sessionMode: string;
+    readonly sessionMode?: string;
     /**
      * Possible lifecycle states.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
      */
-    readonly subnetId: string;
+    readonly subnetId?: string;
     /**
      * The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
     /**
      * The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivty requirments defined in it.
      */
-    readonly username: string;
+    readonly username?: string;
     /**
      * Refers to the customer's vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
      */
-    readonly vaultId: string;
-    readonly wallet: string;
+    readonly vaultId?: string;
+    readonly wallet?: string;
 }
 /**
  * This data source provides details about a specific Database Registration resource in Oracle Cloud Infrastructure Golden Gate service.

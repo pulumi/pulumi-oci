@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Media Asset resource in Oracle Cloud Infrastructure Media Services service.
@@ -30,47 +29,47 @@ type MediaAsset struct {
 	pulumi.CustomResourceState
 
 	// The name of the object storage bucket where this asset is located.
-	Bucket pulumi.StringOutput `pulumi:"bucket"`
+	Bucket pulumi.StringPtrOutput `pulumi:"bucket"`
 	// (Updatable) Compartment Identifier.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) Display name for the Media Asset. Does not have to be unique. Avoid entering confidential information.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// (Updatable) The ID of the senior most asset from which this asset is derived.
-	MasterMediaAssetId pulumi.StringOutput `pulumi:"masterMediaAssetId"`
+	MasterMediaAssetId pulumi.StringPtrOutput `pulumi:"masterMediaAssetId"`
 	// (Updatable) list of tags for the MediaAsset.
 	MediaAssetTags MediaAssetMediaAssetTagArrayOutput `pulumi:"mediaAssetTags"`
 	// The ID of the MediaWorkflowJob used to produce this asset.
-	MediaWorkflowJobId pulumi.StringOutput `pulumi:"mediaWorkflowJobId"`
+	MediaWorkflowJobId pulumi.StringPtrOutput `pulumi:"mediaWorkflowJobId"`
 	// (Updatable) JSON string containing the technial metadata for the media asset.
 	Metadatas MediaAssetMetadataArrayOutput `pulumi:"metadatas"`
 	// The object storage namespace where this asset is located.
-	Namespace pulumi.StringOutput `pulumi:"namespace"`
+	Namespace pulumi.StringPtrOutput `pulumi:"namespace"`
 	// The object storage object name that identifies this asset.
-	Object pulumi.StringOutput `pulumi:"object"`
+	Object pulumi.StringPtrOutput `pulumi:"object"`
 	// eTag of the underlying object storage object.
-	ObjectEtag pulumi.StringOutput `pulumi:"objectEtag"`
+	ObjectEtag pulumi.StringPtrOutput `pulumi:"objectEtag"`
 	// (Updatable) The ID of the parent asset from which this asset is derived.
-	ParentMediaAssetId pulumi.StringOutput `pulumi:"parentMediaAssetId"`
+	ParentMediaAssetId pulumi.StringPtrOutput `pulumi:"parentMediaAssetId"`
 	// The end index for video segment files.
-	SegmentRangeEndIndex pulumi.StringOutput `pulumi:"segmentRangeEndIndex"`
+	SegmentRangeEndIndex pulumi.StringPtrOutput `pulumi:"segmentRangeEndIndex"`
 	// The start index for video segment files.
-	SegmentRangeStartIndex pulumi.StringOutput `pulumi:"segmentRangeStartIndex"`
+	SegmentRangeStartIndex pulumi.StringPtrOutput `pulumi:"segmentRangeStartIndex"`
 	// The ID of the MediaWorkflow used to produce this asset.
-	SourceMediaWorkflowId pulumi.StringOutput `pulumi:"sourceMediaWorkflowId"`
+	SourceMediaWorkflowId pulumi.StringPtrOutput `pulumi:"sourceMediaWorkflowId"`
 	// The version of the MediaWorkflow used to produce this asset.
-	SourceMediaWorkflowVersion pulumi.StringOutput `pulumi:"sourceMediaWorkflowVersion"`
+	SourceMediaWorkflowVersion pulumi.StringPtrOutput `pulumi:"sourceMediaWorkflowVersion"`
 	// The current state of the MediaAsset.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The time when the MediaAsset was created. An RFC3339 formatted datetime string.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The time when the MediaAsset was updated. An RFC3339 formatted datetime string.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 	// (Updatable) The type of the media asset.
 	//
 	// ** IMPORTANT **
@@ -325,12 +324,6 @@ func (i *MediaAsset) ToMediaAssetOutputWithContext(ctx context.Context) MediaAss
 	return pulumi.ToOutputWithContext(ctx, i).(MediaAssetOutput)
 }
 
-func (i *MediaAsset) ToOutput(ctx context.Context) pulumix.Output[*MediaAsset] {
-	return pulumix.Output[*MediaAsset]{
-		OutputState: i.ToMediaAssetOutputWithContext(ctx).OutputState,
-	}
-}
-
 // MediaAssetArrayInput is an input type that accepts MediaAssetArray and MediaAssetArrayOutput values.
 // You can construct a concrete instance of `MediaAssetArrayInput` via:
 //
@@ -354,12 +347,6 @@ func (i MediaAssetArray) ToMediaAssetArrayOutput() MediaAssetArrayOutput {
 
 func (i MediaAssetArray) ToMediaAssetArrayOutputWithContext(ctx context.Context) MediaAssetArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(MediaAssetArrayOutput)
-}
-
-func (i MediaAssetArray) ToOutput(ctx context.Context) pulumix.Output[[]*MediaAsset] {
-	return pulumix.Output[[]*MediaAsset]{
-		OutputState: i.ToMediaAssetArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // MediaAssetMapInput is an input type that accepts MediaAssetMap and MediaAssetMapOutput values.
@@ -387,12 +374,6 @@ func (i MediaAssetMap) ToMediaAssetMapOutputWithContext(ctx context.Context) Med
 	return pulumi.ToOutputWithContext(ctx, i).(MediaAssetMapOutput)
 }
 
-func (i MediaAssetMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*MediaAsset] {
-	return pulumix.Output[map[string]*MediaAsset]{
-		OutputState: i.ToMediaAssetMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MediaAssetOutput struct{ *pulumi.OutputState }
 
 func (MediaAssetOutput) ElementType() reflect.Type {
@@ -407,15 +388,9 @@ func (o MediaAssetOutput) ToMediaAssetOutputWithContext(ctx context.Context) Med
 	return o
 }
 
-func (o MediaAssetOutput) ToOutput(ctx context.Context) pulumix.Output[*MediaAsset] {
-	return pulumix.Output[*MediaAsset]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The name of the object storage bucket where this asset is located.
-func (o MediaAssetOutput) Bucket() pulumi.StringOutput {
-	return o.ApplyT(func(v *MediaAsset) pulumi.StringOutput { return v.Bucket }).(pulumi.StringOutput)
+func (o MediaAssetOutput) Bucket() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MediaAsset) pulumi.StringPtrOutput { return v.Bucket }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Compartment Identifier.
@@ -429,8 +404,8 @@ func (o MediaAssetOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) Display name for the Media Asset. Does not have to be unique. Avoid entering confidential information.
-func (o MediaAssetOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *MediaAsset) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o MediaAssetOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MediaAsset) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -439,8 +414,8 @@ func (o MediaAssetOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // (Updatable) The ID of the senior most asset from which this asset is derived.
-func (o MediaAssetOutput) MasterMediaAssetId() pulumi.StringOutput {
-	return o.ApplyT(func(v *MediaAsset) pulumi.StringOutput { return v.MasterMediaAssetId }).(pulumi.StringOutput)
+func (o MediaAssetOutput) MasterMediaAssetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MediaAsset) pulumi.StringPtrOutput { return v.MasterMediaAssetId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) list of tags for the MediaAsset.
@@ -449,8 +424,8 @@ func (o MediaAssetOutput) MediaAssetTags() MediaAssetMediaAssetTagArrayOutput {
 }
 
 // The ID of the MediaWorkflowJob used to produce this asset.
-func (o MediaAssetOutput) MediaWorkflowJobId() pulumi.StringOutput {
-	return o.ApplyT(func(v *MediaAsset) pulumi.StringOutput { return v.MediaWorkflowJobId }).(pulumi.StringOutput)
+func (o MediaAssetOutput) MediaWorkflowJobId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MediaAsset) pulumi.StringPtrOutput { return v.MediaWorkflowJobId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) JSON string containing the technial metadata for the media asset.
@@ -459,48 +434,48 @@ func (o MediaAssetOutput) Metadatas() MediaAssetMetadataArrayOutput {
 }
 
 // The object storage namespace where this asset is located.
-func (o MediaAssetOutput) Namespace() pulumi.StringOutput {
-	return o.ApplyT(func(v *MediaAsset) pulumi.StringOutput { return v.Namespace }).(pulumi.StringOutput)
+func (o MediaAssetOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MediaAsset) pulumi.StringPtrOutput { return v.Namespace }).(pulumi.StringPtrOutput)
 }
 
 // The object storage object name that identifies this asset.
-func (o MediaAssetOutput) Object() pulumi.StringOutput {
-	return o.ApplyT(func(v *MediaAsset) pulumi.StringOutput { return v.Object }).(pulumi.StringOutput)
+func (o MediaAssetOutput) Object() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MediaAsset) pulumi.StringPtrOutput { return v.Object }).(pulumi.StringPtrOutput)
 }
 
 // eTag of the underlying object storage object.
-func (o MediaAssetOutput) ObjectEtag() pulumi.StringOutput {
-	return o.ApplyT(func(v *MediaAsset) pulumi.StringOutput { return v.ObjectEtag }).(pulumi.StringOutput)
+func (o MediaAssetOutput) ObjectEtag() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MediaAsset) pulumi.StringPtrOutput { return v.ObjectEtag }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The ID of the parent asset from which this asset is derived.
-func (o MediaAssetOutput) ParentMediaAssetId() pulumi.StringOutput {
-	return o.ApplyT(func(v *MediaAsset) pulumi.StringOutput { return v.ParentMediaAssetId }).(pulumi.StringOutput)
+func (o MediaAssetOutput) ParentMediaAssetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MediaAsset) pulumi.StringPtrOutput { return v.ParentMediaAssetId }).(pulumi.StringPtrOutput)
 }
 
 // The end index for video segment files.
-func (o MediaAssetOutput) SegmentRangeEndIndex() pulumi.StringOutput {
-	return o.ApplyT(func(v *MediaAsset) pulumi.StringOutput { return v.SegmentRangeEndIndex }).(pulumi.StringOutput)
+func (o MediaAssetOutput) SegmentRangeEndIndex() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MediaAsset) pulumi.StringPtrOutput { return v.SegmentRangeEndIndex }).(pulumi.StringPtrOutput)
 }
 
 // The start index for video segment files.
-func (o MediaAssetOutput) SegmentRangeStartIndex() pulumi.StringOutput {
-	return o.ApplyT(func(v *MediaAsset) pulumi.StringOutput { return v.SegmentRangeStartIndex }).(pulumi.StringOutput)
+func (o MediaAssetOutput) SegmentRangeStartIndex() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MediaAsset) pulumi.StringPtrOutput { return v.SegmentRangeStartIndex }).(pulumi.StringPtrOutput)
 }
 
 // The ID of the MediaWorkflow used to produce this asset.
-func (o MediaAssetOutput) SourceMediaWorkflowId() pulumi.StringOutput {
-	return o.ApplyT(func(v *MediaAsset) pulumi.StringOutput { return v.SourceMediaWorkflowId }).(pulumi.StringOutput)
+func (o MediaAssetOutput) SourceMediaWorkflowId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MediaAsset) pulumi.StringPtrOutput { return v.SourceMediaWorkflowId }).(pulumi.StringPtrOutput)
 }
 
 // The version of the MediaWorkflow used to produce this asset.
-func (o MediaAssetOutput) SourceMediaWorkflowVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v *MediaAsset) pulumi.StringOutput { return v.SourceMediaWorkflowVersion }).(pulumi.StringOutput)
+func (o MediaAssetOutput) SourceMediaWorkflowVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MediaAsset) pulumi.StringPtrOutput { return v.SourceMediaWorkflowVersion }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the MediaAsset.
-func (o MediaAssetOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *MediaAsset) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o MediaAssetOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MediaAsset) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -509,13 +484,13 @@ func (o MediaAssetOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time when the MediaAsset was created. An RFC3339 formatted datetime string.
-func (o MediaAssetOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *MediaAsset) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o MediaAssetOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MediaAsset) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time when the MediaAsset was updated. An RFC3339 formatted datetime string.
-func (o MediaAssetOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *MediaAsset) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o MediaAssetOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MediaAsset) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The type of the media asset.
@@ -540,12 +515,6 @@ func (o MediaAssetArrayOutput) ToMediaAssetArrayOutputWithContext(ctx context.Co
 	return o
 }
 
-func (o MediaAssetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*MediaAsset] {
-	return pulumix.Output[[]*MediaAsset]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o MediaAssetArrayOutput) Index(i pulumi.IntInput) MediaAssetOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *MediaAsset {
 		return vs[0].([]*MediaAsset)[vs[1].(int)]
@@ -564,12 +533,6 @@ func (o MediaAssetMapOutput) ToMediaAssetMapOutput() MediaAssetMapOutput {
 
 func (o MediaAssetMapOutput) ToMediaAssetMapOutputWithContext(ctx context.Context) MediaAssetMapOutput {
 	return o
-}
-
-func (o MediaAssetMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*MediaAsset] {
-	return pulumix.Output[map[string]*MediaAsset]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MediaAssetMapOutput) MapIndex(k pulumi.StringInput) MediaAssetOutput {

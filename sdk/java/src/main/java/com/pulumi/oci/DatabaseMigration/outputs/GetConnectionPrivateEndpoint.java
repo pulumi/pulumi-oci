@@ -6,6 +6,8 @@ package com.pulumi.oci.DatabaseMigration.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetConnectionPrivateEndpoint {
@@ -13,51 +15,51 @@ public final class GetConnectionPrivateEndpoint {
      * @return OCID of the compartment where the secret containing the credentials will be created.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a previously created Private Endpoint.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer&#39;s subnet where the private endpoint VNIC will reside.
      * 
      */
-    private String subnetId;
+    private @Nullable String subnetId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN where the Private Endpoint will be bound to.
      * 
      */
-    private String vcnId;
+    private @Nullable String vcnId;
 
     private GetConnectionPrivateEndpoint() {}
     /**
      * @return OCID of the compartment where the secret containing the credentials will be created.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a previously created Private Endpoint.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer&#39;s subnet where the private endpoint VNIC will reside.
      * 
      */
-    public String subnetId() {
-        return this.subnetId;
+    public Optional<String> subnetId() {
+        return Optional.ofNullable(this.subnetId);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN where the Private Endpoint will be bound to.
      * 
      */
-    public String vcnId() {
-        return this.vcnId;
+    public Optional<String> vcnId() {
+        return Optional.ofNullable(this.vcnId);
     }
 
     public static Builder builder() {
@@ -69,10 +71,10 @@ public final class GetConnectionPrivateEndpoint {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private String id;
-        private String subnetId;
-        private String vcnId;
+        private @Nullable String compartmentId;
+        private @Nullable String id;
+        private @Nullable String subnetId;
+        private @Nullable String vcnId;
         public Builder() {}
         public Builder(GetConnectionPrivateEndpoint defaults) {
     	      Objects.requireNonNull(defaults);
@@ -83,23 +85,23 @@ public final class GetConnectionPrivateEndpoint {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder subnetId(String subnetId) {
-            this.subnetId = Objects.requireNonNull(subnetId);
+        public Builder subnetId(@Nullable String subnetId) {
+            this.subnetId = subnetId;
             return this;
         }
         @CustomType.Setter
-        public Builder vcnId(String vcnId) {
-            this.vcnId = Objects.requireNonNull(vcnId);
+        public Builder vcnId(@Nullable String vcnId) {
+            this.vcnId = vcnId;
             return this;
         }
         public GetConnectionPrivateEndpoint build() {

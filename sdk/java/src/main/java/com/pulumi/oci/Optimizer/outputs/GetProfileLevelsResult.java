@@ -22,7 +22,7 @@ public final class GetProfileLevelsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return A unique name for the profile level.
      * 
@@ -32,7 +32,7 @@ public final class GetProfileLevelsResult {
      * @return The list of profile_level_collection.
      * 
      */
-    private List<GetProfileLevelsProfileLevelCollection> profileLevelCollections;
+    private @Nullable List<GetProfileLevelsProfileLevelCollection> profileLevelCollections;
     /**
      * @return The name of the recommendation this profile level applies to.
      * 
@@ -53,8 +53,8 @@ public final class GetProfileLevelsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return A unique name for the profile level.
@@ -68,7 +68,7 @@ public final class GetProfileLevelsResult {
      * 
      */
     public List<GetProfileLevelsProfileLevelCollection> profileLevelCollections() {
-        return this.profileLevelCollections;
+        return this.profileLevelCollections == null ? List.of() : this.profileLevelCollections;
     }
     /**
      * @return The name of the recommendation this profile level applies to.
@@ -90,9 +90,9 @@ public final class GetProfileLevelsResult {
         private String compartmentId;
         private Boolean compartmentIdInSubtree;
         private @Nullable List<GetProfileLevelsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String name;
-        private List<GetProfileLevelsProfileLevelCollection> profileLevelCollections;
+        private @Nullable List<GetProfileLevelsProfileLevelCollection> profileLevelCollections;
         private @Nullable String recommendationName;
         public Builder() {}
         public Builder(GetProfileLevelsResult defaults) {
@@ -125,8 +125,8 @@ public final class GetProfileLevelsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -135,8 +135,8 @@ public final class GetProfileLevelsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder profileLevelCollections(List<GetProfileLevelsProfileLevelCollection> profileLevelCollections) {
-            this.profileLevelCollections = Objects.requireNonNull(profileLevelCollections);
+        public Builder profileLevelCollections(@Nullable List<GetProfileLevelsProfileLevelCollection> profileLevelCollections) {
+            this.profileLevelCollections = profileLevelCollections;
             return this;
         }
         public Builder profileLevelCollections(GetProfileLevelsProfileLevelCollection... profileLevelCollections) {

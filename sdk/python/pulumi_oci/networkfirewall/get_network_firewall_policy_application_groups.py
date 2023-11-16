@@ -42,10 +42,7 @@ class GetNetworkFirewallPolicyApplicationGroupsResult:
 
     @property
     @pulumi.getter(name="applicationGroupSummaryCollections")
-    def application_group_summary_collections(self) -> Sequence['outputs.GetNetworkFirewallPolicyApplicationGroupsApplicationGroupSummaryCollectionResult']:
-        """
-        The list of application_group_summary_collection.
-        """
+    def application_group_summary_collections(self) -> Optional[Sequence['outputs.GetNetworkFirewallPolicyApplicationGroupsApplicationGroupSummaryCollectionResult']]:
         return pulumi.get(self, "application_group_summary_collections")
 
     @property
@@ -60,7 +57,7 @@ class GetNetworkFirewallPolicyApplicationGroupsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -90,23 +87,7 @@ def get_network_firewall_policy_application_groups(display_name: Optional[str] =
                                                    network_firewall_policy_id: Optional[str] = None,
                                                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNetworkFirewallPolicyApplicationGroupsResult:
     """
-    This data source provides the list of Network Firewall Policy Application Groups in Oracle Cloud Infrastructure Network Firewall service.
-
-    Returns a list of ApplicationGroups for the policy.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_network_firewall_policy_application_groups = oci.NetworkFirewall.get_network_firewall_policy_application_groups(network_firewall_policy_id=oci_network_firewall_network_firewall_policy["test_network_firewall_policy"]["id"],
-        display_name=var["network_firewall_policy_application_group_display_name"])
-    ```
-
-
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str network_firewall_policy_id: Unique Network Firewall Policy identifier
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['displayName'] = display_name
@@ -129,22 +110,6 @@ def get_network_firewall_policy_application_groups_output(display_name: Optional
                                                           network_firewall_policy_id: Optional[pulumi.Input[str]] = None,
                                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNetworkFirewallPolicyApplicationGroupsResult]:
     """
-    This data source provides the list of Network Firewall Policy Application Groups in Oracle Cloud Infrastructure Network Firewall service.
-
-    Returns a list of ApplicationGroups for the policy.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_network_firewall_policy_application_groups = oci.NetworkFirewall.get_network_firewall_policy_application_groups(network_firewall_policy_id=oci_network_firewall_network_firewall_policy["test_network_firewall_policy"]["id"],
-        display_name=var["network_firewall_policy_application_group_display_name"])
-    ```
-
-
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str network_firewall_policy_id: Unique Network Firewall Policy identifier
+    Use this data source to access information about an existing resource.
     """
     ...

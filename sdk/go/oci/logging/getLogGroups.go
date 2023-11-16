@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Log Groups in Oracle Cloud Infrastructure Logging service.
@@ -72,8 +71,8 @@ type GetLogGroupsResult struct {
 	DisplayName *string              `pulumi:"displayName"`
 	Filters     []GetLogGroupsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                       string `pulumi:"id"`
-	IsCompartmentIdInSubtree *bool  `pulumi:"isCompartmentIdInSubtree"`
+	Id                       *string `pulumi:"id"`
+	IsCompartmentIdInSubtree *bool   `pulumi:"isCompartmentIdInSubtree"`
 	// The list of log_groups.
 	LogGroups []GetLogGroupsLogGroup `pulumi:"logGroups"`
 }
@@ -121,12 +120,6 @@ func (o GetLogGroupsResultOutput) ToGetLogGroupsResultOutputWithContext(ctx cont
 	return o
 }
 
-func (o GetLogGroupsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetLogGroupsResult] {
-	return pulumix.Output[GetLogGroupsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment that the resource belongs to.
 func (o GetLogGroupsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLogGroupsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -142,8 +135,8 @@ func (o GetLogGroupsResultOutput) Filters() GetLogGroupsFilterArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetLogGroupsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogGroupsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetLogGroupsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogGroupsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetLogGroupsResultOutput) IsCompartmentIdInSubtree() pulumi.BoolPtrOutput {

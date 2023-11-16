@@ -180,7 +180,7 @@ namespace Pulumi.Oci.CertificatesManagement
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// A user-friendly name for the CA bundle. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
         /// </summary>
@@ -200,7 +200,7 @@ namespace Pulumi.Oci.CertificatesManagement
 
             ImmutableArray<Outputs.GetCaBundlesFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? name,
 

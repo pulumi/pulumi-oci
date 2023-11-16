@@ -16,17 +16,17 @@ namespace Pulumi.Oci.OspGateway.Outputs
         /// <summary>
         /// English translation of the label (for reference only - translation is not provided)
         /// </summary>
-        public readonly string Example;
+        public readonly string? Example;
         /// <summary>
         /// Language token of the required label
         /// </summary>
-        public readonly string Value;
+        public readonly string? Value;
 
         [OutputConstructor]
         private GetAddressRuleContactFieldLabelResult(
-            string example,
+            string? example,
 
-            string value)
+            string? value)
         {
             Example = example;
             Value = value;

@@ -6,6 +6,8 @@ package com.pulumi.oci.DatabaseManagement.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetExternalDatabasesExternalDatabaseCollectionItemDbManagementConfig {
@@ -13,39 +15,39 @@ public final class GetExternalDatabasesExternalDatabaseCollectionItemDbManagemen
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database connector.
      * 
      */
-    private String connectorId;
+    private @Nullable String connectorId;
     /**
      * @return The status of the Database Management service.
      * 
      */
-    private String databaseManagementStatus;
+    private @Nullable String databaseManagementStatus;
     /**
      * @return The Oracle license model that applies to the external database.
      * 
      */
-    private String licenseModel;
+    private @Nullable String licenseModel;
 
     private GetExternalDatabasesExternalDatabaseCollectionItemDbManagementConfig() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database connector.
      * 
      */
-    public String connectorId() {
-        return this.connectorId;
+    public Optional<String> connectorId() {
+        return Optional.ofNullable(this.connectorId);
     }
     /**
      * @return The status of the Database Management service.
      * 
      */
-    public String databaseManagementStatus() {
-        return this.databaseManagementStatus;
+    public Optional<String> databaseManagementStatus() {
+        return Optional.ofNullable(this.databaseManagementStatus);
     }
     /**
      * @return The Oracle license model that applies to the external database.
      * 
      */
-    public String licenseModel() {
-        return this.licenseModel;
+    public Optional<String> licenseModel() {
+        return Optional.ofNullable(this.licenseModel);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetExternalDatabasesExternalDatabaseCollectionItemDbManagemen
     }
     @CustomType.Builder
     public static final class Builder {
-        private String connectorId;
-        private String databaseManagementStatus;
-        private String licenseModel;
+        private @Nullable String connectorId;
+        private @Nullable String databaseManagementStatus;
+        private @Nullable String licenseModel;
         public Builder() {}
         public Builder(GetExternalDatabasesExternalDatabaseCollectionItemDbManagementConfig defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetExternalDatabasesExternalDatabaseCollectionItemDbManagemen
         }
 
         @CustomType.Setter
-        public Builder connectorId(String connectorId) {
-            this.connectorId = Objects.requireNonNull(connectorId);
+        public Builder connectorId(@Nullable String connectorId) {
+            this.connectorId = connectorId;
             return this;
         }
         @CustomType.Setter
-        public Builder databaseManagementStatus(String databaseManagementStatus) {
-            this.databaseManagementStatus = Objects.requireNonNull(databaseManagementStatus);
+        public Builder databaseManagementStatus(@Nullable String databaseManagementStatus) {
+            this.databaseManagementStatus = databaseManagementStatus;
             return this;
         }
         @CustomType.Setter
-        public Builder licenseModel(String licenseModel) {
-            this.licenseModel = Objects.requireNonNull(licenseModel);
+        public Builder licenseModel(@Nullable String licenseModel) {
+            this.licenseModel = licenseModel;
             return this;
         }
         public GetExternalDatabasesExternalDatabaseCollectionItemDbManagementConfig build() {

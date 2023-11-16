@@ -16,23 +16,23 @@ namespace Pulumi.Oci.DataFlow.Outputs
         /// <summary>
         /// The type of IP notation.
         /// </summary>
-        public readonly string IpNotation;
+        public readonly string? IpNotation;
         /// <summary>
         /// The associated value of the selected IP notation.
         /// </summary>
-        public readonly string Value;
+        public readonly string? Value;
         /// <summary>
         /// A comma-separated IP or CIDR address for VCN OCID IP notation selection.
         /// </summary>
-        public readonly string VcnIps;
+        public readonly string? VcnIps;
 
         [OutputConstructor]
         private GetSqlEndpointNetworkConfigurationAccessControlRuleResult(
-            string ipNotation,
+            string? ipNotation,
 
-            string value,
+            string? value,
 
-            string vcnIps)
+            string? vcnIps)
         {
             IpNotation = ipNotation;
             Value = value;

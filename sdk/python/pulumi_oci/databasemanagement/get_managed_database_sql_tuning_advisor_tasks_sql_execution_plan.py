@@ -45,14 +45,11 @@ class GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanResult:
     @property
     @pulumi.getter
     def attribute(self) -> str:
-        """
-        The text string identifying the type of execution plan.
-        """
         return pulumi.get(self, "attribute")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -65,10 +62,7 @@ class GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanResult:
 
     @property
     @pulumi.getter
-    def plans(self) -> Sequence['outputs.GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlanResult']:
-        """
-        A SQL execution plan as a list of steps.
-        """
+    def plans(self) -> Optional[Sequence['outputs.GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlanResult']]:
         return pulumi.get(self, "plans")
 
     @property
@@ -102,27 +96,7 @@ def get_managed_database_sql_tuning_advisor_tasks_sql_execution_plan(attribute: 
                                                                      sql_tuning_advisor_task_id: Optional[str] = None,
                                                                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanResult:
     """
-    This data source provides details about a specific Managed Database Sql Tuning Advisor Tasks Sql Execution Plan resource in Oracle Cloud Infrastructure Database Management service.
-
-    Retrieves a SQL execution plan for the SQL being tuned.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_database_sql_tuning_advisor_tasks_sql_execution_plan = oci.DatabaseManagement.get_managed_database_sql_tuning_advisor_tasks_sql_execution_plan(attribute=var["managed_database_sql_tuning_advisor_tasks_sql_execution_plan_attribute"],
-        managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        sql_object_id=oci_objectstorage_object["test_object"]["id"],
-        sql_tuning_advisor_task_id=oci_database_management_sql_tuning_advisor_task["test_sql_tuning_advisor_task"]["id"])
-    ```
-
-
-    :param str attribute: The attribute of the SQL execution plan.
-    :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
-    :param str sql_object_id: The SQL object ID for the SQL tuning task. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str sql_tuning_advisor_task_id: The SQL tuning task identifier. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['attribute'] = attribute
@@ -148,26 +122,6 @@ def get_managed_database_sql_tuning_advisor_tasks_sql_execution_plan_output(attr
                                                                             sql_tuning_advisor_task_id: Optional[pulumi.Input[str]] = None,
                                                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanResult]:
     """
-    This data source provides details about a specific Managed Database Sql Tuning Advisor Tasks Sql Execution Plan resource in Oracle Cloud Infrastructure Database Management service.
-
-    Retrieves a SQL execution plan for the SQL being tuned.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_database_sql_tuning_advisor_tasks_sql_execution_plan = oci.DatabaseManagement.get_managed_database_sql_tuning_advisor_tasks_sql_execution_plan(attribute=var["managed_database_sql_tuning_advisor_tasks_sql_execution_plan_attribute"],
-        managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        sql_object_id=oci_objectstorage_object["test_object"]["id"],
-        sql_tuning_advisor_task_id=oci_database_management_sql_tuning_advisor_task["test_sql_tuning_advisor_task"]["id"])
-    ```
-
-
-    :param str attribute: The attribute of the SQL execution plan.
-    :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
-    :param str sql_object_id: The SQL object ID for the SQL tuning task. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str sql_tuning_advisor_task_id: The SQL tuning task identifier. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     ...

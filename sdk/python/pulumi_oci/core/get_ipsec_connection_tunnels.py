@@ -44,7 +44,7 @@ class GetIpsecConnectionTunnelsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -52,10 +52,7 @@ class GetIpsecConnectionTunnelsResult:
 
     @property
     @pulumi.getter(name="ipSecConnectionTunnels")
-    def ip_sec_connection_tunnels(self) -> Sequence['outputs.GetIpsecConnectionTunnelsIpSecConnectionTunnelResult']:
-        """
-        The list of ip_sec_connection_tunnels.
-        """
+    def ip_sec_connection_tunnels(self) -> Optional[Sequence['outputs.GetIpsecConnectionTunnelsIpSecConnectionTunnelResult']]:
         return pulumi.get(self, "ip_sec_connection_tunnels")
 
     @property
@@ -80,21 +77,7 @@ def get_ipsec_connection_tunnels(filters: Optional[Sequence[pulumi.InputType['Ge
                                  ipsec_id: Optional[str] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetIpsecConnectionTunnelsResult:
     """
-    This data source provides the list of Ip Sec Connection Tunnels in Oracle Cloud Infrastructure Core service.
-
-    Lists the tunnel information for the specified IPSec connection.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_ip_sec_connection_tunnels = oci.Core.get_ipsec_connection_tunnels(ipsec_id=oci_core_ipsec["test_ipsec"]["id"])
-    ```
-
-
-    :param str ipsec_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IPSec connection.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -114,20 +97,6 @@ def get_ipsec_connection_tunnels_output(filters: Optional[pulumi.Input[Optional[
                                         ipsec_id: Optional[pulumi.Input[str]] = None,
                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetIpsecConnectionTunnelsResult]:
     """
-    This data source provides the list of Ip Sec Connection Tunnels in Oracle Cloud Infrastructure Core service.
-
-    Lists the tunnel information for the specified IPSec connection.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_ip_sec_connection_tunnels = oci.Core.get_ipsec_connection_tunnels(ipsec_id=oci_core_ipsec["test_ipsec"]["id"])
-    ```
-
-
-    :param str ipsec_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IPSec connection.
+    Use this data source to access information about an existing resource.
     """
     ...

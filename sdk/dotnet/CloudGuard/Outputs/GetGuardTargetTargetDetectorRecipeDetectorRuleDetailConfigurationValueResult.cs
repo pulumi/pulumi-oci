@@ -16,23 +16,23 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// <summary>
         /// configuration list item type, either CUSTOM or MANAGED
         /// </summary>
-        public readonly string ListType;
+        public readonly string? ListType;
         /// <summary>
         /// type of the managed list
         /// </summary>
-        public readonly string ManagedListType;
+        public readonly string? ManagedListType;
         /// <summary>
         /// configuration value
         /// </summary>
-        public readonly string Value;
+        public readonly string? Value;
 
         [OutputConstructor]
         private GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValueResult(
-            string listType,
+            string? listType,
 
-            string managedListType,
+            string? managedListType,
 
-            string value)
+            string? value)
         {
             ListType = listType;
             ManagedListType = managedListType;

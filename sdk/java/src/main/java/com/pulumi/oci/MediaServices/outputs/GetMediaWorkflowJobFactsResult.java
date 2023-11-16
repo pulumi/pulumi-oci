@@ -19,7 +19,7 @@ public final class GetMediaWorkflowJobFactsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return System generated serial number to uniquely identify a detail in order within a MediaWorkflowJob.
      * 
@@ -29,7 +29,7 @@ public final class GetMediaWorkflowJobFactsResult {
      * @return The list of media_workflow_job_fact_collection.
      * 
      */
-    private List<GetMediaWorkflowJobFactsMediaWorkflowJobFactCollection> mediaWorkflowJobFactCollections;
+    private @Nullable List<GetMediaWorkflowJobFactsMediaWorkflowJobFactCollection> mediaWorkflowJobFactCollections;
     /**
      * @return Reference to the parent job.
      * 
@@ -49,8 +49,8 @@ public final class GetMediaWorkflowJobFactsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return System generated serial number to uniquely identify a detail in order within a MediaWorkflowJob.
@@ -64,7 +64,7 @@ public final class GetMediaWorkflowJobFactsResult {
      * 
      */
     public List<GetMediaWorkflowJobFactsMediaWorkflowJobFactCollection> mediaWorkflowJobFactCollections() {
-        return this.mediaWorkflowJobFactCollections;
+        return this.mediaWorkflowJobFactCollections == null ? List.of() : this.mediaWorkflowJobFactCollections;
     }
     /**
      * @return Reference to the parent job.
@@ -91,9 +91,9 @@ public final class GetMediaWorkflowJobFactsResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetMediaWorkflowJobFactsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String key;
-        private List<GetMediaWorkflowJobFactsMediaWorkflowJobFactCollection> mediaWorkflowJobFactCollections;
+        private @Nullable List<GetMediaWorkflowJobFactsMediaWorkflowJobFactCollection> mediaWorkflowJobFactCollections;
         private String mediaWorkflowJobId;
         private @Nullable String type;
         public Builder() {}
@@ -116,8 +116,8 @@ public final class GetMediaWorkflowJobFactsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -126,8 +126,8 @@ public final class GetMediaWorkflowJobFactsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder mediaWorkflowJobFactCollections(List<GetMediaWorkflowJobFactsMediaWorkflowJobFactCollection> mediaWorkflowJobFactCollections) {
-            this.mediaWorkflowJobFactCollections = Objects.requireNonNull(mediaWorkflowJobFactCollections);
+        public Builder mediaWorkflowJobFactCollections(@Nullable List<GetMediaWorkflowJobFactsMediaWorkflowJobFactCollection> mediaWorkflowJobFactCollections) {
+            this.mediaWorkflowJobFactCollections = mediaWorkflowJobFactCollections;
             return this;
         }
         public Builder mediaWorkflowJobFactCollections(GetMediaWorkflowJobFactsMediaWorkflowJobFactCollection... mediaWorkflowJobFactCollections) {

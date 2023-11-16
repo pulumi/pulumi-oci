@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Application Vips in Oracle Cloud Infrastructure Database service.
@@ -74,7 +73,7 @@ type GetApplicationVipsResult struct {
 	CompartmentId string                     `pulumi:"compartmentId"`
 	Filters       []GetApplicationVipsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The current lifecycle state of the application virtual IP (VIP) address.
 	State *string `pulumi:"state"`
 }
@@ -122,12 +121,6 @@ func (o GetApplicationVipsResultOutput) ToGetApplicationVipsResultOutputWithCont
 	return o
 }
 
-func (o GetApplicationVipsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetApplicationVipsResult] {
-	return pulumix.Output[GetApplicationVipsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The list of application_vips.
 func (o GetApplicationVipsResultOutput) ApplicationVips() GetApplicationVipsApplicationVipArrayOutput {
 	return o.ApplyT(func(v GetApplicationVipsResult) []GetApplicationVipsApplicationVip { return v.ApplicationVips }).(GetApplicationVipsApplicationVipArrayOutput)
@@ -148,8 +141,8 @@ func (o GetApplicationVipsResultOutput) Filters() GetApplicationVipsFilterArrayO
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetApplicationVipsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetApplicationVipsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetApplicationVipsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetApplicationVipsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The current lifecycle state of the application virtual IP (VIP) address.

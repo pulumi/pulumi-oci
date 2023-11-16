@@ -17,6 +17,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -40,140 +41,140 @@ public class ExternalListener extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="additionalDetails", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> additionalDetails;
+    private Output</* @Nullable */ Map<String,Object>> additionalDetails;
 
     /**
      * @return The additional details of the external listener defined in `{&#34;key&#34;: &#34;value&#34;}` format. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> additionalDetails() {
-        return this.additionalDetails;
+    public Output<Optional<Map<String,Object>>> additionalDetails() {
+        return Codegen.optional(this.additionalDetails);
     }
     /**
      * The directory that stores tracing and logging incidents when Automatic Diagnostic Repository (ADR) is enabled.
      * 
      */
     @Export(name="adrHomeDirectory", refs={String.class}, tree="[0]")
-    private Output<String> adrHomeDirectory;
+    private Output</* @Nullable */ String> adrHomeDirectory;
 
     /**
      * @return The directory that stores tracing and logging incidents when Automatic Diagnostic Repository (ADR) is enabled.
      * 
      */
-    public Output<String> adrHomeDirectory() {
-        return this.adrHomeDirectory;
+    public Output<Optional<String>> adrHomeDirectory() {
+        return Codegen.optional(this.adrHomeDirectory);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external database resides.
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
-    private Output<String> compartmentId;
+    private Output</* @Nullable */ String> compartmentId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external database resides.
      * 
      */
-    public Output<String> compartmentId() {
-        return this.compartmentId;
+    public Output<Optional<String>> compartmentId() {
+        return Codegen.optional(this.compartmentId);
     }
     /**
      * The name of the external listener.
      * 
      */
     @Export(name="componentName", refs={String.class}, tree="[0]")
-    private Output<String> componentName;
+    private Output</* @Nullable */ String> componentName;
 
     /**
      * @return The name of the external listener.
      * 
      */
-    public Output<String> componentName() {
-        return this.componentName;
+    public Output<Optional<String>> componentName() {
+        return Codegen.optional(this.componentName);
     }
     /**
      * The user-friendly name for the database. The name does not have to be unique.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return The user-friendly name for the database. The name does not have to be unique.
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     /**
      * The list of protocol addresses the listener is configured to listen on.
      * 
      */
     @Export(name="endpoints", refs={List.class,ExternalListenerEndpoint.class}, tree="[0,1]")
-    private Output<List<ExternalListenerEndpoint>> endpoints;
+    private Output</* @Nullable */ List<ExternalListenerEndpoint>> endpoints;
 
     /**
      * @return The list of protocol addresses the listener is configured to listen on.
      * 
      */
-    public Output<List<ExternalListenerEndpoint>> endpoints() {
-        return this.endpoints;
+    public Output<Optional<List<ExternalListenerEndpoint>>> endpoints() {
+        return Codegen.optional(this.endpoints);
     }
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
      * 
      */
     @Export(name="externalConnectorId", refs={String.class}, tree="[0]")
-    private Output<String> externalConnectorId;
+    private Output</* @Nullable */ String> externalConnectorId;
 
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
      * 
      */
-    public Output<String> externalConnectorId() {
-        return this.externalConnectorId;
+    public Output<Optional<String>> externalConnectorId() {
+        return Codegen.optional(this.externalConnectorId);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB home.
      * 
      */
     @Export(name="externalDbHomeId", refs={String.class}, tree="[0]")
-    private Output<String> externalDbHomeId;
+    private Output</* @Nullable */ String> externalDbHomeId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB home.
      * 
      */
-    public Output<String> externalDbHomeId() {
-        return this.externalDbHomeId;
+    public Output<Optional<String>> externalDbHomeId() {
+        return Codegen.optional(this.externalDbHomeId);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB node.
      * 
      */
     @Export(name="externalDbNodeId", refs={String.class}, tree="[0]")
-    private Output<String> externalDbNodeId;
+    private Output</* @Nullable */ String> externalDbNodeId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB node.
      * 
      */
-    public Output<String> externalDbNodeId() {
-        return this.externalDbNodeId;
+    public Output<Optional<String>> externalDbNodeId() {
+        return Codegen.optional(this.externalDbNodeId);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the listener is a part of.
      * 
      */
     @Export(name="externalDbSystemId", refs={String.class}, tree="[0]")
-    private Output<String> externalDbSystemId;
+    private Output</* @Nullable */ String> externalDbSystemId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the listener is a part of.
      * 
      */
-    public Output<String> externalDbSystemId() {
-        return this.externalDbSystemId;
+    public Output<Optional<String>> externalDbSystemId() {
+        return Codegen.optional(this.externalDbSystemId);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external listener.
@@ -200,196 +201,196 @@ public class ExternalListener extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="hostName", refs={String.class}, tree="[0]")
-    private Output<String> hostName;
+    private Output</* @Nullable */ String> hostName;
 
     /**
      * @return The name of the host on which the external listener is running.
      * 
      */
-    public Output<String> hostName() {
-        return this.hostName;
+    public Output<Optional<String>> hostName() {
+        return Codegen.optional(this.hostName);
     }
     /**
      * Additional information about the current lifecycle state.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return Additional information about the current lifecycle state.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * The listener alias.
      * 
      */
     @Export(name="listenerAlias", refs={String.class}, tree="[0]")
-    private Output<String> listenerAlias;
+    private Output</* @Nullable */ String> listenerAlias;
 
     /**
      * @return The listener alias.
      * 
      */
-    public Output<String> listenerAlias() {
-        return this.listenerAlias;
+    public Output<Optional<String>> listenerAlias() {
+        return Codegen.optional(this.listenerAlias);
     }
     /**
      * The location of the listener configuration file listener.ora.
      * 
      */
     @Export(name="listenerOraLocation", refs={String.class}, tree="[0]")
-    private Output<String> listenerOraLocation;
+    private Output</* @Nullable */ String> listenerOraLocation;
 
     /**
      * @return The location of the listener configuration file listener.ora.
      * 
      */
-    public Output<String> listenerOraLocation() {
-        return this.listenerOraLocation;
+    public Output<Optional<String>> listenerOraLocation() {
+        return Codegen.optional(this.listenerOraLocation);
     }
     /**
      * The type of listener.
      * 
      */
     @Export(name="listenerType", refs={String.class}, tree="[0]")
-    private Output<String> listenerType;
+    private Output</* @Nullable */ String> listenerType;
 
     /**
      * @return The type of listener.
      * 
      */
-    public Output<String> listenerType() {
-        return this.listenerType;
+    public Output<Optional<String>> listenerType() {
+        return Codegen.optional(this.listenerType);
     }
     /**
      * The destination directory of the listener log file.
      * 
      */
     @Export(name="logDirectory", refs={String.class}, tree="[0]")
-    private Output<String> logDirectory;
+    private Output</* @Nullable */ String> logDirectory;
 
     /**
      * @return The destination directory of the listener log file.
      * 
      */
-    public Output<String> logDirectory() {
-        return this.logDirectory;
+    public Output<Optional<String>> logDirectory() {
+        return Codegen.optional(this.logDirectory);
     }
     /**
      * The Oracle home location of the listener.
      * 
      */
     @Export(name="oracleHome", refs={String.class}, tree="[0]")
-    private Output<String> oracleHome;
+    private Output</* @Nullable */ String> oracleHome;
 
     /**
      * @return The Oracle home location of the listener.
      * 
      */
-    public Output<String> oracleHome() {
-        return this.oracleHome;
+    public Output<Optional<String>> oracleHome() {
+        return Codegen.optional(this.oracleHome);
     }
     /**
      * The list of ASMs that are serviced by the listener.
      * 
      */
     @Export(name="servicedAsms", refs={List.class,ExternalListenerServicedAsm.class}, tree="[0,1]")
-    private Output<List<ExternalListenerServicedAsm>> servicedAsms;
+    private Output</* @Nullable */ List<ExternalListenerServicedAsm>> servicedAsms;
 
     /**
      * @return The list of ASMs that are serviced by the listener.
      * 
      */
-    public Output<List<ExternalListenerServicedAsm>> servicedAsms() {
-        return this.servicedAsms;
+    public Output<Optional<List<ExternalListenerServicedAsm>>> servicedAsms() {
+        return Codegen.optional(this.servicedAsms);
     }
     /**
      * The list of databases that are serviced by the listener.
      * 
      */
     @Export(name="servicedDatabases", refs={List.class,ExternalListenerServicedDatabase.class}, tree="[0,1]")
-    private Output<List<ExternalListenerServicedDatabase>> servicedDatabases;
+    private Output</* @Nullable */ List<ExternalListenerServicedDatabase>> servicedDatabases;
 
     /**
      * @return The list of databases that are serviced by the listener.
      * 
      */
-    public Output<List<ExternalListenerServicedDatabase>> servicedDatabases() {
-        return this.servicedDatabases;
+    public Output<Optional<List<ExternalListenerServicedDatabase>>> servicedDatabases() {
+        return Codegen.optional(this.servicedDatabases);
     }
     /**
      * The current lifecycle state of the external listener.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current lifecycle state of the external listener.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The date and time the external listener was created.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the external listener was created.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The date and time the external listener was last updated.
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The date and time the external listener was last updated.
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
     /**
      * The destination directory of the listener trace file.
      * 
      */
     @Export(name="traceDirectory", refs={String.class}, tree="[0]")
-    private Output<String> traceDirectory;
+    private Output</* @Nullable */ String> traceDirectory;
 
     /**
      * @return The destination directory of the listener trace file.
      * 
      */
-    public Output<String> traceDirectory() {
-        return this.traceDirectory;
+    public Output<Optional<String>> traceDirectory() {
+        return Codegen.optional(this.traceDirectory);
     }
     /**
      * The listener version.
      * 
      */
     @Export(name="version", refs={String.class}, tree="[0]")
-    private Output<String> version;
+    private Output</* @Nullable */ String> version;
 
     /**
      * @return The listener version.
      * 
      */
-    public Output<String> version() {
-        return this.version;
+    public Output<Optional<String>> version() {
+        return Codegen.optional(this.version);
     }
 
     /**

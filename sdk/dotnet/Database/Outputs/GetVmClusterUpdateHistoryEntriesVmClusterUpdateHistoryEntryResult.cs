@@ -16,53 +16,53 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance update history entry.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Descriptive text providing additional details about the lifecycle state.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// A filter to return only resources that match the given lifecycle state exactly.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The date and time when the maintenance update action completed.
         /// </summary>
-        public readonly string TimeCompleted;
+        public readonly string? TimeCompleted;
         /// <summary>
         /// The date and time when the maintenance update action started.
         /// </summary>
-        public readonly string TimeStarted;
+        public readonly string? TimeStarted;
         /// <summary>
         /// The update action performed using this maintenance update.
         /// </summary>
-        public readonly string UpdateAction;
+        public readonly string? UpdateAction;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance update.
         /// </summary>
-        public readonly string UpdateId;
+        public readonly string? UpdateId;
         /// <summary>
         /// A filter to return only resources that match the given update type exactly.
         /// </summary>
-        public readonly string UpdateType;
+        public readonly string? UpdateType;
 
         [OutputConstructor]
         private GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryResult(
-            string id,
+            string? id,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string state,
+            string? state,
 
-            string timeCompleted,
+            string? timeCompleted,
 
-            string timeStarted,
+            string? timeStarted,
 
-            string updateAction,
+            string? updateAction,
 
-            string updateId,
+            string? updateId,
 
-            string updateType)
+            string? updateType)
         {
             Id = id;
             LifecycleDetails = lifecycleDetails;

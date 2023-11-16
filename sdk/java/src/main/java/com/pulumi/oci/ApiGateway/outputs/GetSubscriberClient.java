@@ -6,6 +6,8 @@ package com.pulumi.oci.ApiGateway.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSubscriberClient {
@@ -13,27 +15,27 @@ public final class GetSubscriberClient {
      * @return The name of the client. Must be unique within a subscriber.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return The token for the client. Must be unique within a tenancy.
      * 
      */
-    private String token;
+    private @Nullable String token;
 
     private GetSubscriberClient() {}
     /**
      * @return The name of the client. Must be unique within a subscriber.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return The token for the client. Must be unique within a tenancy.
      * 
      */
-    public String token() {
-        return this.token;
+    public Optional<String> token() {
+        return Optional.ofNullable(this.token);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetSubscriberClient {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String name;
-        private String token;
+        private @Nullable String name;
+        private @Nullable String token;
         public Builder() {}
         public Builder(GetSubscriberClient defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetSubscriberClient {
         }
 
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder token(String token) {
-            this.token = Objects.requireNonNull(token);
+        public Builder token(@Nullable String token) {
+            this.token = token;
             return this;
         }
         public GetSubscriberClient build() {

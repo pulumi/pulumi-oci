@@ -151,7 +151,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
 
         [OutputConstructor]
         private GetExternalDbSystemsResult(
@@ -163,7 +163,7 @@ namespace Pulumi.Oci.DatabaseManagement
 
             ImmutableArray<Outputs.GetExternalDbSystemsFilterResult> filters,
 
-            string id)
+            string? id)
         {
             CompartmentId = compartmentId;
             DisplayName = displayName;

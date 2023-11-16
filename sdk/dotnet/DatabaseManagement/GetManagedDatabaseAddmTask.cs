@@ -140,7 +140,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The list of ADDM task metadata.
         /// </summary>
@@ -154,7 +154,7 @@ namespace Pulumi.Oci.DatabaseManagement
 
         [OutputConstructor]
         private GetManagedDatabaseAddmTaskResult(
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetManagedDatabaseAddmTaskItemResult> items,
 

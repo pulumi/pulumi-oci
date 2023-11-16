@@ -16,41 +16,41 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// MySQL Database Name
         /// </summary>
-        public readonly string DbName;
+        public readonly string? DbName;
         /// <summary>
         /// MySQL Database Version
         /// </summary>
-        public readonly string DbVersion;
+        public readonly string? DbVersion;
         /// <summary>
         /// The OCID of the Managed MySql Database.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The name of the Managed MySQL Database.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The date and time the Managed Database was created.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
 
         [OutputConstructor]
         private GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemResult(
-            string compartmentId,
+            string? compartmentId,
 
-            string dbName,
+            string? dbName,
 
-            string dbVersion,
+            string? dbVersion,
 
-            string id,
+            string? id,
 
-            string name,
+            string? name,
 
-            string timeCreated)
+            string? timeCreated)
         {
             CompartmentId = compartmentId;
             DbName = dbName;

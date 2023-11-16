@@ -79,7 +79,7 @@ export interface GetCertificatesResult {
     /**
      * The list of certificates.
      */
-    readonly certificates: outputs.Waas.GetCertificatesCertificate[];
+    readonly certificates?: outputs.Waas.GetCertificatesCertificate[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SSL certificate's compartment.
      */
@@ -89,7 +89,7 @@ export interface GetCertificatesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly ids?: string[];
     readonly states?: string[];
     readonly timeCreatedGreaterThanOrEqualTo?: string;

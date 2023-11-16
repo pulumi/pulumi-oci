@@ -24,18 +24,6 @@ class PreauthrequestArgs:
                  object_name: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a Preauthrequest resource.
-        :param pulumi.Input[str] access_type: The operation that can be performed on this resource. Allowed Values: `ObjectRead`, `ObjectWrite`, `ObjectReadWrite`, `AnyObjectReadWrite` or `AnyObjectRead`
-        :param pulumi.Input[str] bucket: The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
-        :param pulumi.Input[str] namespace: The Object Storage namespace used for the request.
-        :param pulumi.Input[str] time_expires: The expiration date for the pre-authenticated request as per [RFC 3339](https://tools.ietf.org/html/rfc3339). After this date the pre-authenticated request will no longer be valid. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] bucket_listing_action: Specifies whether a list operation is allowed on a PAR with accessType "AnyObjectRead" or "AnyObjectReadWrite". Deny: Prevents the user from performing a list operation. ListObjects: Authorizes the user to perform a list operation.
-        :param pulumi.Input[str] name: A user-specified name for the pre-authenticated request. Names can be helpful in managing pre-authenticated requests. Avoid entering confidential information.
-        :param pulumi.Input[str] object: Deprecated. Instead use `object_name`. Requests that include both `object` and `object_name` will be rejected. (Optional) The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket if the access type allows that. The object name can be a prefix as well, in that case pre-authenticated request grants access to all the objects within the bucket starting with that prefix provided that we have the correct access type.
-        :param pulumi.Input[str] object_name: The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket if the access type allows that. The object name can be a prefix as well, in that case pre-authenticated request grants access to all the objects within the bucket starting with that prefix provided that we have the correct access type.
         """
         pulumi.set(__self__, "access_type", access_type)
         pulumi.set(__self__, "bucket", bucket)
@@ -56,9 +44,6 @@ class PreauthrequestArgs:
     @property
     @pulumi.getter(name="accessType")
     def access_type(self) -> pulumi.Input[str]:
-        """
-        The operation that can be performed on this resource. Allowed Values: `ObjectRead`, `ObjectWrite`, `ObjectReadWrite`, `AnyObjectReadWrite` or `AnyObjectRead`
-        """
         return pulumi.get(self, "access_type")
 
     @access_type.setter
@@ -68,9 +53,6 @@ class PreauthrequestArgs:
     @property
     @pulumi.getter
     def bucket(self) -> pulumi.Input[str]:
-        """
-        The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
-        """
         return pulumi.get(self, "bucket")
 
     @bucket.setter
@@ -80,9 +62,6 @@ class PreauthrequestArgs:
     @property
     @pulumi.getter
     def namespace(self) -> pulumi.Input[str]:
-        """
-        The Object Storage namespace used for the request.
-        """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
@@ -92,13 +71,6 @@ class PreauthrequestArgs:
     @property
     @pulumi.getter(name="timeExpires")
     def time_expires(self) -> pulumi.Input[str]:
-        """
-        The expiration date for the pre-authenticated request as per [RFC 3339](https://tools.ietf.org/html/rfc3339). After this date the pre-authenticated request will no longer be valid. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "time_expires")
 
     @time_expires.setter
@@ -108,9 +80,6 @@ class PreauthrequestArgs:
     @property
     @pulumi.getter(name="bucketListingAction")
     def bucket_listing_action(self) -> Optional[pulumi.Input[str]]:
-        """
-        Specifies whether a list operation is allowed on a PAR with accessType "AnyObjectRead" or "AnyObjectReadWrite". Deny: Prevents the user from performing a list operation. ListObjects: Authorizes the user to perform a list operation.
-        """
         return pulumi.get(self, "bucket_listing_action")
 
     @bucket_listing_action.setter
@@ -120,9 +89,6 @@ class PreauthrequestArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        A user-specified name for the pre-authenticated request. Names can be helpful in managing pre-authenticated requests. Avoid entering confidential information.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -132,9 +98,6 @@ class PreauthrequestArgs:
     @property
     @pulumi.getter
     def object(self) -> Optional[pulumi.Input[str]]:
-        """
-        Deprecated. Instead use `object_name`. Requests that include both `object` and `object_name` will be rejected. (Optional) The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket if the access type allows that. The object name can be a prefix as well, in that case pre-authenticated request grants access to all the objects within the bucket starting with that prefix provided that we have the correct access type.
-        """
         warnings.warn("""The 'object' field has been deprecated. Please use 'object_name' instead.""", DeprecationWarning)
         pulumi.log.warn("""object is deprecated: The 'object' field has been deprecated. Please use 'object_name' instead.""")
 
@@ -147,9 +110,6 @@ class PreauthrequestArgs:
     @property
     @pulumi.getter(name="objectName")
     def object_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket if the access type allows that. The object name can be a prefix as well, in that case pre-authenticated request grants access to all the objects within the bucket starting with that prefix provided that we have the correct access type.
-        """
         return pulumi.get(self, "object_name")
 
     @object_name.setter
@@ -174,22 +134,6 @@ class _PreauthrequestState:
                  time_expires: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering Preauthrequest resources.
-        :param pulumi.Input[str] access_type: The operation that can be performed on this resource. Allowed Values: `ObjectRead`, `ObjectWrite`, `ObjectReadWrite`, `AnyObjectReadWrite` or `AnyObjectRead`
-        :param pulumi.Input[str] access_uri: The URI to embed in the URL `https://objectstorage.${var.region}.oraclecloud.com{var.access_uri}` when using the pre-authenticated request.
-        :param pulumi.Input[str] bucket: The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
-        :param pulumi.Input[str] bucket_listing_action: Specifies whether a list operation is allowed on a PAR with accessType "AnyObjectRead" or "AnyObjectReadWrite". Deny: Prevents the user from performing a list operation. ListObjects: Authorizes the user to perform a list operation.
-        :param pulumi.Input[str] full_path: The full Path for the object.
-        :param pulumi.Input[str] name: A user-specified name for the pre-authenticated request. Names can be helpful in managing pre-authenticated requests. Avoid entering confidential information.
-        :param pulumi.Input[str] namespace: The Object Storage namespace used for the request.
-        :param pulumi.Input[str] object: Deprecated. Instead use `object_name`. Requests that include both `object` and `object_name` will be rejected. (Optional) The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket if the access type allows that. The object name can be a prefix as well, in that case pre-authenticated request grants access to all the objects within the bucket starting with that prefix provided that we have the correct access type.
-        :param pulumi.Input[str] object_name: The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket if the access type allows that. The object name can be a prefix as well, in that case pre-authenticated request grants access to all the objects within the bucket starting with that prefix provided that we have the correct access type.
-        :param pulumi.Input[str] par_id: The unique identifier for the pre-authenticated request. This can be used to manage operations against the pre-authenticated request, such as GET or DELETE.
-        :param pulumi.Input[str] time_created: The date when the pre-authenticated request was created as per specification [RFC 3339](https://tools.ietf.org/html/rfc3339).
-        :param pulumi.Input[str] time_expires: The expiration date for the pre-authenticated request as per [RFC 3339](https://tools.ietf.org/html/rfc3339). After this date the pre-authenticated request will no longer be valid. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if access_type is not None:
             pulumi.set(__self__, "access_type", access_type)
@@ -222,9 +166,6 @@ class _PreauthrequestState:
     @property
     @pulumi.getter(name="accessType")
     def access_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The operation that can be performed on this resource. Allowed Values: `ObjectRead`, `ObjectWrite`, `ObjectReadWrite`, `AnyObjectReadWrite` or `AnyObjectRead`
-        """
         return pulumi.get(self, "access_type")
 
     @access_type.setter
@@ -234,9 +175,6 @@ class _PreauthrequestState:
     @property
     @pulumi.getter(name="accessUri")
     def access_uri(self) -> Optional[pulumi.Input[str]]:
-        """
-        The URI to embed in the URL `https://objectstorage.${var.region}.oraclecloud.com{var.access_uri}` when using the pre-authenticated request.
-        """
         return pulumi.get(self, "access_uri")
 
     @access_uri.setter
@@ -246,9 +184,6 @@ class _PreauthrequestState:
     @property
     @pulumi.getter
     def bucket(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
-        """
         return pulumi.get(self, "bucket")
 
     @bucket.setter
@@ -258,9 +193,6 @@ class _PreauthrequestState:
     @property
     @pulumi.getter(name="bucketListingAction")
     def bucket_listing_action(self) -> Optional[pulumi.Input[str]]:
-        """
-        Specifies whether a list operation is allowed on a PAR with accessType "AnyObjectRead" or "AnyObjectReadWrite". Deny: Prevents the user from performing a list operation. ListObjects: Authorizes the user to perform a list operation.
-        """
         return pulumi.get(self, "bucket_listing_action")
 
     @bucket_listing_action.setter
@@ -270,9 +202,6 @@ class _PreauthrequestState:
     @property
     @pulumi.getter(name="fullPath")
     def full_path(self) -> Optional[pulumi.Input[str]]:
-        """
-        The full Path for the object.
-        """
         return pulumi.get(self, "full_path")
 
     @full_path.setter
@@ -282,9 +211,6 @@ class _PreauthrequestState:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        A user-specified name for the pre-authenticated request. Names can be helpful in managing pre-authenticated requests. Avoid entering confidential information.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -294,9 +220,6 @@ class _PreauthrequestState:
     @property
     @pulumi.getter
     def namespace(self) -> Optional[pulumi.Input[str]]:
-        """
-        The Object Storage namespace used for the request.
-        """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
@@ -306,9 +229,6 @@ class _PreauthrequestState:
     @property
     @pulumi.getter
     def object(self) -> Optional[pulumi.Input[str]]:
-        """
-        Deprecated. Instead use `object_name`. Requests that include both `object` and `object_name` will be rejected. (Optional) The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket if the access type allows that. The object name can be a prefix as well, in that case pre-authenticated request grants access to all the objects within the bucket starting with that prefix provided that we have the correct access type.
-        """
         warnings.warn("""The 'object' field has been deprecated. Please use 'object_name' instead.""", DeprecationWarning)
         pulumi.log.warn("""object is deprecated: The 'object' field has been deprecated. Please use 'object_name' instead.""")
 
@@ -321,9 +241,6 @@ class _PreauthrequestState:
     @property
     @pulumi.getter(name="objectName")
     def object_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket if the access type allows that. The object name can be a prefix as well, in that case pre-authenticated request grants access to all the objects within the bucket starting with that prefix provided that we have the correct access type.
-        """
         return pulumi.get(self, "object_name")
 
     @object_name.setter
@@ -333,9 +250,6 @@ class _PreauthrequestState:
     @property
     @pulumi.getter(name="parId")
     def par_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The unique identifier for the pre-authenticated request. This can be used to manage operations against the pre-authenticated request, such as GET or DELETE.
-        """
         return pulumi.get(self, "par_id")
 
     @par_id.setter
@@ -345,9 +259,6 @@ class _PreauthrequestState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date when the pre-authenticated request was created as per specification [RFC 3339](https://tools.ietf.org/html/rfc3339).
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -357,13 +268,6 @@ class _PreauthrequestState:
     @property
     @pulumi.getter(name="timeExpires")
     def time_expires(self) -> Optional[pulumi.Input[str]]:
-        """
-        The expiration date for the pre-authenticated request as per [RFC 3339](https://tools.ietf.org/html/rfc3339). After this date the pre-authenticated request will no longer be valid. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "time_expires")
 
     @time_expires.setter
@@ -386,47 +290,9 @@ class Preauthrequest(pulumi.CustomResource):
                  time_expires: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Preauthenticated Request resource in Oracle Cloud Infrastructure Object Storage service.
-
-        Creates a pre-authenticated request specific to the bucket.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_preauthenticated_request = oci.object_storage.Preauthrequest("testPreauthenticatedRequest",
-            access_type=var["preauthenticated_request_access_type"],
-            bucket=var["preauthenticated_request_bucket"],
-            namespace=var["preauthenticated_request_namespace"],
-            time_expires=var["preauthenticated_request_time_expires"],
-            bucket_listing_action=var["preauthenticated_request_bucket_listing_action"],
-            object=var["preauthenticated_request_object"])
-        ```
-
-        ## Import
-
-        PreauthenticatedRequests can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:ObjectStorage/preauthrequest:Preauthrequest test_preauthenticated_request "n/{namespaceName}/b/{bucketName}/p/{parId}"
-        ```
-
+        Create a Preauthrequest resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] access_type: The operation that can be performed on this resource. Allowed Values: `ObjectRead`, `ObjectWrite`, `ObjectReadWrite`, `AnyObjectReadWrite` or `AnyObjectRead`
-        :param pulumi.Input[str] bucket: The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
-        :param pulumi.Input[str] bucket_listing_action: Specifies whether a list operation is allowed on a PAR with accessType "AnyObjectRead" or "AnyObjectReadWrite". Deny: Prevents the user from performing a list operation. ListObjects: Authorizes the user to perform a list operation.
-        :param pulumi.Input[str] name: A user-specified name for the pre-authenticated request. Names can be helpful in managing pre-authenticated requests. Avoid entering confidential information.
-        :param pulumi.Input[str] namespace: The Object Storage namespace used for the request.
-        :param pulumi.Input[str] object: Deprecated. Instead use `object_name`. Requests that include both `object` and `object_name` will be rejected. (Optional) The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket if the access type allows that. The object name can be a prefix as well, in that case pre-authenticated request grants access to all the objects within the bucket starting with that prefix provided that we have the correct access type.
-        :param pulumi.Input[str] object_name: The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket if the access type allows that. The object name can be a prefix as well, in that case pre-authenticated request grants access to all the objects within the bucket starting with that prefix provided that we have the correct access type.
-        :param pulumi.Input[str] time_expires: The expiration date for the pre-authenticated request as per [RFC 3339](https://tools.ietf.org/html/rfc3339). After this date the pre-authenticated request will no longer be valid. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -435,33 +301,7 @@ class Preauthrequest(pulumi.CustomResource):
                  args: PreauthrequestArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Preauthenticated Request resource in Oracle Cloud Infrastructure Object Storage service.
-
-        Creates a pre-authenticated request specific to the bucket.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_preauthenticated_request = oci.object_storage.Preauthrequest("testPreauthenticatedRequest",
-            access_type=var["preauthenticated_request_access_type"],
-            bucket=var["preauthenticated_request_bucket"],
-            namespace=var["preauthenticated_request_namespace"],
-            time_expires=var["preauthenticated_request_time_expires"],
-            bucket_listing_action=var["preauthenticated_request_bucket_listing_action"],
-            object=var["preauthenticated_request_object"])
-        ```
-
-        ## Import
-
-        PreauthenticatedRequests can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:ObjectStorage/preauthrequest:Preauthrequest test_preauthenticated_request "n/{namespaceName}/b/{bucketName}/p/{parId}"
-        ```
-
+        Create a Preauthrequest resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param PreauthrequestArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -543,22 +383,6 @@ class Preauthrequest(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] access_type: The operation that can be performed on this resource. Allowed Values: `ObjectRead`, `ObjectWrite`, `ObjectReadWrite`, `AnyObjectReadWrite` or `AnyObjectRead`
-        :param pulumi.Input[str] access_uri: The URI to embed in the URL `https://objectstorage.${var.region}.oraclecloud.com{var.access_uri}` when using the pre-authenticated request.
-        :param pulumi.Input[str] bucket: The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
-        :param pulumi.Input[str] bucket_listing_action: Specifies whether a list operation is allowed on a PAR with accessType "AnyObjectRead" or "AnyObjectReadWrite". Deny: Prevents the user from performing a list operation. ListObjects: Authorizes the user to perform a list operation.
-        :param pulumi.Input[str] full_path: The full Path for the object.
-        :param pulumi.Input[str] name: A user-specified name for the pre-authenticated request. Names can be helpful in managing pre-authenticated requests. Avoid entering confidential information.
-        :param pulumi.Input[str] namespace: The Object Storage namespace used for the request.
-        :param pulumi.Input[str] object: Deprecated. Instead use `object_name`. Requests that include both `object` and `object_name` will be rejected. (Optional) The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket if the access type allows that. The object name can be a prefix as well, in that case pre-authenticated request grants access to all the objects within the bucket starting with that prefix provided that we have the correct access type.
-        :param pulumi.Input[str] object_name: The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket if the access type allows that. The object name can be a prefix as well, in that case pre-authenticated request grants access to all the objects within the bucket starting with that prefix provided that we have the correct access type.
-        :param pulumi.Input[str] par_id: The unique identifier for the pre-authenticated request. This can be used to manage operations against the pre-authenticated request, such as GET or DELETE.
-        :param pulumi.Input[str] time_created: The date when the pre-authenticated request was created as per specification [RFC 3339](https://tools.ietf.org/html/rfc3339).
-        :param pulumi.Input[str] time_expires: The expiration date for the pre-authenticated request as per [RFC 3339](https://tools.ietf.org/html/rfc3339). After this date the pre-authenticated request will no longer be valid. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -581,65 +405,41 @@ class Preauthrequest(pulumi.CustomResource):
     @property
     @pulumi.getter(name="accessType")
     def access_type(self) -> pulumi.Output[str]:
-        """
-        The operation that can be performed on this resource. Allowed Values: `ObjectRead`, `ObjectWrite`, `ObjectReadWrite`, `AnyObjectReadWrite` or `AnyObjectRead`
-        """
         return pulumi.get(self, "access_type")
 
     @property
     @pulumi.getter(name="accessUri")
-    def access_uri(self) -> pulumi.Output[str]:
-        """
-        The URI to embed in the URL `https://objectstorage.${var.region}.oraclecloud.com{var.access_uri}` when using the pre-authenticated request.
-        """
+    def access_uri(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "access_uri")
 
     @property
     @pulumi.getter
     def bucket(self) -> pulumi.Output[str]:
-        """
-        The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
-        """
         return pulumi.get(self, "bucket")
 
     @property
     @pulumi.getter(name="bucketListingAction")
-    def bucket_listing_action(self) -> pulumi.Output[str]:
-        """
-        Specifies whether a list operation is allowed on a PAR with accessType "AnyObjectRead" or "AnyObjectReadWrite". Deny: Prevents the user from performing a list operation. ListObjects: Authorizes the user to perform a list operation.
-        """
+    def bucket_listing_action(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "bucket_listing_action")
 
     @property
     @pulumi.getter(name="fullPath")
-    def full_path(self) -> pulumi.Output[str]:
-        """
-        The full Path for the object.
-        """
+    def full_path(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "full_path")
 
     @property
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
-        """
-        A user-specified name for the pre-authenticated request. Names can be helpful in managing pre-authenticated requests. Avoid entering confidential information.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
     def namespace(self) -> pulumi.Output[str]:
-        """
-        The Object Storage namespace used for the request.
-        """
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter
-    def object(self) -> pulumi.Output[str]:
-        """
-        Deprecated. Instead use `object_name`. Requests that include both `object` and `object_name` will be rejected. (Optional) The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket if the access type allows that. The object name can be a prefix as well, in that case pre-authenticated request grants access to all the objects within the bucket starting with that prefix provided that we have the correct access type.
-        """
+    def object(self) -> pulumi.Output[Optional[str]]:
         warnings.warn("""The 'object' field has been deprecated. Please use 'object_name' instead.""", DeprecationWarning)
         pulumi.log.warn("""object is deprecated: The 'object' field has been deprecated. Please use 'object_name' instead.""")
 
@@ -647,37 +447,21 @@ class Preauthrequest(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="objectName")
-    def object_name(self) -> pulumi.Output[str]:
-        """
-        The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket if the access type allows that. The object name can be a prefix as well, in that case pre-authenticated request grants access to all the objects within the bucket starting with that prefix provided that we have the correct access type.
-        """
+    def object_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "object_name")
 
     @property
     @pulumi.getter(name="parId")
-    def par_id(self) -> pulumi.Output[str]:
-        """
-        The unique identifier for the pre-authenticated request. This can be used to manage operations against the pre-authenticated request, such as GET or DELETE.
-        """
+    def par_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "par_id")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The date when the pre-authenticated request was created as per specification [RFC 3339](https://tools.ietf.org/html/rfc3339).
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeExpires")
     def time_expires(self) -> pulumi.Output[str]:
-        """
-        The expiration date for the pre-authenticated request as per [RFC 3339](https://tools.ietf.org/html/rfc3339). After this date the pre-authenticated request will no longer be valid. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "time_expires")
 

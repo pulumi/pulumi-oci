@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDetectorRecipeDetectorRuleCandidateResponderRule {
@@ -14,39 +16,39 @@ public final class GetDetectorRecipeDetectorRuleCandidateResponderRule {
      * @return The display name of entity
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Ocid for detector recipe
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Preferred state
      * 
      */
-    private Boolean isPreferred;
+    private @Nullable Boolean isPreferred;
 
     private GetDetectorRecipeDetectorRuleCandidateResponderRule() {}
     /**
      * @return The display name of entity
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Ocid for detector recipe
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Preferred state
      * 
      */
-    public Boolean isPreferred() {
-        return this.isPreferred;
+    public Optional<Boolean> isPreferred() {
+        return Optional.ofNullable(this.isPreferred);
     }
 
     public static Builder builder() {
@@ -58,9 +60,9 @@ public final class GetDetectorRecipeDetectorRuleCandidateResponderRule {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String displayName;
-        private String id;
-        private Boolean isPreferred;
+        private @Nullable String displayName;
+        private @Nullable String id;
+        private @Nullable Boolean isPreferred;
         public Builder() {}
         public Builder(GetDetectorRecipeDetectorRuleCandidateResponderRule defaults) {
     	      Objects.requireNonNull(defaults);
@@ -70,18 +72,18 @@ public final class GetDetectorRecipeDetectorRuleCandidateResponderRule {
         }
 
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder isPreferred(Boolean isPreferred) {
-            this.isPreferred = Objects.requireNonNull(isPreferred);
+        public Builder isPreferred(@Nullable Boolean isPreferred) {
+            this.isPreferred = isPreferred;
             return this;
         }
         public GetDetectorRecipeDetectorRuleCandidateResponderRule build() {

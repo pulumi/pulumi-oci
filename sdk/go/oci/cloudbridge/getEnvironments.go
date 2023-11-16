@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Environments in Oracle Cloud Infrastructure Cloud Bridge service.
@@ -78,7 +77,7 @@ type GetEnvironmentsResult struct {
 	EnvironmentId          *string                                `pulumi:"environmentId"`
 	Filters                []GetEnvironmentsFilter                `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The current state of the source environment.
 	State *string `pulumi:"state"`
 }
@@ -128,12 +127,6 @@ func (o GetEnvironmentsResultOutput) ToGetEnvironmentsResultOutputWithContext(ct
 	return o
 }
 
-func (o GetEnvironmentsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetEnvironmentsResult] {
-	return pulumix.Output[GetEnvironmentsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Compartment identifier.
 func (o GetEnvironmentsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetEnvironmentsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -158,8 +151,8 @@ func (o GetEnvironmentsResultOutput) Filters() GetEnvironmentsFilterArrayOutput 
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetEnvironmentsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEnvironmentsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetEnvironmentsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEnvironmentsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the source environment.

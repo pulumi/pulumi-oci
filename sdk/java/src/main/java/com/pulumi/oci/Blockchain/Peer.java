@@ -12,6 +12,7 @@ import com.pulumi.oci.Blockchain.inputs.PeerState;
 import com.pulumi.oci.Blockchain.outputs.PeerOcpuAllocationParam;
 import com.pulumi.oci.Utilities;
 import java.lang.String;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -86,14 +87,14 @@ public class Peer extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="alias", refs={String.class}, tree="[0]")
-    private Output<String> alias;
+    private Output</* @Nullable */ String> alias;
 
     /**
      * @return peer alias
      * 
      */
-    public Output<String> alias() {
-        return this.alias;
+    public Output<Optional<String>> alias() {
+        return Codegen.optional(this.alias);
     }
     /**
      * Unique service identifier.
@@ -114,14 +115,14 @@ public class Peer extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="host", refs={String.class}, tree="[0]")
-    private Output<String> host;
+    private Output</* @Nullable */ String> host;
 
     /**
      * @return Host on which the Peer exists
      * 
      */
-    public Output<String> host() {
-        return this.host;
+    public Output<Optional<String>> host() {
+        return Codegen.optional(this.host);
     }
     /**
      * (Updatable) OCPU allocation parameter
@@ -142,14 +143,14 @@ public class Peer extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="peerKey", refs={String.class}, tree="[0]")
-    private Output<String> peerKey;
+    private Output</* @Nullable */ String> peerKey;
 
     /**
      * @return peer identifier
      * 
      */
-    public Output<String> peerKey() {
-        return this.peerKey;
+    public Output<Optional<String>> peerKey() {
+        return Codegen.optional(this.peerKey);
     }
     /**
      * Peer role
@@ -176,14 +177,14 @@ public class Peer extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the peer.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
 
     /**

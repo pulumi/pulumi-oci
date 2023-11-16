@@ -16,16 +16,16 @@ namespace Pulumi.Oci.Waf.Outputs
         /// <summary>
         /// Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
         /// </summary>
-        public readonly string ActionName;
+        public readonly string? ActionName;
         /// <summary>
         /// An expression that determines whether or not the rule action should be executed.
         /// </summary>
-        public readonly string Condition;
+        public readonly string? Condition;
         /// <summary>
         /// The language used to parse condition from field `condition`. Available languages:
         /// * **JMESPATH** an extended JMESPath language syntax.
         /// </summary>
-        public readonly string ConditionLanguage;
+        public readonly string? ConditionLanguage;
         /// <summary>
         /// Rate Limiting Configurations. Each configuration counts requests towards its own `requestsLimit`.
         /// </summary>
@@ -33,25 +33,25 @@ namespace Pulumi.Oci.Waf.Outputs
         /// <summary>
         /// Rule name. Must be unique within the module.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// Type of WebAppFirewallPolicyRule.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
 
         [OutputConstructor]
         private GetWebAppFirewallPolicyRequestRateLimitingRuleResult(
-            string actionName,
+            string? actionName,
 
-            string condition,
+            string? condition,
 
-            string conditionLanguage,
+            string? conditionLanguage,
 
             ImmutableArray<Outputs.GetWebAppFirewallPolicyRequestRateLimitingRuleConfigurationResult> configurations,
 
-            string name,
+            string? name,
 
-            string type)
+            string? type)
         {
             ActionName = actionName;
             Condition = condition;

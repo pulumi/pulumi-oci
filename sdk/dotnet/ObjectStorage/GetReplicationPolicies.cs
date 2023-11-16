@@ -142,7 +142,7 @@ namespace Pulumi.Oci.ObjectStorage
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string Namespace;
         /// <summary>
         /// The list of replication_policies.
@@ -155,7 +155,7 @@ namespace Pulumi.Oci.ObjectStorage
 
             ImmutableArray<Outputs.GetReplicationPoliciesFilterResult> filters,
 
-            string id,
+            string? id,
 
             string @namespace,
 

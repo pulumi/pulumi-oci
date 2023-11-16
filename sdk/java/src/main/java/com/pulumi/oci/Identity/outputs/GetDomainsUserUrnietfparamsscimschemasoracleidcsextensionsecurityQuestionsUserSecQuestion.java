@@ -6,6 +6,8 @@ package com.pulumi.oci.Identity.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestion {
@@ -13,51 +15,51 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionsecu
      * @return The answer provided by a user for a security question.
      * 
      */
-    private String answer;
+    private @Nullable String answer;
     /**
      * @return The hint for an answer that&#39;s given by user when setting up a security question.
      * 
      */
-    private String hintText;
+    private @Nullable String hintText;
     /**
      * @return User Token URI
      * 
      */
-    private String ref;
+    private @Nullable String ref;
     /**
      * @return The value of a X509 certificate.
      * 
      */
-    private String value;
+    private @Nullable String value;
 
     private GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestion() {}
     /**
      * @return The answer provided by a user for a security question.
      * 
      */
-    public String answer() {
-        return this.answer;
+    public Optional<String> answer() {
+        return Optional.ofNullable(this.answer);
     }
     /**
      * @return The hint for an answer that&#39;s given by user when setting up a security question.
      * 
      */
-    public String hintText() {
-        return this.hintText;
+    public Optional<String> hintText() {
+        return Optional.ofNullable(this.hintText);
     }
     /**
      * @return User Token URI
      * 
      */
-    public String ref() {
-        return this.ref;
+    public Optional<String> ref() {
+        return Optional.ofNullable(this.ref);
     }
     /**
      * @return The value of a X509 certificate.
      * 
      */
-    public String value() {
-        return this.value;
+    public Optional<String> value() {
+        return Optional.ofNullable(this.value);
     }
 
     public static Builder builder() {
@@ -69,10 +71,10 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionsecu
     }
     @CustomType.Builder
     public static final class Builder {
-        private String answer;
-        private String hintText;
-        private String ref;
-        private String value;
+        private @Nullable String answer;
+        private @Nullable String hintText;
+        private @Nullable String ref;
+        private @Nullable String value;
         public Builder() {}
         public Builder(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestion defaults) {
     	      Objects.requireNonNull(defaults);
@@ -83,23 +85,23 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionsecu
         }
 
         @CustomType.Setter
-        public Builder answer(String answer) {
-            this.answer = Objects.requireNonNull(answer);
+        public Builder answer(@Nullable String answer) {
+            this.answer = answer;
             return this;
         }
         @CustomType.Setter
-        public Builder hintText(String hintText) {
-            this.hintText = Objects.requireNonNull(hintText);
+        public Builder hintText(@Nullable String hintText) {
+            this.hintText = hintText;
             return this;
         }
         @CustomType.Setter
-        public Builder ref(String ref) {
-            this.ref = Objects.requireNonNull(ref);
+        public Builder ref(@Nullable String ref) {
+            this.ref = ref;
             return this;
         }
         @CustomType.Setter
-        public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+        public Builder value(@Nullable String value) {
+            this.value = value;
             return this;
         }
         public GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestion build() {

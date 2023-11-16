@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Job Shapes in Oracle Cloud Infrastructure Data Science service.
@@ -63,7 +62,7 @@ type GetJobShapesResult struct {
 	CompartmentId string               `pulumi:"compartmentId"`
 	Filters       []GetJobShapesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of job_shapes.
 	JobShapes []GetJobShapesJobShape `pulumi:"jobShapes"`
 }
@@ -107,12 +106,6 @@ func (o GetJobShapesResultOutput) ToGetJobShapesResultOutputWithContext(ctx cont
 	return o
 }
 
-func (o GetJobShapesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetJobShapesResult] {
-	return pulumix.Output[GetJobShapesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetJobShapesResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetJobShapesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -122,8 +115,8 @@ func (o GetJobShapesResultOutput) Filters() GetJobShapesFilterArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetJobShapesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetJobShapesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetJobShapesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetJobShapesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of job_shapes.

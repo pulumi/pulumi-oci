@@ -37,7 +37,7 @@ public final class GetSecurityZonesResult {
      * @return The list of security_zone_collection.
      * 
      */
-    private List<GetSecurityZonesSecurityZoneCollection> securityZoneCollections;
+    private @Nullable List<GetSecurityZonesSecurityZoneCollection> securityZoneCollections;
     /**
      * @return The current state of the security zone
      * 
@@ -80,7 +80,7 @@ public final class GetSecurityZonesResult {
      * 
      */
     public List<GetSecurityZonesSecurityZoneCollection> securityZoneCollections() {
-        return this.securityZoneCollections;
+        return this.securityZoneCollections == null ? List.of() : this.securityZoneCollections;
     }
     /**
      * @return The current state of the security zone
@@ -105,7 +105,7 @@ public final class GetSecurityZonesResult {
         private @Nullable String id;
         private @Nullable Boolean isRequiredSecurityZonesInSubtree;
         private @Nullable String securityRecipeId;
-        private List<GetSecurityZonesSecurityZoneCollection> securityZoneCollections;
+        private @Nullable List<GetSecurityZonesSecurityZoneCollection> securityZoneCollections;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetSecurityZonesResult defaults) {
@@ -154,8 +154,8 @@ public final class GetSecurityZonesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder securityZoneCollections(List<GetSecurityZonesSecurityZoneCollection> securityZoneCollections) {
-            this.securityZoneCollections = Objects.requireNonNull(securityZoneCollections);
+        public Builder securityZoneCollections(@Nullable List<GetSecurityZonesSecurityZoneCollection> securityZoneCollections) {
+            this.securityZoneCollections = securityZoneCollections;
             return this;
         }
         public Builder securityZoneCollections(GetSecurityZonesSecurityZoneCollection... securityZoneCollections) {

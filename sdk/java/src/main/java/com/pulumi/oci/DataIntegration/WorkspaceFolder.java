@@ -18,6 +18,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -86,34 +87,34 @@ public class WorkspaceFolder extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="categoryName", refs={String.class}, tree="[0]")
-    private Output<String> categoryName;
+    private Output</* @Nullable */ String> categoryName;
 
     /**
      * @return (Updatable) The category name.
      * 
      */
-    public Output<String> categoryName() {
-        return this.categoryName;
+    public Output<Optional<String>> categoryName() {
+        return Codegen.optional(this.categoryName);
     }
     /**
      * (Updatable) A user defined description for the folder.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
-    private Output<String> description;
+    private Output</* @Nullable */ String> description;
 
     /**
      * @return (Updatable) A user defined description for the folder.
      * 
      */
-    public Output<String> description() {
-        return this.description;
+    public Output<Optional<String>> description() {
+        return Codegen.optional(this.description);
     }
     @Export(name="folderKey", refs={String.class}, tree="[0]")
-    private Output<String> folderKey;
+    private Output</* @Nullable */ String> folderKey;
 
-    public Output<String> folderKey() {
-        return this.folderKey;
+    public Output<Optional<String>> folderKey() {
+        return Codegen.optional(this.folderKey);
     }
     /**
      * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
@@ -134,70 +135,70 @@ public class WorkspaceFolder extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="key", refs={String.class}, tree="[0]")
-    private Output<String> key;
+    private Output</* @Nullable */ String> key;
 
     /**
      * @return (Updatable) The identifying key for the object.
      * 
      */
-    public Output<String> key() {
-        return this.key;
+    public Output<Optional<String>> key() {
+        return Codegen.optional(this.key);
     }
     /**
      * A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
      * 
      */
     @Export(name="keyMap", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> keyMap;
+    private Output</* @Nullable */ Map<String,Object>> keyMap;
 
     /**
      * @return A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
      * 
      */
-    public Output<Map<String,Object>> keyMap() {
-        return this.keyMap;
+    public Output<Optional<Map<String,Object>>> keyMap() {
+        return Codegen.optional(this.keyMap);
     }
     /**
      * A summary type containing information about the object including its key, name and when/who created/updated it.
      * 
      */
     @Export(name="metadatas", refs={List.class,WorkspaceFolderMetadata.class}, tree="[0,1]")
-    private Output<List<WorkspaceFolderMetadata>> metadatas;
+    private Output</* @Nullable */ List<WorkspaceFolderMetadata>> metadatas;
 
     /**
      * @return A summary type containing information about the object including its key, name and when/who created/updated it.
      * 
      */
-    public Output<List<WorkspaceFolderMetadata>> metadatas() {
-        return this.metadatas;
+    public Output<Optional<List<WorkspaceFolderMetadata>>> metadatas() {
+        return Codegen.optional(this.metadatas);
     }
     /**
      * The type of the object.
      * 
      */
     @Export(name="modelType", refs={String.class}, tree="[0]")
-    private Output<String> modelType;
+    private Output</* @Nullable */ String> modelType;
 
     /**
      * @return The type of the object.
      * 
      */
-    public Output<String> modelType() {
-        return this.modelType;
+    public Output<Optional<String>> modelType() {
+        return Codegen.optional(this.modelType);
     }
     /**
      * (Updatable) The model version of an object.
      * 
      */
     @Export(name="modelVersion", refs={String.class}, tree="[0]")
-    private Output<String> modelVersion;
+    private Output</* @Nullable */ String> modelVersion;
 
     /**
      * @return (Updatable) The model version of an object.
      * 
      */
-    public Output<String> modelVersion() {
-        return this.modelVersion;
+    public Output<Optional<String>> modelVersion() {
+        return Codegen.optional(this.modelVersion);
     }
     /**
      * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
@@ -218,42 +219,42 @@ public class WorkspaceFolder extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="objectStatus", refs={Integer.class}, tree="[0]")
-    private Output<Integer> objectStatus;
+    private Output</* @Nullable */ Integer> objectStatus;
 
     /**
      * @return (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
      * 
      */
-    public Output<Integer> objectStatus() {
-        return this.objectStatus;
+    public Output<Optional<Integer>> objectStatus() {
+        return Codegen.optional(this.objectStatus);
     }
     /**
      * The version of the object that is used to track changes in the object instance.
      * 
      */
     @Export(name="objectVersion", refs={Integer.class}, tree="[0]")
-    private Output<Integer> objectVersion;
+    private Output</* @Nullable */ Integer> objectVersion;
 
     /**
      * @return The version of the object that is used to track changes in the object instance.
      * 
      */
-    public Output<Integer> objectVersion() {
-        return this.objectVersion;
+    public Output<Optional<Integer>> objectVersion() {
+        return Codegen.optional(this.objectVersion);
     }
     /**
      * A reference to the object&#39;s parent.
      * 
      */
     @Export(name="parentReves", refs={List.class,WorkspaceFolderParentRef.class}, tree="[0,1]")
-    private Output<List<WorkspaceFolderParentRef>> parentReves;
+    private Output</* @Nullable */ List<WorkspaceFolderParentRef>> parentReves;
 
     /**
      * @return A reference to the object&#39;s parent.
      * 
      */
-    public Output<List<WorkspaceFolderParentRef>> parentReves() {
-        return this.parentReves;
+    public Output<Optional<List<WorkspaceFolderParentRef>>> parentReves() {
+        return Codegen.optional(this.parentReves);
     }
     /**
      * (Updatable) Information about the object and its parent.

@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetResourceUsageEmInstance {
@@ -14,51 +16,51 @@ public final class GetResourceUsageEmInstance {
      * @return emdDiscoverer url
      * 
      */
-    private String emDiscovererUrl;
+    private @Nullable String emDiscovererUrl;
     /**
      * @return emHost name
      * 
      */
-    private String emHost;
+    private @Nullable String emHost;
     /**
      * @return operations Insights Warehouse Identifier
      * 
      */
-    private String emId;
+    private @Nullable String emId;
     /**
      * @return EmInstance Target count
      * 
      */
-    private Integer targetsCount;
+    private @Nullable Integer targetsCount;
 
     private GetResourceUsageEmInstance() {}
     /**
      * @return emdDiscoverer url
      * 
      */
-    public String emDiscovererUrl() {
-        return this.emDiscovererUrl;
+    public Optional<String> emDiscovererUrl() {
+        return Optional.ofNullable(this.emDiscovererUrl);
     }
     /**
      * @return emHost name
      * 
      */
-    public String emHost() {
-        return this.emHost;
+    public Optional<String> emHost() {
+        return Optional.ofNullable(this.emHost);
     }
     /**
      * @return operations Insights Warehouse Identifier
      * 
      */
-    public String emId() {
-        return this.emId;
+    public Optional<String> emId() {
+        return Optional.ofNullable(this.emId);
     }
     /**
      * @return EmInstance Target count
      * 
      */
-    public Integer targetsCount() {
-        return this.targetsCount;
+    public Optional<Integer> targetsCount() {
+        return Optional.ofNullable(this.targetsCount);
     }
 
     public static Builder builder() {
@@ -70,10 +72,10 @@ public final class GetResourceUsageEmInstance {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String emDiscovererUrl;
-        private String emHost;
-        private String emId;
-        private Integer targetsCount;
+        private @Nullable String emDiscovererUrl;
+        private @Nullable String emHost;
+        private @Nullable String emId;
+        private @Nullable Integer targetsCount;
         public Builder() {}
         public Builder(GetResourceUsageEmInstance defaults) {
     	      Objects.requireNonNull(defaults);
@@ -84,23 +86,23 @@ public final class GetResourceUsageEmInstance {
         }
 
         @CustomType.Setter
-        public Builder emDiscovererUrl(String emDiscovererUrl) {
-            this.emDiscovererUrl = Objects.requireNonNull(emDiscovererUrl);
+        public Builder emDiscovererUrl(@Nullable String emDiscovererUrl) {
+            this.emDiscovererUrl = emDiscovererUrl;
             return this;
         }
         @CustomType.Setter
-        public Builder emHost(String emHost) {
-            this.emHost = Objects.requireNonNull(emHost);
+        public Builder emHost(@Nullable String emHost) {
+            this.emHost = emHost;
             return this;
         }
         @CustomType.Setter
-        public Builder emId(String emId) {
-            this.emId = Objects.requireNonNull(emId);
+        public Builder emId(@Nullable String emId) {
+            this.emId = emId;
             return this;
         }
         @CustomType.Setter
-        public Builder targetsCount(Integer targetsCount) {
-            this.targetsCount = Objects.requireNonNull(targetsCount);
+        public Builder targetsCount(@Nullable Integer targetsCount) {
+            this.targetsCount = targetsCount;
             return this;
         }
         public GetResourceUsageEmInstance build() {

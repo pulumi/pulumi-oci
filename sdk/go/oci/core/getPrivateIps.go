@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Private Ips in Oracle Cloud Infrastructure Core service.
@@ -132,7 +131,7 @@ type GetPrivateIpsArgs struct {
 type GetPrivateIpsResult struct {
 	Filters []GetPrivateIpsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The private IP address of the `privateIp` object. The address is within the CIDR of the VNIC's subnet.
 	IpAddress *string `pulumi:"ipAddress"`
 	// The list of private_ips.
@@ -190,19 +189,13 @@ func (o GetPrivateIpsResultOutput) ToGetPrivateIpsResultOutputWithContext(ctx co
 	return o
 }
 
-func (o GetPrivateIpsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetPrivateIpsResult] {
-	return pulumix.Output[GetPrivateIpsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetPrivateIpsResultOutput) Filters() GetPrivateIpsFilterArrayOutput {
 	return o.ApplyT(func(v GetPrivateIpsResult) []GetPrivateIpsFilter { return v.Filters }).(GetPrivateIpsFilterArrayOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetPrivateIpsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPrivateIpsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetPrivateIpsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPrivateIpsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The private IP address of the `privateIp` object. The address is within the CIDR of the VNIC's subnet.

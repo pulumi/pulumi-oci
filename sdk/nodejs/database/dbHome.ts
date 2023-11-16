@@ -54,39 +54,39 @@ export class DbHome extends pulumi.CustomResource {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    public /*out*/ readonly compartmentId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Details for creating a database.
      *
      * **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
      */
-    public readonly database!: pulumi.Output<outputs.Database.DbHomeDatabase>;
+    public readonly database!: pulumi.Output<outputs.Database.DbHomeDatabase | undefined>;
     /**
      * The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      */
-    public readonly databaseSoftwareImageId!: pulumi.Output<string>;
+    public readonly databaseSoftwareImageId!: pulumi.Output<string | undefined>;
     /**
      * The location of the Oracle Database Home.
      */
-    public /*out*/ readonly dbHomeLocation!: pulumi.Output<string>;
+    public /*out*/ readonly dbHomeLocation!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
      */
-    public readonly dbSystemId!: pulumi.Output<string>;
+    public readonly dbSystemId!: pulumi.Output<string | undefined>;
     /**
      * A valid Oracle Database version. For a list of supported versions, use the ListDbVersions operation.
      *
      * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
      */
-    public readonly dbVersion!: pulumi.Output<string>;
+    public readonly dbVersion!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The user-provided name of the Database Home.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    public readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * Defaults to false. If omitted or set to false the provider will not delete databases removed from the Db Home configuration.
      */
@@ -94,39 +94,39 @@ export class DbHome extends pulumi.CustomResource {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * If true, the customer acknowledges that the specified Oracle Database software is an older release that is not currently supported by OCI.
      */
-    public readonly isDesupportedVersion!: pulumi.Output<boolean>;
+    public readonly isDesupportedVersion!: pulumi.Output<boolean | undefined>;
     /**
      * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      */
-    public readonly kmsKeyId!: pulumi.Output<string>;
+    public readonly kmsKeyId!: pulumi.Output<string | undefined>;
     /**
      * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
      */
-    public readonly kmsKeyVersionId!: pulumi.Output<string>;
+    public readonly kmsKeyVersionId!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation is started.
      */
-    public /*out*/ readonly lastPatchHistoryEntryId!: pulumi.Output<string>;
+    public /*out*/ readonly lastPatchHistoryEntryId!: pulumi.Output<string | undefined>;
     /**
      * Additional information about the current lifecycle state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * The source of database: NONE for creating a new database. DB_BACKUP for creating a new database by restoring from a database backup. VM_CLUSTER_NEW for creating a database for VM Cluster.
      */
-    public readonly source!: pulumi.Output<string>;
+    public readonly source!: pulumi.Output<string | undefined>;
     /**
      * The current state of the Database Home.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The date and time the Database Home was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
      *
@@ -134,7 +134,7 @@ export class DbHome extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly vmClusterId!: pulumi.Output<string>;
+    public readonly vmClusterId!: pulumi.Output<string | undefined>;
 
     /**
      * Create a DbHome resource with the given unique name, arguments, and options.

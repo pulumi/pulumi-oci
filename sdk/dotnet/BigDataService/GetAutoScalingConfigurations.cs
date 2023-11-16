@@ -87,7 +87,7 @@ namespace Pulumi.Oci.BigDataService
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string? State;
 
         [OutputConstructor]
@@ -102,7 +102,7 @@ namespace Pulumi.Oci.BigDataService
 
             ImmutableArray<Outputs.GetAutoScalingConfigurationsFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? state)
         {

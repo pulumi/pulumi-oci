@@ -125,7 +125,7 @@ namespace Pulumi.Oci.LoadBalancer
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string LoadBalancerId;
         /// <summary>
         /// The list of routing_policies.
@@ -136,7 +136,7 @@ namespace Pulumi.Oci.LoadBalancer
         private GetLoadBalancerRoutingPoliciesResult(
             ImmutableArray<Outputs.GetLoadBalancerRoutingPoliciesFilterResult> filters,
 
-            string id,
+            string? id,
 
             string loadBalancerId,
 

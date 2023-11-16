@@ -62,7 +62,7 @@ namespace Pulumi.Oci.Kms
         /// A Boolean value that indicates whether the signature was verified.
         /// </summary>
         [Output("isSignatureValid")]
-        public Output<bool> IsSignatureValid { get; private set; } = null!;
+        public Output<bool?> IsSignatureValid { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the key used to sign the message.
@@ -86,7 +86,7 @@ namespace Pulumi.Oci.Kms
         /// Denotes whether the value of the message parameter is a raw message or a message digest. The default value, `RAW`, indicates a message. To indicate a message digest, use `DIGEST`.
         /// </summary>
         [Output("messageType")]
-        public Output<string> MessageType { get; private set; } = null!;
+        public Output<string?> MessageType { get; private set; } = null!;
 
         /// <summary>
         /// The base64-encoded binary data object denoting the cryptographic signature generated for the message.

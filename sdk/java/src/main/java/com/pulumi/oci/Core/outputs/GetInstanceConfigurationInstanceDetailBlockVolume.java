@@ -9,6 +9,8 @@ import com.pulumi.oci.Core.outputs.GetInstanceConfigurationInstanceDetailBlockVo
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetInstanceConfigurationInstanceDetailBlockVolume {
@@ -16,17 +18,17 @@ public final class GetInstanceConfigurationInstanceDetailBlockVolume {
      * @return Volume attachmentDetails. Please see [AttachVolumeDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/AttachVolumeDetails/)
      * 
      */
-    private List<GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetail> attachDetails;
+    private @Nullable List<GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetail> attachDetails;
     /**
      * @return Creates a new block volume. Please see [CreateVolumeDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVolumeDetails/)
      * 
      */
-    private List<GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetail> createDetails;
+    private @Nullable List<GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetail> createDetails;
     /**
      * @return The OCID of the volume.
      * 
      */
-    private String volumeId;
+    private @Nullable String volumeId;
 
     private GetInstanceConfigurationInstanceDetailBlockVolume() {}
     /**
@@ -34,21 +36,21 @@ public final class GetInstanceConfigurationInstanceDetailBlockVolume {
      * 
      */
     public List<GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetail> attachDetails() {
-        return this.attachDetails;
+        return this.attachDetails == null ? List.of() : this.attachDetails;
     }
     /**
      * @return Creates a new block volume. Please see [CreateVolumeDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVolumeDetails/)
      * 
      */
     public List<GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetail> createDetails() {
-        return this.createDetails;
+        return this.createDetails == null ? List.of() : this.createDetails;
     }
     /**
      * @return The OCID of the volume.
      * 
      */
-    public String volumeId() {
-        return this.volumeId;
+    public Optional<String> volumeId() {
+        return Optional.ofNullable(this.volumeId);
     }
 
     public static Builder builder() {
@@ -60,9 +62,9 @@ public final class GetInstanceConfigurationInstanceDetailBlockVolume {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetail> attachDetails;
-        private List<GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetail> createDetails;
-        private String volumeId;
+        private @Nullable List<GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetail> attachDetails;
+        private @Nullable List<GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetail> createDetails;
+        private @Nullable String volumeId;
         public Builder() {}
         public Builder(GetInstanceConfigurationInstanceDetailBlockVolume defaults) {
     	      Objects.requireNonNull(defaults);
@@ -72,24 +74,24 @@ public final class GetInstanceConfigurationInstanceDetailBlockVolume {
         }
 
         @CustomType.Setter
-        public Builder attachDetails(List<GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetail> attachDetails) {
-            this.attachDetails = Objects.requireNonNull(attachDetails);
+        public Builder attachDetails(@Nullable List<GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetail> attachDetails) {
+            this.attachDetails = attachDetails;
             return this;
         }
         public Builder attachDetails(GetInstanceConfigurationInstanceDetailBlockVolumeAttachDetail... attachDetails) {
             return attachDetails(List.of(attachDetails));
         }
         @CustomType.Setter
-        public Builder createDetails(List<GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetail> createDetails) {
-            this.createDetails = Objects.requireNonNull(createDetails);
+        public Builder createDetails(@Nullable List<GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetail> createDetails) {
+            this.createDetails = createDetails;
             return this;
         }
         public Builder createDetails(GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetail... createDetails) {
             return createDetails(List.of(createDetails));
         }
         @CustomType.Setter
-        public Builder volumeId(String volumeId) {
-            this.volumeId = Objects.requireNonNull(volumeId);
+        public Builder volumeId(@Nullable String volumeId) {
+            this.volumeId = volumeId;
             return this;
         }
         public GetInstanceConfigurationInstanceDetailBlockVolume build() {

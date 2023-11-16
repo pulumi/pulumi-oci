@@ -16,17 +16,17 @@ namespace Pulumi.Oci.ServiceMesh.Outputs
         /// <summary>
         /// A filter to return only resources that match the entire name given.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The port of the ingress gateway host listener. Leave empty to match all ports for the host.
         /// </summary>
-        public readonly int Port;
+        public readonly int? Port;
 
         [OutputConstructor]
         private GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleIngressGatewayHostResult(
-            string name,
+            string? name,
 
-            int port)
+            int? port)
         {
             Name = name;
             Port = port;

@@ -12,6 +12,7 @@ import com.pulumi.oci.BigDataService.inputs.BdsInstanceApiKeyState;
 import com.pulumi.oci.Utilities;
 import java.lang.String;
 import java.util.List;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -83,28 +84,28 @@ public class BdsInstanceApiKey extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="defaultRegion", refs={String.class}, tree="[0]")
-    private Output<String> defaultRegion;
+    private Output</* @Nullable */ String> defaultRegion;
 
     /**
      * @return The name of the region to establish the Object Storage endpoint. See https://docs.oracle.com/en-us/iaas/api/#/en/identity/20160918/Region/ for additional information.
      * 
      */
-    public Output<String> defaultRegion() {
-        return this.defaultRegion;
+    public Output<Optional<String>> defaultRegion() {
+        return Codegen.optional(this.defaultRegion);
     }
     /**
      * The fingerprint that corresponds to the public API key requested.
      * 
      */
     @Export(name="fingerprint", refs={String.class}, tree="[0]")
-    private Output<String> fingerprint;
+    private Output</* @Nullable */ String> fingerprint;
 
     /**
      * @return The fingerprint that corresponds to the public API key requested.
      * 
      */
-    public Output<String> fingerprint() {
-        return this.fingerprint;
+    public Output<Optional<String>> fingerprint() {
+        return Codegen.optional(this.fingerprint);
     }
     /**
      * User friendly identifier used to uniquely differentiate between different API keys associated with this Big Data Service cluster. Only ASCII alphanumeric characters with no spaces allowed.
@@ -139,56 +140,56 @@ public class BdsInstanceApiKey extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="pemfilepath", refs={String.class}, tree="[0]")
-    private Output<String> pemfilepath;
+    private Output</* @Nullable */ String> pemfilepath;
 
     /**
      * @return The full path and file name of the private key used for authentication. This location will be automatically selected on the BDS local file system.
      * 
      */
-    public Output<String> pemfilepath() {
-        return this.pemfilepath;
+    public Output<Optional<String>> pemfilepath() {
+        return Codegen.optional(this.pemfilepath);
     }
     /**
      * The current status of the API key.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current status of the API key.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The OCID of your tenancy.
      * 
      */
     @Export(name="tenantId", refs={String.class}, tree="[0]")
-    private Output<String> tenantId;
+    private Output</* @Nullable */ String> tenantId;
 
     /**
      * @return The OCID of your tenancy.
      * 
      */
-    public Output<String> tenantId() {
-        return this.tenantId;
+    public Output<Optional<String>> tenantId() {
+        return Codegen.optional(this.tenantId);
     }
     /**
      * The time the API key was created, shown as an RFC 3339 formatted datetime string.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The time the API key was created, shown as an RFC 3339 formatted datetime string.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The OCID of the user for whom this new generated API key pair will be created.

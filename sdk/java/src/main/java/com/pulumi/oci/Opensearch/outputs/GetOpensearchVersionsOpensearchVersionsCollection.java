@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Opensearch.outputs.GetOpensearchVersionsOpensearchVersionsCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetOpensearchVersionsOpensearchVersionsCollection {
@@ -14,7 +15,7 @@ public final class GetOpensearchVersionsOpensearchVersionsCollection {
      * @return A list of OpenSearch versions.
      * 
      */
-    private List<GetOpensearchVersionsOpensearchVersionsCollectionItem> items;
+    private @Nullable List<GetOpensearchVersionsOpensearchVersionsCollectionItem> items;
 
     private GetOpensearchVersionsOpensearchVersionsCollection() {}
     /**
@@ -22,7 +23,7 @@ public final class GetOpensearchVersionsOpensearchVersionsCollection {
      * 
      */
     public List<GetOpensearchVersionsOpensearchVersionsCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetOpensearchVersionsOpensearchVersionsCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetOpensearchVersionsOpensearchVersionsCollectionItem> items;
+        private @Nullable List<GetOpensearchVersionsOpensearchVersionsCollectionItem> items;
         public Builder() {}
         public Builder(GetOpensearchVersionsOpensearchVersionsCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetOpensearchVersionsOpensearchVersionsCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetOpensearchVersionsOpensearchVersionsCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetOpensearchVersionsOpensearchVersionsCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetOpensearchVersionsOpensearchVersionsCollectionItem... items) {

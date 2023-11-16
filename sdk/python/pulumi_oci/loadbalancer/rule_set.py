@@ -21,13 +21,6 @@ class RuleSetArgs:
                  name: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a RuleSet resource.
-        :param pulumi.Input[Sequence[pulumi.Input['RuleSetItemArgs']]] items: (Updatable) An array of rules that compose the rule set. For more information, see [Managing Rule Sets](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/managingrulesets.htm)
-        :param pulumi.Input[str] load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the specified load balancer.
-        :param pulumi.Input[str] name: The name for this set of rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_rule_set` 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "items", items)
         pulumi.set(__self__, "load_balancer_id", load_balancer_id)
@@ -37,9 +30,6 @@ class RuleSetArgs:
     @property
     @pulumi.getter
     def items(self) -> pulumi.Input[Sequence[pulumi.Input['RuleSetItemArgs']]]:
-        """
-        (Updatable) An array of rules that compose the rule set. For more information, see [Managing Rule Sets](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/managingrulesets.htm)
-        """
         return pulumi.get(self, "items")
 
     @items.setter
@@ -49,9 +39,6 @@ class RuleSetArgs:
     @property
     @pulumi.getter(name="loadBalancerId")
     def load_balancer_id(self) -> pulumi.Input[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the specified load balancer.
-        """
         return pulumi.get(self, "load_balancer_id")
 
     @load_balancer_id.setter
@@ -61,13 +48,6 @@ class RuleSetArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name for this set of rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_rule_set` 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -84,13 +64,6 @@ class _RuleSetState:
                  state: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering RuleSet resources.
-        :param pulumi.Input[Sequence[pulumi.Input['RuleSetItemArgs']]] items: (Updatable) An array of rules that compose the rule set. For more information, see [Managing Rule Sets](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/managingrulesets.htm)
-        :param pulumi.Input[str] load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the specified load balancer.
-        :param pulumi.Input[str] name: The name for this set of rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_rule_set` 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if items is not None:
             pulumi.set(__self__, "items", items)
@@ -104,9 +77,6 @@ class _RuleSetState:
     @property
     @pulumi.getter
     def items(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['RuleSetItemArgs']]]]:
-        """
-        (Updatable) An array of rules that compose the rule set. For more information, see [Managing Rule Sets](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/managingrulesets.htm)
-        """
         return pulumi.get(self, "items")
 
     @items.setter
@@ -116,9 +86,6 @@ class _RuleSetState:
     @property
     @pulumi.getter(name="loadBalancerId")
     def load_balancer_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the specified load balancer.
-        """
         return pulumi.get(self, "load_balancer_id")
 
     @load_balancer_id.setter
@@ -128,13 +95,6 @@ class _RuleSetState:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name for this set of rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_rule_set` 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -161,63 +121,9 @@ class RuleSet(pulumi.CustomResource):
                  name: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Rule Set resource in Oracle Cloud Infrastructure Load Balancer service.
-
-        Creates a new rule set associated with the specified load balancer. For more information, see
-        [Managing Rule Sets](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/managingrulesets.htm).
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_rule_set = oci.load_balancer.RuleSet("testRuleSet",
-            items=[oci.load_balancer.RuleSetItemArgs(
-                action=var["rule_set_items_action"],
-                allowed_methods=var["rule_set_items_allowed_methods"],
-                are_invalid_characters_allowed=var["rule_set_items_are_invalid_characters_allowed"],
-                conditions=[oci.load_balancer.RuleSetItemConditionArgs(
-                    attribute_name=var["rule_set_items_conditions_attribute_name"],
-                    attribute_value=var["rule_set_items_conditions_attribute_value"],
-                    operator=var["rule_set_items_conditions_operator"],
-                )],
-                description=var["rule_set_items_description"],
-                header=var["rule_set_items_header"],
-                http_large_header_size_in_kb=var["rule_set_items_http_large_header_size_in_kb"],
-                prefix=var["rule_set_items_prefix"],
-                redirect_uri=oci.load_balancer.RuleSetItemRedirectUriArgs(
-                    host=var["rule_set_items_redirect_uri_host"],
-                    path=var["rule_set_items_redirect_uri_path"],
-                    port=var["rule_set_items_redirect_uri_port"],
-                    protocol=var["rule_set_items_redirect_uri_protocol"],
-                    query=var["rule_set_items_redirect_uri_query"],
-                ),
-                response_code=var["rule_set_items_response_code"],
-                status_code=var["rule_set_items_status_code"],
-                suffix=var["rule_set_items_suffix"],
-                value=var["rule_set_items_value"],
-            )],
-            load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"])
-        ```
-
-        ## Import
-
-        RuleSets can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:LoadBalancer/ruleSet:RuleSet test_rule_set "loadBalancers/{loadBalancerId}/ruleSets/{ruleSetName}"
-        ```
-
+        Create a RuleSet resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['RuleSetItemArgs']]]] items: (Updatable) An array of rules that compose the rule set. For more information, see [Managing Rule Sets](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/managingrulesets.htm)
-        :param pulumi.Input[str] load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the specified load balancer.
-        :param pulumi.Input[str] name: The name for this set of rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_rule_set` 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -226,54 +132,7 @@ class RuleSet(pulumi.CustomResource):
                  args: RuleSetArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Rule Set resource in Oracle Cloud Infrastructure Load Balancer service.
-
-        Creates a new rule set associated with the specified load balancer. For more information, see
-        [Managing Rule Sets](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/managingrulesets.htm).
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_rule_set = oci.load_balancer.RuleSet("testRuleSet",
-            items=[oci.load_balancer.RuleSetItemArgs(
-                action=var["rule_set_items_action"],
-                allowed_methods=var["rule_set_items_allowed_methods"],
-                are_invalid_characters_allowed=var["rule_set_items_are_invalid_characters_allowed"],
-                conditions=[oci.load_balancer.RuleSetItemConditionArgs(
-                    attribute_name=var["rule_set_items_conditions_attribute_name"],
-                    attribute_value=var["rule_set_items_conditions_attribute_value"],
-                    operator=var["rule_set_items_conditions_operator"],
-                )],
-                description=var["rule_set_items_description"],
-                header=var["rule_set_items_header"],
-                http_large_header_size_in_kb=var["rule_set_items_http_large_header_size_in_kb"],
-                prefix=var["rule_set_items_prefix"],
-                redirect_uri=oci.load_balancer.RuleSetItemRedirectUriArgs(
-                    host=var["rule_set_items_redirect_uri_host"],
-                    path=var["rule_set_items_redirect_uri_path"],
-                    port=var["rule_set_items_redirect_uri_port"],
-                    protocol=var["rule_set_items_redirect_uri_protocol"],
-                    query=var["rule_set_items_redirect_uri_query"],
-                ),
-                response_code=var["rule_set_items_response_code"],
-                status_code=var["rule_set_items_status_code"],
-                suffix=var["rule_set_items_suffix"],
-                value=var["rule_set_items_value"],
-            )],
-            load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"])
-        ```
-
-        ## Import
-
-        RuleSets can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:LoadBalancer/ruleSet:RuleSet test_rule_set "loadBalancers/{loadBalancerId}/ruleSets/{ruleSetName}"
-        ```
-
+        Create a RuleSet resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param RuleSetArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -330,13 +189,6 @@ class RuleSet(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['RuleSetItemArgs']]]] items: (Updatable) An array of rules that compose the rule set. For more information, see [Managing Rule Sets](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/managingrulesets.htm)
-        :param pulumi.Input[str] load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the specified load balancer.
-        :param pulumi.Input[str] name: The name for this set of rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_rule_set` 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -351,33 +203,20 @@ class RuleSet(pulumi.CustomResource):
     @property
     @pulumi.getter
     def items(self) -> pulumi.Output[Sequence['outputs.RuleSetItem']]:
-        """
-        (Updatable) An array of rules that compose the rule set. For more information, see [Managing Rule Sets](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/managingrulesets.htm)
-        """
         return pulumi.get(self, "items")
 
     @property
     @pulumi.getter(name="loadBalancerId")
     def load_balancer_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the specified load balancer.
-        """
         return pulumi.get(self, "load_balancer_id")
 
     @property
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
-        """
-        The name for this set of rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_rule_set` 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 

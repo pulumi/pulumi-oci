@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetVaultUsageResult {
@@ -14,27 +16,27 @@ public final class GetVaultUsageResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The number of keys in this vault, across all compartments, excluding keys in a `DELETED` state.
      * 
      */
-    private Integer keyCount;
+    private @Nullable Integer keyCount;
     /**
      * @return The number of key versions in this vault, across all compartments, excluding key versions in a `DELETED` state.
      * 
      */
-    private Integer keyVersionCount;
+    private @Nullable Integer keyVersionCount;
     /**
      * @return The number of keys in this vault that persist on the server, across all compartments, excluding keys in a `DELETED` state.
      * 
      */
-    private Integer softwareKeyCount;
+    private @Nullable Integer softwareKeyCount;
     /**
      * @return The number of key versions in this vault that persist on the server, across all compartments, excluding key versions in a `DELETED` state.
      * 
      */
-    private Integer softwareKeyVersionCount;
+    private @Nullable Integer softwareKeyVersionCount;
     private String vaultId;
 
     private GetVaultUsageResult() {}
@@ -42,36 +44,36 @@ public final class GetVaultUsageResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The number of keys in this vault, across all compartments, excluding keys in a `DELETED` state.
      * 
      */
-    public Integer keyCount() {
-        return this.keyCount;
+    public Optional<Integer> keyCount() {
+        return Optional.ofNullable(this.keyCount);
     }
     /**
      * @return The number of key versions in this vault, across all compartments, excluding key versions in a `DELETED` state.
      * 
      */
-    public Integer keyVersionCount() {
-        return this.keyVersionCount;
+    public Optional<Integer> keyVersionCount() {
+        return Optional.ofNullable(this.keyVersionCount);
     }
     /**
      * @return The number of keys in this vault that persist on the server, across all compartments, excluding keys in a `DELETED` state.
      * 
      */
-    public Integer softwareKeyCount() {
-        return this.softwareKeyCount;
+    public Optional<Integer> softwareKeyCount() {
+        return Optional.ofNullable(this.softwareKeyCount);
     }
     /**
      * @return The number of key versions in this vault that persist on the server, across all compartments, excluding key versions in a `DELETED` state.
      * 
      */
-    public Integer softwareKeyVersionCount() {
-        return this.softwareKeyVersionCount;
+    public Optional<Integer> softwareKeyVersionCount() {
+        return Optional.ofNullable(this.softwareKeyVersionCount);
     }
     public String vaultId() {
         return this.vaultId;
@@ -86,11 +88,11 @@ public final class GetVaultUsageResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String id;
-        private Integer keyCount;
-        private Integer keyVersionCount;
-        private Integer softwareKeyCount;
-        private Integer softwareKeyVersionCount;
+        private @Nullable String id;
+        private @Nullable Integer keyCount;
+        private @Nullable Integer keyVersionCount;
+        private @Nullable Integer softwareKeyCount;
+        private @Nullable Integer softwareKeyVersionCount;
         private String vaultId;
         public Builder() {}
         public Builder(GetVaultUsageResult defaults) {
@@ -104,28 +106,28 @@ public final class GetVaultUsageResult {
         }
 
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder keyCount(Integer keyCount) {
-            this.keyCount = Objects.requireNonNull(keyCount);
+        public Builder keyCount(@Nullable Integer keyCount) {
+            this.keyCount = keyCount;
             return this;
         }
         @CustomType.Setter
-        public Builder keyVersionCount(Integer keyVersionCount) {
-            this.keyVersionCount = Objects.requireNonNull(keyVersionCount);
+        public Builder keyVersionCount(@Nullable Integer keyVersionCount) {
+            this.keyVersionCount = keyVersionCount;
             return this;
         }
         @CustomType.Setter
-        public Builder softwareKeyCount(Integer softwareKeyCount) {
-            this.softwareKeyCount = Objects.requireNonNull(softwareKeyCount);
+        public Builder softwareKeyCount(@Nullable Integer softwareKeyCount) {
+            this.softwareKeyCount = softwareKeyCount;
             return this;
         }
         @CustomType.Setter
-        public Builder softwareKeyVersionCount(Integer softwareKeyVersionCount) {
-            this.softwareKeyVersionCount = Objects.requireNonNull(softwareKeyVersionCount);
+        public Builder softwareKeyVersionCount(@Nullable Integer softwareKeyVersionCount) {
+            this.softwareKeyVersionCount = softwareKeyVersionCount;
             return this;
         }
         @CustomType.Setter

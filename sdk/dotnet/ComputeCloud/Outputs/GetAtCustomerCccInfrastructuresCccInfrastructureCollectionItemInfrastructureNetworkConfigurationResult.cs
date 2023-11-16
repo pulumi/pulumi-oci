@@ -32,11 +32,11 @@ namespace Pulumi.Oci.ComputeCloud.Outputs
         /// <summary>
         /// The hostname corresponding to the virtual IP (VIP) address of the management nodes.
         /// </summary>
-        public readonly string MgmtVipHostname;
+        public readonly string? MgmtVipHostname;
         /// <summary>
         /// The IP address used as the virtual IP (VIP) address of the management nodes.
         /// </summary>
-        public readonly string MgmtVipIp;
+        public readonly string? MgmtVipIp;
         /// <summary>
         /// Addresses of the network spine switches.
         /// </summary>
@@ -44,35 +44,35 @@ namespace Pulumi.Oci.ComputeCloud.Outputs
         /// <summary>
         /// The spine switch public virtual IP (VIP). Traffic routed to the Compute Cloud@Customer infrastructure and  and virtual cloud networks (VCNs) should have this address as next hop.
         /// </summary>
-        public readonly string SpineVip;
+        public readonly string? SpineVip;
         /// <summary>
         /// Domain name to be used as the base domain for the internal network and by  public facing services.
         /// </summary>
-        public readonly string UplinkDomain;
+        public readonly string? UplinkDomain;
         /// <summary>
         /// Uplink gateway in the datacenter network that the Compute Cloud@Customer connects to.
         /// </summary>
-        public readonly string UplinkGatewayIp;
+        public readonly string? UplinkGatewayIp;
         /// <summary>
         /// Netmask of the subnet that the Compute Cloud@Customer infrastructure is connected to.
         /// </summary>
-        public readonly string UplinkNetmask;
+        public readonly string? UplinkNetmask;
         /// <summary>
         /// Number of uplink ports per spine switch. Connectivity is identical on both spine switches. For example, if input is two 100 gigabyte ports; then port-1 and port-2 on both spines will be configured.
         /// </summary>
-        public readonly int UplinkPortCount;
+        public readonly int? UplinkPortCount;
         /// <summary>
         /// The port forward error correction (FEC) setting for the uplink port on the Compute Cloud@Customer infrastructure.
         /// </summary>
-        public readonly string UplinkPortForwardErrorCorrection;
+        public readonly string? UplinkPortForwardErrorCorrection;
         /// <summary>
         /// Uplink port speed defined in gigabytes per second. All uplink ports must have identical speed.
         /// </summary>
-        public readonly int UplinkPortSpeedInGbps;
+        public readonly int? UplinkPortSpeedInGbps;
         /// <summary>
         /// The virtual local area network (VLAN) maximum transmission unit (MTU) size for the uplink ports.
         /// </summary>
-        public readonly int UplinkVlanMtu;
+        public readonly int? UplinkVlanMtu;
 
         [OutputConstructor]
         private GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationResult(
@@ -84,27 +84,27 @@ namespace Pulumi.Oci.ComputeCloud.Outputs
 
             ImmutableArray<Outputs.GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNodeResult> managementNodes,
 
-            string mgmtVipHostname,
+            string? mgmtVipHostname,
 
-            string mgmtVipIp,
+            string? mgmtVipIp,
 
             ImmutableArray<string> spineIps,
 
-            string spineVip,
+            string? spineVip,
 
-            string uplinkDomain,
+            string? uplinkDomain,
 
-            string uplinkGatewayIp,
+            string? uplinkGatewayIp,
 
-            string uplinkNetmask,
+            string? uplinkNetmask,
 
-            int uplinkPortCount,
+            int? uplinkPortCount,
 
-            string uplinkPortForwardErrorCorrection,
+            string? uplinkPortForwardErrorCorrection,
 
-            int uplinkPortSpeedInGbps,
+            int? uplinkPortSpeedInGbps,
 
-            int uplinkVlanMtu)
+            int? uplinkVlanMtu)
         {
             DnsIps = dnsIps;
             InfrastructureRoutingDynamics = infrastructureRoutingDynamics;

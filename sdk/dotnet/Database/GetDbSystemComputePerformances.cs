@@ -132,7 +132,7 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
 
         [OutputConstructor]
         private GetDbSystemComputePerformancesResult(
@@ -142,7 +142,7 @@ namespace Pulumi.Oci.Database
 
             ImmutableArray<Outputs.GetDbSystemComputePerformancesFilterResult> filters,
 
-            string id)
+            string? id)
         {
             DbSystemComputePerformances = dbSystemComputePerformances;
             DbSystemShape = dbSystemShape;

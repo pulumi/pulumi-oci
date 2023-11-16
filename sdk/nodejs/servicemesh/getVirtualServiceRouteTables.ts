@@ -94,7 +94,7 @@ export interface GetVirtualServiceRouteTablesResult {
     /**
      * The list of virtual_service_route_table_collection.
      */
-    readonly virtualServiceRouteTableCollections: outputs.ServiceMesh.GetVirtualServiceRouteTablesVirtualServiceRouteTableCollection[];
+    readonly virtualServiceRouteTableCollections?: outputs.ServiceMesh.GetVirtualServiceRouteTablesVirtualServiceRouteTableCollection[];
 }
 /**
  * This data source provides the list of Virtual Service Route Tables in Oracle Cloud Infrastructure Service Mesh service.

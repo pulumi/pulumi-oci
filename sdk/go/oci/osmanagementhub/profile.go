@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Profile resource in Oracle Cloud Infrastructure Os Management Hub service.
@@ -74,13 +73,13 @@ type Profile struct {
 	pulumi.CustomResourceState
 
 	// The architecture type.
-	ArchType pulumi.StringOutput `pulumi:"archType"`
+	ArchType pulumi.StringPtrOutput `pulumi:"archType"`
 	// The OCID of the tenancy containing the registration profile.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) The description of the registration profile.
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -88,17 +87,17 @@ type Profile struct {
 	// Identifying information for the specified lifecycle environment.
 	LifecycleEnvironments ProfileLifecycleEnvironmentArrayOutput `pulumi:"lifecycleEnvironments"`
 	// The OCID of the lifecycle stage from which the registration profile will inherit its software source.
-	LifecycleStageId pulumi.StringOutput `pulumi:"lifecycleStageId"`
+	LifecycleStageId pulumi.StringPtrOutput `pulumi:"lifecycleStageId"`
 	// Identifying information for the specified lifecycle stage.
 	LifecycleStages ProfileLifecycleStageArrayOutput `pulumi:"lifecycleStages"`
 	// The OCID of the managed instance group from which the registration profile will inherit its software sources.
-	ManagedInstanceGroupId pulumi.StringOutput `pulumi:"managedInstanceGroupId"`
+	ManagedInstanceGroupId pulumi.StringPtrOutput `pulumi:"managedInstanceGroupId"`
 	// Identifying information for the specified managed instance group.
 	ManagedInstanceGroups ProfileManagedInstanceGroupArrayOutput `pulumi:"managedInstanceGroups"`
 	// The OCID of the management station.
-	ManagementStationId pulumi.StringOutput `pulumi:"managementStationId"`
+	ManagementStationId pulumi.StringPtrOutput `pulumi:"managementStationId"`
 	// The operating system family.
-	OsFamily pulumi.StringOutput `pulumi:"osFamily"`
+	OsFamily pulumi.StringPtrOutput `pulumi:"osFamily"`
 	// The type of registration profile. Either SOFTWARESOURCE, GROUP or LIFECYCLE.
 	ProfileType pulumi.StringOutput `pulumi:"profileType"`
 	// The list of software source OCIDs that the registration profile will use.
@@ -106,16 +105,16 @@ type Profile struct {
 	// The list of software sources that the registration profile will use.
 	SoftwareSources ProfileSoftwareSourceArrayOutput `pulumi:"softwareSources"`
 	// The current state of the registration profile.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The time the the registration profile was created. An RFC3339 formatted datetime string.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The software source vendor name.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	VendorName pulumi.StringOutput `pulumi:"vendorName"`
+	VendorName pulumi.StringPtrOutput `pulumi:"vendorName"`
 }
 
 // NewProfile registers a new resource with the given unique name, arguments, and options.
@@ -340,12 +339,6 @@ func (i *Profile) ToProfileOutputWithContext(ctx context.Context) ProfileOutput 
 	return pulumi.ToOutputWithContext(ctx, i).(ProfileOutput)
 }
 
-func (i *Profile) ToOutput(ctx context.Context) pulumix.Output[*Profile] {
-	return pulumix.Output[*Profile]{
-		OutputState: i.ToProfileOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ProfileArrayInput is an input type that accepts ProfileArray and ProfileArrayOutput values.
 // You can construct a concrete instance of `ProfileArrayInput` via:
 //
@@ -369,12 +362,6 @@ func (i ProfileArray) ToProfileArrayOutput() ProfileArrayOutput {
 
 func (i ProfileArray) ToProfileArrayOutputWithContext(ctx context.Context) ProfileArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ProfileArrayOutput)
-}
-
-func (i ProfileArray) ToOutput(ctx context.Context) pulumix.Output[[]*Profile] {
-	return pulumix.Output[[]*Profile]{
-		OutputState: i.ToProfileArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ProfileMapInput is an input type that accepts ProfileMap and ProfileMapOutput values.
@@ -402,12 +389,6 @@ func (i ProfileMap) ToProfileMapOutputWithContext(ctx context.Context) ProfileMa
 	return pulumi.ToOutputWithContext(ctx, i).(ProfileMapOutput)
 }
 
-func (i ProfileMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Profile] {
-	return pulumix.Output[map[string]*Profile]{
-		OutputState: i.ToProfileMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ProfileOutput struct{ *pulumi.OutputState }
 
 func (ProfileOutput) ElementType() reflect.Type {
@@ -422,15 +403,9 @@ func (o ProfileOutput) ToProfileOutputWithContext(ctx context.Context) ProfileOu
 	return o
 }
 
-func (o ProfileOutput) ToOutput(ctx context.Context) pulumix.Output[*Profile] {
-	return pulumix.Output[*Profile]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The architecture type.
-func (o ProfileOutput) ArchType() pulumi.StringOutput {
-	return o.ApplyT(func(v *Profile) pulumi.StringOutput { return v.ArchType }).(pulumi.StringOutput)
+func (o ProfileOutput) ArchType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Profile) pulumi.StringPtrOutput { return v.ArchType }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the tenancy containing the registration profile.
@@ -444,8 +419,8 @@ func (o ProfileOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) The description of the registration profile.
-func (o ProfileOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *Profile) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o ProfileOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Profile) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -464,8 +439,8 @@ func (o ProfileOutput) LifecycleEnvironments() ProfileLifecycleEnvironmentArrayO
 }
 
 // The OCID of the lifecycle stage from which the registration profile will inherit its software source.
-func (o ProfileOutput) LifecycleStageId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Profile) pulumi.StringOutput { return v.LifecycleStageId }).(pulumi.StringOutput)
+func (o ProfileOutput) LifecycleStageId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Profile) pulumi.StringPtrOutput { return v.LifecycleStageId }).(pulumi.StringPtrOutput)
 }
 
 // Identifying information for the specified lifecycle stage.
@@ -474,8 +449,8 @@ func (o ProfileOutput) LifecycleStages() ProfileLifecycleStageArrayOutput {
 }
 
 // The OCID of the managed instance group from which the registration profile will inherit its software sources.
-func (o ProfileOutput) ManagedInstanceGroupId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Profile) pulumi.StringOutput { return v.ManagedInstanceGroupId }).(pulumi.StringOutput)
+func (o ProfileOutput) ManagedInstanceGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Profile) pulumi.StringPtrOutput { return v.ManagedInstanceGroupId }).(pulumi.StringPtrOutput)
 }
 
 // Identifying information for the specified managed instance group.
@@ -484,13 +459,13 @@ func (o ProfileOutput) ManagedInstanceGroups() ProfileManagedInstanceGroupArrayO
 }
 
 // The OCID of the management station.
-func (o ProfileOutput) ManagementStationId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Profile) pulumi.StringOutput { return v.ManagementStationId }).(pulumi.StringOutput)
+func (o ProfileOutput) ManagementStationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Profile) pulumi.StringPtrOutput { return v.ManagementStationId }).(pulumi.StringPtrOutput)
 }
 
 // The operating system family.
-func (o ProfileOutput) OsFamily() pulumi.StringOutput {
-	return o.ApplyT(func(v *Profile) pulumi.StringOutput { return v.OsFamily }).(pulumi.StringOutput)
+func (o ProfileOutput) OsFamily() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Profile) pulumi.StringPtrOutput { return v.OsFamily }).(pulumi.StringPtrOutput)
 }
 
 // The type of registration profile. Either SOFTWARESOURCE, GROUP or LIFECYCLE.
@@ -509,8 +484,8 @@ func (o ProfileOutput) SoftwareSources() ProfileSoftwareSourceArrayOutput {
 }
 
 // The current state of the registration profile.
-func (o ProfileOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *Profile) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o ProfileOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Profile) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -519,16 +494,16 @@ func (o ProfileOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time the the registration profile was created. An RFC3339 formatted datetime string.
-func (o ProfileOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Profile) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o ProfileOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Profile) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The software source vendor name.
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o ProfileOutput) VendorName() pulumi.StringOutput {
-	return o.ApplyT(func(v *Profile) pulumi.StringOutput { return v.VendorName }).(pulumi.StringOutput)
+func (o ProfileOutput) VendorName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Profile) pulumi.StringPtrOutput { return v.VendorName }).(pulumi.StringPtrOutput)
 }
 
 type ProfileArrayOutput struct{ *pulumi.OutputState }
@@ -543,12 +518,6 @@ func (o ProfileArrayOutput) ToProfileArrayOutput() ProfileArrayOutput {
 
 func (o ProfileArrayOutput) ToProfileArrayOutputWithContext(ctx context.Context) ProfileArrayOutput {
 	return o
-}
-
-func (o ProfileArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Profile] {
-	return pulumix.Output[[]*Profile]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ProfileArrayOutput) Index(i pulumi.IntInput) ProfileOutput {
@@ -569,12 +538,6 @@ func (o ProfileMapOutput) ToProfileMapOutput() ProfileMapOutput {
 
 func (o ProfileMapOutput) ToProfileMapOutputWithContext(ctx context.Context) ProfileMapOutput {
 	return o
-}
-
-func (o ProfileMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Profile] {
-	return pulumix.Output[map[string]*Profile]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ProfileMapOutput) MapIndex(k pulumi.StringInput) ProfileOutput {

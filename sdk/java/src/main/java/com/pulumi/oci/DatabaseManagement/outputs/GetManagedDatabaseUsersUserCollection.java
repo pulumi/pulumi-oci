@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseUsersUserCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedDatabaseUsersUserCollection {
-    private List<GetManagedDatabaseUsersUserCollectionItem> items;
+    private @Nullable List<GetManagedDatabaseUsersUserCollectionItem> items;
 
     private GetManagedDatabaseUsersUserCollection() {}
     public List<GetManagedDatabaseUsersUserCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetManagedDatabaseUsersUserCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetManagedDatabaseUsersUserCollectionItem> items;
+        private @Nullable List<GetManagedDatabaseUsersUserCollectionItem> items;
         public Builder() {}
         public Builder(GetManagedDatabaseUsersUserCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetManagedDatabaseUsersUserCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetManagedDatabaseUsersUserCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetManagedDatabaseUsersUserCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetManagedDatabaseUsersUserCollectionItem... items) {

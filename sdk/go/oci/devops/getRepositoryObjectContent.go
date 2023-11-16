@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Repository Object Content resource in Oracle Cloud Infrastructure Devops service.
@@ -67,9 +66,9 @@ type GetRepositoryObjectContentArgs struct {
 type GetRepositoryObjectContentResult struct {
 	FilePath *string `pulumi:"filePath"`
 	// The provider-assigned unique ID for this managed resource.
-	Id           string `pulumi:"id"`
-	RepositoryId string `pulumi:"repositoryId"`
-	Sha          string `pulumi:"sha"`
+	Id           *string `pulumi:"id"`
+	RepositoryId string  `pulumi:"repositoryId"`
+	Sha          string  `pulumi:"sha"`
 }
 
 func GetRepositoryObjectContentOutput(ctx *pulumi.Context, args GetRepositoryObjectContentOutputArgs, opts ...pulumi.InvokeOption) GetRepositoryObjectContentResultOutput {
@@ -114,19 +113,13 @@ func (o GetRepositoryObjectContentResultOutput) ToGetRepositoryObjectContentResu
 	return o
 }
 
-func (o GetRepositoryObjectContentResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetRepositoryObjectContentResult] {
-	return pulumix.Output[GetRepositoryObjectContentResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetRepositoryObjectContentResultOutput) FilePath() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetRepositoryObjectContentResult) *string { return v.FilePath }).(pulumi.StringPtrOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetRepositoryObjectContentResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRepositoryObjectContentResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetRepositoryObjectContentResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRepositoryObjectContentResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetRepositoryObjectContentResultOutput) RepositoryId() pulumi.StringOutput {

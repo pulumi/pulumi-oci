@@ -108,92 +108,92 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// The availability domain the dedicated virtual machine host is running in.  Example: `Uocm:PHX-AD-1`
         /// </summary>
-        public readonly string AvailabilityDomain;
+        public readonly string? AvailabilityDomain;
         /// <summary>
         /// The OCID of the compartment that contains the dedicated virtual machine host.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         public readonly string DedicatedVmHostId;
         /// <summary>
         /// The dedicated virtual machine host shape. The shape determines the number of CPUs and other resources available for VMs.
         /// </summary>
-        public readonly string DedicatedVmHostShape;
+        public readonly string? DedicatedVmHostShape;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// The fault domain for the dedicated virtual machine host's assigned instances. For more information, see [Fault Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm#fault).
         /// </summary>
-        public readonly string FaultDomain;
+        public readonly string? FaultDomain;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated VM host.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The current available memory of the dedicated VM host, in GBs.
         /// </summary>
-        public readonly double RemainingMemoryInGbs;
+        public readonly double? RemainingMemoryInGbs;
         /// <summary>
         /// The current available OCPUs of the dedicated VM host.
         /// </summary>
-        public readonly double RemainingOcpus;
+        public readonly double? RemainingOcpus;
         /// <summary>
         /// The current state of the dedicated VM host.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The date and time the dedicated VM host was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The current total memory of the dedicated VM host, in GBs.
         /// </summary>
-        public readonly double TotalMemoryInGbs;
+        public readonly double? TotalMemoryInGbs;
         /// <summary>
         /// The current total OCPUs of the dedicated VM host.
         /// </summary>
-        public readonly double TotalOcpus;
+        public readonly double? TotalOcpus;
 
         [OutputConstructor]
         private GetDedicatedVmHostResult(
-            string availabilityDomain,
+            string? availabilityDomain,
 
-            string compartmentId,
+            string? compartmentId,
 
             string dedicatedVmHostId,
 
-            string dedicatedVmHostShape,
+            string? dedicatedVmHostShape,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string displayName,
+            string? displayName,
 
-            string faultDomain,
+            string? faultDomain,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            double remainingMemoryInGbs,
+            double? remainingMemoryInGbs,
 
-            double remainingOcpus,
+            double? remainingOcpus,
 
-            string state,
+            string? state,
 
-            string timeCreated,
+            string? timeCreated,
 
-            double totalMemoryInGbs,
+            double? totalMemoryInGbs,
 
-            double totalOcpus)
+            double? totalOcpus)
         {
             AvailabilityDomain = availabilityDomain;
             CompartmentId = compartmentId;

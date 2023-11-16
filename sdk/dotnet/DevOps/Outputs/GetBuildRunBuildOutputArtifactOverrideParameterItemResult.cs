@@ -16,23 +16,23 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// <summary>
         /// The OCID of the deployment artifact definition.
         /// </summary>
-        public readonly string DeployArtifactId;
+        public readonly string? DeployArtifactId;
         /// <summary>
         /// Name of the step.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// Value of the argument.
         /// </summary>
-        public readonly string Value;
+        public readonly string? Value;
 
         [OutputConstructor]
         private GetBuildRunBuildOutputArtifactOverrideParameterItemResult(
-            string deployArtifactId,
+            string? deployArtifactId,
 
-            string name,
+            string? name,
 
-            string value)
+            string? value)
         {
             DeployArtifactId = deployArtifactId;
             Name = name;

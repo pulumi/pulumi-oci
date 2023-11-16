@@ -122,83 +122,83 @@ namespace Pulumi.Oci.Functions
         /// <summary>
         /// Compartment Identifier
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// Service Attachment Display name, can be renamed
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         public readonly string FusionEnvironmentId;
         /// <summary>
         /// Unique identifier that is immutable on creation
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Whether this service is provisioned due to the customer being subscribed to a specific SKU
         /// </summary>
-        public readonly bool IsSkuBased;
+        public readonly bool? IsSkuBased;
         public readonly string ServiceAttachmentId;
         /// <summary>
         /// The ID of the service instance created that can be used to identify this on the service control plane
         /// </summary>
-        public readonly string ServiceInstanceId;
+        public readonly string? ServiceInstanceId;
         /// <summary>
         /// Type of the serviceInstance.
         /// </summary>
-        public readonly string ServiceInstanceType;
+        public readonly string? ServiceInstanceType;
         /// <summary>
         /// Public URL
         /// </summary>
-        public readonly string ServiceUrl;
+        public readonly string? ServiceUrl;
         /// <summary>
         /// The current state of the ServiceInstance.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The time the the ServiceInstance was created. An RFC3339 formatted datetime string
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The time the ServiceInstance was updated. An RFC3339 formatted datetime string
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
 
         [OutputConstructor]
         private GetFusionEnvironmentServiceAttachmentResult(
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
             string fusionEnvironmentId,
 
-            string id,
+            string? id,
 
-            bool isSkuBased,
+            bool? isSkuBased,
 
             string serviceAttachmentId,
 
-            string serviceInstanceId,
+            string? serviceInstanceId,
 
-            string serviceInstanceType,
+            string? serviceInstanceType,
 
-            string serviceUrl,
+            string? serviceUrl,
 
-            string state,
+            string? state,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated)
+            string? timeUpdated)
         {
             CompartmentId = compartmentId;
             DefinedTags = definedTags;

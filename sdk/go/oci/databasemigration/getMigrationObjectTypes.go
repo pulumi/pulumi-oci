@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Migration Object Types in Oracle Cloud Infrastructure Database Migration service.
@@ -58,7 +57,7 @@ type GetMigrationObjectTypesArgs struct {
 type GetMigrationObjectTypesResult struct {
 	Filters []GetMigrationObjectTypesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of migration_object_type_summary_collection.
 	MigrationObjectTypeSummaryCollections []GetMigrationObjectTypesMigrationObjectTypeSummaryCollection `pulumi:"migrationObjectTypeSummaryCollections"`
 }
@@ -100,19 +99,13 @@ func (o GetMigrationObjectTypesResultOutput) ToGetMigrationObjectTypesResultOutp
 	return o
 }
 
-func (o GetMigrationObjectTypesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationObjectTypesResult] {
-	return pulumix.Output[GetMigrationObjectTypesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMigrationObjectTypesResultOutput) Filters() GetMigrationObjectTypesFilterArrayOutput {
 	return o.ApplyT(func(v GetMigrationObjectTypesResult) []GetMigrationObjectTypesFilter { return v.Filters }).(GetMigrationObjectTypesFilterArrayOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetMigrationObjectTypesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMigrationObjectTypesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetMigrationObjectTypesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMigrationObjectTypesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of migration_object_type_summary_collection.

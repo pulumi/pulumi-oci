@@ -39,7 +39,7 @@ class GetNamespaceResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -47,10 +47,7 @@ class GetNamespaceResult:
 
     @property
     @pulumi.getter
-    def namespace(self) -> str:
-        """
-        (Computed) The name of the user's namespace.
-        """
+    def namespace(self) -> Optional[str]:
         return pulumi.get(self, "namespace")
 
 
@@ -68,27 +65,7 @@ class AwaitableGetNamespaceResult(GetNamespaceResult):
 def get_namespace(compartment_id: Optional[str] = None,
                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNamespaceResult:
     """
-    This data source provides details about a specific Namespace resource in Oracle Cloud Infrastructure Object Storage service.
-
-    Each Oracle Cloud Infrastructure tenant is assigned one unique and uneditable Object Storage namespace. The namespace
-    is a system-generated string assigned during account creation. For some older tenancies, the namespace string may be
-    the tenancy name in all lower-case letters. You cannot edit a namespace.
-
-    GetNamespace returns the name of the Object Storage namespace for the user making the request.
-    If an optional compartmentId query parameter is provided, GetNamespace returns the namespace name of the corresponding
-    tenancy, provided the user has access to it.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_namespace = oci.ObjectStorage.get_namespace(compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str compartment_id: This is an optional field representing either the tenancy [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) or the compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) within the tenancy whose Object Storage namespace is to be retrieved.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -105,26 +82,6 @@ def get_namespace(compartment_id: Optional[str] = None,
 def get_namespace_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNamespaceResult]:
     """
-    This data source provides details about a specific Namespace resource in Oracle Cloud Infrastructure Object Storage service.
-
-    Each Oracle Cloud Infrastructure tenant is assigned one unique and uneditable Object Storage namespace. The namespace
-    is a system-generated string assigned during account creation. For some older tenancies, the namespace string may be
-    the tenancy name in all lower-case letters. You cannot edit a namespace.
-
-    GetNamespace returns the name of the Object Storage namespace for the user making the request.
-    If an optional compartmentId query parameter is provided, GetNamespace returns the namespace name of the corresponding
-    tenancy, provided the user has access to it.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_namespace = oci.ObjectStorage.get_namespace(compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str compartment_id: This is an optional field representing either the tenancy [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) or the compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) within the tenancy whose Object Storage namespace is to be retrieved.
+    Use this data source to access information about an existing resource.
     """
     ...

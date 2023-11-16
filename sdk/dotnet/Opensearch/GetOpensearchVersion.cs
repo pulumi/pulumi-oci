@@ -145,7 +145,7 @@ namespace Pulumi.Oci.Opensearch
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// A list of OpenSearch versions.
         /// </summary>
@@ -155,7 +155,7 @@ namespace Pulumi.Oci.Opensearch
         private GetOpensearchVersionResult(
             string compartmentId,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetOpensearchVersionItemResult> items)
         {

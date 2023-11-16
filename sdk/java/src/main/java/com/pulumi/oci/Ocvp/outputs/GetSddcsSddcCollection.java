@@ -16,6 +16,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSddcsSddcCollection {
@@ -27,7 +29,7 @@ public final class GetSddcsSddcCollection {
      * 
      */
     @Deprecated /* The 'actual_esxi_hosts_count' field has been deprecated. Please use 'initial_configuration' instead. */
-    private Integer actualEsxiHostsCount;
+    private @Nullable Integer actualEsxiHostsCount;
     /**
      * @return (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
      * 
@@ -36,12 +38,12 @@ public final class GetSddcsSddcCollection {
      * 
      */
     @Deprecated /* The 'capacity_reservation_id' field has been deprecated. Please use 'initial_configuration' instead. */
-    private String capacityReservationId;
+    private @Nullable String capacityReservationId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The name of the availability domain that the Compute instances are running in.  Example: `Uocm:PHX-AD-1`
      * 
@@ -50,7 +52,7 @@ public final class GetSddcsSddcCollection {
      * 
      */
     @Deprecated /* The 'compute_availability_domain' field has been deprecated. Please use 'initial_configuration' instead. */
-    private String computeAvailabilityDomain;
+    private @Nullable String computeAvailabilityDomain;
     /**
      * @return (**Deprecated**) Datastores used for the Sddc.
      * 
@@ -59,17 +61,17 @@ public final class GetSddcsSddcCollection {
      * 
      */
     @Deprecated /* The 'datastores' field has been deprecated. Please use 'initial_configuration' instead. */
-    private List<GetSddcsSddcCollectionDatastore> datastores;
+    private @Nullable List<GetSddcsSddcCollectionDatastore> datastores;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return A filter to return only resources that match the given display name exactly.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return (**Deprecated**) The number of ESXi hosts in the SDDC.
      * 
@@ -78,18 +80,18 @@ public final class GetSddcsSddcCollection {
      * 
      */
     @Deprecated /* The 'esxi_hosts_count' field has been deprecated. Please use 'initial_configuration' instead. */
-    private Integer esxiHostsCount;
+    private @Nullable Integer esxiHostsCount;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
-    private String hcxAction;
+    private @Nullable Map<String,Object> freeformTags;
+    private @Nullable String hcxAction;
     /**
      * @return The FQDN for HCX Manager.  Example: `hcx-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
      * 
      */
-    private String hcxFqdn;
+    private @Nullable String hcxFqdn;
     /**
      * @return (**Deprecated**) The SDDC includes an administrator username and initial password for HCX Manager. Make sure to change this initial HCX Manager password to a different value.
      * 
@@ -98,7 +100,7 @@ public final class GetSddcsSddcCollection {
      * 
      */
     @Deprecated /* The 'hcx_initial_password' field has been deprecated. Please use the 'ocvp_sddc_password' data source instead. */
-    private String hcxInitialPassword;
+    private @Nullable String hcxInitialPassword;
     /**
      * @return (**Deprecated**) The activation keys to use on the on-premises HCX Enterprise appliances you site pair with HCX Manager in your VMware Solution. The number of keys provided depends on the HCX license type. HCX Advanced provides 3 activation keys. HCX Enterprise provides 10 activation keys.
      * 
@@ -107,17 +109,17 @@ public final class GetSddcsSddcCollection {
      * 
      */
     @Deprecated /* The 'hcx_on_prem_key' field has been deprecated and may be removed in a future version. Do not use this field. */
-    private String hcxOnPremKey;
+    private @Nullable String hcxOnPremKey;
     /**
      * @return The activation licenses to use on the on-premises HCX Enterprise appliance you site pair with HCX Manager in your VMware Solution.
      * 
      */
-    private List<GetSddcsSddcCollectionHcxOnPremLicense> hcxOnPremLicenses;
+    private @Nullable List<GetSddcsSddcCollectionHcxOnPremLicense> hcxOnPremLicenses;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for HCX Manager. For information about `PrivateIp` objects, see the Core Services API.
      * 
      */
-    private String hcxPrivateIpId;
+    private @Nullable String hcxPrivateIpId;
     /**
      * @return (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the HCX component of the VMware environment.
      * 
@@ -126,12 +128,12 @@ public final class GetSddcsSddcCollection {
      * 
      */
     @Deprecated /* The 'hcx_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
-    private String hcxVlanId;
+    private @Nullable String hcxVlanId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return (**Deprecated**) The initial OCPU count of the SDDC&#39;s ESXi hosts.
      * 
@@ -140,7 +142,7 @@ public final class GetSddcsSddcCollection {
      * 
      */
     @Deprecated /* The 'initial_host_ocpu_count' field has been deprecated. Please use 'initial_configuration' instead. */
-    private Double initialHostOcpuCount;
+    private @Nullable Double initialHostOcpuCount;
     /**
      * @return (**Deprecated**) The initial compute shape of the SDDC&#39;s ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
      * 
@@ -149,7 +151,7 @@ public final class GetSddcsSddcCollection {
      * 
      */
     @Deprecated /* The 'initial_host_shape_name' field has been deprecated. Please use 'initial_configuration' instead. */
-    private String initialHostShapeName;
+    private @Nullable String initialHostShapeName;
     /**
      * @return (**Deprecated**) The billing option selected during SDDC creation. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
      * 
@@ -158,7 +160,7 @@ public final class GetSddcsSddcCollection {
      * 
      */
     @Deprecated /* The 'initial_sku' field has been deprecated. Please use 'initial_configuration' instead. */
-    private String initialSku;
+    private @Nullable String initialSku;
     /**
      * @return (**Deprecated**) A prefix used in the name of each ESXi host and Compute instance in the SDDC. If this isn&#39;t set, the SDDC&#39;s `displayName` is used as the prefix.
      * 
@@ -167,7 +169,7 @@ public final class GetSddcsSddcCollection {
      * 
      */
     @Deprecated /* The 'instance_display_name_prefix' field has been deprecated. Please use 'initial_configuration' instead. */
-    private String instanceDisplayNamePrefix;
+    private @Nullable String instanceDisplayNamePrefix;
     /**
      * @return (**Deprecated**) Indicates whether HCX is enabled for this SDDC.
      * 
@@ -176,7 +178,7 @@ public final class GetSddcsSddcCollection {
      * 
      */
     @Deprecated /* The 'is_hcx_enabled' field has been deprecated. Please use 'hcx_mode' instead. */
-    private Boolean isHcxEnabled;
+    private @Nullable Boolean isHcxEnabled;
     /**
      * @return (**Deprecated**) Indicates whether HCX Enterprise is enabled for this SDDC.
      * 
@@ -185,12 +187,12 @@ public final class GetSddcsSddcCollection {
      * 
      */
     @Deprecated /* The 'is_hcx_enabled' field has been deprecated. Please use 'actual_hcx_mode' instead. */
-    private Boolean isHcxEnterpriseEnabled;
+    private @Nullable Boolean isHcxEnterpriseEnabled;
     /**
      * @return Indicates whether SDDC is pending downgrade from HCX Enterprise to HCX Advanced.
      * 
      */
-    private Boolean isHcxPendingDowngrade;
+    private @Nullable Boolean isHcxPendingDowngrade;
     /**
      * @return (**Deprecated**) Indicates whether shielded instance is enabled at the SDDC level.
      * 
@@ -199,12 +201,12 @@ public final class GetSddcsSddcCollection {
      * 
      */
     @Deprecated /* The 'is_shielded_instance_enabled' field has been deprecated. Please use 'initial_configuration' instead. */
-    private Boolean isShieldedInstanceEnabled;
+    private @Nullable Boolean isShieldedInstanceEnabled;
     /**
      * @return Indicates whether this SDDC is designated for only single ESXi host.
      * 
      */
-    private Boolean isSingleHostSddc;
+    private @Nullable Boolean isSingleHostSddc;
     /**
      * @return (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX Edge Uplink 1 component of the VMware environment.
      * 
@@ -213,7 +215,7 @@ public final class GetSddcsSddcCollection {
      * 
      */
     @Deprecated /* The 'nsx_edge_uplink1vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
-    private String nsxEdgeUplink1vlanId;
+    private @Nullable String nsxEdgeUplink1vlanId;
     /**
      * @return (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX Edge Uplink 2 component of the VMware environment.
      * 
@@ -222,12 +224,12 @@ public final class GetSddcsSddcCollection {
      * 
      */
     @Deprecated /* The 'nsx_edge_uplink2vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
-    private String nsxEdgeUplink2vlanId;
+    private @Nullable String nsxEdgeUplink2vlanId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for the NSX Edge Uplink. Use this OCID as the route target for route table rules when setting up connectivity between the SDDC and other networks. For information about `PrivateIp` objects, see the Core Services API.
      * 
      */
-    private String nsxEdgeUplinkIpId;
+    private @Nullable String nsxEdgeUplinkIpId;
     /**
      * @return (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX Edge VTEP component of the VMware environment.
      * 
@@ -236,12 +238,12 @@ public final class GetSddcsSddcCollection {
      * 
      */
     @Deprecated /* The 'nsx_edge_vtep_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
-    private String nsxEdgeVtepVlanId;
+    private @Nullable String nsxEdgeVtepVlanId;
     /**
      * @return The FQDN for NSX Manager.  Example: `nsx-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
      * 
      */
-    private String nsxManagerFqdn;
+    private @Nullable String nsxManagerFqdn;
     /**
      * @return (**Deprecated**) The SDDC includes an administrator username and initial password for NSX Manager. Make sure to change this initial NSX Manager password to a different value.
      * 
@@ -250,17 +252,17 @@ public final class GetSddcsSddcCollection {
      * 
      */
     @Deprecated /* The 'nsx_manager_initial_password' field has been deprecated. Please use the 'ocvp_sddc_password' data source instead. */
-    private String nsxManagerInitialPassword;
+    private @Nullable String nsxManagerInitialPassword;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for NSX Manager. For information about `PrivateIp` objects, see the Core Services API.
      * 
      */
-    private String nsxManagerPrivateIpId;
+    private @Nullable String nsxManagerPrivateIpId;
     /**
      * @return The SDDC includes an administrator username and initial password for NSX Manager. You can change this initial username to a different value in NSX Manager.
      * 
      */
-    private String nsxManagerUsername;
+    private @Nullable String nsxManagerUsername;
     /**
      * @return (**Deprecated**) The VMware NSX overlay workload segment to host your application. Connect to workload portgroup in vCenter to access this overlay segment.
      * 
@@ -269,7 +271,7 @@ public final class GetSddcsSddcCollection {
      * 
      */
     @Deprecated /* The 'nsx_overlay_segment_name' field has been deprecated and may be removed in a future version. Do not use this field. */
-    private String nsxOverlaySegmentName;
+    private @Nullable String nsxOverlaySegmentName;
     /**
      * @return (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX VTEP component of the VMware environment.
      * 
@@ -278,7 +280,7 @@ public final class GetSddcsSddcCollection {
      * 
      */
     @Deprecated /* The 'nsx_vtep_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
-    private String nsxVtepVlanId;
+    private @Nullable String nsxVtepVlanId;
     /**
      * @return (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet used to provision the SDDC.
      * 
@@ -287,7 +289,7 @@ public final class GetSddcsSddcCollection {
      * 
      */
     @Deprecated /* The 'provisioning_subnet_id' field has been deprecated. Please use 'initial_configuration' instead. */
-    private String provisioningSubnetId;
+    private @Nullable String provisioningSubnetId;
     /**
      * @return (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the Provisioning component of the VMware environment.
      * 
@@ -296,8 +298,8 @@ public final class GetSddcsSddcCollection {
      * 
      */
     @Deprecated /* The 'provisioning_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
-    private String provisioningVlanId;
-    private Boolean refreshHcxLicenseStatus;
+    private @Nullable String provisioningVlanId;
+    private @Nullable Boolean refreshHcxLicenseStatus;
     /**
      * @return (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere Replication component of the VMware environment.
      * 
@@ -306,38 +308,38 @@ public final class GetSddcsSddcCollection {
      * 
      */
     @Deprecated /* The 'replication_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
-    private String replicationVlanId;
-    private List<String> reservingHcxOnPremiseLicenseKeys;
+    private @Nullable String replicationVlanId;
+    private @Nullable List<String> reservingHcxOnPremiseLicenseKeys;
     /**
      * @return One or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on each ESXi host. Use a newline character to separate multiple keys. The SSH keys must be in the format required for the `authorized_keys` file.
      * 
      */
-    private String sshAuthorizedKeys;
+    private @Nullable String sshAuthorizedKeys;
     /**
      * @return The lifecycle state of the resource.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The date and time the SDDC was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The date and time current HCX Enterprise billing cycle ends, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private String timeHcxBillingCycleEnd;
+    private @Nullable String timeHcxBillingCycleEnd;
     /**
      * @return The date and time the SDDC&#39;s HCX on-premise license status was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private String timeHcxLicenseStatusUpdated;
+    private @Nullable String timeHcxLicenseStatusUpdated;
     /**
      * @return The date and time the SDDC was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
     /**
      * @return (**Deprecated**) The vSphere licenses to use when upgrading the SDDC.
      * 
@@ -346,12 +348,12 @@ public final class GetSddcsSddcCollection {
      * 
      */
     @Deprecated /* The 'upgrade_licenses' field has been deprecated. Please use the 'ocvp_cluster_resource' resource instead. */
-    private List<GetSddcsSddcCollectionUpgradeLicense> upgradeLicenses;
+    private @Nullable List<GetSddcsSddcCollectionUpgradeLicense> upgradeLicenses;
     /**
      * @return The FQDN for vCenter.  Example: `vcenter-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
      * 
      */
-    private String vcenterFqdn;
+    private @Nullable String vcenterFqdn;
     /**
      * @return (**Deprecated**) The SDDC includes an administrator username and initial password for vCenter. Make sure to change this initial vCenter password to a different value.
      * 
@@ -360,17 +362,17 @@ public final class GetSddcsSddcCollection {
      * 
      */
     @Deprecated /* The 'vcenter_initial_password' field has been deprecated. Please use the 'ocvp_sddc_password' data source instead. */
-    private String vcenterInitialPassword;
+    private @Nullable String vcenterInitialPassword;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for vCenter. For information about `PrivateIp` objects, see the Core Services API.
      * 
      */
-    private String vcenterPrivateIpId;
+    private @Nullable String vcenterPrivateIpId;
     /**
      * @return The SDDC includes an administrator username and initial password for vCenter. You can change this initial username to a different value in vCenter.
      * 
      */
-    private String vcenterUsername;
+    private @Nullable String vcenterUsername;
     /**
      * @return (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vMotion component of the VMware environment.
      * 
@@ -379,12 +381,12 @@ public final class GetSddcsSddcCollection {
      * 
      */
     @Deprecated /* The 'vmotion_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
-    private String vmotionVlanId;
+    private @Nullable String vmotionVlanId;
     /**
      * @return In general, this is a specific version of bundled VMware software supported by Oracle Cloud VMware Solution (see [ListSupportedVmwareSoftwareVersions](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedVmwareSoftwareVersionSummary/ListSupportedVmwareSoftwareVersions)).
      * 
      */
-    private String vmwareSoftwareVersion;
+    private @Nullable String vmwareSoftwareVersion;
     /**
      * @return (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSAN component of the VMware environment.
      * 
@@ -393,7 +395,7 @@ public final class GetSddcsSddcCollection {
      * 
      */
     @Deprecated /* The 'vsan_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
-    private String vsanVlanId;
+    private @Nullable String vsanVlanId;
     /**
      * @return (**Deprecated**) The link to guidance for upgrading vSphere.
      * 
@@ -402,7 +404,7 @@ public final class GetSddcsSddcCollection {
      * 
      */
     @Deprecated /* The 'vsphere_upgrade_guide' field has been deprecated and may be removed in a future version. Do not use this field. */
-    private String vsphereUpgradeGuide;
+    private @Nullable String vsphereUpgradeGuide;
     /**
      * @return (**Deprecated**) The links to binary objects needed to upgrade vSphere.
      * 
@@ -411,7 +413,7 @@ public final class GetSddcsSddcCollection {
      * 
      */
     @Deprecated /* The 'upgrade_licenses' field has been deprecated. Please use the 'ocvp_cluster_resource' resource instead. */
-    private List<GetSddcsSddcCollectionVsphereUpgradeObject> vsphereUpgradeObjects;
+    private @Nullable List<GetSddcsSddcCollectionVsphereUpgradeObject> vsphereUpgradeObjects;
     /**
      * @return (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere component of the VMware environment.
      * 
@@ -420,7 +422,7 @@ public final class GetSddcsSddcCollection {
      * 
      */
     @Deprecated /* The 'vsphere_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
-    private String vsphereVlanId;
+    private @Nullable String vsphereVlanId;
     /**
      * @return (**Deprecated**) The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads.
      * 
@@ -429,7 +431,7 @@ public final class GetSddcsSddcCollection {
      * 
      */
     @Deprecated /* The 'workload_network_cidr' field has been deprecated. Please use 'initial_configuration' instead. */
-    private String workloadNetworkCidr;
+    private @Nullable String workloadNetworkCidr;
 
     private GetSddcsSddcCollection() {}
     /**
@@ -440,8 +442,8 @@ public final class GetSddcsSddcCollection {
      * 
      */
     @Deprecated /* The 'actual_esxi_hosts_count' field has been deprecated. Please use 'initial_configuration' instead. */
-    public Integer actualEsxiHostsCount() {
-        return this.actualEsxiHostsCount;
+    public Optional<Integer> actualEsxiHostsCount() {
+        return Optional.ofNullable(this.actualEsxiHostsCount);
     }
     /**
      * @return (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
@@ -451,15 +453,15 @@ public final class GetSddcsSddcCollection {
      * 
      */
     @Deprecated /* The 'capacity_reservation_id' field has been deprecated. Please use 'initial_configuration' instead. */
-    public String capacityReservationId() {
-        return this.capacityReservationId;
+    public Optional<String> capacityReservationId() {
+        return Optional.ofNullable(this.capacityReservationId);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The name of the availability domain that the Compute instances are running in.  Example: `Uocm:PHX-AD-1`
@@ -469,8 +471,8 @@ public final class GetSddcsSddcCollection {
      * 
      */
     @Deprecated /* The 'compute_availability_domain' field has been deprecated. Please use 'initial_configuration' instead. */
-    public String computeAvailabilityDomain() {
-        return this.computeAvailabilityDomain;
+    public Optional<String> computeAvailabilityDomain() {
+        return Optional.ofNullable(this.computeAvailabilityDomain);
     }
     /**
      * @return (**Deprecated**) Datastores used for the Sddc.
@@ -481,21 +483,21 @@ public final class GetSddcsSddcCollection {
      */
     @Deprecated /* The 'datastores' field has been deprecated. Please use 'initial_configuration' instead. */
     public List<GetSddcsSddcCollectionDatastore> datastores() {
-        return this.datastores;
+        return this.datastores == null ? List.of() : this.datastores;
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return A filter to return only resources that match the given display name exactly.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return (**Deprecated**) The number of ESXi hosts in the SDDC.
@@ -505,25 +507,25 @@ public final class GetSddcsSddcCollection {
      * 
      */
     @Deprecated /* The 'esxi_hosts_count' field has been deprecated. Please use 'initial_configuration' instead. */
-    public Integer esxiHostsCount() {
-        return this.esxiHostsCount;
+    public Optional<Integer> esxiHostsCount() {
+        return Optional.ofNullable(this.esxiHostsCount);
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
-    public String hcxAction() {
-        return this.hcxAction;
+    public Optional<String> hcxAction() {
+        return Optional.ofNullable(this.hcxAction);
     }
     /**
      * @return The FQDN for HCX Manager.  Example: `hcx-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
      * 
      */
-    public String hcxFqdn() {
-        return this.hcxFqdn;
+    public Optional<String> hcxFqdn() {
+        return Optional.ofNullable(this.hcxFqdn);
     }
     /**
      * @return (**Deprecated**) The SDDC includes an administrator username and initial password for HCX Manager. Make sure to change this initial HCX Manager password to a different value.
@@ -533,8 +535,8 @@ public final class GetSddcsSddcCollection {
      * 
      */
     @Deprecated /* The 'hcx_initial_password' field has been deprecated. Please use the 'ocvp_sddc_password' data source instead. */
-    public String hcxInitialPassword() {
-        return this.hcxInitialPassword;
+    public Optional<String> hcxInitialPassword() {
+        return Optional.ofNullable(this.hcxInitialPassword);
     }
     /**
      * @return (**Deprecated**) The activation keys to use on the on-premises HCX Enterprise appliances you site pair with HCX Manager in your VMware Solution. The number of keys provided depends on the HCX license type. HCX Advanced provides 3 activation keys. HCX Enterprise provides 10 activation keys.
@@ -544,22 +546,22 @@ public final class GetSddcsSddcCollection {
      * 
      */
     @Deprecated /* The 'hcx_on_prem_key' field has been deprecated and may be removed in a future version. Do not use this field. */
-    public String hcxOnPremKey() {
-        return this.hcxOnPremKey;
+    public Optional<String> hcxOnPremKey() {
+        return Optional.ofNullable(this.hcxOnPremKey);
     }
     /**
      * @return The activation licenses to use on the on-premises HCX Enterprise appliance you site pair with HCX Manager in your VMware Solution.
      * 
      */
     public List<GetSddcsSddcCollectionHcxOnPremLicense> hcxOnPremLicenses() {
-        return this.hcxOnPremLicenses;
+        return this.hcxOnPremLicenses == null ? List.of() : this.hcxOnPremLicenses;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for HCX Manager. For information about `PrivateIp` objects, see the Core Services API.
      * 
      */
-    public String hcxPrivateIpId() {
-        return this.hcxPrivateIpId;
+    public Optional<String> hcxPrivateIpId() {
+        return Optional.ofNullable(this.hcxPrivateIpId);
     }
     /**
      * @return (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the HCX component of the VMware environment.
@@ -569,15 +571,15 @@ public final class GetSddcsSddcCollection {
      * 
      */
     @Deprecated /* The 'hcx_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
-    public String hcxVlanId() {
-        return this.hcxVlanId;
+    public Optional<String> hcxVlanId() {
+        return Optional.ofNullable(this.hcxVlanId);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return (**Deprecated**) The initial OCPU count of the SDDC&#39;s ESXi hosts.
@@ -587,8 +589,8 @@ public final class GetSddcsSddcCollection {
      * 
      */
     @Deprecated /* The 'initial_host_ocpu_count' field has been deprecated. Please use 'initial_configuration' instead. */
-    public Double initialHostOcpuCount() {
-        return this.initialHostOcpuCount;
+    public Optional<Double> initialHostOcpuCount() {
+        return Optional.ofNullable(this.initialHostOcpuCount);
     }
     /**
      * @return (**Deprecated**) The initial compute shape of the SDDC&#39;s ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
@@ -598,8 +600,8 @@ public final class GetSddcsSddcCollection {
      * 
      */
     @Deprecated /* The 'initial_host_shape_name' field has been deprecated. Please use 'initial_configuration' instead. */
-    public String initialHostShapeName() {
-        return this.initialHostShapeName;
+    public Optional<String> initialHostShapeName() {
+        return Optional.ofNullable(this.initialHostShapeName);
     }
     /**
      * @return (**Deprecated**) The billing option selected during SDDC creation. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
@@ -609,8 +611,8 @@ public final class GetSddcsSddcCollection {
      * 
      */
     @Deprecated /* The 'initial_sku' field has been deprecated. Please use 'initial_configuration' instead. */
-    public String initialSku() {
-        return this.initialSku;
+    public Optional<String> initialSku() {
+        return Optional.ofNullable(this.initialSku);
     }
     /**
      * @return (**Deprecated**) A prefix used in the name of each ESXi host and Compute instance in the SDDC. If this isn&#39;t set, the SDDC&#39;s `displayName` is used as the prefix.
@@ -620,8 +622,8 @@ public final class GetSddcsSddcCollection {
      * 
      */
     @Deprecated /* The 'instance_display_name_prefix' field has been deprecated. Please use 'initial_configuration' instead. */
-    public String instanceDisplayNamePrefix() {
-        return this.instanceDisplayNamePrefix;
+    public Optional<String> instanceDisplayNamePrefix() {
+        return Optional.ofNullable(this.instanceDisplayNamePrefix);
     }
     /**
      * @return (**Deprecated**) Indicates whether HCX is enabled for this SDDC.
@@ -631,8 +633,8 @@ public final class GetSddcsSddcCollection {
      * 
      */
     @Deprecated /* The 'is_hcx_enabled' field has been deprecated. Please use 'hcx_mode' instead. */
-    public Boolean isHcxEnabled() {
-        return this.isHcxEnabled;
+    public Optional<Boolean> isHcxEnabled() {
+        return Optional.ofNullable(this.isHcxEnabled);
     }
     /**
      * @return (**Deprecated**) Indicates whether HCX Enterprise is enabled for this SDDC.
@@ -642,15 +644,15 @@ public final class GetSddcsSddcCollection {
      * 
      */
     @Deprecated /* The 'is_hcx_enabled' field has been deprecated. Please use 'actual_hcx_mode' instead. */
-    public Boolean isHcxEnterpriseEnabled() {
-        return this.isHcxEnterpriseEnabled;
+    public Optional<Boolean> isHcxEnterpriseEnabled() {
+        return Optional.ofNullable(this.isHcxEnterpriseEnabled);
     }
     /**
      * @return Indicates whether SDDC is pending downgrade from HCX Enterprise to HCX Advanced.
      * 
      */
-    public Boolean isHcxPendingDowngrade() {
-        return this.isHcxPendingDowngrade;
+    public Optional<Boolean> isHcxPendingDowngrade() {
+        return Optional.ofNullable(this.isHcxPendingDowngrade);
     }
     /**
      * @return (**Deprecated**) Indicates whether shielded instance is enabled at the SDDC level.
@@ -660,15 +662,15 @@ public final class GetSddcsSddcCollection {
      * 
      */
     @Deprecated /* The 'is_shielded_instance_enabled' field has been deprecated. Please use 'initial_configuration' instead. */
-    public Boolean isShieldedInstanceEnabled() {
-        return this.isShieldedInstanceEnabled;
+    public Optional<Boolean> isShieldedInstanceEnabled() {
+        return Optional.ofNullable(this.isShieldedInstanceEnabled);
     }
     /**
      * @return Indicates whether this SDDC is designated for only single ESXi host.
      * 
      */
-    public Boolean isSingleHostSddc() {
-        return this.isSingleHostSddc;
+    public Optional<Boolean> isSingleHostSddc() {
+        return Optional.ofNullable(this.isSingleHostSddc);
     }
     /**
      * @return (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX Edge Uplink 1 component of the VMware environment.
@@ -678,8 +680,8 @@ public final class GetSddcsSddcCollection {
      * 
      */
     @Deprecated /* The 'nsx_edge_uplink1vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
-    public String nsxEdgeUplink1vlanId() {
-        return this.nsxEdgeUplink1vlanId;
+    public Optional<String> nsxEdgeUplink1vlanId() {
+        return Optional.ofNullable(this.nsxEdgeUplink1vlanId);
     }
     /**
      * @return (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX Edge Uplink 2 component of the VMware environment.
@@ -689,15 +691,15 @@ public final class GetSddcsSddcCollection {
      * 
      */
     @Deprecated /* The 'nsx_edge_uplink2vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
-    public String nsxEdgeUplink2vlanId() {
-        return this.nsxEdgeUplink2vlanId;
+    public Optional<String> nsxEdgeUplink2vlanId() {
+        return Optional.ofNullable(this.nsxEdgeUplink2vlanId);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for the NSX Edge Uplink. Use this OCID as the route target for route table rules when setting up connectivity between the SDDC and other networks. For information about `PrivateIp` objects, see the Core Services API.
      * 
      */
-    public String nsxEdgeUplinkIpId() {
-        return this.nsxEdgeUplinkIpId;
+    public Optional<String> nsxEdgeUplinkIpId() {
+        return Optional.ofNullable(this.nsxEdgeUplinkIpId);
     }
     /**
      * @return (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX Edge VTEP component of the VMware environment.
@@ -707,15 +709,15 @@ public final class GetSddcsSddcCollection {
      * 
      */
     @Deprecated /* The 'nsx_edge_vtep_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
-    public String nsxEdgeVtepVlanId() {
-        return this.nsxEdgeVtepVlanId;
+    public Optional<String> nsxEdgeVtepVlanId() {
+        return Optional.ofNullable(this.nsxEdgeVtepVlanId);
     }
     /**
      * @return The FQDN for NSX Manager.  Example: `nsx-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
      * 
      */
-    public String nsxManagerFqdn() {
-        return this.nsxManagerFqdn;
+    public Optional<String> nsxManagerFqdn() {
+        return Optional.ofNullable(this.nsxManagerFqdn);
     }
     /**
      * @return (**Deprecated**) The SDDC includes an administrator username and initial password for NSX Manager. Make sure to change this initial NSX Manager password to a different value.
@@ -725,22 +727,22 @@ public final class GetSddcsSddcCollection {
      * 
      */
     @Deprecated /* The 'nsx_manager_initial_password' field has been deprecated. Please use the 'ocvp_sddc_password' data source instead. */
-    public String nsxManagerInitialPassword() {
-        return this.nsxManagerInitialPassword;
+    public Optional<String> nsxManagerInitialPassword() {
+        return Optional.ofNullable(this.nsxManagerInitialPassword);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for NSX Manager. For information about `PrivateIp` objects, see the Core Services API.
      * 
      */
-    public String nsxManagerPrivateIpId() {
-        return this.nsxManagerPrivateIpId;
+    public Optional<String> nsxManagerPrivateIpId() {
+        return Optional.ofNullable(this.nsxManagerPrivateIpId);
     }
     /**
      * @return The SDDC includes an administrator username and initial password for NSX Manager. You can change this initial username to a different value in NSX Manager.
      * 
      */
-    public String nsxManagerUsername() {
-        return this.nsxManagerUsername;
+    public Optional<String> nsxManagerUsername() {
+        return Optional.ofNullable(this.nsxManagerUsername);
     }
     /**
      * @return (**Deprecated**) The VMware NSX overlay workload segment to host your application. Connect to workload portgroup in vCenter to access this overlay segment.
@@ -750,8 +752,8 @@ public final class GetSddcsSddcCollection {
      * 
      */
     @Deprecated /* The 'nsx_overlay_segment_name' field has been deprecated and may be removed in a future version. Do not use this field. */
-    public String nsxOverlaySegmentName() {
-        return this.nsxOverlaySegmentName;
+    public Optional<String> nsxOverlaySegmentName() {
+        return Optional.ofNullable(this.nsxOverlaySegmentName);
     }
     /**
      * @return (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX VTEP component of the VMware environment.
@@ -761,8 +763,8 @@ public final class GetSddcsSddcCollection {
      * 
      */
     @Deprecated /* The 'nsx_vtep_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
-    public String nsxVtepVlanId() {
-        return this.nsxVtepVlanId;
+    public Optional<String> nsxVtepVlanId() {
+        return Optional.ofNullable(this.nsxVtepVlanId);
     }
     /**
      * @return (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet used to provision the SDDC.
@@ -772,8 +774,8 @@ public final class GetSddcsSddcCollection {
      * 
      */
     @Deprecated /* The 'provisioning_subnet_id' field has been deprecated. Please use 'initial_configuration' instead. */
-    public String provisioningSubnetId() {
-        return this.provisioningSubnetId;
+    public Optional<String> provisioningSubnetId() {
+        return Optional.ofNullable(this.provisioningSubnetId);
     }
     /**
      * @return (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the Provisioning component of the VMware environment.
@@ -783,11 +785,11 @@ public final class GetSddcsSddcCollection {
      * 
      */
     @Deprecated /* The 'provisioning_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
-    public String provisioningVlanId() {
-        return this.provisioningVlanId;
+    public Optional<String> provisioningVlanId() {
+        return Optional.ofNullable(this.provisioningVlanId);
     }
-    public Boolean refreshHcxLicenseStatus() {
-        return this.refreshHcxLicenseStatus;
+    public Optional<Boolean> refreshHcxLicenseStatus() {
+        return Optional.ofNullable(this.refreshHcxLicenseStatus);
     }
     /**
      * @return (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere Replication component of the VMware environment.
@@ -797,53 +799,53 @@ public final class GetSddcsSddcCollection {
      * 
      */
     @Deprecated /* The 'replication_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
-    public String replicationVlanId() {
-        return this.replicationVlanId;
+    public Optional<String> replicationVlanId() {
+        return Optional.ofNullable(this.replicationVlanId);
     }
     public List<String> reservingHcxOnPremiseLicenseKeys() {
-        return this.reservingHcxOnPremiseLicenseKeys;
+        return this.reservingHcxOnPremiseLicenseKeys == null ? List.of() : this.reservingHcxOnPremiseLicenseKeys;
     }
     /**
      * @return One or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on each ESXi host. Use a newline character to separate multiple keys. The SSH keys must be in the format required for the `authorized_keys` file.
      * 
      */
-    public String sshAuthorizedKeys() {
-        return this.sshAuthorizedKeys;
+    public Optional<String> sshAuthorizedKeys() {
+        return Optional.ofNullable(this.sshAuthorizedKeys);
     }
     /**
      * @return The lifecycle state of the resource.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The date and time the SDDC was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The date and time current HCX Enterprise billing cycle ends, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public String timeHcxBillingCycleEnd() {
-        return this.timeHcxBillingCycleEnd;
+    public Optional<String> timeHcxBillingCycleEnd() {
+        return Optional.ofNullable(this.timeHcxBillingCycleEnd);
     }
     /**
      * @return The date and time the SDDC&#39;s HCX on-premise license status was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public String timeHcxLicenseStatusUpdated() {
-        return this.timeHcxLicenseStatusUpdated;
+    public Optional<String> timeHcxLicenseStatusUpdated() {
+        return Optional.ofNullable(this.timeHcxLicenseStatusUpdated);
     }
     /**
      * @return The date and time the SDDC was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
     /**
      * @return (**Deprecated**) The vSphere licenses to use when upgrading the SDDC.
@@ -854,14 +856,14 @@ public final class GetSddcsSddcCollection {
      */
     @Deprecated /* The 'upgrade_licenses' field has been deprecated. Please use the 'ocvp_cluster_resource' resource instead. */
     public List<GetSddcsSddcCollectionUpgradeLicense> upgradeLicenses() {
-        return this.upgradeLicenses;
+        return this.upgradeLicenses == null ? List.of() : this.upgradeLicenses;
     }
     /**
      * @return The FQDN for vCenter.  Example: `vcenter-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
      * 
      */
-    public String vcenterFqdn() {
-        return this.vcenterFqdn;
+    public Optional<String> vcenterFqdn() {
+        return Optional.ofNullable(this.vcenterFqdn);
     }
     /**
      * @return (**Deprecated**) The SDDC includes an administrator username and initial password for vCenter. Make sure to change this initial vCenter password to a different value.
@@ -871,22 +873,22 @@ public final class GetSddcsSddcCollection {
      * 
      */
     @Deprecated /* The 'vcenter_initial_password' field has been deprecated. Please use the 'ocvp_sddc_password' data source instead. */
-    public String vcenterInitialPassword() {
-        return this.vcenterInitialPassword;
+    public Optional<String> vcenterInitialPassword() {
+        return Optional.ofNullable(this.vcenterInitialPassword);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for vCenter. For information about `PrivateIp` objects, see the Core Services API.
      * 
      */
-    public String vcenterPrivateIpId() {
-        return this.vcenterPrivateIpId;
+    public Optional<String> vcenterPrivateIpId() {
+        return Optional.ofNullable(this.vcenterPrivateIpId);
     }
     /**
      * @return The SDDC includes an administrator username and initial password for vCenter. You can change this initial username to a different value in vCenter.
      * 
      */
-    public String vcenterUsername() {
-        return this.vcenterUsername;
+    public Optional<String> vcenterUsername() {
+        return Optional.ofNullable(this.vcenterUsername);
     }
     /**
      * @return (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vMotion component of the VMware environment.
@@ -896,15 +898,15 @@ public final class GetSddcsSddcCollection {
      * 
      */
     @Deprecated /* The 'vmotion_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
-    public String vmotionVlanId() {
-        return this.vmotionVlanId;
+    public Optional<String> vmotionVlanId() {
+        return Optional.ofNullable(this.vmotionVlanId);
     }
     /**
      * @return In general, this is a specific version of bundled VMware software supported by Oracle Cloud VMware Solution (see [ListSupportedVmwareSoftwareVersions](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedVmwareSoftwareVersionSummary/ListSupportedVmwareSoftwareVersions)).
      * 
      */
-    public String vmwareSoftwareVersion() {
-        return this.vmwareSoftwareVersion;
+    public Optional<String> vmwareSoftwareVersion() {
+        return Optional.ofNullable(this.vmwareSoftwareVersion);
     }
     /**
      * @return (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSAN component of the VMware environment.
@@ -914,8 +916,8 @@ public final class GetSddcsSddcCollection {
      * 
      */
     @Deprecated /* The 'vsan_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
-    public String vsanVlanId() {
-        return this.vsanVlanId;
+    public Optional<String> vsanVlanId() {
+        return Optional.ofNullable(this.vsanVlanId);
     }
     /**
      * @return (**Deprecated**) The link to guidance for upgrading vSphere.
@@ -925,8 +927,8 @@ public final class GetSddcsSddcCollection {
      * 
      */
     @Deprecated /* The 'vsphere_upgrade_guide' field has been deprecated and may be removed in a future version. Do not use this field. */
-    public String vsphereUpgradeGuide() {
-        return this.vsphereUpgradeGuide;
+    public Optional<String> vsphereUpgradeGuide() {
+        return Optional.ofNullable(this.vsphereUpgradeGuide);
     }
     /**
      * @return (**Deprecated**) The links to binary objects needed to upgrade vSphere.
@@ -937,7 +939,7 @@ public final class GetSddcsSddcCollection {
      */
     @Deprecated /* The 'upgrade_licenses' field has been deprecated. Please use the 'ocvp_cluster_resource' resource instead. */
     public List<GetSddcsSddcCollectionVsphereUpgradeObject> vsphereUpgradeObjects() {
-        return this.vsphereUpgradeObjects;
+        return this.vsphereUpgradeObjects == null ? List.of() : this.vsphereUpgradeObjects;
     }
     /**
      * @return (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere component of the VMware environment.
@@ -947,8 +949,8 @@ public final class GetSddcsSddcCollection {
      * 
      */
     @Deprecated /* The 'vsphere_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
-    public String vsphereVlanId() {
-        return this.vsphereVlanId;
+    public Optional<String> vsphereVlanId() {
+        return Optional.ofNullable(this.vsphereVlanId);
     }
     /**
      * @return (**Deprecated**) The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads.
@@ -958,8 +960,8 @@ public final class GetSddcsSddcCollection {
      * 
      */
     @Deprecated /* The 'workload_network_cidr' field has been deprecated. Please use 'initial_configuration' instead. */
-    public String workloadNetworkCidr() {
-        return this.workloadNetworkCidr;
+    public Optional<String> workloadNetworkCidr() {
+        return Optional.ofNullable(this.workloadNetworkCidr);
     }
 
     public static Builder builder() {
@@ -971,65 +973,65 @@ public final class GetSddcsSddcCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer actualEsxiHostsCount;
-        private String capacityReservationId;
-        private String compartmentId;
-        private String computeAvailabilityDomain;
-        private List<GetSddcsSddcCollectionDatastore> datastores;
-        private Map<String,Object> definedTags;
-        private String displayName;
-        private Integer esxiHostsCount;
-        private Map<String,Object> freeformTags;
-        private String hcxAction;
-        private String hcxFqdn;
-        private String hcxInitialPassword;
-        private String hcxOnPremKey;
-        private List<GetSddcsSddcCollectionHcxOnPremLicense> hcxOnPremLicenses;
-        private String hcxPrivateIpId;
-        private String hcxVlanId;
-        private String id;
-        private Double initialHostOcpuCount;
-        private String initialHostShapeName;
-        private String initialSku;
-        private String instanceDisplayNamePrefix;
-        private Boolean isHcxEnabled;
-        private Boolean isHcxEnterpriseEnabled;
-        private Boolean isHcxPendingDowngrade;
-        private Boolean isShieldedInstanceEnabled;
-        private Boolean isSingleHostSddc;
-        private String nsxEdgeUplink1vlanId;
-        private String nsxEdgeUplink2vlanId;
-        private String nsxEdgeUplinkIpId;
-        private String nsxEdgeVtepVlanId;
-        private String nsxManagerFqdn;
-        private String nsxManagerInitialPassword;
-        private String nsxManagerPrivateIpId;
-        private String nsxManagerUsername;
-        private String nsxOverlaySegmentName;
-        private String nsxVtepVlanId;
-        private String provisioningSubnetId;
-        private String provisioningVlanId;
-        private Boolean refreshHcxLicenseStatus;
-        private String replicationVlanId;
-        private List<String> reservingHcxOnPremiseLicenseKeys;
-        private String sshAuthorizedKeys;
-        private String state;
-        private String timeCreated;
-        private String timeHcxBillingCycleEnd;
-        private String timeHcxLicenseStatusUpdated;
-        private String timeUpdated;
-        private List<GetSddcsSddcCollectionUpgradeLicense> upgradeLicenses;
-        private String vcenterFqdn;
-        private String vcenterInitialPassword;
-        private String vcenterPrivateIpId;
-        private String vcenterUsername;
-        private String vmotionVlanId;
-        private String vmwareSoftwareVersion;
-        private String vsanVlanId;
-        private String vsphereUpgradeGuide;
-        private List<GetSddcsSddcCollectionVsphereUpgradeObject> vsphereUpgradeObjects;
-        private String vsphereVlanId;
-        private String workloadNetworkCidr;
+        private @Nullable Integer actualEsxiHostsCount;
+        private @Nullable String capacityReservationId;
+        private @Nullable String compartmentId;
+        private @Nullable String computeAvailabilityDomain;
+        private @Nullable List<GetSddcsSddcCollectionDatastore> datastores;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String displayName;
+        private @Nullable Integer esxiHostsCount;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String hcxAction;
+        private @Nullable String hcxFqdn;
+        private @Nullable String hcxInitialPassword;
+        private @Nullable String hcxOnPremKey;
+        private @Nullable List<GetSddcsSddcCollectionHcxOnPremLicense> hcxOnPremLicenses;
+        private @Nullable String hcxPrivateIpId;
+        private @Nullable String hcxVlanId;
+        private @Nullable String id;
+        private @Nullable Double initialHostOcpuCount;
+        private @Nullable String initialHostShapeName;
+        private @Nullable String initialSku;
+        private @Nullable String instanceDisplayNamePrefix;
+        private @Nullable Boolean isHcxEnabled;
+        private @Nullable Boolean isHcxEnterpriseEnabled;
+        private @Nullable Boolean isHcxPendingDowngrade;
+        private @Nullable Boolean isShieldedInstanceEnabled;
+        private @Nullable Boolean isSingleHostSddc;
+        private @Nullable String nsxEdgeUplink1vlanId;
+        private @Nullable String nsxEdgeUplink2vlanId;
+        private @Nullable String nsxEdgeUplinkIpId;
+        private @Nullable String nsxEdgeVtepVlanId;
+        private @Nullable String nsxManagerFqdn;
+        private @Nullable String nsxManagerInitialPassword;
+        private @Nullable String nsxManagerPrivateIpId;
+        private @Nullable String nsxManagerUsername;
+        private @Nullable String nsxOverlaySegmentName;
+        private @Nullable String nsxVtepVlanId;
+        private @Nullable String provisioningSubnetId;
+        private @Nullable String provisioningVlanId;
+        private @Nullable Boolean refreshHcxLicenseStatus;
+        private @Nullable String replicationVlanId;
+        private @Nullable List<String> reservingHcxOnPremiseLicenseKeys;
+        private @Nullable String sshAuthorizedKeys;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
+        private @Nullable String timeHcxBillingCycleEnd;
+        private @Nullable String timeHcxLicenseStatusUpdated;
+        private @Nullable String timeUpdated;
+        private @Nullable List<GetSddcsSddcCollectionUpgradeLicense> upgradeLicenses;
+        private @Nullable String vcenterFqdn;
+        private @Nullable String vcenterInitialPassword;
+        private @Nullable String vcenterPrivateIpId;
+        private @Nullable String vcenterUsername;
+        private @Nullable String vmotionVlanId;
+        private @Nullable String vmwareSoftwareVersion;
+        private @Nullable String vsanVlanId;
+        private @Nullable String vsphereUpgradeGuide;
+        private @Nullable List<GetSddcsSddcCollectionVsphereUpgradeObject> vsphereUpgradeObjects;
+        private @Nullable String vsphereVlanId;
+        private @Nullable String workloadNetworkCidr;
         public Builder() {}
         public Builder(GetSddcsSddcCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -1095,313 +1097,313 @@ public final class GetSddcsSddcCollection {
         }
 
         @CustomType.Setter
-        public Builder actualEsxiHostsCount(Integer actualEsxiHostsCount) {
-            this.actualEsxiHostsCount = Objects.requireNonNull(actualEsxiHostsCount);
+        public Builder actualEsxiHostsCount(@Nullable Integer actualEsxiHostsCount) {
+            this.actualEsxiHostsCount = actualEsxiHostsCount;
             return this;
         }
         @CustomType.Setter
-        public Builder capacityReservationId(String capacityReservationId) {
-            this.capacityReservationId = Objects.requireNonNull(capacityReservationId);
+        public Builder capacityReservationId(@Nullable String capacityReservationId) {
+            this.capacityReservationId = capacityReservationId;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder computeAvailabilityDomain(String computeAvailabilityDomain) {
-            this.computeAvailabilityDomain = Objects.requireNonNull(computeAvailabilityDomain);
+        public Builder computeAvailabilityDomain(@Nullable String computeAvailabilityDomain) {
+            this.computeAvailabilityDomain = computeAvailabilityDomain;
             return this;
         }
         @CustomType.Setter
-        public Builder datastores(List<GetSddcsSddcCollectionDatastore> datastores) {
-            this.datastores = Objects.requireNonNull(datastores);
+        public Builder datastores(@Nullable List<GetSddcsSddcCollectionDatastore> datastores) {
+            this.datastores = datastores;
             return this;
         }
         public Builder datastores(GetSddcsSddcCollectionDatastore... datastores) {
             return datastores(List.of(datastores));
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder esxiHostsCount(Integer esxiHostsCount) {
-            this.esxiHostsCount = Objects.requireNonNull(esxiHostsCount);
+        public Builder esxiHostsCount(@Nullable Integer esxiHostsCount) {
+            this.esxiHostsCount = esxiHostsCount;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder hcxAction(String hcxAction) {
-            this.hcxAction = Objects.requireNonNull(hcxAction);
+        public Builder hcxAction(@Nullable String hcxAction) {
+            this.hcxAction = hcxAction;
             return this;
         }
         @CustomType.Setter
-        public Builder hcxFqdn(String hcxFqdn) {
-            this.hcxFqdn = Objects.requireNonNull(hcxFqdn);
+        public Builder hcxFqdn(@Nullable String hcxFqdn) {
+            this.hcxFqdn = hcxFqdn;
             return this;
         }
         @CustomType.Setter
-        public Builder hcxInitialPassword(String hcxInitialPassword) {
-            this.hcxInitialPassword = Objects.requireNonNull(hcxInitialPassword);
+        public Builder hcxInitialPassword(@Nullable String hcxInitialPassword) {
+            this.hcxInitialPassword = hcxInitialPassword;
             return this;
         }
         @CustomType.Setter
-        public Builder hcxOnPremKey(String hcxOnPremKey) {
-            this.hcxOnPremKey = Objects.requireNonNull(hcxOnPremKey);
+        public Builder hcxOnPremKey(@Nullable String hcxOnPremKey) {
+            this.hcxOnPremKey = hcxOnPremKey;
             return this;
         }
         @CustomType.Setter
-        public Builder hcxOnPremLicenses(List<GetSddcsSddcCollectionHcxOnPremLicense> hcxOnPremLicenses) {
-            this.hcxOnPremLicenses = Objects.requireNonNull(hcxOnPremLicenses);
+        public Builder hcxOnPremLicenses(@Nullable List<GetSddcsSddcCollectionHcxOnPremLicense> hcxOnPremLicenses) {
+            this.hcxOnPremLicenses = hcxOnPremLicenses;
             return this;
         }
         public Builder hcxOnPremLicenses(GetSddcsSddcCollectionHcxOnPremLicense... hcxOnPremLicenses) {
             return hcxOnPremLicenses(List.of(hcxOnPremLicenses));
         }
         @CustomType.Setter
-        public Builder hcxPrivateIpId(String hcxPrivateIpId) {
-            this.hcxPrivateIpId = Objects.requireNonNull(hcxPrivateIpId);
+        public Builder hcxPrivateIpId(@Nullable String hcxPrivateIpId) {
+            this.hcxPrivateIpId = hcxPrivateIpId;
             return this;
         }
         @CustomType.Setter
-        public Builder hcxVlanId(String hcxVlanId) {
-            this.hcxVlanId = Objects.requireNonNull(hcxVlanId);
+        public Builder hcxVlanId(@Nullable String hcxVlanId) {
+            this.hcxVlanId = hcxVlanId;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder initialHostOcpuCount(Double initialHostOcpuCount) {
-            this.initialHostOcpuCount = Objects.requireNonNull(initialHostOcpuCount);
+        public Builder initialHostOcpuCount(@Nullable Double initialHostOcpuCount) {
+            this.initialHostOcpuCount = initialHostOcpuCount;
             return this;
         }
         @CustomType.Setter
-        public Builder initialHostShapeName(String initialHostShapeName) {
-            this.initialHostShapeName = Objects.requireNonNull(initialHostShapeName);
+        public Builder initialHostShapeName(@Nullable String initialHostShapeName) {
+            this.initialHostShapeName = initialHostShapeName;
             return this;
         }
         @CustomType.Setter
-        public Builder initialSku(String initialSku) {
-            this.initialSku = Objects.requireNonNull(initialSku);
+        public Builder initialSku(@Nullable String initialSku) {
+            this.initialSku = initialSku;
             return this;
         }
         @CustomType.Setter
-        public Builder instanceDisplayNamePrefix(String instanceDisplayNamePrefix) {
-            this.instanceDisplayNamePrefix = Objects.requireNonNull(instanceDisplayNamePrefix);
+        public Builder instanceDisplayNamePrefix(@Nullable String instanceDisplayNamePrefix) {
+            this.instanceDisplayNamePrefix = instanceDisplayNamePrefix;
             return this;
         }
         @CustomType.Setter
-        public Builder isHcxEnabled(Boolean isHcxEnabled) {
-            this.isHcxEnabled = Objects.requireNonNull(isHcxEnabled);
+        public Builder isHcxEnabled(@Nullable Boolean isHcxEnabled) {
+            this.isHcxEnabled = isHcxEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder isHcxEnterpriseEnabled(Boolean isHcxEnterpriseEnabled) {
-            this.isHcxEnterpriseEnabled = Objects.requireNonNull(isHcxEnterpriseEnabled);
+        public Builder isHcxEnterpriseEnabled(@Nullable Boolean isHcxEnterpriseEnabled) {
+            this.isHcxEnterpriseEnabled = isHcxEnterpriseEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder isHcxPendingDowngrade(Boolean isHcxPendingDowngrade) {
-            this.isHcxPendingDowngrade = Objects.requireNonNull(isHcxPendingDowngrade);
+        public Builder isHcxPendingDowngrade(@Nullable Boolean isHcxPendingDowngrade) {
+            this.isHcxPendingDowngrade = isHcxPendingDowngrade;
             return this;
         }
         @CustomType.Setter
-        public Builder isShieldedInstanceEnabled(Boolean isShieldedInstanceEnabled) {
-            this.isShieldedInstanceEnabled = Objects.requireNonNull(isShieldedInstanceEnabled);
+        public Builder isShieldedInstanceEnabled(@Nullable Boolean isShieldedInstanceEnabled) {
+            this.isShieldedInstanceEnabled = isShieldedInstanceEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder isSingleHostSddc(Boolean isSingleHostSddc) {
-            this.isSingleHostSddc = Objects.requireNonNull(isSingleHostSddc);
+        public Builder isSingleHostSddc(@Nullable Boolean isSingleHostSddc) {
+            this.isSingleHostSddc = isSingleHostSddc;
             return this;
         }
         @CustomType.Setter
-        public Builder nsxEdgeUplink1vlanId(String nsxEdgeUplink1vlanId) {
-            this.nsxEdgeUplink1vlanId = Objects.requireNonNull(nsxEdgeUplink1vlanId);
+        public Builder nsxEdgeUplink1vlanId(@Nullable String nsxEdgeUplink1vlanId) {
+            this.nsxEdgeUplink1vlanId = nsxEdgeUplink1vlanId;
             return this;
         }
         @CustomType.Setter
-        public Builder nsxEdgeUplink2vlanId(String nsxEdgeUplink2vlanId) {
-            this.nsxEdgeUplink2vlanId = Objects.requireNonNull(nsxEdgeUplink2vlanId);
+        public Builder nsxEdgeUplink2vlanId(@Nullable String nsxEdgeUplink2vlanId) {
+            this.nsxEdgeUplink2vlanId = nsxEdgeUplink2vlanId;
             return this;
         }
         @CustomType.Setter
-        public Builder nsxEdgeUplinkIpId(String nsxEdgeUplinkIpId) {
-            this.nsxEdgeUplinkIpId = Objects.requireNonNull(nsxEdgeUplinkIpId);
+        public Builder nsxEdgeUplinkIpId(@Nullable String nsxEdgeUplinkIpId) {
+            this.nsxEdgeUplinkIpId = nsxEdgeUplinkIpId;
             return this;
         }
         @CustomType.Setter
-        public Builder nsxEdgeVtepVlanId(String nsxEdgeVtepVlanId) {
-            this.nsxEdgeVtepVlanId = Objects.requireNonNull(nsxEdgeVtepVlanId);
+        public Builder nsxEdgeVtepVlanId(@Nullable String nsxEdgeVtepVlanId) {
+            this.nsxEdgeVtepVlanId = nsxEdgeVtepVlanId;
             return this;
         }
         @CustomType.Setter
-        public Builder nsxManagerFqdn(String nsxManagerFqdn) {
-            this.nsxManagerFqdn = Objects.requireNonNull(nsxManagerFqdn);
+        public Builder nsxManagerFqdn(@Nullable String nsxManagerFqdn) {
+            this.nsxManagerFqdn = nsxManagerFqdn;
             return this;
         }
         @CustomType.Setter
-        public Builder nsxManagerInitialPassword(String nsxManagerInitialPassword) {
-            this.nsxManagerInitialPassword = Objects.requireNonNull(nsxManagerInitialPassword);
+        public Builder nsxManagerInitialPassword(@Nullable String nsxManagerInitialPassword) {
+            this.nsxManagerInitialPassword = nsxManagerInitialPassword;
             return this;
         }
         @CustomType.Setter
-        public Builder nsxManagerPrivateIpId(String nsxManagerPrivateIpId) {
-            this.nsxManagerPrivateIpId = Objects.requireNonNull(nsxManagerPrivateIpId);
+        public Builder nsxManagerPrivateIpId(@Nullable String nsxManagerPrivateIpId) {
+            this.nsxManagerPrivateIpId = nsxManagerPrivateIpId;
             return this;
         }
         @CustomType.Setter
-        public Builder nsxManagerUsername(String nsxManagerUsername) {
-            this.nsxManagerUsername = Objects.requireNonNull(nsxManagerUsername);
+        public Builder nsxManagerUsername(@Nullable String nsxManagerUsername) {
+            this.nsxManagerUsername = nsxManagerUsername;
             return this;
         }
         @CustomType.Setter
-        public Builder nsxOverlaySegmentName(String nsxOverlaySegmentName) {
-            this.nsxOverlaySegmentName = Objects.requireNonNull(nsxOverlaySegmentName);
+        public Builder nsxOverlaySegmentName(@Nullable String nsxOverlaySegmentName) {
+            this.nsxOverlaySegmentName = nsxOverlaySegmentName;
             return this;
         }
         @CustomType.Setter
-        public Builder nsxVtepVlanId(String nsxVtepVlanId) {
-            this.nsxVtepVlanId = Objects.requireNonNull(nsxVtepVlanId);
+        public Builder nsxVtepVlanId(@Nullable String nsxVtepVlanId) {
+            this.nsxVtepVlanId = nsxVtepVlanId;
             return this;
         }
         @CustomType.Setter
-        public Builder provisioningSubnetId(String provisioningSubnetId) {
-            this.provisioningSubnetId = Objects.requireNonNull(provisioningSubnetId);
+        public Builder provisioningSubnetId(@Nullable String provisioningSubnetId) {
+            this.provisioningSubnetId = provisioningSubnetId;
             return this;
         }
         @CustomType.Setter
-        public Builder provisioningVlanId(String provisioningVlanId) {
-            this.provisioningVlanId = Objects.requireNonNull(provisioningVlanId);
+        public Builder provisioningVlanId(@Nullable String provisioningVlanId) {
+            this.provisioningVlanId = provisioningVlanId;
             return this;
         }
         @CustomType.Setter
-        public Builder refreshHcxLicenseStatus(Boolean refreshHcxLicenseStatus) {
-            this.refreshHcxLicenseStatus = Objects.requireNonNull(refreshHcxLicenseStatus);
+        public Builder refreshHcxLicenseStatus(@Nullable Boolean refreshHcxLicenseStatus) {
+            this.refreshHcxLicenseStatus = refreshHcxLicenseStatus;
             return this;
         }
         @CustomType.Setter
-        public Builder replicationVlanId(String replicationVlanId) {
-            this.replicationVlanId = Objects.requireNonNull(replicationVlanId);
+        public Builder replicationVlanId(@Nullable String replicationVlanId) {
+            this.replicationVlanId = replicationVlanId;
             return this;
         }
         @CustomType.Setter
-        public Builder reservingHcxOnPremiseLicenseKeys(List<String> reservingHcxOnPremiseLicenseKeys) {
-            this.reservingHcxOnPremiseLicenseKeys = Objects.requireNonNull(reservingHcxOnPremiseLicenseKeys);
+        public Builder reservingHcxOnPremiseLicenseKeys(@Nullable List<String> reservingHcxOnPremiseLicenseKeys) {
+            this.reservingHcxOnPremiseLicenseKeys = reservingHcxOnPremiseLicenseKeys;
             return this;
         }
         public Builder reservingHcxOnPremiseLicenseKeys(String... reservingHcxOnPremiseLicenseKeys) {
             return reservingHcxOnPremiseLicenseKeys(List.of(reservingHcxOnPremiseLicenseKeys));
         }
         @CustomType.Setter
-        public Builder sshAuthorizedKeys(String sshAuthorizedKeys) {
-            this.sshAuthorizedKeys = Objects.requireNonNull(sshAuthorizedKeys);
+        public Builder sshAuthorizedKeys(@Nullable String sshAuthorizedKeys) {
+            this.sshAuthorizedKeys = sshAuthorizedKeys;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeHcxBillingCycleEnd(String timeHcxBillingCycleEnd) {
-            this.timeHcxBillingCycleEnd = Objects.requireNonNull(timeHcxBillingCycleEnd);
+        public Builder timeHcxBillingCycleEnd(@Nullable String timeHcxBillingCycleEnd) {
+            this.timeHcxBillingCycleEnd = timeHcxBillingCycleEnd;
             return this;
         }
         @CustomType.Setter
-        public Builder timeHcxLicenseStatusUpdated(String timeHcxLicenseStatusUpdated) {
-            this.timeHcxLicenseStatusUpdated = Objects.requireNonNull(timeHcxLicenseStatusUpdated);
+        public Builder timeHcxLicenseStatusUpdated(@Nullable String timeHcxLicenseStatusUpdated) {
+            this.timeHcxLicenseStatusUpdated = timeHcxLicenseStatusUpdated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
-        public Builder upgradeLicenses(List<GetSddcsSddcCollectionUpgradeLicense> upgradeLicenses) {
-            this.upgradeLicenses = Objects.requireNonNull(upgradeLicenses);
+        public Builder upgradeLicenses(@Nullable List<GetSddcsSddcCollectionUpgradeLicense> upgradeLicenses) {
+            this.upgradeLicenses = upgradeLicenses;
             return this;
         }
         public Builder upgradeLicenses(GetSddcsSddcCollectionUpgradeLicense... upgradeLicenses) {
             return upgradeLicenses(List.of(upgradeLicenses));
         }
         @CustomType.Setter
-        public Builder vcenterFqdn(String vcenterFqdn) {
-            this.vcenterFqdn = Objects.requireNonNull(vcenterFqdn);
+        public Builder vcenterFqdn(@Nullable String vcenterFqdn) {
+            this.vcenterFqdn = vcenterFqdn;
             return this;
         }
         @CustomType.Setter
-        public Builder vcenterInitialPassword(String vcenterInitialPassword) {
-            this.vcenterInitialPassword = Objects.requireNonNull(vcenterInitialPassword);
+        public Builder vcenterInitialPassword(@Nullable String vcenterInitialPassword) {
+            this.vcenterInitialPassword = vcenterInitialPassword;
             return this;
         }
         @CustomType.Setter
-        public Builder vcenterPrivateIpId(String vcenterPrivateIpId) {
-            this.vcenterPrivateIpId = Objects.requireNonNull(vcenterPrivateIpId);
+        public Builder vcenterPrivateIpId(@Nullable String vcenterPrivateIpId) {
+            this.vcenterPrivateIpId = vcenterPrivateIpId;
             return this;
         }
         @CustomType.Setter
-        public Builder vcenterUsername(String vcenterUsername) {
-            this.vcenterUsername = Objects.requireNonNull(vcenterUsername);
+        public Builder vcenterUsername(@Nullable String vcenterUsername) {
+            this.vcenterUsername = vcenterUsername;
             return this;
         }
         @CustomType.Setter
-        public Builder vmotionVlanId(String vmotionVlanId) {
-            this.vmotionVlanId = Objects.requireNonNull(vmotionVlanId);
+        public Builder vmotionVlanId(@Nullable String vmotionVlanId) {
+            this.vmotionVlanId = vmotionVlanId;
             return this;
         }
         @CustomType.Setter
-        public Builder vmwareSoftwareVersion(String vmwareSoftwareVersion) {
-            this.vmwareSoftwareVersion = Objects.requireNonNull(vmwareSoftwareVersion);
+        public Builder vmwareSoftwareVersion(@Nullable String vmwareSoftwareVersion) {
+            this.vmwareSoftwareVersion = vmwareSoftwareVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder vsanVlanId(String vsanVlanId) {
-            this.vsanVlanId = Objects.requireNonNull(vsanVlanId);
+        public Builder vsanVlanId(@Nullable String vsanVlanId) {
+            this.vsanVlanId = vsanVlanId;
             return this;
         }
         @CustomType.Setter
-        public Builder vsphereUpgradeGuide(String vsphereUpgradeGuide) {
-            this.vsphereUpgradeGuide = Objects.requireNonNull(vsphereUpgradeGuide);
+        public Builder vsphereUpgradeGuide(@Nullable String vsphereUpgradeGuide) {
+            this.vsphereUpgradeGuide = vsphereUpgradeGuide;
             return this;
         }
         @CustomType.Setter
-        public Builder vsphereUpgradeObjects(List<GetSddcsSddcCollectionVsphereUpgradeObject> vsphereUpgradeObjects) {
-            this.vsphereUpgradeObjects = Objects.requireNonNull(vsphereUpgradeObjects);
+        public Builder vsphereUpgradeObjects(@Nullable List<GetSddcsSddcCollectionVsphereUpgradeObject> vsphereUpgradeObjects) {
+            this.vsphereUpgradeObjects = vsphereUpgradeObjects;
             return this;
         }
         public Builder vsphereUpgradeObjects(GetSddcsSddcCollectionVsphereUpgradeObject... vsphereUpgradeObjects) {
             return vsphereUpgradeObjects(List.of(vsphereUpgradeObjects));
         }
         @CustomType.Setter
-        public Builder vsphereVlanId(String vsphereVlanId) {
-            this.vsphereVlanId = Objects.requireNonNull(vsphereVlanId);
+        public Builder vsphereVlanId(@Nullable String vsphereVlanId) {
+            this.vsphereVlanId = vsphereVlanId;
             return this;
         }
         @CustomType.Setter
-        public Builder workloadNetworkCidr(String workloadNetworkCidr) {
-            this.workloadNetworkCidr = Objects.requireNonNull(workloadNetworkCidr);
+        public Builder workloadNetworkCidr(@Nullable String workloadNetworkCidr) {
+            this.workloadNetworkCidr = workloadNetworkCidr;
             return this;
         }
         public GetSddcsSddcCollection build() {

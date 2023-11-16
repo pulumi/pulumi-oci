@@ -12,6 +12,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetContainerRepositoryResult {
@@ -19,192 +21,192 @@ public final class GetContainerRepositoryResult {
      * @return Total storage size in GBs that will be charged.
      * 
      */
-    private String billableSizeInGbs;
+    private @Nullable String billableSizeInGbs;
     /**
      * @return The OCID of the compartment in which the container repository exists.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The id of the user or principal that created the resource.
      * 
      */
-    private String createdBy;
+    private @Nullable String createdBy;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return The container repository name.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container repository.  Example: `ocid1.containerrepo.oc1..exampleuniqueID`
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Total number of images.
      * 
      */
-    private Integer imageCount;
+    private @Nullable Integer imageCount;
     /**
      * @return Whether the repository is immutable. Images cannot be overwritten in an immutable repository.
      * 
      */
-    private Boolean isImmutable;
+    private @Nullable Boolean isImmutable;
     /**
      * @return Whether the repository is public. A public repository allows unauthenticated access.
      * 
      */
-    private Boolean isPublic;
+    private @Nullable Boolean isPublic;
     /**
      * @return Total number of layers.
      * 
      */
-    private Integer layerCount;
+    private @Nullable Integer layerCount;
     /**
      * @return Total storage in bytes consumed by layers.
      * 
      */
-    private String layersSizeInBytes;
+    private @Nullable String layersSizeInBytes;
     /**
      * @return The tenancy namespace used in the container repository path.
      * 
      */
-    private String namespace;
+    private @Nullable String namespace;
     /**
      * @return Container repository readme.
      * 
      */
-    private List<GetContainerRepositoryReadme> readmes;
+    private @Nullable List<GetContainerRepositoryReadme> readmes;
     private String repositoryId;
     /**
      * @return The current state of the container repository.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private @Nullable Map<String,Object> systemTags;
     /**
      * @return An RFC 3339 timestamp indicating when the repository was created.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return An RFC 3339 timestamp indicating when an image was last pushed to the repository.
      * 
      */
-    private String timeLastPushed;
+    private @Nullable String timeLastPushed;
 
     private GetContainerRepositoryResult() {}
     /**
      * @return Total storage size in GBs that will be charged.
      * 
      */
-    public String billableSizeInGbs() {
-        return this.billableSizeInGbs;
+    public Optional<String> billableSizeInGbs() {
+        return Optional.ofNullable(this.billableSizeInGbs);
     }
     /**
      * @return The OCID of the compartment in which the container repository exists.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The id of the user or principal that created the resource.
      * 
      */
-    public String createdBy() {
-        return this.createdBy;
+    public Optional<String> createdBy() {
+        return Optional.ofNullable(this.createdBy);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return The container repository name.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container repository.  Example: `ocid1.containerrepo.oc1..exampleuniqueID`
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Total number of images.
      * 
      */
-    public Integer imageCount() {
-        return this.imageCount;
+    public Optional<Integer> imageCount() {
+        return Optional.ofNullable(this.imageCount);
     }
     /**
      * @return Whether the repository is immutable. Images cannot be overwritten in an immutable repository.
      * 
      */
-    public Boolean isImmutable() {
-        return this.isImmutable;
+    public Optional<Boolean> isImmutable() {
+        return Optional.ofNullable(this.isImmutable);
     }
     /**
      * @return Whether the repository is public. A public repository allows unauthenticated access.
      * 
      */
-    public Boolean isPublic() {
-        return this.isPublic;
+    public Optional<Boolean> isPublic() {
+        return Optional.ofNullable(this.isPublic);
     }
     /**
      * @return Total number of layers.
      * 
      */
-    public Integer layerCount() {
-        return this.layerCount;
+    public Optional<Integer> layerCount() {
+        return Optional.ofNullable(this.layerCount);
     }
     /**
      * @return Total storage in bytes consumed by layers.
      * 
      */
-    public String layersSizeInBytes() {
-        return this.layersSizeInBytes;
+    public Optional<String> layersSizeInBytes() {
+        return Optional.ofNullable(this.layersSizeInBytes);
     }
     /**
      * @return The tenancy namespace used in the container repository path.
      * 
      */
-    public String namespace() {
-        return this.namespace;
+    public Optional<String> namespace() {
+        return Optional.ofNullable(this.namespace);
     }
     /**
      * @return Container repository readme.
      * 
      */
     public List<GetContainerRepositoryReadme> readmes() {
-        return this.readmes;
+        return this.readmes == null ? List.of() : this.readmes;
     }
     public String repositoryId() {
         return this.repositoryId;
@@ -213,29 +215,29 @@ public final class GetContainerRepositoryResult {
      * @return The current state of the container repository.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     public Map<String,Object> systemTags() {
-        return this.systemTags;
+        return this.systemTags == null ? Map.of() : this.systemTags;
     }
     /**
      * @return An RFC 3339 timestamp indicating when the repository was created.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return An RFC 3339 timestamp indicating when an image was last pushed to the repository.
      * 
      */
-    public String timeLastPushed() {
-        return this.timeLastPushed;
+    public Optional<String> timeLastPushed() {
+        return Optional.ofNullable(this.timeLastPushed);
     }
 
     public static Builder builder() {
@@ -247,25 +249,25 @@ public final class GetContainerRepositoryResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String billableSizeInGbs;
-        private String compartmentId;
-        private String createdBy;
-        private Map<String,Object> definedTags;
-        private String displayName;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private Integer imageCount;
-        private Boolean isImmutable;
-        private Boolean isPublic;
-        private Integer layerCount;
-        private String layersSizeInBytes;
-        private String namespace;
-        private List<GetContainerRepositoryReadme> readmes;
+        private @Nullable String billableSizeInGbs;
+        private @Nullable String compartmentId;
+        private @Nullable String createdBy;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable Integer imageCount;
+        private @Nullable Boolean isImmutable;
+        private @Nullable Boolean isPublic;
+        private @Nullable Integer layerCount;
+        private @Nullable String layersSizeInBytes;
+        private @Nullable String namespace;
+        private @Nullable List<GetContainerRepositoryReadme> readmes;
         private String repositoryId;
-        private String state;
-        private Map<String,Object> systemTags;
-        private String timeCreated;
-        private String timeLastPushed;
+        private @Nullable String state;
+        private @Nullable Map<String,Object> systemTags;
+        private @Nullable String timeCreated;
+        private @Nullable String timeLastPushed;
         public Builder() {}
         public Builder(GetContainerRepositoryResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -291,73 +293,73 @@ public final class GetContainerRepositoryResult {
         }
 
         @CustomType.Setter
-        public Builder billableSizeInGbs(String billableSizeInGbs) {
-            this.billableSizeInGbs = Objects.requireNonNull(billableSizeInGbs);
+        public Builder billableSizeInGbs(@Nullable String billableSizeInGbs) {
+            this.billableSizeInGbs = billableSizeInGbs;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder createdBy(String createdBy) {
-            this.createdBy = Objects.requireNonNull(createdBy);
+        public Builder createdBy(@Nullable String createdBy) {
+            this.createdBy = createdBy;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder imageCount(Integer imageCount) {
-            this.imageCount = Objects.requireNonNull(imageCount);
+        public Builder imageCount(@Nullable Integer imageCount) {
+            this.imageCount = imageCount;
             return this;
         }
         @CustomType.Setter
-        public Builder isImmutable(Boolean isImmutable) {
-            this.isImmutable = Objects.requireNonNull(isImmutable);
+        public Builder isImmutable(@Nullable Boolean isImmutable) {
+            this.isImmutable = isImmutable;
             return this;
         }
         @CustomType.Setter
-        public Builder isPublic(Boolean isPublic) {
-            this.isPublic = Objects.requireNonNull(isPublic);
+        public Builder isPublic(@Nullable Boolean isPublic) {
+            this.isPublic = isPublic;
             return this;
         }
         @CustomType.Setter
-        public Builder layerCount(Integer layerCount) {
-            this.layerCount = Objects.requireNonNull(layerCount);
+        public Builder layerCount(@Nullable Integer layerCount) {
+            this.layerCount = layerCount;
             return this;
         }
         @CustomType.Setter
-        public Builder layersSizeInBytes(String layersSizeInBytes) {
-            this.layersSizeInBytes = Objects.requireNonNull(layersSizeInBytes);
+        public Builder layersSizeInBytes(@Nullable String layersSizeInBytes) {
+            this.layersSizeInBytes = layersSizeInBytes;
             return this;
         }
         @CustomType.Setter
-        public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+        public Builder namespace(@Nullable String namespace) {
+            this.namespace = namespace;
             return this;
         }
         @CustomType.Setter
-        public Builder readmes(List<GetContainerRepositoryReadme> readmes) {
-            this.readmes = Objects.requireNonNull(readmes);
+        public Builder readmes(@Nullable List<GetContainerRepositoryReadme> readmes) {
+            this.readmes = readmes;
             return this;
         }
         public Builder readmes(GetContainerRepositoryReadme... readmes) {
@@ -369,23 +371,23 @@ public final class GetContainerRepositoryResult {
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+        public Builder systemTags(@Nullable Map<String,Object> systemTags) {
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeLastPushed(String timeLastPushed) {
-            this.timeLastPushed = Objects.requireNonNull(timeLastPushed);
+        public Builder timeLastPushed(@Nullable String timeLastPushed) {
+            this.timeLastPushed = timeLastPushed;
             return this;
         }
         public GetContainerRepositoryResult build() {

@@ -11,6 +11,7 @@ import com.pulumi.oci.Core.VolumeBackupPolicyAssignmentArgs;
 import com.pulumi.oci.Core.inputs.VolumeBackupPolicyAssignmentState;
 import com.pulumi.oci.Utilities;
 import java.lang.String;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -101,14 +102,14 @@ public class VolumeBackupPolicyAssignment extends com.pulumi.resources.CustomRes
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the volume backup policy was assigned to the volume. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
 
     /**

@@ -51,42 +51,27 @@ class GetAgentsResult:
 
     @property
     @pulumi.getter(name="agentCollections")
-    def agent_collections(self) -> Sequence['outputs.GetAgentsAgentCollectionResult']:
-        """
-        The list of agent_collection.
-        """
+    def agent_collections(self) -> Optional[Sequence['outputs.GetAgentsAgentCollectionResult']]:
         return pulumi.get(self, "agent_collections")
 
     @property
     @pulumi.getter(name="agentId")
     def agent_id(self) -> Optional[str]:
-        """
-        Agent identifier.
-        """
         return pulumi.get(self, "agent_id")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        Compartment identifier.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        Agent identifier, can be renamed.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="environmentId")
     def environment_id(self) -> Optional[str]:
-        """
-        Environment identifier.
-        """
         return pulumi.get(self, "environment_id")
 
     @property
@@ -96,7 +81,7 @@ class GetAgentsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -105,9 +90,6 @@ class GetAgentsResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the Agent.
-        """
         return pulumi.get(self, "state")
 
 
@@ -135,29 +117,7 @@ def get_agents(agent_id: Optional[str] = None,
                state: Optional[str] = None,
                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAgentsResult:
     """
-    This data source provides the list of Agents in Oracle Cloud Infrastructure Cloud Bridge service.
-
-    Returns a list of Agents.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_agents = oci.CloudBridge.get_agents(compartment_id=var["compartment_id"],
-        agent_id=oci_cloud_bridge_agent["test_agent"]["id"],
-        display_name=var["agent_display_name"],
-        environment_id=oci_cloud_bridge_environment["test_environment"]["id"],
-        state=var["agent_state"])
-    ```
-
-
-    :param str agent_id: A filter to return only resources that match the given Agent ID.
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str environment_id: A filter to return only resources that match the given environment ID.
-    :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['agentId'] = agent_id
@@ -189,28 +149,6 @@ def get_agents_output(agent_id: Optional[pulumi.Input[Optional[str]]] = None,
                       state: Optional[pulumi.Input[Optional[str]]] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAgentsResult]:
     """
-    This data source provides the list of Agents in Oracle Cloud Infrastructure Cloud Bridge service.
-
-    Returns a list of Agents.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_agents = oci.CloudBridge.get_agents(compartment_id=var["compartment_id"],
-        agent_id=oci_cloud_bridge_agent["test_agent"]["id"],
-        display_name=var["agent_display_name"],
-        environment_id=oci_cloud_bridge_environment["test_environment"]["id"],
-        state=var["agent_state"])
-    ```
-
-
-    :param str agent_id: A filter to return only resources that match the given Agent ID.
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str environment_id: A filter to return only resources that match the given environment ID.
-    :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
+    Use this data source to access information about an existing resource.
     """
     ...

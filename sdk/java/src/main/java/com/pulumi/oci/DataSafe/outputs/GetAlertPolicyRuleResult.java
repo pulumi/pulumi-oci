@@ -8,6 +8,8 @@ import com.pulumi.oci.DataSafe.outputs.GetAlertPolicyRuleItem;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAlertPolicyRuleResult {
@@ -16,12 +18,12 @@ public final class GetAlertPolicyRuleResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Array of alert policy rules summary
      * 
      */
-    private List<GetAlertPolicyRuleItem> items;
+    private @Nullable List<GetAlertPolicyRuleItem> items;
 
     private GetAlertPolicyRuleResult() {}
     public String alertPolicyId() {
@@ -31,15 +33,15 @@ public final class GetAlertPolicyRuleResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Array of alert policy rules summary
      * 
      */
     public List<GetAlertPolicyRuleItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -52,8 +54,8 @@ public final class GetAlertPolicyRuleResult {
     @CustomType.Builder
     public static final class Builder {
         private String alertPolicyId;
-        private String id;
-        private List<GetAlertPolicyRuleItem> items;
+        private @Nullable String id;
+        private @Nullable List<GetAlertPolicyRuleItem> items;
         public Builder() {}
         public Builder(GetAlertPolicyRuleResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -68,13 +70,13 @@ public final class GetAlertPolicyRuleResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder items(List<GetAlertPolicyRuleItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetAlertPolicyRuleItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetAlertPolicyRuleItem... items) {

@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPbfListingVersionsPbfListingVersionsCollectionItemConfig {
@@ -14,39 +16,39 @@ public final class GetPbfListingVersionsPbfListingVersionsCollectionItemConfig {
      * @return Details about why this policy is required and what it will be used for.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return Is this a required config or an optional one. Requests with required config params missing will be rejected.
      * 
      */
-    private Boolean isOptional;
+    private @Nullable Boolean isOptional;
     /**
      * @return The key name of the config param.
      * 
      */
-    private String key;
+    private @Nullable String key;
 
     private GetPbfListingVersionsPbfListingVersionsCollectionItemConfig() {}
     /**
      * @return Details about why this policy is required and what it will be used for.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return Is this a required config or an optional one. Requests with required config params missing will be rejected.
      * 
      */
-    public Boolean isOptional() {
-        return this.isOptional;
+    public Optional<Boolean> isOptional() {
+        return Optional.ofNullable(this.isOptional);
     }
     /**
      * @return The key name of the config param.
      * 
      */
-    public String key() {
-        return this.key;
+    public Optional<String> key() {
+        return Optional.ofNullable(this.key);
     }
 
     public static Builder builder() {
@@ -58,9 +60,9 @@ public final class GetPbfListingVersionsPbfListingVersionsCollectionItemConfig {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String description;
-        private Boolean isOptional;
-        private String key;
+        private @Nullable String description;
+        private @Nullable Boolean isOptional;
+        private @Nullable String key;
         public Builder() {}
         public Builder(GetPbfListingVersionsPbfListingVersionsCollectionItemConfig defaults) {
     	      Objects.requireNonNull(defaults);
@@ -70,18 +72,18 @@ public final class GetPbfListingVersionsPbfListingVersionsCollectionItemConfig {
         }
 
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder isOptional(Boolean isOptional) {
-            this.isOptional = Objects.requireNonNull(isOptional);
+        public Builder isOptional(@Nullable Boolean isOptional) {
+            this.isOptional = isOptional;
             return this;
         }
         @CustomType.Setter
-        public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
+        public Builder key(@Nullable String key) {
+            this.key = key;
             return this;
         }
         public GetPbfListingVersionsPbfListingVersionsCollectionItemConfig build() {

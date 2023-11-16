@@ -6,6 +6,8 @@ package com.pulumi.oci.DataSafe.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetTargetDatabasesTargetDatabaseConnectionOption {
@@ -15,17 +17,17 @@ public final class GetTargetDatabasesTargetDatabaseConnectionOption {
      * * ONPREM_CONNECTOR - Represents connection through on-premises connector in Data Safe.
      * 
      */
-    private String connectionType;
+    private @Nullable String connectionType;
     /**
      * @return The OCID of the Data Safe private endpoint.
      * 
      */
-    private String datasafePrivateEndpointId;
+    private @Nullable String datasafePrivateEndpointId;
     /**
      * @return The OCID of the on-premises connector.
      * 
      */
-    private String onPremConnectorId;
+    private @Nullable String onPremConnectorId;
 
     private GetTargetDatabasesTargetDatabaseConnectionOption() {}
     /**
@@ -34,22 +36,22 @@ public final class GetTargetDatabasesTargetDatabaseConnectionOption {
      * * ONPREM_CONNECTOR - Represents connection through on-premises connector in Data Safe.
      * 
      */
-    public String connectionType() {
-        return this.connectionType;
+    public Optional<String> connectionType() {
+        return Optional.ofNullable(this.connectionType);
     }
     /**
      * @return The OCID of the Data Safe private endpoint.
      * 
      */
-    public String datasafePrivateEndpointId() {
-        return this.datasafePrivateEndpointId;
+    public Optional<String> datasafePrivateEndpointId() {
+        return Optional.ofNullable(this.datasafePrivateEndpointId);
     }
     /**
      * @return The OCID of the on-premises connector.
      * 
      */
-    public String onPremConnectorId() {
-        return this.onPremConnectorId;
+    public Optional<String> onPremConnectorId() {
+        return Optional.ofNullable(this.onPremConnectorId);
     }
 
     public static Builder builder() {
@@ -61,9 +63,9 @@ public final class GetTargetDatabasesTargetDatabaseConnectionOption {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String connectionType;
-        private String datasafePrivateEndpointId;
-        private String onPremConnectorId;
+        private @Nullable String connectionType;
+        private @Nullable String datasafePrivateEndpointId;
+        private @Nullable String onPremConnectorId;
         public Builder() {}
         public Builder(GetTargetDatabasesTargetDatabaseConnectionOption defaults) {
     	      Objects.requireNonNull(defaults);
@@ -73,18 +75,18 @@ public final class GetTargetDatabasesTargetDatabaseConnectionOption {
         }
 
         @CustomType.Setter
-        public Builder connectionType(String connectionType) {
-            this.connectionType = Objects.requireNonNull(connectionType);
+        public Builder connectionType(@Nullable String connectionType) {
+            this.connectionType = connectionType;
             return this;
         }
         @CustomType.Setter
-        public Builder datasafePrivateEndpointId(String datasafePrivateEndpointId) {
-            this.datasafePrivateEndpointId = Objects.requireNonNull(datasafePrivateEndpointId);
+        public Builder datasafePrivateEndpointId(@Nullable String datasafePrivateEndpointId) {
+            this.datasafePrivateEndpointId = datasafePrivateEndpointId;
             return this;
         }
         @CustomType.Setter
-        public Builder onPremConnectorId(String onPremConnectorId) {
-            this.onPremConnectorId = Objects.requireNonNull(onPremConnectorId);
+        public Builder onPremConnectorId(@Nullable String onPremConnectorId) {
+            this.onPremConnectorId = onPremConnectorId;
             return this;
         }
         public GetTargetDatabasesTargetDatabaseConnectionOption build() {

@@ -9,6 +9,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetFusionEnvironmentScheduledActivityResult {
@@ -16,17 +18,17 @@ public final class GetFusionEnvironmentScheduledActivityResult {
      * @return List of actions
      * 
      */
-    private List<GetFusionEnvironmentScheduledActivityAction> actions;
+    private @Nullable List<GetFusionEnvironmentScheduledActivityAction> actions;
     /**
      * @return Cumulative delay hours
      * 
      */
-    private Integer delayInHours;
+    private @Nullable Integer delayInHours;
     /**
      * @return scheduled activity display name, can be renamed.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return FAaaS Environment Identifier.
      * 
@@ -36,53 +38,53 @@ public final class GetFusionEnvironmentScheduledActivityResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return run cadence.
      * 
      */
-    private String runCycle;
+    private @Nullable String runCycle;
     private String scheduledActivityId;
     /**
      * @return Service availability / impact during scheduled activity execution up down
      * 
      */
-    private String serviceAvailability;
+    private @Nullable String serviceAvailability;
     /**
      * @return The current state of the scheduledActivity.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The time the scheduled activity record was created. An RFC3339 formatted datetime string.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return Current time the scheduled activity is scheduled to end. An RFC3339 formatted datetime string.
      * 
      */
-    private String timeExpectedFinish;
+    private @Nullable String timeExpectedFinish;
     /**
      * @return The time the scheduled activity actually completed / cancelled / failed. An RFC3339 formatted datetime string.
      * 
      */
-    private String timeFinished;
+    private @Nullable String timeFinished;
     /**
      * @return Current time the scheduled activity is scheduled to start. An RFC3339 formatted datetime string.
      * 
      */
-    private String timeScheduledStart;
+    private @Nullable String timeScheduledStart;
     /**
      * @return The time the scheduled activity record was updated. An RFC3339 formatted datetime string.
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
 
     private GetFusionEnvironmentScheduledActivityResult() {}
     /**
@@ -90,21 +92,21 @@ public final class GetFusionEnvironmentScheduledActivityResult {
      * 
      */
     public List<GetFusionEnvironmentScheduledActivityAction> actions() {
-        return this.actions;
+        return this.actions == null ? List.of() : this.actions;
     }
     /**
      * @return Cumulative delay hours
      * 
      */
-    public Integer delayInHours() {
-        return this.delayInHours;
+    public Optional<Integer> delayInHours() {
+        return Optional.ofNullable(this.delayInHours);
     }
     /**
      * @return scheduled activity display name, can be renamed.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return FAaaS Environment Identifier.
@@ -117,22 +119,22 @@ public final class GetFusionEnvironmentScheduledActivityResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return run cadence.
      * 
      */
-    public String runCycle() {
-        return this.runCycle;
+    public Optional<String> runCycle() {
+        return Optional.ofNullable(this.runCycle);
     }
     public String scheduledActivityId() {
         return this.scheduledActivityId;
@@ -141,50 +143,50 @@ public final class GetFusionEnvironmentScheduledActivityResult {
      * @return Service availability / impact during scheduled activity execution up down
      * 
      */
-    public String serviceAvailability() {
-        return this.serviceAvailability;
+    public Optional<String> serviceAvailability() {
+        return Optional.ofNullable(this.serviceAvailability);
     }
     /**
      * @return The current state of the scheduledActivity.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The time the scheduled activity record was created. An RFC3339 formatted datetime string.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return Current time the scheduled activity is scheduled to end. An RFC3339 formatted datetime string.
      * 
      */
-    public String timeExpectedFinish() {
-        return this.timeExpectedFinish;
+    public Optional<String> timeExpectedFinish() {
+        return Optional.ofNullable(this.timeExpectedFinish);
     }
     /**
      * @return The time the scheduled activity actually completed / cancelled / failed. An RFC3339 formatted datetime string.
      * 
      */
-    public String timeFinished() {
-        return this.timeFinished;
+    public Optional<String> timeFinished() {
+        return Optional.ofNullable(this.timeFinished);
     }
     /**
      * @return Current time the scheduled activity is scheduled to start. An RFC3339 formatted datetime string.
      * 
      */
-    public String timeScheduledStart() {
-        return this.timeScheduledStart;
+    public Optional<String> timeScheduledStart() {
+        return Optional.ofNullable(this.timeScheduledStart);
     }
     /**
      * @return The time the scheduled activity record was updated. An RFC3339 formatted datetime string.
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
 
     public static Builder builder() {
@@ -196,21 +198,21 @@ public final class GetFusionEnvironmentScheduledActivityResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetFusionEnvironmentScheduledActivityAction> actions;
-        private Integer delayInHours;
-        private String displayName;
+        private @Nullable List<GetFusionEnvironmentScheduledActivityAction> actions;
+        private @Nullable Integer delayInHours;
+        private @Nullable String displayName;
         private String fusionEnvironmentId;
-        private String id;
-        private String lifecycleDetails;
-        private String runCycle;
+        private @Nullable String id;
+        private @Nullable String lifecycleDetails;
+        private @Nullable String runCycle;
         private String scheduledActivityId;
-        private String serviceAvailability;
-        private String state;
-        private String timeCreated;
-        private String timeExpectedFinish;
-        private String timeFinished;
-        private String timeScheduledStart;
-        private String timeUpdated;
+        private @Nullable String serviceAvailability;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
+        private @Nullable String timeExpectedFinish;
+        private @Nullable String timeFinished;
+        private @Nullable String timeScheduledStart;
+        private @Nullable String timeUpdated;
         public Builder() {}
         public Builder(GetFusionEnvironmentScheduledActivityResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -232,21 +234,21 @@ public final class GetFusionEnvironmentScheduledActivityResult {
         }
 
         @CustomType.Setter
-        public Builder actions(List<GetFusionEnvironmentScheduledActivityAction> actions) {
-            this.actions = Objects.requireNonNull(actions);
+        public Builder actions(@Nullable List<GetFusionEnvironmentScheduledActivityAction> actions) {
+            this.actions = actions;
             return this;
         }
         public Builder actions(GetFusionEnvironmentScheduledActivityAction... actions) {
             return actions(List.of(actions));
         }
         @CustomType.Setter
-        public Builder delayInHours(Integer delayInHours) {
-            this.delayInHours = Objects.requireNonNull(delayInHours);
+        public Builder delayInHours(@Nullable Integer delayInHours) {
+            this.delayInHours = delayInHours;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
@@ -255,18 +257,18 @@ public final class GetFusionEnvironmentScheduledActivityResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder runCycle(String runCycle) {
-            this.runCycle = Objects.requireNonNull(runCycle);
+        public Builder runCycle(@Nullable String runCycle) {
+            this.runCycle = runCycle;
             return this;
         }
         @CustomType.Setter
@@ -275,38 +277,38 @@ public final class GetFusionEnvironmentScheduledActivityResult {
             return this;
         }
         @CustomType.Setter
-        public Builder serviceAvailability(String serviceAvailability) {
-            this.serviceAvailability = Objects.requireNonNull(serviceAvailability);
+        public Builder serviceAvailability(@Nullable String serviceAvailability) {
+            this.serviceAvailability = serviceAvailability;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeExpectedFinish(String timeExpectedFinish) {
-            this.timeExpectedFinish = Objects.requireNonNull(timeExpectedFinish);
+        public Builder timeExpectedFinish(@Nullable String timeExpectedFinish) {
+            this.timeExpectedFinish = timeExpectedFinish;
             return this;
         }
         @CustomType.Setter
-        public Builder timeFinished(String timeFinished) {
-            this.timeFinished = Objects.requireNonNull(timeFinished);
+        public Builder timeFinished(@Nullable String timeFinished) {
+            this.timeFinished = timeFinished;
             return this;
         }
         @CustomType.Setter
-        public Builder timeScheduledStart(String timeScheduledStart) {
-            this.timeScheduledStart = Objects.requireNonNull(timeScheduledStart);
+        public Builder timeScheduledStart(@Nullable String timeScheduledStart) {
+            this.timeScheduledStart = timeScheduledStart;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetFusionEnvironmentScheduledActivityResult build() {

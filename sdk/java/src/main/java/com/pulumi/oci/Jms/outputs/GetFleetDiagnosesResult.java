@@ -9,6 +9,7 @@ import com.pulumi.oci.Jms.outputs.GetFleetDiagnosesFleetDiagnosisCollection;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -18,13 +19,13 @@ public final class GetFleetDiagnosesResult {
      * @return The list of fleet_diagnosis_collection.
      * 
      */
-    private List<GetFleetDiagnosesFleetDiagnosisCollection> fleetDiagnosisCollections;
+    private @Nullable List<GetFleetDiagnosesFleetDiagnosisCollection> fleetDiagnosisCollections;
     private String fleetId;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
 
     private GetFleetDiagnosesResult() {}
     public List<GetFleetDiagnosesFilter> filters() {
@@ -35,7 +36,7 @@ public final class GetFleetDiagnosesResult {
      * 
      */
     public List<GetFleetDiagnosesFleetDiagnosisCollection> fleetDiagnosisCollections() {
-        return this.fleetDiagnosisCollections;
+        return this.fleetDiagnosisCollections == null ? List.of() : this.fleetDiagnosisCollections;
     }
     public String fleetId() {
         return this.fleetId;
@@ -44,8 +45,8 @@ public final class GetFleetDiagnosesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
 
     public static Builder builder() {
@@ -58,9 +59,9 @@ public final class GetFleetDiagnosesResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetFleetDiagnosesFilter> filters;
-        private List<GetFleetDiagnosesFleetDiagnosisCollection> fleetDiagnosisCollections;
+        private @Nullable List<GetFleetDiagnosesFleetDiagnosisCollection> fleetDiagnosisCollections;
         private String fleetId;
-        private String id;
+        private @Nullable String id;
         public Builder() {}
         public Builder(GetFleetDiagnosesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -79,8 +80,8 @@ public final class GetFleetDiagnosesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder fleetDiagnosisCollections(List<GetFleetDiagnosesFleetDiagnosisCollection> fleetDiagnosisCollections) {
-            this.fleetDiagnosisCollections = Objects.requireNonNull(fleetDiagnosisCollections);
+        public Builder fleetDiagnosisCollections(@Nullable List<GetFleetDiagnosesFleetDiagnosisCollection> fleetDiagnosisCollections) {
+            this.fleetDiagnosisCollections = fleetDiagnosisCollections;
             return this;
         }
         public Builder fleetDiagnosisCollections(GetFleetDiagnosesFleetDiagnosisCollection... fleetDiagnosisCollections) {
@@ -92,8 +93,8 @@ public final class GetFleetDiagnosesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         public GetFleetDiagnosesResult build() {

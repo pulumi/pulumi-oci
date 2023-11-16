@@ -248,84 +248,57 @@ class GetConnectionResult:
 
     @property
     @pulumi.getter(name="accessKeyId")
-    def access_key_id(self) -> str:
-        """
-        Access key ID to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
-        """
+    def access_key_id(self) -> Optional[str]:
         return pulumi.get(self, "access_key_id")
 
     @property
     @pulumi.getter(name="accountKey")
-    def account_key(self) -> str:
+    def account_key(self) -> Optional[str]:
         return pulumi.get(self, "account_key")
 
     @property
     @pulumi.getter(name="accountName")
-    def account_name(self) -> str:
-        """
-        Sets the Azure storage account name.
-        """
+    def account_name(self) -> Optional[str]:
         return pulumi.get(self, "account_name")
 
     @property
     @pulumi.getter(name="additionalAttributes")
-    def additional_attributes(self) -> Sequence['outputs.GetConnectionAdditionalAttributeResult']:
-        """
-        An array of name-value pair attribute entries. Used as additional parameters in connection string.
-        """
+    def additional_attributes(self) -> Optional[Sequence['outputs.GetConnectionAdditionalAttributeResult']]:
         return pulumi.get(self, "additional_attributes")
 
     @property
     @pulumi.getter(name="authenticationType")
-    def authentication_type(self) -> str:
-        """
-        Used authentication mechanism to access Azure Data Lake Storage.
-        """
+    def authentication_type(self) -> Optional[str]:
         return pulumi.get(self, "authentication_type")
 
     @property
     @pulumi.getter(name="azureTenantId")
-    def azure_tenant_id(self) -> str:
-        """
-        Azure tenant ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
-        """
+    def azure_tenant_id(self) -> Optional[str]:
         return pulumi.get(self, "azure_tenant_id")
 
     @property
     @pulumi.getter(name="bootstrapServers")
-    def bootstrap_servers(self) -> Sequence['outputs.GetConnectionBootstrapServerResult']:
-        """
-        Kafka bootstrap. Equivalent of bootstrap.servers configuration property in Kafka: list of KafkaBootstrapServer objects specified by host/port. Used for establishing the initial connection to the Kafka cluster. Example: `"server1.example.com:9092,server2.example.com:9092"`
-        """
+    def bootstrap_servers(self) -> Optional[Sequence['outputs.GetConnectionBootstrapServerResult']]:
         return pulumi.get(self, "bootstrap_servers")
 
     @property
     @pulumi.getter(name="clientId")
-    def client_id(self) -> str:
-        """
-        Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
-        """
+    def client_id(self) -> Optional[str]:
         return pulumi.get(self, "client_id")
 
     @property
     @pulumi.getter(name="clientSecret")
-    def client_secret(self) -> str:
+    def client_secret(self) -> Optional[str]:
         return pulumi.get(self, "client_secret")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="connectionFactory")
-    def connection_factory(self) -> str:
-        """
-        The of Java class implementing javax.jms.ConnectionFactory interface supplied by the Java Message Service provider. e.g.: 'com.stc.jmsjca.core.JConnectionFactoryXA'
-        """
+    def connection_factory(self) -> Optional[str]:
         return pulumi.get(self, "connection_factory")
 
     @property
@@ -335,441 +308,312 @@ class GetConnectionResult:
 
     @property
     @pulumi.getter(name="connectionString")
-    def connection_string(self) -> str:
-        """
-        Connection string. AZURE_SYNAPSE_ANALYTICS e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;', MONGODB e.g.: 'mongodb://mongodb0.example.com:27017/recordsrecords'.
-        """
+    def connection_string(self) -> Optional[str]:
         return pulumi.get(self, "connection_string")
 
     @property
     @pulumi.getter(name="connectionType")
-    def connection_type(self) -> str:
-        """
-        The connection type.
-        """
+    def connection_type(self) -> Optional[str]:
         return pulumi.get(self, "connection_type")
 
     @property
     @pulumi.getter(name="connectionUrl")
-    def connection_url(self) -> str:
-        """
-        JAVA_MESSAGE_SERVICE: Connection URL of the Java Message Service, specifying the protocol, host, and port. e.g.: 'mq://myjms.host.domain:7676', SNOWFLAKE: JDBC connection URL. e.g.: 'jdbc:snowflake://<account_name>.snowflakecomputing.com/?warehouse=<warehouse-name>&db=<db-name>'
-        """
+    def connection_url(self) -> Optional[str]:
         return pulumi.get(self, "connection_url")
 
     @property
     @pulumi.getter(name="consumerProperties")
-    def consumer_properties(self) -> str:
+    def consumer_properties(self) -> Optional[str]:
         return pulumi.get(self, "consumer_properties")
 
     @property
     @pulumi.getter(name="coreSiteXml")
-    def core_site_xml(self) -> str:
+    def core_site_xml(self) -> Optional[str]:
         return pulumi.get(self, "core_site_xml")
 
     @property
     @pulumi.getter(name="databaseId")
-    def database_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
-        """
+    def database_id(self) -> Optional[str]:
         return pulumi.get(self, "database_id")
 
     @property
     @pulumi.getter(name="databaseName")
-    def database_name(self) -> str:
-        """
-        The name of the database.
-        """
+    def database_name(self) -> Optional[str]:
         return pulumi.get(self, "database_name")
 
     @property
     @pulumi.getter(name="dbSystemId")
-    def db_system_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system being referenced.
-        """
+    def db_system_id(self) -> Optional[str]:
         return pulumi.get(self, "db_system_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="deploymentId")
-    def deployment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
-        """
+    def deployment_id(self) -> Optional[str]:
         return pulumi.get(self, "deployment_id")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Metadata about this specific object.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        An object's Display Name.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
-    def endpoint(self) -> str:
-        """
-        Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
-        """
+    def endpoint(self) -> Optional[str]:
         return pulumi.get(self, "endpoint")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def host(self) -> str:
-        """
-        The name or address of a host.
-        """
+    def host(self) -> Optional[str]:
         return pulumi.get(self, "host")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="ingressIps")
-    def ingress_ips(self) -> Sequence['outputs.GetConnectionIngressIpResult']:
-        """
-        List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
-        """
+    def ingress_ips(self) -> Optional[Sequence['outputs.GetConnectionIngressIpResult']]:
         return pulumi.get(self, "ingress_ips")
 
     @property
     @pulumi.getter(name="jndiConnectionFactory")
-    def jndi_connection_factory(self) -> str:
-        """
-        The Connection Factory can be looked up using this name. e.g.: 'ConnectionFactory'
-        """
+    def jndi_connection_factory(self) -> Optional[str]:
         return pulumi.get(self, "jndi_connection_factory")
 
     @property
     @pulumi.getter(name="jndiInitialContextFactory")
-    def jndi_initial_context_factory(self) -> str:
-        """
-        The implementation of javax.naming.spi.InitialContextFactory interface that the client uses to obtain initial naming context. e.g.: 'org.apache.activemq.jndi.ActiveMQInitialContextFactory'
-        """
+    def jndi_initial_context_factory(self) -> Optional[str]:
         return pulumi.get(self, "jndi_initial_context_factory")
 
     @property
     @pulumi.getter(name="jndiProviderUrl")
-    def jndi_provider_url(self) -> str:
-        """
-        The URL that Java Message Service will use to contact the JNDI provider. e.g.: 'tcp://myjms.host.domain:61616?jms.prefetchPolicy.all=1000'
-        """
+    def jndi_provider_url(self) -> Optional[str]:
         return pulumi.get(self, "jndi_provider_url")
 
     @property
     @pulumi.getter(name="jndiSecurityCredentials")
-    def jndi_security_credentials(self) -> str:
+    def jndi_security_credentials(self) -> Optional[str]:
         return pulumi.get(self, "jndi_security_credentials")
 
     @property
     @pulumi.getter(name="jndiSecurityPrincipal")
-    def jndi_security_principal(self) -> str:
-        """
-        Specifies the identity of the principal (user) to be authenticated. e.g.: 'admin2'
-        """
+    def jndi_security_principal(self) -> Optional[str]:
         return pulumi.get(self, "jndi_security_principal")
 
     @property
     @pulumi.getter(name="keyId")
-    def key_id(self) -> str:
-        """
-        Refers to the customer's master key OCID.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
-        """
+    def key_id(self) -> Optional[str]:
         return pulumi.get(self, "key_id")
 
     @property
     @pulumi.getter(name="keyStore")
-    def key_store(self) -> str:
+    def key_store(self) -> Optional[str]:
         return pulumi.get(self, "key_store")
 
     @property
     @pulumi.getter(name="keyStorePassword")
-    def key_store_password(self) -> str:
+    def key_store_password(self) -> Optional[str]:
         return pulumi.get(self, "key_store_password")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="nsgIds")
-    def nsg_ids(self) -> Sequence[str]:
-        """
-        An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
-        """
+    def nsg_ids(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "nsg_ids")
 
     @property
     @pulumi.getter
-    def password(self) -> str:
+    def password(self) -> Optional[str]:
         return pulumi.get(self, "password")
 
     @property
     @pulumi.getter
-    def port(self) -> int:
-        """
-        The port of an endpoint usually specified for a connection.
-        """
+    def port(self) -> Optional[int]:
         return pulumi.get(self, "port")
 
     @property
     @pulumi.getter(name="privateIp")
-    def private_ip(self) -> str:
-        """
-        The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
-        """
+    def private_ip(self) -> Optional[str]:
         return pulumi.get(self, "private_ip")
 
     @property
     @pulumi.getter(name="privateKeyFile")
-    def private_key_file(self) -> str:
+    def private_key_file(self) -> Optional[str]:
         return pulumi.get(self, "private_key_file")
 
     @property
     @pulumi.getter(name="privateKeyPassphrase")
-    def private_key_passphrase(self) -> str:
+    def private_key_passphrase(self) -> Optional[str]:
         return pulumi.get(self, "private_key_passphrase")
 
     @property
     @pulumi.getter(name="producerProperties")
-    def producer_properties(self) -> str:
+    def producer_properties(self) -> Optional[str]:
         return pulumi.get(self, "producer_properties")
 
     @property
     @pulumi.getter(name="publicKeyFingerprint")
-    def public_key_fingerprint(self) -> str:
+    def public_key_fingerprint(self) -> Optional[str]:
         return pulumi.get(self, "public_key_fingerprint")
 
     @property
     @pulumi.getter
-    def region(self) -> str:
-        """
-        The name of the region. e.g.: us-ashburn-1
-        """
+    def region(self) -> Optional[str]:
         return pulumi.get(self, "region")
 
     @property
     @pulumi.getter(name="sasToken")
-    def sas_token(self) -> str:
+    def sas_token(self) -> Optional[str]:
         return pulumi.get(self, "sas_token")
 
     @property
     @pulumi.getter(name="secretAccessKey")
-    def secret_access_key(self) -> str:
+    def secret_access_key(self) -> Optional[str]:
         return pulumi.get(self, "secret_access_key")
 
     @property
     @pulumi.getter(name="securityProtocol")
-    def security_protocol(self) -> str:
-        """
-        Security Protocol for Microsoft SQL Server/PostgreSQL.
-        """
+    def security_protocol(self) -> Optional[str]:
         return pulumi.get(self, "security_protocol")
 
     @property
     @pulumi.getter(name="sessionMode")
-    def session_mode(self) -> str:
-        """
-        The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
-        """
+    def session_mode(self) -> Optional[str]:
         return pulumi.get(self, "session_mode")
 
     @property
     @pulumi.getter(name="shouldUseJndi")
-    def should_use_jndi(self) -> bool:
-        """
-        If set to true, Java Naming and Directory Interface (JNDI) properties should be provided.
-        """
+    def should_use_jndi(self) -> Optional[bool]:
         return pulumi.get(self, "should_use_jndi")
 
     @property
     @pulumi.getter(name="shouldValidateServerCertificate")
-    def should_validate_server_certificate(self) -> bool:
-        """
-        If set to true, the driver validates the certificate that is sent by the database server.
-        """
+    def should_validate_server_certificate(self) -> Optional[bool]:
         return pulumi.get(self, "should_validate_server_certificate")
 
     @property
     @pulumi.getter(name="sslCa")
-    def ssl_ca(self) -> str:
-        """
-        Database Certificate - The base64 encoded content of pem file containing the server public key (for 1-way SSL).
-        """
+    def ssl_ca(self) -> Optional[str]:
         return pulumi.get(self, "ssl_ca")
 
     @property
     @pulumi.getter(name="sslCert")
-    def ssl_cert(self) -> str:
+    def ssl_cert(self) -> Optional[str]:
         return pulumi.get(self, "ssl_cert")
 
     @property
     @pulumi.getter(name="sslCrl")
-    def ssl_crl(self) -> str:
+    def ssl_crl(self) -> Optional[str]:
         return pulumi.get(self, "ssl_crl")
 
     @property
     @pulumi.getter(name="sslKey")
-    def ssl_key(self) -> str:
+    def ssl_key(self) -> Optional[str]:
         return pulumi.get(self, "ssl_key")
 
     @property
     @pulumi.getter(name="sslKeyPassword")
-    def ssl_key_password(self) -> str:
+    def ssl_key_password(self) -> Optional[str]:
         return pulumi.get(self, "ssl_key_password")
 
     @property
     @pulumi.getter(name="sslMode")
-    def ssl_mode(self) -> str:
-        """
-        SSL mode for PostgreSQL.
-        """
+    def ssl_mode(self) -> Optional[str]:
         return pulumi.get(self, "ssl_mode")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        Possible lifecycle states for connection.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="streamPoolId")
-    def stream_pool_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream pool being referenced.
-        """
+    def stream_pool_id(self) -> Optional[str]:
         return pulumi.get(self, "stream_pool_id")
 
     @property
     @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
-        """
+    def subnet_id(self) -> Optional[str]:
         return pulumi.get(self, "subnet_id")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="technologyType")
-    def technology_type(self) -> str:
-        """
-        The Kafka (e.g. Confluent) Schema Registry technology type.
-        """
+    def technology_type(self) -> Optional[str]:
         return pulumi.get(self, "technology_type")
 
     @property
     @pulumi.getter(name="tenancyId")
-    def tenancy_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related Oracle Cloud Infrastructure tenancy.
-        """
+    def tenancy_id(self) -> Optional[str]:
         return pulumi.get(self, "tenancy_id")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="trustStore")
-    def trust_store(self) -> str:
+    def trust_store(self) -> Optional[str]:
         return pulumi.get(self, "trust_store")
 
     @property
     @pulumi.getter(name="trustStorePassword")
-    def trust_store_password(self) -> str:
+    def trust_store_password(self) -> Optional[str]:
         return pulumi.get(self, "trust_store_password")
 
     @property
     @pulumi.getter
-    def url(self) -> str:
-        """
-        Kafka Schema Registry URL. e.g.: 'https://server1.us.oracle.com:8081'
-        """
+    def url(self) -> Optional[str]:
         return pulumi.get(self, "url")
 
     @property
     @pulumi.getter(name="userId")
-    def user_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database/Object Storage. The user must have write access to the table they want to connect to.
-        """
+    def user_id(self) -> Optional[str]:
         return pulumi.get(self, "user_id")
 
     @property
     @pulumi.getter
-    def username(self) -> str:
-        """
-        The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivity requirements defined in it.
-        """
+    def username(self) -> Optional[str]:
         return pulumi.get(self, "username")
 
     @property
     @pulumi.getter(name="vaultId")
-    def vault_id(self) -> str:
-        """
-        Refers to the customer's vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
-        """
+    def vault_id(self) -> Optional[str]:
         return pulumi.get(self, "vault_id")
 
     @property
     @pulumi.getter
-    def wallet(self) -> str:
+    def wallet(self) -> Optional[str]:
         return pulumi.get(self, "wallet")
 
 
@@ -858,21 +702,7 @@ class AwaitableGetConnectionResult(GetConnectionResult):
 def get_connection(connection_id: Optional[str] = None,
                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetConnectionResult:
     """
-    This data source provides details about a specific Connection resource in Oracle Cloud Infrastructure Golden Gate service.
-
-    Retrieves a Connection.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_connection = oci.GoldenGate.get_connection(connection_id=oci_golden_gate_connection["test_connection"]["id"])
-    ```
-
-
-    :param str connection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Connection.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['connectionId'] = connection_id
@@ -960,20 +790,6 @@ def get_connection(connection_id: Optional[str] = None,
 def get_connection_output(connection_id: Optional[pulumi.Input[str]] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetConnectionResult]:
     """
-    This data source provides details about a specific Connection resource in Oracle Cloud Infrastructure Golden Gate service.
-
-    Retrieves a Connection.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_connection = oci.GoldenGate.get_connection(connection_id=oci_golden_gate_connection["test_connection"]["id"])
-    ```
-
-
-    :param str connection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Connection.
+    Use this data source to access information about an existing resource.
     """
     ...

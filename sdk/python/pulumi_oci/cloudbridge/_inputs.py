@@ -46,17 +46,6 @@ class AgentPluginListArgs:
                  state: Optional[pulumi.Input[str]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
                  time_updated: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] agent_id: Agent identifier.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[str] name: Plugin identifier, which can be renamed.
-        :param pulumi.Input[str] plugin_version: Plugin version.
-        :param pulumi.Input[str] state: The current state of the Agent.
-        :param pulumi.Input[str] time_created: The time when the Agent was created. An RFC3339 formatted datetime string.
-        :param pulumi.Input[str] time_updated: The time when the Agent was updated. An RFC3339 formatted datetime string.
-        """
         if agent_id is not None:
             pulumi.set(__self__, "agent_id", agent_id)
         if defined_tags is not None:
@@ -79,9 +68,6 @@ class AgentPluginListArgs:
     @property
     @pulumi.getter(name="agentId")
     def agent_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        Agent identifier.
-        """
         return pulumi.get(self, "agent_id")
 
     @agent_id.setter
@@ -91,9 +77,6 @@ class AgentPluginListArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -103,9 +86,6 @@ class AgentPluginListArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -115,9 +95,6 @@ class AgentPluginListArgs:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -127,9 +104,6 @@ class AgentPluginListArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Plugin identifier, which can be renamed.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -139,9 +113,6 @@ class AgentPluginListArgs:
     @property
     @pulumi.getter(name="pluginVersion")
     def plugin_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        Plugin version.
-        """
         return pulumi.get(self, "plugin_version")
 
     @plugin_version.setter
@@ -151,9 +122,6 @@ class AgentPluginListArgs:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the Agent.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -163,9 +131,6 @@ class AgentPluginListArgs:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time when the Agent was created. An RFC3339 formatted datetime string.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -175,9 +140,6 @@ class AgentPluginListArgs:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time when the Agent was updated. An RFC3339 formatted datetime string.
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -217,37 +179,6 @@ class AssetComputeArgs:
                  scsi_controller: Optional[pulumi.Input['AssetComputeScsiControllerArgs']] = None,
                  storage_provisioned_in_mbs: Optional[pulumi.Input[str]] = None,
                  threads_per_core_count: Optional[pulumi.Input[int]] = None):
-        """
-        :param pulumi.Input[int] connected_networks: (Updatable) Number of connected networks.
-        :param pulumi.Input[int] cores_count: (Updatable) Number of GPU cores.
-        :param pulumi.Input[str] cpu_model: (Updatable) CPU model name.
-        :param pulumi.Input[str] description: (Updatable) The tag description.
-        :param pulumi.Input[Sequence[pulumi.Input['AssetComputeDiskArgs']]] disks: (Updatable) Lists the set of disks belonging to the virtual machine. This list is unordered.
-        :param pulumi.Input[int] disks_count: (Updatable) Number of disks.
-        :param pulumi.Input[str] dns_name: (Updatable) Fully Qualified DNS Name.
-        :param pulumi.Input[str] firmware: (Updatable) Information about firmware type for this virtual machine.
-        :param pulumi.Input[Sequence[pulumi.Input['AssetComputeGpuDeviceArgs']]] gpu_devices: (Updatable) List of GPU devices attached to a virtual machine.
-        :param pulumi.Input[int] gpu_devices_count: (Updatable) Number of GPU devices.
-        :param pulumi.Input[str] guest_state: (Updatable) Guest state.
-        :param pulumi.Input[str] hardware_version: (Updatable) Hardware version.
-        :param pulumi.Input[str] host_name: (Updatable) Host name of the VM.
-        :param pulumi.Input[bool] is_pmem_enabled: (Updatable) Whether Pmem is enabled. Decides if NVDIMMs are used as a permanent memory.
-        :param pulumi.Input[bool] is_tpm_enabled: (Updatable) Whether Trusted Platform Module (TPM) is enabled.
-        :param pulumi.Input[str] latency_sensitivity: (Updatable) Latency sensitivity.
-        :param pulumi.Input[str] memory_in_mbs: (Updatable) Memory size in MBs.
-        :param pulumi.Input[Sequence[pulumi.Input['AssetComputeNicArgs']]] nics: (Updatable) List of network ethernet cards attached to a virtual machine.
-        :param pulumi.Input[int] nics_count: (Updatable) Number of network ethernet cards.
-        :param pulumi.Input['AssetComputeNvdimmControllerArgs'] nvdimm_controller: (Updatable) The asset's NVDIMM configuration.
-        :param pulumi.Input[Sequence[pulumi.Input['AssetComputeNvdimmArgs']]] nvdimms: (Updatable) The properties of the NVDIMMs attached to a virtual machine.
-        :param pulumi.Input[str] operating_system: (Updatable) Operating system.
-        :param pulumi.Input[str] operating_system_version: (Updatable) Operating system version.
-        :param pulumi.Input[str] pmem_in_mbs: (Updatable) Pmem size in MBs.
-        :param pulumi.Input[str] power_state: (Updatable) The current power state of the virtual machine.
-        :param pulumi.Input[str] primary_ip: (Updatable) Primary IP address of the compute instance.
-        :param pulumi.Input['AssetComputeScsiControllerArgs'] scsi_controller: (Updatable) The assets SCSI controller.
-        :param pulumi.Input[str] storage_provisioned_in_mbs: (Updatable) Provision storage size in MBs.
-        :param pulumi.Input[int] threads_per_core_count: (Updatable) Number of threads per core.
-        """
         if connected_networks is not None:
             pulumi.set(__self__, "connected_networks", connected_networks)
         if cores_count is not None:
@@ -310,9 +241,6 @@ class AssetComputeArgs:
     @property
     @pulumi.getter(name="connectedNetworks")
     def connected_networks(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Number of connected networks.
-        """
         return pulumi.get(self, "connected_networks")
 
     @connected_networks.setter
@@ -322,9 +250,6 @@ class AssetComputeArgs:
     @property
     @pulumi.getter(name="coresCount")
     def cores_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Number of GPU cores.
-        """
         return pulumi.get(self, "cores_count")
 
     @cores_count.setter
@@ -334,9 +259,6 @@ class AssetComputeArgs:
     @property
     @pulumi.getter(name="cpuModel")
     def cpu_model(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) CPU model name.
-        """
         return pulumi.get(self, "cpu_model")
 
     @cpu_model.setter
@@ -346,9 +268,6 @@ class AssetComputeArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The tag description.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -358,9 +277,6 @@ class AssetComputeArgs:
     @property
     @pulumi.getter
     def disks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AssetComputeDiskArgs']]]]:
-        """
-        (Updatable) Lists the set of disks belonging to the virtual machine. This list is unordered.
-        """
         return pulumi.get(self, "disks")
 
     @disks.setter
@@ -370,9 +286,6 @@ class AssetComputeArgs:
     @property
     @pulumi.getter(name="disksCount")
     def disks_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Number of disks.
-        """
         return pulumi.get(self, "disks_count")
 
     @disks_count.setter
@@ -382,9 +295,6 @@ class AssetComputeArgs:
     @property
     @pulumi.getter(name="dnsName")
     def dns_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Fully Qualified DNS Name.
-        """
         return pulumi.get(self, "dns_name")
 
     @dns_name.setter
@@ -394,9 +304,6 @@ class AssetComputeArgs:
     @property
     @pulumi.getter
     def firmware(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Information about firmware type for this virtual machine.
-        """
         return pulumi.get(self, "firmware")
 
     @firmware.setter
@@ -406,9 +313,6 @@ class AssetComputeArgs:
     @property
     @pulumi.getter(name="gpuDevices")
     def gpu_devices(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AssetComputeGpuDeviceArgs']]]]:
-        """
-        (Updatable) List of GPU devices attached to a virtual machine.
-        """
         return pulumi.get(self, "gpu_devices")
 
     @gpu_devices.setter
@@ -418,9 +322,6 @@ class AssetComputeArgs:
     @property
     @pulumi.getter(name="gpuDevicesCount")
     def gpu_devices_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Number of GPU devices.
-        """
         return pulumi.get(self, "gpu_devices_count")
 
     @gpu_devices_count.setter
@@ -430,9 +331,6 @@ class AssetComputeArgs:
     @property
     @pulumi.getter(name="guestState")
     def guest_state(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Guest state.
-        """
         return pulumi.get(self, "guest_state")
 
     @guest_state.setter
@@ -442,9 +340,6 @@ class AssetComputeArgs:
     @property
     @pulumi.getter(name="hardwareVersion")
     def hardware_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Hardware version.
-        """
         return pulumi.get(self, "hardware_version")
 
     @hardware_version.setter
@@ -454,9 +349,6 @@ class AssetComputeArgs:
     @property
     @pulumi.getter(name="hostName")
     def host_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Host name of the VM.
-        """
         return pulumi.get(self, "host_name")
 
     @host_name.setter
@@ -466,9 +358,6 @@ class AssetComputeArgs:
     @property
     @pulumi.getter(name="isPmemEnabled")
     def is_pmem_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Whether Pmem is enabled. Decides if NVDIMMs are used as a permanent memory.
-        """
         return pulumi.get(self, "is_pmem_enabled")
 
     @is_pmem_enabled.setter
@@ -478,9 +367,6 @@ class AssetComputeArgs:
     @property
     @pulumi.getter(name="isTpmEnabled")
     def is_tpm_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Whether Trusted Platform Module (TPM) is enabled.
-        """
         return pulumi.get(self, "is_tpm_enabled")
 
     @is_tpm_enabled.setter
@@ -490,9 +376,6 @@ class AssetComputeArgs:
     @property
     @pulumi.getter(name="latencySensitivity")
     def latency_sensitivity(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Latency sensitivity.
-        """
         return pulumi.get(self, "latency_sensitivity")
 
     @latency_sensitivity.setter
@@ -502,9 +385,6 @@ class AssetComputeArgs:
     @property
     @pulumi.getter(name="memoryInMbs")
     def memory_in_mbs(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Memory size in MBs.
-        """
         return pulumi.get(self, "memory_in_mbs")
 
     @memory_in_mbs.setter
@@ -514,9 +394,6 @@ class AssetComputeArgs:
     @property
     @pulumi.getter
     def nics(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AssetComputeNicArgs']]]]:
-        """
-        (Updatable) List of network ethernet cards attached to a virtual machine.
-        """
         return pulumi.get(self, "nics")
 
     @nics.setter
@@ -526,9 +403,6 @@ class AssetComputeArgs:
     @property
     @pulumi.getter(name="nicsCount")
     def nics_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Number of network ethernet cards.
-        """
         return pulumi.get(self, "nics_count")
 
     @nics_count.setter
@@ -538,9 +412,6 @@ class AssetComputeArgs:
     @property
     @pulumi.getter(name="nvdimmController")
     def nvdimm_controller(self) -> Optional[pulumi.Input['AssetComputeNvdimmControllerArgs']]:
-        """
-        (Updatable) The asset's NVDIMM configuration.
-        """
         return pulumi.get(self, "nvdimm_controller")
 
     @nvdimm_controller.setter
@@ -550,9 +421,6 @@ class AssetComputeArgs:
     @property
     @pulumi.getter
     def nvdimms(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AssetComputeNvdimmArgs']]]]:
-        """
-        (Updatable) The properties of the NVDIMMs attached to a virtual machine.
-        """
         return pulumi.get(self, "nvdimms")
 
     @nvdimms.setter
@@ -562,9 +430,6 @@ class AssetComputeArgs:
     @property
     @pulumi.getter(name="operatingSystem")
     def operating_system(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Operating system.
-        """
         return pulumi.get(self, "operating_system")
 
     @operating_system.setter
@@ -574,9 +439,6 @@ class AssetComputeArgs:
     @property
     @pulumi.getter(name="operatingSystemVersion")
     def operating_system_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Operating system version.
-        """
         return pulumi.get(self, "operating_system_version")
 
     @operating_system_version.setter
@@ -586,9 +448,6 @@ class AssetComputeArgs:
     @property
     @pulumi.getter(name="pmemInMbs")
     def pmem_in_mbs(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Pmem size in MBs.
-        """
         return pulumi.get(self, "pmem_in_mbs")
 
     @pmem_in_mbs.setter
@@ -598,9 +457,6 @@ class AssetComputeArgs:
     @property
     @pulumi.getter(name="powerState")
     def power_state(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The current power state of the virtual machine.
-        """
         return pulumi.get(self, "power_state")
 
     @power_state.setter
@@ -610,9 +466,6 @@ class AssetComputeArgs:
     @property
     @pulumi.getter(name="primaryIp")
     def primary_ip(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Primary IP address of the compute instance.
-        """
         return pulumi.get(self, "primary_ip")
 
     @primary_ip.setter
@@ -622,9 +475,6 @@ class AssetComputeArgs:
     @property
     @pulumi.getter(name="scsiController")
     def scsi_controller(self) -> Optional[pulumi.Input['AssetComputeScsiControllerArgs']]:
-        """
-        (Updatable) The assets SCSI controller.
-        """
         return pulumi.get(self, "scsi_controller")
 
     @scsi_controller.setter
@@ -634,9 +484,6 @@ class AssetComputeArgs:
     @property
     @pulumi.getter(name="storageProvisionedInMbs")
     def storage_provisioned_in_mbs(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Provision storage size in MBs.
-        """
         return pulumi.get(self, "storage_provisioned_in_mbs")
 
     @storage_provisioned_in_mbs.setter
@@ -646,9 +493,6 @@ class AssetComputeArgs:
     @property
     @pulumi.getter(name="threadsPerCoreCount")
     def threads_per_core_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Number of threads per core.
-        """
         return pulumi.get(self, "threads_per_core_count")
 
     @threads_per_core_count.setter
@@ -666,15 +510,6 @@ class AssetComputeDiskArgs:
                  size_in_mbs: Optional[pulumi.Input[str]] = None,
                  uuid: Optional[pulumi.Input[str]] = None,
                  uuid_lun: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[int] boot_order: (Updatable) Order of boot volumes.
-        :param pulumi.Input[str] location: (Updatable) Location of the boot/data volume.
-        :param pulumi.Input[str] name: (Updatable) The tag name.
-        :param pulumi.Input[str] persistent_mode: (Updatable) The disk persistent mode.
-        :param pulumi.Input[str] size_in_mbs: (Updatable) The size of the volume in MBs.
-        :param pulumi.Input[str] uuid: (Updatable) Disk UUID for the virtual disk, if available.
-        :param pulumi.Input[str] uuid_lun: (Updatable) Disk UUID LUN for the virtual disk, if available.
-        """
         if boot_order is not None:
             pulumi.set(__self__, "boot_order", boot_order)
         if location is not None:
@@ -693,9 +528,6 @@ class AssetComputeDiskArgs:
     @property
     @pulumi.getter(name="bootOrder")
     def boot_order(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Order of boot volumes.
-        """
         return pulumi.get(self, "boot_order")
 
     @boot_order.setter
@@ -705,9 +537,6 @@ class AssetComputeDiskArgs:
     @property
     @pulumi.getter
     def location(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Location of the boot/data volume.
-        """
         return pulumi.get(self, "location")
 
     @location.setter
@@ -717,9 +546,6 @@ class AssetComputeDiskArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The tag name.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -729,9 +555,6 @@ class AssetComputeDiskArgs:
     @property
     @pulumi.getter(name="persistentMode")
     def persistent_mode(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The disk persistent mode.
-        """
         return pulumi.get(self, "persistent_mode")
 
     @persistent_mode.setter
@@ -741,9 +564,6 @@ class AssetComputeDiskArgs:
     @property
     @pulumi.getter(name="sizeInMbs")
     def size_in_mbs(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The size of the volume in MBs.
-        """
         return pulumi.get(self, "size_in_mbs")
 
     @size_in_mbs.setter
@@ -753,9 +573,6 @@ class AssetComputeDiskArgs:
     @property
     @pulumi.getter
     def uuid(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Disk UUID for the virtual disk, if available.
-        """
         return pulumi.get(self, "uuid")
 
     @uuid.setter
@@ -765,9 +582,6 @@ class AssetComputeDiskArgs:
     @property
     @pulumi.getter(name="uuidLun")
     def uuid_lun(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Disk UUID LUN for the virtual disk, if available.
-        """
         return pulumi.get(self, "uuid_lun")
 
     @uuid_lun.setter
@@ -783,13 +597,6 @@ class AssetComputeGpuDeviceArgs:
                  manufacturer: Optional[pulumi.Input[str]] = None,
                  memory_in_mbs: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[int] cores_count: (Updatable) Number of GPU cores.
-        :param pulumi.Input[str] description: (Updatable) The tag description.
-        :param pulumi.Input[str] manufacturer: (Updatable) The manufacturer of GPU.
-        :param pulumi.Input[str] memory_in_mbs: (Updatable) Memory size in MBs.
-        :param pulumi.Input[str] name: (Updatable) The tag name.
-        """
         if cores_count is not None:
             pulumi.set(__self__, "cores_count", cores_count)
         if description is not None:
@@ -804,9 +611,6 @@ class AssetComputeGpuDeviceArgs:
     @property
     @pulumi.getter(name="coresCount")
     def cores_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Number of GPU cores.
-        """
         return pulumi.get(self, "cores_count")
 
     @cores_count.setter
@@ -816,9 +620,6 @@ class AssetComputeGpuDeviceArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The tag description.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -828,9 +629,6 @@ class AssetComputeGpuDeviceArgs:
     @property
     @pulumi.getter
     def manufacturer(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The manufacturer of GPU.
-        """
         return pulumi.get(self, "manufacturer")
 
     @manufacturer.setter
@@ -840,9 +638,6 @@ class AssetComputeGpuDeviceArgs:
     @property
     @pulumi.getter(name="memoryInMbs")
     def memory_in_mbs(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Memory size in MBs.
-        """
         return pulumi.get(self, "memory_in_mbs")
 
     @memory_in_mbs.setter
@@ -852,9 +647,6 @@ class AssetComputeGpuDeviceArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The tag name.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -871,14 +663,6 @@ class AssetComputeNicArgs:
                  mac_address_type: Optional[pulumi.Input[str]] = None,
                  network_name: Optional[pulumi.Input[str]] = None,
                  switch_name: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] ip_addresses: (Updatable) List of IP addresses.
-        :param pulumi.Input[str] label: (Updatable) Provides a label and summary information for the device.
-        :param pulumi.Input[str] mac_address: (Updatable) Mac address of the VM.
-        :param pulumi.Input[str] mac_address_type: (Updatable) Mac address type.
-        :param pulumi.Input[str] network_name: (Updatable) Network name.
-        :param pulumi.Input[str] switch_name: (Updatable) Switch name.
-        """
         if ip_addresses is not None:
             pulumi.set(__self__, "ip_addresses", ip_addresses)
         if label is not None:
@@ -895,9 +679,6 @@ class AssetComputeNicArgs:
     @property
     @pulumi.getter(name="ipAddresses")
     def ip_addresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) List of IP addresses.
-        """
         return pulumi.get(self, "ip_addresses")
 
     @ip_addresses.setter
@@ -907,9 +688,6 @@ class AssetComputeNicArgs:
     @property
     @pulumi.getter
     def label(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Provides a label and summary information for the device.
-        """
         return pulumi.get(self, "label")
 
     @label.setter
@@ -919,9 +697,6 @@ class AssetComputeNicArgs:
     @property
     @pulumi.getter(name="macAddress")
     def mac_address(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Mac address of the VM.
-        """
         return pulumi.get(self, "mac_address")
 
     @mac_address.setter
@@ -931,9 +706,6 @@ class AssetComputeNicArgs:
     @property
     @pulumi.getter(name="macAddressType")
     def mac_address_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Mac address type.
-        """
         return pulumi.get(self, "mac_address_type")
 
     @mac_address_type.setter
@@ -943,9 +715,6 @@ class AssetComputeNicArgs:
     @property
     @pulumi.getter(name="networkName")
     def network_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Network name.
-        """
         return pulumi.get(self, "network_name")
 
     @network_name.setter
@@ -955,9 +724,6 @@ class AssetComputeNicArgs:
     @property
     @pulumi.getter(name="switchName")
     def switch_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Switch name.
-        """
         return pulumi.get(self, "switch_name")
 
     @switch_name.setter
@@ -971,11 +737,6 @@ class AssetComputeNvdimmArgs:
                  controller_key: Optional[pulumi.Input[int]] = None,
                  label: Optional[pulumi.Input[str]] = None,
                  unit_number: Optional[pulumi.Input[int]] = None):
-        """
-        :param pulumi.Input[int] controller_key: (Updatable) Controller key.
-        :param pulumi.Input[str] label: (Updatable) Provides a label and summary information for the device.
-        :param pulumi.Input[int] unit_number: (Updatable) The unit number of the SCSI controller.
-        """
         if controller_key is not None:
             pulumi.set(__self__, "controller_key", controller_key)
         if label is not None:
@@ -986,9 +747,6 @@ class AssetComputeNvdimmArgs:
     @property
     @pulumi.getter(name="controllerKey")
     def controller_key(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Controller key.
-        """
         return pulumi.get(self, "controller_key")
 
     @controller_key.setter
@@ -998,9 +756,6 @@ class AssetComputeNvdimmArgs:
     @property
     @pulumi.getter
     def label(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Provides a label and summary information for the device.
-        """
         return pulumi.get(self, "label")
 
     @label.setter
@@ -1010,9 +765,6 @@ class AssetComputeNvdimmArgs:
     @property
     @pulumi.getter(name="unitNumber")
     def unit_number(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The unit number of the SCSI controller.
-        """
         return pulumi.get(self, "unit_number")
 
     @unit_number.setter
@@ -1025,10 +777,6 @@ class AssetComputeNvdimmControllerArgs:
     def __init__(__self__, *,
                  bus_number: Optional[pulumi.Input[int]] = None,
                  label: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[int] bus_number: (Updatable) Bus number.
-        :param pulumi.Input[str] label: (Updatable) Provides a label and summary information for the device.
-        """
         if bus_number is not None:
             pulumi.set(__self__, "bus_number", bus_number)
         if label is not None:
@@ -1037,9 +785,6 @@ class AssetComputeNvdimmControllerArgs:
     @property
     @pulumi.getter(name="busNumber")
     def bus_number(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Bus number.
-        """
         return pulumi.get(self, "bus_number")
 
     @bus_number.setter
@@ -1049,9 +794,6 @@ class AssetComputeNvdimmControllerArgs:
     @property
     @pulumi.getter
     def label(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Provides a label and summary information for the device.
-        """
         return pulumi.get(self, "label")
 
     @label.setter
@@ -1065,11 +807,6 @@ class AssetComputeScsiControllerArgs:
                  label: Optional[pulumi.Input[str]] = None,
                  shared_bus: Optional[pulumi.Input[str]] = None,
                  unit_number: Optional[pulumi.Input[int]] = None):
-        """
-        :param pulumi.Input[str] label: (Updatable) Provides a label and summary information for the device.
-        :param pulumi.Input[str] shared_bus: (Updatable) Shared bus.
-        :param pulumi.Input[int] unit_number: (Updatable) The unit number of the SCSI controller.
-        """
         if label is not None:
             pulumi.set(__self__, "label", label)
         if shared_bus is not None:
@@ -1080,9 +817,6 @@ class AssetComputeScsiControllerArgs:
     @property
     @pulumi.getter
     def label(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Provides a label and summary information for the device.
-        """
         return pulumi.get(self, "label")
 
     @label.setter
@@ -1092,9 +826,6 @@ class AssetComputeScsiControllerArgs:
     @property
     @pulumi.getter(name="sharedBus")
     def shared_bus(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Shared bus.
-        """
         return pulumi.get(self, "shared_bus")
 
     @shared_bus.setter
@@ -1104,9 +835,6 @@ class AssetComputeScsiControllerArgs:
     @property
     @pulumi.getter(name="unitNumber")
     def unit_number(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The unit number of the SCSI controller.
-        """
         return pulumi.get(self, "unit_number")
 
     @unit_number.setter
@@ -1119,19 +847,12 @@ class AssetSourceDiscoveryCredentialsArgs:
     def __init__(__self__, *,
                  secret_id: pulumi.Input[str],
                  type: pulumi.Input[str]):
-        """
-        :param pulumi.Input[str] secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the the type of the credentials is BASIC`, the secret must contain the username and password in JSON format, which is in the form of `{ "username": "<VMwareUser>", "password": "<VMwarePassword>" }`.
-        :param pulumi.Input[str] type: (Updatable) Asset source type.
-        """
         pulumi.set(__self__, "secret_id", secret_id)
         pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter(name="secretId")
     def secret_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the the type of the credentials is BASIC`, the secret must contain the username and password in JSON format, which is in the form of `{ "username": "<VMwareUser>", "password": "<VMwarePassword>" }`.
-        """
         return pulumi.get(self, "secret_id")
 
     @secret_id.setter
@@ -1141,9 +862,6 @@ class AssetSourceDiscoveryCredentialsArgs:
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Asset source type.
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -1156,19 +874,12 @@ class AssetSourceReplicationCredentialsArgs:
     def __init__(__self__, *,
                  secret_id: pulumi.Input[str],
                  type: pulumi.Input[str]):
-        """
-        :param pulumi.Input[str] secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the the type of the credentials is BASIC`, the secret must contain the username and password in JSON format, which is in the form of `{ "username": "<VMwareUser>", "password": "<VMwarePassword>" }`.
-        :param pulumi.Input[str] type: (Updatable) Asset source type.
-        """
         pulumi.set(__self__, "secret_id", secret_id)
         pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter(name="secretId")
     def secret_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the the type of the credentials is BASIC`, the secret must contain the username and password in JSON format, which is in the form of `{ "username": "<VMwareUser>", "password": "<VMwarePassword>" }`.
-        """
         return pulumi.get(self, "secret_id")
 
     @secret_id.setter
@@ -1178,9 +889,6 @@ class AssetSourceReplicationCredentialsArgs:
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Asset source type.
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -1194,11 +902,6 @@ class AssetVmArgs:
                  hypervisor_host: Optional[pulumi.Input[str]] = None,
                  hypervisor_vendor: Optional[pulumi.Input[str]] = None,
                  hypervisor_version: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] hypervisor_host: (Updatable) Host name/IP address of VM on which the host is running.
-        :param pulumi.Input[str] hypervisor_vendor: (Updatable) Hypervisor vendor.
-        :param pulumi.Input[str] hypervisor_version: (Updatable) Hypervisor version.
-        """
         if hypervisor_host is not None:
             pulumi.set(__self__, "hypervisor_host", hypervisor_host)
         if hypervisor_vendor is not None:
@@ -1209,9 +912,6 @@ class AssetVmArgs:
     @property
     @pulumi.getter(name="hypervisorHost")
     def hypervisor_host(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Host name/IP address of VM on which the host is running.
-        """
         return pulumi.get(self, "hypervisor_host")
 
     @hypervisor_host.setter
@@ -1221,9 +921,6 @@ class AssetVmArgs:
     @property
     @pulumi.getter(name="hypervisorVendor")
     def hypervisor_vendor(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Hypervisor vendor.
-        """
         return pulumi.get(self, "hypervisor_vendor")
 
     @hypervisor_vendor.setter
@@ -1233,9 +930,6 @@ class AssetVmArgs:
     @property
     @pulumi.getter(name="hypervisorVersion")
     def hypervisor_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Hypervisor version.
-        """
         return pulumi.get(self, "hypervisor_version")
 
     @hypervisor_version.setter
@@ -1249,11 +943,6 @@ class AssetVmwareVcenterArgs:
                  data_center: Optional[pulumi.Input[str]] = None,
                  vcenter_key: Optional[pulumi.Input[str]] = None,
                  vcenter_version: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] data_center: (Updatable) Data center name.
-        :param pulumi.Input[str] vcenter_key: (Updatable) vCenter unique key.
-        :param pulumi.Input[str] vcenter_version: (Updatable) Dot-separated version string.
-        """
         if data_center is not None:
             pulumi.set(__self__, "data_center", data_center)
         if vcenter_key is not None:
@@ -1264,9 +953,6 @@ class AssetVmwareVcenterArgs:
     @property
     @pulumi.getter(name="dataCenter")
     def data_center(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Data center name.
-        """
         return pulumi.get(self, "data_center")
 
     @data_center.setter
@@ -1276,9 +962,6 @@ class AssetVmwareVcenterArgs:
     @property
     @pulumi.getter(name="vcenterKey")
     def vcenter_key(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) vCenter unique key.
-        """
         return pulumi.get(self, "vcenter_key")
 
     @vcenter_key.setter
@@ -1288,9 +971,6 @@ class AssetVmwareVcenterArgs:
     @property
     @pulumi.getter(name="vcenterVersion")
     def vcenter_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Dot-separated version string.
-        """
         return pulumi.get(self, "vcenter_version")
 
     @vcenter_version.setter
@@ -1312,23 +992,6 @@ class AssetVmwareVmArgs:
                  is_disks_uuid_enabled: Optional[pulumi.Input[bool]] = None,
                  path: Optional[pulumi.Input[str]] = None,
                  vmware_tools_status: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] cluster: (Updatable) Cluster name.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] customer_fields: (Updatable) Customer fields.
-        :param pulumi.Input[Sequence[pulumi.Input['AssetVmwareVmCustomerTagArgs']]] customer_tags: (Updatable) Customer defined tags.
-        :param pulumi.Input[int] fault_tolerance_bandwidth: (Updatable) Fault tolerance bandwidth.
-        :param pulumi.Input[int] fault_tolerance_secondary_latency: (Updatable) Fault tolerance to secondary latency.
-        :param pulumi.Input[str] fault_tolerance_state: (Updatable) Fault tolerance state.
-        :param pulumi.Input[str] instance_uuid: (Updatable) vCenter-specific identifier of the virtual machine.
-        :param pulumi.Input[bool] is_disks_cbt_enabled: (Updatable) Indicates that change tracking is supported for virtual disks of this virtual machine. However, even if change tracking is supported, it might not be available for all disks of the virtual machine.
-        :param pulumi.Input[bool] is_disks_uuid_enabled: (Updatable) Whether changed block tracking for this VM's disk is active.
-        :param pulumi.Input[str] path: (Updatable) Path directory of the asset.
-        :param pulumi.Input[str] vmware_tools_status: (Updatable) VMware tools status.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         if cluster is not None:
             pulumi.set(__self__, "cluster", cluster)
         if customer_fields is not None:
@@ -1355,9 +1018,6 @@ class AssetVmwareVmArgs:
     @property
     @pulumi.getter
     def cluster(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Cluster name.
-        """
         return pulumi.get(self, "cluster")
 
     @cluster.setter
@@ -1367,9 +1027,6 @@ class AssetVmwareVmArgs:
     @property
     @pulumi.getter(name="customerFields")
     def customer_fields(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) Customer fields.
-        """
         return pulumi.get(self, "customer_fields")
 
     @customer_fields.setter
@@ -1379,9 +1036,6 @@ class AssetVmwareVmArgs:
     @property
     @pulumi.getter(name="customerTags")
     def customer_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AssetVmwareVmCustomerTagArgs']]]]:
-        """
-        (Updatable) Customer defined tags.
-        """
         return pulumi.get(self, "customer_tags")
 
     @customer_tags.setter
@@ -1391,9 +1045,6 @@ class AssetVmwareVmArgs:
     @property
     @pulumi.getter(name="faultToleranceBandwidth")
     def fault_tolerance_bandwidth(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Fault tolerance bandwidth.
-        """
         return pulumi.get(self, "fault_tolerance_bandwidth")
 
     @fault_tolerance_bandwidth.setter
@@ -1403,9 +1054,6 @@ class AssetVmwareVmArgs:
     @property
     @pulumi.getter(name="faultToleranceSecondaryLatency")
     def fault_tolerance_secondary_latency(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Fault tolerance to secondary latency.
-        """
         return pulumi.get(self, "fault_tolerance_secondary_latency")
 
     @fault_tolerance_secondary_latency.setter
@@ -1415,9 +1063,6 @@ class AssetVmwareVmArgs:
     @property
     @pulumi.getter(name="faultToleranceState")
     def fault_tolerance_state(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Fault tolerance state.
-        """
         return pulumi.get(self, "fault_tolerance_state")
 
     @fault_tolerance_state.setter
@@ -1427,9 +1072,6 @@ class AssetVmwareVmArgs:
     @property
     @pulumi.getter(name="instanceUuid")
     def instance_uuid(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) vCenter-specific identifier of the virtual machine.
-        """
         return pulumi.get(self, "instance_uuid")
 
     @instance_uuid.setter
@@ -1439,9 +1081,6 @@ class AssetVmwareVmArgs:
     @property
     @pulumi.getter(name="isDisksCbtEnabled")
     def is_disks_cbt_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Indicates that change tracking is supported for virtual disks of this virtual machine. However, even if change tracking is supported, it might not be available for all disks of the virtual machine.
-        """
         return pulumi.get(self, "is_disks_cbt_enabled")
 
     @is_disks_cbt_enabled.setter
@@ -1451,9 +1090,6 @@ class AssetVmwareVmArgs:
     @property
     @pulumi.getter(name="isDisksUuidEnabled")
     def is_disks_uuid_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Whether changed block tracking for this VM's disk is active.
-        """
         return pulumi.get(self, "is_disks_uuid_enabled")
 
     @is_disks_uuid_enabled.setter
@@ -1463,9 +1099,6 @@ class AssetVmwareVmArgs:
     @property
     @pulumi.getter
     def path(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Path directory of the asset.
-        """
         return pulumi.get(self, "path")
 
     @path.setter
@@ -1475,13 +1108,6 @@ class AssetVmwareVmArgs:
     @property
     @pulumi.getter(name="vmwareToolsStatus")
     def vmware_tools_status(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) VMware tools status.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "vmware_tools_status")
 
     @vmware_tools_status.setter
@@ -1494,10 +1120,6 @@ class AssetVmwareVmCustomerTagArgs:
     def __init__(__self__, *,
                  description: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] description: (Updatable) The tag description.
-        :param pulumi.Input[str] name: (Updatable) The tag name.
-        """
         if description is not None:
             pulumi.set(__self__, "description", description)
         if name is not None:
@@ -1506,9 +1128,6 @@ class AssetVmwareVmCustomerTagArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The tag description.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -1518,9 +1137,6 @@ class AssetVmwareVmCustomerTagArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The tag name.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -1573,9 +1189,6 @@ class GetAgentsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: Plugin identifier, which can be renamed.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -1584,9 +1197,6 @@ class GetAgentsFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Plugin identifier, which can be renamed.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -1696,9 +1306,6 @@ class GetAssetsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The tag name.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -1707,9 +1314,6 @@ class GetAssetsFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The tag name.
-        """
         return pulumi.get(self, "name")
 
     @name.setter

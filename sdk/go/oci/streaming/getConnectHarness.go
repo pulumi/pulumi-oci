@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Connect Harness resource in Oracle Cloud Infrastructure Streaming service.
@@ -60,22 +59,22 @@ type LookupConnectHarnessArgs struct {
 // A collection of values returned by getConnectHarness.
 type LookupConnectHarnessResult struct {
 	// The OCID of the compartment that contains the connect harness.
-	CompartmentId    string `pulumi:"compartmentId"`
-	ConnectHarnessId string `pulumi:"connectHarnessId"`
+	CompartmentId    *string `pulumi:"compartmentId"`
+	ConnectHarnessId string  `pulumi:"connectHarnessId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations": {"CostCenter": "42"}}'
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair that is applied with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the connect harness.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Any additional details about the current state of the connect harness.
-	LifecycleStateDetails string `pulumi:"lifecycleStateDetails"`
+	LifecycleStateDetails *string `pulumi:"lifecycleStateDetails"`
 	// The name of the connect harness. Avoid entering confidential information.  Example: `JDBCConnector`
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The current state of the connect harness.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the connect harness was created, expressed in in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 }
 
 func LookupConnectHarnessOutput(ctx *pulumi.Context, args LookupConnectHarnessOutputArgs, opts ...pulumi.InvokeOption) LookupConnectHarnessResultOutput {
@@ -116,15 +115,9 @@ func (o LookupConnectHarnessResultOutput) ToLookupConnectHarnessResultOutputWith
 	return o
 }
 
-func (o LookupConnectHarnessResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupConnectHarnessResult] {
-	return pulumix.Output[LookupConnectHarnessResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment that contains the connect harness.
-func (o LookupConnectHarnessResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupConnectHarnessResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupConnectHarnessResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupConnectHarnessResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupConnectHarnessResultOutput) ConnectHarnessId() pulumi.StringOutput {
@@ -142,28 +135,28 @@ func (o LookupConnectHarnessResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The OCID of the connect harness.
-func (o LookupConnectHarnessResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupConnectHarnessResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupConnectHarnessResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupConnectHarnessResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Any additional details about the current state of the connect harness.
-func (o LookupConnectHarnessResultOutput) LifecycleStateDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupConnectHarnessResult) string { return v.LifecycleStateDetails }).(pulumi.StringOutput)
+func (o LookupConnectHarnessResultOutput) LifecycleStateDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupConnectHarnessResult) *string { return v.LifecycleStateDetails }).(pulumi.StringPtrOutput)
 }
 
 // The name of the connect harness. Avoid entering confidential information.  Example: `JDBCConnector`
-func (o LookupConnectHarnessResultOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupConnectHarnessResult) string { return v.Name }).(pulumi.StringOutput)
+func (o LookupConnectHarnessResultOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupConnectHarnessResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the connect harness.
-func (o LookupConnectHarnessResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupConnectHarnessResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupConnectHarnessResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupConnectHarnessResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the connect harness was created, expressed in in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
-func (o LookupConnectHarnessResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupConnectHarnessResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupConnectHarnessResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupConnectHarnessResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

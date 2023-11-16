@@ -16,29 +16,29 @@ namespace Pulumi.Oci.ApmConfig.Outputs
         /// <summary>
         /// The type of configuration item.
         /// </summary>
-        public readonly string ConfigType;
+        public readonly string? ConfigType;
         /// <summary>
         /// The name by which a configuration entity is displayed to the end user.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID is generated when the item is created.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// A string that specifies the group that an OPTIONS item belongs to.
         /// </summary>
-        public readonly string OptionsGroup;
+        public readonly string? OptionsGroup;
 
         [OutputConstructor]
         private GetConfigInUseByResult(
-            string configType,
+            string? configType,
 
-            string displayName,
+            string? displayName,
 
-            string id,
+            string? id,
 
-            string optionsGroup)
+            string? optionsGroup)
         {
             ConfigType = configType;
             DisplayName = displayName;

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -18,23 +17,23 @@ type GetAggregatedComputedUsagesAggregatedComputedUsage struct {
 	// Aggregation of computed usages for the subscribed service.
 	AggregatedComputedUsages []GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsage `pulumi:"aggregatedComputedUsages"`
 	// Currency code
-	CurrencyCode string `pulumi:"currencyCode"`
+	CurrencyCode *string `pulumi:"currencyCode"`
 	// Product part number for subscribed service line, called parent product.
 	ParentProducts []GetAggregatedComputedUsagesAggregatedComputedUsageParentProduct `pulumi:"parentProducts"`
 	// Subscribed service line parent id
-	ParentSubscribedServiceId string `pulumi:"parentSubscribedServiceId"`
+	ParentSubscribedServiceId *string `pulumi:"parentSubscribedServiceId"`
 	// Subscribed service asociated subscription plan number.
-	PlanNumber string `pulumi:"planNumber"`
+	PlanNumber *string `pulumi:"planNumber"`
 	// Subscribed services pricing model
-	PricingModel string `pulumi:"pricingModel"`
+	PricingModel *string `pulumi:"pricingModel"`
 	// Inernal SPM Ratecard Id at line level
-	RateCardId string `pulumi:"rateCardId"`
+	RateCardId *string `pulumi:"rateCardId"`
 	// Subscription Id is an identifier associated to the service used for filter the Computed Usage in SPM.
-	SubscriptionId string `pulumi:"subscriptionId"`
+	SubscriptionId *string `pulumi:"subscriptionId"`
 	// Subscribed services contract line end date, expressed in RFC 3339 timestamp format.
-	TimeEnd string `pulumi:"timeEnd"`
+	TimeEnd *string `pulumi:"timeEnd"`
 	// Subscribed services contract line start date, expressed in RFC 3339 timestamp format.
-	TimeStart string `pulumi:"timeStart"`
+	TimeStart *string `pulumi:"timeStart"`
 }
 
 // GetAggregatedComputedUsagesAggregatedComputedUsageInput is an input type that accepts GetAggregatedComputedUsagesAggregatedComputedUsageArgs and GetAggregatedComputedUsagesAggregatedComputedUsageOutput values.
@@ -52,23 +51,23 @@ type GetAggregatedComputedUsagesAggregatedComputedUsageArgs struct {
 	// Aggregation of computed usages for the subscribed service.
 	AggregatedComputedUsages GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageArrayInput `pulumi:"aggregatedComputedUsages"`
 	// Currency code
-	CurrencyCode pulumi.StringInput `pulumi:"currencyCode"`
+	CurrencyCode pulumi.StringPtrInput `pulumi:"currencyCode"`
 	// Product part number for subscribed service line, called parent product.
 	ParentProducts GetAggregatedComputedUsagesAggregatedComputedUsageParentProductArrayInput `pulumi:"parentProducts"`
 	// Subscribed service line parent id
-	ParentSubscribedServiceId pulumi.StringInput `pulumi:"parentSubscribedServiceId"`
+	ParentSubscribedServiceId pulumi.StringPtrInput `pulumi:"parentSubscribedServiceId"`
 	// Subscribed service asociated subscription plan number.
-	PlanNumber pulumi.StringInput `pulumi:"planNumber"`
+	PlanNumber pulumi.StringPtrInput `pulumi:"planNumber"`
 	// Subscribed services pricing model
-	PricingModel pulumi.StringInput `pulumi:"pricingModel"`
+	PricingModel pulumi.StringPtrInput `pulumi:"pricingModel"`
 	// Inernal SPM Ratecard Id at line level
-	RateCardId pulumi.StringInput `pulumi:"rateCardId"`
+	RateCardId pulumi.StringPtrInput `pulumi:"rateCardId"`
 	// Subscription Id is an identifier associated to the service used for filter the Computed Usage in SPM.
-	SubscriptionId pulumi.StringInput `pulumi:"subscriptionId"`
+	SubscriptionId pulumi.StringPtrInput `pulumi:"subscriptionId"`
 	// Subscribed services contract line end date, expressed in RFC 3339 timestamp format.
-	TimeEnd pulumi.StringInput `pulumi:"timeEnd"`
+	TimeEnd pulumi.StringPtrInput `pulumi:"timeEnd"`
 	// Subscribed services contract line start date, expressed in RFC 3339 timestamp format.
-	TimeStart pulumi.StringInput `pulumi:"timeStart"`
+	TimeStart pulumi.StringPtrInput `pulumi:"timeStart"`
 }
 
 func (GetAggregatedComputedUsagesAggregatedComputedUsageArgs) ElementType() reflect.Type {
@@ -81,12 +80,6 @@ func (i GetAggregatedComputedUsagesAggregatedComputedUsageArgs) ToGetAggregatedC
 
 func (i GetAggregatedComputedUsagesAggregatedComputedUsageArgs) ToGetAggregatedComputedUsagesAggregatedComputedUsageOutputWithContext(ctx context.Context) GetAggregatedComputedUsagesAggregatedComputedUsageOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAggregatedComputedUsagesAggregatedComputedUsageOutput)
-}
-
-func (i GetAggregatedComputedUsagesAggregatedComputedUsageArgs) ToOutput(ctx context.Context) pulumix.Output[GetAggregatedComputedUsagesAggregatedComputedUsage] {
-	return pulumix.Output[GetAggregatedComputedUsagesAggregatedComputedUsage]{
-		OutputState: i.ToGetAggregatedComputedUsagesAggregatedComputedUsageOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAggregatedComputedUsagesAggregatedComputedUsageArrayInput is an input type that accepts GetAggregatedComputedUsagesAggregatedComputedUsageArray and GetAggregatedComputedUsagesAggregatedComputedUsageArrayOutput values.
@@ -114,12 +107,6 @@ func (i GetAggregatedComputedUsagesAggregatedComputedUsageArray) ToGetAggregated
 	return pulumi.ToOutputWithContext(ctx, i).(GetAggregatedComputedUsagesAggregatedComputedUsageArrayOutput)
 }
 
-func (i GetAggregatedComputedUsagesAggregatedComputedUsageArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAggregatedComputedUsagesAggregatedComputedUsage] {
-	return pulumix.Output[[]GetAggregatedComputedUsagesAggregatedComputedUsage]{
-		OutputState: i.ToGetAggregatedComputedUsagesAggregatedComputedUsageArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAggregatedComputedUsagesAggregatedComputedUsageOutput struct{ *pulumi.OutputState }
 
 func (GetAggregatedComputedUsagesAggregatedComputedUsageOutput) ElementType() reflect.Type {
@@ -134,12 +121,6 @@ func (o GetAggregatedComputedUsagesAggregatedComputedUsageOutput) ToGetAggregate
 	return o
 }
 
-func (o GetAggregatedComputedUsagesAggregatedComputedUsageOutput) ToOutput(ctx context.Context) pulumix.Output[GetAggregatedComputedUsagesAggregatedComputedUsage] {
-	return pulumix.Output[GetAggregatedComputedUsagesAggregatedComputedUsage]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Aggregation of computed usages for the subscribed service.
 func (o GetAggregatedComputedUsagesAggregatedComputedUsageOutput) AggregatedComputedUsages() GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageArrayOutput {
 	return o.ApplyT(func(v GetAggregatedComputedUsagesAggregatedComputedUsage) []GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsage {
@@ -148,8 +129,8 @@ func (o GetAggregatedComputedUsagesAggregatedComputedUsageOutput) AggregatedComp
 }
 
 // Currency code
-func (o GetAggregatedComputedUsagesAggregatedComputedUsageOutput) CurrencyCode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAggregatedComputedUsagesAggregatedComputedUsage) string { return v.CurrencyCode }).(pulumi.StringOutput)
+func (o GetAggregatedComputedUsagesAggregatedComputedUsageOutput) CurrencyCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAggregatedComputedUsagesAggregatedComputedUsage) *string { return v.CurrencyCode }).(pulumi.StringPtrOutput)
 }
 
 // Product part number for subscribed service line, called parent product.
@@ -160,38 +141,38 @@ func (o GetAggregatedComputedUsagesAggregatedComputedUsageOutput) ParentProducts
 }
 
 // Subscribed service line parent id
-func (o GetAggregatedComputedUsagesAggregatedComputedUsageOutput) ParentSubscribedServiceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAggregatedComputedUsagesAggregatedComputedUsage) string { return v.ParentSubscribedServiceId }).(pulumi.StringOutput)
+func (o GetAggregatedComputedUsagesAggregatedComputedUsageOutput) ParentSubscribedServiceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAggregatedComputedUsagesAggregatedComputedUsage) *string { return v.ParentSubscribedServiceId }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service asociated subscription plan number.
-func (o GetAggregatedComputedUsagesAggregatedComputedUsageOutput) PlanNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAggregatedComputedUsagesAggregatedComputedUsage) string { return v.PlanNumber }).(pulumi.StringOutput)
+func (o GetAggregatedComputedUsagesAggregatedComputedUsageOutput) PlanNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAggregatedComputedUsagesAggregatedComputedUsage) *string { return v.PlanNumber }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed services pricing model
-func (o GetAggregatedComputedUsagesAggregatedComputedUsageOutput) PricingModel() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAggregatedComputedUsagesAggregatedComputedUsage) string { return v.PricingModel }).(pulumi.StringOutput)
+func (o GetAggregatedComputedUsagesAggregatedComputedUsageOutput) PricingModel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAggregatedComputedUsagesAggregatedComputedUsage) *string { return v.PricingModel }).(pulumi.StringPtrOutput)
 }
 
 // Inernal SPM Ratecard Id at line level
-func (o GetAggregatedComputedUsagesAggregatedComputedUsageOutput) RateCardId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAggregatedComputedUsagesAggregatedComputedUsage) string { return v.RateCardId }).(pulumi.StringOutput)
+func (o GetAggregatedComputedUsagesAggregatedComputedUsageOutput) RateCardId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAggregatedComputedUsagesAggregatedComputedUsage) *string { return v.RateCardId }).(pulumi.StringPtrOutput)
 }
 
 // Subscription Id is an identifier associated to the service used for filter the Computed Usage in SPM.
-func (o GetAggregatedComputedUsagesAggregatedComputedUsageOutput) SubscriptionId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAggregatedComputedUsagesAggregatedComputedUsage) string { return v.SubscriptionId }).(pulumi.StringOutput)
+func (o GetAggregatedComputedUsagesAggregatedComputedUsageOutput) SubscriptionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAggregatedComputedUsagesAggregatedComputedUsage) *string { return v.SubscriptionId }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed services contract line end date, expressed in RFC 3339 timestamp format.
-func (o GetAggregatedComputedUsagesAggregatedComputedUsageOutput) TimeEnd() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAggregatedComputedUsagesAggregatedComputedUsage) string { return v.TimeEnd }).(pulumi.StringOutput)
+func (o GetAggregatedComputedUsagesAggregatedComputedUsageOutput) TimeEnd() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAggregatedComputedUsagesAggregatedComputedUsage) *string { return v.TimeEnd }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed services contract line start date, expressed in RFC 3339 timestamp format.
-func (o GetAggregatedComputedUsagesAggregatedComputedUsageOutput) TimeStart() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAggregatedComputedUsagesAggregatedComputedUsage) string { return v.TimeStart }).(pulumi.StringOutput)
+func (o GetAggregatedComputedUsagesAggregatedComputedUsageOutput) TimeStart() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAggregatedComputedUsagesAggregatedComputedUsage) *string { return v.TimeStart }).(pulumi.StringPtrOutput)
 }
 
 type GetAggregatedComputedUsagesAggregatedComputedUsageArrayOutput struct{ *pulumi.OutputState }
@@ -208,12 +189,6 @@ func (o GetAggregatedComputedUsagesAggregatedComputedUsageArrayOutput) ToGetAggr
 	return o
 }
 
-func (o GetAggregatedComputedUsagesAggregatedComputedUsageArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAggregatedComputedUsagesAggregatedComputedUsage] {
-	return pulumix.Output[[]GetAggregatedComputedUsagesAggregatedComputedUsage]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAggregatedComputedUsagesAggregatedComputedUsageArrayOutput) Index(i pulumi.IntInput) GetAggregatedComputedUsagesAggregatedComputedUsageOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAggregatedComputedUsagesAggregatedComputedUsage {
 		return vs[0].([]GetAggregatedComputedUsagesAggregatedComputedUsage)[vs[1].(int)]
@@ -222,21 +197,21 @@ func (o GetAggregatedComputedUsagesAggregatedComputedUsageArrayOutput) Index(i p
 
 type GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsage struct {
 	// Sum of Computed Line Amount rounded
-	Cost string `pulumi:"cost"`
+	Cost *string `pulumi:"cost"`
 	// Sum of Computed Line Amount unrounded
-	CostUnrounded string `pulumi:"costUnrounded"`
+	CostUnrounded *string `pulumi:"costUnrounded"`
 	// Data Center Attribute as sent by MQS to SPM.
-	DataCenter string `pulumi:"dataCenter"`
+	DataCenter *string `pulumi:"dataCenter"`
 	// Net Unit Price for the product in consideration.
-	NetUnitPrice string `pulumi:"netUnitPrice"`
+	NetUnitPrice *string `pulumi:"netUnitPrice"`
 	// Product description
 	Products []GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageProduct `pulumi:"products"`
 	// Total Quantity that was used for computation
-	Quantity string `pulumi:"quantity"`
+	Quantity *string `pulumi:"quantity"`
 	// Metered Service date , expressed in RFC 3339 timestamp format.
-	TimeMeteredOn string `pulumi:"timeMeteredOn"`
+	TimeMeteredOn *string `pulumi:"timeMeteredOn"`
 	// Usage compute type in SPM.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 }
 
 // GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageInput is an input type that accepts GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageArgs and GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageOutput values.
@@ -252,21 +227,21 @@ type GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageIn
 
 type GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageArgs struct {
 	// Sum of Computed Line Amount rounded
-	Cost pulumi.StringInput `pulumi:"cost"`
+	Cost pulumi.StringPtrInput `pulumi:"cost"`
 	// Sum of Computed Line Amount unrounded
-	CostUnrounded pulumi.StringInput `pulumi:"costUnrounded"`
+	CostUnrounded pulumi.StringPtrInput `pulumi:"costUnrounded"`
 	// Data Center Attribute as sent by MQS to SPM.
-	DataCenter pulumi.StringInput `pulumi:"dataCenter"`
+	DataCenter pulumi.StringPtrInput `pulumi:"dataCenter"`
 	// Net Unit Price for the product in consideration.
-	NetUnitPrice pulumi.StringInput `pulumi:"netUnitPrice"`
+	NetUnitPrice pulumi.StringPtrInput `pulumi:"netUnitPrice"`
 	// Product description
 	Products GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageProductArrayInput `pulumi:"products"`
 	// Total Quantity that was used for computation
-	Quantity pulumi.StringInput `pulumi:"quantity"`
+	Quantity pulumi.StringPtrInput `pulumi:"quantity"`
 	// Metered Service date , expressed in RFC 3339 timestamp format.
-	TimeMeteredOn pulumi.StringInput `pulumi:"timeMeteredOn"`
+	TimeMeteredOn pulumi.StringPtrInput `pulumi:"timeMeteredOn"`
 	// Usage compute type in SPM.
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
 func (GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageArgs) ElementType() reflect.Type {
@@ -279,12 +254,6 @@ func (i GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsag
 
 func (i GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageArgs) ToGetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageOutputWithContext(ctx context.Context) GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageOutput)
-}
-
-func (i GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageArgs) ToOutput(ctx context.Context) pulumix.Output[GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsage] {
-	return pulumix.Output[GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsage]{
-		OutputState: i.ToGetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageArrayInput is an input type that accepts GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageArray and GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageArrayOutput values.
@@ -312,12 +281,6 @@ func (i GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsag
 	return pulumi.ToOutputWithContext(ctx, i).(GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageArrayOutput)
 }
 
-func (i GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsage] {
-	return pulumix.Output[[]GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsage]{
-		OutputState: i.ToGetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageOutput struct{ *pulumi.OutputState }
 
 func (GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageOutput) ElementType() reflect.Type {
@@ -332,38 +295,32 @@ func (o GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsag
 	return o
 }
 
-func (o GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageOutput) ToOutput(ctx context.Context) pulumix.Output[GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsage] {
-	return pulumix.Output[GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsage]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Sum of Computed Line Amount rounded
-func (o GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageOutput) Cost() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsage) string {
+func (o GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageOutput) Cost() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsage) *string {
 		return v.Cost
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Sum of Computed Line Amount unrounded
-func (o GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageOutput) CostUnrounded() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsage) string {
+func (o GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageOutput) CostUnrounded() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsage) *string {
 		return v.CostUnrounded
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Data Center Attribute as sent by MQS to SPM.
-func (o GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageOutput) DataCenter() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsage) string {
+func (o GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageOutput) DataCenter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsage) *string {
 		return v.DataCenter
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Net Unit Price for the product in consideration.
-func (o GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageOutput) NetUnitPrice() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsage) string {
+func (o GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageOutput) NetUnitPrice() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsage) *string {
 		return v.NetUnitPrice
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Product description
@@ -374,24 +331,24 @@ func (o GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsag
 }
 
 // Total Quantity that was used for computation
-func (o GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageOutput) Quantity() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsage) string {
+func (o GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageOutput) Quantity() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsage) *string {
 		return v.Quantity
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Metered Service date , expressed in RFC 3339 timestamp format.
-func (o GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageOutput) TimeMeteredOn() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsage) string {
+func (o GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageOutput) TimeMeteredOn() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsage) *string {
 		return v.TimeMeteredOn
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Usage compute type in SPM.
-func (o GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsage) string {
+func (o GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsage) *string {
 		return v.Type
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageArrayOutput struct{ *pulumi.OutputState }
@@ -408,12 +365,6 @@ func (o GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsag
 	return o
 }
 
-func (o GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsage] {
-	return pulumix.Output[[]GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsage]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageArrayOutput) Index(i pulumi.IntInput) GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsage {
 		return vs[0].([]GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsage)[vs[1].(int)]
@@ -422,19 +373,19 @@ func (o GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsag
 
 type GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageProduct struct {
 	// Metered service billing category
-	BillingCategory string `pulumi:"billingCategory"`
+	BillingCategory *string `pulumi:"billingCategory"`
 	// Product name
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Product part number
-	PartNumber string `pulumi:"partNumber"`
+	PartNumber *string `pulumi:"partNumber"`
 	// Product category
-	ProductCategory string `pulumi:"productCategory"`
+	ProductCategory *string `pulumi:"productCategory"`
 	// Product provisioning group
-	ProvisioningGroup string `pulumi:"provisioningGroup"`
+	ProvisioningGroup *string `pulumi:"provisioningGroup"`
 	// Rate card part type of Product
-	UcmRateCardPartType string `pulumi:"ucmRateCardPartType"`
+	UcmRateCardPartType *string `pulumi:"ucmRateCardPartType"`
 	// Unit of Measure
-	UnitOfMeasure string `pulumi:"unitOfMeasure"`
+	UnitOfMeasure *string `pulumi:"unitOfMeasure"`
 }
 
 // GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageProductInput is an input type that accepts GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageProductArgs and GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageProductOutput values.
@@ -450,19 +401,19 @@ type GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsagePr
 
 type GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageProductArgs struct {
 	// Metered service billing category
-	BillingCategory pulumi.StringInput `pulumi:"billingCategory"`
+	BillingCategory pulumi.StringPtrInput `pulumi:"billingCategory"`
 	// Product name
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Product part number
-	PartNumber pulumi.StringInput `pulumi:"partNumber"`
+	PartNumber pulumi.StringPtrInput `pulumi:"partNumber"`
 	// Product category
-	ProductCategory pulumi.StringInput `pulumi:"productCategory"`
+	ProductCategory pulumi.StringPtrInput `pulumi:"productCategory"`
 	// Product provisioning group
-	ProvisioningGroup pulumi.StringInput `pulumi:"provisioningGroup"`
+	ProvisioningGroup pulumi.StringPtrInput `pulumi:"provisioningGroup"`
 	// Rate card part type of Product
-	UcmRateCardPartType pulumi.StringInput `pulumi:"ucmRateCardPartType"`
+	UcmRateCardPartType pulumi.StringPtrInput `pulumi:"ucmRateCardPartType"`
 	// Unit of Measure
-	UnitOfMeasure pulumi.StringInput `pulumi:"unitOfMeasure"`
+	UnitOfMeasure pulumi.StringPtrInput `pulumi:"unitOfMeasure"`
 }
 
 func (GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageProductArgs) ElementType() reflect.Type {
@@ -475,12 +426,6 @@ func (i GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsag
 
 func (i GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageProductArgs) ToGetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageProductOutputWithContext(ctx context.Context) GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageProductOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageProductOutput)
-}
-
-func (i GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageProductArgs) ToOutput(ctx context.Context) pulumix.Output[GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageProduct] {
-	return pulumix.Output[GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageProduct]{
-		OutputState: i.ToGetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageProductOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageProductArrayInput is an input type that accepts GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageProductArray and GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageProductArrayOutput values.
@@ -508,12 +453,6 @@ func (i GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsag
 	return pulumi.ToOutputWithContext(ctx, i).(GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageProductArrayOutput)
 }
 
-func (i GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageProductArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageProduct] {
-	return pulumix.Output[[]GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageProduct]{
-		OutputState: i.ToGetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageProductArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageProductOutput struct{ *pulumi.OutputState }
 
 func (GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageProductOutput) ElementType() reflect.Type {
@@ -528,59 +467,53 @@ func (o GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsag
 	return o
 }
 
-func (o GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageProductOutput) ToOutput(ctx context.Context) pulumix.Output[GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageProduct] {
-	return pulumix.Output[GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageProduct]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Metered service billing category
-func (o GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageProductOutput) BillingCategory() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageProduct) string {
+func (o GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageProductOutput) BillingCategory() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageProduct) *string {
 		return v.BillingCategory
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Product name
-func (o GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageProductOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageProduct) string {
+func (o GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageProductOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageProduct) *string {
 		return v.Name
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Product part number
-func (o GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageProductOutput) PartNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageProduct) string {
+func (o GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageProductOutput) PartNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageProduct) *string {
 		return v.PartNumber
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Product category
-func (o GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageProductOutput) ProductCategory() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageProduct) string {
+func (o GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageProductOutput) ProductCategory() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageProduct) *string {
 		return v.ProductCategory
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Product provisioning group
-func (o GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageProductOutput) ProvisioningGroup() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageProduct) string {
+func (o GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageProductOutput) ProvisioningGroup() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageProduct) *string {
 		return v.ProvisioningGroup
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Rate card part type of Product
-func (o GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageProductOutput) UcmRateCardPartType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageProduct) string {
+func (o GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageProductOutput) UcmRateCardPartType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageProduct) *string {
 		return v.UcmRateCardPartType
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Unit of Measure
-func (o GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageProductOutput) UnitOfMeasure() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageProduct) string {
+func (o GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageProductOutput) UnitOfMeasure() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageProduct) *string {
 		return v.UnitOfMeasure
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageProductArrayOutput struct{ *pulumi.OutputState }
@@ -597,12 +530,6 @@ func (o GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsag
 	return o
 }
 
-func (o GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageProductArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageProduct] {
-	return pulumix.Output[[]GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageProduct]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageProductArrayOutput) Index(i pulumi.IntInput) GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageProductOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageProduct {
 		return vs[0].([]GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageProduct)[vs[1].(int)]
@@ -611,19 +538,19 @@ func (o GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsag
 
 type GetAggregatedComputedUsagesAggregatedComputedUsageParentProduct struct {
 	// Metered service billing category
-	BillingCategory string `pulumi:"billingCategory"`
+	BillingCategory *string `pulumi:"billingCategory"`
 	// Product name
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Product part number
-	PartNumber string `pulumi:"partNumber"`
+	PartNumber *string `pulumi:"partNumber"`
 	// Product category
-	ProductCategory string `pulumi:"productCategory"`
+	ProductCategory *string `pulumi:"productCategory"`
 	// Product provisioning group
-	ProvisioningGroup string `pulumi:"provisioningGroup"`
+	ProvisioningGroup *string `pulumi:"provisioningGroup"`
 	// Rate card part type of Product
-	UcmRateCardPartType string `pulumi:"ucmRateCardPartType"`
+	UcmRateCardPartType *string `pulumi:"ucmRateCardPartType"`
 	// Unit of Measure
-	UnitOfMeasure string `pulumi:"unitOfMeasure"`
+	UnitOfMeasure *string `pulumi:"unitOfMeasure"`
 }
 
 // GetAggregatedComputedUsagesAggregatedComputedUsageParentProductInput is an input type that accepts GetAggregatedComputedUsagesAggregatedComputedUsageParentProductArgs and GetAggregatedComputedUsagesAggregatedComputedUsageParentProductOutput values.
@@ -639,19 +566,19 @@ type GetAggregatedComputedUsagesAggregatedComputedUsageParentProductInput interf
 
 type GetAggregatedComputedUsagesAggregatedComputedUsageParentProductArgs struct {
 	// Metered service billing category
-	BillingCategory pulumi.StringInput `pulumi:"billingCategory"`
+	BillingCategory pulumi.StringPtrInput `pulumi:"billingCategory"`
 	// Product name
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Product part number
-	PartNumber pulumi.StringInput `pulumi:"partNumber"`
+	PartNumber pulumi.StringPtrInput `pulumi:"partNumber"`
 	// Product category
-	ProductCategory pulumi.StringInput `pulumi:"productCategory"`
+	ProductCategory pulumi.StringPtrInput `pulumi:"productCategory"`
 	// Product provisioning group
-	ProvisioningGroup pulumi.StringInput `pulumi:"provisioningGroup"`
+	ProvisioningGroup pulumi.StringPtrInput `pulumi:"provisioningGroup"`
 	// Rate card part type of Product
-	UcmRateCardPartType pulumi.StringInput `pulumi:"ucmRateCardPartType"`
+	UcmRateCardPartType pulumi.StringPtrInput `pulumi:"ucmRateCardPartType"`
 	// Unit of Measure
-	UnitOfMeasure pulumi.StringInput `pulumi:"unitOfMeasure"`
+	UnitOfMeasure pulumi.StringPtrInput `pulumi:"unitOfMeasure"`
 }
 
 func (GetAggregatedComputedUsagesAggregatedComputedUsageParentProductArgs) ElementType() reflect.Type {
@@ -664,12 +591,6 @@ func (i GetAggregatedComputedUsagesAggregatedComputedUsageParentProductArgs) ToG
 
 func (i GetAggregatedComputedUsagesAggregatedComputedUsageParentProductArgs) ToGetAggregatedComputedUsagesAggregatedComputedUsageParentProductOutputWithContext(ctx context.Context) GetAggregatedComputedUsagesAggregatedComputedUsageParentProductOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAggregatedComputedUsagesAggregatedComputedUsageParentProductOutput)
-}
-
-func (i GetAggregatedComputedUsagesAggregatedComputedUsageParentProductArgs) ToOutput(ctx context.Context) pulumix.Output[GetAggregatedComputedUsagesAggregatedComputedUsageParentProduct] {
-	return pulumix.Output[GetAggregatedComputedUsagesAggregatedComputedUsageParentProduct]{
-		OutputState: i.ToGetAggregatedComputedUsagesAggregatedComputedUsageParentProductOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAggregatedComputedUsagesAggregatedComputedUsageParentProductArrayInput is an input type that accepts GetAggregatedComputedUsagesAggregatedComputedUsageParentProductArray and GetAggregatedComputedUsagesAggregatedComputedUsageParentProductArrayOutput values.
@@ -697,12 +618,6 @@ func (i GetAggregatedComputedUsagesAggregatedComputedUsageParentProductArray) To
 	return pulumi.ToOutputWithContext(ctx, i).(GetAggregatedComputedUsagesAggregatedComputedUsageParentProductArrayOutput)
 }
 
-func (i GetAggregatedComputedUsagesAggregatedComputedUsageParentProductArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAggregatedComputedUsagesAggregatedComputedUsageParentProduct] {
-	return pulumix.Output[[]GetAggregatedComputedUsagesAggregatedComputedUsageParentProduct]{
-		OutputState: i.ToGetAggregatedComputedUsagesAggregatedComputedUsageParentProductArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAggregatedComputedUsagesAggregatedComputedUsageParentProductOutput struct{ *pulumi.OutputState }
 
 func (GetAggregatedComputedUsagesAggregatedComputedUsageParentProductOutput) ElementType() reflect.Type {
@@ -717,53 +632,49 @@ func (o GetAggregatedComputedUsagesAggregatedComputedUsageParentProductOutput) T
 	return o
 }
 
-func (o GetAggregatedComputedUsagesAggregatedComputedUsageParentProductOutput) ToOutput(ctx context.Context) pulumix.Output[GetAggregatedComputedUsagesAggregatedComputedUsageParentProduct] {
-	return pulumix.Output[GetAggregatedComputedUsagesAggregatedComputedUsageParentProduct]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Metered service billing category
-func (o GetAggregatedComputedUsagesAggregatedComputedUsageParentProductOutput) BillingCategory() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAggregatedComputedUsagesAggregatedComputedUsageParentProduct) string {
+func (o GetAggregatedComputedUsagesAggregatedComputedUsageParentProductOutput) BillingCategory() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAggregatedComputedUsagesAggregatedComputedUsageParentProduct) *string {
 		return v.BillingCategory
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Product name
-func (o GetAggregatedComputedUsagesAggregatedComputedUsageParentProductOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAggregatedComputedUsagesAggregatedComputedUsageParentProduct) string { return v.Name }).(pulumi.StringOutput)
+func (o GetAggregatedComputedUsagesAggregatedComputedUsageParentProductOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAggregatedComputedUsagesAggregatedComputedUsageParentProduct) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Product part number
-func (o GetAggregatedComputedUsagesAggregatedComputedUsageParentProductOutput) PartNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAggregatedComputedUsagesAggregatedComputedUsageParentProduct) string { return v.PartNumber }).(pulumi.StringOutput)
+func (o GetAggregatedComputedUsagesAggregatedComputedUsageParentProductOutput) PartNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAggregatedComputedUsagesAggregatedComputedUsageParentProduct) *string { return v.PartNumber }).(pulumi.StringPtrOutput)
 }
 
 // Product category
-func (o GetAggregatedComputedUsagesAggregatedComputedUsageParentProductOutput) ProductCategory() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAggregatedComputedUsagesAggregatedComputedUsageParentProduct) string {
+func (o GetAggregatedComputedUsagesAggregatedComputedUsageParentProductOutput) ProductCategory() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAggregatedComputedUsagesAggregatedComputedUsageParentProduct) *string {
 		return v.ProductCategory
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Product provisioning group
-func (o GetAggregatedComputedUsagesAggregatedComputedUsageParentProductOutput) ProvisioningGroup() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAggregatedComputedUsagesAggregatedComputedUsageParentProduct) string {
+func (o GetAggregatedComputedUsagesAggregatedComputedUsageParentProductOutput) ProvisioningGroup() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAggregatedComputedUsagesAggregatedComputedUsageParentProduct) *string {
 		return v.ProvisioningGroup
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Rate card part type of Product
-func (o GetAggregatedComputedUsagesAggregatedComputedUsageParentProductOutput) UcmRateCardPartType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAggregatedComputedUsagesAggregatedComputedUsageParentProduct) string {
+func (o GetAggregatedComputedUsagesAggregatedComputedUsageParentProductOutput) UcmRateCardPartType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAggregatedComputedUsagesAggregatedComputedUsageParentProduct) *string {
 		return v.UcmRateCardPartType
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Unit of Measure
-func (o GetAggregatedComputedUsagesAggregatedComputedUsageParentProductOutput) UnitOfMeasure() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAggregatedComputedUsagesAggregatedComputedUsageParentProduct) string { return v.UnitOfMeasure }).(pulumi.StringOutput)
+func (o GetAggregatedComputedUsagesAggregatedComputedUsageParentProductOutput) UnitOfMeasure() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAggregatedComputedUsagesAggregatedComputedUsageParentProduct) *string {
+		return v.UnitOfMeasure
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetAggregatedComputedUsagesAggregatedComputedUsageParentProductArrayOutput struct{ *pulumi.OutputState }
@@ -778,12 +689,6 @@ func (o GetAggregatedComputedUsagesAggregatedComputedUsageParentProductArrayOutp
 
 func (o GetAggregatedComputedUsagesAggregatedComputedUsageParentProductArrayOutput) ToGetAggregatedComputedUsagesAggregatedComputedUsageParentProductArrayOutputWithContext(ctx context.Context) GetAggregatedComputedUsagesAggregatedComputedUsageParentProductArrayOutput {
 	return o
-}
-
-func (o GetAggregatedComputedUsagesAggregatedComputedUsageParentProductArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAggregatedComputedUsagesAggregatedComputedUsageParentProduct] {
-	return pulumix.Output[[]GetAggregatedComputedUsagesAggregatedComputedUsageParentProduct]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAggregatedComputedUsagesAggregatedComputedUsageParentProductArrayOutput) Index(i pulumi.IntInput) GetAggregatedComputedUsagesAggregatedComputedUsageParentProductOutput {
@@ -829,12 +734,6 @@ func (i GetAggregatedComputedUsagesFilterArgs) ToGetAggregatedComputedUsagesFilt
 	return pulumi.ToOutputWithContext(ctx, i).(GetAggregatedComputedUsagesFilterOutput)
 }
 
-func (i GetAggregatedComputedUsagesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetAggregatedComputedUsagesFilter] {
-	return pulumix.Output[GetAggregatedComputedUsagesFilter]{
-		OutputState: i.ToGetAggregatedComputedUsagesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAggregatedComputedUsagesFilterArrayInput is an input type that accepts GetAggregatedComputedUsagesFilterArray and GetAggregatedComputedUsagesFilterArrayOutput values.
 // You can construct a concrete instance of `GetAggregatedComputedUsagesFilterArrayInput` via:
 //
@@ -860,12 +759,6 @@ func (i GetAggregatedComputedUsagesFilterArray) ToGetAggregatedComputedUsagesFil
 	return pulumi.ToOutputWithContext(ctx, i).(GetAggregatedComputedUsagesFilterArrayOutput)
 }
 
-func (i GetAggregatedComputedUsagesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAggregatedComputedUsagesFilter] {
-	return pulumix.Output[[]GetAggregatedComputedUsagesFilter]{
-		OutputState: i.ToGetAggregatedComputedUsagesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAggregatedComputedUsagesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetAggregatedComputedUsagesFilterOutput) ElementType() reflect.Type {
@@ -878,12 +771,6 @@ func (o GetAggregatedComputedUsagesFilterOutput) ToGetAggregatedComputedUsagesFi
 
 func (o GetAggregatedComputedUsagesFilterOutput) ToGetAggregatedComputedUsagesFilterOutputWithContext(ctx context.Context) GetAggregatedComputedUsagesFilterOutput {
 	return o
-}
-
-func (o GetAggregatedComputedUsagesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetAggregatedComputedUsagesFilter] {
-	return pulumix.Output[GetAggregatedComputedUsagesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Product name
@@ -913,12 +800,6 @@ func (o GetAggregatedComputedUsagesFilterArrayOutput) ToGetAggregatedComputedUsa
 	return o
 }
 
-func (o GetAggregatedComputedUsagesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAggregatedComputedUsagesFilter] {
-	return pulumix.Output[[]GetAggregatedComputedUsagesFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAggregatedComputedUsagesFilterArrayOutput) Index(i pulumi.IntInput) GetAggregatedComputedUsagesFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAggregatedComputedUsagesFilter {
 		return vs[0].([]GetAggregatedComputedUsagesFilter)[vs[1].(int)]
@@ -927,31 +808,31 @@ func (o GetAggregatedComputedUsagesFilterArrayOutput) Index(i pulumi.IntInput) G
 
 type GetBillingSchedulesBillingSchedule struct {
 	// Billing schedule line net amount
-	Amount string `pulumi:"amount"`
+	Amount *string `pulumi:"amount"`
 	// Indicates the associated AR Customer transaction id a unique identifier existing on AR.
-	ArCustomerTransactionId string `pulumi:"arCustomerTransactionId"`
+	ArCustomerTransactionId *string `pulumi:"arCustomerTransactionId"`
 	// Indicates the associated AR Invoice Number
-	ArInvoiceNumber string `pulumi:"arInvoiceNumber"`
+	ArInvoiceNumber *string `pulumi:"arInvoiceNumber"`
 	// Billing frequency
-	BillingFrequency string `pulumi:"billingFrequency"`
+	BillingFrequency *string `pulumi:"billingFrequency"`
 	// Billing schedule invoice status
-	InvoiceStatus string `pulumi:"invoiceStatus"`
+	InvoiceStatus *string `pulumi:"invoiceStatus"`
 	// Billing schedule net unit price
-	NetUnitPrice string `pulumi:"netUnitPrice"`
+	NetUnitPrice *string `pulumi:"netUnitPrice"`
 	// Order number associated with the Subscribed Service
-	OrderNumber string `pulumi:"orderNumber"`
+	OrderNumber *string `pulumi:"orderNumber"`
 	// Product description
 	Products []GetBillingSchedulesBillingScheduleProduct `pulumi:"products"`
 	// Billing schedule quantity
-	Quantity string `pulumi:"quantity"`
+	Quantity *string `pulumi:"quantity"`
 	// This param is used to get only the billing schedules for a particular Subscribed Service
-	SubscribedServiceId string `pulumi:"subscribedServiceId"`
+	SubscribedServiceId *string `pulumi:"subscribedServiceId"`
 	// Billing schedule end date
-	TimeEnd string `pulumi:"timeEnd"`
+	TimeEnd *string `pulumi:"timeEnd"`
 	// Billing schedule invoicing date
-	TimeInvoicing string `pulumi:"timeInvoicing"`
+	TimeInvoicing *string `pulumi:"timeInvoicing"`
 	// Billing schedule start date
-	TimeStart string `pulumi:"timeStart"`
+	TimeStart *string `pulumi:"timeStart"`
 }
 
 // GetBillingSchedulesBillingScheduleInput is an input type that accepts GetBillingSchedulesBillingScheduleArgs and GetBillingSchedulesBillingScheduleOutput values.
@@ -967,31 +848,31 @@ type GetBillingSchedulesBillingScheduleInput interface {
 
 type GetBillingSchedulesBillingScheduleArgs struct {
 	// Billing schedule line net amount
-	Amount pulumi.StringInput `pulumi:"amount"`
+	Amount pulumi.StringPtrInput `pulumi:"amount"`
 	// Indicates the associated AR Customer transaction id a unique identifier existing on AR.
-	ArCustomerTransactionId pulumi.StringInput `pulumi:"arCustomerTransactionId"`
+	ArCustomerTransactionId pulumi.StringPtrInput `pulumi:"arCustomerTransactionId"`
 	// Indicates the associated AR Invoice Number
-	ArInvoiceNumber pulumi.StringInput `pulumi:"arInvoiceNumber"`
+	ArInvoiceNumber pulumi.StringPtrInput `pulumi:"arInvoiceNumber"`
 	// Billing frequency
-	BillingFrequency pulumi.StringInput `pulumi:"billingFrequency"`
+	BillingFrequency pulumi.StringPtrInput `pulumi:"billingFrequency"`
 	// Billing schedule invoice status
-	InvoiceStatus pulumi.StringInput `pulumi:"invoiceStatus"`
+	InvoiceStatus pulumi.StringPtrInput `pulumi:"invoiceStatus"`
 	// Billing schedule net unit price
-	NetUnitPrice pulumi.StringInput `pulumi:"netUnitPrice"`
+	NetUnitPrice pulumi.StringPtrInput `pulumi:"netUnitPrice"`
 	// Order number associated with the Subscribed Service
-	OrderNumber pulumi.StringInput `pulumi:"orderNumber"`
+	OrderNumber pulumi.StringPtrInput `pulumi:"orderNumber"`
 	// Product description
 	Products GetBillingSchedulesBillingScheduleProductArrayInput `pulumi:"products"`
 	// Billing schedule quantity
-	Quantity pulumi.StringInput `pulumi:"quantity"`
+	Quantity pulumi.StringPtrInput `pulumi:"quantity"`
 	// This param is used to get only the billing schedules for a particular Subscribed Service
-	SubscribedServiceId pulumi.StringInput `pulumi:"subscribedServiceId"`
+	SubscribedServiceId pulumi.StringPtrInput `pulumi:"subscribedServiceId"`
 	// Billing schedule end date
-	TimeEnd pulumi.StringInput `pulumi:"timeEnd"`
+	TimeEnd pulumi.StringPtrInput `pulumi:"timeEnd"`
 	// Billing schedule invoicing date
-	TimeInvoicing pulumi.StringInput `pulumi:"timeInvoicing"`
+	TimeInvoicing pulumi.StringPtrInput `pulumi:"timeInvoicing"`
 	// Billing schedule start date
-	TimeStart pulumi.StringInput `pulumi:"timeStart"`
+	TimeStart pulumi.StringPtrInput `pulumi:"timeStart"`
 }
 
 func (GetBillingSchedulesBillingScheduleArgs) ElementType() reflect.Type {
@@ -1004,12 +885,6 @@ func (i GetBillingSchedulesBillingScheduleArgs) ToGetBillingSchedulesBillingSche
 
 func (i GetBillingSchedulesBillingScheduleArgs) ToGetBillingSchedulesBillingScheduleOutputWithContext(ctx context.Context) GetBillingSchedulesBillingScheduleOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetBillingSchedulesBillingScheduleOutput)
-}
-
-func (i GetBillingSchedulesBillingScheduleArgs) ToOutput(ctx context.Context) pulumix.Output[GetBillingSchedulesBillingSchedule] {
-	return pulumix.Output[GetBillingSchedulesBillingSchedule]{
-		OutputState: i.ToGetBillingSchedulesBillingScheduleOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetBillingSchedulesBillingScheduleArrayInput is an input type that accepts GetBillingSchedulesBillingScheduleArray and GetBillingSchedulesBillingScheduleArrayOutput values.
@@ -1037,12 +912,6 @@ func (i GetBillingSchedulesBillingScheduleArray) ToGetBillingSchedulesBillingSch
 	return pulumi.ToOutputWithContext(ctx, i).(GetBillingSchedulesBillingScheduleArrayOutput)
 }
 
-func (i GetBillingSchedulesBillingScheduleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBillingSchedulesBillingSchedule] {
-	return pulumix.Output[[]GetBillingSchedulesBillingSchedule]{
-		OutputState: i.ToGetBillingSchedulesBillingScheduleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBillingSchedulesBillingScheduleOutput struct{ *pulumi.OutputState }
 
 func (GetBillingSchedulesBillingScheduleOutput) ElementType() reflect.Type {
@@ -1057,45 +926,39 @@ func (o GetBillingSchedulesBillingScheduleOutput) ToGetBillingSchedulesBillingSc
 	return o
 }
 
-func (o GetBillingSchedulesBillingScheduleOutput) ToOutput(ctx context.Context) pulumix.Output[GetBillingSchedulesBillingSchedule] {
-	return pulumix.Output[GetBillingSchedulesBillingSchedule]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Billing schedule line net amount
-func (o GetBillingSchedulesBillingScheduleOutput) Amount() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBillingSchedulesBillingSchedule) string { return v.Amount }).(pulumi.StringOutput)
+func (o GetBillingSchedulesBillingScheduleOutput) Amount() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBillingSchedulesBillingSchedule) *string { return v.Amount }).(pulumi.StringPtrOutput)
 }
 
 // Indicates the associated AR Customer transaction id a unique identifier existing on AR.
-func (o GetBillingSchedulesBillingScheduleOutput) ArCustomerTransactionId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBillingSchedulesBillingSchedule) string { return v.ArCustomerTransactionId }).(pulumi.StringOutput)
+func (o GetBillingSchedulesBillingScheduleOutput) ArCustomerTransactionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBillingSchedulesBillingSchedule) *string { return v.ArCustomerTransactionId }).(pulumi.StringPtrOutput)
 }
 
 // Indicates the associated AR Invoice Number
-func (o GetBillingSchedulesBillingScheduleOutput) ArInvoiceNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBillingSchedulesBillingSchedule) string { return v.ArInvoiceNumber }).(pulumi.StringOutput)
+func (o GetBillingSchedulesBillingScheduleOutput) ArInvoiceNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBillingSchedulesBillingSchedule) *string { return v.ArInvoiceNumber }).(pulumi.StringPtrOutput)
 }
 
 // Billing frequency
-func (o GetBillingSchedulesBillingScheduleOutput) BillingFrequency() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBillingSchedulesBillingSchedule) string { return v.BillingFrequency }).(pulumi.StringOutput)
+func (o GetBillingSchedulesBillingScheduleOutput) BillingFrequency() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBillingSchedulesBillingSchedule) *string { return v.BillingFrequency }).(pulumi.StringPtrOutput)
 }
 
 // Billing schedule invoice status
-func (o GetBillingSchedulesBillingScheduleOutput) InvoiceStatus() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBillingSchedulesBillingSchedule) string { return v.InvoiceStatus }).(pulumi.StringOutput)
+func (o GetBillingSchedulesBillingScheduleOutput) InvoiceStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBillingSchedulesBillingSchedule) *string { return v.InvoiceStatus }).(pulumi.StringPtrOutput)
 }
 
 // Billing schedule net unit price
-func (o GetBillingSchedulesBillingScheduleOutput) NetUnitPrice() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBillingSchedulesBillingSchedule) string { return v.NetUnitPrice }).(pulumi.StringOutput)
+func (o GetBillingSchedulesBillingScheduleOutput) NetUnitPrice() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBillingSchedulesBillingSchedule) *string { return v.NetUnitPrice }).(pulumi.StringPtrOutput)
 }
 
 // Order number associated with the Subscribed Service
-func (o GetBillingSchedulesBillingScheduleOutput) OrderNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBillingSchedulesBillingSchedule) string { return v.OrderNumber }).(pulumi.StringOutput)
+func (o GetBillingSchedulesBillingScheduleOutput) OrderNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBillingSchedulesBillingSchedule) *string { return v.OrderNumber }).(pulumi.StringPtrOutput)
 }
 
 // Product description
@@ -1106,28 +969,28 @@ func (o GetBillingSchedulesBillingScheduleOutput) Products() GetBillingSchedules
 }
 
 // Billing schedule quantity
-func (o GetBillingSchedulesBillingScheduleOutput) Quantity() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBillingSchedulesBillingSchedule) string { return v.Quantity }).(pulumi.StringOutput)
+func (o GetBillingSchedulesBillingScheduleOutput) Quantity() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBillingSchedulesBillingSchedule) *string { return v.Quantity }).(pulumi.StringPtrOutput)
 }
 
 // This param is used to get only the billing schedules for a particular Subscribed Service
-func (o GetBillingSchedulesBillingScheduleOutput) SubscribedServiceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBillingSchedulesBillingSchedule) string { return v.SubscribedServiceId }).(pulumi.StringOutput)
+func (o GetBillingSchedulesBillingScheduleOutput) SubscribedServiceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBillingSchedulesBillingSchedule) *string { return v.SubscribedServiceId }).(pulumi.StringPtrOutput)
 }
 
 // Billing schedule end date
-func (o GetBillingSchedulesBillingScheduleOutput) TimeEnd() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBillingSchedulesBillingSchedule) string { return v.TimeEnd }).(pulumi.StringOutput)
+func (o GetBillingSchedulesBillingScheduleOutput) TimeEnd() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBillingSchedulesBillingSchedule) *string { return v.TimeEnd }).(pulumi.StringPtrOutput)
 }
 
 // Billing schedule invoicing date
-func (o GetBillingSchedulesBillingScheduleOutput) TimeInvoicing() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBillingSchedulesBillingSchedule) string { return v.TimeInvoicing }).(pulumi.StringOutput)
+func (o GetBillingSchedulesBillingScheduleOutput) TimeInvoicing() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBillingSchedulesBillingSchedule) *string { return v.TimeInvoicing }).(pulumi.StringPtrOutput)
 }
 
 // Billing schedule start date
-func (o GetBillingSchedulesBillingScheduleOutput) TimeStart() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBillingSchedulesBillingSchedule) string { return v.TimeStart }).(pulumi.StringOutput)
+func (o GetBillingSchedulesBillingScheduleOutput) TimeStart() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBillingSchedulesBillingSchedule) *string { return v.TimeStart }).(pulumi.StringPtrOutput)
 }
 
 type GetBillingSchedulesBillingScheduleArrayOutput struct{ *pulumi.OutputState }
@@ -1144,12 +1007,6 @@ func (o GetBillingSchedulesBillingScheduleArrayOutput) ToGetBillingSchedulesBill
 	return o
 }
 
-func (o GetBillingSchedulesBillingScheduleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBillingSchedulesBillingSchedule] {
-	return pulumix.Output[[]GetBillingSchedulesBillingSchedule]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetBillingSchedulesBillingScheduleArrayOutput) Index(i pulumi.IntInput) GetBillingSchedulesBillingScheduleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBillingSchedulesBillingSchedule {
 		return vs[0].([]GetBillingSchedulesBillingSchedule)[vs[1].(int)]
@@ -1158,9 +1015,9 @@ func (o GetBillingSchedulesBillingScheduleArrayOutput) Index(i pulumi.IntInput) 
 
 type GetBillingSchedulesBillingScheduleProduct struct {
 	// Product name
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Indicates the associated AR Invoice Number
-	PartNumber string `pulumi:"partNumber"`
+	PartNumber *string `pulumi:"partNumber"`
 }
 
 // GetBillingSchedulesBillingScheduleProductInput is an input type that accepts GetBillingSchedulesBillingScheduleProductArgs and GetBillingSchedulesBillingScheduleProductOutput values.
@@ -1176,9 +1033,9 @@ type GetBillingSchedulesBillingScheduleProductInput interface {
 
 type GetBillingSchedulesBillingScheduleProductArgs struct {
 	// Product name
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Indicates the associated AR Invoice Number
-	PartNumber pulumi.StringInput `pulumi:"partNumber"`
+	PartNumber pulumi.StringPtrInput `pulumi:"partNumber"`
 }
 
 func (GetBillingSchedulesBillingScheduleProductArgs) ElementType() reflect.Type {
@@ -1191,12 +1048,6 @@ func (i GetBillingSchedulesBillingScheduleProductArgs) ToGetBillingSchedulesBill
 
 func (i GetBillingSchedulesBillingScheduleProductArgs) ToGetBillingSchedulesBillingScheduleProductOutputWithContext(ctx context.Context) GetBillingSchedulesBillingScheduleProductOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetBillingSchedulesBillingScheduleProductOutput)
-}
-
-func (i GetBillingSchedulesBillingScheduleProductArgs) ToOutput(ctx context.Context) pulumix.Output[GetBillingSchedulesBillingScheduleProduct] {
-	return pulumix.Output[GetBillingSchedulesBillingScheduleProduct]{
-		OutputState: i.ToGetBillingSchedulesBillingScheduleProductOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetBillingSchedulesBillingScheduleProductArrayInput is an input type that accepts GetBillingSchedulesBillingScheduleProductArray and GetBillingSchedulesBillingScheduleProductArrayOutput values.
@@ -1224,12 +1075,6 @@ func (i GetBillingSchedulesBillingScheduleProductArray) ToGetBillingSchedulesBil
 	return pulumi.ToOutputWithContext(ctx, i).(GetBillingSchedulesBillingScheduleProductArrayOutput)
 }
 
-func (i GetBillingSchedulesBillingScheduleProductArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBillingSchedulesBillingScheduleProduct] {
-	return pulumix.Output[[]GetBillingSchedulesBillingScheduleProduct]{
-		OutputState: i.ToGetBillingSchedulesBillingScheduleProductArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBillingSchedulesBillingScheduleProductOutput struct{ *pulumi.OutputState }
 
 func (GetBillingSchedulesBillingScheduleProductOutput) ElementType() reflect.Type {
@@ -1244,20 +1089,14 @@ func (o GetBillingSchedulesBillingScheduleProductOutput) ToGetBillingSchedulesBi
 	return o
 }
 
-func (o GetBillingSchedulesBillingScheduleProductOutput) ToOutput(ctx context.Context) pulumix.Output[GetBillingSchedulesBillingScheduleProduct] {
-	return pulumix.Output[GetBillingSchedulesBillingScheduleProduct]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Product name
-func (o GetBillingSchedulesBillingScheduleProductOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBillingSchedulesBillingScheduleProduct) string { return v.Name }).(pulumi.StringOutput)
+func (o GetBillingSchedulesBillingScheduleProductOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBillingSchedulesBillingScheduleProduct) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Indicates the associated AR Invoice Number
-func (o GetBillingSchedulesBillingScheduleProductOutput) PartNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetBillingSchedulesBillingScheduleProduct) string { return v.PartNumber }).(pulumi.StringOutput)
+func (o GetBillingSchedulesBillingScheduleProductOutput) PartNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBillingSchedulesBillingScheduleProduct) *string { return v.PartNumber }).(pulumi.StringPtrOutput)
 }
 
 type GetBillingSchedulesBillingScheduleProductArrayOutput struct{ *pulumi.OutputState }
@@ -1272,12 +1111,6 @@ func (o GetBillingSchedulesBillingScheduleProductArrayOutput) ToGetBillingSchedu
 
 func (o GetBillingSchedulesBillingScheduleProductArrayOutput) ToGetBillingSchedulesBillingScheduleProductArrayOutputWithContext(ctx context.Context) GetBillingSchedulesBillingScheduleProductArrayOutput {
 	return o
-}
-
-func (o GetBillingSchedulesBillingScheduleProductArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBillingSchedulesBillingScheduleProduct] {
-	return pulumix.Output[[]GetBillingSchedulesBillingScheduleProduct]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetBillingSchedulesBillingScheduleProductArrayOutput) Index(i pulumi.IntInput) GetBillingSchedulesBillingScheduleProductOutput {
@@ -1323,12 +1156,6 @@ func (i GetBillingSchedulesFilterArgs) ToGetBillingSchedulesFilterOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetBillingSchedulesFilterOutput)
 }
 
-func (i GetBillingSchedulesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetBillingSchedulesFilter] {
-	return pulumix.Output[GetBillingSchedulesFilter]{
-		OutputState: i.ToGetBillingSchedulesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetBillingSchedulesFilterArrayInput is an input type that accepts GetBillingSchedulesFilterArray and GetBillingSchedulesFilterArrayOutput values.
 // You can construct a concrete instance of `GetBillingSchedulesFilterArrayInput` via:
 //
@@ -1354,12 +1181,6 @@ func (i GetBillingSchedulesFilterArray) ToGetBillingSchedulesFilterArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetBillingSchedulesFilterArrayOutput)
 }
 
-func (i GetBillingSchedulesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBillingSchedulesFilter] {
-	return pulumix.Output[[]GetBillingSchedulesFilter]{
-		OutputState: i.ToGetBillingSchedulesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBillingSchedulesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetBillingSchedulesFilterOutput) ElementType() reflect.Type {
@@ -1372,12 +1193,6 @@ func (o GetBillingSchedulesFilterOutput) ToGetBillingSchedulesFilterOutput() Get
 
 func (o GetBillingSchedulesFilterOutput) ToGetBillingSchedulesFilterOutputWithContext(ctx context.Context) GetBillingSchedulesFilterOutput {
 	return o
-}
-
-func (o GetBillingSchedulesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetBillingSchedulesFilter] {
-	return pulumix.Output[GetBillingSchedulesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Product name
@@ -1407,12 +1222,6 @@ func (o GetBillingSchedulesFilterArrayOutput) ToGetBillingSchedulesFilterArrayOu
 	return o
 }
 
-func (o GetBillingSchedulesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBillingSchedulesFilter] {
-	return pulumix.Output[[]GetBillingSchedulesFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetBillingSchedulesFilterArrayOutput) Index(i pulumi.IntInput) GetBillingSchedulesFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBillingSchedulesFilter {
 		return vs[0].([]GetBillingSchedulesFilter)[vs[1].(int)]
@@ -1421,21 +1230,21 @@ func (o GetBillingSchedulesFilterArrayOutput) Index(i pulumi.IntInput) GetBillin
 
 type GetCommitmentsCommitment struct {
 	// Commitment available amount
-	AvailableAmount string `pulumi:"availableAmount"`
+	AvailableAmount *string `pulumi:"availableAmount"`
 	// Funded Allocation line value example: 12000.00
-	FundedAllocationValue string `pulumi:"fundedAllocationValue"`
+	FundedAllocationValue *string `pulumi:"fundedAllocationValue"`
 	// SPM internal Commitment ID
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Commitment quantity
-	Quantity string `pulumi:"quantity"`
+	Quantity *string `pulumi:"quantity"`
 	// This param is used to get the commitments for a particular subscribed service
-	SubscribedServiceId string `pulumi:"subscribedServiceId"`
+	SubscribedServiceId *string `pulumi:"subscribedServiceId"`
 	// Commitment end date
-	TimeEnd string `pulumi:"timeEnd"`
+	TimeEnd *string `pulumi:"timeEnd"`
 	// Commitment start date
-	TimeStart string `pulumi:"timeStart"`
+	TimeStart *string `pulumi:"timeStart"`
 	// Commitment used amount
-	UsedAmount string `pulumi:"usedAmount"`
+	UsedAmount *string `pulumi:"usedAmount"`
 }
 
 // GetCommitmentsCommitmentInput is an input type that accepts GetCommitmentsCommitmentArgs and GetCommitmentsCommitmentOutput values.
@@ -1451,21 +1260,21 @@ type GetCommitmentsCommitmentInput interface {
 
 type GetCommitmentsCommitmentArgs struct {
 	// Commitment available amount
-	AvailableAmount pulumi.StringInput `pulumi:"availableAmount"`
+	AvailableAmount pulumi.StringPtrInput `pulumi:"availableAmount"`
 	// Funded Allocation line value example: 12000.00
-	FundedAllocationValue pulumi.StringInput `pulumi:"fundedAllocationValue"`
+	FundedAllocationValue pulumi.StringPtrInput `pulumi:"fundedAllocationValue"`
 	// SPM internal Commitment ID
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Commitment quantity
-	Quantity pulumi.StringInput `pulumi:"quantity"`
+	Quantity pulumi.StringPtrInput `pulumi:"quantity"`
 	// This param is used to get the commitments for a particular subscribed service
-	SubscribedServiceId pulumi.StringInput `pulumi:"subscribedServiceId"`
+	SubscribedServiceId pulumi.StringPtrInput `pulumi:"subscribedServiceId"`
 	// Commitment end date
-	TimeEnd pulumi.StringInput `pulumi:"timeEnd"`
+	TimeEnd pulumi.StringPtrInput `pulumi:"timeEnd"`
 	// Commitment start date
-	TimeStart pulumi.StringInput `pulumi:"timeStart"`
+	TimeStart pulumi.StringPtrInput `pulumi:"timeStart"`
 	// Commitment used amount
-	UsedAmount pulumi.StringInput `pulumi:"usedAmount"`
+	UsedAmount pulumi.StringPtrInput `pulumi:"usedAmount"`
 }
 
 func (GetCommitmentsCommitmentArgs) ElementType() reflect.Type {
@@ -1478,12 +1287,6 @@ func (i GetCommitmentsCommitmentArgs) ToGetCommitmentsCommitmentOutput() GetComm
 
 func (i GetCommitmentsCommitmentArgs) ToGetCommitmentsCommitmentOutputWithContext(ctx context.Context) GetCommitmentsCommitmentOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetCommitmentsCommitmentOutput)
-}
-
-func (i GetCommitmentsCommitmentArgs) ToOutput(ctx context.Context) pulumix.Output[GetCommitmentsCommitment] {
-	return pulumix.Output[GetCommitmentsCommitment]{
-		OutputState: i.ToGetCommitmentsCommitmentOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetCommitmentsCommitmentArrayInput is an input type that accepts GetCommitmentsCommitmentArray and GetCommitmentsCommitmentArrayOutput values.
@@ -1511,12 +1314,6 @@ func (i GetCommitmentsCommitmentArray) ToGetCommitmentsCommitmentArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetCommitmentsCommitmentArrayOutput)
 }
 
-func (i GetCommitmentsCommitmentArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCommitmentsCommitment] {
-	return pulumix.Output[[]GetCommitmentsCommitment]{
-		OutputState: i.ToGetCommitmentsCommitmentArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCommitmentsCommitmentOutput struct{ *pulumi.OutputState }
 
 func (GetCommitmentsCommitmentOutput) ElementType() reflect.Type {
@@ -1531,50 +1328,44 @@ func (o GetCommitmentsCommitmentOutput) ToGetCommitmentsCommitmentOutputWithCont
 	return o
 }
 
-func (o GetCommitmentsCommitmentOutput) ToOutput(ctx context.Context) pulumix.Output[GetCommitmentsCommitment] {
-	return pulumix.Output[GetCommitmentsCommitment]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Commitment available amount
-func (o GetCommitmentsCommitmentOutput) AvailableAmount() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCommitmentsCommitment) string { return v.AvailableAmount }).(pulumi.StringOutput)
+func (o GetCommitmentsCommitmentOutput) AvailableAmount() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCommitmentsCommitment) *string { return v.AvailableAmount }).(pulumi.StringPtrOutput)
 }
 
 // Funded Allocation line value example: 12000.00
-func (o GetCommitmentsCommitmentOutput) FundedAllocationValue() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCommitmentsCommitment) string { return v.FundedAllocationValue }).(pulumi.StringOutput)
+func (o GetCommitmentsCommitmentOutput) FundedAllocationValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCommitmentsCommitment) *string { return v.FundedAllocationValue }).(pulumi.StringPtrOutput)
 }
 
 // SPM internal Commitment ID
-func (o GetCommitmentsCommitmentOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCommitmentsCommitment) string { return v.Id }).(pulumi.StringOutput)
+func (o GetCommitmentsCommitmentOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCommitmentsCommitment) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Commitment quantity
-func (o GetCommitmentsCommitmentOutput) Quantity() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCommitmentsCommitment) string { return v.Quantity }).(pulumi.StringOutput)
+func (o GetCommitmentsCommitmentOutput) Quantity() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCommitmentsCommitment) *string { return v.Quantity }).(pulumi.StringPtrOutput)
 }
 
 // This param is used to get the commitments for a particular subscribed service
-func (o GetCommitmentsCommitmentOutput) SubscribedServiceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCommitmentsCommitment) string { return v.SubscribedServiceId }).(pulumi.StringOutput)
+func (o GetCommitmentsCommitmentOutput) SubscribedServiceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCommitmentsCommitment) *string { return v.SubscribedServiceId }).(pulumi.StringPtrOutput)
 }
 
 // Commitment end date
-func (o GetCommitmentsCommitmentOutput) TimeEnd() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCommitmentsCommitment) string { return v.TimeEnd }).(pulumi.StringOutput)
+func (o GetCommitmentsCommitmentOutput) TimeEnd() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCommitmentsCommitment) *string { return v.TimeEnd }).(pulumi.StringPtrOutput)
 }
 
 // Commitment start date
-func (o GetCommitmentsCommitmentOutput) TimeStart() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCommitmentsCommitment) string { return v.TimeStart }).(pulumi.StringOutput)
+func (o GetCommitmentsCommitmentOutput) TimeStart() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCommitmentsCommitment) *string { return v.TimeStart }).(pulumi.StringPtrOutput)
 }
 
 // Commitment used amount
-func (o GetCommitmentsCommitmentOutput) UsedAmount() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCommitmentsCommitment) string { return v.UsedAmount }).(pulumi.StringOutput)
+func (o GetCommitmentsCommitmentOutput) UsedAmount() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCommitmentsCommitment) *string { return v.UsedAmount }).(pulumi.StringPtrOutput)
 }
 
 type GetCommitmentsCommitmentArrayOutput struct{ *pulumi.OutputState }
@@ -1589,12 +1380,6 @@ func (o GetCommitmentsCommitmentArrayOutput) ToGetCommitmentsCommitmentArrayOutp
 
 func (o GetCommitmentsCommitmentArrayOutput) ToGetCommitmentsCommitmentArrayOutputWithContext(ctx context.Context) GetCommitmentsCommitmentArrayOutput {
 	return o
-}
-
-func (o GetCommitmentsCommitmentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCommitmentsCommitment] {
-	return pulumix.Output[[]GetCommitmentsCommitment]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetCommitmentsCommitmentArrayOutput) Index(i pulumi.IntInput) GetCommitmentsCommitmentOutput {
@@ -1638,12 +1423,6 @@ func (i GetCommitmentsFilterArgs) ToGetCommitmentsFilterOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GetCommitmentsFilterOutput)
 }
 
-func (i GetCommitmentsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetCommitmentsFilter] {
-	return pulumix.Output[GetCommitmentsFilter]{
-		OutputState: i.ToGetCommitmentsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetCommitmentsFilterArrayInput is an input type that accepts GetCommitmentsFilterArray and GetCommitmentsFilterArrayOutput values.
 // You can construct a concrete instance of `GetCommitmentsFilterArrayInput` via:
 //
@@ -1669,12 +1448,6 @@ func (i GetCommitmentsFilterArray) ToGetCommitmentsFilterArrayOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetCommitmentsFilterArrayOutput)
 }
 
-func (i GetCommitmentsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCommitmentsFilter] {
-	return pulumix.Output[[]GetCommitmentsFilter]{
-		OutputState: i.ToGetCommitmentsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCommitmentsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetCommitmentsFilterOutput) ElementType() reflect.Type {
@@ -1687,12 +1460,6 @@ func (o GetCommitmentsFilterOutput) ToGetCommitmentsFilterOutput() GetCommitment
 
 func (o GetCommitmentsFilterOutput) ToGetCommitmentsFilterOutputWithContext(ctx context.Context) GetCommitmentsFilterOutput {
 	return o
-}
-
-func (o GetCommitmentsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetCommitmentsFilter] {
-	return pulumix.Output[GetCommitmentsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetCommitmentsFilterOutput) Name() pulumi.StringOutput {
@@ -1721,12 +1488,6 @@ func (o GetCommitmentsFilterArrayOutput) ToGetCommitmentsFilterArrayOutputWithCo
 	return o
 }
 
-func (o GetCommitmentsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCommitmentsFilter] {
-	return pulumix.Output[[]GetCommitmentsFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCommitmentsFilterArrayOutput) Index(i pulumi.IntInput) GetCommitmentsFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCommitmentsFilter {
 		return vs[0].([]GetCommitmentsFilter)[vs[1].(int)]
@@ -1735,19 +1496,19 @@ func (o GetCommitmentsFilterArrayOutput) Index(i pulumi.IntInput) GetCommitments
 
 type GetComputedUsageParentProduct struct {
 	// Metered service billing category
-	BillingCategory string `pulumi:"billingCategory"`
+	BillingCategory *string `pulumi:"billingCategory"`
 	// Product name
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Product part number
-	PartNumber string `pulumi:"partNumber"`
+	PartNumber *string `pulumi:"partNumber"`
 	// Product category
-	ProductCategory string `pulumi:"productCategory"`
+	ProductCategory *string `pulumi:"productCategory"`
 	// Product provisioning group
-	ProvisioningGroup string `pulumi:"provisioningGroup"`
+	ProvisioningGroup *string `pulumi:"provisioningGroup"`
 	// Rate card part type of Product
-	UcmRateCardPartType string `pulumi:"ucmRateCardPartType"`
+	UcmRateCardPartType *string `pulumi:"ucmRateCardPartType"`
 	// Unit of Messure
-	UnitOfMeasure string `pulumi:"unitOfMeasure"`
+	UnitOfMeasure *string `pulumi:"unitOfMeasure"`
 }
 
 // GetComputedUsageParentProductInput is an input type that accepts GetComputedUsageParentProductArgs and GetComputedUsageParentProductOutput values.
@@ -1763,19 +1524,19 @@ type GetComputedUsageParentProductInput interface {
 
 type GetComputedUsageParentProductArgs struct {
 	// Metered service billing category
-	BillingCategory pulumi.StringInput `pulumi:"billingCategory"`
+	BillingCategory pulumi.StringPtrInput `pulumi:"billingCategory"`
 	// Product name
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Product part number
-	PartNumber pulumi.StringInput `pulumi:"partNumber"`
+	PartNumber pulumi.StringPtrInput `pulumi:"partNumber"`
 	// Product category
-	ProductCategory pulumi.StringInput `pulumi:"productCategory"`
+	ProductCategory pulumi.StringPtrInput `pulumi:"productCategory"`
 	// Product provisioning group
-	ProvisioningGroup pulumi.StringInput `pulumi:"provisioningGroup"`
+	ProvisioningGroup pulumi.StringPtrInput `pulumi:"provisioningGroup"`
 	// Rate card part type of Product
-	UcmRateCardPartType pulumi.StringInput `pulumi:"ucmRateCardPartType"`
+	UcmRateCardPartType pulumi.StringPtrInput `pulumi:"ucmRateCardPartType"`
 	// Unit of Messure
-	UnitOfMeasure pulumi.StringInput `pulumi:"unitOfMeasure"`
+	UnitOfMeasure pulumi.StringPtrInput `pulumi:"unitOfMeasure"`
 }
 
 func (GetComputedUsageParentProductArgs) ElementType() reflect.Type {
@@ -1788,12 +1549,6 @@ func (i GetComputedUsageParentProductArgs) ToGetComputedUsageParentProductOutput
 
 func (i GetComputedUsageParentProductArgs) ToGetComputedUsageParentProductOutputWithContext(ctx context.Context) GetComputedUsageParentProductOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetComputedUsageParentProductOutput)
-}
-
-func (i GetComputedUsageParentProductArgs) ToOutput(ctx context.Context) pulumix.Output[GetComputedUsageParentProduct] {
-	return pulumix.Output[GetComputedUsageParentProduct]{
-		OutputState: i.ToGetComputedUsageParentProductOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetComputedUsageParentProductArrayInput is an input type that accepts GetComputedUsageParentProductArray and GetComputedUsageParentProductArrayOutput values.
@@ -1821,12 +1576,6 @@ func (i GetComputedUsageParentProductArray) ToGetComputedUsageParentProductArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetComputedUsageParentProductArrayOutput)
 }
 
-func (i GetComputedUsageParentProductArray) ToOutput(ctx context.Context) pulumix.Output[[]GetComputedUsageParentProduct] {
-	return pulumix.Output[[]GetComputedUsageParentProduct]{
-		OutputState: i.ToGetComputedUsageParentProductArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetComputedUsageParentProductOutput struct{ *pulumi.OutputState }
 
 func (GetComputedUsageParentProductOutput) ElementType() reflect.Type {
@@ -1841,45 +1590,39 @@ func (o GetComputedUsageParentProductOutput) ToGetComputedUsageParentProductOutp
 	return o
 }
 
-func (o GetComputedUsageParentProductOutput) ToOutput(ctx context.Context) pulumix.Output[GetComputedUsageParentProduct] {
-	return pulumix.Output[GetComputedUsageParentProduct]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Metered service billing category
-func (o GetComputedUsageParentProductOutput) BillingCategory() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsageParentProduct) string { return v.BillingCategory }).(pulumi.StringOutput)
+func (o GetComputedUsageParentProductOutput) BillingCategory() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsageParentProduct) *string { return v.BillingCategory }).(pulumi.StringPtrOutput)
 }
 
 // Product name
-func (o GetComputedUsageParentProductOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsageParentProduct) string { return v.Name }).(pulumi.StringOutput)
+func (o GetComputedUsageParentProductOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsageParentProduct) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Product part number
-func (o GetComputedUsageParentProductOutput) PartNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsageParentProduct) string { return v.PartNumber }).(pulumi.StringOutput)
+func (o GetComputedUsageParentProductOutput) PartNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsageParentProduct) *string { return v.PartNumber }).(pulumi.StringPtrOutput)
 }
 
 // Product category
-func (o GetComputedUsageParentProductOutput) ProductCategory() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsageParentProduct) string { return v.ProductCategory }).(pulumi.StringOutput)
+func (o GetComputedUsageParentProductOutput) ProductCategory() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsageParentProduct) *string { return v.ProductCategory }).(pulumi.StringPtrOutput)
 }
 
 // Product provisioning group
-func (o GetComputedUsageParentProductOutput) ProvisioningGroup() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsageParentProduct) string { return v.ProvisioningGroup }).(pulumi.StringOutput)
+func (o GetComputedUsageParentProductOutput) ProvisioningGroup() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsageParentProduct) *string { return v.ProvisioningGroup }).(pulumi.StringPtrOutput)
 }
 
 // Rate card part type of Product
-func (o GetComputedUsageParentProductOutput) UcmRateCardPartType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsageParentProduct) string { return v.UcmRateCardPartType }).(pulumi.StringOutput)
+func (o GetComputedUsageParentProductOutput) UcmRateCardPartType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsageParentProduct) *string { return v.UcmRateCardPartType }).(pulumi.StringPtrOutput)
 }
 
 // Unit of Messure
-func (o GetComputedUsageParentProductOutput) UnitOfMeasure() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsageParentProduct) string { return v.UnitOfMeasure }).(pulumi.StringOutput)
+func (o GetComputedUsageParentProductOutput) UnitOfMeasure() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsageParentProduct) *string { return v.UnitOfMeasure }).(pulumi.StringPtrOutput)
 }
 
 type GetComputedUsageParentProductArrayOutput struct{ *pulumi.OutputState }
@@ -1896,12 +1639,6 @@ func (o GetComputedUsageParentProductArrayOutput) ToGetComputedUsageParentProduc
 	return o
 }
 
-func (o GetComputedUsageParentProductArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetComputedUsageParentProduct] {
-	return pulumix.Output[[]GetComputedUsageParentProduct]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetComputedUsageParentProductArrayOutput) Index(i pulumi.IntInput) GetComputedUsageParentProductOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetComputedUsageParentProduct {
 		return vs[0].([]GetComputedUsageParentProduct)[vs[1].(int)]
@@ -1910,19 +1647,19 @@ func (o GetComputedUsageParentProductArrayOutput) Index(i pulumi.IntInput) GetCo
 
 type GetComputedUsageProduct struct {
 	// Metered service billing category
-	BillingCategory string `pulumi:"billingCategory"`
+	BillingCategory *string `pulumi:"billingCategory"`
 	// Product name
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Product part number
-	PartNumber string `pulumi:"partNumber"`
+	PartNumber *string `pulumi:"partNumber"`
 	// Product category
-	ProductCategory string `pulumi:"productCategory"`
+	ProductCategory *string `pulumi:"productCategory"`
 	// Product provisioning group
-	ProvisioningGroup string `pulumi:"provisioningGroup"`
+	ProvisioningGroup *string `pulumi:"provisioningGroup"`
 	// Rate card part type of Product
-	UcmRateCardPartType string `pulumi:"ucmRateCardPartType"`
+	UcmRateCardPartType *string `pulumi:"ucmRateCardPartType"`
 	// Unit of Messure
-	UnitOfMeasure string `pulumi:"unitOfMeasure"`
+	UnitOfMeasure *string `pulumi:"unitOfMeasure"`
 }
 
 // GetComputedUsageProductInput is an input type that accepts GetComputedUsageProductArgs and GetComputedUsageProductOutput values.
@@ -1938,19 +1675,19 @@ type GetComputedUsageProductInput interface {
 
 type GetComputedUsageProductArgs struct {
 	// Metered service billing category
-	BillingCategory pulumi.StringInput `pulumi:"billingCategory"`
+	BillingCategory pulumi.StringPtrInput `pulumi:"billingCategory"`
 	// Product name
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Product part number
-	PartNumber pulumi.StringInput `pulumi:"partNumber"`
+	PartNumber pulumi.StringPtrInput `pulumi:"partNumber"`
 	// Product category
-	ProductCategory pulumi.StringInput `pulumi:"productCategory"`
+	ProductCategory pulumi.StringPtrInput `pulumi:"productCategory"`
 	// Product provisioning group
-	ProvisioningGroup pulumi.StringInput `pulumi:"provisioningGroup"`
+	ProvisioningGroup pulumi.StringPtrInput `pulumi:"provisioningGroup"`
 	// Rate card part type of Product
-	UcmRateCardPartType pulumi.StringInput `pulumi:"ucmRateCardPartType"`
+	UcmRateCardPartType pulumi.StringPtrInput `pulumi:"ucmRateCardPartType"`
 	// Unit of Messure
-	UnitOfMeasure pulumi.StringInput `pulumi:"unitOfMeasure"`
+	UnitOfMeasure pulumi.StringPtrInput `pulumi:"unitOfMeasure"`
 }
 
 func (GetComputedUsageProductArgs) ElementType() reflect.Type {
@@ -1963,12 +1700,6 @@ func (i GetComputedUsageProductArgs) ToGetComputedUsageProductOutput() GetComput
 
 func (i GetComputedUsageProductArgs) ToGetComputedUsageProductOutputWithContext(ctx context.Context) GetComputedUsageProductOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetComputedUsageProductOutput)
-}
-
-func (i GetComputedUsageProductArgs) ToOutput(ctx context.Context) pulumix.Output[GetComputedUsageProduct] {
-	return pulumix.Output[GetComputedUsageProduct]{
-		OutputState: i.ToGetComputedUsageProductOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetComputedUsageProductArrayInput is an input type that accepts GetComputedUsageProductArray and GetComputedUsageProductArrayOutput values.
@@ -1996,12 +1727,6 @@ func (i GetComputedUsageProductArray) ToGetComputedUsageProductArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetComputedUsageProductArrayOutput)
 }
 
-func (i GetComputedUsageProductArray) ToOutput(ctx context.Context) pulumix.Output[[]GetComputedUsageProduct] {
-	return pulumix.Output[[]GetComputedUsageProduct]{
-		OutputState: i.ToGetComputedUsageProductArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetComputedUsageProductOutput struct{ *pulumi.OutputState }
 
 func (GetComputedUsageProductOutput) ElementType() reflect.Type {
@@ -2016,45 +1741,39 @@ func (o GetComputedUsageProductOutput) ToGetComputedUsageProductOutputWithContex
 	return o
 }
 
-func (o GetComputedUsageProductOutput) ToOutput(ctx context.Context) pulumix.Output[GetComputedUsageProduct] {
-	return pulumix.Output[GetComputedUsageProduct]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Metered service billing category
-func (o GetComputedUsageProductOutput) BillingCategory() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsageProduct) string { return v.BillingCategory }).(pulumi.StringOutput)
+func (o GetComputedUsageProductOutput) BillingCategory() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsageProduct) *string { return v.BillingCategory }).(pulumi.StringPtrOutput)
 }
 
 // Product name
-func (o GetComputedUsageProductOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsageProduct) string { return v.Name }).(pulumi.StringOutput)
+func (o GetComputedUsageProductOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsageProduct) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Product part number
-func (o GetComputedUsageProductOutput) PartNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsageProduct) string { return v.PartNumber }).(pulumi.StringOutput)
+func (o GetComputedUsageProductOutput) PartNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsageProduct) *string { return v.PartNumber }).(pulumi.StringPtrOutput)
 }
 
 // Product category
-func (o GetComputedUsageProductOutput) ProductCategory() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsageProduct) string { return v.ProductCategory }).(pulumi.StringOutput)
+func (o GetComputedUsageProductOutput) ProductCategory() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsageProduct) *string { return v.ProductCategory }).(pulumi.StringPtrOutput)
 }
 
 // Product provisioning group
-func (o GetComputedUsageProductOutput) ProvisioningGroup() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsageProduct) string { return v.ProvisioningGroup }).(pulumi.StringOutput)
+func (o GetComputedUsageProductOutput) ProvisioningGroup() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsageProduct) *string { return v.ProvisioningGroup }).(pulumi.StringPtrOutput)
 }
 
 // Rate card part type of Product
-func (o GetComputedUsageProductOutput) UcmRateCardPartType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsageProduct) string { return v.UcmRateCardPartType }).(pulumi.StringOutput)
+func (o GetComputedUsageProductOutput) UcmRateCardPartType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsageProduct) *string { return v.UcmRateCardPartType }).(pulumi.StringPtrOutput)
 }
 
 // Unit of Messure
-func (o GetComputedUsageProductOutput) UnitOfMeasure() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsageProduct) string { return v.UnitOfMeasure }).(pulumi.StringOutput)
+func (o GetComputedUsageProductOutput) UnitOfMeasure() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsageProduct) *string { return v.UnitOfMeasure }).(pulumi.StringPtrOutput)
 }
 
 type GetComputedUsageProductArrayOutput struct{ *pulumi.OutputState }
@@ -2071,12 +1790,6 @@ func (o GetComputedUsageProductArrayOutput) ToGetComputedUsageProductArrayOutput
 	return o
 }
 
-func (o GetComputedUsageProductArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetComputedUsageProduct] {
-	return pulumix.Output[[]GetComputedUsageProduct]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetComputedUsageProductArrayOutput) Index(i pulumi.IntInput) GetComputedUsageProductOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetComputedUsageProduct {
 		return vs[0].([]GetComputedUsageProduct)[vs[1].(int)]
@@ -2085,56 +1798,56 @@ func (o GetComputedUsageProductArrayOutput) Index(i pulumi.IntInput) GetComputed
 
 type GetComputedUsagesComputedUsage struct {
 	// Subscribed service commitmentId.
-	CommitmentServiceId string `pulumi:"commitmentServiceId"`
+	CommitmentServiceId *string `pulumi:"commitmentServiceId"`
 	// SPM Internal compute records source .
-	ComputeSource   string `pulumi:"computeSource"`
-	ComputedUsageId string `pulumi:"computedUsageId"`
+	ComputeSource   *string `pulumi:"computeSource"`
+	ComputedUsageId *string `pulumi:"computedUsageId"`
 	// Computed Line Amount not rounded
-	Cost string `pulumi:"cost"`
+	Cost *string `pulumi:"cost"`
 	// Computed Line Amount rounded.
-	CostRounded string `pulumi:"costRounded"`
+	CostRounded *string `pulumi:"costRounded"`
 	// Currency code
-	CurrencyCode string `pulumi:"currencyCode"`
+	CurrencyCode *string `pulumi:"currencyCode"`
 	// Data Center Attribute as sent by MQS to SPM.
-	DataCenter string `pulumi:"dataCenter"`
+	DataCenter *string `pulumi:"dataCenter"`
 	// SPM Internal computed usage Id , 32 character string
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Invoicing status for the aggregated compute usage
-	IsInvoiced bool `pulumi:"isInvoiced"`
+	IsInvoiced *bool `pulumi:"isInvoiced"`
 	// MQS Identfier send to SPM , SPM does not transform this attribute and is received as is.
-	MqsMessageId string `pulumi:"mqsMessageId"`
+	MqsMessageId *string `pulumi:"mqsMessageId"`
 	// Net Unit Price for the product in consideration, price actual.
-	NetUnitPrice string `pulumi:"netUnitPrice"`
+	NetUnitPrice *string `pulumi:"netUnitPrice"`
 	// SPM Internal Original usage Line number identifier in SPM coming from Metered Services entity.
-	OriginalUsageNumber string `pulumi:"originalUsageNumber"`
+	OriginalUsageNumber *string `pulumi:"originalUsageNumber"`
 	// Product part number for subscribed service line, called parent product.
 	ParentProducts []GetComputedUsagesComputedUsageParentProduct `pulumi:"parentProducts"`
 	// Subscribed service line parent id
-	ParentSubscribedServiceId string `pulumi:"parentSubscribedServiceId"`
+	ParentSubscribedServiceId *string `pulumi:"parentSubscribedServiceId"`
 	// Subscription plan number
-	PlanNumber string `pulumi:"planNumber"`
+	PlanNumber *string `pulumi:"planNumber"`
 	// Product description
 	Products []GetComputedUsagesComputedUsageProduct `pulumi:"products"`
 	// Total Quantity that was used for computation
-	Quantity string `pulumi:"quantity"`
+	Quantity *string `pulumi:"quantity"`
 	// Ratecard Id at subscribed service level
-	RateCardId string `pulumi:"rateCardId"`
+	RateCardId *string `pulumi:"rateCardId"`
 	// References the tier in the ratecard for that usage (OCI will be using the same reference to cross-reference for correctness on the usage csv report), comes from Entity OBSCNTR_IPT_PRODUCTTIER.
-	RateCardTierdId string `pulumi:"rateCardTierdId"`
+	RateCardTierdId *string `pulumi:"rateCardTierdId"`
 	// Computed Usage created time, expressed in RFC 3339 timestamp format.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// Metered Service date, expressed in RFC 3339 timestamp format.
-	TimeMeteredOn string `pulumi:"timeMeteredOn"`
+	TimeMeteredOn *string `pulumi:"timeMeteredOn"`
 	// Usae computation date, expressed in RFC 3339 timestamp format.
-	TimeOfArrival string `pulumi:"timeOfArrival"`
+	TimeOfArrival *string `pulumi:"timeOfArrival"`
 	// Computed Usage updated time, expressed in RFC 3339 timestamp format.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// Usage compute type in SPM.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 	// Unit of Messure
-	UnitOfMeasure string `pulumi:"unitOfMeasure"`
+	UnitOfMeasure *string `pulumi:"unitOfMeasure"`
 	// SPM Internal usage Line number identifier in SPM coming from Metered Services entity.
-	UsageNumber string `pulumi:"usageNumber"`
+	UsageNumber *string `pulumi:"usageNumber"`
 }
 
 // GetComputedUsagesComputedUsageInput is an input type that accepts GetComputedUsagesComputedUsageArgs and GetComputedUsagesComputedUsageOutput values.
@@ -2150,56 +1863,56 @@ type GetComputedUsagesComputedUsageInput interface {
 
 type GetComputedUsagesComputedUsageArgs struct {
 	// Subscribed service commitmentId.
-	CommitmentServiceId pulumi.StringInput `pulumi:"commitmentServiceId"`
+	CommitmentServiceId pulumi.StringPtrInput `pulumi:"commitmentServiceId"`
 	// SPM Internal compute records source .
-	ComputeSource   pulumi.StringInput `pulumi:"computeSource"`
-	ComputedUsageId pulumi.StringInput `pulumi:"computedUsageId"`
+	ComputeSource   pulumi.StringPtrInput `pulumi:"computeSource"`
+	ComputedUsageId pulumi.StringPtrInput `pulumi:"computedUsageId"`
 	// Computed Line Amount not rounded
-	Cost pulumi.StringInput `pulumi:"cost"`
+	Cost pulumi.StringPtrInput `pulumi:"cost"`
 	// Computed Line Amount rounded.
-	CostRounded pulumi.StringInput `pulumi:"costRounded"`
+	CostRounded pulumi.StringPtrInput `pulumi:"costRounded"`
 	// Currency code
-	CurrencyCode pulumi.StringInput `pulumi:"currencyCode"`
+	CurrencyCode pulumi.StringPtrInput `pulumi:"currencyCode"`
 	// Data Center Attribute as sent by MQS to SPM.
-	DataCenter pulumi.StringInput `pulumi:"dataCenter"`
+	DataCenter pulumi.StringPtrInput `pulumi:"dataCenter"`
 	// SPM Internal computed usage Id , 32 character string
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Invoicing status for the aggregated compute usage
-	IsInvoiced pulumi.BoolInput `pulumi:"isInvoiced"`
+	IsInvoiced pulumi.BoolPtrInput `pulumi:"isInvoiced"`
 	// MQS Identfier send to SPM , SPM does not transform this attribute and is received as is.
-	MqsMessageId pulumi.StringInput `pulumi:"mqsMessageId"`
+	MqsMessageId pulumi.StringPtrInput `pulumi:"mqsMessageId"`
 	// Net Unit Price for the product in consideration, price actual.
-	NetUnitPrice pulumi.StringInput `pulumi:"netUnitPrice"`
+	NetUnitPrice pulumi.StringPtrInput `pulumi:"netUnitPrice"`
 	// SPM Internal Original usage Line number identifier in SPM coming from Metered Services entity.
-	OriginalUsageNumber pulumi.StringInput `pulumi:"originalUsageNumber"`
+	OriginalUsageNumber pulumi.StringPtrInput `pulumi:"originalUsageNumber"`
 	// Product part number for subscribed service line, called parent product.
 	ParentProducts GetComputedUsagesComputedUsageParentProductArrayInput `pulumi:"parentProducts"`
 	// Subscribed service line parent id
-	ParentSubscribedServiceId pulumi.StringInput `pulumi:"parentSubscribedServiceId"`
+	ParentSubscribedServiceId pulumi.StringPtrInput `pulumi:"parentSubscribedServiceId"`
 	// Subscription plan number
-	PlanNumber pulumi.StringInput `pulumi:"planNumber"`
+	PlanNumber pulumi.StringPtrInput `pulumi:"planNumber"`
 	// Product description
 	Products GetComputedUsagesComputedUsageProductArrayInput `pulumi:"products"`
 	// Total Quantity that was used for computation
-	Quantity pulumi.StringInput `pulumi:"quantity"`
+	Quantity pulumi.StringPtrInput `pulumi:"quantity"`
 	// Ratecard Id at subscribed service level
-	RateCardId pulumi.StringInput `pulumi:"rateCardId"`
+	RateCardId pulumi.StringPtrInput `pulumi:"rateCardId"`
 	// References the tier in the ratecard for that usage (OCI will be using the same reference to cross-reference for correctness on the usage csv report), comes from Entity OBSCNTR_IPT_PRODUCTTIER.
-	RateCardTierdId pulumi.StringInput `pulumi:"rateCardTierdId"`
+	RateCardTierdId pulumi.StringPtrInput `pulumi:"rateCardTierdId"`
 	// Computed Usage created time, expressed in RFC 3339 timestamp format.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// Metered Service date, expressed in RFC 3339 timestamp format.
-	TimeMeteredOn pulumi.StringInput `pulumi:"timeMeteredOn"`
+	TimeMeteredOn pulumi.StringPtrInput `pulumi:"timeMeteredOn"`
 	// Usae computation date, expressed in RFC 3339 timestamp format.
-	TimeOfArrival pulumi.StringInput `pulumi:"timeOfArrival"`
+	TimeOfArrival pulumi.StringPtrInput `pulumi:"timeOfArrival"`
 	// Computed Usage updated time, expressed in RFC 3339 timestamp format.
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 	// Usage compute type in SPM.
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 	// Unit of Messure
-	UnitOfMeasure pulumi.StringInput `pulumi:"unitOfMeasure"`
+	UnitOfMeasure pulumi.StringPtrInput `pulumi:"unitOfMeasure"`
 	// SPM Internal usage Line number identifier in SPM coming from Metered Services entity.
-	UsageNumber pulumi.StringInput `pulumi:"usageNumber"`
+	UsageNumber pulumi.StringPtrInput `pulumi:"usageNumber"`
 }
 
 func (GetComputedUsagesComputedUsageArgs) ElementType() reflect.Type {
@@ -2212,12 +1925,6 @@ func (i GetComputedUsagesComputedUsageArgs) ToGetComputedUsagesComputedUsageOutp
 
 func (i GetComputedUsagesComputedUsageArgs) ToGetComputedUsagesComputedUsageOutputWithContext(ctx context.Context) GetComputedUsagesComputedUsageOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetComputedUsagesComputedUsageOutput)
-}
-
-func (i GetComputedUsagesComputedUsageArgs) ToOutput(ctx context.Context) pulumix.Output[GetComputedUsagesComputedUsage] {
-	return pulumix.Output[GetComputedUsagesComputedUsage]{
-		OutputState: i.ToGetComputedUsagesComputedUsageOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetComputedUsagesComputedUsageArrayInput is an input type that accepts GetComputedUsagesComputedUsageArray and GetComputedUsagesComputedUsageArrayOutput values.
@@ -2245,12 +1952,6 @@ func (i GetComputedUsagesComputedUsageArray) ToGetComputedUsagesComputedUsageArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetComputedUsagesComputedUsageArrayOutput)
 }
 
-func (i GetComputedUsagesComputedUsageArray) ToOutput(ctx context.Context) pulumix.Output[[]GetComputedUsagesComputedUsage] {
-	return pulumix.Output[[]GetComputedUsagesComputedUsage]{
-		OutputState: i.ToGetComputedUsagesComputedUsageArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetComputedUsagesComputedUsageOutput struct{ *pulumi.OutputState }
 
 func (GetComputedUsagesComputedUsageOutput) ElementType() reflect.Type {
@@ -2265,69 +1966,63 @@ func (o GetComputedUsagesComputedUsageOutput) ToGetComputedUsagesComputedUsageOu
 	return o
 }
 
-func (o GetComputedUsagesComputedUsageOutput) ToOutput(ctx context.Context) pulumix.Output[GetComputedUsagesComputedUsage] {
-	return pulumix.Output[GetComputedUsagesComputedUsage]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Subscribed service commitmentId.
-func (o GetComputedUsagesComputedUsageOutput) CommitmentServiceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsagesComputedUsage) string { return v.CommitmentServiceId }).(pulumi.StringOutput)
+func (o GetComputedUsagesComputedUsageOutput) CommitmentServiceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsagesComputedUsage) *string { return v.CommitmentServiceId }).(pulumi.StringPtrOutput)
 }
 
 // SPM Internal compute records source .
-func (o GetComputedUsagesComputedUsageOutput) ComputeSource() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsagesComputedUsage) string { return v.ComputeSource }).(pulumi.StringOutput)
+func (o GetComputedUsagesComputedUsageOutput) ComputeSource() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsagesComputedUsage) *string { return v.ComputeSource }).(pulumi.StringPtrOutput)
 }
 
-func (o GetComputedUsagesComputedUsageOutput) ComputedUsageId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsagesComputedUsage) string { return v.ComputedUsageId }).(pulumi.StringOutput)
+func (o GetComputedUsagesComputedUsageOutput) ComputedUsageId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsagesComputedUsage) *string { return v.ComputedUsageId }).(pulumi.StringPtrOutput)
 }
 
 // Computed Line Amount not rounded
-func (o GetComputedUsagesComputedUsageOutput) Cost() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsagesComputedUsage) string { return v.Cost }).(pulumi.StringOutput)
+func (o GetComputedUsagesComputedUsageOutput) Cost() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsagesComputedUsage) *string { return v.Cost }).(pulumi.StringPtrOutput)
 }
 
 // Computed Line Amount rounded.
-func (o GetComputedUsagesComputedUsageOutput) CostRounded() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsagesComputedUsage) string { return v.CostRounded }).(pulumi.StringOutput)
+func (o GetComputedUsagesComputedUsageOutput) CostRounded() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsagesComputedUsage) *string { return v.CostRounded }).(pulumi.StringPtrOutput)
 }
 
 // Currency code
-func (o GetComputedUsagesComputedUsageOutput) CurrencyCode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsagesComputedUsage) string { return v.CurrencyCode }).(pulumi.StringOutput)
+func (o GetComputedUsagesComputedUsageOutput) CurrencyCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsagesComputedUsage) *string { return v.CurrencyCode }).(pulumi.StringPtrOutput)
 }
 
 // Data Center Attribute as sent by MQS to SPM.
-func (o GetComputedUsagesComputedUsageOutput) DataCenter() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsagesComputedUsage) string { return v.DataCenter }).(pulumi.StringOutput)
+func (o GetComputedUsagesComputedUsageOutput) DataCenter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsagesComputedUsage) *string { return v.DataCenter }).(pulumi.StringPtrOutput)
 }
 
 // SPM Internal computed usage Id , 32 character string
-func (o GetComputedUsagesComputedUsageOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsagesComputedUsage) string { return v.Id }).(pulumi.StringOutput)
+func (o GetComputedUsagesComputedUsageOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsagesComputedUsage) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Invoicing status for the aggregated compute usage
-func (o GetComputedUsagesComputedUsageOutput) IsInvoiced() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetComputedUsagesComputedUsage) bool { return v.IsInvoiced }).(pulumi.BoolOutput)
+func (o GetComputedUsagesComputedUsageOutput) IsInvoiced() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetComputedUsagesComputedUsage) *bool { return v.IsInvoiced }).(pulumi.BoolPtrOutput)
 }
 
 // MQS Identfier send to SPM , SPM does not transform this attribute and is received as is.
-func (o GetComputedUsagesComputedUsageOutput) MqsMessageId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsagesComputedUsage) string { return v.MqsMessageId }).(pulumi.StringOutput)
+func (o GetComputedUsagesComputedUsageOutput) MqsMessageId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsagesComputedUsage) *string { return v.MqsMessageId }).(pulumi.StringPtrOutput)
 }
 
 // Net Unit Price for the product in consideration, price actual.
-func (o GetComputedUsagesComputedUsageOutput) NetUnitPrice() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsagesComputedUsage) string { return v.NetUnitPrice }).(pulumi.StringOutput)
+func (o GetComputedUsagesComputedUsageOutput) NetUnitPrice() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsagesComputedUsage) *string { return v.NetUnitPrice }).(pulumi.StringPtrOutput)
 }
 
 // SPM Internal Original usage Line number identifier in SPM coming from Metered Services entity.
-func (o GetComputedUsagesComputedUsageOutput) OriginalUsageNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsagesComputedUsage) string { return v.OriginalUsageNumber }).(pulumi.StringOutput)
+func (o GetComputedUsagesComputedUsageOutput) OriginalUsageNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsagesComputedUsage) *string { return v.OriginalUsageNumber }).(pulumi.StringPtrOutput)
 }
 
 // Product part number for subscribed service line, called parent product.
@@ -2338,13 +2033,13 @@ func (o GetComputedUsagesComputedUsageOutput) ParentProducts() GetComputedUsages
 }
 
 // Subscribed service line parent id
-func (o GetComputedUsagesComputedUsageOutput) ParentSubscribedServiceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsagesComputedUsage) string { return v.ParentSubscribedServiceId }).(pulumi.StringOutput)
+func (o GetComputedUsagesComputedUsageOutput) ParentSubscribedServiceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsagesComputedUsage) *string { return v.ParentSubscribedServiceId }).(pulumi.StringPtrOutput)
 }
 
 // Subscription plan number
-func (o GetComputedUsagesComputedUsageOutput) PlanNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsagesComputedUsage) string { return v.PlanNumber }).(pulumi.StringOutput)
+func (o GetComputedUsagesComputedUsageOutput) PlanNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsagesComputedUsage) *string { return v.PlanNumber }).(pulumi.StringPtrOutput)
 }
 
 // Product description
@@ -2353,53 +2048,53 @@ func (o GetComputedUsagesComputedUsageOutput) Products() GetComputedUsagesComput
 }
 
 // Total Quantity that was used for computation
-func (o GetComputedUsagesComputedUsageOutput) Quantity() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsagesComputedUsage) string { return v.Quantity }).(pulumi.StringOutput)
+func (o GetComputedUsagesComputedUsageOutput) Quantity() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsagesComputedUsage) *string { return v.Quantity }).(pulumi.StringPtrOutput)
 }
 
 // Ratecard Id at subscribed service level
-func (o GetComputedUsagesComputedUsageOutput) RateCardId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsagesComputedUsage) string { return v.RateCardId }).(pulumi.StringOutput)
+func (o GetComputedUsagesComputedUsageOutput) RateCardId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsagesComputedUsage) *string { return v.RateCardId }).(pulumi.StringPtrOutput)
 }
 
 // References the tier in the ratecard for that usage (OCI will be using the same reference to cross-reference for correctness on the usage csv report), comes from Entity OBSCNTR_IPT_PRODUCTTIER.
-func (o GetComputedUsagesComputedUsageOutput) RateCardTierdId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsagesComputedUsage) string { return v.RateCardTierdId }).(pulumi.StringOutput)
+func (o GetComputedUsagesComputedUsageOutput) RateCardTierdId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsagesComputedUsage) *string { return v.RateCardTierdId }).(pulumi.StringPtrOutput)
 }
 
 // Computed Usage created time, expressed in RFC 3339 timestamp format.
-func (o GetComputedUsagesComputedUsageOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsagesComputedUsage) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetComputedUsagesComputedUsageOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsagesComputedUsage) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // Metered Service date, expressed in RFC 3339 timestamp format.
-func (o GetComputedUsagesComputedUsageOutput) TimeMeteredOn() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsagesComputedUsage) string { return v.TimeMeteredOn }).(pulumi.StringOutput)
+func (o GetComputedUsagesComputedUsageOutput) TimeMeteredOn() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsagesComputedUsage) *string { return v.TimeMeteredOn }).(pulumi.StringPtrOutput)
 }
 
 // Usae computation date, expressed in RFC 3339 timestamp format.
-func (o GetComputedUsagesComputedUsageOutput) TimeOfArrival() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsagesComputedUsage) string { return v.TimeOfArrival }).(pulumi.StringOutput)
+func (o GetComputedUsagesComputedUsageOutput) TimeOfArrival() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsagesComputedUsage) *string { return v.TimeOfArrival }).(pulumi.StringPtrOutput)
 }
 
 // Computed Usage updated time, expressed in RFC 3339 timestamp format.
-func (o GetComputedUsagesComputedUsageOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsagesComputedUsage) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetComputedUsagesComputedUsageOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsagesComputedUsage) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // Usage compute type in SPM.
-func (o GetComputedUsagesComputedUsageOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsagesComputedUsage) string { return v.Type }).(pulumi.StringOutput)
+func (o GetComputedUsagesComputedUsageOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsagesComputedUsage) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 // Unit of Messure
-func (o GetComputedUsagesComputedUsageOutput) UnitOfMeasure() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsagesComputedUsage) string { return v.UnitOfMeasure }).(pulumi.StringOutput)
+func (o GetComputedUsagesComputedUsageOutput) UnitOfMeasure() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsagesComputedUsage) *string { return v.UnitOfMeasure }).(pulumi.StringPtrOutput)
 }
 
 // SPM Internal usage Line number identifier in SPM coming from Metered Services entity.
-func (o GetComputedUsagesComputedUsageOutput) UsageNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsagesComputedUsage) string { return v.UsageNumber }).(pulumi.StringOutput)
+func (o GetComputedUsagesComputedUsageOutput) UsageNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsagesComputedUsage) *string { return v.UsageNumber }).(pulumi.StringPtrOutput)
 }
 
 type GetComputedUsagesComputedUsageArrayOutput struct{ *pulumi.OutputState }
@@ -2416,12 +2111,6 @@ func (o GetComputedUsagesComputedUsageArrayOutput) ToGetComputedUsagesComputedUs
 	return o
 }
 
-func (o GetComputedUsagesComputedUsageArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetComputedUsagesComputedUsage] {
-	return pulumix.Output[[]GetComputedUsagesComputedUsage]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetComputedUsagesComputedUsageArrayOutput) Index(i pulumi.IntInput) GetComputedUsagesComputedUsageOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetComputedUsagesComputedUsage {
 		return vs[0].([]GetComputedUsagesComputedUsage)[vs[1].(int)]
@@ -2430,19 +2119,19 @@ func (o GetComputedUsagesComputedUsageArrayOutput) Index(i pulumi.IntInput) GetC
 
 type GetComputedUsagesComputedUsageParentProduct struct {
 	// Metered service billing category
-	BillingCategory string `pulumi:"billingCategory"`
+	BillingCategory *string `pulumi:"billingCategory"`
 	// Product name
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Product part number
-	PartNumber string `pulumi:"partNumber"`
+	PartNumber *string `pulumi:"partNumber"`
 	// Product category
-	ProductCategory string `pulumi:"productCategory"`
+	ProductCategory *string `pulumi:"productCategory"`
 	// Product provisioning group
-	ProvisioningGroup string `pulumi:"provisioningGroup"`
+	ProvisioningGroup *string `pulumi:"provisioningGroup"`
 	// Rate card part type of Product
-	UcmRateCardPartType string `pulumi:"ucmRateCardPartType"`
+	UcmRateCardPartType *string `pulumi:"ucmRateCardPartType"`
 	// Unit of Messure
-	UnitOfMeasure string `pulumi:"unitOfMeasure"`
+	UnitOfMeasure *string `pulumi:"unitOfMeasure"`
 }
 
 // GetComputedUsagesComputedUsageParentProductInput is an input type that accepts GetComputedUsagesComputedUsageParentProductArgs and GetComputedUsagesComputedUsageParentProductOutput values.
@@ -2458,19 +2147,19 @@ type GetComputedUsagesComputedUsageParentProductInput interface {
 
 type GetComputedUsagesComputedUsageParentProductArgs struct {
 	// Metered service billing category
-	BillingCategory pulumi.StringInput `pulumi:"billingCategory"`
+	BillingCategory pulumi.StringPtrInput `pulumi:"billingCategory"`
 	// Product name
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Product part number
-	PartNumber pulumi.StringInput `pulumi:"partNumber"`
+	PartNumber pulumi.StringPtrInput `pulumi:"partNumber"`
 	// Product category
-	ProductCategory pulumi.StringInput `pulumi:"productCategory"`
+	ProductCategory pulumi.StringPtrInput `pulumi:"productCategory"`
 	// Product provisioning group
-	ProvisioningGroup pulumi.StringInput `pulumi:"provisioningGroup"`
+	ProvisioningGroup pulumi.StringPtrInput `pulumi:"provisioningGroup"`
 	// Rate card part type of Product
-	UcmRateCardPartType pulumi.StringInput `pulumi:"ucmRateCardPartType"`
+	UcmRateCardPartType pulumi.StringPtrInput `pulumi:"ucmRateCardPartType"`
 	// Unit of Messure
-	UnitOfMeasure pulumi.StringInput `pulumi:"unitOfMeasure"`
+	UnitOfMeasure pulumi.StringPtrInput `pulumi:"unitOfMeasure"`
 }
 
 func (GetComputedUsagesComputedUsageParentProductArgs) ElementType() reflect.Type {
@@ -2483,12 +2172,6 @@ func (i GetComputedUsagesComputedUsageParentProductArgs) ToGetComputedUsagesComp
 
 func (i GetComputedUsagesComputedUsageParentProductArgs) ToGetComputedUsagesComputedUsageParentProductOutputWithContext(ctx context.Context) GetComputedUsagesComputedUsageParentProductOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetComputedUsagesComputedUsageParentProductOutput)
-}
-
-func (i GetComputedUsagesComputedUsageParentProductArgs) ToOutput(ctx context.Context) pulumix.Output[GetComputedUsagesComputedUsageParentProduct] {
-	return pulumix.Output[GetComputedUsagesComputedUsageParentProduct]{
-		OutputState: i.ToGetComputedUsagesComputedUsageParentProductOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetComputedUsagesComputedUsageParentProductArrayInput is an input type that accepts GetComputedUsagesComputedUsageParentProductArray and GetComputedUsagesComputedUsageParentProductArrayOutput values.
@@ -2516,12 +2199,6 @@ func (i GetComputedUsagesComputedUsageParentProductArray) ToGetComputedUsagesCom
 	return pulumi.ToOutputWithContext(ctx, i).(GetComputedUsagesComputedUsageParentProductArrayOutput)
 }
 
-func (i GetComputedUsagesComputedUsageParentProductArray) ToOutput(ctx context.Context) pulumix.Output[[]GetComputedUsagesComputedUsageParentProduct] {
-	return pulumix.Output[[]GetComputedUsagesComputedUsageParentProduct]{
-		OutputState: i.ToGetComputedUsagesComputedUsageParentProductArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetComputedUsagesComputedUsageParentProductOutput struct{ *pulumi.OutputState }
 
 func (GetComputedUsagesComputedUsageParentProductOutput) ElementType() reflect.Type {
@@ -2536,45 +2213,39 @@ func (o GetComputedUsagesComputedUsageParentProductOutput) ToGetComputedUsagesCo
 	return o
 }
 
-func (o GetComputedUsagesComputedUsageParentProductOutput) ToOutput(ctx context.Context) pulumix.Output[GetComputedUsagesComputedUsageParentProduct] {
-	return pulumix.Output[GetComputedUsagesComputedUsageParentProduct]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Metered service billing category
-func (o GetComputedUsagesComputedUsageParentProductOutput) BillingCategory() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsagesComputedUsageParentProduct) string { return v.BillingCategory }).(pulumi.StringOutput)
+func (o GetComputedUsagesComputedUsageParentProductOutput) BillingCategory() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsagesComputedUsageParentProduct) *string { return v.BillingCategory }).(pulumi.StringPtrOutput)
 }
 
 // Product name
-func (o GetComputedUsagesComputedUsageParentProductOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsagesComputedUsageParentProduct) string { return v.Name }).(pulumi.StringOutput)
+func (o GetComputedUsagesComputedUsageParentProductOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsagesComputedUsageParentProduct) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Product part number
-func (o GetComputedUsagesComputedUsageParentProductOutput) PartNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsagesComputedUsageParentProduct) string { return v.PartNumber }).(pulumi.StringOutput)
+func (o GetComputedUsagesComputedUsageParentProductOutput) PartNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsagesComputedUsageParentProduct) *string { return v.PartNumber }).(pulumi.StringPtrOutput)
 }
 
 // Product category
-func (o GetComputedUsagesComputedUsageParentProductOutput) ProductCategory() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsagesComputedUsageParentProduct) string { return v.ProductCategory }).(pulumi.StringOutput)
+func (o GetComputedUsagesComputedUsageParentProductOutput) ProductCategory() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsagesComputedUsageParentProduct) *string { return v.ProductCategory }).(pulumi.StringPtrOutput)
 }
 
 // Product provisioning group
-func (o GetComputedUsagesComputedUsageParentProductOutput) ProvisioningGroup() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsagesComputedUsageParentProduct) string { return v.ProvisioningGroup }).(pulumi.StringOutput)
+func (o GetComputedUsagesComputedUsageParentProductOutput) ProvisioningGroup() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsagesComputedUsageParentProduct) *string { return v.ProvisioningGroup }).(pulumi.StringPtrOutput)
 }
 
 // Rate card part type of Product
-func (o GetComputedUsagesComputedUsageParentProductOutput) UcmRateCardPartType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsagesComputedUsageParentProduct) string { return v.UcmRateCardPartType }).(pulumi.StringOutput)
+func (o GetComputedUsagesComputedUsageParentProductOutput) UcmRateCardPartType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsagesComputedUsageParentProduct) *string { return v.UcmRateCardPartType }).(pulumi.StringPtrOutput)
 }
 
 // Unit of Messure
-func (o GetComputedUsagesComputedUsageParentProductOutput) UnitOfMeasure() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsagesComputedUsageParentProduct) string { return v.UnitOfMeasure }).(pulumi.StringOutput)
+func (o GetComputedUsagesComputedUsageParentProductOutput) UnitOfMeasure() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsagesComputedUsageParentProduct) *string { return v.UnitOfMeasure }).(pulumi.StringPtrOutput)
 }
 
 type GetComputedUsagesComputedUsageParentProductArrayOutput struct{ *pulumi.OutputState }
@@ -2591,12 +2262,6 @@ func (o GetComputedUsagesComputedUsageParentProductArrayOutput) ToGetComputedUsa
 	return o
 }
 
-func (o GetComputedUsagesComputedUsageParentProductArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetComputedUsagesComputedUsageParentProduct] {
-	return pulumix.Output[[]GetComputedUsagesComputedUsageParentProduct]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetComputedUsagesComputedUsageParentProductArrayOutput) Index(i pulumi.IntInput) GetComputedUsagesComputedUsageParentProductOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetComputedUsagesComputedUsageParentProduct {
 		return vs[0].([]GetComputedUsagesComputedUsageParentProduct)[vs[1].(int)]
@@ -2605,19 +2270,19 @@ func (o GetComputedUsagesComputedUsageParentProductArrayOutput) Index(i pulumi.I
 
 type GetComputedUsagesComputedUsageProduct struct {
 	// Metered service billing category
-	BillingCategory string `pulumi:"billingCategory"`
+	BillingCategory *string `pulumi:"billingCategory"`
 	// Product name
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Product part number
-	PartNumber string `pulumi:"partNumber"`
+	PartNumber *string `pulumi:"partNumber"`
 	// Product category
-	ProductCategory string `pulumi:"productCategory"`
+	ProductCategory *string `pulumi:"productCategory"`
 	// Product provisioning group
-	ProvisioningGroup string `pulumi:"provisioningGroup"`
+	ProvisioningGroup *string `pulumi:"provisioningGroup"`
 	// Rate card part type of Product
-	UcmRateCardPartType string `pulumi:"ucmRateCardPartType"`
+	UcmRateCardPartType *string `pulumi:"ucmRateCardPartType"`
 	// Unit of Messure
-	UnitOfMeasure string `pulumi:"unitOfMeasure"`
+	UnitOfMeasure *string `pulumi:"unitOfMeasure"`
 }
 
 // GetComputedUsagesComputedUsageProductInput is an input type that accepts GetComputedUsagesComputedUsageProductArgs and GetComputedUsagesComputedUsageProductOutput values.
@@ -2633,19 +2298,19 @@ type GetComputedUsagesComputedUsageProductInput interface {
 
 type GetComputedUsagesComputedUsageProductArgs struct {
 	// Metered service billing category
-	BillingCategory pulumi.StringInput `pulumi:"billingCategory"`
+	BillingCategory pulumi.StringPtrInput `pulumi:"billingCategory"`
 	// Product name
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Product part number
-	PartNumber pulumi.StringInput `pulumi:"partNumber"`
+	PartNumber pulumi.StringPtrInput `pulumi:"partNumber"`
 	// Product category
-	ProductCategory pulumi.StringInput `pulumi:"productCategory"`
+	ProductCategory pulumi.StringPtrInput `pulumi:"productCategory"`
 	// Product provisioning group
-	ProvisioningGroup pulumi.StringInput `pulumi:"provisioningGroup"`
+	ProvisioningGroup pulumi.StringPtrInput `pulumi:"provisioningGroup"`
 	// Rate card part type of Product
-	UcmRateCardPartType pulumi.StringInput `pulumi:"ucmRateCardPartType"`
+	UcmRateCardPartType pulumi.StringPtrInput `pulumi:"ucmRateCardPartType"`
 	// Unit of Messure
-	UnitOfMeasure pulumi.StringInput `pulumi:"unitOfMeasure"`
+	UnitOfMeasure pulumi.StringPtrInput `pulumi:"unitOfMeasure"`
 }
 
 func (GetComputedUsagesComputedUsageProductArgs) ElementType() reflect.Type {
@@ -2658,12 +2323,6 @@ func (i GetComputedUsagesComputedUsageProductArgs) ToGetComputedUsagesComputedUs
 
 func (i GetComputedUsagesComputedUsageProductArgs) ToGetComputedUsagesComputedUsageProductOutputWithContext(ctx context.Context) GetComputedUsagesComputedUsageProductOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetComputedUsagesComputedUsageProductOutput)
-}
-
-func (i GetComputedUsagesComputedUsageProductArgs) ToOutput(ctx context.Context) pulumix.Output[GetComputedUsagesComputedUsageProduct] {
-	return pulumix.Output[GetComputedUsagesComputedUsageProduct]{
-		OutputState: i.ToGetComputedUsagesComputedUsageProductOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetComputedUsagesComputedUsageProductArrayInput is an input type that accepts GetComputedUsagesComputedUsageProductArray and GetComputedUsagesComputedUsageProductArrayOutput values.
@@ -2691,12 +2350,6 @@ func (i GetComputedUsagesComputedUsageProductArray) ToGetComputedUsagesComputedU
 	return pulumi.ToOutputWithContext(ctx, i).(GetComputedUsagesComputedUsageProductArrayOutput)
 }
 
-func (i GetComputedUsagesComputedUsageProductArray) ToOutput(ctx context.Context) pulumix.Output[[]GetComputedUsagesComputedUsageProduct] {
-	return pulumix.Output[[]GetComputedUsagesComputedUsageProduct]{
-		OutputState: i.ToGetComputedUsagesComputedUsageProductArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetComputedUsagesComputedUsageProductOutput struct{ *pulumi.OutputState }
 
 func (GetComputedUsagesComputedUsageProductOutput) ElementType() reflect.Type {
@@ -2711,45 +2364,39 @@ func (o GetComputedUsagesComputedUsageProductOutput) ToGetComputedUsagesComputed
 	return o
 }
 
-func (o GetComputedUsagesComputedUsageProductOutput) ToOutput(ctx context.Context) pulumix.Output[GetComputedUsagesComputedUsageProduct] {
-	return pulumix.Output[GetComputedUsagesComputedUsageProduct]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Metered service billing category
-func (o GetComputedUsagesComputedUsageProductOutput) BillingCategory() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsagesComputedUsageProduct) string { return v.BillingCategory }).(pulumi.StringOutput)
+func (o GetComputedUsagesComputedUsageProductOutput) BillingCategory() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsagesComputedUsageProduct) *string { return v.BillingCategory }).(pulumi.StringPtrOutput)
 }
 
 // Product name
-func (o GetComputedUsagesComputedUsageProductOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsagesComputedUsageProduct) string { return v.Name }).(pulumi.StringOutput)
+func (o GetComputedUsagesComputedUsageProductOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsagesComputedUsageProduct) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Product part number
-func (o GetComputedUsagesComputedUsageProductOutput) PartNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsagesComputedUsageProduct) string { return v.PartNumber }).(pulumi.StringOutput)
+func (o GetComputedUsagesComputedUsageProductOutput) PartNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsagesComputedUsageProduct) *string { return v.PartNumber }).(pulumi.StringPtrOutput)
 }
 
 // Product category
-func (o GetComputedUsagesComputedUsageProductOutput) ProductCategory() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsagesComputedUsageProduct) string { return v.ProductCategory }).(pulumi.StringOutput)
+func (o GetComputedUsagesComputedUsageProductOutput) ProductCategory() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsagesComputedUsageProduct) *string { return v.ProductCategory }).(pulumi.StringPtrOutput)
 }
 
 // Product provisioning group
-func (o GetComputedUsagesComputedUsageProductOutput) ProvisioningGroup() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsagesComputedUsageProduct) string { return v.ProvisioningGroup }).(pulumi.StringOutput)
+func (o GetComputedUsagesComputedUsageProductOutput) ProvisioningGroup() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsagesComputedUsageProduct) *string { return v.ProvisioningGroup }).(pulumi.StringPtrOutput)
 }
 
 // Rate card part type of Product
-func (o GetComputedUsagesComputedUsageProductOutput) UcmRateCardPartType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsagesComputedUsageProduct) string { return v.UcmRateCardPartType }).(pulumi.StringOutput)
+func (o GetComputedUsagesComputedUsageProductOutput) UcmRateCardPartType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsagesComputedUsageProduct) *string { return v.UcmRateCardPartType }).(pulumi.StringPtrOutput)
 }
 
 // Unit of Messure
-func (o GetComputedUsagesComputedUsageProductOutput) UnitOfMeasure() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputedUsagesComputedUsageProduct) string { return v.UnitOfMeasure }).(pulumi.StringOutput)
+func (o GetComputedUsagesComputedUsageProductOutput) UnitOfMeasure() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputedUsagesComputedUsageProduct) *string { return v.UnitOfMeasure }).(pulumi.StringPtrOutput)
 }
 
 type GetComputedUsagesComputedUsageProductArrayOutput struct{ *pulumi.OutputState }
@@ -2764,12 +2411,6 @@ func (o GetComputedUsagesComputedUsageProductArrayOutput) ToGetComputedUsagesCom
 
 func (o GetComputedUsagesComputedUsageProductArrayOutput) ToGetComputedUsagesComputedUsageProductArrayOutputWithContext(ctx context.Context) GetComputedUsagesComputedUsageProductArrayOutput {
 	return o
-}
-
-func (o GetComputedUsagesComputedUsageProductArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetComputedUsagesComputedUsageProduct] {
-	return pulumix.Output[[]GetComputedUsagesComputedUsageProduct]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetComputedUsagesComputedUsageProductArrayOutput) Index(i pulumi.IntInput) GetComputedUsagesComputedUsageProductOutput {
@@ -2815,12 +2456,6 @@ func (i GetComputedUsagesFilterArgs) ToGetComputedUsagesFilterOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetComputedUsagesFilterOutput)
 }
 
-func (i GetComputedUsagesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetComputedUsagesFilter] {
-	return pulumix.Output[GetComputedUsagesFilter]{
-		OutputState: i.ToGetComputedUsagesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetComputedUsagesFilterArrayInput is an input type that accepts GetComputedUsagesFilterArray and GetComputedUsagesFilterArrayOutput values.
 // You can construct a concrete instance of `GetComputedUsagesFilterArrayInput` via:
 //
@@ -2846,12 +2481,6 @@ func (i GetComputedUsagesFilterArray) ToGetComputedUsagesFilterArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetComputedUsagesFilterArrayOutput)
 }
 
-func (i GetComputedUsagesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetComputedUsagesFilter] {
-	return pulumix.Output[[]GetComputedUsagesFilter]{
-		OutputState: i.ToGetComputedUsagesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetComputedUsagesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetComputedUsagesFilterOutput) ElementType() reflect.Type {
@@ -2864,12 +2493,6 @@ func (o GetComputedUsagesFilterOutput) ToGetComputedUsagesFilterOutput() GetComp
 
 func (o GetComputedUsagesFilterOutput) ToGetComputedUsagesFilterOutputWithContext(ctx context.Context) GetComputedUsagesFilterOutput {
 	return o
-}
-
-func (o GetComputedUsagesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetComputedUsagesFilter] {
-	return pulumix.Output[GetComputedUsagesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Product name
@@ -2897,12 +2520,6 @@ func (o GetComputedUsagesFilterArrayOutput) ToGetComputedUsagesFilterArrayOutput
 
 func (o GetComputedUsagesFilterArrayOutput) ToGetComputedUsagesFilterArrayOutputWithContext(ctx context.Context) GetComputedUsagesFilterArrayOutput {
 	return o
-}
-
-func (o GetComputedUsagesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetComputedUsagesFilter] {
-	return pulumix.Output[[]GetComputedUsagesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetComputedUsagesFilterArrayOutput) Index(i pulumi.IntInput) GetComputedUsagesFilterOutput {
@@ -2948,12 +2565,6 @@ func (i GetInvoiceLineComputedUsagesFilterArgs) ToGetInvoiceLineComputedUsagesFi
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoiceLineComputedUsagesFilterOutput)
 }
 
-func (i GetInvoiceLineComputedUsagesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetInvoiceLineComputedUsagesFilter] {
-	return pulumix.Output[GetInvoiceLineComputedUsagesFilter]{
-		OutputState: i.ToGetInvoiceLineComputedUsagesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetInvoiceLineComputedUsagesFilterArrayInput is an input type that accepts GetInvoiceLineComputedUsagesFilterArray and GetInvoiceLineComputedUsagesFilterArrayOutput values.
 // You can construct a concrete instance of `GetInvoiceLineComputedUsagesFilterArrayInput` via:
 //
@@ -2979,12 +2590,6 @@ func (i GetInvoiceLineComputedUsagesFilterArray) ToGetInvoiceLineComputedUsagesF
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoiceLineComputedUsagesFilterArrayOutput)
 }
 
-func (i GetInvoiceLineComputedUsagesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoiceLineComputedUsagesFilter] {
-	return pulumix.Output[[]GetInvoiceLineComputedUsagesFilter]{
-		OutputState: i.ToGetInvoiceLineComputedUsagesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetInvoiceLineComputedUsagesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetInvoiceLineComputedUsagesFilterOutput) ElementType() reflect.Type {
@@ -2997,12 +2602,6 @@ func (o GetInvoiceLineComputedUsagesFilterOutput) ToGetInvoiceLineComputedUsages
 
 func (o GetInvoiceLineComputedUsagesFilterOutput) ToGetInvoiceLineComputedUsagesFilterOutputWithContext(ctx context.Context) GetInvoiceLineComputedUsagesFilterOutput {
 	return o
-}
-
-func (o GetInvoiceLineComputedUsagesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetInvoiceLineComputedUsagesFilter] {
-	return pulumix.Output[GetInvoiceLineComputedUsagesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Product name
@@ -3032,12 +2631,6 @@ func (o GetInvoiceLineComputedUsagesFilterArrayOutput) ToGetInvoiceLineComputedU
 	return o
 }
 
-func (o GetInvoiceLineComputedUsagesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoiceLineComputedUsagesFilter] {
-	return pulumix.Output[[]GetInvoiceLineComputedUsagesFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetInvoiceLineComputedUsagesFilterArrayOutput) Index(i pulumi.IntInput) GetInvoiceLineComputedUsagesFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInvoiceLineComputedUsagesFilter {
 		return vs[0].([]GetInvoiceLineComputedUsagesFilter)[vs[1].(int)]
@@ -3046,21 +2639,21 @@ func (o GetInvoiceLineComputedUsagesFilterArrayOutput) Index(i pulumi.IntInput) 
 
 type GetInvoiceLineComputedUsagesInvoicelineComputedUsage struct {
 	// Sum of Usage/Service Billing Line net Amount
-	Cost float64 `pulumi:"cost"`
+	Cost *float64 `pulumi:"cost"`
 	// Computed Line Amount rounded.
-	CostRounded float64 `pulumi:"costRounded"`
+	CostRounded *float64 `pulumi:"costRounded"`
 	// Net Unit Price for the product in consideration, price actual.
-	NetUnitPrice float64 `pulumi:"netUnitPrice"`
+	NetUnitPrice *float64 `pulumi:"netUnitPrice"`
 	// Product description
 	ParentProducts []GetInvoiceLineComputedUsagesInvoicelineComputedUsageParentProduct `pulumi:"parentProducts"`
 	// Product description
 	Products []GetInvoiceLineComputedUsagesInvoicelineComputedUsageProduct `pulumi:"products"`
 	// Total Quantity that was used for computation
-	Quantity float64 `pulumi:"quantity"`
+	Quantity *float64 `pulumi:"quantity"`
 	// Metered Service date.
-	TimeMeteredOn string `pulumi:"timeMeteredOn"`
+	TimeMeteredOn *string `pulumi:"timeMeteredOn"`
 	// Usage compute type in SPM.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 }
 
 // GetInvoiceLineComputedUsagesInvoicelineComputedUsageInput is an input type that accepts GetInvoiceLineComputedUsagesInvoicelineComputedUsageArgs and GetInvoiceLineComputedUsagesInvoicelineComputedUsageOutput values.
@@ -3076,21 +2669,21 @@ type GetInvoiceLineComputedUsagesInvoicelineComputedUsageInput interface {
 
 type GetInvoiceLineComputedUsagesInvoicelineComputedUsageArgs struct {
 	// Sum of Usage/Service Billing Line net Amount
-	Cost pulumi.Float64Input `pulumi:"cost"`
+	Cost pulumi.Float64PtrInput `pulumi:"cost"`
 	// Computed Line Amount rounded.
-	CostRounded pulumi.Float64Input `pulumi:"costRounded"`
+	CostRounded pulumi.Float64PtrInput `pulumi:"costRounded"`
 	// Net Unit Price for the product in consideration, price actual.
-	NetUnitPrice pulumi.Float64Input `pulumi:"netUnitPrice"`
+	NetUnitPrice pulumi.Float64PtrInput `pulumi:"netUnitPrice"`
 	// Product description
 	ParentProducts GetInvoiceLineComputedUsagesInvoicelineComputedUsageParentProductArrayInput `pulumi:"parentProducts"`
 	// Product description
 	Products GetInvoiceLineComputedUsagesInvoicelineComputedUsageProductArrayInput `pulumi:"products"`
 	// Total Quantity that was used for computation
-	Quantity pulumi.Float64Input `pulumi:"quantity"`
+	Quantity pulumi.Float64PtrInput `pulumi:"quantity"`
 	// Metered Service date.
-	TimeMeteredOn pulumi.StringInput `pulumi:"timeMeteredOn"`
+	TimeMeteredOn pulumi.StringPtrInput `pulumi:"timeMeteredOn"`
 	// Usage compute type in SPM.
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
 func (GetInvoiceLineComputedUsagesInvoicelineComputedUsageArgs) ElementType() reflect.Type {
@@ -3103,12 +2696,6 @@ func (i GetInvoiceLineComputedUsagesInvoicelineComputedUsageArgs) ToGetInvoiceLi
 
 func (i GetInvoiceLineComputedUsagesInvoicelineComputedUsageArgs) ToGetInvoiceLineComputedUsagesInvoicelineComputedUsageOutputWithContext(ctx context.Context) GetInvoiceLineComputedUsagesInvoicelineComputedUsageOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoiceLineComputedUsagesInvoicelineComputedUsageOutput)
-}
-
-func (i GetInvoiceLineComputedUsagesInvoicelineComputedUsageArgs) ToOutput(ctx context.Context) pulumix.Output[GetInvoiceLineComputedUsagesInvoicelineComputedUsage] {
-	return pulumix.Output[GetInvoiceLineComputedUsagesInvoicelineComputedUsage]{
-		OutputState: i.ToGetInvoiceLineComputedUsagesInvoicelineComputedUsageOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetInvoiceLineComputedUsagesInvoicelineComputedUsageArrayInput is an input type that accepts GetInvoiceLineComputedUsagesInvoicelineComputedUsageArray and GetInvoiceLineComputedUsagesInvoicelineComputedUsageArrayOutput values.
@@ -3136,12 +2723,6 @@ func (i GetInvoiceLineComputedUsagesInvoicelineComputedUsageArray) ToGetInvoiceL
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoiceLineComputedUsagesInvoicelineComputedUsageArrayOutput)
 }
 
-func (i GetInvoiceLineComputedUsagesInvoicelineComputedUsageArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoiceLineComputedUsagesInvoicelineComputedUsage] {
-	return pulumix.Output[[]GetInvoiceLineComputedUsagesInvoicelineComputedUsage]{
-		OutputState: i.ToGetInvoiceLineComputedUsagesInvoicelineComputedUsageArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetInvoiceLineComputedUsagesInvoicelineComputedUsageOutput struct{ *pulumi.OutputState }
 
 func (GetInvoiceLineComputedUsagesInvoicelineComputedUsageOutput) ElementType() reflect.Type {
@@ -3156,25 +2737,19 @@ func (o GetInvoiceLineComputedUsagesInvoicelineComputedUsageOutput) ToGetInvoice
 	return o
 }
 
-func (o GetInvoiceLineComputedUsagesInvoicelineComputedUsageOutput) ToOutput(ctx context.Context) pulumix.Output[GetInvoiceLineComputedUsagesInvoicelineComputedUsage] {
-	return pulumix.Output[GetInvoiceLineComputedUsagesInvoicelineComputedUsage]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Sum of Usage/Service Billing Line net Amount
-func (o GetInvoiceLineComputedUsagesInvoicelineComputedUsageOutput) Cost() pulumi.Float64Output {
-	return o.ApplyT(func(v GetInvoiceLineComputedUsagesInvoicelineComputedUsage) float64 { return v.Cost }).(pulumi.Float64Output)
+func (o GetInvoiceLineComputedUsagesInvoicelineComputedUsageOutput) Cost() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetInvoiceLineComputedUsagesInvoicelineComputedUsage) *float64 { return v.Cost }).(pulumi.Float64PtrOutput)
 }
 
 // Computed Line Amount rounded.
-func (o GetInvoiceLineComputedUsagesInvoicelineComputedUsageOutput) CostRounded() pulumi.Float64Output {
-	return o.ApplyT(func(v GetInvoiceLineComputedUsagesInvoicelineComputedUsage) float64 { return v.CostRounded }).(pulumi.Float64Output)
+func (o GetInvoiceLineComputedUsagesInvoicelineComputedUsageOutput) CostRounded() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetInvoiceLineComputedUsagesInvoicelineComputedUsage) *float64 { return v.CostRounded }).(pulumi.Float64PtrOutput)
 }
 
 // Net Unit Price for the product in consideration, price actual.
-func (o GetInvoiceLineComputedUsagesInvoicelineComputedUsageOutput) NetUnitPrice() pulumi.Float64Output {
-	return o.ApplyT(func(v GetInvoiceLineComputedUsagesInvoicelineComputedUsage) float64 { return v.NetUnitPrice }).(pulumi.Float64Output)
+func (o GetInvoiceLineComputedUsagesInvoicelineComputedUsageOutput) NetUnitPrice() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetInvoiceLineComputedUsagesInvoicelineComputedUsage) *float64 { return v.NetUnitPrice }).(pulumi.Float64PtrOutput)
 }
 
 // Product description
@@ -3192,18 +2767,18 @@ func (o GetInvoiceLineComputedUsagesInvoicelineComputedUsageOutput) Products() G
 }
 
 // Total Quantity that was used for computation
-func (o GetInvoiceLineComputedUsagesInvoicelineComputedUsageOutput) Quantity() pulumi.Float64Output {
-	return o.ApplyT(func(v GetInvoiceLineComputedUsagesInvoicelineComputedUsage) float64 { return v.Quantity }).(pulumi.Float64Output)
+func (o GetInvoiceLineComputedUsagesInvoicelineComputedUsageOutput) Quantity() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetInvoiceLineComputedUsagesInvoicelineComputedUsage) *float64 { return v.Quantity }).(pulumi.Float64PtrOutput)
 }
 
 // Metered Service date.
-func (o GetInvoiceLineComputedUsagesInvoicelineComputedUsageOutput) TimeMeteredOn() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoiceLineComputedUsagesInvoicelineComputedUsage) string { return v.TimeMeteredOn }).(pulumi.StringOutput)
+func (o GetInvoiceLineComputedUsagesInvoicelineComputedUsageOutput) TimeMeteredOn() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoiceLineComputedUsagesInvoicelineComputedUsage) *string { return v.TimeMeteredOn }).(pulumi.StringPtrOutput)
 }
 
 // Usage compute type in SPM.
-func (o GetInvoiceLineComputedUsagesInvoicelineComputedUsageOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoiceLineComputedUsagesInvoicelineComputedUsage) string { return v.Type }).(pulumi.StringOutput)
+func (o GetInvoiceLineComputedUsagesInvoicelineComputedUsageOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoiceLineComputedUsagesInvoicelineComputedUsage) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 type GetInvoiceLineComputedUsagesInvoicelineComputedUsageArrayOutput struct{ *pulumi.OutputState }
@@ -3220,12 +2795,6 @@ func (o GetInvoiceLineComputedUsagesInvoicelineComputedUsageArrayOutput) ToGetIn
 	return o
 }
 
-func (o GetInvoiceLineComputedUsagesInvoicelineComputedUsageArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoiceLineComputedUsagesInvoicelineComputedUsage] {
-	return pulumix.Output[[]GetInvoiceLineComputedUsagesInvoicelineComputedUsage]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetInvoiceLineComputedUsagesInvoicelineComputedUsageArrayOutput) Index(i pulumi.IntInput) GetInvoiceLineComputedUsagesInvoicelineComputedUsageOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInvoiceLineComputedUsagesInvoicelineComputedUsage {
 		return vs[0].([]GetInvoiceLineComputedUsagesInvoicelineComputedUsage)[vs[1].(int)]
@@ -3234,17 +2803,17 @@ func (o GetInvoiceLineComputedUsagesInvoicelineComputedUsageArrayOutput) Index(i
 
 type GetInvoiceLineComputedUsagesInvoicelineComputedUsageParentProduct struct {
 	// Metered service billing category
-	BillingCategory string `pulumi:"billingCategory"`
+	BillingCategory *string `pulumi:"billingCategory"`
 	// Product name
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Product part number
-	PartNumber string `pulumi:"partNumber"`
+	PartNumber *string `pulumi:"partNumber"`
 	// Product category
-	ProductCategory string `pulumi:"productCategory"`
+	ProductCategory *string `pulumi:"productCategory"`
 	// Rate card part type of Product
-	UcmRateCardPartType string `pulumi:"ucmRateCardPartType"`
+	UcmRateCardPartType *string `pulumi:"ucmRateCardPartType"`
 	// Unit of Measure
-	UnitOfMeasure string `pulumi:"unitOfMeasure"`
+	UnitOfMeasure *string `pulumi:"unitOfMeasure"`
 }
 
 // GetInvoiceLineComputedUsagesInvoicelineComputedUsageParentProductInput is an input type that accepts GetInvoiceLineComputedUsagesInvoicelineComputedUsageParentProductArgs and GetInvoiceLineComputedUsagesInvoicelineComputedUsageParentProductOutput values.
@@ -3260,17 +2829,17 @@ type GetInvoiceLineComputedUsagesInvoicelineComputedUsageParentProductInput inte
 
 type GetInvoiceLineComputedUsagesInvoicelineComputedUsageParentProductArgs struct {
 	// Metered service billing category
-	BillingCategory pulumi.StringInput `pulumi:"billingCategory"`
+	BillingCategory pulumi.StringPtrInput `pulumi:"billingCategory"`
 	// Product name
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Product part number
-	PartNumber pulumi.StringInput `pulumi:"partNumber"`
+	PartNumber pulumi.StringPtrInput `pulumi:"partNumber"`
 	// Product category
-	ProductCategory pulumi.StringInput `pulumi:"productCategory"`
+	ProductCategory pulumi.StringPtrInput `pulumi:"productCategory"`
 	// Rate card part type of Product
-	UcmRateCardPartType pulumi.StringInput `pulumi:"ucmRateCardPartType"`
+	UcmRateCardPartType pulumi.StringPtrInput `pulumi:"ucmRateCardPartType"`
 	// Unit of Measure
-	UnitOfMeasure pulumi.StringInput `pulumi:"unitOfMeasure"`
+	UnitOfMeasure pulumi.StringPtrInput `pulumi:"unitOfMeasure"`
 }
 
 func (GetInvoiceLineComputedUsagesInvoicelineComputedUsageParentProductArgs) ElementType() reflect.Type {
@@ -3283,12 +2852,6 @@ func (i GetInvoiceLineComputedUsagesInvoicelineComputedUsageParentProductArgs) T
 
 func (i GetInvoiceLineComputedUsagesInvoicelineComputedUsageParentProductArgs) ToGetInvoiceLineComputedUsagesInvoicelineComputedUsageParentProductOutputWithContext(ctx context.Context) GetInvoiceLineComputedUsagesInvoicelineComputedUsageParentProductOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoiceLineComputedUsagesInvoicelineComputedUsageParentProductOutput)
-}
-
-func (i GetInvoiceLineComputedUsagesInvoicelineComputedUsageParentProductArgs) ToOutput(ctx context.Context) pulumix.Output[GetInvoiceLineComputedUsagesInvoicelineComputedUsageParentProduct] {
-	return pulumix.Output[GetInvoiceLineComputedUsagesInvoicelineComputedUsageParentProduct]{
-		OutputState: i.ToGetInvoiceLineComputedUsagesInvoicelineComputedUsageParentProductOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetInvoiceLineComputedUsagesInvoicelineComputedUsageParentProductArrayInput is an input type that accepts GetInvoiceLineComputedUsagesInvoicelineComputedUsageParentProductArray and GetInvoiceLineComputedUsagesInvoicelineComputedUsageParentProductArrayOutput values.
@@ -3316,12 +2879,6 @@ func (i GetInvoiceLineComputedUsagesInvoicelineComputedUsageParentProductArray) 
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoiceLineComputedUsagesInvoicelineComputedUsageParentProductArrayOutput)
 }
 
-func (i GetInvoiceLineComputedUsagesInvoicelineComputedUsageParentProductArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoiceLineComputedUsagesInvoicelineComputedUsageParentProduct] {
-	return pulumix.Output[[]GetInvoiceLineComputedUsagesInvoicelineComputedUsageParentProduct]{
-		OutputState: i.ToGetInvoiceLineComputedUsagesInvoicelineComputedUsageParentProductArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetInvoiceLineComputedUsagesInvoicelineComputedUsageParentProductOutput struct{ *pulumi.OutputState }
 
 func (GetInvoiceLineComputedUsagesInvoicelineComputedUsageParentProductOutput) ElementType() reflect.Type {
@@ -3336,48 +2893,42 @@ func (o GetInvoiceLineComputedUsagesInvoicelineComputedUsageParentProductOutput)
 	return o
 }
 
-func (o GetInvoiceLineComputedUsagesInvoicelineComputedUsageParentProductOutput) ToOutput(ctx context.Context) pulumix.Output[GetInvoiceLineComputedUsagesInvoicelineComputedUsageParentProduct] {
-	return pulumix.Output[GetInvoiceLineComputedUsagesInvoicelineComputedUsageParentProduct]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Metered service billing category
-func (o GetInvoiceLineComputedUsagesInvoicelineComputedUsageParentProductOutput) BillingCategory() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoiceLineComputedUsagesInvoicelineComputedUsageParentProduct) string {
+func (o GetInvoiceLineComputedUsagesInvoicelineComputedUsageParentProductOutput) BillingCategory() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoiceLineComputedUsagesInvoicelineComputedUsageParentProduct) *string {
 		return v.BillingCategory
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Product name
-func (o GetInvoiceLineComputedUsagesInvoicelineComputedUsageParentProductOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoiceLineComputedUsagesInvoicelineComputedUsageParentProduct) string { return v.Name }).(pulumi.StringOutput)
+func (o GetInvoiceLineComputedUsagesInvoicelineComputedUsageParentProductOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoiceLineComputedUsagesInvoicelineComputedUsageParentProduct) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Product part number
-func (o GetInvoiceLineComputedUsagesInvoicelineComputedUsageParentProductOutput) PartNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoiceLineComputedUsagesInvoicelineComputedUsageParentProduct) string { return v.PartNumber }).(pulumi.StringOutput)
+func (o GetInvoiceLineComputedUsagesInvoicelineComputedUsageParentProductOutput) PartNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoiceLineComputedUsagesInvoicelineComputedUsageParentProduct) *string { return v.PartNumber }).(pulumi.StringPtrOutput)
 }
 
 // Product category
-func (o GetInvoiceLineComputedUsagesInvoicelineComputedUsageParentProductOutput) ProductCategory() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoiceLineComputedUsagesInvoicelineComputedUsageParentProduct) string {
+func (o GetInvoiceLineComputedUsagesInvoicelineComputedUsageParentProductOutput) ProductCategory() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoiceLineComputedUsagesInvoicelineComputedUsageParentProduct) *string {
 		return v.ProductCategory
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Rate card part type of Product
-func (o GetInvoiceLineComputedUsagesInvoicelineComputedUsageParentProductOutput) UcmRateCardPartType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoiceLineComputedUsagesInvoicelineComputedUsageParentProduct) string {
+func (o GetInvoiceLineComputedUsagesInvoicelineComputedUsageParentProductOutput) UcmRateCardPartType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoiceLineComputedUsagesInvoicelineComputedUsageParentProduct) *string {
 		return v.UcmRateCardPartType
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Unit of Measure
-func (o GetInvoiceLineComputedUsagesInvoicelineComputedUsageParentProductOutput) UnitOfMeasure() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoiceLineComputedUsagesInvoicelineComputedUsageParentProduct) string {
+func (o GetInvoiceLineComputedUsagesInvoicelineComputedUsageParentProductOutput) UnitOfMeasure() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoiceLineComputedUsagesInvoicelineComputedUsageParentProduct) *string {
 		return v.UnitOfMeasure
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetInvoiceLineComputedUsagesInvoicelineComputedUsageParentProductArrayOutput struct{ *pulumi.OutputState }
@@ -3394,12 +2945,6 @@ func (o GetInvoiceLineComputedUsagesInvoicelineComputedUsageParentProductArrayOu
 	return o
 }
 
-func (o GetInvoiceLineComputedUsagesInvoicelineComputedUsageParentProductArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoiceLineComputedUsagesInvoicelineComputedUsageParentProduct] {
-	return pulumix.Output[[]GetInvoiceLineComputedUsagesInvoicelineComputedUsageParentProduct]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetInvoiceLineComputedUsagesInvoicelineComputedUsageParentProductArrayOutput) Index(i pulumi.IntInput) GetInvoiceLineComputedUsagesInvoicelineComputedUsageParentProductOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInvoiceLineComputedUsagesInvoicelineComputedUsageParentProduct {
 		return vs[0].([]GetInvoiceLineComputedUsagesInvoicelineComputedUsageParentProduct)[vs[1].(int)]
@@ -3408,17 +2953,17 @@ func (o GetInvoiceLineComputedUsagesInvoicelineComputedUsageParentProductArrayOu
 
 type GetInvoiceLineComputedUsagesInvoicelineComputedUsageProduct struct {
 	// Metered service billing category
-	BillingCategory string `pulumi:"billingCategory"`
+	BillingCategory *string `pulumi:"billingCategory"`
 	// Product name
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Product part number
-	PartNumber string `pulumi:"partNumber"`
+	PartNumber *string `pulumi:"partNumber"`
 	// Product category
-	ProductCategory string `pulumi:"productCategory"`
+	ProductCategory *string `pulumi:"productCategory"`
 	// Rate card part type of Product
-	UcmRateCardPartType string `pulumi:"ucmRateCardPartType"`
+	UcmRateCardPartType *string `pulumi:"ucmRateCardPartType"`
 	// Unit of Measure
-	UnitOfMeasure string `pulumi:"unitOfMeasure"`
+	UnitOfMeasure *string `pulumi:"unitOfMeasure"`
 }
 
 // GetInvoiceLineComputedUsagesInvoicelineComputedUsageProductInput is an input type that accepts GetInvoiceLineComputedUsagesInvoicelineComputedUsageProductArgs and GetInvoiceLineComputedUsagesInvoicelineComputedUsageProductOutput values.
@@ -3434,17 +2979,17 @@ type GetInvoiceLineComputedUsagesInvoicelineComputedUsageProductInput interface 
 
 type GetInvoiceLineComputedUsagesInvoicelineComputedUsageProductArgs struct {
 	// Metered service billing category
-	BillingCategory pulumi.StringInput `pulumi:"billingCategory"`
+	BillingCategory pulumi.StringPtrInput `pulumi:"billingCategory"`
 	// Product name
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Product part number
-	PartNumber pulumi.StringInput `pulumi:"partNumber"`
+	PartNumber pulumi.StringPtrInput `pulumi:"partNumber"`
 	// Product category
-	ProductCategory pulumi.StringInput `pulumi:"productCategory"`
+	ProductCategory pulumi.StringPtrInput `pulumi:"productCategory"`
 	// Rate card part type of Product
-	UcmRateCardPartType pulumi.StringInput `pulumi:"ucmRateCardPartType"`
+	UcmRateCardPartType pulumi.StringPtrInput `pulumi:"ucmRateCardPartType"`
 	// Unit of Measure
-	UnitOfMeasure pulumi.StringInput `pulumi:"unitOfMeasure"`
+	UnitOfMeasure pulumi.StringPtrInput `pulumi:"unitOfMeasure"`
 }
 
 func (GetInvoiceLineComputedUsagesInvoicelineComputedUsageProductArgs) ElementType() reflect.Type {
@@ -3457,12 +3002,6 @@ func (i GetInvoiceLineComputedUsagesInvoicelineComputedUsageProductArgs) ToGetIn
 
 func (i GetInvoiceLineComputedUsagesInvoicelineComputedUsageProductArgs) ToGetInvoiceLineComputedUsagesInvoicelineComputedUsageProductOutputWithContext(ctx context.Context) GetInvoiceLineComputedUsagesInvoicelineComputedUsageProductOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoiceLineComputedUsagesInvoicelineComputedUsageProductOutput)
-}
-
-func (i GetInvoiceLineComputedUsagesInvoicelineComputedUsageProductArgs) ToOutput(ctx context.Context) pulumix.Output[GetInvoiceLineComputedUsagesInvoicelineComputedUsageProduct] {
-	return pulumix.Output[GetInvoiceLineComputedUsagesInvoicelineComputedUsageProduct]{
-		OutputState: i.ToGetInvoiceLineComputedUsagesInvoicelineComputedUsageProductOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetInvoiceLineComputedUsagesInvoicelineComputedUsageProductArrayInput is an input type that accepts GetInvoiceLineComputedUsagesInvoicelineComputedUsageProductArray and GetInvoiceLineComputedUsagesInvoicelineComputedUsageProductArrayOutput values.
@@ -3490,12 +3029,6 @@ func (i GetInvoiceLineComputedUsagesInvoicelineComputedUsageProductArray) ToGetI
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoiceLineComputedUsagesInvoicelineComputedUsageProductArrayOutput)
 }
 
-func (i GetInvoiceLineComputedUsagesInvoicelineComputedUsageProductArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoiceLineComputedUsagesInvoicelineComputedUsageProduct] {
-	return pulumix.Output[[]GetInvoiceLineComputedUsagesInvoicelineComputedUsageProduct]{
-		OutputState: i.ToGetInvoiceLineComputedUsagesInvoicelineComputedUsageProductArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetInvoiceLineComputedUsagesInvoicelineComputedUsageProductOutput struct{ *pulumi.OutputState }
 
 func (GetInvoiceLineComputedUsagesInvoicelineComputedUsageProductOutput) ElementType() reflect.Type {
@@ -3510,42 +3043,36 @@ func (o GetInvoiceLineComputedUsagesInvoicelineComputedUsageProductOutput) ToGet
 	return o
 }
 
-func (o GetInvoiceLineComputedUsagesInvoicelineComputedUsageProductOutput) ToOutput(ctx context.Context) pulumix.Output[GetInvoiceLineComputedUsagesInvoicelineComputedUsageProduct] {
-	return pulumix.Output[GetInvoiceLineComputedUsagesInvoicelineComputedUsageProduct]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Metered service billing category
-func (o GetInvoiceLineComputedUsagesInvoicelineComputedUsageProductOutput) BillingCategory() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoiceLineComputedUsagesInvoicelineComputedUsageProduct) string { return v.BillingCategory }).(pulumi.StringOutput)
+func (o GetInvoiceLineComputedUsagesInvoicelineComputedUsageProductOutput) BillingCategory() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoiceLineComputedUsagesInvoicelineComputedUsageProduct) *string { return v.BillingCategory }).(pulumi.StringPtrOutput)
 }
 
 // Product name
-func (o GetInvoiceLineComputedUsagesInvoicelineComputedUsageProductOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoiceLineComputedUsagesInvoicelineComputedUsageProduct) string { return v.Name }).(pulumi.StringOutput)
+func (o GetInvoiceLineComputedUsagesInvoicelineComputedUsageProductOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoiceLineComputedUsagesInvoicelineComputedUsageProduct) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Product part number
-func (o GetInvoiceLineComputedUsagesInvoicelineComputedUsageProductOutput) PartNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoiceLineComputedUsagesInvoicelineComputedUsageProduct) string { return v.PartNumber }).(pulumi.StringOutput)
+func (o GetInvoiceLineComputedUsagesInvoicelineComputedUsageProductOutput) PartNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoiceLineComputedUsagesInvoicelineComputedUsageProduct) *string { return v.PartNumber }).(pulumi.StringPtrOutput)
 }
 
 // Product category
-func (o GetInvoiceLineComputedUsagesInvoicelineComputedUsageProductOutput) ProductCategory() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoiceLineComputedUsagesInvoicelineComputedUsageProduct) string { return v.ProductCategory }).(pulumi.StringOutput)
+func (o GetInvoiceLineComputedUsagesInvoicelineComputedUsageProductOutput) ProductCategory() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoiceLineComputedUsagesInvoicelineComputedUsageProduct) *string { return v.ProductCategory }).(pulumi.StringPtrOutput)
 }
 
 // Rate card part type of Product
-func (o GetInvoiceLineComputedUsagesInvoicelineComputedUsageProductOutput) UcmRateCardPartType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoiceLineComputedUsagesInvoicelineComputedUsageProduct) string {
+func (o GetInvoiceLineComputedUsagesInvoicelineComputedUsageProductOutput) UcmRateCardPartType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoiceLineComputedUsagesInvoicelineComputedUsageProduct) *string {
 		return v.UcmRateCardPartType
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Unit of Measure
-func (o GetInvoiceLineComputedUsagesInvoicelineComputedUsageProductOutput) UnitOfMeasure() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoiceLineComputedUsagesInvoicelineComputedUsageProduct) string { return v.UnitOfMeasure }).(pulumi.StringOutput)
+func (o GetInvoiceLineComputedUsagesInvoicelineComputedUsageProductOutput) UnitOfMeasure() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoiceLineComputedUsagesInvoicelineComputedUsageProduct) *string { return v.UnitOfMeasure }).(pulumi.StringPtrOutput)
 }
 
 type GetInvoiceLineComputedUsagesInvoicelineComputedUsageProductArrayOutput struct{ *pulumi.OutputState }
@@ -3560,12 +3087,6 @@ func (o GetInvoiceLineComputedUsagesInvoicelineComputedUsageProductArrayOutput) 
 
 func (o GetInvoiceLineComputedUsagesInvoicelineComputedUsageProductArrayOutput) ToGetInvoiceLineComputedUsagesInvoicelineComputedUsageProductArrayOutputWithContext(ctx context.Context) GetInvoiceLineComputedUsagesInvoicelineComputedUsageProductArrayOutput {
 	return o
-}
-
-func (o GetInvoiceLineComputedUsagesInvoicelineComputedUsageProductArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoiceLineComputedUsagesInvoicelineComputedUsageProduct] {
-	return pulumix.Output[[]GetInvoiceLineComputedUsagesInvoicelineComputedUsageProduct]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetInvoiceLineComputedUsagesInvoicelineComputedUsageProductArrayOutput) Index(i pulumi.IntInput) GetInvoiceLineComputedUsagesInvoicelineComputedUsageProductOutput {
@@ -3611,12 +3132,6 @@ func (i GetInvoicesFilterArgs) ToGetInvoicesFilterOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoicesFilterOutput)
 }
 
-func (i GetInvoicesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetInvoicesFilter] {
-	return pulumix.Output[GetInvoicesFilter]{
-		OutputState: i.ToGetInvoicesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetInvoicesFilterArrayInput is an input type that accepts GetInvoicesFilterArray and GetInvoicesFilterArrayOutput values.
 // You can construct a concrete instance of `GetInvoicesFilterArrayInput` via:
 //
@@ -3642,12 +3157,6 @@ func (i GetInvoicesFilterArray) ToGetInvoicesFilterArrayOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoicesFilterArrayOutput)
 }
 
-func (i GetInvoicesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoicesFilter] {
-	return pulumix.Output[[]GetInvoicesFilter]{
-		OutputState: i.ToGetInvoicesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetInvoicesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetInvoicesFilterOutput) ElementType() reflect.Type {
@@ -3660,12 +3169,6 @@ func (o GetInvoicesFilterOutput) ToGetInvoicesFilterOutput() GetInvoicesFilterOu
 
 func (o GetInvoicesFilterOutput) ToGetInvoicesFilterOutputWithContext(ctx context.Context) GetInvoicesFilterOutput {
 	return o
-}
-
-func (o GetInvoicesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetInvoicesFilter] {
-	return pulumix.Output[GetInvoicesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Payment Term name
@@ -3695,12 +3198,6 @@ func (o GetInvoicesFilterArrayOutput) ToGetInvoicesFilterArrayOutputWithContext(
 	return o
 }
 
-func (o GetInvoicesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoicesFilter] {
-	return pulumix.Output[[]GetInvoicesFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetInvoicesFilterArrayOutput) Index(i pulumi.IntInput) GetInvoicesFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInvoicesFilter {
 		return vs[0].([]GetInvoicesFilter)[vs[1].(int)]
@@ -3709,7 +3206,7 @@ func (o GetInvoicesFilterArrayOutput) Index(i pulumi.IntInput) GetInvoicesFilter
 
 type GetInvoicesInvoice struct {
 	// AR Invoice Numbers comma separated under one invoice
-	ArInvoices string `pulumi:"arInvoices"`
+	ArInvoices *string `pulumi:"arInvoices"`
 	// Address.
 	BillToAddresses []GetInvoicesInvoiceBillToAddress `pulumi:"billToAddresses"`
 	// User.
@@ -3717,7 +3214,7 @@ type GetInvoicesInvoice struct {
 	// Business partner.
 	BillToCustomers []GetInvoicesInvoiceBillToCustomer `pulumi:"billToCustomers"`
 	// User that created the Payment term
-	CreatedBy string `pulumi:"createdBy"`
+	CreatedBy *string `pulumi:"createdBy"`
 	// Currency details
 	Currencies []GetInvoicesInvoiceCurrency `pulumi:"currencies"`
 	// Invoice Lines under particular invoice.
@@ -3725,27 +3222,27 @@ type GetInvoicesInvoice struct {
 	// Organization details
 	Organizations []GetInvoicesInvoiceOrganization `pulumi:"organizations"`
 	// Payment Method
-	PaymentMethod string `pulumi:"paymentMethod"`
+	PaymentMethod *string `pulumi:"paymentMethod"`
 	// Payment Term details
 	PaymentTerms []GetInvoicesInvoicePaymentTerm `pulumi:"paymentTerms"`
 	// Receipt Method of Payment Mode
-	ReceiptMethod string `pulumi:"receiptMethod"`
+	ReceiptMethod *string `pulumi:"receiptMethod"`
 	// SPM Document Number is an functional identifier for invoice in SPM
-	SpmInvoiceNumber string `pulumi:"spmInvoiceNumber"`
+	SpmInvoiceNumber *string `pulumi:"spmInvoiceNumber"`
 	// Document Status in SPM which depicts current state of invoice
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 	// Invoice associated subscription plan number.
-	SubscriptionNumber string `pulumi:"subscriptionNumber"`
+	SubscriptionNumber *string `pulumi:"subscriptionNumber"`
 	// SPM Invocie creation date
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// Invoice Date
-	TimeInvoiceDate string `pulumi:"timeInvoiceDate"`
+	TimeInvoiceDate *string `pulumi:"timeInvoiceDate"`
 	// SPM Invoice updated date
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// Document Type in SPM like SPM Invoice,SPM Credit Memo etc.,
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 	// User that updated SPM Invoice
-	UpdatedBy string `pulumi:"updatedBy"`
+	UpdatedBy *string `pulumi:"updatedBy"`
 }
 
 // GetInvoicesInvoiceInput is an input type that accepts GetInvoicesInvoiceArgs and GetInvoicesInvoiceOutput values.
@@ -3761,7 +3258,7 @@ type GetInvoicesInvoiceInput interface {
 
 type GetInvoicesInvoiceArgs struct {
 	// AR Invoice Numbers comma separated under one invoice
-	ArInvoices pulumi.StringInput `pulumi:"arInvoices"`
+	ArInvoices pulumi.StringPtrInput `pulumi:"arInvoices"`
 	// Address.
 	BillToAddresses GetInvoicesInvoiceBillToAddressArrayInput `pulumi:"billToAddresses"`
 	// User.
@@ -3769,7 +3266,7 @@ type GetInvoicesInvoiceArgs struct {
 	// Business partner.
 	BillToCustomers GetInvoicesInvoiceBillToCustomerArrayInput `pulumi:"billToCustomers"`
 	// User that created the Payment term
-	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
+	CreatedBy pulumi.StringPtrInput `pulumi:"createdBy"`
 	// Currency details
 	Currencies GetInvoicesInvoiceCurrencyArrayInput `pulumi:"currencies"`
 	// Invoice Lines under particular invoice.
@@ -3777,27 +3274,27 @@ type GetInvoicesInvoiceArgs struct {
 	// Organization details
 	Organizations GetInvoicesInvoiceOrganizationArrayInput `pulumi:"organizations"`
 	// Payment Method
-	PaymentMethod pulumi.StringInput `pulumi:"paymentMethod"`
+	PaymentMethod pulumi.StringPtrInput `pulumi:"paymentMethod"`
 	// Payment Term details
 	PaymentTerms GetInvoicesInvoicePaymentTermArrayInput `pulumi:"paymentTerms"`
 	// Receipt Method of Payment Mode
-	ReceiptMethod pulumi.StringInput `pulumi:"receiptMethod"`
+	ReceiptMethod pulumi.StringPtrInput `pulumi:"receiptMethod"`
 	// SPM Document Number is an functional identifier for invoice in SPM
-	SpmInvoiceNumber pulumi.StringInput `pulumi:"spmInvoiceNumber"`
+	SpmInvoiceNumber pulumi.StringPtrInput `pulumi:"spmInvoiceNumber"`
 	// Document Status in SPM which depicts current state of invoice
-	Status pulumi.StringInput `pulumi:"status"`
+	Status pulumi.StringPtrInput `pulumi:"status"`
 	// Invoice associated subscription plan number.
-	SubscriptionNumber pulumi.StringInput `pulumi:"subscriptionNumber"`
+	SubscriptionNumber pulumi.StringPtrInput `pulumi:"subscriptionNumber"`
 	// SPM Invocie creation date
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// Invoice Date
-	TimeInvoiceDate pulumi.StringInput `pulumi:"timeInvoiceDate"`
+	TimeInvoiceDate pulumi.StringPtrInput `pulumi:"timeInvoiceDate"`
 	// SPM Invoice updated date
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 	// Document Type in SPM like SPM Invoice,SPM Credit Memo etc.,
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 	// User that updated SPM Invoice
-	UpdatedBy pulumi.StringInput `pulumi:"updatedBy"`
+	UpdatedBy pulumi.StringPtrInput `pulumi:"updatedBy"`
 }
 
 func (GetInvoicesInvoiceArgs) ElementType() reflect.Type {
@@ -3810,12 +3307,6 @@ func (i GetInvoicesInvoiceArgs) ToGetInvoicesInvoiceOutput() GetInvoicesInvoiceO
 
 func (i GetInvoicesInvoiceArgs) ToGetInvoicesInvoiceOutputWithContext(ctx context.Context) GetInvoicesInvoiceOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoicesInvoiceOutput)
-}
-
-func (i GetInvoicesInvoiceArgs) ToOutput(ctx context.Context) pulumix.Output[GetInvoicesInvoice] {
-	return pulumix.Output[GetInvoicesInvoice]{
-		OutputState: i.ToGetInvoicesInvoiceOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetInvoicesInvoiceArrayInput is an input type that accepts GetInvoicesInvoiceArray and GetInvoicesInvoiceArrayOutput values.
@@ -3843,12 +3334,6 @@ func (i GetInvoicesInvoiceArray) ToGetInvoicesInvoiceArrayOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoicesInvoiceArrayOutput)
 }
 
-func (i GetInvoicesInvoiceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoicesInvoice] {
-	return pulumix.Output[[]GetInvoicesInvoice]{
-		OutputState: i.ToGetInvoicesInvoiceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetInvoicesInvoiceOutput struct{ *pulumi.OutputState }
 
 func (GetInvoicesInvoiceOutput) ElementType() reflect.Type {
@@ -3863,15 +3348,9 @@ func (o GetInvoicesInvoiceOutput) ToGetInvoicesInvoiceOutputWithContext(ctx cont
 	return o
 }
 
-func (o GetInvoicesInvoiceOutput) ToOutput(ctx context.Context) pulumix.Output[GetInvoicesInvoice] {
-	return pulumix.Output[GetInvoicesInvoice]{
-		OutputState: o.OutputState,
-	}
-}
-
 // AR Invoice Numbers comma separated under one invoice
-func (o GetInvoicesInvoiceOutput) ArInvoices() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoice) string { return v.ArInvoices }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceOutput) ArInvoices() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoice) *string { return v.ArInvoices }).(pulumi.StringPtrOutput)
 }
 
 // Address.
@@ -3890,8 +3369,8 @@ func (o GetInvoicesInvoiceOutput) BillToCustomers() GetInvoicesInvoiceBillToCust
 }
 
 // User that created the Payment term
-func (o GetInvoicesInvoiceOutput) CreatedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoice) string { return v.CreatedBy }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceOutput) CreatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoice) *string { return v.CreatedBy }).(pulumi.StringPtrOutput)
 }
 
 // Currency details
@@ -3910,8 +3389,8 @@ func (o GetInvoicesInvoiceOutput) Organizations() GetInvoicesInvoiceOrganization
 }
 
 // Payment Method
-func (o GetInvoicesInvoiceOutput) PaymentMethod() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoice) string { return v.PaymentMethod }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceOutput) PaymentMethod() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoice) *string { return v.PaymentMethod }).(pulumi.StringPtrOutput)
 }
 
 // Payment Term details
@@ -3920,48 +3399,48 @@ func (o GetInvoicesInvoiceOutput) PaymentTerms() GetInvoicesInvoicePaymentTermAr
 }
 
 // Receipt Method of Payment Mode
-func (o GetInvoicesInvoiceOutput) ReceiptMethod() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoice) string { return v.ReceiptMethod }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceOutput) ReceiptMethod() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoice) *string { return v.ReceiptMethod }).(pulumi.StringPtrOutput)
 }
 
 // SPM Document Number is an functional identifier for invoice in SPM
-func (o GetInvoicesInvoiceOutput) SpmInvoiceNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoice) string { return v.SpmInvoiceNumber }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceOutput) SpmInvoiceNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoice) *string { return v.SpmInvoiceNumber }).(pulumi.StringPtrOutput)
 }
 
 // Document Status in SPM which depicts current state of invoice
-func (o GetInvoicesInvoiceOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoice) string { return v.Status }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoice) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // Invoice associated subscription plan number.
-func (o GetInvoicesInvoiceOutput) SubscriptionNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoice) string { return v.SubscriptionNumber }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceOutput) SubscriptionNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoice) *string { return v.SubscriptionNumber }).(pulumi.StringPtrOutput)
 }
 
 // SPM Invocie creation date
-func (o GetInvoicesInvoiceOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoice) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoice) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // Invoice Date
-func (o GetInvoicesInvoiceOutput) TimeInvoiceDate() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoice) string { return v.TimeInvoiceDate }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceOutput) TimeInvoiceDate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoice) *string { return v.TimeInvoiceDate }).(pulumi.StringPtrOutput)
 }
 
 // SPM Invoice updated date
-func (o GetInvoicesInvoiceOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoice) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoice) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // Document Type in SPM like SPM Invoice,SPM Credit Memo etc.,
-func (o GetInvoicesInvoiceOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoice) string { return v.Type }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoice) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 // User that updated SPM Invoice
-func (o GetInvoicesInvoiceOutput) UpdatedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoice) string { return v.UpdatedBy }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceOutput) UpdatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoice) *string { return v.UpdatedBy }).(pulumi.StringPtrOutput)
 }
 
 type GetInvoicesInvoiceArrayOutput struct{ *pulumi.OutputState }
@@ -3978,12 +3457,6 @@ func (o GetInvoicesInvoiceArrayOutput) ToGetInvoicesInvoiceArrayOutputWithContex
 	return o
 }
 
-func (o GetInvoicesInvoiceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoicesInvoice] {
-	return pulumix.Output[[]GetInvoicesInvoice]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetInvoicesInvoiceArrayOutput) Index(i pulumi.IntInput) GetInvoicesInvoiceOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInvoicesInvoice {
 		return vs[0].([]GetInvoicesInvoice)[vs[1].(int)]
@@ -3992,23 +3465,23 @@ func (o GetInvoicesInvoiceArrayOutput) Index(i pulumi.IntInput) GetInvoicesInvoi
 
 type GetInvoicesInvoiceBillToAddress struct {
 	// Bill to site use Id.
-	BillSiteUseId string `pulumi:"billSiteUseId"`
+	BillSiteUseId *string `pulumi:"billSiteUseId"`
 	// Identify as the customer's billing address.
-	IsBillTo bool `pulumi:"isBillTo"`
+	IsBillTo *bool `pulumi:"isBillTo"`
 	// Identify as the customer's shipping address.
-	IsShipTo bool `pulumi:"isShipTo"`
+	IsShipTo *bool `pulumi:"isShipTo"`
 	// Address location.
 	Locations []GetInvoicesInvoiceBillToAddressLocation `pulumi:"locations"`
 	// Payment Term name
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Phone.
-	Phone string `pulumi:"phone"`
+	Phone *string `pulumi:"phone"`
 	// Service to site use Id.
-	Service2siteUseId string `pulumi:"service2siteUseId"`
+	Service2siteUseId *string `pulumi:"service2siteUseId"`
 	// TCA customer account site Id.
-	TcaCustAcctSiteId string `pulumi:"tcaCustAcctSiteId"`
+	TcaCustAcctSiteId *string `pulumi:"tcaCustAcctSiteId"`
 	// Party site number.
-	TcaPartySiteNumber string `pulumi:"tcaPartySiteNumber"`
+	TcaPartySiteNumber *string `pulumi:"tcaPartySiteNumber"`
 }
 
 // GetInvoicesInvoiceBillToAddressInput is an input type that accepts GetInvoicesInvoiceBillToAddressArgs and GetInvoicesInvoiceBillToAddressOutput values.
@@ -4024,23 +3497,23 @@ type GetInvoicesInvoiceBillToAddressInput interface {
 
 type GetInvoicesInvoiceBillToAddressArgs struct {
 	// Bill to site use Id.
-	BillSiteUseId pulumi.StringInput `pulumi:"billSiteUseId"`
+	BillSiteUseId pulumi.StringPtrInput `pulumi:"billSiteUseId"`
 	// Identify as the customer's billing address.
-	IsBillTo pulumi.BoolInput `pulumi:"isBillTo"`
+	IsBillTo pulumi.BoolPtrInput `pulumi:"isBillTo"`
 	// Identify as the customer's shipping address.
-	IsShipTo pulumi.BoolInput `pulumi:"isShipTo"`
+	IsShipTo pulumi.BoolPtrInput `pulumi:"isShipTo"`
 	// Address location.
 	Locations GetInvoicesInvoiceBillToAddressLocationArrayInput `pulumi:"locations"`
 	// Payment Term name
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Phone.
-	Phone pulumi.StringInput `pulumi:"phone"`
+	Phone pulumi.StringPtrInput `pulumi:"phone"`
 	// Service to site use Id.
-	Service2siteUseId pulumi.StringInput `pulumi:"service2siteUseId"`
+	Service2siteUseId pulumi.StringPtrInput `pulumi:"service2siteUseId"`
 	// TCA customer account site Id.
-	TcaCustAcctSiteId pulumi.StringInput `pulumi:"tcaCustAcctSiteId"`
+	TcaCustAcctSiteId pulumi.StringPtrInput `pulumi:"tcaCustAcctSiteId"`
 	// Party site number.
-	TcaPartySiteNumber pulumi.StringInput `pulumi:"tcaPartySiteNumber"`
+	TcaPartySiteNumber pulumi.StringPtrInput `pulumi:"tcaPartySiteNumber"`
 }
 
 func (GetInvoicesInvoiceBillToAddressArgs) ElementType() reflect.Type {
@@ -4053,12 +3526,6 @@ func (i GetInvoicesInvoiceBillToAddressArgs) ToGetInvoicesInvoiceBillToAddressOu
 
 func (i GetInvoicesInvoiceBillToAddressArgs) ToGetInvoicesInvoiceBillToAddressOutputWithContext(ctx context.Context) GetInvoicesInvoiceBillToAddressOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoicesInvoiceBillToAddressOutput)
-}
-
-func (i GetInvoicesInvoiceBillToAddressArgs) ToOutput(ctx context.Context) pulumix.Output[GetInvoicesInvoiceBillToAddress] {
-	return pulumix.Output[GetInvoicesInvoiceBillToAddress]{
-		OutputState: i.ToGetInvoicesInvoiceBillToAddressOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetInvoicesInvoiceBillToAddressArrayInput is an input type that accepts GetInvoicesInvoiceBillToAddressArray and GetInvoicesInvoiceBillToAddressArrayOutput values.
@@ -4086,12 +3553,6 @@ func (i GetInvoicesInvoiceBillToAddressArray) ToGetInvoicesInvoiceBillToAddressA
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoicesInvoiceBillToAddressArrayOutput)
 }
 
-func (i GetInvoicesInvoiceBillToAddressArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoicesInvoiceBillToAddress] {
-	return pulumix.Output[[]GetInvoicesInvoiceBillToAddress]{
-		OutputState: i.ToGetInvoicesInvoiceBillToAddressArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetInvoicesInvoiceBillToAddressOutput struct{ *pulumi.OutputState }
 
 func (GetInvoicesInvoiceBillToAddressOutput) ElementType() reflect.Type {
@@ -4106,25 +3567,19 @@ func (o GetInvoicesInvoiceBillToAddressOutput) ToGetInvoicesInvoiceBillToAddress
 	return o
 }
 
-func (o GetInvoicesInvoiceBillToAddressOutput) ToOutput(ctx context.Context) pulumix.Output[GetInvoicesInvoiceBillToAddress] {
-	return pulumix.Output[GetInvoicesInvoiceBillToAddress]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Bill to site use Id.
-func (o GetInvoicesInvoiceBillToAddressOutput) BillSiteUseId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceBillToAddress) string { return v.BillSiteUseId }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceBillToAddressOutput) BillSiteUseId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceBillToAddress) *string { return v.BillSiteUseId }).(pulumi.StringPtrOutput)
 }
 
 // Identify as the customer's billing address.
-func (o GetInvoicesInvoiceBillToAddressOutput) IsBillTo() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceBillToAddress) bool { return v.IsBillTo }).(pulumi.BoolOutput)
+func (o GetInvoicesInvoiceBillToAddressOutput) IsBillTo() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceBillToAddress) *bool { return v.IsBillTo }).(pulumi.BoolPtrOutput)
 }
 
 // Identify as the customer's shipping address.
-func (o GetInvoicesInvoiceBillToAddressOutput) IsShipTo() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceBillToAddress) bool { return v.IsShipTo }).(pulumi.BoolOutput)
+func (o GetInvoicesInvoiceBillToAddressOutput) IsShipTo() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceBillToAddress) *bool { return v.IsShipTo }).(pulumi.BoolPtrOutput)
 }
 
 // Address location.
@@ -4133,28 +3588,28 @@ func (o GetInvoicesInvoiceBillToAddressOutput) Locations() GetInvoicesInvoiceBil
 }
 
 // Payment Term name
-func (o GetInvoicesInvoiceBillToAddressOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceBillToAddress) string { return v.Name }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceBillToAddressOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceBillToAddress) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Phone.
-func (o GetInvoicesInvoiceBillToAddressOutput) Phone() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceBillToAddress) string { return v.Phone }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceBillToAddressOutput) Phone() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceBillToAddress) *string { return v.Phone }).(pulumi.StringPtrOutput)
 }
 
 // Service to site use Id.
-func (o GetInvoicesInvoiceBillToAddressOutput) Service2siteUseId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceBillToAddress) string { return v.Service2siteUseId }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceBillToAddressOutput) Service2siteUseId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceBillToAddress) *string { return v.Service2siteUseId }).(pulumi.StringPtrOutput)
 }
 
 // TCA customer account site Id.
-func (o GetInvoicesInvoiceBillToAddressOutput) TcaCustAcctSiteId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceBillToAddress) string { return v.TcaCustAcctSiteId }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceBillToAddressOutput) TcaCustAcctSiteId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceBillToAddress) *string { return v.TcaCustAcctSiteId }).(pulumi.StringPtrOutput)
 }
 
 // Party site number.
-func (o GetInvoicesInvoiceBillToAddressOutput) TcaPartySiteNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceBillToAddress) string { return v.TcaPartySiteNumber }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceBillToAddressOutput) TcaPartySiteNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceBillToAddress) *string { return v.TcaPartySiteNumber }).(pulumi.StringPtrOutput)
 }
 
 type GetInvoicesInvoiceBillToAddressArrayOutput struct{ *pulumi.OutputState }
@@ -4171,12 +3626,6 @@ func (o GetInvoicesInvoiceBillToAddressArrayOutput) ToGetInvoicesInvoiceBillToAd
 	return o
 }
 
-func (o GetInvoicesInvoiceBillToAddressArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoicesInvoiceBillToAddress] {
-	return pulumix.Output[[]GetInvoicesInvoiceBillToAddress]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetInvoicesInvoiceBillToAddressArrayOutput) Index(i pulumi.IntInput) GetInvoicesInvoiceBillToAddressOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInvoicesInvoiceBillToAddress {
 		return vs[0].([]GetInvoicesInvoiceBillToAddress)[vs[1].(int)]
@@ -4185,19 +3634,19 @@ func (o GetInvoicesInvoiceBillToAddressArrayOutput) Index(i pulumi.IntInput) Get
 
 type GetInvoicesInvoiceBillToAddressLocation struct {
 	// Address first line.
-	Address1 string `pulumi:"address1"`
+	Address1 *string `pulumi:"address1"`
 	// Address second line.
-	Address2 string `pulumi:"address2"`
+	Address2 *string `pulumi:"address2"`
 	// City.
-	City string `pulumi:"city"`
+	City *string `pulumi:"city"`
 	// Country.
-	Country string `pulumi:"country"`
+	Country *string `pulumi:"country"`
 	// Postal code.
-	PostalCode string `pulumi:"postalCode"`
+	PostalCode *string `pulumi:"postalCode"`
 	// Region.
-	Region string `pulumi:"region"`
+	Region *string `pulumi:"region"`
 	// TCA Location identifier.
-	TcaLocationId string `pulumi:"tcaLocationId"`
+	TcaLocationId *string `pulumi:"tcaLocationId"`
 }
 
 // GetInvoicesInvoiceBillToAddressLocationInput is an input type that accepts GetInvoicesInvoiceBillToAddressLocationArgs and GetInvoicesInvoiceBillToAddressLocationOutput values.
@@ -4213,19 +3662,19 @@ type GetInvoicesInvoiceBillToAddressLocationInput interface {
 
 type GetInvoicesInvoiceBillToAddressLocationArgs struct {
 	// Address first line.
-	Address1 pulumi.StringInput `pulumi:"address1"`
+	Address1 pulumi.StringPtrInput `pulumi:"address1"`
 	// Address second line.
-	Address2 pulumi.StringInput `pulumi:"address2"`
+	Address2 pulumi.StringPtrInput `pulumi:"address2"`
 	// City.
-	City pulumi.StringInput `pulumi:"city"`
+	City pulumi.StringPtrInput `pulumi:"city"`
 	// Country.
-	Country pulumi.StringInput `pulumi:"country"`
+	Country pulumi.StringPtrInput `pulumi:"country"`
 	// Postal code.
-	PostalCode pulumi.StringInput `pulumi:"postalCode"`
+	PostalCode pulumi.StringPtrInput `pulumi:"postalCode"`
 	// Region.
-	Region pulumi.StringInput `pulumi:"region"`
+	Region pulumi.StringPtrInput `pulumi:"region"`
 	// TCA Location identifier.
-	TcaLocationId pulumi.StringInput `pulumi:"tcaLocationId"`
+	TcaLocationId pulumi.StringPtrInput `pulumi:"tcaLocationId"`
 }
 
 func (GetInvoicesInvoiceBillToAddressLocationArgs) ElementType() reflect.Type {
@@ -4238,12 +3687,6 @@ func (i GetInvoicesInvoiceBillToAddressLocationArgs) ToGetInvoicesInvoiceBillToA
 
 func (i GetInvoicesInvoiceBillToAddressLocationArgs) ToGetInvoicesInvoiceBillToAddressLocationOutputWithContext(ctx context.Context) GetInvoicesInvoiceBillToAddressLocationOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoicesInvoiceBillToAddressLocationOutput)
-}
-
-func (i GetInvoicesInvoiceBillToAddressLocationArgs) ToOutput(ctx context.Context) pulumix.Output[GetInvoicesInvoiceBillToAddressLocation] {
-	return pulumix.Output[GetInvoicesInvoiceBillToAddressLocation]{
-		OutputState: i.ToGetInvoicesInvoiceBillToAddressLocationOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetInvoicesInvoiceBillToAddressLocationArrayInput is an input type that accepts GetInvoicesInvoiceBillToAddressLocationArray and GetInvoicesInvoiceBillToAddressLocationArrayOutput values.
@@ -4271,12 +3714,6 @@ func (i GetInvoicesInvoiceBillToAddressLocationArray) ToGetInvoicesInvoiceBillTo
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoicesInvoiceBillToAddressLocationArrayOutput)
 }
 
-func (i GetInvoicesInvoiceBillToAddressLocationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoicesInvoiceBillToAddressLocation] {
-	return pulumix.Output[[]GetInvoicesInvoiceBillToAddressLocation]{
-		OutputState: i.ToGetInvoicesInvoiceBillToAddressLocationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetInvoicesInvoiceBillToAddressLocationOutput struct{ *pulumi.OutputState }
 
 func (GetInvoicesInvoiceBillToAddressLocationOutput) ElementType() reflect.Type {
@@ -4291,45 +3728,39 @@ func (o GetInvoicesInvoiceBillToAddressLocationOutput) ToGetInvoicesInvoiceBillT
 	return o
 }
 
-func (o GetInvoicesInvoiceBillToAddressLocationOutput) ToOutput(ctx context.Context) pulumix.Output[GetInvoicesInvoiceBillToAddressLocation] {
-	return pulumix.Output[GetInvoicesInvoiceBillToAddressLocation]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Address first line.
-func (o GetInvoicesInvoiceBillToAddressLocationOutput) Address1() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceBillToAddressLocation) string { return v.Address1 }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceBillToAddressLocationOutput) Address1() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceBillToAddressLocation) *string { return v.Address1 }).(pulumi.StringPtrOutput)
 }
 
 // Address second line.
-func (o GetInvoicesInvoiceBillToAddressLocationOutput) Address2() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceBillToAddressLocation) string { return v.Address2 }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceBillToAddressLocationOutput) Address2() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceBillToAddressLocation) *string { return v.Address2 }).(pulumi.StringPtrOutput)
 }
 
 // City.
-func (o GetInvoicesInvoiceBillToAddressLocationOutput) City() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceBillToAddressLocation) string { return v.City }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceBillToAddressLocationOutput) City() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceBillToAddressLocation) *string { return v.City }).(pulumi.StringPtrOutput)
 }
 
 // Country.
-func (o GetInvoicesInvoiceBillToAddressLocationOutput) Country() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceBillToAddressLocation) string { return v.Country }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceBillToAddressLocationOutput) Country() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceBillToAddressLocation) *string { return v.Country }).(pulumi.StringPtrOutput)
 }
 
 // Postal code.
-func (o GetInvoicesInvoiceBillToAddressLocationOutput) PostalCode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceBillToAddressLocation) string { return v.PostalCode }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceBillToAddressLocationOutput) PostalCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceBillToAddressLocation) *string { return v.PostalCode }).(pulumi.StringPtrOutput)
 }
 
 // Region.
-func (o GetInvoicesInvoiceBillToAddressLocationOutput) Region() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceBillToAddressLocation) string { return v.Region }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceBillToAddressLocationOutput) Region() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceBillToAddressLocation) *string { return v.Region }).(pulumi.StringPtrOutput)
 }
 
 // TCA Location identifier.
-func (o GetInvoicesInvoiceBillToAddressLocationOutput) TcaLocationId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceBillToAddressLocation) string { return v.TcaLocationId }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceBillToAddressLocationOutput) TcaLocationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceBillToAddressLocation) *string { return v.TcaLocationId }).(pulumi.StringPtrOutput)
 }
 
 type GetInvoicesInvoiceBillToAddressLocationArrayOutput struct{ *pulumi.OutputState }
@@ -4346,12 +3777,6 @@ func (o GetInvoicesInvoiceBillToAddressLocationArrayOutput) ToGetInvoicesInvoice
 	return o
 }
 
-func (o GetInvoicesInvoiceBillToAddressLocationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoicesInvoiceBillToAddressLocation] {
-	return pulumix.Output[[]GetInvoicesInvoiceBillToAddressLocation]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetInvoicesInvoiceBillToAddressLocationArrayOutput) Index(i pulumi.IntInput) GetInvoicesInvoiceBillToAddressLocationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInvoicesInvoiceBillToAddressLocation {
 		return vs[0].([]GetInvoicesInvoiceBillToAddressLocation)[vs[1].(int)]
@@ -4360,21 +3785,21 @@ func (o GetInvoicesInvoiceBillToAddressLocationArrayOutput) Index(i pulumi.IntIn
 
 type GetInvoicesInvoiceBillToContact struct {
 	// Email.
-	Email string `pulumi:"email"`
+	Email *string `pulumi:"email"`
 	// First name.
-	FirstName string `pulumi:"firstName"`
+	FirstName *string `pulumi:"firstName"`
 	// Last name.
-	LastName string `pulumi:"lastName"`
+	LastName *string `pulumi:"lastName"`
 	// Payment Term name
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// TCA contact ID.
-	TcaContactId string `pulumi:"tcaContactId"`
+	TcaContactId *string `pulumi:"tcaContactId"`
 	// TCA customer account site ID.
-	TcaCustAccntSiteId string `pulumi:"tcaCustAccntSiteId"`
+	TcaCustAccntSiteId *string `pulumi:"tcaCustAccntSiteId"`
 	// TCA party ID.
-	TcaPartyId string `pulumi:"tcaPartyId"`
+	TcaPartyId *string `pulumi:"tcaPartyId"`
 	// userName.
-	UserName string `pulumi:"userName"`
+	UserName *string `pulumi:"userName"`
 }
 
 // GetInvoicesInvoiceBillToContactInput is an input type that accepts GetInvoicesInvoiceBillToContactArgs and GetInvoicesInvoiceBillToContactOutput values.
@@ -4390,21 +3815,21 @@ type GetInvoicesInvoiceBillToContactInput interface {
 
 type GetInvoicesInvoiceBillToContactArgs struct {
 	// Email.
-	Email pulumi.StringInput `pulumi:"email"`
+	Email pulumi.StringPtrInput `pulumi:"email"`
 	// First name.
-	FirstName pulumi.StringInput `pulumi:"firstName"`
+	FirstName pulumi.StringPtrInput `pulumi:"firstName"`
 	// Last name.
-	LastName pulumi.StringInput `pulumi:"lastName"`
+	LastName pulumi.StringPtrInput `pulumi:"lastName"`
 	// Payment Term name
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// TCA contact ID.
-	TcaContactId pulumi.StringInput `pulumi:"tcaContactId"`
+	TcaContactId pulumi.StringPtrInput `pulumi:"tcaContactId"`
 	// TCA customer account site ID.
-	TcaCustAccntSiteId pulumi.StringInput `pulumi:"tcaCustAccntSiteId"`
+	TcaCustAccntSiteId pulumi.StringPtrInput `pulumi:"tcaCustAccntSiteId"`
 	// TCA party ID.
-	TcaPartyId pulumi.StringInput `pulumi:"tcaPartyId"`
+	TcaPartyId pulumi.StringPtrInput `pulumi:"tcaPartyId"`
 	// userName.
-	UserName pulumi.StringInput `pulumi:"userName"`
+	UserName pulumi.StringPtrInput `pulumi:"userName"`
 }
 
 func (GetInvoicesInvoiceBillToContactArgs) ElementType() reflect.Type {
@@ -4417,12 +3842,6 @@ func (i GetInvoicesInvoiceBillToContactArgs) ToGetInvoicesInvoiceBillToContactOu
 
 func (i GetInvoicesInvoiceBillToContactArgs) ToGetInvoicesInvoiceBillToContactOutputWithContext(ctx context.Context) GetInvoicesInvoiceBillToContactOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoicesInvoiceBillToContactOutput)
-}
-
-func (i GetInvoicesInvoiceBillToContactArgs) ToOutput(ctx context.Context) pulumix.Output[GetInvoicesInvoiceBillToContact] {
-	return pulumix.Output[GetInvoicesInvoiceBillToContact]{
-		OutputState: i.ToGetInvoicesInvoiceBillToContactOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetInvoicesInvoiceBillToContactArrayInput is an input type that accepts GetInvoicesInvoiceBillToContactArray and GetInvoicesInvoiceBillToContactArrayOutput values.
@@ -4450,12 +3869,6 @@ func (i GetInvoicesInvoiceBillToContactArray) ToGetInvoicesInvoiceBillToContactA
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoicesInvoiceBillToContactArrayOutput)
 }
 
-func (i GetInvoicesInvoiceBillToContactArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoicesInvoiceBillToContact] {
-	return pulumix.Output[[]GetInvoicesInvoiceBillToContact]{
-		OutputState: i.ToGetInvoicesInvoiceBillToContactArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetInvoicesInvoiceBillToContactOutput struct{ *pulumi.OutputState }
 
 func (GetInvoicesInvoiceBillToContactOutput) ElementType() reflect.Type {
@@ -4470,50 +3883,44 @@ func (o GetInvoicesInvoiceBillToContactOutput) ToGetInvoicesInvoiceBillToContact
 	return o
 }
 
-func (o GetInvoicesInvoiceBillToContactOutput) ToOutput(ctx context.Context) pulumix.Output[GetInvoicesInvoiceBillToContact] {
-	return pulumix.Output[GetInvoicesInvoiceBillToContact]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Email.
-func (o GetInvoicesInvoiceBillToContactOutput) Email() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceBillToContact) string { return v.Email }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceBillToContactOutput) Email() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceBillToContact) *string { return v.Email }).(pulumi.StringPtrOutput)
 }
 
 // First name.
-func (o GetInvoicesInvoiceBillToContactOutput) FirstName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceBillToContact) string { return v.FirstName }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceBillToContactOutput) FirstName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceBillToContact) *string { return v.FirstName }).(pulumi.StringPtrOutput)
 }
 
 // Last name.
-func (o GetInvoicesInvoiceBillToContactOutput) LastName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceBillToContact) string { return v.LastName }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceBillToContactOutput) LastName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceBillToContact) *string { return v.LastName }).(pulumi.StringPtrOutput)
 }
 
 // Payment Term name
-func (o GetInvoicesInvoiceBillToContactOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceBillToContact) string { return v.Name }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceBillToContactOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceBillToContact) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // TCA contact ID.
-func (o GetInvoicesInvoiceBillToContactOutput) TcaContactId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceBillToContact) string { return v.TcaContactId }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceBillToContactOutput) TcaContactId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceBillToContact) *string { return v.TcaContactId }).(pulumi.StringPtrOutput)
 }
 
 // TCA customer account site ID.
-func (o GetInvoicesInvoiceBillToContactOutput) TcaCustAccntSiteId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceBillToContact) string { return v.TcaCustAccntSiteId }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceBillToContactOutput) TcaCustAccntSiteId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceBillToContact) *string { return v.TcaCustAccntSiteId }).(pulumi.StringPtrOutput)
 }
 
 // TCA party ID.
-func (o GetInvoicesInvoiceBillToContactOutput) TcaPartyId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceBillToContact) string { return v.TcaPartyId }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceBillToContactOutput) TcaPartyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceBillToContact) *string { return v.TcaPartyId }).(pulumi.StringPtrOutput)
 }
 
 // userName.
-func (o GetInvoicesInvoiceBillToContactOutput) UserName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceBillToContact) string { return v.UserName }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceBillToContactOutput) UserName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceBillToContact) *string { return v.UserName }).(pulumi.StringPtrOutput)
 }
 
 type GetInvoicesInvoiceBillToContactArrayOutput struct{ *pulumi.OutputState }
@@ -4530,12 +3937,6 @@ func (o GetInvoicesInvoiceBillToContactArrayOutput) ToGetInvoicesInvoiceBillToCo
 	return o
 }
 
-func (o GetInvoicesInvoiceBillToContactArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoicesInvoiceBillToContact] {
-	return pulumix.Output[[]GetInvoicesInvoiceBillToContact]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetInvoicesInvoiceBillToContactArrayOutput) Index(i pulumi.IntInput) GetInvoicesInvoiceBillToContactOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInvoicesInvoiceBillToContact {
 		return vs[0].([]GetInvoicesInvoiceBillToContact)[vs[1].(int)]
@@ -4544,23 +3945,23 @@ func (o GetInvoicesInvoiceBillToContactArrayOutput) Index(i pulumi.IntInput) Get
 
 type GetInvoicesInvoiceBillToCustomer struct {
 	// Customer chain type.
-	CustomerChainType string `pulumi:"customerChainType"`
+	CustomerChainType *string `pulumi:"customerChainType"`
 	// The business partner is chain customer or not.
-	IsChainCustomer bool `pulumi:"isChainCustomer"`
+	IsChainCustomer *bool `pulumi:"isChainCustomer"`
 	// The business partner is part of the public sector or not.
-	IsPublicSector bool `pulumi:"isPublicSector"`
+	IsPublicSector *bool `pulumi:"isPublicSector"`
 	// Payment Term name
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Phonetic name.
-	NamePhonetic string `pulumi:"namePhonetic"`
+	NamePhonetic *string `pulumi:"namePhonetic"`
 	// TCA customer account ID.
-	TcaCustomerAccountId string `pulumi:"tcaCustomerAccountId"`
+	TcaCustomerAccountId *string `pulumi:"tcaCustomerAccountId"`
 	// TCA customer account number.
-	TcaCustomerAccountNumber string `pulumi:"tcaCustomerAccountNumber"`
+	TcaCustomerAccountNumber *string `pulumi:"tcaCustomerAccountNumber"`
 	// TCA party ID.
-	TcaPartyId string `pulumi:"tcaPartyId"`
+	TcaPartyId *string `pulumi:"tcaPartyId"`
 	// TCA party number.
-	TcaPartyNumber string `pulumi:"tcaPartyNumber"`
+	TcaPartyNumber *string `pulumi:"tcaPartyNumber"`
 }
 
 // GetInvoicesInvoiceBillToCustomerInput is an input type that accepts GetInvoicesInvoiceBillToCustomerArgs and GetInvoicesInvoiceBillToCustomerOutput values.
@@ -4576,23 +3977,23 @@ type GetInvoicesInvoiceBillToCustomerInput interface {
 
 type GetInvoicesInvoiceBillToCustomerArgs struct {
 	// Customer chain type.
-	CustomerChainType pulumi.StringInput `pulumi:"customerChainType"`
+	CustomerChainType pulumi.StringPtrInput `pulumi:"customerChainType"`
 	// The business partner is chain customer or not.
-	IsChainCustomer pulumi.BoolInput `pulumi:"isChainCustomer"`
+	IsChainCustomer pulumi.BoolPtrInput `pulumi:"isChainCustomer"`
 	// The business partner is part of the public sector or not.
-	IsPublicSector pulumi.BoolInput `pulumi:"isPublicSector"`
+	IsPublicSector pulumi.BoolPtrInput `pulumi:"isPublicSector"`
 	// Payment Term name
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Phonetic name.
-	NamePhonetic pulumi.StringInput `pulumi:"namePhonetic"`
+	NamePhonetic pulumi.StringPtrInput `pulumi:"namePhonetic"`
 	// TCA customer account ID.
-	TcaCustomerAccountId pulumi.StringInput `pulumi:"tcaCustomerAccountId"`
+	TcaCustomerAccountId pulumi.StringPtrInput `pulumi:"tcaCustomerAccountId"`
 	// TCA customer account number.
-	TcaCustomerAccountNumber pulumi.StringInput `pulumi:"tcaCustomerAccountNumber"`
+	TcaCustomerAccountNumber pulumi.StringPtrInput `pulumi:"tcaCustomerAccountNumber"`
 	// TCA party ID.
-	TcaPartyId pulumi.StringInput `pulumi:"tcaPartyId"`
+	TcaPartyId pulumi.StringPtrInput `pulumi:"tcaPartyId"`
 	// TCA party number.
-	TcaPartyNumber pulumi.StringInput `pulumi:"tcaPartyNumber"`
+	TcaPartyNumber pulumi.StringPtrInput `pulumi:"tcaPartyNumber"`
 }
 
 func (GetInvoicesInvoiceBillToCustomerArgs) ElementType() reflect.Type {
@@ -4605,12 +4006,6 @@ func (i GetInvoicesInvoiceBillToCustomerArgs) ToGetInvoicesInvoiceBillToCustomer
 
 func (i GetInvoicesInvoiceBillToCustomerArgs) ToGetInvoicesInvoiceBillToCustomerOutputWithContext(ctx context.Context) GetInvoicesInvoiceBillToCustomerOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoicesInvoiceBillToCustomerOutput)
-}
-
-func (i GetInvoicesInvoiceBillToCustomerArgs) ToOutput(ctx context.Context) pulumix.Output[GetInvoicesInvoiceBillToCustomer] {
-	return pulumix.Output[GetInvoicesInvoiceBillToCustomer]{
-		OutputState: i.ToGetInvoicesInvoiceBillToCustomerOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetInvoicesInvoiceBillToCustomerArrayInput is an input type that accepts GetInvoicesInvoiceBillToCustomerArray and GetInvoicesInvoiceBillToCustomerArrayOutput values.
@@ -4638,12 +4033,6 @@ func (i GetInvoicesInvoiceBillToCustomerArray) ToGetInvoicesInvoiceBillToCustome
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoicesInvoiceBillToCustomerArrayOutput)
 }
 
-func (i GetInvoicesInvoiceBillToCustomerArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoicesInvoiceBillToCustomer] {
-	return pulumix.Output[[]GetInvoicesInvoiceBillToCustomer]{
-		OutputState: i.ToGetInvoicesInvoiceBillToCustomerArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetInvoicesInvoiceBillToCustomerOutput struct{ *pulumi.OutputState }
 
 func (GetInvoicesInvoiceBillToCustomerOutput) ElementType() reflect.Type {
@@ -4658,55 +4047,49 @@ func (o GetInvoicesInvoiceBillToCustomerOutput) ToGetInvoicesInvoiceBillToCustom
 	return o
 }
 
-func (o GetInvoicesInvoiceBillToCustomerOutput) ToOutput(ctx context.Context) pulumix.Output[GetInvoicesInvoiceBillToCustomer] {
-	return pulumix.Output[GetInvoicesInvoiceBillToCustomer]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Customer chain type.
-func (o GetInvoicesInvoiceBillToCustomerOutput) CustomerChainType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceBillToCustomer) string { return v.CustomerChainType }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceBillToCustomerOutput) CustomerChainType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceBillToCustomer) *string { return v.CustomerChainType }).(pulumi.StringPtrOutput)
 }
 
 // The business partner is chain customer or not.
-func (o GetInvoicesInvoiceBillToCustomerOutput) IsChainCustomer() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceBillToCustomer) bool { return v.IsChainCustomer }).(pulumi.BoolOutput)
+func (o GetInvoicesInvoiceBillToCustomerOutput) IsChainCustomer() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceBillToCustomer) *bool { return v.IsChainCustomer }).(pulumi.BoolPtrOutput)
 }
 
 // The business partner is part of the public sector or not.
-func (o GetInvoicesInvoiceBillToCustomerOutput) IsPublicSector() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceBillToCustomer) bool { return v.IsPublicSector }).(pulumi.BoolOutput)
+func (o GetInvoicesInvoiceBillToCustomerOutput) IsPublicSector() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceBillToCustomer) *bool { return v.IsPublicSector }).(pulumi.BoolPtrOutput)
 }
 
 // Payment Term name
-func (o GetInvoicesInvoiceBillToCustomerOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceBillToCustomer) string { return v.Name }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceBillToCustomerOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceBillToCustomer) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Phonetic name.
-func (o GetInvoicesInvoiceBillToCustomerOutput) NamePhonetic() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceBillToCustomer) string { return v.NamePhonetic }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceBillToCustomerOutput) NamePhonetic() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceBillToCustomer) *string { return v.NamePhonetic }).(pulumi.StringPtrOutput)
 }
 
 // TCA customer account ID.
-func (o GetInvoicesInvoiceBillToCustomerOutput) TcaCustomerAccountId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceBillToCustomer) string { return v.TcaCustomerAccountId }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceBillToCustomerOutput) TcaCustomerAccountId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceBillToCustomer) *string { return v.TcaCustomerAccountId }).(pulumi.StringPtrOutput)
 }
 
 // TCA customer account number.
-func (o GetInvoicesInvoiceBillToCustomerOutput) TcaCustomerAccountNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceBillToCustomer) string { return v.TcaCustomerAccountNumber }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceBillToCustomerOutput) TcaCustomerAccountNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceBillToCustomer) *string { return v.TcaCustomerAccountNumber }).(pulumi.StringPtrOutput)
 }
 
 // TCA party ID.
-func (o GetInvoicesInvoiceBillToCustomerOutput) TcaPartyId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceBillToCustomer) string { return v.TcaPartyId }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceBillToCustomerOutput) TcaPartyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceBillToCustomer) *string { return v.TcaPartyId }).(pulumi.StringPtrOutput)
 }
 
 // TCA party number.
-func (o GetInvoicesInvoiceBillToCustomerOutput) TcaPartyNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceBillToCustomer) string { return v.TcaPartyNumber }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceBillToCustomerOutput) TcaPartyNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceBillToCustomer) *string { return v.TcaPartyNumber }).(pulumi.StringPtrOutput)
 }
 
 type GetInvoicesInvoiceBillToCustomerArrayOutput struct{ *pulumi.OutputState }
@@ -4723,12 +4106,6 @@ func (o GetInvoicesInvoiceBillToCustomerArrayOutput) ToGetInvoicesInvoiceBillToC
 	return o
 }
 
-func (o GetInvoicesInvoiceBillToCustomerArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoicesInvoiceBillToCustomer] {
-	return pulumix.Output[[]GetInvoicesInvoiceBillToCustomer]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetInvoicesInvoiceBillToCustomerArrayOutput) Index(i pulumi.IntInput) GetInvoicesInvoiceBillToCustomerOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInvoicesInvoiceBillToCustomer {
 		return vs[0].([]GetInvoicesInvoiceBillToCustomer)[vs[1].(int)]
@@ -4737,11 +4114,11 @@ func (o GetInvoicesInvoiceBillToCustomerArrayOutput) Index(i pulumi.IntInput) Ge
 
 type GetInvoicesInvoiceCurrency struct {
 	// Currency Code
-	IsoCode string `pulumi:"isoCode"`
+	IsoCode *string `pulumi:"isoCode"`
 	// Payment Term name
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Standard Precision of the Currency
-	StdPrecision string `pulumi:"stdPrecision"`
+	StdPrecision *string `pulumi:"stdPrecision"`
 }
 
 // GetInvoicesInvoiceCurrencyInput is an input type that accepts GetInvoicesInvoiceCurrencyArgs and GetInvoicesInvoiceCurrencyOutput values.
@@ -4757,11 +4134,11 @@ type GetInvoicesInvoiceCurrencyInput interface {
 
 type GetInvoicesInvoiceCurrencyArgs struct {
 	// Currency Code
-	IsoCode pulumi.StringInput `pulumi:"isoCode"`
+	IsoCode pulumi.StringPtrInput `pulumi:"isoCode"`
 	// Payment Term name
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Standard Precision of the Currency
-	StdPrecision pulumi.StringInput `pulumi:"stdPrecision"`
+	StdPrecision pulumi.StringPtrInput `pulumi:"stdPrecision"`
 }
 
 func (GetInvoicesInvoiceCurrencyArgs) ElementType() reflect.Type {
@@ -4774,12 +4151,6 @@ func (i GetInvoicesInvoiceCurrencyArgs) ToGetInvoicesInvoiceCurrencyOutput() Get
 
 func (i GetInvoicesInvoiceCurrencyArgs) ToGetInvoicesInvoiceCurrencyOutputWithContext(ctx context.Context) GetInvoicesInvoiceCurrencyOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoicesInvoiceCurrencyOutput)
-}
-
-func (i GetInvoicesInvoiceCurrencyArgs) ToOutput(ctx context.Context) pulumix.Output[GetInvoicesInvoiceCurrency] {
-	return pulumix.Output[GetInvoicesInvoiceCurrency]{
-		OutputState: i.ToGetInvoicesInvoiceCurrencyOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetInvoicesInvoiceCurrencyArrayInput is an input type that accepts GetInvoicesInvoiceCurrencyArray and GetInvoicesInvoiceCurrencyArrayOutput values.
@@ -4807,12 +4178,6 @@ func (i GetInvoicesInvoiceCurrencyArray) ToGetInvoicesInvoiceCurrencyArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoicesInvoiceCurrencyArrayOutput)
 }
 
-func (i GetInvoicesInvoiceCurrencyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoicesInvoiceCurrency] {
-	return pulumix.Output[[]GetInvoicesInvoiceCurrency]{
-		OutputState: i.ToGetInvoicesInvoiceCurrencyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetInvoicesInvoiceCurrencyOutput struct{ *pulumi.OutputState }
 
 func (GetInvoicesInvoiceCurrencyOutput) ElementType() reflect.Type {
@@ -4827,25 +4192,19 @@ func (o GetInvoicesInvoiceCurrencyOutput) ToGetInvoicesInvoiceCurrencyOutputWith
 	return o
 }
 
-func (o GetInvoicesInvoiceCurrencyOutput) ToOutput(ctx context.Context) pulumix.Output[GetInvoicesInvoiceCurrency] {
-	return pulumix.Output[GetInvoicesInvoiceCurrency]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Currency Code
-func (o GetInvoicesInvoiceCurrencyOutput) IsoCode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceCurrency) string { return v.IsoCode }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceCurrencyOutput) IsoCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceCurrency) *string { return v.IsoCode }).(pulumi.StringPtrOutput)
 }
 
 // Payment Term name
-func (o GetInvoicesInvoiceCurrencyOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceCurrency) string { return v.Name }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceCurrencyOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceCurrency) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Standard Precision of the Currency
-func (o GetInvoicesInvoiceCurrencyOutput) StdPrecision() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceCurrency) string { return v.StdPrecision }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceCurrencyOutput) StdPrecision() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceCurrency) *string { return v.StdPrecision }).(pulumi.StringPtrOutput)
 }
 
 type GetInvoicesInvoiceCurrencyArrayOutput struct{ *pulumi.OutputState }
@@ -4862,12 +4221,6 @@ func (o GetInvoicesInvoiceCurrencyArrayOutput) ToGetInvoicesInvoiceCurrencyArray
 	return o
 }
 
-func (o GetInvoicesInvoiceCurrencyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoicesInvoiceCurrency] {
-	return pulumix.Output[[]GetInvoicesInvoiceCurrency]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetInvoicesInvoiceCurrencyArrayOutput) Index(i pulumi.IntInput) GetInvoicesInvoiceCurrencyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInvoicesInvoiceCurrency {
 		return vs[0].([]GetInvoicesInvoiceCurrency)[vs[1].(int)]
@@ -4876,17 +4229,17 @@ func (o GetInvoicesInvoiceCurrencyArrayOutput) Index(i pulumi.IntInput) GetInvoi
 
 type GetInvoicesInvoiceInvoiceLine struct {
 	// AR Invoice Number for Invoice Line
-	ArInvoiceNumber string `pulumi:"arInvoiceNumber"`
+	ArInvoiceNumber *string `pulumi:"arInvoiceNumber"`
 	// Data Center Attribute.
-	DataCenter string `pulumi:"dataCenter"`
+	DataCenter *string `pulumi:"dataCenter"`
 	// SPM Invoice Line internal identifier
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Product description
 	Products []GetInvoicesInvoiceInvoiceLineProduct `pulumi:"products"`
 	// Usage end time
-	TimeEnd string `pulumi:"timeEnd"`
+	TimeEnd *string `pulumi:"timeEnd"`
 	// Usage start time
-	TimeStart string `pulumi:"timeStart"`
+	TimeStart *string `pulumi:"timeStart"`
 }
 
 // GetInvoicesInvoiceInvoiceLineInput is an input type that accepts GetInvoicesInvoiceInvoiceLineArgs and GetInvoicesInvoiceInvoiceLineOutput values.
@@ -4902,17 +4255,17 @@ type GetInvoicesInvoiceInvoiceLineInput interface {
 
 type GetInvoicesInvoiceInvoiceLineArgs struct {
 	// AR Invoice Number for Invoice Line
-	ArInvoiceNumber pulumi.StringInput `pulumi:"arInvoiceNumber"`
+	ArInvoiceNumber pulumi.StringPtrInput `pulumi:"arInvoiceNumber"`
 	// Data Center Attribute.
-	DataCenter pulumi.StringInput `pulumi:"dataCenter"`
+	DataCenter pulumi.StringPtrInput `pulumi:"dataCenter"`
 	// SPM Invoice Line internal identifier
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Product description
 	Products GetInvoicesInvoiceInvoiceLineProductArrayInput `pulumi:"products"`
 	// Usage end time
-	TimeEnd pulumi.StringInput `pulumi:"timeEnd"`
+	TimeEnd pulumi.StringPtrInput `pulumi:"timeEnd"`
 	// Usage start time
-	TimeStart pulumi.StringInput `pulumi:"timeStart"`
+	TimeStart pulumi.StringPtrInput `pulumi:"timeStart"`
 }
 
 func (GetInvoicesInvoiceInvoiceLineArgs) ElementType() reflect.Type {
@@ -4925,12 +4278,6 @@ func (i GetInvoicesInvoiceInvoiceLineArgs) ToGetInvoicesInvoiceInvoiceLineOutput
 
 func (i GetInvoicesInvoiceInvoiceLineArgs) ToGetInvoicesInvoiceInvoiceLineOutputWithContext(ctx context.Context) GetInvoicesInvoiceInvoiceLineOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoicesInvoiceInvoiceLineOutput)
-}
-
-func (i GetInvoicesInvoiceInvoiceLineArgs) ToOutput(ctx context.Context) pulumix.Output[GetInvoicesInvoiceInvoiceLine] {
-	return pulumix.Output[GetInvoicesInvoiceInvoiceLine]{
-		OutputState: i.ToGetInvoicesInvoiceInvoiceLineOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetInvoicesInvoiceInvoiceLineArrayInput is an input type that accepts GetInvoicesInvoiceInvoiceLineArray and GetInvoicesInvoiceInvoiceLineArrayOutput values.
@@ -4958,12 +4305,6 @@ func (i GetInvoicesInvoiceInvoiceLineArray) ToGetInvoicesInvoiceInvoiceLineArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoicesInvoiceInvoiceLineArrayOutput)
 }
 
-func (i GetInvoicesInvoiceInvoiceLineArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoicesInvoiceInvoiceLine] {
-	return pulumix.Output[[]GetInvoicesInvoiceInvoiceLine]{
-		OutputState: i.ToGetInvoicesInvoiceInvoiceLineArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetInvoicesInvoiceInvoiceLineOutput struct{ *pulumi.OutputState }
 
 func (GetInvoicesInvoiceInvoiceLineOutput) ElementType() reflect.Type {
@@ -4978,25 +4319,19 @@ func (o GetInvoicesInvoiceInvoiceLineOutput) ToGetInvoicesInvoiceInvoiceLineOutp
 	return o
 }
 
-func (o GetInvoicesInvoiceInvoiceLineOutput) ToOutput(ctx context.Context) pulumix.Output[GetInvoicesInvoiceInvoiceLine] {
-	return pulumix.Output[GetInvoicesInvoiceInvoiceLine]{
-		OutputState: o.OutputState,
-	}
-}
-
 // AR Invoice Number for Invoice Line
-func (o GetInvoicesInvoiceInvoiceLineOutput) ArInvoiceNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceInvoiceLine) string { return v.ArInvoiceNumber }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceInvoiceLineOutput) ArInvoiceNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceInvoiceLine) *string { return v.ArInvoiceNumber }).(pulumi.StringPtrOutput)
 }
 
 // Data Center Attribute.
-func (o GetInvoicesInvoiceInvoiceLineOutput) DataCenter() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceInvoiceLine) string { return v.DataCenter }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceInvoiceLineOutput) DataCenter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceInvoiceLine) *string { return v.DataCenter }).(pulumi.StringPtrOutput)
 }
 
 // SPM Invoice Line internal identifier
-func (o GetInvoicesInvoiceInvoiceLineOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceInvoiceLine) string { return v.Id }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceInvoiceLineOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceInvoiceLine) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Product description
@@ -5005,13 +4340,13 @@ func (o GetInvoicesInvoiceInvoiceLineOutput) Products() GetInvoicesInvoiceInvoic
 }
 
 // Usage end time
-func (o GetInvoicesInvoiceInvoiceLineOutput) TimeEnd() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceInvoiceLine) string { return v.TimeEnd }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceInvoiceLineOutput) TimeEnd() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceInvoiceLine) *string { return v.TimeEnd }).(pulumi.StringPtrOutput)
 }
 
 // Usage start time
-func (o GetInvoicesInvoiceInvoiceLineOutput) TimeStart() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceInvoiceLine) string { return v.TimeStart }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceInvoiceLineOutput) TimeStart() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceInvoiceLine) *string { return v.TimeStart }).(pulumi.StringPtrOutput)
 }
 
 type GetInvoicesInvoiceInvoiceLineArrayOutput struct{ *pulumi.OutputState }
@@ -5028,12 +4363,6 @@ func (o GetInvoicesInvoiceInvoiceLineArrayOutput) ToGetInvoicesInvoiceInvoiceLin
 	return o
 }
 
-func (o GetInvoicesInvoiceInvoiceLineArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoicesInvoiceInvoiceLine] {
-	return pulumix.Output[[]GetInvoicesInvoiceInvoiceLine]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetInvoicesInvoiceInvoiceLineArrayOutput) Index(i pulumi.IntInput) GetInvoicesInvoiceInvoiceLineOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInvoicesInvoiceInvoiceLine {
 		return vs[0].([]GetInvoicesInvoiceInvoiceLine)[vs[1].(int)]
@@ -5042,17 +4371,17 @@ func (o GetInvoicesInvoiceInvoiceLineArrayOutput) Index(i pulumi.IntInput) GetIn
 
 type GetInvoicesInvoiceInvoiceLineProduct struct {
 	// Metered service billing category
-	BillingCategory string `pulumi:"billingCategory"`
+	BillingCategory *string `pulumi:"billingCategory"`
 	// Payment Term name
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Product part number
-	PartNumber string `pulumi:"partNumber"`
+	PartNumber *string `pulumi:"partNumber"`
 	// Product category
-	ProductCategory string `pulumi:"productCategory"`
+	ProductCategory *string `pulumi:"productCategory"`
 	// Rate card part type of Product
-	UcmRateCardPartType string `pulumi:"ucmRateCardPartType"`
+	UcmRateCardPartType *string `pulumi:"ucmRateCardPartType"`
 	// Unit of Measure
-	UnitOfMeasure string `pulumi:"unitOfMeasure"`
+	UnitOfMeasure *string `pulumi:"unitOfMeasure"`
 }
 
 // GetInvoicesInvoiceInvoiceLineProductInput is an input type that accepts GetInvoicesInvoiceInvoiceLineProductArgs and GetInvoicesInvoiceInvoiceLineProductOutput values.
@@ -5068,17 +4397,17 @@ type GetInvoicesInvoiceInvoiceLineProductInput interface {
 
 type GetInvoicesInvoiceInvoiceLineProductArgs struct {
 	// Metered service billing category
-	BillingCategory pulumi.StringInput `pulumi:"billingCategory"`
+	BillingCategory pulumi.StringPtrInput `pulumi:"billingCategory"`
 	// Payment Term name
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Product part number
-	PartNumber pulumi.StringInput `pulumi:"partNumber"`
+	PartNumber pulumi.StringPtrInput `pulumi:"partNumber"`
 	// Product category
-	ProductCategory pulumi.StringInput `pulumi:"productCategory"`
+	ProductCategory pulumi.StringPtrInput `pulumi:"productCategory"`
 	// Rate card part type of Product
-	UcmRateCardPartType pulumi.StringInput `pulumi:"ucmRateCardPartType"`
+	UcmRateCardPartType pulumi.StringPtrInput `pulumi:"ucmRateCardPartType"`
 	// Unit of Measure
-	UnitOfMeasure pulumi.StringInput `pulumi:"unitOfMeasure"`
+	UnitOfMeasure pulumi.StringPtrInput `pulumi:"unitOfMeasure"`
 }
 
 func (GetInvoicesInvoiceInvoiceLineProductArgs) ElementType() reflect.Type {
@@ -5091,12 +4420,6 @@ func (i GetInvoicesInvoiceInvoiceLineProductArgs) ToGetInvoicesInvoiceInvoiceLin
 
 func (i GetInvoicesInvoiceInvoiceLineProductArgs) ToGetInvoicesInvoiceInvoiceLineProductOutputWithContext(ctx context.Context) GetInvoicesInvoiceInvoiceLineProductOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoicesInvoiceInvoiceLineProductOutput)
-}
-
-func (i GetInvoicesInvoiceInvoiceLineProductArgs) ToOutput(ctx context.Context) pulumix.Output[GetInvoicesInvoiceInvoiceLineProduct] {
-	return pulumix.Output[GetInvoicesInvoiceInvoiceLineProduct]{
-		OutputState: i.ToGetInvoicesInvoiceInvoiceLineProductOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetInvoicesInvoiceInvoiceLineProductArrayInput is an input type that accepts GetInvoicesInvoiceInvoiceLineProductArray and GetInvoicesInvoiceInvoiceLineProductArrayOutput values.
@@ -5124,12 +4447,6 @@ func (i GetInvoicesInvoiceInvoiceLineProductArray) ToGetInvoicesInvoiceInvoiceLi
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoicesInvoiceInvoiceLineProductArrayOutput)
 }
 
-func (i GetInvoicesInvoiceInvoiceLineProductArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoicesInvoiceInvoiceLineProduct] {
-	return pulumix.Output[[]GetInvoicesInvoiceInvoiceLineProduct]{
-		OutputState: i.ToGetInvoicesInvoiceInvoiceLineProductArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetInvoicesInvoiceInvoiceLineProductOutput struct{ *pulumi.OutputState }
 
 func (GetInvoicesInvoiceInvoiceLineProductOutput) ElementType() reflect.Type {
@@ -5144,40 +4461,34 @@ func (o GetInvoicesInvoiceInvoiceLineProductOutput) ToGetInvoicesInvoiceInvoiceL
 	return o
 }
 
-func (o GetInvoicesInvoiceInvoiceLineProductOutput) ToOutput(ctx context.Context) pulumix.Output[GetInvoicesInvoiceInvoiceLineProduct] {
-	return pulumix.Output[GetInvoicesInvoiceInvoiceLineProduct]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Metered service billing category
-func (o GetInvoicesInvoiceInvoiceLineProductOutput) BillingCategory() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceInvoiceLineProduct) string { return v.BillingCategory }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceInvoiceLineProductOutput) BillingCategory() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceInvoiceLineProduct) *string { return v.BillingCategory }).(pulumi.StringPtrOutput)
 }
 
 // Payment Term name
-func (o GetInvoicesInvoiceInvoiceLineProductOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceInvoiceLineProduct) string { return v.Name }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceInvoiceLineProductOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceInvoiceLineProduct) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Product part number
-func (o GetInvoicesInvoiceInvoiceLineProductOutput) PartNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceInvoiceLineProduct) string { return v.PartNumber }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceInvoiceLineProductOutput) PartNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceInvoiceLineProduct) *string { return v.PartNumber }).(pulumi.StringPtrOutput)
 }
 
 // Product category
-func (o GetInvoicesInvoiceInvoiceLineProductOutput) ProductCategory() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceInvoiceLineProduct) string { return v.ProductCategory }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceInvoiceLineProductOutput) ProductCategory() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceInvoiceLineProduct) *string { return v.ProductCategory }).(pulumi.StringPtrOutput)
 }
 
 // Rate card part type of Product
-func (o GetInvoicesInvoiceInvoiceLineProductOutput) UcmRateCardPartType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceInvoiceLineProduct) string { return v.UcmRateCardPartType }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceInvoiceLineProductOutput) UcmRateCardPartType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceInvoiceLineProduct) *string { return v.UcmRateCardPartType }).(pulumi.StringPtrOutput)
 }
 
 // Unit of Measure
-func (o GetInvoicesInvoiceInvoiceLineProductOutput) UnitOfMeasure() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceInvoiceLineProduct) string { return v.UnitOfMeasure }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceInvoiceLineProductOutput) UnitOfMeasure() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceInvoiceLineProduct) *string { return v.UnitOfMeasure }).(pulumi.StringPtrOutput)
 }
 
 type GetInvoicesInvoiceInvoiceLineProductArrayOutput struct{ *pulumi.OutputState }
@@ -5194,12 +4505,6 @@ func (o GetInvoicesInvoiceInvoiceLineProductArrayOutput) ToGetInvoicesInvoiceInv
 	return o
 }
 
-func (o GetInvoicesInvoiceInvoiceLineProductArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoicesInvoiceInvoiceLineProduct] {
-	return pulumix.Output[[]GetInvoicesInvoiceInvoiceLineProduct]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetInvoicesInvoiceInvoiceLineProductArrayOutput) Index(i pulumi.IntInput) GetInvoicesInvoiceInvoiceLineProductOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInvoicesInvoiceInvoiceLineProduct {
 		return vs[0].([]GetInvoicesInvoiceInvoiceLineProduct)[vs[1].(int)]
@@ -5208,9 +4513,9 @@ func (o GetInvoicesInvoiceInvoiceLineProductArrayOutput) Index(i pulumi.IntInput
 
 type GetInvoicesInvoiceOrganization struct {
 	// Payment Term name
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Organization ID
-	Number float64 `pulumi:"number"`
+	Number *float64 `pulumi:"number"`
 }
 
 // GetInvoicesInvoiceOrganizationInput is an input type that accepts GetInvoicesInvoiceOrganizationArgs and GetInvoicesInvoiceOrganizationOutput values.
@@ -5226,9 +4531,9 @@ type GetInvoicesInvoiceOrganizationInput interface {
 
 type GetInvoicesInvoiceOrganizationArgs struct {
 	// Payment Term name
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Organization ID
-	Number pulumi.Float64Input `pulumi:"number"`
+	Number pulumi.Float64PtrInput `pulumi:"number"`
 }
 
 func (GetInvoicesInvoiceOrganizationArgs) ElementType() reflect.Type {
@@ -5241,12 +4546,6 @@ func (i GetInvoicesInvoiceOrganizationArgs) ToGetInvoicesInvoiceOrganizationOutp
 
 func (i GetInvoicesInvoiceOrganizationArgs) ToGetInvoicesInvoiceOrganizationOutputWithContext(ctx context.Context) GetInvoicesInvoiceOrganizationOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoicesInvoiceOrganizationOutput)
-}
-
-func (i GetInvoicesInvoiceOrganizationArgs) ToOutput(ctx context.Context) pulumix.Output[GetInvoicesInvoiceOrganization] {
-	return pulumix.Output[GetInvoicesInvoiceOrganization]{
-		OutputState: i.ToGetInvoicesInvoiceOrganizationOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetInvoicesInvoiceOrganizationArrayInput is an input type that accepts GetInvoicesInvoiceOrganizationArray and GetInvoicesInvoiceOrganizationArrayOutput values.
@@ -5274,12 +4573,6 @@ func (i GetInvoicesInvoiceOrganizationArray) ToGetInvoicesInvoiceOrganizationArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoicesInvoiceOrganizationArrayOutput)
 }
 
-func (i GetInvoicesInvoiceOrganizationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoicesInvoiceOrganization] {
-	return pulumix.Output[[]GetInvoicesInvoiceOrganization]{
-		OutputState: i.ToGetInvoicesInvoiceOrganizationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetInvoicesInvoiceOrganizationOutput struct{ *pulumi.OutputState }
 
 func (GetInvoicesInvoiceOrganizationOutput) ElementType() reflect.Type {
@@ -5294,20 +4587,14 @@ func (o GetInvoicesInvoiceOrganizationOutput) ToGetInvoicesInvoiceOrganizationOu
 	return o
 }
 
-func (o GetInvoicesInvoiceOrganizationOutput) ToOutput(ctx context.Context) pulumix.Output[GetInvoicesInvoiceOrganization] {
-	return pulumix.Output[GetInvoicesInvoiceOrganization]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Payment Term name
-func (o GetInvoicesInvoiceOrganizationOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoiceOrganization) string { return v.Name }).(pulumi.StringOutput)
+func (o GetInvoicesInvoiceOrganizationOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceOrganization) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Organization ID
-func (o GetInvoicesInvoiceOrganizationOutput) Number() pulumi.Float64Output {
-	return o.ApplyT(func(v GetInvoicesInvoiceOrganization) float64 { return v.Number }).(pulumi.Float64Output)
+func (o GetInvoicesInvoiceOrganizationOutput) Number() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoiceOrganization) *float64 { return v.Number }).(pulumi.Float64PtrOutput)
 }
 
 type GetInvoicesInvoiceOrganizationArrayOutput struct{ *pulumi.OutputState }
@@ -5324,12 +4611,6 @@ func (o GetInvoicesInvoiceOrganizationArrayOutput) ToGetInvoicesInvoiceOrganizat
 	return o
 }
 
-func (o GetInvoicesInvoiceOrganizationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoicesInvoiceOrganization] {
-	return pulumix.Output[[]GetInvoicesInvoiceOrganization]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetInvoicesInvoiceOrganizationArrayOutput) Index(i pulumi.IntInput) GetInvoicesInvoiceOrganizationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInvoicesInvoiceOrganization {
 		return vs[0].([]GetInvoicesInvoiceOrganization)[vs[1].(int)]
@@ -5338,21 +4619,21 @@ func (o GetInvoicesInvoiceOrganizationArrayOutput) Index(i pulumi.IntInput) GetI
 
 type GetInvoicesInvoicePaymentTerm struct {
 	// User that created the Payment term
-	CreatedBy string `pulumi:"createdBy"`
+	CreatedBy *string `pulumi:"createdBy"`
 	// Payment term Description
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Payment term active flag
-	IsActive bool `pulumi:"isActive"`
+	IsActive *bool `pulumi:"isActive"`
 	// Payment Term name
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// SPM Invocie creation date
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// SPM Invoice updated date
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// User that updated SPM Invoice
-	UpdatedBy string `pulumi:"updatedBy"`
+	UpdatedBy *string `pulumi:"updatedBy"`
 	// Payment Term value
-	Value string `pulumi:"value"`
+	Value *string `pulumi:"value"`
 }
 
 // GetInvoicesInvoicePaymentTermInput is an input type that accepts GetInvoicesInvoicePaymentTermArgs and GetInvoicesInvoicePaymentTermOutput values.
@@ -5368,21 +4649,21 @@ type GetInvoicesInvoicePaymentTermInput interface {
 
 type GetInvoicesInvoicePaymentTermArgs struct {
 	// User that created the Payment term
-	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
+	CreatedBy pulumi.StringPtrInput `pulumi:"createdBy"`
 	// Payment term Description
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// Payment term active flag
-	IsActive pulumi.BoolInput `pulumi:"isActive"`
+	IsActive pulumi.BoolPtrInput `pulumi:"isActive"`
 	// Payment Term name
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// SPM Invocie creation date
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// SPM Invoice updated date
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 	// User that updated SPM Invoice
-	UpdatedBy pulumi.StringInput `pulumi:"updatedBy"`
+	UpdatedBy pulumi.StringPtrInput `pulumi:"updatedBy"`
 	// Payment Term value
-	Value pulumi.StringInput `pulumi:"value"`
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (GetInvoicesInvoicePaymentTermArgs) ElementType() reflect.Type {
@@ -5395,12 +4676,6 @@ func (i GetInvoicesInvoicePaymentTermArgs) ToGetInvoicesInvoicePaymentTermOutput
 
 func (i GetInvoicesInvoicePaymentTermArgs) ToGetInvoicesInvoicePaymentTermOutputWithContext(ctx context.Context) GetInvoicesInvoicePaymentTermOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoicesInvoicePaymentTermOutput)
-}
-
-func (i GetInvoicesInvoicePaymentTermArgs) ToOutput(ctx context.Context) pulumix.Output[GetInvoicesInvoicePaymentTerm] {
-	return pulumix.Output[GetInvoicesInvoicePaymentTerm]{
-		OutputState: i.ToGetInvoicesInvoicePaymentTermOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetInvoicesInvoicePaymentTermArrayInput is an input type that accepts GetInvoicesInvoicePaymentTermArray and GetInvoicesInvoicePaymentTermArrayOutput values.
@@ -5428,12 +4703,6 @@ func (i GetInvoicesInvoicePaymentTermArray) ToGetInvoicesInvoicePaymentTermArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetInvoicesInvoicePaymentTermArrayOutput)
 }
 
-func (i GetInvoicesInvoicePaymentTermArray) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoicesInvoicePaymentTerm] {
-	return pulumix.Output[[]GetInvoicesInvoicePaymentTerm]{
-		OutputState: i.ToGetInvoicesInvoicePaymentTermArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetInvoicesInvoicePaymentTermOutput struct{ *pulumi.OutputState }
 
 func (GetInvoicesInvoicePaymentTermOutput) ElementType() reflect.Type {
@@ -5448,50 +4717,44 @@ func (o GetInvoicesInvoicePaymentTermOutput) ToGetInvoicesInvoicePaymentTermOutp
 	return o
 }
 
-func (o GetInvoicesInvoicePaymentTermOutput) ToOutput(ctx context.Context) pulumix.Output[GetInvoicesInvoicePaymentTerm] {
-	return pulumix.Output[GetInvoicesInvoicePaymentTerm]{
-		OutputState: o.OutputState,
-	}
-}
-
 // User that created the Payment term
-func (o GetInvoicesInvoicePaymentTermOutput) CreatedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoicePaymentTerm) string { return v.CreatedBy }).(pulumi.StringOutput)
+func (o GetInvoicesInvoicePaymentTermOutput) CreatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoicePaymentTerm) *string { return v.CreatedBy }).(pulumi.StringPtrOutput)
 }
 
 // Payment term Description
-func (o GetInvoicesInvoicePaymentTermOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoicePaymentTerm) string { return v.Description }).(pulumi.StringOutput)
+func (o GetInvoicesInvoicePaymentTermOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoicePaymentTerm) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Payment term active flag
-func (o GetInvoicesInvoicePaymentTermOutput) IsActive() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetInvoicesInvoicePaymentTerm) bool { return v.IsActive }).(pulumi.BoolOutput)
+func (o GetInvoicesInvoicePaymentTermOutput) IsActive() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoicePaymentTerm) *bool { return v.IsActive }).(pulumi.BoolPtrOutput)
 }
 
 // Payment Term name
-func (o GetInvoicesInvoicePaymentTermOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoicePaymentTerm) string { return v.Name }).(pulumi.StringOutput)
+func (o GetInvoicesInvoicePaymentTermOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoicePaymentTerm) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // SPM Invocie creation date
-func (o GetInvoicesInvoicePaymentTermOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoicePaymentTerm) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetInvoicesInvoicePaymentTermOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoicePaymentTerm) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // SPM Invoice updated date
-func (o GetInvoicesInvoicePaymentTermOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoicePaymentTerm) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetInvoicesInvoicePaymentTermOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoicePaymentTerm) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // User that updated SPM Invoice
-func (o GetInvoicesInvoicePaymentTermOutput) UpdatedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoicePaymentTerm) string { return v.UpdatedBy }).(pulumi.StringOutput)
+func (o GetInvoicesInvoicePaymentTermOutput) UpdatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoicePaymentTerm) *string { return v.UpdatedBy }).(pulumi.StringPtrOutput)
 }
 
 // Payment Term value
-func (o GetInvoicesInvoicePaymentTermOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInvoicesInvoicePaymentTerm) string { return v.Value }).(pulumi.StringOutput)
+func (o GetInvoicesInvoicePaymentTermOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInvoicesInvoicePaymentTerm) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
 
 type GetInvoicesInvoicePaymentTermArrayOutput struct{ *pulumi.OutputState }
@@ -5506,12 +4769,6 @@ func (o GetInvoicesInvoicePaymentTermArrayOutput) ToGetInvoicesInvoicePaymentTer
 
 func (o GetInvoicesInvoicePaymentTermArrayOutput) ToGetInvoicesInvoicePaymentTermArrayOutputWithContext(ctx context.Context) GetInvoicesInvoicePaymentTermArrayOutput {
 	return o
-}
-
-func (o GetInvoicesInvoicePaymentTermArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetInvoicesInvoicePaymentTerm] {
-	return pulumix.Output[[]GetInvoicesInvoicePaymentTerm]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetInvoicesInvoicePaymentTermArrayOutput) Index(i pulumi.IntInput) GetInvoicesInvoicePaymentTermOutput {
@@ -5557,12 +4814,6 @@ func (i GetOrganizationSubscriptionsFilterArgs) ToGetOrganizationSubscriptionsFi
 	return pulumi.ToOutputWithContext(ctx, i).(GetOrganizationSubscriptionsFilterOutput)
 }
 
-func (i GetOrganizationSubscriptionsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetOrganizationSubscriptionsFilter] {
-	return pulumix.Output[GetOrganizationSubscriptionsFilter]{
-		OutputState: i.ToGetOrganizationSubscriptionsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetOrganizationSubscriptionsFilterArrayInput is an input type that accepts GetOrganizationSubscriptionsFilterArray and GetOrganizationSubscriptionsFilterArrayOutput values.
 // You can construct a concrete instance of `GetOrganizationSubscriptionsFilterArrayInput` via:
 //
@@ -5588,12 +4839,6 @@ func (i GetOrganizationSubscriptionsFilterArray) ToGetOrganizationSubscriptionsF
 	return pulumi.ToOutputWithContext(ctx, i).(GetOrganizationSubscriptionsFilterArrayOutput)
 }
 
-func (i GetOrganizationSubscriptionsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOrganizationSubscriptionsFilter] {
-	return pulumix.Output[[]GetOrganizationSubscriptionsFilter]{
-		OutputState: i.ToGetOrganizationSubscriptionsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetOrganizationSubscriptionsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetOrganizationSubscriptionsFilterOutput) ElementType() reflect.Type {
@@ -5606,12 +4851,6 @@ func (o GetOrganizationSubscriptionsFilterOutput) ToGetOrganizationSubscriptions
 
 func (o GetOrganizationSubscriptionsFilterOutput) ToGetOrganizationSubscriptionsFilterOutputWithContext(ctx context.Context) GetOrganizationSubscriptionsFilterOutput {
 	return o
-}
-
-func (o GetOrganizationSubscriptionsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetOrganizationSubscriptionsFilter] {
-	return pulumix.Output[GetOrganizationSubscriptionsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Currency name
@@ -5641,12 +4880,6 @@ func (o GetOrganizationSubscriptionsFilterArrayOutput) ToGetOrganizationSubscrip
 	return o
 }
 
-func (o GetOrganizationSubscriptionsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOrganizationSubscriptionsFilter] {
-	return pulumix.Output[[]GetOrganizationSubscriptionsFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetOrganizationSubscriptionsFilterArrayOutput) Index(i pulumi.IntInput) GetOrganizationSubscriptionsFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOrganizationSubscriptionsFilter {
 		return vs[0].([]GetOrganizationSubscriptionsFilter)[vs[1].(int)]
@@ -5657,19 +4890,19 @@ type GetOrganizationSubscriptionsOrganizationSubscription struct {
 	// Currency details
 	Currencies []GetOrganizationSubscriptionsOrganizationSubscriptionCurrency `pulumi:"currencies"`
 	// SPM internal Subscription ID
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Customer friendly service name provided by PRG
-	ServiceName string `pulumi:"serviceName"`
+	ServiceName *string `pulumi:"serviceName"`
 	// Status of the plan
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 	// Represents the date when the last service of the subscription ends
-	TimeEnd string `pulumi:"timeEnd"`
+	TimeEnd *string `pulumi:"timeEnd"`
 	// Represents the date when the first service of the subscription was activated
-	TimeStart string `pulumi:"timeStart"`
+	TimeStart *string `pulumi:"timeStart"`
 	// Total aggregate TCLV of all lines for the subscription including expired, active, and signed
-	TotalValue string `pulumi:"totalValue"`
+	TotalValue *string `pulumi:"totalValue"`
 	// Subscription Type i.e. IAAS,SAAS,PAAS
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 }
 
 // GetOrganizationSubscriptionsOrganizationSubscriptionInput is an input type that accepts GetOrganizationSubscriptionsOrganizationSubscriptionArgs and GetOrganizationSubscriptionsOrganizationSubscriptionOutput values.
@@ -5687,19 +4920,19 @@ type GetOrganizationSubscriptionsOrganizationSubscriptionArgs struct {
 	// Currency details
 	Currencies GetOrganizationSubscriptionsOrganizationSubscriptionCurrencyArrayInput `pulumi:"currencies"`
 	// SPM internal Subscription ID
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Customer friendly service name provided by PRG
-	ServiceName pulumi.StringInput `pulumi:"serviceName"`
+	ServiceName pulumi.StringPtrInput `pulumi:"serviceName"`
 	// Status of the plan
-	Status pulumi.StringInput `pulumi:"status"`
+	Status pulumi.StringPtrInput `pulumi:"status"`
 	// Represents the date when the last service of the subscription ends
-	TimeEnd pulumi.StringInput `pulumi:"timeEnd"`
+	TimeEnd pulumi.StringPtrInput `pulumi:"timeEnd"`
 	// Represents the date when the first service of the subscription was activated
-	TimeStart pulumi.StringInput `pulumi:"timeStart"`
+	TimeStart pulumi.StringPtrInput `pulumi:"timeStart"`
 	// Total aggregate TCLV of all lines for the subscription including expired, active, and signed
-	TotalValue pulumi.StringInput `pulumi:"totalValue"`
+	TotalValue pulumi.StringPtrInput `pulumi:"totalValue"`
 	// Subscription Type i.e. IAAS,SAAS,PAAS
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
 func (GetOrganizationSubscriptionsOrganizationSubscriptionArgs) ElementType() reflect.Type {
@@ -5712,12 +4945,6 @@ func (i GetOrganizationSubscriptionsOrganizationSubscriptionArgs) ToGetOrganizat
 
 func (i GetOrganizationSubscriptionsOrganizationSubscriptionArgs) ToGetOrganizationSubscriptionsOrganizationSubscriptionOutputWithContext(ctx context.Context) GetOrganizationSubscriptionsOrganizationSubscriptionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetOrganizationSubscriptionsOrganizationSubscriptionOutput)
-}
-
-func (i GetOrganizationSubscriptionsOrganizationSubscriptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetOrganizationSubscriptionsOrganizationSubscription] {
-	return pulumix.Output[GetOrganizationSubscriptionsOrganizationSubscription]{
-		OutputState: i.ToGetOrganizationSubscriptionsOrganizationSubscriptionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetOrganizationSubscriptionsOrganizationSubscriptionArrayInput is an input type that accepts GetOrganizationSubscriptionsOrganizationSubscriptionArray and GetOrganizationSubscriptionsOrganizationSubscriptionArrayOutput values.
@@ -5745,12 +4972,6 @@ func (i GetOrganizationSubscriptionsOrganizationSubscriptionArray) ToGetOrganiza
 	return pulumi.ToOutputWithContext(ctx, i).(GetOrganizationSubscriptionsOrganizationSubscriptionArrayOutput)
 }
 
-func (i GetOrganizationSubscriptionsOrganizationSubscriptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOrganizationSubscriptionsOrganizationSubscription] {
-	return pulumix.Output[[]GetOrganizationSubscriptionsOrganizationSubscription]{
-		OutputState: i.ToGetOrganizationSubscriptionsOrganizationSubscriptionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetOrganizationSubscriptionsOrganizationSubscriptionOutput struct{ *pulumi.OutputState }
 
 func (GetOrganizationSubscriptionsOrganizationSubscriptionOutput) ElementType() reflect.Type {
@@ -5765,12 +4986,6 @@ func (o GetOrganizationSubscriptionsOrganizationSubscriptionOutput) ToGetOrganiz
 	return o
 }
 
-func (o GetOrganizationSubscriptionsOrganizationSubscriptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetOrganizationSubscriptionsOrganizationSubscription] {
-	return pulumix.Output[GetOrganizationSubscriptionsOrganizationSubscription]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Currency details
 func (o GetOrganizationSubscriptionsOrganizationSubscriptionOutput) Currencies() GetOrganizationSubscriptionsOrganizationSubscriptionCurrencyArrayOutput {
 	return o.ApplyT(func(v GetOrganizationSubscriptionsOrganizationSubscription) []GetOrganizationSubscriptionsOrganizationSubscriptionCurrency {
@@ -5779,38 +4994,38 @@ func (o GetOrganizationSubscriptionsOrganizationSubscriptionOutput) Currencies()
 }
 
 // SPM internal Subscription ID
-func (o GetOrganizationSubscriptionsOrganizationSubscriptionOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOrganizationSubscriptionsOrganizationSubscription) string { return v.Id }).(pulumi.StringOutput)
+func (o GetOrganizationSubscriptionsOrganizationSubscriptionOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOrganizationSubscriptionsOrganizationSubscription) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Customer friendly service name provided by PRG
-func (o GetOrganizationSubscriptionsOrganizationSubscriptionOutput) ServiceName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOrganizationSubscriptionsOrganizationSubscription) string { return v.ServiceName }).(pulumi.StringOutput)
+func (o GetOrganizationSubscriptionsOrganizationSubscriptionOutput) ServiceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOrganizationSubscriptionsOrganizationSubscription) *string { return v.ServiceName }).(pulumi.StringPtrOutput)
 }
 
 // Status of the plan
-func (o GetOrganizationSubscriptionsOrganizationSubscriptionOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOrganizationSubscriptionsOrganizationSubscription) string { return v.Status }).(pulumi.StringOutput)
+func (o GetOrganizationSubscriptionsOrganizationSubscriptionOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOrganizationSubscriptionsOrganizationSubscription) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // Represents the date when the last service of the subscription ends
-func (o GetOrganizationSubscriptionsOrganizationSubscriptionOutput) TimeEnd() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOrganizationSubscriptionsOrganizationSubscription) string { return v.TimeEnd }).(pulumi.StringOutput)
+func (o GetOrganizationSubscriptionsOrganizationSubscriptionOutput) TimeEnd() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOrganizationSubscriptionsOrganizationSubscription) *string { return v.TimeEnd }).(pulumi.StringPtrOutput)
 }
 
 // Represents the date when the first service of the subscription was activated
-func (o GetOrganizationSubscriptionsOrganizationSubscriptionOutput) TimeStart() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOrganizationSubscriptionsOrganizationSubscription) string { return v.TimeStart }).(pulumi.StringOutput)
+func (o GetOrganizationSubscriptionsOrganizationSubscriptionOutput) TimeStart() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOrganizationSubscriptionsOrganizationSubscription) *string { return v.TimeStart }).(pulumi.StringPtrOutput)
 }
 
 // Total aggregate TCLV of all lines for the subscription including expired, active, and signed
-func (o GetOrganizationSubscriptionsOrganizationSubscriptionOutput) TotalValue() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOrganizationSubscriptionsOrganizationSubscription) string { return v.TotalValue }).(pulumi.StringOutput)
+func (o GetOrganizationSubscriptionsOrganizationSubscriptionOutput) TotalValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOrganizationSubscriptionsOrganizationSubscription) *string { return v.TotalValue }).(pulumi.StringPtrOutput)
 }
 
 // Subscription Type i.e. IAAS,SAAS,PAAS
-func (o GetOrganizationSubscriptionsOrganizationSubscriptionOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOrganizationSubscriptionsOrganizationSubscription) string { return v.Type }).(pulumi.StringOutput)
+func (o GetOrganizationSubscriptionsOrganizationSubscriptionOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOrganizationSubscriptionsOrganizationSubscription) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 type GetOrganizationSubscriptionsOrganizationSubscriptionArrayOutput struct{ *pulumi.OutputState }
@@ -5827,12 +5042,6 @@ func (o GetOrganizationSubscriptionsOrganizationSubscriptionArrayOutput) ToGetOr
 	return o
 }
 
-func (o GetOrganizationSubscriptionsOrganizationSubscriptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOrganizationSubscriptionsOrganizationSubscription] {
-	return pulumix.Output[[]GetOrganizationSubscriptionsOrganizationSubscription]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetOrganizationSubscriptionsOrganizationSubscriptionArrayOutput) Index(i pulumi.IntInput) GetOrganizationSubscriptionsOrganizationSubscriptionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOrganizationSubscriptionsOrganizationSubscription {
 		return vs[0].([]GetOrganizationSubscriptionsOrganizationSubscription)[vs[1].(int)]
@@ -5841,11 +5050,11 @@ func (o GetOrganizationSubscriptionsOrganizationSubscriptionArrayOutput) Index(i
 
 type GetOrganizationSubscriptionsOrganizationSubscriptionCurrency struct {
 	// Currency Code
-	IsoCode string `pulumi:"isoCode"`
+	IsoCode *string `pulumi:"isoCode"`
 	// Currency name
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Standard Precision of the Currency
-	StdPrecision string `pulumi:"stdPrecision"`
+	StdPrecision *string `pulumi:"stdPrecision"`
 }
 
 // GetOrganizationSubscriptionsOrganizationSubscriptionCurrencyInput is an input type that accepts GetOrganizationSubscriptionsOrganizationSubscriptionCurrencyArgs and GetOrganizationSubscriptionsOrganizationSubscriptionCurrencyOutput values.
@@ -5861,11 +5070,11 @@ type GetOrganizationSubscriptionsOrganizationSubscriptionCurrencyInput interface
 
 type GetOrganizationSubscriptionsOrganizationSubscriptionCurrencyArgs struct {
 	// Currency Code
-	IsoCode pulumi.StringInput `pulumi:"isoCode"`
+	IsoCode pulumi.StringPtrInput `pulumi:"isoCode"`
 	// Currency name
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Standard Precision of the Currency
-	StdPrecision pulumi.StringInput `pulumi:"stdPrecision"`
+	StdPrecision pulumi.StringPtrInput `pulumi:"stdPrecision"`
 }
 
 func (GetOrganizationSubscriptionsOrganizationSubscriptionCurrencyArgs) ElementType() reflect.Type {
@@ -5878,12 +5087,6 @@ func (i GetOrganizationSubscriptionsOrganizationSubscriptionCurrencyArgs) ToGetO
 
 func (i GetOrganizationSubscriptionsOrganizationSubscriptionCurrencyArgs) ToGetOrganizationSubscriptionsOrganizationSubscriptionCurrencyOutputWithContext(ctx context.Context) GetOrganizationSubscriptionsOrganizationSubscriptionCurrencyOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetOrganizationSubscriptionsOrganizationSubscriptionCurrencyOutput)
-}
-
-func (i GetOrganizationSubscriptionsOrganizationSubscriptionCurrencyArgs) ToOutput(ctx context.Context) pulumix.Output[GetOrganizationSubscriptionsOrganizationSubscriptionCurrency] {
-	return pulumix.Output[GetOrganizationSubscriptionsOrganizationSubscriptionCurrency]{
-		OutputState: i.ToGetOrganizationSubscriptionsOrganizationSubscriptionCurrencyOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetOrganizationSubscriptionsOrganizationSubscriptionCurrencyArrayInput is an input type that accepts GetOrganizationSubscriptionsOrganizationSubscriptionCurrencyArray and GetOrganizationSubscriptionsOrganizationSubscriptionCurrencyArrayOutput values.
@@ -5911,12 +5114,6 @@ func (i GetOrganizationSubscriptionsOrganizationSubscriptionCurrencyArray) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetOrganizationSubscriptionsOrganizationSubscriptionCurrencyArrayOutput)
 }
 
-func (i GetOrganizationSubscriptionsOrganizationSubscriptionCurrencyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOrganizationSubscriptionsOrganizationSubscriptionCurrency] {
-	return pulumix.Output[[]GetOrganizationSubscriptionsOrganizationSubscriptionCurrency]{
-		OutputState: i.ToGetOrganizationSubscriptionsOrganizationSubscriptionCurrencyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetOrganizationSubscriptionsOrganizationSubscriptionCurrencyOutput struct{ *pulumi.OutputState }
 
 func (GetOrganizationSubscriptionsOrganizationSubscriptionCurrencyOutput) ElementType() reflect.Type {
@@ -5931,25 +5128,19 @@ func (o GetOrganizationSubscriptionsOrganizationSubscriptionCurrencyOutput) ToGe
 	return o
 }
 
-func (o GetOrganizationSubscriptionsOrganizationSubscriptionCurrencyOutput) ToOutput(ctx context.Context) pulumix.Output[GetOrganizationSubscriptionsOrganizationSubscriptionCurrency] {
-	return pulumix.Output[GetOrganizationSubscriptionsOrganizationSubscriptionCurrency]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Currency Code
-func (o GetOrganizationSubscriptionsOrganizationSubscriptionCurrencyOutput) IsoCode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOrganizationSubscriptionsOrganizationSubscriptionCurrency) string { return v.IsoCode }).(pulumi.StringOutput)
+func (o GetOrganizationSubscriptionsOrganizationSubscriptionCurrencyOutput) IsoCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOrganizationSubscriptionsOrganizationSubscriptionCurrency) *string { return v.IsoCode }).(pulumi.StringPtrOutput)
 }
 
 // Currency name
-func (o GetOrganizationSubscriptionsOrganizationSubscriptionCurrencyOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOrganizationSubscriptionsOrganizationSubscriptionCurrency) string { return v.Name }).(pulumi.StringOutput)
+func (o GetOrganizationSubscriptionsOrganizationSubscriptionCurrencyOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOrganizationSubscriptionsOrganizationSubscriptionCurrency) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Standard Precision of the Currency
-func (o GetOrganizationSubscriptionsOrganizationSubscriptionCurrencyOutput) StdPrecision() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOrganizationSubscriptionsOrganizationSubscriptionCurrency) string { return v.StdPrecision }).(pulumi.StringOutput)
+func (o GetOrganizationSubscriptionsOrganizationSubscriptionCurrencyOutput) StdPrecision() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOrganizationSubscriptionsOrganizationSubscriptionCurrency) *string { return v.StdPrecision }).(pulumi.StringPtrOutput)
 }
 
 type GetOrganizationSubscriptionsOrganizationSubscriptionCurrencyArrayOutput struct{ *pulumi.OutputState }
@@ -5964,12 +5155,6 @@ func (o GetOrganizationSubscriptionsOrganizationSubscriptionCurrencyArrayOutput)
 
 func (o GetOrganizationSubscriptionsOrganizationSubscriptionCurrencyArrayOutput) ToGetOrganizationSubscriptionsOrganizationSubscriptionCurrencyArrayOutputWithContext(ctx context.Context) GetOrganizationSubscriptionsOrganizationSubscriptionCurrencyArrayOutput {
 	return o
-}
-
-func (o GetOrganizationSubscriptionsOrganizationSubscriptionCurrencyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOrganizationSubscriptionsOrganizationSubscriptionCurrency] {
-	return pulumix.Output[[]GetOrganizationSubscriptionsOrganizationSubscriptionCurrency]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetOrganizationSubscriptionsOrganizationSubscriptionCurrencyArrayOutput) Index(i pulumi.IntInput) GetOrganizationSubscriptionsOrganizationSubscriptionCurrencyOutput {
@@ -6015,12 +5200,6 @@ func (i GetRatecardsFilterArgs) ToGetRatecardsFilterOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetRatecardsFilterOutput)
 }
 
-func (i GetRatecardsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetRatecardsFilter] {
-	return pulumix.Output[GetRatecardsFilter]{
-		OutputState: i.ToGetRatecardsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetRatecardsFilterArrayInput is an input type that accepts GetRatecardsFilterArray and GetRatecardsFilterArrayOutput values.
 // You can construct a concrete instance of `GetRatecardsFilterArrayInput` via:
 //
@@ -6046,12 +5225,6 @@ func (i GetRatecardsFilterArray) ToGetRatecardsFilterArrayOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetRatecardsFilterArrayOutput)
 }
 
-func (i GetRatecardsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRatecardsFilter] {
-	return pulumix.Output[[]GetRatecardsFilter]{
-		OutputState: i.ToGetRatecardsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRatecardsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetRatecardsFilterOutput) ElementType() reflect.Type {
@@ -6064,12 +5237,6 @@ func (o GetRatecardsFilterOutput) ToGetRatecardsFilterOutput() GetRatecardsFilte
 
 func (o GetRatecardsFilterOutput) ToGetRatecardsFilterOutputWithContext(ctx context.Context) GetRatecardsFilterOutput {
 	return o
-}
-
-func (o GetRatecardsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetRatecardsFilter] {
-	return pulumix.Output[GetRatecardsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Product name
@@ -6099,12 +5266,6 @@ func (o GetRatecardsFilterArrayOutput) ToGetRatecardsFilterArrayOutputWithContex
 	return o
 }
 
-func (o GetRatecardsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRatecardsFilter] {
-	return pulumix.Output[[]GetRatecardsFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetRatecardsFilterArrayOutput) Index(i pulumi.IntInput) GetRatecardsFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRatecardsFilter {
 		return vs[0].([]GetRatecardsFilter)[vs[1].(int)]
@@ -6115,23 +5276,23 @@ type GetRatecardsRateCard struct {
 	// Currency details
 	Currencies []GetRatecardsRateCardCurrency `pulumi:"currencies"`
 	// Rate card discretionary discount percentage
-	DiscretionaryDiscountPercentage string `pulumi:"discretionaryDiscountPercentage"`
+	DiscretionaryDiscountPercentage *string `pulumi:"discretionaryDiscountPercentage"`
 	// Rate card price tier flag
-	IsTier bool `pulumi:"isTier"`
+	IsTier *bool `pulumi:"isTier"`
 	// Rate card tier net unit price
-	NetUnitPrice string `pulumi:"netUnitPrice"`
+	NetUnitPrice *string `pulumi:"netUnitPrice"`
 	// Rate card tier overage price
-	OveragePrice string `pulumi:"overagePrice"`
+	OveragePrice *string `pulumi:"overagePrice"`
 	// Product description
 	Products []GetRatecardsRateCardProduct `pulumi:"products"`
 	// List of tiered rate card prices
 	RateCardTiers []GetRatecardsRateCardRateCardTier `pulumi:"rateCardTiers"`
 	// SPM internal Subscribed Service ID
-	SubscribedServiceId string `pulumi:"subscribedServiceId"`
+	SubscribedServiceId *string `pulumi:"subscribedServiceId"`
 	// Rate card end date
-	TimeEnd string `pulumi:"timeEnd"`
+	TimeEnd *string `pulumi:"timeEnd"`
 	// Rate card start date
-	TimeStart string `pulumi:"timeStart"`
+	TimeStart *string `pulumi:"timeStart"`
 }
 
 // GetRatecardsRateCardInput is an input type that accepts GetRatecardsRateCardArgs and GetRatecardsRateCardOutput values.
@@ -6149,23 +5310,23 @@ type GetRatecardsRateCardArgs struct {
 	// Currency details
 	Currencies GetRatecardsRateCardCurrencyArrayInput `pulumi:"currencies"`
 	// Rate card discretionary discount percentage
-	DiscretionaryDiscountPercentage pulumi.StringInput `pulumi:"discretionaryDiscountPercentage"`
+	DiscretionaryDiscountPercentage pulumi.StringPtrInput `pulumi:"discretionaryDiscountPercentage"`
 	// Rate card price tier flag
-	IsTier pulumi.BoolInput `pulumi:"isTier"`
+	IsTier pulumi.BoolPtrInput `pulumi:"isTier"`
 	// Rate card tier net unit price
-	NetUnitPrice pulumi.StringInput `pulumi:"netUnitPrice"`
+	NetUnitPrice pulumi.StringPtrInput `pulumi:"netUnitPrice"`
 	// Rate card tier overage price
-	OveragePrice pulumi.StringInput `pulumi:"overagePrice"`
+	OveragePrice pulumi.StringPtrInput `pulumi:"overagePrice"`
 	// Product description
 	Products GetRatecardsRateCardProductArrayInput `pulumi:"products"`
 	// List of tiered rate card prices
 	RateCardTiers GetRatecardsRateCardRateCardTierArrayInput `pulumi:"rateCardTiers"`
 	// SPM internal Subscribed Service ID
-	SubscribedServiceId pulumi.StringInput `pulumi:"subscribedServiceId"`
+	SubscribedServiceId pulumi.StringPtrInput `pulumi:"subscribedServiceId"`
 	// Rate card end date
-	TimeEnd pulumi.StringInput `pulumi:"timeEnd"`
+	TimeEnd pulumi.StringPtrInput `pulumi:"timeEnd"`
 	// Rate card start date
-	TimeStart pulumi.StringInput `pulumi:"timeStart"`
+	TimeStart pulumi.StringPtrInput `pulumi:"timeStart"`
 }
 
 func (GetRatecardsRateCardArgs) ElementType() reflect.Type {
@@ -6178,12 +5339,6 @@ func (i GetRatecardsRateCardArgs) ToGetRatecardsRateCardOutput() GetRatecardsRat
 
 func (i GetRatecardsRateCardArgs) ToGetRatecardsRateCardOutputWithContext(ctx context.Context) GetRatecardsRateCardOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetRatecardsRateCardOutput)
-}
-
-func (i GetRatecardsRateCardArgs) ToOutput(ctx context.Context) pulumix.Output[GetRatecardsRateCard] {
-	return pulumix.Output[GetRatecardsRateCard]{
-		OutputState: i.ToGetRatecardsRateCardOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetRatecardsRateCardArrayInput is an input type that accepts GetRatecardsRateCardArray and GetRatecardsRateCardArrayOutput values.
@@ -6211,12 +5366,6 @@ func (i GetRatecardsRateCardArray) ToGetRatecardsRateCardArrayOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetRatecardsRateCardArrayOutput)
 }
 
-func (i GetRatecardsRateCardArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRatecardsRateCard] {
-	return pulumix.Output[[]GetRatecardsRateCard]{
-		OutputState: i.ToGetRatecardsRateCardArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRatecardsRateCardOutput struct{ *pulumi.OutputState }
 
 func (GetRatecardsRateCardOutput) ElementType() reflect.Type {
@@ -6231,35 +5380,29 @@ func (o GetRatecardsRateCardOutput) ToGetRatecardsRateCardOutputWithContext(ctx 
 	return o
 }
 
-func (o GetRatecardsRateCardOutput) ToOutput(ctx context.Context) pulumix.Output[GetRatecardsRateCard] {
-	return pulumix.Output[GetRatecardsRateCard]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Currency details
 func (o GetRatecardsRateCardOutput) Currencies() GetRatecardsRateCardCurrencyArrayOutput {
 	return o.ApplyT(func(v GetRatecardsRateCard) []GetRatecardsRateCardCurrency { return v.Currencies }).(GetRatecardsRateCardCurrencyArrayOutput)
 }
 
 // Rate card discretionary discount percentage
-func (o GetRatecardsRateCardOutput) DiscretionaryDiscountPercentage() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRatecardsRateCard) string { return v.DiscretionaryDiscountPercentage }).(pulumi.StringOutput)
+func (o GetRatecardsRateCardOutput) DiscretionaryDiscountPercentage() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRatecardsRateCard) *string { return v.DiscretionaryDiscountPercentage }).(pulumi.StringPtrOutput)
 }
 
 // Rate card price tier flag
-func (o GetRatecardsRateCardOutput) IsTier() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetRatecardsRateCard) bool { return v.IsTier }).(pulumi.BoolOutput)
+func (o GetRatecardsRateCardOutput) IsTier() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetRatecardsRateCard) *bool { return v.IsTier }).(pulumi.BoolPtrOutput)
 }
 
 // Rate card tier net unit price
-func (o GetRatecardsRateCardOutput) NetUnitPrice() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRatecardsRateCard) string { return v.NetUnitPrice }).(pulumi.StringOutput)
+func (o GetRatecardsRateCardOutput) NetUnitPrice() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRatecardsRateCard) *string { return v.NetUnitPrice }).(pulumi.StringPtrOutput)
 }
 
 // Rate card tier overage price
-func (o GetRatecardsRateCardOutput) OveragePrice() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRatecardsRateCard) string { return v.OveragePrice }).(pulumi.StringOutput)
+func (o GetRatecardsRateCardOutput) OveragePrice() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRatecardsRateCard) *string { return v.OveragePrice }).(pulumi.StringPtrOutput)
 }
 
 // Product description
@@ -6273,18 +5416,18 @@ func (o GetRatecardsRateCardOutput) RateCardTiers() GetRatecardsRateCardRateCard
 }
 
 // SPM internal Subscribed Service ID
-func (o GetRatecardsRateCardOutput) SubscribedServiceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRatecardsRateCard) string { return v.SubscribedServiceId }).(pulumi.StringOutput)
+func (o GetRatecardsRateCardOutput) SubscribedServiceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRatecardsRateCard) *string { return v.SubscribedServiceId }).(pulumi.StringPtrOutput)
 }
 
 // Rate card end date
-func (o GetRatecardsRateCardOutput) TimeEnd() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRatecardsRateCard) string { return v.TimeEnd }).(pulumi.StringOutput)
+func (o GetRatecardsRateCardOutput) TimeEnd() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRatecardsRateCard) *string { return v.TimeEnd }).(pulumi.StringPtrOutput)
 }
 
 // Rate card start date
-func (o GetRatecardsRateCardOutput) TimeStart() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRatecardsRateCard) string { return v.TimeStart }).(pulumi.StringOutput)
+func (o GetRatecardsRateCardOutput) TimeStart() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRatecardsRateCard) *string { return v.TimeStart }).(pulumi.StringPtrOutput)
 }
 
 type GetRatecardsRateCardArrayOutput struct{ *pulumi.OutputState }
@@ -6301,12 +5444,6 @@ func (o GetRatecardsRateCardArrayOutput) ToGetRatecardsRateCardArrayOutputWithCo
 	return o
 }
 
-func (o GetRatecardsRateCardArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRatecardsRateCard] {
-	return pulumix.Output[[]GetRatecardsRateCard]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetRatecardsRateCardArrayOutput) Index(i pulumi.IntInput) GetRatecardsRateCardOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRatecardsRateCard {
 		return vs[0].([]GetRatecardsRateCard)[vs[1].(int)]
@@ -6315,11 +5452,11 @@ func (o GetRatecardsRateCardArrayOutput) Index(i pulumi.IntInput) GetRatecardsRa
 
 type GetRatecardsRateCardCurrency struct {
 	// Currency Code
-	IsoCode string `pulumi:"isoCode"`
+	IsoCode *string `pulumi:"isoCode"`
 	// Product name
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Standard Precision of the Currency
-	StdPrecision string `pulumi:"stdPrecision"`
+	StdPrecision *string `pulumi:"stdPrecision"`
 }
 
 // GetRatecardsRateCardCurrencyInput is an input type that accepts GetRatecardsRateCardCurrencyArgs and GetRatecardsRateCardCurrencyOutput values.
@@ -6335,11 +5472,11 @@ type GetRatecardsRateCardCurrencyInput interface {
 
 type GetRatecardsRateCardCurrencyArgs struct {
 	// Currency Code
-	IsoCode pulumi.StringInput `pulumi:"isoCode"`
+	IsoCode pulumi.StringPtrInput `pulumi:"isoCode"`
 	// Product name
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Standard Precision of the Currency
-	StdPrecision pulumi.StringInput `pulumi:"stdPrecision"`
+	StdPrecision pulumi.StringPtrInput `pulumi:"stdPrecision"`
 }
 
 func (GetRatecardsRateCardCurrencyArgs) ElementType() reflect.Type {
@@ -6352,12 +5489,6 @@ func (i GetRatecardsRateCardCurrencyArgs) ToGetRatecardsRateCardCurrencyOutput()
 
 func (i GetRatecardsRateCardCurrencyArgs) ToGetRatecardsRateCardCurrencyOutputWithContext(ctx context.Context) GetRatecardsRateCardCurrencyOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetRatecardsRateCardCurrencyOutput)
-}
-
-func (i GetRatecardsRateCardCurrencyArgs) ToOutput(ctx context.Context) pulumix.Output[GetRatecardsRateCardCurrency] {
-	return pulumix.Output[GetRatecardsRateCardCurrency]{
-		OutputState: i.ToGetRatecardsRateCardCurrencyOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetRatecardsRateCardCurrencyArrayInput is an input type that accepts GetRatecardsRateCardCurrencyArray and GetRatecardsRateCardCurrencyArrayOutput values.
@@ -6385,12 +5516,6 @@ func (i GetRatecardsRateCardCurrencyArray) ToGetRatecardsRateCardCurrencyArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetRatecardsRateCardCurrencyArrayOutput)
 }
 
-func (i GetRatecardsRateCardCurrencyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRatecardsRateCardCurrency] {
-	return pulumix.Output[[]GetRatecardsRateCardCurrency]{
-		OutputState: i.ToGetRatecardsRateCardCurrencyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRatecardsRateCardCurrencyOutput struct{ *pulumi.OutputState }
 
 func (GetRatecardsRateCardCurrencyOutput) ElementType() reflect.Type {
@@ -6405,25 +5530,19 @@ func (o GetRatecardsRateCardCurrencyOutput) ToGetRatecardsRateCardCurrencyOutput
 	return o
 }
 
-func (o GetRatecardsRateCardCurrencyOutput) ToOutput(ctx context.Context) pulumix.Output[GetRatecardsRateCardCurrency] {
-	return pulumix.Output[GetRatecardsRateCardCurrency]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Currency Code
-func (o GetRatecardsRateCardCurrencyOutput) IsoCode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRatecardsRateCardCurrency) string { return v.IsoCode }).(pulumi.StringOutput)
+func (o GetRatecardsRateCardCurrencyOutput) IsoCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRatecardsRateCardCurrency) *string { return v.IsoCode }).(pulumi.StringPtrOutput)
 }
 
 // Product name
-func (o GetRatecardsRateCardCurrencyOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRatecardsRateCardCurrency) string { return v.Name }).(pulumi.StringOutput)
+func (o GetRatecardsRateCardCurrencyOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRatecardsRateCardCurrency) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Standard Precision of the Currency
-func (o GetRatecardsRateCardCurrencyOutput) StdPrecision() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRatecardsRateCardCurrency) string { return v.StdPrecision }).(pulumi.StringOutput)
+func (o GetRatecardsRateCardCurrencyOutput) StdPrecision() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRatecardsRateCardCurrency) *string { return v.StdPrecision }).(pulumi.StringPtrOutput)
 }
 
 type GetRatecardsRateCardCurrencyArrayOutput struct{ *pulumi.OutputState }
@@ -6440,12 +5559,6 @@ func (o GetRatecardsRateCardCurrencyArrayOutput) ToGetRatecardsRateCardCurrencyA
 	return o
 }
 
-func (o GetRatecardsRateCardCurrencyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRatecardsRateCardCurrency] {
-	return pulumix.Output[[]GetRatecardsRateCardCurrency]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetRatecardsRateCardCurrencyArrayOutput) Index(i pulumi.IntInput) GetRatecardsRateCardCurrencyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRatecardsRateCardCurrency {
 		return vs[0].([]GetRatecardsRateCardCurrency)[vs[1].(int)]
@@ -6454,17 +5567,17 @@ func (o GetRatecardsRateCardCurrencyArrayOutput) Index(i pulumi.IntInput) GetRat
 
 type GetRatecardsRateCardProduct struct {
 	// Metered service billing category
-	BillingCategory string `pulumi:"billingCategory"`
+	BillingCategory *string `pulumi:"billingCategory"`
 	// Product name
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// This param is used to get the rate card(s) filterd by the partNumber
-	PartNumber string `pulumi:"partNumber"`
+	PartNumber *string `pulumi:"partNumber"`
 	// Product category
-	ProductCategory string `pulumi:"productCategory"`
+	ProductCategory *string `pulumi:"productCategory"`
 	// Rate card part type of Product
-	UcmRateCardPartType string `pulumi:"ucmRateCardPartType"`
+	UcmRateCardPartType *string `pulumi:"ucmRateCardPartType"`
 	// Unit of measure
-	UnitOfMeasure string `pulumi:"unitOfMeasure"`
+	UnitOfMeasure *string `pulumi:"unitOfMeasure"`
 }
 
 // GetRatecardsRateCardProductInput is an input type that accepts GetRatecardsRateCardProductArgs and GetRatecardsRateCardProductOutput values.
@@ -6480,17 +5593,17 @@ type GetRatecardsRateCardProductInput interface {
 
 type GetRatecardsRateCardProductArgs struct {
 	// Metered service billing category
-	BillingCategory pulumi.StringInput `pulumi:"billingCategory"`
+	BillingCategory pulumi.StringPtrInput `pulumi:"billingCategory"`
 	// Product name
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// This param is used to get the rate card(s) filterd by the partNumber
-	PartNumber pulumi.StringInput `pulumi:"partNumber"`
+	PartNumber pulumi.StringPtrInput `pulumi:"partNumber"`
 	// Product category
-	ProductCategory pulumi.StringInput `pulumi:"productCategory"`
+	ProductCategory pulumi.StringPtrInput `pulumi:"productCategory"`
 	// Rate card part type of Product
-	UcmRateCardPartType pulumi.StringInput `pulumi:"ucmRateCardPartType"`
+	UcmRateCardPartType pulumi.StringPtrInput `pulumi:"ucmRateCardPartType"`
 	// Unit of measure
-	UnitOfMeasure pulumi.StringInput `pulumi:"unitOfMeasure"`
+	UnitOfMeasure pulumi.StringPtrInput `pulumi:"unitOfMeasure"`
 }
 
 func (GetRatecardsRateCardProductArgs) ElementType() reflect.Type {
@@ -6503,12 +5616,6 @@ func (i GetRatecardsRateCardProductArgs) ToGetRatecardsRateCardProductOutput() G
 
 func (i GetRatecardsRateCardProductArgs) ToGetRatecardsRateCardProductOutputWithContext(ctx context.Context) GetRatecardsRateCardProductOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetRatecardsRateCardProductOutput)
-}
-
-func (i GetRatecardsRateCardProductArgs) ToOutput(ctx context.Context) pulumix.Output[GetRatecardsRateCardProduct] {
-	return pulumix.Output[GetRatecardsRateCardProduct]{
-		OutputState: i.ToGetRatecardsRateCardProductOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetRatecardsRateCardProductArrayInput is an input type that accepts GetRatecardsRateCardProductArray and GetRatecardsRateCardProductArrayOutput values.
@@ -6536,12 +5643,6 @@ func (i GetRatecardsRateCardProductArray) ToGetRatecardsRateCardProductArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetRatecardsRateCardProductArrayOutput)
 }
 
-func (i GetRatecardsRateCardProductArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRatecardsRateCardProduct] {
-	return pulumix.Output[[]GetRatecardsRateCardProduct]{
-		OutputState: i.ToGetRatecardsRateCardProductArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRatecardsRateCardProductOutput struct{ *pulumi.OutputState }
 
 func (GetRatecardsRateCardProductOutput) ElementType() reflect.Type {
@@ -6556,40 +5657,34 @@ func (o GetRatecardsRateCardProductOutput) ToGetRatecardsRateCardProductOutputWi
 	return o
 }
 
-func (o GetRatecardsRateCardProductOutput) ToOutput(ctx context.Context) pulumix.Output[GetRatecardsRateCardProduct] {
-	return pulumix.Output[GetRatecardsRateCardProduct]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Metered service billing category
-func (o GetRatecardsRateCardProductOutput) BillingCategory() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRatecardsRateCardProduct) string { return v.BillingCategory }).(pulumi.StringOutput)
+func (o GetRatecardsRateCardProductOutput) BillingCategory() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRatecardsRateCardProduct) *string { return v.BillingCategory }).(pulumi.StringPtrOutput)
 }
 
 // Product name
-func (o GetRatecardsRateCardProductOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRatecardsRateCardProduct) string { return v.Name }).(pulumi.StringOutput)
+func (o GetRatecardsRateCardProductOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRatecardsRateCardProduct) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // This param is used to get the rate card(s) filterd by the partNumber
-func (o GetRatecardsRateCardProductOutput) PartNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRatecardsRateCardProduct) string { return v.PartNumber }).(pulumi.StringOutput)
+func (o GetRatecardsRateCardProductOutput) PartNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRatecardsRateCardProduct) *string { return v.PartNumber }).(pulumi.StringPtrOutput)
 }
 
 // Product category
-func (o GetRatecardsRateCardProductOutput) ProductCategory() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRatecardsRateCardProduct) string { return v.ProductCategory }).(pulumi.StringOutput)
+func (o GetRatecardsRateCardProductOutput) ProductCategory() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRatecardsRateCardProduct) *string { return v.ProductCategory }).(pulumi.StringPtrOutput)
 }
 
 // Rate card part type of Product
-func (o GetRatecardsRateCardProductOutput) UcmRateCardPartType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRatecardsRateCardProduct) string { return v.UcmRateCardPartType }).(pulumi.StringOutput)
+func (o GetRatecardsRateCardProductOutput) UcmRateCardPartType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRatecardsRateCardProduct) *string { return v.UcmRateCardPartType }).(pulumi.StringPtrOutput)
 }
 
 // Unit of measure
-func (o GetRatecardsRateCardProductOutput) UnitOfMeasure() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRatecardsRateCardProduct) string { return v.UnitOfMeasure }).(pulumi.StringOutput)
+func (o GetRatecardsRateCardProductOutput) UnitOfMeasure() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRatecardsRateCardProduct) *string { return v.UnitOfMeasure }).(pulumi.StringPtrOutput)
 }
 
 type GetRatecardsRateCardProductArrayOutput struct{ *pulumi.OutputState }
@@ -6606,12 +5701,6 @@ func (o GetRatecardsRateCardProductArrayOutput) ToGetRatecardsRateCardProductArr
 	return o
 }
 
-func (o GetRatecardsRateCardProductArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRatecardsRateCardProduct] {
-	return pulumix.Output[[]GetRatecardsRateCardProduct]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetRatecardsRateCardProductArrayOutput) Index(i pulumi.IntInput) GetRatecardsRateCardProductOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRatecardsRateCardProduct {
 		return vs[0].([]GetRatecardsRateCardProduct)[vs[1].(int)]
@@ -6620,11 +5709,11 @@ func (o GetRatecardsRateCardProductArrayOutput) Index(i pulumi.IntInput) GetRate
 
 type GetRatecardsRateCardRateCardTier struct {
 	// Rate card tier net unit price
-	NetUnitPrice string `pulumi:"netUnitPrice"`
+	NetUnitPrice *string `pulumi:"netUnitPrice"`
 	// Rate card tier overage price
-	OveragePrice string `pulumi:"overagePrice"`
+	OveragePrice *string `pulumi:"overagePrice"`
 	// Rate card tier quantity range
-	UpToQuantity string `pulumi:"upToQuantity"`
+	UpToQuantity *string `pulumi:"upToQuantity"`
 }
 
 // GetRatecardsRateCardRateCardTierInput is an input type that accepts GetRatecardsRateCardRateCardTierArgs and GetRatecardsRateCardRateCardTierOutput values.
@@ -6640,11 +5729,11 @@ type GetRatecardsRateCardRateCardTierInput interface {
 
 type GetRatecardsRateCardRateCardTierArgs struct {
 	// Rate card tier net unit price
-	NetUnitPrice pulumi.StringInput `pulumi:"netUnitPrice"`
+	NetUnitPrice pulumi.StringPtrInput `pulumi:"netUnitPrice"`
 	// Rate card tier overage price
-	OveragePrice pulumi.StringInput `pulumi:"overagePrice"`
+	OveragePrice pulumi.StringPtrInput `pulumi:"overagePrice"`
 	// Rate card tier quantity range
-	UpToQuantity pulumi.StringInput `pulumi:"upToQuantity"`
+	UpToQuantity pulumi.StringPtrInput `pulumi:"upToQuantity"`
 }
 
 func (GetRatecardsRateCardRateCardTierArgs) ElementType() reflect.Type {
@@ -6657,12 +5746,6 @@ func (i GetRatecardsRateCardRateCardTierArgs) ToGetRatecardsRateCardRateCardTier
 
 func (i GetRatecardsRateCardRateCardTierArgs) ToGetRatecardsRateCardRateCardTierOutputWithContext(ctx context.Context) GetRatecardsRateCardRateCardTierOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetRatecardsRateCardRateCardTierOutput)
-}
-
-func (i GetRatecardsRateCardRateCardTierArgs) ToOutput(ctx context.Context) pulumix.Output[GetRatecardsRateCardRateCardTier] {
-	return pulumix.Output[GetRatecardsRateCardRateCardTier]{
-		OutputState: i.ToGetRatecardsRateCardRateCardTierOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetRatecardsRateCardRateCardTierArrayInput is an input type that accepts GetRatecardsRateCardRateCardTierArray and GetRatecardsRateCardRateCardTierArrayOutput values.
@@ -6690,12 +5773,6 @@ func (i GetRatecardsRateCardRateCardTierArray) ToGetRatecardsRateCardRateCardTie
 	return pulumi.ToOutputWithContext(ctx, i).(GetRatecardsRateCardRateCardTierArrayOutput)
 }
 
-func (i GetRatecardsRateCardRateCardTierArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRatecardsRateCardRateCardTier] {
-	return pulumix.Output[[]GetRatecardsRateCardRateCardTier]{
-		OutputState: i.ToGetRatecardsRateCardRateCardTierArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRatecardsRateCardRateCardTierOutput struct{ *pulumi.OutputState }
 
 func (GetRatecardsRateCardRateCardTierOutput) ElementType() reflect.Type {
@@ -6710,25 +5787,19 @@ func (o GetRatecardsRateCardRateCardTierOutput) ToGetRatecardsRateCardRateCardTi
 	return o
 }
 
-func (o GetRatecardsRateCardRateCardTierOutput) ToOutput(ctx context.Context) pulumix.Output[GetRatecardsRateCardRateCardTier] {
-	return pulumix.Output[GetRatecardsRateCardRateCardTier]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Rate card tier net unit price
-func (o GetRatecardsRateCardRateCardTierOutput) NetUnitPrice() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRatecardsRateCardRateCardTier) string { return v.NetUnitPrice }).(pulumi.StringOutput)
+func (o GetRatecardsRateCardRateCardTierOutput) NetUnitPrice() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRatecardsRateCardRateCardTier) *string { return v.NetUnitPrice }).(pulumi.StringPtrOutput)
 }
 
 // Rate card tier overage price
-func (o GetRatecardsRateCardRateCardTierOutput) OveragePrice() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRatecardsRateCardRateCardTier) string { return v.OveragePrice }).(pulumi.StringOutput)
+func (o GetRatecardsRateCardRateCardTierOutput) OveragePrice() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRatecardsRateCardRateCardTier) *string { return v.OveragePrice }).(pulumi.StringPtrOutput)
 }
 
 // Rate card tier quantity range
-func (o GetRatecardsRateCardRateCardTierOutput) UpToQuantity() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRatecardsRateCardRateCardTier) string { return v.UpToQuantity }).(pulumi.StringOutput)
+func (o GetRatecardsRateCardRateCardTierOutput) UpToQuantity() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRatecardsRateCardRateCardTier) *string { return v.UpToQuantity }).(pulumi.StringPtrOutput)
 }
 
 type GetRatecardsRateCardRateCardTierArrayOutput struct{ *pulumi.OutputState }
@@ -6745,12 +5816,6 @@ func (o GetRatecardsRateCardRateCardTierArrayOutput) ToGetRatecardsRateCardRateC
 	return o
 }
 
-func (o GetRatecardsRateCardRateCardTierArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRatecardsRateCardRateCardTier] {
-	return pulumix.Output[[]GetRatecardsRateCardRateCardTier]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetRatecardsRateCardRateCardTierArrayOutput) Index(i pulumi.IntInput) GetRatecardsRateCardRateCardTierOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRatecardsRateCardRateCardTier {
 		return vs[0].([]GetRatecardsRateCardRateCardTier)[vs[1].(int)]
@@ -6759,23 +5824,23 @@ func (o GetRatecardsRateCardRateCardTierArrayOutput) Index(i pulumi.IntInput) Ge
 
 type GetSubscribedServiceBillToAddress struct {
 	// Bill to site use Id.
-	BillSiteUseId string `pulumi:"billSiteUseId"`
+	BillSiteUseId *string `pulumi:"billSiteUseId"`
 	// Identify as the customer shipping address.
-	IsBillTo bool `pulumi:"isBillTo"`
+	IsBillTo *bool `pulumi:"isBillTo"`
 	// Identify as the customer invoicing address.
-	IsShipTo bool `pulumi:"isShipTo"`
+	IsShipTo *bool `pulumi:"isShipTo"`
 	// Address location.
 	Locations []GetSubscribedServiceBillToAddressLocation `pulumi:"locations"`
 	// Commercial name also called customer name.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Phone.
-	Phone string `pulumi:"phone"`
+	Phone *string `pulumi:"phone"`
 	// Service to site use Id.
-	Service2siteUseId string `pulumi:"service2siteUseId"`
+	Service2siteUseId *string `pulumi:"service2siteUseId"`
 	// TCA customer account site Id.
-	TcaCustAcctSiteId string `pulumi:"tcaCustAcctSiteId"`
+	TcaCustAcctSiteId *string `pulumi:"tcaCustAcctSiteId"`
 	// Party site number.
-	TcaPartySiteNumber string `pulumi:"tcaPartySiteNumber"`
+	TcaPartySiteNumber *string `pulumi:"tcaPartySiteNumber"`
 }
 
 // GetSubscribedServiceBillToAddressInput is an input type that accepts GetSubscribedServiceBillToAddressArgs and GetSubscribedServiceBillToAddressOutput values.
@@ -6791,23 +5856,23 @@ type GetSubscribedServiceBillToAddressInput interface {
 
 type GetSubscribedServiceBillToAddressArgs struct {
 	// Bill to site use Id.
-	BillSiteUseId pulumi.StringInput `pulumi:"billSiteUseId"`
+	BillSiteUseId pulumi.StringPtrInput `pulumi:"billSiteUseId"`
 	// Identify as the customer shipping address.
-	IsBillTo pulumi.BoolInput `pulumi:"isBillTo"`
+	IsBillTo pulumi.BoolPtrInput `pulumi:"isBillTo"`
 	// Identify as the customer invoicing address.
-	IsShipTo pulumi.BoolInput `pulumi:"isShipTo"`
+	IsShipTo pulumi.BoolPtrInput `pulumi:"isShipTo"`
 	// Address location.
 	Locations GetSubscribedServiceBillToAddressLocationArrayInput `pulumi:"locations"`
 	// Commercial name also called customer name.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Phone.
-	Phone pulumi.StringInput `pulumi:"phone"`
+	Phone pulumi.StringPtrInput `pulumi:"phone"`
 	// Service to site use Id.
-	Service2siteUseId pulumi.StringInput `pulumi:"service2siteUseId"`
+	Service2siteUseId pulumi.StringPtrInput `pulumi:"service2siteUseId"`
 	// TCA customer account site Id.
-	TcaCustAcctSiteId pulumi.StringInput `pulumi:"tcaCustAcctSiteId"`
+	TcaCustAcctSiteId pulumi.StringPtrInput `pulumi:"tcaCustAcctSiteId"`
 	// Party site number.
-	TcaPartySiteNumber pulumi.StringInput `pulumi:"tcaPartySiteNumber"`
+	TcaPartySiteNumber pulumi.StringPtrInput `pulumi:"tcaPartySiteNumber"`
 }
 
 func (GetSubscribedServiceBillToAddressArgs) ElementType() reflect.Type {
@@ -6820,12 +5885,6 @@ func (i GetSubscribedServiceBillToAddressArgs) ToGetSubscribedServiceBillToAddre
 
 func (i GetSubscribedServiceBillToAddressArgs) ToGetSubscribedServiceBillToAddressOutputWithContext(ctx context.Context) GetSubscribedServiceBillToAddressOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServiceBillToAddressOutput)
-}
-
-func (i GetSubscribedServiceBillToAddressArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServiceBillToAddress] {
-	return pulumix.Output[GetSubscribedServiceBillToAddress]{
-		OutputState: i.ToGetSubscribedServiceBillToAddressOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscribedServiceBillToAddressArrayInput is an input type that accepts GetSubscribedServiceBillToAddressArray and GetSubscribedServiceBillToAddressArrayOutput values.
@@ -6853,12 +5912,6 @@ func (i GetSubscribedServiceBillToAddressArray) ToGetSubscribedServiceBillToAddr
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServiceBillToAddressArrayOutput)
 }
 
-func (i GetSubscribedServiceBillToAddressArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServiceBillToAddress] {
-	return pulumix.Output[[]GetSubscribedServiceBillToAddress]{
-		OutputState: i.ToGetSubscribedServiceBillToAddressArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscribedServiceBillToAddressOutput struct{ *pulumi.OutputState }
 
 func (GetSubscribedServiceBillToAddressOutput) ElementType() reflect.Type {
@@ -6873,25 +5926,19 @@ func (o GetSubscribedServiceBillToAddressOutput) ToGetSubscribedServiceBillToAdd
 	return o
 }
 
-func (o GetSubscribedServiceBillToAddressOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServiceBillToAddress] {
-	return pulumix.Output[GetSubscribedServiceBillToAddress]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Bill to site use Id.
-func (o GetSubscribedServiceBillToAddressOutput) BillSiteUseId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceBillToAddress) string { return v.BillSiteUseId }).(pulumi.StringOutput)
+func (o GetSubscribedServiceBillToAddressOutput) BillSiteUseId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceBillToAddress) *string { return v.BillSiteUseId }).(pulumi.StringPtrOutput)
 }
 
 // Identify as the customer shipping address.
-func (o GetSubscribedServiceBillToAddressOutput) IsBillTo() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSubscribedServiceBillToAddress) bool { return v.IsBillTo }).(pulumi.BoolOutput)
+func (o GetSubscribedServiceBillToAddressOutput) IsBillTo() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceBillToAddress) *bool { return v.IsBillTo }).(pulumi.BoolPtrOutput)
 }
 
 // Identify as the customer invoicing address.
-func (o GetSubscribedServiceBillToAddressOutput) IsShipTo() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSubscribedServiceBillToAddress) bool { return v.IsShipTo }).(pulumi.BoolOutput)
+func (o GetSubscribedServiceBillToAddressOutput) IsShipTo() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceBillToAddress) *bool { return v.IsShipTo }).(pulumi.BoolPtrOutput)
 }
 
 // Address location.
@@ -6902,28 +5949,28 @@ func (o GetSubscribedServiceBillToAddressOutput) Locations() GetSubscribedServic
 }
 
 // Commercial name also called customer name.
-func (o GetSubscribedServiceBillToAddressOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceBillToAddress) string { return v.Name }).(pulumi.StringOutput)
+func (o GetSubscribedServiceBillToAddressOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceBillToAddress) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Phone.
-func (o GetSubscribedServiceBillToAddressOutput) Phone() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceBillToAddress) string { return v.Phone }).(pulumi.StringOutput)
+func (o GetSubscribedServiceBillToAddressOutput) Phone() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceBillToAddress) *string { return v.Phone }).(pulumi.StringPtrOutput)
 }
 
 // Service to site use Id.
-func (o GetSubscribedServiceBillToAddressOutput) Service2siteUseId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceBillToAddress) string { return v.Service2siteUseId }).(pulumi.StringOutput)
+func (o GetSubscribedServiceBillToAddressOutput) Service2siteUseId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceBillToAddress) *string { return v.Service2siteUseId }).(pulumi.StringPtrOutput)
 }
 
 // TCA customer account site Id.
-func (o GetSubscribedServiceBillToAddressOutput) TcaCustAcctSiteId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceBillToAddress) string { return v.TcaCustAcctSiteId }).(pulumi.StringOutput)
+func (o GetSubscribedServiceBillToAddressOutput) TcaCustAcctSiteId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceBillToAddress) *string { return v.TcaCustAcctSiteId }).(pulumi.StringPtrOutput)
 }
 
 // Party site number.
-func (o GetSubscribedServiceBillToAddressOutput) TcaPartySiteNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceBillToAddress) string { return v.TcaPartySiteNumber }).(pulumi.StringOutput)
+func (o GetSubscribedServiceBillToAddressOutput) TcaPartySiteNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceBillToAddress) *string { return v.TcaPartySiteNumber }).(pulumi.StringPtrOutput)
 }
 
 type GetSubscribedServiceBillToAddressArrayOutput struct{ *pulumi.OutputState }
@@ -6940,12 +5987,6 @@ func (o GetSubscribedServiceBillToAddressArrayOutput) ToGetSubscribedServiceBill
 	return o
 }
 
-func (o GetSubscribedServiceBillToAddressArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServiceBillToAddress] {
-	return pulumix.Output[[]GetSubscribedServiceBillToAddress]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscribedServiceBillToAddressArrayOutput) Index(i pulumi.IntInput) GetSubscribedServiceBillToAddressOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscribedServiceBillToAddress {
 		return vs[0].([]GetSubscribedServiceBillToAddress)[vs[1].(int)]
@@ -6954,19 +5995,19 @@ func (o GetSubscribedServiceBillToAddressArrayOutput) Index(i pulumi.IntInput) G
 
 type GetSubscribedServiceBillToAddressLocation struct {
 	// Address first line.
-	Address1 string `pulumi:"address1"`
+	Address1 *string `pulumi:"address1"`
 	// Address second line.
-	Address2 string `pulumi:"address2"`
+	Address2 *string `pulumi:"address2"`
 	// City.
-	City string `pulumi:"city"`
+	City *string `pulumi:"city"`
 	// Country.
-	Country string `pulumi:"country"`
+	Country *string `pulumi:"country"`
 	// Postal code.
-	PostalCode string `pulumi:"postalCode"`
+	PostalCode *string `pulumi:"postalCode"`
 	// Region.
-	Region string `pulumi:"region"`
+	Region *string `pulumi:"region"`
 	// Region.
-	TcaLocationId string `pulumi:"tcaLocationId"`
+	TcaLocationId *string `pulumi:"tcaLocationId"`
 }
 
 // GetSubscribedServiceBillToAddressLocationInput is an input type that accepts GetSubscribedServiceBillToAddressLocationArgs and GetSubscribedServiceBillToAddressLocationOutput values.
@@ -6982,19 +6023,19 @@ type GetSubscribedServiceBillToAddressLocationInput interface {
 
 type GetSubscribedServiceBillToAddressLocationArgs struct {
 	// Address first line.
-	Address1 pulumi.StringInput `pulumi:"address1"`
+	Address1 pulumi.StringPtrInput `pulumi:"address1"`
 	// Address second line.
-	Address2 pulumi.StringInput `pulumi:"address2"`
+	Address2 pulumi.StringPtrInput `pulumi:"address2"`
 	// City.
-	City pulumi.StringInput `pulumi:"city"`
+	City pulumi.StringPtrInput `pulumi:"city"`
 	// Country.
-	Country pulumi.StringInput `pulumi:"country"`
+	Country pulumi.StringPtrInput `pulumi:"country"`
 	// Postal code.
-	PostalCode pulumi.StringInput `pulumi:"postalCode"`
+	PostalCode pulumi.StringPtrInput `pulumi:"postalCode"`
 	// Region.
-	Region pulumi.StringInput `pulumi:"region"`
+	Region pulumi.StringPtrInput `pulumi:"region"`
 	// Region.
-	TcaLocationId pulumi.StringInput `pulumi:"tcaLocationId"`
+	TcaLocationId pulumi.StringPtrInput `pulumi:"tcaLocationId"`
 }
 
 func (GetSubscribedServiceBillToAddressLocationArgs) ElementType() reflect.Type {
@@ -7007,12 +6048,6 @@ func (i GetSubscribedServiceBillToAddressLocationArgs) ToGetSubscribedServiceBil
 
 func (i GetSubscribedServiceBillToAddressLocationArgs) ToGetSubscribedServiceBillToAddressLocationOutputWithContext(ctx context.Context) GetSubscribedServiceBillToAddressLocationOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServiceBillToAddressLocationOutput)
-}
-
-func (i GetSubscribedServiceBillToAddressLocationArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServiceBillToAddressLocation] {
-	return pulumix.Output[GetSubscribedServiceBillToAddressLocation]{
-		OutputState: i.ToGetSubscribedServiceBillToAddressLocationOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscribedServiceBillToAddressLocationArrayInput is an input type that accepts GetSubscribedServiceBillToAddressLocationArray and GetSubscribedServiceBillToAddressLocationArrayOutput values.
@@ -7040,12 +6075,6 @@ func (i GetSubscribedServiceBillToAddressLocationArray) ToGetSubscribedServiceBi
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServiceBillToAddressLocationArrayOutput)
 }
 
-func (i GetSubscribedServiceBillToAddressLocationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServiceBillToAddressLocation] {
-	return pulumix.Output[[]GetSubscribedServiceBillToAddressLocation]{
-		OutputState: i.ToGetSubscribedServiceBillToAddressLocationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscribedServiceBillToAddressLocationOutput struct{ *pulumi.OutputState }
 
 func (GetSubscribedServiceBillToAddressLocationOutput) ElementType() reflect.Type {
@@ -7060,45 +6089,39 @@ func (o GetSubscribedServiceBillToAddressLocationOutput) ToGetSubscribedServiceB
 	return o
 }
 
-func (o GetSubscribedServiceBillToAddressLocationOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServiceBillToAddressLocation] {
-	return pulumix.Output[GetSubscribedServiceBillToAddressLocation]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Address first line.
-func (o GetSubscribedServiceBillToAddressLocationOutput) Address1() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceBillToAddressLocation) string { return v.Address1 }).(pulumi.StringOutput)
+func (o GetSubscribedServiceBillToAddressLocationOutput) Address1() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceBillToAddressLocation) *string { return v.Address1 }).(pulumi.StringPtrOutput)
 }
 
 // Address second line.
-func (o GetSubscribedServiceBillToAddressLocationOutput) Address2() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceBillToAddressLocation) string { return v.Address2 }).(pulumi.StringOutput)
+func (o GetSubscribedServiceBillToAddressLocationOutput) Address2() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceBillToAddressLocation) *string { return v.Address2 }).(pulumi.StringPtrOutput)
 }
 
 // City.
-func (o GetSubscribedServiceBillToAddressLocationOutput) City() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceBillToAddressLocation) string { return v.City }).(pulumi.StringOutput)
+func (o GetSubscribedServiceBillToAddressLocationOutput) City() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceBillToAddressLocation) *string { return v.City }).(pulumi.StringPtrOutput)
 }
 
 // Country.
-func (o GetSubscribedServiceBillToAddressLocationOutput) Country() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceBillToAddressLocation) string { return v.Country }).(pulumi.StringOutput)
+func (o GetSubscribedServiceBillToAddressLocationOutput) Country() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceBillToAddressLocation) *string { return v.Country }).(pulumi.StringPtrOutput)
 }
 
 // Postal code.
-func (o GetSubscribedServiceBillToAddressLocationOutput) PostalCode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceBillToAddressLocation) string { return v.PostalCode }).(pulumi.StringOutput)
+func (o GetSubscribedServiceBillToAddressLocationOutput) PostalCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceBillToAddressLocation) *string { return v.PostalCode }).(pulumi.StringPtrOutput)
 }
 
 // Region.
-func (o GetSubscribedServiceBillToAddressLocationOutput) Region() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceBillToAddressLocation) string { return v.Region }).(pulumi.StringOutput)
+func (o GetSubscribedServiceBillToAddressLocationOutput) Region() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceBillToAddressLocation) *string { return v.Region }).(pulumi.StringPtrOutput)
 }
 
 // Region.
-func (o GetSubscribedServiceBillToAddressLocationOutput) TcaLocationId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceBillToAddressLocation) string { return v.TcaLocationId }).(pulumi.StringOutput)
+func (o GetSubscribedServiceBillToAddressLocationOutput) TcaLocationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceBillToAddressLocation) *string { return v.TcaLocationId }).(pulumi.StringPtrOutput)
 }
 
 type GetSubscribedServiceBillToAddressLocationArrayOutput struct{ *pulumi.OutputState }
@@ -7115,12 +6138,6 @@ func (o GetSubscribedServiceBillToAddressLocationArrayOutput) ToGetSubscribedSer
 	return o
 }
 
-func (o GetSubscribedServiceBillToAddressLocationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServiceBillToAddressLocation] {
-	return pulumix.Output[[]GetSubscribedServiceBillToAddressLocation]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscribedServiceBillToAddressLocationArrayOutput) Index(i pulumi.IntInput) GetSubscribedServiceBillToAddressLocationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscribedServiceBillToAddressLocation {
 		return vs[0].([]GetSubscribedServiceBillToAddressLocation)[vs[1].(int)]
@@ -7129,21 +6146,21 @@ func (o GetSubscribedServiceBillToAddressLocationArrayOutput) Index(i pulumi.Int
 
 type GetSubscribedServiceBillToContact struct {
 	// Email.
-	Email string `pulumi:"email"`
+	Email *string `pulumi:"email"`
 	// First name.
-	FirstName string `pulumi:"firstName"`
+	FirstName *string `pulumi:"firstName"`
 	// Last name.
-	LastName string `pulumi:"lastName"`
+	LastName *string `pulumi:"lastName"`
 	// Commercial name also called customer name.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// TCA contact ID.
-	TcaContactId string `pulumi:"tcaContactId"`
+	TcaContactId *string `pulumi:"tcaContactId"`
 	// TCA customer account site ID.
-	TcaCustAccntSiteId string `pulumi:"tcaCustAccntSiteId"`
+	TcaCustAccntSiteId *string `pulumi:"tcaCustAccntSiteId"`
 	// TCA party ID.
-	TcaPartyId string `pulumi:"tcaPartyId"`
+	TcaPartyId *string `pulumi:"tcaPartyId"`
 	// Username.
-	Username string `pulumi:"username"`
+	Username *string `pulumi:"username"`
 }
 
 // GetSubscribedServiceBillToContactInput is an input type that accepts GetSubscribedServiceBillToContactArgs and GetSubscribedServiceBillToContactOutput values.
@@ -7159,21 +6176,21 @@ type GetSubscribedServiceBillToContactInput interface {
 
 type GetSubscribedServiceBillToContactArgs struct {
 	// Email.
-	Email pulumi.StringInput `pulumi:"email"`
+	Email pulumi.StringPtrInput `pulumi:"email"`
 	// First name.
-	FirstName pulumi.StringInput `pulumi:"firstName"`
+	FirstName pulumi.StringPtrInput `pulumi:"firstName"`
 	// Last name.
-	LastName pulumi.StringInput `pulumi:"lastName"`
+	LastName pulumi.StringPtrInput `pulumi:"lastName"`
 	// Commercial name also called customer name.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// TCA contact ID.
-	TcaContactId pulumi.StringInput `pulumi:"tcaContactId"`
+	TcaContactId pulumi.StringPtrInput `pulumi:"tcaContactId"`
 	// TCA customer account site ID.
-	TcaCustAccntSiteId pulumi.StringInput `pulumi:"tcaCustAccntSiteId"`
+	TcaCustAccntSiteId pulumi.StringPtrInput `pulumi:"tcaCustAccntSiteId"`
 	// TCA party ID.
-	TcaPartyId pulumi.StringInput `pulumi:"tcaPartyId"`
+	TcaPartyId pulumi.StringPtrInput `pulumi:"tcaPartyId"`
 	// Username.
-	Username pulumi.StringInput `pulumi:"username"`
+	Username pulumi.StringPtrInput `pulumi:"username"`
 }
 
 func (GetSubscribedServiceBillToContactArgs) ElementType() reflect.Type {
@@ -7186,12 +6203,6 @@ func (i GetSubscribedServiceBillToContactArgs) ToGetSubscribedServiceBillToConta
 
 func (i GetSubscribedServiceBillToContactArgs) ToGetSubscribedServiceBillToContactOutputWithContext(ctx context.Context) GetSubscribedServiceBillToContactOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServiceBillToContactOutput)
-}
-
-func (i GetSubscribedServiceBillToContactArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServiceBillToContact] {
-	return pulumix.Output[GetSubscribedServiceBillToContact]{
-		OutputState: i.ToGetSubscribedServiceBillToContactOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscribedServiceBillToContactArrayInput is an input type that accepts GetSubscribedServiceBillToContactArray and GetSubscribedServiceBillToContactArrayOutput values.
@@ -7219,12 +6230,6 @@ func (i GetSubscribedServiceBillToContactArray) ToGetSubscribedServiceBillToCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServiceBillToContactArrayOutput)
 }
 
-func (i GetSubscribedServiceBillToContactArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServiceBillToContact] {
-	return pulumix.Output[[]GetSubscribedServiceBillToContact]{
-		OutputState: i.ToGetSubscribedServiceBillToContactArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscribedServiceBillToContactOutput struct{ *pulumi.OutputState }
 
 func (GetSubscribedServiceBillToContactOutput) ElementType() reflect.Type {
@@ -7239,50 +6244,44 @@ func (o GetSubscribedServiceBillToContactOutput) ToGetSubscribedServiceBillToCon
 	return o
 }
 
-func (o GetSubscribedServiceBillToContactOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServiceBillToContact] {
-	return pulumix.Output[GetSubscribedServiceBillToContact]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Email.
-func (o GetSubscribedServiceBillToContactOutput) Email() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceBillToContact) string { return v.Email }).(pulumi.StringOutput)
+func (o GetSubscribedServiceBillToContactOutput) Email() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceBillToContact) *string { return v.Email }).(pulumi.StringPtrOutput)
 }
 
 // First name.
-func (o GetSubscribedServiceBillToContactOutput) FirstName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceBillToContact) string { return v.FirstName }).(pulumi.StringOutput)
+func (o GetSubscribedServiceBillToContactOutput) FirstName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceBillToContact) *string { return v.FirstName }).(pulumi.StringPtrOutput)
 }
 
 // Last name.
-func (o GetSubscribedServiceBillToContactOutput) LastName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceBillToContact) string { return v.LastName }).(pulumi.StringOutput)
+func (o GetSubscribedServiceBillToContactOutput) LastName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceBillToContact) *string { return v.LastName }).(pulumi.StringPtrOutput)
 }
 
 // Commercial name also called customer name.
-func (o GetSubscribedServiceBillToContactOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceBillToContact) string { return v.Name }).(pulumi.StringOutput)
+func (o GetSubscribedServiceBillToContactOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceBillToContact) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // TCA contact ID.
-func (o GetSubscribedServiceBillToContactOutput) TcaContactId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceBillToContact) string { return v.TcaContactId }).(pulumi.StringOutput)
+func (o GetSubscribedServiceBillToContactOutput) TcaContactId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceBillToContact) *string { return v.TcaContactId }).(pulumi.StringPtrOutput)
 }
 
 // TCA customer account site ID.
-func (o GetSubscribedServiceBillToContactOutput) TcaCustAccntSiteId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceBillToContact) string { return v.TcaCustAccntSiteId }).(pulumi.StringOutput)
+func (o GetSubscribedServiceBillToContactOutput) TcaCustAccntSiteId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceBillToContact) *string { return v.TcaCustAccntSiteId }).(pulumi.StringPtrOutput)
 }
 
 // TCA party ID.
-func (o GetSubscribedServiceBillToContactOutput) TcaPartyId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceBillToContact) string { return v.TcaPartyId }).(pulumi.StringOutput)
+func (o GetSubscribedServiceBillToContactOutput) TcaPartyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceBillToContact) *string { return v.TcaPartyId }).(pulumi.StringPtrOutput)
 }
 
 // Username.
-func (o GetSubscribedServiceBillToContactOutput) Username() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceBillToContact) string { return v.Username }).(pulumi.StringOutput)
+func (o GetSubscribedServiceBillToContactOutput) Username() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceBillToContact) *string { return v.Username }).(pulumi.StringPtrOutput)
 }
 
 type GetSubscribedServiceBillToContactArrayOutput struct{ *pulumi.OutputState }
@@ -7299,12 +6298,6 @@ func (o GetSubscribedServiceBillToContactArrayOutput) ToGetSubscribedServiceBill
 	return o
 }
 
-func (o GetSubscribedServiceBillToContactArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServiceBillToContact] {
-	return pulumix.Output[[]GetSubscribedServiceBillToContact]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscribedServiceBillToContactArrayOutput) Index(i pulumi.IntInput) GetSubscribedServiceBillToContactOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscribedServiceBillToContact {
 		return vs[0].([]GetSubscribedServiceBillToContact)[vs[1].(int)]
@@ -7313,23 +6306,23 @@ func (o GetSubscribedServiceBillToContactArrayOutput) Index(i pulumi.IntInput) G
 
 type GetSubscribedServiceBillToCustomer struct {
 	// Customer chain type.
-	CustomerChainType string `pulumi:"customerChainType"`
+	CustomerChainType *string `pulumi:"customerChainType"`
 	// The business partner is chain customer or not.
-	IsChainCustomer bool `pulumi:"isChainCustomer"`
+	IsChainCustomer *bool `pulumi:"isChainCustomer"`
 	// The business partner is part of the public sector or not.
-	IsPublicSector bool `pulumi:"isPublicSector"`
+	IsPublicSector *bool `pulumi:"isPublicSector"`
 	// Commercial name also called customer name.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Phonetic name.
-	NamePhonetic string `pulumi:"namePhonetic"`
+	NamePhonetic *string `pulumi:"namePhonetic"`
 	// TCA customer account number.
-	TcaCustAccountNumber string `pulumi:"tcaCustAccountNumber"`
+	TcaCustAccountNumber *string `pulumi:"tcaCustAccountNumber"`
 	// TCA customer account ID.
-	TcaCustomerAccountId string `pulumi:"tcaCustomerAccountId"`
+	TcaCustomerAccountId *string `pulumi:"tcaCustomerAccountId"`
 	// TCA party ID.
-	TcaPartyId string `pulumi:"tcaPartyId"`
+	TcaPartyId *string `pulumi:"tcaPartyId"`
 	// TCA party number.
-	TcaPartyNumber string `pulumi:"tcaPartyNumber"`
+	TcaPartyNumber *string `pulumi:"tcaPartyNumber"`
 }
 
 // GetSubscribedServiceBillToCustomerInput is an input type that accepts GetSubscribedServiceBillToCustomerArgs and GetSubscribedServiceBillToCustomerOutput values.
@@ -7345,23 +6338,23 @@ type GetSubscribedServiceBillToCustomerInput interface {
 
 type GetSubscribedServiceBillToCustomerArgs struct {
 	// Customer chain type.
-	CustomerChainType pulumi.StringInput `pulumi:"customerChainType"`
+	CustomerChainType pulumi.StringPtrInput `pulumi:"customerChainType"`
 	// The business partner is chain customer or not.
-	IsChainCustomer pulumi.BoolInput `pulumi:"isChainCustomer"`
+	IsChainCustomer pulumi.BoolPtrInput `pulumi:"isChainCustomer"`
 	// The business partner is part of the public sector or not.
-	IsPublicSector pulumi.BoolInput `pulumi:"isPublicSector"`
+	IsPublicSector pulumi.BoolPtrInput `pulumi:"isPublicSector"`
 	// Commercial name also called customer name.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Phonetic name.
-	NamePhonetic pulumi.StringInput `pulumi:"namePhonetic"`
+	NamePhonetic pulumi.StringPtrInput `pulumi:"namePhonetic"`
 	// TCA customer account number.
-	TcaCustAccountNumber pulumi.StringInput `pulumi:"tcaCustAccountNumber"`
+	TcaCustAccountNumber pulumi.StringPtrInput `pulumi:"tcaCustAccountNumber"`
 	// TCA customer account ID.
-	TcaCustomerAccountId pulumi.StringInput `pulumi:"tcaCustomerAccountId"`
+	TcaCustomerAccountId pulumi.StringPtrInput `pulumi:"tcaCustomerAccountId"`
 	// TCA party ID.
-	TcaPartyId pulumi.StringInput `pulumi:"tcaPartyId"`
+	TcaPartyId pulumi.StringPtrInput `pulumi:"tcaPartyId"`
 	// TCA party number.
-	TcaPartyNumber pulumi.StringInput `pulumi:"tcaPartyNumber"`
+	TcaPartyNumber pulumi.StringPtrInput `pulumi:"tcaPartyNumber"`
 }
 
 func (GetSubscribedServiceBillToCustomerArgs) ElementType() reflect.Type {
@@ -7374,12 +6367,6 @@ func (i GetSubscribedServiceBillToCustomerArgs) ToGetSubscribedServiceBillToCust
 
 func (i GetSubscribedServiceBillToCustomerArgs) ToGetSubscribedServiceBillToCustomerOutputWithContext(ctx context.Context) GetSubscribedServiceBillToCustomerOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServiceBillToCustomerOutput)
-}
-
-func (i GetSubscribedServiceBillToCustomerArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServiceBillToCustomer] {
-	return pulumix.Output[GetSubscribedServiceBillToCustomer]{
-		OutputState: i.ToGetSubscribedServiceBillToCustomerOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscribedServiceBillToCustomerArrayInput is an input type that accepts GetSubscribedServiceBillToCustomerArray and GetSubscribedServiceBillToCustomerArrayOutput values.
@@ -7407,12 +6394,6 @@ func (i GetSubscribedServiceBillToCustomerArray) ToGetSubscribedServiceBillToCus
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServiceBillToCustomerArrayOutput)
 }
 
-func (i GetSubscribedServiceBillToCustomerArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServiceBillToCustomer] {
-	return pulumix.Output[[]GetSubscribedServiceBillToCustomer]{
-		OutputState: i.ToGetSubscribedServiceBillToCustomerArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscribedServiceBillToCustomerOutput struct{ *pulumi.OutputState }
 
 func (GetSubscribedServiceBillToCustomerOutput) ElementType() reflect.Type {
@@ -7427,55 +6408,49 @@ func (o GetSubscribedServiceBillToCustomerOutput) ToGetSubscribedServiceBillToCu
 	return o
 }
 
-func (o GetSubscribedServiceBillToCustomerOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServiceBillToCustomer] {
-	return pulumix.Output[GetSubscribedServiceBillToCustomer]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Customer chain type.
-func (o GetSubscribedServiceBillToCustomerOutput) CustomerChainType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceBillToCustomer) string { return v.CustomerChainType }).(pulumi.StringOutput)
+func (o GetSubscribedServiceBillToCustomerOutput) CustomerChainType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceBillToCustomer) *string { return v.CustomerChainType }).(pulumi.StringPtrOutput)
 }
 
 // The business partner is chain customer or not.
-func (o GetSubscribedServiceBillToCustomerOutput) IsChainCustomer() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSubscribedServiceBillToCustomer) bool { return v.IsChainCustomer }).(pulumi.BoolOutput)
+func (o GetSubscribedServiceBillToCustomerOutput) IsChainCustomer() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceBillToCustomer) *bool { return v.IsChainCustomer }).(pulumi.BoolPtrOutput)
 }
 
 // The business partner is part of the public sector or not.
-func (o GetSubscribedServiceBillToCustomerOutput) IsPublicSector() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSubscribedServiceBillToCustomer) bool { return v.IsPublicSector }).(pulumi.BoolOutput)
+func (o GetSubscribedServiceBillToCustomerOutput) IsPublicSector() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceBillToCustomer) *bool { return v.IsPublicSector }).(pulumi.BoolPtrOutput)
 }
 
 // Commercial name also called customer name.
-func (o GetSubscribedServiceBillToCustomerOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceBillToCustomer) string { return v.Name }).(pulumi.StringOutput)
+func (o GetSubscribedServiceBillToCustomerOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceBillToCustomer) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Phonetic name.
-func (o GetSubscribedServiceBillToCustomerOutput) NamePhonetic() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceBillToCustomer) string { return v.NamePhonetic }).(pulumi.StringOutput)
+func (o GetSubscribedServiceBillToCustomerOutput) NamePhonetic() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceBillToCustomer) *string { return v.NamePhonetic }).(pulumi.StringPtrOutput)
 }
 
 // TCA customer account number.
-func (o GetSubscribedServiceBillToCustomerOutput) TcaCustAccountNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceBillToCustomer) string { return v.TcaCustAccountNumber }).(pulumi.StringOutput)
+func (o GetSubscribedServiceBillToCustomerOutput) TcaCustAccountNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceBillToCustomer) *string { return v.TcaCustAccountNumber }).(pulumi.StringPtrOutput)
 }
 
 // TCA customer account ID.
-func (o GetSubscribedServiceBillToCustomerOutput) TcaCustomerAccountId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceBillToCustomer) string { return v.TcaCustomerAccountId }).(pulumi.StringOutput)
+func (o GetSubscribedServiceBillToCustomerOutput) TcaCustomerAccountId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceBillToCustomer) *string { return v.TcaCustomerAccountId }).(pulumi.StringPtrOutput)
 }
 
 // TCA party ID.
-func (o GetSubscribedServiceBillToCustomerOutput) TcaPartyId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceBillToCustomer) string { return v.TcaPartyId }).(pulumi.StringOutput)
+func (o GetSubscribedServiceBillToCustomerOutput) TcaPartyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceBillToCustomer) *string { return v.TcaPartyId }).(pulumi.StringPtrOutput)
 }
 
 // TCA party number.
-func (o GetSubscribedServiceBillToCustomerOutput) TcaPartyNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceBillToCustomer) string { return v.TcaPartyNumber }).(pulumi.StringOutput)
+func (o GetSubscribedServiceBillToCustomerOutput) TcaPartyNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceBillToCustomer) *string { return v.TcaPartyNumber }).(pulumi.StringPtrOutput)
 }
 
 type GetSubscribedServiceBillToCustomerArrayOutput struct{ *pulumi.OutputState }
@@ -7492,12 +6467,6 @@ func (o GetSubscribedServiceBillToCustomerArrayOutput) ToGetSubscribedServiceBil
 	return o
 }
 
-func (o GetSubscribedServiceBillToCustomerArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServiceBillToCustomer] {
-	return pulumix.Output[[]GetSubscribedServiceBillToCustomer]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscribedServiceBillToCustomerArrayOutput) Index(i pulumi.IntInput) GetSubscribedServiceBillToCustomerOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscribedServiceBillToCustomer {
 		return vs[0].([]GetSubscribedServiceBillToCustomer)[vs[1].(int)]
@@ -7506,17 +6475,17 @@ func (o GetSubscribedServiceBillToCustomerArrayOutput) Index(i pulumi.IntInput) 
 
 type GetSubscribedServiceCommitmentService struct {
 	// Commitment available amount
-	AvailableAmount string `pulumi:"availableAmount"`
+	AvailableAmount *string `pulumi:"availableAmount"`
 	// Funded Allocation line value example: 12000.00
-	FundedAllocationValue string `pulumi:"fundedAllocationValue"`
+	FundedAllocationValue *string `pulumi:"fundedAllocationValue"`
 	// Subscribed service line net amount
-	LineNetAmount string `pulumi:"lineNetAmount"`
+	LineNetAmount *string `pulumi:"lineNetAmount"`
 	// Subscribed service quantity
-	Quantity string `pulumi:"quantity"`
+	Quantity *string `pulumi:"quantity"`
 	// Subscribed service end date
-	TimeEnd string `pulumi:"timeEnd"`
+	TimeEnd *string `pulumi:"timeEnd"`
 	// Subscribed service start date
-	TimeStart string `pulumi:"timeStart"`
+	TimeStart *string `pulumi:"timeStart"`
 }
 
 // GetSubscribedServiceCommitmentServiceInput is an input type that accepts GetSubscribedServiceCommitmentServiceArgs and GetSubscribedServiceCommitmentServiceOutput values.
@@ -7532,17 +6501,17 @@ type GetSubscribedServiceCommitmentServiceInput interface {
 
 type GetSubscribedServiceCommitmentServiceArgs struct {
 	// Commitment available amount
-	AvailableAmount pulumi.StringInput `pulumi:"availableAmount"`
+	AvailableAmount pulumi.StringPtrInput `pulumi:"availableAmount"`
 	// Funded Allocation line value example: 12000.00
-	FundedAllocationValue pulumi.StringInput `pulumi:"fundedAllocationValue"`
+	FundedAllocationValue pulumi.StringPtrInput `pulumi:"fundedAllocationValue"`
 	// Subscribed service line net amount
-	LineNetAmount pulumi.StringInput `pulumi:"lineNetAmount"`
+	LineNetAmount pulumi.StringPtrInput `pulumi:"lineNetAmount"`
 	// Subscribed service quantity
-	Quantity pulumi.StringInput `pulumi:"quantity"`
+	Quantity pulumi.StringPtrInput `pulumi:"quantity"`
 	// Subscribed service end date
-	TimeEnd pulumi.StringInput `pulumi:"timeEnd"`
+	TimeEnd pulumi.StringPtrInput `pulumi:"timeEnd"`
 	// Subscribed service start date
-	TimeStart pulumi.StringInput `pulumi:"timeStart"`
+	TimeStart pulumi.StringPtrInput `pulumi:"timeStart"`
 }
 
 func (GetSubscribedServiceCommitmentServiceArgs) ElementType() reflect.Type {
@@ -7555,12 +6524,6 @@ func (i GetSubscribedServiceCommitmentServiceArgs) ToGetSubscribedServiceCommitm
 
 func (i GetSubscribedServiceCommitmentServiceArgs) ToGetSubscribedServiceCommitmentServiceOutputWithContext(ctx context.Context) GetSubscribedServiceCommitmentServiceOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServiceCommitmentServiceOutput)
-}
-
-func (i GetSubscribedServiceCommitmentServiceArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServiceCommitmentService] {
-	return pulumix.Output[GetSubscribedServiceCommitmentService]{
-		OutputState: i.ToGetSubscribedServiceCommitmentServiceOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscribedServiceCommitmentServiceArrayInput is an input type that accepts GetSubscribedServiceCommitmentServiceArray and GetSubscribedServiceCommitmentServiceArrayOutput values.
@@ -7588,12 +6551,6 @@ func (i GetSubscribedServiceCommitmentServiceArray) ToGetSubscribedServiceCommit
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServiceCommitmentServiceArrayOutput)
 }
 
-func (i GetSubscribedServiceCommitmentServiceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServiceCommitmentService] {
-	return pulumix.Output[[]GetSubscribedServiceCommitmentService]{
-		OutputState: i.ToGetSubscribedServiceCommitmentServiceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscribedServiceCommitmentServiceOutput struct{ *pulumi.OutputState }
 
 func (GetSubscribedServiceCommitmentServiceOutput) ElementType() reflect.Type {
@@ -7608,40 +6565,34 @@ func (o GetSubscribedServiceCommitmentServiceOutput) ToGetSubscribedServiceCommi
 	return o
 }
 
-func (o GetSubscribedServiceCommitmentServiceOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServiceCommitmentService] {
-	return pulumix.Output[GetSubscribedServiceCommitmentService]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Commitment available amount
-func (o GetSubscribedServiceCommitmentServiceOutput) AvailableAmount() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceCommitmentService) string { return v.AvailableAmount }).(pulumi.StringOutput)
+func (o GetSubscribedServiceCommitmentServiceOutput) AvailableAmount() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceCommitmentService) *string { return v.AvailableAmount }).(pulumi.StringPtrOutput)
 }
 
 // Funded Allocation line value example: 12000.00
-func (o GetSubscribedServiceCommitmentServiceOutput) FundedAllocationValue() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceCommitmentService) string { return v.FundedAllocationValue }).(pulumi.StringOutput)
+func (o GetSubscribedServiceCommitmentServiceOutput) FundedAllocationValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceCommitmentService) *string { return v.FundedAllocationValue }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service line net amount
-func (o GetSubscribedServiceCommitmentServiceOutput) LineNetAmount() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceCommitmentService) string { return v.LineNetAmount }).(pulumi.StringOutput)
+func (o GetSubscribedServiceCommitmentServiceOutput) LineNetAmount() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceCommitmentService) *string { return v.LineNetAmount }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service quantity
-func (o GetSubscribedServiceCommitmentServiceOutput) Quantity() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceCommitmentService) string { return v.Quantity }).(pulumi.StringOutput)
+func (o GetSubscribedServiceCommitmentServiceOutput) Quantity() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceCommitmentService) *string { return v.Quantity }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service end date
-func (o GetSubscribedServiceCommitmentServiceOutput) TimeEnd() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceCommitmentService) string { return v.TimeEnd }).(pulumi.StringOutput)
+func (o GetSubscribedServiceCommitmentServiceOutput) TimeEnd() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceCommitmentService) *string { return v.TimeEnd }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service start date
-func (o GetSubscribedServiceCommitmentServiceOutput) TimeStart() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceCommitmentService) string { return v.TimeStart }).(pulumi.StringOutput)
+func (o GetSubscribedServiceCommitmentServiceOutput) TimeStart() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceCommitmentService) *string { return v.TimeStart }).(pulumi.StringPtrOutput)
 }
 
 type GetSubscribedServiceCommitmentServiceArrayOutput struct{ *pulumi.OutputState }
@@ -7658,12 +6609,6 @@ func (o GetSubscribedServiceCommitmentServiceArrayOutput) ToGetSubscribedService
 	return o
 }
 
-func (o GetSubscribedServiceCommitmentServiceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServiceCommitmentService] {
-	return pulumix.Output[[]GetSubscribedServiceCommitmentService]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscribedServiceCommitmentServiceArrayOutput) Index(i pulumi.IntInput) GetSubscribedServiceCommitmentServiceOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscribedServiceCommitmentService {
 		return vs[0].([]GetSubscribedServiceCommitmentService)[vs[1].(int)]
@@ -7672,23 +6617,23 @@ func (o GetSubscribedServiceCommitmentServiceArrayOutput) Index(i pulumi.IntInpu
 
 type GetSubscribedServiceEndUserAddress struct {
 	// Bill to site use Id.
-	BillSiteUseId string `pulumi:"billSiteUseId"`
+	BillSiteUseId *string `pulumi:"billSiteUseId"`
 	// Identify as the customer shipping address.
-	IsBillTo bool `pulumi:"isBillTo"`
+	IsBillTo *bool `pulumi:"isBillTo"`
 	// Identify as the customer invoicing address.
-	IsShipTo bool `pulumi:"isShipTo"`
+	IsShipTo *bool `pulumi:"isShipTo"`
 	// Address location.
 	Locations []GetSubscribedServiceEndUserAddressLocation `pulumi:"locations"`
 	// Commercial name also called customer name.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Phone.
-	Phone string `pulumi:"phone"`
+	Phone *string `pulumi:"phone"`
 	// Service to site use Id.
-	Service2siteUseId string `pulumi:"service2siteUseId"`
+	Service2siteUseId *string `pulumi:"service2siteUseId"`
 	// TCA customer account site Id.
-	TcaCustAcctSiteId string `pulumi:"tcaCustAcctSiteId"`
+	TcaCustAcctSiteId *string `pulumi:"tcaCustAcctSiteId"`
 	// Party site number.
-	TcaPartySiteNumber string `pulumi:"tcaPartySiteNumber"`
+	TcaPartySiteNumber *string `pulumi:"tcaPartySiteNumber"`
 }
 
 // GetSubscribedServiceEndUserAddressInput is an input type that accepts GetSubscribedServiceEndUserAddressArgs and GetSubscribedServiceEndUserAddressOutput values.
@@ -7704,23 +6649,23 @@ type GetSubscribedServiceEndUserAddressInput interface {
 
 type GetSubscribedServiceEndUserAddressArgs struct {
 	// Bill to site use Id.
-	BillSiteUseId pulumi.StringInput `pulumi:"billSiteUseId"`
+	BillSiteUseId pulumi.StringPtrInput `pulumi:"billSiteUseId"`
 	// Identify as the customer shipping address.
-	IsBillTo pulumi.BoolInput `pulumi:"isBillTo"`
+	IsBillTo pulumi.BoolPtrInput `pulumi:"isBillTo"`
 	// Identify as the customer invoicing address.
-	IsShipTo pulumi.BoolInput `pulumi:"isShipTo"`
+	IsShipTo pulumi.BoolPtrInput `pulumi:"isShipTo"`
 	// Address location.
 	Locations GetSubscribedServiceEndUserAddressLocationArrayInput `pulumi:"locations"`
 	// Commercial name also called customer name.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Phone.
-	Phone pulumi.StringInput `pulumi:"phone"`
+	Phone pulumi.StringPtrInput `pulumi:"phone"`
 	// Service to site use Id.
-	Service2siteUseId pulumi.StringInput `pulumi:"service2siteUseId"`
+	Service2siteUseId pulumi.StringPtrInput `pulumi:"service2siteUseId"`
 	// TCA customer account site Id.
-	TcaCustAcctSiteId pulumi.StringInput `pulumi:"tcaCustAcctSiteId"`
+	TcaCustAcctSiteId pulumi.StringPtrInput `pulumi:"tcaCustAcctSiteId"`
 	// Party site number.
-	TcaPartySiteNumber pulumi.StringInput `pulumi:"tcaPartySiteNumber"`
+	TcaPartySiteNumber pulumi.StringPtrInput `pulumi:"tcaPartySiteNumber"`
 }
 
 func (GetSubscribedServiceEndUserAddressArgs) ElementType() reflect.Type {
@@ -7733,12 +6678,6 @@ func (i GetSubscribedServiceEndUserAddressArgs) ToGetSubscribedServiceEndUserAdd
 
 func (i GetSubscribedServiceEndUserAddressArgs) ToGetSubscribedServiceEndUserAddressOutputWithContext(ctx context.Context) GetSubscribedServiceEndUserAddressOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServiceEndUserAddressOutput)
-}
-
-func (i GetSubscribedServiceEndUserAddressArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServiceEndUserAddress] {
-	return pulumix.Output[GetSubscribedServiceEndUserAddress]{
-		OutputState: i.ToGetSubscribedServiceEndUserAddressOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscribedServiceEndUserAddressArrayInput is an input type that accepts GetSubscribedServiceEndUserAddressArray and GetSubscribedServiceEndUserAddressArrayOutput values.
@@ -7766,12 +6705,6 @@ func (i GetSubscribedServiceEndUserAddressArray) ToGetSubscribedServiceEndUserAd
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServiceEndUserAddressArrayOutput)
 }
 
-func (i GetSubscribedServiceEndUserAddressArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServiceEndUserAddress] {
-	return pulumix.Output[[]GetSubscribedServiceEndUserAddress]{
-		OutputState: i.ToGetSubscribedServiceEndUserAddressArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscribedServiceEndUserAddressOutput struct{ *pulumi.OutputState }
 
 func (GetSubscribedServiceEndUserAddressOutput) ElementType() reflect.Type {
@@ -7786,25 +6719,19 @@ func (o GetSubscribedServiceEndUserAddressOutput) ToGetSubscribedServiceEndUserA
 	return o
 }
 
-func (o GetSubscribedServiceEndUserAddressOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServiceEndUserAddress] {
-	return pulumix.Output[GetSubscribedServiceEndUserAddress]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Bill to site use Id.
-func (o GetSubscribedServiceEndUserAddressOutput) BillSiteUseId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceEndUserAddress) string { return v.BillSiteUseId }).(pulumi.StringOutput)
+func (o GetSubscribedServiceEndUserAddressOutput) BillSiteUseId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceEndUserAddress) *string { return v.BillSiteUseId }).(pulumi.StringPtrOutput)
 }
 
 // Identify as the customer shipping address.
-func (o GetSubscribedServiceEndUserAddressOutput) IsBillTo() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSubscribedServiceEndUserAddress) bool { return v.IsBillTo }).(pulumi.BoolOutput)
+func (o GetSubscribedServiceEndUserAddressOutput) IsBillTo() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceEndUserAddress) *bool { return v.IsBillTo }).(pulumi.BoolPtrOutput)
 }
 
 // Identify as the customer invoicing address.
-func (o GetSubscribedServiceEndUserAddressOutput) IsShipTo() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSubscribedServiceEndUserAddress) bool { return v.IsShipTo }).(pulumi.BoolOutput)
+func (o GetSubscribedServiceEndUserAddressOutput) IsShipTo() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceEndUserAddress) *bool { return v.IsShipTo }).(pulumi.BoolPtrOutput)
 }
 
 // Address location.
@@ -7815,28 +6742,28 @@ func (o GetSubscribedServiceEndUserAddressOutput) Locations() GetSubscribedServi
 }
 
 // Commercial name also called customer name.
-func (o GetSubscribedServiceEndUserAddressOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceEndUserAddress) string { return v.Name }).(pulumi.StringOutput)
+func (o GetSubscribedServiceEndUserAddressOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceEndUserAddress) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Phone.
-func (o GetSubscribedServiceEndUserAddressOutput) Phone() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceEndUserAddress) string { return v.Phone }).(pulumi.StringOutput)
+func (o GetSubscribedServiceEndUserAddressOutput) Phone() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceEndUserAddress) *string { return v.Phone }).(pulumi.StringPtrOutput)
 }
 
 // Service to site use Id.
-func (o GetSubscribedServiceEndUserAddressOutput) Service2siteUseId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceEndUserAddress) string { return v.Service2siteUseId }).(pulumi.StringOutput)
+func (o GetSubscribedServiceEndUserAddressOutput) Service2siteUseId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceEndUserAddress) *string { return v.Service2siteUseId }).(pulumi.StringPtrOutput)
 }
 
 // TCA customer account site Id.
-func (o GetSubscribedServiceEndUserAddressOutput) TcaCustAcctSiteId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceEndUserAddress) string { return v.TcaCustAcctSiteId }).(pulumi.StringOutput)
+func (o GetSubscribedServiceEndUserAddressOutput) TcaCustAcctSiteId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceEndUserAddress) *string { return v.TcaCustAcctSiteId }).(pulumi.StringPtrOutput)
 }
 
 // Party site number.
-func (o GetSubscribedServiceEndUserAddressOutput) TcaPartySiteNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceEndUserAddress) string { return v.TcaPartySiteNumber }).(pulumi.StringOutput)
+func (o GetSubscribedServiceEndUserAddressOutput) TcaPartySiteNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceEndUserAddress) *string { return v.TcaPartySiteNumber }).(pulumi.StringPtrOutput)
 }
 
 type GetSubscribedServiceEndUserAddressArrayOutput struct{ *pulumi.OutputState }
@@ -7853,12 +6780,6 @@ func (o GetSubscribedServiceEndUserAddressArrayOutput) ToGetSubscribedServiceEnd
 	return o
 }
 
-func (o GetSubscribedServiceEndUserAddressArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServiceEndUserAddress] {
-	return pulumix.Output[[]GetSubscribedServiceEndUserAddress]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscribedServiceEndUserAddressArrayOutput) Index(i pulumi.IntInput) GetSubscribedServiceEndUserAddressOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscribedServiceEndUserAddress {
 		return vs[0].([]GetSubscribedServiceEndUserAddress)[vs[1].(int)]
@@ -7867,19 +6788,19 @@ func (o GetSubscribedServiceEndUserAddressArrayOutput) Index(i pulumi.IntInput) 
 
 type GetSubscribedServiceEndUserAddressLocation struct {
 	// Address first line.
-	Address1 string `pulumi:"address1"`
+	Address1 *string `pulumi:"address1"`
 	// Address second line.
-	Address2 string `pulumi:"address2"`
+	Address2 *string `pulumi:"address2"`
 	// City.
-	City string `pulumi:"city"`
+	City *string `pulumi:"city"`
 	// Country.
-	Country string `pulumi:"country"`
+	Country *string `pulumi:"country"`
 	// Postal code.
-	PostalCode string `pulumi:"postalCode"`
+	PostalCode *string `pulumi:"postalCode"`
 	// Region.
-	Region string `pulumi:"region"`
+	Region *string `pulumi:"region"`
 	// Region.
-	TcaLocationId string `pulumi:"tcaLocationId"`
+	TcaLocationId *string `pulumi:"tcaLocationId"`
 }
 
 // GetSubscribedServiceEndUserAddressLocationInput is an input type that accepts GetSubscribedServiceEndUserAddressLocationArgs and GetSubscribedServiceEndUserAddressLocationOutput values.
@@ -7895,19 +6816,19 @@ type GetSubscribedServiceEndUserAddressLocationInput interface {
 
 type GetSubscribedServiceEndUserAddressLocationArgs struct {
 	// Address first line.
-	Address1 pulumi.StringInput `pulumi:"address1"`
+	Address1 pulumi.StringPtrInput `pulumi:"address1"`
 	// Address second line.
-	Address2 pulumi.StringInput `pulumi:"address2"`
+	Address2 pulumi.StringPtrInput `pulumi:"address2"`
 	// City.
-	City pulumi.StringInput `pulumi:"city"`
+	City pulumi.StringPtrInput `pulumi:"city"`
 	// Country.
-	Country pulumi.StringInput `pulumi:"country"`
+	Country pulumi.StringPtrInput `pulumi:"country"`
 	// Postal code.
-	PostalCode pulumi.StringInput `pulumi:"postalCode"`
+	PostalCode pulumi.StringPtrInput `pulumi:"postalCode"`
 	// Region.
-	Region pulumi.StringInput `pulumi:"region"`
+	Region pulumi.StringPtrInput `pulumi:"region"`
 	// Region.
-	TcaLocationId pulumi.StringInput `pulumi:"tcaLocationId"`
+	TcaLocationId pulumi.StringPtrInput `pulumi:"tcaLocationId"`
 }
 
 func (GetSubscribedServiceEndUserAddressLocationArgs) ElementType() reflect.Type {
@@ -7920,12 +6841,6 @@ func (i GetSubscribedServiceEndUserAddressLocationArgs) ToGetSubscribedServiceEn
 
 func (i GetSubscribedServiceEndUserAddressLocationArgs) ToGetSubscribedServiceEndUserAddressLocationOutputWithContext(ctx context.Context) GetSubscribedServiceEndUserAddressLocationOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServiceEndUserAddressLocationOutput)
-}
-
-func (i GetSubscribedServiceEndUserAddressLocationArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServiceEndUserAddressLocation] {
-	return pulumix.Output[GetSubscribedServiceEndUserAddressLocation]{
-		OutputState: i.ToGetSubscribedServiceEndUserAddressLocationOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscribedServiceEndUserAddressLocationArrayInput is an input type that accepts GetSubscribedServiceEndUserAddressLocationArray and GetSubscribedServiceEndUserAddressLocationArrayOutput values.
@@ -7953,12 +6868,6 @@ func (i GetSubscribedServiceEndUserAddressLocationArray) ToGetSubscribedServiceE
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServiceEndUserAddressLocationArrayOutput)
 }
 
-func (i GetSubscribedServiceEndUserAddressLocationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServiceEndUserAddressLocation] {
-	return pulumix.Output[[]GetSubscribedServiceEndUserAddressLocation]{
-		OutputState: i.ToGetSubscribedServiceEndUserAddressLocationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscribedServiceEndUserAddressLocationOutput struct{ *pulumi.OutputState }
 
 func (GetSubscribedServiceEndUserAddressLocationOutput) ElementType() reflect.Type {
@@ -7973,45 +6882,39 @@ func (o GetSubscribedServiceEndUserAddressLocationOutput) ToGetSubscribedService
 	return o
 }
 
-func (o GetSubscribedServiceEndUserAddressLocationOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServiceEndUserAddressLocation] {
-	return pulumix.Output[GetSubscribedServiceEndUserAddressLocation]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Address first line.
-func (o GetSubscribedServiceEndUserAddressLocationOutput) Address1() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceEndUserAddressLocation) string { return v.Address1 }).(pulumi.StringOutput)
+func (o GetSubscribedServiceEndUserAddressLocationOutput) Address1() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceEndUserAddressLocation) *string { return v.Address1 }).(pulumi.StringPtrOutput)
 }
 
 // Address second line.
-func (o GetSubscribedServiceEndUserAddressLocationOutput) Address2() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceEndUserAddressLocation) string { return v.Address2 }).(pulumi.StringOutput)
+func (o GetSubscribedServiceEndUserAddressLocationOutput) Address2() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceEndUserAddressLocation) *string { return v.Address2 }).(pulumi.StringPtrOutput)
 }
 
 // City.
-func (o GetSubscribedServiceEndUserAddressLocationOutput) City() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceEndUserAddressLocation) string { return v.City }).(pulumi.StringOutput)
+func (o GetSubscribedServiceEndUserAddressLocationOutput) City() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceEndUserAddressLocation) *string { return v.City }).(pulumi.StringPtrOutput)
 }
 
 // Country.
-func (o GetSubscribedServiceEndUserAddressLocationOutput) Country() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceEndUserAddressLocation) string { return v.Country }).(pulumi.StringOutput)
+func (o GetSubscribedServiceEndUserAddressLocationOutput) Country() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceEndUserAddressLocation) *string { return v.Country }).(pulumi.StringPtrOutput)
 }
 
 // Postal code.
-func (o GetSubscribedServiceEndUserAddressLocationOutput) PostalCode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceEndUserAddressLocation) string { return v.PostalCode }).(pulumi.StringOutput)
+func (o GetSubscribedServiceEndUserAddressLocationOutput) PostalCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceEndUserAddressLocation) *string { return v.PostalCode }).(pulumi.StringPtrOutput)
 }
 
 // Region.
-func (o GetSubscribedServiceEndUserAddressLocationOutput) Region() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceEndUserAddressLocation) string { return v.Region }).(pulumi.StringOutput)
+func (o GetSubscribedServiceEndUserAddressLocationOutput) Region() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceEndUserAddressLocation) *string { return v.Region }).(pulumi.StringPtrOutput)
 }
 
 // Region.
-func (o GetSubscribedServiceEndUserAddressLocationOutput) TcaLocationId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceEndUserAddressLocation) string { return v.TcaLocationId }).(pulumi.StringOutput)
+func (o GetSubscribedServiceEndUserAddressLocationOutput) TcaLocationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceEndUserAddressLocation) *string { return v.TcaLocationId }).(pulumi.StringPtrOutput)
 }
 
 type GetSubscribedServiceEndUserAddressLocationArrayOutput struct{ *pulumi.OutputState }
@@ -8028,12 +6931,6 @@ func (o GetSubscribedServiceEndUserAddressLocationArrayOutput) ToGetSubscribedSe
 	return o
 }
 
-func (o GetSubscribedServiceEndUserAddressLocationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServiceEndUserAddressLocation] {
-	return pulumix.Output[[]GetSubscribedServiceEndUserAddressLocation]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscribedServiceEndUserAddressLocationArrayOutput) Index(i pulumi.IntInput) GetSubscribedServiceEndUserAddressLocationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscribedServiceEndUserAddressLocation {
 		return vs[0].([]GetSubscribedServiceEndUserAddressLocation)[vs[1].(int)]
@@ -8042,21 +6939,21 @@ func (o GetSubscribedServiceEndUserAddressLocationArrayOutput) Index(i pulumi.In
 
 type GetSubscribedServiceEndUserContact struct {
 	// Email.
-	Email string `pulumi:"email"`
+	Email *string `pulumi:"email"`
 	// First name.
-	FirstName string `pulumi:"firstName"`
+	FirstName *string `pulumi:"firstName"`
 	// Last name.
-	LastName string `pulumi:"lastName"`
+	LastName *string `pulumi:"lastName"`
 	// Commercial name also called customer name.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// TCA contact ID.
-	TcaContactId string `pulumi:"tcaContactId"`
+	TcaContactId *string `pulumi:"tcaContactId"`
 	// TCA customer account site ID.
-	TcaCustAccntSiteId string `pulumi:"tcaCustAccntSiteId"`
+	TcaCustAccntSiteId *string `pulumi:"tcaCustAccntSiteId"`
 	// TCA party ID.
-	TcaPartyId string `pulumi:"tcaPartyId"`
+	TcaPartyId *string `pulumi:"tcaPartyId"`
 	// Username.
-	Username string `pulumi:"username"`
+	Username *string `pulumi:"username"`
 }
 
 // GetSubscribedServiceEndUserContactInput is an input type that accepts GetSubscribedServiceEndUserContactArgs and GetSubscribedServiceEndUserContactOutput values.
@@ -8072,21 +6969,21 @@ type GetSubscribedServiceEndUserContactInput interface {
 
 type GetSubscribedServiceEndUserContactArgs struct {
 	// Email.
-	Email pulumi.StringInput `pulumi:"email"`
+	Email pulumi.StringPtrInput `pulumi:"email"`
 	// First name.
-	FirstName pulumi.StringInput `pulumi:"firstName"`
+	FirstName pulumi.StringPtrInput `pulumi:"firstName"`
 	// Last name.
-	LastName pulumi.StringInput `pulumi:"lastName"`
+	LastName pulumi.StringPtrInput `pulumi:"lastName"`
 	// Commercial name also called customer name.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// TCA contact ID.
-	TcaContactId pulumi.StringInput `pulumi:"tcaContactId"`
+	TcaContactId pulumi.StringPtrInput `pulumi:"tcaContactId"`
 	// TCA customer account site ID.
-	TcaCustAccntSiteId pulumi.StringInput `pulumi:"tcaCustAccntSiteId"`
+	TcaCustAccntSiteId pulumi.StringPtrInput `pulumi:"tcaCustAccntSiteId"`
 	// TCA party ID.
-	TcaPartyId pulumi.StringInput `pulumi:"tcaPartyId"`
+	TcaPartyId pulumi.StringPtrInput `pulumi:"tcaPartyId"`
 	// Username.
-	Username pulumi.StringInput `pulumi:"username"`
+	Username pulumi.StringPtrInput `pulumi:"username"`
 }
 
 func (GetSubscribedServiceEndUserContactArgs) ElementType() reflect.Type {
@@ -8099,12 +6996,6 @@ func (i GetSubscribedServiceEndUserContactArgs) ToGetSubscribedServiceEndUserCon
 
 func (i GetSubscribedServiceEndUserContactArgs) ToGetSubscribedServiceEndUserContactOutputWithContext(ctx context.Context) GetSubscribedServiceEndUserContactOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServiceEndUserContactOutput)
-}
-
-func (i GetSubscribedServiceEndUserContactArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServiceEndUserContact] {
-	return pulumix.Output[GetSubscribedServiceEndUserContact]{
-		OutputState: i.ToGetSubscribedServiceEndUserContactOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscribedServiceEndUserContactArrayInput is an input type that accepts GetSubscribedServiceEndUserContactArray and GetSubscribedServiceEndUserContactArrayOutput values.
@@ -8132,12 +7023,6 @@ func (i GetSubscribedServiceEndUserContactArray) ToGetSubscribedServiceEndUserCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServiceEndUserContactArrayOutput)
 }
 
-func (i GetSubscribedServiceEndUserContactArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServiceEndUserContact] {
-	return pulumix.Output[[]GetSubscribedServiceEndUserContact]{
-		OutputState: i.ToGetSubscribedServiceEndUserContactArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscribedServiceEndUserContactOutput struct{ *pulumi.OutputState }
 
 func (GetSubscribedServiceEndUserContactOutput) ElementType() reflect.Type {
@@ -8152,50 +7037,44 @@ func (o GetSubscribedServiceEndUserContactOutput) ToGetSubscribedServiceEndUserC
 	return o
 }
 
-func (o GetSubscribedServiceEndUserContactOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServiceEndUserContact] {
-	return pulumix.Output[GetSubscribedServiceEndUserContact]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Email.
-func (o GetSubscribedServiceEndUserContactOutput) Email() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceEndUserContact) string { return v.Email }).(pulumi.StringOutput)
+func (o GetSubscribedServiceEndUserContactOutput) Email() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceEndUserContact) *string { return v.Email }).(pulumi.StringPtrOutput)
 }
 
 // First name.
-func (o GetSubscribedServiceEndUserContactOutput) FirstName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceEndUserContact) string { return v.FirstName }).(pulumi.StringOutput)
+func (o GetSubscribedServiceEndUserContactOutput) FirstName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceEndUserContact) *string { return v.FirstName }).(pulumi.StringPtrOutput)
 }
 
 // Last name.
-func (o GetSubscribedServiceEndUserContactOutput) LastName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceEndUserContact) string { return v.LastName }).(pulumi.StringOutput)
+func (o GetSubscribedServiceEndUserContactOutput) LastName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceEndUserContact) *string { return v.LastName }).(pulumi.StringPtrOutput)
 }
 
 // Commercial name also called customer name.
-func (o GetSubscribedServiceEndUserContactOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceEndUserContact) string { return v.Name }).(pulumi.StringOutput)
+func (o GetSubscribedServiceEndUserContactOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceEndUserContact) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // TCA contact ID.
-func (o GetSubscribedServiceEndUserContactOutput) TcaContactId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceEndUserContact) string { return v.TcaContactId }).(pulumi.StringOutput)
+func (o GetSubscribedServiceEndUserContactOutput) TcaContactId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceEndUserContact) *string { return v.TcaContactId }).(pulumi.StringPtrOutput)
 }
 
 // TCA customer account site ID.
-func (o GetSubscribedServiceEndUserContactOutput) TcaCustAccntSiteId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceEndUserContact) string { return v.TcaCustAccntSiteId }).(pulumi.StringOutput)
+func (o GetSubscribedServiceEndUserContactOutput) TcaCustAccntSiteId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceEndUserContact) *string { return v.TcaCustAccntSiteId }).(pulumi.StringPtrOutput)
 }
 
 // TCA party ID.
-func (o GetSubscribedServiceEndUserContactOutput) TcaPartyId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceEndUserContact) string { return v.TcaPartyId }).(pulumi.StringOutput)
+func (o GetSubscribedServiceEndUserContactOutput) TcaPartyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceEndUserContact) *string { return v.TcaPartyId }).(pulumi.StringPtrOutput)
 }
 
 // Username.
-func (o GetSubscribedServiceEndUserContactOutput) Username() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceEndUserContact) string { return v.Username }).(pulumi.StringOutput)
+func (o GetSubscribedServiceEndUserContactOutput) Username() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceEndUserContact) *string { return v.Username }).(pulumi.StringPtrOutput)
 }
 
 type GetSubscribedServiceEndUserContactArrayOutput struct{ *pulumi.OutputState }
@@ -8212,12 +7091,6 @@ func (o GetSubscribedServiceEndUserContactArrayOutput) ToGetSubscribedServiceEnd
 	return o
 }
 
-func (o GetSubscribedServiceEndUserContactArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServiceEndUserContact] {
-	return pulumix.Output[[]GetSubscribedServiceEndUserContact]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscribedServiceEndUserContactArrayOutput) Index(i pulumi.IntInput) GetSubscribedServiceEndUserContactOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscribedServiceEndUserContact {
 		return vs[0].([]GetSubscribedServiceEndUserContact)[vs[1].(int)]
@@ -8226,23 +7099,23 @@ func (o GetSubscribedServiceEndUserContactArrayOutput) Index(i pulumi.IntInput) 
 
 type GetSubscribedServiceEndUserCustomer struct {
 	// Customer chain type.
-	CustomerChainType string `pulumi:"customerChainType"`
+	CustomerChainType *string `pulumi:"customerChainType"`
 	// The business partner is chain customer or not.
-	IsChainCustomer bool `pulumi:"isChainCustomer"`
+	IsChainCustomer *bool `pulumi:"isChainCustomer"`
 	// The business partner is part of the public sector or not.
-	IsPublicSector bool `pulumi:"isPublicSector"`
+	IsPublicSector *bool `pulumi:"isPublicSector"`
 	// Commercial name also called customer name.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Phonetic name.
-	NamePhonetic string `pulumi:"namePhonetic"`
+	NamePhonetic *string `pulumi:"namePhonetic"`
 	// TCA customer account number.
-	TcaCustAccountNumber string `pulumi:"tcaCustAccountNumber"`
+	TcaCustAccountNumber *string `pulumi:"tcaCustAccountNumber"`
 	// TCA customer account ID.
-	TcaCustomerAccountId string `pulumi:"tcaCustomerAccountId"`
+	TcaCustomerAccountId *string `pulumi:"tcaCustomerAccountId"`
 	// TCA party ID.
-	TcaPartyId string `pulumi:"tcaPartyId"`
+	TcaPartyId *string `pulumi:"tcaPartyId"`
 	// TCA party number.
-	TcaPartyNumber string `pulumi:"tcaPartyNumber"`
+	TcaPartyNumber *string `pulumi:"tcaPartyNumber"`
 }
 
 // GetSubscribedServiceEndUserCustomerInput is an input type that accepts GetSubscribedServiceEndUserCustomerArgs and GetSubscribedServiceEndUserCustomerOutput values.
@@ -8258,23 +7131,23 @@ type GetSubscribedServiceEndUserCustomerInput interface {
 
 type GetSubscribedServiceEndUserCustomerArgs struct {
 	// Customer chain type.
-	CustomerChainType pulumi.StringInput `pulumi:"customerChainType"`
+	CustomerChainType pulumi.StringPtrInput `pulumi:"customerChainType"`
 	// The business partner is chain customer or not.
-	IsChainCustomer pulumi.BoolInput `pulumi:"isChainCustomer"`
+	IsChainCustomer pulumi.BoolPtrInput `pulumi:"isChainCustomer"`
 	// The business partner is part of the public sector or not.
-	IsPublicSector pulumi.BoolInput `pulumi:"isPublicSector"`
+	IsPublicSector pulumi.BoolPtrInput `pulumi:"isPublicSector"`
 	// Commercial name also called customer name.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Phonetic name.
-	NamePhonetic pulumi.StringInput `pulumi:"namePhonetic"`
+	NamePhonetic pulumi.StringPtrInput `pulumi:"namePhonetic"`
 	// TCA customer account number.
-	TcaCustAccountNumber pulumi.StringInput `pulumi:"tcaCustAccountNumber"`
+	TcaCustAccountNumber pulumi.StringPtrInput `pulumi:"tcaCustAccountNumber"`
 	// TCA customer account ID.
-	TcaCustomerAccountId pulumi.StringInput `pulumi:"tcaCustomerAccountId"`
+	TcaCustomerAccountId pulumi.StringPtrInput `pulumi:"tcaCustomerAccountId"`
 	// TCA party ID.
-	TcaPartyId pulumi.StringInput `pulumi:"tcaPartyId"`
+	TcaPartyId pulumi.StringPtrInput `pulumi:"tcaPartyId"`
 	// TCA party number.
-	TcaPartyNumber pulumi.StringInput `pulumi:"tcaPartyNumber"`
+	TcaPartyNumber pulumi.StringPtrInput `pulumi:"tcaPartyNumber"`
 }
 
 func (GetSubscribedServiceEndUserCustomerArgs) ElementType() reflect.Type {
@@ -8287,12 +7160,6 @@ func (i GetSubscribedServiceEndUserCustomerArgs) ToGetSubscribedServiceEndUserCu
 
 func (i GetSubscribedServiceEndUserCustomerArgs) ToGetSubscribedServiceEndUserCustomerOutputWithContext(ctx context.Context) GetSubscribedServiceEndUserCustomerOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServiceEndUserCustomerOutput)
-}
-
-func (i GetSubscribedServiceEndUserCustomerArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServiceEndUserCustomer] {
-	return pulumix.Output[GetSubscribedServiceEndUserCustomer]{
-		OutputState: i.ToGetSubscribedServiceEndUserCustomerOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscribedServiceEndUserCustomerArrayInput is an input type that accepts GetSubscribedServiceEndUserCustomerArray and GetSubscribedServiceEndUserCustomerArrayOutput values.
@@ -8320,12 +7187,6 @@ func (i GetSubscribedServiceEndUserCustomerArray) ToGetSubscribedServiceEndUserC
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServiceEndUserCustomerArrayOutput)
 }
 
-func (i GetSubscribedServiceEndUserCustomerArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServiceEndUserCustomer] {
-	return pulumix.Output[[]GetSubscribedServiceEndUserCustomer]{
-		OutputState: i.ToGetSubscribedServiceEndUserCustomerArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscribedServiceEndUserCustomerOutput struct{ *pulumi.OutputState }
 
 func (GetSubscribedServiceEndUserCustomerOutput) ElementType() reflect.Type {
@@ -8340,55 +7201,49 @@ func (o GetSubscribedServiceEndUserCustomerOutput) ToGetSubscribedServiceEndUser
 	return o
 }
 
-func (o GetSubscribedServiceEndUserCustomerOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServiceEndUserCustomer] {
-	return pulumix.Output[GetSubscribedServiceEndUserCustomer]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Customer chain type.
-func (o GetSubscribedServiceEndUserCustomerOutput) CustomerChainType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceEndUserCustomer) string { return v.CustomerChainType }).(pulumi.StringOutput)
+func (o GetSubscribedServiceEndUserCustomerOutput) CustomerChainType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceEndUserCustomer) *string { return v.CustomerChainType }).(pulumi.StringPtrOutput)
 }
 
 // The business partner is chain customer or not.
-func (o GetSubscribedServiceEndUserCustomerOutput) IsChainCustomer() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSubscribedServiceEndUserCustomer) bool { return v.IsChainCustomer }).(pulumi.BoolOutput)
+func (o GetSubscribedServiceEndUserCustomerOutput) IsChainCustomer() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceEndUserCustomer) *bool { return v.IsChainCustomer }).(pulumi.BoolPtrOutput)
 }
 
 // The business partner is part of the public sector or not.
-func (o GetSubscribedServiceEndUserCustomerOutput) IsPublicSector() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSubscribedServiceEndUserCustomer) bool { return v.IsPublicSector }).(pulumi.BoolOutput)
+func (o GetSubscribedServiceEndUserCustomerOutput) IsPublicSector() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceEndUserCustomer) *bool { return v.IsPublicSector }).(pulumi.BoolPtrOutput)
 }
 
 // Commercial name also called customer name.
-func (o GetSubscribedServiceEndUserCustomerOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceEndUserCustomer) string { return v.Name }).(pulumi.StringOutput)
+func (o GetSubscribedServiceEndUserCustomerOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceEndUserCustomer) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Phonetic name.
-func (o GetSubscribedServiceEndUserCustomerOutput) NamePhonetic() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceEndUserCustomer) string { return v.NamePhonetic }).(pulumi.StringOutput)
+func (o GetSubscribedServiceEndUserCustomerOutput) NamePhonetic() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceEndUserCustomer) *string { return v.NamePhonetic }).(pulumi.StringPtrOutput)
 }
 
 // TCA customer account number.
-func (o GetSubscribedServiceEndUserCustomerOutput) TcaCustAccountNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceEndUserCustomer) string { return v.TcaCustAccountNumber }).(pulumi.StringOutput)
+func (o GetSubscribedServiceEndUserCustomerOutput) TcaCustAccountNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceEndUserCustomer) *string { return v.TcaCustAccountNumber }).(pulumi.StringPtrOutput)
 }
 
 // TCA customer account ID.
-func (o GetSubscribedServiceEndUserCustomerOutput) TcaCustomerAccountId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceEndUserCustomer) string { return v.TcaCustomerAccountId }).(pulumi.StringOutput)
+func (o GetSubscribedServiceEndUserCustomerOutput) TcaCustomerAccountId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceEndUserCustomer) *string { return v.TcaCustomerAccountId }).(pulumi.StringPtrOutput)
 }
 
 // TCA party ID.
-func (o GetSubscribedServiceEndUserCustomerOutput) TcaPartyId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceEndUserCustomer) string { return v.TcaPartyId }).(pulumi.StringOutput)
+func (o GetSubscribedServiceEndUserCustomerOutput) TcaPartyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceEndUserCustomer) *string { return v.TcaPartyId }).(pulumi.StringPtrOutput)
 }
 
 // TCA party number.
-func (o GetSubscribedServiceEndUserCustomerOutput) TcaPartyNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceEndUserCustomer) string { return v.TcaPartyNumber }).(pulumi.StringOutput)
+func (o GetSubscribedServiceEndUserCustomerOutput) TcaPartyNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceEndUserCustomer) *string { return v.TcaPartyNumber }).(pulumi.StringPtrOutput)
 }
 
 type GetSubscribedServiceEndUserCustomerArrayOutput struct{ *pulumi.OutputState }
@@ -8405,12 +7260,6 @@ func (o GetSubscribedServiceEndUserCustomerArrayOutput) ToGetSubscribedServiceEn
 	return o
 }
 
-func (o GetSubscribedServiceEndUserCustomerArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServiceEndUserCustomer] {
-	return pulumix.Output[[]GetSubscribedServiceEndUserCustomer]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscribedServiceEndUserCustomerArrayOutput) Index(i pulumi.IntInput) GetSubscribedServiceEndUserCustomerOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscribedServiceEndUserCustomer {
 		return vs[0].([]GetSubscribedServiceEndUserCustomer)[vs[1].(int)]
@@ -8419,21 +7268,21 @@ func (o GetSubscribedServiceEndUserCustomerArrayOutput) Index(i pulumi.IntInput)
 
 type GetSubscribedServicePaymentTerm struct {
 	// User that created the Payment term
-	CreatedBy string `pulumi:"createdBy"`
+	CreatedBy *string `pulumi:"createdBy"`
 	// Payment term Description
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Payment term active flag
-	IsActive bool `pulumi:"isActive"`
+	IsActive *bool `pulumi:"isActive"`
 	// Commercial name also called customer name.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Subscribed service creation date
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// Subscribed service last update date
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// User that updated the subscribed service
-	UpdatedBy string `pulumi:"updatedBy"`
+	UpdatedBy *string `pulumi:"updatedBy"`
 	// Payment Term value
-	Value string `pulumi:"value"`
+	Value *string `pulumi:"value"`
 }
 
 // GetSubscribedServicePaymentTermInput is an input type that accepts GetSubscribedServicePaymentTermArgs and GetSubscribedServicePaymentTermOutput values.
@@ -8449,21 +7298,21 @@ type GetSubscribedServicePaymentTermInput interface {
 
 type GetSubscribedServicePaymentTermArgs struct {
 	// User that created the Payment term
-	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
+	CreatedBy pulumi.StringPtrInput `pulumi:"createdBy"`
 	// Payment term Description
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// Payment term active flag
-	IsActive pulumi.BoolInput `pulumi:"isActive"`
+	IsActive pulumi.BoolPtrInput `pulumi:"isActive"`
 	// Commercial name also called customer name.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Subscribed service creation date
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// Subscribed service last update date
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 	// User that updated the subscribed service
-	UpdatedBy pulumi.StringInput `pulumi:"updatedBy"`
+	UpdatedBy pulumi.StringPtrInput `pulumi:"updatedBy"`
 	// Payment Term value
-	Value pulumi.StringInput `pulumi:"value"`
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (GetSubscribedServicePaymentTermArgs) ElementType() reflect.Type {
@@ -8476,12 +7325,6 @@ func (i GetSubscribedServicePaymentTermArgs) ToGetSubscribedServicePaymentTermOu
 
 func (i GetSubscribedServicePaymentTermArgs) ToGetSubscribedServicePaymentTermOutputWithContext(ctx context.Context) GetSubscribedServicePaymentTermOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServicePaymentTermOutput)
-}
-
-func (i GetSubscribedServicePaymentTermArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServicePaymentTerm] {
-	return pulumix.Output[GetSubscribedServicePaymentTerm]{
-		OutputState: i.ToGetSubscribedServicePaymentTermOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscribedServicePaymentTermArrayInput is an input type that accepts GetSubscribedServicePaymentTermArray and GetSubscribedServicePaymentTermArrayOutput values.
@@ -8509,12 +7352,6 @@ func (i GetSubscribedServicePaymentTermArray) ToGetSubscribedServicePaymentTermA
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServicePaymentTermArrayOutput)
 }
 
-func (i GetSubscribedServicePaymentTermArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServicePaymentTerm] {
-	return pulumix.Output[[]GetSubscribedServicePaymentTerm]{
-		OutputState: i.ToGetSubscribedServicePaymentTermArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscribedServicePaymentTermOutput struct{ *pulumi.OutputState }
 
 func (GetSubscribedServicePaymentTermOutput) ElementType() reflect.Type {
@@ -8529,50 +7366,44 @@ func (o GetSubscribedServicePaymentTermOutput) ToGetSubscribedServicePaymentTerm
 	return o
 }
 
-func (o GetSubscribedServicePaymentTermOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServicePaymentTerm] {
-	return pulumix.Output[GetSubscribedServicePaymentTerm]{
-		OutputState: o.OutputState,
-	}
-}
-
 // User that created the Payment term
-func (o GetSubscribedServicePaymentTermOutput) CreatedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicePaymentTerm) string { return v.CreatedBy }).(pulumi.StringOutput)
+func (o GetSubscribedServicePaymentTermOutput) CreatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicePaymentTerm) *string { return v.CreatedBy }).(pulumi.StringPtrOutput)
 }
 
 // Payment term Description
-func (o GetSubscribedServicePaymentTermOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicePaymentTerm) string { return v.Description }).(pulumi.StringOutput)
+func (o GetSubscribedServicePaymentTermOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicePaymentTerm) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Payment term active flag
-func (o GetSubscribedServicePaymentTermOutput) IsActive() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSubscribedServicePaymentTerm) bool { return v.IsActive }).(pulumi.BoolOutput)
+func (o GetSubscribedServicePaymentTermOutput) IsActive() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicePaymentTerm) *bool { return v.IsActive }).(pulumi.BoolPtrOutput)
 }
 
 // Commercial name also called customer name.
-func (o GetSubscribedServicePaymentTermOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicePaymentTerm) string { return v.Name }).(pulumi.StringOutput)
+func (o GetSubscribedServicePaymentTermOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicePaymentTerm) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service creation date
-func (o GetSubscribedServicePaymentTermOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicePaymentTerm) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetSubscribedServicePaymentTermOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicePaymentTerm) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service last update date
-func (o GetSubscribedServicePaymentTermOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicePaymentTerm) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetSubscribedServicePaymentTermOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicePaymentTerm) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // User that updated the subscribed service
-func (o GetSubscribedServicePaymentTermOutput) UpdatedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicePaymentTerm) string { return v.UpdatedBy }).(pulumi.StringOutput)
+func (o GetSubscribedServicePaymentTermOutput) UpdatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicePaymentTerm) *string { return v.UpdatedBy }).(pulumi.StringPtrOutput)
 }
 
 // Payment Term value
-func (o GetSubscribedServicePaymentTermOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicePaymentTerm) string { return v.Value }).(pulumi.StringOutput)
+func (o GetSubscribedServicePaymentTermOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicePaymentTerm) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
 
 type GetSubscribedServicePaymentTermArrayOutput struct{ *pulumi.OutputState }
@@ -8589,12 +7420,6 @@ func (o GetSubscribedServicePaymentTermArrayOutput) ToGetSubscribedServicePaymen
 	return o
 }
 
-func (o GetSubscribedServicePaymentTermArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServicePaymentTerm] {
-	return pulumix.Output[[]GetSubscribedServicePaymentTerm]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscribedServicePaymentTermArrayOutput) Index(i pulumi.IntInput) GetSubscribedServicePaymentTermOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscribedServicePaymentTerm {
 		return vs[0].([]GetSubscribedServicePaymentTerm)[vs[1].(int)]
@@ -8603,17 +7428,17 @@ func (o GetSubscribedServicePaymentTermArrayOutput) Index(i pulumi.IntInput) Get
 
 type GetSubscribedServiceProduct struct {
 	// Metered service billing category
-	BillingCategory string `pulumi:"billingCategory"`
+	BillingCategory *string `pulumi:"billingCategory"`
 	// Commercial name also called customer name.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Product part numner
-	PartNumber string `pulumi:"partNumber"`
+	PartNumber *string `pulumi:"partNumber"`
 	// Product category
-	ProductCategory string `pulumi:"productCategory"`
+	ProductCategory *string `pulumi:"productCategory"`
 	// Rate card part type of Product
-	UcmRateCardPartType string `pulumi:"ucmRateCardPartType"`
+	UcmRateCardPartType *string `pulumi:"ucmRateCardPartType"`
 	// Unit of measure
-	UnitOfMeasure string `pulumi:"unitOfMeasure"`
+	UnitOfMeasure *string `pulumi:"unitOfMeasure"`
 }
 
 // GetSubscribedServiceProductInput is an input type that accepts GetSubscribedServiceProductArgs and GetSubscribedServiceProductOutput values.
@@ -8629,17 +7454,17 @@ type GetSubscribedServiceProductInput interface {
 
 type GetSubscribedServiceProductArgs struct {
 	// Metered service billing category
-	BillingCategory pulumi.StringInput `pulumi:"billingCategory"`
+	BillingCategory pulumi.StringPtrInput `pulumi:"billingCategory"`
 	// Commercial name also called customer name.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Product part numner
-	PartNumber pulumi.StringInput `pulumi:"partNumber"`
+	PartNumber pulumi.StringPtrInput `pulumi:"partNumber"`
 	// Product category
-	ProductCategory pulumi.StringInput `pulumi:"productCategory"`
+	ProductCategory pulumi.StringPtrInput `pulumi:"productCategory"`
 	// Rate card part type of Product
-	UcmRateCardPartType pulumi.StringInput `pulumi:"ucmRateCardPartType"`
+	UcmRateCardPartType pulumi.StringPtrInput `pulumi:"ucmRateCardPartType"`
 	// Unit of measure
-	UnitOfMeasure pulumi.StringInput `pulumi:"unitOfMeasure"`
+	UnitOfMeasure pulumi.StringPtrInput `pulumi:"unitOfMeasure"`
 }
 
 func (GetSubscribedServiceProductArgs) ElementType() reflect.Type {
@@ -8652,12 +7477,6 @@ func (i GetSubscribedServiceProductArgs) ToGetSubscribedServiceProductOutput() G
 
 func (i GetSubscribedServiceProductArgs) ToGetSubscribedServiceProductOutputWithContext(ctx context.Context) GetSubscribedServiceProductOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServiceProductOutput)
-}
-
-func (i GetSubscribedServiceProductArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServiceProduct] {
-	return pulumix.Output[GetSubscribedServiceProduct]{
-		OutputState: i.ToGetSubscribedServiceProductOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscribedServiceProductArrayInput is an input type that accepts GetSubscribedServiceProductArray and GetSubscribedServiceProductArrayOutput values.
@@ -8685,12 +7504,6 @@ func (i GetSubscribedServiceProductArray) ToGetSubscribedServiceProductArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServiceProductArrayOutput)
 }
 
-func (i GetSubscribedServiceProductArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServiceProduct] {
-	return pulumix.Output[[]GetSubscribedServiceProduct]{
-		OutputState: i.ToGetSubscribedServiceProductArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscribedServiceProductOutput struct{ *pulumi.OutputState }
 
 func (GetSubscribedServiceProductOutput) ElementType() reflect.Type {
@@ -8705,40 +7518,34 @@ func (o GetSubscribedServiceProductOutput) ToGetSubscribedServiceProductOutputWi
 	return o
 }
 
-func (o GetSubscribedServiceProductOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServiceProduct] {
-	return pulumix.Output[GetSubscribedServiceProduct]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Metered service billing category
-func (o GetSubscribedServiceProductOutput) BillingCategory() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceProduct) string { return v.BillingCategory }).(pulumi.StringOutput)
+func (o GetSubscribedServiceProductOutput) BillingCategory() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceProduct) *string { return v.BillingCategory }).(pulumi.StringPtrOutput)
 }
 
 // Commercial name also called customer name.
-func (o GetSubscribedServiceProductOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceProduct) string { return v.Name }).(pulumi.StringOutput)
+func (o GetSubscribedServiceProductOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceProduct) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Product part numner
-func (o GetSubscribedServiceProductOutput) PartNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceProduct) string { return v.PartNumber }).(pulumi.StringOutput)
+func (o GetSubscribedServiceProductOutput) PartNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceProduct) *string { return v.PartNumber }).(pulumi.StringPtrOutput)
 }
 
 // Product category
-func (o GetSubscribedServiceProductOutput) ProductCategory() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceProduct) string { return v.ProductCategory }).(pulumi.StringOutput)
+func (o GetSubscribedServiceProductOutput) ProductCategory() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceProduct) *string { return v.ProductCategory }).(pulumi.StringPtrOutput)
 }
 
 // Rate card part type of Product
-func (o GetSubscribedServiceProductOutput) UcmRateCardPartType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceProduct) string { return v.UcmRateCardPartType }).(pulumi.StringOutput)
+func (o GetSubscribedServiceProductOutput) UcmRateCardPartType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceProduct) *string { return v.UcmRateCardPartType }).(pulumi.StringPtrOutput)
 }
 
 // Unit of measure
-func (o GetSubscribedServiceProductOutput) UnitOfMeasure() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceProduct) string { return v.UnitOfMeasure }).(pulumi.StringOutput)
+func (o GetSubscribedServiceProductOutput) UnitOfMeasure() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceProduct) *string { return v.UnitOfMeasure }).(pulumi.StringPtrOutput)
 }
 
 type GetSubscribedServiceProductArrayOutput struct{ *pulumi.OutputState }
@@ -8755,12 +7562,6 @@ func (o GetSubscribedServiceProductArrayOutput) ToGetSubscribedServiceProductArr
 	return o
 }
 
-func (o GetSubscribedServiceProductArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServiceProduct] {
-	return pulumix.Output[[]GetSubscribedServiceProduct]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscribedServiceProductArrayOutput) Index(i pulumi.IntInput) GetSubscribedServiceProductOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscribedServiceProduct {
 		return vs[0].([]GetSubscribedServiceProduct)[vs[1].(int)]
@@ -8771,23 +7572,23 @@ type GetSubscribedServiceRateCard struct {
 	// Currency details
 	Currencies []GetSubscribedServiceRateCardCurrency `pulumi:"currencies"`
 	// Rate card discretionary discount percentage
-	DiscretionaryDiscountPercentage string `pulumi:"discretionaryDiscountPercentage"`
+	DiscretionaryDiscountPercentage *string `pulumi:"discretionaryDiscountPercentage"`
 	// Rate card price tier flag
-	IsTier bool `pulumi:"isTier"`
+	IsTier *bool `pulumi:"isTier"`
 	// Rate card tier net unit price
-	NetUnitPrice string `pulumi:"netUnitPrice"`
+	NetUnitPrice *string `pulumi:"netUnitPrice"`
 	// Rate card tier overage price
-	OveragePrice string `pulumi:"overagePrice"`
+	OveragePrice *string `pulumi:"overagePrice"`
 	// Product description
 	Products []GetSubscribedServiceRateCardProduct `pulumi:"products"`
 	// List of tiered rate card prices
 	RateCardTiers []GetSubscribedServiceRateCardRateCardTier `pulumi:"rateCardTiers"`
 	// The Subscribed Service Id
-	SubscribedServiceId string `pulumi:"subscribedServiceId"`
+	SubscribedServiceId *string `pulumi:"subscribedServiceId"`
 	// Subscribed service end date
-	TimeEnd string `pulumi:"timeEnd"`
+	TimeEnd *string `pulumi:"timeEnd"`
 	// Subscribed service start date
-	TimeStart string `pulumi:"timeStart"`
+	TimeStart *string `pulumi:"timeStart"`
 }
 
 // GetSubscribedServiceRateCardInput is an input type that accepts GetSubscribedServiceRateCardArgs and GetSubscribedServiceRateCardOutput values.
@@ -8805,23 +7606,23 @@ type GetSubscribedServiceRateCardArgs struct {
 	// Currency details
 	Currencies GetSubscribedServiceRateCardCurrencyArrayInput `pulumi:"currencies"`
 	// Rate card discretionary discount percentage
-	DiscretionaryDiscountPercentage pulumi.StringInput `pulumi:"discretionaryDiscountPercentage"`
+	DiscretionaryDiscountPercentage pulumi.StringPtrInput `pulumi:"discretionaryDiscountPercentage"`
 	// Rate card price tier flag
-	IsTier pulumi.BoolInput `pulumi:"isTier"`
+	IsTier pulumi.BoolPtrInput `pulumi:"isTier"`
 	// Rate card tier net unit price
-	NetUnitPrice pulumi.StringInput `pulumi:"netUnitPrice"`
+	NetUnitPrice pulumi.StringPtrInput `pulumi:"netUnitPrice"`
 	// Rate card tier overage price
-	OveragePrice pulumi.StringInput `pulumi:"overagePrice"`
+	OveragePrice pulumi.StringPtrInput `pulumi:"overagePrice"`
 	// Product description
 	Products GetSubscribedServiceRateCardProductArrayInput `pulumi:"products"`
 	// List of tiered rate card prices
 	RateCardTiers GetSubscribedServiceRateCardRateCardTierArrayInput `pulumi:"rateCardTiers"`
 	// The Subscribed Service Id
-	SubscribedServiceId pulumi.StringInput `pulumi:"subscribedServiceId"`
+	SubscribedServiceId pulumi.StringPtrInput `pulumi:"subscribedServiceId"`
 	// Subscribed service end date
-	TimeEnd pulumi.StringInput `pulumi:"timeEnd"`
+	TimeEnd pulumi.StringPtrInput `pulumi:"timeEnd"`
 	// Subscribed service start date
-	TimeStart pulumi.StringInput `pulumi:"timeStart"`
+	TimeStart pulumi.StringPtrInput `pulumi:"timeStart"`
 }
 
 func (GetSubscribedServiceRateCardArgs) ElementType() reflect.Type {
@@ -8834,12 +7635,6 @@ func (i GetSubscribedServiceRateCardArgs) ToGetSubscribedServiceRateCardOutput()
 
 func (i GetSubscribedServiceRateCardArgs) ToGetSubscribedServiceRateCardOutputWithContext(ctx context.Context) GetSubscribedServiceRateCardOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServiceRateCardOutput)
-}
-
-func (i GetSubscribedServiceRateCardArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServiceRateCard] {
-	return pulumix.Output[GetSubscribedServiceRateCard]{
-		OutputState: i.ToGetSubscribedServiceRateCardOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscribedServiceRateCardArrayInput is an input type that accepts GetSubscribedServiceRateCardArray and GetSubscribedServiceRateCardArrayOutput values.
@@ -8867,12 +7662,6 @@ func (i GetSubscribedServiceRateCardArray) ToGetSubscribedServiceRateCardArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServiceRateCardArrayOutput)
 }
 
-func (i GetSubscribedServiceRateCardArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServiceRateCard] {
-	return pulumix.Output[[]GetSubscribedServiceRateCard]{
-		OutputState: i.ToGetSubscribedServiceRateCardArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscribedServiceRateCardOutput struct{ *pulumi.OutputState }
 
 func (GetSubscribedServiceRateCardOutput) ElementType() reflect.Type {
@@ -8887,35 +7676,29 @@ func (o GetSubscribedServiceRateCardOutput) ToGetSubscribedServiceRateCardOutput
 	return o
 }
 
-func (o GetSubscribedServiceRateCardOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServiceRateCard] {
-	return pulumix.Output[GetSubscribedServiceRateCard]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Currency details
 func (o GetSubscribedServiceRateCardOutput) Currencies() GetSubscribedServiceRateCardCurrencyArrayOutput {
 	return o.ApplyT(func(v GetSubscribedServiceRateCard) []GetSubscribedServiceRateCardCurrency { return v.Currencies }).(GetSubscribedServiceRateCardCurrencyArrayOutput)
 }
 
 // Rate card discretionary discount percentage
-func (o GetSubscribedServiceRateCardOutput) DiscretionaryDiscountPercentage() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceRateCard) string { return v.DiscretionaryDiscountPercentage }).(pulumi.StringOutput)
+func (o GetSubscribedServiceRateCardOutput) DiscretionaryDiscountPercentage() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceRateCard) *string { return v.DiscretionaryDiscountPercentage }).(pulumi.StringPtrOutput)
 }
 
 // Rate card price tier flag
-func (o GetSubscribedServiceRateCardOutput) IsTier() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSubscribedServiceRateCard) bool { return v.IsTier }).(pulumi.BoolOutput)
+func (o GetSubscribedServiceRateCardOutput) IsTier() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceRateCard) *bool { return v.IsTier }).(pulumi.BoolPtrOutput)
 }
 
 // Rate card tier net unit price
-func (o GetSubscribedServiceRateCardOutput) NetUnitPrice() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceRateCard) string { return v.NetUnitPrice }).(pulumi.StringOutput)
+func (o GetSubscribedServiceRateCardOutput) NetUnitPrice() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceRateCard) *string { return v.NetUnitPrice }).(pulumi.StringPtrOutput)
 }
 
 // Rate card tier overage price
-func (o GetSubscribedServiceRateCardOutput) OveragePrice() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceRateCard) string { return v.OveragePrice }).(pulumi.StringOutput)
+func (o GetSubscribedServiceRateCardOutput) OveragePrice() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceRateCard) *string { return v.OveragePrice }).(pulumi.StringPtrOutput)
 }
 
 // Product description
@@ -8931,18 +7714,18 @@ func (o GetSubscribedServiceRateCardOutput) RateCardTiers() GetSubscribedService
 }
 
 // The Subscribed Service Id
-func (o GetSubscribedServiceRateCardOutput) SubscribedServiceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceRateCard) string { return v.SubscribedServiceId }).(pulumi.StringOutput)
+func (o GetSubscribedServiceRateCardOutput) SubscribedServiceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceRateCard) *string { return v.SubscribedServiceId }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service end date
-func (o GetSubscribedServiceRateCardOutput) TimeEnd() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceRateCard) string { return v.TimeEnd }).(pulumi.StringOutput)
+func (o GetSubscribedServiceRateCardOutput) TimeEnd() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceRateCard) *string { return v.TimeEnd }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service start date
-func (o GetSubscribedServiceRateCardOutput) TimeStart() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceRateCard) string { return v.TimeStart }).(pulumi.StringOutput)
+func (o GetSubscribedServiceRateCardOutput) TimeStart() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceRateCard) *string { return v.TimeStart }).(pulumi.StringPtrOutput)
 }
 
 type GetSubscribedServiceRateCardArrayOutput struct{ *pulumi.OutputState }
@@ -8959,12 +7742,6 @@ func (o GetSubscribedServiceRateCardArrayOutput) ToGetSubscribedServiceRateCardA
 	return o
 }
 
-func (o GetSubscribedServiceRateCardArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServiceRateCard] {
-	return pulumix.Output[[]GetSubscribedServiceRateCard]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscribedServiceRateCardArrayOutput) Index(i pulumi.IntInput) GetSubscribedServiceRateCardOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscribedServiceRateCard {
 		return vs[0].([]GetSubscribedServiceRateCard)[vs[1].(int)]
@@ -8973,11 +7750,11 @@ func (o GetSubscribedServiceRateCardArrayOutput) Index(i pulumi.IntInput) GetSub
 
 type GetSubscribedServiceRateCardCurrency struct {
 	// Currency Code
-	IsoCode string `pulumi:"isoCode"`
+	IsoCode *string `pulumi:"isoCode"`
 	// Commercial name also called customer name.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Standard Precision of the Currency
-	StdPrecision string `pulumi:"stdPrecision"`
+	StdPrecision *string `pulumi:"stdPrecision"`
 }
 
 // GetSubscribedServiceRateCardCurrencyInput is an input type that accepts GetSubscribedServiceRateCardCurrencyArgs and GetSubscribedServiceRateCardCurrencyOutput values.
@@ -8993,11 +7770,11 @@ type GetSubscribedServiceRateCardCurrencyInput interface {
 
 type GetSubscribedServiceRateCardCurrencyArgs struct {
 	// Currency Code
-	IsoCode pulumi.StringInput `pulumi:"isoCode"`
+	IsoCode pulumi.StringPtrInput `pulumi:"isoCode"`
 	// Commercial name also called customer name.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Standard Precision of the Currency
-	StdPrecision pulumi.StringInput `pulumi:"stdPrecision"`
+	StdPrecision pulumi.StringPtrInput `pulumi:"stdPrecision"`
 }
 
 func (GetSubscribedServiceRateCardCurrencyArgs) ElementType() reflect.Type {
@@ -9010,12 +7787,6 @@ func (i GetSubscribedServiceRateCardCurrencyArgs) ToGetSubscribedServiceRateCard
 
 func (i GetSubscribedServiceRateCardCurrencyArgs) ToGetSubscribedServiceRateCardCurrencyOutputWithContext(ctx context.Context) GetSubscribedServiceRateCardCurrencyOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServiceRateCardCurrencyOutput)
-}
-
-func (i GetSubscribedServiceRateCardCurrencyArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServiceRateCardCurrency] {
-	return pulumix.Output[GetSubscribedServiceRateCardCurrency]{
-		OutputState: i.ToGetSubscribedServiceRateCardCurrencyOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscribedServiceRateCardCurrencyArrayInput is an input type that accepts GetSubscribedServiceRateCardCurrencyArray and GetSubscribedServiceRateCardCurrencyArrayOutput values.
@@ -9043,12 +7814,6 @@ func (i GetSubscribedServiceRateCardCurrencyArray) ToGetSubscribedServiceRateCar
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServiceRateCardCurrencyArrayOutput)
 }
 
-func (i GetSubscribedServiceRateCardCurrencyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServiceRateCardCurrency] {
-	return pulumix.Output[[]GetSubscribedServiceRateCardCurrency]{
-		OutputState: i.ToGetSubscribedServiceRateCardCurrencyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscribedServiceRateCardCurrencyOutput struct{ *pulumi.OutputState }
 
 func (GetSubscribedServiceRateCardCurrencyOutput) ElementType() reflect.Type {
@@ -9063,25 +7828,19 @@ func (o GetSubscribedServiceRateCardCurrencyOutput) ToGetSubscribedServiceRateCa
 	return o
 }
 
-func (o GetSubscribedServiceRateCardCurrencyOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServiceRateCardCurrency] {
-	return pulumix.Output[GetSubscribedServiceRateCardCurrency]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Currency Code
-func (o GetSubscribedServiceRateCardCurrencyOutput) IsoCode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceRateCardCurrency) string { return v.IsoCode }).(pulumi.StringOutput)
+func (o GetSubscribedServiceRateCardCurrencyOutput) IsoCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceRateCardCurrency) *string { return v.IsoCode }).(pulumi.StringPtrOutput)
 }
 
 // Commercial name also called customer name.
-func (o GetSubscribedServiceRateCardCurrencyOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceRateCardCurrency) string { return v.Name }).(pulumi.StringOutput)
+func (o GetSubscribedServiceRateCardCurrencyOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceRateCardCurrency) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Standard Precision of the Currency
-func (o GetSubscribedServiceRateCardCurrencyOutput) StdPrecision() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceRateCardCurrency) string { return v.StdPrecision }).(pulumi.StringOutput)
+func (o GetSubscribedServiceRateCardCurrencyOutput) StdPrecision() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceRateCardCurrency) *string { return v.StdPrecision }).(pulumi.StringPtrOutput)
 }
 
 type GetSubscribedServiceRateCardCurrencyArrayOutput struct{ *pulumi.OutputState }
@@ -9098,12 +7857,6 @@ func (o GetSubscribedServiceRateCardCurrencyArrayOutput) ToGetSubscribedServiceR
 	return o
 }
 
-func (o GetSubscribedServiceRateCardCurrencyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServiceRateCardCurrency] {
-	return pulumix.Output[[]GetSubscribedServiceRateCardCurrency]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscribedServiceRateCardCurrencyArrayOutput) Index(i pulumi.IntInput) GetSubscribedServiceRateCardCurrencyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscribedServiceRateCardCurrency {
 		return vs[0].([]GetSubscribedServiceRateCardCurrency)[vs[1].(int)]
@@ -9112,17 +7865,17 @@ func (o GetSubscribedServiceRateCardCurrencyArrayOutput) Index(i pulumi.IntInput
 
 type GetSubscribedServiceRateCardProduct struct {
 	// Metered service billing category
-	BillingCategory string `pulumi:"billingCategory"`
+	BillingCategory *string `pulumi:"billingCategory"`
 	// Commercial name also called customer name.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Product part numner
-	PartNumber string `pulumi:"partNumber"`
+	PartNumber *string `pulumi:"partNumber"`
 	// Product category
-	ProductCategory string `pulumi:"productCategory"`
+	ProductCategory *string `pulumi:"productCategory"`
 	// Rate card part type of Product
-	UcmRateCardPartType string `pulumi:"ucmRateCardPartType"`
+	UcmRateCardPartType *string `pulumi:"ucmRateCardPartType"`
 	// Unit of measure
-	UnitOfMeasure string `pulumi:"unitOfMeasure"`
+	UnitOfMeasure *string `pulumi:"unitOfMeasure"`
 }
 
 // GetSubscribedServiceRateCardProductInput is an input type that accepts GetSubscribedServiceRateCardProductArgs and GetSubscribedServiceRateCardProductOutput values.
@@ -9138,17 +7891,17 @@ type GetSubscribedServiceRateCardProductInput interface {
 
 type GetSubscribedServiceRateCardProductArgs struct {
 	// Metered service billing category
-	BillingCategory pulumi.StringInput `pulumi:"billingCategory"`
+	BillingCategory pulumi.StringPtrInput `pulumi:"billingCategory"`
 	// Commercial name also called customer name.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Product part numner
-	PartNumber pulumi.StringInput `pulumi:"partNumber"`
+	PartNumber pulumi.StringPtrInput `pulumi:"partNumber"`
 	// Product category
-	ProductCategory pulumi.StringInput `pulumi:"productCategory"`
+	ProductCategory pulumi.StringPtrInput `pulumi:"productCategory"`
 	// Rate card part type of Product
-	UcmRateCardPartType pulumi.StringInput `pulumi:"ucmRateCardPartType"`
+	UcmRateCardPartType pulumi.StringPtrInput `pulumi:"ucmRateCardPartType"`
 	// Unit of measure
-	UnitOfMeasure pulumi.StringInput `pulumi:"unitOfMeasure"`
+	UnitOfMeasure pulumi.StringPtrInput `pulumi:"unitOfMeasure"`
 }
 
 func (GetSubscribedServiceRateCardProductArgs) ElementType() reflect.Type {
@@ -9161,12 +7914,6 @@ func (i GetSubscribedServiceRateCardProductArgs) ToGetSubscribedServiceRateCardP
 
 func (i GetSubscribedServiceRateCardProductArgs) ToGetSubscribedServiceRateCardProductOutputWithContext(ctx context.Context) GetSubscribedServiceRateCardProductOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServiceRateCardProductOutput)
-}
-
-func (i GetSubscribedServiceRateCardProductArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServiceRateCardProduct] {
-	return pulumix.Output[GetSubscribedServiceRateCardProduct]{
-		OutputState: i.ToGetSubscribedServiceRateCardProductOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscribedServiceRateCardProductArrayInput is an input type that accepts GetSubscribedServiceRateCardProductArray and GetSubscribedServiceRateCardProductArrayOutput values.
@@ -9194,12 +7941,6 @@ func (i GetSubscribedServiceRateCardProductArray) ToGetSubscribedServiceRateCard
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServiceRateCardProductArrayOutput)
 }
 
-func (i GetSubscribedServiceRateCardProductArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServiceRateCardProduct] {
-	return pulumix.Output[[]GetSubscribedServiceRateCardProduct]{
-		OutputState: i.ToGetSubscribedServiceRateCardProductArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscribedServiceRateCardProductOutput struct{ *pulumi.OutputState }
 
 func (GetSubscribedServiceRateCardProductOutput) ElementType() reflect.Type {
@@ -9214,40 +7955,34 @@ func (o GetSubscribedServiceRateCardProductOutput) ToGetSubscribedServiceRateCar
 	return o
 }
 
-func (o GetSubscribedServiceRateCardProductOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServiceRateCardProduct] {
-	return pulumix.Output[GetSubscribedServiceRateCardProduct]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Metered service billing category
-func (o GetSubscribedServiceRateCardProductOutput) BillingCategory() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceRateCardProduct) string { return v.BillingCategory }).(pulumi.StringOutput)
+func (o GetSubscribedServiceRateCardProductOutput) BillingCategory() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceRateCardProduct) *string { return v.BillingCategory }).(pulumi.StringPtrOutput)
 }
 
 // Commercial name also called customer name.
-func (o GetSubscribedServiceRateCardProductOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceRateCardProduct) string { return v.Name }).(pulumi.StringOutput)
+func (o GetSubscribedServiceRateCardProductOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceRateCardProduct) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Product part numner
-func (o GetSubscribedServiceRateCardProductOutput) PartNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceRateCardProduct) string { return v.PartNumber }).(pulumi.StringOutput)
+func (o GetSubscribedServiceRateCardProductOutput) PartNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceRateCardProduct) *string { return v.PartNumber }).(pulumi.StringPtrOutput)
 }
 
 // Product category
-func (o GetSubscribedServiceRateCardProductOutput) ProductCategory() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceRateCardProduct) string { return v.ProductCategory }).(pulumi.StringOutput)
+func (o GetSubscribedServiceRateCardProductOutput) ProductCategory() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceRateCardProduct) *string { return v.ProductCategory }).(pulumi.StringPtrOutput)
 }
 
 // Rate card part type of Product
-func (o GetSubscribedServiceRateCardProductOutput) UcmRateCardPartType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceRateCardProduct) string { return v.UcmRateCardPartType }).(pulumi.StringOutput)
+func (o GetSubscribedServiceRateCardProductOutput) UcmRateCardPartType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceRateCardProduct) *string { return v.UcmRateCardPartType }).(pulumi.StringPtrOutput)
 }
 
 // Unit of measure
-func (o GetSubscribedServiceRateCardProductOutput) UnitOfMeasure() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceRateCardProduct) string { return v.UnitOfMeasure }).(pulumi.StringOutput)
+func (o GetSubscribedServiceRateCardProductOutput) UnitOfMeasure() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceRateCardProduct) *string { return v.UnitOfMeasure }).(pulumi.StringPtrOutput)
 }
 
 type GetSubscribedServiceRateCardProductArrayOutput struct{ *pulumi.OutputState }
@@ -9264,12 +7999,6 @@ func (o GetSubscribedServiceRateCardProductArrayOutput) ToGetSubscribedServiceRa
 	return o
 }
 
-func (o GetSubscribedServiceRateCardProductArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServiceRateCardProduct] {
-	return pulumix.Output[[]GetSubscribedServiceRateCardProduct]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscribedServiceRateCardProductArrayOutput) Index(i pulumi.IntInput) GetSubscribedServiceRateCardProductOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscribedServiceRateCardProduct {
 		return vs[0].([]GetSubscribedServiceRateCardProduct)[vs[1].(int)]
@@ -9278,11 +8007,11 @@ func (o GetSubscribedServiceRateCardProductArrayOutput) Index(i pulumi.IntInput)
 
 type GetSubscribedServiceRateCardRateCardTier struct {
 	// Rate card tier net unit price
-	NetUnitPrice string `pulumi:"netUnitPrice"`
+	NetUnitPrice *string `pulumi:"netUnitPrice"`
 	// Rate card tier overage price
-	OveragePrice string `pulumi:"overagePrice"`
+	OveragePrice *string `pulumi:"overagePrice"`
 	// Rate card tier quantity range
-	UpToQuantity string `pulumi:"upToQuantity"`
+	UpToQuantity *string `pulumi:"upToQuantity"`
 }
 
 // GetSubscribedServiceRateCardRateCardTierInput is an input type that accepts GetSubscribedServiceRateCardRateCardTierArgs and GetSubscribedServiceRateCardRateCardTierOutput values.
@@ -9298,11 +8027,11 @@ type GetSubscribedServiceRateCardRateCardTierInput interface {
 
 type GetSubscribedServiceRateCardRateCardTierArgs struct {
 	// Rate card tier net unit price
-	NetUnitPrice pulumi.StringInput `pulumi:"netUnitPrice"`
+	NetUnitPrice pulumi.StringPtrInput `pulumi:"netUnitPrice"`
 	// Rate card tier overage price
-	OveragePrice pulumi.StringInput `pulumi:"overagePrice"`
+	OveragePrice pulumi.StringPtrInput `pulumi:"overagePrice"`
 	// Rate card tier quantity range
-	UpToQuantity pulumi.StringInput `pulumi:"upToQuantity"`
+	UpToQuantity pulumi.StringPtrInput `pulumi:"upToQuantity"`
 }
 
 func (GetSubscribedServiceRateCardRateCardTierArgs) ElementType() reflect.Type {
@@ -9315,12 +8044,6 @@ func (i GetSubscribedServiceRateCardRateCardTierArgs) ToGetSubscribedServiceRate
 
 func (i GetSubscribedServiceRateCardRateCardTierArgs) ToGetSubscribedServiceRateCardRateCardTierOutputWithContext(ctx context.Context) GetSubscribedServiceRateCardRateCardTierOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServiceRateCardRateCardTierOutput)
-}
-
-func (i GetSubscribedServiceRateCardRateCardTierArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServiceRateCardRateCardTier] {
-	return pulumix.Output[GetSubscribedServiceRateCardRateCardTier]{
-		OutputState: i.ToGetSubscribedServiceRateCardRateCardTierOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscribedServiceRateCardRateCardTierArrayInput is an input type that accepts GetSubscribedServiceRateCardRateCardTierArray and GetSubscribedServiceRateCardRateCardTierArrayOutput values.
@@ -9348,12 +8071,6 @@ func (i GetSubscribedServiceRateCardRateCardTierArray) ToGetSubscribedServiceRat
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServiceRateCardRateCardTierArrayOutput)
 }
 
-func (i GetSubscribedServiceRateCardRateCardTierArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServiceRateCardRateCardTier] {
-	return pulumix.Output[[]GetSubscribedServiceRateCardRateCardTier]{
-		OutputState: i.ToGetSubscribedServiceRateCardRateCardTierArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscribedServiceRateCardRateCardTierOutput struct{ *pulumi.OutputState }
 
 func (GetSubscribedServiceRateCardRateCardTierOutput) ElementType() reflect.Type {
@@ -9368,25 +8085,19 @@ func (o GetSubscribedServiceRateCardRateCardTierOutput) ToGetSubscribedServiceRa
 	return o
 }
 
-func (o GetSubscribedServiceRateCardRateCardTierOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServiceRateCardRateCardTier] {
-	return pulumix.Output[GetSubscribedServiceRateCardRateCardTier]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Rate card tier net unit price
-func (o GetSubscribedServiceRateCardRateCardTierOutput) NetUnitPrice() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceRateCardRateCardTier) string { return v.NetUnitPrice }).(pulumi.StringOutput)
+func (o GetSubscribedServiceRateCardRateCardTierOutput) NetUnitPrice() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceRateCardRateCardTier) *string { return v.NetUnitPrice }).(pulumi.StringPtrOutput)
 }
 
 // Rate card tier overage price
-func (o GetSubscribedServiceRateCardRateCardTierOutput) OveragePrice() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceRateCardRateCardTier) string { return v.OveragePrice }).(pulumi.StringOutput)
+func (o GetSubscribedServiceRateCardRateCardTierOutput) OveragePrice() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceRateCardRateCardTier) *string { return v.OveragePrice }).(pulumi.StringPtrOutput)
 }
 
 // Rate card tier quantity range
-func (o GetSubscribedServiceRateCardRateCardTierOutput) UpToQuantity() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceRateCardRateCardTier) string { return v.UpToQuantity }).(pulumi.StringOutput)
+func (o GetSubscribedServiceRateCardRateCardTierOutput) UpToQuantity() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceRateCardRateCardTier) *string { return v.UpToQuantity }).(pulumi.StringPtrOutput)
 }
 
 type GetSubscribedServiceRateCardRateCardTierArrayOutput struct{ *pulumi.OutputState }
@@ -9403,12 +8114,6 @@ func (o GetSubscribedServiceRateCardRateCardTierArrayOutput) ToGetSubscribedServ
 	return o
 }
 
-func (o GetSubscribedServiceRateCardRateCardTierArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServiceRateCardRateCardTier] {
-	return pulumix.Output[[]GetSubscribedServiceRateCardRateCardTier]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscribedServiceRateCardRateCardTierArrayOutput) Index(i pulumi.IntInput) GetSubscribedServiceRateCardRateCardTierOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscribedServiceRateCardRateCardTier {
 		return vs[0].([]GetSubscribedServiceRateCardRateCardTier)[vs[1].(int)]
@@ -9417,23 +8122,23 @@ func (o GetSubscribedServiceRateCardRateCardTierArrayOutput) Index(i pulumi.IntI
 
 type GetSubscribedServiceResellerAddress struct {
 	// Bill to site use Id.
-	BillSiteUseId string `pulumi:"billSiteUseId"`
+	BillSiteUseId *string `pulumi:"billSiteUseId"`
 	// Identify as the customer shipping address.
-	IsBillTo bool `pulumi:"isBillTo"`
+	IsBillTo *bool `pulumi:"isBillTo"`
 	// Identify as the customer invoicing address.
-	IsShipTo bool `pulumi:"isShipTo"`
+	IsShipTo *bool `pulumi:"isShipTo"`
 	// Address location.
 	Locations []GetSubscribedServiceResellerAddressLocation `pulumi:"locations"`
 	// Commercial name also called customer name.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Phone.
-	Phone string `pulumi:"phone"`
+	Phone *string `pulumi:"phone"`
 	// Service to site use Id.
-	Service2siteUseId string `pulumi:"service2siteUseId"`
+	Service2siteUseId *string `pulumi:"service2siteUseId"`
 	// TCA customer account site Id.
-	TcaCustAcctSiteId string `pulumi:"tcaCustAcctSiteId"`
+	TcaCustAcctSiteId *string `pulumi:"tcaCustAcctSiteId"`
 	// Party site number.
-	TcaPartySiteNumber string `pulumi:"tcaPartySiteNumber"`
+	TcaPartySiteNumber *string `pulumi:"tcaPartySiteNumber"`
 }
 
 // GetSubscribedServiceResellerAddressInput is an input type that accepts GetSubscribedServiceResellerAddressArgs and GetSubscribedServiceResellerAddressOutput values.
@@ -9449,23 +8154,23 @@ type GetSubscribedServiceResellerAddressInput interface {
 
 type GetSubscribedServiceResellerAddressArgs struct {
 	// Bill to site use Id.
-	BillSiteUseId pulumi.StringInput `pulumi:"billSiteUseId"`
+	BillSiteUseId pulumi.StringPtrInput `pulumi:"billSiteUseId"`
 	// Identify as the customer shipping address.
-	IsBillTo pulumi.BoolInput `pulumi:"isBillTo"`
+	IsBillTo pulumi.BoolPtrInput `pulumi:"isBillTo"`
 	// Identify as the customer invoicing address.
-	IsShipTo pulumi.BoolInput `pulumi:"isShipTo"`
+	IsShipTo pulumi.BoolPtrInput `pulumi:"isShipTo"`
 	// Address location.
 	Locations GetSubscribedServiceResellerAddressLocationArrayInput `pulumi:"locations"`
 	// Commercial name also called customer name.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Phone.
-	Phone pulumi.StringInput `pulumi:"phone"`
+	Phone pulumi.StringPtrInput `pulumi:"phone"`
 	// Service to site use Id.
-	Service2siteUseId pulumi.StringInput `pulumi:"service2siteUseId"`
+	Service2siteUseId pulumi.StringPtrInput `pulumi:"service2siteUseId"`
 	// TCA customer account site Id.
-	TcaCustAcctSiteId pulumi.StringInput `pulumi:"tcaCustAcctSiteId"`
+	TcaCustAcctSiteId pulumi.StringPtrInput `pulumi:"tcaCustAcctSiteId"`
 	// Party site number.
-	TcaPartySiteNumber pulumi.StringInput `pulumi:"tcaPartySiteNumber"`
+	TcaPartySiteNumber pulumi.StringPtrInput `pulumi:"tcaPartySiteNumber"`
 }
 
 func (GetSubscribedServiceResellerAddressArgs) ElementType() reflect.Type {
@@ -9478,12 +8183,6 @@ func (i GetSubscribedServiceResellerAddressArgs) ToGetSubscribedServiceResellerA
 
 func (i GetSubscribedServiceResellerAddressArgs) ToGetSubscribedServiceResellerAddressOutputWithContext(ctx context.Context) GetSubscribedServiceResellerAddressOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServiceResellerAddressOutput)
-}
-
-func (i GetSubscribedServiceResellerAddressArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServiceResellerAddress] {
-	return pulumix.Output[GetSubscribedServiceResellerAddress]{
-		OutputState: i.ToGetSubscribedServiceResellerAddressOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscribedServiceResellerAddressArrayInput is an input type that accepts GetSubscribedServiceResellerAddressArray and GetSubscribedServiceResellerAddressArrayOutput values.
@@ -9511,12 +8210,6 @@ func (i GetSubscribedServiceResellerAddressArray) ToGetSubscribedServiceReseller
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServiceResellerAddressArrayOutput)
 }
 
-func (i GetSubscribedServiceResellerAddressArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServiceResellerAddress] {
-	return pulumix.Output[[]GetSubscribedServiceResellerAddress]{
-		OutputState: i.ToGetSubscribedServiceResellerAddressArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscribedServiceResellerAddressOutput struct{ *pulumi.OutputState }
 
 func (GetSubscribedServiceResellerAddressOutput) ElementType() reflect.Type {
@@ -9531,25 +8224,19 @@ func (o GetSubscribedServiceResellerAddressOutput) ToGetSubscribedServiceReselle
 	return o
 }
 
-func (o GetSubscribedServiceResellerAddressOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServiceResellerAddress] {
-	return pulumix.Output[GetSubscribedServiceResellerAddress]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Bill to site use Id.
-func (o GetSubscribedServiceResellerAddressOutput) BillSiteUseId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResellerAddress) string { return v.BillSiteUseId }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResellerAddressOutput) BillSiteUseId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResellerAddress) *string { return v.BillSiteUseId }).(pulumi.StringPtrOutput)
 }
 
 // Identify as the customer shipping address.
-func (o GetSubscribedServiceResellerAddressOutput) IsBillTo() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResellerAddress) bool { return v.IsBillTo }).(pulumi.BoolOutput)
+func (o GetSubscribedServiceResellerAddressOutput) IsBillTo() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResellerAddress) *bool { return v.IsBillTo }).(pulumi.BoolPtrOutput)
 }
 
 // Identify as the customer invoicing address.
-func (o GetSubscribedServiceResellerAddressOutput) IsShipTo() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResellerAddress) bool { return v.IsShipTo }).(pulumi.BoolOutput)
+func (o GetSubscribedServiceResellerAddressOutput) IsShipTo() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResellerAddress) *bool { return v.IsShipTo }).(pulumi.BoolPtrOutput)
 }
 
 // Address location.
@@ -9560,28 +8247,28 @@ func (o GetSubscribedServiceResellerAddressOutput) Locations() GetSubscribedServ
 }
 
 // Commercial name also called customer name.
-func (o GetSubscribedServiceResellerAddressOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResellerAddress) string { return v.Name }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResellerAddressOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResellerAddress) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Phone.
-func (o GetSubscribedServiceResellerAddressOutput) Phone() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResellerAddress) string { return v.Phone }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResellerAddressOutput) Phone() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResellerAddress) *string { return v.Phone }).(pulumi.StringPtrOutput)
 }
 
 // Service to site use Id.
-func (o GetSubscribedServiceResellerAddressOutput) Service2siteUseId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResellerAddress) string { return v.Service2siteUseId }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResellerAddressOutput) Service2siteUseId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResellerAddress) *string { return v.Service2siteUseId }).(pulumi.StringPtrOutput)
 }
 
 // TCA customer account site Id.
-func (o GetSubscribedServiceResellerAddressOutput) TcaCustAcctSiteId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResellerAddress) string { return v.TcaCustAcctSiteId }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResellerAddressOutput) TcaCustAcctSiteId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResellerAddress) *string { return v.TcaCustAcctSiteId }).(pulumi.StringPtrOutput)
 }
 
 // Party site number.
-func (o GetSubscribedServiceResellerAddressOutput) TcaPartySiteNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResellerAddress) string { return v.TcaPartySiteNumber }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResellerAddressOutput) TcaPartySiteNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResellerAddress) *string { return v.TcaPartySiteNumber }).(pulumi.StringPtrOutput)
 }
 
 type GetSubscribedServiceResellerAddressArrayOutput struct{ *pulumi.OutputState }
@@ -9598,12 +8285,6 @@ func (o GetSubscribedServiceResellerAddressArrayOutput) ToGetSubscribedServiceRe
 	return o
 }
 
-func (o GetSubscribedServiceResellerAddressArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServiceResellerAddress] {
-	return pulumix.Output[[]GetSubscribedServiceResellerAddress]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscribedServiceResellerAddressArrayOutput) Index(i pulumi.IntInput) GetSubscribedServiceResellerAddressOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscribedServiceResellerAddress {
 		return vs[0].([]GetSubscribedServiceResellerAddress)[vs[1].(int)]
@@ -9612,19 +8293,19 @@ func (o GetSubscribedServiceResellerAddressArrayOutput) Index(i pulumi.IntInput)
 
 type GetSubscribedServiceResellerAddressLocation struct {
 	// Address first line.
-	Address1 string `pulumi:"address1"`
+	Address1 *string `pulumi:"address1"`
 	// Address second line.
-	Address2 string `pulumi:"address2"`
+	Address2 *string `pulumi:"address2"`
 	// City.
-	City string `pulumi:"city"`
+	City *string `pulumi:"city"`
 	// Country.
-	Country string `pulumi:"country"`
+	Country *string `pulumi:"country"`
 	// Postal code.
-	PostalCode string `pulumi:"postalCode"`
+	PostalCode *string `pulumi:"postalCode"`
 	// Region.
-	Region string `pulumi:"region"`
+	Region *string `pulumi:"region"`
 	// Region.
-	TcaLocationId string `pulumi:"tcaLocationId"`
+	TcaLocationId *string `pulumi:"tcaLocationId"`
 }
 
 // GetSubscribedServiceResellerAddressLocationInput is an input type that accepts GetSubscribedServiceResellerAddressLocationArgs and GetSubscribedServiceResellerAddressLocationOutput values.
@@ -9640,19 +8321,19 @@ type GetSubscribedServiceResellerAddressLocationInput interface {
 
 type GetSubscribedServiceResellerAddressLocationArgs struct {
 	// Address first line.
-	Address1 pulumi.StringInput `pulumi:"address1"`
+	Address1 pulumi.StringPtrInput `pulumi:"address1"`
 	// Address second line.
-	Address2 pulumi.StringInput `pulumi:"address2"`
+	Address2 pulumi.StringPtrInput `pulumi:"address2"`
 	// City.
-	City pulumi.StringInput `pulumi:"city"`
+	City pulumi.StringPtrInput `pulumi:"city"`
 	// Country.
-	Country pulumi.StringInput `pulumi:"country"`
+	Country pulumi.StringPtrInput `pulumi:"country"`
 	// Postal code.
-	PostalCode pulumi.StringInput `pulumi:"postalCode"`
+	PostalCode pulumi.StringPtrInput `pulumi:"postalCode"`
 	// Region.
-	Region pulumi.StringInput `pulumi:"region"`
+	Region pulumi.StringPtrInput `pulumi:"region"`
 	// Region.
-	TcaLocationId pulumi.StringInput `pulumi:"tcaLocationId"`
+	TcaLocationId pulumi.StringPtrInput `pulumi:"tcaLocationId"`
 }
 
 func (GetSubscribedServiceResellerAddressLocationArgs) ElementType() reflect.Type {
@@ -9665,12 +8346,6 @@ func (i GetSubscribedServiceResellerAddressLocationArgs) ToGetSubscribedServiceR
 
 func (i GetSubscribedServiceResellerAddressLocationArgs) ToGetSubscribedServiceResellerAddressLocationOutputWithContext(ctx context.Context) GetSubscribedServiceResellerAddressLocationOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServiceResellerAddressLocationOutput)
-}
-
-func (i GetSubscribedServiceResellerAddressLocationArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServiceResellerAddressLocation] {
-	return pulumix.Output[GetSubscribedServiceResellerAddressLocation]{
-		OutputState: i.ToGetSubscribedServiceResellerAddressLocationOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscribedServiceResellerAddressLocationArrayInput is an input type that accepts GetSubscribedServiceResellerAddressLocationArray and GetSubscribedServiceResellerAddressLocationArrayOutput values.
@@ -9698,12 +8373,6 @@ func (i GetSubscribedServiceResellerAddressLocationArray) ToGetSubscribedService
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServiceResellerAddressLocationArrayOutput)
 }
 
-func (i GetSubscribedServiceResellerAddressLocationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServiceResellerAddressLocation] {
-	return pulumix.Output[[]GetSubscribedServiceResellerAddressLocation]{
-		OutputState: i.ToGetSubscribedServiceResellerAddressLocationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscribedServiceResellerAddressLocationOutput struct{ *pulumi.OutputState }
 
 func (GetSubscribedServiceResellerAddressLocationOutput) ElementType() reflect.Type {
@@ -9718,45 +8387,39 @@ func (o GetSubscribedServiceResellerAddressLocationOutput) ToGetSubscribedServic
 	return o
 }
 
-func (o GetSubscribedServiceResellerAddressLocationOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServiceResellerAddressLocation] {
-	return pulumix.Output[GetSubscribedServiceResellerAddressLocation]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Address first line.
-func (o GetSubscribedServiceResellerAddressLocationOutput) Address1() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResellerAddressLocation) string { return v.Address1 }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResellerAddressLocationOutput) Address1() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResellerAddressLocation) *string { return v.Address1 }).(pulumi.StringPtrOutput)
 }
 
 // Address second line.
-func (o GetSubscribedServiceResellerAddressLocationOutput) Address2() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResellerAddressLocation) string { return v.Address2 }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResellerAddressLocationOutput) Address2() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResellerAddressLocation) *string { return v.Address2 }).(pulumi.StringPtrOutput)
 }
 
 // City.
-func (o GetSubscribedServiceResellerAddressLocationOutput) City() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResellerAddressLocation) string { return v.City }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResellerAddressLocationOutput) City() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResellerAddressLocation) *string { return v.City }).(pulumi.StringPtrOutput)
 }
 
 // Country.
-func (o GetSubscribedServiceResellerAddressLocationOutput) Country() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResellerAddressLocation) string { return v.Country }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResellerAddressLocationOutput) Country() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResellerAddressLocation) *string { return v.Country }).(pulumi.StringPtrOutput)
 }
 
 // Postal code.
-func (o GetSubscribedServiceResellerAddressLocationOutput) PostalCode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResellerAddressLocation) string { return v.PostalCode }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResellerAddressLocationOutput) PostalCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResellerAddressLocation) *string { return v.PostalCode }).(pulumi.StringPtrOutput)
 }
 
 // Region.
-func (o GetSubscribedServiceResellerAddressLocationOutput) Region() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResellerAddressLocation) string { return v.Region }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResellerAddressLocationOutput) Region() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResellerAddressLocation) *string { return v.Region }).(pulumi.StringPtrOutput)
 }
 
 // Region.
-func (o GetSubscribedServiceResellerAddressLocationOutput) TcaLocationId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResellerAddressLocation) string { return v.TcaLocationId }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResellerAddressLocationOutput) TcaLocationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResellerAddressLocation) *string { return v.TcaLocationId }).(pulumi.StringPtrOutput)
 }
 
 type GetSubscribedServiceResellerAddressLocationArrayOutput struct{ *pulumi.OutputState }
@@ -9773,12 +8436,6 @@ func (o GetSubscribedServiceResellerAddressLocationArrayOutput) ToGetSubscribedS
 	return o
 }
 
-func (o GetSubscribedServiceResellerAddressLocationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServiceResellerAddressLocation] {
-	return pulumix.Output[[]GetSubscribedServiceResellerAddressLocation]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscribedServiceResellerAddressLocationArrayOutput) Index(i pulumi.IntInput) GetSubscribedServiceResellerAddressLocationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscribedServiceResellerAddressLocation {
 		return vs[0].([]GetSubscribedServiceResellerAddressLocation)[vs[1].(int)]
@@ -9787,21 +8444,21 @@ func (o GetSubscribedServiceResellerAddressLocationArrayOutput) Index(i pulumi.I
 
 type GetSubscribedServiceResellerContact struct {
 	// Email.
-	Email string `pulumi:"email"`
+	Email *string `pulumi:"email"`
 	// First name.
-	FirstName string `pulumi:"firstName"`
+	FirstName *string `pulumi:"firstName"`
 	// Last name.
-	LastName string `pulumi:"lastName"`
+	LastName *string `pulumi:"lastName"`
 	// Commercial name also called customer name.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// TCA contact ID.
-	TcaContactId string `pulumi:"tcaContactId"`
+	TcaContactId *string `pulumi:"tcaContactId"`
 	// TCA customer account site ID.
-	TcaCustAccntSiteId string `pulumi:"tcaCustAccntSiteId"`
+	TcaCustAccntSiteId *string `pulumi:"tcaCustAccntSiteId"`
 	// TCA party ID.
-	TcaPartyId string `pulumi:"tcaPartyId"`
+	TcaPartyId *string `pulumi:"tcaPartyId"`
 	// Username.
-	Username string `pulumi:"username"`
+	Username *string `pulumi:"username"`
 }
 
 // GetSubscribedServiceResellerContactInput is an input type that accepts GetSubscribedServiceResellerContactArgs and GetSubscribedServiceResellerContactOutput values.
@@ -9817,21 +8474,21 @@ type GetSubscribedServiceResellerContactInput interface {
 
 type GetSubscribedServiceResellerContactArgs struct {
 	// Email.
-	Email pulumi.StringInput `pulumi:"email"`
+	Email pulumi.StringPtrInput `pulumi:"email"`
 	// First name.
-	FirstName pulumi.StringInput `pulumi:"firstName"`
+	FirstName pulumi.StringPtrInput `pulumi:"firstName"`
 	// Last name.
-	LastName pulumi.StringInput `pulumi:"lastName"`
+	LastName pulumi.StringPtrInput `pulumi:"lastName"`
 	// Commercial name also called customer name.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// TCA contact ID.
-	TcaContactId pulumi.StringInput `pulumi:"tcaContactId"`
+	TcaContactId pulumi.StringPtrInput `pulumi:"tcaContactId"`
 	// TCA customer account site ID.
-	TcaCustAccntSiteId pulumi.StringInput `pulumi:"tcaCustAccntSiteId"`
+	TcaCustAccntSiteId pulumi.StringPtrInput `pulumi:"tcaCustAccntSiteId"`
 	// TCA party ID.
-	TcaPartyId pulumi.StringInput `pulumi:"tcaPartyId"`
+	TcaPartyId pulumi.StringPtrInput `pulumi:"tcaPartyId"`
 	// Username.
-	Username pulumi.StringInput `pulumi:"username"`
+	Username pulumi.StringPtrInput `pulumi:"username"`
 }
 
 func (GetSubscribedServiceResellerContactArgs) ElementType() reflect.Type {
@@ -9844,12 +8501,6 @@ func (i GetSubscribedServiceResellerContactArgs) ToGetSubscribedServiceResellerC
 
 func (i GetSubscribedServiceResellerContactArgs) ToGetSubscribedServiceResellerContactOutputWithContext(ctx context.Context) GetSubscribedServiceResellerContactOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServiceResellerContactOutput)
-}
-
-func (i GetSubscribedServiceResellerContactArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServiceResellerContact] {
-	return pulumix.Output[GetSubscribedServiceResellerContact]{
-		OutputState: i.ToGetSubscribedServiceResellerContactOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscribedServiceResellerContactArrayInput is an input type that accepts GetSubscribedServiceResellerContactArray and GetSubscribedServiceResellerContactArrayOutput values.
@@ -9877,12 +8528,6 @@ func (i GetSubscribedServiceResellerContactArray) ToGetSubscribedServiceReseller
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServiceResellerContactArrayOutput)
 }
 
-func (i GetSubscribedServiceResellerContactArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServiceResellerContact] {
-	return pulumix.Output[[]GetSubscribedServiceResellerContact]{
-		OutputState: i.ToGetSubscribedServiceResellerContactArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscribedServiceResellerContactOutput struct{ *pulumi.OutputState }
 
 func (GetSubscribedServiceResellerContactOutput) ElementType() reflect.Type {
@@ -9897,50 +8542,44 @@ func (o GetSubscribedServiceResellerContactOutput) ToGetSubscribedServiceReselle
 	return o
 }
 
-func (o GetSubscribedServiceResellerContactOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServiceResellerContact] {
-	return pulumix.Output[GetSubscribedServiceResellerContact]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Email.
-func (o GetSubscribedServiceResellerContactOutput) Email() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResellerContact) string { return v.Email }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResellerContactOutput) Email() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResellerContact) *string { return v.Email }).(pulumi.StringPtrOutput)
 }
 
 // First name.
-func (o GetSubscribedServiceResellerContactOutput) FirstName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResellerContact) string { return v.FirstName }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResellerContactOutput) FirstName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResellerContact) *string { return v.FirstName }).(pulumi.StringPtrOutput)
 }
 
 // Last name.
-func (o GetSubscribedServiceResellerContactOutput) LastName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResellerContact) string { return v.LastName }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResellerContactOutput) LastName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResellerContact) *string { return v.LastName }).(pulumi.StringPtrOutput)
 }
 
 // Commercial name also called customer name.
-func (o GetSubscribedServiceResellerContactOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResellerContact) string { return v.Name }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResellerContactOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResellerContact) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // TCA contact ID.
-func (o GetSubscribedServiceResellerContactOutput) TcaContactId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResellerContact) string { return v.TcaContactId }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResellerContactOutput) TcaContactId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResellerContact) *string { return v.TcaContactId }).(pulumi.StringPtrOutput)
 }
 
 // TCA customer account site ID.
-func (o GetSubscribedServiceResellerContactOutput) TcaCustAccntSiteId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResellerContact) string { return v.TcaCustAccntSiteId }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResellerContactOutput) TcaCustAccntSiteId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResellerContact) *string { return v.TcaCustAccntSiteId }).(pulumi.StringPtrOutput)
 }
 
 // TCA party ID.
-func (o GetSubscribedServiceResellerContactOutput) TcaPartyId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResellerContact) string { return v.TcaPartyId }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResellerContactOutput) TcaPartyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResellerContact) *string { return v.TcaPartyId }).(pulumi.StringPtrOutput)
 }
 
 // Username.
-func (o GetSubscribedServiceResellerContactOutput) Username() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResellerContact) string { return v.Username }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResellerContactOutput) Username() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResellerContact) *string { return v.Username }).(pulumi.StringPtrOutput)
 }
 
 type GetSubscribedServiceResellerContactArrayOutput struct{ *pulumi.OutputState }
@@ -9957,12 +8596,6 @@ func (o GetSubscribedServiceResellerContactArrayOutput) ToGetSubscribedServiceRe
 	return o
 }
 
-func (o GetSubscribedServiceResellerContactArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServiceResellerContact] {
-	return pulumix.Output[[]GetSubscribedServiceResellerContact]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscribedServiceResellerContactArrayOutput) Index(i pulumi.IntInput) GetSubscribedServiceResellerContactOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscribedServiceResellerContact {
 		return vs[0].([]GetSubscribedServiceResellerContact)[vs[1].(int)]
@@ -9971,23 +8604,23 @@ func (o GetSubscribedServiceResellerContactArrayOutput) Index(i pulumi.IntInput)
 
 type GetSubscribedServiceResellerCustomer struct {
 	// Customer chain type.
-	CustomerChainType string `pulumi:"customerChainType"`
+	CustomerChainType *string `pulumi:"customerChainType"`
 	// The business partner is chain customer or not.
-	IsChainCustomer bool `pulumi:"isChainCustomer"`
+	IsChainCustomer *bool `pulumi:"isChainCustomer"`
 	// The business partner is part of the public sector or not.
-	IsPublicSector bool `pulumi:"isPublicSector"`
+	IsPublicSector *bool `pulumi:"isPublicSector"`
 	// Commercial name also called customer name.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Phonetic name.
-	NamePhonetic string `pulumi:"namePhonetic"`
+	NamePhonetic *string `pulumi:"namePhonetic"`
 	// TCA customer account number.
-	TcaCustAccountNumber string `pulumi:"tcaCustAccountNumber"`
+	TcaCustAccountNumber *string `pulumi:"tcaCustAccountNumber"`
 	// TCA customer account ID.
-	TcaCustomerAccountId string `pulumi:"tcaCustomerAccountId"`
+	TcaCustomerAccountId *string `pulumi:"tcaCustomerAccountId"`
 	// TCA party ID.
-	TcaPartyId string `pulumi:"tcaPartyId"`
+	TcaPartyId *string `pulumi:"tcaPartyId"`
 	// TCA party number.
-	TcaPartyNumber string `pulumi:"tcaPartyNumber"`
+	TcaPartyNumber *string `pulumi:"tcaPartyNumber"`
 }
 
 // GetSubscribedServiceResellerCustomerInput is an input type that accepts GetSubscribedServiceResellerCustomerArgs and GetSubscribedServiceResellerCustomerOutput values.
@@ -10003,23 +8636,23 @@ type GetSubscribedServiceResellerCustomerInput interface {
 
 type GetSubscribedServiceResellerCustomerArgs struct {
 	// Customer chain type.
-	CustomerChainType pulumi.StringInput `pulumi:"customerChainType"`
+	CustomerChainType pulumi.StringPtrInput `pulumi:"customerChainType"`
 	// The business partner is chain customer or not.
-	IsChainCustomer pulumi.BoolInput `pulumi:"isChainCustomer"`
+	IsChainCustomer pulumi.BoolPtrInput `pulumi:"isChainCustomer"`
 	// The business partner is part of the public sector or not.
-	IsPublicSector pulumi.BoolInput `pulumi:"isPublicSector"`
+	IsPublicSector pulumi.BoolPtrInput `pulumi:"isPublicSector"`
 	// Commercial name also called customer name.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Phonetic name.
-	NamePhonetic pulumi.StringInput `pulumi:"namePhonetic"`
+	NamePhonetic pulumi.StringPtrInput `pulumi:"namePhonetic"`
 	// TCA customer account number.
-	TcaCustAccountNumber pulumi.StringInput `pulumi:"tcaCustAccountNumber"`
+	TcaCustAccountNumber pulumi.StringPtrInput `pulumi:"tcaCustAccountNumber"`
 	// TCA customer account ID.
-	TcaCustomerAccountId pulumi.StringInput `pulumi:"tcaCustomerAccountId"`
+	TcaCustomerAccountId pulumi.StringPtrInput `pulumi:"tcaCustomerAccountId"`
 	// TCA party ID.
-	TcaPartyId pulumi.StringInput `pulumi:"tcaPartyId"`
+	TcaPartyId pulumi.StringPtrInput `pulumi:"tcaPartyId"`
 	// TCA party number.
-	TcaPartyNumber pulumi.StringInput `pulumi:"tcaPartyNumber"`
+	TcaPartyNumber pulumi.StringPtrInput `pulumi:"tcaPartyNumber"`
 }
 
 func (GetSubscribedServiceResellerCustomerArgs) ElementType() reflect.Type {
@@ -10032,12 +8665,6 @@ func (i GetSubscribedServiceResellerCustomerArgs) ToGetSubscribedServiceReseller
 
 func (i GetSubscribedServiceResellerCustomerArgs) ToGetSubscribedServiceResellerCustomerOutputWithContext(ctx context.Context) GetSubscribedServiceResellerCustomerOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServiceResellerCustomerOutput)
-}
-
-func (i GetSubscribedServiceResellerCustomerArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServiceResellerCustomer] {
-	return pulumix.Output[GetSubscribedServiceResellerCustomer]{
-		OutputState: i.ToGetSubscribedServiceResellerCustomerOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscribedServiceResellerCustomerArrayInput is an input type that accepts GetSubscribedServiceResellerCustomerArray and GetSubscribedServiceResellerCustomerArrayOutput values.
@@ -10065,12 +8692,6 @@ func (i GetSubscribedServiceResellerCustomerArray) ToGetSubscribedServiceReselle
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServiceResellerCustomerArrayOutput)
 }
 
-func (i GetSubscribedServiceResellerCustomerArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServiceResellerCustomer] {
-	return pulumix.Output[[]GetSubscribedServiceResellerCustomer]{
-		OutputState: i.ToGetSubscribedServiceResellerCustomerArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscribedServiceResellerCustomerOutput struct{ *pulumi.OutputState }
 
 func (GetSubscribedServiceResellerCustomerOutput) ElementType() reflect.Type {
@@ -10085,55 +8706,49 @@ func (o GetSubscribedServiceResellerCustomerOutput) ToGetSubscribedServiceResell
 	return o
 }
 
-func (o GetSubscribedServiceResellerCustomerOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServiceResellerCustomer] {
-	return pulumix.Output[GetSubscribedServiceResellerCustomer]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Customer chain type.
-func (o GetSubscribedServiceResellerCustomerOutput) CustomerChainType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResellerCustomer) string { return v.CustomerChainType }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResellerCustomerOutput) CustomerChainType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResellerCustomer) *string { return v.CustomerChainType }).(pulumi.StringPtrOutput)
 }
 
 // The business partner is chain customer or not.
-func (o GetSubscribedServiceResellerCustomerOutput) IsChainCustomer() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResellerCustomer) bool { return v.IsChainCustomer }).(pulumi.BoolOutput)
+func (o GetSubscribedServiceResellerCustomerOutput) IsChainCustomer() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResellerCustomer) *bool { return v.IsChainCustomer }).(pulumi.BoolPtrOutput)
 }
 
 // The business partner is part of the public sector or not.
-func (o GetSubscribedServiceResellerCustomerOutput) IsPublicSector() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResellerCustomer) bool { return v.IsPublicSector }).(pulumi.BoolOutput)
+func (o GetSubscribedServiceResellerCustomerOutput) IsPublicSector() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResellerCustomer) *bool { return v.IsPublicSector }).(pulumi.BoolPtrOutput)
 }
 
 // Commercial name also called customer name.
-func (o GetSubscribedServiceResellerCustomerOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResellerCustomer) string { return v.Name }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResellerCustomerOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResellerCustomer) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Phonetic name.
-func (o GetSubscribedServiceResellerCustomerOutput) NamePhonetic() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResellerCustomer) string { return v.NamePhonetic }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResellerCustomerOutput) NamePhonetic() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResellerCustomer) *string { return v.NamePhonetic }).(pulumi.StringPtrOutput)
 }
 
 // TCA customer account number.
-func (o GetSubscribedServiceResellerCustomerOutput) TcaCustAccountNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResellerCustomer) string { return v.TcaCustAccountNumber }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResellerCustomerOutput) TcaCustAccountNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResellerCustomer) *string { return v.TcaCustAccountNumber }).(pulumi.StringPtrOutput)
 }
 
 // TCA customer account ID.
-func (o GetSubscribedServiceResellerCustomerOutput) TcaCustomerAccountId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResellerCustomer) string { return v.TcaCustomerAccountId }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResellerCustomerOutput) TcaCustomerAccountId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResellerCustomer) *string { return v.TcaCustomerAccountId }).(pulumi.StringPtrOutput)
 }
 
 // TCA party ID.
-func (o GetSubscribedServiceResellerCustomerOutput) TcaPartyId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResellerCustomer) string { return v.TcaPartyId }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResellerCustomerOutput) TcaPartyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResellerCustomer) *string { return v.TcaPartyId }).(pulumi.StringPtrOutput)
 }
 
 // TCA party number.
-func (o GetSubscribedServiceResellerCustomerOutput) TcaPartyNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceResellerCustomer) string { return v.TcaPartyNumber }).(pulumi.StringOutput)
+func (o GetSubscribedServiceResellerCustomerOutput) TcaPartyNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceResellerCustomer) *string { return v.TcaPartyNumber }).(pulumi.StringPtrOutput)
 }
 
 type GetSubscribedServiceResellerCustomerArrayOutput struct{ *pulumi.OutputState }
@@ -10150,12 +8765,6 @@ func (o GetSubscribedServiceResellerCustomerArrayOutput) ToGetSubscribedServiceR
 	return o
 }
 
-func (o GetSubscribedServiceResellerCustomerArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServiceResellerCustomer] {
-	return pulumix.Output[[]GetSubscribedServiceResellerCustomer]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscribedServiceResellerCustomerArrayOutput) Index(i pulumi.IntInput) GetSubscribedServiceResellerCustomerOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscribedServiceResellerCustomer {
 		return vs[0].([]GetSubscribedServiceResellerCustomer)[vs[1].(int)]
@@ -10164,23 +8773,23 @@ func (o GetSubscribedServiceResellerCustomerArrayOutput) Index(i pulumi.IntInput
 
 type GetSubscribedServiceServiceToAddress struct {
 	// Bill to site use Id.
-	BillSiteUseId string `pulumi:"billSiteUseId"`
+	BillSiteUseId *string `pulumi:"billSiteUseId"`
 	// Identify as the customer shipping address.
-	IsBillTo bool `pulumi:"isBillTo"`
+	IsBillTo *bool `pulumi:"isBillTo"`
 	// Identify as the customer invoicing address.
-	IsShipTo bool `pulumi:"isShipTo"`
+	IsShipTo *bool `pulumi:"isShipTo"`
 	// Address location.
 	Locations []GetSubscribedServiceServiceToAddressLocation `pulumi:"locations"`
 	// Commercial name also called customer name.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Phone.
-	Phone string `pulumi:"phone"`
+	Phone *string `pulumi:"phone"`
 	// Service to site use Id.
-	Service2siteUseId string `pulumi:"service2siteUseId"`
+	Service2siteUseId *string `pulumi:"service2siteUseId"`
 	// TCA customer account site Id.
-	TcaCustAcctSiteId string `pulumi:"tcaCustAcctSiteId"`
+	TcaCustAcctSiteId *string `pulumi:"tcaCustAcctSiteId"`
 	// Party site number.
-	TcaPartySiteNumber string `pulumi:"tcaPartySiteNumber"`
+	TcaPartySiteNumber *string `pulumi:"tcaPartySiteNumber"`
 }
 
 // GetSubscribedServiceServiceToAddressInput is an input type that accepts GetSubscribedServiceServiceToAddressArgs and GetSubscribedServiceServiceToAddressOutput values.
@@ -10196,23 +8805,23 @@ type GetSubscribedServiceServiceToAddressInput interface {
 
 type GetSubscribedServiceServiceToAddressArgs struct {
 	// Bill to site use Id.
-	BillSiteUseId pulumi.StringInput `pulumi:"billSiteUseId"`
+	BillSiteUseId pulumi.StringPtrInput `pulumi:"billSiteUseId"`
 	// Identify as the customer shipping address.
-	IsBillTo pulumi.BoolInput `pulumi:"isBillTo"`
+	IsBillTo pulumi.BoolPtrInput `pulumi:"isBillTo"`
 	// Identify as the customer invoicing address.
-	IsShipTo pulumi.BoolInput `pulumi:"isShipTo"`
+	IsShipTo pulumi.BoolPtrInput `pulumi:"isShipTo"`
 	// Address location.
 	Locations GetSubscribedServiceServiceToAddressLocationArrayInput `pulumi:"locations"`
 	// Commercial name also called customer name.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Phone.
-	Phone pulumi.StringInput `pulumi:"phone"`
+	Phone pulumi.StringPtrInput `pulumi:"phone"`
 	// Service to site use Id.
-	Service2siteUseId pulumi.StringInput `pulumi:"service2siteUseId"`
+	Service2siteUseId pulumi.StringPtrInput `pulumi:"service2siteUseId"`
 	// TCA customer account site Id.
-	TcaCustAcctSiteId pulumi.StringInput `pulumi:"tcaCustAcctSiteId"`
+	TcaCustAcctSiteId pulumi.StringPtrInput `pulumi:"tcaCustAcctSiteId"`
 	// Party site number.
-	TcaPartySiteNumber pulumi.StringInput `pulumi:"tcaPartySiteNumber"`
+	TcaPartySiteNumber pulumi.StringPtrInput `pulumi:"tcaPartySiteNumber"`
 }
 
 func (GetSubscribedServiceServiceToAddressArgs) ElementType() reflect.Type {
@@ -10225,12 +8834,6 @@ func (i GetSubscribedServiceServiceToAddressArgs) ToGetSubscribedServiceServiceT
 
 func (i GetSubscribedServiceServiceToAddressArgs) ToGetSubscribedServiceServiceToAddressOutputWithContext(ctx context.Context) GetSubscribedServiceServiceToAddressOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServiceServiceToAddressOutput)
-}
-
-func (i GetSubscribedServiceServiceToAddressArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServiceServiceToAddress] {
-	return pulumix.Output[GetSubscribedServiceServiceToAddress]{
-		OutputState: i.ToGetSubscribedServiceServiceToAddressOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscribedServiceServiceToAddressArrayInput is an input type that accepts GetSubscribedServiceServiceToAddressArray and GetSubscribedServiceServiceToAddressArrayOutput values.
@@ -10258,12 +8861,6 @@ func (i GetSubscribedServiceServiceToAddressArray) ToGetSubscribedServiceService
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServiceServiceToAddressArrayOutput)
 }
 
-func (i GetSubscribedServiceServiceToAddressArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServiceServiceToAddress] {
-	return pulumix.Output[[]GetSubscribedServiceServiceToAddress]{
-		OutputState: i.ToGetSubscribedServiceServiceToAddressArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscribedServiceServiceToAddressOutput struct{ *pulumi.OutputState }
 
 func (GetSubscribedServiceServiceToAddressOutput) ElementType() reflect.Type {
@@ -10278,25 +8875,19 @@ func (o GetSubscribedServiceServiceToAddressOutput) ToGetSubscribedServiceServic
 	return o
 }
 
-func (o GetSubscribedServiceServiceToAddressOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServiceServiceToAddress] {
-	return pulumix.Output[GetSubscribedServiceServiceToAddress]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Bill to site use Id.
-func (o GetSubscribedServiceServiceToAddressOutput) BillSiteUseId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceServiceToAddress) string { return v.BillSiteUseId }).(pulumi.StringOutput)
+func (o GetSubscribedServiceServiceToAddressOutput) BillSiteUseId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceServiceToAddress) *string { return v.BillSiteUseId }).(pulumi.StringPtrOutput)
 }
 
 // Identify as the customer shipping address.
-func (o GetSubscribedServiceServiceToAddressOutput) IsBillTo() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSubscribedServiceServiceToAddress) bool { return v.IsBillTo }).(pulumi.BoolOutput)
+func (o GetSubscribedServiceServiceToAddressOutput) IsBillTo() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceServiceToAddress) *bool { return v.IsBillTo }).(pulumi.BoolPtrOutput)
 }
 
 // Identify as the customer invoicing address.
-func (o GetSubscribedServiceServiceToAddressOutput) IsShipTo() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSubscribedServiceServiceToAddress) bool { return v.IsShipTo }).(pulumi.BoolOutput)
+func (o GetSubscribedServiceServiceToAddressOutput) IsShipTo() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceServiceToAddress) *bool { return v.IsShipTo }).(pulumi.BoolPtrOutput)
 }
 
 // Address location.
@@ -10307,28 +8898,28 @@ func (o GetSubscribedServiceServiceToAddressOutput) Locations() GetSubscribedSer
 }
 
 // Commercial name also called customer name.
-func (o GetSubscribedServiceServiceToAddressOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceServiceToAddress) string { return v.Name }).(pulumi.StringOutput)
+func (o GetSubscribedServiceServiceToAddressOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceServiceToAddress) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Phone.
-func (o GetSubscribedServiceServiceToAddressOutput) Phone() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceServiceToAddress) string { return v.Phone }).(pulumi.StringOutput)
+func (o GetSubscribedServiceServiceToAddressOutput) Phone() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceServiceToAddress) *string { return v.Phone }).(pulumi.StringPtrOutput)
 }
 
 // Service to site use Id.
-func (o GetSubscribedServiceServiceToAddressOutput) Service2siteUseId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceServiceToAddress) string { return v.Service2siteUseId }).(pulumi.StringOutput)
+func (o GetSubscribedServiceServiceToAddressOutput) Service2siteUseId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceServiceToAddress) *string { return v.Service2siteUseId }).(pulumi.StringPtrOutput)
 }
 
 // TCA customer account site Id.
-func (o GetSubscribedServiceServiceToAddressOutput) TcaCustAcctSiteId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceServiceToAddress) string { return v.TcaCustAcctSiteId }).(pulumi.StringOutput)
+func (o GetSubscribedServiceServiceToAddressOutput) TcaCustAcctSiteId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceServiceToAddress) *string { return v.TcaCustAcctSiteId }).(pulumi.StringPtrOutput)
 }
 
 // Party site number.
-func (o GetSubscribedServiceServiceToAddressOutput) TcaPartySiteNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceServiceToAddress) string { return v.TcaPartySiteNumber }).(pulumi.StringOutput)
+func (o GetSubscribedServiceServiceToAddressOutput) TcaPartySiteNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceServiceToAddress) *string { return v.TcaPartySiteNumber }).(pulumi.StringPtrOutput)
 }
 
 type GetSubscribedServiceServiceToAddressArrayOutput struct{ *pulumi.OutputState }
@@ -10345,12 +8936,6 @@ func (o GetSubscribedServiceServiceToAddressArrayOutput) ToGetSubscribedServiceS
 	return o
 }
 
-func (o GetSubscribedServiceServiceToAddressArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServiceServiceToAddress] {
-	return pulumix.Output[[]GetSubscribedServiceServiceToAddress]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscribedServiceServiceToAddressArrayOutput) Index(i pulumi.IntInput) GetSubscribedServiceServiceToAddressOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscribedServiceServiceToAddress {
 		return vs[0].([]GetSubscribedServiceServiceToAddress)[vs[1].(int)]
@@ -10359,19 +8944,19 @@ func (o GetSubscribedServiceServiceToAddressArrayOutput) Index(i pulumi.IntInput
 
 type GetSubscribedServiceServiceToAddressLocation struct {
 	// Address first line.
-	Address1 string `pulumi:"address1"`
+	Address1 *string `pulumi:"address1"`
 	// Address second line.
-	Address2 string `pulumi:"address2"`
+	Address2 *string `pulumi:"address2"`
 	// City.
-	City string `pulumi:"city"`
+	City *string `pulumi:"city"`
 	// Country.
-	Country string `pulumi:"country"`
+	Country *string `pulumi:"country"`
 	// Postal code.
-	PostalCode string `pulumi:"postalCode"`
+	PostalCode *string `pulumi:"postalCode"`
 	// Region.
-	Region string `pulumi:"region"`
+	Region *string `pulumi:"region"`
 	// Region.
-	TcaLocationId string `pulumi:"tcaLocationId"`
+	TcaLocationId *string `pulumi:"tcaLocationId"`
 }
 
 // GetSubscribedServiceServiceToAddressLocationInput is an input type that accepts GetSubscribedServiceServiceToAddressLocationArgs and GetSubscribedServiceServiceToAddressLocationOutput values.
@@ -10387,19 +8972,19 @@ type GetSubscribedServiceServiceToAddressLocationInput interface {
 
 type GetSubscribedServiceServiceToAddressLocationArgs struct {
 	// Address first line.
-	Address1 pulumi.StringInput `pulumi:"address1"`
+	Address1 pulumi.StringPtrInput `pulumi:"address1"`
 	// Address second line.
-	Address2 pulumi.StringInput `pulumi:"address2"`
+	Address2 pulumi.StringPtrInput `pulumi:"address2"`
 	// City.
-	City pulumi.StringInput `pulumi:"city"`
+	City pulumi.StringPtrInput `pulumi:"city"`
 	// Country.
-	Country pulumi.StringInput `pulumi:"country"`
+	Country pulumi.StringPtrInput `pulumi:"country"`
 	// Postal code.
-	PostalCode pulumi.StringInput `pulumi:"postalCode"`
+	PostalCode pulumi.StringPtrInput `pulumi:"postalCode"`
 	// Region.
-	Region pulumi.StringInput `pulumi:"region"`
+	Region pulumi.StringPtrInput `pulumi:"region"`
 	// Region.
-	TcaLocationId pulumi.StringInput `pulumi:"tcaLocationId"`
+	TcaLocationId pulumi.StringPtrInput `pulumi:"tcaLocationId"`
 }
 
 func (GetSubscribedServiceServiceToAddressLocationArgs) ElementType() reflect.Type {
@@ -10412,12 +8997,6 @@ func (i GetSubscribedServiceServiceToAddressLocationArgs) ToGetSubscribedService
 
 func (i GetSubscribedServiceServiceToAddressLocationArgs) ToGetSubscribedServiceServiceToAddressLocationOutputWithContext(ctx context.Context) GetSubscribedServiceServiceToAddressLocationOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServiceServiceToAddressLocationOutput)
-}
-
-func (i GetSubscribedServiceServiceToAddressLocationArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServiceServiceToAddressLocation] {
-	return pulumix.Output[GetSubscribedServiceServiceToAddressLocation]{
-		OutputState: i.ToGetSubscribedServiceServiceToAddressLocationOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscribedServiceServiceToAddressLocationArrayInput is an input type that accepts GetSubscribedServiceServiceToAddressLocationArray and GetSubscribedServiceServiceToAddressLocationArrayOutput values.
@@ -10445,12 +9024,6 @@ func (i GetSubscribedServiceServiceToAddressLocationArray) ToGetSubscribedServic
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServiceServiceToAddressLocationArrayOutput)
 }
 
-func (i GetSubscribedServiceServiceToAddressLocationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServiceServiceToAddressLocation] {
-	return pulumix.Output[[]GetSubscribedServiceServiceToAddressLocation]{
-		OutputState: i.ToGetSubscribedServiceServiceToAddressLocationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscribedServiceServiceToAddressLocationOutput struct{ *pulumi.OutputState }
 
 func (GetSubscribedServiceServiceToAddressLocationOutput) ElementType() reflect.Type {
@@ -10465,45 +9038,39 @@ func (o GetSubscribedServiceServiceToAddressLocationOutput) ToGetSubscribedServi
 	return o
 }
 
-func (o GetSubscribedServiceServiceToAddressLocationOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServiceServiceToAddressLocation] {
-	return pulumix.Output[GetSubscribedServiceServiceToAddressLocation]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Address first line.
-func (o GetSubscribedServiceServiceToAddressLocationOutput) Address1() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceServiceToAddressLocation) string { return v.Address1 }).(pulumi.StringOutput)
+func (o GetSubscribedServiceServiceToAddressLocationOutput) Address1() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceServiceToAddressLocation) *string { return v.Address1 }).(pulumi.StringPtrOutput)
 }
 
 // Address second line.
-func (o GetSubscribedServiceServiceToAddressLocationOutput) Address2() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceServiceToAddressLocation) string { return v.Address2 }).(pulumi.StringOutput)
+func (o GetSubscribedServiceServiceToAddressLocationOutput) Address2() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceServiceToAddressLocation) *string { return v.Address2 }).(pulumi.StringPtrOutput)
 }
 
 // City.
-func (o GetSubscribedServiceServiceToAddressLocationOutput) City() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceServiceToAddressLocation) string { return v.City }).(pulumi.StringOutput)
+func (o GetSubscribedServiceServiceToAddressLocationOutput) City() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceServiceToAddressLocation) *string { return v.City }).(pulumi.StringPtrOutput)
 }
 
 // Country.
-func (o GetSubscribedServiceServiceToAddressLocationOutput) Country() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceServiceToAddressLocation) string { return v.Country }).(pulumi.StringOutput)
+func (o GetSubscribedServiceServiceToAddressLocationOutput) Country() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceServiceToAddressLocation) *string { return v.Country }).(pulumi.StringPtrOutput)
 }
 
 // Postal code.
-func (o GetSubscribedServiceServiceToAddressLocationOutput) PostalCode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceServiceToAddressLocation) string { return v.PostalCode }).(pulumi.StringOutput)
+func (o GetSubscribedServiceServiceToAddressLocationOutput) PostalCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceServiceToAddressLocation) *string { return v.PostalCode }).(pulumi.StringPtrOutput)
 }
 
 // Region.
-func (o GetSubscribedServiceServiceToAddressLocationOutput) Region() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceServiceToAddressLocation) string { return v.Region }).(pulumi.StringOutput)
+func (o GetSubscribedServiceServiceToAddressLocationOutput) Region() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceServiceToAddressLocation) *string { return v.Region }).(pulumi.StringPtrOutput)
 }
 
 // Region.
-func (o GetSubscribedServiceServiceToAddressLocationOutput) TcaLocationId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceServiceToAddressLocation) string { return v.TcaLocationId }).(pulumi.StringOutput)
+func (o GetSubscribedServiceServiceToAddressLocationOutput) TcaLocationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceServiceToAddressLocation) *string { return v.TcaLocationId }).(pulumi.StringPtrOutput)
 }
 
 type GetSubscribedServiceServiceToAddressLocationArrayOutput struct{ *pulumi.OutputState }
@@ -10520,12 +9087,6 @@ func (o GetSubscribedServiceServiceToAddressLocationArrayOutput) ToGetSubscribed
 	return o
 }
 
-func (o GetSubscribedServiceServiceToAddressLocationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServiceServiceToAddressLocation] {
-	return pulumix.Output[[]GetSubscribedServiceServiceToAddressLocation]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscribedServiceServiceToAddressLocationArrayOutput) Index(i pulumi.IntInput) GetSubscribedServiceServiceToAddressLocationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscribedServiceServiceToAddressLocation {
 		return vs[0].([]GetSubscribedServiceServiceToAddressLocation)[vs[1].(int)]
@@ -10534,21 +9095,21 @@ func (o GetSubscribedServiceServiceToAddressLocationArrayOutput) Index(i pulumi.
 
 type GetSubscribedServiceServiceToContact struct {
 	// Email.
-	Email string `pulumi:"email"`
+	Email *string `pulumi:"email"`
 	// First name.
-	FirstName string `pulumi:"firstName"`
+	FirstName *string `pulumi:"firstName"`
 	// Last name.
-	LastName string `pulumi:"lastName"`
+	LastName *string `pulumi:"lastName"`
 	// Commercial name also called customer name.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// TCA contact ID.
-	TcaContactId string `pulumi:"tcaContactId"`
+	TcaContactId *string `pulumi:"tcaContactId"`
 	// TCA customer account site ID.
-	TcaCustAccntSiteId string `pulumi:"tcaCustAccntSiteId"`
+	TcaCustAccntSiteId *string `pulumi:"tcaCustAccntSiteId"`
 	// TCA party ID.
-	TcaPartyId string `pulumi:"tcaPartyId"`
+	TcaPartyId *string `pulumi:"tcaPartyId"`
 	// Username.
-	Username string `pulumi:"username"`
+	Username *string `pulumi:"username"`
 }
 
 // GetSubscribedServiceServiceToContactInput is an input type that accepts GetSubscribedServiceServiceToContactArgs and GetSubscribedServiceServiceToContactOutput values.
@@ -10564,21 +9125,21 @@ type GetSubscribedServiceServiceToContactInput interface {
 
 type GetSubscribedServiceServiceToContactArgs struct {
 	// Email.
-	Email pulumi.StringInput `pulumi:"email"`
+	Email pulumi.StringPtrInput `pulumi:"email"`
 	// First name.
-	FirstName pulumi.StringInput `pulumi:"firstName"`
+	FirstName pulumi.StringPtrInput `pulumi:"firstName"`
 	// Last name.
-	LastName pulumi.StringInput `pulumi:"lastName"`
+	LastName pulumi.StringPtrInput `pulumi:"lastName"`
 	// Commercial name also called customer name.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// TCA contact ID.
-	TcaContactId pulumi.StringInput `pulumi:"tcaContactId"`
+	TcaContactId pulumi.StringPtrInput `pulumi:"tcaContactId"`
 	// TCA customer account site ID.
-	TcaCustAccntSiteId pulumi.StringInput `pulumi:"tcaCustAccntSiteId"`
+	TcaCustAccntSiteId pulumi.StringPtrInput `pulumi:"tcaCustAccntSiteId"`
 	// TCA party ID.
-	TcaPartyId pulumi.StringInput `pulumi:"tcaPartyId"`
+	TcaPartyId pulumi.StringPtrInput `pulumi:"tcaPartyId"`
 	// Username.
-	Username pulumi.StringInput `pulumi:"username"`
+	Username pulumi.StringPtrInput `pulumi:"username"`
 }
 
 func (GetSubscribedServiceServiceToContactArgs) ElementType() reflect.Type {
@@ -10591,12 +9152,6 @@ func (i GetSubscribedServiceServiceToContactArgs) ToGetSubscribedServiceServiceT
 
 func (i GetSubscribedServiceServiceToContactArgs) ToGetSubscribedServiceServiceToContactOutputWithContext(ctx context.Context) GetSubscribedServiceServiceToContactOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServiceServiceToContactOutput)
-}
-
-func (i GetSubscribedServiceServiceToContactArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServiceServiceToContact] {
-	return pulumix.Output[GetSubscribedServiceServiceToContact]{
-		OutputState: i.ToGetSubscribedServiceServiceToContactOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscribedServiceServiceToContactArrayInput is an input type that accepts GetSubscribedServiceServiceToContactArray and GetSubscribedServiceServiceToContactArrayOutput values.
@@ -10624,12 +9179,6 @@ func (i GetSubscribedServiceServiceToContactArray) ToGetSubscribedServiceService
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServiceServiceToContactArrayOutput)
 }
 
-func (i GetSubscribedServiceServiceToContactArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServiceServiceToContact] {
-	return pulumix.Output[[]GetSubscribedServiceServiceToContact]{
-		OutputState: i.ToGetSubscribedServiceServiceToContactArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscribedServiceServiceToContactOutput struct{ *pulumi.OutputState }
 
 func (GetSubscribedServiceServiceToContactOutput) ElementType() reflect.Type {
@@ -10644,50 +9193,44 @@ func (o GetSubscribedServiceServiceToContactOutput) ToGetSubscribedServiceServic
 	return o
 }
 
-func (o GetSubscribedServiceServiceToContactOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServiceServiceToContact] {
-	return pulumix.Output[GetSubscribedServiceServiceToContact]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Email.
-func (o GetSubscribedServiceServiceToContactOutput) Email() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceServiceToContact) string { return v.Email }).(pulumi.StringOutput)
+func (o GetSubscribedServiceServiceToContactOutput) Email() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceServiceToContact) *string { return v.Email }).(pulumi.StringPtrOutput)
 }
 
 // First name.
-func (o GetSubscribedServiceServiceToContactOutput) FirstName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceServiceToContact) string { return v.FirstName }).(pulumi.StringOutput)
+func (o GetSubscribedServiceServiceToContactOutput) FirstName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceServiceToContact) *string { return v.FirstName }).(pulumi.StringPtrOutput)
 }
 
 // Last name.
-func (o GetSubscribedServiceServiceToContactOutput) LastName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceServiceToContact) string { return v.LastName }).(pulumi.StringOutput)
+func (o GetSubscribedServiceServiceToContactOutput) LastName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceServiceToContact) *string { return v.LastName }).(pulumi.StringPtrOutput)
 }
 
 // Commercial name also called customer name.
-func (o GetSubscribedServiceServiceToContactOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceServiceToContact) string { return v.Name }).(pulumi.StringOutput)
+func (o GetSubscribedServiceServiceToContactOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceServiceToContact) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // TCA contact ID.
-func (o GetSubscribedServiceServiceToContactOutput) TcaContactId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceServiceToContact) string { return v.TcaContactId }).(pulumi.StringOutput)
+func (o GetSubscribedServiceServiceToContactOutput) TcaContactId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceServiceToContact) *string { return v.TcaContactId }).(pulumi.StringPtrOutput)
 }
 
 // TCA customer account site ID.
-func (o GetSubscribedServiceServiceToContactOutput) TcaCustAccntSiteId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceServiceToContact) string { return v.TcaCustAccntSiteId }).(pulumi.StringOutput)
+func (o GetSubscribedServiceServiceToContactOutput) TcaCustAccntSiteId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceServiceToContact) *string { return v.TcaCustAccntSiteId }).(pulumi.StringPtrOutput)
 }
 
 // TCA party ID.
-func (o GetSubscribedServiceServiceToContactOutput) TcaPartyId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceServiceToContact) string { return v.TcaPartyId }).(pulumi.StringOutput)
+func (o GetSubscribedServiceServiceToContactOutput) TcaPartyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceServiceToContact) *string { return v.TcaPartyId }).(pulumi.StringPtrOutput)
 }
 
 // Username.
-func (o GetSubscribedServiceServiceToContactOutput) Username() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceServiceToContact) string { return v.Username }).(pulumi.StringOutput)
+func (o GetSubscribedServiceServiceToContactOutput) Username() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceServiceToContact) *string { return v.Username }).(pulumi.StringPtrOutput)
 }
 
 type GetSubscribedServiceServiceToContactArrayOutput struct{ *pulumi.OutputState }
@@ -10704,12 +9247,6 @@ func (o GetSubscribedServiceServiceToContactArrayOutput) ToGetSubscribedServiceS
 	return o
 }
 
-func (o GetSubscribedServiceServiceToContactArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServiceServiceToContact] {
-	return pulumix.Output[[]GetSubscribedServiceServiceToContact]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscribedServiceServiceToContactArrayOutput) Index(i pulumi.IntInput) GetSubscribedServiceServiceToContactOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscribedServiceServiceToContact {
 		return vs[0].([]GetSubscribedServiceServiceToContact)[vs[1].(int)]
@@ -10718,23 +9255,23 @@ func (o GetSubscribedServiceServiceToContactArrayOutput) Index(i pulumi.IntInput
 
 type GetSubscribedServiceServiceToCustomer struct {
 	// Customer chain type.
-	CustomerChainType string `pulumi:"customerChainType"`
+	CustomerChainType *string `pulumi:"customerChainType"`
 	// The business partner is chain customer or not.
-	IsChainCustomer bool `pulumi:"isChainCustomer"`
+	IsChainCustomer *bool `pulumi:"isChainCustomer"`
 	// The business partner is part of the public sector or not.
-	IsPublicSector bool `pulumi:"isPublicSector"`
+	IsPublicSector *bool `pulumi:"isPublicSector"`
 	// Commercial name also called customer name.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Phonetic name.
-	NamePhonetic string `pulumi:"namePhonetic"`
+	NamePhonetic *string `pulumi:"namePhonetic"`
 	// TCA customer account number.
-	TcaCustAccountNumber string `pulumi:"tcaCustAccountNumber"`
+	TcaCustAccountNumber *string `pulumi:"tcaCustAccountNumber"`
 	// TCA customer account ID.
-	TcaCustomerAccountId string `pulumi:"tcaCustomerAccountId"`
+	TcaCustomerAccountId *string `pulumi:"tcaCustomerAccountId"`
 	// TCA party ID.
-	TcaPartyId string `pulumi:"tcaPartyId"`
+	TcaPartyId *string `pulumi:"tcaPartyId"`
 	// TCA party number.
-	TcaPartyNumber string `pulumi:"tcaPartyNumber"`
+	TcaPartyNumber *string `pulumi:"tcaPartyNumber"`
 }
 
 // GetSubscribedServiceServiceToCustomerInput is an input type that accepts GetSubscribedServiceServiceToCustomerArgs and GetSubscribedServiceServiceToCustomerOutput values.
@@ -10750,23 +9287,23 @@ type GetSubscribedServiceServiceToCustomerInput interface {
 
 type GetSubscribedServiceServiceToCustomerArgs struct {
 	// Customer chain type.
-	CustomerChainType pulumi.StringInput `pulumi:"customerChainType"`
+	CustomerChainType pulumi.StringPtrInput `pulumi:"customerChainType"`
 	// The business partner is chain customer or not.
-	IsChainCustomer pulumi.BoolInput `pulumi:"isChainCustomer"`
+	IsChainCustomer pulumi.BoolPtrInput `pulumi:"isChainCustomer"`
 	// The business partner is part of the public sector or not.
-	IsPublicSector pulumi.BoolInput `pulumi:"isPublicSector"`
+	IsPublicSector pulumi.BoolPtrInput `pulumi:"isPublicSector"`
 	// Commercial name also called customer name.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Phonetic name.
-	NamePhonetic pulumi.StringInput `pulumi:"namePhonetic"`
+	NamePhonetic pulumi.StringPtrInput `pulumi:"namePhonetic"`
 	// TCA customer account number.
-	TcaCustAccountNumber pulumi.StringInput `pulumi:"tcaCustAccountNumber"`
+	TcaCustAccountNumber pulumi.StringPtrInput `pulumi:"tcaCustAccountNumber"`
 	// TCA customer account ID.
-	TcaCustomerAccountId pulumi.StringInput `pulumi:"tcaCustomerAccountId"`
+	TcaCustomerAccountId pulumi.StringPtrInput `pulumi:"tcaCustomerAccountId"`
 	// TCA party ID.
-	TcaPartyId pulumi.StringInput `pulumi:"tcaPartyId"`
+	TcaPartyId pulumi.StringPtrInput `pulumi:"tcaPartyId"`
 	// TCA party number.
-	TcaPartyNumber pulumi.StringInput `pulumi:"tcaPartyNumber"`
+	TcaPartyNumber pulumi.StringPtrInput `pulumi:"tcaPartyNumber"`
 }
 
 func (GetSubscribedServiceServiceToCustomerArgs) ElementType() reflect.Type {
@@ -10779,12 +9316,6 @@ func (i GetSubscribedServiceServiceToCustomerArgs) ToGetSubscribedServiceService
 
 func (i GetSubscribedServiceServiceToCustomerArgs) ToGetSubscribedServiceServiceToCustomerOutputWithContext(ctx context.Context) GetSubscribedServiceServiceToCustomerOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServiceServiceToCustomerOutput)
-}
-
-func (i GetSubscribedServiceServiceToCustomerArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServiceServiceToCustomer] {
-	return pulumix.Output[GetSubscribedServiceServiceToCustomer]{
-		OutputState: i.ToGetSubscribedServiceServiceToCustomerOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscribedServiceServiceToCustomerArrayInput is an input type that accepts GetSubscribedServiceServiceToCustomerArray and GetSubscribedServiceServiceToCustomerArrayOutput values.
@@ -10812,12 +9343,6 @@ func (i GetSubscribedServiceServiceToCustomerArray) ToGetSubscribedServiceServic
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServiceServiceToCustomerArrayOutput)
 }
 
-func (i GetSubscribedServiceServiceToCustomerArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServiceServiceToCustomer] {
-	return pulumix.Output[[]GetSubscribedServiceServiceToCustomer]{
-		OutputState: i.ToGetSubscribedServiceServiceToCustomerArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscribedServiceServiceToCustomerOutput struct{ *pulumi.OutputState }
 
 func (GetSubscribedServiceServiceToCustomerOutput) ElementType() reflect.Type {
@@ -10832,55 +9357,49 @@ func (o GetSubscribedServiceServiceToCustomerOutput) ToGetSubscribedServiceServi
 	return o
 }
 
-func (o GetSubscribedServiceServiceToCustomerOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServiceServiceToCustomer] {
-	return pulumix.Output[GetSubscribedServiceServiceToCustomer]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Customer chain type.
-func (o GetSubscribedServiceServiceToCustomerOutput) CustomerChainType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceServiceToCustomer) string { return v.CustomerChainType }).(pulumi.StringOutput)
+func (o GetSubscribedServiceServiceToCustomerOutput) CustomerChainType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceServiceToCustomer) *string { return v.CustomerChainType }).(pulumi.StringPtrOutput)
 }
 
 // The business partner is chain customer or not.
-func (o GetSubscribedServiceServiceToCustomerOutput) IsChainCustomer() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSubscribedServiceServiceToCustomer) bool { return v.IsChainCustomer }).(pulumi.BoolOutput)
+func (o GetSubscribedServiceServiceToCustomerOutput) IsChainCustomer() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceServiceToCustomer) *bool { return v.IsChainCustomer }).(pulumi.BoolPtrOutput)
 }
 
 // The business partner is part of the public sector or not.
-func (o GetSubscribedServiceServiceToCustomerOutput) IsPublicSector() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSubscribedServiceServiceToCustomer) bool { return v.IsPublicSector }).(pulumi.BoolOutput)
+func (o GetSubscribedServiceServiceToCustomerOutput) IsPublicSector() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceServiceToCustomer) *bool { return v.IsPublicSector }).(pulumi.BoolPtrOutput)
 }
 
 // Commercial name also called customer name.
-func (o GetSubscribedServiceServiceToCustomerOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceServiceToCustomer) string { return v.Name }).(pulumi.StringOutput)
+func (o GetSubscribedServiceServiceToCustomerOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceServiceToCustomer) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Phonetic name.
-func (o GetSubscribedServiceServiceToCustomerOutput) NamePhonetic() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceServiceToCustomer) string { return v.NamePhonetic }).(pulumi.StringOutput)
+func (o GetSubscribedServiceServiceToCustomerOutput) NamePhonetic() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceServiceToCustomer) *string { return v.NamePhonetic }).(pulumi.StringPtrOutput)
 }
 
 // TCA customer account number.
-func (o GetSubscribedServiceServiceToCustomerOutput) TcaCustAccountNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceServiceToCustomer) string { return v.TcaCustAccountNumber }).(pulumi.StringOutput)
+func (o GetSubscribedServiceServiceToCustomerOutput) TcaCustAccountNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceServiceToCustomer) *string { return v.TcaCustAccountNumber }).(pulumi.StringPtrOutput)
 }
 
 // TCA customer account ID.
-func (o GetSubscribedServiceServiceToCustomerOutput) TcaCustomerAccountId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceServiceToCustomer) string { return v.TcaCustomerAccountId }).(pulumi.StringOutput)
+func (o GetSubscribedServiceServiceToCustomerOutput) TcaCustomerAccountId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceServiceToCustomer) *string { return v.TcaCustomerAccountId }).(pulumi.StringPtrOutput)
 }
 
 // TCA party ID.
-func (o GetSubscribedServiceServiceToCustomerOutput) TcaPartyId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceServiceToCustomer) string { return v.TcaPartyId }).(pulumi.StringOutput)
+func (o GetSubscribedServiceServiceToCustomerOutput) TcaPartyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceServiceToCustomer) *string { return v.TcaPartyId }).(pulumi.StringPtrOutput)
 }
 
 // TCA party number.
-func (o GetSubscribedServiceServiceToCustomerOutput) TcaPartyNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceServiceToCustomer) string { return v.TcaPartyNumber }).(pulumi.StringOutput)
+func (o GetSubscribedServiceServiceToCustomerOutput) TcaPartyNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceServiceToCustomer) *string { return v.TcaPartyNumber }).(pulumi.StringPtrOutput)
 }
 
 type GetSubscribedServiceServiceToCustomerArrayOutput struct{ *pulumi.OutputState }
@@ -10897,12 +9416,6 @@ func (o GetSubscribedServiceServiceToCustomerArrayOutput) ToGetSubscribedService
 	return o
 }
 
-func (o GetSubscribedServiceServiceToCustomerArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServiceServiceToCustomer] {
-	return pulumix.Output[[]GetSubscribedServiceServiceToCustomer]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscribedServiceServiceToCustomerArrayOutput) Index(i pulumi.IntInput) GetSubscribedServiceServiceToCustomerOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscribedServiceServiceToCustomer {
 		return vs[0].([]GetSubscribedServiceServiceToCustomer)[vs[1].(int)]
@@ -10911,21 +9424,21 @@ func (o GetSubscribedServiceServiceToCustomerArrayOutput) Index(i pulumi.IntInpu
 
 type GetSubscribedServiceSoldToContact struct {
 	// Email.
-	Email string `pulumi:"email"`
+	Email *string `pulumi:"email"`
 	// First name.
-	FirstName string `pulumi:"firstName"`
+	FirstName *string `pulumi:"firstName"`
 	// Last name.
-	LastName string `pulumi:"lastName"`
+	LastName *string `pulumi:"lastName"`
 	// Commercial name also called customer name.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// TCA contact ID.
-	TcaContactId string `pulumi:"tcaContactId"`
+	TcaContactId *string `pulumi:"tcaContactId"`
 	// TCA customer account site ID.
-	TcaCustAccntSiteId string `pulumi:"tcaCustAccntSiteId"`
+	TcaCustAccntSiteId *string `pulumi:"tcaCustAccntSiteId"`
 	// TCA party ID.
-	TcaPartyId string `pulumi:"tcaPartyId"`
+	TcaPartyId *string `pulumi:"tcaPartyId"`
 	// Username.
-	Username string `pulumi:"username"`
+	Username *string `pulumi:"username"`
 }
 
 // GetSubscribedServiceSoldToContactInput is an input type that accepts GetSubscribedServiceSoldToContactArgs and GetSubscribedServiceSoldToContactOutput values.
@@ -10941,21 +9454,21 @@ type GetSubscribedServiceSoldToContactInput interface {
 
 type GetSubscribedServiceSoldToContactArgs struct {
 	// Email.
-	Email pulumi.StringInput `pulumi:"email"`
+	Email pulumi.StringPtrInput `pulumi:"email"`
 	// First name.
-	FirstName pulumi.StringInput `pulumi:"firstName"`
+	FirstName pulumi.StringPtrInput `pulumi:"firstName"`
 	// Last name.
-	LastName pulumi.StringInput `pulumi:"lastName"`
+	LastName pulumi.StringPtrInput `pulumi:"lastName"`
 	// Commercial name also called customer name.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// TCA contact ID.
-	TcaContactId pulumi.StringInput `pulumi:"tcaContactId"`
+	TcaContactId pulumi.StringPtrInput `pulumi:"tcaContactId"`
 	// TCA customer account site ID.
-	TcaCustAccntSiteId pulumi.StringInput `pulumi:"tcaCustAccntSiteId"`
+	TcaCustAccntSiteId pulumi.StringPtrInput `pulumi:"tcaCustAccntSiteId"`
 	// TCA party ID.
-	TcaPartyId pulumi.StringInput `pulumi:"tcaPartyId"`
+	TcaPartyId pulumi.StringPtrInput `pulumi:"tcaPartyId"`
 	// Username.
-	Username pulumi.StringInput `pulumi:"username"`
+	Username pulumi.StringPtrInput `pulumi:"username"`
 }
 
 func (GetSubscribedServiceSoldToContactArgs) ElementType() reflect.Type {
@@ -10968,12 +9481,6 @@ func (i GetSubscribedServiceSoldToContactArgs) ToGetSubscribedServiceSoldToConta
 
 func (i GetSubscribedServiceSoldToContactArgs) ToGetSubscribedServiceSoldToContactOutputWithContext(ctx context.Context) GetSubscribedServiceSoldToContactOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServiceSoldToContactOutput)
-}
-
-func (i GetSubscribedServiceSoldToContactArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServiceSoldToContact] {
-	return pulumix.Output[GetSubscribedServiceSoldToContact]{
-		OutputState: i.ToGetSubscribedServiceSoldToContactOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscribedServiceSoldToContactArrayInput is an input type that accepts GetSubscribedServiceSoldToContactArray and GetSubscribedServiceSoldToContactArrayOutput values.
@@ -11001,12 +9508,6 @@ func (i GetSubscribedServiceSoldToContactArray) ToGetSubscribedServiceSoldToCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServiceSoldToContactArrayOutput)
 }
 
-func (i GetSubscribedServiceSoldToContactArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServiceSoldToContact] {
-	return pulumix.Output[[]GetSubscribedServiceSoldToContact]{
-		OutputState: i.ToGetSubscribedServiceSoldToContactArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscribedServiceSoldToContactOutput struct{ *pulumi.OutputState }
 
 func (GetSubscribedServiceSoldToContactOutput) ElementType() reflect.Type {
@@ -11021,50 +9522,44 @@ func (o GetSubscribedServiceSoldToContactOutput) ToGetSubscribedServiceSoldToCon
 	return o
 }
 
-func (o GetSubscribedServiceSoldToContactOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServiceSoldToContact] {
-	return pulumix.Output[GetSubscribedServiceSoldToContact]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Email.
-func (o GetSubscribedServiceSoldToContactOutput) Email() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceSoldToContact) string { return v.Email }).(pulumi.StringOutput)
+func (o GetSubscribedServiceSoldToContactOutput) Email() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceSoldToContact) *string { return v.Email }).(pulumi.StringPtrOutput)
 }
 
 // First name.
-func (o GetSubscribedServiceSoldToContactOutput) FirstName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceSoldToContact) string { return v.FirstName }).(pulumi.StringOutput)
+func (o GetSubscribedServiceSoldToContactOutput) FirstName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceSoldToContact) *string { return v.FirstName }).(pulumi.StringPtrOutput)
 }
 
 // Last name.
-func (o GetSubscribedServiceSoldToContactOutput) LastName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceSoldToContact) string { return v.LastName }).(pulumi.StringOutput)
+func (o GetSubscribedServiceSoldToContactOutput) LastName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceSoldToContact) *string { return v.LastName }).(pulumi.StringPtrOutput)
 }
 
 // Commercial name also called customer name.
-func (o GetSubscribedServiceSoldToContactOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceSoldToContact) string { return v.Name }).(pulumi.StringOutput)
+func (o GetSubscribedServiceSoldToContactOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceSoldToContact) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // TCA contact ID.
-func (o GetSubscribedServiceSoldToContactOutput) TcaContactId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceSoldToContact) string { return v.TcaContactId }).(pulumi.StringOutput)
+func (o GetSubscribedServiceSoldToContactOutput) TcaContactId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceSoldToContact) *string { return v.TcaContactId }).(pulumi.StringPtrOutput)
 }
 
 // TCA customer account site ID.
-func (o GetSubscribedServiceSoldToContactOutput) TcaCustAccntSiteId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceSoldToContact) string { return v.TcaCustAccntSiteId }).(pulumi.StringOutput)
+func (o GetSubscribedServiceSoldToContactOutput) TcaCustAccntSiteId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceSoldToContact) *string { return v.TcaCustAccntSiteId }).(pulumi.StringPtrOutput)
 }
 
 // TCA party ID.
-func (o GetSubscribedServiceSoldToContactOutput) TcaPartyId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceSoldToContact) string { return v.TcaPartyId }).(pulumi.StringOutput)
+func (o GetSubscribedServiceSoldToContactOutput) TcaPartyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceSoldToContact) *string { return v.TcaPartyId }).(pulumi.StringPtrOutput)
 }
 
 // Username.
-func (o GetSubscribedServiceSoldToContactOutput) Username() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceSoldToContact) string { return v.Username }).(pulumi.StringOutput)
+func (o GetSubscribedServiceSoldToContactOutput) Username() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceSoldToContact) *string { return v.Username }).(pulumi.StringPtrOutput)
 }
 
 type GetSubscribedServiceSoldToContactArrayOutput struct{ *pulumi.OutputState }
@@ -11081,12 +9576,6 @@ func (o GetSubscribedServiceSoldToContactArrayOutput) ToGetSubscribedServiceSold
 	return o
 }
 
-func (o GetSubscribedServiceSoldToContactArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServiceSoldToContact] {
-	return pulumix.Output[[]GetSubscribedServiceSoldToContact]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscribedServiceSoldToContactArrayOutput) Index(i pulumi.IntInput) GetSubscribedServiceSoldToContactOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscribedServiceSoldToContact {
 		return vs[0].([]GetSubscribedServiceSoldToContact)[vs[1].(int)]
@@ -11095,23 +9584,23 @@ func (o GetSubscribedServiceSoldToContactArrayOutput) Index(i pulumi.IntInput) G
 
 type GetSubscribedServiceSoldToCustomer struct {
 	// Customer chain type.
-	CustomerChainType string `pulumi:"customerChainType"`
+	CustomerChainType *string `pulumi:"customerChainType"`
 	// The business partner is chain customer or not.
-	IsChainCustomer bool `pulumi:"isChainCustomer"`
+	IsChainCustomer *bool `pulumi:"isChainCustomer"`
 	// The business partner is part of the public sector or not.
-	IsPublicSector bool `pulumi:"isPublicSector"`
+	IsPublicSector *bool `pulumi:"isPublicSector"`
 	// Commercial name also called customer name.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Phonetic name.
-	NamePhonetic string `pulumi:"namePhonetic"`
+	NamePhonetic *string `pulumi:"namePhonetic"`
 	// TCA customer account number.
-	TcaCustAccountNumber string `pulumi:"tcaCustAccountNumber"`
+	TcaCustAccountNumber *string `pulumi:"tcaCustAccountNumber"`
 	// TCA customer account ID.
-	TcaCustomerAccountId string `pulumi:"tcaCustomerAccountId"`
+	TcaCustomerAccountId *string `pulumi:"tcaCustomerAccountId"`
 	// TCA party ID.
-	TcaPartyId string `pulumi:"tcaPartyId"`
+	TcaPartyId *string `pulumi:"tcaPartyId"`
 	// TCA party number.
-	TcaPartyNumber string `pulumi:"tcaPartyNumber"`
+	TcaPartyNumber *string `pulumi:"tcaPartyNumber"`
 }
 
 // GetSubscribedServiceSoldToCustomerInput is an input type that accepts GetSubscribedServiceSoldToCustomerArgs and GetSubscribedServiceSoldToCustomerOutput values.
@@ -11127,23 +9616,23 @@ type GetSubscribedServiceSoldToCustomerInput interface {
 
 type GetSubscribedServiceSoldToCustomerArgs struct {
 	// Customer chain type.
-	CustomerChainType pulumi.StringInput `pulumi:"customerChainType"`
+	CustomerChainType pulumi.StringPtrInput `pulumi:"customerChainType"`
 	// The business partner is chain customer or not.
-	IsChainCustomer pulumi.BoolInput `pulumi:"isChainCustomer"`
+	IsChainCustomer pulumi.BoolPtrInput `pulumi:"isChainCustomer"`
 	// The business partner is part of the public sector or not.
-	IsPublicSector pulumi.BoolInput `pulumi:"isPublicSector"`
+	IsPublicSector pulumi.BoolPtrInput `pulumi:"isPublicSector"`
 	// Commercial name also called customer name.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Phonetic name.
-	NamePhonetic pulumi.StringInput `pulumi:"namePhonetic"`
+	NamePhonetic pulumi.StringPtrInput `pulumi:"namePhonetic"`
 	// TCA customer account number.
-	TcaCustAccountNumber pulumi.StringInput `pulumi:"tcaCustAccountNumber"`
+	TcaCustAccountNumber pulumi.StringPtrInput `pulumi:"tcaCustAccountNumber"`
 	// TCA customer account ID.
-	TcaCustomerAccountId pulumi.StringInput `pulumi:"tcaCustomerAccountId"`
+	TcaCustomerAccountId pulumi.StringPtrInput `pulumi:"tcaCustomerAccountId"`
 	// TCA party ID.
-	TcaPartyId pulumi.StringInput `pulumi:"tcaPartyId"`
+	TcaPartyId pulumi.StringPtrInput `pulumi:"tcaPartyId"`
 	// TCA party number.
-	TcaPartyNumber pulumi.StringInput `pulumi:"tcaPartyNumber"`
+	TcaPartyNumber pulumi.StringPtrInput `pulumi:"tcaPartyNumber"`
 }
 
 func (GetSubscribedServiceSoldToCustomerArgs) ElementType() reflect.Type {
@@ -11156,12 +9645,6 @@ func (i GetSubscribedServiceSoldToCustomerArgs) ToGetSubscribedServiceSoldToCust
 
 func (i GetSubscribedServiceSoldToCustomerArgs) ToGetSubscribedServiceSoldToCustomerOutputWithContext(ctx context.Context) GetSubscribedServiceSoldToCustomerOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServiceSoldToCustomerOutput)
-}
-
-func (i GetSubscribedServiceSoldToCustomerArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServiceSoldToCustomer] {
-	return pulumix.Output[GetSubscribedServiceSoldToCustomer]{
-		OutputState: i.ToGetSubscribedServiceSoldToCustomerOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscribedServiceSoldToCustomerArrayInput is an input type that accepts GetSubscribedServiceSoldToCustomerArray and GetSubscribedServiceSoldToCustomerArrayOutput values.
@@ -11189,12 +9672,6 @@ func (i GetSubscribedServiceSoldToCustomerArray) ToGetSubscribedServiceSoldToCus
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServiceSoldToCustomerArrayOutput)
 }
 
-func (i GetSubscribedServiceSoldToCustomerArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServiceSoldToCustomer] {
-	return pulumix.Output[[]GetSubscribedServiceSoldToCustomer]{
-		OutputState: i.ToGetSubscribedServiceSoldToCustomerArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscribedServiceSoldToCustomerOutput struct{ *pulumi.OutputState }
 
 func (GetSubscribedServiceSoldToCustomerOutput) ElementType() reflect.Type {
@@ -11209,55 +9686,49 @@ func (o GetSubscribedServiceSoldToCustomerOutput) ToGetSubscribedServiceSoldToCu
 	return o
 }
 
-func (o GetSubscribedServiceSoldToCustomerOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServiceSoldToCustomer] {
-	return pulumix.Output[GetSubscribedServiceSoldToCustomer]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Customer chain type.
-func (o GetSubscribedServiceSoldToCustomerOutput) CustomerChainType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceSoldToCustomer) string { return v.CustomerChainType }).(pulumi.StringOutput)
+func (o GetSubscribedServiceSoldToCustomerOutput) CustomerChainType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceSoldToCustomer) *string { return v.CustomerChainType }).(pulumi.StringPtrOutput)
 }
 
 // The business partner is chain customer or not.
-func (o GetSubscribedServiceSoldToCustomerOutput) IsChainCustomer() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSubscribedServiceSoldToCustomer) bool { return v.IsChainCustomer }).(pulumi.BoolOutput)
+func (o GetSubscribedServiceSoldToCustomerOutput) IsChainCustomer() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceSoldToCustomer) *bool { return v.IsChainCustomer }).(pulumi.BoolPtrOutput)
 }
 
 // The business partner is part of the public sector or not.
-func (o GetSubscribedServiceSoldToCustomerOutput) IsPublicSector() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSubscribedServiceSoldToCustomer) bool { return v.IsPublicSector }).(pulumi.BoolOutput)
+func (o GetSubscribedServiceSoldToCustomerOutput) IsPublicSector() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceSoldToCustomer) *bool { return v.IsPublicSector }).(pulumi.BoolPtrOutput)
 }
 
 // Commercial name also called customer name.
-func (o GetSubscribedServiceSoldToCustomerOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceSoldToCustomer) string { return v.Name }).(pulumi.StringOutput)
+func (o GetSubscribedServiceSoldToCustomerOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceSoldToCustomer) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Phonetic name.
-func (o GetSubscribedServiceSoldToCustomerOutput) NamePhonetic() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceSoldToCustomer) string { return v.NamePhonetic }).(pulumi.StringOutput)
+func (o GetSubscribedServiceSoldToCustomerOutput) NamePhonetic() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceSoldToCustomer) *string { return v.NamePhonetic }).(pulumi.StringPtrOutput)
 }
 
 // TCA customer account number.
-func (o GetSubscribedServiceSoldToCustomerOutput) TcaCustAccountNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceSoldToCustomer) string { return v.TcaCustAccountNumber }).(pulumi.StringOutput)
+func (o GetSubscribedServiceSoldToCustomerOutput) TcaCustAccountNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceSoldToCustomer) *string { return v.TcaCustAccountNumber }).(pulumi.StringPtrOutput)
 }
 
 // TCA customer account ID.
-func (o GetSubscribedServiceSoldToCustomerOutput) TcaCustomerAccountId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceSoldToCustomer) string { return v.TcaCustomerAccountId }).(pulumi.StringOutput)
+func (o GetSubscribedServiceSoldToCustomerOutput) TcaCustomerAccountId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceSoldToCustomer) *string { return v.TcaCustomerAccountId }).(pulumi.StringPtrOutput)
 }
 
 // TCA party ID.
-func (o GetSubscribedServiceSoldToCustomerOutput) TcaPartyId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceSoldToCustomer) string { return v.TcaPartyId }).(pulumi.StringOutput)
+func (o GetSubscribedServiceSoldToCustomerOutput) TcaPartyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceSoldToCustomer) *string { return v.TcaPartyId }).(pulumi.StringPtrOutput)
 }
 
 // TCA party number.
-func (o GetSubscribedServiceSoldToCustomerOutput) TcaPartyNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServiceSoldToCustomer) string { return v.TcaPartyNumber }).(pulumi.StringOutput)
+func (o GetSubscribedServiceSoldToCustomerOutput) TcaPartyNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServiceSoldToCustomer) *string { return v.TcaPartyNumber }).(pulumi.StringPtrOutput)
 }
 
 type GetSubscribedServiceSoldToCustomerArrayOutput struct{ *pulumi.OutputState }
@@ -11272,12 +9743,6 @@ func (o GetSubscribedServiceSoldToCustomerArrayOutput) ToGetSubscribedServiceSol
 
 func (o GetSubscribedServiceSoldToCustomerArrayOutput) ToGetSubscribedServiceSoldToCustomerArrayOutputWithContext(ctx context.Context) GetSubscribedServiceSoldToCustomerArrayOutput {
 	return o
-}
-
-func (o GetSubscribedServiceSoldToCustomerArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServiceSoldToCustomer] {
-	return pulumix.Output[[]GetSubscribedServiceSoldToCustomer]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSubscribedServiceSoldToCustomerArrayOutput) Index(i pulumi.IntInput) GetSubscribedServiceSoldToCustomerOutput {
@@ -11323,12 +9788,6 @@ func (i GetSubscribedServicesFilterArgs) ToGetSubscribedServicesFilterOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServicesFilterOutput)
 }
 
-func (i GetSubscribedServicesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServicesFilter] {
-	return pulumix.Output[GetSubscribedServicesFilter]{
-		OutputState: i.ToGetSubscribedServicesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetSubscribedServicesFilterArrayInput is an input type that accepts GetSubscribedServicesFilterArray and GetSubscribedServicesFilterArrayOutput values.
 // You can construct a concrete instance of `GetSubscribedServicesFilterArrayInput` via:
 //
@@ -11354,12 +9813,6 @@ func (i GetSubscribedServicesFilterArray) ToGetSubscribedServicesFilterArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServicesFilterArrayOutput)
 }
 
-func (i GetSubscribedServicesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServicesFilter] {
-	return pulumix.Output[[]GetSubscribedServicesFilter]{
-		OutputState: i.ToGetSubscribedServicesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscribedServicesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetSubscribedServicesFilterOutput) ElementType() reflect.Type {
@@ -11372,12 +9825,6 @@ func (o GetSubscribedServicesFilterOutput) ToGetSubscribedServicesFilterOutput()
 
 func (o GetSubscribedServicesFilterOutput) ToGetSubscribedServicesFilterOutputWithContext(ctx context.Context) GetSubscribedServicesFilterOutput {
 	return o
-}
-
-func (o GetSubscribedServicesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServicesFilter] {
-	return pulumix.Output[GetSubscribedServicesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Commercial name also called customer name.
@@ -11407,12 +9854,6 @@ func (o GetSubscribedServicesFilterArrayOutput) ToGetSubscribedServicesFilterArr
 	return o
 }
 
-func (o GetSubscribedServicesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServicesFilter] {
-	return pulumix.Output[[]GetSubscribedServicesFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscribedServicesFilterArrayOutput) Index(i pulumi.IntInput) GetSubscribedServicesFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscribedServicesFilter {
 		return vs[0].([]GetSubscribedServicesFilter)[vs[1].(int)]
@@ -11421,15 +9862,15 @@ func (o GetSubscribedServicesFilterArrayOutput) Index(i pulumi.IntInput) GetSubs
 
 type GetSubscribedServicesSubscribedService struct {
 	// Subscribed service admin email id
-	AdminEmail string `pulumi:"adminEmail"`
+	AdminEmail *string `pulumi:"adminEmail"`
 	// Subscribed service agreement ID
-	AgreementId string `pulumi:"agreementId"`
+	AgreementId *string `pulumi:"agreementId"`
 	// Subscribed service agrrement name
-	AgreementName string `pulumi:"agreementName"`
+	AgreementName *string `pulumi:"agreementName"`
 	// Subscribed service agrrement type
-	AgreementType string `pulumi:"agreementType"`
+	AgreementType *string `pulumi:"agreementType"`
 	// Commitment available amount
-	AvailableAmount string `pulumi:"availableAmount"`
+	AvailableAmount *string `pulumi:"availableAmount"`
 	// Address.
 	BillToAddresses []GetSubscribedServicesSubscribedServiceBillToAddress `pulumi:"billToAddresses"`
 	// User.
@@ -11437,29 +9878,29 @@ type GetSubscribedServicesSubscribedService struct {
 	// Business partner.
 	BillToCustomers []GetSubscribedServicesSubscribedServiceBillToCustomer `pulumi:"billToCustomers"`
 	// Subscribed service invoice frequency
-	BillingFrequency string `pulumi:"billingFrequency"`
+	BillingFrequency *string `pulumi:"billingFrequency"`
 	// Booking Opportunity Number of Subscribed Service
-	BookingOptyNumber string `pulumi:"bookingOptyNumber"`
+	BookingOptyNumber *string `pulumi:"bookingOptyNumber"`
 	// Subscribed service buyer email id
-	BuyerEmail string `pulumi:"buyerEmail"`
+	BuyerEmail *string `pulumi:"buyerEmail"`
 	// Subscribed service commitment schedule Id
-	CommitmentScheduleId string `pulumi:"commitmentScheduleId"`
+	CommitmentScheduleId *string `pulumi:"commitmentScheduleId"`
 	// List of Commitment services of a line
 	CommitmentServices []GetSubscribedServicesSubscribedServiceCommitmentService `pulumi:"commitmentServices"`
 	// User that created the Payment term
-	CreatedBy string `pulumi:"createdBy"`
+	CreatedBy *string `pulumi:"createdBy"`
 	// Subscribed service credit percentage
-	CreditPercentage string `pulumi:"creditPercentage"`
+	CreditPercentage *string `pulumi:"creditPercentage"`
 	// Subscribed service CSI number
-	Csi string `pulumi:"csi"`
+	Csi *string `pulumi:"csi"`
 	// Identifier for a customer's transactions for purchase of ay oracle services
-	CustomerTransactionReference string `pulumi:"customerTransactionReference"`
+	CustomerTransactionReference *string `pulumi:"customerTransactionReference"`
 	// Subscribed service data center
-	DataCenter string `pulumi:"dataCenter"`
+	DataCenter *string `pulumi:"dataCenter"`
 	// Subscribed service data center region
-	DataCenterRegion string `pulumi:"dataCenterRegion"`
+	DataCenterRegion *string `pulumi:"dataCenterRegion"`
 	// Subscribed service eligible to renew field
-	EligibleToRenew string `pulumi:"eligibleToRenew"`
+	EligibleToRenew *string `pulumi:"eligibleToRenew"`
 	// Address.
 	EndUserAddresses []GetSubscribedServicesSubscribedServiceEndUserAddress `pulumi:"endUserAddresses"`
 	// User.
@@ -11467,97 +9908,97 @@ type GetSubscribedServicesSubscribedService struct {
 	// Business partner.
 	EndUserCustomers []GetSubscribedServicesSubscribedServiceEndUserCustomer `pulumi:"endUserCustomers"`
 	// Subscribed service fulfillment set
-	FulfillmentSet string `pulumi:"fulfillmentSet"`
+	FulfillmentSet *string `pulumi:"fulfillmentSet"`
 	// Funded Allocation line value example: 12000.00
-	FundedAllocationValue string `pulumi:"fundedAllocationValue"`
+	FundedAllocationValue *string `pulumi:"fundedAllocationValue"`
 	// SPM internal Subscribed Service ID
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Indicates if a service can recieve usages and consequently have available amounts computed
-	IsAllowance bool `pulumi:"isAllowance"`
+	IsAllowance *bool `pulumi:"isAllowance"`
 	// If true compares rate between ratecard and the active pricelist and minimum rate would be fetched
-	IsCapToPriceList bool `pulumi:"isCapToPriceList"`
+	IsCapToPriceList *bool `pulumi:"isCapToPriceList"`
 	// Used in context of service credit lines
-	IsCreditEnabled bool `pulumi:"isCreditEnabled"`
+	IsCreditEnabled *bool `pulumi:"isCreditEnabled"`
 	// Indicator on whether or not there has been usage for the subscribed service
-	IsHavingUsage bool `pulumi:"isHavingUsage"`
+	IsHavingUsage *bool `pulumi:"isHavingUsage"`
 	// Subscribed service intent to pay flag
-	IsIntentToPay bool `pulumi:"isIntentToPay"`
+	IsIntentToPay *bool `pulumi:"isIntentToPay"`
 	// Subscribed service payg flag
-	IsPayg bool `pulumi:"isPayg"`
+	IsPayg *bool `pulumi:"isPayg"`
 	// Indicates if the Subscribed service has a single ratecard
-	IsSingleRateCard bool `pulumi:"isSingleRateCard"`
+	IsSingleRateCard *bool `pulumi:"isSingleRateCard"`
 	// Indicates if the commitment lines can have different quantities
-	IsVariableCommitment bool `pulumi:"isVariableCommitment"`
+	IsVariableCommitment *bool `pulumi:"isVariableCommitment"`
 	// Subscribed service line net amount
-	LineNetAmount string `pulumi:"lineNetAmount"`
+	LineNetAmount *string `pulumi:"lineNetAmount"`
 	// Subscribed service Major Set
-	MajorSet string `pulumi:"majorSet"`
+	MajorSet *string `pulumi:"majorSet"`
 	// Rate card tier net unit price
-	NetUnitPrice string `pulumi:"netUnitPrice"`
+	NetUnitPrice *string `pulumi:"netUnitPrice"`
 	// Subscribed service operation type
-	OperationType string `pulumi:"operationType"`
+	OperationType *string `pulumi:"operationType"`
 	// Sales Order Header associated to the subscribed service
-	OrderHeaderId string `pulumi:"orderHeaderId"`
+	OrderHeaderId *string `pulumi:"orderHeaderId"`
 	// Order Line identifier at subscribed service level . This identifier is originated in Order Management module. Default is null.
-	OrderLineId string `pulumi:"orderLineId"`
+	OrderLineId *string `pulumi:"orderLineId"`
 	// Sales Order Line Number associated to the subscribed service
-	OrderLineNumber int `pulumi:"orderLineNumber"`
+	OrderLineNumber *int `pulumi:"orderLineNumber"`
 	// Sales Order Number associated to the subscribed service
-	OrderNumber string `pulumi:"orderNumber"`
+	OrderNumber *string `pulumi:"orderNumber"`
 	// Order Type of Subscribed Service
-	OrderType string `pulumi:"orderType"`
+	OrderType *string `pulumi:"orderType"`
 	// Subscribed service Promotion Amount
-	OriginalPromoAmount string `pulumi:"originalPromoAmount"`
+	OriginalPromoAmount *string `pulumi:"originalPromoAmount"`
 	// Overage Bill To of Subscribed Service
-	OverageBillTo string `pulumi:"overageBillTo"`
+	OverageBillTo *string `pulumi:"overageBillTo"`
 	// Subscribed service Overage Discount Percentage
-	OverageDiscountPercentage string `pulumi:"overageDiscountPercentage"`
+	OverageDiscountPercentage *string `pulumi:"overageDiscountPercentage"`
 	// Overage Policy of Subscribed Service
-	OveragePolicy string `pulumi:"overagePolicy"`
+	OveragePolicy *string `pulumi:"overagePolicy"`
 	// Subscribed service partner credit amount
-	PartnerCreditAmount string `pulumi:"partnerCreditAmount"`
+	PartnerCreditAmount *string `pulumi:"partnerCreditAmount"`
 	// This field contains the name of the partner to which the subscription belongs - depending on which the invoicing may differ
-	PartnerTransactionType string `pulumi:"partnerTransactionType"`
+	PartnerTransactionType *string `pulumi:"partnerTransactionType"`
 	// Pay As You Go policy of Subscribed Service (Can be null - indicating no payg policy)
-	PaygPolicy string `pulumi:"paygPolicy"`
+	PaygPolicy *string `pulumi:"paygPolicy"`
 	// Payment Method of Subscribed Service
-	PaymentMethod string `pulumi:"paymentMethod"`
+	PaymentMethod *string `pulumi:"paymentMethod"`
 	// Payment Number of Subscribed Service
-	PaymentNumber string `pulumi:"paymentNumber"`
+	PaymentNumber *string `pulumi:"paymentNumber"`
 	// Payment Term details
 	PaymentTerms []GetSubscribedServicesSubscribedServicePaymentTerm `pulumi:"paymentTerms"`
 	// Indicates the period for which the commitment amount can be utilised exceeding which the amount lapses. Also used in calculation of total contract line value
-	PricePeriod string `pulumi:"pricePeriod"`
+	PricePeriod *string `pulumi:"pricePeriod"`
 	// Subscribed service pricing model
-	PricingModel string `pulumi:"pricingModel"`
+	PricingModel *string `pulumi:"pricingModel"`
 	// Product description
 	Products []GetSubscribedServicesSubscribedServiceProduct `pulumi:"products"`
 	// Subscribed service program type
-	ProgramType string `pulumi:"programType"`
+	ProgramType *string `pulumi:"programType"`
 	// Not null if this service has an associated promotion line in SPM. Contains the line identifier from Order Management of  the associated promo line.
-	PromoOrderLineId string `pulumi:"promoOrderLineId"`
+	PromoOrderLineId *string `pulumi:"promoOrderLineId"`
 	// Subscribed service promotion type
-	PromoType string `pulumi:"promoType"`
+	PromoType *string `pulumi:"promoType"`
 	// Promotion Pricing Type of Subscribed Service (Can be null - indicating no promotion pricing)
-	PromotionPricingType string `pulumi:"promotionPricingType"`
+	PromotionPricingType *string `pulumi:"promotionPricingType"`
 	// Subscribed service provisioning source
-	ProvisioningSource string `pulumi:"provisioningSource"`
+	ProvisioningSource *string `pulumi:"provisioningSource"`
 	// Subscribed service quantity
-	Quantity string `pulumi:"quantity"`
+	Quantity *string `pulumi:"quantity"`
 	// Subscribed service Rate Card Discount Percentage
-	RateCardDiscountPercentage string `pulumi:"rateCardDiscountPercentage"`
+	RateCardDiscountPercentage *string `pulumi:"rateCardDiscountPercentage"`
 	// List of Rate Cards of a Subscribed Service
 	RateCards []GetSubscribedServicesSubscribedServiceRateCard `pulumi:"rateCards"`
 	// SPM Ratecard Type
-	RatecardType string `pulumi:"ratecardType"`
+	RatecardType *string `pulumi:"ratecardType"`
 	// Subscribed service Opportunity Id
-	RenewalOptyId string `pulumi:"renewalOptyId"`
+	RenewalOptyId *string `pulumi:"renewalOptyId"`
 	// Renewal Opportunity Number of Subscribed Service
-	RenewalOptyNumber string `pulumi:"renewalOptyNumber"`
+	RenewalOptyNumber *string `pulumi:"renewalOptyNumber"`
 	// Renewal Opportunity Type of Subscribed Service
-	RenewalOptyType string `pulumi:"renewalOptyType"`
+	RenewalOptyType *string `pulumi:"renewalOptyType"`
 	// SPM renewed Subscription ID
-	RenewedSubscribedServiceId string `pulumi:"renewedSubscribedServiceId"`
+	RenewedSubscribedServiceId *string `pulumi:"renewedSubscribedServiceId"`
 	// Address.
 	ResellerAddresses []GetSubscribedServicesSubscribedServiceResellerAddress `pulumi:"resellerAddresses"`
 	// User.
@@ -11565,19 +10006,19 @@ type GetSubscribedServicesSubscribedService struct {
 	// Business partner.
 	ResellerCustomers []GetSubscribedServicesSubscribedServiceResellerCustomer `pulumi:"resellerCustomers"`
 	// Subscribed service Revenue Line Id
-	RevenueLineId string `pulumi:"revenueLineId"`
+	RevenueLineId *string `pulumi:"revenueLineId"`
 	// Revenue Line NUmber of Subscribed Service
-	RevenueLineNumber string `pulumi:"revenueLineNumber"`
+	RevenueLineNumber *string `pulumi:"revenueLineNumber"`
 	// Subscribed service Revised ARR
-	RevisedArrInLc string `pulumi:"revisedArrInLc"`
+	RevisedArrInLc *string `pulumi:"revisedArrInLc"`
 	// Subscribed service Revised ARR in Standard Currency
-	RevisedArrInSc string `pulumi:"revisedArrInSc"`
+	RevisedArrInSc *string `pulumi:"revisedArrInSc"`
 	// Subscribed service sales account party id
-	SalesAccountPartyId string `pulumi:"salesAccountPartyId"`
+	SalesAccountPartyId *string `pulumi:"salesAccountPartyId"`
 	// Sales Channel of Subscribed Service
-	SalesChannel string `pulumi:"salesChannel"`
+	SalesChannel *string `pulumi:"salesChannel"`
 	// Subscribed service line number
-	SerialNumber string `pulumi:"serialNumber"`
+	SerialNumber *string `pulumi:"serialNumber"`
 	// Address.
 	ServiceToAddresses []GetSubscribedServicesSubscribedServiceServiceToAddress `pulumi:"serviceToAddresses"`
 	// User.
@@ -11589,59 +10030,59 @@ type GetSubscribedServicesSubscribedService struct {
 	// Business partner.
 	SoldToCustomers []GetSubscribedServicesSubscribedServiceSoldToCustomer `pulumi:"soldToCustomers"`
 	// Subscribed service start date type
-	StartDateType string `pulumi:"startDateType"`
+	StartDateType *string `pulumi:"startDateType"`
 	// This param is used to filter subscribed services based on its status
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 	// Line level Subscription Id
-	SubscriptionId string `pulumi:"subscriptionId"`
+	SubscriptionId *string `pulumi:"subscriptionId"`
 	// Subscribed service source
-	SubscriptionSource string `pulumi:"subscriptionSource"`
+	SubscriptionSource *string `pulumi:"subscriptionSource"`
 	// Subscribed service System ARR
-	SystemArrInLc string `pulumi:"systemArrInLc"`
+	SystemArrInLc *string `pulumi:"systemArrInLc"`
 	// Subscribed service System ARR in Standard Currency
-	SystemArrInSc string `pulumi:"systemArrInSc"`
+	SystemArrInSc *string `pulumi:"systemArrInSc"`
 	// Subscribed service System ATR-ARR
-	SystemAtrArrInLc string `pulumi:"systemAtrArrInLc"`
+	SystemAtrArrInLc *string `pulumi:"systemAtrArrInLc"`
 	// Subscribed service System ATR-ARR in Standard Currency
-	SystemAtrArrInSc string `pulumi:"systemAtrArrInSc"`
+	SystemAtrArrInSc *string `pulumi:"systemAtrArrInSc"`
 	// Term value in Months
-	TermValue string `pulumi:"termValue"`
+	TermValue *string `pulumi:"termValue"`
 	// Term value UOM
-	TermValueUom string `pulumi:"termValueUom"`
+	TermValueUom *string `pulumi:"termValueUom"`
 	// Subscribed service agrrement end date
-	TimeAgreementEnd string `pulumi:"timeAgreementEnd"`
+	TimeAgreementEnd *string `pulumi:"timeAgreementEnd"`
 	// Subscribed service creation date
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// Subscribed service customer config date
-	TimeCustomerConfig string `pulumi:"timeCustomerConfig"`
+	TimeCustomerConfig *string `pulumi:"timeCustomerConfig"`
 	// Subscribed service end date
-	TimeEnd string `pulumi:"timeEnd"`
+	TimeEnd *string `pulumi:"timeEnd"`
 	// Subscribed service Major Set End date
-	TimeMajorsetEnd string `pulumi:"timeMajorsetEnd"`
+	TimeMajorsetEnd *string `pulumi:"timeMajorsetEnd"`
 	// Subscribed service Major Set Start date
-	TimeMajorsetStart string `pulumi:"timeMajorsetStart"`
+	TimeMajorsetStart *string `pulumi:"timeMajorsetStart"`
 	// Subscribed service payment expiry date
-	TimePaymentExpiry string `pulumi:"timePaymentExpiry"`
+	TimePaymentExpiry *string `pulumi:"timePaymentExpiry"`
 	// Subscribed service provisioning date
-	TimeProvisioned string `pulumi:"timeProvisioned"`
+	TimeProvisioned *string `pulumi:"timeProvisioned"`
 	// Subscribed service service configuration email sent date
-	TimeServiceConfigurationEmailSent string `pulumi:"timeServiceConfigurationEmailSent"`
+	TimeServiceConfigurationEmailSent *string `pulumi:"timeServiceConfigurationEmailSent"`
 	// Subscribed service start date
-	TimeStart string `pulumi:"timeStart"`
+	TimeStart *string `pulumi:"timeStart"`
 	// Subscribed service last update date
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// Subscribed service welcome email sent date
-	TimeWelcomeEmailSent string `pulumi:"timeWelcomeEmailSent"`
+	TimeWelcomeEmailSent *string `pulumi:"timeWelcomeEmailSent"`
 	// Subscribed service total value
-	TotalValue string `pulumi:"totalValue"`
+	TotalValue *string `pulumi:"totalValue"`
 	// Subscribed service Transaction Extension Id
-	TransactionExtensionId string `pulumi:"transactionExtensionId"`
+	TransactionExtensionId *string `pulumi:"transactionExtensionId"`
 	// Subscribed Service line type
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 	// User that updated the subscribed service
-	UpdatedBy string `pulumi:"updatedBy"`
+	UpdatedBy *string `pulumi:"updatedBy"`
 	// Subscribed service used amount
-	UsedAmount string `pulumi:"usedAmount"`
+	UsedAmount *string `pulumi:"usedAmount"`
 }
 
 // GetSubscribedServicesSubscribedServiceInput is an input type that accepts GetSubscribedServicesSubscribedServiceArgs and GetSubscribedServicesSubscribedServiceOutput values.
@@ -11657,15 +10098,15 @@ type GetSubscribedServicesSubscribedServiceInput interface {
 
 type GetSubscribedServicesSubscribedServiceArgs struct {
 	// Subscribed service admin email id
-	AdminEmail pulumi.StringInput `pulumi:"adminEmail"`
+	AdminEmail pulumi.StringPtrInput `pulumi:"adminEmail"`
 	// Subscribed service agreement ID
-	AgreementId pulumi.StringInput `pulumi:"agreementId"`
+	AgreementId pulumi.StringPtrInput `pulumi:"agreementId"`
 	// Subscribed service agrrement name
-	AgreementName pulumi.StringInput `pulumi:"agreementName"`
+	AgreementName pulumi.StringPtrInput `pulumi:"agreementName"`
 	// Subscribed service agrrement type
-	AgreementType pulumi.StringInput `pulumi:"agreementType"`
+	AgreementType pulumi.StringPtrInput `pulumi:"agreementType"`
 	// Commitment available amount
-	AvailableAmount pulumi.StringInput `pulumi:"availableAmount"`
+	AvailableAmount pulumi.StringPtrInput `pulumi:"availableAmount"`
 	// Address.
 	BillToAddresses GetSubscribedServicesSubscribedServiceBillToAddressArrayInput `pulumi:"billToAddresses"`
 	// User.
@@ -11673,29 +10114,29 @@ type GetSubscribedServicesSubscribedServiceArgs struct {
 	// Business partner.
 	BillToCustomers GetSubscribedServicesSubscribedServiceBillToCustomerArrayInput `pulumi:"billToCustomers"`
 	// Subscribed service invoice frequency
-	BillingFrequency pulumi.StringInput `pulumi:"billingFrequency"`
+	BillingFrequency pulumi.StringPtrInput `pulumi:"billingFrequency"`
 	// Booking Opportunity Number of Subscribed Service
-	BookingOptyNumber pulumi.StringInput `pulumi:"bookingOptyNumber"`
+	BookingOptyNumber pulumi.StringPtrInput `pulumi:"bookingOptyNumber"`
 	// Subscribed service buyer email id
-	BuyerEmail pulumi.StringInput `pulumi:"buyerEmail"`
+	BuyerEmail pulumi.StringPtrInput `pulumi:"buyerEmail"`
 	// Subscribed service commitment schedule Id
-	CommitmentScheduleId pulumi.StringInput `pulumi:"commitmentScheduleId"`
+	CommitmentScheduleId pulumi.StringPtrInput `pulumi:"commitmentScheduleId"`
 	// List of Commitment services of a line
 	CommitmentServices GetSubscribedServicesSubscribedServiceCommitmentServiceArrayInput `pulumi:"commitmentServices"`
 	// User that created the Payment term
-	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
+	CreatedBy pulumi.StringPtrInput `pulumi:"createdBy"`
 	// Subscribed service credit percentage
-	CreditPercentage pulumi.StringInput `pulumi:"creditPercentage"`
+	CreditPercentage pulumi.StringPtrInput `pulumi:"creditPercentage"`
 	// Subscribed service CSI number
-	Csi pulumi.StringInput `pulumi:"csi"`
+	Csi pulumi.StringPtrInput `pulumi:"csi"`
 	// Identifier for a customer's transactions for purchase of ay oracle services
-	CustomerTransactionReference pulumi.StringInput `pulumi:"customerTransactionReference"`
+	CustomerTransactionReference pulumi.StringPtrInput `pulumi:"customerTransactionReference"`
 	// Subscribed service data center
-	DataCenter pulumi.StringInput `pulumi:"dataCenter"`
+	DataCenter pulumi.StringPtrInput `pulumi:"dataCenter"`
 	// Subscribed service data center region
-	DataCenterRegion pulumi.StringInput `pulumi:"dataCenterRegion"`
+	DataCenterRegion pulumi.StringPtrInput `pulumi:"dataCenterRegion"`
 	// Subscribed service eligible to renew field
-	EligibleToRenew pulumi.StringInput `pulumi:"eligibleToRenew"`
+	EligibleToRenew pulumi.StringPtrInput `pulumi:"eligibleToRenew"`
 	// Address.
 	EndUserAddresses GetSubscribedServicesSubscribedServiceEndUserAddressArrayInput `pulumi:"endUserAddresses"`
 	// User.
@@ -11703,97 +10144,97 @@ type GetSubscribedServicesSubscribedServiceArgs struct {
 	// Business partner.
 	EndUserCustomers GetSubscribedServicesSubscribedServiceEndUserCustomerArrayInput `pulumi:"endUserCustomers"`
 	// Subscribed service fulfillment set
-	FulfillmentSet pulumi.StringInput `pulumi:"fulfillmentSet"`
+	FulfillmentSet pulumi.StringPtrInput `pulumi:"fulfillmentSet"`
 	// Funded Allocation line value example: 12000.00
-	FundedAllocationValue pulumi.StringInput `pulumi:"fundedAllocationValue"`
+	FundedAllocationValue pulumi.StringPtrInput `pulumi:"fundedAllocationValue"`
 	// SPM internal Subscribed Service ID
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Indicates if a service can recieve usages and consequently have available amounts computed
-	IsAllowance pulumi.BoolInput `pulumi:"isAllowance"`
+	IsAllowance pulumi.BoolPtrInput `pulumi:"isAllowance"`
 	// If true compares rate between ratecard and the active pricelist and minimum rate would be fetched
-	IsCapToPriceList pulumi.BoolInput `pulumi:"isCapToPriceList"`
+	IsCapToPriceList pulumi.BoolPtrInput `pulumi:"isCapToPriceList"`
 	// Used in context of service credit lines
-	IsCreditEnabled pulumi.BoolInput `pulumi:"isCreditEnabled"`
+	IsCreditEnabled pulumi.BoolPtrInput `pulumi:"isCreditEnabled"`
 	// Indicator on whether or not there has been usage for the subscribed service
-	IsHavingUsage pulumi.BoolInput `pulumi:"isHavingUsage"`
+	IsHavingUsage pulumi.BoolPtrInput `pulumi:"isHavingUsage"`
 	// Subscribed service intent to pay flag
-	IsIntentToPay pulumi.BoolInput `pulumi:"isIntentToPay"`
+	IsIntentToPay pulumi.BoolPtrInput `pulumi:"isIntentToPay"`
 	// Subscribed service payg flag
-	IsPayg pulumi.BoolInput `pulumi:"isPayg"`
+	IsPayg pulumi.BoolPtrInput `pulumi:"isPayg"`
 	// Indicates if the Subscribed service has a single ratecard
-	IsSingleRateCard pulumi.BoolInput `pulumi:"isSingleRateCard"`
+	IsSingleRateCard pulumi.BoolPtrInput `pulumi:"isSingleRateCard"`
 	// Indicates if the commitment lines can have different quantities
-	IsVariableCommitment pulumi.BoolInput `pulumi:"isVariableCommitment"`
+	IsVariableCommitment pulumi.BoolPtrInput `pulumi:"isVariableCommitment"`
 	// Subscribed service line net amount
-	LineNetAmount pulumi.StringInput `pulumi:"lineNetAmount"`
+	LineNetAmount pulumi.StringPtrInput `pulumi:"lineNetAmount"`
 	// Subscribed service Major Set
-	MajorSet pulumi.StringInput `pulumi:"majorSet"`
+	MajorSet pulumi.StringPtrInput `pulumi:"majorSet"`
 	// Rate card tier net unit price
-	NetUnitPrice pulumi.StringInput `pulumi:"netUnitPrice"`
+	NetUnitPrice pulumi.StringPtrInput `pulumi:"netUnitPrice"`
 	// Subscribed service operation type
-	OperationType pulumi.StringInput `pulumi:"operationType"`
+	OperationType pulumi.StringPtrInput `pulumi:"operationType"`
 	// Sales Order Header associated to the subscribed service
-	OrderHeaderId pulumi.StringInput `pulumi:"orderHeaderId"`
+	OrderHeaderId pulumi.StringPtrInput `pulumi:"orderHeaderId"`
 	// Order Line identifier at subscribed service level . This identifier is originated in Order Management module. Default is null.
-	OrderLineId pulumi.StringInput `pulumi:"orderLineId"`
+	OrderLineId pulumi.StringPtrInput `pulumi:"orderLineId"`
 	// Sales Order Line Number associated to the subscribed service
-	OrderLineNumber pulumi.IntInput `pulumi:"orderLineNumber"`
+	OrderLineNumber pulumi.IntPtrInput `pulumi:"orderLineNumber"`
 	// Sales Order Number associated to the subscribed service
-	OrderNumber pulumi.StringInput `pulumi:"orderNumber"`
+	OrderNumber pulumi.StringPtrInput `pulumi:"orderNumber"`
 	// Order Type of Subscribed Service
-	OrderType pulumi.StringInput `pulumi:"orderType"`
+	OrderType pulumi.StringPtrInput `pulumi:"orderType"`
 	// Subscribed service Promotion Amount
-	OriginalPromoAmount pulumi.StringInput `pulumi:"originalPromoAmount"`
+	OriginalPromoAmount pulumi.StringPtrInput `pulumi:"originalPromoAmount"`
 	// Overage Bill To of Subscribed Service
-	OverageBillTo pulumi.StringInput `pulumi:"overageBillTo"`
+	OverageBillTo pulumi.StringPtrInput `pulumi:"overageBillTo"`
 	// Subscribed service Overage Discount Percentage
-	OverageDiscountPercentage pulumi.StringInput `pulumi:"overageDiscountPercentage"`
+	OverageDiscountPercentage pulumi.StringPtrInput `pulumi:"overageDiscountPercentage"`
 	// Overage Policy of Subscribed Service
-	OveragePolicy pulumi.StringInput `pulumi:"overagePolicy"`
+	OveragePolicy pulumi.StringPtrInput `pulumi:"overagePolicy"`
 	// Subscribed service partner credit amount
-	PartnerCreditAmount pulumi.StringInput `pulumi:"partnerCreditAmount"`
+	PartnerCreditAmount pulumi.StringPtrInput `pulumi:"partnerCreditAmount"`
 	// This field contains the name of the partner to which the subscription belongs - depending on which the invoicing may differ
-	PartnerTransactionType pulumi.StringInput `pulumi:"partnerTransactionType"`
+	PartnerTransactionType pulumi.StringPtrInput `pulumi:"partnerTransactionType"`
 	// Pay As You Go policy of Subscribed Service (Can be null - indicating no payg policy)
-	PaygPolicy pulumi.StringInput `pulumi:"paygPolicy"`
+	PaygPolicy pulumi.StringPtrInput `pulumi:"paygPolicy"`
 	// Payment Method of Subscribed Service
-	PaymentMethod pulumi.StringInput `pulumi:"paymentMethod"`
+	PaymentMethod pulumi.StringPtrInput `pulumi:"paymentMethod"`
 	// Payment Number of Subscribed Service
-	PaymentNumber pulumi.StringInput `pulumi:"paymentNumber"`
+	PaymentNumber pulumi.StringPtrInput `pulumi:"paymentNumber"`
 	// Payment Term details
 	PaymentTerms GetSubscribedServicesSubscribedServicePaymentTermArrayInput `pulumi:"paymentTerms"`
 	// Indicates the period for which the commitment amount can be utilised exceeding which the amount lapses. Also used in calculation of total contract line value
-	PricePeriod pulumi.StringInput `pulumi:"pricePeriod"`
+	PricePeriod pulumi.StringPtrInput `pulumi:"pricePeriod"`
 	// Subscribed service pricing model
-	PricingModel pulumi.StringInput `pulumi:"pricingModel"`
+	PricingModel pulumi.StringPtrInput `pulumi:"pricingModel"`
 	// Product description
 	Products GetSubscribedServicesSubscribedServiceProductArrayInput `pulumi:"products"`
 	// Subscribed service program type
-	ProgramType pulumi.StringInput `pulumi:"programType"`
+	ProgramType pulumi.StringPtrInput `pulumi:"programType"`
 	// Not null if this service has an associated promotion line in SPM. Contains the line identifier from Order Management of  the associated promo line.
-	PromoOrderLineId pulumi.StringInput `pulumi:"promoOrderLineId"`
+	PromoOrderLineId pulumi.StringPtrInput `pulumi:"promoOrderLineId"`
 	// Subscribed service promotion type
-	PromoType pulumi.StringInput `pulumi:"promoType"`
+	PromoType pulumi.StringPtrInput `pulumi:"promoType"`
 	// Promotion Pricing Type of Subscribed Service (Can be null - indicating no promotion pricing)
-	PromotionPricingType pulumi.StringInput `pulumi:"promotionPricingType"`
+	PromotionPricingType pulumi.StringPtrInput `pulumi:"promotionPricingType"`
 	// Subscribed service provisioning source
-	ProvisioningSource pulumi.StringInput `pulumi:"provisioningSource"`
+	ProvisioningSource pulumi.StringPtrInput `pulumi:"provisioningSource"`
 	// Subscribed service quantity
-	Quantity pulumi.StringInput `pulumi:"quantity"`
+	Quantity pulumi.StringPtrInput `pulumi:"quantity"`
 	// Subscribed service Rate Card Discount Percentage
-	RateCardDiscountPercentage pulumi.StringInput `pulumi:"rateCardDiscountPercentage"`
+	RateCardDiscountPercentage pulumi.StringPtrInput `pulumi:"rateCardDiscountPercentage"`
 	// List of Rate Cards of a Subscribed Service
 	RateCards GetSubscribedServicesSubscribedServiceRateCardArrayInput `pulumi:"rateCards"`
 	// SPM Ratecard Type
-	RatecardType pulumi.StringInput `pulumi:"ratecardType"`
+	RatecardType pulumi.StringPtrInput `pulumi:"ratecardType"`
 	// Subscribed service Opportunity Id
-	RenewalOptyId pulumi.StringInput `pulumi:"renewalOptyId"`
+	RenewalOptyId pulumi.StringPtrInput `pulumi:"renewalOptyId"`
 	// Renewal Opportunity Number of Subscribed Service
-	RenewalOptyNumber pulumi.StringInput `pulumi:"renewalOptyNumber"`
+	RenewalOptyNumber pulumi.StringPtrInput `pulumi:"renewalOptyNumber"`
 	// Renewal Opportunity Type of Subscribed Service
-	RenewalOptyType pulumi.StringInput `pulumi:"renewalOptyType"`
+	RenewalOptyType pulumi.StringPtrInput `pulumi:"renewalOptyType"`
 	// SPM renewed Subscription ID
-	RenewedSubscribedServiceId pulumi.StringInput `pulumi:"renewedSubscribedServiceId"`
+	RenewedSubscribedServiceId pulumi.StringPtrInput `pulumi:"renewedSubscribedServiceId"`
 	// Address.
 	ResellerAddresses GetSubscribedServicesSubscribedServiceResellerAddressArrayInput `pulumi:"resellerAddresses"`
 	// User.
@@ -11801,19 +10242,19 @@ type GetSubscribedServicesSubscribedServiceArgs struct {
 	// Business partner.
 	ResellerCustomers GetSubscribedServicesSubscribedServiceResellerCustomerArrayInput `pulumi:"resellerCustomers"`
 	// Subscribed service Revenue Line Id
-	RevenueLineId pulumi.StringInput `pulumi:"revenueLineId"`
+	RevenueLineId pulumi.StringPtrInput `pulumi:"revenueLineId"`
 	// Revenue Line NUmber of Subscribed Service
-	RevenueLineNumber pulumi.StringInput `pulumi:"revenueLineNumber"`
+	RevenueLineNumber pulumi.StringPtrInput `pulumi:"revenueLineNumber"`
 	// Subscribed service Revised ARR
-	RevisedArrInLc pulumi.StringInput `pulumi:"revisedArrInLc"`
+	RevisedArrInLc pulumi.StringPtrInput `pulumi:"revisedArrInLc"`
 	// Subscribed service Revised ARR in Standard Currency
-	RevisedArrInSc pulumi.StringInput `pulumi:"revisedArrInSc"`
+	RevisedArrInSc pulumi.StringPtrInput `pulumi:"revisedArrInSc"`
 	// Subscribed service sales account party id
-	SalesAccountPartyId pulumi.StringInput `pulumi:"salesAccountPartyId"`
+	SalesAccountPartyId pulumi.StringPtrInput `pulumi:"salesAccountPartyId"`
 	// Sales Channel of Subscribed Service
-	SalesChannel pulumi.StringInput `pulumi:"salesChannel"`
+	SalesChannel pulumi.StringPtrInput `pulumi:"salesChannel"`
 	// Subscribed service line number
-	SerialNumber pulumi.StringInput `pulumi:"serialNumber"`
+	SerialNumber pulumi.StringPtrInput `pulumi:"serialNumber"`
 	// Address.
 	ServiceToAddresses GetSubscribedServicesSubscribedServiceServiceToAddressArrayInput `pulumi:"serviceToAddresses"`
 	// User.
@@ -11825,59 +10266,59 @@ type GetSubscribedServicesSubscribedServiceArgs struct {
 	// Business partner.
 	SoldToCustomers GetSubscribedServicesSubscribedServiceSoldToCustomerArrayInput `pulumi:"soldToCustomers"`
 	// Subscribed service start date type
-	StartDateType pulumi.StringInput `pulumi:"startDateType"`
+	StartDateType pulumi.StringPtrInput `pulumi:"startDateType"`
 	// This param is used to filter subscribed services based on its status
-	Status pulumi.StringInput `pulumi:"status"`
+	Status pulumi.StringPtrInput `pulumi:"status"`
 	// Line level Subscription Id
-	SubscriptionId pulumi.StringInput `pulumi:"subscriptionId"`
+	SubscriptionId pulumi.StringPtrInput `pulumi:"subscriptionId"`
 	// Subscribed service source
-	SubscriptionSource pulumi.StringInput `pulumi:"subscriptionSource"`
+	SubscriptionSource pulumi.StringPtrInput `pulumi:"subscriptionSource"`
 	// Subscribed service System ARR
-	SystemArrInLc pulumi.StringInput `pulumi:"systemArrInLc"`
+	SystemArrInLc pulumi.StringPtrInput `pulumi:"systemArrInLc"`
 	// Subscribed service System ARR in Standard Currency
-	SystemArrInSc pulumi.StringInput `pulumi:"systemArrInSc"`
+	SystemArrInSc pulumi.StringPtrInput `pulumi:"systemArrInSc"`
 	// Subscribed service System ATR-ARR
-	SystemAtrArrInLc pulumi.StringInput `pulumi:"systemAtrArrInLc"`
+	SystemAtrArrInLc pulumi.StringPtrInput `pulumi:"systemAtrArrInLc"`
 	// Subscribed service System ATR-ARR in Standard Currency
-	SystemAtrArrInSc pulumi.StringInput `pulumi:"systemAtrArrInSc"`
+	SystemAtrArrInSc pulumi.StringPtrInput `pulumi:"systemAtrArrInSc"`
 	// Term value in Months
-	TermValue pulumi.StringInput `pulumi:"termValue"`
+	TermValue pulumi.StringPtrInput `pulumi:"termValue"`
 	// Term value UOM
-	TermValueUom pulumi.StringInput `pulumi:"termValueUom"`
+	TermValueUom pulumi.StringPtrInput `pulumi:"termValueUom"`
 	// Subscribed service agrrement end date
-	TimeAgreementEnd pulumi.StringInput `pulumi:"timeAgreementEnd"`
+	TimeAgreementEnd pulumi.StringPtrInput `pulumi:"timeAgreementEnd"`
 	// Subscribed service creation date
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// Subscribed service customer config date
-	TimeCustomerConfig pulumi.StringInput `pulumi:"timeCustomerConfig"`
+	TimeCustomerConfig pulumi.StringPtrInput `pulumi:"timeCustomerConfig"`
 	// Subscribed service end date
-	TimeEnd pulumi.StringInput `pulumi:"timeEnd"`
+	TimeEnd pulumi.StringPtrInput `pulumi:"timeEnd"`
 	// Subscribed service Major Set End date
-	TimeMajorsetEnd pulumi.StringInput `pulumi:"timeMajorsetEnd"`
+	TimeMajorsetEnd pulumi.StringPtrInput `pulumi:"timeMajorsetEnd"`
 	// Subscribed service Major Set Start date
-	TimeMajorsetStart pulumi.StringInput `pulumi:"timeMajorsetStart"`
+	TimeMajorsetStart pulumi.StringPtrInput `pulumi:"timeMajorsetStart"`
 	// Subscribed service payment expiry date
-	TimePaymentExpiry pulumi.StringInput `pulumi:"timePaymentExpiry"`
+	TimePaymentExpiry pulumi.StringPtrInput `pulumi:"timePaymentExpiry"`
 	// Subscribed service provisioning date
-	TimeProvisioned pulumi.StringInput `pulumi:"timeProvisioned"`
+	TimeProvisioned pulumi.StringPtrInput `pulumi:"timeProvisioned"`
 	// Subscribed service service configuration email sent date
-	TimeServiceConfigurationEmailSent pulumi.StringInput `pulumi:"timeServiceConfigurationEmailSent"`
+	TimeServiceConfigurationEmailSent pulumi.StringPtrInput `pulumi:"timeServiceConfigurationEmailSent"`
 	// Subscribed service start date
-	TimeStart pulumi.StringInput `pulumi:"timeStart"`
+	TimeStart pulumi.StringPtrInput `pulumi:"timeStart"`
 	// Subscribed service last update date
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 	// Subscribed service welcome email sent date
-	TimeWelcomeEmailSent pulumi.StringInput `pulumi:"timeWelcomeEmailSent"`
+	TimeWelcomeEmailSent pulumi.StringPtrInput `pulumi:"timeWelcomeEmailSent"`
 	// Subscribed service total value
-	TotalValue pulumi.StringInput `pulumi:"totalValue"`
+	TotalValue pulumi.StringPtrInput `pulumi:"totalValue"`
 	// Subscribed service Transaction Extension Id
-	TransactionExtensionId pulumi.StringInput `pulumi:"transactionExtensionId"`
+	TransactionExtensionId pulumi.StringPtrInput `pulumi:"transactionExtensionId"`
 	// Subscribed Service line type
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 	// User that updated the subscribed service
-	UpdatedBy pulumi.StringInput `pulumi:"updatedBy"`
+	UpdatedBy pulumi.StringPtrInput `pulumi:"updatedBy"`
 	// Subscribed service used amount
-	UsedAmount pulumi.StringInput `pulumi:"usedAmount"`
+	UsedAmount pulumi.StringPtrInput `pulumi:"usedAmount"`
 }
 
 func (GetSubscribedServicesSubscribedServiceArgs) ElementType() reflect.Type {
@@ -11890,12 +10331,6 @@ func (i GetSubscribedServicesSubscribedServiceArgs) ToGetSubscribedServicesSubsc
 
 func (i GetSubscribedServicesSubscribedServiceArgs) ToGetSubscribedServicesSubscribedServiceOutputWithContext(ctx context.Context) GetSubscribedServicesSubscribedServiceOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServicesSubscribedServiceOutput)
-}
-
-func (i GetSubscribedServicesSubscribedServiceArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServicesSubscribedService] {
-	return pulumix.Output[GetSubscribedServicesSubscribedService]{
-		OutputState: i.ToGetSubscribedServicesSubscribedServiceOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscribedServicesSubscribedServiceArrayInput is an input type that accepts GetSubscribedServicesSubscribedServiceArray and GetSubscribedServicesSubscribedServiceArrayOutput values.
@@ -11923,12 +10358,6 @@ func (i GetSubscribedServicesSubscribedServiceArray) ToGetSubscribedServicesSubs
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServicesSubscribedServiceArrayOutput)
 }
 
-func (i GetSubscribedServicesSubscribedServiceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServicesSubscribedService] {
-	return pulumix.Output[[]GetSubscribedServicesSubscribedService]{
-		OutputState: i.ToGetSubscribedServicesSubscribedServiceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscribedServicesSubscribedServiceOutput struct{ *pulumi.OutputState }
 
 func (GetSubscribedServicesSubscribedServiceOutput) ElementType() reflect.Type {
@@ -11943,35 +10372,29 @@ func (o GetSubscribedServicesSubscribedServiceOutput) ToGetSubscribedServicesSub
 	return o
 }
 
-func (o GetSubscribedServicesSubscribedServiceOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServicesSubscribedService] {
-	return pulumix.Output[GetSubscribedServicesSubscribedService]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Subscribed service admin email id
-func (o GetSubscribedServicesSubscribedServiceOutput) AdminEmail() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) string { return v.AdminEmail }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) AdminEmail() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *string { return v.AdminEmail }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service agreement ID
-func (o GetSubscribedServicesSubscribedServiceOutput) AgreementId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) string { return v.AgreementId }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) AgreementId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *string { return v.AgreementId }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service agrrement name
-func (o GetSubscribedServicesSubscribedServiceOutput) AgreementName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) string { return v.AgreementName }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) AgreementName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *string { return v.AgreementName }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service agrrement type
-func (o GetSubscribedServicesSubscribedServiceOutput) AgreementType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) string { return v.AgreementType }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) AgreementType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *string { return v.AgreementType }).(pulumi.StringPtrOutput)
 }
 
 // Commitment available amount
-func (o GetSubscribedServicesSubscribedServiceOutput) AvailableAmount() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) string { return v.AvailableAmount }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) AvailableAmount() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *string { return v.AvailableAmount }).(pulumi.StringPtrOutput)
 }
 
 // Address.
@@ -11996,23 +10419,23 @@ func (o GetSubscribedServicesSubscribedServiceOutput) BillToCustomers() GetSubsc
 }
 
 // Subscribed service invoice frequency
-func (o GetSubscribedServicesSubscribedServiceOutput) BillingFrequency() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) string { return v.BillingFrequency }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) BillingFrequency() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *string { return v.BillingFrequency }).(pulumi.StringPtrOutput)
 }
 
 // Booking Opportunity Number of Subscribed Service
-func (o GetSubscribedServicesSubscribedServiceOutput) BookingOptyNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) string { return v.BookingOptyNumber }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) BookingOptyNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *string { return v.BookingOptyNumber }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service buyer email id
-func (o GetSubscribedServicesSubscribedServiceOutput) BuyerEmail() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) string { return v.BuyerEmail }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) BuyerEmail() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *string { return v.BuyerEmail }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service commitment schedule Id
-func (o GetSubscribedServicesSubscribedServiceOutput) CommitmentScheduleId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) string { return v.CommitmentScheduleId }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) CommitmentScheduleId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *string { return v.CommitmentScheduleId }).(pulumi.StringPtrOutput)
 }
 
 // List of Commitment services of a line
@@ -12023,38 +10446,38 @@ func (o GetSubscribedServicesSubscribedServiceOutput) CommitmentServices() GetSu
 }
 
 // User that created the Payment term
-func (o GetSubscribedServicesSubscribedServiceOutput) CreatedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) string { return v.CreatedBy }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) CreatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *string { return v.CreatedBy }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service credit percentage
-func (o GetSubscribedServicesSubscribedServiceOutput) CreditPercentage() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) string { return v.CreditPercentage }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) CreditPercentage() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *string { return v.CreditPercentage }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service CSI number
-func (o GetSubscribedServicesSubscribedServiceOutput) Csi() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) string { return v.Csi }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) Csi() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *string { return v.Csi }).(pulumi.StringPtrOutput)
 }
 
 // Identifier for a customer's transactions for purchase of ay oracle services
-func (o GetSubscribedServicesSubscribedServiceOutput) CustomerTransactionReference() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) string { return v.CustomerTransactionReference }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) CustomerTransactionReference() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *string { return v.CustomerTransactionReference }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service data center
-func (o GetSubscribedServicesSubscribedServiceOutput) DataCenter() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) string { return v.DataCenter }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) DataCenter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *string { return v.DataCenter }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service data center region
-func (o GetSubscribedServicesSubscribedServiceOutput) DataCenterRegion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) string { return v.DataCenterRegion }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) DataCenterRegion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *string { return v.DataCenterRegion }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service eligible to renew field
-func (o GetSubscribedServicesSubscribedServiceOutput) EligibleToRenew() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) string { return v.EligibleToRenew }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) EligibleToRenew() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *string { return v.EligibleToRenew }).(pulumi.StringPtrOutput)
 }
 
 // Address.
@@ -12079,148 +10502,148 @@ func (o GetSubscribedServicesSubscribedServiceOutput) EndUserCustomers() GetSubs
 }
 
 // Subscribed service fulfillment set
-func (o GetSubscribedServicesSubscribedServiceOutput) FulfillmentSet() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) string { return v.FulfillmentSet }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) FulfillmentSet() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *string { return v.FulfillmentSet }).(pulumi.StringPtrOutput)
 }
 
 // Funded Allocation line value example: 12000.00
-func (o GetSubscribedServicesSubscribedServiceOutput) FundedAllocationValue() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) string { return v.FundedAllocationValue }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) FundedAllocationValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *string { return v.FundedAllocationValue }).(pulumi.StringPtrOutput)
 }
 
 // SPM internal Subscribed Service ID
-func (o GetSubscribedServicesSubscribedServiceOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) string { return v.Id }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Indicates if a service can recieve usages and consequently have available amounts computed
-func (o GetSubscribedServicesSubscribedServiceOutput) IsAllowance() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) bool { return v.IsAllowance }).(pulumi.BoolOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) IsAllowance() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *bool { return v.IsAllowance }).(pulumi.BoolPtrOutput)
 }
 
 // If true compares rate between ratecard and the active pricelist and minimum rate would be fetched
-func (o GetSubscribedServicesSubscribedServiceOutput) IsCapToPriceList() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) bool { return v.IsCapToPriceList }).(pulumi.BoolOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) IsCapToPriceList() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *bool { return v.IsCapToPriceList }).(pulumi.BoolPtrOutput)
 }
 
 // Used in context of service credit lines
-func (o GetSubscribedServicesSubscribedServiceOutput) IsCreditEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) bool { return v.IsCreditEnabled }).(pulumi.BoolOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) IsCreditEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *bool { return v.IsCreditEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // Indicator on whether or not there has been usage for the subscribed service
-func (o GetSubscribedServicesSubscribedServiceOutput) IsHavingUsage() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) bool { return v.IsHavingUsage }).(pulumi.BoolOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) IsHavingUsage() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *bool { return v.IsHavingUsage }).(pulumi.BoolPtrOutput)
 }
 
 // Subscribed service intent to pay flag
-func (o GetSubscribedServicesSubscribedServiceOutput) IsIntentToPay() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) bool { return v.IsIntentToPay }).(pulumi.BoolOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) IsIntentToPay() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *bool { return v.IsIntentToPay }).(pulumi.BoolPtrOutput)
 }
 
 // Subscribed service payg flag
-func (o GetSubscribedServicesSubscribedServiceOutput) IsPayg() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) bool { return v.IsPayg }).(pulumi.BoolOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) IsPayg() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *bool { return v.IsPayg }).(pulumi.BoolPtrOutput)
 }
 
 // Indicates if the Subscribed service has a single ratecard
-func (o GetSubscribedServicesSubscribedServiceOutput) IsSingleRateCard() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) bool { return v.IsSingleRateCard }).(pulumi.BoolOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) IsSingleRateCard() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *bool { return v.IsSingleRateCard }).(pulumi.BoolPtrOutput)
 }
 
 // Indicates if the commitment lines can have different quantities
-func (o GetSubscribedServicesSubscribedServiceOutput) IsVariableCommitment() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) bool { return v.IsVariableCommitment }).(pulumi.BoolOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) IsVariableCommitment() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *bool { return v.IsVariableCommitment }).(pulumi.BoolPtrOutput)
 }
 
 // Subscribed service line net amount
-func (o GetSubscribedServicesSubscribedServiceOutput) LineNetAmount() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) string { return v.LineNetAmount }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) LineNetAmount() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *string { return v.LineNetAmount }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service Major Set
-func (o GetSubscribedServicesSubscribedServiceOutput) MajorSet() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) string { return v.MajorSet }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) MajorSet() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *string { return v.MajorSet }).(pulumi.StringPtrOutput)
 }
 
 // Rate card tier net unit price
-func (o GetSubscribedServicesSubscribedServiceOutput) NetUnitPrice() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) string { return v.NetUnitPrice }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) NetUnitPrice() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *string { return v.NetUnitPrice }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service operation type
-func (o GetSubscribedServicesSubscribedServiceOutput) OperationType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) string { return v.OperationType }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) OperationType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *string { return v.OperationType }).(pulumi.StringPtrOutput)
 }
 
 // Sales Order Header associated to the subscribed service
-func (o GetSubscribedServicesSubscribedServiceOutput) OrderHeaderId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) string { return v.OrderHeaderId }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) OrderHeaderId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *string { return v.OrderHeaderId }).(pulumi.StringPtrOutput)
 }
 
 // Order Line identifier at subscribed service level . This identifier is originated in Order Management module. Default is null.
-func (o GetSubscribedServicesSubscribedServiceOutput) OrderLineId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) string { return v.OrderLineId }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) OrderLineId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *string { return v.OrderLineId }).(pulumi.StringPtrOutput)
 }
 
 // Sales Order Line Number associated to the subscribed service
-func (o GetSubscribedServicesSubscribedServiceOutput) OrderLineNumber() pulumi.IntOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) int { return v.OrderLineNumber }).(pulumi.IntOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) OrderLineNumber() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *int { return v.OrderLineNumber }).(pulumi.IntPtrOutput)
 }
 
 // Sales Order Number associated to the subscribed service
-func (o GetSubscribedServicesSubscribedServiceOutput) OrderNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) string { return v.OrderNumber }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) OrderNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *string { return v.OrderNumber }).(pulumi.StringPtrOutput)
 }
 
 // Order Type of Subscribed Service
-func (o GetSubscribedServicesSubscribedServiceOutput) OrderType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) string { return v.OrderType }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) OrderType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *string { return v.OrderType }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service Promotion Amount
-func (o GetSubscribedServicesSubscribedServiceOutput) OriginalPromoAmount() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) string { return v.OriginalPromoAmount }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) OriginalPromoAmount() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *string { return v.OriginalPromoAmount }).(pulumi.StringPtrOutput)
 }
 
 // Overage Bill To of Subscribed Service
-func (o GetSubscribedServicesSubscribedServiceOutput) OverageBillTo() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) string { return v.OverageBillTo }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) OverageBillTo() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *string { return v.OverageBillTo }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service Overage Discount Percentage
-func (o GetSubscribedServicesSubscribedServiceOutput) OverageDiscountPercentage() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) string { return v.OverageDiscountPercentage }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) OverageDiscountPercentage() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *string { return v.OverageDiscountPercentage }).(pulumi.StringPtrOutput)
 }
 
 // Overage Policy of Subscribed Service
-func (o GetSubscribedServicesSubscribedServiceOutput) OveragePolicy() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) string { return v.OveragePolicy }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) OveragePolicy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *string { return v.OveragePolicy }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service partner credit amount
-func (o GetSubscribedServicesSubscribedServiceOutput) PartnerCreditAmount() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) string { return v.PartnerCreditAmount }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) PartnerCreditAmount() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *string { return v.PartnerCreditAmount }).(pulumi.StringPtrOutput)
 }
 
 // This field contains the name of the partner to which the subscription belongs - depending on which the invoicing may differ
-func (o GetSubscribedServicesSubscribedServiceOutput) PartnerTransactionType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) string { return v.PartnerTransactionType }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) PartnerTransactionType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *string { return v.PartnerTransactionType }).(pulumi.StringPtrOutput)
 }
 
 // Pay As You Go policy of Subscribed Service (Can be null - indicating no payg policy)
-func (o GetSubscribedServicesSubscribedServiceOutput) PaygPolicy() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) string { return v.PaygPolicy }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) PaygPolicy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *string { return v.PaygPolicy }).(pulumi.StringPtrOutput)
 }
 
 // Payment Method of Subscribed Service
-func (o GetSubscribedServicesSubscribedServiceOutput) PaymentMethod() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) string { return v.PaymentMethod }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) PaymentMethod() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *string { return v.PaymentMethod }).(pulumi.StringPtrOutput)
 }
 
 // Payment Number of Subscribed Service
-func (o GetSubscribedServicesSubscribedServiceOutput) PaymentNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) string { return v.PaymentNumber }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) PaymentNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *string { return v.PaymentNumber }).(pulumi.StringPtrOutput)
 }
 
 // Payment Term details
@@ -12231,13 +10654,13 @@ func (o GetSubscribedServicesSubscribedServiceOutput) PaymentTerms() GetSubscrib
 }
 
 // Indicates the period for which the commitment amount can be utilised exceeding which the amount lapses. Also used in calculation of total contract line value
-func (o GetSubscribedServicesSubscribedServiceOutput) PricePeriod() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) string { return v.PricePeriod }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) PricePeriod() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *string { return v.PricePeriod }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service pricing model
-func (o GetSubscribedServicesSubscribedServiceOutput) PricingModel() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) string { return v.PricingModel }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) PricingModel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *string { return v.PricingModel }).(pulumi.StringPtrOutput)
 }
 
 // Product description
@@ -12248,38 +10671,38 @@ func (o GetSubscribedServicesSubscribedServiceOutput) Products() GetSubscribedSe
 }
 
 // Subscribed service program type
-func (o GetSubscribedServicesSubscribedServiceOutput) ProgramType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) string { return v.ProgramType }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) ProgramType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *string { return v.ProgramType }).(pulumi.StringPtrOutput)
 }
 
 // Not null if this service has an associated promotion line in SPM. Contains the line identifier from Order Management of  the associated promo line.
-func (o GetSubscribedServicesSubscribedServiceOutput) PromoOrderLineId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) string { return v.PromoOrderLineId }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) PromoOrderLineId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *string { return v.PromoOrderLineId }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service promotion type
-func (o GetSubscribedServicesSubscribedServiceOutput) PromoType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) string { return v.PromoType }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) PromoType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *string { return v.PromoType }).(pulumi.StringPtrOutput)
 }
 
 // Promotion Pricing Type of Subscribed Service (Can be null - indicating no promotion pricing)
-func (o GetSubscribedServicesSubscribedServiceOutput) PromotionPricingType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) string { return v.PromotionPricingType }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) PromotionPricingType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *string { return v.PromotionPricingType }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service provisioning source
-func (o GetSubscribedServicesSubscribedServiceOutput) ProvisioningSource() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) string { return v.ProvisioningSource }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) ProvisioningSource() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *string { return v.ProvisioningSource }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service quantity
-func (o GetSubscribedServicesSubscribedServiceOutput) Quantity() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) string { return v.Quantity }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) Quantity() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *string { return v.Quantity }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service Rate Card Discount Percentage
-func (o GetSubscribedServicesSubscribedServiceOutput) RateCardDiscountPercentage() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) string { return v.RateCardDiscountPercentage }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) RateCardDiscountPercentage() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *string { return v.RateCardDiscountPercentage }).(pulumi.StringPtrOutput)
 }
 
 // List of Rate Cards of a Subscribed Service
@@ -12290,28 +10713,28 @@ func (o GetSubscribedServicesSubscribedServiceOutput) RateCards() GetSubscribedS
 }
 
 // SPM Ratecard Type
-func (o GetSubscribedServicesSubscribedServiceOutput) RatecardType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) string { return v.RatecardType }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) RatecardType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *string { return v.RatecardType }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service Opportunity Id
-func (o GetSubscribedServicesSubscribedServiceOutput) RenewalOptyId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) string { return v.RenewalOptyId }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) RenewalOptyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *string { return v.RenewalOptyId }).(pulumi.StringPtrOutput)
 }
 
 // Renewal Opportunity Number of Subscribed Service
-func (o GetSubscribedServicesSubscribedServiceOutput) RenewalOptyNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) string { return v.RenewalOptyNumber }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) RenewalOptyNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *string { return v.RenewalOptyNumber }).(pulumi.StringPtrOutput)
 }
 
 // Renewal Opportunity Type of Subscribed Service
-func (o GetSubscribedServicesSubscribedServiceOutput) RenewalOptyType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) string { return v.RenewalOptyType }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) RenewalOptyType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *string { return v.RenewalOptyType }).(pulumi.StringPtrOutput)
 }
 
 // SPM renewed Subscription ID
-func (o GetSubscribedServicesSubscribedServiceOutput) RenewedSubscribedServiceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) string { return v.RenewedSubscribedServiceId }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) RenewedSubscribedServiceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *string { return v.RenewedSubscribedServiceId }).(pulumi.StringPtrOutput)
 }
 
 // Address.
@@ -12336,38 +10759,38 @@ func (o GetSubscribedServicesSubscribedServiceOutput) ResellerCustomers() GetSub
 }
 
 // Subscribed service Revenue Line Id
-func (o GetSubscribedServicesSubscribedServiceOutput) RevenueLineId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) string { return v.RevenueLineId }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) RevenueLineId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *string { return v.RevenueLineId }).(pulumi.StringPtrOutput)
 }
 
 // Revenue Line NUmber of Subscribed Service
-func (o GetSubscribedServicesSubscribedServiceOutput) RevenueLineNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) string { return v.RevenueLineNumber }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) RevenueLineNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *string { return v.RevenueLineNumber }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service Revised ARR
-func (o GetSubscribedServicesSubscribedServiceOutput) RevisedArrInLc() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) string { return v.RevisedArrInLc }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) RevisedArrInLc() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *string { return v.RevisedArrInLc }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service Revised ARR in Standard Currency
-func (o GetSubscribedServicesSubscribedServiceOutput) RevisedArrInSc() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) string { return v.RevisedArrInSc }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) RevisedArrInSc() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *string { return v.RevisedArrInSc }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service sales account party id
-func (o GetSubscribedServicesSubscribedServiceOutput) SalesAccountPartyId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) string { return v.SalesAccountPartyId }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) SalesAccountPartyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *string { return v.SalesAccountPartyId }).(pulumi.StringPtrOutput)
 }
 
 // Sales Channel of Subscribed Service
-func (o GetSubscribedServicesSubscribedServiceOutput) SalesChannel() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) string { return v.SalesChannel }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) SalesChannel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *string { return v.SalesChannel }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service line number
-func (o GetSubscribedServicesSubscribedServiceOutput) SerialNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) string { return v.SerialNumber }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) SerialNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *string { return v.SerialNumber }).(pulumi.StringPtrOutput)
 }
 
 // Address.
@@ -12406,138 +10829,138 @@ func (o GetSubscribedServicesSubscribedServiceOutput) SoldToCustomers() GetSubsc
 }
 
 // Subscribed service start date type
-func (o GetSubscribedServicesSubscribedServiceOutput) StartDateType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) string { return v.StartDateType }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) StartDateType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *string { return v.StartDateType }).(pulumi.StringPtrOutput)
 }
 
 // This param is used to filter subscribed services based on its status
-func (o GetSubscribedServicesSubscribedServiceOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) string { return v.Status }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // Line level Subscription Id
-func (o GetSubscribedServicesSubscribedServiceOutput) SubscriptionId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) string { return v.SubscriptionId }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) SubscriptionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *string { return v.SubscriptionId }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service source
-func (o GetSubscribedServicesSubscribedServiceOutput) SubscriptionSource() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) string { return v.SubscriptionSource }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) SubscriptionSource() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *string { return v.SubscriptionSource }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service System ARR
-func (o GetSubscribedServicesSubscribedServiceOutput) SystemArrInLc() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) string { return v.SystemArrInLc }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) SystemArrInLc() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *string { return v.SystemArrInLc }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service System ARR in Standard Currency
-func (o GetSubscribedServicesSubscribedServiceOutput) SystemArrInSc() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) string { return v.SystemArrInSc }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) SystemArrInSc() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *string { return v.SystemArrInSc }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service System ATR-ARR
-func (o GetSubscribedServicesSubscribedServiceOutput) SystemAtrArrInLc() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) string { return v.SystemAtrArrInLc }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) SystemAtrArrInLc() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *string { return v.SystemAtrArrInLc }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service System ATR-ARR in Standard Currency
-func (o GetSubscribedServicesSubscribedServiceOutput) SystemAtrArrInSc() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) string { return v.SystemAtrArrInSc }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) SystemAtrArrInSc() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *string { return v.SystemAtrArrInSc }).(pulumi.StringPtrOutput)
 }
 
 // Term value in Months
-func (o GetSubscribedServicesSubscribedServiceOutput) TermValue() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) string { return v.TermValue }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) TermValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *string { return v.TermValue }).(pulumi.StringPtrOutput)
 }
 
 // Term value UOM
-func (o GetSubscribedServicesSubscribedServiceOutput) TermValueUom() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) string { return v.TermValueUom }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) TermValueUom() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *string { return v.TermValueUom }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service agrrement end date
-func (o GetSubscribedServicesSubscribedServiceOutput) TimeAgreementEnd() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) string { return v.TimeAgreementEnd }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) TimeAgreementEnd() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *string { return v.TimeAgreementEnd }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service creation date
-func (o GetSubscribedServicesSubscribedServiceOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service customer config date
-func (o GetSubscribedServicesSubscribedServiceOutput) TimeCustomerConfig() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) string { return v.TimeCustomerConfig }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) TimeCustomerConfig() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *string { return v.TimeCustomerConfig }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service end date
-func (o GetSubscribedServicesSubscribedServiceOutput) TimeEnd() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) string { return v.TimeEnd }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) TimeEnd() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *string { return v.TimeEnd }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service Major Set End date
-func (o GetSubscribedServicesSubscribedServiceOutput) TimeMajorsetEnd() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) string { return v.TimeMajorsetEnd }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) TimeMajorsetEnd() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *string { return v.TimeMajorsetEnd }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service Major Set Start date
-func (o GetSubscribedServicesSubscribedServiceOutput) TimeMajorsetStart() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) string { return v.TimeMajorsetStart }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) TimeMajorsetStart() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *string { return v.TimeMajorsetStart }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service payment expiry date
-func (o GetSubscribedServicesSubscribedServiceOutput) TimePaymentExpiry() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) string { return v.TimePaymentExpiry }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) TimePaymentExpiry() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *string { return v.TimePaymentExpiry }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service provisioning date
-func (o GetSubscribedServicesSubscribedServiceOutput) TimeProvisioned() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) string { return v.TimeProvisioned }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) TimeProvisioned() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *string { return v.TimeProvisioned }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service service configuration email sent date
-func (o GetSubscribedServicesSubscribedServiceOutput) TimeServiceConfigurationEmailSent() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) string { return v.TimeServiceConfigurationEmailSent }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) TimeServiceConfigurationEmailSent() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *string { return v.TimeServiceConfigurationEmailSent }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service start date
-func (o GetSubscribedServicesSubscribedServiceOutput) TimeStart() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) string { return v.TimeStart }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) TimeStart() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *string { return v.TimeStart }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service last update date
-func (o GetSubscribedServicesSubscribedServiceOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service welcome email sent date
-func (o GetSubscribedServicesSubscribedServiceOutput) TimeWelcomeEmailSent() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) string { return v.TimeWelcomeEmailSent }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) TimeWelcomeEmailSent() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *string { return v.TimeWelcomeEmailSent }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service total value
-func (o GetSubscribedServicesSubscribedServiceOutput) TotalValue() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) string { return v.TotalValue }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) TotalValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *string { return v.TotalValue }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service Transaction Extension Id
-func (o GetSubscribedServicesSubscribedServiceOutput) TransactionExtensionId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) string { return v.TransactionExtensionId }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) TransactionExtensionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *string { return v.TransactionExtensionId }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed Service line type
-func (o GetSubscribedServicesSubscribedServiceOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) string { return v.Type }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 // User that updated the subscribed service
-func (o GetSubscribedServicesSubscribedServiceOutput) UpdatedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) string { return v.UpdatedBy }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) UpdatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *string { return v.UpdatedBy }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service used amount
-func (o GetSubscribedServicesSubscribedServiceOutput) UsedAmount() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) string { return v.UsedAmount }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceOutput) UsedAmount() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedService) *string { return v.UsedAmount }).(pulumi.StringPtrOutput)
 }
 
 type GetSubscribedServicesSubscribedServiceArrayOutput struct{ *pulumi.OutputState }
@@ -12554,12 +10977,6 @@ func (o GetSubscribedServicesSubscribedServiceArrayOutput) ToGetSubscribedServic
 	return o
 }
 
-func (o GetSubscribedServicesSubscribedServiceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServicesSubscribedService] {
-	return pulumix.Output[[]GetSubscribedServicesSubscribedService]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscribedServicesSubscribedServiceArrayOutput) Index(i pulumi.IntInput) GetSubscribedServicesSubscribedServiceOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscribedServicesSubscribedService {
 		return vs[0].([]GetSubscribedServicesSubscribedService)[vs[1].(int)]
@@ -12568,23 +10985,23 @@ func (o GetSubscribedServicesSubscribedServiceArrayOutput) Index(i pulumi.IntInp
 
 type GetSubscribedServicesSubscribedServiceBillToAddress struct {
 	// Bill to site use Id.
-	BillSiteUseId string `pulumi:"billSiteUseId"`
+	BillSiteUseId *string `pulumi:"billSiteUseId"`
 	// Identify as the customer shipping address.
-	IsBillTo bool `pulumi:"isBillTo"`
+	IsBillTo *bool `pulumi:"isBillTo"`
 	// Identify as the customer invoicing address.
-	IsShipTo bool `pulumi:"isShipTo"`
+	IsShipTo *bool `pulumi:"isShipTo"`
 	// Address location.
 	Locations []GetSubscribedServicesSubscribedServiceBillToAddressLocation `pulumi:"locations"`
 	// Commercial name also called customer name.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Phone.
-	Phone string `pulumi:"phone"`
+	Phone *string `pulumi:"phone"`
 	// Service to site use Id.
-	Service2siteUseId string `pulumi:"service2siteUseId"`
+	Service2siteUseId *string `pulumi:"service2siteUseId"`
 	// TCA customer account site Id.
-	TcaCustAcctSiteId string `pulumi:"tcaCustAcctSiteId"`
+	TcaCustAcctSiteId *string `pulumi:"tcaCustAcctSiteId"`
 	// Party site number.
-	TcaPartySiteNumber string `pulumi:"tcaPartySiteNumber"`
+	TcaPartySiteNumber *string `pulumi:"tcaPartySiteNumber"`
 }
 
 // GetSubscribedServicesSubscribedServiceBillToAddressInput is an input type that accepts GetSubscribedServicesSubscribedServiceBillToAddressArgs and GetSubscribedServicesSubscribedServiceBillToAddressOutput values.
@@ -12600,23 +11017,23 @@ type GetSubscribedServicesSubscribedServiceBillToAddressInput interface {
 
 type GetSubscribedServicesSubscribedServiceBillToAddressArgs struct {
 	// Bill to site use Id.
-	BillSiteUseId pulumi.StringInput `pulumi:"billSiteUseId"`
+	BillSiteUseId pulumi.StringPtrInput `pulumi:"billSiteUseId"`
 	// Identify as the customer shipping address.
-	IsBillTo pulumi.BoolInput `pulumi:"isBillTo"`
+	IsBillTo pulumi.BoolPtrInput `pulumi:"isBillTo"`
 	// Identify as the customer invoicing address.
-	IsShipTo pulumi.BoolInput `pulumi:"isShipTo"`
+	IsShipTo pulumi.BoolPtrInput `pulumi:"isShipTo"`
 	// Address location.
 	Locations GetSubscribedServicesSubscribedServiceBillToAddressLocationArrayInput `pulumi:"locations"`
 	// Commercial name also called customer name.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Phone.
-	Phone pulumi.StringInput `pulumi:"phone"`
+	Phone pulumi.StringPtrInput `pulumi:"phone"`
 	// Service to site use Id.
-	Service2siteUseId pulumi.StringInput `pulumi:"service2siteUseId"`
+	Service2siteUseId pulumi.StringPtrInput `pulumi:"service2siteUseId"`
 	// TCA customer account site Id.
-	TcaCustAcctSiteId pulumi.StringInput `pulumi:"tcaCustAcctSiteId"`
+	TcaCustAcctSiteId pulumi.StringPtrInput `pulumi:"tcaCustAcctSiteId"`
 	// Party site number.
-	TcaPartySiteNumber pulumi.StringInput `pulumi:"tcaPartySiteNumber"`
+	TcaPartySiteNumber pulumi.StringPtrInput `pulumi:"tcaPartySiteNumber"`
 }
 
 func (GetSubscribedServicesSubscribedServiceBillToAddressArgs) ElementType() reflect.Type {
@@ -12629,12 +11046,6 @@ func (i GetSubscribedServicesSubscribedServiceBillToAddressArgs) ToGetSubscribed
 
 func (i GetSubscribedServicesSubscribedServiceBillToAddressArgs) ToGetSubscribedServicesSubscribedServiceBillToAddressOutputWithContext(ctx context.Context) GetSubscribedServicesSubscribedServiceBillToAddressOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServicesSubscribedServiceBillToAddressOutput)
-}
-
-func (i GetSubscribedServicesSubscribedServiceBillToAddressArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServicesSubscribedServiceBillToAddress] {
-	return pulumix.Output[GetSubscribedServicesSubscribedServiceBillToAddress]{
-		OutputState: i.ToGetSubscribedServicesSubscribedServiceBillToAddressOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscribedServicesSubscribedServiceBillToAddressArrayInput is an input type that accepts GetSubscribedServicesSubscribedServiceBillToAddressArray and GetSubscribedServicesSubscribedServiceBillToAddressArrayOutput values.
@@ -12662,12 +11073,6 @@ func (i GetSubscribedServicesSubscribedServiceBillToAddressArray) ToGetSubscribe
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServicesSubscribedServiceBillToAddressArrayOutput)
 }
 
-func (i GetSubscribedServicesSubscribedServiceBillToAddressArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServicesSubscribedServiceBillToAddress] {
-	return pulumix.Output[[]GetSubscribedServicesSubscribedServiceBillToAddress]{
-		OutputState: i.ToGetSubscribedServicesSubscribedServiceBillToAddressArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscribedServicesSubscribedServiceBillToAddressOutput struct{ *pulumi.OutputState }
 
 func (GetSubscribedServicesSubscribedServiceBillToAddressOutput) ElementType() reflect.Type {
@@ -12682,25 +11087,19 @@ func (o GetSubscribedServicesSubscribedServiceBillToAddressOutput) ToGetSubscrib
 	return o
 }
 
-func (o GetSubscribedServicesSubscribedServiceBillToAddressOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServicesSubscribedServiceBillToAddress] {
-	return pulumix.Output[GetSubscribedServicesSubscribedServiceBillToAddress]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Bill to site use Id.
-func (o GetSubscribedServicesSubscribedServiceBillToAddressOutput) BillSiteUseId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceBillToAddress) string { return v.BillSiteUseId }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceBillToAddressOutput) BillSiteUseId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceBillToAddress) *string { return v.BillSiteUseId }).(pulumi.StringPtrOutput)
 }
 
 // Identify as the customer shipping address.
-func (o GetSubscribedServicesSubscribedServiceBillToAddressOutput) IsBillTo() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceBillToAddress) bool { return v.IsBillTo }).(pulumi.BoolOutput)
+func (o GetSubscribedServicesSubscribedServiceBillToAddressOutput) IsBillTo() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceBillToAddress) *bool { return v.IsBillTo }).(pulumi.BoolPtrOutput)
 }
 
 // Identify as the customer invoicing address.
-func (o GetSubscribedServicesSubscribedServiceBillToAddressOutput) IsShipTo() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceBillToAddress) bool { return v.IsShipTo }).(pulumi.BoolOutput)
+func (o GetSubscribedServicesSubscribedServiceBillToAddressOutput) IsShipTo() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceBillToAddress) *bool { return v.IsShipTo }).(pulumi.BoolPtrOutput)
 }
 
 // Address location.
@@ -12711,28 +11110,28 @@ func (o GetSubscribedServicesSubscribedServiceBillToAddressOutput) Locations() G
 }
 
 // Commercial name also called customer name.
-func (o GetSubscribedServicesSubscribedServiceBillToAddressOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceBillToAddress) string { return v.Name }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceBillToAddressOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceBillToAddress) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Phone.
-func (o GetSubscribedServicesSubscribedServiceBillToAddressOutput) Phone() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceBillToAddress) string { return v.Phone }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceBillToAddressOutput) Phone() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceBillToAddress) *string { return v.Phone }).(pulumi.StringPtrOutput)
 }
 
 // Service to site use Id.
-func (o GetSubscribedServicesSubscribedServiceBillToAddressOutput) Service2siteUseId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceBillToAddress) string { return v.Service2siteUseId }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceBillToAddressOutput) Service2siteUseId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceBillToAddress) *string { return v.Service2siteUseId }).(pulumi.StringPtrOutput)
 }
 
 // TCA customer account site Id.
-func (o GetSubscribedServicesSubscribedServiceBillToAddressOutput) TcaCustAcctSiteId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceBillToAddress) string { return v.TcaCustAcctSiteId }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceBillToAddressOutput) TcaCustAcctSiteId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceBillToAddress) *string { return v.TcaCustAcctSiteId }).(pulumi.StringPtrOutput)
 }
 
 // Party site number.
-func (o GetSubscribedServicesSubscribedServiceBillToAddressOutput) TcaPartySiteNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceBillToAddress) string { return v.TcaPartySiteNumber }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceBillToAddressOutput) TcaPartySiteNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceBillToAddress) *string { return v.TcaPartySiteNumber }).(pulumi.StringPtrOutput)
 }
 
 type GetSubscribedServicesSubscribedServiceBillToAddressArrayOutput struct{ *pulumi.OutputState }
@@ -12749,12 +11148,6 @@ func (o GetSubscribedServicesSubscribedServiceBillToAddressArrayOutput) ToGetSub
 	return o
 }
 
-func (o GetSubscribedServicesSubscribedServiceBillToAddressArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServicesSubscribedServiceBillToAddress] {
-	return pulumix.Output[[]GetSubscribedServicesSubscribedServiceBillToAddress]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscribedServicesSubscribedServiceBillToAddressArrayOutput) Index(i pulumi.IntInput) GetSubscribedServicesSubscribedServiceBillToAddressOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscribedServicesSubscribedServiceBillToAddress {
 		return vs[0].([]GetSubscribedServicesSubscribedServiceBillToAddress)[vs[1].(int)]
@@ -12763,19 +11156,19 @@ func (o GetSubscribedServicesSubscribedServiceBillToAddressArrayOutput) Index(i 
 
 type GetSubscribedServicesSubscribedServiceBillToAddressLocation struct {
 	// Address first line.
-	Address1 string `pulumi:"address1"`
+	Address1 *string `pulumi:"address1"`
 	// Address second line.
-	Address2 string `pulumi:"address2"`
+	Address2 *string `pulumi:"address2"`
 	// City.
-	City string `pulumi:"city"`
+	City *string `pulumi:"city"`
 	// Country.
-	Country string `pulumi:"country"`
+	Country *string `pulumi:"country"`
 	// Postal code.
-	PostalCode string `pulumi:"postalCode"`
+	PostalCode *string `pulumi:"postalCode"`
 	// Region.
-	Region string `pulumi:"region"`
+	Region *string `pulumi:"region"`
 	// Region.
-	TcaLocationId string `pulumi:"tcaLocationId"`
+	TcaLocationId *string `pulumi:"tcaLocationId"`
 }
 
 // GetSubscribedServicesSubscribedServiceBillToAddressLocationInput is an input type that accepts GetSubscribedServicesSubscribedServiceBillToAddressLocationArgs and GetSubscribedServicesSubscribedServiceBillToAddressLocationOutput values.
@@ -12791,19 +11184,19 @@ type GetSubscribedServicesSubscribedServiceBillToAddressLocationInput interface 
 
 type GetSubscribedServicesSubscribedServiceBillToAddressLocationArgs struct {
 	// Address first line.
-	Address1 pulumi.StringInput `pulumi:"address1"`
+	Address1 pulumi.StringPtrInput `pulumi:"address1"`
 	// Address second line.
-	Address2 pulumi.StringInput `pulumi:"address2"`
+	Address2 pulumi.StringPtrInput `pulumi:"address2"`
 	// City.
-	City pulumi.StringInput `pulumi:"city"`
+	City pulumi.StringPtrInput `pulumi:"city"`
 	// Country.
-	Country pulumi.StringInput `pulumi:"country"`
+	Country pulumi.StringPtrInput `pulumi:"country"`
 	// Postal code.
-	PostalCode pulumi.StringInput `pulumi:"postalCode"`
+	PostalCode pulumi.StringPtrInput `pulumi:"postalCode"`
 	// Region.
-	Region pulumi.StringInput `pulumi:"region"`
+	Region pulumi.StringPtrInput `pulumi:"region"`
 	// Region.
-	TcaLocationId pulumi.StringInput `pulumi:"tcaLocationId"`
+	TcaLocationId pulumi.StringPtrInput `pulumi:"tcaLocationId"`
 }
 
 func (GetSubscribedServicesSubscribedServiceBillToAddressLocationArgs) ElementType() reflect.Type {
@@ -12816,12 +11209,6 @@ func (i GetSubscribedServicesSubscribedServiceBillToAddressLocationArgs) ToGetSu
 
 func (i GetSubscribedServicesSubscribedServiceBillToAddressLocationArgs) ToGetSubscribedServicesSubscribedServiceBillToAddressLocationOutputWithContext(ctx context.Context) GetSubscribedServicesSubscribedServiceBillToAddressLocationOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServicesSubscribedServiceBillToAddressLocationOutput)
-}
-
-func (i GetSubscribedServicesSubscribedServiceBillToAddressLocationArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServicesSubscribedServiceBillToAddressLocation] {
-	return pulumix.Output[GetSubscribedServicesSubscribedServiceBillToAddressLocation]{
-		OutputState: i.ToGetSubscribedServicesSubscribedServiceBillToAddressLocationOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscribedServicesSubscribedServiceBillToAddressLocationArrayInput is an input type that accepts GetSubscribedServicesSubscribedServiceBillToAddressLocationArray and GetSubscribedServicesSubscribedServiceBillToAddressLocationArrayOutput values.
@@ -12849,12 +11236,6 @@ func (i GetSubscribedServicesSubscribedServiceBillToAddressLocationArray) ToGetS
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServicesSubscribedServiceBillToAddressLocationArrayOutput)
 }
 
-func (i GetSubscribedServicesSubscribedServiceBillToAddressLocationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServicesSubscribedServiceBillToAddressLocation] {
-	return pulumix.Output[[]GetSubscribedServicesSubscribedServiceBillToAddressLocation]{
-		OutputState: i.ToGetSubscribedServicesSubscribedServiceBillToAddressLocationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscribedServicesSubscribedServiceBillToAddressLocationOutput struct{ *pulumi.OutputState }
 
 func (GetSubscribedServicesSubscribedServiceBillToAddressLocationOutput) ElementType() reflect.Type {
@@ -12869,45 +11250,39 @@ func (o GetSubscribedServicesSubscribedServiceBillToAddressLocationOutput) ToGet
 	return o
 }
 
-func (o GetSubscribedServicesSubscribedServiceBillToAddressLocationOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServicesSubscribedServiceBillToAddressLocation] {
-	return pulumix.Output[GetSubscribedServicesSubscribedServiceBillToAddressLocation]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Address first line.
-func (o GetSubscribedServicesSubscribedServiceBillToAddressLocationOutput) Address1() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceBillToAddressLocation) string { return v.Address1 }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceBillToAddressLocationOutput) Address1() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceBillToAddressLocation) *string { return v.Address1 }).(pulumi.StringPtrOutput)
 }
 
 // Address second line.
-func (o GetSubscribedServicesSubscribedServiceBillToAddressLocationOutput) Address2() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceBillToAddressLocation) string { return v.Address2 }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceBillToAddressLocationOutput) Address2() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceBillToAddressLocation) *string { return v.Address2 }).(pulumi.StringPtrOutput)
 }
 
 // City.
-func (o GetSubscribedServicesSubscribedServiceBillToAddressLocationOutput) City() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceBillToAddressLocation) string { return v.City }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceBillToAddressLocationOutput) City() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceBillToAddressLocation) *string { return v.City }).(pulumi.StringPtrOutput)
 }
 
 // Country.
-func (o GetSubscribedServicesSubscribedServiceBillToAddressLocationOutput) Country() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceBillToAddressLocation) string { return v.Country }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceBillToAddressLocationOutput) Country() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceBillToAddressLocation) *string { return v.Country }).(pulumi.StringPtrOutput)
 }
 
 // Postal code.
-func (o GetSubscribedServicesSubscribedServiceBillToAddressLocationOutput) PostalCode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceBillToAddressLocation) string { return v.PostalCode }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceBillToAddressLocationOutput) PostalCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceBillToAddressLocation) *string { return v.PostalCode }).(pulumi.StringPtrOutput)
 }
 
 // Region.
-func (o GetSubscribedServicesSubscribedServiceBillToAddressLocationOutput) Region() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceBillToAddressLocation) string { return v.Region }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceBillToAddressLocationOutput) Region() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceBillToAddressLocation) *string { return v.Region }).(pulumi.StringPtrOutput)
 }
 
 // Region.
-func (o GetSubscribedServicesSubscribedServiceBillToAddressLocationOutput) TcaLocationId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceBillToAddressLocation) string { return v.TcaLocationId }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceBillToAddressLocationOutput) TcaLocationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceBillToAddressLocation) *string { return v.TcaLocationId }).(pulumi.StringPtrOutput)
 }
 
 type GetSubscribedServicesSubscribedServiceBillToAddressLocationArrayOutput struct{ *pulumi.OutputState }
@@ -12924,12 +11299,6 @@ func (o GetSubscribedServicesSubscribedServiceBillToAddressLocationArrayOutput) 
 	return o
 }
 
-func (o GetSubscribedServicesSubscribedServiceBillToAddressLocationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServicesSubscribedServiceBillToAddressLocation] {
-	return pulumix.Output[[]GetSubscribedServicesSubscribedServiceBillToAddressLocation]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscribedServicesSubscribedServiceBillToAddressLocationArrayOutput) Index(i pulumi.IntInput) GetSubscribedServicesSubscribedServiceBillToAddressLocationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscribedServicesSubscribedServiceBillToAddressLocation {
 		return vs[0].([]GetSubscribedServicesSubscribedServiceBillToAddressLocation)[vs[1].(int)]
@@ -12938,21 +11307,21 @@ func (o GetSubscribedServicesSubscribedServiceBillToAddressLocationArrayOutput) 
 
 type GetSubscribedServicesSubscribedServiceBillToContact struct {
 	// Email.
-	Email string `pulumi:"email"`
+	Email *string `pulumi:"email"`
 	// First name.
-	FirstName string `pulumi:"firstName"`
+	FirstName *string `pulumi:"firstName"`
 	// Last name.
-	LastName string `pulumi:"lastName"`
+	LastName *string `pulumi:"lastName"`
 	// Commercial name also called customer name.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// TCA contact ID.
-	TcaContactId string `pulumi:"tcaContactId"`
+	TcaContactId *string `pulumi:"tcaContactId"`
 	// TCA customer account site ID.
-	TcaCustAccntSiteId string `pulumi:"tcaCustAccntSiteId"`
+	TcaCustAccntSiteId *string `pulumi:"tcaCustAccntSiteId"`
 	// TCA party ID.
-	TcaPartyId string `pulumi:"tcaPartyId"`
+	TcaPartyId *string `pulumi:"tcaPartyId"`
 	// Username.
-	Username string `pulumi:"username"`
+	Username *string `pulumi:"username"`
 }
 
 // GetSubscribedServicesSubscribedServiceBillToContactInput is an input type that accepts GetSubscribedServicesSubscribedServiceBillToContactArgs and GetSubscribedServicesSubscribedServiceBillToContactOutput values.
@@ -12968,21 +11337,21 @@ type GetSubscribedServicesSubscribedServiceBillToContactInput interface {
 
 type GetSubscribedServicesSubscribedServiceBillToContactArgs struct {
 	// Email.
-	Email pulumi.StringInput `pulumi:"email"`
+	Email pulumi.StringPtrInput `pulumi:"email"`
 	// First name.
-	FirstName pulumi.StringInput `pulumi:"firstName"`
+	FirstName pulumi.StringPtrInput `pulumi:"firstName"`
 	// Last name.
-	LastName pulumi.StringInput `pulumi:"lastName"`
+	LastName pulumi.StringPtrInput `pulumi:"lastName"`
 	// Commercial name also called customer name.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// TCA contact ID.
-	TcaContactId pulumi.StringInput `pulumi:"tcaContactId"`
+	TcaContactId pulumi.StringPtrInput `pulumi:"tcaContactId"`
 	// TCA customer account site ID.
-	TcaCustAccntSiteId pulumi.StringInput `pulumi:"tcaCustAccntSiteId"`
+	TcaCustAccntSiteId pulumi.StringPtrInput `pulumi:"tcaCustAccntSiteId"`
 	// TCA party ID.
-	TcaPartyId pulumi.StringInput `pulumi:"tcaPartyId"`
+	TcaPartyId pulumi.StringPtrInput `pulumi:"tcaPartyId"`
 	// Username.
-	Username pulumi.StringInput `pulumi:"username"`
+	Username pulumi.StringPtrInput `pulumi:"username"`
 }
 
 func (GetSubscribedServicesSubscribedServiceBillToContactArgs) ElementType() reflect.Type {
@@ -12995,12 +11364,6 @@ func (i GetSubscribedServicesSubscribedServiceBillToContactArgs) ToGetSubscribed
 
 func (i GetSubscribedServicesSubscribedServiceBillToContactArgs) ToGetSubscribedServicesSubscribedServiceBillToContactOutputWithContext(ctx context.Context) GetSubscribedServicesSubscribedServiceBillToContactOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServicesSubscribedServiceBillToContactOutput)
-}
-
-func (i GetSubscribedServicesSubscribedServiceBillToContactArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServicesSubscribedServiceBillToContact] {
-	return pulumix.Output[GetSubscribedServicesSubscribedServiceBillToContact]{
-		OutputState: i.ToGetSubscribedServicesSubscribedServiceBillToContactOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscribedServicesSubscribedServiceBillToContactArrayInput is an input type that accepts GetSubscribedServicesSubscribedServiceBillToContactArray and GetSubscribedServicesSubscribedServiceBillToContactArrayOutput values.
@@ -13028,12 +11391,6 @@ func (i GetSubscribedServicesSubscribedServiceBillToContactArray) ToGetSubscribe
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServicesSubscribedServiceBillToContactArrayOutput)
 }
 
-func (i GetSubscribedServicesSubscribedServiceBillToContactArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServicesSubscribedServiceBillToContact] {
-	return pulumix.Output[[]GetSubscribedServicesSubscribedServiceBillToContact]{
-		OutputState: i.ToGetSubscribedServicesSubscribedServiceBillToContactArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscribedServicesSubscribedServiceBillToContactOutput struct{ *pulumi.OutputState }
 
 func (GetSubscribedServicesSubscribedServiceBillToContactOutput) ElementType() reflect.Type {
@@ -13048,50 +11405,44 @@ func (o GetSubscribedServicesSubscribedServiceBillToContactOutput) ToGetSubscrib
 	return o
 }
 
-func (o GetSubscribedServicesSubscribedServiceBillToContactOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServicesSubscribedServiceBillToContact] {
-	return pulumix.Output[GetSubscribedServicesSubscribedServiceBillToContact]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Email.
-func (o GetSubscribedServicesSubscribedServiceBillToContactOutput) Email() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceBillToContact) string { return v.Email }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceBillToContactOutput) Email() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceBillToContact) *string { return v.Email }).(pulumi.StringPtrOutput)
 }
 
 // First name.
-func (o GetSubscribedServicesSubscribedServiceBillToContactOutput) FirstName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceBillToContact) string { return v.FirstName }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceBillToContactOutput) FirstName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceBillToContact) *string { return v.FirstName }).(pulumi.StringPtrOutput)
 }
 
 // Last name.
-func (o GetSubscribedServicesSubscribedServiceBillToContactOutput) LastName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceBillToContact) string { return v.LastName }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceBillToContactOutput) LastName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceBillToContact) *string { return v.LastName }).(pulumi.StringPtrOutput)
 }
 
 // Commercial name also called customer name.
-func (o GetSubscribedServicesSubscribedServiceBillToContactOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceBillToContact) string { return v.Name }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceBillToContactOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceBillToContact) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // TCA contact ID.
-func (o GetSubscribedServicesSubscribedServiceBillToContactOutput) TcaContactId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceBillToContact) string { return v.TcaContactId }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceBillToContactOutput) TcaContactId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceBillToContact) *string { return v.TcaContactId }).(pulumi.StringPtrOutput)
 }
 
 // TCA customer account site ID.
-func (o GetSubscribedServicesSubscribedServiceBillToContactOutput) TcaCustAccntSiteId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceBillToContact) string { return v.TcaCustAccntSiteId }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceBillToContactOutput) TcaCustAccntSiteId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceBillToContact) *string { return v.TcaCustAccntSiteId }).(pulumi.StringPtrOutput)
 }
 
 // TCA party ID.
-func (o GetSubscribedServicesSubscribedServiceBillToContactOutput) TcaPartyId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceBillToContact) string { return v.TcaPartyId }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceBillToContactOutput) TcaPartyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceBillToContact) *string { return v.TcaPartyId }).(pulumi.StringPtrOutput)
 }
 
 // Username.
-func (o GetSubscribedServicesSubscribedServiceBillToContactOutput) Username() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceBillToContact) string { return v.Username }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceBillToContactOutput) Username() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceBillToContact) *string { return v.Username }).(pulumi.StringPtrOutput)
 }
 
 type GetSubscribedServicesSubscribedServiceBillToContactArrayOutput struct{ *pulumi.OutputState }
@@ -13108,12 +11459,6 @@ func (o GetSubscribedServicesSubscribedServiceBillToContactArrayOutput) ToGetSub
 	return o
 }
 
-func (o GetSubscribedServicesSubscribedServiceBillToContactArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServicesSubscribedServiceBillToContact] {
-	return pulumix.Output[[]GetSubscribedServicesSubscribedServiceBillToContact]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscribedServicesSubscribedServiceBillToContactArrayOutput) Index(i pulumi.IntInput) GetSubscribedServicesSubscribedServiceBillToContactOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscribedServicesSubscribedServiceBillToContact {
 		return vs[0].([]GetSubscribedServicesSubscribedServiceBillToContact)[vs[1].(int)]
@@ -13122,23 +11467,23 @@ func (o GetSubscribedServicesSubscribedServiceBillToContactArrayOutput) Index(i 
 
 type GetSubscribedServicesSubscribedServiceBillToCustomer struct {
 	// Customer chain type.
-	CustomerChainType string `pulumi:"customerChainType"`
+	CustomerChainType *string `pulumi:"customerChainType"`
 	// The business partner is chain customer or not.
-	IsChainCustomer bool `pulumi:"isChainCustomer"`
+	IsChainCustomer *bool `pulumi:"isChainCustomer"`
 	// The business partner is part of the public sector or not.
-	IsPublicSector bool `pulumi:"isPublicSector"`
+	IsPublicSector *bool `pulumi:"isPublicSector"`
 	// Commercial name also called customer name.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Phonetic name.
-	NamePhonetic string `pulumi:"namePhonetic"`
+	NamePhonetic *string `pulumi:"namePhonetic"`
 	// TCA customer account number.
-	TcaCustAccountNumber string `pulumi:"tcaCustAccountNumber"`
+	TcaCustAccountNumber *string `pulumi:"tcaCustAccountNumber"`
 	// TCA customer account ID.
-	TcaCustomerAccountId string `pulumi:"tcaCustomerAccountId"`
+	TcaCustomerAccountId *string `pulumi:"tcaCustomerAccountId"`
 	// TCA party ID.
-	TcaPartyId string `pulumi:"tcaPartyId"`
+	TcaPartyId *string `pulumi:"tcaPartyId"`
 	// TCA party number.
-	TcaPartyNumber string `pulumi:"tcaPartyNumber"`
+	TcaPartyNumber *string `pulumi:"tcaPartyNumber"`
 }
 
 // GetSubscribedServicesSubscribedServiceBillToCustomerInput is an input type that accepts GetSubscribedServicesSubscribedServiceBillToCustomerArgs and GetSubscribedServicesSubscribedServiceBillToCustomerOutput values.
@@ -13154,23 +11499,23 @@ type GetSubscribedServicesSubscribedServiceBillToCustomerInput interface {
 
 type GetSubscribedServicesSubscribedServiceBillToCustomerArgs struct {
 	// Customer chain type.
-	CustomerChainType pulumi.StringInput `pulumi:"customerChainType"`
+	CustomerChainType pulumi.StringPtrInput `pulumi:"customerChainType"`
 	// The business partner is chain customer or not.
-	IsChainCustomer pulumi.BoolInput `pulumi:"isChainCustomer"`
+	IsChainCustomer pulumi.BoolPtrInput `pulumi:"isChainCustomer"`
 	// The business partner is part of the public sector or not.
-	IsPublicSector pulumi.BoolInput `pulumi:"isPublicSector"`
+	IsPublicSector pulumi.BoolPtrInput `pulumi:"isPublicSector"`
 	// Commercial name also called customer name.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Phonetic name.
-	NamePhonetic pulumi.StringInput `pulumi:"namePhonetic"`
+	NamePhonetic pulumi.StringPtrInput `pulumi:"namePhonetic"`
 	// TCA customer account number.
-	TcaCustAccountNumber pulumi.StringInput `pulumi:"tcaCustAccountNumber"`
+	TcaCustAccountNumber pulumi.StringPtrInput `pulumi:"tcaCustAccountNumber"`
 	// TCA customer account ID.
-	TcaCustomerAccountId pulumi.StringInput `pulumi:"tcaCustomerAccountId"`
+	TcaCustomerAccountId pulumi.StringPtrInput `pulumi:"tcaCustomerAccountId"`
 	// TCA party ID.
-	TcaPartyId pulumi.StringInput `pulumi:"tcaPartyId"`
+	TcaPartyId pulumi.StringPtrInput `pulumi:"tcaPartyId"`
 	// TCA party number.
-	TcaPartyNumber pulumi.StringInput `pulumi:"tcaPartyNumber"`
+	TcaPartyNumber pulumi.StringPtrInput `pulumi:"tcaPartyNumber"`
 }
 
 func (GetSubscribedServicesSubscribedServiceBillToCustomerArgs) ElementType() reflect.Type {
@@ -13183,12 +11528,6 @@ func (i GetSubscribedServicesSubscribedServiceBillToCustomerArgs) ToGetSubscribe
 
 func (i GetSubscribedServicesSubscribedServiceBillToCustomerArgs) ToGetSubscribedServicesSubscribedServiceBillToCustomerOutputWithContext(ctx context.Context) GetSubscribedServicesSubscribedServiceBillToCustomerOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServicesSubscribedServiceBillToCustomerOutput)
-}
-
-func (i GetSubscribedServicesSubscribedServiceBillToCustomerArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServicesSubscribedServiceBillToCustomer] {
-	return pulumix.Output[GetSubscribedServicesSubscribedServiceBillToCustomer]{
-		OutputState: i.ToGetSubscribedServicesSubscribedServiceBillToCustomerOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscribedServicesSubscribedServiceBillToCustomerArrayInput is an input type that accepts GetSubscribedServicesSubscribedServiceBillToCustomerArray and GetSubscribedServicesSubscribedServiceBillToCustomerArrayOutput values.
@@ -13216,12 +11555,6 @@ func (i GetSubscribedServicesSubscribedServiceBillToCustomerArray) ToGetSubscrib
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServicesSubscribedServiceBillToCustomerArrayOutput)
 }
 
-func (i GetSubscribedServicesSubscribedServiceBillToCustomerArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServicesSubscribedServiceBillToCustomer] {
-	return pulumix.Output[[]GetSubscribedServicesSubscribedServiceBillToCustomer]{
-		OutputState: i.ToGetSubscribedServicesSubscribedServiceBillToCustomerArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscribedServicesSubscribedServiceBillToCustomerOutput struct{ *pulumi.OutputState }
 
 func (GetSubscribedServicesSubscribedServiceBillToCustomerOutput) ElementType() reflect.Type {
@@ -13236,55 +11569,49 @@ func (o GetSubscribedServicesSubscribedServiceBillToCustomerOutput) ToGetSubscri
 	return o
 }
 
-func (o GetSubscribedServicesSubscribedServiceBillToCustomerOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServicesSubscribedServiceBillToCustomer] {
-	return pulumix.Output[GetSubscribedServicesSubscribedServiceBillToCustomer]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Customer chain type.
-func (o GetSubscribedServicesSubscribedServiceBillToCustomerOutput) CustomerChainType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceBillToCustomer) string { return v.CustomerChainType }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceBillToCustomerOutput) CustomerChainType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceBillToCustomer) *string { return v.CustomerChainType }).(pulumi.StringPtrOutput)
 }
 
 // The business partner is chain customer or not.
-func (o GetSubscribedServicesSubscribedServiceBillToCustomerOutput) IsChainCustomer() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceBillToCustomer) bool { return v.IsChainCustomer }).(pulumi.BoolOutput)
+func (o GetSubscribedServicesSubscribedServiceBillToCustomerOutput) IsChainCustomer() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceBillToCustomer) *bool { return v.IsChainCustomer }).(pulumi.BoolPtrOutput)
 }
 
 // The business partner is part of the public sector or not.
-func (o GetSubscribedServicesSubscribedServiceBillToCustomerOutput) IsPublicSector() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceBillToCustomer) bool { return v.IsPublicSector }).(pulumi.BoolOutput)
+func (o GetSubscribedServicesSubscribedServiceBillToCustomerOutput) IsPublicSector() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceBillToCustomer) *bool { return v.IsPublicSector }).(pulumi.BoolPtrOutput)
 }
 
 // Commercial name also called customer name.
-func (o GetSubscribedServicesSubscribedServiceBillToCustomerOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceBillToCustomer) string { return v.Name }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceBillToCustomerOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceBillToCustomer) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Phonetic name.
-func (o GetSubscribedServicesSubscribedServiceBillToCustomerOutput) NamePhonetic() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceBillToCustomer) string { return v.NamePhonetic }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceBillToCustomerOutput) NamePhonetic() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceBillToCustomer) *string { return v.NamePhonetic }).(pulumi.StringPtrOutput)
 }
 
 // TCA customer account number.
-func (o GetSubscribedServicesSubscribedServiceBillToCustomerOutput) TcaCustAccountNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceBillToCustomer) string { return v.TcaCustAccountNumber }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceBillToCustomerOutput) TcaCustAccountNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceBillToCustomer) *string { return v.TcaCustAccountNumber }).(pulumi.StringPtrOutput)
 }
 
 // TCA customer account ID.
-func (o GetSubscribedServicesSubscribedServiceBillToCustomerOutput) TcaCustomerAccountId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceBillToCustomer) string { return v.TcaCustomerAccountId }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceBillToCustomerOutput) TcaCustomerAccountId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceBillToCustomer) *string { return v.TcaCustomerAccountId }).(pulumi.StringPtrOutput)
 }
 
 // TCA party ID.
-func (o GetSubscribedServicesSubscribedServiceBillToCustomerOutput) TcaPartyId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceBillToCustomer) string { return v.TcaPartyId }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceBillToCustomerOutput) TcaPartyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceBillToCustomer) *string { return v.TcaPartyId }).(pulumi.StringPtrOutput)
 }
 
 // TCA party number.
-func (o GetSubscribedServicesSubscribedServiceBillToCustomerOutput) TcaPartyNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceBillToCustomer) string { return v.TcaPartyNumber }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceBillToCustomerOutput) TcaPartyNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceBillToCustomer) *string { return v.TcaPartyNumber }).(pulumi.StringPtrOutput)
 }
 
 type GetSubscribedServicesSubscribedServiceBillToCustomerArrayOutput struct{ *pulumi.OutputState }
@@ -13301,12 +11628,6 @@ func (o GetSubscribedServicesSubscribedServiceBillToCustomerArrayOutput) ToGetSu
 	return o
 }
 
-func (o GetSubscribedServicesSubscribedServiceBillToCustomerArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServicesSubscribedServiceBillToCustomer] {
-	return pulumix.Output[[]GetSubscribedServicesSubscribedServiceBillToCustomer]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscribedServicesSubscribedServiceBillToCustomerArrayOutput) Index(i pulumi.IntInput) GetSubscribedServicesSubscribedServiceBillToCustomerOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscribedServicesSubscribedServiceBillToCustomer {
 		return vs[0].([]GetSubscribedServicesSubscribedServiceBillToCustomer)[vs[1].(int)]
@@ -13315,17 +11636,17 @@ func (o GetSubscribedServicesSubscribedServiceBillToCustomerArrayOutput) Index(i
 
 type GetSubscribedServicesSubscribedServiceCommitmentService struct {
 	// Commitment available amount
-	AvailableAmount string `pulumi:"availableAmount"`
+	AvailableAmount *string `pulumi:"availableAmount"`
 	// Funded Allocation line value example: 12000.00
-	FundedAllocationValue string `pulumi:"fundedAllocationValue"`
+	FundedAllocationValue *string `pulumi:"fundedAllocationValue"`
 	// Subscribed service line net amount
-	LineNetAmount string `pulumi:"lineNetAmount"`
+	LineNetAmount *string `pulumi:"lineNetAmount"`
 	// Subscribed service quantity
-	Quantity string `pulumi:"quantity"`
+	Quantity *string `pulumi:"quantity"`
 	// Subscribed service end date
-	TimeEnd string `pulumi:"timeEnd"`
+	TimeEnd *string `pulumi:"timeEnd"`
 	// Subscribed service start date
-	TimeStart string `pulumi:"timeStart"`
+	TimeStart *string `pulumi:"timeStart"`
 }
 
 // GetSubscribedServicesSubscribedServiceCommitmentServiceInput is an input type that accepts GetSubscribedServicesSubscribedServiceCommitmentServiceArgs and GetSubscribedServicesSubscribedServiceCommitmentServiceOutput values.
@@ -13341,17 +11662,17 @@ type GetSubscribedServicesSubscribedServiceCommitmentServiceInput interface {
 
 type GetSubscribedServicesSubscribedServiceCommitmentServiceArgs struct {
 	// Commitment available amount
-	AvailableAmount pulumi.StringInput `pulumi:"availableAmount"`
+	AvailableAmount pulumi.StringPtrInput `pulumi:"availableAmount"`
 	// Funded Allocation line value example: 12000.00
-	FundedAllocationValue pulumi.StringInput `pulumi:"fundedAllocationValue"`
+	FundedAllocationValue pulumi.StringPtrInput `pulumi:"fundedAllocationValue"`
 	// Subscribed service line net amount
-	LineNetAmount pulumi.StringInput `pulumi:"lineNetAmount"`
+	LineNetAmount pulumi.StringPtrInput `pulumi:"lineNetAmount"`
 	// Subscribed service quantity
-	Quantity pulumi.StringInput `pulumi:"quantity"`
+	Quantity pulumi.StringPtrInput `pulumi:"quantity"`
 	// Subscribed service end date
-	TimeEnd pulumi.StringInput `pulumi:"timeEnd"`
+	TimeEnd pulumi.StringPtrInput `pulumi:"timeEnd"`
 	// Subscribed service start date
-	TimeStart pulumi.StringInput `pulumi:"timeStart"`
+	TimeStart pulumi.StringPtrInput `pulumi:"timeStart"`
 }
 
 func (GetSubscribedServicesSubscribedServiceCommitmentServiceArgs) ElementType() reflect.Type {
@@ -13364,12 +11685,6 @@ func (i GetSubscribedServicesSubscribedServiceCommitmentServiceArgs) ToGetSubscr
 
 func (i GetSubscribedServicesSubscribedServiceCommitmentServiceArgs) ToGetSubscribedServicesSubscribedServiceCommitmentServiceOutputWithContext(ctx context.Context) GetSubscribedServicesSubscribedServiceCommitmentServiceOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServicesSubscribedServiceCommitmentServiceOutput)
-}
-
-func (i GetSubscribedServicesSubscribedServiceCommitmentServiceArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServicesSubscribedServiceCommitmentService] {
-	return pulumix.Output[GetSubscribedServicesSubscribedServiceCommitmentService]{
-		OutputState: i.ToGetSubscribedServicesSubscribedServiceCommitmentServiceOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscribedServicesSubscribedServiceCommitmentServiceArrayInput is an input type that accepts GetSubscribedServicesSubscribedServiceCommitmentServiceArray and GetSubscribedServicesSubscribedServiceCommitmentServiceArrayOutput values.
@@ -13397,12 +11712,6 @@ func (i GetSubscribedServicesSubscribedServiceCommitmentServiceArray) ToGetSubsc
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServicesSubscribedServiceCommitmentServiceArrayOutput)
 }
 
-func (i GetSubscribedServicesSubscribedServiceCommitmentServiceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServicesSubscribedServiceCommitmentService] {
-	return pulumix.Output[[]GetSubscribedServicesSubscribedServiceCommitmentService]{
-		OutputState: i.ToGetSubscribedServicesSubscribedServiceCommitmentServiceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscribedServicesSubscribedServiceCommitmentServiceOutput struct{ *pulumi.OutputState }
 
 func (GetSubscribedServicesSubscribedServiceCommitmentServiceOutput) ElementType() reflect.Type {
@@ -13417,40 +11726,36 @@ func (o GetSubscribedServicesSubscribedServiceCommitmentServiceOutput) ToGetSubs
 	return o
 }
 
-func (o GetSubscribedServicesSubscribedServiceCommitmentServiceOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServicesSubscribedServiceCommitmentService] {
-	return pulumix.Output[GetSubscribedServicesSubscribedServiceCommitmentService]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Commitment available amount
-func (o GetSubscribedServicesSubscribedServiceCommitmentServiceOutput) AvailableAmount() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceCommitmentService) string { return v.AvailableAmount }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceCommitmentServiceOutput) AvailableAmount() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceCommitmentService) *string { return v.AvailableAmount }).(pulumi.StringPtrOutput)
 }
 
 // Funded Allocation line value example: 12000.00
-func (o GetSubscribedServicesSubscribedServiceCommitmentServiceOutput) FundedAllocationValue() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceCommitmentService) string { return v.FundedAllocationValue }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceCommitmentServiceOutput) FundedAllocationValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceCommitmentService) *string {
+		return v.FundedAllocationValue
+	}).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service line net amount
-func (o GetSubscribedServicesSubscribedServiceCommitmentServiceOutput) LineNetAmount() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceCommitmentService) string { return v.LineNetAmount }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceCommitmentServiceOutput) LineNetAmount() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceCommitmentService) *string { return v.LineNetAmount }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service quantity
-func (o GetSubscribedServicesSubscribedServiceCommitmentServiceOutput) Quantity() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceCommitmentService) string { return v.Quantity }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceCommitmentServiceOutput) Quantity() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceCommitmentService) *string { return v.Quantity }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service end date
-func (o GetSubscribedServicesSubscribedServiceCommitmentServiceOutput) TimeEnd() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceCommitmentService) string { return v.TimeEnd }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceCommitmentServiceOutput) TimeEnd() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceCommitmentService) *string { return v.TimeEnd }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service start date
-func (o GetSubscribedServicesSubscribedServiceCommitmentServiceOutput) TimeStart() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceCommitmentService) string { return v.TimeStart }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceCommitmentServiceOutput) TimeStart() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceCommitmentService) *string { return v.TimeStart }).(pulumi.StringPtrOutput)
 }
 
 type GetSubscribedServicesSubscribedServiceCommitmentServiceArrayOutput struct{ *pulumi.OutputState }
@@ -13467,12 +11772,6 @@ func (o GetSubscribedServicesSubscribedServiceCommitmentServiceArrayOutput) ToGe
 	return o
 }
 
-func (o GetSubscribedServicesSubscribedServiceCommitmentServiceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServicesSubscribedServiceCommitmentService] {
-	return pulumix.Output[[]GetSubscribedServicesSubscribedServiceCommitmentService]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscribedServicesSubscribedServiceCommitmentServiceArrayOutput) Index(i pulumi.IntInput) GetSubscribedServicesSubscribedServiceCommitmentServiceOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscribedServicesSubscribedServiceCommitmentService {
 		return vs[0].([]GetSubscribedServicesSubscribedServiceCommitmentService)[vs[1].(int)]
@@ -13481,23 +11780,23 @@ func (o GetSubscribedServicesSubscribedServiceCommitmentServiceArrayOutput) Inde
 
 type GetSubscribedServicesSubscribedServiceEndUserAddress struct {
 	// Bill to site use Id.
-	BillSiteUseId string `pulumi:"billSiteUseId"`
+	BillSiteUseId *string `pulumi:"billSiteUseId"`
 	// Identify as the customer shipping address.
-	IsBillTo bool `pulumi:"isBillTo"`
+	IsBillTo *bool `pulumi:"isBillTo"`
 	// Identify as the customer invoicing address.
-	IsShipTo bool `pulumi:"isShipTo"`
+	IsShipTo *bool `pulumi:"isShipTo"`
 	// Address location.
 	Locations []GetSubscribedServicesSubscribedServiceEndUserAddressLocation `pulumi:"locations"`
 	// Commercial name also called customer name.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Phone.
-	Phone string `pulumi:"phone"`
+	Phone *string `pulumi:"phone"`
 	// Service to site use Id.
-	Service2siteUseId string `pulumi:"service2siteUseId"`
+	Service2siteUseId *string `pulumi:"service2siteUseId"`
 	// TCA customer account site Id.
-	TcaCustAcctSiteId string `pulumi:"tcaCustAcctSiteId"`
+	TcaCustAcctSiteId *string `pulumi:"tcaCustAcctSiteId"`
 	// Party site number.
-	TcaPartySiteNumber string `pulumi:"tcaPartySiteNumber"`
+	TcaPartySiteNumber *string `pulumi:"tcaPartySiteNumber"`
 }
 
 // GetSubscribedServicesSubscribedServiceEndUserAddressInput is an input type that accepts GetSubscribedServicesSubscribedServiceEndUserAddressArgs and GetSubscribedServicesSubscribedServiceEndUserAddressOutput values.
@@ -13513,23 +11812,23 @@ type GetSubscribedServicesSubscribedServiceEndUserAddressInput interface {
 
 type GetSubscribedServicesSubscribedServiceEndUserAddressArgs struct {
 	// Bill to site use Id.
-	BillSiteUseId pulumi.StringInput `pulumi:"billSiteUseId"`
+	BillSiteUseId pulumi.StringPtrInput `pulumi:"billSiteUseId"`
 	// Identify as the customer shipping address.
-	IsBillTo pulumi.BoolInput `pulumi:"isBillTo"`
+	IsBillTo pulumi.BoolPtrInput `pulumi:"isBillTo"`
 	// Identify as the customer invoicing address.
-	IsShipTo pulumi.BoolInput `pulumi:"isShipTo"`
+	IsShipTo pulumi.BoolPtrInput `pulumi:"isShipTo"`
 	// Address location.
 	Locations GetSubscribedServicesSubscribedServiceEndUserAddressLocationArrayInput `pulumi:"locations"`
 	// Commercial name also called customer name.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Phone.
-	Phone pulumi.StringInput `pulumi:"phone"`
+	Phone pulumi.StringPtrInput `pulumi:"phone"`
 	// Service to site use Id.
-	Service2siteUseId pulumi.StringInput `pulumi:"service2siteUseId"`
+	Service2siteUseId pulumi.StringPtrInput `pulumi:"service2siteUseId"`
 	// TCA customer account site Id.
-	TcaCustAcctSiteId pulumi.StringInput `pulumi:"tcaCustAcctSiteId"`
+	TcaCustAcctSiteId pulumi.StringPtrInput `pulumi:"tcaCustAcctSiteId"`
 	// Party site number.
-	TcaPartySiteNumber pulumi.StringInput `pulumi:"tcaPartySiteNumber"`
+	TcaPartySiteNumber pulumi.StringPtrInput `pulumi:"tcaPartySiteNumber"`
 }
 
 func (GetSubscribedServicesSubscribedServiceEndUserAddressArgs) ElementType() reflect.Type {
@@ -13542,12 +11841,6 @@ func (i GetSubscribedServicesSubscribedServiceEndUserAddressArgs) ToGetSubscribe
 
 func (i GetSubscribedServicesSubscribedServiceEndUserAddressArgs) ToGetSubscribedServicesSubscribedServiceEndUserAddressOutputWithContext(ctx context.Context) GetSubscribedServicesSubscribedServiceEndUserAddressOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServicesSubscribedServiceEndUserAddressOutput)
-}
-
-func (i GetSubscribedServicesSubscribedServiceEndUserAddressArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServicesSubscribedServiceEndUserAddress] {
-	return pulumix.Output[GetSubscribedServicesSubscribedServiceEndUserAddress]{
-		OutputState: i.ToGetSubscribedServicesSubscribedServiceEndUserAddressOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscribedServicesSubscribedServiceEndUserAddressArrayInput is an input type that accepts GetSubscribedServicesSubscribedServiceEndUserAddressArray and GetSubscribedServicesSubscribedServiceEndUserAddressArrayOutput values.
@@ -13575,12 +11868,6 @@ func (i GetSubscribedServicesSubscribedServiceEndUserAddressArray) ToGetSubscrib
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServicesSubscribedServiceEndUserAddressArrayOutput)
 }
 
-func (i GetSubscribedServicesSubscribedServiceEndUserAddressArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServicesSubscribedServiceEndUserAddress] {
-	return pulumix.Output[[]GetSubscribedServicesSubscribedServiceEndUserAddress]{
-		OutputState: i.ToGetSubscribedServicesSubscribedServiceEndUserAddressArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscribedServicesSubscribedServiceEndUserAddressOutput struct{ *pulumi.OutputState }
 
 func (GetSubscribedServicesSubscribedServiceEndUserAddressOutput) ElementType() reflect.Type {
@@ -13595,25 +11882,19 @@ func (o GetSubscribedServicesSubscribedServiceEndUserAddressOutput) ToGetSubscri
 	return o
 }
 
-func (o GetSubscribedServicesSubscribedServiceEndUserAddressOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServicesSubscribedServiceEndUserAddress] {
-	return pulumix.Output[GetSubscribedServicesSubscribedServiceEndUserAddress]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Bill to site use Id.
-func (o GetSubscribedServicesSubscribedServiceEndUserAddressOutput) BillSiteUseId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceEndUserAddress) string { return v.BillSiteUseId }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceEndUserAddressOutput) BillSiteUseId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceEndUserAddress) *string { return v.BillSiteUseId }).(pulumi.StringPtrOutput)
 }
 
 // Identify as the customer shipping address.
-func (o GetSubscribedServicesSubscribedServiceEndUserAddressOutput) IsBillTo() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceEndUserAddress) bool { return v.IsBillTo }).(pulumi.BoolOutput)
+func (o GetSubscribedServicesSubscribedServiceEndUserAddressOutput) IsBillTo() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceEndUserAddress) *bool { return v.IsBillTo }).(pulumi.BoolPtrOutput)
 }
 
 // Identify as the customer invoicing address.
-func (o GetSubscribedServicesSubscribedServiceEndUserAddressOutput) IsShipTo() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceEndUserAddress) bool { return v.IsShipTo }).(pulumi.BoolOutput)
+func (o GetSubscribedServicesSubscribedServiceEndUserAddressOutput) IsShipTo() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceEndUserAddress) *bool { return v.IsShipTo }).(pulumi.BoolPtrOutput)
 }
 
 // Address location.
@@ -13624,28 +11905,28 @@ func (o GetSubscribedServicesSubscribedServiceEndUserAddressOutput) Locations() 
 }
 
 // Commercial name also called customer name.
-func (o GetSubscribedServicesSubscribedServiceEndUserAddressOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceEndUserAddress) string { return v.Name }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceEndUserAddressOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceEndUserAddress) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Phone.
-func (o GetSubscribedServicesSubscribedServiceEndUserAddressOutput) Phone() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceEndUserAddress) string { return v.Phone }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceEndUserAddressOutput) Phone() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceEndUserAddress) *string { return v.Phone }).(pulumi.StringPtrOutput)
 }
 
 // Service to site use Id.
-func (o GetSubscribedServicesSubscribedServiceEndUserAddressOutput) Service2siteUseId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceEndUserAddress) string { return v.Service2siteUseId }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceEndUserAddressOutput) Service2siteUseId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceEndUserAddress) *string { return v.Service2siteUseId }).(pulumi.StringPtrOutput)
 }
 
 // TCA customer account site Id.
-func (o GetSubscribedServicesSubscribedServiceEndUserAddressOutput) TcaCustAcctSiteId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceEndUserAddress) string { return v.TcaCustAcctSiteId }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceEndUserAddressOutput) TcaCustAcctSiteId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceEndUserAddress) *string { return v.TcaCustAcctSiteId }).(pulumi.StringPtrOutput)
 }
 
 // Party site number.
-func (o GetSubscribedServicesSubscribedServiceEndUserAddressOutput) TcaPartySiteNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceEndUserAddress) string { return v.TcaPartySiteNumber }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceEndUserAddressOutput) TcaPartySiteNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceEndUserAddress) *string { return v.TcaPartySiteNumber }).(pulumi.StringPtrOutput)
 }
 
 type GetSubscribedServicesSubscribedServiceEndUserAddressArrayOutput struct{ *pulumi.OutputState }
@@ -13662,12 +11943,6 @@ func (o GetSubscribedServicesSubscribedServiceEndUserAddressArrayOutput) ToGetSu
 	return o
 }
 
-func (o GetSubscribedServicesSubscribedServiceEndUserAddressArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServicesSubscribedServiceEndUserAddress] {
-	return pulumix.Output[[]GetSubscribedServicesSubscribedServiceEndUserAddress]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscribedServicesSubscribedServiceEndUserAddressArrayOutput) Index(i pulumi.IntInput) GetSubscribedServicesSubscribedServiceEndUserAddressOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscribedServicesSubscribedServiceEndUserAddress {
 		return vs[0].([]GetSubscribedServicesSubscribedServiceEndUserAddress)[vs[1].(int)]
@@ -13676,19 +11951,19 @@ func (o GetSubscribedServicesSubscribedServiceEndUserAddressArrayOutput) Index(i
 
 type GetSubscribedServicesSubscribedServiceEndUserAddressLocation struct {
 	// Address first line.
-	Address1 string `pulumi:"address1"`
+	Address1 *string `pulumi:"address1"`
 	// Address second line.
-	Address2 string `pulumi:"address2"`
+	Address2 *string `pulumi:"address2"`
 	// City.
-	City string `pulumi:"city"`
+	City *string `pulumi:"city"`
 	// Country.
-	Country string `pulumi:"country"`
+	Country *string `pulumi:"country"`
 	// Postal code.
-	PostalCode string `pulumi:"postalCode"`
+	PostalCode *string `pulumi:"postalCode"`
 	// Region.
-	Region string `pulumi:"region"`
+	Region *string `pulumi:"region"`
 	// Region.
-	TcaLocationId string `pulumi:"tcaLocationId"`
+	TcaLocationId *string `pulumi:"tcaLocationId"`
 }
 
 // GetSubscribedServicesSubscribedServiceEndUserAddressLocationInput is an input type that accepts GetSubscribedServicesSubscribedServiceEndUserAddressLocationArgs and GetSubscribedServicesSubscribedServiceEndUserAddressLocationOutput values.
@@ -13704,19 +11979,19 @@ type GetSubscribedServicesSubscribedServiceEndUserAddressLocationInput interface
 
 type GetSubscribedServicesSubscribedServiceEndUserAddressLocationArgs struct {
 	// Address first line.
-	Address1 pulumi.StringInput `pulumi:"address1"`
+	Address1 pulumi.StringPtrInput `pulumi:"address1"`
 	// Address second line.
-	Address2 pulumi.StringInput `pulumi:"address2"`
+	Address2 pulumi.StringPtrInput `pulumi:"address2"`
 	// City.
-	City pulumi.StringInput `pulumi:"city"`
+	City pulumi.StringPtrInput `pulumi:"city"`
 	// Country.
-	Country pulumi.StringInput `pulumi:"country"`
+	Country pulumi.StringPtrInput `pulumi:"country"`
 	// Postal code.
-	PostalCode pulumi.StringInput `pulumi:"postalCode"`
+	PostalCode pulumi.StringPtrInput `pulumi:"postalCode"`
 	// Region.
-	Region pulumi.StringInput `pulumi:"region"`
+	Region pulumi.StringPtrInput `pulumi:"region"`
 	// Region.
-	TcaLocationId pulumi.StringInput `pulumi:"tcaLocationId"`
+	TcaLocationId pulumi.StringPtrInput `pulumi:"tcaLocationId"`
 }
 
 func (GetSubscribedServicesSubscribedServiceEndUserAddressLocationArgs) ElementType() reflect.Type {
@@ -13729,12 +12004,6 @@ func (i GetSubscribedServicesSubscribedServiceEndUserAddressLocationArgs) ToGetS
 
 func (i GetSubscribedServicesSubscribedServiceEndUserAddressLocationArgs) ToGetSubscribedServicesSubscribedServiceEndUserAddressLocationOutputWithContext(ctx context.Context) GetSubscribedServicesSubscribedServiceEndUserAddressLocationOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServicesSubscribedServiceEndUserAddressLocationOutput)
-}
-
-func (i GetSubscribedServicesSubscribedServiceEndUserAddressLocationArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServicesSubscribedServiceEndUserAddressLocation] {
-	return pulumix.Output[GetSubscribedServicesSubscribedServiceEndUserAddressLocation]{
-		OutputState: i.ToGetSubscribedServicesSubscribedServiceEndUserAddressLocationOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscribedServicesSubscribedServiceEndUserAddressLocationArrayInput is an input type that accepts GetSubscribedServicesSubscribedServiceEndUserAddressLocationArray and GetSubscribedServicesSubscribedServiceEndUserAddressLocationArrayOutput values.
@@ -13762,12 +12031,6 @@ func (i GetSubscribedServicesSubscribedServiceEndUserAddressLocationArray) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServicesSubscribedServiceEndUserAddressLocationArrayOutput)
 }
 
-func (i GetSubscribedServicesSubscribedServiceEndUserAddressLocationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServicesSubscribedServiceEndUserAddressLocation] {
-	return pulumix.Output[[]GetSubscribedServicesSubscribedServiceEndUserAddressLocation]{
-		OutputState: i.ToGetSubscribedServicesSubscribedServiceEndUserAddressLocationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscribedServicesSubscribedServiceEndUserAddressLocationOutput struct{ *pulumi.OutputState }
 
 func (GetSubscribedServicesSubscribedServiceEndUserAddressLocationOutput) ElementType() reflect.Type {
@@ -13782,45 +12045,39 @@ func (o GetSubscribedServicesSubscribedServiceEndUserAddressLocationOutput) ToGe
 	return o
 }
 
-func (o GetSubscribedServicesSubscribedServiceEndUserAddressLocationOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServicesSubscribedServiceEndUserAddressLocation] {
-	return pulumix.Output[GetSubscribedServicesSubscribedServiceEndUserAddressLocation]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Address first line.
-func (o GetSubscribedServicesSubscribedServiceEndUserAddressLocationOutput) Address1() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceEndUserAddressLocation) string { return v.Address1 }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceEndUserAddressLocationOutput) Address1() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceEndUserAddressLocation) *string { return v.Address1 }).(pulumi.StringPtrOutput)
 }
 
 // Address second line.
-func (o GetSubscribedServicesSubscribedServiceEndUserAddressLocationOutput) Address2() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceEndUserAddressLocation) string { return v.Address2 }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceEndUserAddressLocationOutput) Address2() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceEndUserAddressLocation) *string { return v.Address2 }).(pulumi.StringPtrOutput)
 }
 
 // City.
-func (o GetSubscribedServicesSubscribedServiceEndUserAddressLocationOutput) City() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceEndUserAddressLocation) string { return v.City }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceEndUserAddressLocationOutput) City() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceEndUserAddressLocation) *string { return v.City }).(pulumi.StringPtrOutput)
 }
 
 // Country.
-func (o GetSubscribedServicesSubscribedServiceEndUserAddressLocationOutput) Country() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceEndUserAddressLocation) string { return v.Country }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceEndUserAddressLocationOutput) Country() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceEndUserAddressLocation) *string { return v.Country }).(pulumi.StringPtrOutput)
 }
 
 // Postal code.
-func (o GetSubscribedServicesSubscribedServiceEndUserAddressLocationOutput) PostalCode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceEndUserAddressLocation) string { return v.PostalCode }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceEndUserAddressLocationOutput) PostalCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceEndUserAddressLocation) *string { return v.PostalCode }).(pulumi.StringPtrOutput)
 }
 
 // Region.
-func (o GetSubscribedServicesSubscribedServiceEndUserAddressLocationOutput) Region() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceEndUserAddressLocation) string { return v.Region }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceEndUserAddressLocationOutput) Region() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceEndUserAddressLocation) *string { return v.Region }).(pulumi.StringPtrOutput)
 }
 
 // Region.
-func (o GetSubscribedServicesSubscribedServiceEndUserAddressLocationOutput) TcaLocationId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceEndUserAddressLocation) string { return v.TcaLocationId }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceEndUserAddressLocationOutput) TcaLocationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceEndUserAddressLocation) *string { return v.TcaLocationId }).(pulumi.StringPtrOutput)
 }
 
 type GetSubscribedServicesSubscribedServiceEndUserAddressLocationArrayOutput struct{ *pulumi.OutputState }
@@ -13837,12 +12094,6 @@ func (o GetSubscribedServicesSubscribedServiceEndUserAddressLocationArrayOutput)
 	return o
 }
 
-func (o GetSubscribedServicesSubscribedServiceEndUserAddressLocationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServicesSubscribedServiceEndUserAddressLocation] {
-	return pulumix.Output[[]GetSubscribedServicesSubscribedServiceEndUserAddressLocation]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscribedServicesSubscribedServiceEndUserAddressLocationArrayOutput) Index(i pulumi.IntInput) GetSubscribedServicesSubscribedServiceEndUserAddressLocationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscribedServicesSubscribedServiceEndUserAddressLocation {
 		return vs[0].([]GetSubscribedServicesSubscribedServiceEndUserAddressLocation)[vs[1].(int)]
@@ -13851,21 +12102,21 @@ func (o GetSubscribedServicesSubscribedServiceEndUserAddressLocationArrayOutput)
 
 type GetSubscribedServicesSubscribedServiceEndUserContact struct {
 	// Email.
-	Email string `pulumi:"email"`
+	Email *string `pulumi:"email"`
 	// First name.
-	FirstName string `pulumi:"firstName"`
+	FirstName *string `pulumi:"firstName"`
 	// Last name.
-	LastName string `pulumi:"lastName"`
+	LastName *string `pulumi:"lastName"`
 	// Commercial name also called customer name.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// TCA contact ID.
-	TcaContactId string `pulumi:"tcaContactId"`
+	TcaContactId *string `pulumi:"tcaContactId"`
 	// TCA customer account site ID.
-	TcaCustAccntSiteId string `pulumi:"tcaCustAccntSiteId"`
+	TcaCustAccntSiteId *string `pulumi:"tcaCustAccntSiteId"`
 	// TCA party ID.
-	TcaPartyId string `pulumi:"tcaPartyId"`
+	TcaPartyId *string `pulumi:"tcaPartyId"`
 	// Username.
-	Username string `pulumi:"username"`
+	Username *string `pulumi:"username"`
 }
 
 // GetSubscribedServicesSubscribedServiceEndUserContactInput is an input type that accepts GetSubscribedServicesSubscribedServiceEndUserContactArgs and GetSubscribedServicesSubscribedServiceEndUserContactOutput values.
@@ -13881,21 +12132,21 @@ type GetSubscribedServicesSubscribedServiceEndUserContactInput interface {
 
 type GetSubscribedServicesSubscribedServiceEndUserContactArgs struct {
 	// Email.
-	Email pulumi.StringInput `pulumi:"email"`
+	Email pulumi.StringPtrInput `pulumi:"email"`
 	// First name.
-	FirstName pulumi.StringInput `pulumi:"firstName"`
+	FirstName pulumi.StringPtrInput `pulumi:"firstName"`
 	// Last name.
-	LastName pulumi.StringInput `pulumi:"lastName"`
+	LastName pulumi.StringPtrInput `pulumi:"lastName"`
 	// Commercial name also called customer name.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// TCA contact ID.
-	TcaContactId pulumi.StringInput `pulumi:"tcaContactId"`
+	TcaContactId pulumi.StringPtrInput `pulumi:"tcaContactId"`
 	// TCA customer account site ID.
-	TcaCustAccntSiteId pulumi.StringInput `pulumi:"tcaCustAccntSiteId"`
+	TcaCustAccntSiteId pulumi.StringPtrInput `pulumi:"tcaCustAccntSiteId"`
 	// TCA party ID.
-	TcaPartyId pulumi.StringInput `pulumi:"tcaPartyId"`
+	TcaPartyId pulumi.StringPtrInput `pulumi:"tcaPartyId"`
 	// Username.
-	Username pulumi.StringInput `pulumi:"username"`
+	Username pulumi.StringPtrInput `pulumi:"username"`
 }
 
 func (GetSubscribedServicesSubscribedServiceEndUserContactArgs) ElementType() reflect.Type {
@@ -13908,12 +12159,6 @@ func (i GetSubscribedServicesSubscribedServiceEndUserContactArgs) ToGetSubscribe
 
 func (i GetSubscribedServicesSubscribedServiceEndUserContactArgs) ToGetSubscribedServicesSubscribedServiceEndUserContactOutputWithContext(ctx context.Context) GetSubscribedServicesSubscribedServiceEndUserContactOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServicesSubscribedServiceEndUserContactOutput)
-}
-
-func (i GetSubscribedServicesSubscribedServiceEndUserContactArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServicesSubscribedServiceEndUserContact] {
-	return pulumix.Output[GetSubscribedServicesSubscribedServiceEndUserContact]{
-		OutputState: i.ToGetSubscribedServicesSubscribedServiceEndUserContactOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscribedServicesSubscribedServiceEndUserContactArrayInput is an input type that accepts GetSubscribedServicesSubscribedServiceEndUserContactArray and GetSubscribedServicesSubscribedServiceEndUserContactArrayOutput values.
@@ -13941,12 +12186,6 @@ func (i GetSubscribedServicesSubscribedServiceEndUserContactArray) ToGetSubscrib
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServicesSubscribedServiceEndUserContactArrayOutput)
 }
 
-func (i GetSubscribedServicesSubscribedServiceEndUserContactArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServicesSubscribedServiceEndUserContact] {
-	return pulumix.Output[[]GetSubscribedServicesSubscribedServiceEndUserContact]{
-		OutputState: i.ToGetSubscribedServicesSubscribedServiceEndUserContactArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscribedServicesSubscribedServiceEndUserContactOutput struct{ *pulumi.OutputState }
 
 func (GetSubscribedServicesSubscribedServiceEndUserContactOutput) ElementType() reflect.Type {
@@ -13961,50 +12200,44 @@ func (o GetSubscribedServicesSubscribedServiceEndUserContactOutput) ToGetSubscri
 	return o
 }
 
-func (o GetSubscribedServicesSubscribedServiceEndUserContactOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServicesSubscribedServiceEndUserContact] {
-	return pulumix.Output[GetSubscribedServicesSubscribedServiceEndUserContact]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Email.
-func (o GetSubscribedServicesSubscribedServiceEndUserContactOutput) Email() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceEndUserContact) string { return v.Email }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceEndUserContactOutput) Email() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceEndUserContact) *string { return v.Email }).(pulumi.StringPtrOutput)
 }
 
 // First name.
-func (o GetSubscribedServicesSubscribedServiceEndUserContactOutput) FirstName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceEndUserContact) string { return v.FirstName }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceEndUserContactOutput) FirstName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceEndUserContact) *string { return v.FirstName }).(pulumi.StringPtrOutput)
 }
 
 // Last name.
-func (o GetSubscribedServicesSubscribedServiceEndUserContactOutput) LastName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceEndUserContact) string { return v.LastName }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceEndUserContactOutput) LastName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceEndUserContact) *string { return v.LastName }).(pulumi.StringPtrOutput)
 }
 
 // Commercial name also called customer name.
-func (o GetSubscribedServicesSubscribedServiceEndUserContactOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceEndUserContact) string { return v.Name }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceEndUserContactOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceEndUserContact) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // TCA contact ID.
-func (o GetSubscribedServicesSubscribedServiceEndUserContactOutput) TcaContactId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceEndUserContact) string { return v.TcaContactId }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceEndUserContactOutput) TcaContactId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceEndUserContact) *string { return v.TcaContactId }).(pulumi.StringPtrOutput)
 }
 
 // TCA customer account site ID.
-func (o GetSubscribedServicesSubscribedServiceEndUserContactOutput) TcaCustAccntSiteId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceEndUserContact) string { return v.TcaCustAccntSiteId }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceEndUserContactOutput) TcaCustAccntSiteId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceEndUserContact) *string { return v.TcaCustAccntSiteId }).(pulumi.StringPtrOutput)
 }
 
 // TCA party ID.
-func (o GetSubscribedServicesSubscribedServiceEndUserContactOutput) TcaPartyId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceEndUserContact) string { return v.TcaPartyId }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceEndUserContactOutput) TcaPartyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceEndUserContact) *string { return v.TcaPartyId }).(pulumi.StringPtrOutput)
 }
 
 // Username.
-func (o GetSubscribedServicesSubscribedServiceEndUserContactOutput) Username() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceEndUserContact) string { return v.Username }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceEndUserContactOutput) Username() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceEndUserContact) *string { return v.Username }).(pulumi.StringPtrOutput)
 }
 
 type GetSubscribedServicesSubscribedServiceEndUserContactArrayOutput struct{ *pulumi.OutputState }
@@ -14021,12 +12254,6 @@ func (o GetSubscribedServicesSubscribedServiceEndUserContactArrayOutput) ToGetSu
 	return o
 }
 
-func (o GetSubscribedServicesSubscribedServiceEndUserContactArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServicesSubscribedServiceEndUserContact] {
-	return pulumix.Output[[]GetSubscribedServicesSubscribedServiceEndUserContact]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscribedServicesSubscribedServiceEndUserContactArrayOutput) Index(i pulumi.IntInput) GetSubscribedServicesSubscribedServiceEndUserContactOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscribedServicesSubscribedServiceEndUserContact {
 		return vs[0].([]GetSubscribedServicesSubscribedServiceEndUserContact)[vs[1].(int)]
@@ -14035,23 +12262,23 @@ func (o GetSubscribedServicesSubscribedServiceEndUserContactArrayOutput) Index(i
 
 type GetSubscribedServicesSubscribedServiceEndUserCustomer struct {
 	// Customer chain type.
-	CustomerChainType string `pulumi:"customerChainType"`
+	CustomerChainType *string `pulumi:"customerChainType"`
 	// The business partner is chain customer or not.
-	IsChainCustomer bool `pulumi:"isChainCustomer"`
+	IsChainCustomer *bool `pulumi:"isChainCustomer"`
 	// The business partner is part of the public sector or not.
-	IsPublicSector bool `pulumi:"isPublicSector"`
+	IsPublicSector *bool `pulumi:"isPublicSector"`
 	// Commercial name also called customer name.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Phonetic name.
-	NamePhonetic string `pulumi:"namePhonetic"`
+	NamePhonetic *string `pulumi:"namePhonetic"`
 	// TCA customer account number.
-	TcaCustAccountNumber string `pulumi:"tcaCustAccountNumber"`
+	TcaCustAccountNumber *string `pulumi:"tcaCustAccountNumber"`
 	// TCA customer account ID.
-	TcaCustomerAccountId string `pulumi:"tcaCustomerAccountId"`
+	TcaCustomerAccountId *string `pulumi:"tcaCustomerAccountId"`
 	// TCA party ID.
-	TcaPartyId string `pulumi:"tcaPartyId"`
+	TcaPartyId *string `pulumi:"tcaPartyId"`
 	// TCA party number.
-	TcaPartyNumber string `pulumi:"tcaPartyNumber"`
+	TcaPartyNumber *string `pulumi:"tcaPartyNumber"`
 }
 
 // GetSubscribedServicesSubscribedServiceEndUserCustomerInput is an input type that accepts GetSubscribedServicesSubscribedServiceEndUserCustomerArgs and GetSubscribedServicesSubscribedServiceEndUserCustomerOutput values.
@@ -14067,23 +12294,23 @@ type GetSubscribedServicesSubscribedServiceEndUserCustomerInput interface {
 
 type GetSubscribedServicesSubscribedServiceEndUserCustomerArgs struct {
 	// Customer chain type.
-	CustomerChainType pulumi.StringInput `pulumi:"customerChainType"`
+	CustomerChainType pulumi.StringPtrInput `pulumi:"customerChainType"`
 	// The business partner is chain customer or not.
-	IsChainCustomer pulumi.BoolInput `pulumi:"isChainCustomer"`
+	IsChainCustomer pulumi.BoolPtrInput `pulumi:"isChainCustomer"`
 	// The business partner is part of the public sector or not.
-	IsPublicSector pulumi.BoolInput `pulumi:"isPublicSector"`
+	IsPublicSector pulumi.BoolPtrInput `pulumi:"isPublicSector"`
 	// Commercial name also called customer name.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Phonetic name.
-	NamePhonetic pulumi.StringInput `pulumi:"namePhonetic"`
+	NamePhonetic pulumi.StringPtrInput `pulumi:"namePhonetic"`
 	// TCA customer account number.
-	TcaCustAccountNumber pulumi.StringInput `pulumi:"tcaCustAccountNumber"`
+	TcaCustAccountNumber pulumi.StringPtrInput `pulumi:"tcaCustAccountNumber"`
 	// TCA customer account ID.
-	TcaCustomerAccountId pulumi.StringInput `pulumi:"tcaCustomerAccountId"`
+	TcaCustomerAccountId pulumi.StringPtrInput `pulumi:"tcaCustomerAccountId"`
 	// TCA party ID.
-	TcaPartyId pulumi.StringInput `pulumi:"tcaPartyId"`
+	TcaPartyId pulumi.StringPtrInput `pulumi:"tcaPartyId"`
 	// TCA party number.
-	TcaPartyNumber pulumi.StringInput `pulumi:"tcaPartyNumber"`
+	TcaPartyNumber pulumi.StringPtrInput `pulumi:"tcaPartyNumber"`
 }
 
 func (GetSubscribedServicesSubscribedServiceEndUserCustomerArgs) ElementType() reflect.Type {
@@ -14096,12 +12323,6 @@ func (i GetSubscribedServicesSubscribedServiceEndUserCustomerArgs) ToGetSubscrib
 
 func (i GetSubscribedServicesSubscribedServiceEndUserCustomerArgs) ToGetSubscribedServicesSubscribedServiceEndUserCustomerOutputWithContext(ctx context.Context) GetSubscribedServicesSubscribedServiceEndUserCustomerOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServicesSubscribedServiceEndUserCustomerOutput)
-}
-
-func (i GetSubscribedServicesSubscribedServiceEndUserCustomerArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServicesSubscribedServiceEndUserCustomer] {
-	return pulumix.Output[GetSubscribedServicesSubscribedServiceEndUserCustomer]{
-		OutputState: i.ToGetSubscribedServicesSubscribedServiceEndUserCustomerOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscribedServicesSubscribedServiceEndUserCustomerArrayInput is an input type that accepts GetSubscribedServicesSubscribedServiceEndUserCustomerArray and GetSubscribedServicesSubscribedServiceEndUserCustomerArrayOutput values.
@@ -14129,12 +12350,6 @@ func (i GetSubscribedServicesSubscribedServiceEndUserCustomerArray) ToGetSubscri
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServicesSubscribedServiceEndUserCustomerArrayOutput)
 }
 
-func (i GetSubscribedServicesSubscribedServiceEndUserCustomerArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServicesSubscribedServiceEndUserCustomer] {
-	return pulumix.Output[[]GetSubscribedServicesSubscribedServiceEndUserCustomer]{
-		OutputState: i.ToGetSubscribedServicesSubscribedServiceEndUserCustomerArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscribedServicesSubscribedServiceEndUserCustomerOutput struct{ *pulumi.OutputState }
 
 func (GetSubscribedServicesSubscribedServiceEndUserCustomerOutput) ElementType() reflect.Type {
@@ -14149,55 +12364,49 @@ func (o GetSubscribedServicesSubscribedServiceEndUserCustomerOutput) ToGetSubscr
 	return o
 }
 
-func (o GetSubscribedServicesSubscribedServiceEndUserCustomerOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServicesSubscribedServiceEndUserCustomer] {
-	return pulumix.Output[GetSubscribedServicesSubscribedServiceEndUserCustomer]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Customer chain type.
-func (o GetSubscribedServicesSubscribedServiceEndUserCustomerOutput) CustomerChainType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceEndUserCustomer) string { return v.CustomerChainType }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceEndUserCustomerOutput) CustomerChainType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceEndUserCustomer) *string { return v.CustomerChainType }).(pulumi.StringPtrOutput)
 }
 
 // The business partner is chain customer or not.
-func (o GetSubscribedServicesSubscribedServiceEndUserCustomerOutput) IsChainCustomer() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceEndUserCustomer) bool { return v.IsChainCustomer }).(pulumi.BoolOutput)
+func (o GetSubscribedServicesSubscribedServiceEndUserCustomerOutput) IsChainCustomer() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceEndUserCustomer) *bool { return v.IsChainCustomer }).(pulumi.BoolPtrOutput)
 }
 
 // The business partner is part of the public sector or not.
-func (o GetSubscribedServicesSubscribedServiceEndUserCustomerOutput) IsPublicSector() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceEndUserCustomer) bool { return v.IsPublicSector }).(pulumi.BoolOutput)
+func (o GetSubscribedServicesSubscribedServiceEndUserCustomerOutput) IsPublicSector() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceEndUserCustomer) *bool { return v.IsPublicSector }).(pulumi.BoolPtrOutput)
 }
 
 // Commercial name also called customer name.
-func (o GetSubscribedServicesSubscribedServiceEndUserCustomerOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceEndUserCustomer) string { return v.Name }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceEndUserCustomerOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceEndUserCustomer) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Phonetic name.
-func (o GetSubscribedServicesSubscribedServiceEndUserCustomerOutput) NamePhonetic() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceEndUserCustomer) string { return v.NamePhonetic }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceEndUserCustomerOutput) NamePhonetic() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceEndUserCustomer) *string { return v.NamePhonetic }).(pulumi.StringPtrOutput)
 }
 
 // TCA customer account number.
-func (o GetSubscribedServicesSubscribedServiceEndUserCustomerOutput) TcaCustAccountNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceEndUserCustomer) string { return v.TcaCustAccountNumber }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceEndUserCustomerOutput) TcaCustAccountNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceEndUserCustomer) *string { return v.TcaCustAccountNumber }).(pulumi.StringPtrOutput)
 }
 
 // TCA customer account ID.
-func (o GetSubscribedServicesSubscribedServiceEndUserCustomerOutput) TcaCustomerAccountId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceEndUserCustomer) string { return v.TcaCustomerAccountId }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceEndUserCustomerOutput) TcaCustomerAccountId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceEndUserCustomer) *string { return v.TcaCustomerAccountId }).(pulumi.StringPtrOutput)
 }
 
 // TCA party ID.
-func (o GetSubscribedServicesSubscribedServiceEndUserCustomerOutput) TcaPartyId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceEndUserCustomer) string { return v.TcaPartyId }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceEndUserCustomerOutput) TcaPartyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceEndUserCustomer) *string { return v.TcaPartyId }).(pulumi.StringPtrOutput)
 }
 
 // TCA party number.
-func (o GetSubscribedServicesSubscribedServiceEndUserCustomerOutput) TcaPartyNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceEndUserCustomer) string { return v.TcaPartyNumber }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceEndUserCustomerOutput) TcaPartyNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceEndUserCustomer) *string { return v.TcaPartyNumber }).(pulumi.StringPtrOutput)
 }
 
 type GetSubscribedServicesSubscribedServiceEndUserCustomerArrayOutput struct{ *pulumi.OutputState }
@@ -14214,12 +12423,6 @@ func (o GetSubscribedServicesSubscribedServiceEndUserCustomerArrayOutput) ToGetS
 	return o
 }
 
-func (o GetSubscribedServicesSubscribedServiceEndUserCustomerArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServicesSubscribedServiceEndUserCustomer] {
-	return pulumix.Output[[]GetSubscribedServicesSubscribedServiceEndUserCustomer]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscribedServicesSubscribedServiceEndUserCustomerArrayOutput) Index(i pulumi.IntInput) GetSubscribedServicesSubscribedServiceEndUserCustomerOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscribedServicesSubscribedServiceEndUserCustomer {
 		return vs[0].([]GetSubscribedServicesSubscribedServiceEndUserCustomer)[vs[1].(int)]
@@ -14228,21 +12431,21 @@ func (o GetSubscribedServicesSubscribedServiceEndUserCustomerArrayOutput) Index(
 
 type GetSubscribedServicesSubscribedServicePaymentTerm struct {
 	// User that created the Payment term
-	CreatedBy string `pulumi:"createdBy"`
+	CreatedBy *string `pulumi:"createdBy"`
 	// Payment term Description
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Payment term active flag
-	IsActive bool `pulumi:"isActive"`
+	IsActive *bool `pulumi:"isActive"`
 	// Commercial name also called customer name.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Subscribed service creation date
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// Subscribed service last update date
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// User that updated the subscribed service
-	UpdatedBy string `pulumi:"updatedBy"`
+	UpdatedBy *string `pulumi:"updatedBy"`
 	// Payment Term value
-	Value string `pulumi:"value"`
+	Value *string `pulumi:"value"`
 }
 
 // GetSubscribedServicesSubscribedServicePaymentTermInput is an input type that accepts GetSubscribedServicesSubscribedServicePaymentTermArgs and GetSubscribedServicesSubscribedServicePaymentTermOutput values.
@@ -14258,21 +12461,21 @@ type GetSubscribedServicesSubscribedServicePaymentTermInput interface {
 
 type GetSubscribedServicesSubscribedServicePaymentTermArgs struct {
 	// User that created the Payment term
-	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
+	CreatedBy pulumi.StringPtrInput `pulumi:"createdBy"`
 	// Payment term Description
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// Payment term active flag
-	IsActive pulumi.BoolInput `pulumi:"isActive"`
+	IsActive pulumi.BoolPtrInput `pulumi:"isActive"`
 	// Commercial name also called customer name.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Subscribed service creation date
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// Subscribed service last update date
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 	// User that updated the subscribed service
-	UpdatedBy pulumi.StringInput `pulumi:"updatedBy"`
+	UpdatedBy pulumi.StringPtrInput `pulumi:"updatedBy"`
 	// Payment Term value
-	Value pulumi.StringInput `pulumi:"value"`
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (GetSubscribedServicesSubscribedServicePaymentTermArgs) ElementType() reflect.Type {
@@ -14285,12 +12488,6 @@ func (i GetSubscribedServicesSubscribedServicePaymentTermArgs) ToGetSubscribedSe
 
 func (i GetSubscribedServicesSubscribedServicePaymentTermArgs) ToGetSubscribedServicesSubscribedServicePaymentTermOutputWithContext(ctx context.Context) GetSubscribedServicesSubscribedServicePaymentTermOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServicesSubscribedServicePaymentTermOutput)
-}
-
-func (i GetSubscribedServicesSubscribedServicePaymentTermArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServicesSubscribedServicePaymentTerm] {
-	return pulumix.Output[GetSubscribedServicesSubscribedServicePaymentTerm]{
-		OutputState: i.ToGetSubscribedServicesSubscribedServicePaymentTermOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscribedServicesSubscribedServicePaymentTermArrayInput is an input type that accepts GetSubscribedServicesSubscribedServicePaymentTermArray and GetSubscribedServicesSubscribedServicePaymentTermArrayOutput values.
@@ -14318,12 +12515,6 @@ func (i GetSubscribedServicesSubscribedServicePaymentTermArray) ToGetSubscribedS
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServicesSubscribedServicePaymentTermArrayOutput)
 }
 
-func (i GetSubscribedServicesSubscribedServicePaymentTermArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServicesSubscribedServicePaymentTerm] {
-	return pulumix.Output[[]GetSubscribedServicesSubscribedServicePaymentTerm]{
-		OutputState: i.ToGetSubscribedServicesSubscribedServicePaymentTermArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscribedServicesSubscribedServicePaymentTermOutput struct{ *pulumi.OutputState }
 
 func (GetSubscribedServicesSubscribedServicePaymentTermOutput) ElementType() reflect.Type {
@@ -14338,50 +12529,44 @@ func (o GetSubscribedServicesSubscribedServicePaymentTermOutput) ToGetSubscribed
 	return o
 }
 
-func (o GetSubscribedServicesSubscribedServicePaymentTermOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServicesSubscribedServicePaymentTerm] {
-	return pulumix.Output[GetSubscribedServicesSubscribedServicePaymentTerm]{
-		OutputState: o.OutputState,
-	}
-}
-
 // User that created the Payment term
-func (o GetSubscribedServicesSubscribedServicePaymentTermOutput) CreatedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServicePaymentTerm) string { return v.CreatedBy }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServicePaymentTermOutput) CreatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServicePaymentTerm) *string { return v.CreatedBy }).(pulumi.StringPtrOutput)
 }
 
 // Payment term Description
-func (o GetSubscribedServicesSubscribedServicePaymentTermOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServicePaymentTerm) string { return v.Description }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServicePaymentTermOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServicePaymentTerm) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Payment term active flag
-func (o GetSubscribedServicesSubscribedServicePaymentTermOutput) IsActive() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServicePaymentTerm) bool { return v.IsActive }).(pulumi.BoolOutput)
+func (o GetSubscribedServicesSubscribedServicePaymentTermOutput) IsActive() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServicePaymentTerm) *bool { return v.IsActive }).(pulumi.BoolPtrOutput)
 }
 
 // Commercial name also called customer name.
-func (o GetSubscribedServicesSubscribedServicePaymentTermOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServicePaymentTerm) string { return v.Name }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServicePaymentTermOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServicePaymentTerm) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service creation date
-func (o GetSubscribedServicesSubscribedServicePaymentTermOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServicePaymentTerm) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServicePaymentTermOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServicePaymentTerm) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service last update date
-func (o GetSubscribedServicesSubscribedServicePaymentTermOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServicePaymentTerm) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServicePaymentTermOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServicePaymentTerm) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // User that updated the subscribed service
-func (o GetSubscribedServicesSubscribedServicePaymentTermOutput) UpdatedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServicePaymentTerm) string { return v.UpdatedBy }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServicePaymentTermOutput) UpdatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServicePaymentTerm) *string { return v.UpdatedBy }).(pulumi.StringPtrOutput)
 }
 
 // Payment Term value
-func (o GetSubscribedServicesSubscribedServicePaymentTermOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServicePaymentTerm) string { return v.Value }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServicePaymentTermOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServicePaymentTerm) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
 
 type GetSubscribedServicesSubscribedServicePaymentTermArrayOutput struct{ *pulumi.OutputState }
@@ -14398,12 +12583,6 @@ func (o GetSubscribedServicesSubscribedServicePaymentTermArrayOutput) ToGetSubsc
 	return o
 }
 
-func (o GetSubscribedServicesSubscribedServicePaymentTermArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServicesSubscribedServicePaymentTerm] {
-	return pulumix.Output[[]GetSubscribedServicesSubscribedServicePaymentTerm]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscribedServicesSubscribedServicePaymentTermArrayOutput) Index(i pulumi.IntInput) GetSubscribedServicesSubscribedServicePaymentTermOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscribedServicesSubscribedServicePaymentTerm {
 		return vs[0].([]GetSubscribedServicesSubscribedServicePaymentTerm)[vs[1].(int)]
@@ -14412,17 +12591,17 @@ func (o GetSubscribedServicesSubscribedServicePaymentTermArrayOutput) Index(i pu
 
 type GetSubscribedServicesSubscribedServiceProduct struct {
 	// Metered service billing category
-	BillingCategory string `pulumi:"billingCategory"`
+	BillingCategory *string `pulumi:"billingCategory"`
 	// Commercial name also called customer name.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Product part numner
-	PartNumber string `pulumi:"partNumber"`
+	PartNumber *string `pulumi:"partNumber"`
 	// Product category
-	ProductCategory string `pulumi:"productCategory"`
+	ProductCategory *string `pulumi:"productCategory"`
 	// Rate card part type of Product
-	UcmRateCardPartType string `pulumi:"ucmRateCardPartType"`
+	UcmRateCardPartType *string `pulumi:"ucmRateCardPartType"`
 	// Unit of measure
-	UnitOfMeasure string `pulumi:"unitOfMeasure"`
+	UnitOfMeasure *string `pulumi:"unitOfMeasure"`
 }
 
 // GetSubscribedServicesSubscribedServiceProductInput is an input type that accepts GetSubscribedServicesSubscribedServiceProductArgs and GetSubscribedServicesSubscribedServiceProductOutput values.
@@ -14438,17 +12617,17 @@ type GetSubscribedServicesSubscribedServiceProductInput interface {
 
 type GetSubscribedServicesSubscribedServiceProductArgs struct {
 	// Metered service billing category
-	BillingCategory pulumi.StringInput `pulumi:"billingCategory"`
+	BillingCategory pulumi.StringPtrInput `pulumi:"billingCategory"`
 	// Commercial name also called customer name.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Product part numner
-	PartNumber pulumi.StringInput `pulumi:"partNumber"`
+	PartNumber pulumi.StringPtrInput `pulumi:"partNumber"`
 	// Product category
-	ProductCategory pulumi.StringInput `pulumi:"productCategory"`
+	ProductCategory pulumi.StringPtrInput `pulumi:"productCategory"`
 	// Rate card part type of Product
-	UcmRateCardPartType pulumi.StringInput `pulumi:"ucmRateCardPartType"`
+	UcmRateCardPartType pulumi.StringPtrInput `pulumi:"ucmRateCardPartType"`
 	// Unit of measure
-	UnitOfMeasure pulumi.StringInput `pulumi:"unitOfMeasure"`
+	UnitOfMeasure pulumi.StringPtrInput `pulumi:"unitOfMeasure"`
 }
 
 func (GetSubscribedServicesSubscribedServiceProductArgs) ElementType() reflect.Type {
@@ -14461,12 +12640,6 @@ func (i GetSubscribedServicesSubscribedServiceProductArgs) ToGetSubscribedServic
 
 func (i GetSubscribedServicesSubscribedServiceProductArgs) ToGetSubscribedServicesSubscribedServiceProductOutputWithContext(ctx context.Context) GetSubscribedServicesSubscribedServiceProductOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServicesSubscribedServiceProductOutput)
-}
-
-func (i GetSubscribedServicesSubscribedServiceProductArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServicesSubscribedServiceProduct] {
-	return pulumix.Output[GetSubscribedServicesSubscribedServiceProduct]{
-		OutputState: i.ToGetSubscribedServicesSubscribedServiceProductOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscribedServicesSubscribedServiceProductArrayInput is an input type that accepts GetSubscribedServicesSubscribedServiceProductArray and GetSubscribedServicesSubscribedServiceProductArrayOutput values.
@@ -14494,12 +12667,6 @@ func (i GetSubscribedServicesSubscribedServiceProductArray) ToGetSubscribedServi
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServicesSubscribedServiceProductArrayOutput)
 }
 
-func (i GetSubscribedServicesSubscribedServiceProductArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServicesSubscribedServiceProduct] {
-	return pulumix.Output[[]GetSubscribedServicesSubscribedServiceProduct]{
-		OutputState: i.ToGetSubscribedServicesSubscribedServiceProductArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscribedServicesSubscribedServiceProductOutput struct{ *pulumi.OutputState }
 
 func (GetSubscribedServicesSubscribedServiceProductOutput) ElementType() reflect.Type {
@@ -14514,40 +12681,34 @@ func (o GetSubscribedServicesSubscribedServiceProductOutput) ToGetSubscribedServ
 	return o
 }
 
-func (o GetSubscribedServicesSubscribedServiceProductOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServicesSubscribedServiceProduct] {
-	return pulumix.Output[GetSubscribedServicesSubscribedServiceProduct]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Metered service billing category
-func (o GetSubscribedServicesSubscribedServiceProductOutput) BillingCategory() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceProduct) string { return v.BillingCategory }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceProductOutput) BillingCategory() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceProduct) *string { return v.BillingCategory }).(pulumi.StringPtrOutput)
 }
 
 // Commercial name also called customer name.
-func (o GetSubscribedServicesSubscribedServiceProductOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceProduct) string { return v.Name }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceProductOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceProduct) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Product part numner
-func (o GetSubscribedServicesSubscribedServiceProductOutput) PartNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceProduct) string { return v.PartNumber }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceProductOutput) PartNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceProduct) *string { return v.PartNumber }).(pulumi.StringPtrOutput)
 }
 
 // Product category
-func (o GetSubscribedServicesSubscribedServiceProductOutput) ProductCategory() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceProduct) string { return v.ProductCategory }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceProductOutput) ProductCategory() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceProduct) *string { return v.ProductCategory }).(pulumi.StringPtrOutput)
 }
 
 // Rate card part type of Product
-func (o GetSubscribedServicesSubscribedServiceProductOutput) UcmRateCardPartType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceProduct) string { return v.UcmRateCardPartType }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceProductOutput) UcmRateCardPartType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceProduct) *string { return v.UcmRateCardPartType }).(pulumi.StringPtrOutput)
 }
 
 // Unit of measure
-func (o GetSubscribedServicesSubscribedServiceProductOutput) UnitOfMeasure() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceProduct) string { return v.UnitOfMeasure }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceProductOutput) UnitOfMeasure() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceProduct) *string { return v.UnitOfMeasure }).(pulumi.StringPtrOutput)
 }
 
 type GetSubscribedServicesSubscribedServiceProductArrayOutput struct{ *pulumi.OutputState }
@@ -14564,12 +12725,6 @@ func (o GetSubscribedServicesSubscribedServiceProductArrayOutput) ToGetSubscribe
 	return o
 }
 
-func (o GetSubscribedServicesSubscribedServiceProductArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServicesSubscribedServiceProduct] {
-	return pulumix.Output[[]GetSubscribedServicesSubscribedServiceProduct]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscribedServicesSubscribedServiceProductArrayOutput) Index(i pulumi.IntInput) GetSubscribedServicesSubscribedServiceProductOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscribedServicesSubscribedServiceProduct {
 		return vs[0].([]GetSubscribedServicesSubscribedServiceProduct)[vs[1].(int)]
@@ -14580,23 +12735,23 @@ type GetSubscribedServicesSubscribedServiceRateCard struct {
 	// Currency details
 	Currencies []GetSubscribedServicesSubscribedServiceRateCardCurrency `pulumi:"currencies"`
 	// Rate card discretionary discount percentage
-	DiscretionaryDiscountPercentage string `pulumi:"discretionaryDiscountPercentage"`
+	DiscretionaryDiscountPercentage *string `pulumi:"discretionaryDiscountPercentage"`
 	// Rate card price tier flag
-	IsTier bool `pulumi:"isTier"`
+	IsTier *bool `pulumi:"isTier"`
 	// Rate card tier net unit price
-	NetUnitPrice string `pulumi:"netUnitPrice"`
+	NetUnitPrice *string `pulumi:"netUnitPrice"`
 	// Rate card tier overage price
-	OveragePrice string `pulumi:"overagePrice"`
+	OveragePrice *string `pulumi:"overagePrice"`
 	// Product description
 	Products []GetSubscribedServicesSubscribedServiceRateCardProduct `pulumi:"products"`
 	// List of tiered rate card prices
 	RateCardTiers []GetSubscribedServicesSubscribedServiceRateCardRateCardTier `pulumi:"rateCardTiers"`
 	// SPM internal Subscribed Service ID
-	SubscribedServiceId string `pulumi:"subscribedServiceId"`
+	SubscribedServiceId *string `pulumi:"subscribedServiceId"`
 	// Subscribed service end date
-	TimeEnd string `pulumi:"timeEnd"`
+	TimeEnd *string `pulumi:"timeEnd"`
 	// Subscribed service start date
-	TimeStart string `pulumi:"timeStart"`
+	TimeStart *string `pulumi:"timeStart"`
 }
 
 // GetSubscribedServicesSubscribedServiceRateCardInput is an input type that accepts GetSubscribedServicesSubscribedServiceRateCardArgs and GetSubscribedServicesSubscribedServiceRateCardOutput values.
@@ -14614,23 +12769,23 @@ type GetSubscribedServicesSubscribedServiceRateCardArgs struct {
 	// Currency details
 	Currencies GetSubscribedServicesSubscribedServiceRateCardCurrencyArrayInput `pulumi:"currencies"`
 	// Rate card discretionary discount percentage
-	DiscretionaryDiscountPercentage pulumi.StringInput `pulumi:"discretionaryDiscountPercentage"`
+	DiscretionaryDiscountPercentage pulumi.StringPtrInput `pulumi:"discretionaryDiscountPercentage"`
 	// Rate card price tier flag
-	IsTier pulumi.BoolInput `pulumi:"isTier"`
+	IsTier pulumi.BoolPtrInput `pulumi:"isTier"`
 	// Rate card tier net unit price
-	NetUnitPrice pulumi.StringInput `pulumi:"netUnitPrice"`
+	NetUnitPrice pulumi.StringPtrInput `pulumi:"netUnitPrice"`
 	// Rate card tier overage price
-	OveragePrice pulumi.StringInput `pulumi:"overagePrice"`
+	OveragePrice pulumi.StringPtrInput `pulumi:"overagePrice"`
 	// Product description
 	Products GetSubscribedServicesSubscribedServiceRateCardProductArrayInput `pulumi:"products"`
 	// List of tiered rate card prices
 	RateCardTiers GetSubscribedServicesSubscribedServiceRateCardRateCardTierArrayInput `pulumi:"rateCardTiers"`
 	// SPM internal Subscribed Service ID
-	SubscribedServiceId pulumi.StringInput `pulumi:"subscribedServiceId"`
+	SubscribedServiceId pulumi.StringPtrInput `pulumi:"subscribedServiceId"`
 	// Subscribed service end date
-	TimeEnd pulumi.StringInput `pulumi:"timeEnd"`
+	TimeEnd pulumi.StringPtrInput `pulumi:"timeEnd"`
 	// Subscribed service start date
-	TimeStart pulumi.StringInput `pulumi:"timeStart"`
+	TimeStart pulumi.StringPtrInput `pulumi:"timeStart"`
 }
 
 func (GetSubscribedServicesSubscribedServiceRateCardArgs) ElementType() reflect.Type {
@@ -14643,12 +12798,6 @@ func (i GetSubscribedServicesSubscribedServiceRateCardArgs) ToGetSubscribedServi
 
 func (i GetSubscribedServicesSubscribedServiceRateCardArgs) ToGetSubscribedServicesSubscribedServiceRateCardOutputWithContext(ctx context.Context) GetSubscribedServicesSubscribedServiceRateCardOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServicesSubscribedServiceRateCardOutput)
-}
-
-func (i GetSubscribedServicesSubscribedServiceRateCardArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServicesSubscribedServiceRateCard] {
-	return pulumix.Output[GetSubscribedServicesSubscribedServiceRateCard]{
-		OutputState: i.ToGetSubscribedServicesSubscribedServiceRateCardOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscribedServicesSubscribedServiceRateCardArrayInput is an input type that accepts GetSubscribedServicesSubscribedServiceRateCardArray and GetSubscribedServicesSubscribedServiceRateCardArrayOutput values.
@@ -14676,12 +12825,6 @@ func (i GetSubscribedServicesSubscribedServiceRateCardArray) ToGetSubscribedServ
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServicesSubscribedServiceRateCardArrayOutput)
 }
 
-func (i GetSubscribedServicesSubscribedServiceRateCardArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServicesSubscribedServiceRateCard] {
-	return pulumix.Output[[]GetSubscribedServicesSubscribedServiceRateCard]{
-		OutputState: i.ToGetSubscribedServicesSubscribedServiceRateCardArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscribedServicesSubscribedServiceRateCardOutput struct{ *pulumi.OutputState }
 
 func (GetSubscribedServicesSubscribedServiceRateCardOutput) ElementType() reflect.Type {
@@ -14696,12 +12839,6 @@ func (o GetSubscribedServicesSubscribedServiceRateCardOutput) ToGetSubscribedSer
 	return o
 }
 
-func (o GetSubscribedServicesSubscribedServiceRateCardOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServicesSubscribedServiceRateCard] {
-	return pulumix.Output[GetSubscribedServicesSubscribedServiceRateCard]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Currency details
 func (o GetSubscribedServicesSubscribedServiceRateCardOutput) Currencies() GetSubscribedServicesSubscribedServiceRateCardCurrencyArrayOutput {
 	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceRateCard) []GetSubscribedServicesSubscribedServiceRateCardCurrency {
@@ -14710,25 +12847,25 @@ func (o GetSubscribedServicesSubscribedServiceRateCardOutput) Currencies() GetSu
 }
 
 // Rate card discretionary discount percentage
-func (o GetSubscribedServicesSubscribedServiceRateCardOutput) DiscretionaryDiscountPercentage() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceRateCard) string {
+func (o GetSubscribedServicesSubscribedServiceRateCardOutput) DiscretionaryDiscountPercentage() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceRateCard) *string {
 		return v.DiscretionaryDiscountPercentage
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Rate card price tier flag
-func (o GetSubscribedServicesSubscribedServiceRateCardOutput) IsTier() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceRateCard) bool { return v.IsTier }).(pulumi.BoolOutput)
+func (o GetSubscribedServicesSubscribedServiceRateCardOutput) IsTier() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceRateCard) *bool { return v.IsTier }).(pulumi.BoolPtrOutput)
 }
 
 // Rate card tier net unit price
-func (o GetSubscribedServicesSubscribedServiceRateCardOutput) NetUnitPrice() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceRateCard) string { return v.NetUnitPrice }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceRateCardOutput) NetUnitPrice() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceRateCard) *string { return v.NetUnitPrice }).(pulumi.StringPtrOutput)
 }
 
 // Rate card tier overage price
-func (o GetSubscribedServicesSubscribedServiceRateCardOutput) OveragePrice() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceRateCard) string { return v.OveragePrice }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceRateCardOutput) OveragePrice() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceRateCard) *string { return v.OveragePrice }).(pulumi.StringPtrOutput)
 }
 
 // Product description
@@ -14746,18 +12883,18 @@ func (o GetSubscribedServicesSubscribedServiceRateCardOutput) RateCardTiers() Ge
 }
 
 // SPM internal Subscribed Service ID
-func (o GetSubscribedServicesSubscribedServiceRateCardOutput) SubscribedServiceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceRateCard) string { return v.SubscribedServiceId }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceRateCardOutput) SubscribedServiceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceRateCard) *string { return v.SubscribedServiceId }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service end date
-func (o GetSubscribedServicesSubscribedServiceRateCardOutput) TimeEnd() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceRateCard) string { return v.TimeEnd }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceRateCardOutput) TimeEnd() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceRateCard) *string { return v.TimeEnd }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service start date
-func (o GetSubscribedServicesSubscribedServiceRateCardOutput) TimeStart() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceRateCard) string { return v.TimeStart }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceRateCardOutput) TimeStart() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceRateCard) *string { return v.TimeStart }).(pulumi.StringPtrOutput)
 }
 
 type GetSubscribedServicesSubscribedServiceRateCardArrayOutput struct{ *pulumi.OutputState }
@@ -14774,12 +12911,6 @@ func (o GetSubscribedServicesSubscribedServiceRateCardArrayOutput) ToGetSubscrib
 	return o
 }
 
-func (o GetSubscribedServicesSubscribedServiceRateCardArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServicesSubscribedServiceRateCard] {
-	return pulumix.Output[[]GetSubscribedServicesSubscribedServiceRateCard]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscribedServicesSubscribedServiceRateCardArrayOutput) Index(i pulumi.IntInput) GetSubscribedServicesSubscribedServiceRateCardOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscribedServicesSubscribedServiceRateCard {
 		return vs[0].([]GetSubscribedServicesSubscribedServiceRateCard)[vs[1].(int)]
@@ -14788,11 +12919,11 @@ func (o GetSubscribedServicesSubscribedServiceRateCardArrayOutput) Index(i pulum
 
 type GetSubscribedServicesSubscribedServiceRateCardCurrency struct {
 	// Currency Code
-	IsoCode string `pulumi:"isoCode"`
+	IsoCode *string `pulumi:"isoCode"`
 	// Commercial name also called customer name.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Standard Precision of the Currency
-	StdPrecision string `pulumi:"stdPrecision"`
+	StdPrecision *string `pulumi:"stdPrecision"`
 }
 
 // GetSubscribedServicesSubscribedServiceRateCardCurrencyInput is an input type that accepts GetSubscribedServicesSubscribedServiceRateCardCurrencyArgs and GetSubscribedServicesSubscribedServiceRateCardCurrencyOutput values.
@@ -14808,11 +12939,11 @@ type GetSubscribedServicesSubscribedServiceRateCardCurrencyInput interface {
 
 type GetSubscribedServicesSubscribedServiceRateCardCurrencyArgs struct {
 	// Currency Code
-	IsoCode pulumi.StringInput `pulumi:"isoCode"`
+	IsoCode pulumi.StringPtrInput `pulumi:"isoCode"`
 	// Commercial name also called customer name.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Standard Precision of the Currency
-	StdPrecision pulumi.StringInput `pulumi:"stdPrecision"`
+	StdPrecision pulumi.StringPtrInput `pulumi:"stdPrecision"`
 }
 
 func (GetSubscribedServicesSubscribedServiceRateCardCurrencyArgs) ElementType() reflect.Type {
@@ -14825,12 +12956,6 @@ func (i GetSubscribedServicesSubscribedServiceRateCardCurrencyArgs) ToGetSubscri
 
 func (i GetSubscribedServicesSubscribedServiceRateCardCurrencyArgs) ToGetSubscribedServicesSubscribedServiceRateCardCurrencyOutputWithContext(ctx context.Context) GetSubscribedServicesSubscribedServiceRateCardCurrencyOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServicesSubscribedServiceRateCardCurrencyOutput)
-}
-
-func (i GetSubscribedServicesSubscribedServiceRateCardCurrencyArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServicesSubscribedServiceRateCardCurrency] {
-	return pulumix.Output[GetSubscribedServicesSubscribedServiceRateCardCurrency]{
-		OutputState: i.ToGetSubscribedServicesSubscribedServiceRateCardCurrencyOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscribedServicesSubscribedServiceRateCardCurrencyArrayInput is an input type that accepts GetSubscribedServicesSubscribedServiceRateCardCurrencyArray and GetSubscribedServicesSubscribedServiceRateCardCurrencyArrayOutput values.
@@ -14858,12 +12983,6 @@ func (i GetSubscribedServicesSubscribedServiceRateCardCurrencyArray) ToGetSubscr
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServicesSubscribedServiceRateCardCurrencyArrayOutput)
 }
 
-func (i GetSubscribedServicesSubscribedServiceRateCardCurrencyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServicesSubscribedServiceRateCardCurrency] {
-	return pulumix.Output[[]GetSubscribedServicesSubscribedServiceRateCardCurrency]{
-		OutputState: i.ToGetSubscribedServicesSubscribedServiceRateCardCurrencyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscribedServicesSubscribedServiceRateCardCurrencyOutput struct{ *pulumi.OutputState }
 
 func (GetSubscribedServicesSubscribedServiceRateCardCurrencyOutput) ElementType() reflect.Type {
@@ -14878,25 +12997,19 @@ func (o GetSubscribedServicesSubscribedServiceRateCardCurrencyOutput) ToGetSubsc
 	return o
 }
 
-func (o GetSubscribedServicesSubscribedServiceRateCardCurrencyOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServicesSubscribedServiceRateCardCurrency] {
-	return pulumix.Output[GetSubscribedServicesSubscribedServiceRateCardCurrency]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Currency Code
-func (o GetSubscribedServicesSubscribedServiceRateCardCurrencyOutput) IsoCode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceRateCardCurrency) string { return v.IsoCode }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceRateCardCurrencyOutput) IsoCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceRateCardCurrency) *string { return v.IsoCode }).(pulumi.StringPtrOutput)
 }
 
 // Commercial name also called customer name.
-func (o GetSubscribedServicesSubscribedServiceRateCardCurrencyOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceRateCardCurrency) string { return v.Name }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceRateCardCurrencyOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceRateCardCurrency) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Standard Precision of the Currency
-func (o GetSubscribedServicesSubscribedServiceRateCardCurrencyOutput) StdPrecision() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceRateCardCurrency) string { return v.StdPrecision }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceRateCardCurrencyOutput) StdPrecision() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceRateCardCurrency) *string { return v.StdPrecision }).(pulumi.StringPtrOutput)
 }
 
 type GetSubscribedServicesSubscribedServiceRateCardCurrencyArrayOutput struct{ *pulumi.OutputState }
@@ -14913,12 +13026,6 @@ func (o GetSubscribedServicesSubscribedServiceRateCardCurrencyArrayOutput) ToGet
 	return o
 }
 
-func (o GetSubscribedServicesSubscribedServiceRateCardCurrencyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServicesSubscribedServiceRateCardCurrency] {
-	return pulumix.Output[[]GetSubscribedServicesSubscribedServiceRateCardCurrency]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscribedServicesSubscribedServiceRateCardCurrencyArrayOutput) Index(i pulumi.IntInput) GetSubscribedServicesSubscribedServiceRateCardCurrencyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscribedServicesSubscribedServiceRateCardCurrency {
 		return vs[0].([]GetSubscribedServicesSubscribedServiceRateCardCurrency)[vs[1].(int)]
@@ -14927,17 +13034,17 @@ func (o GetSubscribedServicesSubscribedServiceRateCardCurrencyArrayOutput) Index
 
 type GetSubscribedServicesSubscribedServiceRateCardProduct struct {
 	// Metered service billing category
-	BillingCategory string `pulumi:"billingCategory"`
+	BillingCategory *string `pulumi:"billingCategory"`
 	// Commercial name also called customer name.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Product part numner
-	PartNumber string `pulumi:"partNumber"`
+	PartNumber *string `pulumi:"partNumber"`
 	// Product category
-	ProductCategory string `pulumi:"productCategory"`
+	ProductCategory *string `pulumi:"productCategory"`
 	// Rate card part type of Product
-	UcmRateCardPartType string `pulumi:"ucmRateCardPartType"`
+	UcmRateCardPartType *string `pulumi:"ucmRateCardPartType"`
 	// Unit of measure
-	UnitOfMeasure string `pulumi:"unitOfMeasure"`
+	UnitOfMeasure *string `pulumi:"unitOfMeasure"`
 }
 
 // GetSubscribedServicesSubscribedServiceRateCardProductInput is an input type that accepts GetSubscribedServicesSubscribedServiceRateCardProductArgs and GetSubscribedServicesSubscribedServiceRateCardProductOutput values.
@@ -14953,17 +13060,17 @@ type GetSubscribedServicesSubscribedServiceRateCardProductInput interface {
 
 type GetSubscribedServicesSubscribedServiceRateCardProductArgs struct {
 	// Metered service billing category
-	BillingCategory pulumi.StringInput `pulumi:"billingCategory"`
+	BillingCategory pulumi.StringPtrInput `pulumi:"billingCategory"`
 	// Commercial name also called customer name.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Product part numner
-	PartNumber pulumi.StringInput `pulumi:"partNumber"`
+	PartNumber pulumi.StringPtrInput `pulumi:"partNumber"`
 	// Product category
-	ProductCategory pulumi.StringInput `pulumi:"productCategory"`
+	ProductCategory pulumi.StringPtrInput `pulumi:"productCategory"`
 	// Rate card part type of Product
-	UcmRateCardPartType pulumi.StringInput `pulumi:"ucmRateCardPartType"`
+	UcmRateCardPartType pulumi.StringPtrInput `pulumi:"ucmRateCardPartType"`
 	// Unit of measure
-	UnitOfMeasure pulumi.StringInput `pulumi:"unitOfMeasure"`
+	UnitOfMeasure pulumi.StringPtrInput `pulumi:"unitOfMeasure"`
 }
 
 func (GetSubscribedServicesSubscribedServiceRateCardProductArgs) ElementType() reflect.Type {
@@ -14976,12 +13083,6 @@ func (i GetSubscribedServicesSubscribedServiceRateCardProductArgs) ToGetSubscrib
 
 func (i GetSubscribedServicesSubscribedServiceRateCardProductArgs) ToGetSubscribedServicesSubscribedServiceRateCardProductOutputWithContext(ctx context.Context) GetSubscribedServicesSubscribedServiceRateCardProductOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServicesSubscribedServiceRateCardProductOutput)
-}
-
-func (i GetSubscribedServicesSubscribedServiceRateCardProductArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServicesSubscribedServiceRateCardProduct] {
-	return pulumix.Output[GetSubscribedServicesSubscribedServiceRateCardProduct]{
-		OutputState: i.ToGetSubscribedServicesSubscribedServiceRateCardProductOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscribedServicesSubscribedServiceRateCardProductArrayInput is an input type that accepts GetSubscribedServicesSubscribedServiceRateCardProductArray and GetSubscribedServicesSubscribedServiceRateCardProductArrayOutput values.
@@ -15009,12 +13110,6 @@ func (i GetSubscribedServicesSubscribedServiceRateCardProductArray) ToGetSubscri
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServicesSubscribedServiceRateCardProductArrayOutput)
 }
 
-func (i GetSubscribedServicesSubscribedServiceRateCardProductArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServicesSubscribedServiceRateCardProduct] {
-	return pulumix.Output[[]GetSubscribedServicesSubscribedServiceRateCardProduct]{
-		OutputState: i.ToGetSubscribedServicesSubscribedServiceRateCardProductArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscribedServicesSubscribedServiceRateCardProductOutput struct{ *pulumi.OutputState }
 
 func (GetSubscribedServicesSubscribedServiceRateCardProductOutput) ElementType() reflect.Type {
@@ -15029,40 +13124,34 @@ func (o GetSubscribedServicesSubscribedServiceRateCardProductOutput) ToGetSubscr
 	return o
 }
 
-func (o GetSubscribedServicesSubscribedServiceRateCardProductOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServicesSubscribedServiceRateCardProduct] {
-	return pulumix.Output[GetSubscribedServicesSubscribedServiceRateCardProduct]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Metered service billing category
-func (o GetSubscribedServicesSubscribedServiceRateCardProductOutput) BillingCategory() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceRateCardProduct) string { return v.BillingCategory }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceRateCardProductOutput) BillingCategory() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceRateCardProduct) *string { return v.BillingCategory }).(pulumi.StringPtrOutput)
 }
 
 // Commercial name also called customer name.
-func (o GetSubscribedServicesSubscribedServiceRateCardProductOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceRateCardProduct) string { return v.Name }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceRateCardProductOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceRateCardProduct) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Product part numner
-func (o GetSubscribedServicesSubscribedServiceRateCardProductOutput) PartNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceRateCardProduct) string { return v.PartNumber }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceRateCardProductOutput) PartNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceRateCardProduct) *string { return v.PartNumber }).(pulumi.StringPtrOutput)
 }
 
 // Product category
-func (o GetSubscribedServicesSubscribedServiceRateCardProductOutput) ProductCategory() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceRateCardProduct) string { return v.ProductCategory }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceRateCardProductOutput) ProductCategory() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceRateCardProduct) *string { return v.ProductCategory }).(pulumi.StringPtrOutput)
 }
 
 // Rate card part type of Product
-func (o GetSubscribedServicesSubscribedServiceRateCardProductOutput) UcmRateCardPartType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceRateCardProduct) string { return v.UcmRateCardPartType }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceRateCardProductOutput) UcmRateCardPartType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceRateCardProduct) *string { return v.UcmRateCardPartType }).(pulumi.StringPtrOutput)
 }
 
 // Unit of measure
-func (o GetSubscribedServicesSubscribedServiceRateCardProductOutput) UnitOfMeasure() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceRateCardProduct) string { return v.UnitOfMeasure }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceRateCardProductOutput) UnitOfMeasure() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceRateCardProduct) *string { return v.UnitOfMeasure }).(pulumi.StringPtrOutput)
 }
 
 type GetSubscribedServicesSubscribedServiceRateCardProductArrayOutput struct{ *pulumi.OutputState }
@@ -15079,12 +13168,6 @@ func (o GetSubscribedServicesSubscribedServiceRateCardProductArrayOutput) ToGetS
 	return o
 }
 
-func (o GetSubscribedServicesSubscribedServiceRateCardProductArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServicesSubscribedServiceRateCardProduct] {
-	return pulumix.Output[[]GetSubscribedServicesSubscribedServiceRateCardProduct]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscribedServicesSubscribedServiceRateCardProductArrayOutput) Index(i pulumi.IntInput) GetSubscribedServicesSubscribedServiceRateCardProductOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscribedServicesSubscribedServiceRateCardProduct {
 		return vs[0].([]GetSubscribedServicesSubscribedServiceRateCardProduct)[vs[1].(int)]
@@ -15093,11 +13176,11 @@ func (o GetSubscribedServicesSubscribedServiceRateCardProductArrayOutput) Index(
 
 type GetSubscribedServicesSubscribedServiceRateCardRateCardTier struct {
 	// Rate card tier net unit price
-	NetUnitPrice string `pulumi:"netUnitPrice"`
+	NetUnitPrice *string `pulumi:"netUnitPrice"`
 	// Rate card tier overage price
-	OveragePrice string `pulumi:"overagePrice"`
+	OveragePrice *string `pulumi:"overagePrice"`
 	// Rate card tier quantity range
-	UpToQuantity string `pulumi:"upToQuantity"`
+	UpToQuantity *string `pulumi:"upToQuantity"`
 }
 
 // GetSubscribedServicesSubscribedServiceRateCardRateCardTierInput is an input type that accepts GetSubscribedServicesSubscribedServiceRateCardRateCardTierArgs and GetSubscribedServicesSubscribedServiceRateCardRateCardTierOutput values.
@@ -15113,11 +13196,11 @@ type GetSubscribedServicesSubscribedServiceRateCardRateCardTierInput interface {
 
 type GetSubscribedServicesSubscribedServiceRateCardRateCardTierArgs struct {
 	// Rate card tier net unit price
-	NetUnitPrice pulumi.StringInput `pulumi:"netUnitPrice"`
+	NetUnitPrice pulumi.StringPtrInput `pulumi:"netUnitPrice"`
 	// Rate card tier overage price
-	OveragePrice pulumi.StringInput `pulumi:"overagePrice"`
+	OveragePrice pulumi.StringPtrInput `pulumi:"overagePrice"`
 	// Rate card tier quantity range
-	UpToQuantity pulumi.StringInput `pulumi:"upToQuantity"`
+	UpToQuantity pulumi.StringPtrInput `pulumi:"upToQuantity"`
 }
 
 func (GetSubscribedServicesSubscribedServiceRateCardRateCardTierArgs) ElementType() reflect.Type {
@@ -15130,12 +13213,6 @@ func (i GetSubscribedServicesSubscribedServiceRateCardRateCardTierArgs) ToGetSub
 
 func (i GetSubscribedServicesSubscribedServiceRateCardRateCardTierArgs) ToGetSubscribedServicesSubscribedServiceRateCardRateCardTierOutputWithContext(ctx context.Context) GetSubscribedServicesSubscribedServiceRateCardRateCardTierOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServicesSubscribedServiceRateCardRateCardTierOutput)
-}
-
-func (i GetSubscribedServicesSubscribedServiceRateCardRateCardTierArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServicesSubscribedServiceRateCardRateCardTier] {
-	return pulumix.Output[GetSubscribedServicesSubscribedServiceRateCardRateCardTier]{
-		OutputState: i.ToGetSubscribedServicesSubscribedServiceRateCardRateCardTierOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscribedServicesSubscribedServiceRateCardRateCardTierArrayInput is an input type that accepts GetSubscribedServicesSubscribedServiceRateCardRateCardTierArray and GetSubscribedServicesSubscribedServiceRateCardRateCardTierArrayOutput values.
@@ -15163,12 +13240,6 @@ func (i GetSubscribedServicesSubscribedServiceRateCardRateCardTierArray) ToGetSu
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServicesSubscribedServiceRateCardRateCardTierArrayOutput)
 }
 
-func (i GetSubscribedServicesSubscribedServiceRateCardRateCardTierArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServicesSubscribedServiceRateCardRateCardTier] {
-	return pulumix.Output[[]GetSubscribedServicesSubscribedServiceRateCardRateCardTier]{
-		OutputState: i.ToGetSubscribedServicesSubscribedServiceRateCardRateCardTierArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscribedServicesSubscribedServiceRateCardRateCardTierOutput struct{ *pulumi.OutputState }
 
 func (GetSubscribedServicesSubscribedServiceRateCardRateCardTierOutput) ElementType() reflect.Type {
@@ -15183,25 +13254,19 @@ func (o GetSubscribedServicesSubscribedServiceRateCardRateCardTierOutput) ToGetS
 	return o
 }
 
-func (o GetSubscribedServicesSubscribedServiceRateCardRateCardTierOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServicesSubscribedServiceRateCardRateCardTier] {
-	return pulumix.Output[GetSubscribedServicesSubscribedServiceRateCardRateCardTier]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Rate card tier net unit price
-func (o GetSubscribedServicesSubscribedServiceRateCardRateCardTierOutput) NetUnitPrice() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceRateCardRateCardTier) string { return v.NetUnitPrice }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceRateCardRateCardTierOutput) NetUnitPrice() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceRateCardRateCardTier) *string { return v.NetUnitPrice }).(pulumi.StringPtrOutput)
 }
 
 // Rate card tier overage price
-func (o GetSubscribedServicesSubscribedServiceRateCardRateCardTierOutput) OveragePrice() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceRateCardRateCardTier) string { return v.OveragePrice }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceRateCardRateCardTierOutput) OveragePrice() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceRateCardRateCardTier) *string { return v.OveragePrice }).(pulumi.StringPtrOutput)
 }
 
 // Rate card tier quantity range
-func (o GetSubscribedServicesSubscribedServiceRateCardRateCardTierOutput) UpToQuantity() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceRateCardRateCardTier) string { return v.UpToQuantity }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceRateCardRateCardTierOutput) UpToQuantity() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceRateCardRateCardTier) *string { return v.UpToQuantity }).(pulumi.StringPtrOutput)
 }
 
 type GetSubscribedServicesSubscribedServiceRateCardRateCardTierArrayOutput struct{ *pulumi.OutputState }
@@ -15218,12 +13283,6 @@ func (o GetSubscribedServicesSubscribedServiceRateCardRateCardTierArrayOutput) T
 	return o
 }
 
-func (o GetSubscribedServicesSubscribedServiceRateCardRateCardTierArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServicesSubscribedServiceRateCardRateCardTier] {
-	return pulumix.Output[[]GetSubscribedServicesSubscribedServiceRateCardRateCardTier]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscribedServicesSubscribedServiceRateCardRateCardTierArrayOutput) Index(i pulumi.IntInput) GetSubscribedServicesSubscribedServiceRateCardRateCardTierOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscribedServicesSubscribedServiceRateCardRateCardTier {
 		return vs[0].([]GetSubscribedServicesSubscribedServiceRateCardRateCardTier)[vs[1].(int)]
@@ -15232,23 +13291,23 @@ func (o GetSubscribedServicesSubscribedServiceRateCardRateCardTierArrayOutput) I
 
 type GetSubscribedServicesSubscribedServiceResellerAddress struct {
 	// Bill to site use Id.
-	BillSiteUseId string `pulumi:"billSiteUseId"`
+	BillSiteUseId *string `pulumi:"billSiteUseId"`
 	// Identify as the customer shipping address.
-	IsBillTo bool `pulumi:"isBillTo"`
+	IsBillTo *bool `pulumi:"isBillTo"`
 	// Identify as the customer invoicing address.
-	IsShipTo bool `pulumi:"isShipTo"`
+	IsShipTo *bool `pulumi:"isShipTo"`
 	// Address location.
 	Locations []GetSubscribedServicesSubscribedServiceResellerAddressLocation `pulumi:"locations"`
 	// Commercial name also called customer name.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Phone.
-	Phone string `pulumi:"phone"`
+	Phone *string `pulumi:"phone"`
 	// Service to site use Id.
-	Service2siteUseId string `pulumi:"service2siteUseId"`
+	Service2siteUseId *string `pulumi:"service2siteUseId"`
 	// TCA customer account site Id.
-	TcaCustAcctSiteId string `pulumi:"tcaCustAcctSiteId"`
+	TcaCustAcctSiteId *string `pulumi:"tcaCustAcctSiteId"`
 	// Party site number.
-	TcaPartySiteNumber string `pulumi:"tcaPartySiteNumber"`
+	TcaPartySiteNumber *string `pulumi:"tcaPartySiteNumber"`
 }
 
 // GetSubscribedServicesSubscribedServiceResellerAddressInput is an input type that accepts GetSubscribedServicesSubscribedServiceResellerAddressArgs and GetSubscribedServicesSubscribedServiceResellerAddressOutput values.
@@ -15264,23 +13323,23 @@ type GetSubscribedServicesSubscribedServiceResellerAddressInput interface {
 
 type GetSubscribedServicesSubscribedServiceResellerAddressArgs struct {
 	// Bill to site use Id.
-	BillSiteUseId pulumi.StringInput `pulumi:"billSiteUseId"`
+	BillSiteUseId pulumi.StringPtrInput `pulumi:"billSiteUseId"`
 	// Identify as the customer shipping address.
-	IsBillTo pulumi.BoolInput `pulumi:"isBillTo"`
+	IsBillTo pulumi.BoolPtrInput `pulumi:"isBillTo"`
 	// Identify as the customer invoicing address.
-	IsShipTo pulumi.BoolInput `pulumi:"isShipTo"`
+	IsShipTo pulumi.BoolPtrInput `pulumi:"isShipTo"`
 	// Address location.
 	Locations GetSubscribedServicesSubscribedServiceResellerAddressLocationArrayInput `pulumi:"locations"`
 	// Commercial name also called customer name.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Phone.
-	Phone pulumi.StringInput `pulumi:"phone"`
+	Phone pulumi.StringPtrInput `pulumi:"phone"`
 	// Service to site use Id.
-	Service2siteUseId pulumi.StringInput `pulumi:"service2siteUseId"`
+	Service2siteUseId pulumi.StringPtrInput `pulumi:"service2siteUseId"`
 	// TCA customer account site Id.
-	TcaCustAcctSiteId pulumi.StringInput `pulumi:"tcaCustAcctSiteId"`
+	TcaCustAcctSiteId pulumi.StringPtrInput `pulumi:"tcaCustAcctSiteId"`
 	// Party site number.
-	TcaPartySiteNumber pulumi.StringInput `pulumi:"tcaPartySiteNumber"`
+	TcaPartySiteNumber pulumi.StringPtrInput `pulumi:"tcaPartySiteNumber"`
 }
 
 func (GetSubscribedServicesSubscribedServiceResellerAddressArgs) ElementType() reflect.Type {
@@ -15293,12 +13352,6 @@ func (i GetSubscribedServicesSubscribedServiceResellerAddressArgs) ToGetSubscrib
 
 func (i GetSubscribedServicesSubscribedServiceResellerAddressArgs) ToGetSubscribedServicesSubscribedServiceResellerAddressOutputWithContext(ctx context.Context) GetSubscribedServicesSubscribedServiceResellerAddressOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServicesSubscribedServiceResellerAddressOutput)
-}
-
-func (i GetSubscribedServicesSubscribedServiceResellerAddressArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServicesSubscribedServiceResellerAddress] {
-	return pulumix.Output[GetSubscribedServicesSubscribedServiceResellerAddress]{
-		OutputState: i.ToGetSubscribedServicesSubscribedServiceResellerAddressOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscribedServicesSubscribedServiceResellerAddressArrayInput is an input type that accepts GetSubscribedServicesSubscribedServiceResellerAddressArray and GetSubscribedServicesSubscribedServiceResellerAddressArrayOutput values.
@@ -15326,12 +13379,6 @@ func (i GetSubscribedServicesSubscribedServiceResellerAddressArray) ToGetSubscri
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServicesSubscribedServiceResellerAddressArrayOutput)
 }
 
-func (i GetSubscribedServicesSubscribedServiceResellerAddressArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServicesSubscribedServiceResellerAddress] {
-	return pulumix.Output[[]GetSubscribedServicesSubscribedServiceResellerAddress]{
-		OutputState: i.ToGetSubscribedServicesSubscribedServiceResellerAddressArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscribedServicesSubscribedServiceResellerAddressOutput struct{ *pulumi.OutputState }
 
 func (GetSubscribedServicesSubscribedServiceResellerAddressOutput) ElementType() reflect.Type {
@@ -15346,25 +13393,19 @@ func (o GetSubscribedServicesSubscribedServiceResellerAddressOutput) ToGetSubscr
 	return o
 }
 
-func (o GetSubscribedServicesSubscribedServiceResellerAddressOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServicesSubscribedServiceResellerAddress] {
-	return pulumix.Output[GetSubscribedServicesSubscribedServiceResellerAddress]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Bill to site use Id.
-func (o GetSubscribedServicesSubscribedServiceResellerAddressOutput) BillSiteUseId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceResellerAddress) string { return v.BillSiteUseId }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceResellerAddressOutput) BillSiteUseId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceResellerAddress) *string { return v.BillSiteUseId }).(pulumi.StringPtrOutput)
 }
 
 // Identify as the customer shipping address.
-func (o GetSubscribedServicesSubscribedServiceResellerAddressOutput) IsBillTo() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceResellerAddress) bool { return v.IsBillTo }).(pulumi.BoolOutput)
+func (o GetSubscribedServicesSubscribedServiceResellerAddressOutput) IsBillTo() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceResellerAddress) *bool { return v.IsBillTo }).(pulumi.BoolPtrOutput)
 }
 
 // Identify as the customer invoicing address.
-func (o GetSubscribedServicesSubscribedServiceResellerAddressOutput) IsShipTo() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceResellerAddress) bool { return v.IsShipTo }).(pulumi.BoolOutput)
+func (o GetSubscribedServicesSubscribedServiceResellerAddressOutput) IsShipTo() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceResellerAddress) *bool { return v.IsShipTo }).(pulumi.BoolPtrOutput)
 }
 
 // Address location.
@@ -15375,28 +13416,28 @@ func (o GetSubscribedServicesSubscribedServiceResellerAddressOutput) Locations()
 }
 
 // Commercial name also called customer name.
-func (o GetSubscribedServicesSubscribedServiceResellerAddressOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceResellerAddress) string { return v.Name }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceResellerAddressOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceResellerAddress) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Phone.
-func (o GetSubscribedServicesSubscribedServiceResellerAddressOutput) Phone() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceResellerAddress) string { return v.Phone }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceResellerAddressOutput) Phone() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceResellerAddress) *string { return v.Phone }).(pulumi.StringPtrOutput)
 }
 
 // Service to site use Id.
-func (o GetSubscribedServicesSubscribedServiceResellerAddressOutput) Service2siteUseId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceResellerAddress) string { return v.Service2siteUseId }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceResellerAddressOutput) Service2siteUseId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceResellerAddress) *string { return v.Service2siteUseId }).(pulumi.StringPtrOutput)
 }
 
 // TCA customer account site Id.
-func (o GetSubscribedServicesSubscribedServiceResellerAddressOutput) TcaCustAcctSiteId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceResellerAddress) string { return v.TcaCustAcctSiteId }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceResellerAddressOutput) TcaCustAcctSiteId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceResellerAddress) *string { return v.TcaCustAcctSiteId }).(pulumi.StringPtrOutput)
 }
 
 // Party site number.
-func (o GetSubscribedServicesSubscribedServiceResellerAddressOutput) TcaPartySiteNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceResellerAddress) string { return v.TcaPartySiteNumber }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceResellerAddressOutput) TcaPartySiteNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceResellerAddress) *string { return v.TcaPartySiteNumber }).(pulumi.StringPtrOutput)
 }
 
 type GetSubscribedServicesSubscribedServiceResellerAddressArrayOutput struct{ *pulumi.OutputState }
@@ -15413,12 +13454,6 @@ func (o GetSubscribedServicesSubscribedServiceResellerAddressArrayOutput) ToGetS
 	return o
 }
 
-func (o GetSubscribedServicesSubscribedServiceResellerAddressArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServicesSubscribedServiceResellerAddress] {
-	return pulumix.Output[[]GetSubscribedServicesSubscribedServiceResellerAddress]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscribedServicesSubscribedServiceResellerAddressArrayOutput) Index(i pulumi.IntInput) GetSubscribedServicesSubscribedServiceResellerAddressOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscribedServicesSubscribedServiceResellerAddress {
 		return vs[0].([]GetSubscribedServicesSubscribedServiceResellerAddress)[vs[1].(int)]
@@ -15427,19 +13462,19 @@ func (o GetSubscribedServicesSubscribedServiceResellerAddressArrayOutput) Index(
 
 type GetSubscribedServicesSubscribedServiceResellerAddressLocation struct {
 	// Address first line.
-	Address1 string `pulumi:"address1"`
+	Address1 *string `pulumi:"address1"`
 	// Address second line.
-	Address2 string `pulumi:"address2"`
+	Address2 *string `pulumi:"address2"`
 	// City.
-	City string `pulumi:"city"`
+	City *string `pulumi:"city"`
 	// Country.
-	Country string `pulumi:"country"`
+	Country *string `pulumi:"country"`
 	// Postal code.
-	PostalCode string `pulumi:"postalCode"`
+	PostalCode *string `pulumi:"postalCode"`
 	// Region.
-	Region string `pulumi:"region"`
+	Region *string `pulumi:"region"`
 	// Region.
-	TcaLocationId string `pulumi:"tcaLocationId"`
+	TcaLocationId *string `pulumi:"tcaLocationId"`
 }
 
 // GetSubscribedServicesSubscribedServiceResellerAddressLocationInput is an input type that accepts GetSubscribedServicesSubscribedServiceResellerAddressLocationArgs and GetSubscribedServicesSubscribedServiceResellerAddressLocationOutput values.
@@ -15455,19 +13490,19 @@ type GetSubscribedServicesSubscribedServiceResellerAddressLocationInput interfac
 
 type GetSubscribedServicesSubscribedServiceResellerAddressLocationArgs struct {
 	// Address first line.
-	Address1 pulumi.StringInput `pulumi:"address1"`
+	Address1 pulumi.StringPtrInput `pulumi:"address1"`
 	// Address second line.
-	Address2 pulumi.StringInput `pulumi:"address2"`
+	Address2 pulumi.StringPtrInput `pulumi:"address2"`
 	// City.
-	City pulumi.StringInput `pulumi:"city"`
+	City pulumi.StringPtrInput `pulumi:"city"`
 	// Country.
-	Country pulumi.StringInput `pulumi:"country"`
+	Country pulumi.StringPtrInput `pulumi:"country"`
 	// Postal code.
-	PostalCode pulumi.StringInput `pulumi:"postalCode"`
+	PostalCode pulumi.StringPtrInput `pulumi:"postalCode"`
 	// Region.
-	Region pulumi.StringInput `pulumi:"region"`
+	Region pulumi.StringPtrInput `pulumi:"region"`
 	// Region.
-	TcaLocationId pulumi.StringInput `pulumi:"tcaLocationId"`
+	TcaLocationId pulumi.StringPtrInput `pulumi:"tcaLocationId"`
 }
 
 func (GetSubscribedServicesSubscribedServiceResellerAddressLocationArgs) ElementType() reflect.Type {
@@ -15480,12 +13515,6 @@ func (i GetSubscribedServicesSubscribedServiceResellerAddressLocationArgs) ToGet
 
 func (i GetSubscribedServicesSubscribedServiceResellerAddressLocationArgs) ToGetSubscribedServicesSubscribedServiceResellerAddressLocationOutputWithContext(ctx context.Context) GetSubscribedServicesSubscribedServiceResellerAddressLocationOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServicesSubscribedServiceResellerAddressLocationOutput)
-}
-
-func (i GetSubscribedServicesSubscribedServiceResellerAddressLocationArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServicesSubscribedServiceResellerAddressLocation] {
-	return pulumix.Output[GetSubscribedServicesSubscribedServiceResellerAddressLocation]{
-		OutputState: i.ToGetSubscribedServicesSubscribedServiceResellerAddressLocationOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscribedServicesSubscribedServiceResellerAddressLocationArrayInput is an input type that accepts GetSubscribedServicesSubscribedServiceResellerAddressLocationArray and GetSubscribedServicesSubscribedServiceResellerAddressLocationArrayOutput values.
@@ -15513,12 +13542,6 @@ func (i GetSubscribedServicesSubscribedServiceResellerAddressLocationArray) ToGe
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServicesSubscribedServiceResellerAddressLocationArrayOutput)
 }
 
-func (i GetSubscribedServicesSubscribedServiceResellerAddressLocationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServicesSubscribedServiceResellerAddressLocation] {
-	return pulumix.Output[[]GetSubscribedServicesSubscribedServiceResellerAddressLocation]{
-		OutputState: i.ToGetSubscribedServicesSubscribedServiceResellerAddressLocationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscribedServicesSubscribedServiceResellerAddressLocationOutput struct{ *pulumi.OutputState }
 
 func (GetSubscribedServicesSubscribedServiceResellerAddressLocationOutput) ElementType() reflect.Type {
@@ -15533,45 +13556,39 @@ func (o GetSubscribedServicesSubscribedServiceResellerAddressLocationOutput) ToG
 	return o
 }
 
-func (o GetSubscribedServicesSubscribedServiceResellerAddressLocationOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServicesSubscribedServiceResellerAddressLocation] {
-	return pulumix.Output[GetSubscribedServicesSubscribedServiceResellerAddressLocation]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Address first line.
-func (o GetSubscribedServicesSubscribedServiceResellerAddressLocationOutput) Address1() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceResellerAddressLocation) string { return v.Address1 }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceResellerAddressLocationOutput) Address1() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceResellerAddressLocation) *string { return v.Address1 }).(pulumi.StringPtrOutput)
 }
 
 // Address second line.
-func (o GetSubscribedServicesSubscribedServiceResellerAddressLocationOutput) Address2() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceResellerAddressLocation) string { return v.Address2 }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceResellerAddressLocationOutput) Address2() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceResellerAddressLocation) *string { return v.Address2 }).(pulumi.StringPtrOutput)
 }
 
 // City.
-func (o GetSubscribedServicesSubscribedServiceResellerAddressLocationOutput) City() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceResellerAddressLocation) string { return v.City }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceResellerAddressLocationOutput) City() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceResellerAddressLocation) *string { return v.City }).(pulumi.StringPtrOutput)
 }
 
 // Country.
-func (o GetSubscribedServicesSubscribedServiceResellerAddressLocationOutput) Country() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceResellerAddressLocation) string { return v.Country }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceResellerAddressLocationOutput) Country() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceResellerAddressLocation) *string { return v.Country }).(pulumi.StringPtrOutput)
 }
 
 // Postal code.
-func (o GetSubscribedServicesSubscribedServiceResellerAddressLocationOutput) PostalCode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceResellerAddressLocation) string { return v.PostalCode }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceResellerAddressLocationOutput) PostalCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceResellerAddressLocation) *string { return v.PostalCode }).(pulumi.StringPtrOutput)
 }
 
 // Region.
-func (o GetSubscribedServicesSubscribedServiceResellerAddressLocationOutput) Region() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceResellerAddressLocation) string { return v.Region }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceResellerAddressLocationOutput) Region() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceResellerAddressLocation) *string { return v.Region }).(pulumi.StringPtrOutput)
 }
 
 // Region.
-func (o GetSubscribedServicesSubscribedServiceResellerAddressLocationOutput) TcaLocationId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceResellerAddressLocation) string { return v.TcaLocationId }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceResellerAddressLocationOutput) TcaLocationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceResellerAddressLocation) *string { return v.TcaLocationId }).(pulumi.StringPtrOutput)
 }
 
 type GetSubscribedServicesSubscribedServiceResellerAddressLocationArrayOutput struct{ *pulumi.OutputState }
@@ -15588,12 +13605,6 @@ func (o GetSubscribedServicesSubscribedServiceResellerAddressLocationArrayOutput
 	return o
 }
 
-func (o GetSubscribedServicesSubscribedServiceResellerAddressLocationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServicesSubscribedServiceResellerAddressLocation] {
-	return pulumix.Output[[]GetSubscribedServicesSubscribedServiceResellerAddressLocation]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscribedServicesSubscribedServiceResellerAddressLocationArrayOutput) Index(i pulumi.IntInput) GetSubscribedServicesSubscribedServiceResellerAddressLocationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscribedServicesSubscribedServiceResellerAddressLocation {
 		return vs[0].([]GetSubscribedServicesSubscribedServiceResellerAddressLocation)[vs[1].(int)]
@@ -15602,21 +13613,21 @@ func (o GetSubscribedServicesSubscribedServiceResellerAddressLocationArrayOutput
 
 type GetSubscribedServicesSubscribedServiceResellerContact struct {
 	// Email.
-	Email string `pulumi:"email"`
+	Email *string `pulumi:"email"`
 	// First name.
-	FirstName string `pulumi:"firstName"`
+	FirstName *string `pulumi:"firstName"`
 	// Last name.
-	LastName string `pulumi:"lastName"`
+	LastName *string `pulumi:"lastName"`
 	// Commercial name also called customer name.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// TCA contact ID.
-	TcaContactId string `pulumi:"tcaContactId"`
+	TcaContactId *string `pulumi:"tcaContactId"`
 	// TCA customer account site ID.
-	TcaCustAccntSiteId string `pulumi:"tcaCustAccntSiteId"`
+	TcaCustAccntSiteId *string `pulumi:"tcaCustAccntSiteId"`
 	// TCA party ID.
-	TcaPartyId string `pulumi:"tcaPartyId"`
+	TcaPartyId *string `pulumi:"tcaPartyId"`
 	// Username.
-	Username string `pulumi:"username"`
+	Username *string `pulumi:"username"`
 }
 
 // GetSubscribedServicesSubscribedServiceResellerContactInput is an input type that accepts GetSubscribedServicesSubscribedServiceResellerContactArgs and GetSubscribedServicesSubscribedServiceResellerContactOutput values.
@@ -15632,21 +13643,21 @@ type GetSubscribedServicesSubscribedServiceResellerContactInput interface {
 
 type GetSubscribedServicesSubscribedServiceResellerContactArgs struct {
 	// Email.
-	Email pulumi.StringInput `pulumi:"email"`
+	Email pulumi.StringPtrInput `pulumi:"email"`
 	// First name.
-	FirstName pulumi.StringInput `pulumi:"firstName"`
+	FirstName pulumi.StringPtrInput `pulumi:"firstName"`
 	// Last name.
-	LastName pulumi.StringInput `pulumi:"lastName"`
+	LastName pulumi.StringPtrInput `pulumi:"lastName"`
 	// Commercial name also called customer name.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// TCA contact ID.
-	TcaContactId pulumi.StringInput `pulumi:"tcaContactId"`
+	TcaContactId pulumi.StringPtrInput `pulumi:"tcaContactId"`
 	// TCA customer account site ID.
-	TcaCustAccntSiteId pulumi.StringInput `pulumi:"tcaCustAccntSiteId"`
+	TcaCustAccntSiteId pulumi.StringPtrInput `pulumi:"tcaCustAccntSiteId"`
 	// TCA party ID.
-	TcaPartyId pulumi.StringInput `pulumi:"tcaPartyId"`
+	TcaPartyId pulumi.StringPtrInput `pulumi:"tcaPartyId"`
 	// Username.
-	Username pulumi.StringInput `pulumi:"username"`
+	Username pulumi.StringPtrInput `pulumi:"username"`
 }
 
 func (GetSubscribedServicesSubscribedServiceResellerContactArgs) ElementType() reflect.Type {
@@ -15659,12 +13670,6 @@ func (i GetSubscribedServicesSubscribedServiceResellerContactArgs) ToGetSubscrib
 
 func (i GetSubscribedServicesSubscribedServiceResellerContactArgs) ToGetSubscribedServicesSubscribedServiceResellerContactOutputWithContext(ctx context.Context) GetSubscribedServicesSubscribedServiceResellerContactOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServicesSubscribedServiceResellerContactOutput)
-}
-
-func (i GetSubscribedServicesSubscribedServiceResellerContactArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServicesSubscribedServiceResellerContact] {
-	return pulumix.Output[GetSubscribedServicesSubscribedServiceResellerContact]{
-		OutputState: i.ToGetSubscribedServicesSubscribedServiceResellerContactOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscribedServicesSubscribedServiceResellerContactArrayInput is an input type that accepts GetSubscribedServicesSubscribedServiceResellerContactArray and GetSubscribedServicesSubscribedServiceResellerContactArrayOutput values.
@@ -15692,12 +13697,6 @@ func (i GetSubscribedServicesSubscribedServiceResellerContactArray) ToGetSubscri
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServicesSubscribedServiceResellerContactArrayOutput)
 }
 
-func (i GetSubscribedServicesSubscribedServiceResellerContactArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServicesSubscribedServiceResellerContact] {
-	return pulumix.Output[[]GetSubscribedServicesSubscribedServiceResellerContact]{
-		OutputState: i.ToGetSubscribedServicesSubscribedServiceResellerContactArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscribedServicesSubscribedServiceResellerContactOutput struct{ *pulumi.OutputState }
 
 func (GetSubscribedServicesSubscribedServiceResellerContactOutput) ElementType() reflect.Type {
@@ -15712,50 +13711,44 @@ func (o GetSubscribedServicesSubscribedServiceResellerContactOutput) ToGetSubscr
 	return o
 }
 
-func (o GetSubscribedServicesSubscribedServiceResellerContactOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServicesSubscribedServiceResellerContact] {
-	return pulumix.Output[GetSubscribedServicesSubscribedServiceResellerContact]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Email.
-func (o GetSubscribedServicesSubscribedServiceResellerContactOutput) Email() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceResellerContact) string { return v.Email }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceResellerContactOutput) Email() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceResellerContact) *string { return v.Email }).(pulumi.StringPtrOutput)
 }
 
 // First name.
-func (o GetSubscribedServicesSubscribedServiceResellerContactOutput) FirstName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceResellerContact) string { return v.FirstName }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceResellerContactOutput) FirstName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceResellerContact) *string { return v.FirstName }).(pulumi.StringPtrOutput)
 }
 
 // Last name.
-func (o GetSubscribedServicesSubscribedServiceResellerContactOutput) LastName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceResellerContact) string { return v.LastName }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceResellerContactOutput) LastName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceResellerContact) *string { return v.LastName }).(pulumi.StringPtrOutput)
 }
 
 // Commercial name also called customer name.
-func (o GetSubscribedServicesSubscribedServiceResellerContactOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceResellerContact) string { return v.Name }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceResellerContactOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceResellerContact) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // TCA contact ID.
-func (o GetSubscribedServicesSubscribedServiceResellerContactOutput) TcaContactId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceResellerContact) string { return v.TcaContactId }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceResellerContactOutput) TcaContactId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceResellerContact) *string { return v.TcaContactId }).(pulumi.StringPtrOutput)
 }
 
 // TCA customer account site ID.
-func (o GetSubscribedServicesSubscribedServiceResellerContactOutput) TcaCustAccntSiteId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceResellerContact) string { return v.TcaCustAccntSiteId }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceResellerContactOutput) TcaCustAccntSiteId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceResellerContact) *string { return v.TcaCustAccntSiteId }).(pulumi.StringPtrOutput)
 }
 
 // TCA party ID.
-func (o GetSubscribedServicesSubscribedServiceResellerContactOutput) TcaPartyId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceResellerContact) string { return v.TcaPartyId }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceResellerContactOutput) TcaPartyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceResellerContact) *string { return v.TcaPartyId }).(pulumi.StringPtrOutput)
 }
 
 // Username.
-func (o GetSubscribedServicesSubscribedServiceResellerContactOutput) Username() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceResellerContact) string { return v.Username }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceResellerContactOutput) Username() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceResellerContact) *string { return v.Username }).(pulumi.StringPtrOutput)
 }
 
 type GetSubscribedServicesSubscribedServiceResellerContactArrayOutput struct{ *pulumi.OutputState }
@@ -15772,12 +13765,6 @@ func (o GetSubscribedServicesSubscribedServiceResellerContactArrayOutput) ToGetS
 	return o
 }
 
-func (o GetSubscribedServicesSubscribedServiceResellerContactArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServicesSubscribedServiceResellerContact] {
-	return pulumix.Output[[]GetSubscribedServicesSubscribedServiceResellerContact]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscribedServicesSubscribedServiceResellerContactArrayOutput) Index(i pulumi.IntInput) GetSubscribedServicesSubscribedServiceResellerContactOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscribedServicesSubscribedServiceResellerContact {
 		return vs[0].([]GetSubscribedServicesSubscribedServiceResellerContact)[vs[1].(int)]
@@ -15786,23 +13773,23 @@ func (o GetSubscribedServicesSubscribedServiceResellerContactArrayOutput) Index(
 
 type GetSubscribedServicesSubscribedServiceResellerCustomer struct {
 	// Customer chain type.
-	CustomerChainType string `pulumi:"customerChainType"`
+	CustomerChainType *string `pulumi:"customerChainType"`
 	// The business partner is chain customer or not.
-	IsChainCustomer bool `pulumi:"isChainCustomer"`
+	IsChainCustomer *bool `pulumi:"isChainCustomer"`
 	// The business partner is part of the public sector or not.
-	IsPublicSector bool `pulumi:"isPublicSector"`
+	IsPublicSector *bool `pulumi:"isPublicSector"`
 	// Commercial name also called customer name.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Phonetic name.
-	NamePhonetic string `pulumi:"namePhonetic"`
+	NamePhonetic *string `pulumi:"namePhonetic"`
 	// TCA customer account number.
-	TcaCustAccountNumber string `pulumi:"tcaCustAccountNumber"`
+	TcaCustAccountNumber *string `pulumi:"tcaCustAccountNumber"`
 	// TCA customer account ID.
-	TcaCustomerAccountId string `pulumi:"tcaCustomerAccountId"`
+	TcaCustomerAccountId *string `pulumi:"tcaCustomerAccountId"`
 	// TCA party ID.
-	TcaPartyId string `pulumi:"tcaPartyId"`
+	TcaPartyId *string `pulumi:"tcaPartyId"`
 	// TCA party number.
-	TcaPartyNumber string `pulumi:"tcaPartyNumber"`
+	TcaPartyNumber *string `pulumi:"tcaPartyNumber"`
 }
 
 // GetSubscribedServicesSubscribedServiceResellerCustomerInput is an input type that accepts GetSubscribedServicesSubscribedServiceResellerCustomerArgs and GetSubscribedServicesSubscribedServiceResellerCustomerOutput values.
@@ -15818,23 +13805,23 @@ type GetSubscribedServicesSubscribedServiceResellerCustomerInput interface {
 
 type GetSubscribedServicesSubscribedServiceResellerCustomerArgs struct {
 	// Customer chain type.
-	CustomerChainType pulumi.StringInput `pulumi:"customerChainType"`
+	CustomerChainType pulumi.StringPtrInput `pulumi:"customerChainType"`
 	// The business partner is chain customer or not.
-	IsChainCustomer pulumi.BoolInput `pulumi:"isChainCustomer"`
+	IsChainCustomer pulumi.BoolPtrInput `pulumi:"isChainCustomer"`
 	// The business partner is part of the public sector or not.
-	IsPublicSector pulumi.BoolInput `pulumi:"isPublicSector"`
+	IsPublicSector pulumi.BoolPtrInput `pulumi:"isPublicSector"`
 	// Commercial name also called customer name.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Phonetic name.
-	NamePhonetic pulumi.StringInput `pulumi:"namePhonetic"`
+	NamePhonetic pulumi.StringPtrInput `pulumi:"namePhonetic"`
 	// TCA customer account number.
-	TcaCustAccountNumber pulumi.StringInput `pulumi:"tcaCustAccountNumber"`
+	TcaCustAccountNumber pulumi.StringPtrInput `pulumi:"tcaCustAccountNumber"`
 	// TCA customer account ID.
-	TcaCustomerAccountId pulumi.StringInput `pulumi:"tcaCustomerAccountId"`
+	TcaCustomerAccountId pulumi.StringPtrInput `pulumi:"tcaCustomerAccountId"`
 	// TCA party ID.
-	TcaPartyId pulumi.StringInput `pulumi:"tcaPartyId"`
+	TcaPartyId pulumi.StringPtrInput `pulumi:"tcaPartyId"`
 	// TCA party number.
-	TcaPartyNumber pulumi.StringInput `pulumi:"tcaPartyNumber"`
+	TcaPartyNumber pulumi.StringPtrInput `pulumi:"tcaPartyNumber"`
 }
 
 func (GetSubscribedServicesSubscribedServiceResellerCustomerArgs) ElementType() reflect.Type {
@@ -15847,12 +13834,6 @@ func (i GetSubscribedServicesSubscribedServiceResellerCustomerArgs) ToGetSubscri
 
 func (i GetSubscribedServicesSubscribedServiceResellerCustomerArgs) ToGetSubscribedServicesSubscribedServiceResellerCustomerOutputWithContext(ctx context.Context) GetSubscribedServicesSubscribedServiceResellerCustomerOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServicesSubscribedServiceResellerCustomerOutput)
-}
-
-func (i GetSubscribedServicesSubscribedServiceResellerCustomerArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServicesSubscribedServiceResellerCustomer] {
-	return pulumix.Output[GetSubscribedServicesSubscribedServiceResellerCustomer]{
-		OutputState: i.ToGetSubscribedServicesSubscribedServiceResellerCustomerOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscribedServicesSubscribedServiceResellerCustomerArrayInput is an input type that accepts GetSubscribedServicesSubscribedServiceResellerCustomerArray and GetSubscribedServicesSubscribedServiceResellerCustomerArrayOutput values.
@@ -15880,12 +13861,6 @@ func (i GetSubscribedServicesSubscribedServiceResellerCustomerArray) ToGetSubscr
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServicesSubscribedServiceResellerCustomerArrayOutput)
 }
 
-func (i GetSubscribedServicesSubscribedServiceResellerCustomerArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServicesSubscribedServiceResellerCustomer] {
-	return pulumix.Output[[]GetSubscribedServicesSubscribedServiceResellerCustomer]{
-		OutputState: i.ToGetSubscribedServicesSubscribedServiceResellerCustomerArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscribedServicesSubscribedServiceResellerCustomerOutput struct{ *pulumi.OutputState }
 
 func (GetSubscribedServicesSubscribedServiceResellerCustomerOutput) ElementType() reflect.Type {
@@ -15900,55 +13875,49 @@ func (o GetSubscribedServicesSubscribedServiceResellerCustomerOutput) ToGetSubsc
 	return o
 }
 
-func (o GetSubscribedServicesSubscribedServiceResellerCustomerOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServicesSubscribedServiceResellerCustomer] {
-	return pulumix.Output[GetSubscribedServicesSubscribedServiceResellerCustomer]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Customer chain type.
-func (o GetSubscribedServicesSubscribedServiceResellerCustomerOutput) CustomerChainType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceResellerCustomer) string { return v.CustomerChainType }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceResellerCustomerOutput) CustomerChainType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceResellerCustomer) *string { return v.CustomerChainType }).(pulumi.StringPtrOutput)
 }
 
 // The business partner is chain customer or not.
-func (o GetSubscribedServicesSubscribedServiceResellerCustomerOutput) IsChainCustomer() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceResellerCustomer) bool { return v.IsChainCustomer }).(pulumi.BoolOutput)
+func (o GetSubscribedServicesSubscribedServiceResellerCustomerOutput) IsChainCustomer() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceResellerCustomer) *bool { return v.IsChainCustomer }).(pulumi.BoolPtrOutput)
 }
 
 // The business partner is part of the public sector or not.
-func (o GetSubscribedServicesSubscribedServiceResellerCustomerOutput) IsPublicSector() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceResellerCustomer) bool { return v.IsPublicSector }).(pulumi.BoolOutput)
+func (o GetSubscribedServicesSubscribedServiceResellerCustomerOutput) IsPublicSector() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceResellerCustomer) *bool { return v.IsPublicSector }).(pulumi.BoolPtrOutput)
 }
 
 // Commercial name also called customer name.
-func (o GetSubscribedServicesSubscribedServiceResellerCustomerOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceResellerCustomer) string { return v.Name }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceResellerCustomerOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceResellerCustomer) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Phonetic name.
-func (o GetSubscribedServicesSubscribedServiceResellerCustomerOutput) NamePhonetic() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceResellerCustomer) string { return v.NamePhonetic }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceResellerCustomerOutput) NamePhonetic() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceResellerCustomer) *string { return v.NamePhonetic }).(pulumi.StringPtrOutput)
 }
 
 // TCA customer account number.
-func (o GetSubscribedServicesSubscribedServiceResellerCustomerOutput) TcaCustAccountNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceResellerCustomer) string { return v.TcaCustAccountNumber }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceResellerCustomerOutput) TcaCustAccountNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceResellerCustomer) *string { return v.TcaCustAccountNumber }).(pulumi.StringPtrOutput)
 }
 
 // TCA customer account ID.
-func (o GetSubscribedServicesSubscribedServiceResellerCustomerOutput) TcaCustomerAccountId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceResellerCustomer) string { return v.TcaCustomerAccountId }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceResellerCustomerOutput) TcaCustomerAccountId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceResellerCustomer) *string { return v.TcaCustomerAccountId }).(pulumi.StringPtrOutput)
 }
 
 // TCA party ID.
-func (o GetSubscribedServicesSubscribedServiceResellerCustomerOutput) TcaPartyId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceResellerCustomer) string { return v.TcaPartyId }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceResellerCustomerOutput) TcaPartyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceResellerCustomer) *string { return v.TcaPartyId }).(pulumi.StringPtrOutput)
 }
 
 // TCA party number.
-func (o GetSubscribedServicesSubscribedServiceResellerCustomerOutput) TcaPartyNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceResellerCustomer) string { return v.TcaPartyNumber }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceResellerCustomerOutput) TcaPartyNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceResellerCustomer) *string { return v.TcaPartyNumber }).(pulumi.StringPtrOutput)
 }
 
 type GetSubscribedServicesSubscribedServiceResellerCustomerArrayOutput struct{ *pulumi.OutputState }
@@ -15965,12 +13934,6 @@ func (o GetSubscribedServicesSubscribedServiceResellerCustomerArrayOutput) ToGet
 	return o
 }
 
-func (o GetSubscribedServicesSubscribedServiceResellerCustomerArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServicesSubscribedServiceResellerCustomer] {
-	return pulumix.Output[[]GetSubscribedServicesSubscribedServiceResellerCustomer]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscribedServicesSubscribedServiceResellerCustomerArrayOutput) Index(i pulumi.IntInput) GetSubscribedServicesSubscribedServiceResellerCustomerOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscribedServicesSubscribedServiceResellerCustomer {
 		return vs[0].([]GetSubscribedServicesSubscribedServiceResellerCustomer)[vs[1].(int)]
@@ -15979,23 +13942,23 @@ func (o GetSubscribedServicesSubscribedServiceResellerCustomerArrayOutput) Index
 
 type GetSubscribedServicesSubscribedServiceServiceToAddress struct {
 	// Bill to site use Id.
-	BillSiteUseId string `pulumi:"billSiteUseId"`
+	BillSiteUseId *string `pulumi:"billSiteUseId"`
 	// Identify as the customer shipping address.
-	IsBillTo bool `pulumi:"isBillTo"`
+	IsBillTo *bool `pulumi:"isBillTo"`
 	// Identify as the customer invoicing address.
-	IsShipTo bool `pulumi:"isShipTo"`
+	IsShipTo *bool `pulumi:"isShipTo"`
 	// Address location.
 	Locations []GetSubscribedServicesSubscribedServiceServiceToAddressLocation `pulumi:"locations"`
 	// Commercial name also called customer name.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Phone.
-	Phone string `pulumi:"phone"`
+	Phone *string `pulumi:"phone"`
 	// Service to site use Id.
-	Service2siteUseId string `pulumi:"service2siteUseId"`
+	Service2siteUseId *string `pulumi:"service2siteUseId"`
 	// TCA customer account site Id.
-	TcaCustAcctSiteId string `pulumi:"tcaCustAcctSiteId"`
+	TcaCustAcctSiteId *string `pulumi:"tcaCustAcctSiteId"`
 	// Party site number.
-	TcaPartySiteNumber string `pulumi:"tcaPartySiteNumber"`
+	TcaPartySiteNumber *string `pulumi:"tcaPartySiteNumber"`
 }
 
 // GetSubscribedServicesSubscribedServiceServiceToAddressInput is an input type that accepts GetSubscribedServicesSubscribedServiceServiceToAddressArgs and GetSubscribedServicesSubscribedServiceServiceToAddressOutput values.
@@ -16011,23 +13974,23 @@ type GetSubscribedServicesSubscribedServiceServiceToAddressInput interface {
 
 type GetSubscribedServicesSubscribedServiceServiceToAddressArgs struct {
 	// Bill to site use Id.
-	BillSiteUseId pulumi.StringInput `pulumi:"billSiteUseId"`
+	BillSiteUseId pulumi.StringPtrInput `pulumi:"billSiteUseId"`
 	// Identify as the customer shipping address.
-	IsBillTo pulumi.BoolInput `pulumi:"isBillTo"`
+	IsBillTo pulumi.BoolPtrInput `pulumi:"isBillTo"`
 	// Identify as the customer invoicing address.
-	IsShipTo pulumi.BoolInput `pulumi:"isShipTo"`
+	IsShipTo pulumi.BoolPtrInput `pulumi:"isShipTo"`
 	// Address location.
 	Locations GetSubscribedServicesSubscribedServiceServiceToAddressLocationArrayInput `pulumi:"locations"`
 	// Commercial name also called customer name.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Phone.
-	Phone pulumi.StringInput `pulumi:"phone"`
+	Phone pulumi.StringPtrInput `pulumi:"phone"`
 	// Service to site use Id.
-	Service2siteUseId pulumi.StringInput `pulumi:"service2siteUseId"`
+	Service2siteUseId pulumi.StringPtrInput `pulumi:"service2siteUseId"`
 	// TCA customer account site Id.
-	TcaCustAcctSiteId pulumi.StringInput `pulumi:"tcaCustAcctSiteId"`
+	TcaCustAcctSiteId pulumi.StringPtrInput `pulumi:"tcaCustAcctSiteId"`
 	// Party site number.
-	TcaPartySiteNumber pulumi.StringInput `pulumi:"tcaPartySiteNumber"`
+	TcaPartySiteNumber pulumi.StringPtrInput `pulumi:"tcaPartySiteNumber"`
 }
 
 func (GetSubscribedServicesSubscribedServiceServiceToAddressArgs) ElementType() reflect.Type {
@@ -16040,12 +14003,6 @@ func (i GetSubscribedServicesSubscribedServiceServiceToAddressArgs) ToGetSubscri
 
 func (i GetSubscribedServicesSubscribedServiceServiceToAddressArgs) ToGetSubscribedServicesSubscribedServiceServiceToAddressOutputWithContext(ctx context.Context) GetSubscribedServicesSubscribedServiceServiceToAddressOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServicesSubscribedServiceServiceToAddressOutput)
-}
-
-func (i GetSubscribedServicesSubscribedServiceServiceToAddressArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServicesSubscribedServiceServiceToAddress] {
-	return pulumix.Output[GetSubscribedServicesSubscribedServiceServiceToAddress]{
-		OutputState: i.ToGetSubscribedServicesSubscribedServiceServiceToAddressOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscribedServicesSubscribedServiceServiceToAddressArrayInput is an input type that accepts GetSubscribedServicesSubscribedServiceServiceToAddressArray and GetSubscribedServicesSubscribedServiceServiceToAddressArrayOutput values.
@@ -16073,12 +14030,6 @@ func (i GetSubscribedServicesSubscribedServiceServiceToAddressArray) ToGetSubscr
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServicesSubscribedServiceServiceToAddressArrayOutput)
 }
 
-func (i GetSubscribedServicesSubscribedServiceServiceToAddressArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServicesSubscribedServiceServiceToAddress] {
-	return pulumix.Output[[]GetSubscribedServicesSubscribedServiceServiceToAddress]{
-		OutputState: i.ToGetSubscribedServicesSubscribedServiceServiceToAddressArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscribedServicesSubscribedServiceServiceToAddressOutput struct{ *pulumi.OutputState }
 
 func (GetSubscribedServicesSubscribedServiceServiceToAddressOutput) ElementType() reflect.Type {
@@ -16093,25 +14044,19 @@ func (o GetSubscribedServicesSubscribedServiceServiceToAddressOutput) ToGetSubsc
 	return o
 }
 
-func (o GetSubscribedServicesSubscribedServiceServiceToAddressOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServicesSubscribedServiceServiceToAddress] {
-	return pulumix.Output[GetSubscribedServicesSubscribedServiceServiceToAddress]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Bill to site use Id.
-func (o GetSubscribedServicesSubscribedServiceServiceToAddressOutput) BillSiteUseId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceServiceToAddress) string { return v.BillSiteUseId }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceServiceToAddressOutput) BillSiteUseId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceServiceToAddress) *string { return v.BillSiteUseId }).(pulumi.StringPtrOutput)
 }
 
 // Identify as the customer shipping address.
-func (o GetSubscribedServicesSubscribedServiceServiceToAddressOutput) IsBillTo() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceServiceToAddress) bool { return v.IsBillTo }).(pulumi.BoolOutput)
+func (o GetSubscribedServicesSubscribedServiceServiceToAddressOutput) IsBillTo() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceServiceToAddress) *bool { return v.IsBillTo }).(pulumi.BoolPtrOutput)
 }
 
 // Identify as the customer invoicing address.
-func (o GetSubscribedServicesSubscribedServiceServiceToAddressOutput) IsShipTo() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceServiceToAddress) bool { return v.IsShipTo }).(pulumi.BoolOutput)
+func (o GetSubscribedServicesSubscribedServiceServiceToAddressOutput) IsShipTo() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceServiceToAddress) *bool { return v.IsShipTo }).(pulumi.BoolPtrOutput)
 }
 
 // Address location.
@@ -16122,28 +14067,28 @@ func (o GetSubscribedServicesSubscribedServiceServiceToAddressOutput) Locations(
 }
 
 // Commercial name also called customer name.
-func (o GetSubscribedServicesSubscribedServiceServiceToAddressOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceServiceToAddress) string { return v.Name }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceServiceToAddressOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceServiceToAddress) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Phone.
-func (o GetSubscribedServicesSubscribedServiceServiceToAddressOutput) Phone() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceServiceToAddress) string { return v.Phone }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceServiceToAddressOutput) Phone() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceServiceToAddress) *string { return v.Phone }).(pulumi.StringPtrOutput)
 }
 
 // Service to site use Id.
-func (o GetSubscribedServicesSubscribedServiceServiceToAddressOutput) Service2siteUseId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceServiceToAddress) string { return v.Service2siteUseId }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceServiceToAddressOutput) Service2siteUseId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceServiceToAddress) *string { return v.Service2siteUseId }).(pulumi.StringPtrOutput)
 }
 
 // TCA customer account site Id.
-func (o GetSubscribedServicesSubscribedServiceServiceToAddressOutput) TcaCustAcctSiteId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceServiceToAddress) string { return v.TcaCustAcctSiteId }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceServiceToAddressOutput) TcaCustAcctSiteId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceServiceToAddress) *string { return v.TcaCustAcctSiteId }).(pulumi.StringPtrOutput)
 }
 
 // Party site number.
-func (o GetSubscribedServicesSubscribedServiceServiceToAddressOutput) TcaPartySiteNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceServiceToAddress) string { return v.TcaPartySiteNumber }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceServiceToAddressOutput) TcaPartySiteNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceServiceToAddress) *string { return v.TcaPartySiteNumber }).(pulumi.StringPtrOutput)
 }
 
 type GetSubscribedServicesSubscribedServiceServiceToAddressArrayOutput struct{ *pulumi.OutputState }
@@ -16160,12 +14105,6 @@ func (o GetSubscribedServicesSubscribedServiceServiceToAddressArrayOutput) ToGet
 	return o
 }
 
-func (o GetSubscribedServicesSubscribedServiceServiceToAddressArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServicesSubscribedServiceServiceToAddress] {
-	return pulumix.Output[[]GetSubscribedServicesSubscribedServiceServiceToAddress]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscribedServicesSubscribedServiceServiceToAddressArrayOutput) Index(i pulumi.IntInput) GetSubscribedServicesSubscribedServiceServiceToAddressOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscribedServicesSubscribedServiceServiceToAddress {
 		return vs[0].([]GetSubscribedServicesSubscribedServiceServiceToAddress)[vs[1].(int)]
@@ -16174,19 +14113,19 @@ func (o GetSubscribedServicesSubscribedServiceServiceToAddressArrayOutput) Index
 
 type GetSubscribedServicesSubscribedServiceServiceToAddressLocation struct {
 	// Address first line.
-	Address1 string `pulumi:"address1"`
+	Address1 *string `pulumi:"address1"`
 	// Address second line.
-	Address2 string `pulumi:"address2"`
+	Address2 *string `pulumi:"address2"`
 	// City.
-	City string `pulumi:"city"`
+	City *string `pulumi:"city"`
 	// Country.
-	Country string `pulumi:"country"`
+	Country *string `pulumi:"country"`
 	// Postal code.
-	PostalCode string `pulumi:"postalCode"`
+	PostalCode *string `pulumi:"postalCode"`
 	// Region.
-	Region string `pulumi:"region"`
+	Region *string `pulumi:"region"`
 	// Region.
-	TcaLocationId string `pulumi:"tcaLocationId"`
+	TcaLocationId *string `pulumi:"tcaLocationId"`
 }
 
 // GetSubscribedServicesSubscribedServiceServiceToAddressLocationInput is an input type that accepts GetSubscribedServicesSubscribedServiceServiceToAddressLocationArgs and GetSubscribedServicesSubscribedServiceServiceToAddressLocationOutput values.
@@ -16202,19 +14141,19 @@ type GetSubscribedServicesSubscribedServiceServiceToAddressLocationInput interfa
 
 type GetSubscribedServicesSubscribedServiceServiceToAddressLocationArgs struct {
 	// Address first line.
-	Address1 pulumi.StringInput `pulumi:"address1"`
+	Address1 pulumi.StringPtrInput `pulumi:"address1"`
 	// Address second line.
-	Address2 pulumi.StringInput `pulumi:"address2"`
+	Address2 pulumi.StringPtrInput `pulumi:"address2"`
 	// City.
-	City pulumi.StringInput `pulumi:"city"`
+	City pulumi.StringPtrInput `pulumi:"city"`
 	// Country.
-	Country pulumi.StringInput `pulumi:"country"`
+	Country pulumi.StringPtrInput `pulumi:"country"`
 	// Postal code.
-	PostalCode pulumi.StringInput `pulumi:"postalCode"`
+	PostalCode pulumi.StringPtrInput `pulumi:"postalCode"`
 	// Region.
-	Region pulumi.StringInput `pulumi:"region"`
+	Region pulumi.StringPtrInput `pulumi:"region"`
 	// Region.
-	TcaLocationId pulumi.StringInput `pulumi:"tcaLocationId"`
+	TcaLocationId pulumi.StringPtrInput `pulumi:"tcaLocationId"`
 }
 
 func (GetSubscribedServicesSubscribedServiceServiceToAddressLocationArgs) ElementType() reflect.Type {
@@ -16227,12 +14166,6 @@ func (i GetSubscribedServicesSubscribedServiceServiceToAddressLocationArgs) ToGe
 
 func (i GetSubscribedServicesSubscribedServiceServiceToAddressLocationArgs) ToGetSubscribedServicesSubscribedServiceServiceToAddressLocationOutputWithContext(ctx context.Context) GetSubscribedServicesSubscribedServiceServiceToAddressLocationOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServicesSubscribedServiceServiceToAddressLocationOutput)
-}
-
-func (i GetSubscribedServicesSubscribedServiceServiceToAddressLocationArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServicesSubscribedServiceServiceToAddressLocation] {
-	return pulumix.Output[GetSubscribedServicesSubscribedServiceServiceToAddressLocation]{
-		OutputState: i.ToGetSubscribedServicesSubscribedServiceServiceToAddressLocationOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscribedServicesSubscribedServiceServiceToAddressLocationArrayInput is an input type that accepts GetSubscribedServicesSubscribedServiceServiceToAddressLocationArray and GetSubscribedServicesSubscribedServiceServiceToAddressLocationArrayOutput values.
@@ -16260,12 +14193,6 @@ func (i GetSubscribedServicesSubscribedServiceServiceToAddressLocationArray) ToG
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServicesSubscribedServiceServiceToAddressLocationArrayOutput)
 }
 
-func (i GetSubscribedServicesSubscribedServiceServiceToAddressLocationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServicesSubscribedServiceServiceToAddressLocation] {
-	return pulumix.Output[[]GetSubscribedServicesSubscribedServiceServiceToAddressLocation]{
-		OutputState: i.ToGetSubscribedServicesSubscribedServiceServiceToAddressLocationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscribedServicesSubscribedServiceServiceToAddressLocationOutput struct{ *pulumi.OutputState }
 
 func (GetSubscribedServicesSubscribedServiceServiceToAddressLocationOutput) ElementType() reflect.Type {
@@ -16280,45 +14207,39 @@ func (o GetSubscribedServicesSubscribedServiceServiceToAddressLocationOutput) To
 	return o
 }
 
-func (o GetSubscribedServicesSubscribedServiceServiceToAddressLocationOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServicesSubscribedServiceServiceToAddressLocation] {
-	return pulumix.Output[GetSubscribedServicesSubscribedServiceServiceToAddressLocation]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Address first line.
-func (o GetSubscribedServicesSubscribedServiceServiceToAddressLocationOutput) Address1() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceServiceToAddressLocation) string { return v.Address1 }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceServiceToAddressLocationOutput) Address1() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceServiceToAddressLocation) *string { return v.Address1 }).(pulumi.StringPtrOutput)
 }
 
 // Address second line.
-func (o GetSubscribedServicesSubscribedServiceServiceToAddressLocationOutput) Address2() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceServiceToAddressLocation) string { return v.Address2 }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceServiceToAddressLocationOutput) Address2() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceServiceToAddressLocation) *string { return v.Address2 }).(pulumi.StringPtrOutput)
 }
 
 // City.
-func (o GetSubscribedServicesSubscribedServiceServiceToAddressLocationOutput) City() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceServiceToAddressLocation) string { return v.City }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceServiceToAddressLocationOutput) City() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceServiceToAddressLocation) *string { return v.City }).(pulumi.StringPtrOutput)
 }
 
 // Country.
-func (o GetSubscribedServicesSubscribedServiceServiceToAddressLocationOutput) Country() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceServiceToAddressLocation) string { return v.Country }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceServiceToAddressLocationOutput) Country() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceServiceToAddressLocation) *string { return v.Country }).(pulumi.StringPtrOutput)
 }
 
 // Postal code.
-func (o GetSubscribedServicesSubscribedServiceServiceToAddressLocationOutput) PostalCode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceServiceToAddressLocation) string { return v.PostalCode }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceServiceToAddressLocationOutput) PostalCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceServiceToAddressLocation) *string { return v.PostalCode }).(pulumi.StringPtrOutput)
 }
 
 // Region.
-func (o GetSubscribedServicesSubscribedServiceServiceToAddressLocationOutput) Region() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceServiceToAddressLocation) string { return v.Region }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceServiceToAddressLocationOutput) Region() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceServiceToAddressLocation) *string { return v.Region }).(pulumi.StringPtrOutput)
 }
 
 // Region.
-func (o GetSubscribedServicesSubscribedServiceServiceToAddressLocationOutput) TcaLocationId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceServiceToAddressLocation) string { return v.TcaLocationId }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceServiceToAddressLocationOutput) TcaLocationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceServiceToAddressLocation) *string { return v.TcaLocationId }).(pulumi.StringPtrOutput)
 }
 
 type GetSubscribedServicesSubscribedServiceServiceToAddressLocationArrayOutput struct{ *pulumi.OutputState }
@@ -16335,12 +14256,6 @@ func (o GetSubscribedServicesSubscribedServiceServiceToAddressLocationArrayOutpu
 	return o
 }
 
-func (o GetSubscribedServicesSubscribedServiceServiceToAddressLocationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServicesSubscribedServiceServiceToAddressLocation] {
-	return pulumix.Output[[]GetSubscribedServicesSubscribedServiceServiceToAddressLocation]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscribedServicesSubscribedServiceServiceToAddressLocationArrayOutput) Index(i pulumi.IntInput) GetSubscribedServicesSubscribedServiceServiceToAddressLocationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscribedServicesSubscribedServiceServiceToAddressLocation {
 		return vs[0].([]GetSubscribedServicesSubscribedServiceServiceToAddressLocation)[vs[1].(int)]
@@ -16349,21 +14264,21 @@ func (o GetSubscribedServicesSubscribedServiceServiceToAddressLocationArrayOutpu
 
 type GetSubscribedServicesSubscribedServiceServiceToContact struct {
 	// Email.
-	Email string `pulumi:"email"`
+	Email *string `pulumi:"email"`
 	// First name.
-	FirstName string `pulumi:"firstName"`
+	FirstName *string `pulumi:"firstName"`
 	// Last name.
-	LastName string `pulumi:"lastName"`
+	LastName *string `pulumi:"lastName"`
 	// Commercial name also called customer name.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// TCA contact ID.
-	TcaContactId string `pulumi:"tcaContactId"`
+	TcaContactId *string `pulumi:"tcaContactId"`
 	// TCA customer account site ID.
-	TcaCustAccntSiteId string `pulumi:"tcaCustAccntSiteId"`
+	TcaCustAccntSiteId *string `pulumi:"tcaCustAccntSiteId"`
 	// TCA party ID.
-	TcaPartyId string `pulumi:"tcaPartyId"`
+	TcaPartyId *string `pulumi:"tcaPartyId"`
 	// Username.
-	Username string `pulumi:"username"`
+	Username *string `pulumi:"username"`
 }
 
 // GetSubscribedServicesSubscribedServiceServiceToContactInput is an input type that accepts GetSubscribedServicesSubscribedServiceServiceToContactArgs and GetSubscribedServicesSubscribedServiceServiceToContactOutput values.
@@ -16379,21 +14294,21 @@ type GetSubscribedServicesSubscribedServiceServiceToContactInput interface {
 
 type GetSubscribedServicesSubscribedServiceServiceToContactArgs struct {
 	// Email.
-	Email pulumi.StringInput `pulumi:"email"`
+	Email pulumi.StringPtrInput `pulumi:"email"`
 	// First name.
-	FirstName pulumi.StringInput `pulumi:"firstName"`
+	FirstName pulumi.StringPtrInput `pulumi:"firstName"`
 	// Last name.
-	LastName pulumi.StringInput `pulumi:"lastName"`
+	LastName pulumi.StringPtrInput `pulumi:"lastName"`
 	// Commercial name also called customer name.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// TCA contact ID.
-	TcaContactId pulumi.StringInput `pulumi:"tcaContactId"`
+	TcaContactId pulumi.StringPtrInput `pulumi:"tcaContactId"`
 	// TCA customer account site ID.
-	TcaCustAccntSiteId pulumi.StringInput `pulumi:"tcaCustAccntSiteId"`
+	TcaCustAccntSiteId pulumi.StringPtrInput `pulumi:"tcaCustAccntSiteId"`
 	// TCA party ID.
-	TcaPartyId pulumi.StringInput `pulumi:"tcaPartyId"`
+	TcaPartyId pulumi.StringPtrInput `pulumi:"tcaPartyId"`
 	// Username.
-	Username pulumi.StringInput `pulumi:"username"`
+	Username pulumi.StringPtrInput `pulumi:"username"`
 }
 
 func (GetSubscribedServicesSubscribedServiceServiceToContactArgs) ElementType() reflect.Type {
@@ -16406,12 +14321,6 @@ func (i GetSubscribedServicesSubscribedServiceServiceToContactArgs) ToGetSubscri
 
 func (i GetSubscribedServicesSubscribedServiceServiceToContactArgs) ToGetSubscribedServicesSubscribedServiceServiceToContactOutputWithContext(ctx context.Context) GetSubscribedServicesSubscribedServiceServiceToContactOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServicesSubscribedServiceServiceToContactOutput)
-}
-
-func (i GetSubscribedServicesSubscribedServiceServiceToContactArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServicesSubscribedServiceServiceToContact] {
-	return pulumix.Output[GetSubscribedServicesSubscribedServiceServiceToContact]{
-		OutputState: i.ToGetSubscribedServicesSubscribedServiceServiceToContactOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscribedServicesSubscribedServiceServiceToContactArrayInput is an input type that accepts GetSubscribedServicesSubscribedServiceServiceToContactArray and GetSubscribedServicesSubscribedServiceServiceToContactArrayOutput values.
@@ -16439,12 +14348,6 @@ func (i GetSubscribedServicesSubscribedServiceServiceToContactArray) ToGetSubscr
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServicesSubscribedServiceServiceToContactArrayOutput)
 }
 
-func (i GetSubscribedServicesSubscribedServiceServiceToContactArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServicesSubscribedServiceServiceToContact] {
-	return pulumix.Output[[]GetSubscribedServicesSubscribedServiceServiceToContact]{
-		OutputState: i.ToGetSubscribedServicesSubscribedServiceServiceToContactArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscribedServicesSubscribedServiceServiceToContactOutput struct{ *pulumi.OutputState }
 
 func (GetSubscribedServicesSubscribedServiceServiceToContactOutput) ElementType() reflect.Type {
@@ -16459,50 +14362,44 @@ func (o GetSubscribedServicesSubscribedServiceServiceToContactOutput) ToGetSubsc
 	return o
 }
 
-func (o GetSubscribedServicesSubscribedServiceServiceToContactOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServicesSubscribedServiceServiceToContact] {
-	return pulumix.Output[GetSubscribedServicesSubscribedServiceServiceToContact]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Email.
-func (o GetSubscribedServicesSubscribedServiceServiceToContactOutput) Email() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceServiceToContact) string { return v.Email }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceServiceToContactOutput) Email() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceServiceToContact) *string { return v.Email }).(pulumi.StringPtrOutput)
 }
 
 // First name.
-func (o GetSubscribedServicesSubscribedServiceServiceToContactOutput) FirstName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceServiceToContact) string { return v.FirstName }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceServiceToContactOutput) FirstName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceServiceToContact) *string { return v.FirstName }).(pulumi.StringPtrOutput)
 }
 
 // Last name.
-func (o GetSubscribedServicesSubscribedServiceServiceToContactOutput) LastName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceServiceToContact) string { return v.LastName }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceServiceToContactOutput) LastName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceServiceToContact) *string { return v.LastName }).(pulumi.StringPtrOutput)
 }
 
 // Commercial name also called customer name.
-func (o GetSubscribedServicesSubscribedServiceServiceToContactOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceServiceToContact) string { return v.Name }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceServiceToContactOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceServiceToContact) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // TCA contact ID.
-func (o GetSubscribedServicesSubscribedServiceServiceToContactOutput) TcaContactId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceServiceToContact) string { return v.TcaContactId }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceServiceToContactOutput) TcaContactId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceServiceToContact) *string { return v.TcaContactId }).(pulumi.StringPtrOutput)
 }
 
 // TCA customer account site ID.
-func (o GetSubscribedServicesSubscribedServiceServiceToContactOutput) TcaCustAccntSiteId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceServiceToContact) string { return v.TcaCustAccntSiteId }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceServiceToContactOutput) TcaCustAccntSiteId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceServiceToContact) *string { return v.TcaCustAccntSiteId }).(pulumi.StringPtrOutput)
 }
 
 // TCA party ID.
-func (o GetSubscribedServicesSubscribedServiceServiceToContactOutput) TcaPartyId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceServiceToContact) string { return v.TcaPartyId }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceServiceToContactOutput) TcaPartyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceServiceToContact) *string { return v.TcaPartyId }).(pulumi.StringPtrOutput)
 }
 
 // Username.
-func (o GetSubscribedServicesSubscribedServiceServiceToContactOutput) Username() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceServiceToContact) string { return v.Username }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceServiceToContactOutput) Username() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceServiceToContact) *string { return v.Username }).(pulumi.StringPtrOutput)
 }
 
 type GetSubscribedServicesSubscribedServiceServiceToContactArrayOutput struct{ *pulumi.OutputState }
@@ -16519,12 +14416,6 @@ func (o GetSubscribedServicesSubscribedServiceServiceToContactArrayOutput) ToGet
 	return o
 }
 
-func (o GetSubscribedServicesSubscribedServiceServiceToContactArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServicesSubscribedServiceServiceToContact] {
-	return pulumix.Output[[]GetSubscribedServicesSubscribedServiceServiceToContact]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscribedServicesSubscribedServiceServiceToContactArrayOutput) Index(i pulumi.IntInput) GetSubscribedServicesSubscribedServiceServiceToContactOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscribedServicesSubscribedServiceServiceToContact {
 		return vs[0].([]GetSubscribedServicesSubscribedServiceServiceToContact)[vs[1].(int)]
@@ -16533,23 +14424,23 @@ func (o GetSubscribedServicesSubscribedServiceServiceToContactArrayOutput) Index
 
 type GetSubscribedServicesSubscribedServiceServiceToCustomer struct {
 	// Customer chain type.
-	CustomerChainType string `pulumi:"customerChainType"`
+	CustomerChainType *string `pulumi:"customerChainType"`
 	// The business partner is chain customer or not.
-	IsChainCustomer bool `pulumi:"isChainCustomer"`
+	IsChainCustomer *bool `pulumi:"isChainCustomer"`
 	// The business partner is part of the public sector or not.
-	IsPublicSector bool `pulumi:"isPublicSector"`
+	IsPublicSector *bool `pulumi:"isPublicSector"`
 	// Commercial name also called customer name.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Phonetic name.
-	NamePhonetic string `pulumi:"namePhonetic"`
+	NamePhonetic *string `pulumi:"namePhonetic"`
 	// TCA customer account number.
-	TcaCustAccountNumber string `pulumi:"tcaCustAccountNumber"`
+	TcaCustAccountNumber *string `pulumi:"tcaCustAccountNumber"`
 	// TCA customer account ID.
-	TcaCustomerAccountId string `pulumi:"tcaCustomerAccountId"`
+	TcaCustomerAccountId *string `pulumi:"tcaCustomerAccountId"`
 	// TCA party ID.
-	TcaPartyId string `pulumi:"tcaPartyId"`
+	TcaPartyId *string `pulumi:"tcaPartyId"`
 	// TCA party number.
-	TcaPartyNumber string `pulumi:"tcaPartyNumber"`
+	TcaPartyNumber *string `pulumi:"tcaPartyNumber"`
 }
 
 // GetSubscribedServicesSubscribedServiceServiceToCustomerInput is an input type that accepts GetSubscribedServicesSubscribedServiceServiceToCustomerArgs and GetSubscribedServicesSubscribedServiceServiceToCustomerOutput values.
@@ -16565,23 +14456,23 @@ type GetSubscribedServicesSubscribedServiceServiceToCustomerInput interface {
 
 type GetSubscribedServicesSubscribedServiceServiceToCustomerArgs struct {
 	// Customer chain type.
-	CustomerChainType pulumi.StringInput `pulumi:"customerChainType"`
+	CustomerChainType pulumi.StringPtrInput `pulumi:"customerChainType"`
 	// The business partner is chain customer or not.
-	IsChainCustomer pulumi.BoolInput `pulumi:"isChainCustomer"`
+	IsChainCustomer pulumi.BoolPtrInput `pulumi:"isChainCustomer"`
 	// The business partner is part of the public sector or not.
-	IsPublicSector pulumi.BoolInput `pulumi:"isPublicSector"`
+	IsPublicSector pulumi.BoolPtrInput `pulumi:"isPublicSector"`
 	// Commercial name also called customer name.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Phonetic name.
-	NamePhonetic pulumi.StringInput `pulumi:"namePhonetic"`
+	NamePhonetic pulumi.StringPtrInput `pulumi:"namePhonetic"`
 	// TCA customer account number.
-	TcaCustAccountNumber pulumi.StringInput `pulumi:"tcaCustAccountNumber"`
+	TcaCustAccountNumber pulumi.StringPtrInput `pulumi:"tcaCustAccountNumber"`
 	// TCA customer account ID.
-	TcaCustomerAccountId pulumi.StringInput `pulumi:"tcaCustomerAccountId"`
+	TcaCustomerAccountId pulumi.StringPtrInput `pulumi:"tcaCustomerAccountId"`
 	// TCA party ID.
-	TcaPartyId pulumi.StringInput `pulumi:"tcaPartyId"`
+	TcaPartyId pulumi.StringPtrInput `pulumi:"tcaPartyId"`
 	// TCA party number.
-	TcaPartyNumber pulumi.StringInput `pulumi:"tcaPartyNumber"`
+	TcaPartyNumber pulumi.StringPtrInput `pulumi:"tcaPartyNumber"`
 }
 
 func (GetSubscribedServicesSubscribedServiceServiceToCustomerArgs) ElementType() reflect.Type {
@@ -16594,12 +14485,6 @@ func (i GetSubscribedServicesSubscribedServiceServiceToCustomerArgs) ToGetSubscr
 
 func (i GetSubscribedServicesSubscribedServiceServiceToCustomerArgs) ToGetSubscribedServicesSubscribedServiceServiceToCustomerOutputWithContext(ctx context.Context) GetSubscribedServicesSubscribedServiceServiceToCustomerOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServicesSubscribedServiceServiceToCustomerOutput)
-}
-
-func (i GetSubscribedServicesSubscribedServiceServiceToCustomerArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServicesSubscribedServiceServiceToCustomer] {
-	return pulumix.Output[GetSubscribedServicesSubscribedServiceServiceToCustomer]{
-		OutputState: i.ToGetSubscribedServicesSubscribedServiceServiceToCustomerOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscribedServicesSubscribedServiceServiceToCustomerArrayInput is an input type that accepts GetSubscribedServicesSubscribedServiceServiceToCustomerArray and GetSubscribedServicesSubscribedServiceServiceToCustomerArrayOutput values.
@@ -16627,12 +14512,6 @@ func (i GetSubscribedServicesSubscribedServiceServiceToCustomerArray) ToGetSubsc
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServicesSubscribedServiceServiceToCustomerArrayOutput)
 }
 
-func (i GetSubscribedServicesSubscribedServiceServiceToCustomerArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServicesSubscribedServiceServiceToCustomer] {
-	return pulumix.Output[[]GetSubscribedServicesSubscribedServiceServiceToCustomer]{
-		OutputState: i.ToGetSubscribedServicesSubscribedServiceServiceToCustomerArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscribedServicesSubscribedServiceServiceToCustomerOutput struct{ *pulumi.OutputState }
 
 func (GetSubscribedServicesSubscribedServiceServiceToCustomerOutput) ElementType() reflect.Type {
@@ -16647,55 +14526,49 @@ func (o GetSubscribedServicesSubscribedServiceServiceToCustomerOutput) ToGetSubs
 	return o
 }
 
-func (o GetSubscribedServicesSubscribedServiceServiceToCustomerOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServicesSubscribedServiceServiceToCustomer] {
-	return pulumix.Output[GetSubscribedServicesSubscribedServiceServiceToCustomer]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Customer chain type.
-func (o GetSubscribedServicesSubscribedServiceServiceToCustomerOutput) CustomerChainType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceServiceToCustomer) string { return v.CustomerChainType }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceServiceToCustomerOutput) CustomerChainType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceServiceToCustomer) *string { return v.CustomerChainType }).(pulumi.StringPtrOutput)
 }
 
 // The business partner is chain customer or not.
-func (o GetSubscribedServicesSubscribedServiceServiceToCustomerOutput) IsChainCustomer() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceServiceToCustomer) bool { return v.IsChainCustomer }).(pulumi.BoolOutput)
+func (o GetSubscribedServicesSubscribedServiceServiceToCustomerOutput) IsChainCustomer() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceServiceToCustomer) *bool { return v.IsChainCustomer }).(pulumi.BoolPtrOutput)
 }
 
 // The business partner is part of the public sector or not.
-func (o GetSubscribedServicesSubscribedServiceServiceToCustomerOutput) IsPublicSector() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceServiceToCustomer) bool { return v.IsPublicSector }).(pulumi.BoolOutput)
+func (o GetSubscribedServicesSubscribedServiceServiceToCustomerOutput) IsPublicSector() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceServiceToCustomer) *bool { return v.IsPublicSector }).(pulumi.BoolPtrOutput)
 }
 
 // Commercial name also called customer name.
-func (o GetSubscribedServicesSubscribedServiceServiceToCustomerOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceServiceToCustomer) string { return v.Name }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceServiceToCustomerOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceServiceToCustomer) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Phonetic name.
-func (o GetSubscribedServicesSubscribedServiceServiceToCustomerOutput) NamePhonetic() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceServiceToCustomer) string { return v.NamePhonetic }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceServiceToCustomerOutput) NamePhonetic() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceServiceToCustomer) *string { return v.NamePhonetic }).(pulumi.StringPtrOutput)
 }
 
 // TCA customer account number.
-func (o GetSubscribedServicesSubscribedServiceServiceToCustomerOutput) TcaCustAccountNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceServiceToCustomer) string { return v.TcaCustAccountNumber }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceServiceToCustomerOutput) TcaCustAccountNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceServiceToCustomer) *string { return v.TcaCustAccountNumber }).(pulumi.StringPtrOutput)
 }
 
 // TCA customer account ID.
-func (o GetSubscribedServicesSubscribedServiceServiceToCustomerOutput) TcaCustomerAccountId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceServiceToCustomer) string { return v.TcaCustomerAccountId }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceServiceToCustomerOutput) TcaCustomerAccountId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceServiceToCustomer) *string { return v.TcaCustomerAccountId }).(pulumi.StringPtrOutput)
 }
 
 // TCA party ID.
-func (o GetSubscribedServicesSubscribedServiceServiceToCustomerOutput) TcaPartyId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceServiceToCustomer) string { return v.TcaPartyId }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceServiceToCustomerOutput) TcaPartyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceServiceToCustomer) *string { return v.TcaPartyId }).(pulumi.StringPtrOutput)
 }
 
 // TCA party number.
-func (o GetSubscribedServicesSubscribedServiceServiceToCustomerOutput) TcaPartyNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceServiceToCustomer) string { return v.TcaPartyNumber }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceServiceToCustomerOutput) TcaPartyNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceServiceToCustomer) *string { return v.TcaPartyNumber }).(pulumi.StringPtrOutput)
 }
 
 type GetSubscribedServicesSubscribedServiceServiceToCustomerArrayOutput struct{ *pulumi.OutputState }
@@ -16712,12 +14585,6 @@ func (o GetSubscribedServicesSubscribedServiceServiceToCustomerArrayOutput) ToGe
 	return o
 }
 
-func (o GetSubscribedServicesSubscribedServiceServiceToCustomerArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServicesSubscribedServiceServiceToCustomer] {
-	return pulumix.Output[[]GetSubscribedServicesSubscribedServiceServiceToCustomer]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscribedServicesSubscribedServiceServiceToCustomerArrayOutput) Index(i pulumi.IntInput) GetSubscribedServicesSubscribedServiceServiceToCustomerOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscribedServicesSubscribedServiceServiceToCustomer {
 		return vs[0].([]GetSubscribedServicesSubscribedServiceServiceToCustomer)[vs[1].(int)]
@@ -16726,21 +14593,21 @@ func (o GetSubscribedServicesSubscribedServiceServiceToCustomerArrayOutput) Inde
 
 type GetSubscribedServicesSubscribedServiceSoldToContact struct {
 	// Email.
-	Email string `pulumi:"email"`
+	Email *string `pulumi:"email"`
 	// First name.
-	FirstName string `pulumi:"firstName"`
+	FirstName *string `pulumi:"firstName"`
 	// Last name.
-	LastName string `pulumi:"lastName"`
+	LastName *string `pulumi:"lastName"`
 	// Commercial name also called customer name.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// TCA contact ID.
-	TcaContactId string `pulumi:"tcaContactId"`
+	TcaContactId *string `pulumi:"tcaContactId"`
 	// TCA customer account site ID.
-	TcaCustAccntSiteId string `pulumi:"tcaCustAccntSiteId"`
+	TcaCustAccntSiteId *string `pulumi:"tcaCustAccntSiteId"`
 	// TCA party ID.
-	TcaPartyId string `pulumi:"tcaPartyId"`
+	TcaPartyId *string `pulumi:"tcaPartyId"`
 	// Username.
-	Username string `pulumi:"username"`
+	Username *string `pulumi:"username"`
 }
 
 // GetSubscribedServicesSubscribedServiceSoldToContactInput is an input type that accepts GetSubscribedServicesSubscribedServiceSoldToContactArgs and GetSubscribedServicesSubscribedServiceSoldToContactOutput values.
@@ -16756,21 +14623,21 @@ type GetSubscribedServicesSubscribedServiceSoldToContactInput interface {
 
 type GetSubscribedServicesSubscribedServiceSoldToContactArgs struct {
 	// Email.
-	Email pulumi.StringInput `pulumi:"email"`
+	Email pulumi.StringPtrInput `pulumi:"email"`
 	// First name.
-	FirstName pulumi.StringInput `pulumi:"firstName"`
+	FirstName pulumi.StringPtrInput `pulumi:"firstName"`
 	// Last name.
-	LastName pulumi.StringInput `pulumi:"lastName"`
+	LastName pulumi.StringPtrInput `pulumi:"lastName"`
 	// Commercial name also called customer name.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// TCA contact ID.
-	TcaContactId pulumi.StringInput `pulumi:"tcaContactId"`
+	TcaContactId pulumi.StringPtrInput `pulumi:"tcaContactId"`
 	// TCA customer account site ID.
-	TcaCustAccntSiteId pulumi.StringInput `pulumi:"tcaCustAccntSiteId"`
+	TcaCustAccntSiteId pulumi.StringPtrInput `pulumi:"tcaCustAccntSiteId"`
 	// TCA party ID.
-	TcaPartyId pulumi.StringInput `pulumi:"tcaPartyId"`
+	TcaPartyId pulumi.StringPtrInput `pulumi:"tcaPartyId"`
 	// Username.
-	Username pulumi.StringInput `pulumi:"username"`
+	Username pulumi.StringPtrInput `pulumi:"username"`
 }
 
 func (GetSubscribedServicesSubscribedServiceSoldToContactArgs) ElementType() reflect.Type {
@@ -16783,12 +14650,6 @@ func (i GetSubscribedServicesSubscribedServiceSoldToContactArgs) ToGetSubscribed
 
 func (i GetSubscribedServicesSubscribedServiceSoldToContactArgs) ToGetSubscribedServicesSubscribedServiceSoldToContactOutputWithContext(ctx context.Context) GetSubscribedServicesSubscribedServiceSoldToContactOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServicesSubscribedServiceSoldToContactOutput)
-}
-
-func (i GetSubscribedServicesSubscribedServiceSoldToContactArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServicesSubscribedServiceSoldToContact] {
-	return pulumix.Output[GetSubscribedServicesSubscribedServiceSoldToContact]{
-		OutputState: i.ToGetSubscribedServicesSubscribedServiceSoldToContactOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscribedServicesSubscribedServiceSoldToContactArrayInput is an input type that accepts GetSubscribedServicesSubscribedServiceSoldToContactArray and GetSubscribedServicesSubscribedServiceSoldToContactArrayOutput values.
@@ -16816,12 +14677,6 @@ func (i GetSubscribedServicesSubscribedServiceSoldToContactArray) ToGetSubscribe
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServicesSubscribedServiceSoldToContactArrayOutput)
 }
 
-func (i GetSubscribedServicesSubscribedServiceSoldToContactArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServicesSubscribedServiceSoldToContact] {
-	return pulumix.Output[[]GetSubscribedServicesSubscribedServiceSoldToContact]{
-		OutputState: i.ToGetSubscribedServicesSubscribedServiceSoldToContactArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscribedServicesSubscribedServiceSoldToContactOutput struct{ *pulumi.OutputState }
 
 func (GetSubscribedServicesSubscribedServiceSoldToContactOutput) ElementType() reflect.Type {
@@ -16836,50 +14691,44 @@ func (o GetSubscribedServicesSubscribedServiceSoldToContactOutput) ToGetSubscrib
 	return o
 }
 
-func (o GetSubscribedServicesSubscribedServiceSoldToContactOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServicesSubscribedServiceSoldToContact] {
-	return pulumix.Output[GetSubscribedServicesSubscribedServiceSoldToContact]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Email.
-func (o GetSubscribedServicesSubscribedServiceSoldToContactOutput) Email() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceSoldToContact) string { return v.Email }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceSoldToContactOutput) Email() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceSoldToContact) *string { return v.Email }).(pulumi.StringPtrOutput)
 }
 
 // First name.
-func (o GetSubscribedServicesSubscribedServiceSoldToContactOutput) FirstName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceSoldToContact) string { return v.FirstName }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceSoldToContactOutput) FirstName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceSoldToContact) *string { return v.FirstName }).(pulumi.StringPtrOutput)
 }
 
 // Last name.
-func (o GetSubscribedServicesSubscribedServiceSoldToContactOutput) LastName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceSoldToContact) string { return v.LastName }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceSoldToContactOutput) LastName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceSoldToContact) *string { return v.LastName }).(pulumi.StringPtrOutput)
 }
 
 // Commercial name also called customer name.
-func (o GetSubscribedServicesSubscribedServiceSoldToContactOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceSoldToContact) string { return v.Name }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceSoldToContactOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceSoldToContact) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // TCA contact ID.
-func (o GetSubscribedServicesSubscribedServiceSoldToContactOutput) TcaContactId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceSoldToContact) string { return v.TcaContactId }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceSoldToContactOutput) TcaContactId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceSoldToContact) *string { return v.TcaContactId }).(pulumi.StringPtrOutput)
 }
 
 // TCA customer account site ID.
-func (o GetSubscribedServicesSubscribedServiceSoldToContactOutput) TcaCustAccntSiteId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceSoldToContact) string { return v.TcaCustAccntSiteId }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceSoldToContactOutput) TcaCustAccntSiteId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceSoldToContact) *string { return v.TcaCustAccntSiteId }).(pulumi.StringPtrOutput)
 }
 
 // TCA party ID.
-func (o GetSubscribedServicesSubscribedServiceSoldToContactOutput) TcaPartyId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceSoldToContact) string { return v.TcaPartyId }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceSoldToContactOutput) TcaPartyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceSoldToContact) *string { return v.TcaPartyId }).(pulumi.StringPtrOutput)
 }
 
 // Username.
-func (o GetSubscribedServicesSubscribedServiceSoldToContactOutput) Username() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceSoldToContact) string { return v.Username }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceSoldToContactOutput) Username() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceSoldToContact) *string { return v.Username }).(pulumi.StringPtrOutput)
 }
 
 type GetSubscribedServicesSubscribedServiceSoldToContactArrayOutput struct{ *pulumi.OutputState }
@@ -16896,12 +14745,6 @@ func (o GetSubscribedServicesSubscribedServiceSoldToContactArrayOutput) ToGetSub
 	return o
 }
 
-func (o GetSubscribedServicesSubscribedServiceSoldToContactArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServicesSubscribedServiceSoldToContact] {
-	return pulumix.Output[[]GetSubscribedServicesSubscribedServiceSoldToContact]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscribedServicesSubscribedServiceSoldToContactArrayOutput) Index(i pulumi.IntInput) GetSubscribedServicesSubscribedServiceSoldToContactOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscribedServicesSubscribedServiceSoldToContact {
 		return vs[0].([]GetSubscribedServicesSubscribedServiceSoldToContact)[vs[1].(int)]
@@ -16910,23 +14753,23 @@ func (o GetSubscribedServicesSubscribedServiceSoldToContactArrayOutput) Index(i 
 
 type GetSubscribedServicesSubscribedServiceSoldToCustomer struct {
 	// Customer chain type.
-	CustomerChainType string `pulumi:"customerChainType"`
+	CustomerChainType *string `pulumi:"customerChainType"`
 	// The business partner is chain customer or not.
-	IsChainCustomer bool `pulumi:"isChainCustomer"`
+	IsChainCustomer *bool `pulumi:"isChainCustomer"`
 	// The business partner is part of the public sector or not.
-	IsPublicSector bool `pulumi:"isPublicSector"`
+	IsPublicSector *bool `pulumi:"isPublicSector"`
 	// Commercial name also called customer name.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Phonetic name.
-	NamePhonetic string `pulumi:"namePhonetic"`
+	NamePhonetic *string `pulumi:"namePhonetic"`
 	// TCA customer account number.
-	TcaCustAccountNumber string `pulumi:"tcaCustAccountNumber"`
+	TcaCustAccountNumber *string `pulumi:"tcaCustAccountNumber"`
 	// TCA customer account ID.
-	TcaCustomerAccountId string `pulumi:"tcaCustomerAccountId"`
+	TcaCustomerAccountId *string `pulumi:"tcaCustomerAccountId"`
 	// TCA party ID.
-	TcaPartyId string `pulumi:"tcaPartyId"`
+	TcaPartyId *string `pulumi:"tcaPartyId"`
 	// TCA party number.
-	TcaPartyNumber string `pulumi:"tcaPartyNumber"`
+	TcaPartyNumber *string `pulumi:"tcaPartyNumber"`
 }
 
 // GetSubscribedServicesSubscribedServiceSoldToCustomerInput is an input type that accepts GetSubscribedServicesSubscribedServiceSoldToCustomerArgs and GetSubscribedServicesSubscribedServiceSoldToCustomerOutput values.
@@ -16942,23 +14785,23 @@ type GetSubscribedServicesSubscribedServiceSoldToCustomerInput interface {
 
 type GetSubscribedServicesSubscribedServiceSoldToCustomerArgs struct {
 	// Customer chain type.
-	CustomerChainType pulumi.StringInput `pulumi:"customerChainType"`
+	CustomerChainType pulumi.StringPtrInput `pulumi:"customerChainType"`
 	// The business partner is chain customer or not.
-	IsChainCustomer pulumi.BoolInput `pulumi:"isChainCustomer"`
+	IsChainCustomer pulumi.BoolPtrInput `pulumi:"isChainCustomer"`
 	// The business partner is part of the public sector or not.
-	IsPublicSector pulumi.BoolInput `pulumi:"isPublicSector"`
+	IsPublicSector pulumi.BoolPtrInput `pulumi:"isPublicSector"`
 	// Commercial name also called customer name.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Phonetic name.
-	NamePhonetic pulumi.StringInput `pulumi:"namePhonetic"`
+	NamePhonetic pulumi.StringPtrInput `pulumi:"namePhonetic"`
 	// TCA customer account number.
-	TcaCustAccountNumber pulumi.StringInput `pulumi:"tcaCustAccountNumber"`
+	TcaCustAccountNumber pulumi.StringPtrInput `pulumi:"tcaCustAccountNumber"`
 	// TCA customer account ID.
-	TcaCustomerAccountId pulumi.StringInput `pulumi:"tcaCustomerAccountId"`
+	TcaCustomerAccountId pulumi.StringPtrInput `pulumi:"tcaCustomerAccountId"`
 	// TCA party ID.
-	TcaPartyId pulumi.StringInput `pulumi:"tcaPartyId"`
+	TcaPartyId pulumi.StringPtrInput `pulumi:"tcaPartyId"`
 	// TCA party number.
-	TcaPartyNumber pulumi.StringInput `pulumi:"tcaPartyNumber"`
+	TcaPartyNumber pulumi.StringPtrInput `pulumi:"tcaPartyNumber"`
 }
 
 func (GetSubscribedServicesSubscribedServiceSoldToCustomerArgs) ElementType() reflect.Type {
@@ -16971,12 +14814,6 @@ func (i GetSubscribedServicesSubscribedServiceSoldToCustomerArgs) ToGetSubscribe
 
 func (i GetSubscribedServicesSubscribedServiceSoldToCustomerArgs) ToGetSubscribedServicesSubscribedServiceSoldToCustomerOutputWithContext(ctx context.Context) GetSubscribedServicesSubscribedServiceSoldToCustomerOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServicesSubscribedServiceSoldToCustomerOutput)
-}
-
-func (i GetSubscribedServicesSubscribedServiceSoldToCustomerArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServicesSubscribedServiceSoldToCustomer] {
-	return pulumix.Output[GetSubscribedServicesSubscribedServiceSoldToCustomer]{
-		OutputState: i.ToGetSubscribedServicesSubscribedServiceSoldToCustomerOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscribedServicesSubscribedServiceSoldToCustomerArrayInput is an input type that accepts GetSubscribedServicesSubscribedServiceSoldToCustomerArray and GetSubscribedServicesSubscribedServiceSoldToCustomerArrayOutput values.
@@ -17004,12 +14841,6 @@ func (i GetSubscribedServicesSubscribedServiceSoldToCustomerArray) ToGetSubscrib
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscribedServicesSubscribedServiceSoldToCustomerArrayOutput)
 }
 
-func (i GetSubscribedServicesSubscribedServiceSoldToCustomerArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServicesSubscribedServiceSoldToCustomer] {
-	return pulumix.Output[[]GetSubscribedServicesSubscribedServiceSoldToCustomer]{
-		OutputState: i.ToGetSubscribedServicesSubscribedServiceSoldToCustomerArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscribedServicesSubscribedServiceSoldToCustomerOutput struct{ *pulumi.OutputState }
 
 func (GetSubscribedServicesSubscribedServiceSoldToCustomerOutput) ElementType() reflect.Type {
@@ -17024,55 +14855,49 @@ func (o GetSubscribedServicesSubscribedServiceSoldToCustomerOutput) ToGetSubscri
 	return o
 }
 
-func (o GetSubscribedServicesSubscribedServiceSoldToCustomerOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscribedServicesSubscribedServiceSoldToCustomer] {
-	return pulumix.Output[GetSubscribedServicesSubscribedServiceSoldToCustomer]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Customer chain type.
-func (o GetSubscribedServicesSubscribedServiceSoldToCustomerOutput) CustomerChainType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceSoldToCustomer) string { return v.CustomerChainType }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceSoldToCustomerOutput) CustomerChainType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceSoldToCustomer) *string { return v.CustomerChainType }).(pulumi.StringPtrOutput)
 }
 
 // The business partner is chain customer or not.
-func (o GetSubscribedServicesSubscribedServiceSoldToCustomerOutput) IsChainCustomer() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceSoldToCustomer) bool { return v.IsChainCustomer }).(pulumi.BoolOutput)
+func (o GetSubscribedServicesSubscribedServiceSoldToCustomerOutput) IsChainCustomer() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceSoldToCustomer) *bool { return v.IsChainCustomer }).(pulumi.BoolPtrOutput)
 }
 
 // The business partner is part of the public sector or not.
-func (o GetSubscribedServicesSubscribedServiceSoldToCustomerOutput) IsPublicSector() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceSoldToCustomer) bool { return v.IsPublicSector }).(pulumi.BoolOutput)
+func (o GetSubscribedServicesSubscribedServiceSoldToCustomerOutput) IsPublicSector() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceSoldToCustomer) *bool { return v.IsPublicSector }).(pulumi.BoolPtrOutput)
 }
 
 // Commercial name also called customer name.
-func (o GetSubscribedServicesSubscribedServiceSoldToCustomerOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceSoldToCustomer) string { return v.Name }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceSoldToCustomerOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceSoldToCustomer) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Phonetic name.
-func (o GetSubscribedServicesSubscribedServiceSoldToCustomerOutput) NamePhonetic() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceSoldToCustomer) string { return v.NamePhonetic }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceSoldToCustomerOutput) NamePhonetic() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceSoldToCustomer) *string { return v.NamePhonetic }).(pulumi.StringPtrOutput)
 }
 
 // TCA customer account number.
-func (o GetSubscribedServicesSubscribedServiceSoldToCustomerOutput) TcaCustAccountNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceSoldToCustomer) string { return v.TcaCustAccountNumber }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceSoldToCustomerOutput) TcaCustAccountNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceSoldToCustomer) *string { return v.TcaCustAccountNumber }).(pulumi.StringPtrOutput)
 }
 
 // TCA customer account ID.
-func (o GetSubscribedServicesSubscribedServiceSoldToCustomerOutput) TcaCustomerAccountId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceSoldToCustomer) string { return v.TcaCustomerAccountId }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceSoldToCustomerOutput) TcaCustomerAccountId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceSoldToCustomer) *string { return v.TcaCustomerAccountId }).(pulumi.StringPtrOutput)
 }
 
 // TCA party ID.
-func (o GetSubscribedServicesSubscribedServiceSoldToCustomerOutput) TcaPartyId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceSoldToCustomer) string { return v.TcaPartyId }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceSoldToCustomerOutput) TcaPartyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceSoldToCustomer) *string { return v.TcaPartyId }).(pulumi.StringPtrOutput)
 }
 
 // TCA party number.
-func (o GetSubscribedServicesSubscribedServiceSoldToCustomerOutput) TcaPartyNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceSoldToCustomer) string { return v.TcaPartyNumber }).(pulumi.StringOutput)
+func (o GetSubscribedServicesSubscribedServiceSoldToCustomerOutput) TcaPartyNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscribedServicesSubscribedServiceSoldToCustomer) *string { return v.TcaPartyNumber }).(pulumi.StringPtrOutput)
 }
 
 type GetSubscribedServicesSubscribedServiceSoldToCustomerArrayOutput struct{ *pulumi.OutputState }
@@ -17087,12 +14912,6 @@ func (o GetSubscribedServicesSubscribedServiceSoldToCustomerArrayOutput) ToGetSu
 
 func (o GetSubscribedServicesSubscribedServiceSoldToCustomerArrayOutput) ToGetSubscribedServicesSubscribedServiceSoldToCustomerArrayOutputWithContext(ctx context.Context) GetSubscribedServicesSubscribedServiceSoldToCustomerArrayOutput {
 	return o
-}
-
-func (o GetSubscribedServicesSubscribedServiceSoldToCustomerArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscribedServicesSubscribedServiceSoldToCustomer] {
-	return pulumix.Output[[]GetSubscribedServicesSubscribedServiceSoldToCustomer]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSubscribedServicesSubscribedServiceSoldToCustomerArrayOutput) Index(i pulumi.IntInput) GetSubscribedServicesSubscribedServiceSoldToCustomerOutput {
@@ -17138,12 +14957,6 @@ func (i GetSubscriptionsFilterArgs) ToGetSubscriptionsFilterOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsFilterOutput)
 }
 
-func (i GetSubscriptionsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsFilter] {
-	return pulumix.Output[GetSubscriptionsFilter]{
-		OutputState: i.ToGetSubscriptionsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetSubscriptionsFilterArrayInput is an input type that accepts GetSubscriptionsFilterArray and GetSubscriptionsFilterArrayOutput values.
 // You can construct a concrete instance of `GetSubscriptionsFilterArrayInput` via:
 //
@@ -17169,12 +14982,6 @@ func (i GetSubscriptionsFilterArray) ToGetSubscriptionsFilterArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsFilterArrayOutput)
 }
 
-func (i GetSubscriptionsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsFilter] {
-	return pulumix.Output[[]GetSubscriptionsFilter]{
-		OutputState: i.ToGetSubscriptionsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscriptionsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetSubscriptionsFilterOutput) ElementType() reflect.Type {
@@ -17187,12 +14994,6 @@ func (o GetSubscriptionsFilterOutput) ToGetSubscriptionsFilterOutput() GetSubscr
 
 func (o GetSubscriptionsFilterOutput) ToGetSubscriptionsFilterOutputWithContext(ctx context.Context) GetSubscriptionsFilterOutput {
 	return o
-}
-
-func (o GetSubscriptionsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsFilter] {
-	return pulumix.Output[GetSubscriptionsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Product name
@@ -17222,12 +15023,6 @@ func (o GetSubscriptionsFilterArrayOutput) ToGetSubscriptionsFilterArrayOutputWi
 	return o
 }
 
-func (o GetSubscriptionsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsFilter] {
-	return pulumix.Output[[]GetSubscriptionsFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscriptionsFilterArrayOutput) Index(i pulumi.IntInput) GetSubscriptionsFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscriptionsFilter {
 		return vs[0].([]GetSubscriptionsFilter)[vs[1].(int)]
@@ -17238,19 +15033,19 @@ type GetSubscriptionsSubscription struct {
 	// Currency details
 	Currencies []GetSubscriptionsSubscriptionCurrency `pulumi:"currencies"`
 	// Hold reason of the plan
-	HoldReason string `pulumi:"holdReason"`
+	HoldReason *string `pulumi:"holdReason"`
 	// Customer friendly service name provided by PRG
-	ServiceName string `pulumi:"serviceName"`
+	ServiceName *string `pulumi:"serviceName"`
 	// Subscribed service status
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 	// List of Subscribed Services of the plan
 	SubscribedServices []GetSubscriptionsSubscriptionSubscribedService `pulumi:"subscribedServices"`
 	// Represents the date when the last service of the subscription ends
-	TimeEnd string `pulumi:"timeEnd"`
+	TimeEnd *string `pulumi:"timeEnd"`
 	// Represents the date of the hold release
-	TimeHoldReleaseEta string `pulumi:"timeHoldReleaseEta"`
+	TimeHoldReleaseEta *string `pulumi:"timeHoldReleaseEta"`
 	// Represents the date when the first service of the subscription was activated
-	TimeStart string `pulumi:"timeStart"`
+	TimeStart *string `pulumi:"timeStart"`
 }
 
 // GetSubscriptionsSubscriptionInput is an input type that accepts GetSubscriptionsSubscriptionArgs and GetSubscriptionsSubscriptionOutput values.
@@ -17268,19 +15063,19 @@ type GetSubscriptionsSubscriptionArgs struct {
 	// Currency details
 	Currencies GetSubscriptionsSubscriptionCurrencyArrayInput `pulumi:"currencies"`
 	// Hold reason of the plan
-	HoldReason pulumi.StringInput `pulumi:"holdReason"`
+	HoldReason pulumi.StringPtrInput `pulumi:"holdReason"`
 	// Customer friendly service name provided by PRG
-	ServiceName pulumi.StringInput `pulumi:"serviceName"`
+	ServiceName pulumi.StringPtrInput `pulumi:"serviceName"`
 	// Subscribed service status
-	Status pulumi.StringInput `pulumi:"status"`
+	Status pulumi.StringPtrInput `pulumi:"status"`
 	// List of Subscribed Services of the plan
 	SubscribedServices GetSubscriptionsSubscriptionSubscribedServiceArrayInput `pulumi:"subscribedServices"`
 	// Represents the date when the last service of the subscription ends
-	TimeEnd pulumi.StringInput `pulumi:"timeEnd"`
+	TimeEnd pulumi.StringPtrInput `pulumi:"timeEnd"`
 	// Represents the date of the hold release
-	TimeHoldReleaseEta pulumi.StringInput `pulumi:"timeHoldReleaseEta"`
+	TimeHoldReleaseEta pulumi.StringPtrInput `pulumi:"timeHoldReleaseEta"`
 	// Represents the date when the first service of the subscription was activated
-	TimeStart pulumi.StringInput `pulumi:"timeStart"`
+	TimeStart pulumi.StringPtrInput `pulumi:"timeStart"`
 }
 
 func (GetSubscriptionsSubscriptionArgs) ElementType() reflect.Type {
@@ -17293,12 +15088,6 @@ func (i GetSubscriptionsSubscriptionArgs) ToGetSubscriptionsSubscriptionOutput()
 
 func (i GetSubscriptionsSubscriptionArgs) ToGetSubscriptionsSubscriptionOutputWithContext(ctx context.Context) GetSubscriptionsSubscriptionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsSubscriptionOutput)
-}
-
-func (i GetSubscriptionsSubscriptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsSubscription] {
-	return pulumix.Output[GetSubscriptionsSubscription]{
-		OutputState: i.ToGetSubscriptionsSubscriptionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscriptionsSubscriptionArrayInput is an input type that accepts GetSubscriptionsSubscriptionArray and GetSubscriptionsSubscriptionArrayOutput values.
@@ -17326,12 +15115,6 @@ func (i GetSubscriptionsSubscriptionArray) ToGetSubscriptionsSubscriptionArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsSubscriptionArrayOutput)
 }
 
-func (i GetSubscriptionsSubscriptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsSubscription] {
-	return pulumix.Output[[]GetSubscriptionsSubscription]{
-		OutputState: i.ToGetSubscriptionsSubscriptionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscriptionsSubscriptionOutput struct{ *pulumi.OutputState }
 
 func (GetSubscriptionsSubscriptionOutput) ElementType() reflect.Type {
@@ -17346,30 +15129,24 @@ func (o GetSubscriptionsSubscriptionOutput) ToGetSubscriptionsSubscriptionOutput
 	return o
 }
 
-func (o GetSubscriptionsSubscriptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsSubscription] {
-	return pulumix.Output[GetSubscriptionsSubscription]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Currency details
 func (o GetSubscriptionsSubscriptionOutput) Currencies() GetSubscriptionsSubscriptionCurrencyArrayOutput {
 	return o.ApplyT(func(v GetSubscriptionsSubscription) []GetSubscriptionsSubscriptionCurrency { return v.Currencies }).(GetSubscriptionsSubscriptionCurrencyArrayOutput)
 }
 
 // Hold reason of the plan
-func (o GetSubscriptionsSubscriptionOutput) HoldReason() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscription) string { return v.HoldReason }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionOutput) HoldReason() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscription) *string { return v.HoldReason }).(pulumi.StringPtrOutput)
 }
 
 // Customer friendly service name provided by PRG
-func (o GetSubscriptionsSubscriptionOutput) ServiceName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscription) string { return v.ServiceName }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionOutput) ServiceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscription) *string { return v.ServiceName }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service status
-func (o GetSubscriptionsSubscriptionOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscription) string { return v.Status }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscription) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // List of Subscribed Services of the plan
@@ -17380,18 +15157,18 @@ func (o GetSubscriptionsSubscriptionOutput) SubscribedServices() GetSubscription
 }
 
 // Represents the date when the last service of the subscription ends
-func (o GetSubscriptionsSubscriptionOutput) TimeEnd() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscription) string { return v.TimeEnd }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionOutput) TimeEnd() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscription) *string { return v.TimeEnd }).(pulumi.StringPtrOutput)
 }
 
 // Represents the date of the hold release
-func (o GetSubscriptionsSubscriptionOutput) TimeHoldReleaseEta() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscription) string { return v.TimeHoldReleaseEta }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionOutput) TimeHoldReleaseEta() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscription) *string { return v.TimeHoldReleaseEta }).(pulumi.StringPtrOutput)
 }
 
 // Represents the date when the first service of the subscription was activated
-func (o GetSubscriptionsSubscriptionOutput) TimeStart() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscription) string { return v.TimeStart }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionOutput) TimeStart() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscription) *string { return v.TimeStart }).(pulumi.StringPtrOutput)
 }
 
 type GetSubscriptionsSubscriptionArrayOutput struct{ *pulumi.OutputState }
@@ -17408,12 +15185,6 @@ func (o GetSubscriptionsSubscriptionArrayOutput) ToGetSubscriptionsSubscriptionA
 	return o
 }
 
-func (o GetSubscriptionsSubscriptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsSubscription] {
-	return pulumix.Output[[]GetSubscriptionsSubscription]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscriptionsSubscriptionArrayOutput) Index(i pulumi.IntInput) GetSubscriptionsSubscriptionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscriptionsSubscription {
 		return vs[0].([]GetSubscriptionsSubscription)[vs[1].(int)]
@@ -17422,11 +15193,11 @@ func (o GetSubscriptionsSubscriptionArrayOutput) Index(i pulumi.IntInput) GetSub
 
 type GetSubscriptionsSubscriptionCurrency struct {
 	// Currency Code
-	IsoCode string `pulumi:"isoCode"`
+	IsoCode *string `pulumi:"isoCode"`
 	// Product name
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Standard Precision of the Currency
-	StdPrecision string `pulumi:"stdPrecision"`
+	StdPrecision *string `pulumi:"stdPrecision"`
 }
 
 // GetSubscriptionsSubscriptionCurrencyInput is an input type that accepts GetSubscriptionsSubscriptionCurrencyArgs and GetSubscriptionsSubscriptionCurrencyOutput values.
@@ -17442,11 +15213,11 @@ type GetSubscriptionsSubscriptionCurrencyInput interface {
 
 type GetSubscriptionsSubscriptionCurrencyArgs struct {
 	// Currency Code
-	IsoCode pulumi.StringInput `pulumi:"isoCode"`
+	IsoCode pulumi.StringPtrInput `pulumi:"isoCode"`
 	// Product name
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Standard Precision of the Currency
-	StdPrecision pulumi.StringInput `pulumi:"stdPrecision"`
+	StdPrecision pulumi.StringPtrInput `pulumi:"stdPrecision"`
 }
 
 func (GetSubscriptionsSubscriptionCurrencyArgs) ElementType() reflect.Type {
@@ -17459,12 +15230,6 @@ func (i GetSubscriptionsSubscriptionCurrencyArgs) ToGetSubscriptionsSubscription
 
 func (i GetSubscriptionsSubscriptionCurrencyArgs) ToGetSubscriptionsSubscriptionCurrencyOutputWithContext(ctx context.Context) GetSubscriptionsSubscriptionCurrencyOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsSubscriptionCurrencyOutput)
-}
-
-func (i GetSubscriptionsSubscriptionCurrencyArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsSubscriptionCurrency] {
-	return pulumix.Output[GetSubscriptionsSubscriptionCurrency]{
-		OutputState: i.ToGetSubscriptionsSubscriptionCurrencyOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscriptionsSubscriptionCurrencyArrayInput is an input type that accepts GetSubscriptionsSubscriptionCurrencyArray and GetSubscriptionsSubscriptionCurrencyArrayOutput values.
@@ -17492,12 +15257,6 @@ func (i GetSubscriptionsSubscriptionCurrencyArray) ToGetSubscriptionsSubscriptio
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsSubscriptionCurrencyArrayOutput)
 }
 
-func (i GetSubscriptionsSubscriptionCurrencyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsSubscriptionCurrency] {
-	return pulumix.Output[[]GetSubscriptionsSubscriptionCurrency]{
-		OutputState: i.ToGetSubscriptionsSubscriptionCurrencyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscriptionsSubscriptionCurrencyOutput struct{ *pulumi.OutputState }
 
 func (GetSubscriptionsSubscriptionCurrencyOutput) ElementType() reflect.Type {
@@ -17512,25 +15271,19 @@ func (o GetSubscriptionsSubscriptionCurrencyOutput) ToGetSubscriptionsSubscripti
 	return o
 }
 
-func (o GetSubscriptionsSubscriptionCurrencyOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsSubscriptionCurrency] {
-	return pulumix.Output[GetSubscriptionsSubscriptionCurrency]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Currency Code
-func (o GetSubscriptionsSubscriptionCurrencyOutput) IsoCode() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCurrency) string { return v.IsoCode }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCurrencyOutput) IsoCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCurrency) *string { return v.IsoCode }).(pulumi.StringPtrOutput)
 }
 
 // Product name
-func (o GetSubscriptionsSubscriptionCurrencyOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCurrency) string { return v.Name }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCurrencyOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCurrency) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Standard Precision of the Currency
-func (o GetSubscriptionsSubscriptionCurrencyOutput) StdPrecision() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionCurrency) string { return v.StdPrecision }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionCurrencyOutput) StdPrecision() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCurrency) *string { return v.StdPrecision }).(pulumi.StringPtrOutput)
 }
 
 type GetSubscriptionsSubscriptionCurrencyArrayOutput struct{ *pulumi.OutputState }
@@ -17547,12 +15300,6 @@ func (o GetSubscriptionsSubscriptionCurrencyArrayOutput) ToGetSubscriptionsSubsc
 	return o
 }
 
-func (o GetSubscriptionsSubscriptionCurrencyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsSubscriptionCurrency] {
-	return pulumix.Output[[]GetSubscriptionsSubscriptionCurrency]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscriptionsSubscriptionCurrencyArrayOutput) Index(i pulumi.IntInput) GetSubscriptionsSubscriptionCurrencyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscriptionsSubscriptionCurrency {
 		return vs[0].([]GetSubscriptionsSubscriptionCurrency)[vs[1].(int)]
@@ -17561,55 +15308,55 @@ func (o GetSubscriptionsSubscriptionCurrencyArrayOutput) Index(i pulumi.IntInput
 
 type GetSubscriptionsSubscriptionSubscribedService struct {
 	// Commitment available amount
-	AvailableAmount string `pulumi:"availableAmount"`
+	AvailableAmount *string `pulumi:"availableAmount"`
 	// Booking Opportunity Number of Subscribed Service
-	BookingOptyNumber string `pulumi:"bookingOptyNumber"`
+	BookingOptyNumber *string `pulumi:"bookingOptyNumber"`
 	// List of Commitment services of a line
 	CommitmentServices []GetSubscriptionsSubscriptionSubscribedServiceCommitmentService `pulumi:"commitmentServices"`
 	// Subscribed service CSI number
-	Csi string `pulumi:"csi"`
+	Csi *string `pulumi:"csi"`
 	// Subscribed service data center region
-	DataCenterRegion string `pulumi:"dataCenterRegion"`
+	DataCenterRegion *string `pulumi:"dataCenterRegion"`
 	// Funded Allocation line value example: 12000.00
-	FundedAllocationValue string `pulumi:"fundedAllocationValue"`
+	FundedAllocationValue *string `pulumi:"fundedAllocationValue"`
 	// SPM internal Subscribed Service ID
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Subscribed service intent to pay flag
-	IsIntentToPay bool `pulumi:"isIntentToPay"`
+	IsIntentToPay *bool `pulumi:"isIntentToPay"`
 	// Subscribed service net unit price
-	NetUnitPrice string `pulumi:"netUnitPrice"`
+	NetUnitPrice *string `pulumi:"netUnitPrice"`
 	// Subscribed service operation type
-	OperationType string `pulumi:"operationType"`
+	OperationType *string `pulumi:"operationType"`
 	// Sales Order Number associated to the subscribed service
-	OrderNumber string `pulumi:"orderNumber"`
+	OrderNumber *string `pulumi:"orderNumber"`
 	// Subscribed service Promotion Amount
-	OriginalPromoAmount string `pulumi:"originalPromoAmount"`
+	OriginalPromoAmount *string `pulumi:"originalPromoAmount"`
 	// This field contains the name of the partner to which the subscription belongs - depending on which the invoicing may differ
-	PartnerTransactionType string `pulumi:"partnerTransactionType"`
+	PartnerTransactionType *string `pulumi:"partnerTransactionType"`
 	// Subscribed service pricing model
-	PricingModel string `pulumi:"pricingModel"`
+	PricingModel *string `pulumi:"pricingModel"`
 	// Product description
 	Products []GetSubscriptionsSubscriptionSubscribedServiceProduct `pulumi:"products"`
 	// Subscribed service program type
-	ProgramType string `pulumi:"programType"`
+	ProgramType *string `pulumi:"programType"`
 	// Subscribed service promotion type
-	PromoType string `pulumi:"promoType"`
+	PromoType *string `pulumi:"promoType"`
 	// Subscribed service quantity
-	Quantity string `pulumi:"quantity"`
+	Quantity *string `pulumi:"quantity"`
 	// Subscribed service status
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 	// Term value in Months
-	TermValue string `pulumi:"termValue"`
+	TermValue *string `pulumi:"termValue"`
 	// Term value UOM
-	TermValueUom string `pulumi:"termValueUom"`
+	TermValueUom *string `pulumi:"termValueUom"`
 	// Represents the date when the last service of the subscription ends
-	TimeEnd string `pulumi:"timeEnd"`
+	TimeEnd *string `pulumi:"timeEnd"`
 	// Represents the date when the first service of the subscription was activated
-	TimeStart string `pulumi:"timeStart"`
+	TimeStart *string `pulumi:"timeStart"`
 	// Subscribed service total value
-	TotalValue string `pulumi:"totalValue"`
+	TotalValue *string `pulumi:"totalValue"`
 	// Subscribed service used amount
-	UsedAmount string `pulumi:"usedAmount"`
+	UsedAmount *string `pulumi:"usedAmount"`
 }
 
 // GetSubscriptionsSubscriptionSubscribedServiceInput is an input type that accepts GetSubscriptionsSubscriptionSubscribedServiceArgs and GetSubscriptionsSubscriptionSubscribedServiceOutput values.
@@ -17625,55 +15372,55 @@ type GetSubscriptionsSubscriptionSubscribedServiceInput interface {
 
 type GetSubscriptionsSubscriptionSubscribedServiceArgs struct {
 	// Commitment available amount
-	AvailableAmount pulumi.StringInput `pulumi:"availableAmount"`
+	AvailableAmount pulumi.StringPtrInput `pulumi:"availableAmount"`
 	// Booking Opportunity Number of Subscribed Service
-	BookingOptyNumber pulumi.StringInput `pulumi:"bookingOptyNumber"`
+	BookingOptyNumber pulumi.StringPtrInput `pulumi:"bookingOptyNumber"`
 	// List of Commitment services of a line
 	CommitmentServices GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceArrayInput `pulumi:"commitmentServices"`
 	// Subscribed service CSI number
-	Csi pulumi.StringInput `pulumi:"csi"`
+	Csi pulumi.StringPtrInput `pulumi:"csi"`
 	// Subscribed service data center region
-	DataCenterRegion pulumi.StringInput `pulumi:"dataCenterRegion"`
+	DataCenterRegion pulumi.StringPtrInput `pulumi:"dataCenterRegion"`
 	// Funded Allocation line value example: 12000.00
-	FundedAllocationValue pulumi.StringInput `pulumi:"fundedAllocationValue"`
+	FundedAllocationValue pulumi.StringPtrInput `pulumi:"fundedAllocationValue"`
 	// SPM internal Subscribed Service ID
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Subscribed service intent to pay flag
-	IsIntentToPay pulumi.BoolInput `pulumi:"isIntentToPay"`
+	IsIntentToPay pulumi.BoolPtrInput `pulumi:"isIntentToPay"`
 	// Subscribed service net unit price
-	NetUnitPrice pulumi.StringInput `pulumi:"netUnitPrice"`
+	NetUnitPrice pulumi.StringPtrInput `pulumi:"netUnitPrice"`
 	// Subscribed service operation type
-	OperationType pulumi.StringInput `pulumi:"operationType"`
+	OperationType pulumi.StringPtrInput `pulumi:"operationType"`
 	// Sales Order Number associated to the subscribed service
-	OrderNumber pulumi.StringInput `pulumi:"orderNumber"`
+	OrderNumber pulumi.StringPtrInput `pulumi:"orderNumber"`
 	// Subscribed service Promotion Amount
-	OriginalPromoAmount pulumi.StringInput `pulumi:"originalPromoAmount"`
+	OriginalPromoAmount pulumi.StringPtrInput `pulumi:"originalPromoAmount"`
 	// This field contains the name of the partner to which the subscription belongs - depending on which the invoicing may differ
-	PartnerTransactionType pulumi.StringInput `pulumi:"partnerTransactionType"`
+	PartnerTransactionType pulumi.StringPtrInput `pulumi:"partnerTransactionType"`
 	// Subscribed service pricing model
-	PricingModel pulumi.StringInput `pulumi:"pricingModel"`
+	PricingModel pulumi.StringPtrInput `pulumi:"pricingModel"`
 	// Product description
 	Products GetSubscriptionsSubscriptionSubscribedServiceProductArrayInput `pulumi:"products"`
 	// Subscribed service program type
-	ProgramType pulumi.StringInput `pulumi:"programType"`
+	ProgramType pulumi.StringPtrInput `pulumi:"programType"`
 	// Subscribed service promotion type
-	PromoType pulumi.StringInput `pulumi:"promoType"`
+	PromoType pulumi.StringPtrInput `pulumi:"promoType"`
 	// Subscribed service quantity
-	Quantity pulumi.StringInput `pulumi:"quantity"`
+	Quantity pulumi.StringPtrInput `pulumi:"quantity"`
 	// Subscribed service status
-	Status pulumi.StringInput `pulumi:"status"`
+	Status pulumi.StringPtrInput `pulumi:"status"`
 	// Term value in Months
-	TermValue pulumi.StringInput `pulumi:"termValue"`
+	TermValue pulumi.StringPtrInput `pulumi:"termValue"`
 	// Term value UOM
-	TermValueUom pulumi.StringInput `pulumi:"termValueUom"`
+	TermValueUom pulumi.StringPtrInput `pulumi:"termValueUom"`
 	// Represents the date when the last service of the subscription ends
-	TimeEnd pulumi.StringInput `pulumi:"timeEnd"`
+	TimeEnd pulumi.StringPtrInput `pulumi:"timeEnd"`
 	// Represents the date when the first service of the subscription was activated
-	TimeStart pulumi.StringInput `pulumi:"timeStart"`
+	TimeStart pulumi.StringPtrInput `pulumi:"timeStart"`
 	// Subscribed service total value
-	TotalValue pulumi.StringInput `pulumi:"totalValue"`
+	TotalValue pulumi.StringPtrInput `pulumi:"totalValue"`
 	// Subscribed service used amount
-	UsedAmount pulumi.StringInput `pulumi:"usedAmount"`
+	UsedAmount pulumi.StringPtrInput `pulumi:"usedAmount"`
 }
 
 func (GetSubscriptionsSubscriptionSubscribedServiceArgs) ElementType() reflect.Type {
@@ -17686,12 +15433,6 @@ func (i GetSubscriptionsSubscriptionSubscribedServiceArgs) ToGetSubscriptionsSub
 
 func (i GetSubscriptionsSubscriptionSubscribedServiceArgs) ToGetSubscriptionsSubscriptionSubscribedServiceOutputWithContext(ctx context.Context) GetSubscriptionsSubscriptionSubscribedServiceOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsSubscriptionSubscribedServiceOutput)
-}
-
-func (i GetSubscriptionsSubscriptionSubscribedServiceArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsSubscriptionSubscribedService] {
-	return pulumix.Output[GetSubscriptionsSubscriptionSubscribedService]{
-		OutputState: i.ToGetSubscriptionsSubscriptionSubscribedServiceOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscriptionsSubscriptionSubscribedServiceArrayInput is an input type that accepts GetSubscriptionsSubscriptionSubscribedServiceArray and GetSubscriptionsSubscriptionSubscribedServiceArrayOutput values.
@@ -17719,12 +15460,6 @@ func (i GetSubscriptionsSubscriptionSubscribedServiceArray) ToGetSubscriptionsSu
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsSubscriptionSubscribedServiceArrayOutput)
 }
 
-func (i GetSubscriptionsSubscriptionSubscribedServiceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsSubscriptionSubscribedService] {
-	return pulumix.Output[[]GetSubscriptionsSubscriptionSubscribedService]{
-		OutputState: i.ToGetSubscriptionsSubscriptionSubscribedServiceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscriptionsSubscriptionSubscribedServiceOutput struct{ *pulumi.OutputState }
 
 func (GetSubscriptionsSubscriptionSubscribedServiceOutput) ElementType() reflect.Type {
@@ -17739,20 +15474,14 @@ func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) ToGetSubscriptionsS
 	return o
 }
 
-func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsSubscriptionSubscribedService] {
-	return pulumix.Output[GetSubscriptionsSubscriptionSubscribedService]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Commitment available amount
-func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) AvailableAmount() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedService) string { return v.AvailableAmount }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) AvailableAmount() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedService) *string { return v.AvailableAmount }).(pulumi.StringPtrOutput)
 }
 
 // Booking Opportunity Number of Subscribed Service
-func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) BookingOptyNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedService) string { return v.BookingOptyNumber }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) BookingOptyNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedService) *string { return v.BookingOptyNumber }).(pulumi.StringPtrOutput)
 }
 
 // List of Commitment services of a line
@@ -17763,58 +15492,58 @@ func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) CommitmentServices(
 }
 
 // Subscribed service CSI number
-func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) Csi() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedService) string { return v.Csi }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) Csi() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedService) *string { return v.Csi }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service data center region
-func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) DataCenterRegion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedService) string { return v.DataCenterRegion }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) DataCenterRegion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedService) *string { return v.DataCenterRegion }).(pulumi.StringPtrOutput)
 }
 
 // Funded Allocation line value example: 12000.00
-func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) FundedAllocationValue() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedService) string { return v.FundedAllocationValue }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) FundedAllocationValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedService) *string { return v.FundedAllocationValue }).(pulumi.StringPtrOutput)
 }
 
 // SPM internal Subscribed Service ID
-func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedService) string { return v.Id }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedService) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service intent to pay flag
-func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) IsIntentToPay() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedService) bool { return v.IsIntentToPay }).(pulumi.BoolOutput)
+func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) IsIntentToPay() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedService) *bool { return v.IsIntentToPay }).(pulumi.BoolPtrOutput)
 }
 
 // Subscribed service net unit price
-func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) NetUnitPrice() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedService) string { return v.NetUnitPrice }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) NetUnitPrice() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedService) *string { return v.NetUnitPrice }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service operation type
-func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) OperationType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedService) string { return v.OperationType }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) OperationType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedService) *string { return v.OperationType }).(pulumi.StringPtrOutput)
 }
 
 // Sales Order Number associated to the subscribed service
-func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) OrderNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedService) string { return v.OrderNumber }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) OrderNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedService) *string { return v.OrderNumber }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service Promotion Amount
-func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) OriginalPromoAmount() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedService) string { return v.OriginalPromoAmount }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) OriginalPromoAmount() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedService) *string { return v.OriginalPromoAmount }).(pulumi.StringPtrOutput)
 }
 
 // This field contains the name of the partner to which the subscription belongs - depending on which the invoicing may differ
-func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) PartnerTransactionType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedService) string { return v.PartnerTransactionType }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) PartnerTransactionType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedService) *string { return v.PartnerTransactionType }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service pricing model
-func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) PricingModel() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedService) string { return v.PricingModel }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) PricingModel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedService) *string { return v.PricingModel }).(pulumi.StringPtrOutput)
 }
 
 // Product description
@@ -17825,53 +15554,53 @@ func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) Products() GetSubsc
 }
 
 // Subscribed service program type
-func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) ProgramType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedService) string { return v.ProgramType }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) ProgramType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedService) *string { return v.ProgramType }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service promotion type
-func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) PromoType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedService) string { return v.PromoType }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) PromoType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedService) *string { return v.PromoType }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service quantity
-func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) Quantity() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedService) string { return v.Quantity }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) Quantity() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedService) *string { return v.Quantity }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service status
-func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedService) string { return v.Status }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedService) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // Term value in Months
-func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) TermValue() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedService) string { return v.TermValue }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) TermValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedService) *string { return v.TermValue }).(pulumi.StringPtrOutput)
 }
 
 // Term value UOM
-func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) TermValueUom() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedService) string { return v.TermValueUom }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) TermValueUom() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedService) *string { return v.TermValueUom }).(pulumi.StringPtrOutput)
 }
 
 // Represents the date when the last service of the subscription ends
-func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) TimeEnd() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedService) string { return v.TimeEnd }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) TimeEnd() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedService) *string { return v.TimeEnd }).(pulumi.StringPtrOutput)
 }
 
 // Represents the date when the first service of the subscription was activated
-func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) TimeStart() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedService) string { return v.TimeStart }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) TimeStart() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedService) *string { return v.TimeStart }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service total value
-func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) TotalValue() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedService) string { return v.TotalValue }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) TotalValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedService) *string { return v.TotalValue }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service used amount
-func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) UsedAmount() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedService) string { return v.UsedAmount }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionSubscribedServiceOutput) UsedAmount() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedService) *string { return v.UsedAmount }).(pulumi.StringPtrOutput)
 }
 
 type GetSubscriptionsSubscriptionSubscribedServiceArrayOutput struct{ *pulumi.OutputState }
@@ -17888,12 +15617,6 @@ func (o GetSubscriptionsSubscriptionSubscribedServiceArrayOutput) ToGetSubscript
 	return o
 }
 
-func (o GetSubscriptionsSubscriptionSubscribedServiceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsSubscriptionSubscribedService] {
-	return pulumix.Output[[]GetSubscriptionsSubscriptionSubscribedService]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscriptionsSubscriptionSubscribedServiceArrayOutput) Index(i pulumi.IntInput) GetSubscriptionsSubscriptionSubscribedServiceOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscriptionsSubscriptionSubscribedService {
 		return vs[0].([]GetSubscriptionsSubscriptionSubscribedService)[vs[1].(int)]
@@ -17902,17 +15625,17 @@ func (o GetSubscriptionsSubscriptionSubscribedServiceArrayOutput) Index(i pulumi
 
 type GetSubscriptionsSubscriptionSubscribedServiceCommitmentService struct {
 	// Commitment available amount
-	AvailableAmount string `pulumi:"availableAmount"`
+	AvailableAmount *string `pulumi:"availableAmount"`
 	// Funded Allocation line value example: 12000.00
-	FundedAllocationValue string `pulumi:"fundedAllocationValue"`
+	FundedAllocationValue *string `pulumi:"fundedAllocationValue"`
 	// Commitment line net amount
-	LineNetAmount string `pulumi:"lineNetAmount"`
+	LineNetAmount *string `pulumi:"lineNetAmount"`
 	// Subscribed service quantity
-	Quantity string `pulumi:"quantity"`
+	Quantity *string `pulumi:"quantity"`
 	// Represents the date when the last service of the subscription ends
-	TimeEnd string `pulumi:"timeEnd"`
+	TimeEnd *string `pulumi:"timeEnd"`
 	// Represents the date when the first service of the subscription was activated
-	TimeStart string `pulumi:"timeStart"`
+	TimeStart *string `pulumi:"timeStart"`
 }
 
 // GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceInput is an input type that accepts GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceArgs and GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceOutput values.
@@ -17928,17 +15651,17 @@ type GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceInput interfa
 
 type GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceArgs struct {
 	// Commitment available amount
-	AvailableAmount pulumi.StringInput `pulumi:"availableAmount"`
+	AvailableAmount pulumi.StringPtrInput `pulumi:"availableAmount"`
 	// Funded Allocation line value example: 12000.00
-	FundedAllocationValue pulumi.StringInput `pulumi:"fundedAllocationValue"`
+	FundedAllocationValue pulumi.StringPtrInput `pulumi:"fundedAllocationValue"`
 	// Commitment line net amount
-	LineNetAmount pulumi.StringInput `pulumi:"lineNetAmount"`
+	LineNetAmount pulumi.StringPtrInput `pulumi:"lineNetAmount"`
 	// Subscribed service quantity
-	Quantity pulumi.StringInput `pulumi:"quantity"`
+	Quantity pulumi.StringPtrInput `pulumi:"quantity"`
 	// Represents the date when the last service of the subscription ends
-	TimeEnd pulumi.StringInput `pulumi:"timeEnd"`
+	TimeEnd pulumi.StringPtrInput `pulumi:"timeEnd"`
 	// Represents the date when the first service of the subscription was activated
-	TimeStart pulumi.StringInput `pulumi:"timeStart"`
+	TimeStart pulumi.StringPtrInput `pulumi:"timeStart"`
 }
 
 func (GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceArgs) ElementType() reflect.Type {
@@ -17951,12 +15674,6 @@ func (i GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceArgs) ToGe
 
 func (i GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceArgs) ToGetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceOutputWithContext(ctx context.Context) GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceOutput)
-}
-
-func (i GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsSubscriptionSubscribedServiceCommitmentService] {
-	return pulumix.Output[GetSubscriptionsSubscriptionSubscribedServiceCommitmentService]{
-		OutputState: i.ToGetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceArrayInput is an input type that accepts GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceArray and GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceArrayOutput values.
@@ -17984,12 +15701,6 @@ func (i GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceArray) ToG
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceArrayOutput)
 }
 
-func (i GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsSubscriptionSubscribedServiceCommitmentService] {
-	return pulumix.Output[[]GetSubscriptionsSubscriptionSubscribedServiceCommitmentService]{
-		OutputState: i.ToGetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceOutput struct{ *pulumi.OutputState }
 
 func (GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceOutput) ElementType() reflect.Type {
@@ -18004,44 +15715,38 @@ func (o GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceOutput) To
 	return o
 }
 
-func (o GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsSubscriptionSubscribedServiceCommitmentService] {
-	return pulumix.Output[GetSubscriptionsSubscriptionSubscribedServiceCommitmentService]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Commitment available amount
-func (o GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceOutput) AvailableAmount() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedServiceCommitmentService) string {
+func (o GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceOutput) AvailableAmount() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedServiceCommitmentService) *string {
 		return v.AvailableAmount
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Funded Allocation line value example: 12000.00
-func (o GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceOutput) FundedAllocationValue() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedServiceCommitmentService) string {
+func (o GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceOutput) FundedAllocationValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedServiceCommitmentService) *string {
 		return v.FundedAllocationValue
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Commitment line net amount
-func (o GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceOutput) LineNetAmount() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedServiceCommitmentService) string { return v.LineNetAmount }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceOutput) LineNetAmount() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedServiceCommitmentService) *string { return v.LineNetAmount }).(pulumi.StringPtrOutput)
 }
 
 // Subscribed service quantity
-func (o GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceOutput) Quantity() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedServiceCommitmentService) string { return v.Quantity }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceOutput) Quantity() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedServiceCommitmentService) *string { return v.Quantity }).(pulumi.StringPtrOutput)
 }
 
 // Represents the date when the last service of the subscription ends
-func (o GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceOutput) TimeEnd() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedServiceCommitmentService) string { return v.TimeEnd }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceOutput) TimeEnd() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedServiceCommitmentService) *string { return v.TimeEnd }).(pulumi.StringPtrOutput)
 }
 
 // Represents the date when the first service of the subscription was activated
-func (o GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceOutput) TimeStart() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedServiceCommitmentService) string { return v.TimeStart }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceOutput) TimeStart() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedServiceCommitmentService) *string { return v.TimeStart }).(pulumi.StringPtrOutput)
 }
 
 type GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceArrayOutput struct{ *pulumi.OutputState }
@@ -18058,12 +15763,6 @@ func (o GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceArrayOutpu
 	return o
 }
 
-func (o GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsSubscriptionSubscribedServiceCommitmentService] {
-	return pulumix.Output[[]GetSubscriptionsSubscriptionSubscribedServiceCommitmentService]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceArrayOutput) Index(i pulumi.IntInput) GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubscriptionsSubscriptionSubscribedServiceCommitmentService {
 		return vs[0].([]GetSubscriptionsSubscriptionSubscribedServiceCommitmentService)[vs[1].(int)]
@@ -18072,13 +15771,13 @@ func (o GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceArrayOutpu
 
 type GetSubscriptionsSubscriptionSubscribedServiceProduct struct {
 	// Product name
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Product part numner
-	PartNumber string `pulumi:"partNumber"`
+	PartNumber *string `pulumi:"partNumber"`
 	// Product provisioning group
-	ProvisioningGroup string `pulumi:"provisioningGroup"`
+	ProvisioningGroup *string `pulumi:"provisioningGroup"`
 	// Unit of measure
-	UnitOfMeasure string `pulumi:"unitOfMeasure"`
+	UnitOfMeasure *string `pulumi:"unitOfMeasure"`
 }
 
 // GetSubscriptionsSubscriptionSubscribedServiceProductInput is an input type that accepts GetSubscriptionsSubscriptionSubscribedServiceProductArgs and GetSubscriptionsSubscriptionSubscribedServiceProductOutput values.
@@ -18094,13 +15793,13 @@ type GetSubscriptionsSubscriptionSubscribedServiceProductInput interface {
 
 type GetSubscriptionsSubscriptionSubscribedServiceProductArgs struct {
 	// Product name
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Product part numner
-	PartNumber pulumi.StringInput `pulumi:"partNumber"`
+	PartNumber pulumi.StringPtrInput `pulumi:"partNumber"`
 	// Product provisioning group
-	ProvisioningGroup pulumi.StringInput `pulumi:"provisioningGroup"`
+	ProvisioningGroup pulumi.StringPtrInput `pulumi:"provisioningGroup"`
 	// Unit of measure
-	UnitOfMeasure pulumi.StringInput `pulumi:"unitOfMeasure"`
+	UnitOfMeasure pulumi.StringPtrInput `pulumi:"unitOfMeasure"`
 }
 
 func (GetSubscriptionsSubscriptionSubscribedServiceProductArgs) ElementType() reflect.Type {
@@ -18113,12 +15812,6 @@ func (i GetSubscriptionsSubscriptionSubscribedServiceProductArgs) ToGetSubscript
 
 func (i GetSubscriptionsSubscriptionSubscribedServiceProductArgs) ToGetSubscriptionsSubscriptionSubscribedServiceProductOutputWithContext(ctx context.Context) GetSubscriptionsSubscriptionSubscribedServiceProductOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsSubscriptionSubscribedServiceProductOutput)
-}
-
-func (i GetSubscriptionsSubscriptionSubscribedServiceProductArgs) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsSubscriptionSubscribedServiceProduct] {
-	return pulumix.Output[GetSubscriptionsSubscriptionSubscribedServiceProduct]{
-		OutputState: i.ToGetSubscriptionsSubscriptionSubscribedServiceProductOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSubscriptionsSubscriptionSubscribedServiceProductArrayInput is an input type that accepts GetSubscriptionsSubscriptionSubscribedServiceProductArray and GetSubscriptionsSubscriptionSubscribedServiceProductArrayOutput values.
@@ -18146,12 +15839,6 @@ func (i GetSubscriptionsSubscriptionSubscribedServiceProductArray) ToGetSubscrip
 	return pulumi.ToOutputWithContext(ctx, i).(GetSubscriptionsSubscriptionSubscribedServiceProductArrayOutput)
 }
 
-func (i GetSubscriptionsSubscriptionSubscribedServiceProductArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsSubscriptionSubscribedServiceProduct] {
-	return pulumix.Output[[]GetSubscriptionsSubscriptionSubscribedServiceProduct]{
-		OutputState: i.ToGetSubscriptionsSubscriptionSubscribedServiceProductArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSubscriptionsSubscriptionSubscribedServiceProductOutput struct{ *pulumi.OutputState }
 
 func (GetSubscriptionsSubscriptionSubscribedServiceProductOutput) ElementType() reflect.Type {
@@ -18166,30 +15853,24 @@ func (o GetSubscriptionsSubscriptionSubscribedServiceProductOutput) ToGetSubscri
 	return o
 }
 
-func (o GetSubscriptionsSubscriptionSubscribedServiceProductOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsSubscriptionSubscribedServiceProduct] {
-	return pulumix.Output[GetSubscriptionsSubscriptionSubscribedServiceProduct]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Product name
-func (o GetSubscriptionsSubscriptionSubscribedServiceProductOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedServiceProduct) string { return v.Name }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionSubscribedServiceProductOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedServiceProduct) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Product part numner
-func (o GetSubscriptionsSubscriptionSubscribedServiceProductOutput) PartNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedServiceProduct) string { return v.PartNumber }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionSubscribedServiceProductOutput) PartNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedServiceProduct) *string { return v.PartNumber }).(pulumi.StringPtrOutput)
 }
 
 // Product provisioning group
-func (o GetSubscriptionsSubscriptionSubscribedServiceProductOutput) ProvisioningGroup() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedServiceProduct) string { return v.ProvisioningGroup }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionSubscribedServiceProductOutput) ProvisioningGroup() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedServiceProduct) *string { return v.ProvisioningGroup }).(pulumi.StringPtrOutput)
 }
 
 // Unit of measure
-func (o GetSubscriptionsSubscriptionSubscribedServiceProductOutput) UnitOfMeasure() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedServiceProduct) string { return v.UnitOfMeasure }).(pulumi.StringOutput)
+func (o GetSubscriptionsSubscriptionSubscribedServiceProductOutput) UnitOfMeasure() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionSubscribedServiceProduct) *string { return v.UnitOfMeasure }).(pulumi.StringPtrOutput)
 }
 
 type GetSubscriptionsSubscriptionSubscribedServiceProductArrayOutput struct{ *pulumi.OutputState }
@@ -18204,12 +15885,6 @@ func (o GetSubscriptionsSubscriptionSubscribedServiceProductArrayOutput) ToGetSu
 
 func (o GetSubscriptionsSubscriptionSubscribedServiceProductArrayOutput) ToGetSubscriptionsSubscriptionSubscribedServiceProductArrayOutputWithContext(ctx context.Context) GetSubscriptionsSubscriptionSubscribedServiceProductArrayOutput {
 	return o
-}
-
-func (o GetSubscriptionsSubscriptionSubscribedServiceProductArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSubscriptionsSubscriptionSubscribedServiceProduct] {
-	return pulumix.Output[[]GetSubscriptionsSubscriptionSubscribedServiceProduct]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSubscriptionsSubscriptionSubscribedServiceProductArrayOutput) Index(i pulumi.IntInput) GetSubscriptionsSubscriptionSubscribedServiceProductOutput {

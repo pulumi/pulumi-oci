@@ -49,17 +49,11 @@ class GetRepositoriesResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the repository's compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        The repository name.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -70,33 +64,21 @@ class GetRepositoriesResult:
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the repository.  Example: `ocid1.artifactrepository.oc1..exampleuniqueID`
-        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isImmutable")
     def is_immutable(self) -> Optional[bool]:
-        """
-        Whether the repository is immutable. The artifacts of an immutable repository cannot be overwritten.
-        """
         return pulumi.get(self, "is_immutable")
 
     @property
     @pulumi.getter(name="repositoryCollections")
-    def repository_collections(self) -> Sequence['outputs.GetRepositoriesRepositoryCollectionResult']:
-        """
-        The list of repository_collection.
-        """
+    def repository_collections(self) -> Optional[Sequence['outputs.GetRepositoriesRepositoryCollectionResult']]:
         return pulumi.get(self, "repository_collections")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the repository.
-        """
         return pulumi.get(self, "state")
 
 
@@ -123,29 +105,7 @@ def get_repositories(compartment_id: Optional[str] = None,
                      state: Optional[str] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetRepositoriesResult:
     """
-    This data source provides the list of Repositories in Oracle Cloud Infrastructure Artifacts service.
-
-    Lists repositories in the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_repositories = oci.Artifacts.get_repositories(compartment_id=var["compartment_id"],
-        display_name=var["repository_display_name"],
-        id=var["repository_id"],
-        is_immutable=var["repository_is_immutable"],
-        state=var["repository_state"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str display_name: A filter to return only resources that match the given display name exactly.
-    :param str id: A filter to return the resources for the specified OCID.
-    :param bool is_immutable: A filter to return resources that match the isImmutable value.
-    :param str state: A filter to return only resources that match the given lifecycle state name exactly.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -176,28 +136,6 @@ def get_repositories_output(compartment_id: Optional[pulumi.Input[str]] = None,
                             state: Optional[pulumi.Input[Optional[str]]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRepositoriesResult]:
     """
-    This data source provides the list of Repositories in Oracle Cloud Infrastructure Artifacts service.
-
-    Lists repositories in the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_repositories = oci.Artifacts.get_repositories(compartment_id=var["compartment_id"],
-        display_name=var["repository_display_name"],
-        id=var["repository_id"],
-        is_immutable=var["repository_is_immutable"],
-        state=var["repository_state"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str display_name: A filter to return only resources that match the given display name exactly.
-    :param str id: A filter to return the resources for the specified OCID.
-    :param bool is_immutable: A filter to return resources that match the isImmutable value.
-    :param str state: A filter to return only resources that match the given lifecycle state name exactly.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -19,9 +19,6 @@ class GetInstVbsInstancesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: A filter to return only resources that match the entire name given.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -30,9 +27,6 @@ class GetInstVbsInstancesFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        A filter to return only resources that match the entire name given.
-        """
         return pulumi.get(self, "name")
 
     @name.setter

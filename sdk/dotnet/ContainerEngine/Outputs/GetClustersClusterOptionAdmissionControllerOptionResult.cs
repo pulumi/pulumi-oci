@@ -16,10 +16,10 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// <summary>
         /// Whether or not to enable the Pod Security Policy admission controller.
         /// </summary>
-        public readonly bool IsPodSecurityPolicyEnabled;
+        public readonly bool? IsPodSecurityPolicyEnabled;
 
         [OutputConstructor]
-        private GetClustersClusterOptionAdmissionControllerOptionResult(bool isPodSecurityPolicyEnabled)
+        private GetClustersClusterOptionAdmissionControllerOptionResult(bool? isPodSecurityPolicyEnabled)
         {
             IsPodSecurityPolicyEnabled = isPodSecurityPolicyEnabled;
         }

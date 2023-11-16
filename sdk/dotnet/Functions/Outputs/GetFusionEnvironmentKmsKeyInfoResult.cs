@@ -13,29 +13,29 @@ namespace Pulumi.Oci.Functions.Outputs
     [OutputType]
     public sealed class GetFusionEnvironmentKmsKeyInfoResult
     {
-        public readonly string ActiveKeyId;
-        public readonly string ActiveKeyVersion;
-        public readonly string CurrentKeyLifecycleState;
-        public readonly string ScheduledKeyId;
-        public readonly string ScheduledKeyStatus;
-        public readonly string ScheduledKeyVersion;
-        public readonly string ScheduledLifecycleState;
+        public readonly string? ActiveKeyId;
+        public readonly string? ActiveKeyVersion;
+        public readonly string? CurrentKeyLifecycleState;
+        public readonly string? ScheduledKeyId;
+        public readonly string? ScheduledKeyStatus;
+        public readonly string? ScheduledKeyVersion;
+        public readonly string? ScheduledLifecycleState;
 
         [OutputConstructor]
         private GetFusionEnvironmentKmsKeyInfoResult(
-            string activeKeyId,
+            string? activeKeyId,
 
-            string activeKeyVersion,
+            string? activeKeyVersion,
 
-            string currentKeyLifecycleState,
+            string? currentKeyLifecycleState,
 
-            string scheduledKeyId,
+            string? scheduledKeyId,
 
-            string scheduledKeyStatus,
+            string? scheduledKeyStatus,
 
-            string scheduledKeyVersion,
+            string? scheduledKeyVersion,
 
-            string scheduledLifecycleState)
+            string? scheduledLifecycleState)
         {
             ActiveKeyId = activeKeyId;
             ActiveKeyVersion = activeKeyVersion;

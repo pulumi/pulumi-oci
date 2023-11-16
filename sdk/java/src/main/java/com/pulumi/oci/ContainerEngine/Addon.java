@@ -15,6 +15,7 @@ import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -38,14 +39,14 @@ public class Addon extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="addonErrors", refs={List.class,AddonAddonError.class}, tree="[0,1]")
-    private Output<List<AddonAddonError>> addonErrors;
+    private Output</* @Nullable */ List<AddonAddonError>> addonErrors;
 
     /**
      * @return The error info of the addon.
      * 
      */
-    public Output<List<AddonAddonError>> addonErrors() {
-        return this.addonErrors;
+    public Output<Optional<List<AddonAddonError>>> addonErrors() {
+        return Codegen.optional(this.addonErrors);
     }
     /**
      * The name of the addon.
@@ -80,28 +81,28 @@ public class Addon extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="configurations", refs={List.class,AddonConfiguration.class}, tree="[0,1]")
-    private Output<List<AddonConfiguration>> configurations;
+    private Output</* @Nullable */ List<AddonConfiguration>> configurations;
 
     /**
      * @return (Updatable) Addon configuration details.
      * 
      */
-    public Output<List<AddonConfiguration>> configurations() {
-        return this.configurations;
+    public Output<Optional<List<AddonConfiguration>>> configurations() {
+        return Codegen.optional(this.configurations);
     }
     /**
      * current installed version of the addon
      * 
      */
     @Export(name="currentInstalledVersion", refs={String.class}, tree="[0]")
-    private Output<String> currentInstalledVersion;
+    private Output</* @Nullable */ String> currentInstalledVersion;
 
     /**
      * @return current installed version of the addon
      * 
      */
-    public Output<String> currentInstalledVersion() {
-        return this.currentInstalledVersion;
+    public Output<Optional<String>> currentInstalledVersion() {
+        return Codegen.optional(this.currentInstalledVersion);
     }
     /**
      * Whether to remove addon resource in deletion.
@@ -122,28 +123,28 @@ public class Addon extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The state of the addon.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The time the cluster was created.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The time the cluster was created.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * (Updatable) The version of addon to be installed.
@@ -153,7 +154,7 @@ public class Addon extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="version", refs={String.class}, tree="[0]")
-    private Output<String> version;
+    private Output</* @Nullable */ String> version;
 
     /**
      * @return (Updatable) The version of addon to be installed.
@@ -162,8 +163,8 @@ public class Addon extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> version() {
-        return this.version;
+    public Output<Optional<String>> version() {
+        return Codegen.optional(this.version);
     }
 
     /**

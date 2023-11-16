@@ -24,7 +24,7 @@ public final class GetLogsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Log group OCID.
      * 
@@ -39,7 +39,7 @@ public final class GetLogsResult {
      * @return The list of logs.
      * 
      */
-    private List<GetLogsLog> logs;
+    private @Nullable List<GetLogsLog> logs;
     private @Nullable String sourceResource;
     private @Nullable String sourceService;
     /**
@@ -63,8 +63,8 @@ public final class GetLogsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Log group OCID.
@@ -85,7 +85,7 @@ public final class GetLogsResult {
      * 
      */
     public List<GetLogsLog> logs() {
-        return this.logs;
+        return this.logs == null ? List.of() : this.logs;
     }
     public Optional<String> sourceResource() {
         return Optional.ofNullable(this.sourceResource);
@@ -112,10 +112,10 @@ public final class GetLogsResult {
     public static final class Builder {
         private @Nullable String displayName;
         private @Nullable List<GetLogsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private String logGroupId;
         private @Nullable String logType;
-        private List<GetLogsLog> logs;
+        private @Nullable List<GetLogsLog> logs;
         private @Nullable String sourceResource;
         private @Nullable String sourceService;
         private @Nullable String state;
@@ -147,8 +147,8 @@ public final class GetLogsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -162,8 +162,8 @@ public final class GetLogsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder logs(List<GetLogsLog> logs) {
-            this.logs = Objects.requireNonNull(logs);
+        public Builder logs(@Nullable List<GetLogsLog> logs) {
+            this.logs = logs;
             return this;
         }
         public Builder logs(GetLogsLog... logs) {

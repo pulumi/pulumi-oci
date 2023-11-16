@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Db Management Private Endpoint Associated Databases in Oracle Cloud Infrastructure Database Management service.
@@ -70,7 +69,7 @@ type GetDbManagementPrivateEndpointAssociatedDatabasesResult struct {
 	DbManagementPrivateEndpointId string                                                    `pulumi:"dbManagementPrivateEndpointId"`
 	Filters                       []GetDbManagementPrivateEndpointAssociatedDatabasesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 func GetDbManagementPrivateEndpointAssociatedDatabasesOutput(ctx *pulumi.Context, args GetDbManagementPrivateEndpointAssociatedDatabasesOutputArgs, opts ...pulumi.InvokeOption) GetDbManagementPrivateEndpointAssociatedDatabasesResultOutput {
@@ -114,12 +113,6 @@ func (o GetDbManagementPrivateEndpointAssociatedDatabasesResultOutput) ToGetDbMa
 	return o
 }
 
-func (o GetDbManagementPrivateEndpointAssociatedDatabasesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDbManagementPrivateEndpointAssociatedDatabasesResult] {
-	return pulumix.Output[GetDbManagementPrivateEndpointAssociatedDatabasesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The list of associated_database_collection.
 func (o GetDbManagementPrivateEndpointAssociatedDatabasesResultOutput) AssociatedDatabaseCollections() GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollectionArrayOutput {
 	return o.ApplyT(func(v GetDbManagementPrivateEndpointAssociatedDatabasesResult) []GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollection {
@@ -145,8 +138,8 @@ func (o GetDbManagementPrivateEndpointAssociatedDatabasesResultOutput) Filters()
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetDbManagementPrivateEndpointAssociatedDatabasesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDbManagementPrivateEndpointAssociatedDatabasesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDbManagementPrivateEndpointAssociatedDatabasesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDbManagementPrivateEndpointAssociatedDatabasesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func init() {

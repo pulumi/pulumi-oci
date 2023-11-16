@@ -178,7 +178,7 @@ namespace Pulumi.Oci.Email
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The list of senders.
         /// </summary>
@@ -198,7 +198,7 @@ namespace Pulumi.Oci.Email
 
             ImmutableArray<Outputs.GetSendersFilterResult> filters,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetSendersSenderResult> senders,
 

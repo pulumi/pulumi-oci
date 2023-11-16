@@ -24,7 +24,7 @@ namespace Pulumi.Oci.Waas.Outputs
         /// <summary>
         /// The value of the header.
         /// </summary>
-        public readonly string Value;
+        public readonly string? Value;
 
         [OutputConstructor]
         private GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulationResult(
@@ -32,7 +32,7 @@ namespace Pulumi.Oci.Waas.Outputs
 
             string header,
 
-            string value)
+            string? value)
         {
             Action = action;
             Header = header;

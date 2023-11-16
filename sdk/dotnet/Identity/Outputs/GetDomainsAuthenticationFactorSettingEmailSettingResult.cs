@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// Custom redirect Url which will be used in email link
         /// </summary>
-        public readonly string EmailLinkCustomUrl;
+        public readonly string? EmailLinkCustomUrl;
         /// <summary>
         /// Specifies whether Email link is enabled or not.
         /// </summary>
-        public readonly bool EmailLinkEnabled;
+        public readonly bool? EmailLinkEnabled;
 
         [OutputConstructor]
         private GetDomainsAuthenticationFactorSettingEmailSettingResult(
-            string emailLinkCustomUrl,
+            string? emailLinkCustomUrl,
 
-            bool emailLinkEnabled)
+            bool? emailLinkEnabled)
         {
             EmailLinkCustomUrl = emailLinkCustomUrl;
             EmailLinkEnabled = emailLinkEnabled;

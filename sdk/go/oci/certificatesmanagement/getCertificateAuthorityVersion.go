@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Certificate Authority Version resource in Oracle Cloud Infrastructure Certificates Management service.
@@ -39,26 +38,26 @@ type GetCertificateAuthorityVersionResult struct {
 	CertificateAuthorityId            string `pulumi:"certificateAuthorityId"`
 	CertificateAuthorityVersionNumber string `pulumi:"certificateAuthorityVersionNumber"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The version number of the issuing CA.
-	IssuerCaVersionNumber string `pulumi:"issuerCaVersionNumber"`
+	IssuerCaVersionNumber *string `pulumi:"issuerCaVersionNumber"`
 	// The current revocation status of the entity.
 	RevocationStatuses []GetCertificateAuthorityVersionRevocationStatus `pulumi:"revocationStatuses"`
 	// A unique certificate identifier used in certificate revocation tracking, formatted as octets. Example: `03 AC FC FA CC B3 CB 02 B8 F8 DE F5 85 E7 7B FF`
-	SerialNumber string `pulumi:"serialNumber"`
+	SerialNumber *string `pulumi:"serialNumber"`
 	// A list of rotation states for this CA version.
 	Stages                  []string                                               `pulumi:"stages"`
 	SubjectAlternativeNames []GetCertificateAuthorityVersionSubjectAlternativeName `pulumi:"subjectAlternativeNames"`
 	// A optional property indicating when the CA version was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// An optional property indicating when to delete the CA version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-	TimeOfDeletion string `pulumi:"timeOfDeletion"`
+	TimeOfDeletion *string `pulumi:"timeOfDeletion"`
 	// An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
 	Validities []GetCertificateAuthorityVersionValidity `pulumi:"validities"`
 	// The name of the CA version. When this value is not null, the name is unique across CA versions for a given CA.
-	VersionName string `pulumi:"versionName"`
+	VersionName *string `pulumi:"versionName"`
 	// The version number of the CA.
-	VersionNumber string `pulumi:"versionNumber"`
+	VersionNumber *string `pulumi:"versionNumber"`
 }
 
 func GetCertificateAuthorityVersionOutput(ctx *pulumi.Context, args GetCertificateAuthorityVersionOutputArgs, opts ...pulumi.InvokeOption) GetCertificateAuthorityVersionResultOutput {
@@ -100,12 +99,6 @@ func (o GetCertificateAuthorityVersionResultOutput) ToGetCertificateAuthorityVer
 	return o
 }
 
-func (o GetCertificateAuthorityVersionResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificateAuthorityVersionResult] {
-	return pulumix.Output[GetCertificateAuthorityVersionResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the CA.
 func (o GetCertificateAuthorityVersionResultOutput) CertificateAuthorityId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCertificateAuthorityVersionResult) string { return v.CertificateAuthorityId }).(pulumi.StringOutput)
@@ -116,13 +109,13 @@ func (o GetCertificateAuthorityVersionResultOutput) CertificateAuthorityVersionN
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetCertificateAuthorityVersionResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthorityVersionResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetCertificateAuthorityVersionResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthorityVersionResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The version number of the issuing CA.
-func (o GetCertificateAuthorityVersionResultOutput) IssuerCaVersionNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthorityVersionResult) string { return v.IssuerCaVersionNumber }).(pulumi.StringOutput)
+func (o GetCertificateAuthorityVersionResultOutput) IssuerCaVersionNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthorityVersionResult) *string { return v.IssuerCaVersionNumber }).(pulumi.StringPtrOutput)
 }
 
 // The current revocation status of the entity.
@@ -133,8 +126,8 @@ func (o GetCertificateAuthorityVersionResultOutput) RevocationStatuses() GetCert
 }
 
 // A unique certificate identifier used in certificate revocation tracking, formatted as octets. Example: `03 AC FC FA CC B3 CB 02 B8 F8 DE F5 85 E7 7B FF`
-func (o GetCertificateAuthorityVersionResultOutput) SerialNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthorityVersionResult) string { return v.SerialNumber }).(pulumi.StringOutput)
+func (o GetCertificateAuthorityVersionResultOutput) SerialNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthorityVersionResult) *string { return v.SerialNumber }).(pulumi.StringPtrOutput)
 }
 
 // A list of rotation states for this CA version.
@@ -149,13 +142,13 @@ func (o GetCertificateAuthorityVersionResultOutput) SubjectAlternativeNames() Ge
 }
 
 // A optional property indicating when the CA version was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-func (o GetCertificateAuthorityVersionResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthorityVersionResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetCertificateAuthorityVersionResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthorityVersionResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // An optional property indicating when to delete the CA version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-func (o GetCertificateAuthorityVersionResultOutput) TimeOfDeletion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthorityVersionResult) string { return v.TimeOfDeletion }).(pulumi.StringOutput)
+func (o GetCertificateAuthorityVersionResultOutput) TimeOfDeletion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthorityVersionResult) *string { return v.TimeOfDeletion }).(pulumi.StringPtrOutput)
 }
 
 // An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
@@ -166,13 +159,13 @@ func (o GetCertificateAuthorityVersionResultOutput) Validities() GetCertificateA
 }
 
 // The name of the CA version. When this value is not null, the name is unique across CA versions for a given CA.
-func (o GetCertificateAuthorityVersionResultOutput) VersionName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthorityVersionResult) string { return v.VersionName }).(pulumi.StringOutput)
+func (o GetCertificateAuthorityVersionResultOutput) VersionName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthorityVersionResult) *string { return v.VersionName }).(pulumi.StringPtrOutput)
 }
 
 // The version number of the CA.
-func (o GetCertificateAuthorityVersionResultOutput) VersionNumber() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCertificateAuthorityVersionResult) string { return v.VersionNumber }).(pulumi.StringOutput)
+func (o GetCertificateAuthorityVersionResultOutput) VersionNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCertificateAuthorityVersionResult) *string { return v.VersionNumber }).(pulumi.StringPtrOutput)
 }
 
 func init() {

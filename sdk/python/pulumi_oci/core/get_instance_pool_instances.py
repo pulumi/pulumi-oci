@@ -46,17 +46,11 @@ class GetInstancePoolInstancesResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the instance.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -66,7 +60,7 @@ class GetInstancePoolInstancesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -79,10 +73,7 @@ class GetInstancePoolInstancesResult:
 
     @property
     @pulumi.getter
-    def instances(self) -> Sequence['outputs.GetInstancePoolInstancesInstanceResult']:
-        """
-        The list of instances.
-        """
+    def instances(self) -> Optional[Sequence['outputs.GetInstancePoolInstancesInstanceResult']]:
         return pulumi.get(self, "instances")
 
 
@@ -106,25 +97,7 @@ def get_instance_pool_instances(compartment_id: Optional[str] = None,
                                 instance_pool_id: Optional[str] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetInstancePoolInstancesResult:
     """
-    This data source provides the list of Instance Pool Instances in Oracle Cloud Infrastructure Core service.
-
-    List the instances in the specified instance pool.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_instance_pool_instances = oci.Core.get_instance_pool_instances(compartment_id=var["compartment_id"],
-        instance_pool_id=oci_core_instance_pool["test_instance_pool"]["id"],
-        display_name=var["instance_pool_instance_display_name"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str display_name: A filter to return only resources that match the given display name exactly.
-    :param str instance_pool_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -150,24 +123,6 @@ def get_instance_pool_instances_output(compartment_id: Optional[pulumi.Input[str
                                        instance_pool_id: Optional[pulumi.Input[str]] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetInstancePoolInstancesResult]:
     """
-    This data source provides the list of Instance Pool Instances in Oracle Cloud Infrastructure Core service.
-
-    List the instances in the specified instance pool.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_instance_pool_instances = oci.Core.get_instance_pool_instances(compartment_id=var["compartment_id"],
-        instance_pool_id=oci_core_instance_pool["test_instance_pool"]["id"],
-        display_name=var["instance_pool_instance_display_name"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str display_name: A filter to return only resources that match the given display name exactly.
-    :param str instance_pool_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool.
+    Use this data source to access information about an existing resource.
     """
     ...

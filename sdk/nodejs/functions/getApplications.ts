@@ -67,7 +67,7 @@ export interface GetApplicationsResult {
     /**
      * The list of applications.
      */
-    readonly applications: outputs.Functions.GetApplicationsApplication[];
+    readonly applications?: outputs.Functions.GetApplicationsApplication[];
     /**
      * The OCID of the compartment that contains the application.
      */

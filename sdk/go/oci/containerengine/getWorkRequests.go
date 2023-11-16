@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Work Requests in Oracle Cloud Infrastructure Container Engine service.
@@ -77,7 +76,7 @@ type GetWorkRequestsResult struct {
 	CompartmentId string                  `pulumi:"compartmentId"`
 	Filters       []GetWorkRequestsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id           string  `pulumi:"id"`
+	Id           *string `pulumi:"id"`
 	ResourceId   *string `pulumi:"resourceId"`
 	ResourceType *string `pulumi:"resourceType"`
 	// The current status of the work request.
@@ -133,12 +132,6 @@ func (o GetWorkRequestsResultOutput) ToGetWorkRequestsResultOutputWithContext(ct
 	return o
 }
 
-func (o GetWorkRequestsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkRequestsResult] {
-	return pulumix.Output[GetWorkRequestsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWorkRequestsResultOutput) ClusterId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetWorkRequestsResult) *string { return v.ClusterId }).(pulumi.StringPtrOutput)
 }
@@ -153,8 +146,8 @@ func (o GetWorkRequestsResultOutput) Filters() GetWorkRequestsFilterArrayOutput 
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetWorkRequestsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkRequestsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetWorkRequestsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkRequestsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetWorkRequestsResultOutput) ResourceId() pulumi.StringPtrOutput {

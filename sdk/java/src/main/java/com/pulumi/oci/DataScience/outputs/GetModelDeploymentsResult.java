@@ -39,7 +39,7 @@ public final class GetModelDeploymentsResult {
      * @return The list of model_deployments.
      * 
      */
-    private List<GetModelDeploymentsModelDeployment> modelDeployments;
+    private @Nullable List<GetModelDeploymentsModelDeployment> modelDeployments;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project associated with the model deployment.
      * 
@@ -88,7 +88,7 @@ public final class GetModelDeploymentsResult {
      * 
      */
     public List<GetModelDeploymentsModelDeployment> modelDeployments() {
-        return this.modelDeployments;
+        return this.modelDeployments == null ? List.of() : this.modelDeployments;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project associated with the model deployment.
@@ -119,7 +119,7 @@ public final class GetModelDeploymentsResult {
         private @Nullable String displayName;
         private @Nullable List<GetModelDeploymentsFilter> filters;
         private @Nullable String id;
-        private List<GetModelDeploymentsModelDeployment> modelDeployments;
+        private @Nullable List<GetModelDeploymentsModelDeployment> modelDeployments;
         private @Nullable String projectId;
         private @Nullable String state;
         public Builder() {}
@@ -164,8 +164,8 @@ public final class GetModelDeploymentsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder modelDeployments(List<GetModelDeploymentsModelDeployment> modelDeployments) {
-            this.modelDeployments = Objects.requireNonNull(modelDeployments);
+        public Builder modelDeployments(@Nullable List<GetModelDeploymentsModelDeployment> modelDeployments) {
+            this.modelDeployments = modelDeployments;
             return this;
         }
         public Builder modelDeployments(GetModelDeploymentsModelDeployment... modelDeployments) {

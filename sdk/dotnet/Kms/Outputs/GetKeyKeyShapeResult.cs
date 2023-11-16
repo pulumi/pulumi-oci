@@ -16,26 +16,26 @@ namespace Pulumi.Oci.Kms.Outputs
         /// <summary>
         /// The algorithm used by a key's key versions to encrypt or decrypt. Only AES algorithm is supported for `External` keys.
         /// </summary>
-        public readonly string Algorithm;
+        public readonly string? Algorithm;
         /// <summary>
         /// Supported curve IDs for ECDSA keys.
         /// </summary>
-        public readonly string CurveId;
+        public readonly string? CurveId;
         /// <summary>
         /// The length of the key in bytes, expressed as an integer. Supported values include the following:
         /// * AES: 16, 24, or 32
         /// * RSA: 256, 384, or 512
         /// * ECDSA: 32, 48, or 66
         /// </summary>
-        public readonly int Length;
+        public readonly int? Length;
 
         [OutputConstructor]
         private GetKeyKeyShapeResult(
-            string algorithm,
+            string? algorithm,
 
-            string curveId,
+            string? curveId,
 
-            int length)
+            int? length)
         {
             Algorithm = algorithm;
             CurveId = curveId;

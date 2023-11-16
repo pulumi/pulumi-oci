@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetClusterNetworkInstancePoolLoadBalancer {
@@ -14,87 +16,87 @@ public final class GetClusterNetworkInstancePoolLoadBalancer {
      * @return The name of the backend set on the load balancer.
      * 
      */
-    private String backendSetName;
+    private @Nullable String backendSetName;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer attachment.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool of the load balancer attachment.
      * 
      */
-    private String instancePoolId;
+    private @Nullable String instancePoolId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer attached to the instance pool.
      * 
      */
-    private String loadBalancerId;
+    private @Nullable String loadBalancerId;
     /**
      * @return The port value used for the backends.
      * 
      */
-    private Integer port;
+    private @Nullable Integer port;
     /**
      * @return The current state of the cluster network.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return Indicates which VNIC on each instance in the instance pool should be used to associate with the load balancer. Possible values are &#34;PrimaryVnic&#34; or the displayName of one of the secondary VNICs on the instance configuration that is associated with the instance pool.
      * 
      */
-    private String vnicSelection;
+    private @Nullable String vnicSelection;
 
     private GetClusterNetworkInstancePoolLoadBalancer() {}
     /**
      * @return The name of the backend set on the load balancer.
      * 
      */
-    public String backendSetName() {
-        return this.backendSetName;
+    public Optional<String> backendSetName() {
+        return Optional.ofNullable(this.backendSetName);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer attachment.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool of the load balancer attachment.
      * 
      */
-    public String instancePoolId() {
-        return this.instancePoolId;
+    public Optional<String> instancePoolId() {
+        return Optional.ofNullable(this.instancePoolId);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer attached to the instance pool.
      * 
      */
-    public String loadBalancerId() {
-        return this.loadBalancerId;
+    public Optional<String> loadBalancerId() {
+        return Optional.ofNullable(this.loadBalancerId);
     }
     /**
      * @return The port value used for the backends.
      * 
      */
-    public Integer port() {
-        return this.port;
+    public Optional<Integer> port() {
+        return Optional.ofNullable(this.port);
     }
     /**
      * @return The current state of the cluster network.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return Indicates which VNIC on each instance in the instance pool should be used to associate with the load balancer. Possible values are &#34;PrimaryVnic&#34; or the displayName of one of the secondary VNICs on the instance configuration that is associated with the instance pool.
      * 
      */
-    public String vnicSelection() {
-        return this.vnicSelection;
+    public Optional<String> vnicSelection() {
+        return Optional.ofNullable(this.vnicSelection);
     }
 
     public static Builder builder() {
@@ -106,13 +108,13 @@ public final class GetClusterNetworkInstancePoolLoadBalancer {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String backendSetName;
-        private String id;
-        private String instancePoolId;
-        private String loadBalancerId;
-        private Integer port;
-        private String state;
-        private String vnicSelection;
+        private @Nullable String backendSetName;
+        private @Nullable String id;
+        private @Nullable String instancePoolId;
+        private @Nullable String loadBalancerId;
+        private @Nullable Integer port;
+        private @Nullable String state;
+        private @Nullable String vnicSelection;
         public Builder() {}
         public Builder(GetClusterNetworkInstancePoolLoadBalancer defaults) {
     	      Objects.requireNonNull(defaults);
@@ -126,38 +128,38 @@ public final class GetClusterNetworkInstancePoolLoadBalancer {
         }
 
         @CustomType.Setter
-        public Builder backendSetName(String backendSetName) {
-            this.backendSetName = Objects.requireNonNull(backendSetName);
+        public Builder backendSetName(@Nullable String backendSetName) {
+            this.backendSetName = backendSetName;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder instancePoolId(String instancePoolId) {
-            this.instancePoolId = Objects.requireNonNull(instancePoolId);
+        public Builder instancePoolId(@Nullable String instancePoolId) {
+            this.instancePoolId = instancePoolId;
             return this;
         }
         @CustomType.Setter
-        public Builder loadBalancerId(String loadBalancerId) {
-            this.loadBalancerId = Objects.requireNonNull(loadBalancerId);
+        public Builder loadBalancerId(@Nullable String loadBalancerId) {
+            this.loadBalancerId = loadBalancerId;
             return this;
         }
         @CustomType.Setter
-        public Builder port(Integer port) {
-            this.port = Objects.requireNonNull(port);
+        public Builder port(@Nullable Integer port) {
+            this.port = port;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder vnicSelection(String vnicSelection) {
-            this.vnicSelection = Objects.requireNonNull(vnicSelection);
+        public Builder vnicSelection(@Nullable String vnicSelection) {
+            this.vnicSelection = vnicSelection;
             return this;
         }
         public GetClusterNetworkInstancePoolLoadBalancer build() {

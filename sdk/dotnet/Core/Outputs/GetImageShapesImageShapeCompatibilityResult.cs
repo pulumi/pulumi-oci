@@ -16,7 +16,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the image.
         /// </summary>
-        public readonly string ImageId;
+        public readonly string? ImageId;
         /// <summary>
         /// For a flexible image and shape, the amount of memory supported for instances that use this image.
         /// </summary>
@@ -28,17 +28,17 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// The shape name.
         /// </summary>
-        public readonly string Shape;
+        public readonly string? Shape;
 
         [OutputConstructor]
         private GetImageShapesImageShapeCompatibilityResult(
-            string imageId,
+            string? imageId,
 
             ImmutableArray<Outputs.GetImageShapesImageShapeCompatibilityMemoryConstraintResult> memoryConstraints,
 
             ImmutableArray<Outputs.GetImageShapesImageShapeCompatibilityOcpuConstraintResult> ocpuConstraints,
 
-            string shape)
+            string? shape)
         {
             ImageId = imageId;
             MemoryConstraints = memoryConstraints;

@@ -6,6 +6,8 @@ package com.pulumi.oci.Identity.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsAppAppSignonPolicy {
@@ -13,27 +15,27 @@ public final class GetDomainsAppAppSignonPolicy {
      * @return URI of the AppRole.
      * 
      */
-    private String ref;
+    private @Nullable String ref;
     /**
      * @return ID of the AppRole.
      * 
      */
-    private String value;
+    private @Nullable String value;
 
     private GetDomainsAppAppSignonPolicy() {}
     /**
      * @return URI of the AppRole.
      * 
      */
-    public String ref() {
-        return this.ref;
+    public Optional<String> ref() {
+        return Optional.ofNullable(this.ref);
     }
     /**
      * @return ID of the AppRole.
      * 
      */
-    public String value() {
-        return this.value;
+    public Optional<String> value() {
+        return Optional.ofNullable(this.value);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetDomainsAppAppSignonPolicy {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String ref;
-        private String value;
+        private @Nullable String ref;
+        private @Nullable String value;
         public Builder() {}
         public Builder(GetDomainsAppAppSignonPolicy defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetDomainsAppAppSignonPolicy {
         }
 
         @CustomType.Setter
-        public Builder ref(String ref) {
-            this.ref = Objects.requireNonNull(ref);
+        public Builder ref(@Nullable String ref) {
+            this.ref = ref;
             return this;
         }
         @CustomType.Setter
-        public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+        public Builder value(@Nullable String value) {
+            this.value = value;
             return this;
         }
         public GetDomainsAppAppSignonPolicy build() {

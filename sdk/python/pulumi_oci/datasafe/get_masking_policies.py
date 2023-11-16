@@ -72,9 +72,6 @@ class GetMaskingPoliciesResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment that contains the masking policy.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -85,9 +82,6 @@ class GetMaskingPoliciesResult:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        The display name of the masking policy.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -97,7 +91,7 @@ class GetMaskingPoliciesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -105,10 +99,7 @@ class GetMaskingPoliciesResult:
 
     @property
     @pulumi.getter(name="maskingPolicyCollections")
-    def masking_policy_collections(self) -> Sequence['outputs.GetMaskingPoliciesMaskingPolicyCollectionResult']:
-        """
-        The list of masking_policy_collection.
-        """
+    def masking_policy_collections(self) -> Optional[Sequence['outputs.GetMaskingPoliciesMaskingPolicyCollectionResult']]:
         return pulumi.get(self, "masking_policy_collections")
 
     @property
@@ -119,25 +110,16 @@ class GetMaskingPoliciesResult:
     @property
     @pulumi.getter(name="sensitiveDataModelId")
     def sensitive_data_model_id(self) -> Optional[str]:
-        """
-        The OCID of the sensitive data model that's used as the source of masking columns.
-        """
         return pulumi.get(self, "sensitive_data_model_id")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the masking policy.
-        """
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="targetId")
     def target_id(self) -> Optional[str]:
-        """
-        The OCID of the target database that's used as the source of masking columns.
-        """
         return pulumi.get(self, "target_id")
 
     @property
@@ -185,43 +167,7 @@ def get_masking_policies(access_level: Optional[str] = None,
                          time_created_less_than: Optional[str] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMaskingPoliciesResult:
     """
-    This data source provides the list of Masking Policies in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets a list of masking policies based on the specified query parameters.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_masking_policies = oci.DataSafe.get_masking_policies(compartment_id=var["compartment_id"],
-        access_level=var["masking_policy_access_level"],
-        compartment_id_in_subtree=var["masking_policy_compartment_id_in_subtree"],
-        display_name=var["masking_policy_display_name"],
-        masking_policy_id=oci_data_safe_masking_policy["test_masking_policy"]["id"],
-        sensitive_data_model_id=oci_data_safe_sensitive_data_model["test_sensitive_data_model"]["id"],
-        state=var["masking_policy_state"],
-        target_id=oci_cloud_guard_target["test_target"]["id"],
-        time_created_greater_than_or_equal_to=var["masking_policy_time_created_greater_than_or_equal_to"],
-        time_created_less_than=var["masking_policy_time_created_less_than"])
-    ```
-
-
-    :param str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
-    :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
-    :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
-    :param str display_name: A filter to return only resources that match the specified display name.
-    :param str masking_policy_id: A filter to return only the resources that match the specified masking policy OCID.
-    :param str sensitive_data_model_id: A filter to return only the resources that match the specified sensitive data model OCID.
-    :param str state: A filter to return only the resources that match the specified lifecycle states.
-    :param str target_id: A filter to return only items related to a specific target OCID.
-    :param str time_created_greater_than_or_equal_to: A filter to return only the resources that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after that date.
-           
-           **Example:** 2016-12-19T16:39:57.600Z
-    :param str time_created_less_than: Search for resources that were created before a specific date. Specifying this parameter corresponding `timeCreatedLessThan` parameter will retrieve all resources created before the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
-           
-           **Example:** 2016-12-19T16:39:57.600Z
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['accessLevel'] = access_level
@@ -268,42 +214,6 @@ def get_masking_policies_output(access_level: Optional[pulumi.Input[Optional[str
                                 time_created_less_than: Optional[pulumi.Input[Optional[str]]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMaskingPoliciesResult]:
     """
-    This data source provides the list of Masking Policies in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets a list of masking policies based on the specified query parameters.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_masking_policies = oci.DataSafe.get_masking_policies(compartment_id=var["compartment_id"],
-        access_level=var["masking_policy_access_level"],
-        compartment_id_in_subtree=var["masking_policy_compartment_id_in_subtree"],
-        display_name=var["masking_policy_display_name"],
-        masking_policy_id=oci_data_safe_masking_policy["test_masking_policy"]["id"],
-        sensitive_data_model_id=oci_data_safe_sensitive_data_model["test_sensitive_data_model"]["id"],
-        state=var["masking_policy_state"],
-        target_id=oci_cloud_guard_target["test_target"]["id"],
-        time_created_greater_than_or_equal_to=var["masking_policy_time_created_greater_than_or_equal_to"],
-        time_created_less_than=var["masking_policy_time_created_less_than"])
-    ```
-
-
-    :param str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
-    :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
-    :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
-    :param str display_name: A filter to return only resources that match the specified display name.
-    :param str masking_policy_id: A filter to return only the resources that match the specified masking policy OCID.
-    :param str sensitive_data_model_id: A filter to return only the resources that match the specified sensitive data model OCID.
-    :param str state: A filter to return only the resources that match the specified lifecycle states.
-    :param str target_id: A filter to return only items related to a specific target OCID.
-    :param str time_created_greater_than_or_equal_to: A filter to return only the resources that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after that date.
-           
-           **Example:** 2016-12-19T16:39:57.600Z
-    :param str time_created_less_than: Search for resources that were created before a specific date. Specifying this parameter corresponding `timeCreatedLessThan` parameter will retrieve all resources created before the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
-           
-           **Example:** 2016-12-19T16:39:57.600Z
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -10,21 +10,20 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type DefaultSecurityList struct {
 	pulumi.CustomResourceState
 
-	CompartmentId           pulumi.StringOutput                               `pulumi:"compartmentId"`
+	CompartmentId           pulumi.StringPtrOutput                            `pulumi:"compartmentId"`
 	DefinedTags             pulumi.MapOutput                                  `pulumi:"definedTags"`
-	DisplayName             pulumi.StringOutput                               `pulumi:"displayName"`
+	DisplayName             pulumi.StringPtrOutput                            `pulumi:"displayName"`
 	EgressSecurityRules     DefaultSecurityListEgressSecurityRuleArrayOutput  `pulumi:"egressSecurityRules"`
 	FreeformTags            pulumi.MapOutput                                  `pulumi:"freeformTags"`
 	IngressSecurityRules    DefaultSecurityListIngressSecurityRuleArrayOutput `pulumi:"ingressSecurityRules"`
 	ManageDefaultResourceId pulumi.StringOutput                               `pulumi:"manageDefaultResourceId"`
-	State                   pulumi.StringOutput                               `pulumi:"state"`
-	TimeCreated             pulumi.StringOutput                               `pulumi:"timeCreated"`
+	State                   pulumi.StringPtrOutput                            `pulumi:"state"`
+	TimeCreated             pulumi.StringPtrOutput                            `pulumi:"timeCreated"`
 }
 
 // NewDefaultSecurityList registers a new resource with the given unique name, arguments, and options.
@@ -131,12 +130,6 @@ func (i *DefaultSecurityList) ToDefaultSecurityListOutputWithContext(ctx context
 	return pulumi.ToOutputWithContext(ctx, i).(DefaultSecurityListOutput)
 }
 
-func (i *DefaultSecurityList) ToOutput(ctx context.Context) pulumix.Output[*DefaultSecurityList] {
-	return pulumix.Output[*DefaultSecurityList]{
-		OutputState: i.ToDefaultSecurityListOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DefaultSecurityListArrayInput is an input type that accepts DefaultSecurityListArray and DefaultSecurityListArrayOutput values.
 // You can construct a concrete instance of `DefaultSecurityListArrayInput` via:
 //
@@ -160,12 +153,6 @@ func (i DefaultSecurityListArray) ToDefaultSecurityListArrayOutput() DefaultSecu
 
 func (i DefaultSecurityListArray) ToDefaultSecurityListArrayOutputWithContext(ctx context.Context) DefaultSecurityListArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DefaultSecurityListArrayOutput)
-}
-
-func (i DefaultSecurityListArray) ToOutput(ctx context.Context) pulumix.Output[[]*DefaultSecurityList] {
-	return pulumix.Output[[]*DefaultSecurityList]{
-		OutputState: i.ToDefaultSecurityListArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DefaultSecurityListMapInput is an input type that accepts DefaultSecurityListMap and DefaultSecurityListMapOutput values.
@@ -193,12 +180,6 @@ func (i DefaultSecurityListMap) ToDefaultSecurityListMapOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(DefaultSecurityListMapOutput)
 }
 
-func (i DefaultSecurityListMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DefaultSecurityList] {
-	return pulumix.Output[map[string]*DefaultSecurityList]{
-		OutputState: i.ToDefaultSecurityListMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DefaultSecurityListOutput struct{ *pulumi.OutputState }
 
 func (DefaultSecurityListOutput) ElementType() reflect.Type {
@@ -213,22 +194,16 @@ func (o DefaultSecurityListOutput) ToDefaultSecurityListOutputWithContext(ctx co
 	return o
 }
 
-func (o DefaultSecurityListOutput) ToOutput(ctx context.Context) pulumix.Output[*DefaultSecurityList] {
-	return pulumix.Output[*DefaultSecurityList]{
-		OutputState: o.OutputState,
-	}
-}
-
-func (o DefaultSecurityListOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *DefaultSecurityList) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
+func (o DefaultSecurityListOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DefaultSecurityList) pulumi.StringPtrOutput { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 func (o DefaultSecurityListOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *DefaultSecurityList) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
-func (o DefaultSecurityListOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *DefaultSecurityList) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o DefaultSecurityListOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DefaultSecurityList) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 func (o DefaultSecurityListOutput) EgressSecurityRules() DefaultSecurityListEgressSecurityRuleArrayOutput {
@@ -251,12 +226,12 @@ func (o DefaultSecurityListOutput) ManageDefaultResourceId() pulumi.StringOutput
 	return o.ApplyT(func(v *DefaultSecurityList) pulumi.StringOutput { return v.ManageDefaultResourceId }).(pulumi.StringOutput)
 }
 
-func (o DefaultSecurityListOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *DefaultSecurityList) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o DefaultSecurityListOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DefaultSecurityList) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
-func (o DefaultSecurityListOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *DefaultSecurityList) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o DefaultSecurityListOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DefaultSecurityList) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 type DefaultSecurityListArrayOutput struct{ *pulumi.OutputState }
@@ -271,12 +246,6 @@ func (o DefaultSecurityListArrayOutput) ToDefaultSecurityListArrayOutput() Defau
 
 func (o DefaultSecurityListArrayOutput) ToDefaultSecurityListArrayOutputWithContext(ctx context.Context) DefaultSecurityListArrayOutput {
 	return o
-}
-
-func (o DefaultSecurityListArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DefaultSecurityList] {
-	return pulumix.Output[[]*DefaultSecurityList]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DefaultSecurityListArrayOutput) Index(i pulumi.IntInput) DefaultSecurityListOutput {
@@ -297,12 +266,6 @@ func (o DefaultSecurityListMapOutput) ToDefaultSecurityListMapOutput() DefaultSe
 
 func (o DefaultSecurityListMapOutput) ToDefaultSecurityListMapOutputWithContext(ctx context.Context) DefaultSecurityListMapOutput {
 	return o
-}
-
-func (o DefaultSecurityListMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DefaultSecurityList] {
-	return pulumix.Output[map[string]*DefaultSecurityList]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DefaultSecurityListMapOutput) MapIndex(k pulumi.StringInput) DefaultSecurityListOutput {

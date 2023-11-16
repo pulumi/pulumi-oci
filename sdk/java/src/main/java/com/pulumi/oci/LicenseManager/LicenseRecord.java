@@ -15,6 +15,7 @@ import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -77,28 +78,28 @@ public class LicenseRecord extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
-    private Output<String> compartmentId;
+    private Output</* @Nullable */ String> compartmentId;
 
     /**
      * @return The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where the license record is created.
      * 
      */
-    public Output<String> compartmentId() {
-        return this.compartmentId;
+    public Output<Optional<String>> compartmentId() {
+        return Codegen.optional(this.compartmentId);
     }
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) License record name.
@@ -119,28 +120,28 @@ public class LicenseRecord extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="expirationDate", refs={String.class}, tree="[0]")
-    private Output<String> expirationDate;
+    private Output</* @Nullable */ String> expirationDate;
 
     /**
      * @return (Updatable) The license record end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format. Example: `2018-09-12`
      * 
      */
-    public Output<String> expirationDate() {
-        return this.expirationDate;
+    public Output<Optional<String>> expirationDate() {
+        return Codegen.optional(this.expirationDate);
     }
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * (Updatable) Specifies if the license record term is perpertual.
@@ -175,56 +176,56 @@ public class LicenseRecord extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="licenseCount", refs={Integer.class}, tree="[0]")
-    private Output<Integer> licenseCount;
+    private Output</* @Nullable */ Integer> licenseCount;
 
     /**
      * @return (Updatable) The number of license units added by a user in a license record. Default 1
      * 
      */
-    public Output<Integer> licenseCount() {
-        return this.licenseCount;
+    public Output<Optional<Integer>> licenseCount() {
+        return Codegen.optional(this.licenseCount);
     }
     /**
      * The product license unit.
      * 
      */
     @Export(name="licenseUnit", refs={String.class}, tree="[0]")
-    private Output<String> licenseUnit;
+    private Output</* @Nullable */ String> licenseUnit;
 
     /**
      * @return The product license unit.
      * 
      */
-    public Output<String> licenseUnit() {
-        return this.licenseUnit;
+    public Output<Optional<String>> licenseUnit() {
+        return Codegen.optional(this.licenseUnit);
     }
     /**
      * (Updatable) The license record product ID.
      * 
      */
     @Export(name="productId", refs={String.class}, tree="[0]")
-    private Output<String> productId;
+    private Output</* @Nullable */ String> productId;
 
     /**
      * @return (Updatable) The license record product ID.
      * 
      */
-    public Output<String> productId() {
-        return this.productId;
+    public Output<Optional<String>> productId() {
+        return Codegen.optional(this.productId);
     }
     /**
      * The product license name with which the license record is associated.
      * 
      */
     @Export(name="productLicense", refs={String.class}, tree="[0]")
-    private Output<String> productLicense;
+    private Output</* @Nullable */ String> productLicense;
 
     /**
      * @return The product license name with which the license record is associated.
      * 
      */
-    public Output<String> productLicense() {
-        return this.productLicense;
+    public Output<Optional<String>> productLicense() {
+        return Codegen.optional(this.productLicense);
     }
     /**
      * Unique product license identifier.
@@ -245,14 +246,14 @@ public class LicenseRecord extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current license record state.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * (Updatable) The license record support end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format. Example: `2018-09-12`
@@ -262,7 +263,7 @@ public class LicenseRecord extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="supportEndDate", refs={String.class}, tree="[0]")
-    private Output<String> supportEndDate;
+    private Output</* @Nullable */ String> supportEndDate;
 
     /**
      * @return (Updatable) The license record support end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format. Example: `2018-09-12`
@@ -271,50 +272,50 @@ public class LicenseRecord extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> supportEndDate() {
-        return this.supportEndDate;
+    public Output<Optional<String>> supportEndDate() {
+        return Codegen.optional(this.supportEndDate);
     }
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> systemTags;
+    private Output</* @Nullable */ Map<String,Object>> systemTags;
 
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    public Output<Map<String,Object>> systemTags() {
-        return this.systemTags;
+    public Output<Optional<Map<String,Object>>> systemTags() {
+        return Codegen.optional(this.systemTags);
     }
     /**
      * The time the license record was created. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The time the license record was created. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The time the license record was updated. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The time the license record was updated. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
 
     /**

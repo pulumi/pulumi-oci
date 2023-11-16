@@ -12,6 +12,7 @@ import com.pulumi.oci.Identity.outputs.GetDomainsUserUrnietfparamsscimschemasora
 import com.pulumi.oci.Identity.outputs.GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredential;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUser {
@@ -19,32 +20,32 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuser
      * @return A list of API keys corresponding to user.
      * 
      */
-    private List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKey> apiKeys;
+    private @Nullable List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKey> apiKeys;
     /**
      * @return A list of Auth tokens corresponding to user.
      * 
      */
-    private List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthToken> authTokens;
+    private @Nullable List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthToken> authTokens;
     /**
      * @return A list of customer secret keys corresponding to user.
      * 
      */
-    private List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKey> customerSecretKeys;
+    private @Nullable List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKey> customerSecretKeys;
     /**
      * @return A list of database credentials corresponding to user.
      * 
      */
-    private List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredential> dbCredentials;
+    private @Nullable List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredential> dbCredentials;
     /**
      * @return A list of OAuth2 client credentials corresponding to a user.
      * 
      */
-    private List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredential> oAuth2clientCredentials;
+    private @Nullable List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredential> oAuth2clientCredentials;
     /**
      * @return A list of SMTP credentials corresponding to user.
      * 
      */
-    private List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredential> smtpCredentials;
+    private @Nullable List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredential> smtpCredentials;
 
     private GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUser() {}
     /**
@@ -52,42 +53,42 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuser
      * 
      */
     public List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKey> apiKeys() {
-        return this.apiKeys;
+        return this.apiKeys == null ? List.of() : this.apiKeys;
     }
     /**
      * @return A list of Auth tokens corresponding to user.
      * 
      */
     public List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthToken> authTokens() {
-        return this.authTokens;
+        return this.authTokens == null ? List.of() : this.authTokens;
     }
     /**
      * @return A list of customer secret keys corresponding to user.
      * 
      */
     public List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKey> customerSecretKeys() {
-        return this.customerSecretKeys;
+        return this.customerSecretKeys == null ? List.of() : this.customerSecretKeys;
     }
     /**
      * @return A list of database credentials corresponding to user.
      * 
      */
     public List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredential> dbCredentials() {
-        return this.dbCredentials;
+        return this.dbCredentials == null ? List.of() : this.dbCredentials;
     }
     /**
      * @return A list of OAuth2 client credentials corresponding to a user.
      * 
      */
     public List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredential> oAuth2clientCredentials() {
-        return this.oAuth2clientCredentials;
+        return this.oAuth2clientCredentials == null ? List.of() : this.oAuth2clientCredentials;
     }
     /**
      * @return A list of SMTP credentials corresponding to user.
      * 
      */
     public List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredential> smtpCredentials() {
-        return this.smtpCredentials;
+        return this.smtpCredentials == null ? List.of() : this.smtpCredentials;
     }
 
     public static Builder builder() {
@@ -99,12 +100,12 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuser
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKey> apiKeys;
-        private List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthToken> authTokens;
-        private List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKey> customerSecretKeys;
-        private List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredential> dbCredentials;
-        private List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredential> oAuth2clientCredentials;
-        private List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredential> smtpCredentials;
+        private @Nullable List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKey> apiKeys;
+        private @Nullable List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthToken> authTokens;
+        private @Nullable List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKey> customerSecretKeys;
+        private @Nullable List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredential> dbCredentials;
+        private @Nullable List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredential> oAuth2clientCredentials;
+        private @Nullable List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredential> smtpCredentials;
         public Builder() {}
         public Builder(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUser defaults) {
     	      Objects.requireNonNull(defaults);
@@ -117,48 +118,48 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuser
         }
 
         @CustomType.Setter
-        public Builder apiKeys(List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKey> apiKeys) {
-            this.apiKeys = Objects.requireNonNull(apiKeys);
+        public Builder apiKeys(@Nullable List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKey> apiKeys) {
+            this.apiKeys = apiKeys;
             return this;
         }
         public Builder apiKeys(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKey... apiKeys) {
             return apiKeys(List.of(apiKeys));
         }
         @CustomType.Setter
-        public Builder authTokens(List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthToken> authTokens) {
-            this.authTokens = Objects.requireNonNull(authTokens);
+        public Builder authTokens(@Nullable List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthToken> authTokens) {
+            this.authTokens = authTokens;
             return this;
         }
         public Builder authTokens(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthToken... authTokens) {
             return authTokens(List.of(authTokens));
         }
         @CustomType.Setter
-        public Builder customerSecretKeys(List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKey> customerSecretKeys) {
-            this.customerSecretKeys = Objects.requireNonNull(customerSecretKeys);
+        public Builder customerSecretKeys(@Nullable List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKey> customerSecretKeys) {
+            this.customerSecretKeys = customerSecretKeys;
             return this;
         }
         public Builder customerSecretKeys(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKey... customerSecretKeys) {
             return customerSecretKeys(List.of(customerSecretKeys));
         }
         @CustomType.Setter
-        public Builder dbCredentials(List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredential> dbCredentials) {
-            this.dbCredentials = Objects.requireNonNull(dbCredentials);
+        public Builder dbCredentials(@Nullable List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredential> dbCredentials) {
+            this.dbCredentials = dbCredentials;
             return this;
         }
         public Builder dbCredentials(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredential... dbCredentials) {
             return dbCredentials(List.of(dbCredentials));
         }
         @CustomType.Setter
-        public Builder oAuth2clientCredentials(List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredential> oAuth2clientCredentials) {
-            this.oAuth2clientCredentials = Objects.requireNonNull(oAuth2clientCredentials);
+        public Builder oAuth2clientCredentials(@Nullable List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredential> oAuth2clientCredentials) {
+            this.oAuth2clientCredentials = oAuth2clientCredentials;
             return this;
         }
         public Builder oAuth2clientCredentials(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2clientCredential... oAuth2clientCredentials) {
             return oAuth2clientCredentials(List.of(oAuth2clientCredentials));
         }
         @CustomType.Setter
-        public Builder smtpCredentials(List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredential> smtpCredentials) {
-            this.smtpCredentials = Objects.requireNonNull(smtpCredentials);
+        public Builder smtpCredentials(@Nullable List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredential> smtpCredentials) {
+            this.smtpCredentials = smtpCredentials;
             return this;
         }
         public Builder smtpCredentials(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredential... smtpCredentials) {

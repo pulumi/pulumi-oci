@@ -28,20 +28,6 @@ class DeployEnvironmentArgs:
                  network_channel: Optional[pulumi.Input['DeployEnvironmentNetworkChannelArgs']] = None):
         """
         The set of arguments for constructing a DeployEnvironment resource.
-        :param pulumi.Input[str] deploy_environment_type: (Updatable) Deployment environment type.
-        :param pulumi.Input[str] project_id: The OCID of a project.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] cluster_id: (Updatable) The OCID of the Kubernetes cluster.
-        :param pulumi.Input['DeployEnvironmentComputeInstanceGroupSelectorsArgs'] compute_instance_group_selectors: (Updatable) A collection of selectors. The combination of instances matching the selectors are included in the instance group.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) Optional description about the deployment environment.
-        :param pulumi.Input[str] display_name: (Updatable) Deployment environment display name. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] function_id: (Updatable) The OCID of the Function.
-        :param pulumi.Input['DeployEnvironmentNetworkChannelArgs'] network_channel: (Updatable) Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
         """
         pulumi.set(__self__, "deploy_environment_type", deploy_environment_type)
         pulumi.set(__self__, "project_id", project_id)
@@ -65,9 +51,6 @@ class DeployEnvironmentArgs:
     @property
     @pulumi.getter(name="deployEnvironmentType")
     def deploy_environment_type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Deployment environment type.
-        """
         return pulumi.get(self, "deploy_environment_type")
 
     @deploy_environment_type.setter
@@ -77,13 +60,6 @@ class DeployEnvironmentArgs:
     @property
     @pulumi.getter(name="projectId")
     def project_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of a project.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "project_id")
 
     @project_id.setter
@@ -93,9 +69,6 @@ class DeployEnvironmentArgs:
     @property
     @pulumi.getter(name="clusterId")
     def cluster_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the Kubernetes cluster.
-        """
         return pulumi.get(self, "cluster_id")
 
     @cluster_id.setter
@@ -105,9 +78,6 @@ class DeployEnvironmentArgs:
     @property
     @pulumi.getter(name="computeInstanceGroupSelectors")
     def compute_instance_group_selectors(self) -> Optional[pulumi.Input['DeployEnvironmentComputeInstanceGroupSelectorsArgs']]:
-        """
-        (Updatable) A collection of selectors. The combination of instances matching the selectors are included in the instance group.
-        """
         return pulumi.get(self, "compute_instance_group_selectors")
 
     @compute_instance_group_selectors.setter
@@ -117,9 +87,6 @@ class DeployEnvironmentArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -129,9 +96,6 @@ class DeployEnvironmentArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Optional description about the deployment environment.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -141,9 +105,6 @@ class DeployEnvironmentArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Deployment environment display name. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -153,9 +114,6 @@ class DeployEnvironmentArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -165,9 +123,6 @@ class DeployEnvironmentArgs:
     @property
     @pulumi.getter(name="functionId")
     def function_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the Function.
-        """
         return pulumi.get(self, "function_id")
 
     @function_id.setter
@@ -177,9 +132,6 @@ class DeployEnvironmentArgs:
     @property
     @pulumi.getter(name="networkChannel")
     def network_channel(self) -> Optional[pulumi.Input['DeployEnvironmentNetworkChannelArgs']]:
-        """
-        (Updatable) Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
-        """
         return pulumi.get(self, "network_channel")
 
     @network_channel.setter
@@ -208,26 +160,6 @@ class _DeployEnvironmentState:
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering DeployEnvironment resources.
-        :param pulumi.Input[str] cluster_id: (Updatable) The OCID of the Kubernetes cluster.
-        :param pulumi.Input[str] compartment_id: The OCID of a compartment.
-        :param pulumi.Input['DeployEnvironmentComputeInstanceGroupSelectorsArgs'] compute_instance_group_selectors: (Updatable) A collection of selectors. The combination of instances matching the selectors are included in the instance group.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] deploy_environment_type: (Updatable) Deployment environment type.
-        :param pulumi.Input[str] description: (Updatable) Optional description about the deployment environment.
-        :param pulumi.Input[str] display_name: (Updatable) Deployment environment display name. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] function_id: (Updatable) The OCID of the Function.
-        :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input['DeployEnvironmentNetworkChannelArgs'] network_channel: (Updatable) Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
-        :param pulumi.Input[str] project_id: The OCID of a project.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] state: The current state of the deployment environment.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: Time the deployment environment was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-        :param pulumi.Input[str] time_updated: Time the deployment environment was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         """
         if cluster_id is not None:
             pulumi.set(__self__, "cluster_id", cluster_id)
@@ -265,9 +197,6 @@ class _DeployEnvironmentState:
     @property
     @pulumi.getter(name="clusterId")
     def cluster_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the Kubernetes cluster.
-        """
         return pulumi.get(self, "cluster_id")
 
     @cluster_id.setter
@@ -277,9 +206,6 @@ class _DeployEnvironmentState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of a compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -289,9 +215,6 @@ class _DeployEnvironmentState:
     @property
     @pulumi.getter(name="computeInstanceGroupSelectors")
     def compute_instance_group_selectors(self) -> Optional[pulumi.Input['DeployEnvironmentComputeInstanceGroupSelectorsArgs']]:
-        """
-        (Updatable) A collection of selectors. The combination of instances matching the selectors are included in the instance group.
-        """
         return pulumi.get(self, "compute_instance_group_selectors")
 
     @compute_instance_group_selectors.setter
@@ -301,9 +224,6 @@ class _DeployEnvironmentState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -313,9 +233,6 @@ class _DeployEnvironmentState:
     @property
     @pulumi.getter(name="deployEnvironmentType")
     def deploy_environment_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Deployment environment type.
-        """
         return pulumi.get(self, "deploy_environment_type")
 
     @deploy_environment_type.setter
@@ -325,9 +242,6 @@ class _DeployEnvironmentState:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Optional description about the deployment environment.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -337,9 +251,6 @@ class _DeployEnvironmentState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Deployment environment display name. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -349,9 +260,6 @@ class _DeployEnvironmentState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -361,9 +269,6 @@ class _DeployEnvironmentState:
     @property
     @pulumi.getter(name="functionId")
     def function_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the Function.
-        """
         return pulumi.get(self, "function_id")
 
     @function_id.setter
@@ -373,9 +278,6 @@ class _DeployEnvironmentState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -385,9 +287,6 @@ class _DeployEnvironmentState:
     @property
     @pulumi.getter(name="networkChannel")
     def network_channel(self) -> Optional[pulumi.Input['DeployEnvironmentNetworkChannelArgs']]:
-        """
-        (Updatable) Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
-        """
         return pulumi.get(self, "network_channel")
 
     @network_channel.setter
@@ -397,13 +296,6 @@ class _DeployEnvironmentState:
     @property
     @pulumi.getter(name="projectId")
     def project_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of a project.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "project_id")
 
     @project_id.setter
@@ -413,9 +305,6 @@ class _DeployEnvironmentState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the deployment environment.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -425,9 +314,6 @@ class _DeployEnvironmentState:
     @property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
@@ -437,9 +323,6 @@ class _DeployEnvironmentState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        Time the deployment environment was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -449,9 +332,6 @@ class _DeployEnvironmentState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        Time the deployment environment was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -476,68 +356,9 @@ class DeployEnvironment(pulumi.CustomResource):
                  project_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Deploy Environment resource in Oracle Cloud Infrastructure Devops service.
-
-        Creates a new deployment environment.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_deploy_environment = oci.dev_ops.DeployEnvironment("testDeployEnvironment",
-            deploy_environment_type=var["deploy_environment_deploy_environment_type"],
-            project_id=oci_devops_project["test_project"]["id"],
-            cluster_id=oci_containerengine_cluster["test_cluster"]["id"],
-            compute_instance_group_selectors=oci.dev_ops.DeployEnvironmentComputeInstanceGroupSelectorsArgs(
-                items=[oci.dev_ops.DeployEnvironmentComputeInstanceGroupSelectorsItemArgs(
-                    selector_type=var["deploy_environment_compute_instance_group_selectors_items_selector_type"],
-                    compute_instance_ids=var["deploy_environment_compute_instance_group_selectors_items_compute_instance_ids"],
-                    query=var["deploy_environment_compute_instance_group_selectors_items_query"],
-                    region=var["deploy_environment_compute_instance_group_selectors_items_region"],
-                )],
-            ),
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            description=var["deploy_environment_description"],
-            display_name=var["deploy_environment_display_name"],
-            freeform_tags={
-                "bar-key": "value",
-            },
-            function_id=oci_functions_function["test_function"]["id"],
-            network_channel=oci.dev_ops.DeployEnvironmentNetworkChannelArgs(
-                network_channel_type=var["deploy_environment_network_channel_network_channel_type"],
-                subnet_id=oci_core_subnet["test_subnet"]["id"],
-                nsg_ids=var["deploy_environment_network_channel_nsg_ids"],
-            ))
-        ```
-
-        ## Import
-
-        DeployEnvironments can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:DevOps/deployEnvironment:DeployEnvironment test_deploy_environment "id"
-        ```
-
+        Create a DeployEnvironment resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] cluster_id: (Updatable) The OCID of the Kubernetes cluster.
-        :param pulumi.Input[pulumi.InputType['DeployEnvironmentComputeInstanceGroupSelectorsArgs']] compute_instance_group_selectors: (Updatable) A collection of selectors. The combination of instances matching the selectors are included in the instance group.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] deploy_environment_type: (Updatable) Deployment environment type.
-        :param pulumi.Input[str] description: (Updatable) Optional description about the deployment environment.
-        :param pulumi.Input[str] display_name: (Updatable) Deployment environment display name. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] function_id: (Updatable) The OCID of the Function.
-        :param pulumi.Input[pulumi.InputType['DeployEnvironmentNetworkChannelArgs']] network_channel: (Updatable) Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
-        :param pulumi.Input[str] project_id: The OCID of a project.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -546,52 +367,7 @@ class DeployEnvironment(pulumi.CustomResource):
                  args: DeployEnvironmentArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Deploy Environment resource in Oracle Cloud Infrastructure Devops service.
-
-        Creates a new deployment environment.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_deploy_environment = oci.dev_ops.DeployEnvironment("testDeployEnvironment",
-            deploy_environment_type=var["deploy_environment_deploy_environment_type"],
-            project_id=oci_devops_project["test_project"]["id"],
-            cluster_id=oci_containerengine_cluster["test_cluster"]["id"],
-            compute_instance_group_selectors=oci.dev_ops.DeployEnvironmentComputeInstanceGroupSelectorsArgs(
-                items=[oci.dev_ops.DeployEnvironmentComputeInstanceGroupSelectorsItemArgs(
-                    selector_type=var["deploy_environment_compute_instance_group_selectors_items_selector_type"],
-                    compute_instance_ids=var["deploy_environment_compute_instance_group_selectors_items_compute_instance_ids"],
-                    query=var["deploy_environment_compute_instance_group_selectors_items_query"],
-                    region=var["deploy_environment_compute_instance_group_selectors_items_region"],
-                )],
-            ),
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            description=var["deploy_environment_description"],
-            display_name=var["deploy_environment_display_name"],
-            freeform_tags={
-                "bar-key": "value",
-            },
-            function_id=oci_functions_function["test_function"]["id"],
-            network_channel=oci.dev_ops.DeployEnvironmentNetworkChannelArgs(
-                network_channel_type=var["deploy_environment_network_channel_network_channel_type"],
-                subnet_id=oci_core_subnet["test_subnet"]["id"],
-                nsg_ids=var["deploy_environment_network_channel_nsg_ids"],
-            ))
-        ```
-
-        ## Import
-
-        DeployEnvironments can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:DevOps/deployEnvironment:DeployEnvironment test_deploy_environment "id"
-        ```
-
+        Create a DeployEnvironment resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param DeployEnvironmentArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -679,26 +455,6 @@ class DeployEnvironment(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] cluster_id: (Updatable) The OCID of the Kubernetes cluster.
-        :param pulumi.Input[str] compartment_id: The OCID of a compartment.
-        :param pulumi.Input[pulumi.InputType['DeployEnvironmentComputeInstanceGroupSelectorsArgs']] compute_instance_group_selectors: (Updatable) A collection of selectors. The combination of instances matching the selectors are included in the instance group.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] deploy_environment_type: (Updatable) Deployment environment type.
-        :param pulumi.Input[str] description: (Updatable) Optional description about the deployment environment.
-        :param pulumi.Input[str] display_name: (Updatable) Deployment environment display name. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] function_id: (Updatable) The OCID of the Function.
-        :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[pulumi.InputType['DeployEnvironmentNetworkChannelArgs']] network_channel: (Updatable) Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
-        :param pulumi.Input[str] project_id: The OCID of a project.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] state: The current state of the deployment environment.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: Time the deployment environment was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-        :param pulumi.Input[str] time_updated: Time the deployment environment was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -724,133 +480,81 @@ class DeployEnvironment(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="clusterId")
-    def cluster_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The OCID of the Kubernetes cluster.
-        """
+    def cluster_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "cluster_id")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of a compartment.
-        """
+    def compartment_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="computeInstanceGroupSelectors")
-    def compute_instance_group_selectors(self) -> pulumi.Output['outputs.DeployEnvironmentComputeInstanceGroupSelectors']:
-        """
-        (Updatable) A collection of selectors. The combination of instances matching the selectors are included in the instance group.
-        """
+    def compute_instance_group_selectors(self) -> pulumi.Output[Optional['outputs.DeployEnvironmentComputeInstanceGroupSelectors']]:
         return pulumi.get(self, "compute_instance_group_selectors")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="deployEnvironmentType")
     def deploy_environment_type(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Deployment environment type.
-        """
         return pulumi.get(self, "deploy_environment_type")
 
     @property
     @pulumi.getter
-    def description(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Optional description about the deployment environment.
-        """
+    def description(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Deployment environment display name. Avoid entering confidential information.
-        """
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="functionId")
-    def function_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The OCID of the Function.
-        """
+    def function_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "function_id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="networkChannel")
-    def network_channel(self) -> pulumi.Output['outputs.DeployEnvironmentNetworkChannel']:
-        """
-        (Updatable) Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
-        """
+    def network_channel(self) -> pulumi.Output[Optional['outputs.DeployEnvironmentNetworkChannel']]:
         return pulumi.get(self, "network_channel")
 
     @property
     @pulumi.getter(name="projectId")
     def project_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of a project.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "project_id")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the deployment environment.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        Time the deployment environment was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        Time the deployment environment was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 

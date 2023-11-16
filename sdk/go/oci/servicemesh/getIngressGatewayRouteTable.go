@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Ingress Gateway Route Table resource in Oracle Cloud Infrastructure Service Mesh service.
@@ -60,34 +59,34 @@ type LookupIngressGatewayRouteTableArgs struct {
 // A collection of values returned by getIngressGatewayRouteTable.
 type LookupIngressGatewayRouteTableResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Unique identifier that is immutable on creation.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The OCID of the ingress gateway.
-	IngressGatewayId           string `pulumi:"ingressGatewayId"`
-	IngressGatewayRouteTableId string `pulumi:"ingressGatewayRouteTableId"`
+	IngressGatewayId           *string `pulumi:"ingressGatewayId"`
+	IngressGatewayRouteTableId string  `pulumi:"ingressGatewayRouteTableId"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Name of the ingress gateway host that this route should apply to.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The priority of the route table. A lower value means a higher priority. The routes are declared based on the priority.
-	Priority int `pulumi:"priority"`
+	Priority *int `pulumi:"priority"`
 	// The route rules for the ingress gateway.
 	RouteRules []GetIngressGatewayRouteTableRouteRule `pulumi:"routeRules"`
 	// The current state of the Resource.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time when this resource was created in an RFC3339 formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time when this resource was updated in an RFC3339 formatted datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func LookupIngressGatewayRouteTableOutput(ctx *pulumi.Context, args LookupIngressGatewayRouteTableOutputArgs, opts ...pulumi.InvokeOption) LookupIngressGatewayRouteTableResultOutput {
@@ -128,15 +127,9 @@ func (o LookupIngressGatewayRouteTableResultOutput) ToLookupIngressGatewayRouteT
 	return o
 }
 
-func (o LookupIngressGatewayRouteTableResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupIngressGatewayRouteTableResult] {
-	return pulumix.Output[LookupIngressGatewayRouteTableResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-func (o LookupIngressGatewayRouteTableResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupIngressGatewayRouteTableResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupIngressGatewayRouteTableResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupIngressGatewayRouteTableResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -145,8 +138,8 @@ func (o LookupIngressGatewayRouteTableResultOutput) DefinedTags() pulumi.MapOutp
 }
 
 // Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
-func (o LookupIngressGatewayRouteTableResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupIngressGatewayRouteTableResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupIngressGatewayRouteTableResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupIngressGatewayRouteTableResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -155,13 +148,13 @@ func (o LookupIngressGatewayRouteTableResultOutput) FreeformTags() pulumi.MapOut
 }
 
 // Unique identifier that is immutable on creation.
-func (o LookupIngressGatewayRouteTableResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupIngressGatewayRouteTableResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupIngressGatewayRouteTableResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupIngressGatewayRouteTableResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the ingress gateway.
-func (o LookupIngressGatewayRouteTableResultOutput) IngressGatewayId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupIngressGatewayRouteTableResult) string { return v.IngressGatewayId }).(pulumi.StringOutput)
+func (o LookupIngressGatewayRouteTableResultOutput) IngressGatewayId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupIngressGatewayRouteTableResult) *string { return v.IngressGatewayId }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupIngressGatewayRouteTableResultOutput) IngressGatewayRouteTableId() pulumi.StringOutput {
@@ -169,18 +162,18 @@ func (o LookupIngressGatewayRouteTableResultOutput) IngressGatewayRouteTableId()
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-func (o LookupIngressGatewayRouteTableResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupIngressGatewayRouteTableResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupIngressGatewayRouteTableResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupIngressGatewayRouteTableResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // Name of the ingress gateway host that this route should apply to.
-func (o LookupIngressGatewayRouteTableResultOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupIngressGatewayRouteTableResult) string { return v.Name }).(pulumi.StringOutput)
+func (o LookupIngressGatewayRouteTableResultOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupIngressGatewayRouteTableResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The priority of the route table. A lower value means a higher priority. The routes are declared based on the priority.
-func (o LookupIngressGatewayRouteTableResultOutput) Priority() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupIngressGatewayRouteTableResult) int { return v.Priority }).(pulumi.IntOutput)
+func (o LookupIngressGatewayRouteTableResultOutput) Priority() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupIngressGatewayRouteTableResult) *int { return v.Priority }).(pulumi.IntPtrOutput)
 }
 
 // The route rules for the ingress gateway.
@@ -191,8 +184,8 @@ func (o LookupIngressGatewayRouteTableResultOutput) RouteRules() GetIngressGatew
 }
 
 // The current state of the Resource.
-func (o LookupIngressGatewayRouteTableResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupIngressGatewayRouteTableResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupIngressGatewayRouteTableResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupIngressGatewayRouteTableResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -201,13 +194,13 @@ func (o LookupIngressGatewayRouteTableResultOutput) SystemTags() pulumi.MapOutpu
 }
 
 // The time when this resource was created in an RFC3339 formatted datetime string.
-func (o LookupIngressGatewayRouteTableResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupIngressGatewayRouteTableResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupIngressGatewayRouteTableResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupIngressGatewayRouteTableResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time when this resource was updated in an RFC3339 formatted datetime string.
-func (o LookupIngressGatewayRouteTableResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupIngressGatewayRouteTableResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupIngressGatewayRouteTableResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupIngressGatewayRouteTableResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

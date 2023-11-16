@@ -122,7 +122,7 @@ export interface GetConnectionsResult {
     /**
      * The list of connection_collection.
      */
-    readonly connectionCollections: outputs.DataCatalog.GetConnectionsConnectionCollection[];
+    readonly connectionCollections?: outputs.DataCatalog.GetConnectionsConnectionCollection[];
     /**
      * OCID of the user who created the connection.
      */
@@ -145,7 +145,7 @@ export interface GetConnectionsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Indicates whether this connection is the default connection.
      */

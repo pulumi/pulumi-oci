@@ -13,6 +13,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttribute {
@@ -20,127 +22,127 @@ public final class GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttri
      * @return A collection of canonical values. Applicable Service Providers MUST specify the canonical types specified in the core schema specification--for example, \&#34;work\&#34;, \&#34;home\&#34;.
      * 
      */
-    private List<String> canonicalValues;
+    private @Nullable List<String> canonicalValues;
     /**
      * @return Specifies if the String attribute is case-sensitive
      * 
      */
-    private Boolean caseExact;
+    private @Nullable Boolean caseExact;
     /**
      * @return Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
      * 
      */
-    private String compartmentOcid;
+    private @Nullable String compartmentOcid;
     /**
      * @return A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      * 
      */
-    private Boolean deleteInProgress;
+    private @Nullable Boolean deleteInProgress;
     /**
      * @return The attribute&#39;s human-readable description
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      * 
      */
-    private String domainOcid;
+    private @Nullable String domainOcid;
     /**
      * @return Specifies User mutability for this attribute
      * 
      */
-    private String endUserMutability;
+    private @Nullable String endUserMutability;
     /**
      * @return Specifies the list of User mutabilities allowed
      * 
      */
-    private List<String> endUserMutabilityAllowedValues;
+    private @Nullable List<String> endUserMutabilityAllowedValues;
     /**
      * @return Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider&#39;s entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Indicates that the schema has been added since this release number
      * 
      */
-    private String idcsAddedSinceReleaseNumber;
+    private @Nullable String idcsAddedSinceReleaseNumber;
     /**
      * @return Indicates that the schema has been added since version
      * 
      */
-    private Integer idcsAddedSinceVersion;
+    private @Nullable Integer idcsAddedSinceVersion;
     /**
      * @return Specifies whether the attribute is cacheable. True by default for all attributes. If attribute with idcsAttributeCachable = false, is present \&#34;attributesToGet\&#34; while executing GET/SEARCH on cacheable resource, Cache is missed and data is fetched from Data Provider.
      * 
      */
-    private Boolean idcsAttributeCacheable;
+    private @Nullable Boolean idcsAttributeCacheable;
     /**
      * @return Specifies if the attribute can be used for mapping with external identity sources such as AD or LDAP. If isSchemaMappable: false for the schema in which this attribute is defined, then this flag is ignored
      * 
      */
-    private Boolean idcsAttributeMappable;
+    private @Nullable Boolean idcsAttributeMappable;
     /**
      * @return Specifies whether changes to this attribute value are audited
      * 
      */
-    private Boolean idcsAuditable;
+    private @Nullable Boolean idcsAuditable;
     /**
      * @return Sequence tracking ID name for the attribute
      * 
      */
-    private String idcsAutoIncrementSeqName;
+    private @Nullable String idcsAutoIncrementSeqName;
     /**
      * @return Filter to use when getting canonical values for this schema attribute
      * 
      */
-    private String idcsCanonicalValueSourceFilter;
+    private @Nullable String idcsCanonicalValueSourceFilter;
     /**
      * @return Specifies the Resource type to read from for dynamic canonical values
      * 
      */
-    private String idcsCanonicalValueSourceResourceType;
+    private @Nullable String idcsCanonicalValueSourceResourceType;
     /**
      * @return The set of one or more sub attributes&#39; names of a CMVA, whose values uniquely identify an instance of a CMVA
      * 
      */
-    private List<String> idcsCompositeKeys;
+    private @Nullable List<String> idcsCompositeKeys;
     /**
      * @return The User or App who created the Resource
      * 
      */
-    private List<GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttributeIdcsCreatedBy> idcsCreatedBies;
+    private @Nullable List<GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttributeIdcsCreatedBy> idcsCreatedBies;
     /**
      * @return The attribute defining the CSV column header name for import/export
      * 
      */
-    private String idcsCsvColumnHeaderName;
+    private @Nullable String idcsCsvColumnHeaderName;
     /**
      * @return custom attribute flag.
      * 
      */
-    private Boolean idcsCustomAttribute;
+    private @Nullable Boolean idcsCustomAttribute;
     /**
      * @return Indicates that the schema has been deprecated since this release number
      * 
      */
-    private String idcsDeprecatedSinceReleaseNumber;
+    private @Nullable String idcsDeprecatedSinceReleaseNumber;
     /**
      * @return Indicates that the schema has been deprecated since version
      * 
      */
-    private Integer idcsDeprecatedSinceVersion;
+    private @Nullable Integer idcsDeprecatedSinceVersion;
     /**
      * @return Specifies the user-friendly displayable attribute name or catalog key used for localization
      * 
      */
-    private String idcsDisplayName;
+    private @Nullable String idcsDisplayName;
     /**
      * @return Localized schema attribute display name for use by UI client  for displaying attribute labels
      * 
      */
-    private String idcsDisplayNameMessageId;
+    private @Nullable String idcsDisplayNameMessageId;
     /**
      * @return **SCIM++ Properties:**
      * * caseExact: false
@@ -153,227 +155,227 @@ public final class GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttri
      * * uniqueness: none Whether the CMVA attribute will be fetched or not for current resource in AbstractResourceManager update operation before calling data provider update. Default is true.
      * 
      */
-    private Boolean idcsFetchComplexAttributeValues;
+    private @Nullable Boolean idcsFetchComplexAttributeValues;
     /**
      * @return Specifies the mapper to use when mapping this attribute value from DataProvider-specific semantics
      * 
      */
-    private String idcsFromTargetMapper;
+    private @Nullable String idcsFromTargetMapper;
     /**
      * @return Fully qualified name of this attribute
      * 
      */
-    private String idcsFullyQualifiedName;
+    private @Nullable String idcsFullyQualifiedName;
     /**
      * @return Specifies whether this attribute value was generated
      * 
      */
-    private Boolean idcsGenerated;
+    private @Nullable Boolean idcsGenerated;
     /**
      * @return Maps to ICF data type
      * 
      */
-    private String idcsIcfAttributeType;
+    private @Nullable String idcsIcfAttributeType;
     /**
      * @return Maps to ICF target attribute name
      * 
      */
-    private String idcsIcfBundleAttributeName;
+    private @Nullable String idcsIcfBundleAttributeName;
     /**
      * @return Metadata to identify the ICF required attribute
      * 
      */
-    private Boolean idcsIcfRequired;
+    private @Nullable Boolean idcsIcfRequired;
     /**
      * @return Specifies the indirectly referenced Resources
      * 
      */
-    private List<String> idcsIndirectRefResourceAttributes;
+    private @Nullable List<String> idcsIndirectRefResourceAttributes;
     /**
      * @return Specifies whether the schema attribute is for internal use only. Internal attributes are not exposed via REST. This attribute overrides mutability for create/update if the request is internal and the attribute internalflag is set to True. This attribute overrides the return attribute while building SCIM response attributes when both the request is internal and the schema attribute is internal.
      * 
      */
-    private Boolean idcsInternal;
+    private @Nullable Boolean idcsInternal;
     /**
      * @return The User or App who modified the Resource
      * 
      */
-    private List<GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttributeIdcsLastModifiedBy> idcsLastModifiedBies;
+    private @Nullable List<GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttributeIdcsLastModifiedBy> idcsLastModifiedBies;
     /**
      * @return The release number when the resource was upgraded.
      * 
      */
-    private String idcsLastUpgradedInRelease;
+    private @Nullable String idcsLastUpgradedInRelease;
     /**
      * @return Specifies the maximum length of the attribute
      * 
      */
-    private Integer idcsMaxLength;
+    private @Nullable Integer idcsMaxLength;
     /**
      * @return Specifies the maximum value of the integer attribute
      * 
      */
-    private Integer idcsMaxValue;
+    private @Nullable Integer idcsMaxValue;
     /**
      * @return Specifies the minimum length of the attribute
      * 
      */
-    private Integer idcsMinLength;
+    private @Nullable Integer idcsMinLength;
     /**
      * @return Specifies the minimum value of the integer attribute
      * 
      */
-    private Integer idcsMinValue;
+    private @Nullable Integer idcsMinValue;
     /**
      * @return If true, specifies that the attribute can have multiple language values set for the attribute on which this is set.
      * 
      */
-    private Boolean idcsMultiLanguage;
+    private @Nullable Boolean idcsMultiLanguage;
     /**
      * @return Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      * 
      */
-    private List<String> idcsPreventedOperations;
+    private @Nullable List<String> idcsPreventedOperations;
     /**
      * @return Specifies the referenced Resource attribute
      * 
      */
-    private String idcsRefResourceAttribute;
+    private @Nullable String idcsRefResourceAttribute;
     /**
      * @return Specifies the directly referenced Resources
      * 
      */
-    private List<String> idcsRefResourceAttributes;
+    private @Nullable List<String> idcsRefResourceAttributes;
     /**
      * @return Schema URN string that this attribute belongs to
      * 
      */
-    private String idcsSchemaUrn;
+    private @Nullable String idcsSchemaUrn;
     /**
      * @return Indicates if the attribute is scim compliant, default is true
      * 
      */
-    private Boolean idcsScimCompliant;
+    private @Nullable Boolean idcsScimCompliant;
     /**
      * @return Specifies whether this attribute can be included in a search filter
      * 
      */
-    private Boolean idcsSearchable;
+    private @Nullable Boolean idcsSearchable;
     /**
      * @return Flag to specify if the attribute should be encrypted or hashed
      * 
      */
-    private String idcsSensitive;
+    private @Nullable String idcsSensitive;
     /**
      * @return Target attribute name that this attribute gets mapped to for persistence
      * 
      */
-    private String idcsTargetAttributeName;
+    private @Nullable String idcsTargetAttributeName;
     /**
      * @return Old Target attribute name from child table for CSVA attribute prior to migration. This maintains this attribute used to get mapped to for persistence
      * 
      */
-    private String idcsTargetAttributeNameToMigrateFrom;
+    private @Nullable String idcsTargetAttributeNameToMigrateFrom;
     /**
      * @return Target normalized attribute name that this normalized value of attribute gets mapped to for persistence. Only set for caseExact=false &amp; searchable attributes. Do not use by default.
      * 
      */
-    private String idcsTargetNormAttributeName;
+    private @Nullable String idcsTargetNormAttributeName;
     /**
      * @return Target index name created for this attribute for performance
      * 
      */
-    private String idcsTargetUniqueConstraintName;
+    private @Nullable String idcsTargetUniqueConstraintName;
     /**
      * @return Specifies the mapper to use when mapping this attribute value to DataProvider-specific semantics
      * 
      */
-    private String idcsToTargetMapper;
+    private @Nullable String idcsToTargetMapper;
     /**
      * @return Trims any leading and trailing blanks from String values. Default is True.
      * 
      */
-    private Boolean idcsTrimStringValue;
+    private @Nullable Boolean idcsTrimStringValue;
     /**
      * @return Validate payload reference value during create, replace, and update. Default is True.
      * 
      */
-    private Boolean idcsValidateReference;
+    private @Nullable Boolean idcsValidateReference;
     /**
      * @return Specifies whether the value of the Resource attribute is persisted
      * 
      */
-    private Boolean idcsValuePersisted;
+    private @Nullable Boolean idcsValuePersisted;
     /**
      * @return A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      * 
      */
-    private List<GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttributeMeta> metas;
+    private @Nullable List<GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttributeMeta> metas;
     /**
      * @return Indicates the attribute&#39;s plurality
      * 
      */
-    private Boolean multiValued;
+    private @Nullable Boolean multiValued;
     /**
      * @return Specifies if the attribute is mutable
      * 
      */
-    private String mutability;
+    private @Nullable String mutability;
     /**
      * @return Attribute&#39;s name
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      * 
      */
-    private String ocid;
+    private @Nullable String ocid;
     /**
      * @return The names of the Resource types that may be referenced--for example, User. This is only applicable for attributes that are of the \&#34;reference\&#34; data type.
      * 
      */
-    private List<String> referenceTypes;
+    private @Nullable List<String> referenceTypes;
     /**
      * @return Specifies if the attribute is required
      * 
      */
-    private Boolean required;
+    private @Nullable Boolean required;
     /**
      * @return ResourceType this attribute belongs to.
      * 
      */
-    private String resourceType;
+    private @Nullable String resourceType;
     /**
      * @return A single keyword that indicates when an attribute and associated values are returned in response to a GET request or in response to a PUT, POST, or PATCH request
      * 
      */
-    private String returned;
+    private @Nullable String returned;
     /**
      * @return The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior. REQUIRED.
      * 
      */
-    private List<String> schemas;
+    private @Nullable List<String> schemas;
     /**
      * @return A list of tags on this resource.
      * 
      */
-    private List<GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttributeTag> tags;
+    private @Nullable List<GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttributeTag> tags;
     /**
      * @return Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      * 
      */
-    private String tenancyOcid;
+    private @Nullable String tenancyOcid;
     /**
      * @return The attribute&#39;s data type--for example, String
      * 
      */
-    private String type;
+    private @Nullable String type;
     /**
      * @return A single keyword value that specifies how the Service Provider enforces uniqueness of attribute values. A server MAY reject an invalid value based on uniqueness by returning an HTTP response code of 400 (Bad Request). A client MAY enforce uniqueness on the client side to a greater degree than the Service Provider enforces. For example, a client could make a value unique while the server has the uniqueness of \&#34;none\&#34;.
      * 
      */
-    private String uniqueness;
+    private @Nullable String uniqueness;
 
     private GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttribute() {}
     /**
@@ -381,175 +383,175 @@ public final class GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttri
      * 
      */
     public List<String> canonicalValues() {
-        return this.canonicalValues;
+        return this.canonicalValues == null ? List.of() : this.canonicalValues;
     }
     /**
      * @return Specifies if the String attribute is case-sensitive
      * 
      */
-    public Boolean caseExact() {
-        return this.caseExact;
+    public Optional<Boolean> caseExact() {
+        return Optional.ofNullable(this.caseExact);
     }
     /**
      * @return Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
      * 
      */
-    public String compartmentOcid() {
-        return this.compartmentOcid;
+    public Optional<String> compartmentOcid() {
+        return Optional.ofNullable(this.compartmentOcid);
     }
     /**
      * @return A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      * 
      */
-    public Boolean deleteInProgress() {
-        return this.deleteInProgress;
+    public Optional<Boolean> deleteInProgress() {
+        return Optional.ofNullable(this.deleteInProgress);
     }
     /**
      * @return The attribute&#39;s human-readable description
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      * 
      */
-    public String domainOcid() {
-        return this.domainOcid;
+    public Optional<String> domainOcid() {
+        return Optional.ofNullable(this.domainOcid);
     }
     /**
      * @return Specifies User mutability for this attribute
      * 
      */
-    public String endUserMutability() {
-        return this.endUserMutability;
+    public Optional<String> endUserMutability() {
+        return Optional.ofNullable(this.endUserMutability);
     }
     /**
      * @return Specifies the list of User mutabilities allowed
      * 
      */
     public List<String> endUserMutabilityAllowedValues() {
-        return this.endUserMutabilityAllowedValues;
+        return this.endUserMutabilityAllowedValues == null ? List.of() : this.endUserMutabilityAllowedValues;
     }
     /**
      * @return Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider&#39;s entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Indicates that the schema has been added since this release number
      * 
      */
-    public String idcsAddedSinceReleaseNumber() {
-        return this.idcsAddedSinceReleaseNumber;
+    public Optional<String> idcsAddedSinceReleaseNumber() {
+        return Optional.ofNullable(this.idcsAddedSinceReleaseNumber);
     }
     /**
      * @return Indicates that the schema has been added since version
      * 
      */
-    public Integer idcsAddedSinceVersion() {
-        return this.idcsAddedSinceVersion;
+    public Optional<Integer> idcsAddedSinceVersion() {
+        return Optional.ofNullable(this.idcsAddedSinceVersion);
     }
     /**
      * @return Specifies whether the attribute is cacheable. True by default for all attributes. If attribute with idcsAttributeCachable = false, is present \&#34;attributesToGet\&#34; while executing GET/SEARCH on cacheable resource, Cache is missed and data is fetched from Data Provider.
      * 
      */
-    public Boolean idcsAttributeCacheable() {
-        return this.idcsAttributeCacheable;
+    public Optional<Boolean> idcsAttributeCacheable() {
+        return Optional.ofNullable(this.idcsAttributeCacheable);
     }
     /**
      * @return Specifies if the attribute can be used for mapping with external identity sources such as AD or LDAP. If isSchemaMappable: false for the schema in which this attribute is defined, then this flag is ignored
      * 
      */
-    public Boolean idcsAttributeMappable() {
-        return this.idcsAttributeMappable;
+    public Optional<Boolean> idcsAttributeMappable() {
+        return Optional.ofNullable(this.idcsAttributeMappable);
     }
     /**
      * @return Specifies whether changes to this attribute value are audited
      * 
      */
-    public Boolean idcsAuditable() {
-        return this.idcsAuditable;
+    public Optional<Boolean> idcsAuditable() {
+        return Optional.ofNullable(this.idcsAuditable);
     }
     /**
      * @return Sequence tracking ID name for the attribute
      * 
      */
-    public String idcsAutoIncrementSeqName() {
-        return this.idcsAutoIncrementSeqName;
+    public Optional<String> idcsAutoIncrementSeqName() {
+        return Optional.ofNullable(this.idcsAutoIncrementSeqName);
     }
     /**
      * @return Filter to use when getting canonical values for this schema attribute
      * 
      */
-    public String idcsCanonicalValueSourceFilter() {
-        return this.idcsCanonicalValueSourceFilter;
+    public Optional<String> idcsCanonicalValueSourceFilter() {
+        return Optional.ofNullable(this.idcsCanonicalValueSourceFilter);
     }
     /**
      * @return Specifies the Resource type to read from for dynamic canonical values
      * 
      */
-    public String idcsCanonicalValueSourceResourceType() {
-        return this.idcsCanonicalValueSourceResourceType;
+    public Optional<String> idcsCanonicalValueSourceResourceType() {
+        return Optional.ofNullable(this.idcsCanonicalValueSourceResourceType);
     }
     /**
      * @return The set of one or more sub attributes&#39; names of a CMVA, whose values uniquely identify an instance of a CMVA
      * 
      */
     public List<String> idcsCompositeKeys() {
-        return this.idcsCompositeKeys;
+        return this.idcsCompositeKeys == null ? List.of() : this.idcsCompositeKeys;
     }
     /**
      * @return The User or App who created the Resource
      * 
      */
     public List<GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttributeIdcsCreatedBy> idcsCreatedBies() {
-        return this.idcsCreatedBies;
+        return this.idcsCreatedBies == null ? List.of() : this.idcsCreatedBies;
     }
     /**
      * @return The attribute defining the CSV column header name for import/export
      * 
      */
-    public String idcsCsvColumnHeaderName() {
-        return this.idcsCsvColumnHeaderName;
+    public Optional<String> idcsCsvColumnHeaderName() {
+        return Optional.ofNullable(this.idcsCsvColumnHeaderName);
     }
     /**
      * @return custom attribute flag.
      * 
      */
-    public Boolean idcsCustomAttribute() {
-        return this.idcsCustomAttribute;
+    public Optional<Boolean> idcsCustomAttribute() {
+        return Optional.ofNullable(this.idcsCustomAttribute);
     }
     /**
      * @return Indicates that the schema has been deprecated since this release number
      * 
      */
-    public String idcsDeprecatedSinceReleaseNumber() {
-        return this.idcsDeprecatedSinceReleaseNumber;
+    public Optional<String> idcsDeprecatedSinceReleaseNumber() {
+        return Optional.ofNullable(this.idcsDeprecatedSinceReleaseNumber);
     }
     /**
      * @return Indicates that the schema has been deprecated since version
      * 
      */
-    public Integer idcsDeprecatedSinceVersion() {
-        return this.idcsDeprecatedSinceVersion;
+    public Optional<Integer> idcsDeprecatedSinceVersion() {
+        return Optional.ofNullable(this.idcsDeprecatedSinceVersion);
     }
     /**
      * @return Specifies the user-friendly displayable attribute name or catalog key used for localization
      * 
      */
-    public String idcsDisplayName() {
-        return this.idcsDisplayName;
+    public Optional<String> idcsDisplayName() {
+        return Optional.ofNullable(this.idcsDisplayName);
     }
     /**
      * @return Localized schema attribute display name for use by UI client  for displaying attribute labels
      * 
      */
-    public String idcsDisplayNameMessageId() {
-        return this.idcsDisplayNameMessageId;
+    public Optional<String> idcsDisplayNameMessageId() {
+        return Optional.ofNullable(this.idcsDisplayNameMessageId);
     }
     /**
      * @return **SCIM++ Properties:**
@@ -563,316 +565,316 @@ public final class GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttri
      * * uniqueness: none Whether the CMVA attribute will be fetched or not for current resource in AbstractResourceManager update operation before calling data provider update. Default is true.
      * 
      */
-    public Boolean idcsFetchComplexAttributeValues() {
-        return this.idcsFetchComplexAttributeValues;
+    public Optional<Boolean> idcsFetchComplexAttributeValues() {
+        return Optional.ofNullable(this.idcsFetchComplexAttributeValues);
     }
     /**
      * @return Specifies the mapper to use when mapping this attribute value from DataProvider-specific semantics
      * 
      */
-    public String idcsFromTargetMapper() {
-        return this.idcsFromTargetMapper;
+    public Optional<String> idcsFromTargetMapper() {
+        return Optional.ofNullable(this.idcsFromTargetMapper);
     }
     /**
      * @return Fully qualified name of this attribute
      * 
      */
-    public String idcsFullyQualifiedName() {
-        return this.idcsFullyQualifiedName;
+    public Optional<String> idcsFullyQualifiedName() {
+        return Optional.ofNullable(this.idcsFullyQualifiedName);
     }
     /**
      * @return Specifies whether this attribute value was generated
      * 
      */
-    public Boolean idcsGenerated() {
-        return this.idcsGenerated;
+    public Optional<Boolean> idcsGenerated() {
+        return Optional.ofNullable(this.idcsGenerated);
     }
     /**
      * @return Maps to ICF data type
      * 
      */
-    public String idcsIcfAttributeType() {
-        return this.idcsIcfAttributeType;
+    public Optional<String> idcsIcfAttributeType() {
+        return Optional.ofNullable(this.idcsIcfAttributeType);
     }
     /**
      * @return Maps to ICF target attribute name
      * 
      */
-    public String idcsIcfBundleAttributeName() {
-        return this.idcsIcfBundleAttributeName;
+    public Optional<String> idcsIcfBundleAttributeName() {
+        return Optional.ofNullable(this.idcsIcfBundleAttributeName);
     }
     /**
      * @return Metadata to identify the ICF required attribute
      * 
      */
-    public Boolean idcsIcfRequired() {
-        return this.idcsIcfRequired;
+    public Optional<Boolean> idcsIcfRequired() {
+        return Optional.ofNullable(this.idcsIcfRequired);
     }
     /**
      * @return Specifies the indirectly referenced Resources
      * 
      */
     public List<String> idcsIndirectRefResourceAttributes() {
-        return this.idcsIndirectRefResourceAttributes;
+        return this.idcsIndirectRefResourceAttributes == null ? List.of() : this.idcsIndirectRefResourceAttributes;
     }
     /**
      * @return Specifies whether the schema attribute is for internal use only. Internal attributes are not exposed via REST. This attribute overrides mutability for create/update if the request is internal and the attribute internalflag is set to True. This attribute overrides the return attribute while building SCIM response attributes when both the request is internal and the schema attribute is internal.
      * 
      */
-    public Boolean idcsInternal() {
-        return this.idcsInternal;
+    public Optional<Boolean> idcsInternal() {
+        return Optional.ofNullable(this.idcsInternal);
     }
     /**
      * @return The User or App who modified the Resource
      * 
      */
     public List<GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttributeIdcsLastModifiedBy> idcsLastModifiedBies() {
-        return this.idcsLastModifiedBies;
+        return this.idcsLastModifiedBies == null ? List.of() : this.idcsLastModifiedBies;
     }
     /**
      * @return The release number when the resource was upgraded.
      * 
      */
-    public String idcsLastUpgradedInRelease() {
-        return this.idcsLastUpgradedInRelease;
+    public Optional<String> idcsLastUpgradedInRelease() {
+        return Optional.ofNullable(this.idcsLastUpgradedInRelease);
     }
     /**
      * @return Specifies the maximum length of the attribute
      * 
      */
-    public Integer idcsMaxLength() {
-        return this.idcsMaxLength;
+    public Optional<Integer> idcsMaxLength() {
+        return Optional.ofNullable(this.idcsMaxLength);
     }
     /**
      * @return Specifies the maximum value of the integer attribute
      * 
      */
-    public Integer idcsMaxValue() {
-        return this.idcsMaxValue;
+    public Optional<Integer> idcsMaxValue() {
+        return Optional.ofNullable(this.idcsMaxValue);
     }
     /**
      * @return Specifies the minimum length of the attribute
      * 
      */
-    public Integer idcsMinLength() {
-        return this.idcsMinLength;
+    public Optional<Integer> idcsMinLength() {
+        return Optional.ofNullable(this.idcsMinLength);
     }
     /**
      * @return Specifies the minimum value of the integer attribute
      * 
      */
-    public Integer idcsMinValue() {
-        return this.idcsMinValue;
+    public Optional<Integer> idcsMinValue() {
+        return Optional.ofNullable(this.idcsMinValue);
     }
     /**
      * @return If true, specifies that the attribute can have multiple language values set for the attribute on which this is set.
      * 
      */
-    public Boolean idcsMultiLanguage() {
-        return this.idcsMultiLanguage;
+    public Optional<Boolean> idcsMultiLanguage() {
+        return Optional.ofNullable(this.idcsMultiLanguage);
     }
     /**
      * @return Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      * 
      */
     public List<String> idcsPreventedOperations() {
-        return this.idcsPreventedOperations;
+        return this.idcsPreventedOperations == null ? List.of() : this.idcsPreventedOperations;
     }
     /**
      * @return Specifies the referenced Resource attribute
      * 
      */
-    public String idcsRefResourceAttribute() {
-        return this.idcsRefResourceAttribute;
+    public Optional<String> idcsRefResourceAttribute() {
+        return Optional.ofNullable(this.idcsRefResourceAttribute);
     }
     /**
      * @return Specifies the directly referenced Resources
      * 
      */
     public List<String> idcsRefResourceAttributes() {
-        return this.idcsRefResourceAttributes;
+        return this.idcsRefResourceAttributes == null ? List.of() : this.idcsRefResourceAttributes;
     }
     /**
      * @return Schema URN string that this attribute belongs to
      * 
      */
-    public String idcsSchemaUrn() {
-        return this.idcsSchemaUrn;
+    public Optional<String> idcsSchemaUrn() {
+        return Optional.ofNullable(this.idcsSchemaUrn);
     }
     /**
      * @return Indicates if the attribute is scim compliant, default is true
      * 
      */
-    public Boolean idcsScimCompliant() {
-        return this.idcsScimCompliant;
+    public Optional<Boolean> idcsScimCompliant() {
+        return Optional.ofNullable(this.idcsScimCompliant);
     }
     /**
      * @return Specifies whether this attribute can be included in a search filter
      * 
      */
-    public Boolean idcsSearchable() {
-        return this.idcsSearchable;
+    public Optional<Boolean> idcsSearchable() {
+        return Optional.ofNullable(this.idcsSearchable);
     }
     /**
      * @return Flag to specify if the attribute should be encrypted or hashed
      * 
      */
-    public String idcsSensitive() {
-        return this.idcsSensitive;
+    public Optional<String> idcsSensitive() {
+        return Optional.ofNullable(this.idcsSensitive);
     }
     /**
      * @return Target attribute name that this attribute gets mapped to for persistence
      * 
      */
-    public String idcsTargetAttributeName() {
-        return this.idcsTargetAttributeName;
+    public Optional<String> idcsTargetAttributeName() {
+        return Optional.ofNullable(this.idcsTargetAttributeName);
     }
     /**
      * @return Old Target attribute name from child table for CSVA attribute prior to migration. This maintains this attribute used to get mapped to for persistence
      * 
      */
-    public String idcsTargetAttributeNameToMigrateFrom() {
-        return this.idcsTargetAttributeNameToMigrateFrom;
+    public Optional<String> idcsTargetAttributeNameToMigrateFrom() {
+        return Optional.ofNullable(this.idcsTargetAttributeNameToMigrateFrom);
     }
     /**
      * @return Target normalized attribute name that this normalized value of attribute gets mapped to for persistence. Only set for caseExact=false &amp; searchable attributes. Do not use by default.
      * 
      */
-    public String idcsTargetNormAttributeName() {
-        return this.idcsTargetNormAttributeName;
+    public Optional<String> idcsTargetNormAttributeName() {
+        return Optional.ofNullable(this.idcsTargetNormAttributeName);
     }
     /**
      * @return Target index name created for this attribute for performance
      * 
      */
-    public String idcsTargetUniqueConstraintName() {
-        return this.idcsTargetUniqueConstraintName;
+    public Optional<String> idcsTargetUniqueConstraintName() {
+        return Optional.ofNullable(this.idcsTargetUniqueConstraintName);
     }
     /**
      * @return Specifies the mapper to use when mapping this attribute value to DataProvider-specific semantics
      * 
      */
-    public String idcsToTargetMapper() {
-        return this.idcsToTargetMapper;
+    public Optional<String> idcsToTargetMapper() {
+        return Optional.ofNullable(this.idcsToTargetMapper);
     }
     /**
      * @return Trims any leading and trailing blanks from String values. Default is True.
      * 
      */
-    public Boolean idcsTrimStringValue() {
-        return this.idcsTrimStringValue;
+    public Optional<Boolean> idcsTrimStringValue() {
+        return Optional.ofNullable(this.idcsTrimStringValue);
     }
     /**
      * @return Validate payload reference value during create, replace, and update. Default is True.
      * 
      */
-    public Boolean idcsValidateReference() {
-        return this.idcsValidateReference;
+    public Optional<Boolean> idcsValidateReference() {
+        return Optional.ofNullable(this.idcsValidateReference);
     }
     /**
      * @return Specifies whether the value of the Resource attribute is persisted
      * 
      */
-    public Boolean idcsValuePersisted() {
-        return this.idcsValuePersisted;
+    public Optional<Boolean> idcsValuePersisted() {
+        return Optional.ofNullable(this.idcsValuePersisted);
     }
     /**
      * @return A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      * 
      */
     public List<GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttributeMeta> metas() {
-        return this.metas;
+        return this.metas == null ? List.of() : this.metas;
     }
     /**
      * @return Indicates the attribute&#39;s plurality
      * 
      */
-    public Boolean multiValued() {
-        return this.multiValued;
+    public Optional<Boolean> multiValued() {
+        return Optional.ofNullable(this.multiValued);
     }
     /**
      * @return Specifies if the attribute is mutable
      * 
      */
-    public String mutability() {
-        return this.mutability;
+    public Optional<String> mutability() {
+        return Optional.ofNullable(this.mutability);
     }
     /**
      * @return Attribute&#39;s name
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      * 
      */
-    public String ocid() {
-        return this.ocid;
+    public Optional<String> ocid() {
+        return Optional.ofNullable(this.ocid);
     }
     /**
      * @return The names of the Resource types that may be referenced--for example, User. This is only applicable for attributes that are of the \&#34;reference\&#34; data type.
      * 
      */
     public List<String> referenceTypes() {
-        return this.referenceTypes;
+        return this.referenceTypes == null ? List.of() : this.referenceTypes;
     }
     /**
      * @return Specifies if the attribute is required
      * 
      */
-    public Boolean required() {
-        return this.required;
+    public Optional<Boolean> required() {
+        return Optional.ofNullable(this.required);
     }
     /**
      * @return ResourceType this attribute belongs to.
      * 
      */
-    public String resourceType() {
-        return this.resourceType;
+    public Optional<String> resourceType() {
+        return Optional.ofNullable(this.resourceType);
     }
     /**
      * @return A single keyword that indicates when an attribute and associated values are returned in response to a GET request or in response to a PUT, POST, or PATCH request
      * 
      */
-    public String returned() {
-        return this.returned;
+    public Optional<String> returned() {
+        return Optional.ofNullable(this.returned);
     }
     /**
      * @return The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior. REQUIRED.
      * 
      */
     public List<String> schemas() {
-        return this.schemas;
+        return this.schemas == null ? List.of() : this.schemas;
     }
     /**
      * @return A list of tags on this resource.
      * 
      */
     public List<GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttributeTag> tags() {
-        return this.tags;
+        return this.tags == null ? List.of() : this.tags;
     }
     /**
      * @return Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      * 
      */
-    public String tenancyOcid() {
-        return this.tenancyOcid;
+    public Optional<String> tenancyOcid() {
+        return Optional.ofNullable(this.tenancyOcid);
     }
     /**
      * @return The attribute&#39;s data type--for example, String
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
     /**
      * @return A single keyword value that specifies how the Service Provider enforces uniqueness of attribute values. A server MAY reject an invalid value based on uniqueness by returning an HTTP response code of 400 (Bad Request). A client MAY enforce uniqueness on the client side to a greater degree than the Service Provider enforces. For example, a client could make a value unique while the server has the uniqueness of \&#34;none\&#34;.
      * 
      */
-    public String uniqueness() {
-        return this.uniqueness;
+    public Optional<String> uniqueness() {
+        return Optional.ofNullable(this.uniqueness);
     }
 
     public static Builder builder() {
@@ -884,76 +886,76 @@ public final class GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttri
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> canonicalValues;
-        private Boolean caseExact;
-        private String compartmentOcid;
-        private Boolean deleteInProgress;
-        private String description;
-        private String domainOcid;
-        private String endUserMutability;
-        private List<String> endUserMutabilityAllowedValues;
-        private String id;
-        private String idcsAddedSinceReleaseNumber;
-        private Integer idcsAddedSinceVersion;
-        private Boolean idcsAttributeCacheable;
-        private Boolean idcsAttributeMappable;
-        private Boolean idcsAuditable;
-        private String idcsAutoIncrementSeqName;
-        private String idcsCanonicalValueSourceFilter;
-        private String idcsCanonicalValueSourceResourceType;
-        private List<String> idcsCompositeKeys;
-        private List<GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttributeIdcsCreatedBy> idcsCreatedBies;
-        private String idcsCsvColumnHeaderName;
-        private Boolean idcsCustomAttribute;
-        private String idcsDeprecatedSinceReleaseNumber;
-        private Integer idcsDeprecatedSinceVersion;
-        private String idcsDisplayName;
-        private String idcsDisplayNameMessageId;
-        private Boolean idcsFetchComplexAttributeValues;
-        private String idcsFromTargetMapper;
-        private String idcsFullyQualifiedName;
-        private Boolean idcsGenerated;
-        private String idcsIcfAttributeType;
-        private String idcsIcfBundleAttributeName;
-        private Boolean idcsIcfRequired;
-        private List<String> idcsIndirectRefResourceAttributes;
-        private Boolean idcsInternal;
-        private List<GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttributeIdcsLastModifiedBy> idcsLastModifiedBies;
-        private String idcsLastUpgradedInRelease;
-        private Integer idcsMaxLength;
-        private Integer idcsMaxValue;
-        private Integer idcsMinLength;
-        private Integer idcsMinValue;
-        private Boolean idcsMultiLanguage;
-        private List<String> idcsPreventedOperations;
-        private String idcsRefResourceAttribute;
-        private List<String> idcsRefResourceAttributes;
-        private String idcsSchemaUrn;
-        private Boolean idcsScimCompliant;
-        private Boolean idcsSearchable;
-        private String idcsSensitive;
-        private String idcsTargetAttributeName;
-        private String idcsTargetAttributeNameToMigrateFrom;
-        private String idcsTargetNormAttributeName;
-        private String idcsTargetUniqueConstraintName;
-        private String idcsToTargetMapper;
-        private Boolean idcsTrimStringValue;
-        private Boolean idcsValidateReference;
-        private Boolean idcsValuePersisted;
-        private List<GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttributeMeta> metas;
-        private Boolean multiValued;
-        private String mutability;
-        private String name;
-        private String ocid;
-        private List<String> referenceTypes;
-        private Boolean required;
-        private String resourceType;
-        private String returned;
-        private List<String> schemas;
-        private List<GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttributeTag> tags;
-        private String tenancyOcid;
-        private String type;
-        private String uniqueness;
+        private @Nullable List<String> canonicalValues;
+        private @Nullable Boolean caseExact;
+        private @Nullable String compartmentOcid;
+        private @Nullable Boolean deleteInProgress;
+        private @Nullable String description;
+        private @Nullable String domainOcid;
+        private @Nullable String endUserMutability;
+        private @Nullable List<String> endUserMutabilityAllowedValues;
+        private @Nullable String id;
+        private @Nullable String idcsAddedSinceReleaseNumber;
+        private @Nullable Integer idcsAddedSinceVersion;
+        private @Nullable Boolean idcsAttributeCacheable;
+        private @Nullable Boolean idcsAttributeMappable;
+        private @Nullable Boolean idcsAuditable;
+        private @Nullable String idcsAutoIncrementSeqName;
+        private @Nullable String idcsCanonicalValueSourceFilter;
+        private @Nullable String idcsCanonicalValueSourceResourceType;
+        private @Nullable List<String> idcsCompositeKeys;
+        private @Nullable List<GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttributeIdcsCreatedBy> idcsCreatedBies;
+        private @Nullable String idcsCsvColumnHeaderName;
+        private @Nullable Boolean idcsCustomAttribute;
+        private @Nullable String idcsDeprecatedSinceReleaseNumber;
+        private @Nullable Integer idcsDeprecatedSinceVersion;
+        private @Nullable String idcsDisplayName;
+        private @Nullable String idcsDisplayNameMessageId;
+        private @Nullable Boolean idcsFetchComplexAttributeValues;
+        private @Nullable String idcsFromTargetMapper;
+        private @Nullable String idcsFullyQualifiedName;
+        private @Nullable Boolean idcsGenerated;
+        private @Nullable String idcsIcfAttributeType;
+        private @Nullable String idcsIcfBundleAttributeName;
+        private @Nullable Boolean idcsIcfRequired;
+        private @Nullable List<String> idcsIndirectRefResourceAttributes;
+        private @Nullable Boolean idcsInternal;
+        private @Nullable List<GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttributeIdcsLastModifiedBy> idcsLastModifiedBies;
+        private @Nullable String idcsLastUpgradedInRelease;
+        private @Nullable Integer idcsMaxLength;
+        private @Nullable Integer idcsMaxValue;
+        private @Nullable Integer idcsMinLength;
+        private @Nullable Integer idcsMinValue;
+        private @Nullable Boolean idcsMultiLanguage;
+        private @Nullable List<String> idcsPreventedOperations;
+        private @Nullable String idcsRefResourceAttribute;
+        private @Nullable List<String> idcsRefResourceAttributes;
+        private @Nullable String idcsSchemaUrn;
+        private @Nullable Boolean idcsScimCompliant;
+        private @Nullable Boolean idcsSearchable;
+        private @Nullable String idcsSensitive;
+        private @Nullable String idcsTargetAttributeName;
+        private @Nullable String idcsTargetAttributeNameToMigrateFrom;
+        private @Nullable String idcsTargetNormAttributeName;
+        private @Nullable String idcsTargetUniqueConstraintName;
+        private @Nullable String idcsToTargetMapper;
+        private @Nullable Boolean idcsTrimStringValue;
+        private @Nullable Boolean idcsValidateReference;
+        private @Nullable Boolean idcsValuePersisted;
+        private @Nullable List<GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttributeMeta> metas;
+        private @Nullable Boolean multiValued;
+        private @Nullable String mutability;
+        private @Nullable String name;
+        private @Nullable String ocid;
+        private @Nullable List<String> referenceTypes;
+        private @Nullable Boolean required;
+        private @Nullable String resourceType;
+        private @Nullable String returned;
+        private @Nullable List<String> schemas;
+        private @Nullable List<GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttributeTag> tags;
+        private @Nullable String tenancyOcid;
+        private @Nullable String type;
+        private @Nullable String uniqueness;
         public Builder() {}
         public Builder(GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttribute defaults) {
     	      Objects.requireNonNull(defaults);
@@ -1030,389 +1032,389 @@ public final class GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttri
         }
 
         @CustomType.Setter
-        public Builder canonicalValues(List<String> canonicalValues) {
-            this.canonicalValues = Objects.requireNonNull(canonicalValues);
+        public Builder canonicalValues(@Nullable List<String> canonicalValues) {
+            this.canonicalValues = canonicalValues;
             return this;
         }
         public Builder canonicalValues(String... canonicalValues) {
             return canonicalValues(List.of(canonicalValues));
         }
         @CustomType.Setter
-        public Builder caseExact(Boolean caseExact) {
-            this.caseExact = Objects.requireNonNull(caseExact);
+        public Builder caseExact(@Nullable Boolean caseExact) {
+            this.caseExact = caseExact;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentOcid(String compartmentOcid) {
-            this.compartmentOcid = Objects.requireNonNull(compartmentOcid);
+        public Builder compartmentOcid(@Nullable String compartmentOcid) {
+            this.compartmentOcid = compartmentOcid;
             return this;
         }
         @CustomType.Setter
-        public Builder deleteInProgress(Boolean deleteInProgress) {
-            this.deleteInProgress = Objects.requireNonNull(deleteInProgress);
+        public Builder deleteInProgress(@Nullable Boolean deleteInProgress) {
+            this.deleteInProgress = deleteInProgress;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder domainOcid(String domainOcid) {
-            this.domainOcid = Objects.requireNonNull(domainOcid);
+        public Builder domainOcid(@Nullable String domainOcid) {
+            this.domainOcid = domainOcid;
             return this;
         }
         @CustomType.Setter
-        public Builder endUserMutability(String endUserMutability) {
-            this.endUserMutability = Objects.requireNonNull(endUserMutability);
+        public Builder endUserMutability(@Nullable String endUserMutability) {
+            this.endUserMutability = endUserMutability;
             return this;
         }
         @CustomType.Setter
-        public Builder endUserMutabilityAllowedValues(List<String> endUserMutabilityAllowedValues) {
-            this.endUserMutabilityAllowedValues = Objects.requireNonNull(endUserMutabilityAllowedValues);
+        public Builder endUserMutabilityAllowedValues(@Nullable List<String> endUserMutabilityAllowedValues) {
+            this.endUserMutabilityAllowedValues = endUserMutabilityAllowedValues;
             return this;
         }
         public Builder endUserMutabilityAllowedValues(String... endUserMutabilityAllowedValues) {
             return endUserMutabilityAllowedValues(List.of(endUserMutabilityAllowedValues));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsAddedSinceReleaseNumber(String idcsAddedSinceReleaseNumber) {
-            this.idcsAddedSinceReleaseNumber = Objects.requireNonNull(idcsAddedSinceReleaseNumber);
+        public Builder idcsAddedSinceReleaseNumber(@Nullable String idcsAddedSinceReleaseNumber) {
+            this.idcsAddedSinceReleaseNumber = idcsAddedSinceReleaseNumber;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsAddedSinceVersion(Integer idcsAddedSinceVersion) {
-            this.idcsAddedSinceVersion = Objects.requireNonNull(idcsAddedSinceVersion);
+        public Builder idcsAddedSinceVersion(@Nullable Integer idcsAddedSinceVersion) {
+            this.idcsAddedSinceVersion = idcsAddedSinceVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsAttributeCacheable(Boolean idcsAttributeCacheable) {
-            this.idcsAttributeCacheable = Objects.requireNonNull(idcsAttributeCacheable);
+        public Builder idcsAttributeCacheable(@Nullable Boolean idcsAttributeCacheable) {
+            this.idcsAttributeCacheable = idcsAttributeCacheable;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsAttributeMappable(Boolean idcsAttributeMappable) {
-            this.idcsAttributeMappable = Objects.requireNonNull(idcsAttributeMappable);
+        public Builder idcsAttributeMappable(@Nullable Boolean idcsAttributeMappable) {
+            this.idcsAttributeMappable = idcsAttributeMappable;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsAuditable(Boolean idcsAuditable) {
-            this.idcsAuditable = Objects.requireNonNull(idcsAuditable);
+        public Builder idcsAuditable(@Nullable Boolean idcsAuditable) {
+            this.idcsAuditable = idcsAuditable;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsAutoIncrementSeqName(String idcsAutoIncrementSeqName) {
-            this.idcsAutoIncrementSeqName = Objects.requireNonNull(idcsAutoIncrementSeqName);
+        public Builder idcsAutoIncrementSeqName(@Nullable String idcsAutoIncrementSeqName) {
+            this.idcsAutoIncrementSeqName = idcsAutoIncrementSeqName;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsCanonicalValueSourceFilter(String idcsCanonicalValueSourceFilter) {
-            this.idcsCanonicalValueSourceFilter = Objects.requireNonNull(idcsCanonicalValueSourceFilter);
+        public Builder idcsCanonicalValueSourceFilter(@Nullable String idcsCanonicalValueSourceFilter) {
+            this.idcsCanonicalValueSourceFilter = idcsCanonicalValueSourceFilter;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsCanonicalValueSourceResourceType(String idcsCanonicalValueSourceResourceType) {
-            this.idcsCanonicalValueSourceResourceType = Objects.requireNonNull(idcsCanonicalValueSourceResourceType);
+        public Builder idcsCanonicalValueSourceResourceType(@Nullable String idcsCanonicalValueSourceResourceType) {
+            this.idcsCanonicalValueSourceResourceType = idcsCanonicalValueSourceResourceType;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsCompositeKeys(List<String> idcsCompositeKeys) {
-            this.idcsCompositeKeys = Objects.requireNonNull(idcsCompositeKeys);
+        public Builder idcsCompositeKeys(@Nullable List<String> idcsCompositeKeys) {
+            this.idcsCompositeKeys = idcsCompositeKeys;
             return this;
         }
         public Builder idcsCompositeKeys(String... idcsCompositeKeys) {
             return idcsCompositeKeys(List.of(idcsCompositeKeys));
         }
         @CustomType.Setter
-        public Builder idcsCreatedBies(List<GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttributeIdcsCreatedBy> idcsCreatedBies) {
-            this.idcsCreatedBies = Objects.requireNonNull(idcsCreatedBies);
+        public Builder idcsCreatedBies(@Nullable List<GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttributeIdcsCreatedBy> idcsCreatedBies) {
+            this.idcsCreatedBies = idcsCreatedBies;
             return this;
         }
         public Builder idcsCreatedBies(GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttributeIdcsCreatedBy... idcsCreatedBies) {
             return idcsCreatedBies(List.of(idcsCreatedBies));
         }
         @CustomType.Setter
-        public Builder idcsCsvColumnHeaderName(String idcsCsvColumnHeaderName) {
-            this.idcsCsvColumnHeaderName = Objects.requireNonNull(idcsCsvColumnHeaderName);
+        public Builder idcsCsvColumnHeaderName(@Nullable String idcsCsvColumnHeaderName) {
+            this.idcsCsvColumnHeaderName = idcsCsvColumnHeaderName;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsCustomAttribute(Boolean idcsCustomAttribute) {
-            this.idcsCustomAttribute = Objects.requireNonNull(idcsCustomAttribute);
+        public Builder idcsCustomAttribute(@Nullable Boolean idcsCustomAttribute) {
+            this.idcsCustomAttribute = idcsCustomAttribute;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsDeprecatedSinceReleaseNumber(String idcsDeprecatedSinceReleaseNumber) {
-            this.idcsDeprecatedSinceReleaseNumber = Objects.requireNonNull(idcsDeprecatedSinceReleaseNumber);
+        public Builder idcsDeprecatedSinceReleaseNumber(@Nullable String idcsDeprecatedSinceReleaseNumber) {
+            this.idcsDeprecatedSinceReleaseNumber = idcsDeprecatedSinceReleaseNumber;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsDeprecatedSinceVersion(Integer idcsDeprecatedSinceVersion) {
-            this.idcsDeprecatedSinceVersion = Objects.requireNonNull(idcsDeprecatedSinceVersion);
+        public Builder idcsDeprecatedSinceVersion(@Nullable Integer idcsDeprecatedSinceVersion) {
+            this.idcsDeprecatedSinceVersion = idcsDeprecatedSinceVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsDisplayName(String idcsDisplayName) {
-            this.idcsDisplayName = Objects.requireNonNull(idcsDisplayName);
+        public Builder idcsDisplayName(@Nullable String idcsDisplayName) {
+            this.idcsDisplayName = idcsDisplayName;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsDisplayNameMessageId(String idcsDisplayNameMessageId) {
-            this.idcsDisplayNameMessageId = Objects.requireNonNull(idcsDisplayNameMessageId);
+        public Builder idcsDisplayNameMessageId(@Nullable String idcsDisplayNameMessageId) {
+            this.idcsDisplayNameMessageId = idcsDisplayNameMessageId;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsFetchComplexAttributeValues(Boolean idcsFetchComplexAttributeValues) {
-            this.idcsFetchComplexAttributeValues = Objects.requireNonNull(idcsFetchComplexAttributeValues);
+        public Builder idcsFetchComplexAttributeValues(@Nullable Boolean idcsFetchComplexAttributeValues) {
+            this.idcsFetchComplexAttributeValues = idcsFetchComplexAttributeValues;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsFromTargetMapper(String idcsFromTargetMapper) {
-            this.idcsFromTargetMapper = Objects.requireNonNull(idcsFromTargetMapper);
+        public Builder idcsFromTargetMapper(@Nullable String idcsFromTargetMapper) {
+            this.idcsFromTargetMapper = idcsFromTargetMapper;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsFullyQualifiedName(String idcsFullyQualifiedName) {
-            this.idcsFullyQualifiedName = Objects.requireNonNull(idcsFullyQualifiedName);
+        public Builder idcsFullyQualifiedName(@Nullable String idcsFullyQualifiedName) {
+            this.idcsFullyQualifiedName = idcsFullyQualifiedName;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsGenerated(Boolean idcsGenerated) {
-            this.idcsGenerated = Objects.requireNonNull(idcsGenerated);
+        public Builder idcsGenerated(@Nullable Boolean idcsGenerated) {
+            this.idcsGenerated = idcsGenerated;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsIcfAttributeType(String idcsIcfAttributeType) {
-            this.idcsIcfAttributeType = Objects.requireNonNull(idcsIcfAttributeType);
+        public Builder idcsIcfAttributeType(@Nullable String idcsIcfAttributeType) {
+            this.idcsIcfAttributeType = idcsIcfAttributeType;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsIcfBundleAttributeName(String idcsIcfBundleAttributeName) {
-            this.idcsIcfBundleAttributeName = Objects.requireNonNull(idcsIcfBundleAttributeName);
+        public Builder idcsIcfBundleAttributeName(@Nullable String idcsIcfBundleAttributeName) {
+            this.idcsIcfBundleAttributeName = idcsIcfBundleAttributeName;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsIcfRequired(Boolean idcsIcfRequired) {
-            this.idcsIcfRequired = Objects.requireNonNull(idcsIcfRequired);
+        public Builder idcsIcfRequired(@Nullable Boolean idcsIcfRequired) {
+            this.idcsIcfRequired = idcsIcfRequired;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsIndirectRefResourceAttributes(List<String> idcsIndirectRefResourceAttributes) {
-            this.idcsIndirectRefResourceAttributes = Objects.requireNonNull(idcsIndirectRefResourceAttributes);
+        public Builder idcsIndirectRefResourceAttributes(@Nullable List<String> idcsIndirectRefResourceAttributes) {
+            this.idcsIndirectRefResourceAttributes = idcsIndirectRefResourceAttributes;
             return this;
         }
         public Builder idcsIndirectRefResourceAttributes(String... idcsIndirectRefResourceAttributes) {
             return idcsIndirectRefResourceAttributes(List.of(idcsIndirectRefResourceAttributes));
         }
         @CustomType.Setter
-        public Builder idcsInternal(Boolean idcsInternal) {
-            this.idcsInternal = Objects.requireNonNull(idcsInternal);
+        public Builder idcsInternal(@Nullable Boolean idcsInternal) {
+            this.idcsInternal = idcsInternal;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsLastModifiedBies(List<GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttributeIdcsLastModifiedBy> idcsLastModifiedBies) {
-            this.idcsLastModifiedBies = Objects.requireNonNull(idcsLastModifiedBies);
+        public Builder idcsLastModifiedBies(@Nullable List<GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttributeIdcsLastModifiedBy> idcsLastModifiedBies) {
+            this.idcsLastModifiedBies = idcsLastModifiedBies;
             return this;
         }
         public Builder idcsLastModifiedBies(GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttributeIdcsLastModifiedBy... idcsLastModifiedBies) {
             return idcsLastModifiedBies(List.of(idcsLastModifiedBies));
         }
         @CustomType.Setter
-        public Builder idcsLastUpgradedInRelease(String idcsLastUpgradedInRelease) {
-            this.idcsLastUpgradedInRelease = Objects.requireNonNull(idcsLastUpgradedInRelease);
+        public Builder idcsLastUpgradedInRelease(@Nullable String idcsLastUpgradedInRelease) {
+            this.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsMaxLength(Integer idcsMaxLength) {
-            this.idcsMaxLength = Objects.requireNonNull(idcsMaxLength);
+        public Builder idcsMaxLength(@Nullable Integer idcsMaxLength) {
+            this.idcsMaxLength = idcsMaxLength;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsMaxValue(Integer idcsMaxValue) {
-            this.idcsMaxValue = Objects.requireNonNull(idcsMaxValue);
+        public Builder idcsMaxValue(@Nullable Integer idcsMaxValue) {
+            this.idcsMaxValue = idcsMaxValue;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsMinLength(Integer idcsMinLength) {
-            this.idcsMinLength = Objects.requireNonNull(idcsMinLength);
+        public Builder idcsMinLength(@Nullable Integer idcsMinLength) {
+            this.idcsMinLength = idcsMinLength;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsMinValue(Integer idcsMinValue) {
-            this.idcsMinValue = Objects.requireNonNull(idcsMinValue);
+        public Builder idcsMinValue(@Nullable Integer idcsMinValue) {
+            this.idcsMinValue = idcsMinValue;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsMultiLanguage(Boolean idcsMultiLanguage) {
-            this.idcsMultiLanguage = Objects.requireNonNull(idcsMultiLanguage);
+        public Builder idcsMultiLanguage(@Nullable Boolean idcsMultiLanguage) {
+            this.idcsMultiLanguage = idcsMultiLanguage;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsPreventedOperations(List<String> idcsPreventedOperations) {
-            this.idcsPreventedOperations = Objects.requireNonNull(idcsPreventedOperations);
+        public Builder idcsPreventedOperations(@Nullable List<String> idcsPreventedOperations) {
+            this.idcsPreventedOperations = idcsPreventedOperations;
             return this;
         }
         public Builder idcsPreventedOperations(String... idcsPreventedOperations) {
             return idcsPreventedOperations(List.of(idcsPreventedOperations));
         }
         @CustomType.Setter
-        public Builder idcsRefResourceAttribute(String idcsRefResourceAttribute) {
-            this.idcsRefResourceAttribute = Objects.requireNonNull(idcsRefResourceAttribute);
+        public Builder idcsRefResourceAttribute(@Nullable String idcsRefResourceAttribute) {
+            this.idcsRefResourceAttribute = idcsRefResourceAttribute;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsRefResourceAttributes(List<String> idcsRefResourceAttributes) {
-            this.idcsRefResourceAttributes = Objects.requireNonNull(idcsRefResourceAttributes);
+        public Builder idcsRefResourceAttributes(@Nullable List<String> idcsRefResourceAttributes) {
+            this.idcsRefResourceAttributes = idcsRefResourceAttributes;
             return this;
         }
         public Builder idcsRefResourceAttributes(String... idcsRefResourceAttributes) {
             return idcsRefResourceAttributes(List.of(idcsRefResourceAttributes));
         }
         @CustomType.Setter
-        public Builder idcsSchemaUrn(String idcsSchemaUrn) {
-            this.idcsSchemaUrn = Objects.requireNonNull(idcsSchemaUrn);
+        public Builder idcsSchemaUrn(@Nullable String idcsSchemaUrn) {
+            this.idcsSchemaUrn = idcsSchemaUrn;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsScimCompliant(Boolean idcsScimCompliant) {
-            this.idcsScimCompliant = Objects.requireNonNull(idcsScimCompliant);
+        public Builder idcsScimCompliant(@Nullable Boolean idcsScimCompliant) {
+            this.idcsScimCompliant = idcsScimCompliant;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsSearchable(Boolean idcsSearchable) {
-            this.idcsSearchable = Objects.requireNonNull(idcsSearchable);
+        public Builder idcsSearchable(@Nullable Boolean idcsSearchable) {
+            this.idcsSearchable = idcsSearchable;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsSensitive(String idcsSensitive) {
-            this.idcsSensitive = Objects.requireNonNull(idcsSensitive);
+        public Builder idcsSensitive(@Nullable String idcsSensitive) {
+            this.idcsSensitive = idcsSensitive;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsTargetAttributeName(String idcsTargetAttributeName) {
-            this.idcsTargetAttributeName = Objects.requireNonNull(idcsTargetAttributeName);
+        public Builder idcsTargetAttributeName(@Nullable String idcsTargetAttributeName) {
+            this.idcsTargetAttributeName = idcsTargetAttributeName;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsTargetAttributeNameToMigrateFrom(String idcsTargetAttributeNameToMigrateFrom) {
-            this.idcsTargetAttributeNameToMigrateFrom = Objects.requireNonNull(idcsTargetAttributeNameToMigrateFrom);
+        public Builder idcsTargetAttributeNameToMigrateFrom(@Nullable String idcsTargetAttributeNameToMigrateFrom) {
+            this.idcsTargetAttributeNameToMigrateFrom = idcsTargetAttributeNameToMigrateFrom;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsTargetNormAttributeName(String idcsTargetNormAttributeName) {
-            this.idcsTargetNormAttributeName = Objects.requireNonNull(idcsTargetNormAttributeName);
+        public Builder idcsTargetNormAttributeName(@Nullable String idcsTargetNormAttributeName) {
+            this.idcsTargetNormAttributeName = idcsTargetNormAttributeName;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsTargetUniqueConstraintName(String idcsTargetUniqueConstraintName) {
-            this.idcsTargetUniqueConstraintName = Objects.requireNonNull(idcsTargetUniqueConstraintName);
+        public Builder idcsTargetUniqueConstraintName(@Nullable String idcsTargetUniqueConstraintName) {
+            this.idcsTargetUniqueConstraintName = idcsTargetUniqueConstraintName;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsToTargetMapper(String idcsToTargetMapper) {
-            this.idcsToTargetMapper = Objects.requireNonNull(idcsToTargetMapper);
+        public Builder idcsToTargetMapper(@Nullable String idcsToTargetMapper) {
+            this.idcsToTargetMapper = idcsToTargetMapper;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsTrimStringValue(Boolean idcsTrimStringValue) {
-            this.idcsTrimStringValue = Objects.requireNonNull(idcsTrimStringValue);
+        public Builder idcsTrimStringValue(@Nullable Boolean idcsTrimStringValue) {
+            this.idcsTrimStringValue = idcsTrimStringValue;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsValidateReference(Boolean idcsValidateReference) {
-            this.idcsValidateReference = Objects.requireNonNull(idcsValidateReference);
+        public Builder idcsValidateReference(@Nullable Boolean idcsValidateReference) {
+            this.idcsValidateReference = idcsValidateReference;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsValuePersisted(Boolean idcsValuePersisted) {
-            this.idcsValuePersisted = Objects.requireNonNull(idcsValuePersisted);
+        public Builder idcsValuePersisted(@Nullable Boolean idcsValuePersisted) {
+            this.idcsValuePersisted = idcsValuePersisted;
             return this;
         }
         @CustomType.Setter
-        public Builder metas(List<GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttributeMeta> metas) {
-            this.metas = Objects.requireNonNull(metas);
+        public Builder metas(@Nullable List<GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttributeMeta> metas) {
+            this.metas = metas;
             return this;
         }
         public Builder metas(GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttributeMeta... metas) {
             return metas(List.of(metas));
         }
         @CustomType.Setter
-        public Builder multiValued(Boolean multiValued) {
-            this.multiValued = Objects.requireNonNull(multiValued);
+        public Builder multiValued(@Nullable Boolean multiValued) {
+            this.multiValued = multiValued;
             return this;
         }
         @CustomType.Setter
-        public Builder mutability(String mutability) {
-            this.mutability = Objects.requireNonNull(mutability);
+        public Builder mutability(@Nullable String mutability) {
+            this.mutability = mutability;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder ocid(String ocid) {
-            this.ocid = Objects.requireNonNull(ocid);
+        public Builder ocid(@Nullable String ocid) {
+            this.ocid = ocid;
             return this;
         }
         @CustomType.Setter
-        public Builder referenceTypes(List<String> referenceTypes) {
-            this.referenceTypes = Objects.requireNonNull(referenceTypes);
+        public Builder referenceTypes(@Nullable List<String> referenceTypes) {
+            this.referenceTypes = referenceTypes;
             return this;
         }
         public Builder referenceTypes(String... referenceTypes) {
             return referenceTypes(List.of(referenceTypes));
         }
         @CustomType.Setter
-        public Builder required(Boolean required) {
-            this.required = Objects.requireNonNull(required);
+        public Builder required(@Nullable Boolean required) {
+            this.required = required;
             return this;
         }
         @CustomType.Setter
-        public Builder resourceType(String resourceType) {
-            this.resourceType = Objects.requireNonNull(resourceType);
+        public Builder resourceType(@Nullable String resourceType) {
+            this.resourceType = resourceType;
             return this;
         }
         @CustomType.Setter
-        public Builder returned(String returned) {
-            this.returned = Objects.requireNonNull(returned);
+        public Builder returned(@Nullable String returned) {
+            this.returned = returned;
             return this;
         }
         @CustomType.Setter
-        public Builder schemas(List<String> schemas) {
-            this.schemas = Objects.requireNonNull(schemas);
+        public Builder schemas(@Nullable List<String> schemas) {
+            this.schemas = schemas;
             return this;
         }
         public Builder schemas(String... schemas) {
             return schemas(List.of(schemas));
         }
         @CustomType.Setter
-        public Builder tags(List<GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttributeTag> tags) {
-            this.tags = Objects.requireNonNull(tags);
+        public Builder tags(@Nullable List<GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttributeTag> tags) {
+            this.tags = tags;
             return this;
         }
         public Builder tags(GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttributeTag... tags) {
             return tags(List.of(tags));
         }
         @CustomType.Setter
-        public Builder tenancyOcid(String tenancyOcid) {
-            this.tenancyOcid = Objects.requireNonNull(tenancyOcid);
+        public Builder tenancyOcid(@Nullable String tenancyOcid) {
+            this.tenancyOcid = tenancyOcid;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         @CustomType.Setter
-        public Builder uniqueness(String uniqueness) {
-            this.uniqueness = Objects.requireNonNull(uniqueness);
+        public Builder uniqueness(@Nullable String uniqueness) {
+            this.uniqueness = uniqueness;
             return this;
         }
         public GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttribute build() {

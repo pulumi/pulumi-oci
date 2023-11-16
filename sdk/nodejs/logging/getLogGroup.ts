@@ -45,40 +45,40 @@ export interface GetLogGroupResult {
     /**
      * The OCID of the compartment that the resource belongs to.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * Description for this resource.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * The user-friendly display name. This must be unique within the enclosing resource, and it's changeable. Avoid entering confidential information.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The OCID of the resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly logGroupId: string;
     /**
      * The log group object state.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * Time the resource was created.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * Time the resource was last modified.
      */
-    readonly timeLastModified: string;
+    readonly timeLastModified?: string;
 }
 /**
  * This data source provides details about a specific Log Group resource in Oracle Cloud Infrastructure Logging service.

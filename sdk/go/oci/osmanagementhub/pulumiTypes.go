@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -51,12 +50,6 @@ func (i LifecycleEnvironmentManagedInstanceIdArgs) ToLifecycleEnvironmentManaged
 	return pulumi.ToOutputWithContext(ctx, i).(LifecycleEnvironmentManagedInstanceIdOutput)
 }
 
-func (i LifecycleEnvironmentManagedInstanceIdArgs) ToOutput(ctx context.Context) pulumix.Output[LifecycleEnvironmentManagedInstanceId] {
-	return pulumix.Output[LifecycleEnvironmentManagedInstanceId]{
-		OutputState: i.ToLifecycleEnvironmentManagedInstanceIdOutputWithContext(ctx).OutputState,
-	}
-}
-
 // LifecycleEnvironmentManagedInstanceIdArrayInput is an input type that accepts LifecycleEnvironmentManagedInstanceIdArray and LifecycleEnvironmentManagedInstanceIdArrayOutput values.
 // You can construct a concrete instance of `LifecycleEnvironmentManagedInstanceIdArrayInput` via:
 //
@@ -82,12 +75,6 @@ func (i LifecycleEnvironmentManagedInstanceIdArray) ToLifecycleEnvironmentManage
 	return pulumi.ToOutputWithContext(ctx, i).(LifecycleEnvironmentManagedInstanceIdArrayOutput)
 }
 
-func (i LifecycleEnvironmentManagedInstanceIdArray) ToOutput(ctx context.Context) pulumix.Output[[]LifecycleEnvironmentManagedInstanceId] {
-	return pulumix.Output[[]LifecycleEnvironmentManagedInstanceId]{
-		OutputState: i.ToLifecycleEnvironmentManagedInstanceIdArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type LifecycleEnvironmentManagedInstanceIdOutput struct{ *pulumi.OutputState }
 
 func (LifecycleEnvironmentManagedInstanceIdOutput) ElementType() reflect.Type {
@@ -100,12 +87,6 @@ func (o LifecycleEnvironmentManagedInstanceIdOutput) ToLifecycleEnvironmentManag
 
 func (o LifecycleEnvironmentManagedInstanceIdOutput) ToLifecycleEnvironmentManagedInstanceIdOutputWithContext(ctx context.Context) LifecycleEnvironmentManagedInstanceIdOutput {
 	return o
-}
-
-func (o LifecycleEnvironmentManagedInstanceIdOutput) ToOutput(ctx context.Context) pulumix.Output[LifecycleEnvironmentManagedInstanceId] {
-	return pulumix.Output[LifecycleEnvironmentManagedInstanceId]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -130,12 +111,6 @@ func (o LifecycleEnvironmentManagedInstanceIdArrayOutput) ToLifecycleEnvironment
 
 func (o LifecycleEnvironmentManagedInstanceIdArrayOutput) ToLifecycleEnvironmentManagedInstanceIdArrayOutputWithContext(ctx context.Context) LifecycleEnvironmentManagedInstanceIdArrayOutput {
 	return o
-}
-
-func (o LifecycleEnvironmentManagedInstanceIdArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]LifecycleEnvironmentManagedInstanceId] {
-	return pulumix.Output[[]LifecycleEnvironmentManagedInstanceId]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LifecycleEnvironmentManagedInstanceIdArrayOutput) Index(i pulumi.IntInput) LifecycleEnvironmentManagedInstanceIdOutput {
@@ -243,12 +218,6 @@ func (i LifecycleEnvironmentStageArgs) ToLifecycleEnvironmentStageOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(LifecycleEnvironmentStageOutput)
 }
 
-func (i LifecycleEnvironmentStageArgs) ToOutput(ctx context.Context) pulumix.Output[LifecycleEnvironmentStage] {
-	return pulumix.Output[LifecycleEnvironmentStage]{
-		OutputState: i.ToLifecycleEnvironmentStageOutputWithContext(ctx).OutputState,
-	}
-}
-
 // LifecycleEnvironmentStageArrayInput is an input type that accepts LifecycleEnvironmentStageArray and LifecycleEnvironmentStageArrayOutput values.
 // You can construct a concrete instance of `LifecycleEnvironmentStageArrayInput` via:
 //
@@ -274,12 +243,6 @@ func (i LifecycleEnvironmentStageArray) ToLifecycleEnvironmentStageArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(LifecycleEnvironmentStageArrayOutput)
 }
 
-func (i LifecycleEnvironmentStageArray) ToOutput(ctx context.Context) pulumix.Output[[]LifecycleEnvironmentStage] {
-	return pulumix.Output[[]LifecycleEnvironmentStage]{
-		OutputState: i.ToLifecycleEnvironmentStageArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type LifecycleEnvironmentStageOutput struct{ *pulumi.OutputState }
 
 func (LifecycleEnvironmentStageOutput) ElementType() reflect.Type {
@@ -292,12 +255,6 @@ func (o LifecycleEnvironmentStageOutput) ToLifecycleEnvironmentStageOutput() Lif
 
 func (o LifecycleEnvironmentStageOutput) ToLifecycleEnvironmentStageOutputWithContext(ctx context.Context) LifecycleEnvironmentStageOutput {
 	return o
-}
-
-func (o LifecycleEnvironmentStageOutput) ToOutput(ctx context.Context) pulumix.Output[LifecycleEnvironmentStage] {
-	return pulumix.Output[LifecycleEnvironmentStage]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The CPU architecture of the managed instance(s) in the lifecycle environment.
@@ -401,12 +358,6 @@ func (o LifecycleEnvironmentStageArrayOutput) ToLifecycleEnvironmentStageArrayOu
 	return o
 }
 
-func (o LifecycleEnvironmentStageArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]LifecycleEnvironmentStage] {
-	return pulumix.Output[[]LifecycleEnvironmentStage]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o LifecycleEnvironmentStageArrayOutput) Index(i pulumi.IntInput) LifecycleEnvironmentStageOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) LifecycleEnvironmentStage {
 		return vs[0].([]LifecycleEnvironmentStage)[vs[1].(int)]
@@ -450,12 +401,6 @@ func (i LifecycleEnvironmentStageManagedInstanceIdArgs) ToLifecycleEnvironmentSt
 	return pulumi.ToOutputWithContext(ctx, i).(LifecycleEnvironmentStageManagedInstanceIdOutput)
 }
 
-func (i LifecycleEnvironmentStageManagedInstanceIdArgs) ToOutput(ctx context.Context) pulumix.Output[LifecycleEnvironmentStageManagedInstanceId] {
-	return pulumix.Output[LifecycleEnvironmentStageManagedInstanceId]{
-		OutputState: i.ToLifecycleEnvironmentStageManagedInstanceIdOutputWithContext(ctx).OutputState,
-	}
-}
-
 // LifecycleEnvironmentStageManagedInstanceIdArrayInput is an input type that accepts LifecycleEnvironmentStageManagedInstanceIdArray and LifecycleEnvironmentStageManagedInstanceIdArrayOutput values.
 // You can construct a concrete instance of `LifecycleEnvironmentStageManagedInstanceIdArrayInput` via:
 //
@@ -481,12 +426,6 @@ func (i LifecycleEnvironmentStageManagedInstanceIdArray) ToLifecycleEnvironmentS
 	return pulumi.ToOutputWithContext(ctx, i).(LifecycleEnvironmentStageManagedInstanceIdArrayOutput)
 }
 
-func (i LifecycleEnvironmentStageManagedInstanceIdArray) ToOutput(ctx context.Context) pulumix.Output[[]LifecycleEnvironmentStageManagedInstanceId] {
-	return pulumix.Output[[]LifecycleEnvironmentStageManagedInstanceId]{
-		OutputState: i.ToLifecycleEnvironmentStageManagedInstanceIdArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type LifecycleEnvironmentStageManagedInstanceIdOutput struct{ *pulumi.OutputState }
 
 func (LifecycleEnvironmentStageManagedInstanceIdOutput) ElementType() reflect.Type {
@@ -499,12 +438,6 @@ func (o LifecycleEnvironmentStageManagedInstanceIdOutput) ToLifecycleEnvironment
 
 func (o LifecycleEnvironmentStageManagedInstanceIdOutput) ToLifecycleEnvironmentStageManagedInstanceIdOutputWithContext(ctx context.Context) LifecycleEnvironmentStageManagedInstanceIdOutput {
 	return o
-}
-
-func (o LifecycleEnvironmentStageManagedInstanceIdOutput) ToOutput(ctx context.Context) pulumix.Output[LifecycleEnvironmentStageManagedInstanceId] {
-	return pulumix.Output[LifecycleEnvironmentStageManagedInstanceId]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -529,12 +462,6 @@ func (o LifecycleEnvironmentStageManagedInstanceIdArrayOutput) ToLifecycleEnviro
 
 func (o LifecycleEnvironmentStageManagedInstanceIdArrayOutput) ToLifecycleEnvironmentStageManagedInstanceIdArrayOutputWithContext(ctx context.Context) LifecycleEnvironmentStageManagedInstanceIdArrayOutput {
 	return o
-}
-
-func (o LifecycleEnvironmentStageManagedInstanceIdArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]LifecycleEnvironmentStageManagedInstanceId] {
-	return pulumix.Output[[]LifecycleEnvironmentStageManagedInstanceId]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LifecycleEnvironmentStageManagedInstanceIdArrayOutput) Index(i pulumi.IntInput) LifecycleEnvironmentStageManagedInstanceIdOutput {
@@ -588,12 +515,6 @@ func (i LifecycleEnvironmentStageSoftwareSourceIdArgs) ToLifecycleEnvironmentSta
 	return pulumi.ToOutputWithContext(ctx, i).(LifecycleEnvironmentStageSoftwareSourceIdOutput)
 }
 
-func (i LifecycleEnvironmentStageSoftwareSourceIdArgs) ToOutput(ctx context.Context) pulumix.Output[LifecycleEnvironmentStageSoftwareSourceId] {
-	return pulumix.Output[LifecycleEnvironmentStageSoftwareSourceId]{
-		OutputState: i.ToLifecycleEnvironmentStageSoftwareSourceIdOutputWithContext(ctx).OutputState,
-	}
-}
-
 // LifecycleEnvironmentStageSoftwareSourceIdArrayInput is an input type that accepts LifecycleEnvironmentStageSoftwareSourceIdArray and LifecycleEnvironmentStageSoftwareSourceIdArrayOutput values.
 // You can construct a concrete instance of `LifecycleEnvironmentStageSoftwareSourceIdArrayInput` via:
 //
@@ -619,12 +540,6 @@ func (i LifecycleEnvironmentStageSoftwareSourceIdArray) ToLifecycleEnvironmentSt
 	return pulumi.ToOutputWithContext(ctx, i).(LifecycleEnvironmentStageSoftwareSourceIdArrayOutput)
 }
 
-func (i LifecycleEnvironmentStageSoftwareSourceIdArray) ToOutput(ctx context.Context) pulumix.Output[[]LifecycleEnvironmentStageSoftwareSourceId] {
-	return pulumix.Output[[]LifecycleEnvironmentStageSoftwareSourceId]{
-		OutputState: i.ToLifecycleEnvironmentStageSoftwareSourceIdArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type LifecycleEnvironmentStageSoftwareSourceIdOutput struct{ *pulumi.OutputState }
 
 func (LifecycleEnvironmentStageSoftwareSourceIdOutput) ElementType() reflect.Type {
@@ -637,12 +552,6 @@ func (o LifecycleEnvironmentStageSoftwareSourceIdOutput) ToLifecycleEnvironmentS
 
 func (o LifecycleEnvironmentStageSoftwareSourceIdOutput) ToLifecycleEnvironmentStageSoftwareSourceIdOutputWithContext(ctx context.Context) LifecycleEnvironmentStageSoftwareSourceIdOutput {
 	return o
-}
-
-func (o LifecycleEnvironmentStageSoftwareSourceIdOutput) ToOutput(ctx context.Context) pulumix.Output[LifecycleEnvironmentStageSoftwareSourceId] {
-	return pulumix.Output[LifecycleEnvironmentStageSoftwareSourceId]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) User specified information about the lifecycle environment.
@@ -677,12 +586,6 @@ func (o LifecycleEnvironmentStageSoftwareSourceIdArrayOutput) ToLifecycleEnviron
 
 func (o LifecycleEnvironmentStageSoftwareSourceIdArrayOutput) ToLifecycleEnvironmentStageSoftwareSourceIdArrayOutputWithContext(ctx context.Context) LifecycleEnvironmentStageSoftwareSourceIdArrayOutput {
 	return o
-}
-
-func (o LifecycleEnvironmentStageSoftwareSourceIdArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]LifecycleEnvironmentStageSoftwareSourceId] {
-	return pulumix.Output[[]LifecycleEnvironmentStageSoftwareSourceId]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LifecycleEnvironmentStageSoftwareSourceIdArrayOutput) Index(i pulumi.IntInput) LifecycleEnvironmentStageSoftwareSourceIdOutput {
@@ -736,12 +639,6 @@ func (i ManagedInstanceGroupSoftwareSourceArgs) ToManagedInstanceGroupSoftwareSo
 	return pulumi.ToOutputWithContext(ctx, i).(ManagedInstanceGroupSoftwareSourceOutput)
 }
 
-func (i ManagedInstanceGroupSoftwareSourceArgs) ToOutput(ctx context.Context) pulumix.Output[ManagedInstanceGroupSoftwareSource] {
-	return pulumix.Output[ManagedInstanceGroupSoftwareSource]{
-		OutputState: i.ToManagedInstanceGroupSoftwareSourceOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ManagedInstanceGroupSoftwareSourceArrayInput is an input type that accepts ManagedInstanceGroupSoftwareSourceArray and ManagedInstanceGroupSoftwareSourceArrayOutput values.
 // You can construct a concrete instance of `ManagedInstanceGroupSoftwareSourceArrayInput` via:
 //
@@ -767,12 +664,6 @@ func (i ManagedInstanceGroupSoftwareSourceArray) ToManagedInstanceGroupSoftwareS
 	return pulumi.ToOutputWithContext(ctx, i).(ManagedInstanceGroupSoftwareSourceArrayOutput)
 }
 
-func (i ManagedInstanceGroupSoftwareSourceArray) ToOutput(ctx context.Context) pulumix.Output[[]ManagedInstanceGroupSoftwareSource] {
-	return pulumix.Output[[]ManagedInstanceGroupSoftwareSource]{
-		OutputState: i.ToManagedInstanceGroupSoftwareSourceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ManagedInstanceGroupSoftwareSourceOutput struct{ *pulumi.OutputState }
 
 func (ManagedInstanceGroupSoftwareSourceOutput) ElementType() reflect.Type {
@@ -785,12 +676,6 @@ func (o ManagedInstanceGroupSoftwareSourceOutput) ToManagedInstanceGroupSoftware
 
 func (o ManagedInstanceGroupSoftwareSourceOutput) ToManagedInstanceGroupSoftwareSourceOutputWithContext(ctx context.Context) ManagedInstanceGroupSoftwareSourceOutput {
 	return o
-}
-
-func (o ManagedInstanceGroupSoftwareSourceOutput) ToOutput(ctx context.Context) pulumix.Output[ManagedInstanceGroupSoftwareSource] {
-	return pulumix.Output[ManagedInstanceGroupSoftwareSource]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Details about the managed instance group.
@@ -825,12 +710,6 @@ func (o ManagedInstanceGroupSoftwareSourceArrayOutput) ToManagedInstanceGroupSof
 
 func (o ManagedInstanceGroupSoftwareSourceArrayOutput) ToManagedInstanceGroupSoftwareSourceArrayOutputWithContext(ctx context.Context) ManagedInstanceGroupSoftwareSourceArrayOutput {
 	return o
-}
-
-func (o ManagedInstanceGroupSoftwareSourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ManagedInstanceGroupSoftwareSource] {
-	return pulumix.Output[[]ManagedInstanceGroupSoftwareSource]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ManagedInstanceGroupSoftwareSourceArrayOutput) Index(i pulumi.IntInput) ManagedInstanceGroupSoftwareSourceOutput {
@@ -890,12 +769,6 @@ func (i ManagementStationMirrorArgs) ToManagementStationMirrorOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(ManagementStationMirrorOutput)
 }
 
-func (i ManagementStationMirrorArgs) ToOutput(ctx context.Context) pulumix.Output[ManagementStationMirror] {
-	return pulumix.Output[ManagementStationMirror]{
-		OutputState: i.ToManagementStationMirrorOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i ManagementStationMirrorArgs) ToManagementStationMirrorPtrOutput() ManagementStationMirrorPtrOutput {
 	return i.ToManagementStationMirrorPtrOutputWithContext(context.Background())
 }
@@ -937,12 +810,6 @@ func (i *managementStationMirrorPtrType) ToManagementStationMirrorPtrOutputWithC
 	return pulumi.ToOutputWithContext(ctx, i).(ManagementStationMirrorPtrOutput)
 }
 
-func (i *managementStationMirrorPtrType) ToOutput(ctx context.Context) pulumix.Output[*ManagementStationMirror] {
-	return pulumix.Output[*ManagementStationMirror]{
-		OutputState: i.ToManagementStationMirrorPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ManagementStationMirrorOutput struct{ *pulumi.OutputState }
 
 func (ManagementStationMirrorOutput) ElementType() reflect.Type {
@@ -965,12 +832,6 @@ func (o ManagementStationMirrorOutput) ToManagementStationMirrorPtrOutputWithCon
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v ManagementStationMirror) *ManagementStationMirror {
 		return &v
 	}).(ManagementStationMirrorPtrOutput)
-}
-
-func (o ManagementStationMirrorOutput) ToOutput(ctx context.Context) pulumix.Output[ManagementStationMirror] {
-	return pulumix.Output[ManagementStationMirror]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Directory for the mirroring
@@ -1008,12 +869,6 @@ func (o ManagementStationMirrorPtrOutput) ToManagementStationMirrorPtrOutput() M
 
 func (o ManagementStationMirrorPtrOutput) ToManagementStationMirrorPtrOutputWithContext(ctx context.Context) ManagementStationMirrorPtrOutput {
 	return o
-}
-
-func (o ManagementStationMirrorPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*ManagementStationMirror] {
-	return pulumix.Output[*ManagementStationMirror]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ManagementStationMirrorPtrOutput) Elem() ManagementStationMirrorOutput {
@@ -1118,12 +973,6 @@ func (i ManagementStationMirrorSyncStatusArgs) ToManagementStationMirrorSyncStat
 	return pulumi.ToOutputWithContext(ctx, i).(ManagementStationMirrorSyncStatusOutput)
 }
 
-func (i ManagementStationMirrorSyncStatusArgs) ToOutput(ctx context.Context) pulumix.Output[ManagementStationMirrorSyncStatus] {
-	return pulumix.Output[ManagementStationMirrorSyncStatus]{
-		OutputState: i.ToManagementStationMirrorSyncStatusOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ManagementStationMirrorSyncStatusArrayInput is an input type that accepts ManagementStationMirrorSyncStatusArray and ManagementStationMirrorSyncStatusArrayOutput values.
 // You can construct a concrete instance of `ManagementStationMirrorSyncStatusArrayInput` via:
 //
@@ -1149,12 +998,6 @@ func (i ManagementStationMirrorSyncStatusArray) ToManagementStationMirrorSyncSta
 	return pulumi.ToOutputWithContext(ctx, i).(ManagementStationMirrorSyncStatusArrayOutput)
 }
 
-func (i ManagementStationMirrorSyncStatusArray) ToOutput(ctx context.Context) pulumix.Output[[]ManagementStationMirrorSyncStatus] {
-	return pulumix.Output[[]ManagementStationMirrorSyncStatus]{
-		OutputState: i.ToManagementStationMirrorSyncStatusArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ManagementStationMirrorSyncStatusOutput struct{ *pulumi.OutputState }
 
 func (ManagementStationMirrorSyncStatusOutput) ElementType() reflect.Type {
@@ -1167,12 +1010,6 @@ func (o ManagementStationMirrorSyncStatusOutput) ToManagementStationMirrorSyncSt
 
 func (o ManagementStationMirrorSyncStatusOutput) ToManagementStationMirrorSyncStatusOutputWithContext(ctx context.Context) ManagementStationMirrorSyncStatusOutput {
 	return o
-}
-
-func (o ManagementStationMirrorSyncStatusOutput) ToOutput(ctx context.Context) pulumix.Output[ManagementStationMirrorSyncStatus] {
-	return pulumix.Output[ManagementStationMirrorSyncStatus]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Total of mirrors in 'failed' state
@@ -1212,12 +1049,6 @@ func (o ManagementStationMirrorSyncStatusArrayOutput) ToManagementStationMirrorS
 
 func (o ManagementStationMirrorSyncStatusArrayOutput) ToManagementStationMirrorSyncStatusArrayOutputWithContext(ctx context.Context) ManagementStationMirrorSyncStatusArrayOutput {
 	return o
-}
-
-func (o ManagementStationMirrorSyncStatusArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ManagementStationMirrorSyncStatus] {
-	return pulumix.Output[[]ManagementStationMirrorSyncStatus]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ManagementStationMirrorSyncStatusArrayOutput) Index(i pulumi.IntInput) ManagementStationMirrorSyncStatusOutput {
@@ -1277,12 +1108,6 @@ func (i ManagementStationProxyArgs) ToManagementStationProxyOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(ManagementStationProxyOutput)
 }
 
-func (i ManagementStationProxyArgs) ToOutput(ctx context.Context) pulumix.Output[ManagementStationProxy] {
-	return pulumix.Output[ManagementStationProxy]{
-		OutputState: i.ToManagementStationProxyOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i ManagementStationProxyArgs) ToManagementStationProxyPtrOutput() ManagementStationProxyPtrOutput {
 	return i.ToManagementStationProxyPtrOutputWithContext(context.Background())
 }
@@ -1324,12 +1149,6 @@ func (i *managementStationProxyPtrType) ToManagementStationProxyPtrOutputWithCon
 	return pulumi.ToOutputWithContext(ctx, i).(ManagementStationProxyPtrOutput)
 }
 
-func (i *managementStationProxyPtrType) ToOutput(ctx context.Context) pulumix.Output[*ManagementStationProxy] {
-	return pulumix.Output[*ManagementStationProxy]{
-		OutputState: i.ToManagementStationProxyPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ManagementStationProxyOutput struct{ *pulumi.OutputState }
 
 func (ManagementStationProxyOutput) ElementType() reflect.Type {
@@ -1352,12 +1171,6 @@ func (o ManagementStationProxyOutput) ToManagementStationProxyPtrOutputWithConte
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v ManagementStationProxy) *ManagementStationProxy {
 		return &v
 	}).(ManagementStationProxyPtrOutput)
-}
-
-func (o ManagementStationProxyOutput) ToOutput(ctx context.Context) pulumix.Output[ManagementStationProxy] {
-	return pulumix.Output[ManagementStationProxy]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) URL that the proxy will forward to
@@ -1395,12 +1208,6 @@ func (o ManagementStationProxyPtrOutput) ToManagementStationProxyPtrOutput() Man
 
 func (o ManagementStationProxyPtrOutput) ToManagementStationProxyPtrOutputWithContext(ctx context.Context) ManagementStationProxyPtrOutput {
 	return o
-}
-
-func (o ManagementStationProxyPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*ManagementStationProxy] {
-	return pulumix.Output[*ManagementStationProxy]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ManagementStationProxyPtrOutput) Elem() ManagementStationProxyOutput {
@@ -1493,12 +1300,6 @@ func (i ProfileLifecycleEnvironmentArgs) ToProfileLifecycleEnvironmentOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(ProfileLifecycleEnvironmentOutput)
 }
 
-func (i ProfileLifecycleEnvironmentArgs) ToOutput(ctx context.Context) pulumix.Output[ProfileLifecycleEnvironment] {
-	return pulumix.Output[ProfileLifecycleEnvironment]{
-		OutputState: i.ToProfileLifecycleEnvironmentOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ProfileLifecycleEnvironmentArrayInput is an input type that accepts ProfileLifecycleEnvironmentArray and ProfileLifecycleEnvironmentArrayOutput values.
 // You can construct a concrete instance of `ProfileLifecycleEnvironmentArrayInput` via:
 //
@@ -1524,12 +1325,6 @@ func (i ProfileLifecycleEnvironmentArray) ToProfileLifecycleEnvironmentArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(ProfileLifecycleEnvironmentArrayOutput)
 }
 
-func (i ProfileLifecycleEnvironmentArray) ToOutput(ctx context.Context) pulumix.Output[[]ProfileLifecycleEnvironment] {
-	return pulumix.Output[[]ProfileLifecycleEnvironment]{
-		OutputState: i.ToProfileLifecycleEnvironmentArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ProfileLifecycleEnvironmentOutput struct{ *pulumi.OutputState }
 
 func (ProfileLifecycleEnvironmentOutput) ElementType() reflect.Type {
@@ -1542,12 +1337,6 @@ func (o ProfileLifecycleEnvironmentOutput) ToProfileLifecycleEnvironmentOutput()
 
 func (o ProfileLifecycleEnvironmentOutput) ToProfileLifecycleEnvironmentOutputWithContext(ctx context.Context) ProfileLifecycleEnvironmentOutput {
 	return o
-}
-
-func (o ProfileLifecycleEnvironmentOutput) ToOutput(ctx context.Context) pulumix.Output[ProfileLifecycleEnvironment] {
-	return pulumix.Output[ProfileLifecycleEnvironment]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -1572,12 +1361,6 @@ func (o ProfileLifecycleEnvironmentArrayOutput) ToProfileLifecycleEnvironmentArr
 
 func (o ProfileLifecycleEnvironmentArrayOutput) ToProfileLifecycleEnvironmentArrayOutputWithContext(ctx context.Context) ProfileLifecycleEnvironmentArrayOutput {
 	return o
-}
-
-func (o ProfileLifecycleEnvironmentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ProfileLifecycleEnvironment] {
-	return pulumix.Output[[]ProfileLifecycleEnvironment]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ProfileLifecycleEnvironmentArrayOutput) Index(i pulumi.IntInput) ProfileLifecycleEnvironmentOutput {
@@ -1623,12 +1406,6 @@ func (i ProfileLifecycleStageArgs) ToProfileLifecycleStageOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(ProfileLifecycleStageOutput)
 }
 
-func (i ProfileLifecycleStageArgs) ToOutput(ctx context.Context) pulumix.Output[ProfileLifecycleStage] {
-	return pulumix.Output[ProfileLifecycleStage]{
-		OutputState: i.ToProfileLifecycleStageOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ProfileLifecycleStageArrayInput is an input type that accepts ProfileLifecycleStageArray and ProfileLifecycleStageArrayOutput values.
 // You can construct a concrete instance of `ProfileLifecycleStageArrayInput` via:
 //
@@ -1654,12 +1431,6 @@ func (i ProfileLifecycleStageArray) ToProfileLifecycleStageArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(ProfileLifecycleStageArrayOutput)
 }
 
-func (i ProfileLifecycleStageArray) ToOutput(ctx context.Context) pulumix.Output[[]ProfileLifecycleStage] {
-	return pulumix.Output[[]ProfileLifecycleStage]{
-		OutputState: i.ToProfileLifecycleStageArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ProfileLifecycleStageOutput struct{ *pulumi.OutputState }
 
 func (ProfileLifecycleStageOutput) ElementType() reflect.Type {
@@ -1672,12 +1443,6 @@ func (o ProfileLifecycleStageOutput) ToProfileLifecycleStageOutput() ProfileLife
 
 func (o ProfileLifecycleStageOutput) ToProfileLifecycleStageOutputWithContext(ctx context.Context) ProfileLifecycleStageOutput {
 	return o
-}
-
-func (o ProfileLifecycleStageOutput) ToOutput(ctx context.Context) pulumix.Output[ProfileLifecycleStage] {
-	return pulumix.Output[ProfileLifecycleStage]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -1702,12 +1467,6 @@ func (o ProfileLifecycleStageArrayOutput) ToProfileLifecycleStageArrayOutput() P
 
 func (o ProfileLifecycleStageArrayOutput) ToProfileLifecycleStageArrayOutputWithContext(ctx context.Context) ProfileLifecycleStageArrayOutput {
 	return o
-}
-
-func (o ProfileLifecycleStageArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ProfileLifecycleStage] {
-	return pulumix.Output[[]ProfileLifecycleStage]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ProfileLifecycleStageArrayOutput) Index(i pulumi.IntInput) ProfileLifecycleStageOutput {
@@ -1753,12 +1512,6 @@ func (i ProfileManagedInstanceGroupArgs) ToProfileManagedInstanceGroupOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(ProfileManagedInstanceGroupOutput)
 }
 
-func (i ProfileManagedInstanceGroupArgs) ToOutput(ctx context.Context) pulumix.Output[ProfileManagedInstanceGroup] {
-	return pulumix.Output[ProfileManagedInstanceGroup]{
-		OutputState: i.ToProfileManagedInstanceGroupOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ProfileManagedInstanceGroupArrayInput is an input type that accepts ProfileManagedInstanceGroupArray and ProfileManagedInstanceGroupArrayOutput values.
 // You can construct a concrete instance of `ProfileManagedInstanceGroupArrayInput` via:
 //
@@ -1784,12 +1537,6 @@ func (i ProfileManagedInstanceGroupArray) ToProfileManagedInstanceGroupArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(ProfileManagedInstanceGroupArrayOutput)
 }
 
-func (i ProfileManagedInstanceGroupArray) ToOutput(ctx context.Context) pulumix.Output[[]ProfileManagedInstanceGroup] {
-	return pulumix.Output[[]ProfileManagedInstanceGroup]{
-		OutputState: i.ToProfileManagedInstanceGroupArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ProfileManagedInstanceGroupOutput struct{ *pulumi.OutputState }
 
 func (ProfileManagedInstanceGroupOutput) ElementType() reflect.Type {
@@ -1802,12 +1549,6 @@ func (o ProfileManagedInstanceGroupOutput) ToProfileManagedInstanceGroupOutput()
 
 func (o ProfileManagedInstanceGroupOutput) ToProfileManagedInstanceGroupOutputWithContext(ctx context.Context) ProfileManagedInstanceGroupOutput {
 	return o
-}
-
-func (o ProfileManagedInstanceGroupOutput) ToOutput(ctx context.Context) pulumix.Output[ProfileManagedInstanceGroup] {
-	return pulumix.Output[ProfileManagedInstanceGroup]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -1832,12 +1573,6 @@ func (o ProfileManagedInstanceGroupArrayOutput) ToProfileManagedInstanceGroupArr
 
 func (o ProfileManagedInstanceGroupArrayOutput) ToProfileManagedInstanceGroupArrayOutputWithContext(ctx context.Context) ProfileManagedInstanceGroupArrayOutput {
 	return o
-}
-
-func (o ProfileManagedInstanceGroupArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ProfileManagedInstanceGroup] {
-	return pulumix.Output[[]ProfileManagedInstanceGroup]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ProfileManagedInstanceGroupArrayOutput) Index(i pulumi.IntInput) ProfileManagedInstanceGroupOutput {
@@ -1891,12 +1626,6 @@ func (i ProfileSoftwareSourceArgs) ToProfileSoftwareSourceOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(ProfileSoftwareSourceOutput)
 }
 
-func (i ProfileSoftwareSourceArgs) ToOutput(ctx context.Context) pulumix.Output[ProfileSoftwareSource] {
-	return pulumix.Output[ProfileSoftwareSource]{
-		OutputState: i.ToProfileSoftwareSourceOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ProfileSoftwareSourceArrayInput is an input type that accepts ProfileSoftwareSourceArray and ProfileSoftwareSourceArrayOutput values.
 // You can construct a concrete instance of `ProfileSoftwareSourceArrayInput` via:
 //
@@ -1922,12 +1651,6 @@ func (i ProfileSoftwareSourceArray) ToProfileSoftwareSourceArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(ProfileSoftwareSourceArrayOutput)
 }
 
-func (i ProfileSoftwareSourceArray) ToOutput(ctx context.Context) pulumix.Output[[]ProfileSoftwareSource] {
-	return pulumix.Output[[]ProfileSoftwareSource]{
-		OutputState: i.ToProfileSoftwareSourceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ProfileSoftwareSourceOutput struct{ *pulumi.OutputState }
 
 func (ProfileSoftwareSourceOutput) ElementType() reflect.Type {
@@ -1940,12 +1663,6 @@ func (o ProfileSoftwareSourceOutput) ToProfileSoftwareSourceOutput() ProfileSoft
 
 func (o ProfileSoftwareSourceOutput) ToProfileSoftwareSourceOutputWithContext(ctx context.Context) ProfileSoftwareSourceOutput {
 	return o
-}
-
-func (o ProfileSoftwareSourceOutput) ToOutput(ctx context.Context) pulumix.Output[ProfileSoftwareSource] {
-	return pulumix.Output[ProfileSoftwareSource]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The description of the registration profile.
@@ -1980,12 +1697,6 @@ func (o ProfileSoftwareSourceArrayOutput) ToProfileSoftwareSourceArrayOutput() P
 
 func (o ProfileSoftwareSourceArrayOutput) ToProfileSoftwareSourceArrayOutputWithContext(ctx context.Context) ProfileSoftwareSourceArrayOutput {
 	return o
-}
-
-func (o ProfileSoftwareSourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ProfileSoftwareSource] {
-	return pulumix.Output[[]ProfileSoftwareSource]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ProfileSoftwareSourceArrayOutput) Index(i pulumi.IntInput) ProfileSoftwareSourceOutput {
@@ -2035,12 +1746,6 @@ func (i SoftwareSourceCustomSoftwareSourceFilterArgs) ToSoftwareSourceCustomSoft
 	return pulumi.ToOutputWithContext(ctx, i).(SoftwareSourceCustomSoftwareSourceFilterOutput)
 }
 
-func (i SoftwareSourceCustomSoftwareSourceFilterArgs) ToOutput(ctx context.Context) pulumix.Output[SoftwareSourceCustomSoftwareSourceFilter] {
-	return pulumix.Output[SoftwareSourceCustomSoftwareSourceFilter]{
-		OutputState: i.ToSoftwareSourceCustomSoftwareSourceFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i SoftwareSourceCustomSoftwareSourceFilterArgs) ToSoftwareSourceCustomSoftwareSourceFilterPtrOutput() SoftwareSourceCustomSoftwareSourceFilterPtrOutput {
 	return i.ToSoftwareSourceCustomSoftwareSourceFilterPtrOutputWithContext(context.Background())
 }
@@ -2082,12 +1787,6 @@ func (i *softwareSourceCustomSoftwareSourceFilterPtrType) ToSoftwareSourceCustom
 	return pulumi.ToOutputWithContext(ctx, i).(SoftwareSourceCustomSoftwareSourceFilterPtrOutput)
 }
 
-func (i *softwareSourceCustomSoftwareSourceFilterPtrType) ToOutput(ctx context.Context) pulumix.Output[*SoftwareSourceCustomSoftwareSourceFilter] {
-	return pulumix.Output[*SoftwareSourceCustomSoftwareSourceFilter]{
-		OutputState: i.ToSoftwareSourceCustomSoftwareSourceFilterPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type SoftwareSourceCustomSoftwareSourceFilterOutput struct{ *pulumi.OutputState }
 
 func (SoftwareSourceCustomSoftwareSourceFilterOutput) ElementType() reflect.Type {
@@ -2110,12 +1809,6 @@ func (o SoftwareSourceCustomSoftwareSourceFilterOutput) ToSoftwareSourceCustomSo
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v SoftwareSourceCustomSoftwareSourceFilter) *SoftwareSourceCustomSoftwareSourceFilter {
 		return &v
 	}).(SoftwareSourceCustomSoftwareSourceFilterPtrOutput)
-}
-
-func (o SoftwareSourceCustomSoftwareSourceFilterOutput) ToOutput(ctx context.Context) pulumix.Output[SoftwareSourceCustomSoftwareSourceFilter] {
-	return pulumix.Output[SoftwareSourceCustomSoftwareSourceFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The list of module stream/profile filters.
@@ -2151,12 +1844,6 @@ func (o SoftwareSourceCustomSoftwareSourceFilterPtrOutput) ToSoftwareSourceCusto
 
 func (o SoftwareSourceCustomSoftwareSourceFilterPtrOutput) ToSoftwareSourceCustomSoftwareSourceFilterPtrOutputWithContext(ctx context.Context) SoftwareSourceCustomSoftwareSourceFilterPtrOutput {
 	return o
-}
-
-func (o SoftwareSourceCustomSoftwareSourceFilterPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*SoftwareSourceCustomSoftwareSourceFilter] {
-	return pulumix.Output[*SoftwareSourceCustomSoftwareSourceFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o SoftwareSourceCustomSoftwareSourceFilterPtrOutput) Elem() SoftwareSourceCustomSoftwareSourceFilterOutput {
@@ -2244,12 +1931,6 @@ func (i SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterArgs) T
 	return pulumi.ToOutputWithContext(ctx, i).(SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterOutput)
 }
 
-func (i SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterArgs) ToOutput(ctx context.Context) pulumix.Output[SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilter] {
-	return pulumix.Output[SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilter]{
-		OutputState: i.ToSoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterArrayInput is an input type that accepts SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterArray and SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterArrayOutput values.
 // You can construct a concrete instance of `SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterArrayInput` via:
 //
@@ -2275,12 +1956,6 @@ func (i SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterArray) 
 	return pulumi.ToOutputWithContext(ctx, i).(SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterArrayOutput)
 }
 
-func (i SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilter] {
-	return pulumix.Output[[]SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilter]{
-		OutputState: i.ToSoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterOutput struct{ *pulumi.OutputState }
 
 func (SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterOutput) ElementType() reflect.Type {
@@ -2293,12 +1968,6 @@ func (o SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterOutput)
 
 func (o SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterOutput) ToSoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterOutputWithContext(ctx context.Context) SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterOutput {
 	return o
-}
-
-func (o SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterOutput) ToOutput(ctx context.Context) pulumix.Output[SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilter] {
-	return pulumix.Output[SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
@@ -2335,12 +2004,6 @@ func (o SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterArrayOu
 
 func (o SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterArrayOutput) ToSoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterArrayOutputWithContext(ctx context.Context) SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterArrayOutput {
 	return o
-}
-
-func (o SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilter] {
-	return pulumix.Output[[]SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterArrayOutput) Index(i pulumi.IntInput) SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterOutput {
@@ -2394,12 +2057,6 @@ func (i SoftwareSourceCustomSoftwareSourceFilterPackageFilterArgs) ToSoftwareSou
 	return pulumi.ToOutputWithContext(ctx, i).(SoftwareSourceCustomSoftwareSourceFilterPackageFilterOutput)
 }
 
-func (i SoftwareSourceCustomSoftwareSourceFilterPackageFilterArgs) ToOutput(ctx context.Context) pulumix.Output[SoftwareSourceCustomSoftwareSourceFilterPackageFilter] {
-	return pulumix.Output[SoftwareSourceCustomSoftwareSourceFilterPackageFilter]{
-		OutputState: i.ToSoftwareSourceCustomSoftwareSourceFilterPackageFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // SoftwareSourceCustomSoftwareSourceFilterPackageFilterArrayInput is an input type that accepts SoftwareSourceCustomSoftwareSourceFilterPackageFilterArray and SoftwareSourceCustomSoftwareSourceFilterPackageFilterArrayOutput values.
 // You can construct a concrete instance of `SoftwareSourceCustomSoftwareSourceFilterPackageFilterArrayInput` via:
 //
@@ -2425,12 +2082,6 @@ func (i SoftwareSourceCustomSoftwareSourceFilterPackageFilterArray) ToSoftwareSo
 	return pulumi.ToOutputWithContext(ctx, i).(SoftwareSourceCustomSoftwareSourceFilterPackageFilterArrayOutput)
 }
 
-func (i SoftwareSourceCustomSoftwareSourceFilterPackageFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]SoftwareSourceCustomSoftwareSourceFilterPackageFilter] {
-	return pulumix.Output[[]SoftwareSourceCustomSoftwareSourceFilterPackageFilter]{
-		OutputState: i.ToSoftwareSourceCustomSoftwareSourceFilterPackageFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type SoftwareSourceCustomSoftwareSourceFilterPackageFilterOutput struct{ *pulumi.OutputState }
 
 func (SoftwareSourceCustomSoftwareSourceFilterPackageFilterOutput) ElementType() reflect.Type {
@@ -2443,12 +2094,6 @@ func (o SoftwareSourceCustomSoftwareSourceFilterPackageFilterOutput) ToSoftwareS
 
 func (o SoftwareSourceCustomSoftwareSourceFilterPackageFilterOutput) ToSoftwareSourceCustomSoftwareSourceFilterPackageFilterOutputWithContext(ctx context.Context) SoftwareSourceCustomSoftwareSourceFilterPackageFilterOutput {
 	return o
-}
-
-func (o SoftwareSourceCustomSoftwareSourceFilterPackageFilterOutput) ToOutput(ctx context.Context) pulumix.Output[SoftwareSourceCustomSoftwareSourceFilterPackageFilter] {
-	return pulumix.Output[SoftwareSourceCustomSoftwareSourceFilterPackageFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
@@ -2483,12 +2128,6 @@ func (o SoftwareSourceCustomSoftwareSourceFilterPackageFilterArrayOutput) ToSoft
 
 func (o SoftwareSourceCustomSoftwareSourceFilterPackageFilterArrayOutput) ToSoftwareSourceCustomSoftwareSourceFilterPackageFilterArrayOutputWithContext(ctx context.Context) SoftwareSourceCustomSoftwareSourceFilterPackageFilterArrayOutput {
 	return o
-}
-
-func (o SoftwareSourceCustomSoftwareSourceFilterPackageFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]SoftwareSourceCustomSoftwareSourceFilterPackageFilter] {
-	return pulumix.Output[[]SoftwareSourceCustomSoftwareSourceFilterPackageFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o SoftwareSourceCustomSoftwareSourceFilterPackageFilterArrayOutput) Index(i pulumi.IntInput) SoftwareSourceCustomSoftwareSourceFilterPackageFilterOutput {
@@ -2534,12 +2173,6 @@ func (i SoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterArgs) ToSoftwa
 	return pulumi.ToOutputWithContext(ctx, i).(SoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterOutput)
 }
 
-func (i SoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterArgs) ToOutput(ctx context.Context) pulumix.Output[SoftwareSourceCustomSoftwareSourceFilterPackageGroupFilter] {
-	return pulumix.Output[SoftwareSourceCustomSoftwareSourceFilterPackageGroupFilter]{
-		OutputState: i.ToSoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // SoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterArrayInput is an input type that accepts SoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterArray and SoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterArrayOutput values.
 // You can construct a concrete instance of `SoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterArrayInput` via:
 //
@@ -2565,12 +2198,6 @@ func (i SoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterArray) ToSoftw
 	return pulumi.ToOutputWithContext(ctx, i).(SoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterArrayOutput)
 }
 
-func (i SoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]SoftwareSourceCustomSoftwareSourceFilterPackageGroupFilter] {
-	return pulumix.Output[[]SoftwareSourceCustomSoftwareSourceFilterPackageGroupFilter]{
-		OutputState: i.ToSoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type SoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterOutput struct{ *pulumi.OutputState }
 
 func (SoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterOutput) ElementType() reflect.Type {
@@ -2583,12 +2210,6 @@ func (o SoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterOutput) ToSoft
 
 func (o SoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterOutput) ToSoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterOutputWithContext(ctx context.Context) SoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterOutput {
 	return o
-}
-
-func (o SoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterOutput) ToOutput(ctx context.Context) pulumix.Output[SoftwareSourceCustomSoftwareSourceFilterPackageGroupFilter] {
-	return pulumix.Output[SoftwareSourceCustomSoftwareSourceFilterPackageGroupFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
@@ -2613,12 +2234,6 @@ func (o SoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterArrayOutput) T
 
 func (o SoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterArrayOutput) ToSoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterArrayOutputWithContext(ctx context.Context) SoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterArrayOutput {
 	return o
-}
-
-func (o SoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]SoftwareSourceCustomSoftwareSourceFilterPackageGroupFilter] {
-	return pulumix.Output[[]SoftwareSourceCustomSoftwareSourceFilterPackageGroupFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o SoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterArrayOutput) Index(i pulumi.IntInput) SoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterOutput {
@@ -2670,12 +2285,6 @@ func (i SoftwareSourceVendorSoftwareSourceArgs) ToSoftwareSourceVendorSoftwareSo
 	return pulumi.ToOutputWithContext(ctx, i).(SoftwareSourceVendorSoftwareSourceOutput)
 }
 
-func (i SoftwareSourceVendorSoftwareSourceArgs) ToOutput(ctx context.Context) pulumix.Output[SoftwareSourceVendorSoftwareSource] {
-	return pulumix.Output[SoftwareSourceVendorSoftwareSource]{
-		OutputState: i.ToSoftwareSourceVendorSoftwareSourceOutputWithContext(ctx).OutputState,
-	}
-}
-
 // SoftwareSourceVendorSoftwareSourceArrayInput is an input type that accepts SoftwareSourceVendorSoftwareSourceArray and SoftwareSourceVendorSoftwareSourceArrayOutput values.
 // You can construct a concrete instance of `SoftwareSourceVendorSoftwareSourceArrayInput` via:
 //
@@ -2701,12 +2310,6 @@ func (i SoftwareSourceVendorSoftwareSourceArray) ToSoftwareSourceVendorSoftwareS
 	return pulumi.ToOutputWithContext(ctx, i).(SoftwareSourceVendorSoftwareSourceArrayOutput)
 }
 
-func (i SoftwareSourceVendorSoftwareSourceArray) ToOutput(ctx context.Context) pulumix.Output[[]SoftwareSourceVendorSoftwareSource] {
-	return pulumix.Output[[]SoftwareSourceVendorSoftwareSource]{
-		OutputState: i.ToSoftwareSourceVendorSoftwareSourceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type SoftwareSourceVendorSoftwareSourceOutput struct{ *pulumi.OutputState }
 
 func (SoftwareSourceVendorSoftwareSourceOutput) ElementType() reflect.Type {
@@ -2719,12 +2322,6 @@ func (o SoftwareSourceVendorSoftwareSourceOutput) ToSoftwareSourceVendorSoftware
 
 func (o SoftwareSourceVendorSoftwareSourceOutput) ToSoftwareSourceVendorSoftwareSourceOutputWithContext(ctx context.Context) SoftwareSourceVendorSoftwareSourceOutput {
 	return o
-}
-
-func (o SoftwareSourceVendorSoftwareSourceOutput) ToOutput(ctx context.Context) pulumix.Output[SoftwareSourceVendorSoftwareSource] {
-	return pulumix.Output[SoftwareSourceVendorSoftwareSource]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) User friendly name.
@@ -2754,12 +2351,6 @@ func (o SoftwareSourceVendorSoftwareSourceArrayOutput) ToSoftwareSourceVendorSof
 	return o
 }
 
-func (o SoftwareSourceVendorSoftwareSourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]SoftwareSourceVendorSoftwareSource] {
-	return pulumix.Output[[]SoftwareSourceVendorSoftwareSource]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o SoftwareSourceVendorSoftwareSourceArrayOutput) Index(i pulumi.IntInput) SoftwareSourceVendorSoftwareSourceOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) SoftwareSourceVendorSoftwareSource {
 		return vs[0].([]SoftwareSourceVendorSoftwareSource)[vs[1].(int)]
@@ -2768,9 +2359,9 @@ func (o SoftwareSourceVendorSoftwareSourceArrayOutput) Index(i pulumi.IntInput) 
 
 type GetLifecycleEnvironmentManagedInstanceId struct {
 	// Software source name.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The OCID of the software source.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 // GetLifecycleEnvironmentManagedInstanceIdInput is an input type that accepts GetLifecycleEnvironmentManagedInstanceIdArgs and GetLifecycleEnvironmentManagedInstanceIdOutput values.
@@ -2786,9 +2377,9 @@ type GetLifecycleEnvironmentManagedInstanceIdInput interface {
 
 type GetLifecycleEnvironmentManagedInstanceIdArgs struct {
 	// Software source name.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// The OCID of the software source.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 }
 
 func (GetLifecycleEnvironmentManagedInstanceIdArgs) ElementType() reflect.Type {
@@ -2801,12 +2392,6 @@ func (i GetLifecycleEnvironmentManagedInstanceIdArgs) ToGetLifecycleEnvironmentM
 
 func (i GetLifecycleEnvironmentManagedInstanceIdArgs) ToGetLifecycleEnvironmentManagedInstanceIdOutputWithContext(ctx context.Context) GetLifecycleEnvironmentManagedInstanceIdOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetLifecycleEnvironmentManagedInstanceIdOutput)
-}
-
-func (i GetLifecycleEnvironmentManagedInstanceIdArgs) ToOutput(ctx context.Context) pulumix.Output[GetLifecycleEnvironmentManagedInstanceId] {
-	return pulumix.Output[GetLifecycleEnvironmentManagedInstanceId]{
-		OutputState: i.ToGetLifecycleEnvironmentManagedInstanceIdOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetLifecycleEnvironmentManagedInstanceIdArrayInput is an input type that accepts GetLifecycleEnvironmentManagedInstanceIdArray and GetLifecycleEnvironmentManagedInstanceIdArrayOutput values.
@@ -2834,12 +2419,6 @@ func (i GetLifecycleEnvironmentManagedInstanceIdArray) ToGetLifecycleEnvironment
 	return pulumi.ToOutputWithContext(ctx, i).(GetLifecycleEnvironmentManagedInstanceIdArrayOutput)
 }
 
-func (i GetLifecycleEnvironmentManagedInstanceIdArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLifecycleEnvironmentManagedInstanceId] {
-	return pulumix.Output[[]GetLifecycleEnvironmentManagedInstanceId]{
-		OutputState: i.ToGetLifecycleEnvironmentManagedInstanceIdArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetLifecycleEnvironmentManagedInstanceIdOutput struct{ *pulumi.OutputState }
 
 func (GetLifecycleEnvironmentManagedInstanceIdOutput) ElementType() reflect.Type {
@@ -2854,20 +2433,14 @@ func (o GetLifecycleEnvironmentManagedInstanceIdOutput) ToGetLifecycleEnvironmen
 	return o
 }
 
-func (o GetLifecycleEnvironmentManagedInstanceIdOutput) ToOutput(ctx context.Context) pulumix.Output[GetLifecycleEnvironmentManagedInstanceId] {
-	return pulumix.Output[GetLifecycleEnvironmentManagedInstanceId]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Software source name.
-func (o GetLifecycleEnvironmentManagedInstanceIdOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLifecycleEnvironmentManagedInstanceId) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetLifecycleEnvironmentManagedInstanceIdOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLifecycleEnvironmentManagedInstanceId) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the software source.
-func (o GetLifecycleEnvironmentManagedInstanceIdOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLifecycleEnvironmentManagedInstanceId) string { return v.Id }).(pulumi.StringOutput)
+func (o GetLifecycleEnvironmentManagedInstanceIdOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLifecycleEnvironmentManagedInstanceId) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 type GetLifecycleEnvironmentManagedInstanceIdArrayOutput struct{ *pulumi.OutputState }
@@ -2884,12 +2457,6 @@ func (o GetLifecycleEnvironmentManagedInstanceIdArrayOutput) ToGetLifecycleEnvir
 	return o
 }
 
-func (o GetLifecycleEnvironmentManagedInstanceIdArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLifecycleEnvironmentManagedInstanceId] {
-	return pulumix.Output[[]GetLifecycleEnvironmentManagedInstanceId]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetLifecycleEnvironmentManagedInstanceIdArrayOutput) Index(i pulumi.IntInput) GetLifecycleEnvironmentManagedInstanceIdOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLifecycleEnvironmentManagedInstanceId {
 		return vs[0].([]GetLifecycleEnvironmentManagedInstanceId)[vs[1].(int)]
@@ -2898,37 +2465,37 @@ func (o GetLifecycleEnvironmentManagedInstanceIdArrayOutput) Index(i pulumi.IntI
 
 type GetLifecycleEnvironmentStage struct {
 	// The CPU architecture of the target instances.
-	ArchType string `pulumi:"archType"`
+	ArchType *string `pulumi:"archType"`
 	// The OCID of the tenancy containing the lifecycle stage.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Software source name.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the software source.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The OCID of the lifecycle environment.
-	LifecycleEnvironmentId string `pulumi:"lifecycleEnvironmentId"`
+	LifecycleEnvironmentId *string `pulumi:"lifecycleEnvironmentId"`
 	// The list of managed instances specified lifecycle stage.
 	ManagedInstanceIds []GetLifecycleEnvironmentStageManagedInstanceId `pulumi:"managedInstanceIds"`
 	// The operating system type of the target instances.
-	OsFamily string `pulumi:"osFamily"`
+	OsFamily *string `pulumi:"osFamily"`
 	// User specified rank for the lifecycle stage. Rank determines the hierarchy of the lifecycle stages for a given lifecycle environment.
-	Rank int `pulumi:"rank"`
+	Rank *int `pulumi:"rank"`
 	// Identifying information for the specified software source.
 	SoftwareSourceIds []GetLifecycleEnvironmentStageSoftwareSourceId `pulumi:"softwareSourceIds"`
 	// The current state of the lifecycle environment.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time the lifecycle environment was created. An RFC3339 formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the lifecycle environment was last modified. An RFC3339 formatted datetime string.
-	TimeModified string `pulumi:"timeModified"`
+	TimeModified *string `pulumi:"timeModified"`
 	// The software source vendor name.
-	VendorName string `pulumi:"vendorName"`
+	VendorName *string `pulumi:"vendorName"`
 }
 
 // GetLifecycleEnvironmentStageInput is an input type that accepts GetLifecycleEnvironmentStageArgs and GetLifecycleEnvironmentStageOutput values.
@@ -2944,37 +2511,37 @@ type GetLifecycleEnvironmentStageInput interface {
 
 type GetLifecycleEnvironmentStageArgs struct {
 	// The CPU architecture of the target instances.
-	ArchType pulumi.StringInput `pulumi:"archType"`
+	ArchType pulumi.StringPtrInput `pulumi:"archType"`
 	// The OCID of the tenancy containing the lifecycle stage.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// Software source name.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The OCID of the software source.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// The OCID of the lifecycle environment.
-	LifecycleEnvironmentId pulumi.StringInput `pulumi:"lifecycleEnvironmentId"`
+	LifecycleEnvironmentId pulumi.StringPtrInput `pulumi:"lifecycleEnvironmentId"`
 	// The list of managed instances specified lifecycle stage.
 	ManagedInstanceIds GetLifecycleEnvironmentStageManagedInstanceIdArrayInput `pulumi:"managedInstanceIds"`
 	// The operating system type of the target instances.
-	OsFamily pulumi.StringInput `pulumi:"osFamily"`
+	OsFamily pulumi.StringPtrInput `pulumi:"osFamily"`
 	// User specified rank for the lifecycle stage. Rank determines the hierarchy of the lifecycle stages for a given lifecycle environment.
-	Rank pulumi.IntInput `pulumi:"rank"`
+	Rank pulumi.IntPtrInput `pulumi:"rank"`
 	// Identifying information for the specified software source.
 	SoftwareSourceIds GetLifecycleEnvironmentStageSoftwareSourceIdArrayInput `pulumi:"softwareSourceIds"`
 	// The current state of the lifecycle environment.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// The time the lifecycle environment was created. An RFC3339 formatted datetime string.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The time the lifecycle environment was last modified. An RFC3339 formatted datetime string.
-	TimeModified pulumi.StringInput `pulumi:"timeModified"`
+	TimeModified pulumi.StringPtrInput `pulumi:"timeModified"`
 	// The software source vendor name.
-	VendorName pulumi.StringInput `pulumi:"vendorName"`
+	VendorName pulumi.StringPtrInput `pulumi:"vendorName"`
 }
 
 func (GetLifecycleEnvironmentStageArgs) ElementType() reflect.Type {
@@ -2987,12 +2554,6 @@ func (i GetLifecycleEnvironmentStageArgs) ToGetLifecycleEnvironmentStageOutput()
 
 func (i GetLifecycleEnvironmentStageArgs) ToGetLifecycleEnvironmentStageOutputWithContext(ctx context.Context) GetLifecycleEnvironmentStageOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetLifecycleEnvironmentStageOutput)
-}
-
-func (i GetLifecycleEnvironmentStageArgs) ToOutput(ctx context.Context) pulumix.Output[GetLifecycleEnvironmentStage] {
-	return pulumix.Output[GetLifecycleEnvironmentStage]{
-		OutputState: i.ToGetLifecycleEnvironmentStageOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetLifecycleEnvironmentStageArrayInput is an input type that accepts GetLifecycleEnvironmentStageArray and GetLifecycleEnvironmentStageArrayOutput values.
@@ -3020,12 +2581,6 @@ func (i GetLifecycleEnvironmentStageArray) ToGetLifecycleEnvironmentStageArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetLifecycleEnvironmentStageArrayOutput)
 }
 
-func (i GetLifecycleEnvironmentStageArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLifecycleEnvironmentStage] {
-	return pulumix.Output[[]GetLifecycleEnvironmentStage]{
-		OutputState: i.ToGetLifecycleEnvironmentStageArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetLifecycleEnvironmentStageOutput struct{ *pulumi.OutputState }
 
 func (GetLifecycleEnvironmentStageOutput) ElementType() reflect.Type {
@@ -3040,20 +2595,14 @@ func (o GetLifecycleEnvironmentStageOutput) ToGetLifecycleEnvironmentStageOutput
 	return o
 }
 
-func (o GetLifecycleEnvironmentStageOutput) ToOutput(ctx context.Context) pulumix.Output[GetLifecycleEnvironmentStage] {
-	return pulumix.Output[GetLifecycleEnvironmentStage]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The CPU architecture of the target instances.
-func (o GetLifecycleEnvironmentStageOutput) ArchType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLifecycleEnvironmentStage) string { return v.ArchType }).(pulumi.StringOutput)
+func (o GetLifecycleEnvironmentStageOutput) ArchType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLifecycleEnvironmentStage) *string { return v.ArchType }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the tenancy containing the lifecycle stage.
-func (o GetLifecycleEnvironmentStageOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLifecycleEnvironmentStage) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetLifecycleEnvironmentStageOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLifecycleEnvironmentStage) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -3062,8 +2611,8 @@ func (o GetLifecycleEnvironmentStageOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // Software source name.
-func (o GetLifecycleEnvironmentStageOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLifecycleEnvironmentStage) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetLifecycleEnvironmentStageOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLifecycleEnvironmentStage) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -3072,13 +2621,13 @@ func (o GetLifecycleEnvironmentStageOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The OCID of the software source.
-func (o GetLifecycleEnvironmentStageOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLifecycleEnvironmentStage) string { return v.Id }).(pulumi.StringOutput)
+func (o GetLifecycleEnvironmentStageOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLifecycleEnvironmentStage) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the lifecycle environment.
-func (o GetLifecycleEnvironmentStageOutput) LifecycleEnvironmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLifecycleEnvironmentStage) string { return v.LifecycleEnvironmentId }).(pulumi.StringOutput)
+func (o GetLifecycleEnvironmentStageOutput) LifecycleEnvironmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLifecycleEnvironmentStage) *string { return v.LifecycleEnvironmentId }).(pulumi.StringPtrOutput)
 }
 
 // The list of managed instances specified lifecycle stage.
@@ -3089,13 +2638,13 @@ func (o GetLifecycleEnvironmentStageOutput) ManagedInstanceIds() GetLifecycleEnv
 }
 
 // The operating system type of the target instances.
-func (o GetLifecycleEnvironmentStageOutput) OsFamily() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLifecycleEnvironmentStage) string { return v.OsFamily }).(pulumi.StringOutput)
+func (o GetLifecycleEnvironmentStageOutput) OsFamily() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLifecycleEnvironmentStage) *string { return v.OsFamily }).(pulumi.StringPtrOutput)
 }
 
 // User specified rank for the lifecycle stage. Rank determines the hierarchy of the lifecycle stages for a given lifecycle environment.
-func (o GetLifecycleEnvironmentStageOutput) Rank() pulumi.IntOutput {
-	return o.ApplyT(func(v GetLifecycleEnvironmentStage) int { return v.Rank }).(pulumi.IntOutput)
+func (o GetLifecycleEnvironmentStageOutput) Rank() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetLifecycleEnvironmentStage) *int { return v.Rank }).(pulumi.IntPtrOutput)
 }
 
 // Identifying information for the specified software source.
@@ -3106,8 +2655,8 @@ func (o GetLifecycleEnvironmentStageOutput) SoftwareSourceIds() GetLifecycleEnvi
 }
 
 // The current state of the lifecycle environment.
-func (o GetLifecycleEnvironmentStageOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLifecycleEnvironmentStage) string { return v.State }).(pulumi.StringOutput)
+func (o GetLifecycleEnvironmentStageOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLifecycleEnvironmentStage) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -3116,18 +2665,18 @@ func (o GetLifecycleEnvironmentStageOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time the lifecycle environment was created. An RFC3339 formatted datetime string.
-func (o GetLifecycleEnvironmentStageOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLifecycleEnvironmentStage) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetLifecycleEnvironmentStageOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLifecycleEnvironmentStage) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the lifecycle environment was last modified. An RFC3339 formatted datetime string.
-func (o GetLifecycleEnvironmentStageOutput) TimeModified() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLifecycleEnvironmentStage) string { return v.TimeModified }).(pulumi.StringOutput)
+func (o GetLifecycleEnvironmentStageOutput) TimeModified() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLifecycleEnvironmentStage) *string { return v.TimeModified }).(pulumi.StringPtrOutput)
 }
 
 // The software source vendor name.
-func (o GetLifecycleEnvironmentStageOutput) VendorName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLifecycleEnvironmentStage) string { return v.VendorName }).(pulumi.StringOutput)
+func (o GetLifecycleEnvironmentStageOutput) VendorName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLifecycleEnvironmentStage) *string { return v.VendorName }).(pulumi.StringPtrOutput)
 }
 
 type GetLifecycleEnvironmentStageArrayOutput struct{ *pulumi.OutputState }
@@ -3144,12 +2693,6 @@ func (o GetLifecycleEnvironmentStageArrayOutput) ToGetLifecycleEnvironmentStageA
 	return o
 }
 
-func (o GetLifecycleEnvironmentStageArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLifecycleEnvironmentStage] {
-	return pulumix.Output[[]GetLifecycleEnvironmentStage]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetLifecycleEnvironmentStageArrayOutput) Index(i pulumi.IntInput) GetLifecycleEnvironmentStageOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLifecycleEnvironmentStage {
 		return vs[0].([]GetLifecycleEnvironmentStage)[vs[1].(int)]
@@ -3158,9 +2701,9 @@ func (o GetLifecycleEnvironmentStageArrayOutput) Index(i pulumi.IntInput) GetLif
 
 type GetLifecycleEnvironmentStageManagedInstanceId struct {
 	// Software source name.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The OCID of the software source.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 // GetLifecycleEnvironmentStageManagedInstanceIdInput is an input type that accepts GetLifecycleEnvironmentStageManagedInstanceIdArgs and GetLifecycleEnvironmentStageManagedInstanceIdOutput values.
@@ -3176,9 +2719,9 @@ type GetLifecycleEnvironmentStageManagedInstanceIdInput interface {
 
 type GetLifecycleEnvironmentStageManagedInstanceIdArgs struct {
 	// Software source name.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// The OCID of the software source.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 }
 
 func (GetLifecycleEnvironmentStageManagedInstanceIdArgs) ElementType() reflect.Type {
@@ -3191,12 +2734,6 @@ func (i GetLifecycleEnvironmentStageManagedInstanceIdArgs) ToGetLifecycleEnviron
 
 func (i GetLifecycleEnvironmentStageManagedInstanceIdArgs) ToGetLifecycleEnvironmentStageManagedInstanceIdOutputWithContext(ctx context.Context) GetLifecycleEnvironmentStageManagedInstanceIdOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetLifecycleEnvironmentStageManagedInstanceIdOutput)
-}
-
-func (i GetLifecycleEnvironmentStageManagedInstanceIdArgs) ToOutput(ctx context.Context) pulumix.Output[GetLifecycleEnvironmentStageManagedInstanceId] {
-	return pulumix.Output[GetLifecycleEnvironmentStageManagedInstanceId]{
-		OutputState: i.ToGetLifecycleEnvironmentStageManagedInstanceIdOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetLifecycleEnvironmentStageManagedInstanceIdArrayInput is an input type that accepts GetLifecycleEnvironmentStageManagedInstanceIdArray and GetLifecycleEnvironmentStageManagedInstanceIdArrayOutput values.
@@ -3224,12 +2761,6 @@ func (i GetLifecycleEnvironmentStageManagedInstanceIdArray) ToGetLifecycleEnviro
 	return pulumi.ToOutputWithContext(ctx, i).(GetLifecycleEnvironmentStageManagedInstanceIdArrayOutput)
 }
 
-func (i GetLifecycleEnvironmentStageManagedInstanceIdArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLifecycleEnvironmentStageManagedInstanceId] {
-	return pulumix.Output[[]GetLifecycleEnvironmentStageManagedInstanceId]{
-		OutputState: i.ToGetLifecycleEnvironmentStageManagedInstanceIdArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetLifecycleEnvironmentStageManagedInstanceIdOutput struct{ *pulumi.OutputState }
 
 func (GetLifecycleEnvironmentStageManagedInstanceIdOutput) ElementType() reflect.Type {
@@ -3244,20 +2775,14 @@ func (o GetLifecycleEnvironmentStageManagedInstanceIdOutput) ToGetLifecycleEnvir
 	return o
 }
 
-func (o GetLifecycleEnvironmentStageManagedInstanceIdOutput) ToOutput(ctx context.Context) pulumix.Output[GetLifecycleEnvironmentStageManagedInstanceId] {
-	return pulumix.Output[GetLifecycleEnvironmentStageManagedInstanceId]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Software source name.
-func (o GetLifecycleEnvironmentStageManagedInstanceIdOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLifecycleEnvironmentStageManagedInstanceId) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetLifecycleEnvironmentStageManagedInstanceIdOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLifecycleEnvironmentStageManagedInstanceId) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the software source.
-func (o GetLifecycleEnvironmentStageManagedInstanceIdOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLifecycleEnvironmentStageManagedInstanceId) string { return v.Id }).(pulumi.StringOutput)
+func (o GetLifecycleEnvironmentStageManagedInstanceIdOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLifecycleEnvironmentStageManagedInstanceId) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 type GetLifecycleEnvironmentStageManagedInstanceIdArrayOutput struct{ *pulumi.OutputState }
@@ -3274,12 +2799,6 @@ func (o GetLifecycleEnvironmentStageManagedInstanceIdArrayOutput) ToGetLifecycle
 	return o
 }
 
-func (o GetLifecycleEnvironmentStageManagedInstanceIdArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLifecycleEnvironmentStageManagedInstanceId] {
-	return pulumix.Output[[]GetLifecycleEnvironmentStageManagedInstanceId]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetLifecycleEnvironmentStageManagedInstanceIdArrayOutput) Index(i pulumi.IntInput) GetLifecycleEnvironmentStageManagedInstanceIdOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLifecycleEnvironmentStageManagedInstanceId {
 		return vs[0].([]GetLifecycleEnvironmentStageManagedInstanceId)[vs[1].(int)]
@@ -3288,13 +2807,13 @@ func (o GetLifecycleEnvironmentStageManagedInstanceIdArrayOutput) Index(i pulumi
 
 type GetLifecycleEnvironmentStageSoftwareSourceId struct {
 	// Software source description.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Software source name.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The OCID of the software source.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Type of the software source.
-	SoftwareSourceType string `pulumi:"softwareSourceType"`
+	SoftwareSourceType *string `pulumi:"softwareSourceType"`
 }
 
 // GetLifecycleEnvironmentStageSoftwareSourceIdInput is an input type that accepts GetLifecycleEnvironmentStageSoftwareSourceIdArgs and GetLifecycleEnvironmentStageSoftwareSourceIdOutput values.
@@ -3310,13 +2829,13 @@ type GetLifecycleEnvironmentStageSoftwareSourceIdInput interface {
 
 type GetLifecycleEnvironmentStageSoftwareSourceIdArgs struct {
 	// Software source description.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// Software source name.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// The OCID of the software source.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Type of the software source.
-	SoftwareSourceType pulumi.StringInput `pulumi:"softwareSourceType"`
+	SoftwareSourceType pulumi.StringPtrInput `pulumi:"softwareSourceType"`
 }
 
 func (GetLifecycleEnvironmentStageSoftwareSourceIdArgs) ElementType() reflect.Type {
@@ -3329,12 +2848,6 @@ func (i GetLifecycleEnvironmentStageSoftwareSourceIdArgs) ToGetLifecycleEnvironm
 
 func (i GetLifecycleEnvironmentStageSoftwareSourceIdArgs) ToGetLifecycleEnvironmentStageSoftwareSourceIdOutputWithContext(ctx context.Context) GetLifecycleEnvironmentStageSoftwareSourceIdOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetLifecycleEnvironmentStageSoftwareSourceIdOutput)
-}
-
-func (i GetLifecycleEnvironmentStageSoftwareSourceIdArgs) ToOutput(ctx context.Context) pulumix.Output[GetLifecycleEnvironmentStageSoftwareSourceId] {
-	return pulumix.Output[GetLifecycleEnvironmentStageSoftwareSourceId]{
-		OutputState: i.ToGetLifecycleEnvironmentStageSoftwareSourceIdOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetLifecycleEnvironmentStageSoftwareSourceIdArrayInput is an input type that accepts GetLifecycleEnvironmentStageSoftwareSourceIdArray and GetLifecycleEnvironmentStageSoftwareSourceIdArrayOutput values.
@@ -3362,12 +2875,6 @@ func (i GetLifecycleEnvironmentStageSoftwareSourceIdArray) ToGetLifecycleEnviron
 	return pulumi.ToOutputWithContext(ctx, i).(GetLifecycleEnvironmentStageSoftwareSourceIdArrayOutput)
 }
 
-func (i GetLifecycleEnvironmentStageSoftwareSourceIdArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLifecycleEnvironmentStageSoftwareSourceId] {
-	return pulumix.Output[[]GetLifecycleEnvironmentStageSoftwareSourceId]{
-		OutputState: i.ToGetLifecycleEnvironmentStageSoftwareSourceIdArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetLifecycleEnvironmentStageSoftwareSourceIdOutput struct{ *pulumi.OutputState }
 
 func (GetLifecycleEnvironmentStageSoftwareSourceIdOutput) ElementType() reflect.Type {
@@ -3382,30 +2889,24 @@ func (o GetLifecycleEnvironmentStageSoftwareSourceIdOutput) ToGetLifecycleEnviro
 	return o
 }
 
-func (o GetLifecycleEnvironmentStageSoftwareSourceIdOutput) ToOutput(ctx context.Context) pulumix.Output[GetLifecycleEnvironmentStageSoftwareSourceId] {
-	return pulumix.Output[GetLifecycleEnvironmentStageSoftwareSourceId]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Software source description.
-func (o GetLifecycleEnvironmentStageSoftwareSourceIdOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLifecycleEnvironmentStageSoftwareSourceId) string { return v.Description }).(pulumi.StringOutput)
+func (o GetLifecycleEnvironmentStageSoftwareSourceIdOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLifecycleEnvironmentStageSoftwareSourceId) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Software source name.
-func (o GetLifecycleEnvironmentStageSoftwareSourceIdOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLifecycleEnvironmentStageSoftwareSourceId) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetLifecycleEnvironmentStageSoftwareSourceIdOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLifecycleEnvironmentStageSoftwareSourceId) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the software source.
-func (o GetLifecycleEnvironmentStageSoftwareSourceIdOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLifecycleEnvironmentStageSoftwareSourceId) string { return v.Id }).(pulumi.StringOutput)
+func (o GetLifecycleEnvironmentStageSoftwareSourceIdOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLifecycleEnvironmentStageSoftwareSourceId) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Type of the software source.
-func (o GetLifecycleEnvironmentStageSoftwareSourceIdOutput) SoftwareSourceType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLifecycleEnvironmentStageSoftwareSourceId) string { return v.SoftwareSourceType }).(pulumi.StringOutput)
+func (o GetLifecycleEnvironmentStageSoftwareSourceIdOutput) SoftwareSourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLifecycleEnvironmentStageSoftwareSourceId) *string { return v.SoftwareSourceType }).(pulumi.StringPtrOutput)
 }
 
 type GetLifecycleEnvironmentStageSoftwareSourceIdArrayOutput struct{ *pulumi.OutputState }
@@ -3420,12 +2921,6 @@ func (o GetLifecycleEnvironmentStageSoftwareSourceIdArrayOutput) ToGetLifecycleE
 
 func (o GetLifecycleEnvironmentStageSoftwareSourceIdArrayOutput) ToGetLifecycleEnvironmentStageSoftwareSourceIdArrayOutputWithContext(ctx context.Context) GetLifecycleEnvironmentStageSoftwareSourceIdArrayOutput {
 	return o
-}
-
-func (o GetLifecycleEnvironmentStageSoftwareSourceIdArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLifecycleEnvironmentStageSoftwareSourceId] {
-	return pulumix.Output[[]GetLifecycleEnvironmentStageSoftwareSourceId]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetLifecycleEnvironmentStageSoftwareSourceIdArrayOutput) Index(i pulumi.IntInput) GetLifecycleEnvironmentStageSoftwareSourceIdOutput {
@@ -3469,12 +2964,6 @@ func (i GetLifecycleEnvironmentsFilterArgs) ToGetLifecycleEnvironmentsFilterOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetLifecycleEnvironmentsFilterOutput)
 }
 
-func (i GetLifecycleEnvironmentsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetLifecycleEnvironmentsFilter] {
-	return pulumix.Output[GetLifecycleEnvironmentsFilter]{
-		OutputState: i.ToGetLifecycleEnvironmentsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetLifecycleEnvironmentsFilterArrayInput is an input type that accepts GetLifecycleEnvironmentsFilterArray and GetLifecycleEnvironmentsFilterArrayOutput values.
 // You can construct a concrete instance of `GetLifecycleEnvironmentsFilterArrayInput` via:
 //
@@ -3500,12 +2989,6 @@ func (i GetLifecycleEnvironmentsFilterArray) ToGetLifecycleEnvironmentsFilterArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetLifecycleEnvironmentsFilterArrayOutput)
 }
 
-func (i GetLifecycleEnvironmentsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLifecycleEnvironmentsFilter] {
-	return pulumix.Output[[]GetLifecycleEnvironmentsFilter]{
-		OutputState: i.ToGetLifecycleEnvironmentsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetLifecycleEnvironmentsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetLifecycleEnvironmentsFilterOutput) ElementType() reflect.Type {
@@ -3518,12 +3001,6 @@ func (o GetLifecycleEnvironmentsFilterOutput) ToGetLifecycleEnvironmentsFilterOu
 
 func (o GetLifecycleEnvironmentsFilterOutput) ToGetLifecycleEnvironmentsFilterOutputWithContext(ctx context.Context) GetLifecycleEnvironmentsFilterOutput {
 	return o
-}
-
-func (o GetLifecycleEnvironmentsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetLifecycleEnvironmentsFilter] {
-	return pulumix.Output[GetLifecycleEnvironmentsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetLifecycleEnvironmentsFilterOutput) Name() pulumi.StringOutput {
@@ -3550,12 +3027,6 @@ func (o GetLifecycleEnvironmentsFilterArrayOutput) ToGetLifecycleEnvironmentsFil
 
 func (o GetLifecycleEnvironmentsFilterArrayOutput) ToGetLifecycleEnvironmentsFilterArrayOutputWithContext(ctx context.Context) GetLifecycleEnvironmentsFilterArrayOutput {
 	return o
-}
-
-func (o GetLifecycleEnvironmentsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLifecycleEnvironmentsFilter] {
-	return pulumix.Output[[]GetLifecycleEnvironmentsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetLifecycleEnvironmentsFilterArrayOutput) Index(i pulumi.IntInput) GetLifecycleEnvironmentsFilterOutput {
@@ -3595,12 +3066,6 @@ func (i GetLifecycleEnvironmentsLifecycleEnvironmentCollectionArgs) ToGetLifecyc
 	return pulumi.ToOutputWithContext(ctx, i).(GetLifecycleEnvironmentsLifecycleEnvironmentCollectionOutput)
 }
 
-func (i GetLifecycleEnvironmentsLifecycleEnvironmentCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetLifecycleEnvironmentsLifecycleEnvironmentCollection] {
-	return pulumix.Output[GetLifecycleEnvironmentsLifecycleEnvironmentCollection]{
-		OutputState: i.ToGetLifecycleEnvironmentsLifecycleEnvironmentCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetLifecycleEnvironmentsLifecycleEnvironmentCollectionArrayInput is an input type that accepts GetLifecycleEnvironmentsLifecycleEnvironmentCollectionArray and GetLifecycleEnvironmentsLifecycleEnvironmentCollectionArrayOutput values.
 // You can construct a concrete instance of `GetLifecycleEnvironmentsLifecycleEnvironmentCollectionArrayInput` via:
 //
@@ -3626,12 +3091,6 @@ func (i GetLifecycleEnvironmentsLifecycleEnvironmentCollectionArray) ToGetLifecy
 	return pulumi.ToOutputWithContext(ctx, i).(GetLifecycleEnvironmentsLifecycleEnvironmentCollectionArrayOutput)
 }
 
-func (i GetLifecycleEnvironmentsLifecycleEnvironmentCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLifecycleEnvironmentsLifecycleEnvironmentCollection] {
-	return pulumix.Output[[]GetLifecycleEnvironmentsLifecycleEnvironmentCollection]{
-		OutputState: i.ToGetLifecycleEnvironmentsLifecycleEnvironmentCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetLifecycleEnvironmentsLifecycleEnvironmentCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetLifecycleEnvironmentsLifecycleEnvironmentCollectionOutput) ElementType() reflect.Type {
@@ -3644,12 +3103,6 @@ func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionOutput) ToGetLifec
 
 func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionOutput) ToGetLifecycleEnvironmentsLifecycleEnvironmentCollectionOutputWithContext(ctx context.Context) GetLifecycleEnvironmentsLifecycleEnvironmentCollectionOutput {
 	return o
-}
-
-func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetLifecycleEnvironmentsLifecycleEnvironmentCollection] {
-	return pulumix.Output[GetLifecycleEnvironmentsLifecycleEnvironmentCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionOutput) Items() GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemArrayOutput {
@@ -3672,12 +3125,6 @@ func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionArrayOutput) ToGet
 	return o
 }
 
-func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLifecycleEnvironmentsLifecycleEnvironmentCollection] {
-	return pulumix.Output[[]GetLifecycleEnvironmentsLifecycleEnvironmentCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionArrayOutput) Index(i pulumi.IntInput) GetLifecycleEnvironmentsLifecycleEnvironmentCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLifecycleEnvironmentsLifecycleEnvironmentCollection {
 		return vs[0].([]GetLifecycleEnvironmentsLifecycleEnvironmentCollection)[vs[1].(int)]
@@ -3686,35 +3133,35 @@ func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionArrayOutput) Index
 
 type GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItem struct {
 	// A filter to return only profiles that match the given archType.
-	ArchType string `pulumi:"archType"`
+	ArchType *string `pulumi:"archType"`
 	// The OCID of the compartment that contains the resources to list.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Software source description.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// A filter to return resources that match the given display names.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the software source.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of managed instances specified lifecycle stage.
 	ManagedInstanceIds []GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemManagedInstanceId `pulumi:"managedInstanceIds"`
 	// A filter to return only profiles that match the given osFamily.
-	OsFamily string `pulumi:"osFamily"`
+	OsFamily *string `pulumi:"osFamily"`
 	// User specified list of lifecycle stages to be created for the lifecycle environment.
 	Stages []GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStage `pulumi:"stages"`
 	// A filter to return only the lifecycle environments that match the display name given.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time the lifecycle environment was created. An RFC3339 formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the lifecycle environment was last modified. An RFC3339 formatted datetime string.
-	TimeModified string `pulumi:"timeModified"`
+	TimeModified *string `pulumi:"timeModified"`
 	// The software source vendor name.
-	VendorName string `pulumi:"vendorName"`
+	VendorName *string `pulumi:"vendorName"`
 }
 
 // GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemInput is an input type that accepts GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemArgs and GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemOutput values.
@@ -3730,35 +3177,35 @@ type GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemInput interface {
 
 type GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemArgs struct {
 	// A filter to return only profiles that match the given archType.
-	ArchType pulumi.StringInput `pulumi:"archType"`
+	ArchType pulumi.StringPtrInput `pulumi:"archType"`
 	// The OCID of the compartment that contains the resources to list.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// Software source description.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// A filter to return resources that match the given display names.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The OCID of the software source.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// The list of managed instances specified lifecycle stage.
 	ManagedInstanceIds GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemManagedInstanceIdArrayInput `pulumi:"managedInstanceIds"`
 	// A filter to return only profiles that match the given osFamily.
-	OsFamily pulumi.StringInput `pulumi:"osFamily"`
+	OsFamily pulumi.StringPtrInput `pulumi:"osFamily"`
 	// User specified list of lifecycle stages to be created for the lifecycle environment.
 	Stages GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageArrayInput `pulumi:"stages"`
 	// A filter to return only the lifecycle environments that match the display name given.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// The time the lifecycle environment was created. An RFC3339 formatted datetime string.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The time the lifecycle environment was last modified. An RFC3339 formatted datetime string.
-	TimeModified pulumi.StringInput `pulumi:"timeModified"`
+	TimeModified pulumi.StringPtrInput `pulumi:"timeModified"`
 	// The software source vendor name.
-	VendorName pulumi.StringInput `pulumi:"vendorName"`
+	VendorName pulumi.StringPtrInput `pulumi:"vendorName"`
 }
 
 func (GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemArgs) ElementType() reflect.Type {
@@ -3771,12 +3218,6 @@ func (i GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemArgs) ToGetLif
 
 func (i GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemArgs) ToGetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemOutputWithContext(ctx context.Context) GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemOutput)
-}
-
-func (i GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItem] {
-	return pulumix.Output[GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItem]{
-		OutputState: i.ToGetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemArrayInput is an input type that accepts GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemArray and GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemArrayOutput values.
@@ -3804,12 +3245,6 @@ func (i GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemArray) ToGetLi
 	return pulumi.ToOutputWithContext(ctx, i).(GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemArrayOutput)
 }
 
-func (i GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItem] {
-	return pulumix.Output[[]GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItem]{
-		OutputState: i.ToGetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemOutput) ElementType() reflect.Type {
@@ -3824,20 +3259,14 @@ func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemOutput) ToGetL
 	return o
 }
 
-func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItem] {
-	return pulumix.Output[GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A filter to return only profiles that match the given archType.
-func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemOutput) ArchType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItem) string { return v.ArchType }).(pulumi.StringOutput)
+func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemOutput) ArchType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItem) *string { return v.ArchType }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the compartment that contains the resources to list.
-func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -3848,13 +3277,13 @@ func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemOutput) Define
 }
 
 // Software source description.
-func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItem) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return resources that match the given display names.
-func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItem) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -3865,8 +3294,8 @@ func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemOutput) Freefo
 }
 
 // The OCID of the software source.
-func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of managed instances specified lifecycle stage.
@@ -3877,8 +3306,8 @@ func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemOutput) Manage
 }
 
 // A filter to return only profiles that match the given osFamily.
-func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemOutput) OsFamily() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItem) string { return v.OsFamily }).(pulumi.StringOutput)
+func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemOutput) OsFamily() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItem) *string { return v.OsFamily }).(pulumi.StringPtrOutput)
 }
 
 // User specified list of lifecycle stages to be created for the lifecycle environment.
@@ -3889,8 +3318,8 @@ func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemOutput) Stages
 }
 
 // A filter to return only the lifecycle environments that match the display name given.
-func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -3901,18 +3330,18 @@ func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemOutput) System
 }
 
 // The time the lifecycle environment was created. An RFC3339 formatted datetime string.
-func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the lifecycle environment was last modified. An RFC3339 formatted datetime string.
-func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemOutput) TimeModified() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItem) string { return v.TimeModified }).(pulumi.StringOutput)
+func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemOutput) TimeModified() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItem) *string { return v.TimeModified }).(pulumi.StringPtrOutput)
 }
 
 // The software source vendor name.
-func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemOutput) VendorName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItem) string { return v.VendorName }).(pulumi.StringOutput)
+func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemOutput) VendorName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItem) *string { return v.VendorName }).(pulumi.StringPtrOutput)
 }
 
 type GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -3929,12 +3358,6 @@ func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemArrayOutput) T
 	return o
 }
 
-func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItem] {
-	return pulumix.Output[[]GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemArrayOutput) Index(i pulumi.IntInput) GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItem {
 		return vs[0].([]GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItem)[vs[1].(int)]
@@ -3943,9 +3366,9 @@ func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemArrayOutput) I
 
 type GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemManagedInstanceId struct {
 	// A filter to return resources that match the given display names.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The OCID of the software source.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 // GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemManagedInstanceIdInput is an input type that accepts GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemManagedInstanceIdArgs and GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemManagedInstanceIdOutput values.
@@ -3961,9 +3384,9 @@ type GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemManagedInstanceId
 
 type GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemManagedInstanceIdArgs struct {
 	// A filter to return resources that match the given display names.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// The OCID of the software source.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 }
 
 func (GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemManagedInstanceIdArgs) ElementType() reflect.Type {
@@ -3976,12 +3399,6 @@ func (i GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemManagedInstanc
 
 func (i GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemManagedInstanceIdArgs) ToGetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemManagedInstanceIdOutputWithContext(ctx context.Context) GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemManagedInstanceIdOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemManagedInstanceIdOutput)
-}
-
-func (i GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemManagedInstanceIdArgs) ToOutput(ctx context.Context) pulumix.Output[GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemManagedInstanceId] {
-	return pulumix.Output[GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemManagedInstanceId]{
-		OutputState: i.ToGetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemManagedInstanceIdOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemManagedInstanceIdArrayInput is an input type that accepts GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemManagedInstanceIdArray and GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemManagedInstanceIdArrayOutput values.
@@ -4009,12 +3426,6 @@ func (i GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemManagedInstanc
 	return pulumi.ToOutputWithContext(ctx, i).(GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemManagedInstanceIdArrayOutput)
 }
 
-func (i GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemManagedInstanceIdArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemManagedInstanceId] {
-	return pulumix.Output[[]GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemManagedInstanceId]{
-		OutputState: i.ToGetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemManagedInstanceIdArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemManagedInstanceIdOutput struct{ *pulumi.OutputState }
 
 func (GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemManagedInstanceIdOutput) ElementType() reflect.Type {
@@ -4029,24 +3440,18 @@ func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemManagedInstanc
 	return o
 }
 
-func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemManagedInstanceIdOutput) ToOutput(ctx context.Context) pulumix.Output[GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemManagedInstanceId] {
-	return pulumix.Output[GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemManagedInstanceId]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A filter to return resources that match the given display names.
-func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemManagedInstanceIdOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemManagedInstanceId) string {
+func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemManagedInstanceIdOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemManagedInstanceId) *string {
 		return v.DisplayName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the software source.
-func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemManagedInstanceIdOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemManagedInstanceId) string {
+func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemManagedInstanceIdOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemManagedInstanceId) *string {
 		return v.Id
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemManagedInstanceIdArrayOutput struct{ *pulumi.OutputState }
@@ -4063,12 +3468,6 @@ func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemManagedInstanc
 	return o
 }
 
-func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemManagedInstanceIdArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemManagedInstanceId] {
-	return pulumix.Output[[]GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemManagedInstanceId]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemManagedInstanceIdArrayOutput) Index(i pulumi.IntInput) GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemManagedInstanceIdOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemManagedInstanceId {
 		return vs[0].([]GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemManagedInstanceId)[vs[1].(int)]
@@ -4077,37 +3476,37 @@ func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemManagedInstanc
 
 type GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStage struct {
 	// A filter to return only profiles that match the given archType.
-	ArchType string `pulumi:"archType"`
+	ArchType *string `pulumi:"archType"`
 	// The OCID of the compartment that contains the resources to list.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A filter to return resources that match the given display names.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the software source.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The OCID of the lifecycle environment.
-	LifecycleEnvironmentId string `pulumi:"lifecycleEnvironmentId"`
+	LifecycleEnvironmentId *string `pulumi:"lifecycleEnvironmentId"`
 	// The list of managed instances specified lifecycle stage.
 	ManagedInstanceIds []GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageManagedInstanceId `pulumi:"managedInstanceIds"`
 	// A filter to return only profiles that match the given osFamily.
-	OsFamily string `pulumi:"osFamily"`
+	OsFamily *string `pulumi:"osFamily"`
 	// User specified rank for the lifecycle stage. Rank determines the hierarchy of the lifecycle stages for a given lifecycle environment.
-	Rank int `pulumi:"rank"`
+	Rank *int `pulumi:"rank"`
 	// Identifying information for the specified software source.
 	SoftwareSourceIds []GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageSoftwareSourceId `pulumi:"softwareSourceIds"`
 	// A filter to return only the lifecycle environments that match the display name given.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time the lifecycle environment was created. An RFC3339 formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the lifecycle environment was last modified. An RFC3339 formatted datetime string.
-	TimeModified string `pulumi:"timeModified"`
+	TimeModified *string `pulumi:"timeModified"`
 	// The software source vendor name.
-	VendorName string `pulumi:"vendorName"`
+	VendorName *string `pulumi:"vendorName"`
 }
 
 // GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageInput is an input type that accepts GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageArgs and GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageOutput values.
@@ -4123,37 +3522,37 @@ type GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageInput interf
 
 type GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageArgs struct {
 	// A filter to return only profiles that match the given archType.
-	ArchType pulumi.StringInput `pulumi:"archType"`
+	ArchType pulumi.StringPtrInput `pulumi:"archType"`
 	// The OCID of the compartment that contains the resources to list.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A filter to return resources that match the given display names.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The OCID of the software source.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// The OCID of the lifecycle environment.
-	LifecycleEnvironmentId pulumi.StringInput `pulumi:"lifecycleEnvironmentId"`
+	LifecycleEnvironmentId pulumi.StringPtrInput `pulumi:"lifecycleEnvironmentId"`
 	// The list of managed instances specified lifecycle stage.
 	ManagedInstanceIds GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageManagedInstanceIdArrayInput `pulumi:"managedInstanceIds"`
 	// A filter to return only profiles that match the given osFamily.
-	OsFamily pulumi.StringInput `pulumi:"osFamily"`
+	OsFamily pulumi.StringPtrInput `pulumi:"osFamily"`
 	// User specified rank for the lifecycle stage. Rank determines the hierarchy of the lifecycle stages for a given lifecycle environment.
-	Rank pulumi.IntInput `pulumi:"rank"`
+	Rank pulumi.IntPtrInput `pulumi:"rank"`
 	// Identifying information for the specified software source.
 	SoftwareSourceIds GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageSoftwareSourceIdArrayInput `pulumi:"softwareSourceIds"`
 	// A filter to return only the lifecycle environments that match the display name given.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// The time the lifecycle environment was created. An RFC3339 formatted datetime string.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The time the lifecycle environment was last modified. An RFC3339 formatted datetime string.
-	TimeModified pulumi.StringInput `pulumi:"timeModified"`
+	TimeModified pulumi.StringPtrInput `pulumi:"timeModified"`
 	// The software source vendor name.
-	VendorName pulumi.StringInput `pulumi:"vendorName"`
+	VendorName pulumi.StringPtrInput `pulumi:"vendorName"`
 }
 
 func (GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageArgs) ElementType() reflect.Type {
@@ -4166,12 +3565,6 @@ func (i GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageArgs) ToG
 
 func (i GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageArgs) ToGetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageOutputWithContext(ctx context.Context) GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageOutput)
-}
-
-func (i GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageArgs) ToOutput(ctx context.Context) pulumix.Output[GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStage] {
-	return pulumix.Output[GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStage]{
-		OutputState: i.ToGetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageArrayInput is an input type that accepts GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageArray and GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageArrayOutput values.
@@ -4199,12 +3592,6 @@ func (i GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageArray) To
 	return pulumi.ToOutputWithContext(ctx, i).(GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageArrayOutput)
 }
 
-func (i GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStage] {
-	return pulumix.Output[[]GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStage]{
-		OutputState: i.ToGetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageOutput struct{ *pulumi.OutputState }
 
 func (GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageOutput) ElementType() reflect.Type {
@@ -4219,20 +3606,16 @@ func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageOutput) T
 	return o
 }
 
-func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageOutput) ToOutput(ctx context.Context) pulumix.Output[GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStage] {
-	return pulumix.Output[GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStage]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A filter to return only profiles that match the given archType.
-func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageOutput) ArchType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStage) string { return v.ArchType }).(pulumi.StringOutput)
+func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageOutput) ArchType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStage) *string { return v.ArchType }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the compartment that contains the resources to list.
-func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStage) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStage) *string {
+		return v.CompartmentId
+	}).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -4243,8 +3626,8 @@ func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageOutput) D
 }
 
 // A filter to return resources that match the given display names.
-func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStage) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStage) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -4255,15 +3638,15 @@ func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageOutput) F
 }
 
 // The OCID of the software source.
-func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStage) string { return v.Id }).(pulumi.StringOutput)
+func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStage) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the lifecycle environment.
-func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageOutput) LifecycleEnvironmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStage) string {
+func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageOutput) LifecycleEnvironmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStage) *string {
 		return v.LifecycleEnvironmentId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The list of managed instances specified lifecycle stage.
@@ -4274,13 +3657,13 @@ func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageOutput) M
 }
 
 // A filter to return only profiles that match the given osFamily.
-func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageOutput) OsFamily() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStage) string { return v.OsFamily }).(pulumi.StringOutput)
+func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageOutput) OsFamily() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStage) *string { return v.OsFamily }).(pulumi.StringPtrOutput)
 }
 
 // User specified rank for the lifecycle stage. Rank determines the hierarchy of the lifecycle stages for a given lifecycle environment.
-func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageOutput) Rank() pulumi.IntOutput {
-	return o.ApplyT(func(v GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStage) int { return v.Rank }).(pulumi.IntOutput)
+func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageOutput) Rank() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStage) *int { return v.Rank }).(pulumi.IntPtrOutput)
 }
 
 // Identifying information for the specified software source.
@@ -4291,8 +3674,8 @@ func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageOutput) S
 }
 
 // A filter to return only the lifecycle environments that match the display name given.
-func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStage) string { return v.State }).(pulumi.StringOutput)
+func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStage) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -4303,18 +3686,18 @@ func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageOutput) S
 }
 
 // The time the lifecycle environment was created. An RFC3339 formatted datetime string.
-func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStage) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStage) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the lifecycle environment was last modified. An RFC3339 formatted datetime string.
-func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageOutput) TimeModified() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStage) string { return v.TimeModified }).(pulumi.StringOutput)
+func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageOutput) TimeModified() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStage) *string { return v.TimeModified }).(pulumi.StringPtrOutput)
 }
 
 // The software source vendor name.
-func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageOutput) VendorName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStage) string { return v.VendorName }).(pulumi.StringOutput)
+func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageOutput) VendorName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStage) *string { return v.VendorName }).(pulumi.StringPtrOutput)
 }
 
 type GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageArrayOutput struct{ *pulumi.OutputState }
@@ -4331,12 +3714,6 @@ func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageArrayOutp
 	return o
 }
 
-func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStage] {
-	return pulumix.Output[[]GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStage]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageArrayOutput) Index(i pulumi.IntInput) GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStage {
 		return vs[0].([]GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStage)[vs[1].(int)]
@@ -4345,9 +3722,9 @@ func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageArrayOutp
 
 type GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageManagedInstanceId struct {
 	// A filter to return resources that match the given display names.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The OCID of the software source.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 // GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageManagedInstanceIdInput is an input type that accepts GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageManagedInstanceIdArgs and GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageManagedInstanceIdOutput values.
@@ -4363,9 +3740,9 @@ type GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageManagedInsta
 
 type GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageManagedInstanceIdArgs struct {
 	// A filter to return resources that match the given display names.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// The OCID of the software source.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 }
 
 func (GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageManagedInstanceIdArgs) ElementType() reflect.Type {
@@ -4378,12 +3755,6 @@ func (i GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageManagedIn
 
 func (i GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageManagedInstanceIdArgs) ToGetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageManagedInstanceIdOutputWithContext(ctx context.Context) GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageManagedInstanceIdOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageManagedInstanceIdOutput)
-}
-
-func (i GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageManagedInstanceIdArgs) ToOutput(ctx context.Context) pulumix.Output[GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageManagedInstanceId] {
-	return pulumix.Output[GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageManagedInstanceId]{
-		OutputState: i.ToGetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageManagedInstanceIdOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageManagedInstanceIdArrayInput is an input type that accepts GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageManagedInstanceIdArray and GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageManagedInstanceIdArrayOutput values.
@@ -4411,12 +3782,6 @@ func (i GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageManagedIn
 	return pulumi.ToOutputWithContext(ctx, i).(GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageManagedInstanceIdArrayOutput)
 }
 
-func (i GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageManagedInstanceIdArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageManagedInstanceId] {
-	return pulumix.Output[[]GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageManagedInstanceId]{
-		OutputState: i.ToGetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageManagedInstanceIdArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageManagedInstanceIdOutput struct{ *pulumi.OutputState }
 
 func (GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageManagedInstanceIdOutput) ElementType() reflect.Type {
@@ -4431,24 +3796,18 @@ func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageManagedIn
 	return o
 }
 
-func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageManagedInstanceIdOutput) ToOutput(ctx context.Context) pulumix.Output[GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageManagedInstanceId] {
-	return pulumix.Output[GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageManagedInstanceId]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A filter to return resources that match the given display names.
-func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageManagedInstanceIdOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageManagedInstanceId) string {
+func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageManagedInstanceIdOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageManagedInstanceId) *string {
 		return v.DisplayName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the software source.
-func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageManagedInstanceIdOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageManagedInstanceId) string {
+func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageManagedInstanceIdOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageManagedInstanceId) *string {
 		return v.Id
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageManagedInstanceIdArrayOutput struct{ *pulumi.OutputState }
@@ -4465,12 +3824,6 @@ func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageManagedIn
 	return o
 }
 
-func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageManagedInstanceIdArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageManagedInstanceId] {
-	return pulumix.Output[[]GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageManagedInstanceId]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageManagedInstanceIdArrayOutput) Index(i pulumi.IntInput) GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageManagedInstanceIdOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageManagedInstanceId {
 		return vs[0].([]GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageManagedInstanceId)[vs[1].(int)]
@@ -4479,13 +3832,13 @@ func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageManagedIn
 
 type GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageSoftwareSourceId struct {
 	// Software source description.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// A filter to return resources that match the given display names.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The OCID of the software source.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Type of the software source.
-	SoftwareSourceType string `pulumi:"softwareSourceType"`
+	SoftwareSourceType *string `pulumi:"softwareSourceType"`
 }
 
 // GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageSoftwareSourceIdInput is an input type that accepts GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageSoftwareSourceIdArgs and GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageSoftwareSourceIdOutput values.
@@ -4501,13 +3854,13 @@ type GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageSoftwareSour
 
 type GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageSoftwareSourceIdArgs struct {
 	// Software source description.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// A filter to return resources that match the given display names.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// The OCID of the software source.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Type of the software source.
-	SoftwareSourceType pulumi.StringInput `pulumi:"softwareSourceType"`
+	SoftwareSourceType pulumi.StringPtrInput `pulumi:"softwareSourceType"`
 }
 
 func (GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageSoftwareSourceIdArgs) ElementType() reflect.Type {
@@ -4520,12 +3873,6 @@ func (i GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageSoftwareS
 
 func (i GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageSoftwareSourceIdArgs) ToGetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageSoftwareSourceIdOutputWithContext(ctx context.Context) GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageSoftwareSourceIdOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageSoftwareSourceIdOutput)
-}
-
-func (i GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageSoftwareSourceIdArgs) ToOutput(ctx context.Context) pulumix.Output[GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageSoftwareSourceId] {
-	return pulumix.Output[GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageSoftwareSourceId]{
-		OutputState: i.ToGetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageSoftwareSourceIdOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageSoftwareSourceIdArrayInput is an input type that accepts GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageSoftwareSourceIdArray and GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageSoftwareSourceIdArrayOutput values.
@@ -4553,12 +3900,6 @@ func (i GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageSoftwareS
 	return pulumi.ToOutputWithContext(ctx, i).(GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageSoftwareSourceIdArrayOutput)
 }
 
-func (i GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageSoftwareSourceIdArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageSoftwareSourceId] {
-	return pulumix.Output[[]GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageSoftwareSourceId]{
-		OutputState: i.ToGetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageSoftwareSourceIdArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageSoftwareSourceIdOutput struct{ *pulumi.OutputState }
 
 func (GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageSoftwareSourceIdOutput) ElementType() reflect.Type {
@@ -4573,38 +3914,32 @@ func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageSoftwareS
 	return o
 }
 
-func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageSoftwareSourceIdOutput) ToOutput(ctx context.Context) pulumix.Output[GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageSoftwareSourceId] {
-	return pulumix.Output[GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageSoftwareSourceId]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Software source description.
-func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageSoftwareSourceIdOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageSoftwareSourceId) string {
+func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageSoftwareSourceIdOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageSoftwareSourceId) *string {
 		return v.Description
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // A filter to return resources that match the given display names.
-func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageSoftwareSourceIdOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageSoftwareSourceId) string {
+func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageSoftwareSourceIdOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageSoftwareSourceId) *string {
 		return v.DisplayName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the software source.
-func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageSoftwareSourceIdOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageSoftwareSourceId) string {
+func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageSoftwareSourceIdOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageSoftwareSourceId) *string {
 		return v.Id
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Type of the software source.
-func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageSoftwareSourceIdOutput) SoftwareSourceType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageSoftwareSourceId) string {
+func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageSoftwareSourceIdOutput) SoftwareSourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageSoftwareSourceId) *string {
 		return v.SoftwareSourceType
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageSoftwareSourceIdArrayOutput struct{ *pulumi.OutputState }
@@ -4621,12 +3956,6 @@ func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageSoftwareS
 	return o
 }
 
-func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageSoftwareSourceIdArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageSoftwareSourceId] {
-	return pulumix.Output[[]GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageSoftwareSourceId]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageSoftwareSourceIdArrayOutput) Index(i pulumi.IntInput) GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageSoftwareSourceIdOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageSoftwareSourceId {
 		return vs[0].([]GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageSoftwareSourceId)[vs[1].(int)]
@@ -4635,9 +3964,9 @@ func (o GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageSoftwareS
 
 type GetLifecycleStageManagedInstanceId struct {
 	// Software source name.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The OCID of the software source.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 // GetLifecycleStageManagedInstanceIdInput is an input type that accepts GetLifecycleStageManagedInstanceIdArgs and GetLifecycleStageManagedInstanceIdOutput values.
@@ -4653,9 +3982,9 @@ type GetLifecycleStageManagedInstanceIdInput interface {
 
 type GetLifecycleStageManagedInstanceIdArgs struct {
 	// Software source name.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// The OCID of the software source.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 }
 
 func (GetLifecycleStageManagedInstanceIdArgs) ElementType() reflect.Type {
@@ -4668,12 +3997,6 @@ func (i GetLifecycleStageManagedInstanceIdArgs) ToGetLifecycleStageManagedInstan
 
 func (i GetLifecycleStageManagedInstanceIdArgs) ToGetLifecycleStageManagedInstanceIdOutputWithContext(ctx context.Context) GetLifecycleStageManagedInstanceIdOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetLifecycleStageManagedInstanceIdOutput)
-}
-
-func (i GetLifecycleStageManagedInstanceIdArgs) ToOutput(ctx context.Context) pulumix.Output[GetLifecycleStageManagedInstanceId] {
-	return pulumix.Output[GetLifecycleStageManagedInstanceId]{
-		OutputState: i.ToGetLifecycleStageManagedInstanceIdOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetLifecycleStageManagedInstanceIdArrayInput is an input type that accepts GetLifecycleStageManagedInstanceIdArray and GetLifecycleStageManagedInstanceIdArrayOutput values.
@@ -4701,12 +4024,6 @@ func (i GetLifecycleStageManagedInstanceIdArray) ToGetLifecycleStageManagedInsta
 	return pulumi.ToOutputWithContext(ctx, i).(GetLifecycleStageManagedInstanceIdArrayOutput)
 }
 
-func (i GetLifecycleStageManagedInstanceIdArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLifecycleStageManagedInstanceId] {
-	return pulumix.Output[[]GetLifecycleStageManagedInstanceId]{
-		OutputState: i.ToGetLifecycleStageManagedInstanceIdArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetLifecycleStageManagedInstanceIdOutput struct{ *pulumi.OutputState }
 
 func (GetLifecycleStageManagedInstanceIdOutput) ElementType() reflect.Type {
@@ -4721,20 +4038,14 @@ func (o GetLifecycleStageManagedInstanceIdOutput) ToGetLifecycleStageManagedInst
 	return o
 }
 
-func (o GetLifecycleStageManagedInstanceIdOutput) ToOutput(ctx context.Context) pulumix.Output[GetLifecycleStageManagedInstanceId] {
-	return pulumix.Output[GetLifecycleStageManagedInstanceId]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Software source name.
-func (o GetLifecycleStageManagedInstanceIdOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLifecycleStageManagedInstanceId) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetLifecycleStageManagedInstanceIdOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLifecycleStageManagedInstanceId) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the software source.
-func (o GetLifecycleStageManagedInstanceIdOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLifecycleStageManagedInstanceId) string { return v.Id }).(pulumi.StringOutput)
+func (o GetLifecycleStageManagedInstanceIdOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLifecycleStageManagedInstanceId) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 type GetLifecycleStageManagedInstanceIdArrayOutput struct{ *pulumi.OutputState }
@@ -4751,12 +4062,6 @@ func (o GetLifecycleStageManagedInstanceIdArrayOutput) ToGetLifecycleStageManage
 	return o
 }
 
-func (o GetLifecycleStageManagedInstanceIdArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLifecycleStageManagedInstanceId] {
-	return pulumix.Output[[]GetLifecycleStageManagedInstanceId]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetLifecycleStageManagedInstanceIdArrayOutput) Index(i pulumi.IntInput) GetLifecycleStageManagedInstanceIdOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLifecycleStageManagedInstanceId {
 		return vs[0].([]GetLifecycleStageManagedInstanceId)[vs[1].(int)]
@@ -4765,13 +4070,13 @@ func (o GetLifecycleStageManagedInstanceIdArrayOutput) Index(i pulumi.IntInput) 
 
 type GetLifecycleStageSoftwareSourceId struct {
 	// Software source description.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Software source name.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The OCID of the software source.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Type of the software source.
-	SoftwareSourceType string `pulumi:"softwareSourceType"`
+	SoftwareSourceType *string `pulumi:"softwareSourceType"`
 }
 
 // GetLifecycleStageSoftwareSourceIdInput is an input type that accepts GetLifecycleStageSoftwareSourceIdArgs and GetLifecycleStageSoftwareSourceIdOutput values.
@@ -4787,13 +4092,13 @@ type GetLifecycleStageSoftwareSourceIdInput interface {
 
 type GetLifecycleStageSoftwareSourceIdArgs struct {
 	// Software source description.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// Software source name.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// The OCID of the software source.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Type of the software source.
-	SoftwareSourceType pulumi.StringInput `pulumi:"softwareSourceType"`
+	SoftwareSourceType pulumi.StringPtrInput `pulumi:"softwareSourceType"`
 }
 
 func (GetLifecycleStageSoftwareSourceIdArgs) ElementType() reflect.Type {
@@ -4806,12 +4111,6 @@ func (i GetLifecycleStageSoftwareSourceIdArgs) ToGetLifecycleStageSoftwareSource
 
 func (i GetLifecycleStageSoftwareSourceIdArgs) ToGetLifecycleStageSoftwareSourceIdOutputWithContext(ctx context.Context) GetLifecycleStageSoftwareSourceIdOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetLifecycleStageSoftwareSourceIdOutput)
-}
-
-func (i GetLifecycleStageSoftwareSourceIdArgs) ToOutput(ctx context.Context) pulumix.Output[GetLifecycleStageSoftwareSourceId] {
-	return pulumix.Output[GetLifecycleStageSoftwareSourceId]{
-		OutputState: i.ToGetLifecycleStageSoftwareSourceIdOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetLifecycleStageSoftwareSourceIdArrayInput is an input type that accepts GetLifecycleStageSoftwareSourceIdArray and GetLifecycleStageSoftwareSourceIdArrayOutput values.
@@ -4839,12 +4138,6 @@ func (i GetLifecycleStageSoftwareSourceIdArray) ToGetLifecycleStageSoftwareSourc
 	return pulumi.ToOutputWithContext(ctx, i).(GetLifecycleStageSoftwareSourceIdArrayOutput)
 }
 
-func (i GetLifecycleStageSoftwareSourceIdArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLifecycleStageSoftwareSourceId] {
-	return pulumix.Output[[]GetLifecycleStageSoftwareSourceId]{
-		OutputState: i.ToGetLifecycleStageSoftwareSourceIdArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetLifecycleStageSoftwareSourceIdOutput struct{ *pulumi.OutputState }
 
 func (GetLifecycleStageSoftwareSourceIdOutput) ElementType() reflect.Type {
@@ -4859,30 +4152,24 @@ func (o GetLifecycleStageSoftwareSourceIdOutput) ToGetLifecycleStageSoftwareSour
 	return o
 }
 
-func (o GetLifecycleStageSoftwareSourceIdOutput) ToOutput(ctx context.Context) pulumix.Output[GetLifecycleStageSoftwareSourceId] {
-	return pulumix.Output[GetLifecycleStageSoftwareSourceId]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Software source description.
-func (o GetLifecycleStageSoftwareSourceIdOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLifecycleStageSoftwareSourceId) string { return v.Description }).(pulumi.StringOutput)
+func (o GetLifecycleStageSoftwareSourceIdOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLifecycleStageSoftwareSourceId) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Software source name.
-func (o GetLifecycleStageSoftwareSourceIdOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLifecycleStageSoftwareSourceId) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetLifecycleStageSoftwareSourceIdOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLifecycleStageSoftwareSourceId) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the software source.
-func (o GetLifecycleStageSoftwareSourceIdOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLifecycleStageSoftwareSourceId) string { return v.Id }).(pulumi.StringOutput)
+func (o GetLifecycleStageSoftwareSourceIdOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLifecycleStageSoftwareSourceId) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Type of the software source.
-func (o GetLifecycleStageSoftwareSourceIdOutput) SoftwareSourceType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLifecycleStageSoftwareSourceId) string { return v.SoftwareSourceType }).(pulumi.StringOutput)
+func (o GetLifecycleStageSoftwareSourceIdOutput) SoftwareSourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLifecycleStageSoftwareSourceId) *string { return v.SoftwareSourceType }).(pulumi.StringPtrOutput)
 }
 
 type GetLifecycleStageSoftwareSourceIdArrayOutput struct{ *pulumi.OutputState }
@@ -4897,12 +4184,6 @@ func (o GetLifecycleStageSoftwareSourceIdArrayOutput) ToGetLifecycleStageSoftwar
 
 func (o GetLifecycleStageSoftwareSourceIdArrayOutput) ToGetLifecycleStageSoftwareSourceIdArrayOutputWithContext(ctx context.Context) GetLifecycleStageSoftwareSourceIdArrayOutput {
 	return o
-}
-
-func (o GetLifecycleStageSoftwareSourceIdArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLifecycleStageSoftwareSourceId] {
-	return pulumix.Output[[]GetLifecycleStageSoftwareSourceId]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetLifecycleStageSoftwareSourceIdArrayOutput) Index(i pulumi.IntInput) GetLifecycleStageSoftwareSourceIdOutput {
@@ -4946,12 +4227,6 @@ func (i GetLifecycleStagesFilterArgs) ToGetLifecycleStagesFilterOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetLifecycleStagesFilterOutput)
 }
 
-func (i GetLifecycleStagesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetLifecycleStagesFilter] {
-	return pulumix.Output[GetLifecycleStagesFilter]{
-		OutputState: i.ToGetLifecycleStagesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetLifecycleStagesFilterArrayInput is an input type that accepts GetLifecycleStagesFilterArray and GetLifecycleStagesFilterArrayOutput values.
 // You can construct a concrete instance of `GetLifecycleStagesFilterArrayInput` via:
 //
@@ -4977,12 +4252,6 @@ func (i GetLifecycleStagesFilterArray) ToGetLifecycleStagesFilterArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetLifecycleStagesFilterArrayOutput)
 }
 
-func (i GetLifecycleStagesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLifecycleStagesFilter] {
-	return pulumix.Output[[]GetLifecycleStagesFilter]{
-		OutputState: i.ToGetLifecycleStagesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetLifecycleStagesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetLifecycleStagesFilterOutput) ElementType() reflect.Type {
@@ -4995,12 +4264,6 @@ func (o GetLifecycleStagesFilterOutput) ToGetLifecycleStagesFilterOutput() GetLi
 
 func (o GetLifecycleStagesFilterOutput) ToGetLifecycleStagesFilterOutputWithContext(ctx context.Context) GetLifecycleStagesFilterOutput {
 	return o
-}
-
-func (o GetLifecycleStagesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetLifecycleStagesFilter] {
-	return pulumix.Output[GetLifecycleStagesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetLifecycleStagesFilterOutput) Name() pulumi.StringOutput {
@@ -5027,12 +4290,6 @@ func (o GetLifecycleStagesFilterArrayOutput) ToGetLifecycleStagesFilterArrayOutp
 
 func (o GetLifecycleStagesFilterArrayOutput) ToGetLifecycleStagesFilterArrayOutputWithContext(ctx context.Context) GetLifecycleStagesFilterArrayOutput {
 	return o
-}
-
-func (o GetLifecycleStagesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLifecycleStagesFilter] {
-	return pulumix.Output[[]GetLifecycleStagesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetLifecycleStagesFilterArrayOutput) Index(i pulumi.IntInput) GetLifecycleStagesFilterOutput {
@@ -5072,12 +4329,6 @@ func (i GetLifecycleStagesLifecycleStageCollectionArgs) ToGetLifecycleStagesLife
 	return pulumi.ToOutputWithContext(ctx, i).(GetLifecycleStagesLifecycleStageCollectionOutput)
 }
 
-func (i GetLifecycleStagesLifecycleStageCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetLifecycleStagesLifecycleStageCollection] {
-	return pulumix.Output[GetLifecycleStagesLifecycleStageCollection]{
-		OutputState: i.ToGetLifecycleStagesLifecycleStageCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetLifecycleStagesLifecycleStageCollectionArrayInput is an input type that accepts GetLifecycleStagesLifecycleStageCollectionArray and GetLifecycleStagesLifecycleStageCollectionArrayOutput values.
 // You can construct a concrete instance of `GetLifecycleStagesLifecycleStageCollectionArrayInput` via:
 //
@@ -5103,12 +4354,6 @@ func (i GetLifecycleStagesLifecycleStageCollectionArray) ToGetLifecycleStagesLif
 	return pulumi.ToOutputWithContext(ctx, i).(GetLifecycleStagesLifecycleStageCollectionArrayOutput)
 }
 
-func (i GetLifecycleStagesLifecycleStageCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLifecycleStagesLifecycleStageCollection] {
-	return pulumix.Output[[]GetLifecycleStagesLifecycleStageCollection]{
-		OutputState: i.ToGetLifecycleStagesLifecycleStageCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetLifecycleStagesLifecycleStageCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetLifecycleStagesLifecycleStageCollectionOutput) ElementType() reflect.Type {
@@ -5121,12 +4366,6 @@ func (o GetLifecycleStagesLifecycleStageCollectionOutput) ToGetLifecycleStagesLi
 
 func (o GetLifecycleStagesLifecycleStageCollectionOutput) ToGetLifecycleStagesLifecycleStageCollectionOutputWithContext(ctx context.Context) GetLifecycleStagesLifecycleStageCollectionOutput {
 	return o
-}
-
-func (o GetLifecycleStagesLifecycleStageCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetLifecycleStagesLifecycleStageCollection] {
-	return pulumix.Output[GetLifecycleStagesLifecycleStageCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetLifecycleStagesLifecycleStageCollectionOutput) Items() GetLifecycleStagesLifecycleStageCollectionItemArrayOutput {
@@ -5149,12 +4388,6 @@ func (o GetLifecycleStagesLifecycleStageCollectionArrayOutput) ToGetLifecycleSta
 	return o
 }
 
-func (o GetLifecycleStagesLifecycleStageCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLifecycleStagesLifecycleStageCollection] {
-	return pulumix.Output[[]GetLifecycleStagesLifecycleStageCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetLifecycleStagesLifecycleStageCollectionArrayOutput) Index(i pulumi.IntInput) GetLifecycleStagesLifecycleStageCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLifecycleStagesLifecycleStageCollection {
 		return vs[0].([]GetLifecycleStagesLifecycleStageCollection)[vs[1].(int)]
@@ -5163,37 +4396,37 @@ func (o GetLifecycleStagesLifecycleStageCollectionArrayOutput) Index(i pulumi.In
 
 type GetLifecycleStagesLifecycleStageCollectionItem struct {
 	// A filter to return only profiles that match the given archType.
-	ArchType string `pulumi:"archType"`
+	ArchType *string `pulumi:"archType"`
 	// The OCID of the compartment that contains the resources to list.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A filter to return resources that match the given display names.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the software source.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The OCID of the lifecycle environment for the lifecycle stage.
-	LifecycleEnvironmentId string `pulumi:"lifecycleEnvironmentId"`
+	LifecycleEnvironmentId *string `pulumi:"lifecycleEnvironmentId"`
 	// The list of managed instances specified lifecycle stage.
 	ManagedInstanceIds []GetLifecycleStagesLifecycleStageCollectionItemManagedInstanceId `pulumi:"managedInstanceIds"`
 	// A filter to return only profiles that match the given osFamily.
-	OsFamily string `pulumi:"osFamily"`
+	OsFamily *string `pulumi:"osFamily"`
 	// User specified rank for the lifecycle stage. Rank determines the hierarchy of the lifecycle stages for a given lifecycle environment.
-	Rank int `pulumi:"rank"`
+	Rank *int `pulumi:"rank"`
 	// The OCID for the software source.
 	SoftwareSourceIds []GetLifecycleStagesLifecycleStageCollectionItemSoftwareSourceId `pulumi:"softwareSourceIds"`
 	// A filter to return only lifecycle stage whose lifecycle state matches the given lifecycle state.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time the lifecycle stage was created. An RFC3339 formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the lifecycle stage was last modified. An RFC3339 formatted datetime string.
-	TimeModified string `pulumi:"timeModified"`
+	TimeModified *string `pulumi:"timeModified"`
 	// The software source vendor name.
-	VendorName string `pulumi:"vendorName"`
+	VendorName *string `pulumi:"vendorName"`
 }
 
 // GetLifecycleStagesLifecycleStageCollectionItemInput is an input type that accepts GetLifecycleStagesLifecycleStageCollectionItemArgs and GetLifecycleStagesLifecycleStageCollectionItemOutput values.
@@ -5209,37 +4442,37 @@ type GetLifecycleStagesLifecycleStageCollectionItemInput interface {
 
 type GetLifecycleStagesLifecycleStageCollectionItemArgs struct {
 	// A filter to return only profiles that match the given archType.
-	ArchType pulumi.StringInput `pulumi:"archType"`
+	ArchType pulumi.StringPtrInput `pulumi:"archType"`
 	// The OCID of the compartment that contains the resources to list.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A filter to return resources that match the given display names.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The OCID of the software source.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// The OCID of the lifecycle environment for the lifecycle stage.
-	LifecycleEnvironmentId pulumi.StringInput `pulumi:"lifecycleEnvironmentId"`
+	LifecycleEnvironmentId pulumi.StringPtrInput `pulumi:"lifecycleEnvironmentId"`
 	// The list of managed instances specified lifecycle stage.
 	ManagedInstanceIds GetLifecycleStagesLifecycleStageCollectionItemManagedInstanceIdArrayInput `pulumi:"managedInstanceIds"`
 	// A filter to return only profiles that match the given osFamily.
-	OsFamily pulumi.StringInput `pulumi:"osFamily"`
+	OsFamily pulumi.StringPtrInput `pulumi:"osFamily"`
 	// User specified rank for the lifecycle stage. Rank determines the hierarchy of the lifecycle stages for a given lifecycle environment.
-	Rank pulumi.IntInput `pulumi:"rank"`
+	Rank pulumi.IntPtrInput `pulumi:"rank"`
 	// The OCID for the software source.
 	SoftwareSourceIds GetLifecycleStagesLifecycleStageCollectionItemSoftwareSourceIdArrayInput `pulumi:"softwareSourceIds"`
 	// A filter to return only lifecycle stage whose lifecycle state matches the given lifecycle state.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// The time the lifecycle stage was created. An RFC3339 formatted datetime string.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The time the lifecycle stage was last modified. An RFC3339 formatted datetime string.
-	TimeModified pulumi.StringInput `pulumi:"timeModified"`
+	TimeModified pulumi.StringPtrInput `pulumi:"timeModified"`
 	// The software source vendor name.
-	VendorName pulumi.StringInput `pulumi:"vendorName"`
+	VendorName pulumi.StringPtrInput `pulumi:"vendorName"`
 }
 
 func (GetLifecycleStagesLifecycleStageCollectionItemArgs) ElementType() reflect.Type {
@@ -5252,12 +4485,6 @@ func (i GetLifecycleStagesLifecycleStageCollectionItemArgs) ToGetLifecycleStages
 
 func (i GetLifecycleStagesLifecycleStageCollectionItemArgs) ToGetLifecycleStagesLifecycleStageCollectionItemOutputWithContext(ctx context.Context) GetLifecycleStagesLifecycleStageCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetLifecycleStagesLifecycleStageCollectionItemOutput)
-}
-
-func (i GetLifecycleStagesLifecycleStageCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetLifecycleStagesLifecycleStageCollectionItem] {
-	return pulumix.Output[GetLifecycleStagesLifecycleStageCollectionItem]{
-		OutputState: i.ToGetLifecycleStagesLifecycleStageCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetLifecycleStagesLifecycleStageCollectionItemArrayInput is an input type that accepts GetLifecycleStagesLifecycleStageCollectionItemArray and GetLifecycleStagesLifecycleStageCollectionItemArrayOutput values.
@@ -5285,12 +4512,6 @@ func (i GetLifecycleStagesLifecycleStageCollectionItemArray) ToGetLifecycleStage
 	return pulumi.ToOutputWithContext(ctx, i).(GetLifecycleStagesLifecycleStageCollectionItemArrayOutput)
 }
 
-func (i GetLifecycleStagesLifecycleStageCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLifecycleStagesLifecycleStageCollectionItem] {
-	return pulumix.Output[[]GetLifecycleStagesLifecycleStageCollectionItem]{
-		OutputState: i.ToGetLifecycleStagesLifecycleStageCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetLifecycleStagesLifecycleStageCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetLifecycleStagesLifecycleStageCollectionItemOutput) ElementType() reflect.Type {
@@ -5305,20 +4526,14 @@ func (o GetLifecycleStagesLifecycleStageCollectionItemOutput) ToGetLifecycleStag
 	return o
 }
 
-func (o GetLifecycleStagesLifecycleStageCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetLifecycleStagesLifecycleStageCollectionItem] {
-	return pulumix.Output[GetLifecycleStagesLifecycleStageCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A filter to return only profiles that match the given archType.
-func (o GetLifecycleStagesLifecycleStageCollectionItemOutput) ArchType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLifecycleStagesLifecycleStageCollectionItem) string { return v.ArchType }).(pulumi.StringOutput)
+func (o GetLifecycleStagesLifecycleStageCollectionItemOutput) ArchType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLifecycleStagesLifecycleStageCollectionItem) *string { return v.ArchType }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the compartment that contains the resources to list.
-func (o GetLifecycleStagesLifecycleStageCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLifecycleStagesLifecycleStageCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetLifecycleStagesLifecycleStageCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLifecycleStagesLifecycleStageCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -5327,8 +4542,8 @@ func (o GetLifecycleStagesLifecycleStageCollectionItemOutput) DefinedTags() pulu
 }
 
 // A filter to return resources that match the given display names.
-func (o GetLifecycleStagesLifecycleStageCollectionItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLifecycleStagesLifecycleStageCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetLifecycleStagesLifecycleStageCollectionItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLifecycleStagesLifecycleStageCollectionItem) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -5337,13 +4552,13 @@ func (o GetLifecycleStagesLifecycleStageCollectionItemOutput) FreeformTags() pul
 }
 
 // The OCID of the software source.
-func (o GetLifecycleStagesLifecycleStageCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLifecycleStagesLifecycleStageCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetLifecycleStagesLifecycleStageCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLifecycleStagesLifecycleStageCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the lifecycle environment for the lifecycle stage.
-func (o GetLifecycleStagesLifecycleStageCollectionItemOutput) LifecycleEnvironmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLifecycleStagesLifecycleStageCollectionItem) string { return v.LifecycleEnvironmentId }).(pulumi.StringOutput)
+func (o GetLifecycleStagesLifecycleStageCollectionItemOutput) LifecycleEnvironmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLifecycleStagesLifecycleStageCollectionItem) *string { return v.LifecycleEnvironmentId }).(pulumi.StringPtrOutput)
 }
 
 // The list of managed instances specified lifecycle stage.
@@ -5354,13 +4569,13 @@ func (o GetLifecycleStagesLifecycleStageCollectionItemOutput) ManagedInstanceIds
 }
 
 // A filter to return only profiles that match the given osFamily.
-func (o GetLifecycleStagesLifecycleStageCollectionItemOutput) OsFamily() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLifecycleStagesLifecycleStageCollectionItem) string { return v.OsFamily }).(pulumi.StringOutput)
+func (o GetLifecycleStagesLifecycleStageCollectionItemOutput) OsFamily() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLifecycleStagesLifecycleStageCollectionItem) *string { return v.OsFamily }).(pulumi.StringPtrOutput)
 }
 
 // User specified rank for the lifecycle stage. Rank determines the hierarchy of the lifecycle stages for a given lifecycle environment.
-func (o GetLifecycleStagesLifecycleStageCollectionItemOutput) Rank() pulumi.IntOutput {
-	return o.ApplyT(func(v GetLifecycleStagesLifecycleStageCollectionItem) int { return v.Rank }).(pulumi.IntOutput)
+func (o GetLifecycleStagesLifecycleStageCollectionItemOutput) Rank() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetLifecycleStagesLifecycleStageCollectionItem) *int { return v.Rank }).(pulumi.IntPtrOutput)
 }
 
 // The OCID for the software source.
@@ -5371,8 +4586,8 @@ func (o GetLifecycleStagesLifecycleStageCollectionItemOutput) SoftwareSourceIds(
 }
 
 // A filter to return only lifecycle stage whose lifecycle state matches the given lifecycle state.
-func (o GetLifecycleStagesLifecycleStageCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLifecycleStagesLifecycleStageCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetLifecycleStagesLifecycleStageCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLifecycleStagesLifecycleStageCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -5381,18 +4596,18 @@ func (o GetLifecycleStagesLifecycleStageCollectionItemOutput) SystemTags() pulum
 }
 
 // The time the lifecycle stage was created. An RFC3339 formatted datetime string.
-func (o GetLifecycleStagesLifecycleStageCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLifecycleStagesLifecycleStageCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetLifecycleStagesLifecycleStageCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLifecycleStagesLifecycleStageCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the lifecycle stage was last modified. An RFC3339 formatted datetime string.
-func (o GetLifecycleStagesLifecycleStageCollectionItemOutput) TimeModified() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLifecycleStagesLifecycleStageCollectionItem) string { return v.TimeModified }).(pulumi.StringOutput)
+func (o GetLifecycleStagesLifecycleStageCollectionItemOutput) TimeModified() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLifecycleStagesLifecycleStageCollectionItem) *string { return v.TimeModified }).(pulumi.StringPtrOutput)
 }
 
 // The software source vendor name.
-func (o GetLifecycleStagesLifecycleStageCollectionItemOutput) VendorName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLifecycleStagesLifecycleStageCollectionItem) string { return v.VendorName }).(pulumi.StringOutput)
+func (o GetLifecycleStagesLifecycleStageCollectionItemOutput) VendorName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLifecycleStagesLifecycleStageCollectionItem) *string { return v.VendorName }).(pulumi.StringPtrOutput)
 }
 
 type GetLifecycleStagesLifecycleStageCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -5409,12 +4624,6 @@ func (o GetLifecycleStagesLifecycleStageCollectionItemArrayOutput) ToGetLifecycl
 	return o
 }
 
-func (o GetLifecycleStagesLifecycleStageCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLifecycleStagesLifecycleStageCollectionItem] {
-	return pulumix.Output[[]GetLifecycleStagesLifecycleStageCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetLifecycleStagesLifecycleStageCollectionItemArrayOutput) Index(i pulumi.IntInput) GetLifecycleStagesLifecycleStageCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLifecycleStagesLifecycleStageCollectionItem {
 		return vs[0].([]GetLifecycleStagesLifecycleStageCollectionItem)[vs[1].(int)]
@@ -5423,9 +4632,9 @@ func (o GetLifecycleStagesLifecycleStageCollectionItemArrayOutput) Index(i pulum
 
 type GetLifecycleStagesLifecycleStageCollectionItemManagedInstanceId struct {
 	// A filter to return resources that match the given display names.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The OCID of the software source.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 // GetLifecycleStagesLifecycleStageCollectionItemManagedInstanceIdInput is an input type that accepts GetLifecycleStagesLifecycleStageCollectionItemManagedInstanceIdArgs and GetLifecycleStagesLifecycleStageCollectionItemManagedInstanceIdOutput values.
@@ -5441,9 +4650,9 @@ type GetLifecycleStagesLifecycleStageCollectionItemManagedInstanceIdInput interf
 
 type GetLifecycleStagesLifecycleStageCollectionItemManagedInstanceIdArgs struct {
 	// A filter to return resources that match the given display names.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// The OCID of the software source.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 }
 
 func (GetLifecycleStagesLifecycleStageCollectionItemManagedInstanceIdArgs) ElementType() reflect.Type {
@@ -5456,12 +4665,6 @@ func (i GetLifecycleStagesLifecycleStageCollectionItemManagedInstanceIdArgs) ToG
 
 func (i GetLifecycleStagesLifecycleStageCollectionItemManagedInstanceIdArgs) ToGetLifecycleStagesLifecycleStageCollectionItemManagedInstanceIdOutputWithContext(ctx context.Context) GetLifecycleStagesLifecycleStageCollectionItemManagedInstanceIdOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetLifecycleStagesLifecycleStageCollectionItemManagedInstanceIdOutput)
-}
-
-func (i GetLifecycleStagesLifecycleStageCollectionItemManagedInstanceIdArgs) ToOutput(ctx context.Context) pulumix.Output[GetLifecycleStagesLifecycleStageCollectionItemManagedInstanceId] {
-	return pulumix.Output[GetLifecycleStagesLifecycleStageCollectionItemManagedInstanceId]{
-		OutputState: i.ToGetLifecycleStagesLifecycleStageCollectionItemManagedInstanceIdOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetLifecycleStagesLifecycleStageCollectionItemManagedInstanceIdArrayInput is an input type that accepts GetLifecycleStagesLifecycleStageCollectionItemManagedInstanceIdArray and GetLifecycleStagesLifecycleStageCollectionItemManagedInstanceIdArrayOutput values.
@@ -5489,12 +4692,6 @@ func (i GetLifecycleStagesLifecycleStageCollectionItemManagedInstanceIdArray) To
 	return pulumi.ToOutputWithContext(ctx, i).(GetLifecycleStagesLifecycleStageCollectionItemManagedInstanceIdArrayOutput)
 }
 
-func (i GetLifecycleStagesLifecycleStageCollectionItemManagedInstanceIdArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLifecycleStagesLifecycleStageCollectionItemManagedInstanceId] {
-	return pulumix.Output[[]GetLifecycleStagesLifecycleStageCollectionItemManagedInstanceId]{
-		OutputState: i.ToGetLifecycleStagesLifecycleStageCollectionItemManagedInstanceIdArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetLifecycleStagesLifecycleStageCollectionItemManagedInstanceIdOutput struct{ *pulumi.OutputState }
 
 func (GetLifecycleStagesLifecycleStageCollectionItemManagedInstanceIdOutput) ElementType() reflect.Type {
@@ -5509,20 +4706,14 @@ func (o GetLifecycleStagesLifecycleStageCollectionItemManagedInstanceIdOutput) T
 	return o
 }
 
-func (o GetLifecycleStagesLifecycleStageCollectionItemManagedInstanceIdOutput) ToOutput(ctx context.Context) pulumix.Output[GetLifecycleStagesLifecycleStageCollectionItemManagedInstanceId] {
-	return pulumix.Output[GetLifecycleStagesLifecycleStageCollectionItemManagedInstanceId]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A filter to return resources that match the given display names.
-func (o GetLifecycleStagesLifecycleStageCollectionItemManagedInstanceIdOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLifecycleStagesLifecycleStageCollectionItemManagedInstanceId) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetLifecycleStagesLifecycleStageCollectionItemManagedInstanceIdOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLifecycleStagesLifecycleStageCollectionItemManagedInstanceId) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the software source.
-func (o GetLifecycleStagesLifecycleStageCollectionItemManagedInstanceIdOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLifecycleStagesLifecycleStageCollectionItemManagedInstanceId) string { return v.Id }).(pulumi.StringOutput)
+func (o GetLifecycleStagesLifecycleStageCollectionItemManagedInstanceIdOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLifecycleStagesLifecycleStageCollectionItemManagedInstanceId) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 type GetLifecycleStagesLifecycleStageCollectionItemManagedInstanceIdArrayOutput struct{ *pulumi.OutputState }
@@ -5539,12 +4730,6 @@ func (o GetLifecycleStagesLifecycleStageCollectionItemManagedInstanceIdArrayOutp
 	return o
 }
 
-func (o GetLifecycleStagesLifecycleStageCollectionItemManagedInstanceIdArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLifecycleStagesLifecycleStageCollectionItemManagedInstanceId] {
-	return pulumix.Output[[]GetLifecycleStagesLifecycleStageCollectionItemManagedInstanceId]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetLifecycleStagesLifecycleStageCollectionItemManagedInstanceIdArrayOutput) Index(i pulumi.IntInput) GetLifecycleStagesLifecycleStageCollectionItemManagedInstanceIdOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLifecycleStagesLifecycleStageCollectionItemManagedInstanceId {
 		return vs[0].([]GetLifecycleStagesLifecycleStageCollectionItemManagedInstanceId)[vs[1].(int)]
@@ -5553,13 +4738,13 @@ func (o GetLifecycleStagesLifecycleStageCollectionItemManagedInstanceIdArrayOutp
 
 type GetLifecycleStagesLifecycleStageCollectionItemSoftwareSourceId struct {
 	// Software source description.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// A filter to return resources that match the given display names.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The OCID of the software source.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Type of the software source.
-	SoftwareSourceType string `pulumi:"softwareSourceType"`
+	SoftwareSourceType *string `pulumi:"softwareSourceType"`
 }
 
 // GetLifecycleStagesLifecycleStageCollectionItemSoftwareSourceIdInput is an input type that accepts GetLifecycleStagesLifecycleStageCollectionItemSoftwareSourceIdArgs and GetLifecycleStagesLifecycleStageCollectionItemSoftwareSourceIdOutput values.
@@ -5575,13 +4760,13 @@ type GetLifecycleStagesLifecycleStageCollectionItemSoftwareSourceIdInput interfa
 
 type GetLifecycleStagesLifecycleStageCollectionItemSoftwareSourceIdArgs struct {
 	// Software source description.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// A filter to return resources that match the given display names.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// The OCID of the software source.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Type of the software source.
-	SoftwareSourceType pulumi.StringInput `pulumi:"softwareSourceType"`
+	SoftwareSourceType pulumi.StringPtrInput `pulumi:"softwareSourceType"`
 }
 
 func (GetLifecycleStagesLifecycleStageCollectionItemSoftwareSourceIdArgs) ElementType() reflect.Type {
@@ -5594,12 +4779,6 @@ func (i GetLifecycleStagesLifecycleStageCollectionItemSoftwareSourceIdArgs) ToGe
 
 func (i GetLifecycleStagesLifecycleStageCollectionItemSoftwareSourceIdArgs) ToGetLifecycleStagesLifecycleStageCollectionItemSoftwareSourceIdOutputWithContext(ctx context.Context) GetLifecycleStagesLifecycleStageCollectionItemSoftwareSourceIdOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetLifecycleStagesLifecycleStageCollectionItemSoftwareSourceIdOutput)
-}
-
-func (i GetLifecycleStagesLifecycleStageCollectionItemSoftwareSourceIdArgs) ToOutput(ctx context.Context) pulumix.Output[GetLifecycleStagesLifecycleStageCollectionItemSoftwareSourceId] {
-	return pulumix.Output[GetLifecycleStagesLifecycleStageCollectionItemSoftwareSourceId]{
-		OutputState: i.ToGetLifecycleStagesLifecycleStageCollectionItemSoftwareSourceIdOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetLifecycleStagesLifecycleStageCollectionItemSoftwareSourceIdArrayInput is an input type that accepts GetLifecycleStagesLifecycleStageCollectionItemSoftwareSourceIdArray and GetLifecycleStagesLifecycleStageCollectionItemSoftwareSourceIdArrayOutput values.
@@ -5627,12 +4806,6 @@ func (i GetLifecycleStagesLifecycleStageCollectionItemSoftwareSourceIdArray) ToG
 	return pulumi.ToOutputWithContext(ctx, i).(GetLifecycleStagesLifecycleStageCollectionItemSoftwareSourceIdArrayOutput)
 }
 
-func (i GetLifecycleStagesLifecycleStageCollectionItemSoftwareSourceIdArray) ToOutput(ctx context.Context) pulumix.Output[[]GetLifecycleStagesLifecycleStageCollectionItemSoftwareSourceId] {
-	return pulumix.Output[[]GetLifecycleStagesLifecycleStageCollectionItemSoftwareSourceId]{
-		OutputState: i.ToGetLifecycleStagesLifecycleStageCollectionItemSoftwareSourceIdArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetLifecycleStagesLifecycleStageCollectionItemSoftwareSourceIdOutput struct{ *pulumi.OutputState }
 
 func (GetLifecycleStagesLifecycleStageCollectionItemSoftwareSourceIdOutput) ElementType() reflect.Type {
@@ -5647,32 +4820,26 @@ func (o GetLifecycleStagesLifecycleStageCollectionItemSoftwareSourceIdOutput) To
 	return o
 }
 
-func (o GetLifecycleStagesLifecycleStageCollectionItemSoftwareSourceIdOutput) ToOutput(ctx context.Context) pulumix.Output[GetLifecycleStagesLifecycleStageCollectionItemSoftwareSourceId] {
-	return pulumix.Output[GetLifecycleStagesLifecycleStageCollectionItemSoftwareSourceId]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Software source description.
-func (o GetLifecycleStagesLifecycleStageCollectionItemSoftwareSourceIdOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLifecycleStagesLifecycleStageCollectionItemSoftwareSourceId) string { return v.Description }).(pulumi.StringOutput)
+func (o GetLifecycleStagesLifecycleStageCollectionItemSoftwareSourceIdOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLifecycleStagesLifecycleStageCollectionItemSoftwareSourceId) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return resources that match the given display names.
-func (o GetLifecycleStagesLifecycleStageCollectionItemSoftwareSourceIdOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLifecycleStagesLifecycleStageCollectionItemSoftwareSourceId) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetLifecycleStagesLifecycleStageCollectionItemSoftwareSourceIdOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLifecycleStagesLifecycleStageCollectionItemSoftwareSourceId) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the software source.
-func (o GetLifecycleStagesLifecycleStageCollectionItemSoftwareSourceIdOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLifecycleStagesLifecycleStageCollectionItemSoftwareSourceId) string { return v.Id }).(pulumi.StringOutput)
+func (o GetLifecycleStagesLifecycleStageCollectionItemSoftwareSourceIdOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLifecycleStagesLifecycleStageCollectionItemSoftwareSourceId) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Type of the software source.
-func (o GetLifecycleStagesLifecycleStageCollectionItemSoftwareSourceIdOutput) SoftwareSourceType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLifecycleStagesLifecycleStageCollectionItemSoftwareSourceId) string {
+func (o GetLifecycleStagesLifecycleStageCollectionItemSoftwareSourceIdOutput) SoftwareSourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLifecycleStagesLifecycleStageCollectionItemSoftwareSourceId) *string {
 		return v.SoftwareSourceType
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetLifecycleStagesLifecycleStageCollectionItemSoftwareSourceIdArrayOutput struct{ *pulumi.OutputState }
@@ -5687,12 +4854,6 @@ func (o GetLifecycleStagesLifecycleStageCollectionItemSoftwareSourceIdArrayOutpu
 
 func (o GetLifecycleStagesLifecycleStageCollectionItemSoftwareSourceIdArrayOutput) ToGetLifecycleStagesLifecycleStageCollectionItemSoftwareSourceIdArrayOutputWithContext(ctx context.Context) GetLifecycleStagesLifecycleStageCollectionItemSoftwareSourceIdArrayOutput {
 	return o
-}
-
-func (o GetLifecycleStagesLifecycleStageCollectionItemSoftwareSourceIdArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetLifecycleStagesLifecycleStageCollectionItemSoftwareSourceId] {
-	return pulumix.Output[[]GetLifecycleStagesLifecycleStageCollectionItemSoftwareSourceId]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetLifecycleStagesLifecycleStageCollectionItemSoftwareSourceIdArrayOutput) Index(i pulumi.IntInput) GetLifecycleStagesLifecycleStageCollectionItemSoftwareSourceIdOutput {
@@ -5738,12 +4899,6 @@ func (i GetManagedInstanceGroupAvailableModulesFilterArgs) ToGetManagedInstanceG
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceGroupAvailableModulesFilterOutput)
 }
 
-func (i GetManagedInstanceGroupAvailableModulesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstanceGroupAvailableModulesFilter] {
-	return pulumix.Output[GetManagedInstanceGroupAvailableModulesFilter]{
-		OutputState: i.ToGetManagedInstanceGroupAvailableModulesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetManagedInstanceGroupAvailableModulesFilterArrayInput is an input type that accepts GetManagedInstanceGroupAvailableModulesFilterArray and GetManagedInstanceGroupAvailableModulesFilterArrayOutput values.
 // You can construct a concrete instance of `GetManagedInstanceGroupAvailableModulesFilterArrayInput` via:
 //
@@ -5769,12 +4924,6 @@ func (i GetManagedInstanceGroupAvailableModulesFilterArray) ToGetManagedInstance
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceGroupAvailableModulesFilterArrayOutput)
 }
 
-func (i GetManagedInstanceGroupAvailableModulesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstanceGroupAvailableModulesFilter] {
-	return pulumix.Output[[]GetManagedInstanceGroupAvailableModulesFilter]{
-		OutputState: i.ToGetManagedInstanceGroupAvailableModulesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetManagedInstanceGroupAvailableModulesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetManagedInstanceGroupAvailableModulesFilterOutput) ElementType() reflect.Type {
@@ -5787,12 +4936,6 @@ func (o GetManagedInstanceGroupAvailableModulesFilterOutput) ToGetManagedInstanc
 
 func (o GetManagedInstanceGroupAvailableModulesFilterOutput) ToGetManagedInstanceGroupAvailableModulesFilterOutputWithContext(ctx context.Context) GetManagedInstanceGroupAvailableModulesFilterOutput {
 	return o
-}
-
-func (o GetManagedInstanceGroupAvailableModulesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstanceGroupAvailableModulesFilter] {
-	return pulumix.Output[GetManagedInstanceGroupAvailableModulesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The resource name.
@@ -5820,12 +4963,6 @@ func (o GetManagedInstanceGroupAvailableModulesFilterArrayOutput) ToGetManagedIn
 
 func (o GetManagedInstanceGroupAvailableModulesFilterArrayOutput) ToGetManagedInstanceGroupAvailableModulesFilterArrayOutputWithContext(ctx context.Context) GetManagedInstanceGroupAvailableModulesFilterArrayOutput {
 	return o
-}
-
-func (o GetManagedInstanceGroupAvailableModulesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstanceGroupAvailableModulesFilter] {
-	return pulumix.Output[[]GetManagedInstanceGroupAvailableModulesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetManagedInstanceGroupAvailableModulesFilterArrayOutput) Index(i pulumi.IntInput) GetManagedInstanceGroupAvailableModulesFilterOutput {
@@ -5867,12 +5004,6 @@ func (i GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModu
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionOutput)
 }
 
-func (i GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollection] {
-	return pulumix.Output[GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollection]{
-		OutputState: i.ToGetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionArrayInput is an input type that accepts GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionArray and GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionArrayOutput values.
 // You can construct a concrete instance of `GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionArrayInput` via:
 //
@@ -5898,12 +5029,6 @@ func (i GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModu
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionArrayOutput)
 }
 
-func (i GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollection] {
-	return pulumix.Output[[]GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollection]{
-		OutputState: i.ToGetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionOutput) ElementType() reflect.Type {
@@ -5916,12 +5041,6 @@ func (o GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModu
 
 func (o GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionOutput) ToGetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionOutputWithContext(ctx context.Context) GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionOutput {
 	return o
-}
-
-func (o GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollection] {
-	return pulumix.Output[GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 // List of module stream profile.
@@ -5945,12 +5064,6 @@ func (o GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModu
 	return o
 }
 
-func (o GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollection] {
-	return pulumix.Output[[]GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionArrayOutput) Index(i pulumi.IntInput) GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollection {
 		return vs[0].([]GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollection)[vs[1].(int)]
@@ -5959,9 +5072,9 @@ func (o GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModu
 
 type GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionItem struct {
 	// The resource name.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The OCID of the software source that provides this module.
-	SoftwareSourceId string `pulumi:"softwareSourceId"`
+	SoftwareSourceId *string `pulumi:"softwareSourceId"`
 }
 
 // GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionItemInput is an input type that accepts GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionItemArgs and GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionItemOutput values.
@@ -5977,9 +5090,9 @@ type GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleC
 
 type GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionItemArgs struct {
 	// The resource name.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// The OCID of the software source that provides this module.
-	SoftwareSourceId pulumi.StringInput `pulumi:"softwareSourceId"`
+	SoftwareSourceId pulumi.StringPtrInput `pulumi:"softwareSourceId"`
 }
 
 func (GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionItemArgs) ElementType() reflect.Type {
@@ -5992,12 +5105,6 @@ func (i GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModu
 
 func (i GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionItemArgs) ToGetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionItemOutputWithContext(ctx context.Context) GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionItemOutput)
-}
-
-func (i GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionItem] {
-	return pulumix.Output[GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionItem]{
-		OutputState: i.ToGetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionItemArrayInput is an input type that accepts GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionItemArray and GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionItemArrayOutput values.
@@ -6025,12 +5132,6 @@ func (i GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModu
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionItemArrayOutput)
 }
 
-func (i GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionItem] {
-	return pulumix.Output[[]GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionItem]{
-		OutputState: i.ToGetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionItemOutput) ElementType() reflect.Type {
@@ -6045,24 +5146,18 @@ func (o GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModu
 	return o
 }
 
-func (o GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionItem] {
-	return pulumix.Output[GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The resource name.
-func (o GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionItemOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionItem) string {
+func (o GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionItemOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionItem) *string {
 		return v.Name
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the software source that provides this module.
-func (o GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionItemOutput) SoftwareSourceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionItem) string {
+func (o GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionItemOutput) SoftwareSourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionItem) *string {
 		return v.SoftwareSourceId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -6077,12 +5172,6 @@ func (o GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModu
 
 func (o GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionItemArrayOutput) ToGetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionItemArrayOutputWithContext(ctx context.Context) GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionItemArrayOutput {
 	return o
-}
-
-func (o GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionItem] {
-	return pulumix.Output[[]GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionItemArrayOutput) Index(i pulumi.IntInput) GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionItemOutput {
@@ -6128,12 +5217,6 @@ func (i GetManagedInstanceGroupAvailablePackagesFilterArgs) ToGetManagedInstance
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceGroupAvailablePackagesFilterOutput)
 }
 
-func (i GetManagedInstanceGroupAvailablePackagesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstanceGroupAvailablePackagesFilter] {
-	return pulumix.Output[GetManagedInstanceGroupAvailablePackagesFilter]{
-		OutputState: i.ToGetManagedInstanceGroupAvailablePackagesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetManagedInstanceGroupAvailablePackagesFilterArrayInput is an input type that accepts GetManagedInstanceGroupAvailablePackagesFilterArray and GetManagedInstanceGroupAvailablePackagesFilterArrayOutput values.
 // You can construct a concrete instance of `GetManagedInstanceGroupAvailablePackagesFilterArrayInput` via:
 //
@@ -6159,12 +5242,6 @@ func (i GetManagedInstanceGroupAvailablePackagesFilterArray) ToGetManagedInstanc
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceGroupAvailablePackagesFilterArrayOutput)
 }
 
-func (i GetManagedInstanceGroupAvailablePackagesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstanceGroupAvailablePackagesFilter] {
-	return pulumix.Output[[]GetManagedInstanceGroupAvailablePackagesFilter]{
-		OutputState: i.ToGetManagedInstanceGroupAvailablePackagesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetManagedInstanceGroupAvailablePackagesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetManagedInstanceGroupAvailablePackagesFilterOutput) ElementType() reflect.Type {
@@ -6177,12 +5254,6 @@ func (o GetManagedInstanceGroupAvailablePackagesFilterOutput) ToGetManagedInstan
 
 func (o GetManagedInstanceGroupAvailablePackagesFilterOutput) ToGetManagedInstanceGroupAvailablePackagesFilterOutputWithContext(ctx context.Context) GetManagedInstanceGroupAvailablePackagesFilterOutput {
 	return o
-}
-
-func (o GetManagedInstanceGroupAvailablePackagesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstanceGroupAvailablePackagesFilter] {
-	return pulumix.Output[GetManagedInstanceGroupAvailablePackagesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Unique identifier for the package. NOTE - This is not an OCID.
@@ -6210,12 +5281,6 @@ func (o GetManagedInstanceGroupAvailablePackagesFilterArrayOutput) ToGetManagedI
 
 func (o GetManagedInstanceGroupAvailablePackagesFilterArrayOutput) ToGetManagedInstanceGroupAvailablePackagesFilterArrayOutputWithContext(ctx context.Context) GetManagedInstanceGroupAvailablePackagesFilterArrayOutput {
 	return o
-}
-
-func (o GetManagedInstanceGroupAvailablePackagesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstanceGroupAvailablePackagesFilter] {
-	return pulumix.Output[[]GetManagedInstanceGroupAvailablePackagesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetManagedInstanceGroupAvailablePackagesFilterArrayOutput) Index(i pulumi.IntInput) GetManagedInstanceGroupAvailablePackagesFilterOutput {
@@ -6257,12 +5322,6 @@ func (i GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePac
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionOutput)
 }
 
-func (i GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollection] {
-	return pulumix.Output[GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollection]{
-		OutputState: i.ToGetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionArrayInput is an input type that accepts GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionArray and GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionArrayOutput values.
 // You can construct a concrete instance of `GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionArrayInput` via:
 //
@@ -6288,12 +5347,6 @@ func (i GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePac
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionArrayOutput)
 }
 
-func (i GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollection] {
-	return pulumix.Output[[]GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollection]{
-		OutputState: i.ToGetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionOutput) ElementType() reflect.Type {
@@ -6306,12 +5359,6 @@ func (o GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePac
 
 func (o GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionOutput) ToGetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionOutputWithContext(ctx context.Context) GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionOutput {
 	return o
-}
-
-func (o GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollection] {
-	return pulumix.Output[GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 // List of available packages.
@@ -6335,12 +5382,6 @@ func (o GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePac
 	return o
 }
 
-func (o GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollection] {
-	return pulumix.Output[[]GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionArrayOutput) Index(i pulumi.IntInput) GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollection {
 		return vs[0].([]GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollection)[vs[1].(int)]
@@ -6349,19 +5390,19 @@ func (o GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePac
 
 type GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItem struct {
 	// The architecture for which this package was built.
-	Architecture string `pulumi:"architecture"`
+	Architecture *string `pulumi:"architecture"`
 	// A filter to return resources that match the given display names.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// A boolean variable that is used to list only the latest versions of packages, module streams, and stream profiles when set to true. All packages, module streams, and stream profiles are returned when set to false.
-	IsLatest bool `pulumi:"isLatest"`
+	IsLatest *bool `pulumi:"isLatest"`
 	// Unique identifier for the package. NOTE - This is not an OCID.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// List of software sources that provide the software package.
 	SoftwareSources []GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemSoftwareSource `pulumi:"softwareSources"`
 	// Type of the package.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 	// Version of the installed package.
-	Version string `pulumi:"version"`
+	Version *string `pulumi:"version"`
 }
 
 // GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemInput is an input type that accepts GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemArgs and GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemOutput values.
@@ -6377,19 +5418,19 @@ type GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackag
 
 type GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemArgs struct {
 	// The architecture for which this package was built.
-	Architecture pulumi.StringInput `pulumi:"architecture"`
+	Architecture pulumi.StringPtrInput `pulumi:"architecture"`
 	// A filter to return resources that match the given display names.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// A boolean variable that is used to list only the latest versions of packages, module streams, and stream profiles when set to true. All packages, module streams, and stream profiles are returned when set to false.
-	IsLatest pulumi.BoolInput `pulumi:"isLatest"`
+	IsLatest pulumi.BoolPtrInput `pulumi:"isLatest"`
 	// Unique identifier for the package. NOTE - This is not an OCID.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// List of software sources that provide the software package.
 	SoftwareSources GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemSoftwareSourceArrayInput `pulumi:"softwareSources"`
 	// Type of the package.
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 	// Version of the installed package.
-	Version pulumi.StringInput `pulumi:"version"`
+	Version pulumi.StringPtrInput `pulumi:"version"`
 }
 
 func (GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemArgs) ElementType() reflect.Type {
@@ -6402,12 +5443,6 @@ func (i GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePac
 
 func (i GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemArgs) ToGetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemOutputWithContext(ctx context.Context) GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemOutput)
-}
-
-func (i GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItem] {
-	return pulumix.Output[GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItem]{
-		OutputState: i.ToGetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemArrayInput is an input type that accepts GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemArray and GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemArrayOutput values.
@@ -6435,12 +5470,6 @@ func (i GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePac
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemArrayOutput)
 }
 
-func (i GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItem] {
-	return pulumix.Output[[]GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItem]{
-		OutputState: i.ToGetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemOutput) ElementType() reflect.Type {
@@ -6455,38 +5484,32 @@ func (o GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePac
 	return o
 }
 
-func (o GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItem] {
-	return pulumix.Output[GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The architecture for which this package was built.
-func (o GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemOutput) Architecture() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItem) string {
+func (o GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemOutput) Architecture() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItem) *string {
 		return v.Architecture
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // A filter to return resources that match the given display names.
-func (o GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItem) string {
+func (o GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItem) *string {
 		return v.DisplayName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // A boolean variable that is used to list only the latest versions of packages, module streams, and stream profiles when set to true. All packages, module streams, and stream profiles are returned when set to false.
-func (o GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemOutput) IsLatest() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItem) bool {
+func (o GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemOutput) IsLatest() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItem) *bool {
 		return v.IsLatest
-	}).(pulumi.BoolOutput)
+	}).(pulumi.BoolPtrOutput)
 }
 
 // Unique identifier for the package. NOTE - This is not an OCID.
-func (o GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItem) string {
+func (o GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItem) *string {
 		return v.Name
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // List of software sources that provide the software package.
@@ -6497,17 +5520,17 @@ func (o GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePac
 }
 
 // Type of the package.
-func (o GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItem) string {
+func (o GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItem) *string {
 		return v.Type
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Version of the installed package.
-func (o GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemOutput) Version() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItem) string {
+func (o GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemOutput) Version() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItem) *string {
 		return v.Version
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -6524,12 +5547,6 @@ func (o GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePac
 	return o
 }
 
-func (o GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItem] {
-	return pulumix.Output[[]GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemArrayOutput) Index(i pulumi.IntInput) GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItem {
 		return vs[0].([]GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItem)[vs[1].(int)]
@@ -6538,13 +5555,13 @@ func (o GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePac
 
 type GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemSoftwareSource struct {
 	// Software source description.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// A filter to return resources that match the given display names.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The OCID of the software source.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Type of the software source.
-	SoftwareSourceType string `pulumi:"softwareSourceType"`
+	SoftwareSourceType *string `pulumi:"softwareSourceType"`
 }
 
 // GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemSoftwareSourceInput is an input type that accepts GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemSoftwareSourceArgs and GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemSoftwareSourceOutput values.
@@ -6560,13 +5577,13 @@ type GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackag
 
 type GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemSoftwareSourceArgs struct {
 	// Software source description.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// A filter to return resources that match the given display names.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// The OCID of the software source.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Type of the software source.
-	SoftwareSourceType pulumi.StringInput `pulumi:"softwareSourceType"`
+	SoftwareSourceType pulumi.StringPtrInput `pulumi:"softwareSourceType"`
 }
 
 func (GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemSoftwareSourceArgs) ElementType() reflect.Type {
@@ -6579,12 +5596,6 @@ func (i GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePac
 
 func (i GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemSoftwareSourceArgs) ToGetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemSoftwareSourceOutputWithContext(ctx context.Context) GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemSoftwareSourceOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemSoftwareSourceOutput)
-}
-
-func (i GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemSoftwareSourceArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemSoftwareSource] {
-	return pulumix.Output[GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemSoftwareSource]{
-		OutputState: i.ToGetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemSoftwareSourceOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemSoftwareSourceArrayInput is an input type that accepts GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemSoftwareSourceArray and GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemSoftwareSourceArrayOutput values.
@@ -6612,12 +5623,6 @@ func (i GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePac
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemSoftwareSourceArrayOutput)
 }
 
-func (i GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemSoftwareSourceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemSoftwareSource] {
-	return pulumix.Output[[]GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemSoftwareSource]{
-		OutputState: i.ToGetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemSoftwareSourceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemSoftwareSourceOutput struct{ *pulumi.OutputState }
 
 func (GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemSoftwareSourceOutput) ElementType() reflect.Type {
@@ -6632,38 +5637,32 @@ func (o GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePac
 	return o
 }
 
-func (o GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemSoftwareSourceOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemSoftwareSource] {
-	return pulumix.Output[GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemSoftwareSource]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Software source description.
-func (o GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemSoftwareSourceOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemSoftwareSource) string {
+func (o GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemSoftwareSourceOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemSoftwareSource) *string {
 		return v.Description
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // A filter to return resources that match the given display names.
-func (o GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemSoftwareSourceOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemSoftwareSource) string {
+func (o GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemSoftwareSourceOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemSoftwareSource) *string {
 		return v.DisplayName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the software source.
-func (o GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemSoftwareSourceOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemSoftwareSource) string {
+func (o GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemSoftwareSourceOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemSoftwareSource) *string {
 		return v.Id
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Type of the software source.
-func (o GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemSoftwareSourceOutput) SoftwareSourceType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemSoftwareSource) string {
+func (o GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemSoftwareSourceOutput) SoftwareSourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemSoftwareSource) *string {
 		return v.SoftwareSourceType
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemSoftwareSourceArrayOutput struct{ *pulumi.OutputState }
@@ -6678,12 +5677,6 @@ func (o GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePac
 
 func (o GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemSoftwareSourceArrayOutput) ToGetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemSoftwareSourceArrayOutputWithContext(ctx context.Context) GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemSoftwareSourceArrayOutput {
 	return o
-}
-
-func (o GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemSoftwareSourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemSoftwareSource] {
-	return pulumix.Output[[]GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemSoftwareSource]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemSoftwareSourceArrayOutput) Index(i pulumi.IntInput) GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemSoftwareSourceOutput {
@@ -6725,12 +5718,6 @@ func (i GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionOutput)
 }
 
-func (i GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollection] {
-	return pulumix.Output[GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollection]{
-		OutputState: i.ToGetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionArrayInput is an input type that accepts GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionArray and GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionArrayOutput values.
 // You can construct a concrete instance of `GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionArrayInput` via:
 //
@@ -6756,12 +5743,6 @@ func (i GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionArrayOutput)
 }
 
-func (i GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollection] {
-	return pulumix.Output[[]GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollection]{
-		OutputState: i.ToGetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionOutput) ElementType() reflect.Type {
@@ -6774,12 +5755,6 @@ func (o GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCo
 
 func (o GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionOutput) ToGetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionOutputWithContext(ctx context.Context) GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionOutput {
 	return o
-}
-
-func (o GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollection] {
-	return pulumix.Output[GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 // List of available software sources.
@@ -6803,12 +5778,6 @@ func (o GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCo
 	return o
 }
 
-func (o GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollection] {
-	return pulumix.Output[[]GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionArrayOutput) Index(i pulumi.IntInput) GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollection {
 		return vs[0].([]GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollection)[vs[1].(int)]
@@ -6817,11 +5786,11 @@ func (o GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCo
 
 type GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItem struct {
 	// The OCID of the compartment that contains the resources to list.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// A filter to return resources that match the given display names.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// unique identifier that is immutable on creation.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 // GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemInput is an input type that accepts GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemArgs and GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemOutput values.
@@ -6837,11 +5806,11 @@ type GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceColle
 
 type GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemArgs struct {
 	// The OCID of the compartment that contains the resources to list.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// A filter to return resources that match the given display names.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// unique identifier that is immutable on creation.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 }
 
 func (GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemArgs) ElementType() reflect.Type {
@@ -6854,12 +5823,6 @@ func (i GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCo
 
 func (i GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemArgs) ToGetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemOutputWithContext(ctx context.Context) GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemOutput)
-}
-
-func (i GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItem] {
-	return pulumix.Output[GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItem]{
-		OutputState: i.ToGetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemArrayInput is an input type that accepts GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemArray and GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemArrayOutput values.
@@ -6887,12 +5850,6 @@ func (i GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemArrayOutput)
 }
 
-func (i GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItem] {
-	return pulumix.Output[[]GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItem]{
-		OutputState: i.ToGetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemOutput) ElementType() reflect.Type {
@@ -6907,31 +5864,25 @@ func (o GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCo
 	return o
 }
 
-func (o GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItem] {
-	return pulumix.Output[GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment that contains the resources to list.
-func (o GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItem) string {
+func (o GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItem) *string {
 		return v.CompartmentId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // A filter to return resources that match the given display names.
-func (o GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItem) string {
+func (o GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItem) *string {
 		return v.DisplayName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // unique identifier that is immutable on creation.
-func (o GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItem) string {
+func (o GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItem) *string {
 		return v.Id
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -6946,12 +5897,6 @@ func (o GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCo
 
 func (o GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemArrayOutput) ToGetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemArrayOutputWithContext(ctx context.Context) GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemArrayOutput {
 	return o
-}
-
-func (o GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItem] {
-	return pulumix.Output[[]GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemArrayOutput) Index(i pulumi.IntInput) GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItemOutput {
@@ -6995,12 +5940,6 @@ func (i GetManagedInstanceGroupAvailableSoftwareSourcesFilterArgs) ToGetManagedI
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceGroupAvailableSoftwareSourcesFilterOutput)
 }
 
-func (i GetManagedInstanceGroupAvailableSoftwareSourcesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstanceGroupAvailableSoftwareSourcesFilter] {
-	return pulumix.Output[GetManagedInstanceGroupAvailableSoftwareSourcesFilter]{
-		OutputState: i.ToGetManagedInstanceGroupAvailableSoftwareSourcesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetManagedInstanceGroupAvailableSoftwareSourcesFilterArrayInput is an input type that accepts GetManagedInstanceGroupAvailableSoftwareSourcesFilterArray and GetManagedInstanceGroupAvailableSoftwareSourcesFilterArrayOutput values.
 // You can construct a concrete instance of `GetManagedInstanceGroupAvailableSoftwareSourcesFilterArrayInput` via:
 //
@@ -7026,12 +5965,6 @@ func (i GetManagedInstanceGroupAvailableSoftwareSourcesFilterArray) ToGetManaged
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceGroupAvailableSoftwareSourcesFilterArrayOutput)
 }
 
-func (i GetManagedInstanceGroupAvailableSoftwareSourcesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstanceGroupAvailableSoftwareSourcesFilter] {
-	return pulumix.Output[[]GetManagedInstanceGroupAvailableSoftwareSourcesFilter]{
-		OutputState: i.ToGetManagedInstanceGroupAvailableSoftwareSourcesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetManagedInstanceGroupAvailableSoftwareSourcesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetManagedInstanceGroupAvailableSoftwareSourcesFilterOutput) ElementType() reflect.Type {
@@ -7044,12 +5977,6 @@ func (o GetManagedInstanceGroupAvailableSoftwareSourcesFilterOutput) ToGetManage
 
 func (o GetManagedInstanceGroupAvailableSoftwareSourcesFilterOutput) ToGetManagedInstanceGroupAvailableSoftwareSourcesFilterOutputWithContext(ctx context.Context) GetManagedInstanceGroupAvailableSoftwareSourcesFilterOutput {
 	return o
-}
-
-func (o GetManagedInstanceGroupAvailableSoftwareSourcesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstanceGroupAvailableSoftwareSourcesFilter] {
-	return pulumix.Output[GetManagedInstanceGroupAvailableSoftwareSourcesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetManagedInstanceGroupAvailableSoftwareSourcesFilterOutput) Name() pulumi.StringOutput {
@@ -7078,12 +6005,6 @@ func (o GetManagedInstanceGroupAvailableSoftwareSourcesFilterArrayOutput) ToGetM
 	return o
 }
 
-func (o GetManagedInstanceGroupAvailableSoftwareSourcesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstanceGroupAvailableSoftwareSourcesFilter] {
-	return pulumix.Output[[]GetManagedInstanceGroupAvailableSoftwareSourcesFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetManagedInstanceGroupAvailableSoftwareSourcesFilterArrayOutput) Index(i pulumi.IntInput) GetManagedInstanceGroupAvailableSoftwareSourcesFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedInstanceGroupAvailableSoftwareSourcesFilter {
 		return vs[0].([]GetManagedInstanceGroupAvailableSoftwareSourcesFilter)[vs[1].(int)]
@@ -7092,13 +6013,13 @@ func (o GetManagedInstanceGroupAvailableSoftwareSourcesFilterArrayOutput) Index(
 
 type GetManagedInstanceGroupSoftwareSource struct {
 	// Software source description.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Software source name.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The OCID of the software source.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Type of the software source.
-	SoftwareSourceType string `pulumi:"softwareSourceType"`
+	SoftwareSourceType *string `pulumi:"softwareSourceType"`
 }
 
 // GetManagedInstanceGroupSoftwareSourceInput is an input type that accepts GetManagedInstanceGroupSoftwareSourceArgs and GetManagedInstanceGroupSoftwareSourceOutput values.
@@ -7114,13 +6035,13 @@ type GetManagedInstanceGroupSoftwareSourceInput interface {
 
 type GetManagedInstanceGroupSoftwareSourceArgs struct {
 	// Software source description.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// Software source name.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// The OCID of the software source.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Type of the software source.
-	SoftwareSourceType pulumi.StringInput `pulumi:"softwareSourceType"`
+	SoftwareSourceType pulumi.StringPtrInput `pulumi:"softwareSourceType"`
 }
 
 func (GetManagedInstanceGroupSoftwareSourceArgs) ElementType() reflect.Type {
@@ -7133,12 +6054,6 @@ func (i GetManagedInstanceGroupSoftwareSourceArgs) ToGetManagedInstanceGroupSoft
 
 func (i GetManagedInstanceGroupSoftwareSourceArgs) ToGetManagedInstanceGroupSoftwareSourceOutputWithContext(ctx context.Context) GetManagedInstanceGroupSoftwareSourceOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceGroupSoftwareSourceOutput)
-}
-
-func (i GetManagedInstanceGroupSoftwareSourceArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstanceGroupSoftwareSource] {
-	return pulumix.Output[GetManagedInstanceGroupSoftwareSource]{
-		OutputState: i.ToGetManagedInstanceGroupSoftwareSourceOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetManagedInstanceGroupSoftwareSourceArrayInput is an input type that accepts GetManagedInstanceGroupSoftwareSourceArray and GetManagedInstanceGroupSoftwareSourceArrayOutput values.
@@ -7166,12 +6081,6 @@ func (i GetManagedInstanceGroupSoftwareSourceArray) ToGetManagedInstanceGroupSof
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceGroupSoftwareSourceArrayOutput)
 }
 
-func (i GetManagedInstanceGroupSoftwareSourceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstanceGroupSoftwareSource] {
-	return pulumix.Output[[]GetManagedInstanceGroupSoftwareSource]{
-		OutputState: i.ToGetManagedInstanceGroupSoftwareSourceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetManagedInstanceGroupSoftwareSourceOutput struct{ *pulumi.OutputState }
 
 func (GetManagedInstanceGroupSoftwareSourceOutput) ElementType() reflect.Type {
@@ -7186,30 +6095,24 @@ func (o GetManagedInstanceGroupSoftwareSourceOutput) ToGetManagedInstanceGroupSo
 	return o
 }
 
-func (o GetManagedInstanceGroupSoftwareSourceOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstanceGroupSoftwareSource] {
-	return pulumix.Output[GetManagedInstanceGroupSoftwareSource]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Software source description.
-func (o GetManagedInstanceGroupSoftwareSourceOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedInstanceGroupSoftwareSource) string { return v.Description }).(pulumi.StringOutput)
+func (o GetManagedInstanceGroupSoftwareSourceOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedInstanceGroupSoftwareSource) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Software source name.
-func (o GetManagedInstanceGroupSoftwareSourceOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedInstanceGroupSoftwareSource) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetManagedInstanceGroupSoftwareSourceOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedInstanceGroupSoftwareSource) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the software source.
-func (o GetManagedInstanceGroupSoftwareSourceOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedInstanceGroupSoftwareSource) string { return v.Id }).(pulumi.StringOutput)
+func (o GetManagedInstanceGroupSoftwareSourceOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedInstanceGroupSoftwareSource) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Type of the software source.
-func (o GetManagedInstanceGroupSoftwareSourceOutput) SoftwareSourceType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedInstanceGroupSoftwareSource) string { return v.SoftwareSourceType }).(pulumi.StringOutput)
+func (o GetManagedInstanceGroupSoftwareSourceOutput) SoftwareSourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedInstanceGroupSoftwareSource) *string { return v.SoftwareSourceType }).(pulumi.StringPtrOutput)
 }
 
 type GetManagedInstanceGroupSoftwareSourceArrayOutput struct{ *pulumi.OutputState }
@@ -7224,12 +6127,6 @@ func (o GetManagedInstanceGroupSoftwareSourceArrayOutput) ToGetManagedInstanceGr
 
 func (o GetManagedInstanceGroupSoftwareSourceArrayOutput) ToGetManagedInstanceGroupSoftwareSourceArrayOutputWithContext(ctx context.Context) GetManagedInstanceGroupSoftwareSourceArrayOutput {
 	return o
-}
-
-func (o GetManagedInstanceGroupSoftwareSourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstanceGroupSoftwareSource] {
-	return pulumix.Output[[]GetManagedInstanceGroupSoftwareSource]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetManagedInstanceGroupSoftwareSourceArrayOutput) Index(i pulumi.IntInput) GetManagedInstanceGroupSoftwareSourceOutput {
@@ -7273,12 +6170,6 @@ func (i GetManagedInstanceGroupsFilterArgs) ToGetManagedInstanceGroupsFilterOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceGroupsFilterOutput)
 }
 
-func (i GetManagedInstanceGroupsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstanceGroupsFilter] {
-	return pulumix.Output[GetManagedInstanceGroupsFilter]{
-		OutputState: i.ToGetManagedInstanceGroupsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetManagedInstanceGroupsFilterArrayInput is an input type that accepts GetManagedInstanceGroupsFilterArray and GetManagedInstanceGroupsFilterArrayOutput values.
 // You can construct a concrete instance of `GetManagedInstanceGroupsFilterArrayInput` via:
 //
@@ -7304,12 +6195,6 @@ func (i GetManagedInstanceGroupsFilterArray) ToGetManagedInstanceGroupsFilterArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceGroupsFilterArrayOutput)
 }
 
-func (i GetManagedInstanceGroupsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstanceGroupsFilter] {
-	return pulumix.Output[[]GetManagedInstanceGroupsFilter]{
-		OutputState: i.ToGetManagedInstanceGroupsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetManagedInstanceGroupsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetManagedInstanceGroupsFilterOutput) ElementType() reflect.Type {
@@ -7322,12 +6207,6 @@ func (o GetManagedInstanceGroupsFilterOutput) ToGetManagedInstanceGroupsFilterOu
 
 func (o GetManagedInstanceGroupsFilterOutput) ToGetManagedInstanceGroupsFilterOutputWithContext(ctx context.Context) GetManagedInstanceGroupsFilterOutput {
 	return o
-}
-
-func (o GetManagedInstanceGroupsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstanceGroupsFilter] {
-	return pulumix.Output[GetManagedInstanceGroupsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetManagedInstanceGroupsFilterOutput) Name() pulumi.StringOutput {
@@ -7354,12 +6233,6 @@ func (o GetManagedInstanceGroupsFilterArrayOutput) ToGetManagedInstanceGroupsFil
 
 func (o GetManagedInstanceGroupsFilterArrayOutput) ToGetManagedInstanceGroupsFilterArrayOutputWithContext(ctx context.Context) GetManagedInstanceGroupsFilterArrayOutput {
 	return o
-}
-
-func (o GetManagedInstanceGroupsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstanceGroupsFilter] {
-	return pulumix.Output[[]GetManagedInstanceGroupsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetManagedInstanceGroupsFilterArrayOutput) Index(i pulumi.IntInput) GetManagedInstanceGroupsFilterOutput {
@@ -7399,12 +6272,6 @@ func (i GetManagedInstanceGroupsManagedInstanceGroupCollectionArgs) ToGetManaged
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceGroupsManagedInstanceGroupCollectionOutput)
 }
 
-func (i GetManagedInstanceGroupsManagedInstanceGroupCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstanceGroupsManagedInstanceGroupCollection] {
-	return pulumix.Output[GetManagedInstanceGroupsManagedInstanceGroupCollection]{
-		OutputState: i.ToGetManagedInstanceGroupsManagedInstanceGroupCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetManagedInstanceGroupsManagedInstanceGroupCollectionArrayInput is an input type that accepts GetManagedInstanceGroupsManagedInstanceGroupCollectionArray and GetManagedInstanceGroupsManagedInstanceGroupCollectionArrayOutput values.
 // You can construct a concrete instance of `GetManagedInstanceGroupsManagedInstanceGroupCollectionArrayInput` via:
 //
@@ -7430,12 +6297,6 @@ func (i GetManagedInstanceGroupsManagedInstanceGroupCollectionArray) ToGetManage
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceGroupsManagedInstanceGroupCollectionArrayOutput)
 }
 
-func (i GetManagedInstanceGroupsManagedInstanceGroupCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstanceGroupsManagedInstanceGroupCollection] {
-	return pulumix.Output[[]GetManagedInstanceGroupsManagedInstanceGroupCollection]{
-		OutputState: i.ToGetManagedInstanceGroupsManagedInstanceGroupCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetManagedInstanceGroupsManagedInstanceGroupCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetManagedInstanceGroupsManagedInstanceGroupCollectionOutput) ElementType() reflect.Type {
@@ -7448,12 +6309,6 @@ func (o GetManagedInstanceGroupsManagedInstanceGroupCollectionOutput) ToGetManag
 
 func (o GetManagedInstanceGroupsManagedInstanceGroupCollectionOutput) ToGetManagedInstanceGroupsManagedInstanceGroupCollectionOutputWithContext(ctx context.Context) GetManagedInstanceGroupsManagedInstanceGroupCollectionOutput {
 	return o
-}
-
-func (o GetManagedInstanceGroupsManagedInstanceGroupCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstanceGroupsManagedInstanceGroupCollection] {
-	return pulumix.Output[GetManagedInstanceGroupsManagedInstanceGroupCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetManagedInstanceGroupsManagedInstanceGroupCollectionOutput) Items() GetManagedInstanceGroupsManagedInstanceGroupCollectionItemArrayOutput {
@@ -7476,12 +6331,6 @@ func (o GetManagedInstanceGroupsManagedInstanceGroupCollectionArrayOutput) ToGet
 	return o
 }
 
-func (o GetManagedInstanceGroupsManagedInstanceGroupCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstanceGroupsManagedInstanceGroupCollection] {
-	return pulumix.Output[[]GetManagedInstanceGroupsManagedInstanceGroupCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetManagedInstanceGroupsManagedInstanceGroupCollectionArrayOutput) Index(i pulumi.IntInput) GetManagedInstanceGroupsManagedInstanceGroupCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedInstanceGroupsManagedInstanceGroupCollection {
 		return vs[0].([]GetManagedInstanceGroupsManagedInstanceGroupCollection)[vs[1].(int)]
@@ -7490,41 +6339,41 @@ func (o GetManagedInstanceGroupsManagedInstanceGroupCollectionArrayOutput) Index
 
 type GetManagedInstanceGroupsManagedInstanceGroupCollectionItem struct {
 	// A filter to return only profiles that match the given archType.
-	ArchType string `pulumi:"archType"`
+	ArchType *string `pulumi:"archType"`
 	// The OCID of the compartment that contains the resources to list.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Software source description.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// A filter to return resources that match the given display names.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the software source.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The number of Managed Instances in the managed instance group.
-	ManagedInstanceCount int `pulumi:"managedInstanceCount"`
+	ManagedInstanceCount *int `pulumi:"managedInstanceCount"`
 	// The list of managed instances OCIDs attached to the managed instance group.
 	ManagedInstanceIds []string `pulumi:"managedInstanceIds"`
 	// A filter to return only profiles that match the given osFamily.
-	OsFamily string `pulumi:"osFamily"`
+	OsFamily *string `pulumi:"osFamily"`
 	// The number of scheduled jobs pending against the managed instance group.
-	PendingJobCount int `pulumi:"pendingJobCount"`
+	PendingJobCount *int `pulumi:"pendingJobCount"`
 	// The list of software sources that the managed instance group will use.
 	SoftwareSourceIds []string `pulumi:"softwareSourceIds"`
 	// The list of software sources that the managed instance group will use.
 	SoftwareSources []GetManagedInstanceGroupsManagedInstanceGroupCollectionItemSoftwareSource `pulumi:"softwareSources"`
 	// A filter to return only resources their lifecycle state matches the given lifecycle state.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time the managed instance group was created. An RFC3339 formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the managed instance group was last modified. An RFC3339 formatted datetime string.
-	TimeModified string `pulumi:"timeModified"`
+	TimeModified *string `pulumi:"timeModified"`
 	// The software source vendor name.
-	VendorName string `pulumi:"vendorName"`
+	VendorName *string `pulumi:"vendorName"`
 }
 
 // GetManagedInstanceGroupsManagedInstanceGroupCollectionItemInput is an input type that accepts GetManagedInstanceGroupsManagedInstanceGroupCollectionItemArgs and GetManagedInstanceGroupsManagedInstanceGroupCollectionItemOutput values.
@@ -7540,41 +6389,41 @@ type GetManagedInstanceGroupsManagedInstanceGroupCollectionItemInput interface {
 
 type GetManagedInstanceGroupsManagedInstanceGroupCollectionItemArgs struct {
 	// A filter to return only profiles that match the given archType.
-	ArchType pulumi.StringInput `pulumi:"archType"`
+	ArchType pulumi.StringPtrInput `pulumi:"archType"`
 	// The OCID of the compartment that contains the resources to list.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// Software source description.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// A filter to return resources that match the given display names.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The OCID of the software source.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// The number of Managed Instances in the managed instance group.
-	ManagedInstanceCount pulumi.IntInput `pulumi:"managedInstanceCount"`
+	ManagedInstanceCount pulumi.IntPtrInput `pulumi:"managedInstanceCount"`
 	// The list of managed instances OCIDs attached to the managed instance group.
 	ManagedInstanceIds pulumi.StringArrayInput `pulumi:"managedInstanceIds"`
 	// A filter to return only profiles that match the given osFamily.
-	OsFamily pulumi.StringInput `pulumi:"osFamily"`
+	OsFamily pulumi.StringPtrInput `pulumi:"osFamily"`
 	// The number of scheduled jobs pending against the managed instance group.
-	PendingJobCount pulumi.IntInput `pulumi:"pendingJobCount"`
+	PendingJobCount pulumi.IntPtrInput `pulumi:"pendingJobCount"`
 	// The list of software sources that the managed instance group will use.
 	SoftwareSourceIds pulumi.StringArrayInput `pulumi:"softwareSourceIds"`
 	// The list of software sources that the managed instance group will use.
 	SoftwareSources GetManagedInstanceGroupsManagedInstanceGroupCollectionItemSoftwareSourceArrayInput `pulumi:"softwareSources"`
 	// A filter to return only resources their lifecycle state matches the given lifecycle state.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// The time the managed instance group was created. An RFC3339 formatted datetime string.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The time the managed instance group was last modified. An RFC3339 formatted datetime string.
-	TimeModified pulumi.StringInput `pulumi:"timeModified"`
+	TimeModified pulumi.StringPtrInput `pulumi:"timeModified"`
 	// The software source vendor name.
-	VendorName pulumi.StringInput `pulumi:"vendorName"`
+	VendorName pulumi.StringPtrInput `pulumi:"vendorName"`
 }
 
 func (GetManagedInstanceGroupsManagedInstanceGroupCollectionItemArgs) ElementType() reflect.Type {
@@ -7587,12 +6436,6 @@ func (i GetManagedInstanceGroupsManagedInstanceGroupCollectionItemArgs) ToGetMan
 
 func (i GetManagedInstanceGroupsManagedInstanceGroupCollectionItemArgs) ToGetManagedInstanceGroupsManagedInstanceGroupCollectionItemOutputWithContext(ctx context.Context) GetManagedInstanceGroupsManagedInstanceGroupCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceGroupsManagedInstanceGroupCollectionItemOutput)
-}
-
-func (i GetManagedInstanceGroupsManagedInstanceGroupCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstanceGroupsManagedInstanceGroupCollectionItem] {
-	return pulumix.Output[GetManagedInstanceGroupsManagedInstanceGroupCollectionItem]{
-		OutputState: i.ToGetManagedInstanceGroupsManagedInstanceGroupCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetManagedInstanceGroupsManagedInstanceGroupCollectionItemArrayInput is an input type that accepts GetManagedInstanceGroupsManagedInstanceGroupCollectionItemArray and GetManagedInstanceGroupsManagedInstanceGroupCollectionItemArrayOutput values.
@@ -7620,12 +6463,6 @@ func (i GetManagedInstanceGroupsManagedInstanceGroupCollectionItemArray) ToGetMa
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceGroupsManagedInstanceGroupCollectionItemArrayOutput)
 }
 
-func (i GetManagedInstanceGroupsManagedInstanceGroupCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstanceGroupsManagedInstanceGroupCollectionItem] {
-	return pulumix.Output[[]GetManagedInstanceGroupsManagedInstanceGroupCollectionItem]{
-		OutputState: i.ToGetManagedInstanceGroupsManagedInstanceGroupCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetManagedInstanceGroupsManagedInstanceGroupCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetManagedInstanceGroupsManagedInstanceGroupCollectionItemOutput) ElementType() reflect.Type {
@@ -7640,20 +6477,14 @@ func (o GetManagedInstanceGroupsManagedInstanceGroupCollectionItemOutput) ToGetM
 	return o
 }
 
-func (o GetManagedInstanceGroupsManagedInstanceGroupCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstanceGroupsManagedInstanceGroupCollectionItem] {
-	return pulumix.Output[GetManagedInstanceGroupsManagedInstanceGroupCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A filter to return only profiles that match the given archType.
-func (o GetManagedInstanceGroupsManagedInstanceGroupCollectionItemOutput) ArchType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedInstanceGroupsManagedInstanceGroupCollectionItem) string { return v.ArchType }).(pulumi.StringOutput)
+func (o GetManagedInstanceGroupsManagedInstanceGroupCollectionItemOutput) ArchType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedInstanceGroupsManagedInstanceGroupCollectionItem) *string { return v.ArchType }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the compartment that contains the resources to list.
-func (o GetManagedInstanceGroupsManagedInstanceGroupCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedInstanceGroupsManagedInstanceGroupCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetManagedInstanceGroupsManagedInstanceGroupCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedInstanceGroupsManagedInstanceGroupCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -7664,13 +6495,13 @@ func (o GetManagedInstanceGroupsManagedInstanceGroupCollectionItemOutput) Define
 }
 
 // Software source description.
-func (o GetManagedInstanceGroupsManagedInstanceGroupCollectionItemOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedInstanceGroupsManagedInstanceGroupCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+func (o GetManagedInstanceGroupsManagedInstanceGroupCollectionItemOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedInstanceGroupsManagedInstanceGroupCollectionItem) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return resources that match the given display names.
-func (o GetManagedInstanceGroupsManagedInstanceGroupCollectionItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedInstanceGroupsManagedInstanceGroupCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetManagedInstanceGroupsManagedInstanceGroupCollectionItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedInstanceGroupsManagedInstanceGroupCollectionItem) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -7681,13 +6512,13 @@ func (o GetManagedInstanceGroupsManagedInstanceGroupCollectionItemOutput) Freefo
 }
 
 // The OCID of the software source.
-func (o GetManagedInstanceGroupsManagedInstanceGroupCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedInstanceGroupsManagedInstanceGroupCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetManagedInstanceGroupsManagedInstanceGroupCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedInstanceGroupsManagedInstanceGroupCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The number of Managed Instances in the managed instance group.
-func (o GetManagedInstanceGroupsManagedInstanceGroupCollectionItemOutput) ManagedInstanceCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetManagedInstanceGroupsManagedInstanceGroupCollectionItem) int { return v.ManagedInstanceCount }).(pulumi.IntOutput)
+func (o GetManagedInstanceGroupsManagedInstanceGroupCollectionItemOutput) ManagedInstanceCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetManagedInstanceGroupsManagedInstanceGroupCollectionItem) *int { return v.ManagedInstanceCount }).(pulumi.IntPtrOutput)
 }
 
 // The list of managed instances OCIDs attached to the managed instance group.
@@ -7698,13 +6529,13 @@ func (o GetManagedInstanceGroupsManagedInstanceGroupCollectionItemOutput) Manage
 }
 
 // A filter to return only profiles that match the given osFamily.
-func (o GetManagedInstanceGroupsManagedInstanceGroupCollectionItemOutput) OsFamily() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedInstanceGroupsManagedInstanceGroupCollectionItem) string { return v.OsFamily }).(pulumi.StringOutput)
+func (o GetManagedInstanceGroupsManagedInstanceGroupCollectionItemOutput) OsFamily() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedInstanceGroupsManagedInstanceGroupCollectionItem) *string { return v.OsFamily }).(pulumi.StringPtrOutput)
 }
 
 // The number of scheduled jobs pending against the managed instance group.
-func (o GetManagedInstanceGroupsManagedInstanceGroupCollectionItemOutput) PendingJobCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetManagedInstanceGroupsManagedInstanceGroupCollectionItem) int { return v.PendingJobCount }).(pulumi.IntOutput)
+func (o GetManagedInstanceGroupsManagedInstanceGroupCollectionItemOutput) PendingJobCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetManagedInstanceGroupsManagedInstanceGroupCollectionItem) *int { return v.PendingJobCount }).(pulumi.IntPtrOutput)
 }
 
 // The list of software sources that the managed instance group will use.
@@ -7722,8 +6553,8 @@ func (o GetManagedInstanceGroupsManagedInstanceGroupCollectionItemOutput) Softwa
 }
 
 // A filter to return only resources their lifecycle state matches the given lifecycle state.
-func (o GetManagedInstanceGroupsManagedInstanceGroupCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedInstanceGroupsManagedInstanceGroupCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetManagedInstanceGroupsManagedInstanceGroupCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedInstanceGroupsManagedInstanceGroupCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -7734,18 +6565,18 @@ func (o GetManagedInstanceGroupsManagedInstanceGroupCollectionItemOutput) System
 }
 
 // The time the managed instance group was created. An RFC3339 formatted datetime string.
-func (o GetManagedInstanceGroupsManagedInstanceGroupCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedInstanceGroupsManagedInstanceGroupCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetManagedInstanceGroupsManagedInstanceGroupCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedInstanceGroupsManagedInstanceGroupCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the managed instance group was last modified. An RFC3339 formatted datetime string.
-func (o GetManagedInstanceGroupsManagedInstanceGroupCollectionItemOutput) TimeModified() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedInstanceGroupsManagedInstanceGroupCollectionItem) string { return v.TimeModified }).(pulumi.StringOutput)
+func (o GetManagedInstanceGroupsManagedInstanceGroupCollectionItemOutput) TimeModified() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedInstanceGroupsManagedInstanceGroupCollectionItem) *string { return v.TimeModified }).(pulumi.StringPtrOutput)
 }
 
 // The software source vendor name.
-func (o GetManagedInstanceGroupsManagedInstanceGroupCollectionItemOutput) VendorName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedInstanceGroupsManagedInstanceGroupCollectionItem) string { return v.VendorName }).(pulumi.StringOutput)
+func (o GetManagedInstanceGroupsManagedInstanceGroupCollectionItemOutput) VendorName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedInstanceGroupsManagedInstanceGroupCollectionItem) *string { return v.VendorName }).(pulumi.StringPtrOutput)
 }
 
 type GetManagedInstanceGroupsManagedInstanceGroupCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -7762,12 +6593,6 @@ func (o GetManagedInstanceGroupsManagedInstanceGroupCollectionItemArrayOutput) T
 	return o
 }
 
-func (o GetManagedInstanceGroupsManagedInstanceGroupCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstanceGroupsManagedInstanceGroupCollectionItem] {
-	return pulumix.Output[[]GetManagedInstanceGroupsManagedInstanceGroupCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetManagedInstanceGroupsManagedInstanceGroupCollectionItemArrayOutput) Index(i pulumi.IntInput) GetManagedInstanceGroupsManagedInstanceGroupCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedInstanceGroupsManagedInstanceGroupCollectionItem {
 		return vs[0].([]GetManagedInstanceGroupsManagedInstanceGroupCollectionItem)[vs[1].(int)]
@@ -7776,13 +6601,13 @@ func (o GetManagedInstanceGroupsManagedInstanceGroupCollectionItemArrayOutput) I
 
 type GetManagedInstanceGroupsManagedInstanceGroupCollectionItemSoftwareSource struct {
 	// Software source description.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// A filter to return resources that match the given display names.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The OCID of the software source.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Type of the software source.
-	SoftwareSourceType string `pulumi:"softwareSourceType"`
+	SoftwareSourceType *string `pulumi:"softwareSourceType"`
 }
 
 // GetManagedInstanceGroupsManagedInstanceGroupCollectionItemSoftwareSourceInput is an input type that accepts GetManagedInstanceGroupsManagedInstanceGroupCollectionItemSoftwareSourceArgs and GetManagedInstanceGroupsManagedInstanceGroupCollectionItemSoftwareSourceOutput values.
@@ -7798,13 +6623,13 @@ type GetManagedInstanceGroupsManagedInstanceGroupCollectionItemSoftwareSourceInp
 
 type GetManagedInstanceGroupsManagedInstanceGroupCollectionItemSoftwareSourceArgs struct {
 	// Software source description.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// A filter to return resources that match the given display names.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// The OCID of the software source.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Type of the software source.
-	SoftwareSourceType pulumi.StringInput `pulumi:"softwareSourceType"`
+	SoftwareSourceType pulumi.StringPtrInput `pulumi:"softwareSourceType"`
 }
 
 func (GetManagedInstanceGroupsManagedInstanceGroupCollectionItemSoftwareSourceArgs) ElementType() reflect.Type {
@@ -7817,12 +6642,6 @@ func (i GetManagedInstanceGroupsManagedInstanceGroupCollectionItemSoftwareSource
 
 func (i GetManagedInstanceGroupsManagedInstanceGroupCollectionItemSoftwareSourceArgs) ToGetManagedInstanceGroupsManagedInstanceGroupCollectionItemSoftwareSourceOutputWithContext(ctx context.Context) GetManagedInstanceGroupsManagedInstanceGroupCollectionItemSoftwareSourceOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceGroupsManagedInstanceGroupCollectionItemSoftwareSourceOutput)
-}
-
-func (i GetManagedInstanceGroupsManagedInstanceGroupCollectionItemSoftwareSourceArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstanceGroupsManagedInstanceGroupCollectionItemSoftwareSource] {
-	return pulumix.Output[GetManagedInstanceGroupsManagedInstanceGroupCollectionItemSoftwareSource]{
-		OutputState: i.ToGetManagedInstanceGroupsManagedInstanceGroupCollectionItemSoftwareSourceOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetManagedInstanceGroupsManagedInstanceGroupCollectionItemSoftwareSourceArrayInput is an input type that accepts GetManagedInstanceGroupsManagedInstanceGroupCollectionItemSoftwareSourceArray and GetManagedInstanceGroupsManagedInstanceGroupCollectionItemSoftwareSourceArrayOutput values.
@@ -7850,12 +6669,6 @@ func (i GetManagedInstanceGroupsManagedInstanceGroupCollectionItemSoftwareSource
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceGroupsManagedInstanceGroupCollectionItemSoftwareSourceArrayOutput)
 }
 
-func (i GetManagedInstanceGroupsManagedInstanceGroupCollectionItemSoftwareSourceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstanceGroupsManagedInstanceGroupCollectionItemSoftwareSource] {
-	return pulumix.Output[[]GetManagedInstanceGroupsManagedInstanceGroupCollectionItemSoftwareSource]{
-		OutputState: i.ToGetManagedInstanceGroupsManagedInstanceGroupCollectionItemSoftwareSourceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetManagedInstanceGroupsManagedInstanceGroupCollectionItemSoftwareSourceOutput struct{ *pulumi.OutputState }
 
 func (GetManagedInstanceGroupsManagedInstanceGroupCollectionItemSoftwareSourceOutput) ElementType() reflect.Type {
@@ -7870,36 +6683,30 @@ func (o GetManagedInstanceGroupsManagedInstanceGroupCollectionItemSoftwareSource
 	return o
 }
 
-func (o GetManagedInstanceGroupsManagedInstanceGroupCollectionItemSoftwareSourceOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstanceGroupsManagedInstanceGroupCollectionItemSoftwareSource] {
-	return pulumix.Output[GetManagedInstanceGroupsManagedInstanceGroupCollectionItemSoftwareSource]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Software source description.
-func (o GetManagedInstanceGroupsManagedInstanceGroupCollectionItemSoftwareSourceOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedInstanceGroupsManagedInstanceGroupCollectionItemSoftwareSource) string {
+func (o GetManagedInstanceGroupsManagedInstanceGroupCollectionItemSoftwareSourceOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedInstanceGroupsManagedInstanceGroupCollectionItemSoftwareSource) *string {
 		return v.Description
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // A filter to return resources that match the given display names.
-func (o GetManagedInstanceGroupsManagedInstanceGroupCollectionItemSoftwareSourceOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedInstanceGroupsManagedInstanceGroupCollectionItemSoftwareSource) string {
+func (o GetManagedInstanceGroupsManagedInstanceGroupCollectionItemSoftwareSourceOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedInstanceGroupsManagedInstanceGroupCollectionItemSoftwareSource) *string {
 		return v.DisplayName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the software source.
-func (o GetManagedInstanceGroupsManagedInstanceGroupCollectionItemSoftwareSourceOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedInstanceGroupsManagedInstanceGroupCollectionItemSoftwareSource) string { return v.Id }).(pulumi.StringOutput)
+func (o GetManagedInstanceGroupsManagedInstanceGroupCollectionItemSoftwareSourceOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedInstanceGroupsManagedInstanceGroupCollectionItemSoftwareSource) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Type of the software source.
-func (o GetManagedInstanceGroupsManagedInstanceGroupCollectionItemSoftwareSourceOutput) SoftwareSourceType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedInstanceGroupsManagedInstanceGroupCollectionItemSoftwareSource) string {
+func (o GetManagedInstanceGroupsManagedInstanceGroupCollectionItemSoftwareSourceOutput) SoftwareSourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedInstanceGroupsManagedInstanceGroupCollectionItemSoftwareSource) *string {
 		return v.SoftwareSourceType
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetManagedInstanceGroupsManagedInstanceGroupCollectionItemSoftwareSourceArrayOutput struct{ *pulumi.OutputState }
@@ -7916,12 +6723,6 @@ func (o GetManagedInstanceGroupsManagedInstanceGroupCollectionItemSoftwareSource
 	return o
 }
 
-func (o GetManagedInstanceGroupsManagedInstanceGroupCollectionItemSoftwareSourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstanceGroupsManagedInstanceGroupCollectionItemSoftwareSource] {
-	return pulumix.Output[[]GetManagedInstanceGroupsManagedInstanceGroupCollectionItemSoftwareSource]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetManagedInstanceGroupsManagedInstanceGroupCollectionItemSoftwareSourceArrayOutput) Index(i pulumi.IntInput) GetManagedInstanceGroupsManagedInstanceGroupCollectionItemSoftwareSourceOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedInstanceGroupsManagedInstanceGroupCollectionItemSoftwareSource {
 		return vs[0].([]GetManagedInstanceGroupsManagedInstanceGroupCollectionItemSoftwareSource)[vs[1].(int)]
@@ -7930,13 +6731,13 @@ func (o GetManagedInstanceGroupsManagedInstanceGroupCollectionItemSoftwareSource
 
 type GetManagementStationMirror struct {
 	// Directory for the mirroring
-	Directory string `pulumi:"directory"`
+	Directory *string `pulumi:"directory"`
 	// Port that the proxy will use
-	Port string `pulumi:"port"`
+	Port *string `pulumi:"port"`
 	// Local path for the sslcert
-	Sslcert string `pulumi:"sslcert"`
+	Sslcert *string `pulumi:"sslcert"`
 	// Default sslport for the mirror
-	Sslport string `pulumi:"sslport"`
+	Sslport *string `pulumi:"sslport"`
 }
 
 // GetManagementStationMirrorInput is an input type that accepts GetManagementStationMirrorArgs and GetManagementStationMirrorOutput values.
@@ -7952,13 +6753,13 @@ type GetManagementStationMirrorInput interface {
 
 type GetManagementStationMirrorArgs struct {
 	// Directory for the mirroring
-	Directory pulumi.StringInput `pulumi:"directory"`
+	Directory pulumi.StringPtrInput `pulumi:"directory"`
 	// Port that the proxy will use
-	Port pulumi.StringInput `pulumi:"port"`
+	Port pulumi.StringPtrInput `pulumi:"port"`
 	// Local path for the sslcert
-	Sslcert pulumi.StringInput `pulumi:"sslcert"`
+	Sslcert pulumi.StringPtrInput `pulumi:"sslcert"`
 	// Default sslport for the mirror
-	Sslport pulumi.StringInput `pulumi:"sslport"`
+	Sslport pulumi.StringPtrInput `pulumi:"sslport"`
 }
 
 func (GetManagementStationMirrorArgs) ElementType() reflect.Type {
@@ -7971,12 +6772,6 @@ func (i GetManagementStationMirrorArgs) ToGetManagementStationMirrorOutput() Get
 
 func (i GetManagementStationMirrorArgs) ToGetManagementStationMirrorOutputWithContext(ctx context.Context) GetManagementStationMirrorOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementStationMirrorOutput)
-}
-
-func (i GetManagementStationMirrorArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagementStationMirror] {
-	return pulumix.Output[GetManagementStationMirror]{
-		OutputState: i.ToGetManagementStationMirrorOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetManagementStationMirrorArrayInput is an input type that accepts GetManagementStationMirrorArray and GetManagementStationMirrorArrayOutput values.
@@ -8004,12 +6799,6 @@ func (i GetManagementStationMirrorArray) ToGetManagementStationMirrorArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementStationMirrorArrayOutput)
 }
 
-func (i GetManagementStationMirrorArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementStationMirror] {
-	return pulumix.Output[[]GetManagementStationMirror]{
-		OutputState: i.ToGetManagementStationMirrorArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetManagementStationMirrorOutput struct{ *pulumi.OutputState }
 
 func (GetManagementStationMirrorOutput) ElementType() reflect.Type {
@@ -8024,30 +6813,24 @@ func (o GetManagementStationMirrorOutput) ToGetManagementStationMirrorOutputWith
 	return o
 }
 
-func (o GetManagementStationMirrorOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagementStationMirror] {
-	return pulumix.Output[GetManagementStationMirror]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Directory for the mirroring
-func (o GetManagementStationMirrorOutput) Directory() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementStationMirror) string { return v.Directory }).(pulumi.StringOutput)
+func (o GetManagementStationMirrorOutput) Directory() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementStationMirror) *string { return v.Directory }).(pulumi.StringPtrOutput)
 }
 
 // Port that the proxy will use
-func (o GetManagementStationMirrorOutput) Port() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementStationMirror) string { return v.Port }).(pulumi.StringOutput)
+func (o GetManagementStationMirrorOutput) Port() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementStationMirror) *string { return v.Port }).(pulumi.StringPtrOutput)
 }
 
 // Local path for the sslcert
-func (o GetManagementStationMirrorOutput) Sslcert() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementStationMirror) string { return v.Sslcert }).(pulumi.StringOutput)
+func (o GetManagementStationMirrorOutput) Sslcert() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementStationMirror) *string { return v.Sslcert }).(pulumi.StringPtrOutput)
 }
 
 // Default sslport for the mirror
-func (o GetManagementStationMirrorOutput) Sslport() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementStationMirror) string { return v.Sslport }).(pulumi.StringOutput)
+func (o GetManagementStationMirrorOutput) Sslport() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementStationMirror) *string { return v.Sslport }).(pulumi.StringPtrOutput)
 }
 
 type GetManagementStationMirrorArrayOutput struct{ *pulumi.OutputState }
@@ -8064,12 +6847,6 @@ func (o GetManagementStationMirrorArrayOutput) ToGetManagementStationMirrorArray
 	return o
 }
 
-func (o GetManagementStationMirrorArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementStationMirror] {
-	return pulumix.Output[[]GetManagementStationMirror]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetManagementStationMirrorArrayOutput) Index(i pulumi.IntInput) GetManagementStationMirrorOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagementStationMirror {
 		return vs[0].([]GetManagementStationMirror)[vs[1].(int)]
@@ -8078,15 +6855,15 @@ func (o GetManagementStationMirrorArrayOutput) Index(i pulumi.IntInput) GetManag
 
 type GetManagementStationMirrorSyncStatus struct {
 	// Total of mirrors in 'failed' state
-	Failed int `pulumi:"failed"`
+	Failed *int `pulumi:"failed"`
 	// Total of mirrors in 'queued' state
-	Queued int `pulumi:"queued"`
+	Queued *int `pulumi:"queued"`
 	// Total of mirrors in 'synced' state
-	Synced int `pulumi:"synced"`
+	Synced *int `pulumi:"synced"`
 	// Total of mirrors in 'syncing' state
-	Syncing int `pulumi:"syncing"`
+	Syncing *int `pulumi:"syncing"`
 	// Total of mirrors in 'failed' state
-	Unsynced int `pulumi:"unsynced"`
+	Unsynced *int `pulumi:"unsynced"`
 }
 
 // GetManagementStationMirrorSyncStatusInput is an input type that accepts GetManagementStationMirrorSyncStatusArgs and GetManagementStationMirrorSyncStatusOutput values.
@@ -8102,15 +6879,15 @@ type GetManagementStationMirrorSyncStatusInput interface {
 
 type GetManagementStationMirrorSyncStatusArgs struct {
 	// Total of mirrors in 'failed' state
-	Failed pulumi.IntInput `pulumi:"failed"`
+	Failed pulumi.IntPtrInput `pulumi:"failed"`
 	// Total of mirrors in 'queued' state
-	Queued pulumi.IntInput `pulumi:"queued"`
+	Queued pulumi.IntPtrInput `pulumi:"queued"`
 	// Total of mirrors in 'synced' state
-	Synced pulumi.IntInput `pulumi:"synced"`
+	Synced pulumi.IntPtrInput `pulumi:"synced"`
 	// Total of mirrors in 'syncing' state
-	Syncing pulumi.IntInput `pulumi:"syncing"`
+	Syncing pulumi.IntPtrInput `pulumi:"syncing"`
 	// Total of mirrors in 'failed' state
-	Unsynced pulumi.IntInput `pulumi:"unsynced"`
+	Unsynced pulumi.IntPtrInput `pulumi:"unsynced"`
 }
 
 func (GetManagementStationMirrorSyncStatusArgs) ElementType() reflect.Type {
@@ -8123,12 +6900,6 @@ func (i GetManagementStationMirrorSyncStatusArgs) ToGetManagementStationMirrorSy
 
 func (i GetManagementStationMirrorSyncStatusArgs) ToGetManagementStationMirrorSyncStatusOutputWithContext(ctx context.Context) GetManagementStationMirrorSyncStatusOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementStationMirrorSyncStatusOutput)
-}
-
-func (i GetManagementStationMirrorSyncStatusArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagementStationMirrorSyncStatus] {
-	return pulumix.Output[GetManagementStationMirrorSyncStatus]{
-		OutputState: i.ToGetManagementStationMirrorSyncStatusOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetManagementStationMirrorSyncStatusArrayInput is an input type that accepts GetManagementStationMirrorSyncStatusArray and GetManagementStationMirrorSyncStatusArrayOutput values.
@@ -8156,12 +6927,6 @@ func (i GetManagementStationMirrorSyncStatusArray) ToGetManagementStationMirrorS
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementStationMirrorSyncStatusArrayOutput)
 }
 
-func (i GetManagementStationMirrorSyncStatusArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementStationMirrorSyncStatus] {
-	return pulumix.Output[[]GetManagementStationMirrorSyncStatus]{
-		OutputState: i.ToGetManagementStationMirrorSyncStatusArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetManagementStationMirrorSyncStatusOutput struct{ *pulumi.OutputState }
 
 func (GetManagementStationMirrorSyncStatusOutput) ElementType() reflect.Type {
@@ -8176,35 +6941,29 @@ func (o GetManagementStationMirrorSyncStatusOutput) ToGetManagementStationMirror
 	return o
 }
 
-func (o GetManagementStationMirrorSyncStatusOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagementStationMirrorSyncStatus] {
-	return pulumix.Output[GetManagementStationMirrorSyncStatus]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Total of mirrors in 'failed' state
-func (o GetManagementStationMirrorSyncStatusOutput) Failed() pulumi.IntOutput {
-	return o.ApplyT(func(v GetManagementStationMirrorSyncStatus) int { return v.Failed }).(pulumi.IntOutput)
+func (o GetManagementStationMirrorSyncStatusOutput) Failed() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetManagementStationMirrorSyncStatus) *int { return v.Failed }).(pulumi.IntPtrOutput)
 }
 
 // Total of mirrors in 'queued' state
-func (o GetManagementStationMirrorSyncStatusOutput) Queued() pulumi.IntOutput {
-	return o.ApplyT(func(v GetManagementStationMirrorSyncStatus) int { return v.Queued }).(pulumi.IntOutput)
+func (o GetManagementStationMirrorSyncStatusOutput) Queued() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetManagementStationMirrorSyncStatus) *int { return v.Queued }).(pulumi.IntPtrOutput)
 }
 
 // Total of mirrors in 'synced' state
-func (o GetManagementStationMirrorSyncStatusOutput) Synced() pulumi.IntOutput {
-	return o.ApplyT(func(v GetManagementStationMirrorSyncStatus) int { return v.Synced }).(pulumi.IntOutput)
+func (o GetManagementStationMirrorSyncStatusOutput) Synced() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetManagementStationMirrorSyncStatus) *int { return v.Synced }).(pulumi.IntPtrOutput)
 }
 
 // Total of mirrors in 'syncing' state
-func (o GetManagementStationMirrorSyncStatusOutput) Syncing() pulumi.IntOutput {
-	return o.ApplyT(func(v GetManagementStationMirrorSyncStatus) int { return v.Syncing }).(pulumi.IntOutput)
+func (o GetManagementStationMirrorSyncStatusOutput) Syncing() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetManagementStationMirrorSyncStatus) *int { return v.Syncing }).(pulumi.IntPtrOutput)
 }
 
 // Total of mirrors in 'failed' state
-func (o GetManagementStationMirrorSyncStatusOutput) Unsynced() pulumi.IntOutput {
-	return o.ApplyT(func(v GetManagementStationMirrorSyncStatus) int { return v.Unsynced }).(pulumi.IntOutput)
+func (o GetManagementStationMirrorSyncStatusOutput) Unsynced() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetManagementStationMirrorSyncStatus) *int { return v.Unsynced }).(pulumi.IntPtrOutput)
 }
 
 type GetManagementStationMirrorSyncStatusArrayOutput struct{ *pulumi.OutputState }
@@ -8219,12 +6978,6 @@ func (o GetManagementStationMirrorSyncStatusArrayOutput) ToGetManagementStationM
 
 func (o GetManagementStationMirrorSyncStatusArrayOutput) ToGetManagementStationMirrorSyncStatusArrayOutputWithContext(ctx context.Context) GetManagementStationMirrorSyncStatusArrayOutput {
 	return o
-}
-
-func (o GetManagementStationMirrorSyncStatusArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementStationMirrorSyncStatus] {
-	return pulumix.Output[[]GetManagementStationMirrorSyncStatus]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetManagementStationMirrorSyncStatusArrayOutput) Index(i pulumi.IntInput) GetManagementStationMirrorSyncStatusOutput {
@@ -8268,12 +7021,6 @@ func (i GetManagementStationMirrorsFilterArgs) ToGetManagementStationMirrorsFilt
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementStationMirrorsFilterOutput)
 }
 
-func (i GetManagementStationMirrorsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagementStationMirrorsFilter] {
-	return pulumix.Output[GetManagementStationMirrorsFilter]{
-		OutputState: i.ToGetManagementStationMirrorsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetManagementStationMirrorsFilterArrayInput is an input type that accepts GetManagementStationMirrorsFilterArray and GetManagementStationMirrorsFilterArrayOutput values.
 // You can construct a concrete instance of `GetManagementStationMirrorsFilterArrayInput` via:
 //
@@ -8299,12 +7046,6 @@ func (i GetManagementStationMirrorsFilterArray) ToGetManagementStationMirrorsFil
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementStationMirrorsFilterArrayOutput)
 }
 
-func (i GetManagementStationMirrorsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementStationMirrorsFilter] {
-	return pulumix.Output[[]GetManagementStationMirrorsFilter]{
-		OutputState: i.ToGetManagementStationMirrorsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetManagementStationMirrorsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetManagementStationMirrorsFilterOutput) ElementType() reflect.Type {
@@ -8317,12 +7058,6 @@ func (o GetManagementStationMirrorsFilterOutput) ToGetManagementStationMirrorsFi
 
 func (o GetManagementStationMirrorsFilterOutput) ToGetManagementStationMirrorsFilterOutputWithContext(ctx context.Context) GetManagementStationMirrorsFilterOutput {
 	return o
-}
-
-func (o GetManagementStationMirrorsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagementStationMirrorsFilter] {
-	return pulumix.Output[GetManagementStationMirrorsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetManagementStationMirrorsFilterOutput) Name() pulumi.StringOutput {
@@ -8349,12 +7084,6 @@ func (o GetManagementStationMirrorsFilterArrayOutput) ToGetManagementStationMirr
 
 func (o GetManagementStationMirrorsFilterArrayOutput) ToGetManagementStationMirrorsFilterArrayOutputWithContext(ctx context.Context) GetManagementStationMirrorsFilterArrayOutput {
 	return o
-}
-
-func (o GetManagementStationMirrorsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementStationMirrorsFilter] {
-	return pulumix.Output[[]GetManagementStationMirrorsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetManagementStationMirrorsFilterArrayOutput) Index(i pulumi.IntInput) GetManagementStationMirrorsFilterOutput {
@@ -8396,12 +7125,6 @@ func (i GetManagementStationMirrorsMirrorsCollectionArgs) ToGetManagementStation
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementStationMirrorsMirrorsCollectionOutput)
 }
 
-func (i GetManagementStationMirrorsMirrorsCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagementStationMirrorsMirrorsCollection] {
-	return pulumix.Output[GetManagementStationMirrorsMirrorsCollection]{
-		OutputState: i.ToGetManagementStationMirrorsMirrorsCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetManagementStationMirrorsMirrorsCollectionArrayInput is an input type that accepts GetManagementStationMirrorsMirrorsCollectionArray and GetManagementStationMirrorsMirrorsCollectionArrayOutput values.
 // You can construct a concrete instance of `GetManagementStationMirrorsMirrorsCollectionArrayInput` via:
 //
@@ -8427,12 +7150,6 @@ func (i GetManagementStationMirrorsMirrorsCollectionArray) ToGetManagementStatio
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementStationMirrorsMirrorsCollectionArrayOutput)
 }
 
-func (i GetManagementStationMirrorsMirrorsCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementStationMirrorsMirrorsCollection] {
-	return pulumix.Output[[]GetManagementStationMirrorsMirrorsCollection]{
-		OutputState: i.ToGetManagementStationMirrorsMirrorsCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetManagementStationMirrorsMirrorsCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetManagementStationMirrorsMirrorsCollectionOutput) ElementType() reflect.Type {
@@ -8445,12 +7162,6 @@ func (o GetManagementStationMirrorsMirrorsCollectionOutput) ToGetManagementStati
 
 func (o GetManagementStationMirrorsMirrorsCollectionOutput) ToGetManagementStationMirrorsMirrorsCollectionOutputWithContext(ctx context.Context) GetManagementStationMirrorsMirrorsCollectionOutput {
 	return o
-}
-
-func (o GetManagementStationMirrorsMirrorsCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagementStationMirrorsMirrorsCollection] {
-	return pulumix.Output[GetManagementStationMirrorsMirrorsCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 // List of mirrors
@@ -8474,12 +7185,6 @@ func (o GetManagementStationMirrorsMirrorsCollectionArrayOutput) ToGetManagement
 	return o
 }
 
-func (o GetManagementStationMirrorsMirrorsCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementStationMirrorsMirrorsCollection] {
-	return pulumix.Output[[]GetManagementStationMirrorsMirrorsCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetManagementStationMirrorsMirrorsCollectionArrayOutput) Index(i pulumi.IntInput) GetManagementStationMirrorsMirrorsCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagementStationMirrorsMirrorsCollection {
 		return vs[0].([]GetManagementStationMirrorsMirrorsCollection)[vs[1].(int)]
@@ -8488,23 +7193,23 @@ func (o GetManagementStationMirrorsMirrorsCollectionArrayOutput) Index(i pulumi.
 
 type GetManagementStationMirrorsMirrorsCollectionItem struct {
 	// The architecture type supported by the Software Source
-	ArchType string `pulumi:"archType"`
+	ArchType *string `pulumi:"archType"`
 	// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// OCID of a software source
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The current log from the management station plugin.
-	Log string `pulumi:"log"`
+	Log *string `pulumi:"log"`
 	// The OS family the Software Source belongs to
-	OsFamily string `pulumi:"osFamily"`
+	OsFamily *string `pulumi:"osFamily"`
 	// A decimal number representing the completness percentage
-	Percentage int `pulumi:"percentage"`
+	Percentage *int `pulumi:"percentage"`
 	// Current state of the mirror
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Timestamp of the last time the mirror was sync
-	TimeLastSynced string `pulumi:"timeLastSynced"`
+	TimeLastSynced *string `pulumi:"timeLastSynced"`
 	// Type of the mirror
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 }
 
 // GetManagementStationMirrorsMirrorsCollectionItemInput is an input type that accepts GetManagementStationMirrorsMirrorsCollectionItemArgs and GetManagementStationMirrorsMirrorsCollectionItemOutput values.
@@ -8520,23 +7225,23 @@ type GetManagementStationMirrorsMirrorsCollectionItemInput interface {
 
 type GetManagementStationMirrorsMirrorsCollectionItemArgs struct {
 	// The architecture type supported by the Software Source
-	ArchType pulumi.StringInput `pulumi:"archType"`
+	ArchType pulumi.StringPtrInput `pulumi:"archType"`
 	// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// OCID of a software source
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// The current log from the management station plugin.
-	Log pulumi.StringInput `pulumi:"log"`
+	Log pulumi.StringPtrInput `pulumi:"log"`
 	// The OS family the Software Source belongs to
-	OsFamily pulumi.StringInput `pulumi:"osFamily"`
+	OsFamily pulumi.StringPtrInput `pulumi:"osFamily"`
 	// A decimal number representing the completness percentage
-	Percentage pulumi.IntInput `pulumi:"percentage"`
+	Percentage pulumi.IntPtrInput `pulumi:"percentage"`
 	// Current state of the mirror
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// Timestamp of the last time the mirror was sync
-	TimeLastSynced pulumi.StringInput `pulumi:"timeLastSynced"`
+	TimeLastSynced pulumi.StringPtrInput `pulumi:"timeLastSynced"`
 	// Type of the mirror
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
 func (GetManagementStationMirrorsMirrorsCollectionItemArgs) ElementType() reflect.Type {
@@ -8549,12 +7254,6 @@ func (i GetManagementStationMirrorsMirrorsCollectionItemArgs) ToGetManagementSta
 
 func (i GetManagementStationMirrorsMirrorsCollectionItemArgs) ToGetManagementStationMirrorsMirrorsCollectionItemOutputWithContext(ctx context.Context) GetManagementStationMirrorsMirrorsCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementStationMirrorsMirrorsCollectionItemOutput)
-}
-
-func (i GetManagementStationMirrorsMirrorsCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagementStationMirrorsMirrorsCollectionItem] {
-	return pulumix.Output[GetManagementStationMirrorsMirrorsCollectionItem]{
-		OutputState: i.ToGetManagementStationMirrorsMirrorsCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetManagementStationMirrorsMirrorsCollectionItemArrayInput is an input type that accepts GetManagementStationMirrorsMirrorsCollectionItemArray and GetManagementStationMirrorsMirrorsCollectionItemArrayOutput values.
@@ -8582,12 +7281,6 @@ func (i GetManagementStationMirrorsMirrorsCollectionItemArray) ToGetManagementSt
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementStationMirrorsMirrorsCollectionItemArrayOutput)
 }
 
-func (i GetManagementStationMirrorsMirrorsCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementStationMirrorsMirrorsCollectionItem] {
-	return pulumix.Output[[]GetManagementStationMirrorsMirrorsCollectionItem]{
-		OutputState: i.ToGetManagementStationMirrorsMirrorsCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetManagementStationMirrorsMirrorsCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetManagementStationMirrorsMirrorsCollectionItemOutput) ElementType() reflect.Type {
@@ -8602,55 +7295,49 @@ func (o GetManagementStationMirrorsMirrorsCollectionItemOutput) ToGetManagementS
 	return o
 }
 
-func (o GetManagementStationMirrorsMirrorsCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagementStationMirrorsMirrorsCollectionItem] {
-	return pulumix.Output[GetManagementStationMirrorsMirrorsCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The architecture type supported by the Software Source
-func (o GetManagementStationMirrorsMirrorsCollectionItemOutput) ArchType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementStationMirrorsMirrorsCollectionItem) string { return v.ArchType }).(pulumi.StringOutput)
+func (o GetManagementStationMirrorsMirrorsCollectionItemOutput) ArchType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementStationMirrorsMirrorsCollectionItem) *string { return v.ArchType }).(pulumi.StringPtrOutput)
 }
 
 // A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
-func (o GetManagementStationMirrorsMirrorsCollectionItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementStationMirrorsMirrorsCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetManagementStationMirrorsMirrorsCollectionItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementStationMirrorsMirrorsCollectionItem) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // OCID of a software source
-func (o GetManagementStationMirrorsMirrorsCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementStationMirrorsMirrorsCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetManagementStationMirrorsMirrorsCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementStationMirrorsMirrorsCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The current log from the management station plugin.
-func (o GetManagementStationMirrorsMirrorsCollectionItemOutput) Log() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementStationMirrorsMirrorsCollectionItem) string { return v.Log }).(pulumi.StringOutput)
+func (o GetManagementStationMirrorsMirrorsCollectionItemOutput) Log() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementStationMirrorsMirrorsCollectionItem) *string { return v.Log }).(pulumi.StringPtrOutput)
 }
 
 // The OS family the Software Source belongs to
-func (o GetManagementStationMirrorsMirrorsCollectionItemOutput) OsFamily() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementStationMirrorsMirrorsCollectionItem) string { return v.OsFamily }).(pulumi.StringOutput)
+func (o GetManagementStationMirrorsMirrorsCollectionItemOutput) OsFamily() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementStationMirrorsMirrorsCollectionItem) *string { return v.OsFamily }).(pulumi.StringPtrOutput)
 }
 
 // A decimal number representing the completness percentage
-func (o GetManagementStationMirrorsMirrorsCollectionItemOutput) Percentage() pulumi.IntOutput {
-	return o.ApplyT(func(v GetManagementStationMirrorsMirrorsCollectionItem) int { return v.Percentage }).(pulumi.IntOutput)
+func (o GetManagementStationMirrorsMirrorsCollectionItemOutput) Percentage() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetManagementStationMirrorsMirrorsCollectionItem) *int { return v.Percentage }).(pulumi.IntPtrOutput)
 }
 
 // Current state of the mirror
-func (o GetManagementStationMirrorsMirrorsCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementStationMirrorsMirrorsCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetManagementStationMirrorsMirrorsCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementStationMirrorsMirrorsCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Timestamp of the last time the mirror was sync
-func (o GetManagementStationMirrorsMirrorsCollectionItemOutput) TimeLastSynced() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementStationMirrorsMirrorsCollectionItem) string { return v.TimeLastSynced }).(pulumi.StringOutput)
+func (o GetManagementStationMirrorsMirrorsCollectionItemOutput) TimeLastSynced() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementStationMirrorsMirrorsCollectionItem) *string { return v.TimeLastSynced }).(pulumi.StringPtrOutput)
 }
 
 // Type of the mirror
-func (o GetManagementStationMirrorsMirrorsCollectionItemOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementStationMirrorsMirrorsCollectionItem) string { return v.Type }).(pulumi.StringOutput)
+func (o GetManagementStationMirrorsMirrorsCollectionItemOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementStationMirrorsMirrorsCollectionItem) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 type GetManagementStationMirrorsMirrorsCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -8667,12 +7354,6 @@ func (o GetManagementStationMirrorsMirrorsCollectionItemArrayOutput) ToGetManage
 	return o
 }
 
-func (o GetManagementStationMirrorsMirrorsCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementStationMirrorsMirrorsCollectionItem] {
-	return pulumix.Output[[]GetManagementStationMirrorsMirrorsCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetManagementStationMirrorsMirrorsCollectionItemArrayOutput) Index(i pulumi.IntInput) GetManagementStationMirrorsMirrorsCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagementStationMirrorsMirrorsCollectionItem {
 		return vs[0].([]GetManagementStationMirrorsMirrorsCollectionItem)[vs[1].(int)]
@@ -8681,13 +7362,13 @@ func (o GetManagementStationMirrorsMirrorsCollectionItemArrayOutput) Index(i pul
 
 type GetManagementStationProxy struct {
 	// URL that the proxy will forward to
-	Forward string `pulumi:"forward"`
+	Forward *string `pulumi:"forward"`
 	// List of hosts
 	Hosts []string `pulumi:"hosts"`
 	// To enable or disable the proxy (default true)
-	IsEnabled bool `pulumi:"isEnabled"`
+	IsEnabled *bool `pulumi:"isEnabled"`
 	// Port that the proxy will use
-	Port string `pulumi:"port"`
+	Port *string `pulumi:"port"`
 }
 
 // GetManagementStationProxyInput is an input type that accepts GetManagementStationProxyArgs and GetManagementStationProxyOutput values.
@@ -8703,13 +7384,13 @@ type GetManagementStationProxyInput interface {
 
 type GetManagementStationProxyArgs struct {
 	// URL that the proxy will forward to
-	Forward pulumi.StringInput `pulumi:"forward"`
+	Forward pulumi.StringPtrInput `pulumi:"forward"`
 	// List of hosts
 	Hosts pulumi.StringArrayInput `pulumi:"hosts"`
 	// To enable or disable the proxy (default true)
-	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+	IsEnabled pulumi.BoolPtrInput `pulumi:"isEnabled"`
 	// Port that the proxy will use
-	Port pulumi.StringInput `pulumi:"port"`
+	Port pulumi.StringPtrInput `pulumi:"port"`
 }
 
 func (GetManagementStationProxyArgs) ElementType() reflect.Type {
@@ -8722,12 +7403,6 @@ func (i GetManagementStationProxyArgs) ToGetManagementStationProxyOutput() GetMa
 
 func (i GetManagementStationProxyArgs) ToGetManagementStationProxyOutputWithContext(ctx context.Context) GetManagementStationProxyOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementStationProxyOutput)
-}
-
-func (i GetManagementStationProxyArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagementStationProxy] {
-	return pulumix.Output[GetManagementStationProxy]{
-		OutputState: i.ToGetManagementStationProxyOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetManagementStationProxyArrayInput is an input type that accepts GetManagementStationProxyArray and GetManagementStationProxyArrayOutput values.
@@ -8755,12 +7430,6 @@ func (i GetManagementStationProxyArray) ToGetManagementStationProxyArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementStationProxyArrayOutput)
 }
 
-func (i GetManagementStationProxyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementStationProxy] {
-	return pulumix.Output[[]GetManagementStationProxy]{
-		OutputState: i.ToGetManagementStationProxyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetManagementStationProxyOutput struct{ *pulumi.OutputState }
 
 func (GetManagementStationProxyOutput) ElementType() reflect.Type {
@@ -8775,15 +7444,9 @@ func (o GetManagementStationProxyOutput) ToGetManagementStationProxyOutputWithCo
 	return o
 }
 
-func (o GetManagementStationProxyOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagementStationProxy] {
-	return pulumix.Output[GetManagementStationProxy]{
-		OutputState: o.OutputState,
-	}
-}
-
 // URL that the proxy will forward to
-func (o GetManagementStationProxyOutput) Forward() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementStationProxy) string { return v.Forward }).(pulumi.StringOutput)
+func (o GetManagementStationProxyOutput) Forward() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementStationProxy) *string { return v.Forward }).(pulumi.StringPtrOutput)
 }
 
 // List of hosts
@@ -8792,13 +7455,13 @@ func (o GetManagementStationProxyOutput) Hosts() pulumi.StringArrayOutput {
 }
 
 // To enable or disable the proxy (default true)
-func (o GetManagementStationProxyOutput) IsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetManagementStationProxy) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+func (o GetManagementStationProxyOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetManagementStationProxy) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // Port that the proxy will use
-func (o GetManagementStationProxyOutput) Port() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementStationProxy) string { return v.Port }).(pulumi.StringOutput)
+func (o GetManagementStationProxyOutput) Port() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementStationProxy) *string { return v.Port }).(pulumi.StringPtrOutput)
 }
 
 type GetManagementStationProxyArrayOutput struct{ *pulumi.OutputState }
@@ -8813,12 +7476,6 @@ func (o GetManagementStationProxyArrayOutput) ToGetManagementStationProxyArrayOu
 
 func (o GetManagementStationProxyArrayOutput) ToGetManagementStationProxyArrayOutputWithContext(ctx context.Context) GetManagementStationProxyArrayOutput {
 	return o
-}
-
-func (o GetManagementStationProxyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementStationProxy] {
-	return pulumix.Output[[]GetManagementStationProxy]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetManagementStationProxyArrayOutput) Index(i pulumi.IntInput) GetManagementStationProxyOutput {
@@ -8862,12 +7519,6 @@ func (i GetManagementStationsFilterArgs) ToGetManagementStationsFilterOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementStationsFilterOutput)
 }
 
-func (i GetManagementStationsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagementStationsFilter] {
-	return pulumix.Output[GetManagementStationsFilter]{
-		OutputState: i.ToGetManagementStationsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetManagementStationsFilterArrayInput is an input type that accepts GetManagementStationsFilterArray and GetManagementStationsFilterArrayOutput values.
 // You can construct a concrete instance of `GetManagementStationsFilterArrayInput` via:
 //
@@ -8893,12 +7544,6 @@ func (i GetManagementStationsFilterArray) ToGetManagementStationsFilterArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementStationsFilterArrayOutput)
 }
 
-func (i GetManagementStationsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementStationsFilter] {
-	return pulumix.Output[[]GetManagementStationsFilter]{
-		OutputState: i.ToGetManagementStationsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetManagementStationsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetManagementStationsFilterOutput) ElementType() reflect.Type {
@@ -8911,12 +7556,6 @@ func (o GetManagementStationsFilterOutput) ToGetManagementStationsFilterOutput()
 
 func (o GetManagementStationsFilterOutput) ToGetManagementStationsFilterOutputWithContext(ctx context.Context) GetManagementStationsFilterOutput {
 	return o
-}
-
-func (o GetManagementStationsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagementStationsFilter] {
-	return pulumix.Output[GetManagementStationsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetManagementStationsFilterOutput) Name() pulumi.StringOutput {
@@ -8943,12 +7582,6 @@ func (o GetManagementStationsFilterArrayOutput) ToGetManagementStationsFilterArr
 
 func (o GetManagementStationsFilterArrayOutput) ToGetManagementStationsFilterArrayOutputWithContext(ctx context.Context) GetManagementStationsFilterArrayOutput {
 	return o
-}
-
-func (o GetManagementStationsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementStationsFilter] {
-	return pulumix.Output[[]GetManagementStationsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetManagementStationsFilterArrayOutput) Index(i pulumi.IntInput) GetManagementStationsFilterOutput {
@@ -8988,12 +7621,6 @@ func (i GetManagementStationsManagementStationCollectionArgs) ToGetManagementSta
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementStationsManagementStationCollectionOutput)
 }
 
-func (i GetManagementStationsManagementStationCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagementStationsManagementStationCollection] {
-	return pulumix.Output[GetManagementStationsManagementStationCollection]{
-		OutputState: i.ToGetManagementStationsManagementStationCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetManagementStationsManagementStationCollectionArrayInput is an input type that accepts GetManagementStationsManagementStationCollectionArray and GetManagementStationsManagementStationCollectionArrayOutput values.
 // You can construct a concrete instance of `GetManagementStationsManagementStationCollectionArrayInput` via:
 //
@@ -9019,12 +7646,6 @@ func (i GetManagementStationsManagementStationCollectionArray) ToGetManagementSt
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementStationsManagementStationCollectionArrayOutput)
 }
 
-func (i GetManagementStationsManagementStationCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementStationsManagementStationCollection] {
-	return pulumix.Output[[]GetManagementStationsManagementStationCollection]{
-		OutputState: i.ToGetManagementStationsManagementStationCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetManagementStationsManagementStationCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetManagementStationsManagementStationCollectionOutput) ElementType() reflect.Type {
@@ -9037,12 +7658,6 @@ func (o GetManagementStationsManagementStationCollectionOutput) ToGetManagementS
 
 func (o GetManagementStationsManagementStationCollectionOutput) ToGetManagementStationsManagementStationCollectionOutputWithContext(ctx context.Context) GetManagementStationsManagementStationCollectionOutput {
 	return o
-}
-
-func (o GetManagementStationsManagementStationCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagementStationsManagementStationCollection] {
-	return pulumix.Output[GetManagementStationsManagementStationCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetManagementStationsManagementStationCollectionOutput) Items() GetManagementStationsManagementStationCollectionItemArrayOutput {
@@ -9065,12 +7680,6 @@ func (o GetManagementStationsManagementStationCollectionArrayOutput) ToGetManage
 	return o
 }
 
-func (o GetManagementStationsManagementStationCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementStationsManagementStationCollection] {
-	return pulumix.Output[[]GetManagementStationsManagementStationCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetManagementStationsManagementStationCollectionArrayOutput) Index(i pulumi.IntInput) GetManagementStationsManagementStationCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagementStationsManagementStationCollection {
 		return vs[0].([]GetManagementStationsManagementStationCollection)[vs[1].(int)]
@@ -9079,43 +7688,43 @@ func (o GetManagementStationsManagementStationCollectionArrayOutput) Index(i pul
 
 type GetManagementStationsManagementStationCollectionItem struct {
 	// The OCID of the compartment that contains the resources to list.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Details describing the ManagementStation config.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Name of the host
-	Hostname string `pulumi:"hostname"`
+	Hostname *string `pulumi:"hostname"`
 	// The OCID of the management station.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The OCID of the managed instance for which to list resources.
-	ManagedInstanceId string `pulumi:"managedInstanceId"`
+	ManagedInstanceId *string `pulumi:"managedInstanceId"`
 	// A decimal number representing the mirror capacity
-	MirrorCapacity int `pulumi:"mirrorCapacity"`
+	MirrorCapacity *int `pulumi:"mirrorCapacity"`
 	// Status summary of all repos
 	MirrorSyncStatuses []GetManagementStationsManagementStationCollectionItemMirrorSyncStatus `pulumi:"mirrorSyncStatuses"`
 	// Information for a mirror configuration
 	Mirrors []GetManagementStationsManagementStationCollectionItemMirror `pulumi:"mirrors"`
 	// A decimal number representing the completeness percentage
-	OverallPercentage int `pulumi:"overallPercentage"`
+	OverallPercentage *int `pulumi:"overallPercentage"`
 	// Current state of the mirroring
-	OverallState string `pulumi:"overallState"`
+	OverallState *string `pulumi:"overallState"`
 	// OCID of the Profile associated with the Station
-	ProfileId string `pulumi:"profileId"`
+	ProfileId *string `pulumi:"profileId"`
 	// Information for a proxy configuration
 	Proxies []GetManagementStationsManagementStationCollectionItemProxy `pulumi:"proxies"`
 	// OCID of the Scheduled Job for mirror sync
-	ScheduledJobId string `pulumi:"scheduledJobId"`
+	ScheduledJobId *string `pulumi:"scheduledJobId"`
 	// The current lifecycle state for the object.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// A decimal number representing the total of repos
-	TotalMirrors int `pulumi:"totalMirrors"`
+	TotalMirrors *int `pulumi:"totalMirrors"`
 }
 
 // GetManagementStationsManagementStationCollectionItemInput is an input type that accepts GetManagementStationsManagementStationCollectionItemArgs and GetManagementStationsManagementStationCollectionItemOutput values.
@@ -9131,43 +7740,43 @@ type GetManagementStationsManagementStationCollectionItemInput interface {
 
 type GetManagementStationsManagementStationCollectionItemArgs struct {
 	// The OCID of the compartment that contains the resources to list.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// Details describing the ManagementStation config.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// Name of the host
-	Hostname pulumi.StringInput `pulumi:"hostname"`
+	Hostname pulumi.StringPtrInput `pulumi:"hostname"`
 	// The OCID of the management station.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// The OCID of the managed instance for which to list resources.
-	ManagedInstanceId pulumi.StringInput `pulumi:"managedInstanceId"`
+	ManagedInstanceId pulumi.StringPtrInput `pulumi:"managedInstanceId"`
 	// A decimal number representing the mirror capacity
-	MirrorCapacity pulumi.IntInput `pulumi:"mirrorCapacity"`
+	MirrorCapacity pulumi.IntPtrInput `pulumi:"mirrorCapacity"`
 	// Status summary of all repos
 	MirrorSyncStatuses GetManagementStationsManagementStationCollectionItemMirrorSyncStatusArrayInput `pulumi:"mirrorSyncStatuses"`
 	// Information for a mirror configuration
 	Mirrors GetManagementStationsManagementStationCollectionItemMirrorArrayInput `pulumi:"mirrors"`
 	// A decimal number representing the completeness percentage
-	OverallPercentage pulumi.IntInput `pulumi:"overallPercentage"`
+	OverallPercentage pulumi.IntPtrInput `pulumi:"overallPercentage"`
 	// Current state of the mirroring
-	OverallState pulumi.StringInput `pulumi:"overallState"`
+	OverallState pulumi.StringPtrInput `pulumi:"overallState"`
 	// OCID of the Profile associated with the Station
-	ProfileId pulumi.StringInput `pulumi:"profileId"`
+	ProfileId pulumi.StringPtrInput `pulumi:"profileId"`
 	// Information for a proxy configuration
 	Proxies GetManagementStationsManagementStationCollectionItemProxyArrayInput `pulumi:"proxies"`
 	// OCID of the Scheduled Job for mirror sync
-	ScheduledJobId pulumi.StringInput `pulumi:"scheduledJobId"`
+	ScheduledJobId pulumi.StringPtrInput `pulumi:"scheduledJobId"`
 	// The current lifecycle state for the object.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// A decimal number representing the total of repos
-	TotalMirrors pulumi.IntInput `pulumi:"totalMirrors"`
+	TotalMirrors pulumi.IntPtrInput `pulumi:"totalMirrors"`
 }
 
 func (GetManagementStationsManagementStationCollectionItemArgs) ElementType() reflect.Type {
@@ -9180,12 +7789,6 @@ func (i GetManagementStationsManagementStationCollectionItemArgs) ToGetManagemen
 
 func (i GetManagementStationsManagementStationCollectionItemArgs) ToGetManagementStationsManagementStationCollectionItemOutputWithContext(ctx context.Context) GetManagementStationsManagementStationCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementStationsManagementStationCollectionItemOutput)
-}
-
-func (i GetManagementStationsManagementStationCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagementStationsManagementStationCollectionItem] {
-	return pulumix.Output[GetManagementStationsManagementStationCollectionItem]{
-		OutputState: i.ToGetManagementStationsManagementStationCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetManagementStationsManagementStationCollectionItemArrayInput is an input type that accepts GetManagementStationsManagementStationCollectionItemArray and GetManagementStationsManagementStationCollectionItemArrayOutput values.
@@ -9213,12 +7816,6 @@ func (i GetManagementStationsManagementStationCollectionItemArray) ToGetManageme
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementStationsManagementStationCollectionItemArrayOutput)
 }
 
-func (i GetManagementStationsManagementStationCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementStationsManagementStationCollectionItem] {
-	return pulumix.Output[[]GetManagementStationsManagementStationCollectionItem]{
-		OutputState: i.ToGetManagementStationsManagementStationCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetManagementStationsManagementStationCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetManagementStationsManagementStationCollectionItemOutput) ElementType() reflect.Type {
@@ -9233,15 +7830,9 @@ func (o GetManagementStationsManagementStationCollectionItemOutput) ToGetManagem
 	return o
 }
 
-func (o GetManagementStationsManagementStationCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagementStationsManagementStationCollectionItem] {
-	return pulumix.Output[GetManagementStationsManagementStationCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment that contains the resources to list.
-func (o GetManagementStationsManagementStationCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementStationsManagementStationCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetManagementStationsManagementStationCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementStationsManagementStationCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -9252,13 +7843,13 @@ func (o GetManagementStationsManagementStationCollectionItemOutput) DefinedTags(
 }
 
 // Details describing the ManagementStation config.
-func (o GetManagementStationsManagementStationCollectionItemOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementStationsManagementStationCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+func (o GetManagementStationsManagementStationCollectionItemOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementStationsManagementStationCollectionItem) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
-func (o GetManagementStationsManagementStationCollectionItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementStationsManagementStationCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetManagementStationsManagementStationCollectionItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementStationsManagementStationCollectionItem) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -9269,23 +7860,23 @@ func (o GetManagementStationsManagementStationCollectionItemOutput) FreeformTags
 }
 
 // Name of the host
-func (o GetManagementStationsManagementStationCollectionItemOutput) Hostname() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementStationsManagementStationCollectionItem) string { return v.Hostname }).(pulumi.StringOutput)
+func (o GetManagementStationsManagementStationCollectionItemOutput) Hostname() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementStationsManagementStationCollectionItem) *string { return v.Hostname }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the management station.
-func (o GetManagementStationsManagementStationCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementStationsManagementStationCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetManagementStationsManagementStationCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementStationsManagementStationCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the managed instance for which to list resources.
-func (o GetManagementStationsManagementStationCollectionItemOutput) ManagedInstanceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementStationsManagementStationCollectionItem) string { return v.ManagedInstanceId }).(pulumi.StringOutput)
+func (o GetManagementStationsManagementStationCollectionItemOutput) ManagedInstanceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementStationsManagementStationCollectionItem) *string { return v.ManagedInstanceId }).(pulumi.StringPtrOutput)
 }
 
 // A decimal number representing the mirror capacity
-func (o GetManagementStationsManagementStationCollectionItemOutput) MirrorCapacity() pulumi.IntOutput {
-	return o.ApplyT(func(v GetManagementStationsManagementStationCollectionItem) int { return v.MirrorCapacity }).(pulumi.IntOutput)
+func (o GetManagementStationsManagementStationCollectionItemOutput) MirrorCapacity() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetManagementStationsManagementStationCollectionItem) *int { return v.MirrorCapacity }).(pulumi.IntPtrOutput)
 }
 
 // Status summary of all repos
@@ -9303,18 +7894,18 @@ func (o GetManagementStationsManagementStationCollectionItemOutput) Mirrors() Ge
 }
 
 // A decimal number representing the completeness percentage
-func (o GetManagementStationsManagementStationCollectionItemOutput) OverallPercentage() pulumi.IntOutput {
-	return o.ApplyT(func(v GetManagementStationsManagementStationCollectionItem) int { return v.OverallPercentage }).(pulumi.IntOutput)
+func (o GetManagementStationsManagementStationCollectionItemOutput) OverallPercentage() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetManagementStationsManagementStationCollectionItem) *int { return v.OverallPercentage }).(pulumi.IntPtrOutput)
 }
 
 // Current state of the mirroring
-func (o GetManagementStationsManagementStationCollectionItemOutput) OverallState() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementStationsManagementStationCollectionItem) string { return v.OverallState }).(pulumi.StringOutput)
+func (o GetManagementStationsManagementStationCollectionItemOutput) OverallState() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementStationsManagementStationCollectionItem) *string { return v.OverallState }).(pulumi.StringPtrOutput)
 }
 
 // OCID of the Profile associated with the Station
-func (o GetManagementStationsManagementStationCollectionItemOutput) ProfileId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementStationsManagementStationCollectionItem) string { return v.ProfileId }).(pulumi.StringOutput)
+func (o GetManagementStationsManagementStationCollectionItemOutput) ProfileId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementStationsManagementStationCollectionItem) *string { return v.ProfileId }).(pulumi.StringPtrOutput)
 }
 
 // Information for a proxy configuration
@@ -9325,13 +7916,13 @@ func (o GetManagementStationsManagementStationCollectionItemOutput) Proxies() Ge
 }
 
 // OCID of the Scheduled Job for mirror sync
-func (o GetManagementStationsManagementStationCollectionItemOutput) ScheduledJobId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementStationsManagementStationCollectionItem) string { return v.ScheduledJobId }).(pulumi.StringOutput)
+func (o GetManagementStationsManagementStationCollectionItemOutput) ScheduledJobId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementStationsManagementStationCollectionItem) *string { return v.ScheduledJobId }).(pulumi.StringPtrOutput)
 }
 
 // The current lifecycle state for the object.
-func (o GetManagementStationsManagementStationCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementStationsManagementStationCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetManagementStationsManagementStationCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementStationsManagementStationCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -9342,8 +7933,8 @@ func (o GetManagementStationsManagementStationCollectionItemOutput) SystemTags()
 }
 
 // A decimal number representing the total of repos
-func (o GetManagementStationsManagementStationCollectionItemOutput) TotalMirrors() pulumi.IntOutput {
-	return o.ApplyT(func(v GetManagementStationsManagementStationCollectionItem) int { return v.TotalMirrors }).(pulumi.IntOutput)
+func (o GetManagementStationsManagementStationCollectionItemOutput) TotalMirrors() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetManagementStationsManagementStationCollectionItem) *int { return v.TotalMirrors }).(pulumi.IntPtrOutput)
 }
 
 type GetManagementStationsManagementStationCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -9360,12 +7951,6 @@ func (o GetManagementStationsManagementStationCollectionItemArrayOutput) ToGetMa
 	return o
 }
 
-func (o GetManagementStationsManagementStationCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementStationsManagementStationCollectionItem] {
-	return pulumix.Output[[]GetManagementStationsManagementStationCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetManagementStationsManagementStationCollectionItemArrayOutput) Index(i pulumi.IntInput) GetManagementStationsManagementStationCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagementStationsManagementStationCollectionItem {
 		return vs[0].([]GetManagementStationsManagementStationCollectionItem)[vs[1].(int)]
@@ -9374,13 +7959,13 @@ func (o GetManagementStationsManagementStationCollectionItemArrayOutput) Index(i
 
 type GetManagementStationsManagementStationCollectionItemMirror struct {
 	// Directory for the mirroring
-	Directory string `pulumi:"directory"`
+	Directory *string `pulumi:"directory"`
 	// Port that the proxy will use
-	Port string `pulumi:"port"`
+	Port *string `pulumi:"port"`
 	// Local path for the sslcert
-	Sslcert string `pulumi:"sslcert"`
+	Sslcert *string `pulumi:"sslcert"`
 	// Default sslport for the mirror
-	Sslport string `pulumi:"sslport"`
+	Sslport *string `pulumi:"sslport"`
 }
 
 // GetManagementStationsManagementStationCollectionItemMirrorInput is an input type that accepts GetManagementStationsManagementStationCollectionItemMirrorArgs and GetManagementStationsManagementStationCollectionItemMirrorOutput values.
@@ -9396,13 +7981,13 @@ type GetManagementStationsManagementStationCollectionItemMirrorInput interface {
 
 type GetManagementStationsManagementStationCollectionItemMirrorArgs struct {
 	// Directory for the mirroring
-	Directory pulumi.StringInput `pulumi:"directory"`
+	Directory pulumi.StringPtrInput `pulumi:"directory"`
 	// Port that the proxy will use
-	Port pulumi.StringInput `pulumi:"port"`
+	Port pulumi.StringPtrInput `pulumi:"port"`
 	// Local path for the sslcert
-	Sslcert pulumi.StringInput `pulumi:"sslcert"`
+	Sslcert pulumi.StringPtrInput `pulumi:"sslcert"`
 	// Default sslport for the mirror
-	Sslport pulumi.StringInput `pulumi:"sslport"`
+	Sslport pulumi.StringPtrInput `pulumi:"sslport"`
 }
 
 func (GetManagementStationsManagementStationCollectionItemMirrorArgs) ElementType() reflect.Type {
@@ -9415,12 +8000,6 @@ func (i GetManagementStationsManagementStationCollectionItemMirrorArgs) ToGetMan
 
 func (i GetManagementStationsManagementStationCollectionItemMirrorArgs) ToGetManagementStationsManagementStationCollectionItemMirrorOutputWithContext(ctx context.Context) GetManagementStationsManagementStationCollectionItemMirrorOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementStationsManagementStationCollectionItemMirrorOutput)
-}
-
-func (i GetManagementStationsManagementStationCollectionItemMirrorArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagementStationsManagementStationCollectionItemMirror] {
-	return pulumix.Output[GetManagementStationsManagementStationCollectionItemMirror]{
-		OutputState: i.ToGetManagementStationsManagementStationCollectionItemMirrorOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetManagementStationsManagementStationCollectionItemMirrorArrayInput is an input type that accepts GetManagementStationsManagementStationCollectionItemMirrorArray and GetManagementStationsManagementStationCollectionItemMirrorArrayOutput values.
@@ -9448,12 +8027,6 @@ func (i GetManagementStationsManagementStationCollectionItemMirrorArray) ToGetMa
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementStationsManagementStationCollectionItemMirrorArrayOutput)
 }
 
-func (i GetManagementStationsManagementStationCollectionItemMirrorArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementStationsManagementStationCollectionItemMirror] {
-	return pulumix.Output[[]GetManagementStationsManagementStationCollectionItemMirror]{
-		OutputState: i.ToGetManagementStationsManagementStationCollectionItemMirrorArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetManagementStationsManagementStationCollectionItemMirrorOutput struct{ *pulumi.OutputState }
 
 func (GetManagementStationsManagementStationCollectionItemMirrorOutput) ElementType() reflect.Type {
@@ -9468,30 +8041,24 @@ func (o GetManagementStationsManagementStationCollectionItemMirrorOutput) ToGetM
 	return o
 }
 
-func (o GetManagementStationsManagementStationCollectionItemMirrorOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagementStationsManagementStationCollectionItemMirror] {
-	return pulumix.Output[GetManagementStationsManagementStationCollectionItemMirror]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Directory for the mirroring
-func (o GetManagementStationsManagementStationCollectionItemMirrorOutput) Directory() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementStationsManagementStationCollectionItemMirror) string { return v.Directory }).(pulumi.StringOutput)
+func (o GetManagementStationsManagementStationCollectionItemMirrorOutput) Directory() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementStationsManagementStationCollectionItemMirror) *string { return v.Directory }).(pulumi.StringPtrOutput)
 }
 
 // Port that the proxy will use
-func (o GetManagementStationsManagementStationCollectionItemMirrorOutput) Port() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementStationsManagementStationCollectionItemMirror) string { return v.Port }).(pulumi.StringOutput)
+func (o GetManagementStationsManagementStationCollectionItemMirrorOutput) Port() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementStationsManagementStationCollectionItemMirror) *string { return v.Port }).(pulumi.StringPtrOutput)
 }
 
 // Local path for the sslcert
-func (o GetManagementStationsManagementStationCollectionItemMirrorOutput) Sslcert() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementStationsManagementStationCollectionItemMirror) string { return v.Sslcert }).(pulumi.StringOutput)
+func (o GetManagementStationsManagementStationCollectionItemMirrorOutput) Sslcert() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementStationsManagementStationCollectionItemMirror) *string { return v.Sslcert }).(pulumi.StringPtrOutput)
 }
 
 // Default sslport for the mirror
-func (o GetManagementStationsManagementStationCollectionItemMirrorOutput) Sslport() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementStationsManagementStationCollectionItemMirror) string { return v.Sslport }).(pulumi.StringOutput)
+func (o GetManagementStationsManagementStationCollectionItemMirrorOutput) Sslport() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementStationsManagementStationCollectionItemMirror) *string { return v.Sslport }).(pulumi.StringPtrOutput)
 }
 
 type GetManagementStationsManagementStationCollectionItemMirrorArrayOutput struct{ *pulumi.OutputState }
@@ -9508,12 +8075,6 @@ func (o GetManagementStationsManagementStationCollectionItemMirrorArrayOutput) T
 	return o
 }
 
-func (o GetManagementStationsManagementStationCollectionItemMirrorArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementStationsManagementStationCollectionItemMirror] {
-	return pulumix.Output[[]GetManagementStationsManagementStationCollectionItemMirror]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetManagementStationsManagementStationCollectionItemMirrorArrayOutput) Index(i pulumi.IntInput) GetManagementStationsManagementStationCollectionItemMirrorOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagementStationsManagementStationCollectionItemMirror {
 		return vs[0].([]GetManagementStationsManagementStationCollectionItemMirror)[vs[1].(int)]
@@ -9522,15 +8083,15 @@ func (o GetManagementStationsManagementStationCollectionItemMirrorArrayOutput) I
 
 type GetManagementStationsManagementStationCollectionItemMirrorSyncStatus struct {
 	// Total of mirrors in 'failed' state
-	Failed int `pulumi:"failed"`
+	Failed *int `pulumi:"failed"`
 	// Total of mirrors in 'queued' state
-	Queued int `pulumi:"queued"`
+	Queued *int `pulumi:"queued"`
 	// Total of mirrors in 'synced' state
-	Synced int `pulumi:"synced"`
+	Synced *int `pulumi:"synced"`
 	// Total of mirrors in 'syncing' state
-	Syncing int `pulumi:"syncing"`
+	Syncing *int `pulumi:"syncing"`
 	// Total of mirrors in 'failed' state
-	Unsynced int `pulumi:"unsynced"`
+	Unsynced *int `pulumi:"unsynced"`
 }
 
 // GetManagementStationsManagementStationCollectionItemMirrorSyncStatusInput is an input type that accepts GetManagementStationsManagementStationCollectionItemMirrorSyncStatusArgs and GetManagementStationsManagementStationCollectionItemMirrorSyncStatusOutput values.
@@ -9546,15 +8107,15 @@ type GetManagementStationsManagementStationCollectionItemMirrorSyncStatusInput i
 
 type GetManagementStationsManagementStationCollectionItemMirrorSyncStatusArgs struct {
 	// Total of mirrors in 'failed' state
-	Failed pulumi.IntInput `pulumi:"failed"`
+	Failed pulumi.IntPtrInput `pulumi:"failed"`
 	// Total of mirrors in 'queued' state
-	Queued pulumi.IntInput `pulumi:"queued"`
+	Queued pulumi.IntPtrInput `pulumi:"queued"`
 	// Total of mirrors in 'synced' state
-	Synced pulumi.IntInput `pulumi:"synced"`
+	Synced pulumi.IntPtrInput `pulumi:"synced"`
 	// Total of mirrors in 'syncing' state
-	Syncing pulumi.IntInput `pulumi:"syncing"`
+	Syncing pulumi.IntPtrInput `pulumi:"syncing"`
 	// Total of mirrors in 'failed' state
-	Unsynced pulumi.IntInput `pulumi:"unsynced"`
+	Unsynced pulumi.IntPtrInput `pulumi:"unsynced"`
 }
 
 func (GetManagementStationsManagementStationCollectionItemMirrorSyncStatusArgs) ElementType() reflect.Type {
@@ -9567,12 +8128,6 @@ func (i GetManagementStationsManagementStationCollectionItemMirrorSyncStatusArgs
 
 func (i GetManagementStationsManagementStationCollectionItemMirrorSyncStatusArgs) ToGetManagementStationsManagementStationCollectionItemMirrorSyncStatusOutputWithContext(ctx context.Context) GetManagementStationsManagementStationCollectionItemMirrorSyncStatusOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementStationsManagementStationCollectionItemMirrorSyncStatusOutput)
-}
-
-func (i GetManagementStationsManagementStationCollectionItemMirrorSyncStatusArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagementStationsManagementStationCollectionItemMirrorSyncStatus] {
-	return pulumix.Output[GetManagementStationsManagementStationCollectionItemMirrorSyncStatus]{
-		OutputState: i.ToGetManagementStationsManagementStationCollectionItemMirrorSyncStatusOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetManagementStationsManagementStationCollectionItemMirrorSyncStatusArrayInput is an input type that accepts GetManagementStationsManagementStationCollectionItemMirrorSyncStatusArray and GetManagementStationsManagementStationCollectionItemMirrorSyncStatusArrayOutput values.
@@ -9600,12 +8155,6 @@ func (i GetManagementStationsManagementStationCollectionItemMirrorSyncStatusArra
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementStationsManagementStationCollectionItemMirrorSyncStatusArrayOutput)
 }
 
-func (i GetManagementStationsManagementStationCollectionItemMirrorSyncStatusArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementStationsManagementStationCollectionItemMirrorSyncStatus] {
-	return pulumix.Output[[]GetManagementStationsManagementStationCollectionItemMirrorSyncStatus]{
-		OutputState: i.ToGetManagementStationsManagementStationCollectionItemMirrorSyncStatusArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetManagementStationsManagementStationCollectionItemMirrorSyncStatusOutput struct{ *pulumi.OutputState }
 
 func (GetManagementStationsManagementStationCollectionItemMirrorSyncStatusOutput) ElementType() reflect.Type {
@@ -9620,35 +8169,29 @@ func (o GetManagementStationsManagementStationCollectionItemMirrorSyncStatusOutp
 	return o
 }
 
-func (o GetManagementStationsManagementStationCollectionItemMirrorSyncStatusOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagementStationsManagementStationCollectionItemMirrorSyncStatus] {
-	return pulumix.Output[GetManagementStationsManagementStationCollectionItemMirrorSyncStatus]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Total of mirrors in 'failed' state
-func (o GetManagementStationsManagementStationCollectionItemMirrorSyncStatusOutput) Failed() pulumi.IntOutput {
-	return o.ApplyT(func(v GetManagementStationsManagementStationCollectionItemMirrorSyncStatus) int { return v.Failed }).(pulumi.IntOutput)
+func (o GetManagementStationsManagementStationCollectionItemMirrorSyncStatusOutput) Failed() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetManagementStationsManagementStationCollectionItemMirrorSyncStatus) *int { return v.Failed }).(pulumi.IntPtrOutput)
 }
 
 // Total of mirrors in 'queued' state
-func (o GetManagementStationsManagementStationCollectionItemMirrorSyncStatusOutput) Queued() pulumi.IntOutput {
-	return o.ApplyT(func(v GetManagementStationsManagementStationCollectionItemMirrorSyncStatus) int { return v.Queued }).(pulumi.IntOutput)
+func (o GetManagementStationsManagementStationCollectionItemMirrorSyncStatusOutput) Queued() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetManagementStationsManagementStationCollectionItemMirrorSyncStatus) *int { return v.Queued }).(pulumi.IntPtrOutput)
 }
 
 // Total of mirrors in 'synced' state
-func (o GetManagementStationsManagementStationCollectionItemMirrorSyncStatusOutput) Synced() pulumi.IntOutput {
-	return o.ApplyT(func(v GetManagementStationsManagementStationCollectionItemMirrorSyncStatus) int { return v.Synced }).(pulumi.IntOutput)
+func (o GetManagementStationsManagementStationCollectionItemMirrorSyncStatusOutput) Synced() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetManagementStationsManagementStationCollectionItemMirrorSyncStatus) *int { return v.Synced }).(pulumi.IntPtrOutput)
 }
 
 // Total of mirrors in 'syncing' state
-func (o GetManagementStationsManagementStationCollectionItemMirrorSyncStatusOutput) Syncing() pulumi.IntOutput {
-	return o.ApplyT(func(v GetManagementStationsManagementStationCollectionItemMirrorSyncStatus) int { return v.Syncing }).(pulumi.IntOutput)
+func (o GetManagementStationsManagementStationCollectionItemMirrorSyncStatusOutput) Syncing() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetManagementStationsManagementStationCollectionItemMirrorSyncStatus) *int { return v.Syncing }).(pulumi.IntPtrOutput)
 }
 
 // Total of mirrors in 'failed' state
-func (o GetManagementStationsManagementStationCollectionItemMirrorSyncStatusOutput) Unsynced() pulumi.IntOutput {
-	return o.ApplyT(func(v GetManagementStationsManagementStationCollectionItemMirrorSyncStatus) int { return v.Unsynced }).(pulumi.IntOutput)
+func (o GetManagementStationsManagementStationCollectionItemMirrorSyncStatusOutput) Unsynced() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetManagementStationsManagementStationCollectionItemMirrorSyncStatus) *int { return v.Unsynced }).(pulumi.IntPtrOutput)
 }
 
 type GetManagementStationsManagementStationCollectionItemMirrorSyncStatusArrayOutput struct{ *pulumi.OutputState }
@@ -9665,12 +8208,6 @@ func (o GetManagementStationsManagementStationCollectionItemMirrorSyncStatusArra
 	return o
 }
 
-func (o GetManagementStationsManagementStationCollectionItemMirrorSyncStatusArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementStationsManagementStationCollectionItemMirrorSyncStatus] {
-	return pulumix.Output[[]GetManagementStationsManagementStationCollectionItemMirrorSyncStatus]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetManagementStationsManagementStationCollectionItemMirrorSyncStatusArrayOutput) Index(i pulumi.IntInput) GetManagementStationsManagementStationCollectionItemMirrorSyncStatusOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagementStationsManagementStationCollectionItemMirrorSyncStatus {
 		return vs[0].([]GetManagementStationsManagementStationCollectionItemMirrorSyncStatus)[vs[1].(int)]
@@ -9679,13 +8216,13 @@ func (o GetManagementStationsManagementStationCollectionItemMirrorSyncStatusArra
 
 type GetManagementStationsManagementStationCollectionItemProxy struct {
 	// URL that the proxy will forward to
-	Forward string `pulumi:"forward"`
+	Forward *string `pulumi:"forward"`
 	// List of hosts
 	Hosts []string `pulumi:"hosts"`
 	// To enable or disable the proxy (default true)
-	IsEnabled bool `pulumi:"isEnabled"`
+	IsEnabled *bool `pulumi:"isEnabled"`
 	// Port that the proxy will use
-	Port string `pulumi:"port"`
+	Port *string `pulumi:"port"`
 }
 
 // GetManagementStationsManagementStationCollectionItemProxyInput is an input type that accepts GetManagementStationsManagementStationCollectionItemProxyArgs and GetManagementStationsManagementStationCollectionItemProxyOutput values.
@@ -9701,13 +8238,13 @@ type GetManagementStationsManagementStationCollectionItemProxyInput interface {
 
 type GetManagementStationsManagementStationCollectionItemProxyArgs struct {
 	// URL that the proxy will forward to
-	Forward pulumi.StringInput `pulumi:"forward"`
+	Forward pulumi.StringPtrInput `pulumi:"forward"`
 	// List of hosts
 	Hosts pulumi.StringArrayInput `pulumi:"hosts"`
 	// To enable or disable the proxy (default true)
-	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+	IsEnabled pulumi.BoolPtrInput `pulumi:"isEnabled"`
 	// Port that the proxy will use
-	Port pulumi.StringInput `pulumi:"port"`
+	Port pulumi.StringPtrInput `pulumi:"port"`
 }
 
 func (GetManagementStationsManagementStationCollectionItemProxyArgs) ElementType() reflect.Type {
@@ -9720,12 +8257,6 @@ func (i GetManagementStationsManagementStationCollectionItemProxyArgs) ToGetMana
 
 func (i GetManagementStationsManagementStationCollectionItemProxyArgs) ToGetManagementStationsManagementStationCollectionItemProxyOutputWithContext(ctx context.Context) GetManagementStationsManagementStationCollectionItemProxyOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementStationsManagementStationCollectionItemProxyOutput)
-}
-
-func (i GetManagementStationsManagementStationCollectionItemProxyArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagementStationsManagementStationCollectionItemProxy] {
-	return pulumix.Output[GetManagementStationsManagementStationCollectionItemProxy]{
-		OutputState: i.ToGetManagementStationsManagementStationCollectionItemProxyOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetManagementStationsManagementStationCollectionItemProxyArrayInput is an input type that accepts GetManagementStationsManagementStationCollectionItemProxyArray and GetManagementStationsManagementStationCollectionItemProxyArrayOutput values.
@@ -9753,12 +8284,6 @@ func (i GetManagementStationsManagementStationCollectionItemProxyArray) ToGetMan
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementStationsManagementStationCollectionItemProxyArrayOutput)
 }
 
-func (i GetManagementStationsManagementStationCollectionItemProxyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementStationsManagementStationCollectionItemProxy] {
-	return pulumix.Output[[]GetManagementStationsManagementStationCollectionItemProxy]{
-		OutputState: i.ToGetManagementStationsManagementStationCollectionItemProxyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetManagementStationsManagementStationCollectionItemProxyOutput struct{ *pulumi.OutputState }
 
 func (GetManagementStationsManagementStationCollectionItemProxyOutput) ElementType() reflect.Type {
@@ -9773,15 +8298,9 @@ func (o GetManagementStationsManagementStationCollectionItemProxyOutput) ToGetMa
 	return o
 }
 
-func (o GetManagementStationsManagementStationCollectionItemProxyOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagementStationsManagementStationCollectionItemProxy] {
-	return pulumix.Output[GetManagementStationsManagementStationCollectionItemProxy]{
-		OutputState: o.OutputState,
-	}
-}
-
 // URL that the proxy will forward to
-func (o GetManagementStationsManagementStationCollectionItemProxyOutput) Forward() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementStationsManagementStationCollectionItemProxy) string { return v.Forward }).(pulumi.StringOutput)
+func (o GetManagementStationsManagementStationCollectionItemProxyOutput) Forward() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementStationsManagementStationCollectionItemProxy) *string { return v.Forward }).(pulumi.StringPtrOutput)
 }
 
 // List of hosts
@@ -9790,13 +8309,13 @@ func (o GetManagementStationsManagementStationCollectionItemProxyOutput) Hosts()
 }
 
 // To enable or disable the proxy (default true)
-func (o GetManagementStationsManagementStationCollectionItemProxyOutput) IsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetManagementStationsManagementStationCollectionItemProxy) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+func (o GetManagementStationsManagementStationCollectionItemProxyOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetManagementStationsManagementStationCollectionItemProxy) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // Port that the proxy will use
-func (o GetManagementStationsManagementStationCollectionItemProxyOutput) Port() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementStationsManagementStationCollectionItemProxy) string { return v.Port }).(pulumi.StringOutput)
+func (o GetManagementStationsManagementStationCollectionItemProxyOutput) Port() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementStationsManagementStationCollectionItemProxy) *string { return v.Port }).(pulumi.StringPtrOutput)
 }
 
 type GetManagementStationsManagementStationCollectionItemProxyArrayOutput struct{ *pulumi.OutputState }
@@ -9813,12 +8332,6 @@ func (o GetManagementStationsManagementStationCollectionItemProxyArrayOutput) To
 	return o
 }
 
-func (o GetManagementStationsManagementStationCollectionItemProxyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementStationsManagementStationCollectionItemProxy] {
-	return pulumix.Output[[]GetManagementStationsManagementStationCollectionItemProxy]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetManagementStationsManagementStationCollectionItemProxyArrayOutput) Index(i pulumi.IntInput) GetManagementStationsManagementStationCollectionItemProxyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagementStationsManagementStationCollectionItemProxy {
 		return vs[0].([]GetManagementStationsManagementStationCollectionItemProxy)[vs[1].(int)]
@@ -9827,9 +8340,9 @@ func (o GetManagementStationsManagementStationCollectionItemProxyArrayOutput) In
 
 type GetProfileLifecycleEnvironment struct {
 	// Software source name.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The OCID of the software source.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 // GetProfileLifecycleEnvironmentInput is an input type that accepts GetProfileLifecycleEnvironmentArgs and GetProfileLifecycleEnvironmentOutput values.
@@ -9845,9 +8358,9 @@ type GetProfileLifecycleEnvironmentInput interface {
 
 type GetProfileLifecycleEnvironmentArgs struct {
 	// Software source name.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// The OCID of the software source.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 }
 
 func (GetProfileLifecycleEnvironmentArgs) ElementType() reflect.Type {
@@ -9860,12 +8373,6 @@ func (i GetProfileLifecycleEnvironmentArgs) ToGetProfileLifecycleEnvironmentOutp
 
 func (i GetProfileLifecycleEnvironmentArgs) ToGetProfileLifecycleEnvironmentOutputWithContext(ctx context.Context) GetProfileLifecycleEnvironmentOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfileLifecycleEnvironmentOutput)
-}
-
-func (i GetProfileLifecycleEnvironmentArgs) ToOutput(ctx context.Context) pulumix.Output[GetProfileLifecycleEnvironment] {
-	return pulumix.Output[GetProfileLifecycleEnvironment]{
-		OutputState: i.ToGetProfileLifecycleEnvironmentOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetProfileLifecycleEnvironmentArrayInput is an input type that accepts GetProfileLifecycleEnvironmentArray and GetProfileLifecycleEnvironmentArrayOutput values.
@@ -9893,12 +8400,6 @@ func (i GetProfileLifecycleEnvironmentArray) ToGetProfileLifecycleEnvironmentArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfileLifecycleEnvironmentArrayOutput)
 }
 
-func (i GetProfileLifecycleEnvironmentArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProfileLifecycleEnvironment] {
-	return pulumix.Output[[]GetProfileLifecycleEnvironment]{
-		OutputState: i.ToGetProfileLifecycleEnvironmentArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetProfileLifecycleEnvironmentOutput struct{ *pulumi.OutputState }
 
 func (GetProfileLifecycleEnvironmentOutput) ElementType() reflect.Type {
@@ -9913,20 +8414,14 @@ func (o GetProfileLifecycleEnvironmentOutput) ToGetProfileLifecycleEnvironmentOu
 	return o
 }
 
-func (o GetProfileLifecycleEnvironmentOutput) ToOutput(ctx context.Context) pulumix.Output[GetProfileLifecycleEnvironment] {
-	return pulumix.Output[GetProfileLifecycleEnvironment]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Software source name.
-func (o GetProfileLifecycleEnvironmentOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProfileLifecycleEnvironment) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetProfileLifecycleEnvironmentOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProfileLifecycleEnvironment) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the software source.
-func (o GetProfileLifecycleEnvironmentOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProfileLifecycleEnvironment) string { return v.Id }).(pulumi.StringOutput)
+func (o GetProfileLifecycleEnvironmentOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProfileLifecycleEnvironment) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 type GetProfileLifecycleEnvironmentArrayOutput struct{ *pulumi.OutputState }
@@ -9943,12 +8438,6 @@ func (o GetProfileLifecycleEnvironmentArrayOutput) ToGetProfileLifecycleEnvironm
 	return o
 }
 
-func (o GetProfileLifecycleEnvironmentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProfileLifecycleEnvironment] {
-	return pulumix.Output[[]GetProfileLifecycleEnvironment]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetProfileLifecycleEnvironmentArrayOutput) Index(i pulumi.IntInput) GetProfileLifecycleEnvironmentOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProfileLifecycleEnvironment {
 		return vs[0].([]GetProfileLifecycleEnvironment)[vs[1].(int)]
@@ -9957,9 +8446,9 @@ func (o GetProfileLifecycleEnvironmentArrayOutput) Index(i pulumi.IntInput) GetP
 
 type GetProfileLifecycleStage struct {
 	// Software source name.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The OCID of the software source.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 // GetProfileLifecycleStageInput is an input type that accepts GetProfileLifecycleStageArgs and GetProfileLifecycleStageOutput values.
@@ -9975,9 +8464,9 @@ type GetProfileLifecycleStageInput interface {
 
 type GetProfileLifecycleStageArgs struct {
 	// Software source name.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// The OCID of the software source.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 }
 
 func (GetProfileLifecycleStageArgs) ElementType() reflect.Type {
@@ -9990,12 +8479,6 @@ func (i GetProfileLifecycleStageArgs) ToGetProfileLifecycleStageOutput() GetProf
 
 func (i GetProfileLifecycleStageArgs) ToGetProfileLifecycleStageOutputWithContext(ctx context.Context) GetProfileLifecycleStageOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfileLifecycleStageOutput)
-}
-
-func (i GetProfileLifecycleStageArgs) ToOutput(ctx context.Context) pulumix.Output[GetProfileLifecycleStage] {
-	return pulumix.Output[GetProfileLifecycleStage]{
-		OutputState: i.ToGetProfileLifecycleStageOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetProfileLifecycleStageArrayInput is an input type that accepts GetProfileLifecycleStageArray and GetProfileLifecycleStageArrayOutput values.
@@ -10023,12 +8506,6 @@ func (i GetProfileLifecycleStageArray) ToGetProfileLifecycleStageArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfileLifecycleStageArrayOutput)
 }
 
-func (i GetProfileLifecycleStageArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProfileLifecycleStage] {
-	return pulumix.Output[[]GetProfileLifecycleStage]{
-		OutputState: i.ToGetProfileLifecycleStageArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetProfileLifecycleStageOutput struct{ *pulumi.OutputState }
 
 func (GetProfileLifecycleStageOutput) ElementType() reflect.Type {
@@ -10043,20 +8520,14 @@ func (o GetProfileLifecycleStageOutput) ToGetProfileLifecycleStageOutputWithCont
 	return o
 }
 
-func (o GetProfileLifecycleStageOutput) ToOutput(ctx context.Context) pulumix.Output[GetProfileLifecycleStage] {
-	return pulumix.Output[GetProfileLifecycleStage]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Software source name.
-func (o GetProfileLifecycleStageOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProfileLifecycleStage) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetProfileLifecycleStageOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProfileLifecycleStage) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the software source.
-func (o GetProfileLifecycleStageOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProfileLifecycleStage) string { return v.Id }).(pulumi.StringOutput)
+func (o GetProfileLifecycleStageOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProfileLifecycleStage) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 type GetProfileLifecycleStageArrayOutput struct{ *pulumi.OutputState }
@@ -10073,12 +8544,6 @@ func (o GetProfileLifecycleStageArrayOutput) ToGetProfileLifecycleStageArrayOutp
 	return o
 }
 
-func (o GetProfileLifecycleStageArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProfileLifecycleStage] {
-	return pulumix.Output[[]GetProfileLifecycleStage]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetProfileLifecycleStageArrayOutput) Index(i pulumi.IntInput) GetProfileLifecycleStageOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProfileLifecycleStage {
 		return vs[0].([]GetProfileLifecycleStage)[vs[1].(int)]
@@ -10087,9 +8552,9 @@ func (o GetProfileLifecycleStageArrayOutput) Index(i pulumi.IntInput) GetProfile
 
 type GetProfileManagedInstanceGroup struct {
 	// Software source name.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The OCID of the software source.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 // GetProfileManagedInstanceGroupInput is an input type that accepts GetProfileManagedInstanceGroupArgs and GetProfileManagedInstanceGroupOutput values.
@@ -10105,9 +8570,9 @@ type GetProfileManagedInstanceGroupInput interface {
 
 type GetProfileManagedInstanceGroupArgs struct {
 	// Software source name.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// The OCID of the software source.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 }
 
 func (GetProfileManagedInstanceGroupArgs) ElementType() reflect.Type {
@@ -10120,12 +8585,6 @@ func (i GetProfileManagedInstanceGroupArgs) ToGetProfileManagedInstanceGroupOutp
 
 func (i GetProfileManagedInstanceGroupArgs) ToGetProfileManagedInstanceGroupOutputWithContext(ctx context.Context) GetProfileManagedInstanceGroupOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfileManagedInstanceGroupOutput)
-}
-
-func (i GetProfileManagedInstanceGroupArgs) ToOutput(ctx context.Context) pulumix.Output[GetProfileManagedInstanceGroup] {
-	return pulumix.Output[GetProfileManagedInstanceGroup]{
-		OutputState: i.ToGetProfileManagedInstanceGroupOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetProfileManagedInstanceGroupArrayInput is an input type that accepts GetProfileManagedInstanceGroupArray and GetProfileManagedInstanceGroupArrayOutput values.
@@ -10153,12 +8612,6 @@ func (i GetProfileManagedInstanceGroupArray) ToGetProfileManagedInstanceGroupArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfileManagedInstanceGroupArrayOutput)
 }
 
-func (i GetProfileManagedInstanceGroupArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProfileManagedInstanceGroup] {
-	return pulumix.Output[[]GetProfileManagedInstanceGroup]{
-		OutputState: i.ToGetProfileManagedInstanceGroupArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetProfileManagedInstanceGroupOutput struct{ *pulumi.OutputState }
 
 func (GetProfileManagedInstanceGroupOutput) ElementType() reflect.Type {
@@ -10173,20 +8626,14 @@ func (o GetProfileManagedInstanceGroupOutput) ToGetProfileManagedInstanceGroupOu
 	return o
 }
 
-func (o GetProfileManagedInstanceGroupOutput) ToOutput(ctx context.Context) pulumix.Output[GetProfileManagedInstanceGroup] {
-	return pulumix.Output[GetProfileManagedInstanceGroup]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Software source name.
-func (o GetProfileManagedInstanceGroupOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProfileManagedInstanceGroup) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetProfileManagedInstanceGroupOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProfileManagedInstanceGroup) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the software source.
-func (o GetProfileManagedInstanceGroupOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProfileManagedInstanceGroup) string { return v.Id }).(pulumi.StringOutput)
+func (o GetProfileManagedInstanceGroupOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProfileManagedInstanceGroup) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 type GetProfileManagedInstanceGroupArrayOutput struct{ *pulumi.OutputState }
@@ -10203,12 +8650,6 @@ func (o GetProfileManagedInstanceGroupArrayOutput) ToGetProfileManagedInstanceGr
 	return o
 }
 
-func (o GetProfileManagedInstanceGroupArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProfileManagedInstanceGroup] {
-	return pulumix.Output[[]GetProfileManagedInstanceGroup]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetProfileManagedInstanceGroupArrayOutput) Index(i pulumi.IntInput) GetProfileManagedInstanceGroupOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProfileManagedInstanceGroup {
 		return vs[0].([]GetProfileManagedInstanceGroup)[vs[1].(int)]
@@ -10217,13 +8658,13 @@ func (o GetProfileManagedInstanceGroupArrayOutput) Index(i pulumi.IntInput) GetP
 
 type GetProfileSoftwareSource struct {
 	// Software source description.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Software source name.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The OCID of the software source.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Type of the software source.
-	SoftwareSourceType string `pulumi:"softwareSourceType"`
+	SoftwareSourceType *string `pulumi:"softwareSourceType"`
 }
 
 // GetProfileSoftwareSourceInput is an input type that accepts GetProfileSoftwareSourceArgs and GetProfileSoftwareSourceOutput values.
@@ -10239,13 +8680,13 @@ type GetProfileSoftwareSourceInput interface {
 
 type GetProfileSoftwareSourceArgs struct {
 	// Software source description.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// Software source name.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// The OCID of the software source.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Type of the software source.
-	SoftwareSourceType pulumi.StringInput `pulumi:"softwareSourceType"`
+	SoftwareSourceType pulumi.StringPtrInput `pulumi:"softwareSourceType"`
 }
 
 func (GetProfileSoftwareSourceArgs) ElementType() reflect.Type {
@@ -10258,12 +8699,6 @@ func (i GetProfileSoftwareSourceArgs) ToGetProfileSoftwareSourceOutput() GetProf
 
 func (i GetProfileSoftwareSourceArgs) ToGetProfileSoftwareSourceOutputWithContext(ctx context.Context) GetProfileSoftwareSourceOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfileSoftwareSourceOutput)
-}
-
-func (i GetProfileSoftwareSourceArgs) ToOutput(ctx context.Context) pulumix.Output[GetProfileSoftwareSource] {
-	return pulumix.Output[GetProfileSoftwareSource]{
-		OutputState: i.ToGetProfileSoftwareSourceOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetProfileSoftwareSourceArrayInput is an input type that accepts GetProfileSoftwareSourceArray and GetProfileSoftwareSourceArrayOutput values.
@@ -10291,12 +8726,6 @@ func (i GetProfileSoftwareSourceArray) ToGetProfileSoftwareSourceArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfileSoftwareSourceArrayOutput)
 }
 
-func (i GetProfileSoftwareSourceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProfileSoftwareSource] {
-	return pulumix.Output[[]GetProfileSoftwareSource]{
-		OutputState: i.ToGetProfileSoftwareSourceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetProfileSoftwareSourceOutput struct{ *pulumi.OutputState }
 
 func (GetProfileSoftwareSourceOutput) ElementType() reflect.Type {
@@ -10311,30 +8740,24 @@ func (o GetProfileSoftwareSourceOutput) ToGetProfileSoftwareSourceOutputWithCont
 	return o
 }
 
-func (o GetProfileSoftwareSourceOutput) ToOutput(ctx context.Context) pulumix.Output[GetProfileSoftwareSource] {
-	return pulumix.Output[GetProfileSoftwareSource]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Software source description.
-func (o GetProfileSoftwareSourceOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProfileSoftwareSource) string { return v.Description }).(pulumi.StringOutput)
+func (o GetProfileSoftwareSourceOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProfileSoftwareSource) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Software source name.
-func (o GetProfileSoftwareSourceOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProfileSoftwareSource) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetProfileSoftwareSourceOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProfileSoftwareSource) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the software source.
-func (o GetProfileSoftwareSourceOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProfileSoftwareSource) string { return v.Id }).(pulumi.StringOutput)
+func (o GetProfileSoftwareSourceOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProfileSoftwareSource) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Type of the software source.
-func (o GetProfileSoftwareSourceOutput) SoftwareSourceType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProfileSoftwareSource) string { return v.SoftwareSourceType }).(pulumi.StringOutput)
+func (o GetProfileSoftwareSourceOutput) SoftwareSourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProfileSoftwareSource) *string { return v.SoftwareSourceType }).(pulumi.StringPtrOutput)
 }
 
 type GetProfileSoftwareSourceArrayOutput struct{ *pulumi.OutputState }
@@ -10349,12 +8772,6 @@ func (o GetProfileSoftwareSourceArrayOutput) ToGetProfileSoftwareSourceArrayOutp
 
 func (o GetProfileSoftwareSourceArrayOutput) ToGetProfileSoftwareSourceArrayOutputWithContext(ctx context.Context) GetProfileSoftwareSourceArrayOutput {
 	return o
-}
-
-func (o GetProfileSoftwareSourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProfileSoftwareSource] {
-	return pulumix.Output[[]GetProfileSoftwareSource]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetProfileSoftwareSourceArrayOutput) Index(i pulumi.IntInput) GetProfileSoftwareSourceOutput {
@@ -10398,12 +8815,6 @@ func (i GetProfilesFilterArgs) ToGetProfilesFilterOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfilesFilterOutput)
 }
 
-func (i GetProfilesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetProfilesFilter] {
-	return pulumix.Output[GetProfilesFilter]{
-		OutputState: i.ToGetProfilesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetProfilesFilterArrayInput is an input type that accepts GetProfilesFilterArray and GetProfilesFilterArrayOutput values.
 // You can construct a concrete instance of `GetProfilesFilterArrayInput` via:
 //
@@ -10429,12 +8840,6 @@ func (i GetProfilesFilterArray) ToGetProfilesFilterArrayOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfilesFilterArrayOutput)
 }
 
-func (i GetProfilesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProfilesFilter] {
-	return pulumix.Output[[]GetProfilesFilter]{
-		OutputState: i.ToGetProfilesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetProfilesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetProfilesFilterOutput) ElementType() reflect.Type {
@@ -10447,12 +8852,6 @@ func (o GetProfilesFilterOutput) ToGetProfilesFilterOutput() GetProfilesFilterOu
 
 func (o GetProfilesFilterOutput) ToGetProfilesFilterOutputWithContext(ctx context.Context) GetProfilesFilterOutput {
 	return o
-}
-
-func (o GetProfilesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetProfilesFilter] {
-	return pulumix.Output[GetProfilesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetProfilesFilterOutput) Name() pulumi.StringOutput {
@@ -10479,12 +8878,6 @@ func (o GetProfilesFilterArrayOutput) ToGetProfilesFilterArrayOutput() GetProfil
 
 func (o GetProfilesFilterArrayOutput) ToGetProfilesFilterArrayOutputWithContext(ctx context.Context) GetProfilesFilterArrayOutput {
 	return o
-}
-
-func (o GetProfilesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProfilesFilter] {
-	return pulumix.Output[[]GetProfilesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetProfilesFilterArrayOutput) Index(i pulumi.IntInput) GetProfilesFilterOutput {
@@ -10524,12 +8917,6 @@ func (i GetProfilesProfileCollectionArgs) ToGetProfilesProfileCollectionOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfilesProfileCollectionOutput)
 }
 
-func (i GetProfilesProfileCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetProfilesProfileCollection] {
-	return pulumix.Output[GetProfilesProfileCollection]{
-		OutputState: i.ToGetProfilesProfileCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetProfilesProfileCollectionArrayInput is an input type that accepts GetProfilesProfileCollectionArray and GetProfilesProfileCollectionArrayOutput values.
 // You can construct a concrete instance of `GetProfilesProfileCollectionArrayInput` via:
 //
@@ -10555,12 +8942,6 @@ func (i GetProfilesProfileCollectionArray) ToGetProfilesProfileCollectionArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfilesProfileCollectionArrayOutput)
 }
 
-func (i GetProfilesProfileCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProfilesProfileCollection] {
-	return pulumix.Output[[]GetProfilesProfileCollection]{
-		OutputState: i.ToGetProfilesProfileCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetProfilesProfileCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetProfilesProfileCollectionOutput) ElementType() reflect.Type {
@@ -10573,12 +8954,6 @@ func (o GetProfilesProfileCollectionOutput) ToGetProfilesProfileCollectionOutput
 
 func (o GetProfilesProfileCollectionOutput) ToGetProfilesProfileCollectionOutputWithContext(ctx context.Context) GetProfilesProfileCollectionOutput {
 	return o
-}
-
-func (o GetProfilesProfileCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetProfilesProfileCollection] {
-	return pulumix.Output[GetProfilesProfileCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetProfilesProfileCollectionOutput) Items() GetProfilesProfileCollectionItemArrayOutput {
@@ -10599,12 +8974,6 @@ func (o GetProfilesProfileCollectionArrayOutput) ToGetProfilesProfileCollectionA
 	return o
 }
 
-func (o GetProfilesProfileCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProfilesProfileCollection] {
-	return pulumix.Output[[]GetProfilesProfileCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetProfilesProfileCollectionArrayOutput) Index(i pulumi.IntInput) GetProfilesProfileCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProfilesProfileCollection {
 		return vs[0].([]GetProfilesProfileCollection)[vs[1].(int)]
@@ -10613,44 +8982,44 @@ func (o GetProfilesProfileCollectionArrayOutput) Index(i pulumi.IntInput) GetPro
 
 type GetProfilesProfileCollectionItem struct {
 	// A filter to return only profiles that match the given archType.
-	ArchType string `pulumi:"archType"`
+	ArchType *string `pulumi:"archType"`
 	// The OCID of the compartment that contains the resources to list.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Software source description.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// A filter to return resources that match the given display names.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the software source.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Identifying information for the specified lifecycle environment.
 	LifecycleEnvironments []GetProfilesProfileCollectionItemLifecycleEnvironment `pulumi:"lifecycleEnvironments"`
-	LifecycleStageId      string                                                 `pulumi:"lifecycleStageId"`
+	LifecycleStageId      *string                                                `pulumi:"lifecycleStageId"`
 	// Identifying information for the specified lifecycle stage.
 	LifecycleStages        []GetProfilesProfileCollectionItemLifecycleStage `pulumi:"lifecycleStages"`
-	ManagedInstanceGroupId string                                           `pulumi:"managedInstanceGroupId"`
+	ManagedInstanceGroupId *string                                          `pulumi:"managedInstanceGroupId"`
 	// Identifying information for the specified managed instance group.
 	ManagedInstanceGroups []GetProfilesProfileCollectionItemManagedInstanceGroup `pulumi:"managedInstanceGroups"`
 	// The OCID of the management station.
-	ManagementStationId string `pulumi:"managementStationId"`
+	ManagementStationId *string `pulumi:"managementStationId"`
 	// A filter to return only profiles that match the given osFamily.
-	OsFamily string `pulumi:"osFamily"`
+	OsFamily *string `pulumi:"osFamily"`
 	// A filter to return registration profiles that match the given profileType.
-	ProfileType       string   `pulumi:"profileType"`
+	ProfileType       *string  `pulumi:"profileType"`
 	SoftwareSourceIds []string `pulumi:"softwareSourceIds"`
 	// The list of software sources that the registration profile will use.
 	SoftwareSources []GetProfilesProfileCollectionItemSoftwareSource `pulumi:"softwareSources"`
 	// A filter to return only registration profile whose lifecycleState matches the given lifecycleState.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time the the registration profile was created. An RFC3339 formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// A filter to return only profiles that match the given vendorName.
-	VendorName string `pulumi:"vendorName"`
+	VendorName *string `pulumi:"vendorName"`
 }
 
 // GetProfilesProfileCollectionItemInput is an input type that accepts GetProfilesProfileCollectionItemArgs and GetProfilesProfileCollectionItemOutput values.
@@ -10666,44 +9035,44 @@ type GetProfilesProfileCollectionItemInput interface {
 
 type GetProfilesProfileCollectionItemArgs struct {
 	// A filter to return only profiles that match the given archType.
-	ArchType pulumi.StringInput `pulumi:"archType"`
+	ArchType pulumi.StringPtrInput `pulumi:"archType"`
 	// The OCID of the compartment that contains the resources to list.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// Software source description.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// A filter to return resources that match the given display names.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The OCID of the software source.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Identifying information for the specified lifecycle environment.
 	LifecycleEnvironments GetProfilesProfileCollectionItemLifecycleEnvironmentArrayInput `pulumi:"lifecycleEnvironments"`
-	LifecycleStageId      pulumi.StringInput                                             `pulumi:"lifecycleStageId"`
+	LifecycleStageId      pulumi.StringPtrInput                                          `pulumi:"lifecycleStageId"`
 	// Identifying information for the specified lifecycle stage.
 	LifecycleStages        GetProfilesProfileCollectionItemLifecycleStageArrayInput `pulumi:"lifecycleStages"`
-	ManagedInstanceGroupId pulumi.StringInput                                       `pulumi:"managedInstanceGroupId"`
+	ManagedInstanceGroupId pulumi.StringPtrInput                                    `pulumi:"managedInstanceGroupId"`
 	// Identifying information for the specified managed instance group.
 	ManagedInstanceGroups GetProfilesProfileCollectionItemManagedInstanceGroupArrayInput `pulumi:"managedInstanceGroups"`
 	// The OCID of the management station.
-	ManagementStationId pulumi.StringInput `pulumi:"managementStationId"`
+	ManagementStationId pulumi.StringPtrInput `pulumi:"managementStationId"`
 	// A filter to return only profiles that match the given osFamily.
-	OsFamily pulumi.StringInput `pulumi:"osFamily"`
+	OsFamily pulumi.StringPtrInput `pulumi:"osFamily"`
 	// A filter to return registration profiles that match the given profileType.
-	ProfileType       pulumi.StringInput      `pulumi:"profileType"`
+	ProfileType       pulumi.StringPtrInput   `pulumi:"profileType"`
 	SoftwareSourceIds pulumi.StringArrayInput `pulumi:"softwareSourceIds"`
 	// The list of software sources that the registration profile will use.
 	SoftwareSources GetProfilesProfileCollectionItemSoftwareSourceArrayInput `pulumi:"softwareSources"`
 	// A filter to return only registration profile whose lifecycleState matches the given lifecycleState.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// The time the the registration profile was created. An RFC3339 formatted datetime string.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// A filter to return only profiles that match the given vendorName.
-	VendorName pulumi.StringInput `pulumi:"vendorName"`
+	VendorName pulumi.StringPtrInput `pulumi:"vendorName"`
 }
 
 func (GetProfilesProfileCollectionItemArgs) ElementType() reflect.Type {
@@ -10716,12 +9085,6 @@ func (i GetProfilesProfileCollectionItemArgs) ToGetProfilesProfileCollectionItem
 
 func (i GetProfilesProfileCollectionItemArgs) ToGetProfilesProfileCollectionItemOutputWithContext(ctx context.Context) GetProfilesProfileCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfilesProfileCollectionItemOutput)
-}
-
-func (i GetProfilesProfileCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetProfilesProfileCollectionItem] {
-	return pulumix.Output[GetProfilesProfileCollectionItem]{
-		OutputState: i.ToGetProfilesProfileCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetProfilesProfileCollectionItemArrayInput is an input type that accepts GetProfilesProfileCollectionItemArray and GetProfilesProfileCollectionItemArrayOutput values.
@@ -10749,12 +9112,6 @@ func (i GetProfilesProfileCollectionItemArray) ToGetProfilesProfileCollectionIte
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfilesProfileCollectionItemArrayOutput)
 }
 
-func (i GetProfilesProfileCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProfilesProfileCollectionItem] {
-	return pulumix.Output[[]GetProfilesProfileCollectionItem]{
-		OutputState: i.ToGetProfilesProfileCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetProfilesProfileCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetProfilesProfileCollectionItemOutput) ElementType() reflect.Type {
@@ -10769,20 +9126,14 @@ func (o GetProfilesProfileCollectionItemOutput) ToGetProfilesProfileCollectionIt
 	return o
 }
 
-func (o GetProfilesProfileCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetProfilesProfileCollectionItem] {
-	return pulumix.Output[GetProfilesProfileCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A filter to return only profiles that match the given archType.
-func (o GetProfilesProfileCollectionItemOutput) ArchType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProfilesProfileCollectionItem) string { return v.ArchType }).(pulumi.StringOutput)
+func (o GetProfilesProfileCollectionItemOutput) ArchType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProfilesProfileCollectionItem) *string { return v.ArchType }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the compartment that contains the resources to list.
-func (o GetProfilesProfileCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProfilesProfileCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetProfilesProfileCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProfilesProfileCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -10791,13 +9142,13 @@ func (o GetProfilesProfileCollectionItemOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // Software source description.
-func (o GetProfilesProfileCollectionItemOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProfilesProfileCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+func (o GetProfilesProfileCollectionItemOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProfilesProfileCollectionItem) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return resources that match the given display names.
-func (o GetProfilesProfileCollectionItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProfilesProfileCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetProfilesProfileCollectionItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProfilesProfileCollectionItem) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -10806,8 +9157,8 @@ func (o GetProfilesProfileCollectionItemOutput) FreeformTags() pulumi.MapOutput 
 }
 
 // The OCID of the software source.
-func (o GetProfilesProfileCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProfilesProfileCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetProfilesProfileCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProfilesProfileCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Identifying information for the specified lifecycle environment.
@@ -10817,8 +9168,8 @@ func (o GetProfilesProfileCollectionItemOutput) LifecycleEnvironments() GetProfi
 	}).(GetProfilesProfileCollectionItemLifecycleEnvironmentArrayOutput)
 }
 
-func (o GetProfilesProfileCollectionItemOutput) LifecycleStageId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProfilesProfileCollectionItem) string { return v.LifecycleStageId }).(pulumi.StringOutput)
+func (o GetProfilesProfileCollectionItemOutput) LifecycleStageId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProfilesProfileCollectionItem) *string { return v.LifecycleStageId }).(pulumi.StringPtrOutput)
 }
 
 // Identifying information for the specified lifecycle stage.
@@ -10828,8 +9179,8 @@ func (o GetProfilesProfileCollectionItemOutput) LifecycleStages() GetProfilesPro
 	}).(GetProfilesProfileCollectionItemLifecycleStageArrayOutput)
 }
 
-func (o GetProfilesProfileCollectionItemOutput) ManagedInstanceGroupId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProfilesProfileCollectionItem) string { return v.ManagedInstanceGroupId }).(pulumi.StringOutput)
+func (o GetProfilesProfileCollectionItemOutput) ManagedInstanceGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProfilesProfileCollectionItem) *string { return v.ManagedInstanceGroupId }).(pulumi.StringPtrOutput)
 }
 
 // Identifying information for the specified managed instance group.
@@ -10840,18 +9191,18 @@ func (o GetProfilesProfileCollectionItemOutput) ManagedInstanceGroups() GetProfi
 }
 
 // The OCID of the management station.
-func (o GetProfilesProfileCollectionItemOutput) ManagementStationId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProfilesProfileCollectionItem) string { return v.ManagementStationId }).(pulumi.StringOutput)
+func (o GetProfilesProfileCollectionItemOutput) ManagementStationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProfilesProfileCollectionItem) *string { return v.ManagementStationId }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only profiles that match the given osFamily.
-func (o GetProfilesProfileCollectionItemOutput) OsFamily() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProfilesProfileCollectionItem) string { return v.OsFamily }).(pulumi.StringOutput)
+func (o GetProfilesProfileCollectionItemOutput) OsFamily() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProfilesProfileCollectionItem) *string { return v.OsFamily }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return registration profiles that match the given profileType.
-func (o GetProfilesProfileCollectionItemOutput) ProfileType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProfilesProfileCollectionItem) string { return v.ProfileType }).(pulumi.StringOutput)
+func (o GetProfilesProfileCollectionItemOutput) ProfileType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProfilesProfileCollectionItem) *string { return v.ProfileType }).(pulumi.StringPtrOutput)
 }
 
 func (o GetProfilesProfileCollectionItemOutput) SoftwareSourceIds() pulumi.StringArrayOutput {
@@ -10866,8 +9217,8 @@ func (o GetProfilesProfileCollectionItemOutput) SoftwareSources() GetProfilesPro
 }
 
 // A filter to return only registration profile whose lifecycleState matches the given lifecycleState.
-func (o GetProfilesProfileCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProfilesProfileCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetProfilesProfileCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProfilesProfileCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -10876,13 +9227,13 @@ func (o GetProfilesProfileCollectionItemOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time the the registration profile was created. An RFC3339 formatted datetime string.
-func (o GetProfilesProfileCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProfilesProfileCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetProfilesProfileCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProfilesProfileCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only profiles that match the given vendorName.
-func (o GetProfilesProfileCollectionItemOutput) VendorName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProfilesProfileCollectionItem) string { return v.VendorName }).(pulumi.StringOutput)
+func (o GetProfilesProfileCollectionItemOutput) VendorName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProfilesProfileCollectionItem) *string { return v.VendorName }).(pulumi.StringPtrOutput)
 }
 
 type GetProfilesProfileCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -10899,12 +9250,6 @@ func (o GetProfilesProfileCollectionItemArrayOutput) ToGetProfilesProfileCollect
 	return o
 }
 
-func (o GetProfilesProfileCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProfilesProfileCollectionItem] {
-	return pulumix.Output[[]GetProfilesProfileCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetProfilesProfileCollectionItemArrayOutput) Index(i pulumi.IntInput) GetProfilesProfileCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProfilesProfileCollectionItem {
 		return vs[0].([]GetProfilesProfileCollectionItem)[vs[1].(int)]
@@ -10913,9 +9258,9 @@ func (o GetProfilesProfileCollectionItemArrayOutput) Index(i pulumi.IntInput) Ge
 
 type GetProfilesProfileCollectionItemLifecycleEnvironment struct {
 	// A filter to return resources that match the given display names.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The OCID of the software source.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 // GetProfilesProfileCollectionItemLifecycleEnvironmentInput is an input type that accepts GetProfilesProfileCollectionItemLifecycleEnvironmentArgs and GetProfilesProfileCollectionItemLifecycleEnvironmentOutput values.
@@ -10931,9 +9276,9 @@ type GetProfilesProfileCollectionItemLifecycleEnvironmentInput interface {
 
 type GetProfilesProfileCollectionItemLifecycleEnvironmentArgs struct {
 	// A filter to return resources that match the given display names.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// The OCID of the software source.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 }
 
 func (GetProfilesProfileCollectionItemLifecycleEnvironmentArgs) ElementType() reflect.Type {
@@ -10946,12 +9291,6 @@ func (i GetProfilesProfileCollectionItemLifecycleEnvironmentArgs) ToGetProfilesP
 
 func (i GetProfilesProfileCollectionItemLifecycleEnvironmentArgs) ToGetProfilesProfileCollectionItemLifecycleEnvironmentOutputWithContext(ctx context.Context) GetProfilesProfileCollectionItemLifecycleEnvironmentOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfilesProfileCollectionItemLifecycleEnvironmentOutput)
-}
-
-func (i GetProfilesProfileCollectionItemLifecycleEnvironmentArgs) ToOutput(ctx context.Context) pulumix.Output[GetProfilesProfileCollectionItemLifecycleEnvironment] {
-	return pulumix.Output[GetProfilesProfileCollectionItemLifecycleEnvironment]{
-		OutputState: i.ToGetProfilesProfileCollectionItemLifecycleEnvironmentOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetProfilesProfileCollectionItemLifecycleEnvironmentArrayInput is an input type that accepts GetProfilesProfileCollectionItemLifecycleEnvironmentArray and GetProfilesProfileCollectionItemLifecycleEnvironmentArrayOutput values.
@@ -10979,12 +9318,6 @@ func (i GetProfilesProfileCollectionItemLifecycleEnvironmentArray) ToGetProfiles
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfilesProfileCollectionItemLifecycleEnvironmentArrayOutput)
 }
 
-func (i GetProfilesProfileCollectionItemLifecycleEnvironmentArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProfilesProfileCollectionItemLifecycleEnvironment] {
-	return pulumix.Output[[]GetProfilesProfileCollectionItemLifecycleEnvironment]{
-		OutputState: i.ToGetProfilesProfileCollectionItemLifecycleEnvironmentArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetProfilesProfileCollectionItemLifecycleEnvironmentOutput struct{ *pulumi.OutputState }
 
 func (GetProfilesProfileCollectionItemLifecycleEnvironmentOutput) ElementType() reflect.Type {
@@ -10999,20 +9332,14 @@ func (o GetProfilesProfileCollectionItemLifecycleEnvironmentOutput) ToGetProfile
 	return o
 }
 
-func (o GetProfilesProfileCollectionItemLifecycleEnvironmentOutput) ToOutput(ctx context.Context) pulumix.Output[GetProfilesProfileCollectionItemLifecycleEnvironment] {
-	return pulumix.Output[GetProfilesProfileCollectionItemLifecycleEnvironment]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A filter to return resources that match the given display names.
-func (o GetProfilesProfileCollectionItemLifecycleEnvironmentOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProfilesProfileCollectionItemLifecycleEnvironment) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetProfilesProfileCollectionItemLifecycleEnvironmentOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProfilesProfileCollectionItemLifecycleEnvironment) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the software source.
-func (o GetProfilesProfileCollectionItemLifecycleEnvironmentOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProfilesProfileCollectionItemLifecycleEnvironment) string { return v.Id }).(pulumi.StringOutput)
+func (o GetProfilesProfileCollectionItemLifecycleEnvironmentOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProfilesProfileCollectionItemLifecycleEnvironment) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 type GetProfilesProfileCollectionItemLifecycleEnvironmentArrayOutput struct{ *pulumi.OutputState }
@@ -11029,12 +9356,6 @@ func (o GetProfilesProfileCollectionItemLifecycleEnvironmentArrayOutput) ToGetPr
 	return o
 }
 
-func (o GetProfilesProfileCollectionItemLifecycleEnvironmentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProfilesProfileCollectionItemLifecycleEnvironment] {
-	return pulumix.Output[[]GetProfilesProfileCollectionItemLifecycleEnvironment]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetProfilesProfileCollectionItemLifecycleEnvironmentArrayOutput) Index(i pulumi.IntInput) GetProfilesProfileCollectionItemLifecycleEnvironmentOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProfilesProfileCollectionItemLifecycleEnvironment {
 		return vs[0].([]GetProfilesProfileCollectionItemLifecycleEnvironment)[vs[1].(int)]
@@ -11043,9 +9364,9 @@ func (o GetProfilesProfileCollectionItemLifecycleEnvironmentArrayOutput) Index(i
 
 type GetProfilesProfileCollectionItemLifecycleStage struct {
 	// A filter to return resources that match the given display names.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The OCID of the software source.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 // GetProfilesProfileCollectionItemLifecycleStageInput is an input type that accepts GetProfilesProfileCollectionItemLifecycleStageArgs and GetProfilesProfileCollectionItemLifecycleStageOutput values.
@@ -11061,9 +9382,9 @@ type GetProfilesProfileCollectionItemLifecycleStageInput interface {
 
 type GetProfilesProfileCollectionItemLifecycleStageArgs struct {
 	// A filter to return resources that match the given display names.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// The OCID of the software source.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 }
 
 func (GetProfilesProfileCollectionItemLifecycleStageArgs) ElementType() reflect.Type {
@@ -11076,12 +9397,6 @@ func (i GetProfilesProfileCollectionItemLifecycleStageArgs) ToGetProfilesProfile
 
 func (i GetProfilesProfileCollectionItemLifecycleStageArgs) ToGetProfilesProfileCollectionItemLifecycleStageOutputWithContext(ctx context.Context) GetProfilesProfileCollectionItemLifecycleStageOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfilesProfileCollectionItemLifecycleStageOutput)
-}
-
-func (i GetProfilesProfileCollectionItemLifecycleStageArgs) ToOutput(ctx context.Context) pulumix.Output[GetProfilesProfileCollectionItemLifecycleStage] {
-	return pulumix.Output[GetProfilesProfileCollectionItemLifecycleStage]{
-		OutputState: i.ToGetProfilesProfileCollectionItemLifecycleStageOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetProfilesProfileCollectionItemLifecycleStageArrayInput is an input type that accepts GetProfilesProfileCollectionItemLifecycleStageArray and GetProfilesProfileCollectionItemLifecycleStageArrayOutput values.
@@ -11109,12 +9424,6 @@ func (i GetProfilesProfileCollectionItemLifecycleStageArray) ToGetProfilesProfil
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfilesProfileCollectionItemLifecycleStageArrayOutput)
 }
 
-func (i GetProfilesProfileCollectionItemLifecycleStageArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProfilesProfileCollectionItemLifecycleStage] {
-	return pulumix.Output[[]GetProfilesProfileCollectionItemLifecycleStage]{
-		OutputState: i.ToGetProfilesProfileCollectionItemLifecycleStageArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetProfilesProfileCollectionItemLifecycleStageOutput struct{ *pulumi.OutputState }
 
 func (GetProfilesProfileCollectionItemLifecycleStageOutput) ElementType() reflect.Type {
@@ -11129,20 +9438,14 @@ func (o GetProfilesProfileCollectionItemLifecycleStageOutput) ToGetProfilesProfi
 	return o
 }
 
-func (o GetProfilesProfileCollectionItemLifecycleStageOutput) ToOutput(ctx context.Context) pulumix.Output[GetProfilesProfileCollectionItemLifecycleStage] {
-	return pulumix.Output[GetProfilesProfileCollectionItemLifecycleStage]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A filter to return resources that match the given display names.
-func (o GetProfilesProfileCollectionItemLifecycleStageOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProfilesProfileCollectionItemLifecycleStage) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetProfilesProfileCollectionItemLifecycleStageOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProfilesProfileCollectionItemLifecycleStage) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the software source.
-func (o GetProfilesProfileCollectionItemLifecycleStageOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProfilesProfileCollectionItemLifecycleStage) string { return v.Id }).(pulumi.StringOutput)
+func (o GetProfilesProfileCollectionItemLifecycleStageOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProfilesProfileCollectionItemLifecycleStage) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 type GetProfilesProfileCollectionItemLifecycleStageArrayOutput struct{ *pulumi.OutputState }
@@ -11159,12 +9462,6 @@ func (o GetProfilesProfileCollectionItemLifecycleStageArrayOutput) ToGetProfiles
 	return o
 }
 
-func (o GetProfilesProfileCollectionItemLifecycleStageArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProfilesProfileCollectionItemLifecycleStage] {
-	return pulumix.Output[[]GetProfilesProfileCollectionItemLifecycleStage]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetProfilesProfileCollectionItemLifecycleStageArrayOutput) Index(i pulumi.IntInput) GetProfilesProfileCollectionItemLifecycleStageOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProfilesProfileCollectionItemLifecycleStage {
 		return vs[0].([]GetProfilesProfileCollectionItemLifecycleStage)[vs[1].(int)]
@@ -11173,9 +9470,9 @@ func (o GetProfilesProfileCollectionItemLifecycleStageArrayOutput) Index(i pulum
 
 type GetProfilesProfileCollectionItemManagedInstanceGroup struct {
 	// A filter to return resources that match the given display names.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The OCID of the software source.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 // GetProfilesProfileCollectionItemManagedInstanceGroupInput is an input type that accepts GetProfilesProfileCollectionItemManagedInstanceGroupArgs and GetProfilesProfileCollectionItemManagedInstanceGroupOutput values.
@@ -11191,9 +9488,9 @@ type GetProfilesProfileCollectionItemManagedInstanceGroupInput interface {
 
 type GetProfilesProfileCollectionItemManagedInstanceGroupArgs struct {
 	// A filter to return resources that match the given display names.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// The OCID of the software source.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 }
 
 func (GetProfilesProfileCollectionItemManagedInstanceGroupArgs) ElementType() reflect.Type {
@@ -11206,12 +9503,6 @@ func (i GetProfilesProfileCollectionItemManagedInstanceGroupArgs) ToGetProfilesP
 
 func (i GetProfilesProfileCollectionItemManagedInstanceGroupArgs) ToGetProfilesProfileCollectionItemManagedInstanceGroupOutputWithContext(ctx context.Context) GetProfilesProfileCollectionItemManagedInstanceGroupOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfilesProfileCollectionItemManagedInstanceGroupOutput)
-}
-
-func (i GetProfilesProfileCollectionItemManagedInstanceGroupArgs) ToOutput(ctx context.Context) pulumix.Output[GetProfilesProfileCollectionItemManagedInstanceGroup] {
-	return pulumix.Output[GetProfilesProfileCollectionItemManagedInstanceGroup]{
-		OutputState: i.ToGetProfilesProfileCollectionItemManagedInstanceGroupOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetProfilesProfileCollectionItemManagedInstanceGroupArrayInput is an input type that accepts GetProfilesProfileCollectionItemManagedInstanceGroupArray and GetProfilesProfileCollectionItemManagedInstanceGroupArrayOutput values.
@@ -11239,12 +9530,6 @@ func (i GetProfilesProfileCollectionItemManagedInstanceGroupArray) ToGetProfiles
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfilesProfileCollectionItemManagedInstanceGroupArrayOutput)
 }
 
-func (i GetProfilesProfileCollectionItemManagedInstanceGroupArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProfilesProfileCollectionItemManagedInstanceGroup] {
-	return pulumix.Output[[]GetProfilesProfileCollectionItemManagedInstanceGroup]{
-		OutputState: i.ToGetProfilesProfileCollectionItemManagedInstanceGroupArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetProfilesProfileCollectionItemManagedInstanceGroupOutput struct{ *pulumi.OutputState }
 
 func (GetProfilesProfileCollectionItemManagedInstanceGroupOutput) ElementType() reflect.Type {
@@ -11259,20 +9544,14 @@ func (o GetProfilesProfileCollectionItemManagedInstanceGroupOutput) ToGetProfile
 	return o
 }
 
-func (o GetProfilesProfileCollectionItemManagedInstanceGroupOutput) ToOutput(ctx context.Context) pulumix.Output[GetProfilesProfileCollectionItemManagedInstanceGroup] {
-	return pulumix.Output[GetProfilesProfileCollectionItemManagedInstanceGroup]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A filter to return resources that match the given display names.
-func (o GetProfilesProfileCollectionItemManagedInstanceGroupOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProfilesProfileCollectionItemManagedInstanceGroup) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetProfilesProfileCollectionItemManagedInstanceGroupOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProfilesProfileCollectionItemManagedInstanceGroup) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the software source.
-func (o GetProfilesProfileCollectionItemManagedInstanceGroupOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProfilesProfileCollectionItemManagedInstanceGroup) string { return v.Id }).(pulumi.StringOutput)
+func (o GetProfilesProfileCollectionItemManagedInstanceGroupOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProfilesProfileCollectionItemManagedInstanceGroup) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 type GetProfilesProfileCollectionItemManagedInstanceGroupArrayOutput struct{ *pulumi.OutputState }
@@ -11289,12 +9568,6 @@ func (o GetProfilesProfileCollectionItemManagedInstanceGroupArrayOutput) ToGetPr
 	return o
 }
 
-func (o GetProfilesProfileCollectionItemManagedInstanceGroupArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProfilesProfileCollectionItemManagedInstanceGroup] {
-	return pulumix.Output[[]GetProfilesProfileCollectionItemManagedInstanceGroup]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetProfilesProfileCollectionItemManagedInstanceGroupArrayOutput) Index(i pulumi.IntInput) GetProfilesProfileCollectionItemManagedInstanceGroupOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProfilesProfileCollectionItemManagedInstanceGroup {
 		return vs[0].([]GetProfilesProfileCollectionItemManagedInstanceGroup)[vs[1].(int)]
@@ -11303,13 +9576,13 @@ func (o GetProfilesProfileCollectionItemManagedInstanceGroupArrayOutput) Index(i
 
 type GetProfilesProfileCollectionItemSoftwareSource struct {
 	// Software source description.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// A filter to return resources that match the given display names.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The OCID of the software source.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Type of the software source.
-	SoftwareSourceType string `pulumi:"softwareSourceType"`
+	SoftwareSourceType *string `pulumi:"softwareSourceType"`
 }
 
 // GetProfilesProfileCollectionItemSoftwareSourceInput is an input type that accepts GetProfilesProfileCollectionItemSoftwareSourceArgs and GetProfilesProfileCollectionItemSoftwareSourceOutput values.
@@ -11325,13 +9598,13 @@ type GetProfilesProfileCollectionItemSoftwareSourceInput interface {
 
 type GetProfilesProfileCollectionItemSoftwareSourceArgs struct {
 	// Software source description.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// A filter to return resources that match the given display names.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// The OCID of the software source.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Type of the software source.
-	SoftwareSourceType pulumi.StringInput `pulumi:"softwareSourceType"`
+	SoftwareSourceType pulumi.StringPtrInput `pulumi:"softwareSourceType"`
 }
 
 func (GetProfilesProfileCollectionItemSoftwareSourceArgs) ElementType() reflect.Type {
@@ -11344,12 +9617,6 @@ func (i GetProfilesProfileCollectionItemSoftwareSourceArgs) ToGetProfilesProfile
 
 func (i GetProfilesProfileCollectionItemSoftwareSourceArgs) ToGetProfilesProfileCollectionItemSoftwareSourceOutputWithContext(ctx context.Context) GetProfilesProfileCollectionItemSoftwareSourceOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfilesProfileCollectionItemSoftwareSourceOutput)
-}
-
-func (i GetProfilesProfileCollectionItemSoftwareSourceArgs) ToOutput(ctx context.Context) pulumix.Output[GetProfilesProfileCollectionItemSoftwareSource] {
-	return pulumix.Output[GetProfilesProfileCollectionItemSoftwareSource]{
-		OutputState: i.ToGetProfilesProfileCollectionItemSoftwareSourceOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetProfilesProfileCollectionItemSoftwareSourceArrayInput is an input type that accepts GetProfilesProfileCollectionItemSoftwareSourceArray and GetProfilesProfileCollectionItemSoftwareSourceArrayOutput values.
@@ -11377,12 +9644,6 @@ func (i GetProfilesProfileCollectionItemSoftwareSourceArray) ToGetProfilesProfil
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfilesProfileCollectionItemSoftwareSourceArrayOutput)
 }
 
-func (i GetProfilesProfileCollectionItemSoftwareSourceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProfilesProfileCollectionItemSoftwareSource] {
-	return pulumix.Output[[]GetProfilesProfileCollectionItemSoftwareSource]{
-		OutputState: i.ToGetProfilesProfileCollectionItemSoftwareSourceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetProfilesProfileCollectionItemSoftwareSourceOutput struct{ *pulumi.OutputState }
 
 func (GetProfilesProfileCollectionItemSoftwareSourceOutput) ElementType() reflect.Type {
@@ -11397,30 +9658,24 @@ func (o GetProfilesProfileCollectionItemSoftwareSourceOutput) ToGetProfilesProfi
 	return o
 }
 
-func (o GetProfilesProfileCollectionItemSoftwareSourceOutput) ToOutput(ctx context.Context) pulumix.Output[GetProfilesProfileCollectionItemSoftwareSource] {
-	return pulumix.Output[GetProfilesProfileCollectionItemSoftwareSource]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Software source description.
-func (o GetProfilesProfileCollectionItemSoftwareSourceOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProfilesProfileCollectionItemSoftwareSource) string { return v.Description }).(pulumi.StringOutput)
+func (o GetProfilesProfileCollectionItemSoftwareSourceOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProfilesProfileCollectionItemSoftwareSource) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return resources that match the given display names.
-func (o GetProfilesProfileCollectionItemSoftwareSourceOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProfilesProfileCollectionItemSoftwareSource) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetProfilesProfileCollectionItemSoftwareSourceOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProfilesProfileCollectionItemSoftwareSource) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the software source.
-func (o GetProfilesProfileCollectionItemSoftwareSourceOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProfilesProfileCollectionItemSoftwareSource) string { return v.Id }).(pulumi.StringOutput)
+func (o GetProfilesProfileCollectionItemSoftwareSourceOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProfilesProfileCollectionItemSoftwareSource) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Type of the software source.
-func (o GetProfilesProfileCollectionItemSoftwareSourceOutput) SoftwareSourceType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProfilesProfileCollectionItemSoftwareSource) string { return v.SoftwareSourceType }).(pulumi.StringOutput)
+func (o GetProfilesProfileCollectionItemSoftwareSourceOutput) SoftwareSourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProfilesProfileCollectionItemSoftwareSource) *string { return v.SoftwareSourceType }).(pulumi.StringPtrOutput)
 }
 
 type GetProfilesProfileCollectionItemSoftwareSourceArrayOutput struct{ *pulumi.OutputState }
@@ -11435,12 +9690,6 @@ func (o GetProfilesProfileCollectionItemSoftwareSourceArrayOutput) ToGetProfiles
 
 func (o GetProfilesProfileCollectionItemSoftwareSourceArrayOutput) ToGetProfilesProfileCollectionItemSoftwareSourceArrayOutputWithContext(ctx context.Context) GetProfilesProfileCollectionItemSoftwareSourceArrayOutput {
 	return o
-}
-
-func (o GetProfilesProfileCollectionItemSoftwareSourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProfilesProfileCollectionItemSoftwareSource] {
-	return pulumix.Output[[]GetProfilesProfileCollectionItemSoftwareSource]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetProfilesProfileCollectionItemSoftwareSourceArrayOutput) Index(i pulumi.IntInput) GetProfilesProfileCollectionItemSoftwareSourceOutput {
@@ -11490,12 +9739,6 @@ func (i GetSoftwareSourceCustomSoftwareSourceFilterArgs) ToGetSoftwareSourceCust
 	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourceCustomSoftwareSourceFilterOutput)
 }
 
-func (i GetSoftwareSourceCustomSoftwareSourceFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourceCustomSoftwareSourceFilter] {
-	return pulumix.Output[GetSoftwareSourceCustomSoftwareSourceFilter]{
-		OutputState: i.ToGetSoftwareSourceCustomSoftwareSourceFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetSoftwareSourceCustomSoftwareSourceFilterArrayInput is an input type that accepts GetSoftwareSourceCustomSoftwareSourceFilterArray and GetSoftwareSourceCustomSoftwareSourceFilterArrayOutput values.
 // You can construct a concrete instance of `GetSoftwareSourceCustomSoftwareSourceFilterArrayInput` via:
 //
@@ -11521,12 +9764,6 @@ func (i GetSoftwareSourceCustomSoftwareSourceFilterArray) ToGetSoftwareSourceCus
 	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourceCustomSoftwareSourceFilterArrayOutput)
 }
 
-func (i GetSoftwareSourceCustomSoftwareSourceFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSoftwareSourceCustomSoftwareSourceFilter] {
-	return pulumix.Output[[]GetSoftwareSourceCustomSoftwareSourceFilter]{
-		OutputState: i.ToGetSoftwareSourceCustomSoftwareSourceFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSoftwareSourceCustomSoftwareSourceFilterOutput struct{ *pulumi.OutputState }
 
 func (GetSoftwareSourceCustomSoftwareSourceFilterOutput) ElementType() reflect.Type {
@@ -11539,12 +9776,6 @@ func (o GetSoftwareSourceCustomSoftwareSourceFilterOutput) ToGetSoftwareSourceCu
 
 func (o GetSoftwareSourceCustomSoftwareSourceFilterOutput) ToGetSoftwareSourceCustomSoftwareSourceFilterOutputWithContext(ctx context.Context) GetSoftwareSourceCustomSoftwareSourceFilterOutput {
 	return o
-}
-
-func (o GetSoftwareSourceCustomSoftwareSourceFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourceCustomSoftwareSourceFilter] {
-	return pulumix.Output[GetSoftwareSourceCustomSoftwareSourceFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The list of module stream/profile filters.
@@ -11582,12 +9813,6 @@ func (o GetSoftwareSourceCustomSoftwareSourceFilterArrayOutput) ToGetSoftwareSou
 	return o
 }
 
-func (o GetSoftwareSourceCustomSoftwareSourceFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSoftwareSourceCustomSoftwareSourceFilter] {
-	return pulumix.Output[[]GetSoftwareSourceCustomSoftwareSourceFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSoftwareSourceCustomSoftwareSourceFilterArrayOutput) Index(i pulumi.IntInput) GetSoftwareSourceCustomSoftwareSourceFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSoftwareSourceCustomSoftwareSourceFilter {
 		return vs[0].([]GetSoftwareSourceCustomSoftwareSourceFilter)[vs[1].(int)]
@@ -11596,13 +9821,13 @@ func (o GetSoftwareSourceCustomSoftwareSourceFilterArrayOutput) Index(i pulumi.I
 
 type GetSoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilter struct {
 	// The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
-	FilterType string `pulumi:"filterType"`
+	FilterType *string `pulumi:"filterType"`
 	// Module name.
-	ModuleName string `pulumi:"moduleName"`
+	ModuleName *string `pulumi:"moduleName"`
 	// Profile name.
-	ProfileName string `pulumi:"profileName"`
+	ProfileName *string `pulumi:"profileName"`
 	// Stream name.
-	StreamName string `pulumi:"streamName"`
+	StreamName *string `pulumi:"streamName"`
 }
 
 // GetSoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterInput is an input type that accepts GetSoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterArgs and GetSoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterOutput values.
@@ -11618,13 +9843,13 @@ type GetSoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterInput i
 
 type GetSoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterArgs struct {
 	// The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
-	FilterType pulumi.StringInput `pulumi:"filterType"`
+	FilterType pulumi.StringPtrInput `pulumi:"filterType"`
 	// Module name.
-	ModuleName pulumi.StringInput `pulumi:"moduleName"`
+	ModuleName pulumi.StringPtrInput `pulumi:"moduleName"`
 	// Profile name.
-	ProfileName pulumi.StringInput `pulumi:"profileName"`
+	ProfileName pulumi.StringPtrInput `pulumi:"profileName"`
 	// Stream name.
-	StreamName pulumi.StringInput `pulumi:"streamName"`
+	StreamName pulumi.StringPtrInput `pulumi:"streamName"`
 }
 
 func (GetSoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterArgs) ElementType() reflect.Type {
@@ -11637,12 +9862,6 @@ func (i GetSoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterArgs
 
 func (i GetSoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterArgs) ToGetSoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterOutputWithContext(ctx context.Context) GetSoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterOutput)
-}
-
-func (i GetSoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilter] {
-	return pulumix.Output[GetSoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilter]{
-		OutputState: i.ToGetSoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterArrayInput is an input type that accepts GetSoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterArray and GetSoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterArrayOutput values.
@@ -11670,12 +9889,6 @@ func (i GetSoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterArra
 	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterArrayOutput)
 }
 
-func (i GetSoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilter] {
-	return pulumix.Output[[]GetSoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilter]{
-		OutputState: i.ToGetSoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterOutput struct{ *pulumi.OutputState }
 
 func (GetSoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterOutput) ElementType() reflect.Type {
@@ -11690,38 +9903,32 @@ func (o GetSoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterOutp
 	return o
 }
 
-func (o GetSoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilter] {
-	return pulumix.Output[GetSoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
-func (o GetSoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterOutput) FilterType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilter) string {
+func (o GetSoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterOutput) FilterType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilter) *string {
 		return v.FilterType
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Module name.
-func (o GetSoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterOutput) ModuleName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilter) string {
+func (o GetSoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterOutput) ModuleName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilter) *string {
 		return v.ModuleName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Profile name.
-func (o GetSoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterOutput) ProfileName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilter) string {
+func (o GetSoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterOutput) ProfileName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilter) *string {
 		return v.ProfileName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Stream name.
-func (o GetSoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterOutput) StreamName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilter) string {
+func (o GetSoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterOutput) StreamName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilter) *string {
 		return v.StreamName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetSoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterArrayOutput struct{ *pulumi.OutputState }
@@ -11738,12 +9945,6 @@ func (o GetSoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterArra
 	return o
 }
 
-func (o GetSoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilter] {
-	return pulumix.Output[[]GetSoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterArrayOutput) Index(i pulumi.IntInput) GetSoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilter {
 		return vs[0].([]GetSoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilter)[vs[1].(int)]
@@ -11752,13 +9953,13 @@ func (o GetSoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterArra
 
 type GetSoftwareSourceCustomSoftwareSourceFilterPackageFilter struct {
 	// The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
-	FilterType string `pulumi:"filterType"`
+	FilterType *string `pulumi:"filterType"`
 	// The package name.
-	PackageName string `pulumi:"packageName"`
+	PackageName *string `pulumi:"packageName"`
 	// The package name pattern.
-	PackageNamePattern string `pulumi:"packageNamePattern"`
+	PackageNamePattern *string `pulumi:"packageNamePattern"`
 	// The package version, which is denoted by 'version-release', or 'epoch:version-release'.
-	PackageVersion string `pulumi:"packageVersion"`
+	PackageVersion *string `pulumi:"packageVersion"`
 }
 
 // GetSoftwareSourceCustomSoftwareSourceFilterPackageFilterInput is an input type that accepts GetSoftwareSourceCustomSoftwareSourceFilterPackageFilterArgs and GetSoftwareSourceCustomSoftwareSourceFilterPackageFilterOutput values.
@@ -11774,13 +9975,13 @@ type GetSoftwareSourceCustomSoftwareSourceFilterPackageFilterInput interface {
 
 type GetSoftwareSourceCustomSoftwareSourceFilterPackageFilterArgs struct {
 	// The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
-	FilterType pulumi.StringInput `pulumi:"filterType"`
+	FilterType pulumi.StringPtrInput `pulumi:"filterType"`
 	// The package name.
-	PackageName pulumi.StringInput `pulumi:"packageName"`
+	PackageName pulumi.StringPtrInput `pulumi:"packageName"`
 	// The package name pattern.
-	PackageNamePattern pulumi.StringInput `pulumi:"packageNamePattern"`
+	PackageNamePattern pulumi.StringPtrInput `pulumi:"packageNamePattern"`
 	// The package version, which is denoted by 'version-release', or 'epoch:version-release'.
-	PackageVersion pulumi.StringInput `pulumi:"packageVersion"`
+	PackageVersion pulumi.StringPtrInput `pulumi:"packageVersion"`
 }
 
 func (GetSoftwareSourceCustomSoftwareSourceFilterPackageFilterArgs) ElementType() reflect.Type {
@@ -11793,12 +9994,6 @@ func (i GetSoftwareSourceCustomSoftwareSourceFilterPackageFilterArgs) ToGetSoftw
 
 func (i GetSoftwareSourceCustomSoftwareSourceFilterPackageFilterArgs) ToGetSoftwareSourceCustomSoftwareSourceFilterPackageFilterOutputWithContext(ctx context.Context) GetSoftwareSourceCustomSoftwareSourceFilterPackageFilterOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourceCustomSoftwareSourceFilterPackageFilterOutput)
-}
-
-func (i GetSoftwareSourceCustomSoftwareSourceFilterPackageFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourceCustomSoftwareSourceFilterPackageFilter] {
-	return pulumix.Output[GetSoftwareSourceCustomSoftwareSourceFilterPackageFilter]{
-		OutputState: i.ToGetSoftwareSourceCustomSoftwareSourceFilterPackageFilterOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSoftwareSourceCustomSoftwareSourceFilterPackageFilterArrayInput is an input type that accepts GetSoftwareSourceCustomSoftwareSourceFilterPackageFilterArray and GetSoftwareSourceCustomSoftwareSourceFilterPackageFilterArrayOutput values.
@@ -11826,12 +10021,6 @@ func (i GetSoftwareSourceCustomSoftwareSourceFilterPackageFilterArray) ToGetSoft
 	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourceCustomSoftwareSourceFilterPackageFilterArrayOutput)
 }
 
-func (i GetSoftwareSourceCustomSoftwareSourceFilterPackageFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSoftwareSourceCustomSoftwareSourceFilterPackageFilter] {
-	return pulumix.Output[[]GetSoftwareSourceCustomSoftwareSourceFilterPackageFilter]{
-		OutputState: i.ToGetSoftwareSourceCustomSoftwareSourceFilterPackageFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSoftwareSourceCustomSoftwareSourceFilterPackageFilterOutput struct{ *pulumi.OutputState }
 
 func (GetSoftwareSourceCustomSoftwareSourceFilterPackageFilterOutput) ElementType() reflect.Type {
@@ -11846,30 +10035,24 @@ func (o GetSoftwareSourceCustomSoftwareSourceFilterPackageFilterOutput) ToGetSof
 	return o
 }
 
-func (o GetSoftwareSourceCustomSoftwareSourceFilterPackageFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourceCustomSoftwareSourceFilterPackageFilter] {
-	return pulumix.Output[GetSoftwareSourceCustomSoftwareSourceFilterPackageFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
-func (o GetSoftwareSourceCustomSoftwareSourceFilterPackageFilterOutput) FilterType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourceCustomSoftwareSourceFilterPackageFilter) string { return v.FilterType }).(pulumi.StringOutput)
+func (o GetSoftwareSourceCustomSoftwareSourceFilterPackageFilterOutput) FilterType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourceCustomSoftwareSourceFilterPackageFilter) *string { return v.FilterType }).(pulumi.StringPtrOutput)
 }
 
 // The package name.
-func (o GetSoftwareSourceCustomSoftwareSourceFilterPackageFilterOutput) PackageName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourceCustomSoftwareSourceFilterPackageFilter) string { return v.PackageName }).(pulumi.StringOutput)
+func (o GetSoftwareSourceCustomSoftwareSourceFilterPackageFilterOutput) PackageName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourceCustomSoftwareSourceFilterPackageFilter) *string { return v.PackageName }).(pulumi.StringPtrOutput)
 }
 
 // The package name pattern.
-func (o GetSoftwareSourceCustomSoftwareSourceFilterPackageFilterOutput) PackageNamePattern() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourceCustomSoftwareSourceFilterPackageFilter) string { return v.PackageNamePattern }).(pulumi.StringOutput)
+func (o GetSoftwareSourceCustomSoftwareSourceFilterPackageFilterOutput) PackageNamePattern() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourceCustomSoftwareSourceFilterPackageFilter) *string { return v.PackageNamePattern }).(pulumi.StringPtrOutput)
 }
 
 // The package version, which is denoted by 'version-release', or 'epoch:version-release'.
-func (o GetSoftwareSourceCustomSoftwareSourceFilterPackageFilterOutput) PackageVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourceCustomSoftwareSourceFilterPackageFilter) string { return v.PackageVersion }).(pulumi.StringOutput)
+func (o GetSoftwareSourceCustomSoftwareSourceFilterPackageFilterOutput) PackageVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourceCustomSoftwareSourceFilterPackageFilter) *string { return v.PackageVersion }).(pulumi.StringPtrOutput)
 }
 
 type GetSoftwareSourceCustomSoftwareSourceFilterPackageFilterArrayOutput struct{ *pulumi.OutputState }
@@ -11886,12 +10069,6 @@ func (o GetSoftwareSourceCustomSoftwareSourceFilterPackageFilterArrayOutput) ToG
 	return o
 }
 
-func (o GetSoftwareSourceCustomSoftwareSourceFilterPackageFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSoftwareSourceCustomSoftwareSourceFilterPackageFilter] {
-	return pulumix.Output[[]GetSoftwareSourceCustomSoftwareSourceFilterPackageFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSoftwareSourceCustomSoftwareSourceFilterPackageFilterArrayOutput) Index(i pulumi.IntInput) GetSoftwareSourceCustomSoftwareSourceFilterPackageFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSoftwareSourceCustomSoftwareSourceFilterPackageFilter {
 		return vs[0].([]GetSoftwareSourceCustomSoftwareSourceFilterPackageFilter)[vs[1].(int)]
@@ -11900,7 +10077,7 @@ func (o GetSoftwareSourceCustomSoftwareSourceFilterPackageFilterArrayOutput) Ind
 
 type GetSoftwareSourceCustomSoftwareSourceFilterPackageGroupFilter struct {
 	// The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
-	FilterType string `pulumi:"filterType"`
+	FilterType *string `pulumi:"filterType"`
 	// List of package group names.
 	PackageGroups []string `pulumi:"packageGroups"`
 }
@@ -11918,7 +10095,7 @@ type GetSoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterInput interfac
 
 type GetSoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterArgs struct {
 	// The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
-	FilterType pulumi.StringInput `pulumi:"filterType"`
+	FilterType pulumi.StringPtrInput `pulumi:"filterType"`
 	// List of package group names.
 	PackageGroups pulumi.StringArrayInput `pulumi:"packageGroups"`
 }
@@ -11933,12 +10110,6 @@ func (i GetSoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterArgs) ToGet
 
 func (i GetSoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterArgs) ToGetSoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterOutputWithContext(ctx context.Context) GetSoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterOutput)
-}
-
-func (i GetSoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourceCustomSoftwareSourceFilterPackageGroupFilter] {
-	return pulumix.Output[GetSoftwareSourceCustomSoftwareSourceFilterPackageGroupFilter]{
-		OutputState: i.ToGetSoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterArrayInput is an input type that accepts GetSoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterArray and GetSoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterArrayOutput values.
@@ -11966,12 +10137,6 @@ func (i GetSoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterArray) ToGe
 	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterArrayOutput)
 }
 
-func (i GetSoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSoftwareSourceCustomSoftwareSourceFilterPackageGroupFilter] {
-	return pulumix.Output[[]GetSoftwareSourceCustomSoftwareSourceFilterPackageGroupFilter]{
-		OutputState: i.ToGetSoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterOutput struct{ *pulumi.OutputState }
 
 func (GetSoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterOutput) ElementType() reflect.Type {
@@ -11986,15 +10151,9 @@ func (o GetSoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterOutput) ToG
 	return o
 }
 
-func (o GetSoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourceCustomSoftwareSourceFilterPackageGroupFilter] {
-	return pulumix.Output[GetSoftwareSourceCustomSoftwareSourceFilterPackageGroupFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
-func (o GetSoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterOutput) FilterType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourceCustomSoftwareSourceFilterPackageGroupFilter) string { return v.FilterType }).(pulumi.StringOutput)
+func (o GetSoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterOutput) FilterType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourceCustomSoftwareSourceFilterPackageGroupFilter) *string { return v.FilterType }).(pulumi.StringPtrOutput)
 }
 
 // List of package group names.
@@ -12014,12 +10173,6 @@ func (o GetSoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterArrayOutput
 
 func (o GetSoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterArrayOutput) ToGetSoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterArrayOutputWithContext(ctx context.Context) GetSoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterArrayOutput {
 	return o
-}
-
-func (o GetSoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSoftwareSourceCustomSoftwareSourceFilterPackageGroupFilter] {
-	return pulumix.Output[[]GetSoftwareSourceCustomSoftwareSourceFilterPackageGroupFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterArrayOutput) Index(i pulumi.IntInput) GetSoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterOutput {
@@ -12065,12 +10218,6 @@ func (i GetSoftwareSourceModuleStreamProfilesFilterArgs) ToGetSoftwareSourceModu
 	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourceModuleStreamProfilesFilterOutput)
 }
 
-func (i GetSoftwareSourceModuleStreamProfilesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourceModuleStreamProfilesFilter] {
-	return pulumix.Output[GetSoftwareSourceModuleStreamProfilesFilter]{
-		OutputState: i.ToGetSoftwareSourceModuleStreamProfilesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetSoftwareSourceModuleStreamProfilesFilterArrayInput is an input type that accepts GetSoftwareSourceModuleStreamProfilesFilterArray and GetSoftwareSourceModuleStreamProfilesFilterArrayOutput values.
 // You can construct a concrete instance of `GetSoftwareSourceModuleStreamProfilesFilterArrayInput` via:
 //
@@ -12096,12 +10243,6 @@ func (i GetSoftwareSourceModuleStreamProfilesFilterArray) ToGetSoftwareSourceMod
 	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourceModuleStreamProfilesFilterArrayOutput)
 }
 
-func (i GetSoftwareSourceModuleStreamProfilesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSoftwareSourceModuleStreamProfilesFilter] {
-	return pulumix.Output[[]GetSoftwareSourceModuleStreamProfilesFilter]{
-		OutputState: i.ToGetSoftwareSourceModuleStreamProfilesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSoftwareSourceModuleStreamProfilesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetSoftwareSourceModuleStreamProfilesFilterOutput) ElementType() reflect.Type {
@@ -12114,12 +10255,6 @@ func (o GetSoftwareSourceModuleStreamProfilesFilterOutput) ToGetSoftwareSourceMo
 
 func (o GetSoftwareSourceModuleStreamProfilesFilterOutput) ToGetSoftwareSourceModuleStreamProfilesFilterOutputWithContext(ctx context.Context) GetSoftwareSourceModuleStreamProfilesFilterOutput {
 	return o
-}
-
-func (o GetSoftwareSourceModuleStreamProfilesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourceModuleStreamProfilesFilter] {
-	return pulumix.Output[GetSoftwareSourceModuleStreamProfilesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The name of the entity to be queried.
@@ -12147,12 +10282,6 @@ func (o GetSoftwareSourceModuleStreamProfilesFilterArrayOutput) ToGetSoftwareSou
 
 func (o GetSoftwareSourceModuleStreamProfilesFilterArrayOutput) ToGetSoftwareSourceModuleStreamProfilesFilterArrayOutputWithContext(ctx context.Context) GetSoftwareSourceModuleStreamProfilesFilterArrayOutput {
 	return o
-}
-
-func (o GetSoftwareSourceModuleStreamProfilesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSoftwareSourceModuleStreamProfilesFilter] {
-	return pulumix.Output[[]GetSoftwareSourceModuleStreamProfilesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSoftwareSourceModuleStreamProfilesFilterArrayOutput) Index(i pulumi.IntInput) GetSoftwareSourceModuleStreamProfilesFilterOutput {
@@ -12192,12 +10321,6 @@ func (i GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionArgs) 
 	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionOutput)
 }
 
-func (i GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollection] {
-	return pulumix.Output[GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollection]{
-		OutputState: i.ToGetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionArrayInput is an input type that accepts GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionArray and GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionArrayOutput values.
 // You can construct a concrete instance of `GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionArrayInput` via:
 //
@@ -12223,12 +10346,6 @@ func (i GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionArray)
 	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionArrayOutput)
 }
 
-func (i GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollection] {
-	return pulumix.Output[[]GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollection]{
-		OutputState: i.ToGetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionOutput) ElementType() reflect.Type {
@@ -12241,12 +10358,6 @@ func (o GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionOutput
 
 func (o GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionOutput) ToGetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionOutputWithContext(ctx context.Context) GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionOutput {
 	return o
-}
-
-func (o GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollection] {
-	return pulumix.Output[GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionOutput) Items() GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionItemArrayOutput {
@@ -12269,12 +10380,6 @@ func (o GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionArrayO
 	return o
 }
 
-func (o GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollection] {
-	return pulumix.Output[[]GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionArrayOutput) Index(i pulumi.IntInput) GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollection {
 		return vs[0].([]GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollection)[vs[1].(int)]
@@ -12283,17 +10388,17 @@ func (o GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionArrayO
 
 type GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionItem struct {
 	// A description of the contents of the module stream profile.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Indicates if this profile is the default for its module stream.
-	IsDefault bool `pulumi:"isDefault"`
+	IsDefault *bool `pulumi:"isDefault"`
 	// The name of a module. This parameter is required if a streamName is specified.
-	ModuleName string `pulumi:"moduleName"`
+	ModuleName *string `pulumi:"moduleName"`
 	// The name of the entity to be queried.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// A list of packages that constitute the profile.  Each element in the list is the name of a package.  The name is suitable to use as an argument to other OS Management Hub APIs that interact directly with packages.
 	Packages []string `pulumi:"packages"`
 	// The name of the stream of the containing module.  This parameter is required if a profileName is specified.
-	StreamName string `pulumi:"streamName"`
+	StreamName *string `pulumi:"streamName"`
 }
 
 // GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionItemInput is an input type that accepts GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionItemArgs and GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionItemOutput values.
@@ -12309,17 +10414,17 @@ type GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionItemInput
 
 type GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionItemArgs struct {
 	// A description of the contents of the module stream profile.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// Indicates if this profile is the default for its module stream.
-	IsDefault pulumi.BoolInput `pulumi:"isDefault"`
+	IsDefault pulumi.BoolPtrInput `pulumi:"isDefault"`
 	// The name of a module. This parameter is required if a streamName is specified.
-	ModuleName pulumi.StringInput `pulumi:"moduleName"`
+	ModuleName pulumi.StringPtrInput `pulumi:"moduleName"`
 	// The name of the entity to be queried.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// A list of packages that constitute the profile.  Each element in the list is the name of a package.  The name is suitable to use as an argument to other OS Management Hub APIs that interact directly with packages.
 	Packages pulumi.StringArrayInput `pulumi:"packages"`
 	// The name of the stream of the containing module.  This parameter is required if a profileName is specified.
-	StreamName pulumi.StringInput `pulumi:"streamName"`
+	StreamName pulumi.StringPtrInput `pulumi:"streamName"`
 }
 
 func (GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionItemArgs) ElementType() reflect.Type {
@@ -12332,12 +10437,6 @@ func (i GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionItemAr
 
 func (i GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionItemArgs) ToGetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionItemOutputWithContext(ctx context.Context) GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionItemOutput)
-}
-
-func (i GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionItem] {
-	return pulumix.Output[GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionItem]{
-		OutputState: i.ToGetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionItemArrayInput is an input type that accepts GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionItemArray and GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionItemArrayOutput values.
@@ -12365,12 +10464,6 @@ func (i GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionItemAr
 	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionItemArrayOutput)
 }
 
-func (i GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionItem] {
-	return pulumix.Output[[]GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionItem]{
-		OutputState: i.ToGetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionItemOutput) ElementType() reflect.Type {
@@ -12385,36 +10478,30 @@ func (o GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionItemOu
 	return o
 }
 
-func (o GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionItem] {
-	return pulumix.Output[GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A description of the contents of the module stream profile.
-func (o GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionItemOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionItem) string {
+func (o GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionItemOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionItem) *string {
 		return v.Description
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Indicates if this profile is the default for its module stream.
-func (o GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionItemOutput) IsDefault() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionItem) bool {
+func (o GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionItemOutput) IsDefault() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionItem) *bool {
 		return v.IsDefault
-	}).(pulumi.BoolOutput)
+	}).(pulumi.BoolPtrOutput)
 }
 
 // The name of a module. This parameter is required if a streamName is specified.
-func (o GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionItemOutput) ModuleName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionItem) string {
+func (o GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionItemOutput) ModuleName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionItem) *string {
 		return v.ModuleName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The name of the entity to be queried.
-func (o GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionItemOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+func (o GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionItemOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionItem) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // A list of packages that constitute the profile.  Each element in the list is the name of a package.  The name is suitable to use as an argument to other OS Management Hub APIs that interact directly with packages.
@@ -12425,10 +10512,10 @@ func (o GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionItemOu
 }
 
 // The name of the stream of the containing module.  This parameter is required if a profileName is specified.
-func (o GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionItemOutput) StreamName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionItem) string {
+func (o GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionItemOutput) StreamName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionItem) *string {
 		return v.StreamName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -12443,12 +10530,6 @@ func (o GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionItemAr
 
 func (o GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionItemArrayOutput) ToGetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionItemArrayOutputWithContext(ctx context.Context) GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionItemArrayOutput {
 	return o
-}
-
-func (o GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionItem] {
-	return pulumix.Output[[]GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionItemOutput {
@@ -12494,12 +10575,6 @@ func (i GetSoftwareSourceModuleStreamsFilterArgs) ToGetSoftwareSourceModuleStrea
 	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourceModuleStreamsFilterOutput)
 }
 
-func (i GetSoftwareSourceModuleStreamsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourceModuleStreamsFilter] {
-	return pulumix.Output[GetSoftwareSourceModuleStreamsFilter]{
-		OutputState: i.ToGetSoftwareSourceModuleStreamsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetSoftwareSourceModuleStreamsFilterArrayInput is an input type that accepts GetSoftwareSourceModuleStreamsFilterArray and GetSoftwareSourceModuleStreamsFilterArrayOutput values.
 // You can construct a concrete instance of `GetSoftwareSourceModuleStreamsFilterArrayInput` via:
 //
@@ -12525,12 +10600,6 @@ func (i GetSoftwareSourceModuleStreamsFilterArray) ToGetSoftwareSourceModuleStre
 	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourceModuleStreamsFilterArrayOutput)
 }
 
-func (i GetSoftwareSourceModuleStreamsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSoftwareSourceModuleStreamsFilter] {
-	return pulumix.Output[[]GetSoftwareSourceModuleStreamsFilter]{
-		OutputState: i.ToGetSoftwareSourceModuleStreamsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSoftwareSourceModuleStreamsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetSoftwareSourceModuleStreamsFilterOutput) ElementType() reflect.Type {
@@ -12543,12 +10612,6 @@ func (o GetSoftwareSourceModuleStreamsFilterOutput) ToGetSoftwareSourceModuleStr
 
 func (o GetSoftwareSourceModuleStreamsFilterOutput) ToGetSoftwareSourceModuleStreamsFilterOutputWithContext(ctx context.Context) GetSoftwareSourceModuleStreamsFilterOutput {
 	return o
-}
-
-func (o GetSoftwareSourceModuleStreamsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourceModuleStreamsFilter] {
-	return pulumix.Output[GetSoftwareSourceModuleStreamsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The name of the entity to be queried.
@@ -12576,12 +10639,6 @@ func (o GetSoftwareSourceModuleStreamsFilterArrayOutput) ToGetSoftwareSourceModu
 
 func (o GetSoftwareSourceModuleStreamsFilterArrayOutput) ToGetSoftwareSourceModuleStreamsFilterArrayOutputWithContext(ctx context.Context) GetSoftwareSourceModuleStreamsFilterArrayOutput {
 	return o
-}
-
-func (o GetSoftwareSourceModuleStreamsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSoftwareSourceModuleStreamsFilter] {
-	return pulumix.Output[[]GetSoftwareSourceModuleStreamsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSoftwareSourceModuleStreamsFilterArrayOutput) Index(i pulumi.IntInput) GetSoftwareSourceModuleStreamsFilterOutput {
@@ -12621,12 +10678,6 @@ func (i GetSoftwareSourceModuleStreamsModuleStreamCollectionArgs) ToGetSoftwareS
 	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourceModuleStreamsModuleStreamCollectionOutput)
 }
 
-func (i GetSoftwareSourceModuleStreamsModuleStreamCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourceModuleStreamsModuleStreamCollection] {
-	return pulumix.Output[GetSoftwareSourceModuleStreamsModuleStreamCollection]{
-		OutputState: i.ToGetSoftwareSourceModuleStreamsModuleStreamCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetSoftwareSourceModuleStreamsModuleStreamCollectionArrayInput is an input type that accepts GetSoftwareSourceModuleStreamsModuleStreamCollectionArray and GetSoftwareSourceModuleStreamsModuleStreamCollectionArrayOutput values.
 // You can construct a concrete instance of `GetSoftwareSourceModuleStreamsModuleStreamCollectionArrayInput` via:
 //
@@ -12652,12 +10703,6 @@ func (i GetSoftwareSourceModuleStreamsModuleStreamCollectionArray) ToGetSoftware
 	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourceModuleStreamsModuleStreamCollectionArrayOutput)
 }
 
-func (i GetSoftwareSourceModuleStreamsModuleStreamCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSoftwareSourceModuleStreamsModuleStreamCollection] {
-	return pulumix.Output[[]GetSoftwareSourceModuleStreamsModuleStreamCollection]{
-		OutputState: i.ToGetSoftwareSourceModuleStreamsModuleStreamCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSoftwareSourceModuleStreamsModuleStreamCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetSoftwareSourceModuleStreamsModuleStreamCollectionOutput) ElementType() reflect.Type {
@@ -12670,12 +10715,6 @@ func (o GetSoftwareSourceModuleStreamsModuleStreamCollectionOutput) ToGetSoftwar
 
 func (o GetSoftwareSourceModuleStreamsModuleStreamCollectionOutput) ToGetSoftwareSourceModuleStreamsModuleStreamCollectionOutputWithContext(ctx context.Context) GetSoftwareSourceModuleStreamsModuleStreamCollectionOutput {
 	return o
-}
-
-func (o GetSoftwareSourceModuleStreamsModuleStreamCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourceModuleStreamsModuleStreamCollection] {
-	return pulumix.Output[GetSoftwareSourceModuleStreamsModuleStreamCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSoftwareSourceModuleStreamsModuleStreamCollectionOutput) Items() GetSoftwareSourceModuleStreamsModuleStreamCollectionItemArrayOutput {
@@ -12698,12 +10737,6 @@ func (o GetSoftwareSourceModuleStreamsModuleStreamCollectionArrayOutput) ToGetSo
 	return o
 }
 
-func (o GetSoftwareSourceModuleStreamsModuleStreamCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSoftwareSourceModuleStreamsModuleStreamCollection] {
-	return pulumix.Output[[]GetSoftwareSourceModuleStreamsModuleStreamCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSoftwareSourceModuleStreamsModuleStreamCollectionArrayOutput) Index(i pulumi.IntInput) GetSoftwareSourceModuleStreamsModuleStreamCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSoftwareSourceModuleStreamsModuleStreamCollection {
 		return vs[0].([]GetSoftwareSourceModuleStreamsModuleStreamCollection)[vs[1].(int)]
@@ -12712,23 +10745,23 @@ func (o GetSoftwareSourceModuleStreamsModuleStreamCollectionArrayOutput) Index(i
 
 type GetSoftwareSourceModuleStreamsModuleStreamCollectionItem struct {
 	// The architecture for which the packages in this module stream were built.
-	ArchType string `pulumi:"archType"`
+	ArchType *string `pulumi:"archType"`
 	// A description of the contents of the module stream.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Indicates if this stream is the default for its module.
-	IsDefault bool `pulumi:"isDefault"`
+	IsDefault *bool `pulumi:"isDefault"`
 	// A boolean variable that is used to list only the latest versions of packages, module streams, and stream profiles when set to true. All packages, module streams, and stream profiles are returned when set to false.
-	IsLatest bool `pulumi:"isLatest"`
+	IsLatest *bool `pulumi:"isLatest"`
 	// The name of a module. This parameter is required if a streamName is specified.
-	ModuleName string `pulumi:"moduleName"`
+	ModuleName *string `pulumi:"moduleName"`
 	// The name of the entity to be queried.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// A list of packages that are contained by the stream.  Each element in the list is the name of a package.  The name is suitable to use as an argument to other OS Management Hub APIs that interact directly with packages.
 	Packages []string `pulumi:"packages"`
 	// A list of profiles that are part of the stream.  Each element in the list is the name of a profile.  The name is suitable to use as an argument to other OS Management Hub APIs that interact directly with module stream profiles.  However, it is not URL encoded.
 	Profiles []string `pulumi:"profiles"`
 	// The software source OCID.
-	SoftwareSourceId string `pulumi:"softwareSourceId"`
+	SoftwareSourceId *string `pulumi:"softwareSourceId"`
 }
 
 // GetSoftwareSourceModuleStreamsModuleStreamCollectionItemInput is an input type that accepts GetSoftwareSourceModuleStreamsModuleStreamCollectionItemArgs and GetSoftwareSourceModuleStreamsModuleStreamCollectionItemOutput values.
@@ -12744,23 +10777,23 @@ type GetSoftwareSourceModuleStreamsModuleStreamCollectionItemInput interface {
 
 type GetSoftwareSourceModuleStreamsModuleStreamCollectionItemArgs struct {
 	// The architecture for which the packages in this module stream were built.
-	ArchType pulumi.StringInput `pulumi:"archType"`
+	ArchType pulumi.StringPtrInput `pulumi:"archType"`
 	// A description of the contents of the module stream.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// Indicates if this stream is the default for its module.
-	IsDefault pulumi.BoolInput `pulumi:"isDefault"`
+	IsDefault pulumi.BoolPtrInput `pulumi:"isDefault"`
 	// A boolean variable that is used to list only the latest versions of packages, module streams, and stream profiles when set to true. All packages, module streams, and stream profiles are returned when set to false.
-	IsLatest pulumi.BoolInput `pulumi:"isLatest"`
+	IsLatest pulumi.BoolPtrInput `pulumi:"isLatest"`
 	// The name of a module. This parameter is required if a streamName is specified.
-	ModuleName pulumi.StringInput `pulumi:"moduleName"`
+	ModuleName pulumi.StringPtrInput `pulumi:"moduleName"`
 	// The name of the entity to be queried.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// A list of packages that are contained by the stream.  Each element in the list is the name of a package.  The name is suitable to use as an argument to other OS Management Hub APIs that interact directly with packages.
 	Packages pulumi.StringArrayInput `pulumi:"packages"`
 	// A list of profiles that are part of the stream.  Each element in the list is the name of a profile.  The name is suitable to use as an argument to other OS Management Hub APIs that interact directly with module stream profiles.  However, it is not URL encoded.
 	Profiles pulumi.StringArrayInput `pulumi:"profiles"`
 	// The software source OCID.
-	SoftwareSourceId pulumi.StringInput `pulumi:"softwareSourceId"`
+	SoftwareSourceId pulumi.StringPtrInput `pulumi:"softwareSourceId"`
 }
 
 func (GetSoftwareSourceModuleStreamsModuleStreamCollectionItemArgs) ElementType() reflect.Type {
@@ -12773,12 +10806,6 @@ func (i GetSoftwareSourceModuleStreamsModuleStreamCollectionItemArgs) ToGetSoftw
 
 func (i GetSoftwareSourceModuleStreamsModuleStreamCollectionItemArgs) ToGetSoftwareSourceModuleStreamsModuleStreamCollectionItemOutputWithContext(ctx context.Context) GetSoftwareSourceModuleStreamsModuleStreamCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourceModuleStreamsModuleStreamCollectionItemOutput)
-}
-
-func (i GetSoftwareSourceModuleStreamsModuleStreamCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourceModuleStreamsModuleStreamCollectionItem] {
-	return pulumix.Output[GetSoftwareSourceModuleStreamsModuleStreamCollectionItem]{
-		OutputState: i.ToGetSoftwareSourceModuleStreamsModuleStreamCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSoftwareSourceModuleStreamsModuleStreamCollectionItemArrayInput is an input type that accepts GetSoftwareSourceModuleStreamsModuleStreamCollectionItemArray and GetSoftwareSourceModuleStreamsModuleStreamCollectionItemArrayOutput values.
@@ -12806,12 +10833,6 @@ func (i GetSoftwareSourceModuleStreamsModuleStreamCollectionItemArray) ToGetSoft
 	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourceModuleStreamsModuleStreamCollectionItemArrayOutput)
 }
 
-func (i GetSoftwareSourceModuleStreamsModuleStreamCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSoftwareSourceModuleStreamsModuleStreamCollectionItem] {
-	return pulumix.Output[[]GetSoftwareSourceModuleStreamsModuleStreamCollectionItem]{
-		OutputState: i.ToGetSoftwareSourceModuleStreamsModuleStreamCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSoftwareSourceModuleStreamsModuleStreamCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetSoftwareSourceModuleStreamsModuleStreamCollectionItemOutput) ElementType() reflect.Type {
@@ -12826,40 +10847,34 @@ func (o GetSoftwareSourceModuleStreamsModuleStreamCollectionItemOutput) ToGetSof
 	return o
 }
 
-func (o GetSoftwareSourceModuleStreamsModuleStreamCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourceModuleStreamsModuleStreamCollectionItem] {
-	return pulumix.Output[GetSoftwareSourceModuleStreamsModuleStreamCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The architecture for which the packages in this module stream were built.
-func (o GetSoftwareSourceModuleStreamsModuleStreamCollectionItemOutput) ArchType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourceModuleStreamsModuleStreamCollectionItem) string { return v.ArchType }).(pulumi.StringOutput)
+func (o GetSoftwareSourceModuleStreamsModuleStreamCollectionItemOutput) ArchType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourceModuleStreamsModuleStreamCollectionItem) *string { return v.ArchType }).(pulumi.StringPtrOutput)
 }
 
 // A description of the contents of the module stream.
-func (o GetSoftwareSourceModuleStreamsModuleStreamCollectionItemOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourceModuleStreamsModuleStreamCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+func (o GetSoftwareSourceModuleStreamsModuleStreamCollectionItemOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourceModuleStreamsModuleStreamCollectionItem) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Indicates if this stream is the default for its module.
-func (o GetSoftwareSourceModuleStreamsModuleStreamCollectionItemOutput) IsDefault() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSoftwareSourceModuleStreamsModuleStreamCollectionItem) bool { return v.IsDefault }).(pulumi.BoolOutput)
+func (o GetSoftwareSourceModuleStreamsModuleStreamCollectionItemOutput) IsDefault() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourceModuleStreamsModuleStreamCollectionItem) *bool { return v.IsDefault }).(pulumi.BoolPtrOutput)
 }
 
 // A boolean variable that is used to list only the latest versions of packages, module streams, and stream profiles when set to true. All packages, module streams, and stream profiles are returned when set to false.
-func (o GetSoftwareSourceModuleStreamsModuleStreamCollectionItemOutput) IsLatest() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSoftwareSourceModuleStreamsModuleStreamCollectionItem) bool { return v.IsLatest }).(pulumi.BoolOutput)
+func (o GetSoftwareSourceModuleStreamsModuleStreamCollectionItemOutput) IsLatest() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourceModuleStreamsModuleStreamCollectionItem) *bool { return v.IsLatest }).(pulumi.BoolPtrOutput)
 }
 
 // The name of a module. This parameter is required if a streamName is specified.
-func (o GetSoftwareSourceModuleStreamsModuleStreamCollectionItemOutput) ModuleName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourceModuleStreamsModuleStreamCollectionItem) string { return v.ModuleName }).(pulumi.StringOutput)
+func (o GetSoftwareSourceModuleStreamsModuleStreamCollectionItemOutput) ModuleName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourceModuleStreamsModuleStreamCollectionItem) *string { return v.ModuleName }).(pulumi.StringPtrOutput)
 }
 
 // The name of the entity to be queried.
-func (o GetSoftwareSourceModuleStreamsModuleStreamCollectionItemOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourceModuleStreamsModuleStreamCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+func (o GetSoftwareSourceModuleStreamsModuleStreamCollectionItemOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourceModuleStreamsModuleStreamCollectionItem) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // A list of packages that are contained by the stream.  Each element in the list is the name of a package.  The name is suitable to use as an argument to other OS Management Hub APIs that interact directly with packages.
@@ -12873,8 +10888,8 @@ func (o GetSoftwareSourceModuleStreamsModuleStreamCollectionItemOutput) Profiles
 }
 
 // The software source OCID.
-func (o GetSoftwareSourceModuleStreamsModuleStreamCollectionItemOutput) SoftwareSourceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourceModuleStreamsModuleStreamCollectionItem) string { return v.SoftwareSourceId }).(pulumi.StringOutput)
+func (o GetSoftwareSourceModuleStreamsModuleStreamCollectionItemOutput) SoftwareSourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourceModuleStreamsModuleStreamCollectionItem) *string { return v.SoftwareSourceId }).(pulumi.StringPtrOutput)
 }
 
 type GetSoftwareSourceModuleStreamsModuleStreamCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -12889,12 +10904,6 @@ func (o GetSoftwareSourceModuleStreamsModuleStreamCollectionItemArrayOutput) ToG
 
 func (o GetSoftwareSourceModuleStreamsModuleStreamCollectionItemArrayOutput) ToGetSoftwareSourceModuleStreamsModuleStreamCollectionItemArrayOutputWithContext(ctx context.Context) GetSoftwareSourceModuleStreamsModuleStreamCollectionItemArrayOutput {
 	return o
-}
-
-func (o GetSoftwareSourceModuleStreamsModuleStreamCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSoftwareSourceModuleStreamsModuleStreamCollectionItem] {
-	return pulumix.Output[[]GetSoftwareSourceModuleStreamsModuleStreamCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSoftwareSourceModuleStreamsModuleStreamCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSoftwareSourceModuleStreamsModuleStreamCollectionItemOutput {
@@ -12940,12 +10949,6 @@ func (i GetSoftwareSourcePackageGroupsFilterArgs) ToGetSoftwareSourcePackageGrou
 	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourcePackageGroupsFilterOutput)
 }
 
-func (i GetSoftwareSourcePackageGroupsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourcePackageGroupsFilter] {
-	return pulumix.Output[GetSoftwareSourcePackageGroupsFilter]{
-		OutputState: i.ToGetSoftwareSourcePackageGroupsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetSoftwareSourcePackageGroupsFilterArrayInput is an input type that accepts GetSoftwareSourcePackageGroupsFilterArray and GetSoftwareSourcePackageGroupsFilterArrayOutput values.
 // You can construct a concrete instance of `GetSoftwareSourcePackageGroupsFilterArrayInput` via:
 //
@@ -12971,12 +10974,6 @@ func (i GetSoftwareSourcePackageGroupsFilterArray) ToGetSoftwareSourcePackageGro
 	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourcePackageGroupsFilterArrayOutput)
 }
 
-func (i GetSoftwareSourcePackageGroupsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSoftwareSourcePackageGroupsFilter] {
-	return pulumix.Output[[]GetSoftwareSourcePackageGroupsFilter]{
-		OutputState: i.ToGetSoftwareSourcePackageGroupsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSoftwareSourcePackageGroupsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetSoftwareSourcePackageGroupsFilterOutput) ElementType() reflect.Type {
@@ -12989,12 +10986,6 @@ func (o GetSoftwareSourcePackageGroupsFilterOutput) ToGetSoftwareSourcePackageGr
 
 func (o GetSoftwareSourcePackageGroupsFilterOutput) ToGetSoftwareSourcePackageGroupsFilterOutputWithContext(ctx context.Context) GetSoftwareSourcePackageGroupsFilterOutput {
 	return o
-}
-
-func (o GetSoftwareSourcePackageGroupsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourcePackageGroupsFilter] {
-	return pulumix.Output[GetSoftwareSourcePackageGroupsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The name of the entity to be queried.
@@ -13022,12 +11013,6 @@ func (o GetSoftwareSourcePackageGroupsFilterArrayOutput) ToGetSoftwareSourcePack
 
 func (o GetSoftwareSourcePackageGroupsFilterArrayOutput) ToGetSoftwareSourcePackageGroupsFilterArrayOutputWithContext(ctx context.Context) GetSoftwareSourcePackageGroupsFilterArrayOutput {
 	return o
-}
-
-func (o GetSoftwareSourcePackageGroupsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSoftwareSourcePackageGroupsFilter] {
-	return pulumix.Output[[]GetSoftwareSourcePackageGroupsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSoftwareSourcePackageGroupsFilterArrayOutput) Index(i pulumi.IntInput) GetSoftwareSourcePackageGroupsFilterOutput {
@@ -13067,12 +11052,6 @@ func (i GetSoftwareSourcePackageGroupsPackageGroupCollectionArgs) ToGetSoftwareS
 	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourcePackageGroupsPackageGroupCollectionOutput)
 }
 
-func (i GetSoftwareSourcePackageGroupsPackageGroupCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourcePackageGroupsPackageGroupCollection] {
-	return pulumix.Output[GetSoftwareSourcePackageGroupsPackageGroupCollection]{
-		OutputState: i.ToGetSoftwareSourcePackageGroupsPackageGroupCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetSoftwareSourcePackageGroupsPackageGroupCollectionArrayInput is an input type that accepts GetSoftwareSourcePackageGroupsPackageGroupCollectionArray and GetSoftwareSourcePackageGroupsPackageGroupCollectionArrayOutput values.
 // You can construct a concrete instance of `GetSoftwareSourcePackageGroupsPackageGroupCollectionArrayInput` via:
 //
@@ -13098,12 +11077,6 @@ func (i GetSoftwareSourcePackageGroupsPackageGroupCollectionArray) ToGetSoftware
 	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourcePackageGroupsPackageGroupCollectionArrayOutput)
 }
 
-func (i GetSoftwareSourcePackageGroupsPackageGroupCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSoftwareSourcePackageGroupsPackageGroupCollection] {
-	return pulumix.Output[[]GetSoftwareSourcePackageGroupsPackageGroupCollection]{
-		OutputState: i.ToGetSoftwareSourcePackageGroupsPackageGroupCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSoftwareSourcePackageGroupsPackageGroupCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetSoftwareSourcePackageGroupsPackageGroupCollectionOutput) ElementType() reflect.Type {
@@ -13116,12 +11089,6 @@ func (o GetSoftwareSourcePackageGroupsPackageGroupCollectionOutput) ToGetSoftwar
 
 func (o GetSoftwareSourcePackageGroupsPackageGroupCollectionOutput) ToGetSoftwareSourcePackageGroupsPackageGroupCollectionOutputWithContext(ctx context.Context) GetSoftwareSourcePackageGroupsPackageGroupCollectionOutput {
 	return o
-}
-
-func (o GetSoftwareSourcePackageGroupsPackageGroupCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourcePackageGroupsPackageGroupCollection] {
-	return pulumix.Output[GetSoftwareSourcePackageGroupsPackageGroupCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSoftwareSourcePackageGroupsPackageGroupCollectionOutput) Items() GetSoftwareSourcePackageGroupsPackageGroupCollectionItemArrayOutput {
@@ -13144,12 +11111,6 @@ func (o GetSoftwareSourcePackageGroupsPackageGroupCollectionArrayOutput) ToGetSo
 	return o
 }
 
-func (o GetSoftwareSourcePackageGroupsPackageGroupCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSoftwareSourcePackageGroupsPackageGroupCollection] {
-	return pulumix.Output[[]GetSoftwareSourcePackageGroupsPackageGroupCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSoftwareSourcePackageGroupsPackageGroupCollectionArrayOutput) Index(i pulumi.IntInput) GetSoftwareSourcePackageGroupsPackageGroupCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSoftwareSourcePackageGroupsPackageGroupCollection {
 		return vs[0].([]GetSoftwareSourcePackageGroupsPackageGroupCollection)[vs[1].(int)]
@@ -13158,19 +11119,19 @@ func (o GetSoftwareSourcePackageGroupsPackageGroupCollectionArrayOutput) Index(i
 
 type GetSoftwareSourcePackageGroupsPackageGroupCollectionItem struct {
 	// description of the package group.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Indicates the order to display category or environment.
-	DisplayOrder int `pulumi:"displayOrder"`
+	DisplayOrder *int `pulumi:"displayOrder"`
 	// A filter to return only package groups of the specified type.
-	GroupType string `pulumi:"groupType"`
+	GroupType *string `pulumi:"groupType"`
 	// Package group identifier.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Indicates if this package group is the default.
-	IsDefault bool `pulumi:"isDefault"`
+	IsDefault *bool `pulumi:"isDefault"`
 	// Indicates if this package group is visible by users.
-	IsUserVisible bool `pulumi:"isUserVisible"`
+	IsUserVisible *bool `pulumi:"isUserVisible"`
 	// The name of the entity to be queried.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The list of packages in the package group.
 	Packages []string `pulumi:"packages"`
 	// the IDs of the package group's repositories.
@@ -13190,19 +11151,19 @@ type GetSoftwareSourcePackageGroupsPackageGroupCollectionItemInput interface {
 
 type GetSoftwareSourcePackageGroupsPackageGroupCollectionItemArgs struct {
 	// description of the package group.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// Indicates the order to display category or environment.
-	DisplayOrder pulumi.IntInput `pulumi:"displayOrder"`
+	DisplayOrder pulumi.IntPtrInput `pulumi:"displayOrder"`
 	// A filter to return only package groups of the specified type.
-	GroupType pulumi.StringInput `pulumi:"groupType"`
+	GroupType pulumi.StringPtrInput `pulumi:"groupType"`
 	// Package group identifier.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Indicates if this package group is the default.
-	IsDefault pulumi.BoolInput `pulumi:"isDefault"`
+	IsDefault pulumi.BoolPtrInput `pulumi:"isDefault"`
 	// Indicates if this package group is visible by users.
-	IsUserVisible pulumi.BoolInput `pulumi:"isUserVisible"`
+	IsUserVisible pulumi.BoolPtrInput `pulumi:"isUserVisible"`
 	// The name of the entity to be queried.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// The list of packages in the package group.
 	Packages pulumi.StringArrayInput `pulumi:"packages"`
 	// the IDs of the package group's repositories.
@@ -13219,12 +11180,6 @@ func (i GetSoftwareSourcePackageGroupsPackageGroupCollectionItemArgs) ToGetSoftw
 
 func (i GetSoftwareSourcePackageGroupsPackageGroupCollectionItemArgs) ToGetSoftwareSourcePackageGroupsPackageGroupCollectionItemOutputWithContext(ctx context.Context) GetSoftwareSourcePackageGroupsPackageGroupCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourcePackageGroupsPackageGroupCollectionItemOutput)
-}
-
-func (i GetSoftwareSourcePackageGroupsPackageGroupCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourcePackageGroupsPackageGroupCollectionItem] {
-	return pulumix.Output[GetSoftwareSourcePackageGroupsPackageGroupCollectionItem]{
-		OutputState: i.ToGetSoftwareSourcePackageGroupsPackageGroupCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSoftwareSourcePackageGroupsPackageGroupCollectionItemArrayInput is an input type that accepts GetSoftwareSourcePackageGroupsPackageGroupCollectionItemArray and GetSoftwareSourcePackageGroupsPackageGroupCollectionItemArrayOutput values.
@@ -13252,12 +11207,6 @@ func (i GetSoftwareSourcePackageGroupsPackageGroupCollectionItemArray) ToGetSoft
 	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourcePackageGroupsPackageGroupCollectionItemArrayOutput)
 }
 
-func (i GetSoftwareSourcePackageGroupsPackageGroupCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSoftwareSourcePackageGroupsPackageGroupCollectionItem] {
-	return pulumix.Output[[]GetSoftwareSourcePackageGroupsPackageGroupCollectionItem]{
-		OutputState: i.ToGetSoftwareSourcePackageGroupsPackageGroupCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSoftwareSourcePackageGroupsPackageGroupCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetSoftwareSourcePackageGroupsPackageGroupCollectionItemOutput) ElementType() reflect.Type {
@@ -13272,45 +11221,39 @@ func (o GetSoftwareSourcePackageGroupsPackageGroupCollectionItemOutput) ToGetSof
 	return o
 }
 
-func (o GetSoftwareSourcePackageGroupsPackageGroupCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourcePackageGroupsPackageGroupCollectionItem] {
-	return pulumix.Output[GetSoftwareSourcePackageGroupsPackageGroupCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // description of the package group.
-func (o GetSoftwareSourcePackageGroupsPackageGroupCollectionItemOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourcePackageGroupsPackageGroupCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+func (o GetSoftwareSourcePackageGroupsPackageGroupCollectionItemOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourcePackageGroupsPackageGroupCollectionItem) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Indicates the order to display category or environment.
-func (o GetSoftwareSourcePackageGroupsPackageGroupCollectionItemOutput) DisplayOrder() pulumi.IntOutput {
-	return o.ApplyT(func(v GetSoftwareSourcePackageGroupsPackageGroupCollectionItem) int { return v.DisplayOrder }).(pulumi.IntOutput)
+func (o GetSoftwareSourcePackageGroupsPackageGroupCollectionItemOutput) DisplayOrder() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourcePackageGroupsPackageGroupCollectionItem) *int { return v.DisplayOrder }).(pulumi.IntPtrOutput)
 }
 
 // A filter to return only package groups of the specified type.
-func (o GetSoftwareSourcePackageGroupsPackageGroupCollectionItemOutput) GroupType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourcePackageGroupsPackageGroupCollectionItem) string { return v.GroupType }).(pulumi.StringOutput)
+func (o GetSoftwareSourcePackageGroupsPackageGroupCollectionItemOutput) GroupType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourcePackageGroupsPackageGroupCollectionItem) *string { return v.GroupType }).(pulumi.StringPtrOutput)
 }
 
 // Package group identifier.
-func (o GetSoftwareSourcePackageGroupsPackageGroupCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourcePackageGroupsPackageGroupCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetSoftwareSourcePackageGroupsPackageGroupCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourcePackageGroupsPackageGroupCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Indicates if this package group is the default.
-func (o GetSoftwareSourcePackageGroupsPackageGroupCollectionItemOutput) IsDefault() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSoftwareSourcePackageGroupsPackageGroupCollectionItem) bool { return v.IsDefault }).(pulumi.BoolOutput)
+func (o GetSoftwareSourcePackageGroupsPackageGroupCollectionItemOutput) IsDefault() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourcePackageGroupsPackageGroupCollectionItem) *bool { return v.IsDefault }).(pulumi.BoolPtrOutput)
 }
 
 // Indicates if this package group is visible by users.
-func (o GetSoftwareSourcePackageGroupsPackageGroupCollectionItemOutput) IsUserVisible() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSoftwareSourcePackageGroupsPackageGroupCollectionItem) bool { return v.IsUserVisible }).(pulumi.BoolOutput)
+func (o GetSoftwareSourcePackageGroupsPackageGroupCollectionItemOutput) IsUserVisible() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourcePackageGroupsPackageGroupCollectionItem) *bool { return v.IsUserVisible }).(pulumi.BoolPtrOutput)
 }
 
 // The name of the entity to be queried.
-func (o GetSoftwareSourcePackageGroupsPackageGroupCollectionItemOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourcePackageGroupsPackageGroupCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+func (o GetSoftwareSourcePackageGroupsPackageGroupCollectionItemOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourcePackageGroupsPackageGroupCollectionItem) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The list of packages in the package group.
@@ -13337,12 +11280,6 @@ func (o GetSoftwareSourcePackageGroupsPackageGroupCollectionItemArrayOutput) ToG
 	return o
 }
 
-func (o GetSoftwareSourcePackageGroupsPackageGroupCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSoftwareSourcePackageGroupsPackageGroupCollectionItem] {
-	return pulumix.Output[[]GetSoftwareSourcePackageGroupsPackageGroupCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSoftwareSourcePackageGroupsPackageGroupCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSoftwareSourcePackageGroupsPackageGroupCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSoftwareSourcePackageGroupsPackageGroupCollectionItem {
 		return vs[0].([]GetSoftwareSourcePackageGroupsPackageGroupCollectionItem)[vs[1].(int)]
@@ -13351,11 +11288,11 @@ func (o GetSoftwareSourcePackageGroupsPackageGroupCollectionItemArrayOutput) Ind
 
 type GetSoftwareSourceSoftwarePackageDependency struct {
 	// The software package's dependency.
-	Dependency string `pulumi:"dependency"`
+	Dependency *string `pulumi:"dependency"`
 	// The modifier for the dependency.
-	DependencyModifier string `pulumi:"dependencyModifier"`
+	DependencyModifier *string `pulumi:"dependencyModifier"`
 	// The type of the dependency.
-	DependencyType string `pulumi:"dependencyType"`
+	DependencyType *string `pulumi:"dependencyType"`
 }
 
 // GetSoftwareSourceSoftwarePackageDependencyInput is an input type that accepts GetSoftwareSourceSoftwarePackageDependencyArgs and GetSoftwareSourceSoftwarePackageDependencyOutput values.
@@ -13371,11 +11308,11 @@ type GetSoftwareSourceSoftwarePackageDependencyInput interface {
 
 type GetSoftwareSourceSoftwarePackageDependencyArgs struct {
 	// The software package's dependency.
-	Dependency pulumi.StringInput `pulumi:"dependency"`
+	Dependency pulumi.StringPtrInput `pulumi:"dependency"`
 	// The modifier for the dependency.
-	DependencyModifier pulumi.StringInput `pulumi:"dependencyModifier"`
+	DependencyModifier pulumi.StringPtrInput `pulumi:"dependencyModifier"`
 	// The type of the dependency.
-	DependencyType pulumi.StringInput `pulumi:"dependencyType"`
+	DependencyType pulumi.StringPtrInput `pulumi:"dependencyType"`
 }
 
 func (GetSoftwareSourceSoftwarePackageDependencyArgs) ElementType() reflect.Type {
@@ -13388,12 +11325,6 @@ func (i GetSoftwareSourceSoftwarePackageDependencyArgs) ToGetSoftwareSourceSoftw
 
 func (i GetSoftwareSourceSoftwarePackageDependencyArgs) ToGetSoftwareSourceSoftwarePackageDependencyOutputWithContext(ctx context.Context) GetSoftwareSourceSoftwarePackageDependencyOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourceSoftwarePackageDependencyOutput)
-}
-
-func (i GetSoftwareSourceSoftwarePackageDependencyArgs) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourceSoftwarePackageDependency] {
-	return pulumix.Output[GetSoftwareSourceSoftwarePackageDependency]{
-		OutputState: i.ToGetSoftwareSourceSoftwarePackageDependencyOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSoftwareSourceSoftwarePackageDependencyArrayInput is an input type that accepts GetSoftwareSourceSoftwarePackageDependencyArray and GetSoftwareSourceSoftwarePackageDependencyArrayOutput values.
@@ -13421,12 +11352,6 @@ func (i GetSoftwareSourceSoftwarePackageDependencyArray) ToGetSoftwareSourceSoft
 	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourceSoftwarePackageDependencyArrayOutput)
 }
 
-func (i GetSoftwareSourceSoftwarePackageDependencyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSoftwareSourceSoftwarePackageDependency] {
-	return pulumix.Output[[]GetSoftwareSourceSoftwarePackageDependency]{
-		OutputState: i.ToGetSoftwareSourceSoftwarePackageDependencyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSoftwareSourceSoftwarePackageDependencyOutput struct{ *pulumi.OutputState }
 
 func (GetSoftwareSourceSoftwarePackageDependencyOutput) ElementType() reflect.Type {
@@ -13441,25 +11366,19 @@ func (o GetSoftwareSourceSoftwarePackageDependencyOutput) ToGetSoftwareSourceSof
 	return o
 }
 
-func (o GetSoftwareSourceSoftwarePackageDependencyOutput) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourceSoftwarePackageDependency] {
-	return pulumix.Output[GetSoftwareSourceSoftwarePackageDependency]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The software package's dependency.
-func (o GetSoftwareSourceSoftwarePackageDependencyOutput) Dependency() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackageDependency) string { return v.Dependency }).(pulumi.StringOutput)
+func (o GetSoftwareSourceSoftwarePackageDependencyOutput) Dependency() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackageDependency) *string { return v.Dependency }).(pulumi.StringPtrOutput)
 }
 
 // The modifier for the dependency.
-func (o GetSoftwareSourceSoftwarePackageDependencyOutput) DependencyModifier() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackageDependency) string { return v.DependencyModifier }).(pulumi.StringOutput)
+func (o GetSoftwareSourceSoftwarePackageDependencyOutput) DependencyModifier() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackageDependency) *string { return v.DependencyModifier }).(pulumi.StringPtrOutput)
 }
 
 // The type of the dependency.
-func (o GetSoftwareSourceSoftwarePackageDependencyOutput) DependencyType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackageDependency) string { return v.DependencyType }).(pulumi.StringOutput)
+func (o GetSoftwareSourceSoftwarePackageDependencyOutput) DependencyType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackageDependency) *string { return v.DependencyType }).(pulumi.StringPtrOutput)
 }
 
 type GetSoftwareSourceSoftwarePackageDependencyArrayOutput struct{ *pulumi.OutputState }
@@ -13476,12 +11395,6 @@ func (o GetSoftwareSourceSoftwarePackageDependencyArrayOutput) ToGetSoftwareSour
 	return o
 }
 
-func (o GetSoftwareSourceSoftwarePackageDependencyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSoftwareSourceSoftwarePackageDependency] {
-	return pulumix.Output[[]GetSoftwareSourceSoftwarePackageDependency]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSoftwareSourceSoftwarePackageDependencyArrayOutput) Index(i pulumi.IntInput) GetSoftwareSourceSoftwarePackageDependencyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSoftwareSourceSoftwarePackageDependency {
 		return vs[0].([]GetSoftwareSourceSoftwarePackageDependency)[vs[1].(int)]
@@ -13490,17 +11403,17 @@ func (o GetSoftwareSourceSoftwarePackageDependencyArrayOutput) Index(i pulumi.In
 
 type GetSoftwareSourceSoftwarePackageFile struct {
 	// Checksum of the file.
-	Checksum string `pulumi:"checksum"`
+	Checksum *string `pulumi:"checksum"`
 	// Type of the checksum.
-	ChecksumType string `pulumi:"checksumType"`
+	ChecksumType *string `pulumi:"checksumType"`
 	// File path.
-	Path string `pulumi:"path"`
+	Path *string `pulumi:"path"`
 	// Size of the package in bytes.
-	SizeInBytes string `pulumi:"sizeInBytes"`
+	SizeInBytes *string `pulumi:"sizeInBytes"`
 	// The date and time of the last modification to this file, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-	TimeModified string `pulumi:"timeModified"`
+	TimeModified *string `pulumi:"timeModified"`
 	// Type of the package.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 }
 
 // GetSoftwareSourceSoftwarePackageFileInput is an input type that accepts GetSoftwareSourceSoftwarePackageFileArgs and GetSoftwareSourceSoftwarePackageFileOutput values.
@@ -13516,17 +11429,17 @@ type GetSoftwareSourceSoftwarePackageFileInput interface {
 
 type GetSoftwareSourceSoftwarePackageFileArgs struct {
 	// Checksum of the file.
-	Checksum pulumi.StringInput `pulumi:"checksum"`
+	Checksum pulumi.StringPtrInput `pulumi:"checksum"`
 	// Type of the checksum.
-	ChecksumType pulumi.StringInput `pulumi:"checksumType"`
+	ChecksumType pulumi.StringPtrInput `pulumi:"checksumType"`
 	// File path.
-	Path pulumi.StringInput `pulumi:"path"`
+	Path pulumi.StringPtrInput `pulumi:"path"`
 	// Size of the package in bytes.
-	SizeInBytes pulumi.StringInput `pulumi:"sizeInBytes"`
+	SizeInBytes pulumi.StringPtrInput `pulumi:"sizeInBytes"`
 	// The date and time of the last modification to this file, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-	TimeModified pulumi.StringInput `pulumi:"timeModified"`
+	TimeModified pulumi.StringPtrInput `pulumi:"timeModified"`
 	// Type of the package.
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
 func (GetSoftwareSourceSoftwarePackageFileArgs) ElementType() reflect.Type {
@@ -13539,12 +11452,6 @@ func (i GetSoftwareSourceSoftwarePackageFileArgs) ToGetSoftwareSourceSoftwarePac
 
 func (i GetSoftwareSourceSoftwarePackageFileArgs) ToGetSoftwareSourceSoftwarePackageFileOutputWithContext(ctx context.Context) GetSoftwareSourceSoftwarePackageFileOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourceSoftwarePackageFileOutput)
-}
-
-func (i GetSoftwareSourceSoftwarePackageFileArgs) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourceSoftwarePackageFile] {
-	return pulumix.Output[GetSoftwareSourceSoftwarePackageFile]{
-		OutputState: i.ToGetSoftwareSourceSoftwarePackageFileOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSoftwareSourceSoftwarePackageFileArrayInput is an input type that accepts GetSoftwareSourceSoftwarePackageFileArray and GetSoftwareSourceSoftwarePackageFileArrayOutput values.
@@ -13572,12 +11479,6 @@ func (i GetSoftwareSourceSoftwarePackageFileArray) ToGetSoftwareSourceSoftwarePa
 	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourceSoftwarePackageFileArrayOutput)
 }
 
-func (i GetSoftwareSourceSoftwarePackageFileArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSoftwareSourceSoftwarePackageFile] {
-	return pulumix.Output[[]GetSoftwareSourceSoftwarePackageFile]{
-		OutputState: i.ToGetSoftwareSourceSoftwarePackageFileArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSoftwareSourceSoftwarePackageFileOutput struct{ *pulumi.OutputState }
 
 func (GetSoftwareSourceSoftwarePackageFileOutput) ElementType() reflect.Type {
@@ -13592,40 +11493,34 @@ func (o GetSoftwareSourceSoftwarePackageFileOutput) ToGetSoftwareSourceSoftwareP
 	return o
 }
 
-func (o GetSoftwareSourceSoftwarePackageFileOutput) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourceSoftwarePackageFile] {
-	return pulumix.Output[GetSoftwareSourceSoftwarePackageFile]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Checksum of the file.
-func (o GetSoftwareSourceSoftwarePackageFileOutput) Checksum() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackageFile) string { return v.Checksum }).(pulumi.StringOutput)
+func (o GetSoftwareSourceSoftwarePackageFileOutput) Checksum() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackageFile) *string { return v.Checksum }).(pulumi.StringPtrOutput)
 }
 
 // Type of the checksum.
-func (o GetSoftwareSourceSoftwarePackageFileOutput) ChecksumType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackageFile) string { return v.ChecksumType }).(pulumi.StringOutput)
+func (o GetSoftwareSourceSoftwarePackageFileOutput) ChecksumType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackageFile) *string { return v.ChecksumType }).(pulumi.StringPtrOutput)
 }
 
 // File path.
-func (o GetSoftwareSourceSoftwarePackageFileOutput) Path() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackageFile) string { return v.Path }).(pulumi.StringOutput)
+func (o GetSoftwareSourceSoftwarePackageFileOutput) Path() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackageFile) *string { return v.Path }).(pulumi.StringPtrOutput)
 }
 
 // Size of the package in bytes.
-func (o GetSoftwareSourceSoftwarePackageFileOutput) SizeInBytes() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackageFile) string { return v.SizeInBytes }).(pulumi.StringOutput)
+func (o GetSoftwareSourceSoftwarePackageFileOutput) SizeInBytes() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackageFile) *string { return v.SizeInBytes }).(pulumi.StringPtrOutput)
 }
 
 // The date and time of the last modification to this file, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-func (o GetSoftwareSourceSoftwarePackageFileOutput) TimeModified() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackageFile) string { return v.TimeModified }).(pulumi.StringOutput)
+func (o GetSoftwareSourceSoftwarePackageFileOutput) TimeModified() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackageFile) *string { return v.TimeModified }).(pulumi.StringPtrOutput)
 }
 
 // Type of the package.
-func (o GetSoftwareSourceSoftwarePackageFileOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackageFile) string { return v.Type }).(pulumi.StringOutput)
+func (o GetSoftwareSourceSoftwarePackageFileOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackageFile) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 type GetSoftwareSourceSoftwarePackageFileArrayOutput struct{ *pulumi.OutputState }
@@ -13642,12 +11537,6 @@ func (o GetSoftwareSourceSoftwarePackageFileArrayOutput) ToGetSoftwareSourceSoft
 	return o
 }
 
-func (o GetSoftwareSourceSoftwarePackageFileArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSoftwareSourceSoftwarePackageFile] {
-	return pulumix.Output[[]GetSoftwareSourceSoftwarePackageFile]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSoftwareSourceSoftwarePackageFileArrayOutput) Index(i pulumi.IntInput) GetSoftwareSourceSoftwarePackageFileOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSoftwareSourceSoftwarePackageFile {
 		return vs[0].([]GetSoftwareSourceSoftwarePackageFile)[vs[1].(int)]
@@ -13656,13 +11545,13 @@ func (o GetSoftwareSourceSoftwarePackageFileArrayOutput) Index(i pulumi.IntInput
 
 type GetSoftwareSourceSoftwarePackageSoftwareSource struct {
 	// Software source description.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Software source name.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The OCID of the software source.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Type of the software source.
-	SoftwareSourceType string `pulumi:"softwareSourceType"`
+	SoftwareSourceType *string `pulumi:"softwareSourceType"`
 }
 
 // GetSoftwareSourceSoftwarePackageSoftwareSourceInput is an input type that accepts GetSoftwareSourceSoftwarePackageSoftwareSourceArgs and GetSoftwareSourceSoftwarePackageSoftwareSourceOutput values.
@@ -13678,13 +11567,13 @@ type GetSoftwareSourceSoftwarePackageSoftwareSourceInput interface {
 
 type GetSoftwareSourceSoftwarePackageSoftwareSourceArgs struct {
 	// Software source description.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// Software source name.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// The OCID of the software source.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Type of the software source.
-	SoftwareSourceType pulumi.StringInput `pulumi:"softwareSourceType"`
+	SoftwareSourceType pulumi.StringPtrInput `pulumi:"softwareSourceType"`
 }
 
 func (GetSoftwareSourceSoftwarePackageSoftwareSourceArgs) ElementType() reflect.Type {
@@ -13697,12 +11586,6 @@ func (i GetSoftwareSourceSoftwarePackageSoftwareSourceArgs) ToGetSoftwareSourceS
 
 func (i GetSoftwareSourceSoftwarePackageSoftwareSourceArgs) ToGetSoftwareSourceSoftwarePackageSoftwareSourceOutputWithContext(ctx context.Context) GetSoftwareSourceSoftwarePackageSoftwareSourceOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourceSoftwarePackageSoftwareSourceOutput)
-}
-
-func (i GetSoftwareSourceSoftwarePackageSoftwareSourceArgs) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourceSoftwarePackageSoftwareSource] {
-	return pulumix.Output[GetSoftwareSourceSoftwarePackageSoftwareSource]{
-		OutputState: i.ToGetSoftwareSourceSoftwarePackageSoftwareSourceOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSoftwareSourceSoftwarePackageSoftwareSourceArrayInput is an input type that accepts GetSoftwareSourceSoftwarePackageSoftwareSourceArray and GetSoftwareSourceSoftwarePackageSoftwareSourceArrayOutput values.
@@ -13730,12 +11613,6 @@ func (i GetSoftwareSourceSoftwarePackageSoftwareSourceArray) ToGetSoftwareSource
 	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourceSoftwarePackageSoftwareSourceArrayOutput)
 }
 
-func (i GetSoftwareSourceSoftwarePackageSoftwareSourceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSoftwareSourceSoftwarePackageSoftwareSource] {
-	return pulumix.Output[[]GetSoftwareSourceSoftwarePackageSoftwareSource]{
-		OutputState: i.ToGetSoftwareSourceSoftwarePackageSoftwareSourceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSoftwareSourceSoftwarePackageSoftwareSourceOutput struct{ *pulumi.OutputState }
 
 func (GetSoftwareSourceSoftwarePackageSoftwareSourceOutput) ElementType() reflect.Type {
@@ -13750,30 +11627,24 @@ func (o GetSoftwareSourceSoftwarePackageSoftwareSourceOutput) ToGetSoftwareSourc
 	return o
 }
 
-func (o GetSoftwareSourceSoftwarePackageSoftwareSourceOutput) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourceSoftwarePackageSoftwareSource] {
-	return pulumix.Output[GetSoftwareSourceSoftwarePackageSoftwareSource]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Software source description.
-func (o GetSoftwareSourceSoftwarePackageSoftwareSourceOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackageSoftwareSource) string { return v.Description }).(pulumi.StringOutput)
+func (o GetSoftwareSourceSoftwarePackageSoftwareSourceOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackageSoftwareSource) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Software source name.
-func (o GetSoftwareSourceSoftwarePackageSoftwareSourceOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackageSoftwareSource) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetSoftwareSourceSoftwarePackageSoftwareSourceOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackageSoftwareSource) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the software source.
-func (o GetSoftwareSourceSoftwarePackageSoftwareSourceOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackageSoftwareSource) string { return v.Id }).(pulumi.StringOutput)
+func (o GetSoftwareSourceSoftwarePackageSoftwareSourceOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackageSoftwareSource) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Type of the software source.
-func (o GetSoftwareSourceSoftwarePackageSoftwareSourceOutput) SoftwareSourceType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackageSoftwareSource) string { return v.SoftwareSourceType }).(pulumi.StringOutput)
+func (o GetSoftwareSourceSoftwarePackageSoftwareSourceOutput) SoftwareSourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackageSoftwareSource) *string { return v.SoftwareSourceType }).(pulumi.StringPtrOutput)
 }
 
 type GetSoftwareSourceSoftwarePackageSoftwareSourceArrayOutput struct{ *pulumi.OutputState }
@@ -13788,12 +11659,6 @@ func (o GetSoftwareSourceSoftwarePackageSoftwareSourceArrayOutput) ToGetSoftware
 
 func (o GetSoftwareSourceSoftwarePackageSoftwareSourceArrayOutput) ToGetSoftwareSourceSoftwarePackageSoftwareSourceArrayOutputWithContext(ctx context.Context) GetSoftwareSourceSoftwarePackageSoftwareSourceArrayOutput {
 	return o
-}
-
-func (o GetSoftwareSourceSoftwarePackageSoftwareSourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSoftwareSourceSoftwarePackageSoftwareSource] {
-	return pulumix.Output[[]GetSoftwareSourceSoftwarePackageSoftwareSource]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSoftwareSourceSoftwarePackageSoftwareSourceArrayOutput) Index(i pulumi.IntInput) GetSoftwareSourceSoftwarePackageSoftwareSourceOutput {
@@ -13839,12 +11704,6 @@ func (i GetSoftwareSourceSoftwarePackagesFilterArgs) ToGetSoftwareSourceSoftware
 	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourceSoftwarePackagesFilterOutput)
 }
 
-func (i GetSoftwareSourceSoftwarePackagesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourceSoftwarePackagesFilter] {
-	return pulumix.Output[GetSoftwareSourceSoftwarePackagesFilter]{
-		OutputState: i.ToGetSoftwareSourceSoftwarePackagesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetSoftwareSourceSoftwarePackagesFilterArrayInput is an input type that accepts GetSoftwareSourceSoftwarePackagesFilterArray and GetSoftwareSourceSoftwarePackagesFilterArrayOutput values.
 // You can construct a concrete instance of `GetSoftwareSourceSoftwarePackagesFilterArrayInput` via:
 //
@@ -13870,12 +11729,6 @@ func (i GetSoftwareSourceSoftwarePackagesFilterArray) ToGetSoftwareSourceSoftwar
 	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourceSoftwarePackagesFilterArrayOutput)
 }
 
-func (i GetSoftwareSourceSoftwarePackagesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSoftwareSourceSoftwarePackagesFilter] {
-	return pulumix.Output[[]GetSoftwareSourceSoftwarePackagesFilter]{
-		OutputState: i.ToGetSoftwareSourceSoftwarePackagesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSoftwareSourceSoftwarePackagesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetSoftwareSourceSoftwarePackagesFilterOutput) ElementType() reflect.Type {
@@ -13888,12 +11741,6 @@ func (o GetSoftwareSourceSoftwarePackagesFilterOutput) ToGetSoftwareSourceSoftwa
 
 func (o GetSoftwareSourceSoftwarePackagesFilterOutput) ToGetSoftwareSourceSoftwarePackagesFilterOutputWithContext(ctx context.Context) GetSoftwareSourceSoftwarePackagesFilterOutput {
 	return o
-}
-
-func (o GetSoftwareSourceSoftwarePackagesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourceSoftwarePackagesFilter] {
-	return pulumix.Output[GetSoftwareSourceSoftwarePackagesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Unique identifier for the package. NOTE - This is not an OCID.
@@ -13921,12 +11768,6 @@ func (o GetSoftwareSourceSoftwarePackagesFilterArrayOutput) ToGetSoftwareSourceS
 
 func (o GetSoftwareSourceSoftwarePackagesFilterArrayOutput) ToGetSoftwareSourceSoftwarePackagesFilterArrayOutputWithContext(ctx context.Context) GetSoftwareSourceSoftwarePackagesFilterArrayOutput {
 	return o
-}
-
-func (o GetSoftwareSourceSoftwarePackagesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSoftwareSourceSoftwarePackagesFilter] {
-	return pulumix.Output[[]GetSoftwareSourceSoftwarePackagesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSoftwareSourceSoftwarePackagesFilterArrayOutput) Index(i pulumi.IntInput) GetSoftwareSourceSoftwarePackagesFilterOutput {
@@ -13966,12 +11807,6 @@ func (i GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionArgs) ToGetSof
 	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionOutput)
 }
 
-func (i GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourceSoftwarePackagesSoftwarePackageCollection] {
-	return pulumix.Output[GetSoftwareSourceSoftwarePackagesSoftwarePackageCollection]{
-		OutputState: i.ToGetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionArrayInput is an input type that accepts GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionArray and GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionArrayOutput values.
 // You can construct a concrete instance of `GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionArrayInput` via:
 //
@@ -13997,12 +11832,6 @@ func (i GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionArray) ToGetSo
 	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionArrayOutput)
 }
 
-func (i GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSoftwareSourceSoftwarePackagesSoftwarePackageCollection] {
-	return pulumix.Output[[]GetSoftwareSourceSoftwarePackagesSoftwarePackageCollection]{
-		OutputState: i.ToGetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionOutput) ElementType() reflect.Type {
@@ -14015,12 +11844,6 @@ func (o GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionOutput) ToGetS
 
 func (o GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionOutput) ToGetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionOutputWithContext(ctx context.Context) GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionOutput {
 	return o
-}
-
-func (o GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourceSoftwarePackagesSoftwarePackageCollection] {
-	return pulumix.Output[GetSoftwareSourceSoftwarePackagesSoftwarePackageCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionOutput) Items() GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemArrayOutput {
@@ -14043,12 +11866,6 @@ func (o GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionArrayOutput) T
 	return o
 }
 
-func (o GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSoftwareSourceSoftwarePackagesSoftwarePackageCollection] {
-	return pulumix.Output[[]GetSoftwareSourceSoftwarePackagesSoftwarePackageCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionArrayOutput) Index(i pulumi.IntInput) GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSoftwareSourceSoftwarePackagesSoftwarePackageCollection {
 		return vs[0].([]GetSoftwareSourceSoftwarePackagesSoftwarePackageCollection)[vs[1].(int)]
@@ -14057,33 +11874,33 @@ func (o GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionArrayOutput) I
 
 type GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItem struct {
 	// The architecture for which this software was built
-	Architecture string `pulumi:"architecture"`
+	Architecture *string `pulumi:"architecture"`
 	// Checksum of the file.
-	Checksum string `pulumi:"checksum"`
+	Checksum *string `pulumi:"checksum"`
 	// Type of the checksum.
-	ChecksumType string `pulumi:"checksumType"`
+	ChecksumType *string `pulumi:"checksumType"`
 	// List of dependencies for the software package.
 	Dependencies []GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemDependency `pulumi:"dependencies"`
 	// Software source description.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// List of files for the software package.
 	Files []GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFile `pulumi:"files"`
 	// A boolean variable that is used to list only the latest versions of packages, module streams, and stream profiles when set to true. All packages, module streams, and stream profiles are returned when set to false.
-	IsLatest bool `pulumi:"isLatest"`
+	IsLatest *bool `pulumi:"isLatest"`
 	// Date of the last update to the package.
-	LastModifiedDate string `pulumi:"lastModifiedDate"`
+	LastModifiedDate *string `pulumi:"lastModifiedDate"`
 	// Unique identifier for the package. NOTE - This is not an OCID.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Size of the package in bytes.
-	SizeInBytes string `pulumi:"sizeInBytes"`
+	SizeInBytes *string `pulumi:"sizeInBytes"`
 	// List of software sources that provide the software package.
 	SoftwareSources []GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemSoftwareSource `pulumi:"softwareSources"`
 	// Type of the package.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 	// Version of the package.
-	Version string `pulumi:"version"`
+	Version *string `pulumi:"version"`
 }
 
 // GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemInput is an input type that accepts GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemArgs and GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemOutput values.
@@ -14099,33 +11916,33 @@ type GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemInput interfa
 
 type GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemArgs struct {
 	// The architecture for which this software was built
-	Architecture pulumi.StringInput `pulumi:"architecture"`
+	Architecture pulumi.StringPtrInput `pulumi:"architecture"`
 	// Checksum of the file.
-	Checksum pulumi.StringInput `pulumi:"checksum"`
+	Checksum pulumi.StringPtrInput `pulumi:"checksum"`
 	// Type of the checksum.
-	ChecksumType pulumi.StringInput `pulumi:"checksumType"`
+	ChecksumType pulumi.StringPtrInput `pulumi:"checksumType"`
 	// List of dependencies for the software package.
 	Dependencies GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemDependencyArrayInput `pulumi:"dependencies"`
 	// Software source description.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// List of files for the software package.
 	Files GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFileArrayInput `pulumi:"files"`
 	// A boolean variable that is used to list only the latest versions of packages, module streams, and stream profiles when set to true. All packages, module streams, and stream profiles are returned when set to false.
-	IsLatest pulumi.BoolInput `pulumi:"isLatest"`
+	IsLatest pulumi.BoolPtrInput `pulumi:"isLatest"`
 	// Date of the last update to the package.
-	LastModifiedDate pulumi.StringInput `pulumi:"lastModifiedDate"`
+	LastModifiedDate pulumi.StringPtrInput `pulumi:"lastModifiedDate"`
 	// Unique identifier for the package. NOTE - This is not an OCID.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Size of the package in bytes.
-	SizeInBytes pulumi.StringInput `pulumi:"sizeInBytes"`
+	SizeInBytes pulumi.StringPtrInput `pulumi:"sizeInBytes"`
 	// List of software sources that provide the software package.
 	SoftwareSources GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceArrayInput `pulumi:"softwareSources"`
 	// Type of the package.
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 	// Version of the package.
-	Version pulumi.StringInput `pulumi:"version"`
+	Version pulumi.StringPtrInput `pulumi:"version"`
 }
 
 func (GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemArgs) ElementType() reflect.Type {
@@ -14138,12 +11955,6 @@ func (i GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemArgs) ToGe
 
 func (i GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemArgs) ToGetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemOutputWithContext(ctx context.Context) GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemOutput)
-}
-
-func (i GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItem] {
-	return pulumix.Output[GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItem]{
-		OutputState: i.ToGetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemArrayInput is an input type that accepts GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemArray and GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemArrayOutput values.
@@ -14171,12 +11982,6 @@ func (i GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemArray) ToG
 	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemArrayOutput)
 }
 
-func (i GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItem] {
-	return pulumix.Output[[]GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItem]{
-		OutputState: i.ToGetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemOutput) ElementType() reflect.Type {
@@ -14191,25 +11996,19 @@ func (o GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemOutput) To
 	return o
 }
 
-func (o GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItem] {
-	return pulumix.Output[GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The architecture for which this software was built
-func (o GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemOutput) Architecture() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItem) string { return v.Architecture }).(pulumi.StringOutput)
+func (o GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemOutput) Architecture() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItem) *string { return v.Architecture }).(pulumi.StringPtrOutput)
 }
 
 // Checksum of the file.
-func (o GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemOutput) Checksum() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItem) string { return v.Checksum }).(pulumi.StringOutput)
+func (o GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemOutput) Checksum() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItem) *string { return v.Checksum }).(pulumi.StringPtrOutput)
 }
 
 // Type of the checksum.
-func (o GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemOutput) ChecksumType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItem) string { return v.ChecksumType }).(pulumi.StringOutput)
+func (o GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemOutput) ChecksumType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItem) *string { return v.ChecksumType }).(pulumi.StringPtrOutput)
 }
 
 // List of dependencies for the software package.
@@ -14220,13 +12019,13 @@ func (o GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemOutput) De
 }
 
 // Software source description.
-func (o GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+func (o GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItem) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
-func (o GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItem) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // List of files for the software package.
@@ -14237,25 +12036,25 @@ func (o GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemOutput) Fi
 }
 
 // A boolean variable that is used to list only the latest versions of packages, module streams, and stream profiles when set to true. All packages, module streams, and stream profiles are returned when set to false.
-func (o GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemOutput) IsLatest() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItem) bool { return v.IsLatest }).(pulumi.BoolOutput)
+func (o GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemOutput) IsLatest() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItem) *bool { return v.IsLatest }).(pulumi.BoolPtrOutput)
 }
 
 // Date of the last update to the package.
-func (o GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemOutput) LastModifiedDate() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItem) string {
+func (o GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemOutput) LastModifiedDate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItem) *string {
 		return v.LastModifiedDate
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Unique identifier for the package. NOTE - This is not an OCID.
-func (o GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+func (o GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItem) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Size of the package in bytes.
-func (o GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemOutput) SizeInBytes() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItem) string { return v.SizeInBytes }).(pulumi.StringOutput)
+func (o GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemOutput) SizeInBytes() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItem) *string { return v.SizeInBytes }).(pulumi.StringPtrOutput)
 }
 
 // List of software sources that provide the software package.
@@ -14266,13 +12065,13 @@ func (o GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemOutput) So
 }
 
 // Type of the package.
-func (o GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItem) string { return v.Type }).(pulumi.StringOutput)
+func (o GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItem) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 // Version of the package.
-func (o GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemOutput) Version() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItem) string { return v.Version }).(pulumi.StringOutput)
+func (o GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemOutput) Version() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItem) *string { return v.Version }).(pulumi.StringPtrOutput)
 }
 
 type GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -14289,12 +12088,6 @@ func (o GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemArrayOutpu
 	return o
 }
 
-func (o GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItem] {
-	return pulumix.Output[[]GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItem {
 		return vs[0].([]GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItem)[vs[1].(int)]
@@ -14303,11 +12096,11 @@ func (o GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemArrayOutpu
 
 type GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemDependency struct {
 	// The software package's dependency.
-	Dependency string `pulumi:"dependency"`
+	Dependency *string `pulumi:"dependency"`
 	// The modifier for the dependency.
-	DependencyModifier string `pulumi:"dependencyModifier"`
+	DependencyModifier *string `pulumi:"dependencyModifier"`
 	// The type of the dependency.
-	DependencyType string `pulumi:"dependencyType"`
+	DependencyType *string `pulumi:"dependencyType"`
 }
 
 // GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemDependencyInput is an input type that accepts GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemDependencyArgs and GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemDependencyOutput values.
@@ -14323,11 +12116,11 @@ type GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemDependencyInp
 
 type GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemDependencyArgs struct {
 	// The software package's dependency.
-	Dependency pulumi.StringInput `pulumi:"dependency"`
+	Dependency pulumi.StringPtrInput `pulumi:"dependency"`
 	// The modifier for the dependency.
-	DependencyModifier pulumi.StringInput `pulumi:"dependencyModifier"`
+	DependencyModifier pulumi.StringPtrInput `pulumi:"dependencyModifier"`
 	// The type of the dependency.
-	DependencyType pulumi.StringInput `pulumi:"dependencyType"`
+	DependencyType pulumi.StringPtrInput `pulumi:"dependencyType"`
 }
 
 func (GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemDependencyArgs) ElementType() reflect.Type {
@@ -14340,12 +12133,6 @@ func (i GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemDependency
 
 func (i GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemDependencyArgs) ToGetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemDependencyOutputWithContext(ctx context.Context) GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemDependencyOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemDependencyOutput)
-}
-
-func (i GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemDependencyArgs) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemDependency] {
-	return pulumix.Output[GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemDependency]{
-		OutputState: i.ToGetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemDependencyOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemDependencyArrayInput is an input type that accepts GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemDependencyArray and GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemDependencyArrayOutput values.
@@ -14373,12 +12160,6 @@ func (i GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemDependency
 	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemDependencyArrayOutput)
 }
 
-func (i GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemDependencyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemDependency] {
-	return pulumix.Output[[]GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemDependency]{
-		OutputState: i.ToGetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemDependencyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemDependencyOutput struct{ *pulumi.OutputState }
 
 func (GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemDependencyOutput) ElementType() reflect.Type {
@@ -14393,31 +12174,25 @@ func (o GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemDependency
 	return o
 }
 
-func (o GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemDependencyOutput) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemDependency] {
-	return pulumix.Output[GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemDependency]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The software package's dependency.
-func (o GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemDependencyOutput) Dependency() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemDependency) string {
+func (o GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemDependencyOutput) Dependency() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemDependency) *string {
 		return v.Dependency
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The modifier for the dependency.
-func (o GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemDependencyOutput) DependencyModifier() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemDependency) string {
+func (o GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemDependencyOutput) DependencyModifier() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemDependency) *string {
 		return v.DependencyModifier
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The type of the dependency.
-func (o GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemDependencyOutput) DependencyType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemDependency) string {
+func (o GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemDependencyOutput) DependencyType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemDependency) *string {
 		return v.DependencyType
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemDependencyArrayOutput struct{ *pulumi.OutputState }
@@ -14434,12 +12209,6 @@ func (o GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemDependency
 	return o
 }
 
-func (o GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemDependencyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemDependency] {
-	return pulumix.Output[[]GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemDependency]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemDependencyArrayOutput) Index(i pulumi.IntInput) GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemDependencyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemDependency {
 		return vs[0].([]GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemDependency)[vs[1].(int)]
@@ -14448,17 +12217,17 @@ func (o GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemDependency
 
 type GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFile struct {
 	// Checksum of the file.
-	Checksum string `pulumi:"checksum"`
+	Checksum *string `pulumi:"checksum"`
 	// Type of the checksum.
-	ChecksumType string `pulumi:"checksumType"`
+	ChecksumType *string `pulumi:"checksumType"`
 	// File path.
-	Path string `pulumi:"path"`
+	Path *string `pulumi:"path"`
 	// Size of the package in bytes.
-	SizeInBytes string `pulumi:"sizeInBytes"`
+	SizeInBytes *string `pulumi:"sizeInBytes"`
 	// The date and time of the last modification to this file, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-	TimeModified string `pulumi:"timeModified"`
+	TimeModified *string `pulumi:"timeModified"`
 	// Type of the package.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 }
 
 // GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFileInput is an input type that accepts GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFileArgs and GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFileOutput values.
@@ -14474,17 +12243,17 @@ type GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFileInput int
 
 type GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFileArgs struct {
 	// Checksum of the file.
-	Checksum pulumi.StringInput `pulumi:"checksum"`
+	Checksum pulumi.StringPtrInput `pulumi:"checksum"`
 	// Type of the checksum.
-	ChecksumType pulumi.StringInput `pulumi:"checksumType"`
+	ChecksumType pulumi.StringPtrInput `pulumi:"checksumType"`
 	// File path.
-	Path pulumi.StringInput `pulumi:"path"`
+	Path pulumi.StringPtrInput `pulumi:"path"`
 	// Size of the package in bytes.
-	SizeInBytes pulumi.StringInput `pulumi:"sizeInBytes"`
+	SizeInBytes pulumi.StringPtrInput `pulumi:"sizeInBytes"`
 	// The date and time of the last modification to this file, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-	TimeModified pulumi.StringInput `pulumi:"timeModified"`
+	TimeModified pulumi.StringPtrInput `pulumi:"timeModified"`
 	// Type of the package.
-	Type pulumi.StringInput `pulumi:"type"`
+	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
 func (GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFileArgs) ElementType() reflect.Type {
@@ -14497,12 +12266,6 @@ func (i GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFileArgs) 
 
 func (i GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFileArgs) ToGetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFileOutputWithContext(ctx context.Context) GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFileOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFileOutput)
-}
-
-func (i GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFileArgs) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFile] {
-	return pulumix.Output[GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFile]{
-		OutputState: i.ToGetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFileOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFileArrayInput is an input type that accepts GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFileArray and GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFileArrayOutput values.
@@ -14530,12 +12293,6 @@ func (i GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFileArray)
 	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFileArrayOutput)
 }
 
-func (i GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFileArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFile] {
-	return pulumix.Output[[]GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFile]{
-		OutputState: i.ToGetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFileArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFileOutput struct{ *pulumi.OutputState }
 
 func (GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFileOutput) ElementType() reflect.Type {
@@ -14550,46 +12307,40 @@ func (o GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFileOutput
 	return o
 }
 
-func (o GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFileOutput) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFile] {
-	return pulumix.Output[GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFile]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Checksum of the file.
-func (o GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFileOutput) Checksum() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFile) string { return v.Checksum }).(pulumi.StringOutput)
+func (o GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFileOutput) Checksum() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFile) *string { return v.Checksum }).(pulumi.StringPtrOutput)
 }
 
 // Type of the checksum.
-func (o GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFileOutput) ChecksumType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFile) string {
+func (o GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFileOutput) ChecksumType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFile) *string {
 		return v.ChecksumType
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // File path.
-func (o GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFileOutput) Path() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFile) string { return v.Path }).(pulumi.StringOutput)
+func (o GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFileOutput) Path() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFile) *string { return v.Path }).(pulumi.StringPtrOutput)
 }
 
 // Size of the package in bytes.
-func (o GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFileOutput) SizeInBytes() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFile) string {
+func (o GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFileOutput) SizeInBytes() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFile) *string {
 		return v.SizeInBytes
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The date and time of the last modification to this file, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-func (o GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFileOutput) TimeModified() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFile) string {
+func (o GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFileOutput) TimeModified() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFile) *string {
 		return v.TimeModified
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Type of the package.
-func (o GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFileOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFile) string { return v.Type }).(pulumi.StringOutput)
+func (o GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFileOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFile) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 type GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFileArrayOutput struct{ *pulumi.OutputState }
@@ -14606,12 +12357,6 @@ func (o GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFileArrayO
 	return o
 }
 
-func (o GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFileArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFile] {
-	return pulumix.Output[[]GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFile]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFileArrayOutput) Index(i pulumi.IntInput) GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFileOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFile {
 		return vs[0].([]GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFile)[vs[1].(int)]
@@ -14620,13 +12365,13 @@ func (o GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFileArrayO
 
 type GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemSoftwareSource struct {
 	// Software source description.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The OCID of the software source.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Type of the software source.
-	SoftwareSourceType string `pulumi:"softwareSourceType"`
+	SoftwareSourceType *string `pulumi:"softwareSourceType"`
 }
 
 // GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceInput is an input type that accepts GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceArgs and GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceOutput values.
@@ -14642,13 +12387,13 @@ type GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourc
 
 type GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceArgs struct {
 	// Software source description.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// The OCID of the software source.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Type of the software source.
-	SoftwareSourceType pulumi.StringInput `pulumi:"softwareSourceType"`
+	SoftwareSourceType pulumi.StringPtrInput `pulumi:"softwareSourceType"`
 }
 
 func (GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceArgs) ElementType() reflect.Type {
@@ -14661,12 +12406,6 @@ func (i GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemSoftwareSo
 
 func (i GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceArgs) ToGetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceOutputWithContext(ctx context.Context) GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceOutput)
-}
-
-func (i GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceArgs) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemSoftwareSource] {
-	return pulumix.Output[GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemSoftwareSource]{
-		OutputState: i.ToGetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceArrayInput is an input type that accepts GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceArray and GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceArrayOutput values.
@@ -14694,12 +12433,6 @@ func (i GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemSoftwareSo
 	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceArrayOutput)
 }
 
-func (i GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemSoftwareSource] {
-	return pulumix.Output[[]GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemSoftwareSource]{
-		OutputState: i.ToGetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceOutput struct{ *pulumi.OutputState }
 
 func (GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceOutput) ElementType() reflect.Type {
@@ -14714,38 +12447,32 @@ func (o GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemSoftwareSo
 	return o
 }
 
-func (o GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceOutput) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemSoftwareSource] {
-	return pulumix.Output[GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemSoftwareSource]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Software source description.
-func (o GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemSoftwareSource) string {
+func (o GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemSoftwareSource) *string {
 		return v.Description
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
-func (o GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemSoftwareSource) string {
+func (o GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemSoftwareSource) *string {
 		return v.DisplayName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the software source.
-func (o GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemSoftwareSource) string {
+func (o GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemSoftwareSource) *string {
 		return v.Id
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Type of the software source.
-func (o GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceOutput) SoftwareSourceType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemSoftwareSource) string {
+func (o GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceOutput) SoftwareSourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemSoftwareSource) *string {
 		return v.SoftwareSourceType
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceArrayOutput struct{ *pulumi.OutputState }
@@ -14762,12 +12489,6 @@ func (o GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemSoftwareSo
 	return o
 }
 
-func (o GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemSoftwareSource] {
-	return pulumix.Output[[]GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemSoftwareSource]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceArrayOutput) Index(i pulumi.IntInput) GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemSoftwareSource {
 		return vs[0].([]GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemSoftwareSource)[vs[1].(int)]
@@ -14776,9 +12497,9 @@ func (o GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemSoftwareSo
 
 type GetSoftwareSourceVendorSoftwareSource struct {
 	// User friendly name.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The OCID of the resource that is immutable on creation.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 // GetSoftwareSourceVendorSoftwareSourceInput is an input type that accepts GetSoftwareSourceVendorSoftwareSourceArgs and GetSoftwareSourceVendorSoftwareSourceOutput values.
@@ -14794,9 +12515,9 @@ type GetSoftwareSourceVendorSoftwareSourceInput interface {
 
 type GetSoftwareSourceVendorSoftwareSourceArgs struct {
 	// User friendly name.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// The OCID of the resource that is immutable on creation.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 }
 
 func (GetSoftwareSourceVendorSoftwareSourceArgs) ElementType() reflect.Type {
@@ -14809,12 +12530,6 @@ func (i GetSoftwareSourceVendorSoftwareSourceArgs) ToGetSoftwareSourceVendorSoft
 
 func (i GetSoftwareSourceVendorSoftwareSourceArgs) ToGetSoftwareSourceVendorSoftwareSourceOutputWithContext(ctx context.Context) GetSoftwareSourceVendorSoftwareSourceOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourceVendorSoftwareSourceOutput)
-}
-
-func (i GetSoftwareSourceVendorSoftwareSourceArgs) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourceVendorSoftwareSource] {
-	return pulumix.Output[GetSoftwareSourceVendorSoftwareSource]{
-		OutputState: i.ToGetSoftwareSourceVendorSoftwareSourceOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSoftwareSourceVendorSoftwareSourceArrayInput is an input type that accepts GetSoftwareSourceVendorSoftwareSourceArray and GetSoftwareSourceVendorSoftwareSourceArrayOutput values.
@@ -14842,12 +12557,6 @@ func (i GetSoftwareSourceVendorSoftwareSourceArray) ToGetSoftwareSourceVendorSof
 	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourceVendorSoftwareSourceArrayOutput)
 }
 
-func (i GetSoftwareSourceVendorSoftwareSourceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSoftwareSourceVendorSoftwareSource] {
-	return pulumix.Output[[]GetSoftwareSourceVendorSoftwareSource]{
-		OutputState: i.ToGetSoftwareSourceVendorSoftwareSourceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSoftwareSourceVendorSoftwareSourceOutput struct{ *pulumi.OutputState }
 
 func (GetSoftwareSourceVendorSoftwareSourceOutput) ElementType() reflect.Type {
@@ -14862,20 +12571,14 @@ func (o GetSoftwareSourceVendorSoftwareSourceOutput) ToGetSoftwareSourceVendorSo
 	return o
 }
 
-func (o GetSoftwareSourceVendorSoftwareSourceOutput) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourceVendorSoftwareSource] {
-	return pulumix.Output[GetSoftwareSourceVendorSoftwareSource]{
-		OutputState: o.OutputState,
-	}
-}
-
 // User friendly name.
-func (o GetSoftwareSourceVendorSoftwareSourceOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourceVendorSoftwareSource) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetSoftwareSourceVendorSoftwareSourceOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourceVendorSoftwareSource) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the resource that is immutable on creation.
-func (o GetSoftwareSourceVendorSoftwareSourceOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourceVendorSoftwareSource) string { return v.Id }).(pulumi.StringOutput)
+func (o GetSoftwareSourceVendorSoftwareSourceOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourceVendorSoftwareSource) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 type GetSoftwareSourceVendorSoftwareSourceArrayOutput struct{ *pulumi.OutputState }
@@ -14890,12 +12593,6 @@ func (o GetSoftwareSourceVendorSoftwareSourceArrayOutput) ToGetSoftwareSourceVen
 
 func (o GetSoftwareSourceVendorSoftwareSourceArrayOutput) ToGetSoftwareSourceVendorSoftwareSourceArrayOutputWithContext(ctx context.Context) GetSoftwareSourceVendorSoftwareSourceArrayOutput {
 	return o
-}
-
-func (o GetSoftwareSourceVendorSoftwareSourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSoftwareSourceVendorSoftwareSource] {
-	return pulumix.Output[[]GetSoftwareSourceVendorSoftwareSource]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSoftwareSourceVendorSoftwareSourceArrayOutput) Index(i pulumi.IntInput) GetSoftwareSourceVendorSoftwareSourceOutput {
@@ -14941,12 +12638,6 @@ func (i GetSoftwareSourceVendorsFilterArgs) ToGetSoftwareSourceVendorsFilterOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourceVendorsFilterOutput)
 }
 
-func (i GetSoftwareSourceVendorsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourceVendorsFilter] {
-	return pulumix.Output[GetSoftwareSourceVendorsFilter]{
-		OutputState: i.ToGetSoftwareSourceVendorsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetSoftwareSourceVendorsFilterArrayInput is an input type that accepts GetSoftwareSourceVendorsFilterArray and GetSoftwareSourceVendorsFilterArrayOutput values.
 // You can construct a concrete instance of `GetSoftwareSourceVendorsFilterArrayInput` via:
 //
@@ -14972,12 +12663,6 @@ func (i GetSoftwareSourceVendorsFilterArray) ToGetSoftwareSourceVendorsFilterArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourceVendorsFilterArrayOutput)
 }
 
-func (i GetSoftwareSourceVendorsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSoftwareSourceVendorsFilter] {
-	return pulumix.Output[[]GetSoftwareSourceVendorsFilter]{
-		OutputState: i.ToGetSoftwareSourceVendorsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSoftwareSourceVendorsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetSoftwareSourceVendorsFilterOutput) ElementType() reflect.Type {
@@ -14990,12 +12675,6 @@ func (o GetSoftwareSourceVendorsFilterOutput) ToGetSoftwareSourceVendorsFilterOu
 
 func (o GetSoftwareSourceVendorsFilterOutput) ToGetSoftwareSourceVendorsFilterOutputWithContext(ctx context.Context) GetSoftwareSourceVendorsFilterOutput {
 	return o
-}
-
-func (o GetSoftwareSourceVendorsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourceVendorsFilter] {
-	return pulumix.Output[GetSoftwareSourceVendorsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The name of the entity to be queried.
@@ -15023,12 +12702,6 @@ func (o GetSoftwareSourceVendorsFilterArrayOutput) ToGetSoftwareSourceVendorsFil
 
 func (o GetSoftwareSourceVendorsFilterArrayOutput) ToGetSoftwareSourceVendorsFilterArrayOutputWithContext(ctx context.Context) GetSoftwareSourceVendorsFilterArrayOutput {
 	return o
-}
-
-func (o GetSoftwareSourceVendorsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSoftwareSourceVendorsFilter] {
-	return pulumix.Output[[]GetSoftwareSourceVendorsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSoftwareSourceVendorsFilterArrayOutput) Index(i pulumi.IntInput) GetSoftwareSourceVendorsFilterOutput {
@@ -15070,12 +12743,6 @@ func (i GetSoftwareSourceVendorsSoftwareSourceVendorCollectionArgs) ToGetSoftwar
 	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourceVendorsSoftwareSourceVendorCollectionOutput)
 }
 
-func (i GetSoftwareSourceVendorsSoftwareSourceVendorCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourceVendorsSoftwareSourceVendorCollection] {
-	return pulumix.Output[GetSoftwareSourceVendorsSoftwareSourceVendorCollection]{
-		OutputState: i.ToGetSoftwareSourceVendorsSoftwareSourceVendorCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetSoftwareSourceVendorsSoftwareSourceVendorCollectionArrayInput is an input type that accepts GetSoftwareSourceVendorsSoftwareSourceVendorCollectionArray and GetSoftwareSourceVendorsSoftwareSourceVendorCollectionArrayOutput values.
 // You can construct a concrete instance of `GetSoftwareSourceVendorsSoftwareSourceVendorCollectionArrayInput` via:
 //
@@ -15101,12 +12768,6 @@ func (i GetSoftwareSourceVendorsSoftwareSourceVendorCollectionArray) ToGetSoftwa
 	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourceVendorsSoftwareSourceVendorCollectionArrayOutput)
 }
 
-func (i GetSoftwareSourceVendorsSoftwareSourceVendorCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSoftwareSourceVendorsSoftwareSourceVendorCollection] {
-	return pulumix.Output[[]GetSoftwareSourceVendorsSoftwareSourceVendorCollection]{
-		OutputState: i.ToGetSoftwareSourceVendorsSoftwareSourceVendorCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSoftwareSourceVendorsSoftwareSourceVendorCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetSoftwareSourceVendorsSoftwareSourceVendorCollectionOutput) ElementType() reflect.Type {
@@ -15119,12 +12780,6 @@ func (o GetSoftwareSourceVendorsSoftwareSourceVendorCollectionOutput) ToGetSoftw
 
 func (o GetSoftwareSourceVendorsSoftwareSourceVendorCollectionOutput) ToGetSoftwareSourceVendorsSoftwareSourceVendorCollectionOutputWithContext(ctx context.Context) GetSoftwareSourceVendorsSoftwareSourceVendorCollectionOutput {
 	return o
-}
-
-func (o GetSoftwareSourceVendorsSoftwareSourceVendorCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourceVendorsSoftwareSourceVendorCollection] {
-	return pulumix.Output[GetSoftwareSourceVendorsSoftwareSourceVendorCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 // List of SoftwareSourceVendor.
@@ -15148,12 +12803,6 @@ func (o GetSoftwareSourceVendorsSoftwareSourceVendorCollectionArrayOutput) ToGet
 	return o
 }
 
-func (o GetSoftwareSourceVendorsSoftwareSourceVendorCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSoftwareSourceVendorsSoftwareSourceVendorCollection] {
-	return pulumix.Output[[]GetSoftwareSourceVendorsSoftwareSourceVendorCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSoftwareSourceVendorsSoftwareSourceVendorCollectionArrayOutput) Index(i pulumi.IntInput) GetSoftwareSourceVendorsSoftwareSourceVendorCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSoftwareSourceVendorsSoftwareSourceVendorCollection {
 		return vs[0].([]GetSoftwareSourceVendorsSoftwareSourceVendorCollection)[vs[1].(int)]
@@ -15164,7 +12813,7 @@ type GetSoftwareSourceVendorsSoftwareSourceVendorCollectionItem struct {
 	// List of corresponding archTypes.
 	ArchTypes []string `pulumi:"archTypes"`
 	// The name of the entity to be queried.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// List of corresponding osFamilies.
 	OsFamilies []string `pulumi:"osFamilies"`
 }
@@ -15184,7 +12833,7 @@ type GetSoftwareSourceVendorsSoftwareSourceVendorCollectionItemArgs struct {
 	// List of corresponding archTypes.
 	ArchTypes pulumi.StringArrayInput `pulumi:"archTypes"`
 	// The name of the entity to be queried.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// List of corresponding osFamilies.
 	OsFamilies pulumi.StringArrayInput `pulumi:"osFamilies"`
 }
@@ -15199,12 +12848,6 @@ func (i GetSoftwareSourceVendorsSoftwareSourceVendorCollectionItemArgs) ToGetSof
 
 func (i GetSoftwareSourceVendorsSoftwareSourceVendorCollectionItemArgs) ToGetSoftwareSourceVendorsSoftwareSourceVendorCollectionItemOutputWithContext(ctx context.Context) GetSoftwareSourceVendorsSoftwareSourceVendorCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourceVendorsSoftwareSourceVendorCollectionItemOutput)
-}
-
-func (i GetSoftwareSourceVendorsSoftwareSourceVendorCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourceVendorsSoftwareSourceVendorCollectionItem] {
-	return pulumix.Output[GetSoftwareSourceVendorsSoftwareSourceVendorCollectionItem]{
-		OutputState: i.ToGetSoftwareSourceVendorsSoftwareSourceVendorCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSoftwareSourceVendorsSoftwareSourceVendorCollectionItemArrayInput is an input type that accepts GetSoftwareSourceVendorsSoftwareSourceVendorCollectionItemArray and GetSoftwareSourceVendorsSoftwareSourceVendorCollectionItemArrayOutput values.
@@ -15232,12 +12875,6 @@ func (i GetSoftwareSourceVendorsSoftwareSourceVendorCollectionItemArray) ToGetSo
 	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourceVendorsSoftwareSourceVendorCollectionItemArrayOutput)
 }
 
-func (i GetSoftwareSourceVendorsSoftwareSourceVendorCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSoftwareSourceVendorsSoftwareSourceVendorCollectionItem] {
-	return pulumix.Output[[]GetSoftwareSourceVendorsSoftwareSourceVendorCollectionItem]{
-		OutputState: i.ToGetSoftwareSourceVendorsSoftwareSourceVendorCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSoftwareSourceVendorsSoftwareSourceVendorCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetSoftwareSourceVendorsSoftwareSourceVendorCollectionItemOutput) ElementType() reflect.Type {
@@ -15252,20 +12889,14 @@ func (o GetSoftwareSourceVendorsSoftwareSourceVendorCollectionItemOutput) ToGetS
 	return o
 }
 
-func (o GetSoftwareSourceVendorsSoftwareSourceVendorCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourceVendorsSoftwareSourceVendorCollectionItem] {
-	return pulumix.Output[GetSoftwareSourceVendorsSoftwareSourceVendorCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // List of corresponding archTypes.
 func (o GetSoftwareSourceVendorsSoftwareSourceVendorCollectionItemOutput) ArchTypes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetSoftwareSourceVendorsSoftwareSourceVendorCollectionItem) []string { return v.ArchTypes }).(pulumi.StringArrayOutput)
 }
 
 // The name of the entity to be queried.
-func (o GetSoftwareSourceVendorsSoftwareSourceVendorCollectionItemOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourceVendorsSoftwareSourceVendorCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+func (o GetSoftwareSourceVendorsSoftwareSourceVendorCollectionItemOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourceVendorsSoftwareSourceVendorCollectionItem) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // List of corresponding osFamilies.
@@ -15285,12 +12916,6 @@ func (o GetSoftwareSourceVendorsSoftwareSourceVendorCollectionItemArrayOutput) T
 
 func (o GetSoftwareSourceVendorsSoftwareSourceVendorCollectionItemArrayOutput) ToGetSoftwareSourceVendorsSoftwareSourceVendorCollectionItemArrayOutputWithContext(ctx context.Context) GetSoftwareSourceVendorsSoftwareSourceVendorCollectionItemArrayOutput {
 	return o
-}
-
-func (o GetSoftwareSourceVendorsSoftwareSourceVendorCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSoftwareSourceVendorsSoftwareSourceVendorCollectionItem] {
-	return pulumix.Output[[]GetSoftwareSourceVendorsSoftwareSourceVendorCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSoftwareSourceVendorsSoftwareSourceVendorCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSoftwareSourceVendorsSoftwareSourceVendorCollectionItemOutput {
@@ -15334,12 +12959,6 @@ func (i GetSoftwareSourcesFilterArgs) ToGetSoftwareSourcesFilterOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourcesFilterOutput)
 }
 
-func (i GetSoftwareSourcesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourcesFilter] {
-	return pulumix.Output[GetSoftwareSourcesFilter]{
-		OutputState: i.ToGetSoftwareSourcesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetSoftwareSourcesFilterArrayInput is an input type that accepts GetSoftwareSourcesFilterArray and GetSoftwareSourcesFilterArrayOutput values.
 // You can construct a concrete instance of `GetSoftwareSourcesFilterArrayInput` via:
 //
@@ -15365,12 +12984,6 @@ func (i GetSoftwareSourcesFilterArray) ToGetSoftwareSourcesFilterArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourcesFilterArrayOutput)
 }
 
-func (i GetSoftwareSourcesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSoftwareSourcesFilter] {
-	return pulumix.Output[[]GetSoftwareSourcesFilter]{
-		OutputState: i.ToGetSoftwareSourcesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSoftwareSourcesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetSoftwareSourcesFilterOutput) ElementType() reflect.Type {
@@ -15383,12 +12996,6 @@ func (o GetSoftwareSourcesFilterOutput) ToGetSoftwareSourcesFilterOutput() GetSo
 
 func (o GetSoftwareSourcesFilterOutput) ToGetSoftwareSourcesFilterOutputWithContext(ctx context.Context) GetSoftwareSourcesFilterOutput {
 	return o
-}
-
-func (o GetSoftwareSourcesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourcesFilter] {
-	return pulumix.Output[GetSoftwareSourcesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSoftwareSourcesFilterOutput) Name() pulumi.StringOutput {
@@ -15415,12 +13022,6 @@ func (o GetSoftwareSourcesFilterArrayOutput) ToGetSoftwareSourcesFilterArrayOutp
 
 func (o GetSoftwareSourcesFilterArrayOutput) ToGetSoftwareSourcesFilterArrayOutputWithContext(ctx context.Context) GetSoftwareSourcesFilterArrayOutput {
 	return o
-}
-
-func (o GetSoftwareSourcesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSoftwareSourcesFilter] {
-	return pulumix.Output[[]GetSoftwareSourcesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSoftwareSourcesFilterArrayOutput) Index(i pulumi.IntInput) GetSoftwareSourcesFilterOutput {
@@ -15460,12 +13061,6 @@ func (i GetSoftwareSourcesSoftwareSourceCollectionArgs) ToGetSoftwareSourcesSoft
 	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourcesSoftwareSourceCollectionOutput)
 }
 
-func (i GetSoftwareSourcesSoftwareSourceCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourcesSoftwareSourceCollection] {
-	return pulumix.Output[GetSoftwareSourcesSoftwareSourceCollection]{
-		OutputState: i.ToGetSoftwareSourcesSoftwareSourceCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetSoftwareSourcesSoftwareSourceCollectionArrayInput is an input type that accepts GetSoftwareSourcesSoftwareSourceCollectionArray and GetSoftwareSourcesSoftwareSourceCollectionArrayOutput values.
 // You can construct a concrete instance of `GetSoftwareSourcesSoftwareSourceCollectionArrayInput` via:
 //
@@ -15491,12 +13086,6 @@ func (i GetSoftwareSourcesSoftwareSourceCollectionArray) ToGetSoftwareSourcesSof
 	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourcesSoftwareSourceCollectionArrayOutput)
 }
 
-func (i GetSoftwareSourcesSoftwareSourceCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSoftwareSourcesSoftwareSourceCollection] {
-	return pulumix.Output[[]GetSoftwareSourcesSoftwareSourceCollection]{
-		OutputState: i.ToGetSoftwareSourcesSoftwareSourceCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSoftwareSourcesSoftwareSourceCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetSoftwareSourcesSoftwareSourceCollectionOutput) ElementType() reflect.Type {
@@ -15509,12 +13098,6 @@ func (o GetSoftwareSourcesSoftwareSourceCollectionOutput) ToGetSoftwareSourcesSo
 
 func (o GetSoftwareSourcesSoftwareSourceCollectionOutput) ToGetSoftwareSourcesSoftwareSourceCollectionOutputWithContext(ctx context.Context) GetSoftwareSourcesSoftwareSourceCollectionOutput {
 	return o
-}
-
-func (o GetSoftwareSourcesSoftwareSourceCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourcesSoftwareSourceCollection] {
-	return pulumix.Output[GetSoftwareSourcesSoftwareSourceCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSoftwareSourcesSoftwareSourceCollectionOutput) Items() GetSoftwareSourcesSoftwareSourceCollectionItemArrayOutput {
@@ -15537,12 +13120,6 @@ func (o GetSoftwareSourcesSoftwareSourceCollectionArrayOutput) ToGetSoftwareSour
 	return o
 }
 
-func (o GetSoftwareSourcesSoftwareSourceCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSoftwareSourcesSoftwareSourceCollection] {
-	return pulumix.Output[[]GetSoftwareSourcesSoftwareSourceCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSoftwareSourcesSoftwareSourceCollectionArrayOutput) Index(i pulumi.IntInput) GetSoftwareSourcesSoftwareSourceCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSoftwareSourcesSoftwareSourceCollection {
 		return vs[0].([]GetSoftwareSourcesSoftwareSourceCollection)[vs[1].(int)]
@@ -15551,53 +13128,53 @@ func (o GetSoftwareSourcesSoftwareSourceCollectionArrayOutput) Index(i pulumi.In
 
 type GetSoftwareSourcesSoftwareSourceCollectionItem struct {
 	// A filter to return only instances whose architecture type matches the given architecture.
-	ArchType string `pulumi:"archType"`
+	ArchType *string `pulumi:"archType"`
 	// The availabilities of the software source for a tenant.
-	Availability string `pulumi:"availability"`
+	Availability *string `pulumi:"availability"`
 	// The yum repository checksum type used by this software source.
-	ChecksumType string `pulumi:"checksumType"`
+	ChecksumType *string `pulumi:"checksumType"`
 	// The OCID of the compartment that contains the resources to list.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Used to apply filters to a VendorSoftwareSource to create/update CustomSoftwareSources.
 	CustomSoftwareSourceFilters []GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilter `pulumi:"customSoftwareSourceFilters"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Information specified by the user about the software source.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Fingerprint of the GPG key for this software source.
-	GpgKeyFingerprint string `pulumi:"gpgKeyFingerprint"`
+	GpgKeyFingerprint *string `pulumi:"gpgKeyFingerprint"`
 	// ID of the GPG key for this software source.
-	GpgKeyId string `pulumi:"gpgKeyId"`
+	GpgKeyId *string `pulumi:"gpgKeyId"`
 	// URL of the GPG key for this software source.
-	GpgKeyUrl string `pulumi:"gpgKeyUrl"`
+	GpgKeyUrl *string `pulumi:"gpgKeyUrl"`
 	// The OCID of the resource that is immutable on creation.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Indicates whether service should automatically update the custom software source for the user.
-	IsAutomaticallyUpdated bool `pulumi:"isAutomaticallyUpdated"`
+	IsAutomaticallyUpdated *bool `pulumi:"isAutomaticallyUpdated"`
 	// A filter to return only instances whose OS family type matches the given OS family.
-	OsFamily string `pulumi:"osFamily"`
+	OsFamily *string `pulumi:"osFamily"`
 	// Number of packages.
-	PackageCount string `pulumi:"packageCount"`
+	PackageCount *string `pulumi:"packageCount"`
 	// The Repo ID for the software source.
-	RepoId string `pulumi:"repoId"`
+	RepoId *string `pulumi:"repoId"`
 	// The type of the software source.
-	SoftwareSourceType string `pulumi:"softwareSourceType"`
+	SoftwareSourceType *string `pulumi:"softwareSourceType"`
 	// The version to assign to this custom software source.
-	SoftwareSourceVersion string `pulumi:"softwareSourceVersion"`
+	SoftwareSourceVersion *string `pulumi:"softwareSourceVersion"`
 	// A filter to return only resources whose lifecycleState matches the given lifecycleStates.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The date and time the software source was created, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// URL for the repository.
-	Url string `pulumi:"url"`
+	Url *string `pulumi:"url"`
 	// A filter to return only profiles that match the given vendorName.
-	VendorName string `pulumi:"vendorName"`
+	VendorName *string `pulumi:"vendorName"`
 	// List of vendor software sources.
 	VendorSoftwareSources []GetSoftwareSourcesSoftwareSourceCollectionItemVendorSoftwareSource `pulumi:"vendorSoftwareSources"`
 }
@@ -15615,53 +13192,53 @@ type GetSoftwareSourcesSoftwareSourceCollectionItemInput interface {
 
 type GetSoftwareSourcesSoftwareSourceCollectionItemArgs struct {
 	// A filter to return only instances whose architecture type matches the given architecture.
-	ArchType pulumi.StringInput `pulumi:"archType"`
+	ArchType pulumi.StringPtrInput `pulumi:"archType"`
 	// The availabilities of the software source for a tenant.
-	Availability pulumi.StringInput `pulumi:"availability"`
+	Availability pulumi.StringPtrInput `pulumi:"availability"`
 	// The yum repository checksum type used by this software source.
-	ChecksumType pulumi.StringInput `pulumi:"checksumType"`
+	ChecksumType pulumi.StringPtrInput `pulumi:"checksumType"`
 	// The OCID of the compartment that contains the resources to list.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Used to apply filters to a VendorSoftwareSource to create/update CustomSoftwareSources.
 	CustomSoftwareSourceFilters GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterArrayInput `pulumi:"customSoftwareSourceFilters"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// Information specified by the user about the software source.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// Fingerprint of the GPG key for this software source.
-	GpgKeyFingerprint pulumi.StringInput `pulumi:"gpgKeyFingerprint"`
+	GpgKeyFingerprint pulumi.StringPtrInput `pulumi:"gpgKeyFingerprint"`
 	// ID of the GPG key for this software source.
-	GpgKeyId pulumi.StringInput `pulumi:"gpgKeyId"`
+	GpgKeyId pulumi.StringPtrInput `pulumi:"gpgKeyId"`
 	// URL of the GPG key for this software source.
-	GpgKeyUrl pulumi.StringInput `pulumi:"gpgKeyUrl"`
+	GpgKeyUrl pulumi.StringPtrInput `pulumi:"gpgKeyUrl"`
 	// The OCID of the resource that is immutable on creation.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Indicates whether service should automatically update the custom software source for the user.
-	IsAutomaticallyUpdated pulumi.BoolInput `pulumi:"isAutomaticallyUpdated"`
+	IsAutomaticallyUpdated pulumi.BoolPtrInput `pulumi:"isAutomaticallyUpdated"`
 	// A filter to return only instances whose OS family type matches the given OS family.
-	OsFamily pulumi.StringInput `pulumi:"osFamily"`
+	OsFamily pulumi.StringPtrInput `pulumi:"osFamily"`
 	// Number of packages.
-	PackageCount pulumi.StringInput `pulumi:"packageCount"`
+	PackageCount pulumi.StringPtrInput `pulumi:"packageCount"`
 	// The Repo ID for the software source.
-	RepoId pulumi.StringInput `pulumi:"repoId"`
+	RepoId pulumi.StringPtrInput `pulumi:"repoId"`
 	// The type of the software source.
-	SoftwareSourceType pulumi.StringInput `pulumi:"softwareSourceType"`
+	SoftwareSourceType pulumi.StringPtrInput `pulumi:"softwareSourceType"`
 	// The version to assign to this custom software source.
-	SoftwareSourceVersion pulumi.StringInput `pulumi:"softwareSourceVersion"`
+	SoftwareSourceVersion pulumi.StringPtrInput `pulumi:"softwareSourceVersion"`
 	// A filter to return only resources whose lifecycleState matches the given lifecycleStates.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// The date and time the software source was created, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// URL for the repository.
-	Url pulumi.StringInput `pulumi:"url"`
+	Url pulumi.StringPtrInput `pulumi:"url"`
 	// A filter to return only profiles that match the given vendorName.
-	VendorName pulumi.StringInput `pulumi:"vendorName"`
+	VendorName pulumi.StringPtrInput `pulumi:"vendorName"`
 	// List of vendor software sources.
 	VendorSoftwareSources GetSoftwareSourcesSoftwareSourceCollectionItemVendorSoftwareSourceArrayInput `pulumi:"vendorSoftwareSources"`
 }
@@ -15676,12 +13253,6 @@ func (i GetSoftwareSourcesSoftwareSourceCollectionItemArgs) ToGetSoftwareSources
 
 func (i GetSoftwareSourcesSoftwareSourceCollectionItemArgs) ToGetSoftwareSourcesSoftwareSourceCollectionItemOutputWithContext(ctx context.Context) GetSoftwareSourcesSoftwareSourceCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourcesSoftwareSourceCollectionItemOutput)
-}
-
-func (i GetSoftwareSourcesSoftwareSourceCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourcesSoftwareSourceCollectionItem] {
-	return pulumix.Output[GetSoftwareSourcesSoftwareSourceCollectionItem]{
-		OutputState: i.ToGetSoftwareSourcesSoftwareSourceCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSoftwareSourcesSoftwareSourceCollectionItemArrayInput is an input type that accepts GetSoftwareSourcesSoftwareSourceCollectionItemArray and GetSoftwareSourcesSoftwareSourceCollectionItemArrayOutput values.
@@ -15709,12 +13280,6 @@ func (i GetSoftwareSourcesSoftwareSourceCollectionItemArray) ToGetSoftwareSource
 	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourcesSoftwareSourceCollectionItemArrayOutput)
 }
 
-func (i GetSoftwareSourcesSoftwareSourceCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSoftwareSourcesSoftwareSourceCollectionItem] {
-	return pulumix.Output[[]GetSoftwareSourcesSoftwareSourceCollectionItem]{
-		OutputState: i.ToGetSoftwareSourcesSoftwareSourceCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSoftwareSourcesSoftwareSourceCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetSoftwareSourcesSoftwareSourceCollectionItemOutput) ElementType() reflect.Type {
@@ -15729,30 +13294,24 @@ func (o GetSoftwareSourcesSoftwareSourceCollectionItemOutput) ToGetSoftwareSourc
 	return o
 }
 
-func (o GetSoftwareSourcesSoftwareSourceCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourcesSoftwareSourceCollectionItem] {
-	return pulumix.Output[GetSoftwareSourcesSoftwareSourceCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A filter to return only instances whose architecture type matches the given architecture.
-func (o GetSoftwareSourcesSoftwareSourceCollectionItemOutput) ArchType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSourceCollectionItem) string { return v.ArchType }).(pulumi.StringOutput)
+func (o GetSoftwareSourcesSoftwareSourceCollectionItemOutput) ArchType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSourceCollectionItem) *string { return v.ArchType }).(pulumi.StringPtrOutput)
 }
 
 // The availabilities of the software source for a tenant.
-func (o GetSoftwareSourcesSoftwareSourceCollectionItemOutput) Availability() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSourceCollectionItem) string { return v.Availability }).(pulumi.StringOutput)
+func (o GetSoftwareSourcesSoftwareSourceCollectionItemOutput) Availability() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSourceCollectionItem) *string { return v.Availability }).(pulumi.StringPtrOutput)
 }
 
 // The yum repository checksum type used by this software source.
-func (o GetSoftwareSourcesSoftwareSourceCollectionItemOutput) ChecksumType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSourceCollectionItem) string { return v.ChecksumType }).(pulumi.StringOutput)
+func (o GetSoftwareSourcesSoftwareSourceCollectionItemOutput) ChecksumType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSourceCollectionItem) *string { return v.ChecksumType }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the compartment that contains the resources to list.
-func (o GetSoftwareSourcesSoftwareSourceCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSourceCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetSoftwareSourcesSoftwareSourceCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSourceCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Used to apply filters to a VendorSoftwareSource to create/update CustomSoftwareSources.
@@ -15768,13 +13327,13 @@ func (o GetSoftwareSourcesSoftwareSourceCollectionItemOutput) DefinedTags() pulu
 }
 
 // Information specified by the user about the software source.
-func (o GetSoftwareSourcesSoftwareSourceCollectionItemOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSourceCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+func (o GetSoftwareSourcesSoftwareSourceCollectionItemOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSourceCollectionItem) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
-func (o GetSoftwareSourcesSoftwareSourceCollectionItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSourceCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetSoftwareSourcesSoftwareSourceCollectionItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSourceCollectionItem) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -15783,58 +13342,58 @@ func (o GetSoftwareSourcesSoftwareSourceCollectionItemOutput) FreeformTags() pul
 }
 
 // Fingerprint of the GPG key for this software source.
-func (o GetSoftwareSourcesSoftwareSourceCollectionItemOutput) GpgKeyFingerprint() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSourceCollectionItem) string { return v.GpgKeyFingerprint }).(pulumi.StringOutput)
+func (o GetSoftwareSourcesSoftwareSourceCollectionItemOutput) GpgKeyFingerprint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSourceCollectionItem) *string { return v.GpgKeyFingerprint }).(pulumi.StringPtrOutput)
 }
 
 // ID of the GPG key for this software source.
-func (o GetSoftwareSourcesSoftwareSourceCollectionItemOutput) GpgKeyId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSourceCollectionItem) string { return v.GpgKeyId }).(pulumi.StringOutput)
+func (o GetSoftwareSourcesSoftwareSourceCollectionItemOutput) GpgKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSourceCollectionItem) *string { return v.GpgKeyId }).(pulumi.StringPtrOutput)
 }
 
 // URL of the GPG key for this software source.
-func (o GetSoftwareSourcesSoftwareSourceCollectionItemOutput) GpgKeyUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSourceCollectionItem) string { return v.GpgKeyUrl }).(pulumi.StringOutput)
+func (o GetSoftwareSourcesSoftwareSourceCollectionItemOutput) GpgKeyUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSourceCollectionItem) *string { return v.GpgKeyUrl }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the resource that is immutable on creation.
-func (o GetSoftwareSourcesSoftwareSourceCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSourceCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetSoftwareSourcesSoftwareSourceCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSourceCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Indicates whether service should automatically update the custom software source for the user.
-func (o GetSoftwareSourcesSoftwareSourceCollectionItemOutput) IsAutomaticallyUpdated() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSourceCollectionItem) bool { return v.IsAutomaticallyUpdated }).(pulumi.BoolOutput)
+func (o GetSoftwareSourcesSoftwareSourceCollectionItemOutput) IsAutomaticallyUpdated() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSourceCollectionItem) *bool { return v.IsAutomaticallyUpdated }).(pulumi.BoolPtrOutput)
 }
 
 // A filter to return only instances whose OS family type matches the given OS family.
-func (o GetSoftwareSourcesSoftwareSourceCollectionItemOutput) OsFamily() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSourceCollectionItem) string { return v.OsFamily }).(pulumi.StringOutput)
+func (o GetSoftwareSourcesSoftwareSourceCollectionItemOutput) OsFamily() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSourceCollectionItem) *string { return v.OsFamily }).(pulumi.StringPtrOutput)
 }
 
 // Number of packages.
-func (o GetSoftwareSourcesSoftwareSourceCollectionItemOutput) PackageCount() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSourceCollectionItem) string { return v.PackageCount }).(pulumi.StringOutput)
+func (o GetSoftwareSourcesSoftwareSourceCollectionItemOutput) PackageCount() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSourceCollectionItem) *string { return v.PackageCount }).(pulumi.StringPtrOutput)
 }
 
 // The Repo ID for the software source.
-func (o GetSoftwareSourcesSoftwareSourceCollectionItemOutput) RepoId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSourceCollectionItem) string { return v.RepoId }).(pulumi.StringOutput)
+func (o GetSoftwareSourcesSoftwareSourceCollectionItemOutput) RepoId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSourceCollectionItem) *string { return v.RepoId }).(pulumi.StringPtrOutput)
 }
 
 // The type of the software source.
-func (o GetSoftwareSourcesSoftwareSourceCollectionItemOutput) SoftwareSourceType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSourceCollectionItem) string { return v.SoftwareSourceType }).(pulumi.StringOutput)
+func (o GetSoftwareSourcesSoftwareSourceCollectionItemOutput) SoftwareSourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSourceCollectionItem) *string { return v.SoftwareSourceType }).(pulumi.StringPtrOutput)
 }
 
 // The version to assign to this custom software source.
-func (o GetSoftwareSourcesSoftwareSourceCollectionItemOutput) SoftwareSourceVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSourceCollectionItem) string { return v.SoftwareSourceVersion }).(pulumi.StringOutput)
+func (o GetSoftwareSourcesSoftwareSourceCollectionItemOutput) SoftwareSourceVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSourceCollectionItem) *string { return v.SoftwareSourceVersion }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only resources whose lifecycleState matches the given lifecycleStates.
-func (o GetSoftwareSourcesSoftwareSourceCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSourceCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetSoftwareSourcesSoftwareSourceCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSourceCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -15843,18 +13402,18 @@ func (o GetSoftwareSourcesSoftwareSourceCollectionItemOutput) SystemTags() pulum
 }
 
 // The date and time the software source was created, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-func (o GetSoftwareSourcesSoftwareSourceCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSourceCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetSoftwareSourcesSoftwareSourceCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSourceCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // URL for the repository.
-func (o GetSoftwareSourcesSoftwareSourceCollectionItemOutput) Url() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSourceCollectionItem) string { return v.Url }).(pulumi.StringOutput)
+func (o GetSoftwareSourcesSoftwareSourceCollectionItemOutput) Url() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSourceCollectionItem) *string { return v.Url }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only profiles that match the given vendorName.
-func (o GetSoftwareSourcesSoftwareSourceCollectionItemOutput) VendorName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSourceCollectionItem) string { return v.VendorName }).(pulumi.StringOutput)
+func (o GetSoftwareSourcesSoftwareSourceCollectionItemOutput) VendorName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSourceCollectionItem) *string { return v.VendorName }).(pulumi.StringPtrOutput)
 }
 
 // List of vendor software sources.
@@ -15876,12 +13435,6 @@ func (o GetSoftwareSourcesSoftwareSourceCollectionItemArrayOutput) ToGetSoftware
 
 func (o GetSoftwareSourcesSoftwareSourceCollectionItemArrayOutput) ToGetSoftwareSourcesSoftwareSourceCollectionItemArrayOutputWithContext(ctx context.Context) GetSoftwareSourcesSoftwareSourceCollectionItemArrayOutput {
 	return o
-}
-
-func (o GetSoftwareSourcesSoftwareSourceCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSoftwareSourcesSoftwareSourceCollectionItem] {
-	return pulumix.Output[[]GetSoftwareSourcesSoftwareSourceCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSoftwareSourcesSoftwareSourceCollectionItemArrayOutput) Index(i pulumi.IntInput) GetSoftwareSourcesSoftwareSourceCollectionItemOutput {
@@ -15931,12 +13484,6 @@ func (i GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilter
 	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterOutput)
 }
 
-func (i GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilter] {
-	return pulumix.Output[GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilter]{
-		OutputState: i.ToGetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterArrayInput is an input type that accepts GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterArray and GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterArrayOutput values.
 // You can construct a concrete instance of `GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterArrayInput` via:
 //
@@ -15962,12 +13509,6 @@ func (i GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilter
 	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterArrayOutput)
 }
 
-func (i GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilter] {
-	return pulumix.Output[[]GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilter]{
-		OutputState: i.ToGetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterOutput struct{ *pulumi.OutputState }
 
 func (GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterOutput) ElementType() reflect.Type {
@@ -15980,12 +13521,6 @@ func (o GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilter
 
 func (o GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterOutput) ToGetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterOutputWithContext(ctx context.Context) GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterOutput {
 	return o
-}
-
-func (o GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilter] {
-	return pulumix.Output[GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The list of module stream/profile filters.
@@ -16023,12 +13558,6 @@ func (o GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilter
 	return o
 }
 
-func (o GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilter] {
-	return pulumix.Output[[]GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterArrayOutput) Index(i pulumi.IntInput) GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilter {
 		return vs[0].([]GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilter)[vs[1].(int)]
@@ -16037,13 +13566,13 @@ func (o GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilter
 
 type GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterModuleStreamProfileFilter struct {
 	// The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
-	FilterType string `pulumi:"filterType"`
+	FilterType *string `pulumi:"filterType"`
 	// Module name.
-	ModuleName string `pulumi:"moduleName"`
+	ModuleName *string `pulumi:"moduleName"`
 	// Profile name.
-	ProfileName string `pulumi:"profileName"`
+	ProfileName *string `pulumi:"profileName"`
 	// Stream name.
-	StreamName string `pulumi:"streamName"`
+	StreamName *string `pulumi:"streamName"`
 }
 
 // GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterModuleStreamProfileFilterInput is an input type that accepts GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterModuleStreamProfileFilterArgs and GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterModuleStreamProfileFilterOutput values.
@@ -16059,13 +13588,13 @@ type GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterMod
 
 type GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterModuleStreamProfileFilterArgs struct {
 	// The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
-	FilterType pulumi.StringInput `pulumi:"filterType"`
+	FilterType pulumi.StringPtrInput `pulumi:"filterType"`
 	// Module name.
-	ModuleName pulumi.StringInput `pulumi:"moduleName"`
+	ModuleName pulumi.StringPtrInput `pulumi:"moduleName"`
 	// Profile name.
-	ProfileName pulumi.StringInput `pulumi:"profileName"`
+	ProfileName pulumi.StringPtrInput `pulumi:"profileName"`
 	// Stream name.
-	StreamName pulumi.StringInput `pulumi:"streamName"`
+	StreamName pulumi.StringPtrInput `pulumi:"streamName"`
 }
 
 func (GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterModuleStreamProfileFilterArgs) ElementType() reflect.Type {
@@ -16078,12 +13607,6 @@ func (i GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilter
 
 func (i GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterModuleStreamProfileFilterArgs) ToGetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterModuleStreamProfileFilterOutputWithContext(ctx context.Context) GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterModuleStreamProfileFilterOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterModuleStreamProfileFilterOutput)
-}
-
-func (i GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterModuleStreamProfileFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterModuleStreamProfileFilter] {
-	return pulumix.Output[GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterModuleStreamProfileFilter]{
-		OutputState: i.ToGetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterModuleStreamProfileFilterOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterModuleStreamProfileFilterArrayInput is an input type that accepts GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterModuleStreamProfileFilterArray and GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterModuleStreamProfileFilterArrayOutput values.
@@ -16111,12 +13634,6 @@ func (i GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilter
 	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterModuleStreamProfileFilterArrayOutput)
 }
 
-func (i GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterModuleStreamProfileFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterModuleStreamProfileFilter] {
-	return pulumix.Output[[]GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterModuleStreamProfileFilter]{
-		OutputState: i.ToGetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterModuleStreamProfileFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterModuleStreamProfileFilterOutput struct{ *pulumi.OutputState }
 
 func (GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterModuleStreamProfileFilterOutput) ElementType() reflect.Type {
@@ -16131,38 +13648,32 @@ func (o GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilter
 	return o
 }
 
-func (o GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterModuleStreamProfileFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterModuleStreamProfileFilter] {
-	return pulumix.Output[GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterModuleStreamProfileFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
-func (o GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterModuleStreamProfileFilterOutput) FilterType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterModuleStreamProfileFilter) string {
+func (o GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterModuleStreamProfileFilterOutput) FilterType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterModuleStreamProfileFilter) *string {
 		return v.FilterType
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Module name.
-func (o GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterModuleStreamProfileFilterOutput) ModuleName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterModuleStreamProfileFilter) string {
+func (o GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterModuleStreamProfileFilterOutput) ModuleName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterModuleStreamProfileFilter) *string {
 		return v.ModuleName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Profile name.
-func (o GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterModuleStreamProfileFilterOutput) ProfileName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterModuleStreamProfileFilter) string {
+func (o GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterModuleStreamProfileFilterOutput) ProfileName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterModuleStreamProfileFilter) *string {
 		return v.ProfileName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Stream name.
-func (o GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterModuleStreamProfileFilterOutput) StreamName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterModuleStreamProfileFilter) string {
+func (o GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterModuleStreamProfileFilterOutput) StreamName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterModuleStreamProfileFilter) *string {
 		return v.StreamName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterModuleStreamProfileFilterArrayOutput struct{ *pulumi.OutputState }
@@ -16179,12 +13690,6 @@ func (o GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilter
 	return o
 }
 
-func (o GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterModuleStreamProfileFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterModuleStreamProfileFilter] {
-	return pulumix.Output[[]GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterModuleStreamProfileFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterModuleStreamProfileFilterArrayOutput) Index(i pulumi.IntInput) GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterModuleStreamProfileFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterModuleStreamProfileFilter {
 		return vs[0].([]GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterModuleStreamProfileFilter)[vs[1].(int)]
@@ -16193,13 +13698,13 @@ func (o GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilter
 
 type GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageFilter struct {
 	// The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
-	FilterType string `pulumi:"filterType"`
+	FilterType *string `pulumi:"filterType"`
 	// The package name.
-	PackageName string `pulumi:"packageName"`
+	PackageName *string `pulumi:"packageName"`
 	// The package name pattern.
-	PackageNamePattern string `pulumi:"packageNamePattern"`
+	PackageNamePattern *string `pulumi:"packageNamePattern"`
 	// The package version, which is denoted by 'version-release', or 'epoch:version-release'.
-	PackageVersion string `pulumi:"packageVersion"`
+	PackageVersion *string `pulumi:"packageVersion"`
 }
 
 // GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageFilterInput is an input type that accepts GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageFilterArgs and GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageFilterOutput values.
@@ -16215,13 +13720,13 @@ type GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPac
 
 type GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageFilterArgs struct {
 	// The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
-	FilterType pulumi.StringInput `pulumi:"filterType"`
+	FilterType pulumi.StringPtrInput `pulumi:"filterType"`
 	// The package name.
-	PackageName pulumi.StringInput `pulumi:"packageName"`
+	PackageName pulumi.StringPtrInput `pulumi:"packageName"`
 	// The package name pattern.
-	PackageNamePattern pulumi.StringInput `pulumi:"packageNamePattern"`
+	PackageNamePattern pulumi.StringPtrInput `pulumi:"packageNamePattern"`
 	// The package version, which is denoted by 'version-release', or 'epoch:version-release'.
-	PackageVersion pulumi.StringInput `pulumi:"packageVersion"`
+	PackageVersion pulumi.StringPtrInput `pulumi:"packageVersion"`
 }
 
 func (GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageFilterArgs) ElementType() reflect.Type {
@@ -16234,12 +13739,6 @@ func (i GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilter
 
 func (i GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageFilterArgs) ToGetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageFilterOutputWithContext(ctx context.Context) GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageFilterOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageFilterOutput)
-}
-
-func (i GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageFilter] {
-	return pulumix.Output[GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageFilter]{
-		OutputState: i.ToGetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageFilterOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageFilterArrayInput is an input type that accepts GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageFilterArray and GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageFilterArrayOutput values.
@@ -16267,12 +13766,6 @@ func (i GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilter
 	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageFilterArrayOutput)
 }
 
-func (i GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageFilter] {
-	return pulumix.Output[[]GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageFilter]{
-		OutputState: i.ToGetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageFilterOutput struct{ *pulumi.OutputState }
 
 func (GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageFilterOutput) ElementType() reflect.Type {
@@ -16287,38 +13780,32 @@ func (o GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilter
 	return o
 }
 
-func (o GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageFilter] {
-	return pulumix.Output[GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
-func (o GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageFilterOutput) FilterType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageFilter) string {
+func (o GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageFilterOutput) FilterType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageFilter) *string {
 		return v.FilterType
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The package name.
-func (o GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageFilterOutput) PackageName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageFilter) string {
+func (o GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageFilterOutput) PackageName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageFilter) *string {
 		return v.PackageName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The package name pattern.
-func (o GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageFilterOutput) PackageNamePattern() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageFilter) string {
+func (o GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageFilterOutput) PackageNamePattern() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageFilter) *string {
 		return v.PackageNamePattern
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The package version, which is denoted by 'version-release', or 'epoch:version-release'.
-func (o GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageFilterOutput) PackageVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageFilter) string {
+func (o GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageFilterOutput) PackageVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageFilter) *string {
 		return v.PackageVersion
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageFilterArrayOutput struct{ *pulumi.OutputState }
@@ -16335,12 +13822,6 @@ func (o GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilter
 	return o
 }
 
-func (o GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageFilter] {
-	return pulumix.Output[[]GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageFilterArrayOutput) Index(i pulumi.IntInput) GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageFilter {
 		return vs[0].([]GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageFilter)[vs[1].(int)]
@@ -16349,7 +13830,7 @@ func (o GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilter
 
 type GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageGroupFilter struct {
 	// The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
-	FilterType string `pulumi:"filterType"`
+	FilterType *string `pulumi:"filterType"`
 	// List of package group names.
 	PackageGroups []string `pulumi:"packageGroups"`
 }
@@ -16367,7 +13848,7 @@ type GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPac
 
 type GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageGroupFilterArgs struct {
 	// The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
-	FilterType pulumi.StringInput `pulumi:"filterType"`
+	FilterType pulumi.StringPtrInput `pulumi:"filterType"`
 	// List of package group names.
 	PackageGroups pulumi.StringArrayInput `pulumi:"packageGroups"`
 }
@@ -16382,12 +13863,6 @@ func (i GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilter
 
 func (i GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageGroupFilterArgs) ToGetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageGroupFilterOutputWithContext(ctx context.Context) GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageGroupFilterOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageGroupFilterOutput)
-}
-
-func (i GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageGroupFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageGroupFilter] {
-	return pulumix.Output[GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageGroupFilter]{
-		OutputState: i.ToGetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageGroupFilterOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageGroupFilterArrayInput is an input type that accepts GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageGroupFilterArray and GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageGroupFilterArrayOutput values.
@@ -16415,12 +13890,6 @@ func (i GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilter
 	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageGroupFilterArrayOutput)
 }
 
-func (i GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageGroupFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageGroupFilter] {
-	return pulumix.Output[[]GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageGroupFilter]{
-		OutputState: i.ToGetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageGroupFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageGroupFilterOutput struct{ *pulumi.OutputState }
 
 func (GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageGroupFilterOutput) ElementType() reflect.Type {
@@ -16435,17 +13904,11 @@ func (o GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilter
 	return o
 }
 
-func (o GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageGroupFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageGroupFilter] {
-	return pulumix.Output[GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageGroupFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
-func (o GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageGroupFilterOutput) FilterType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageGroupFilter) string {
+func (o GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageGroupFilterOutput) FilterType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageGroupFilter) *string {
 		return v.FilterType
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // List of package group names.
@@ -16469,12 +13932,6 @@ func (o GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilter
 	return o
 }
 
-func (o GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageGroupFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageGroupFilter] {
-	return pulumix.Output[[]GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageGroupFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageGroupFilterArrayOutput) Index(i pulumi.IntInput) GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageGroupFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageGroupFilter {
 		return vs[0].([]GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageGroupFilter)[vs[1].(int)]
@@ -16483,9 +13940,9 @@ func (o GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilter
 
 type GetSoftwareSourcesSoftwareSourceCollectionItemVendorSoftwareSource struct {
 	// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The OCID of the resource that is immutable on creation.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 // GetSoftwareSourcesSoftwareSourceCollectionItemVendorSoftwareSourceInput is an input type that accepts GetSoftwareSourcesSoftwareSourceCollectionItemVendorSoftwareSourceArgs and GetSoftwareSourcesSoftwareSourceCollectionItemVendorSoftwareSourceOutput values.
@@ -16501,9 +13958,9 @@ type GetSoftwareSourcesSoftwareSourceCollectionItemVendorSoftwareSourceInput int
 
 type GetSoftwareSourcesSoftwareSourceCollectionItemVendorSoftwareSourceArgs struct {
 	// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// The OCID of the resource that is immutable on creation.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 }
 
 func (GetSoftwareSourcesSoftwareSourceCollectionItemVendorSoftwareSourceArgs) ElementType() reflect.Type {
@@ -16516,12 +13973,6 @@ func (i GetSoftwareSourcesSoftwareSourceCollectionItemVendorSoftwareSourceArgs) 
 
 func (i GetSoftwareSourcesSoftwareSourceCollectionItemVendorSoftwareSourceArgs) ToGetSoftwareSourcesSoftwareSourceCollectionItemVendorSoftwareSourceOutputWithContext(ctx context.Context) GetSoftwareSourcesSoftwareSourceCollectionItemVendorSoftwareSourceOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourcesSoftwareSourceCollectionItemVendorSoftwareSourceOutput)
-}
-
-func (i GetSoftwareSourcesSoftwareSourceCollectionItemVendorSoftwareSourceArgs) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourcesSoftwareSourceCollectionItemVendorSoftwareSource] {
-	return pulumix.Output[GetSoftwareSourcesSoftwareSourceCollectionItemVendorSoftwareSource]{
-		OutputState: i.ToGetSoftwareSourcesSoftwareSourceCollectionItemVendorSoftwareSourceOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSoftwareSourcesSoftwareSourceCollectionItemVendorSoftwareSourceArrayInput is an input type that accepts GetSoftwareSourcesSoftwareSourceCollectionItemVendorSoftwareSourceArray and GetSoftwareSourcesSoftwareSourceCollectionItemVendorSoftwareSourceArrayOutput values.
@@ -16549,12 +14000,6 @@ func (i GetSoftwareSourcesSoftwareSourceCollectionItemVendorSoftwareSourceArray)
 	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourcesSoftwareSourceCollectionItemVendorSoftwareSourceArrayOutput)
 }
 
-func (i GetSoftwareSourcesSoftwareSourceCollectionItemVendorSoftwareSourceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSoftwareSourcesSoftwareSourceCollectionItemVendorSoftwareSource] {
-	return pulumix.Output[[]GetSoftwareSourcesSoftwareSourceCollectionItemVendorSoftwareSource]{
-		OutputState: i.ToGetSoftwareSourcesSoftwareSourceCollectionItemVendorSoftwareSourceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSoftwareSourcesSoftwareSourceCollectionItemVendorSoftwareSourceOutput struct{ *pulumi.OutputState }
 
 func (GetSoftwareSourcesSoftwareSourceCollectionItemVendorSoftwareSourceOutput) ElementType() reflect.Type {
@@ -16569,22 +14014,16 @@ func (o GetSoftwareSourcesSoftwareSourceCollectionItemVendorSoftwareSourceOutput
 	return o
 }
 
-func (o GetSoftwareSourcesSoftwareSourceCollectionItemVendorSoftwareSourceOutput) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourcesSoftwareSourceCollectionItemVendorSoftwareSource] {
-	return pulumix.Output[GetSoftwareSourcesSoftwareSourceCollectionItemVendorSoftwareSource]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
-func (o GetSoftwareSourcesSoftwareSourceCollectionItemVendorSoftwareSourceOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSourceCollectionItemVendorSoftwareSource) string {
+func (o GetSoftwareSourcesSoftwareSourceCollectionItemVendorSoftwareSourceOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSourceCollectionItemVendorSoftwareSource) *string {
 		return v.DisplayName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the resource that is immutable on creation.
-func (o GetSoftwareSourcesSoftwareSourceCollectionItemVendorSoftwareSourceOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSourceCollectionItemVendorSoftwareSource) string { return v.Id }).(pulumi.StringOutput)
+func (o GetSoftwareSourcesSoftwareSourceCollectionItemVendorSoftwareSourceOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSourceCollectionItemVendorSoftwareSource) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 type GetSoftwareSourcesSoftwareSourceCollectionItemVendorSoftwareSourceArrayOutput struct{ *pulumi.OutputState }
@@ -16599,12 +14038,6 @@ func (o GetSoftwareSourcesSoftwareSourceCollectionItemVendorSoftwareSourceArrayO
 
 func (o GetSoftwareSourcesSoftwareSourceCollectionItemVendorSoftwareSourceArrayOutput) ToGetSoftwareSourcesSoftwareSourceCollectionItemVendorSoftwareSourceArrayOutputWithContext(ctx context.Context) GetSoftwareSourcesSoftwareSourceCollectionItemVendorSoftwareSourceArrayOutput {
 	return o
-}
-
-func (o GetSoftwareSourcesSoftwareSourceCollectionItemVendorSoftwareSourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSoftwareSourcesSoftwareSourceCollectionItemVendorSoftwareSource] {
-	return pulumix.Output[[]GetSoftwareSourcesSoftwareSourceCollectionItemVendorSoftwareSource]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSoftwareSourcesSoftwareSourceCollectionItemVendorSoftwareSourceArrayOutput) Index(i pulumi.IntInput) GetSoftwareSourcesSoftwareSourceCollectionItemVendorSoftwareSourceOutput {

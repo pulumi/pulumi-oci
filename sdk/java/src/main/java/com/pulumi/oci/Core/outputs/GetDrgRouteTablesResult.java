@@ -28,13 +28,13 @@ public final class GetDrgRouteTablesResult {
      * @return The list of drg_route_tables.
      * 
      */
-    private List<GetDrgRouteTablesDrgRouteTable> drgRouteTables;
+    private @Nullable List<GetDrgRouteTablesDrgRouteTable> drgRouteTables;
     private @Nullable List<GetDrgRouteTablesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the import route distribution used to specify how incoming route advertisements from referenced attachments are inserted into the DRG route table.
      * 
@@ -66,7 +66,7 @@ public final class GetDrgRouteTablesResult {
      * 
      */
     public List<GetDrgRouteTablesDrgRouteTable> drgRouteTables() {
-        return this.drgRouteTables;
+        return this.drgRouteTables == null ? List.of() : this.drgRouteTables;
     }
     public List<GetDrgRouteTablesFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -75,8 +75,8 @@ public final class GetDrgRouteTablesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the import route distribution used to specify how incoming route advertisements from referenced attachments are inserted into the DRG route table.
@@ -104,9 +104,9 @@ public final class GetDrgRouteTablesResult {
     public static final class Builder {
         private @Nullable String displayName;
         private String drgId;
-        private List<GetDrgRouteTablesDrgRouteTable> drgRouteTables;
+        private @Nullable List<GetDrgRouteTablesDrgRouteTable> drgRouteTables;
         private @Nullable List<GetDrgRouteTablesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String importDrgRouteDistributionId;
         private @Nullable String state;
         public Builder() {}
@@ -132,8 +132,8 @@ public final class GetDrgRouteTablesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder drgRouteTables(List<GetDrgRouteTablesDrgRouteTable> drgRouteTables) {
-            this.drgRouteTables = Objects.requireNonNull(drgRouteTables);
+        public Builder drgRouteTables(@Nullable List<GetDrgRouteTablesDrgRouteTable> drgRouteTables) {
+            this.drgRouteTables = drgRouteTables;
             return this;
         }
         public Builder drgRouteTables(GetDrgRouteTablesDrgRouteTable... drgRouteTables) {
@@ -148,8 +148,8 @@ public final class GetDrgRouteTablesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

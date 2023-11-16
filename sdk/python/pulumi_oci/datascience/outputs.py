@@ -209,12 +209,6 @@ class JobJobConfigurationDetails(dict):
                  command_line_arguments: Optional[str] = None,
                  environment_variables: Optional[Mapping[str, Any]] = None,
                  maximum_runtime_in_minutes: Optional[str] = None):
-        """
-        :param str job_type: The type of job.
-        :param str command_line_arguments: The arguments to pass to the job.
-        :param Mapping[str, Any] environment_variables: Environment variables to set for the job.
-        :param str maximum_runtime_in_minutes: A time bound for the execution of the job. Timer starts when the job becomes active.
-        """
         pulumi.set(__self__, "job_type", job_type)
         if command_line_arguments is not None:
             pulumi.set(__self__, "command_line_arguments", command_line_arguments)
@@ -226,33 +220,21 @@ class JobJobConfigurationDetails(dict):
     @property
     @pulumi.getter(name="jobType")
     def job_type(self) -> str:
-        """
-        The type of job.
-        """
         return pulumi.get(self, "job_type")
 
     @property
     @pulumi.getter(name="commandLineArguments")
     def command_line_arguments(self) -> Optional[str]:
-        """
-        The arguments to pass to the job.
-        """
         return pulumi.get(self, "command_line_arguments")
 
     @property
     @pulumi.getter(name="environmentVariables")
     def environment_variables(self) -> Optional[Mapping[str, Any]]:
-        """
-        Environment variables to set for the job.
-        """
         return pulumi.get(self, "environment_variables")
 
     @property
     @pulumi.getter(name="maximumRuntimeInMinutes")
     def maximum_runtime_in_minutes(self) -> Optional[str]:
-        """
-        A time bound for the execution of the job. Timer starts when the job becomes active.
-        """
         return pulumi.get(self, "maximum_runtime_in_minutes")
 
 
@@ -289,13 +271,6 @@ class JobJobInfrastructureConfigurationDetails(dict):
                  shape_name: str,
                  job_shape_config_details: Optional['outputs.JobJobInfrastructureConfigurationDetailsJobShapeConfigDetails'] = None,
                  subnet_id: Optional[str] = None):
-        """
-        :param int block_storage_size_in_gbs: (Updatable) The size of the block storage volume to attach to the instance running the job
-        :param str job_infrastructure_type: (Updatable) The infrastructure type used for job run.
-        :param str shape_name: (Updatable) The shape used to launch the job run instances.
-        :param 'JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs' job_shape_config_details: (Updatable) Details for the job run shape configuration. Specify only when a flex shape is selected.
-        :param str subnet_id: (Updatable) The subnet to create a secondary vnic in to attach to the instance running the job
-        """
         pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
         pulumi.set(__self__, "job_infrastructure_type", job_infrastructure_type)
         pulumi.set(__self__, "shape_name", shape_name)
@@ -307,41 +282,26 @@ class JobJobInfrastructureConfigurationDetails(dict):
     @property
     @pulumi.getter(name="blockStorageSizeInGbs")
     def block_storage_size_in_gbs(self) -> int:
-        """
-        (Updatable) The size of the block storage volume to attach to the instance running the job
-        """
         return pulumi.get(self, "block_storage_size_in_gbs")
 
     @property
     @pulumi.getter(name="jobInfrastructureType")
     def job_infrastructure_type(self) -> str:
-        """
-        (Updatable) The infrastructure type used for job run.
-        """
         return pulumi.get(self, "job_infrastructure_type")
 
     @property
     @pulumi.getter(name="shapeName")
     def shape_name(self) -> str:
-        """
-        (Updatable) The shape used to launch the job run instances.
-        """
         return pulumi.get(self, "shape_name")
 
     @property
     @pulumi.getter(name="jobShapeConfigDetails")
     def job_shape_config_details(self) -> Optional['outputs.JobJobInfrastructureConfigurationDetailsJobShapeConfigDetails']:
-        """
-        (Updatable) Details for the job run shape configuration. Specify only when a flex shape is selected.
-        """
         return pulumi.get(self, "job_shape_config_details")
 
     @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[str]:
-        """
-        (Updatable) The subnet to create a secondary vnic in to attach to the instance running the job
-        """
         return pulumi.get(self, "subnet_id")
 
 
@@ -367,10 +327,6 @@ class JobJobInfrastructureConfigurationDetailsJobShapeConfigDetails(dict):
     def __init__(__self__, *,
                  memory_in_gbs: Optional[float] = None,
                  ocpus: Optional[float] = None):
-        """
-        :param float memory_in_gbs: (Updatable) The total amount of memory available to the job run instance, in gigabytes.
-        :param float ocpus: (Updatable) The total number of OCPUs available to the job run instance.
-        """
         if memory_in_gbs is not None:
             pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         if ocpus is not None:
@@ -379,17 +335,11 @@ class JobJobInfrastructureConfigurationDetailsJobShapeConfigDetails(dict):
     @property
     @pulumi.getter(name="memoryInGbs")
     def memory_in_gbs(self) -> Optional[float]:
-        """
-        (Updatable) The total amount of memory available to the job run instance, in gigabytes.
-        """
         return pulumi.get(self, "memory_in_gbs")
 
     @property
     @pulumi.getter
     def ocpus(self) -> Optional[float]:
-        """
-        (Updatable) The total number of OCPUs available to the job run instance.
-        """
         return pulumi.get(self, "ocpus")
 
 
@@ -423,12 +373,6 @@ class JobJobLogConfigurationDetails(dict):
                  enable_logging: Optional[bool] = None,
                  log_group_id: Optional[str] = None,
                  log_id: Optional[str] = None):
-        """
-        :param bool enable_auto_log_creation: If automatic on-behalf-of log object creation is enabled for job runs.
-        :param bool enable_logging: If customer logging is enabled for job runs.
-        :param str log_group_id: The log group id for where log objects are for job runs.
-        :param str log_id: The log id the job run will push logs too.
-        """
         if enable_auto_log_creation is not None:
             pulumi.set(__self__, "enable_auto_log_creation", enable_auto_log_creation)
         if enable_logging is not None:
@@ -441,33 +385,21 @@ class JobJobLogConfigurationDetails(dict):
     @property
     @pulumi.getter(name="enableAutoLogCreation")
     def enable_auto_log_creation(self) -> Optional[bool]:
-        """
-        If automatic on-behalf-of log object creation is enabled for job runs.
-        """
         return pulumi.get(self, "enable_auto_log_creation")
 
     @property
     @pulumi.getter(name="enableLogging")
     def enable_logging(self) -> Optional[bool]:
-        """
-        If customer logging is enabled for job runs.
-        """
         return pulumi.get(self, "enable_logging")
 
     @property
     @pulumi.getter(name="logGroupId")
     def log_group_id(self) -> Optional[str]:
-        """
-        The log group id for where log objects are for job runs.
-        """
         return pulumi.get(self, "log_group_id")
 
     @property
     @pulumi.getter(name="logId")
     def log_id(self) -> Optional[str]:
-        """
-        The log id the job run will push logs too.
-        """
         return pulumi.get(self, "log_id")
 
 
@@ -507,16 +439,6 @@ class JobJobStorageMountConfigurationDetailsList(dict):
                  mount_target_id: Optional[str] = None,
                  namespace: Optional[str] = None,
                  prefix: Optional[str] = None):
-        """
-        :param str destination_directory_name: (Updatable) The local directory name to be mounted
-        :param str storage_type: (Updatable) The type of storage.
-        :param str bucket: (Updatable) The object storage bucket
-        :param str destination_path: (Updatable) The local path of the mounted directory, excluding directory name.
-        :param str export_id: (Updatable) OCID of the export
-        :param str mount_target_id: (Updatable) OCID of the mount target
-        :param str namespace: (Updatable) The object storage namespace
-        :param str prefix: (Updatable) Prefix in the bucket to mount
-        """
         pulumi.set(__self__, "destination_directory_name", destination_directory_name)
         pulumi.set(__self__, "storage_type", storage_type)
         if bucket is not None:
@@ -535,65 +457,41 @@ class JobJobStorageMountConfigurationDetailsList(dict):
     @property
     @pulumi.getter(name="destinationDirectoryName")
     def destination_directory_name(self) -> str:
-        """
-        (Updatable) The local directory name to be mounted
-        """
         return pulumi.get(self, "destination_directory_name")
 
     @property
     @pulumi.getter(name="storageType")
     def storage_type(self) -> str:
-        """
-        (Updatable) The type of storage.
-        """
         return pulumi.get(self, "storage_type")
 
     @property
     @pulumi.getter
     def bucket(self) -> Optional[str]:
-        """
-        (Updatable) The object storage bucket
-        """
         return pulumi.get(self, "bucket")
 
     @property
     @pulumi.getter(name="destinationPath")
     def destination_path(self) -> Optional[str]:
-        """
-        (Updatable) The local path of the mounted directory, excluding directory name.
-        """
         return pulumi.get(self, "destination_path")
 
     @property
     @pulumi.getter(name="exportId")
     def export_id(self) -> Optional[str]:
-        """
-        (Updatable) OCID of the export
-        """
         return pulumi.get(self, "export_id")
 
     @property
     @pulumi.getter(name="mountTargetId")
     def mount_target_id(self) -> Optional[str]:
-        """
-        (Updatable) OCID of the mount target
-        """
         return pulumi.get(self, "mount_target_id")
 
     @property
     @pulumi.getter
     def namespace(self) -> Optional[str]:
-        """
-        (Updatable) The object storage namespace
-        """
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter
     def prefix(self) -> Optional[str]:
-        """
-        (Updatable) Prefix in the bucket to mount
-        """
         return pulumi.get(self, "prefix")
 
 
@@ -627,12 +525,6 @@ class JobRunJobConfigurationOverrideDetails(dict):
                  command_line_arguments: Optional[str] = None,
                  environment_variables: Optional[Mapping[str, Any]] = None,
                  maximum_runtime_in_minutes: Optional[str] = None):
-        """
-        :param str job_type: The type of job.
-        :param str command_line_arguments: The arguments to pass to the job.
-        :param Mapping[str, Any] environment_variables: Environment variables to set for the job.
-        :param str maximum_runtime_in_minutes: A time bound for the execution of the job. Timer starts when the job becomes active.
-        """
         pulumi.set(__self__, "job_type", job_type)
         if command_line_arguments is not None:
             pulumi.set(__self__, "command_line_arguments", command_line_arguments)
@@ -644,33 +536,21 @@ class JobRunJobConfigurationOverrideDetails(dict):
     @property
     @pulumi.getter(name="jobType")
     def job_type(self) -> str:
-        """
-        The type of job.
-        """
         return pulumi.get(self, "job_type")
 
     @property
     @pulumi.getter(name="commandLineArguments")
     def command_line_arguments(self) -> Optional[str]:
-        """
-        The arguments to pass to the job.
-        """
         return pulumi.get(self, "command_line_arguments")
 
     @property
     @pulumi.getter(name="environmentVariables")
     def environment_variables(self) -> Optional[Mapping[str, Any]]:
-        """
-        Environment variables to set for the job.
-        """
         return pulumi.get(self, "environment_variables")
 
     @property
     @pulumi.getter(name="maximumRuntimeInMinutes")
     def maximum_runtime_in_minutes(self) -> Optional[str]:
-        """
-        A time bound for the execution of the job. Timer starts when the job becomes active.
-        """
         return pulumi.get(self, "maximum_runtime_in_minutes")
 
 
@@ -707,13 +587,6 @@ class JobRunJobInfrastructureConfigurationDetail(dict):
                  job_shape_config_details: Optional[Sequence['outputs.JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetail']] = None,
                  shape_name: Optional[str] = None,
                  subnet_id: Optional[str] = None):
-        """
-        :param int block_storage_size_in_gbs: The size of the block storage volume to attach to the instance running the job
-        :param str job_infrastructure_type: The infrastructure type used for job run.
-        :param Sequence['JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailArgs'] job_shape_config_details: Details for the job run shape configuration. Specify only when a flex shape is selected.
-        :param str shape_name: The shape used to launch the job run instances.
-        :param str subnet_id: The subnet to create a secondary vnic in to attach to the instance running the job
-        """
         if block_storage_size_in_gbs is not None:
             pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
         if job_infrastructure_type is not None:
@@ -728,41 +601,26 @@ class JobRunJobInfrastructureConfigurationDetail(dict):
     @property
     @pulumi.getter(name="blockStorageSizeInGbs")
     def block_storage_size_in_gbs(self) -> Optional[int]:
-        """
-        The size of the block storage volume to attach to the instance running the job
-        """
         return pulumi.get(self, "block_storage_size_in_gbs")
 
     @property
     @pulumi.getter(name="jobInfrastructureType")
     def job_infrastructure_type(self) -> Optional[str]:
-        """
-        The infrastructure type used for job run.
-        """
         return pulumi.get(self, "job_infrastructure_type")
 
     @property
     @pulumi.getter(name="jobShapeConfigDetails")
     def job_shape_config_details(self) -> Optional[Sequence['outputs.JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetail']]:
-        """
-        Details for the job run shape configuration. Specify only when a flex shape is selected.
-        """
         return pulumi.get(self, "job_shape_config_details")
 
     @property
     @pulumi.getter(name="shapeName")
     def shape_name(self) -> Optional[str]:
-        """
-        The shape used to launch the job run instances.
-        """
         return pulumi.get(self, "shape_name")
 
     @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[str]:
-        """
-        The subnet to create a secondary vnic in to attach to the instance running the job
-        """
         return pulumi.get(self, "subnet_id")
 
 
@@ -788,10 +646,6 @@ class JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetail(dict):
     def __init__(__self__, *,
                  memory_in_gbs: Optional[float] = None,
                  ocpus: Optional[float] = None):
-        """
-        :param float memory_in_gbs: The total amount of memory available to the job run instance, in gigabytes.
-        :param float ocpus: The total number of OCPUs available to the job run instance.
-        """
         if memory_in_gbs is not None:
             pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         if ocpus is not None:
@@ -800,17 +654,11 @@ class JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetail(dict):
     @property
     @pulumi.getter(name="memoryInGbs")
     def memory_in_gbs(self) -> Optional[float]:
-        """
-        The total amount of memory available to the job run instance, in gigabytes.
-        """
         return pulumi.get(self, "memory_in_gbs")
 
     @property
     @pulumi.getter
     def ocpus(self) -> Optional[float]:
-        """
-        The total number of OCPUs available to the job run instance.
-        """
         return pulumi.get(self, "ocpus")
 
 
@@ -844,12 +692,6 @@ class JobRunJobLogConfigurationOverrideDetails(dict):
                  enable_logging: Optional[bool] = None,
                  log_group_id: Optional[str] = None,
                  log_id: Optional[str] = None):
-        """
-        :param bool enable_auto_log_creation: If automatic on-behalf-of log object creation is enabled for job runs.
-        :param bool enable_logging: If customer logging is enabled for job runs.
-        :param str log_group_id: The log group id for where log objects are for job runs.
-        :param str log_id: The log id the job run will push logs too.
-        """
         if enable_auto_log_creation is not None:
             pulumi.set(__self__, "enable_auto_log_creation", enable_auto_log_creation)
         if enable_logging is not None:
@@ -862,33 +704,21 @@ class JobRunJobLogConfigurationOverrideDetails(dict):
     @property
     @pulumi.getter(name="enableAutoLogCreation")
     def enable_auto_log_creation(self) -> Optional[bool]:
-        """
-        If automatic on-behalf-of log object creation is enabled for job runs.
-        """
         return pulumi.get(self, "enable_auto_log_creation")
 
     @property
     @pulumi.getter(name="enableLogging")
     def enable_logging(self) -> Optional[bool]:
-        """
-        If customer logging is enabled for job runs.
-        """
         return pulumi.get(self, "enable_logging")
 
     @property
     @pulumi.getter(name="logGroupId")
     def log_group_id(self) -> Optional[str]:
-        """
-        The log group id for where log objects are for job runs.
-        """
         return pulumi.get(self, "log_group_id")
 
     @property
     @pulumi.getter(name="logId")
     def log_id(self) -> Optional[str]:
-        """
-        The log id the job run will push logs too.
-        """
         return pulumi.get(self, "log_id")
 
 
@@ -928,16 +758,6 @@ class JobRunJobStorageMountConfigurationDetailsList(dict):
                  namespace: Optional[str] = None,
                  prefix: Optional[str] = None,
                  storage_type: Optional[str] = None):
-        """
-        :param str bucket: The object storage bucket
-        :param str destination_directory_name: The local directory name to be mounted
-        :param str destination_path: The local path of the mounted directory, excluding directory name.
-        :param str export_id: OCID of the export
-        :param str mount_target_id: OCID of the mount target
-        :param str namespace: The object storage namespace
-        :param str prefix: Prefix in the bucket to mount
-        :param str storage_type: The type of storage.
-        """
         if bucket is not None:
             pulumi.set(__self__, "bucket", bucket)
         if destination_directory_name is not None:
@@ -958,65 +778,41 @@ class JobRunJobStorageMountConfigurationDetailsList(dict):
     @property
     @pulumi.getter
     def bucket(self) -> Optional[str]:
-        """
-        The object storage bucket
-        """
         return pulumi.get(self, "bucket")
 
     @property
     @pulumi.getter(name="destinationDirectoryName")
     def destination_directory_name(self) -> Optional[str]:
-        """
-        The local directory name to be mounted
-        """
         return pulumi.get(self, "destination_directory_name")
 
     @property
     @pulumi.getter(name="destinationPath")
     def destination_path(self) -> Optional[str]:
-        """
-        The local path of the mounted directory, excluding directory name.
-        """
         return pulumi.get(self, "destination_path")
 
     @property
     @pulumi.getter(name="exportId")
     def export_id(self) -> Optional[str]:
-        """
-        OCID of the export
-        """
         return pulumi.get(self, "export_id")
 
     @property
     @pulumi.getter(name="mountTargetId")
     def mount_target_id(self) -> Optional[str]:
-        """
-        OCID of the mount target
-        """
         return pulumi.get(self, "mount_target_id")
 
     @property
     @pulumi.getter
     def namespace(self) -> Optional[str]:
-        """
-        The object storage namespace
-        """
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter
     def prefix(self) -> Optional[str]:
-        """
-        Prefix in the bucket to mount
-        """
         return pulumi.get(self, "prefix")
 
     @property
     @pulumi.getter(name="storageType")
     def storage_type(self) -> Optional[str]:
-        """
-        The type of storage.
-        """
         return pulumi.get(self, "storage_type")
 
 
@@ -1044,10 +840,6 @@ class JobRunLogDetail(dict):
     def __init__(__self__, *,
                  log_group_id: Optional[str] = None,
                  log_id: Optional[str] = None):
-        """
-        :param str log_group_id: The log group id for where log objects are for job runs.
-        :param str log_id: The log id the job run will push logs too.
-        """
         if log_group_id is not None:
             pulumi.set(__self__, "log_group_id", log_group_id)
         if log_id is not None:
@@ -1056,17 +848,11 @@ class JobRunLogDetail(dict):
     @property
     @pulumi.getter(name="logGroupId")
     def log_group_id(self) -> Optional[str]:
-        """
-        The log group id for where log objects are for job runs.
-        """
         return pulumi.get(self, "log_group_id")
 
     @property
     @pulumi.getter(name="logId")
     def log_id(self) -> Optional[str]:
-        """
-        The log id the job run will push logs too.
-        """
         return pulumi.get(self, "log_id")
 
 
@@ -1077,20 +863,6 @@ class ModelCustomMetadataList(dict):
                  description: Optional[str] = None,
                  key: Optional[str] = None,
                  value: Optional[str] = None):
-        """
-        :param str category: (Updatable) Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,other".
-        :param str description: (Updatable) A short description of the model.
-        :param str key: (Updatable) Key of the model Metadata. The key can either be user defined or Oracle Cloud Infrastructure defined. List of Oracle Cloud Infrastructure defined keys:
-               * useCaseType
-               * libraryName
-               * libraryVersion
-               * estimatorClass
-               * hyperParameters
-               * testartifactresults
-        :param str value: (Updatable) Allowed values for useCaseType: binary_classification, regression, multinomial_classification, clustering, recommender, dimensionality_reduction/representation, time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
-               
-               Allowed values for libraryName: scikit-learn, xgboost, tensorflow, pytorch, mxnet, keras, lightGBM, pymc3, pyOD, spacy, prophet, sktime, statsmodels, cuml, oracle_automl, h2o, transformers, nltk, emcee, pystan, bert, gensim, flair, word2vec, ensemble, other
-        """
         if category is not None:
             pulumi.set(__self__, "category", category)
         if description is not None:
@@ -1103,41 +875,21 @@ class ModelCustomMetadataList(dict):
     @property
     @pulumi.getter
     def category(self) -> Optional[str]:
-        """
-        (Updatable) Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,other".
-        """
         return pulumi.get(self, "category")
 
     @property
     @pulumi.getter
     def description(self) -> Optional[str]:
-        """
-        (Updatable) A short description of the model.
-        """
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter
     def key(self) -> Optional[str]:
-        """
-        (Updatable) Key of the model Metadata. The key can either be user defined or Oracle Cloud Infrastructure defined. List of Oracle Cloud Infrastructure defined keys:
-        * useCaseType
-        * libraryName
-        * libraryVersion
-        * estimatorClass
-        * hyperParameters
-        * testartifactresults
-        """
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter
     def value(self) -> Optional[str]:
-        """
-        (Updatable) Allowed values for useCaseType: binary_classification, regression, multinomial_classification, clustering, recommender, dimensionality_reduction/representation, time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
-
-        Allowed values for libraryName: scikit-learn, xgboost, tensorflow, pytorch, mxnet, keras, lightGBM, pymc3, pyOD, spacy, prophet, sktime, statsmodels, cuml, oracle_automl, h2o, transformers, nltk, emcee, pystan, bert, gensim, flair, word2vec, ensemble, other
-        """
         return pulumi.get(self, "value")
 
 
@@ -1148,20 +900,6 @@ class ModelDefinedMetadataList(dict):
                  description: Optional[str] = None,
                  key: Optional[str] = None,
                  value: Optional[str] = None):
-        """
-        :param str category: (Updatable) Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,other".
-        :param str description: (Updatable) A short description of the model.
-        :param str key: (Updatable) Key of the model Metadata. The key can either be user defined or Oracle Cloud Infrastructure defined. List of Oracle Cloud Infrastructure defined keys:
-               * useCaseType
-               * libraryName
-               * libraryVersion
-               * estimatorClass
-               * hyperParameters
-               * testartifactresults
-        :param str value: (Updatable) Allowed values for useCaseType: binary_classification, regression, multinomial_classification, clustering, recommender, dimensionality_reduction/representation, time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
-               
-               Allowed values for libraryName: scikit-learn, xgboost, tensorflow, pytorch, mxnet, keras, lightGBM, pymc3, pyOD, spacy, prophet, sktime, statsmodels, cuml, oracle_automl, h2o, transformers, nltk, emcee, pystan, bert, gensim, flair, word2vec, ensemble, other
-        """
         if category is not None:
             pulumi.set(__self__, "category", category)
         if description is not None:
@@ -1174,41 +912,21 @@ class ModelDefinedMetadataList(dict):
     @property
     @pulumi.getter
     def category(self) -> Optional[str]:
-        """
-        (Updatable) Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,other".
-        """
         return pulumi.get(self, "category")
 
     @property
     @pulumi.getter
     def description(self) -> Optional[str]:
-        """
-        (Updatable) A short description of the model.
-        """
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter
     def key(self) -> Optional[str]:
-        """
-        (Updatable) Key of the model Metadata. The key can either be user defined or Oracle Cloud Infrastructure defined. List of Oracle Cloud Infrastructure defined keys:
-        * useCaseType
-        * libraryName
-        * libraryVersion
-        * estimatorClass
-        * hyperParameters
-        * testartifactresults
-        """
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter
     def value(self) -> Optional[str]:
-        """
-        (Updatable) Allowed values for useCaseType: binary_classification, regression, multinomial_classification, clustering, recommender, dimensionality_reduction/representation, time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
-
-        Allowed values for libraryName: scikit-learn, xgboost, tensorflow, pytorch, mxnet, keras, lightGBM, pymc3, pyOD, spacy, prophet, sktime, statsmodels, cuml, oracle_automl, h2o, transformers, nltk, emcee, pystan, bert, gensim, flair, word2vec, ensemble, other
-        """
         return pulumi.get(self, "value")
 
 
@@ -1217,10 +935,6 @@ class ModelDeploymentCategoryLogDetails(dict):
     def __init__(__self__, *,
                  access: Optional['outputs.ModelDeploymentCategoryLogDetailsAccess'] = None,
                  predict: Optional['outputs.ModelDeploymentCategoryLogDetailsPredict'] = None):
-        """
-        :param 'ModelDeploymentCategoryLogDetailsAccessArgs' access: (Updatable) The log details.
-        :param 'ModelDeploymentCategoryLogDetailsPredictArgs' predict: (Updatable) The log details.
-        """
         if access is not None:
             pulumi.set(__self__, "access", access)
         if predict is not None:
@@ -1229,17 +943,11 @@ class ModelDeploymentCategoryLogDetails(dict):
     @property
     @pulumi.getter
     def access(self) -> Optional['outputs.ModelDeploymentCategoryLogDetailsAccess']:
-        """
-        (Updatable) The log details.
-        """
         return pulumi.get(self, "access")
 
     @property
     @pulumi.getter
     def predict(self) -> Optional['outputs.ModelDeploymentCategoryLogDetailsPredict']:
-        """
-        (Updatable) The log details.
-        """
         return pulumi.get(self, "predict")
 
 
@@ -1267,27 +975,17 @@ class ModelDeploymentCategoryLogDetailsAccess(dict):
     def __init__(__self__, *,
                  log_group_id: str,
                  log_id: str):
-        """
-        :param str log_group_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a log group to work with.
-        :param str log_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a log to work with.
-        """
         pulumi.set(__self__, "log_group_id", log_group_id)
         pulumi.set(__self__, "log_id", log_id)
 
     @property
     @pulumi.getter(name="logGroupId")
     def log_group_id(self) -> str:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a log group to work with.
-        """
         return pulumi.get(self, "log_group_id")
 
     @property
     @pulumi.getter(name="logId")
     def log_id(self) -> str:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a log to work with.
-        """
         return pulumi.get(self, "log_id")
 
 
@@ -1315,27 +1013,17 @@ class ModelDeploymentCategoryLogDetailsPredict(dict):
     def __init__(__self__, *,
                  log_group_id: str,
                  log_id: str):
-        """
-        :param str log_group_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a log group to work with.
-        :param str log_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a log to work with.
-        """
         pulumi.set(__self__, "log_group_id", log_group_id)
         pulumi.set(__self__, "log_id", log_id)
 
     @property
     @pulumi.getter(name="logGroupId")
     def log_group_id(self) -> str:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a log group to work with.
-        """
         return pulumi.get(self, "log_group_id")
 
     @property
     @pulumi.getter(name="logId")
     def log_id(self) -> str:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a log to work with.
-        """
         return pulumi.get(self, "log_id")
 
 
@@ -1366,11 +1054,6 @@ class ModelDeploymentModelDeploymentConfigurationDetails(dict):
                  deployment_type: str,
                  model_configuration_details: 'outputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails',
                  environment_configuration_details: Optional['outputs.ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetails'] = None):
-        """
-        :param str deployment_type: (Updatable) The type of the model deployment.
-        :param 'ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsArgs' model_configuration_details: (Updatable) The model configuration details.
-        :param 'ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsArgs' environment_configuration_details: (Updatable) The configuration to carry the environment details thats used in Model Deployment creation
-        """
         pulumi.set(__self__, "deployment_type", deployment_type)
         pulumi.set(__self__, "model_configuration_details", model_configuration_details)
         if environment_configuration_details is not None:
@@ -1379,25 +1062,16 @@ class ModelDeploymentModelDeploymentConfigurationDetails(dict):
     @property
     @pulumi.getter(name="deploymentType")
     def deployment_type(self) -> str:
-        """
-        (Updatable) The type of the model deployment.
-        """
         return pulumi.get(self, "deployment_type")
 
     @property
     @pulumi.getter(name="modelConfigurationDetails")
     def model_configuration_details(self) -> 'outputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails':
-        """
-        (Updatable) The model configuration details.
-        """
         return pulumi.get(self, "model_configuration_details")
 
     @property
     @pulumi.getter(name="environmentConfigurationDetails")
     def environment_configuration_details(self) -> Optional['outputs.ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetails']:
-        """
-        (Updatable) The configuration to carry the environment details thats used in Model Deployment creation
-        """
         return pulumi.get(self, "environment_configuration_details")
 
 
@@ -1437,16 +1111,6 @@ class ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfiguration
                  image: Optional[str] = None,
                  image_digest: Optional[str] = None,
                  server_port: Optional[int] = None):
-        """
-        :param str environment_configuration_type: (Updatable) The environment configuration type
-        :param Sequence[str] cmds: (Updatable) The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
-        :param Sequence[str] entrypoints: (Updatable) The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
-        :param Mapping[str, Any] environment_variables: (Updatable) Environment variables to set for the web server container. The size of envVars must be less than 2048 bytes. Key should be under 32 characters. Key should contain only letters, digits and underscore (_) Key should start with a letter. Key should have at least 2 characters. Key should not end with underscore eg. `TEST_` Key if added cannot be empty. Value can be empty. No specific size limits on individual Values. But overall environment variables is limited to 2048 bytes. Key can't be reserved Model Deployment environment variables.
-        :param int health_check_port: (Updatable) The port on which the container [HEALTHCHECK](https://docs.docker.com/engine/reference/builder/#healthcheck) would listen. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
-        :param str image: (Updatable) The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
-        :param str image_digest: (Updatable) The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
-        :param int server_port: (Updatable) The port on which the web server serving the inference is running. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
-        """
         pulumi.set(__self__, "environment_configuration_type", environment_configuration_type)
         if cmds is not None:
             pulumi.set(__self__, "cmds", cmds)
@@ -1466,65 +1130,41 @@ class ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfiguration
     @property
     @pulumi.getter(name="environmentConfigurationType")
     def environment_configuration_type(self) -> str:
-        """
-        (Updatable) The environment configuration type
-        """
         return pulumi.get(self, "environment_configuration_type")
 
     @property
     @pulumi.getter
     def cmds(self) -> Optional[Sequence[str]]:
-        """
-        (Updatable) The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
-        """
         return pulumi.get(self, "cmds")
 
     @property
     @pulumi.getter
     def entrypoints(self) -> Optional[Sequence[str]]:
-        """
-        (Updatable) The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
-        """
         return pulumi.get(self, "entrypoints")
 
     @property
     @pulumi.getter(name="environmentVariables")
     def environment_variables(self) -> Optional[Mapping[str, Any]]:
-        """
-        (Updatable) Environment variables to set for the web server container. The size of envVars must be less than 2048 bytes. Key should be under 32 characters. Key should contain only letters, digits and underscore (_) Key should start with a letter. Key should have at least 2 characters. Key should not end with underscore eg. `TEST_` Key if added cannot be empty. Value can be empty. No specific size limits on individual Values. But overall environment variables is limited to 2048 bytes. Key can't be reserved Model Deployment environment variables.
-        """
         return pulumi.get(self, "environment_variables")
 
     @property
     @pulumi.getter(name="healthCheckPort")
     def health_check_port(self) -> Optional[int]:
-        """
-        (Updatable) The port on which the container [HEALTHCHECK](https://docs.docker.com/engine/reference/builder/#healthcheck) would listen. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
-        """
         return pulumi.get(self, "health_check_port")
 
     @property
     @pulumi.getter
     def image(self) -> Optional[str]:
-        """
-        (Updatable) The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
-        """
         return pulumi.get(self, "image")
 
     @property
     @pulumi.getter(name="imageDigest")
     def image_digest(self) -> Optional[str]:
-        """
-        (Updatable) The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
-        """
         return pulumi.get(self, "image_digest")
 
     @property
     @pulumi.getter(name="serverPort")
     def server_port(self) -> Optional[int]:
-        """
-        (Updatable) The port on which the web server serving the inference is running. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
-        """
         return pulumi.get(self, "server_port")
 
 
@@ -1558,12 +1198,6 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
                  model_id: str,
                  bandwidth_mbps: Optional[int] = None,
                  scaling_policy: Optional['outputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicy'] = None):
-        """
-        :param 'ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationArgs' instance_configuration: (Updatable) The model deployment instance configuration
-        :param str model_id: (Updatable) The OCID of the model you want to deploy.
-        :param int bandwidth_mbps: (Updatable) The minimum network bandwidth for the model deployment.
-        :param 'ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyArgs' scaling_policy: (Updatable) The scaling policy to apply to each model of the deployment.
-        """
         pulumi.set(__self__, "instance_configuration", instance_configuration)
         pulumi.set(__self__, "model_id", model_id)
         if bandwidth_mbps is not None:
@@ -1574,33 +1208,21 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
     @property
     @pulumi.getter(name="instanceConfiguration")
     def instance_configuration(self) -> 'outputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfiguration':
-        """
-        (Updatable) The model deployment instance configuration
-        """
         return pulumi.get(self, "instance_configuration")
 
     @property
     @pulumi.getter(name="modelId")
     def model_id(self) -> str:
-        """
-        (Updatable) The OCID of the model you want to deploy.
-        """
         return pulumi.get(self, "model_id")
 
     @property
     @pulumi.getter(name="bandwidthMbps")
     def bandwidth_mbps(self) -> Optional[int]:
-        """
-        (Updatable) The minimum network bandwidth for the model deployment.
-        """
         return pulumi.get(self, "bandwidth_mbps")
 
     @property
     @pulumi.getter(name="scalingPolicy")
     def scaling_policy(self) -> Optional['outputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicy']:
-        """
-        (Updatable) The scaling policy to apply to each model of the deployment.
-        """
         return pulumi.get(self, "scaling_policy")
 
 
@@ -1628,10 +1250,6 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
     def __init__(__self__, *,
                  instance_shape_name: str,
                  model_deployment_instance_shape_config_details: Optional['outputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetails'] = None):
-        """
-        :param str instance_shape_name: (Updatable) The shape used to launch the model deployment instances.
-        :param 'ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsArgs' model_deployment_instance_shape_config_details: (Updatable) Details for the model-deployment instance shape configuration.
-        """
         pulumi.set(__self__, "instance_shape_name", instance_shape_name)
         if model_deployment_instance_shape_config_details is not None:
             pulumi.set(__self__, "model_deployment_instance_shape_config_details", model_deployment_instance_shape_config_details)
@@ -1639,17 +1257,11 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
     @property
     @pulumi.getter(name="instanceShapeName")
     def instance_shape_name(self) -> str:
-        """
-        (Updatable) The shape used to launch the model deployment instances.
-        """
         return pulumi.get(self, "instance_shape_name")
 
     @property
     @pulumi.getter(name="modelDeploymentInstanceShapeConfigDetails")
     def model_deployment_instance_shape_config_details(self) -> Optional['outputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetails']:
-        """
-        (Updatable) Details for the model-deployment instance shape configuration.
-        """
         return pulumi.get(self, "model_deployment_instance_shape_config_details")
 
 
@@ -1675,10 +1287,6 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
     def __init__(__self__, *,
                  memory_in_gbs: Optional[float] = None,
                  ocpus: Optional[float] = None):
-        """
-        :param float memory_in_gbs: (Updatable) A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 to 512 GB and VM.Optimized3.Flex memory range is between 6 to 256 GB.
-        :param float ocpus: (Updatable) A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 to 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
-        """
         if memory_in_gbs is not None:
             pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         if ocpus is not None:
@@ -1687,17 +1295,11 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
     @property
     @pulumi.getter(name="memoryInGbs")
     def memory_in_gbs(self) -> Optional[float]:
-        """
-        (Updatable) A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 to 512 GB and VM.Optimized3.Flex memory range is between 6 to 256 GB.
-        """
         return pulumi.get(self, "memory_in_gbs")
 
     @property
     @pulumi.getter
     def ocpus(self) -> Optional[float]:
-        """
-        (Updatable) A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 to 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
-        """
         return pulumi.get(self, "ocpus")
 
 
@@ -1725,27 +1327,17 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
     def __init__(__self__, *,
                  instance_count: int,
                  policy_type: str):
-        """
-        :param int instance_count: (Updatable) The number of instances for the model deployment.
-        :param str policy_type: (Updatable) The type of scaling policy.
-        """
         pulumi.set(__self__, "instance_count", instance_count)
         pulumi.set(__self__, "policy_type", policy_type)
 
     @property
     @pulumi.getter(name="instanceCount")
     def instance_count(self) -> int:
-        """
-        (Updatable) The number of instances for the model deployment.
-        """
         return pulumi.get(self, "instance_count")
 
     @property
     @pulumi.getter(name="policyType")
     def policy_type(self) -> str:
-        """
-        (Updatable) The type of scaling policy.
-        """
         return pulumi.get(self, "policy_type")
 
 
@@ -1780,13 +1372,6 @@ class NotebookSessionNotebookSessionConfigDetails(dict):
                  notebook_session_shape_config_details: Optional['outputs.NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetails'] = None,
                  private_endpoint_id: Optional[str] = None,
                  subnet_id: Optional[str] = None):
-        """
-        :param str shape: (Updatable) The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
-        :param int block_storage_size_in_gbs: (Updatable) A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
-        :param 'NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsArgs' notebook_session_shape_config_details: (Updatable) Details for the notebook session shape configuration.
-        :param str private_endpoint_id: (Updatable) The OCID of a Data Science private endpoint.
-        :param str subnet_id: (Updatable) A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
-        """
         pulumi.set(__self__, "shape", shape)
         if block_storage_size_in_gbs is not None:
             pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
@@ -1800,41 +1385,26 @@ class NotebookSessionNotebookSessionConfigDetails(dict):
     @property
     @pulumi.getter
     def shape(self) -> str:
-        """
-        (Updatable) The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
-        """
         return pulumi.get(self, "shape")
 
     @property
     @pulumi.getter(name="blockStorageSizeInGbs")
     def block_storage_size_in_gbs(self) -> Optional[int]:
-        """
-        (Updatable) A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
-        """
         return pulumi.get(self, "block_storage_size_in_gbs")
 
     @property
     @pulumi.getter(name="notebookSessionShapeConfigDetails")
     def notebook_session_shape_config_details(self) -> Optional['outputs.NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetails']:
-        """
-        (Updatable) Details for the notebook session shape configuration.
-        """
         return pulumi.get(self, "notebook_session_shape_config_details")
 
     @property
     @pulumi.getter(name="privateEndpointId")
     def private_endpoint_id(self) -> Optional[str]:
-        """
-        (Updatable) The OCID of a Data Science private endpoint.
-        """
         return pulumi.get(self, "private_endpoint_id")
 
     @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[str]:
-        """
-        (Updatable) A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
-        """
         return pulumi.get(self, "subnet_id")
 
 
@@ -1860,10 +1430,6 @@ class NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetai
     def __init__(__self__, *,
                  memory_in_gbs: Optional[float] = None,
                  ocpus: Optional[float] = None):
-        """
-        :param float memory_in_gbs: (Updatable) The total amount of memory available to the notebook session instance, in gigabytes.
-        :param float ocpus: (Updatable) The total number of OCPUs available to the notebook session instance.
-        """
         if memory_in_gbs is not None:
             pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         if ocpus is not None:
@@ -1872,17 +1438,11 @@ class NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetai
     @property
     @pulumi.getter(name="memoryInGbs")
     def memory_in_gbs(self) -> Optional[float]:
-        """
-        (Updatable) The total amount of memory available to the notebook session instance, in gigabytes.
-        """
         return pulumi.get(self, "memory_in_gbs")
 
     @property
     @pulumi.getter
     def ocpus(self) -> Optional[float]:
-        """
-        (Updatable) The total number of OCPUs available to the notebook session instance.
-        """
         return pulumi.get(self, "ocpus")
 
 
@@ -1917,13 +1477,6 @@ class NotebookSessionNotebookSessionConfigurationDetails(dict):
                  block_storage_size_in_gbs: Optional[int] = None,
                  notebook_session_shape_config_details: Optional['outputs.NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetails'] = None,
                  private_endpoint_id: Optional[str] = None):
-        """
-        :param str shape: (Updatable) The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
-        :param str subnet_id: (Updatable) A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
-        :param int block_storage_size_in_gbs: (Updatable) A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
-        :param 'NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsArgs' notebook_session_shape_config_details: (Updatable) Details for the notebook session shape configuration.
-        :param str private_endpoint_id: (Updatable) The OCID of a Data Science private endpoint.
-        """
         pulumi.set(__self__, "shape", shape)
         pulumi.set(__self__, "subnet_id", subnet_id)
         if block_storage_size_in_gbs is not None:
@@ -1936,41 +1489,26 @@ class NotebookSessionNotebookSessionConfigurationDetails(dict):
     @property
     @pulumi.getter
     def shape(self) -> str:
-        """
-        (Updatable) The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
-        """
         return pulumi.get(self, "shape")
 
     @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> str:
-        """
-        (Updatable) A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
-        """
         return pulumi.get(self, "subnet_id")
 
     @property
     @pulumi.getter(name="blockStorageSizeInGbs")
     def block_storage_size_in_gbs(self) -> Optional[int]:
-        """
-        (Updatable) A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
-        """
         return pulumi.get(self, "block_storage_size_in_gbs")
 
     @property
     @pulumi.getter(name="notebookSessionShapeConfigDetails")
     def notebook_session_shape_config_details(self) -> Optional['outputs.NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetails']:
-        """
-        (Updatable) Details for the notebook session shape configuration.
-        """
         return pulumi.get(self, "notebook_session_shape_config_details")
 
     @property
     @pulumi.getter(name="privateEndpointId")
     def private_endpoint_id(self) -> Optional[str]:
-        """
-        (Updatable) The OCID of a Data Science private endpoint.
-        """
         return pulumi.get(self, "private_endpoint_id")
 
 
@@ -1996,10 +1534,6 @@ class NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConf
     def __init__(__self__, *,
                  memory_in_gbs: Optional[float] = None,
                  ocpus: Optional[float] = None):
-        """
-        :param float memory_in_gbs: (Updatable) The total amount of memory available to the notebook session instance, in gigabytes.
-        :param float ocpus: (Updatable) The total number of OCPUs available to the notebook session instance.
-        """
         if memory_in_gbs is not None:
             pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         if ocpus is not None:
@@ -2008,17 +1542,11 @@ class NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConf
     @property
     @pulumi.getter(name="memoryInGbs")
     def memory_in_gbs(self) -> Optional[float]:
-        """
-        (Updatable) The total amount of memory available to the notebook session instance, in gigabytes.
-        """
         return pulumi.get(self, "memory_in_gbs")
 
     @property
     @pulumi.getter
     def ocpus(self) -> Optional[float]:
-        """
-        (Updatable) The total number of OCPUs available to the notebook session instance.
-        """
         return pulumi.get(self, "ocpus")
 
 
@@ -2046,10 +1574,6 @@ class NotebookSessionNotebookSessionRuntimeConfigDetails(dict):
     def __init__(__self__, *,
                  custom_environment_variables: Optional[Mapping[str, Any]] = None,
                  notebook_session_git_config_details: Optional['outputs.NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetails'] = None):
-        """
-        :param Mapping[str, Any] custom_environment_variables: (Updatable) Custom environment variables for Notebook Session. These key-value pairs will be available for customers in Notebook Sessions.
-        :param 'NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsArgs' notebook_session_git_config_details: (Updatable) Git configuration Details.
-        """
         if custom_environment_variables is not None:
             pulumi.set(__self__, "custom_environment_variables", custom_environment_variables)
         if notebook_session_git_config_details is not None:
@@ -2058,17 +1582,11 @@ class NotebookSessionNotebookSessionRuntimeConfigDetails(dict):
     @property
     @pulumi.getter(name="customEnvironmentVariables")
     def custom_environment_variables(self) -> Optional[Mapping[str, Any]]:
-        """
-        (Updatable) Custom environment variables for Notebook Session. These key-value pairs will be available for customers in Notebook Sessions.
-        """
         return pulumi.get(self, "custom_environment_variables")
 
     @property
     @pulumi.getter(name="notebookSessionGitConfigDetails")
     def notebook_session_git_config_details(self) -> Optional['outputs.NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetails']:
-        """
-        (Updatable) Git configuration Details.
-        """
         return pulumi.get(self, "notebook_session_git_config_details")
 
 
@@ -2093,18 +1611,12 @@ class NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfig
 
     def __init__(__self__, *,
                  notebook_session_git_repo_config_collections: Optional[Sequence['outputs.NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollection']] = None):
-        """
-        :param Sequence['NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionArgs'] notebook_session_git_repo_config_collections: (Updatable) A collection of Git repository configurations.
-        """
         if notebook_session_git_repo_config_collections is not None:
             pulumi.set(__self__, "notebook_session_git_repo_config_collections", notebook_session_git_repo_config_collections)
 
     @property
     @pulumi.getter(name="notebookSessionGitRepoConfigCollections")
     def notebook_session_git_repo_config_collections(self) -> Optional[Sequence['outputs.NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollection']]:
-        """
-        (Updatable) A collection of Git repository configurations.
-        """
         return pulumi.get(self, "notebook_session_git_repo_config_collections")
 
 
@@ -2112,17 +1624,11 @@ class NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfig
 class NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollection(dict):
     def __init__(__self__, *,
                  url: str):
-        """
-        :param str url: (Updatable) The repository URL
-        """
         pulumi.set(__self__, "url", url)
 
     @property
     @pulumi.getter
     def url(self) -> str:
-        """
-        (Updatable) The repository URL
-        """
         return pulumi.get(self, "url")
 
 
@@ -2162,16 +1668,6 @@ class NotebookSessionNotebookSessionStorageMountConfigurationDetailsList(dict):
                  mount_target_id: Optional[str] = None,
                  namespace: Optional[str] = None,
                  prefix: Optional[str] = None):
-        """
-        :param str destination_directory_name: (Updatable) The local directory name to be mounted
-        :param str storage_type: (Updatable) The type of storage.
-        :param str bucket: (Updatable) The object storage bucket
-        :param str destination_path: (Updatable) The local path of the mounted directory, excluding directory name.
-        :param str export_id: (Updatable) OCID of the export
-        :param str mount_target_id: (Updatable) OCID of the mount target
-        :param str namespace: (Updatable) The object storage namespace
-        :param str prefix: (Updatable) Prefix in the bucket to mount
-        """
         pulumi.set(__self__, "destination_directory_name", destination_directory_name)
         pulumi.set(__self__, "storage_type", storage_type)
         if bucket is not None:
@@ -2190,65 +1686,41 @@ class NotebookSessionNotebookSessionStorageMountConfigurationDetailsList(dict):
     @property
     @pulumi.getter(name="destinationDirectoryName")
     def destination_directory_name(self) -> str:
-        """
-        (Updatable) The local directory name to be mounted
-        """
         return pulumi.get(self, "destination_directory_name")
 
     @property
     @pulumi.getter(name="storageType")
     def storage_type(self) -> str:
-        """
-        (Updatable) The type of storage.
-        """
         return pulumi.get(self, "storage_type")
 
     @property
     @pulumi.getter
     def bucket(self) -> Optional[str]:
-        """
-        (Updatable) The object storage bucket
-        """
         return pulumi.get(self, "bucket")
 
     @property
     @pulumi.getter(name="destinationPath")
     def destination_path(self) -> Optional[str]:
-        """
-        (Updatable) The local path of the mounted directory, excluding directory name.
-        """
         return pulumi.get(self, "destination_path")
 
     @property
     @pulumi.getter(name="exportId")
     def export_id(self) -> Optional[str]:
-        """
-        (Updatable) OCID of the export
-        """
         return pulumi.get(self, "export_id")
 
     @property
     @pulumi.getter(name="mountTargetId")
     def mount_target_id(self) -> Optional[str]:
-        """
-        (Updatable) OCID of the mount target
-        """
         return pulumi.get(self, "mount_target_id")
 
     @property
     @pulumi.getter
     def namespace(self) -> Optional[str]:
-        """
-        (Updatable) The object storage namespace
-        """
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter
     def prefix(self) -> Optional[str]:
-        """
-        (Updatable) Prefix in the bucket to mount
-        """
         return pulumi.get(self, "prefix")
 
 
@@ -2280,12 +1752,6 @@ class PipelineConfigurationDetails(dict):
                  command_line_arguments: Optional[str] = None,
                  environment_variables: Optional[Mapping[str, Any]] = None,
                  maximum_runtime_in_minutes: Optional[str] = None):
-        """
-        :param str type: (Updatable) The type of pipeline.
-        :param str command_line_arguments: (Updatable) The command line arguments to set for step.
-        :param Mapping[str, Any] environment_variables: (Updatable) Environment variables to set for step.
-        :param str maximum_runtime_in_minutes: (Updatable) A time bound for the execution of the step.
-        """
         pulumi.set(__self__, "type", type)
         if command_line_arguments is not None:
             pulumi.set(__self__, "command_line_arguments", command_line_arguments)
@@ -2297,33 +1763,21 @@ class PipelineConfigurationDetails(dict):
     @property
     @pulumi.getter
     def type(self) -> str:
-        """
-        (Updatable) The type of pipeline.
-        """
         return pulumi.get(self, "type")
 
     @property
     @pulumi.getter(name="commandLineArguments")
     def command_line_arguments(self) -> Optional[str]:
-        """
-        (Updatable) The command line arguments to set for step.
-        """
         return pulumi.get(self, "command_line_arguments")
 
     @property
     @pulumi.getter(name="environmentVariables")
     def environment_variables(self) -> Optional[Mapping[str, Any]]:
-        """
-        (Updatable) Environment variables to set for step.
-        """
         return pulumi.get(self, "environment_variables")
 
     @property
     @pulumi.getter(name="maximumRuntimeInMinutes")
     def maximum_runtime_in_minutes(self) -> Optional[str]:
-        """
-        (Updatable) A time bound for the execution of the step.
-        """
         return pulumi.get(self, "maximum_runtime_in_minutes")
 
 
@@ -2354,11 +1808,6 @@ class PipelineInfrastructureConfigurationDetails(dict):
                  block_storage_size_in_gbs: int,
                  shape_name: str,
                  shape_config_details: Optional['outputs.PipelineInfrastructureConfigurationDetailsShapeConfigDetails'] = None):
-        """
-        :param int block_storage_size_in_gbs: The size of the block storage volume to attach to the instance.
-        :param str shape_name: The shape used to launch the instance for all step runs in the pipeline.
-        :param 'PipelineInfrastructureConfigurationDetailsShapeConfigDetailsArgs' shape_config_details: Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
-        """
         pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
         pulumi.set(__self__, "shape_name", shape_name)
         if shape_config_details is not None:
@@ -2367,25 +1816,16 @@ class PipelineInfrastructureConfigurationDetails(dict):
     @property
     @pulumi.getter(name="blockStorageSizeInGbs")
     def block_storage_size_in_gbs(self) -> int:
-        """
-        The size of the block storage volume to attach to the instance.
-        """
         return pulumi.get(self, "block_storage_size_in_gbs")
 
     @property
     @pulumi.getter(name="shapeName")
     def shape_name(self) -> str:
-        """
-        The shape used to launch the instance for all step runs in the pipeline.
-        """
         return pulumi.get(self, "shape_name")
 
     @property
     @pulumi.getter(name="shapeConfigDetails")
     def shape_config_details(self) -> Optional['outputs.PipelineInfrastructureConfigurationDetailsShapeConfigDetails']:
-        """
-        Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
-        """
         return pulumi.get(self, "shape_config_details")
 
 
@@ -2411,10 +1851,6 @@ class PipelineInfrastructureConfigurationDetailsShapeConfigDetails(dict):
     def __init__(__self__, *,
                  memory_in_gbs: Optional[float] = None,
                  ocpus: Optional[float] = None):
-        """
-        :param float memory_in_gbs: A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
-        :param float ocpus: A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
-        """
         if memory_in_gbs is not None:
             pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         if ocpus is not None:
@@ -2423,17 +1859,11 @@ class PipelineInfrastructureConfigurationDetailsShapeConfigDetails(dict):
     @property
     @pulumi.getter(name="memoryInGbs")
     def memory_in_gbs(self) -> Optional[float]:
-        """
-        A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
-        """
         return pulumi.get(self, "memory_in_gbs")
 
     @property
     @pulumi.getter
     def ocpus(self) -> Optional[float]:
-        """
-        A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
-        """
         return pulumi.get(self, "ocpus")
 
 
@@ -2467,12 +1897,6 @@ class PipelineLogConfigurationDetails(dict):
                  enable_logging: Optional[bool] = None,
                  log_group_id: Optional[str] = None,
                  log_id: Optional[str] = None):
-        """
-        :param bool enable_auto_log_creation: (Updatable) If automatic on-behalf-of log object creation is enabled for pipeline runs.
-        :param bool enable_logging: (Updatable) If customer logging is enabled for pipeline.
-        :param str log_group_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
-        :param str log_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
-        """
         if enable_auto_log_creation is not None:
             pulumi.set(__self__, "enable_auto_log_creation", enable_auto_log_creation)
         if enable_logging is not None:
@@ -2485,33 +1909,21 @@ class PipelineLogConfigurationDetails(dict):
     @property
     @pulumi.getter(name="enableAutoLogCreation")
     def enable_auto_log_creation(self) -> Optional[bool]:
-        """
-        (Updatable) If automatic on-behalf-of log object creation is enabled for pipeline runs.
-        """
         return pulumi.get(self, "enable_auto_log_creation")
 
     @property
     @pulumi.getter(name="enableLogging")
     def enable_logging(self) -> Optional[bool]:
-        """
-        (Updatable) If customer logging is enabled for pipeline.
-        """
         return pulumi.get(self, "enable_logging")
 
     @property
     @pulumi.getter(name="logGroupId")
     def log_group_id(self) -> Optional[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
-        """
         return pulumi.get(self, "log_group_id")
 
     @property
     @pulumi.getter(name="logId")
     def log_id(self) -> Optional[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
-        """
         return pulumi.get(self, "log_id")
 
 
@@ -2543,12 +1955,6 @@ class PipelineRunConfigurationDetail(dict):
                  environment_variables: Optional[Mapping[str, Any]] = None,
                  maximum_runtime_in_minutes: Optional[str] = None,
                  type: Optional[str] = None):
-        """
-        :param str command_line_arguments: The command line arguments to set for step.
-        :param Mapping[str, Any] environment_variables: Environment variables to set for step.
-        :param str maximum_runtime_in_minutes: A time bound for the execution of the step.
-        :param str type: The type of pipeline.
-        """
         if command_line_arguments is not None:
             pulumi.set(__self__, "command_line_arguments", command_line_arguments)
         if environment_variables is not None:
@@ -2561,33 +1967,21 @@ class PipelineRunConfigurationDetail(dict):
     @property
     @pulumi.getter(name="commandLineArguments")
     def command_line_arguments(self) -> Optional[str]:
-        """
-        The command line arguments to set for step.
-        """
         return pulumi.get(self, "command_line_arguments")
 
     @property
     @pulumi.getter(name="environmentVariables")
     def environment_variables(self) -> Optional[Mapping[str, Any]]:
-        """
-        Environment variables to set for step.
-        """
         return pulumi.get(self, "environment_variables")
 
     @property
     @pulumi.getter(name="maximumRuntimeInMinutes")
     def maximum_runtime_in_minutes(self) -> Optional[str]:
-        """
-        A time bound for the execution of the step.
-        """
         return pulumi.get(self, "maximum_runtime_in_minutes")
 
     @property
     @pulumi.getter
     def type(self) -> Optional[str]:
-        """
-        The type of pipeline.
-        """
         return pulumi.get(self, "type")
 
 
@@ -2619,12 +2013,6 @@ class PipelineRunConfigurationOverrideDetails(dict):
                  command_line_arguments: Optional[str] = None,
                  environment_variables: Optional[Mapping[str, Any]] = None,
                  maximum_runtime_in_minutes: Optional[str] = None):
-        """
-        :param str type: The type of pipeline.
-        :param str command_line_arguments: The command line arguments to set for step.
-        :param Mapping[str, Any] environment_variables: Environment variables to set for step.
-        :param str maximum_runtime_in_minutes: A time bound for the execution of the step.
-        """
         pulumi.set(__self__, "type", type)
         if command_line_arguments is not None:
             pulumi.set(__self__, "command_line_arguments", command_line_arguments)
@@ -2636,33 +2024,21 @@ class PipelineRunConfigurationOverrideDetails(dict):
     @property
     @pulumi.getter
     def type(self) -> str:
-        """
-        The type of pipeline.
-        """
         return pulumi.get(self, "type")
 
     @property
     @pulumi.getter(name="commandLineArguments")
     def command_line_arguments(self) -> Optional[str]:
-        """
-        The command line arguments to set for step.
-        """
         return pulumi.get(self, "command_line_arguments")
 
     @property
     @pulumi.getter(name="environmentVariables")
     def environment_variables(self) -> Optional[Mapping[str, Any]]:
-        """
-        Environment variables to set for step.
-        """
         return pulumi.get(self, "environment_variables")
 
     @property
     @pulumi.getter(name="maximumRuntimeInMinutes")
     def maximum_runtime_in_minutes(self) -> Optional[str]:
-        """
-        A time bound for the execution of the step.
-        """
         return pulumi.get(self, "maximum_runtime_in_minutes")
 
 
@@ -2696,12 +2072,6 @@ class PipelineRunLogConfigurationOverrideDetails(dict):
                  enable_logging: Optional[bool] = None,
                  log_group_id: Optional[str] = None,
                  log_id: Optional[str] = None):
-        """
-        :param bool enable_auto_log_creation: If automatic on-behalf-of log object creation is enabled for pipeline runs.
-        :param bool enable_logging: If customer logging is enabled for pipeline.
-        :param str log_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
-        :param str log_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
-        """
         if enable_auto_log_creation is not None:
             pulumi.set(__self__, "enable_auto_log_creation", enable_auto_log_creation)
         if enable_logging is not None:
@@ -2714,33 +2084,21 @@ class PipelineRunLogConfigurationOverrideDetails(dict):
     @property
     @pulumi.getter(name="enableAutoLogCreation")
     def enable_auto_log_creation(self) -> Optional[bool]:
-        """
-        If automatic on-behalf-of log object creation is enabled for pipeline runs.
-        """
         return pulumi.get(self, "enable_auto_log_creation")
 
     @property
     @pulumi.getter(name="enableLogging")
     def enable_logging(self) -> Optional[bool]:
-        """
-        If customer logging is enabled for pipeline.
-        """
         return pulumi.get(self, "enable_logging")
 
     @property
     @pulumi.getter(name="logGroupId")
     def log_group_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
-        """
         return pulumi.get(self, "log_group_id")
 
     @property
     @pulumi.getter(name="logId")
     def log_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
-        """
         return pulumi.get(self, "log_id")
 
 
@@ -2768,10 +2126,6 @@ class PipelineRunLogDetail(dict):
     def __init__(__self__, *,
                  log_group_id: Optional[str] = None,
                  log_id: Optional[str] = None):
-        """
-        :param str log_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
-        :param str log_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
-        """
         if log_group_id is not None:
             pulumi.set(__self__, "log_group_id", log_group_id)
         if log_id is not None:
@@ -2780,17 +2134,11 @@ class PipelineRunLogDetail(dict):
     @property
     @pulumi.getter(name="logGroupId")
     def log_group_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
-        """
         return pulumi.get(self, "log_group_id")
 
     @property
     @pulumi.getter(name="logId")
     def log_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
-        """
         return pulumi.get(self, "log_id")
 
 
@@ -2818,27 +2166,17 @@ class PipelineRunStepOverrideDetail(dict):
     def __init__(__self__, *,
                  step_configuration_details: 'outputs.PipelineRunStepOverrideDetailStepConfigurationDetails',
                  step_name: str):
-        """
-        :param 'PipelineRunStepOverrideDetailStepConfigurationDetailsArgs' step_configuration_details: The configuration details of a step.
-        :param str step_name: The name of the step.
-        """
         pulumi.set(__self__, "step_configuration_details", step_configuration_details)
         pulumi.set(__self__, "step_name", step_name)
 
     @property
     @pulumi.getter(name="stepConfigurationDetails")
     def step_configuration_details(self) -> 'outputs.PipelineRunStepOverrideDetailStepConfigurationDetails':
-        """
-        The configuration details of a step.
-        """
         return pulumi.get(self, "step_configuration_details")
 
     @property
     @pulumi.getter(name="stepName")
     def step_name(self) -> str:
-        """
-        The name of the step.
-        """
         return pulumi.get(self, "step_name")
 
 
@@ -2869,11 +2207,6 @@ class PipelineRunStepOverrideDetailStepConfigurationDetails(dict):
                  command_line_arguments: Optional[str] = None,
                  environment_variables: Optional[Mapping[str, Any]] = None,
                  maximum_runtime_in_minutes: Optional[str] = None):
-        """
-        :param str command_line_arguments: The command line arguments to set for step.
-        :param Mapping[str, Any] environment_variables: Environment variables to set for step.
-        :param str maximum_runtime_in_minutes: A time bound for the execution of the step.
-        """
         if command_line_arguments is not None:
             pulumi.set(__self__, "command_line_arguments", command_line_arguments)
         if environment_variables is not None:
@@ -2884,25 +2217,16 @@ class PipelineRunStepOverrideDetailStepConfigurationDetails(dict):
     @property
     @pulumi.getter(name="commandLineArguments")
     def command_line_arguments(self) -> Optional[str]:
-        """
-        The command line arguments to set for step.
-        """
         return pulumi.get(self, "command_line_arguments")
 
     @property
     @pulumi.getter(name="environmentVariables")
     def environment_variables(self) -> Optional[Mapping[str, Any]]:
-        """
-        Environment variables to set for step.
-        """
         return pulumi.get(self, "environment_variables")
 
     @property
     @pulumi.getter(name="maximumRuntimeInMinutes")
     def maximum_runtime_in_minutes(self) -> Optional[str]:
-        """
-        A time bound for the execution of the step.
-        """
         return pulumi.get(self, "maximum_runtime_in_minutes")
 
 
@@ -2943,15 +2267,6 @@ class PipelineRunStepRun(dict):
                  step_type: Optional[str] = None,
                  time_finished: Optional[str] = None,
                  time_started: Optional[str] = None):
-        """
-        :param str job_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job run triggered for this step run.
-        :param str lifecycle_details: Details of the state of the step run.
-        :param str state: The state of the step run.
-        :param str step_name: The name of the step.
-        :param str step_type: The type of step.
-        :param str time_finished: The date and time the pipeline run request was finished in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        :param str time_started: The date and time the pipeline run request was started in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
         if job_run_id is not None:
             pulumi.set(__self__, "job_run_id", job_run_id)
         if lifecycle_details is not None:
@@ -2970,57 +2285,36 @@ class PipelineRunStepRun(dict):
     @property
     @pulumi.getter(name="jobRunId")
     def job_run_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job run triggered for this step run.
-        """
         return pulumi.get(self, "job_run_id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[str]:
-        """
-        Details of the state of the step run.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The state of the step run.
-        """
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="stepName")
     def step_name(self) -> Optional[str]:
-        """
-        The name of the step.
-        """
         return pulumi.get(self, "step_name")
 
     @property
     @pulumi.getter(name="stepType")
     def step_type(self) -> Optional[str]:
-        """
-        The type of step.
-        """
         return pulumi.get(self, "step_type")
 
     @property
     @pulumi.getter(name="timeFinished")
     def time_finished(self) -> Optional[str]:
-        """
-        The date and time the pipeline run request was finished in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
         return pulumi.get(self, "time_finished")
 
     @property
     @pulumi.getter(name="timeStarted")
     def time_started(self) -> Optional[str]:
-        """
-        The date and time the pipeline run request was started in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
         return pulumi.get(self, "time_started")
 
 
@@ -3060,9 +2354,6 @@ class PipelineStepArtifact(dict):
                  artifact_content_disposition: Optional[str] = None,
                  artifact_content_md5: Optional[str] = None,
                  artifact_last_modified: Optional[str] = None):
-        """
-        :param str step_name: (Updatable) The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
-        """
         pulumi.set(__self__, "artifact_content_length", artifact_content_length)
         pulumi.set(__self__, "pipeline_step_artifact", pipeline_step_artifact)
         pulumi.set(__self__, "step_name", step_name)
@@ -3086,9 +2377,6 @@ class PipelineStepArtifact(dict):
     @property
     @pulumi.getter(name="stepName")
     def step_name(self) -> str:
-        """
-        (Updatable) The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
-        """
         return pulumi.get(self, "step_name")
 
     @property
@@ -3147,20 +2435,6 @@ class PipelineStepDetail(dict):
                  job_id: Optional[str] = None,
                  step_configuration_details: Optional['outputs.PipelineStepDetailStepConfigurationDetails'] = None,
                  step_infrastructure_configuration_details: Optional['outputs.PipelineStepDetailStepInfrastructureConfigurationDetails'] = None):
-        """
-        :param str step_name: (Updatable) The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
-        :param str step_type: (Updatable) The type of step.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param Sequence[str] depends_ons: The list of step names this current step depends on for execution.
-        :param str description: (Updatable) A short description of the step.
-        :param bool is_artifact_uploaded: A flag to indicate whether the artifact has been uploaded for this step or not.
-        :param str job_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job to be used as a step.
-        :param 'PipelineStepDetailStepConfigurationDetailsArgs' step_configuration_details: (Updatable) The configuration details of a step.
-        :param 'PipelineStepDetailStepInfrastructureConfigurationDetailsArgs' step_infrastructure_configuration_details: The infrastructure configuration details of a pipeline or a step.
-        """
         pulumi.set(__self__, "step_name", step_name)
         pulumi.set(__self__, "step_type", step_type)
         if depends_ons is not None:
@@ -3179,69 +2453,41 @@ class PipelineStepDetail(dict):
     @property
     @pulumi.getter(name="stepName")
     def step_name(self) -> str:
-        """
-        (Updatable) The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
-        """
         return pulumi.get(self, "step_name")
 
     @property
     @pulumi.getter(name="stepType")
     def step_type(self) -> str:
-        """
-        (Updatable) The type of step.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "step_type")
 
     @property
     @pulumi.getter(name="dependsOns")
     def depends_ons(self) -> Optional[Sequence[str]]:
-        """
-        The list of step names this current step depends on for execution.
-        """
         return pulumi.get(self, "depends_ons")
 
     @property
     @pulumi.getter
     def description(self) -> Optional[str]:
-        """
-        (Updatable) A short description of the step.
-        """
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="isArtifactUploaded")
     def is_artifact_uploaded(self) -> Optional[bool]:
-        """
-        A flag to indicate whether the artifact has been uploaded for this step or not.
-        """
         return pulumi.get(self, "is_artifact_uploaded")
 
     @property
     @pulumi.getter(name="jobId")
     def job_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job to be used as a step.
-        """
         return pulumi.get(self, "job_id")
 
     @property
     @pulumi.getter(name="stepConfigurationDetails")
     def step_configuration_details(self) -> Optional['outputs.PipelineStepDetailStepConfigurationDetails']:
-        """
-        (Updatable) The configuration details of a step.
-        """
         return pulumi.get(self, "step_configuration_details")
 
     @property
     @pulumi.getter(name="stepInfrastructureConfigurationDetails")
     def step_infrastructure_configuration_details(self) -> Optional['outputs.PipelineStepDetailStepInfrastructureConfigurationDetails']:
-        """
-        The infrastructure configuration details of a pipeline or a step.
-        """
         return pulumi.get(self, "step_infrastructure_configuration_details")
 
 
@@ -3272,11 +2518,6 @@ class PipelineStepDetailStepConfigurationDetails(dict):
                  command_line_arguments: Optional[str] = None,
                  environment_variables: Optional[Mapping[str, Any]] = None,
                  maximum_runtime_in_minutes: Optional[str] = None):
-        """
-        :param str command_line_arguments: (Updatable) The command line arguments to set for step.
-        :param Mapping[str, Any] environment_variables: (Updatable) Environment variables to set for step.
-        :param str maximum_runtime_in_minutes: (Updatable) A time bound for the execution of the step.
-        """
         if command_line_arguments is not None:
             pulumi.set(__self__, "command_line_arguments", command_line_arguments)
         if environment_variables is not None:
@@ -3287,25 +2528,16 @@ class PipelineStepDetailStepConfigurationDetails(dict):
     @property
     @pulumi.getter(name="commandLineArguments")
     def command_line_arguments(self) -> Optional[str]:
-        """
-        (Updatable) The command line arguments to set for step.
-        """
         return pulumi.get(self, "command_line_arguments")
 
     @property
     @pulumi.getter(name="environmentVariables")
     def environment_variables(self) -> Optional[Mapping[str, Any]]:
-        """
-        (Updatable) Environment variables to set for step.
-        """
         return pulumi.get(self, "environment_variables")
 
     @property
     @pulumi.getter(name="maximumRuntimeInMinutes")
     def maximum_runtime_in_minutes(self) -> Optional[str]:
-        """
-        (Updatable) A time bound for the execution of the step.
-        """
         return pulumi.get(self, "maximum_runtime_in_minutes")
 
 
@@ -3336,11 +2568,6 @@ class PipelineStepDetailStepInfrastructureConfigurationDetails(dict):
                  block_storage_size_in_gbs: int,
                  shape_name: str,
                  shape_config_details: Optional['outputs.PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetails'] = None):
-        """
-        :param int block_storage_size_in_gbs: The size of the block storage volume to attach to the instance.
-        :param str shape_name: The shape used to launch the instance for all step runs in the pipeline.
-        :param 'PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetailsArgs' shape_config_details: Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
-        """
         pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
         pulumi.set(__self__, "shape_name", shape_name)
         if shape_config_details is not None:
@@ -3349,25 +2576,16 @@ class PipelineStepDetailStepInfrastructureConfigurationDetails(dict):
     @property
     @pulumi.getter(name="blockStorageSizeInGbs")
     def block_storage_size_in_gbs(self) -> int:
-        """
-        The size of the block storage volume to attach to the instance.
-        """
         return pulumi.get(self, "block_storage_size_in_gbs")
 
     @property
     @pulumi.getter(name="shapeName")
     def shape_name(self) -> str:
-        """
-        The shape used to launch the instance for all step runs in the pipeline.
-        """
         return pulumi.get(self, "shape_name")
 
     @property
     @pulumi.getter(name="shapeConfigDetails")
     def shape_config_details(self) -> Optional['outputs.PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetails']:
-        """
-        Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
-        """
         return pulumi.get(self, "shape_config_details")
 
 
@@ -3393,10 +2611,6 @@ class PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetails
     def __init__(__self__, *,
                  memory_in_gbs: Optional[float] = None,
                  ocpus: Optional[float] = None):
-        """
-        :param float memory_in_gbs: A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
-        :param float ocpus: A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
-        """
         if memory_in_gbs is not None:
             pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         if ocpus is not None:
@@ -3405,90 +2619,64 @@ class PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetails
     @property
     @pulumi.getter(name="memoryInGbs")
     def memory_in_gbs(self) -> Optional[float]:
-        """
-        A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
-        """
         return pulumi.get(self, "memory_in_gbs")
 
     @property
     @pulumi.getter
     def ocpus(self) -> Optional[float]:
-        """
-        A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
-        """
         return pulumi.get(self, "ocpus")
 
 
 @pulumi.output_type
 class GetFastLaunchJobConfigsFastLaunchJobConfigResult(dict):
     def __init__(__self__, *,
-                 core_count: int,
-                 managed_egress_support: str,
-                 memory_in_gbs: int,
-                 name: str,
-                 shape_name: str,
-                 shape_series: str):
-        """
-        :param int core_count: The number of cores associated with this fast launch job shape.
-        :param str managed_egress_support: The managed egress support
-        :param int memory_in_gbs: The number of cores associated with this fast launch job shape.
-        :param str name: The name of the fast launch job config
-        :param str shape_name: The name of the fast launch job shape.
-        :param str shape_series: The family that the compute shape belongs to.
-        """
-        pulumi.set(__self__, "core_count", core_count)
-        pulumi.set(__self__, "managed_egress_support", managed_egress_support)
-        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "shape_name", shape_name)
-        pulumi.set(__self__, "shape_series", shape_series)
+                 core_count: Optional[int] = None,
+                 managed_egress_support: Optional[str] = None,
+                 memory_in_gbs: Optional[int] = None,
+                 name: Optional[str] = None,
+                 shape_name: Optional[str] = None,
+                 shape_series: Optional[str] = None):
+        if core_count is not None:
+            pulumi.set(__self__, "core_count", core_count)
+        if managed_egress_support is not None:
+            pulumi.set(__self__, "managed_egress_support", managed_egress_support)
+        if memory_in_gbs is not None:
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if shape_name is not None:
+            pulumi.set(__self__, "shape_name", shape_name)
+        if shape_series is not None:
+            pulumi.set(__self__, "shape_series", shape_series)
 
     @property
     @pulumi.getter(name="coreCount")
-    def core_count(self) -> int:
-        """
-        The number of cores associated with this fast launch job shape.
-        """
+    def core_count(self) -> Optional[int]:
         return pulumi.get(self, "core_count")
 
     @property
     @pulumi.getter(name="managedEgressSupport")
-    def managed_egress_support(self) -> str:
-        """
-        The managed egress support
-        """
+    def managed_egress_support(self) -> Optional[str]:
         return pulumi.get(self, "managed_egress_support")
 
     @property
     @pulumi.getter(name="memoryInGbs")
-    def memory_in_gbs(self) -> int:
-        """
-        The number of cores associated with this fast launch job shape.
-        """
+    def memory_in_gbs(self) -> Optional[int]:
         return pulumi.get(self, "memory_in_gbs")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The name of the fast launch job config
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="shapeName")
-    def shape_name(self) -> str:
-        """
-        The name of the fast launch job shape.
-        """
+    def shape_name(self) -> Optional[str]:
         return pulumi.get(self, "shape_name")
 
     @property
     @pulumi.getter(name="shapeSeries")
-    def shape_series(self) -> str:
-        """
-        The family that the compute shape belongs to.
-        """
+    def shape_series(self) -> Optional[str]:
         return pulumi.get(self, "shape_series")
 
 
@@ -3498,9 +2686,6 @@ class GetFastLaunchJobConfigsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The name of the fast launch job config
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -3509,9 +2694,6 @@ class GetFastLaunchJobConfigsFilterResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The name of the fast launch job config
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -3528,605 +2710,439 @@ class GetFastLaunchJobConfigsFilterResult(dict):
 @pulumi.output_type
 class GetJobJobConfigurationDetailResult(dict):
     def __init__(__self__, *,
-                 command_line_arguments: str,
-                 environment_variables: Mapping[str, Any],
-                 job_type: str,
-                 maximum_runtime_in_minutes: str):
-        """
-        :param str command_line_arguments: The arguments to pass to the job.
-        :param Mapping[str, Any] environment_variables: Environment variables to set for the job.
-        :param str job_type: The type of job.
-        :param str maximum_runtime_in_minutes: A time bound for the execution of the job. Timer starts when the job becomes active.
-        """
-        pulumi.set(__self__, "command_line_arguments", command_line_arguments)
-        pulumi.set(__self__, "environment_variables", environment_variables)
-        pulumi.set(__self__, "job_type", job_type)
-        pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+                 command_line_arguments: Optional[str] = None,
+                 environment_variables: Optional[Mapping[str, Any]] = None,
+                 job_type: Optional[str] = None,
+                 maximum_runtime_in_minutes: Optional[str] = None):
+        if command_line_arguments is not None:
+            pulumi.set(__self__, "command_line_arguments", command_line_arguments)
+        if environment_variables is not None:
+            pulumi.set(__self__, "environment_variables", environment_variables)
+        if job_type is not None:
+            pulumi.set(__self__, "job_type", job_type)
+        if maximum_runtime_in_minutes is not None:
+            pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
 
     @property
     @pulumi.getter(name="commandLineArguments")
-    def command_line_arguments(self) -> str:
-        """
-        The arguments to pass to the job.
-        """
+    def command_line_arguments(self) -> Optional[str]:
         return pulumi.get(self, "command_line_arguments")
 
     @property
     @pulumi.getter(name="environmentVariables")
-    def environment_variables(self) -> Mapping[str, Any]:
-        """
-        Environment variables to set for the job.
-        """
+    def environment_variables(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "environment_variables")
 
     @property
     @pulumi.getter(name="jobType")
-    def job_type(self) -> str:
-        """
-        The type of job.
-        """
+    def job_type(self) -> Optional[str]:
         return pulumi.get(self, "job_type")
 
     @property
     @pulumi.getter(name="maximumRuntimeInMinutes")
-    def maximum_runtime_in_minutes(self) -> str:
-        """
-        A time bound for the execution of the job. Timer starts when the job becomes active.
-        """
+    def maximum_runtime_in_minutes(self) -> Optional[str]:
         return pulumi.get(self, "maximum_runtime_in_minutes")
 
 
 @pulumi.output_type
 class GetJobJobInfrastructureConfigurationDetailResult(dict):
     def __init__(__self__, *,
-                 block_storage_size_in_gbs: int,
-                 job_infrastructure_type: str,
-                 job_shape_config_details: Sequence['outputs.GetJobJobInfrastructureConfigurationDetailJobShapeConfigDetailResult'],
-                 shape_name: str,
-                 subnet_id: str):
-        """
-        :param int block_storage_size_in_gbs: The size of the block storage volume to attach to the instance running the job
-        :param str job_infrastructure_type: The infrastructure type used for job run.
-        :param Sequence['GetJobJobInfrastructureConfigurationDetailJobShapeConfigDetailArgs'] job_shape_config_details: Details for the job run shape configuration. Specify only when a flex shape is selected.
-        :param str shape_name: The shape used to launch the job run instances.
-        :param str subnet_id: The subnet to create a secondary vnic in to attach to the instance running the job
-        """
-        pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
-        pulumi.set(__self__, "job_infrastructure_type", job_infrastructure_type)
-        pulumi.set(__self__, "job_shape_config_details", job_shape_config_details)
-        pulumi.set(__self__, "shape_name", shape_name)
-        pulumi.set(__self__, "subnet_id", subnet_id)
+                 block_storage_size_in_gbs: Optional[int] = None,
+                 job_infrastructure_type: Optional[str] = None,
+                 job_shape_config_details: Optional[Sequence['outputs.GetJobJobInfrastructureConfigurationDetailJobShapeConfigDetailResult']] = None,
+                 shape_name: Optional[str] = None,
+                 subnet_id: Optional[str] = None):
+        if block_storage_size_in_gbs is not None:
+            pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
+        if job_infrastructure_type is not None:
+            pulumi.set(__self__, "job_infrastructure_type", job_infrastructure_type)
+        if job_shape_config_details is not None:
+            pulumi.set(__self__, "job_shape_config_details", job_shape_config_details)
+        if shape_name is not None:
+            pulumi.set(__self__, "shape_name", shape_name)
+        if subnet_id is not None:
+            pulumi.set(__self__, "subnet_id", subnet_id)
 
     @property
     @pulumi.getter(name="blockStorageSizeInGbs")
-    def block_storage_size_in_gbs(self) -> int:
-        """
-        The size of the block storage volume to attach to the instance running the job
-        """
+    def block_storage_size_in_gbs(self) -> Optional[int]:
         return pulumi.get(self, "block_storage_size_in_gbs")
 
     @property
     @pulumi.getter(name="jobInfrastructureType")
-    def job_infrastructure_type(self) -> str:
-        """
-        The infrastructure type used for job run.
-        """
+    def job_infrastructure_type(self) -> Optional[str]:
         return pulumi.get(self, "job_infrastructure_type")
 
     @property
     @pulumi.getter(name="jobShapeConfigDetails")
-    def job_shape_config_details(self) -> Sequence['outputs.GetJobJobInfrastructureConfigurationDetailJobShapeConfigDetailResult']:
-        """
-        Details for the job run shape configuration. Specify only when a flex shape is selected.
-        """
+    def job_shape_config_details(self) -> Optional[Sequence['outputs.GetJobJobInfrastructureConfigurationDetailJobShapeConfigDetailResult']]:
         return pulumi.get(self, "job_shape_config_details")
 
     @property
     @pulumi.getter(name="shapeName")
-    def shape_name(self) -> str:
-        """
-        The shape used to launch the job run instances.
-        """
+    def shape_name(self) -> Optional[str]:
         return pulumi.get(self, "shape_name")
 
     @property
     @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> str:
-        """
-        The subnet to create a secondary vnic in to attach to the instance running the job
-        """
+    def subnet_id(self) -> Optional[str]:
         return pulumi.get(self, "subnet_id")
 
 
 @pulumi.output_type
 class GetJobJobInfrastructureConfigurationDetailJobShapeConfigDetailResult(dict):
     def __init__(__self__, *,
-                 memory_in_gbs: float,
-                 ocpus: float):
-        """
-        :param float memory_in_gbs: The total amount of memory available to the job run instance, in gigabytes.
-        :param float ocpus: The total number of OCPUs available to the job run instance.
-        """
-        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
-        pulumi.set(__self__, "ocpus", ocpus)
+                 memory_in_gbs: Optional[float] = None,
+                 ocpus: Optional[float] = None):
+        if memory_in_gbs is not None:
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        if ocpus is not None:
+            pulumi.set(__self__, "ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
-    def memory_in_gbs(self) -> float:
-        """
-        The total amount of memory available to the job run instance, in gigabytes.
-        """
+    def memory_in_gbs(self) -> Optional[float]:
         return pulumi.get(self, "memory_in_gbs")
 
     @property
     @pulumi.getter
-    def ocpus(self) -> float:
-        """
-        The total number of OCPUs available to the job run instance.
-        """
+    def ocpus(self) -> Optional[float]:
         return pulumi.get(self, "ocpus")
 
 
 @pulumi.output_type
 class GetJobJobLogConfigurationDetailResult(dict):
     def __init__(__self__, *,
-                 enable_auto_log_creation: bool,
-                 enable_logging: bool,
-                 log_group_id: str,
-                 log_id: str):
-        """
-        :param bool enable_auto_log_creation: If automatic on-behalf-of log object creation is enabled for job runs.
-        :param bool enable_logging: If customer logging is enabled for job runs.
-        :param str log_group_id: The log group id for where log objects are for job runs.
-        :param str log_id: The log id the job run will push logs too.
-        """
-        pulumi.set(__self__, "enable_auto_log_creation", enable_auto_log_creation)
-        pulumi.set(__self__, "enable_logging", enable_logging)
-        pulumi.set(__self__, "log_group_id", log_group_id)
-        pulumi.set(__self__, "log_id", log_id)
+                 enable_auto_log_creation: Optional[bool] = None,
+                 enable_logging: Optional[bool] = None,
+                 log_group_id: Optional[str] = None,
+                 log_id: Optional[str] = None):
+        if enable_auto_log_creation is not None:
+            pulumi.set(__self__, "enable_auto_log_creation", enable_auto_log_creation)
+        if enable_logging is not None:
+            pulumi.set(__self__, "enable_logging", enable_logging)
+        if log_group_id is not None:
+            pulumi.set(__self__, "log_group_id", log_group_id)
+        if log_id is not None:
+            pulumi.set(__self__, "log_id", log_id)
 
     @property
     @pulumi.getter(name="enableAutoLogCreation")
-    def enable_auto_log_creation(self) -> bool:
-        """
-        If automatic on-behalf-of log object creation is enabled for job runs.
-        """
+    def enable_auto_log_creation(self) -> Optional[bool]:
         return pulumi.get(self, "enable_auto_log_creation")
 
     @property
     @pulumi.getter(name="enableLogging")
-    def enable_logging(self) -> bool:
-        """
-        If customer logging is enabled for job runs.
-        """
+    def enable_logging(self) -> Optional[bool]:
         return pulumi.get(self, "enable_logging")
 
     @property
     @pulumi.getter(name="logGroupId")
-    def log_group_id(self) -> str:
-        """
-        The log group id for where log objects are for job runs.
-        """
+    def log_group_id(self) -> Optional[str]:
         return pulumi.get(self, "log_group_id")
 
     @property
     @pulumi.getter(name="logId")
-    def log_id(self) -> str:
-        """
-        The log id the job run will push logs too.
-        """
+    def log_id(self) -> Optional[str]:
         return pulumi.get(self, "log_id")
 
 
 @pulumi.output_type
 class GetJobJobStorageMountConfigurationDetailsListResult(dict):
     def __init__(__self__, *,
-                 bucket: str,
-                 destination_directory_name: str,
-                 destination_path: str,
-                 export_id: str,
-                 mount_target_id: str,
-                 namespace: str,
-                 prefix: str,
-                 storage_type: str):
-        """
-        :param str bucket: The object storage bucket
-        :param str destination_directory_name: The local directory name to be mounted
-        :param str destination_path: The local path of the mounted directory, excluding directory name.
-        :param str export_id: OCID of the export
-        :param str mount_target_id: OCID of the mount target
-        :param str namespace: The object storage namespace
-        :param str prefix: Prefix in the bucket to mount
-        :param str storage_type: The type of storage.
-        """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "destination_directory_name", destination_directory_name)
-        pulumi.set(__self__, "destination_path", destination_path)
-        pulumi.set(__self__, "export_id", export_id)
-        pulumi.set(__self__, "mount_target_id", mount_target_id)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "prefix", prefix)
-        pulumi.set(__self__, "storage_type", storage_type)
+                 bucket: Optional[str] = None,
+                 destination_directory_name: Optional[str] = None,
+                 destination_path: Optional[str] = None,
+                 export_id: Optional[str] = None,
+                 mount_target_id: Optional[str] = None,
+                 namespace: Optional[str] = None,
+                 prefix: Optional[str] = None,
+                 storage_type: Optional[str] = None):
+        if bucket is not None:
+            pulumi.set(__self__, "bucket", bucket)
+        if destination_directory_name is not None:
+            pulumi.set(__self__, "destination_directory_name", destination_directory_name)
+        if destination_path is not None:
+            pulumi.set(__self__, "destination_path", destination_path)
+        if export_id is not None:
+            pulumi.set(__self__, "export_id", export_id)
+        if mount_target_id is not None:
+            pulumi.set(__self__, "mount_target_id", mount_target_id)
+        if namespace is not None:
+            pulumi.set(__self__, "namespace", namespace)
+        if prefix is not None:
+            pulumi.set(__self__, "prefix", prefix)
+        if storage_type is not None:
+            pulumi.set(__self__, "storage_type", storage_type)
 
     @property
     @pulumi.getter
-    def bucket(self) -> str:
-        """
-        The object storage bucket
-        """
+    def bucket(self) -> Optional[str]:
         return pulumi.get(self, "bucket")
 
     @property
     @pulumi.getter(name="destinationDirectoryName")
-    def destination_directory_name(self) -> str:
-        """
-        The local directory name to be mounted
-        """
+    def destination_directory_name(self) -> Optional[str]:
         return pulumi.get(self, "destination_directory_name")
 
     @property
     @pulumi.getter(name="destinationPath")
-    def destination_path(self) -> str:
-        """
-        The local path of the mounted directory, excluding directory name.
-        """
+    def destination_path(self) -> Optional[str]:
         return pulumi.get(self, "destination_path")
 
     @property
     @pulumi.getter(name="exportId")
-    def export_id(self) -> str:
-        """
-        OCID of the export
-        """
+    def export_id(self) -> Optional[str]:
         return pulumi.get(self, "export_id")
 
     @property
     @pulumi.getter(name="mountTargetId")
-    def mount_target_id(self) -> str:
-        """
-        OCID of the mount target
-        """
+    def mount_target_id(self) -> Optional[str]:
         return pulumi.get(self, "mount_target_id")
 
     @property
     @pulumi.getter
-    def namespace(self) -> str:
-        """
-        The object storage namespace
-        """
+    def namespace(self) -> Optional[str]:
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter
-    def prefix(self) -> str:
-        """
-        Prefix in the bucket to mount
-        """
+    def prefix(self) -> Optional[str]:
         return pulumi.get(self, "prefix")
 
     @property
     @pulumi.getter(name="storageType")
-    def storage_type(self) -> str:
-        """
-        The type of storage.
-        """
+    def storage_type(self) -> Optional[str]:
         return pulumi.get(self, "storage_type")
 
 
 @pulumi.output_type
 class GetJobRunJobConfigurationOverrideDetailResult(dict):
     def __init__(__self__, *,
-                 command_line_arguments: str,
-                 environment_variables: Mapping[str, Any],
-                 job_type: str,
-                 maximum_runtime_in_minutes: str):
-        """
-        :param str command_line_arguments: The arguments to pass to the job.
-        :param Mapping[str, Any] environment_variables: Environment variables to set for the job.
-        :param str job_type: The type of job.
-        :param str maximum_runtime_in_minutes: A time bound for the execution of the job. Timer starts when the job becomes active.
-        """
-        pulumi.set(__self__, "command_line_arguments", command_line_arguments)
-        pulumi.set(__self__, "environment_variables", environment_variables)
-        pulumi.set(__self__, "job_type", job_type)
-        pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+                 command_line_arguments: Optional[str] = None,
+                 environment_variables: Optional[Mapping[str, Any]] = None,
+                 job_type: Optional[str] = None,
+                 maximum_runtime_in_minutes: Optional[str] = None):
+        if command_line_arguments is not None:
+            pulumi.set(__self__, "command_line_arguments", command_line_arguments)
+        if environment_variables is not None:
+            pulumi.set(__self__, "environment_variables", environment_variables)
+        if job_type is not None:
+            pulumi.set(__self__, "job_type", job_type)
+        if maximum_runtime_in_minutes is not None:
+            pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
 
     @property
     @pulumi.getter(name="commandLineArguments")
-    def command_line_arguments(self) -> str:
-        """
-        The arguments to pass to the job.
-        """
+    def command_line_arguments(self) -> Optional[str]:
         return pulumi.get(self, "command_line_arguments")
 
     @property
     @pulumi.getter(name="environmentVariables")
-    def environment_variables(self) -> Mapping[str, Any]:
-        """
-        Environment variables to set for the job.
-        """
+    def environment_variables(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "environment_variables")
 
     @property
     @pulumi.getter(name="jobType")
-    def job_type(self) -> str:
-        """
-        The type of job.
-        """
+    def job_type(self) -> Optional[str]:
         return pulumi.get(self, "job_type")
 
     @property
     @pulumi.getter(name="maximumRuntimeInMinutes")
-    def maximum_runtime_in_minutes(self) -> str:
-        """
-        A time bound for the execution of the job. Timer starts when the job becomes active.
-        """
+    def maximum_runtime_in_minutes(self) -> Optional[str]:
         return pulumi.get(self, "maximum_runtime_in_minutes")
 
 
 @pulumi.output_type
 class GetJobRunJobInfrastructureConfigurationDetailResult(dict):
     def __init__(__self__, *,
-                 block_storage_size_in_gbs: int,
-                 job_infrastructure_type: str,
-                 job_shape_config_details: Sequence['outputs.GetJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailResult'],
-                 shape_name: str,
-                 subnet_id: str):
-        """
-        :param int block_storage_size_in_gbs: The size of the block storage volume to attach to the instance running the job
-        :param str job_infrastructure_type: The infrastructure type used for job run.
-        :param Sequence['GetJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailArgs'] job_shape_config_details: Details for the job run shape configuration. Specify only when a flex shape is selected.
-        :param str shape_name: The shape used to launch the job run instances.
-        :param str subnet_id: The subnet to create a secondary vnic in to attach to the instance running the job
-        """
-        pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
-        pulumi.set(__self__, "job_infrastructure_type", job_infrastructure_type)
-        pulumi.set(__self__, "job_shape_config_details", job_shape_config_details)
-        pulumi.set(__self__, "shape_name", shape_name)
-        pulumi.set(__self__, "subnet_id", subnet_id)
+                 block_storage_size_in_gbs: Optional[int] = None,
+                 job_infrastructure_type: Optional[str] = None,
+                 job_shape_config_details: Optional[Sequence['outputs.GetJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailResult']] = None,
+                 shape_name: Optional[str] = None,
+                 subnet_id: Optional[str] = None):
+        if block_storage_size_in_gbs is not None:
+            pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
+        if job_infrastructure_type is not None:
+            pulumi.set(__self__, "job_infrastructure_type", job_infrastructure_type)
+        if job_shape_config_details is not None:
+            pulumi.set(__self__, "job_shape_config_details", job_shape_config_details)
+        if shape_name is not None:
+            pulumi.set(__self__, "shape_name", shape_name)
+        if subnet_id is not None:
+            pulumi.set(__self__, "subnet_id", subnet_id)
 
     @property
     @pulumi.getter(name="blockStorageSizeInGbs")
-    def block_storage_size_in_gbs(self) -> int:
-        """
-        The size of the block storage volume to attach to the instance running the job
-        """
+    def block_storage_size_in_gbs(self) -> Optional[int]:
         return pulumi.get(self, "block_storage_size_in_gbs")
 
     @property
     @pulumi.getter(name="jobInfrastructureType")
-    def job_infrastructure_type(self) -> str:
-        """
-        The infrastructure type used for job run.
-        """
+    def job_infrastructure_type(self) -> Optional[str]:
         return pulumi.get(self, "job_infrastructure_type")
 
     @property
     @pulumi.getter(name="jobShapeConfigDetails")
-    def job_shape_config_details(self) -> Sequence['outputs.GetJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailResult']:
-        """
-        Details for the job run shape configuration. Specify only when a flex shape is selected.
-        """
+    def job_shape_config_details(self) -> Optional[Sequence['outputs.GetJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailResult']]:
         return pulumi.get(self, "job_shape_config_details")
 
     @property
     @pulumi.getter(name="shapeName")
-    def shape_name(self) -> str:
-        """
-        The shape used to launch the job run instances.
-        """
+    def shape_name(self) -> Optional[str]:
         return pulumi.get(self, "shape_name")
 
     @property
     @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> str:
-        """
-        The subnet to create a secondary vnic in to attach to the instance running the job
-        """
+    def subnet_id(self) -> Optional[str]:
         return pulumi.get(self, "subnet_id")
 
 
 @pulumi.output_type
 class GetJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailResult(dict):
     def __init__(__self__, *,
-                 memory_in_gbs: float,
-                 ocpus: float):
-        """
-        :param float memory_in_gbs: The total amount of memory available to the job run instance, in gigabytes.
-        :param float ocpus: The total number of OCPUs available to the job run instance.
-        """
-        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
-        pulumi.set(__self__, "ocpus", ocpus)
+                 memory_in_gbs: Optional[float] = None,
+                 ocpus: Optional[float] = None):
+        if memory_in_gbs is not None:
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        if ocpus is not None:
+            pulumi.set(__self__, "ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
-    def memory_in_gbs(self) -> float:
-        """
-        The total amount of memory available to the job run instance, in gigabytes.
-        """
+    def memory_in_gbs(self) -> Optional[float]:
         return pulumi.get(self, "memory_in_gbs")
 
     @property
     @pulumi.getter
-    def ocpus(self) -> float:
-        """
-        The total number of OCPUs available to the job run instance.
-        """
+    def ocpus(self) -> Optional[float]:
         return pulumi.get(self, "ocpus")
 
 
 @pulumi.output_type
 class GetJobRunJobLogConfigurationOverrideDetailResult(dict):
     def __init__(__self__, *,
-                 enable_auto_log_creation: bool,
-                 enable_logging: bool,
-                 log_group_id: str,
-                 log_id: str):
-        """
-        :param bool enable_auto_log_creation: If automatic on-behalf-of log object creation is enabled for job runs.
-        :param bool enable_logging: If customer logging is enabled for job runs.
-        :param str log_group_id: The log group id for where log objects will be for job runs.
-        :param str log_id: The log id of the log object the job run logs will be shipped to.
-        """
-        pulumi.set(__self__, "enable_auto_log_creation", enable_auto_log_creation)
-        pulumi.set(__self__, "enable_logging", enable_logging)
-        pulumi.set(__self__, "log_group_id", log_group_id)
-        pulumi.set(__self__, "log_id", log_id)
+                 enable_auto_log_creation: Optional[bool] = None,
+                 enable_logging: Optional[bool] = None,
+                 log_group_id: Optional[str] = None,
+                 log_id: Optional[str] = None):
+        if enable_auto_log_creation is not None:
+            pulumi.set(__self__, "enable_auto_log_creation", enable_auto_log_creation)
+        if enable_logging is not None:
+            pulumi.set(__self__, "enable_logging", enable_logging)
+        if log_group_id is not None:
+            pulumi.set(__self__, "log_group_id", log_group_id)
+        if log_id is not None:
+            pulumi.set(__self__, "log_id", log_id)
 
     @property
     @pulumi.getter(name="enableAutoLogCreation")
-    def enable_auto_log_creation(self) -> bool:
-        """
-        If automatic on-behalf-of log object creation is enabled for job runs.
-        """
+    def enable_auto_log_creation(self) -> Optional[bool]:
         return pulumi.get(self, "enable_auto_log_creation")
 
     @property
     @pulumi.getter(name="enableLogging")
-    def enable_logging(self) -> bool:
-        """
-        If customer logging is enabled for job runs.
-        """
+    def enable_logging(self) -> Optional[bool]:
         return pulumi.get(self, "enable_logging")
 
     @property
     @pulumi.getter(name="logGroupId")
-    def log_group_id(self) -> str:
-        """
-        The log group id for where log objects will be for job runs.
-        """
+    def log_group_id(self) -> Optional[str]:
         return pulumi.get(self, "log_group_id")
 
     @property
     @pulumi.getter(name="logId")
-    def log_id(self) -> str:
-        """
-        The log id of the log object the job run logs will be shipped to.
-        """
+    def log_id(self) -> Optional[str]:
         return pulumi.get(self, "log_id")
 
 
 @pulumi.output_type
 class GetJobRunJobStorageMountConfigurationDetailsListResult(dict):
     def __init__(__self__, *,
-                 bucket: str,
-                 destination_directory_name: str,
-                 destination_path: str,
-                 export_id: str,
-                 mount_target_id: str,
-                 namespace: str,
-                 prefix: str,
-                 storage_type: str):
-        """
-        :param str bucket: The object storage bucket
-        :param str destination_directory_name: The local directory name to be mounted
-        :param str destination_path: The local path of the mounted directory, excluding directory name.
-        :param str export_id: OCID of the export
-        :param str mount_target_id: OCID of the mount target
-        :param str namespace: The object storage namespace
-        :param str prefix: Prefix in the bucket to mount
-        :param str storage_type: The type of storage.
-        """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "destination_directory_name", destination_directory_name)
-        pulumi.set(__self__, "destination_path", destination_path)
-        pulumi.set(__self__, "export_id", export_id)
-        pulumi.set(__self__, "mount_target_id", mount_target_id)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "prefix", prefix)
-        pulumi.set(__self__, "storage_type", storage_type)
+                 bucket: Optional[str] = None,
+                 destination_directory_name: Optional[str] = None,
+                 destination_path: Optional[str] = None,
+                 export_id: Optional[str] = None,
+                 mount_target_id: Optional[str] = None,
+                 namespace: Optional[str] = None,
+                 prefix: Optional[str] = None,
+                 storage_type: Optional[str] = None):
+        if bucket is not None:
+            pulumi.set(__self__, "bucket", bucket)
+        if destination_directory_name is not None:
+            pulumi.set(__self__, "destination_directory_name", destination_directory_name)
+        if destination_path is not None:
+            pulumi.set(__self__, "destination_path", destination_path)
+        if export_id is not None:
+            pulumi.set(__self__, "export_id", export_id)
+        if mount_target_id is not None:
+            pulumi.set(__self__, "mount_target_id", mount_target_id)
+        if namespace is not None:
+            pulumi.set(__self__, "namespace", namespace)
+        if prefix is not None:
+            pulumi.set(__self__, "prefix", prefix)
+        if storage_type is not None:
+            pulumi.set(__self__, "storage_type", storage_type)
 
     @property
     @pulumi.getter
-    def bucket(self) -> str:
-        """
-        The object storage bucket
-        """
+    def bucket(self) -> Optional[str]:
         return pulumi.get(self, "bucket")
 
     @property
     @pulumi.getter(name="destinationDirectoryName")
-    def destination_directory_name(self) -> str:
-        """
-        The local directory name to be mounted
-        """
+    def destination_directory_name(self) -> Optional[str]:
         return pulumi.get(self, "destination_directory_name")
 
     @property
     @pulumi.getter(name="destinationPath")
-    def destination_path(self) -> str:
-        """
-        The local path of the mounted directory, excluding directory name.
-        """
+    def destination_path(self) -> Optional[str]:
         return pulumi.get(self, "destination_path")
 
     @property
     @pulumi.getter(name="exportId")
-    def export_id(self) -> str:
-        """
-        OCID of the export
-        """
+    def export_id(self) -> Optional[str]:
         return pulumi.get(self, "export_id")
 
     @property
     @pulumi.getter(name="mountTargetId")
-    def mount_target_id(self) -> str:
-        """
-        OCID of the mount target
-        """
+    def mount_target_id(self) -> Optional[str]:
         return pulumi.get(self, "mount_target_id")
 
     @property
     @pulumi.getter
-    def namespace(self) -> str:
-        """
-        The object storage namespace
-        """
+    def namespace(self) -> Optional[str]:
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter
-    def prefix(self) -> str:
-        """
-        Prefix in the bucket to mount
-        """
+    def prefix(self) -> Optional[str]:
         return pulumi.get(self, "prefix")
 
     @property
     @pulumi.getter(name="storageType")
-    def storage_type(self) -> str:
-        """
-        The type of storage.
-        """
+    def storage_type(self) -> Optional[str]:
         return pulumi.get(self, "storage_type")
 
 
 @pulumi.output_type
 class GetJobRunLogDetailResult(dict):
     def __init__(__self__, *,
-                 log_group_id: str,
-                 log_id: str):
-        """
-        :param str log_group_id: The log group id for where log objects will be for job runs.
-        :param str log_id: The log id of the log object the job run logs will be shipped to.
-        """
-        pulumi.set(__self__, "log_group_id", log_group_id)
-        pulumi.set(__self__, "log_id", log_id)
+                 log_group_id: Optional[str] = None,
+                 log_id: Optional[str] = None):
+        if log_group_id is not None:
+            pulumi.set(__self__, "log_group_id", log_group_id)
+        if log_id is not None:
+            pulumi.set(__self__, "log_id", log_id)
 
     @property
     @pulumi.getter(name="logGroupId")
-    def log_group_id(self) -> str:
-        """
-        The log group id for where log objects will be for job runs.
-        """
+    def log_group_id(self) -> Optional[str]:
         return pulumi.get(self, "log_group_id")
 
     @property
     @pulumi.getter(name="logId")
-    def log_id(self) -> str:
-        """
-        The log id of the log object the job run logs will be shipped to.
-        """
+    def log_id(self) -> Optional[str]:
         return pulumi.get(self, "log_id")
 
 
@@ -4160,529 +3176,387 @@ class GetJobRunsFilterResult(dict):
 @pulumi.output_type
 class GetJobRunsJobRunResult(dict):
     def __init__(__self__, *,
-                 asynchronous: bool,
-                 compartment_id: str,
-                 created_by: str,
-                 defined_tags: Mapping[str, Any],
-                 display_name: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 job_configuration_override_details: Sequence['outputs.GetJobRunsJobRunJobConfigurationOverrideDetailResult'],
-                 job_id: str,
-                 job_infrastructure_configuration_details: Sequence['outputs.GetJobRunsJobRunJobInfrastructureConfigurationDetailResult'],
-                 job_log_configuration_override_details: Sequence['outputs.GetJobRunsJobRunJobLogConfigurationOverrideDetailResult'],
-                 job_storage_mount_configuration_details_lists: Sequence['outputs.GetJobRunsJobRunJobStorageMountConfigurationDetailsListResult'],
-                 lifecycle_details: str,
-                 log_details: Sequence['outputs.GetJobRunsJobRunLogDetailResult'],
-                 project_id: str,
-                 state: str,
-                 time_accepted: str,
-                 time_finished: str,
-                 time_started: str):
-        """
-        :param str compartment_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param str created_by: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param str display_name: <b>Filter</b> results by its user-friendly name.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param str id: <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
-        :param Sequence['GetJobRunsJobRunJobConfigurationOverrideDetailArgs'] job_configuration_override_details: The job configuration details
-        :param str job_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job.
-        :param Sequence['GetJobRunsJobRunJobInfrastructureConfigurationDetailArgs'] job_infrastructure_configuration_details: The job infrastructure configuration details (shape, block storage, etc.)
-        :param Sequence['GetJobRunsJobRunJobLogConfigurationOverrideDetailArgs'] job_log_configuration_override_details: Logging configuration for resource.
-        :param Sequence['GetJobRunsJobRunJobStorageMountConfigurationDetailsListArgs'] job_storage_mount_configuration_details_lists: Collection of JobStorageMountConfigurationDetails.
-        :param str lifecycle_details: Details of the state of the job run.
-        :param Sequence['GetJobRunsJobRunLogDetailArgs'] log_details: Customer logging details for job run.
-        :param str project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
-        :param str state: <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
-        :param str time_accepted: The date and time the job run was accepted in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        :param str time_finished: The date and time the job run request was finished in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        :param str time_started: The date and time the job run request was started in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
-        pulumi.set(__self__, "asynchronous", asynchronous)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "created_by", created_by)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "job_configuration_override_details", job_configuration_override_details)
-        pulumi.set(__self__, "job_id", job_id)
-        pulumi.set(__self__, "job_infrastructure_configuration_details", job_infrastructure_configuration_details)
-        pulumi.set(__self__, "job_log_configuration_override_details", job_log_configuration_override_details)
-        pulumi.set(__self__, "job_storage_mount_configuration_details_lists", job_storage_mount_configuration_details_lists)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "log_details", log_details)
-        pulumi.set(__self__, "project_id", project_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_accepted", time_accepted)
-        pulumi.set(__self__, "time_finished", time_finished)
-        pulumi.set(__self__, "time_started", time_started)
+                 asynchronous: Optional[bool] = None,
+                 compartment_id: Optional[str] = None,
+                 created_by: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 display_name: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 job_configuration_override_details: Optional[Sequence['outputs.GetJobRunsJobRunJobConfigurationOverrideDetailResult']] = None,
+                 job_id: Optional[str] = None,
+                 job_infrastructure_configuration_details: Optional[Sequence['outputs.GetJobRunsJobRunJobInfrastructureConfigurationDetailResult']] = None,
+                 job_log_configuration_override_details: Optional[Sequence['outputs.GetJobRunsJobRunJobLogConfigurationOverrideDetailResult']] = None,
+                 job_storage_mount_configuration_details_lists: Optional[Sequence['outputs.GetJobRunsJobRunJobStorageMountConfigurationDetailsListResult']] = None,
+                 lifecycle_details: Optional[str] = None,
+                 log_details: Optional[Sequence['outputs.GetJobRunsJobRunLogDetailResult']] = None,
+                 project_id: Optional[str] = None,
+                 state: Optional[str] = None,
+                 time_accepted: Optional[str] = None,
+                 time_finished: Optional[str] = None,
+                 time_started: Optional[str] = None):
+        if asynchronous is not None:
+            pulumi.set(__self__, "asynchronous", asynchronous)
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if created_by is not None:
+            pulumi.set(__self__, "created_by", created_by)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if job_configuration_override_details is not None:
+            pulumi.set(__self__, "job_configuration_override_details", job_configuration_override_details)
+        if job_id is not None:
+            pulumi.set(__self__, "job_id", job_id)
+        if job_infrastructure_configuration_details is not None:
+            pulumi.set(__self__, "job_infrastructure_configuration_details", job_infrastructure_configuration_details)
+        if job_log_configuration_override_details is not None:
+            pulumi.set(__self__, "job_log_configuration_override_details", job_log_configuration_override_details)
+        if job_storage_mount_configuration_details_lists is not None:
+            pulumi.set(__self__, "job_storage_mount_configuration_details_lists", job_storage_mount_configuration_details_lists)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if log_details is not None:
+            pulumi.set(__self__, "log_details", log_details)
+        if project_id is not None:
+            pulumi.set(__self__, "project_id", project_id)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if time_accepted is not None:
+            pulumi.set(__self__, "time_accepted", time_accepted)
+        if time_finished is not None:
+            pulumi.set(__self__, "time_finished", time_finished)
+        if time_started is not None:
+            pulumi.set(__self__, "time_started", time_started)
 
     @property
     @pulumi.getter
-    def asynchronous(self) -> bool:
+    def asynchronous(self) -> Optional[bool]:
         return pulumi.get(self, "asynchronous")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="createdBy")
-    def created_by(self) -> str:
-        """
-        <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
-        """
+    def created_by(self) -> Optional[str]:
         return pulumi.get(self, "created_by")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        <b>Filter</b> results by its user-friendly name.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="jobConfigurationOverrideDetails")
-    def job_configuration_override_details(self) -> Sequence['outputs.GetJobRunsJobRunJobConfigurationOverrideDetailResult']:
-        """
-        The job configuration details
-        """
+    def job_configuration_override_details(self) -> Optional[Sequence['outputs.GetJobRunsJobRunJobConfigurationOverrideDetailResult']]:
         return pulumi.get(self, "job_configuration_override_details")
 
     @property
     @pulumi.getter(name="jobId")
-    def job_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job.
-        """
+    def job_id(self) -> Optional[str]:
         return pulumi.get(self, "job_id")
 
     @property
     @pulumi.getter(name="jobInfrastructureConfigurationDetails")
-    def job_infrastructure_configuration_details(self) -> Sequence['outputs.GetJobRunsJobRunJobInfrastructureConfigurationDetailResult']:
-        """
-        The job infrastructure configuration details (shape, block storage, etc.)
-        """
+    def job_infrastructure_configuration_details(self) -> Optional[Sequence['outputs.GetJobRunsJobRunJobInfrastructureConfigurationDetailResult']]:
         return pulumi.get(self, "job_infrastructure_configuration_details")
 
     @property
     @pulumi.getter(name="jobLogConfigurationOverrideDetails")
-    def job_log_configuration_override_details(self) -> Sequence['outputs.GetJobRunsJobRunJobLogConfigurationOverrideDetailResult']:
-        """
-        Logging configuration for resource.
-        """
+    def job_log_configuration_override_details(self) -> Optional[Sequence['outputs.GetJobRunsJobRunJobLogConfigurationOverrideDetailResult']]:
         return pulumi.get(self, "job_log_configuration_override_details")
 
     @property
     @pulumi.getter(name="jobStorageMountConfigurationDetailsLists")
-    def job_storage_mount_configuration_details_lists(self) -> Sequence['outputs.GetJobRunsJobRunJobStorageMountConfigurationDetailsListResult']:
-        """
-        Collection of JobStorageMountConfigurationDetails.
-        """
+    def job_storage_mount_configuration_details_lists(self) -> Optional[Sequence['outputs.GetJobRunsJobRunJobStorageMountConfigurationDetailsListResult']]:
         return pulumi.get(self, "job_storage_mount_configuration_details_lists")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        Details of the state of the job run.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="logDetails")
-    def log_details(self) -> Sequence['outputs.GetJobRunsJobRunLogDetailResult']:
-        """
-        Customer logging details for job run.
-        """
+    def log_details(self) -> Optional[Sequence['outputs.GetJobRunsJobRunLogDetailResult']]:
         return pulumi.get(self, "log_details")
 
     @property
     @pulumi.getter(name="projectId")
-    def project_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
-        """
+    def project_id(self) -> Optional[str]:
         return pulumi.get(self, "project_id")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeAccepted")
-    def time_accepted(self) -> str:
-        """
-        The date and time the job run was accepted in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
+    def time_accepted(self) -> Optional[str]:
         return pulumi.get(self, "time_accepted")
 
     @property
     @pulumi.getter(name="timeFinished")
-    def time_finished(self) -> str:
-        """
-        The date and time the job run request was finished in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
+    def time_finished(self) -> Optional[str]:
         return pulumi.get(self, "time_finished")
 
     @property
     @pulumi.getter(name="timeStarted")
-    def time_started(self) -> str:
-        """
-        The date and time the job run request was started in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
+    def time_started(self) -> Optional[str]:
         return pulumi.get(self, "time_started")
 
 
 @pulumi.output_type
 class GetJobRunsJobRunJobConfigurationOverrideDetailResult(dict):
     def __init__(__self__, *,
-                 command_line_arguments: str,
-                 environment_variables: Mapping[str, Any],
-                 job_type: str,
-                 maximum_runtime_in_minutes: str):
-        """
-        :param str command_line_arguments: The arguments to pass to the job.
-        :param Mapping[str, Any] environment_variables: Environment variables to set for the job.
-        :param str job_type: The type of job.
-        :param str maximum_runtime_in_minutes: A time bound for the execution of the job. Timer starts when the job becomes active.
-        """
-        pulumi.set(__self__, "command_line_arguments", command_line_arguments)
-        pulumi.set(__self__, "environment_variables", environment_variables)
-        pulumi.set(__self__, "job_type", job_type)
-        pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+                 command_line_arguments: Optional[str] = None,
+                 environment_variables: Optional[Mapping[str, Any]] = None,
+                 job_type: Optional[str] = None,
+                 maximum_runtime_in_minutes: Optional[str] = None):
+        if command_line_arguments is not None:
+            pulumi.set(__self__, "command_line_arguments", command_line_arguments)
+        if environment_variables is not None:
+            pulumi.set(__self__, "environment_variables", environment_variables)
+        if job_type is not None:
+            pulumi.set(__self__, "job_type", job_type)
+        if maximum_runtime_in_minutes is not None:
+            pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
 
     @property
     @pulumi.getter(name="commandLineArguments")
-    def command_line_arguments(self) -> str:
-        """
-        The arguments to pass to the job.
-        """
+    def command_line_arguments(self) -> Optional[str]:
         return pulumi.get(self, "command_line_arguments")
 
     @property
     @pulumi.getter(name="environmentVariables")
-    def environment_variables(self) -> Mapping[str, Any]:
-        """
-        Environment variables to set for the job.
-        """
+    def environment_variables(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "environment_variables")
 
     @property
     @pulumi.getter(name="jobType")
-    def job_type(self) -> str:
-        """
-        The type of job.
-        """
+    def job_type(self) -> Optional[str]:
         return pulumi.get(self, "job_type")
 
     @property
     @pulumi.getter(name="maximumRuntimeInMinutes")
-    def maximum_runtime_in_minutes(self) -> str:
-        """
-        A time bound for the execution of the job. Timer starts when the job becomes active.
-        """
+    def maximum_runtime_in_minutes(self) -> Optional[str]:
         return pulumi.get(self, "maximum_runtime_in_minutes")
 
 
 @pulumi.output_type
 class GetJobRunsJobRunJobInfrastructureConfigurationDetailResult(dict):
     def __init__(__self__, *,
-                 block_storage_size_in_gbs: int,
-                 job_infrastructure_type: str,
-                 job_shape_config_details: Sequence['outputs.GetJobRunsJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailResult'],
-                 shape_name: str,
-                 subnet_id: str):
-        """
-        :param int block_storage_size_in_gbs: The size of the block storage volume to attach to the instance running the job
-        :param str job_infrastructure_type: The infrastructure type used for job run.
-        :param Sequence['GetJobRunsJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailArgs'] job_shape_config_details: Details for the job run shape configuration. Specify only when a flex shape is selected.
-        :param str shape_name: The shape used to launch the job run instances.
-        :param str subnet_id: The subnet to create a secondary vnic in to attach to the instance running the job
-        """
-        pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
-        pulumi.set(__self__, "job_infrastructure_type", job_infrastructure_type)
-        pulumi.set(__self__, "job_shape_config_details", job_shape_config_details)
-        pulumi.set(__self__, "shape_name", shape_name)
-        pulumi.set(__self__, "subnet_id", subnet_id)
+                 block_storage_size_in_gbs: Optional[int] = None,
+                 job_infrastructure_type: Optional[str] = None,
+                 job_shape_config_details: Optional[Sequence['outputs.GetJobRunsJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailResult']] = None,
+                 shape_name: Optional[str] = None,
+                 subnet_id: Optional[str] = None):
+        if block_storage_size_in_gbs is not None:
+            pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
+        if job_infrastructure_type is not None:
+            pulumi.set(__self__, "job_infrastructure_type", job_infrastructure_type)
+        if job_shape_config_details is not None:
+            pulumi.set(__self__, "job_shape_config_details", job_shape_config_details)
+        if shape_name is not None:
+            pulumi.set(__self__, "shape_name", shape_name)
+        if subnet_id is not None:
+            pulumi.set(__self__, "subnet_id", subnet_id)
 
     @property
     @pulumi.getter(name="blockStorageSizeInGbs")
-    def block_storage_size_in_gbs(self) -> int:
-        """
-        The size of the block storage volume to attach to the instance running the job
-        """
+    def block_storage_size_in_gbs(self) -> Optional[int]:
         return pulumi.get(self, "block_storage_size_in_gbs")
 
     @property
     @pulumi.getter(name="jobInfrastructureType")
-    def job_infrastructure_type(self) -> str:
-        """
-        The infrastructure type used for job run.
-        """
+    def job_infrastructure_type(self) -> Optional[str]:
         return pulumi.get(self, "job_infrastructure_type")
 
     @property
     @pulumi.getter(name="jobShapeConfigDetails")
-    def job_shape_config_details(self) -> Sequence['outputs.GetJobRunsJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailResult']:
-        """
-        Details for the job run shape configuration. Specify only when a flex shape is selected.
-        """
+    def job_shape_config_details(self) -> Optional[Sequence['outputs.GetJobRunsJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailResult']]:
         return pulumi.get(self, "job_shape_config_details")
 
     @property
     @pulumi.getter(name="shapeName")
-    def shape_name(self) -> str:
-        """
-        The shape used to launch the job run instances.
-        """
+    def shape_name(self) -> Optional[str]:
         return pulumi.get(self, "shape_name")
 
     @property
     @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> str:
-        """
-        The subnet to create a secondary vnic in to attach to the instance running the job
-        """
+    def subnet_id(self) -> Optional[str]:
         return pulumi.get(self, "subnet_id")
 
 
 @pulumi.output_type
 class GetJobRunsJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailResult(dict):
     def __init__(__self__, *,
-                 memory_in_gbs: float,
-                 ocpus: float):
-        """
-        :param float memory_in_gbs: The total amount of memory available to the job run instance, in gigabytes.
-        :param float ocpus: The total number of OCPUs available to the job run instance.
-        """
-        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
-        pulumi.set(__self__, "ocpus", ocpus)
+                 memory_in_gbs: Optional[float] = None,
+                 ocpus: Optional[float] = None):
+        if memory_in_gbs is not None:
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        if ocpus is not None:
+            pulumi.set(__self__, "ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
-    def memory_in_gbs(self) -> float:
-        """
-        The total amount of memory available to the job run instance, in gigabytes.
-        """
+    def memory_in_gbs(self) -> Optional[float]:
         return pulumi.get(self, "memory_in_gbs")
 
     @property
     @pulumi.getter
-    def ocpus(self) -> float:
-        """
-        The total number of OCPUs available to the job run instance.
-        """
+    def ocpus(self) -> Optional[float]:
         return pulumi.get(self, "ocpus")
 
 
 @pulumi.output_type
 class GetJobRunsJobRunJobLogConfigurationOverrideDetailResult(dict):
     def __init__(__self__, *,
-                 enable_auto_log_creation: bool,
-                 enable_logging: bool,
-                 log_group_id: str,
-                 log_id: str):
-        """
-        :param bool enable_auto_log_creation: If automatic on-behalf-of log object creation is enabled for job runs.
-        :param bool enable_logging: If customer logging is enabled for job runs.
-        :param str log_group_id: The log group id for where log objects will be for job runs.
-        :param str log_id: The log id of the log object the job run logs will be shipped to.
-        """
-        pulumi.set(__self__, "enable_auto_log_creation", enable_auto_log_creation)
-        pulumi.set(__self__, "enable_logging", enable_logging)
-        pulumi.set(__self__, "log_group_id", log_group_id)
-        pulumi.set(__self__, "log_id", log_id)
+                 enable_auto_log_creation: Optional[bool] = None,
+                 enable_logging: Optional[bool] = None,
+                 log_group_id: Optional[str] = None,
+                 log_id: Optional[str] = None):
+        if enable_auto_log_creation is not None:
+            pulumi.set(__self__, "enable_auto_log_creation", enable_auto_log_creation)
+        if enable_logging is not None:
+            pulumi.set(__self__, "enable_logging", enable_logging)
+        if log_group_id is not None:
+            pulumi.set(__self__, "log_group_id", log_group_id)
+        if log_id is not None:
+            pulumi.set(__self__, "log_id", log_id)
 
     @property
     @pulumi.getter(name="enableAutoLogCreation")
-    def enable_auto_log_creation(self) -> bool:
-        """
-        If automatic on-behalf-of log object creation is enabled for job runs.
-        """
+    def enable_auto_log_creation(self) -> Optional[bool]:
         return pulumi.get(self, "enable_auto_log_creation")
 
     @property
     @pulumi.getter(name="enableLogging")
-    def enable_logging(self) -> bool:
-        """
-        If customer logging is enabled for job runs.
-        """
+    def enable_logging(self) -> Optional[bool]:
         return pulumi.get(self, "enable_logging")
 
     @property
     @pulumi.getter(name="logGroupId")
-    def log_group_id(self) -> str:
-        """
-        The log group id for where log objects will be for job runs.
-        """
+    def log_group_id(self) -> Optional[str]:
         return pulumi.get(self, "log_group_id")
 
     @property
     @pulumi.getter(name="logId")
-    def log_id(self) -> str:
-        """
-        The log id of the log object the job run logs will be shipped to.
-        """
+    def log_id(self) -> Optional[str]:
         return pulumi.get(self, "log_id")
 
 
 @pulumi.output_type
 class GetJobRunsJobRunJobStorageMountConfigurationDetailsListResult(dict):
     def __init__(__self__, *,
-                 bucket: str,
-                 destination_directory_name: str,
-                 destination_path: str,
-                 export_id: str,
-                 mount_target_id: str,
-                 namespace: str,
-                 prefix: str,
-                 storage_type: str):
-        """
-        :param str bucket: The object storage bucket
-        :param str destination_directory_name: The local directory name to be mounted
-        :param str destination_path: The local path of the mounted directory, excluding directory name.
-        :param str export_id: OCID of the export
-        :param str mount_target_id: OCID of the mount target
-        :param str namespace: The object storage namespace
-        :param str prefix: Prefix in the bucket to mount
-        :param str storage_type: The type of storage.
-        """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "destination_directory_name", destination_directory_name)
-        pulumi.set(__self__, "destination_path", destination_path)
-        pulumi.set(__self__, "export_id", export_id)
-        pulumi.set(__self__, "mount_target_id", mount_target_id)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "prefix", prefix)
-        pulumi.set(__self__, "storage_type", storage_type)
+                 bucket: Optional[str] = None,
+                 destination_directory_name: Optional[str] = None,
+                 destination_path: Optional[str] = None,
+                 export_id: Optional[str] = None,
+                 mount_target_id: Optional[str] = None,
+                 namespace: Optional[str] = None,
+                 prefix: Optional[str] = None,
+                 storage_type: Optional[str] = None):
+        if bucket is not None:
+            pulumi.set(__self__, "bucket", bucket)
+        if destination_directory_name is not None:
+            pulumi.set(__self__, "destination_directory_name", destination_directory_name)
+        if destination_path is not None:
+            pulumi.set(__self__, "destination_path", destination_path)
+        if export_id is not None:
+            pulumi.set(__self__, "export_id", export_id)
+        if mount_target_id is not None:
+            pulumi.set(__self__, "mount_target_id", mount_target_id)
+        if namespace is not None:
+            pulumi.set(__self__, "namespace", namespace)
+        if prefix is not None:
+            pulumi.set(__self__, "prefix", prefix)
+        if storage_type is not None:
+            pulumi.set(__self__, "storage_type", storage_type)
 
     @property
     @pulumi.getter
-    def bucket(self) -> str:
-        """
-        The object storage bucket
-        """
+    def bucket(self) -> Optional[str]:
         return pulumi.get(self, "bucket")
 
     @property
     @pulumi.getter(name="destinationDirectoryName")
-    def destination_directory_name(self) -> str:
-        """
-        The local directory name to be mounted
-        """
+    def destination_directory_name(self) -> Optional[str]:
         return pulumi.get(self, "destination_directory_name")
 
     @property
     @pulumi.getter(name="destinationPath")
-    def destination_path(self) -> str:
-        """
-        The local path of the mounted directory, excluding directory name.
-        """
+    def destination_path(self) -> Optional[str]:
         return pulumi.get(self, "destination_path")
 
     @property
     @pulumi.getter(name="exportId")
-    def export_id(self) -> str:
-        """
-        OCID of the export
-        """
+    def export_id(self) -> Optional[str]:
         return pulumi.get(self, "export_id")
 
     @property
     @pulumi.getter(name="mountTargetId")
-    def mount_target_id(self) -> str:
-        """
-        OCID of the mount target
-        """
+    def mount_target_id(self) -> Optional[str]:
         return pulumi.get(self, "mount_target_id")
 
     @property
     @pulumi.getter
-    def namespace(self) -> str:
-        """
-        The object storage namespace
-        """
+    def namespace(self) -> Optional[str]:
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter
-    def prefix(self) -> str:
-        """
-        Prefix in the bucket to mount
-        """
+    def prefix(self) -> Optional[str]:
         return pulumi.get(self, "prefix")
 
     @property
     @pulumi.getter(name="storageType")
-    def storage_type(self) -> str:
-        """
-        The type of storage.
-        """
+    def storage_type(self) -> Optional[str]:
         return pulumi.get(self, "storage_type")
 
 
 @pulumi.output_type
 class GetJobRunsJobRunLogDetailResult(dict):
     def __init__(__self__, *,
-                 log_group_id: str,
-                 log_id: str):
-        """
-        :param str log_group_id: The log group id for where log objects will be for job runs.
-        :param str log_id: The log id of the log object the job run logs will be shipped to.
-        """
-        pulumi.set(__self__, "log_group_id", log_group_id)
-        pulumi.set(__self__, "log_id", log_id)
+                 log_group_id: Optional[str] = None,
+                 log_id: Optional[str] = None):
+        if log_group_id is not None:
+            pulumi.set(__self__, "log_group_id", log_group_id)
+        if log_id is not None:
+            pulumi.set(__self__, "log_id", log_id)
 
     @property
     @pulumi.getter(name="logGroupId")
-    def log_group_id(self) -> str:
-        """
-        The log group id for where log objects will be for job runs.
-        """
+    def log_group_id(self) -> Optional[str]:
         return pulumi.get(self, "log_group_id")
 
     @property
     @pulumi.getter(name="logId")
-    def log_id(self) -> str:
-        """
-        The log id of the log object the job run logs will be shipped to.
-        """
+    def log_id(self) -> Optional[str]:
         return pulumi.get(self, "log_id")
 
 
@@ -4692,9 +3566,6 @@ class GetJobShapesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The name of the job shape.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -4703,9 +3574,6 @@ class GetJobShapesFilterResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The name of the job shape.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -4722,51 +3590,37 @@ class GetJobShapesFilterResult(dict):
 @pulumi.output_type
 class GetJobShapesJobShapeResult(dict):
     def __init__(__self__, *,
-                 core_count: int,
-                 memory_in_gbs: int,
-                 name: str,
-                 shape_series: str):
-        """
-        :param int core_count: The number of cores associated with this job run shape.
-        :param int memory_in_gbs: The number of cores associated with this job shape.
-        :param str name: The name of the job shape.
-        :param str shape_series: The family that the compute shape belongs to.
-        """
-        pulumi.set(__self__, "core_count", core_count)
-        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "shape_series", shape_series)
+                 core_count: Optional[int] = None,
+                 memory_in_gbs: Optional[int] = None,
+                 name: Optional[str] = None,
+                 shape_series: Optional[str] = None):
+        if core_count is not None:
+            pulumi.set(__self__, "core_count", core_count)
+        if memory_in_gbs is not None:
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if shape_series is not None:
+            pulumi.set(__self__, "shape_series", shape_series)
 
     @property
     @pulumi.getter(name="coreCount")
-    def core_count(self) -> int:
-        """
-        The number of cores associated with this job run shape.
-        """
+    def core_count(self) -> Optional[int]:
         return pulumi.get(self, "core_count")
 
     @property
     @pulumi.getter(name="memoryInGbs")
-    def memory_in_gbs(self) -> int:
-        """
-        The number of cores associated with this job shape.
-        """
+    def memory_in_gbs(self) -> Optional[int]:
         return pulumi.get(self, "memory_in_gbs")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The name of the job shape.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="shapeSeries")
-    def shape_series(self) -> str:
-        """
-        The family that the compute shape belongs to.
-        """
+    def shape_series(self) -> Optional[str]:
         return pulumi.get(self, "shape_series")
 
 
@@ -4800,995 +3654,725 @@ class GetJobsFilterResult(dict):
 @pulumi.output_type
 class GetJobsJobResult(dict):
     def __init__(__self__, *,
-                 artifact_content_disposition: str,
-                 artifact_content_length: str,
-                 artifact_content_md5: str,
-                 artifact_last_modified: str,
-                 compartment_id: str,
-                 created_by: str,
-                 defined_tags: Mapping[str, Any],
-                 delete_related_job_runs: bool,
-                 description: str,
-                 display_name: str,
-                 empty_artifact: bool,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 job_artifact: str,
-                 job_configuration_details: Sequence['outputs.GetJobsJobJobConfigurationDetailResult'],
-                 job_infrastructure_configuration_details: Sequence['outputs.GetJobsJobJobInfrastructureConfigurationDetailResult'],
-                 job_log_configuration_details: Sequence['outputs.GetJobsJobJobLogConfigurationDetailResult'],
-                 job_storage_mount_configuration_details_lists: Sequence['outputs.GetJobsJobJobStorageMountConfigurationDetailsListResult'],
-                 lifecycle_details: str,
-                 project_id: str,
-                 state: str,
-                 time_created: str):
-        """
-        :param str compartment_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param str created_by: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param str description: A short description of the job.
-        :param str display_name: <b>Filter</b> results by its user-friendly name.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param str id: <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
-        :param Sequence['GetJobsJobJobConfigurationDetailArgs'] job_configuration_details: The job configuration details
-        :param Sequence['GetJobsJobJobInfrastructureConfigurationDetailArgs'] job_infrastructure_configuration_details: The job infrastructure configuration details (shape, block storage, etc.)
-        :param Sequence['GetJobsJobJobLogConfigurationDetailArgs'] job_log_configuration_details: Logging configuration for resource.
-        :param Sequence['GetJobsJobJobStorageMountConfigurationDetailsListArgs'] job_storage_mount_configuration_details_lists: Collection of JobStorageMountConfigurationDetails.
-        :param str lifecycle_details: The state of the job.
-        :param str project_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
-        :param str state: <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
-        :param str time_created: The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z
-        """
-        pulumi.set(__self__, "artifact_content_disposition", artifact_content_disposition)
-        pulumi.set(__self__, "artifact_content_length", artifact_content_length)
-        pulumi.set(__self__, "artifact_content_md5", artifact_content_md5)
-        pulumi.set(__self__, "artifact_last_modified", artifact_last_modified)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "created_by", created_by)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "delete_related_job_runs", delete_related_job_runs)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "empty_artifact", empty_artifact)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "job_artifact", job_artifact)
-        pulumi.set(__self__, "job_configuration_details", job_configuration_details)
-        pulumi.set(__self__, "job_infrastructure_configuration_details", job_infrastructure_configuration_details)
-        pulumi.set(__self__, "job_log_configuration_details", job_log_configuration_details)
-        pulumi.set(__self__, "job_storage_mount_configuration_details_lists", job_storage_mount_configuration_details_lists)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "project_id", project_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
+                 artifact_content_disposition: Optional[str] = None,
+                 artifact_content_length: Optional[str] = None,
+                 artifact_content_md5: Optional[str] = None,
+                 artifact_last_modified: Optional[str] = None,
+                 compartment_id: Optional[str] = None,
+                 created_by: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 delete_related_job_runs: Optional[bool] = None,
+                 description: Optional[str] = None,
+                 display_name: Optional[str] = None,
+                 empty_artifact: Optional[bool] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 job_artifact: Optional[str] = None,
+                 job_configuration_details: Optional[Sequence['outputs.GetJobsJobJobConfigurationDetailResult']] = None,
+                 job_infrastructure_configuration_details: Optional[Sequence['outputs.GetJobsJobJobInfrastructureConfigurationDetailResult']] = None,
+                 job_log_configuration_details: Optional[Sequence['outputs.GetJobsJobJobLogConfigurationDetailResult']] = None,
+                 job_storage_mount_configuration_details_lists: Optional[Sequence['outputs.GetJobsJobJobStorageMountConfigurationDetailsListResult']] = None,
+                 lifecycle_details: Optional[str] = None,
+                 project_id: Optional[str] = None,
+                 state: Optional[str] = None,
+                 time_created: Optional[str] = None):
+        if artifact_content_disposition is not None:
+            pulumi.set(__self__, "artifact_content_disposition", artifact_content_disposition)
+        if artifact_content_length is not None:
+            pulumi.set(__self__, "artifact_content_length", artifact_content_length)
+        if artifact_content_md5 is not None:
+            pulumi.set(__self__, "artifact_content_md5", artifact_content_md5)
+        if artifact_last_modified is not None:
+            pulumi.set(__self__, "artifact_last_modified", artifact_last_modified)
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if created_by is not None:
+            pulumi.set(__self__, "created_by", created_by)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if delete_related_job_runs is not None:
+            pulumi.set(__self__, "delete_related_job_runs", delete_related_job_runs)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if empty_artifact is not None:
+            pulumi.set(__self__, "empty_artifact", empty_artifact)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if job_artifact is not None:
+            pulumi.set(__self__, "job_artifact", job_artifact)
+        if job_configuration_details is not None:
+            pulumi.set(__self__, "job_configuration_details", job_configuration_details)
+        if job_infrastructure_configuration_details is not None:
+            pulumi.set(__self__, "job_infrastructure_configuration_details", job_infrastructure_configuration_details)
+        if job_log_configuration_details is not None:
+            pulumi.set(__self__, "job_log_configuration_details", job_log_configuration_details)
+        if job_storage_mount_configuration_details_lists is not None:
+            pulumi.set(__self__, "job_storage_mount_configuration_details_lists", job_storage_mount_configuration_details_lists)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if project_id is not None:
+            pulumi.set(__self__, "project_id", project_id)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
 
     @property
     @pulumi.getter(name="artifactContentDisposition")
-    def artifact_content_disposition(self) -> str:
+    def artifact_content_disposition(self) -> Optional[str]:
         return pulumi.get(self, "artifact_content_disposition")
 
     @property
     @pulumi.getter(name="artifactContentLength")
-    def artifact_content_length(self) -> str:
+    def artifact_content_length(self) -> Optional[str]:
         return pulumi.get(self, "artifact_content_length")
 
     @property
     @pulumi.getter(name="artifactContentMd5")
-    def artifact_content_md5(self) -> str:
+    def artifact_content_md5(self) -> Optional[str]:
         return pulumi.get(self, "artifact_content_md5")
 
     @property
     @pulumi.getter(name="artifactLastModified")
-    def artifact_last_modified(self) -> str:
+    def artifact_last_modified(self) -> Optional[str]:
         return pulumi.get(self, "artifact_last_modified")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="createdBy")
-    def created_by(self) -> str:
-        """
-        <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
-        """
+    def created_by(self) -> Optional[str]:
         return pulumi.get(self, "created_by")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="deleteRelatedJobRuns")
-    def delete_related_job_runs(self) -> bool:
+    def delete_related_job_runs(self) -> Optional[bool]:
         return pulumi.get(self, "delete_related_job_runs")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        A short description of the job.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        <b>Filter</b> results by its user-friendly name.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="emptyArtifact")
-    def empty_artifact(self) -> bool:
+    def empty_artifact(self) -> Optional[bool]:
         return pulumi.get(self, "empty_artifact")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="jobArtifact")
-    def job_artifact(self) -> str:
+    def job_artifact(self) -> Optional[str]:
         return pulumi.get(self, "job_artifact")
 
     @property
     @pulumi.getter(name="jobConfigurationDetails")
-    def job_configuration_details(self) -> Sequence['outputs.GetJobsJobJobConfigurationDetailResult']:
-        """
-        The job configuration details
-        """
+    def job_configuration_details(self) -> Optional[Sequence['outputs.GetJobsJobJobConfigurationDetailResult']]:
         return pulumi.get(self, "job_configuration_details")
 
     @property
     @pulumi.getter(name="jobInfrastructureConfigurationDetails")
-    def job_infrastructure_configuration_details(self) -> Sequence['outputs.GetJobsJobJobInfrastructureConfigurationDetailResult']:
-        """
-        The job infrastructure configuration details (shape, block storage, etc.)
-        """
+    def job_infrastructure_configuration_details(self) -> Optional[Sequence['outputs.GetJobsJobJobInfrastructureConfigurationDetailResult']]:
         return pulumi.get(self, "job_infrastructure_configuration_details")
 
     @property
     @pulumi.getter(name="jobLogConfigurationDetails")
-    def job_log_configuration_details(self) -> Sequence['outputs.GetJobsJobJobLogConfigurationDetailResult']:
-        """
-        Logging configuration for resource.
-        """
+    def job_log_configuration_details(self) -> Optional[Sequence['outputs.GetJobsJobJobLogConfigurationDetailResult']]:
         return pulumi.get(self, "job_log_configuration_details")
 
     @property
     @pulumi.getter(name="jobStorageMountConfigurationDetailsLists")
-    def job_storage_mount_configuration_details_lists(self) -> Sequence['outputs.GetJobsJobJobStorageMountConfigurationDetailsListResult']:
-        """
-        Collection of JobStorageMountConfigurationDetails.
-        """
+    def job_storage_mount_configuration_details_lists(self) -> Optional[Sequence['outputs.GetJobsJobJobStorageMountConfigurationDetailsListResult']]:
         return pulumi.get(self, "job_storage_mount_configuration_details_lists")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        The state of the job.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="projectId")
-    def project_id(self) -> str:
-        """
-        <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
-        """
+    def project_id(self) -> Optional[str]:
         return pulumi.get(self, "project_id")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
 
 @pulumi.output_type
 class GetJobsJobJobConfigurationDetailResult(dict):
     def __init__(__self__, *,
-                 command_line_arguments: str,
-                 environment_variables: Mapping[str, Any],
-                 job_type: str,
-                 maximum_runtime_in_minutes: str):
-        """
-        :param str command_line_arguments: The arguments to pass to the job.
-        :param Mapping[str, Any] environment_variables: Environment variables to set for the job.
-        :param str job_type: The type of job.
-        :param str maximum_runtime_in_minutes: A time bound for the execution of the job. Timer starts when the job becomes active.
-        """
-        pulumi.set(__self__, "command_line_arguments", command_line_arguments)
-        pulumi.set(__self__, "environment_variables", environment_variables)
-        pulumi.set(__self__, "job_type", job_type)
-        pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+                 command_line_arguments: Optional[str] = None,
+                 environment_variables: Optional[Mapping[str, Any]] = None,
+                 job_type: Optional[str] = None,
+                 maximum_runtime_in_minutes: Optional[str] = None):
+        if command_line_arguments is not None:
+            pulumi.set(__self__, "command_line_arguments", command_line_arguments)
+        if environment_variables is not None:
+            pulumi.set(__self__, "environment_variables", environment_variables)
+        if job_type is not None:
+            pulumi.set(__self__, "job_type", job_type)
+        if maximum_runtime_in_minutes is not None:
+            pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
 
     @property
     @pulumi.getter(name="commandLineArguments")
-    def command_line_arguments(self) -> str:
-        """
-        The arguments to pass to the job.
-        """
+    def command_line_arguments(self) -> Optional[str]:
         return pulumi.get(self, "command_line_arguments")
 
     @property
     @pulumi.getter(name="environmentVariables")
-    def environment_variables(self) -> Mapping[str, Any]:
-        """
-        Environment variables to set for the job.
-        """
+    def environment_variables(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "environment_variables")
 
     @property
     @pulumi.getter(name="jobType")
-    def job_type(self) -> str:
-        """
-        The type of job.
-        """
+    def job_type(self) -> Optional[str]:
         return pulumi.get(self, "job_type")
 
     @property
     @pulumi.getter(name="maximumRuntimeInMinutes")
-    def maximum_runtime_in_minutes(self) -> str:
-        """
-        A time bound for the execution of the job. Timer starts when the job becomes active.
-        """
+    def maximum_runtime_in_minutes(self) -> Optional[str]:
         return pulumi.get(self, "maximum_runtime_in_minutes")
 
 
 @pulumi.output_type
 class GetJobsJobJobInfrastructureConfigurationDetailResult(dict):
     def __init__(__self__, *,
-                 block_storage_size_in_gbs: int,
-                 job_infrastructure_type: str,
-                 job_shape_config_details: Sequence['outputs.GetJobsJobJobInfrastructureConfigurationDetailJobShapeConfigDetailResult'],
-                 shape_name: str,
-                 subnet_id: str):
-        """
-        :param int block_storage_size_in_gbs: The size of the block storage volume to attach to the instance running the job
-        :param str job_infrastructure_type: The infrastructure type used for job run.
-        :param Sequence['GetJobsJobJobInfrastructureConfigurationDetailJobShapeConfigDetailArgs'] job_shape_config_details: Details for the job run shape configuration. Specify only when a flex shape is selected.
-        :param str shape_name: The shape used to launch the job run instances.
-        :param str subnet_id: The subnet to create a secondary vnic in to attach to the instance running the job
-        """
-        pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
-        pulumi.set(__self__, "job_infrastructure_type", job_infrastructure_type)
-        pulumi.set(__self__, "job_shape_config_details", job_shape_config_details)
-        pulumi.set(__self__, "shape_name", shape_name)
-        pulumi.set(__self__, "subnet_id", subnet_id)
+                 block_storage_size_in_gbs: Optional[int] = None,
+                 job_infrastructure_type: Optional[str] = None,
+                 job_shape_config_details: Optional[Sequence['outputs.GetJobsJobJobInfrastructureConfigurationDetailJobShapeConfigDetailResult']] = None,
+                 shape_name: Optional[str] = None,
+                 subnet_id: Optional[str] = None):
+        if block_storage_size_in_gbs is not None:
+            pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
+        if job_infrastructure_type is not None:
+            pulumi.set(__self__, "job_infrastructure_type", job_infrastructure_type)
+        if job_shape_config_details is not None:
+            pulumi.set(__self__, "job_shape_config_details", job_shape_config_details)
+        if shape_name is not None:
+            pulumi.set(__self__, "shape_name", shape_name)
+        if subnet_id is not None:
+            pulumi.set(__self__, "subnet_id", subnet_id)
 
     @property
     @pulumi.getter(name="blockStorageSizeInGbs")
-    def block_storage_size_in_gbs(self) -> int:
-        """
-        The size of the block storage volume to attach to the instance running the job
-        """
+    def block_storage_size_in_gbs(self) -> Optional[int]:
         return pulumi.get(self, "block_storage_size_in_gbs")
 
     @property
     @pulumi.getter(name="jobInfrastructureType")
-    def job_infrastructure_type(self) -> str:
-        """
-        The infrastructure type used for job run.
-        """
+    def job_infrastructure_type(self) -> Optional[str]:
         return pulumi.get(self, "job_infrastructure_type")
 
     @property
     @pulumi.getter(name="jobShapeConfigDetails")
-    def job_shape_config_details(self) -> Sequence['outputs.GetJobsJobJobInfrastructureConfigurationDetailJobShapeConfigDetailResult']:
-        """
-        Details for the job run shape configuration. Specify only when a flex shape is selected.
-        """
+    def job_shape_config_details(self) -> Optional[Sequence['outputs.GetJobsJobJobInfrastructureConfigurationDetailJobShapeConfigDetailResult']]:
         return pulumi.get(self, "job_shape_config_details")
 
     @property
     @pulumi.getter(name="shapeName")
-    def shape_name(self) -> str:
-        """
-        The shape used to launch the job run instances.
-        """
+    def shape_name(self) -> Optional[str]:
         return pulumi.get(self, "shape_name")
 
     @property
     @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> str:
-        """
-        The subnet to create a secondary vnic in to attach to the instance running the job
-        """
+    def subnet_id(self) -> Optional[str]:
         return pulumi.get(self, "subnet_id")
 
 
 @pulumi.output_type
 class GetJobsJobJobInfrastructureConfigurationDetailJobShapeConfigDetailResult(dict):
     def __init__(__self__, *,
-                 memory_in_gbs: float,
-                 ocpus: float):
-        """
-        :param float memory_in_gbs: The total amount of memory available to the job run instance, in gigabytes.
-        :param float ocpus: The total number of OCPUs available to the job run instance.
-        """
-        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
-        pulumi.set(__self__, "ocpus", ocpus)
+                 memory_in_gbs: Optional[float] = None,
+                 ocpus: Optional[float] = None):
+        if memory_in_gbs is not None:
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        if ocpus is not None:
+            pulumi.set(__self__, "ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
-    def memory_in_gbs(self) -> float:
-        """
-        The total amount of memory available to the job run instance, in gigabytes.
-        """
+    def memory_in_gbs(self) -> Optional[float]:
         return pulumi.get(self, "memory_in_gbs")
 
     @property
     @pulumi.getter
-    def ocpus(self) -> float:
-        """
-        The total number of OCPUs available to the job run instance.
-        """
+    def ocpus(self) -> Optional[float]:
         return pulumi.get(self, "ocpus")
 
 
 @pulumi.output_type
 class GetJobsJobJobLogConfigurationDetailResult(dict):
     def __init__(__self__, *,
-                 enable_auto_log_creation: bool,
-                 enable_logging: bool,
-                 log_group_id: str,
-                 log_id: str):
-        """
-        :param bool enable_auto_log_creation: If automatic on-behalf-of log object creation is enabled for job runs.
-        :param bool enable_logging: If customer logging is enabled for job runs.
-        :param str log_group_id: The log group id for where log objects are for job runs.
-        :param str log_id: The log id the job run will push logs too.
-        """
-        pulumi.set(__self__, "enable_auto_log_creation", enable_auto_log_creation)
-        pulumi.set(__self__, "enable_logging", enable_logging)
-        pulumi.set(__self__, "log_group_id", log_group_id)
-        pulumi.set(__self__, "log_id", log_id)
+                 enable_auto_log_creation: Optional[bool] = None,
+                 enable_logging: Optional[bool] = None,
+                 log_group_id: Optional[str] = None,
+                 log_id: Optional[str] = None):
+        if enable_auto_log_creation is not None:
+            pulumi.set(__self__, "enable_auto_log_creation", enable_auto_log_creation)
+        if enable_logging is not None:
+            pulumi.set(__self__, "enable_logging", enable_logging)
+        if log_group_id is not None:
+            pulumi.set(__self__, "log_group_id", log_group_id)
+        if log_id is not None:
+            pulumi.set(__self__, "log_id", log_id)
 
     @property
     @pulumi.getter(name="enableAutoLogCreation")
-    def enable_auto_log_creation(self) -> bool:
-        """
-        If automatic on-behalf-of log object creation is enabled for job runs.
-        """
+    def enable_auto_log_creation(self) -> Optional[bool]:
         return pulumi.get(self, "enable_auto_log_creation")
 
     @property
     @pulumi.getter(name="enableLogging")
-    def enable_logging(self) -> bool:
-        """
-        If customer logging is enabled for job runs.
-        """
+    def enable_logging(self) -> Optional[bool]:
         return pulumi.get(self, "enable_logging")
 
     @property
     @pulumi.getter(name="logGroupId")
-    def log_group_id(self) -> str:
-        """
-        The log group id for where log objects are for job runs.
-        """
+    def log_group_id(self) -> Optional[str]:
         return pulumi.get(self, "log_group_id")
 
     @property
     @pulumi.getter(name="logId")
-    def log_id(self) -> str:
-        """
-        The log id the job run will push logs too.
-        """
+    def log_id(self) -> Optional[str]:
         return pulumi.get(self, "log_id")
 
 
 @pulumi.output_type
 class GetJobsJobJobStorageMountConfigurationDetailsListResult(dict):
     def __init__(__self__, *,
-                 bucket: str,
-                 destination_directory_name: str,
-                 destination_path: str,
-                 export_id: str,
-                 mount_target_id: str,
-                 namespace: str,
-                 prefix: str,
-                 storage_type: str):
-        """
-        :param str bucket: The object storage bucket
-        :param str destination_directory_name: The local directory name to be mounted
-        :param str destination_path: The local path of the mounted directory, excluding directory name.
-        :param str export_id: OCID of the export
-        :param str mount_target_id: OCID of the mount target
-        :param str namespace: The object storage namespace
-        :param str prefix: Prefix in the bucket to mount
-        :param str storage_type: The type of storage.
-        """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "destination_directory_name", destination_directory_name)
-        pulumi.set(__self__, "destination_path", destination_path)
-        pulumi.set(__self__, "export_id", export_id)
-        pulumi.set(__self__, "mount_target_id", mount_target_id)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "prefix", prefix)
-        pulumi.set(__self__, "storage_type", storage_type)
+                 bucket: Optional[str] = None,
+                 destination_directory_name: Optional[str] = None,
+                 destination_path: Optional[str] = None,
+                 export_id: Optional[str] = None,
+                 mount_target_id: Optional[str] = None,
+                 namespace: Optional[str] = None,
+                 prefix: Optional[str] = None,
+                 storage_type: Optional[str] = None):
+        if bucket is not None:
+            pulumi.set(__self__, "bucket", bucket)
+        if destination_directory_name is not None:
+            pulumi.set(__self__, "destination_directory_name", destination_directory_name)
+        if destination_path is not None:
+            pulumi.set(__self__, "destination_path", destination_path)
+        if export_id is not None:
+            pulumi.set(__self__, "export_id", export_id)
+        if mount_target_id is not None:
+            pulumi.set(__self__, "mount_target_id", mount_target_id)
+        if namespace is not None:
+            pulumi.set(__self__, "namespace", namespace)
+        if prefix is not None:
+            pulumi.set(__self__, "prefix", prefix)
+        if storage_type is not None:
+            pulumi.set(__self__, "storage_type", storage_type)
 
     @property
     @pulumi.getter
-    def bucket(self) -> str:
-        """
-        The object storage bucket
-        """
+    def bucket(self) -> Optional[str]:
         return pulumi.get(self, "bucket")
 
     @property
     @pulumi.getter(name="destinationDirectoryName")
-    def destination_directory_name(self) -> str:
-        """
-        The local directory name to be mounted
-        """
+    def destination_directory_name(self) -> Optional[str]:
         return pulumi.get(self, "destination_directory_name")
 
     @property
     @pulumi.getter(name="destinationPath")
-    def destination_path(self) -> str:
-        """
-        The local path of the mounted directory, excluding directory name.
-        """
+    def destination_path(self) -> Optional[str]:
         return pulumi.get(self, "destination_path")
 
     @property
     @pulumi.getter(name="exportId")
-    def export_id(self) -> str:
-        """
-        OCID of the export
-        """
+    def export_id(self) -> Optional[str]:
         return pulumi.get(self, "export_id")
 
     @property
     @pulumi.getter(name="mountTargetId")
-    def mount_target_id(self) -> str:
-        """
-        OCID of the mount target
-        """
+    def mount_target_id(self) -> Optional[str]:
         return pulumi.get(self, "mount_target_id")
 
     @property
     @pulumi.getter
-    def namespace(self) -> str:
-        """
-        The object storage namespace
-        """
+    def namespace(self) -> Optional[str]:
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter
-    def prefix(self) -> str:
-        """
-        Prefix in the bucket to mount
-        """
+    def prefix(self) -> Optional[str]:
         return pulumi.get(self, "prefix")
 
     @property
     @pulumi.getter(name="storageType")
-    def storage_type(self) -> str:
-        """
-        The type of storage.
-        """
+    def storage_type(self) -> Optional[str]:
         return pulumi.get(self, "storage_type")
 
 
 @pulumi.output_type
 class GetModelCustomMetadataListResult(dict):
     def __init__(__self__, *,
-                 category: str,
-                 description: str,
-                 key: str,
-                 value: str):
-        """
-        :param str category: Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,other".
-        :param str description: A short description of the model.
-        :param str key: Key of the model Metadata. The key can either be user defined or Oracle Cloud Infrastructure defined. List of Oracle Cloud Infrastructure defined keys:
-               * useCaseType
-               * libraryName
-               * libraryVersion
-               * estimatorClass
-               * hyperParameters
-               * testartifactresults
-        :param str value: Allowed values for useCaseType: binary_classification, regression, multinomial_classification, clustering, recommender, dimensionality_reduction/representation, time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
-        """
-        pulumi.set(__self__, "category", category)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "value", value)
+                 category: Optional[str] = None,
+                 description: Optional[str] = None,
+                 key: Optional[str] = None,
+                 value: Optional[str] = None):
+        if category is not None:
+            pulumi.set(__self__, "category", category)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter
-    def category(self) -> str:
-        """
-        Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,other".
-        """
+    def category(self) -> Optional[str]:
         return pulumi.get(self, "category")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        A short description of the model.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter
-    def key(self) -> str:
-        """
-        Key of the model Metadata. The key can either be user defined or Oracle Cloud Infrastructure defined. List of Oracle Cloud Infrastructure defined keys:
-        * useCaseType
-        * libraryName
-        * libraryVersion
-        * estimatorClass
-        * hyperParameters
-        * testartifactresults
-        """
+    def key(self) -> Optional[str]:
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter
-    def value(self) -> str:
-        """
-        Allowed values for useCaseType: binary_classification, regression, multinomial_classification, clustering, recommender, dimensionality_reduction/representation, time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
-        """
+    def value(self) -> Optional[str]:
         return pulumi.get(self, "value")
 
 
 @pulumi.output_type
 class GetModelDefinedMetadataListResult(dict):
     def __init__(__self__, *,
-                 category: str,
-                 description: str,
-                 key: str,
-                 value: str):
-        """
-        :param str category: Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,other".
-        :param str description: A short description of the model.
-        :param str key: Key of the model Metadata. The key can either be user defined or Oracle Cloud Infrastructure defined. List of Oracle Cloud Infrastructure defined keys:
-               * useCaseType
-               * libraryName
-               * libraryVersion
-               * estimatorClass
-               * hyperParameters
-               * testartifactresults
-        :param str value: Allowed values for useCaseType: binary_classification, regression, multinomial_classification, clustering, recommender, dimensionality_reduction/representation, time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
-        """
-        pulumi.set(__self__, "category", category)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "value", value)
+                 category: Optional[str] = None,
+                 description: Optional[str] = None,
+                 key: Optional[str] = None,
+                 value: Optional[str] = None):
+        if category is not None:
+            pulumi.set(__self__, "category", category)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter
-    def category(self) -> str:
-        """
-        Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,other".
-        """
+    def category(self) -> Optional[str]:
         return pulumi.get(self, "category")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        A short description of the model.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter
-    def key(self) -> str:
-        """
-        Key of the model Metadata. The key can either be user defined or Oracle Cloud Infrastructure defined. List of Oracle Cloud Infrastructure defined keys:
-        * useCaseType
-        * libraryName
-        * libraryVersion
-        * estimatorClass
-        * hyperParameters
-        * testartifactresults
-        """
+    def key(self) -> Optional[str]:
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter
-    def value(self) -> str:
-        """
-        Allowed values for useCaseType: binary_classification, regression, multinomial_classification, clustering, recommender, dimensionality_reduction/representation, time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
-        """
+    def value(self) -> Optional[str]:
         return pulumi.get(self, "value")
 
 
 @pulumi.output_type
 class GetModelDeploymentCategoryLogDetailResult(dict):
     def __init__(__self__, *,
-                 accesses: Sequence['outputs.GetModelDeploymentCategoryLogDetailAccessResult'],
-                 predicts: Sequence['outputs.GetModelDeploymentCategoryLogDetailPredictResult']):
-        """
-        :param Sequence['GetModelDeploymentCategoryLogDetailAccessArgs'] accesses: The log details.
-        :param Sequence['GetModelDeploymentCategoryLogDetailPredictArgs'] predicts: The log details.
-        """
-        pulumi.set(__self__, "accesses", accesses)
-        pulumi.set(__self__, "predicts", predicts)
+                 accesses: Optional[Sequence['outputs.GetModelDeploymentCategoryLogDetailAccessResult']] = None,
+                 predicts: Optional[Sequence['outputs.GetModelDeploymentCategoryLogDetailPredictResult']] = None):
+        if accesses is not None:
+            pulumi.set(__self__, "accesses", accesses)
+        if predicts is not None:
+            pulumi.set(__self__, "predicts", predicts)
 
     @property
     @pulumi.getter
-    def accesses(self) -> Sequence['outputs.GetModelDeploymentCategoryLogDetailAccessResult']:
-        """
-        The log details.
-        """
+    def accesses(self) -> Optional[Sequence['outputs.GetModelDeploymentCategoryLogDetailAccessResult']]:
         return pulumi.get(self, "accesses")
 
     @property
     @pulumi.getter
-    def predicts(self) -> Sequence['outputs.GetModelDeploymentCategoryLogDetailPredictResult']:
-        """
-        The log details.
-        """
+    def predicts(self) -> Optional[Sequence['outputs.GetModelDeploymentCategoryLogDetailPredictResult']]:
         return pulumi.get(self, "predicts")
 
 
 @pulumi.output_type
 class GetModelDeploymentCategoryLogDetailAccessResult(dict):
     def __init__(__self__, *,
-                 log_group_id: str,
-                 log_id: str):
-        """
-        :param str log_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a log group to work with.
-        :param str log_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a log to work with.
-        """
-        pulumi.set(__self__, "log_group_id", log_group_id)
-        pulumi.set(__self__, "log_id", log_id)
+                 log_group_id: Optional[str] = None,
+                 log_id: Optional[str] = None):
+        if log_group_id is not None:
+            pulumi.set(__self__, "log_group_id", log_group_id)
+        if log_id is not None:
+            pulumi.set(__self__, "log_id", log_id)
 
     @property
     @pulumi.getter(name="logGroupId")
-    def log_group_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a log group to work with.
-        """
+    def log_group_id(self) -> Optional[str]:
         return pulumi.get(self, "log_group_id")
 
     @property
     @pulumi.getter(name="logId")
-    def log_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a log to work with.
-        """
+    def log_id(self) -> Optional[str]:
         return pulumi.get(self, "log_id")
 
 
 @pulumi.output_type
 class GetModelDeploymentCategoryLogDetailPredictResult(dict):
     def __init__(__self__, *,
-                 log_group_id: str,
-                 log_id: str):
-        """
-        :param str log_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a log group to work with.
-        :param str log_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a log to work with.
-        """
-        pulumi.set(__self__, "log_group_id", log_group_id)
-        pulumi.set(__self__, "log_id", log_id)
+                 log_group_id: Optional[str] = None,
+                 log_id: Optional[str] = None):
+        if log_group_id is not None:
+            pulumi.set(__self__, "log_group_id", log_group_id)
+        if log_id is not None:
+            pulumi.set(__self__, "log_id", log_id)
 
     @property
     @pulumi.getter(name="logGroupId")
-    def log_group_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a log group to work with.
-        """
+    def log_group_id(self) -> Optional[str]:
         return pulumi.get(self, "log_group_id")
 
     @property
     @pulumi.getter(name="logId")
-    def log_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a log to work with.
-        """
+    def log_id(self) -> Optional[str]:
         return pulumi.get(self, "log_id")
 
 
 @pulumi.output_type
 class GetModelDeploymentModelDeploymentConfigurationDetailResult(dict):
     def __init__(__self__, *,
-                 deployment_type: str,
-                 environment_configuration_details: Sequence['outputs.GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailResult'],
-                 model_configuration_details: Sequence['outputs.GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailResult']):
-        """
-        :param str deployment_type: The type of the model deployment.
-        :param Sequence['GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArgs'] environment_configuration_details: The configuration to carry the environment details thats used in Model Deployment creation
-        :param Sequence['GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailArgs'] model_configuration_details: The model configuration details.
-        """
-        pulumi.set(__self__, "deployment_type", deployment_type)
-        pulumi.set(__self__, "environment_configuration_details", environment_configuration_details)
-        pulumi.set(__self__, "model_configuration_details", model_configuration_details)
+                 deployment_type: Optional[str] = None,
+                 environment_configuration_details: Optional[Sequence['outputs.GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailResult']] = None,
+                 model_configuration_details: Optional[Sequence['outputs.GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailResult']] = None):
+        if deployment_type is not None:
+            pulumi.set(__self__, "deployment_type", deployment_type)
+        if environment_configuration_details is not None:
+            pulumi.set(__self__, "environment_configuration_details", environment_configuration_details)
+        if model_configuration_details is not None:
+            pulumi.set(__self__, "model_configuration_details", model_configuration_details)
 
     @property
     @pulumi.getter(name="deploymentType")
-    def deployment_type(self) -> str:
-        """
-        The type of the model deployment.
-        """
+    def deployment_type(self) -> Optional[str]:
         return pulumi.get(self, "deployment_type")
 
     @property
     @pulumi.getter(name="environmentConfigurationDetails")
-    def environment_configuration_details(self) -> Sequence['outputs.GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailResult']:
-        """
-        The configuration to carry the environment details thats used in Model Deployment creation
-        """
+    def environment_configuration_details(self) -> Optional[Sequence['outputs.GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailResult']]:
         return pulumi.get(self, "environment_configuration_details")
 
     @property
     @pulumi.getter(name="modelConfigurationDetails")
-    def model_configuration_details(self) -> Sequence['outputs.GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailResult']:
-        """
-        The model configuration details.
-        """
+    def model_configuration_details(self) -> Optional[Sequence['outputs.GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailResult']]:
         return pulumi.get(self, "model_configuration_details")
 
 
 @pulumi.output_type
 class GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailResult(dict):
     def __init__(__self__, *,
-                 cmds: Sequence[str],
-                 entrypoints: Sequence[str],
-                 environment_configuration_type: str,
-                 environment_variables: Mapping[str, Any],
-                 health_check_port: int,
-                 image: str,
-                 image_digest: str,
-                 server_port: int):
-        """
-        :param Sequence[str] cmds: The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
-        :param Sequence[str] entrypoints: The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
-        :param str environment_configuration_type: The environment configuration type
-        :param Mapping[str, Any] environment_variables: Environment variables to set for the web server container. The size of envVars must be less than 2048 bytes. Key should be under 32 characters. Key should contain only letters, digits and underscore (_) Key should start with a letter. Key should have at least 2 characters. Key should not end with underscore eg. `TEST_` Key if added cannot be empty. Value can be empty. No specific size limits on individual Values. But overall environment variables is limited to 2048 bytes. Key can't be reserved Model Deployment environment variables.
-        :param int health_check_port: The port on which the container [HEALTHCHECK](https://docs.docker.com/engine/reference/builder/#healthcheck) would listen. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
-        :param str image: The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
-        :param str image_digest: The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
-        :param int server_port: The port on which the web server serving the inference is running. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
-        """
-        pulumi.set(__self__, "cmds", cmds)
-        pulumi.set(__self__, "entrypoints", entrypoints)
-        pulumi.set(__self__, "environment_configuration_type", environment_configuration_type)
-        pulumi.set(__self__, "environment_variables", environment_variables)
-        pulumi.set(__self__, "health_check_port", health_check_port)
-        pulumi.set(__self__, "image", image)
-        pulumi.set(__self__, "image_digest", image_digest)
-        pulumi.set(__self__, "server_port", server_port)
+                 cmds: Optional[Sequence[str]] = None,
+                 entrypoints: Optional[Sequence[str]] = None,
+                 environment_configuration_type: Optional[str] = None,
+                 environment_variables: Optional[Mapping[str, Any]] = None,
+                 health_check_port: Optional[int] = None,
+                 image: Optional[str] = None,
+                 image_digest: Optional[str] = None,
+                 server_port: Optional[int] = None):
+        if cmds is not None:
+            pulumi.set(__self__, "cmds", cmds)
+        if entrypoints is not None:
+            pulumi.set(__self__, "entrypoints", entrypoints)
+        if environment_configuration_type is not None:
+            pulumi.set(__self__, "environment_configuration_type", environment_configuration_type)
+        if environment_variables is not None:
+            pulumi.set(__self__, "environment_variables", environment_variables)
+        if health_check_port is not None:
+            pulumi.set(__self__, "health_check_port", health_check_port)
+        if image is not None:
+            pulumi.set(__self__, "image", image)
+        if image_digest is not None:
+            pulumi.set(__self__, "image_digest", image_digest)
+        if server_port is not None:
+            pulumi.set(__self__, "server_port", server_port)
 
     @property
     @pulumi.getter
-    def cmds(self) -> Sequence[str]:
-        """
-        The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
-        """
+    def cmds(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "cmds")
 
     @property
     @pulumi.getter
-    def entrypoints(self) -> Sequence[str]:
-        """
-        The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
-        """
+    def entrypoints(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "entrypoints")
 
     @property
     @pulumi.getter(name="environmentConfigurationType")
-    def environment_configuration_type(self) -> str:
-        """
-        The environment configuration type
-        """
+    def environment_configuration_type(self) -> Optional[str]:
         return pulumi.get(self, "environment_configuration_type")
 
     @property
     @pulumi.getter(name="environmentVariables")
-    def environment_variables(self) -> Mapping[str, Any]:
-        """
-        Environment variables to set for the web server container. The size of envVars must be less than 2048 bytes. Key should be under 32 characters. Key should contain only letters, digits and underscore (_) Key should start with a letter. Key should have at least 2 characters. Key should not end with underscore eg. `TEST_` Key if added cannot be empty. Value can be empty. No specific size limits on individual Values. But overall environment variables is limited to 2048 bytes. Key can't be reserved Model Deployment environment variables.
-        """
+    def environment_variables(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "environment_variables")
 
     @property
     @pulumi.getter(name="healthCheckPort")
-    def health_check_port(self) -> int:
-        """
-        The port on which the container [HEALTHCHECK](https://docs.docker.com/engine/reference/builder/#healthcheck) would listen. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
-        """
+    def health_check_port(self) -> Optional[int]:
         return pulumi.get(self, "health_check_port")
 
     @property
     @pulumi.getter
-    def image(self) -> str:
-        """
-        The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
-        """
+    def image(self) -> Optional[str]:
         return pulumi.get(self, "image")
 
     @property
     @pulumi.getter(name="imageDigest")
-    def image_digest(self) -> str:
-        """
-        The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
-        """
+    def image_digest(self) -> Optional[str]:
         return pulumi.get(self, "image_digest")
 
     @property
     @pulumi.getter(name="serverPort")
-    def server_port(self) -> int:
-        """
-        The port on which the web server serving the inference is running. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
-        """
+    def server_port(self) -> Optional[int]:
         return pulumi.get(self, "server_port")
 
 
 @pulumi.output_type
 class GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailResult(dict):
     def __init__(__self__, *,
-                 bandwidth_mbps: int,
-                 instance_configurations: Sequence['outputs.GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationResult'],
-                 model_id: str,
-                 scaling_policies: Sequence['outputs.GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyResult']):
-        """
-        :param int bandwidth_mbps: The minimum network bandwidth for the model deployment.
-        :param Sequence['GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationArgs'] instance_configurations: The model deployment instance configuration
-        :param str model_id: The OCID of the model you want to deploy.
-        :param Sequence['GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyArgs'] scaling_policies: The scaling policy to apply to each model of the deployment.
-        """
-        pulumi.set(__self__, "bandwidth_mbps", bandwidth_mbps)
-        pulumi.set(__self__, "instance_configurations", instance_configurations)
-        pulumi.set(__self__, "model_id", model_id)
-        pulumi.set(__self__, "scaling_policies", scaling_policies)
+                 bandwidth_mbps: Optional[int] = None,
+                 instance_configurations: Optional[Sequence['outputs.GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationResult']] = None,
+                 model_id: Optional[str] = None,
+                 scaling_policies: Optional[Sequence['outputs.GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyResult']] = None):
+        if bandwidth_mbps is not None:
+            pulumi.set(__self__, "bandwidth_mbps", bandwidth_mbps)
+        if instance_configurations is not None:
+            pulumi.set(__self__, "instance_configurations", instance_configurations)
+        if model_id is not None:
+            pulumi.set(__self__, "model_id", model_id)
+        if scaling_policies is not None:
+            pulumi.set(__self__, "scaling_policies", scaling_policies)
 
     @property
     @pulumi.getter(name="bandwidthMbps")
-    def bandwidth_mbps(self) -> int:
-        """
-        The minimum network bandwidth for the model deployment.
-        """
+    def bandwidth_mbps(self) -> Optional[int]:
         return pulumi.get(self, "bandwidth_mbps")
 
     @property
     @pulumi.getter(name="instanceConfigurations")
-    def instance_configurations(self) -> Sequence['outputs.GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationResult']:
-        """
-        The model deployment instance configuration
-        """
+    def instance_configurations(self) -> Optional[Sequence['outputs.GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationResult']]:
         return pulumi.get(self, "instance_configurations")
 
     @property
     @pulumi.getter(name="modelId")
-    def model_id(self) -> str:
-        """
-        The OCID of the model you want to deploy.
-        """
+    def model_id(self) -> Optional[str]:
         return pulumi.get(self, "model_id")
 
     @property
     @pulumi.getter(name="scalingPolicies")
-    def scaling_policies(self) -> Sequence['outputs.GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyResult']:
-        """
-        The scaling policy to apply to each model of the deployment.
-        """
+    def scaling_policies(self) -> Optional[Sequence['outputs.GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyResult']]:
         return pulumi.get(self, "scaling_policies")
 
 
 @pulumi.output_type
 class GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationResult(dict):
     def __init__(__self__, *,
-                 instance_shape_name: str,
-                 model_deployment_instance_shape_config_details: Sequence['outputs.GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailResult']):
-        """
-        :param str instance_shape_name: The shape used to launch the model deployment instances.
-        :param Sequence['GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailArgs'] model_deployment_instance_shape_config_details: Details for the model-deployment instance shape configuration.
-        """
-        pulumi.set(__self__, "instance_shape_name", instance_shape_name)
-        pulumi.set(__self__, "model_deployment_instance_shape_config_details", model_deployment_instance_shape_config_details)
+                 instance_shape_name: Optional[str] = None,
+                 model_deployment_instance_shape_config_details: Optional[Sequence['outputs.GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailResult']] = None):
+        if instance_shape_name is not None:
+            pulumi.set(__self__, "instance_shape_name", instance_shape_name)
+        if model_deployment_instance_shape_config_details is not None:
+            pulumi.set(__self__, "model_deployment_instance_shape_config_details", model_deployment_instance_shape_config_details)
 
     @property
     @pulumi.getter(name="instanceShapeName")
-    def instance_shape_name(self) -> str:
-        """
-        The shape used to launch the model deployment instances.
-        """
+    def instance_shape_name(self) -> Optional[str]:
         return pulumi.get(self, "instance_shape_name")
 
     @property
     @pulumi.getter(name="modelDeploymentInstanceShapeConfigDetails")
-    def model_deployment_instance_shape_config_details(self) -> Sequence['outputs.GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailResult']:
-        """
-        Details for the model-deployment instance shape configuration.
-        """
+    def model_deployment_instance_shape_config_details(self) -> Optional[Sequence['outputs.GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailResult']]:
         return pulumi.get(self, "model_deployment_instance_shape_config_details")
 
 
 @pulumi.output_type
 class GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailResult(dict):
     def __init__(__self__, *,
-                 memory_in_gbs: float,
-                 ocpus: float):
-        """
-        :param float memory_in_gbs: A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 and 512 GB and VM.Optimized3.Flex memory range is between 6 and 256 GB.
-        :param float ocpus: A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 and 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
-        """
-        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
-        pulumi.set(__self__, "ocpus", ocpus)
+                 memory_in_gbs: Optional[float] = None,
+                 ocpus: Optional[float] = None):
+        if memory_in_gbs is not None:
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        if ocpus is not None:
+            pulumi.set(__self__, "ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
-    def memory_in_gbs(self) -> float:
-        """
-        A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 and 512 GB and VM.Optimized3.Flex memory range is between 6 and 256 GB.
-        """
+    def memory_in_gbs(self) -> Optional[float]:
         return pulumi.get(self, "memory_in_gbs")
 
     @property
     @pulumi.getter
-    def ocpus(self) -> float:
-        """
-        A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 and 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
-        """
+    def ocpus(self) -> Optional[float]:
         return pulumi.get(self, "ocpus")
 
 
 @pulumi.output_type
 class GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyResult(dict):
     def __init__(__self__, *,
-                 instance_count: int,
-                 policy_type: str):
-        """
-        :param int instance_count: The number of instances for the model deployment.
-        :param str policy_type: The type of scaling policy.
-        """
-        pulumi.set(__self__, "instance_count", instance_count)
-        pulumi.set(__self__, "policy_type", policy_type)
+                 instance_count: Optional[int] = None,
+                 policy_type: Optional[str] = None):
+        if instance_count is not None:
+            pulumi.set(__self__, "instance_count", instance_count)
+        if policy_type is not None:
+            pulumi.set(__self__, "policy_type", policy_type)
 
     @property
     @pulumi.getter(name="instanceCount")
-    def instance_count(self) -> int:
-        """
-        The number of instances for the model deployment.
-        """
+    def instance_count(self) -> Optional[int]:
         return pulumi.get(self, "instance_count")
 
     @property
     @pulumi.getter(name="policyType")
-    def policy_type(self) -> str:
-        """
-        The type of scaling policy.
-        """
+    def policy_type(self) -> Optional[str]:
         return pulumi.get(self, "policy_type")
 
 
@@ -5798,9 +4382,6 @@ class GetModelDeploymentShapesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The name of the model deployment shape.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -5809,9 +4390,6 @@ class GetModelDeploymentShapesFilterResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The name of the model deployment shape.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -5828,51 +4406,37 @@ class GetModelDeploymentShapesFilterResult(dict):
 @pulumi.output_type
 class GetModelDeploymentShapesModelDeploymentShapeResult(dict):
     def __init__(__self__, *,
-                 core_count: int,
-                 memory_in_gbs: int,
-                 name: str,
-                 shape_series: str):
-        """
-        :param int core_count: The number of cores associated with this model deployment shape.
-        :param int memory_in_gbs: The amount of memory in GBs associated with this model deployment shape.
-        :param str name: The name of the model deployment shape.
-        :param str shape_series: The family that the compute shape belongs to.
-        """
-        pulumi.set(__self__, "core_count", core_count)
-        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "shape_series", shape_series)
+                 core_count: Optional[int] = None,
+                 memory_in_gbs: Optional[int] = None,
+                 name: Optional[str] = None,
+                 shape_series: Optional[str] = None):
+        if core_count is not None:
+            pulumi.set(__self__, "core_count", core_count)
+        if memory_in_gbs is not None:
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if shape_series is not None:
+            pulumi.set(__self__, "shape_series", shape_series)
 
     @property
     @pulumi.getter(name="coreCount")
-    def core_count(self) -> int:
-        """
-        The number of cores associated with this model deployment shape.
-        """
+    def core_count(self) -> Optional[int]:
         return pulumi.get(self, "core_count")
 
     @property
     @pulumi.getter(name="memoryInGbs")
-    def memory_in_gbs(self) -> int:
-        """
-        The amount of memory in GBs associated with this model deployment shape.
-        """
+    def memory_in_gbs(self) -> Optional[int]:
         return pulumi.get(self, "memory_in_gbs")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The name of the model deployment shape.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="shapeSeries")
-    def shape_series(self) -> str:
-        """
-        The family that the compute shape belongs to.
-        """
+    def shape_series(self) -> Optional[str]:
         return pulumi.get(self, "shape_series")
 
 
@@ -5906,521 +4470,378 @@ class GetModelDeploymentsFilterResult(dict):
 @pulumi.output_type
 class GetModelDeploymentsModelDeploymentResult(dict):
     def __init__(__self__, *,
-                 category_log_details: Sequence['outputs.GetModelDeploymentsModelDeploymentCategoryLogDetailResult'],
-                 compartment_id: str,
-                 created_by: str,
-                 defined_tags: Mapping[str, Any],
-                 description: str,
-                 display_name: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 lifecycle_details: str,
-                 model_deployment_configuration_details: Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailResult'],
-                 model_deployment_url: str,
-                 project_id: str,
-                 state: str,
-                 time_created: str):
-        """
-        :param Sequence['GetModelDeploymentsModelDeploymentCategoryLogDetailArgs'] category_log_details: The log details for each category.
-        :param str compartment_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param str created_by: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param str description: A short description of the model deployment.
-        :param str display_name: <b>Filter</b> results by its user-friendly name.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param str id: <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
-        :param str lifecycle_details: Details about the state of the model deployment.
-        :param Sequence['GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailArgs'] model_deployment_configuration_details: The model deployment configuration details.
-        :param str model_deployment_url: The URL to interact with the model deployment.
-        :param str project_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
-        :param str state: <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
-        :param str time_created: The date and time the resource was created, in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
-        """
-        pulumi.set(__self__, "category_log_details", category_log_details)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "created_by", created_by)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "model_deployment_configuration_details", model_deployment_configuration_details)
-        pulumi.set(__self__, "model_deployment_url", model_deployment_url)
-        pulumi.set(__self__, "project_id", project_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
+                 category_log_details: Optional[Sequence['outputs.GetModelDeploymentsModelDeploymentCategoryLogDetailResult']] = None,
+                 compartment_id: Optional[str] = None,
+                 created_by: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 description: Optional[str] = None,
+                 display_name: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 lifecycle_details: Optional[str] = None,
+                 model_deployment_configuration_details: Optional[Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailResult']] = None,
+                 model_deployment_url: Optional[str] = None,
+                 project_id: Optional[str] = None,
+                 state: Optional[str] = None,
+                 time_created: Optional[str] = None):
+        if category_log_details is not None:
+            pulumi.set(__self__, "category_log_details", category_log_details)
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if created_by is not None:
+            pulumi.set(__self__, "created_by", created_by)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if model_deployment_configuration_details is not None:
+            pulumi.set(__self__, "model_deployment_configuration_details", model_deployment_configuration_details)
+        if model_deployment_url is not None:
+            pulumi.set(__self__, "model_deployment_url", model_deployment_url)
+        if project_id is not None:
+            pulumi.set(__self__, "project_id", project_id)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
 
     @property
     @pulumi.getter(name="categoryLogDetails")
-    def category_log_details(self) -> Sequence['outputs.GetModelDeploymentsModelDeploymentCategoryLogDetailResult']:
-        """
-        The log details for each category.
-        """
+    def category_log_details(self) -> Optional[Sequence['outputs.GetModelDeploymentsModelDeploymentCategoryLogDetailResult']]:
         return pulumi.get(self, "category_log_details")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="createdBy")
-    def created_by(self) -> str:
-        """
-        <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
-        """
+    def created_by(self) -> Optional[str]:
         return pulumi.get(self, "created_by")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        A short description of the model deployment.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        <b>Filter</b> results by its user-friendly name.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        Details about the state of the model deployment.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="modelDeploymentConfigurationDetails")
-    def model_deployment_configuration_details(self) -> Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailResult']:
-        """
-        The model deployment configuration details.
-        """
+    def model_deployment_configuration_details(self) -> Optional[Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailResult']]:
         return pulumi.get(self, "model_deployment_configuration_details")
 
     @property
     @pulumi.getter(name="modelDeploymentUrl")
-    def model_deployment_url(self) -> str:
-        """
-        The URL to interact with the model deployment.
-        """
+    def model_deployment_url(self) -> Optional[str]:
         return pulumi.get(self, "model_deployment_url")
 
     @property
     @pulumi.getter(name="projectId")
-    def project_id(self) -> str:
-        """
-        <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
-        """
+    def project_id(self) -> Optional[str]:
         return pulumi.get(self, "project_id")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the resource was created, in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
 
 @pulumi.output_type
 class GetModelDeploymentsModelDeploymentCategoryLogDetailResult(dict):
     def __init__(__self__, *,
-                 accesses: Sequence['outputs.GetModelDeploymentsModelDeploymentCategoryLogDetailAccessResult'],
-                 predicts: Sequence['outputs.GetModelDeploymentsModelDeploymentCategoryLogDetailPredictResult']):
-        """
-        :param Sequence['GetModelDeploymentsModelDeploymentCategoryLogDetailAccessArgs'] accesses: The log details.
-        :param Sequence['GetModelDeploymentsModelDeploymentCategoryLogDetailPredictArgs'] predicts: The log details.
-        """
-        pulumi.set(__self__, "accesses", accesses)
-        pulumi.set(__self__, "predicts", predicts)
+                 accesses: Optional[Sequence['outputs.GetModelDeploymentsModelDeploymentCategoryLogDetailAccessResult']] = None,
+                 predicts: Optional[Sequence['outputs.GetModelDeploymentsModelDeploymentCategoryLogDetailPredictResult']] = None):
+        if accesses is not None:
+            pulumi.set(__self__, "accesses", accesses)
+        if predicts is not None:
+            pulumi.set(__self__, "predicts", predicts)
 
     @property
     @pulumi.getter
-    def accesses(self) -> Sequence['outputs.GetModelDeploymentsModelDeploymentCategoryLogDetailAccessResult']:
-        """
-        The log details.
-        """
+    def accesses(self) -> Optional[Sequence['outputs.GetModelDeploymentsModelDeploymentCategoryLogDetailAccessResult']]:
         return pulumi.get(self, "accesses")
 
     @property
     @pulumi.getter
-    def predicts(self) -> Sequence['outputs.GetModelDeploymentsModelDeploymentCategoryLogDetailPredictResult']:
-        """
-        The log details.
-        """
+    def predicts(self) -> Optional[Sequence['outputs.GetModelDeploymentsModelDeploymentCategoryLogDetailPredictResult']]:
         return pulumi.get(self, "predicts")
 
 
 @pulumi.output_type
 class GetModelDeploymentsModelDeploymentCategoryLogDetailAccessResult(dict):
     def __init__(__self__, *,
-                 log_group_id: str,
-                 log_id: str):
-        """
-        :param str log_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a log group to work with.
-        :param str log_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a log to work with.
-        """
-        pulumi.set(__self__, "log_group_id", log_group_id)
-        pulumi.set(__self__, "log_id", log_id)
+                 log_group_id: Optional[str] = None,
+                 log_id: Optional[str] = None):
+        if log_group_id is not None:
+            pulumi.set(__self__, "log_group_id", log_group_id)
+        if log_id is not None:
+            pulumi.set(__self__, "log_id", log_id)
 
     @property
     @pulumi.getter(name="logGroupId")
-    def log_group_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a log group to work with.
-        """
+    def log_group_id(self) -> Optional[str]:
         return pulumi.get(self, "log_group_id")
 
     @property
     @pulumi.getter(name="logId")
-    def log_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a log to work with.
-        """
+    def log_id(self) -> Optional[str]:
         return pulumi.get(self, "log_id")
 
 
 @pulumi.output_type
 class GetModelDeploymentsModelDeploymentCategoryLogDetailPredictResult(dict):
     def __init__(__self__, *,
-                 log_group_id: str,
-                 log_id: str):
-        """
-        :param str log_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a log group to work with.
-        :param str log_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a log to work with.
-        """
-        pulumi.set(__self__, "log_group_id", log_group_id)
-        pulumi.set(__self__, "log_id", log_id)
+                 log_group_id: Optional[str] = None,
+                 log_id: Optional[str] = None):
+        if log_group_id is not None:
+            pulumi.set(__self__, "log_group_id", log_group_id)
+        if log_id is not None:
+            pulumi.set(__self__, "log_id", log_id)
 
     @property
     @pulumi.getter(name="logGroupId")
-    def log_group_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a log group to work with.
-        """
+    def log_group_id(self) -> Optional[str]:
         return pulumi.get(self, "log_group_id")
 
     @property
     @pulumi.getter(name="logId")
-    def log_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a log to work with.
-        """
+    def log_id(self) -> Optional[str]:
         return pulumi.get(self, "log_id")
 
 
 @pulumi.output_type
 class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailResult(dict):
     def __init__(__self__, *,
-                 deployment_type: str,
-                 environment_configuration_details: Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailResult'],
-                 model_configuration_details: Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailResult']):
-        """
-        :param str deployment_type: The type of the model deployment.
-        :param Sequence['GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArgs'] environment_configuration_details: The configuration to carry the environment details thats used in Model Deployment creation
-        :param Sequence['GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailArgs'] model_configuration_details: The model configuration details.
-        """
-        pulumi.set(__self__, "deployment_type", deployment_type)
-        pulumi.set(__self__, "environment_configuration_details", environment_configuration_details)
-        pulumi.set(__self__, "model_configuration_details", model_configuration_details)
+                 deployment_type: Optional[str] = None,
+                 environment_configuration_details: Optional[Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailResult']] = None,
+                 model_configuration_details: Optional[Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailResult']] = None):
+        if deployment_type is not None:
+            pulumi.set(__self__, "deployment_type", deployment_type)
+        if environment_configuration_details is not None:
+            pulumi.set(__self__, "environment_configuration_details", environment_configuration_details)
+        if model_configuration_details is not None:
+            pulumi.set(__self__, "model_configuration_details", model_configuration_details)
 
     @property
     @pulumi.getter(name="deploymentType")
-    def deployment_type(self) -> str:
-        """
-        The type of the model deployment.
-        """
+    def deployment_type(self) -> Optional[str]:
         return pulumi.get(self, "deployment_type")
 
     @property
     @pulumi.getter(name="environmentConfigurationDetails")
-    def environment_configuration_details(self) -> Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailResult']:
-        """
-        The configuration to carry the environment details thats used in Model Deployment creation
-        """
+    def environment_configuration_details(self) -> Optional[Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailResult']]:
         return pulumi.get(self, "environment_configuration_details")
 
     @property
     @pulumi.getter(name="modelConfigurationDetails")
-    def model_configuration_details(self) -> Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailResult']:
-        """
-        The model configuration details.
-        """
+    def model_configuration_details(self) -> Optional[Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailResult']]:
         return pulumi.get(self, "model_configuration_details")
 
 
 @pulumi.output_type
 class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailResult(dict):
     def __init__(__self__, *,
-                 cmds: Sequence[str],
-                 entrypoints: Sequence[str],
-                 environment_configuration_type: str,
-                 environment_variables: Mapping[str, Any],
-                 health_check_port: int,
-                 image: str,
-                 image_digest: str,
-                 server_port: int):
-        """
-        :param Sequence[str] cmds: The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
-        :param Sequence[str] entrypoints: The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
-        :param str environment_configuration_type: The environment configuration type
-        :param Mapping[str, Any] environment_variables: Environment variables to set for the web server container. The size of envVars must be less than 2048 bytes. Key should be under 32 characters. Key should contain only letters, digits and underscore (_) Key should start with a letter. Key should have at least 2 characters. Key should not end with underscore eg. `TEST_` Key if added cannot be empty. Value can be empty. No specific size limits on individual Values. But overall environment variables is limited to 2048 bytes. Key can't be reserved Model Deployment environment variables.
-        :param int health_check_port: The port on which the container [HEALTHCHECK](https://docs.docker.com/engine/reference/builder/#healthcheck) would listen. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
-        :param str image: The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
-        :param str image_digest: The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
-        :param int server_port: The port on which the web server serving the inference is running. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
-        """
-        pulumi.set(__self__, "cmds", cmds)
-        pulumi.set(__self__, "entrypoints", entrypoints)
-        pulumi.set(__self__, "environment_configuration_type", environment_configuration_type)
-        pulumi.set(__self__, "environment_variables", environment_variables)
-        pulumi.set(__self__, "health_check_port", health_check_port)
-        pulumi.set(__self__, "image", image)
-        pulumi.set(__self__, "image_digest", image_digest)
-        pulumi.set(__self__, "server_port", server_port)
+                 cmds: Optional[Sequence[str]] = None,
+                 entrypoints: Optional[Sequence[str]] = None,
+                 environment_configuration_type: Optional[str] = None,
+                 environment_variables: Optional[Mapping[str, Any]] = None,
+                 health_check_port: Optional[int] = None,
+                 image: Optional[str] = None,
+                 image_digest: Optional[str] = None,
+                 server_port: Optional[int] = None):
+        if cmds is not None:
+            pulumi.set(__self__, "cmds", cmds)
+        if entrypoints is not None:
+            pulumi.set(__self__, "entrypoints", entrypoints)
+        if environment_configuration_type is not None:
+            pulumi.set(__self__, "environment_configuration_type", environment_configuration_type)
+        if environment_variables is not None:
+            pulumi.set(__self__, "environment_variables", environment_variables)
+        if health_check_port is not None:
+            pulumi.set(__self__, "health_check_port", health_check_port)
+        if image is not None:
+            pulumi.set(__self__, "image", image)
+        if image_digest is not None:
+            pulumi.set(__self__, "image_digest", image_digest)
+        if server_port is not None:
+            pulumi.set(__self__, "server_port", server_port)
 
     @property
     @pulumi.getter
-    def cmds(self) -> Sequence[str]:
-        """
-        The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
-        """
+    def cmds(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "cmds")
 
     @property
     @pulumi.getter
-    def entrypoints(self) -> Sequence[str]:
-        """
-        The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
-        """
+    def entrypoints(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "entrypoints")
 
     @property
     @pulumi.getter(name="environmentConfigurationType")
-    def environment_configuration_type(self) -> str:
-        """
-        The environment configuration type
-        """
+    def environment_configuration_type(self) -> Optional[str]:
         return pulumi.get(self, "environment_configuration_type")
 
     @property
     @pulumi.getter(name="environmentVariables")
-    def environment_variables(self) -> Mapping[str, Any]:
-        """
-        Environment variables to set for the web server container. The size of envVars must be less than 2048 bytes. Key should be under 32 characters. Key should contain only letters, digits and underscore (_) Key should start with a letter. Key should have at least 2 characters. Key should not end with underscore eg. `TEST_` Key if added cannot be empty. Value can be empty. No specific size limits on individual Values. But overall environment variables is limited to 2048 bytes. Key can't be reserved Model Deployment environment variables.
-        """
+    def environment_variables(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "environment_variables")
 
     @property
     @pulumi.getter(name="healthCheckPort")
-    def health_check_port(self) -> int:
-        """
-        The port on which the container [HEALTHCHECK](https://docs.docker.com/engine/reference/builder/#healthcheck) would listen. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
-        """
+    def health_check_port(self) -> Optional[int]:
         return pulumi.get(self, "health_check_port")
 
     @property
     @pulumi.getter
-    def image(self) -> str:
-        """
-        The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
-        """
+    def image(self) -> Optional[str]:
         return pulumi.get(self, "image")
 
     @property
     @pulumi.getter(name="imageDigest")
-    def image_digest(self) -> str:
-        """
-        The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
-        """
+    def image_digest(self) -> Optional[str]:
         return pulumi.get(self, "image_digest")
 
     @property
     @pulumi.getter(name="serverPort")
-    def server_port(self) -> int:
-        """
-        The port on which the web server serving the inference is running. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
-        """
+    def server_port(self) -> Optional[int]:
         return pulumi.get(self, "server_port")
 
 
 @pulumi.output_type
 class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailResult(dict):
     def __init__(__self__, *,
-                 bandwidth_mbps: int,
-                 instance_configurations: Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationResult'],
-                 model_id: str,
-                 scaling_policies: Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyResult']):
-        """
-        :param int bandwidth_mbps: The minimum network bandwidth for the model deployment.
-        :param Sequence['GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationArgs'] instance_configurations: The model deployment instance configuration
-        :param str model_id: The OCID of the model you want to deploy.
-        :param Sequence['GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyArgs'] scaling_policies: The scaling policy to apply to each model of the deployment.
-        """
-        pulumi.set(__self__, "bandwidth_mbps", bandwidth_mbps)
-        pulumi.set(__self__, "instance_configurations", instance_configurations)
-        pulumi.set(__self__, "model_id", model_id)
-        pulumi.set(__self__, "scaling_policies", scaling_policies)
+                 bandwidth_mbps: Optional[int] = None,
+                 instance_configurations: Optional[Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationResult']] = None,
+                 model_id: Optional[str] = None,
+                 scaling_policies: Optional[Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyResult']] = None):
+        if bandwidth_mbps is not None:
+            pulumi.set(__self__, "bandwidth_mbps", bandwidth_mbps)
+        if instance_configurations is not None:
+            pulumi.set(__self__, "instance_configurations", instance_configurations)
+        if model_id is not None:
+            pulumi.set(__self__, "model_id", model_id)
+        if scaling_policies is not None:
+            pulumi.set(__self__, "scaling_policies", scaling_policies)
 
     @property
     @pulumi.getter(name="bandwidthMbps")
-    def bandwidth_mbps(self) -> int:
-        """
-        The minimum network bandwidth for the model deployment.
-        """
+    def bandwidth_mbps(self) -> Optional[int]:
         return pulumi.get(self, "bandwidth_mbps")
 
     @property
     @pulumi.getter(name="instanceConfigurations")
-    def instance_configurations(self) -> Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationResult']:
-        """
-        The model deployment instance configuration
-        """
+    def instance_configurations(self) -> Optional[Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationResult']]:
         return pulumi.get(self, "instance_configurations")
 
     @property
     @pulumi.getter(name="modelId")
-    def model_id(self) -> str:
-        """
-        The OCID of the model you want to deploy.
-        """
+    def model_id(self) -> Optional[str]:
         return pulumi.get(self, "model_id")
 
     @property
     @pulumi.getter(name="scalingPolicies")
-    def scaling_policies(self) -> Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyResult']:
-        """
-        The scaling policy to apply to each model of the deployment.
-        """
+    def scaling_policies(self) -> Optional[Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyResult']]:
         return pulumi.get(self, "scaling_policies")
 
 
 @pulumi.output_type
 class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationResult(dict):
     def __init__(__self__, *,
-                 instance_shape_name: str,
-                 model_deployment_instance_shape_config_details: Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailResult']):
-        """
-        :param str instance_shape_name: The shape used to launch the model deployment instances.
-        :param Sequence['GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailArgs'] model_deployment_instance_shape_config_details: Details for the model-deployment instance shape configuration.
-        """
-        pulumi.set(__self__, "instance_shape_name", instance_shape_name)
-        pulumi.set(__self__, "model_deployment_instance_shape_config_details", model_deployment_instance_shape_config_details)
+                 instance_shape_name: Optional[str] = None,
+                 model_deployment_instance_shape_config_details: Optional[Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailResult']] = None):
+        if instance_shape_name is not None:
+            pulumi.set(__self__, "instance_shape_name", instance_shape_name)
+        if model_deployment_instance_shape_config_details is not None:
+            pulumi.set(__self__, "model_deployment_instance_shape_config_details", model_deployment_instance_shape_config_details)
 
     @property
     @pulumi.getter(name="instanceShapeName")
-    def instance_shape_name(self) -> str:
-        """
-        The shape used to launch the model deployment instances.
-        """
+    def instance_shape_name(self) -> Optional[str]:
         return pulumi.get(self, "instance_shape_name")
 
     @property
     @pulumi.getter(name="modelDeploymentInstanceShapeConfigDetails")
-    def model_deployment_instance_shape_config_details(self) -> Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailResult']:
-        """
-        Details for the model-deployment instance shape configuration.
-        """
+    def model_deployment_instance_shape_config_details(self) -> Optional[Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailResult']]:
         return pulumi.get(self, "model_deployment_instance_shape_config_details")
 
 
 @pulumi.output_type
 class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailResult(dict):
     def __init__(__self__, *,
-                 memory_in_gbs: float,
-                 ocpus: float):
-        """
-        :param float memory_in_gbs: A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 and 512 GB and VM.Optimized3.Flex memory range is between 6 and 256 GB.
-        :param float ocpus: A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 and 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
-        """
-        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
-        pulumi.set(__self__, "ocpus", ocpus)
+                 memory_in_gbs: Optional[float] = None,
+                 ocpus: Optional[float] = None):
+        if memory_in_gbs is not None:
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        if ocpus is not None:
+            pulumi.set(__self__, "ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
-    def memory_in_gbs(self) -> float:
-        """
-        A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 and 512 GB and VM.Optimized3.Flex memory range is between 6 and 256 GB.
-        """
+    def memory_in_gbs(self) -> Optional[float]:
         return pulumi.get(self, "memory_in_gbs")
 
     @property
     @pulumi.getter
-    def ocpus(self) -> float:
-        """
-        A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 and 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
-        """
+    def ocpus(self) -> Optional[float]:
         return pulumi.get(self, "ocpus")
 
 
 @pulumi.output_type
 class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyResult(dict):
     def __init__(__self__, *,
-                 instance_count: int,
-                 policy_type: str):
-        """
-        :param int instance_count: The number of instances for the model deployment.
-        :param str policy_type: The type of scaling policy.
-        """
-        pulumi.set(__self__, "instance_count", instance_count)
-        pulumi.set(__self__, "policy_type", policy_type)
+                 instance_count: Optional[int] = None,
+                 policy_type: Optional[str] = None):
+        if instance_count is not None:
+            pulumi.set(__self__, "instance_count", instance_count)
+        if policy_type is not None:
+            pulumi.set(__self__, "policy_type", policy_type)
 
     @property
     @pulumi.getter(name="instanceCount")
-    def instance_count(self) -> int:
-        """
-        The number of instances for the model deployment.
-        """
+    def instance_count(self) -> Optional[int]:
         return pulumi.get(self, "instance_count")
 
     @property
     @pulumi.getter(name="policyType")
-    def policy_type(self) -> str:
-        """
-        The type of scaling policy.
-        """
+    def policy_type(self) -> Optional[str]:
         return pulumi.get(self, "policy_type")
 
 
@@ -6430,9 +4851,6 @@ class GetModelVersionSetsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: A filter to return only resources that match the entire name given.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -6441,9 +4859,6 @@ class GetModelVersionSetsFilterResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        A filter to return only resources that match the entire name given.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -6460,128 +4875,93 @@ class GetModelVersionSetsFilterResult(dict):
 @pulumi.output_type
 class GetModelVersionSetsModelVersionSetResult(dict):
     def __init__(__self__, *,
-                 compartment_id: str,
-                 created_by: str,
-                 defined_tags: Mapping[str, Any],
-                 description: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 name: str,
-                 project_id: str,
-                 state: str,
-                 time_created: str,
-                 time_updated: str):
-        """
-        :param str compartment_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param str created_by: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param str description: A short description of the model version set.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param str id: <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
-        :param str name: A filter to return only resources that match the entire name given.
-        :param str project_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
-        :param str state: <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
-        :param str time_created: The date and time that the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
-        :param str time_updated: The date and time that the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
-        """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "created_by", created_by)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "project_id", project_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+                 compartment_id: Optional[str] = None,
+                 created_by: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 description: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 name: Optional[str] = None,
+                 project_id: Optional[str] = None,
+                 state: Optional[str] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None):
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if created_by is not None:
+            pulumi.set(__self__, "created_by", created_by)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if project_id is not None:
+            pulumi.set(__self__, "project_id", project_id)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="createdBy")
-    def created_by(self) -> str:
-        """
-        <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
-        """
+    def created_by(self) -> Optional[str]:
         return pulumi.get(self, "created_by")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        A short description of the model version set.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        A filter to return only resources that match the entire name given.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="projectId")
-    def project_id(self) -> str:
-        """
-        <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
-        """
+    def project_id(self) -> Optional[str]:
         return pulumi.get(self, "project_id")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time that the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time that the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -6615,671 +4995,487 @@ class GetModelsFilterResult(dict):
 @pulumi.output_type
 class GetModelsModelResult(dict):
     def __init__(__self__, *,
-                 artifact_content_disposition: str,
-                 artifact_content_length: str,
-                 artifact_content_md5: str,
-                 artifact_last_modified: str,
-                 compartment_id: str,
-                 created_by: str,
-                 custom_metadata_lists: Sequence['outputs.GetModelsModelCustomMetadataListResult'],
-                 defined_metadata_lists: Sequence['outputs.GetModelsModelDefinedMetadataListResult'],
-                 defined_tags: Mapping[str, Any],
-                 description: str,
-                 display_name: str,
-                 empty_model: bool,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 input_schema: str,
-                 model_artifact: str,
-                 output_schema: str,
-                 project_id: str,
-                 state: str,
-                 time_created: str):
-        """
-        :param str compartment_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param str created_by: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
-        :param Sequence['GetModelsModelCustomMetadataListArgs'] custom_metadata_lists: An array of custom metadata details for the model.
-        :param Sequence['GetModelsModelDefinedMetadataListArgs'] defined_metadata_lists: An array of defined metadata details for the model.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param str description: A short description of the model.
-        :param str display_name: <b>Filter</b> results by its user-friendly name.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param str id: <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
-        :param str input_schema: Input schema file content in String format
-        :param str output_schema: Output schema file content in String format
-        :param str project_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
-        :param str state: <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
-        :param str time_created: The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
-        """
-        pulumi.set(__self__, "artifact_content_disposition", artifact_content_disposition)
-        pulumi.set(__self__, "artifact_content_length", artifact_content_length)
-        pulumi.set(__self__, "artifact_content_md5", artifact_content_md5)
-        pulumi.set(__self__, "artifact_last_modified", artifact_last_modified)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "created_by", created_by)
-        pulumi.set(__self__, "custom_metadata_lists", custom_metadata_lists)
-        pulumi.set(__self__, "defined_metadata_lists", defined_metadata_lists)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "empty_model", empty_model)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "input_schema", input_schema)
-        pulumi.set(__self__, "model_artifact", model_artifact)
-        pulumi.set(__self__, "output_schema", output_schema)
-        pulumi.set(__self__, "project_id", project_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
+                 artifact_content_disposition: Optional[str] = None,
+                 artifact_content_length: Optional[str] = None,
+                 artifact_content_md5: Optional[str] = None,
+                 artifact_last_modified: Optional[str] = None,
+                 compartment_id: Optional[str] = None,
+                 created_by: Optional[str] = None,
+                 custom_metadata_lists: Optional[Sequence['outputs.GetModelsModelCustomMetadataListResult']] = None,
+                 defined_metadata_lists: Optional[Sequence['outputs.GetModelsModelDefinedMetadataListResult']] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 description: Optional[str] = None,
+                 display_name: Optional[str] = None,
+                 empty_model: Optional[bool] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 input_schema: Optional[str] = None,
+                 model_artifact: Optional[str] = None,
+                 output_schema: Optional[str] = None,
+                 project_id: Optional[str] = None,
+                 state: Optional[str] = None,
+                 time_created: Optional[str] = None):
+        if artifact_content_disposition is not None:
+            pulumi.set(__self__, "artifact_content_disposition", artifact_content_disposition)
+        if artifact_content_length is not None:
+            pulumi.set(__self__, "artifact_content_length", artifact_content_length)
+        if artifact_content_md5 is not None:
+            pulumi.set(__self__, "artifact_content_md5", artifact_content_md5)
+        if artifact_last_modified is not None:
+            pulumi.set(__self__, "artifact_last_modified", artifact_last_modified)
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if created_by is not None:
+            pulumi.set(__self__, "created_by", created_by)
+        if custom_metadata_lists is not None:
+            pulumi.set(__self__, "custom_metadata_lists", custom_metadata_lists)
+        if defined_metadata_lists is not None:
+            pulumi.set(__self__, "defined_metadata_lists", defined_metadata_lists)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if empty_model is not None:
+            pulumi.set(__self__, "empty_model", empty_model)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if input_schema is not None:
+            pulumi.set(__self__, "input_schema", input_schema)
+        if model_artifact is not None:
+            pulumi.set(__self__, "model_artifact", model_artifact)
+        if output_schema is not None:
+            pulumi.set(__self__, "output_schema", output_schema)
+        if project_id is not None:
+            pulumi.set(__self__, "project_id", project_id)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
 
     @property
     @pulumi.getter(name="artifactContentDisposition")
-    def artifact_content_disposition(self) -> str:
+    def artifact_content_disposition(self) -> Optional[str]:
         return pulumi.get(self, "artifact_content_disposition")
 
     @property
     @pulumi.getter(name="artifactContentLength")
-    def artifact_content_length(self) -> str:
+    def artifact_content_length(self) -> Optional[str]:
         return pulumi.get(self, "artifact_content_length")
 
     @property
     @pulumi.getter(name="artifactContentMd5")
-    def artifact_content_md5(self) -> str:
+    def artifact_content_md5(self) -> Optional[str]:
         return pulumi.get(self, "artifact_content_md5")
 
     @property
     @pulumi.getter(name="artifactLastModified")
-    def artifact_last_modified(self) -> str:
+    def artifact_last_modified(self) -> Optional[str]:
         return pulumi.get(self, "artifact_last_modified")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="createdBy")
-    def created_by(self) -> str:
-        """
-        <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
-        """
+    def created_by(self) -> Optional[str]:
         return pulumi.get(self, "created_by")
 
     @property
     @pulumi.getter(name="customMetadataLists")
-    def custom_metadata_lists(self) -> Sequence['outputs.GetModelsModelCustomMetadataListResult']:
-        """
-        An array of custom metadata details for the model.
-        """
+    def custom_metadata_lists(self) -> Optional[Sequence['outputs.GetModelsModelCustomMetadataListResult']]:
         return pulumi.get(self, "custom_metadata_lists")
 
     @property
     @pulumi.getter(name="definedMetadataLists")
-    def defined_metadata_lists(self) -> Sequence['outputs.GetModelsModelDefinedMetadataListResult']:
-        """
-        An array of defined metadata details for the model.
-        """
+    def defined_metadata_lists(self) -> Optional[Sequence['outputs.GetModelsModelDefinedMetadataListResult']]:
         return pulumi.get(self, "defined_metadata_lists")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        A short description of the model.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        <b>Filter</b> results by its user-friendly name.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="emptyModel")
-    def empty_model(self) -> bool:
+    def empty_model(self) -> Optional[bool]:
         return pulumi.get(self, "empty_model")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="inputSchema")
-    def input_schema(self) -> str:
-        """
-        Input schema file content in String format
-        """
+    def input_schema(self) -> Optional[str]:
         return pulumi.get(self, "input_schema")
 
     @property
     @pulumi.getter(name="modelArtifact")
-    def model_artifact(self) -> str:
+    def model_artifact(self) -> Optional[str]:
         return pulumi.get(self, "model_artifact")
 
     @property
     @pulumi.getter(name="outputSchema")
-    def output_schema(self) -> str:
-        """
-        Output schema file content in String format
-        """
+    def output_schema(self) -> Optional[str]:
         return pulumi.get(self, "output_schema")
 
     @property
     @pulumi.getter(name="projectId")
-    def project_id(self) -> str:
-        """
-        <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
-        """
+    def project_id(self) -> Optional[str]:
         return pulumi.get(self, "project_id")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
 
 @pulumi.output_type
 class GetModelsModelCustomMetadataListResult(dict):
     def __init__(__self__, *,
-                 category: str,
-                 description: str,
-                 key: str,
-                 value: str):
-        """
-        :param str category: Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,other".
-        :param str description: A short description of the model.
-        :param str key: Key of the model Metadata. The key can either be user defined or Oracle Cloud Infrastructure defined. List of Oracle Cloud Infrastructure defined keys:
-               * useCaseType
-               * libraryName
-               * libraryVersion
-               * estimatorClass
-               * hyperParameters
-               * testartifactresults
-        :param str value: Allowed values for useCaseType: binary_classification, regression, multinomial_classification, clustering, recommender, dimensionality_reduction/representation, time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
-        """
-        pulumi.set(__self__, "category", category)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "value", value)
+                 category: Optional[str] = None,
+                 description: Optional[str] = None,
+                 key: Optional[str] = None,
+                 value: Optional[str] = None):
+        if category is not None:
+            pulumi.set(__self__, "category", category)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter
-    def category(self) -> str:
-        """
-        Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,other".
-        """
+    def category(self) -> Optional[str]:
         return pulumi.get(self, "category")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        A short description of the model.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter
-    def key(self) -> str:
-        """
-        Key of the model Metadata. The key can either be user defined or Oracle Cloud Infrastructure defined. List of Oracle Cloud Infrastructure defined keys:
-        * useCaseType
-        * libraryName
-        * libraryVersion
-        * estimatorClass
-        * hyperParameters
-        * testartifactresults
-        """
+    def key(self) -> Optional[str]:
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter
-    def value(self) -> str:
-        """
-        Allowed values for useCaseType: binary_classification, regression, multinomial_classification, clustering, recommender, dimensionality_reduction/representation, time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
-        """
+    def value(self) -> Optional[str]:
         return pulumi.get(self, "value")
 
 
 @pulumi.output_type
 class GetModelsModelDefinedMetadataListResult(dict):
     def __init__(__self__, *,
-                 category: str,
-                 description: str,
-                 key: str,
-                 value: str):
-        """
-        :param str category: Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,other".
-        :param str description: A short description of the model.
-        :param str key: Key of the model Metadata. The key can either be user defined or Oracle Cloud Infrastructure defined. List of Oracle Cloud Infrastructure defined keys:
-               * useCaseType
-               * libraryName
-               * libraryVersion
-               * estimatorClass
-               * hyperParameters
-               * testartifactresults
-        :param str value: Allowed values for useCaseType: binary_classification, regression, multinomial_classification, clustering, recommender, dimensionality_reduction/representation, time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
-        """
-        pulumi.set(__self__, "category", category)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "value", value)
+                 category: Optional[str] = None,
+                 description: Optional[str] = None,
+                 key: Optional[str] = None,
+                 value: Optional[str] = None):
+        if category is not None:
+            pulumi.set(__self__, "category", category)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter
-    def category(self) -> str:
-        """
-        Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,other".
-        """
+    def category(self) -> Optional[str]:
         return pulumi.get(self, "category")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        A short description of the model.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter
-    def key(self) -> str:
-        """
-        Key of the model Metadata. The key can either be user defined or Oracle Cloud Infrastructure defined. List of Oracle Cloud Infrastructure defined keys:
-        * useCaseType
-        * libraryName
-        * libraryVersion
-        * estimatorClass
-        * hyperParameters
-        * testartifactresults
-        """
+    def key(self) -> Optional[str]:
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter
-    def value(self) -> str:
-        """
-        Allowed values for useCaseType: binary_classification, regression, multinomial_classification, clustering, recommender, dimensionality_reduction/representation, time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
-        """
+    def value(self) -> Optional[str]:
         return pulumi.get(self, "value")
 
 
 @pulumi.output_type
 class GetNotebookSessionNotebookSessionConfigDetailResult(dict):
     def __init__(__self__, *,
-                 block_storage_size_in_gbs: int,
-                 notebook_session_shape_config_details: Sequence['outputs.GetNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailResult'],
-                 private_endpoint_id: str,
-                 shape: str,
-                 subnet_id: str):
-        """
-        :param int block_storage_size_in_gbs: A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
-        :param Sequence['GetNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArgs'] notebook_session_shape_config_details: Details for the notebook session shape configuration.
-        :param str private_endpoint_id: The OCID of a Data Science private endpoint.
-        :param str shape: The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
-        :param str subnet_id: A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
-        """
-        pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
-        pulumi.set(__self__, "notebook_session_shape_config_details", notebook_session_shape_config_details)
-        pulumi.set(__self__, "private_endpoint_id", private_endpoint_id)
-        pulumi.set(__self__, "shape", shape)
-        pulumi.set(__self__, "subnet_id", subnet_id)
+                 block_storage_size_in_gbs: Optional[int] = None,
+                 notebook_session_shape_config_details: Optional[Sequence['outputs.GetNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailResult']] = None,
+                 private_endpoint_id: Optional[str] = None,
+                 shape: Optional[str] = None,
+                 subnet_id: Optional[str] = None):
+        if block_storage_size_in_gbs is not None:
+            pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
+        if notebook_session_shape_config_details is not None:
+            pulumi.set(__self__, "notebook_session_shape_config_details", notebook_session_shape_config_details)
+        if private_endpoint_id is not None:
+            pulumi.set(__self__, "private_endpoint_id", private_endpoint_id)
+        if shape is not None:
+            pulumi.set(__self__, "shape", shape)
+        if subnet_id is not None:
+            pulumi.set(__self__, "subnet_id", subnet_id)
 
     @property
     @pulumi.getter(name="blockStorageSizeInGbs")
-    def block_storage_size_in_gbs(self) -> int:
-        """
-        A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
-        """
+    def block_storage_size_in_gbs(self) -> Optional[int]:
         return pulumi.get(self, "block_storage_size_in_gbs")
 
     @property
     @pulumi.getter(name="notebookSessionShapeConfigDetails")
-    def notebook_session_shape_config_details(self) -> Sequence['outputs.GetNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailResult']:
-        """
-        Details for the notebook session shape configuration.
-        """
+    def notebook_session_shape_config_details(self) -> Optional[Sequence['outputs.GetNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailResult']]:
         return pulumi.get(self, "notebook_session_shape_config_details")
 
     @property
     @pulumi.getter(name="privateEndpointId")
-    def private_endpoint_id(self) -> str:
-        """
-        The OCID of a Data Science private endpoint.
-        """
+    def private_endpoint_id(self) -> Optional[str]:
         return pulumi.get(self, "private_endpoint_id")
 
     @property
     @pulumi.getter
-    def shape(self) -> str:
-        """
-        The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
-        """
+    def shape(self) -> Optional[str]:
         return pulumi.get(self, "shape")
 
     @property
     @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> str:
-        """
-        A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
-        """
+    def subnet_id(self) -> Optional[str]:
         return pulumi.get(self, "subnet_id")
 
 
 @pulumi.output_type
 class GetNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailResult(dict):
     def __init__(__self__, *,
-                 memory_in_gbs: float,
-                 ocpus: float):
-        """
-        :param float memory_in_gbs: The total amount of memory available to the notebook session instance, in gigabytes.
-        :param float ocpus: The total number of OCPUs available to the notebook session instance.
-        """
-        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
-        pulumi.set(__self__, "ocpus", ocpus)
+                 memory_in_gbs: Optional[float] = None,
+                 ocpus: Optional[float] = None):
+        if memory_in_gbs is not None:
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        if ocpus is not None:
+            pulumi.set(__self__, "ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
-    def memory_in_gbs(self) -> float:
-        """
-        The total amount of memory available to the notebook session instance, in gigabytes.
-        """
+    def memory_in_gbs(self) -> Optional[float]:
         return pulumi.get(self, "memory_in_gbs")
 
     @property
     @pulumi.getter
-    def ocpus(self) -> float:
-        """
-        The total number of OCPUs available to the notebook session instance.
-        """
+    def ocpus(self) -> Optional[float]:
         return pulumi.get(self, "ocpus")
 
 
 @pulumi.output_type
 class GetNotebookSessionNotebookSessionConfigurationDetailResult(dict):
     def __init__(__self__, *,
-                 block_storage_size_in_gbs: int,
-                 notebook_session_shape_config_details: Sequence['outputs.GetNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailResult'],
-                 private_endpoint_id: str,
-                 shape: str,
-                 subnet_id: str):
-        """
-        :param int block_storage_size_in_gbs: A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
-        :param Sequence['GetNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArgs'] notebook_session_shape_config_details: Details for the notebook session shape configuration.
-        :param str private_endpoint_id: The OCID of a Data Science private endpoint.
-        :param str shape: The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
-        :param str subnet_id: A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
-        """
-        pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
-        pulumi.set(__self__, "notebook_session_shape_config_details", notebook_session_shape_config_details)
-        pulumi.set(__self__, "private_endpoint_id", private_endpoint_id)
-        pulumi.set(__self__, "shape", shape)
-        pulumi.set(__self__, "subnet_id", subnet_id)
+                 block_storage_size_in_gbs: Optional[int] = None,
+                 notebook_session_shape_config_details: Optional[Sequence['outputs.GetNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailResult']] = None,
+                 private_endpoint_id: Optional[str] = None,
+                 shape: Optional[str] = None,
+                 subnet_id: Optional[str] = None):
+        if block_storage_size_in_gbs is not None:
+            pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
+        if notebook_session_shape_config_details is not None:
+            pulumi.set(__self__, "notebook_session_shape_config_details", notebook_session_shape_config_details)
+        if private_endpoint_id is not None:
+            pulumi.set(__self__, "private_endpoint_id", private_endpoint_id)
+        if shape is not None:
+            pulumi.set(__self__, "shape", shape)
+        if subnet_id is not None:
+            pulumi.set(__self__, "subnet_id", subnet_id)
 
     @property
     @pulumi.getter(name="blockStorageSizeInGbs")
-    def block_storage_size_in_gbs(self) -> int:
-        """
-        A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
-        """
+    def block_storage_size_in_gbs(self) -> Optional[int]:
         return pulumi.get(self, "block_storage_size_in_gbs")
 
     @property
     @pulumi.getter(name="notebookSessionShapeConfigDetails")
-    def notebook_session_shape_config_details(self) -> Sequence['outputs.GetNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailResult']:
-        """
-        Details for the notebook session shape configuration.
-        """
+    def notebook_session_shape_config_details(self) -> Optional[Sequence['outputs.GetNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailResult']]:
         return pulumi.get(self, "notebook_session_shape_config_details")
 
     @property
     @pulumi.getter(name="privateEndpointId")
-    def private_endpoint_id(self) -> str:
-        """
-        The OCID of a Data Science private endpoint.
-        """
+    def private_endpoint_id(self) -> Optional[str]:
         return pulumi.get(self, "private_endpoint_id")
 
     @property
     @pulumi.getter
-    def shape(self) -> str:
-        """
-        The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
-        """
+    def shape(self) -> Optional[str]:
         return pulumi.get(self, "shape")
 
     @property
     @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> str:
-        """
-        A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
-        """
+    def subnet_id(self) -> Optional[str]:
         return pulumi.get(self, "subnet_id")
 
 
 @pulumi.output_type
 class GetNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailResult(dict):
     def __init__(__self__, *,
-                 memory_in_gbs: float,
-                 ocpus: float):
-        """
-        :param float memory_in_gbs: The total amount of memory available to the notebook session instance, in gigabytes.
-        :param float ocpus: The total number of OCPUs available to the notebook session instance.
-        """
-        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
-        pulumi.set(__self__, "ocpus", ocpus)
+                 memory_in_gbs: Optional[float] = None,
+                 ocpus: Optional[float] = None):
+        if memory_in_gbs is not None:
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        if ocpus is not None:
+            pulumi.set(__self__, "ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
-    def memory_in_gbs(self) -> float:
-        """
-        The total amount of memory available to the notebook session instance, in gigabytes.
-        """
+    def memory_in_gbs(self) -> Optional[float]:
         return pulumi.get(self, "memory_in_gbs")
 
     @property
     @pulumi.getter
-    def ocpus(self) -> float:
-        """
-        The total number of OCPUs available to the notebook session instance.
-        """
+    def ocpus(self) -> Optional[float]:
         return pulumi.get(self, "ocpus")
 
 
 @pulumi.output_type
 class GetNotebookSessionNotebookSessionRuntimeConfigDetailResult(dict):
     def __init__(__self__, *,
-                 custom_environment_variables: Mapping[str, Any],
-                 notebook_session_git_config_details: Sequence['outputs.GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailResult']):
-        """
-        :param Mapping[str, Any] custom_environment_variables: Custom environment variables for Notebook Session. These key-value pairs will be available for customers in Notebook Sessions.
-        :param Sequence['GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArgs'] notebook_session_git_config_details: Git configuration Details.
-        """
-        pulumi.set(__self__, "custom_environment_variables", custom_environment_variables)
-        pulumi.set(__self__, "notebook_session_git_config_details", notebook_session_git_config_details)
+                 custom_environment_variables: Optional[Mapping[str, Any]] = None,
+                 notebook_session_git_config_details: Optional[Sequence['outputs.GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailResult']] = None):
+        if custom_environment_variables is not None:
+            pulumi.set(__self__, "custom_environment_variables", custom_environment_variables)
+        if notebook_session_git_config_details is not None:
+            pulumi.set(__self__, "notebook_session_git_config_details", notebook_session_git_config_details)
 
     @property
     @pulumi.getter(name="customEnvironmentVariables")
-    def custom_environment_variables(self) -> Mapping[str, Any]:
-        """
-        Custom environment variables for Notebook Session. These key-value pairs will be available for customers in Notebook Sessions.
-        """
+    def custom_environment_variables(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "custom_environment_variables")
 
     @property
     @pulumi.getter(name="notebookSessionGitConfigDetails")
-    def notebook_session_git_config_details(self) -> Sequence['outputs.GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailResult']:
-        """
-        Git configuration Details.
-        """
+    def notebook_session_git_config_details(self) -> Optional[Sequence['outputs.GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailResult']]:
         return pulumi.get(self, "notebook_session_git_config_details")
 
 
 @pulumi.output_type
 class GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailResult(dict):
     def __init__(__self__, *,
-                 notebook_session_git_repo_config_collections: Sequence['outputs.GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionResult']):
-        """
-        :param Sequence['GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArgs'] notebook_session_git_repo_config_collections: A collection of Git repository configurations.
-        """
-        pulumi.set(__self__, "notebook_session_git_repo_config_collections", notebook_session_git_repo_config_collections)
+                 notebook_session_git_repo_config_collections: Optional[Sequence['outputs.GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionResult']] = None):
+        if notebook_session_git_repo_config_collections is not None:
+            pulumi.set(__self__, "notebook_session_git_repo_config_collections", notebook_session_git_repo_config_collections)
 
     @property
     @pulumi.getter(name="notebookSessionGitRepoConfigCollections")
-    def notebook_session_git_repo_config_collections(self) -> Sequence['outputs.GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionResult']:
-        """
-        A collection of Git repository configurations.
-        """
+    def notebook_session_git_repo_config_collections(self) -> Optional[Sequence['outputs.GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionResult']]:
         return pulumi.get(self, "notebook_session_git_repo_config_collections")
 
 
 @pulumi.output_type
 class GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionResult(dict):
     def __init__(__self__, *,
-                 url: str):
-        """
-        :param str url: The repository URL
-        """
-        pulumi.set(__self__, "url", url)
+                 url: Optional[str] = None):
+        if url is not None:
+            pulumi.set(__self__, "url", url)
 
     @property
     @pulumi.getter
-    def url(self) -> str:
-        """
-        The repository URL
-        """
+    def url(self) -> Optional[str]:
         return pulumi.get(self, "url")
 
 
 @pulumi.output_type
 class GetNotebookSessionNotebookSessionStorageMountConfigurationDetailsListResult(dict):
     def __init__(__self__, *,
-                 bucket: str,
-                 destination_directory_name: str,
-                 destination_path: str,
-                 export_id: str,
-                 mount_target_id: str,
-                 namespace: str,
-                 prefix: str,
-                 storage_type: str):
-        """
-        :param str bucket: The object storage bucket
-        :param str destination_directory_name: The local directory name to be mounted
-        :param str destination_path: The local path of the mounted directory, excluding directory name.
-        :param str export_id: OCID of the export
-        :param str mount_target_id: OCID of the mount target
-        :param str namespace: The object storage namespace
-        :param str prefix: Prefix in the bucket to mount
-        :param str storage_type: The type of storage.
-        """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "destination_directory_name", destination_directory_name)
-        pulumi.set(__self__, "destination_path", destination_path)
-        pulumi.set(__self__, "export_id", export_id)
-        pulumi.set(__self__, "mount_target_id", mount_target_id)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "prefix", prefix)
-        pulumi.set(__self__, "storage_type", storage_type)
+                 bucket: Optional[str] = None,
+                 destination_directory_name: Optional[str] = None,
+                 destination_path: Optional[str] = None,
+                 export_id: Optional[str] = None,
+                 mount_target_id: Optional[str] = None,
+                 namespace: Optional[str] = None,
+                 prefix: Optional[str] = None,
+                 storage_type: Optional[str] = None):
+        if bucket is not None:
+            pulumi.set(__self__, "bucket", bucket)
+        if destination_directory_name is not None:
+            pulumi.set(__self__, "destination_directory_name", destination_directory_name)
+        if destination_path is not None:
+            pulumi.set(__self__, "destination_path", destination_path)
+        if export_id is not None:
+            pulumi.set(__self__, "export_id", export_id)
+        if mount_target_id is not None:
+            pulumi.set(__self__, "mount_target_id", mount_target_id)
+        if namespace is not None:
+            pulumi.set(__self__, "namespace", namespace)
+        if prefix is not None:
+            pulumi.set(__self__, "prefix", prefix)
+        if storage_type is not None:
+            pulumi.set(__self__, "storage_type", storage_type)
 
     @property
     @pulumi.getter
-    def bucket(self) -> str:
-        """
-        The object storage bucket
-        """
+    def bucket(self) -> Optional[str]:
         return pulumi.get(self, "bucket")
 
     @property
     @pulumi.getter(name="destinationDirectoryName")
-    def destination_directory_name(self) -> str:
-        """
-        The local directory name to be mounted
-        """
+    def destination_directory_name(self) -> Optional[str]:
         return pulumi.get(self, "destination_directory_name")
 
     @property
     @pulumi.getter(name="destinationPath")
-    def destination_path(self) -> str:
-        """
-        The local path of the mounted directory, excluding directory name.
-        """
+    def destination_path(self) -> Optional[str]:
         return pulumi.get(self, "destination_path")
 
     @property
     @pulumi.getter(name="exportId")
-    def export_id(self) -> str:
-        """
-        OCID of the export
-        """
+    def export_id(self) -> Optional[str]:
         return pulumi.get(self, "export_id")
 
     @property
     @pulumi.getter(name="mountTargetId")
-    def mount_target_id(self) -> str:
-        """
-        OCID of the mount target
-        """
+    def mount_target_id(self) -> Optional[str]:
         return pulumi.get(self, "mount_target_id")
 
     @property
     @pulumi.getter
-    def namespace(self) -> str:
-        """
-        The object storage namespace
-        """
+    def namespace(self) -> Optional[str]:
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter
-    def prefix(self) -> str:
-        """
-        Prefix in the bucket to mount
-        """
+    def prefix(self) -> Optional[str]:
         return pulumi.get(self, "prefix")
 
     @property
     @pulumi.getter(name="storageType")
-    def storage_type(self) -> str:
-        """
-        The type of storage.
-        """
+    def storage_type(self) -> Optional[str]:
         return pulumi.get(self, "storage_type")
 
 
@@ -7289,9 +5485,6 @@ class GetNotebookSessionShapesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The name of the notebook session shape.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -7300,9 +5493,6 @@ class GetNotebookSessionShapesFilterResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The name of the notebook session shape.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -7319,51 +5509,37 @@ class GetNotebookSessionShapesFilterResult(dict):
 @pulumi.output_type
 class GetNotebookSessionShapesNotebookSessionShapeResult(dict):
     def __init__(__self__, *,
-                 core_count: int,
-                 memory_in_gbs: int,
-                 name: str,
-                 shape_series: str):
-        """
-        :param int core_count: The number of cores associated with this notebook session shape.
-        :param int memory_in_gbs: The amount of memory in GBs associated with this notebook session shape.
-        :param str name: The name of the notebook session shape.
-        :param str shape_series: The family that the compute shape belongs to.
-        """
-        pulumi.set(__self__, "core_count", core_count)
-        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "shape_series", shape_series)
+                 core_count: Optional[int] = None,
+                 memory_in_gbs: Optional[int] = None,
+                 name: Optional[str] = None,
+                 shape_series: Optional[str] = None):
+        if core_count is not None:
+            pulumi.set(__self__, "core_count", core_count)
+        if memory_in_gbs is not None:
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if shape_series is not None:
+            pulumi.set(__self__, "shape_series", shape_series)
 
     @property
     @pulumi.getter(name="coreCount")
-    def core_count(self) -> int:
-        """
-        The number of cores associated with this notebook session shape.
-        """
+    def core_count(self) -> Optional[int]:
         return pulumi.get(self, "core_count")
 
     @property
     @pulumi.getter(name="memoryInGbs")
-    def memory_in_gbs(self) -> int:
-        """
-        The amount of memory in GBs associated with this notebook session shape.
-        """
+    def memory_in_gbs(self) -> Optional[int]:
         return pulumi.get(self, "memory_in_gbs")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The name of the notebook session shape.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="shapeSeries")
-    def shape_series(self) -> str:
-        """
-        The family that the compute shape belongs to.
-        """
+    def shape_series(self) -> Optional[str]:
         return pulumi.get(self, "shape_series")
 
 
@@ -7397,1020 +5573,740 @@ class GetNotebookSessionsFilterResult(dict):
 @pulumi.output_type
 class GetNotebookSessionsNotebookSessionResult(dict):
     def __init__(__self__, *,
-                 compartment_id: str,
-                 created_by: str,
-                 defined_tags: Mapping[str, Any],
-                 display_name: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 lifecycle_details: str,
-                 notebook_session_config_details: Sequence['outputs.GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailResult'],
-                 notebook_session_configuration_details: Sequence['outputs.GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailResult'],
-                 notebook_session_runtime_config_details: Sequence['outputs.GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailResult'],
-                 notebook_session_storage_mount_configuration_details_lists: Sequence['outputs.GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListResult'],
-                 notebook_session_url: str,
-                 project_id: str,
-                 state: str,
-                 time_created: str):
-        """
-        :param str compartment_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param str created_by: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param str display_name: <b>Filter</b> results by its user-friendly name.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param str id: <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
-        :param str lifecycle_details: Details about the state of the notebook session.
-        :param Sequence['GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArgs'] notebook_session_config_details: Details for the notebook session configuration.
-        :param Sequence['GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArgs'] notebook_session_configuration_details: Details for the notebook session configuration.
-        :param Sequence['GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArgs'] notebook_session_runtime_config_details: Notebook Session runtime configuration details.
-        :param Sequence['GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs'] notebook_session_storage_mount_configuration_details_lists: Collection of NotebookSessionStorageMountConfigurationDetails.
-        :param str notebook_session_url: The URL to interact with the notebook session.
-        :param str project_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
-        :param str state: <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
-        :param str time_created: The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
-        """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "created_by", created_by)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "notebook_session_config_details", notebook_session_config_details)
-        pulumi.set(__self__, "notebook_session_configuration_details", notebook_session_configuration_details)
-        pulumi.set(__self__, "notebook_session_runtime_config_details", notebook_session_runtime_config_details)
-        pulumi.set(__self__, "notebook_session_storage_mount_configuration_details_lists", notebook_session_storage_mount_configuration_details_lists)
-        pulumi.set(__self__, "notebook_session_url", notebook_session_url)
-        pulumi.set(__self__, "project_id", project_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
+                 compartment_id: Optional[str] = None,
+                 created_by: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 display_name: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 lifecycle_details: Optional[str] = None,
+                 notebook_session_config_details: Optional[Sequence['outputs.GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailResult']] = None,
+                 notebook_session_configuration_details: Optional[Sequence['outputs.GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailResult']] = None,
+                 notebook_session_runtime_config_details: Optional[Sequence['outputs.GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailResult']] = None,
+                 notebook_session_storage_mount_configuration_details_lists: Optional[Sequence['outputs.GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListResult']] = None,
+                 notebook_session_url: Optional[str] = None,
+                 project_id: Optional[str] = None,
+                 state: Optional[str] = None,
+                 time_created: Optional[str] = None):
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if created_by is not None:
+            pulumi.set(__self__, "created_by", created_by)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if notebook_session_config_details is not None:
+            pulumi.set(__self__, "notebook_session_config_details", notebook_session_config_details)
+        if notebook_session_configuration_details is not None:
+            pulumi.set(__self__, "notebook_session_configuration_details", notebook_session_configuration_details)
+        if notebook_session_runtime_config_details is not None:
+            pulumi.set(__self__, "notebook_session_runtime_config_details", notebook_session_runtime_config_details)
+        if notebook_session_storage_mount_configuration_details_lists is not None:
+            pulumi.set(__self__, "notebook_session_storage_mount_configuration_details_lists", notebook_session_storage_mount_configuration_details_lists)
+        if notebook_session_url is not None:
+            pulumi.set(__self__, "notebook_session_url", notebook_session_url)
+        if project_id is not None:
+            pulumi.set(__self__, "project_id", project_id)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="createdBy")
-    def created_by(self) -> str:
-        """
-        <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
-        """
+    def created_by(self) -> Optional[str]:
         return pulumi.get(self, "created_by")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        <b>Filter</b> results by its user-friendly name.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        Details about the state of the notebook session.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="notebookSessionConfigDetails")
-    def notebook_session_config_details(self) -> Sequence['outputs.GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailResult']:
-        """
-        Details for the notebook session configuration.
-        """
+    def notebook_session_config_details(self) -> Optional[Sequence['outputs.GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailResult']]:
         return pulumi.get(self, "notebook_session_config_details")
 
     @property
     @pulumi.getter(name="notebookSessionConfigurationDetails")
-    def notebook_session_configuration_details(self) -> Sequence['outputs.GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailResult']:
-        """
-        Details for the notebook session configuration.
-        """
+    def notebook_session_configuration_details(self) -> Optional[Sequence['outputs.GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailResult']]:
         return pulumi.get(self, "notebook_session_configuration_details")
 
     @property
     @pulumi.getter(name="notebookSessionRuntimeConfigDetails")
-    def notebook_session_runtime_config_details(self) -> Sequence['outputs.GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailResult']:
-        """
-        Notebook Session runtime configuration details.
-        """
+    def notebook_session_runtime_config_details(self) -> Optional[Sequence['outputs.GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailResult']]:
         return pulumi.get(self, "notebook_session_runtime_config_details")
 
     @property
     @pulumi.getter(name="notebookSessionStorageMountConfigurationDetailsLists")
-    def notebook_session_storage_mount_configuration_details_lists(self) -> Sequence['outputs.GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListResult']:
-        """
-        Collection of NotebookSessionStorageMountConfigurationDetails.
-        """
+    def notebook_session_storage_mount_configuration_details_lists(self) -> Optional[Sequence['outputs.GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListResult']]:
         return pulumi.get(self, "notebook_session_storage_mount_configuration_details_lists")
 
     @property
     @pulumi.getter(name="notebookSessionUrl")
-    def notebook_session_url(self) -> str:
-        """
-        The URL to interact with the notebook session.
-        """
+    def notebook_session_url(self) -> Optional[str]:
         return pulumi.get(self, "notebook_session_url")
 
     @property
     @pulumi.getter(name="projectId")
-    def project_id(self) -> str:
-        """
-        <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
-        """
+    def project_id(self) -> Optional[str]:
         return pulumi.get(self, "project_id")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
 
 @pulumi.output_type
 class GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailResult(dict):
     def __init__(__self__, *,
-                 block_storage_size_in_gbs: int,
-                 notebook_session_shape_config_details: Sequence['outputs.GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailResult'],
-                 private_endpoint_id: str,
-                 shape: str,
-                 subnet_id: str):
-        """
-        :param int block_storage_size_in_gbs: A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
-        :param Sequence['GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArgs'] notebook_session_shape_config_details: Details for the notebook session shape configuration.
-        :param str private_endpoint_id: The OCID of a Data Science private endpoint.
-        :param str shape: The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
-        :param str subnet_id: A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
-        """
-        pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
-        pulumi.set(__self__, "notebook_session_shape_config_details", notebook_session_shape_config_details)
-        pulumi.set(__self__, "private_endpoint_id", private_endpoint_id)
-        pulumi.set(__self__, "shape", shape)
-        pulumi.set(__self__, "subnet_id", subnet_id)
+                 block_storage_size_in_gbs: Optional[int] = None,
+                 notebook_session_shape_config_details: Optional[Sequence['outputs.GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailResult']] = None,
+                 private_endpoint_id: Optional[str] = None,
+                 shape: Optional[str] = None,
+                 subnet_id: Optional[str] = None):
+        if block_storage_size_in_gbs is not None:
+            pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
+        if notebook_session_shape_config_details is not None:
+            pulumi.set(__self__, "notebook_session_shape_config_details", notebook_session_shape_config_details)
+        if private_endpoint_id is not None:
+            pulumi.set(__self__, "private_endpoint_id", private_endpoint_id)
+        if shape is not None:
+            pulumi.set(__self__, "shape", shape)
+        if subnet_id is not None:
+            pulumi.set(__self__, "subnet_id", subnet_id)
 
     @property
     @pulumi.getter(name="blockStorageSizeInGbs")
-    def block_storage_size_in_gbs(self) -> int:
-        """
-        A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
-        """
+    def block_storage_size_in_gbs(self) -> Optional[int]:
         return pulumi.get(self, "block_storage_size_in_gbs")
 
     @property
     @pulumi.getter(name="notebookSessionShapeConfigDetails")
-    def notebook_session_shape_config_details(self) -> Sequence['outputs.GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailResult']:
-        """
-        Details for the notebook session shape configuration.
-        """
+    def notebook_session_shape_config_details(self) -> Optional[Sequence['outputs.GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailResult']]:
         return pulumi.get(self, "notebook_session_shape_config_details")
 
     @property
     @pulumi.getter(name="privateEndpointId")
-    def private_endpoint_id(self) -> str:
-        """
-        The OCID of a Data Science private endpoint.
-        """
+    def private_endpoint_id(self) -> Optional[str]:
         return pulumi.get(self, "private_endpoint_id")
 
     @property
     @pulumi.getter
-    def shape(self) -> str:
-        """
-        The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
-        """
+    def shape(self) -> Optional[str]:
         return pulumi.get(self, "shape")
 
     @property
     @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> str:
-        """
-        A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
-        """
+    def subnet_id(self) -> Optional[str]:
         return pulumi.get(self, "subnet_id")
 
 
 @pulumi.output_type
 class GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailResult(dict):
     def __init__(__self__, *,
-                 memory_in_gbs: float,
-                 ocpus: float):
-        """
-        :param float memory_in_gbs: The total amount of memory available to the notebook session instance, in gigabytes.
-        :param float ocpus: The total number of OCPUs available to the notebook session instance.
-        """
-        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
-        pulumi.set(__self__, "ocpus", ocpus)
+                 memory_in_gbs: Optional[float] = None,
+                 ocpus: Optional[float] = None):
+        if memory_in_gbs is not None:
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        if ocpus is not None:
+            pulumi.set(__self__, "ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
-    def memory_in_gbs(self) -> float:
-        """
-        The total amount of memory available to the notebook session instance, in gigabytes.
-        """
+    def memory_in_gbs(self) -> Optional[float]:
         return pulumi.get(self, "memory_in_gbs")
 
     @property
     @pulumi.getter
-    def ocpus(self) -> float:
-        """
-        The total number of OCPUs available to the notebook session instance.
-        """
+    def ocpus(self) -> Optional[float]:
         return pulumi.get(self, "ocpus")
 
 
 @pulumi.output_type
 class GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailResult(dict):
     def __init__(__self__, *,
-                 block_storage_size_in_gbs: int,
-                 notebook_session_shape_config_details: Sequence['outputs.GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailResult'],
-                 private_endpoint_id: str,
-                 shape: str,
-                 subnet_id: str):
-        """
-        :param int block_storage_size_in_gbs: A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
-        :param Sequence['GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArgs'] notebook_session_shape_config_details: Details for the notebook session shape configuration.
-        :param str private_endpoint_id: The OCID of a Data Science private endpoint.
-        :param str shape: The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
-        :param str subnet_id: A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
-        """
-        pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
-        pulumi.set(__self__, "notebook_session_shape_config_details", notebook_session_shape_config_details)
-        pulumi.set(__self__, "private_endpoint_id", private_endpoint_id)
-        pulumi.set(__self__, "shape", shape)
-        pulumi.set(__self__, "subnet_id", subnet_id)
+                 block_storage_size_in_gbs: Optional[int] = None,
+                 notebook_session_shape_config_details: Optional[Sequence['outputs.GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailResult']] = None,
+                 private_endpoint_id: Optional[str] = None,
+                 shape: Optional[str] = None,
+                 subnet_id: Optional[str] = None):
+        if block_storage_size_in_gbs is not None:
+            pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
+        if notebook_session_shape_config_details is not None:
+            pulumi.set(__self__, "notebook_session_shape_config_details", notebook_session_shape_config_details)
+        if private_endpoint_id is not None:
+            pulumi.set(__self__, "private_endpoint_id", private_endpoint_id)
+        if shape is not None:
+            pulumi.set(__self__, "shape", shape)
+        if subnet_id is not None:
+            pulumi.set(__self__, "subnet_id", subnet_id)
 
     @property
     @pulumi.getter(name="blockStorageSizeInGbs")
-    def block_storage_size_in_gbs(self) -> int:
-        """
-        A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
-        """
+    def block_storage_size_in_gbs(self) -> Optional[int]:
         return pulumi.get(self, "block_storage_size_in_gbs")
 
     @property
     @pulumi.getter(name="notebookSessionShapeConfigDetails")
-    def notebook_session_shape_config_details(self) -> Sequence['outputs.GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailResult']:
-        """
-        Details for the notebook session shape configuration.
-        """
+    def notebook_session_shape_config_details(self) -> Optional[Sequence['outputs.GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailResult']]:
         return pulumi.get(self, "notebook_session_shape_config_details")
 
     @property
     @pulumi.getter(name="privateEndpointId")
-    def private_endpoint_id(self) -> str:
-        """
-        The OCID of a Data Science private endpoint.
-        """
+    def private_endpoint_id(self) -> Optional[str]:
         return pulumi.get(self, "private_endpoint_id")
 
     @property
     @pulumi.getter
-    def shape(self) -> str:
-        """
-        The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
-        """
+    def shape(self) -> Optional[str]:
         return pulumi.get(self, "shape")
 
     @property
     @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> str:
-        """
-        A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
-        """
+    def subnet_id(self) -> Optional[str]:
         return pulumi.get(self, "subnet_id")
 
 
 @pulumi.output_type
 class GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailResult(dict):
     def __init__(__self__, *,
-                 memory_in_gbs: float,
-                 ocpus: float):
-        """
-        :param float memory_in_gbs: The total amount of memory available to the notebook session instance, in gigabytes.
-        :param float ocpus: The total number of OCPUs available to the notebook session instance.
-        """
-        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
-        pulumi.set(__self__, "ocpus", ocpus)
+                 memory_in_gbs: Optional[float] = None,
+                 ocpus: Optional[float] = None):
+        if memory_in_gbs is not None:
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        if ocpus is not None:
+            pulumi.set(__self__, "ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
-    def memory_in_gbs(self) -> float:
-        """
-        The total amount of memory available to the notebook session instance, in gigabytes.
-        """
+    def memory_in_gbs(self) -> Optional[float]:
         return pulumi.get(self, "memory_in_gbs")
 
     @property
     @pulumi.getter
-    def ocpus(self) -> float:
-        """
-        The total number of OCPUs available to the notebook session instance.
-        """
+    def ocpus(self) -> Optional[float]:
         return pulumi.get(self, "ocpus")
 
 
 @pulumi.output_type
 class GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailResult(dict):
     def __init__(__self__, *,
-                 custom_environment_variables: Mapping[str, Any],
-                 notebook_session_git_config_details: Sequence['outputs.GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailResult']):
-        """
-        :param Mapping[str, Any] custom_environment_variables: Custom environment variables for Notebook Session. These key-value pairs will be available for customers in Notebook Sessions.
-        :param Sequence['GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArgs'] notebook_session_git_config_details: Git configuration Details.
-        """
-        pulumi.set(__self__, "custom_environment_variables", custom_environment_variables)
-        pulumi.set(__self__, "notebook_session_git_config_details", notebook_session_git_config_details)
+                 custom_environment_variables: Optional[Mapping[str, Any]] = None,
+                 notebook_session_git_config_details: Optional[Sequence['outputs.GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailResult']] = None):
+        if custom_environment_variables is not None:
+            pulumi.set(__self__, "custom_environment_variables", custom_environment_variables)
+        if notebook_session_git_config_details is not None:
+            pulumi.set(__self__, "notebook_session_git_config_details", notebook_session_git_config_details)
 
     @property
     @pulumi.getter(name="customEnvironmentVariables")
-    def custom_environment_variables(self) -> Mapping[str, Any]:
-        """
-        Custom environment variables for Notebook Session. These key-value pairs will be available for customers in Notebook Sessions.
-        """
+    def custom_environment_variables(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "custom_environment_variables")
 
     @property
     @pulumi.getter(name="notebookSessionGitConfigDetails")
-    def notebook_session_git_config_details(self) -> Sequence['outputs.GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailResult']:
-        """
-        Git configuration Details.
-        """
+    def notebook_session_git_config_details(self) -> Optional[Sequence['outputs.GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailResult']]:
         return pulumi.get(self, "notebook_session_git_config_details")
 
 
 @pulumi.output_type
 class GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailResult(dict):
     def __init__(__self__, *,
-                 notebook_session_git_repo_config_collections: Sequence['outputs.GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionResult']):
-        """
-        :param Sequence['GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArgs'] notebook_session_git_repo_config_collections: A collection of Git repository configurations.
-        """
-        pulumi.set(__self__, "notebook_session_git_repo_config_collections", notebook_session_git_repo_config_collections)
+                 notebook_session_git_repo_config_collections: Optional[Sequence['outputs.GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionResult']] = None):
+        if notebook_session_git_repo_config_collections is not None:
+            pulumi.set(__self__, "notebook_session_git_repo_config_collections", notebook_session_git_repo_config_collections)
 
     @property
     @pulumi.getter(name="notebookSessionGitRepoConfigCollections")
-    def notebook_session_git_repo_config_collections(self) -> Sequence['outputs.GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionResult']:
-        """
-        A collection of Git repository configurations.
-        """
+    def notebook_session_git_repo_config_collections(self) -> Optional[Sequence['outputs.GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionResult']]:
         return pulumi.get(self, "notebook_session_git_repo_config_collections")
 
 
 @pulumi.output_type
 class GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionResult(dict):
     def __init__(__self__, *,
-                 url: str):
-        """
-        :param str url: The repository URL
-        """
-        pulumi.set(__self__, "url", url)
+                 url: Optional[str] = None):
+        if url is not None:
+            pulumi.set(__self__, "url", url)
 
     @property
     @pulumi.getter
-    def url(self) -> str:
-        """
-        The repository URL
-        """
+    def url(self) -> Optional[str]:
         return pulumi.get(self, "url")
 
 
 @pulumi.output_type
 class GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfigurationDetailsListResult(dict):
     def __init__(__self__, *,
-                 bucket: str,
-                 destination_directory_name: str,
-                 destination_path: str,
-                 export_id: str,
-                 mount_target_id: str,
-                 namespace: str,
-                 prefix: str,
-                 storage_type: str):
-        """
-        :param str bucket: The object storage bucket
-        :param str destination_directory_name: The local directory name to be mounted
-        :param str destination_path: The local path of the mounted directory, excluding directory name.
-        :param str export_id: OCID of the export
-        :param str mount_target_id: OCID of the mount target
-        :param str namespace: The object storage namespace
-        :param str prefix: Prefix in the bucket to mount
-        :param str storage_type: The type of storage.
-        """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "destination_directory_name", destination_directory_name)
-        pulumi.set(__self__, "destination_path", destination_path)
-        pulumi.set(__self__, "export_id", export_id)
-        pulumi.set(__self__, "mount_target_id", mount_target_id)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "prefix", prefix)
-        pulumi.set(__self__, "storage_type", storage_type)
+                 bucket: Optional[str] = None,
+                 destination_directory_name: Optional[str] = None,
+                 destination_path: Optional[str] = None,
+                 export_id: Optional[str] = None,
+                 mount_target_id: Optional[str] = None,
+                 namespace: Optional[str] = None,
+                 prefix: Optional[str] = None,
+                 storage_type: Optional[str] = None):
+        if bucket is not None:
+            pulumi.set(__self__, "bucket", bucket)
+        if destination_directory_name is not None:
+            pulumi.set(__self__, "destination_directory_name", destination_directory_name)
+        if destination_path is not None:
+            pulumi.set(__self__, "destination_path", destination_path)
+        if export_id is not None:
+            pulumi.set(__self__, "export_id", export_id)
+        if mount_target_id is not None:
+            pulumi.set(__self__, "mount_target_id", mount_target_id)
+        if namespace is not None:
+            pulumi.set(__self__, "namespace", namespace)
+        if prefix is not None:
+            pulumi.set(__self__, "prefix", prefix)
+        if storage_type is not None:
+            pulumi.set(__self__, "storage_type", storage_type)
 
     @property
     @pulumi.getter
-    def bucket(self) -> str:
-        """
-        The object storage bucket
-        """
+    def bucket(self) -> Optional[str]:
         return pulumi.get(self, "bucket")
 
     @property
     @pulumi.getter(name="destinationDirectoryName")
-    def destination_directory_name(self) -> str:
-        """
-        The local directory name to be mounted
-        """
+    def destination_directory_name(self) -> Optional[str]:
         return pulumi.get(self, "destination_directory_name")
 
     @property
     @pulumi.getter(name="destinationPath")
-    def destination_path(self) -> str:
-        """
-        The local path of the mounted directory, excluding directory name.
-        """
+    def destination_path(self) -> Optional[str]:
         return pulumi.get(self, "destination_path")
 
     @property
     @pulumi.getter(name="exportId")
-    def export_id(self) -> str:
-        """
-        OCID of the export
-        """
+    def export_id(self) -> Optional[str]:
         return pulumi.get(self, "export_id")
 
     @property
     @pulumi.getter(name="mountTargetId")
-    def mount_target_id(self) -> str:
-        """
-        OCID of the mount target
-        """
+    def mount_target_id(self) -> Optional[str]:
         return pulumi.get(self, "mount_target_id")
 
     @property
     @pulumi.getter
-    def namespace(self) -> str:
-        """
-        The object storage namespace
-        """
+    def namespace(self) -> Optional[str]:
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter
-    def prefix(self) -> str:
-        """
-        Prefix in the bucket to mount
-        """
+    def prefix(self) -> Optional[str]:
         return pulumi.get(self, "prefix")
 
     @property
     @pulumi.getter(name="storageType")
-    def storage_type(self) -> str:
-        """
-        The type of storage.
-        """
+    def storage_type(self) -> Optional[str]:
         return pulumi.get(self, "storage_type")
 
 
 @pulumi.output_type
 class GetPipelineConfigurationDetailResult(dict):
     def __init__(__self__, *,
-                 command_line_arguments: str,
-                 environment_variables: Mapping[str, Any],
-                 maximum_runtime_in_minutes: str,
-                 type: str):
-        """
-        :param str command_line_arguments: The command line arguments to set for step.
-        :param Mapping[str, Any] environment_variables: Environment variables to set for step.
-        :param str maximum_runtime_in_minutes: A time bound for the execution of the step.
-        :param str type: The type of pipeline.
-        """
-        pulumi.set(__self__, "command_line_arguments", command_line_arguments)
-        pulumi.set(__self__, "environment_variables", environment_variables)
-        pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
-        pulumi.set(__self__, "type", type)
+                 command_line_arguments: Optional[str] = None,
+                 environment_variables: Optional[Mapping[str, Any]] = None,
+                 maximum_runtime_in_minutes: Optional[str] = None,
+                 type: Optional[str] = None):
+        if command_line_arguments is not None:
+            pulumi.set(__self__, "command_line_arguments", command_line_arguments)
+        if environment_variables is not None:
+            pulumi.set(__self__, "environment_variables", environment_variables)
+        if maximum_runtime_in_minutes is not None:
+            pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter(name="commandLineArguments")
-    def command_line_arguments(self) -> str:
-        """
-        The command line arguments to set for step.
-        """
+    def command_line_arguments(self) -> Optional[str]:
         return pulumi.get(self, "command_line_arguments")
 
     @property
     @pulumi.getter(name="environmentVariables")
-    def environment_variables(self) -> Mapping[str, Any]:
-        """
-        Environment variables to set for step.
-        """
+    def environment_variables(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "environment_variables")
 
     @property
     @pulumi.getter(name="maximumRuntimeInMinutes")
-    def maximum_runtime_in_minutes(self) -> str:
-        """
-        A time bound for the execution of the step.
-        """
+    def maximum_runtime_in_minutes(self) -> Optional[str]:
         return pulumi.get(self, "maximum_runtime_in_minutes")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        The type of pipeline.
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
 
 @pulumi.output_type
 class GetPipelineInfrastructureConfigurationDetailResult(dict):
     def __init__(__self__, *,
-                 block_storage_size_in_gbs: int,
-                 shape_config_details: Sequence['outputs.GetPipelineInfrastructureConfigurationDetailShapeConfigDetailResult'],
-                 shape_name: str):
-        """
-        :param int block_storage_size_in_gbs: The size of the block storage volume to attach to the instance.
-        :param Sequence['GetPipelineInfrastructureConfigurationDetailShapeConfigDetailArgs'] shape_config_details: Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
-        :param str shape_name: The shape used to launch the instance for all step runs in the pipeline.
-        """
-        pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
-        pulumi.set(__self__, "shape_config_details", shape_config_details)
-        pulumi.set(__self__, "shape_name", shape_name)
+                 block_storage_size_in_gbs: Optional[int] = None,
+                 shape_config_details: Optional[Sequence['outputs.GetPipelineInfrastructureConfigurationDetailShapeConfigDetailResult']] = None,
+                 shape_name: Optional[str] = None):
+        if block_storage_size_in_gbs is not None:
+            pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
+        if shape_config_details is not None:
+            pulumi.set(__self__, "shape_config_details", shape_config_details)
+        if shape_name is not None:
+            pulumi.set(__self__, "shape_name", shape_name)
 
     @property
     @pulumi.getter(name="blockStorageSizeInGbs")
-    def block_storage_size_in_gbs(self) -> int:
-        """
-        The size of the block storage volume to attach to the instance.
-        """
+    def block_storage_size_in_gbs(self) -> Optional[int]:
         return pulumi.get(self, "block_storage_size_in_gbs")
 
     @property
     @pulumi.getter(name="shapeConfigDetails")
-    def shape_config_details(self) -> Sequence['outputs.GetPipelineInfrastructureConfigurationDetailShapeConfigDetailResult']:
-        """
-        Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
-        """
+    def shape_config_details(self) -> Optional[Sequence['outputs.GetPipelineInfrastructureConfigurationDetailShapeConfigDetailResult']]:
         return pulumi.get(self, "shape_config_details")
 
     @property
     @pulumi.getter(name="shapeName")
-    def shape_name(self) -> str:
-        """
-        The shape used to launch the instance for all step runs in the pipeline.
-        """
+    def shape_name(self) -> Optional[str]:
         return pulumi.get(self, "shape_name")
 
 
 @pulumi.output_type
 class GetPipelineInfrastructureConfigurationDetailShapeConfigDetailResult(dict):
     def __init__(__self__, *,
-                 memory_in_gbs: float,
-                 ocpus: float):
-        """
-        :param float memory_in_gbs: A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
-        :param float ocpus: A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
-        """
-        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
-        pulumi.set(__self__, "ocpus", ocpus)
+                 memory_in_gbs: Optional[float] = None,
+                 ocpus: Optional[float] = None):
+        if memory_in_gbs is not None:
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        if ocpus is not None:
+            pulumi.set(__self__, "ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
-    def memory_in_gbs(self) -> float:
-        """
-        A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
-        """
+    def memory_in_gbs(self) -> Optional[float]:
         return pulumi.get(self, "memory_in_gbs")
 
     @property
     @pulumi.getter
-    def ocpus(self) -> float:
-        """
-        A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
-        """
+    def ocpus(self) -> Optional[float]:
         return pulumi.get(self, "ocpus")
 
 
 @pulumi.output_type
 class GetPipelineLogConfigurationDetailResult(dict):
     def __init__(__self__, *,
-                 enable_auto_log_creation: bool,
-                 enable_logging: bool,
-                 log_group_id: str,
-                 log_id: str):
-        """
-        :param bool enable_auto_log_creation: If automatic on-behalf-of log object creation is enabled for pipeline runs.
-        :param bool enable_logging: If customer logging is enabled for pipeline.
-        :param str log_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
-        :param str log_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
-        """
-        pulumi.set(__self__, "enable_auto_log_creation", enable_auto_log_creation)
-        pulumi.set(__self__, "enable_logging", enable_logging)
-        pulumi.set(__self__, "log_group_id", log_group_id)
-        pulumi.set(__self__, "log_id", log_id)
+                 enable_auto_log_creation: Optional[bool] = None,
+                 enable_logging: Optional[bool] = None,
+                 log_group_id: Optional[str] = None,
+                 log_id: Optional[str] = None):
+        if enable_auto_log_creation is not None:
+            pulumi.set(__self__, "enable_auto_log_creation", enable_auto_log_creation)
+        if enable_logging is not None:
+            pulumi.set(__self__, "enable_logging", enable_logging)
+        if log_group_id is not None:
+            pulumi.set(__self__, "log_group_id", log_group_id)
+        if log_id is not None:
+            pulumi.set(__self__, "log_id", log_id)
 
     @property
     @pulumi.getter(name="enableAutoLogCreation")
-    def enable_auto_log_creation(self) -> bool:
-        """
-        If automatic on-behalf-of log object creation is enabled for pipeline runs.
-        """
+    def enable_auto_log_creation(self) -> Optional[bool]:
         return pulumi.get(self, "enable_auto_log_creation")
 
     @property
     @pulumi.getter(name="enableLogging")
-    def enable_logging(self) -> bool:
-        """
-        If customer logging is enabled for pipeline.
-        """
+    def enable_logging(self) -> Optional[bool]:
         return pulumi.get(self, "enable_logging")
 
     @property
     @pulumi.getter(name="logGroupId")
-    def log_group_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
-        """
+    def log_group_id(self) -> Optional[str]:
         return pulumi.get(self, "log_group_id")
 
     @property
     @pulumi.getter(name="logId")
-    def log_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
-        """
+    def log_id(self) -> Optional[str]:
         return pulumi.get(self, "log_id")
 
 
 @pulumi.output_type
 class GetPipelineRunConfigurationDetailResult(dict):
     def __init__(__self__, *,
-                 command_line_arguments: str,
-                 environment_variables: Mapping[str, Any],
-                 maximum_runtime_in_minutes: str,
-                 type: str):
-        """
-        :param str command_line_arguments: The command line arguments to set for step.
-        :param Mapping[str, Any] environment_variables: Environment variables to set for step.
-        :param str maximum_runtime_in_minutes: A time bound for the execution of the step.
-        :param str type: The type of pipeline.
-        """
-        pulumi.set(__self__, "command_line_arguments", command_line_arguments)
-        pulumi.set(__self__, "environment_variables", environment_variables)
-        pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
-        pulumi.set(__self__, "type", type)
+                 command_line_arguments: Optional[str] = None,
+                 environment_variables: Optional[Mapping[str, Any]] = None,
+                 maximum_runtime_in_minutes: Optional[str] = None,
+                 type: Optional[str] = None):
+        if command_line_arguments is not None:
+            pulumi.set(__self__, "command_line_arguments", command_line_arguments)
+        if environment_variables is not None:
+            pulumi.set(__self__, "environment_variables", environment_variables)
+        if maximum_runtime_in_minutes is not None:
+            pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter(name="commandLineArguments")
-    def command_line_arguments(self) -> str:
-        """
-        The command line arguments to set for step.
-        """
+    def command_line_arguments(self) -> Optional[str]:
         return pulumi.get(self, "command_line_arguments")
 
     @property
     @pulumi.getter(name="environmentVariables")
-    def environment_variables(self) -> Mapping[str, Any]:
-        """
-        Environment variables to set for step.
-        """
+    def environment_variables(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "environment_variables")
 
     @property
     @pulumi.getter(name="maximumRuntimeInMinutes")
-    def maximum_runtime_in_minutes(self) -> str:
-        """
-        A time bound for the execution of the step.
-        """
+    def maximum_runtime_in_minutes(self) -> Optional[str]:
         return pulumi.get(self, "maximum_runtime_in_minutes")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        The type of pipeline.
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
 
 @pulumi.output_type
 class GetPipelineRunConfigurationOverrideDetailResult(dict):
     def __init__(__self__, *,
-                 command_line_arguments: str,
-                 environment_variables: Mapping[str, Any],
-                 maximum_runtime_in_minutes: str,
-                 type: str):
-        """
-        :param str command_line_arguments: The command line arguments to set for step.
-        :param Mapping[str, Any] environment_variables: Environment variables to set for step.
-        :param str maximum_runtime_in_minutes: A time bound for the execution of the step.
-        :param str type: The type of pipeline.
-        """
-        pulumi.set(__self__, "command_line_arguments", command_line_arguments)
-        pulumi.set(__self__, "environment_variables", environment_variables)
-        pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
-        pulumi.set(__self__, "type", type)
+                 command_line_arguments: Optional[str] = None,
+                 environment_variables: Optional[Mapping[str, Any]] = None,
+                 maximum_runtime_in_minutes: Optional[str] = None,
+                 type: Optional[str] = None):
+        if command_line_arguments is not None:
+            pulumi.set(__self__, "command_line_arguments", command_line_arguments)
+        if environment_variables is not None:
+            pulumi.set(__self__, "environment_variables", environment_variables)
+        if maximum_runtime_in_minutes is not None:
+            pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter(name="commandLineArguments")
-    def command_line_arguments(self) -> str:
-        """
-        The command line arguments to set for step.
-        """
+    def command_line_arguments(self) -> Optional[str]:
         return pulumi.get(self, "command_line_arguments")
 
     @property
     @pulumi.getter(name="environmentVariables")
-    def environment_variables(self) -> Mapping[str, Any]:
-        """
-        Environment variables to set for step.
-        """
+    def environment_variables(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "environment_variables")
 
     @property
     @pulumi.getter(name="maximumRuntimeInMinutes")
-    def maximum_runtime_in_minutes(self) -> str:
-        """
-        A time bound for the execution of the step.
-        """
+    def maximum_runtime_in_minutes(self) -> Optional[str]:
         return pulumi.get(self, "maximum_runtime_in_minutes")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        The type of pipeline.
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
 
 @pulumi.output_type
 class GetPipelineRunLogConfigurationOverrideDetailResult(dict):
     def __init__(__self__, *,
-                 enable_auto_log_creation: bool,
-                 enable_logging: bool,
-                 log_group_id: str,
-                 log_id: str):
-        """
-        :param bool enable_auto_log_creation: If automatic on-behalf-of log object creation is enabled for pipeline runs.
-        :param bool enable_logging: If customer logging is enabled for pipeline.
-        :param str log_group_id: The log group id for where log objects will be for pipeline runs.
-        :param str log_id: The log id of the log object the pipeline run logs will be shipped to.
-        """
-        pulumi.set(__self__, "enable_auto_log_creation", enable_auto_log_creation)
-        pulumi.set(__self__, "enable_logging", enable_logging)
-        pulumi.set(__self__, "log_group_id", log_group_id)
-        pulumi.set(__self__, "log_id", log_id)
+                 enable_auto_log_creation: Optional[bool] = None,
+                 enable_logging: Optional[bool] = None,
+                 log_group_id: Optional[str] = None,
+                 log_id: Optional[str] = None):
+        if enable_auto_log_creation is not None:
+            pulumi.set(__self__, "enable_auto_log_creation", enable_auto_log_creation)
+        if enable_logging is not None:
+            pulumi.set(__self__, "enable_logging", enable_logging)
+        if log_group_id is not None:
+            pulumi.set(__self__, "log_group_id", log_group_id)
+        if log_id is not None:
+            pulumi.set(__self__, "log_id", log_id)
 
     @property
     @pulumi.getter(name="enableAutoLogCreation")
-    def enable_auto_log_creation(self) -> bool:
-        """
-        If automatic on-behalf-of log object creation is enabled for pipeline runs.
-        """
+    def enable_auto_log_creation(self) -> Optional[bool]:
         return pulumi.get(self, "enable_auto_log_creation")
 
     @property
     @pulumi.getter(name="enableLogging")
-    def enable_logging(self) -> bool:
-        """
-        If customer logging is enabled for pipeline.
-        """
+    def enable_logging(self) -> Optional[bool]:
         return pulumi.get(self, "enable_logging")
 
     @property
     @pulumi.getter(name="logGroupId")
-    def log_group_id(self) -> str:
-        """
-        The log group id for where log objects will be for pipeline runs.
-        """
+    def log_group_id(self) -> Optional[str]:
         return pulumi.get(self, "log_group_id")
 
     @property
     @pulumi.getter(name="logId")
-    def log_id(self) -> str:
-        """
-        The log id of the log object the pipeline run logs will be shipped to.
-        """
+    def log_id(self) -> Optional[str]:
         return pulumi.get(self, "log_id")
 
 
 @pulumi.output_type
 class GetPipelineRunLogDetailResult(dict):
     def __init__(__self__, *,
-                 log_group_id: str,
-                 log_id: str):
-        """
-        :param str log_group_id: The log group id for where log objects will be for pipeline runs.
-        :param str log_id: The log id of the log object the pipeline run logs will be shipped to.
-        """
-        pulumi.set(__self__, "log_group_id", log_group_id)
-        pulumi.set(__self__, "log_id", log_id)
+                 log_group_id: Optional[str] = None,
+                 log_id: Optional[str] = None):
+        if log_group_id is not None:
+            pulumi.set(__self__, "log_group_id", log_group_id)
+        if log_id is not None:
+            pulumi.set(__self__, "log_id", log_id)
 
     @property
     @pulumi.getter(name="logGroupId")
-    def log_group_id(self) -> str:
-        """
-        The log group id for where log objects will be for pipeline runs.
-        """
+    def log_group_id(self) -> Optional[str]:
         return pulumi.get(self, "log_group_id")
 
     @property
     @pulumi.getter(name="logId")
-    def log_id(self) -> str:
-        """
-        The log id of the log object the pipeline run logs will be shipped to.
-        """
+    def log_id(self) -> Optional[str]:
         return pulumi.get(self, "log_id")
 
 
 @pulumi.output_type
 class GetPipelineRunStepOverrideDetailResult(dict):
     def __init__(__self__, *,
-                 step_configuration_details: Sequence['outputs.GetPipelineRunStepOverrideDetailStepConfigurationDetailResult'],
-                 step_name: str):
-        """
-        :param Sequence['GetPipelineRunStepOverrideDetailStepConfigurationDetailArgs'] step_configuration_details: The configuration details of a step.
-        :param str step_name: The name of the step.
-        """
-        pulumi.set(__self__, "step_configuration_details", step_configuration_details)
-        pulumi.set(__self__, "step_name", step_name)
+                 step_configuration_details: Optional[Sequence['outputs.GetPipelineRunStepOverrideDetailStepConfigurationDetailResult']] = None,
+                 step_name: Optional[str] = None):
+        if step_configuration_details is not None:
+            pulumi.set(__self__, "step_configuration_details", step_configuration_details)
+        if step_name is not None:
+            pulumi.set(__self__, "step_name", step_name)
 
     @property
     @pulumi.getter(name="stepConfigurationDetails")
-    def step_configuration_details(self) -> Sequence['outputs.GetPipelineRunStepOverrideDetailStepConfigurationDetailResult']:
-        """
-        The configuration details of a step.
-        """
+    def step_configuration_details(self) -> Optional[Sequence['outputs.GetPipelineRunStepOverrideDetailStepConfigurationDetailResult']]:
         return pulumi.get(self, "step_configuration_details")
 
     @property
     @pulumi.getter(name="stepName")
-    def step_name(self) -> str:
-        """
-        The name of the step.
-        """
+    def step_name(self) -> Optional[str]:
         return pulumi.get(self, "step_name")
 
 
 @pulumi.output_type
 class GetPipelineRunStepOverrideDetailStepConfigurationDetailResult(dict):
     def __init__(__self__, *,
-                 command_line_arguments: str,
-                 environment_variables: Mapping[str, Any],
-                 maximum_runtime_in_minutes: str):
-        """
-        :param str command_line_arguments: The command line arguments to set for step.
-        :param Mapping[str, Any] environment_variables: Environment variables to set for step.
-        :param str maximum_runtime_in_minutes: A time bound for the execution of the step.
-        """
-        pulumi.set(__self__, "command_line_arguments", command_line_arguments)
-        pulumi.set(__self__, "environment_variables", environment_variables)
-        pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+                 command_line_arguments: Optional[str] = None,
+                 environment_variables: Optional[Mapping[str, Any]] = None,
+                 maximum_runtime_in_minutes: Optional[str] = None):
+        if command_line_arguments is not None:
+            pulumi.set(__self__, "command_line_arguments", command_line_arguments)
+        if environment_variables is not None:
+            pulumi.set(__self__, "environment_variables", environment_variables)
+        if maximum_runtime_in_minutes is not None:
+            pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
 
     @property
     @pulumi.getter(name="commandLineArguments")
-    def command_line_arguments(self) -> str:
-        """
-        The command line arguments to set for step.
-        """
+    def command_line_arguments(self) -> Optional[str]:
         return pulumi.get(self, "command_line_arguments")
 
     @property
     @pulumi.getter(name="environmentVariables")
-    def environment_variables(self) -> Mapping[str, Any]:
-        """
-        Environment variables to set for step.
-        """
+    def environment_variables(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "environment_variables")
 
     @property
     @pulumi.getter(name="maximumRuntimeInMinutes")
-    def maximum_runtime_in_minutes(self) -> str:
-        """
-        A time bound for the execution of the step.
-        """
+    def maximum_runtime_in_minutes(self) -> Optional[str]:
         return pulumi.get(self, "maximum_runtime_in_minutes")
 
 
 @pulumi.output_type
 class GetPipelineRunStepRunResult(dict):
     def __init__(__self__, *,
-                 job_run_id: str,
-                 lifecycle_details: str,
-                 state: str,
-                 step_name: str,
-                 step_type: str,
-                 time_finished: str,
-                 time_started: str):
-        """
-        :param str job_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job run triggered for this step run.
-        :param str lifecycle_details: Details of the state of the step run.
-        :param str state: The state of the step run.
-        :param str step_name: The name of the step.
-        :param str step_type: The type of step.
-        :param str time_finished: The date and time the pipeline run request was finished in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        :param str time_started: The date and time the pipeline run request was started in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
-        pulumi.set(__self__, "job_run_id", job_run_id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "step_name", step_name)
-        pulumi.set(__self__, "step_type", step_type)
-        pulumi.set(__self__, "time_finished", time_finished)
-        pulumi.set(__self__, "time_started", time_started)
+                 job_run_id: Optional[str] = None,
+                 lifecycle_details: Optional[str] = None,
+                 state: Optional[str] = None,
+                 step_name: Optional[str] = None,
+                 step_type: Optional[str] = None,
+                 time_finished: Optional[str] = None,
+                 time_started: Optional[str] = None):
+        if job_run_id is not None:
+            pulumi.set(__self__, "job_run_id", job_run_id)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if step_name is not None:
+            pulumi.set(__self__, "step_name", step_name)
+        if step_type is not None:
+            pulumi.set(__self__, "step_type", step_type)
+        if time_finished is not None:
+            pulumi.set(__self__, "time_finished", time_finished)
+        if time_started is not None:
+            pulumi.set(__self__, "time_started", time_started)
 
     @property
     @pulumi.getter(name="jobRunId")
-    def job_run_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job run triggered for this step run.
-        """
+    def job_run_id(self) -> Optional[str]:
         return pulumi.get(self, "job_run_id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        Details of the state of the step run.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The state of the step run.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="stepName")
-    def step_name(self) -> str:
-        """
-        The name of the step.
-        """
+    def step_name(self) -> Optional[str]:
         return pulumi.get(self, "step_name")
 
     @property
     @pulumi.getter(name="stepType")
-    def step_type(self) -> str:
-        """
-        The type of step.
-        """
+    def step_type(self) -> Optional[str]:
         return pulumi.get(self, "step_type")
 
     @property
     @pulumi.getter(name="timeFinished")
-    def time_finished(self) -> str:
-        """
-        The date and time the pipeline run request was finished in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
+    def time_finished(self) -> Optional[str]:
         return pulumi.get(self, "time_finished")
 
     @property
     @pulumi.getter(name="timeStarted")
-    def time_started(self) -> str:
-        """
-        The date and time the pipeline run request was started in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
+    def time_started(self) -> Optional[str]:
         return pulumi.get(self, "time_started")
 
 
@@ -8444,837 +6340,625 @@ class GetPipelineRunsFilterResult(dict):
 @pulumi.output_type
 class GetPipelineRunsPipelineRunResult(dict):
     def __init__(__self__, *,
-                 compartment_id: str,
-                 configuration_details: Sequence['outputs.GetPipelineRunsPipelineRunConfigurationDetailResult'],
-                 configuration_override_details: Sequence['outputs.GetPipelineRunsPipelineRunConfigurationOverrideDetailResult'],
-                 created_by: str,
-                 defined_tags: Mapping[str, Any],
-                 delete_related_job_runs: bool,
-                 display_name: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 lifecycle_details: str,
-                 log_configuration_override_details: Sequence['outputs.GetPipelineRunsPipelineRunLogConfigurationOverrideDetailResult'],
-                 log_details: Sequence['outputs.GetPipelineRunsPipelineRunLogDetailResult'],
-                 pipeline_id: str,
-                 project_id: str,
-                 state: str,
-                 step_override_details: Sequence['outputs.GetPipelineRunsPipelineRunStepOverrideDetailResult'],
-                 step_runs: Sequence['outputs.GetPipelineRunsPipelineRunStepRunResult'],
-                 system_tags: Mapping[str, Any],
-                 time_accepted: str,
-                 time_finished: str,
-                 time_started: str,
-                 time_updated: str):
-        """
-        :param str compartment_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param Sequence['GetPipelineRunsPipelineRunConfigurationDetailArgs'] configuration_details: The configuration details of a pipeline.
-        :param Sequence['GetPipelineRunsPipelineRunConfigurationOverrideDetailArgs'] configuration_override_details: The configuration details of a pipeline.
-        :param str created_by: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param str display_name: <b>Filter</b> results by its user-friendly name.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param str id: <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
-        :param str lifecycle_details: Details of the state of the step run.
-        :param Sequence['GetPipelineRunsPipelineRunLogConfigurationOverrideDetailArgs'] log_configuration_override_details: The pipeline log configuration details.
-        :param Sequence['GetPipelineRunsPipelineRunLogDetailArgs'] log_details: Customer logging details for pipeline run.
-        :param str pipeline_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline.
-        :param str project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline run with.
-        :param str state: The current state of the PipelineRun.
-        :param Sequence['GetPipelineRunsPipelineRunStepOverrideDetailArgs'] step_override_details: Array of step override details. Only Step Configuration is allowed to be overridden.
-        :param Sequence['GetPipelineRunsPipelineRunStepRunArgs'] step_runs: Array of StepRun object for each step.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param str time_accepted: The date and time the pipeline run was accepted in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        :param str time_finished: The date and time the pipeline run request was finished in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        :param str time_started: The date and time the pipeline run request was started in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        :param str time_updated: The date and time the pipeline run was updated in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "configuration_details", configuration_details)
-        pulumi.set(__self__, "configuration_override_details", configuration_override_details)
-        pulumi.set(__self__, "created_by", created_by)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "delete_related_job_runs", delete_related_job_runs)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "log_configuration_override_details", log_configuration_override_details)
-        pulumi.set(__self__, "log_details", log_details)
-        pulumi.set(__self__, "pipeline_id", pipeline_id)
-        pulumi.set(__self__, "project_id", project_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "step_override_details", step_override_details)
-        pulumi.set(__self__, "step_runs", step_runs)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_accepted", time_accepted)
-        pulumi.set(__self__, "time_finished", time_finished)
-        pulumi.set(__self__, "time_started", time_started)
-        pulumi.set(__self__, "time_updated", time_updated)
+                 compartment_id: Optional[str] = None,
+                 configuration_details: Optional[Sequence['outputs.GetPipelineRunsPipelineRunConfigurationDetailResult']] = None,
+                 configuration_override_details: Optional[Sequence['outputs.GetPipelineRunsPipelineRunConfigurationOverrideDetailResult']] = None,
+                 created_by: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 delete_related_job_runs: Optional[bool] = None,
+                 display_name: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 lifecycle_details: Optional[str] = None,
+                 log_configuration_override_details: Optional[Sequence['outputs.GetPipelineRunsPipelineRunLogConfigurationOverrideDetailResult']] = None,
+                 log_details: Optional[Sequence['outputs.GetPipelineRunsPipelineRunLogDetailResult']] = None,
+                 pipeline_id: Optional[str] = None,
+                 project_id: Optional[str] = None,
+                 state: Optional[str] = None,
+                 step_override_details: Optional[Sequence['outputs.GetPipelineRunsPipelineRunStepOverrideDetailResult']] = None,
+                 step_runs: Optional[Sequence['outputs.GetPipelineRunsPipelineRunStepRunResult']] = None,
+                 system_tags: Optional[Mapping[str, Any]] = None,
+                 time_accepted: Optional[str] = None,
+                 time_finished: Optional[str] = None,
+                 time_started: Optional[str] = None,
+                 time_updated: Optional[str] = None):
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if configuration_details is not None:
+            pulumi.set(__self__, "configuration_details", configuration_details)
+        if configuration_override_details is not None:
+            pulumi.set(__self__, "configuration_override_details", configuration_override_details)
+        if created_by is not None:
+            pulumi.set(__self__, "created_by", created_by)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if delete_related_job_runs is not None:
+            pulumi.set(__self__, "delete_related_job_runs", delete_related_job_runs)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if log_configuration_override_details is not None:
+            pulumi.set(__self__, "log_configuration_override_details", log_configuration_override_details)
+        if log_details is not None:
+            pulumi.set(__self__, "log_details", log_details)
+        if pipeline_id is not None:
+            pulumi.set(__self__, "pipeline_id", pipeline_id)
+        if project_id is not None:
+            pulumi.set(__self__, "project_id", project_id)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if step_override_details is not None:
+            pulumi.set(__self__, "step_override_details", step_override_details)
+        if step_runs is not None:
+            pulumi.set(__self__, "step_runs", step_runs)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
+        if time_accepted is not None:
+            pulumi.set(__self__, "time_accepted", time_accepted)
+        if time_finished is not None:
+            pulumi.set(__self__, "time_finished", time_finished)
+        if time_started is not None:
+            pulumi.set(__self__, "time_started", time_started)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="configurationDetails")
-    def configuration_details(self) -> Sequence['outputs.GetPipelineRunsPipelineRunConfigurationDetailResult']:
-        """
-        The configuration details of a pipeline.
-        """
+    def configuration_details(self) -> Optional[Sequence['outputs.GetPipelineRunsPipelineRunConfigurationDetailResult']]:
         return pulumi.get(self, "configuration_details")
 
     @property
     @pulumi.getter(name="configurationOverrideDetails")
-    def configuration_override_details(self) -> Sequence['outputs.GetPipelineRunsPipelineRunConfigurationOverrideDetailResult']:
-        """
-        The configuration details of a pipeline.
-        """
+    def configuration_override_details(self) -> Optional[Sequence['outputs.GetPipelineRunsPipelineRunConfigurationOverrideDetailResult']]:
         return pulumi.get(self, "configuration_override_details")
 
     @property
     @pulumi.getter(name="createdBy")
-    def created_by(self) -> str:
-        """
-        <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
-        """
+    def created_by(self) -> Optional[str]:
         return pulumi.get(self, "created_by")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="deleteRelatedJobRuns")
-    def delete_related_job_runs(self) -> bool:
+    def delete_related_job_runs(self) -> Optional[bool]:
         return pulumi.get(self, "delete_related_job_runs")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        <b>Filter</b> results by its user-friendly name.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        Details of the state of the step run.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="logConfigurationOverrideDetails")
-    def log_configuration_override_details(self) -> Sequence['outputs.GetPipelineRunsPipelineRunLogConfigurationOverrideDetailResult']:
-        """
-        The pipeline log configuration details.
-        """
+    def log_configuration_override_details(self) -> Optional[Sequence['outputs.GetPipelineRunsPipelineRunLogConfigurationOverrideDetailResult']]:
         return pulumi.get(self, "log_configuration_override_details")
 
     @property
     @pulumi.getter(name="logDetails")
-    def log_details(self) -> Sequence['outputs.GetPipelineRunsPipelineRunLogDetailResult']:
-        """
-        Customer logging details for pipeline run.
-        """
+    def log_details(self) -> Optional[Sequence['outputs.GetPipelineRunsPipelineRunLogDetailResult']]:
         return pulumi.get(self, "log_details")
 
     @property
     @pulumi.getter(name="pipelineId")
-    def pipeline_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline.
-        """
+    def pipeline_id(self) -> Optional[str]:
         return pulumi.get(self, "pipeline_id")
 
     @property
     @pulumi.getter(name="projectId")
-    def project_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline run with.
-        """
+    def project_id(self) -> Optional[str]:
         return pulumi.get(self, "project_id")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the PipelineRun.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="stepOverrideDetails")
-    def step_override_details(self) -> Sequence['outputs.GetPipelineRunsPipelineRunStepOverrideDetailResult']:
-        """
-        Array of step override details. Only Step Configuration is allowed to be overridden.
-        """
+    def step_override_details(self) -> Optional[Sequence['outputs.GetPipelineRunsPipelineRunStepOverrideDetailResult']]:
         return pulumi.get(self, "step_override_details")
 
     @property
     @pulumi.getter(name="stepRuns")
-    def step_runs(self) -> Sequence['outputs.GetPipelineRunsPipelineRunStepRunResult']:
-        """
-        Array of StepRun object for each step.
-        """
+    def step_runs(self) -> Optional[Sequence['outputs.GetPipelineRunsPipelineRunStepRunResult']]:
         return pulumi.get(self, "step_runs")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeAccepted")
-    def time_accepted(self) -> str:
-        """
-        The date and time the pipeline run was accepted in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
+    def time_accepted(self) -> Optional[str]:
         return pulumi.get(self, "time_accepted")
 
     @property
     @pulumi.getter(name="timeFinished")
-    def time_finished(self) -> str:
-        """
-        The date and time the pipeline run request was finished in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
+    def time_finished(self) -> Optional[str]:
         return pulumi.get(self, "time_finished")
 
     @property
     @pulumi.getter(name="timeStarted")
-    def time_started(self) -> str:
-        """
-        The date and time the pipeline run request was started in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
+    def time_started(self) -> Optional[str]:
         return pulumi.get(self, "time_started")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time the pipeline run was updated in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
 @pulumi.output_type
 class GetPipelineRunsPipelineRunConfigurationDetailResult(dict):
     def __init__(__self__, *,
-                 command_line_arguments: str,
-                 environment_variables: Mapping[str, Any],
-                 maximum_runtime_in_minutes: str,
-                 type: str):
-        """
-        :param str command_line_arguments: The command line arguments to set for step.
-        :param Mapping[str, Any] environment_variables: Environment variables to set for step.
-        :param str maximum_runtime_in_minutes: A time bound for the execution of the step.
-        :param str type: The type of pipeline.
-        """
-        pulumi.set(__self__, "command_line_arguments", command_line_arguments)
-        pulumi.set(__self__, "environment_variables", environment_variables)
-        pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
-        pulumi.set(__self__, "type", type)
+                 command_line_arguments: Optional[str] = None,
+                 environment_variables: Optional[Mapping[str, Any]] = None,
+                 maximum_runtime_in_minutes: Optional[str] = None,
+                 type: Optional[str] = None):
+        if command_line_arguments is not None:
+            pulumi.set(__self__, "command_line_arguments", command_line_arguments)
+        if environment_variables is not None:
+            pulumi.set(__self__, "environment_variables", environment_variables)
+        if maximum_runtime_in_minutes is not None:
+            pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter(name="commandLineArguments")
-    def command_line_arguments(self) -> str:
-        """
-        The command line arguments to set for step.
-        """
+    def command_line_arguments(self) -> Optional[str]:
         return pulumi.get(self, "command_line_arguments")
 
     @property
     @pulumi.getter(name="environmentVariables")
-    def environment_variables(self) -> Mapping[str, Any]:
-        """
-        Environment variables to set for step.
-        """
+    def environment_variables(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "environment_variables")
 
     @property
     @pulumi.getter(name="maximumRuntimeInMinutes")
-    def maximum_runtime_in_minutes(self) -> str:
-        """
-        A time bound for the execution of the step.
-        """
+    def maximum_runtime_in_minutes(self) -> Optional[str]:
         return pulumi.get(self, "maximum_runtime_in_minutes")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        The type of pipeline.
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
 
 @pulumi.output_type
 class GetPipelineRunsPipelineRunConfigurationOverrideDetailResult(dict):
     def __init__(__self__, *,
-                 command_line_arguments: str,
-                 environment_variables: Mapping[str, Any],
-                 maximum_runtime_in_minutes: str,
-                 type: str):
-        """
-        :param str command_line_arguments: The command line arguments to set for step.
-        :param Mapping[str, Any] environment_variables: Environment variables to set for step.
-        :param str maximum_runtime_in_minutes: A time bound for the execution of the step.
-        :param str type: The type of pipeline.
-        """
-        pulumi.set(__self__, "command_line_arguments", command_line_arguments)
-        pulumi.set(__self__, "environment_variables", environment_variables)
-        pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
-        pulumi.set(__self__, "type", type)
+                 command_line_arguments: Optional[str] = None,
+                 environment_variables: Optional[Mapping[str, Any]] = None,
+                 maximum_runtime_in_minutes: Optional[str] = None,
+                 type: Optional[str] = None):
+        if command_line_arguments is not None:
+            pulumi.set(__self__, "command_line_arguments", command_line_arguments)
+        if environment_variables is not None:
+            pulumi.set(__self__, "environment_variables", environment_variables)
+        if maximum_runtime_in_minutes is not None:
+            pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter(name="commandLineArguments")
-    def command_line_arguments(self) -> str:
-        """
-        The command line arguments to set for step.
-        """
+    def command_line_arguments(self) -> Optional[str]:
         return pulumi.get(self, "command_line_arguments")
 
     @property
     @pulumi.getter(name="environmentVariables")
-    def environment_variables(self) -> Mapping[str, Any]:
-        """
-        Environment variables to set for step.
-        """
+    def environment_variables(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "environment_variables")
 
     @property
     @pulumi.getter(name="maximumRuntimeInMinutes")
-    def maximum_runtime_in_minutes(self) -> str:
-        """
-        A time bound for the execution of the step.
-        """
+    def maximum_runtime_in_minutes(self) -> Optional[str]:
         return pulumi.get(self, "maximum_runtime_in_minutes")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        The type of pipeline.
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
 
 @pulumi.output_type
 class GetPipelineRunsPipelineRunLogConfigurationOverrideDetailResult(dict):
     def __init__(__self__, *,
-                 enable_auto_log_creation: bool,
-                 enable_logging: bool,
-                 log_group_id: str,
-                 log_id: str):
-        """
-        :param bool enable_auto_log_creation: If automatic on-behalf-of log object creation is enabled for pipeline runs.
-        :param bool enable_logging: If customer logging is enabled for pipeline.
-        :param str log_group_id: The log group id for where log objects will be for pipeline runs.
-        :param str log_id: The log id of the log object the pipeline run logs will be shipped to.
-        """
-        pulumi.set(__self__, "enable_auto_log_creation", enable_auto_log_creation)
-        pulumi.set(__self__, "enable_logging", enable_logging)
-        pulumi.set(__self__, "log_group_id", log_group_id)
-        pulumi.set(__self__, "log_id", log_id)
+                 enable_auto_log_creation: Optional[bool] = None,
+                 enable_logging: Optional[bool] = None,
+                 log_group_id: Optional[str] = None,
+                 log_id: Optional[str] = None):
+        if enable_auto_log_creation is not None:
+            pulumi.set(__self__, "enable_auto_log_creation", enable_auto_log_creation)
+        if enable_logging is not None:
+            pulumi.set(__self__, "enable_logging", enable_logging)
+        if log_group_id is not None:
+            pulumi.set(__self__, "log_group_id", log_group_id)
+        if log_id is not None:
+            pulumi.set(__self__, "log_id", log_id)
 
     @property
     @pulumi.getter(name="enableAutoLogCreation")
-    def enable_auto_log_creation(self) -> bool:
-        """
-        If automatic on-behalf-of log object creation is enabled for pipeline runs.
-        """
+    def enable_auto_log_creation(self) -> Optional[bool]:
         return pulumi.get(self, "enable_auto_log_creation")
 
     @property
     @pulumi.getter(name="enableLogging")
-    def enable_logging(self) -> bool:
-        """
-        If customer logging is enabled for pipeline.
-        """
+    def enable_logging(self) -> Optional[bool]:
         return pulumi.get(self, "enable_logging")
 
     @property
     @pulumi.getter(name="logGroupId")
-    def log_group_id(self) -> str:
-        """
-        The log group id for where log objects will be for pipeline runs.
-        """
+    def log_group_id(self) -> Optional[str]:
         return pulumi.get(self, "log_group_id")
 
     @property
     @pulumi.getter(name="logId")
-    def log_id(self) -> str:
-        """
-        The log id of the log object the pipeline run logs will be shipped to.
-        """
+    def log_id(self) -> Optional[str]:
         return pulumi.get(self, "log_id")
 
 
 @pulumi.output_type
 class GetPipelineRunsPipelineRunLogDetailResult(dict):
     def __init__(__self__, *,
-                 log_group_id: str,
-                 log_id: str):
-        """
-        :param str log_group_id: The log group id for where log objects will be for pipeline runs.
-        :param str log_id: The log id of the log object the pipeline run logs will be shipped to.
-        """
-        pulumi.set(__self__, "log_group_id", log_group_id)
-        pulumi.set(__self__, "log_id", log_id)
+                 log_group_id: Optional[str] = None,
+                 log_id: Optional[str] = None):
+        if log_group_id is not None:
+            pulumi.set(__self__, "log_group_id", log_group_id)
+        if log_id is not None:
+            pulumi.set(__self__, "log_id", log_id)
 
     @property
     @pulumi.getter(name="logGroupId")
-    def log_group_id(self) -> str:
-        """
-        The log group id for where log objects will be for pipeline runs.
-        """
+    def log_group_id(self) -> Optional[str]:
         return pulumi.get(self, "log_group_id")
 
     @property
     @pulumi.getter(name="logId")
-    def log_id(self) -> str:
-        """
-        The log id of the log object the pipeline run logs will be shipped to.
-        """
+    def log_id(self) -> Optional[str]:
         return pulumi.get(self, "log_id")
 
 
 @pulumi.output_type
 class GetPipelineRunsPipelineRunStepOverrideDetailResult(dict):
     def __init__(__self__, *,
-                 step_configuration_details: Sequence['outputs.GetPipelineRunsPipelineRunStepOverrideDetailStepConfigurationDetailResult'],
-                 step_name: str):
-        """
-        :param Sequence['GetPipelineRunsPipelineRunStepOverrideDetailStepConfigurationDetailArgs'] step_configuration_details: The configuration details of a step.
-        :param str step_name: The name of the step.
-        """
-        pulumi.set(__self__, "step_configuration_details", step_configuration_details)
-        pulumi.set(__self__, "step_name", step_name)
+                 step_configuration_details: Optional[Sequence['outputs.GetPipelineRunsPipelineRunStepOverrideDetailStepConfigurationDetailResult']] = None,
+                 step_name: Optional[str] = None):
+        if step_configuration_details is not None:
+            pulumi.set(__self__, "step_configuration_details", step_configuration_details)
+        if step_name is not None:
+            pulumi.set(__self__, "step_name", step_name)
 
     @property
     @pulumi.getter(name="stepConfigurationDetails")
-    def step_configuration_details(self) -> Sequence['outputs.GetPipelineRunsPipelineRunStepOverrideDetailStepConfigurationDetailResult']:
-        """
-        The configuration details of a step.
-        """
+    def step_configuration_details(self) -> Optional[Sequence['outputs.GetPipelineRunsPipelineRunStepOverrideDetailStepConfigurationDetailResult']]:
         return pulumi.get(self, "step_configuration_details")
 
     @property
     @pulumi.getter(name="stepName")
-    def step_name(self) -> str:
-        """
-        The name of the step.
-        """
+    def step_name(self) -> Optional[str]:
         return pulumi.get(self, "step_name")
 
 
 @pulumi.output_type
 class GetPipelineRunsPipelineRunStepOverrideDetailStepConfigurationDetailResult(dict):
     def __init__(__self__, *,
-                 command_line_arguments: str,
-                 environment_variables: Mapping[str, Any],
-                 maximum_runtime_in_minutes: str):
-        """
-        :param str command_line_arguments: The command line arguments to set for step.
-        :param Mapping[str, Any] environment_variables: Environment variables to set for step.
-        :param str maximum_runtime_in_minutes: A time bound for the execution of the step.
-        """
-        pulumi.set(__self__, "command_line_arguments", command_line_arguments)
-        pulumi.set(__self__, "environment_variables", environment_variables)
-        pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+                 command_line_arguments: Optional[str] = None,
+                 environment_variables: Optional[Mapping[str, Any]] = None,
+                 maximum_runtime_in_minutes: Optional[str] = None):
+        if command_line_arguments is not None:
+            pulumi.set(__self__, "command_line_arguments", command_line_arguments)
+        if environment_variables is not None:
+            pulumi.set(__self__, "environment_variables", environment_variables)
+        if maximum_runtime_in_minutes is not None:
+            pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
 
     @property
     @pulumi.getter(name="commandLineArguments")
-    def command_line_arguments(self) -> str:
-        """
-        The command line arguments to set for step.
-        """
+    def command_line_arguments(self) -> Optional[str]:
         return pulumi.get(self, "command_line_arguments")
 
     @property
     @pulumi.getter(name="environmentVariables")
-    def environment_variables(self) -> Mapping[str, Any]:
-        """
-        Environment variables to set for step.
-        """
+    def environment_variables(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "environment_variables")
 
     @property
     @pulumi.getter(name="maximumRuntimeInMinutes")
-    def maximum_runtime_in_minutes(self) -> str:
-        """
-        A time bound for the execution of the step.
-        """
+    def maximum_runtime_in_minutes(self) -> Optional[str]:
         return pulumi.get(self, "maximum_runtime_in_minutes")
 
 
 @pulumi.output_type
 class GetPipelineRunsPipelineRunStepRunResult(dict):
     def __init__(__self__, *,
-                 job_run_id: str,
-                 lifecycle_details: str,
-                 state: str,
-                 step_name: str,
-                 step_type: str,
-                 time_finished: str,
-                 time_started: str):
-        """
-        :param str job_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job run triggered for this step run.
-        :param str lifecycle_details: Details of the state of the step run.
-        :param str state: The current state of the PipelineRun.
-        :param str step_name: The name of the step.
-        :param str step_type: The type of step.
-        :param str time_finished: The date and time the pipeline run request was finished in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        :param str time_started: The date and time the pipeline run request was started in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
-        pulumi.set(__self__, "job_run_id", job_run_id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "step_name", step_name)
-        pulumi.set(__self__, "step_type", step_type)
-        pulumi.set(__self__, "time_finished", time_finished)
-        pulumi.set(__self__, "time_started", time_started)
+                 job_run_id: Optional[str] = None,
+                 lifecycle_details: Optional[str] = None,
+                 state: Optional[str] = None,
+                 step_name: Optional[str] = None,
+                 step_type: Optional[str] = None,
+                 time_finished: Optional[str] = None,
+                 time_started: Optional[str] = None):
+        if job_run_id is not None:
+            pulumi.set(__self__, "job_run_id", job_run_id)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if step_name is not None:
+            pulumi.set(__self__, "step_name", step_name)
+        if step_type is not None:
+            pulumi.set(__self__, "step_type", step_type)
+        if time_finished is not None:
+            pulumi.set(__self__, "time_finished", time_finished)
+        if time_started is not None:
+            pulumi.set(__self__, "time_started", time_started)
 
     @property
     @pulumi.getter(name="jobRunId")
-    def job_run_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job run triggered for this step run.
-        """
+    def job_run_id(self) -> Optional[str]:
         return pulumi.get(self, "job_run_id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        Details of the state of the step run.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the PipelineRun.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="stepName")
-    def step_name(self) -> str:
-        """
-        The name of the step.
-        """
+    def step_name(self) -> Optional[str]:
         return pulumi.get(self, "step_name")
 
     @property
     @pulumi.getter(name="stepType")
-    def step_type(self) -> str:
-        """
-        The type of step.
-        """
+    def step_type(self) -> Optional[str]:
         return pulumi.get(self, "step_type")
 
     @property
     @pulumi.getter(name="timeFinished")
-    def time_finished(self) -> str:
-        """
-        The date and time the pipeline run request was finished in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
+    def time_finished(self) -> Optional[str]:
         return pulumi.get(self, "time_finished")
 
     @property
     @pulumi.getter(name="timeStarted")
-    def time_started(self) -> str:
-        """
-        The date and time the pipeline run request was started in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        """
+    def time_started(self) -> Optional[str]:
         return pulumi.get(self, "time_started")
 
 
 @pulumi.output_type
 class GetPipelineStepArtifactResult(dict):
     def __init__(__self__, *,
-                 artifact_content_disposition: str,
-                 artifact_content_length: str,
-                 artifact_content_md5: str,
-                 artifact_last_modified: str,
-                 pipeline_step_artifact: str,
-                 step_name: str):
-        """
-        :param str step_name: The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
-        """
-        pulumi.set(__self__, "artifact_content_disposition", artifact_content_disposition)
-        pulumi.set(__self__, "artifact_content_length", artifact_content_length)
-        pulumi.set(__self__, "artifact_content_md5", artifact_content_md5)
-        pulumi.set(__self__, "artifact_last_modified", artifact_last_modified)
-        pulumi.set(__self__, "pipeline_step_artifact", pipeline_step_artifact)
-        pulumi.set(__self__, "step_name", step_name)
+                 artifact_content_disposition: Optional[str] = None,
+                 artifact_content_length: Optional[str] = None,
+                 artifact_content_md5: Optional[str] = None,
+                 artifact_last_modified: Optional[str] = None,
+                 pipeline_step_artifact: Optional[str] = None,
+                 step_name: Optional[str] = None):
+        if artifact_content_disposition is not None:
+            pulumi.set(__self__, "artifact_content_disposition", artifact_content_disposition)
+        if artifact_content_length is not None:
+            pulumi.set(__self__, "artifact_content_length", artifact_content_length)
+        if artifact_content_md5 is not None:
+            pulumi.set(__self__, "artifact_content_md5", artifact_content_md5)
+        if artifact_last_modified is not None:
+            pulumi.set(__self__, "artifact_last_modified", artifact_last_modified)
+        if pipeline_step_artifact is not None:
+            pulumi.set(__self__, "pipeline_step_artifact", pipeline_step_artifact)
+        if step_name is not None:
+            pulumi.set(__self__, "step_name", step_name)
 
     @property
     @pulumi.getter(name="artifactContentDisposition")
-    def artifact_content_disposition(self) -> str:
+    def artifact_content_disposition(self) -> Optional[str]:
         return pulumi.get(self, "artifact_content_disposition")
 
     @property
     @pulumi.getter(name="artifactContentLength")
-    def artifact_content_length(self) -> str:
+    def artifact_content_length(self) -> Optional[str]:
         return pulumi.get(self, "artifact_content_length")
 
     @property
     @pulumi.getter(name="artifactContentMd5")
-    def artifact_content_md5(self) -> str:
+    def artifact_content_md5(self) -> Optional[str]:
         return pulumi.get(self, "artifact_content_md5")
 
     @property
     @pulumi.getter(name="artifactLastModified")
-    def artifact_last_modified(self) -> str:
+    def artifact_last_modified(self) -> Optional[str]:
         return pulumi.get(self, "artifact_last_modified")
 
     @property
     @pulumi.getter(name="pipelineStepArtifact")
-    def pipeline_step_artifact(self) -> str:
+    def pipeline_step_artifact(self) -> Optional[str]:
         return pulumi.get(self, "pipeline_step_artifact")
 
     @property
     @pulumi.getter(name="stepName")
-    def step_name(self) -> str:
-        """
-        The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
-        """
+    def step_name(self) -> Optional[str]:
         return pulumi.get(self, "step_name")
 
 
 @pulumi.output_type
 class GetPipelineStepDetailResult(dict):
     def __init__(__self__, *,
-                 depends_ons: Sequence[str],
-                 description: str,
-                 is_artifact_uploaded: bool,
-                 job_id: str,
-                 step_configuration_details: Sequence['outputs.GetPipelineStepDetailStepConfigurationDetailResult'],
-                 step_infrastructure_configuration_details: Sequence['outputs.GetPipelineStepDetailStepInfrastructureConfigurationDetailResult'],
-                 step_name: str,
-                 step_type: str):
-        """
-        :param Sequence[str] depends_ons: The list of step names this current step depends on for execution.
-        :param str description: A short description of the step.
-        :param bool is_artifact_uploaded: A flag to indicate whether the artifact has been uploaded for this step or not.
-        :param str job_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job to be used as a step.
-        :param Sequence['GetPipelineStepDetailStepConfigurationDetailArgs'] step_configuration_details: The configuration details of a step.
-        :param Sequence['GetPipelineStepDetailStepInfrastructureConfigurationDetailArgs'] step_infrastructure_configuration_details: The infrastructure configuration details of a pipeline or a step.
-        :param str step_name: The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
-        :param str step_type: The type of step.
-        """
-        pulumi.set(__self__, "depends_ons", depends_ons)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "is_artifact_uploaded", is_artifact_uploaded)
-        pulumi.set(__self__, "job_id", job_id)
-        pulumi.set(__self__, "step_configuration_details", step_configuration_details)
-        pulumi.set(__self__, "step_infrastructure_configuration_details", step_infrastructure_configuration_details)
-        pulumi.set(__self__, "step_name", step_name)
-        pulumi.set(__self__, "step_type", step_type)
+                 depends_ons: Optional[Sequence[str]] = None,
+                 description: Optional[str] = None,
+                 is_artifact_uploaded: Optional[bool] = None,
+                 job_id: Optional[str] = None,
+                 step_configuration_details: Optional[Sequence['outputs.GetPipelineStepDetailStepConfigurationDetailResult']] = None,
+                 step_infrastructure_configuration_details: Optional[Sequence['outputs.GetPipelineStepDetailStepInfrastructureConfigurationDetailResult']] = None,
+                 step_name: Optional[str] = None,
+                 step_type: Optional[str] = None):
+        if depends_ons is not None:
+            pulumi.set(__self__, "depends_ons", depends_ons)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if is_artifact_uploaded is not None:
+            pulumi.set(__self__, "is_artifact_uploaded", is_artifact_uploaded)
+        if job_id is not None:
+            pulumi.set(__self__, "job_id", job_id)
+        if step_configuration_details is not None:
+            pulumi.set(__self__, "step_configuration_details", step_configuration_details)
+        if step_infrastructure_configuration_details is not None:
+            pulumi.set(__self__, "step_infrastructure_configuration_details", step_infrastructure_configuration_details)
+        if step_name is not None:
+            pulumi.set(__self__, "step_name", step_name)
+        if step_type is not None:
+            pulumi.set(__self__, "step_type", step_type)
 
     @property
     @pulumi.getter(name="dependsOns")
-    def depends_ons(self) -> Sequence[str]:
-        """
-        The list of step names this current step depends on for execution.
-        """
+    def depends_ons(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "depends_ons")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        A short description of the step.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="isArtifactUploaded")
-    def is_artifact_uploaded(self) -> bool:
-        """
-        A flag to indicate whether the artifact has been uploaded for this step or not.
-        """
+    def is_artifact_uploaded(self) -> Optional[bool]:
         return pulumi.get(self, "is_artifact_uploaded")
 
     @property
     @pulumi.getter(name="jobId")
-    def job_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job to be used as a step.
-        """
+    def job_id(self) -> Optional[str]:
         return pulumi.get(self, "job_id")
 
     @property
     @pulumi.getter(name="stepConfigurationDetails")
-    def step_configuration_details(self) -> Sequence['outputs.GetPipelineStepDetailStepConfigurationDetailResult']:
-        """
-        The configuration details of a step.
-        """
+    def step_configuration_details(self) -> Optional[Sequence['outputs.GetPipelineStepDetailStepConfigurationDetailResult']]:
         return pulumi.get(self, "step_configuration_details")
 
     @property
     @pulumi.getter(name="stepInfrastructureConfigurationDetails")
-    def step_infrastructure_configuration_details(self) -> Sequence['outputs.GetPipelineStepDetailStepInfrastructureConfigurationDetailResult']:
-        """
-        The infrastructure configuration details of a pipeline or a step.
-        """
+    def step_infrastructure_configuration_details(self) -> Optional[Sequence['outputs.GetPipelineStepDetailStepInfrastructureConfigurationDetailResult']]:
         return pulumi.get(self, "step_infrastructure_configuration_details")
 
     @property
     @pulumi.getter(name="stepName")
-    def step_name(self) -> str:
-        """
-        The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
-        """
+    def step_name(self) -> Optional[str]:
         return pulumi.get(self, "step_name")
 
     @property
     @pulumi.getter(name="stepType")
-    def step_type(self) -> str:
-        """
-        The type of step.
-        """
+    def step_type(self) -> Optional[str]:
         return pulumi.get(self, "step_type")
 
 
 @pulumi.output_type
 class GetPipelineStepDetailStepConfigurationDetailResult(dict):
     def __init__(__self__, *,
-                 command_line_arguments: str,
-                 environment_variables: Mapping[str, Any],
-                 maximum_runtime_in_minutes: str):
-        """
-        :param str command_line_arguments: The command line arguments to set for step.
-        :param Mapping[str, Any] environment_variables: Environment variables to set for step.
-        :param str maximum_runtime_in_minutes: A time bound for the execution of the step.
-        """
-        pulumi.set(__self__, "command_line_arguments", command_line_arguments)
-        pulumi.set(__self__, "environment_variables", environment_variables)
-        pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+                 command_line_arguments: Optional[str] = None,
+                 environment_variables: Optional[Mapping[str, Any]] = None,
+                 maximum_runtime_in_minutes: Optional[str] = None):
+        if command_line_arguments is not None:
+            pulumi.set(__self__, "command_line_arguments", command_line_arguments)
+        if environment_variables is not None:
+            pulumi.set(__self__, "environment_variables", environment_variables)
+        if maximum_runtime_in_minutes is not None:
+            pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
 
     @property
     @pulumi.getter(name="commandLineArguments")
-    def command_line_arguments(self) -> str:
-        """
-        The command line arguments to set for step.
-        """
+    def command_line_arguments(self) -> Optional[str]:
         return pulumi.get(self, "command_line_arguments")
 
     @property
     @pulumi.getter(name="environmentVariables")
-    def environment_variables(self) -> Mapping[str, Any]:
-        """
-        Environment variables to set for step.
-        """
+    def environment_variables(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "environment_variables")
 
     @property
     @pulumi.getter(name="maximumRuntimeInMinutes")
-    def maximum_runtime_in_minutes(self) -> str:
-        """
-        A time bound for the execution of the step.
-        """
+    def maximum_runtime_in_minutes(self) -> Optional[str]:
         return pulumi.get(self, "maximum_runtime_in_minutes")
 
 
 @pulumi.output_type
 class GetPipelineStepDetailStepInfrastructureConfigurationDetailResult(dict):
     def __init__(__self__, *,
-                 block_storage_size_in_gbs: int,
-                 shape_config_details: Sequence['outputs.GetPipelineStepDetailStepInfrastructureConfigurationDetailShapeConfigDetailResult'],
-                 shape_name: str):
-        """
-        :param int block_storage_size_in_gbs: The size of the block storage volume to attach to the instance.
-        :param Sequence['GetPipelineStepDetailStepInfrastructureConfigurationDetailShapeConfigDetailArgs'] shape_config_details: Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
-        :param str shape_name: The shape used to launch the instance for all step runs in the pipeline.
-        """
-        pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
-        pulumi.set(__self__, "shape_config_details", shape_config_details)
-        pulumi.set(__self__, "shape_name", shape_name)
+                 block_storage_size_in_gbs: Optional[int] = None,
+                 shape_config_details: Optional[Sequence['outputs.GetPipelineStepDetailStepInfrastructureConfigurationDetailShapeConfigDetailResult']] = None,
+                 shape_name: Optional[str] = None):
+        if block_storage_size_in_gbs is not None:
+            pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
+        if shape_config_details is not None:
+            pulumi.set(__self__, "shape_config_details", shape_config_details)
+        if shape_name is not None:
+            pulumi.set(__self__, "shape_name", shape_name)
 
     @property
     @pulumi.getter(name="blockStorageSizeInGbs")
-    def block_storage_size_in_gbs(self) -> int:
-        """
-        The size of the block storage volume to attach to the instance.
-        """
+    def block_storage_size_in_gbs(self) -> Optional[int]:
         return pulumi.get(self, "block_storage_size_in_gbs")
 
     @property
     @pulumi.getter(name="shapeConfigDetails")
-    def shape_config_details(self) -> Sequence['outputs.GetPipelineStepDetailStepInfrastructureConfigurationDetailShapeConfigDetailResult']:
-        """
-        Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
-        """
+    def shape_config_details(self) -> Optional[Sequence['outputs.GetPipelineStepDetailStepInfrastructureConfigurationDetailShapeConfigDetailResult']]:
         return pulumi.get(self, "shape_config_details")
 
     @property
     @pulumi.getter(name="shapeName")
-    def shape_name(self) -> str:
-        """
-        The shape used to launch the instance for all step runs in the pipeline.
-        """
+    def shape_name(self) -> Optional[str]:
         return pulumi.get(self, "shape_name")
 
 
 @pulumi.output_type
 class GetPipelineStepDetailStepInfrastructureConfigurationDetailShapeConfigDetailResult(dict):
     def __init__(__self__, *,
-                 memory_in_gbs: float,
-                 ocpus: float):
-        """
-        :param float memory_in_gbs: A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
-        :param float ocpus: A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
-        """
-        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
-        pulumi.set(__self__, "ocpus", ocpus)
+                 memory_in_gbs: Optional[float] = None,
+                 ocpus: Optional[float] = None):
+        if memory_in_gbs is not None:
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        if ocpus is not None:
+            pulumi.set(__self__, "ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
-    def memory_in_gbs(self) -> float:
-        """
-        A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
-        """
+    def memory_in_gbs(self) -> Optional[float]:
         return pulumi.get(self, "memory_in_gbs")
 
     @property
     @pulumi.getter
-    def ocpus(self) -> float:
-        """
-        A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
-        """
+    def ocpus(self) -> Optional[float]:
         return pulumi.get(self, "ocpus")
 
 
@@ -9308,815 +6992,615 @@ class GetPipelinesFilterResult(dict):
 @pulumi.output_type
 class GetPipelinesPipelineResult(dict):
     def __init__(__self__, *,
-                 compartment_id: str,
-                 configuration_details: Sequence['outputs.GetPipelinesPipelineConfigurationDetailResult'],
-                 created_by: str,
-                 defined_tags: Mapping[str, Any],
-                 delete_related_pipeline_runs: bool,
-                 description: str,
-                 display_name: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 infrastructure_configuration_details: Sequence['outputs.GetPipelinesPipelineInfrastructureConfigurationDetailResult'],
-                 lifecycle_details: str,
-                 log_configuration_details: Sequence['outputs.GetPipelinesPipelineLogConfigurationDetailResult'],
-                 project_id: str,
-                 state: str,
-                 step_artifacts: Sequence['outputs.GetPipelinesPipelineStepArtifactResult'],
-                 step_details: Sequence['outputs.GetPipelinesPipelineStepDetailResult'],
-                 system_tags: Mapping[str, Any],
-                 time_created: str,
-                 time_updated: str):
-        """
-        :param str compartment_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param Sequence['GetPipelinesPipelineConfigurationDetailArgs'] configuration_details: The configuration details of a pipeline.
-        :param str created_by: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param str description: A short description of the step.
-        :param str display_name: <b>Filter</b> results by its user-friendly name.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param str id: <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
-        :param Sequence['GetPipelinesPipelineInfrastructureConfigurationDetailArgs'] infrastructure_configuration_details: The infrastructure configuration details of a pipeline or a step.
-        :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
-        :param Sequence['GetPipelinesPipelineLogConfigurationDetailArgs'] log_configuration_details: The pipeline log configuration details.
-        :param str project_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
-        :param str state: The current state of the Pipeline.
-        :param Sequence['GetPipelinesPipelineStepDetailArgs'] step_details: Array of step details for each step.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param str time_created: The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z
-        :param str time_updated: The date and time the resource was updated in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z
-        """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "configuration_details", configuration_details)
-        pulumi.set(__self__, "created_by", created_by)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "delete_related_pipeline_runs", delete_related_pipeline_runs)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "infrastructure_configuration_details", infrastructure_configuration_details)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "log_configuration_details", log_configuration_details)
-        pulumi.set(__self__, "project_id", project_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "step_artifacts", step_artifacts)
-        pulumi.set(__self__, "step_details", step_details)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+                 compartment_id: Optional[str] = None,
+                 configuration_details: Optional[Sequence['outputs.GetPipelinesPipelineConfigurationDetailResult']] = None,
+                 created_by: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 delete_related_pipeline_runs: Optional[bool] = None,
+                 description: Optional[str] = None,
+                 display_name: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 infrastructure_configuration_details: Optional[Sequence['outputs.GetPipelinesPipelineInfrastructureConfigurationDetailResult']] = None,
+                 lifecycle_details: Optional[str] = None,
+                 log_configuration_details: Optional[Sequence['outputs.GetPipelinesPipelineLogConfigurationDetailResult']] = None,
+                 project_id: Optional[str] = None,
+                 state: Optional[str] = None,
+                 step_artifacts: Optional[Sequence['outputs.GetPipelinesPipelineStepArtifactResult']] = None,
+                 step_details: Optional[Sequence['outputs.GetPipelinesPipelineStepDetailResult']] = None,
+                 system_tags: Optional[Mapping[str, Any]] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None):
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if configuration_details is not None:
+            pulumi.set(__self__, "configuration_details", configuration_details)
+        if created_by is not None:
+            pulumi.set(__self__, "created_by", created_by)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if delete_related_pipeline_runs is not None:
+            pulumi.set(__self__, "delete_related_pipeline_runs", delete_related_pipeline_runs)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if infrastructure_configuration_details is not None:
+            pulumi.set(__self__, "infrastructure_configuration_details", infrastructure_configuration_details)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if log_configuration_details is not None:
+            pulumi.set(__self__, "log_configuration_details", log_configuration_details)
+        if project_id is not None:
+            pulumi.set(__self__, "project_id", project_id)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if step_artifacts is not None:
+            pulumi.set(__self__, "step_artifacts", step_artifacts)
+        if step_details is not None:
+            pulumi.set(__self__, "step_details", step_details)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="configurationDetails")
-    def configuration_details(self) -> Sequence['outputs.GetPipelinesPipelineConfigurationDetailResult']:
-        """
-        The configuration details of a pipeline.
-        """
+    def configuration_details(self) -> Optional[Sequence['outputs.GetPipelinesPipelineConfigurationDetailResult']]:
         return pulumi.get(self, "configuration_details")
 
     @property
     @pulumi.getter(name="createdBy")
-    def created_by(self) -> str:
-        """
-        <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
-        """
+    def created_by(self) -> Optional[str]:
         return pulumi.get(self, "created_by")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="deleteRelatedPipelineRuns")
-    def delete_related_pipeline_runs(self) -> bool:
+    def delete_related_pipeline_runs(self) -> Optional[bool]:
         return pulumi.get(self, "delete_related_pipeline_runs")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        A short description of the step.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        <b>Filter</b> results by its user-friendly name.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="infrastructureConfigurationDetails")
-    def infrastructure_configuration_details(self) -> Sequence['outputs.GetPipelinesPipelineInfrastructureConfigurationDetailResult']:
-        """
-        The infrastructure configuration details of a pipeline or a step.
-        """
+    def infrastructure_configuration_details(self) -> Optional[Sequence['outputs.GetPipelinesPipelineInfrastructureConfigurationDetailResult']]:
         return pulumi.get(self, "infrastructure_configuration_details")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="logConfigurationDetails")
-    def log_configuration_details(self) -> Sequence['outputs.GetPipelinesPipelineLogConfigurationDetailResult']:
-        """
-        The pipeline log configuration details.
-        """
+    def log_configuration_details(self) -> Optional[Sequence['outputs.GetPipelinesPipelineLogConfigurationDetailResult']]:
         return pulumi.get(self, "log_configuration_details")
 
     @property
     @pulumi.getter(name="projectId")
-    def project_id(self) -> str:
-        """
-        <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
-        """
+    def project_id(self) -> Optional[str]:
         return pulumi.get(self, "project_id")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the Pipeline.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="stepArtifacts")
-    def step_artifacts(self) -> Sequence['outputs.GetPipelinesPipelineStepArtifactResult']:
+    def step_artifacts(self) -> Optional[Sequence['outputs.GetPipelinesPipelineStepArtifactResult']]:
         return pulumi.get(self, "step_artifacts")
 
     @property
     @pulumi.getter(name="stepDetails")
-    def step_details(self) -> Sequence['outputs.GetPipelinesPipelineStepDetailResult']:
-        """
-        Array of step details for each step.
-        """
+    def step_details(self) -> Optional[Sequence['outputs.GetPipelinesPipelineStepDetailResult']]:
         return pulumi.get(self, "step_details")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time the resource was updated in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
 @pulumi.output_type
 class GetPipelinesPipelineConfigurationDetailResult(dict):
     def __init__(__self__, *,
-                 command_line_arguments: str,
-                 environment_variables: Mapping[str, Any],
-                 maximum_runtime_in_minutes: str,
-                 type: str):
-        """
-        :param str command_line_arguments: The command line arguments to set for step.
-        :param Mapping[str, Any] environment_variables: Environment variables to set for step.
-        :param str maximum_runtime_in_minutes: A time bound for the execution of the step.
-        :param str type: The type of pipeline.
-        """
-        pulumi.set(__self__, "command_line_arguments", command_line_arguments)
-        pulumi.set(__self__, "environment_variables", environment_variables)
-        pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
-        pulumi.set(__self__, "type", type)
+                 command_line_arguments: Optional[str] = None,
+                 environment_variables: Optional[Mapping[str, Any]] = None,
+                 maximum_runtime_in_minutes: Optional[str] = None,
+                 type: Optional[str] = None):
+        if command_line_arguments is not None:
+            pulumi.set(__self__, "command_line_arguments", command_line_arguments)
+        if environment_variables is not None:
+            pulumi.set(__self__, "environment_variables", environment_variables)
+        if maximum_runtime_in_minutes is not None:
+            pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter(name="commandLineArguments")
-    def command_line_arguments(self) -> str:
-        """
-        The command line arguments to set for step.
-        """
+    def command_line_arguments(self) -> Optional[str]:
         return pulumi.get(self, "command_line_arguments")
 
     @property
     @pulumi.getter(name="environmentVariables")
-    def environment_variables(self) -> Mapping[str, Any]:
-        """
-        Environment variables to set for step.
-        """
+    def environment_variables(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "environment_variables")
 
     @property
     @pulumi.getter(name="maximumRuntimeInMinutes")
-    def maximum_runtime_in_minutes(self) -> str:
-        """
-        A time bound for the execution of the step.
-        """
+    def maximum_runtime_in_minutes(self) -> Optional[str]:
         return pulumi.get(self, "maximum_runtime_in_minutes")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        The type of pipeline.
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
 
 @pulumi.output_type
 class GetPipelinesPipelineInfrastructureConfigurationDetailResult(dict):
     def __init__(__self__, *,
-                 block_storage_size_in_gbs: int,
-                 shape_config_details: Sequence['outputs.GetPipelinesPipelineInfrastructureConfigurationDetailShapeConfigDetailResult'],
-                 shape_name: str):
-        """
-        :param int block_storage_size_in_gbs: The size of the block storage volume to attach to the instance.
-        :param Sequence['GetPipelinesPipelineInfrastructureConfigurationDetailShapeConfigDetailArgs'] shape_config_details: Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
-        :param str shape_name: The shape used to launch the instance for all step runs in the pipeline.
-        """
-        pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
-        pulumi.set(__self__, "shape_config_details", shape_config_details)
-        pulumi.set(__self__, "shape_name", shape_name)
+                 block_storage_size_in_gbs: Optional[int] = None,
+                 shape_config_details: Optional[Sequence['outputs.GetPipelinesPipelineInfrastructureConfigurationDetailShapeConfigDetailResult']] = None,
+                 shape_name: Optional[str] = None):
+        if block_storage_size_in_gbs is not None:
+            pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
+        if shape_config_details is not None:
+            pulumi.set(__self__, "shape_config_details", shape_config_details)
+        if shape_name is not None:
+            pulumi.set(__self__, "shape_name", shape_name)
 
     @property
     @pulumi.getter(name="blockStorageSizeInGbs")
-    def block_storage_size_in_gbs(self) -> int:
-        """
-        The size of the block storage volume to attach to the instance.
-        """
+    def block_storage_size_in_gbs(self) -> Optional[int]:
         return pulumi.get(self, "block_storage_size_in_gbs")
 
     @property
     @pulumi.getter(name="shapeConfigDetails")
-    def shape_config_details(self) -> Sequence['outputs.GetPipelinesPipelineInfrastructureConfigurationDetailShapeConfigDetailResult']:
-        """
-        Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
-        """
+    def shape_config_details(self) -> Optional[Sequence['outputs.GetPipelinesPipelineInfrastructureConfigurationDetailShapeConfigDetailResult']]:
         return pulumi.get(self, "shape_config_details")
 
     @property
     @pulumi.getter(name="shapeName")
-    def shape_name(self) -> str:
-        """
-        The shape used to launch the instance for all step runs in the pipeline.
-        """
+    def shape_name(self) -> Optional[str]:
         return pulumi.get(self, "shape_name")
 
 
 @pulumi.output_type
 class GetPipelinesPipelineInfrastructureConfigurationDetailShapeConfigDetailResult(dict):
     def __init__(__self__, *,
-                 memory_in_gbs: float,
-                 ocpus: float):
-        """
-        :param float memory_in_gbs: A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
-        :param float ocpus: A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
-        """
-        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
-        pulumi.set(__self__, "ocpus", ocpus)
+                 memory_in_gbs: Optional[float] = None,
+                 ocpus: Optional[float] = None):
+        if memory_in_gbs is not None:
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        if ocpus is not None:
+            pulumi.set(__self__, "ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
-    def memory_in_gbs(self) -> float:
-        """
-        A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
-        """
+    def memory_in_gbs(self) -> Optional[float]:
         return pulumi.get(self, "memory_in_gbs")
 
     @property
     @pulumi.getter
-    def ocpus(self) -> float:
-        """
-        A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
-        """
+    def ocpus(self) -> Optional[float]:
         return pulumi.get(self, "ocpus")
 
 
 @pulumi.output_type
 class GetPipelinesPipelineLogConfigurationDetailResult(dict):
     def __init__(__self__, *,
-                 enable_auto_log_creation: bool,
-                 enable_logging: bool,
-                 log_group_id: str,
-                 log_id: str):
-        """
-        :param bool enable_auto_log_creation: If automatic on-behalf-of log object creation is enabled for pipeline runs.
-        :param bool enable_logging: If customer logging is enabled for pipeline.
-        :param str log_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
-        :param str log_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
-        """
-        pulumi.set(__self__, "enable_auto_log_creation", enable_auto_log_creation)
-        pulumi.set(__self__, "enable_logging", enable_logging)
-        pulumi.set(__self__, "log_group_id", log_group_id)
-        pulumi.set(__self__, "log_id", log_id)
+                 enable_auto_log_creation: Optional[bool] = None,
+                 enable_logging: Optional[bool] = None,
+                 log_group_id: Optional[str] = None,
+                 log_id: Optional[str] = None):
+        if enable_auto_log_creation is not None:
+            pulumi.set(__self__, "enable_auto_log_creation", enable_auto_log_creation)
+        if enable_logging is not None:
+            pulumi.set(__self__, "enable_logging", enable_logging)
+        if log_group_id is not None:
+            pulumi.set(__self__, "log_group_id", log_group_id)
+        if log_id is not None:
+            pulumi.set(__self__, "log_id", log_id)
 
     @property
     @pulumi.getter(name="enableAutoLogCreation")
-    def enable_auto_log_creation(self) -> bool:
-        """
-        If automatic on-behalf-of log object creation is enabled for pipeline runs.
-        """
+    def enable_auto_log_creation(self) -> Optional[bool]:
         return pulumi.get(self, "enable_auto_log_creation")
 
     @property
     @pulumi.getter(name="enableLogging")
-    def enable_logging(self) -> bool:
-        """
-        If customer logging is enabled for pipeline.
-        """
+    def enable_logging(self) -> Optional[bool]:
         return pulumi.get(self, "enable_logging")
 
     @property
     @pulumi.getter(name="logGroupId")
-    def log_group_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
-        """
+    def log_group_id(self) -> Optional[str]:
         return pulumi.get(self, "log_group_id")
 
     @property
     @pulumi.getter(name="logId")
-    def log_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
-        """
+    def log_id(self) -> Optional[str]:
         return pulumi.get(self, "log_id")
 
 
 @pulumi.output_type
 class GetPipelinesPipelineStepArtifactResult(dict):
     def __init__(__self__, *,
-                 artifact_content_disposition: str,
-                 artifact_content_length: str,
-                 artifact_content_md5: str,
-                 artifact_last_modified: str,
-                 pipeline_step_artifact: str,
-                 step_name: str):
-        """
-        :param str step_name: The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
-        """
-        pulumi.set(__self__, "artifact_content_disposition", artifact_content_disposition)
-        pulumi.set(__self__, "artifact_content_length", artifact_content_length)
-        pulumi.set(__self__, "artifact_content_md5", artifact_content_md5)
-        pulumi.set(__self__, "artifact_last_modified", artifact_last_modified)
-        pulumi.set(__self__, "pipeline_step_artifact", pipeline_step_artifact)
-        pulumi.set(__self__, "step_name", step_name)
+                 artifact_content_disposition: Optional[str] = None,
+                 artifact_content_length: Optional[str] = None,
+                 artifact_content_md5: Optional[str] = None,
+                 artifact_last_modified: Optional[str] = None,
+                 pipeline_step_artifact: Optional[str] = None,
+                 step_name: Optional[str] = None):
+        if artifact_content_disposition is not None:
+            pulumi.set(__self__, "artifact_content_disposition", artifact_content_disposition)
+        if artifact_content_length is not None:
+            pulumi.set(__self__, "artifact_content_length", artifact_content_length)
+        if artifact_content_md5 is not None:
+            pulumi.set(__self__, "artifact_content_md5", artifact_content_md5)
+        if artifact_last_modified is not None:
+            pulumi.set(__self__, "artifact_last_modified", artifact_last_modified)
+        if pipeline_step_artifact is not None:
+            pulumi.set(__self__, "pipeline_step_artifact", pipeline_step_artifact)
+        if step_name is not None:
+            pulumi.set(__self__, "step_name", step_name)
 
     @property
     @pulumi.getter(name="artifactContentDisposition")
-    def artifact_content_disposition(self) -> str:
+    def artifact_content_disposition(self) -> Optional[str]:
         return pulumi.get(self, "artifact_content_disposition")
 
     @property
     @pulumi.getter(name="artifactContentLength")
-    def artifact_content_length(self) -> str:
+    def artifact_content_length(self) -> Optional[str]:
         return pulumi.get(self, "artifact_content_length")
 
     @property
     @pulumi.getter(name="artifactContentMd5")
-    def artifact_content_md5(self) -> str:
+    def artifact_content_md5(self) -> Optional[str]:
         return pulumi.get(self, "artifact_content_md5")
 
     @property
     @pulumi.getter(name="artifactLastModified")
-    def artifact_last_modified(self) -> str:
+    def artifact_last_modified(self) -> Optional[str]:
         return pulumi.get(self, "artifact_last_modified")
 
     @property
     @pulumi.getter(name="pipelineStepArtifact")
-    def pipeline_step_artifact(self) -> str:
+    def pipeline_step_artifact(self) -> Optional[str]:
         return pulumi.get(self, "pipeline_step_artifact")
 
     @property
     @pulumi.getter(name="stepName")
-    def step_name(self) -> str:
-        """
-        The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
-        """
+    def step_name(self) -> Optional[str]:
         return pulumi.get(self, "step_name")
 
 
 @pulumi.output_type
 class GetPipelinesPipelineStepDetailResult(dict):
     def __init__(__self__, *,
-                 depends_ons: Sequence[str],
-                 description: str,
-                 is_artifact_uploaded: bool,
-                 job_id: str,
-                 step_configuration_details: Sequence['outputs.GetPipelinesPipelineStepDetailStepConfigurationDetailResult'],
-                 step_infrastructure_configuration_details: Sequence['outputs.GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailResult'],
-                 step_name: str,
-                 step_type: str):
-        """
-        :param Sequence[str] depends_ons: The list of step names this current step depends on for execution.
-        :param str description: A short description of the step.
-        :param bool is_artifact_uploaded: A flag to indicate whether the artifact has been uploaded for this step or not.
-        :param str job_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job to be used as a step.
-        :param Sequence['GetPipelinesPipelineStepDetailStepConfigurationDetailArgs'] step_configuration_details: The configuration details of a step.
-        :param Sequence['GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailArgs'] step_infrastructure_configuration_details: The infrastructure configuration details of a pipeline or a step.
-        :param str step_name: The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
-        :param str step_type: The type of step.
-        """
-        pulumi.set(__self__, "depends_ons", depends_ons)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "is_artifact_uploaded", is_artifact_uploaded)
-        pulumi.set(__self__, "job_id", job_id)
-        pulumi.set(__self__, "step_configuration_details", step_configuration_details)
-        pulumi.set(__self__, "step_infrastructure_configuration_details", step_infrastructure_configuration_details)
-        pulumi.set(__self__, "step_name", step_name)
-        pulumi.set(__self__, "step_type", step_type)
+                 depends_ons: Optional[Sequence[str]] = None,
+                 description: Optional[str] = None,
+                 is_artifact_uploaded: Optional[bool] = None,
+                 job_id: Optional[str] = None,
+                 step_configuration_details: Optional[Sequence['outputs.GetPipelinesPipelineStepDetailStepConfigurationDetailResult']] = None,
+                 step_infrastructure_configuration_details: Optional[Sequence['outputs.GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailResult']] = None,
+                 step_name: Optional[str] = None,
+                 step_type: Optional[str] = None):
+        if depends_ons is not None:
+            pulumi.set(__self__, "depends_ons", depends_ons)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if is_artifact_uploaded is not None:
+            pulumi.set(__self__, "is_artifact_uploaded", is_artifact_uploaded)
+        if job_id is not None:
+            pulumi.set(__self__, "job_id", job_id)
+        if step_configuration_details is not None:
+            pulumi.set(__self__, "step_configuration_details", step_configuration_details)
+        if step_infrastructure_configuration_details is not None:
+            pulumi.set(__self__, "step_infrastructure_configuration_details", step_infrastructure_configuration_details)
+        if step_name is not None:
+            pulumi.set(__self__, "step_name", step_name)
+        if step_type is not None:
+            pulumi.set(__self__, "step_type", step_type)
 
     @property
     @pulumi.getter(name="dependsOns")
-    def depends_ons(self) -> Sequence[str]:
-        """
-        The list of step names this current step depends on for execution.
-        """
+    def depends_ons(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "depends_ons")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        A short description of the step.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="isArtifactUploaded")
-    def is_artifact_uploaded(self) -> bool:
-        """
-        A flag to indicate whether the artifact has been uploaded for this step or not.
-        """
+    def is_artifact_uploaded(self) -> Optional[bool]:
         return pulumi.get(self, "is_artifact_uploaded")
 
     @property
     @pulumi.getter(name="jobId")
-    def job_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job to be used as a step.
-        """
+    def job_id(self) -> Optional[str]:
         return pulumi.get(self, "job_id")
 
     @property
     @pulumi.getter(name="stepConfigurationDetails")
-    def step_configuration_details(self) -> Sequence['outputs.GetPipelinesPipelineStepDetailStepConfigurationDetailResult']:
-        """
-        The configuration details of a step.
-        """
+    def step_configuration_details(self) -> Optional[Sequence['outputs.GetPipelinesPipelineStepDetailStepConfigurationDetailResult']]:
         return pulumi.get(self, "step_configuration_details")
 
     @property
     @pulumi.getter(name="stepInfrastructureConfigurationDetails")
-    def step_infrastructure_configuration_details(self) -> Sequence['outputs.GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailResult']:
-        """
-        The infrastructure configuration details of a pipeline or a step.
-        """
+    def step_infrastructure_configuration_details(self) -> Optional[Sequence['outputs.GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailResult']]:
         return pulumi.get(self, "step_infrastructure_configuration_details")
 
     @property
     @pulumi.getter(name="stepName")
-    def step_name(self) -> str:
-        """
-        The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
-        """
+    def step_name(self) -> Optional[str]:
         return pulumi.get(self, "step_name")
 
     @property
     @pulumi.getter(name="stepType")
-    def step_type(self) -> str:
-        """
-        The type of step.
-        """
+    def step_type(self) -> Optional[str]:
         return pulumi.get(self, "step_type")
 
 
 @pulumi.output_type
 class GetPipelinesPipelineStepDetailStepConfigurationDetailResult(dict):
     def __init__(__self__, *,
-                 command_line_arguments: str,
-                 environment_variables: Mapping[str, Any],
-                 maximum_runtime_in_minutes: str):
-        """
-        :param str command_line_arguments: The command line arguments to set for step.
-        :param Mapping[str, Any] environment_variables: Environment variables to set for step.
-        :param str maximum_runtime_in_minutes: A time bound for the execution of the step.
-        """
-        pulumi.set(__self__, "command_line_arguments", command_line_arguments)
-        pulumi.set(__self__, "environment_variables", environment_variables)
-        pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+                 command_line_arguments: Optional[str] = None,
+                 environment_variables: Optional[Mapping[str, Any]] = None,
+                 maximum_runtime_in_minutes: Optional[str] = None):
+        if command_line_arguments is not None:
+            pulumi.set(__self__, "command_line_arguments", command_line_arguments)
+        if environment_variables is not None:
+            pulumi.set(__self__, "environment_variables", environment_variables)
+        if maximum_runtime_in_minutes is not None:
+            pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
 
     @property
     @pulumi.getter(name="commandLineArguments")
-    def command_line_arguments(self) -> str:
-        """
-        The command line arguments to set for step.
-        """
+    def command_line_arguments(self) -> Optional[str]:
         return pulumi.get(self, "command_line_arguments")
 
     @property
     @pulumi.getter(name="environmentVariables")
-    def environment_variables(self) -> Mapping[str, Any]:
-        """
-        Environment variables to set for step.
-        """
+    def environment_variables(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "environment_variables")
 
     @property
     @pulumi.getter(name="maximumRuntimeInMinutes")
-    def maximum_runtime_in_minutes(self) -> str:
-        """
-        A time bound for the execution of the step.
-        """
+    def maximum_runtime_in_minutes(self) -> Optional[str]:
         return pulumi.get(self, "maximum_runtime_in_minutes")
 
 
 @pulumi.output_type
 class GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailResult(dict):
     def __init__(__self__, *,
-                 block_storage_size_in_gbs: int,
-                 shape_config_details: Sequence['outputs.GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailShapeConfigDetailResult'],
-                 shape_name: str):
-        """
-        :param int block_storage_size_in_gbs: The size of the block storage volume to attach to the instance.
-        :param Sequence['GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailShapeConfigDetailArgs'] shape_config_details: Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
-        :param str shape_name: The shape used to launch the instance for all step runs in the pipeline.
-        """
-        pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
-        pulumi.set(__self__, "shape_config_details", shape_config_details)
-        pulumi.set(__self__, "shape_name", shape_name)
+                 block_storage_size_in_gbs: Optional[int] = None,
+                 shape_config_details: Optional[Sequence['outputs.GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailShapeConfigDetailResult']] = None,
+                 shape_name: Optional[str] = None):
+        if block_storage_size_in_gbs is not None:
+            pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
+        if shape_config_details is not None:
+            pulumi.set(__self__, "shape_config_details", shape_config_details)
+        if shape_name is not None:
+            pulumi.set(__self__, "shape_name", shape_name)
 
     @property
     @pulumi.getter(name="blockStorageSizeInGbs")
-    def block_storage_size_in_gbs(self) -> int:
-        """
-        The size of the block storage volume to attach to the instance.
-        """
+    def block_storage_size_in_gbs(self) -> Optional[int]:
         return pulumi.get(self, "block_storage_size_in_gbs")
 
     @property
     @pulumi.getter(name="shapeConfigDetails")
-    def shape_config_details(self) -> Sequence['outputs.GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailShapeConfigDetailResult']:
-        """
-        Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
-        """
+    def shape_config_details(self) -> Optional[Sequence['outputs.GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailShapeConfigDetailResult']]:
         return pulumi.get(self, "shape_config_details")
 
     @property
     @pulumi.getter(name="shapeName")
-    def shape_name(self) -> str:
-        """
-        The shape used to launch the instance for all step runs in the pipeline.
-        """
+    def shape_name(self) -> Optional[str]:
         return pulumi.get(self, "shape_name")
 
 
 @pulumi.output_type
 class GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailShapeConfigDetailResult(dict):
     def __init__(__self__, *,
-                 memory_in_gbs: float,
-                 ocpus: float):
-        """
-        :param float memory_in_gbs: A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
-        :param float ocpus: A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
-        """
-        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
-        pulumi.set(__self__, "ocpus", ocpus)
+                 memory_in_gbs: Optional[float] = None,
+                 ocpus: Optional[float] = None):
+        if memory_in_gbs is not None:
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        if ocpus is not None:
+            pulumi.set(__self__, "ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
-    def memory_in_gbs(self) -> float:
-        """
-        A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
-        """
+    def memory_in_gbs(self) -> Optional[float]:
         return pulumi.get(self, "memory_in_gbs")
 
     @property
     @pulumi.getter
-    def ocpus(self) -> float:
-        """
-        A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
-        """
+    def ocpus(self) -> Optional[float]:
         return pulumi.get(self, "ocpus")
 
 
 @pulumi.output_type
 class GetPrivateEndpointsDataSciencePrivateEndpointResult(dict):
     def __init__(__self__, *,
-                 compartment_id: str,
-                 created_by: str,
-                 data_science_resource_type: str,
-                 defined_tags: Mapping[str, Any],
-                 description: str,
-                 display_name: str,
-                 fqdn: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 lifecycle_details: str,
-                 nsg_ids: Sequence[str],
-                 state: str,
-                 sub_domain: str,
-                 subnet_id: str,
-                 time_created: str,
-                 time_updated: str):
-        """
-        :param str compartment_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param str created_by: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
-        :param str data_science_resource_type: Resource types in the Data Science service such as notebooks.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param str description: A user friendly description. Avoid entering confidential information.
-        :param str display_name: <b>Filter</b> results by its user-friendly name.
-        :param str fqdn: Accesing the Data Science resource using FQDN.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param str id: The OCID of a private endpoint.
-        :param str lifecycle_details: Details of the state of Data Science private endpoint.
-        :param Sequence[str] nsg_ids: An array of network security group OCIDs.
-        :param str state: The lifecycle state of the private endpoint.
-        :param str subnet_id: The OCID of a subnet.
-        :param str time_created: The date and time that the Data Science private endpoint was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-        :param str time_updated: The date and time that the Data Science private endpoint was updated expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-        """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "created_by", created_by)
-        pulumi.set(__self__, "data_science_resource_type", data_science_resource_type)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "fqdn", fqdn)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "nsg_ids", nsg_ids)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "sub_domain", sub_domain)
-        pulumi.set(__self__, "subnet_id", subnet_id)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+                 compartment_id: Optional[str] = None,
+                 created_by: Optional[str] = None,
+                 data_science_resource_type: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 description: Optional[str] = None,
+                 display_name: Optional[str] = None,
+                 fqdn: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 lifecycle_details: Optional[str] = None,
+                 nsg_ids: Optional[Sequence[str]] = None,
+                 state: Optional[str] = None,
+                 sub_domain: Optional[str] = None,
+                 subnet_id: Optional[str] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None):
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if created_by is not None:
+            pulumi.set(__self__, "created_by", created_by)
+        if data_science_resource_type is not None:
+            pulumi.set(__self__, "data_science_resource_type", data_science_resource_type)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if fqdn is not None:
+            pulumi.set(__self__, "fqdn", fqdn)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if nsg_ids is not None:
+            pulumi.set(__self__, "nsg_ids", nsg_ids)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if sub_domain is not None:
+            pulumi.set(__self__, "sub_domain", sub_domain)
+        if subnet_id is not None:
+            pulumi.set(__self__, "subnet_id", subnet_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="createdBy")
-    def created_by(self) -> str:
-        """
-        <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
-        """
+    def created_by(self) -> Optional[str]:
         return pulumi.get(self, "created_by")
 
     @property
     @pulumi.getter(name="dataScienceResourceType")
-    def data_science_resource_type(self) -> str:
-        """
-        Resource types in the Data Science service such as notebooks.
-        """
+    def data_science_resource_type(self) -> Optional[str]:
         return pulumi.get(self, "data_science_resource_type")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        A user friendly description. Avoid entering confidential information.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        <b>Filter</b> results by its user-friendly name.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
-    def fqdn(self) -> str:
-        """
-        Accesing the Data Science resource using FQDN.
-        """
+    def fqdn(self) -> Optional[str]:
         return pulumi.get(self, "fqdn")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of a private endpoint.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        Details of the state of Data Science private endpoint.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="nsgIds")
-    def nsg_ids(self) -> Sequence[str]:
-        """
-        An array of network security group OCIDs.
-        """
+    def nsg_ids(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "nsg_ids")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The lifecycle state of the private endpoint.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="subDomain")
-    def sub_domain(self) -> str:
+    def sub_domain(self) -> Optional[str]:
         return pulumi.get(self, "sub_domain")
 
     @property
     @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> str:
-        """
-        The OCID of a subnet.
-        """
+    def subnet_id(self) -> Optional[str]:
         return pulumi.get(self, "subnet_id")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time that the Data Science private endpoint was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time that the Data Science private endpoint was updated expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -10177,106 +7661,77 @@ class GetProjectsFilterResult(dict):
 @pulumi.output_type
 class GetProjectsProjectResult(dict):
     def __init__(__self__, *,
-                 compartment_id: str,
-                 created_by: str,
-                 defined_tags: Mapping[str, Any],
-                 description: str,
-                 display_name: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 state: str,
-                 time_created: str):
-        """
-        :param str compartment_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param str created_by: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param str description: A short description of the project.
-        :param str display_name: <b>Filter</b> results by its user-friendly name.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param str id: <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
-        :param str state: <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
-        :param str time_created: The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
-        """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "created_by", created_by)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
+                 compartment_id: Optional[str] = None,
+                 created_by: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 description: Optional[str] = None,
+                 display_name: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 state: Optional[str] = None,
+                 time_created: Optional[str] = None):
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if created_by is not None:
+            pulumi.set(__self__, "created_by", created_by)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="createdBy")
-    def created_by(self) -> str:
-        """
-        <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
-        """
+    def created_by(self) -> Optional[str]:
         return pulumi.get(self, "created_by")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        A short description of the project.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        <b>Filter</b> results by its user-friendly name.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
 

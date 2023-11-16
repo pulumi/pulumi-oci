@@ -16,17 +16,17 @@ namespace Pulumi.Oci.OneSubsription.Outputs
         /// <summary>
         /// Product name
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// Indicates the associated AR Invoice Number
         /// </summary>
-        public readonly string PartNumber;
+        public readonly string? PartNumber;
 
         [OutputConstructor]
         private GetBillingSchedulesBillingScheduleProductResult(
-            string name,
+            string? name,
 
-            string partNumber)
+            string? partNumber)
         {
             Name = name;
             PartNumber = partNumber;

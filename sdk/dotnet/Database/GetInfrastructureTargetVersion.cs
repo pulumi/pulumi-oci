@@ -141,7 +141,7 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The history entry of the target system software version for the database server patching operation.
         /// </summary>
@@ -163,7 +163,7 @@ namespace Pulumi.Oci.Database
         private GetInfrastructureTargetVersionResult(
             string compartmentId,
 
-            string id,
+            string? id,
 
             ImmutableArray<string> targetDbVersionHistoryEntries,
 

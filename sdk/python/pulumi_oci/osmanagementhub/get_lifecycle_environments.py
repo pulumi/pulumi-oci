@@ -58,17 +58,11 @@ class GetLifecycleEnvironmentsResult:
     @property
     @pulumi.getter(name="archType")
     def arch_type(self) -> Optional[str]:
-        """
-        The CPU architecture of the target instances.
-        """
         return pulumi.get(self, "arch_type")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
-        """
-        The OCID of the tenancy containing the lifecycle stage.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -79,9 +73,6 @@ class GetLifecycleEnvironmentsResult:
     @property
     @pulumi.getter(name="displayNames")
     def display_names(self) -> Optional[Sequence[str]]:
-        """
-        Software source name.
-        """
         return pulumi.get(self, "display_names")
 
     @property
@@ -91,7 +82,7 @@ class GetLifecycleEnvironmentsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -99,34 +90,22 @@ class GetLifecycleEnvironmentsResult:
 
     @property
     @pulumi.getter(name="lifecycleEnvironmentCollections")
-    def lifecycle_environment_collections(self) -> Sequence['outputs.GetLifecycleEnvironmentsLifecycleEnvironmentCollectionResult']:
-        """
-        The list of lifecycle_environment_collection.
-        """
+    def lifecycle_environment_collections(self) -> Optional[Sequence['outputs.GetLifecycleEnvironmentsLifecycleEnvironmentCollectionResult']]:
         return pulumi.get(self, "lifecycle_environment_collections")
 
     @property
     @pulumi.getter(name="lifecycleEnvironmentId")
     def lifecycle_environment_id(self) -> Optional[str]:
-        """
-        The OCID of the lifecycle environment for the lifecycle stage.
-        """
         return pulumi.get(self, "lifecycle_environment_id")
 
     @property
     @pulumi.getter(name="osFamily")
     def os_family(self) -> Optional[str]:
-        """
-        The operating system type of the target instances.
-        """
         return pulumi.get(self, "os_family")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the lifecycle environment.
-        """
         return pulumi.get(self, "state")
 
 
@@ -158,34 +137,7 @@ def get_lifecycle_environments(arch_type: Optional[str] = None,
                                state: Optional[str] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetLifecycleEnvironmentsResult:
     """
-    This data source provides the list of Lifecycle Environments in Oracle Cloud Infrastructure Os Management Hub service.
-
-    Lists lifecycle environments that match the specified compartment or lifecycle environment OCID. Filter the list
-    against a variety of criteria including but not limited to its name, status, architecture, and OS family.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_lifecycle_environments = oci.OsManagementHub.get_lifecycle_environments(arch_type=var["lifecycle_environment_arch_type"],
-        compartment_id=var["compartment_id"],
-        display_names=var["lifecycle_environment_display_name"],
-        display_name_contains=var["lifecycle_environment_display_name_contains"],
-        lifecycle_environment_id=oci_os_management_hub_lifecycle_environment["test_lifecycle_environment"]["id"],
-        os_family=var["lifecycle_environment_os_family"],
-        state=var["lifecycle_environment_state"])
-    ```
-
-
-    :param str arch_type: A filter to return only profiles that match the given archType.
-    :param str compartment_id: The OCID of the compartment that contains the resources to list.
-    :param str display_name_contains: A filter to return resources that may partially match the given display name.
-    :param Sequence[str] display_names: A filter to return resources that match the given display names.
-    :param str lifecycle_environment_id: The OCID of the lifecycle environment.
-    :param str os_family: A filter to return only profiles that match the given osFamily.
-    :param str state: A filter to return only the lifecycle environments that match the display name given.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['archType'] = arch_type
@@ -223,33 +175,6 @@ def get_lifecycle_environments_output(arch_type: Optional[pulumi.Input[Optional[
                                       state: Optional[pulumi.Input[Optional[str]]] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetLifecycleEnvironmentsResult]:
     """
-    This data source provides the list of Lifecycle Environments in Oracle Cloud Infrastructure Os Management Hub service.
-
-    Lists lifecycle environments that match the specified compartment or lifecycle environment OCID. Filter the list
-    against a variety of criteria including but not limited to its name, status, architecture, and OS family.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_lifecycle_environments = oci.OsManagementHub.get_lifecycle_environments(arch_type=var["lifecycle_environment_arch_type"],
-        compartment_id=var["compartment_id"],
-        display_names=var["lifecycle_environment_display_name"],
-        display_name_contains=var["lifecycle_environment_display_name_contains"],
-        lifecycle_environment_id=oci_os_management_hub_lifecycle_environment["test_lifecycle_environment"]["id"],
-        os_family=var["lifecycle_environment_os_family"],
-        state=var["lifecycle_environment_state"])
-    ```
-
-
-    :param str arch_type: A filter to return only profiles that match the given archType.
-    :param str compartment_id: The OCID of the compartment that contains the resources to list.
-    :param str display_name_contains: A filter to return resources that may partially match the given display name.
-    :param Sequence[str] display_names: A filter to return resources that match the given display names.
-    :param str lifecycle_environment_id: The OCID of the lifecycle environment.
-    :param str os_family: A filter to return only profiles that match the given osFamily.
-    :param str state: A filter to return only the lifecycle environments that match the display name given.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -6,6 +6,8 @@ package com.pulumi.oci.StackMonitoring.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetail {
@@ -13,27 +15,27 @@ public final class GetMetricExtensionsMetricExtensionCollectionItemQueryProperty
      * @return Sql statement or script file content as base64 encoded string
      * 
      */
-    private String content;
+    private @Nullable String content;
     /**
      * @return If a script needs to be executed, then provide file name of the script
      * 
      */
-    private String scriptFileName;
+    private @Nullable String scriptFileName;
 
     private GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetail() {}
     /**
      * @return Sql statement or script file content as base64 encoded string
      * 
      */
-    public String content() {
-        return this.content;
+    public Optional<String> content() {
+        return Optional.ofNullable(this.content);
     }
     /**
      * @return If a script needs to be executed, then provide file name of the script
      * 
      */
-    public String scriptFileName() {
-        return this.scriptFileName;
+    public Optional<String> scriptFileName() {
+        return Optional.ofNullable(this.scriptFileName);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetMetricExtensionsMetricExtensionCollectionItemQueryProperty
     }
     @CustomType.Builder
     public static final class Builder {
-        private String content;
-        private String scriptFileName;
+        private @Nullable String content;
+        private @Nullable String scriptFileName;
         public Builder() {}
         public Builder(GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetMetricExtensionsMetricExtensionCollectionItemQueryProperty
         }
 
         @CustomType.Setter
-        public Builder content(String content) {
-            this.content = Objects.requireNonNull(content);
+        public Builder content(@Nullable String content) {
+            this.content = content;
             return this;
         }
         @CustomType.Setter
-        public Builder scriptFileName(String scriptFileName) {
-            this.scriptFileName = Objects.requireNonNull(scriptFileName);
+        public Builder scriptFileName(@Nullable String scriptFileName) {
+            this.scriptFileName = scriptFileName;
             return this;
         }
         public GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetail build() {

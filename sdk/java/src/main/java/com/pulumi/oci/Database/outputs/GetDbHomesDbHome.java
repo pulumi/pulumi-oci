@@ -11,6 +11,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDbHomesDbHome {
@@ -18,207 +20,207 @@ public final class GetDbHomesDbHome {
      * @return The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * 
      */
-    private String databaseSoftwareImageId;
-    private List<GetDbHomesDbHomeDatabase> databases;
-    private String dbHomeId;
+    private @Nullable String databaseSoftwareImageId;
+    private @Nullable List<GetDbHomesDbHomeDatabase> databases;
+    private @Nullable String dbHomeId;
     /**
      * @return The location of the Oracle Database Home.
      * 
      */
-    private String dbHomeLocation;
+    private @Nullable String dbHomeLocation;
     /**
      * @return The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). If provided, filters the results to the set of database versions which are supported for the DB system.
      * 
      */
-    private String dbSystemId;
+    private @Nullable String dbSystemId;
     /**
      * @return A filter to return only DB Homes that match the specified dbVersion.
      * 
      */
-    private String dbVersion;
+    private @Nullable String dbVersion;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return A filter to return only resources that match the entire display name given. The match is not case sensitive.
      * 
      */
-    private String displayName;
-    private Boolean enableDatabaseDelete;
+    private @Nullable String displayName;
+    private @Nullable Boolean enableDatabaseDelete;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
      * 
      */
-    private String id;
-    private Boolean isDesupportedVersion;
+    private @Nullable String id;
+    private @Nullable Boolean isDesupportedVersion;
     /**
      * @return The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      * 
      */
-    private String kmsKeyId;
-    private String kmsKeyVersionId;
+    private @Nullable String kmsKeyId;
+    private @Nullable String kmsKeyVersionId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation is started.
      * 
      */
-    private String lastPatchHistoryEntryId;
+    private @Nullable String lastPatchHistoryEntryId;
     /**
      * @return Additional information about the current lifecycle state.
      * 
      */
-    private String lifecycleDetails;
-    private String source;
+    private @Nullable String lifecycleDetails;
+    private @Nullable String source;
     /**
      * @return A filter to return only resources that match the given lifecycle state exactly.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The date and time the Database Home was created.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
      * 
      */
-    private String vmClusterId;
+    private @Nullable String vmClusterId;
 
     private GetDbHomesDbHome() {}
     /**
      * @return The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * 
      */
-    public String databaseSoftwareImageId() {
-        return this.databaseSoftwareImageId;
+    public Optional<String> databaseSoftwareImageId() {
+        return Optional.ofNullable(this.databaseSoftwareImageId);
     }
     public List<GetDbHomesDbHomeDatabase> databases() {
-        return this.databases;
+        return this.databases == null ? List.of() : this.databases;
     }
-    public String dbHomeId() {
-        return this.dbHomeId;
+    public Optional<String> dbHomeId() {
+        return Optional.ofNullable(this.dbHomeId);
     }
     /**
      * @return The location of the Oracle Database Home.
      * 
      */
-    public String dbHomeLocation() {
-        return this.dbHomeLocation;
+    public Optional<String> dbHomeLocation() {
+        return Optional.ofNullable(this.dbHomeLocation);
     }
     /**
      * @return The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). If provided, filters the results to the set of database versions which are supported for the DB system.
      * 
      */
-    public String dbSystemId() {
-        return this.dbSystemId;
+    public Optional<String> dbSystemId() {
+        return Optional.ofNullable(this.dbSystemId);
     }
     /**
      * @return A filter to return only DB Homes that match the specified dbVersion.
      * 
      */
-    public String dbVersion() {
-        return this.dbVersion;
+    public Optional<String> dbVersion() {
+        return Optional.ofNullable(this.dbVersion);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return A filter to return only resources that match the entire display name given. The match is not case sensitive.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
-    public Boolean enableDatabaseDelete() {
-        return this.enableDatabaseDelete;
+    public Optional<Boolean> enableDatabaseDelete() {
+        return Optional.ofNullable(this.enableDatabaseDelete);
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
-    public Boolean isDesupportedVersion() {
-        return this.isDesupportedVersion;
+    public Optional<Boolean> isDesupportedVersion() {
+        return Optional.ofNullable(this.isDesupportedVersion);
     }
     /**
      * @return The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      * 
      */
-    public String kmsKeyId() {
-        return this.kmsKeyId;
+    public Optional<String> kmsKeyId() {
+        return Optional.ofNullable(this.kmsKeyId);
     }
-    public String kmsKeyVersionId() {
-        return this.kmsKeyVersionId;
+    public Optional<String> kmsKeyVersionId() {
+        return Optional.ofNullable(this.kmsKeyVersionId);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation is started.
      * 
      */
-    public String lastPatchHistoryEntryId() {
-        return this.lastPatchHistoryEntryId;
+    public Optional<String> lastPatchHistoryEntryId() {
+        return Optional.ofNullable(this.lastPatchHistoryEntryId);
     }
     /**
      * @return Additional information about the current lifecycle state.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
-    public String source() {
-        return this.source;
+    public Optional<String> source() {
+        return Optional.ofNullable(this.source);
     }
     /**
      * @return A filter to return only resources that match the given lifecycle state exactly.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The date and time the Database Home was created.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
      * 
      */
-    public String vmClusterId() {
-        return this.vmClusterId;
+    public Optional<String> vmClusterId() {
+        return Optional.ofNullable(this.vmClusterId);
     }
 
     public static Builder builder() {
@@ -230,27 +232,27 @@ public final class GetDbHomesDbHome {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private String databaseSoftwareImageId;
-        private List<GetDbHomesDbHomeDatabase> databases;
-        private String dbHomeId;
-        private String dbHomeLocation;
-        private String dbSystemId;
-        private String dbVersion;
-        private Map<String,Object> definedTags;
-        private String displayName;
-        private Boolean enableDatabaseDelete;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private Boolean isDesupportedVersion;
-        private String kmsKeyId;
-        private String kmsKeyVersionId;
-        private String lastPatchHistoryEntryId;
-        private String lifecycleDetails;
-        private String source;
-        private String state;
-        private String timeCreated;
-        private String vmClusterId;
+        private @Nullable String compartmentId;
+        private @Nullable String databaseSoftwareImageId;
+        private @Nullable List<GetDbHomesDbHomeDatabase> databases;
+        private @Nullable String dbHomeId;
+        private @Nullable String dbHomeLocation;
+        private @Nullable String dbSystemId;
+        private @Nullable String dbVersion;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String displayName;
+        private @Nullable Boolean enableDatabaseDelete;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable Boolean isDesupportedVersion;
+        private @Nullable String kmsKeyId;
+        private @Nullable String kmsKeyVersionId;
+        private @Nullable String lastPatchHistoryEntryId;
+        private @Nullable String lifecycleDetails;
+        private @Nullable String source;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
+        private @Nullable String vmClusterId;
         public Builder() {}
         public Builder(GetDbHomesDbHome defaults) {
     	      Objects.requireNonNull(defaults);
@@ -278,111 +280,111 @@ public final class GetDbHomesDbHome {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder databaseSoftwareImageId(String databaseSoftwareImageId) {
-            this.databaseSoftwareImageId = Objects.requireNonNull(databaseSoftwareImageId);
+        public Builder databaseSoftwareImageId(@Nullable String databaseSoftwareImageId) {
+            this.databaseSoftwareImageId = databaseSoftwareImageId;
             return this;
         }
         @CustomType.Setter
-        public Builder databases(List<GetDbHomesDbHomeDatabase> databases) {
-            this.databases = Objects.requireNonNull(databases);
+        public Builder databases(@Nullable List<GetDbHomesDbHomeDatabase> databases) {
+            this.databases = databases;
             return this;
         }
         public Builder databases(GetDbHomesDbHomeDatabase... databases) {
             return databases(List.of(databases));
         }
         @CustomType.Setter
-        public Builder dbHomeId(String dbHomeId) {
-            this.dbHomeId = Objects.requireNonNull(dbHomeId);
+        public Builder dbHomeId(@Nullable String dbHomeId) {
+            this.dbHomeId = dbHomeId;
             return this;
         }
         @CustomType.Setter
-        public Builder dbHomeLocation(String dbHomeLocation) {
-            this.dbHomeLocation = Objects.requireNonNull(dbHomeLocation);
+        public Builder dbHomeLocation(@Nullable String dbHomeLocation) {
+            this.dbHomeLocation = dbHomeLocation;
             return this;
         }
         @CustomType.Setter
-        public Builder dbSystemId(String dbSystemId) {
-            this.dbSystemId = Objects.requireNonNull(dbSystemId);
+        public Builder dbSystemId(@Nullable String dbSystemId) {
+            this.dbSystemId = dbSystemId;
             return this;
         }
         @CustomType.Setter
-        public Builder dbVersion(String dbVersion) {
-            this.dbVersion = Objects.requireNonNull(dbVersion);
+        public Builder dbVersion(@Nullable String dbVersion) {
+            this.dbVersion = dbVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder enableDatabaseDelete(Boolean enableDatabaseDelete) {
-            this.enableDatabaseDelete = Objects.requireNonNull(enableDatabaseDelete);
+        public Builder enableDatabaseDelete(@Nullable Boolean enableDatabaseDelete) {
+            this.enableDatabaseDelete = enableDatabaseDelete;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder isDesupportedVersion(Boolean isDesupportedVersion) {
-            this.isDesupportedVersion = Objects.requireNonNull(isDesupportedVersion);
+        public Builder isDesupportedVersion(@Nullable Boolean isDesupportedVersion) {
+            this.isDesupportedVersion = isDesupportedVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder kmsKeyId(String kmsKeyId) {
-            this.kmsKeyId = Objects.requireNonNull(kmsKeyId);
+        public Builder kmsKeyId(@Nullable String kmsKeyId) {
+            this.kmsKeyId = kmsKeyId;
             return this;
         }
         @CustomType.Setter
-        public Builder kmsKeyVersionId(String kmsKeyVersionId) {
-            this.kmsKeyVersionId = Objects.requireNonNull(kmsKeyVersionId);
+        public Builder kmsKeyVersionId(@Nullable String kmsKeyVersionId) {
+            this.kmsKeyVersionId = kmsKeyVersionId;
             return this;
         }
         @CustomType.Setter
-        public Builder lastPatchHistoryEntryId(String lastPatchHistoryEntryId) {
-            this.lastPatchHistoryEntryId = Objects.requireNonNull(lastPatchHistoryEntryId);
+        public Builder lastPatchHistoryEntryId(@Nullable String lastPatchHistoryEntryId) {
+            this.lastPatchHistoryEntryId = lastPatchHistoryEntryId;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder source(String source) {
-            this.source = Objects.requireNonNull(source);
+        public Builder source(@Nullable String source) {
+            this.source = source;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder vmClusterId(String vmClusterId) {
-            this.vmClusterId = Objects.requireNonNull(vmClusterId);
+        public Builder vmClusterId(@Nullable String vmClusterId) {
+            this.vmClusterId = vmClusterId;
             return this;
         }
         public GetDbHomesDbHome build() {

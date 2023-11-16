@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Container Configuration resource in Oracle Cloud Infrastructure Artifacts service.
@@ -59,12 +58,12 @@ type LookupContainerConfigurationArgs struct {
 
 // A collection of values returned by getContainerConfiguration.
 type LookupContainerConfigurationResult struct {
-	CompartmentId string `pulumi:"compartmentId"`
-	Id            string `pulumi:"id"`
+	CompartmentId string  `pulumi:"compartmentId"`
+	Id            *string `pulumi:"id"`
 	// Whether to create a new container repository when a container is pushed to a new repository path. Repositories created in this way belong to the root compartment.
-	IsRepositoryCreatedOnFirstPush bool `pulumi:"isRepositoryCreatedOnFirstPush"`
+	IsRepositoryCreatedOnFirstPush *bool `pulumi:"isRepositoryCreatedOnFirstPush"`
 	// The tenancy namespace used in the container repository path.
-	Namespace string `pulumi:"namespace"`
+	Namespace *string `pulumi:"namespace"`
 }
 
 func LookupContainerConfigurationOutput(ctx *pulumi.Context, args LookupContainerConfigurationOutputArgs, opts ...pulumi.InvokeOption) LookupContainerConfigurationResultOutput {
@@ -105,28 +104,22 @@ func (o LookupContainerConfigurationResultOutput) ToLookupContainerConfiguration
 	return o
 }
 
-func (o LookupContainerConfigurationResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupContainerConfigurationResult] {
-	return pulumix.Output[LookupContainerConfigurationResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o LookupContainerConfigurationResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupContainerConfigurationResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-func (o LookupContainerConfigurationResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupContainerConfigurationResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupContainerConfigurationResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupContainerConfigurationResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Whether to create a new container repository when a container is pushed to a new repository path. Repositories created in this way belong to the root compartment.
-func (o LookupContainerConfigurationResultOutput) IsRepositoryCreatedOnFirstPush() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupContainerConfigurationResult) bool { return v.IsRepositoryCreatedOnFirstPush }).(pulumi.BoolOutput)
+func (o LookupContainerConfigurationResultOutput) IsRepositoryCreatedOnFirstPush() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupContainerConfigurationResult) *bool { return v.IsRepositoryCreatedOnFirstPush }).(pulumi.BoolPtrOutput)
 }
 
 // The tenancy namespace used in the container repository path.
-func (o LookupContainerConfigurationResultOutput) Namespace() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupContainerConfigurationResult) string { return v.Namespace }).(pulumi.StringOutput)
+func (o LookupContainerConfigurationResultOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupContainerConfigurationResult) *string { return v.Namespace }).(pulumi.StringPtrOutput)
 }
 
 func init() {

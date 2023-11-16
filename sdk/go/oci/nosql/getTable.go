@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Table resource in Oracle Cloud Infrastructure NoSQL Database service.
@@ -65,42 +64,42 @@ type LookupTableResult struct {
 	// Compartment Identifier.
 	CompartmentId string `pulumi:"compartmentId"`
 	// A DDL statement representing the schema.
-	DdlStatement string `pulumi:"ddlStatement"`
+	DdlStatement *string `pulumi:"ddlStatement"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace": {"bar-key": "value"}}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Unique identifier that is immutable.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// True if this table can be reclaimed after an idle period.
-	IsAutoReclaimable bool `pulumi:"isAutoReclaimable"`
+	IsAutoReclaimable *bool `pulumi:"isAutoReclaimable"`
 	// True if this table is currently a member of a replication set.
-	IsMultiRegion bool `pulumi:"isMultiRegion"`
+	IsMultiRegion *bool `pulumi:"isMultiRegion"`
 	// A message describing the current state in more detail.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// If this table is in a replication set, this value represents the progress of the initialization of the replica's data.  A value of 100 indicates that initialization has completed.
-	LocalReplicaInitializationInPercent int `pulumi:"localReplicaInitializationInPercent"`
+	LocalReplicaInitializationInPercent *int `pulumi:"localReplicaInitializationInPercent"`
 	// The column name.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// An array of Replica listing this table's replicas, if any
 	Replicas []GetTableReplicaType `pulumi:"replicas"`
 	// The current state of this table's schema. Available states are MUTABLE - The schema can be changed. The table is not eligible for replication. FROZEN - The schema is immutable. The table is eligible for replication.
-	SchemaState string `pulumi:"schemaState"`
+	SchemaState *string `pulumi:"schemaState"`
 	// The table schema information as a JSON object.
 	Schemas []GetTableSchema `pulumi:"schemas"`
 	// The state of a table.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Read-only system tag. These predefined keys are scoped to namespaces.  At present the only supported namespace is `"orcl-cloud"`; and the only key in that namespace is `"free-tier-retained"`. Example: `{"orcl-cloud"": {"free-tier-retained": "true"}}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// Throughput and storage limits configuration of a table.
 	TableLimits   []GetTableTableLimit `pulumi:"tableLimits"`
 	TableNameOrId string               `pulumi:"tableNameOrId"`
 	// The time the the table was created. An RFC3339 formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// If lifecycleState is INACTIVE, indicates when this table will be automatically removed. An RFC3339 formatted datetime string.
-	TimeOfExpiration string `pulumi:"timeOfExpiration"`
+	TimeOfExpiration *string `pulumi:"timeOfExpiration"`
 	// The time the the table's metadata was last updated. An RFC3339 formatted datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func LookupTableOutput(ctx *pulumi.Context, args LookupTableOutputArgs, opts ...pulumi.InvokeOption) LookupTableResultOutput {
@@ -143,20 +142,14 @@ func (o LookupTableResultOutput) ToLookupTableResultOutputWithContext(ctx contex
 	return o
 }
 
-func (o LookupTableResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupTableResult] {
-	return pulumix.Output[LookupTableResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Compartment Identifier.
 func (o LookupTableResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupTableResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
 // A DDL statement representing the schema.
-func (o LookupTableResultOutput) DdlStatement() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupTableResult) string { return v.DdlStatement }).(pulumi.StringOutput)
+func (o LookupTableResultOutput) DdlStatement() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupTableResult) *string { return v.DdlStatement }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace": {"bar-key": "value"}}`
@@ -170,33 +163,33 @@ func (o LookupTableResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Unique identifier that is immutable.
-func (o LookupTableResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupTableResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupTableResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupTableResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // True if this table can be reclaimed after an idle period.
-func (o LookupTableResultOutput) IsAutoReclaimable() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupTableResult) bool { return v.IsAutoReclaimable }).(pulumi.BoolOutput)
+func (o LookupTableResultOutput) IsAutoReclaimable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupTableResult) *bool { return v.IsAutoReclaimable }).(pulumi.BoolPtrOutput)
 }
 
 // True if this table is currently a member of a replication set.
-func (o LookupTableResultOutput) IsMultiRegion() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupTableResult) bool { return v.IsMultiRegion }).(pulumi.BoolOutput)
+func (o LookupTableResultOutput) IsMultiRegion() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupTableResult) *bool { return v.IsMultiRegion }).(pulumi.BoolPtrOutput)
 }
 
 // A message describing the current state in more detail.
-func (o LookupTableResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupTableResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupTableResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupTableResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // If this table is in a replication set, this value represents the progress of the initialization of the replica's data.  A value of 100 indicates that initialization has completed.
-func (o LookupTableResultOutput) LocalReplicaInitializationInPercent() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupTableResult) int { return v.LocalReplicaInitializationInPercent }).(pulumi.IntOutput)
+func (o LookupTableResultOutput) LocalReplicaInitializationInPercent() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupTableResult) *int { return v.LocalReplicaInitializationInPercent }).(pulumi.IntPtrOutput)
 }
 
 // The column name.
-func (o LookupTableResultOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupTableResult) string { return v.Name }).(pulumi.StringOutput)
+func (o LookupTableResultOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupTableResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // An array of Replica listing this table's replicas, if any
@@ -205,8 +198,8 @@ func (o LookupTableResultOutput) Replicas() GetTableReplicaTypeArrayOutput {
 }
 
 // The current state of this table's schema. Available states are MUTABLE - The schema can be changed. The table is not eligible for replication. FROZEN - The schema is immutable. The table is eligible for replication.
-func (o LookupTableResultOutput) SchemaState() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupTableResult) string { return v.SchemaState }).(pulumi.StringOutput)
+func (o LookupTableResultOutput) SchemaState() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupTableResult) *string { return v.SchemaState }).(pulumi.StringPtrOutput)
 }
 
 // The table schema information as a JSON object.
@@ -215,8 +208,8 @@ func (o LookupTableResultOutput) Schemas() GetTableSchemaArrayOutput {
 }
 
 // The state of a table.
-func (o LookupTableResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupTableResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupTableResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupTableResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Read-only system tag. These predefined keys are scoped to namespaces.  At present the only supported namespace is `"orcl-cloud"`; and the only key in that namespace is `"free-tier-retained"`. Example: `{"orcl-cloud"": {"free-tier-retained": "true"}}`
@@ -234,18 +227,18 @@ func (o LookupTableResultOutput) TableNameOrId() pulumi.StringOutput {
 }
 
 // The time the the table was created. An RFC3339 formatted datetime string.
-func (o LookupTableResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupTableResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupTableResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupTableResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // If lifecycleState is INACTIVE, indicates when this table will be automatically removed. An RFC3339 formatted datetime string.
-func (o LookupTableResultOutput) TimeOfExpiration() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupTableResult) string { return v.TimeOfExpiration }).(pulumi.StringOutput)
+func (o LookupTableResultOutput) TimeOfExpiration() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupTableResult) *string { return v.TimeOfExpiration }).(pulumi.StringPtrOutput)
 }
 
 // The time the the table's metadata was last updated. An RFC3339 formatted datetime string.
-func (o LookupTableResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupTableResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupTableResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupTableResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

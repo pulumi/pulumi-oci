@@ -76,90 +76,57 @@ class GetManagedListResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        Compartment Identifier where the resource is created
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        ManagedList description.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        ManagedList display name.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="feedProvider")
-    def feed_provider(self) -> str:
-        """
-        provider of the feed
-        """
+    def feed_provider(self) -> Optional[str]:
         return pulumi.get(self, "feed_provider")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        Unique identifier that is immutable on creation
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isEditable")
-    def is_editable(self) -> bool:
-        """
-        If this list is editable or not
-        """
+    def is_editable(self) -> Optional[bool]:
         return pulumi.get(self, "is_editable")
 
     @property
     @pulumi.getter(name="lifecyleDetails")
-    def lifecyle_details(self) -> str:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
+    def lifecyle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecyle_details")
 
     @property
     @pulumi.getter(name="listItems")
-    def list_items(self) -> Sequence[str]:
-        """
-        List of ManagedListItem
-        """
+    def list_items(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "list_items")
 
     @property
     @pulumi.getter(name="listType")
-    def list_type(self) -> str:
-        """
-        type of the list
-        """
+    def list_type(self) -> Optional[str]:
         return pulumi.get(self, "list_type")
 
     @property
@@ -169,42 +136,27 @@ class GetManagedListResult:
 
     @property
     @pulumi.getter(name="sourceManagedListId")
-    def source_managed_list_id(self) -> str:
-        """
-        OCID of the Source ManagedList
-        """
+    def source_managed_list_id(self) -> Optional[str]:
         return pulumi.get(self, "source_managed_list_id")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the resource.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the managed list was created. Format defined by RFC3339.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time the managed list was updated. Format defined by RFC3339.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -236,21 +188,7 @@ class AwaitableGetManagedListResult(GetManagedListResult):
 def get_managed_list(managed_list_id: Optional[str] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagedListResult:
     """
-    This data source provides details about a specific Managed List resource in Oracle Cloud Infrastructure Cloud Guard service.
-
-    Returns a managed list identified by managedListId
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_list = oci.CloudGuard.get_managed_list(managed_list_id=oci_cloud_guard_managed_list["test_managed_list"]["id"])
-    ```
-
-
-    :param str managed_list_id: The cloudguard list OCID to be passed in the request.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['managedListId'] = managed_list_id
@@ -281,20 +219,6 @@ def get_managed_list(managed_list_id: Optional[str] = None,
 def get_managed_list_output(managed_list_id: Optional[pulumi.Input[str]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedListResult]:
     """
-    This data source provides details about a specific Managed List resource in Oracle Cloud Infrastructure Cloud Guard service.
-
-    Returns a managed list identified by managedListId
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_list = oci.CloudGuard.get_managed_list(managed_list_id=oci_cloud_guard_managed_list["test_managed_list"]["id"])
-    ```
-
-
-    :param str managed_list_id: The cloudguard list OCID to be passed in the request.
+    Use this data source to access information about an existing resource.
     """
     ...

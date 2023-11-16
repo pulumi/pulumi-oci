@@ -9,6 +9,7 @@ import com.pulumi.oci.DataSafe.outputs.GetMaskingPolicyMaskingSchemasMaskingSche
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -18,13 +19,13 @@ public final class GetMaskingPolicyMaskingSchemasResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String maskingPolicyId;
     /**
      * @return The list of masking_schema_collection.
      * 
      */
-    private List<GetMaskingPolicyMaskingSchemasMaskingSchemaCollection> maskingSchemaCollections;
+    private @Nullable List<GetMaskingPolicyMaskingSchemasMaskingSchemaCollection> maskingSchemaCollections;
     /**
      * @return The database schema that contains the masking column.
      * 
@@ -39,8 +40,8 @@ public final class GetMaskingPolicyMaskingSchemasResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String maskingPolicyId() {
         return this.maskingPolicyId;
@@ -50,7 +51,7 @@ public final class GetMaskingPolicyMaskingSchemasResult {
      * 
      */
     public List<GetMaskingPolicyMaskingSchemasMaskingSchemaCollection> maskingSchemaCollections() {
-        return this.maskingSchemaCollections;
+        return this.maskingSchemaCollections == null ? List.of() : this.maskingSchemaCollections;
     }
     /**
      * @return The database schema that contains the masking column.
@@ -70,9 +71,9 @@ public final class GetMaskingPolicyMaskingSchemasResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetMaskingPolicyMaskingSchemasFilter> filters;
-        private String id;
+        private @Nullable String id;
         private String maskingPolicyId;
-        private List<GetMaskingPolicyMaskingSchemasMaskingSchemaCollection> maskingSchemaCollections;
+        private @Nullable List<GetMaskingPolicyMaskingSchemasMaskingSchemaCollection> maskingSchemaCollections;
         private @Nullable List<String> schemaNames;
         public Builder() {}
         public Builder(GetMaskingPolicyMaskingSchemasResult defaults) {
@@ -93,8 +94,8 @@ public final class GetMaskingPolicyMaskingSchemasResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -103,8 +104,8 @@ public final class GetMaskingPolicyMaskingSchemasResult {
             return this;
         }
         @CustomType.Setter
-        public Builder maskingSchemaCollections(List<GetMaskingPolicyMaskingSchemasMaskingSchemaCollection> maskingSchemaCollections) {
-            this.maskingSchemaCollections = Objects.requireNonNull(maskingSchemaCollections);
+        public Builder maskingSchemaCollections(@Nullable List<GetMaskingPolicyMaskingSchemasMaskingSchemaCollection> maskingSchemaCollections) {
+            this.maskingSchemaCollections = maskingSchemaCollections;
             return this;
         }
         public Builder maskingSchemaCollections(GetMaskingPolicyMaskingSchemasMaskingSchemaCollection... maskingSchemaCollections) {

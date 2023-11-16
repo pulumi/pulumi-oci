@@ -6,6 +6,8 @@ package com.pulumi.oci.LogAnalytics.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetNamespaceStorageEncryptionKeyInfoItem {
@@ -13,39 +15,39 @@ public final class GetNamespaceStorageEncryptionKeyInfoItem {
      * @return This is the key OCID of the encryption key (null if Oracle-managed).
      * 
      */
-    private String keyId;
+    private @Nullable String keyId;
     /**
      * @return This is the source of the encryption key.
      * 
      */
-    private String keySource;
+    private @Nullable String keySource;
     /**
      * @return This is the type of data to be encrypted. It can be either active or archival.
      * 
      */
-    private String keyType;
+    private @Nullable String keyType;
 
     private GetNamespaceStorageEncryptionKeyInfoItem() {}
     /**
      * @return This is the key OCID of the encryption key (null if Oracle-managed).
      * 
      */
-    public String keyId() {
-        return this.keyId;
+    public Optional<String> keyId() {
+        return Optional.ofNullable(this.keyId);
     }
     /**
      * @return This is the source of the encryption key.
      * 
      */
-    public String keySource() {
-        return this.keySource;
+    public Optional<String> keySource() {
+        return Optional.ofNullable(this.keySource);
     }
     /**
      * @return This is the type of data to be encrypted. It can be either active or archival.
      * 
      */
-    public String keyType() {
-        return this.keyType;
+    public Optional<String> keyType() {
+        return Optional.ofNullable(this.keyType);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetNamespaceStorageEncryptionKeyInfoItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String keyId;
-        private String keySource;
-        private String keyType;
+        private @Nullable String keyId;
+        private @Nullable String keySource;
+        private @Nullable String keyType;
         public Builder() {}
         public Builder(GetNamespaceStorageEncryptionKeyInfoItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetNamespaceStorageEncryptionKeyInfoItem {
         }
 
         @CustomType.Setter
-        public Builder keyId(String keyId) {
-            this.keyId = Objects.requireNonNull(keyId);
+        public Builder keyId(@Nullable String keyId) {
+            this.keyId = keyId;
             return this;
         }
         @CustomType.Setter
-        public Builder keySource(String keySource) {
-            this.keySource = Objects.requireNonNull(keySource);
+        public Builder keySource(@Nullable String keySource) {
+            this.keySource = keySource;
             return this;
         }
         @CustomType.Setter
-        public Builder keyType(String keyType) {
-            this.keyType = Objects.requireNonNull(keyType);
+        public Builder keyType(@Nullable String keyType) {
+            this.keyType = keyType;
             return this;
         }
         public GetNamespaceStorageEncryptionKeyInfoItem build() {

@@ -6,6 +6,8 @@ package com.pulumi.oci.CloudBridge.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAssetSourceDiscoveryCredential {
@@ -13,27 +15,27 @@ public final class GetAssetSourceDiscoveryCredential {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the the type of the credentials is BASIC` , the secret must contain the username and password in JSON format, which is in the form of  `{ &#34;username&#34;: &#34;&lt;VMwareUser&gt;&#34;, &#34;password&#34;: &#34;&lt;VMwarePassword&gt;&#34; }`.
      * 
      */
-    private String secretId;
+    private @Nullable String secretId;
     /**
      * @return The type of asset source. Indicates external origin of the assets that are read by assigning this asset source.
      * 
      */
-    private String type;
+    private @Nullable String type;
 
     private GetAssetSourceDiscoveryCredential() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the the type of the credentials is BASIC` , the secret must contain the username and password in JSON format, which is in the form of  `{ &#34;username&#34;: &#34;&lt;VMwareUser&gt;&#34;, &#34;password&#34;: &#34;&lt;VMwarePassword&gt;&#34; }`.
      * 
      */
-    public String secretId() {
-        return this.secretId;
+    public Optional<String> secretId() {
+        return Optional.ofNullable(this.secretId);
     }
     /**
      * @return The type of asset source. Indicates external origin of the assets that are read by assigning this asset source.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetAssetSourceDiscoveryCredential {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String secretId;
-        private String type;
+        private @Nullable String secretId;
+        private @Nullable String type;
         public Builder() {}
         public Builder(GetAssetSourceDiscoveryCredential defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetAssetSourceDiscoveryCredential {
         }
 
         @CustomType.Setter
-        public Builder secretId(String secretId) {
-            this.secretId = Objects.requireNonNull(secretId);
+        public Builder secretId(@Nullable String secretId) {
+            this.secretId = secretId;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         public GetAssetSourceDiscoveryCredential build() {

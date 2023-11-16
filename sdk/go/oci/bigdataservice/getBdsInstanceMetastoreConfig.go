@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Bds Instance Metastore Config resource in Oracle Cloud Infrastructure Big Data Service service.
@@ -62,27 +61,27 @@ type LookupBdsInstanceMetastoreConfigArgs struct {
 
 // A collection of values returned by getBdsInstanceMetastoreConfig.
 type LookupBdsInstanceMetastoreConfigResult struct {
-	ActivateTrigger int `pulumi:"activateTrigger"`
+	ActivateTrigger *int `pulumi:"activateTrigger"`
 	// The ID of BDS API Key used for metastore configuration. Set only if metastore's type is EXTERNAL.
-	BdsApiKeyId          string `pulumi:"bdsApiKeyId"`
-	BdsApiKeyPassphrase  string `pulumi:"bdsApiKeyPassphrase"`
-	BdsInstanceId        string `pulumi:"bdsInstanceId"`
-	ClusterAdminPassword string `pulumi:"clusterAdminPassword"`
+	BdsApiKeyId          *string `pulumi:"bdsApiKeyId"`
+	BdsApiKeyPassphrase  *string `pulumi:"bdsApiKeyPassphrase"`
+	BdsInstanceId        string  `pulumi:"bdsInstanceId"`
+	ClusterAdminPassword *string `pulumi:"clusterAdminPassword"`
 	// The display name of metastore configuration
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The ID of the metastore configuration
-	Id                string `pulumi:"id"`
-	MetastoreConfigId string `pulumi:"metastoreConfigId"`
+	Id                *string `pulumi:"id"`
+	MetastoreConfigId string  `pulumi:"metastoreConfigId"`
 	// The OCID of the Data Catalog metastore. Set only if metastore's type is EXTERNAL.
-	MetastoreId string `pulumi:"metastoreId"`
+	MetastoreId *string `pulumi:"metastoreId"`
 	// The type of the metastore in the metastore configuration.
-	MetastoreType string `pulumi:"metastoreType"`
+	MetastoreType *string `pulumi:"metastoreType"`
 	// the lifecycle state of the metastore configuration.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The time when the configuration was created, shown as an RFC 3339 formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time when the configuration was updated, shown as an RFC 3339 formatted datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func LookupBdsInstanceMetastoreConfigOutput(ctx *pulumi.Context, args LookupBdsInstanceMetastoreConfigOutputArgs, opts ...pulumi.InvokeOption) LookupBdsInstanceMetastoreConfigResultOutput {
@@ -125,41 +124,35 @@ func (o LookupBdsInstanceMetastoreConfigResultOutput) ToLookupBdsInstanceMetasto
 	return o
 }
 
-func (o LookupBdsInstanceMetastoreConfigResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupBdsInstanceMetastoreConfigResult] {
-	return pulumix.Output[LookupBdsInstanceMetastoreConfigResult]{
-		OutputState: o.OutputState,
-	}
-}
-
-func (o LookupBdsInstanceMetastoreConfigResultOutput) ActivateTrigger() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupBdsInstanceMetastoreConfigResult) int { return v.ActivateTrigger }).(pulumi.IntOutput)
+func (o LookupBdsInstanceMetastoreConfigResultOutput) ActivateTrigger() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupBdsInstanceMetastoreConfigResult) *int { return v.ActivateTrigger }).(pulumi.IntPtrOutput)
 }
 
 // The ID of BDS API Key used for metastore configuration. Set only if metastore's type is EXTERNAL.
-func (o LookupBdsInstanceMetastoreConfigResultOutput) BdsApiKeyId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupBdsInstanceMetastoreConfigResult) string { return v.BdsApiKeyId }).(pulumi.StringOutput)
+func (o LookupBdsInstanceMetastoreConfigResultOutput) BdsApiKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupBdsInstanceMetastoreConfigResult) *string { return v.BdsApiKeyId }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupBdsInstanceMetastoreConfigResultOutput) BdsApiKeyPassphrase() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupBdsInstanceMetastoreConfigResult) string { return v.BdsApiKeyPassphrase }).(pulumi.StringOutput)
+func (o LookupBdsInstanceMetastoreConfigResultOutput) BdsApiKeyPassphrase() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupBdsInstanceMetastoreConfigResult) *string { return v.BdsApiKeyPassphrase }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupBdsInstanceMetastoreConfigResultOutput) BdsInstanceId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupBdsInstanceMetastoreConfigResult) string { return v.BdsInstanceId }).(pulumi.StringOutput)
 }
 
-func (o LookupBdsInstanceMetastoreConfigResultOutput) ClusterAdminPassword() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupBdsInstanceMetastoreConfigResult) string { return v.ClusterAdminPassword }).(pulumi.StringOutput)
+func (o LookupBdsInstanceMetastoreConfigResultOutput) ClusterAdminPassword() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupBdsInstanceMetastoreConfigResult) *string { return v.ClusterAdminPassword }).(pulumi.StringPtrOutput)
 }
 
 // The display name of metastore configuration
-func (o LookupBdsInstanceMetastoreConfigResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupBdsInstanceMetastoreConfigResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupBdsInstanceMetastoreConfigResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupBdsInstanceMetastoreConfigResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The ID of the metastore configuration
-func (o LookupBdsInstanceMetastoreConfigResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupBdsInstanceMetastoreConfigResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupBdsInstanceMetastoreConfigResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupBdsInstanceMetastoreConfigResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupBdsInstanceMetastoreConfigResultOutput) MetastoreConfigId() pulumi.StringOutput {
@@ -167,28 +160,28 @@ func (o LookupBdsInstanceMetastoreConfigResultOutput) MetastoreConfigId() pulumi
 }
 
 // The OCID of the Data Catalog metastore. Set only if metastore's type is EXTERNAL.
-func (o LookupBdsInstanceMetastoreConfigResultOutput) MetastoreId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupBdsInstanceMetastoreConfigResult) string { return v.MetastoreId }).(pulumi.StringOutput)
+func (o LookupBdsInstanceMetastoreConfigResultOutput) MetastoreId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupBdsInstanceMetastoreConfigResult) *string { return v.MetastoreId }).(pulumi.StringPtrOutput)
 }
 
 // The type of the metastore in the metastore configuration.
-func (o LookupBdsInstanceMetastoreConfigResultOutput) MetastoreType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupBdsInstanceMetastoreConfigResult) string { return v.MetastoreType }).(pulumi.StringOutput)
+func (o LookupBdsInstanceMetastoreConfigResultOutput) MetastoreType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupBdsInstanceMetastoreConfigResult) *string { return v.MetastoreType }).(pulumi.StringPtrOutput)
 }
 
 // the lifecycle state of the metastore configuration.
-func (o LookupBdsInstanceMetastoreConfigResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupBdsInstanceMetastoreConfigResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupBdsInstanceMetastoreConfigResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupBdsInstanceMetastoreConfigResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The time when the configuration was created, shown as an RFC 3339 formatted datetime string.
-func (o LookupBdsInstanceMetastoreConfigResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupBdsInstanceMetastoreConfigResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupBdsInstanceMetastoreConfigResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupBdsInstanceMetastoreConfigResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time when the configuration was updated, shown as an RFC 3339 formatted datetime string.
-func (o LookupBdsInstanceMetastoreConfigResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupBdsInstanceMetastoreConfigResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupBdsInstanceMetastoreConfigResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupBdsInstanceMetastoreConfigResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

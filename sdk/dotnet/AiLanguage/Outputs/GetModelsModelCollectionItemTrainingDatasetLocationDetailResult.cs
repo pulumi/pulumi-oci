@@ -16,15 +16,15 @@ namespace Pulumi.Oci.AiLanguage.Outputs
         /// <summary>
         /// Object storage bucket name
         /// </summary>
-        public readonly string Bucket;
+        public readonly string? Bucket;
         /// <summary>
         /// Possible object storage location types
         /// </summary>
-        public readonly string LocationType;
+        public readonly string? LocationType;
         /// <summary>
         /// Object storage namespace
         /// </summary>
-        public readonly string Namespace;
+        public readonly string? Namespace;
         /// <summary>
         /// Array of files which need to be processed in the bucket
         /// </summary>
@@ -32,11 +32,11 @@ namespace Pulumi.Oci.AiLanguage.Outputs
 
         [OutputConstructor]
         private GetModelsModelCollectionItemTrainingDatasetLocationDetailResult(
-            string bucket,
+            string? bucket,
 
-            string locationType,
+            string? locationType,
 
-            string @namespace,
+            string? @namespace,
 
             ImmutableArray<string> objectNames)
         {

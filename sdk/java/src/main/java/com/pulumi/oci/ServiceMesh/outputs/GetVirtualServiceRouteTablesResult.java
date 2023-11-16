@@ -44,7 +44,7 @@ public final class GetVirtualServiceRouteTablesResult {
      * @return The list of virtual_service_route_table_collection.
      * 
      */
-    private List<GetVirtualServiceRouteTablesVirtualServiceRouteTableCollection> virtualServiceRouteTableCollections;
+    private @Nullable List<GetVirtualServiceRouteTablesVirtualServiceRouteTableCollection> virtualServiceRouteTableCollections;
 
     private GetVirtualServiceRouteTablesResult() {}
     /**
@@ -90,7 +90,7 @@ public final class GetVirtualServiceRouteTablesResult {
      * 
      */
     public List<GetVirtualServiceRouteTablesVirtualServiceRouteTableCollection> virtualServiceRouteTableCollections() {
-        return this.virtualServiceRouteTableCollections;
+        return this.virtualServiceRouteTableCollections == null ? List.of() : this.virtualServiceRouteTableCollections;
     }
 
     public static Builder builder() {
@@ -108,7 +108,7 @@ public final class GetVirtualServiceRouteTablesResult {
         private @Nullable String name;
         private @Nullable String state;
         private @Nullable String virtualServiceId;
-        private List<GetVirtualServiceRouteTablesVirtualServiceRouteTableCollection> virtualServiceRouteTableCollections;
+        private @Nullable List<GetVirtualServiceRouteTablesVirtualServiceRouteTableCollection> virtualServiceRouteTableCollections;
         public Builder() {}
         public Builder(GetVirtualServiceRouteTablesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -155,8 +155,8 @@ public final class GetVirtualServiceRouteTablesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder virtualServiceRouteTableCollections(List<GetVirtualServiceRouteTablesVirtualServiceRouteTableCollection> virtualServiceRouteTableCollections) {
-            this.virtualServiceRouteTableCollections = Objects.requireNonNull(virtualServiceRouteTableCollections);
+        public Builder virtualServiceRouteTableCollections(@Nullable List<GetVirtualServiceRouteTablesVirtualServiceRouteTableCollection> virtualServiceRouteTableCollections) {
+            this.virtualServiceRouteTableCollections = virtualServiceRouteTableCollections;
             return this;
         }
         public Builder virtualServiceRouteTableCollections(GetVirtualServiceRouteTablesVirtualServiceRouteTableCollection... virtualServiceRouteTableCollections) {

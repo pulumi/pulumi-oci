@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Software Source Package Group resource in Oracle Cloud Infrastructure Os Management Hub service.
@@ -63,20 +62,20 @@ type GetSoftwareSourcePackageGroupArgs struct {
 // A collection of values returned by getSoftwareSourcePackageGroup.
 type GetSoftwareSourcePackageGroupResult struct {
 	// description of the package group.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Indicates the order to display category or environment.
-	DisplayOrder int `pulumi:"displayOrder"`
+	DisplayOrder *int `pulumi:"displayOrder"`
 	// Indicates if this is a group, category or environment.
-	GroupType string `pulumi:"groupType"`
+	GroupType *string `pulumi:"groupType"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Indicates if this package group is the default.
-	IsDefault bool `pulumi:"isDefault"`
+	IsDefault *bool `pulumi:"isDefault"`
 	// Indicates if this package group is visible by users.
-	IsUserVisible bool `pulumi:"isUserVisible"`
+	IsUserVisible *bool `pulumi:"isUserVisible"`
 	// Package group name.
-	Name           string `pulumi:"name"`
-	PackageGroupId string `pulumi:"packageGroupId"`
+	Name           *string `pulumi:"name"`
+	PackageGroupId string  `pulumi:"packageGroupId"`
 	// The list of packages in the package group.
 	Packages []string `pulumi:"packages"`
 	// the IDs of the package group's repositories.
@@ -124,45 +123,39 @@ func (o GetSoftwareSourcePackageGroupResultOutput) ToGetSoftwareSourcePackageGro
 	return o
 }
 
-func (o GetSoftwareSourcePackageGroupResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourcePackageGroupResult] {
-	return pulumix.Output[GetSoftwareSourcePackageGroupResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // description of the package group.
-func (o GetSoftwareSourcePackageGroupResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourcePackageGroupResult) string { return v.Description }).(pulumi.StringOutput)
+func (o GetSoftwareSourcePackageGroupResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourcePackageGroupResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Indicates the order to display category or environment.
-func (o GetSoftwareSourcePackageGroupResultOutput) DisplayOrder() pulumi.IntOutput {
-	return o.ApplyT(func(v GetSoftwareSourcePackageGroupResult) int { return v.DisplayOrder }).(pulumi.IntOutput)
+func (o GetSoftwareSourcePackageGroupResultOutput) DisplayOrder() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourcePackageGroupResult) *int { return v.DisplayOrder }).(pulumi.IntPtrOutput)
 }
 
 // Indicates if this is a group, category or environment.
-func (o GetSoftwareSourcePackageGroupResultOutput) GroupType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourcePackageGroupResult) string { return v.GroupType }).(pulumi.StringOutput)
+func (o GetSoftwareSourcePackageGroupResultOutput) GroupType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourcePackageGroupResult) *string { return v.GroupType }).(pulumi.StringPtrOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetSoftwareSourcePackageGroupResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourcePackageGroupResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetSoftwareSourcePackageGroupResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourcePackageGroupResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Indicates if this package group is the default.
-func (o GetSoftwareSourcePackageGroupResultOutput) IsDefault() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSoftwareSourcePackageGroupResult) bool { return v.IsDefault }).(pulumi.BoolOutput)
+func (o GetSoftwareSourcePackageGroupResultOutput) IsDefault() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourcePackageGroupResult) *bool { return v.IsDefault }).(pulumi.BoolPtrOutput)
 }
 
 // Indicates if this package group is visible by users.
-func (o GetSoftwareSourcePackageGroupResultOutput) IsUserVisible() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetSoftwareSourcePackageGroupResult) bool { return v.IsUserVisible }).(pulumi.BoolOutput)
+func (o GetSoftwareSourcePackageGroupResultOutput) IsUserVisible() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourcePackageGroupResult) *bool { return v.IsUserVisible }).(pulumi.BoolPtrOutput)
 }
 
 // Package group name.
-func (o GetSoftwareSourcePackageGroupResultOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourcePackageGroupResult) string { return v.Name }).(pulumi.StringOutput)
+func (o GetSoftwareSourcePackageGroupResultOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourcePackageGroupResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 func (o GetSoftwareSourcePackageGroupResultOutput) PackageGroupId() pulumi.StringOutput {

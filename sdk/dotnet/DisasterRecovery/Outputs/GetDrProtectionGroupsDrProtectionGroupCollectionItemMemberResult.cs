@@ -24,27 +24,27 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// <summary>
         /// The availability domain of the destination mount target. Example: `BBTh:region-AD`
         /// </summary>
-        public readonly string DestinationAvailabilityDomain;
+        public readonly string? DestinationAvailabilityDomain;
         /// <summary>
         /// The OCID of a capacity reservation in the destination region which will be used to launch the compute instance.  Example: `ocid1.capacityreservation.oc1..uniqueID`
         /// </summary>
-        public readonly string DestinationCapacityReservationId;
+        public readonly string? DestinationCapacityReservationId;
         /// <summary>
         /// The OCID of a compartment in the destination region in which the compute instance should be launched.  Example: `ocid1.compartment.oc1..uniqueID`
         /// </summary>
-        public readonly string DestinationCompartmentId;
+        public readonly string? DestinationCompartmentId;
         /// <summary>
         /// The OCID of a dedicated VM host in the destination region where the compute instance should be launched.  Example: `ocid1.dedicatedvmhost.oc1..uniqueID`
         /// </summary>
-        public readonly string DestinationDedicatedVmHostId;
+        public readonly string? DestinationDedicatedVmHostId;
         /// <summary>
         /// The OCID of the destination load balancer. The backend sets in this destination load balancer are updated during DR.  Example: `ocid1.loadbalancer.oc1..uniqueID`
         /// </summary>
-        public readonly string DestinationLoadBalancerId;
+        public readonly string? DestinationLoadBalancerId;
         /// <summary>
         /// The OCID of the destination network load balancer. The backend sets in this destination network load balancer are updated during DR.                Example: `ocid1.networkloadbalancer.oc1..uniqueID`
         /// </summary>
-        public readonly string DestinationNetworkLoadBalancerId;
+        public readonly string? DestinationNetworkLoadBalancerId;
         /// <summary>
         /// A list of mappings between the primary region file system export and destination region mount target.
         /// </summary>
@@ -56,27 +56,27 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// <summary>
         /// A flag indicating if the compute instance should be moved during DR operations.  Example: `false`
         /// </summary>
-        public readonly bool IsMovable;
+        public readonly bool? IsMovable;
         /// <summary>
         /// A flag indicating if the compute instance should be moved to the same fault domain in the destination region.  The compute instance launch will fail if this flag is set to true and capacity is not available in the  specified fault domain in the destination region.  Example: `false`
         /// </summary>
-        public readonly bool IsRetainFaultDomain;
+        public readonly bool? IsRetainFaultDomain;
         /// <summary>
         /// A flag indicating whether the non-movable compute instance needs to be started and stopped during DR operations.
         /// </summary>
-        public readonly bool IsStartStopEnabled;
+        public readonly bool? IsStartStopEnabled;
         /// <summary>
         /// The OCID of the member.  Example: `ocid1.instance.oc1..uniqueID`
         /// </summary>
-        public readonly string MemberId;
+        public readonly string? MemberId;
         /// <summary>
         /// The type of the member.
         /// </summary>
-        public readonly string MemberType;
+        public readonly string? MemberType;
         /// <summary>
         /// The OCID of the vault secret where the database SYSDBA password is stored. This password is used for performing database DR operations.  Example: `ocid1.vaultsecret.oc1..uniqueID`
         /// </summary>
-        public readonly string PasswordVaultSecretId;
+        public readonly string? PasswordVaultSecretId;
         /// <summary>
         /// A list of compute instance VNIC mappings.
         /// </summary>
@@ -92,33 +92,33 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
 
             ImmutableArray<Outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationResult> blockVolumeOperations,
 
-            string destinationAvailabilityDomain,
+            string? destinationAvailabilityDomain,
 
-            string destinationCapacityReservationId,
+            string? destinationCapacityReservationId,
 
-            string destinationCompartmentId,
+            string? destinationCompartmentId,
 
-            string destinationDedicatedVmHostId,
+            string? destinationDedicatedVmHostId,
 
-            string destinationLoadBalancerId,
+            string? destinationLoadBalancerId,
 
-            string destinationNetworkLoadBalancerId,
+            string? destinationNetworkLoadBalancerId,
 
             ImmutableArray<Outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingResult> exportMappings,
 
             ImmutableArray<Outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationResult> fileSystemOperations,
 
-            bool isMovable,
+            bool? isMovable,
 
-            bool isRetainFaultDomain,
+            bool? isRetainFaultDomain,
 
-            bool isStartStopEnabled,
+            bool? isStartStopEnabled,
 
-            string memberId,
+            string? memberId,
 
-            string memberType,
+            string? memberType,
 
-            string passwordVaultSecretId,
+            string? passwordVaultSecretId,
 
             ImmutableArray<Outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingResult> vnicMapping,
 

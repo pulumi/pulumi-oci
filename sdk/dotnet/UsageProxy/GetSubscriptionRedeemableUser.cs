@@ -121,18 +121,18 @@ namespace Pulumi.Oci.UsageProxy
     [OutputType]
     public sealed class GetSubscriptionRedeemableUserResult
     {
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The list of user summary that can redeem rewards.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetSubscriptionRedeemableUserItemResult> Items;
         public readonly string SubscriptionId;
         public readonly string TenancyId;
-        public readonly string UserId;
+        public readonly string? UserId;
 
         [OutputConstructor]
         private GetSubscriptionRedeemableUserResult(
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetSubscriptionRedeemableUserItemResult> items,
 
@@ -140,7 +140,7 @@ namespace Pulumi.Oci.UsageProxy
 
             string tenancyId,
 
-            string userId)
+            string? userId)
         {
             Id = id;
             Items = items;

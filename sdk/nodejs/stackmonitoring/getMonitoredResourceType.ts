@@ -47,56 +47,56 @@ export interface GetMonitoredResourceTypeResult {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy containing the resource type.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * A friendly description.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * Monitored resource type display name.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * Monitored resource type identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The metadata details for resource type.
      */
-    readonly metadatas: outputs.StackMonitoring.GetMonitoredResourceTypeMetadata[];
+    readonly metadatas?: outputs.StackMonitoring.GetMonitoredResourceTypeMetadata[];
     /**
      * Metric namespace for resource type.
      */
-    readonly metricNamespace: string;
+    readonly metricNamespace?: string;
     readonly monitoredResourceTypeId: string;
     /**
      * A unique monitored resource type name. The name must be unique across tenancy.  Name can not be changed.
      */
-    readonly name: string;
+    readonly name?: string;
     /**
      * Lifecycle state of the monitored resource type.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * The date and time when the monitored resource type was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The date and time when the monitored resource was updated, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific Monitored Resource Type resource in Oracle Cloud Infrastructure Stack Monitoring service.

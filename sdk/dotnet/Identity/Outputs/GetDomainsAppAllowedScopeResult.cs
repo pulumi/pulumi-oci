@@ -16,23 +16,23 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// The fully qualified value of this scope within this App. A fully qualified scope combines the 'value' of each scope with the value of 'audience'. Each value of 'fqs' must be unique across the system. Used only when this App acts as an OAuth Resource.
         /// </summary>
-        public readonly string Fqs;
+        public readonly string? Fqs;
         /// <summary>
         /// The ID of the App that defines this scope.
         /// </summary>
-        public readonly string IdOfDefiningApp;
+        public readonly string? IdOfDefiningApp;
         /// <summary>
         /// If true, indicates that this value must be protected.
         /// </summary>
-        public readonly bool ReadOnly;
+        public readonly bool? ReadOnly;
 
         [OutputConstructor]
         private GetDomainsAppAllowedScopeResult(
-            string fqs,
+            string? fqs,
 
-            string idOfDefiningApp,
+            string? idOfDefiningApp,
 
-            bool readOnly)
+            bool? readOnly)
         {
             Fqs = fqs;
             IdOfDefiningApp = idOfDefiningApp;

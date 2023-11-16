@@ -44,43 +44,31 @@ class GetAutonomousDatabaseInstanceWalletManagementResult:
     @property
     @pulumi.getter(name="autonomousDatabaseId")
     def autonomous_database_id(self) -> str:
-        """
-        The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
         return pulumi.get(self, "autonomous_database_id")
 
     @property
     @pulumi.getter(name="gracePeriod")
-    def grace_period(self) -> int:
+    def grace_period(self) -> Optional[int]:
         return pulumi.get(self, "grace_period")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="shouldRotate")
-    def should_rotate(self) -> bool:
-        """
-        Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
-        """
+    def should_rotate(self) -> Optional[bool]:
         return pulumi.get(self, "should_rotate")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current lifecycle state of the Autonomous Database wallet.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeRotated")
-    def time_rotated(self) -> str:
-        """
-        The date and time the wallet was last rotated.
-        """
+    def time_rotated(self) -> Optional[str]:
         return pulumi.get(self, "time_rotated")
 
 
@@ -101,21 +89,7 @@ class AwaitableGetAutonomousDatabaseInstanceWalletManagementResult(GetAutonomous
 def get_autonomous_database_instance_wallet_management(autonomous_database_id: Optional[str] = None,
                                                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAutonomousDatabaseInstanceWalletManagementResult:
     """
-    This data source provides details about a specific Autonomous Database Instance Wallet Management resource in Oracle Cloud Infrastructure Database service.
-
-    Gets the wallet details for the specified Autonomous Database.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_autonomous_database_instance_wallet_management = oci.Database.get_autonomous_database_instance_wallet_management(autonomous_database_id=oci_database_autonomous_database["test_autonomous_database"]["id"])
-    ```
-
-
-    :param str autonomous_database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['autonomousDatabaseId'] = autonomous_database_id
@@ -135,20 +109,6 @@ def get_autonomous_database_instance_wallet_management(autonomous_database_id: O
 def get_autonomous_database_instance_wallet_management_output(autonomous_database_id: Optional[pulumi.Input[str]] = None,
                                                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAutonomousDatabaseInstanceWalletManagementResult]:
     """
-    This data source provides details about a specific Autonomous Database Instance Wallet Management resource in Oracle Cloud Infrastructure Database service.
-
-    Gets the wallet details for the specified Autonomous Database.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_autonomous_database_instance_wallet_management = oci.Database.get_autonomous_database_instance_wallet_management(autonomous_database_id=oci_database_autonomous_database["test_autonomous_database"]["id"])
-    ```
-
-
-    :param str autonomous_database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     ...

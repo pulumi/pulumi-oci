@@ -6,6 +6,8 @@ package com.pulumi.oci.ServiceCatalog.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPrivateApplicationPackageDetail {
@@ -13,23 +15,23 @@ public final class GetPrivateApplicationPackageDetail {
      * @return Type of packages within this private application.
      * 
      */
-    private String packageType;
-    private String version;
-    private String zipFileBase64encoded;
+    private @Nullable String packageType;
+    private @Nullable String version;
+    private @Nullable String zipFileBase64encoded;
 
     private GetPrivateApplicationPackageDetail() {}
     /**
      * @return Type of packages within this private application.
      * 
      */
-    public String packageType() {
-        return this.packageType;
+    public Optional<String> packageType() {
+        return Optional.ofNullable(this.packageType);
     }
-    public String version() {
-        return this.version;
+    public Optional<String> version() {
+        return Optional.ofNullable(this.version);
     }
-    public String zipFileBase64encoded() {
-        return this.zipFileBase64encoded;
+    public Optional<String> zipFileBase64encoded() {
+        return Optional.ofNullable(this.zipFileBase64encoded);
     }
 
     public static Builder builder() {
@@ -41,9 +43,9 @@ public final class GetPrivateApplicationPackageDetail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String packageType;
-        private String version;
-        private String zipFileBase64encoded;
+        private @Nullable String packageType;
+        private @Nullable String version;
+        private @Nullable String zipFileBase64encoded;
         public Builder() {}
         public Builder(GetPrivateApplicationPackageDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -53,18 +55,18 @@ public final class GetPrivateApplicationPackageDetail {
         }
 
         @CustomType.Setter
-        public Builder packageType(String packageType) {
-            this.packageType = Objects.requireNonNull(packageType);
+        public Builder packageType(@Nullable String packageType) {
+            this.packageType = packageType;
             return this;
         }
         @CustomType.Setter
-        public Builder version(String version) {
-            this.version = Objects.requireNonNull(version);
+        public Builder version(@Nullable String version) {
+            this.version = version;
             return this;
         }
         @CustomType.Setter
-        public Builder zipFileBase64encoded(String zipFileBase64encoded) {
-            this.zipFileBase64encoded = Objects.requireNonNull(zipFileBase64encoded);
+        public Builder zipFileBase64encoded(@Nullable String zipFileBase64encoded) {
+            this.zipFileBase64encoded = zipFileBase64encoded;
             return this;
         }
         public GetPrivateApplicationPackageDetail build() {

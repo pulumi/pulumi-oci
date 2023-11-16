@@ -39,10 +39,7 @@ class GetCategoriesResult:
 
     @property
     @pulumi.getter
-    def categories(self) -> Sequence['outputs.GetCategoriesCategoryResult']:
-        """
-        The list of categories.
-        """
+    def categories(self) -> Optional[Sequence['outputs.GetCategoriesCategoryResult']]:
         return pulumi.get(self, "categories")
 
     @property
@@ -57,7 +54,7 @@ class GetCategoriesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -80,22 +77,7 @@ def get_categories(compartment_id: Optional[str] = None,
                    filters: Optional[Sequence[pulumi.InputType['GetCategoriesFilterArgs']]] = None,
                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCategoriesResult:
     """
-    This data source provides the list of Categories in Oracle Cloud Infrastructure Marketplace service.
-
-    Gets the list of all the categories for listings published to Oracle Cloud Infrastructure Marketplace. Categories apply
-    to the software product provided by the listing.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_categories = oci.Marketplace.get_categories(compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str compartment_id: The unique identifier for the compartment.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -115,21 +97,6 @@ def get_categories_output(compartment_id: Optional[pulumi.Input[Optional[str]]] 
                           filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetCategoriesFilterArgs']]]]] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCategoriesResult]:
     """
-    This data source provides the list of Categories in Oracle Cloud Infrastructure Marketplace service.
-
-    Gets the list of all the categories for listings published to Oracle Cloud Infrastructure Marketplace. Categories apply
-    to the software product provided by the listing.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_categories = oci.Marketplace.get_categories(compartment_id=var["compartment_id"])
-    ```
-
-
-    :param str compartment_id: The unique identifier for the compartment.
+    Use this data source to access information about an existing resource.
     """
     ...

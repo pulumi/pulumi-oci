@@ -54,7 +54,7 @@ class GetRecommendationStrategyResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -62,18 +62,12 @@ class GetRecommendationStrategyResult:
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetRecommendationStrategyItemResult']:
-        """
-        A collection of recommendation strategy summaries.
-        """
+    def items(self) -> Optional[Sequence['outputs.GetRecommendationStrategyItemResult']]:
         return pulumi.get(self, "items")
 
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        The name of the strategy parameter.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -102,29 +96,7 @@ def get_recommendation_strategy(compartment_id: Optional[str] = None,
                                 recommendation_name: Optional[str] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetRecommendationStrategyResult:
     """
-    This data source provides details about a specific Recommendation Strategy resource in Oracle Cloud Infrastructure Optimizer service.
-
-    Lists the existing strategies.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_recommendation_strategy = oci.Optimizer.get_recommendation_strategy(compartment_id=var["compartment_id"],
-        compartment_id_in_subtree=var["recommendation_strategy_compartment_id_in_subtree"],
-        name=var["recommendation_strategy_name"],
-        recommendation_name=oci_optimizer_recommendation["test_recommendation"]["name"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment.
-    :param bool compartment_id_in_subtree: When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the the setting of `accessLevel`.
-           
-           Can only be set to true when performing ListCompartments on the tenancy (root compartment).
-    :param str name: Optional. A filter that returns results that match the name specified.
-    :param str recommendation_name: Optional. A filter that returns results that match the recommendation name specified.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -150,28 +122,6 @@ def get_recommendation_strategy_output(compartment_id: Optional[pulumi.Input[str
                                        recommendation_name: Optional[pulumi.Input[Optional[str]]] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRecommendationStrategyResult]:
     """
-    This data source provides details about a specific Recommendation Strategy resource in Oracle Cloud Infrastructure Optimizer service.
-
-    Lists the existing strategies.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_recommendation_strategy = oci.Optimizer.get_recommendation_strategy(compartment_id=var["compartment_id"],
-        compartment_id_in_subtree=var["recommendation_strategy_compartment_id_in_subtree"],
-        name=var["recommendation_strategy_name"],
-        recommendation_name=oci_optimizer_recommendation["test_recommendation"]["name"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment.
-    :param bool compartment_id_in_subtree: When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the the setting of `accessLevel`.
-           
-           Can only be set to true when performing ListCompartments on the tenancy (root compartment).
-    :param str name: Optional. A filter that returns results that match the name specified.
-    :param str recommendation_name: Optional. A filter that returns results that match the recommendation name specified.
+    Use this data source to access information about an existing resource.
     """
     ...

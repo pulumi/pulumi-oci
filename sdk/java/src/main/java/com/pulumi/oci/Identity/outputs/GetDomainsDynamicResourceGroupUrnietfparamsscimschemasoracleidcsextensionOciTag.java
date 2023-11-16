@@ -9,6 +9,8 @@ import com.pulumi.oci.Identity.outputs.GetDomainsDynamicResourceGroupUrnietfpara
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTag {
@@ -16,17 +18,17 @@ public final class GetDomainsDynamicResourceGroupUrnietfparamsscimschemasoraclei
      * @return Oracle Cloud Infrastructure Defined Tags
      * 
      */
-    private List<GetDomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTag> definedTags;
+    private @Nullable List<GetDomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTag> definedTags;
     /**
      * @return Oracle Cloud Infrastructure Freeform Tags
      * 
      */
-    private List<GetDomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTag> freeformTags;
+    private @Nullable List<GetDomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTag> freeformTags;
     /**
      * @return Oracle Cloud Infrastructure Tag slug
      * 
      */
-    private String tagSlug;
+    private @Nullable String tagSlug;
 
     private GetDomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTag() {}
     /**
@@ -34,21 +36,21 @@ public final class GetDomainsDynamicResourceGroupUrnietfparamsscimschemasoraclei
      * 
      */
     public List<GetDomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTag> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? List.of() : this.definedTags;
     }
     /**
      * @return Oracle Cloud Infrastructure Freeform Tags
      * 
      */
     public List<GetDomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTag> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? List.of() : this.freeformTags;
     }
     /**
      * @return Oracle Cloud Infrastructure Tag slug
      * 
      */
-    public String tagSlug() {
-        return this.tagSlug;
+    public Optional<String> tagSlug() {
+        return Optional.ofNullable(this.tagSlug);
     }
 
     public static Builder builder() {
@@ -60,9 +62,9 @@ public final class GetDomainsDynamicResourceGroupUrnietfparamsscimschemasoraclei
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetDomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTag> definedTags;
-        private List<GetDomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTag> freeformTags;
-        private String tagSlug;
+        private @Nullable List<GetDomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTag> definedTags;
+        private @Nullable List<GetDomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTag> freeformTags;
+        private @Nullable String tagSlug;
         public Builder() {}
         public Builder(GetDomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTag defaults) {
     	      Objects.requireNonNull(defaults);
@@ -72,24 +74,24 @@ public final class GetDomainsDynamicResourceGroupUrnietfparamsscimschemasoraclei
         }
 
         @CustomType.Setter
-        public Builder definedTags(List<GetDomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTag> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable List<GetDomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTag> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         public Builder definedTags(GetDomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTag... definedTags) {
             return definedTags(List.of(definedTags));
         }
         @CustomType.Setter
-        public Builder freeformTags(List<GetDomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTag> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable List<GetDomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTag> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         public Builder freeformTags(GetDomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTag... freeformTags) {
             return freeformTags(List.of(freeformTags));
         }
         @CustomType.Setter
-        public Builder tagSlug(String tagSlug) {
-            this.tagSlug = Objects.requireNonNull(tagSlug);
+        public Builder tagSlug(@Nullable String tagSlug) {
+            this.tagSlug = tagSlug;
             return this;
         }
         public GetDomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTag build() {

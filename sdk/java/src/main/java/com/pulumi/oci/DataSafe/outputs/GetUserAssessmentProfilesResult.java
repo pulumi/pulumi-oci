@@ -29,7 +29,7 @@ public final class GetUserAssessmentProfilesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private @Nullable String inactiveAccountTimeGreaterThanOrEqual;
     private @Nullable String inactiveAccountTimeLessThan;
     /**
@@ -53,7 +53,7 @@ public final class GetUserAssessmentProfilesResult {
      * @return The list of profiles.
      * 
      */
-    private List<GetUserAssessmentProfilesProfile> profiles;
+    private @Nullable List<GetUserAssessmentProfilesProfile> profiles;
     private @Nullable String sessionsPerUserGreaterThanOrEqual;
     private @Nullable String sessionsPerUserLessThan;
     /**
@@ -96,8 +96,8 @@ public final class GetUserAssessmentProfilesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public Optional<String> inactiveAccountTimeGreaterThanOrEqual() {
         return Optional.ofNullable(this.inactiveAccountTimeGreaterThanOrEqual);
@@ -137,7 +137,7 @@ public final class GetUserAssessmentProfilesResult {
      * 
      */
     public List<GetUserAssessmentProfilesProfile> profiles() {
-        return this.profiles;
+        return this.profiles == null ? List.of() : this.profiles;
     }
     public Optional<String> sessionsPerUserGreaterThanOrEqual() {
         return Optional.ofNullable(this.sessionsPerUserGreaterThanOrEqual);
@@ -181,7 +181,7 @@ public final class GetUserAssessmentProfilesResult {
         private @Nullable String failedLoginAttemptsGreaterThanOrEqual;
         private @Nullable String failedLoginAttemptsLessThan;
         private @Nullable List<GetUserAssessmentProfilesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String inactiveAccountTimeGreaterThanOrEqual;
         private @Nullable String inactiveAccountTimeLessThan;
         private @Nullable Boolean isUserCreated;
@@ -189,7 +189,7 @@ public final class GetUserAssessmentProfilesResult {
         private @Nullable String passwordLockTimeLessThan;
         private @Nullable String passwordVerificationFunction;
         private @Nullable String profileName;
-        private List<GetUserAssessmentProfilesProfile> profiles;
+        private @Nullable List<GetUserAssessmentProfilesProfile> profiles;
         private @Nullable String sessionsPerUserGreaterThanOrEqual;
         private @Nullable String sessionsPerUserLessThan;
         private @Nullable String targetId;
@@ -256,8 +256,8 @@ public final class GetUserAssessmentProfilesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -296,8 +296,8 @@ public final class GetUserAssessmentProfilesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder profiles(List<GetUserAssessmentProfilesProfile> profiles) {
-            this.profiles = Objects.requireNonNull(profiles);
+        public Builder profiles(@Nullable List<GetUserAssessmentProfilesProfile> profiles) {
+            this.profiles = profiles;
             return this;
         }
         public Builder profiles(GetUserAssessmentProfilesProfile... profiles) {

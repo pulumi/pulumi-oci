@@ -86,40 +86,40 @@ namespace Pulumi.Oci.Core
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the tunnel.
         /// </summary>
         [Output("compartmentId")]
-        public Output<string> CompartmentId { get; private set; } = null!;
+        public Output<string?> CompartmentId { get; private set; } = null!;
 
         /// <summary>
         /// The IP address of the CPE device's VPN headend.  Example: `203.0.113.22`
         /// </summary>
         [Output("cpeIp")]
-        public Output<string> CpeIp { get; private set; } = null!;
+        public Output<string?> CpeIp { get; private set; } = null!;
 
         /// <summary>
         /// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         [Output("dpdConfigs")]
         public Output<ImmutableArray<Outputs.IpsecConnectionTunnelManagementDpdConfig>> DpdConfigs { get; private set; } = null!;
 
         [Output("dpdMode")]
-        public Output<string> DpdMode { get; private set; } = null!;
+        public Output<string?> DpdMode { get; private set; } = null!;
 
         [Output("dpdTimeoutInSec")]
-        public Output<int> DpdTimeoutInSec { get; private set; } = null!;
+        public Output<int?> DpdTimeoutInSec { get; private set; } = null!;
 
         /// <summary>
         /// Configuration information used by the encryption domain policy. Required if the tunnel uses POLICY routing.
         /// </summary>
         [Output("encryptionDomainConfig")]
-        public Output<Outputs.IpsecConnectionTunnelManagementEncryptionDomainConfig> EncryptionDomainConfig { get; private set; } = null!;
+        public Output<Outputs.IpsecConnectionTunnelManagementEncryptionDomainConfig?> EncryptionDomainConfig { get; private set; } = null!;
 
         /// <summary>
         /// Internet Key Exchange protocol version.
         /// </summary>
         [Output("ikeVersion")]
-        public Output<string> IkeVersion { get; private set; } = null!;
+        public Output<string?> IkeVersion { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the IPSec connection.
@@ -128,10 +128,10 @@ namespace Pulumi.Oci.Core
         public Output<string> IpsecId { get; private set; } = null!;
 
         [Output("natTranslationEnabled")]
-        public Output<string> NatTranslationEnabled { get; private set; } = null!;
+        public Output<string?> NatTranslationEnabled { get; private set; } = null!;
 
         [Output("oracleCanInitiate")]
-        public Output<string> OracleCanInitiate { get; private set; } = null!;
+        public Output<string?> OracleCanInitiate { get; private set; } = null!;
 
         [Output("phaseOneDetails")]
         public Output<ImmutableArray<Outputs.IpsecConnectionTunnelManagementPhaseOneDetail>> PhaseOneDetails { get; private set; } = null!;
@@ -149,31 +149,31 @@ namespace Pulumi.Oci.Core
         /// The shared secret (pre-shared key) to use for the IPSec tunnel. If you don't provide a value, Oracle generates a value for you. You can specify your own shared secret later if you like with [UpdateIPSecConnectionTunnelSharedSecret](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnelSharedSecret/UpdateIPSecConnectionTunnelSharedSecret).  Example: `EXAMPLEToUis6j1c.p8G.dVQxcmdfMO0yXMLi.lZTbYCMDGu4V8o`
         /// </summary>
         [Output("sharedSecret")]
-        public Output<string> SharedSecret { get; private set; } = null!;
+        public Output<string?> SharedSecret { get; private set; } = null!;
 
         /// <summary>
         /// The IPSec connection's tunnel's lifecycle state.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The tunnel's current state.
         /// </summary>
         [Output("status")]
-        public Output<string> Status { get; private set; } = null!;
+        public Output<string?> Status { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the IPSec connection tunnel was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// When the status of the tunnel last changed, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         [Output("timeStatusUpdated")]
-        public Output<string> TimeStatusUpdated { get; private set; } = null!;
+        public Output<string?> TimeStatusUpdated { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the IPSec connection's tunnel.
@@ -185,7 +185,7 @@ namespace Pulumi.Oci.Core
         /// The IP address of Oracle's VPN headend.  Example: `129.146.17.50`
         /// </summary>
         [Output("vpnIp")]
-        public Output<string> VpnIp { get; private set; } = null!;
+        public Output<string?> VpnIp { get; private set; } = null!;
 
 
         /// <summary>

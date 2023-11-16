@@ -119,7 +119,7 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
      * 
      */
     @Export(name="autoEnrollEmailFactorDisabled", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> autoEnrollEmailFactorDisabled;
+    private Output</* @Nullable */ Boolean> autoEnrollEmailFactorDisabled;
 
     /**
      * @return (Updatable) If true, indicates that email will not be enrolled as a MFA factor automatically if it a account recovery factor
@@ -136,8 +136,8 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
      * * uniqueness: none
      * 
      */
-    public Output<Boolean> autoEnrollEmailFactorDisabled() {
-        return this.autoEnrollEmailFactorDisabled;
+    public Output<Optional<Boolean>> autoEnrollEmailFactorDisabled() {
+        return Codegen.optional(this.autoEnrollEmailFactorDisabled);
     }
     /**
      * (Updatable) If true, indicates that Bypass Code is enabled for authentication
@@ -250,7 +250,7 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
      * 
      */
     @Export(name="compartmentOcid", refs={String.class}, tree="[0]")
-    private Output<String> compartmentOcid;
+    private Output</* @Nullable */ String> compartmentOcid;
 
     /**
      * @return (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
@@ -266,8 +266,8 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
      * * uniqueness: none
      * 
      */
-    public Output<String> compartmentOcid() {
-        return this.compartmentOcid;
+    public Output<Optional<String>> compartmentOcid() {
+        return Codegen.optional(this.compartmentOcid);
     }
     /**
      * (Updatable) Compliance Policy that defines actions to be taken when a condition is violated
@@ -318,7 +318,7 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
      * 
      */
     @Export(name="deleteInProgress", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> deleteInProgress;
+    private Output</* @Nullable */ Boolean> deleteInProgress;
 
     /**
      * @return (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
@@ -334,8 +334,8 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
      * * uniqueness: none
      * 
      */
-    public Output<Boolean> deleteInProgress() {
-        return this.deleteInProgress;
+    public Output<Optional<Boolean>> deleteInProgress() {
+        return Codegen.optional(this.deleteInProgress);
     }
     /**
      * (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
@@ -352,7 +352,7 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
      * 
      */
     @Export(name="domainOcid", refs={String.class}, tree="[0]")
-    private Output<String> domainOcid;
+    private Output</* @Nullable */ String> domainOcid;
 
     /**
      * @return (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
@@ -368,8 +368,8 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
      * * uniqueness: none
      * 
      */
-    public Output<String> domainOcid() {
-        return this.domainOcid;
+    public Output<Optional<String>> domainOcid() {
+        return Codegen.optional(this.domainOcid);
     }
     /**
      * (Updatable) If true, indicates that the EMAIL channel is enabled for authentication
@@ -387,7 +387,7 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
      * 
      */
     @Export(name="emailEnabled", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> emailEnabled;
+    private Output</* @Nullable */ Boolean> emailEnabled;
 
     /**
      * @return (Updatable) If true, indicates that the EMAIL channel is enabled for authentication
@@ -404,8 +404,8 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
      * * uniqueness: none
      * 
      */
-    public Output<Boolean> emailEnabled() {
-        return this.emailEnabled;
+    public Output<Optional<Boolean>> emailEnabled() {
+        return Codegen.optional(this.emailEnabled);
     }
     /**
      * (Updatable) Settings related to Email Factor, such as enabled email magic link factor, custom url for Email Link
@@ -423,7 +423,7 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
      * 
      */
     @Export(name="emailSettings", refs={DomainsAuthenticationFactorSettingEmailSettings.class}, tree="[0]")
-    private Output<DomainsAuthenticationFactorSettingEmailSettings> emailSettings;
+    private Output</* @Nullable */ DomainsAuthenticationFactorSettingEmailSettings> emailSettings;
 
     /**
      * @return (Updatable) Settings related to Email Factor, such as enabled email magic link factor, custom url for Email Link
@@ -440,8 +440,8 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
      * * uniqueness: none
      * 
      */
-    public Output<DomainsAuthenticationFactorSettingEmailSettings> emailSettings() {
-        return this.emailSettings;
+    public Output<Optional<DomainsAuthenticationFactorSettingEmailSettings>> emailSettings() {
+        return Codegen.optional(this.emailSettings);
     }
     /**
      * (Updatable) Settings that describe the set of restrictions that the system should apply to devices and trusted endpoints of a user
@@ -491,7 +491,7 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
      * 
      */
     @Export(name="fidoAuthenticatorEnabled", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> fidoAuthenticatorEnabled;
+    private Output</* @Nullable */ Boolean> fidoAuthenticatorEnabled;
 
     /**
      * @return (Updatable) If true, indicates that the Fido Authenticator channels are enabled for authentication
@@ -508,8 +508,8 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
      * * uniqueness: none
      * 
      */
-    public Output<Boolean> fidoAuthenticatorEnabled() {
-        return this.fidoAuthenticatorEnabled;
+    public Output<Optional<Boolean>> fidoAuthenticatorEnabled() {
+        return Codegen.optional(this.fidoAuthenticatorEnabled);
     }
     /**
      * (Updatable) If true, indicates that &#39;Show backup factor(s)&#39; button will be hidden during authentication
@@ -527,7 +527,7 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
      * 
      */
     @Export(name="hideBackupFactorEnabled", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> hideBackupFactorEnabled;
+    private Output</* @Nullable */ Boolean> hideBackupFactorEnabled;
 
     /**
      * @return (Updatable) If true, indicates that &#39;Show backup factor(s)&#39; button will be hidden during authentication
@@ -544,8 +544,8 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
      * * uniqueness: none
      * 
      */
-    public Output<Boolean> hideBackupFactorEnabled() {
-        return this.hideBackupFactorEnabled;
+    public Output<Optional<Boolean>> hideBackupFactorEnabled() {
+        return Codegen.optional(this.hideBackupFactorEnabled);
     }
     /**
      * (Updatable) The User or App who created the Resource
@@ -560,7 +560,7 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
      * 
      */
     @Export(name="idcsCreatedBies", refs={List.class,DomainsAuthenticationFactorSettingIdcsCreatedBy.class}, tree="[0,1]")
-    private Output<List<DomainsAuthenticationFactorSettingIdcsCreatedBy>> idcsCreatedBies;
+    private Output</* @Nullable */ List<DomainsAuthenticationFactorSettingIdcsCreatedBy>> idcsCreatedBies;
 
     /**
      * @return (Updatable) The User or App who created the Resource
@@ -574,8 +574,8 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
      * * type: complex
      * 
      */
-    public Output<List<DomainsAuthenticationFactorSettingIdcsCreatedBy>> idcsCreatedBies() {
-        return this.idcsCreatedBies;
+    public Output<Optional<List<DomainsAuthenticationFactorSettingIdcsCreatedBy>>> idcsCreatedBies() {
+        return Codegen.optional(this.idcsCreatedBies);
     }
     /**
      * The basic endpoint for the identity domain
@@ -604,7 +604,7 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
      * 
      */
     @Export(name="idcsLastModifiedBies", refs={List.class,DomainsAuthenticationFactorSettingIdcsLastModifiedBy.class}, tree="[0,1]")
-    private Output<List<DomainsAuthenticationFactorSettingIdcsLastModifiedBy>> idcsLastModifiedBies;
+    private Output</* @Nullable */ List<DomainsAuthenticationFactorSettingIdcsLastModifiedBy>> idcsLastModifiedBies;
 
     /**
      * @return (Updatable) The User or App who modified the Resource
@@ -618,8 +618,8 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
      * * type: complex
      * 
      */
-    public Output<List<DomainsAuthenticationFactorSettingIdcsLastModifiedBy>> idcsLastModifiedBies() {
-        return this.idcsLastModifiedBies;
+    public Output<Optional<List<DomainsAuthenticationFactorSettingIdcsLastModifiedBy>>> idcsLastModifiedBies() {
+        return Codegen.optional(this.idcsLastModifiedBies);
     }
     /**
      * (Updatable) The release number when the resource was upgraded.
@@ -636,7 +636,7 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
      * 
      */
     @Export(name="idcsLastUpgradedInRelease", refs={String.class}, tree="[0]")
-    private Output<String> idcsLastUpgradedInRelease;
+    private Output</* @Nullable */ String> idcsLastUpgradedInRelease;
 
     /**
      * @return (Updatable) The release number when the resource was upgraded.
@@ -652,8 +652,8 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
      * * uniqueness: none
      * 
      */
-    public Output<String> idcsLastUpgradedInRelease() {
-        return this.idcsLastUpgradedInRelease;
+    public Output<Optional<String>> idcsLastUpgradedInRelease() {
+        return Codegen.optional(this.idcsLastUpgradedInRelease);
     }
     /**
      * (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
@@ -669,7 +669,7 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
      * 
      */
     @Export(name="idcsPreventedOperations", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> idcsPreventedOperations;
+    private Output</* @Nullable */ List<String>> idcsPreventedOperations;
 
     /**
      * @return (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
@@ -684,8 +684,8 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
      * * uniqueness: none
      * 
      */
-    public Output<List<String>> idcsPreventedOperations() {
-        return this.idcsPreventedOperations;
+    public Output<Optional<List<String>>> idcsPreventedOperations() {
+        return Codegen.optional(this.idcsPreventedOperations);
     }
     /**
      * (Updatable) Settings related to the use of a user&#39;s profile details from the identity store
@@ -701,7 +701,7 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
      * 
      */
     @Export(name="identityStoreSettings", refs={DomainsAuthenticationFactorSettingIdentityStoreSettings.class}, tree="[0]")
-    private Output<DomainsAuthenticationFactorSettingIdentityStoreSettings> identityStoreSettings;
+    private Output</* @Nullable */ DomainsAuthenticationFactorSettingIdentityStoreSettings> identityStoreSettings;
 
     /**
      * @return (Updatable) Settings related to the use of a user&#39;s profile details from the identity store
@@ -716,8 +716,8 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
      * * uniqueness: none
      * 
      */
-    public Output<DomainsAuthenticationFactorSettingIdentityStoreSettings> identityStoreSettings() {
-        return this.identityStoreSettings;
+    public Output<Optional<DomainsAuthenticationFactorSettingIdentityStoreSettings>> identityStoreSettings() {
+        return Codegen.optional(this.identityStoreSettings);
     }
     /**
      * (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
@@ -734,7 +734,7 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
      * 
      */
     @Export(name="metas", refs={List.class,DomainsAuthenticationFactorSettingMeta.class}, tree="[0,1]")
-    private Output<List<DomainsAuthenticationFactorSettingMeta>> metas;
+    private Output</* @Nullable */ List<DomainsAuthenticationFactorSettingMeta>> metas;
 
     /**
      * @return (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
@@ -750,8 +750,8 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
      * * type: complex
      * 
      */
-    public Output<List<DomainsAuthenticationFactorSettingMeta>> metas() {
-        return this.metas;
+    public Output<Optional<List<DomainsAuthenticationFactorSettingMeta>>> metas() {
+        return Codegen.optional(this.metas);
     }
     /**
      * (Updatable) Specifies the category of people for whom Multi-Factor Authentication is enabled. This is a readOnly attribute which reflects the value of mfaEnabledCategory attribute in SsoSettings
@@ -769,7 +769,7 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
      * 
      */
     @Export(name="mfaEnabledCategory", refs={String.class}, tree="[0]")
-    private Output<String> mfaEnabledCategory;
+    private Output</* @Nullable */ String> mfaEnabledCategory;
 
     /**
      * @return (Updatable) Specifies the category of people for whom Multi-Factor Authentication is enabled. This is a readOnly attribute which reflects the value of mfaEnabledCategory attribute in SsoSettings
@@ -786,8 +786,8 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
      * * uniqueness: none
      * 
      */
-    public Output<String> mfaEnabledCategory() {
-        return this.mfaEnabledCategory;
+    public Output<Optional<String>> mfaEnabledCategory() {
+        return Codegen.optional(this.mfaEnabledCategory);
     }
     /**
      * (Updatable) Specifies if Multi-Factor Authentication enrollment is mandatory or optional for a user
@@ -880,7 +880,7 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
      * 
      */
     @Export(name="ocid", refs={String.class}, tree="[0]")
-    private Output<String> ocid;
+    private Output</* @Nullable */ String> ocid;
 
     /**
      * @return (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
@@ -896,8 +896,8 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
      * * uniqueness: global
      * 
      */
-    public Output<String> ocid() {
-        return this.ocid;
+    public Output<Optional<String>> ocid() {
+        return Codegen.optional(this.ocid);
     }
     /**
      * (Updatable) If true, indicates that the phone (PHONE_CALL) channel is enabled for authentication
@@ -915,7 +915,7 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
      * 
      */
     @Export(name="phoneCallEnabled", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> phoneCallEnabled;
+    private Output</* @Nullable */ Boolean> phoneCallEnabled;
 
     /**
      * @return (Updatable) If true, indicates that the phone (PHONE_CALL) channel is enabled for authentication
@@ -932,8 +932,8 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
      * * uniqueness: none
      * 
      */
-    public Output<Boolean> phoneCallEnabled() {
-        return this.phoneCallEnabled;
+    public Output<Optional<Boolean>> phoneCallEnabled() {
+        return Codegen.optional(this.phoneCallEnabled);
     }
     /**
      * (Updatable) If true, indicates that the Mobile App Push Notification channel is enabled for authentication
@@ -1094,7 +1094,7 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
      * 
      */
     @Export(name="tags", refs={List.class,DomainsAuthenticationFactorSettingTag.class}, tree="[0,1]")
-    private Output<List<DomainsAuthenticationFactorSettingTag>> tags;
+    private Output</* @Nullable */ List<DomainsAuthenticationFactorSettingTag>> tags;
 
     /**
      * @return (Updatable) A list of tags on this resource.
@@ -1110,8 +1110,8 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
      * * uniqueness: none
      * 
      */
-    public Output<List<DomainsAuthenticationFactorSettingTag>> tags() {
-        return this.tags;
+    public Output<Optional<List<DomainsAuthenticationFactorSettingTag>>> tags() {
+        return Codegen.optional(this.tags);
     }
     /**
      * (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
@@ -1128,7 +1128,7 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
      * 
      */
     @Export(name="tenancyOcid", refs={String.class}, tree="[0]")
-    private Output<String> tenancyOcid;
+    private Output</* @Nullable */ String> tenancyOcid;
 
     /**
      * @return (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
@@ -1144,8 +1144,8 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
      * * uniqueness: none
      * 
      */
-    public Output<String> tenancyOcid() {
-        return this.tenancyOcid;
+    public Output<Optional<String>> tenancyOcid() {
+        return Codegen.optional(this.tenancyOcid);
     }
     /**
      * (Updatable) Settings related to third-party factor
@@ -1163,7 +1163,7 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
      * 
      */
     @Export(name="thirdPartyFactor", refs={DomainsAuthenticationFactorSettingThirdPartyFactor.class}, tree="[0]")
-    private Output<DomainsAuthenticationFactorSettingThirdPartyFactor> thirdPartyFactor;
+    private Output</* @Nullable */ DomainsAuthenticationFactorSettingThirdPartyFactor> thirdPartyFactor;
 
     /**
      * @return (Updatable) Settings related to third-party factor
@@ -1180,8 +1180,8 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
      * * uniqueness: none
      * 
      */
-    public Output<DomainsAuthenticationFactorSettingThirdPartyFactor> thirdPartyFactor() {
-        return this.thirdPartyFactor;
+    public Output<Optional<DomainsAuthenticationFactorSettingThirdPartyFactor>> thirdPartyFactor() {
+        return Codegen.optional(this.thirdPartyFactor);
     }
     /**
      * (Updatable) If true, indicates that the Mobile App One Time Passcode channel is enabled for authentication
@@ -1252,28 +1252,28 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
      * 
      */
     @Export(name="urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings", refs={DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings.class}, tree="[0]")
-    private Output<DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings> urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings;
+    private Output</* @Nullable */ DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings> urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings;
 
     /**
      * @return (Updatable) This extension defines attributes used to manage Multi-Factor Authentication settings of fido authentication
      * 
      */
-    public Output<DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings> urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings() {
-        return this.urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings;
+    public Output<Optional<DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings>> urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings() {
+        return Codegen.optional(this.urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings);
     }
     /**
      * (Updatable) This extension defines attributes used to manage Multi-Factor Authentication settings of third party provider
      * 
      */
     @Export(name="urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings", refs={DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings.class}, tree="[0]")
-    private Output<DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings> urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings;
+    private Output</* @Nullable */ DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings> urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings;
 
     /**
      * @return (Updatable) This extension defines attributes used to manage Multi-Factor Authentication settings of third party provider
      * 
      */
-    public Output<DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings> urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings() {
-        return this.urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings;
+    public Output<Optional<DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings>> urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings() {
+        return Codegen.optional(this.urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings);
     }
     /**
      * (Updatable) Factors for which enrollment should be blocked for End User
@@ -1291,7 +1291,7 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
      * 
      */
     @Export(name="userEnrollmentDisabledFactors", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> userEnrollmentDisabledFactors;
+    private Output</* @Nullable */ List<String>> userEnrollmentDisabledFactors;
 
     /**
      * @return (Updatable) Factors for which enrollment should be blocked for End User
@@ -1308,8 +1308,8 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
      * * uniqueness: none
      * 
      */
-    public Output<List<String>> userEnrollmentDisabledFactors() {
-        return this.userEnrollmentDisabledFactors;
+    public Output<Optional<List<String>>> userEnrollmentDisabledFactors() {
+        return Codegen.optional(this.userEnrollmentDisabledFactors);
     }
     /**
      * (Updatable) If true, indicates that the Yubico OTP is enabled for authentication
@@ -1330,7 +1330,7 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
      * 
      */
     @Export(name="yubicoOtpEnabled", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> yubicoOtpEnabled;
+    private Output</* @Nullable */ Boolean> yubicoOtpEnabled;
 
     /**
      * @return (Updatable) If true, indicates that the Yubico OTP is enabled for authentication
@@ -1350,8 +1350,8 @@ public class DomainsAuthenticationFactorSetting extends com.pulumi.resources.Cus
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<Boolean> yubicoOtpEnabled() {
-        return this.yubicoOtpEnabled;
+    public Output<Optional<Boolean>> yubicoOtpEnabled() {
+        return Codegen.optional(this.yubicoOtpEnabled);
     }
 
     /**

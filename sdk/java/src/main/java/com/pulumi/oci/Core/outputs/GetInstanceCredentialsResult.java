@@ -6,6 +6,8 @@ package com.pulumi.oci.Core.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetInstanceCredentialsResult {
@@ -13,26 +15,26 @@ public final class GetInstanceCredentialsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String instanceId;
     /**
      * @return The password for the username.
      * 
      */
-    private String password;
+    private @Nullable String password;
     /**
      * @return The username.
      * 
      */
-    private String username;
+    private @Nullable String username;
 
     private GetInstanceCredentialsResult() {}
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String instanceId() {
         return this.instanceId;
@@ -41,15 +43,15 @@ public final class GetInstanceCredentialsResult {
      * @return The password for the username.
      * 
      */
-    public String password() {
-        return this.password;
+    public Optional<String> password() {
+        return Optional.ofNullable(this.password);
     }
     /**
      * @return The username.
      * 
      */
-    public String username() {
-        return this.username;
+    public Optional<String> username() {
+        return Optional.ofNullable(this.username);
     }
 
     public static Builder builder() {
@@ -61,10 +63,10 @@ public final class GetInstanceCredentialsResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String id;
+        private @Nullable String id;
         private String instanceId;
-        private String password;
-        private String username;
+        private @Nullable String password;
+        private @Nullable String username;
         public Builder() {}
         public Builder(GetInstanceCredentialsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -75,8 +77,8 @@ public final class GetInstanceCredentialsResult {
         }
 
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -85,13 +87,13 @@ public final class GetInstanceCredentialsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder password(String password) {
-            this.password = Objects.requireNonNull(password);
+        public Builder password(@Nullable String password) {
+            this.password = password;
             return this;
         }
         @CustomType.Setter
-        public Builder username(String username) {
-            this.username = Objects.requireNonNull(username);
+        public Builder username(@Nullable String username) {
+            this.username = username;
             return this;
         }
         public GetInstanceCredentialsResult build() {

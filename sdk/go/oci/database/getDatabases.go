@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Databases in Oracle Cloud Infrastructure Database service.
@@ -82,7 +81,7 @@ type GetDatabasesResult struct {
 	DbName  *string              `pulumi:"dbName"`
 	Filters []GetDatabasesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The current state of the database.
 	State    *string `pulumi:"state"`
 	SystemId *string `pulumi:"systemId"`
@@ -135,12 +134,6 @@ func (o GetDatabasesResultOutput) ToGetDatabasesResultOutputWithContext(ctx cont
 	return o
 }
 
-func (o GetDatabasesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDatabasesResult] {
-	return pulumix.Output[GetDatabasesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 func (o GetDatabasesResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabasesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -166,8 +159,8 @@ func (o GetDatabasesResultOutput) Filters() GetDatabasesFilterArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetDatabasesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabasesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDatabasesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabasesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the database.

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Stream Cdn Config resource in Oracle Cloud Infrastructure Media Services service.
@@ -60,32 +59,32 @@ type LookupStreamCdnConfigArgs struct {
 // A collection of values returned by getStreamCdnConfig.
 type LookupStreamCdnConfigResult struct {
 	// Compartment Identifier.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Base fields of the StreamCdnConfig configuration object.
 	Configs []GetStreamCdnConfigConfig `pulumi:"configs"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The CDN Configuration identifier or display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Distribution Channel Identifier.
-	DistributionChannelId string `pulumi:"distributionChannelId"`
+	DistributionChannelId *string `pulumi:"distributionChannelId"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Unique identifier that is immutable on creation.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Whether publishing to CDN is enabled.
-	IsEnabled bool `pulumi:"isEnabled"`
+	IsEnabled *bool `pulumi:"isEnabled"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecyleDetails string `pulumi:"lifecyleDetails"`
+	LifecyleDetails *string `pulumi:"lifecyleDetails"`
 	// The current state of the CDN Configuration.
-	State             string `pulumi:"state"`
-	StreamCdnConfigId string `pulumi:"streamCdnConfigId"`
+	State             *string `pulumi:"state"`
+	StreamCdnConfigId string  `pulumi:"streamCdnConfigId"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time when the CDN Config was created. An RFC3339 formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time when the CDN Config was updated. An RFC3339 formatted datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func LookupStreamCdnConfigOutput(ctx *pulumi.Context, args LookupStreamCdnConfigOutputArgs, opts ...pulumi.InvokeOption) LookupStreamCdnConfigResultOutput {
@@ -126,15 +125,9 @@ func (o LookupStreamCdnConfigResultOutput) ToLookupStreamCdnConfigResultOutputWi
 	return o
 }
 
-func (o LookupStreamCdnConfigResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupStreamCdnConfigResult] {
-	return pulumix.Output[LookupStreamCdnConfigResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Compartment Identifier.
-func (o LookupStreamCdnConfigResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupStreamCdnConfigResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupStreamCdnConfigResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupStreamCdnConfigResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Base fields of the StreamCdnConfig configuration object.
@@ -148,13 +141,13 @@ func (o LookupStreamCdnConfigResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // The CDN Configuration identifier or display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
-func (o LookupStreamCdnConfigResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupStreamCdnConfigResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupStreamCdnConfigResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupStreamCdnConfigResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Distribution Channel Identifier.
-func (o LookupStreamCdnConfigResultOutput) DistributionChannelId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupStreamCdnConfigResult) string { return v.DistributionChannelId }).(pulumi.StringOutput)
+func (o LookupStreamCdnConfigResultOutput) DistributionChannelId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupStreamCdnConfigResult) *string { return v.DistributionChannelId }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -163,23 +156,23 @@ func (o LookupStreamCdnConfigResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Unique identifier that is immutable on creation.
-func (o LookupStreamCdnConfigResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupStreamCdnConfigResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupStreamCdnConfigResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupStreamCdnConfigResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Whether publishing to CDN is enabled.
-func (o LookupStreamCdnConfigResultOutput) IsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupStreamCdnConfigResult) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+func (o LookupStreamCdnConfigResultOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupStreamCdnConfigResult) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o LookupStreamCdnConfigResultOutput) LifecyleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupStreamCdnConfigResult) string { return v.LifecyleDetails }).(pulumi.StringOutput)
+func (o LookupStreamCdnConfigResultOutput) LifecyleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupStreamCdnConfigResult) *string { return v.LifecyleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the CDN Configuration.
-func (o LookupStreamCdnConfigResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupStreamCdnConfigResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupStreamCdnConfigResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupStreamCdnConfigResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupStreamCdnConfigResultOutput) StreamCdnConfigId() pulumi.StringOutput {
@@ -192,13 +185,13 @@ func (o LookupStreamCdnConfigResultOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time when the CDN Config was created. An RFC3339 formatted datetime string.
-func (o LookupStreamCdnConfigResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupStreamCdnConfigResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupStreamCdnConfigResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupStreamCdnConfigResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time when the CDN Config was updated. An RFC3339 formatted datetime string.
-func (o LookupStreamCdnConfigResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupStreamCdnConfigResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupStreamCdnConfigResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupStreamCdnConfigResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

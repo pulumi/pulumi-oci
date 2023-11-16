@@ -13,6 +13,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetWaasPoliciesWaasPolicy {
@@ -20,72 +22,72 @@ public final class GetWaasPoliciesWaasPolicy {
      * @return An array of additional domains for this web application.
      * 
      */
-    private List<String> additionalDomains;
+    private @Nullable List<String> additionalDomains;
     /**
      * @return The CNAME record to add to your DNS configuration to route traffic for the domain, and all additional domains, through the WAF.
      * 
      */
-    private String cname;
+    private @Nullable String cname;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This number is generated when the compartment is created.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return The user-friendly name of the WAAS policy. The name can be changed and does not need to be unique.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return The domain for which the cookie is set, defaults to WAAS policy domain.
      * 
      */
-    private String domain;
+    private @Nullable String domain;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom protection rule.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The map of origin groups and their keys used to associate origins to the `wafConfig`. Origin groups allow you to apply weights to groups of origins for load balancing purposes. Origins with higher weights will receive larger proportions of client requests. To add additional origins to your WAAS policy, update the `origins` field of a `UpdateWaasPolicy` request.
      * 
      */
-    private List<GetWaasPoliciesWaasPolicyOriginGroup> originGroups;
+    private @Nullable List<GetWaasPoliciesWaasPolicyOriginGroup> originGroups;
     /**
      * @return A map of host servers (origins) and their keys for the web application. Origin keys are used to associate origins to specific protection rules. The key should be a user-friendly name for the host. **Examples:** `primary` or `secondary`.
      * 
      */
-    private List<GetWaasPoliciesWaasPolicyOrigin> origins;
+    private @Nullable List<GetWaasPoliciesWaasPolicyOrigin> origins;
     /**
      * @return The configuration details for the WAAS policy.
      * 
      */
-    private List<GetWaasPoliciesWaasPolicyPolicyConfig> policyConfigs;
+    private @Nullable List<GetWaasPoliciesWaasPolicyPolicyConfig> policyConfigs;
     /**
      * @return The current lifecycle state of the WAAS policy.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The date and time the policy was created, expressed in RFC 3339 timestamp format.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The Web Application Firewall configuration for the WAAS policy.
      * 
      */
-    private List<GetWaasPoliciesWaasPolicyWafConfig> wafConfigs;
+    private @Nullable List<GetWaasPoliciesWaasPolicyWafConfig> wafConfigs;
 
     private GetWaasPoliciesWaasPolicy() {}
     /**
@@ -93,98 +95,98 @@ public final class GetWaasPoliciesWaasPolicy {
      * 
      */
     public List<String> additionalDomains() {
-        return this.additionalDomains;
+        return this.additionalDomains == null ? List.of() : this.additionalDomains;
     }
     /**
      * @return The CNAME record to add to your DNS configuration to route traffic for the domain, and all additional domains, through the WAF.
      * 
      */
-    public String cname() {
-        return this.cname;
+    public Optional<String> cname() {
+        return Optional.ofNullable(this.cname);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This number is generated when the compartment is created.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return The user-friendly name of the WAAS policy. The name can be changed and does not need to be unique.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return The domain for which the cookie is set, defaults to WAAS policy domain.
      * 
      */
-    public String domain() {
-        return this.domain;
+    public Optional<String> domain() {
+        return Optional.ofNullable(this.domain);
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom protection rule.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The map of origin groups and their keys used to associate origins to the `wafConfig`. Origin groups allow you to apply weights to groups of origins for load balancing purposes. Origins with higher weights will receive larger proportions of client requests. To add additional origins to your WAAS policy, update the `origins` field of a `UpdateWaasPolicy` request.
      * 
      */
     public List<GetWaasPoliciesWaasPolicyOriginGroup> originGroups() {
-        return this.originGroups;
+        return this.originGroups == null ? List.of() : this.originGroups;
     }
     /**
      * @return A map of host servers (origins) and their keys for the web application. Origin keys are used to associate origins to specific protection rules. The key should be a user-friendly name for the host. **Examples:** `primary` or `secondary`.
      * 
      */
     public List<GetWaasPoliciesWaasPolicyOrigin> origins() {
-        return this.origins;
+        return this.origins == null ? List.of() : this.origins;
     }
     /**
      * @return The configuration details for the WAAS policy.
      * 
      */
     public List<GetWaasPoliciesWaasPolicyPolicyConfig> policyConfigs() {
-        return this.policyConfigs;
+        return this.policyConfigs == null ? List.of() : this.policyConfigs;
     }
     /**
      * @return The current lifecycle state of the WAAS policy.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The date and time the policy was created, expressed in RFC 3339 timestamp format.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The Web Application Firewall configuration for the WAAS policy.
      * 
      */
     public List<GetWaasPoliciesWaasPolicyWafConfig> wafConfigs() {
-        return this.wafConfigs;
+        return this.wafConfigs == null ? List.of() : this.wafConfigs;
     }
 
     public static Builder builder() {
@@ -196,20 +198,20 @@ public final class GetWaasPoliciesWaasPolicy {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> additionalDomains;
-        private String cname;
-        private String compartmentId;
-        private Map<String,Object> definedTags;
-        private String displayName;
-        private String domain;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private List<GetWaasPoliciesWaasPolicyOriginGroup> originGroups;
-        private List<GetWaasPoliciesWaasPolicyOrigin> origins;
-        private List<GetWaasPoliciesWaasPolicyPolicyConfig> policyConfigs;
-        private String state;
-        private String timeCreated;
-        private List<GetWaasPoliciesWaasPolicyWafConfig> wafConfigs;
+        private @Nullable List<String> additionalDomains;
+        private @Nullable String cname;
+        private @Nullable String compartmentId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String displayName;
+        private @Nullable String domain;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable List<GetWaasPoliciesWaasPolicyOriginGroup> originGroups;
+        private @Nullable List<GetWaasPoliciesWaasPolicyOrigin> origins;
+        private @Nullable List<GetWaasPoliciesWaasPolicyPolicyConfig> policyConfigs;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
+        private @Nullable List<GetWaasPoliciesWaasPolicyWafConfig> wafConfigs;
         public Builder() {}
         public Builder(GetWaasPoliciesWaasPolicy defaults) {
     	      Objects.requireNonNull(defaults);
@@ -230,85 +232,85 @@ public final class GetWaasPoliciesWaasPolicy {
         }
 
         @CustomType.Setter
-        public Builder additionalDomains(List<String> additionalDomains) {
-            this.additionalDomains = Objects.requireNonNull(additionalDomains);
+        public Builder additionalDomains(@Nullable List<String> additionalDomains) {
+            this.additionalDomains = additionalDomains;
             return this;
         }
         public Builder additionalDomains(String... additionalDomains) {
             return additionalDomains(List.of(additionalDomains));
         }
         @CustomType.Setter
-        public Builder cname(String cname) {
-            this.cname = Objects.requireNonNull(cname);
+        public Builder cname(@Nullable String cname) {
+            this.cname = cname;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder domain(String domain) {
-            this.domain = Objects.requireNonNull(domain);
+        public Builder domain(@Nullable String domain) {
+            this.domain = domain;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder originGroups(List<GetWaasPoliciesWaasPolicyOriginGroup> originGroups) {
-            this.originGroups = Objects.requireNonNull(originGroups);
+        public Builder originGroups(@Nullable List<GetWaasPoliciesWaasPolicyOriginGroup> originGroups) {
+            this.originGroups = originGroups;
             return this;
         }
         public Builder originGroups(GetWaasPoliciesWaasPolicyOriginGroup... originGroups) {
             return originGroups(List.of(originGroups));
         }
         @CustomType.Setter
-        public Builder origins(List<GetWaasPoliciesWaasPolicyOrigin> origins) {
-            this.origins = Objects.requireNonNull(origins);
+        public Builder origins(@Nullable List<GetWaasPoliciesWaasPolicyOrigin> origins) {
+            this.origins = origins;
             return this;
         }
         public Builder origins(GetWaasPoliciesWaasPolicyOrigin... origins) {
             return origins(List.of(origins));
         }
         @CustomType.Setter
-        public Builder policyConfigs(List<GetWaasPoliciesWaasPolicyPolicyConfig> policyConfigs) {
-            this.policyConfigs = Objects.requireNonNull(policyConfigs);
+        public Builder policyConfigs(@Nullable List<GetWaasPoliciesWaasPolicyPolicyConfig> policyConfigs) {
+            this.policyConfigs = policyConfigs;
             return this;
         }
         public Builder policyConfigs(GetWaasPoliciesWaasPolicyPolicyConfig... policyConfigs) {
             return policyConfigs(List.of(policyConfigs));
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder wafConfigs(List<GetWaasPoliciesWaasPolicyWafConfig> wafConfigs) {
-            this.wafConfigs = Objects.requireNonNull(wafConfigs);
+        public Builder wafConfigs(@Nullable List<GetWaasPoliciesWaasPolicyWafConfig> wafConfigs) {
+            this.wafConfigs = wafConfigs;
             return this;
         }
         public Builder wafConfigs(GetWaasPoliciesWaasPolicyWafConfig... wafConfigs) {

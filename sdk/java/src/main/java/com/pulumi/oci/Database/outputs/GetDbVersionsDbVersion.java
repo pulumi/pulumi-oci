@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDbVersionsDbVersion {
@@ -14,63 +16,63 @@ public final class GetDbVersionsDbVersion {
      * @return True if this version of the Oracle Database software is the latest version for a release.
      * 
      */
-    private Boolean isLatestForMajorVersion;
+    private @Nullable Boolean isLatestForMajorVersion;
     /**
      * @return True if this version of the Oracle Database software is the preview version.
      * 
      */
-    private Boolean isPreviewDbVersion;
+    private @Nullable Boolean isPreviewDbVersion;
     /**
      * @return If provided, filters the results to the set of database versions which are supported for Upgrade.
      * 
      */
-    private Boolean isUpgradeSupported;
+    private @Nullable Boolean isUpgradeSupported;
     /**
      * @return True if this version of the Oracle Database software supports pluggable databases.
      * 
      */
-    private Boolean supportsPdb;
+    private @Nullable Boolean supportsPdb;
     /**
      * @return A valid Oracle Database version.
      * 
      */
-    private String version;
+    private @Nullable String version;
 
     private GetDbVersionsDbVersion() {}
     /**
      * @return True if this version of the Oracle Database software is the latest version for a release.
      * 
      */
-    public Boolean isLatestForMajorVersion() {
-        return this.isLatestForMajorVersion;
+    public Optional<Boolean> isLatestForMajorVersion() {
+        return Optional.ofNullable(this.isLatestForMajorVersion);
     }
     /**
      * @return True if this version of the Oracle Database software is the preview version.
      * 
      */
-    public Boolean isPreviewDbVersion() {
-        return this.isPreviewDbVersion;
+    public Optional<Boolean> isPreviewDbVersion() {
+        return Optional.ofNullable(this.isPreviewDbVersion);
     }
     /**
      * @return If provided, filters the results to the set of database versions which are supported for Upgrade.
      * 
      */
-    public Boolean isUpgradeSupported() {
-        return this.isUpgradeSupported;
+    public Optional<Boolean> isUpgradeSupported() {
+        return Optional.ofNullable(this.isUpgradeSupported);
     }
     /**
      * @return True if this version of the Oracle Database software supports pluggable databases.
      * 
      */
-    public Boolean supportsPdb() {
-        return this.supportsPdb;
+    public Optional<Boolean> supportsPdb() {
+        return Optional.ofNullable(this.supportsPdb);
     }
     /**
      * @return A valid Oracle Database version.
      * 
      */
-    public String version() {
-        return this.version;
+    public Optional<String> version() {
+        return Optional.ofNullable(this.version);
     }
 
     public static Builder builder() {
@@ -82,11 +84,11 @@ public final class GetDbVersionsDbVersion {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Boolean isLatestForMajorVersion;
-        private Boolean isPreviewDbVersion;
-        private Boolean isUpgradeSupported;
-        private Boolean supportsPdb;
-        private String version;
+        private @Nullable Boolean isLatestForMajorVersion;
+        private @Nullable Boolean isPreviewDbVersion;
+        private @Nullable Boolean isUpgradeSupported;
+        private @Nullable Boolean supportsPdb;
+        private @Nullable String version;
         public Builder() {}
         public Builder(GetDbVersionsDbVersion defaults) {
     	      Objects.requireNonNull(defaults);
@@ -98,28 +100,28 @@ public final class GetDbVersionsDbVersion {
         }
 
         @CustomType.Setter
-        public Builder isLatestForMajorVersion(Boolean isLatestForMajorVersion) {
-            this.isLatestForMajorVersion = Objects.requireNonNull(isLatestForMajorVersion);
+        public Builder isLatestForMajorVersion(@Nullable Boolean isLatestForMajorVersion) {
+            this.isLatestForMajorVersion = isLatestForMajorVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder isPreviewDbVersion(Boolean isPreviewDbVersion) {
-            this.isPreviewDbVersion = Objects.requireNonNull(isPreviewDbVersion);
+        public Builder isPreviewDbVersion(@Nullable Boolean isPreviewDbVersion) {
+            this.isPreviewDbVersion = isPreviewDbVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder isUpgradeSupported(Boolean isUpgradeSupported) {
-            this.isUpgradeSupported = Objects.requireNonNull(isUpgradeSupported);
+        public Builder isUpgradeSupported(@Nullable Boolean isUpgradeSupported) {
+            this.isUpgradeSupported = isUpgradeSupported;
             return this;
         }
         @CustomType.Setter
-        public Builder supportsPdb(Boolean supportsPdb) {
-            this.supportsPdb = Objects.requireNonNull(supportsPdb);
+        public Builder supportsPdb(@Nullable Boolean supportsPdb) {
+            this.supportsPdb = supportsPdb;
             return this;
         }
         @CustomType.Setter
-        public Builder version(String version) {
-            this.version = Objects.requireNonNull(version);
+        public Builder version(@Nullable String version) {
+            this.version = version;
             return this;
         }
         public GetDbVersionsDbVersion build() {

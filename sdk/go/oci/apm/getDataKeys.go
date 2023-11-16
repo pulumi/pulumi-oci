@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Data Keys in Oracle Cloud Infrastructure Apm service.
@@ -70,7 +69,7 @@ type GetDataKeysResult struct {
 	DataKeys []GetDataKeysDataKey `pulumi:"dataKeys"`
 	Filters  []GetDataKeysFilter  `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 func GetDataKeysOutput(ctx *pulumi.Context, args GetDataKeysOutputArgs, opts ...pulumi.InvokeOption) GetDataKeysResultOutput {
@@ -114,12 +113,6 @@ func (o GetDataKeysResultOutput) ToGetDataKeysResultOutputWithContext(ctx contex
 	return o
 }
 
-func (o GetDataKeysResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDataKeysResult] {
-	return pulumix.Output[GetDataKeysResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDataKeysResultOutput) ApmDomainId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDataKeysResult) string { return v.ApmDomainId }).(pulumi.StringOutput)
 }
@@ -138,8 +131,8 @@ func (o GetDataKeysResultOutput) Filters() GetDataKeysFilterArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetDataKeysResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDataKeysResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDataKeysResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDataKeysResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func init() {

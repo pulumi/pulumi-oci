@@ -38,7 +38,7 @@ class GetInstanceMeasuredBootReportResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -51,18 +51,12 @@ class GetInstanceMeasuredBootReportResult:
 
     @property
     @pulumi.getter(name="isPolicyVerificationSuccessful")
-    def is_policy_verification_successful(self) -> bool:
-        """
-        Whether the verification succeeded, and the new values match the expected values.
-        """
+    def is_policy_verification_successful(self) -> Optional[bool]:
         return pulumi.get(self, "is_policy_verification_successful")
 
     @property
     @pulumi.getter
-    def measurements(self) -> Sequence['outputs.GetInstanceMeasuredBootReportMeasurementResult']:
-        """
-        A list of Trusted Platform Module (TPM) Platform Configuration Register (PCR) entries.
-        """
+    def measurements(self) -> Optional[Sequence['outputs.GetInstanceMeasuredBootReportMeasurementResult']]:
         return pulumi.get(self, "measurements")
 
 
@@ -81,21 +75,7 @@ class AwaitableGetInstanceMeasuredBootReportResult(GetInstanceMeasuredBootReport
 def get_instance_measured_boot_report(instance_id: Optional[str] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetInstanceMeasuredBootReportResult:
     """
-    This data source provides details about a specific Instance Measured Boot Report resource in Oracle Cloud Infrastructure Core service.
-
-    Gets the measured boot report for this shielded instance.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_instance_measured_boot_report = oci.Core.get_instance_measured_boot_report(instance_id=oci_core_instance["test_instance"]["id"])
-    ```
-
-
-    :param str instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['instanceId'] = instance_id
@@ -113,20 +93,6 @@ def get_instance_measured_boot_report(instance_id: Optional[str] = None,
 def get_instance_measured_boot_report_output(instance_id: Optional[pulumi.Input[str]] = None,
                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetInstanceMeasuredBootReportResult]:
     """
-    This data source provides details about a specific Instance Measured Boot Report resource in Oracle Cloud Infrastructure Core service.
-
-    Gets the measured boot report for this shielded instance.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_instance_measured_boot_report = oci.Core.get_instance_measured_boot_report(instance_id=oci_core_instance["test_instance"]["id"])
-    ```
-
-
-    :param str instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
+    Use this data source to access information about an existing resource.
     """
     ...

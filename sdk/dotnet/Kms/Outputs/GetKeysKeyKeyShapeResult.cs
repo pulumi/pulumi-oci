@@ -16,23 +16,23 @@ namespace Pulumi.Oci.Kms.Outputs
         /// <summary>
         /// The algorithm used by a key's key versions to encrypt or decrypt data. Currently, support includes AES, RSA, and ECDSA algorithms.
         /// </summary>
-        public readonly string Algorithm;
+        public readonly string? Algorithm;
         /// <summary>
         /// The curve ID of the keys. (This pertains only to ECDSA keys.)
         /// </summary>
-        public readonly string CurveId;
+        public readonly string? CurveId;
         /// <summary>
         /// The length of the key in bytes, expressed as an integer. Supported values include 16, 24, or 32.
         /// </summary>
-        public readonly int Length;
+        public readonly int? Length;
 
         [OutputConstructor]
         private GetKeysKeyKeyShapeResult(
-            string algorithm,
+            string? algorithm,
 
-            string curveId,
+            string? curveId,
 
-            int length)
+            int? length)
         {
             Algorithm = algorithm;
             CurveId = curveId;

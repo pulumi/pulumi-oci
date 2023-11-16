@@ -68,7 +68,7 @@ namespace Pulumi.Oci.NetworkFirewall
         /// OCID of the Network Firewall Policy this service belongs to.
         /// </summary>
         [Output("parentResourceId")]
-        public Output<string> ParentResourceId { get; private set; } = null!;
+        public Output<string?> ParentResourceId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) List of port-ranges to be used.

@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Marketplace.Outputs
         /// <summary>
         /// The anchor tag.
         /// </summary>
-        public readonly string Href;
+        public readonly string? Href;
         /// <summary>
         /// Reference links to the previous page, next page, and other pages.
         /// </summary>
-        public readonly string Rel;
+        public readonly string? Rel;
 
         [OutputConstructor]
         private GetListingLinkResult(
-            string href,
+            string? href,
 
-            string rel)
+            string? rel)
         {
             Href = href;
             Rel = rel;

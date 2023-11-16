@@ -22,7 +22,7 @@ public final class GetListingsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private @Nullable String imageId;
     /**
      * @return Indicates whether the listing is included in Featured Listings.
@@ -35,7 +35,7 @@ public final class GetListingsResult {
      * @return The list of listings.
      * 
      */
-    private List<GetListingsListing> listings;
+    private @Nullable List<GetListingsListing> listings;
     /**
      * @return Text that describes the resource.
      * 
@@ -64,8 +64,8 @@ public final class GetListingsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public Optional<String> imageId() {
         return Optional.ofNullable(this.imageId);
@@ -88,7 +88,7 @@ public final class GetListingsResult {
      * 
      */
     public List<GetListingsListing> listings() {
-        return this.listings;
+        return this.listings == null ? List.of() : this.listings;
     }
     /**
      * @return Text that describes the resource.
@@ -126,12 +126,12 @@ public final class GetListingsResult {
         private @Nullable List<String> categories;
         private @Nullable String compartmentId;
         private @Nullable List<GetListingsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String imageId;
         private @Nullable Boolean isFeatured;
         private @Nullable String listingId;
         private @Nullable List<String> listingTypes;
-        private List<GetListingsListing> listings;
+        private @Nullable List<GetListingsListing> listings;
         private @Nullable List<String> names;
         private @Nullable List<String> operatingSystems;
         private @Nullable String packageType;
@@ -178,8 +178,8 @@ public final class GetListingsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -206,8 +206,8 @@ public final class GetListingsResult {
             return listingTypes(List.of(listingTypes));
         }
         @CustomType.Setter
-        public Builder listings(List<GetListingsListing> listings) {
-            this.listings = Objects.requireNonNull(listings);
+        public Builder listings(@Nullable List<GetListingsListing> listings) {
+            this.listings = listings;
             return this;
         }
         public Builder listings(GetListingsListing... listings) {

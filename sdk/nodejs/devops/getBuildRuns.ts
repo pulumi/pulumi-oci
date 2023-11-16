@@ -87,7 +87,7 @@ export interface GetBuildRunsResult {
     /**
      * The list of build_run_summary_collection.
      */
-    readonly buildRunSummaryCollections: outputs.DevOps.GetBuildRunsBuildRunSummaryCollection[];
+    readonly buildRunSummaryCollections?: outputs.DevOps.GetBuildRunsBuildRunSummaryCollection[];
     /**
      * The OCID of the compartment where the build is running.
      */

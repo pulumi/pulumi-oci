@@ -66,13 +66,13 @@ namespace Pulumi.Oci.OsManagement
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Information specified by the user about the managed instance group
         /// </summary>
         [Output("description")]
-        public Output<string> Description { get; private set; } = null!;
+        public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Managed Instance Group identifier
@@ -84,10 +84,10 @@ namespace Pulumi.Oci.OsManagement
         /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         [Output("managedInstanceCount")]
-        public Output<int> ManagedInstanceCount { get; private set; } = null!;
+        public Output<int?> ManagedInstanceCount { get; private set; } = null!;
 
         /// <summary>
         /// list of Managed Instances in the group
@@ -103,13 +103,13 @@ namespace Pulumi.Oci.OsManagement
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("osFamily")]
-        public Output<string> OsFamily { get; private set; } = null!;
+        public Output<string?> OsFamily { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the Software Source.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
 
         /// <summary>

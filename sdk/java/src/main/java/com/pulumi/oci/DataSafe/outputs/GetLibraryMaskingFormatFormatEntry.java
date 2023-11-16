@@ -9,6 +9,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetLibraryMaskingFormatFormatEntry {
@@ -16,279 +18,279 @@ public final class GetLibraryMaskingFormatFormatEntry {
      * @return The name of the substitution column.
      * 
      */
-    private String columnName;
+    private @Nullable String columnName;
     /**
      * @return The description of the format entry.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return The upper bound of the range within which all the original column values fall. The end date must be greater than or equal to the start date.
      * 
      */
-    private String endDate;
+    private @Nullable String endDate;
     /**
      * @return The maximum number of characters the generated strings should have. It can  be any integer greater than zero, but it must be greater than or equal to  the start length.
      * 
      */
-    private Integer endLength;
+    private @Nullable Integer endLength;
     /**
      * @return The upper bound of the range within which random decimal numbers should be generated. It must be greater than or equal to the start value. It supports  input of double type.
      * 
      */
-    private Double endValue;
+    private @Nullable Double endValue;
     /**
      * @return The constant number to be used for masking.
      * 
      */
-    private Double fixedNumber;
+    private @Nullable Double fixedNumber;
     /**
      * @return The constant string to be used for masking.
      * 
      */
-    private String fixedString;
+    private @Nullable String fixedString;
     /**
      * @return One or more reference columns to be used to group column values so that they can be shuffled within their own group. The grouping columns and  the column to be masked must belong to the same table.
      * 
      */
-    private List<String> groupingColumns;
+    private @Nullable List<String> groupingColumns;
     /**
      * @return The number of characters that should be there in the substring. It should be an integer and greater than zero.
      * 
      */
-    private Integer length;
+    private @Nullable Integer length;
     /**
      * @return The OCID of the library masking format.
      * 
      */
-    private String libraryMaskingFormatId;
+    private @Nullable String libraryMaskingFormatId;
     /**
      * @return The post processing function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME format. It can be a standalone or packaged function, so PACKAGE_NAME is optional.
      * 
      */
-    private String postProcessingFunction;
+    private @Nullable String postProcessingFunction;
     /**
      * @return A comma-separated list of values to be used to replace column values. The list can be of strings, numbers, or dates. The data type of each value in the list must be compatible with the data type of the column. The number of entries in the list cannot be more than 999.
      * 
      */
-    private List<String> randomLists;
+    private @Nullable List<String> randomLists;
     /**
      * @return The regular expression to be used for masking. For data with characters in the ASCII character set, providing a regular expression is optional. However, it  is required if the data contains multi-byte characters. If not provided, an  error is returned when a multi-byte character is found.
      * 
      */
-    private String regularExpression;
+    private @Nullable String regularExpression;
     /**
      * @return The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number, null value, or  SQL expression.
      * 
      */
-    private String replaceWith;
+    private @Nullable String replaceWith;
     /**
      * @return The name of the schema that contains the substitution column.
      * 
      */
-    private String schemaName;
+    private @Nullable String schemaName;
     /**
      * @return The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%)  symbols.
      * 
      */
-    private String sqlExpression;
+    private @Nullable String sqlExpression;
     /**
      * @return The lower bound of the range within which all the original column values fall. The start date must be less than or equal to the end date.
      * 
      */
-    private String startDate;
+    private @Nullable String startDate;
     /**
      * @return The minimum number of characters the generated strings should have. It can  be any integer greater than zero, but it must be less than or equal to the  end length.
      * 
      */
-    private Integer startLength;
+    private @Nullable Integer startLength;
     /**
      * @return The starting position in the original string from where the substring should be extracted. It can be either a positive or a negative integer. If It&#39;s negative, the counting starts from the end of the string.
      * 
      */
-    private Integer startPosition;
+    private @Nullable Integer startPosition;
     /**
      * @return The lower bound of the range within which random decimal numbers should  be generated. It must be less than or equal to the end value. It supports  input of double type.
      * 
      */
-    private Double startValue;
+    private @Nullable Double startValue;
     /**
      * @return The name of the table that contains the substitution column.
      * 
      */
-    private String tableName;
+    private @Nullable String tableName;
     /**
      * @return The type of the format entry.
      * 
      */
-    private String type;
+    private @Nullable String type;
     /**
      * @return The user-defined function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME format.  It can be a standalone or packaged function, so PACKAGE_NAME is optional.
      * 
      */
-    private String userDefinedFunction;
+    private @Nullable String userDefinedFunction;
 
     private GetLibraryMaskingFormatFormatEntry() {}
     /**
      * @return The name of the substitution column.
      * 
      */
-    public String columnName() {
-        return this.columnName;
+    public Optional<String> columnName() {
+        return Optional.ofNullable(this.columnName);
     }
     /**
      * @return The description of the format entry.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return The upper bound of the range within which all the original column values fall. The end date must be greater than or equal to the start date.
      * 
      */
-    public String endDate() {
-        return this.endDate;
+    public Optional<String> endDate() {
+        return Optional.ofNullable(this.endDate);
     }
     /**
      * @return The maximum number of characters the generated strings should have. It can  be any integer greater than zero, but it must be greater than or equal to  the start length.
      * 
      */
-    public Integer endLength() {
-        return this.endLength;
+    public Optional<Integer> endLength() {
+        return Optional.ofNullable(this.endLength);
     }
     /**
      * @return The upper bound of the range within which random decimal numbers should be generated. It must be greater than or equal to the start value. It supports  input of double type.
      * 
      */
-    public Double endValue() {
-        return this.endValue;
+    public Optional<Double> endValue() {
+        return Optional.ofNullable(this.endValue);
     }
     /**
      * @return The constant number to be used for masking.
      * 
      */
-    public Double fixedNumber() {
-        return this.fixedNumber;
+    public Optional<Double> fixedNumber() {
+        return Optional.ofNullable(this.fixedNumber);
     }
     /**
      * @return The constant string to be used for masking.
      * 
      */
-    public String fixedString() {
-        return this.fixedString;
+    public Optional<String> fixedString() {
+        return Optional.ofNullable(this.fixedString);
     }
     /**
      * @return One or more reference columns to be used to group column values so that they can be shuffled within their own group. The grouping columns and  the column to be masked must belong to the same table.
      * 
      */
     public List<String> groupingColumns() {
-        return this.groupingColumns;
+        return this.groupingColumns == null ? List.of() : this.groupingColumns;
     }
     /**
      * @return The number of characters that should be there in the substring. It should be an integer and greater than zero.
      * 
      */
-    public Integer length() {
-        return this.length;
+    public Optional<Integer> length() {
+        return Optional.ofNullable(this.length);
     }
     /**
      * @return The OCID of the library masking format.
      * 
      */
-    public String libraryMaskingFormatId() {
-        return this.libraryMaskingFormatId;
+    public Optional<String> libraryMaskingFormatId() {
+        return Optional.ofNullable(this.libraryMaskingFormatId);
     }
     /**
      * @return The post processing function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME format. It can be a standalone or packaged function, so PACKAGE_NAME is optional.
      * 
      */
-    public String postProcessingFunction() {
-        return this.postProcessingFunction;
+    public Optional<String> postProcessingFunction() {
+        return Optional.ofNullable(this.postProcessingFunction);
     }
     /**
      * @return A comma-separated list of values to be used to replace column values. The list can be of strings, numbers, or dates. The data type of each value in the list must be compatible with the data type of the column. The number of entries in the list cannot be more than 999.
      * 
      */
     public List<String> randomLists() {
-        return this.randomLists;
+        return this.randomLists == null ? List.of() : this.randomLists;
     }
     /**
      * @return The regular expression to be used for masking. For data with characters in the ASCII character set, providing a regular expression is optional. However, it  is required if the data contains multi-byte characters. If not provided, an  error is returned when a multi-byte character is found.
      * 
      */
-    public String regularExpression() {
-        return this.regularExpression;
+    public Optional<String> regularExpression() {
+        return Optional.ofNullable(this.regularExpression);
     }
     /**
      * @return The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number, null value, or  SQL expression.
      * 
      */
-    public String replaceWith() {
-        return this.replaceWith;
+    public Optional<String> replaceWith() {
+        return Optional.ofNullable(this.replaceWith);
     }
     /**
      * @return The name of the schema that contains the substitution column.
      * 
      */
-    public String schemaName() {
-        return this.schemaName;
+    public Optional<String> schemaName() {
+        return Optional.ofNullable(this.schemaName);
     }
     /**
      * @return The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%)  symbols.
      * 
      */
-    public String sqlExpression() {
-        return this.sqlExpression;
+    public Optional<String> sqlExpression() {
+        return Optional.ofNullable(this.sqlExpression);
     }
     /**
      * @return The lower bound of the range within which all the original column values fall. The start date must be less than or equal to the end date.
      * 
      */
-    public String startDate() {
-        return this.startDate;
+    public Optional<String> startDate() {
+        return Optional.ofNullable(this.startDate);
     }
     /**
      * @return The minimum number of characters the generated strings should have. It can  be any integer greater than zero, but it must be less than or equal to the  end length.
      * 
      */
-    public Integer startLength() {
-        return this.startLength;
+    public Optional<Integer> startLength() {
+        return Optional.ofNullable(this.startLength);
     }
     /**
      * @return The starting position in the original string from where the substring should be extracted. It can be either a positive or a negative integer. If It&#39;s negative, the counting starts from the end of the string.
      * 
      */
-    public Integer startPosition() {
-        return this.startPosition;
+    public Optional<Integer> startPosition() {
+        return Optional.ofNullable(this.startPosition);
     }
     /**
      * @return The lower bound of the range within which random decimal numbers should  be generated. It must be less than or equal to the end value. It supports  input of double type.
      * 
      */
-    public Double startValue() {
-        return this.startValue;
+    public Optional<Double> startValue() {
+        return Optional.ofNullable(this.startValue);
     }
     /**
      * @return The name of the table that contains the substitution column.
      * 
      */
-    public String tableName() {
-        return this.tableName;
+    public Optional<String> tableName() {
+        return Optional.ofNullable(this.tableName);
     }
     /**
      * @return The type of the format entry.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
     /**
      * @return The user-defined function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME format.  It can be a standalone or packaged function, so PACKAGE_NAME is optional.
      * 
      */
-    public String userDefinedFunction() {
-        return this.userDefinedFunction;
+    public Optional<String> userDefinedFunction() {
+        return Optional.ofNullable(this.userDefinedFunction);
     }
 
     public static Builder builder() {
@@ -300,29 +302,29 @@ public final class GetLibraryMaskingFormatFormatEntry {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String columnName;
-        private String description;
-        private String endDate;
-        private Integer endLength;
-        private Double endValue;
-        private Double fixedNumber;
-        private String fixedString;
-        private List<String> groupingColumns;
-        private Integer length;
-        private String libraryMaskingFormatId;
-        private String postProcessingFunction;
-        private List<String> randomLists;
-        private String regularExpression;
-        private String replaceWith;
-        private String schemaName;
-        private String sqlExpression;
-        private String startDate;
-        private Integer startLength;
-        private Integer startPosition;
-        private Double startValue;
-        private String tableName;
-        private String type;
-        private String userDefinedFunction;
+        private @Nullable String columnName;
+        private @Nullable String description;
+        private @Nullable String endDate;
+        private @Nullable Integer endLength;
+        private @Nullable Double endValue;
+        private @Nullable Double fixedNumber;
+        private @Nullable String fixedString;
+        private @Nullable List<String> groupingColumns;
+        private @Nullable Integer length;
+        private @Nullable String libraryMaskingFormatId;
+        private @Nullable String postProcessingFunction;
+        private @Nullable List<String> randomLists;
+        private @Nullable String regularExpression;
+        private @Nullable String replaceWith;
+        private @Nullable String schemaName;
+        private @Nullable String sqlExpression;
+        private @Nullable String startDate;
+        private @Nullable Integer startLength;
+        private @Nullable Integer startPosition;
+        private @Nullable Double startValue;
+        private @Nullable String tableName;
+        private @Nullable String type;
+        private @Nullable String userDefinedFunction;
         public Builder() {}
         public Builder(GetLibraryMaskingFormatFormatEntry defaults) {
     	      Objects.requireNonNull(defaults);
@@ -352,124 +354,124 @@ public final class GetLibraryMaskingFormatFormatEntry {
         }
 
         @CustomType.Setter
-        public Builder columnName(String columnName) {
-            this.columnName = Objects.requireNonNull(columnName);
+        public Builder columnName(@Nullable String columnName) {
+            this.columnName = columnName;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder endDate(String endDate) {
-            this.endDate = Objects.requireNonNull(endDate);
+        public Builder endDate(@Nullable String endDate) {
+            this.endDate = endDate;
             return this;
         }
         @CustomType.Setter
-        public Builder endLength(Integer endLength) {
-            this.endLength = Objects.requireNonNull(endLength);
+        public Builder endLength(@Nullable Integer endLength) {
+            this.endLength = endLength;
             return this;
         }
         @CustomType.Setter
-        public Builder endValue(Double endValue) {
-            this.endValue = Objects.requireNonNull(endValue);
+        public Builder endValue(@Nullable Double endValue) {
+            this.endValue = endValue;
             return this;
         }
         @CustomType.Setter
-        public Builder fixedNumber(Double fixedNumber) {
-            this.fixedNumber = Objects.requireNonNull(fixedNumber);
+        public Builder fixedNumber(@Nullable Double fixedNumber) {
+            this.fixedNumber = fixedNumber;
             return this;
         }
         @CustomType.Setter
-        public Builder fixedString(String fixedString) {
-            this.fixedString = Objects.requireNonNull(fixedString);
+        public Builder fixedString(@Nullable String fixedString) {
+            this.fixedString = fixedString;
             return this;
         }
         @CustomType.Setter
-        public Builder groupingColumns(List<String> groupingColumns) {
-            this.groupingColumns = Objects.requireNonNull(groupingColumns);
+        public Builder groupingColumns(@Nullable List<String> groupingColumns) {
+            this.groupingColumns = groupingColumns;
             return this;
         }
         public Builder groupingColumns(String... groupingColumns) {
             return groupingColumns(List.of(groupingColumns));
         }
         @CustomType.Setter
-        public Builder length(Integer length) {
-            this.length = Objects.requireNonNull(length);
+        public Builder length(@Nullable Integer length) {
+            this.length = length;
             return this;
         }
         @CustomType.Setter
-        public Builder libraryMaskingFormatId(String libraryMaskingFormatId) {
-            this.libraryMaskingFormatId = Objects.requireNonNull(libraryMaskingFormatId);
+        public Builder libraryMaskingFormatId(@Nullable String libraryMaskingFormatId) {
+            this.libraryMaskingFormatId = libraryMaskingFormatId;
             return this;
         }
         @CustomType.Setter
-        public Builder postProcessingFunction(String postProcessingFunction) {
-            this.postProcessingFunction = Objects.requireNonNull(postProcessingFunction);
+        public Builder postProcessingFunction(@Nullable String postProcessingFunction) {
+            this.postProcessingFunction = postProcessingFunction;
             return this;
         }
         @CustomType.Setter
-        public Builder randomLists(List<String> randomLists) {
-            this.randomLists = Objects.requireNonNull(randomLists);
+        public Builder randomLists(@Nullable List<String> randomLists) {
+            this.randomLists = randomLists;
             return this;
         }
         public Builder randomLists(String... randomLists) {
             return randomLists(List.of(randomLists));
         }
         @CustomType.Setter
-        public Builder regularExpression(String regularExpression) {
-            this.regularExpression = Objects.requireNonNull(regularExpression);
+        public Builder regularExpression(@Nullable String regularExpression) {
+            this.regularExpression = regularExpression;
             return this;
         }
         @CustomType.Setter
-        public Builder replaceWith(String replaceWith) {
-            this.replaceWith = Objects.requireNonNull(replaceWith);
+        public Builder replaceWith(@Nullable String replaceWith) {
+            this.replaceWith = replaceWith;
             return this;
         }
         @CustomType.Setter
-        public Builder schemaName(String schemaName) {
-            this.schemaName = Objects.requireNonNull(schemaName);
+        public Builder schemaName(@Nullable String schemaName) {
+            this.schemaName = schemaName;
             return this;
         }
         @CustomType.Setter
-        public Builder sqlExpression(String sqlExpression) {
-            this.sqlExpression = Objects.requireNonNull(sqlExpression);
+        public Builder sqlExpression(@Nullable String sqlExpression) {
+            this.sqlExpression = sqlExpression;
             return this;
         }
         @CustomType.Setter
-        public Builder startDate(String startDate) {
-            this.startDate = Objects.requireNonNull(startDate);
+        public Builder startDate(@Nullable String startDate) {
+            this.startDate = startDate;
             return this;
         }
         @CustomType.Setter
-        public Builder startLength(Integer startLength) {
-            this.startLength = Objects.requireNonNull(startLength);
+        public Builder startLength(@Nullable Integer startLength) {
+            this.startLength = startLength;
             return this;
         }
         @CustomType.Setter
-        public Builder startPosition(Integer startPosition) {
-            this.startPosition = Objects.requireNonNull(startPosition);
+        public Builder startPosition(@Nullable Integer startPosition) {
+            this.startPosition = startPosition;
             return this;
         }
         @CustomType.Setter
-        public Builder startValue(Double startValue) {
-            this.startValue = Objects.requireNonNull(startValue);
+        public Builder startValue(@Nullable Double startValue) {
+            this.startValue = startValue;
             return this;
         }
         @CustomType.Setter
-        public Builder tableName(String tableName) {
-            this.tableName = Objects.requireNonNull(tableName);
+        public Builder tableName(@Nullable String tableName) {
+            this.tableName = tableName;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         @CustomType.Setter
-        public Builder userDefinedFunction(String userDefinedFunction) {
-            this.userDefinedFunction = Objects.requireNonNull(userDefinedFunction);
+        public Builder userDefinedFunction(@Nullable String userDefinedFunction) {
+            this.userDefinedFunction = userDefinedFunction;
             return this;
         }
         public GetLibraryMaskingFormatFormatEntry build() {

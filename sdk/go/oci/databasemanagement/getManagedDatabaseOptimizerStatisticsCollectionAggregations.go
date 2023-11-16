@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Managed Database Optimizer Statistics Collection Aggregations in Oracle Cloud Infrastructure Database Management service.
@@ -82,9 +81,9 @@ type GetManagedDatabaseOptimizerStatisticsCollectionAggregationsResult struct {
 	Filters                  []GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilter `pulumi:"filters"`
 	GroupType                string                                                              `pulumi:"groupType"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                string `pulumi:"id"`
-	Limit             *int   `pulumi:"limit"`
-	ManagedDatabaseId string `pulumi:"managedDatabaseId"`
+	Id                *string `pulumi:"id"`
+	Limit             *int    `pulumi:"limit"`
+	ManagedDatabaseId string  `pulumi:"managedDatabaseId"`
 	// The list of optimizer_statistics_collection_aggregations_collection.
 	OptimizerStatisticsCollectionAggregationsCollections []GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollection `pulumi:"optimizerStatisticsCollectionAggregationsCollections"`
 	StartTimeGreaterThanOrEqualTo                        *string                                                                                                          `pulumi:"startTimeGreaterThanOrEqualTo"`
@@ -139,12 +138,6 @@ func (o GetManagedDatabaseOptimizerStatisticsCollectionAggregationsResultOutput)
 	return o
 }
 
-func (o GetManagedDatabaseOptimizerStatisticsCollectionAggregationsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedDatabaseOptimizerStatisticsCollectionAggregationsResult] {
-	return pulumix.Output[GetManagedDatabaseOptimizerStatisticsCollectionAggregationsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetManagedDatabaseOptimizerStatisticsCollectionAggregationsResultOutput) EndTimeLessThanOrEqualTo() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsCollectionAggregationsResult) *string {
 		return v.EndTimeLessThanOrEqualTo
@@ -162,8 +155,8 @@ func (o GetManagedDatabaseOptimizerStatisticsCollectionAggregationsResultOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetManagedDatabaseOptimizerStatisticsCollectionAggregationsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsCollectionAggregationsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetManagedDatabaseOptimizerStatisticsCollectionAggregationsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsCollectionAggregationsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetManagedDatabaseOptimizerStatisticsCollectionAggregationsResultOutput) Limit() pulumi.IntPtrOutput {

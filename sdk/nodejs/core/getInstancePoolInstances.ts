@@ -70,12 +70,12 @@ export interface GetInstancePoolInstancesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly instancePoolId: string;
     /**
      * The list of instances.
      */
-    readonly instances: outputs.Core.GetInstancePoolInstancesInstance[];
+    readonly instances?: outputs.Core.GetInstancePoolInstancesInstance[];
 }
 /**
  * This data source provides the list of Instance Pool Instances in Oracle Cloud Infrastructure Core service.

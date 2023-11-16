@@ -165,7 +165,7 @@ namespace Pulumi.Oci.Blockchain
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The current state of the Platform Instance.
         /// </summary>
@@ -181,7 +181,7 @@ namespace Pulumi.Oci.Blockchain
 
             ImmutableArray<Outputs.GetBlockchainPlatformsFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? state)
         {

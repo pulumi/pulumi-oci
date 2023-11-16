@@ -55,13 +55,13 @@ namespace Pulumi.Oci.Database
         /// The OCID of the compartment to contain the console connection.
         /// </summary>
         [Output("compartmentId")]
-        public Output<string> CompartmentId { get; private set; } = null!;
+        public Output<string?> CompartmentId { get; private set; } = null!;
 
         /// <summary>
         /// The SSH connection string for the console connection.
         /// </summary>
         [Output("connectionString")]
-        public Output<string> ConnectionString { get; private set; } = null!;
+        public Output<string?> ConnectionString { get; private set; } = null!;
 
         /// <summary>
         /// The database node [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -73,25 +73,25 @@ namespace Pulumi.Oci.Database
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// The SSH public key fingerprint for the console connection.
         /// </summary>
         [Output("fingerprint")]
-        public Output<string> Fingerprint { get; private set; } = null!;
+        public Output<string?> Fingerprint { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// Information about the current lifecycle state.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// The SSH public key used to authenticate the console connection.
@@ -107,13 +107,13 @@ namespace Pulumi.Oci.Database
         /// The SSH public key's fingerprint for the console connection service host.
         /// </summary>
         [Output("serviceHostKeyFingerprint")]
-        public Output<string> ServiceHostKeyFingerprint { get; private set; } = null!;
+        public Output<string?> ServiceHostKeyFingerprint { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the console connection.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
 
         /// <summary>

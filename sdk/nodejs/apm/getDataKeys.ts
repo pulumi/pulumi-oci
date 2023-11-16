@@ -58,12 +58,12 @@ export interface GetDataKeysResult {
     /**
      * The list of data_keys.
      */
-    readonly dataKeys: outputs.Apm.GetDataKeysDataKey[];
+    readonly dataKeys?: outputs.Apm.GetDataKeysDataKey[];
     readonly filters?: outputs.Apm.GetDataKeysFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
 }
 /**
  * This data source provides the list of Data Keys in Oracle Cloud Infrastructure Apm service.

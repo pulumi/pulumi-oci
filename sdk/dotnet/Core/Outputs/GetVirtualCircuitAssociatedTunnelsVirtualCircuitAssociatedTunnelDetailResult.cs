@@ -16,23 +16,23 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of IPSec connection associated with the virtual circuit.
         /// </summary>
-        public readonly string IpsecConnectionId;
+        public readonly string? IpsecConnectionId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IPSec tunnel associated with the virtual circuit.
         /// </summary>
-        public readonly string TunnelId;
+        public readonly string? TunnelId;
         /// <summary>
         /// The type of the tunnel associated with the virtual circuit.
         /// </summary>
-        public readonly string TunnelType;
+        public readonly string? TunnelType;
 
         [OutputConstructor]
         private GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetailResult(
-            string ipsecConnectionId,
+            string? ipsecConnectionId,
 
-            string tunnelId,
+            string? tunnelId,
 
-            string tunnelType)
+            string? tunnelType)
         {
             IpsecConnectionId = ipsecConnectionId;
             TunnelId = tunnelId;

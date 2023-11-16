@@ -16,7 +16,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// DBCS Domain-level schema-name.  This attribute refers implicitly to a value of 'domainLevelSchemaNames' for a particular DB Domain.
         /// </summary>
-        public readonly string DomainLevelSchema;
+        public readonly string? DomainLevelSchema;
         /// <summary>
         /// DBCS Domain-level schema-names. Each value is specific to a DB Domain.
         /// </summary>
@@ -24,7 +24,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// DBCS instance-level schema-name. This attribute refers implicitly to a value of 'instanceLevelSchemaNames' for a particular DB Instance.
         /// </summary>
-        public readonly string InstanceLevelSchema;
+        public readonly string? InstanceLevelSchema;
         /// <summary>
         /// DBCS instance-level schema-names. Each schema-name is specific to a DB Instance.
         /// </summary>
@@ -32,11 +32,11 @@ namespace Pulumi.Oci.Identity.Outputs
 
         [OutputConstructor]
         private GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupResult(
-            string domainLevelSchema,
+            string? domainLevelSchema,
 
             ImmutableArray<Outputs.GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupDomainLevelSchemaNameResult> domainLevelSchemaNames,
 
-            string instanceLevelSchema,
+            string? instanceLevelSchema,
 
             ImmutableArray<Outputs.GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupInstanceLevelSchemaNameResult> instanceLevelSchemaNames)
         {

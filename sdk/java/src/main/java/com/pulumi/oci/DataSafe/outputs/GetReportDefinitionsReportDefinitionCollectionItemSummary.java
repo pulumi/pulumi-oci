@@ -8,6 +8,8 @@ import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetReportDefinitionsReportDefinitionCollectionItemSummary {
@@ -15,75 +17,75 @@ public final class GetReportDefinitionsReportDefinitionCollectionItemSummary {
      * @return Name of the key or count of object.
      * 
      */
-    private String countOf;
+    private @Nullable String countOf;
     /**
      * @return Specifies the order in which the summary must be displayed.
      * 
      */
-    private Integer displayOrder;
+    private @Nullable Integer displayOrder;
     /**
      * @return A comma-delimited string that specifies the names of the fields by which the records must be aggregated to get the summary.
      * 
      */
-    private String groupByFieldName;
+    private @Nullable String groupByFieldName;
     /**
      * @return Indicates if the summary is hidden. Values can either be &#39;true&#39; or &#39;false&#39;.
      * 
      */
-    private Boolean isHidden;
+    private @Nullable Boolean isHidden;
     /**
      * @return Name of the report summary.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return Additional scim filters used to get the specific summary.
      * 
      */
-    private String scimFilter;
+    private @Nullable String scimFilter;
 
     private GetReportDefinitionsReportDefinitionCollectionItemSummary() {}
     /**
      * @return Name of the key or count of object.
      * 
      */
-    public String countOf() {
-        return this.countOf;
+    public Optional<String> countOf() {
+        return Optional.ofNullable(this.countOf);
     }
     /**
      * @return Specifies the order in which the summary must be displayed.
      * 
      */
-    public Integer displayOrder() {
-        return this.displayOrder;
+    public Optional<Integer> displayOrder() {
+        return Optional.ofNullable(this.displayOrder);
     }
     /**
      * @return A comma-delimited string that specifies the names of the fields by which the records must be aggregated to get the summary.
      * 
      */
-    public String groupByFieldName() {
-        return this.groupByFieldName;
+    public Optional<String> groupByFieldName() {
+        return Optional.ofNullable(this.groupByFieldName);
     }
     /**
      * @return Indicates if the summary is hidden. Values can either be &#39;true&#39; or &#39;false&#39;.
      * 
      */
-    public Boolean isHidden() {
-        return this.isHidden;
+    public Optional<Boolean> isHidden() {
+        return Optional.ofNullable(this.isHidden);
     }
     /**
      * @return Name of the report summary.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return Additional scim filters used to get the specific summary.
      * 
      */
-    public String scimFilter() {
-        return this.scimFilter;
+    public Optional<String> scimFilter() {
+        return Optional.ofNullable(this.scimFilter);
     }
 
     public static Builder builder() {
@@ -95,12 +97,12 @@ public final class GetReportDefinitionsReportDefinitionCollectionItemSummary {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String countOf;
-        private Integer displayOrder;
-        private String groupByFieldName;
-        private Boolean isHidden;
-        private String name;
-        private String scimFilter;
+        private @Nullable String countOf;
+        private @Nullable Integer displayOrder;
+        private @Nullable String groupByFieldName;
+        private @Nullable Boolean isHidden;
+        private @Nullable String name;
+        private @Nullable String scimFilter;
         public Builder() {}
         public Builder(GetReportDefinitionsReportDefinitionCollectionItemSummary defaults) {
     	      Objects.requireNonNull(defaults);
@@ -113,33 +115,33 @@ public final class GetReportDefinitionsReportDefinitionCollectionItemSummary {
         }
 
         @CustomType.Setter
-        public Builder countOf(String countOf) {
-            this.countOf = Objects.requireNonNull(countOf);
+        public Builder countOf(@Nullable String countOf) {
+            this.countOf = countOf;
             return this;
         }
         @CustomType.Setter
-        public Builder displayOrder(Integer displayOrder) {
-            this.displayOrder = Objects.requireNonNull(displayOrder);
+        public Builder displayOrder(@Nullable Integer displayOrder) {
+            this.displayOrder = displayOrder;
             return this;
         }
         @CustomType.Setter
-        public Builder groupByFieldName(String groupByFieldName) {
-            this.groupByFieldName = Objects.requireNonNull(groupByFieldName);
+        public Builder groupByFieldName(@Nullable String groupByFieldName) {
+            this.groupByFieldName = groupByFieldName;
             return this;
         }
         @CustomType.Setter
-        public Builder isHidden(Boolean isHidden) {
-            this.isHidden = Objects.requireNonNull(isHidden);
+        public Builder isHidden(@Nullable Boolean isHidden) {
+            this.isHidden = isHidden;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder scimFilter(String scimFilter) {
-            this.scimFilter = Objects.requireNonNull(scimFilter);
+        public Builder scimFilter(@Nullable String scimFilter) {
+            this.scimFilter = scimFilter;
             return this;
         }
         public GetReportDefinitionsReportDefinitionCollectionItemSummary build() {

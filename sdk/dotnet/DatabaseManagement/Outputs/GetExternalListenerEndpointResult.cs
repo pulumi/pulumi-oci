@@ -16,19 +16,19 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// The host name or IP address.
         /// </summary>
-        public readonly string Host;
+        public readonly string? Host;
         /// <summary>
         /// The unique name of the service.
         /// </summary>
-        public readonly string Key;
+        public readonly string? Key;
         /// <summary>
         /// The port number.
         /// </summary>
-        public readonly int Port;
+        public readonly int? Port;
         /// <summary>
         /// The listener protocol.
         /// </summary>
-        public readonly string Protocol;
+        public readonly string? Protocol;
         /// <summary>
         /// The list of services registered with the listener.
         /// </summary>
@@ -36,13 +36,13 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
 
         [OutputConstructor]
         private GetExternalListenerEndpointResult(
-            string host,
+            string? host,
 
-            string key,
+            string? key,
 
-            int port,
+            int? port,
 
-            string protocol,
+            string? protocol,
 
             ImmutableArray<string> services)
         {

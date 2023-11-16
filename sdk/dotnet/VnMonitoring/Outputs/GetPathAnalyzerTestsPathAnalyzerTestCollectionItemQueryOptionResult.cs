@@ -16,10 +16,10 @@ namespace Pulumi.Oci.VnMonitoring.Outputs
         /// <summary>
         /// If true, a path analysis is done for both the forward and reverse routes.
         /// </summary>
-        public readonly bool IsBiDirectionalAnalysis;
+        public readonly bool? IsBiDirectionalAnalysis;
 
         [OutputConstructor]
-        private GetPathAnalyzerTestsPathAnalyzerTestCollectionItemQueryOptionResult(bool isBiDirectionalAnalysis)
+        private GetPathAnalyzerTestsPathAnalyzerTestCollectionItemQueryOptionResult(bool? isBiDirectionalAnalysis)
         {
             IsBiDirectionalAnalysis = isBiDirectionalAnalysis;
         }

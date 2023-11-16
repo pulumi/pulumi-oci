@@ -63,7 +63,7 @@ export class ManagementAgentInstallKey extends pulumi.CustomResource {
     /**
      * Total number of install for this keys
      */
-    public readonly allowedKeyInstallCount!: pulumi.Output<number>;
+    public readonly allowedKeyInstallCount!: pulumi.Output<number | undefined>;
     /**
      * Compartment Identifier
      */
@@ -71,11 +71,11 @@ export class ManagementAgentInstallKey extends pulumi.CustomResource {
     /**
      * Principal id of user who created the Agent Install key
      */
-    public /*out*/ readonly createdByPrincipalId!: pulumi.Output<string>;
+    public /*out*/ readonly createdByPrincipalId!: pulumi.Output<string | undefined>;
     /**
      * Total number of install for this keys
      */
-    public /*out*/ readonly currentKeyInstallCount!: pulumi.Output<number>;
+    public /*out*/ readonly currentKeyInstallCount!: pulumi.Output<number | undefined>;
     /**
      * (Updatable) Management Agent install Key Name
      */
@@ -83,23 +83,23 @@ export class ManagementAgentInstallKey extends pulumi.CustomResource {
     /**
      * If set to true, the install key has no expiration date or usage limit. Defaults to false
      */
-    public readonly isUnlimited!: pulumi.Output<boolean>;
+    public readonly isUnlimited!: pulumi.Output<boolean | undefined>;
     /**
      * Management Agent Install Key
      */
-    public /*out*/ readonly key!: pulumi.Output<string>;
+    public /*out*/ readonly key!: pulumi.Output<string | undefined>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * Status of Key
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The time when Management Agent install Key was created. An RFC3339 formatted date time string
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * date after which key would expire after creation
      *
@@ -107,11 +107,11 @@ export class ManagementAgentInstallKey extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly timeExpires!: pulumi.Output<string>;
+    public readonly timeExpires!: pulumi.Output<string | undefined>;
     /**
      * The time when Management Agent install Key was updated. An RFC3339 formatted date time string
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a ManagementAgentInstallKey resource with the given unique name, arguments, and options.

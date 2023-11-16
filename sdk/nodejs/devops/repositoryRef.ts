@@ -63,23 +63,23 @@ export class RepositoryRef extends pulumi.CustomResource {
     /**
      * (Updatable) Commit ID pointed to by the new branch.
      */
-    public readonly commitId!: pulumi.Output<string>;
+    public readonly commitId!: pulumi.Output<string | undefined>;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public /*out*/ readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
      */
-    public /*out*/ readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * Unique full reference name inside a repository.
      */
-    public /*out*/ readonly fullRefName!: pulumi.Output<string>;
+    public /*out*/ readonly fullRefName!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) SHA-1 hash value of the object pointed to by the tag.
      */
-    public readonly objectId!: pulumi.Output<string>;
+    public readonly objectId!: pulumi.Output<string | undefined>;
     /**
      * A filter to return only resources that match the given reference name.
      */

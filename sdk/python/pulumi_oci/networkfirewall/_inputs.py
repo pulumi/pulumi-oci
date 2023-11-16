@@ -34,10 +34,6 @@ class NetworkFirewallPolicyDecryptionRuleConditionArgs:
     def __init__(__self__, *,
                  destination_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  source_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
-        """
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] destination_addresses: (Updatable) An array of address list names to be evaluated against the traffic destination address.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] source_addresses: (Updatable) An array of address list names to be evaluated against the traffic source address.
-        """
         if destination_addresses is not None:
             pulumi.set(__self__, "destination_addresses", destination_addresses)
         if source_addresses is not None:
@@ -46,9 +42,6 @@ class NetworkFirewallPolicyDecryptionRuleConditionArgs:
     @property
     @pulumi.getter(name="destinationAddresses")
     def destination_addresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) An array of address list names to be evaluated against the traffic destination address.
-        """
         return pulumi.get(self, "destination_addresses")
 
     @destination_addresses.setter
@@ -58,9 +51,6 @@ class NetworkFirewallPolicyDecryptionRuleConditionArgs:
     @property
     @pulumi.getter(name="sourceAddresses")
     def source_addresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) An array of address list names to be evaluated against the traffic source address.
-        """
         return pulumi.get(self, "source_addresses")
 
     @source_addresses.setter
@@ -73,14 +63,6 @@ class NetworkFirewallPolicyDecryptionRulePositionArgs:
     def __init__(__self__, *,
                  after_rule: Optional[pulumi.Input[str]] = None,
                  before_rule: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] after_rule: (Updatable) Identifier for rule after which this rule lies.
-        :param pulumi.Input[str] before_rule: (Updatable) Identifier for rule before which this rule lies.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         if after_rule is not None:
             pulumi.set(__self__, "after_rule", after_rule)
         if before_rule is not None:
@@ -89,9 +71,6 @@ class NetworkFirewallPolicyDecryptionRulePositionArgs:
     @property
     @pulumi.getter(name="afterRule")
     def after_rule(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Identifier for rule after which this rule lies.
-        """
         return pulumi.get(self, "after_rule")
 
     @after_rule.setter
@@ -101,13 +80,6 @@ class NetworkFirewallPolicyDecryptionRulePositionArgs:
     @property
     @pulumi.getter(name="beforeRule")
     def before_rule(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Identifier for rule before which this rule lies.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "before_rule")
 
     @before_rule.setter
@@ -123,13 +95,6 @@ class NetworkFirewallPolicySecurityRuleConditionArgs:
                  services: pulumi.Input[Sequence[pulumi.Input[str]]],
                  source_addresses: pulumi.Input[Sequence[pulumi.Input[str]]],
                  urls: pulumi.Input[Sequence[pulumi.Input[str]]]):
-        """
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] applications: (Updatable) An array of application group names to be evaluated against the traffic protocol and protocol-specific parameters.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] destination_addresses: (Updatable) An array of address list names to be evaluated against the traffic destination address.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] services: (Updatable) An array of service list names to be evaluated against the traffic protocol and protocol-specific parameters.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] source_addresses: (Updatable) An array of address list names to be evaluated against the traffic source address.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] urls: (Updatable) An array of URL list names to be evaluated against the HTTP(S) request target.
-        """
         pulumi.set(__self__, "applications", applications)
         pulumi.set(__self__, "destination_addresses", destination_addresses)
         pulumi.set(__self__, "services", services)
@@ -139,9 +104,6 @@ class NetworkFirewallPolicySecurityRuleConditionArgs:
     @property
     @pulumi.getter
     def applications(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
-        """
-        (Updatable) An array of application group names to be evaluated against the traffic protocol and protocol-specific parameters.
-        """
         return pulumi.get(self, "applications")
 
     @applications.setter
@@ -151,9 +113,6 @@ class NetworkFirewallPolicySecurityRuleConditionArgs:
     @property
     @pulumi.getter(name="destinationAddresses")
     def destination_addresses(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
-        """
-        (Updatable) An array of address list names to be evaluated against the traffic destination address.
-        """
         return pulumi.get(self, "destination_addresses")
 
     @destination_addresses.setter
@@ -163,9 +122,6 @@ class NetworkFirewallPolicySecurityRuleConditionArgs:
     @property
     @pulumi.getter
     def services(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
-        """
-        (Updatable) An array of service list names to be evaluated against the traffic protocol and protocol-specific parameters.
-        """
         return pulumi.get(self, "services")
 
     @services.setter
@@ -175,9 +131,6 @@ class NetworkFirewallPolicySecurityRuleConditionArgs:
     @property
     @pulumi.getter(name="sourceAddresses")
     def source_addresses(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
-        """
-        (Updatable) An array of address list names to be evaluated against the traffic source address.
-        """
         return pulumi.get(self, "source_addresses")
 
     @source_addresses.setter
@@ -187,9 +140,6 @@ class NetworkFirewallPolicySecurityRuleConditionArgs:
     @property
     @pulumi.getter
     def urls(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
-        """
-        (Updatable) An array of URL list names to be evaluated against the HTTP(S) request target.
-        """
         return pulumi.get(self, "urls")
 
     @urls.setter
@@ -202,14 +152,6 @@ class NetworkFirewallPolicySecurityRulePositionArgs:
     def __init__(__self__, *,
                  after_rule: Optional[pulumi.Input[str]] = None,
                  before_rule: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] after_rule: (Updatable) Identifier for rule after which this rule lies.
-        :param pulumi.Input[str] before_rule: (Updatable) Identifier for rule before which this rule lies.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         if after_rule is not None:
             pulumi.set(__self__, "after_rule", after_rule)
         if before_rule is not None:
@@ -218,9 +160,6 @@ class NetworkFirewallPolicySecurityRulePositionArgs:
     @property
     @pulumi.getter(name="afterRule")
     def after_rule(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Identifier for rule after which this rule lies.
-        """
         return pulumi.get(self, "after_rule")
 
     @after_rule.setter
@@ -230,13 +169,6 @@ class NetworkFirewallPolicySecurityRulePositionArgs:
     @property
     @pulumi.getter(name="beforeRule")
     def before_rule(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Identifier for rule before which this rule lies.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "before_rule")
 
     @before_rule.setter
@@ -249,10 +181,6 @@ class NetworkFirewallPolicyServicePortRangeArgs:
     def __init__(__self__, *,
                  minimum_port: pulumi.Input[int],
                  maximum_port: Optional[pulumi.Input[int]] = None):
-        """
-        :param pulumi.Input[int] minimum_port: (Updatable) The minimum port in the range (inclusive), or the sole port of a single-port range.
-        :param pulumi.Input[int] maximum_port: (Updatable) The maximum port in the range (inclusive), which may be absent for a single-port range.
-        """
         pulumi.set(__self__, "minimum_port", minimum_port)
         if maximum_port is not None:
             pulumi.set(__self__, "maximum_port", maximum_port)
@@ -260,9 +188,6 @@ class NetworkFirewallPolicyServicePortRangeArgs:
     @property
     @pulumi.getter(name="minimumPort")
     def minimum_port(self) -> pulumi.Input[int]:
-        """
-        (Updatable) The minimum port in the range (inclusive), or the sole port of a single-port range.
-        """
         return pulumi.get(self, "minimum_port")
 
     @minimum_port.setter
@@ -272,9 +197,6 @@ class NetworkFirewallPolicyServicePortRangeArgs:
     @property
     @pulumi.getter(name="maximumPort")
     def maximum_port(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The maximum port in the range (inclusive), which may be absent for a single-port range.
-        """
         return pulumi.get(self, "maximum_port")
 
     @maximum_port.setter
@@ -287,24 +209,12 @@ class NetworkFirewallPolicyUrlListUrlArgs:
     def __init__(__self__, *,
                  pattern: pulumi.Input[str],
                  type: pulumi.Input[str]):
-        """
-        :param pulumi.Input[str] pattern: (Updatable) A string consisting of a concatenation of optional host component and optional path component. The host component may start with `*.` to match the case-insensitive domain and all its subdomains. The path component must start with a `/`, and may end with `*` to match all paths of which it is a case-sensitive prefix. A missing host component matches all request domains, and a missing path component matches all request paths. An empty value matches all requests.
-        :param pulumi.Input[str] type: (Updatable) The type of pattern.
-               * SIMPLE - The only accepted value is `SIMPLE`. A simple pattern with optional subdomain and/or path suffix wildcards.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         pulumi.set(__self__, "pattern", pattern)
         pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter
     def pattern(self) -> pulumi.Input[str]:
-        """
-        (Updatable) A string consisting of a concatenation of optional host component and optional path component. The host component may start with `*.` to match the case-insensitive domain and all its subdomains. The path component must start with a `/`, and may end with `*` to match all paths of which it is a case-sensitive prefix. A missing host component matches all request domains, and a missing path component matches all request paths. An empty value matches all requests.
-        """
         return pulumi.get(self, "pattern")
 
     @pattern.setter
@@ -314,14 +224,6 @@ class NetworkFirewallPolicyUrlListUrlArgs:
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The type of pattern.
-        * SIMPLE - The only accepted value is `SIMPLE`. A simple pattern with optional subdomain and/or path suffix wildcards.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -374,9 +276,6 @@ class GetNetworkFirewallPolicyAddressListsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: Unique name to identify the group of addresses to be used in the policy rules.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -385,9 +284,6 @@ class GetNetworkFirewallPolicyAddressListsFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Unique name to identify the group of addresses to be used in the policy rules.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -419,9 +315,6 @@ class GetNetworkFirewallPolicyApplicationGroupsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: Name of the application Group.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -430,9 +323,6 @@ class GetNetworkFirewallPolicyApplicationGroupsFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Name of the application Group.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -464,9 +354,6 @@ class GetNetworkFirewallPolicyApplicationsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: Name of the application.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -475,9 +362,6 @@ class GetNetworkFirewallPolicyApplicationsFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Name of the application.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -509,9 +393,6 @@ class GetNetworkFirewallPolicyDecryptionProfilesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: Unique Name of the decryption profile.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -520,9 +401,6 @@ class GetNetworkFirewallPolicyDecryptionProfilesFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Unique Name of the decryption profile.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -554,9 +432,6 @@ class GetNetworkFirewallPolicyDecryptionRulesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: Name for the decryption rule, must be unique within the policy.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -565,9 +440,6 @@ class GetNetworkFirewallPolicyDecryptionRulesFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Name for the decryption rule, must be unique within the policy.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -599,9 +471,6 @@ class GetNetworkFirewallPolicySecurityRulesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: Name for the Security rule, must be unique within the policy.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -610,9 +479,6 @@ class GetNetworkFirewallPolicySecurityRulesFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Name for the Security rule, must be unique within the policy.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -644,9 +510,6 @@ class GetNetworkFirewallPolicyServiceListsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: Name of the service Group.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -655,9 +518,6 @@ class GetNetworkFirewallPolicyServiceListsFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Name of the service Group.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -689,9 +549,6 @@ class GetNetworkFirewallPolicyServicesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: Name of the service.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -700,9 +557,6 @@ class GetNetworkFirewallPolicyServicesFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Name of the service.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -734,9 +588,6 @@ class GetNetworkFirewallPolicyUrlListsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: Unique name identifier for the URL list.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -745,9 +596,6 @@ class GetNetworkFirewallPolicyUrlListsFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Unique name identifier for the URL list.
-        """
         return pulumi.get(self, "name")
 
     @name.setter

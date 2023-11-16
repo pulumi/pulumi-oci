@@ -37,16 +37,12 @@ class GetCnvDnsResolverAssociationResult:
 
     @property
     @pulumi.getter(name="dnsResolverId")
-    def dns_resolver_id(self) -> str:
-        """
-        The OCID of the DNS resolver in the association. We won't have the DNS resolver id as soon as vcn 
-        is created, we will create it asynchronously. It would be null until it is actually created.
-        """
+    def dns_resolver_id(self) -> Optional[str]:
         return pulumi.get(self, "dns_resolver_id")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -54,15 +50,12 @@ class GetCnvDnsResolverAssociationResult:
 
     @property
     @pulumi.getter
-    def state(self) -> str:
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="vcnId")
     def vcn_id(self) -> str:
-        """
-        The OCID of the VCN in the association.
-        """
         return pulumi.get(self, "vcn_id")
 
 
@@ -81,21 +74,7 @@ class AwaitableGetCnvDnsResolverAssociationResult(GetCnvDnsResolverAssociationRe
 def get_cnv_dns_resolver_association(vcn_id: Optional[str] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCnvDnsResolverAssociationResult:
     """
-    This data source provides details about a specific Vcn Dns Resolver Association resource in Oracle Cloud Infrastructure Core service.
-
-    Get the associated DNS resolver information with a vcn
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_vcn_dns_resolver_association = oci.Core.get_cnv_dns_resolver_association(vcn_id=oci_core_vcn["test_vcn"]["id"])
-    ```
-
-
-    :param str vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['vcnId'] = vcn_id
@@ -113,20 +92,6 @@ def get_cnv_dns_resolver_association(vcn_id: Optional[str] = None,
 def get_cnv_dns_resolver_association_output(vcn_id: Optional[pulumi.Input[str]] = None,
                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCnvDnsResolverAssociationResult]:
     """
-    This data source provides details about a specific Vcn Dns Resolver Association resource in Oracle Cloud Infrastructure Core service.
-
-    Get the associated DNS resolver information with a vcn
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_vcn_dns_resolver_association = oci.Core.get_cnv_dns_resolver_association(vcn_id=oci_core_vcn["test_vcn"]["id"])
-    ```
-
-
-    :param str vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+    Use this data source to access information about an existing resource.
     """
     ...

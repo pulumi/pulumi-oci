@@ -118,20 +118,20 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// The OCID of the compartment containing this IAM work request.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         public readonly string IamWorkRequestId;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The asynchronous operation tracked by this IAM work request.
         /// </summary>
-        public readonly string OperationType;
+        public readonly string? OperationType;
         /// <summary>
         /// How much progress the operation has made.
         /// </summary>
-        public readonly double PercentComplete;
+        public readonly double? PercentComplete;
         /// <summary>
         /// The resources this work request affects.
         /// </summary>
@@ -139,41 +139,41 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// Status of the work request
         /// </summary>
-        public readonly string Status;
+        public readonly string? Status;
         /// <summary>
         /// Date and time the work was accepted, in the format defined by RFC3339. Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeAccepted;
+        public readonly string? TimeAccepted;
         /// <summary>
         /// Date and time the work completed, in the format defined by RFC3339. Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeFinished;
+        public readonly string? TimeFinished;
         /// <summary>
         /// Date and time the work started, in the format defined by RFC3339. Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeStarted;
+        public readonly string? TimeStarted;
 
         [OutputConstructor]
         private GetIamWorkRequestResult(
-            string compartmentId,
+            string? compartmentId,
 
             string iamWorkRequestId,
 
-            string id,
+            string? id,
 
-            string operationType,
+            string? operationType,
 
-            double percentComplete,
+            double? percentComplete,
 
             ImmutableArray<Outputs.GetIamWorkRequestResourceResult> resources,
 
-            string status,
+            string? status,
 
-            string timeAccepted,
+            string? timeAccepted,
 
-            string timeFinished,
+            string? timeFinished,
 
-            string timeStarted)
+            string? timeStarted)
         {
             CompartmentId = compartmentId;
             IamWorkRequestId = iamWorkRequestId;

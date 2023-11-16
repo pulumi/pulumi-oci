@@ -70,82 +70,52 @@ class GetSnapshotResult:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="expirationTime")
-    def expiration_time(self) -> str:
-        """
-        The time when this snapshot will be deleted.
-        """
+    def expiration_time(self) -> Optional[str]:
         return pulumi.get(self, "expiration_time")
 
     @property
     @pulumi.getter(name="fileSystemId")
-    def file_system_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system from which the snapshot was created.
-        """
+    def file_system_id(self) -> Optional[str]:
         return pulumi.get(self, "file_system_id")
 
     @property
     @pulumi.getter(name="filesystemSnapshotPolicyId")
-    def filesystem_snapshot_policy_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that created this snapshot.
-        """
+    def filesystem_snapshot_policy_id(self) -> Optional[str]:
         return pulumi.get(self, "filesystem_snapshot_policy_id")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isCloneSource")
-    def is_clone_source(self) -> bool:
-        """
-        Specifies whether the snapshot has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
-        """
+    def is_clone_source(self) -> Optional[bool]:
         return pulumi.get(self, "is_clone_source")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        Additional information about the current `lifecycleState`.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Name of the snapshot. This value is immutable.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="provenanceId")
-    def provenance_id(self) -> str:
-        """
-        An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) identifying the parent from which this snapshot was cloned. If this snapshot was not cloned, then the `provenanceId` is the same as the snapshot `id` value. If this snapshot was cloned, then the `provenanceId` value is the parent's `provenanceId`. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
-        """
+    def provenance_id(self) -> Optional[str]:
         return pulumi.get(self, "provenance_id")
 
     @property
@@ -155,37 +125,22 @@ class GetSnapshotResult:
 
     @property
     @pulumi.getter(name="snapshotTime")
-    def snapshot_time(self) -> str:
-        """
-        The date and time the snapshot was taken, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. This value might be the same or different from `timeCreated` depending on the following factors:
-        * If the snapshot is created in the original file system directory.
-        * If the snapshot is cloned from a file system.
-        * If the snapshot is replicated from a file system.
-        """
+    def snapshot_time(self) -> Optional[str]:
         return pulumi.get(self, "snapshot_time")
 
     @property
     @pulumi.getter(name="snapshotType")
-    def snapshot_type(self) -> str:
-        """
-        Specifies the generation type of the snapshot.
-        """
+    def snapshot_type(self) -> Optional[str]:
         return pulumi.get(self, "snapshot_type")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the snapshot.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the snapshot was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
 
@@ -215,21 +170,7 @@ class AwaitableGetSnapshotResult(GetSnapshotResult):
 def get_snapshot(snapshot_id: Optional[str] = None,
                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSnapshotResult:
     """
-    This data source provides details about a specific Snapshot resource in Oracle Cloud Infrastructure File Storage service.
-
-    Gets the specified snapshot's information.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_snapshot = oci.FileStorage.get_snapshot(snapshot_id=oci_file_storage_snapshot["test_snapshot"]["id"])
-    ```
-
-
-    :param str snapshot_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['snapshotId'] = snapshot_id
@@ -258,20 +199,6 @@ def get_snapshot(snapshot_id: Optional[str] = None,
 def get_snapshot_output(snapshot_id: Optional[pulumi.Input[str]] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSnapshotResult]:
     """
-    This data source provides details about a specific Snapshot resource in Oracle Cloud Infrastructure File Storage service.
-
-    Gets the specified snapshot's information.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_snapshot = oci.FileStorage.get_snapshot(snapshot_id=oci_file_storage_snapshot["test_snapshot"]["id"])
-    ```
-
-
-    :param str snapshot_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot.
+    Use this data source to access information about an existing resource.
     """
     ...

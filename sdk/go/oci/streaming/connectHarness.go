@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Connect Harness resource in Oracle Cloud Infrastructure Streaming service.
@@ -68,16 +67,16 @@ type ConnectHarness struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair that is applied with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// Any additional details about the current state of the connect harness.
-	LifecycleStateDetails pulumi.StringOutput `pulumi:"lifecycleStateDetails"`
+	LifecycleStateDetails pulumi.StringPtrOutput `pulumi:"lifecycleStateDetails"`
 	// The name of the connect harness. Avoid entering confidential information.  Example: `JDBCConnector`
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Name pulumi.StringOutput `pulumi:"name"`
 	// The current state of the connect harness.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The date and time the connect harness was created, expressed in in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 }
 
 // NewConnectHarness registers a new resource with the given unique name, arguments, and options.
@@ -208,12 +207,6 @@ func (i *ConnectHarness) ToConnectHarnessOutputWithContext(ctx context.Context) 
 	return pulumi.ToOutputWithContext(ctx, i).(ConnectHarnessOutput)
 }
 
-func (i *ConnectHarness) ToOutput(ctx context.Context) pulumix.Output[*ConnectHarness] {
-	return pulumix.Output[*ConnectHarness]{
-		OutputState: i.ToConnectHarnessOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ConnectHarnessArrayInput is an input type that accepts ConnectHarnessArray and ConnectHarnessArrayOutput values.
 // You can construct a concrete instance of `ConnectHarnessArrayInput` via:
 //
@@ -237,12 +230,6 @@ func (i ConnectHarnessArray) ToConnectHarnessArrayOutput() ConnectHarnessArrayOu
 
 func (i ConnectHarnessArray) ToConnectHarnessArrayOutputWithContext(ctx context.Context) ConnectHarnessArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ConnectHarnessArrayOutput)
-}
-
-func (i ConnectHarnessArray) ToOutput(ctx context.Context) pulumix.Output[[]*ConnectHarness] {
-	return pulumix.Output[[]*ConnectHarness]{
-		OutputState: i.ToConnectHarnessArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ConnectHarnessMapInput is an input type that accepts ConnectHarnessMap and ConnectHarnessMapOutput values.
@@ -270,12 +257,6 @@ func (i ConnectHarnessMap) ToConnectHarnessMapOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(ConnectHarnessMapOutput)
 }
 
-func (i ConnectHarnessMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ConnectHarness] {
-	return pulumix.Output[map[string]*ConnectHarness]{
-		OutputState: i.ToConnectHarnessMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ConnectHarnessOutput struct{ *pulumi.OutputState }
 
 func (ConnectHarnessOutput) ElementType() reflect.Type {
@@ -288,12 +269,6 @@ func (o ConnectHarnessOutput) ToConnectHarnessOutput() ConnectHarnessOutput {
 
 func (o ConnectHarnessOutput) ToConnectHarnessOutputWithContext(ctx context.Context) ConnectHarnessOutput {
 	return o
-}
-
-func (o ConnectHarnessOutput) ToOutput(ctx context.Context) pulumix.Output[*ConnectHarness] {
-	return pulumix.Output[*ConnectHarness]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The OCID of the compartment that contains the connect harness.
@@ -312,8 +287,8 @@ func (o ConnectHarnessOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Any additional details about the current state of the connect harness.
-func (o ConnectHarnessOutput) LifecycleStateDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *ConnectHarness) pulumi.StringOutput { return v.LifecycleStateDetails }).(pulumi.StringOutput)
+func (o ConnectHarnessOutput) LifecycleStateDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ConnectHarness) pulumi.StringPtrOutput { return v.LifecycleStateDetails }).(pulumi.StringPtrOutput)
 }
 
 // The name of the connect harness. Avoid entering confidential information.  Example: `JDBCConnector`
@@ -325,13 +300,13 @@ func (o ConnectHarnessOutput) Name() pulumi.StringOutput {
 }
 
 // The current state of the connect harness.
-func (o ConnectHarnessOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *ConnectHarness) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o ConnectHarnessOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ConnectHarness) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the connect harness was created, expressed in in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
-func (o ConnectHarnessOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *ConnectHarness) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o ConnectHarnessOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ConnectHarness) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 type ConnectHarnessArrayOutput struct{ *pulumi.OutputState }
@@ -346,12 +321,6 @@ func (o ConnectHarnessArrayOutput) ToConnectHarnessArrayOutput() ConnectHarnessA
 
 func (o ConnectHarnessArrayOutput) ToConnectHarnessArrayOutputWithContext(ctx context.Context) ConnectHarnessArrayOutput {
 	return o
-}
-
-func (o ConnectHarnessArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ConnectHarness] {
-	return pulumix.Output[[]*ConnectHarness]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ConnectHarnessArrayOutput) Index(i pulumi.IntInput) ConnectHarnessOutput {
@@ -372,12 +341,6 @@ func (o ConnectHarnessMapOutput) ToConnectHarnessMapOutput() ConnectHarnessMapOu
 
 func (o ConnectHarnessMapOutput) ToConnectHarnessMapOutputWithContext(ctx context.Context) ConnectHarnessMapOutput {
 	return o
-}
-
-func (o ConnectHarnessMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ConnectHarness] {
-	return pulumix.Output[map[string]*ConnectHarness]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ConnectHarnessMapOutput) MapIndex(k pulumi.StringInput) ConnectHarnessOutput {

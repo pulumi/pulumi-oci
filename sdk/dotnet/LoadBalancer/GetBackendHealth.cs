@@ -142,7 +142,7 @@ namespace Pulumi.Oci.LoadBalancer
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string LoadBalancerId;
         /// <summary>
         /// The general health status of the specified backend server as reported by the primary and standby load balancers.
@@ -151,7 +151,7 @@ namespace Pulumi.Oci.LoadBalancer
         /// *   **CRITICAL:** Neither health check returned `OK`.
         /// *   **UNKNOWN:** One or both health checks returned `UNKNOWN`, or the system was unable to retrieve metrics at this time.
         /// </summary>
-        public readonly string Status;
+        public readonly string? Status;
 
         [OutputConstructor]
         private GetBackendHealthResult(
@@ -161,11 +161,11 @@ namespace Pulumi.Oci.LoadBalancer
 
             ImmutableArray<Outputs.GetBackendHealthHealthCheckResultResult> healthCheckResults,
 
-            string id,
+            string? id,
 
             string loadBalancerId,
 
-            string status)
+            string? status)
         {
             BackendName = backendName;
             BackendSetName = backendSetName;

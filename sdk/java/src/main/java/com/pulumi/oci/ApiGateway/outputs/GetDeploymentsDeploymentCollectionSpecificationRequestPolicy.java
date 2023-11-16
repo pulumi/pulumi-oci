@@ -12,6 +12,7 @@ import com.pulumi.oci.ApiGateway.outputs.GetDeploymentsDeploymentCollectionSpeci
 import com.pulumi.oci.ApiGateway.outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlan;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDeploymentsDeploymentCollectionSpecificationRequestPolicy {
@@ -19,32 +20,32 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRequestPolicy 
      * @return Information on how to authenticate incoming requests.
      * 
      */
-    private List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthentication> authentications;
+    private @Nullable List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthentication> authentications;
     /**
      * @return Enable CORS (Cross-Origin-Resource-Sharing) request handling.
      * 
      */
-    private List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyCor> cors;
+    private @Nullable List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyCor> cors;
     /**
      * @return Policy on how to authenticate requests when multiple authentication options are configured for a deployment. For an incoming request, the value of selector specified under selectionSource will be matched against the keys specified for each authentication server. The authentication server whose key matches the value of selector will be used for authentication.
      * 
      */
-    private List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthentication> dynamicAuthentications;
+    private @Nullable List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthentication> dynamicAuthentications;
     /**
      * @return Properties used to configure client mTLS verification when API Consumer makes connection to the gateway.
      * 
      */
-    private List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyMutualTl> mutualTls;
+    private @Nullable List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyMutualTl> mutualTls;
     /**
      * @return Limit the number of requests that should be handled for the specified window using a specfic key.
      * 
      */
-    private List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyRateLimiting> rateLimitings;
+    private @Nullable List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyRateLimiting> rateLimitings;
     /**
      * @return Usage plan policies for this deployment
      * 
      */
-    private List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlan> usagePlans;
+    private @Nullable List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlan> usagePlans;
 
     private GetDeploymentsDeploymentCollectionSpecificationRequestPolicy() {}
     /**
@@ -52,42 +53,42 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRequestPolicy 
      * 
      */
     public List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthentication> authentications() {
-        return this.authentications;
+        return this.authentications == null ? List.of() : this.authentications;
     }
     /**
      * @return Enable CORS (Cross-Origin-Resource-Sharing) request handling.
      * 
      */
     public List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyCor> cors() {
-        return this.cors;
+        return this.cors == null ? List.of() : this.cors;
     }
     /**
      * @return Policy on how to authenticate requests when multiple authentication options are configured for a deployment. For an incoming request, the value of selector specified under selectionSource will be matched against the keys specified for each authentication server. The authentication server whose key matches the value of selector will be used for authentication.
      * 
      */
     public List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthentication> dynamicAuthentications() {
-        return this.dynamicAuthentications;
+        return this.dynamicAuthentications == null ? List.of() : this.dynamicAuthentications;
     }
     /**
      * @return Properties used to configure client mTLS verification when API Consumer makes connection to the gateway.
      * 
      */
     public List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyMutualTl> mutualTls() {
-        return this.mutualTls;
+        return this.mutualTls == null ? List.of() : this.mutualTls;
     }
     /**
      * @return Limit the number of requests that should be handled for the specified window using a specfic key.
      * 
      */
     public List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyRateLimiting> rateLimitings() {
-        return this.rateLimitings;
+        return this.rateLimitings == null ? List.of() : this.rateLimitings;
     }
     /**
      * @return Usage plan policies for this deployment
      * 
      */
     public List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlan> usagePlans() {
-        return this.usagePlans;
+        return this.usagePlans == null ? List.of() : this.usagePlans;
     }
 
     public static Builder builder() {
@@ -99,12 +100,12 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRequestPolicy 
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthentication> authentications;
-        private List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyCor> cors;
-        private List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthentication> dynamicAuthentications;
-        private List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyMutualTl> mutualTls;
-        private List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyRateLimiting> rateLimitings;
-        private List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlan> usagePlans;
+        private @Nullable List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthentication> authentications;
+        private @Nullable List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyCor> cors;
+        private @Nullable List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthentication> dynamicAuthentications;
+        private @Nullable List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyMutualTl> mutualTls;
+        private @Nullable List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyRateLimiting> rateLimitings;
+        private @Nullable List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlan> usagePlans;
         public Builder() {}
         public Builder(GetDeploymentsDeploymentCollectionSpecificationRequestPolicy defaults) {
     	      Objects.requireNonNull(defaults);
@@ -117,48 +118,48 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRequestPolicy 
         }
 
         @CustomType.Setter
-        public Builder authentications(List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthentication> authentications) {
-            this.authentications = Objects.requireNonNull(authentications);
+        public Builder authentications(@Nullable List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthentication> authentications) {
+            this.authentications = authentications;
             return this;
         }
         public Builder authentications(GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthentication... authentications) {
             return authentications(List.of(authentications));
         }
         @CustomType.Setter
-        public Builder cors(List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyCor> cors) {
-            this.cors = Objects.requireNonNull(cors);
+        public Builder cors(@Nullable List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyCor> cors) {
+            this.cors = cors;
             return this;
         }
         public Builder cors(GetDeploymentsDeploymentCollectionSpecificationRequestPolicyCor... cors) {
             return cors(List.of(cors));
         }
         @CustomType.Setter
-        public Builder dynamicAuthentications(List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthentication> dynamicAuthentications) {
-            this.dynamicAuthentications = Objects.requireNonNull(dynamicAuthentications);
+        public Builder dynamicAuthentications(@Nullable List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthentication> dynamicAuthentications) {
+            this.dynamicAuthentications = dynamicAuthentications;
             return this;
         }
         public Builder dynamicAuthentications(GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthentication... dynamicAuthentications) {
             return dynamicAuthentications(List.of(dynamicAuthentications));
         }
         @CustomType.Setter
-        public Builder mutualTls(List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyMutualTl> mutualTls) {
-            this.mutualTls = Objects.requireNonNull(mutualTls);
+        public Builder mutualTls(@Nullable List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyMutualTl> mutualTls) {
+            this.mutualTls = mutualTls;
             return this;
         }
         public Builder mutualTls(GetDeploymentsDeploymentCollectionSpecificationRequestPolicyMutualTl... mutualTls) {
             return mutualTls(List.of(mutualTls));
         }
         @CustomType.Setter
-        public Builder rateLimitings(List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyRateLimiting> rateLimitings) {
-            this.rateLimitings = Objects.requireNonNull(rateLimitings);
+        public Builder rateLimitings(@Nullable List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyRateLimiting> rateLimitings) {
+            this.rateLimitings = rateLimitings;
             return this;
         }
         public Builder rateLimitings(GetDeploymentsDeploymentCollectionSpecificationRequestPolicyRateLimiting... rateLimitings) {
             return rateLimitings(List.of(rateLimitings));
         }
         @CustomType.Setter
-        public Builder usagePlans(List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlan> usagePlans) {
-            this.usagePlans = Objects.requireNonNull(usagePlans);
+        public Builder usagePlans(@Nullable List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlan> usagePlans) {
+            this.usagePlans = usagePlans;
             return this;
         }
         public Builder usagePlans(GetDeploymentsDeploymentCollectionSpecificationRequestPolicyUsagePlan... usagePlans) {

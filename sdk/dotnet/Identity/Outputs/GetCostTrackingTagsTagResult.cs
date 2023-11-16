@@ -16,51 +16,51 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// The OCID of the compartment (remember that the tenancy is simply the root compartment).
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// The description you assign to the tag.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The OCID of the tag definition.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Indicates whether the tag is enabled for cost tracking.
         /// </summary>
-        public readonly bool IsCostTracking;
+        public readonly bool? IsCostTracking;
         /// <summary>
         /// Indicates whether the tag is retired. See [Retiring Key Definitions and Namespace Definitions](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/taggingoverview.htm#Retiring).
         /// </summary>
-        public readonly bool IsRetired;
+        public readonly bool? IsRetired;
         /// <summary>
         /// The name assigned to the tag during creation. This is the tag key definition. The name must be unique within the tag namespace and cannot be changed.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The tag's current state. After creating a tag, make sure its `lifecycleState` is ACTIVE before using it. After retiring a tag, make sure its `lifecycleState` is INACTIVE before using it. If you delete a tag, you cannot delete another tag until the deleted tag's `lifecycleState` changes from DELETING to DELETED.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The OCID of the namespace that contains the tag definition.
         /// </summary>
-        public readonly string TagNamespaceId;
+        public readonly string? TagNamespaceId;
         /// <summary>
         /// The name of the tag namespace that contains the tag definition.
         /// </summary>
-        public readonly string TagNamespaceName;
+        public readonly string? TagNamespaceName;
         /// <summary>
         /// Date and time the tag was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// Validates a definedTag value. Each validator performs validation steps in addition to the standard validation for definedTag values. For more information, see [Limits on Tags](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/taggingoverview.htm#Limits).
         /// </summary>
@@ -68,29 +68,29 @@ namespace Pulumi.Oci.Identity.Outputs
 
         [OutputConstructor]
         private GetCostTrackingTagsTagResult(
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string description,
+            string? description,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            bool isCostTracking,
+            bool? isCostTracking,
 
-            bool isRetired,
+            bool? isRetired,
 
-            string name,
+            string? name,
 
-            string state,
+            string? state,
 
-            string tagNamespaceId,
+            string? tagNamespaceId,
 
-            string tagNamespaceName,
+            string? tagNamespaceName,
 
-            string timeCreated,
+            string? timeCreated,
 
             ImmutableArray<Outputs.GetCostTrackingTagsTagValidatorResult> validators)
         {

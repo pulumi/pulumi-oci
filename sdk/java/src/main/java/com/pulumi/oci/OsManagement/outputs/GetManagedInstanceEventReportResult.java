@@ -13,12 +13,12 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetManagedInstanceEventReportResult {
     private String compartmentId;
-    private Integer counts;
+    private @Nullable Integer counts;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private @Nullable String latestTimestampGreaterThanOrEqualTo;
     private @Nullable String latestTimestampLessThan;
     private String managedInstanceId;
@@ -27,15 +27,15 @@ public final class GetManagedInstanceEventReportResult {
     public String compartmentId() {
         return this.compartmentId;
     }
-    public Integer counts() {
-        return this.counts;
+    public Optional<Integer> counts() {
+        return Optional.ofNullable(this.counts);
     }
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public Optional<String> latestTimestampGreaterThanOrEqualTo() {
         return Optional.ofNullable(this.latestTimestampGreaterThanOrEqualTo);
@@ -57,8 +57,8 @@ public final class GetManagedInstanceEventReportResult {
     @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
-        private Integer counts;
-        private String id;
+        private @Nullable Integer counts;
+        private @Nullable String id;
         private @Nullable String latestTimestampGreaterThanOrEqualTo;
         private @Nullable String latestTimestampLessThan;
         private String managedInstanceId;
@@ -79,13 +79,13 @@ public final class GetManagedInstanceEventReportResult {
             return this;
         }
         @CustomType.Setter
-        public Builder counts(Integer counts) {
-            this.counts = Objects.requireNonNull(counts);
+        public Builder counts(@Nullable Integer counts) {
+            this.counts = counts;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

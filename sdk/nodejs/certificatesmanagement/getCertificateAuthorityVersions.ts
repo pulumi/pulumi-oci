@@ -60,12 +60,12 @@ export interface GetCertificateAuthorityVersionsResult {
     /**
      * The list of certificate_authority_version_collection.
      */
-    readonly certificateAuthorityVersionCollections: outputs.CertificatesManagement.GetCertificateAuthorityVersionsCertificateAuthorityVersionCollection[];
+    readonly certificateAuthorityVersionCollections?: outputs.CertificatesManagement.GetCertificateAuthorityVersionsCertificateAuthorityVersionCollection[];
     readonly filters?: outputs.CertificatesManagement.GetCertificateAuthorityVersionsFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The version number of the CA.
      */

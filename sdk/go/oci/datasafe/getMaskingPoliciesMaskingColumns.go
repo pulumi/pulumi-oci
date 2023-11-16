@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Masking Policies Masking Columns in Oracle Cloud Infrastructure Data Safe service.
@@ -112,7 +111,7 @@ type GetMaskingPoliciesMaskingColumnsResult struct {
 	DataTypes []string                                 `pulumi:"dataTypes"`
 	Filters   []GetMaskingPoliciesMaskingColumnsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Indicates whether data masking is enabled for the masking column.
 	IsMaskingEnabled *bool `pulumi:"isMaskingEnabled"`
 	IsSeedRequired   *bool `pulumi:"isSeedRequired"`
@@ -208,12 +207,6 @@ func (o GetMaskingPoliciesMaskingColumnsResultOutput) ToGetMaskingPoliciesMaskin
 	return o
 }
 
-func (o GetMaskingPoliciesMaskingColumnsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetMaskingPoliciesMaskingColumnsResult] {
-	return pulumix.Output[GetMaskingPoliciesMaskingColumnsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The name of the substitution column.
 func (o GetMaskingPoliciesMaskingColumnsResultOutput) ColumnNames() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetMaskingPoliciesMaskingColumnsResult) []string { return v.ColumnNames }).(pulumi.StringArrayOutput)
@@ -231,8 +224,8 @@ func (o GetMaskingPoliciesMaskingColumnsResultOutput) Filters() GetMaskingPolici
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetMaskingPoliciesMaskingColumnsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMaskingPoliciesMaskingColumnsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetMaskingPoliciesMaskingColumnsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMaskingPoliciesMaskingColumnsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Indicates whether data masking is enabled for the masking column.

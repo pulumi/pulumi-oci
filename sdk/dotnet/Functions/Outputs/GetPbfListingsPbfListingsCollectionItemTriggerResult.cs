@@ -16,10 +16,10 @@ namespace Pulumi.Oci.Functions.Outputs
         /// <summary>
         /// A filter to return only resources that match the entire PBF name given.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
 
         [OutputConstructor]
-        private GetPbfListingsPbfListingsCollectionItemTriggerResult(string name)
+        private GetPbfListingsPbfListingsCollectionItemTriggerResult(string? name)
         {
             Name = name;
         }

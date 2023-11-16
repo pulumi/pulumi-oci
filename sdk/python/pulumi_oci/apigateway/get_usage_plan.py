@@ -59,82 +59,52 @@ class GetUsagePlanResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the resource is created.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
-    def entitlements(self) -> Sequence['outputs.GetUsagePlanEntitlementResult']:
-        """
-        A collection of entitlements currently assigned to the usage plan.
-        """
+    def entitlements(self) -> Optional[Sequence['outputs.GetUsagePlanEntitlementResult']]:
         return pulumi.get(self, "entitlements")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a usage plan resource.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the usage plan.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time this resource was created. An RFC3339 formatted datetime string.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time this resource was last updated. An RFC3339 formatted datetime string.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
@@ -165,21 +135,7 @@ class AwaitableGetUsagePlanResult(GetUsagePlanResult):
 def get_usage_plan(usage_plan_id: Optional[str] = None,
                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetUsagePlanResult:
     """
-    This data source provides details about a specific Usage Plan resource in Oracle Cloud Infrastructure API Gateway service.
-
-    Gets a usage plan by identifier.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_usage_plan = oci.ApiGateway.get_usage_plan(usage_plan_id=oci_apigateway_usage_plan["test_usage_plan"]["id"])
-    ```
-
-
-    :param str usage_plan_id: The ocid of the usage plan.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['usagePlanId'] = usage_plan_id
@@ -204,20 +160,6 @@ def get_usage_plan(usage_plan_id: Optional[str] = None,
 def get_usage_plan_output(usage_plan_id: Optional[pulumi.Input[str]] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetUsagePlanResult]:
     """
-    This data source provides details about a specific Usage Plan resource in Oracle Cloud Infrastructure API Gateway service.
-
-    Gets a usage plan by identifier.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_usage_plan = oci.ApiGateway.get_usage_plan(usage_plan_id=oci_apigateway_usage_plan["test_usage_plan"]["id"])
-    ```
-
-
-    :param str usage_plan_id: The ocid of the usage plan.
+    Use this data source to access information about an existing resource.
     """
     ...

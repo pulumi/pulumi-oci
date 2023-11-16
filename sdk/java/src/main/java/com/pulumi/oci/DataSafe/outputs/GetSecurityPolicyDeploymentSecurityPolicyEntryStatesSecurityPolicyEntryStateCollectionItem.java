@@ -8,6 +8,8 @@ import com.pulumi.oci.DataSafe.outputs.GetSecurityPolicyDeploymentSecurityPolicy
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItem {
@@ -15,63 +17,63 @@ public final class GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityP
      * @return The current state of the security policy deployment.
      * 
      */
-    private String deploymentStatus;
+    private @Nullable String deploymentStatus;
     /**
      * @return Details specific to the security policy entry.
      * 
      */
-    private List<GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetail> entryDetails;
+    private @Nullable List<GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetail> entryDetails;
     /**
      * @return Unique id of the security policy entry state.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The OCID of the security policy deployment resource.
      * 
      */
-    private String securityPolicyDeploymentId;
+    private @Nullable String securityPolicyDeploymentId;
     /**
      * @return An optional filter to return only resources that match the specified security policy entry OCID.
      * 
      */
-    private String securityPolicyEntryId;
+    private @Nullable String securityPolicyEntryId;
 
     private GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItem() {}
     /**
      * @return The current state of the security policy deployment.
      * 
      */
-    public String deploymentStatus() {
-        return this.deploymentStatus;
+    public Optional<String> deploymentStatus() {
+        return Optional.ofNullable(this.deploymentStatus);
     }
     /**
      * @return Details specific to the security policy entry.
      * 
      */
     public List<GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetail> entryDetails() {
-        return this.entryDetails;
+        return this.entryDetails == null ? List.of() : this.entryDetails;
     }
     /**
      * @return Unique id of the security policy entry state.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The OCID of the security policy deployment resource.
      * 
      */
-    public String securityPolicyDeploymentId() {
-        return this.securityPolicyDeploymentId;
+    public Optional<String> securityPolicyDeploymentId() {
+        return Optional.ofNullable(this.securityPolicyDeploymentId);
     }
     /**
      * @return An optional filter to return only resources that match the specified security policy entry OCID.
      * 
      */
-    public String securityPolicyEntryId() {
-        return this.securityPolicyEntryId;
+    public Optional<String> securityPolicyEntryId() {
+        return Optional.ofNullable(this.securityPolicyEntryId);
     }
 
     public static Builder builder() {
@@ -83,11 +85,11 @@ public final class GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityP
     }
     @CustomType.Builder
     public static final class Builder {
-        private String deploymentStatus;
-        private List<GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetail> entryDetails;
-        private String id;
-        private String securityPolicyDeploymentId;
-        private String securityPolicyEntryId;
+        private @Nullable String deploymentStatus;
+        private @Nullable List<GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetail> entryDetails;
+        private @Nullable String id;
+        private @Nullable String securityPolicyDeploymentId;
+        private @Nullable String securityPolicyEntryId;
         public Builder() {}
         public Builder(GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -99,31 +101,31 @@ public final class GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityP
         }
 
         @CustomType.Setter
-        public Builder deploymentStatus(String deploymentStatus) {
-            this.deploymentStatus = Objects.requireNonNull(deploymentStatus);
+        public Builder deploymentStatus(@Nullable String deploymentStatus) {
+            this.deploymentStatus = deploymentStatus;
             return this;
         }
         @CustomType.Setter
-        public Builder entryDetails(List<GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetail> entryDetails) {
-            this.entryDetails = Objects.requireNonNull(entryDetails);
+        public Builder entryDetails(@Nullable List<GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetail> entryDetails) {
+            this.entryDetails = entryDetails;
             return this;
         }
         public Builder entryDetails(GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItemEntryDetail... entryDetails) {
             return entryDetails(List.of(entryDetails));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder securityPolicyDeploymentId(String securityPolicyDeploymentId) {
-            this.securityPolicyDeploymentId = Objects.requireNonNull(securityPolicyDeploymentId);
+        public Builder securityPolicyDeploymentId(@Nullable String securityPolicyDeploymentId) {
+            this.securityPolicyDeploymentId = securityPolicyDeploymentId;
             return this;
         }
         @CustomType.Setter
-        public Builder securityPolicyEntryId(String securityPolicyEntryId) {
-            this.securityPolicyEntryId = Objects.requireNonNull(securityPolicyEntryId);
+        public Builder securityPolicyEntryId(@Nullable String securityPolicyEntryId) {
+            this.securityPolicyEntryId = securityPolicyEntryId;
             return this;
         }
         public GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionItem build() {

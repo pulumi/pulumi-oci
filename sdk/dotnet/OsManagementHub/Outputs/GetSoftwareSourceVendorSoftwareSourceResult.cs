@@ -16,17 +16,17 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         /// <summary>
         /// User friendly name.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// The OCID of the resource that is immutable on creation.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
 
         [OutputConstructor]
         private GetSoftwareSourceVendorSoftwareSourceResult(
-            string displayName,
+            string? displayName,
 
-            string id)
+            string? id)
         {
             DisplayName = displayName;
             Id = id;

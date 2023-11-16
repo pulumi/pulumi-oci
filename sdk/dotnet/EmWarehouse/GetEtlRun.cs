@@ -145,7 +145,7 @@ namespace Pulumi.Oci.EmWarehouse
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// List of runs
         /// </summary>
@@ -159,7 +159,7 @@ namespace Pulumi.Oci.EmWarehouse
 
             string emWarehouseId,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetEtlRunItemResult> items)
         {

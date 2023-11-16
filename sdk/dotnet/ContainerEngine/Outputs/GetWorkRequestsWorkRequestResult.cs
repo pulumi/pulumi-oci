@@ -16,15 +16,15 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// <summary>
         /// The OCID of the compartment.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The OCID of the work request.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The type of work the work request is doing.
         /// </summary>
-        public readonly string OperationType;
+        public readonly string? OperationType;
         /// <summary>
         /// The resources this work request affects.
         /// </summary>
@@ -32,37 +32,37 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// <summary>
         /// A work request status to filter on. Can have multiple parameters of this name.
         /// </summary>
-        public readonly string Status;
+        public readonly string? Status;
         /// <summary>
         /// The time the work request was accepted.
         /// </summary>
-        public readonly string TimeAccepted;
+        public readonly string? TimeAccepted;
         /// <summary>
         /// The time the work request was finished.
         /// </summary>
-        public readonly string TimeFinished;
+        public readonly string? TimeFinished;
         /// <summary>
         /// The time the work request was started.
         /// </summary>
-        public readonly string TimeStarted;
+        public readonly string? TimeStarted;
 
         [OutputConstructor]
         private GetWorkRequestsWorkRequestResult(
-            string compartmentId,
+            string? compartmentId,
 
-            string id,
+            string? id,
 
-            string operationType,
+            string? operationType,
 
             ImmutableArray<Outputs.GetWorkRequestsWorkRequestResourceResult> resources,
 
-            string status,
+            string? status,
 
-            string timeAccepted,
+            string? timeAccepted,
 
-            string timeFinished,
+            string? timeFinished,
 
-            string timeStarted)
+            string? timeStarted)
         {
             CompartmentId = compartmentId;
             Id = id;

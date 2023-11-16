@@ -16,11 +16,11 @@ namespace Pulumi.Oci.CertificatesManagement.Outputs
         /// <summary>
         /// The OCID of the certificate.
         /// </summary>
-        public readonly string CertificateId;
+        public readonly string? CertificateId;
         /// <summary>
         /// The version number of the issuing certificate authority (CA).
         /// </summary>
-        public readonly string IssuerCaVersionNumber;
+        public readonly string? IssuerCaVersionNumber;
         /// <summary>
         /// The current revocation status of the entity.
         /// </summary>
@@ -28,7 +28,7 @@ namespace Pulumi.Oci.CertificatesManagement.Outputs
         /// <summary>
         /// A unique certificate identifier used in certificate revocation tracking, formatted as octets. Example: `03 AC FC FA CC B3 CB 02 B8 F8 DE F5 85 E7 7B FF`
         /// </summary>
-        public readonly string SerialNumber;
+        public readonly string? SerialNumber;
         /// <summary>
         /// A list of rotation states for this certificate version.
         /// </summary>
@@ -40,11 +40,11 @@ namespace Pulumi.Oci.CertificatesManagement.Outputs
         /// <summary>
         /// A optional property indicating the time when the certificate version was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// An optional property indicating when to delete the certificate version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeOfDeletion;
+        public readonly string? TimeOfDeletion;
         /// <summary>
         /// An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
         /// </summary>
@@ -52,35 +52,35 @@ namespace Pulumi.Oci.CertificatesManagement.Outputs
         /// <summary>
         /// The name of the certificate version. When the value is not null, a name is unique across versions of a given certificate.
         /// </summary>
-        public readonly string VersionName;
+        public readonly string? VersionName;
         /// <summary>
         /// A filter that returns only resources that match the specified version number. The default value is 0, which means that this filter is not applied.
         /// </summary>
-        public readonly string VersionNumber;
+        public readonly string? VersionNumber;
 
         [OutputConstructor]
         private GetCertificateVersionsCertificateVersionCollectionItemResult(
-            string certificateId,
+            string? certificateId,
 
-            string issuerCaVersionNumber,
+            string? issuerCaVersionNumber,
 
             ImmutableArray<Outputs.GetCertificateVersionsCertificateVersionCollectionItemRevocationStatusResult> revocationStatuses,
 
-            string serialNumber,
+            string? serialNumber,
 
             ImmutableArray<string> stages,
 
             ImmutableArray<Outputs.GetCertificateVersionsCertificateVersionCollectionItemSubjectAlternativeNameResult> subjectAlternativeNames,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeOfDeletion,
+            string? timeOfDeletion,
 
             ImmutableArray<Outputs.GetCertificateVersionsCertificateVersionCollectionItemValidityResult> validities,
 
-            string versionName,
+            string? versionName,
 
-            string versionNumber)
+            string? versionNumber)
         {
             CertificateId = certificateId;
             IssuerCaVersionNumber = issuerCaVersionNumber;

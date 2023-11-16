@@ -6,6 +6,8 @@ package com.pulumi.oci.DatabaseManagement.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetExternalListenerServicesExternalListenerServiceCollectionItem {
@@ -13,39 +15,39 @@ public final class GetExternalListenerServicesExternalListenerServiceCollectionI
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external listener.
      * 
      */
-    private String listenerId;
+    private @Nullable String listenerId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      * 
      */
-    private String managedDatabaseId;
+    private @Nullable String managedDatabaseId;
     /**
      * @return The name of the service.
      * 
      */
-    private String name;
+    private @Nullable String name;
 
     private GetExternalListenerServicesExternalListenerServiceCollectionItem() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external listener.
      * 
      */
-    public String listenerId() {
-        return this.listenerId;
+    public Optional<String> listenerId() {
+        return Optional.ofNullable(this.listenerId);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      * 
      */
-    public String managedDatabaseId() {
-        return this.managedDatabaseId;
+    public Optional<String> managedDatabaseId() {
+        return Optional.ofNullable(this.managedDatabaseId);
     }
     /**
      * @return The name of the service.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetExternalListenerServicesExternalListenerServiceCollectionI
     }
     @CustomType.Builder
     public static final class Builder {
-        private String listenerId;
-        private String managedDatabaseId;
-        private String name;
+        private @Nullable String listenerId;
+        private @Nullable String managedDatabaseId;
+        private @Nullable String name;
         public Builder() {}
         public Builder(GetExternalListenerServicesExternalListenerServiceCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetExternalListenerServicesExternalListenerServiceCollectionI
         }
 
         @CustomType.Setter
-        public Builder listenerId(String listenerId) {
-            this.listenerId = Objects.requireNonNull(listenerId);
+        public Builder listenerId(@Nullable String listenerId) {
+            this.listenerId = listenerId;
             return this;
         }
         @CustomType.Setter
-        public Builder managedDatabaseId(String managedDatabaseId) {
-            this.managedDatabaseId = Objects.requireNonNull(managedDatabaseId);
+        public Builder managedDatabaseId(@Nullable String managedDatabaseId) {
+            this.managedDatabaseId = managedDatabaseId;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         public GetExternalListenerServicesExternalListenerServiceCollectionItem build() {

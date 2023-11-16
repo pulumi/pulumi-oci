@@ -46,31 +46,22 @@ class GetManagedMySqlDatabaseResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="dbName")
-    def db_name(self) -> str:
-        """
-        MySQL Database Name
-        """
+    def db_name(self) -> Optional[str]:
         return pulumi.get(self, "db_name")
 
     @property
     @pulumi.getter(name="dbVersion")
-    def db_version(self) -> str:
-        """
-        MySQL Database Version
-        """
+    def db_version(self) -> Optional[str]:
         return pulumi.get(self, "db_version")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -83,18 +74,12 @@ class GetManagedMySqlDatabaseResult:
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The name of the Managed MySQL Database.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the Managed Database was created.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
 
@@ -116,21 +101,7 @@ class AwaitableGetManagedMySqlDatabaseResult(GetManagedMySqlDatabaseResult):
 def get_managed_my_sql_database(managed_my_sql_database_id: Optional[str] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagedMySqlDatabaseResult:
     """
-    This data source provides details about a specific Managed My Sql Database resource in Oracle Cloud Infrastructure Database Management service.
-
-    Retrieves General Information for given MySQL Instance.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_my_sql_database = oci.DatabaseManagement.get_managed_my_sql_database(managed_my_sql_database_id=oci_database_management_managed_my_sql_database["test_managed_my_sql_database"]["id"])
-    ```
-
-
-    :param str managed_my_sql_database_id: The OCID of ManagedMySqlDatabase.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['managedMySqlDatabaseId'] = managed_my_sql_database_id
@@ -151,20 +122,6 @@ def get_managed_my_sql_database(managed_my_sql_database_id: Optional[str] = None
 def get_managed_my_sql_database_output(managed_my_sql_database_id: Optional[pulumi.Input[str]] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedMySqlDatabaseResult]:
     """
-    This data source provides details about a specific Managed My Sql Database resource in Oracle Cloud Infrastructure Database Management service.
-
-    Retrieves General Information for given MySQL Instance.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_my_sql_database = oci.DatabaseManagement.get_managed_my_sql_database(managed_my_sql_database_id=oci_database_management_managed_my_sql_database["test_managed_my_sql_database"]["id"])
-    ```
-
-
-    :param str managed_my_sql_database_id: The OCID of ManagedMySqlDatabase.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -56,11 +56,11 @@ export interface GetSubscriptionRewardsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of reward_collection.
      */
-    readonly rewardCollections: outputs.UsageProxy.GetSubscriptionRewardsRewardCollection[];
+    readonly rewardCollections?: outputs.UsageProxy.GetSubscriptionRewardsRewardCollection[];
     /**
      * The entitlement ID from MQS, which is the same as the subcription ID.
      */

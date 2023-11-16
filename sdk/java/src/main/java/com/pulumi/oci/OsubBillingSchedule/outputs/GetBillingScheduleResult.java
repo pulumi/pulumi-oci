@@ -18,14 +18,14 @@ public final class GetBillingScheduleResult {
      * @return The list of billing_schedules.
      * 
      */
-    private List<GetBillingScheduleBillingSchedule> billingSchedules;
+    private @Nullable List<GetBillingScheduleBillingSchedule> billingSchedules;
     private String compartmentId;
     private @Nullable List<GetBillingScheduleFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private @Nullable String subscribedServiceId;
     private String subscriptionId;
     private @Nullable String xOneOriginRegion;
@@ -36,7 +36,7 @@ public final class GetBillingScheduleResult {
      * 
      */
     public List<GetBillingScheduleBillingSchedule> billingSchedules() {
-        return this.billingSchedules;
+        return this.billingSchedules == null ? List.of() : this.billingSchedules;
     }
     public String compartmentId() {
         return this.compartmentId;
@@ -48,8 +48,8 @@ public final class GetBillingScheduleResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public Optional<String> subscribedServiceId() {
         return Optional.ofNullable(this.subscribedServiceId);
@@ -70,10 +70,10 @@ public final class GetBillingScheduleResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetBillingScheduleBillingSchedule> billingSchedules;
+        private @Nullable List<GetBillingScheduleBillingSchedule> billingSchedules;
         private String compartmentId;
         private @Nullable List<GetBillingScheduleFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String subscribedServiceId;
         private String subscriptionId;
         private @Nullable String xOneOriginRegion;
@@ -90,8 +90,8 @@ public final class GetBillingScheduleResult {
         }
 
         @CustomType.Setter
-        public Builder billingSchedules(List<GetBillingScheduleBillingSchedule> billingSchedules) {
-            this.billingSchedules = Objects.requireNonNull(billingSchedules);
+        public Builder billingSchedules(@Nullable List<GetBillingScheduleBillingSchedule> billingSchedules) {
+            this.billingSchedules = billingSchedules;
             return this;
         }
         public Builder billingSchedules(GetBillingScheduleBillingSchedule... billingSchedules) {
@@ -111,8 +111,8 @@ public final class GetBillingScheduleResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

@@ -16,10 +16,10 @@ namespace Pulumi.Oci.ApiGateway.Outputs
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a deployment resource.
         /// </summary>
-        public readonly string DeploymentId;
+        public readonly string? DeploymentId;
 
         [OutputConstructor]
-        private GetUsagePlanEntitlementTargetResult(string deploymentId)
+        private GetUsagePlanEntitlementTargetResult(string? deploymentId)
         {
             DeploymentId = deploymentId;
         }

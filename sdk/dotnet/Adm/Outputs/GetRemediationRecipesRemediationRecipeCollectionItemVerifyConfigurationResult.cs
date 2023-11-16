@@ -16,65 +16,65 @@ namespace Pulumi.Oci.Adm.Outputs
         /// <summary>
         /// Additional key-value pairs passed as parameters to the build service when running an experiment.
         /// </summary>
-        public readonly ImmutableDictionary<string, object> AdditionalParameters;
+        public readonly ImmutableDictionary<string, object>? AdditionalParameters;
         /// <summary>
         /// The type of Build Service.
         /// </summary>
-        public readonly string BuildServiceType;
+        public readonly string? BuildServiceType;
         /// <summary>
         /// The URL that locates the Jenkins pipeline.
         /// </summary>
-        public readonly string JenkinsUrl;
+        public readonly string? JenkinsUrl;
         /// <summary>
         /// The name of the Jenkins pipeline job that identifies the build pipeline.
         /// </summary>
-        public readonly string JobName;
+        public readonly string? JobName;
         /// <summary>
         /// The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Private Access Token (PAT) Secret. The PAT provides the credentials to access the Jenkins Pipeline.
         /// </summary>
-        public readonly string PatSecretId;
+        public readonly string? PatSecretId;
         /// <summary>
         /// The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the user's DevOps Build Pipeline.
         /// </summary>
-        public readonly string PipelineId;
+        public readonly string? PipelineId;
         /// <summary>
         /// The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
         /// </summary>
-        public readonly string RepositoryUrl;
+        public readonly string? RepositoryUrl;
         /// <summary>
         /// The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the trigger Secret. The Secret provides access to the trigger for a GitLab pipeline.
         /// </summary>
-        public readonly string TriggerSecretId;
+        public readonly string? TriggerSecretId;
         /// <summary>
         /// The username that will be used to authenticate with Jenkins.
         /// </summary>
-        public readonly string Username;
+        public readonly string? Username;
         /// <summary>
         /// The name of the GitHub Actions workflow that defines the build pipeline.
         /// </summary>
-        public readonly string WorkflowName;
+        public readonly string? WorkflowName;
 
         [OutputConstructor]
         private GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationResult(
-            ImmutableDictionary<string, object> additionalParameters,
+            ImmutableDictionary<string, object>? additionalParameters,
 
-            string buildServiceType,
+            string? buildServiceType,
 
-            string jenkinsUrl,
+            string? jenkinsUrl,
 
-            string jobName,
+            string? jobName,
 
-            string patSecretId,
+            string? patSecretId,
 
-            string pipelineId,
+            string? pipelineId,
 
-            string repositoryUrl,
+            string? repositoryUrl,
 
-            string triggerSecretId,
+            string? triggerSecretId,
 
-            string username,
+            string? username,
 
-            string workflowName)
+            string? workflowName)
         {
             AdditionalParameters = additionalParameters;
             BuildServiceType = buildServiceType;

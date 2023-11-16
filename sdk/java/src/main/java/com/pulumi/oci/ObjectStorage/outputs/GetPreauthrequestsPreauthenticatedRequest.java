@@ -6,6 +6,8 @@ package com.pulumi.oci.ObjectStorage.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPreauthrequestsPreauthenticatedRequest {
@@ -13,38 +15,38 @@ public final class GetPreauthrequestsPreauthenticatedRequest {
      * @return The operation that can be performed on this resource.
      * 
      */
-    private String accessType;
+    private @Nullable String accessType;
     /**
      * @return The URI to embed in the URL when using the pre-authenticated request.
      * 
      */
-    private String accessUri;
+    private @Nullable String accessUri;
     /**
      * @return The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
      * 
      */
-    private String bucket;
+    private @Nullable String bucket;
     /**
      * @return Specifies whether a list operation is allowed on a PAR with accessType &#34;AnyObjectRead&#34; or &#34;AnyObjectReadWrite&#34;. Deny: Prevents the user from performing a list operation. ListObjects: Authorizes the user to perform a list operation.
      * 
      */
-    private String bucketListingAction;
-    private String fullPath;
+    private @Nullable String bucketListingAction;
+    private @Nullable String fullPath;
     /**
      * @return The unique identifier to use when directly addressing the pre-authenticated request.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The user-provided name of the pre-authenticated request.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return The Object Storage namespace used for the request.
      * 
      */
-    private String namespace;
+    private @Nullable String namespace;
     /**
      * @return Deprecated. Instead use `object_name`.The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket. Example: test/object1.log
      * 
@@ -53,76 +55,76 @@ public final class GetPreauthrequestsPreauthenticatedRequest {
      * 
      */
     @Deprecated /* The 'object' field has been deprecated. Please use 'object_name' instead. */
-    private String object;
+    private @Nullable String object;
     /**
      * @return The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket. Example: test/object1.log
      * 
      */
-    private String objectName;
-    private String parId;
+    private @Nullable String objectName;
+    private @Nullable String parId;
     /**
      * @return The date when the pre-authenticated request was created as per specification [RFC 3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The expiration date for the pre-authenticated request as per [RFC 3339](https://tools.ietf.org/html/rfc3339). After this date the pre-authenticated request will no longer be valid.
      * 
      */
-    private String timeExpires;
+    private @Nullable String timeExpires;
 
     private GetPreauthrequestsPreauthenticatedRequest() {}
     /**
      * @return The operation that can be performed on this resource.
      * 
      */
-    public String accessType() {
-        return this.accessType;
+    public Optional<String> accessType() {
+        return Optional.ofNullable(this.accessType);
     }
     /**
      * @return The URI to embed in the URL when using the pre-authenticated request.
      * 
      */
-    public String accessUri() {
-        return this.accessUri;
+    public Optional<String> accessUri() {
+        return Optional.ofNullable(this.accessUri);
     }
     /**
      * @return The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
      * 
      */
-    public String bucket() {
-        return this.bucket;
+    public Optional<String> bucket() {
+        return Optional.ofNullable(this.bucket);
     }
     /**
      * @return Specifies whether a list operation is allowed on a PAR with accessType &#34;AnyObjectRead&#34; or &#34;AnyObjectReadWrite&#34;. Deny: Prevents the user from performing a list operation. ListObjects: Authorizes the user to perform a list operation.
      * 
      */
-    public String bucketListingAction() {
-        return this.bucketListingAction;
+    public Optional<String> bucketListingAction() {
+        return Optional.ofNullable(this.bucketListingAction);
     }
-    public String fullPath() {
-        return this.fullPath;
+    public Optional<String> fullPath() {
+        return Optional.ofNullable(this.fullPath);
     }
     /**
      * @return The unique identifier to use when directly addressing the pre-authenticated request.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The user-provided name of the pre-authenticated request.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return The Object Storage namespace used for the request.
      * 
      */
-    public String namespace() {
-        return this.namespace;
+    public Optional<String> namespace() {
+        return Optional.ofNullable(this.namespace);
     }
     /**
      * @return Deprecated. Instead use `object_name`.The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket. Example: test/object1.log
@@ -132,32 +134,32 @@ public final class GetPreauthrequestsPreauthenticatedRequest {
      * 
      */
     @Deprecated /* The 'object' field has been deprecated. Please use 'object_name' instead. */
-    public String object() {
-        return this.object;
+    public Optional<String> object() {
+        return Optional.ofNullable(this.object);
     }
     /**
      * @return The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket. Example: test/object1.log
      * 
      */
-    public String objectName() {
-        return this.objectName;
+    public Optional<String> objectName() {
+        return Optional.ofNullable(this.objectName);
     }
-    public String parId() {
-        return this.parId;
+    public Optional<String> parId() {
+        return Optional.ofNullable(this.parId);
     }
     /**
      * @return The date when the pre-authenticated request was created as per specification [RFC 3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The expiration date for the pre-authenticated request as per [RFC 3339](https://tools.ietf.org/html/rfc3339). After this date the pre-authenticated request will no longer be valid.
      * 
      */
-    public String timeExpires() {
-        return this.timeExpires;
+    public Optional<String> timeExpires() {
+        return Optional.ofNullable(this.timeExpires);
     }
 
     public static Builder builder() {
@@ -169,19 +171,19 @@ public final class GetPreauthrequestsPreauthenticatedRequest {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String accessType;
-        private String accessUri;
-        private String bucket;
-        private String bucketListingAction;
-        private String fullPath;
-        private String id;
-        private String name;
-        private String namespace;
-        private String object;
-        private String objectName;
-        private String parId;
-        private String timeCreated;
-        private String timeExpires;
+        private @Nullable String accessType;
+        private @Nullable String accessUri;
+        private @Nullable String bucket;
+        private @Nullable String bucketListingAction;
+        private @Nullable String fullPath;
+        private @Nullable String id;
+        private @Nullable String name;
+        private @Nullable String namespace;
+        private @Nullable String object;
+        private @Nullable String objectName;
+        private @Nullable String parId;
+        private @Nullable String timeCreated;
+        private @Nullable String timeExpires;
         public Builder() {}
         public Builder(GetPreauthrequestsPreauthenticatedRequest defaults) {
     	      Objects.requireNonNull(defaults);
@@ -201,68 +203,68 @@ public final class GetPreauthrequestsPreauthenticatedRequest {
         }
 
         @CustomType.Setter
-        public Builder accessType(String accessType) {
-            this.accessType = Objects.requireNonNull(accessType);
+        public Builder accessType(@Nullable String accessType) {
+            this.accessType = accessType;
             return this;
         }
         @CustomType.Setter
-        public Builder accessUri(String accessUri) {
-            this.accessUri = Objects.requireNonNull(accessUri);
+        public Builder accessUri(@Nullable String accessUri) {
+            this.accessUri = accessUri;
             return this;
         }
         @CustomType.Setter
-        public Builder bucket(String bucket) {
-            this.bucket = Objects.requireNonNull(bucket);
+        public Builder bucket(@Nullable String bucket) {
+            this.bucket = bucket;
             return this;
         }
         @CustomType.Setter
-        public Builder bucketListingAction(String bucketListingAction) {
-            this.bucketListingAction = Objects.requireNonNull(bucketListingAction);
+        public Builder bucketListingAction(@Nullable String bucketListingAction) {
+            this.bucketListingAction = bucketListingAction;
             return this;
         }
         @CustomType.Setter
-        public Builder fullPath(String fullPath) {
-            this.fullPath = Objects.requireNonNull(fullPath);
+        public Builder fullPath(@Nullable String fullPath) {
+            this.fullPath = fullPath;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+        public Builder namespace(@Nullable String namespace) {
+            this.namespace = namespace;
             return this;
         }
         @CustomType.Setter
-        public Builder object(String object) {
-            this.object = Objects.requireNonNull(object);
+        public Builder object(@Nullable String object) {
+            this.object = object;
             return this;
         }
         @CustomType.Setter
-        public Builder objectName(String objectName) {
-            this.objectName = Objects.requireNonNull(objectName);
+        public Builder objectName(@Nullable String objectName) {
+            this.objectName = objectName;
             return this;
         }
         @CustomType.Setter
-        public Builder parId(String parId) {
-            this.parId = Objects.requireNonNull(parId);
+        public Builder parId(@Nullable String parId) {
+            this.parId = parId;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeExpires(String timeExpires) {
-            this.timeExpires = Objects.requireNonNull(timeExpires);
+        public Builder timeExpires(@Nullable String timeExpires) {
+            this.timeExpires = timeExpires;
             return this;
         }
         public GetPreauthrequestsPreauthenticatedRequest build() {

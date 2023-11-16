@@ -82,11 +82,11 @@ export interface GetSuppressionsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of suppressions.
      */
-    readonly suppressions: outputs.Email.GetSuppressionsSuppression[];
+    readonly suppressions?: outputs.Email.GetSuppressionsSuppression[];
     readonly timeCreatedGreaterThanOrEqualTo?: string;
     readonly timeCreatedLessThan?: string;
 }

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Limit Values in Oracle Cloud Infrastructure Limits service.
@@ -77,7 +76,7 @@ type GetLimitValuesResult struct {
 	CompartmentId      string                 `pulumi:"compartmentId"`
 	Filters            []GetLimitValuesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of limit_values.
 	LimitValues []GetLimitValuesLimitValue `pulumi:"limitValues"`
 	// The resource limit name. To be used for writing policies (in case of quotas) or other programmatic calls.
@@ -134,12 +133,6 @@ func (o GetLimitValuesResultOutput) ToGetLimitValuesResultOutputWithContext(ctx 
 	return o
 }
 
-func (o GetLimitValuesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetLimitValuesResult] {
-	return pulumix.Output[GetLimitValuesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // If present, the returned value is only specific to this availability domain.
 func (o GetLimitValuesResultOutput) AvailabilityDomain() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetLimitValuesResult) *string { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
@@ -154,8 +147,8 @@ func (o GetLimitValuesResultOutput) Filters() GetLimitValuesFilterArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetLimitValuesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLimitValuesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetLimitValuesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLimitValuesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of limit_values.

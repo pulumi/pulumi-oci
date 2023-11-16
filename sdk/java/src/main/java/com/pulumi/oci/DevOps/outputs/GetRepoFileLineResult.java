@@ -19,12 +19,12 @@ public final class GetRepoFileLineResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of lines in the file.
      * 
      */
-    private List<GetRepoFileLineLine> lines;
+    private @Nullable List<GetRepoFileLineLine> lines;
     private String repositoryId;
     private String revision;
     private @Nullable Integer startLineNumber;
@@ -37,15 +37,15 @@ public final class GetRepoFileLineResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of lines in the file.
      * 
      */
     public List<GetRepoFileLineLine> lines() {
-        return this.lines;
+        return this.lines == null ? List.of() : this.lines;
     }
     public String repositoryId() {
         return this.repositoryId;
@@ -67,8 +67,8 @@ public final class GetRepoFileLineResult {
     @CustomType.Builder
     public static final class Builder {
         private String filePath;
-        private String id;
-        private List<GetRepoFileLineLine> lines;
+        private @Nullable String id;
+        private @Nullable List<GetRepoFileLineLine> lines;
         private String repositoryId;
         private String revision;
         private @Nullable Integer startLineNumber;
@@ -89,13 +89,13 @@ public final class GetRepoFileLineResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder lines(List<GetRepoFileLineLine> lines) {
-            this.lines = Objects.requireNonNull(lines);
+        public Builder lines(@Nullable List<GetRepoFileLineLine> lines) {
+            this.lines = lines;
             return this;
         }
         public Builder lines(GetRepoFileLineLine... lines) {

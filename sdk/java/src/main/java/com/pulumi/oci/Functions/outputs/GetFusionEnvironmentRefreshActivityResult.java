@@ -8,6 +8,8 @@ import com.pulumi.oci.Functions.outputs.GetFusionEnvironmentRefreshActivityRefre
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetFusionEnvironmentRefreshActivityResult {
@@ -15,72 +17,72 @@ public final class GetFusionEnvironmentRefreshActivityResult {
      * @return A friendly name for the refresh activity. Can be changed later.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     private String fusionEnvironmentId;
     /**
      * @return The unique identifier (OCID) of the refresh activity. Can&#39;t be changed after creation.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     private String refreshActivityId;
     /**
      * @return Details of refresh investigation information, each item represents a different issue.
      * 
      */
-    private List<GetFusionEnvironmentRefreshActivityRefreshIssueDetailsList> refreshIssueDetailsLists;
+    private @Nullable List<GetFusionEnvironmentRefreshActivityRefreshIssueDetailsList> refreshIssueDetailsLists;
     /**
      * @return Service availability / impact during refresh activity execution up down
      * 
      */
-    private String serviceAvailability;
+    private @Nullable String serviceAvailability;
     /**
      * @return The OCID of the Fusion environment that is the source environment for the refresh.
      * 
      */
-    private String sourceFusionEnvironmentId;
+    private @Nullable String sourceFusionEnvironmentId;
     /**
      * @return The current state of the refreshActivity.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The time the refresh activity record was created. An RFC3339 formatted datetime string.
      * 
      */
-    private String timeAccepted;
+    private @Nullable String timeAccepted;
     /**
      * @return The time the refresh activity is scheduled to end. An RFC3339 formatted datetime string.
      * 
      */
-    private String timeExpectedFinish;
+    private @Nullable String timeExpectedFinish;
     /**
      * @return The time the refresh activity actually completed / cancelled / failed. An RFC3339 formatted datetime string.
      * 
      */
-    private String timeFinished;
+    private @Nullable String timeFinished;
     /**
      * @return The date and time of the most recent source environment backup used for the environment refresh.
      * 
      */
-    private String timeOfRestorationPoint;
+    private @Nullable String timeOfRestorationPoint;
     /**
      * @return The time the refresh activity record was updated. An RFC3339 formatted datetime string.
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
 
     private GetFusionEnvironmentRefreshActivityResult() {}
     /**
      * @return A friendly name for the refresh activity. Can be changed later.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     public String fusionEnvironmentId() {
         return this.fusionEnvironmentId;
@@ -89,15 +91,15 @@ public final class GetFusionEnvironmentRefreshActivityResult {
      * @return The unique identifier (OCID) of the refresh activity. Can&#39;t be changed after creation.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     public String refreshActivityId() {
         return this.refreshActivityId;
@@ -107,63 +109,63 @@ public final class GetFusionEnvironmentRefreshActivityResult {
      * 
      */
     public List<GetFusionEnvironmentRefreshActivityRefreshIssueDetailsList> refreshIssueDetailsLists() {
-        return this.refreshIssueDetailsLists;
+        return this.refreshIssueDetailsLists == null ? List.of() : this.refreshIssueDetailsLists;
     }
     /**
      * @return Service availability / impact during refresh activity execution up down
      * 
      */
-    public String serviceAvailability() {
-        return this.serviceAvailability;
+    public Optional<String> serviceAvailability() {
+        return Optional.ofNullable(this.serviceAvailability);
     }
     /**
      * @return The OCID of the Fusion environment that is the source environment for the refresh.
      * 
      */
-    public String sourceFusionEnvironmentId() {
-        return this.sourceFusionEnvironmentId;
+    public Optional<String> sourceFusionEnvironmentId() {
+        return Optional.ofNullable(this.sourceFusionEnvironmentId);
     }
     /**
      * @return The current state of the refreshActivity.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The time the refresh activity record was created. An RFC3339 formatted datetime string.
      * 
      */
-    public String timeAccepted() {
-        return this.timeAccepted;
+    public Optional<String> timeAccepted() {
+        return Optional.ofNullable(this.timeAccepted);
     }
     /**
      * @return The time the refresh activity is scheduled to end. An RFC3339 formatted datetime string.
      * 
      */
-    public String timeExpectedFinish() {
-        return this.timeExpectedFinish;
+    public Optional<String> timeExpectedFinish() {
+        return Optional.ofNullable(this.timeExpectedFinish);
     }
     /**
      * @return The time the refresh activity actually completed / cancelled / failed. An RFC3339 formatted datetime string.
      * 
      */
-    public String timeFinished() {
-        return this.timeFinished;
+    public Optional<String> timeFinished() {
+        return Optional.ofNullable(this.timeFinished);
     }
     /**
      * @return The date and time of the most recent source environment backup used for the environment refresh.
      * 
      */
-    public String timeOfRestorationPoint() {
-        return this.timeOfRestorationPoint;
+    public Optional<String> timeOfRestorationPoint() {
+        return Optional.ofNullable(this.timeOfRestorationPoint);
     }
     /**
      * @return The time the refresh activity record was updated. An RFC3339 formatted datetime string.
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
 
     public static Builder builder() {
@@ -175,20 +177,20 @@ public final class GetFusionEnvironmentRefreshActivityResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String displayName;
+        private @Nullable String displayName;
         private String fusionEnvironmentId;
-        private String id;
-        private String lifecycleDetails;
+        private @Nullable String id;
+        private @Nullable String lifecycleDetails;
         private String refreshActivityId;
-        private List<GetFusionEnvironmentRefreshActivityRefreshIssueDetailsList> refreshIssueDetailsLists;
-        private String serviceAvailability;
-        private String sourceFusionEnvironmentId;
-        private String state;
-        private String timeAccepted;
-        private String timeExpectedFinish;
-        private String timeFinished;
-        private String timeOfRestorationPoint;
-        private String timeUpdated;
+        private @Nullable List<GetFusionEnvironmentRefreshActivityRefreshIssueDetailsList> refreshIssueDetailsLists;
+        private @Nullable String serviceAvailability;
+        private @Nullable String sourceFusionEnvironmentId;
+        private @Nullable String state;
+        private @Nullable String timeAccepted;
+        private @Nullable String timeExpectedFinish;
+        private @Nullable String timeFinished;
+        private @Nullable String timeOfRestorationPoint;
+        private @Nullable String timeUpdated;
         public Builder() {}
         public Builder(GetFusionEnvironmentRefreshActivityResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -209,8 +211,8 @@ public final class GetFusionEnvironmentRefreshActivityResult {
         }
 
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
@@ -219,13 +221,13 @@ public final class GetFusionEnvironmentRefreshActivityResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
@@ -234,51 +236,51 @@ public final class GetFusionEnvironmentRefreshActivityResult {
             return this;
         }
         @CustomType.Setter
-        public Builder refreshIssueDetailsLists(List<GetFusionEnvironmentRefreshActivityRefreshIssueDetailsList> refreshIssueDetailsLists) {
-            this.refreshIssueDetailsLists = Objects.requireNonNull(refreshIssueDetailsLists);
+        public Builder refreshIssueDetailsLists(@Nullable List<GetFusionEnvironmentRefreshActivityRefreshIssueDetailsList> refreshIssueDetailsLists) {
+            this.refreshIssueDetailsLists = refreshIssueDetailsLists;
             return this;
         }
         public Builder refreshIssueDetailsLists(GetFusionEnvironmentRefreshActivityRefreshIssueDetailsList... refreshIssueDetailsLists) {
             return refreshIssueDetailsLists(List.of(refreshIssueDetailsLists));
         }
         @CustomType.Setter
-        public Builder serviceAvailability(String serviceAvailability) {
-            this.serviceAvailability = Objects.requireNonNull(serviceAvailability);
+        public Builder serviceAvailability(@Nullable String serviceAvailability) {
+            this.serviceAvailability = serviceAvailability;
             return this;
         }
         @CustomType.Setter
-        public Builder sourceFusionEnvironmentId(String sourceFusionEnvironmentId) {
-            this.sourceFusionEnvironmentId = Objects.requireNonNull(sourceFusionEnvironmentId);
+        public Builder sourceFusionEnvironmentId(@Nullable String sourceFusionEnvironmentId) {
+            this.sourceFusionEnvironmentId = sourceFusionEnvironmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeAccepted(String timeAccepted) {
-            this.timeAccepted = Objects.requireNonNull(timeAccepted);
+        public Builder timeAccepted(@Nullable String timeAccepted) {
+            this.timeAccepted = timeAccepted;
             return this;
         }
         @CustomType.Setter
-        public Builder timeExpectedFinish(String timeExpectedFinish) {
-            this.timeExpectedFinish = Objects.requireNonNull(timeExpectedFinish);
+        public Builder timeExpectedFinish(@Nullable String timeExpectedFinish) {
+            this.timeExpectedFinish = timeExpectedFinish;
             return this;
         }
         @CustomType.Setter
-        public Builder timeFinished(String timeFinished) {
-            this.timeFinished = Objects.requireNonNull(timeFinished);
+        public Builder timeFinished(@Nullable String timeFinished) {
+            this.timeFinished = timeFinished;
             return this;
         }
         @CustomType.Setter
-        public Builder timeOfRestorationPoint(String timeOfRestorationPoint) {
-            this.timeOfRestorationPoint = Objects.requireNonNull(timeOfRestorationPoint);
+        public Builder timeOfRestorationPoint(@Nullable String timeOfRestorationPoint) {
+            this.timeOfRestorationPoint = timeOfRestorationPoint;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetFusionEnvironmentRefreshActivityResult build() {

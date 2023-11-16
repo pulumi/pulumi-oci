@@ -9,6 +9,7 @@ import com.pulumi.oci.DatabaseManagement.outputs.GetManagedMySqlDatabaseConfigur
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -18,13 +19,13 @@ public final class GetManagedMySqlDatabaseConfigurationDataResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String managedMySqlDatabaseId;
     /**
      * @return The list of my_sql_configuration_data_collection.
      * 
      */
-    private List<GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollection> mySqlConfigurationDataCollections;
+    private @Nullable List<GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollection> mySqlConfigurationDataCollections;
 
     private GetManagedMySqlDatabaseConfigurationDataResult() {}
     public List<GetManagedMySqlDatabaseConfigurationDataFilter> filters() {
@@ -34,8 +35,8 @@ public final class GetManagedMySqlDatabaseConfigurationDataResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String managedMySqlDatabaseId() {
         return this.managedMySqlDatabaseId;
@@ -45,7 +46,7 @@ public final class GetManagedMySqlDatabaseConfigurationDataResult {
      * 
      */
     public List<GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollection> mySqlConfigurationDataCollections() {
-        return this.mySqlConfigurationDataCollections;
+        return this.mySqlConfigurationDataCollections == null ? List.of() : this.mySqlConfigurationDataCollections;
     }
 
     public static Builder builder() {
@@ -58,9 +59,9 @@ public final class GetManagedMySqlDatabaseConfigurationDataResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetManagedMySqlDatabaseConfigurationDataFilter> filters;
-        private String id;
+        private @Nullable String id;
         private String managedMySqlDatabaseId;
-        private List<GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollection> mySqlConfigurationDataCollections;
+        private @Nullable List<GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollection> mySqlConfigurationDataCollections;
         public Builder() {}
         public Builder(GetManagedMySqlDatabaseConfigurationDataResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -79,8 +80,8 @@ public final class GetManagedMySqlDatabaseConfigurationDataResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -89,8 +90,8 @@ public final class GetManagedMySqlDatabaseConfigurationDataResult {
             return this;
         }
         @CustomType.Setter
-        public Builder mySqlConfigurationDataCollections(List<GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollection> mySqlConfigurationDataCollections) {
-            this.mySqlConfigurationDataCollections = Objects.requireNonNull(mySqlConfigurationDataCollections);
+        public Builder mySqlConfigurationDataCollections(@Nullable List<GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollection> mySqlConfigurationDataCollections) {
+            this.mySqlConfigurationDataCollections = mySqlConfigurationDataCollections;
             return this;
         }
         public Builder mySqlConfigurationDataCollections(GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollection... mySqlConfigurationDataCollections) {

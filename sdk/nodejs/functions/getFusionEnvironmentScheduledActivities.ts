@@ -88,7 +88,7 @@ export interface GetFusionEnvironmentScheduledActivitiesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * run cadence.
      */
@@ -96,7 +96,7 @@ export interface GetFusionEnvironmentScheduledActivitiesResult {
     /**
      * The list of scheduled_activity_collection.
      */
-    readonly scheduledActivityCollections: outputs.Functions.GetFusionEnvironmentScheduledActivitiesScheduledActivityCollection[];
+    readonly scheduledActivityCollections?: outputs.Functions.GetFusionEnvironmentScheduledActivitiesScheduledActivityCollection[];
     /**
      * The current state of the scheduledActivity.
      */

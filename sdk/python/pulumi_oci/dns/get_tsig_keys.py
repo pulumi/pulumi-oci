@@ -46,9 +46,6 @@ class GetTsigKeysResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment containing the TSIG key.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -59,33 +56,21 @@ class GetTsigKeysResult:
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        The OCID of the resource.
-        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        A globally unique domain name identifying the key for a given pair of hosts.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the resource.
-        """
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="tsigKeys")
-    def tsig_keys(self) -> Sequence['outputs.GetTsigKeysTsigKeyResult']:
-        """
-        The list of tsig_keys.
-        """
+    def tsig_keys(self) -> Optional[Sequence['outputs.GetTsigKeysTsigKeyResult']]:
         return pulumi.get(self, "tsig_keys")
 
 
@@ -110,27 +95,7 @@ def get_tsig_keys(compartment_id: Optional[str] = None,
                   state: Optional[str] = None,
                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetTsigKeysResult:
     """
-    This data source provides the list of Tsig Keys in Oracle Cloud Infrastructure DNS service.
-
-    Gets a list of all TSIG keys in the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_tsig_keys = oci.Dns.get_tsig_keys(compartment_id=var["compartment_id"],
-        id=var["tsig_key_id"],
-        name=var["tsig_key_name"],
-        state=var["tsig_key_state"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment the resource belongs to.
-    :param str id: The OCID of a resource.
-    :param str name: The name of a resource.
-    :param str state: The state of a resource.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -158,26 +123,6 @@ def get_tsig_keys_output(compartment_id: Optional[pulumi.Input[str]] = None,
                          state: Optional[pulumi.Input[Optional[str]]] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetTsigKeysResult]:
     """
-    This data source provides the list of Tsig Keys in Oracle Cloud Infrastructure DNS service.
-
-    Gets a list of all TSIG keys in the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_tsig_keys = oci.Dns.get_tsig_keys(compartment_id=var["compartment_id"],
-        id=var["tsig_key_id"],
-        name=var["tsig_key_name"],
-        state=var["tsig_key_state"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment the resource belongs to.
-    :param str id: The OCID of a resource.
-    :param str name: The name of a resource.
-    :param str state: The state of a resource.
+    Use this data source to access information about an existing resource.
     """
     ...

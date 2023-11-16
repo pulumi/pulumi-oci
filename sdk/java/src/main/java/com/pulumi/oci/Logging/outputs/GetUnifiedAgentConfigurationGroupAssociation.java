@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetUnifiedAgentConfigurationGroupAssociation {
@@ -14,7 +15,7 @@ public final class GetUnifiedAgentConfigurationGroupAssociation {
      * @return list of group/dynamic group ids associated with this configuration.
      * 
      */
-    private List<String> groupLists;
+    private @Nullable List<String> groupLists;
 
     private GetUnifiedAgentConfigurationGroupAssociation() {}
     /**
@@ -22,7 +23,7 @@ public final class GetUnifiedAgentConfigurationGroupAssociation {
      * 
      */
     public List<String> groupLists() {
-        return this.groupLists;
+        return this.groupLists == null ? List.of() : this.groupLists;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetUnifiedAgentConfigurationGroupAssociation {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> groupLists;
+        private @Nullable List<String> groupLists;
         public Builder() {}
         public Builder(GetUnifiedAgentConfigurationGroupAssociation defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetUnifiedAgentConfigurationGroupAssociation {
         }
 
         @CustomType.Setter
-        public Builder groupLists(List<String> groupLists) {
-            this.groupLists = Objects.requireNonNull(groupLists);
+        public Builder groupLists(@Nullable List<String> groupLists) {
+            this.groupLists = groupLists;
             return this;
         }
         public Builder groupLists(String... groupLists) {

@@ -45,23 +45,23 @@ export interface GetVaultUsageResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The number of keys in this vault, across all compartments, excluding keys in a `DELETED` state.
      */
-    readonly keyCount: number;
+    readonly keyCount?: number;
     /**
      * The number of key versions in this vault, across all compartments, excluding key versions in a `DELETED` state.
      */
-    readonly keyVersionCount: number;
+    readonly keyVersionCount?: number;
     /**
      * The number of keys in this vault that persist on the server, across all compartments, excluding keys in a `DELETED` state.
      */
-    readonly softwareKeyCount: number;
+    readonly softwareKeyCount?: number;
     /**
      * The number of key versions in this vault that persist on the server, across all compartments, excluding key versions in a `DELETED` state.
      */
-    readonly softwareKeyVersionCount: number;
+    readonly softwareKeyVersionCount?: number;
     readonly vaultId: string;
 }
 /**

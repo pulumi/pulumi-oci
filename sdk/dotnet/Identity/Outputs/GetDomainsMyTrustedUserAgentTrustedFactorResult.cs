@@ -16,23 +16,23 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// Trusted Factor Type. Local, X509, SAML SOCIAL
         /// </summary>
-        public readonly string Category;
+        public readonly string? Category;
         /// <summary>
         /// trust factor creation time
         /// </summary>
-        public readonly string CreationTime;
+        public readonly string? CreationTime;
         /// <summary>
         /// Trusted Factor
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
 
         [OutputConstructor]
         private GetDomainsMyTrustedUserAgentTrustedFactorResult(
-            string category,
+            string? category,
 
-            string creationTime,
+            string? creationTime,
 
-            string type)
+            string? type)
         {
             Category = category;
             CreationTime = creationTime;

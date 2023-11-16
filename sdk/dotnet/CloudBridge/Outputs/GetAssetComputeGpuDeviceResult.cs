@@ -16,35 +16,35 @@ namespace Pulumi.Oci.CloudBridge.Outputs
         /// <summary>
         /// Number of GPU cores.
         /// </summary>
-        public readonly int CoresCount;
+        public readonly int? CoresCount;
         /// <summary>
         /// The tag description.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// The manufacturer of GPU.
         /// </summary>
-        public readonly string Manufacturer;
+        public readonly string? Manufacturer;
         /// <summary>
         /// Memory size in MBs.
         /// </summary>
-        public readonly string MemoryInMbs;
+        public readonly string? MemoryInMbs;
         /// <summary>
         /// The tag name.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
 
         [OutputConstructor]
         private GetAssetComputeGpuDeviceResult(
-            int coresCount,
+            int? coresCount,
 
-            string description,
+            string? description,
 
-            string manufacturer,
+            string? manufacturer,
 
-            string memoryInMbs,
+            string? memoryInMbs,
 
-            string name)
+            string? name)
         {
             CoresCount = coresCount;
             Description = description;

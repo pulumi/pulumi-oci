@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Deploy Artifact resource in Oracle Cloud Infrastructure Devops service.
@@ -84,7 +83,7 @@ type DeployArtifact struct {
 	// (Updatable) Mode for artifact parameter substitution. Options: `"NONE", "SUBSTITUTE_PLACEHOLDERS"` For Helm Deployments only "NONE" is supported.
 	ArgumentSubstitutionMode pulumi.StringOutput `pulumi:"argumentSubstitutionMode"`
 	// The OCID of a compartment.
-	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) Specifies source of an artifact.
@@ -92,26 +91,26 @@ type DeployArtifact struct {
 	// (Updatable) Type of the deployment artifact.
 	DeployArtifactType pulumi.StringOutput `pulumi:"deployArtifactType"`
 	// (Updatable) Optional description about the deployment artifact.
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) Deployment artifact display name. Avoid entering confidential information.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// A detailed message describing the current state. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// The OCID of a project.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ProjectId pulumi.StringOutput `pulumi:"projectId"`
 	// Current state of the deployment artifact.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// Time the deployment artifact was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// Time the deployment artifact was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewDeployArtifact registers a new resource with the given unique name, arguments, and options.
@@ -295,12 +294,6 @@ func (i *DeployArtifact) ToDeployArtifactOutputWithContext(ctx context.Context) 
 	return pulumi.ToOutputWithContext(ctx, i).(DeployArtifactOutput)
 }
 
-func (i *DeployArtifact) ToOutput(ctx context.Context) pulumix.Output[*DeployArtifact] {
-	return pulumix.Output[*DeployArtifact]{
-		OutputState: i.ToDeployArtifactOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DeployArtifactArrayInput is an input type that accepts DeployArtifactArray and DeployArtifactArrayOutput values.
 // You can construct a concrete instance of `DeployArtifactArrayInput` via:
 //
@@ -324,12 +317,6 @@ func (i DeployArtifactArray) ToDeployArtifactArrayOutput() DeployArtifactArrayOu
 
 func (i DeployArtifactArray) ToDeployArtifactArrayOutputWithContext(ctx context.Context) DeployArtifactArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DeployArtifactArrayOutput)
-}
-
-func (i DeployArtifactArray) ToOutput(ctx context.Context) pulumix.Output[[]*DeployArtifact] {
-	return pulumix.Output[[]*DeployArtifact]{
-		OutputState: i.ToDeployArtifactArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DeployArtifactMapInput is an input type that accepts DeployArtifactMap and DeployArtifactMapOutput values.
@@ -357,12 +344,6 @@ func (i DeployArtifactMap) ToDeployArtifactMapOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(DeployArtifactMapOutput)
 }
 
-func (i DeployArtifactMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DeployArtifact] {
-	return pulumix.Output[map[string]*DeployArtifact]{
-		OutputState: i.ToDeployArtifactMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DeployArtifactOutput struct{ *pulumi.OutputState }
 
 func (DeployArtifactOutput) ElementType() reflect.Type {
@@ -377,20 +358,14 @@ func (o DeployArtifactOutput) ToDeployArtifactOutputWithContext(ctx context.Cont
 	return o
 }
 
-func (o DeployArtifactOutput) ToOutput(ctx context.Context) pulumix.Output[*DeployArtifact] {
-	return pulumix.Output[*DeployArtifact]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) Mode for artifact parameter substitution. Options: `"NONE", "SUBSTITUTE_PLACEHOLDERS"` For Helm Deployments only "NONE" is supported.
 func (o DeployArtifactOutput) ArgumentSubstitutionMode() pulumi.StringOutput {
 	return o.ApplyT(func(v *DeployArtifact) pulumi.StringOutput { return v.ArgumentSubstitutionMode }).(pulumi.StringOutput)
 }
 
 // The OCID of a compartment.
-func (o DeployArtifactOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *DeployArtifact) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
+func (o DeployArtifactOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DeployArtifact) pulumi.StringPtrOutput { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
@@ -409,13 +384,13 @@ func (o DeployArtifactOutput) DeployArtifactType() pulumi.StringOutput {
 }
 
 // (Updatable) Optional description about the deployment artifact.
-func (o DeployArtifactOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *DeployArtifact) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o DeployArtifactOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DeployArtifact) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Deployment artifact display name. Avoid entering confidential information.
-func (o DeployArtifactOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *DeployArtifact) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o DeployArtifactOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DeployArtifact) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
@@ -424,8 +399,8 @@ func (o DeployArtifactOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // A detailed message describing the current state. For example, can be used to provide actionable information for a resource in Failed state.
-func (o DeployArtifactOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *DeployArtifact) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o DeployArtifactOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DeployArtifact) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of a project.
@@ -437,8 +412,8 @@ func (o DeployArtifactOutput) ProjectId() pulumi.StringOutput {
 }
 
 // Current state of the deployment artifact.
-func (o DeployArtifactOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *DeployArtifact) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o DeployArtifactOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DeployArtifact) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -447,13 +422,13 @@ func (o DeployArtifactOutput) SystemTags() pulumi.MapOutput {
 }
 
 // Time the deployment artifact was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-func (o DeployArtifactOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *DeployArtifact) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o DeployArtifactOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DeployArtifact) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // Time the deployment artifact was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-func (o DeployArtifactOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *DeployArtifact) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o DeployArtifactOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DeployArtifact) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type DeployArtifactArrayOutput struct{ *pulumi.OutputState }
@@ -468,12 +443,6 @@ func (o DeployArtifactArrayOutput) ToDeployArtifactArrayOutput() DeployArtifactA
 
 func (o DeployArtifactArrayOutput) ToDeployArtifactArrayOutputWithContext(ctx context.Context) DeployArtifactArrayOutput {
 	return o
-}
-
-func (o DeployArtifactArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DeployArtifact] {
-	return pulumix.Output[[]*DeployArtifact]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DeployArtifactArrayOutput) Index(i pulumi.IntInput) DeployArtifactOutput {
@@ -494,12 +463,6 @@ func (o DeployArtifactMapOutput) ToDeployArtifactMapOutput() DeployArtifactMapOu
 
 func (o DeployArtifactMapOutput) ToDeployArtifactMapOutputWithContext(ctx context.Context) DeployArtifactMapOutput {
 	return o
-}
-
-func (o DeployArtifactMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DeployArtifact] {
-	return pulumix.Output[map[string]*DeployArtifact]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DeployArtifactMapOutput) MapIndex(k pulumi.StringInput) DeployArtifactOutput {

@@ -15,6 +15,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetConnectionsConnectionCollectionItem {
@@ -22,109 +24,109 @@ public final class GetConnectionsConnectionCollectionItem {
      * @return Database Administrator Credentials details.
      * 
      */
-    private List<GetConnectionsConnectionCollectionItemAdminCredential> adminCredentials;
+    private @Nullable List<GetConnectionsConnectionCollectionItemAdminCredential> adminCredentials;
     /**
      * @return This name is the distinguished name used while creating the certificate on target database.
      * 
      */
-    private String certificateTdn;
+    private @Nullable String certificateTdn;
     /**
      * @return The ID of the compartment in which to list resources.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Connect Descriptor details.
      * 
      */
-    private List<GetConnectionsConnectionCollectionItemConnectDescriptor> connectDescriptors;
+    private @Nullable List<GetConnectionsConnectionCollectionItemConnectDescriptor> connectDescriptors;
     /**
      * @return OCID of the Secret in the Oracle Cloud Infrastructure vault containing the Database Connection credentials.
      * 
      */
-    private String credentialsSecretId;
+    private @Nullable String credentialsSecretId;
     /**
      * @return The OCID of the cloud database.
      * 
      */
-    private String databaseId;
+    private @Nullable String databaseId;
     /**
      * @return Database connection type.
      * 
      */
-    private String databaseType;
+    private @Nullable String databaseType;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return A filter to return only resources that match the entire display name given.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a previously created Private Endpoint.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return An array of Network Security Group OCIDs used to define network access for Connections.
      * 
      */
-    private List<String> nsgIds;
+    private @Nullable List<String> nsgIds;
     /**
      * @return Oracle Cloud Infrastructure Private Endpoint configuration details.
      * 
      */
-    private List<GetConnectionsConnectionCollectionItemPrivateEndpoint> privateEndpoints;
+    private @Nullable List<GetConnectionsConnectionCollectionItemPrivateEndpoint> privateEndpoints;
     /**
      * @return Database Administrator Credentials details.
      * 
      */
-    private List<GetConnectionsConnectionCollectionItemReplicationCredential> replicationCredentials;
+    private @Nullable List<GetConnectionsConnectionCollectionItemReplicationCredential> replicationCredentials;
     /**
      * @return Details of the SSH key that will be used.
      * 
      */
-    private List<GetConnectionsConnectionCollectionItemSshDetail> sshDetails;
+    private @Nullable List<GetConnectionsConnectionCollectionItemSshDetail> sshDetails;
     /**
      * @return The current state of the Database Migration Deployment.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private @Nullable Map<String,Object> systemTags;
     /**
      * @return The time the Connection resource was created. An RFC3339 formatted datetime string.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The time of the last Connection resource details update. An RFC3339 formatted datetime string.
      * 
      */
-    private String timeUpdated;
-    private String tlsKeystore;
-    private String tlsWallet;
+    private @Nullable String timeUpdated;
+    private @Nullable String tlsKeystore;
+    private @Nullable String tlsWallet;
     /**
      * @return Oracle Cloud Infrastructure Vault details to store migration and connection credentials secrets
      * 
      */
-    private List<GetConnectionsConnectionCollectionItemVaultDetail> vaultDetails;
+    private @Nullable List<GetConnectionsConnectionCollectionItemVaultDetail> vaultDetails;
 
     private GetConnectionsConnectionCollectionItem() {}
     /**
@@ -132,153 +134,153 @@ public final class GetConnectionsConnectionCollectionItem {
      * 
      */
     public List<GetConnectionsConnectionCollectionItemAdminCredential> adminCredentials() {
-        return this.adminCredentials;
+        return this.adminCredentials == null ? List.of() : this.adminCredentials;
     }
     /**
      * @return This name is the distinguished name used while creating the certificate on target database.
      * 
      */
-    public String certificateTdn() {
-        return this.certificateTdn;
+    public Optional<String> certificateTdn() {
+        return Optional.ofNullable(this.certificateTdn);
     }
     /**
      * @return The ID of the compartment in which to list resources.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Connect Descriptor details.
      * 
      */
     public List<GetConnectionsConnectionCollectionItemConnectDescriptor> connectDescriptors() {
-        return this.connectDescriptors;
+        return this.connectDescriptors == null ? List.of() : this.connectDescriptors;
     }
     /**
      * @return OCID of the Secret in the Oracle Cloud Infrastructure vault containing the Database Connection credentials.
      * 
      */
-    public String credentialsSecretId() {
-        return this.credentialsSecretId;
+    public Optional<String> credentialsSecretId() {
+        return Optional.ofNullable(this.credentialsSecretId);
     }
     /**
      * @return The OCID of the cloud database.
      * 
      */
-    public String databaseId() {
-        return this.databaseId;
+    public Optional<String> databaseId() {
+        return Optional.ofNullable(this.databaseId);
     }
     /**
      * @return Database connection type.
      * 
      */
-    public String databaseType() {
-        return this.databaseType;
+    public Optional<String> databaseType() {
+        return Optional.ofNullable(this.databaseType);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return A filter to return only resources that match the entire display name given.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a previously created Private Endpoint.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return An array of Network Security Group OCIDs used to define network access for Connections.
      * 
      */
     public List<String> nsgIds() {
-        return this.nsgIds;
+        return this.nsgIds == null ? List.of() : this.nsgIds;
     }
     /**
      * @return Oracle Cloud Infrastructure Private Endpoint configuration details.
      * 
      */
     public List<GetConnectionsConnectionCollectionItemPrivateEndpoint> privateEndpoints() {
-        return this.privateEndpoints;
+        return this.privateEndpoints == null ? List.of() : this.privateEndpoints;
     }
     /**
      * @return Database Administrator Credentials details.
      * 
      */
     public List<GetConnectionsConnectionCollectionItemReplicationCredential> replicationCredentials() {
-        return this.replicationCredentials;
+        return this.replicationCredentials == null ? List.of() : this.replicationCredentials;
     }
     /**
      * @return Details of the SSH key that will be used.
      * 
      */
     public List<GetConnectionsConnectionCollectionItemSshDetail> sshDetails() {
-        return this.sshDetails;
+        return this.sshDetails == null ? List.of() : this.sshDetails;
     }
     /**
      * @return The current state of the Database Migration Deployment.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     public Map<String,Object> systemTags() {
-        return this.systemTags;
+        return this.systemTags == null ? Map.of() : this.systemTags;
     }
     /**
      * @return The time the Connection resource was created. An RFC3339 formatted datetime string.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The time of the last Connection resource details update. An RFC3339 formatted datetime string.
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
-    public String tlsKeystore() {
-        return this.tlsKeystore;
+    public Optional<String> tlsKeystore() {
+        return Optional.ofNullable(this.tlsKeystore);
     }
-    public String tlsWallet() {
-        return this.tlsWallet;
+    public Optional<String> tlsWallet() {
+        return Optional.ofNullable(this.tlsWallet);
     }
     /**
      * @return Oracle Cloud Infrastructure Vault details to store migration and connection credentials secrets
      * 
      */
     public List<GetConnectionsConnectionCollectionItemVaultDetail> vaultDetails() {
-        return this.vaultDetails;
+        return this.vaultDetails == null ? List.of() : this.vaultDetails;
     }
 
     public static Builder builder() {
@@ -290,29 +292,29 @@ public final class GetConnectionsConnectionCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetConnectionsConnectionCollectionItemAdminCredential> adminCredentials;
-        private String certificateTdn;
-        private String compartmentId;
-        private List<GetConnectionsConnectionCollectionItemConnectDescriptor> connectDescriptors;
-        private String credentialsSecretId;
-        private String databaseId;
-        private String databaseType;
-        private Map<String,Object> definedTags;
-        private String displayName;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private String lifecycleDetails;
-        private List<String> nsgIds;
-        private List<GetConnectionsConnectionCollectionItemPrivateEndpoint> privateEndpoints;
-        private List<GetConnectionsConnectionCollectionItemReplicationCredential> replicationCredentials;
-        private List<GetConnectionsConnectionCollectionItemSshDetail> sshDetails;
-        private String state;
-        private Map<String,Object> systemTags;
-        private String timeCreated;
-        private String timeUpdated;
-        private String tlsKeystore;
-        private String tlsWallet;
-        private List<GetConnectionsConnectionCollectionItemVaultDetail> vaultDetails;
+        private @Nullable List<GetConnectionsConnectionCollectionItemAdminCredential> adminCredentials;
+        private @Nullable String certificateTdn;
+        private @Nullable String compartmentId;
+        private @Nullable List<GetConnectionsConnectionCollectionItemConnectDescriptor> connectDescriptors;
+        private @Nullable String credentialsSecretId;
+        private @Nullable String databaseId;
+        private @Nullable String databaseType;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable String lifecycleDetails;
+        private @Nullable List<String> nsgIds;
+        private @Nullable List<GetConnectionsConnectionCollectionItemPrivateEndpoint> privateEndpoints;
+        private @Nullable List<GetConnectionsConnectionCollectionItemReplicationCredential> replicationCredentials;
+        private @Nullable List<GetConnectionsConnectionCollectionItemSshDetail> sshDetails;
+        private @Nullable String state;
+        private @Nullable Map<String,Object> systemTags;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
+        private @Nullable String tlsKeystore;
+        private @Nullable String tlsWallet;
+        private @Nullable List<GetConnectionsConnectionCollectionItemVaultDetail> vaultDetails;
         public Builder() {}
         public Builder(GetConnectionsConnectionCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -342,136 +344,136 @@ public final class GetConnectionsConnectionCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder adminCredentials(List<GetConnectionsConnectionCollectionItemAdminCredential> adminCredentials) {
-            this.adminCredentials = Objects.requireNonNull(adminCredentials);
+        public Builder adminCredentials(@Nullable List<GetConnectionsConnectionCollectionItemAdminCredential> adminCredentials) {
+            this.adminCredentials = adminCredentials;
             return this;
         }
         public Builder adminCredentials(GetConnectionsConnectionCollectionItemAdminCredential... adminCredentials) {
             return adminCredentials(List.of(adminCredentials));
         }
         @CustomType.Setter
-        public Builder certificateTdn(String certificateTdn) {
-            this.certificateTdn = Objects.requireNonNull(certificateTdn);
+        public Builder certificateTdn(@Nullable String certificateTdn) {
+            this.certificateTdn = certificateTdn;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder connectDescriptors(List<GetConnectionsConnectionCollectionItemConnectDescriptor> connectDescriptors) {
-            this.connectDescriptors = Objects.requireNonNull(connectDescriptors);
+        public Builder connectDescriptors(@Nullable List<GetConnectionsConnectionCollectionItemConnectDescriptor> connectDescriptors) {
+            this.connectDescriptors = connectDescriptors;
             return this;
         }
         public Builder connectDescriptors(GetConnectionsConnectionCollectionItemConnectDescriptor... connectDescriptors) {
             return connectDescriptors(List.of(connectDescriptors));
         }
         @CustomType.Setter
-        public Builder credentialsSecretId(String credentialsSecretId) {
-            this.credentialsSecretId = Objects.requireNonNull(credentialsSecretId);
+        public Builder credentialsSecretId(@Nullable String credentialsSecretId) {
+            this.credentialsSecretId = credentialsSecretId;
             return this;
         }
         @CustomType.Setter
-        public Builder databaseId(String databaseId) {
-            this.databaseId = Objects.requireNonNull(databaseId);
+        public Builder databaseId(@Nullable String databaseId) {
+            this.databaseId = databaseId;
             return this;
         }
         @CustomType.Setter
-        public Builder databaseType(String databaseType) {
-            this.databaseType = Objects.requireNonNull(databaseType);
+        public Builder databaseType(@Nullable String databaseType) {
+            this.databaseType = databaseType;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder nsgIds(List<String> nsgIds) {
-            this.nsgIds = Objects.requireNonNull(nsgIds);
+        public Builder nsgIds(@Nullable List<String> nsgIds) {
+            this.nsgIds = nsgIds;
             return this;
         }
         public Builder nsgIds(String... nsgIds) {
             return nsgIds(List.of(nsgIds));
         }
         @CustomType.Setter
-        public Builder privateEndpoints(List<GetConnectionsConnectionCollectionItemPrivateEndpoint> privateEndpoints) {
-            this.privateEndpoints = Objects.requireNonNull(privateEndpoints);
+        public Builder privateEndpoints(@Nullable List<GetConnectionsConnectionCollectionItemPrivateEndpoint> privateEndpoints) {
+            this.privateEndpoints = privateEndpoints;
             return this;
         }
         public Builder privateEndpoints(GetConnectionsConnectionCollectionItemPrivateEndpoint... privateEndpoints) {
             return privateEndpoints(List.of(privateEndpoints));
         }
         @CustomType.Setter
-        public Builder replicationCredentials(List<GetConnectionsConnectionCollectionItemReplicationCredential> replicationCredentials) {
-            this.replicationCredentials = Objects.requireNonNull(replicationCredentials);
+        public Builder replicationCredentials(@Nullable List<GetConnectionsConnectionCollectionItemReplicationCredential> replicationCredentials) {
+            this.replicationCredentials = replicationCredentials;
             return this;
         }
         public Builder replicationCredentials(GetConnectionsConnectionCollectionItemReplicationCredential... replicationCredentials) {
             return replicationCredentials(List.of(replicationCredentials));
         }
         @CustomType.Setter
-        public Builder sshDetails(List<GetConnectionsConnectionCollectionItemSshDetail> sshDetails) {
-            this.sshDetails = Objects.requireNonNull(sshDetails);
+        public Builder sshDetails(@Nullable List<GetConnectionsConnectionCollectionItemSshDetail> sshDetails) {
+            this.sshDetails = sshDetails;
             return this;
         }
         public Builder sshDetails(GetConnectionsConnectionCollectionItemSshDetail... sshDetails) {
             return sshDetails(List.of(sshDetails));
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+        public Builder systemTags(@Nullable Map<String,Object> systemTags) {
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
-        public Builder tlsKeystore(String tlsKeystore) {
-            this.tlsKeystore = Objects.requireNonNull(tlsKeystore);
+        public Builder tlsKeystore(@Nullable String tlsKeystore) {
+            this.tlsKeystore = tlsKeystore;
             return this;
         }
         @CustomType.Setter
-        public Builder tlsWallet(String tlsWallet) {
-            this.tlsWallet = Objects.requireNonNull(tlsWallet);
+        public Builder tlsWallet(@Nullable String tlsWallet) {
+            this.tlsWallet = tlsWallet;
             return this;
         }
         @CustomType.Setter
-        public Builder vaultDetails(List<GetConnectionsConnectionCollectionItemVaultDetail> vaultDetails) {
-            this.vaultDetails = Objects.requireNonNull(vaultDetails);
+        public Builder vaultDetails(@Nullable List<GetConnectionsConnectionCollectionItemVaultDetail> vaultDetails) {
+            this.vaultDetails = vaultDetails;
             return this;
         }
         public Builder vaultDetails(GetConnectionsConnectionCollectionItemVaultDetail... vaultDetails) {

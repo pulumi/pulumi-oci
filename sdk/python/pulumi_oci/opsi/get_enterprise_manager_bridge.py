@@ -70,34 +70,22 @@ class GetEnterpriseManagerBridgeResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        Compartment identifier of the Enterprise Manager bridge
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Description of Enterprise Manager Bridge
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        User-friedly name of Enterprise Manager Bridge that does not have to be unique.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
@@ -107,82 +95,52 @@ class GetEnterpriseManagerBridgeResult:
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        Enterprise Manager bridge identifier
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="objectStorageBucketName")
-    def object_storage_bucket_name(self) -> str:
-        """
-        Object Storage Bucket Name
-        """
+    def object_storage_bucket_name(self) -> Optional[str]:
         return pulumi.get(self, "object_storage_bucket_name")
 
     @property
     @pulumi.getter(name="objectStorageBucketStatusDetails")
-    def object_storage_bucket_status_details(self) -> str:
-        """
-        A message describing status of the object storage bucket of this resource. For example, it can be used to provide actionable information about the permission and content validity of the bucket.
-        """
+    def object_storage_bucket_status_details(self) -> Optional[str]:
         return pulumi.get(self, "object_storage_bucket_status_details")
 
     @property
     @pulumi.getter(name="objectStorageNamespaceName")
-    def object_storage_namespace_name(self) -> str:
-        """
-        Object Storage Namespace Name
-        """
+    def object_storage_namespace_name(self) -> Optional[str]:
         return pulumi.get(self, "object_storage_namespace_name")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the Enterprise Manager bridge.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the the Enterprise Manager bridge was first created. An RFC3339 formatted datetime string
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the Enterprise Manager bridge was updated. An RFC3339 formatted datetime string
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -212,21 +170,7 @@ class AwaitableGetEnterpriseManagerBridgeResult(GetEnterpriseManagerBridgeResult
 def get_enterprise_manager_bridge(enterprise_manager_bridge_id: Optional[str] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetEnterpriseManagerBridgeResult:
     """
-    This data source provides details about a specific Enterprise Manager Bridge resource in Oracle Cloud Infrastructure Opsi service.
-
-    Gets details of an Operations Insights Enterprise Manager bridge.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_enterprise_manager_bridge = oci.Opsi.get_enterprise_manager_bridge(enterprise_manager_bridge_id=oci_opsi_enterprise_manager_bridge["test_enterprise_manager_bridge"]["id"])
-    ```
-
-
-    :param str enterprise_manager_bridge_id: Unique Enterprise Manager bridge identifier
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['enterpriseManagerBridgeId'] = enterprise_manager_bridge_id
@@ -255,20 +199,6 @@ def get_enterprise_manager_bridge(enterprise_manager_bridge_id: Optional[str] = 
 def get_enterprise_manager_bridge_output(enterprise_manager_bridge_id: Optional[pulumi.Input[str]] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetEnterpriseManagerBridgeResult]:
     """
-    This data source provides details about a specific Enterprise Manager Bridge resource in Oracle Cloud Infrastructure Opsi service.
-
-    Gets details of an Operations Insights Enterprise Manager bridge.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_enterprise_manager_bridge = oci.Opsi.get_enterprise_manager_bridge(enterprise_manager_bridge_id=oci_opsi_enterprise_manager_bridge["test_enterprise_manager_bridge"]["id"])
-    ```
-
-
-    :param str enterprise_manager_bridge_id: Unique Enterprise Manager bridge identifier
+    Use this data source to access information about an existing resource.
     """
     ...

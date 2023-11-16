@@ -46,17 +46,11 @@ class GetRulesResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this rule belongs.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A string that describes the rule. It does not have to be unique, and you can change it. Avoid entering confidential information.  Example: `"This rule sends a notification upon completion of DbaaS backup."`
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -66,7 +60,7 @@ class GetRulesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -74,18 +68,12 @@ class GetRulesResult:
 
     @property
     @pulumi.getter
-    def rules(self) -> Sequence['outputs.GetRulesRuleResult']:
-        """
-        The list of rules.
-        """
+    def rules(self) -> Optional[Sequence['outputs.GetRulesRuleResult']]:
         return pulumi.get(self, "rules")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the rule.
-        """
         return pulumi.get(self, "state")
 
 
@@ -109,25 +97,7 @@ def get_rules(compartment_id: Optional[str] = None,
               state: Optional[str] = None,
               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetRulesResult:
     """
-    This data source provides the list of Rules in Oracle Cloud Infrastructure Events service.
-
-    Lists rules for this compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_rules = oci.Events.get_rules(compartment_id=var["compartment_id"],
-        display_name=var["rule_display_name"],
-        state=var["rule_state"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this rule belongs.
-    :param str display_name: A filter to return only rules with descriptions that match the displayName string in this parameter.  Example: `"This rule sends a notification upon completion of DbaaS backup."`
-    :param str state: A filter to return only rules that match the lifecycle state in this parameter.  Example: `Creating`
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -153,24 +123,6 @@ def get_rules_output(compartment_id: Optional[pulumi.Input[str]] = None,
                      state: Optional[pulumi.Input[Optional[str]]] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRulesResult]:
     """
-    This data source provides the list of Rules in Oracle Cloud Infrastructure Events service.
-
-    Lists rules for this compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_rules = oci.Events.get_rules(compartment_id=var["compartment_id"],
-        display_name=var["rule_display_name"],
-        state=var["rule_state"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this rule belongs.
-    :param str display_name: A filter to return only rules with descriptions that match the displayName string in this parameter.  Example: `"This rule sends a notification upon completion of DbaaS backup."`
-    :param str state: A filter to return only rules that match the lifecycle state in this parameter.  Example: `Creating`
+    Use this data source to access information about an existing resource.
     """
     ...

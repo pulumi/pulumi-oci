@@ -14,13 +14,13 @@ namespace Pulumi.Oci.Artifacts.Outputs
     public sealed class GetContainerImagesContainerImageCollectionResult
     {
         public readonly ImmutableArray<Outputs.GetContainerImagesContainerImageCollectionItemResult> Items;
-        public readonly int RemainingItemsCount;
+        public readonly int? RemainingItemsCount;
 
         [OutputConstructor]
         private GetContainerImagesContainerImageCollectionResult(
             ImmutableArray<Outputs.GetContainerImagesContainerImageCollectionItemResult> items,
 
-            int remainingItemsCount)
+            int? remainingItemsCount)
         {
             Items = items;
             RemainingItemsCount = remainingItemsCount;

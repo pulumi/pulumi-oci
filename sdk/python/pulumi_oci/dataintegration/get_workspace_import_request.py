@@ -80,47 +80,32 @@ class GetWorkspaceImportRequestResult:
 
     @property
     @pulumi.getter
-    def bucket(self) -> str:
-        """
-        The name of the Object Storage Bucket where the objects will be imported from
-        """
+    def bucket(self) -> Optional[str]:
         return pulumi.get(self, "bucket")
 
     @property
     @pulumi.getter(name="createdBy")
-    def created_by(self) -> str:
-        """
-        Name of the user who initiated import request.
-        """
+    def created_by(self) -> Optional[str]:
         return pulumi.get(self, "created_by")
 
     @property
     @pulumi.getter(name="errorMessages")
-    def error_messages(self) -> Mapping[str, Any]:
-        """
-        Contains key of the error
-        """
+    def error_messages(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "error_messages")
 
     @property
     @pulumi.getter(name="fileName")
-    def file_name(self) -> str:
-        """
-        Name of the zip file from which objects will be imported.
-        """
+    def file_name(self) -> Optional[str]:
         return pulumi.get(self, "file_name")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="importConflictResolutions")
-    def import_conflict_resolutions(self) -> Sequence['outputs.GetWorkspaceImportRequestImportConflictResolutionResult']:
-        """
-        Import Objects Conflict resolution.
-        """
+    def import_conflict_resolutions(self) -> Optional[Sequence['outputs.GetWorkspaceImportRequestImportConflictResolutionResult']]:
         return pulumi.get(self, "import_conflict_resolutions")
 
     @property
@@ -130,82 +115,52 @@ class GetWorkspaceImportRequestResult:
 
     @property
     @pulumi.getter(name="importedObjects")
-    def imported_objects(self) -> Sequence['outputs.GetWorkspaceImportRequestImportedObjectResult']:
-        """
-        The array of imported object details.
-        """
+    def imported_objects(self) -> Optional[Sequence['outputs.GetWorkspaceImportRequestImportedObjectResult']]:
         return pulumi.get(self, "imported_objects")
 
     @property
     @pulumi.getter
-    def key(self) -> str:
-        """
-        Import object request key
-        """
+    def key(self) -> Optional[str]:
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Name of the import request.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="objectKeyForImport")
-    def object_key_for_import(self) -> str:
-        """
-        Key of the object inside which all the objects will be imported
-        """
+    def object_key_for_import(self) -> Optional[str]:
         return pulumi.get(self, "object_key_for_import")
 
     @property
     @pulumi.getter(name="objectStorageRegion")
-    def object_storage_region(self) -> str:
-        """
-        Region of the object storage (if using object storage of different region)
-        """
+    def object_storage_region(self) -> Optional[str]:
         return pulumi.get(self, "object_storage_region")
 
     @property
     @pulumi.getter(name="objectStorageTenancyId")
-    def object_storage_tenancy_id(self) -> str:
-        """
-        Optional parameter to point to object storage tenancy (if using Object Storage of different tenancy)
-        """
+    def object_storage_tenancy_id(self) -> Optional[str]:
         return pulumi.get(self, "object_storage_tenancy_id")
 
     @property
     @pulumi.getter
-    def status(self) -> str:
-        """
-        Import Objects request status.
-        """
+    def status(self) -> Optional[str]:
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter(name="timeEndedInMillis")
-    def time_ended_in_millis(self) -> str:
-        """
-        Time at which the request was completely processed.
-        """
+    def time_ended_in_millis(self) -> Optional[str]:
         return pulumi.get(self, "time_ended_in_millis")
 
     @property
     @pulumi.getter(name="timeStartedInMillis")
-    def time_started_in_millis(self) -> str:
-        """
-        Time at which the request started getting processed.
-        """
+    def time_started_in_millis(self) -> Optional[str]:
         return pulumi.get(self, "time_started_in_millis")
 
     @property
     @pulumi.getter(name="totalImportedObjectCount")
-    def total_imported_object_count(self) -> int:
-        """
-        Number of objects that are imported.
-        """
+    def total_imported_object_count(self) -> Optional[int]:
         return pulumi.get(self, "total_imported_object_count")
 
     @property
@@ -244,23 +199,7 @@ def get_workspace_import_request(import_request_key: Optional[str] = None,
                                  workspace_id: Optional[str] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetWorkspaceImportRequestResult:
     """
-    This data source provides details about a specific Workspace Import Request resource in Oracle Cloud Infrastructure Data Integration service.
-
-    This endpoint can be used to get the summary/details of object being imported.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_workspace_import_request = oci.DataIntegration.get_workspace_import_request(import_request_key=var["workspace_import_request_import_request_key"],
-        workspace_id=oci_dataintegration_workspace["test_workspace"]["id"])
-    ```
-
-
-    :param str import_request_key: The key of the object export object request
-    :param str workspace_id: The workspace ID.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['importRequestKey'] = import_request_key
@@ -294,22 +233,6 @@ def get_workspace_import_request_output(import_request_key: Optional[pulumi.Inpu
                                         workspace_id: Optional[pulumi.Input[str]] = None,
                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetWorkspaceImportRequestResult]:
     """
-    This data source provides details about a specific Workspace Import Request resource in Oracle Cloud Infrastructure Data Integration service.
-
-    This endpoint can be used to get the summary/details of object being imported.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_workspace_import_request = oci.DataIntegration.get_workspace_import_request(import_request_key=var["workspace_import_request_import_request_key"],
-        workspace_id=oci_dataintegration_workspace["test_workspace"]["id"])
-    ```
-
-
-    :param str import_request_key: The key of the object export object request
-    :param str workspace_id: The workspace ID.
+    Use this data source to access information about an existing resource.
     """
     ...

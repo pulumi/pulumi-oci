@@ -53,7 +53,7 @@ export interface GetAvailabilityDomainsResult {
     /**
      * The list of availability_domains.
      */
-    readonly availabilityDomains: outputs.Identity.GetAvailabilityDomainsAvailabilityDomain[];
+    readonly availabilityDomains?: outputs.Identity.GetAvailabilityDomainsAvailabilityDomain[];
     /**
      * The OCID of the tenancy.
      */
@@ -62,7 +62,7 @@ export interface GetAvailabilityDomainsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
 }
 /**
  * This data source provides the list of Availability Domains in Oracle Cloud Infrastructure Identity service.

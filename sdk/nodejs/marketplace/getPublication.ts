@@ -47,62 +47,62 @@ export interface GetPublicationResult {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the publication exists.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The model for upload data for images and icons.
      */
-    readonly icons: outputs.Marketplace.GetPublicationIcon[];
+    readonly icons?: outputs.Marketplace.GetPublicationIcon[];
     /**
      * The unique identifier for the publication in Marketplace.
      */
-    readonly id: string;
-    readonly isAgreementAcknowledged: boolean;
+    readonly id?: string;
+    readonly isAgreementAcknowledged?: boolean;
     /**
      * The publisher category to which the publication belongs. The publisher category informs where the listing appears for use.
      */
-    readonly listingType: string;
+    readonly listingType?: string;
     /**
      * A long description of the publication to use in the listing.
      */
-    readonly longDescription: string;
+    readonly longDescription?: string;
     /**
      * The name of the operating system.
      */
-    readonly name: string;
-    readonly packageDetails: outputs.Marketplace.GetPublicationPackageDetail[];
+    readonly name?: string;
+    readonly packageDetails?: outputs.Marketplace.GetPublicationPackageDetail[];
     /**
      * The listing's package type.
      */
-    readonly packageType: string;
+    readonly packageType?: string;
     readonly publicationId: string;
     /**
      * A short description of the publication to use in the listing.
      */
-    readonly shortDescription: string;
+    readonly shortDescription?: string;
     /**
      * The lifecycle state of the publication.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * Contact information for getting support from the publisher for the listing.
      */
-    readonly supportContacts: outputs.Marketplace.GetPublicationSupportContact[];
+    readonly supportContacts?: outputs.Marketplace.GetPublicationSupportContact[];
     /**
      * The list of operating systems supported by the listing.
      */
-    readonly supportedOperatingSystems: outputs.Marketplace.GetPublicationSupportedOperatingSystem[];
+    readonly supportedOperatingSystems?: outputs.Marketplace.GetPublicationSupportedOperatingSystem[];
     /**
      * The date and time the publication was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
 }
 /**
  * This data source provides details about a specific Publication resource in Oracle Cloud Infrastructure Marketplace service.

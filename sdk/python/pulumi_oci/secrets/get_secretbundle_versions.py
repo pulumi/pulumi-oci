@@ -44,7 +44,7 @@ class GetSecretbundleVersionsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -52,18 +52,12 @@ class GetSecretbundleVersionsResult:
 
     @property
     @pulumi.getter(name="secretBundleVersions")
-    def secret_bundle_versions(self) -> Sequence['outputs.GetSecretbundleVersionsSecretBundleVersionResult']:
-        """
-        The list of secret_bundle_versions.
-        """
+    def secret_bundle_versions(self) -> Optional[Sequence['outputs.GetSecretbundleVersionsSecretBundleVersionResult']]:
         return pulumi.get(self, "secret_bundle_versions")
 
     @property
     @pulumi.getter(name="secretId")
     def secret_id(self) -> str:
-        """
-        The OCID of the secret.
-        """
         return pulumi.get(self, "secret_id")
 
 
@@ -83,21 +77,7 @@ def get_secretbundle_versions(filters: Optional[Sequence[pulumi.InputType['GetSe
                               secret_id: Optional[str] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSecretbundleVersionsResult:
     """
-    This data source provides the list of Secretbundle Versions in Oracle Cloud Infrastructure Secrets service.
-
-    Lists all secret bundle versions for the specified secret.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_secretbundle_versions = oci.Secrets.get_secretbundle_versions(secret_id=oci_vault_secret["test_secret"]["id"])
-    ```
-
-
-    :param str secret_id: The OCID of the secret.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -117,20 +97,6 @@ def get_secretbundle_versions_output(filters: Optional[pulumi.Input[Optional[Seq
                                      secret_id: Optional[pulumi.Input[str]] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSecretbundleVersionsResult]:
     """
-    This data source provides the list of Secretbundle Versions in Oracle Cloud Infrastructure Secrets service.
-
-    Lists all secret bundle versions for the specified secret.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_secretbundle_versions = oci.Secrets.get_secretbundle_versions(secret_id=oci_vault_secret["test_secret"]["id"])
-    ```
-
-
-    :param str secret_id: The OCID of the secret.
+    Use this data source to access information about an existing resource.
     """
     ...

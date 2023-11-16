@@ -66,11 +66,11 @@ export interface GetJavaFamiliesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of java_family_collection.
      */
-    readonly javaFamilyCollections: outputs.Jms.GetJavaFamiliesJavaFamilyCollection[];
+    readonly javaFamilyCollections?: outputs.Jms.GetJavaFamiliesJavaFamilyCollection[];
 }
 /**
  * This data source provides the list of Java Families in Oracle Cloud Infrastructure Jms service.

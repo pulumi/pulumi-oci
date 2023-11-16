@@ -76,7 +76,7 @@ export class BackendSet extends pulumi.CustomResource {
     /**
      * Array of backends.
      */
-    public /*out*/ readonly backends!: pulumi.Output<outputs.NetworkLoadBalancer.BackendSetBackend[]>;
+    public /*out*/ readonly backends!: pulumi.Output<outputs.NetworkLoadBalancer.BackendSetBackend[] | undefined>;
     /**
      * (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
      */
@@ -84,11 +84,11 @@ export class BackendSet extends pulumi.CustomResource {
     /**
      * (Updatable) IP version associated with the backend set.
      */
-    public readonly ipVersion!: pulumi.Output<string>;
+    public readonly ipVersion!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.
      */
-    public readonly isPreserveSource!: pulumi.Output<boolean>;
+    public readonly isPreserveSource!: pulumi.Output<boolean | undefined>;
     /**
      * A user-friendly name for the backend set that must be unique and cannot be changed.
      *

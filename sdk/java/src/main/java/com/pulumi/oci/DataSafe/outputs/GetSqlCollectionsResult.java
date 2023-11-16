@@ -37,12 +37,12 @@ public final class GetSqlCollectionsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of sql_collection_collection.
      * 
      */
-    private List<GetSqlCollectionsSqlCollectionCollection> sqlCollectionCollections;
+    private @Nullable List<GetSqlCollectionsSqlCollectionCollection> sqlCollectionCollections;
     private @Nullable String sqlCollectionId;
     /**
      * @return The current state of the SQL collection.
@@ -92,15 +92,15 @@ public final class GetSqlCollectionsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of sql_collection_collection.
      * 
      */
     public List<GetSqlCollectionsSqlCollectionCollection> sqlCollectionCollections() {
-        return this.sqlCollectionCollections;
+        return this.sqlCollectionCollections == null ? List.of() : this.sqlCollectionCollections;
     }
     public Optional<String> sqlCollectionId() {
         return Optional.ofNullable(this.sqlCollectionId);
@@ -141,8 +141,8 @@ public final class GetSqlCollectionsResult {
         private @Nullable String dbUserName;
         private @Nullable String displayName;
         private @Nullable List<GetSqlCollectionsFilter> filters;
-        private String id;
-        private List<GetSqlCollectionsSqlCollectionCollection> sqlCollectionCollections;
+        private @Nullable String id;
+        private @Nullable List<GetSqlCollectionsSqlCollectionCollection> sqlCollectionCollections;
         private @Nullable String sqlCollectionId;
         private @Nullable String state;
         private @Nullable String targetId;
@@ -200,13 +200,13 @@ public final class GetSqlCollectionsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder sqlCollectionCollections(List<GetSqlCollectionsSqlCollectionCollection> sqlCollectionCollections) {
-            this.sqlCollectionCollections = Objects.requireNonNull(sqlCollectionCollections);
+        public Builder sqlCollectionCollections(@Nullable List<GetSqlCollectionsSqlCollectionCollection> sqlCollectionCollections) {
+            this.sqlCollectionCollections = sqlCollectionCollections;
             return this;
         }
         public Builder sqlCollectionCollections(GetSqlCollectionsSqlCollectionCollection... sqlCollectionCollections) {

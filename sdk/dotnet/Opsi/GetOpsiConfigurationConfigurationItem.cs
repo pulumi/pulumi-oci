@@ -199,7 +199,7 @@ namespace Pulumi.Oci.Opsi
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Name of configuration item.
         /// </summary>
@@ -219,7 +219,7 @@ namespace Pulumi.Oci.Opsi
 
             ImmutableArray<string> configItemsApplicableContexts,
 
-            string id,
+            string? id,
 
             string? name,
 

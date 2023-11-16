@@ -20,19 +20,19 @@ namespace Pulumi.Oci.BigDataService.Outputs
         /// <summary>
         /// This value is the minimum number of nodes the cluster can be scaled-in to.
         /// </summary>
-        public readonly int MinNodeCount;
+        public readonly int? MinNodeCount;
         /// <summary>
         /// This value is the number of nodes to add during a scale-out event.
         /// </summary>
-        public readonly int StepSize;
+        public readonly int? StepSize;
 
         [OutputConstructor]
         private GetAutoScalingConfigurationPolicyDetailScaleInConfigResult(
             ImmutableArray<Outputs.GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricResult> metrics,
 
-            int minNodeCount,
+            int? minNodeCount,
 
-            int stepSize)
+            int? stepSize)
         {
             Metrics = metrics;
             MinNodeCount = minNodeCount;

@@ -16,17 +16,17 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         /// <summary>
         /// Sql statement or script file content as base64 encoded string
         /// </summary>
-        public readonly string Content;
+        public readonly string? Content;
         /// <summary>
         /// A filter to return resources based on name.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
 
         [OutputConstructor]
         private GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailResult(
-            string content,
+            string? content,
 
-            string name)
+            string? name)
         {
             Content = content;
             Name = name;

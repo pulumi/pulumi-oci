@@ -10,20 +10,19 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type DefaultRouteTable struct {
 	pulumi.CustomResourceState
 
-	CompartmentId           pulumi.StringOutput                   `pulumi:"compartmentId"`
+	CompartmentId           pulumi.StringPtrOutput                `pulumi:"compartmentId"`
 	DefinedTags             pulumi.MapOutput                      `pulumi:"definedTags"`
-	DisplayName             pulumi.StringOutput                   `pulumi:"displayName"`
+	DisplayName             pulumi.StringPtrOutput                `pulumi:"displayName"`
 	FreeformTags            pulumi.MapOutput                      `pulumi:"freeformTags"`
 	ManageDefaultResourceId pulumi.StringOutput                   `pulumi:"manageDefaultResourceId"`
 	RouteRules              DefaultRouteTableRouteRuleArrayOutput `pulumi:"routeRules"`
-	State                   pulumi.StringOutput                   `pulumi:"state"`
-	TimeCreated             pulumi.StringOutput                   `pulumi:"timeCreated"`
+	State                   pulumi.StringPtrOutput                `pulumi:"state"`
+	TimeCreated             pulumi.StringPtrOutput                `pulumi:"timeCreated"`
 }
 
 // NewDefaultRouteTable registers a new resource with the given unique name, arguments, and options.
@@ -126,12 +125,6 @@ func (i *DefaultRouteTable) ToDefaultRouteTableOutputWithContext(ctx context.Con
 	return pulumi.ToOutputWithContext(ctx, i).(DefaultRouteTableOutput)
 }
 
-func (i *DefaultRouteTable) ToOutput(ctx context.Context) pulumix.Output[*DefaultRouteTable] {
-	return pulumix.Output[*DefaultRouteTable]{
-		OutputState: i.ToDefaultRouteTableOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DefaultRouteTableArrayInput is an input type that accepts DefaultRouteTableArray and DefaultRouteTableArrayOutput values.
 // You can construct a concrete instance of `DefaultRouteTableArrayInput` via:
 //
@@ -155,12 +148,6 @@ func (i DefaultRouteTableArray) ToDefaultRouteTableArrayOutput() DefaultRouteTab
 
 func (i DefaultRouteTableArray) ToDefaultRouteTableArrayOutputWithContext(ctx context.Context) DefaultRouteTableArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DefaultRouteTableArrayOutput)
-}
-
-func (i DefaultRouteTableArray) ToOutput(ctx context.Context) pulumix.Output[[]*DefaultRouteTable] {
-	return pulumix.Output[[]*DefaultRouteTable]{
-		OutputState: i.ToDefaultRouteTableArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DefaultRouteTableMapInput is an input type that accepts DefaultRouteTableMap and DefaultRouteTableMapOutput values.
@@ -188,12 +175,6 @@ func (i DefaultRouteTableMap) ToDefaultRouteTableMapOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(DefaultRouteTableMapOutput)
 }
 
-func (i DefaultRouteTableMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DefaultRouteTable] {
-	return pulumix.Output[map[string]*DefaultRouteTable]{
-		OutputState: i.ToDefaultRouteTableMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DefaultRouteTableOutput struct{ *pulumi.OutputState }
 
 func (DefaultRouteTableOutput) ElementType() reflect.Type {
@@ -208,22 +189,16 @@ func (o DefaultRouteTableOutput) ToDefaultRouteTableOutputWithContext(ctx contex
 	return o
 }
 
-func (o DefaultRouteTableOutput) ToOutput(ctx context.Context) pulumix.Output[*DefaultRouteTable] {
-	return pulumix.Output[*DefaultRouteTable]{
-		OutputState: o.OutputState,
-	}
-}
-
-func (o DefaultRouteTableOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *DefaultRouteTable) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
+func (o DefaultRouteTableOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DefaultRouteTable) pulumi.StringPtrOutput { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 func (o DefaultRouteTableOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *DefaultRouteTable) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
-func (o DefaultRouteTableOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *DefaultRouteTable) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o DefaultRouteTableOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DefaultRouteTable) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 func (o DefaultRouteTableOutput) FreeformTags() pulumi.MapOutput {
@@ -238,12 +213,12 @@ func (o DefaultRouteTableOutput) RouteRules() DefaultRouteTableRouteRuleArrayOut
 	return o.ApplyT(func(v *DefaultRouteTable) DefaultRouteTableRouteRuleArrayOutput { return v.RouteRules }).(DefaultRouteTableRouteRuleArrayOutput)
 }
 
-func (o DefaultRouteTableOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *DefaultRouteTable) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o DefaultRouteTableOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DefaultRouteTable) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
-func (o DefaultRouteTableOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *DefaultRouteTable) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o DefaultRouteTableOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DefaultRouteTable) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 type DefaultRouteTableArrayOutput struct{ *pulumi.OutputState }
@@ -258,12 +233,6 @@ func (o DefaultRouteTableArrayOutput) ToDefaultRouteTableArrayOutput() DefaultRo
 
 func (o DefaultRouteTableArrayOutput) ToDefaultRouteTableArrayOutputWithContext(ctx context.Context) DefaultRouteTableArrayOutput {
 	return o
-}
-
-func (o DefaultRouteTableArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DefaultRouteTable] {
-	return pulumix.Output[[]*DefaultRouteTable]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DefaultRouteTableArrayOutput) Index(i pulumi.IntInput) DefaultRouteTableOutput {
@@ -284,12 +253,6 @@ func (o DefaultRouteTableMapOutput) ToDefaultRouteTableMapOutput() DefaultRouteT
 
 func (o DefaultRouteTableMapOutput) ToDefaultRouteTableMapOutputWithContext(ctx context.Context) DefaultRouteTableMapOutput {
 	return o
-}
-
-func (o DefaultRouteTableMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DefaultRouteTable] {
-	return pulumix.Output[map[string]*DefaultRouteTable]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DefaultRouteTableMapOutput) MapIndex(k pulumi.StringInput) DefaultRouteTableOutput {

@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// Disk IOPS in thousands.
         /// </summary>
-        public readonly double DiskIops;
+        public readonly double? DiskIops;
         /// <summary>
         /// Disk Throughput in Mbps.
         /// </summary>
-        public readonly double DiskThroughputInMbps;
+        public readonly double? DiskThroughputInMbps;
 
         [OutputConstructor]
         private GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListHighDiskPerformanceResult(
-            double diskIops,
+            double? diskIops,
 
-            double diskThroughputInMbps)
+            double? diskThroughputInMbps)
         {
             DiskIops = diskIops;
             DiskThroughputInMbps = diskThroughputInMbps;

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Managed Databases Database Parameters in Oracle Cloud Infrastructure Database Management service.
@@ -73,9 +72,9 @@ type GetManagedDatabasesDatabaseParametersResult struct {
 	DatabaseParametersCollections []GetManagedDatabasesDatabaseParametersDatabaseParametersCollection `pulumi:"databaseParametersCollections"`
 	Filters                       []GetManagedDatabasesDatabaseParametersFilter                       `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                      string `pulumi:"id"`
-	IsAllowedValuesIncluded *bool  `pulumi:"isAllowedValuesIncluded"`
-	ManagedDatabaseId       string `pulumi:"managedDatabaseId"`
+	Id                      *string `pulumi:"id"`
+	IsAllowedValuesIncluded *bool   `pulumi:"isAllowedValuesIncluded"`
+	ManagedDatabaseId       string  `pulumi:"managedDatabaseId"`
 	// The parameter name.
 	Name   *string `pulumi:"name"`
 	Source *string `pulumi:"source"`
@@ -126,12 +125,6 @@ func (o GetManagedDatabasesDatabaseParametersResultOutput) ToGetManagedDatabases
 	return o
 }
 
-func (o GetManagedDatabasesDatabaseParametersResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedDatabasesDatabaseParametersResult] {
-	return pulumix.Output[GetManagedDatabasesDatabaseParametersResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The list of database_parameters_collection.
 func (o GetManagedDatabasesDatabaseParametersResultOutput) DatabaseParametersCollections() GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionArrayOutput {
 	return o.ApplyT(func(v GetManagedDatabasesDatabaseParametersResult) []GetManagedDatabasesDatabaseParametersDatabaseParametersCollection {
@@ -146,8 +139,8 @@ func (o GetManagedDatabasesDatabaseParametersResultOutput) Filters() GetManagedD
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetManagedDatabasesDatabaseParametersResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabasesDatabaseParametersResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetManagedDatabasesDatabaseParametersResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabasesDatabaseParametersResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetManagedDatabasesDatabaseParametersResultOutput) IsAllowedValuesIncluded() pulumi.BoolPtrOutput {

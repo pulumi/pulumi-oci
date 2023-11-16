@@ -40,9 +40,6 @@ class GetClusterWorkloadMappingsResult:
     @property
     @pulumi.getter(name="clusterId")
     def cluster_id(self) -> str:
-        """
-        The OCID of the cluster.
-        """
         return pulumi.get(self, "cluster_id")
 
     @property
@@ -52,7 +49,7 @@ class GetClusterWorkloadMappingsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -60,10 +57,7 @@ class GetClusterWorkloadMappingsResult:
 
     @property
     @pulumi.getter(name="workloadMappings")
-    def workload_mappings(self) -> Sequence['outputs.GetClusterWorkloadMappingsWorkloadMappingResult']:
-        """
-        The list of workload_mappings.
-        """
+    def workload_mappings(self) -> Optional[Sequence['outputs.GetClusterWorkloadMappingsWorkloadMappingResult']]:
         return pulumi.get(self, "workload_mappings")
 
 
@@ -83,21 +77,7 @@ def get_cluster_workload_mappings(cluster_id: Optional[str] = None,
                                   filters: Optional[Sequence[pulumi.InputType['GetClusterWorkloadMappingsFilterArgs']]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetClusterWorkloadMappingsResult:
     """
-    This data source provides the list of Cluster Workload Mappings in Oracle Cloud Infrastructure Container Engine service.
-
-    List workloadMappings for a provisioned cluster.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_cluster_workload_mappings = oci.ContainerEngine.get_cluster_workload_mappings(cluster_id=oci_containerengine_cluster["test_cluster"]["id"])
-    ```
-
-
-    :param str cluster_id: The OCID of the cluster.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['clusterId'] = cluster_id
@@ -117,20 +97,6 @@ def get_cluster_workload_mappings_output(cluster_id: Optional[pulumi.Input[str]]
                                          filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetClusterWorkloadMappingsFilterArgs']]]]] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetClusterWorkloadMappingsResult]:
     """
-    This data source provides the list of Cluster Workload Mappings in Oracle Cloud Infrastructure Container Engine service.
-
-    List workloadMappings for a provisioned cluster.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_cluster_workload_mappings = oci.ContainerEngine.get_cluster_workload_mappings(cluster_id=oci_containerengine_cluster["test_cluster"]["id"])
-    ```
-
-
-    :param str cluster_id: The OCID of the cluster.
+    Use this data source to access information about an existing resource.
     """
     ...

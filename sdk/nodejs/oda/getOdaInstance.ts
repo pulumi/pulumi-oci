@@ -47,96 +47,96 @@ export interface GetOdaInstanceResult {
     /**
      * A list of attachment identifiers for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
      */
-    readonly attachmentIds: string[];
+    readonly attachmentIds?: string[];
     /**
      * A list of attachment types for this instance (if any). Use attachmentIds to get the details of the attachments.
      */
-    readonly attachmentTypes: string[];
+    readonly attachmentTypes?: string[];
     /**
      * Identifier of the compartment that the instance belongs to.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * URL for the connector's endpoint.
      */
-    readonly connectorUrl: string;
+    readonly connectorUrl?: string;
     /**
      * Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * Description of the Digital Assistant instance.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * User-defined name for the Digital Assistant instance. Avoid entering confidential information. You can change this value.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Simple key-value pair that is applied without any predefined name, type, or scope. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * Unique immutable identifier that was assigned when the instance was created.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * If isRoleBasedAccess is set to true, this property specifies the URL for the administration console used to manage the Identity Application instance Digital Assistant has created inside the user-specified identity domain.
      */
-    readonly identityAppConsoleUrl: string;
+    readonly identityAppConsoleUrl?: string;
     /**
      * If isRoleBasedAccess is set to true, this property specifies the GUID of the Identity Application instance Digital Assistant has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this Digital Assistant instance for users within the identity domain.
      */
-    readonly identityAppGuid: string;
+    readonly identityAppGuid?: string;
     /**
      * If isRoleBasedAccess is set to true, this property specifies the identity domain that is to be used to implement this type of authorzation. Digital Assistant will create an Identity Application instance and Application Roles within this identity domain. The caller may then perform and user roll mappings they like to grant access to users within the identity domain.
      */
-    readonly identityDomain: string;
+    readonly identityDomain?: string;
     /**
      * A list of package ids imported into this instance (if any). Use GetImportedPackage to get the details of the imported packages.
      */
-    readonly importedPackageIds: string[];
+    readonly importedPackageIds?: string[];
     /**
      * A list of package names imported into this instance (if any). Use importedPackageIds field to get the details of the imported packages.
      */
-    readonly importedPackageNames: string[];
+    readonly importedPackageNames?: string[];
     /**
      * Should this Digital Assistant instance use role-based authorization via an identity domain (true) or use the default policy-based authorization via IAM policies (false)
      */
-    readonly isRoleBasedAccess: boolean;
+    readonly isRoleBasedAccess?: boolean;
     /**
      * The current sub-state of the Digital Assistant instance.
      */
-    readonly lifecycleSubState: string;
+    readonly lifecycleSubState?: string;
     readonly odaInstanceId: string;
     /**
      * A list of restricted operations (across all attachments) for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
      */
-    readonly restrictedOperations: outputs.Oda.GetOdaInstanceRestrictedOperation[];
+    readonly restrictedOperations?: outputs.Oda.GetOdaInstanceRestrictedOperation[];
     /**
      * Shape or size of the instance.
      */
-    readonly shapeName: string;
+    readonly shapeName?: string;
     /**
      * The current state of the Digital Assistant instance.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * A message that describes the current state in more detail. For example, actionable information about an instance that's in the `FAILED` state.
      */
-    readonly stateMessage: string;
+    readonly stateMessage?: string;
     /**
      * When the Digital Assistant instance was created. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * When the Digital Assistance instance was last updated. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
     /**
      * URL for the Digital Assistant web application that's associated with the instance.
      */
-    readonly webAppUrl: string;
+    readonly webAppUrl?: string;
 }
 /**
  * This data source provides details about a specific Oda Instance resource in Oracle Cloud Infrastructure Digital Assistant service.

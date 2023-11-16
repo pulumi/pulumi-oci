@@ -18,7 +18,7 @@ public final class GetAutonomousVmClustersResult {
      * @return The list of autonomous_vm_clusters.
      * 
      */
-    private List<GetAutonomousVmClustersAutonomousVmCluster> autonomousVmClusters;
+    private @Nullable List<GetAutonomousVmClustersAutonomousVmCluster> autonomousVmClusters;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
@@ -39,7 +39,7 @@ public final class GetAutonomousVmClustersResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The current state of the Autonomous VM cluster.
      * 
@@ -52,7 +52,7 @@ public final class GetAutonomousVmClustersResult {
      * 
      */
     public List<GetAutonomousVmClustersAutonomousVmCluster> autonomousVmClusters() {
-        return this.autonomousVmClusters;
+        return this.autonomousVmClusters == null ? List.of() : this.autonomousVmClusters;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -82,8 +82,8 @@ public final class GetAutonomousVmClustersResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The current state of the Autonomous VM cluster.
@@ -102,12 +102,12 @@ public final class GetAutonomousVmClustersResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetAutonomousVmClustersAutonomousVmCluster> autonomousVmClusters;
+        private @Nullable List<GetAutonomousVmClustersAutonomousVmCluster> autonomousVmClusters;
         private String compartmentId;
         private @Nullable String displayName;
         private @Nullable String exadataInfrastructureId;
         private @Nullable List<GetAutonomousVmClustersFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetAutonomousVmClustersResult defaults) {
@@ -122,8 +122,8 @@ public final class GetAutonomousVmClustersResult {
         }
 
         @CustomType.Setter
-        public Builder autonomousVmClusters(List<GetAutonomousVmClustersAutonomousVmCluster> autonomousVmClusters) {
-            this.autonomousVmClusters = Objects.requireNonNull(autonomousVmClusters);
+        public Builder autonomousVmClusters(@Nullable List<GetAutonomousVmClustersAutonomousVmCluster> autonomousVmClusters) {
+            this.autonomousVmClusters = autonomousVmClusters;
             return this;
         }
         public Builder autonomousVmClusters(GetAutonomousVmClustersAutonomousVmCluster... autonomousVmClusters) {
@@ -153,8 +153,8 @@ public final class GetAutonomousVmClustersResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

@@ -106,25 +106,25 @@ namespace Pulumi.Oci.Artifacts
     public sealed class GetContainerConfigurationResult
     {
         public readonly string CompartmentId;
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Whether to create a new container repository when a container is pushed to a new repository path. Repositories created in this way belong to the root compartment.
         /// </summary>
-        public readonly bool IsRepositoryCreatedOnFirstPush;
+        public readonly bool? IsRepositoryCreatedOnFirstPush;
         /// <summary>
         /// The tenancy namespace used in the container repository path.
         /// </summary>
-        public readonly string Namespace;
+        public readonly string? Namespace;
 
         [OutputConstructor]
         private GetContainerConfigurationResult(
             string compartmentId,
 
-            string id,
+            string? id,
 
-            bool isRepositoryCreatedOnFirstPush,
+            bool? isRepositoryCreatedOnFirstPush,
 
-            string @namespace)
+            string? @namespace)
         {
             CompartmentId = compartmentId;
             Id = id;

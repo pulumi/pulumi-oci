@@ -40,7 +40,7 @@ class GetApiValidationResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -48,10 +48,7 @@ class GetApiValidationResult:
 
     @property
     @pulumi.getter
-    def validations(self) -> Sequence['outputs.GetApiValidationValidationResult']:
-        """
-        API validation results.
-        """
+    def validations(self) -> Optional[Sequence['outputs.GetApiValidationValidationResult']]:
         return pulumi.get(self, "validations")
 
 
@@ -69,21 +66,7 @@ class AwaitableGetApiValidationResult(GetApiValidationResult):
 def get_api_validation(api_id: Optional[str] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetApiValidationResult:
     """
-    This data source provides details about a specific Api Validation resource in Oracle Cloud Infrastructure API Gateway service.
-
-    Gets the API validation results.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_api_validation = oci.ApiGateway.get_api_validation(api_id=oci_apigateway_api["test_api"]["id"])
-    ```
-
-
-    :param str api_id: The ocid of the API.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['apiId'] = api_id
@@ -100,20 +83,6 @@ def get_api_validation(api_id: Optional[str] = None,
 def get_api_validation_output(api_id: Optional[pulumi.Input[str]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetApiValidationResult]:
     """
-    This data source provides details about a specific Api Validation resource in Oracle Cloud Infrastructure API Gateway service.
-
-    Gets the API validation results.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_api_validation = oci.ApiGateway.get_api_validation(api_id=oci_apigateway_api["test_api"]["id"])
-    ```
-
-
-    :param str api_id: The ocid of the API.
+    Use this data source to access information about an existing resource.
     """
     ...

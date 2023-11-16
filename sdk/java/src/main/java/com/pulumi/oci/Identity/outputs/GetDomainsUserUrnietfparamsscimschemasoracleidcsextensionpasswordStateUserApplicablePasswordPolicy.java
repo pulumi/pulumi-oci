@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicy {
@@ -14,51 +16,51 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionpass
      * @return A human readable name, primarily used for display purposes.
      * 
      */
-    private String display;
+    private @Nullable String display;
     /**
      * @return PasswordPolicy priority
      * 
      */
-    private Integer priority;
+    private @Nullable Integer priority;
     /**
      * @return User Token URI
      * 
      */
-    private String ref;
+    private @Nullable String ref;
     /**
      * @return The value of a X509 certificate.
      * 
      */
-    private String value;
+    private @Nullable String value;
 
     private GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicy() {}
     /**
      * @return A human readable name, primarily used for display purposes.
      * 
      */
-    public String display() {
-        return this.display;
+    public Optional<String> display() {
+        return Optional.ofNullable(this.display);
     }
     /**
      * @return PasswordPolicy priority
      * 
      */
-    public Integer priority() {
-        return this.priority;
+    public Optional<Integer> priority() {
+        return Optional.ofNullable(this.priority);
     }
     /**
      * @return User Token URI
      * 
      */
-    public String ref() {
-        return this.ref;
+    public Optional<String> ref() {
+        return Optional.ofNullable(this.ref);
     }
     /**
      * @return The value of a X509 certificate.
      * 
      */
-    public String value() {
-        return this.value;
+    public Optional<String> value() {
+        return Optional.ofNullable(this.value);
     }
 
     public static Builder builder() {
@@ -70,10 +72,10 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionpass
     }
     @CustomType.Builder
     public static final class Builder {
-        private String display;
-        private Integer priority;
-        private String ref;
-        private String value;
+        private @Nullable String display;
+        private @Nullable Integer priority;
+        private @Nullable String ref;
+        private @Nullable String value;
         public Builder() {}
         public Builder(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicy defaults) {
     	      Objects.requireNonNull(defaults);
@@ -84,23 +86,23 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionpass
         }
 
         @CustomType.Setter
-        public Builder display(String display) {
-            this.display = Objects.requireNonNull(display);
+        public Builder display(@Nullable String display) {
+            this.display = display;
             return this;
         }
         @CustomType.Setter
-        public Builder priority(Integer priority) {
-            this.priority = Objects.requireNonNull(priority);
+        public Builder priority(@Nullable Integer priority) {
+            this.priority = priority;
             return this;
         }
         @CustomType.Setter
-        public Builder ref(String ref) {
-            this.ref = Objects.requireNonNull(ref);
+        public Builder ref(@Nullable String ref) {
+            this.ref = ref;
             return this;
         }
         @CustomType.Setter
-        public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+        public Builder value(@Nullable String value) {
+            this.value = value;
             return this;
         }
         public GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicy build() {

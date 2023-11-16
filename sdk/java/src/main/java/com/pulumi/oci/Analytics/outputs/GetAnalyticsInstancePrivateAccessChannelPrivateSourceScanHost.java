@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHost {
@@ -14,39 +16,39 @@ public final class GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHost
      * @return Description of private source scan host zone.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return Private Source Scan hostname. Ex: db01-scan.corp.example.com, prd-db01-scan.mycompany.com.
      * 
      */
-    private String scanHostname;
+    private @Nullable String scanHostname;
     /**
      * @return Private Source Scan host port. This is the source port where SCAN protocol will get connected (e.g. 1521).
      * 
      */
-    private Integer scanPort;
+    private @Nullable Integer scanPort;
 
     private GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHost() {}
     /**
      * @return Description of private source scan host zone.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return Private Source Scan hostname. Ex: db01-scan.corp.example.com, prd-db01-scan.mycompany.com.
      * 
      */
-    public String scanHostname() {
-        return this.scanHostname;
+    public Optional<String> scanHostname() {
+        return Optional.ofNullable(this.scanHostname);
     }
     /**
      * @return Private Source Scan host port. This is the source port where SCAN protocol will get connected (e.g. 1521).
      * 
      */
-    public Integer scanPort() {
-        return this.scanPort;
+    public Optional<Integer> scanPort() {
+        return Optional.ofNullable(this.scanPort);
     }
 
     public static Builder builder() {
@@ -58,9 +60,9 @@ public final class GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHost
     }
     @CustomType.Builder
     public static final class Builder {
-        private String description;
-        private String scanHostname;
-        private Integer scanPort;
+        private @Nullable String description;
+        private @Nullable String scanHostname;
+        private @Nullable Integer scanPort;
         public Builder() {}
         public Builder(GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHost defaults) {
     	      Objects.requireNonNull(defaults);
@@ -70,18 +72,18 @@ public final class GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHost
         }
 
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder scanHostname(String scanHostname) {
-            this.scanHostname = Objects.requireNonNull(scanHostname);
+        public Builder scanHostname(@Nullable String scanHostname) {
+            this.scanHostname = scanHostname;
             return this;
         }
         @CustomType.Setter
-        public Builder scanPort(Integer scanPort) {
-            this.scanPort = Objects.requireNonNull(scanPort);
+        public Builder scanPort(@Nullable Integer scanPort) {
+            this.scanPort = scanPort;
             return this;
         }
         public GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHost build() {

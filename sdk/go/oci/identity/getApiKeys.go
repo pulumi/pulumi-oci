@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Api Keys in Oracle Cloud Infrastructure Identity service.
@@ -67,7 +66,7 @@ type GetApiKeysResult struct {
 	ApiKeys []GetApiKeysApiKey `pulumi:"apiKeys"`
 	Filters []GetApiKeysFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The OCID of the user the key belongs to.
 	UserId string `pulumi:"userId"`
 }
@@ -111,12 +110,6 @@ func (o GetApiKeysResultOutput) ToGetApiKeysResultOutputWithContext(ctx context.
 	return o
 }
 
-func (o GetApiKeysResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetApiKeysResult] {
-	return pulumix.Output[GetApiKeysResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The list of api_keys.
 func (o GetApiKeysResultOutput) ApiKeys() GetApiKeysApiKeyArrayOutput {
 	return o.ApplyT(func(v GetApiKeysResult) []GetApiKeysApiKey { return v.ApiKeys }).(GetApiKeysApiKeyArrayOutput)
@@ -127,8 +120,8 @@ func (o GetApiKeysResultOutput) Filters() GetApiKeysFilterArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetApiKeysResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetApiKeysResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetApiKeysResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetApiKeysResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the user the key belongs to.

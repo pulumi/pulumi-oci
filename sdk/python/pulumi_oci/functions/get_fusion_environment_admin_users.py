@@ -39,10 +39,7 @@ class GetFusionEnvironmentAdminUsersResult:
 
     @property
     @pulumi.getter(name="adminUserCollections")
-    def admin_user_collections(self) -> Sequence['outputs.GetFusionEnvironmentAdminUsersAdminUserCollectionResult']:
-        """
-        The list of admin_user_collection.
-        """
+    def admin_user_collections(self) -> Optional[Sequence['outputs.GetFusionEnvironmentAdminUsersAdminUserCollectionResult']]:
         return pulumi.get(self, "admin_user_collections")
 
     @property
@@ -57,7 +54,7 @@ class GetFusionEnvironmentAdminUsersResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -80,21 +77,7 @@ def get_fusion_environment_admin_users(filters: Optional[Sequence[pulumi.InputTy
                                        fusion_environment_id: Optional[str] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetFusionEnvironmentAdminUsersResult:
     """
-    This data source provides the list of Fusion Environment Admin Users in Oracle Cloud Infrastructure Fusion Apps service.
-
-    List all FusionEnvironment admin users
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_fusion_environment_admin_users = oci.Functions.get_fusion_environment_admin_users(fusion_environment_id=oci_fusion_apps_fusion_environment["test_fusion_environment"]["id"])
-    ```
-
-
-    :param str fusion_environment_id: unique FusionEnvironment identifier
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -114,20 +97,6 @@ def get_fusion_environment_admin_users_output(filters: Optional[pulumi.Input[Opt
                                               fusion_environment_id: Optional[pulumi.Input[str]] = None,
                                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFusionEnvironmentAdminUsersResult]:
     """
-    This data source provides the list of Fusion Environment Admin Users in Oracle Cloud Infrastructure Fusion Apps service.
-
-    List all FusionEnvironment admin users
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_fusion_environment_admin_users = oci.Functions.get_fusion_environment_admin_users(fusion_environment_id=oci_fusion_apps_fusion_environment["test_fusion_environment"]["id"])
-    ```
-
-
-    :param str fusion_environment_id: unique FusionEnvironment identifier
+    Use this data source to access information about an existing resource.
     """
     ...

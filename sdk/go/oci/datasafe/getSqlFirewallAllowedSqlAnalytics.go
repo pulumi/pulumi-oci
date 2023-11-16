@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Sql Firewall Allowed Sql Analytics in Oracle Cloud Infrastructure Data Safe service.
@@ -93,7 +92,7 @@ type GetSqlFirewallAllowedSqlAnalyticsResult struct {
 	Filters                []GetSqlFirewallAllowedSqlAnalyticsFilter `pulumi:"filters"`
 	GroupBies              []string                                  `pulumi:"groupBies"`
 	// The provider-assigned unique ID for this managed resource.
-	Id        string  `pulumi:"id"`
+	Id        *string `pulumi:"id"`
 	ScimQuery *string `pulumi:"scimQuery"`
 	// The list of sql_firewall_allowed_sql_analytics_collection.
 	SqlFirewallAllowedSqlAnalyticsCollections []GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollection `pulumi:"sqlFirewallAllowedSqlAnalyticsCollections"`
@@ -148,12 +147,6 @@ func (o GetSqlFirewallAllowedSqlAnalyticsResultOutput) ToGetSqlFirewallAllowedSq
 	return o
 }
 
-func (o GetSqlFirewallAllowedSqlAnalyticsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetSqlFirewallAllowedSqlAnalyticsResult] {
-	return pulumix.Output[GetSqlFirewallAllowedSqlAnalyticsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSqlFirewallAllowedSqlAnalyticsResultOutput) AccessLevel() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetSqlFirewallAllowedSqlAnalyticsResult) *string { return v.AccessLevel }).(pulumi.StringPtrOutput)
 }
@@ -177,8 +170,8 @@ func (o GetSqlFirewallAllowedSqlAnalyticsResultOutput) GroupBies() pulumi.String
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetSqlFirewallAllowedSqlAnalyticsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSqlFirewallAllowedSqlAnalyticsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetSqlFirewallAllowedSqlAnalyticsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSqlFirewallAllowedSqlAnalyticsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetSqlFirewallAllowedSqlAnalyticsResultOutput) ScimQuery() pulumi.StringPtrOutput {

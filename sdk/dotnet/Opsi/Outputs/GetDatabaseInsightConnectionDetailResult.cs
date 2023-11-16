@@ -16,7 +16,7 @@ namespace Pulumi.Oci.Opsi.Outputs
         /// <summary>
         /// Name of the listener host that will be used to create the connect string to the database.
         /// </summary>
-        public readonly string HostName;
+        public readonly string? HostName;
         /// <summary>
         /// List of hosts and port for private endpoint accessed database resource.
         /// </summary>
@@ -24,27 +24,27 @@ namespace Pulumi.Oci.Opsi.Outputs
         /// <summary>
         /// Listener port number used for connection requests.
         /// </summary>
-        public readonly int Port;
+        public readonly int? Port;
         /// <summary>
         /// Protocol used for connection requests for private endpoint accssed database resource.
         /// </summary>
-        public readonly string Protocol;
+        public readonly string? Protocol;
         /// <summary>
         /// Database service name used for connection requests.
         /// </summary>
-        public readonly string ServiceName;
+        public readonly string? ServiceName;
 
         [OutputConstructor]
         private GetDatabaseInsightConnectionDetailResult(
-            string hostName,
+            string? hostName,
 
             ImmutableArray<Outputs.GetDatabaseInsightConnectionDetailHostResult> hosts,
 
-            int port,
+            int? port,
 
-            string protocol,
+            string? protocol,
 
-            string serviceName)
+            string? serviceName)
         {
             HostName = hostName;
             Hosts = hosts;

@@ -9,6 +9,7 @@ import com.pulumi.oci.Core.outputs.GetInstanceConfigurationsInstanceConfiguratio
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -23,12 +24,12 @@ public final class GetInstanceConfigurationsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of instance_configurations.
      * 
      */
-    private List<GetInstanceConfigurationsInstanceConfiguration> instanceConfigurations;
+    private @Nullable List<GetInstanceConfigurationsInstanceConfiguration> instanceConfigurations;
 
     private GetInstanceConfigurationsResult() {}
     /**
@@ -45,15 +46,15 @@ public final class GetInstanceConfigurationsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of instance_configurations.
      * 
      */
     public List<GetInstanceConfigurationsInstanceConfiguration> instanceConfigurations() {
-        return this.instanceConfigurations;
+        return this.instanceConfigurations == null ? List.of() : this.instanceConfigurations;
     }
 
     public static Builder builder() {
@@ -67,8 +68,8 @@ public final class GetInstanceConfigurationsResult {
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetInstanceConfigurationsFilter> filters;
-        private String id;
-        private List<GetInstanceConfigurationsInstanceConfiguration> instanceConfigurations;
+        private @Nullable String id;
+        private @Nullable List<GetInstanceConfigurationsInstanceConfiguration> instanceConfigurations;
         public Builder() {}
         public Builder(GetInstanceConfigurationsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -92,13 +93,13 @@ public final class GetInstanceConfigurationsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder instanceConfigurations(List<GetInstanceConfigurationsInstanceConfiguration> instanceConfigurations) {
-            this.instanceConfigurations = Objects.requireNonNull(instanceConfigurations);
+        public Builder instanceConfigurations(@Nullable List<GetInstanceConfigurationsInstanceConfiguration> instanceConfigurations) {
+            this.instanceConfigurations = instanceConfigurations;
             return this;
         }
         public Builder instanceConfigurations(GetInstanceConfigurationsInstanceConfiguration... instanceConfigurations) {

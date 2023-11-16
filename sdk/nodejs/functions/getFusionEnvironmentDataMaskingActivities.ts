@@ -55,7 +55,7 @@ export interface GetFusionEnvironmentDataMaskingActivitiesResult {
     /**
      * The list of data_masking_activity_collection.
      */
-    readonly dataMaskingActivityCollections: outputs.Functions.GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollection[];
+    readonly dataMaskingActivityCollections?: outputs.Functions.GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollection[];
     readonly filters?: outputs.Functions.GetFusionEnvironmentDataMaskingActivitiesFilter[];
     /**
      * Fusion Environment Identifier.
@@ -64,7 +64,7 @@ export interface GetFusionEnvironmentDataMaskingActivitiesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The current state of the DataMaskingActivity.
      */

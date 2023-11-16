@@ -80,7 +80,7 @@ export interface GetVolumeAttachmentsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The OCID of the instance the volume is attached to.
      */
@@ -88,7 +88,7 @@ export interface GetVolumeAttachmentsResult {
     /**
      * The list of volume_attachments.
      */
-    readonly volumeAttachments: outputs.Core.GetVolumeAttachmentsVolumeAttachment[];
+    readonly volumeAttachments?: outputs.Core.GetVolumeAttachmentsVolumeAttachment[];
     /**
      * The OCID of the volume.
      */

@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Email Domain resource in Oracle Cloud Infrastructure Email service.
@@ -63,28 +62,28 @@ type EmailDomain struct {
 	pulumi.CustomResourceState
 
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DKIM key that will be used to sign mail sent from this email domain.
-	ActiveDkimId pulumi.StringOutput `pulumi:"activeDkimId"`
+	ActiveDkimId pulumi.StringPtrOutput `pulumi:"activeDkimId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for this email domain.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) A string that describes the details about the domain. It does not have to be unique, and you can change it. Avoid entering confidential information.
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// Value of the SPF field. For more information about SPF, please see [SPF Authentication](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
-	IsSpf pulumi.BoolOutput `pulumi:"isSpf"`
+	IsSpf pulumi.BoolPtrOutput `pulumi:"isSpf"`
 	// The name of the email domain in the Internet Domain Name System (DNS). The email domain name must be unique in the region for this tenancy. Domain names limited to ASCII characters use alphanumeric, dash ("-"), and dot (".") characters. The dash and dot are only allowed between alphanumeric characters. For details, please see: https://tools.ietf.org/html/rfc5321#section-4.1.2 Non-ASCII domain names should adopt IDNA2008 normalization (RFC 5891-5892).
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Name pulumi.StringOutput `pulumi:"name"`
 	// The current state of the email domain.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The time the email domain was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".  Example: `2021-02-12T22:47:12.613Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 }
 
 // NewEmailDomain registers a new resource with the given unique name, arguments, and options.
@@ -231,12 +230,6 @@ func (i *EmailDomain) ToEmailDomainOutputWithContext(ctx context.Context) EmailD
 	return pulumi.ToOutputWithContext(ctx, i).(EmailDomainOutput)
 }
 
-func (i *EmailDomain) ToOutput(ctx context.Context) pulumix.Output[*EmailDomain] {
-	return pulumix.Output[*EmailDomain]{
-		OutputState: i.ToEmailDomainOutputWithContext(ctx).OutputState,
-	}
-}
-
 // EmailDomainArrayInput is an input type that accepts EmailDomainArray and EmailDomainArrayOutput values.
 // You can construct a concrete instance of `EmailDomainArrayInput` via:
 //
@@ -260,12 +253,6 @@ func (i EmailDomainArray) ToEmailDomainArrayOutput() EmailDomainArrayOutput {
 
 func (i EmailDomainArray) ToEmailDomainArrayOutputWithContext(ctx context.Context) EmailDomainArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(EmailDomainArrayOutput)
-}
-
-func (i EmailDomainArray) ToOutput(ctx context.Context) pulumix.Output[[]*EmailDomain] {
-	return pulumix.Output[[]*EmailDomain]{
-		OutputState: i.ToEmailDomainArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // EmailDomainMapInput is an input type that accepts EmailDomainMap and EmailDomainMapOutput values.
@@ -293,12 +280,6 @@ func (i EmailDomainMap) ToEmailDomainMapOutputWithContext(ctx context.Context) E
 	return pulumi.ToOutputWithContext(ctx, i).(EmailDomainMapOutput)
 }
 
-func (i EmailDomainMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*EmailDomain] {
-	return pulumix.Output[map[string]*EmailDomain]{
-		OutputState: i.ToEmailDomainMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type EmailDomainOutput struct{ *pulumi.OutputState }
 
 func (EmailDomainOutput) ElementType() reflect.Type {
@@ -313,15 +294,9 @@ func (o EmailDomainOutput) ToEmailDomainOutputWithContext(ctx context.Context) E
 	return o
 }
 
-func (o EmailDomainOutput) ToOutput(ctx context.Context) pulumix.Output[*EmailDomain] {
-	return pulumix.Output[*EmailDomain]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DKIM key that will be used to sign mail sent from this email domain.
-func (o EmailDomainOutput) ActiveDkimId() pulumi.StringOutput {
-	return o.ApplyT(func(v *EmailDomain) pulumi.StringOutput { return v.ActiveDkimId }).(pulumi.StringOutput)
+func (o EmailDomainOutput) ActiveDkimId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *EmailDomain) pulumi.StringPtrOutput { return v.ActiveDkimId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for this email domain.
@@ -335,8 +310,8 @@ func (o EmailDomainOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) A string that describes the details about the domain. It does not have to be unique, and you can change it. Avoid entering confidential information.
-func (o EmailDomainOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *EmailDomain) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o EmailDomainOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *EmailDomain) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -345,8 +320,8 @@ func (o EmailDomainOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Value of the SPF field. For more information about SPF, please see [SPF Authentication](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
-func (o EmailDomainOutput) IsSpf() pulumi.BoolOutput {
-	return o.ApplyT(func(v *EmailDomain) pulumi.BoolOutput { return v.IsSpf }).(pulumi.BoolOutput)
+func (o EmailDomainOutput) IsSpf() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *EmailDomain) pulumi.BoolPtrOutput { return v.IsSpf }).(pulumi.BoolPtrOutput)
 }
 
 // The name of the email domain in the Internet Domain Name System (DNS). The email domain name must be unique in the region for this tenancy. Domain names limited to ASCII characters use alphanumeric, dash ("-"), and dot (".") characters. The dash and dot are only allowed between alphanumeric characters. For details, please see: https://tools.ietf.org/html/rfc5321#section-4.1.2 Non-ASCII domain names should adopt IDNA2008 normalization (RFC 5891-5892).
@@ -358,8 +333,8 @@ func (o EmailDomainOutput) Name() pulumi.StringOutput {
 }
 
 // The current state of the email domain.
-func (o EmailDomainOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *EmailDomain) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o EmailDomainOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *EmailDomain) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -368,8 +343,8 @@ func (o EmailDomainOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time the email domain was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".  Example: `2021-02-12T22:47:12.613Z`
-func (o EmailDomainOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *EmailDomain) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o EmailDomainOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *EmailDomain) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 type EmailDomainArrayOutput struct{ *pulumi.OutputState }
@@ -384,12 +359,6 @@ func (o EmailDomainArrayOutput) ToEmailDomainArrayOutput() EmailDomainArrayOutpu
 
 func (o EmailDomainArrayOutput) ToEmailDomainArrayOutputWithContext(ctx context.Context) EmailDomainArrayOutput {
 	return o
-}
-
-func (o EmailDomainArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*EmailDomain] {
-	return pulumix.Output[[]*EmailDomain]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o EmailDomainArrayOutput) Index(i pulumi.IntInput) EmailDomainOutput {
@@ -410,12 +379,6 @@ func (o EmailDomainMapOutput) ToEmailDomainMapOutput() EmailDomainMapOutput {
 
 func (o EmailDomainMapOutput) ToEmailDomainMapOutputWithContext(ctx context.Context) EmailDomainMapOutput {
 	return o
-}
-
-func (o EmailDomainMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*EmailDomain] {
-	return pulumix.Output[map[string]*EmailDomain]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o EmailDomainMapOutput) MapIndex(k pulumi.StringInput) EmailDomainOutput {

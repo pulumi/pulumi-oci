@@ -89,66 +89,42 @@ class GetMediaWorkflowJobResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        Compartment Identifier.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        Name of the Media Workflow Job. Does not have to be unique. Avoid entering confidential information.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The ID associated with the job output.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        The lifecycle details of MediaWorkflowJob task.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="mediaWorkflowConfigurationIds")
-    def media_workflow_configuration_ids(self) -> Sequence[str]:
-        """
-        Configurations to be applied to this run of the workflow.
-        """
+    def media_workflow_configuration_ids(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "media_workflow_configuration_ids")
 
     @property
     @pulumi.getter(name="mediaWorkflowId")
-    def media_workflow_id(self) -> str:
-        """
-        The workflow to execute.
-        """
+    def media_workflow_id(self) -> Optional[str]:
         return pulumi.get(self, "media_workflow_id")
 
     @property
@@ -158,92 +134,62 @@ class GetMediaWorkflowJobResult:
 
     @property
     @pulumi.getter(name="mediaWorkflowName")
-    def media_workflow_name(self) -> str:
+    def media_workflow_name(self) -> Optional[str]:
         return pulumi.get(self, "media_workflow_name")
 
     @property
     @pulumi.getter
-    def outputs(self) -> Sequence['outputs.GetMediaWorkflowJobOutputResult']:
-        """
-        A list of JobOutput for the workflowJob.
-        """
+    def outputs(self) -> Optional[Sequence['outputs.GetMediaWorkflowJobOutputResult']]:
         return pulumi.get(self, "outputs")
 
     @property
     @pulumi.getter
-    def parameters(self) -> str:
-        """
-        Parameters that override parameters specified in MediaWorkflowTaskDeclarations, the MediaWorkflow, the MediaWorkflow's MediaWorkflowConfigurations and the MediaWorkflowConfigurations of this MediaWorkflowJob. The parameters are given as JSON.  The top level and 2nd level elements must be JSON objects (vs arrays, scalars, etc). The top level keys refer to a task's key and the 2nd level keys refer to a parameter's name.
-        """
+    def parameters(self) -> Optional[str]:
         return pulumi.get(self, "parameters")
 
     @property
     @pulumi.getter
-    def runnable(self) -> str:
-        """
-        A JSON representation of the job as it will be run by the system. All the task declarations, configurations and parameters are merged. Parameter values are all fully resolved.
-        """
+    def runnable(self) -> Optional[str]:
         return pulumi.get(self, "runnable")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the MediaWorkflowJob task.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="taskLifecycleStates")
-    def task_lifecycle_states(self) -> Sequence['outputs.GetMediaWorkflowJobTaskLifecycleStateResult']:
-        """
-        Status of each task.
-        """
+    def task_lifecycle_states(self) -> Optional[Sequence['outputs.GetMediaWorkflowJobTaskLifecycleStateResult']]:
         return pulumi.get(self, "task_lifecycle_states")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        Creation time of the job. An RFC3339 formatted datetime string.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeEnded")
-    def time_ended(self) -> str:
-        """
-        Time when the job finished. An RFC3339 formatted datetime string.
-        """
+    def time_ended(self) -> Optional[str]:
         return pulumi.get(self, "time_ended")
 
     @property
     @pulumi.getter(name="timeStarted")
-    def time_started(self) -> str:
-        """
-        Time when the job started to execute. An RFC3339 formatted datetime string.
-        """
+    def time_started(self) -> Optional[str]:
         return pulumi.get(self, "time_started")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        Updated time of the job. An RFC3339 formatted datetime string.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="workflowIdentifierType")
-    def workflow_identifier_type(self) -> str:
+    def workflow_identifier_type(self) -> Optional[str]:
         return pulumi.get(self, "workflow_identifier_type")
 
 
@@ -279,21 +225,7 @@ class AwaitableGetMediaWorkflowJobResult(GetMediaWorkflowJobResult):
 def get_media_workflow_job(media_workflow_job_id: Optional[str] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMediaWorkflowJobResult:
     """
-    This data source provides details about a specific Media Workflow Job resource in Oracle Cloud Infrastructure Media Services service.
-
-    Gets the MediaWorkflowJob.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_media_workflow_job = oci.MediaServices.get_media_workflow_job(media_workflow_job_id=oci_media_services_media_workflow_job["test_media_workflow_job"]["id"])
-    ```
-
-
-    :param str media_workflow_job_id: Unique MediaWorkflowJob identifier.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['mediaWorkflowJobId'] = media_workflow_job_id
@@ -328,20 +260,6 @@ def get_media_workflow_job(media_workflow_job_id: Optional[str] = None,
 def get_media_workflow_job_output(media_workflow_job_id: Optional[pulumi.Input[str]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMediaWorkflowJobResult]:
     """
-    This data source provides details about a specific Media Workflow Job resource in Oracle Cloud Infrastructure Media Services service.
-
-    Gets the MediaWorkflowJob.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_media_workflow_job = oci.MediaServices.get_media_workflow_job(media_workflow_job_id=oci_media_services_media_workflow_job["test_media_workflow_job"]["id"])
-    ```
-
-
-    :param str media_workflow_job_id: Unique MediaWorkflowJob identifier.
+    Use this data source to access information about an existing resource.
     """
     ...

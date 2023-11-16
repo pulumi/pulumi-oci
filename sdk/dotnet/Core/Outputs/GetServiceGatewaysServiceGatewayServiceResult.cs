@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service.
         /// </summary>
-        public readonly string ServiceId;
+        public readonly string? ServiceId;
         /// <summary>
         /// The name of the service.
         /// </summary>
-        public readonly string ServiceName;
+        public readonly string? ServiceName;
 
         [OutputConstructor]
         private GetServiceGatewaysServiceGatewayServiceResult(
-            string serviceId,
+            string? serviceId,
 
-            string serviceName)
+            string? serviceName)
         {
             ServiceId = serviceId;
             ServiceName = serviceName;

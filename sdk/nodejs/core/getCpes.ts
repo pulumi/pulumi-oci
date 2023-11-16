@@ -53,12 +53,12 @@ export interface GetCpesResult {
     /**
      * The list of cpes.
      */
-    readonly cpes: outputs.Core.GetCpesCpe[];
+    readonly cpes?: outputs.Core.GetCpesCpe[];
     readonly filters?: outputs.Core.GetCpesFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
 }
 /**
  * This data source provides the list of Cpes in Oracle Cloud Infrastructure Core service.

@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Accepted Agreement resource in Oracle Cloud Infrastructure Marketplace service.
@@ -74,7 +73,7 @@ type AcceptedAgreement struct {
 	// (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) A display name for the accepted agreement.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The unique identifier for the listing associated with the agreement.
@@ -87,7 +86,7 @@ type AcceptedAgreement struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Signature pulumi.StringOutput `pulumi:"signature"`
 	// The time the agreement was accepted.
-	TimeAccepted pulumi.StringOutput `pulumi:"timeAccepted"`
+	TimeAccepted pulumi.StringPtrOutput `pulumi:"timeAccepted"`
 }
 
 // NewAcceptedAgreement registers a new resource with the given unique name, arguments, and options.
@@ -254,12 +253,6 @@ func (i *AcceptedAgreement) ToAcceptedAgreementOutputWithContext(ctx context.Con
 	return pulumi.ToOutputWithContext(ctx, i).(AcceptedAgreementOutput)
 }
 
-func (i *AcceptedAgreement) ToOutput(ctx context.Context) pulumix.Output[*AcceptedAgreement] {
-	return pulumix.Output[*AcceptedAgreement]{
-		OutputState: i.ToAcceptedAgreementOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AcceptedAgreementArrayInput is an input type that accepts AcceptedAgreementArray and AcceptedAgreementArrayOutput values.
 // You can construct a concrete instance of `AcceptedAgreementArrayInput` via:
 //
@@ -283,12 +276,6 @@ func (i AcceptedAgreementArray) ToAcceptedAgreementArrayOutput() AcceptedAgreeme
 
 func (i AcceptedAgreementArray) ToAcceptedAgreementArrayOutputWithContext(ctx context.Context) AcceptedAgreementArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AcceptedAgreementArrayOutput)
-}
-
-func (i AcceptedAgreementArray) ToOutput(ctx context.Context) pulumix.Output[[]*AcceptedAgreement] {
-	return pulumix.Output[[]*AcceptedAgreement]{
-		OutputState: i.ToAcceptedAgreementArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // AcceptedAgreementMapInput is an input type that accepts AcceptedAgreementMap and AcceptedAgreementMapOutput values.
@@ -316,12 +303,6 @@ func (i AcceptedAgreementMap) ToAcceptedAgreementMapOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(AcceptedAgreementMapOutput)
 }
 
-func (i AcceptedAgreementMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AcceptedAgreement] {
-	return pulumix.Output[map[string]*AcceptedAgreement]{
-		OutputState: i.ToAcceptedAgreementMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AcceptedAgreementOutput struct{ *pulumi.OutputState }
 
 func (AcceptedAgreementOutput) ElementType() reflect.Type {
@@ -334,12 +315,6 @@ func (o AcceptedAgreementOutput) ToAcceptedAgreementOutput() AcceptedAgreementOu
 
 func (o AcceptedAgreementOutput) ToAcceptedAgreementOutputWithContext(ctx context.Context) AcceptedAgreementOutput {
 	return o
-}
-
-func (o AcceptedAgreementOutput) ToOutput(ctx context.Context) pulumix.Output[*AcceptedAgreement] {
-	return pulumix.Output[*AcceptedAgreement]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The agreement to accept.
@@ -358,8 +333,8 @@ func (o AcceptedAgreementOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) A display name for the accepted agreement.
-func (o AcceptedAgreementOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *AcceptedAgreement) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o AcceptedAgreementOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AcceptedAgreement) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -386,8 +361,8 @@ func (o AcceptedAgreementOutput) Signature() pulumi.StringOutput {
 }
 
 // The time the agreement was accepted.
-func (o AcceptedAgreementOutput) TimeAccepted() pulumi.StringOutput {
-	return o.ApplyT(func(v *AcceptedAgreement) pulumi.StringOutput { return v.TimeAccepted }).(pulumi.StringOutput)
+func (o AcceptedAgreementOutput) TimeAccepted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AcceptedAgreement) pulumi.StringPtrOutput { return v.TimeAccepted }).(pulumi.StringPtrOutput)
 }
 
 type AcceptedAgreementArrayOutput struct{ *pulumi.OutputState }
@@ -402,12 +377,6 @@ func (o AcceptedAgreementArrayOutput) ToAcceptedAgreementArrayOutput() AcceptedA
 
 func (o AcceptedAgreementArrayOutput) ToAcceptedAgreementArrayOutputWithContext(ctx context.Context) AcceptedAgreementArrayOutput {
 	return o
-}
-
-func (o AcceptedAgreementArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AcceptedAgreement] {
-	return pulumix.Output[[]*AcceptedAgreement]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AcceptedAgreementArrayOutput) Index(i pulumi.IntInput) AcceptedAgreementOutput {
@@ -428,12 +397,6 @@ func (o AcceptedAgreementMapOutput) ToAcceptedAgreementMapOutput() AcceptedAgree
 
 func (o AcceptedAgreementMapOutput) ToAcceptedAgreementMapOutputWithContext(ctx context.Context) AcceptedAgreementMapOutput {
 	return o
-}
-
-func (o AcceptedAgreementMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AcceptedAgreement] {
-	return pulumix.Output[map[string]*AcceptedAgreement]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AcceptedAgreementMapOutput) MapIndex(k pulumi.StringInput) AcceptedAgreementOutput {

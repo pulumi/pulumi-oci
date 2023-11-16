@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLocked {
@@ -14,27 +16,27 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
      * @return The date and time that the current resource was locked.
      * 
      */
-    private String lockDate;
+    private @Nullable String lockDate;
     /**
      * @return Indicates that the recovery is locked.
      * 
      */
-    private Boolean on;
+    private @Nullable Boolean on;
 
     private GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLocked() {}
     /**
      * @return The date and time that the current resource was locked.
      * 
      */
-    public String lockDate() {
-        return this.lockDate;
+    public Optional<String> lockDate() {
+        return Optional.ofNullable(this.lockDate);
     }
     /**
      * @return Indicates that the recovery is locked.
      * 
      */
-    public Boolean on() {
-        return this.on;
+    public Optional<Boolean> on() {
+        return Optional.ofNullable(this.on);
     }
 
     public static Builder builder() {
@@ -46,8 +48,8 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
     }
     @CustomType.Builder
     public static final class Builder {
-        private String lockDate;
-        private Boolean on;
+        private @Nullable String lockDate;
+        private @Nullable Boolean on;
         public Builder() {}
         public Builder(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLocked defaults) {
     	      Objects.requireNonNull(defaults);
@@ -56,13 +58,13 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
         }
 
         @CustomType.Setter
-        public Builder lockDate(String lockDate) {
-            this.lockDate = Objects.requireNonNull(lockDate);
+        public Builder lockDate(@Nullable String lockDate) {
+            this.lockDate = lockDate;
             return this;
         }
         @CustomType.Setter
-        public Builder on(Boolean on) {
-            this.on = Objects.requireNonNull(on);
+        public Builder on(@Nullable Boolean on) {
+            this.on = on;
             return this;
         }
         public GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLocked build() {

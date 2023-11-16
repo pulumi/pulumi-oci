@@ -20,13 +20,13 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksFindingResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private @Nullable String indexHashFilter;
     /**
      * @return An array of the findings for a tuning task.
      * 
      */
-    private List<GetManagedDatabaseSqlTuningAdvisorTasksFindingItem> items;
+    private @Nullable List<GetManagedDatabaseSqlTuningAdvisorTasksFindingItem> items;
     private String managedDatabaseId;
     private @Nullable String searchPeriod;
     /**
@@ -50,8 +50,8 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksFindingResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public Optional<String> indexHashFilter() {
         return Optional.ofNullable(this.indexHashFilter);
@@ -61,7 +61,7 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksFindingResult {
      * 
      */
     public List<GetManagedDatabaseSqlTuningAdvisorTasksFindingItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
     public String managedDatabaseId() {
         return this.managedDatabaseId;
@@ -92,9 +92,9 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksFindingResult {
         private @Nullable String beginExecId;
         private @Nullable String endExecId;
         private @Nullable String findingFilter;
-        private String id;
+        private @Nullable String id;
         private @Nullable String indexHashFilter;
-        private List<GetManagedDatabaseSqlTuningAdvisorTasksFindingItem> items;
+        private @Nullable List<GetManagedDatabaseSqlTuningAdvisorTasksFindingItem> items;
         private String managedDatabaseId;
         private @Nullable String searchPeriod;
         private String sqlTuningAdvisorTaskId;
@@ -130,8 +130,8 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksFindingResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -140,8 +140,8 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksFindingResult {
             return this;
         }
         @CustomType.Setter
-        public Builder items(List<GetManagedDatabaseSqlTuningAdvisorTasksFindingItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetManagedDatabaseSqlTuningAdvisorTasksFindingItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetManagedDatabaseSqlTuningAdvisorTasksFindingItem... items) {

@@ -61,17 +61,11 @@ class GetManagedInstanceGroupsResult:
     @property
     @pulumi.getter(name="archType")
     def arch_type(self) -> Optional[str]:
-        """
-        The CPU architecture of the instances in the managed instance group.
-        """
         return pulumi.get(self, "arch_type")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
-        """
-        The OCID of the tenancy containing the managed instance group.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -82,9 +76,6 @@ class GetManagedInstanceGroupsResult:
     @property
     @pulumi.getter(name="displayNames")
     def display_names(self) -> Optional[Sequence[str]]:
-        """
-        Software source name.
-        """
         return pulumi.get(self, "display_names")
 
     @property
@@ -94,7 +85,7 @@ class GetManagedInstanceGroupsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -102,10 +93,7 @@ class GetManagedInstanceGroupsResult:
 
     @property
     @pulumi.getter(name="managedInstanceGroupCollections")
-    def managed_instance_group_collections(self) -> Sequence['outputs.GetManagedInstanceGroupsManagedInstanceGroupCollectionResult']:
-        """
-        The list of managed_instance_group_collection.
-        """
+    def managed_instance_group_collections(self) -> Optional[Sequence['outputs.GetManagedInstanceGroupsManagedInstanceGroupCollectionResult']]:
         return pulumi.get(self, "managed_instance_group_collections")
 
     @property
@@ -116,9 +104,6 @@ class GetManagedInstanceGroupsResult:
     @property
     @pulumi.getter(name="osFamily")
     def os_family(self) -> Optional[str]:
-        """
-        The operating system type of the instances in the managed instance group.
-        """
         return pulumi.get(self, "os_family")
 
     @property
@@ -129,9 +114,6 @@ class GetManagedInstanceGroupsResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the managed instance group.
-        """
         return pulumi.get(self, "state")
 
 
@@ -165,36 +147,7 @@ def get_managed_instance_groups(arch_type: Optional[str] = None,
                                 state: Optional[str] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagedInstanceGroupsResult:
     """
-    This data source provides the list of Managed Instance Groups in Oracle Cloud Infrastructure Os Management Hub service.
-
-    Lists managed instance groups that match the specified compartment or managed instance group OCID. Filter the
-    list against a variety of criteria including but not limited to its name, status, architecture, and OS family.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_instance_groups = oci.OsManagementHub.get_managed_instance_groups(arch_type=var["managed_instance_group_arch_type"],
-        compartment_id=var["compartment_id"],
-        display_names=var["managed_instance_group_display_name"],
-        display_name_contains=var["managed_instance_group_display_name_contains"],
-        managed_instance_group_id=oci_os_management_hub_managed_instance_group["test_managed_instance_group"]["id"],
-        os_family=var["managed_instance_group_os_family"],
-        software_source_id=oci_os_management_hub_software_source["test_software_source"]["id"],
-        state=var["managed_instance_group_state"])
-    ```
-
-
-    :param str arch_type: A filter to return only profiles that match the given archType.
-    :param str compartment_id: The OCID of the compartment that contains the resources to list.
-    :param str display_name_contains: A filter to return resources that may partially match the given display name.
-    :param Sequence[str] display_names: A filter to return resources that match the given display names.
-    :param str managed_instance_group_id: The OCID of the managed instance group for which to list resources.
-    :param str os_family: A filter to return only profiles that match the given osFamily.
-    :param str software_source_id: The OCID for the software source.
-    :param str state: A filter to return only resources their lifecycle state matches the given lifecycle state.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['archType'] = arch_type
@@ -235,35 +188,6 @@ def get_managed_instance_groups_output(arch_type: Optional[pulumi.Input[Optional
                                        state: Optional[pulumi.Input[Optional[str]]] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedInstanceGroupsResult]:
     """
-    This data source provides the list of Managed Instance Groups in Oracle Cloud Infrastructure Os Management Hub service.
-
-    Lists managed instance groups that match the specified compartment or managed instance group OCID. Filter the
-    list against a variety of criteria including but not limited to its name, status, architecture, and OS family.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_instance_groups = oci.OsManagementHub.get_managed_instance_groups(arch_type=var["managed_instance_group_arch_type"],
-        compartment_id=var["compartment_id"],
-        display_names=var["managed_instance_group_display_name"],
-        display_name_contains=var["managed_instance_group_display_name_contains"],
-        managed_instance_group_id=oci_os_management_hub_managed_instance_group["test_managed_instance_group"]["id"],
-        os_family=var["managed_instance_group_os_family"],
-        software_source_id=oci_os_management_hub_software_source["test_software_source"]["id"],
-        state=var["managed_instance_group_state"])
-    ```
-
-
-    :param str arch_type: A filter to return only profiles that match the given archType.
-    :param str compartment_id: The OCID of the compartment that contains the resources to list.
-    :param str display_name_contains: A filter to return resources that may partially match the given display name.
-    :param Sequence[str] display_names: A filter to return resources that match the given display names.
-    :param str managed_instance_group_id: The OCID of the managed instance group for which to list resources.
-    :param str os_family: A filter to return only profiles that match the given osFamily.
-    :param str software_source_id: The OCID for the software source.
-    :param str state: A filter to return only resources their lifecycle state matches the given lifecycle state.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -68,18 +68,12 @@ class GetDeploymentResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the resource is created.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
@@ -89,90 +83,57 @@ class GetDeploymentResult:
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
-    def endpoint(self) -> str:
-        """
-        The endpoint to access this deployment on the gateway.
-        """
+    def endpoint(self) -> Optional[str]:
         return pulumi.get(self, "endpoint")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="gatewayId")
-    def gateway_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
-        """
+    def gateway_id(self) -> Optional[str]:
         return pulumi.get(self, "gateway_id")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="pathPrefix")
-    def path_prefix(self) -> str:
-        """
-        A path on which to deploy all routes contained in the API deployment specification. For more information, see [Deploying an API on an API Gateway by Creating an API Deployment](https://docs.cloud.oracle.com/iaas/Content/APIGateway/Tasks/apigatewaycreatingdeployment.htm).
-        """
+    def path_prefix(self) -> Optional[str]:
         return pulumi.get(self, "path_prefix")
 
     @property
     @pulumi.getter
-    def specifications(self) -> Sequence['outputs.GetDeploymentSpecificationResult']:
-        """
-        The logical configuration of the API exposed by a deployment.
-        """
+    def specifications(self) -> Optional[Sequence['outputs.GetDeploymentSpecificationResult']]:
         return pulumi.get(self, "specifications")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the deployment.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time this resource was created. An RFC3339 formatted datetime string.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time this resource was last updated. An RFC3339 formatted datetime string.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -201,21 +162,7 @@ class AwaitableGetDeploymentResult(GetDeploymentResult):
 def get_deployment(deployment_id: Optional[str] = None,
                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDeploymentResult:
     """
-    This data source provides details about a specific Deployment resource in Oracle Cloud Infrastructure API Gateway service.
-
-    Gets a deployment by identifier.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_deployment = oci.ApiGateway.get_deployment(deployment_id=oci_apigateway_deployment["test_deployment"]["id"])
-    ```
-
-
-    :param str deployment_id: The ocid of the deployment.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['deploymentId'] = deployment_id
@@ -243,20 +190,6 @@ def get_deployment(deployment_id: Optional[str] = None,
 def get_deployment_output(deployment_id: Optional[pulumi.Input[str]] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDeploymentResult]:
     """
-    This data source provides details about a specific Deployment resource in Oracle Cloud Infrastructure API Gateway service.
-
-    Gets a deployment by identifier.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_deployment = oci.ApiGateway.get_deployment(deployment_id=oci_apigateway_deployment["test_deployment"]["id"])
-    ```
-
-
-    :param str deployment_id: The ocid of the deployment.
+    Use this data source to access information about an existing resource.
     """
     ...

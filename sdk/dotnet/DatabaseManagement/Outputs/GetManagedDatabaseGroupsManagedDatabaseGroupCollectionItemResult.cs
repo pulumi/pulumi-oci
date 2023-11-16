@@ -16,15 +16,15 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The information specified by the user about the Managed Database Group.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// The identifier of the resource. Only one of the parameters, id or name should be provided.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// A list of Managed Databases in the Managed Database Group.
         /// </summary>
@@ -32,37 +32,37 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// A filter to return only resources that match the entire name. Only one of the parameters, id or name should be provided
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The lifecycle state of a resource.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The date and time the Managed Database Group was created.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The date and time the Managed Database Group was last updated.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
 
         [OutputConstructor]
         private GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemResult(
-            string compartmentId,
+            string? compartmentId,
 
-            string description,
+            string? description,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemManagedDatabaseResult> managedDatabases,
 
-            string name,
+            string? name,
 
-            string state,
+            string? state,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated)
+            string? timeUpdated)
         {
             CompartmentId = compartmentId;
             Description = description;

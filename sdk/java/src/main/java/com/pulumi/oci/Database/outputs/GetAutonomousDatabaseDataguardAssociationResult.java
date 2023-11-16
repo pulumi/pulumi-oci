@@ -6,6 +6,8 @@ package com.pulumi.oci.Database.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAutonomousDatabaseDataguardAssociationResult {
@@ -13,12 +15,12 @@ public final class GetAutonomousDatabaseDataguardAssociationResult {
      * @return The lag time between updates to the primary database and application of the redo data on the standby database, as computed by the reporting database.  Example: `9 seconds`
      * 
      */
-    private String applyLag;
+    private @Nullable String applyLag;
     /**
      * @return The rate at which redo logs are synced between the associated databases.  Example: `180 Mb per second`
      * 
      */
-    private String applyRate;
+    private @Nullable String applyRate;
     private String autonomousDatabaseDataguardAssociationId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database that has a relationship with the peer Autonomous Database.
@@ -29,67 +31,67 @@ public final class GetAutonomousDatabaseDataguardAssociationResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Additional information about the current lifecycleState, if available.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Database.
      * 
      */
-    private String peerAutonomousDatabaseId;
+    private @Nullable String peerAutonomousDatabaseId;
     /**
      * @return The current state of the Autonomous Dataguard.
      * 
      */
-    private String peerAutonomousDatabaseLifeCycleState;
+    private @Nullable String peerAutonomousDatabaseLifeCycleState;
     /**
      * @return The role of the Autonomous Dataguard enabled Autonomous Container Database.
      * 
      */
-    private String peerRole;
+    private @Nullable String peerRole;
     /**
      * @return The protection mode of this Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
      * 
      */
-    private String protectionMode;
+    private @Nullable String protectionMode;
     /**
      * @return The role of the Autonomous Dataguard enabled Autonomous Container Database.
      * 
      */
-    private String role;
+    private @Nullable String role;
     /**
      * @return The current state of the Autonomous Dataguard.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The date and time the Data Guard association was created.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The date and time when the last role change action happened.
      * 
      */
-    private String timeLastRoleChanged;
+    private @Nullable String timeLastRoleChanged;
 
     private GetAutonomousDatabaseDataguardAssociationResult() {}
     /**
      * @return The lag time between updates to the primary database and application of the redo data on the standby database, as computed by the reporting database.  Example: `9 seconds`
      * 
      */
-    public String applyLag() {
-        return this.applyLag;
+    public Optional<String> applyLag() {
+        return Optional.ofNullable(this.applyLag);
     }
     /**
      * @return The rate at which redo logs are synced between the associated databases.  Example: `180 Mb per second`
      * 
      */
-    public String applyRate() {
-        return this.applyRate;
+    public Optional<String> applyRate() {
+        return Optional.ofNullable(this.applyRate);
     }
     public String autonomousDatabaseDataguardAssociationId() {
         return this.autonomousDatabaseDataguardAssociationId;
@@ -105,71 +107,71 @@ public final class GetAutonomousDatabaseDataguardAssociationResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Additional information about the current lifecycleState, if available.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Database.
      * 
      */
-    public String peerAutonomousDatabaseId() {
-        return this.peerAutonomousDatabaseId;
+    public Optional<String> peerAutonomousDatabaseId() {
+        return Optional.ofNullable(this.peerAutonomousDatabaseId);
     }
     /**
      * @return The current state of the Autonomous Dataguard.
      * 
      */
-    public String peerAutonomousDatabaseLifeCycleState() {
-        return this.peerAutonomousDatabaseLifeCycleState;
+    public Optional<String> peerAutonomousDatabaseLifeCycleState() {
+        return Optional.ofNullable(this.peerAutonomousDatabaseLifeCycleState);
     }
     /**
      * @return The role of the Autonomous Dataguard enabled Autonomous Container Database.
      * 
      */
-    public String peerRole() {
-        return this.peerRole;
+    public Optional<String> peerRole() {
+        return Optional.ofNullable(this.peerRole);
     }
     /**
      * @return The protection mode of this Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
      * 
      */
-    public String protectionMode() {
-        return this.protectionMode;
+    public Optional<String> protectionMode() {
+        return Optional.ofNullable(this.protectionMode);
     }
     /**
      * @return The role of the Autonomous Dataguard enabled Autonomous Container Database.
      * 
      */
-    public String role() {
-        return this.role;
+    public Optional<String> role() {
+        return Optional.ofNullable(this.role);
     }
     /**
      * @return The current state of the Autonomous Dataguard.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The date and time the Data Guard association was created.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The date and time when the last role change action happened.
      * 
      */
-    public String timeLastRoleChanged() {
-        return this.timeLastRoleChanged;
+    public Optional<String> timeLastRoleChanged() {
+        return Optional.ofNullable(this.timeLastRoleChanged);
     }
 
     public static Builder builder() {
@@ -181,20 +183,20 @@ public final class GetAutonomousDatabaseDataguardAssociationResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String applyLag;
-        private String applyRate;
+        private @Nullable String applyLag;
+        private @Nullable String applyRate;
         private String autonomousDatabaseDataguardAssociationId;
         private String autonomousDatabaseId;
-        private String id;
-        private String lifecycleDetails;
-        private String peerAutonomousDatabaseId;
-        private String peerAutonomousDatabaseLifeCycleState;
-        private String peerRole;
-        private String protectionMode;
-        private String role;
-        private String state;
-        private String timeCreated;
-        private String timeLastRoleChanged;
+        private @Nullable String id;
+        private @Nullable String lifecycleDetails;
+        private @Nullable String peerAutonomousDatabaseId;
+        private @Nullable String peerAutonomousDatabaseLifeCycleState;
+        private @Nullable String peerRole;
+        private @Nullable String protectionMode;
+        private @Nullable String role;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
+        private @Nullable String timeLastRoleChanged;
         public Builder() {}
         public Builder(GetAutonomousDatabaseDataguardAssociationResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -215,13 +217,13 @@ public final class GetAutonomousDatabaseDataguardAssociationResult {
         }
 
         @CustomType.Setter
-        public Builder applyLag(String applyLag) {
-            this.applyLag = Objects.requireNonNull(applyLag);
+        public Builder applyLag(@Nullable String applyLag) {
+            this.applyLag = applyLag;
             return this;
         }
         @CustomType.Setter
-        public Builder applyRate(String applyRate) {
-            this.applyRate = Objects.requireNonNull(applyRate);
+        public Builder applyRate(@Nullable String applyRate) {
+            this.applyRate = applyRate;
             return this;
         }
         @CustomType.Setter
@@ -235,53 +237,53 @@ public final class GetAutonomousDatabaseDataguardAssociationResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder peerAutonomousDatabaseId(String peerAutonomousDatabaseId) {
-            this.peerAutonomousDatabaseId = Objects.requireNonNull(peerAutonomousDatabaseId);
+        public Builder peerAutonomousDatabaseId(@Nullable String peerAutonomousDatabaseId) {
+            this.peerAutonomousDatabaseId = peerAutonomousDatabaseId;
             return this;
         }
         @CustomType.Setter
-        public Builder peerAutonomousDatabaseLifeCycleState(String peerAutonomousDatabaseLifeCycleState) {
-            this.peerAutonomousDatabaseLifeCycleState = Objects.requireNonNull(peerAutonomousDatabaseLifeCycleState);
+        public Builder peerAutonomousDatabaseLifeCycleState(@Nullable String peerAutonomousDatabaseLifeCycleState) {
+            this.peerAutonomousDatabaseLifeCycleState = peerAutonomousDatabaseLifeCycleState;
             return this;
         }
         @CustomType.Setter
-        public Builder peerRole(String peerRole) {
-            this.peerRole = Objects.requireNonNull(peerRole);
+        public Builder peerRole(@Nullable String peerRole) {
+            this.peerRole = peerRole;
             return this;
         }
         @CustomType.Setter
-        public Builder protectionMode(String protectionMode) {
-            this.protectionMode = Objects.requireNonNull(protectionMode);
+        public Builder protectionMode(@Nullable String protectionMode) {
+            this.protectionMode = protectionMode;
             return this;
         }
         @CustomType.Setter
-        public Builder role(String role) {
-            this.role = Objects.requireNonNull(role);
+        public Builder role(@Nullable String role) {
+            this.role = role;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeLastRoleChanged(String timeLastRoleChanged) {
-            this.timeLastRoleChanged = Objects.requireNonNull(timeLastRoleChanged);
+        public Builder timeLastRoleChanged(@Nullable String timeLastRoleChanged) {
+            this.timeLastRoleChanged = timeLastRoleChanged;
             return this;
         }
         public GetAutonomousDatabaseDataguardAssociationResult build() {

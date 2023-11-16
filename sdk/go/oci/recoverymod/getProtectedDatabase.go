@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Protected Database resource in Oracle Cloud Infrastructure Recovery service.
@@ -60,52 +59,52 @@ type LookupProtectedDatabaseArgs struct {
 // A collection of values returned by getProtectedDatabase.
 type LookupProtectedDatabaseResult struct {
 	// The OCID of the compartment that contains the protected database.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The OCID of the protected database.
-	DatabaseId string `pulumi:"databaseId"`
+	DatabaseId *string `pulumi:"databaseId"`
 	// The size of the protected database. XS - Less than 5GB, S - 5GB to 50GB, M - 50GB to 500GB, L - 500GB to 1TB, XL - 1TB to 5TB, XXL - Greater than 5TB.
-	DatabaseSize string `pulumi:"databaseSize"`
+	DatabaseSize *string `pulumi:"databaseSize"`
 	// The dbUniqueName for the protected database in Recovery Service. You cannot change the unique name.
-	DbUniqueName string `pulumi:"dbUniqueName"`
+	DbUniqueName *string `pulumi:"dbUniqueName"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The protected database name. You can change the displayName. Avoid entering confidential information.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Indicates the protection status of the database. Allowed values are:
 	// * HEALTHY
 	// * WARNING
 	// * ALERT
-	Health string `pulumi:"health"`
+	Health *string `pulumi:"health"`
 	// A message describing the current health of the protected database.
-	HealthDetails string `pulumi:"healthDetails"`
+	HealthDetails *string `pulumi:"healthDetails"`
 	// The OCID of the protected database.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Indicates whether the protected database is created by Recovery Service or created manually. Set to <b>TRUE</b> for a service-defined protected database. When you enable the OCI-managed automatic backups option for a database and set Recovery Service as the backup destination, then Recovery Service creates the associated protected database resource. Set to <b>FALSE</b> for a user-defined protected database.
-	IsReadOnlyResource bool `pulumi:"isReadOnlyResource"`
+	IsReadOnlyResource *bool `pulumi:"isReadOnlyResource"`
 	// The value TRUE indicates that the protected database is configured to use Real-time data protection, and redo-data is sent from the protected database to Recovery Service. Real-time data protection substantially reduces the window of potential data loss that exists between successive archived redo log backups. For this to be effective, additional configuration is needed on client side.
-	IsRedoLogsShipped bool `pulumi:"isRedoLogsShipped"`
+	IsRedoLogsShipped *bool `pulumi:"isRedoLogsShipped"`
 	// Detailed description about the current lifecycle state of the protected database. For example, it can be used to provide actionable information for a resource in a Failed state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Backup performance and storage utilization metrics for the protected database.
 	Metrics             []GetProtectedDatabaseMetric `pulumi:"metrics"`
-	Password            string                       `pulumi:"password"`
+	Password            *string                      `pulumi:"password"`
 	ProtectedDatabaseId string                       `pulumi:"protectedDatabaseId"`
 	// The OCID of the protection policy associated with the protected database.
-	ProtectionPolicyId string `pulumi:"protectionPolicyId"`
+	ProtectionPolicyId *string `pulumi:"protectionPolicyId"`
 	// List of recovery service subnet resources associated with the protected database.
 	RecoveryServiceSubnets []GetProtectedDatabaseRecoveryServiceSubnet `pulumi:"recoveryServiceSubnets"`
 	// The current state of the Protected Database.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// An RFC3339 formatted datetime string that indicates the created time for a protected database. For example: '2020-05-22T21:10:29.600Z'
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// An RFC3339 formatted datetime string that indicates the last updated time for a protected database. For example: '2020-05-22T21:10:29.600Z'
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// The virtual private catalog (VPC) user credentials that authenticates the protected database to access Recovery Service.
-	VpcUserName string `pulumi:"vpcUserName"`
+	VpcUserName *string `pulumi:"vpcUserName"`
 }
 
 func LookupProtectedDatabaseOutput(ctx *pulumi.Context, args LookupProtectedDatabaseOutputArgs, opts ...pulumi.InvokeOption) LookupProtectedDatabaseResultOutput {
@@ -146,30 +145,24 @@ func (o LookupProtectedDatabaseResultOutput) ToLookupProtectedDatabaseResultOutp
 	return o
 }
 
-func (o LookupProtectedDatabaseResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupProtectedDatabaseResult] {
-	return pulumix.Output[LookupProtectedDatabaseResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment that contains the protected database.
-func (o LookupProtectedDatabaseResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupProtectedDatabaseResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupProtectedDatabaseResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupProtectedDatabaseResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the protected database.
-func (o LookupProtectedDatabaseResultOutput) DatabaseId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupProtectedDatabaseResult) string { return v.DatabaseId }).(pulumi.StringOutput)
+func (o LookupProtectedDatabaseResultOutput) DatabaseId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupProtectedDatabaseResult) *string { return v.DatabaseId }).(pulumi.StringPtrOutput)
 }
 
 // The size of the protected database. XS - Less than 5GB, S - 5GB to 50GB, M - 50GB to 500GB, L - 500GB to 1TB, XL - 1TB to 5TB, XXL - Greater than 5TB.
-func (o LookupProtectedDatabaseResultOutput) DatabaseSize() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupProtectedDatabaseResult) string { return v.DatabaseSize }).(pulumi.StringOutput)
+func (o LookupProtectedDatabaseResultOutput) DatabaseSize() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupProtectedDatabaseResult) *string { return v.DatabaseSize }).(pulumi.StringPtrOutput)
 }
 
 // The dbUniqueName for the protected database in Recovery Service. You cannot change the unique name.
-func (o LookupProtectedDatabaseResultOutput) DbUniqueName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupProtectedDatabaseResult) string { return v.DbUniqueName }).(pulumi.StringOutput)
+func (o LookupProtectedDatabaseResultOutput) DbUniqueName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupProtectedDatabaseResult) *string { return v.DbUniqueName }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
@@ -178,8 +171,8 @@ func (o LookupProtectedDatabaseResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // The protected database name. You can change the displayName. Avoid entering confidential information.
-func (o LookupProtectedDatabaseResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupProtectedDatabaseResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupProtectedDatabaseResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupProtectedDatabaseResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -191,33 +184,33 @@ func (o LookupProtectedDatabaseResultOutput) FreeformTags() pulumi.MapOutput {
 // * HEALTHY
 // * WARNING
 // * ALERT
-func (o LookupProtectedDatabaseResultOutput) Health() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupProtectedDatabaseResult) string { return v.Health }).(pulumi.StringOutput)
+func (o LookupProtectedDatabaseResultOutput) Health() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupProtectedDatabaseResult) *string { return v.Health }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current health of the protected database.
-func (o LookupProtectedDatabaseResultOutput) HealthDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupProtectedDatabaseResult) string { return v.HealthDetails }).(pulumi.StringOutput)
+func (o LookupProtectedDatabaseResultOutput) HealthDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupProtectedDatabaseResult) *string { return v.HealthDetails }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the protected database.
-func (o LookupProtectedDatabaseResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupProtectedDatabaseResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupProtectedDatabaseResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupProtectedDatabaseResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Indicates whether the protected database is created by Recovery Service or created manually. Set to <b>TRUE</b> for a service-defined protected database. When you enable the OCI-managed automatic backups option for a database and set Recovery Service as the backup destination, then Recovery Service creates the associated protected database resource. Set to <b>FALSE</b> for a user-defined protected database.
-func (o LookupProtectedDatabaseResultOutput) IsReadOnlyResource() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupProtectedDatabaseResult) bool { return v.IsReadOnlyResource }).(pulumi.BoolOutput)
+func (o LookupProtectedDatabaseResultOutput) IsReadOnlyResource() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupProtectedDatabaseResult) *bool { return v.IsReadOnlyResource }).(pulumi.BoolPtrOutput)
 }
 
 // The value TRUE indicates that the protected database is configured to use Real-time data protection, and redo-data is sent from the protected database to Recovery Service. Real-time data protection substantially reduces the window of potential data loss that exists between successive archived redo log backups. For this to be effective, additional configuration is needed on client side.
-func (o LookupProtectedDatabaseResultOutput) IsRedoLogsShipped() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupProtectedDatabaseResult) bool { return v.IsRedoLogsShipped }).(pulumi.BoolOutput)
+func (o LookupProtectedDatabaseResultOutput) IsRedoLogsShipped() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupProtectedDatabaseResult) *bool { return v.IsRedoLogsShipped }).(pulumi.BoolPtrOutput)
 }
 
 // Detailed description about the current lifecycle state of the protected database. For example, it can be used to provide actionable information for a resource in a Failed state.
-func (o LookupProtectedDatabaseResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupProtectedDatabaseResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupProtectedDatabaseResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupProtectedDatabaseResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // Backup performance and storage utilization metrics for the protected database.
@@ -225,8 +218,8 @@ func (o LookupProtectedDatabaseResultOutput) Metrics() GetProtectedDatabaseMetri
 	return o.ApplyT(func(v LookupProtectedDatabaseResult) []GetProtectedDatabaseMetric { return v.Metrics }).(GetProtectedDatabaseMetricArrayOutput)
 }
 
-func (o LookupProtectedDatabaseResultOutput) Password() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupProtectedDatabaseResult) string { return v.Password }).(pulumi.StringOutput)
+func (o LookupProtectedDatabaseResultOutput) Password() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupProtectedDatabaseResult) *string { return v.Password }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupProtectedDatabaseResultOutput) ProtectedDatabaseId() pulumi.StringOutput {
@@ -234,8 +227,8 @@ func (o LookupProtectedDatabaseResultOutput) ProtectedDatabaseId() pulumi.String
 }
 
 // The OCID of the protection policy associated with the protected database.
-func (o LookupProtectedDatabaseResultOutput) ProtectionPolicyId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupProtectedDatabaseResult) string { return v.ProtectionPolicyId }).(pulumi.StringOutput)
+func (o LookupProtectedDatabaseResultOutput) ProtectionPolicyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupProtectedDatabaseResult) *string { return v.ProtectionPolicyId }).(pulumi.StringPtrOutput)
 }
 
 // List of recovery service subnet resources associated with the protected database.
@@ -246,8 +239,8 @@ func (o LookupProtectedDatabaseResultOutput) RecoveryServiceSubnets() GetProtect
 }
 
 // The current state of the Protected Database.
-func (o LookupProtectedDatabaseResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupProtectedDatabaseResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupProtectedDatabaseResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupProtectedDatabaseResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
@@ -256,18 +249,18 @@ func (o LookupProtectedDatabaseResultOutput) SystemTags() pulumi.MapOutput {
 }
 
 // An RFC3339 formatted datetime string that indicates the created time for a protected database. For example: '2020-05-22T21:10:29.600Z'
-func (o LookupProtectedDatabaseResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupProtectedDatabaseResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupProtectedDatabaseResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupProtectedDatabaseResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // An RFC3339 formatted datetime string that indicates the last updated time for a protected database. For example: '2020-05-22T21:10:29.600Z'
-func (o LookupProtectedDatabaseResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupProtectedDatabaseResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupProtectedDatabaseResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupProtectedDatabaseResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // The virtual private catalog (VPC) user credentials that authenticates the protected database to access Recovery Service.
-func (o LookupProtectedDatabaseResultOutput) VpcUserName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupProtectedDatabaseResult) string { return v.VpcUserName }).(pulumi.StringOutput)
+func (o LookupProtectedDatabaseResultOutput) VpcUserName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupProtectedDatabaseResult) *string { return v.VpcUserName }).(pulumi.StringPtrOutput)
 }
 
 func init() {

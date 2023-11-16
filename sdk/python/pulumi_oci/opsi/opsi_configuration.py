@@ -30,22 +30,6 @@ class OpsiConfigurationArgs:
                  system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None):
         """
         The set of arguments for constructing a OpsiConfiguration resource.
-        :param pulumi.Input[str] opsi_config_type: (Updatable) OPSI configuration type.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] config_item_custom_statuses: Specifies whether only customized configuration items or only non-customized configuration items or both have to be returned. By default only customized configuration items are returned.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] config_item_fields: Specifies the fields to return in a config item summary.
-        :param pulumi.Input[Sequence[pulumi.Input['OpsiConfigurationConfigItemArgs']]] config_items: (Updatable) Array of configuration items with custom values. All and only configuration items requiring custom values should be part of this array.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] config_items_applicable_contexts: Returns the configuration items filtered by applicable contexts sent in this param. By default configuration items of all applicable contexts are returned.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) Description of OPSI configuration.
-        :param pulumi.Input[str] display_name: (Updatable) User-friendly display name for the OPSI configuration. The name does not have to be unique.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] opsi_config_fields: Optional fields to return as part of OpsiConfiguration object. Unless requested, these fields will not be returned by default.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: (Updatable) System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "opsi_config_type", opsi_config_type)
         if compartment_id is not None:
@@ -74,9 +58,6 @@ class OpsiConfigurationArgs:
     @property
     @pulumi.getter(name="opsiConfigType")
     def opsi_config_type(self) -> pulumi.Input[str]:
-        """
-        (Updatable) OPSI configuration type.
-        """
         return pulumi.get(self, "opsi_config_type")
 
     @opsi_config_type.setter
@@ -86,9 +67,6 @@ class OpsiConfigurationArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -98,9 +76,6 @@ class OpsiConfigurationArgs:
     @property
     @pulumi.getter(name="configItemCustomStatuses")
     def config_item_custom_statuses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        Specifies whether only customized configuration items or only non-customized configuration items or both have to be returned. By default only customized configuration items are returned.
-        """
         return pulumi.get(self, "config_item_custom_statuses")
 
     @config_item_custom_statuses.setter
@@ -110,9 +85,6 @@ class OpsiConfigurationArgs:
     @property
     @pulumi.getter(name="configItemFields")
     def config_item_fields(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        Specifies the fields to return in a config item summary.
-        """
         return pulumi.get(self, "config_item_fields")
 
     @config_item_fields.setter
@@ -122,9 +94,6 @@ class OpsiConfigurationArgs:
     @property
     @pulumi.getter(name="configItems")
     def config_items(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['OpsiConfigurationConfigItemArgs']]]]:
-        """
-        (Updatable) Array of configuration items with custom values. All and only configuration items requiring custom values should be part of this array.
-        """
         return pulumi.get(self, "config_items")
 
     @config_items.setter
@@ -134,9 +103,6 @@ class OpsiConfigurationArgs:
     @property
     @pulumi.getter(name="configItemsApplicableContexts")
     def config_items_applicable_contexts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        Returns the configuration items filtered by applicable contexts sent in this param. By default configuration items of all applicable contexts are returned.
-        """
         return pulumi.get(self, "config_items_applicable_contexts")
 
     @config_items_applicable_contexts.setter
@@ -146,9 +112,6 @@ class OpsiConfigurationArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -158,9 +121,6 @@ class OpsiConfigurationArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Description of OPSI configuration.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -170,9 +130,6 @@ class OpsiConfigurationArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) User-friendly display name for the OPSI configuration. The name does not have to be unique.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -182,9 +139,6 @@ class OpsiConfigurationArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -194,9 +148,6 @@ class OpsiConfigurationArgs:
     @property
     @pulumi.getter(name="opsiConfigFields")
     def opsi_config_fields(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        Optional fields to return as part of OpsiConfiguration object. Unless requested, these fields will not be returned by default.
-        """
         return pulumi.get(self, "opsi_config_fields")
 
     @opsi_config_fields.setter
@@ -206,13 +157,6 @@ class OpsiConfigurationArgs:
     @property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
@@ -241,26 +185,6 @@ class _OpsiConfigurationState:
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering OpsiConfiguration resources.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] config_item_custom_statuses: Specifies whether only customized configuration items or only non-customized configuration items or both have to be returned. By default only customized configuration items are returned.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] config_item_fields: Specifies the fields to return in a config item summary.
-        :param pulumi.Input[Sequence[pulumi.Input['OpsiConfigurationConfigItemArgs']]] config_items: (Updatable) Array of configuration items with custom values. All and only configuration items requiring custom values should be part of this array.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] config_items_applicable_contexts: Returns the configuration items filtered by applicable contexts sent in this param. By default configuration items of all applicable contexts are returned.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) Description of OPSI configuration.
-        :param pulumi.Input[str] display_name: (Updatable) User-friendly display name for the OPSI configuration. The name does not have to be unique.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] opsi_config_fields: Optional fields to return as part of OpsiConfiguration object. Unless requested, these fields will not be returned by default.
-        :param pulumi.Input[str] opsi_config_type: (Updatable) OPSI configuration type.
-        :param pulumi.Input[str] state: OPSI configuration resource lifecycle state.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: (Updatable) System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] time_created: The time at which the resource was first created. An RFC3339 formatted datetime string
-        :param pulumi.Input[str] time_updated: The time at which the resource was last updated. An RFC3339 formatted datetime string
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -298,9 +222,6 @@ class _OpsiConfigurationState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -310,9 +231,6 @@ class _OpsiConfigurationState:
     @property
     @pulumi.getter(name="configItemCustomStatuses")
     def config_item_custom_statuses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        Specifies whether only customized configuration items or only non-customized configuration items or both have to be returned. By default only customized configuration items are returned.
-        """
         return pulumi.get(self, "config_item_custom_statuses")
 
     @config_item_custom_statuses.setter
@@ -322,9 +240,6 @@ class _OpsiConfigurationState:
     @property
     @pulumi.getter(name="configItemFields")
     def config_item_fields(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        Specifies the fields to return in a config item summary.
-        """
         return pulumi.get(self, "config_item_fields")
 
     @config_item_fields.setter
@@ -334,9 +249,6 @@ class _OpsiConfigurationState:
     @property
     @pulumi.getter(name="configItems")
     def config_items(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['OpsiConfigurationConfigItemArgs']]]]:
-        """
-        (Updatable) Array of configuration items with custom values. All and only configuration items requiring custom values should be part of this array.
-        """
         return pulumi.get(self, "config_items")
 
     @config_items.setter
@@ -346,9 +258,6 @@ class _OpsiConfigurationState:
     @property
     @pulumi.getter(name="configItemsApplicableContexts")
     def config_items_applicable_contexts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        Returns the configuration items filtered by applicable contexts sent in this param. By default configuration items of all applicable contexts are returned.
-        """
         return pulumi.get(self, "config_items_applicable_contexts")
 
     @config_items_applicable_contexts.setter
@@ -358,9 +267,6 @@ class _OpsiConfigurationState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -370,9 +276,6 @@ class _OpsiConfigurationState:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Description of OPSI configuration.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -382,9 +285,6 @@ class _OpsiConfigurationState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) User-friendly display name for the OPSI configuration. The name does not have to be unique.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -394,9 +294,6 @@ class _OpsiConfigurationState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -406,9 +303,6 @@ class _OpsiConfigurationState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -418,9 +312,6 @@ class _OpsiConfigurationState:
     @property
     @pulumi.getter(name="opsiConfigFields")
     def opsi_config_fields(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        Optional fields to return as part of OpsiConfiguration object. Unless requested, these fields will not be returned by default.
-        """
         return pulumi.get(self, "opsi_config_fields")
 
     @opsi_config_fields.setter
@@ -430,9 +321,6 @@ class _OpsiConfigurationState:
     @property
     @pulumi.getter(name="opsiConfigType")
     def opsi_config_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) OPSI configuration type.
-        """
         return pulumi.get(self, "opsi_config_type")
 
     @opsi_config_type.setter
@@ -442,9 +330,6 @@ class _OpsiConfigurationState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        OPSI configuration resource lifecycle state.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -454,13 +339,6 @@ class _OpsiConfigurationState:
     @property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
@@ -470,9 +348,6 @@ class _OpsiConfigurationState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time at which the resource was first created. An RFC3339 formatted datetime string
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -482,9 +357,6 @@ class _OpsiConfigurationState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time at which the resource was last updated. An RFC3339 formatted datetime string
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -511,65 +383,9 @@ class OpsiConfiguration(pulumi.CustomResource):
                  system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  __props__=None):
         """
-        This resource provides the Opsi Configuration resource in Oracle Cloud Infrastructure Opsi service.
-
-        Create an OPSI configuration resource.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_opsi_configuration = oci.opsi.OpsiConfiguration("testOpsiConfiguration",
-            opsi_config_type=var["opsi_configuration_opsi_config_type"],
-            compartment_id=var["compartment_id"],
-            config_item_custom_statuses=var["opsi_configuration_config_item_custom_status"],
-            config_item_fields=var["opsi_configuration_config_item_field"],
-            config_items=[oci.opsi.OpsiConfigurationConfigItemArgs(
-                config_item_type=var["opsi_configuration_config_items_config_item_type"],
-                name=var["opsi_configuration_config_items_name"],
-                value=var["opsi_configuration_config_items_value"],
-            )],
-            config_items_applicable_contexts=var["opsi_configuration_config_items_applicable_context"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            description=var["opsi_configuration_description"],
-            display_name=var["opsi_configuration_display_name"],
-            freeform_tags={
-                "bar-key": "value",
-            },
-            opsi_config_fields=var["opsi_configuration_opsi_config_field"],
-            system_tags=var["opsi_configuration_system_tags"])
-        ```
-
-        ## Import
-
-        OpsiConfigurations can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Opsi/opsiConfiguration:OpsiConfiguration test_opsi_configuration "id"
-        ```
-
+        Create a OpsiConfiguration resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] config_item_custom_statuses: Specifies whether only customized configuration items or only non-customized configuration items or both have to be returned. By default only customized configuration items are returned.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] config_item_fields: Specifies the fields to return in a config item summary.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['OpsiConfigurationConfigItemArgs']]]] config_items: (Updatable) Array of configuration items with custom values. All and only configuration items requiring custom values should be part of this array.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] config_items_applicable_contexts: Returns the configuration items filtered by applicable contexts sent in this param. By default configuration items of all applicable contexts are returned.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) Description of OPSI configuration.
-        :param pulumi.Input[str] display_name: (Updatable) User-friendly display name for the OPSI configuration. The name does not have to be unique.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] opsi_config_fields: Optional fields to return as part of OpsiConfiguration object. Unless requested, these fields will not be returned by default.
-        :param pulumi.Input[str] opsi_config_type: (Updatable) OPSI configuration type.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: (Updatable) System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -578,47 +394,7 @@ class OpsiConfiguration(pulumi.CustomResource):
                  args: OpsiConfigurationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Opsi Configuration resource in Oracle Cloud Infrastructure Opsi service.
-
-        Create an OPSI configuration resource.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_opsi_configuration = oci.opsi.OpsiConfiguration("testOpsiConfiguration",
-            opsi_config_type=var["opsi_configuration_opsi_config_type"],
-            compartment_id=var["compartment_id"],
-            config_item_custom_statuses=var["opsi_configuration_config_item_custom_status"],
-            config_item_fields=var["opsi_configuration_config_item_field"],
-            config_items=[oci.opsi.OpsiConfigurationConfigItemArgs(
-                config_item_type=var["opsi_configuration_config_items_config_item_type"],
-                name=var["opsi_configuration_config_items_name"],
-                value=var["opsi_configuration_config_items_value"],
-            )],
-            config_items_applicable_contexts=var["opsi_configuration_config_items_applicable_context"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            description=var["opsi_configuration_description"],
-            display_name=var["opsi_configuration_display_name"],
-            freeform_tags={
-                "bar-key": "value",
-            },
-            opsi_config_fields=var["opsi_configuration_opsi_config_field"],
-            system_tags=var["opsi_configuration_system_tags"])
-        ```
-
-        ## Import
-
-        OpsiConfigurations can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Opsi/opsiConfiguration:OpsiConfiguration test_opsi_configuration "id"
-        ```
-
+        Create a OpsiConfiguration resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param OpsiConfigurationArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -706,26 +482,6 @@ class OpsiConfiguration(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] config_item_custom_statuses: Specifies whether only customized configuration items or only non-customized configuration items or both have to be returned. By default only customized configuration items are returned.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] config_item_fields: Specifies the fields to return in a config item summary.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['OpsiConfigurationConfigItemArgs']]]] config_items: (Updatable) Array of configuration items with custom values. All and only configuration items requiring custom values should be part of this array.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] config_items_applicable_contexts: Returns the configuration items filtered by applicable contexts sent in this param. By default configuration items of all applicable contexts are returned.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) Description of OPSI configuration.
-        :param pulumi.Input[str] display_name: (Updatable) User-friendly display name for the OPSI configuration. The name does not have to be unique.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] opsi_config_fields: Optional fields to return as part of OpsiConfiguration object. Unless requested, these fields will not be returned by default.
-        :param pulumi.Input[str] opsi_config_type: (Updatable) OPSI configuration type.
-        :param pulumi.Input[str] state: OPSI configuration resource lifecycle state.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: (Updatable) System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] time_created: The time at which the resource was first created. An RFC3339 formatted datetime string
-        :param pulumi.Input[str] time_updated: The time at which the resource was last updated. An RFC3339 formatted datetime string
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -751,133 +507,81 @@ class OpsiConfiguration(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
+    def compartment_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="configItemCustomStatuses")
     def config_item_custom_statuses(self) -> pulumi.Output[Optional[Sequence[str]]]:
-        """
-        Specifies whether only customized configuration items or only non-customized configuration items or both have to be returned. By default only customized configuration items are returned.
-        """
         return pulumi.get(self, "config_item_custom_statuses")
 
     @property
     @pulumi.getter(name="configItemFields")
     def config_item_fields(self) -> pulumi.Output[Optional[Sequence[str]]]:
-        """
-        Specifies the fields to return in a config item summary.
-        """
         return pulumi.get(self, "config_item_fields")
 
     @property
     @pulumi.getter(name="configItems")
-    def config_items(self) -> pulumi.Output[Sequence['outputs.OpsiConfigurationConfigItem']]:
-        """
-        (Updatable) Array of configuration items with custom values. All and only configuration items requiring custom values should be part of this array.
-        """
+    def config_items(self) -> pulumi.Output[Optional[Sequence['outputs.OpsiConfigurationConfigItem']]]:
         return pulumi.get(self, "config_items")
 
     @property
     @pulumi.getter(name="configItemsApplicableContexts")
     def config_items_applicable_contexts(self) -> pulumi.Output[Optional[Sequence[str]]]:
-        """
-        Returns the configuration items filtered by applicable contexts sent in this param. By default configuration items of all applicable contexts are returned.
-        """
         return pulumi.get(self, "config_items_applicable_contexts")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Description of OPSI configuration.
-        """
+    def description(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) User-friendly display name for the OPSI configuration. The name does not have to be unique.
-        """
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="opsiConfigFields")
     def opsi_config_fields(self) -> pulumi.Output[Optional[Sequence[str]]]:
-        """
-        Optional fields to return as part of OpsiConfiguration object. Unless requested, these fields will not be returned by default.
-        """
         return pulumi.get(self, "opsi_config_fields")
 
     @property
     @pulumi.getter(name="opsiConfigType")
     def opsi_config_type(self) -> pulumi.Output[str]:
-        """
-        (Updatable) OPSI configuration type.
-        """
         return pulumi.get(self, "opsi_config_type")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        OPSI configuration resource lifecycle state.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
+    def system_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The time at which the resource was first created. An RFC3339 formatted datetime string
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The time at which the resource was last updated. An RFC3339 formatted datetime string
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 

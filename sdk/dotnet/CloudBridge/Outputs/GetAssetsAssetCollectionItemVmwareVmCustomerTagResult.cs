@@ -16,17 +16,17 @@ namespace Pulumi.Oci.CloudBridge.Outputs
         /// <summary>
         /// The tag description.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// The tag name.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
 
         [OutputConstructor]
         private GetAssetsAssetCollectionItemVmwareVmCustomerTagResult(
-            string description,
+            string? description,
 
-            string name)
+            string? name)
         {
             Description = description;
             Name = name;

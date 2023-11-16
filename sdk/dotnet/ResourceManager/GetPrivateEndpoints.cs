@@ -181,7 +181,7 @@ namespace Pulumi.Oci.ResourceManager
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The list of private_endpoint_collection.
         /// </summary>
@@ -200,7 +200,7 @@ namespace Pulumi.Oci.ResourceManager
 
             ImmutableArray<Outputs.GetPrivateEndpointsFilterResult> filters,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetPrivateEndpointsPrivateEndpointCollectionResult> privateEndpointCollections,
 

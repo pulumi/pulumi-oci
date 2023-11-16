@@ -16,17 +16,17 @@ namespace Pulumi.Oci.ApiGateway.Outputs
         /// <summary>
         /// The unit of time over which rate limits are calculated. Example: `SECOND`
         /// </summary>
-        public readonly string Unit;
+        public readonly string? Unit;
         /// <summary>
         /// The number of requests that can be made per time period.
         /// </summary>
-        public readonly int Value;
+        public readonly int? Value;
 
         [OutputConstructor]
         private GetUsagePlanEntitlementRateLimitResult(
-            string unit,
+            string? unit,
 
-            int value)
+            int? value)
         {
             Unit = unit;
             Value = value;

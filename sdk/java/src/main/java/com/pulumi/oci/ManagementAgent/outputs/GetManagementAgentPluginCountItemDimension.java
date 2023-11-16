@@ -6,6 +6,8 @@ package com.pulumi.oci.ManagementAgent.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagementAgentPluginCountItemDimension {
@@ -13,27 +15,27 @@ public final class GetManagementAgentPluginCountItemDimension {
      * @return Management Agent Plugin Display Name
      * 
      */
-    private String pluginDisplayName;
+    private @Nullable String pluginDisplayName;
     /**
      * @return Management Agent Plugin Name
      * 
      */
-    private String pluginName;
+    private @Nullable String pluginName;
 
     private GetManagementAgentPluginCountItemDimension() {}
     /**
      * @return Management Agent Plugin Display Name
      * 
      */
-    public String pluginDisplayName() {
-        return this.pluginDisplayName;
+    public Optional<String> pluginDisplayName() {
+        return Optional.ofNullable(this.pluginDisplayName);
     }
     /**
      * @return Management Agent Plugin Name
      * 
      */
-    public String pluginName() {
-        return this.pluginName;
+    public Optional<String> pluginName() {
+        return Optional.ofNullable(this.pluginName);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetManagementAgentPluginCountItemDimension {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String pluginDisplayName;
-        private String pluginName;
+        private @Nullable String pluginDisplayName;
+        private @Nullable String pluginName;
         public Builder() {}
         public Builder(GetManagementAgentPluginCountItemDimension defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetManagementAgentPluginCountItemDimension {
         }
 
         @CustomType.Setter
-        public Builder pluginDisplayName(String pluginDisplayName) {
-            this.pluginDisplayName = Objects.requireNonNull(pluginDisplayName);
+        public Builder pluginDisplayName(@Nullable String pluginDisplayName) {
+            this.pluginDisplayName = pluginDisplayName;
             return this;
         }
         @CustomType.Setter
-        public Builder pluginName(String pluginName) {
-            this.pluginName = Objects.requireNonNull(pluginName);
+        public Builder pluginName(@Nullable String pluginName) {
+            this.pluginName = pluginName;
             return this;
         }
         public GetManagementAgentPluginCountItemDimension build() {

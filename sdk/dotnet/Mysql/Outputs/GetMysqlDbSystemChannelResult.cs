@@ -16,31 +16,31 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// <summary>
         /// The OCID of the compartment the DB System belongs in.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// The user-friendly name for the DB System. It does not have to be unique.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The OCID of the DB System.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Whether the Channel has been enabled by the user.
         /// </summary>
-        public readonly bool IsEnabled;
+        public readonly bool? IsEnabled;
         /// <summary>
         /// Additional information about the current lifecycleState.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// Parameters detailing how to provision the initial data of the DB System.
         /// </summary>
@@ -48,7 +48,7 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// <summary>
         /// The current state of the DB System.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// Details about the Channel target.
         /// </summary>
@@ -56,37 +56,37 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// <summary>
         /// The date and time the DB System was created.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The time the DB System was last updated.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
 
         [OutputConstructor]
         private GetMysqlDbSystemChannelResult(
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            bool isEnabled,
+            bool? isEnabled,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
             ImmutableArray<Outputs.GetMysqlDbSystemChannelSourceResult> sources,
 
-            string state,
+            string? state,
 
             ImmutableArray<Outputs.GetMysqlDbSystemChannelTargetResult> targets,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated)
+            string? timeUpdated)
         {
             CompartmentId = compartmentId;
             DefinedTags = definedTags;

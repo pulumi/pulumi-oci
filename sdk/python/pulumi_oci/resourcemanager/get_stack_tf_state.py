@@ -34,7 +34,7 @@ class GetStackTfStateResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -66,17 +66,7 @@ def get_stack_tf_state(local_path: Optional[str] = None,
                        stack_id: Optional[str] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetStackTfStateResult:
     """
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_stack_tf_state = oci.ResourceManager.get_stack_tf_state(stack_id=oci_resourcemanager_stack["test_stack"]["id"])
-    ```
-
-
-    :param str stack_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stack.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['localPath'] = local_path
@@ -95,16 +85,6 @@ def get_stack_tf_state_output(local_path: Optional[pulumi.Input[str]] = None,
                               stack_id: Optional[pulumi.Input[str]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetStackTfStateResult]:
     """
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_stack_tf_state = oci.ResourceManager.get_stack_tf_state(stack_id=oci_resourcemanager_stack["test_stack"]["id"])
-    ```
-
-
-    :param str stack_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stack.
+    Use this data source to access information about an existing resource.
     """
     ...

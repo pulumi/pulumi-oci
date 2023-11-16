@@ -99,19 +99,19 @@ export class User extends pulumi.CustomResource {
     /**
      * Properties indicating how the user is allowed to authenticate.
      */
-    public /*out*/ readonly capabilities!: pulumi.Output<outputs.Identity.UserCapability[]>;
+    public /*out*/ readonly capabilities!: pulumi.Output<outputs.Identity.UserCapability[] | undefined>;
     /**
      * The OCID of the tenancy containing the user.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    public readonly compartmentId!: pulumi.Output<string | undefined>;
     /**
      * DB username of the DB credential. Has to be unique across the tenancy.
      */
-    public /*out*/ readonly dbUserName!: pulumi.Output<string>;
+    public /*out*/ readonly dbUserName!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) The description you assign to the user during creation. Does not have to be unique, and it's changeable.
      */
@@ -119,34 +119,34 @@ export class User extends pulumi.CustomResource {
     /**
      * (Updatable) The email you assign to the user. Has to be unique across the tenancy.
      */
-    public readonly email!: pulumi.Output<string>;
+    public readonly email!: pulumi.Output<string | undefined>;
     /**
      * Whether the email address has been validated.
      */
-    public /*out*/ readonly emailVerified!: pulumi.Output<boolean>;
+    public /*out*/ readonly emailVerified!: pulumi.Output<boolean | undefined>;
     /**
      * Identifier of the user in the identity provider
      */
-    public /*out*/ readonly externalIdentifier!: pulumi.Output<string>;
+    public /*out*/ readonly externalIdentifier!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The OCID of the `IdentityProvider` this user belongs to.
      */
-    public /*out*/ readonly identityProviderId!: pulumi.Output<string>;
+    public /*out*/ readonly identityProviderId!: pulumi.Output<string | undefined>;
     /**
      * Returned only if the user's `lifecycleState` is INACTIVE. A 16-bit value showing the reason why the user is inactive:
      * * bit 0: SUSPENDED (reserved for future use)
      * * bit 1: DISABLED (reserved for future use)
      * * bit 2: BLOCKED (the user has exceeded the maximum number of failed login attempts for the Console)
      */
-    public /*out*/ readonly inactiveState!: pulumi.Output<string>;
+    public /*out*/ readonly inactiveState!: pulumi.Output<string | undefined>;
     /**
      * The date and time of when the user most recently logged in the format defined by RFC3339 (ex. `2016-08-25T21:10:29.600Z`). If there is no login history, this field is null.
      */
-    public /*out*/ readonly lastSuccessfulLoginTime!: pulumi.Output<string>;
+    public /*out*/ readonly lastSuccessfulLoginTime!: pulumi.Output<string | undefined>;
     /**
      * The name you assign to the user during creation. This is the user's login for the Console. The name must be unique across all users in the tenancy and cannot be changed. 
      *
@@ -158,15 +158,15 @@ export class User extends pulumi.CustomResource {
     /**
      * The date and time of when the user most recently logged in the format defined by RFC3339 (ex. `2016-08-25T21:10:29.600Z`). If there is no login history, this field is null.
      */
-    public /*out*/ readonly previousSuccessfulLoginTime!: pulumi.Output<string>;
+    public /*out*/ readonly previousSuccessfulLoginTime!: pulumi.Output<string | undefined>;
     /**
      * The user's current state.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * Date and time the user was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a User resource with the given unique name, arguments, and options.

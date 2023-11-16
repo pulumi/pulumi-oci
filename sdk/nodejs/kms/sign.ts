@@ -75,7 +75,7 @@ export class Sign extends pulumi.CustomResource {
     /**
      * The OCID of the key version used to sign the message.
      */
-    public readonly keyVersionId!: pulumi.Output<string>;
+    public readonly keyVersionId!: pulumi.Output<string | undefined>;
     /**
      * The base64-encoded binary data object denoting the message or message digest to sign. You can have a message up to 4096 bytes in size. To sign a larger message, provide the message digest.
      */
@@ -83,11 +83,11 @@ export class Sign extends pulumi.CustomResource {
     /**
      * Denotes whether the value of the message parameter is a raw message or a message digest. The default value, `RAW`, indicates a message. To indicate a message digest, use `DIGEST`.
      */
-    public readonly messageType!: pulumi.Output<string>;
+    public readonly messageType!: pulumi.Output<string | undefined>;
     /**
      * The base64-encoded binary data object denoting the cryptographic signature generated for the message or message digest.
      */
-    public /*out*/ readonly signature!: pulumi.Output<string>;
+    public /*out*/ readonly signature!: pulumi.Output<string | undefined>;
     /**
      * The algorithm to use to sign the message or message digest. For RSA keys, supported signature schemes include PKCS #1 and RSASSA-PSS, along with different hashing algorithms. For ECDSA keys, ECDSA is the supported signature scheme with different hashing algorithms. When you pass a message digest for signing, ensure that you specify the same hashing algorithm as used when creating the message digest. 
      *

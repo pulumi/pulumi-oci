@@ -49,11 +49,11 @@ export interface GetAlertPolicyRuleResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Array of alert policy rules summary
      */
-    readonly items: outputs.DataSafe.GetAlertPolicyRuleItem[];
+    readonly items?: outputs.DataSafe.GetAlertPolicyRuleItem[];
 }
 /**
  * This data source provides details about a specific Alert Policy Rule resource in Oracle Cloud Infrastructure Data Safe service.

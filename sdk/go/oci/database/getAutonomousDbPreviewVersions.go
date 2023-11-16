@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Autonomous Db Preview Versions in Oracle Cloud Infrastructure Database service.
@@ -66,7 +65,7 @@ type GetAutonomousDbPreviewVersionsResult struct {
 	CompartmentId               string                                                     `pulumi:"compartmentId"`
 	Filters                     []GetAutonomousDbPreviewVersionsFilter                     `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 func GetAutonomousDbPreviewVersionsOutput(ctx *pulumi.Context, args GetAutonomousDbPreviewVersionsOutputArgs, opts ...pulumi.InvokeOption) GetAutonomousDbPreviewVersionsResultOutput {
@@ -108,12 +107,6 @@ func (o GetAutonomousDbPreviewVersionsResultOutput) ToGetAutonomousDbPreviewVers
 	return o
 }
 
-func (o GetAutonomousDbPreviewVersionsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAutonomousDbPreviewVersionsResult] {
-	return pulumix.Output[GetAutonomousDbPreviewVersionsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The list of autonomous_db_preview_versions.
 func (o GetAutonomousDbPreviewVersionsResultOutput) AutonomousDbPreviewVersions() GetAutonomousDbPreviewVersionsAutonomousDbPreviewVersionArrayOutput {
 	return o.ApplyT(func(v GetAutonomousDbPreviewVersionsResult) []GetAutonomousDbPreviewVersionsAutonomousDbPreviewVersion {
@@ -130,8 +123,8 @@ func (o GetAutonomousDbPreviewVersionsResultOutput) Filters() GetAutonomousDbPre
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetAutonomousDbPreviewVersionsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAutonomousDbPreviewVersionsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetAutonomousDbPreviewVersionsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAutonomousDbPreviewVersionsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func init() {

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Model Deployment resource in Oracle Cloud Infrastructure Datascience service.
@@ -62,32 +61,32 @@ type LookupModelDeploymentResult struct {
 	// The log details for each category.
 	CategoryLogDetails []GetModelDeploymentCategoryLogDetail `pulumi:"categoryLogDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model deployment's compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the model deployment.
-	CreatedBy string `pulumi:"createdBy"`
+	CreatedBy *string `pulumi:"createdBy"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A short description of the model deployment.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// A user-friendly display name for the resource. Does not have to be unique, and can be modified. Avoid entering confidential information. Example: `My ModelDeployment`
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model deployment.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Details about the state of the model deployment.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The model deployment configuration details.
 	ModelDeploymentConfigurationDetails []GetModelDeploymentModelDeploymentConfigurationDetail `pulumi:"modelDeploymentConfigurationDetails"`
 	ModelDeploymentId                   string                                                 `pulumi:"modelDeploymentId"`
 	// The URL to interact with the model deployment.
-	ModelDeploymentUrl string `pulumi:"modelDeploymentUrl"`
+	ModelDeploymentUrl *string `pulumi:"modelDeploymentUrl"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project associated with the model deployment.
-	ProjectId string `pulumi:"projectId"`
+	ProjectId *string `pulumi:"projectId"`
 	// The state of the model deployment.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the resource was created, in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 }
 
 func LookupModelDeploymentOutput(ctx *pulumi.Context, args LookupModelDeploymentOutputArgs, opts ...pulumi.InvokeOption) LookupModelDeploymentResultOutput {
@@ -128,25 +127,19 @@ func (o LookupModelDeploymentResultOutput) ToLookupModelDeploymentResultOutputWi
 	return o
 }
 
-func (o LookupModelDeploymentResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupModelDeploymentResult] {
-	return pulumix.Output[LookupModelDeploymentResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The log details for each category.
 func (o LookupModelDeploymentResultOutput) CategoryLogDetails() GetModelDeploymentCategoryLogDetailArrayOutput {
 	return o.ApplyT(func(v LookupModelDeploymentResult) []GetModelDeploymentCategoryLogDetail { return v.CategoryLogDetails }).(GetModelDeploymentCategoryLogDetailArrayOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model deployment's compartment.
-func (o LookupModelDeploymentResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupModelDeploymentResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupModelDeploymentResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupModelDeploymentResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the model deployment.
-func (o LookupModelDeploymentResultOutput) CreatedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupModelDeploymentResult) string { return v.CreatedBy }).(pulumi.StringOutput)
+func (o LookupModelDeploymentResultOutput) CreatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupModelDeploymentResult) *string { return v.CreatedBy }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -155,13 +148,13 @@ func (o LookupModelDeploymentResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // A short description of the model deployment.
-func (o LookupModelDeploymentResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupModelDeploymentResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupModelDeploymentResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupModelDeploymentResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // A user-friendly display name for the resource. Does not have to be unique, and can be modified. Avoid entering confidential information. Example: `My ModelDeployment`
-func (o LookupModelDeploymentResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupModelDeploymentResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupModelDeploymentResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupModelDeploymentResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -170,13 +163,13 @@ func (o LookupModelDeploymentResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model deployment.
-func (o LookupModelDeploymentResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupModelDeploymentResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupModelDeploymentResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupModelDeploymentResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Details about the state of the model deployment.
-func (o LookupModelDeploymentResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupModelDeploymentResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupModelDeploymentResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupModelDeploymentResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The model deployment configuration details.
@@ -191,23 +184,23 @@ func (o LookupModelDeploymentResultOutput) ModelDeploymentId() pulumi.StringOutp
 }
 
 // The URL to interact with the model deployment.
-func (o LookupModelDeploymentResultOutput) ModelDeploymentUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupModelDeploymentResult) string { return v.ModelDeploymentUrl }).(pulumi.StringOutput)
+func (o LookupModelDeploymentResultOutput) ModelDeploymentUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupModelDeploymentResult) *string { return v.ModelDeploymentUrl }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project associated with the model deployment.
-func (o LookupModelDeploymentResultOutput) ProjectId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupModelDeploymentResult) string { return v.ProjectId }).(pulumi.StringOutput)
+func (o LookupModelDeploymentResultOutput) ProjectId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupModelDeploymentResult) *string { return v.ProjectId }).(pulumi.StringPtrOutput)
 }
 
 // The state of the model deployment.
-func (o LookupModelDeploymentResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupModelDeploymentResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupModelDeploymentResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupModelDeploymentResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was created, in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
-func (o LookupModelDeploymentResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupModelDeploymentResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupModelDeploymentResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupModelDeploymentResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

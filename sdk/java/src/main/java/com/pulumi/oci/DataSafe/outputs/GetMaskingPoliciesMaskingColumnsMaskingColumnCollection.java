@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DataSafe.outputs.GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMaskingPoliciesMaskingColumnsMaskingColumnCollection {
-    private List<GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItem> items;
+    private @Nullable List<GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItem> items;
 
     private GetMaskingPoliciesMaskingColumnsMaskingColumnCollection() {}
     public List<GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetMaskingPoliciesMaskingColumnsMaskingColumnCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItem> items;
+        private @Nullable List<GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItem> items;
         public Builder() {}
         public Builder(GetMaskingPoliciesMaskingColumnsMaskingColumnCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetMaskingPoliciesMaskingColumnsMaskingColumnCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItem... items) {

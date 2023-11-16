@@ -77,11 +77,11 @@ export interface GetMigrationPlanAvailableShapeResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Available shapes list.
      */
-    readonly items: outputs.CloudMigrations.GetMigrationPlanAvailableShapeItem[];
+    readonly items?: outputs.CloudMigrations.GetMigrationPlanAvailableShapeItem[];
     readonly migrationPlanId: string;
     readonly reservedCapacityId?: string;
 }

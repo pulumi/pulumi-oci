@@ -44,7 +44,7 @@ public final class GetMountTargetsResult {
      * @return The list of mount_targets.
      * 
      */
-    private List<GetMountTargetsMountTarget> mountTargets;
+    private @Nullable List<GetMountTargetsMountTarget> mountTargets;
     /**
      * @return The current state of the mount target.
      * 
@@ -95,7 +95,7 @@ public final class GetMountTargetsResult {
      * 
      */
     public List<GetMountTargetsMountTarget> mountTargets() {
-        return this.mountTargets;
+        return this.mountTargets == null ? List.of() : this.mountTargets;
     }
     /**
      * @return The current state of the mount target.
@@ -120,7 +120,7 @@ public final class GetMountTargetsResult {
         private @Nullable String exportSetId;
         private @Nullable List<GetMountTargetsFilter> filters;
         private @Nullable String id;
-        private List<GetMountTargetsMountTarget> mountTargets;
+        private @Nullable List<GetMountTargetsMountTarget> mountTargets;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetMountTargetsResult defaults) {
@@ -169,8 +169,8 @@ public final class GetMountTargetsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder mountTargets(List<GetMountTargetsMountTarget> mountTargets) {
-            this.mountTargets = Objects.requireNonNull(mountTargets);
+        public Builder mountTargets(@Nullable List<GetMountTargetsMountTarget> mountTargets) {
+            this.mountTargets = mountTargets;
             return this;
         }
         public Builder mountTargets(GetMountTargetsMountTarget... mountTargets) {

@@ -66,7 +66,7 @@ class GetSubscriptionsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -89,10 +89,7 @@ class GetSubscriptionsResult:
 
     @property
     @pulumi.getter
-    def subscriptions(self) -> Sequence['outputs.GetSubscriptionsSubscriptionResult']:
-        """
-        The list of subscriptions.
-        """
+    def subscriptions(self) -> Optional[Sequence['outputs.GetSubscriptionsSubscriptionResult']]:
         return pulumi.get(self, "subscriptions")
 
 
@@ -120,32 +117,7 @@ def get_subscriptions(buyer_email: Optional[str] = None,
                       subscription_id: Optional[str] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSubscriptionsResult:
     """
-    This data source provides the list of Subscriptions in Oracle Cloud Infrastructure Onesubscription service.
-
-    This list API returns all subscriptions for a given plan number or subscription id or buyer email
-    and provides additional parameters to include ratecard and commitment details.
-    This API expects exactly one of the above mentioned parameters as input. If more than one parameters are provided the API will throw
-    a 400 - invalid parameters exception and if no parameters are provided it will throw a 400 - missing parameter exception
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_subscriptions = oci.OneSubsription.get_subscriptions(compartment_id=var["compartment_id"],
-        buyer_email=var["subscription_buyer_email"],
-        is_commit_info_required=var["subscription_is_commit_info_required"],
-        plan_number=var["subscription_plan_number"],
-        subscription_id=oci_onesubscription_subscription["test_subscription"]["id"])
-    ```
-
-
-    :param str buyer_email: Buyer Email Id
-    :param str compartment_id: The OCID of the root compartment.
-    :param bool is_commit_info_required: Boolean value to decide whether commitment services will be shown
-    :param str plan_number: The Plan Number
-    :param str subscription_id: Line level Subscription Id
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['buyerEmail'] = buyer_email
@@ -177,31 +149,6 @@ def get_subscriptions_output(buyer_email: Optional[pulumi.Input[Optional[str]]] 
                              subscription_id: Optional[pulumi.Input[Optional[str]]] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSubscriptionsResult]:
     """
-    This data source provides the list of Subscriptions in Oracle Cloud Infrastructure Onesubscription service.
-
-    This list API returns all subscriptions for a given plan number or subscription id or buyer email
-    and provides additional parameters to include ratecard and commitment details.
-    This API expects exactly one of the above mentioned parameters as input. If more than one parameters are provided the API will throw
-    a 400 - invalid parameters exception and if no parameters are provided it will throw a 400 - missing parameter exception
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_subscriptions = oci.OneSubsription.get_subscriptions(compartment_id=var["compartment_id"],
-        buyer_email=var["subscription_buyer_email"],
-        is_commit_info_required=var["subscription_is_commit_info_required"],
-        plan_number=var["subscription_plan_number"],
-        subscription_id=oci_onesubscription_subscription["test_subscription"]["id"])
-    ```
-
-
-    :param str buyer_email: Buyer Email Id
-    :param str compartment_id: The OCID of the root compartment.
-    :param bool is_commit_info_required: Boolean value to decide whether commitment services will be shown
-    :param str plan_number: The Plan Number
-    :param str subscription_id: Line level Subscription Id
+    Use this data source to access information about an existing resource.
     """
     ...

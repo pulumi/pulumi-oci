@@ -16,35 +16,35 @@ namespace Pulumi.Oci.AiDocument.Outputs
         /// <summary>
         /// The type of document analysis requested. The allowed values are:
         /// </summary>
-        public readonly string FeatureType;
+        public readonly string? FeatureType;
         /// <summary>
         /// Whether or not to generate a searchable PDF file.
         /// </summary>
-        public readonly bool GenerateSearchablePdf;
+        public readonly bool? GenerateSearchablePdf;
         /// <summary>
         /// The maximum number of results to return.
         /// </summary>
-        public readonly int MaxResults;
+        public readonly int? MaxResults;
         /// <summary>
         /// The custom model ID.
         /// </summary>
-        public readonly string ModelId;
+        public readonly string? ModelId;
         /// <summary>
         /// The custom model tenancy ID when modelId represents aliasName.
         /// </summary>
-        public readonly string TenancyId;
+        public readonly string? TenancyId;
 
         [OutputConstructor]
         private GetProcessorJobProcessorConfigFeatureResult(
-            string featureType,
+            string? featureType,
 
-            bool generateSearchablePdf,
+            bool? generateSearchablePdf,
 
-            int maxResults,
+            int? maxResults,
 
-            string modelId,
+            string? modelId,
 
-            string tenancyId)
+            string? tenancyId)
         {
             FeatureType = featureType;
             GenerateSearchablePdf = generateSearchablePdf;

@@ -12,6 +12,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetCaptureFilterFlowLogCaptureFilterRule {
@@ -19,29 +21,29 @@ public final class GetCaptureFilterFlowLogCaptureFilterRule {
      * @return Traffic sent to this CIDR block through the VTAP source will be mirrored to the VTAP target.
      * 
      */
-    private String destinationCidr;
+    private @Nullable String destinationCidr;
     /**
      * @return Type or types of flow logs to store. `ALL` includes records for both accepted traffic and rejected traffic.
      * 
      */
-    private String flowLogType;
+    private @Nullable String flowLogType;
     /**
      * @return Optional and valid only for ICMP and ICMPv6. Use to specify a particular ICMP type and code as defined in:
      * * [ICMP Parameters](http://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml)
      * * [ICMPv6 Parameters](https://www.iana.org/assignments/icmpv6-parameters/icmpv6-parameters.xhtml)
      * 
      */
-    private List<GetCaptureFilterFlowLogCaptureFilterRuleIcmpOption> icmpOptions;
+    private @Nullable List<GetCaptureFilterFlowLogCaptureFilterRuleIcmpOption> icmpOptions;
     /**
      * @return Indicates whether a flow log capture filter rule is enabled.
      * 
      */
-    private Boolean isEnabled;
+    private @Nullable Boolean isEnabled;
     /**
      * @return A lower number indicates a higher priority, range 0-9. Each rule must have a distinct priority.
      * 
      */
-    private Integer priority;
+    private @Nullable Integer priority;
     /**
      * @return The transport protocol used in the filter. If do not choose a protocol, all protocols will be used in the filter. Supported options are:
      * * 1 = ICMP
@@ -49,47 +51,47 @@ public final class GetCaptureFilterFlowLogCaptureFilterRule {
      * * 17 = UDP
      * 
      */
-    private String protocol;
+    private @Nullable String protocol;
     /**
      * @return Include or exclude packets meeting this definition from mirrored traffic.
      * 
      */
-    private String ruleAction;
+    private @Nullable String ruleAction;
     /**
      * @return Sampling interval as 1 of X, where X is an integer not greater than 100000.
      * 
      */
-    private Integer samplingRate;
+    private @Nullable Integer samplingRate;
     /**
      * @return Traffic from this CIDR block to the VTAP source will be mirrored to the VTAP target.
      * 
      */
-    private String sourceCidr;
+    private @Nullable String sourceCidr;
     /**
      * @return Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed.
      * 
      */
-    private List<GetCaptureFilterFlowLogCaptureFilterRuleTcpOption> tcpOptions;
+    private @Nullable List<GetCaptureFilterFlowLogCaptureFilterRuleTcpOption> tcpOptions;
     /**
      * @return Optional and valid only for UDP. Use to specify particular destination ports for UDP rules. If you specify UDP as the protocol but omit this object, then all destination ports are allowed.
      * 
      */
-    private List<GetCaptureFilterFlowLogCaptureFilterRuleUdpOption> udpOptions;
+    private @Nullable List<GetCaptureFilterFlowLogCaptureFilterRuleUdpOption> udpOptions;
 
     private GetCaptureFilterFlowLogCaptureFilterRule() {}
     /**
      * @return Traffic sent to this CIDR block through the VTAP source will be mirrored to the VTAP target.
      * 
      */
-    public String destinationCidr() {
-        return this.destinationCidr;
+    public Optional<String> destinationCidr() {
+        return Optional.ofNullable(this.destinationCidr);
     }
     /**
      * @return Type or types of flow logs to store. `ALL` includes records for both accepted traffic and rejected traffic.
      * 
      */
-    public String flowLogType() {
-        return this.flowLogType;
+    public Optional<String> flowLogType() {
+        return Optional.ofNullable(this.flowLogType);
     }
     /**
      * @return Optional and valid only for ICMP and ICMPv6. Use to specify a particular ICMP type and code as defined in:
@@ -98,21 +100,21 @@ public final class GetCaptureFilterFlowLogCaptureFilterRule {
      * 
      */
     public List<GetCaptureFilterFlowLogCaptureFilterRuleIcmpOption> icmpOptions() {
-        return this.icmpOptions;
+        return this.icmpOptions == null ? List.of() : this.icmpOptions;
     }
     /**
      * @return Indicates whether a flow log capture filter rule is enabled.
      * 
      */
-    public Boolean isEnabled() {
-        return this.isEnabled;
+    public Optional<Boolean> isEnabled() {
+        return Optional.ofNullable(this.isEnabled);
     }
     /**
      * @return A lower number indicates a higher priority, range 0-9. Each rule must have a distinct priority.
      * 
      */
-    public Integer priority() {
-        return this.priority;
+    public Optional<Integer> priority() {
+        return Optional.ofNullable(this.priority);
     }
     /**
      * @return The transport protocol used in the filter. If do not choose a protocol, all protocols will be used in the filter. Supported options are:
@@ -121,43 +123,43 @@ public final class GetCaptureFilterFlowLogCaptureFilterRule {
      * * 17 = UDP
      * 
      */
-    public String protocol() {
-        return this.protocol;
+    public Optional<String> protocol() {
+        return Optional.ofNullable(this.protocol);
     }
     /**
      * @return Include or exclude packets meeting this definition from mirrored traffic.
      * 
      */
-    public String ruleAction() {
-        return this.ruleAction;
+    public Optional<String> ruleAction() {
+        return Optional.ofNullable(this.ruleAction);
     }
     /**
      * @return Sampling interval as 1 of X, where X is an integer not greater than 100000.
      * 
      */
-    public Integer samplingRate() {
-        return this.samplingRate;
+    public Optional<Integer> samplingRate() {
+        return Optional.ofNullable(this.samplingRate);
     }
     /**
      * @return Traffic from this CIDR block to the VTAP source will be mirrored to the VTAP target.
      * 
      */
-    public String sourceCidr() {
-        return this.sourceCidr;
+    public Optional<String> sourceCidr() {
+        return Optional.ofNullable(this.sourceCidr);
     }
     /**
      * @return Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed.
      * 
      */
     public List<GetCaptureFilterFlowLogCaptureFilterRuleTcpOption> tcpOptions() {
-        return this.tcpOptions;
+        return this.tcpOptions == null ? List.of() : this.tcpOptions;
     }
     /**
      * @return Optional and valid only for UDP. Use to specify particular destination ports for UDP rules. If you specify UDP as the protocol but omit this object, then all destination ports are allowed.
      * 
      */
     public List<GetCaptureFilterFlowLogCaptureFilterRuleUdpOption> udpOptions() {
-        return this.udpOptions;
+        return this.udpOptions == null ? List.of() : this.udpOptions;
     }
 
     public static Builder builder() {
@@ -169,17 +171,17 @@ public final class GetCaptureFilterFlowLogCaptureFilterRule {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String destinationCidr;
-        private String flowLogType;
-        private List<GetCaptureFilterFlowLogCaptureFilterRuleIcmpOption> icmpOptions;
-        private Boolean isEnabled;
-        private Integer priority;
-        private String protocol;
-        private String ruleAction;
-        private Integer samplingRate;
-        private String sourceCidr;
-        private List<GetCaptureFilterFlowLogCaptureFilterRuleTcpOption> tcpOptions;
-        private List<GetCaptureFilterFlowLogCaptureFilterRuleUdpOption> udpOptions;
+        private @Nullable String destinationCidr;
+        private @Nullable String flowLogType;
+        private @Nullable List<GetCaptureFilterFlowLogCaptureFilterRuleIcmpOption> icmpOptions;
+        private @Nullable Boolean isEnabled;
+        private @Nullable Integer priority;
+        private @Nullable String protocol;
+        private @Nullable String ruleAction;
+        private @Nullable Integer samplingRate;
+        private @Nullable String sourceCidr;
+        private @Nullable List<GetCaptureFilterFlowLogCaptureFilterRuleTcpOption> tcpOptions;
+        private @Nullable List<GetCaptureFilterFlowLogCaptureFilterRuleUdpOption> udpOptions;
         public Builder() {}
         public Builder(GetCaptureFilterFlowLogCaptureFilterRule defaults) {
     	      Objects.requireNonNull(defaults);
@@ -197,64 +199,64 @@ public final class GetCaptureFilterFlowLogCaptureFilterRule {
         }
 
         @CustomType.Setter
-        public Builder destinationCidr(String destinationCidr) {
-            this.destinationCidr = Objects.requireNonNull(destinationCidr);
+        public Builder destinationCidr(@Nullable String destinationCidr) {
+            this.destinationCidr = destinationCidr;
             return this;
         }
         @CustomType.Setter
-        public Builder flowLogType(String flowLogType) {
-            this.flowLogType = Objects.requireNonNull(flowLogType);
+        public Builder flowLogType(@Nullable String flowLogType) {
+            this.flowLogType = flowLogType;
             return this;
         }
         @CustomType.Setter
-        public Builder icmpOptions(List<GetCaptureFilterFlowLogCaptureFilterRuleIcmpOption> icmpOptions) {
-            this.icmpOptions = Objects.requireNonNull(icmpOptions);
+        public Builder icmpOptions(@Nullable List<GetCaptureFilterFlowLogCaptureFilterRuleIcmpOption> icmpOptions) {
+            this.icmpOptions = icmpOptions;
             return this;
         }
         public Builder icmpOptions(GetCaptureFilterFlowLogCaptureFilterRuleIcmpOption... icmpOptions) {
             return icmpOptions(List.of(icmpOptions));
         }
         @CustomType.Setter
-        public Builder isEnabled(Boolean isEnabled) {
-            this.isEnabled = Objects.requireNonNull(isEnabled);
+        public Builder isEnabled(@Nullable Boolean isEnabled) {
+            this.isEnabled = isEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder priority(Integer priority) {
-            this.priority = Objects.requireNonNull(priority);
+        public Builder priority(@Nullable Integer priority) {
+            this.priority = priority;
             return this;
         }
         @CustomType.Setter
-        public Builder protocol(String protocol) {
-            this.protocol = Objects.requireNonNull(protocol);
+        public Builder protocol(@Nullable String protocol) {
+            this.protocol = protocol;
             return this;
         }
         @CustomType.Setter
-        public Builder ruleAction(String ruleAction) {
-            this.ruleAction = Objects.requireNonNull(ruleAction);
+        public Builder ruleAction(@Nullable String ruleAction) {
+            this.ruleAction = ruleAction;
             return this;
         }
         @CustomType.Setter
-        public Builder samplingRate(Integer samplingRate) {
-            this.samplingRate = Objects.requireNonNull(samplingRate);
+        public Builder samplingRate(@Nullable Integer samplingRate) {
+            this.samplingRate = samplingRate;
             return this;
         }
         @CustomType.Setter
-        public Builder sourceCidr(String sourceCidr) {
-            this.sourceCidr = Objects.requireNonNull(sourceCidr);
+        public Builder sourceCidr(@Nullable String sourceCidr) {
+            this.sourceCidr = sourceCidr;
             return this;
         }
         @CustomType.Setter
-        public Builder tcpOptions(List<GetCaptureFilterFlowLogCaptureFilterRuleTcpOption> tcpOptions) {
-            this.tcpOptions = Objects.requireNonNull(tcpOptions);
+        public Builder tcpOptions(@Nullable List<GetCaptureFilterFlowLogCaptureFilterRuleTcpOption> tcpOptions) {
+            this.tcpOptions = tcpOptions;
             return this;
         }
         public Builder tcpOptions(GetCaptureFilterFlowLogCaptureFilterRuleTcpOption... tcpOptions) {
             return tcpOptions(List.of(tcpOptions));
         }
         @CustomType.Setter
-        public Builder udpOptions(List<GetCaptureFilterFlowLogCaptureFilterRuleUdpOption> udpOptions) {
-            this.udpOptions = Objects.requireNonNull(udpOptions);
+        public Builder udpOptions(@Nullable List<GetCaptureFilterFlowLogCaptureFilterRuleUdpOption> udpOptions) {
+            this.udpOptions = udpOptions;
             return this;
         }
         public Builder udpOptions(GetCaptureFilterFlowLogCaptureFilterRuleUdpOption... udpOptions) {

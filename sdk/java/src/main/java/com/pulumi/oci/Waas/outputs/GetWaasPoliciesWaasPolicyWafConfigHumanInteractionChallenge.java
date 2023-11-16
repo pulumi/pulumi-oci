@@ -11,6 +11,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallenge {
@@ -18,123 +20,123 @@ public final class GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallenge {
      * @return The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
      * 
      */
-    private String action;
+    private @Nullable String action;
     /**
      * @return The number of seconds between challenges from the same IP address. If unspecified, defaults to `60`.
      * 
      */
-    private Integer actionExpirationInSeconds;
+    private @Nullable Integer actionExpirationInSeconds;
     /**
      * @return The challenge settings if `action` is set to `BLOCK`.
      * 
      */
-    private List<GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSetting> challengeSettings;
+    private @Nullable List<GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSetting> challengeSettings;
     /**
      * @return The number of failed requests before taking action. If unspecified, defaults to `10`.
      * 
      */
-    private Integer failureThreshold;
+    private @Nullable Integer failureThreshold;
     /**
      * @return The number of seconds before the failure threshold resets. If unspecified, defaults to  `60`.
      * 
      */
-    private Integer failureThresholdExpirationInSeconds;
+    private @Nullable Integer failureThresholdExpirationInSeconds;
     /**
      * @return The number of interactions required to pass the challenge. If unspecified, defaults to `3`.
      * 
      */
-    private Integer interactionThreshold;
+    private @Nullable Integer interactionThreshold;
     /**
      * @return Enables or disables the JavaScript challenge Web Application Firewall feature.
      * 
      */
-    private Boolean isEnabled;
+    private @Nullable Boolean isEnabled;
     /**
      * @return When enabled, the user is identified not only by the IP address but also by an unique additional hash, which prevents blocking visitors with shared IP addresses.
      * 
      */
-    private Boolean isNatEnabled;
+    private @Nullable Boolean isNatEnabled;
     /**
      * @return The number of seconds to record the interactions from the user. If unspecified, defaults to `15`.
      * 
      */
-    private Integer recordingPeriodInSeconds;
+    private @Nullable Integer recordingPeriodInSeconds;
     /**
      * @return Adds an additional HTTP header to requests that fail the challenge before being passed to the origin. Only applicable when the `action` is set to `DETECT`.
      * 
      */
-    private List<GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeader> setHttpHeaders;
+    private @Nullable List<GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeader> setHttpHeaders;
 
     private GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallenge() {}
     /**
      * @return The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
      * 
      */
-    public String action() {
-        return this.action;
+    public Optional<String> action() {
+        return Optional.ofNullable(this.action);
     }
     /**
      * @return The number of seconds between challenges from the same IP address. If unspecified, defaults to `60`.
      * 
      */
-    public Integer actionExpirationInSeconds() {
-        return this.actionExpirationInSeconds;
+    public Optional<Integer> actionExpirationInSeconds() {
+        return Optional.ofNullable(this.actionExpirationInSeconds);
     }
     /**
      * @return The challenge settings if `action` is set to `BLOCK`.
      * 
      */
     public List<GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSetting> challengeSettings() {
-        return this.challengeSettings;
+        return this.challengeSettings == null ? List.of() : this.challengeSettings;
     }
     /**
      * @return The number of failed requests before taking action. If unspecified, defaults to `10`.
      * 
      */
-    public Integer failureThreshold() {
-        return this.failureThreshold;
+    public Optional<Integer> failureThreshold() {
+        return Optional.ofNullable(this.failureThreshold);
     }
     /**
      * @return The number of seconds before the failure threshold resets. If unspecified, defaults to  `60`.
      * 
      */
-    public Integer failureThresholdExpirationInSeconds() {
-        return this.failureThresholdExpirationInSeconds;
+    public Optional<Integer> failureThresholdExpirationInSeconds() {
+        return Optional.ofNullable(this.failureThresholdExpirationInSeconds);
     }
     /**
      * @return The number of interactions required to pass the challenge. If unspecified, defaults to `3`.
      * 
      */
-    public Integer interactionThreshold() {
-        return this.interactionThreshold;
+    public Optional<Integer> interactionThreshold() {
+        return Optional.ofNullable(this.interactionThreshold);
     }
     /**
      * @return Enables or disables the JavaScript challenge Web Application Firewall feature.
      * 
      */
-    public Boolean isEnabled() {
-        return this.isEnabled;
+    public Optional<Boolean> isEnabled() {
+        return Optional.ofNullable(this.isEnabled);
     }
     /**
      * @return When enabled, the user is identified not only by the IP address but also by an unique additional hash, which prevents blocking visitors with shared IP addresses.
      * 
      */
-    public Boolean isNatEnabled() {
-        return this.isNatEnabled;
+    public Optional<Boolean> isNatEnabled() {
+        return Optional.ofNullable(this.isNatEnabled);
     }
     /**
      * @return The number of seconds to record the interactions from the user. If unspecified, defaults to `15`.
      * 
      */
-    public Integer recordingPeriodInSeconds() {
-        return this.recordingPeriodInSeconds;
+    public Optional<Integer> recordingPeriodInSeconds() {
+        return Optional.ofNullable(this.recordingPeriodInSeconds);
     }
     /**
      * @return Adds an additional HTTP header to requests that fail the challenge before being passed to the origin. Only applicable when the `action` is set to `DETECT`.
      * 
      */
     public List<GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeader> setHttpHeaders() {
-        return this.setHttpHeaders;
+        return this.setHttpHeaders == null ? List.of() : this.setHttpHeaders;
     }
 
     public static Builder builder() {
@@ -146,16 +148,16 @@ public final class GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallenge {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String action;
-        private Integer actionExpirationInSeconds;
-        private List<GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSetting> challengeSettings;
-        private Integer failureThreshold;
-        private Integer failureThresholdExpirationInSeconds;
-        private Integer interactionThreshold;
-        private Boolean isEnabled;
-        private Boolean isNatEnabled;
-        private Integer recordingPeriodInSeconds;
-        private List<GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeader> setHttpHeaders;
+        private @Nullable String action;
+        private @Nullable Integer actionExpirationInSeconds;
+        private @Nullable List<GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSetting> challengeSettings;
+        private @Nullable Integer failureThreshold;
+        private @Nullable Integer failureThresholdExpirationInSeconds;
+        private @Nullable Integer interactionThreshold;
+        private @Nullable Boolean isEnabled;
+        private @Nullable Boolean isNatEnabled;
+        private @Nullable Integer recordingPeriodInSeconds;
+        private @Nullable List<GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeader> setHttpHeaders;
         public Builder() {}
         public Builder(GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallenge defaults) {
     	      Objects.requireNonNull(defaults);
@@ -172,56 +174,56 @@ public final class GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallenge {
         }
 
         @CustomType.Setter
-        public Builder action(String action) {
-            this.action = Objects.requireNonNull(action);
+        public Builder action(@Nullable String action) {
+            this.action = action;
             return this;
         }
         @CustomType.Setter
-        public Builder actionExpirationInSeconds(Integer actionExpirationInSeconds) {
-            this.actionExpirationInSeconds = Objects.requireNonNull(actionExpirationInSeconds);
+        public Builder actionExpirationInSeconds(@Nullable Integer actionExpirationInSeconds) {
+            this.actionExpirationInSeconds = actionExpirationInSeconds;
             return this;
         }
         @CustomType.Setter
-        public Builder challengeSettings(List<GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSetting> challengeSettings) {
-            this.challengeSettings = Objects.requireNonNull(challengeSettings);
+        public Builder challengeSettings(@Nullable List<GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSetting> challengeSettings) {
+            this.challengeSettings = challengeSettings;
             return this;
         }
         public Builder challengeSettings(GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSetting... challengeSettings) {
             return challengeSettings(List.of(challengeSettings));
         }
         @CustomType.Setter
-        public Builder failureThreshold(Integer failureThreshold) {
-            this.failureThreshold = Objects.requireNonNull(failureThreshold);
+        public Builder failureThreshold(@Nullable Integer failureThreshold) {
+            this.failureThreshold = failureThreshold;
             return this;
         }
         @CustomType.Setter
-        public Builder failureThresholdExpirationInSeconds(Integer failureThresholdExpirationInSeconds) {
-            this.failureThresholdExpirationInSeconds = Objects.requireNonNull(failureThresholdExpirationInSeconds);
+        public Builder failureThresholdExpirationInSeconds(@Nullable Integer failureThresholdExpirationInSeconds) {
+            this.failureThresholdExpirationInSeconds = failureThresholdExpirationInSeconds;
             return this;
         }
         @CustomType.Setter
-        public Builder interactionThreshold(Integer interactionThreshold) {
-            this.interactionThreshold = Objects.requireNonNull(interactionThreshold);
+        public Builder interactionThreshold(@Nullable Integer interactionThreshold) {
+            this.interactionThreshold = interactionThreshold;
             return this;
         }
         @CustomType.Setter
-        public Builder isEnabled(Boolean isEnabled) {
-            this.isEnabled = Objects.requireNonNull(isEnabled);
+        public Builder isEnabled(@Nullable Boolean isEnabled) {
+            this.isEnabled = isEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder isNatEnabled(Boolean isNatEnabled) {
-            this.isNatEnabled = Objects.requireNonNull(isNatEnabled);
+        public Builder isNatEnabled(@Nullable Boolean isNatEnabled) {
+            this.isNatEnabled = isNatEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder recordingPeriodInSeconds(Integer recordingPeriodInSeconds) {
-            this.recordingPeriodInSeconds = Objects.requireNonNull(recordingPeriodInSeconds);
+        public Builder recordingPeriodInSeconds(@Nullable Integer recordingPeriodInSeconds) {
+            this.recordingPeriodInSeconds = recordingPeriodInSeconds;
             return this;
         }
         @CustomType.Setter
-        public Builder setHttpHeaders(List<GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeader> setHttpHeaders) {
-            this.setHttpHeaders = Objects.requireNonNull(setHttpHeaders);
+        public Builder setHttpHeaders(@Nullable List<GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeader> setHttpHeaders) {
+            this.setHttpHeaders = setHttpHeaders;
             return this;
         }
         public Builder setHttpHeaders(GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeader... setHttpHeaders) {

@@ -56,7 +56,7 @@ class GetSoftwareSourceModuleStreamsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -65,17 +65,11 @@ class GetSoftwareSourceModuleStreamsResult:
     @property
     @pulumi.getter(name="isLatest")
     def is_latest(self) -> Optional[bool]:
-        """
-        Indicates whether this module stream is the latest.
-        """
         return pulumi.get(self, "is_latest")
 
     @property
     @pulumi.getter(name="moduleName")
     def module_name(self) -> Optional[str]:
-        """
-        The name of the module that contains the stream.
-        """
         return pulumi.get(self, "module_name")
 
     @property
@@ -85,26 +79,17 @@ class GetSoftwareSourceModuleStreamsResult:
 
     @property
     @pulumi.getter(name="moduleStreamCollections")
-    def module_stream_collections(self) -> Sequence['outputs.GetSoftwareSourceModuleStreamsModuleStreamCollectionResult']:
-        """
-        The list of module_stream_collection.
-        """
+    def module_stream_collections(self) -> Optional[Sequence['outputs.GetSoftwareSourceModuleStreamsModuleStreamCollectionResult']]:
         return pulumi.get(self, "module_stream_collections")
 
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        The name of the stream.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="softwareSourceId")
     def software_source_id(self) -> str:
-        """
-        The OCID of the software source that provides this module stream.
-        """
         return pulumi.get(self, "software_source_id")
 
 
@@ -132,30 +117,7 @@ def get_software_source_module_streams(filters: Optional[Sequence[pulumi.InputTy
                                        software_source_id: Optional[str] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSoftwareSourceModuleStreamsResult:
     """
-    This data source provides the list of Software Source Module Streams in Oracle Cloud Infrastructure Os Management Hub service.
-
-    Lists module streams from the specified software source OCID. Filter the list against a variety of
-    criteria including but not limited to its module name and (stream) name.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_software_source_module_streams = oci.OsManagementHub.get_software_source_module_streams(software_source_id=oci_os_management_hub_software_source["test_software_source"]["id"],
-        is_latest=var["software_source_module_stream_is_latest"],
-        module_name=var["software_source_module_stream_module_name"],
-        module_name_contains=var["software_source_module_stream_module_name_contains"],
-        name=var["software_source_module_stream_name"])
-    ```
-
-
-    :param bool is_latest: A boolean variable that is used to list only the latest versions of packages, module streams, and stream profiles when set to true. All packages, module streams, and stream profiles are returned when set to false.
-    :param str module_name: The name of a module. This parameter is required if a streamName is specified.
-    :param str module_name_contains: A filter to return resources that may partially match the module name given.
-    :param str name: The name of the entity to be queried.
-    :param str software_source_id: The software source OCID.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -187,29 +149,6 @@ def get_software_source_module_streams_output(filters: Optional[pulumi.Input[Opt
                                               software_source_id: Optional[pulumi.Input[str]] = None,
                                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSoftwareSourceModuleStreamsResult]:
     """
-    This data source provides the list of Software Source Module Streams in Oracle Cloud Infrastructure Os Management Hub service.
-
-    Lists module streams from the specified software source OCID. Filter the list against a variety of
-    criteria including but not limited to its module name and (stream) name.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_software_source_module_streams = oci.OsManagementHub.get_software_source_module_streams(software_source_id=oci_os_management_hub_software_source["test_software_source"]["id"],
-        is_latest=var["software_source_module_stream_is_latest"],
-        module_name=var["software_source_module_stream_module_name"],
-        module_name_contains=var["software_source_module_stream_module_name_contains"],
-        name=var["software_source_module_stream_name"])
-    ```
-
-
-    :param bool is_latest: A boolean variable that is used to list only the latest versions of packages, module streams, and stream profiles when set to true. All packages, module streams, and stream profiles are returned when set to false.
-    :param str module_name: The name of a module. This parameter is required if a streamName is specified.
-    :param str module_name_contains: A filter to return resources that may partially match the module name given.
-    :param str name: The name of the entity to be queried.
-    :param str software_source_id: The software source OCID.
+    Use this data source to access information about an existing resource.
     """
     ...

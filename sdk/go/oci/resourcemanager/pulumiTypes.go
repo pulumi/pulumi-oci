@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -49,12 +48,6 @@ func (i GetPrivateEndpointsFilterArgs) ToGetPrivateEndpointsFilterOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetPrivateEndpointsFilterOutput)
 }
 
-func (i GetPrivateEndpointsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetPrivateEndpointsFilter] {
-	return pulumix.Output[GetPrivateEndpointsFilter]{
-		OutputState: i.ToGetPrivateEndpointsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetPrivateEndpointsFilterArrayInput is an input type that accepts GetPrivateEndpointsFilterArray and GetPrivateEndpointsFilterArrayOutput values.
 // You can construct a concrete instance of `GetPrivateEndpointsFilterArrayInput` via:
 //
@@ -80,12 +73,6 @@ func (i GetPrivateEndpointsFilterArray) ToGetPrivateEndpointsFilterArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetPrivateEndpointsFilterArrayOutput)
 }
 
-func (i GetPrivateEndpointsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPrivateEndpointsFilter] {
-	return pulumix.Output[[]GetPrivateEndpointsFilter]{
-		OutputState: i.ToGetPrivateEndpointsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetPrivateEndpointsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetPrivateEndpointsFilterOutput) ElementType() reflect.Type {
@@ -98,12 +85,6 @@ func (o GetPrivateEndpointsFilterOutput) ToGetPrivateEndpointsFilterOutput() Get
 
 func (o GetPrivateEndpointsFilterOutput) ToGetPrivateEndpointsFilterOutputWithContext(ctx context.Context) GetPrivateEndpointsFilterOutput {
 	return o
-}
-
-func (o GetPrivateEndpointsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetPrivateEndpointsFilter] {
-	return pulumix.Output[GetPrivateEndpointsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetPrivateEndpointsFilterOutput) Name() pulumi.StringOutput {
@@ -130,12 +111,6 @@ func (o GetPrivateEndpointsFilterArrayOutput) ToGetPrivateEndpointsFilterArrayOu
 
 func (o GetPrivateEndpointsFilterArrayOutput) ToGetPrivateEndpointsFilterArrayOutputWithContext(ctx context.Context) GetPrivateEndpointsFilterArrayOutput {
 	return o
-}
-
-func (o GetPrivateEndpointsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPrivateEndpointsFilter] {
-	return pulumix.Output[[]GetPrivateEndpointsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetPrivateEndpointsFilterArrayOutput) Index(i pulumi.IntInput) GetPrivateEndpointsFilterOutput {
@@ -175,12 +150,6 @@ func (i GetPrivateEndpointsPrivateEndpointCollectionArgs) ToGetPrivateEndpointsP
 	return pulumi.ToOutputWithContext(ctx, i).(GetPrivateEndpointsPrivateEndpointCollectionOutput)
 }
 
-func (i GetPrivateEndpointsPrivateEndpointCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetPrivateEndpointsPrivateEndpointCollection] {
-	return pulumix.Output[GetPrivateEndpointsPrivateEndpointCollection]{
-		OutputState: i.ToGetPrivateEndpointsPrivateEndpointCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetPrivateEndpointsPrivateEndpointCollectionArrayInput is an input type that accepts GetPrivateEndpointsPrivateEndpointCollectionArray and GetPrivateEndpointsPrivateEndpointCollectionArrayOutput values.
 // You can construct a concrete instance of `GetPrivateEndpointsPrivateEndpointCollectionArrayInput` via:
 //
@@ -206,12 +175,6 @@ func (i GetPrivateEndpointsPrivateEndpointCollectionArray) ToGetPrivateEndpoints
 	return pulumi.ToOutputWithContext(ctx, i).(GetPrivateEndpointsPrivateEndpointCollectionArrayOutput)
 }
 
-func (i GetPrivateEndpointsPrivateEndpointCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPrivateEndpointsPrivateEndpointCollection] {
-	return pulumix.Output[[]GetPrivateEndpointsPrivateEndpointCollection]{
-		OutputState: i.ToGetPrivateEndpointsPrivateEndpointCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetPrivateEndpointsPrivateEndpointCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetPrivateEndpointsPrivateEndpointCollectionOutput) ElementType() reflect.Type {
@@ -224,12 +187,6 @@ func (o GetPrivateEndpointsPrivateEndpointCollectionOutput) ToGetPrivateEndpoint
 
 func (o GetPrivateEndpointsPrivateEndpointCollectionOutput) ToGetPrivateEndpointsPrivateEndpointCollectionOutputWithContext(ctx context.Context) GetPrivateEndpointsPrivateEndpointCollectionOutput {
 	return o
-}
-
-func (o GetPrivateEndpointsPrivateEndpointCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetPrivateEndpointsPrivateEndpointCollection] {
-	return pulumix.Output[GetPrivateEndpointsPrivateEndpointCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetPrivateEndpointsPrivateEndpointCollectionOutput) Items() GetPrivateEndpointsPrivateEndpointCollectionItemArrayOutput {
@@ -252,12 +209,6 @@ func (o GetPrivateEndpointsPrivateEndpointCollectionArrayOutput) ToGetPrivateEnd
 	return o
 }
 
-func (o GetPrivateEndpointsPrivateEndpointCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPrivateEndpointsPrivateEndpointCollection] {
-	return pulumix.Output[[]GetPrivateEndpointsPrivateEndpointCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetPrivateEndpointsPrivateEndpointCollectionArrayOutput) Index(i pulumi.IntInput) GetPrivateEndpointsPrivateEndpointCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPrivateEndpointsPrivateEndpointCollection {
 		return vs[0].([]GetPrivateEndpointsPrivateEndpointCollection)[vs[1].(int)]
@@ -266,33 +217,33 @@ func (o GetPrivateEndpointsPrivateEndpointCollectionArrayOutput) Index(i pulumi.
 
 type GetPrivateEndpointsPrivateEndpointCollectionItem struct {
 	// A filter to return only resources that exist in the compartment, identified by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Description of the private endpoint. Avoid entering confidential information.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// A filter to return only resources that match the given display name exactly. Use this filter to list a resource by name. Requires `sortBy` set to `DISPLAYNAME`. Alternatively, when you know the resource OCID, use the related Get operation.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// DNS Proxy forwards any DNS FQDN queries over into the consumer DNS resolver if the DNS FQDN is included in the dns zones list otherwise it goes to service provider VCN resolver.
 	DnsZones []string `pulumi:"dnsZones"`
 	// Free-form tags associated with the resource. Each tag is a key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Unique identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the private endpoint details.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// When `true`, allows the private endpoint to be used with a configuration source provider.
-	IsUsedWithConfigurationSourceProvider bool `pulumi:"isUsedWithConfigurationSourceProvider"`
+	IsUsedWithConfigurationSourceProvider *bool `pulumi:"isUsedWithConfigurationSourceProvider"`
 	// An array of network security groups (NSG) that the customer can optionally provide.
 	NsgIdLists []string `pulumi:"nsgIdLists"`
 	// The source IPs which resource manager service will use to connect to customer's network. Automatically assigned by Resource Manager Service.
 	SourceIps []string `pulumi:"sourceIps"`
 	// The current lifecycle state of the private endpoint.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet within the VCN for the private endpoint.
-	SubnetId string `pulumi:"subnetId"`
+	SubnetId *string `pulumi:"subnetId"`
 	// The date and time at which the private endpoint was created. Format is defined by RFC3339. Example: `2020-11-25T21:10:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
-	VcnId string `pulumi:"vcnId"`
+	VcnId *string `pulumi:"vcnId"`
 }
 
 // GetPrivateEndpointsPrivateEndpointCollectionItemInput is an input type that accepts GetPrivateEndpointsPrivateEndpointCollectionItemArgs and GetPrivateEndpointsPrivateEndpointCollectionItemOutput values.
@@ -308,33 +259,33 @@ type GetPrivateEndpointsPrivateEndpointCollectionItemInput interface {
 
 type GetPrivateEndpointsPrivateEndpointCollectionItemArgs struct {
 	// A filter to return only resources that exist in the compartment, identified by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// Description of the private endpoint. Avoid entering confidential information.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// A filter to return only resources that match the given display name exactly. Use this filter to list a resource by name. Requires `sortBy` set to `DISPLAYNAME`. Alternatively, when you know the resource OCID, use the related Get operation.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// DNS Proxy forwards any DNS FQDN queries over into the consumer DNS resolver if the DNS FQDN is included in the dns zones list otherwise it goes to service provider VCN resolver.
 	DnsZones pulumi.StringArrayInput `pulumi:"dnsZones"`
 	// Free-form tags associated with the resource. Each tag is a key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// Unique identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the private endpoint details.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// When `true`, allows the private endpoint to be used with a configuration source provider.
-	IsUsedWithConfigurationSourceProvider pulumi.BoolInput `pulumi:"isUsedWithConfigurationSourceProvider"`
+	IsUsedWithConfigurationSourceProvider pulumi.BoolPtrInput `pulumi:"isUsedWithConfigurationSourceProvider"`
 	// An array of network security groups (NSG) that the customer can optionally provide.
 	NsgIdLists pulumi.StringArrayInput `pulumi:"nsgIdLists"`
 	// The source IPs which resource manager service will use to connect to customer's network. Automatically assigned by Resource Manager Service.
 	SourceIps pulumi.StringArrayInput `pulumi:"sourceIps"`
 	// The current lifecycle state of the private endpoint.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet within the VCN for the private endpoint.
-	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
 	// The date and time at which the private endpoint was created. Format is defined by RFC3339. Example: `2020-11-25T21:10:29.600Z`
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
-	VcnId pulumi.StringInput `pulumi:"vcnId"`
+	VcnId pulumi.StringPtrInput `pulumi:"vcnId"`
 }
 
 func (GetPrivateEndpointsPrivateEndpointCollectionItemArgs) ElementType() reflect.Type {
@@ -347,12 +298,6 @@ func (i GetPrivateEndpointsPrivateEndpointCollectionItemArgs) ToGetPrivateEndpoi
 
 func (i GetPrivateEndpointsPrivateEndpointCollectionItemArgs) ToGetPrivateEndpointsPrivateEndpointCollectionItemOutputWithContext(ctx context.Context) GetPrivateEndpointsPrivateEndpointCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetPrivateEndpointsPrivateEndpointCollectionItemOutput)
-}
-
-func (i GetPrivateEndpointsPrivateEndpointCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetPrivateEndpointsPrivateEndpointCollectionItem] {
-	return pulumix.Output[GetPrivateEndpointsPrivateEndpointCollectionItem]{
-		OutputState: i.ToGetPrivateEndpointsPrivateEndpointCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetPrivateEndpointsPrivateEndpointCollectionItemArrayInput is an input type that accepts GetPrivateEndpointsPrivateEndpointCollectionItemArray and GetPrivateEndpointsPrivateEndpointCollectionItemArrayOutput values.
@@ -380,12 +325,6 @@ func (i GetPrivateEndpointsPrivateEndpointCollectionItemArray) ToGetPrivateEndpo
 	return pulumi.ToOutputWithContext(ctx, i).(GetPrivateEndpointsPrivateEndpointCollectionItemArrayOutput)
 }
 
-func (i GetPrivateEndpointsPrivateEndpointCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPrivateEndpointsPrivateEndpointCollectionItem] {
-	return pulumix.Output[[]GetPrivateEndpointsPrivateEndpointCollectionItem]{
-		OutputState: i.ToGetPrivateEndpointsPrivateEndpointCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetPrivateEndpointsPrivateEndpointCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetPrivateEndpointsPrivateEndpointCollectionItemOutput) ElementType() reflect.Type {
@@ -400,15 +339,9 @@ func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) ToGetPrivateEndp
 	return o
 }
 
-func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetPrivateEndpointsPrivateEndpointCollectionItem] {
-	return pulumix.Output[GetPrivateEndpointsPrivateEndpointCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A filter to return only resources that exist in the compartment, identified by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPrivateEndpointsPrivateEndpointCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPrivateEndpointsPrivateEndpointCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -417,13 +350,13 @@ func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) DefinedTags() pu
 }
 
 // Description of the private endpoint. Avoid entering confidential information.
-func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPrivateEndpointsPrivateEndpointCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPrivateEndpointsPrivateEndpointCollectionItem) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only resources that match the given display name exactly. Use this filter to list a resource by name. Requires `sortBy` set to `DISPLAYNAME`. Alternatively, when you know the resource OCID, use the related Get operation.
-func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPrivateEndpointsPrivateEndpointCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPrivateEndpointsPrivateEndpointCollectionItem) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // DNS Proxy forwards any DNS FQDN queries over into the consumer DNS resolver if the DNS FQDN is included in the dns zones list otherwise it goes to service provider VCN resolver.
@@ -437,15 +370,15 @@ func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) FreeformTags() p
 }
 
 // Unique identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the private endpoint details.
-func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPrivateEndpointsPrivateEndpointCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPrivateEndpointsPrivateEndpointCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // When `true`, allows the private endpoint to be used with a configuration source provider.
-func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) IsUsedWithConfigurationSourceProvider() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetPrivateEndpointsPrivateEndpointCollectionItem) bool {
+func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) IsUsedWithConfigurationSourceProvider() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetPrivateEndpointsPrivateEndpointCollectionItem) *bool {
 		return v.IsUsedWithConfigurationSourceProvider
-	}).(pulumi.BoolOutput)
+	}).(pulumi.BoolPtrOutput)
 }
 
 // An array of network security groups (NSG) that the customer can optionally provide.
@@ -459,23 +392,23 @@ func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) SourceIps() pulu
 }
 
 // The current lifecycle state of the private endpoint.
-func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPrivateEndpointsPrivateEndpointCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPrivateEndpointsPrivateEndpointCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet within the VCN for the private endpoint.
-func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) SubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPrivateEndpointsPrivateEndpointCollectionItem) string { return v.SubnetId }).(pulumi.StringOutput)
+func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPrivateEndpointsPrivateEndpointCollectionItem) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
 }
 
 // The date and time at which the private endpoint was created. Format is defined by RFC3339. Example: `2020-11-25T21:10:29.600Z`
-func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPrivateEndpointsPrivateEndpointCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPrivateEndpointsPrivateEndpointCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
-func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) VcnId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPrivateEndpointsPrivateEndpointCollectionItem) string { return v.VcnId }).(pulumi.StringOutput)
+func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) VcnId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPrivateEndpointsPrivateEndpointCollectionItem) *string { return v.VcnId }).(pulumi.StringPtrOutput)
 }
 
 type GetPrivateEndpointsPrivateEndpointCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -492,12 +425,6 @@ func (o GetPrivateEndpointsPrivateEndpointCollectionItemArrayOutput) ToGetPrivat
 	return o
 }
 
-func (o GetPrivateEndpointsPrivateEndpointCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPrivateEndpointsPrivateEndpointCollectionItem] {
-	return pulumix.Output[[]GetPrivateEndpointsPrivateEndpointCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetPrivateEndpointsPrivateEndpointCollectionItemArrayOutput) Index(i pulumi.IntInput) GetPrivateEndpointsPrivateEndpointCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPrivateEndpointsPrivateEndpointCollectionItem {
 		return vs[0].([]GetPrivateEndpointsPrivateEndpointCollectionItem)[vs[1].(int)]
@@ -505,9 +432,9 @@ func (o GetPrivateEndpointsPrivateEndpointCollectionItemArrayOutput) Index(i pul
 }
 
 type GetStackConfigSource struct {
-	ConfigSourceType     string `pulumi:"configSourceType"`
-	WorkingDirectory     string `pulumi:"workingDirectory"`
-	ZipFileBase64encoded string `pulumi:"zipFileBase64encoded"`
+	ConfigSourceType     string  `pulumi:"configSourceType"`
+	WorkingDirectory     *string `pulumi:"workingDirectory"`
+	ZipFileBase64encoded string  `pulumi:"zipFileBase64encoded"`
 }
 
 // GetStackConfigSourceInput is an input type that accepts GetStackConfigSourceArgs and GetStackConfigSourceOutput values.
@@ -522,9 +449,9 @@ type GetStackConfigSourceInput interface {
 }
 
 type GetStackConfigSourceArgs struct {
-	ConfigSourceType     pulumi.StringInput `pulumi:"configSourceType"`
-	WorkingDirectory     pulumi.StringInput `pulumi:"workingDirectory"`
-	ZipFileBase64encoded pulumi.StringInput `pulumi:"zipFileBase64encoded"`
+	ConfigSourceType     pulumi.StringInput    `pulumi:"configSourceType"`
+	WorkingDirectory     pulumi.StringPtrInput `pulumi:"workingDirectory"`
+	ZipFileBase64encoded pulumi.StringInput    `pulumi:"zipFileBase64encoded"`
 }
 
 func (GetStackConfigSourceArgs) ElementType() reflect.Type {
@@ -537,12 +464,6 @@ func (i GetStackConfigSourceArgs) ToGetStackConfigSourceOutput() GetStackConfigS
 
 func (i GetStackConfigSourceArgs) ToGetStackConfigSourceOutputWithContext(ctx context.Context) GetStackConfigSourceOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetStackConfigSourceOutput)
-}
-
-func (i GetStackConfigSourceArgs) ToOutput(ctx context.Context) pulumix.Output[GetStackConfigSource] {
-	return pulumix.Output[GetStackConfigSource]{
-		OutputState: i.ToGetStackConfigSourceOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetStackConfigSourceArrayInput is an input type that accepts GetStackConfigSourceArray and GetStackConfigSourceArrayOutput values.
@@ -570,12 +491,6 @@ func (i GetStackConfigSourceArray) ToGetStackConfigSourceArrayOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetStackConfigSourceArrayOutput)
 }
 
-func (i GetStackConfigSourceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetStackConfigSource] {
-	return pulumix.Output[[]GetStackConfigSource]{
-		OutputState: i.ToGetStackConfigSourceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetStackConfigSourceOutput struct{ *pulumi.OutputState }
 
 func (GetStackConfigSourceOutput) ElementType() reflect.Type {
@@ -590,18 +505,12 @@ func (o GetStackConfigSourceOutput) ToGetStackConfigSourceOutputWithContext(ctx 
 	return o
 }
 
-func (o GetStackConfigSourceOutput) ToOutput(ctx context.Context) pulumix.Output[GetStackConfigSource] {
-	return pulumix.Output[GetStackConfigSource]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetStackConfigSourceOutput) ConfigSourceType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetStackConfigSource) string { return v.ConfigSourceType }).(pulumi.StringOutput)
 }
 
-func (o GetStackConfigSourceOutput) WorkingDirectory() pulumi.StringOutput {
-	return o.ApplyT(func(v GetStackConfigSource) string { return v.WorkingDirectory }).(pulumi.StringOutput)
+func (o GetStackConfigSourceOutput) WorkingDirectory() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetStackConfigSource) *string { return v.WorkingDirectory }).(pulumi.StringPtrOutput)
 }
 
 func (o GetStackConfigSourceOutput) ZipFileBase64encoded() pulumi.StringOutput {
@@ -620,12 +529,6 @@ func (o GetStackConfigSourceArrayOutput) ToGetStackConfigSourceArrayOutput() Get
 
 func (o GetStackConfigSourceArrayOutput) ToGetStackConfigSourceArrayOutputWithContext(ctx context.Context) GetStackConfigSourceArrayOutput {
 	return o
-}
-
-func (o GetStackConfigSourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetStackConfigSource] {
-	return pulumix.Output[[]GetStackConfigSource]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetStackConfigSourceArrayOutput) Index(i pulumi.IntInput) GetStackConfigSourceOutput {
@@ -669,12 +572,6 @@ func (i GetStacksFilterArgs) ToGetStacksFilterOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetStacksFilterOutput)
 }
 
-func (i GetStacksFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetStacksFilter] {
-	return pulumix.Output[GetStacksFilter]{
-		OutputState: i.ToGetStacksFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetStacksFilterArrayInput is an input type that accepts GetStacksFilterArray and GetStacksFilterArrayOutput values.
 // You can construct a concrete instance of `GetStacksFilterArrayInput` via:
 //
@@ -700,12 +597,6 @@ func (i GetStacksFilterArray) ToGetStacksFilterArrayOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetStacksFilterArrayOutput)
 }
 
-func (i GetStacksFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetStacksFilter] {
-	return pulumix.Output[[]GetStacksFilter]{
-		OutputState: i.ToGetStacksFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetStacksFilterOutput struct{ *pulumi.OutputState }
 
 func (GetStacksFilterOutput) ElementType() reflect.Type {
@@ -718,12 +609,6 @@ func (o GetStacksFilterOutput) ToGetStacksFilterOutput() GetStacksFilterOutput {
 
 func (o GetStacksFilterOutput) ToGetStacksFilterOutputWithContext(ctx context.Context) GetStacksFilterOutput {
 	return o
-}
-
-func (o GetStacksFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetStacksFilter] {
-	return pulumix.Output[GetStacksFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetStacksFilterOutput) Name() pulumi.StringOutput {
@@ -752,12 +637,6 @@ func (o GetStacksFilterArrayOutput) ToGetStacksFilterArrayOutputWithContext(ctx 
 	return o
 }
 
-func (o GetStacksFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetStacksFilter] {
-	return pulumix.Output[[]GetStacksFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetStacksFilterArrayOutput) Index(i pulumi.IntInput) GetStacksFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetStacksFilter {
 		return vs[0].([]GetStacksFilter)[vs[1].(int)]
@@ -771,13 +650,13 @@ type GetStacksStack struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// General description of the stack.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Display name on which to query.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags associated with this resource. Each tag is a key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) on which to query for a stack.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A filter that returns only those resources that match the specified lifecycle state. The state value is case-insensitive.
 	//
 	// Allowable values:
@@ -785,9 +664,9 @@ type GetStacksStack struct {
 	// * ACTIVE
 	// * DELETING
 	// * DELETED
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time at which the stack was created.
-	TimeCreated string                 `pulumi:"timeCreated"`
+	TimeCreated *string                `pulumi:"timeCreated"`
 	Variables   map[string]interface{} `pulumi:"variables"`
 }
 
@@ -809,13 +688,13 @@ type GetStacksStackArgs struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// General description of the stack.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// Display name on which to query.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Free-form tags associated with this resource. Each tag is a key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) on which to query for a stack.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// A filter that returns only those resources that match the specified lifecycle state. The state value is case-insensitive.
 	//
 	// Allowable values:
@@ -823,10 +702,10 @@ type GetStacksStackArgs struct {
 	// * ACTIVE
 	// * DELETING
 	// * DELETED
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The date and time at which the stack was created.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
-	Variables   pulumi.MapInput    `pulumi:"variables"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
+	Variables   pulumi.MapInput       `pulumi:"variables"`
 }
 
 func (GetStacksStackArgs) ElementType() reflect.Type {
@@ -839,12 +718,6 @@ func (i GetStacksStackArgs) ToGetStacksStackOutput() GetStacksStackOutput {
 
 func (i GetStacksStackArgs) ToGetStacksStackOutputWithContext(ctx context.Context) GetStacksStackOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetStacksStackOutput)
-}
-
-func (i GetStacksStackArgs) ToOutput(ctx context.Context) pulumix.Output[GetStacksStack] {
-	return pulumix.Output[GetStacksStack]{
-		OutputState: i.ToGetStacksStackOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetStacksStackArrayInput is an input type that accepts GetStacksStackArray and GetStacksStackArrayOutput values.
@@ -872,12 +745,6 @@ func (i GetStacksStackArray) ToGetStacksStackArrayOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(GetStacksStackArrayOutput)
 }
 
-func (i GetStacksStackArray) ToOutput(ctx context.Context) pulumix.Output[[]GetStacksStack] {
-	return pulumix.Output[[]GetStacksStack]{
-		OutputState: i.ToGetStacksStackArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetStacksStackOutput struct{ *pulumi.OutputState }
 
 func (GetStacksStackOutput) ElementType() reflect.Type {
@@ -890,12 +757,6 @@ func (o GetStacksStackOutput) ToGetStacksStackOutput() GetStacksStackOutput {
 
 func (o GetStacksStackOutput) ToGetStacksStackOutputWithContext(ctx context.Context) GetStacksStackOutput {
 	return o
-}
-
-func (o GetStacksStackOutput) ToOutput(ctx context.Context) pulumix.Output[GetStacksStack] {
-	return pulumix.Output[GetStacksStack]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) on which to filter.
@@ -913,13 +774,13 @@ func (o GetStacksStackOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // General description of the stack.
-func (o GetStacksStackOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetStacksStack) string { return v.Description }).(pulumi.StringOutput)
+func (o GetStacksStackOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetStacksStack) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Display name on which to query.
-func (o GetStacksStackOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetStacksStack) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetStacksStackOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetStacksStack) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags associated with this resource. Each tag is a key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -928,8 +789,8 @@ func (o GetStacksStackOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) on which to query for a stack.
-func (o GetStacksStackOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetStacksStack) string { return v.Id }).(pulumi.StringOutput)
+func (o GetStacksStackOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetStacksStack) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A filter that returns only those resources that match the specified lifecycle state. The state value is case-insensitive.
@@ -939,13 +800,13 @@ func (o GetStacksStackOutput) Id() pulumi.StringOutput {
 // * ACTIVE
 // * DELETING
 // * DELETED
-func (o GetStacksStackOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetStacksStack) string { return v.State }).(pulumi.StringOutput)
+func (o GetStacksStackOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetStacksStack) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time at which the stack was created.
-func (o GetStacksStackOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetStacksStack) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetStacksStackOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetStacksStack) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 func (o GetStacksStackOutput) Variables() pulumi.MapOutput {
@@ -966,12 +827,6 @@ func (o GetStacksStackArrayOutput) ToGetStacksStackArrayOutputWithContext(ctx co
 	return o
 }
 
-func (o GetStacksStackArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetStacksStack] {
-	return pulumix.Output[[]GetStacksStack]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetStacksStackArrayOutput) Index(i pulumi.IntInput) GetStacksStackOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetStacksStack {
 		return vs[0].([]GetStacksStack)[vs[1].(int)]
@@ -979,9 +834,9 @@ func (o GetStacksStackArrayOutput) Index(i pulumi.IntInput) GetStacksStackOutput
 }
 
 type GetStacksStackConfigSource struct {
-	ConfigSourceType     string `pulumi:"configSourceType"`
-	WorkingDirectory     string `pulumi:"workingDirectory"`
-	ZipFileBase64encoded string `pulumi:"zipFileBase64encoded"`
+	ConfigSourceType     string  `pulumi:"configSourceType"`
+	WorkingDirectory     *string `pulumi:"workingDirectory"`
+	ZipFileBase64encoded string  `pulumi:"zipFileBase64encoded"`
 }
 
 // GetStacksStackConfigSourceInput is an input type that accepts GetStacksStackConfigSourceArgs and GetStacksStackConfigSourceOutput values.
@@ -996,9 +851,9 @@ type GetStacksStackConfigSourceInput interface {
 }
 
 type GetStacksStackConfigSourceArgs struct {
-	ConfigSourceType     pulumi.StringInput `pulumi:"configSourceType"`
-	WorkingDirectory     pulumi.StringInput `pulumi:"workingDirectory"`
-	ZipFileBase64encoded pulumi.StringInput `pulumi:"zipFileBase64encoded"`
+	ConfigSourceType     pulumi.StringInput    `pulumi:"configSourceType"`
+	WorkingDirectory     pulumi.StringPtrInput `pulumi:"workingDirectory"`
+	ZipFileBase64encoded pulumi.StringInput    `pulumi:"zipFileBase64encoded"`
 }
 
 func (GetStacksStackConfigSourceArgs) ElementType() reflect.Type {
@@ -1011,12 +866,6 @@ func (i GetStacksStackConfigSourceArgs) ToGetStacksStackConfigSourceOutput() Get
 
 func (i GetStacksStackConfigSourceArgs) ToGetStacksStackConfigSourceOutputWithContext(ctx context.Context) GetStacksStackConfigSourceOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetStacksStackConfigSourceOutput)
-}
-
-func (i GetStacksStackConfigSourceArgs) ToOutput(ctx context.Context) pulumix.Output[GetStacksStackConfigSource] {
-	return pulumix.Output[GetStacksStackConfigSource]{
-		OutputState: i.ToGetStacksStackConfigSourceOutputWithContext(ctx).OutputState,
-	}
 }
 
 type GetStacksStackConfigSourceOutput struct{ *pulumi.OutputState }
@@ -1033,18 +882,12 @@ func (o GetStacksStackConfigSourceOutput) ToGetStacksStackConfigSourceOutputWith
 	return o
 }
 
-func (o GetStacksStackConfigSourceOutput) ToOutput(ctx context.Context) pulumix.Output[GetStacksStackConfigSource] {
-	return pulumix.Output[GetStacksStackConfigSource]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetStacksStackConfigSourceOutput) ConfigSourceType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetStacksStackConfigSource) string { return v.ConfigSourceType }).(pulumi.StringOutput)
 }
 
-func (o GetStacksStackConfigSourceOutput) WorkingDirectory() pulumi.StringOutput {
-	return o.ApplyT(func(v GetStacksStackConfigSource) string { return v.WorkingDirectory }).(pulumi.StringOutput)
+func (o GetStacksStackConfigSourceOutput) WorkingDirectory() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetStacksStackConfigSource) *string { return v.WorkingDirectory }).(pulumi.StringPtrOutput)
 }
 
 func (o GetStacksStackConfigSourceOutput) ZipFileBase64encoded() pulumi.StringOutput {

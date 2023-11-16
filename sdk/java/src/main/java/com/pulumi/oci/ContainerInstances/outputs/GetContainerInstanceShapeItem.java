@@ -10,6 +10,8 @@ import com.pulumi.oci.ContainerInstances.outputs.GetContainerInstanceShapeItemOc
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetContainerInstanceShapeItem {
@@ -17,27 +19,27 @@ public final class GetContainerInstanceShapeItem {
      * @return For a flexible shape, the amount of memory available for instances that use this shape.
      * 
      */
-    private List<GetContainerInstanceShapeItemMemoryOption> memoryOptions;
+    private @Nullable List<GetContainerInstanceShapeItemMemoryOption> memoryOptions;
     /**
      * @return The name identifying the shape.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return For a flexible shape, the amount of networking bandwidth available for instances that use this shape.
      * 
      */
-    private List<GetContainerInstanceShapeItemNetworkingBandwidthOption> networkingBandwidthOptions;
+    private @Nullable List<GetContainerInstanceShapeItemNetworkingBandwidthOption> networkingBandwidthOptions;
     /**
      * @return For a flexible shape, the number of OCPUs available for instances that use this shape.
      * 
      */
-    private List<GetContainerInstanceShapeItemOcpuOption> ocpuOptions;
+    private @Nullable List<GetContainerInstanceShapeItemOcpuOption> ocpuOptions;
     /**
      * @return A short description of the Instance&#39;s processor (CPU).
      * 
      */
-    private String processorDescription;
+    private @Nullable String processorDescription;
 
     private GetContainerInstanceShapeItem() {}
     /**
@@ -45,35 +47,35 @@ public final class GetContainerInstanceShapeItem {
      * 
      */
     public List<GetContainerInstanceShapeItemMemoryOption> memoryOptions() {
-        return this.memoryOptions;
+        return this.memoryOptions == null ? List.of() : this.memoryOptions;
     }
     /**
      * @return The name identifying the shape.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return For a flexible shape, the amount of networking bandwidth available for instances that use this shape.
      * 
      */
     public List<GetContainerInstanceShapeItemNetworkingBandwidthOption> networkingBandwidthOptions() {
-        return this.networkingBandwidthOptions;
+        return this.networkingBandwidthOptions == null ? List.of() : this.networkingBandwidthOptions;
     }
     /**
      * @return For a flexible shape, the number of OCPUs available for instances that use this shape.
      * 
      */
     public List<GetContainerInstanceShapeItemOcpuOption> ocpuOptions() {
-        return this.ocpuOptions;
+        return this.ocpuOptions == null ? List.of() : this.ocpuOptions;
     }
     /**
      * @return A short description of the Instance&#39;s processor (CPU).
      * 
      */
-    public String processorDescription() {
-        return this.processorDescription;
+    public Optional<String> processorDescription() {
+        return Optional.ofNullable(this.processorDescription);
     }
 
     public static Builder builder() {
@@ -85,11 +87,11 @@ public final class GetContainerInstanceShapeItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetContainerInstanceShapeItemMemoryOption> memoryOptions;
-        private String name;
-        private List<GetContainerInstanceShapeItemNetworkingBandwidthOption> networkingBandwidthOptions;
-        private List<GetContainerInstanceShapeItemOcpuOption> ocpuOptions;
-        private String processorDescription;
+        private @Nullable List<GetContainerInstanceShapeItemMemoryOption> memoryOptions;
+        private @Nullable String name;
+        private @Nullable List<GetContainerInstanceShapeItemNetworkingBandwidthOption> networkingBandwidthOptions;
+        private @Nullable List<GetContainerInstanceShapeItemOcpuOption> ocpuOptions;
+        private @Nullable String processorDescription;
         public Builder() {}
         public Builder(GetContainerInstanceShapeItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -101,37 +103,37 @@ public final class GetContainerInstanceShapeItem {
         }
 
         @CustomType.Setter
-        public Builder memoryOptions(List<GetContainerInstanceShapeItemMemoryOption> memoryOptions) {
-            this.memoryOptions = Objects.requireNonNull(memoryOptions);
+        public Builder memoryOptions(@Nullable List<GetContainerInstanceShapeItemMemoryOption> memoryOptions) {
+            this.memoryOptions = memoryOptions;
             return this;
         }
         public Builder memoryOptions(GetContainerInstanceShapeItemMemoryOption... memoryOptions) {
             return memoryOptions(List.of(memoryOptions));
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder networkingBandwidthOptions(List<GetContainerInstanceShapeItemNetworkingBandwidthOption> networkingBandwidthOptions) {
-            this.networkingBandwidthOptions = Objects.requireNonNull(networkingBandwidthOptions);
+        public Builder networkingBandwidthOptions(@Nullable List<GetContainerInstanceShapeItemNetworkingBandwidthOption> networkingBandwidthOptions) {
+            this.networkingBandwidthOptions = networkingBandwidthOptions;
             return this;
         }
         public Builder networkingBandwidthOptions(GetContainerInstanceShapeItemNetworkingBandwidthOption... networkingBandwidthOptions) {
             return networkingBandwidthOptions(List.of(networkingBandwidthOptions));
         }
         @CustomType.Setter
-        public Builder ocpuOptions(List<GetContainerInstanceShapeItemOcpuOption> ocpuOptions) {
-            this.ocpuOptions = Objects.requireNonNull(ocpuOptions);
+        public Builder ocpuOptions(@Nullable List<GetContainerInstanceShapeItemOcpuOption> ocpuOptions) {
+            this.ocpuOptions = ocpuOptions;
             return this;
         }
         public Builder ocpuOptions(GetContainerInstanceShapeItemOcpuOption... ocpuOptions) {
             return ocpuOptions(List.of(ocpuOptions));
         }
         @CustomType.Setter
-        public Builder processorDescription(String processorDescription) {
-            this.processorDescription = Objects.requireNonNull(processorDescription);
+        public Builder processorDescription(@Nullable String processorDescription) {
+            this.processorDescription = processorDescription;
             return this;
         }
         public GetContainerInstanceShapeItem build() {

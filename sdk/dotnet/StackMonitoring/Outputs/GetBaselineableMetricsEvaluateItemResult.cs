@@ -20,7 +20,7 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         /// <summary>
         /// list of dimensions for the metric
         /// </summary>
-        public readonly ImmutableDictionary<string, object> Dimensions;
+        public readonly ImmutableDictionary<string, object>? Dimensions;
         /// <summary>
         /// list of data points for the metric for evaluation of anomalies
         /// </summary>
@@ -34,7 +34,7 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         private GetBaselineableMetricsEvaluateItemResult(
             ImmutableArray<Outputs.GetBaselineableMetricsEvaluateItemDataPointResult> dataPoints,
 
-            ImmutableDictionary<string, object> dimensions,
+            ImmutableDictionary<string, object>? dimensions,
 
             ImmutableArray<Outputs.GetBaselineableMetricsEvaluateItemEvaluationDataPointResult> evaluationDataPoints,
 

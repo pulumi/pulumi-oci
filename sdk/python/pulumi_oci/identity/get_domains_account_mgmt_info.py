@@ -151,26 +151,17 @@ class GetDomainsAccountMgmtInfoResult:
 
     @property
     @pulumi.getter(name="accountType")
-    def account_type(self) -> str:
-        """
-        Type of Account
-        """
+    def account_type(self) -> Optional[str]:
         return pulumi.get(self, "account_type")
 
     @property
     @pulumi.getter
-    def active(self) -> bool:
-        """
-        If true, this App is able to participate in runtime services, such as automatic-login, OAuth, and SAML. If false, all runtime services are disabled for this App and only administrative operations can be performed.
-        """
+    def active(self) -> Optional[bool]:
         return pulumi.get(self, "active")
 
     @property
     @pulumi.getter
-    def apps(self) -> Sequence['outputs.GetDomainsAccountMgmtInfoAppResult']:
-        """
-        Application on which the account is based
-        """
+    def apps(self) -> Optional[Sequence['outputs.GetDomainsAccountMgmtInfoAppResult']]:
         return pulumi.get(self, "apps")
 
     @property
@@ -190,63 +181,42 @@ class GetDomainsAccountMgmtInfoResult:
 
     @property
     @pulumi.getter(name="compartmentOcid")
-    def compartment_ocid(self) -> str:
-        """
-        Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
-        """
+    def compartment_ocid(self) -> Optional[str]:
         return pulumi.get(self, "compartment_ocid")
 
     @property
     @pulumi.getter(name="compositeKey")
-    def composite_key(self) -> str:
-        """
-        Unique key for this AccountMgmtInfo, which is used to prevent duplicate AccountMgmtInfo resources. Key is composed of a subset of app, owner and accountType.
-        """
+    def composite_key(self) -> Optional[str]:
         return pulumi.get(self, "composite_key")
 
     @property
     @pulumi.getter(name="deleteInProgress")
-    def delete_in_progress(self) -> bool:
-        """
-        A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
-        """
+    def delete_in_progress(self) -> Optional[bool]:
         return pulumi.get(self, "delete_in_progress")
 
     @property
     @pulumi.getter(name="doNotBackFillGrants")
-    def do_not_back_fill_grants(self) -> bool:
-        """
-        If true, a back-fill grant will not be created for a connected managed app as part of account creation.
-        """
+    def do_not_back_fill_grants(self) -> Optional[bool]:
         return pulumi.get(self, "do_not_back_fill_grants")
 
     @property
     @pulumi.getter(name="doNotPerformActionOnTarget")
-    def do_not_perform_action_on_target(self) -> bool:
-        """
-        If true, the operation will not be performed on the target
-        """
+    def do_not_perform_action_on_target(self) -> Optional[bool]:
         return pulumi.get(self, "do_not_perform_action_on_target")
 
     @property
     @pulumi.getter(name="domainOcid")
-    def domain_ocid(self) -> str:
-        """
-        Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
-        """
+    def domain_ocid(self) -> Optional[str]:
         return pulumi.get(self, "domain_ocid")
 
     @property
     @pulumi.getter
-    def favorite(self) -> bool:
-        """
-        If true, this account has been marked as a favorite of the User who owns it
-        """
+    def favorite(self) -> Optional[bool]:
         return pulumi.get(self, "favorite")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -254,10 +224,7 @@ class GetDomainsAccountMgmtInfoResult:
 
     @property
     @pulumi.getter(name="idcsCreatedBies")
-    def idcs_created_bies(self) -> Sequence['outputs.GetDomainsAccountMgmtInfoIdcsCreatedByResult']:
-        """
-        The User or App who created the Resource
-        """
+    def idcs_created_bies(self) -> Optional[Sequence['outputs.GetDomainsAccountMgmtInfoIdcsCreatedByResult']]:
         return pulumi.get(self, "idcs_created_bies")
 
     @property
@@ -267,106 +234,67 @@ class GetDomainsAccountMgmtInfoResult:
 
     @property
     @pulumi.getter(name="idcsLastModifiedBies")
-    def idcs_last_modified_bies(self) -> Sequence['outputs.GetDomainsAccountMgmtInfoIdcsLastModifiedByResult']:
-        """
-        The User or App who modified the Resource
-        """
+    def idcs_last_modified_bies(self) -> Optional[Sequence['outputs.GetDomainsAccountMgmtInfoIdcsLastModifiedByResult']]:
         return pulumi.get(self, "idcs_last_modified_bies")
 
     @property
     @pulumi.getter(name="idcsLastUpgradedInRelease")
-    def idcs_last_upgraded_in_release(self) -> str:
-        """
-        The release number when the resource was upgraded.
-        """
+    def idcs_last_upgraded_in_release(self) -> Optional[str]:
         return pulumi.get(self, "idcs_last_upgraded_in_release")
 
     @property
     @pulumi.getter(name="idcsPreventedOperations")
-    def idcs_prevented_operations(self) -> Sequence[str]:
-        """
-        Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
-        """
+    def idcs_prevented_operations(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "idcs_prevented_operations")
 
     @property
     @pulumi.getter(name="isAccount")
-    def is_account(self) -> bool:
-        """
-        If true, indicates that this managed object is an account, which is an identity that represents a user in the context of a specific application
-        """
+    def is_account(self) -> Optional[bool]:
         return pulumi.get(self, "is_account")
 
     @property
     @pulumi.getter(name="lastAccessed")
-    def last_accessed(self) -> str:
-        """
-        Last accessed timestamp of an application
-        """
+    def last_accessed(self) -> Optional[str]:
         return pulumi.get(self, "last_accessed")
 
     @property
     @pulumi.getter(name="matchingOwners")
-    def matching_owners(self) -> Sequence['outputs.GetDomainsAccountMgmtInfoMatchingOwnerResult']:
-        """
-        Matching owning users of the account
-        """
+    def matching_owners(self) -> Optional[Sequence['outputs.GetDomainsAccountMgmtInfoMatchingOwnerResult']]:
         return pulumi.get(self, "matching_owners")
 
     @property
     @pulumi.getter
-    def metas(self) -> Sequence['outputs.GetDomainsAccountMgmtInfoMetaResult']:
-        """
-        A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
-        """
+    def metas(self) -> Optional[Sequence['outputs.GetDomainsAccountMgmtInfoMetaResult']]:
         return pulumi.get(self, "metas")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Name of the Account
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="objectClasses")
-    def object_classes(self) -> Sequence['outputs.GetDomainsAccountMgmtInfoObjectClassResult']:
-        """
-        Object-class of the Account
-        """
+    def object_classes(self) -> Optional[Sequence['outputs.GetDomainsAccountMgmtInfoObjectClassResult']]:
         return pulumi.get(self, "object_classes")
 
     @property
     @pulumi.getter
-    def ocid(self) -> str:
-        """
-        Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
-        """
+    def ocid(self) -> Optional[str]:
         return pulumi.get(self, "ocid")
 
     @property
     @pulumi.getter(name="operationContext")
-    def operation_context(self) -> str:
-        """
-        The context in which the operation is performed on the account.
-        """
+    def operation_context(self) -> Optional[str]:
         return pulumi.get(self, "operation_context")
 
     @property
     @pulumi.getter
-    def owners(self) -> Sequence['outputs.GetDomainsAccountMgmtInfoOwnerResult']:
-        """
-        Owning user of the account
-        """
+    def owners(self) -> Optional[Sequence['outputs.GetDomainsAccountMgmtInfoOwnerResult']]:
         return pulumi.get(self, "owners")
 
     @property
     @pulumi.getter(name="previewOnly")
-    def preview_only(self) -> bool:
-        """
-        If true, then the response to the account creation operation on a connected managed app returns a preview of the account data that is evaluated by the attribute value generation policy. Note that an account will not be created on the target application when this attribute is set to true.
-        """
+    def preview_only(self) -> Optional[bool]:
         return pulumi.get(self, "preview_only")
 
     @property
@@ -376,74 +304,47 @@ class GetDomainsAccountMgmtInfoResult:
 
     @property
     @pulumi.getter(name="resourceTypes")
-    def resource_types(self) -> Sequence['outputs.GetDomainsAccountMgmtInfoResourceTypeResult']:
-        """
-        Resource Type of the Account
-        """
+    def resource_types(self) -> Optional[Sequence['outputs.GetDomainsAccountMgmtInfoResourceTypeResult']]:
         return pulumi.get(self, "resource_types")
 
     @property
     @pulumi.getter
-    def schemas(self) -> Sequence[str]:
-        """
-        REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
-        """
+    def schemas(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "schemas")
 
     @property
     @pulumi.getter(name="syncResponse")
-    def sync_response(self) -> str:
-        """
-        Last recorded sync response for the account
-        """
+    def sync_response(self) -> Optional[str]:
         return pulumi.get(self, "sync_response")
 
     @property
     @pulumi.getter(name="syncSituation")
-    def sync_situation(self) -> str:
-        """
-        Last recorded sync situation for the account
-        """
+    def sync_situation(self) -> Optional[str]:
         return pulumi.get(self, "sync_situation")
 
     @property
     @pulumi.getter(name="syncTimestamp")
-    def sync_timestamp(self) -> str:
-        """
-        Last sync timestamp of the account
-        """
+    def sync_timestamp(self) -> Optional[str]:
         return pulumi.get(self, "sync_timestamp")
 
     @property
     @pulumi.getter
-    def tags(self) -> Sequence['outputs.GetDomainsAccountMgmtInfoTagResult']:
-        """
-        A list of tags on this resource.
-        """
+    def tags(self) -> Optional[Sequence['outputs.GetDomainsAccountMgmtInfoTagResult']]:
         return pulumi.get(self, "tags")
 
     @property
     @pulumi.getter(name="tenancyOcid")
-    def tenancy_ocid(self) -> str:
-        """
-        Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
-        """
+    def tenancy_ocid(self) -> Optional[str]:
         return pulumi.get(self, "tenancy_ocid")
 
     @property
     @pulumi.getter
-    def uid(self) -> str:
-        """
-        Unique identifier of the Account
-        """
+    def uid(self) -> Optional[str]:
         return pulumi.get(self, "uid")
 
     @property
     @pulumi.getter(name="userWalletArtifacts")
-    def user_wallet_artifacts(self) -> Sequence['outputs.GetDomainsAccountMgmtInfoUserWalletArtifactResult']:
-        """
-        The UserWalletArtifact that contains the credentials that the system will use when performing Secure Form-Fill to log the user in to this application
-        """
+    def user_wallet_artifacts(self) -> Optional[Sequence['outputs.GetDomainsAccountMgmtInfoUserWalletArtifactResult']]:
         return pulumi.get(self, "user_wallet_artifacts")
 
 
@@ -503,31 +404,7 @@ def get_domains_account_mgmt_info(account_mgmt_info_id: Optional[str] = None,
                                   resource_type_schema_version: Optional[str] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDomainsAccountMgmtInfoResult:
     """
-    This data source provides details about a specific Account Mgmt Info resource in Oracle Cloud Infrastructure Identity Domains service.
-
-    Get Account Mgmt Info
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_account_mgmt_info = oci.Identity.get_domains_account_mgmt_info(account_mgmt_info_id=oci_identity_domains_account_mgmt_info["test_account_mgmt_info"]["id"],
-        idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        attribute_sets=["all"],
-        attributes="",
-        authorization=var["account_mgmt_info_authorization"],
-        resource_type_schema_version=var["account_mgmt_info_resource_type_schema_version"])
-    ```
-
-
-    :param str account_mgmt_info_id: ID of the resource
-    :param Sequence[str] attribute_sets: A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
-    :param str attributes: A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
-    :param str authorization: The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
-    :param str idcs_endpoint: The basic endpoint for the identity domain
-    :param str resource_type_schema_version: An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['accountMgmtInfoId'] = account_mgmt_info_id
@@ -591,30 +468,6 @@ def get_domains_account_mgmt_info_output(account_mgmt_info_id: Optional[pulumi.I
                                          resource_type_schema_version: Optional[pulumi.Input[Optional[str]]] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDomainsAccountMgmtInfoResult]:
     """
-    This data source provides details about a specific Account Mgmt Info resource in Oracle Cloud Infrastructure Identity Domains service.
-
-    Get Account Mgmt Info
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_account_mgmt_info = oci.Identity.get_domains_account_mgmt_info(account_mgmt_info_id=oci_identity_domains_account_mgmt_info["test_account_mgmt_info"]["id"],
-        idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        attribute_sets=["all"],
-        attributes="",
-        authorization=var["account_mgmt_info_authorization"],
-        resource_type_schema_version=var["account_mgmt_info_resource_type_schema_version"])
-    ```
-
-
-    :param str account_mgmt_info_id: ID of the resource
-    :param Sequence[str] attribute_sets: A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
-    :param str attributes: A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
-    :param str authorization: The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
-    :param str idcs_endpoint: The basic endpoint for the identity domain
-    :param str resource_type_schema_version: An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+    Use this data source to access information about an existing resource.
     """
     ...

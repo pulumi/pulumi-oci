@@ -163,7 +163,7 @@ namespace Pulumi.Oci.VisualBuilder
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The current state of the vb instance.
         /// </summary>
@@ -181,7 +181,7 @@ namespace Pulumi.Oci.VisualBuilder
 
             ImmutableArray<Outputs.GetVbInstancesFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? state,
 

@@ -39,10 +39,7 @@ class GetCertificatesResult:
 
     @property
     @pulumi.getter
-    def certificates(self) -> Sequence['outputs.GetCertificatesCertificateResult']:
-        """
-        The list of certificates.
-        """
+    def certificates(self) -> Optional[Sequence['outputs.GetCertificatesCertificateResult']]:
         return pulumi.get(self, "certificates")
 
     @property
@@ -52,7 +49,7 @@ class GetCertificatesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -80,21 +77,7 @@ def get_certificates(filters: Optional[Sequence[pulumi.InputType['GetCertificate
                      load_balancer_id: Optional[str] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCertificatesResult:
     """
-    This data source provides the list of Certificates in Oracle Cloud Infrastructure Load Balancer service.
-
-    Lists all SSL certificates bundles associated with a given load balancer.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_certificates = oci.LoadBalancer.get_certificates(load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"])
-    ```
-
-
-    :param str load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer associated with the certificate bundles to be listed.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -114,20 +97,6 @@ def get_certificates_output(filters: Optional[pulumi.Input[Optional[Sequence[pul
                             load_balancer_id: Optional[pulumi.Input[str]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCertificatesResult]:
     """
-    This data source provides the list of Certificates in Oracle Cloud Infrastructure Load Balancer service.
-
-    Lists all SSL certificates bundles associated with a given load balancer.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_certificates = oci.LoadBalancer.get_certificates(load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"])
-    ```
-
-
-    :param str load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer associated with the certificate bundles to be listed.
+    Use this data source to access information about an existing resource.
     """
     ...

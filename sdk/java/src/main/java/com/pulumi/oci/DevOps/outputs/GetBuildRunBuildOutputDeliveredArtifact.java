@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DevOps.outputs.GetBuildRunBuildOutputDeliveredArtifactItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetBuildRunBuildOutputDeliveredArtifact {
@@ -14,7 +15,7 @@ public final class GetBuildRunBuildOutputDeliveredArtifact {
      * @return List of exported variables.
      * 
      */
-    private List<GetBuildRunBuildOutputDeliveredArtifactItem> items;
+    private @Nullable List<GetBuildRunBuildOutputDeliveredArtifactItem> items;
 
     private GetBuildRunBuildOutputDeliveredArtifact() {}
     /**
@@ -22,7 +23,7 @@ public final class GetBuildRunBuildOutputDeliveredArtifact {
      * 
      */
     public List<GetBuildRunBuildOutputDeliveredArtifactItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetBuildRunBuildOutputDeliveredArtifact {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetBuildRunBuildOutputDeliveredArtifactItem> items;
+        private @Nullable List<GetBuildRunBuildOutputDeliveredArtifactItem> items;
         public Builder() {}
         public Builder(GetBuildRunBuildOutputDeliveredArtifact defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetBuildRunBuildOutputDeliveredArtifact {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetBuildRunBuildOutputDeliveredArtifactItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetBuildRunBuildOutputDeliveredArtifactItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetBuildRunBuildOutputDeliveredArtifactItem... items) {

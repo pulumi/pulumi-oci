@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetCertificateExtension {
@@ -14,39 +16,39 @@ public final class GetCertificateExtension {
      * @return The critical flag of the extension. Critical extensions must be processed, non-critical extensions can be ignored.
      * 
      */
-    private Boolean isCritical;
+    private @Nullable Boolean isCritical;
     /**
      * @return The certificate extension name.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return The certificate extension value.
      * 
      */
-    private String value;
+    private @Nullable String value;
 
     private GetCertificateExtension() {}
     /**
      * @return The critical flag of the extension. Critical extensions must be processed, non-critical extensions can be ignored.
      * 
      */
-    public Boolean isCritical() {
-        return this.isCritical;
+    public Optional<Boolean> isCritical() {
+        return Optional.ofNullable(this.isCritical);
     }
     /**
      * @return The certificate extension name.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return The certificate extension value.
      * 
      */
-    public String value() {
-        return this.value;
+    public Optional<String> value() {
+        return Optional.ofNullable(this.value);
     }
 
     public static Builder builder() {
@@ -58,9 +60,9 @@ public final class GetCertificateExtension {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Boolean isCritical;
-        private String name;
-        private String value;
+        private @Nullable Boolean isCritical;
+        private @Nullable String name;
+        private @Nullable String value;
         public Builder() {}
         public Builder(GetCertificateExtension defaults) {
     	      Objects.requireNonNull(defaults);
@@ -70,18 +72,18 @@ public final class GetCertificateExtension {
         }
 
         @CustomType.Setter
-        public Builder isCritical(Boolean isCritical) {
-            this.isCritical = Objects.requireNonNull(isCritical);
+        public Builder isCritical(@Nullable Boolean isCritical) {
+            this.isCritical = isCritical;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+        public Builder value(@Nullable String value) {
+            this.value = value;
             return this;
         }
         public GetCertificateExtension build() {

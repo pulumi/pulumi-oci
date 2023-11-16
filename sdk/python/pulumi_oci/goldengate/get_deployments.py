@@ -71,25 +71,16 @@ class GetDeploymentsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="deploymentCollections")
-    def deployment_collections(self) -> Sequence['outputs.GetDeploymentsDeploymentCollectionResult']:
-        """
-        The list of deployment_collection.
-        """
+    def deployment_collections(self) -> Optional[Sequence['outputs.GetDeploymentsDeploymentCollectionResult']]:
         return pulumi.get(self, "deployment_collections")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        An object's Display Name.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -100,14 +91,11 @@ class GetDeploymentsResult:
     @property
     @pulumi.getter
     def fqdn(self) -> Optional[str]:
-        """
-        A three-label Fully Qualified Domain Name (FQDN) for a resource.
-        """
         return pulumi.get(self, "fqdn")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -116,17 +104,11 @@ class GetDeploymentsResult:
     @property
     @pulumi.getter(name="lifecycleSubState")
     def lifecycle_sub_state(self) -> Optional[str]:
-        """
-        Possible GGS lifecycle sub-states.
-        """
         return pulumi.get(self, "lifecycle_sub_state")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        Possible lifecycle states.
-        """
         return pulumi.get(self, "state")
 
     @property
@@ -165,35 +147,7 @@ def get_deployments(assignable_connection_id: Optional[str] = None,
                     supported_connection_type: Optional[str] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDeploymentsResult:
     """
-    This data source provides the list of Deployments in Oracle Cloud Infrastructure Golden Gate service.
-
-    Lists the Deployments in a compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_deployments = oci.GoldenGate.get_deployments(compartment_id=var["compartment_id"],
-        assignable_connection_id=oci_golden_gate_connection["test_connection"]["id"],
-        assigned_connection_id=oci_golden_gate_connection["test_connection"]["id"],
-        display_name=var["deployment_display_name"],
-        fqdn=var["deployment_fqdn"],
-        lifecycle_sub_state=var["deployment_lifecycle_sub_state"],
-        state=var["deployment_state"],
-        supported_connection_type=var["deployment_supported_connection_type"])
-    ```
-
-
-    :param str assignable_connection_id: Return the deployments to which the specified connectionId may be assigned.
-    :param str assigned_connection_id: The OCID of the connection which for the deployment must be assigned.
-    :param str compartment_id: The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
-    :param str display_name: A filter to return only the resources that match the entire 'displayName' given.
-    :param str fqdn: A filter to return only the resources that match the 'fqdn' given.
-    :param str lifecycle_sub_state: A filter to return only the resources that match the 'lifecycleSubState' given.
-    :param str state: A filter to return only the resources that match the 'lifecycleState' given.
-    :param str supported_connection_type: The connection type which the deployment must support.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['assignableConnectionId'] = assignable_connection_id
@@ -234,34 +188,6 @@ def get_deployments_output(assignable_connection_id: Optional[pulumi.Input[Optio
                            supported_connection_type: Optional[pulumi.Input[Optional[str]]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDeploymentsResult]:
     """
-    This data source provides the list of Deployments in Oracle Cloud Infrastructure Golden Gate service.
-
-    Lists the Deployments in a compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_deployments = oci.GoldenGate.get_deployments(compartment_id=var["compartment_id"],
-        assignable_connection_id=oci_golden_gate_connection["test_connection"]["id"],
-        assigned_connection_id=oci_golden_gate_connection["test_connection"]["id"],
-        display_name=var["deployment_display_name"],
-        fqdn=var["deployment_fqdn"],
-        lifecycle_sub_state=var["deployment_lifecycle_sub_state"],
-        state=var["deployment_state"],
-        supported_connection_type=var["deployment_supported_connection_type"])
-    ```
-
-
-    :param str assignable_connection_id: Return the deployments to which the specified connectionId may be assigned.
-    :param str assigned_connection_id: The OCID of the connection which for the deployment must be assigned.
-    :param str compartment_id: The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
-    :param str display_name: A filter to return only the resources that match the entire 'displayName' given.
-    :param str fqdn: A filter to return only the resources that match the 'fqdn' given.
-    :param str lifecycle_sub_state: A filter to return only the resources that match the 'lifecycleSubState' given.
-    :param str state: A filter to return only the resources that match the 'lifecycleState' given.
-    :param str supported_connection_type: The connection type which the deployment must support.
+    Use this data source to access information about an existing resource.
     """
     ...

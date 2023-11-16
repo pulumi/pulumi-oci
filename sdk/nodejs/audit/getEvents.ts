@@ -66,7 +66,7 @@ export interface GetEventsResult {
     /**
      * The list of audit_events.
      */
-    readonly auditEvents: outputs.Audit.GetEventsAuditEvent[];
+    readonly auditEvents?: outputs.Audit.GetEventsAuditEvent[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of the resource  emitting the event.
      */
@@ -76,7 +76,7 @@ export interface GetEventsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly startTime: string;
 }
 /**

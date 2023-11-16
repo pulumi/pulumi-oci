@@ -50,63 +50,63 @@ export interface GetAnnouncementSubscriptionResult {
     /**
      * The OCID of the compartment that contains the announcement subscription.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * A description of the announcement subscription. Avoid entering confidential information.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * A user-friendly name for the announcement subscription. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * A list of filter groups for the announcement subscription. A filter group is a combination of multiple filters applied to announcements for matching purposes.
      */
-    readonly filterGroups: outputs.AnnouncementsService.GetAnnouncementSubscriptionFilterGroup[];
+    readonly filterGroups?: outputs.AnnouncementsService.GetAnnouncementSubscriptionFilterGroup[];
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the announcement subscription.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * A message describing the current lifecycle state in more detail. For example, details might provide required or recommended actions for a resource in a Failed state.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * The OCID of the Notifications service topic that is the target for publishing announcements that match the configured announcement subscription.
      */
-    readonly onsTopicId: string;
+    readonly onsTopicId?: string;
     /**
      * (For announcement subscriptions with Oracle Fusion Applications configured as the service only) The language in which the user prefers to receive emailed announcements. Specify the preference with a value that uses the language tag format (x-obmcs-human-language). For example fr-FR.
      */
-    readonly preferredLanguage: string;
+    readonly preferredLanguage?: string;
     /**
      * The time zone that the user prefers for announcement time stamps. Specify the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example America/Los_Angeles.
      */
-    readonly preferredTimeZone: string;
+    readonly preferredTimeZone?: string;
     /**
      * The current lifecycle state of the announcement subscription.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * The date and time that the announcement subscription was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The date and time that the announcement subscription was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific Announcement Subscription resource in Oracle Cloud Infrastructure Announcements Service service.

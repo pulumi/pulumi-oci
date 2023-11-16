@@ -17,6 +17,7 @@ import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -91,70 +92,70 @@ public class Fleet extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="approximateApplicationCount", refs={Integer.class}, tree="[0]")
-    private Output<Integer> approximateApplicationCount;
+    private Output</* @Nullable */ Integer> approximateApplicationCount;
 
     /**
      * @return The approximate count of all unique applications in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn&#39;t taken into account when computing the resource ETag.
      * 
      */
-    public Output<Integer> approximateApplicationCount() {
-        return this.approximateApplicationCount;
+    public Output<Optional<Integer>> approximateApplicationCount() {
+        return Codegen.optional(this.approximateApplicationCount);
     }
     /**
      * The approximate count of all unique Java installations in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn&#39;t taken into account when computing the resource ETag.
      * 
      */
     @Export(name="approximateInstallationCount", refs={Integer.class}, tree="[0]")
-    private Output<Integer> approximateInstallationCount;
+    private Output</* @Nullable */ Integer> approximateInstallationCount;
 
     /**
      * @return The approximate count of all unique Java installations in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn&#39;t taken into account when computing the resource ETag.
      * 
      */
-    public Output<Integer> approximateInstallationCount() {
-        return this.approximateInstallationCount;
+    public Output<Optional<Integer>> approximateInstallationCount() {
+        return Codegen.optional(this.approximateInstallationCount);
     }
     /**
      * The approximate count of all unique Java servers in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn&#39;t taken into account when computing the resource ETag.
      * 
      */
     @Export(name="approximateJavaServerCount", refs={Integer.class}, tree="[0]")
-    private Output<Integer> approximateJavaServerCount;
+    private Output</* @Nullable */ Integer> approximateJavaServerCount;
 
     /**
      * @return The approximate count of all unique Java servers in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn&#39;t taken into account when computing the resource ETag.
      * 
      */
-    public Output<Integer> approximateJavaServerCount() {
-        return this.approximateJavaServerCount;
+    public Output<Optional<Integer>> approximateJavaServerCount() {
+        return Codegen.optional(this.approximateJavaServerCount);
     }
     /**
      * The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn&#39;t taken into account when computing the resource ETag.
      * 
      */
     @Export(name="approximateJreCount", refs={Integer.class}, tree="[0]")
-    private Output<Integer> approximateJreCount;
+    private Output</* @Nullable */ Integer> approximateJreCount;
 
     /**
      * @return The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn&#39;t taken into account when computing the resource ETag.
      * 
      */
-    public Output<Integer> approximateJreCount() {
-        return this.approximateJreCount;
+    public Output<Optional<Integer>> approximateJreCount() {
+        return Codegen.optional(this.approximateJreCount);
     }
     /**
      * The approximate count of all unique managed instances in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn&#39;t taken into account when computing the resource ETag.
      * 
      */
     @Export(name="approximateManagedInstanceCount", refs={Integer.class}, tree="[0]")
-    private Output<Integer> approximateManagedInstanceCount;
+    private Output</* @Nullable */ Integer> approximateManagedInstanceCount;
 
     /**
      * @return The approximate count of all unique managed instances in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn&#39;t taken into account when computing the resource ETag.
      * 
      */
-    public Output<Integer> approximateManagedInstanceCount() {
-        return this.approximateManagedInstanceCount;
+    public Output<Optional<Integer>> approximateManagedInstanceCount() {
+        return Codegen.optional(this.approximateManagedInstanceCount);
     }
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of the Fleet.
@@ -175,28 +176,28 @@ public class Fleet extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) The Fleet&#39;s description. If nothing is provided, the Fleet description will be null.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
-    private Output<String> description;
+    private Output</* @Nullable */ String> description;
 
     /**
      * @return (Updatable) The Fleet&#39;s description. If nothing is provided, the Fleet description will be null.
      * 
      */
-    public Output<String> description() {
-        return this.description;
+    public Output<Optional<String>> description() {
+        return Codegen.optional(this.description);
     }
     /**
      * (Updatable) The name of the Fleet. The displayName must be unique for Fleets in the same compartment.
@@ -217,14 +218,14 @@ public class Fleet extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * (Updatable) Custom Log for inventory or operation log.
@@ -245,70 +246,70 @@ public class Fleet extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="isAdvancedFeaturesEnabled", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> isAdvancedFeaturesEnabled;
+    private Output</* @Nullable */ Boolean> isAdvancedFeaturesEnabled;
 
     /**
      * @return (Updatable) Whether or not advanced features are enabled in this Fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` API instead.
      * 
      */
-    public Output<Boolean> isAdvancedFeaturesEnabled() {
-        return this.isAdvancedFeaturesEnabled;
+    public Output<Optional<Boolean>> isAdvancedFeaturesEnabled() {
+        return Codegen.optional(this.isAdvancedFeaturesEnabled);
     }
     /**
      * (Updatable) Custom Log for inventory or operation log.
      * 
      */
     @Export(name="operationLog", refs={FleetOperationLog.class}, tree="[0]")
-    private Output<FleetOperationLog> operationLog;
+    private Output</* @Nullable */ FleetOperationLog> operationLog;
 
     /**
      * @return (Updatable) Custom Log for inventory or operation log.
      * 
      */
-    public Output<FleetOperationLog> operationLog() {
-        return this.operationLog;
+    public Output<Optional<FleetOperationLog>> operationLog() {
+        return Codegen.optional(this.operationLog);
     }
     /**
      * The lifecycle state of the Fleet.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The lifecycle state of the Fleet.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> systemTags;
+    private Output</* @Nullable */ Map<String,Object>> systemTags;
 
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    public Output<Map<String,Object>> systemTags() {
-        return this.systemTags;
+    public Output<Optional<Map<String,Object>>> systemTags() {
+        return Codegen.optional(this.systemTags);
     }
     /**
      * The creation date and time of the Fleet (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The creation date and time of the Fleet (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
 
     /**

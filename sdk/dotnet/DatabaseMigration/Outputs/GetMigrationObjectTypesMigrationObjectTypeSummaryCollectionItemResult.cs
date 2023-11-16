@@ -16,10 +16,10 @@ namespace Pulumi.Oci.DatabaseMigration.Outputs
         /// <summary>
         /// Object type name
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
 
         [OutputConstructor]
-        private GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItemResult(string name)
+        private GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItemResult(string? name)
         {
             Name = name;
         }

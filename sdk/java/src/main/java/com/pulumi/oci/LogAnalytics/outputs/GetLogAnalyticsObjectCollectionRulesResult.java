@@ -24,12 +24,12 @@ public final class GetLogAnalyticsObjectCollectionRulesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of log_analytics_object_collection_rule_collection.
      * 
      */
-    private List<GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollection> logAnalyticsObjectCollectionRuleCollections;
+    private @Nullable List<GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollection> logAnalyticsObjectCollectionRuleCollections;
     /**
      * @return A unique name to the rule. The name must be unique, within the tenancy, and cannot be changed.
      * 
@@ -57,15 +57,15 @@ public final class GetLogAnalyticsObjectCollectionRulesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of log_analytics_object_collection_rule_collection.
      * 
      */
     public List<GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollection> logAnalyticsObjectCollectionRuleCollections() {
-        return this.logAnalyticsObjectCollectionRuleCollections;
+        return this.logAnalyticsObjectCollectionRuleCollections == null ? List.of() : this.logAnalyticsObjectCollectionRuleCollections;
     }
     /**
      * @return A unique name to the rule. The name must be unique, within the tenancy, and cannot be changed.
@@ -96,8 +96,8 @@ public final class GetLogAnalyticsObjectCollectionRulesResult {
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetLogAnalyticsObjectCollectionRulesFilter> filters;
-        private String id;
-        private List<GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollection> logAnalyticsObjectCollectionRuleCollections;
+        private @Nullable String id;
+        private @Nullable List<GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollection> logAnalyticsObjectCollectionRuleCollections;
         private @Nullable String name;
         private String namespace;
         private @Nullable String state;
@@ -127,13 +127,13 @@ public final class GetLogAnalyticsObjectCollectionRulesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder logAnalyticsObjectCollectionRuleCollections(List<GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollection> logAnalyticsObjectCollectionRuleCollections) {
-            this.logAnalyticsObjectCollectionRuleCollections = Objects.requireNonNull(logAnalyticsObjectCollectionRuleCollections);
+        public Builder logAnalyticsObjectCollectionRuleCollections(@Nullable List<GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollection> logAnalyticsObjectCollectionRuleCollections) {
+            this.logAnalyticsObjectCollectionRuleCollections = logAnalyticsObjectCollectionRuleCollections;
             return this;
         }
         public Builder logAnalyticsObjectCollectionRuleCollections(GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollection... logAnalyticsObjectCollectionRuleCollections) {

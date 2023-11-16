@@ -156,7 +156,7 @@ namespace Pulumi.Oci.Waf
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Unique name of protection capability group tag.
         /// </summary>
@@ -173,7 +173,7 @@ namespace Pulumi.Oci.Waf
 
             ImmutableArray<Outputs.GetProtectionCapabilityGroupTagsFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? name,
 

@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DevOps.outputs.GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilter;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetBuildRunBuildRunSourceTriggerInfoActionFilterExclude {
-    private List<GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilter> fileFilters;
+    private @Nullable List<GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilter> fileFilters;
 
     private GetBuildRunBuildRunSourceTriggerInfoActionFilterExclude() {}
     public List<GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilter> fileFilters() {
-        return this.fileFilters;
+        return this.fileFilters == null ? List.of() : this.fileFilters;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetBuildRunBuildRunSourceTriggerInfoActionFilterExclude {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilter> fileFilters;
+        private @Nullable List<GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilter> fileFilters;
         public Builder() {}
         public Builder(GetBuildRunBuildRunSourceTriggerInfoActionFilterExclude defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetBuildRunBuildRunSourceTriggerInfoActionFilterExclude {
         }
 
         @CustomType.Setter
-        public Builder fileFilters(List<GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilter> fileFilters) {
-            this.fileFilters = Objects.requireNonNull(fileFilters);
+        public Builder fileFilters(@Nullable List<GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilter> fileFilters) {
+            this.fileFilters = fileFilters;
             return this;
         }
         public Builder fileFilters(GetBuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilter... fileFilters) {

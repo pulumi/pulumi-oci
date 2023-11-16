@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Instance resource in Oracle Cloud Infrastructure Core service.
@@ -64,54 +63,54 @@ type LookupInstanceArgs struct {
 type LookupInstanceResult struct {
 	// Configuration options for the Oracle Cloud Agent software running on the instance.
 	AgentConfigs []GetInstanceAgentConfig `pulumi:"agentConfigs"`
-	Async        bool                     `pulumi:"async"`
+	Async        *bool                    `pulumi:"async"`
 	// Options for defining the availabiity of a VM instance after a maintenance event that impacts the underlying hardware.
 	AvailabilityConfigs []GetInstanceAvailabilityConfig `pulumi:"availabilityConfigs"`
 	// The availability domain the instance is running in.  Example: `Uocm:PHX-AD-1`
-	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	AvailabilityDomain *string `pulumi:"availabilityDomain"`
 	// The OCID of the attached boot volume. If the `sourceType` is `bootVolume`, this will be the same OCID as the `sourceId`.
-	BootVolumeId string `pulumi:"bootVolumeId"`
+	BootVolumeId *string `pulumi:"bootVolumeId"`
 	// The OCID of the compute capacity reservation this instance is launched under. When this field contains an empty string or is null, the instance is not currently in a capacity reservation. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
-	CapacityReservationId string `pulumi:"capacityReservationId"`
+	CapacityReservationId *string `pulumi:"capacityReservationId"`
 	// The OCID of the compartment containing images to search
-	CompartmentId     string                        `pulumi:"compartmentId"`
-	ComputeClusterId  string                        `pulumi:"computeClusterId"`
+	CompartmentId     *string                       `pulumi:"compartmentId"`
+	ComputeClusterId  *string                       `pulumi:"computeClusterId"`
 	CreateVnicDetails []GetInstanceCreateVnicDetail `pulumi:"createVnicDetails"`
 	// The OCID of the dedicated virtual machine host that the instance is placed on.
-	DedicatedVmHostId string `pulumi:"dedicatedVmHostId"`
+	DedicatedVmHostId *string `pulumi:"dedicatedVmHostId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
 	ExtendedMetadata map[string]interface{} `pulumi:"extendedMetadata"`
 	// The name of the fault domain the instance is running in.
-	FaultDomain string `pulumi:"faultDomain"`
+	FaultDomain *string `pulumi:"faultDomain"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The hostname for the instance VNIC's primary private IP.
 	//
 	// Deprecated: The 'hostname_label' field has been deprecated. Please use 'hostname_label under create_vnic_details' instead.
-	HostnameLabel string `pulumi:"hostnameLabel"`
+	HostnameLabel *string `pulumi:"hostnameLabel"`
 	// The OCID of the instance.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Deprecated. Use `sourceDetails` instead.
 	//
 	// Deprecated: The 'image' field has been deprecated. Please use 'source_details' instead. If both fields are specified, then 'source_details' will be used.
-	Image string `pulumi:"image"`
+	Image *string `pulumi:"image"`
 	// The OCID of the Instance Configuration used to source launch details for this instance. Any other fields supplied in the instance launch request override the details stored in the Instance Configuration for this instance launch.
-	InstanceConfigurationId string `pulumi:"instanceConfigurationId"`
-	InstanceId              string `pulumi:"instanceId"`
+	InstanceConfigurationId *string `pulumi:"instanceConfigurationId"`
+	InstanceId              string  `pulumi:"instanceId"`
 	// Optional mutable instance options
 	InstanceOptions []GetInstanceInstanceOption `pulumi:"instanceOptions"`
 	// When a bare metal or virtual machine instance boots, the iPXE firmware that runs on the instance is configured to run an iPXE script to continue the boot process.
-	IpxeScript string `pulumi:"ipxeScript"`
+	IpxeScript *string `pulumi:"ipxeScript"`
 	// Whether the instance’s OCPUs and memory are distributed across multiple NUMA nodes.
-	IsCrossNumaNode bool `pulumi:"isCrossNumaNode"`
+	IsCrossNumaNode *bool `pulumi:"isCrossNumaNode"`
 	// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
-	IsPvEncryptionInTransitEnabled bool `pulumi:"isPvEncryptionInTransitEnabled"`
+	IsPvEncryptionInTransitEnabled *bool `pulumi:"isPvEncryptionInTransitEnabled"`
 	// Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
-	LaunchMode string `pulumi:"launchMode"`
+	LaunchMode *string `pulumi:"launchMode"`
 	// Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
 	LaunchOptions []GetInstanceLaunchOption `pulumi:"launchOptions"`
 	// Custom metadata that you provide.
@@ -121,29 +120,29 @@ type LookupInstanceResult struct {
 	// (Optional) Configuration options for preemptible instances.
 	PreemptibleInstanceConfigs []GetInstancePreemptibleInstanceConfig `pulumi:"preemptibleInstanceConfigs"`
 	// (Optional) Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
-	PreserveBootVolume bool `pulumi:"preserveBootVolume"`
+	PreserveBootVolume *bool `pulumi:"preserveBootVolume"`
 	// The private IP address of instance VNIC. To set the private IP address, use the `privateIp` argument in create_vnic_details.
-	PrivateIp string `pulumi:"privateIp"`
+	PrivateIp *string `pulumi:"privateIp"`
 	// The public IP address of instance VNIC (if enabled).
-	PublicIp string `pulumi:"publicIp"`
+	PublicIp *string `pulumi:"publicIp"`
 	// The region that contains the availability domain the instance is running in.
-	Region string `pulumi:"region"`
+	Region *string `pulumi:"region"`
 	// The shape of the instance. The shape determines the number of CPUs and the amount of memory allocated to the instance. You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
-	Shape string `pulumi:"shape"`
+	Shape *string `pulumi:"shape"`
 	// The shape configuration for an instance. The shape configuration determines the resources allocated to an instance.
 	ShapeConfigs  []GetInstanceShapeConfig  `pulumi:"shapeConfigs"`
 	SourceDetails []GetInstanceSourceDetail `pulumi:"sourceDetails"`
 	// The current state of the instance.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Deprecated: The 'subnet_id' field has been deprecated. Please use 'subnet_id under create_vnic_details' instead.
-	SubnetId string `pulumi:"subnetId"`
+	SubnetId *string `pulumi:"subnetId"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The date and time the instance was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the instance is expected to be stopped / started,  in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). After that time if instance hasn't been rebooted, Oracle will reboot the instance within 24 hours of the due time. Regardless of how the instance was stopped, the flag will be reset to empty as soon as instance reaches Stopped state. Example: `2018-05-25T21:10:29.600Z`
-	TimeMaintenanceRebootDue  string `pulumi:"timeMaintenanceRebootDue"`
-	UpdateOperationConstraint string `pulumi:"updateOperationConstraint"`
+	TimeMaintenanceRebootDue  *string `pulumi:"timeMaintenanceRebootDue"`
+	UpdateOperationConstraint *string `pulumi:"updateOperationConstraint"`
 }
 
 func LookupInstanceOutput(ctx *pulumi.Context, args LookupInstanceOutputArgs, opts ...pulumi.InvokeOption) LookupInstanceResultOutput {
@@ -184,19 +183,13 @@ func (o LookupInstanceResultOutput) ToLookupInstanceResultOutputWithContext(ctx 
 	return o
 }
 
-func (o LookupInstanceResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupInstanceResult] {
-	return pulumix.Output[LookupInstanceResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Configuration options for the Oracle Cloud Agent software running on the instance.
 func (o LookupInstanceResultOutput) AgentConfigs() GetInstanceAgentConfigArrayOutput {
 	return o.ApplyT(func(v LookupInstanceResult) []GetInstanceAgentConfig { return v.AgentConfigs }).(GetInstanceAgentConfigArrayOutput)
 }
 
-func (o LookupInstanceResultOutput) Async() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupInstanceResult) bool { return v.Async }).(pulumi.BoolOutput)
+func (o LookupInstanceResultOutput) Async() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupInstanceResult) *bool { return v.Async }).(pulumi.BoolPtrOutput)
 }
 
 // Options for defining the availabiity of a VM instance after a maintenance event that impacts the underlying hardware.
@@ -205,27 +198,27 @@ func (o LookupInstanceResultOutput) AvailabilityConfigs() GetInstanceAvailabilit
 }
 
 // The availability domain the instance is running in.  Example: `Uocm:PHX-AD-1`
-func (o LookupInstanceResultOutput) AvailabilityDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupInstanceResult) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
+func (o LookupInstanceResultOutput) AvailabilityDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupInstanceResult) *string { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the attached boot volume. If the `sourceType` is `bootVolume`, this will be the same OCID as the `sourceId`.
-func (o LookupInstanceResultOutput) BootVolumeId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupInstanceResult) string { return v.BootVolumeId }).(pulumi.StringOutput)
+func (o LookupInstanceResultOutput) BootVolumeId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupInstanceResult) *string { return v.BootVolumeId }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the compute capacity reservation this instance is launched under. When this field contains an empty string or is null, the instance is not currently in a capacity reservation. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
-func (o LookupInstanceResultOutput) CapacityReservationId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupInstanceResult) string { return v.CapacityReservationId }).(pulumi.StringOutput)
+func (o LookupInstanceResultOutput) CapacityReservationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupInstanceResult) *string { return v.CapacityReservationId }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the compartment containing images to search
-func (o LookupInstanceResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupInstanceResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupInstanceResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupInstanceResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupInstanceResultOutput) ComputeClusterId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupInstanceResult) string { return v.ComputeClusterId }).(pulumi.StringOutput)
+func (o LookupInstanceResultOutput) ComputeClusterId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupInstanceResult) *string { return v.ComputeClusterId }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupInstanceResultOutput) CreateVnicDetails() GetInstanceCreateVnicDetailArrayOutput {
@@ -233,8 +226,8 @@ func (o LookupInstanceResultOutput) CreateVnicDetails() GetInstanceCreateVnicDet
 }
 
 // The OCID of the dedicated virtual machine host that the instance is placed on.
-func (o LookupInstanceResultOutput) DedicatedVmHostId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupInstanceResult) string { return v.DedicatedVmHostId }).(pulumi.StringOutput)
+func (o LookupInstanceResultOutput) DedicatedVmHostId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupInstanceResult) *string { return v.DedicatedVmHostId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -243,8 +236,8 @@ func (o LookupInstanceResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-func (o LookupInstanceResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupInstanceResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupInstanceResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupInstanceResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
@@ -253,8 +246,8 @@ func (o LookupInstanceResultOutput) ExtendedMetadata() pulumi.MapOutput {
 }
 
 // The name of the fault domain the instance is running in.
-func (o LookupInstanceResultOutput) FaultDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupInstanceResult) string { return v.FaultDomain }).(pulumi.StringOutput)
+func (o LookupInstanceResultOutput) FaultDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupInstanceResult) *string { return v.FaultDomain }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -265,25 +258,25 @@ func (o LookupInstanceResultOutput) FreeformTags() pulumi.MapOutput {
 // The hostname for the instance VNIC's primary private IP.
 //
 // Deprecated: The 'hostname_label' field has been deprecated. Please use 'hostname_label under create_vnic_details' instead.
-func (o LookupInstanceResultOutput) HostnameLabel() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupInstanceResult) string { return v.HostnameLabel }).(pulumi.StringOutput)
+func (o LookupInstanceResultOutput) HostnameLabel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupInstanceResult) *string { return v.HostnameLabel }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the instance.
-func (o LookupInstanceResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupInstanceResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupInstanceResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupInstanceResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Deprecated. Use `sourceDetails` instead.
 //
 // Deprecated: The 'image' field has been deprecated. Please use 'source_details' instead. If both fields are specified, then 'source_details' will be used.
-func (o LookupInstanceResultOutput) Image() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupInstanceResult) string { return v.Image }).(pulumi.StringOutput)
+func (o LookupInstanceResultOutput) Image() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupInstanceResult) *string { return v.Image }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the Instance Configuration used to source launch details for this instance. Any other fields supplied in the instance launch request override the details stored in the Instance Configuration for this instance launch.
-func (o LookupInstanceResultOutput) InstanceConfigurationId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupInstanceResult) string { return v.InstanceConfigurationId }).(pulumi.StringOutput)
+func (o LookupInstanceResultOutput) InstanceConfigurationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupInstanceResult) *string { return v.InstanceConfigurationId }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupInstanceResultOutput) InstanceId() pulumi.StringOutput {
@@ -296,23 +289,23 @@ func (o LookupInstanceResultOutput) InstanceOptions() GetInstanceInstanceOptionA
 }
 
 // When a bare metal or virtual machine instance boots, the iPXE firmware that runs on the instance is configured to run an iPXE script to continue the boot process.
-func (o LookupInstanceResultOutput) IpxeScript() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupInstanceResult) string { return v.IpxeScript }).(pulumi.StringOutput)
+func (o LookupInstanceResultOutput) IpxeScript() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupInstanceResult) *string { return v.IpxeScript }).(pulumi.StringPtrOutput)
 }
 
 // Whether the instance’s OCPUs and memory are distributed across multiple NUMA nodes.
-func (o LookupInstanceResultOutput) IsCrossNumaNode() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupInstanceResult) bool { return v.IsCrossNumaNode }).(pulumi.BoolOutput)
+func (o LookupInstanceResultOutput) IsCrossNumaNode() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupInstanceResult) *bool { return v.IsCrossNumaNode }).(pulumi.BoolPtrOutput)
 }
 
 // Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
-func (o LookupInstanceResultOutput) IsPvEncryptionInTransitEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupInstanceResult) bool { return v.IsPvEncryptionInTransitEnabled }).(pulumi.BoolOutput)
+func (o LookupInstanceResultOutput) IsPvEncryptionInTransitEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupInstanceResult) *bool { return v.IsPvEncryptionInTransitEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
-func (o LookupInstanceResultOutput) LaunchMode() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupInstanceResult) string { return v.LaunchMode }).(pulumi.StringOutput)
+func (o LookupInstanceResultOutput) LaunchMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupInstanceResult) *string { return v.LaunchMode }).(pulumi.StringPtrOutput)
 }
 
 // Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
@@ -338,28 +331,28 @@ func (o LookupInstanceResultOutput) PreemptibleInstanceConfigs() GetInstancePree
 }
 
 // (Optional) Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
-func (o LookupInstanceResultOutput) PreserveBootVolume() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupInstanceResult) bool { return v.PreserveBootVolume }).(pulumi.BoolOutput)
+func (o LookupInstanceResultOutput) PreserveBootVolume() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupInstanceResult) *bool { return v.PreserveBootVolume }).(pulumi.BoolPtrOutput)
 }
 
 // The private IP address of instance VNIC. To set the private IP address, use the `privateIp` argument in create_vnic_details.
-func (o LookupInstanceResultOutput) PrivateIp() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupInstanceResult) string { return v.PrivateIp }).(pulumi.StringOutput)
+func (o LookupInstanceResultOutput) PrivateIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupInstanceResult) *string { return v.PrivateIp }).(pulumi.StringPtrOutput)
 }
 
 // The public IP address of instance VNIC (if enabled).
-func (o LookupInstanceResultOutput) PublicIp() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupInstanceResult) string { return v.PublicIp }).(pulumi.StringOutput)
+func (o LookupInstanceResultOutput) PublicIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupInstanceResult) *string { return v.PublicIp }).(pulumi.StringPtrOutput)
 }
 
 // The region that contains the availability domain the instance is running in.
-func (o LookupInstanceResultOutput) Region() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupInstanceResult) string { return v.Region }).(pulumi.StringOutput)
+func (o LookupInstanceResultOutput) Region() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupInstanceResult) *string { return v.Region }).(pulumi.StringPtrOutput)
 }
 
 // The shape of the instance. The shape determines the number of CPUs and the amount of memory allocated to the instance. You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
-func (o LookupInstanceResultOutput) Shape() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupInstanceResult) string { return v.Shape }).(pulumi.StringOutput)
+func (o LookupInstanceResultOutput) Shape() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupInstanceResult) *string { return v.Shape }).(pulumi.StringPtrOutput)
 }
 
 // The shape configuration for an instance. The shape configuration determines the resources allocated to an instance.
@@ -372,13 +365,13 @@ func (o LookupInstanceResultOutput) SourceDetails() GetInstanceSourceDetailArray
 }
 
 // The current state of the instance.
-func (o LookupInstanceResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupInstanceResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupInstanceResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupInstanceResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Deprecated: The 'subnet_id' field has been deprecated. Please use 'subnet_id under create_vnic_details' instead.
-func (o LookupInstanceResultOutput) SubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupInstanceResult) string { return v.SubnetId }).(pulumi.StringOutput)
+func (o LookupInstanceResultOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupInstanceResult) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -387,17 +380,17 @@ func (o LookupInstanceResultOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The date and time the instance was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-func (o LookupInstanceResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupInstanceResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupInstanceResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupInstanceResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the instance is expected to be stopped / started,  in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). After that time if instance hasn't been rebooted, Oracle will reboot the instance within 24 hours of the due time. Regardless of how the instance was stopped, the flag will be reset to empty as soon as instance reaches Stopped state. Example: `2018-05-25T21:10:29.600Z`
-func (o LookupInstanceResultOutput) TimeMaintenanceRebootDue() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupInstanceResult) string { return v.TimeMaintenanceRebootDue }).(pulumi.StringOutput)
+func (o LookupInstanceResultOutput) TimeMaintenanceRebootDue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupInstanceResult) *string { return v.TimeMaintenanceRebootDue }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupInstanceResultOutput) UpdateOperationConstraint() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupInstanceResult) string { return v.UpdateOperationConstraint }).(pulumi.StringOutput)
+func (o LookupInstanceResultOutput) UpdateOperationConstraint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupInstanceResult) *string { return v.UpdateOperationConstraint }).(pulumi.StringPtrOutput)
 }
 
 func init() {

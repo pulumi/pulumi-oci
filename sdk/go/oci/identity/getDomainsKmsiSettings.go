@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Kmsi Settings in Oracle Cloud Infrastructure Identity Domains service.
@@ -77,16 +76,16 @@ type GetDomainsKmsiSettingsResult struct {
 	Authorization *string  `pulumi:"authorization"`
 	CompartmentId *string  `pulumi:"compartmentId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id           string `pulumi:"id"`
-	IdcsEndpoint string `pulumi:"idcsEndpoint"`
-	ItemsPerPage int    `pulumi:"itemsPerPage"`
+	Id           *string `pulumi:"id"`
+	IdcsEndpoint string  `pulumi:"idcsEndpoint"`
+	ItemsPerPage *int    `pulumi:"itemsPerPage"`
 	// The list of kmsi_settings.
 	KmsiSettings              []GetDomainsKmsiSettingsKmsiSetting `pulumi:"kmsiSettings"`
 	ResourceTypeSchemaVersion *string                             `pulumi:"resourceTypeSchemaVersion"`
 	// REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
 	Schemas      []string `pulumi:"schemas"`
-	StartIndex   int      `pulumi:"startIndex"`
-	TotalResults int      `pulumi:"totalResults"`
+	StartIndex   *int     `pulumi:"startIndex"`
+	TotalResults *int     `pulumi:"totalResults"`
 }
 
 func GetDomainsKmsiSettingsOutput(ctx *pulumi.Context, args GetDomainsKmsiSettingsOutputArgs, opts ...pulumi.InvokeOption) GetDomainsKmsiSettingsResultOutput {
@@ -136,12 +135,6 @@ func (o GetDomainsKmsiSettingsResultOutput) ToGetDomainsKmsiSettingsResultOutput
 	return o
 }
 
-func (o GetDomainsKmsiSettingsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsKmsiSettingsResult] {
-	return pulumix.Output[GetDomainsKmsiSettingsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDomainsKmsiSettingsResultOutput) AttributeSets() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetDomainsKmsiSettingsResult) []string { return v.AttributeSets }).(pulumi.StringArrayOutput)
 }
@@ -159,16 +152,16 @@ func (o GetDomainsKmsiSettingsResultOutput) CompartmentId() pulumi.StringPtrOutp
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetDomainsKmsiSettingsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDomainsKmsiSettingsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDomainsKmsiSettingsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDomainsKmsiSettingsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetDomainsKmsiSettingsResultOutput) IdcsEndpoint() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDomainsKmsiSettingsResult) string { return v.IdcsEndpoint }).(pulumi.StringOutput)
 }
 
-func (o GetDomainsKmsiSettingsResultOutput) ItemsPerPage() pulumi.IntOutput {
-	return o.ApplyT(func(v GetDomainsKmsiSettingsResult) int { return v.ItemsPerPage }).(pulumi.IntOutput)
+func (o GetDomainsKmsiSettingsResultOutput) ItemsPerPage() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetDomainsKmsiSettingsResult) *int { return v.ItemsPerPage }).(pulumi.IntPtrOutput)
 }
 
 // The list of kmsi_settings.
@@ -185,12 +178,12 @@ func (o GetDomainsKmsiSettingsResultOutput) Schemas() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetDomainsKmsiSettingsResult) []string { return v.Schemas }).(pulumi.StringArrayOutput)
 }
 
-func (o GetDomainsKmsiSettingsResultOutput) StartIndex() pulumi.IntOutput {
-	return o.ApplyT(func(v GetDomainsKmsiSettingsResult) int { return v.StartIndex }).(pulumi.IntOutput)
+func (o GetDomainsKmsiSettingsResultOutput) StartIndex() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetDomainsKmsiSettingsResult) *int { return v.StartIndex }).(pulumi.IntPtrOutput)
 }
 
-func (o GetDomainsKmsiSettingsResultOutput) TotalResults() pulumi.IntOutput {
-	return o.ApplyT(func(v GetDomainsKmsiSettingsResult) int { return v.TotalResults }).(pulumi.IntOutput)
+func (o GetDomainsKmsiSettingsResultOutput) TotalResults() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetDomainsKmsiSettingsResult) *int { return v.TotalResults }).(pulumi.IntPtrOutput)
 }
 
 func init() {

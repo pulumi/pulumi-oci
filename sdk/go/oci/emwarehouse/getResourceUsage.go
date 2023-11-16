@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Em Warehouse Resource Usage resource in Oracle Cloud Infrastructure Em Warehouse service.
@@ -60,18 +59,18 @@ type GetResourceUsageArgs struct {
 // A collection of values returned by getResourceUsage.
 type GetResourceUsageResult struct {
 	// EmInstanceCount
-	EmInstanceCount int `pulumi:"emInstanceCount"`
+	EmInstanceCount *int `pulumi:"emInstanceCount"`
 	// List of emInstances
 	EmInstances   []GetResourceUsageEmInstance `pulumi:"emInstances"`
 	EmWarehouseId string                       `pulumi:"emWarehouseId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// operations Insights Warehouse Identifier
-	OperationsInsightsWarehouseId string `pulumi:"operationsInsightsWarehouseId"`
+	OperationsInsightsWarehouseId *string `pulumi:"operationsInsightsWarehouseId"`
 	// schema name
-	SchemaName string `pulumi:"schemaName"`
+	SchemaName *string `pulumi:"schemaName"`
 	// EmInstance Target count
-	TargetsCount int `pulumi:"targetsCount"`
+	TargetsCount *int `pulumi:"targetsCount"`
 }
 
 func GetResourceUsageOutput(ctx *pulumi.Context, args GetResourceUsageOutputArgs, opts ...pulumi.InvokeOption) GetResourceUsageResultOutput {
@@ -112,15 +111,9 @@ func (o GetResourceUsageResultOutput) ToGetResourceUsageResultOutputWithContext(
 	return o
 }
 
-func (o GetResourceUsageResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetResourceUsageResult] {
-	return pulumix.Output[GetResourceUsageResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // EmInstanceCount
-func (o GetResourceUsageResultOutput) EmInstanceCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetResourceUsageResult) int { return v.EmInstanceCount }).(pulumi.IntOutput)
+func (o GetResourceUsageResultOutput) EmInstanceCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetResourceUsageResult) *int { return v.EmInstanceCount }).(pulumi.IntPtrOutput)
 }
 
 // List of emInstances
@@ -133,23 +126,23 @@ func (o GetResourceUsageResultOutput) EmWarehouseId() pulumi.StringOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetResourceUsageResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResourceUsageResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetResourceUsageResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResourceUsageResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // operations Insights Warehouse Identifier
-func (o GetResourceUsageResultOutput) OperationsInsightsWarehouseId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResourceUsageResult) string { return v.OperationsInsightsWarehouseId }).(pulumi.StringOutput)
+func (o GetResourceUsageResultOutput) OperationsInsightsWarehouseId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResourceUsageResult) *string { return v.OperationsInsightsWarehouseId }).(pulumi.StringPtrOutput)
 }
 
 // schema name
-func (o GetResourceUsageResultOutput) SchemaName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResourceUsageResult) string { return v.SchemaName }).(pulumi.StringOutput)
+func (o GetResourceUsageResultOutput) SchemaName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetResourceUsageResult) *string { return v.SchemaName }).(pulumi.StringPtrOutput)
 }
 
 // EmInstance Target count
-func (o GetResourceUsageResultOutput) TargetsCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetResourceUsageResult) int { return v.TargetsCount }).(pulumi.IntOutput)
+func (o GetResourceUsageResultOutput) TargetsCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetResourceUsageResult) *int { return v.TargetsCount }).(pulumi.IntPtrOutput)
 }
 
 func init() {

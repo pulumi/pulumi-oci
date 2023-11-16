@@ -51,11 +51,11 @@ export interface GetTagStandardTagNamespaceTemplatesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of standard_tag_namespace_templates.
      */
-    readonly standardTagNamespaceTemplates: outputs.Identity.GetTagStandardTagNamespaceTemplatesStandardTagNamespaceTemplate[];
+    readonly standardTagNamespaceTemplates?: outputs.Identity.GetTagStandardTagNamespaceTemplatesStandardTagNamespaceTemplate[];
 }
 /**
  * This data source provides the list of Tag Standard Tag Namespace Templates in Oracle Cloud Infrastructure Identity service.

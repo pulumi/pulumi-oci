@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetRemediationRecipeNetworkConfiguration {
@@ -14,12 +16,12 @@ public final class GetRemediationRecipeNetworkConfiguration {
      * @return The list of Oracle Cloud Identifiers ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) corresponding to Network Security Groups.
      * 
      */
-    private List<String> nsgIds;
+    private @Nullable List<String> nsgIds;
     /**
      * @return The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the subnet.
      * 
      */
-    private String subnetId;
+    private @Nullable String subnetId;
 
     private GetRemediationRecipeNetworkConfiguration() {}
     /**
@@ -27,14 +29,14 @@ public final class GetRemediationRecipeNetworkConfiguration {
      * 
      */
     public List<String> nsgIds() {
-        return this.nsgIds;
+        return this.nsgIds == null ? List.of() : this.nsgIds;
     }
     /**
      * @return The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the subnet.
      * 
      */
-    public String subnetId() {
-        return this.subnetId;
+    public Optional<String> subnetId() {
+        return Optional.ofNullable(this.subnetId);
     }
 
     public static Builder builder() {
@@ -46,8 +48,8 @@ public final class GetRemediationRecipeNetworkConfiguration {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> nsgIds;
-        private String subnetId;
+        private @Nullable List<String> nsgIds;
+        private @Nullable String subnetId;
         public Builder() {}
         public Builder(GetRemediationRecipeNetworkConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
@@ -56,16 +58,16 @@ public final class GetRemediationRecipeNetworkConfiguration {
         }
 
         @CustomType.Setter
-        public Builder nsgIds(List<String> nsgIds) {
-            this.nsgIds = Objects.requireNonNull(nsgIds);
+        public Builder nsgIds(@Nullable List<String> nsgIds) {
+            this.nsgIds = nsgIds;
             return this;
         }
         public Builder nsgIds(String... nsgIds) {
             return nsgIds(List.of(nsgIds));
         }
         @CustomType.Setter
-        public Builder subnetId(String subnetId) {
-            this.subnetId = Objects.requireNonNull(subnetId);
+        public Builder subnetId(@Nullable String subnetId) {
+            this.subnetId = subnetId;
             return this;
         }
         public GetRemediationRecipeNetworkConfiguration build() {

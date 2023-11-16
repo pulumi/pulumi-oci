@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Configuration resource in Oracle Cloud Infrastructure License Manager service.
@@ -63,11 +62,11 @@ type LookupConfigurationResult struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// The list of associated configuration email IDs.
 	EmailIds []string `pulumi:"emailIds"`
-	Id       string   `pulumi:"id"`
+	Id       *string  `pulumi:"id"`
 	// The time the configuration was created. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the configuration was updated. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func LookupConfigurationOutput(ctx *pulumi.Context, args LookupConfigurationOutputArgs, opts ...pulumi.InvokeOption) LookupConfigurationResultOutput {
@@ -108,12 +107,6 @@ func (o LookupConfigurationResultOutput) ToLookupConfigurationResultOutputWithCo
 	return o
 }
 
-func (o LookupConfigurationResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupConfigurationResult] {
-	return pulumix.Output[LookupConfigurationResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to which the configuration is specified.
 func (o LookupConfigurationResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConfigurationResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -124,18 +117,18 @@ func (o LookupConfigurationResultOutput) EmailIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupConfigurationResult) []string { return v.EmailIds }).(pulumi.StringArrayOutput)
 }
 
-func (o LookupConfigurationResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupConfigurationResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupConfigurationResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupConfigurationResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The time the configuration was created. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
-func (o LookupConfigurationResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupConfigurationResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupConfigurationResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupConfigurationResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the configuration was updated. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
-func (o LookupConfigurationResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupConfigurationResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupConfigurationResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupConfigurationResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

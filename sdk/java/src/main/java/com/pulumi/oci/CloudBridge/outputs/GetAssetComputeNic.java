@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAssetComputeNic {
@@ -14,32 +16,32 @@ public final class GetAssetComputeNic {
      * @return List of IP addresses.
      * 
      */
-    private List<String> ipAddresses;
+    private @Nullable List<String> ipAddresses;
     /**
      * @return Provides a label and summary information for the device.
      * 
      */
-    private String label;
+    private @Nullable String label;
     /**
      * @return Mac address of the VM.
      * 
      */
-    private String macAddress;
+    private @Nullable String macAddress;
     /**
      * @return Mac address type.
      * 
      */
-    private String macAddressType;
+    private @Nullable String macAddressType;
     /**
      * @return Network name.
      * 
      */
-    private String networkName;
+    private @Nullable String networkName;
     /**
      * @return Switch name.
      * 
      */
-    private String switchName;
+    private @Nullable String switchName;
 
     private GetAssetComputeNic() {}
     /**
@@ -47,42 +49,42 @@ public final class GetAssetComputeNic {
      * 
      */
     public List<String> ipAddresses() {
-        return this.ipAddresses;
+        return this.ipAddresses == null ? List.of() : this.ipAddresses;
     }
     /**
      * @return Provides a label and summary information for the device.
      * 
      */
-    public String label() {
-        return this.label;
+    public Optional<String> label() {
+        return Optional.ofNullable(this.label);
     }
     /**
      * @return Mac address of the VM.
      * 
      */
-    public String macAddress() {
-        return this.macAddress;
+    public Optional<String> macAddress() {
+        return Optional.ofNullable(this.macAddress);
     }
     /**
      * @return Mac address type.
      * 
      */
-    public String macAddressType() {
-        return this.macAddressType;
+    public Optional<String> macAddressType() {
+        return Optional.ofNullable(this.macAddressType);
     }
     /**
      * @return Network name.
      * 
      */
-    public String networkName() {
-        return this.networkName;
+    public Optional<String> networkName() {
+        return Optional.ofNullable(this.networkName);
     }
     /**
      * @return Switch name.
      * 
      */
-    public String switchName() {
-        return this.switchName;
+    public Optional<String> switchName() {
+        return Optional.ofNullable(this.switchName);
     }
 
     public static Builder builder() {
@@ -94,12 +96,12 @@ public final class GetAssetComputeNic {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> ipAddresses;
-        private String label;
-        private String macAddress;
-        private String macAddressType;
-        private String networkName;
-        private String switchName;
+        private @Nullable List<String> ipAddresses;
+        private @Nullable String label;
+        private @Nullable String macAddress;
+        private @Nullable String macAddressType;
+        private @Nullable String networkName;
+        private @Nullable String switchName;
         public Builder() {}
         public Builder(GetAssetComputeNic defaults) {
     	      Objects.requireNonNull(defaults);
@@ -112,36 +114,36 @@ public final class GetAssetComputeNic {
         }
 
         @CustomType.Setter
-        public Builder ipAddresses(List<String> ipAddresses) {
-            this.ipAddresses = Objects.requireNonNull(ipAddresses);
+        public Builder ipAddresses(@Nullable List<String> ipAddresses) {
+            this.ipAddresses = ipAddresses;
             return this;
         }
         public Builder ipAddresses(String... ipAddresses) {
             return ipAddresses(List.of(ipAddresses));
         }
         @CustomType.Setter
-        public Builder label(String label) {
-            this.label = Objects.requireNonNull(label);
+        public Builder label(@Nullable String label) {
+            this.label = label;
             return this;
         }
         @CustomType.Setter
-        public Builder macAddress(String macAddress) {
-            this.macAddress = Objects.requireNonNull(macAddress);
+        public Builder macAddress(@Nullable String macAddress) {
+            this.macAddress = macAddress;
             return this;
         }
         @CustomType.Setter
-        public Builder macAddressType(String macAddressType) {
-            this.macAddressType = Objects.requireNonNull(macAddressType);
+        public Builder macAddressType(@Nullable String macAddressType) {
+            this.macAddressType = macAddressType;
             return this;
         }
         @CustomType.Setter
-        public Builder networkName(String networkName) {
-            this.networkName = Objects.requireNonNull(networkName);
+        public Builder networkName(@Nullable String networkName) {
+            this.networkName = networkName;
             return this;
         }
         @CustomType.Setter
-        public Builder switchName(String switchName) {
-            this.switchName = Objects.requireNonNull(switchName);
+        public Builder switchName(@Nullable String switchName) {
+            this.switchName = switchName;
             return this;
         }
         public GetAssetComputeNic build() {

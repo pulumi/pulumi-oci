@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Instances in Oracle Cloud Infrastructure Core service.
@@ -91,7 +90,7 @@ type GetInstancesResult struct {
 	DisplayName *string              `pulumi:"displayName"`
 	Filters     []GetInstancesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of instances.
 	Instances []GetInstancesInstance `pulumi:"instances"`
 	// The current state of the instance.
@@ -147,12 +146,6 @@ func (o GetInstancesResultOutput) ToGetInstancesResultOutputWithContext(ctx cont
 	return o
 }
 
-func (o GetInstancesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetInstancesResult] {
-	return pulumix.Output[GetInstancesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The availability domain the instance is running in.  Example: `Uocm:PHX-AD-1`
 func (o GetInstancesResultOutput) AvailabilityDomain() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetInstancesResult) *string { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
@@ -182,8 +175,8 @@ func (o GetInstancesResultOutput) Filters() GetInstancesFilterArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetInstancesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstancesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetInstancesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetInstancesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of instances.

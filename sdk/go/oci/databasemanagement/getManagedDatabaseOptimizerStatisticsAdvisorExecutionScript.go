@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Managed Database Optimizer Statistics Advisor Execution Script resource in Oracle Cloud Infrastructure Database Management service.
@@ -67,11 +66,11 @@ type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptArgs struct {
 type GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResult struct {
 	ExecutionName string `pulumi:"executionName"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                string `pulumi:"id"`
-	ManagedDatabaseId string `pulumi:"managedDatabaseId"`
+	Id                *string `pulumi:"id"`
+	ManagedDatabaseId string  `pulumi:"managedDatabaseId"`
 	// The Optimizer Statistics Advisor execution script.
-	Script   string `pulumi:"script"`
-	TaskName string `pulumi:"taskName"`
+	Script   *string `pulumi:"script"`
+	TaskName string  `pulumi:"taskName"`
 }
 
 func GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptOutput(ctx *pulumi.Context, args GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptOutputArgs, opts ...pulumi.InvokeOption) GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResultOutput {
@@ -116,12 +115,6 @@ func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResultOutput)
 	return o
 }
 
-func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResult] {
-	return pulumix.Output[GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResultOutput) ExecutionName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResult) string {
 		return v.ExecutionName
@@ -129,8 +122,8 @@ func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResultOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResultOutput) ManagedDatabaseId() pulumi.StringOutput {
@@ -140,8 +133,8 @@ func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResultOutput)
 }
 
 // The Optimizer Statistics Advisor execution script.
-func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResultOutput) Script() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResult) string { return v.Script }).(pulumi.StringOutput)
+func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResultOutput) Script() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResult) *string { return v.Script }).(pulumi.StringPtrOutput)
 }
 
 func (o GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResultOutput) TaskName() pulumi.StringOutput {

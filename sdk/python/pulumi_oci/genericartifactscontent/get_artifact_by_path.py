@@ -70,7 +70,7 @@ class GetArtifactByPathResult:
 
     @property
     @pulumi.getter(name="artifactId")
-    def artifact_id(self) -> str:
+    def artifact_id(self) -> Optional[str]:
         return pulumi.get(self, "artifact_id")
 
     @property
@@ -80,32 +80,32 @@ class GetArtifactByPathResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter
-    def content(self) -> str:
+    def content(self) -> Optional[str]:
         return pulumi.get(self, "content")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
@@ -115,27 +115,27 @@ class GetArtifactByPathResult:
 
     @property
     @pulumi.getter
-    def sha256(self) -> str:
+    def sha256(self) -> Optional[str]:
         return pulumi.get(self, "sha256")
 
     @property
     @pulumi.getter(name="sizeInBytes")
-    def size_in_bytes(self) -> str:
+    def size_in_bytes(self) -> Optional[str]:
         return pulumi.get(self, "size_in_bytes")
 
     @property
     @pulumi.getter
-    def source(self) -> str:
+    def source(self) -> Optional[str]:
         return pulumi.get(self, "source")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
@@ -172,25 +172,7 @@ def get_artifact_by_path(artifact_path: Optional[str] = None,
                          version: Optional[str] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetArtifactByPathResult:
     """
-    This data source provides details about a specific Artifact By Path resource in Oracle Cloud Infrastructure Generic Artifacts Content service.
-
-    Get generic artifact content.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_artifact_by_path = oci.GenericArtifactsContent.get_artifact_by_path(artifact_path=var["artifact_by_path_artifact_path"],
-        repository_id=oci_artifacts_repository["test_repository"]["id"],
-        version=var["artifact_by_path_version"])
-    ```
-
-
-    :param str artifact_path: The generic artifact path.  Example: `foo/bar/baz`
-    :param str repository_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the repository.  Example: `ocid1.repository.oc1..exampleuniqueID`
-    :param str version: The generic artifact version.  Example: `1.1.2`
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['artifactPath'] = artifact_path
@@ -223,24 +205,6 @@ def get_artifact_by_path_output(artifact_path: Optional[pulumi.Input[str]] = Non
                                 version: Optional[pulumi.Input[str]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetArtifactByPathResult]:
     """
-    This data source provides details about a specific Artifact By Path resource in Oracle Cloud Infrastructure Generic Artifacts Content service.
-
-    Get generic artifact content.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_artifact_by_path = oci.GenericArtifactsContent.get_artifact_by_path(artifact_path=var["artifact_by_path_artifact_path"],
-        repository_id=oci_artifacts_repository["test_repository"]["id"],
-        version=var["artifact_by_path_version"])
-    ```
-
-
-    :param str artifact_path: The generic artifact path.  Example: `foo/bar/baz`
-    :param str repository_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the repository.  Example: `ocid1.repository.oc1..exampleuniqueID`
-    :param str version: The generic artifact version.  Example: `1.1.2`
+    Use this data source to access information about an existing resource.
     """
     ...

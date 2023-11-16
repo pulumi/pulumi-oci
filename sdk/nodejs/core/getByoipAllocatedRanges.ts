@@ -50,13 +50,13 @@ export interface GetByoipAllocatedRangesResult {
     /**
      * The list of byoip_allocated_range_collection.
      */
-    readonly byoipAllocatedRangeCollections: outputs.Core.GetByoipAllocatedRangesByoipAllocatedRangeCollection[];
+    readonly byoipAllocatedRangeCollections?: outputs.Core.GetByoipAllocatedRangesByoipAllocatedRangeCollection[];
     readonly byoipRangeId: string;
     readonly filters?: outputs.Core.GetByoipAllocatedRangesFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
 }
 /**
  * This data source provides the list of Byoip Allocated Ranges in Oracle Cloud Infrastructure Core service.

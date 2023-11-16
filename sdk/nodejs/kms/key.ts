@@ -59,15 +59,15 @@ export class Key extends pulumi.CustomResource {
     /**
      * The OCID of the key version used in cryptographic operations. During key rotation, the service might be in a transitional state where this or a newer key version are used intermittently. The `currentKeyVersion` property is updated when the service is guaranteed to use the new key version for all subsequent encryption operations.
      */
-    public /*out*/ readonly currentKeyVersion!: pulumi.Output<string>;
+    public /*out*/ readonly currentKeyVersion!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) Desired state of the key. Possible values : `ENABLED` or `DISABLED`
      */
-    public readonly desiredState!: pulumi.Output<string>;
+    public readonly desiredState!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) A user-friendly name for the key. It does not have to be unique, and it is changeable. Avoid entering confidential information.
      */
@@ -75,19 +75,19 @@ export class Key extends pulumi.CustomResource {
     /**
      * A reference to the key on external key manager.
      */
-    public readonly externalKeyReference!: pulumi.Output<outputs.Kms.KeyExternalKeyReference>;
+    public readonly externalKeyReference!: pulumi.Output<outputs.Kms.KeyExternalKeyReference | undefined>;
     /**
      * Key reference data to be returned to the customer as a response.
      */
-    public /*out*/ readonly externalKeyReferenceDetails!: pulumi.Output<outputs.Kms.KeyExternalKeyReferenceDetail[]>;
+    public /*out*/ readonly externalKeyReferenceDetails!: pulumi.Output<outputs.Kms.KeyExternalKeyReferenceDetail[] | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * A Boolean value that indicates whether the Key belongs to primary Vault or replica vault.
      */
-    public /*out*/ readonly isPrimary!: pulumi.Output<boolean>;
+    public /*out*/ readonly isPrimary!: pulumi.Output<boolean | undefined>;
     /**
      * The cryptographic properties of a key.
      */
@@ -99,11 +99,11 @@ export class Key extends pulumi.CustomResource {
     /**
      * The key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's RSA wrapping key which persists on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default, a key's protection mode is set to `HSM`. You can't change a key's protection mode after the key is created or imported. A protection mode of `EXTERNAL` mean that the key persists on the customer's external key manager which is hosted externally outside of oracle. Oracle only hold a reference to that key. All cryptographic operations that use a key with a protection mode of `EXTERNAL` are performed by external key manager.
      */
-    public readonly protectionMode!: pulumi.Output<string>;
+    public readonly protectionMode!: pulumi.Output<string | undefined>;
     /**
      * Key replica details
      */
-    public /*out*/ readonly replicaDetails!: pulumi.Output<outputs.Kms.KeyReplicaDetail[]>;
+    public /*out*/ readonly replicaDetails!: pulumi.Output<outputs.Kms.KeyReplicaDetail[] | undefined>;
     /**
      * (Updatable) Details where key was backed up.
      */
@@ -119,26 +119,26 @@ export class Key extends pulumi.CustomResource {
     /**
      * The OCID of the key from which this key was restored.
      */
-    public /*out*/ readonly restoredFromKeyId!: pulumi.Output<string>;
+    public /*out*/ readonly restoredFromKeyId!: pulumi.Output<string | undefined>;
     /**
      * The key's current lifecycle state.  Example: `ENABLED`
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The date and time the key was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-04-03T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) An optional property for the deletion time of the key, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly timeOfDeletion!: pulumi.Output<string>;
+    public readonly timeOfDeletion!: pulumi.Output<string | undefined>;
     /**
      * The OCID of the vault that contains this key.
      */
-    public /*out*/ readonly vaultId!: pulumi.Output<string>;
+    public /*out*/ readonly vaultId!: pulumi.Output<string | undefined>;
 
     /**
      * Create a Key resource with the given unique name, arguments, and options.

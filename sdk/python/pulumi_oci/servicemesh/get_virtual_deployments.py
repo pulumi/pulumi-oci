@@ -49,9 +49,6 @@ class GetVirtualDeploymentsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -62,41 +59,26 @@ class GetVirtualDeploymentsResult:
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        Unique identifier that is immutable on creation.
-        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        A user-friendly name. The name must be unique within the same virtual service and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the Resource.
-        """
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="virtualDeploymentCollections")
-    def virtual_deployment_collections(self) -> Sequence['outputs.GetVirtualDeploymentsVirtualDeploymentCollectionResult']:
-        """
-        The list of virtual_deployment_collection.
-        """
+    def virtual_deployment_collections(self) -> Optional[Sequence['outputs.GetVirtualDeploymentsVirtualDeploymentCollectionResult']]:
         return pulumi.get(self, "virtual_deployment_collections")
 
     @property
     @pulumi.getter(name="virtualServiceId")
     def virtual_service_id(self) -> Optional[str]:
-        """
-        The OCID of the virtual service in which this virtual deployment is created.
-        """
         return pulumi.get(self, "virtual_service_id")
 
 
@@ -123,29 +105,7 @@ def get_virtual_deployments(compartment_id: Optional[str] = None,
                             virtual_service_id: Optional[str] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetVirtualDeploymentsResult:
     """
-    This data source provides the list of Virtual Deployments in Oracle Cloud Infrastructure Service Mesh service.
-
-    Returns a list of VirtualDeployments.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_virtual_deployments = oci.ServiceMesh.get_virtual_deployments(compartment_id=var["compartment_id"],
-        id=var["virtual_deployment_id"],
-        name=var["virtual_deployment_name"],
-        state=var["virtual_deployment_state"],
-        virtual_service_id=oci_service_mesh_virtual_service["test_virtual_service"]["id"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str id: Unique VirtualDeployment identifier.
-    :param str name: A filter to return only resources that match the entire name given.
-    :param str state: A filter to return only resources that match the life cycle state given.
-    :param str virtual_service_id: Unique VirtualService identifier.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -176,28 +136,6 @@ def get_virtual_deployments_output(compartment_id: Optional[pulumi.Input[str]] =
                                    virtual_service_id: Optional[pulumi.Input[Optional[str]]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVirtualDeploymentsResult]:
     """
-    This data source provides the list of Virtual Deployments in Oracle Cloud Infrastructure Service Mesh service.
-
-    Returns a list of VirtualDeployments.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_virtual_deployments = oci.ServiceMesh.get_virtual_deployments(compartment_id=var["compartment_id"],
-        id=var["virtual_deployment_id"],
-        name=var["virtual_deployment_name"],
-        state=var["virtual_deployment_state"],
-        virtual_service_id=oci_service_mesh_virtual_service["test_virtual_service"]["id"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str id: Unique VirtualDeployment identifier.
-    :param str name: A filter to return only resources that match the entire name given.
-    :param str state: A filter to return only resources that match the life cycle state given.
-    :param str virtual_service_id: Unique VirtualService identifier.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -48,11 +48,11 @@ export interface GetMessageResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * An array of DeploymentMessages.
      */
-    readonly items: outputs.GoldenGate.GetMessageItem[];
+    readonly items?: outputs.GoldenGate.GetMessageItem[];
 }
 /**
  * This data source provides details about a specific Message resource in Oracle Cloud Infrastructure Golden Gate service.

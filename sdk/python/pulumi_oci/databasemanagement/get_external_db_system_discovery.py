@@ -65,34 +65,22 @@ class GetExternalDbSystemDiscoveryResult:
 
     @property
     @pulumi.getter(name="agentId")
-    def agent_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the external DB system connector.
-        """
+    def agent_id(self) -> Optional[str]:
         return pulumi.get(self, "agent_id")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="discoveredComponents")
-    def discovered_components(self) -> Sequence['outputs.GetExternalDbSystemDiscoveryDiscoveredComponentResult']:
-        """
-        The list of DB system components that were found in the DB system discovery.
-        """
+    def discovered_components(self) -> Optional[Sequence['outputs.GetExternalDbSystemDiscoveryDiscoveredComponentResult']]:
         return pulumi.get(self, "discovered_components")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The user-friendly name for the DB system. The name does not have to be unique.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
@@ -102,63 +90,42 @@ class GetExternalDbSystemDiscoveryResult:
 
     @property
     @pulumi.getter(name="gridHome")
-    def grid_home(self) -> str:
-        """
-        The directory in which Oracle Grid Infrastructure is installed.
-        """
+    def grid_home(self) -> Optional[str]:
         return pulumi.get(self, "grid_home")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system discovery.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        Additional information about the current lifecycle state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="patchOperations")
-    def patch_operations(self) -> Sequence['outputs.GetExternalDbSystemDiscoveryPatchOperationResult']:
+    def patch_operations(self) -> Optional[Sequence['outputs.GetExternalDbSystemDiscoveryPatchOperationResult']]:
         return pulumi.get(self, "patch_operations")
 
     @property
     @pulumi.getter(name="resourceId")
-    def resource_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Oracle Cloud Infrastructure resource matching the discovered DB system.
-        """
+    def resource_id(self) -> Optional[str]:
         return pulumi.get(self, "resource_id")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current lifecycle state of the external DB system discovery resource.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the external DB system discovery was created.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time the external DB system discovery was last updated.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -186,21 +153,7 @@ class AwaitableGetExternalDbSystemDiscoveryResult(GetExternalDbSystemDiscoveryRe
 def get_external_db_system_discovery(external_db_system_discovery_id: Optional[str] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetExternalDbSystemDiscoveryResult:
     """
-    This data source provides details about a specific External Db System Discovery resource in Oracle Cloud Infrastructure Database Management service.
-
-    Gets the details for the external DB system discovery resource specified by `externalDbSystemDiscoveryId`.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_external_db_system_discovery = oci.DatabaseManagement.get_external_db_system_discovery(external_db_system_discovery_id=oci_database_management_external_db_system_discovery["test_external_db_system_discovery"]["id"])
-    ```
-
-
-    :param str external_db_system_discovery_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system discovery.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['externalDbSystemDiscoveryId'] = external_db_system_discovery_id
@@ -227,20 +180,6 @@ def get_external_db_system_discovery(external_db_system_discovery_id: Optional[s
 def get_external_db_system_discovery_output(external_db_system_discovery_id: Optional[pulumi.Input[str]] = None,
                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExternalDbSystemDiscoveryResult]:
     """
-    This data source provides details about a specific External Db System Discovery resource in Oracle Cloud Infrastructure Database Management service.
-
-    Gets the details for the external DB system discovery resource specified by `externalDbSystemDiscoveryId`.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_external_db_system_discovery = oci.DatabaseManagement.get_external_db_system_discovery(external_db_system_discovery_id=oci_database_management_external_db_system_discovery["test_external_db_system_discovery"]["id"])
-    ```
-
-
-    :param str external_db_system_discovery_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system discovery.
+    Use this data source to access information about an existing resource.
     """
     ...

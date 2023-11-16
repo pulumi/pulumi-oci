@@ -58,18 +58,12 @@ class GetBastionsResult:
 
     @property
     @pulumi.getter
-    def bastions(self) -> Sequence['outputs.GetBastionsBastionResult']:
-        """
-        The list of bastions.
-        """
+    def bastions(self) -> Optional[Sequence['outputs.GetBastionsBastionResult']]:
         return pulumi.get(self, "bastions")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The unique identifier (OCID) of the compartment where the bastion is located.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -79,7 +73,7 @@ class GetBastionsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -88,9 +82,6 @@ class GetBastionsResult:
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        The name of the bastion, which can't be changed after creation.
-        """
         return pulumi.get(self, "name")
 
 
@@ -116,27 +107,7 @@ def get_bastions(bastion_id: Optional[str] = None,
                  name: Optional[str] = None,
                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetBastionsResult:
     """
-    This data source provides the list of Bastions in Oracle Cloud Infrastructure Bastion service.
-
-    Retrieves a list of BastionSummary objects in a compartment. Bastions provide secured, public access to target resources in the cloud that you cannot otherwise reach from the internet.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_bastions = oci.Bastion.get_bastions(compartment_id=var["compartment_id"],
-        bastion_id=oci_bastion_bastion["test_bastion"]["id"],
-        bastion_lifecycle_state=var["bastion_bastion_lifecycle_state"],
-        name=var["bastion_name"])
-    ```
-
-
-    :param str bastion_id: The unique identifier (OCID) of the bastion in which to list resources.
-    :param str bastion_lifecycle_state: A filter to return only resources their lifecycleState matches the given lifecycleState.
-    :param str compartment_id: The unique identifier (OCID) of the compartment in which to list resources.
-    :param str name: A filter to return only resources that match the entire name given.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['bastionId'] = bastion_id
@@ -165,26 +136,6 @@ def get_bastions_output(bastion_id: Optional[pulumi.Input[Optional[str]]] = None
                         name: Optional[pulumi.Input[Optional[str]]] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBastionsResult]:
     """
-    This data source provides the list of Bastions in Oracle Cloud Infrastructure Bastion service.
-
-    Retrieves a list of BastionSummary objects in a compartment. Bastions provide secured, public access to target resources in the cloud that you cannot otherwise reach from the internet.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_bastions = oci.Bastion.get_bastions(compartment_id=var["compartment_id"],
-        bastion_id=oci_bastion_bastion["test_bastion"]["id"],
-        bastion_lifecycle_state=var["bastion_bastion_lifecycle_state"],
-        name=var["bastion_name"])
-    ```
-
-
-    :param str bastion_id: The unique identifier (OCID) of the bastion in which to list resources.
-    :param str bastion_lifecycle_state: A filter to return only resources their lifecycleState matches the given lifecycleState.
-    :param str compartment_id: The unique identifier (OCID) of the compartment in which to list resources.
-    :param str name: A filter to return only resources that match the entire name given.
+    Use this data source to access information about an existing resource.
     """
     ...

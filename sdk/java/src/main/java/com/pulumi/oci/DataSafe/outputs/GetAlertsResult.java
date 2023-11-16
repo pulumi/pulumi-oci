@@ -20,7 +20,7 @@ public final class GetAlertsResult {
      * @return The list of alert_collection.
      * 
      */
-    private List<GetAlertsAlertCollection> alertCollections;
+    private @Nullable List<GetAlertsAlertCollection> alertCollections;
     /**
      * @return The OCID of the compartment that contains the alert.
      * 
@@ -45,7 +45,7 @@ public final class GetAlertsResult {
      * 
      */
     public List<GetAlertsAlertCollection> alertCollections() {
-        return this.alertCollections;
+        return this.alertCollections == null ? List.of() : this.alertCollections;
     }
     /**
      * @return The OCID of the compartment that contains the alert.
@@ -84,7 +84,7 @@ public final class GetAlertsResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String accessLevel;
-        private List<GetAlertsAlertCollection> alertCollections;
+        private @Nullable List<GetAlertsAlertCollection> alertCollections;
         private String compartmentId;
         private @Nullable Boolean compartmentIdInSubtree;
         private @Nullable List<String> fields;
@@ -110,8 +110,8 @@ public final class GetAlertsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder alertCollections(List<GetAlertsAlertCollection> alertCollections) {
-            this.alertCollections = Objects.requireNonNull(alertCollections);
+        public Builder alertCollections(@Nullable List<GetAlertsAlertCollection> alertCollections) {
+            this.alertCollections = alertCollections;
             return this;
         }
         public Builder alertCollections(GetAlertsAlertCollection... alertCollections) {

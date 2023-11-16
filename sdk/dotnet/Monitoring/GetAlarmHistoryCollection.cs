@@ -177,11 +177,11 @@ namespace Pulumi.Oci.Monitoring
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Whether the alarm is enabled.  Example: `true`
         /// </summary>
-        public readonly bool IsEnabled;
+        public readonly bool? IsEnabled;
         public readonly string? TimestampGreaterThanOrEqualTo;
         public readonly string? TimestampLessThan;
 
@@ -193,9 +193,9 @@ namespace Pulumi.Oci.Monitoring
 
             ImmutableArray<Outputs.GetAlarmHistoryCollectionEntryResult> entries,
 
-            string id,
+            string? id,
 
-            bool isEnabled,
+            bool? isEnabled,
 
             string? timestampGreaterThanOrEqualTo,
 

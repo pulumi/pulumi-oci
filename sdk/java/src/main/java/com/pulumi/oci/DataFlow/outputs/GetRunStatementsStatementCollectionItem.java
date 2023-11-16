@@ -9,6 +9,8 @@ import java.lang.Double;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetRunStatementsStatementCollectionItem {
@@ -16,99 +18,99 @@ public final class GetRunStatementsStatementCollectionItem {
      * @return The statement code to execute. Example: `println(sc.version)`
      * 
      */
-    private String code;
+    private @Nullable String code;
     /**
      * @return The statement ID.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The execution output of a statement.
      * 
      */
-    private List<GetRunStatementsStatementCollectionItemOutput> outputs;
+    private @Nullable List<GetRunStatementsStatementCollectionItemOutput> outputs;
     /**
      * @return The execution progress.
      * 
      */
-    private Double progress;
+    private @Nullable Double progress;
     /**
      * @return The unique ID for the run
      * 
      */
-    private String runId;
+    private @Nullable String runId;
     /**
      * @return The LifecycleState of the statement.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The date and time a statement execution was completed, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2022-05-31T21:10:29.600Z`
      * 
      */
-    private String timeCompleted;
+    private @Nullable String timeCompleted;
     /**
      * @return The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
 
     private GetRunStatementsStatementCollectionItem() {}
     /**
      * @return The statement code to execute. Example: `println(sc.version)`
      * 
      */
-    public String code() {
-        return this.code;
+    public Optional<String> code() {
+        return Optional.ofNullable(this.code);
     }
     /**
      * @return The statement ID.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The execution output of a statement.
      * 
      */
     public List<GetRunStatementsStatementCollectionItemOutput> outputs() {
-        return this.outputs;
+        return this.outputs == null ? List.of() : this.outputs;
     }
     /**
      * @return The execution progress.
      * 
      */
-    public Double progress() {
-        return this.progress;
+    public Optional<Double> progress() {
+        return Optional.ofNullable(this.progress);
     }
     /**
      * @return The unique ID for the run
      * 
      */
-    public String runId() {
-        return this.runId;
+    public Optional<String> runId() {
+        return Optional.ofNullable(this.runId);
     }
     /**
      * @return The LifecycleState of the statement.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The date and time a statement execution was completed, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2022-05-31T21:10:29.600Z`
      * 
      */
-    public String timeCompleted() {
-        return this.timeCompleted;
+    public Optional<String> timeCompleted() {
+        return Optional.ofNullable(this.timeCompleted);
     }
     /**
      * @return The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
 
     public static Builder builder() {
@@ -120,14 +122,14 @@ public final class GetRunStatementsStatementCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String code;
-        private String id;
-        private List<GetRunStatementsStatementCollectionItemOutput> outputs;
-        private Double progress;
-        private String runId;
-        private String state;
-        private String timeCompleted;
-        private String timeCreated;
+        private @Nullable String code;
+        private @Nullable String id;
+        private @Nullable List<GetRunStatementsStatementCollectionItemOutput> outputs;
+        private @Nullable Double progress;
+        private @Nullable String runId;
+        private @Nullable String state;
+        private @Nullable String timeCompleted;
+        private @Nullable String timeCreated;
         public Builder() {}
         public Builder(GetRunStatementsStatementCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -142,46 +144,46 @@ public final class GetRunStatementsStatementCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder code(String code) {
-            this.code = Objects.requireNonNull(code);
+        public Builder code(@Nullable String code) {
+            this.code = code;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder outputs(List<GetRunStatementsStatementCollectionItemOutput> outputs) {
-            this.outputs = Objects.requireNonNull(outputs);
+        public Builder outputs(@Nullable List<GetRunStatementsStatementCollectionItemOutput> outputs) {
+            this.outputs = outputs;
             return this;
         }
         public Builder outputs(GetRunStatementsStatementCollectionItemOutput... outputs) {
             return outputs(List.of(outputs));
         }
         @CustomType.Setter
-        public Builder progress(Double progress) {
-            this.progress = Objects.requireNonNull(progress);
+        public Builder progress(@Nullable Double progress) {
+            this.progress = progress;
             return this;
         }
         @CustomType.Setter
-        public Builder runId(String runId) {
-            this.runId = Objects.requireNonNull(runId);
+        public Builder runId(@Nullable String runId) {
+            this.runId = runId;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCompleted(String timeCompleted) {
-            this.timeCompleted = Objects.requireNonNull(timeCompleted);
+        public Builder timeCompleted(@Nullable String timeCompleted) {
+            this.timeCompleted = timeCompleted;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetRunStatementsStatementCollectionItem build() {

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific App Catalog Listing Resource Version resource in Oracle Cloud Infrastructure Core service.
@@ -71,16 +70,16 @@ type GetAppCatalogListingResourceVersionResult struct {
 	// Array of shapes compatible with this resource.
 	CompatibleShapes []string `pulumi:"compatibleShapes"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The OCID of the listing this resource version belongs to.
 	ListingId string `pulumi:"listingId"`
 	// OCID of the listing resource.
-	ListingResourceId string `pulumi:"listingResourceId"`
+	ListingResourceId *string `pulumi:"listingResourceId"`
 	// Resource Version.
-	ListingResourceVersion string `pulumi:"listingResourceVersion"`
-	ResourceVersion        string `pulumi:"resourceVersion"`
+	ListingResourceVersion *string `pulumi:"listingResourceVersion"`
+	ResourceVersion        string  `pulumi:"resourceVersion"`
 	// Date and time the listing resource version was published, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z`
-	TimePublished string `pulumi:"timePublished"`
+	TimePublished *string `pulumi:"timePublished"`
 }
 
 func GetAppCatalogListingResourceVersionOutput(ctx *pulumi.Context, args GetAppCatalogListingResourceVersionOutputArgs, opts ...pulumi.InvokeOption) GetAppCatalogListingResourceVersionResultOutput {
@@ -123,12 +122,6 @@ func (o GetAppCatalogListingResourceVersionResultOutput) ToGetAppCatalogListingR
 	return o
 }
 
-func (o GetAppCatalogListingResourceVersionResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAppCatalogListingResourceVersionResult] {
-	return pulumix.Output[GetAppCatalogListingResourceVersionResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // List of accessible ports for instances launched with this listing resource version.
 func (o GetAppCatalogListingResourceVersionResultOutput) AccessiblePorts() pulumi.IntArrayOutput {
 	return o.ApplyT(func(v GetAppCatalogListingResourceVersionResult) []int { return v.AccessiblePorts }).(pulumi.IntArrayOutput)
@@ -150,8 +143,8 @@ func (o GetAppCatalogListingResourceVersionResultOutput) CompatibleShapes() pulu
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetAppCatalogListingResourceVersionResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAppCatalogListingResourceVersionResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetAppCatalogListingResourceVersionResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAppCatalogListingResourceVersionResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the listing this resource version belongs to.
@@ -160,13 +153,13 @@ func (o GetAppCatalogListingResourceVersionResultOutput) ListingId() pulumi.Stri
 }
 
 // OCID of the listing resource.
-func (o GetAppCatalogListingResourceVersionResultOutput) ListingResourceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAppCatalogListingResourceVersionResult) string { return v.ListingResourceId }).(pulumi.StringOutput)
+func (o GetAppCatalogListingResourceVersionResultOutput) ListingResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAppCatalogListingResourceVersionResult) *string { return v.ListingResourceId }).(pulumi.StringPtrOutput)
 }
 
 // Resource Version.
-func (o GetAppCatalogListingResourceVersionResultOutput) ListingResourceVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAppCatalogListingResourceVersionResult) string { return v.ListingResourceVersion }).(pulumi.StringOutput)
+func (o GetAppCatalogListingResourceVersionResultOutput) ListingResourceVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAppCatalogListingResourceVersionResult) *string { return v.ListingResourceVersion }).(pulumi.StringPtrOutput)
 }
 
 func (o GetAppCatalogListingResourceVersionResultOutput) ResourceVersion() pulumi.StringOutput {
@@ -174,8 +167,8 @@ func (o GetAppCatalogListingResourceVersionResultOutput) ResourceVersion() pulum
 }
 
 // Date and time the listing resource version was published, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z`
-func (o GetAppCatalogListingResourceVersionResultOutput) TimePublished() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAppCatalogListingResourceVersionResult) string { return v.TimePublished }).(pulumi.StringOutput)
+func (o GetAppCatalogListingResourceVersionResultOutput) TimePublished() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAppCatalogListingResourceVersionResult) *string { return v.TimePublished }).(pulumi.StringPtrOutput)
 }
 
 func init() {

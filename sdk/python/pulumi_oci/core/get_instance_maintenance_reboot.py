@@ -34,7 +34,7 @@ class GetInstanceMaintenanceRebootResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -47,10 +47,7 @@ class GetInstanceMaintenanceRebootResult:
 
     @property
     @pulumi.getter(name="timeMaintenanceRebootDueMax")
-    def time_maintenance_reboot_due_max(self) -> str:
-        """
-        The maximum extension date and time for the maintenance reboot, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). The range for the maintenance extension is between 1 and 14 days from the initial scheduled maintenance date. Example: `2018-05-25T21:10:29.600Z`
-        """
+    def time_maintenance_reboot_due_max(self) -> Optional[str]:
         return pulumi.get(self, "time_maintenance_reboot_due_max")
 
 
@@ -68,22 +65,7 @@ class AwaitableGetInstanceMaintenanceRebootResult(GetInstanceMaintenanceRebootRe
 def get_instance_maintenance_reboot(instance_id: Optional[str] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetInstanceMaintenanceRebootResult:
     """
-    This data source provides details about a specific Instance Maintenance Reboot resource in Oracle Cloud Infrastructure Core service.
-
-    Gets the maximum possible date that a maintenance reboot can be extended. For more information, see
-    [Infrastructure Maintenance](https://docs.cloud.oracle.com/iaas/Content/Compute/References/infrastructure-maintenance.htm).
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_instance_maintenance_reboot = oci.Core.get_instance_maintenance_reboot(instance_id=oci_core_instance["test_instance"]["id"])
-    ```
-
-
-    :param str instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['instanceId'] = instance_id
@@ -100,21 +82,6 @@ def get_instance_maintenance_reboot(instance_id: Optional[str] = None,
 def get_instance_maintenance_reboot_output(instance_id: Optional[pulumi.Input[str]] = None,
                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetInstanceMaintenanceRebootResult]:
     """
-    This data source provides details about a specific Instance Maintenance Reboot resource in Oracle Cloud Infrastructure Core service.
-
-    Gets the maximum possible date that a maintenance reboot can be extended. For more information, see
-    [Infrastructure Maintenance](https://docs.cloud.oracle.com/iaas/Content/Compute/References/infrastructure-maintenance.htm).
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_instance_maintenance_reboot = oci.Core.get_instance_maintenance_reboot(instance_id=oci_core_instance["test_instance"]["id"])
-    ```
-
-
-    :param str instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
+    Use this data source to access information about an existing resource.
     """
     ...

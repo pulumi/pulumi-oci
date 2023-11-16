@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Target Alert Policy Association resource in Oracle Cloud Infrastructure Data Safe service.
@@ -60,32 +59,32 @@ type LookupTargetAlertPolicyAssociationArgs struct {
 // A collection of values returned by getTargetAlertPolicyAssociation.
 type LookupTargetAlertPolicyAssociationResult struct {
 	// The OCID of the compartment that contains the policy.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Describes the target-alert policy association.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// The display name of the target-alert policy association.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the target-alert policy association.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Indicates if the target-alert policy association is enabled or disabled by user.
-	IsEnabled bool `pulumi:"isEnabled"`
+	IsEnabled *bool `pulumi:"isEnabled"`
 	// The OCID of the alert policy.
-	PolicyId string `pulumi:"policyId"`
+	PolicyId *string `pulumi:"policyId"`
 	// The current state of the target-alert policy association.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags                     map[string]interface{} `pulumi:"systemTags"`
 	TargetAlertPolicyAssociationId string                 `pulumi:"targetAlertPolicyAssociationId"`
 	// The OCID of the target on which alert policy is to be applied.
-	TargetId string `pulumi:"targetId"`
+	TargetId *string `pulumi:"targetId"`
 	// Creation date and time of the alert policy, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// Last date and time the alert policy was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func LookupTargetAlertPolicyAssociationOutput(ctx *pulumi.Context, args LookupTargetAlertPolicyAssociationOutputArgs, opts ...pulumi.InvokeOption) LookupTargetAlertPolicyAssociationResultOutput {
@@ -126,15 +125,9 @@ func (o LookupTargetAlertPolicyAssociationResultOutput) ToLookupTargetAlertPolic
 	return o
 }
 
-func (o LookupTargetAlertPolicyAssociationResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupTargetAlertPolicyAssociationResult] {
-	return pulumix.Output[LookupTargetAlertPolicyAssociationResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment that contains the policy.
-func (o LookupTargetAlertPolicyAssociationResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupTargetAlertPolicyAssociationResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupTargetAlertPolicyAssociationResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupTargetAlertPolicyAssociationResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
@@ -143,13 +136,13 @@ func (o LookupTargetAlertPolicyAssociationResultOutput) DefinedTags() pulumi.Map
 }
 
 // Describes the target-alert policy association.
-func (o LookupTargetAlertPolicyAssociationResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupTargetAlertPolicyAssociationResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupTargetAlertPolicyAssociationResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupTargetAlertPolicyAssociationResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // The display name of the target-alert policy association.
-func (o LookupTargetAlertPolicyAssociationResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupTargetAlertPolicyAssociationResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupTargetAlertPolicyAssociationResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupTargetAlertPolicyAssociationResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
@@ -158,23 +151,23 @@ func (o LookupTargetAlertPolicyAssociationResultOutput) FreeformTags() pulumi.Ma
 }
 
 // The OCID of the target-alert policy association.
-func (o LookupTargetAlertPolicyAssociationResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupTargetAlertPolicyAssociationResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupTargetAlertPolicyAssociationResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupTargetAlertPolicyAssociationResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Indicates if the target-alert policy association is enabled or disabled by user.
-func (o LookupTargetAlertPolicyAssociationResultOutput) IsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupTargetAlertPolicyAssociationResult) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+func (o LookupTargetAlertPolicyAssociationResultOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupTargetAlertPolicyAssociationResult) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // The OCID of the alert policy.
-func (o LookupTargetAlertPolicyAssociationResultOutput) PolicyId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupTargetAlertPolicyAssociationResult) string { return v.PolicyId }).(pulumi.StringOutput)
+func (o LookupTargetAlertPolicyAssociationResultOutput) PolicyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupTargetAlertPolicyAssociationResult) *string { return v.PolicyId }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the target-alert policy association.
-func (o LookupTargetAlertPolicyAssociationResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupTargetAlertPolicyAssociationResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupTargetAlertPolicyAssociationResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupTargetAlertPolicyAssociationResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -187,18 +180,18 @@ func (o LookupTargetAlertPolicyAssociationResultOutput) TargetAlertPolicyAssocia
 }
 
 // The OCID of the target on which alert policy is to be applied.
-func (o LookupTargetAlertPolicyAssociationResultOutput) TargetId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupTargetAlertPolicyAssociationResult) string { return v.TargetId }).(pulumi.StringOutput)
+func (o LookupTargetAlertPolicyAssociationResultOutput) TargetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupTargetAlertPolicyAssociationResult) *string { return v.TargetId }).(pulumi.StringPtrOutput)
 }
 
 // Creation date and time of the alert policy, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-func (o LookupTargetAlertPolicyAssociationResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupTargetAlertPolicyAssociationResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupTargetAlertPolicyAssociationResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupTargetAlertPolicyAssociationResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // Last date and time the alert policy was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-func (o LookupTargetAlertPolicyAssociationResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupTargetAlertPolicyAssociationResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupTargetAlertPolicyAssociationResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupTargetAlertPolicyAssociationResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

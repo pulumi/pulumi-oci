@@ -76,11 +76,11 @@ export class NetworkFirewallPolicyApplicationGroup extends pulumi.CustomResource
     /**
      * OCID of the Network Firewall Policy this application group belongs to.
      */
-    public /*out*/ readonly parentResourceId!: pulumi.Output<string>;
+    public /*out*/ readonly parentResourceId!: pulumi.Output<string | undefined>;
     /**
      * Count of total applications in the given application group.
      */
-    public /*out*/ readonly totalApps!: pulumi.Output<number>;
+    public /*out*/ readonly totalApps!: pulumi.Output<number | undefined>;
 
     /**
      * Create a NetworkFirewallPolicyApplicationGroup resource with the given unique name, arguments, and options.

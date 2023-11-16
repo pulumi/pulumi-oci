@@ -92,12 +92,12 @@ export interface GetManagedDatabaseSqlTuningAdvisorTasksFindingResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly indexHashFilter?: string;
     /**
      * An array of the findings for a tuning task.
      */
-    readonly items: outputs.DatabaseManagement.GetManagedDatabaseSqlTuningAdvisorTasksFindingItem[];
+    readonly items?: outputs.DatabaseManagement.GetManagedDatabaseSqlTuningAdvisorTasksFindingItem[];
     readonly managedDatabaseId: string;
     readonly searchPeriod?: string;
     /**

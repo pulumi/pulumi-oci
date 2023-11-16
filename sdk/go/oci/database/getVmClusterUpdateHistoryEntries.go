@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Vm Cluster Update History Entries in Oracle Cloud Infrastructure Database service.
@@ -68,7 +67,7 @@ type GetVmClusterUpdateHistoryEntriesArgs struct {
 type GetVmClusterUpdateHistoryEntriesResult struct {
 	Filters []GetVmClusterUpdateHistoryEntriesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The current lifecycle state of the maintenance update operation.
 	State *string `pulumi:"state"`
 	// The type of VM cluster maintenance update.
@@ -121,12 +120,6 @@ func (o GetVmClusterUpdateHistoryEntriesResultOutput) ToGetVmClusterUpdateHistor
 	return o
 }
 
-func (o GetVmClusterUpdateHistoryEntriesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterUpdateHistoryEntriesResult] {
-	return pulumix.Output[GetVmClusterUpdateHistoryEntriesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetVmClusterUpdateHistoryEntriesResultOutput) Filters() GetVmClusterUpdateHistoryEntriesFilterArrayOutput {
 	return o.ApplyT(func(v GetVmClusterUpdateHistoryEntriesResult) []GetVmClusterUpdateHistoryEntriesFilter {
 		return v.Filters
@@ -134,8 +127,8 @@ func (o GetVmClusterUpdateHistoryEntriesResultOutput) Filters() GetVmClusterUpda
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetVmClusterUpdateHistoryEntriesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterUpdateHistoryEntriesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetVmClusterUpdateHistoryEntriesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterUpdateHistoryEntriesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The current lifecycle state of the maintenance update operation.

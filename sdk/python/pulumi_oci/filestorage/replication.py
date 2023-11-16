@@ -23,17 +23,6 @@ class ReplicationArgs:
                  replication_interval: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a Replication resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the replication.
-        :param pulumi.Input[str] source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source file system.
-        :param pulumi.Input[str] target_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target file system. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information. An associated replication target will also created with the same `displayName`. Example: `My replication`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] replication_interval: (Updatable) Duration in minutes between replication snapshots.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "source_id", source_id)
@@ -50,9 +39,6 @@ class ReplicationArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the replication.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -62,9 +48,6 @@ class ReplicationArgs:
     @property
     @pulumi.getter(name="sourceId")
     def source_id(self) -> pulumi.Input[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source file system.
-        """
         return pulumi.get(self, "source_id")
 
     @source_id.setter
@@ -74,13 +57,6 @@ class ReplicationArgs:
     @property
     @pulumi.getter(name="targetId")
     def target_id(self) -> pulumi.Input[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target file system. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "target_id")
 
     @target_id.setter
@@ -90,9 +66,6 @@ class ReplicationArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -102,9 +75,6 @@ class ReplicationArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information. An associated replication target will also created with the same `displayName`. Example: `My replication`
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -114,9 +84,6 @@ class ReplicationArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -126,9 +93,6 @@ class ReplicationArgs:
     @property
     @pulumi.getter(name="replicationInterval")
     def replication_interval(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Duration in minutes between replication snapshots.
-        """
         return pulumi.get(self, "replication_interval")
 
     @replication_interval.setter
@@ -157,26 +121,6 @@ class _ReplicationState:
                  time_created: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering Replication resources.
-        :param pulumi.Input[str] availability_domain: The availability domain the replication is in. The replication must be in the same availability domain as the source file system. Example: `Uocm:PHX-AD-1`
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the replication.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] delta_progress: Percentage progress of the current replication cycle.
-        :param pulumi.Input[str] delta_status: The current state of the snapshot during replication operations.
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information. An associated replication target will also created with the same `displayName`. Example: `My replication`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] last_snapshot_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last snapshot that has been replicated completely. Empty if the copy of the initial snapshot is not complete.
-        :param pulumi.Input[str] lifecycle_details: Additional information about the current 'lifecycleState'.
-        :param pulumi.Input[str] recovery_point_time: The [`snapshotTime`](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Snapshot/snapshotTime) of the most recent recoverable replication snapshot in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Example: `2021-04-04T20:01:29.100Z`
-        :param pulumi.Input[str] replication_interval: (Updatable) Duration in minutes between replication snapshots.
-        :param pulumi.Input[str] replication_target_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [`ReplicationTarget`](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ReplicationTarget).
-        :param pulumi.Input[str] source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source file system.
-        :param pulumi.Input[str] state: The current state of this replication. This resource can be in a `FAILED` state if replication target is deleted instead of the replication resource.
-        :param pulumi.Input[str] target_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target file system. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] time_created: The date and time the replication was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2021-01-04T20:01:29.100Z`
         """
         if availability_domain is not None:
             pulumi.set(__self__, "availability_domain", availability_domain)
@@ -214,9 +158,6 @@ class _ReplicationState:
     @property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> Optional[pulumi.Input[str]]:
-        """
-        The availability domain the replication is in. The replication must be in the same availability domain as the source file system. Example: `Uocm:PHX-AD-1`
-        """
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
@@ -226,9 +167,6 @@ class _ReplicationState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the replication.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -238,9 +176,6 @@ class _ReplicationState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -250,9 +185,6 @@ class _ReplicationState:
     @property
     @pulumi.getter(name="deltaProgress")
     def delta_progress(self) -> Optional[pulumi.Input[str]]:
-        """
-        Percentage progress of the current replication cycle.
-        """
         return pulumi.get(self, "delta_progress")
 
     @delta_progress.setter
@@ -262,9 +194,6 @@ class _ReplicationState:
     @property
     @pulumi.getter(name="deltaStatus")
     def delta_status(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the snapshot during replication operations.
-        """
         return pulumi.get(self, "delta_status")
 
     @delta_status.setter
@@ -274,9 +203,6 @@ class _ReplicationState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information. An associated replication target will also created with the same `displayName`. Example: `My replication`
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -286,9 +212,6 @@ class _ReplicationState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -298,9 +221,6 @@ class _ReplicationState:
     @property
     @pulumi.getter(name="lastSnapshotId")
     def last_snapshot_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last snapshot that has been replicated completely. Empty if the copy of the initial snapshot is not complete.
-        """
         return pulumi.get(self, "last_snapshot_id")
 
     @last_snapshot_id.setter
@@ -310,9 +230,6 @@ class _ReplicationState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        Additional information about the current 'lifecycleState'.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -322,9 +239,6 @@ class _ReplicationState:
     @property
     @pulumi.getter(name="recoveryPointTime")
     def recovery_point_time(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [`snapshotTime`](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Snapshot/snapshotTime) of the most recent recoverable replication snapshot in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Example: `2021-04-04T20:01:29.100Z`
-        """
         return pulumi.get(self, "recovery_point_time")
 
     @recovery_point_time.setter
@@ -334,9 +248,6 @@ class _ReplicationState:
     @property
     @pulumi.getter(name="replicationInterval")
     def replication_interval(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Duration in minutes between replication snapshots.
-        """
         return pulumi.get(self, "replication_interval")
 
     @replication_interval.setter
@@ -346,9 +257,6 @@ class _ReplicationState:
     @property
     @pulumi.getter(name="replicationTargetId")
     def replication_target_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [`ReplicationTarget`](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ReplicationTarget).
-        """
         return pulumi.get(self, "replication_target_id")
 
     @replication_target_id.setter
@@ -358,9 +266,6 @@ class _ReplicationState:
     @property
     @pulumi.getter(name="sourceId")
     def source_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source file system.
-        """
         return pulumi.get(self, "source_id")
 
     @source_id.setter
@@ -370,9 +275,6 @@ class _ReplicationState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of this replication. This resource can be in a `FAILED` state if replication target is deleted instead of the replication resource.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -382,13 +284,6 @@ class _ReplicationState:
     @property
     @pulumi.getter(name="targetId")
     def target_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target file system. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "target_id")
 
     @target_id.setter
@@ -398,9 +293,6 @@ class _ReplicationState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the replication was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2021-01-04T20:01:29.100Z`
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -422,77 +314,9 @@ class Replication(pulumi.CustomResource):
                  target_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Replication resource in Oracle Cloud Infrastructure File Storage service.
-
-        Creates a new replication in the specified compartment.
-        Replications are the primary resource that governs the policy of cross-region replication between source
-        and target file systems. Replications are associated with a secondary resource called a [`ReplicationTarget`](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ReplicationTarget)
-        located in another availability domain.
-        The associated replication target resource is automatically created along with the replication resource.
-        The replication retrieves the delta of data between two snapshots of a source file system
-        and sends it to the associated `ReplicationTarget`, which retrieves the delta and applies it to the target
-        file system.
-        Only unexported file systems can be used as target file systems.
-        For more information, see [Using Replication](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/FSreplication.htm).
-
-        For information about access control and compartments, see
-        [Overview of the IAM
-        Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
-
-        For information about availability domains, see [Regions and
-        Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
-        To get a list of availability domains, use the
-        `ListAvailabilityDomains` operation in the Identity and Access
-        Management Service API.
-
-        All Oracle Cloud Infrastructure Services resources, including
-        replications, get an Oracle-assigned, unique ID called an
-        Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
-        When you create a resource, you can find its OCID in the response.
-        You can also retrieve a resource's OCID by using a List API operation on that resource
-        type, or by viewing the resource in the Console.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_replication = oci.file_storage.Replication("testReplication",
-            compartment_id=var["compartment_id"],
-            source_id=oci_file_storage_source["test_source"]["id"],
-            target_id=oci_cloud_guard_target["test_target"]["id"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            display_name=var["replication_display_name"],
-            freeform_tags={
-                "Department": "Finance",
-            },
-            replication_interval=var["replication_replication_interval"])
-        ```
-
-        ## Import
-
-        Replications can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:FileStorage/replication:Replication test_replication "id"
-        ```
-
+        Create a Replication resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the replication.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information. An associated replication target will also created with the same `displayName`. Example: `My replication`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] replication_interval: (Updatable) Duration in minutes between replication snapshots.
-        :param pulumi.Input[str] source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source file system.
-        :param pulumi.Input[str] target_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target file system. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -501,64 +325,7 @@ class Replication(pulumi.CustomResource):
                  args: ReplicationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Replication resource in Oracle Cloud Infrastructure File Storage service.
-
-        Creates a new replication in the specified compartment.
-        Replications are the primary resource that governs the policy of cross-region replication between source
-        and target file systems. Replications are associated with a secondary resource called a [`ReplicationTarget`](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ReplicationTarget)
-        located in another availability domain.
-        The associated replication target resource is automatically created along with the replication resource.
-        The replication retrieves the delta of data between two snapshots of a source file system
-        and sends it to the associated `ReplicationTarget`, which retrieves the delta and applies it to the target
-        file system.
-        Only unexported file systems can be used as target file systems.
-        For more information, see [Using Replication](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/FSreplication.htm).
-
-        For information about access control and compartments, see
-        [Overview of the IAM
-        Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
-
-        For information about availability domains, see [Regions and
-        Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
-        To get a list of availability domains, use the
-        `ListAvailabilityDomains` operation in the Identity and Access
-        Management Service API.
-
-        All Oracle Cloud Infrastructure Services resources, including
-        replications, get an Oracle-assigned, unique ID called an
-        Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
-        When you create a resource, you can find its OCID in the response.
-        You can also retrieve a resource's OCID by using a List API operation on that resource
-        type, or by viewing the resource in the Console.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_replication = oci.file_storage.Replication("testReplication",
-            compartment_id=var["compartment_id"],
-            source_id=oci_file_storage_source["test_source"]["id"],
-            target_id=oci_cloud_guard_target["test_target"]["id"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            display_name=var["replication_display_name"],
-            freeform_tags={
-                "Department": "Finance",
-            },
-            replication_interval=var["replication_replication_interval"])
-        ```
-
-        ## Import
-
-        Replications can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:FileStorage/replication:Replication test_replication "id"
-        ```
-
+        Create a Replication resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param ReplicationArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -645,26 +412,6 @@ class Replication(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] availability_domain: The availability domain the replication is in. The replication must be in the same availability domain as the source file system. Example: `Uocm:PHX-AD-1`
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the replication.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] delta_progress: Percentage progress of the current replication cycle.
-        :param pulumi.Input[str] delta_status: The current state of the snapshot during replication operations.
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information. An associated replication target will also created with the same `displayName`. Example: `My replication`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] last_snapshot_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last snapshot that has been replicated completely. Empty if the copy of the initial snapshot is not complete.
-        :param pulumi.Input[str] lifecycle_details: Additional information about the current 'lifecycleState'.
-        :param pulumi.Input[str] recovery_point_time: The [`snapshotTime`](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Snapshot/snapshotTime) of the most recent recoverable replication snapshot in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Example: `2021-04-04T20:01:29.100Z`
-        :param pulumi.Input[str] replication_interval: (Updatable) Duration in minutes between replication snapshots.
-        :param pulumi.Input[str] replication_target_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [`ReplicationTarget`](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ReplicationTarget).
-        :param pulumi.Input[str] source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source file system.
-        :param pulumi.Input[str] state: The current state of this replication. This resource can be in a `FAILED` state if replication target is deleted instead of the replication resource.
-        :param pulumi.Input[str] target_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target file system. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] time_created: The date and time the replication was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2021-01-04T20:01:29.100Z`
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -690,133 +437,81 @@ class Replication(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="availabilityDomain")
-    def availability_domain(self) -> pulumi.Output[str]:
-        """
-        The availability domain the replication is in. The replication must be in the same availability domain as the source file system. Example: `Uocm:PHX-AD-1`
-        """
+    def availability_domain(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "availability_domain")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the replication.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="deltaProgress")
-    def delta_progress(self) -> pulumi.Output[str]:
-        """
-        Percentage progress of the current replication cycle.
-        """
+    def delta_progress(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "delta_progress")
 
     @property
     @pulumi.getter(name="deltaStatus")
-    def delta_status(self) -> pulumi.Output[str]:
-        """
-        The current state of the snapshot during replication operations.
-        """
+    def delta_status(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "delta_status")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information. An associated replication target will also created with the same `displayName`. Example: `My replication`
-        """
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="lastSnapshotId")
-    def last_snapshot_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last snapshot that has been replicated completely. Empty if the copy of the initial snapshot is not complete.
-        """
+    def last_snapshot_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "last_snapshot_id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        Additional information about the current 'lifecycleState'.
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="recoveryPointTime")
-    def recovery_point_time(self) -> pulumi.Output[str]:
-        """
-        The [`snapshotTime`](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Snapshot/snapshotTime) of the most recent recoverable replication snapshot in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Example: `2021-04-04T20:01:29.100Z`
-        """
+    def recovery_point_time(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "recovery_point_time")
 
     @property
     @pulumi.getter(name="replicationInterval")
-    def replication_interval(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Duration in minutes between replication snapshots.
-        """
+    def replication_interval(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "replication_interval")
 
     @property
     @pulumi.getter(name="replicationTargetId")
-    def replication_target_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [`ReplicationTarget`](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ReplicationTarget).
-        """
+    def replication_target_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "replication_target_id")
 
     @property
     @pulumi.getter(name="sourceId")
     def source_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source file system.
-        """
         return pulumi.get(self, "source_id")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of this replication. This resource can be in a `FAILED` state if replication target is deleted instead of the replication resource.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="targetId")
     def target_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target file system. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "target_id")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The date and time the replication was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2021-01-04T20:01:29.100Z`
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 

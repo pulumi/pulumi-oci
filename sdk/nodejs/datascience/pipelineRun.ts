@@ -95,40 +95,40 @@ export class PipelineRun extends pulumi.CustomResource {
     /**
      * The configuration details of a pipeline.
      */
-    public /*out*/ readonly configurationDetails!: pulumi.Output<outputs.DataScience.PipelineRunConfigurationDetail[]>;
+    public /*out*/ readonly configurationDetails!: pulumi.Output<outputs.DataScience.PipelineRunConfigurationDetail[] | undefined>;
     /**
      * The configuration details of a pipeline.
      */
-    public readonly configurationOverrideDetails!: pulumi.Output<outputs.DataScience.PipelineRunConfigurationOverrideDetails>;
+    public readonly configurationOverrideDetails!: pulumi.Output<outputs.DataScience.PipelineRunConfigurationOverrideDetails | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the pipeline run.
      */
-    public /*out*/ readonly createdBy!: pulumi.Output<string>;
+    public /*out*/ readonly createdBy!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     public readonly deleteRelatedJobRuns!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) A user-friendly display name for the resource.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    public readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * Details of the state of the step run.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * The pipeline log configuration details.
      */
-    public readonly logConfigurationOverrideDetails!: pulumi.Output<outputs.DataScience.PipelineRunLogConfigurationOverrideDetails>;
+    public readonly logConfigurationOverrideDetails!: pulumi.Output<outputs.DataScience.PipelineRunLogConfigurationOverrideDetails | undefined>;
     /**
      * Customer logging details for pipeline run.
      */
-    public /*out*/ readonly logDetails!: pulumi.Output<outputs.DataScience.PipelineRunLogDetail[]>;
+    public /*out*/ readonly logDetails!: pulumi.Output<outputs.DataScience.PipelineRunLogDetail[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline for which pipeline run is created.
      */
@@ -140,15 +140,15 @@ export class PipelineRun extends pulumi.CustomResource {
     /**
      * The state of the step run.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * Array of step override details. Only Step Configuration is allowed to be overridden.
      */
-    public readonly stepOverrideDetails!: pulumi.Output<outputs.DataScience.PipelineRunStepOverrideDetail[]>;
+    public readonly stepOverrideDetails!: pulumi.Output<outputs.DataScience.PipelineRunStepOverrideDetail[] | undefined>;
     /**
      * Array of StepRun object for each step.
      */
-    public /*out*/ readonly stepRuns!: pulumi.Output<outputs.DataScience.PipelineRunStepRun[]>;
+    public /*out*/ readonly stepRuns!: pulumi.Output<outputs.DataScience.PipelineRunStepRun[] | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
      *
@@ -156,23 +156,23 @@ export class PipelineRun extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly systemTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The date and time the pipeline run was accepted in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    public /*out*/ readonly timeAccepted!: pulumi.Output<string>;
+    public /*out*/ readonly timeAccepted!: pulumi.Output<string | undefined>;
     /**
      * The date and time the pipeline run request was finished in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    public /*out*/ readonly timeFinished!: pulumi.Output<string>;
+    public /*out*/ readonly timeFinished!: pulumi.Output<string | undefined>;
     /**
      * The date and time the pipeline run request was started in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    public /*out*/ readonly timeStarted!: pulumi.Output<string>;
+    public /*out*/ readonly timeStarted!: pulumi.Output<string | undefined>;
     /**
      * The date and time the pipeline run was updated in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a PipelineRun resource with the given unique name, arguments, and options.

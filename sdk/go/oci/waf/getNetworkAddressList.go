@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Network Address List resource in Oracle Cloud Infrastructure Waf service.
@@ -62,28 +61,28 @@ type LookupNetworkAddressListResult struct {
 	// A private IP address or CIDR IP address range.
 	Addresses []string `pulumi:"addresses"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// NetworkAddressList display name, can be renamed.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the NetworkAddressList.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in FAILED state.
-	LifecycleDetails     string `pulumi:"lifecycleDetails"`
-	NetworkAddressListId string `pulumi:"networkAddressListId"`
+	LifecycleDetails     *string `pulumi:"lifecycleDetails"`
+	NetworkAddressListId string  `pulumi:"networkAddressListId"`
 	// The current state of the NetworkAddressList.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time the NetworkAddressList was created. An RFC3339 formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the NetworkAddressList was updated. An RFC3339 formatted datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// Type of NetworkAddressList.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 	// A list of private address prefixes, each associated with a particular VCN. To specify all addresses in a VCN, use "0.0.0.0/0" for IPv4 and "::/0" for IPv6.
 	VcnAddresses []GetNetworkAddressListVcnAddress `pulumi:"vcnAddresses"`
 }
@@ -126,20 +125,14 @@ func (o LookupNetworkAddressListResultOutput) ToLookupNetworkAddressListResultOu
 	return o
 }
 
-func (o LookupNetworkAddressListResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupNetworkAddressListResult] {
-	return pulumix.Output[LookupNetworkAddressListResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A private IP address or CIDR IP address range.
 func (o LookupNetworkAddressListResultOutput) Addresses() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupNetworkAddressListResult) []string { return v.Addresses }).(pulumi.StringArrayOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-func (o LookupNetworkAddressListResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNetworkAddressListResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupNetworkAddressListResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNetworkAddressListResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -148,8 +141,8 @@ func (o LookupNetworkAddressListResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // NetworkAddressList display name, can be renamed.
-func (o LookupNetworkAddressListResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNetworkAddressListResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupNetworkAddressListResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNetworkAddressListResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -158,13 +151,13 @@ func (o LookupNetworkAddressListResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the NetworkAddressList.
-func (o LookupNetworkAddressListResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNetworkAddressListResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupNetworkAddressListResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNetworkAddressListResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in FAILED state.
-func (o LookupNetworkAddressListResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNetworkAddressListResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupNetworkAddressListResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNetworkAddressListResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupNetworkAddressListResultOutput) NetworkAddressListId() pulumi.StringOutput {
@@ -172,8 +165,8 @@ func (o LookupNetworkAddressListResultOutput) NetworkAddressListId() pulumi.Stri
 }
 
 // The current state of the NetworkAddressList.
-func (o LookupNetworkAddressListResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNetworkAddressListResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupNetworkAddressListResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNetworkAddressListResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -182,18 +175,18 @@ func (o LookupNetworkAddressListResultOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time the NetworkAddressList was created. An RFC3339 formatted datetime string.
-func (o LookupNetworkAddressListResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNetworkAddressListResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupNetworkAddressListResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNetworkAddressListResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the NetworkAddressList was updated. An RFC3339 formatted datetime string.
-func (o LookupNetworkAddressListResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNetworkAddressListResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupNetworkAddressListResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNetworkAddressListResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // Type of NetworkAddressList.
-func (o LookupNetworkAddressListResultOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNetworkAddressListResult) string { return v.Type }).(pulumi.StringOutput)
+func (o LookupNetworkAddressListResultOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNetworkAddressListResult) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 // A list of private address prefixes, each associated with a particular VCN. To specify all addresses in a VCN, use "0.0.0.0/0" for IPv4 and "::/0" for IPv6.

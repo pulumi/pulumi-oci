@@ -33,7 +33,7 @@ public final class GetRecommendationsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private @Nullable Boolean includeOrganization;
     /**
      * @return The name of the profile level.
@@ -44,7 +44,7 @@ public final class GetRecommendationsResult {
      * @return The list of recommendation_collection.
      * 
      */
-    private List<GetRecommendationsRecommendationCollection> recommendationCollections;
+    private @Nullable List<GetRecommendationsRecommendationCollection> recommendationCollections;
     /**
      * @return The recommendation&#39;s current state.
      * 
@@ -87,8 +87,8 @@ public final class GetRecommendationsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public Optional<Boolean> includeOrganization() {
         return Optional.ofNullable(this.includeOrganization);
@@ -105,7 +105,7 @@ public final class GetRecommendationsResult {
      * 
      */
     public List<GetRecommendationsRecommendationCollection> recommendationCollections() {
-        return this.recommendationCollections;
+        return this.recommendationCollections == null ? List.of() : this.recommendationCollections;
     }
     /**
      * @return The recommendation&#39;s current state.
@@ -137,10 +137,10 @@ public final class GetRecommendationsResult {
         private String compartmentId;
         private Boolean compartmentIdInSubtree;
         private @Nullable List<GetRecommendationsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable Boolean includeOrganization;
         private @Nullable String name;
-        private List<GetRecommendationsRecommendationCollection> recommendationCollections;
+        private @Nullable List<GetRecommendationsRecommendationCollection> recommendationCollections;
         private @Nullable String state;
         private @Nullable String status;
         public Builder() {}
@@ -197,8 +197,8 @@ public final class GetRecommendationsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -212,8 +212,8 @@ public final class GetRecommendationsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder recommendationCollections(List<GetRecommendationsRecommendationCollection> recommendationCollections) {
-            this.recommendationCollections = Objects.requireNonNull(recommendationCollections);
+        public Builder recommendationCollections(@Nullable List<GetRecommendationsRecommendationCollection> recommendationCollections) {
+            this.recommendationCollections = recommendationCollections;
             return this;
         }
         public Builder recommendationCollections(GetRecommendationsRecommendationCollection... recommendationCollections) {

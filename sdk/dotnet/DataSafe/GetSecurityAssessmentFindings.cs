@@ -148,7 +148,7 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, a STIG rule, or a GDPR Article/Recital.
         /// </summary>
@@ -171,7 +171,7 @@ namespace Pulumi.Oci.DataSafe
 
             ImmutableArray<Outputs.GetSecurityAssessmentFindingsFindingResult> findings,
 
-            string id,
+            string? id,
 
             string? references,
 

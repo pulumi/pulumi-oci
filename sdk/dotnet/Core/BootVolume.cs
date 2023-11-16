@@ -87,7 +87,7 @@ namespace Pulumi.Oci.Core
         /// The number of Volume Performance Units per GB that this boot volume is effectively tuned to.
         /// </summary>
         [Output("autoTunedVpusPerGb")]
-        public Output<string> AutoTunedVpusPerGb { get; private set; } = null!;
+        public Output<string?> AutoTunedVpusPerGb { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The list of autotune policies to be enabled for this volume.
@@ -105,7 +105,7 @@ namespace Pulumi.Oci.Core
         /// If provided, specifies the ID of the boot volume backup policy to assign to the newly created boot volume. If omitted, no policy will be assigned.
         /// </summary>
         [Output("backupPolicyId")]
-        public Output<string> BackupPolicyId { get; private set; } = null!;
+        public Output<string?> BackupPolicyId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The list of boot volume replicas to be enabled for this boot volume in the specified destination availability domains.
@@ -126,55 +126,55 @@ namespace Pulumi.Oci.Core
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// The image OCID used to create the boot volume.
         /// </summary>
         [Output("imageId")]
-        public Output<string> ImageId { get; private set; } = null!;
+        public Output<string?> ImageId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
         /// </summary>
         [Output("isAutoTuneEnabled")]
-        public Output<bool> IsAutoTuneEnabled { get; private set; } = null!;
+        public Output<bool?> IsAutoTuneEnabled { get; private set; } = null!;
 
         /// <summary>
         /// Specifies whether the boot volume's data has finished copying from the source boot volume or boot volume backup.
         /// </summary>
         [Output("isHydrated")]
-        public Output<bool> IsHydrated { get; private set; } = null!;
+        public Output<bool?> IsHydrated { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The OCID of the Vault service key to assign as the master encryption key for the boot volume.
         /// </summary>
         [Output("kmsKeyId")]
-        public Output<string> KmsKeyId { get; private set; } = null!;
+        public Output<string?> KmsKeyId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The size of the volume in GBs.
         /// </summary>
         [Output("sizeInGbs")]
-        public Output<string> SizeInGbs { get; private set; } = null!;
+        public Output<string?> SizeInGbs { get; private set; } = null!;
 
         /// <summary>
         /// The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Please use `size_in_gbs`.
         /// </summary>
         [Output("sizeInMbs")]
-        public Output<string> SizeInMbs { get; private set; } = null!;
+        public Output<string?> SizeInMbs { get; private set; } = null!;
 
         [Output("sourceDetails")]
         public Output<Outputs.BootVolumeSourceDetails> SourceDetails { get; private set; } = null!;
@@ -183,25 +183,25 @@ namespace Pulumi.Oci.Core
         /// The current state of a boot volume.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         [Output("systemTags")]
-        public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the boot volume was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the source volume group.
         /// </summary>
         [Output("volumeGroupId")]
-        public Output<string> VolumeGroupId { get; private set; } = null!;
+        public Output<string?> VolumeGroupId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
@@ -209,7 +209,7 @@ namespace Pulumi.Oci.Core
         /// Allowed values:
         /// </summary>
         [Output("vpusPerGb")]
-        public Output<string> VpusPerGb { get; private set; } = null!;
+        public Output<string?> VpusPerGb { get; private set; } = null!;
 
 
         /// <summary>

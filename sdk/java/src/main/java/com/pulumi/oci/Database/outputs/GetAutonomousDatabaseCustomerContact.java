@@ -6,6 +6,8 @@ package com.pulumi.oci.Database.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAutonomousDatabaseCustomerContact {
@@ -13,15 +15,15 @@ public final class GetAutonomousDatabaseCustomerContact {
      * @return The email address used by Oracle to send notifications regarding databases and infrastructure.
      * 
      */
-    private String email;
+    private @Nullable String email;
 
     private GetAutonomousDatabaseCustomerContact() {}
     /**
      * @return The email address used by Oracle to send notifications regarding databases and infrastructure.
      * 
      */
-    public String email() {
-        return this.email;
+    public Optional<String> email() {
+        return Optional.ofNullable(this.email);
     }
 
     public static Builder builder() {
@@ -33,7 +35,7 @@ public final class GetAutonomousDatabaseCustomerContact {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String email;
+        private @Nullable String email;
         public Builder() {}
         public Builder(GetAutonomousDatabaseCustomerContact defaults) {
     	      Objects.requireNonNull(defaults);
@@ -41,8 +43,8 @@ public final class GetAutonomousDatabaseCustomerContact {
         }
 
         @CustomType.Setter
-        public Builder email(String email) {
-            this.email = Objects.requireNonNull(email);
+        public Builder email(@Nullable String email) {
+            this.email = email;
             return this;
         }
         public GetAutonomousDatabaseCustomerContact build() {

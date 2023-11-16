@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Identity.outputs.GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUser;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUser {
@@ -14,7 +15,7 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionkerb
      * @return A list of kerberos realm users for an Oracle Identity Cloud Service User
      * 
      */
-    private List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUser> realmUsers;
+    private @Nullable List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUser> realmUsers;
 
     private GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUser() {}
     /**
@@ -22,7 +23,7 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionkerb
      * 
      */
     public List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUser> realmUsers() {
-        return this.realmUsers;
+        return this.realmUsers == null ? List.of() : this.realmUsers;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionkerb
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUser> realmUsers;
+        private @Nullable List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUser> realmUsers;
         public Builder() {}
         public Builder(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUser defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionkerb
         }
 
         @CustomType.Setter
-        public Builder realmUsers(List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUser> realmUsers) {
-            this.realmUsers = Objects.requireNonNull(realmUsers);
+        public Builder realmUsers(@Nullable List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUser> realmUsers) {
+            this.realmUsers = realmUsers;
             return this;
         }
         public Builder realmUsers(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUser... realmUsers) {

@@ -46,52 +46,52 @@ export interface GetFastConnectProviderServiceResult {
     /**
      * Who is responsible for managing the virtual circuit bandwidth.
      */
-    readonly bandwithShapeManagement: string;
+    readonly bandwithShapeManagement?: string;
     /**
      * Who is responsible for managing the ASN information for the network at the other end of the connection from Oracle.
      */
-    readonly customerAsnManagement: string;
+    readonly customerAsnManagement?: string;
     /**
      * The location of the provider's website or portal. This portal is where you can get information about the provider service, create a virtual circuit connection from the provider to Oracle Cloud Infrastructure, and retrieve your provider service key for that virtual circuit connection.  Example: `https://example.com`
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Who is responsible for managing the private peering BGP information.
      */
-    readonly privatePeeringBgpManagement: string;
+    readonly privatePeeringBgpManagement?: string;
     /**
      * The name of the provider.
      */
-    readonly providerName: string;
+    readonly providerName?: string;
     readonly providerServiceId: string;
     /**
      * Who is responsible for managing the provider service key.
      */
-    readonly providerServiceKeyManagement: string;
+    readonly providerServiceKeyManagement?: string;
     /**
      * The name of the service offered by the provider.
      */
-    readonly providerServiceName: string;
+    readonly providerServiceName?: string;
     /**
      * Who is responsible for managing the public peering BGP information.
      */
-    readonly publicPeeringBgpManagement: string;
+    readonly publicPeeringBgpManagement?: string;
     /**
      * Total number of cross-connect or cross-connect groups required for the virtual circuit.
      */
-    readonly requiredTotalCrossConnects: number;
+    readonly requiredTotalCrossConnects?: number;
     /**
      * An array of virtual circuit types supported by this service.
      */
-    readonly supportedVirtualCircuitTypes: string[];
+    readonly supportedVirtualCircuitTypes?: string[];
     /**
      * Provider service type.
      */
-    readonly type: string;
+    readonly type?: string;
 }
 /**
  * This data source provides details about a specific Fast Connect Provider Service resource in Oracle Cloud Infrastructure Core service.

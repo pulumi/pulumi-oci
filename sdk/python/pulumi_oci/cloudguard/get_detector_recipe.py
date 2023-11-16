@@ -77,34 +77,22 @@ class GetDetectorRecipeResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        compartmentId of detector recipe
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Description for DetectorRecipeDetectorRule.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter
-    def detector(self) -> str:
-        """
-        detector for the rule
-        """
+    def detector(self) -> Optional[str]:
         return pulumi.get(self, "detector")
 
     @property
@@ -114,98 +102,62 @@ class GetDetectorRecipeResult:
 
     @property
     @pulumi.getter(name="detectorRules")
-    def detector_rules(self) -> Sequence['outputs.GetDetectorRecipeDetectorRuleResult']:
-        """
-        List of detector rules for the detector type for recipe - user input
-        """
+    def detector_rules(self) -> Optional[Sequence['outputs.GetDetectorRecipeDetectorRuleResult']]:
         return pulumi.get(self, "detector_rules")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The display name of entity
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="effectiveDetectorRules")
-    def effective_detector_rules(self) -> Sequence['outputs.GetDetectorRecipeEffectiveDetectorRuleResult']:
-        """
-        List of effective detector rules for the detector type for recipe after applying defaults
-        """
+    def effective_detector_rules(self) -> Optional[Sequence['outputs.GetDetectorRecipeEffectiveDetectorRuleResult']]:
         return pulumi.get(self, "effective_detector_rules")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        Ocid for detector recipe
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
-    def owner(self) -> str:
-        """
-        Owner of detector recipe
-        """
+    def owner(self) -> Optional[str]:
         return pulumi.get(self, "owner")
 
     @property
     @pulumi.getter(name="sourceDetectorRecipeId")
-    def source_detector_recipe_id(self) -> str:
-        """
-        Recipe Ocid of the Source Recipe to be cloned
-        """
+    def source_detector_recipe_id(self) -> Optional[str]:
         return pulumi.get(self, "source_detector_recipe_id")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the resource.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="targetIds")
-    def target_ids(self) -> Sequence[str]:
-        """
-        The recipe attached to targets
-        """
+    def target_ids(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "target_ids")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the detector recipe was created. Format defined by RFC3339.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time the detector recipe was updated. Format defined by RFC3339.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -237,21 +189,7 @@ class AwaitableGetDetectorRecipeResult(GetDetectorRecipeResult):
 def get_detector_recipe(detector_recipe_id: Optional[str] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDetectorRecipeResult:
     """
-    This data source provides details about a specific Detector Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
-
-    Returns a DetectorRecipe identified by detectorRecipeId
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_detector_recipe = oci.CloudGuard.get_detector_recipe(detector_recipe_id=oci_cloud_guard_detector_recipe["test_detector_recipe"]["id"])
-    ```
-
-
-    :param str detector_recipe_id: DetectorRecipe OCID
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['detectorRecipeId'] = detector_recipe_id
@@ -282,20 +220,6 @@ def get_detector_recipe(detector_recipe_id: Optional[str] = None,
 def get_detector_recipe_output(detector_recipe_id: Optional[pulumi.Input[str]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDetectorRecipeResult]:
     """
-    This data source provides details about a specific Detector Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
-
-    Returns a DetectorRecipe identified by detectorRecipeId
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_detector_recipe = oci.CloudGuard.get_detector_recipe(detector_recipe_id=oci_cloud_guard_detector_recipe["test_detector_recipe"]["id"])
-    ```
-
-
-    :param str detector_recipe_id: DetectorRecipe OCID
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Protection Rule resource in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
@@ -32,9 +31,9 @@ type ProtectionRule struct {
 	pulumi.CustomResourceState
 
 	// (Updatable) The action to take when the traffic is detected as malicious. If unspecified, defaults to `OFF`.
-	Action pulumi.StringOutput `pulumi:"action"`
+	Action pulumi.StringPtrOutput `pulumi:"action"`
 	// The description of the protection rule.
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
 	Exclusions ProtectionRuleExclusionArrayOutput `pulumi:"exclusions"`
 	// (Updatable) The unique key of the protection rule.
@@ -44,7 +43,7 @@ type ProtectionRule struct {
 	// The list of the ModSecurity rule IDs that apply to this protection rule. For more information about ModSecurity's open source WAF rules, see [Mod Security's documentation](https://www.modsecurity.org/CRS/Documentation/index.html).
 	ModSecurityRuleIds pulumi.StringArrayOutput `pulumi:"modSecurityRuleIds"`
 	// The name of the protection rule.
-	Name pulumi.StringOutput `pulumi:"name"`
+	Name pulumi.StringPtrOutput `pulumi:"name"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WAAS policy.
 	WaasPolicyId pulumi.StringOutput `pulumi:"waasPolicyId"`
 }
@@ -172,12 +171,6 @@ func (i *ProtectionRule) ToProtectionRuleOutputWithContext(ctx context.Context) 
 	return pulumi.ToOutputWithContext(ctx, i).(ProtectionRuleOutput)
 }
 
-func (i *ProtectionRule) ToOutput(ctx context.Context) pulumix.Output[*ProtectionRule] {
-	return pulumix.Output[*ProtectionRule]{
-		OutputState: i.ToProtectionRuleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ProtectionRuleArrayInput is an input type that accepts ProtectionRuleArray and ProtectionRuleArrayOutput values.
 // You can construct a concrete instance of `ProtectionRuleArrayInput` via:
 //
@@ -201,12 +194,6 @@ func (i ProtectionRuleArray) ToProtectionRuleArrayOutput() ProtectionRuleArrayOu
 
 func (i ProtectionRuleArray) ToProtectionRuleArrayOutputWithContext(ctx context.Context) ProtectionRuleArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ProtectionRuleArrayOutput)
-}
-
-func (i ProtectionRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]*ProtectionRule] {
-	return pulumix.Output[[]*ProtectionRule]{
-		OutputState: i.ToProtectionRuleArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ProtectionRuleMapInput is an input type that accepts ProtectionRuleMap and ProtectionRuleMapOutput values.
@@ -234,12 +221,6 @@ func (i ProtectionRuleMap) ToProtectionRuleMapOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(ProtectionRuleMapOutput)
 }
 
-func (i ProtectionRuleMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ProtectionRule] {
-	return pulumix.Output[map[string]*ProtectionRule]{
-		OutputState: i.ToProtectionRuleMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ProtectionRuleOutput struct{ *pulumi.OutputState }
 
 func (ProtectionRuleOutput) ElementType() reflect.Type {
@@ -254,20 +235,14 @@ func (o ProtectionRuleOutput) ToProtectionRuleOutputWithContext(ctx context.Cont
 	return o
 }
 
-func (o ProtectionRuleOutput) ToOutput(ctx context.Context) pulumix.Output[*ProtectionRule] {
-	return pulumix.Output[*ProtectionRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The action to take when the traffic is detected as malicious. If unspecified, defaults to `OFF`.
-func (o ProtectionRuleOutput) Action() pulumi.StringOutput {
-	return o.ApplyT(func(v *ProtectionRule) pulumi.StringOutput { return v.Action }).(pulumi.StringOutput)
+func (o ProtectionRuleOutput) Action() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ProtectionRule) pulumi.StringPtrOutput { return v.Action }).(pulumi.StringPtrOutput)
 }
 
 // The description of the protection rule.
-func (o ProtectionRuleOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *ProtectionRule) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o ProtectionRuleOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ProtectionRule) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
@@ -291,8 +266,8 @@ func (o ProtectionRuleOutput) ModSecurityRuleIds() pulumi.StringArrayOutput {
 }
 
 // The name of the protection rule.
-func (o ProtectionRuleOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v *ProtectionRule) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
+func (o ProtectionRuleOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ProtectionRule) pulumi.StringPtrOutput { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WAAS policy.
@@ -314,12 +289,6 @@ func (o ProtectionRuleArrayOutput) ToProtectionRuleArrayOutputWithContext(ctx co
 	return o
 }
 
-func (o ProtectionRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ProtectionRule] {
-	return pulumix.Output[[]*ProtectionRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o ProtectionRuleArrayOutput) Index(i pulumi.IntInput) ProtectionRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ProtectionRule {
 		return vs[0].([]*ProtectionRule)[vs[1].(int)]
@@ -338,12 +307,6 @@ func (o ProtectionRuleMapOutput) ToProtectionRuleMapOutput() ProtectionRuleMapOu
 
 func (o ProtectionRuleMapOutput) ToProtectionRuleMapOutputWithContext(ctx context.Context) ProtectionRuleMapOutput {
 	return o
-}
-
-func (o ProtectionRuleMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ProtectionRule] {
-	return pulumix.Output[map[string]*ProtectionRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ProtectionRuleMapOutput) MapIndex(k pulumi.StringInput) ProtectionRuleOutput {

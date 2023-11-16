@@ -40,11 +40,11 @@ export interface GetTargetDatabaseRoleResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly isOracleMaintained?: boolean;
     readonly roleNameContains?: string;
     readonly roleNames?: string[];
-    readonly roles: outputs.DataSafe.GetTargetDatabaseRoleRole[];
+    readonly roles?: outputs.DataSafe.GetTargetDatabaseRoleRole[];
     readonly targetDatabaseId: string;
 }
 export function getTargetDatabaseRoleOutput(args: GetTargetDatabaseRoleOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTargetDatabaseRoleResult> {

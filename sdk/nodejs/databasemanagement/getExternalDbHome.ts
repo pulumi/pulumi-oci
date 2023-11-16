@@ -45,48 +45,48 @@ export interface GetExternalDbHomeResult {
     /**
      * The additional details of the DB home defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
      */
-    readonly additionalDetails: {[key: string]: any};
+    readonly additionalDetails?: {[key: string]: any};
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * The name of the external DB home.
      */
-    readonly componentName: string;
+    readonly componentName?: string;
     /**
      * The user-friendly name for the external DB home. The name does not have to be unique.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     readonly externalDbHomeId: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the DB home is a part of.
      */
-    readonly externalDbSystemId: string;
+    readonly externalDbSystemId?: string;
     /**
      * The location of the DB home.
      */
-    readonly homeDirectory: string;
+    readonly homeDirectory?: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Additional information about the current lifecycle state.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * The current lifecycle state of the external DB home.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The date and time the external DB home was created.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The date and time the external DB home was last updated.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific External Db Home resource in Oracle Cloud Infrastructure Database Management service.

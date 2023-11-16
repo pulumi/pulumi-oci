@@ -61,53 +61,53 @@ export interface GetCatalogTypeResult {
     /**
      * Detailed description of the type.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * Mapping type equivalence in the external system.
      */
-    readonly externalTypeName: string;
+    readonly externalTypeName?: string;
     readonly fields?: string[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Indicates whether the type is approved for use as a classifying object.
      */
-    readonly isApproved: boolean;
+    readonly isApproved?: boolean;
     /**
      * Indicates whether the type is internal, making it unavailable for use by metadata elements.
      */
-    readonly isInternal: boolean;
+    readonly isInternal?: boolean;
     /**
      * Indicates whether the type can be used for tagging metadata elements.
      */
-    readonly isTag: boolean;
+    readonly isTag?: boolean;
     /**
      * Unique type key that is immutable.
      */
-    readonly key: string;
+    readonly key?: string;
     /**
      * The immutable name of the type.
      */
-    readonly name: string;
+    readonly name?: string;
     /**
      * A map of arrays which defines the type specific properties, both required and optional. The map keys are category names and the values are arrays contiaing all property details. Every property is contained inside of a category. Most types have required properties within the "default" category. Example: `{ "properties": { "default": { "attributes:": [ { "name": "host", "type": "string", "isRequired": true, "isUpdatable": false }, ... ] } } }`
      */
-    readonly properties: {[key: string]: any};
+    readonly properties?: {[key: string]: any};
     /**
      * The current state of the type.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * Indicates the category this type belongs to. For instance, data assets, connections.
      */
-    readonly typeCategory: string;
+    readonly typeCategory?: string;
     readonly typeKey: string;
     /**
      * URI to the type instance in the API.
      */
-    readonly uri: string;
+    readonly uri?: string;
 }
 /**
  * This data source provides details about a specific Catalog Type resource in Oracle Cloud Infrastructure Data Catalog service.

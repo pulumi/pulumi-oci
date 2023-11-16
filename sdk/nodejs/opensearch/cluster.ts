@@ -101,7 +101,7 @@ export class Cluster extends pulumi.CustomResource {
     /**
      * The availability domains to distribute the cluser nodes across.
      */
-    public /*out*/ readonly availabilityDomains!: pulumi.Output<string[]>;
+    public /*out*/ readonly availabilityDomains!: pulumi.Output<string[] | undefined>;
     /**
      * The OCID of the compartment to create the cluster in.
      */
@@ -113,7 +113,7 @@ export class Cluster extends pulumi.CustomResource {
     /**
      * The bare metal shape for the cluster's data nodes.
      */
-    public readonly dataNodeHostBareMetalShape!: pulumi.Output<string>;
+    public readonly dataNodeHostBareMetalShape!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The amount of memory in GB, to configure per node for the cluster's data nodes.
      */
@@ -133,7 +133,7 @@ export class Cluster extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) The name of the cluster. Avoid entering confidential information.
      */
@@ -141,15 +141,15 @@ export class Cluster extends pulumi.CustomResource {
     /**
      * The fully qualified domain name (FQDN) for the cluster's API endpoint.
      */
-    public /*out*/ readonly fqdn!: pulumi.Output<string>;
+    public /*out*/ readonly fqdn!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * Additional information about the current lifecycle state of the cluster.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The number of master nodes to configure for the cluster.
      */
@@ -157,7 +157,7 @@ export class Cluster extends pulumi.CustomResource {
     /**
      * The bare metal shape for the cluster's master nodes.
      */
-    public readonly masterNodeHostBareMetalShape!: pulumi.Output<string>;
+    public readonly masterNodeHostBareMetalShape!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The amount of memory in GB, to configure per node for the cluster's master nodes.
      */
@@ -173,7 +173,7 @@ export class Cluster extends pulumi.CustomResource {
     /**
      * The fully qualified domain name (FQDN) for the cluster's OpenSearch Dashboard API endpoint.
      */
-    public /*out*/ readonly opendashboardFqdn!: pulumi.Output<string>;
+    public /*out*/ readonly opendashboardFqdn!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The number of OpenSearch Dashboard nodes to configure for the cluster.
      */
@@ -189,27 +189,27 @@ export class Cluster extends pulumi.CustomResource {
     /**
      * The private IP address for the cluster's OpenSearch Dashboard.
      */
-    public /*out*/ readonly opendashboardPrivateIp!: pulumi.Output<string>;
+    public /*out*/ readonly opendashboardPrivateIp!: pulumi.Output<string | undefined>;
     /**
      * The fully qualified domain name (FQDN) for the cluster's API endpoint.
      */
-    public /*out*/ readonly opensearchFqdn!: pulumi.Output<string>;
+    public /*out*/ readonly opensearchFqdn!: pulumi.Output<string | undefined>;
     /**
      * The cluster's private IP address.
      */
-    public /*out*/ readonly opensearchPrivateIp!: pulumi.Output<string>;
+    public /*out*/ readonly opensearchPrivateIp!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The name of the master user that are used to manage security config
      */
-    public readonly securityMasterUserName!: pulumi.Output<string>;
+    public readonly securityMasterUserName!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The password hash of the master user that are used to manage security config
      */
-    public readonly securityMasterUserPasswordHash!: pulumi.Output<string>;
+    public readonly securityMasterUserPasswordHash!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The security mode of the cluster.
      */
-    public readonly securityMode!: pulumi.Output<string>;
+    public readonly securityMode!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The version of the software the cluster is running.
      */
@@ -217,7 +217,7 @@ export class Cluster extends pulumi.CustomResource {
     /**
      * The current state of the cluster.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The OCID for the compartment where the cluster's subnet is located.
      */
@@ -229,23 +229,23 @@ export class Cluster extends pulumi.CustomResource {
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly systemTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The amount of time in milliseconds since the cluster was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The amount of time in milliseconds since the cluster was updated.
      */
-    public /*out*/ readonly timeDeleted!: pulumi.Output<string>;
+    public /*out*/ readonly timeDeleted!: pulumi.Output<string | undefined>;
     /**
      * The amount of time in milliseconds since the cluster was updated.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
     /**
      * The size in GB of the cluster's total storage.
      */
-    public /*out*/ readonly totalStorageGb!: pulumi.Output<number>;
+    public /*out*/ readonly totalStorageGb!: pulumi.Output<number | undefined>;
     /**
      * The OCID for the compartment where the cluster's VCN is located.
      */

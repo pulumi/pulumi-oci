@@ -46,9 +46,6 @@ class GetTagDefaultsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
-        """
-        The OCID of the compartment. The tag default applies to all new resources that get created in the compartment. Resources that existed before the tag default was created are not tagged.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -59,33 +56,21 @@ class GetTagDefaultsResult:
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        The OCID of the tag default.
-        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The tag default's current state. After creating a `TagDefault`, make sure its `lifecycleState` is ACTIVE before using it.
-        """
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="tagDefaults")
-    def tag_defaults(self) -> Sequence['outputs.GetTagDefaultsTagDefaultResult']:
-        """
-        The list of tag_defaults.
-        """
+    def tag_defaults(self) -> Optional[Sequence['outputs.GetTagDefaultsTagDefaultResult']]:
         return pulumi.get(self, "tag_defaults")
 
     @property
     @pulumi.getter(name="tagDefinitionId")
     def tag_definition_id(self) -> Optional[str]:
-        """
-        The OCID of the tag definition. The tag default will always assign a default value for this tag definition.
-        """
         return pulumi.get(self, "tag_definition_id")
 
 
@@ -110,27 +95,7 @@ def get_tag_defaults(compartment_id: Optional[str] = None,
                      tag_definition_id: Optional[str] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetTagDefaultsResult:
     """
-    This data source provides the list of Tag Defaults in Oracle Cloud Infrastructure Identity service.
-
-    Lists the tag defaults for tag definitions in the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_tag_defaults = oci.Identity.get_tag_defaults(compartment_id=var["compartment_id"],
-        id=var["tag_default_id"],
-        state=var["tag_default_state"],
-        tag_definition_id=oci_identity_tag_definition["test_tag_definition"]["id"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment (remember that the tenancy is simply the root compartment).
-    :param str id: A filter to only return resources that match the specified OCID exactly.
-    :param str state: A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
-    :param str tag_definition_id: The OCID of the tag definition.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -158,26 +123,6 @@ def get_tag_defaults_output(compartment_id: Optional[pulumi.Input[Optional[str]]
                             tag_definition_id: Optional[pulumi.Input[Optional[str]]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetTagDefaultsResult]:
     """
-    This data source provides the list of Tag Defaults in Oracle Cloud Infrastructure Identity service.
-
-    Lists the tag defaults for tag definitions in the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_tag_defaults = oci.Identity.get_tag_defaults(compartment_id=var["compartment_id"],
-        id=var["tag_default_id"],
-        state=var["tag_default_state"],
-        tag_definition_id=oci_identity_tag_definition["test_tag_definition"]["id"])
-    ```
-
-
-    :param str compartment_id: The OCID of the compartment (remember that the tenancy is simply the root compartment).
-    :param str id: A filter to only return resources that match the specified OCID exactly.
-    :param str state: A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
-    :param str tag_definition_id: The OCID of the tag definition.
+    Use this data source to access information about an existing resource.
     """
     ...

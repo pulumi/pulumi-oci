@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Log Analytics Entity resource in Oracle Cloud Infrastructure Log Analytics service.
@@ -70,29 +69,29 @@ type LogAnalyticsEntity struct {
 	pulumi.CustomResourceState
 
 	// The Boolean flag to indicate if logs are collected for an entity for log analytics usage.
-	AreLogsCollected pulumi.BoolOutput `pulumi:"areLogsCollected"`
+	AreLogsCollected pulumi.BoolPtrOutput `pulumi:"areLogsCollected"`
 	// The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
-	CloudResourceId pulumi.StringOutput `pulumi:"cloudResourceId"`
+	CloudResourceId pulumi.StringPtrOutput `pulumi:"cloudResourceId"`
 	// (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// Internal name for the log analytics entity type.
-	EntityTypeInternalName pulumi.StringOutput `pulumi:"entityTypeInternalName"`
+	EntityTypeInternalName pulumi.StringPtrOutput `pulumi:"entityTypeInternalName"`
 	// Log analytics entity type name.
 	EntityTypeName pulumi.StringOutput `pulumi:"entityTypeName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// (Updatable) The hostname where the entity represented here is actually present. This would be the output one would get if they run `echo $HOSTNAME` on Linux or an equivalent OS command. This may be different from management agents host since logs may be collected remotely.
-	Hostname pulumi.StringOutput `pulumi:"hostname"`
+	Hostname pulumi.StringPtrOutput `pulumi:"hostname"`
 	// lifecycleDetails has additional information regarding substeps such as management agent plugin deployment.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// Management agent (management-agents resource kind) compartment OCID
-	ManagementAgentCompartmentId pulumi.StringOutput `pulumi:"managementAgentCompartmentId"`
+	ManagementAgentCompartmentId pulumi.StringPtrOutput `pulumi:"managementAgentCompartmentId"`
 	// Management agent (management-agents resource kind) display name
-	ManagementAgentDisplayName pulumi.StringOutput `pulumi:"managementAgentDisplayName"`
+	ManagementAgentDisplayName pulumi.StringPtrOutput `pulumi:"managementAgentDisplayName"`
 	// (Updatable) The OCID of the Management Agent.
-	ManagementAgentId pulumi.StringOutput `pulumi:"managementAgentId"`
+	ManagementAgentId pulumi.StringPtrOutput `pulumi:"managementAgentId"`
 	// (Updatable) Log analytics entity name.
 	Name pulumi.StringOutput `pulumi:"name"`
 	// The Logging Analytics namespace used for the request.
@@ -100,18 +99,18 @@ type LogAnalyticsEntity struct {
 	// (Updatable) The name/value pairs for parameter values to be used in file patterns specified in log sources.
 	Properties pulumi.MapOutput `pulumi:"properties"`
 	// This indicates the type of source. It is primarily for Enterprise Manager Repository ID.
-	SourceId pulumi.StringOutput `pulumi:"sourceId"`
+	SourceId pulumi.StringPtrOutput `pulumi:"sourceId"`
 	// The current state of the log analytics entity.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The date and time the resource was created, in the format defined by RFC3339.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The date and time the resource was last updated, in the format defined by RFC3339.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 	// (Updatable) The timezone region of the log analytics entity.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	TimezoneRegion pulumi.StringOutput `pulumi:"timezoneRegion"`
+	TimezoneRegion pulumi.StringPtrOutput `pulumi:"timezoneRegion"`
 }
 
 // NewLogAnalyticsEntity registers a new resource with the given unique name, arguments, and options.
@@ -332,12 +331,6 @@ func (i *LogAnalyticsEntity) ToLogAnalyticsEntityOutputWithContext(ctx context.C
 	return pulumi.ToOutputWithContext(ctx, i).(LogAnalyticsEntityOutput)
 }
 
-func (i *LogAnalyticsEntity) ToOutput(ctx context.Context) pulumix.Output[*LogAnalyticsEntity] {
-	return pulumix.Output[*LogAnalyticsEntity]{
-		OutputState: i.ToLogAnalyticsEntityOutputWithContext(ctx).OutputState,
-	}
-}
-
 // LogAnalyticsEntityArrayInput is an input type that accepts LogAnalyticsEntityArray and LogAnalyticsEntityArrayOutput values.
 // You can construct a concrete instance of `LogAnalyticsEntityArrayInput` via:
 //
@@ -361,12 +354,6 @@ func (i LogAnalyticsEntityArray) ToLogAnalyticsEntityArrayOutput() LogAnalyticsE
 
 func (i LogAnalyticsEntityArray) ToLogAnalyticsEntityArrayOutputWithContext(ctx context.Context) LogAnalyticsEntityArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(LogAnalyticsEntityArrayOutput)
-}
-
-func (i LogAnalyticsEntityArray) ToOutput(ctx context.Context) pulumix.Output[[]*LogAnalyticsEntity] {
-	return pulumix.Output[[]*LogAnalyticsEntity]{
-		OutputState: i.ToLogAnalyticsEntityArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // LogAnalyticsEntityMapInput is an input type that accepts LogAnalyticsEntityMap and LogAnalyticsEntityMapOutput values.
@@ -394,12 +381,6 @@ func (i LogAnalyticsEntityMap) ToLogAnalyticsEntityMapOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(LogAnalyticsEntityMapOutput)
 }
 
-func (i LogAnalyticsEntityMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*LogAnalyticsEntity] {
-	return pulumix.Output[map[string]*LogAnalyticsEntity]{
-		OutputState: i.ToLogAnalyticsEntityMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type LogAnalyticsEntityOutput struct{ *pulumi.OutputState }
 
 func (LogAnalyticsEntityOutput) ElementType() reflect.Type {
@@ -414,20 +395,14 @@ func (o LogAnalyticsEntityOutput) ToLogAnalyticsEntityOutputWithContext(ctx cont
 	return o
 }
 
-func (o LogAnalyticsEntityOutput) ToOutput(ctx context.Context) pulumix.Output[*LogAnalyticsEntity] {
-	return pulumix.Output[*LogAnalyticsEntity]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The Boolean flag to indicate if logs are collected for an entity for log analytics usage.
-func (o LogAnalyticsEntityOutput) AreLogsCollected() pulumi.BoolOutput {
-	return o.ApplyT(func(v *LogAnalyticsEntity) pulumi.BoolOutput { return v.AreLogsCollected }).(pulumi.BoolOutput)
+func (o LogAnalyticsEntityOutput) AreLogsCollected() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *LogAnalyticsEntity) pulumi.BoolPtrOutput { return v.AreLogsCollected }).(pulumi.BoolPtrOutput)
 }
 
 // The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
-func (o LogAnalyticsEntityOutput) CloudResourceId() pulumi.StringOutput {
-	return o.ApplyT(func(v *LogAnalyticsEntity) pulumi.StringOutput { return v.CloudResourceId }).(pulumi.StringOutput)
+func (o LogAnalyticsEntityOutput) CloudResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LogAnalyticsEntity) pulumi.StringPtrOutput { return v.CloudResourceId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -441,8 +416,8 @@ func (o LogAnalyticsEntityOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // Internal name for the log analytics entity type.
-func (o LogAnalyticsEntityOutput) EntityTypeInternalName() pulumi.StringOutput {
-	return o.ApplyT(func(v *LogAnalyticsEntity) pulumi.StringOutput { return v.EntityTypeInternalName }).(pulumi.StringOutput)
+func (o LogAnalyticsEntityOutput) EntityTypeInternalName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LogAnalyticsEntity) pulumi.StringPtrOutput { return v.EntityTypeInternalName }).(pulumi.StringPtrOutput)
 }
 
 // Log analytics entity type name.
@@ -456,28 +431,28 @@ func (o LogAnalyticsEntityOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // (Updatable) The hostname where the entity represented here is actually present. This would be the output one would get if they run `echo $HOSTNAME` on Linux or an equivalent OS command. This may be different from management agents host since logs may be collected remotely.
-func (o LogAnalyticsEntityOutput) Hostname() pulumi.StringOutput {
-	return o.ApplyT(func(v *LogAnalyticsEntity) pulumi.StringOutput { return v.Hostname }).(pulumi.StringOutput)
+func (o LogAnalyticsEntityOutput) Hostname() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LogAnalyticsEntity) pulumi.StringPtrOutput { return v.Hostname }).(pulumi.StringPtrOutput)
 }
 
 // lifecycleDetails has additional information regarding substeps such as management agent plugin deployment.
-func (o LogAnalyticsEntityOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *LogAnalyticsEntity) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LogAnalyticsEntityOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LogAnalyticsEntity) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // Management agent (management-agents resource kind) compartment OCID
-func (o LogAnalyticsEntityOutput) ManagementAgentCompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *LogAnalyticsEntity) pulumi.StringOutput { return v.ManagementAgentCompartmentId }).(pulumi.StringOutput)
+func (o LogAnalyticsEntityOutput) ManagementAgentCompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LogAnalyticsEntity) pulumi.StringPtrOutput { return v.ManagementAgentCompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Management agent (management-agents resource kind) display name
-func (o LogAnalyticsEntityOutput) ManagementAgentDisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *LogAnalyticsEntity) pulumi.StringOutput { return v.ManagementAgentDisplayName }).(pulumi.StringOutput)
+func (o LogAnalyticsEntityOutput) ManagementAgentDisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LogAnalyticsEntity) pulumi.StringPtrOutput { return v.ManagementAgentDisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The OCID of the Management Agent.
-func (o LogAnalyticsEntityOutput) ManagementAgentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *LogAnalyticsEntity) pulumi.StringOutput { return v.ManagementAgentId }).(pulumi.StringOutput)
+func (o LogAnalyticsEntityOutput) ManagementAgentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LogAnalyticsEntity) pulumi.StringPtrOutput { return v.ManagementAgentId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Log analytics entity name.
@@ -496,31 +471,31 @@ func (o LogAnalyticsEntityOutput) Properties() pulumi.MapOutput {
 }
 
 // This indicates the type of source. It is primarily for Enterprise Manager Repository ID.
-func (o LogAnalyticsEntityOutput) SourceId() pulumi.StringOutput {
-	return o.ApplyT(func(v *LogAnalyticsEntity) pulumi.StringOutput { return v.SourceId }).(pulumi.StringOutput)
+func (o LogAnalyticsEntityOutput) SourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LogAnalyticsEntity) pulumi.StringPtrOutput { return v.SourceId }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the log analytics entity.
-func (o LogAnalyticsEntityOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *LogAnalyticsEntity) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o LogAnalyticsEntityOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LogAnalyticsEntity) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was created, in the format defined by RFC3339.
-func (o LogAnalyticsEntityOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *LogAnalyticsEntity) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LogAnalyticsEntityOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LogAnalyticsEntity) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was last updated, in the format defined by RFC3339.
-func (o LogAnalyticsEntityOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *LogAnalyticsEntity) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LogAnalyticsEntityOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LogAnalyticsEntity) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The timezone region of the log analytics entity.
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o LogAnalyticsEntityOutput) TimezoneRegion() pulumi.StringOutput {
-	return o.ApplyT(func(v *LogAnalyticsEntity) pulumi.StringOutput { return v.TimezoneRegion }).(pulumi.StringOutput)
+func (o LogAnalyticsEntityOutput) TimezoneRegion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LogAnalyticsEntity) pulumi.StringPtrOutput { return v.TimezoneRegion }).(pulumi.StringPtrOutput)
 }
 
 type LogAnalyticsEntityArrayOutput struct{ *pulumi.OutputState }
@@ -535,12 +510,6 @@ func (o LogAnalyticsEntityArrayOutput) ToLogAnalyticsEntityArrayOutput() LogAnal
 
 func (o LogAnalyticsEntityArrayOutput) ToLogAnalyticsEntityArrayOutputWithContext(ctx context.Context) LogAnalyticsEntityArrayOutput {
 	return o
-}
-
-func (o LogAnalyticsEntityArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*LogAnalyticsEntity] {
-	return pulumix.Output[[]*LogAnalyticsEntity]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LogAnalyticsEntityArrayOutput) Index(i pulumi.IntInput) LogAnalyticsEntityOutput {
@@ -561,12 +530,6 @@ func (o LogAnalyticsEntityMapOutput) ToLogAnalyticsEntityMapOutput() LogAnalytic
 
 func (o LogAnalyticsEntityMapOutput) ToLogAnalyticsEntityMapOutputWithContext(ctx context.Context) LogAnalyticsEntityMapOutput {
 	return o
-}
-
-func (o LogAnalyticsEntityMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*LogAnalyticsEntity] {
-	return pulumix.Output[map[string]*LogAnalyticsEntity]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LogAnalyticsEntityMapOutput) MapIndex(k pulumi.StringInput) LogAnalyticsEntityOutput {

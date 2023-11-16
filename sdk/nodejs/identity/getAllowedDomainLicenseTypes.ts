@@ -55,13 +55,13 @@ export interface GetAllowedDomainLicenseTypesResult {
     /**
      * The list of allowed_domain_license_types.
      */
-    readonly allowedDomainLicenseTypes: outputs.Identity.GetAllowedDomainLicenseTypesAllowedDomainLicenseType[];
+    readonly allowedDomainLicenseTypes?: outputs.Identity.GetAllowedDomainLicenseTypesAllowedDomainLicenseType[];
     readonly currentLicenseTypeName?: string;
     readonly filters?: outputs.Identity.GetAllowedDomainLicenseTypesFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
 }
 /**
  * This data source provides the list of Allowed Domain License Types in Oracle Cloud Infrastructure Identity service.

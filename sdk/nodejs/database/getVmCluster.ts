@@ -47,115 +47,115 @@ export interface GetVmClusterResult {
     /**
      * The name of the availability domain that the VM cluster is located in.
      */
-    readonly availabilityDomain: string;
+    readonly availabilityDomain?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    readonly compartmentId: string;
-    readonly cpuCoreCount: number;
+    readonly compartmentId?: string;
+    readonly cpuCoreCount?: number;
     /**
      * The number of enabled CPU cores.
      */
-    readonly cpusEnabled: number;
+    readonly cpusEnabled?: number;
     /**
      * Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
      */
-    readonly dataCollectionOptions: outputs.Database.GetVmClusterDataCollectionOption[];
+    readonly dataCollectionOptions?: outputs.Database.GetVmClusterDataCollectionOption[];
     /**
      * Size of the DATA disk group in GBs.
      */
-    readonly dataStorageSizeInGb: number;
+    readonly dataStorageSizeInGb?: number;
     /**
      * Size, in terabytes, of the DATA disk group.
      */
-    readonly dataStorageSizeInTbs: number;
+    readonly dataStorageSizeInTbs?: number;
     /**
      * The local node storage allocated in GBs.
      */
-    readonly dbNodeStorageSizeInGbs: number;
+    readonly dbNodeStorageSizeInGbs?: number;
     /**
      * The list of Db server.
      */
-    readonly dbServers: string[];
+    readonly dbServers?: string[];
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * The user-friendly name for the Exadata Cloud@Customer VM cluster. The name does not need to be unique.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
      */
-    readonly exadataInfrastructureId: string;
+    readonly exadataInfrastructureId?: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The Oracle Grid Infrastructure software version for the VM cluster.
      */
-    readonly giVersion: string;
+    readonly giVersion?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * If true, database backup on local Exadata storage is configured for the VM cluster. If false, database backup on local Exadata storage is not available in the VM cluster.
      */
-    readonly isLocalBackupEnabled: boolean;
+    readonly isLocalBackupEnabled?: boolean;
     /**
      * If true, sparse disk group is configured for the VM cluster. If false, sparse disk group is not created.
      */
-    readonly isSparseDiskgroupEnabled: boolean;
+    readonly isSparseDiskgroupEnabled?: boolean;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation starts.
      */
-    readonly lastPatchHistoryEntryId: string;
+    readonly lastPatchHistoryEntryId?: string;
     /**
      * The Oracle license model that applies to the VM cluster. The default is LICENSE_INCLUDED.
      */
-    readonly licenseModel: string;
+    readonly licenseModel?: string;
     /**
      * Additional information about the current lifecycle state.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * The memory allocated in GBs.
      */
-    readonly memorySizeInGbs: number;
-    readonly ocpuCount: number;
-    readonly ocpusEnabled: number;
+    readonly memorySizeInGbs?: number;
+    readonly ocpuCount?: number;
+    readonly ocpusEnabled?: number;
     /**
      * The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
      */
-    readonly shape: string;
+    readonly shape?: string;
     /**
      * The public key portion of one or more key pairs used for SSH access to the VM cluster.
      */
-    readonly sshPublicKeys: string[];
+    readonly sshPublicKeys?: string[];
     /**
      * The current state of the VM cluster.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * Operating system version of the image.
      */
-    readonly systemVersion: string;
+    readonly systemVersion?: string;
     /**
      * The date and time that the VM cluster was created.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
      */
-    readonly timeZone: string;
+    readonly timeZone?: string;
     readonly vmClusterId: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
      */
-    readonly vmClusterNetworkId: string;
+    readonly vmClusterNetworkId?: string;
 }
 /**
  * This data source provides details about a specific Vm Cluster resource in Oracle Cloud Infrastructure Database service.

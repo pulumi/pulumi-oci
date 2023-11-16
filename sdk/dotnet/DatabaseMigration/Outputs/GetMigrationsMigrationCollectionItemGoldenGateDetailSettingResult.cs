@@ -16,7 +16,7 @@ namespace Pulumi.Oci.DatabaseMigration.Outputs
         /// <summary>
         /// ODMS will monitor GoldenGate end-to-end latency until the lag time is lower than the specified value in seconds.
         /// </summary>
-        public readonly int AcceptableLag;
+        public readonly int? AcceptableLag;
         /// <summary>
         /// Parameters for Extract processes.
         /// </summary>
@@ -28,7 +28,7 @@ namespace Pulumi.Oci.DatabaseMigration.Outputs
 
         [OutputConstructor]
         private GetMigrationsMigrationCollectionItemGoldenGateDetailSettingResult(
-            int acceptableLag,
+            int? acceptableLag,
 
             ImmutableArray<Outputs.GetMigrationsMigrationCollectionItemGoldenGateDetailSettingExtractResult> extracts,
 

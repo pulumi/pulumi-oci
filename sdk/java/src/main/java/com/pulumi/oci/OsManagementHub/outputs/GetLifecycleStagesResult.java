@@ -35,12 +35,12 @@ public final class GetLifecycleStagesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of lifecycle_stage_collection.
      * 
      */
-    private List<GetLifecycleStagesLifecycleStageCollection> lifecycleStageCollections;
+    private @Nullable List<GetLifecycleStagesLifecycleStageCollection> lifecycleStageCollections;
     private @Nullable String lifecycleStageId;
     /**
      * @return The operating system type of the target instances.
@@ -90,15 +90,15 @@ public final class GetLifecycleStagesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of lifecycle_stage_collection.
      * 
      */
     public List<GetLifecycleStagesLifecycleStageCollection> lifecycleStageCollections() {
-        return this.lifecycleStageCollections;
+        return this.lifecycleStageCollections == null ? List.of() : this.lifecycleStageCollections;
     }
     public Optional<String> lifecycleStageId() {
         return Optional.ofNullable(this.lifecycleStageId);
@@ -139,8 +139,8 @@ public final class GetLifecycleStagesResult {
         private @Nullable String displayNameContains;
         private @Nullable List<String> displayNames;
         private @Nullable List<GetLifecycleStagesFilter> filters;
-        private String id;
-        private List<GetLifecycleStagesLifecycleStageCollection> lifecycleStageCollections;
+        private @Nullable String id;
+        private @Nullable List<GetLifecycleStagesLifecycleStageCollection> lifecycleStageCollections;
         private @Nullable String lifecycleStageId;
         private @Nullable String osFamily;
         private @Nullable String softwareSourceId;
@@ -193,13 +193,13 @@ public final class GetLifecycleStagesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleStageCollections(List<GetLifecycleStagesLifecycleStageCollection> lifecycleStageCollections) {
-            this.lifecycleStageCollections = Objects.requireNonNull(lifecycleStageCollections);
+        public Builder lifecycleStageCollections(@Nullable List<GetLifecycleStagesLifecycleStageCollection> lifecycleStageCollections) {
+            this.lifecycleStageCollections = lifecycleStageCollections;
             return this;
         }
         public Builder lifecycleStageCollections(GetLifecycleStagesLifecycleStageCollection... lifecycleStageCollections) {

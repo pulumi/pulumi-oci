@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DatabaseManagement.outputs.GetExternalListenersExternalListenerCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetExternalListenersExternalListenerCollection {
-    private List<GetExternalListenersExternalListenerCollectionItem> items;
+    private @Nullable List<GetExternalListenersExternalListenerCollectionItem> items;
 
     private GetExternalListenersExternalListenerCollection() {}
     public List<GetExternalListenersExternalListenerCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetExternalListenersExternalListenerCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetExternalListenersExternalListenerCollectionItem> items;
+        private @Nullable List<GetExternalListenersExternalListenerCollectionItem> items;
         public Builder() {}
         public Builder(GetExternalListenersExternalListenerCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetExternalListenersExternalListenerCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetExternalListenersExternalListenerCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetExternalListenersExternalListenerCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetExternalListenersExternalListenerCollectionItem... items) {

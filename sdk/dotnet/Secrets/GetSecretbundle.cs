@@ -154,11 +154,11 @@ namespace Pulumi.Oci.Secrets
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Customer-provided contextual metadata for the secret.
         /// </summary>
-        public readonly ImmutableDictionary<string, object> Metadata;
+        public readonly ImmutableDictionary<string, object>? Metadata;
         /// <summary>
         /// The contents of the secret.
         /// </summary>
@@ -176,29 +176,29 @@ namespace Pulumi.Oci.Secrets
         /// <summary>
         /// The time when the secret bundle was created.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// An optional property indicating when to delete the secret version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeOfDeletion;
+        public readonly string? TimeOfDeletion;
         /// <summary>
         /// An optional property indicating when the secret version will expire, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         /// </summary>
-        public readonly string TimeOfExpiry;
+        public readonly string? TimeOfExpiry;
         /// <summary>
         /// The name of the secret version. Labels are unique across the different versions of a particular secret.
         /// </summary>
-        public readonly string VersionName;
+        public readonly string? VersionName;
         /// <summary>
         /// The version number of the secret.
         /// </summary>
-        public readonly string VersionNumber;
+        public readonly string? VersionNumber;
 
         [OutputConstructor]
         private GetSecretbundleResult(
-            string id,
+            string? id,
 
-            ImmutableDictionary<string, object> metadata,
+            ImmutableDictionary<string, object>? metadata,
 
             ImmutableArray<Outputs.GetSecretbundleSecretBundleContentResult> secretBundleContents,
 
@@ -210,15 +210,15 @@ namespace Pulumi.Oci.Secrets
 
             ImmutableArray<string> stages,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeOfDeletion,
+            string? timeOfDeletion,
 
-            string timeOfExpiry,
+            string? timeOfExpiry,
 
-            string versionName,
+            string? versionName,
 
-            string versionNumber)
+            string? versionNumber)
         {
             Id = id;
             Metadata = metadata;

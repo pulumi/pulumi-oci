@@ -18,8 +18,6 @@ class ListingResourceVersionAgreementArgs:
                  listing_resource_version: pulumi.Input[str]):
         """
         The set of arguments for constructing a ListingResourceVersionAgreement resource.
-        :param pulumi.Input[str] listing_id: The OCID of the listing.
-        :param pulumi.Input[str] listing_resource_version: Listing Resource Version.
         """
         pulumi.set(__self__, "listing_id", listing_id)
         pulumi.set(__self__, "listing_resource_version", listing_resource_version)
@@ -27,9 +25,6 @@ class ListingResourceVersionAgreementArgs:
     @property
     @pulumi.getter(name="listingId")
     def listing_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of the listing.
-        """
         return pulumi.get(self, "listing_id")
 
     @listing_id.setter
@@ -39,9 +34,6 @@ class ListingResourceVersionAgreementArgs:
     @property
     @pulumi.getter(name="listingResourceVersion")
     def listing_resource_version(self) -> pulumi.Input[str]:
-        """
-        Listing Resource Version.
-        """
         return pulumi.get(self, "listing_resource_version")
 
     @listing_resource_version.setter
@@ -60,12 +52,6 @@ class _ListingResourceVersionAgreementState:
                  time_retrieved: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering ListingResourceVersionAgreement resources.
-        :param pulumi.Input[str] eula_link: EULA link
-        :param pulumi.Input[str] listing_id: The OCID of the listing.
-        :param pulumi.Input[str] listing_resource_version: Listing Resource Version.
-        :param pulumi.Input[str] oracle_terms_of_use_link: Oracle TOU link
-        :param pulumi.Input[str] signature: A generated signature for this agreement retrieval operation which should be used in the create subscription call.
-        :param pulumi.Input[str] time_retrieved: Date and time the agreements were retrieved, in RFC3339 format. Example: `2018-03-20T12:32:53.532Z`
         """
         if eula_link is not None:
             pulumi.set(__self__, "eula_link", eula_link)
@@ -83,9 +69,6 @@ class _ListingResourceVersionAgreementState:
     @property
     @pulumi.getter(name="eulaLink")
     def eula_link(self) -> Optional[pulumi.Input[str]]:
-        """
-        EULA link
-        """
         return pulumi.get(self, "eula_link")
 
     @eula_link.setter
@@ -95,9 +78,6 @@ class _ListingResourceVersionAgreementState:
     @property
     @pulumi.getter(name="listingId")
     def listing_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the listing.
-        """
         return pulumi.get(self, "listing_id")
 
     @listing_id.setter
@@ -107,9 +87,6 @@ class _ListingResourceVersionAgreementState:
     @property
     @pulumi.getter(name="listingResourceVersion")
     def listing_resource_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        Listing Resource Version.
-        """
         return pulumi.get(self, "listing_resource_version")
 
     @listing_resource_version.setter
@@ -119,9 +96,6 @@ class _ListingResourceVersionAgreementState:
     @property
     @pulumi.getter(name="oracleTermsOfUseLink")
     def oracle_terms_of_use_link(self) -> Optional[pulumi.Input[str]]:
-        """
-        Oracle TOU link
-        """
         return pulumi.get(self, "oracle_terms_of_use_link")
 
     @oracle_terms_of_use_link.setter
@@ -131,9 +105,6 @@ class _ListingResourceVersionAgreementState:
     @property
     @pulumi.getter
     def signature(self) -> Optional[pulumi.Input[str]]:
-        """
-        A generated signature for this agreement retrieval operation which should be used in the create subscription call.
-        """
         return pulumi.get(self, "signature")
 
     @signature.setter
@@ -143,9 +114,6 @@ class _ListingResourceVersionAgreementState:
     @property
     @pulumi.getter(name="timeRetrieved")
     def time_retrieved(self) -> Optional[pulumi.Input[str]]:
-        """
-        Date and time the agreements were retrieved, in RFC3339 format. Example: `2018-03-20T12:32:53.532Z`
-        """
         return pulumi.get(self, "time_retrieved")
 
     @time_retrieved.setter
@@ -162,23 +130,9 @@ class ListingResourceVersionAgreement(pulumi.CustomResource):
                  listing_resource_version: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        The `Core.AppCatalogListingResourceVersionAgreement` resource creates AppCatalogListingResourceVersionAgreement for a particular resource version of a listing.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_app_catalog_listing_resource_version_agreement = oci.core.AppCatalogListingResourceVersionAgreement("testAppCatalogListingResourceVersionAgreement",
-            listing_id=data["oci_core_app_catalog_listing"]["test_listing"]["id"],
-            listing_resource_version=var["app_catalog_listing_resource_version_agreement_listing_resource_version"])
-        ```
-
+        Create a ListingResourceVersionAgreement resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] listing_id: The OCID of the listing.
-        :param pulumi.Input[str] listing_resource_version: Listing Resource Version.
         """
         ...
     @overload
@@ -187,19 +141,7 @@ class ListingResourceVersionAgreement(pulumi.CustomResource):
                  args: ListingResourceVersionAgreementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        The `Core.AppCatalogListingResourceVersionAgreement` resource creates AppCatalogListingResourceVersionAgreement for a particular resource version of a listing.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_app_catalog_listing_resource_version_agreement = oci.core.AppCatalogListingResourceVersionAgreement("testAppCatalogListingResourceVersionAgreement",
-            listing_id=data["oci_core_app_catalog_listing"]["test_listing"]["id"],
-            listing_resource_version=var["app_catalog_listing_resource_version_agreement_listing_resource_version"])
-        ```
-
+        Create a ListingResourceVersionAgreement resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param ListingResourceVersionAgreementArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -259,12 +201,6 @@ class ListingResourceVersionAgreement(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] eula_link: EULA link
-        :param pulumi.Input[str] listing_id: The OCID of the listing.
-        :param pulumi.Input[str] listing_resource_version: Listing Resource Version.
-        :param pulumi.Input[str] oracle_terms_of_use_link: Oracle TOU link
-        :param pulumi.Input[str] signature: A generated signature for this agreement retrieval operation which should be used in the create subscription call.
-        :param pulumi.Input[str] time_retrieved: Date and time the agreements were retrieved, in RFC3339 format. Example: `2018-03-20T12:32:53.532Z`
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -280,49 +216,31 @@ class ListingResourceVersionAgreement(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="eulaLink")
-    def eula_link(self) -> pulumi.Output[str]:
-        """
-        EULA link
-        """
+    def eula_link(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "eula_link")
 
     @property
     @pulumi.getter(name="listingId")
     def listing_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the listing.
-        """
         return pulumi.get(self, "listing_id")
 
     @property
     @pulumi.getter(name="listingResourceVersion")
     def listing_resource_version(self) -> pulumi.Output[str]:
-        """
-        Listing Resource Version.
-        """
         return pulumi.get(self, "listing_resource_version")
 
     @property
     @pulumi.getter(name="oracleTermsOfUseLink")
-    def oracle_terms_of_use_link(self) -> pulumi.Output[str]:
-        """
-        Oracle TOU link
-        """
+    def oracle_terms_of_use_link(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "oracle_terms_of_use_link")
 
     @property
     @pulumi.getter
-    def signature(self) -> pulumi.Output[str]:
-        """
-        A generated signature for this agreement retrieval operation which should be used in the create subscription call.
-        """
+    def signature(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "signature")
 
     @property
     @pulumi.getter(name="timeRetrieved")
-    def time_retrieved(self) -> pulumi.Output[str]:
-        """
-        Date and time the agreements were retrieved, in RFC3339 format. Example: `2018-03-20T12:32:53.532Z`
-        """
+    def time_retrieved(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_retrieved")
 

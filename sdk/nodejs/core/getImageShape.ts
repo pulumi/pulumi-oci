@@ -53,7 +53,7 @@ export interface GetImageShapeResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
@@ -61,15 +61,15 @@ export interface GetImageShapeResult {
     /**
      * For a flexible image and shape, the amount of memory supported for instances that use this image.
      */
-    readonly memoryConstraints: outputs.Core.GetImageShapeMemoryConstraint[];
+    readonly memoryConstraints?: outputs.Core.GetImageShapeMemoryConstraint[];
     /**
      * OCPU options for an image and shape.
      */
-    readonly ocpuConstraints: outputs.Core.GetImageShapeOcpuConstraint[];
+    readonly ocpuConstraints?: outputs.Core.GetImageShapeOcpuConstraint[];
     /**
      * The shape name.
      */
-    readonly shape: string;
+    readonly shape?: string;
     readonly shapeName: string;
 }
 /**

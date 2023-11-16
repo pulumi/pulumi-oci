@@ -137,7 +137,7 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The list of volume_backup_policies.
         /// </summary>
@@ -149,7 +149,7 @@ namespace Pulumi.Oci.Core
 
             ImmutableArray<Outputs.GetVolumeBackupPoliciesFilterResult> filters,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetVolumeBackupPoliciesVolumeBackupPolicyResult> volumeBackupPolicies)
         {

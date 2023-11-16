@@ -19,7 +19,7 @@ public final class GetIpv6sResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The IPv6 address of the `IPv6` object. The address is within the IPv6 CIDR block of the VNIC&#39;s subnet (see the `ipv6CidrBlock` attribute for the [Subnet](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Subnet/) object.  Example: `2001:0db8:0123:1111:abcd:ef01:2345:6789`
      * 
@@ -29,7 +29,7 @@ public final class GetIpv6sResult {
      * @return The list of ipv6s.
      * 
      */
-    private List<GetIpv6sIpv6> ipv6s;
+    private @Nullable List<GetIpv6sIpv6> ipv6s;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
      * 
@@ -49,8 +49,8 @@ public final class GetIpv6sResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The IPv6 address of the `IPv6` object. The address is within the IPv6 CIDR block of the VNIC&#39;s subnet (see the `ipv6CidrBlock` attribute for the [Subnet](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Subnet/) object.  Example: `2001:0db8:0123:1111:abcd:ef01:2345:6789`
@@ -64,7 +64,7 @@ public final class GetIpv6sResult {
      * 
      */
     public List<GetIpv6sIpv6> ipv6s() {
-        return this.ipv6s;
+        return this.ipv6s == null ? List.of() : this.ipv6s;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
@@ -91,9 +91,9 @@ public final class GetIpv6sResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetIpv6sFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String ipAddress;
-        private List<GetIpv6sIpv6> ipv6s;
+        private @Nullable List<GetIpv6sIpv6> ipv6s;
         private @Nullable String subnetId;
         private @Nullable String vnicId;
         public Builder() {}
@@ -116,8 +116,8 @@ public final class GetIpv6sResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -126,8 +126,8 @@ public final class GetIpv6sResult {
             return this;
         }
         @CustomType.Setter
-        public Builder ipv6s(List<GetIpv6sIpv6> ipv6s) {
-            this.ipv6s = Objects.requireNonNull(ipv6s);
+        public Builder ipv6s(@Nullable List<GetIpv6sIpv6> ipv6s) {
+            this.ipv6s = ipv6s;
             return this;
         }
         public Builder ipv6s(GetIpv6sIpv6... ipv6s) {

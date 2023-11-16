@@ -28,13 +28,13 @@ public final class GetDrgRouteDistributionsResult {
      * @return The list of drg_route_distributions.
      * 
      */
-    private List<GetDrgRouteDistributionsDrgRouteDistribution> drgRouteDistributions;
+    private @Nullable List<GetDrgRouteDistributionsDrgRouteDistribution> drgRouteDistributions;
     private @Nullable List<GetDrgRouteDistributionsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The route distribution&#39;s current state.
      * 
@@ -61,7 +61,7 @@ public final class GetDrgRouteDistributionsResult {
      * 
      */
     public List<GetDrgRouteDistributionsDrgRouteDistribution> drgRouteDistributions() {
-        return this.drgRouteDistributions;
+        return this.drgRouteDistributions == null ? List.of() : this.drgRouteDistributions;
     }
     public List<GetDrgRouteDistributionsFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -70,8 +70,8 @@ public final class GetDrgRouteDistributionsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The route distribution&#39;s current state.
@@ -92,9 +92,9 @@ public final class GetDrgRouteDistributionsResult {
     public static final class Builder {
         private @Nullable String displayName;
         private String drgId;
-        private List<GetDrgRouteDistributionsDrgRouteDistribution> drgRouteDistributions;
+        private @Nullable List<GetDrgRouteDistributionsDrgRouteDistribution> drgRouteDistributions;
         private @Nullable List<GetDrgRouteDistributionsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetDrgRouteDistributionsResult defaults) {
@@ -118,8 +118,8 @@ public final class GetDrgRouteDistributionsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder drgRouteDistributions(List<GetDrgRouteDistributionsDrgRouteDistribution> drgRouteDistributions) {
-            this.drgRouteDistributions = Objects.requireNonNull(drgRouteDistributions);
+        public Builder drgRouteDistributions(@Nullable List<GetDrgRouteDistributionsDrgRouteDistribution> drgRouteDistributions) {
+            this.drgRouteDistributions = drgRouteDistributions;
             return this;
         }
         public Builder drgRouteDistributions(GetDrgRouteDistributionsDrgRouteDistribution... drgRouteDistributions) {
@@ -134,8 +134,8 @@ public final class GetDrgRouteDistributionsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

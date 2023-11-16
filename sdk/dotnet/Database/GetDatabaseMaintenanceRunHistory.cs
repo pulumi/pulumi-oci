@@ -112,7 +112,7 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Details of a maintenance run.
         /// </summary>
@@ -123,7 +123,7 @@ namespace Pulumi.Oci.Database
         private GetDatabaseMaintenanceRunHistoryResult(
             ImmutableArray<Outputs.GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailResult> dbServersHistoryDetails,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetDatabaseMaintenanceRunHistoryMaintenanceRunDetailResult> maintenanceRunDetails,
 

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Problem Entities in Oracle Cloud Infrastructure Cloud Guard service.
@@ -62,7 +61,7 @@ type GetProblemEntitiesArgs struct {
 type GetProblemEntitiesResult struct {
 	Filters []GetProblemEntitiesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of problem_entity_collection.
 	ProblemEntityCollections []GetProblemEntitiesProblemEntityCollection `pulumi:"problemEntityCollections"`
 	// Attached problem id
@@ -108,19 +107,13 @@ func (o GetProblemEntitiesResultOutput) ToGetProblemEntitiesResultOutputWithCont
 	return o
 }
 
-func (o GetProblemEntitiesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetProblemEntitiesResult] {
-	return pulumix.Output[GetProblemEntitiesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetProblemEntitiesResultOutput) Filters() GetProblemEntitiesFilterArrayOutput {
 	return o.ApplyT(func(v GetProblemEntitiesResult) []GetProblemEntitiesFilter { return v.Filters }).(GetProblemEntitiesFilterArrayOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetProblemEntitiesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProblemEntitiesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetProblemEntitiesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetProblemEntitiesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of problem_entity_collection.

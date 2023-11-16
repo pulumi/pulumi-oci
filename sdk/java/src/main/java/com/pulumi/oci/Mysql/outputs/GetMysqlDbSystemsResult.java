@@ -39,7 +39,7 @@ public final class GetMysqlDbSystemsResult {
      * @return The list of db_systems.
      * 
      */
-    private List<GetMysqlDbSystemsDbSystem> dbSystems;
+    private @Nullable List<GetMysqlDbSystemsDbSystem> dbSystems;
     /**
      * @return The user-friendly name for the DB System. It does not have to be unique.
      * 
@@ -50,7 +50,7 @@ public final class GetMysqlDbSystemsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return If the DB System has a HeatWave Cluster attached.
      * 
@@ -97,7 +97,7 @@ public final class GetMysqlDbSystemsResult {
      * 
      */
     public List<GetMysqlDbSystemsDbSystem> dbSystems() {
-        return this.dbSystems;
+        return this.dbSystems == null ? List.of() : this.dbSystems;
     }
     /**
      * @return The user-friendly name for the DB System. It does not have to be unique.
@@ -113,8 +113,8 @@ public final class GetMysqlDbSystemsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return If the DB System has a HeatWave Cluster attached.
@@ -147,10 +147,10 @@ public final class GetMysqlDbSystemsResult {
         private @Nullable String configurationId;
         private @Nullable List<String> databaseManagements;
         private @Nullable String dbSystemId;
-        private List<GetMysqlDbSystemsDbSystem> dbSystems;
+        private @Nullable List<GetMysqlDbSystemsDbSystem> dbSystems;
         private @Nullable String displayName;
         private @Nullable List<GetMysqlDbSystemsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable Boolean isHeatWaveClusterAttached;
         private @Nullable Boolean isUpToDate;
         private @Nullable String state;
@@ -194,8 +194,8 @@ public final class GetMysqlDbSystemsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder dbSystems(List<GetMysqlDbSystemsDbSystem> dbSystems) {
-            this.dbSystems = Objects.requireNonNull(dbSystems);
+        public Builder dbSystems(@Nullable List<GetMysqlDbSystemsDbSystem> dbSystems) {
+            this.dbSystems = dbSystems;
             return this;
         }
         public Builder dbSystems(GetMysqlDbSystemsDbSystem... dbSystems) {
@@ -215,8 +215,8 @@ public final class GetMysqlDbSystemsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

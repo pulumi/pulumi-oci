@@ -122,70 +122,70 @@ public class JobRun extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="createdBy", refs={String.class}, tree="[0]")
-    private Output<String> createdBy;
+    private Output</* @Nullable */ String> createdBy;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the job run.
      * 
      */
-    public Output<String> createdBy() {
-        return this.createdBy;
+    public Output<Optional<String>> createdBy() {
+        return Codegen.optional(this.createdBy);
     }
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) A user-friendly display name for the resource.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
-    private Output<String> displayName;
+    private Output</* @Nullable */ String> displayName;
 
     /**
      * @return (Updatable) A user-friendly display name for the resource.
      * 
      */
-    public Output<String> displayName() {
-        return this.displayName;
+    public Output<Optional<String>> displayName() {
+        return Codegen.optional(this.displayName);
     }
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * The job configuration details
      * 
      */
     @Export(name="jobConfigurationOverrideDetails", refs={JobRunJobConfigurationOverrideDetails.class}, tree="[0]")
-    private Output<JobRunJobConfigurationOverrideDetails> jobConfigurationOverrideDetails;
+    private Output</* @Nullable */ JobRunJobConfigurationOverrideDetails> jobConfigurationOverrideDetails;
 
     /**
      * @return The job configuration details
      * 
      */
-    public Output<JobRunJobConfigurationOverrideDetails> jobConfigurationOverrideDetails() {
-        return this.jobConfigurationOverrideDetails;
+    public Output<Optional<JobRunJobConfigurationOverrideDetails>> jobConfigurationOverrideDetails() {
+        return Codegen.optional(this.jobConfigurationOverrideDetails);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job to create a run for.
@@ -206,70 +206,70 @@ public class JobRun extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="jobInfrastructureConfigurationDetails", refs={List.class,JobRunJobInfrastructureConfigurationDetail.class}, tree="[0,1]")
-    private Output<List<JobRunJobInfrastructureConfigurationDetail>> jobInfrastructureConfigurationDetails;
+    private Output</* @Nullable */ List<JobRunJobInfrastructureConfigurationDetail>> jobInfrastructureConfigurationDetails;
 
     /**
      * @return The job infrastructure configuration details (shape, block storage, etc.)
      * 
      */
-    public Output<List<JobRunJobInfrastructureConfigurationDetail>> jobInfrastructureConfigurationDetails() {
-        return this.jobInfrastructureConfigurationDetails;
+    public Output<Optional<List<JobRunJobInfrastructureConfigurationDetail>>> jobInfrastructureConfigurationDetails() {
+        return Codegen.optional(this.jobInfrastructureConfigurationDetails);
     }
     /**
      * Logging configuration for resource.
      * 
      */
     @Export(name="jobLogConfigurationOverrideDetails", refs={JobRunJobLogConfigurationOverrideDetails.class}, tree="[0]")
-    private Output<JobRunJobLogConfigurationOverrideDetails> jobLogConfigurationOverrideDetails;
+    private Output</* @Nullable */ JobRunJobLogConfigurationOverrideDetails> jobLogConfigurationOverrideDetails;
 
     /**
      * @return Logging configuration for resource.
      * 
      */
-    public Output<JobRunJobLogConfigurationOverrideDetails> jobLogConfigurationOverrideDetails() {
-        return this.jobLogConfigurationOverrideDetails;
+    public Output<Optional<JobRunJobLogConfigurationOverrideDetails>> jobLogConfigurationOverrideDetails() {
+        return Codegen.optional(this.jobLogConfigurationOverrideDetails);
     }
     /**
      * Collection of JobStorageMountConfigurationDetails.
      * 
      */
     @Export(name="jobStorageMountConfigurationDetailsLists", refs={List.class,JobRunJobStorageMountConfigurationDetailsList.class}, tree="[0,1]")
-    private Output<List<JobRunJobStorageMountConfigurationDetailsList>> jobStorageMountConfigurationDetailsLists;
+    private Output</* @Nullable */ List<JobRunJobStorageMountConfigurationDetailsList>> jobStorageMountConfigurationDetailsLists;
 
     /**
      * @return Collection of JobStorageMountConfigurationDetails.
      * 
      */
-    public Output<List<JobRunJobStorageMountConfigurationDetailsList>> jobStorageMountConfigurationDetailsLists() {
-        return this.jobStorageMountConfigurationDetailsLists;
+    public Output<Optional<List<JobRunJobStorageMountConfigurationDetailsList>>> jobStorageMountConfigurationDetailsLists() {
+        return Codegen.optional(this.jobStorageMountConfigurationDetailsLists);
     }
     /**
      * Details of the state of the job run.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return Details of the state of the job run.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * Customer logging details for job run.
      * 
      */
     @Export(name="logDetails", refs={List.class,JobRunLogDetail.class}, tree="[0,1]")
-    private Output<List<JobRunLogDetail>> logDetails;
+    private Output</* @Nullable */ List<JobRunLogDetail>> logDetails;
 
     /**
      * @return Customer logging details for job run.
      * 
      */
-    public Output<List<JobRunLogDetail>> logDetails() {
-        return this.logDetails;
+    public Output<Optional<List<JobRunLogDetail>>> logDetails() {
+        return Codegen.optional(this.logDetails);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
@@ -296,56 +296,56 @@ public class JobRun extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The state of the job run.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The date and time the job run was accepted in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     @Export(name="timeAccepted", refs={String.class}, tree="[0]")
-    private Output<String> timeAccepted;
+    private Output</* @Nullable */ String> timeAccepted;
 
     /**
      * @return The date and time the job run was accepted in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    public Output<String> timeAccepted() {
-        return this.timeAccepted;
+    public Output<Optional<String>> timeAccepted() {
+        return Codegen.optional(this.timeAccepted);
     }
     /**
      * The date and time the job run request was finished in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     @Export(name="timeFinished", refs={String.class}, tree="[0]")
-    private Output<String> timeFinished;
+    private Output</* @Nullable */ String> timeFinished;
 
     /**
      * @return The date and time the job run request was finished in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    public Output<String> timeFinished() {
-        return this.timeFinished;
+    public Output<Optional<String>> timeFinished() {
+        return Codegen.optional(this.timeFinished);
     }
     /**
      * The date and time the job run request was started in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     @Export(name="timeStarted", refs={String.class}, tree="[0]")
-    private Output<String> timeStarted;
+    private Output</* @Nullable */ String> timeStarted;
 
     /**
      * @return The date and time the job run request was started in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    public Output<String> timeStarted() {
-        return this.timeStarted;
+    public Output<Optional<String>> timeStarted() {
+        return Codegen.optional(this.timeStarted);
     }
 
     /**

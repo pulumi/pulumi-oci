@@ -63,11 +63,11 @@ export interface GetOpensearchVersionsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of opensearch_versions_collection.
      */
-    readonly opensearchVersionsCollections: outputs.Opensearch.GetOpensearchVersionsOpensearchVersionsCollection[];
+    readonly opensearchVersionsCollections?: outputs.Opensearch.GetOpensearchVersionsOpensearchVersionsCollection[];
 }
 /**
  * This data source provides the list of Opensearch Versions in Oracle Cloud Infrastructure Opensearch service.

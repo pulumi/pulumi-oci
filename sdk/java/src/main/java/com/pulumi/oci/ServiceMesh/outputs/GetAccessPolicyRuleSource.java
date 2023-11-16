@@ -8,6 +8,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAccessPolicyRuleSource {
@@ -15,37 +17,37 @@ public final class GetAccessPolicyRuleSource {
      * @return The hostnames of the external service. Only applicable for HTTP and HTTPS protocols. Wildcard hostnames are supported in the prefix form. Examples of valid hostnames are &#34;www.example.com&#34;, &#34;*.example.com&#34;, &#34;*.com&#34;, &#34;*&#34;. Hostname &#34;*&#34; can be used to allow all hosts.
      * 
      */
-    private List<String> hostnames;
+    private @Nullable List<String> hostnames;
     /**
      * @return The OCID of the ingress gateway resource.
      * 
      */
-    private String ingressGatewayId;
+    private @Nullable String ingressGatewayId;
     /**
      * @return The ipAddresses of the external service in CIDR notation. Only applicable for TCP protocol. All requests matching the given CIDR notation will pass through. In case a wildcard CIDR &#34;0.0.0.0/0&#34; is provided, the same port cannot be used for a virtual service communication.
      * 
      */
-    private List<String> ipAddresses;
+    private @Nullable List<String> ipAddresses;
     /**
      * @return Ports exposed by an external service. If left empty all ports will be allowed.
      * 
      */
-    private List<Integer> ports;
+    private @Nullable List<Integer> ports;
     /**
      * @return Protocol of the external service
      * 
      */
-    private String protocol;
+    private @Nullable String protocol;
     /**
      * @return Traffic type of the target.
      * 
      */
-    private String type;
+    private @Nullable String type;
     /**
      * @return The OCID of the virtual service resource.
      * 
      */
-    private String virtualServiceId;
+    private @Nullable String virtualServiceId;
 
     private GetAccessPolicyRuleSource() {}
     /**
@@ -53,49 +55,49 @@ public final class GetAccessPolicyRuleSource {
      * 
      */
     public List<String> hostnames() {
-        return this.hostnames;
+        return this.hostnames == null ? List.of() : this.hostnames;
     }
     /**
      * @return The OCID of the ingress gateway resource.
      * 
      */
-    public String ingressGatewayId() {
-        return this.ingressGatewayId;
+    public Optional<String> ingressGatewayId() {
+        return Optional.ofNullable(this.ingressGatewayId);
     }
     /**
      * @return The ipAddresses of the external service in CIDR notation. Only applicable for TCP protocol. All requests matching the given CIDR notation will pass through. In case a wildcard CIDR &#34;0.0.0.0/0&#34; is provided, the same port cannot be used for a virtual service communication.
      * 
      */
     public List<String> ipAddresses() {
-        return this.ipAddresses;
+        return this.ipAddresses == null ? List.of() : this.ipAddresses;
     }
     /**
      * @return Ports exposed by an external service. If left empty all ports will be allowed.
      * 
      */
     public List<Integer> ports() {
-        return this.ports;
+        return this.ports == null ? List.of() : this.ports;
     }
     /**
      * @return Protocol of the external service
      * 
      */
-    public String protocol() {
-        return this.protocol;
+    public Optional<String> protocol() {
+        return Optional.ofNullable(this.protocol);
     }
     /**
      * @return Traffic type of the target.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
     /**
      * @return The OCID of the virtual service resource.
      * 
      */
-    public String virtualServiceId() {
-        return this.virtualServiceId;
+    public Optional<String> virtualServiceId() {
+        return Optional.ofNullable(this.virtualServiceId);
     }
 
     public static Builder builder() {
@@ -107,13 +109,13 @@ public final class GetAccessPolicyRuleSource {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> hostnames;
-        private String ingressGatewayId;
-        private List<String> ipAddresses;
-        private List<Integer> ports;
-        private String protocol;
-        private String type;
-        private String virtualServiceId;
+        private @Nullable List<String> hostnames;
+        private @Nullable String ingressGatewayId;
+        private @Nullable List<String> ipAddresses;
+        private @Nullable List<Integer> ports;
+        private @Nullable String protocol;
+        private @Nullable String type;
+        private @Nullable String virtualServiceId;
         public Builder() {}
         public Builder(GetAccessPolicyRuleSource defaults) {
     	      Objects.requireNonNull(defaults);
@@ -127,47 +129,47 @@ public final class GetAccessPolicyRuleSource {
         }
 
         @CustomType.Setter
-        public Builder hostnames(List<String> hostnames) {
-            this.hostnames = Objects.requireNonNull(hostnames);
+        public Builder hostnames(@Nullable List<String> hostnames) {
+            this.hostnames = hostnames;
             return this;
         }
         public Builder hostnames(String... hostnames) {
             return hostnames(List.of(hostnames));
         }
         @CustomType.Setter
-        public Builder ingressGatewayId(String ingressGatewayId) {
-            this.ingressGatewayId = Objects.requireNonNull(ingressGatewayId);
+        public Builder ingressGatewayId(@Nullable String ingressGatewayId) {
+            this.ingressGatewayId = ingressGatewayId;
             return this;
         }
         @CustomType.Setter
-        public Builder ipAddresses(List<String> ipAddresses) {
-            this.ipAddresses = Objects.requireNonNull(ipAddresses);
+        public Builder ipAddresses(@Nullable List<String> ipAddresses) {
+            this.ipAddresses = ipAddresses;
             return this;
         }
         public Builder ipAddresses(String... ipAddresses) {
             return ipAddresses(List.of(ipAddresses));
         }
         @CustomType.Setter
-        public Builder ports(List<Integer> ports) {
-            this.ports = Objects.requireNonNull(ports);
+        public Builder ports(@Nullable List<Integer> ports) {
+            this.ports = ports;
             return this;
         }
         public Builder ports(Integer... ports) {
             return ports(List.of(ports));
         }
         @CustomType.Setter
-        public Builder protocol(String protocol) {
-            this.protocol = Objects.requireNonNull(protocol);
+        public Builder protocol(@Nullable String protocol) {
+            this.protocol = protocol;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         @CustomType.Setter
-        public Builder virtualServiceId(String virtualServiceId) {
-            this.virtualServiceId = Objects.requireNonNull(virtualServiceId);
+        public Builder virtualServiceId(@Nullable String virtualServiceId) {
+            this.virtualServiceId = virtualServiceId;
             return this;
         }
         public GetAccessPolicyRuleSource build() {

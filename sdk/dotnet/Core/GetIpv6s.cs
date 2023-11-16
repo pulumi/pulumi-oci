@@ -169,7 +169,7 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The IPv6 address of the `IPv6` object. The address is within the IPv6 CIDR block of the VNIC's subnet (see the `ipv6CidrBlock` attribute for the [Subnet](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Subnet/) object.  Example: `2001:0db8:0123:1111:abcd:ef01:2345:6789`
         /// </summary>
@@ -191,7 +191,7 @@ namespace Pulumi.Oci.Core
         private GetIpv6sResult(
             ImmutableArray<Outputs.GetIpv6sFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? ipAddress,
 

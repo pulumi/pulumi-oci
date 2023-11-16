@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Maintenance Run History resource in Oracle Cloud Infrastructure Database service.
@@ -62,7 +61,7 @@ type GetDatabaseMaintenanceRunHistoryResult struct {
 	// List of database server history details.
 	DbServersHistoryDetails []GetDatabaseMaintenanceRunHistoryDbServersHistoryDetail `pulumi:"dbServersHistoryDetails"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Details of a maintenance run.
 	MaintenanceRunDetails   []GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail `pulumi:"maintenanceRunDetails"`
 	MaintenanceRunHistoryId string                                                 `pulumi:"maintenanceRunHistoryId"`
@@ -106,12 +105,6 @@ func (o GetDatabaseMaintenanceRunHistoryResultOutput) ToGetDatabaseMaintenanceRu
 	return o
 }
 
-func (o GetDatabaseMaintenanceRunHistoryResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseMaintenanceRunHistoryResult] {
-	return pulumix.Output[GetDatabaseMaintenanceRunHistoryResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // List of database server history details.
 func (o GetDatabaseMaintenanceRunHistoryResultOutput) DbServersHistoryDetails() GetDatabaseMaintenanceRunHistoryDbServersHistoryDetailArrayOutput {
 	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryResult) []GetDatabaseMaintenanceRunHistoryDbServersHistoryDetail {
@@ -120,8 +113,8 @@ func (o GetDatabaseMaintenanceRunHistoryResultOutput) DbServersHistoryDetails() 
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetDatabaseMaintenanceRunHistoryResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDatabaseMaintenanceRunHistoryResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoryResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Details of a maintenance run.

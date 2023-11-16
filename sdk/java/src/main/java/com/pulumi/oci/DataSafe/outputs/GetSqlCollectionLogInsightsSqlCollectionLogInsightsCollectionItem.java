@@ -8,6 +8,8 @@ import com.pulumi.oci.DataSafe.outputs.GetSqlCollectionLogInsightsSqlCollectionL
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItem {
@@ -15,27 +17,27 @@ public final class GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollection
      * @return The dimensions available for SQL collection analytics.
      * 
      */
-    private List<GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimension> dimensions;
+    private @Nullable List<GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimension> dimensions;
     /**
      * @return Name of the aggregation.
      * 
      */
-    private String metricName;
+    private @Nullable String metricName;
     /**
      * @return Total count of aggregated value.
      * 
      */
-    private String sqlCollectionLogInsightCount;
+    private @Nullable String sqlCollectionLogInsightCount;
     /**
      * @return An optional filter to return the stats of the SQL collection logs collected before the date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    private String timeEnded;
+    private @Nullable String timeEnded;
     /**
      * @return An optional filter to return the stats of the SQL collection logs collected after the date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    private String timeStarted;
+    private @Nullable String timeStarted;
 
     private GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItem() {}
     /**
@@ -43,35 +45,35 @@ public final class GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollection
      * 
      */
     public List<GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimension> dimensions() {
-        return this.dimensions;
+        return this.dimensions == null ? List.of() : this.dimensions;
     }
     /**
      * @return Name of the aggregation.
      * 
      */
-    public String metricName() {
-        return this.metricName;
+    public Optional<String> metricName() {
+        return Optional.ofNullable(this.metricName);
     }
     /**
      * @return Total count of aggregated value.
      * 
      */
-    public String sqlCollectionLogInsightCount() {
-        return this.sqlCollectionLogInsightCount;
+    public Optional<String> sqlCollectionLogInsightCount() {
+        return Optional.ofNullable(this.sqlCollectionLogInsightCount);
     }
     /**
      * @return An optional filter to return the stats of the SQL collection logs collected before the date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    public String timeEnded() {
-        return this.timeEnded;
+    public Optional<String> timeEnded() {
+        return Optional.ofNullable(this.timeEnded);
     }
     /**
      * @return An optional filter to return the stats of the SQL collection logs collected after the date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    public String timeStarted() {
-        return this.timeStarted;
+    public Optional<String> timeStarted() {
+        return Optional.ofNullable(this.timeStarted);
     }
 
     public static Builder builder() {
@@ -83,11 +85,11 @@ public final class GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollection
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimension> dimensions;
-        private String metricName;
-        private String sqlCollectionLogInsightCount;
-        private String timeEnded;
-        private String timeStarted;
+        private @Nullable List<GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimension> dimensions;
+        private @Nullable String metricName;
+        private @Nullable String sqlCollectionLogInsightCount;
+        private @Nullable String timeEnded;
+        private @Nullable String timeStarted;
         public Builder() {}
         public Builder(GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -99,31 +101,31 @@ public final class GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollection
         }
 
         @CustomType.Setter
-        public Builder dimensions(List<GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimension> dimensions) {
-            this.dimensions = Objects.requireNonNull(dimensions);
+        public Builder dimensions(@Nullable List<GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimension> dimensions) {
+            this.dimensions = dimensions;
             return this;
         }
         public Builder dimensions(GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItemDimension... dimensions) {
             return dimensions(List.of(dimensions));
         }
         @CustomType.Setter
-        public Builder metricName(String metricName) {
-            this.metricName = Objects.requireNonNull(metricName);
+        public Builder metricName(@Nullable String metricName) {
+            this.metricName = metricName;
             return this;
         }
         @CustomType.Setter
-        public Builder sqlCollectionLogInsightCount(String sqlCollectionLogInsightCount) {
-            this.sqlCollectionLogInsightCount = Objects.requireNonNull(sqlCollectionLogInsightCount);
+        public Builder sqlCollectionLogInsightCount(@Nullable String sqlCollectionLogInsightCount) {
+            this.sqlCollectionLogInsightCount = sqlCollectionLogInsightCount;
             return this;
         }
         @CustomType.Setter
-        public Builder timeEnded(String timeEnded) {
-            this.timeEnded = Objects.requireNonNull(timeEnded);
+        public Builder timeEnded(@Nullable String timeEnded) {
+            this.timeEnded = timeEnded;
             return this;
         }
         @CustomType.Setter
-        public Builder timeStarted(String timeStarted) {
-            this.timeStarted = Objects.requireNonNull(timeStarted);
+        public Builder timeStarted(@Nullable String timeStarted) {
+            this.timeStarted = timeStarted;
             return this;
         }
         public GetSqlCollectionLogInsightsSqlCollectionLogInsightsCollectionItem build() {

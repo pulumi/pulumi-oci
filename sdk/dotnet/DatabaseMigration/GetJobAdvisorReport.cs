@@ -110,24 +110,24 @@ namespace Pulumi.Oci.DatabaseMigration
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string JobId;
         /// <summary>
         /// Number of Fatal results in the advisor report.
         /// </summary>
-        public readonly int NumberOfFatal;
+        public readonly int? NumberOfFatal;
         /// <summary>
         /// Number of Fatal Blocker results in the advisor report.
         /// </summary>
-        public readonly int NumberOfFatalBlockers;
+        public readonly int? NumberOfFatalBlockers;
         /// <summary>
         /// Number of Informational results in the advisor report.
         /// </summary>
-        public readonly int NumberOfInformationalResults;
+        public readonly int? NumberOfInformationalResults;
         /// <summary>
         /// Number of Warning results in the advisor report.
         /// </summary>
-        public readonly int NumberOfWarnings;
+        public readonly int? NumberOfWarnings;
         /// <summary>
         /// Details to access Pre-Migration Advisor report.
         /// </summary>
@@ -135,25 +135,25 @@ namespace Pulumi.Oci.DatabaseMigration
         /// <summary>
         /// Pre-Migration advisor result.
         /// </summary>
-        public readonly string Result;
+        public readonly string? Result;
 
         [OutputConstructor]
         private GetJobAdvisorReportResult(
-            string id,
+            string? id,
 
             string jobId,
 
-            int numberOfFatal,
+            int? numberOfFatal,
 
-            int numberOfFatalBlockers,
+            int? numberOfFatalBlockers,
 
-            int numberOfInformationalResults,
+            int? numberOfInformationalResults,
 
-            int numberOfWarnings,
+            int? numberOfWarnings,
 
             ImmutableArray<Outputs.GetJobAdvisorReportReportLocationDetailResult> reportLocationDetails,
 
-            string result)
+            string? result)
         {
             Id = id;
             JobId = jobId;

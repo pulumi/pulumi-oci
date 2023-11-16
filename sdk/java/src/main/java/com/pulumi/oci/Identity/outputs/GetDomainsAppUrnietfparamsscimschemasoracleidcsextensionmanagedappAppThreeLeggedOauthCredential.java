@@ -6,6 +6,8 @@ package com.pulumi.oci.Identity.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppThreeLeggedOauthCredential {
@@ -13,39 +15,39 @@ public final class GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanag
      * @return Access Token
      * 
      */
-    private String accessToken;
+    private @Nullable String accessToken;
     /**
      * @return Access token expiry
      * 
      */
-    private String accessTokenExpiry;
+    private @Nullable String accessTokenExpiry;
     /**
      * @return Refresh Token
      * 
      */
-    private String refreshToken;
+    private @Nullable String refreshToken;
 
     private GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppThreeLeggedOauthCredential() {}
     /**
      * @return Access Token
      * 
      */
-    public String accessToken() {
-        return this.accessToken;
+    public Optional<String> accessToken() {
+        return Optional.ofNullable(this.accessToken);
     }
     /**
      * @return Access token expiry
      * 
      */
-    public String accessTokenExpiry() {
-        return this.accessTokenExpiry;
+    public Optional<String> accessTokenExpiry() {
+        return Optional.ofNullable(this.accessTokenExpiry);
     }
     /**
      * @return Refresh Token
      * 
      */
-    public String refreshToken() {
-        return this.refreshToken;
+    public Optional<String> refreshToken() {
+        return Optional.ofNullable(this.refreshToken);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanag
     }
     @CustomType.Builder
     public static final class Builder {
-        private String accessToken;
-        private String accessTokenExpiry;
-        private String refreshToken;
+        private @Nullable String accessToken;
+        private @Nullable String accessTokenExpiry;
+        private @Nullable String refreshToken;
         public Builder() {}
         public Builder(GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppThreeLeggedOauthCredential defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanag
         }
 
         @CustomType.Setter
-        public Builder accessToken(String accessToken) {
-            this.accessToken = Objects.requireNonNull(accessToken);
+        public Builder accessToken(@Nullable String accessToken) {
+            this.accessToken = accessToken;
             return this;
         }
         @CustomType.Setter
-        public Builder accessTokenExpiry(String accessTokenExpiry) {
-            this.accessTokenExpiry = Objects.requireNonNull(accessTokenExpiry);
+        public Builder accessTokenExpiry(@Nullable String accessTokenExpiry) {
+            this.accessTokenExpiry = accessTokenExpiry;
             return this;
         }
         @CustomType.Setter
-        public Builder refreshToken(String refreshToken) {
-            this.refreshToken = Objects.requireNonNull(refreshToken);
+        public Builder refreshToken(@Nullable String refreshToken) {
+            this.refreshToken = refreshToken;
             return this;
         }
         public GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppThreeLeggedOauthCredential build() {

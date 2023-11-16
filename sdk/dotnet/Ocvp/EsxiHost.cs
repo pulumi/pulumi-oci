@@ -34,49 +34,49 @@ namespace Pulumi.Oci.Ocvp
         /// Current billing cycle end date. If the value in `currentSku` and `nextSku` are different, the value specified in `nextSku` becomes the new `currentSKU` when the `contractEndDate` is reached. Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         [Output("billingContractEndDate")]
-        public Output<string> BillingContractEndDate { get; private set; } = null!;
+        public Output<string?> BillingContractEndDate { get; private set; } = null!;
 
         /// <summary>
         /// (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
         /// </summary>
         [Output("billingDonorHostId")]
-        public Output<string> BillingDonorHostId { get; private set; } = null!;
+        public Output<string?> BillingDonorHostId { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
         /// </summary>
         [Output("capacityReservationId")]
-        public Output<string> CapacityReservationId { get; private set; } = null!;
+        public Output<string?> CapacityReservationId { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the SDDC.
         /// </summary>
         [Output("compartmentId")]
-        public Output<string> CompartmentId { get; private set; } = null!;
+        public Output<string?> CompartmentId { get; private set; } = null!;
 
         /// <summary>
         /// The availability domain to create the ESXi host in. If keep empty, for AD-specific SDDC, new ESXi host will be created in the same availability domain; for multi-AD SDDC, new ESXi host will be auto assigned to the next availability domain following evenly distribution strategy.
         /// </summary>
         [Output("computeAvailabilityDomain")]
-        public Output<string> ComputeAvailabilityDomain { get; private set; } = null!;
+        public Output<string?> ComputeAvailabilityDomain { get; private set; } = null!;
 
         /// <summary>
         /// In terms of implementation, an ESXi host is a Compute instance that is configured with the chosen bundle of VMware software. The `computeInstanceId` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that Compute instance.
         /// </summary>
         [Output("computeInstanceId")]
-        public Output<string> ComputeInstanceId { get; private set; } = null!;
+        public Output<string?> ComputeInstanceId { get; private set; } = null!;
 
         /// <summary>
         /// (Optional) The billing option currently used by the ESXi host. It is only effective during resource creation. Changes to its value after creation will be ignored. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
         /// </summary>
         [Output("currentSku")]
-        public Output<string> CurrentSku { get; private set; } = null!;
+        public Output<string?> CurrentSku { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A descriptive name for the ESXi host. It's changeable. Esxi Host name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the SDDC.
@@ -86,64 +86,64 @@ namespace Pulumi.Oci.Ocvp
         /// Avoid entering confidential information.
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is failed. This is an optional parameter. If this parameter is specified, a new ESXi host will be created to replace the failed one, and the `failedEsxiHostId` field will be updated in the newly created Esxi host.
         /// </summary>
         [Output("failedEsxiHostId")]
-        public Output<string> FailedEsxiHostId { get; private set; } = null!;
+        public Output<string?> FailedEsxiHostId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// The date and time when the new esxi host should start billing cycle. [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2021-07-25T21:10:29.600Z`
         /// </summary>
         [Output("gracePeriodEndDate")]
-        public Output<string> GracePeriodEndDate { get; private set; } = null!;
+        public Output<string?> GracePeriodEndDate { get; private set; } = null!;
 
         /// <summary>
         /// The OCPU count of the ESXi host.
         /// </summary>
         [Output("hostOcpuCount")]
-        public Output<double> HostOcpuCount { get; private set; } = null!;
+        public Output<double?> HostOcpuCount { get; private set; } = null!;
 
         /// <summary>
         /// The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
         /// </summary>
         [Output("hostShapeName")]
-        public Output<string> HostShapeName { get; private set; } = null!;
+        public Output<string?> HostShapeName { get; private set; } = null!;
 
         /// <summary>
         /// Indicates whether this host is in the progress of billing continuation.
         /// </summary>
         [Output("isBillingContinuationInProgress")]
-        public Output<bool> IsBillingContinuationInProgress { get; private set; } = null!;
+        public Output<bool?> IsBillingContinuationInProgress { get; private set; } = null!;
 
         /// <summary>
         /// Indicates whether this host is in the progress of swapping billing.
         /// </summary>
         [Output("isBillingSwappingInProgress")]
-        public Output<bool> IsBillingSwappingInProgress { get; private set; } = null!;
+        public Output<bool?> IsBillingSwappingInProgress { get; private set; } = null!;
 
         [Output("nextSku")]
-        public Output<string> NextSku { get; private set; } = null!;
+        public Output<string?> NextSku { get; private set; } = null!;
 
         /// <summary>
         /// (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded. This is an optional parameter. If this parameter is specified, an ESXi host with the new software version is created to replace the original one, and the `nonUpgradedEsxiHostId` field is updated in the newly created Esxi host. See [Upgrading VMware Software](https://docs.cloud.oracle.com/iaas/Content/VMware/Concepts/upgrade.htm) for more information.
         /// </summary>
         [Output("nonUpgradedEsxiHostId")]
-        public Output<string> NonUpgradedEsxiHostId { get; private set; } = null!;
+        public Output<string?> NonUpgradedEsxiHostId { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is newly created to replace the failed node.
         /// </summary>
         [Output("replacementEsxiHostId")]
-        public Output<string> ReplacementEsxiHostId { get; private set; } = null!;
+        public Output<string?> ReplacementEsxiHostId { get; private set; } = null!;
 
         /// <summary>
         /// (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC to add the ESXi host to. This field has been deprecated. Please use `cluster_id` instead. Either `sddc_id` or `cluster_id` must be configured for `oci.Ocvp.EsxiHost` resource.
@@ -159,37 +159,37 @@ namespace Pulumi.Oci.Ocvp
         /// The current state of the ESXi host.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the active ESXi Host to swap billing with current host.
         /// </summary>
         [Output("swapBillingHostId")]
-        public Output<string> SwapBillingHostId { get; private set; } = null!;
+        public Output<string?> SwapBillingHostId { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the ESXi host was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the ESXi host was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is newly created to upgrade the original host.
         /// </summary>
         [Output("upgradedReplacementEsxiHostId")]
-        public Output<string> UpgradedReplacementEsxiHostId { get; private set; } = null!;
+        public Output<string?> UpgradedReplacementEsxiHostId { get; private set; } = null!;
 
         /// <summary>
         /// The version of VMware software that Oracle Cloud VMware Solution installed on the ESXi hosts.
         /// </summary>
         [Output("vmwareSoftwareVersion")]
-        public Output<string> VmwareSoftwareVersion { get; private set; } = null!;
+        public Output<string?> VmwareSoftwareVersion { get; private set; } = null!;
 
 
         /// <summary>

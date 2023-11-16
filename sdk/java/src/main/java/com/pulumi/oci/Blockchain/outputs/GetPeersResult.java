@@ -21,12 +21,12 @@ public final class GetPeersResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of peer_collection.
      * 
      */
-    private List<GetPeersPeerCollection> peerCollections;
+    private @Nullable List<GetPeersPeerCollection> peerCollections;
 
     private GetPeersResult() {}
     public String blockchainPlatformId() {
@@ -42,15 +42,15 @@ public final class GetPeersResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of peer_collection.
      * 
      */
     public List<GetPeersPeerCollection> peerCollections() {
-        return this.peerCollections;
+        return this.peerCollections == null ? List.of() : this.peerCollections;
     }
 
     public static Builder builder() {
@@ -65,8 +65,8 @@ public final class GetPeersResult {
         private String blockchainPlatformId;
         private @Nullable String displayName;
         private @Nullable List<GetPeersFilter> filters;
-        private String id;
-        private List<GetPeersPeerCollection> peerCollections;
+        private @Nullable String id;
+        private @Nullable List<GetPeersPeerCollection> peerCollections;
         public Builder() {}
         public Builder(GetPeersResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -96,13 +96,13 @@ public final class GetPeersResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder peerCollections(List<GetPeersPeerCollection> peerCollections) {
-            this.peerCollections = Objects.requireNonNull(peerCollections);
+        public Builder peerCollections(@Nullable List<GetPeersPeerCollection> peerCollections) {
+            this.peerCollections = peerCollections;
             return this;
         }
         public Builder peerCollections(GetPeersPeerCollection... peerCollections) {

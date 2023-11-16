@@ -16,23 +16,23 @@ namespace Pulumi.Oci.VisualBuilder.Outputs
         /// <summary>
         /// Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname.
         /// </summary>
-        public readonly string CertificateSecretId;
+        public readonly string? CertificateSecretId;
         /// <summary>
         /// The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
         /// </summary>
-        public readonly int CertificateSecretVersion;
+        public readonly int? CertificateSecretVersion;
         /// <summary>
         /// A custom hostname to be used for the vb instance URL, in FQDN format.
         /// </summary>
-        public readonly string Hostname;
+        public readonly string? Hostname;
 
         [OutputConstructor]
         private GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointResult(
-            string certificateSecretId,
+            string? certificateSecretId,
 
-            int certificateSecretVersion,
+            int? certificateSecretVersion,
 
-            string hostname)
+            string? hostname)
         {
             CertificateSecretId = certificateSecretId;
             CertificateSecretVersion = certificateSecretVersion;

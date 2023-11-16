@@ -14,10 +14,12 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetCertificateAuthorityResult {
-    private List<GetCertificateAuthorityCertificateAuthorityConfig> certificateAuthorityConfigs;
+    private @Nullable List<GetCertificateAuthorityCertificateAuthorityConfig> certificateAuthorityConfigs;
     /**
      * @return The OCID of the CA.
      * 
@@ -27,96 +29,96 @@ public final class GetCertificateAuthorityResult {
      * @return An optional list of rules that control how the CA is used and managed.
      * 
      */
-    private List<GetCertificateAuthorityCertificateAuthorityRule> certificateAuthorityRules;
+    private @Nullable List<GetCertificateAuthorityCertificateAuthorityRule> certificateAuthorityRules;
     /**
      * @return The details of the certificate revocation list (CRL).
      * 
      */
-    private List<GetCertificateAuthorityCertificateRevocationListDetail> certificateRevocationListDetails;
+    private @Nullable List<GetCertificateAuthorityCertificateRevocationListDetail> certificateRevocationListDetails;
     /**
      * @return The OCID of the compartment under which the CA is created.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The origin of the CA.
      * 
      */
-    private String configType;
+    private @Nullable String configType;
     /**
      * @return The metadata details of the certificate authority (CA) version. This summary object does not contain the CA contents.
      * 
      */
-    private List<GetCertificateAuthorityCurrentVersion> currentVersions;
+    private @Nullable List<GetCertificateAuthorityCurrentVersion> currentVersions;
     /**
      * @return Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return A brief description of the CA.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The OCID of the CA.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The OCID of the parent CA that issued this CA. If this is the root CA, then this value is null.
      * 
      */
-    private String issuerCertificateAuthorityId;
+    private @Nullable String issuerCertificateAuthorityId;
     /**
      * @return The OCID of the Oracle Cloud Infrastructure Vault key used to encrypt the CA.
      * 
      */
-    private String kmsKeyId;
+    private @Nullable String kmsKeyId;
     /**
      * @return Additional information about the current CA lifecycle state.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return A user-friendly name for the CA. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return The algorithm used to sign public key certificates that the CA issues.
      * 
      */
-    private String signingAlgorithm;
+    private @Nullable String signingAlgorithm;
     /**
      * @return The current lifecycle state of the certificate authority.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.
      * 
      */
-    private List<GetCertificateAuthoritySubject> subjects;
+    private @Nullable List<GetCertificateAuthoritySubject> subjects;
     /**
      * @return A property indicating when the CA was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return An optional property indicating when to delete the CA version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      * 
      */
-    private String timeOfDeletion;
+    private @Nullable String timeOfDeletion;
 
     private GetCertificateAuthorityResult() {}
     public List<GetCertificateAuthorityCertificateAuthorityConfig> certificateAuthorityConfigs() {
-        return this.certificateAuthorityConfigs;
+        return this.certificateAuthorityConfigs == null ? List.of() : this.certificateAuthorityConfigs;
     }
     /**
      * @return The OCID of the CA.
@@ -130,126 +132,126 @@ public final class GetCertificateAuthorityResult {
      * 
      */
     public List<GetCertificateAuthorityCertificateAuthorityRule> certificateAuthorityRules() {
-        return this.certificateAuthorityRules;
+        return this.certificateAuthorityRules == null ? List.of() : this.certificateAuthorityRules;
     }
     /**
      * @return The details of the certificate revocation list (CRL).
      * 
      */
     public List<GetCertificateAuthorityCertificateRevocationListDetail> certificateRevocationListDetails() {
-        return this.certificateRevocationListDetails;
+        return this.certificateRevocationListDetails == null ? List.of() : this.certificateRevocationListDetails;
     }
     /**
      * @return The OCID of the compartment under which the CA is created.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The origin of the CA.
      * 
      */
-    public String configType() {
-        return this.configType;
+    public Optional<String> configType() {
+        return Optional.ofNullable(this.configType);
     }
     /**
      * @return The metadata details of the certificate authority (CA) version. This summary object does not contain the CA contents.
      * 
      */
     public List<GetCertificateAuthorityCurrentVersion> currentVersions() {
-        return this.currentVersions;
+        return this.currentVersions == null ? List.of() : this.currentVersions;
     }
     /**
      * @return Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return A brief description of the CA.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The OCID of the CA.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The OCID of the parent CA that issued this CA. If this is the root CA, then this value is null.
      * 
      */
-    public String issuerCertificateAuthorityId() {
-        return this.issuerCertificateAuthorityId;
+    public Optional<String> issuerCertificateAuthorityId() {
+        return Optional.ofNullable(this.issuerCertificateAuthorityId);
     }
     /**
      * @return The OCID of the Oracle Cloud Infrastructure Vault key used to encrypt the CA.
      * 
      */
-    public String kmsKeyId() {
-        return this.kmsKeyId;
+    public Optional<String> kmsKeyId() {
+        return Optional.ofNullable(this.kmsKeyId);
     }
     /**
      * @return Additional information about the current CA lifecycle state.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return A user-friendly name for the CA. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return The algorithm used to sign public key certificates that the CA issues.
      * 
      */
-    public String signingAlgorithm() {
-        return this.signingAlgorithm;
+    public Optional<String> signingAlgorithm() {
+        return Optional.ofNullable(this.signingAlgorithm);
     }
     /**
      * @return The current lifecycle state of the certificate authority.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.
      * 
      */
     public List<GetCertificateAuthoritySubject> subjects() {
-        return this.subjects;
+        return this.subjects == null ? List.of() : this.subjects;
     }
     /**
      * @return A property indicating when the CA was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return An optional property indicating when to delete the CA version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      * 
      */
-    public String timeOfDeletion() {
-        return this.timeOfDeletion;
+    public Optional<String> timeOfDeletion() {
+        return Optional.ofNullable(this.timeOfDeletion);
     }
 
     public static Builder builder() {
@@ -261,26 +263,26 @@ public final class GetCertificateAuthorityResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetCertificateAuthorityCertificateAuthorityConfig> certificateAuthorityConfigs;
+        private @Nullable List<GetCertificateAuthorityCertificateAuthorityConfig> certificateAuthorityConfigs;
         private String certificateAuthorityId;
-        private List<GetCertificateAuthorityCertificateAuthorityRule> certificateAuthorityRules;
-        private List<GetCertificateAuthorityCertificateRevocationListDetail> certificateRevocationListDetails;
-        private String compartmentId;
-        private String configType;
-        private List<GetCertificateAuthorityCurrentVersion> currentVersions;
-        private Map<String,Object> definedTags;
-        private String description;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private String issuerCertificateAuthorityId;
-        private String kmsKeyId;
-        private String lifecycleDetails;
-        private String name;
-        private String signingAlgorithm;
-        private String state;
-        private List<GetCertificateAuthoritySubject> subjects;
-        private String timeCreated;
-        private String timeOfDeletion;
+        private @Nullable List<GetCertificateAuthorityCertificateAuthorityRule> certificateAuthorityRules;
+        private @Nullable List<GetCertificateAuthorityCertificateRevocationListDetail> certificateRevocationListDetails;
+        private @Nullable String compartmentId;
+        private @Nullable String configType;
+        private @Nullable List<GetCertificateAuthorityCurrentVersion> currentVersions;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String description;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable String issuerCertificateAuthorityId;
+        private @Nullable String kmsKeyId;
+        private @Nullable String lifecycleDetails;
+        private @Nullable String name;
+        private @Nullable String signingAlgorithm;
+        private @Nullable String state;
+        private @Nullable List<GetCertificateAuthoritySubject> subjects;
+        private @Nullable String timeCreated;
+        private @Nullable String timeOfDeletion;
         public Builder() {}
         public Builder(GetCertificateAuthorityResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -307,8 +309,8 @@ public final class GetCertificateAuthorityResult {
         }
 
         @CustomType.Setter
-        public Builder certificateAuthorityConfigs(List<GetCertificateAuthorityCertificateAuthorityConfig> certificateAuthorityConfigs) {
-            this.certificateAuthorityConfigs = Objects.requireNonNull(certificateAuthorityConfigs);
+        public Builder certificateAuthorityConfigs(@Nullable List<GetCertificateAuthorityCertificateAuthorityConfig> certificateAuthorityConfigs) {
+            this.certificateAuthorityConfigs = certificateAuthorityConfigs;
             return this;
         }
         public Builder certificateAuthorityConfigs(GetCertificateAuthorityCertificateAuthorityConfig... certificateAuthorityConfigs) {
@@ -320,105 +322,105 @@ public final class GetCertificateAuthorityResult {
             return this;
         }
         @CustomType.Setter
-        public Builder certificateAuthorityRules(List<GetCertificateAuthorityCertificateAuthorityRule> certificateAuthorityRules) {
-            this.certificateAuthorityRules = Objects.requireNonNull(certificateAuthorityRules);
+        public Builder certificateAuthorityRules(@Nullable List<GetCertificateAuthorityCertificateAuthorityRule> certificateAuthorityRules) {
+            this.certificateAuthorityRules = certificateAuthorityRules;
             return this;
         }
         public Builder certificateAuthorityRules(GetCertificateAuthorityCertificateAuthorityRule... certificateAuthorityRules) {
             return certificateAuthorityRules(List.of(certificateAuthorityRules));
         }
         @CustomType.Setter
-        public Builder certificateRevocationListDetails(List<GetCertificateAuthorityCertificateRevocationListDetail> certificateRevocationListDetails) {
-            this.certificateRevocationListDetails = Objects.requireNonNull(certificateRevocationListDetails);
+        public Builder certificateRevocationListDetails(@Nullable List<GetCertificateAuthorityCertificateRevocationListDetail> certificateRevocationListDetails) {
+            this.certificateRevocationListDetails = certificateRevocationListDetails;
             return this;
         }
         public Builder certificateRevocationListDetails(GetCertificateAuthorityCertificateRevocationListDetail... certificateRevocationListDetails) {
             return certificateRevocationListDetails(List.of(certificateRevocationListDetails));
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder configType(String configType) {
-            this.configType = Objects.requireNonNull(configType);
+        public Builder configType(@Nullable String configType) {
+            this.configType = configType;
             return this;
         }
         @CustomType.Setter
-        public Builder currentVersions(List<GetCertificateAuthorityCurrentVersion> currentVersions) {
-            this.currentVersions = Objects.requireNonNull(currentVersions);
+        public Builder currentVersions(@Nullable List<GetCertificateAuthorityCurrentVersion> currentVersions) {
+            this.currentVersions = currentVersions;
             return this;
         }
         public Builder currentVersions(GetCertificateAuthorityCurrentVersion... currentVersions) {
             return currentVersions(List.of(currentVersions));
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder issuerCertificateAuthorityId(String issuerCertificateAuthorityId) {
-            this.issuerCertificateAuthorityId = Objects.requireNonNull(issuerCertificateAuthorityId);
+        public Builder issuerCertificateAuthorityId(@Nullable String issuerCertificateAuthorityId) {
+            this.issuerCertificateAuthorityId = issuerCertificateAuthorityId;
             return this;
         }
         @CustomType.Setter
-        public Builder kmsKeyId(String kmsKeyId) {
-            this.kmsKeyId = Objects.requireNonNull(kmsKeyId);
+        public Builder kmsKeyId(@Nullable String kmsKeyId) {
+            this.kmsKeyId = kmsKeyId;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder signingAlgorithm(String signingAlgorithm) {
-            this.signingAlgorithm = Objects.requireNonNull(signingAlgorithm);
+        public Builder signingAlgorithm(@Nullable String signingAlgorithm) {
+            this.signingAlgorithm = signingAlgorithm;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder subjects(List<GetCertificateAuthoritySubject> subjects) {
-            this.subjects = Objects.requireNonNull(subjects);
+        public Builder subjects(@Nullable List<GetCertificateAuthoritySubject> subjects) {
+            this.subjects = subjects;
             return this;
         }
         public Builder subjects(GetCertificateAuthoritySubject... subjects) {
             return subjects(List.of(subjects));
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeOfDeletion(String timeOfDeletion) {
-            this.timeOfDeletion = Objects.requireNonNull(timeOfDeletion);
+        public Builder timeOfDeletion(@Nullable String timeOfDeletion) {
+            this.timeOfDeletion = timeOfDeletion;
             return this;
         }
         public GetCertificateAuthorityResult build() {

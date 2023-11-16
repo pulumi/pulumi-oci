@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollection {
@@ -14,7 +15,7 @@ public final class GetManagedDatabaseUserDataAccessContainersDataAccessContainer
      * @return An array of container resources.
      * 
      */
-    private List<GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollectionItem> items;
+    private @Nullable List<GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollectionItem> items;
 
     private GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollection() {}
     /**
@@ -22,7 +23,7 @@ public final class GetManagedDatabaseUserDataAccessContainersDataAccessContainer
      * 
      */
     public List<GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetManagedDatabaseUserDataAccessContainersDataAccessContainer
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollectionItem> items;
+        private @Nullable List<GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollectionItem> items;
         public Builder() {}
         public Builder(GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetManagedDatabaseUserDataAccessContainersDataAccessContainer
         }
 
         @CustomType.Setter
-        public Builder items(List<GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollectionItem... items) {

@@ -51,34 +51,22 @@ class GetAnalyticsInstancesResult:
 
     @property
     @pulumi.getter(name="analyticsInstances")
-    def analytics_instances(self) -> Sequence['outputs.GetAnalyticsInstancesAnalyticsInstanceResult']:
-        """
-        The list of analytics_instances.
-        """
+    def analytics_instances(self) -> Optional[Sequence['outputs.GetAnalyticsInstancesAnalyticsInstanceResult']]:
         return pulumi.get(self, "analytics_instances")
 
     @property
     @pulumi.getter(name="capacityType")
     def capacity_type(self) -> Optional[str]:
-        """
-        The capacity model to use.
-        """
         return pulumi.get(self, "capacity_type")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="featureSet")
     def feature_set(self) -> Optional[str]:
-        """
-        Analytics feature set.
-        """
         return pulumi.get(self, "feature_set")
 
     @property
@@ -88,7 +76,7 @@ class GetAnalyticsInstancesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -97,17 +85,11 @@ class GetAnalyticsInstancesResult:
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of an instance.
-        """
         return pulumi.get(self, "state")
 
 
@@ -135,29 +117,7 @@ def get_analytics_instances(capacity_type: Optional[str] = None,
                             state: Optional[str] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAnalyticsInstancesResult:
     """
-    This data source provides the list of Analytics Instances in Oracle Cloud Infrastructure Analytics service.
-
-    List Analytics instances.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_analytics_instances = oci.Analytics.get_analytics_instances(compartment_id=var["compartment_id"],
-        capacity_type=var["analytics_instance_capacity_type"],
-        feature_set=var["analytics_instance_feature_set"],
-        name=var["analytics_instance_name"],
-        state=var["analytics_instance_state"])
-    ```
-
-
-    :param str capacity_type: A filter to only return resources matching the capacity type enum. Values are case-insensitive.
-    :param str compartment_id: The OCID of the compartment.
-    :param str feature_set: A filter to only return resources matching the feature set. Values are case-insensitive.
-    :param str name: A filter to return only resources that match the given name exactly.
-    :param str state: A filter to only return resources matching the lifecycle state. The state value is case-insensitive.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['capacityType'] = capacity_type
@@ -189,28 +149,6 @@ def get_analytics_instances_output(capacity_type: Optional[pulumi.Input[Optional
                                    state: Optional[pulumi.Input[Optional[str]]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAnalyticsInstancesResult]:
     """
-    This data source provides the list of Analytics Instances in Oracle Cloud Infrastructure Analytics service.
-
-    List Analytics instances.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_analytics_instances = oci.Analytics.get_analytics_instances(compartment_id=var["compartment_id"],
-        capacity_type=var["analytics_instance_capacity_type"],
-        feature_set=var["analytics_instance_feature_set"],
-        name=var["analytics_instance_name"],
-        state=var["analytics_instance_state"])
-    ```
-
-
-    :param str capacity_type: A filter to only return resources matching the capacity type enum. Values are case-insensitive.
-    :param str compartment_id: The OCID of the compartment.
-    :param str feature_set: A filter to only return resources matching the feature set. Values are case-insensitive.
-    :param str name: A filter to return only resources that match the given name exactly.
-    :param str state: A filter to only return resources matching the lifecycle state. The state value is case-insensitive.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -6,6 +6,8 @@ package com.pulumi.oci.Identity.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetApiKeysApiKey {
@@ -13,87 +15,87 @@ public final class GetApiKeysApiKey {
      * @return The key&#39;s fingerprint (e.g., 12:34:56:78:90:ab:cd:ef:12:34:56:78:90:ab:cd:ef).
      * 
      */
-    private String fingerprint;
+    private @Nullable String fingerprint;
     /**
      * @return An Oracle-assigned identifier for the key, in this format: TENANCY_OCID/USER_OCID/KEY_FINGERPRINT.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The detailed status of INACTIVE lifecycleState.
      * 
      */
-    private String inactiveStatus;
+    private @Nullable String inactiveStatus;
     /**
      * @return The key&#39;s value.
      * 
      */
-    private String keyValue;
+    private @Nullable String keyValue;
     /**
      * @return The API key&#39;s current state.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return Date and time the `ApiKey` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The OCID of the user.
      * 
      */
-    private String userId;
+    private @Nullable String userId;
 
     private GetApiKeysApiKey() {}
     /**
      * @return The key&#39;s fingerprint (e.g., 12:34:56:78:90:ab:cd:ef:12:34:56:78:90:ab:cd:ef).
      * 
      */
-    public String fingerprint() {
-        return this.fingerprint;
+    public Optional<String> fingerprint() {
+        return Optional.ofNullable(this.fingerprint);
     }
     /**
      * @return An Oracle-assigned identifier for the key, in this format: TENANCY_OCID/USER_OCID/KEY_FINGERPRINT.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The detailed status of INACTIVE lifecycleState.
      * 
      */
-    public String inactiveStatus() {
-        return this.inactiveStatus;
+    public Optional<String> inactiveStatus() {
+        return Optional.ofNullable(this.inactiveStatus);
     }
     /**
      * @return The key&#39;s value.
      * 
      */
-    public String keyValue() {
-        return this.keyValue;
+    public Optional<String> keyValue() {
+        return Optional.ofNullable(this.keyValue);
     }
     /**
      * @return The API key&#39;s current state.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return Date and time the `ApiKey` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The OCID of the user.
      * 
      */
-    public String userId() {
-        return this.userId;
+    public Optional<String> userId() {
+        return Optional.ofNullable(this.userId);
     }
 
     public static Builder builder() {
@@ -105,13 +107,13 @@ public final class GetApiKeysApiKey {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String fingerprint;
-        private String id;
-        private String inactiveStatus;
-        private String keyValue;
-        private String state;
-        private String timeCreated;
-        private String userId;
+        private @Nullable String fingerprint;
+        private @Nullable String id;
+        private @Nullable String inactiveStatus;
+        private @Nullable String keyValue;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
+        private @Nullable String userId;
         public Builder() {}
         public Builder(GetApiKeysApiKey defaults) {
     	      Objects.requireNonNull(defaults);
@@ -125,38 +127,38 @@ public final class GetApiKeysApiKey {
         }
 
         @CustomType.Setter
-        public Builder fingerprint(String fingerprint) {
-            this.fingerprint = Objects.requireNonNull(fingerprint);
+        public Builder fingerprint(@Nullable String fingerprint) {
+            this.fingerprint = fingerprint;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder inactiveStatus(String inactiveStatus) {
-            this.inactiveStatus = Objects.requireNonNull(inactiveStatus);
+        public Builder inactiveStatus(@Nullable String inactiveStatus) {
+            this.inactiveStatus = inactiveStatus;
             return this;
         }
         @CustomType.Setter
-        public Builder keyValue(String keyValue) {
-            this.keyValue = Objects.requireNonNull(keyValue);
+        public Builder keyValue(@Nullable String keyValue) {
+            this.keyValue = keyValue;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder userId(String userId) {
-            this.userId = Objects.requireNonNull(userId);
+        public Builder userId(@Nullable String userId) {
+            this.userId = userId;
             return this;
         }
         public GetApiKeysApiKey build() {

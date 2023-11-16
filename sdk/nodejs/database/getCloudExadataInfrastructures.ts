@@ -61,7 +61,7 @@ export interface GetCloudExadataInfrastructuresResult {
     /**
      * The list of cloud_exadata_infrastructures.
      */
-    readonly cloudExadataInfrastructures: outputs.Database.GetCloudExadataInfrastructuresCloudExadataInfrastructure[];
+    readonly cloudExadataInfrastructures?: outputs.Database.GetCloudExadataInfrastructuresCloudExadataInfrastructure[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
@@ -74,7 +74,7 @@ export interface GetCloudExadataInfrastructuresResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The current lifecycle state of the cloud Exadata infrastructure resource.
      */

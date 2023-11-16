@@ -57,11 +57,11 @@ export interface GetImportableComputeEntityResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Array of importable compute entity objects.
      */
-    readonly items: outputs.Opsi.GetImportableComputeEntityItem[];
+    readonly items?: outputs.Opsi.GetImportableComputeEntityItem[];
 }
 /**
  * This data source provides details about a specific Importable Compute Entity resource in Oracle Cloud Infrastructure Opsi service.

@@ -125,7 +125,7 @@ namespace Pulumi.Oci.LicenseManager
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The list of license_record_collection.
         /// </summary>
@@ -139,7 +139,7 @@ namespace Pulumi.Oci.LicenseManager
         private GetLicenseRecordsResult(
             ImmutableArray<Outputs.GetLicenseRecordsFilterResult> filters,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetLicenseRecordsLicenseRecordCollectionResult> licenseRecordCollections,
 

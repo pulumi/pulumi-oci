@@ -51,11 +51,11 @@ export interface GetJobShapesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of job_shapes.
      */
-    readonly jobShapes: outputs.DataScience.GetJobShapesJobShape[];
+    readonly jobShapes?: outputs.DataScience.GetJobShapesJobShape[];
 }
 /**
  * This data source provides the list of Job Shapes in Oracle Cloud Infrastructure Data Science service.

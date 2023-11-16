@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DataSafe.outputs.GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollection {
-    private List<GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItem> items;
+    private @Nullable List<GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItem> items;
 
     private GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollection() {}
     public List<GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceColle
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItem> items;
+        private @Nullable List<GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItem> items;
         public Builder() {}
         public Builder(GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceColle
         }
 
         @CustomType.Setter
-        public Builder items(List<GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItem... items) {

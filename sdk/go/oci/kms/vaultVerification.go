@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This source triggers action to create, update and delete replica for a vault in Oracle Cloud Infrastructure Kms service.
@@ -152,12 +151,6 @@ func (i *VaultVerification) ToVaultVerificationOutputWithContext(ctx context.Con
 	return pulumi.ToOutputWithContext(ctx, i).(VaultVerificationOutput)
 }
 
-func (i *VaultVerification) ToOutput(ctx context.Context) pulumix.Output[*VaultVerification] {
-	return pulumix.Output[*VaultVerification]{
-		OutputState: i.ToVaultVerificationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // VaultVerificationArrayInput is an input type that accepts VaultVerificationArray and VaultVerificationArrayOutput values.
 // You can construct a concrete instance of `VaultVerificationArrayInput` via:
 //
@@ -181,12 +174,6 @@ func (i VaultVerificationArray) ToVaultVerificationArrayOutput() VaultVerificati
 
 func (i VaultVerificationArray) ToVaultVerificationArrayOutputWithContext(ctx context.Context) VaultVerificationArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(VaultVerificationArrayOutput)
-}
-
-func (i VaultVerificationArray) ToOutput(ctx context.Context) pulumix.Output[[]*VaultVerification] {
-	return pulumix.Output[[]*VaultVerification]{
-		OutputState: i.ToVaultVerificationArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // VaultVerificationMapInput is an input type that accepts VaultVerificationMap and VaultVerificationMapOutput values.
@@ -214,12 +201,6 @@ func (i VaultVerificationMap) ToVaultVerificationMapOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(VaultVerificationMapOutput)
 }
 
-func (i VaultVerificationMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*VaultVerification] {
-	return pulumix.Output[map[string]*VaultVerification]{
-		OutputState: i.ToVaultVerificationMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type VaultVerificationOutput struct{ *pulumi.OutputState }
 
 func (VaultVerificationOutput) ElementType() reflect.Type {
@@ -232,12 +213,6 @@ func (o VaultVerificationOutput) ToVaultVerificationOutput() VaultVerificationOu
 
 func (o VaultVerificationOutput) ToVaultVerificationOutputWithContext(ctx context.Context) VaultVerificationOutput {
 	return o
-}
-
-func (o VaultVerificationOutput) ToOutput(ctx context.Context) pulumix.Output[*VaultVerification] {
-	return pulumix.Output[*VaultVerification]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The region to be created replica to. When updated,
@@ -265,12 +240,6 @@ func (o VaultVerificationArrayOutput) ToVaultVerificationArrayOutputWithContext(
 	return o
 }
 
-func (o VaultVerificationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*VaultVerification] {
-	return pulumix.Output[[]*VaultVerification]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o VaultVerificationArrayOutput) Index(i pulumi.IntInput) VaultVerificationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *VaultVerification {
 		return vs[0].([]*VaultVerification)[vs[1].(int)]
@@ -289,12 +258,6 @@ func (o VaultVerificationMapOutput) ToVaultVerificationMapOutput() VaultVerifica
 
 func (o VaultVerificationMapOutput) ToVaultVerificationMapOutputWithContext(ctx context.Context) VaultVerificationMapOutput {
 	return o
-}
-
-func (o VaultVerificationMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*VaultVerification] {
-	return pulumix.Output[map[string]*VaultVerification]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o VaultVerificationMapOutput) MapIndex(k pulumi.StringInput) VaultVerificationOutput {

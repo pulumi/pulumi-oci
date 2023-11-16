@@ -20,7 +20,7 @@ public final class GetAtCustomerCccInfrastructuresResult {
      * @return The list of ccc_infrastructure_collection.
      * 
      */
-    private List<GetAtCustomerCccInfrastructuresCccInfrastructureCollection> cccInfrastructureCollections;
+    private @Nullable List<GetAtCustomerCccInfrastructuresCccInfrastructureCollection> cccInfrastructureCollections;
     private @Nullable String cccInfrastructureId;
     /**
      * @return The infrastructure compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -39,7 +39,7 @@ public final class GetAtCustomerCccInfrastructuresResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The current state of the Compute Cloud@Customer infrastructure.
      * 
@@ -55,7 +55,7 @@ public final class GetAtCustomerCccInfrastructuresResult {
      * 
      */
     public List<GetAtCustomerCccInfrastructuresCccInfrastructureCollection> cccInfrastructureCollections() {
-        return this.cccInfrastructureCollections;
+        return this.cccInfrastructureCollections == null ? List.of() : this.cccInfrastructureCollections;
     }
     public Optional<String> cccInfrastructureId() {
         return Optional.ofNullable(this.cccInfrastructureId);
@@ -87,8 +87,8 @@ public final class GetAtCustomerCccInfrastructuresResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The current state of the Compute Cloud@Customer infrastructure.
@@ -108,14 +108,14 @@ public final class GetAtCustomerCccInfrastructuresResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String accessLevel;
-        private List<GetAtCustomerCccInfrastructuresCccInfrastructureCollection> cccInfrastructureCollections;
+        private @Nullable List<GetAtCustomerCccInfrastructuresCccInfrastructureCollection> cccInfrastructureCollections;
         private @Nullable String cccInfrastructureId;
         private @Nullable String compartmentId;
         private @Nullable Boolean compartmentIdInSubtree;
         private @Nullable String displayName;
         private @Nullable String displayNameContains;
         private @Nullable List<GetAtCustomerCccInfrastructuresFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetAtCustomerCccInfrastructuresResult defaults) {
@@ -138,8 +138,8 @@ public final class GetAtCustomerCccInfrastructuresResult {
             return this;
         }
         @CustomType.Setter
-        public Builder cccInfrastructureCollections(List<GetAtCustomerCccInfrastructuresCccInfrastructureCollection> cccInfrastructureCollections) {
-            this.cccInfrastructureCollections = Objects.requireNonNull(cccInfrastructureCollections);
+        public Builder cccInfrastructureCollections(@Nullable List<GetAtCustomerCccInfrastructuresCccInfrastructureCollection> cccInfrastructureCollections) {
+            this.cccInfrastructureCollections = cccInfrastructureCollections;
             return this;
         }
         public Builder cccInfrastructureCollections(GetAtCustomerCccInfrastructuresCccInfrastructureCollection... cccInfrastructureCollections) {
@@ -179,8 +179,8 @@ public final class GetAtCustomerCccInfrastructuresResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

@@ -25,23 +25,6 @@ class AutoScalingConfigurationArgs:
                  policy_details: Optional[pulumi.Input['AutoScalingConfigurationPolicyDetailsArgs']] = None):
         """
         The set of arguments for constructing a AutoScalingConfiguration resource.
-        :param pulumi.Input[str] bds_instance_id: The OCID of the cluster.
-        :param pulumi.Input[str] cluster_admin_password: (Updatable) Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
-        :param pulumi.Input[bool] is_enabled: (Updatable) Whether the autoscale configuration is enabled.
-        :param pulumi.Input[str] node_type: A node type that is managed by an autoscale configuration. The only supported types are WORKER, COMPUTE_ONLY_WORKER and KAFKA_BROKER.
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
-        :param pulumi.Input['AutoScalingConfigurationPolicyArgs'] policy: (Updatable) This model for autoscaling policy is deprecated and not supported for ODH clusters. Use the `AutoScalePolicyDetails` model to manage autoscale policy details for ODH clusters.
-        :param pulumi.Input['AutoScalingConfigurationPolicyDetailsArgs'] policy_details: (Updatable) Policy definition for the autoscale configuration.
-               
-               An autoscaling policy is part of an autoscaling configuration. For more information, see [Autoscaling](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-autoscale)
-               
-               You can create following type of autoscaling policies:
-               * **MetricBasedVerticalScalingPolicy:** Vertical autoscaling action is triggered when a performance metric exceeds a threshold
-               * **MetricBasedHorizontalScalingPolicy:** Horizontal autoscaling action is triggered when a performance metric exceeds a threshold
-               * **ScheduleBasedVerticalScalingPolicy:** Vertical autoscaling action is triggered at the specific times that you schedule.
-               * **ScheduleBasedHorizontalScalingPolicy:** Horizontal autoscaling action is triggered at the specific times that you schedule.
-               
-               An autoscaling configuration can have one of above supported policies.
         """
         pulumi.set(__self__, "bds_instance_id", bds_instance_id)
         pulumi.set(__self__, "cluster_admin_password", cluster_admin_password)
@@ -57,9 +40,6 @@ class AutoScalingConfigurationArgs:
     @property
     @pulumi.getter(name="bdsInstanceId")
     def bds_instance_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of the cluster.
-        """
         return pulumi.get(self, "bds_instance_id")
 
     @bds_instance_id.setter
@@ -69,9 +49,6 @@ class AutoScalingConfigurationArgs:
     @property
     @pulumi.getter(name="clusterAdminPassword")
     def cluster_admin_password(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
-        """
         return pulumi.get(self, "cluster_admin_password")
 
     @cluster_admin_password.setter
@@ -81,9 +58,6 @@ class AutoScalingConfigurationArgs:
     @property
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> pulumi.Input[bool]:
-        """
-        (Updatable) Whether the autoscale configuration is enabled.
-        """
         return pulumi.get(self, "is_enabled")
 
     @is_enabled.setter
@@ -93,9 +67,6 @@ class AutoScalingConfigurationArgs:
     @property
     @pulumi.getter(name="nodeType")
     def node_type(self) -> pulumi.Input[str]:
-        """
-        A node type that is managed by an autoscale configuration. The only supported types are WORKER, COMPUTE_ONLY_WORKER and KAFKA_BROKER.
-        """
         return pulumi.get(self, "node_type")
 
     @node_type.setter
@@ -105,9 +76,6 @@ class AutoScalingConfigurationArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly name. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -117,9 +85,6 @@ class AutoScalingConfigurationArgs:
     @property
     @pulumi.getter
     def policy(self) -> Optional[pulumi.Input['AutoScalingConfigurationPolicyArgs']]:
-        """
-        (Updatable) This model for autoscaling policy is deprecated and not supported for ODH clusters. Use the `AutoScalePolicyDetails` model to manage autoscale policy details for ODH clusters.
-        """
         return pulumi.get(self, "policy")
 
     @policy.setter
@@ -129,19 +94,6 @@ class AutoScalingConfigurationArgs:
     @property
     @pulumi.getter(name="policyDetails")
     def policy_details(self) -> Optional[pulumi.Input['AutoScalingConfigurationPolicyDetailsArgs']]:
-        """
-        (Updatable) Policy definition for the autoscale configuration.
-
-        An autoscaling policy is part of an autoscaling configuration. For more information, see [Autoscaling](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-autoscale)
-
-        You can create following type of autoscaling policies:
-        * **MetricBasedVerticalScalingPolicy:** Vertical autoscaling action is triggered when a performance metric exceeds a threshold
-        * **MetricBasedHorizontalScalingPolicy:** Horizontal autoscaling action is triggered when a performance metric exceeds a threshold
-        * **ScheduleBasedVerticalScalingPolicy:** Vertical autoscaling action is triggered at the specific times that you schedule.
-        * **ScheduleBasedHorizontalScalingPolicy:** Horizontal autoscaling action is triggered at the specific times that you schedule.
-
-        An autoscaling configuration can have one of above supported policies.
-        """
         return pulumi.get(self, "policy_details")
 
     @policy_details.setter
@@ -164,26 +116,6 @@ class _AutoScalingConfigurationState:
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering AutoScalingConfiguration resources.
-        :param pulumi.Input[str] bds_instance_id: The OCID of the cluster.
-        :param pulumi.Input[str] cluster_admin_password: (Updatable) Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
-        :param pulumi.Input[bool] is_enabled: (Updatable) Whether the autoscale configuration is enabled.
-        :param pulumi.Input[str] node_type: A node type that is managed by an autoscale configuration. The only supported types are WORKER, COMPUTE_ONLY_WORKER and KAFKA_BROKER.
-        :param pulumi.Input['AutoScalingConfigurationPolicyArgs'] policy: (Updatable) This model for autoscaling policy is deprecated and not supported for ODH clusters. Use the `AutoScalePolicyDetails` model to manage autoscale policy details for ODH clusters.
-        :param pulumi.Input['AutoScalingConfigurationPolicyDetailsArgs'] policy_details: (Updatable) Policy definition for the autoscale configuration.
-               
-               An autoscaling policy is part of an autoscaling configuration. For more information, see [Autoscaling](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-autoscale)
-               
-               You can create following type of autoscaling policies:
-               * **MetricBasedVerticalScalingPolicy:** Vertical autoscaling action is triggered when a performance metric exceeds a threshold
-               * **MetricBasedHorizontalScalingPolicy:** Horizontal autoscaling action is triggered when a performance metric exceeds a threshold
-               * **ScheduleBasedVerticalScalingPolicy:** Vertical autoscaling action is triggered at the specific times that you schedule.
-               * **ScheduleBasedHorizontalScalingPolicy:** Horizontal autoscaling action is triggered at the specific times that you schedule.
-               
-               An autoscaling configuration can have one of above supported policies.
-        :param pulumi.Input[str] state: The state of the autoscale configuration.
-        :param pulumi.Input[str] time_created: The time the cluster was created, shown as an RFC 3339 formatted datetime string.
-        :param pulumi.Input[str] time_updated: The time the autoscale configuration was updated, shown as an RFC 3339 formatted datetime string.
         """
         if bds_instance_id is not None:
             pulumi.set(__self__, "bds_instance_id", bds_instance_id)
@@ -209,9 +141,6 @@ class _AutoScalingConfigurationState:
     @property
     @pulumi.getter(name="bdsInstanceId")
     def bds_instance_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the cluster.
-        """
         return pulumi.get(self, "bds_instance_id")
 
     @bds_instance_id.setter
@@ -221,9 +150,6 @@ class _AutoScalingConfigurationState:
     @property
     @pulumi.getter(name="clusterAdminPassword")
     def cluster_admin_password(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
-        """
         return pulumi.get(self, "cluster_admin_password")
 
     @cluster_admin_password.setter
@@ -233,9 +159,6 @@ class _AutoScalingConfigurationState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly name. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -245,9 +168,6 @@ class _AutoScalingConfigurationState:
     @property
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Whether the autoscale configuration is enabled.
-        """
         return pulumi.get(self, "is_enabled")
 
     @is_enabled.setter
@@ -257,9 +177,6 @@ class _AutoScalingConfigurationState:
     @property
     @pulumi.getter(name="nodeType")
     def node_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        A node type that is managed by an autoscale configuration. The only supported types are WORKER, COMPUTE_ONLY_WORKER and KAFKA_BROKER.
-        """
         return pulumi.get(self, "node_type")
 
     @node_type.setter
@@ -269,9 +186,6 @@ class _AutoScalingConfigurationState:
     @property
     @pulumi.getter
     def policy(self) -> Optional[pulumi.Input['AutoScalingConfigurationPolicyArgs']]:
-        """
-        (Updatable) This model for autoscaling policy is deprecated and not supported for ODH clusters. Use the `AutoScalePolicyDetails` model to manage autoscale policy details for ODH clusters.
-        """
         return pulumi.get(self, "policy")
 
     @policy.setter
@@ -281,19 +195,6 @@ class _AutoScalingConfigurationState:
     @property
     @pulumi.getter(name="policyDetails")
     def policy_details(self) -> Optional[pulumi.Input['AutoScalingConfigurationPolicyDetailsArgs']]:
-        """
-        (Updatable) Policy definition for the autoscale configuration.
-
-        An autoscaling policy is part of an autoscaling configuration. For more information, see [Autoscaling](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-autoscale)
-
-        You can create following type of autoscaling policies:
-        * **MetricBasedVerticalScalingPolicy:** Vertical autoscaling action is triggered when a performance metric exceeds a threshold
-        * **MetricBasedHorizontalScalingPolicy:** Horizontal autoscaling action is triggered when a performance metric exceeds a threshold
-        * **ScheduleBasedVerticalScalingPolicy:** Vertical autoscaling action is triggered at the specific times that you schedule.
-        * **ScheduleBasedHorizontalScalingPolicy:** Horizontal autoscaling action is triggered at the specific times that you schedule.
-
-        An autoscaling configuration can have one of above supported policies.
-        """
         return pulumi.get(self, "policy_details")
 
     @policy_details.setter
@@ -303,9 +204,6 @@ class _AutoScalingConfigurationState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The state of the autoscale configuration.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -315,9 +213,6 @@ class _AutoScalingConfigurationState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the cluster was created, shown as an RFC 3339 formatted datetime string.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -327,9 +222,6 @@ class _AutoScalingConfigurationState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the autoscale configuration was updated, shown as an RFC 3339 formatted datetime string.
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -351,82 +243,9 @@ class AutoScalingConfiguration(pulumi.CustomResource):
                  policy_details: Optional[pulumi.Input[pulumi.InputType['AutoScalingConfigurationPolicyDetailsArgs']]] = None,
                  __props__=None):
         """
-        This resource provides the Auto Scaling Configuration resource in Oracle Cloud Infrastructure Big Data Service service.
-
-        Add an autoscale configuration to the cluster.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_auto_scaling_configuration = oci.big_data_service.AutoScalingConfiguration("testAutoScalingConfiguration",
-            bds_instance_id=oci_bds_bds_instance["test_bds_instance"]["id"],
-            cluster_admin_password=var["auto_scaling_configuration_cluster_admin_password"],
-            is_enabled=var["auto_scaling_configuration_is_enabled"],
-            node_type=var["auto_scaling_configuration_node_type"],
-            display_name=var["auto_scaling_configuration_display_name"],
-            policy_details=oci.big_data_service.AutoScalingConfigurationPolicyDetailsArgs(
-                policy_type=var["auto_scaling_configuration_policy_details_policy_type"],
-                scale_down_config=oci.big_data_service.AutoScalingConfigurationPolicyDetailsScaleDownConfigArgs(
-                    memory_step_size=var["auto_scaling_configuration_policy_details_scale_down_config_memory_step_size"],
-                    metric=oci.big_data_service.AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricArgs(
-                        metric_type=var["auto_scaling_configuration_policy_details_scale_down_config_metric_metric_type"],
-                        threshold=oci.big_data_service.AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdArgs(
-                            duration_in_minutes=var["auto_scaling_configuration_policy_details_scale_down_config_metric_threshold_duration_in_minutes"],
-                            operator=var["auto_scaling_configuration_policy_details_scale_down_config_metric_threshold_operator"],
-                            value=var["auto_scaling_configuration_policy_details_scale_down_config_metric_threshold_value"],
-                        ),
-                    ),
-                    min_memory_per_node=var["auto_scaling_configuration_policy_details_scale_down_config_min_memory_per_node"],
-                    min_ocpus_per_node=var["auto_scaling_configuration_policy_details_scale_down_config_min_ocpus_per_node"],
-                    ocpu_step_size=var["auto_scaling_configuration_policy_details_scale_down_config_ocpu_step_size"],
-                ),
-                scale_up_config=oci.big_data_service.AutoScalingConfigurationPolicyDetailsScaleUpConfigArgs(
-                    max_memory_per_node=var["auto_scaling_configuration_policy_details_scale_up_config_max_memory_per_node"],
-                    max_ocpus_per_node=var["auto_scaling_configuration_policy_details_scale_up_config_max_ocpus_per_node"],
-                    memory_step_size=var["auto_scaling_configuration_policy_details_scale_up_config_memory_step_size"],
-                    metric=oci.big_data_service.AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricArgs(
-                        metric_type=var["auto_scaling_configuration_policy_details_scale_up_config_metric_metric_type"],
-                        threshold=oci.big_data_service.AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdArgs(
-                            duration_in_minutes=var["auto_scaling_configuration_policy_details_scale_up_config_metric_threshold_duration_in_minutes"],
-                            operator=var["auto_scaling_configuration_policy_details_scale_up_config_metric_threshold_operator"],
-                            value=var["auto_scaling_configuration_policy_details_scale_up_config_metric_threshold_value"],
-                        ),
-                    ),
-                    ocpu_step_size=var["auto_scaling_configuration_policy_details_scale_up_config_ocpu_step_size"],
-                ),
-            ))
-        ```
-
-        ## Import
-
-        AutoScalingConfiguration can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:BigDataService/autoScalingConfiguration:AutoScalingConfiguration test_auto_scaling_configuration "bdsInstances/{bdsInstanceId}/autoScalingConfiguration/{autoScalingConfigurationId}"
-        ```
-
+        Create a AutoScalingConfiguration resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] bds_instance_id: The OCID of the cluster.
-        :param pulumi.Input[str] cluster_admin_password: (Updatable) Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
-        :param pulumi.Input[bool] is_enabled: (Updatable) Whether the autoscale configuration is enabled.
-        :param pulumi.Input[str] node_type: A node type that is managed by an autoscale configuration. The only supported types are WORKER, COMPUTE_ONLY_WORKER and KAFKA_BROKER.
-        :param pulumi.Input[pulumi.InputType['AutoScalingConfigurationPolicyArgs']] policy: (Updatable) This model for autoscaling policy is deprecated and not supported for ODH clusters. Use the `AutoScalePolicyDetails` model to manage autoscale policy details for ODH clusters.
-        :param pulumi.Input[pulumi.InputType['AutoScalingConfigurationPolicyDetailsArgs']] policy_details: (Updatable) Policy definition for the autoscale configuration.
-               
-               An autoscaling policy is part of an autoscaling configuration. For more information, see [Autoscaling](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-autoscale)
-               
-               You can create following type of autoscaling policies:
-               * **MetricBasedVerticalScalingPolicy:** Vertical autoscaling action is triggered when a performance metric exceeds a threshold
-               * **MetricBasedHorizontalScalingPolicy:** Horizontal autoscaling action is triggered when a performance metric exceeds a threshold
-               * **ScheduleBasedVerticalScalingPolicy:** Vertical autoscaling action is triggered at the specific times that you schedule.
-               * **ScheduleBasedHorizontalScalingPolicy:** Horizontal autoscaling action is triggered at the specific times that you schedule.
-               
-               An autoscaling configuration can have one of above supported policies.
         """
         ...
     @overload
@@ -435,63 +254,7 @@ class AutoScalingConfiguration(pulumi.CustomResource):
                  args: AutoScalingConfigurationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Auto Scaling Configuration resource in Oracle Cloud Infrastructure Big Data Service service.
-
-        Add an autoscale configuration to the cluster.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_auto_scaling_configuration = oci.big_data_service.AutoScalingConfiguration("testAutoScalingConfiguration",
-            bds_instance_id=oci_bds_bds_instance["test_bds_instance"]["id"],
-            cluster_admin_password=var["auto_scaling_configuration_cluster_admin_password"],
-            is_enabled=var["auto_scaling_configuration_is_enabled"],
-            node_type=var["auto_scaling_configuration_node_type"],
-            display_name=var["auto_scaling_configuration_display_name"],
-            policy_details=oci.big_data_service.AutoScalingConfigurationPolicyDetailsArgs(
-                policy_type=var["auto_scaling_configuration_policy_details_policy_type"],
-                scale_down_config=oci.big_data_service.AutoScalingConfigurationPolicyDetailsScaleDownConfigArgs(
-                    memory_step_size=var["auto_scaling_configuration_policy_details_scale_down_config_memory_step_size"],
-                    metric=oci.big_data_service.AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricArgs(
-                        metric_type=var["auto_scaling_configuration_policy_details_scale_down_config_metric_metric_type"],
-                        threshold=oci.big_data_service.AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdArgs(
-                            duration_in_minutes=var["auto_scaling_configuration_policy_details_scale_down_config_metric_threshold_duration_in_minutes"],
-                            operator=var["auto_scaling_configuration_policy_details_scale_down_config_metric_threshold_operator"],
-                            value=var["auto_scaling_configuration_policy_details_scale_down_config_metric_threshold_value"],
-                        ),
-                    ),
-                    min_memory_per_node=var["auto_scaling_configuration_policy_details_scale_down_config_min_memory_per_node"],
-                    min_ocpus_per_node=var["auto_scaling_configuration_policy_details_scale_down_config_min_ocpus_per_node"],
-                    ocpu_step_size=var["auto_scaling_configuration_policy_details_scale_down_config_ocpu_step_size"],
-                ),
-                scale_up_config=oci.big_data_service.AutoScalingConfigurationPolicyDetailsScaleUpConfigArgs(
-                    max_memory_per_node=var["auto_scaling_configuration_policy_details_scale_up_config_max_memory_per_node"],
-                    max_ocpus_per_node=var["auto_scaling_configuration_policy_details_scale_up_config_max_ocpus_per_node"],
-                    memory_step_size=var["auto_scaling_configuration_policy_details_scale_up_config_memory_step_size"],
-                    metric=oci.big_data_service.AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricArgs(
-                        metric_type=var["auto_scaling_configuration_policy_details_scale_up_config_metric_metric_type"],
-                        threshold=oci.big_data_service.AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdArgs(
-                            duration_in_minutes=var["auto_scaling_configuration_policy_details_scale_up_config_metric_threshold_duration_in_minutes"],
-                            operator=var["auto_scaling_configuration_policy_details_scale_up_config_metric_threshold_operator"],
-                            value=var["auto_scaling_configuration_policy_details_scale_up_config_metric_threshold_value"],
-                        ),
-                    ),
-                    ocpu_step_size=var["auto_scaling_configuration_policy_details_scale_up_config_ocpu_step_size"],
-                ),
-            ))
-        ```
-
-        ## Import
-
-        AutoScalingConfiguration can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:BigDataService/autoScalingConfiguration:AutoScalingConfiguration test_auto_scaling_configuration "bdsInstances/{bdsInstanceId}/autoScalingConfiguration/{autoScalingConfigurationId}"
-        ```
-
+        Create a AutoScalingConfiguration resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param AutoScalingConfigurationArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -570,26 +333,6 @@ class AutoScalingConfiguration(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] bds_instance_id: The OCID of the cluster.
-        :param pulumi.Input[str] cluster_admin_password: (Updatable) Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
-        :param pulumi.Input[bool] is_enabled: (Updatable) Whether the autoscale configuration is enabled.
-        :param pulumi.Input[str] node_type: A node type that is managed by an autoscale configuration. The only supported types are WORKER, COMPUTE_ONLY_WORKER and KAFKA_BROKER.
-        :param pulumi.Input[pulumi.InputType['AutoScalingConfigurationPolicyArgs']] policy: (Updatable) This model for autoscaling policy is deprecated and not supported for ODH clusters. Use the `AutoScalePolicyDetails` model to manage autoscale policy details for ODH clusters.
-        :param pulumi.Input[pulumi.InputType['AutoScalingConfigurationPolicyDetailsArgs']] policy_details: (Updatable) Policy definition for the autoscale configuration.
-               
-               An autoscaling policy is part of an autoscaling configuration. For more information, see [Autoscaling](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-autoscale)
-               
-               You can create following type of autoscaling policies:
-               * **MetricBasedVerticalScalingPolicy:** Vertical autoscaling action is triggered when a performance metric exceeds a threshold
-               * **MetricBasedHorizontalScalingPolicy:** Horizontal autoscaling action is triggered when a performance metric exceeds a threshold
-               * **ScheduleBasedVerticalScalingPolicy:** Vertical autoscaling action is triggered at the specific times that you schedule.
-               * **ScheduleBasedHorizontalScalingPolicy:** Horizontal autoscaling action is triggered at the specific times that you schedule.
-               
-               An autoscaling configuration can have one of above supported policies.
-        :param pulumi.Input[str] state: The state of the autoscale configuration.
-        :param pulumi.Input[str] time_created: The time the cluster was created, shown as an RFC 3339 formatted datetime string.
-        :param pulumi.Input[str] time_updated: The time the autoscale configuration was updated, shown as an RFC 3339 formatted datetime string.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -610,90 +353,50 @@ class AutoScalingConfiguration(pulumi.CustomResource):
     @property
     @pulumi.getter(name="bdsInstanceId")
     def bds_instance_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the cluster.
-        """
         return pulumi.get(self, "bds_instance_id")
 
     @property
     @pulumi.getter(name="clusterAdminPassword")
     def cluster_admin_password(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
-        """
         return pulumi.get(self, "cluster_admin_password")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) A user-friendly name. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
-        """
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) Whether the autoscale configuration is enabled.
-        """
         return pulumi.get(self, "is_enabled")
 
     @property
     @pulumi.getter(name="nodeType")
     def node_type(self) -> pulumi.Output[str]:
-        """
-        A node type that is managed by an autoscale configuration. The only supported types are WORKER, COMPUTE_ONLY_WORKER and KAFKA_BROKER.
-        """
         return pulumi.get(self, "node_type")
 
     @property
     @pulumi.getter
-    def policy(self) -> pulumi.Output['outputs.AutoScalingConfigurationPolicy']:
-        """
-        (Updatable) This model for autoscaling policy is deprecated and not supported for ODH clusters. Use the `AutoScalePolicyDetails` model to manage autoscale policy details for ODH clusters.
-        """
+    def policy(self) -> pulumi.Output[Optional['outputs.AutoScalingConfigurationPolicy']]:
         return pulumi.get(self, "policy")
 
     @property
     @pulumi.getter(name="policyDetails")
-    def policy_details(self) -> pulumi.Output['outputs.AutoScalingConfigurationPolicyDetails']:
-        """
-        (Updatable) Policy definition for the autoscale configuration.
-
-        An autoscaling policy is part of an autoscaling configuration. For more information, see [Autoscaling](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-autoscale)
-
-        You can create following type of autoscaling policies:
-        * **MetricBasedVerticalScalingPolicy:** Vertical autoscaling action is triggered when a performance metric exceeds a threshold
-        * **MetricBasedHorizontalScalingPolicy:** Horizontal autoscaling action is triggered when a performance metric exceeds a threshold
-        * **ScheduleBasedVerticalScalingPolicy:** Vertical autoscaling action is triggered at the specific times that you schedule.
-        * **ScheduleBasedHorizontalScalingPolicy:** Horizontal autoscaling action is triggered at the specific times that you schedule.
-
-        An autoscaling configuration can have one of above supported policies.
-        """
+    def policy_details(self) -> pulumi.Output[Optional['outputs.AutoScalingConfigurationPolicyDetails']]:
         return pulumi.get(self, "policy_details")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The state of the autoscale configuration.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The time the cluster was created, shown as an RFC 3339 formatted datetime string.
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The time the autoscale configuration was updated, shown as an RFC 3339 formatted datetime string.
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 

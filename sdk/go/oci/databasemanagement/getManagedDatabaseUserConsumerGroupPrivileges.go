@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Managed Database User Consumer Group Privileges in Oracle Cloud Infrastructure Database Management service.
@@ -70,8 +69,8 @@ type GetManagedDatabaseUserConsumerGroupPrivilegesResult struct {
 	ConsumerGroupPrivilegeCollections []GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollection `pulumi:"consumerGroupPrivilegeCollections"`
 	Filters                           []GetManagedDatabaseUserConsumerGroupPrivilegesFilter                           `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                string `pulumi:"id"`
-	ManagedDatabaseId string `pulumi:"managedDatabaseId"`
+	Id                *string `pulumi:"id"`
+	ManagedDatabaseId string  `pulumi:"managedDatabaseId"`
 	// The name of the granted consumer group privilege.
 	Name     *string `pulumi:"name"`
 	UserName string  `pulumi:"userName"`
@@ -120,12 +119,6 @@ func (o GetManagedDatabaseUserConsumerGroupPrivilegesResultOutput) ToGetManagedD
 	return o
 }
 
-func (o GetManagedDatabaseUserConsumerGroupPrivilegesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedDatabaseUserConsumerGroupPrivilegesResult] {
-	return pulumix.Output[GetManagedDatabaseUserConsumerGroupPrivilegesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The list of consumer_group_privilege_collection.
 func (o GetManagedDatabaseUserConsumerGroupPrivilegesResultOutput) ConsumerGroupPrivilegeCollections() GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollectionArrayOutput {
 	return o.ApplyT(func(v GetManagedDatabaseUserConsumerGroupPrivilegesResult) []GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollection {
@@ -140,8 +133,8 @@ func (o GetManagedDatabaseUserConsumerGroupPrivilegesResultOutput) Filters() Get
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetManagedDatabaseUserConsumerGroupPrivilegesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseUserConsumerGroupPrivilegesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetManagedDatabaseUserConsumerGroupPrivilegesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseUserConsumerGroupPrivilegesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetManagedDatabaseUserConsumerGroupPrivilegesResultOutput) ManagedDatabaseId() pulumi.StringOutput {

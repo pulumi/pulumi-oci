@@ -106,13 +106,13 @@ export class Sddc extends pulumi.CustomResource {
      *
      * @deprecated The 'actual_esxi_hosts_count' field has been deprecated. Please use 'initial_configuration' instead.
      */
-    public /*out*/ readonly actualEsxiHostsCount!: pulumi.Output<number>;
+    public /*out*/ readonly actualEsxiHostsCount!: pulumi.Output<number | undefined>;
     /**
      * (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
      *
      * @deprecated The 'capacity_reservation_id' field has been deprecated. Please use 'initial_configuration' instead.
      */
-    public readonly capacityReservationId!: pulumi.Output<string>;
+    public readonly capacityReservationId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the SDDC.
      */
@@ -128,15 +128,15 @@ export class Sddc extends pulumi.CustomResource {
      *
      * @deprecated The 'datastores' field has been deprecated. Please use 'initial_configuration' instead.
      */
-    public readonly datastores!: pulumi.Output<outputs.Ocvp.SddcDatastore[]>;
+    public readonly datastores!: pulumi.Output<outputs.Ocvp.SddcDatastore[] | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) A descriptive name for the SDDC. SDDC name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    public readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * (Required) The number of ESXi hosts to create in the SDDC. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). Creating a SDDC with a ESXi host count of 1 will be considered a single ESXi host SDDC.
      *
@@ -148,7 +148,7 @@ export class Sddc extends pulumi.CustomResource {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) The action to be performed upon HCX licenses. "UPGRADE" will upgrade the SDDC from HCX Advanced to HCX Enterprise. "DOWNGRADE" will downgrade the SDDC from HCX Enterprise to HCX Advanced after current HCX Enterprise billing cycle end date. "CANCEL_DOWNGRADE" will cancel the pending downgrade of HCX licenses. The action will only be performed when its value is changed. This field can also be used to enable HCX Enterprise during SDDC creation. If "UPGRADE" is set during SDDC creation, the SDDC will be created with HCX Enterprise enable. Supported actions during update: UPGRADE, DOWNGRADE, CANCEL_DOWNGRADE. Supported actions during creation: UPGRADE.
      */
@@ -156,51 +156,51 @@ export class Sddc extends pulumi.CustomResource {
     /**
      * The FQDN for HCX Manager.  Example: `hcx-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
      */
-    public /*out*/ readonly hcxFqdn!: pulumi.Output<string>;
+    public /*out*/ readonly hcxFqdn!: pulumi.Output<string | undefined>;
     /**
      * (**Deprecated**) The SDDC includes an administrator username and initial password for HCX Manager. Make sure to change this initial HCX Manager password to a different value.
      *
      * @deprecated The 'hcx_initial_password' field has been deprecated. Please use the 'ocvp_sddc_password' data source instead.
      */
-    public /*out*/ readonly hcxInitialPassword!: pulumi.Output<string>;
+    public /*out*/ readonly hcxInitialPassword!: pulumi.Output<string | undefined>;
     /**
      * (**Deprecated**) The activation keys to use on the on-premises HCX Enterprise appliances you site pair with HCX Manager in your VMware Solution. The number of keys provided depends on the HCX license type. HCX Advanced provides 3 activation keys. HCX Enterprise provides 10 activation keys.
      *
      * @deprecated The 'hcx_on_prem_key' field has been deprecated and may be removed in a future version. Do not use this field.
      */
-    public /*out*/ readonly hcxOnPremKey!: pulumi.Output<string>;
+    public /*out*/ readonly hcxOnPremKey!: pulumi.Output<string | undefined>;
     /**
      * The activation licenses to use on the on-premises HCX Enterprise appliance you site pair with HCX Manager in your VMware Solution.
      */
-    public /*out*/ readonly hcxOnPremLicenses!: pulumi.Output<outputs.Ocvp.SddcHcxOnPremLicense[]>;
+    public /*out*/ readonly hcxOnPremLicenses!: pulumi.Output<outputs.Ocvp.SddcHcxOnPremLicense[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for HCX Manager. For information about `PrivateIp` objects, see the Core Services API.
      */
-    public /*out*/ readonly hcxPrivateIpId!: pulumi.Output<string>;
+    public /*out*/ readonly hcxPrivateIpId!: pulumi.Output<string | undefined>;
     /**
      * (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the HCX component of the VMware environment. This value is required only when `isHcxEnabled` is true.
      *
      * @deprecated The 'hcx_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
      */
-    public readonly hcxVlanId!: pulumi.Output<string>;
+    public readonly hcxVlanId!: pulumi.Output<string | undefined>;
     /**
      * (Optional) The initial OCPU count of the SDDC's ESXi hosts.
      *
      * @deprecated The 'initial_host_ocpu_count' field has been deprecated. Please use 'initial_configuration' instead.
      */
-    public readonly initialHostOcpuCount!: pulumi.Output<number>;
+    public readonly initialHostOcpuCount!: pulumi.Output<number | undefined>;
     /**
      * (Optional) The initial compute shape of the SDDC's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
      *
      * @deprecated The 'initial_host_shape_name' field has been deprecated. Please use 'initial_configuration' instead.
      */
-    public readonly initialHostShapeName!: pulumi.Output<string>;
+    public readonly initialHostShapeName!: pulumi.Output<string | undefined>;
     /**
      * (Optional) The billing option selected during SDDC creation. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
      *
      * @deprecated The 'initial_sku' field has been deprecated. Please use 'initial_configuration' instead.
      */
-    public readonly initialSku!: pulumi.Output<string>;
+    public readonly initialSku!: pulumi.Output<string | undefined>;
     /**
      * A prefix used in the name of each ESXi host and Compute instance in the SDDC. If this isn't set, the SDDC's `displayName` is used as the prefix.
      *
@@ -208,33 +208,33 @@ export class Sddc extends pulumi.CustomResource {
      *
      * @deprecated The 'instance_display_name_prefix' field has been deprecated. Please use 'initial_configuration' instead.
      */
-    public readonly instanceDisplayNamePrefix!: pulumi.Output<string>;
+    public readonly instanceDisplayNamePrefix!: pulumi.Output<string | undefined>;
     /**
      * (Optional) For SDDC with dense compute shapes, this parameter indicates whether to enable HCX Advanced for this SDDC. For SDDC with standard compute shapes, this parameter is equivalent to `isHcxEnterpriseEnabled`.
      *
      * @deprecated The 'is_hcx_enabled' field has been deprecated. Please use 'hcx_mode' instead.
      */
-    public readonly isHcxEnabled!: pulumi.Output<boolean>;
+    public readonly isHcxEnabled!: pulumi.Output<boolean | undefined>;
     /**
      * (**Deprecated**) Indicates whether HCX Enterprise is enabled for this SDDC.
      *
      * @deprecated The 'is_hcx_enabled' field has been deprecated. Please use 'actual_hcx_mode' instead.
      */
-    public /*out*/ readonly isHcxEnterpriseEnabled!: pulumi.Output<boolean>;
+    public /*out*/ readonly isHcxEnterpriseEnabled!: pulumi.Output<boolean | undefined>;
     /**
      * Indicates whether SDDC is pending downgrade from HCX Enterprise to HCX Advanced.
      */
-    public /*out*/ readonly isHcxPendingDowngrade!: pulumi.Output<boolean>;
+    public /*out*/ readonly isHcxPendingDowngrade!: pulumi.Output<boolean | undefined>;
     /**
      * (Optional) Indicates whether shielded instance is enabled for this SDDC.
      *
      * @deprecated The 'is_shielded_instance_enabled' field has been deprecated. Please use 'initial_configuration' instead.
      */
-    public readonly isShieldedInstanceEnabled!: pulumi.Output<boolean>;
+    public readonly isShieldedInstanceEnabled!: pulumi.Output<boolean | undefined>;
     /**
      * Indicates whether this SDDC is designated for only single ESXi host.
      */
-    public readonly isSingleHostSddc!: pulumi.Output<boolean>;
+    public readonly isSingleHostSddc!: pulumi.Output<boolean | undefined>;
     /**
      * (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge Uplink 1 component of the VMware environment.
      *
@@ -252,7 +252,7 @@ export class Sddc extends pulumi.CustomResource {
     /**
      * (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for the NSX Edge Uplink. Use this OCID as the route target for route table rules when setting up connectivity between the SDDC and other networks. For information about `PrivateIp` objects, see the Core Services API.
      */
-    public /*out*/ readonly nsxEdgeUplinkIpId!: pulumi.Output<string>;
+    public /*out*/ readonly nsxEdgeUplinkIpId!: pulumi.Output<string | undefined>;
     /**
      * (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge VTEP component of the VMware environment.
      *
@@ -262,27 +262,27 @@ export class Sddc extends pulumi.CustomResource {
     /**
      * The FQDN for NSX Manager.  Example: `nsx-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
      */
-    public /*out*/ readonly nsxManagerFqdn!: pulumi.Output<string>;
+    public /*out*/ readonly nsxManagerFqdn!: pulumi.Output<string | undefined>;
     /**
      * (**Deprecated**) The SDDC includes an administrator username and initial password for NSX Manager. Make sure to change this initial NSX Manager password to a different value.
      *
      * @deprecated The 'nsx_manager_initial_password' field has been deprecated. Please use the 'ocvp_sddc_password' data source instead.
      */
-    public /*out*/ readonly nsxManagerInitialPassword!: pulumi.Output<string>;
+    public /*out*/ readonly nsxManagerInitialPassword!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for NSX Manager. For information about `PrivateIp` objects, see the Core Services API.
      */
-    public /*out*/ readonly nsxManagerPrivateIpId!: pulumi.Output<string>;
+    public /*out*/ readonly nsxManagerPrivateIpId!: pulumi.Output<string | undefined>;
     /**
      * The SDDC includes an administrator username and initial password for NSX Manager. You can change this initial username to a different value in NSX Manager.
      */
-    public /*out*/ readonly nsxManagerUsername!: pulumi.Output<string>;
+    public /*out*/ readonly nsxManagerUsername!: pulumi.Output<string | undefined>;
     /**
      * (**Deprecated**) The VMware NSX overlay workload segment to host your application. Connect to workload portgroup in vCenter to access this overlay segment.
      *
      * @deprecated The 'nsx_overlay_segment_name' field has been deprecated and may be removed in a future version. Do not use this field.
      */
-    public /*out*/ readonly nsxOverlaySegmentName!: pulumi.Output<string>;
+    public /*out*/ readonly nsxOverlaySegmentName!: pulumi.Output<string | undefined>;
     /**
      * (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX VTEP component of the VMware environment.
      *
@@ -300,7 +300,7 @@ export class Sddc extends pulumi.CustomResource {
      *
      * @deprecated The 'provisioning_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
      */
-    public readonly provisioningVlanId!: pulumi.Output<string>;
+    public readonly provisioningVlanId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) HCX on-premise licenses status will be refreshed whenever the value of this field is changed.
      */
@@ -310,7 +310,7 @@ export class Sddc extends pulumi.CustomResource {
      *
      * @deprecated The 'replication_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
      */
-    public readonly replicationVlanId!: pulumi.Output<string>;
+    public readonly replicationVlanId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The HCX on-premise licenses to be reserved when downgrade from HCX Enterprise to HCX Advanced. It should not be provided during resource creation. It is required and can only be set when the hcxAction is "DOWNGRADE". Its value can only be changed when hcxAction is updated.
      */
@@ -322,47 +322,47 @@ export class Sddc extends pulumi.CustomResource {
     /**
      * The current state of the SDDC.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The date and time the SDDC was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The date and time current HCX Enterprise billing cycle ends, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeHcxBillingCycleEnd!: pulumi.Output<string>;
+    public /*out*/ readonly timeHcxBillingCycleEnd!: pulumi.Output<string | undefined>;
     /**
      * The date and time the SDDC's HCX on-premise license status was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    public /*out*/ readonly timeHcxLicenseStatusUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeHcxLicenseStatusUpdated!: pulumi.Output<string | undefined>;
     /**
      * The date and time the SDDC was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
     /**
      * (**Deprecated**) The vSphere licenses to use when upgrading the SDDC.
      *
      * @deprecated The 'upgrade_licenses' field has been deprecated. Please use the 'ocvp_cluster_resource' resource instead.
      */
-    public /*out*/ readonly upgradeLicenses!: pulumi.Output<outputs.Ocvp.SddcUpgradeLicense[]>;
+    public /*out*/ readonly upgradeLicenses!: pulumi.Output<outputs.Ocvp.SddcUpgradeLicense[] | undefined>;
     /**
      * The FQDN for vCenter.  Example: `vcenter-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
      */
-    public /*out*/ readonly vcenterFqdn!: pulumi.Output<string>;
+    public /*out*/ readonly vcenterFqdn!: pulumi.Output<string | undefined>;
     /**
      * (**Deprecated**) The SDDC includes an administrator username and initial password for vCenter. Make sure to change this initial vCenter password to a different value.
      *
      * @deprecated The 'vcenter_initial_password' field has been deprecated. Please use the 'ocvp_sddc_password' data source instead.
      */
-    public /*out*/ readonly vcenterInitialPassword!: pulumi.Output<string>;
+    public /*out*/ readonly vcenterInitialPassword!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for vCenter. For information about `PrivateIp` objects, see the Core Services API.
      */
-    public /*out*/ readonly vcenterPrivateIpId!: pulumi.Output<string>;
+    public /*out*/ readonly vcenterPrivateIpId!: pulumi.Output<string | undefined>;
     /**
      * The SDDC includes an administrator username and initial password for vCenter. You can change this initial username to a different value in vCenter.
      */
-    public /*out*/ readonly vcenterUsername!: pulumi.Output<string>;
+    public /*out*/ readonly vcenterUsername!: pulumi.Output<string | undefined>;
     /**
      * (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vMotion component of the VMware environment.
      *
@@ -384,13 +384,13 @@ export class Sddc extends pulumi.CustomResource {
      *
      * @deprecated The 'vsphere_upgrade_guide' field has been deprecated and may be removed in a future version. Do not use this field.
      */
-    public /*out*/ readonly vsphereUpgradeGuide!: pulumi.Output<string>;
+    public /*out*/ readonly vsphereUpgradeGuide!: pulumi.Output<string | undefined>;
     /**
      * (**Deprecated**) The links to binary objects needed to upgrade vSphere.
      *
      * @deprecated The 'upgrade_licenses' field has been deprecated. Please use the 'ocvp_cluster_resource' resource instead.
      */
-    public /*out*/ readonly vsphereUpgradeObjects!: pulumi.Output<outputs.Ocvp.SddcVsphereUpgradeObject[]>;
+    public /*out*/ readonly vsphereUpgradeObjects!: pulumi.Output<outputs.Ocvp.SddcVsphereUpgradeObject[] | undefined>;
     /**
      * (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSphere component of the VMware environment.
      *
@@ -406,7 +406,7 @@ export class Sddc extends pulumi.CustomResource {
      *
      * @deprecated The 'workload_network_cidr' field has been deprecated. Please use 'initial_configuration' instead.
      */
-    public readonly workloadNetworkCidr!: pulumi.Output<string>;
+    public readonly workloadNetworkCidr!: pulumi.Output<string | undefined>;
 
     /**
      * Create a Sddc resource with the given unique name, arguments, and options.

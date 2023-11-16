@@ -24,12 +24,12 @@ public final class GetMonitoredResourcesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of monitored_resource_collection.
      * 
      */
-    private List<GetMonitoredResourcesMonitoredResourceCollection> monitoredResourceCollections;
+    private @Nullable List<GetMonitoredResourcesMonitoredResourceCollection> monitoredResourceCollections;
     /**
      * @return Property Name.
      * 
@@ -52,15 +52,15 @@ public final class GetMonitoredResourcesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of monitored_resource_collection.
      * 
      */
     public List<GetMonitoredResourcesMonitoredResourceCollection> monitoredResourceCollections() {
-        return this.monitoredResourceCollections;
+        return this.monitoredResourceCollections == null ? List.of() : this.monitoredResourceCollections;
     }
     /**
      * @return Property Name.
@@ -84,8 +84,8 @@ public final class GetMonitoredResourcesResult {
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetMonitoredResourcesFilter> filters;
-        private String id;
-        private List<GetMonitoredResourcesMonitoredResourceCollection> monitoredResourceCollections;
+        private @Nullable String id;
+        private @Nullable List<GetMonitoredResourcesMonitoredResourceCollection> monitoredResourceCollections;
         private @Nullable String name;
         private @Nullable String workRequestId;
         public Builder() {}
@@ -113,13 +113,13 @@ public final class GetMonitoredResourcesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder monitoredResourceCollections(List<GetMonitoredResourcesMonitoredResourceCollection> monitoredResourceCollections) {
-            this.monitoredResourceCollections = Objects.requireNonNull(monitoredResourceCollections);
+        public Builder monitoredResourceCollections(@Nullable List<GetMonitoredResourcesMonitoredResourceCollection> monitoredResourceCollections) {
+            this.monitoredResourceCollections = monitoredResourceCollections;
             return this;
         }
         public Builder monitoredResourceCollections(GetMonitoredResourcesMonitoredResourceCollection... monitoredResourceCollections) {

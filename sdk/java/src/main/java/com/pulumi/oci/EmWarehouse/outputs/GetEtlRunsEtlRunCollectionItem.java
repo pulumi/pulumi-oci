@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.EmWarehouse.outputs.GetEtlRunsEtlRunCollectionItemItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetEtlRunsEtlRunCollectionItem {
@@ -14,7 +15,7 @@ public final class GetEtlRunsEtlRunCollectionItem {
      * @return List of runs
      * 
      */
-    private List<GetEtlRunsEtlRunCollectionItemItem> items;
+    private @Nullable List<GetEtlRunsEtlRunCollectionItemItem> items;
 
     private GetEtlRunsEtlRunCollectionItem() {}
     /**
@@ -22,7 +23,7 @@ public final class GetEtlRunsEtlRunCollectionItem {
      * 
      */
     public List<GetEtlRunsEtlRunCollectionItemItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetEtlRunsEtlRunCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetEtlRunsEtlRunCollectionItemItem> items;
+        private @Nullable List<GetEtlRunsEtlRunCollectionItemItem> items;
         public Builder() {}
         public Builder(GetEtlRunsEtlRunCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetEtlRunsEtlRunCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetEtlRunsEtlRunCollectionItemItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetEtlRunsEtlRunCollectionItemItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetEtlRunsEtlRunCollectionItemItem... items) {

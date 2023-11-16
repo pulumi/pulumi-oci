@@ -128,7 +128,7 @@ namespace Pulumi.Oci.CloudGuard
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// List of event related to a DataSource
         /// </summary>
@@ -142,7 +142,7 @@ namespace Pulumi.Oci.CloudGuard
         private GetDataSourceEventResult(
             string dataSourceId,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetDataSourceEventItemResult> items,
 

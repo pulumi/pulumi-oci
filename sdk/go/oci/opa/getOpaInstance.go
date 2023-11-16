@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Opa Instance resource in Oracle Cloud Infrastructure Opa service.
@@ -62,45 +61,45 @@ type LookupOpaInstanceResult struct {
 	// A list of associated attachments to other services
 	Attachments []GetOpaInstanceAttachment `pulumi:"attachments"`
 	// Compartment Identifier
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The entitlement used for billing purposes
-	ConsumptionModel string `pulumi:"consumptionModel"`
+	ConsumptionModel *string `pulumi:"consumptionModel"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Description of the Process Automation instance.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// OpaInstance Identifier, can be renamed
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Unique identifier that is immutable on creation
-	Id     string `pulumi:"id"`
-	IdcsAt string `pulumi:"idcsAt"`
+	Id     *string `pulumi:"id"`
+	IdcsAt *string `pulumi:"idcsAt"`
 	// This property specifies the name of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this OPA instance for users within the identity domain.
-	IdentityAppDisplayName string `pulumi:"identityAppDisplayName"`
+	IdentityAppDisplayName *string `pulumi:"identityAppDisplayName"`
 	// This property specifies the GUID of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user role mappings to grant access to this OPA instance for users within the identity domain.
-	IdentityAppGuid string `pulumi:"identityAppGuid"`
+	IdentityAppGuid *string `pulumi:"identityAppGuid"`
 	// This property specifies the OPC Service Instance GUID of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this OPA instance for users within the identity domain.
-	IdentityAppOpcServiceInstanceGuid string `pulumi:"identityAppOpcServiceInstanceGuid"`
+	IdentityAppOpcServiceInstanceGuid *string `pulumi:"identityAppOpcServiceInstanceGuid"`
 	// This property specifies the domain url of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this OPA instance for users within the identity domain.
-	IdentityDomainUrl string `pulumi:"identityDomainUrl"`
+	IdentityDomainUrl *string `pulumi:"identityDomainUrl"`
 	// OPA Instance URL
-	InstanceUrl string `pulumi:"instanceUrl"`
+	InstanceUrl *string `pulumi:"instanceUrl"`
 	// indicates if breakGlass is enabled for the opa instance.
-	IsBreakglassEnabled bool `pulumi:"isBreakglassEnabled"`
+	IsBreakglassEnabled *bool `pulumi:"isBreakglassEnabled"`
 	// MeteringType Identifier
-	MeteringType  string `pulumi:"meteringType"`
-	OpaInstanceId string `pulumi:"opaInstanceId"`
+	MeteringType  *string `pulumi:"meteringType"`
+	OpaInstanceId string  `pulumi:"opaInstanceId"`
 	// Shape of the instance.
-	ShapeName string `pulumi:"shapeName"`
+	ShapeName *string `pulumi:"shapeName"`
 	// The current state of the OpaInstance.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time when OpaInstance was created. An RFC3339 formatted datetime string
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the OpaInstance was updated. An RFC3339 formatted datetime string
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func LookupOpaInstanceOutput(ctx *pulumi.Context, args LookupOpaInstanceOutputArgs, opts ...pulumi.InvokeOption) LookupOpaInstanceResultOutput {
@@ -141,25 +140,19 @@ func (o LookupOpaInstanceResultOutput) ToLookupOpaInstanceResultOutputWithContex
 	return o
 }
 
-func (o LookupOpaInstanceResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupOpaInstanceResult] {
-	return pulumix.Output[LookupOpaInstanceResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A list of associated attachments to other services
 func (o LookupOpaInstanceResultOutput) Attachments() GetOpaInstanceAttachmentArrayOutput {
 	return o.ApplyT(func(v LookupOpaInstanceResult) []GetOpaInstanceAttachment { return v.Attachments }).(GetOpaInstanceAttachmentArrayOutput)
 }
 
 // Compartment Identifier
-func (o LookupOpaInstanceResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOpaInstanceResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupOpaInstanceResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupOpaInstanceResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The entitlement used for billing purposes
-func (o LookupOpaInstanceResultOutput) ConsumptionModel() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOpaInstanceResult) string { return v.ConsumptionModel }).(pulumi.StringOutput)
+func (o LookupOpaInstanceResultOutput) ConsumptionModel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupOpaInstanceResult) *string { return v.ConsumptionModel }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -168,13 +161,13 @@ func (o LookupOpaInstanceResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // Description of the Process Automation instance.
-func (o LookupOpaInstanceResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOpaInstanceResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupOpaInstanceResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupOpaInstanceResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // OpaInstance Identifier, can be renamed
-func (o LookupOpaInstanceResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOpaInstanceResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupOpaInstanceResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupOpaInstanceResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -183,47 +176,47 @@ func (o LookupOpaInstanceResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Unique identifier that is immutable on creation
-func (o LookupOpaInstanceResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOpaInstanceResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupOpaInstanceResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupOpaInstanceResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupOpaInstanceResultOutput) IdcsAt() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOpaInstanceResult) string { return v.IdcsAt }).(pulumi.StringOutput)
+func (o LookupOpaInstanceResultOutput) IdcsAt() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupOpaInstanceResult) *string { return v.IdcsAt }).(pulumi.StringPtrOutput)
 }
 
 // This property specifies the name of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this OPA instance for users within the identity domain.
-func (o LookupOpaInstanceResultOutput) IdentityAppDisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOpaInstanceResult) string { return v.IdentityAppDisplayName }).(pulumi.StringOutput)
+func (o LookupOpaInstanceResultOutput) IdentityAppDisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupOpaInstanceResult) *string { return v.IdentityAppDisplayName }).(pulumi.StringPtrOutput)
 }
 
 // This property specifies the GUID of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user role mappings to grant access to this OPA instance for users within the identity domain.
-func (o LookupOpaInstanceResultOutput) IdentityAppGuid() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOpaInstanceResult) string { return v.IdentityAppGuid }).(pulumi.StringOutput)
+func (o LookupOpaInstanceResultOutput) IdentityAppGuid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupOpaInstanceResult) *string { return v.IdentityAppGuid }).(pulumi.StringPtrOutput)
 }
 
 // This property specifies the OPC Service Instance GUID of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this OPA instance for users within the identity domain.
-func (o LookupOpaInstanceResultOutput) IdentityAppOpcServiceInstanceGuid() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOpaInstanceResult) string { return v.IdentityAppOpcServiceInstanceGuid }).(pulumi.StringOutput)
+func (o LookupOpaInstanceResultOutput) IdentityAppOpcServiceInstanceGuid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupOpaInstanceResult) *string { return v.IdentityAppOpcServiceInstanceGuid }).(pulumi.StringPtrOutput)
 }
 
 // This property specifies the domain url of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this OPA instance for users within the identity domain.
-func (o LookupOpaInstanceResultOutput) IdentityDomainUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOpaInstanceResult) string { return v.IdentityDomainUrl }).(pulumi.StringOutput)
+func (o LookupOpaInstanceResultOutput) IdentityDomainUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupOpaInstanceResult) *string { return v.IdentityDomainUrl }).(pulumi.StringPtrOutput)
 }
 
 // OPA Instance URL
-func (o LookupOpaInstanceResultOutput) InstanceUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOpaInstanceResult) string { return v.InstanceUrl }).(pulumi.StringOutput)
+func (o LookupOpaInstanceResultOutput) InstanceUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupOpaInstanceResult) *string { return v.InstanceUrl }).(pulumi.StringPtrOutput)
 }
 
 // indicates if breakGlass is enabled for the opa instance.
-func (o LookupOpaInstanceResultOutput) IsBreakglassEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupOpaInstanceResult) bool { return v.IsBreakglassEnabled }).(pulumi.BoolOutput)
+func (o LookupOpaInstanceResultOutput) IsBreakglassEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupOpaInstanceResult) *bool { return v.IsBreakglassEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // MeteringType Identifier
-func (o LookupOpaInstanceResultOutput) MeteringType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOpaInstanceResult) string { return v.MeteringType }).(pulumi.StringOutput)
+func (o LookupOpaInstanceResultOutput) MeteringType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupOpaInstanceResult) *string { return v.MeteringType }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupOpaInstanceResultOutput) OpaInstanceId() pulumi.StringOutput {
@@ -231,13 +224,13 @@ func (o LookupOpaInstanceResultOutput) OpaInstanceId() pulumi.StringOutput {
 }
 
 // Shape of the instance.
-func (o LookupOpaInstanceResultOutput) ShapeName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOpaInstanceResult) string { return v.ShapeName }).(pulumi.StringOutput)
+func (o LookupOpaInstanceResultOutput) ShapeName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupOpaInstanceResult) *string { return v.ShapeName }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the OpaInstance.
-func (o LookupOpaInstanceResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOpaInstanceResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupOpaInstanceResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupOpaInstanceResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -246,13 +239,13 @@ func (o LookupOpaInstanceResultOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time when OpaInstance was created. An RFC3339 formatted datetime string
-func (o LookupOpaInstanceResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOpaInstanceResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupOpaInstanceResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupOpaInstanceResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the OpaInstance was updated. An RFC3339 formatted datetime string
-func (o LookupOpaInstanceResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOpaInstanceResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupOpaInstanceResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupOpaInstanceResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

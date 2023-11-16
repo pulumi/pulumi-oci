@@ -71,7 +71,7 @@ export interface GetDeploymentsResult {
     /**
      * The list of deployment_collection.
      */
-    readonly deploymentCollections: outputs.ApiGateway.GetDeploymentsDeploymentCollection[];
+    readonly deploymentCollections?: outputs.ApiGateway.GetDeploymentsDeploymentCollection[];
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
      */
@@ -84,7 +84,7 @@ export interface GetDeploymentsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The current state of the deployment.
      */

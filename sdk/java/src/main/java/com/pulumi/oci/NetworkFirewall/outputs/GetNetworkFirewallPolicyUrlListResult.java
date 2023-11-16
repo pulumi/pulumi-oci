@@ -9,10 +9,12 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetNetworkFirewallPolicyUrlListResult {
-    private String id;
+    private @Nullable String id;
     /**
      * @return Unique name identifier for the URL list.
      * 
@@ -23,21 +25,21 @@ public final class GetNetworkFirewallPolicyUrlListResult {
      * @return OCID of the Network Firewall Policy this URL List belongs to.
      * 
      */
-    private String parentResourceId;
+    private @Nullable String parentResourceId;
     /**
      * @return Total count of URLs in the URL List
      * 
      */
-    private Integer totalUrls;
+    private @Nullable Integer totalUrls;
     /**
      * @return List of urls.
      * 
      */
-    private List<GetNetworkFirewallPolicyUrlListUrl> urls;
+    private @Nullable List<GetNetworkFirewallPolicyUrlListUrl> urls;
 
     private GetNetworkFirewallPolicyUrlListResult() {}
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Unique name identifier for the URL list.
@@ -53,22 +55,22 @@ public final class GetNetworkFirewallPolicyUrlListResult {
      * @return OCID of the Network Firewall Policy this URL List belongs to.
      * 
      */
-    public String parentResourceId() {
-        return this.parentResourceId;
+    public Optional<String> parentResourceId() {
+        return Optional.ofNullable(this.parentResourceId);
     }
     /**
      * @return Total count of URLs in the URL List
      * 
      */
-    public Integer totalUrls() {
-        return this.totalUrls;
+    public Optional<Integer> totalUrls() {
+        return Optional.ofNullable(this.totalUrls);
     }
     /**
      * @return List of urls.
      * 
      */
     public List<GetNetworkFirewallPolicyUrlListUrl> urls() {
-        return this.urls;
+        return this.urls == null ? List.of() : this.urls;
     }
 
     public static Builder builder() {
@@ -80,12 +82,12 @@ public final class GetNetworkFirewallPolicyUrlListResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String id;
+        private @Nullable String id;
         private String name;
         private String networkFirewallPolicyId;
-        private String parentResourceId;
-        private Integer totalUrls;
-        private List<GetNetworkFirewallPolicyUrlListUrl> urls;
+        private @Nullable String parentResourceId;
+        private @Nullable Integer totalUrls;
+        private @Nullable List<GetNetworkFirewallPolicyUrlListUrl> urls;
         public Builder() {}
         public Builder(GetNetworkFirewallPolicyUrlListResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -98,8 +100,8 @@ public final class GetNetworkFirewallPolicyUrlListResult {
         }
 
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -113,18 +115,18 @@ public final class GetNetworkFirewallPolicyUrlListResult {
             return this;
         }
         @CustomType.Setter
-        public Builder parentResourceId(String parentResourceId) {
-            this.parentResourceId = Objects.requireNonNull(parentResourceId);
+        public Builder parentResourceId(@Nullable String parentResourceId) {
+            this.parentResourceId = parentResourceId;
             return this;
         }
         @CustomType.Setter
-        public Builder totalUrls(Integer totalUrls) {
-            this.totalUrls = Objects.requireNonNull(totalUrls);
+        public Builder totalUrls(@Nullable Integer totalUrls) {
+            this.totalUrls = totalUrls;
             return this;
         }
         @CustomType.Setter
-        public Builder urls(List<GetNetworkFirewallPolicyUrlListUrl> urls) {
-            this.urls = Objects.requireNonNull(urls);
+        public Builder urls(@Nullable List<GetNetworkFirewallPolicyUrlListUrl> urls) {
+            this.urls = urls;
             return this;
         }
         public Builder urls(GetNetworkFirewallPolicyUrlListUrl... urls) {

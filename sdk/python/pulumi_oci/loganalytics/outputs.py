@@ -123,17 +123,6 @@ class LogAnalyticsImportCustomContentChangeList(dict):
                  updated_field_display_names: Optional[Sequence[str]] = None,
                  updated_parser_names: Optional[Sequence[str]] = None,
                  updated_source_names: Optional[Sequence[str]] = None):
-        """
-        :param Sequence[str] conflict_field_display_names: A list of field display names with conflicts.
-        :param Sequence[str] conflict_parser_names: A list of parser names with conflicts.
-        :param Sequence[str] conflict_source_names: A list of source names with conflicts.
-        :param Sequence[str] created_field_display_names: An array of created field display names.
-        :param Sequence[str] created_parser_names: An array of created parser names.
-        :param Sequence[str] created_source_names: An array of created source names.
-        :param Sequence[str] updated_field_display_names: An array of updated field display names.
-        :param Sequence[str] updated_parser_names: An array of updated parser names.
-        :param Sequence[str] updated_source_names: An array of updated source names.
-        """
         if conflict_field_display_names is not None:
             pulumi.set(__self__, "conflict_field_display_names", conflict_field_display_names)
         if conflict_parser_names is not None:
@@ -156,73 +145,46 @@ class LogAnalyticsImportCustomContentChangeList(dict):
     @property
     @pulumi.getter(name="conflictFieldDisplayNames")
     def conflict_field_display_names(self) -> Optional[Sequence[str]]:
-        """
-        A list of field display names with conflicts.
-        """
         return pulumi.get(self, "conflict_field_display_names")
 
     @property
     @pulumi.getter(name="conflictParserNames")
     def conflict_parser_names(self) -> Optional[Sequence[str]]:
-        """
-        A list of parser names with conflicts.
-        """
         return pulumi.get(self, "conflict_parser_names")
 
     @property
     @pulumi.getter(name="conflictSourceNames")
     def conflict_source_names(self) -> Optional[Sequence[str]]:
-        """
-        A list of source names with conflicts.
-        """
         return pulumi.get(self, "conflict_source_names")
 
     @property
     @pulumi.getter(name="createdFieldDisplayNames")
     def created_field_display_names(self) -> Optional[Sequence[str]]:
-        """
-        An array of created field display names.
-        """
         return pulumi.get(self, "created_field_display_names")
 
     @property
     @pulumi.getter(name="createdParserNames")
     def created_parser_names(self) -> Optional[Sequence[str]]:
-        """
-        An array of created parser names.
-        """
         return pulumi.get(self, "created_parser_names")
 
     @property
     @pulumi.getter(name="createdSourceNames")
     def created_source_names(self) -> Optional[Sequence[str]]:
-        """
-        An array of created source names.
-        """
         return pulumi.get(self, "created_source_names")
 
     @property
     @pulumi.getter(name="updatedFieldDisplayNames")
     def updated_field_display_names(self) -> Optional[Sequence[str]]:
-        """
-        An array of updated field display names.
-        """
         return pulumi.get(self, "updated_field_display_names")
 
     @property
     @pulumi.getter(name="updatedParserNames")
     def updated_parser_names(self) -> Optional[Sequence[str]]:
-        """
-        An array of updated parser names.
-        """
         return pulumi.get(self, "updated_parser_names")
 
     @property
     @pulumi.getter(name="updatedSourceNames")
     def updated_source_names(self) -> Optional[Sequence[str]]:
-        """
-        An array of updated source names.
-        """
         return pulumi.get(self, "updated_source_names")
 
 
@@ -291,10 +253,6 @@ class LogAnalyticsPreferencesManagementItem(dict):
     def __init__(__self__, *,
                  name: Optional[str] = None,
                  value: Optional[str] = None):
-        """
-        :param str name: The preference name.
-        :param str value: The preference value.
-        """
         if name is not None:
             pulumi.set(__self__, "name", name)
         if value is not None:
@@ -303,17 +261,11 @@ class LogAnalyticsPreferencesManagementItem(dict):
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        The preference name.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
     def value(self) -> Optional[str]:
-        """
-        The preference value.
-        """
         return pulumi.get(self, "value")
 
 
@@ -347,18 +299,6 @@ class NamespaceIngestTimeRuleAction(dict):
                  type: str,
                  dimensions: Optional[Sequence[str]] = None,
                  resource_group: Optional[str] = None):
-        """
-        :param str compartment_id: (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param str metric_name: (Updatable) The metric name of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
-        :param str namespace: The Logging Analytics namespace used for the request. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param str type: (Updatable) Discriminator.
-        :param Sequence[str] dimensions: (Updatable) Additional dimensions to publish for the extracted metric. A valid list contains the source field names whose values are to be published as dimensions. The source name itself is specified using a special macro SOURCE_NAME
-        :param str resource_group: (Updatable) The resourceGroup of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
-        """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "metric_name", metric_name)
         pulumi.set(__self__, "namespace", namespace)
@@ -371,53 +311,31 @@ class NamespaceIngestTimeRuleAction(dict):
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="metricName")
     def metric_name(self) -> str:
-        """
-        (Updatable) The metric name of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
-        """
         return pulumi.get(self, "metric_name")
 
     @property
     @pulumi.getter
     def namespace(self) -> str:
-        """
-        The Logging Analytics namespace used for the request. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter
     def type(self) -> str:
-        """
-        (Updatable) Discriminator.
-        """
         return pulumi.get(self, "type")
 
     @property
     @pulumi.getter
     def dimensions(self) -> Optional[Sequence[str]]:
-        """
-        (Updatable) Additional dimensions to publish for the extracted metric. A valid list contains the source field names whose values are to be published as dimensions. The source name itself is specified using a special macro SOURCE_NAME
-        """
         return pulumi.get(self, "dimensions")
 
     @property
     @pulumi.getter(name="resourceGroup")
     def resource_group(self) -> Optional[str]:
-        """
-        (Updatable) The resourceGroup of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
-        """
         return pulumi.get(self, "resource_group")
 
 
@@ -452,13 +370,6 @@ class NamespaceIngestTimeRuleConditions(dict):
                  field_value: str,
                  kind: str,
                  additional_conditions: Optional[Sequence['outputs.NamespaceIngestTimeRuleConditionsAdditionalCondition']] = None):
-        """
-        :param str field_name: (Updatable) The field name to be evaluated.
-        :param str field_operator: (Updatable) The operator to be used for evaluating the field.
-        :param str field_value: (Updatable) The field value to be evaluated.
-        :param str kind: (Updatable) Discriminator.
-        :param Sequence['NamespaceIngestTimeRuleConditionsAdditionalConditionArgs'] additional_conditions: (Updatable) Optional additional condition(s) to be evaluated.
-        """
         pulumi.set(__self__, "field_name", field_name)
         pulumi.set(__self__, "field_operator", field_operator)
         pulumi.set(__self__, "field_value", field_value)
@@ -469,41 +380,26 @@ class NamespaceIngestTimeRuleConditions(dict):
     @property
     @pulumi.getter(name="fieldName")
     def field_name(self) -> str:
-        """
-        (Updatable) The field name to be evaluated.
-        """
         return pulumi.get(self, "field_name")
 
     @property
     @pulumi.getter(name="fieldOperator")
     def field_operator(self) -> str:
-        """
-        (Updatable) The operator to be used for evaluating the field.
-        """
         return pulumi.get(self, "field_operator")
 
     @property
     @pulumi.getter(name="fieldValue")
     def field_value(self) -> str:
-        """
-        (Updatable) The field value to be evaluated.
-        """
         return pulumi.get(self, "field_value")
 
     @property
     @pulumi.getter
     def kind(self) -> str:
-        """
-        (Updatable) Discriminator.
-        """
         return pulumi.get(self, "kind")
 
     @property
     @pulumi.getter(name="additionalConditions")
     def additional_conditions(self) -> Optional[Sequence['outputs.NamespaceIngestTimeRuleConditionsAdditionalCondition']]:
-        """
-        (Updatable) Optional additional condition(s) to be evaluated.
-        """
         return pulumi.get(self, "additional_conditions")
 
 
@@ -534,11 +430,6 @@ class NamespaceIngestTimeRuleConditionsAdditionalCondition(dict):
                  condition_field: str,
                  condition_operator: str,
                  condition_value: str):
-        """
-        :param str condition_field: (Updatable) The additional field name to be evaluated.
-        :param str condition_operator: (Updatable) The operator to be used for evaluating the additional field.
-        :param str condition_value: (Updatable) The additional field value to be evaluated.
-        """
         pulumi.set(__self__, "condition_field", condition_field)
         pulumi.set(__self__, "condition_operator", condition_operator)
         pulumi.set(__self__, "condition_value", condition_value)
@@ -546,25 +437,16 @@ class NamespaceIngestTimeRuleConditionsAdditionalCondition(dict):
     @property
     @pulumi.getter(name="conditionField")
     def condition_field(self) -> str:
-        """
-        (Updatable) The additional field name to be evaluated.
-        """
         return pulumi.get(self, "condition_field")
 
     @property
     @pulumi.getter(name="conditionOperator")
     def condition_operator(self) -> str:
-        """
-        (Updatable) The operator to be used for evaluating the additional field.
-        """
         return pulumi.get(self, "condition_operator")
 
     @property
     @pulumi.getter(name="conditionValue")
     def condition_value(self) -> str:
-        """
-        (Updatable) The additional field value to be evaluated.
-        """
         return pulumi.get(self, "condition_value")
 
 
@@ -608,16 +490,6 @@ class NamespaceScheduledTaskAction(dict):
                  purge_duration: Optional[str] = None,
                  query_string: Optional[str] = None,
                  saved_search_id: Optional[str] = None):
-        """
-        :param str type: (Updatable) Schedule type discriminator.
-        :param bool compartment_id_in_subtree: if true, purge child compartments data
-        :param str data_type: the type of the log data to be purged
-        :param 'NamespaceScheduledTaskActionMetricExtractionArgs' metric_extraction: Specify metric extraction for SAVED_SEARCH scheduled task execution to post to Oracle Cloud Infrastructure Monitoring.
-        :param str purge_compartment_id: the compartment OCID under which the data will be purged
-        :param str purge_duration: The duration of data to be retained, which is used to calculate the timeDataEnded when the task fires. The value should be negative. Purge duration in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. -P365D (not -P1Y) or -P14D (not -P2W).
-        :param str query_string: Purge query string.
-        :param str saved_search_id: The ManagementSavedSearch id [OCID] to be accelerated.
-        """
         pulumi.set(__self__, "type", type)
         if compartment_id_in_subtree is not None:
             pulumi.set(__self__, "compartment_id_in_subtree", compartment_id_in_subtree)
@@ -637,65 +509,41 @@ class NamespaceScheduledTaskAction(dict):
     @property
     @pulumi.getter
     def type(self) -> str:
-        """
-        (Updatable) Schedule type discriminator.
-        """
         return pulumi.get(self, "type")
 
     @property
     @pulumi.getter(name="compartmentIdInSubtree")
     def compartment_id_in_subtree(self) -> Optional[bool]:
-        """
-        if true, purge child compartments data
-        """
         return pulumi.get(self, "compartment_id_in_subtree")
 
     @property
     @pulumi.getter(name="dataType")
     def data_type(self) -> Optional[str]:
-        """
-        the type of the log data to be purged
-        """
         return pulumi.get(self, "data_type")
 
     @property
     @pulumi.getter(name="metricExtraction")
     def metric_extraction(self) -> Optional['outputs.NamespaceScheduledTaskActionMetricExtraction']:
-        """
-        Specify metric extraction for SAVED_SEARCH scheduled task execution to post to Oracle Cloud Infrastructure Monitoring.
-        """
         return pulumi.get(self, "metric_extraction")
 
     @property
     @pulumi.getter(name="purgeCompartmentId")
     def purge_compartment_id(self) -> Optional[str]:
-        """
-        the compartment OCID under which the data will be purged
-        """
         return pulumi.get(self, "purge_compartment_id")
 
     @property
     @pulumi.getter(name="purgeDuration")
     def purge_duration(self) -> Optional[str]:
-        """
-        The duration of data to be retained, which is used to calculate the timeDataEnded when the task fires. The value should be negative. Purge duration in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. -P365D (not -P1Y) or -P14D (not -P2W).
-        """
         return pulumi.get(self, "purge_duration")
 
     @property
     @pulumi.getter(name="queryString")
     def query_string(self) -> Optional[str]:
-        """
-        Purge query string.
-        """
         return pulumi.get(self, "query_string")
 
     @property
     @pulumi.getter(name="savedSearchId")
     def saved_search_id(self) -> Optional[str]:
-        """
-        The ManagementSavedSearch id [OCID] to be accelerated.
-        """
         return pulumi.get(self, "saved_search_id")
 
 
@@ -727,12 +575,6 @@ class NamespaceScheduledTaskActionMetricExtraction(dict):
                  metric_name: Optional[str] = None,
                  namespace: Optional[str] = None,
                  resource_group: Optional[str] = None):
-        """
-        :param str compartment_id: (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param str metric_name: The metric name of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
-        :param str namespace: The Logging Analytics namespace used for the request.
-        :param str resource_group: The resource group of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
-        """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if metric_name is not None:
@@ -745,33 +587,21 @@ class NamespaceScheduledTaskActionMetricExtraction(dict):
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
-        """
-        (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="metricName")
     def metric_name(self) -> Optional[str]:
-        """
-        The metric name of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
-        """
         return pulumi.get(self, "metric_name")
 
     @property
     @pulumi.getter
     def namespace(self) -> Optional[str]:
-        """
-        The Logging Analytics namespace used for the request.
-        """
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter(name="resourceGroup")
     def resource_group(self) -> Optional[str]:
-        """
-        The resource group of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
-        """
         return pulumi.get(self, "resource_group")
 
 
@@ -819,14 +649,6 @@ class NamespaceScheduledTaskSchedulesSchedule(dict):
                  recurring_interval: Optional[str] = None,
                  repeat_count: Optional[int] = None,
                  time_zone: Optional[str] = None):
-        """
-        :param str type: (Updatable) Schedule type discriminator.
-        :param str expression: (Updatable) Value in cron format.
-        :param str misfire_policy: (Updatable) Schedule misfire retry policy.
-        :param str recurring_interval: (Updatable) Recurring interval in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
-        :param int repeat_count: (Updatable) Number of times (0-based) to execute until auto-stop. Default value -1 will execute indefinitely. Value 0 will execute once.
-        :param str time_zone: (Updatable) Time zone, by default UTC.
-        """
         pulumi.set(__self__, "type", type)
         if expression is not None:
             pulumi.set(__self__, "expression", expression)
@@ -842,111 +664,76 @@ class NamespaceScheduledTaskSchedulesSchedule(dict):
     @property
     @pulumi.getter
     def type(self) -> str:
-        """
-        (Updatable) Schedule type discriminator.
-        """
         return pulumi.get(self, "type")
 
     @property
     @pulumi.getter
     def expression(self) -> Optional[str]:
-        """
-        (Updatable) Value in cron format.
-        """
         return pulumi.get(self, "expression")
 
     @property
     @pulumi.getter(name="misfirePolicy")
     def misfire_policy(self) -> Optional[str]:
-        """
-        (Updatable) Schedule misfire retry policy.
-        """
         return pulumi.get(self, "misfire_policy")
 
     @property
     @pulumi.getter(name="recurringInterval")
     def recurring_interval(self) -> Optional[str]:
-        """
-        (Updatable) Recurring interval in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
-        """
         return pulumi.get(self, "recurring_interval")
 
     @property
     @pulumi.getter(name="repeatCount")
     def repeat_count(self) -> Optional[int]:
-        """
-        (Updatable) Number of times (0-based) to execute until auto-stop. Default value -1 will execute indefinitely. Value 0 will execute once.
-        """
         return pulumi.get(self, "repeat_count")
 
     @property
     @pulumi.getter(name="timeZone")
     def time_zone(self) -> Optional[str]:
-        """
-        (Updatable) Time zone, by default UTC.
-        """
         return pulumi.get(self, "time_zone")
 
 
 @pulumi.output_type
 class GetLogAnalyticsCategoriesListItemResult(dict):
     def __init__(__self__, *,
-                 description: str,
-                 display_name: str,
-                 is_system: bool,
-                 name: str,
-                 type: str):
-        """
-        :param str description: The category description.
-        :param str display_name: The category display name.
-        :param bool is_system: The system flag. A value of false denotes a user-created category. A value of true denotes an Oracle-defined category.
-        :param str name: A filter to return only log analytics category whose name matches the entire name given. The match is case-insensitive.
-        :param str type: The category type. Values include "PRODUCT", "TIER", "VENDOR" and "GENERIC".
-        """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "is_system", is_system)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "type", type)
+                 description: Optional[str] = None,
+                 display_name: Optional[str] = None,
+                 is_system: Optional[bool] = None,
+                 name: Optional[str] = None,
+                 type: Optional[str] = None):
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if is_system is not None:
+            pulumi.set(__self__, "is_system", is_system)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        The category description.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The category display name.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="isSystem")
-    def is_system(self) -> bool:
-        """
-        The system flag. A value of false denotes a user-created category. A value of true denotes an Oracle-defined category.
-        """
+    def is_system(self) -> Optional[bool]:
         return pulumi.get(self, "is_system")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        A filter to return only log analytics category whose name matches the entire name given. The match is case-insensitive.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        The category type. Values include "PRODUCT", "TIER", "VENDOR" and "GENERIC".
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
 
@@ -956,9 +743,6 @@ class GetLogAnalyticsEntitiesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: A filter to return only log analytics entities whose name matches the entire name given. The match is case-insensitive.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -967,9 +751,6 @@ class GetLogAnalyticsEntitiesFilterResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        A filter to return only log analytics entities whose name matches the entire name given. The match is case-insensitive.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -986,527 +767,387 @@ class GetLogAnalyticsEntitiesFilterResult(dict):
 @pulumi.output_type
 class GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemResult(dict):
     def __init__(__self__, *,
-                 are_logs_collected: bool,
-                 cloud_resource_id: str,
-                 compartment_id: str,
-                 defined_tags: Mapping[str, Any],
-                 entity_type_internal_name: str,
-                 entity_type_name: str,
-                 freeform_tags: Mapping[str, Any],
-                 hostname: str,
-                 id: str,
-                 lifecycle_details: str,
-                 management_agent_compartment_id: str,
-                 management_agent_display_name: str,
-                 management_agent_id: str,
-                 name: str,
-                 namespace: str,
-                 properties: Mapping[str, Any],
-                 source_id: str,
-                 state: str,
-                 time_created: str,
-                 time_updated: str,
-                 timezone_region: str):
-        """
-        :param bool are_logs_collected: The Boolean flag to indicate if logs are collected for an entity for log analytics usage.
-        :param str cloud_resource_id: A filter to return only log analytics entities whose cloudResourceId matches the cloudResourceId given.
-        :param str compartment_id: The ID of the compartment in which to list resources.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param str entity_type_internal_name: Internal name for the log analytics entity type.
-        :param str entity_type_name: A filter to return only log analytics entities whose entityTypeName matches the entire log analytics entity type name of one of the entityTypeNames given in the list. The match is case-insensitive.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param str hostname: A filter to return only log analytics entities whose hostname matches the entire hostname given.
-        :param str id: The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
-        :param str lifecycle_details: lifecycleDetails has additional information regarding substeps such as management agent plugin deployment.
-        :param str management_agent_compartment_id: Management agent (management-agents resource kind) compartment OCID
-        :param str management_agent_display_name: Management agent (management-agents resource kind) display name
-        :param str management_agent_id: The OCID of the Management Agent.
-        :param str name: A filter to return only log analytics entities whose name matches the entire name given. The match is case-insensitive.
-        :param str namespace: The Logging Analytics namespace used for the request.
-        :param Mapping[str, Any] properties: The name/value pairs for parameter values to be used in file patterns specified in log sources.
-        :param str source_id: A filter to return only log analytics entities whose sourceId matches the sourceId given.
-        :param str state: A filter to return only those log analytics entities with the specified lifecycle state. The state value is case-insensitive.
-        :param str time_created: The date and time the resource was created, in the format defined by RFC3339.
-        :param str time_updated: The date and time the resource was last updated, in the format defined by RFC3339.
-        :param str timezone_region: The timezone region of the log analytics entity.
-        """
-        pulumi.set(__self__, "are_logs_collected", are_logs_collected)
-        pulumi.set(__self__, "cloud_resource_id", cloud_resource_id)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "entity_type_internal_name", entity_type_internal_name)
-        pulumi.set(__self__, "entity_type_name", entity_type_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "hostname", hostname)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "management_agent_compartment_id", management_agent_compartment_id)
-        pulumi.set(__self__, "management_agent_display_name", management_agent_display_name)
-        pulumi.set(__self__, "management_agent_id", management_agent_id)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "properties", properties)
-        pulumi.set(__self__, "source_id", source_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "timezone_region", timezone_region)
+                 are_logs_collected: Optional[bool] = None,
+                 cloud_resource_id: Optional[str] = None,
+                 compartment_id: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 entity_type_internal_name: Optional[str] = None,
+                 entity_type_name: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 hostname: Optional[str] = None,
+                 id: Optional[str] = None,
+                 lifecycle_details: Optional[str] = None,
+                 management_agent_compartment_id: Optional[str] = None,
+                 management_agent_display_name: Optional[str] = None,
+                 management_agent_id: Optional[str] = None,
+                 name: Optional[str] = None,
+                 namespace: Optional[str] = None,
+                 properties: Optional[Mapping[str, Any]] = None,
+                 source_id: Optional[str] = None,
+                 state: Optional[str] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None,
+                 timezone_region: Optional[str] = None):
+        if are_logs_collected is not None:
+            pulumi.set(__self__, "are_logs_collected", are_logs_collected)
+        if cloud_resource_id is not None:
+            pulumi.set(__self__, "cloud_resource_id", cloud_resource_id)
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if entity_type_internal_name is not None:
+            pulumi.set(__self__, "entity_type_internal_name", entity_type_internal_name)
+        if entity_type_name is not None:
+            pulumi.set(__self__, "entity_type_name", entity_type_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if hostname is not None:
+            pulumi.set(__self__, "hostname", hostname)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if management_agent_compartment_id is not None:
+            pulumi.set(__self__, "management_agent_compartment_id", management_agent_compartment_id)
+        if management_agent_display_name is not None:
+            pulumi.set(__self__, "management_agent_display_name", management_agent_display_name)
+        if management_agent_id is not None:
+            pulumi.set(__self__, "management_agent_id", management_agent_id)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if namespace is not None:
+            pulumi.set(__self__, "namespace", namespace)
+        if properties is not None:
+            pulumi.set(__self__, "properties", properties)
+        if source_id is not None:
+            pulumi.set(__self__, "source_id", source_id)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
+        if timezone_region is not None:
+            pulumi.set(__self__, "timezone_region", timezone_region)
 
     @property
     @pulumi.getter(name="areLogsCollected")
-    def are_logs_collected(self) -> bool:
-        """
-        The Boolean flag to indicate if logs are collected for an entity for log analytics usage.
-        """
+    def are_logs_collected(self) -> Optional[bool]:
         return pulumi.get(self, "are_logs_collected")
 
     @property
     @pulumi.getter(name="cloudResourceId")
-    def cloud_resource_id(self) -> str:
-        """
-        A filter to return only log analytics entities whose cloudResourceId matches the cloudResourceId given.
-        """
+    def cloud_resource_id(self) -> Optional[str]:
         return pulumi.get(self, "cloud_resource_id")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The ID of the compartment in which to list resources.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="entityTypeInternalName")
-    def entity_type_internal_name(self) -> str:
-        """
-        Internal name for the log analytics entity type.
-        """
+    def entity_type_internal_name(self) -> Optional[str]:
         return pulumi.get(self, "entity_type_internal_name")
 
     @property
     @pulumi.getter(name="entityTypeName")
-    def entity_type_name(self) -> str:
-        """
-        A filter to return only log analytics entities whose entityTypeName matches the entire log analytics entity type name of one of the entityTypeNames given in the list. The match is case-insensitive.
-        """
+    def entity_type_name(self) -> Optional[str]:
         return pulumi.get(self, "entity_type_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def hostname(self) -> str:
-        """
-        A filter to return only log analytics entities whose hostname matches the entire hostname given.
-        """
+    def hostname(self) -> Optional[str]:
         return pulumi.get(self, "hostname")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        lifecycleDetails has additional information regarding substeps such as management agent plugin deployment.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="managementAgentCompartmentId")
-    def management_agent_compartment_id(self) -> str:
-        """
-        Management agent (management-agents resource kind) compartment OCID
-        """
+    def management_agent_compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "management_agent_compartment_id")
 
     @property
     @pulumi.getter(name="managementAgentDisplayName")
-    def management_agent_display_name(self) -> str:
-        """
-        Management agent (management-agents resource kind) display name
-        """
+    def management_agent_display_name(self) -> Optional[str]:
         return pulumi.get(self, "management_agent_display_name")
 
     @property
     @pulumi.getter(name="managementAgentId")
-    def management_agent_id(self) -> str:
-        """
-        The OCID of the Management Agent.
-        """
+    def management_agent_id(self) -> Optional[str]:
         return pulumi.get(self, "management_agent_id")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        A filter to return only log analytics entities whose name matches the entire name given. The match is case-insensitive.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def namespace(self) -> str:
-        """
-        The Logging Analytics namespace used for the request.
-        """
+    def namespace(self) -> Optional[str]:
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter
-    def properties(self) -> Mapping[str, Any]:
-        """
-        The name/value pairs for parameter values to be used in file patterns specified in log sources.
-        """
+    def properties(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "properties")
 
     @property
     @pulumi.getter(name="sourceId")
-    def source_id(self) -> str:
-        """
-        A filter to return only log analytics entities whose sourceId matches the sourceId given.
-        """
+    def source_id(self) -> Optional[str]:
         return pulumi.get(self, "source_id")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        A filter to return only those log analytics entities with the specified lifecycle state. The state value is case-insensitive.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the resource was created, in the format defined by RFC3339.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time the resource was last updated, in the format defined by RFC3339.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="timezoneRegion")
-    def timezone_region(self) -> str:
-        """
-        The timezone region of the log analytics entity.
-        """
+    def timezone_region(self) -> Optional[str]:
         return pulumi.get(self, "timezone_region")
 
 
 @pulumi.output_type
 class GetLogAnalyticsEntityTopologyItemResult(dict):
     def __init__(__self__, *,
-                 links: Sequence['outputs.GetLogAnalyticsEntityTopologyItemLinkResult'],
-                 nodes: Sequence['outputs.GetLogAnalyticsEntityTopologyItemNodeResult']):
-        """
-        :param Sequence['GetLogAnalyticsEntityTopologyItemLinkArgs'] links: Collection of log analytics entity relationship links.
-        :param Sequence['GetLogAnalyticsEntityTopologyItemNodeArgs'] nodes: Collection of log analytics entities.
-        """
-        pulumi.set(__self__, "links", links)
-        pulumi.set(__self__, "nodes", nodes)
+                 links: Optional[Sequence['outputs.GetLogAnalyticsEntityTopologyItemLinkResult']] = None,
+                 nodes: Optional[Sequence['outputs.GetLogAnalyticsEntityTopologyItemNodeResult']] = None):
+        if links is not None:
+            pulumi.set(__self__, "links", links)
+        if nodes is not None:
+            pulumi.set(__self__, "nodes", nodes)
 
     @property
     @pulumi.getter
-    def links(self) -> Sequence['outputs.GetLogAnalyticsEntityTopologyItemLinkResult']:
-        """
-        Collection of log analytics entity relationship links.
-        """
+    def links(self) -> Optional[Sequence['outputs.GetLogAnalyticsEntityTopologyItemLinkResult']]:
         return pulumi.get(self, "links")
 
     @property
     @pulumi.getter
-    def nodes(self) -> Sequence['outputs.GetLogAnalyticsEntityTopologyItemNodeResult']:
-        """
-        Collection of log analytics entities.
-        """
+    def nodes(self) -> Optional[Sequence['outputs.GetLogAnalyticsEntityTopologyItemNodeResult']]:
         return pulumi.get(self, "nodes")
 
 
 @pulumi.output_type
 class GetLogAnalyticsEntityTopologyItemLinkResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetLogAnalyticsEntityTopologyItemLinkItemResult']):
-        """
-        :param Sequence['GetLogAnalyticsEntityTopologyItemLinkItemArgs'] items: Array of log analytics entity summary.
-        """
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetLogAnalyticsEntityTopologyItemLinkItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetLogAnalyticsEntityTopologyItemLinkItemResult']:
-        """
-        Array of log analytics entity summary.
-        """
+    def items(self) -> Optional[Sequence['outputs.GetLogAnalyticsEntityTopologyItemLinkItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetLogAnalyticsEntityTopologyItemLinkItemResult(dict):
     def __init__(__self__, *,
-                 destination_entity_id: str,
-                 source_entity_id: str):
-        """
-        :param str destination_entity_id: The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
-        :param str source_entity_id: The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
-        """
-        pulumi.set(__self__, "destination_entity_id", destination_entity_id)
-        pulumi.set(__self__, "source_entity_id", source_entity_id)
+                 destination_entity_id: Optional[str] = None,
+                 source_entity_id: Optional[str] = None):
+        if destination_entity_id is not None:
+            pulumi.set(__self__, "destination_entity_id", destination_entity_id)
+        if source_entity_id is not None:
+            pulumi.set(__self__, "source_entity_id", source_entity_id)
 
     @property
     @pulumi.getter(name="destinationEntityId")
-    def destination_entity_id(self) -> str:
-        """
-        The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
-        """
+    def destination_entity_id(self) -> Optional[str]:
         return pulumi.get(self, "destination_entity_id")
 
     @property
     @pulumi.getter(name="sourceEntityId")
-    def source_entity_id(self) -> str:
-        """
-        The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
-        """
+    def source_entity_id(self) -> Optional[str]:
         return pulumi.get(self, "source_entity_id")
 
 
 @pulumi.output_type
 class GetLogAnalyticsEntityTopologyItemNodeResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetLogAnalyticsEntityTopologyItemNodeItemResult']):
-        """
-        :param Sequence['GetLogAnalyticsEntityTopologyItemNodeItemArgs'] items: Array of log analytics entity summary.
-        """
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetLogAnalyticsEntityTopologyItemNodeItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetLogAnalyticsEntityTopologyItemNodeItemResult']:
-        """
-        Array of log analytics entity summary.
-        """
+    def items(self) -> Optional[Sequence['outputs.GetLogAnalyticsEntityTopologyItemNodeItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetLogAnalyticsEntityTopologyItemNodeItemResult(dict):
     def __init__(__self__, *,
-                 are_logs_collected: bool,
-                 cloud_resource_id: str,
-                 compartment_id: str,
-                 defined_tags: Mapping[str, Any],
-                 entity_type_internal_name: str,
-                 entity_type_name: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 lifecycle_details: str,
-                 management_agent_id: str,
-                 name: str,
-                 source_id: str,
-                 state: str,
-                 time_created: str,
-                 time_updated: str,
-                 timezone_region: str):
-        """
-        :param bool are_logs_collected: The Boolean flag to indicate if logs are collected for an entity for log analytics usage.
-        :param str cloud_resource_id: The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
-        :param str compartment_id: Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param str entity_type_internal_name: Internal name for the log analytics entity type.
-        :param str entity_type_name: Log analytics entity type name.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param str id: The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
-        :param str lifecycle_details: lifecycleDetails has additional information regarding substeps such as management agent plugin deployment.
-        :param str management_agent_id: The OCID of the Management Agent.
-        :param str name: Log analytics entity name.
-        :param str source_id: This indicates the type of source. It is primarily for Enterprise Manager Repository ID.
-        :param str state: A filter to return only those log analytics entities with the specified lifecycle state. The state value is case-insensitive.
-        :param str time_created: The date and time the resource was created, in the format defined by RFC3339.
-        :param str time_updated: The date and time the resource was last updated, in the format defined by RFC3339.
-        :param str timezone_region: The timezone region of the log analytics entity.
-        """
-        pulumi.set(__self__, "are_logs_collected", are_logs_collected)
-        pulumi.set(__self__, "cloud_resource_id", cloud_resource_id)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "entity_type_internal_name", entity_type_internal_name)
-        pulumi.set(__self__, "entity_type_name", entity_type_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "management_agent_id", management_agent_id)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "source_id", source_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "timezone_region", timezone_region)
+                 are_logs_collected: Optional[bool] = None,
+                 cloud_resource_id: Optional[str] = None,
+                 compartment_id: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 entity_type_internal_name: Optional[str] = None,
+                 entity_type_name: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 lifecycle_details: Optional[str] = None,
+                 management_agent_id: Optional[str] = None,
+                 name: Optional[str] = None,
+                 source_id: Optional[str] = None,
+                 state: Optional[str] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None,
+                 timezone_region: Optional[str] = None):
+        if are_logs_collected is not None:
+            pulumi.set(__self__, "are_logs_collected", are_logs_collected)
+        if cloud_resource_id is not None:
+            pulumi.set(__self__, "cloud_resource_id", cloud_resource_id)
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if entity_type_internal_name is not None:
+            pulumi.set(__self__, "entity_type_internal_name", entity_type_internal_name)
+        if entity_type_name is not None:
+            pulumi.set(__self__, "entity_type_name", entity_type_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if management_agent_id is not None:
+            pulumi.set(__self__, "management_agent_id", management_agent_id)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if source_id is not None:
+            pulumi.set(__self__, "source_id", source_id)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
+        if timezone_region is not None:
+            pulumi.set(__self__, "timezone_region", timezone_region)
 
     @property
     @pulumi.getter(name="areLogsCollected")
-    def are_logs_collected(self) -> bool:
-        """
-        The Boolean flag to indicate if logs are collected for an entity for log analytics usage.
-        """
+    def are_logs_collected(self) -> Optional[bool]:
         return pulumi.get(self, "are_logs_collected")
 
     @property
     @pulumi.getter(name="cloudResourceId")
-    def cloud_resource_id(self) -> str:
-        """
-        The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
-        """
+    def cloud_resource_id(self) -> Optional[str]:
         return pulumi.get(self, "cloud_resource_id")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="entityTypeInternalName")
-    def entity_type_internal_name(self) -> str:
-        """
-        Internal name for the log analytics entity type.
-        """
+    def entity_type_internal_name(self) -> Optional[str]:
         return pulumi.get(self, "entity_type_internal_name")
 
     @property
     @pulumi.getter(name="entityTypeName")
-    def entity_type_name(self) -> str:
-        """
-        Log analytics entity type name.
-        """
+    def entity_type_name(self) -> Optional[str]:
         return pulumi.get(self, "entity_type_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        lifecycleDetails has additional information regarding substeps such as management agent plugin deployment.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="managementAgentId")
-    def management_agent_id(self) -> str:
-        """
-        The OCID of the Management Agent.
-        """
+    def management_agent_id(self) -> Optional[str]:
         return pulumi.get(self, "management_agent_id")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Log analytics entity name.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="sourceId")
-    def source_id(self) -> str:
-        """
-        This indicates the type of source. It is primarily for Enterprise Manager Repository ID.
-        """
+    def source_id(self) -> Optional[str]:
         return pulumi.get(self, "source_id")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        A filter to return only those log analytics entities with the specified lifecycle state. The state value is case-insensitive.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the resource was created, in the format defined by RFC3339.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time the resource was last updated, in the format defined by RFC3339.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="timezoneRegion")
-    def timezone_region(self) -> str:
-        """
-        The timezone region of the log analytics entity.
-        """
+    def timezone_region(self) -> Optional[str]:
         return pulumi.get(self, "timezone_region")
 
 
@@ -1540,151 +1181,127 @@ class GetLogAnalyticsLogGroupsFilterResult(dict):
 @pulumi.output_type
 class GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemResult(dict):
     def __init__(__self__, *,
-                 compartment_id: str,
-                 defined_tags: Mapping[str, Any],
-                 description: str,
-                 display_name: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 namespace: str,
-                 time_created: str,
-                 time_updated: str):
-        """
-        :param str compartment_id: The ID of the compartment in which to list resources.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param str description: Description for this resource.
-        :param str display_name: A filter to return only log analytics log groups whose displayName matches the entire display name given. The match is case-insensitive.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param str id: The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
-        :param str namespace: The Logging Analytics namespace used for the request.
-        :param str time_created: The date and time the resource was created, in the format defined by RFC3339.
-        :param str time_updated: The date and time the resource was last updated, in the format defined by RFC3339.
-        """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+                 compartment_id: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 description: Optional[str] = None,
+                 display_name: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 namespace: Optional[str] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None):
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if namespace is not None:
+            pulumi.set(__self__, "namespace", namespace)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The ID of the compartment in which to list resources.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Description for this resource.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return only log analytics log groups whose displayName matches the entire display name given. The match is case-insensitive.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
-    def namespace(self) -> str:
-        """
-        The Logging Analytics namespace used for the request.
-        """
+    def namespace(self) -> Optional[str]:
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the resource was created, in the format defined by RFC3339.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time the resource was last updated, in the format defined by RFC3339.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
 @pulumi.output_type
 class GetLogAnalyticsObjectCollectionRuleOverrideResult(dict):
     def __init__(__self__, *,
-                 match_type: str,
-                 match_value: str,
-                 property_name: str,
-                 property_value: str):
-        pulumi.set(__self__, "match_type", match_type)
-        pulumi.set(__self__, "match_value", match_value)
-        pulumi.set(__self__, "property_name", property_name)
-        pulumi.set(__self__, "property_value", property_value)
+                 match_type: Optional[str] = None,
+                 match_value: Optional[str] = None,
+                 property_name: Optional[str] = None,
+                 property_value: Optional[str] = None):
+        if match_type is not None:
+            pulumi.set(__self__, "match_type", match_type)
+        if match_value is not None:
+            pulumi.set(__self__, "match_value", match_value)
+        if property_name is not None:
+            pulumi.set(__self__, "property_name", property_name)
+        if property_value is not None:
+            pulumi.set(__self__, "property_value", property_value)
 
     @property
     @pulumi.getter(name="matchType")
-    def match_type(self) -> str:
+    def match_type(self) -> Optional[str]:
         return pulumi.get(self, "match_type")
 
     @property
     @pulumi.getter(name="matchValue")
-    def match_value(self) -> str:
+    def match_value(self) -> Optional[str]:
         return pulumi.get(self, "match_value")
 
     @property
     @pulumi.getter(name="propertyName")
-    def property_name(self) -> str:
+    def property_name(self) -> Optional[str]:
         return pulumi.get(self, "property_name")
 
     @property
     @pulumi.getter(name="propertyValue")
-    def property_value(self) -> str:
+    def property_value(self) -> Optional[str]:
         return pulumi.get(self, "property_value")
 
 
@@ -1694,9 +1311,6 @@ class GetLogAnalyticsObjectCollectionRulesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: A filter to return rules only matching with this name.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -1705,9 +1319,6 @@ class GetLogAnalyticsObjectCollectionRulesFilterResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        A filter to return rules only matching with this name.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -1724,600 +1335,453 @@ class GetLogAnalyticsObjectCollectionRulesFilterResult(dict):
 @pulumi.output_type
 class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemResult(dict):
     def __init__(__self__, *,
-                 char_encoding: str,
-                 collection_type: str,
-                 compartment_id: str,
-                 defined_tags: Mapping[str, Any],
-                 description: str,
-                 entity_id: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 is_enabled: bool,
-                 lifecycle_details: str,
-                 log_group_id: str,
-                 log_set: str,
-                 log_set_ext_regex: str,
-                 log_set_key: str,
-                 log_source_name: str,
-                 name: str,
-                 namespace: str,
-                 object_name_filters: Sequence[str],
-                 os_bucket_name: str,
-                 os_namespace: str,
-                 overrides: Sequence['outputs.GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverrideResult'],
-                 poll_since: str,
-                 poll_till: str,
-                 state: str,
-                 time_created: str,
-                 time_updated: str,
-                 timezone: str):
-        """
-        :param str char_encoding: An optional character encoding to aid in detecting the character encoding of the contents of the objects while processing. It is recommended to set this value as ISO_8589_1 when configuring content of the objects having more numeric characters, and very few alphabets. For e.g. this applies when configuring VCN Flow Logs.
-        :param str collection_type: The type of collection. Supported collection types: LIVE, HISTORIC, HISTORIC_LIVE
-        :param str compartment_id: The ID of the compartment in which to list resources.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param str description: A string that describes the details of the rule. It does not have to be unique, and can be changed. Avoid entering confidential information.
-        :param str entity_id: Logging Analytics entity OCID to associate the processed logs with.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this rule.
-        :param bool is_enabled: Whether or not this rule is currently enabled.
-        :param str lifecycle_details: A detailed status of the life cycle state.
-        :param str log_group_id: Logging Analytics Log group OCID to associate the processed logs with.
-        :param str log_set: The logSet to be associated with the processed logs. The logSet feature can be used by customers with high volume of data  and this feature has to be enabled for a given tenancy prior to its usage. When logSetExtRegex value is provided, it will take precedence over this logSet value and logSet will be computed dynamically  using logSetKey and logSetExtRegex.
-        :param str log_set_ext_regex: The regex to be applied against given logSetKey. Regex has to be in string escaped format.
-        :param str log_set_key: An optional parameter to indicate from where the logSet to be extracted using logSetExtRegex. Default value is OBJECT_PATH (e.g. /n/<namespace>/b/<bucketname>/o/<objectname>).
-        :param str log_source_name: Name of the Logging Analytics Source to use for the processing.
-        :param str name: A filter to return rules only matching with this name.
-        :param str namespace: The Logging Analytics namespace used for the request.
-        :param Sequence[str] object_name_filters: When the filters are provided, only the objects matching the filters are picked up for processing. The matchType supported is exact match and accommodates wildcard "*". For more information on filters, see [Event Filters](https://docs.oracle.com/en-us/iaas/Content/Events/Concepts/filterevents.htm).
-        :param str os_bucket_name: Name of the Object Storage bucket.
-        :param str os_namespace: Object Storage namespace.
-        :param Sequence['GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverrideArgs'] overrides: Use this to override some property values which are defined at bucket level to the scope of object. Supported propeties for override are, logSourceName, charEncoding. Supported matchType for override are "contains".
-        :param str poll_since: The oldest time of the file in the bucket to consider for collection. Accepted values are: BEGINNING or CURRENT_TIME or RFC3339 formatted datetime string. When collectionType is LIVE, specifying pollSince value other than CURRENT_TIME will result in error.
-        :param str poll_till: The oldest time of the file in the bucket to consider for collection. Accepted values are: CURRENT_TIME or RFC3339 formatted datetime string. When collectionType is LIVE, specifying pollTill will result in error.
-        :param str state: Lifecycle state filter.
-        :param str time_created: The time when this rule was created. An RFC3339 formatted datetime string.
-        :param str time_updated: The time when this rule was last updated. An RFC3339 formatted datetime string.
-        :param str timezone: Timezone to be used when processing log entries whose timestamps do not include an explicit timezone.  When this property is not specified, the timezone of the entity specified is used.  If the entity is also not specified or do not have a valid timezone then UTC is used.
-        """
-        pulumi.set(__self__, "char_encoding", char_encoding)
-        pulumi.set(__self__, "collection_type", collection_type)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "entity_id", entity_id)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "log_group_id", log_group_id)
-        pulumi.set(__self__, "log_set", log_set)
-        pulumi.set(__self__, "log_set_ext_regex", log_set_ext_regex)
-        pulumi.set(__self__, "log_set_key", log_set_key)
-        pulumi.set(__self__, "log_source_name", log_source_name)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "object_name_filters", object_name_filters)
-        pulumi.set(__self__, "os_bucket_name", os_bucket_name)
-        pulumi.set(__self__, "os_namespace", os_namespace)
-        pulumi.set(__self__, "overrides", overrides)
-        pulumi.set(__self__, "poll_since", poll_since)
-        pulumi.set(__self__, "poll_till", poll_till)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "timezone", timezone)
+                 char_encoding: Optional[str] = None,
+                 collection_type: Optional[str] = None,
+                 compartment_id: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 description: Optional[str] = None,
+                 entity_id: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 is_enabled: Optional[bool] = None,
+                 lifecycle_details: Optional[str] = None,
+                 log_group_id: Optional[str] = None,
+                 log_set: Optional[str] = None,
+                 log_set_ext_regex: Optional[str] = None,
+                 log_set_key: Optional[str] = None,
+                 log_source_name: Optional[str] = None,
+                 name: Optional[str] = None,
+                 namespace: Optional[str] = None,
+                 object_name_filters: Optional[Sequence[str]] = None,
+                 os_bucket_name: Optional[str] = None,
+                 os_namespace: Optional[str] = None,
+                 overrides: Optional[Sequence['outputs.GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverrideResult']] = None,
+                 poll_since: Optional[str] = None,
+                 poll_till: Optional[str] = None,
+                 state: Optional[str] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None,
+                 timezone: Optional[str] = None):
+        if char_encoding is not None:
+            pulumi.set(__self__, "char_encoding", char_encoding)
+        if collection_type is not None:
+            pulumi.set(__self__, "collection_type", collection_type)
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if entity_id is not None:
+            pulumi.set(__self__, "entity_id", entity_id)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if is_enabled is not None:
+            pulumi.set(__self__, "is_enabled", is_enabled)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if log_group_id is not None:
+            pulumi.set(__self__, "log_group_id", log_group_id)
+        if log_set is not None:
+            pulumi.set(__self__, "log_set", log_set)
+        if log_set_ext_regex is not None:
+            pulumi.set(__self__, "log_set_ext_regex", log_set_ext_regex)
+        if log_set_key is not None:
+            pulumi.set(__self__, "log_set_key", log_set_key)
+        if log_source_name is not None:
+            pulumi.set(__self__, "log_source_name", log_source_name)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if namespace is not None:
+            pulumi.set(__self__, "namespace", namespace)
+        if object_name_filters is not None:
+            pulumi.set(__self__, "object_name_filters", object_name_filters)
+        if os_bucket_name is not None:
+            pulumi.set(__self__, "os_bucket_name", os_bucket_name)
+        if os_namespace is not None:
+            pulumi.set(__self__, "os_namespace", os_namespace)
+        if overrides is not None:
+            pulumi.set(__self__, "overrides", overrides)
+        if poll_since is not None:
+            pulumi.set(__self__, "poll_since", poll_since)
+        if poll_till is not None:
+            pulumi.set(__self__, "poll_till", poll_till)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
+        if timezone is not None:
+            pulumi.set(__self__, "timezone", timezone)
 
     @property
     @pulumi.getter(name="charEncoding")
-    def char_encoding(self) -> str:
-        """
-        An optional character encoding to aid in detecting the character encoding of the contents of the objects while processing. It is recommended to set this value as ISO_8589_1 when configuring content of the objects having more numeric characters, and very few alphabets. For e.g. this applies when configuring VCN Flow Logs.
-        """
+    def char_encoding(self) -> Optional[str]:
         return pulumi.get(self, "char_encoding")
 
     @property
     @pulumi.getter(name="collectionType")
-    def collection_type(self) -> str:
-        """
-        The type of collection. Supported collection types: LIVE, HISTORIC, HISTORIC_LIVE
-        """
+    def collection_type(self) -> Optional[str]:
         return pulumi.get(self, "collection_type")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The ID of the compartment in which to list resources.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        A string that describes the details of the rule. It does not have to be unique, and can be changed. Avoid entering confidential information.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="entityId")
-    def entity_id(self) -> str:
-        """
-        Logging Analytics entity OCID to associate the processed logs with.
-        """
+    def entity_id(self) -> Optional[str]:
         return pulumi.get(self, "entity_id")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this rule.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isEnabled")
-    def is_enabled(self) -> bool:
-        """
-        Whether or not this rule is currently enabled.
-        """
+    def is_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_enabled")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A detailed status of the life cycle state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="logGroupId")
-    def log_group_id(self) -> str:
-        """
-        Logging Analytics Log group OCID to associate the processed logs with.
-        """
+    def log_group_id(self) -> Optional[str]:
         return pulumi.get(self, "log_group_id")
 
     @property
     @pulumi.getter(name="logSet")
-    def log_set(self) -> str:
-        """
-        The logSet to be associated with the processed logs. The logSet feature can be used by customers with high volume of data  and this feature has to be enabled for a given tenancy prior to its usage. When logSetExtRegex value is provided, it will take precedence over this logSet value and logSet will be computed dynamically  using logSetKey and logSetExtRegex.
-        """
+    def log_set(self) -> Optional[str]:
         return pulumi.get(self, "log_set")
 
     @property
     @pulumi.getter(name="logSetExtRegex")
-    def log_set_ext_regex(self) -> str:
-        """
-        The regex to be applied against given logSetKey. Regex has to be in string escaped format.
-        """
+    def log_set_ext_regex(self) -> Optional[str]:
         return pulumi.get(self, "log_set_ext_regex")
 
     @property
     @pulumi.getter(name="logSetKey")
-    def log_set_key(self) -> str:
-        """
-        An optional parameter to indicate from where the logSet to be extracted using logSetExtRegex. Default value is OBJECT_PATH (e.g. /n/<namespace>/b/<bucketname>/o/<objectname>).
-        """
+    def log_set_key(self) -> Optional[str]:
         return pulumi.get(self, "log_set_key")
 
     @property
     @pulumi.getter(name="logSourceName")
-    def log_source_name(self) -> str:
-        """
-        Name of the Logging Analytics Source to use for the processing.
-        """
+    def log_source_name(self) -> Optional[str]:
         return pulumi.get(self, "log_source_name")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        A filter to return rules only matching with this name.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def namespace(self) -> str:
-        """
-        The Logging Analytics namespace used for the request.
-        """
+    def namespace(self) -> Optional[str]:
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter(name="objectNameFilters")
-    def object_name_filters(self) -> Sequence[str]:
-        """
-        When the filters are provided, only the objects matching the filters are picked up for processing. The matchType supported is exact match and accommodates wildcard "*". For more information on filters, see [Event Filters](https://docs.oracle.com/en-us/iaas/Content/Events/Concepts/filterevents.htm).
-        """
+    def object_name_filters(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "object_name_filters")
 
     @property
     @pulumi.getter(name="osBucketName")
-    def os_bucket_name(self) -> str:
-        """
-        Name of the Object Storage bucket.
-        """
+    def os_bucket_name(self) -> Optional[str]:
         return pulumi.get(self, "os_bucket_name")
 
     @property
     @pulumi.getter(name="osNamespace")
-    def os_namespace(self) -> str:
-        """
-        Object Storage namespace.
-        """
+    def os_namespace(self) -> Optional[str]:
         return pulumi.get(self, "os_namespace")
 
     @property
     @pulumi.getter
-    def overrides(self) -> Sequence['outputs.GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverrideResult']:
-        """
-        Use this to override some property values which are defined at bucket level to the scope of object. Supported propeties for override are, logSourceName, charEncoding. Supported matchType for override are "contains".
-        """
+    def overrides(self) -> Optional[Sequence['outputs.GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverrideResult']]:
         return pulumi.get(self, "overrides")
 
     @property
     @pulumi.getter(name="pollSince")
-    def poll_since(self) -> str:
-        """
-        The oldest time of the file in the bucket to consider for collection. Accepted values are: BEGINNING or CURRENT_TIME or RFC3339 formatted datetime string. When collectionType is LIVE, specifying pollSince value other than CURRENT_TIME will result in error.
-        """
+    def poll_since(self) -> Optional[str]:
         return pulumi.get(self, "poll_since")
 
     @property
     @pulumi.getter(name="pollTill")
-    def poll_till(self) -> str:
-        """
-        The oldest time of the file in the bucket to consider for collection. Accepted values are: CURRENT_TIME or RFC3339 formatted datetime string. When collectionType is LIVE, specifying pollTill will result in error.
-        """
+    def poll_till(self) -> Optional[str]:
         return pulumi.get(self, "poll_till")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        Lifecycle state filter.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time when this rule was created. An RFC3339 formatted datetime string.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time when this rule was last updated. An RFC3339 formatted datetime string.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter
-    def timezone(self) -> str:
-        """
-        Timezone to be used when processing log entries whose timestamps do not include an explicit timezone.  When this property is not specified, the timezone of the entity specified is used.  If the entity is also not specified or do not have a valid timezone then UTC is used.
-        """
+    def timezone(self) -> Optional[str]:
         return pulumi.get(self, "timezone")
 
 
 @pulumi.output_type
 class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverrideResult(dict):
     def __init__(__self__, *,
-                 match_type: str,
-                 match_value: str,
-                 property_name: str,
-                 property_value: str):
-        pulumi.set(__self__, "match_type", match_type)
-        pulumi.set(__self__, "match_value", match_value)
-        pulumi.set(__self__, "property_name", property_name)
-        pulumi.set(__self__, "property_value", property_value)
+                 match_type: Optional[str] = None,
+                 match_value: Optional[str] = None,
+                 property_name: Optional[str] = None,
+                 property_value: Optional[str] = None):
+        if match_type is not None:
+            pulumi.set(__self__, "match_type", match_type)
+        if match_value is not None:
+            pulumi.set(__self__, "match_value", match_value)
+        if property_name is not None:
+            pulumi.set(__self__, "property_name", property_name)
+        if property_value is not None:
+            pulumi.set(__self__, "property_value", property_value)
 
     @property
     @pulumi.getter(name="matchType")
-    def match_type(self) -> str:
+    def match_type(self) -> Optional[str]:
         return pulumi.get(self, "match_type")
 
     @property
     @pulumi.getter(name="matchValue")
-    def match_value(self) -> str:
+    def match_value(self) -> Optional[str]:
         return pulumi.get(self, "match_value")
 
     @property
     @pulumi.getter(name="propertyName")
-    def property_name(self) -> str:
+    def property_name(self) -> Optional[str]:
         return pulumi.get(self, "property_name")
 
     @property
     @pulumi.getter(name="propertyValue")
-    def property_value(self) -> str:
+    def property_value(self) -> Optional[str]:
         return pulumi.get(self, "property_value")
 
 
 @pulumi.output_type
 class GetLogAnalyticsPreferenceItemResult(dict):
     def __init__(__self__, *,
-                 name: str,
-                 value: str):
-        """
-        :param str name: The preference name.
-        :param str value: The preference value.
-        """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "value", value)
+                 name: Optional[str] = None,
+                 value: Optional[str] = None):
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The preference name.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def value(self) -> str:
-        """
-        The preference value.
-        """
+    def value(self) -> Optional[str]:
         return pulumi.get(self, "value")
 
 
 @pulumi.output_type
 class GetLogAnalyticsResourceCategoriesListCategoryResult(dict):
     def __init__(__self__, *,
-                 description: str,
-                 display_name: str,
-                 is_system: bool,
-                 name: str,
-                 type: str):
-        """
-        :param str description: The category description.
-        :param str display_name: The category display name.
-        :param bool is_system: The system flag. A value of false denotes a user-created category assignment. A value of true denotes an Oracle-defined category assignment.
-        :param str name: The unique name that identifies the category.
-        :param str type: The category type. Values include "PRODUCT", "TIER", "VENDOR" and "GENERIC".
-        """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "is_system", is_system)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "type", type)
+                 description: Optional[str] = None,
+                 display_name: Optional[str] = None,
+                 is_system: Optional[bool] = None,
+                 name: Optional[str] = None,
+                 type: Optional[str] = None):
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if is_system is not None:
+            pulumi.set(__self__, "is_system", is_system)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        The category description.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The category display name.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="isSystem")
-    def is_system(self) -> bool:
-        """
-        The system flag. A value of false denotes a user-created category assignment. A value of true denotes an Oracle-defined category assignment.
-        """
+    def is_system(self) -> Optional[bool]:
         return pulumi.get(self, "is_system")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The unique name that identifies the category.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        The category type. Values include "PRODUCT", "TIER", "VENDOR" and "GENERIC".
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
 
 @pulumi.output_type
 class GetLogAnalyticsResourceCategoriesListItemResult(dict):
     def __init__(__self__, *,
-                 category_name: str,
-                 is_system: bool,
-                 resource_id: str,
-                 resource_type: str):
-        """
-        :param str category_name: The category name to which this resource belongs.
-        :param bool is_system: The system flag. A value of false denotes a user-created category assignment. A value of true denotes an Oracle-defined category assignment.
-        :param str resource_id: The unique identifier of the resource, usually a name or ocid.
-        :param str resource_type: The resource type.
-        """
-        pulumi.set(__self__, "category_name", category_name)
-        pulumi.set(__self__, "is_system", is_system)
-        pulumi.set(__self__, "resource_id", resource_id)
-        pulumi.set(__self__, "resource_type", resource_type)
+                 category_name: Optional[str] = None,
+                 is_system: Optional[bool] = None,
+                 resource_id: Optional[str] = None,
+                 resource_type: Optional[str] = None):
+        if category_name is not None:
+            pulumi.set(__self__, "category_name", category_name)
+        if is_system is not None:
+            pulumi.set(__self__, "is_system", is_system)
+        if resource_id is not None:
+            pulumi.set(__self__, "resource_id", resource_id)
+        if resource_type is not None:
+            pulumi.set(__self__, "resource_type", resource_type)
 
     @property
     @pulumi.getter(name="categoryName")
-    def category_name(self) -> str:
-        """
-        The category name to which this resource belongs.
-        """
+    def category_name(self) -> Optional[str]:
         return pulumi.get(self, "category_name")
 
     @property
     @pulumi.getter(name="isSystem")
-    def is_system(self) -> bool:
-        """
-        The system flag. A value of false denotes a user-created category assignment. A value of true denotes an Oracle-defined category assignment.
-        """
+    def is_system(self) -> Optional[bool]:
         return pulumi.get(self, "is_system")
 
     @property
     @pulumi.getter(name="resourceId")
-    def resource_id(self) -> str:
-        """
-        The unique identifier of the resource, usually a name or ocid.
-        """
+    def resource_id(self) -> Optional[str]:
         return pulumi.get(self, "resource_id")
 
     @property
     @pulumi.getter(name="resourceType")
-    def resource_type(self) -> str:
-        """
-        The resource type.
-        """
+    def resource_type(self) -> Optional[str]:
         return pulumi.get(self, "resource_type")
 
 
 @pulumi.output_type
 class GetNamespaceEffectivePropertiesEffectivePropertyCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemResult']):
-        """
-        :param Sequence['GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemArgs'] items: A list of properties and their effective values.
-        """
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemResult']:
-        """
-        A list of properties and their effective values.
-        """
+    def items(self) -> Optional[Sequence['outputs.GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemResult(dict):
     def __init__(__self__, *,
-                 effective_level: str,
-                 name: str,
-                 patterns: Sequence['outputs.GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternResult'],
-                 value: str):
-        """
-        :param str effective_level: The effective level of the property value.
-        :param str name: The property name used for filtering.
-        :param Sequence['GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternArgs'] patterns: A list of pattern level override values for the property.
-        :param str value: The effective value of the property. This is determined by considering the value set at the most effective level.
-        """
-        pulumi.set(__self__, "effective_level", effective_level)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "patterns", patterns)
-        pulumi.set(__self__, "value", value)
+                 effective_level: Optional[str] = None,
+                 name: Optional[str] = None,
+                 patterns: Optional[Sequence['outputs.GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternResult']] = None,
+                 value: Optional[str] = None):
+        if effective_level is not None:
+            pulumi.set(__self__, "effective_level", effective_level)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if patterns is not None:
+            pulumi.set(__self__, "patterns", patterns)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter(name="effectiveLevel")
-    def effective_level(self) -> str:
-        """
-        The effective level of the property value.
-        """
+    def effective_level(self) -> Optional[str]:
         return pulumi.get(self, "effective_level")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The property name used for filtering.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def patterns(self) -> Sequence['outputs.GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternResult']:
-        """
-        A list of pattern level override values for the property.
-        """
+    def patterns(self) -> Optional[Sequence['outputs.GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternResult']]:
         return pulumi.get(self, "patterns")
 
     @property
     @pulumi.getter
-    def value(self) -> str:
-        """
-        The effective value of the property. This is determined by considering the value set at the most effective level.
-        """
+    def value(self) -> Optional[str]:
         return pulumi.get(self, "value")
 
 
 @pulumi.output_type
 class GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPatternResult(dict):
     def __init__(__self__, *,
-                 effective_level: str,
-                 id: str,
-                 value: str):
-        """
-        :param str effective_level: The effective level of the property value.
-        :param str id: The pattern id.
-        :param str value: The effective value of the property. This is determined by considering the value set at the most effective level.
-        """
-        pulumi.set(__self__, "effective_level", effective_level)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "value", value)
+                 effective_level: Optional[str] = None,
+                 id: Optional[str] = None,
+                 value: Optional[str] = None):
+        if effective_level is not None:
+            pulumi.set(__self__, "effective_level", effective_level)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter(name="effectiveLevel")
-    def effective_level(self) -> str:
-        """
-        The effective level of the property value.
-        """
+    def effective_level(self) -> Optional[str]:
         return pulumi.get(self, "effective_level")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The pattern id.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
-    def value(self) -> str:
-        """
-        The effective value of the property. This is determined by considering the value set at the most effective level.
-        """
+    def value(self) -> Optional[str]:
         return pulumi.get(self, "value")
 
 
@@ -2327,9 +1791,6 @@ class GetNamespaceEffectivePropertiesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The property name used for filtering.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -2338,9 +1799,6 @@ class GetNamespaceEffectivePropertiesFilterResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The property name used for filtering.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -2357,175 +1815,127 @@ class GetNamespaceEffectivePropertiesFilterResult(dict):
 @pulumi.output_type
 class GetNamespaceIngestTimeRuleActionResult(dict):
     def __init__(__self__, *,
-                 compartment_id: str,
-                 dimensions: Sequence[str],
-                 metric_name: str,
-                 namespace: str,
-                 resource_group: str,
-                 type: str):
-        """
-        :param str compartment_id: Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param Sequence[str] dimensions: Additional dimensions to publish for the extracted metric. A valid list contains the source field names whose values are to be published as dimensions. The source name itself is specified using a special macro SOURCE_NAME
-        :param str metric_name: The metric name of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
-        :param str namespace: The Logging Analytics namespace used for the request.
-        :param str resource_group: The resourceGroup of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
-        :param str type: Discriminator.
-        """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "dimensions", dimensions)
-        pulumi.set(__self__, "metric_name", metric_name)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "resource_group", resource_group)
-        pulumi.set(__self__, "type", type)
+                 compartment_id: Optional[str] = None,
+                 dimensions: Optional[Sequence[str]] = None,
+                 metric_name: Optional[str] = None,
+                 namespace: Optional[str] = None,
+                 resource_group: Optional[str] = None,
+                 type: Optional[str] = None):
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if dimensions is not None:
+            pulumi.set(__self__, "dimensions", dimensions)
+        if metric_name is not None:
+            pulumi.set(__self__, "metric_name", metric_name)
+        if namespace is not None:
+            pulumi.set(__self__, "namespace", namespace)
+        if resource_group is not None:
+            pulumi.set(__self__, "resource_group", resource_group)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter
-    def dimensions(self) -> Sequence[str]:
-        """
-        Additional dimensions to publish for the extracted metric. A valid list contains the source field names whose values are to be published as dimensions. The source name itself is specified using a special macro SOURCE_NAME
-        """
+    def dimensions(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "dimensions")
 
     @property
     @pulumi.getter(name="metricName")
-    def metric_name(self) -> str:
-        """
-        The metric name of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
-        """
+    def metric_name(self) -> Optional[str]:
         return pulumi.get(self, "metric_name")
 
     @property
     @pulumi.getter
-    def namespace(self) -> str:
-        """
-        The Logging Analytics namespace used for the request.
-        """
+    def namespace(self) -> Optional[str]:
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter(name="resourceGroup")
-    def resource_group(self) -> str:
-        """
-        The resourceGroup of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
-        """
+    def resource_group(self) -> Optional[str]:
         return pulumi.get(self, "resource_group")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        Discriminator.
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
 
 @pulumi.output_type
 class GetNamespaceIngestTimeRuleConditionResult(dict):
     def __init__(__self__, *,
-                 additional_conditions: Sequence['outputs.GetNamespaceIngestTimeRuleConditionAdditionalConditionResult'],
-                 field_name: str,
-                 field_operator: str,
-                 field_value: str,
-                 kind: str):
-        """
-        :param Sequence['GetNamespaceIngestTimeRuleConditionAdditionalConditionArgs'] additional_conditions: Optional additional condition(s) to be evaluated.
-        :param str field_name: The field name to be evaluated.
-        :param str field_operator: The operator to be used for evaluating the field.
-        :param str field_value: The field value to be evaluated.
-        :param str kind: Discriminator.
-        """
-        pulumi.set(__self__, "additional_conditions", additional_conditions)
-        pulumi.set(__self__, "field_name", field_name)
-        pulumi.set(__self__, "field_operator", field_operator)
-        pulumi.set(__self__, "field_value", field_value)
-        pulumi.set(__self__, "kind", kind)
+                 additional_conditions: Optional[Sequence['outputs.GetNamespaceIngestTimeRuleConditionAdditionalConditionResult']] = None,
+                 field_name: Optional[str] = None,
+                 field_operator: Optional[str] = None,
+                 field_value: Optional[str] = None,
+                 kind: Optional[str] = None):
+        if additional_conditions is not None:
+            pulumi.set(__self__, "additional_conditions", additional_conditions)
+        if field_name is not None:
+            pulumi.set(__self__, "field_name", field_name)
+        if field_operator is not None:
+            pulumi.set(__self__, "field_operator", field_operator)
+        if field_value is not None:
+            pulumi.set(__self__, "field_value", field_value)
+        if kind is not None:
+            pulumi.set(__self__, "kind", kind)
 
     @property
     @pulumi.getter(name="additionalConditions")
-    def additional_conditions(self) -> Sequence['outputs.GetNamespaceIngestTimeRuleConditionAdditionalConditionResult']:
-        """
-        Optional additional condition(s) to be evaluated.
-        """
+    def additional_conditions(self) -> Optional[Sequence['outputs.GetNamespaceIngestTimeRuleConditionAdditionalConditionResult']]:
         return pulumi.get(self, "additional_conditions")
 
     @property
     @pulumi.getter(name="fieldName")
-    def field_name(self) -> str:
-        """
-        The field name to be evaluated.
-        """
+    def field_name(self) -> Optional[str]:
         return pulumi.get(self, "field_name")
 
     @property
     @pulumi.getter(name="fieldOperator")
-    def field_operator(self) -> str:
-        """
-        The operator to be used for evaluating the field.
-        """
+    def field_operator(self) -> Optional[str]:
         return pulumi.get(self, "field_operator")
 
     @property
     @pulumi.getter(name="fieldValue")
-    def field_value(self) -> str:
-        """
-        The field value to be evaluated.
-        """
+    def field_value(self) -> Optional[str]:
         return pulumi.get(self, "field_value")
 
     @property
     @pulumi.getter
-    def kind(self) -> str:
-        """
-        Discriminator.
-        """
+    def kind(self) -> Optional[str]:
         return pulumi.get(self, "kind")
 
 
 @pulumi.output_type
 class GetNamespaceIngestTimeRuleConditionAdditionalConditionResult(dict):
     def __init__(__self__, *,
-                 condition_field: str,
-                 condition_operator: str,
-                 condition_value: str):
-        """
-        :param str condition_field: The additional field name to be evaluated.
-        :param str condition_operator: The operator to be used for evaluating the additional field.
-        :param str condition_value: The additional field value to be evaluated.
-        """
-        pulumi.set(__self__, "condition_field", condition_field)
-        pulumi.set(__self__, "condition_operator", condition_operator)
-        pulumi.set(__self__, "condition_value", condition_value)
+                 condition_field: Optional[str] = None,
+                 condition_operator: Optional[str] = None,
+                 condition_value: Optional[str] = None):
+        if condition_field is not None:
+            pulumi.set(__self__, "condition_field", condition_field)
+        if condition_operator is not None:
+            pulumi.set(__self__, "condition_operator", condition_operator)
+        if condition_value is not None:
+            pulumi.set(__self__, "condition_value", condition_value)
 
     @property
     @pulumi.getter(name="conditionField")
-    def condition_field(self) -> str:
-        """
-        The additional field name to be evaluated.
-        """
+    def condition_field(self) -> Optional[str]:
         return pulumi.get(self, "condition_field")
 
     @property
     @pulumi.getter(name="conditionOperator")
-    def condition_operator(self) -> str:
-        """
-        The operator to be used for evaluating the additional field.
-        """
+    def condition_operator(self) -> Optional[str]:
         return pulumi.get(self, "condition_operator")
 
     @property
     @pulumi.getter(name="conditionValue")
-    def condition_value(self) -> str:
-        """
-        The additional field value to be evaluated.
-        """
+    def condition_value(self) -> Optional[str]:
         return pulumi.get(self, "condition_value")
 
 
@@ -2559,162 +1969,122 @@ class GetNamespaceIngestTimeRulesFilterResult(dict):
 @pulumi.output_type
 class GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemResult(dict):
     def __init__(__self__, *,
-                 compartment_id: str,
-                 condition_kind: str,
-                 defined_tags: Mapping[str, Any],
-                 description: str,
-                 display_name: str,
-                 field_name: str,
-                 field_value: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 is_enabled: bool,
-                 state: str,
-                 time_created: str,
-                 time_updated: str):
-        """
-        :param str compartment_id: The ID of the compartment in which to list resources.
-        :param str condition_kind: The ingest time rule condition kind used for filtering. Only rules with conditions of the specified kind will be returned.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param str description: Description for this resource.
-        :param str display_name: A filter to return rules whose displayName matches in whole or in part the specified value. The match is case-insensitive.
-        :param str field_name: The field name used for filtering. Only rules using the specified field name will be returned.
-        :param str field_value: The field value used for filtering. Only rules using the specified field value will be returned.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param str id: The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
-        :param bool is_enabled: A flag indicating whether or not the ingest time rule is enabled.
-        :param str state: The rule lifecycle state used for filtering. Currently supported values are ACTIVE and DELETED.
-        :param str time_created: The date and time the resource was created, in the format defined by RFC3339.
-        :param str time_updated: The date and time the resource was last updated, in the format defined by RFC3339.
-        """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "condition_kind", condition_kind)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "field_name", field_name)
-        pulumi.set(__self__, "field_value", field_value)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+                 compartment_id: Optional[str] = None,
+                 condition_kind: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 description: Optional[str] = None,
+                 display_name: Optional[str] = None,
+                 field_name: Optional[str] = None,
+                 field_value: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 is_enabled: Optional[bool] = None,
+                 state: Optional[str] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None):
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if condition_kind is not None:
+            pulumi.set(__self__, "condition_kind", condition_kind)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if field_name is not None:
+            pulumi.set(__self__, "field_name", field_name)
+        if field_value is not None:
+            pulumi.set(__self__, "field_value", field_value)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if is_enabled is not None:
+            pulumi.set(__self__, "is_enabled", is_enabled)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The ID of the compartment in which to list resources.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="conditionKind")
-    def condition_kind(self) -> str:
-        """
-        The ingest time rule condition kind used for filtering. Only rules with conditions of the specified kind will be returned.
-        """
+    def condition_kind(self) -> Optional[str]:
         return pulumi.get(self, "condition_kind")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Description for this resource.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return rules whose displayName matches in whole or in part the specified value. The match is case-insensitive.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="fieldName")
-    def field_name(self) -> str:
-        """
-        The field name used for filtering. Only rules using the specified field name will be returned.
-        """
+    def field_name(self) -> Optional[str]:
         return pulumi.get(self, "field_name")
 
     @property
     @pulumi.getter(name="fieldValue")
-    def field_value(self) -> str:
-        """
-        The field value used for filtering. Only rules using the specified field value will be returned.
-        """
+    def field_value(self) -> Optional[str]:
         return pulumi.get(self, "field_value")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isEnabled")
-    def is_enabled(self) -> bool:
-        """
-        A flag indicating whether or not the ingest time rule is enabled.
-        """
+    def is_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_enabled")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The rule lifecycle state used for filtering. Currently supported values are ACTIVE and DELETED.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the resource was created, in the format defined by RFC3339.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time the resource was last updated, in the format defined by RFC3339.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -2724,9 +2094,6 @@ class GetNamespacePropertiesMetadataFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: The property name used for filtering.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -2735,9 +2102,6 @@ class GetNamespacePropertiesMetadataFilterResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        The property name used for filtering.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -2754,109 +2118,79 @@ class GetNamespacePropertiesMetadataFilterResult(dict):
 @pulumi.output_type
 class GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemResult']):
-        """
-        :param Sequence['GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemArgs'] items: An array of properties along with their metadata summary.
-        """
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemResult']:
-        """
-        An array of properties along with their metadata summary.
-        """
+    def items(self) -> Optional[Sequence['outputs.GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemResult(dict):
     def __init__(__self__, *,
-                 default_value: str,
-                 description: str,
-                 display_name: str,
-                 levels: Sequence['outputs.GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelResult'],
-                 name: str):
-        """
-        :param str default_value: The default property value.
-        :param str description: The property description.
-        :param str display_name: The property display name.
-        :param Sequence['GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelArgs'] levels: A list of levels at which the property could be defined.
-        :param str name: The property name used for filtering.
-        """
-        pulumi.set(__self__, "default_value", default_value)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "levels", levels)
-        pulumi.set(__self__, "name", name)
+                 default_value: Optional[str] = None,
+                 description: Optional[str] = None,
+                 display_name: Optional[str] = None,
+                 levels: Optional[Sequence['outputs.GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelResult']] = None,
+                 name: Optional[str] = None):
+        if default_value is not None:
+            pulumi.set(__self__, "default_value", default_value)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if levels is not None:
+            pulumi.set(__self__, "levels", levels)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter(name="defaultValue")
-    def default_value(self) -> str:
-        """
-        The default property value.
-        """
+    def default_value(self) -> Optional[str]:
         return pulumi.get(self, "default_value")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        The property description.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The property display name.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
-    def levels(self) -> Sequence['outputs.GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelResult']:
-        """
-        A list of levels at which the property could be defined.
-        """
+    def levels(self) -> Optional[Sequence['outputs.GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelResult']]:
         return pulumi.get(self, "levels")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The property name used for filtering.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
 
 @pulumi.output_type
 class GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevelResult(dict):
     def __init__(__self__, *,
-                 constraints: str,
-                 name: str):
-        """
-        :param str constraints: The constraints that apply to the properties at a certain level.
-        :param str name: The property name used for filtering.
-        """
-        pulumi.set(__self__, "constraints", constraints)
-        pulumi.set(__self__, "name", name)
+                 constraints: Optional[str] = None,
+                 name: Optional[str] = None):
+        if constraints is not None:
+            pulumi.set(__self__, "constraints", constraints)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
-    def constraints(self) -> str:
-        """
-        The constraints that apply to the properties at a certain level.
-        """
+    def constraints(self) -> Optional[str]:
         return pulumi.get(self, "constraints")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The property name used for filtering.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
 
@@ -2890,399 +2224,294 @@ class GetNamespaceRulesFilterResult(dict):
 @pulumi.output_type
 class GetNamespaceRulesRuleSummaryCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetNamespaceRulesRuleSummaryCollectionItemResult']):
-        """
-        :param Sequence['GetNamespaceRulesRuleSummaryCollectionItemArgs'] items: An array of rule summary objects.
-        """
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetNamespaceRulesRuleSummaryCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetNamespaceRulesRuleSummaryCollectionItemResult']:
-        """
-        An array of rule summary objects.
-        """
+    def items(self) -> Optional[Sequence['outputs.GetNamespaceRulesRuleSummaryCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetNamespaceRulesRuleSummaryCollectionItemResult(dict):
     def __init__(__self__, *,
-                 compartment_id: str,
-                 defined_tags: Mapping[str, Any],
-                 description: str,
-                 display_name: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 is_enabled: bool,
-                 kind: str,
-                 last_execution_status: str,
-                 state: str,
-                 time_created: str,
-                 time_last_executed: str,
-                 time_updated: str):
-        """
-        :param str compartment_id: The ID of the compartment in which to list resources.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param str description: Description for this resource.
-        :param str display_name: A filter to return rules whose displayName matches in whole or in part the specified value. The match is case-insensitive.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param str id: The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
-        :param bool is_enabled: A flag indicating whether or not the ingest time rule or scheduled task is enabled.
-        :param str kind: The rule kind used for filtering. Only rules of the specified kind will be returned.
-        :param str last_execution_status: The most recent task execution status.
-        :param str state: The rule lifecycle state used for filtering. Currently supported values are ACTIVE and DELETED.
-        :param str time_created: The date and time the resource was created, in the format defined by RFC3339.
-        :param str time_last_executed: The date and time the scheduled task last executed, in the format defined by RFC3339.
-        :param str time_updated: The date and time the resource was last updated, in the format defined by RFC3339.
-        """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "kind", kind)
-        pulumi.set(__self__, "last_execution_status", last_execution_status)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_last_executed", time_last_executed)
-        pulumi.set(__self__, "time_updated", time_updated)
+                 compartment_id: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 description: Optional[str] = None,
+                 display_name: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 is_enabled: Optional[bool] = None,
+                 kind: Optional[str] = None,
+                 last_execution_status: Optional[str] = None,
+                 state: Optional[str] = None,
+                 time_created: Optional[str] = None,
+                 time_last_executed: Optional[str] = None,
+                 time_updated: Optional[str] = None):
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if is_enabled is not None:
+            pulumi.set(__self__, "is_enabled", is_enabled)
+        if kind is not None:
+            pulumi.set(__self__, "kind", kind)
+        if last_execution_status is not None:
+            pulumi.set(__self__, "last_execution_status", last_execution_status)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_last_executed is not None:
+            pulumi.set(__self__, "time_last_executed", time_last_executed)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The ID of the compartment in which to list resources.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Description for this resource.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return rules whose displayName matches in whole or in part the specified value. The match is case-insensitive.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isEnabled")
-    def is_enabled(self) -> bool:
-        """
-        A flag indicating whether or not the ingest time rule or scheduled task is enabled.
-        """
+    def is_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_enabled")
 
     @property
     @pulumi.getter
-    def kind(self) -> str:
-        """
-        The rule kind used for filtering. Only rules of the specified kind will be returned.
-        """
+    def kind(self) -> Optional[str]:
         return pulumi.get(self, "kind")
 
     @property
     @pulumi.getter(name="lastExecutionStatus")
-    def last_execution_status(self) -> str:
-        """
-        The most recent task execution status.
-        """
+    def last_execution_status(self) -> Optional[str]:
         return pulumi.get(self, "last_execution_status")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The rule lifecycle state used for filtering. Currently supported values are ACTIVE and DELETED.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the resource was created, in the format defined by RFC3339.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeLastExecuted")
-    def time_last_executed(self) -> str:
-        """
-        The date and time the scheduled task last executed, in the format defined by RFC3339.
-        """
+    def time_last_executed(self) -> Optional[str]:
         return pulumi.get(self, "time_last_executed")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time the resource was last updated, in the format defined by RFC3339.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
 @pulumi.output_type
 class GetNamespaceScheduledTaskActionResult(dict):
     def __init__(__self__, *,
-                 compartment_id_in_subtree: bool,
-                 data_type: str,
-                 metric_extractions: Sequence['outputs.GetNamespaceScheduledTaskActionMetricExtractionResult'],
-                 purge_compartment_id: str,
-                 purge_duration: str,
-                 query_string: str,
-                 saved_search_id: str,
-                 type: str):
-        """
-        :param bool compartment_id_in_subtree: if true, purge child compartments data
-        :param str data_type: the type of the log data to be purged
-        :param Sequence['GetNamespaceScheduledTaskActionMetricExtractionArgs'] metric_extractions: Specify metric extraction for SAVED_SEARCH scheduled task execution to post to Oracle Cloud Infrastructure Monitoring.
-        :param str purge_compartment_id: the compartment OCID under which the data will be purged
-        :param str purge_duration: The duration of data to be retained, which is used to calculate the timeDataEnded when the task fires. The value should be negative. Purge duration in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. -P365D (not -P1Y) or -P14D (not -P2W).
-        :param str query_string: Purge query string.
-        :param str saved_search_id: The ManagementSavedSearch id [OCID] utilized in the action.
-        :param str type: Schedule type discriminator.
-        """
-        pulumi.set(__self__, "compartment_id_in_subtree", compartment_id_in_subtree)
-        pulumi.set(__self__, "data_type", data_type)
-        pulumi.set(__self__, "metric_extractions", metric_extractions)
-        pulumi.set(__self__, "purge_compartment_id", purge_compartment_id)
-        pulumi.set(__self__, "purge_duration", purge_duration)
-        pulumi.set(__self__, "query_string", query_string)
-        pulumi.set(__self__, "saved_search_id", saved_search_id)
-        pulumi.set(__self__, "type", type)
+                 compartment_id_in_subtree: Optional[bool] = None,
+                 data_type: Optional[str] = None,
+                 metric_extractions: Optional[Sequence['outputs.GetNamespaceScheduledTaskActionMetricExtractionResult']] = None,
+                 purge_compartment_id: Optional[str] = None,
+                 purge_duration: Optional[str] = None,
+                 query_string: Optional[str] = None,
+                 saved_search_id: Optional[str] = None,
+                 type: Optional[str] = None):
+        if compartment_id_in_subtree is not None:
+            pulumi.set(__self__, "compartment_id_in_subtree", compartment_id_in_subtree)
+        if data_type is not None:
+            pulumi.set(__self__, "data_type", data_type)
+        if metric_extractions is not None:
+            pulumi.set(__self__, "metric_extractions", metric_extractions)
+        if purge_compartment_id is not None:
+            pulumi.set(__self__, "purge_compartment_id", purge_compartment_id)
+        if purge_duration is not None:
+            pulumi.set(__self__, "purge_duration", purge_duration)
+        if query_string is not None:
+            pulumi.set(__self__, "query_string", query_string)
+        if saved_search_id is not None:
+            pulumi.set(__self__, "saved_search_id", saved_search_id)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter(name="compartmentIdInSubtree")
-    def compartment_id_in_subtree(self) -> bool:
-        """
-        if true, purge child compartments data
-        """
+    def compartment_id_in_subtree(self) -> Optional[bool]:
         return pulumi.get(self, "compartment_id_in_subtree")
 
     @property
     @pulumi.getter(name="dataType")
-    def data_type(self) -> str:
-        """
-        the type of the log data to be purged
-        """
+    def data_type(self) -> Optional[str]:
         return pulumi.get(self, "data_type")
 
     @property
     @pulumi.getter(name="metricExtractions")
-    def metric_extractions(self) -> Sequence['outputs.GetNamespaceScheduledTaskActionMetricExtractionResult']:
-        """
-        Specify metric extraction for SAVED_SEARCH scheduled task execution to post to Oracle Cloud Infrastructure Monitoring.
-        """
+    def metric_extractions(self) -> Optional[Sequence['outputs.GetNamespaceScheduledTaskActionMetricExtractionResult']]:
         return pulumi.get(self, "metric_extractions")
 
     @property
     @pulumi.getter(name="purgeCompartmentId")
-    def purge_compartment_id(self) -> str:
-        """
-        the compartment OCID under which the data will be purged
-        """
+    def purge_compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "purge_compartment_id")
 
     @property
     @pulumi.getter(name="purgeDuration")
-    def purge_duration(self) -> str:
-        """
-        The duration of data to be retained, which is used to calculate the timeDataEnded when the task fires. The value should be negative. Purge duration in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. -P365D (not -P1Y) or -P14D (not -P2W).
-        """
+    def purge_duration(self) -> Optional[str]:
         return pulumi.get(self, "purge_duration")
 
     @property
     @pulumi.getter(name="queryString")
-    def query_string(self) -> str:
-        """
-        Purge query string.
-        """
+    def query_string(self) -> Optional[str]:
         return pulumi.get(self, "query_string")
 
     @property
     @pulumi.getter(name="savedSearchId")
-    def saved_search_id(self) -> str:
-        """
-        The ManagementSavedSearch id [OCID] utilized in the action.
-        """
+    def saved_search_id(self) -> Optional[str]:
         return pulumi.get(self, "saved_search_id")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        Schedule type discriminator.
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
 
 @pulumi.output_type
 class GetNamespaceScheduledTaskActionMetricExtractionResult(dict):
     def __init__(__self__, *,
-                 compartment_id: str,
-                 metric_name: str,
-                 namespace: str,
-                 resource_group: str):
-        """
-        :param str compartment_id: Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param str metric_name: The metric name of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
-        :param str namespace: The Logging Analytics namespace used for the request.
-        :param str resource_group: The resource group of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
-        """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "metric_name", metric_name)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "resource_group", resource_group)
+                 compartment_id: Optional[str] = None,
+                 metric_name: Optional[str] = None,
+                 namespace: Optional[str] = None,
+                 resource_group: Optional[str] = None):
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if metric_name is not None:
+            pulumi.set(__self__, "metric_name", metric_name)
+        if namespace is not None:
+            pulumi.set(__self__, "namespace", namespace)
+        if resource_group is not None:
+            pulumi.set(__self__, "resource_group", resource_group)
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="metricName")
-    def metric_name(self) -> str:
-        """
-        The metric name of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
-        """
+    def metric_name(self) -> Optional[str]:
         return pulumi.get(self, "metric_name")
 
     @property
     @pulumi.getter
-    def namespace(self) -> str:
-        """
-        The Logging Analytics namespace used for the request.
-        """
+    def namespace(self) -> Optional[str]:
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter(name="resourceGroup")
-    def resource_group(self) -> str:
-        """
-        The resource group of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
-        """
+    def resource_group(self) -> Optional[str]:
         return pulumi.get(self, "resource_group")
 
 
 @pulumi.output_type
 class GetNamespaceScheduledTaskScheduleResult(dict):
     def __init__(__self__, *,
-                 schedules: Sequence['outputs.GetNamespaceScheduledTaskScheduleScheduleResult']):
-        pulumi.set(__self__, "schedules", schedules)
+                 schedules: Optional[Sequence['outputs.GetNamespaceScheduledTaskScheduleScheduleResult']] = None):
+        if schedules is not None:
+            pulumi.set(__self__, "schedules", schedules)
 
     @property
     @pulumi.getter
-    def schedules(self) -> Sequence['outputs.GetNamespaceScheduledTaskScheduleScheduleResult']:
+    def schedules(self) -> Optional[Sequence['outputs.GetNamespaceScheduledTaskScheduleScheduleResult']]:
         return pulumi.get(self, "schedules")
 
 
 @pulumi.output_type
 class GetNamespaceScheduledTaskScheduleScheduleResult(dict):
     def __init__(__self__, *,
-                 expression: str,
-                 misfire_policy: str,
-                 recurring_interval: str,
-                 repeat_count: int,
-                 time_zone: str,
-                 type: str):
-        """
-        :param str expression: Value in cron format.
-        :param str misfire_policy: Schedule misfire retry policy.
-        :param str recurring_interval: Recurring interval in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
-        :param int repeat_count: Number of times (0-based) to execute until auto-stop. Default value -1 will execute indefinitely. Value 0 will execute once.
-        :param str time_zone: Time zone, by default UTC.
-        :param str type: Schedule type discriminator.
-        """
-        pulumi.set(__self__, "expression", expression)
-        pulumi.set(__self__, "misfire_policy", misfire_policy)
-        pulumi.set(__self__, "recurring_interval", recurring_interval)
-        pulumi.set(__self__, "repeat_count", repeat_count)
-        pulumi.set(__self__, "time_zone", time_zone)
-        pulumi.set(__self__, "type", type)
+                 expression: Optional[str] = None,
+                 misfire_policy: Optional[str] = None,
+                 recurring_interval: Optional[str] = None,
+                 repeat_count: Optional[int] = None,
+                 time_zone: Optional[str] = None,
+                 type: Optional[str] = None):
+        if expression is not None:
+            pulumi.set(__self__, "expression", expression)
+        if misfire_policy is not None:
+            pulumi.set(__self__, "misfire_policy", misfire_policy)
+        if recurring_interval is not None:
+            pulumi.set(__self__, "recurring_interval", recurring_interval)
+        if repeat_count is not None:
+            pulumi.set(__self__, "repeat_count", repeat_count)
+        if time_zone is not None:
+            pulumi.set(__self__, "time_zone", time_zone)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter
-    def expression(self) -> str:
-        """
-        Value in cron format.
-        """
+    def expression(self) -> Optional[str]:
         return pulumi.get(self, "expression")
 
     @property
     @pulumi.getter(name="misfirePolicy")
-    def misfire_policy(self) -> str:
-        """
-        Schedule misfire retry policy.
-        """
+    def misfire_policy(self) -> Optional[str]:
         return pulumi.get(self, "misfire_policy")
 
     @property
     @pulumi.getter(name="recurringInterval")
-    def recurring_interval(self) -> str:
-        """
-        Recurring interval in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
-        """
+    def recurring_interval(self) -> Optional[str]:
         return pulumi.get(self, "recurring_interval")
 
     @property
     @pulumi.getter(name="repeatCount")
-    def repeat_count(self) -> int:
-        """
-        Number of times (0-based) to execute until auto-stop. Default value -1 will execute indefinitely. Value 0 will execute once.
-        """
+    def repeat_count(self) -> Optional[int]:
         return pulumi.get(self, "repeat_count")
 
     @property
     @pulumi.getter(name="timeZone")
-    def time_zone(self) -> str:
-        """
-        Time zone, by default UTC.
-        """
+    def time_zone(self) -> Optional[str]:
         return pulumi.get(self, "time_zone")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        Schedule type discriminator.
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
 
@@ -3316,468 +2545,363 @@ class GetNamespaceScheduledTasksFilterResult(dict):
 @pulumi.output_type
 class GetNamespaceScheduledTasksScheduledTaskCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetNamespaceScheduledTasksScheduledTaskCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetNamespaceScheduledTasksScheduledTaskCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetNamespaceScheduledTasksScheduledTaskCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetNamespaceScheduledTasksScheduledTaskCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetNamespaceScheduledTasksScheduledTaskCollectionItemResult(dict):
     def __init__(__self__, *,
-                 actions: Sequence['outputs.GetNamespaceScheduledTasksScheduledTaskCollectionItemActionResult'],
-                 compartment_id: str,
-                 defined_tags: Mapping[str, Any],
-                 display_name: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 kind: str,
-                 namespace: str,
-                 num_occurrences: str,
-                 saved_search_id: str,
-                 scheduled_task_id: str,
-                 schedules: Sequence['outputs.GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleResult'],
-                 state: str,
-                 task_status: str,
-                 task_type: str,
-                 time_created: str,
-                 time_updated: str,
-                 work_request_id: str):
-        """
-        :param Sequence['GetNamespaceScheduledTasksScheduledTaskCollectionItemActionArgs'] actions: Action for scheduled task.
-        :param str compartment_id: The ID of the compartment in which to list resources.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param str display_name: A filter to return only resources that match the given display name exactly.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the data plane resource.
-        :param str namespace: The Logging Analytics namespace used for the request.
-        :param str num_occurrences: Number of execution occurrences.
-        :param str saved_search_id: The ManagementSavedSearch id [OCID] utilized in the action.
-        :param Sequence['GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleArgs'] schedules: Schedules.
-        :param str state: The current state of the scheduled task.
-        :param str task_status: Status of the scheduled task. - PURGE_RESOURCE_NOT_FOUND
-        :param str task_type: Required parameter to specify schedule task type.
-        :param str time_created: The date and time the scheduled task was created, in the format defined by RFC3339.
-        :param str time_updated: The date and time the scheduled task was last updated, in the format defined by RFC3339.
-        :param str work_request_id: most recent Work Request Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
-        """
-        pulumi.set(__self__, "actions", actions)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "kind", kind)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "num_occurrences", num_occurrences)
-        pulumi.set(__self__, "saved_search_id", saved_search_id)
-        pulumi.set(__self__, "scheduled_task_id", scheduled_task_id)
-        pulumi.set(__self__, "schedules", schedules)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "task_status", task_status)
-        pulumi.set(__self__, "task_type", task_type)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "work_request_id", work_request_id)
+                 actions: Optional[Sequence['outputs.GetNamespaceScheduledTasksScheduledTaskCollectionItemActionResult']] = None,
+                 compartment_id: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 display_name: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 kind: Optional[str] = None,
+                 namespace: Optional[str] = None,
+                 num_occurrences: Optional[str] = None,
+                 saved_search_id: Optional[str] = None,
+                 scheduled_task_id: Optional[str] = None,
+                 schedules: Optional[Sequence['outputs.GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleResult']] = None,
+                 state: Optional[str] = None,
+                 task_status: Optional[str] = None,
+                 task_type: Optional[str] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None,
+                 work_request_id: Optional[str] = None):
+        if actions is not None:
+            pulumi.set(__self__, "actions", actions)
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if kind is not None:
+            pulumi.set(__self__, "kind", kind)
+        if namespace is not None:
+            pulumi.set(__self__, "namespace", namespace)
+        if num_occurrences is not None:
+            pulumi.set(__self__, "num_occurrences", num_occurrences)
+        if saved_search_id is not None:
+            pulumi.set(__self__, "saved_search_id", saved_search_id)
+        if scheduled_task_id is not None:
+            pulumi.set(__self__, "scheduled_task_id", scheduled_task_id)
+        if schedules is not None:
+            pulumi.set(__self__, "schedules", schedules)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if task_status is not None:
+            pulumi.set(__self__, "task_status", task_status)
+        if task_type is not None:
+            pulumi.set(__self__, "task_type", task_type)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
+        if work_request_id is not None:
+            pulumi.set(__self__, "work_request_id", work_request_id)
 
     @property
     @pulumi.getter
-    def actions(self) -> Sequence['outputs.GetNamespaceScheduledTasksScheduledTaskCollectionItemActionResult']:
-        """
-        Action for scheduled task.
-        """
+    def actions(self) -> Optional[Sequence['outputs.GetNamespaceScheduledTasksScheduledTaskCollectionItemActionResult']]:
         return pulumi.get(self, "actions")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The ID of the compartment in which to list resources.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return only resources that match the given display name exactly.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the data plane resource.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
-    def kind(self) -> str:
+    def kind(self) -> Optional[str]:
         return pulumi.get(self, "kind")
 
     @property
     @pulumi.getter
-    def namespace(self) -> str:
-        """
-        The Logging Analytics namespace used for the request.
-        """
+    def namespace(self) -> Optional[str]:
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter(name="numOccurrences")
-    def num_occurrences(self) -> str:
-        """
-        Number of execution occurrences.
-        """
+    def num_occurrences(self) -> Optional[str]:
         return pulumi.get(self, "num_occurrences")
 
     @property
     @pulumi.getter(name="savedSearchId")
-    def saved_search_id(self) -> str:
-        """
-        The ManagementSavedSearch id [OCID] utilized in the action.
-        """
+    def saved_search_id(self) -> Optional[str]:
         return pulumi.get(self, "saved_search_id")
 
     @property
     @pulumi.getter(name="scheduledTaskId")
-    def scheduled_task_id(self) -> str:
+    def scheduled_task_id(self) -> Optional[str]:
         return pulumi.get(self, "scheduled_task_id")
 
     @property
     @pulumi.getter
-    def schedules(self) -> Sequence['outputs.GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleResult']:
-        """
-        Schedules.
-        """
+    def schedules(self) -> Optional[Sequence['outputs.GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleResult']]:
         return pulumi.get(self, "schedules")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the scheduled task.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="taskStatus")
-    def task_status(self) -> str:
-        """
-        Status of the scheduled task. - PURGE_RESOURCE_NOT_FOUND
-        """
+    def task_status(self) -> Optional[str]:
         return pulumi.get(self, "task_status")
 
     @property
     @pulumi.getter(name="taskType")
-    def task_type(self) -> str:
-        """
-        Required parameter to specify schedule task type.
-        """
+    def task_type(self) -> Optional[str]:
         return pulumi.get(self, "task_type")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the scheduled task was created, in the format defined by RFC3339.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time the scheduled task was last updated, in the format defined by RFC3339.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="workRequestId")
-    def work_request_id(self) -> str:
-        """
-        most recent Work Request Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
-        """
+    def work_request_id(self) -> Optional[str]:
         return pulumi.get(self, "work_request_id")
 
 
 @pulumi.output_type
 class GetNamespaceScheduledTasksScheduledTaskCollectionItemActionResult(dict):
     def __init__(__self__, *,
-                 compartment_id_in_subtree: bool,
-                 data_type: str,
-                 metric_extractions: Sequence['outputs.GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionResult'],
-                 purge_compartment_id: str,
-                 purge_duration: str,
-                 query_string: str,
-                 saved_search_id: str,
-                 type: str):
-        """
-        :param bool compartment_id_in_subtree: if true, purge child compartments data
-        :param str data_type: the type of the log data to be purged
-        :param str purge_compartment_id: the compartment OCID under which the data will be purged
-        :param str purge_duration: The duration of data to be retained, which is used to calculate the timeDataEnded when the task fires. The value should be negative. Purge duration in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. -P365D (not -P1Y) or -P14D (not -P2W).
-        :param str query_string: Purge query string.
-        :param str saved_search_id: The ManagementSavedSearch id [OCID] utilized in the action.
-        :param str type: Schedule type discriminator.
-        """
-        pulumi.set(__self__, "compartment_id_in_subtree", compartment_id_in_subtree)
-        pulumi.set(__self__, "data_type", data_type)
-        pulumi.set(__self__, "metric_extractions", metric_extractions)
-        pulumi.set(__self__, "purge_compartment_id", purge_compartment_id)
-        pulumi.set(__self__, "purge_duration", purge_duration)
-        pulumi.set(__self__, "query_string", query_string)
-        pulumi.set(__self__, "saved_search_id", saved_search_id)
-        pulumi.set(__self__, "type", type)
+                 compartment_id_in_subtree: Optional[bool] = None,
+                 data_type: Optional[str] = None,
+                 metric_extractions: Optional[Sequence['outputs.GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionResult']] = None,
+                 purge_compartment_id: Optional[str] = None,
+                 purge_duration: Optional[str] = None,
+                 query_string: Optional[str] = None,
+                 saved_search_id: Optional[str] = None,
+                 type: Optional[str] = None):
+        if compartment_id_in_subtree is not None:
+            pulumi.set(__self__, "compartment_id_in_subtree", compartment_id_in_subtree)
+        if data_type is not None:
+            pulumi.set(__self__, "data_type", data_type)
+        if metric_extractions is not None:
+            pulumi.set(__self__, "metric_extractions", metric_extractions)
+        if purge_compartment_id is not None:
+            pulumi.set(__self__, "purge_compartment_id", purge_compartment_id)
+        if purge_duration is not None:
+            pulumi.set(__self__, "purge_duration", purge_duration)
+        if query_string is not None:
+            pulumi.set(__self__, "query_string", query_string)
+        if saved_search_id is not None:
+            pulumi.set(__self__, "saved_search_id", saved_search_id)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter(name="compartmentIdInSubtree")
-    def compartment_id_in_subtree(self) -> bool:
-        """
-        if true, purge child compartments data
-        """
+    def compartment_id_in_subtree(self) -> Optional[bool]:
         return pulumi.get(self, "compartment_id_in_subtree")
 
     @property
     @pulumi.getter(name="dataType")
-    def data_type(self) -> str:
-        """
-        the type of the log data to be purged
-        """
+    def data_type(self) -> Optional[str]:
         return pulumi.get(self, "data_type")
 
     @property
     @pulumi.getter(name="metricExtractions")
-    def metric_extractions(self) -> Sequence['outputs.GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionResult']:
+    def metric_extractions(self) -> Optional[Sequence['outputs.GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionResult']]:
         return pulumi.get(self, "metric_extractions")
 
     @property
     @pulumi.getter(name="purgeCompartmentId")
-    def purge_compartment_id(self) -> str:
-        """
-        the compartment OCID under which the data will be purged
-        """
+    def purge_compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "purge_compartment_id")
 
     @property
     @pulumi.getter(name="purgeDuration")
-    def purge_duration(self) -> str:
-        """
-        The duration of data to be retained, which is used to calculate the timeDataEnded when the task fires. The value should be negative. Purge duration in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. -P365D (not -P1Y) or -P14D (not -P2W).
-        """
+    def purge_duration(self) -> Optional[str]:
         return pulumi.get(self, "purge_duration")
 
     @property
     @pulumi.getter(name="queryString")
-    def query_string(self) -> str:
-        """
-        Purge query string.
-        """
+    def query_string(self) -> Optional[str]:
         return pulumi.get(self, "query_string")
 
     @property
     @pulumi.getter(name="savedSearchId")
-    def saved_search_id(self) -> str:
-        """
-        The ManagementSavedSearch id [OCID] utilized in the action.
-        """
+    def saved_search_id(self) -> Optional[str]:
         return pulumi.get(self, "saved_search_id")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        Schedule type discriminator.
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
 
 @pulumi.output_type
 class GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtractionResult(dict):
     def __init__(__self__, *,
-                 compartment_id: str,
-                 metric_name: str,
-                 namespace: str,
-                 resource_group: str):
-        """
-        :param str compartment_id: The ID of the compartment in which to list resources.
-        :param str namespace: The Logging Analytics namespace used for the request.
-        """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "metric_name", metric_name)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "resource_group", resource_group)
+                 compartment_id: Optional[str] = None,
+                 metric_name: Optional[str] = None,
+                 namespace: Optional[str] = None,
+                 resource_group: Optional[str] = None):
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if metric_name is not None:
+            pulumi.set(__self__, "metric_name", metric_name)
+        if namespace is not None:
+            pulumi.set(__self__, "namespace", namespace)
+        if resource_group is not None:
+            pulumi.set(__self__, "resource_group", resource_group)
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The ID of the compartment in which to list resources.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="metricName")
-    def metric_name(self) -> str:
+    def metric_name(self) -> Optional[str]:
         return pulumi.get(self, "metric_name")
 
     @property
     @pulumi.getter
-    def namespace(self) -> str:
-        """
-        The Logging Analytics namespace used for the request.
-        """
+    def namespace(self) -> Optional[str]:
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter(name="resourceGroup")
-    def resource_group(self) -> str:
+    def resource_group(self) -> Optional[str]:
         return pulumi.get(self, "resource_group")
 
 
 @pulumi.output_type
 class GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleResult(dict):
     def __init__(__self__, *,
-                 schedules: Sequence['outputs.GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleResult']):
-        pulumi.set(__self__, "schedules", schedules)
+                 schedules: Optional[Sequence['outputs.GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleResult']] = None):
+        if schedules is not None:
+            pulumi.set(__self__, "schedules", schedules)
 
     @property
     @pulumi.getter
-    def schedules(self) -> Sequence['outputs.GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleResult']:
+    def schedules(self) -> Optional[Sequence['outputs.GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleResult']]:
         return pulumi.get(self, "schedules")
 
 
 @pulumi.output_type
 class GetNamespaceScheduledTasksScheduledTaskCollectionItemScheduleScheduleResult(dict):
     def __init__(__self__, *,
-                 expression: str,
-                 misfire_policy: str,
-                 recurring_interval: str,
-                 repeat_count: int,
-                 time_zone: str,
-                 type: str):
-        """
-        :param str expression: Value in cron format.
-        :param str misfire_policy: Schedule misfire retry policy.
-        :param str recurring_interval: Recurring interval in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
-        :param int repeat_count: Number of times (0-based) to execute until auto-stop. Default value -1 will execute indefinitely. Value 0 will execute once.
-        :param str time_zone: Time zone, by default UTC.
-        :param str type: Schedule type discriminator.
-        """
-        pulumi.set(__self__, "expression", expression)
-        pulumi.set(__self__, "misfire_policy", misfire_policy)
-        pulumi.set(__self__, "recurring_interval", recurring_interval)
-        pulumi.set(__self__, "repeat_count", repeat_count)
-        pulumi.set(__self__, "time_zone", time_zone)
-        pulumi.set(__self__, "type", type)
+                 expression: Optional[str] = None,
+                 misfire_policy: Optional[str] = None,
+                 recurring_interval: Optional[str] = None,
+                 repeat_count: Optional[int] = None,
+                 time_zone: Optional[str] = None,
+                 type: Optional[str] = None):
+        if expression is not None:
+            pulumi.set(__self__, "expression", expression)
+        if misfire_policy is not None:
+            pulumi.set(__self__, "misfire_policy", misfire_policy)
+        if recurring_interval is not None:
+            pulumi.set(__self__, "recurring_interval", recurring_interval)
+        if repeat_count is not None:
+            pulumi.set(__self__, "repeat_count", repeat_count)
+        if time_zone is not None:
+            pulumi.set(__self__, "time_zone", time_zone)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter
-    def expression(self) -> str:
-        """
-        Value in cron format.
-        """
+    def expression(self) -> Optional[str]:
         return pulumi.get(self, "expression")
 
     @property
     @pulumi.getter(name="misfirePolicy")
-    def misfire_policy(self) -> str:
-        """
-        Schedule misfire retry policy.
-        """
+    def misfire_policy(self) -> Optional[str]:
         return pulumi.get(self, "misfire_policy")
 
     @property
     @pulumi.getter(name="recurringInterval")
-    def recurring_interval(self) -> str:
-        """
-        Recurring interval in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
-        """
+    def recurring_interval(self) -> Optional[str]:
         return pulumi.get(self, "recurring_interval")
 
     @property
     @pulumi.getter(name="repeatCount")
-    def repeat_count(self) -> int:
-        """
-        Number of times (0-based) to execute until auto-stop. Default value -1 will execute indefinitely. Value 0 will execute once.
-        """
+    def repeat_count(self) -> Optional[int]:
         return pulumi.get(self, "repeat_count")
 
     @property
     @pulumi.getter(name="timeZone")
-    def time_zone(self) -> str:
-        """
-        Time zone, by default UTC.
-        """
+    def time_zone(self) -> Optional[str]:
         return pulumi.get(self, "time_zone")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        Schedule type discriminator.
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
 
 @pulumi.output_type
 class GetNamespaceStorageEncryptionKeyInfoItemResult(dict):
     def __init__(__self__, *,
-                 key_id: str,
-                 key_source: str,
-                 key_type: str):
-        """
-        :param str key_id: This is the key OCID of the encryption key (null if Oracle-managed).
-        :param str key_source: This is the source of the encryption key.
-        :param str key_type: This is the type of data to be encrypted. It can be either active or archival.
-        """
-        pulumi.set(__self__, "key_id", key_id)
-        pulumi.set(__self__, "key_source", key_source)
-        pulumi.set(__self__, "key_type", key_type)
+                 key_id: Optional[str] = None,
+                 key_source: Optional[str] = None,
+                 key_type: Optional[str] = None):
+        if key_id is not None:
+            pulumi.set(__self__, "key_id", key_id)
+        if key_source is not None:
+            pulumi.set(__self__, "key_source", key_source)
+        if key_type is not None:
+            pulumi.set(__self__, "key_type", key_type)
 
     @property
     @pulumi.getter(name="keyId")
-    def key_id(self) -> str:
-        """
-        This is the key OCID of the encryption key (null if Oracle-managed).
-        """
+    def key_id(self) -> Optional[str]:
         return pulumi.get(self, "key_id")
 
     @property
     @pulumi.getter(name="keySource")
-    def key_source(self) -> str:
-        """
-        This is the source of the encryption key.
-        """
+    def key_source(self) -> Optional[str]:
         return pulumi.get(self, "key_source")
 
     @property
     @pulumi.getter(name="keyType")
-    def key_type(self) -> str:
-        """
-        This is the type of data to be encrypted. It can be either active or archival.
-        """
+    def key_type(self) -> Optional[str]:
         return pulumi.get(self, "key_type")
 
 
@@ -3811,113 +2935,82 @@ class GetNamespaceStorageOverlappingRecallsFilterResult(dict):
 @pulumi.output_type
 class GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemResult']):
-        """
-        :param Sequence['GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemArgs'] items: This is the array of overlapping recall requests
-        """
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemResult']:
-        """
-        This is the array of overlapping recall requests
-        """
+    def items(self) -> Optional[Sequence['outputs.GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemResult(dict):
     def __init__(__self__, *,
-                 created_by: str,
-                 log_sets: str,
-                 purpose: str,
-                 query_string: str,
-                 status: str,
-                 time_data_ended: str,
-                 time_data_started: str,
-                 time_started: str):
-        """
-        :param str created_by: This is the user who initiated the recall request
-        :param str log_sets: This is the list of logsets associated with this recall
-        :param str purpose: This is the purpose of the recall
-        :param str query_string: This is the query associated with the recall
-        :param str status: This is the status of the recall
-        :param str time_data_ended: This is the end of the time range for recalled data
-        :param str time_data_started: This is the start of the time range for recalled data
-        :param str time_started: This is the time when the recall operation was started for this recall request
-        """
-        pulumi.set(__self__, "created_by", created_by)
-        pulumi.set(__self__, "log_sets", log_sets)
-        pulumi.set(__self__, "purpose", purpose)
-        pulumi.set(__self__, "query_string", query_string)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "time_data_ended", time_data_ended)
-        pulumi.set(__self__, "time_data_started", time_data_started)
-        pulumi.set(__self__, "time_started", time_started)
+                 created_by: Optional[str] = None,
+                 log_sets: Optional[str] = None,
+                 purpose: Optional[str] = None,
+                 query_string: Optional[str] = None,
+                 status: Optional[str] = None,
+                 time_data_ended: Optional[str] = None,
+                 time_data_started: Optional[str] = None,
+                 time_started: Optional[str] = None):
+        if created_by is not None:
+            pulumi.set(__self__, "created_by", created_by)
+        if log_sets is not None:
+            pulumi.set(__self__, "log_sets", log_sets)
+        if purpose is not None:
+            pulumi.set(__self__, "purpose", purpose)
+        if query_string is not None:
+            pulumi.set(__self__, "query_string", query_string)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if time_data_ended is not None:
+            pulumi.set(__self__, "time_data_ended", time_data_ended)
+        if time_data_started is not None:
+            pulumi.set(__self__, "time_data_started", time_data_started)
+        if time_started is not None:
+            pulumi.set(__self__, "time_started", time_started)
 
     @property
     @pulumi.getter(name="createdBy")
-    def created_by(self) -> str:
-        """
-        This is the user who initiated the recall request
-        """
+    def created_by(self) -> Optional[str]:
         return pulumi.get(self, "created_by")
 
     @property
     @pulumi.getter(name="logSets")
-    def log_sets(self) -> str:
-        """
-        This is the list of logsets associated with this recall
-        """
+    def log_sets(self) -> Optional[str]:
         return pulumi.get(self, "log_sets")
 
     @property
     @pulumi.getter
-    def purpose(self) -> str:
-        """
-        This is the purpose of the recall
-        """
+    def purpose(self) -> Optional[str]:
         return pulumi.get(self, "purpose")
 
     @property
     @pulumi.getter(name="queryString")
-    def query_string(self) -> str:
-        """
-        This is the query associated with the recall
-        """
+    def query_string(self) -> Optional[str]:
         return pulumi.get(self, "query_string")
 
     @property
     @pulumi.getter
-    def status(self) -> str:
-        """
-        This is the status of the recall
-        """
+    def status(self) -> Optional[str]:
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter(name="timeDataEnded")
-    def time_data_ended(self) -> str:
-        """
-        This is the end of the time range for recalled data
-        """
+    def time_data_ended(self) -> Optional[str]:
         return pulumi.get(self, "time_data_ended")
 
     @property
     @pulumi.getter(name="timeDataStarted")
-    def time_data_started(self) -> str:
-        """
-        This is the start of the time range for recalled data
-        """
+    def time_data_started(self) -> Optional[str]:
         return pulumi.get(self, "time_data_started")
 
     @property
     @pulumi.getter(name="timeStarted")
-    def time_started(self) -> str:
-        """
-        This is the time when the recall operation was started for this recall request
-        """
+    def time_started(self) -> Optional[str]:
         return pulumi.get(self, "time_started")
 
 
@@ -3951,52 +3044,42 @@ class GetNamespacesFilterResult(dict):
 @pulumi.output_type
 class GetNamespacesNamespaceCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetNamespacesNamespaceCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetNamespacesNamespaceCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetNamespacesNamespaceCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetNamespacesNamespaceCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetNamespacesNamespaceCollectionItemResult(dict):
     def __init__(__self__, *,
-                 compartment_id: str,
-                 is_onboarded: bool,
-                 namespace: str):
-        """
-        :param str compartment_id: The ID of the compartment in which to list resources.
-        :param bool is_onboarded: This indicates if the tenancy is onboarded to Logging Analytics
-        :param str namespace: This is the namespace name of a tenancy
-        """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "is_onboarded", is_onboarded)
-        pulumi.set(__self__, "namespace", namespace)
+                 compartment_id: Optional[str] = None,
+                 is_onboarded: Optional[bool] = None,
+                 namespace: Optional[str] = None):
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if is_onboarded is not None:
+            pulumi.set(__self__, "is_onboarded", is_onboarded)
+        if namespace is not None:
+            pulumi.set(__self__, "namespace", namespace)
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The ID of the compartment in which to list resources.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="isOnboarded")
-    def is_onboarded(self) -> bool:
-        """
-        This indicates if the tenancy is onboarded to Logging Analytics
-        """
+    def is_onboarded(self) -> Optional[bool]:
         return pulumi.get(self, "is_onboarded")
 
     @property
     @pulumi.getter
-    def namespace(self) -> str:
-        """
-        This is the namespace name of a tenancy
-        """
+    def namespace(self) -> Optional[str]:
         return pulumi.get(self, "namespace")
 
 

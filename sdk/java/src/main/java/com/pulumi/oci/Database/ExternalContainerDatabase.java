@@ -16,6 +16,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -72,14 +73,14 @@ public class ExternalContainerDatabase extends com.pulumi.resources.CustomResour
      * 
      */
     @Export(name="characterSet", refs={String.class}, tree="[0]")
-    private Output<String> characterSet;
+    private Output</* @Nullable */ String> characterSet;
 
     /**
      * @return The character set of the external database.
      * 
      */
-    public Output<String> characterSet() {
-        return this.characterSet;
+    public Output<Optional<String>> characterSet() {
+        return Codegen.optional(this.characterSet);
     }
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -100,112 +101,112 @@ public class ExternalContainerDatabase extends com.pulumi.resources.CustomResour
      * 
      */
     @Export(name="databaseConfiguration", refs={String.class}, tree="[0]")
-    private Output<String> databaseConfiguration;
+    private Output</* @Nullable */ String> databaseConfiguration;
 
     /**
      * @return The Oracle Database configuration
      * 
      */
-    public Output<String> databaseConfiguration() {
-        return this.databaseConfiguration;
+    public Output<Optional<String>> databaseConfiguration() {
+        return Codegen.optional(this.databaseConfiguration);
     }
     /**
      * The Oracle Database edition.
      * 
      */
     @Export(name="databaseEdition", refs={String.class}, tree="[0]")
-    private Output<String> databaseEdition;
+    private Output</* @Nullable */ String> databaseEdition;
 
     /**
      * @return The Oracle Database edition.
      * 
      */
-    public Output<String> databaseEdition() {
-        return this.databaseEdition;
+    public Output<Optional<String>> databaseEdition() {
+        return Codegen.optional(this.databaseEdition);
     }
     /**
      * The configuration of the Database Management service.
      * 
      */
     @Export(name="databaseManagementConfigs", refs={List.class,ExternalContainerDatabaseDatabaseManagementConfig.class}, tree="[0,1]")
-    private Output<List<ExternalContainerDatabaseDatabaseManagementConfig>> databaseManagementConfigs;
+    private Output</* @Nullable */ List<ExternalContainerDatabaseDatabaseManagementConfig>> databaseManagementConfigs;
 
     /**
      * @return The configuration of the Database Management service.
      * 
      */
-    public Output<List<ExternalContainerDatabaseDatabaseManagementConfig>> databaseManagementConfigs() {
-        return this.databaseManagementConfigs;
+    public Output<Optional<List<ExternalContainerDatabaseDatabaseManagementConfig>>> databaseManagementConfigs() {
+        return Codegen.optional(this.databaseManagementConfigs);
     }
     /**
      * The Oracle Database version.
      * 
      */
     @Export(name="databaseVersion", refs={String.class}, tree="[0]")
-    private Output<String> databaseVersion;
+    private Output</* @Nullable */ String> databaseVersion;
 
     /**
      * @return The Oracle Database version.
      * 
      */
-    public Output<String> databaseVersion() {
-        return this.databaseVersion;
+    public Output<Optional<String>> databaseVersion() {
+        return Codegen.optional(this.databaseVersion);
     }
     /**
      * The Oracle Database ID, which identifies an Oracle Database located outside of Oracle Cloud.
      * 
      */
     @Export(name="dbId", refs={String.class}, tree="[0]")
-    private Output<String> dbId;
+    private Output</* @Nullable */ String> dbId;
 
     /**
      * @return The Oracle Database ID, which identifies an Oracle Database located outside of Oracle Cloud.
      * 
      */
-    public Output<String> dbId() {
-        return this.dbId;
+    public Output<Optional<String>> dbId() {
+        return Codegen.optional(this.dbId);
     }
     /**
      * The database packs licensed for the external Oracle Database.
      * 
      */
     @Export(name="dbPacks", refs={String.class}, tree="[0]")
-    private Output<String> dbPacks;
+    private Output</* @Nullable */ String> dbPacks;
 
     /**
      * @return The database packs licensed for the external Oracle Database.
      * 
      */
-    public Output<String> dbPacks() {
-        return this.dbPacks;
+    public Output<Optional<String>> dbPacks() {
+        return Codegen.optional(this.dbPacks);
     }
     /**
      * The `DB_UNIQUE_NAME` of the external database.
      * 
      */
     @Export(name="dbUniqueName", refs={String.class}, tree="[0]")
-    private Output<String> dbUniqueName;
+    private Output</* @Nullable */ String> dbUniqueName;
 
     /**
      * @return The `DB_UNIQUE_NAME` of the external database.
      * 
      */
-    public Output<String> dbUniqueName() {
-        return this.dbUniqueName;
+    public Output<Optional<String>> dbUniqueName() {
+        return Codegen.optional(this.dbUniqueName);
     }
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) The user-friendly name for the external database. The name does not have to be unique.
@@ -229,7 +230,7 @@ public class ExternalContainerDatabase extends com.pulumi.resources.CustomResour
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
@@ -238,92 +239,92 @@ public class ExternalContainerDatabase extends com.pulumi.resources.CustomResour
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * Additional information about the current lifecycle state.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return Additional information about the current lifecycle state.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * The national character of the external database.
      * 
      */
     @Export(name="ncharacterSet", refs={String.class}, tree="[0]")
-    private Output<String> ncharacterSet;
+    private Output</* @Nullable */ String> ncharacterSet;
 
     /**
      * @return The national character of the external database.
      * 
      */
-    public Output<String> ncharacterSet() {
-        return this.ncharacterSet;
+    public Output<Optional<String>> ncharacterSet() {
+        return Codegen.optional(this.ncharacterSet);
     }
     /**
      * The configuration of Stack Monitoring for the external database.
      * 
      */
     @Export(name="stackMonitoringConfigs", refs={List.class,ExternalContainerDatabaseStackMonitoringConfig.class}, tree="[0,1]")
-    private Output<List<ExternalContainerDatabaseStackMonitoringConfig>> stackMonitoringConfigs;
+    private Output</* @Nullable */ List<ExternalContainerDatabaseStackMonitoringConfig>> stackMonitoringConfigs;
 
     /**
      * @return The configuration of Stack Monitoring for the external database.
      * 
      */
-    public Output<List<ExternalContainerDatabaseStackMonitoringConfig>> stackMonitoringConfigs() {
-        return this.stackMonitoringConfigs;
+    public Output<Optional<List<ExternalContainerDatabaseStackMonitoringConfig>>> stackMonitoringConfigs() {
+        return Codegen.optional(this.stackMonitoringConfigs);
     }
     /**
      * The current state of the Oracle Cloud Infrastructure external database resource.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the Oracle Cloud Infrastructure external database resource.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The date and time the database was created.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the database was created.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The time zone of the external database. It is a time zone offset (a character type in the format &#39;[+|-]TZH:TZM&#39;) or a time zone region name, depending on how the time zone value was specified when the database was created / last altered.
      * 
      */
     @Export(name="timeZone", refs={String.class}, tree="[0]")
-    private Output<String> timeZone;
+    private Output</* @Nullable */ String> timeZone;
 
     /**
      * @return The time zone of the external database. It is a time zone offset (a character type in the format &#39;[+|-]TZH:TZM&#39;) or a time zone region name, depending on how the time zone value was specified when the database was created / last altered.
      * 
      */
-    public Output<String> timeZone() {
-        return this.timeZone;
+    public Output<Optional<String>> timeZone() {
+        return Codegen.optional(this.timeZone);
     }
 
     /**

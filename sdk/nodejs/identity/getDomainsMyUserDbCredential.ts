@@ -66,102 +66,102 @@ export interface GetDomainsMyUserDbCredentialResult {
     /**
      * Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
      */
-    readonly compartmentOcid: string;
+    readonly compartmentOcid?: string;
     /**
      * The user's database password.
      */
-    readonly dbPassword: string;
+    readonly dbPassword?: string;
     /**
      * A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      */
-    readonly deleteInProgress: boolean;
+    readonly deleteInProgress?: boolean;
     /**
      * Description
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      */
-    readonly domainOcid: string;
+    readonly domainOcid?: string;
     /**
      * Indicates that the database password has expired.
      */
-    readonly expired: boolean;
+    readonly expired?: boolean;
     /**
      * When the user credential expires.
      */
-    readonly expiresOn: string;
+    readonly expiresOn?: string;
     /**
      * Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The User or App who created the Resource
      */
-    readonly idcsCreatedBies: outputs.Identity.GetDomainsMyUserDbCredentialIdcsCreatedBy[];
+    readonly idcsCreatedBies?: outputs.Identity.GetDomainsMyUserDbCredentialIdcsCreatedBy[];
     readonly idcsEndpoint: string;
     /**
      * The User or App who modified the Resource
      */
-    readonly idcsLastModifiedBies: outputs.Identity.GetDomainsMyUserDbCredentialIdcsLastModifiedBy[];
+    readonly idcsLastModifiedBies?: outputs.Identity.GetDomainsMyUserDbCredentialIdcsLastModifiedBy[];
     /**
      * The release number when the resource was upgraded.
      */
-    readonly idcsLastUpgradedInRelease: string;
+    readonly idcsLastUpgradedInRelease?: string;
     /**
      * Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      */
-    readonly idcsPreventedOperations: string[];
+    readonly idcsPreventedOperations?: string[];
     /**
      * A DateTime that specifies the date and time when the current database password was set.
      */
-    readonly lastSetDate: string;
+    readonly lastSetDate?: string;
     /**
      * A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      */
-    readonly metas: outputs.Identity.GetDomainsMyUserDbCredentialMeta[];
+    readonly metas?: outputs.Identity.GetDomainsMyUserDbCredentialMeta[];
     /**
      * The user's database password with mixed salt.
      */
-    readonly mixedDbPassword: string;
+    readonly mixedDbPassword?: string;
     /**
      * The mixed salt of the password.
      */
-    readonly mixedSalt: string;
+    readonly mixedSalt?: string;
     readonly myUserDbCredentialId: string;
     /**
      * The username.
      */
-    readonly name: string;
+    readonly name?: string;
     /**
      * The user's OCID.
      */
-    readonly ocid: string;
+    readonly ocid?: string;
     readonly resourceTypeSchemaVersion?: string;
     /**
      * The salt of the password.
      */
-    readonly salt: string;
+    readonly salt?: string;
     /**
      * REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      */
-    readonly schemas: string[];
+    readonly schemas?: string[];
     /**
      * User credential status
      */
-    readonly status: string;
+    readonly status?: string;
     /**
      * A list of tags on this resource.
      */
-    readonly tags: outputs.Identity.GetDomainsMyUserDbCredentialTag[];
+    readonly tags?: outputs.Identity.GetDomainsMyUserDbCredentialTag[];
     /**
      * Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      */
-    readonly tenancyOcid: string;
+    readonly tenancyOcid?: string;
     /**
      * The user linked to the database credential.
      */
-    readonly users: outputs.Identity.GetDomainsMyUserDbCredentialUser[];
+    readonly users?: outputs.Identity.GetDomainsMyUserDbCredentialUser[];
 }
 /**
  * This data source provides details about a specific My User Db Credential resource in Oracle Cloud Infrastructure Identity Domains service.

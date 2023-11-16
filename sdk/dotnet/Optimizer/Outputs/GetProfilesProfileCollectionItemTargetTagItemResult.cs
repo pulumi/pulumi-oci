@@ -16,15 +16,15 @@ namespace Pulumi.Oci.Optimizer.Outputs
         /// <summary>
         /// The name you use to refer to the tag, also known as the tag key.
         /// </summary>
-        public readonly string TagDefinitionName;
+        public readonly string? TagDefinitionName;
         /// <summary>
         /// The name of the tag namespace.
         /// </summary>
-        public readonly string TagNamespaceName;
+        public readonly string? TagNamespaceName;
         /// <summary>
         /// Specifies which tag value types in the `tagValues` field result in overrides of the recommendation criteria.
         /// </summary>
-        public readonly string TagValueType;
+        public readonly string? TagValueType;
         /// <summary>
         /// The list of tag values. The tag value is the value that the user applying the tag adds to the tag key.
         /// </summary>
@@ -32,11 +32,11 @@ namespace Pulumi.Oci.Optimizer.Outputs
 
         [OutputConstructor]
         private GetProfilesProfileCollectionItemTargetTagItemResult(
-            string tagDefinitionName,
+            string? tagDefinitionName,
 
-            string tagNamespaceName,
+            string? tagNamespaceName,
 
-            string tagValueType,
+            string? tagValueType,
 
             ImmutableArray<string> tagValues)
         {

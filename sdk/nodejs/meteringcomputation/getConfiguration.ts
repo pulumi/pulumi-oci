@@ -47,11 +47,11 @@ export interface GetConfigurationResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of available configurations.
      */
-    readonly items: outputs.MeteringComputation.GetConfigurationItem[];
+    readonly items?: outputs.MeteringComputation.GetConfigurationItem[];
     readonly tenantId: string;
 }
 /**

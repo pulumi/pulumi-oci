@@ -6,6 +6,8 @@ package com.pulumi.oci.DatabaseMigration.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMigrationDumpTransferDetailTarget {
@@ -13,39 +15,39 @@ public final class GetMigrationDumpTransferDetailTarget {
      * @return Type of dump transfer to use during migration in source or target host. Default kind is CURL
      * 
      */
-    private String kind;
+    private @Nullable String kind;
     /**
      * @return Path to the Oracle Cloud Infrastructure CLI installation in the node.
      * 
      */
-    private String ociHome;
+    private @Nullable String ociHome;
     /**
      * @return Directory path to Oracle Cloud Infrastructure SSL wallet location on Db server node.
      * 
      */
-    private String walletLocation;
+    private @Nullable String walletLocation;
 
     private GetMigrationDumpTransferDetailTarget() {}
     /**
      * @return Type of dump transfer to use during migration in source or target host. Default kind is CURL
      * 
      */
-    public String kind() {
-        return this.kind;
+    public Optional<String> kind() {
+        return Optional.ofNullable(this.kind);
     }
     /**
      * @return Path to the Oracle Cloud Infrastructure CLI installation in the node.
      * 
      */
-    public String ociHome() {
-        return this.ociHome;
+    public Optional<String> ociHome() {
+        return Optional.ofNullable(this.ociHome);
     }
     /**
      * @return Directory path to Oracle Cloud Infrastructure SSL wallet location on Db server node.
      * 
      */
-    public String walletLocation() {
-        return this.walletLocation;
+    public Optional<String> walletLocation() {
+        return Optional.ofNullable(this.walletLocation);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetMigrationDumpTransferDetailTarget {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String kind;
-        private String ociHome;
-        private String walletLocation;
+        private @Nullable String kind;
+        private @Nullable String ociHome;
+        private @Nullable String walletLocation;
         public Builder() {}
         public Builder(GetMigrationDumpTransferDetailTarget defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetMigrationDumpTransferDetailTarget {
         }
 
         @CustomType.Setter
-        public Builder kind(String kind) {
-            this.kind = Objects.requireNonNull(kind);
+        public Builder kind(@Nullable String kind) {
+            this.kind = kind;
             return this;
         }
         @CustomType.Setter
-        public Builder ociHome(String ociHome) {
-            this.ociHome = Objects.requireNonNull(ociHome);
+        public Builder ociHome(@Nullable String ociHome) {
+            this.ociHome = ociHome;
             return this;
         }
         @CustomType.Setter
-        public Builder walletLocation(String walletLocation) {
-            this.walletLocation = Objects.requireNonNull(walletLocation);
+        public Builder walletLocation(@Nullable String walletLocation) {
+            this.walletLocation = walletLocation;
             return this;
         }
         public GetMigrationDumpTransferDetailTarget build() {

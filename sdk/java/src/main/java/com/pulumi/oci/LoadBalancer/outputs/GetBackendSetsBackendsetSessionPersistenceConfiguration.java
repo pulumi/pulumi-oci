@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetBackendSetsBackendsetSessionPersistenceConfiguration {
@@ -14,27 +16,27 @@ public final class GetBackendSetsBackendsetSessionPersistenceConfiguration {
      * @return The name of the cookie used to detect a session initiated by the backend server. Use &#39;*&#39; to specify that any cookie set by the backend causes the session to persist.  Example: `example_cookie`
      * 
      */
-    private String cookieName;
+    private @Nullable String cookieName;
     /**
      * @return Whether the load balancer is prevented from directing traffic from a persistent session client to a different backend server if the original server is unavailable. Defaults to false.  Example: `false`
      * 
      */
-    private Boolean disableFallback;
+    private @Nullable Boolean disableFallback;
 
     private GetBackendSetsBackendsetSessionPersistenceConfiguration() {}
     /**
      * @return The name of the cookie used to detect a session initiated by the backend server. Use &#39;*&#39; to specify that any cookie set by the backend causes the session to persist.  Example: `example_cookie`
      * 
      */
-    public String cookieName() {
-        return this.cookieName;
+    public Optional<String> cookieName() {
+        return Optional.ofNullable(this.cookieName);
     }
     /**
      * @return Whether the load balancer is prevented from directing traffic from a persistent session client to a different backend server if the original server is unavailable. Defaults to false.  Example: `false`
      * 
      */
-    public Boolean disableFallback() {
-        return this.disableFallback;
+    public Optional<Boolean> disableFallback() {
+        return Optional.ofNullable(this.disableFallback);
     }
 
     public static Builder builder() {
@@ -46,8 +48,8 @@ public final class GetBackendSetsBackendsetSessionPersistenceConfiguration {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String cookieName;
-        private Boolean disableFallback;
+        private @Nullable String cookieName;
+        private @Nullable Boolean disableFallback;
         public Builder() {}
         public Builder(GetBackendSetsBackendsetSessionPersistenceConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
@@ -56,13 +58,13 @@ public final class GetBackendSetsBackendsetSessionPersistenceConfiguration {
         }
 
         @CustomType.Setter
-        public Builder cookieName(String cookieName) {
-            this.cookieName = Objects.requireNonNull(cookieName);
+        public Builder cookieName(@Nullable String cookieName) {
+            this.cookieName = cookieName;
             return this;
         }
         @CustomType.Setter
-        public Builder disableFallback(Boolean disableFallback) {
-            this.disableFallback = Objects.requireNonNull(disableFallback);
+        public Builder disableFallback(@Nullable Boolean disableFallback) {
+            this.disableFallback = disableFallback;
             return this;
         }
         public GetBackendSetsBackendsetSessionPersistenceConfiguration build() {

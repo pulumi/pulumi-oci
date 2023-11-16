@@ -28,7 +28,7 @@ public final class GetExternalClustersResult {
      * @return The list of external_cluster_collection.
      * 
      */
-    private List<GetExternalClustersExternalClusterCollection> externalClusterCollections;
+    private @Nullable List<GetExternalClustersExternalClusterCollection> externalClusterCollections;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the cluster is a part of.
      * 
@@ -39,7 +39,7 @@ public final class GetExternalClustersResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
 
     private GetExternalClustersResult() {}
     /**
@@ -61,7 +61,7 @@ public final class GetExternalClustersResult {
      * 
      */
     public List<GetExternalClustersExternalClusterCollection> externalClusterCollections() {
-        return this.externalClusterCollections;
+        return this.externalClusterCollections == null ? List.of() : this.externalClusterCollections;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the cluster is a part of.
@@ -77,8 +77,8 @@ public final class GetExternalClustersResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
 
     public static Builder builder() {
@@ -92,10 +92,10 @@ public final class GetExternalClustersResult {
     public static final class Builder {
         private @Nullable String compartmentId;
         private @Nullable String displayName;
-        private List<GetExternalClustersExternalClusterCollection> externalClusterCollections;
+        private @Nullable List<GetExternalClustersExternalClusterCollection> externalClusterCollections;
         private @Nullable String externalDbSystemId;
         private @Nullable List<GetExternalClustersFilter> filters;
-        private String id;
+        private @Nullable String id;
         public Builder() {}
         public Builder(GetExternalClustersResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -118,8 +118,8 @@ public final class GetExternalClustersResult {
             return this;
         }
         @CustomType.Setter
-        public Builder externalClusterCollections(List<GetExternalClustersExternalClusterCollection> externalClusterCollections) {
-            this.externalClusterCollections = Objects.requireNonNull(externalClusterCollections);
+        public Builder externalClusterCollections(@Nullable List<GetExternalClustersExternalClusterCollection> externalClusterCollections) {
+            this.externalClusterCollections = externalClusterCollections;
             return this;
         }
         public Builder externalClusterCollections(GetExternalClustersExternalClusterCollection... externalClusterCollections) {
@@ -139,8 +139,8 @@ public final class GetExternalClustersResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         public GetExternalClustersResult build() {

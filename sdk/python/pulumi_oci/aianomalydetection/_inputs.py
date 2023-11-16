@@ -50,28 +50,6 @@ class DataAssetDataSourceDetailsArgs:
                  user_name: Optional[pulumi.Input[str]] = None,
                  version_specific_details: Optional[pulumi.Input['DataAssetDataSourceDetailsVersionSpecificDetailsArgs']] = None,
                  wallet_password_secret_id: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] data_source_type: Data source type where actually data asset is being stored
-        :param pulumi.Input[str] atp_password_secret_id: atp db password Secret Id
-        :param pulumi.Input[str] atp_user_name: atp db user name
-        :param pulumi.Input[str] bucket: Bucket Name for influx connection
-        :param pulumi.Input[str] cwallet_file_secret_id: OCID of the secret containing the containers certificates of ATP wallet
-        :param pulumi.Input[str] database_name: DB Name for influx connection
-        :param pulumi.Input[str] ewallet_file_secret_id: OCID of the secret containing the PDB'S certificates of ATP wallet
-        :param pulumi.Input[str] key_store_file_secret_id: OCID of the secret containing Keystore.jks file of the ATP wallet
-        :param pulumi.Input[str] measurement_name: Measurement name for influx
-        :param pulumi.Input[str] namespace: Object storage namespace
-        :param pulumi.Input[str] object: File name
-        :param pulumi.Input[str] ojdbc_file_secret_id: OCID of the secret that contains jdbc properties file of ATP wallet
-        :param pulumi.Input[str] password_secret_id: Password Secret Id for the influx connection
-        :param pulumi.Input[str] table_name: atp database table name
-        :param pulumi.Input[str] tnsnames_file_secret_id: OCID of the secret that contains the tnsnames file of ATP wallet
-        :param pulumi.Input[str] truststore_file_secret_id: OCID of the secret containing truststore.jks file of the ATP wallet
-        :param pulumi.Input[str] url: public IP address and port to influx DB
-        :param pulumi.Input[str] user_name: Username for connection to Influx
-        :param pulumi.Input['DataAssetDataSourceDetailsVersionSpecificDetailsArgs'] version_specific_details: Possible data sources
-        :param pulumi.Input[str] wallet_password_secret_id: wallet password Secret ID in String format
-        """
         pulumi.set(__self__, "data_source_type", data_source_type)
         if atp_password_secret_id is not None:
             pulumi.set(__self__, "atp_password_secret_id", atp_password_secret_id)
@@ -115,9 +93,6 @@ class DataAssetDataSourceDetailsArgs:
     @property
     @pulumi.getter(name="dataSourceType")
     def data_source_type(self) -> pulumi.Input[str]:
-        """
-        Data source type where actually data asset is being stored
-        """
         return pulumi.get(self, "data_source_type")
 
     @data_source_type.setter
@@ -127,9 +102,6 @@ class DataAssetDataSourceDetailsArgs:
     @property
     @pulumi.getter(name="atpPasswordSecretId")
     def atp_password_secret_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        atp db password Secret Id
-        """
         return pulumi.get(self, "atp_password_secret_id")
 
     @atp_password_secret_id.setter
@@ -139,9 +111,6 @@ class DataAssetDataSourceDetailsArgs:
     @property
     @pulumi.getter(name="atpUserName")
     def atp_user_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        atp db user name
-        """
         return pulumi.get(self, "atp_user_name")
 
     @atp_user_name.setter
@@ -151,9 +120,6 @@ class DataAssetDataSourceDetailsArgs:
     @property
     @pulumi.getter
     def bucket(self) -> Optional[pulumi.Input[str]]:
-        """
-        Bucket Name for influx connection
-        """
         return pulumi.get(self, "bucket")
 
     @bucket.setter
@@ -163,9 +129,6 @@ class DataAssetDataSourceDetailsArgs:
     @property
     @pulumi.getter(name="cwalletFileSecretId")
     def cwallet_file_secret_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        OCID of the secret containing the containers certificates of ATP wallet
-        """
         return pulumi.get(self, "cwallet_file_secret_id")
 
     @cwallet_file_secret_id.setter
@@ -175,9 +138,6 @@ class DataAssetDataSourceDetailsArgs:
     @property
     @pulumi.getter(name="databaseName")
     def database_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        DB Name for influx connection
-        """
         return pulumi.get(self, "database_name")
 
     @database_name.setter
@@ -187,9 +147,6 @@ class DataAssetDataSourceDetailsArgs:
     @property
     @pulumi.getter(name="ewalletFileSecretId")
     def ewallet_file_secret_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        OCID of the secret containing the PDB'S certificates of ATP wallet
-        """
         return pulumi.get(self, "ewallet_file_secret_id")
 
     @ewallet_file_secret_id.setter
@@ -199,9 +156,6 @@ class DataAssetDataSourceDetailsArgs:
     @property
     @pulumi.getter(name="keyStoreFileSecretId")
     def key_store_file_secret_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        OCID of the secret containing Keystore.jks file of the ATP wallet
-        """
         return pulumi.get(self, "key_store_file_secret_id")
 
     @key_store_file_secret_id.setter
@@ -211,9 +165,6 @@ class DataAssetDataSourceDetailsArgs:
     @property
     @pulumi.getter(name="measurementName")
     def measurement_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Measurement name for influx
-        """
         return pulumi.get(self, "measurement_name")
 
     @measurement_name.setter
@@ -223,9 +174,6 @@ class DataAssetDataSourceDetailsArgs:
     @property
     @pulumi.getter
     def namespace(self) -> Optional[pulumi.Input[str]]:
-        """
-        Object storage namespace
-        """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
@@ -235,9 +183,6 @@ class DataAssetDataSourceDetailsArgs:
     @property
     @pulumi.getter
     def object(self) -> Optional[pulumi.Input[str]]:
-        """
-        File name
-        """
         return pulumi.get(self, "object")
 
     @object.setter
@@ -247,9 +192,6 @@ class DataAssetDataSourceDetailsArgs:
     @property
     @pulumi.getter(name="ojdbcFileSecretId")
     def ojdbc_file_secret_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        OCID of the secret that contains jdbc properties file of ATP wallet
-        """
         return pulumi.get(self, "ojdbc_file_secret_id")
 
     @ojdbc_file_secret_id.setter
@@ -259,9 +201,6 @@ class DataAssetDataSourceDetailsArgs:
     @property
     @pulumi.getter(name="passwordSecretId")
     def password_secret_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        Password Secret Id for the influx connection
-        """
         return pulumi.get(self, "password_secret_id")
 
     @password_secret_id.setter
@@ -271,9 +210,6 @@ class DataAssetDataSourceDetailsArgs:
     @property
     @pulumi.getter(name="tableName")
     def table_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        atp database table name
-        """
         return pulumi.get(self, "table_name")
 
     @table_name.setter
@@ -283,9 +219,6 @@ class DataAssetDataSourceDetailsArgs:
     @property
     @pulumi.getter(name="tnsnamesFileSecretId")
     def tnsnames_file_secret_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        OCID of the secret that contains the tnsnames file of ATP wallet
-        """
         return pulumi.get(self, "tnsnames_file_secret_id")
 
     @tnsnames_file_secret_id.setter
@@ -295,9 +228,6 @@ class DataAssetDataSourceDetailsArgs:
     @property
     @pulumi.getter(name="truststoreFileSecretId")
     def truststore_file_secret_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        OCID of the secret containing truststore.jks file of the ATP wallet
-        """
         return pulumi.get(self, "truststore_file_secret_id")
 
     @truststore_file_secret_id.setter
@@ -307,9 +237,6 @@ class DataAssetDataSourceDetailsArgs:
     @property
     @pulumi.getter
     def url(self) -> Optional[pulumi.Input[str]]:
-        """
-        public IP address and port to influx DB
-        """
         return pulumi.get(self, "url")
 
     @url.setter
@@ -319,9 +246,6 @@ class DataAssetDataSourceDetailsArgs:
     @property
     @pulumi.getter(name="userName")
     def user_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Username for connection to Influx
-        """
         return pulumi.get(self, "user_name")
 
     @user_name.setter
@@ -331,9 +255,6 @@ class DataAssetDataSourceDetailsArgs:
     @property
     @pulumi.getter(name="versionSpecificDetails")
     def version_specific_details(self) -> Optional[pulumi.Input['DataAssetDataSourceDetailsVersionSpecificDetailsArgs']]:
-        """
-        Possible data sources
-        """
         return pulumi.get(self, "version_specific_details")
 
     @version_specific_details.setter
@@ -343,9 +264,6 @@ class DataAssetDataSourceDetailsArgs:
     @property
     @pulumi.getter(name="walletPasswordSecretId")
     def wallet_password_secret_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        wallet password Secret ID in String format
-        """
         return pulumi.get(self, "wallet_password_secret_id")
 
     @wallet_password_secret_id.setter
@@ -361,13 +279,6 @@ class DataAssetDataSourceDetailsVersionSpecificDetailsArgs:
                  database_name: Optional[pulumi.Input[str]] = None,
                  organization_name: Optional[pulumi.Input[str]] = None,
                  retention_policy_name: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] influx_version: Data source type where actually data asset is being stored
-        :param pulumi.Input[str] bucket: Bucket Name for influx connection
-        :param pulumi.Input[str] database_name: DB Name for influx connection
-        :param pulumi.Input[str] organization_name: Org name for the influx db
-        :param pulumi.Input[str] retention_policy_name: retention policy is how long the bucket would last
-        """
         pulumi.set(__self__, "influx_version", influx_version)
         if bucket is not None:
             pulumi.set(__self__, "bucket", bucket)
@@ -381,9 +292,6 @@ class DataAssetDataSourceDetailsVersionSpecificDetailsArgs:
     @property
     @pulumi.getter(name="influxVersion")
     def influx_version(self) -> pulumi.Input[str]:
-        """
-        Data source type where actually data asset is being stored
-        """
         return pulumi.get(self, "influx_version")
 
     @influx_version.setter
@@ -393,9 +301,6 @@ class DataAssetDataSourceDetailsVersionSpecificDetailsArgs:
     @property
     @pulumi.getter
     def bucket(self) -> Optional[pulumi.Input[str]]:
-        """
-        Bucket Name for influx connection
-        """
         return pulumi.get(self, "bucket")
 
     @bucket.setter
@@ -405,9 +310,6 @@ class DataAssetDataSourceDetailsVersionSpecificDetailsArgs:
     @property
     @pulumi.getter(name="databaseName")
     def database_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        DB Name for influx connection
-        """
         return pulumi.get(self, "database_name")
 
     @database_name.setter
@@ -417,9 +319,6 @@ class DataAssetDataSourceDetailsVersionSpecificDetailsArgs:
     @property
     @pulumi.getter(name="organizationName")
     def organization_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Org name for the influx db
-        """
         return pulumi.get(self, "organization_name")
 
     @organization_name.setter
@@ -429,9 +328,6 @@ class DataAssetDataSourceDetailsVersionSpecificDetailsArgs:
     @property
     @pulumi.getter(name="retentionPolicyName")
     def retention_policy_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        retention policy is how long the bucket would last
-        """
         return pulumi.get(self, "retention_policy_name")
 
     @retention_policy_name.setter
@@ -449,13 +345,6 @@ class DetectAnomalyJobInputDetailsArgs:
                  message: Optional[pulumi.Input[str]] = None,
                  object_locations: Optional[pulumi.Input[Sequence[pulumi.Input['DetectAnomalyJobInputDetailsObjectLocationArgs']]]] = None,
                  signal_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
-        """
-        :param pulumi.Input[str] input_type: Type of request. This parameter is automatically populated by classes generated by the SDK. For raw curl requests, you must provide this field.
-        :param pulumi.Input[Sequence[pulumi.Input['DetectAnomalyJobInputDetailsDataArgs']]] datas: Array containing data.
-        :param pulumi.Input[str] message: Inline input details.
-        :param pulumi.Input[Sequence[pulumi.Input['DetectAnomalyJobInputDetailsObjectLocationArgs']]] object_locations: List of ObjectLocations.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] signal_names: List of signal names.
-        """
         pulumi.set(__self__, "input_type", input_type)
         if content is not None:
             pulumi.set(__self__, "content", content)
@@ -473,9 +362,6 @@ class DetectAnomalyJobInputDetailsArgs:
     @property
     @pulumi.getter(name="inputType")
     def input_type(self) -> pulumi.Input[str]:
-        """
-        Type of request. This parameter is automatically populated by classes generated by the SDK. For raw curl requests, you must provide this field.
-        """
         return pulumi.get(self, "input_type")
 
     @input_type.setter
@@ -503,9 +389,6 @@ class DetectAnomalyJobInputDetailsArgs:
     @property
     @pulumi.getter
     def datas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DetectAnomalyJobInputDetailsDataArgs']]]]:
-        """
-        Array containing data.
-        """
         return pulumi.get(self, "datas")
 
     @datas.setter
@@ -515,9 +398,6 @@ class DetectAnomalyJobInputDetailsArgs:
     @property
     @pulumi.getter
     def message(self) -> Optional[pulumi.Input[str]]:
-        """
-        Inline input details.
-        """
         return pulumi.get(self, "message")
 
     @message.setter
@@ -527,9 +407,6 @@ class DetectAnomalyJobInputDetailsArgs:
     @property
     @pulumi.getter(name="objectLocations")
     def object_locations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DetectAnomalyJobInputDetailsObjectLocationArgs']]]]:
-        """
-        List of ObjectLocations.
-        """
         return pulumi.get(self, "object_locations")
 
     @object_locations.setter
@@ -539,9 +416,6 @@ class DetectAnomalyJobInputDetailsArgs:
     @property
     @pulumi.getter(name="signalNames")
     def signal_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        List of signal names.
-        """
         return pulumi.get(self, "signal_names")
 
     @signal_names.setter
@@ -554,10 +428,6 @@ class DetectAnomalyJobInputDetailsDataArgs:
     def __init__(__self__, *,
                  timestamp: Optional[pulumi.Input[str]] = None,
                  values: Optional[pulumi.Input[Sequence[pulumi.Input[float]]]] = None):
-        """
-        :param pulumi.Input[str] timestamp: Nullable string representing timestamp.
-        :param pulumi.Input[Sequence[pulumi.Input[float]]] values: Array of double precision values.
-        """
         if timestamp is not None:
             pulumi.set(__self__, "timestamp", timestamp)
         if values is not None:
@@ -566,9 +436,6 @@ class DetectAnomalyJobInputDetailsDataArgs:
     @property
     @pulumi.getter
     def timestamp(self) -> Optional[pulumi.Input[str]]:
-        """
-        Nullable string representing timestamp.
-        """
         return pulumi.get(self, "timestamp")
 
     @timestamp.setter
@@ -578,9 +445,6 @@ class DetectAnomalyJobInputDetailsDataArgs:
     @property
     @pulumi.getter
     def values(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[float]]]]:
-        """
-        Array of double precision values.
-        """
         return pulumi.get(self, "values")
 
     @values.setter
@@ -594,11 +458,6 @@ class DetectAnomalyJobInputDetailsObjectLocationArgs:
                  bucket: Optional[pulumi.Input[str]] = None,
                  namespace: Optional[pulumi.Input[str]] = None,
                  object: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] bucket: Object Storage bucket name.
-        :param pulumi.Input[str] namespace: Object Storage namespace.
-        :param pulumi.Input[str] object: Object Storage object name.
-        """
         if bucket is not None:
             pulumi.set(__self__, "bucket", bucket)
         if namespace is not None:
@@ -609,9 +468,6 @@ class DetectAnomalyJobInputDetailsObjectLocationArgs:
     @property
     @pulumi.getter
     def bucket(self) -> Optional[pulumi.Input[str]]:
-        """
-        Object Storage bucket name.
-        """
         return pulumi.get(self, "bucket")
 
     @bucket.setter
@@ -621,9 +477,6 @@ class DetectAnomalyJobInputDetailsObjectLocationArgs:
     @property
     @pulumi.getter
     def namespace(self) -> Optional[pulumi.Input[str]]:
-        """
-        Object Storage namespace.
-        """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
@@ -633,9 +486,6 @@ class DetectAnomalyJobInputDetailsObjectLocationArgs:
     @property
     @pulumi.getter
     def object(self) -> Optional[pulumi.Input[str]]:
-        """
-        Object Storage object name.
-        """
         return pulumi.get(self, "object")
 
     @object.setter
@@ -650,12 +500,6 @@ class DetectAnomalyJobOutputDetailsArgs:
                  namespace: pulumi.Input[str],
                  output_type: pulumi.Input[str],
                  prefix: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] bucket: Object Storage bucket name.
-        :param pulumi.Input[str] namespace: Object Storage namespace.
-        :param pulumi.Input[str] output_type: The type of output location. Allowed values are:
-        :param pulumi.Input[str] prefix: Object Storage folder name.
-        """
         pulumi.set(__self__, "bucket", bucket)
         pulumi.set(__self__, "namespace", namespace)
         pulumi.set(__self__, "output_type", output_type)
@@ -665,9 +509,6 @@ class DetectAnomalyJobOutputDetailsArgs:
     @property
     @pulumi.getter
     def bucket(self) -> pulumi.Input[str]:
-        """
-        Object Storage bucket name.
-        """
         return pulumi.get(self, "bucket")
 
     @bucket.setter
@@ -677,9 +518,6 @@ class DetectAnomalyJobOutputDetailsArgs:
     @property
     @pulumi.getter
     def namespace(self) -> pulumi.Input[str]:
-        """
-        Object Storage namespace.
-        """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
@@ -689,9 +527,6 @@ class DetectAnomalyJobOutputDetailsArgs:
     @property
     @pulumi.getter(name="outputType")
     def output_type(self) -> pulumi.Input[str]:
-        """
-        The type of output location. Allowed values are:
-        """
         return pulumi.get(self, "output_type")
 
     @output_type.setter
@@ -701,9 +536,6 @@ class DetectAnomalyJobOutputDetailsArgs:
     @property
     @pulumi.getter
     def prefix(self) -> Optional[pulumi.Input[str]]:
-        """
-        Object Storage folder name.
-        """
         return pulumi.get(self, "prefix")
 
     @prefix.setter
@@ -719,13 +551,6 @@ class ModelModelTrainingDetailsArgs:
                  target_fap: Optional[pulumi.Input[float]] = None,
                  training_fraction: Optional[pulumi.Input[float]] = None,
                  window_size: Optional[pulumi.Input[int]] = None):
-        """
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] data_asset_ids: The list of OCIDs of the data assets to train the model. The dataAssets have to be in the same project where the ai model would reside.
-        :param pulumi.Input[str] algorithm_hint: User can choose specific algorithm for training.
-        :param pulumi.Input[float] target_fap: A target model accuracy metric user provides as their requirement
-        :param pulumi.Input[float] training_fraction: Fraction of total data that is used for training the model. The remaining is used for validation of the model.
-        :param pulumi.Input[int] window_size: This value would determine the window size of the training algorithm.
-        """
         pulumi.set(__self__, "data_asset_ids", data_asset_ids)
         if algorithm_hint is not None:
             pulumi.set(__self__, "algorithm_hint", algorithm_hint)
@@ -739,9 +564,6 @@ class ModelModelTrainingDetailsArgs:
     @property
     @pulumi.getter(name="dataAssetIds")
     def data_asset_ids(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
-        """
-        The list of OCIDs of the data assets to train the model. The dataAssets have to be in the same project where the ai model would reside.
-        """
         return pulumi.get(self, "data_asset_ids")
 
     @data_asset_ids.setter
@@ -751,9 +573,6 @@ class ModelModelTrainingDetailsArgs:
     @property
     @pulumi.getter(name="algorithmHint")
     def algorithm_hint(self) -> Optional[pulumi.Input[str]]:
-        """
-        User can choose specific algorithm for training.
-        """
         return pulumi.get(self, "algorithm_hint")
 
     @algorithm_hint.setter
@@ -763,9 +582,6 @@ class ModelModelTrainingDetailsArgs:
     @property
     @pulumi.getter(name="targetFap")
     def target_fap(self) -> Optional[pulumi.Input[float]]:
-        """
-        A target model accuracy metric user provides as their requirement
-        """
         return pulumi.get(self, "target_fap")
 
     @target_fap.setter
@@ -775,9 +591,6 @@ class ModelModelTrainingDetailsArgs:
     @property
     @pulumi.getter(name="trainingFraction")
     def training_fraction(self) -> Optional[pulumi.Input[float]]:
-        """
-        Fraction of total data that is used for training the model. The remaining is used for validation of the model.
-        """
         return pulumi.get(self, "training_fraction")
 
     @training_fraction.setter
@@ -787,9 +600,6 @@ class ModelModelTrainingDetailsArgs:
     @property
     @pulumi.getter(name="windowSize")
     def window_size(self) -> Optional[pulumi.Input[int]]:
-        """
-        This value would determine the window size of the training algorithm.
-        """
         return pulumi.get(self, "window_size")
 
     @window_size.setter
@@ -810,15 +620,6 @@ class ModelModelTrainingResultArgs:
                  signal_details: Optional[pulumi.Input[Sequence[pulumi.Input['ModelModelTrainingResultSignalDetailArgs']]]] = None,
                  warning: Optional[pulumi.Input[str]] = None,
                  window_size: Optional[pulumi.Input[int]] = None):
-        """
-        :param pulumi.Input[float] fap: Accuracy metric for a signal.
-        :param pulumi.Input[bool] is_training_goal_achieved: A boolean value to indicate if train goal/targetFap is achieved for trained model
-        :param pulumi.Input[float] multivariate_fap: The model accuracy metric on timestamp level.
-        :param pulumi.Input[Sequence[pulumi.Input['ModelModelTrainingResultRowReductionDetailArgs']]] row_reduction_details: Information regarding how/what row reduction methods will be applied. If this property is not present or is null, then it means row reduction is not applied.
-        :param pulumi.Input[Sequence[pulumi.Input['ModelModelTrainingResultSignalDetailArgs']]] signal_details: The list of signal details.
-        :param pulumi.Input[str] warning: A warning message to explain the reason when targetFap cannot be achieved for trained model
-        :param pulumi.Input[int] window_size: This value would determine the window size of the training algorithm.
-        """
         if fap is not None:
             pulumi.set(__self__, "fap", fap)
         if is_training_goal_achieved is not None:
@@ -843,9 +644,6 @@ class ModelModelTrainingResultArgs:
     @property
     @pulumi.getter
     def fap(self) -> Optional[pulumi.Input[float]]:
-        """
-        Accuracy metric for a signal.
-        """
         return pulumi.get(self, "fap")
 
     @fap.setter
@@ -855,9 +653,6 @@ class ModelModelTrainingResultArgs:
     @property
     @pulumi.getter(name="isTrainingGoalAchieved")
     def is_training_goal_achieved(self) -> Optional[pulumi.Input[bool]]:
-        """
-        A boolean value to indicate if train goal/targetFap is achieved for trained model
-        """
         return pulumi.get(self, "is_training_goal_achieved")
 
     @is_training_goal_achieved.setter
@@ -885,9 +680,6 @@ class ModelModelTrainingResultArgs:
     @property
     @pulumi.getter(name="multivariateFap")
     def multivariate_fap(self) -> Optional[pulumi.Input[float]]:
-        """
-        The model accuracy metric on timestamp level.
-        """
         return pulumi.get(self, "multivariate_fap")
 
     @multivariate_fap.setter
@@ -906,9 +698,6 @@ class ModelModelTrainingResultArgs:
     @property
     @pulumi.getter(name="rowReductionDetails")
     def row_reduction_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ModelModelTrainingResultRowReductionDetailArgs']]]]:
-        """
-        Information regarding how/what row reduction methods will be applied. If this property is not present or is null, then it means row reduction is not applied.
-        """
         return pulumi.get(self, "row_reduction_details")
 
     @row_reduction_details.setter
@@ -918,9 +707,6 @@ class ModelModelTrainingResultArgs:
     @property
     @pulumi.getter(name="signalDetails")
     def signal_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ModelModelTrainingResultSignalDetailArgs']]]]:
-        """
-        The list of signal details.
-        """
         return pulumi.get(self, "signal_details")
 
     @signal_details.setter
@@ -930,9 +716,6 @@ class ModelModelTrainingResultArgs:
     @property
     @pulumi.getter
     def warning(self) -> Optional[pulumi.Input[str]]:
-        """
-        A warning message to explain the reason when targetFap cannot be achieved for trained model
-        """
         return pulumi.get(self, "warning")
 
     @warning.setter
@@ -942,9 +725,6 @@ class ModelModelTrainingResultArgs:
     @property
     @pulumi.getter(name="windowSize")
     def window_size(self) -> Optional[pulumi.Input[int]]:
-        """
-        This value would determine the window size of the training algorithm.
-        """
         return pulumi.get(self, "window_size")
 
     @window_size.setter
@@ -958,13 +738,6 @@ class ModelModelTrainingResultRowReductionDetailArgs:
                  is_reduction_enabled: Optional[pulumi.Input[bool]] = None,
                  reduction_method: Optional[pulumi.Input[str]] = None,
                  reduction_percentage: Optional[pulumi.Input[float]] = None):
-        """
-        :param pulumi.Input[bool] is_reduction_enabled: A boolean value to indicate if row reduction is applied
-        :param pulumi.Input[str] reduction_method: Method for row reduction:
-               * DELETE_ROW - delete rows with equal intervals
-               * AVERAGE_ROW - average multiple rows to one row
-        :param pulumi.Input[float] reduction_percentage: A percentage to reduce data size down to on top of original data
-        """
         if is_reduction_enabled is not None:
             pulumi.set(__self__, "is_reduction_enabled", is_reduction_enabled)
         if reduction_method is not None:
@@ -975,9 +748,6 @@ class ModelModelTrainingResultRowReductionDetailArgs:
     @property
     @pulumi.getter(name="isReductionEnabled")
     def is_reduction_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        A boolean value to indicate if row reduction is applied
-        """
         return pulumi.get(self, "is_reduction_enabled")
 
     @is_reduction_enabled.setter
@@ -987,11 +757,6 @@ class ModelModelTrainingResultRowReductionDetailArgs:
     @property
     @pulumi.getter(name="reductionMethod")
     def reduction_method(self) -> Optional[pulumi.Input[str]]:
-        """
-        Method for row reduction:
-        * DELETE_ROW - delete rows with equal intervals
-        * AVERAGE_ROW - average multiple rows to one row
-        """
         return pulumi.get(self, "reduction_method")
 
     @reduction_method.setter
@@ -1001,9 +766,6 @@ class ModelModelTrainingResultRowReductionDetailArgs:
     @property
     @pulumi.getter(name="reductionPercentage")
     def reduction_percentage(self) -> Optional[pulumi.Input[float]]:
-        """
-        A percentage to reduce data size down to on top of original data
-        """
         return pulumi.get(self, "reduction_percentage")
 
     @reduction_percentage.setter
@@ -1023,20 +785,6 @@ class ModelModelTrainingResultSignalDetailArgs:
                  signal_name: Optional[pulumi.Input[str]] = None,
                  status: Optional[pulumi.Input[str]] = None,
                  std: Optional[pulumi.Input[float]] = None):
-        """
-        :param pulumi.Input[str] details: detailed information for a signal.
-        :param pulumi.Input[float] fap: Accuracy metric for a signal.
-        :param pulumi.Input[bool] is_quantized: A boolean value to indicate if a signal is quantized or not.
-        :param pulumi.Input[float] max: Max value within a signal.
-        :param pulumi.Input[float] min: Min value within a signal.
-        :param pulumi.Input[float] mvi_ratio: The ratio of missing values in a signal filled/imputed by the IDP algorithm.
-        :param pulumi.Input[str] signal_name: The name of a signal.
-        :param pulumi.Input[str] status: Status of the signal:
-               * ACCEPTED - the signal is used for training the model
-               * DROPPED - the signal does not meet requirement, and is dropped before training the model.
-               * OTHER - placeholder for other status
-        :param pulumi.Input[float] std: Standard deviation of values within a signal.
-        """
         if details is not None:
             pulumi.set(__self__, "details", details)
         if fap is not None:
@@ -1059,9 +807,6 @@ class ModelModelTrainingResultSignalDetailArgs:
     @property
     @pulumi.getter
     def details(self) -> Optional[pulumi.Input[str]]:
-        """
-        detailed information for a signal.
-        """
         return pulumi.get(self, "details")
 
     @details.setter
@@ -1071,9 +816,6 @@ class ModelModelTrainingResultSignalDetailArgs:
     @property
     @pulumi.getter
     def fap(self) -> Optional[pulumi.Input[float]]:
-        """
-        Accuracy metric for a signal.
-        """
         return pulumi.get(self, "fap")
 
     @fap.setter
@@ -1083,9 +825,6 @@ class ModelModelTrainingResultSignalDetailArgs:
     @property
     @pulumi.getter(name="isQuantized")
     def is_quantized(self) -> Optional[pulumi.Input[bool]]:
-        """
-        A boolean value to indicate if a signal is quantized or not.
-        """
         return pulumi.get(self, "is_quantized")
 
     @is_quantized.setter
@@ -1095,9 +834,6 @@ class ModelModelTrainingResultSignalDetailArgs:
     @property
     @pulumi.getter
     def max(self) -> Optional[pulumi.Input[float]]:
-        """
-        Max value within a signal.
-        """
         return pulumi.get(self, "max")
 
     @max.setter
@@ -1107,9 +843,6 @@ class ModelModelTrainingResultSignalDetailArgs:
     @property
     @pulumi.getter
     def min(self) -> Optional[pulumi.Input[float]]:
-        """
-        Min value within a signal.
-        """
         return pulumi.get(self, "min")
 
     @min.setter
@@ -1119,9 +852,6 @@ class ModelModelTrainingResultSignalDetailArgs:
     @property
     @pulumi.getter(name="mviRatio")
     def mvi_ratio(self) -> Optional[pulumi.Input[float]]:
-        """
-        The ratio of missing values in a signal filled/imputed by the IDP algorithm.
-        """
         return pulumi.get(self, "mvi_ratio")
 
     @mvi_ratio.setter
@@ -1131,9 +861,6 @@ class ModelModelTrainingResultSignalDetailArgs:
     @property
     @pulumi.getter(name="signalName")
     def signal_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name of a signal.
-        """
         return pulumi.get(self, "signal_name")
 
     @signal_name.setter
@@ -1143,12 +870,6 @@ class ModelModelTrainingResultSignalDetailArgs:
     @property
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[str]]:
-        """
-        Status of the signal:
-        * ACCEPTED - the signal is used for training the model
-        * DROPPED - the signal does not meet requirement, and is dropped before training the model.
-        * OTHER - placeholder for other status
-        """
         return pulumi.get(self, "status")
 
     @status.setter
@@ -1158,9 +879,6 @@ class ModelModelTrainingResultSignalDetailArgs:
     @property
     @pulumi.getter
     def std(self) -> Optional[pulumi.Input[float]]:
-        """
-        Standard deviation of values within a signal.
-        """
         return pulumi.get(self, "std")
 
     @std.setter

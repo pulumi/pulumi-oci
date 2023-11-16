@@ -26,14 +26,6 @@ class UnifiedAgentConfigurationArgs:
                  group_association: Optional[pulumi.Input['UnifiedAgentConfigurationGroupAssociationArgs']] = None):
         """
         The set of arguments for constructing a UnifiedAgentConfiguration resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that the resource belongs to.
-        :param pulumi.Input[bool] is_enabled: (Updatable) Whether or not this resource is currently enabled.
-        :param pulumi.Input['UnifiedAgentConfigurationServiceConfigurationArgs'] service_configuration: (Updatable) Top level Unified Agent service configuration object.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) Description for this resource.
-        :param pulumi.Input[str] display_name: (Updatable) The user-friendly display name. This must be unique within the enclosing resource, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input['UnifiedAgentConfigurationGroupAssociationArgs'] group_association: (Updatable) Groups using the configuration.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "is_enabled", is_enabled)
@@ -52,9 +44,6 @@ class UnifiedAgentConfigurationArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The OCID of the compartment that the resource belongs to.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -64,9 +53,6 @@ class UnifiedAgentConfigurationArgs:
     @property
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> pulumi.Input[bool]:
-        """
-        (Updatable) Whether or not this resource is currently enabled.
-        """
         return pulumi.get(self, "is_enabled")
 
     @is_enabled.setter
@@ -76,9 +62,6 @@ class UnifiedAgentConfigurationArgs:
     @property
     @pulumi.getter(name="serviceConfiguration")
     def service_configuration(self) -> pulumi.Input['UnifiedAgentConfigurationServiceConfigurationArgs']:
-        """
-        (Updatable) Top level Unified Agent service configuration object.
-        """
         return pulumi.get(self, "service_configuration")
 
     @service_configuration.setter
@@ -88,9 +71,6 @@ class UnifiedAgentConfigurationArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -100,9 +80,6 @@ class UnifiedAgentConfigurationArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Description for this resource.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -112,9 +89,6 @@ class UnifiedAgentConfigurationArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The user-friendly display name. This must be unique within the enclosing resource, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -124,9 +98,6 @@ class UnifiedAgentConfigurationArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -136,9 +107,6 @@ class UnifiedAgentConfigurationArgs:
     @property
     @pulumi.getter(name="groupAssociation")
     def group_association(self) -> Optional[pulumi.Input['UnifiedAgentConfigurationGroupAssociationArgs']]:
-        """
-        (Updatable) Groups using the configuration.
-        """
         return pulumi.get(self, "group_association")
 
     @group_association.setter
@@ -163,18 +131,6 @@ class _UnifiedAgentConfigurationState:
                  time_last_modified: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering UnifiedAgentConfiguration resources.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that the resource belongs to.
-        :param pulumi.Input[str] configuration_state: State of unified agent service configuration.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) Description for this resource.
-        :param pulumi.Input[str] display_name: (Updatable) The user-friendly display name. This must be unique within the enclosing resource, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input['UnifiedAgentConfigurationGroupAssociationArgs'] group_association: (Updatable) Groups using the configuration.
-        :param pulumi.Input[bool] is_enabled: (Updatable) Whether or not this resource is currently enabled.
-        :param pulumi.Input['UnifiedAgentConfigurationServiceConfigurationArgs'] service_configuration: (Updatable) Top level Unified Agent service configuration object.
-        :param pulumi.Input[str] state: The pipeline state.
-        :param pulumi.Input[str] time_created: Time the resource was created.
-        :param pulumi.Input[str] time_last_modified: Time the resource was last modified.
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -204,9 +160,6 @@ class _UnifiedAgentConfigurationState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the compartment that the resource belongs to.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -216,9 +169,6 @@ class _UnifiedAgentConfigurationState:
     @property
     @pulumi.getter(name="configurationState")
     def configuration_state(self) -> Optional[pulumi.Input[str]]:
-        """
-        State of unified agent service configuration.
-        """
         return pulumi.get(self, "configuration_state")
 
     @configuration_state.setter
@@ -228,9 +178,6 @@ class _UnifiedAgentConfigurationState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -240,9 +187,6 @@ class _UnifiedAgentConfigurationState:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Description for this resource.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -252,9 +196,6 @@ class _UnifiedAgentConfigurationState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The user-friendly display name. This must be unique within the enclosing resource, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -264,9 +205,6 @@ class _UnifiedAgentConfigurationState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -276,9 +214,6 @@ class _UnifiedAgentConfigurationState:
     @property
     @pulumi.getter(name="groupAssociation")
     def group_association(self) -> Optional[pulumi.Input['UnifiedAgentConfigurationGroupAssociationArgs']]:
-        """
-        (Updatable) Groups using the configuration.
-        """
         return pulumi.get(self, "group_association")
 
     @group_association.setter
@@ -288,9 +223,6 @@ class _UnifiedAgentConfigurationState:
     @property
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Whether or not this resource is currently enabled.
-        """
         return pulumi.get(self, "is_enabled")
 
     @is_enabled.setter
@@ -300,9 +232,6 @@ class _UnifiedAgentConfigurationState:
     @property
     @pulumi.getter(name="serviceConfiguration")
     def service_configuration(self) -> Optional[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationArgs']]:
-        """
-        (Updatable) Top level Unified Agent service configuration object.
-        """
         return pulumi.get(self, "service_configuration")
 
     @service_configuration.setter
@@ -312,9 +241,6 @@ class _UnifiedAgentConfigurationState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The pipeline state.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -324,9 +250,6 @@ class _UnifiedAgentConfigurationState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        Time the resource was created.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -336,9 +259,6 @@ class _UnifiedAgentConfigurationState:
     @property
     @pulumi.getter(name="timeLastModified")
     def time_last_modified(self) -> Optional[pulumi.Input[str]]:
-        """
-        Time the resource was last modified.
-        """
         return pulumi.get(self, "time_last_modified")
 
     @time_last_modified.setter
@@ -361,114 +281,9 @@ class UnifiedAgentConfiguration(pulumi.CustomResource):
                  service_configuration: Optional[pulumi.Input[pulumi.InputType['UnifiedAgentConfigurationServiceConfigurationArgs']]] = None,
                  __props__=None):
         """
-        This resource provides the Unified Agent Configuration resource in Oracle Cloud Infrastructure Logging service.
-
-        Create unified agent configuration registration.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_unified_agent_configuration = oci.logging.UnifiedAgentConfiguration("testUnifiedAgentConfiguration",
-            compartment_id=var["compartment_id"],
-            is_enabled=var["unified_agent_configuration_is_enabled"],
-            description=var["unified_agent_configuration_description"],
-            display_name=var["unified_agent_configuration_display_name"],
-            service_configuration=oci.logging.UnifiedAgentConfigurationServiceConfigurationArgs(
-                configuration_type=var["unified_agent_configuration_service_configuration_configuration_type"],
-                destination=oci.logging.UnifiedAgentConfigurationServiceConfigurationDestinationArgs(
-                    log_object_id=oci_objectstorage_object["test_object"]["id"],
-                    operational_metrics_configuration=oci.logging.UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationArgs(
-                        destination=oci.logging.UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationDestinationArgs(
-                            compartment_id=var["compartment_id"],
-                        ),
-                        source=oci.logging.UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceArgs(
-                            type=var["unified_agent_configuration_service_configuration_destination_operational_metrics_configuration_source_type"],
-                            metrics=var["unified_agent_configuration_service_configuration_destination_operational_metrics_configuration_source_metrics"],
-                            record_input=oci.logging.UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInputArgs(
-                                namespace=var["unified_agent_configuration_service_configuration_destination_operational_metrics_configuration_source_record_input_namespace"],
-                                resource_group=var["unified_agent_configuration_service_configuration_destination_operational_metrics_configuration_source_record_input_resource_group"],
-                            ),
-                        ),
-                    ),
-                ),
-                sources=[oci.logging.UnifiedAgentConfigurationServiceConfigurationSourceArgs(
-                    source_type=var["unified_agent_configuration_service_configuration_sources_source_type"],
-                    channels=var["unified_agent_configuration_service_configuration_sources_channels"],
-                    name=var["unified_agent_configuration_service_configuration_sources_name"],
-                    parser=oci.logging.UnifiedAgentConfigurationServiceConfigurationSourceParserArgs(
-                        parser_type=var["unified_agent_configuration_service_configuration_sources_parser_parser_type"],
-                        delimiter=var["unified_agent_configuration_service_configuration_sources_parser_delimiter"],
-                        expression=var["unified_agent_configuration_service_configuration_sources_parser_expression"],
-                        field_time_key=var["unified_agent_configuration_service_configuration_sources_parser_field_time_key"],
-                        formats=var["unified_agent_configuration_service_configuration_sources_parser_format"],
-                        format_firstline=var["unified_agent_configuration_service_configuration_sources_parser_format_firstline"],
-                        grok_failure_key=var["unified_agent_configuration_service_configuration_sources_parser_grok_failure_key"],
-                        grok_name_key=var["unified_agent_configuration_service_configuration_sources_parser_grok_name_key"],
-                        is_estimate_current_event=var["unified_agent_configuration_service_configuration_sources_parser_is_estimate_current_event"],
-                        is_keep_time_key=var["unified_agent_configuration_service_configuration_sources_parser_is_keep_time_key"],
-                        is_merge_cri_fields=var["unified_agent_configuration_service_configuration_sources_parser_is_merge_cri_fields"],
-                        is_null_empty_string=var["unified_agent_configuration_service_configuration_sources_parser_is_null_empty_string"],
-                        is_support_colonless_ident=var["unified_agent_configuration_service_configuration_sources_parser_is_support_colonless_ident"],
-                        is_with_priority=var["unified_agent_configuration_service_configuration_sources_parser_is_with_priority"],
-                        keys=var["unified_agent_configuration_service_configuration_sources_parser_keys"],
-                        message_format=var["unified_agent_configuration_service_configuration_sources_parser_message_format"],
-                        message_key=var["unified_agent_configuration_service_configuration_sources_parser_message_key"],
-                        multi_line_start_regexp=var["unified_agent_configuration_service_configuration_sources_parser_multi_line_start_regexp"],
-                        nested_parser=oci.logging.UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArgs(
-                            time_format=var["unified_agent_configuration_service_configuration_sources_parser_nested_parser_time_format"],
-                            field_time_key=var["unified_agent_configuration_service_configuration_sources_parser_nested_parser_field_time_key"],
-                            is_keep_time_key=var["unified_agent_configuration_service_configuration_sources_parser_nested_parser_is_keep_time_key"],
-                        ),
-                        null_value_pattern=var["unified_agent_configuration_service_configuration_sources_parser_null_value_pattern"],
-                        patterns=[oci.logging.UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArgs(
-                            field_time_format=var["unified_agent_configuration_service_configuration_sources_parser_patterns_field_time_format"],
-                            field_time_key=var["unified_agent_configuration_service_configuration_sources_parser_patterns_field_time_key"],
-                            field_time_zone=var["unified_agent_configuration_service_configuration_sources_parser_patterns_field_time_zone"],
-                            name=var["unified_agent_configuration_service_configuration_sources_parser_patterns_name"],
-                            pattern=var["unified_agent_configuration_service_configuration_sources_parser_patterns_pattern"],
-                        )],
-                        rfc5424time_format=var["unified_agent_configuration_service_configuration_sources_parser_rfc5424time_format"],
-                        syslog_parser_type=var["unified_agent_configuration_service_configuration_sources_parser_syslog_parser_type"],
-                        time_format=var["unified_agent_configuration_service_configuration_sources_parser_time_format"],
-                        time_type=var["unified_agent_configuration_service_configuration_sources_parser_time_type"],
-                        timeout_in_milliseconds=var["unified_agent_configuration_service_configuration_sources_parser_timeout_in_milliseconds"],
-                        types=var["unified_agent_configuration_service_configuration_sources_parser_types"],
-                    ),
-                    paths=var["unified_agent_configuration_service_configuration_sources_paths"],
-                )],
-            ),
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            freeform_tags={
-                "Department": "Finance",
-            },
-            group_association=oci.logging.UnifiedAgentConfigurationGroupAssociationArgs(
-                group_lists=var["unified_agent_configuration_group_association_group_list"],
-            ))
-        ```
-
-        ## Import
-
-        UnifiedAgentConfigurations can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Logging/unifiedAgentConfiguration:UnifiedAgentConfiguration test_unified_agent_configuration "id"
-        ```
-
+        Create a UnifiedAgentConfiguration resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that the resource belongs to.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) Description for this resource.
-        :param pulumi.Input[str] display_name: (Updatable) The user-friendly display name. This must be unique within the enclosing resource, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[pulumi.InputType['UnifiedAgentConfigurationGroupAssociationArgs']] group_association: (Updatable) Groups using the configuration.
-        :param pulumi.Input[bool] is_enabled: (Updatable) Whether or not this resource is currently enabled.
-        :param pulumi.Input[pulumi.InputType['UnifiedAgentConfigurationServiceConfigurationArgs']] service_configuration: (Updatable) Top level Unified Agent service configuration object.
         """
         ...
     @overload
@@ -477,104 +292,7 @@ class UnifiedAgentConfiguration(pulumi.CustomResource):
                  args: UnifiedAgentConfigurationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Unified Agent Configuration resource in Oracle Cloud Infrastructure Logging service.
-
-        Create unified agent configuration registration.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_unified_agent_configuration = oci.logging.UnifiedAgentConfiguration("testUnifiedAgentConfiguration",
-            compartment_id=var["compartment_id"],
-            is_enabled=var["unified_agent_configuration_is_enabled"],
-            description=var["unified_agent_configuration_description"],
-            display_name=var["unified_agent_configuration_display_name"],
-            service_configuration=oci.logging.UnifiedAgentConfigurationServiceConfigurationArgs(
-                configuration_type=var["unified_agent_configuration_service_configuration_configuration_type"],
-                destination=oci.logging.UnifiedAgentConfigurationServiceConfigurationDestinationArgs(
-                    log_object_id=oci_objectstorage_object["test_object"]["id"],
-                    operational_metrics_configuration=oci.logging.UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationArgs(
-                        destination=oci.logging.UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationDestinationArgs(
-                            compartment_id=var["compartment_id"],
-                        ),
-                        source=oci.logging.UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceArgs(
-                            type=var["unified_agent_configuration_service_configuration_destination_operational_metrics_configuration_source_type"],
-                            metrics=var["unified_agent_configuration_service_configuration_destination_operational_metrics_configuration_source_metrics"],
-                            record_input=oci.logging.UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInputArgs(
-                                namespace=var["unified_agent_configuration_service_configuration_destination_operational_metrics_configuration_source_record_input_namespace"],
-                                resource_group=var["unified_agent_configuration_service_configuration_destination_operational_metrics_configuration_source_record_input_resource_group"],
-                            ),
-                        ),
-                    ),
-                ),
-                sources=[oci.logging.UnifiedAgentConfigurationServiceConfigurationSourceArgs(
-                    source_type=var["unified_agent_configuration_service_configuration_sources_source_type"],
-                    channels=var["unified_agent_configuration_service_configuration_sources_channels"],
-                    name=var["unified_agent_configuration_service_configuration_sources_name"],
-                    parser=oci.logging.UnifiedAgentConfigurationServiceConfigurationSourceParserArgs(
-                        parser_type=var["unified_agent_configuration_service_configuration_sources_parser_parser_type"],
-                        delimiter=var["unified_agent_configuration_service_configuration_sources_parser_delimiter"],
-                        expression=var["unified_agent_configuration_service_configuration_sources_parser_expression"],
-                        field_time_key=var["unified_agent_configuration_service_configuration_sources_parser_field_time_key"],
-                        formats=var["unified_agent_configuration_service_configuration_sources_parser_format"],
-                        format_firstline=var["unified_agent_configuration_service_configuration_sources_parser_format_firstline"],
-                        grok_failure_key=var["unified_agent_configuration_service_configuration_sources_parser_grok_failure_key"],
-                        grok_name_key=var["unified_agent_configuration_service_configuration_sources_parser_grok_name_key"],
-                        is_estimate_current_event=var["unified_agent_configuration_service_configuration_sources_parser_is_estimate_current_event"],
-                        is_keep_time_key=var["unified_agent_configuration_service_configuration_sources_parser_is_keep_time_key"],
-                        is_merge_cri_fields=var["unified_agent_configuration_service_configuration_sources_parser_is_merge_cri_fields"],
-                        is_null_empty_string=var["unified_agent_configuration_service_configuration_sources_parser_is_null_empty_string"],
-                        is_support_colonless_ident=var["unified_agent_configuration_service_configuration_sources_parser_is_support_colonless_ident"],
-                        is_with_priority=var["unified_agent_configuration_service_configuration_sources_parser_is_with_priority"],
-                        keys=var["unified_agent_configuration_service_configuration_sources_parser_keys"],
-                        message_format=var["unified_agent_configuration_service_configuration_sources_parser_message_format"],
-                        message_key=var["unified_agent_configuration_service_configuration_sources_parser_message_key"],
-                        multi_line_start_regexp=var["unified_agent_configuration_service_configuration_sources_parser_multi_line_start_regexp"],
-                        nested_parser=oci.logging.UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArgs(
-                            time_format=var["unified_agent_configuration_service_configuration_sources_parser_nested_parser_time_format"],
-                            field_time_key=var["unified_agent_configuration_service_configuration_sources_parser_nested_parser_field_time_key"],
-                            is_keep_time_key=var["unified_agent_configuration_service_configuration_sources_parser_nested_parser_is_keep_time_key"],
-                        ),
-                        null_value_pattern=var["unified_agent_configuration_service_configuration_sources_parser_null_value_pattern"],
-                        patterns=[oci.logging.UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArgs(
-                            field_time_format=var["unified_agent_configuration_service_configuration_sources_parser_patterns_field_time_format"],
-                            field_time_key=var["unified_agent_configuration_service_configuration_sources_parser_patterns_field_time_key"],
-                            field_time_zone=var["unified_agent_configuration_service_configuration_sources_parser_patterns_field_time_zone"],
-                            name=var["unified_agent_configuration_service_configuration_sources_parser_patterns_name"],
-                            pattern=var["unified_agent_configuration_service_configuration_sources_parser_patterns_pattern"],
-                        )],
-                        rfc5424time_format=var["unified_agent_configuration_service_configuration_sources_parser_rfc5424time_format"],
-                        syslog_parser_type=var["unified_agent_configuration_service_configuration_sources_parser_syslog_parser_type"],
-                        time_format=var["unified_agent_configuration_service_configuration_sources_parser_time_format"],
-                        time_type=var["unified_agent_configuration_service_configuration_sources_parser_time_type"],
-                        timeout_in_milliseconds=var["unified_agent_configuration_service_configuration_sources_parser_timeout_in_milliseconds"],
-                        types=var["unified_agent_configuration_service_configuration_sources_parser_types"],
-                    ),
-                    paths=var["unified_agent_configuration_service_configuration_sources_paths"],
-                )],
-            ),
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            freeform_tags={
-                "Department": "Finance",
-            },
-            group_association=oci.logging.UnifiedAgentConfigurationGroupAssociationArgs(
-                group_lists=var["unified_agent_configuration_group_association_group_list"],
-            ))
-        ```
-
-        ## Import
-
-        UnifiedAgentConfigurations can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Logging/unifiedAgentConfiguration:UnifiedAgentConfiguration test_unified_agent_configuration "id"
-        ```
-
+        Create a UnifiedAgentConfiguration resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param UnifiedAgentConfigurationArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -654,18 +372,6 @@ class UnifiedAgentConfiguration(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that the resource belongs to.
-        :param pulumi.Input[str] configuration_state: State of unified agent service configuration.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) Description for this resource.
-        :param pulumi.Input[str] display_name: (Updatable) The user-friendly display name. This must be unique within the enclosing resource, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[pulumi.InputType['UnifiedAgentConfigurationGroupAssociationArgs']] group_association: (Updatable) Groups using the configuration.
-        :param pulumi.Input[bool] is_enabled: (Updatable) Whether or not this resource is currently enabled.
-        :param pulumi.Input[pulumi.InputType['UnifiedAgentConfigurationServiceConfigurationArgs']] service_configuration: (Updatable) Top level Unified Agent service configuration object.
-        :param pulumi.Input[str] state: The pipeline state.
-        :param pulumi.Input[str] time_created: Time the resource was created.
-        :param pulumi.Input[str] time_last_modified: Time the resource was last modified.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -688,96 +394,60 @@ class UnifiedAgentConfiguration(pulumi.CustomResource):
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The OCID of the compartment that the resource belongs to.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="configurationState")
-    def configuration_state(self) -> pulumi.Output[str]:
-        """
-        State of unified agent service configuration.
-        """
+    def configuration_state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "configuration_state")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Description for this resource.
-        """
+    def description(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The user-friendly display name. This must be unique within the enclosing resource, and it's changeable. Avoid entering confidential information.
-        """
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="groupAssociation")
-    def group_association(self) -> pulumi.Output['outputs.UnifiedAgentConfigurationGroupAssociation']:
-        """
-        (Updatable) Groups using the configuration.
-        """
+    def group_association(self) -> pulumi.Output[Optional['outputs.UnifiedAgentConfigurationGroupAssociation']]:
         return pulumi.get(self, "group_association")
 
     @property
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) Whether or not this resource is currently enabled.
-        """
         return pulumi.get(self, "is_enabled")
 
     @property
     @pulumi.getter(name="serviceConfiguration")
     def service_configuration(self) -> pulumi.Output['outputs.UnifiedAgentConfigurationServiceConfiguration']:
-        """
-        (Updatable) Top level Unified Agent service configuration object.
-        """
         return pulumi.get(self, "service_configuration")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The pipeline state.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        Time the resource was created.
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeLastModified")
-    def time_last_modified(self) -> pulumi.Output[str]:
-        """
-        Time the resource was last modified.
-        """
+    def time_last_modified(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_last_modified")
 

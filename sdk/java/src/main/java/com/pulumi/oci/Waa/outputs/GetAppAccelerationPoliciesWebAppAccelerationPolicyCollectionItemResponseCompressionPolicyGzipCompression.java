@@ -6,6 +6,8 @@ package com.pulumi.oci.Waa.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompression {
@@ -13,15 +15,15 @@ public final class GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionI
      * @return When true, support for gzip compression is enabled. HTTP responses will be compressed with gzip only if the client indicates support for gzip via the &#34;Accept-Encoding: gzip&#34; request header.
      * 
      */
-    private Boolean isEnabled;
+    private @Nullable Boolean isEnabled;
 
     private GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompression() {}
     /**
      * @return When true, support for gzip compression is enabled. HTTP responses will be compressed with gzip only if the client indicates support for gzip via the &#34;Accept-Encoding: gzip&#34; request header.
      * 
      */
-    public Boolean isEnabled() {
-        return this.isEnabled;
+    public Optional<Boolean> isEnabled() {
+        return Optional.ofNullable(this.isEnabled);
     }
 
     public static Builder builder() {
@@ -33,7 +35,7 @@ public final class GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionI
     }
     @CustomType.Builder
     public static final class Builder {
-        private Boolean isEnabled;
+        private @Nullable Boolean isEnabled;
         public Builder() {}
         public Builder(GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompression defaults) {
     	      Objects.requireNonNull(defaults);
@@ -41,8 +43,8 @@ public final class GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionI
         }
 
         @CustomType.Setter
-        public Builder isEnabled(Boolean isEnabled) {
-            this.isEnabled = Objects.requireNonNull(isEnabled);
+        public Builder isEnabled(@Nullable Boolean isEnabled) {
+            this.isEnabled = isEnabled;
             return this;
         }
         public GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompression build() {

@@ -45,56 +45,56 @@ export interface GetCatalogResult {
     /**
      * The list of private reverse connection endpoints attached to the catalog
      */
-    readonly attachedCatalogPrivateEndpoints: string[];
+    readonly attachedCatalogPrivateEndpoints?: string[];
     readonly catalogId: string;
     /**
      * Compartment identifier.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * Data catalog identifier, which can be renamed.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * Unique identifier that is immutable on creation.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * An message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in 'Failed' state.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * The number of data objects added to the data catalog. Please see the data catalog documentation for further information on how this is calculated.
      */
-    readonly numberOfObjects: number;
+    readonly numberOfObjects?: number;
     /**
      * The REST front endpoint URL to the data catalog instance.
      */
-    readonly serviceApiUrl: string;
+    readonly serviceApiUrl?: string;
     /**
      * The console front endpoint URL to the data catalog instance.
      */
-    readonly serviceConsoleUrl: string;
+    readonly serviceConsoleUrl?: string;
     /**
      * The current state of the data catalog resource.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The time the data catalog was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The time the data catalog was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
 }
 /**
  * This data source provides details about a specific Catalog resource in Oracle Cloud Infrastructure Data Catalog service.

@@ -16,23 +16,23 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// <summary>
         /// The bucket name inside the object storage namespace.  Example: `custom_dr_scripts`
         /// </summary>
-        public readonly string Bucket;
+        public readonly string? Bucket;
         /// <summary>
         /// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
         /// </summary>
-        public readonly string Namespace;
+        public readonly string? Namespace;
         /// <summary>
         /// The object name inside the object storage bucket.  Example: `validate_app_start.sh`
         /// </summary>
-        public readonly string Object;
+        public readonly string? Object;
 
         [OutputConstructor]
         private GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocationResult(
-            string bucket,
+            string? bucket,
 
-            string @namespace,
+            string? @namespace,
 
-            string @object)
+            string? @object)
         {
             Bucket = bucket;
             Namespace = @namespace;

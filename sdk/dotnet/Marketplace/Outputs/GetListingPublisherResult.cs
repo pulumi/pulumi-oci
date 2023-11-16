@@ -16,23 +16,23 @@ namespace Pulumi.Oci.Marketplace.Outputs
         /// <summary>
         /// The email address of the publisher.
         /// </summary>
-        public readonly string ContactEmail;
+        public readonly string? ContactEmail;
         /// <summary>
         /// The phone number of the publisher.
         /// </summary>
-        public readonly string ContactPhone;
+        public readonly string? ContactPhone;
         /// <summary>
         /// A description of the screenshot.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// The address of the publisher's headquarters.
         /// </summary>
-        public readonly string HqAddress;
+        public readonly string? HqAddress;
         /// <summary>
         /// The unique identifier for the publisher.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Reference links.
         /// </summary>
@@ -44,37 +44,37 @@ namespace Pulumi.Oci.Marketplace.Outputs
         /// <summary>
         /// Text that describes the resource.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The publisher's website.
         /// </summary>
-        public readonly string WebsiteUrl;
+        public readonly string? WebsiteUrl;
         /// <summary>
         /// The year the publisher's company or organization was founded.
         /// </summary>
-        public readonly string YearFounded;
+        public readonly string? YearFounded;
 
         [OutputConstructor]
         private GetListingPublisherResult(
-            string contactEmail,
+            string? contactEmail,
 
-            string contactPhone,
+            string? contactPhone,
 
-            string description,
+            string? description,
 
-            string hqAddress,
+            string? hqAddress,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetListingPublisherLinkResult> links,
 
             ImmutableArray<Outputs.GetListingPublisherLogoResult> logos,
 
-            string name,
+            string? name,
 
-            string websiteUrl,
+            string? websiteUrl,
 
-            string yearFounded)
+            string? yearFounded)
         {
             ContactEmail = contactEmail;
             ContactPhone = contactPhone;

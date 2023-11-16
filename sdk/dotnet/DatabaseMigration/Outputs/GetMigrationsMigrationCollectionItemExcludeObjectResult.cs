@@ -16,29 +16,29 @@ namespace Pulumi.Oci.DatabaseMigration.Outputs
         /// <summary>
         /// Whether an excluded table should be omitted from replication. Only valid for database objects that have are of type TABLE and that are included in the exludeObjects.
         /// </summary>
-        public readonly bool IsOmitExcludedTableFromReplication;
+        public readonly bool? IsOmitExcludedTableFromReplication;
         /// <summary>
         /// Name of the object (regular expression is allowed)
         /// </summary>
-        public readonly string Object;
+        public readonly string? Object;
         /// <summary>
         /// Owner of the object (regular expression is allowed)
         /// </summary>
-        public readonly string Owner;
+        public readonly string? Owner;
         /// <summary>
         /// Migration type.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
 
         [OutputConstructor]
         private GetMigrationsMigrationCollectionItemExcludeObjectResult(
-            bool isOmitExcludedTableFromReplication,
+            bool? isOmitExcludedTableFromReplication,
 
-            string @object,
+            string? @object,
 
-            string owner,
+            string? owner,
 
-            string type)
+            string? type)
         {
             IsOmitExcludedTableFromReplication = isOmitExcludedTableFromReplication;
             Object = @object;

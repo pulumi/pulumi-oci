@@ -17,6 +17,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -109,28 +110,28 @@ public class CloudGuardDataSource extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="dataSourceDetails", refs={CloudGuardDataSourceDataSourceDetails.class}, tree="[0]")
-    private Output<CloudGuardDataSourceDataSourceDetails> dataSourceDetails;
+    private Output</* @Nullable */ CloudGuardDataSourceDataSourceDetails> dataSourceDetails;
 
     /**
      * @return (Updatable) Details specific to the data source type.
      * 
      */
-    public Output<CloudGuardDataSourceDataSourceDetails> dataSourceDetails() {
-        return this.dataSourceDetails;
+    public Output<Optional<CloudGuardDataSourceDataSourceDetails>> dataSourceDetails() {
+        return Codegen.optional(this.dataSourceDetails);
     }
     /**
      * Information about the detector recipe and rule attached
      * 
      */
     @Export(name="dataSourceDetectorMappingInfos", refs={List.class,CloudGuardDataSourceDataSourceDetectorMappingInfo.class}, tree="[0,1]")
-    private Output<List<CloudGuardDataSourceDataSourceDetectorMappingInfo>> dataSourceDetectorMappingInfos;
+    private Output</* @Nullable */ List<CloudGuardDataSourceDataSourceDetectorMappingInfo>> dataSourceDetectorMappingInfos;
 
     /**
      * @return Information about the detector recipe and rule attached
      * 
      */
-    public Output<List<CloudGuardDataSourceDataSourceDetectorMappingInfo>> dataSourceDetectorMappingInfos() {
-        return this.dataSourceDetectorMappingInfos;
+    public Output<Optional<List<CloudGuardDataSourceDataSourceDetectorMappingInfo>>> dataSourceDetectorMappingInfos() {
+        return Codegen.optional(this.dataSourceDetectorMappingInfos);
     }
     /**
      * Possible type of dataSourceFeed Provider(LoggingQuery)
@@ -151,14 +152,14 @@ public class CloudGuardDataSource extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) Data Source display name.
@@ -184,7 +185,7 @@ public class CloudGuardDataSource extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
@@ -195,92 +196,92 @@ public class CloudGuardDataSource extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * Information about the region and status of query replication
      * 
      */
     @Export(name="regionStatusDetails", refs={List.class,CloudGuardDataSourceRegionStatusDetail.class}, tree="[0,1]")
-    private Output<List<CloudGuardDataSourceRegionStatusDetail>> regionStatusDetails;
+    private Output</* @Nullable */ List<CloudGuardDataSourceRegionStatusDetail>> regionStatusDetails;
 
     /**
      * @return Information about the region and status of query replication
      * 
      */
-    public Output<List<CloudGuardDataSourceRegionStatusDetail>> regionStatusDetails() {
-        return this.regionStatusDetails;
+    public Output<Optional<List<CloudGuardDataSourceRegionStatusDetail>>> regionStatusDetails() {
+        return Codegen.optional(this.regionStatusDetails);
     }
     /**
      * The current state of the resource.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the resource.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * Status of data Source
      * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
-    private Output<String> status;
+    private Output</* @Nullable */ String> status;
 
     /**
      * @return Status of data Source
      * 
      */
-    public Output<String> status() {
-        return this.status;
+    public Output<Optional<String>> status() {
+        return Codegen.optional(this.status);
     }
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> systemTags;
+    private Output</* @Nullable */ Map<String,Object>> systemTags;
 
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    public Output<Map<String,Object>> systemTags() {
-        return this.systemTags;
+    public Output<Optional<Map<String,Object>>> systemTags() {
+        return Codegen.optional(this.systemTags);
     }
     /**
      * The date and time the Data source was created. Format defined by RFC3339.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the Data source was created. Format defined by RFC3339.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The date and time the Data source was updated. Format defined by RFC3339.
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The date and time the Data source was updated. Format defined by RFC3339.
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
 
     /**

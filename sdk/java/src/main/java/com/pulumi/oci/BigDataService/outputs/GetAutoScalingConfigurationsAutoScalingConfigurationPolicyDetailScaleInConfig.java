@@ -8,22 +8,24 @@ import com.pulumi.oci.BigDataService.outputs.GetAutoScalingConfigurationsAutoSca
 import java.lang.Integer;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfig {
-    private List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetric> metrics;
-    private Integer minNodeCount;
-    private Integer stepSize;
+    private @Nullable List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetric> metrics;
+    private @Nullable Integer minNodeCount;
+    private @Nullable Integer stepSize;
 
     private GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfig() {}
     public List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetric> metrics() {
-        return this.metrics;
+        return this.metrics == null ? List.of() : this.metrics;
     }
-    public Integer minNodeCount() {
-        return this.minNodeCount;
+    public Optional<Integer> minNodeCount() {
+        return Optional.ofNullable(this.minNodeCount);
     }
-    public Integer stepSize() {
-        return this.stepSize;
+    public Optional<Integer> stepSize() {
+        return Optional.ofNullable(this.stepSize);
     }
 
     public static Builder builder() {
@@ -35,9 +37,9 @@ public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDet
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetric> metrics;
-        private Integer minNodeCount;
-        private Integer stepSize;
+        private @Nullable List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetric> metrics;
+        private @Nullable Integer minNodeCount;
+        private @Nullable Integer stepSize;
         public Builder() {}
         public Builder(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfig defaults) {
     	      Objects.requireNonNull(defaults);
@@ -47,21 +49,21 @@ public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDet
         }
 
         @CustomType.Setter
-        public Builder metrics(List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetric> metrics) {
-            this.metrics = Objects.requireNonNull(metrics);
+        public Builder metrics(@Nullable List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetric> metrics) {
+            this.metrics = metrics;
             return this;
         }
         public Builder metrics(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetric... metrics) {
             return metrics(List.of(metrics));
         }
         @CustomType.Setter
-        public Builder minNodeCount(Integer minNodeCount) {
-            this.minNodeCount = Objects.requireNonNull(minNodeCount);
+        public Builder minNodeCount(@Nullable Integer minNodeCount) {
+            this.minNodeCount = minNodeCount;
             return this;
         }
         @CustomType.Setter
-        public Builder stepSize(Integer stepSize) {
-            this.stepSize = Objects.requireNonNull(stepSize);
+        public Builder stepSize(@Nullable Integer stepSize) {
+            this.stepSize = stepSize;
             return this;
         }
         public GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfig build() {

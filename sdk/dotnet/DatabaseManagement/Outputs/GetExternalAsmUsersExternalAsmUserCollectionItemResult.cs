@@ -16,11 +16,11 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external ASM.
         /// </summary>
-        public readonly string AsmId;
+        public readonly string? AsmId;
         /// <summary>
         /// The name of the ASM user.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The list of privileges of the ASM user.
         /// </summary>
@@ -28,9 +28,9 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
 
         [OutputConstructor]
         private GetExternalAsmUsersExternalAsmUserCollectionItemResult(
-            string asmId,
+            string? asmId,
 
-            string name,
+            string? name,
 
             ImmutableArray<string> privileges)
         {

@@ -13,17 +13,17 @@ namespace Pulumi.Oci.Kms.Outputs
     [OutputType]
     public sealed class GetVaultsVaultRestoreFromFileResult
     {
-        public readonly string ContentLength;
-        public readonly string ContentMd5;
-        public readonly string RestoreVaultFromFileDetails;
+        public readonly string? ContentLength;
+        public readonly string? ContentMd5;
+        public readonly string? RestoreVaultFromFileDetails;
 
         [OutputConstructor]
         private GetVaultsVaultRestoreFromFileResult(
-            string contentLength,
+            string? contentLength,
 
-            string contentMd5,
+            string? contentMd5,
 
-            string restoreVaultFromFileDetails)
+            string? restoreVaultFromFileDetails)
         {
             ContentLength = contentLength;
             ContentMd5 = contentMd5;

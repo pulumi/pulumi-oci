@@ -61,7 +61,7 @@ export interface GetBdsInstancesResult {
     /**
      * The list of bds_instances.
      */
-    readonly bdsInstances: outputs.BigDataService.GetBdsInstancesBdsInstance[];
+    readonly bdsInstances?: outputs.BigDataService.GetBdsInstancesBdsInstance[];
     /**
      * The OCID of the compartment.
      */
@@ -74,7 +74,7 @@ export interface GetBdsInstancesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The state of the cluster.
      */

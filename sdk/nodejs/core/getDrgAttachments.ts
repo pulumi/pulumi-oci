@@ -105,7 +105,7 @@ export interface GetDrgAttachmentsResult {
     /**
      * The list of drg_attachments.
      */
-    readonly drgAttachments: outputs.Core.GetDrgAttachmentsDrgAttachment[];
+    readonly drgAttachments?: outputs.Core.GetDrgAttachmentsDrgAttachment[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
      */
@@ -118,7 +118,7 @@ export interface GetDrgAttachmentsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly networkId?: string;
     /**
      * The DRG attachment's current state.

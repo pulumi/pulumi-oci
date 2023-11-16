@@ -55,7 +55,7 @@ export interface GetDataSourceEventsResult {
     /**
      * The list of data_source_event_collection.
      */
-    readonly dataSourceEventCollections: outputs.CloudGuard.GetDataSourceEventsDataSourceEventCollection[];
+    readonly dataSourceEventCollections?: outputs.CloudGuard.GetDataSourceEventsDataSourceEventCollection[];
     /**
      * Attached data Source
      */
@@ -64,7 +64,7 @@ export interface GetDataSourceEventsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Data source event region
      */

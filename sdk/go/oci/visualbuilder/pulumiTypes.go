@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -55,12 +54,6 @@ func (i VbInstanceAlternateCustomEndpointArgs) ToVbInstanceAlternateCustomEndpoi
 	return pulumi.ToOutputWithContext(ctx, i).(VbInstanceAlternateCustomEndpointOutput)
 }
 
-func (i VbInstanceAlternateCustomEndpointArgs) ToOutput(ctx context.Context) pulumix.Output[VbInstanceAlternateCustomEndpoint] {
-	return pulumix.Output[VbInstanceAlternateCustomEndpoint]{
-		OutputState: i.ToVbInstanceAlternateCustomEndpointOutputWithContext(ctx).OutputState,
-	}
-}
-
 // VbInstanceAlternateCustomEndpointArrayInput is an input type that accepts VbInstanceAlternateCustomEndpointArray and VbInstanceAlternateCustomEndpointArrayOutput values.
 // You can construct a concrete instance of `VbInstanceAlternateCustomEndpointArrayInput` via:
 //
@@ -86,12 +79,6 @@ func (i VbInstanceAlternateCustomEndpointArray) ToVbInstanceAlternateCustomEndpo
 	return pulumi.ToOutputWithContext(ctx, i).(VbInstanceAlternateCustomEndpointArrayOutput)
 }
 
-func (i VbInstanceAlternateCustomEndpointArray) ToOutput(ctx context.Context) pulumix.Output[[]VbInstanceAlternateCustomEndpoint] {
-	return pulumix.Output[[]VbInstanceAlternateCustomEndpoint]{
-		OutputState: i.ToVbInstanceAlternateCustomEndpointArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type VbInstanceAlternateCustomEndpointOutput struct{ *pulumi.OutputState }
 
 func (VbInstanceAlternateCustomEndpointOutput) ElementType() reflect.Type {
@@ -104,12 +91,6 @@ func (o VbInstanceAlternateCustomEndpointOutput) ToVbInstanceAlternateCustomEndp
 
 func (o VbInstanceAlternateCustomEndpointOutput) ToVbInstanceAlternateCustomEndpointOutputWithContext(ctx context.Context) VbInstanceAlternateCustomEndpointOutput {
 	return o
-}
-
-func (o VbInstanceAlternateCustomEndpointOutput) ToOutput(ctx context.Context) pulumix.Output[VbInstanceAlternateCustomEndpoint] {
-	return pulumix.Output[VbInstanceAlternateCustomEndpoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname. All certificates should be stored in a single base64 encoded secret Note the update will fail if this is not a valid certificate.
@@ -139,12 +120,6 @@ func (o VbInstanceAlternateCustomEndpointArrayOutput) ToVbInstanceAlternateCusto
 
 func (o VbInstanceAlternateCustomEndpointArrayOutput) ToVbInstanceAlternateCustomEndpointArrayOutputWithContext(ctx context.Context) VbInstanceAlternateCustomEndpointArrayOutput {
 	return o
-}
-
-func (o VbInstanceAlternateCustomEndpointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]VbInstanceAlternateCustomEndpoint] {
-	return pulumix.Output[[]VbInstanceAlternateCustomEndpoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o VbInstanceAlternateCustomEndpointArrayOutput) Index(i pulumi.IntInput) VbInstanceAlternateCustomEndpointOutput {
@@ -204,12 +179,6 @@ func (i VbInstanceAttachmentArgs) ToVbInstanceAttachmentOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(VbInstanceAttachmentOutput)
 }
 
-func (i VbInstanceAttachmentArgs) ToOutput(ctx context.Context) pulumix.Output[VbInstanceAttachment] {
-	return pulumix.Output[VbInstanceAttachment]{
-		OutputState: i.ToVbInstanceAttachmentOutputWithContext(ctx).OutputState,
-	}
-}
-
 // VbInstanceAttachmentArrayInput is an input type that accepts VbInstanceAttachmentArray and VbInstanceAttachmentArrayOutput values.
 // You can construct a concrete instance of `VbInstanceAttachmentArrayInput` via:
 //
@@ -235,12 +204,6 @@ func (i VbInstanceAttachmentArray) ToVbInstanceAttachmentArrayOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(VbInstanceAttachmentArrayOutput)
 }
 
-func (i VbInstanceAttachmentArray) ToOutput(ctx context.Context) pulumix.Output[[]VbInstanceAttachment] {
-	return pulumix.Output[[]VbInstanceAttachment]{
-		OutputState: i.ToVbInstanceAttachmentArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type VbInstanceAttachmentOutput struct{ *pulumi.OutputState }
 
 func (VbInstanceAttachmentOutput) ElementType() reflect.Type {
@@ -253,12 +216,6 @@ func (o VbInstanceAttachmentOutput) ToVbInstanceAttachmentOutput() VbInstanceAtt
 
 func (o VbInstanceAttachmentOutput) ToVbInstanceAttachmentOutputWithContext(ctx context.Context) VbInstanceAttachmentOutput {
 	return o
-}
-
-func (o VbInstanceAttachmentOutput) ToOutput(ctx context.Context) pulumix.Output[VbInstanceAttachment] {
-	return pulumix.Output[VbInstanceAttachment]{
-		OutputState: o.OutputState,
-	}
 }
 
 // * If role == `PARENT`, the attached instance was created by this service instance
@@ -299,12 +256,6 @@ func (o VbInstanceAttachmentArrayOutput) ToVbInstanceAttachmentArrayOutput() VbI
 
 func (o VbInstanceAttachmentArrayOutput) ToVbInstanceAttachmentArrayOutputWithContext(ctx context.Context) VbInstanceAttachmentArrayOutput {
 	return o
-}
-
-func (o VbInstanceAttachmentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]VbInstanceAttachment] {
-	return pulumix.Output[[]VbInstanceAttachment]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o VbInstanceAttachmentArrayOutput) Index(i pulumi.IntInput) VbInstanceAttachmentOutput {
@@ -354,12 +305,6 @@ func (i VbInstanceCustomEndpointArgs) ToVbInstanceCustomEndpointOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(VbInstanceCustomEndpointOutput)
 }
 
-func (i VbInstanceCustomEndpointArgs) ToOutput(ctx context.Context) pulumix.Output[VbInstanceCustomEndpoint] {
-	return pulumix.Output[VbInstanceCustomEndpoint]{
-		OutputState: i.ToVbInstanceCustomEndpointOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i VbInstanceCustomEndpointArgs) ToVbInstanceCustomEndpointPtrOutput() VbInstanceCustomEndpointPtrOutput {
 	return i.ToVbInstanceCustomEndpointPtrOutputWithContext(context.Background())
 }
@@ -401,12 +346,6 @@ func (i *vbInstanceCustomEndpointPtrType) ToVbInstanceCustomEndpointPtrOutputWit
 	return pulumi.ToOutputWithContext(ctx, i).(VbInstanceCustomEndpointPtrOutput)
 }
 
-func (i *vbInstanceCustomEndpointPtrType) ToOutput(ctx context.Context) pulumix.Output[*VbInstanceCustomEndpoint] {
-	return pulumix.Output[*VbInstanceCustomEndpoint]{
-		OutputState: i.ToVbInstanceCustomEndpointPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type VbInstanceCustomEndpointOutput struct{ *pulumi.OutputState }
 
 func (VbInstanceCustomEndpointOutput) ElementType() reflect.Type {
@@ -429,12 +368,6 @@ func (o VbInstanceCustomEndpointOutput) ToVbInstanceCustomEndpointPtrOutputWithC
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v VbInstanceCustomEndpoint) *VbInstanceCustomEndpoint {
 		return &v
 	}).(VbInstanceCustomEndpointPtrOutput)
-}
-
-func (o VbInstanceCustomEndpointOutput) ToOutput(ctx context.Context) pulumix.Output[VbInstanceCustomEndpoint] {
-	return pulumix.Output[VbInstanceCustomEndpoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname. All certificates should be stored in a single base64 encoded secret Note the update will fail if this is not a valid certificate.
@@ -464,12 +397,6 @@ func (o VbInstanceCustomEndpointPtrOutput) ToVbInstanceCustomEndpointPtrOutput()
 
 func (o VbInstanceCustomEndpointPtrOutput) ToVbInstanceCustomEndpointPtrOutputWithContext(ctx context.Context) VbInstanceCustomEndpointPtrOutput {
 	return o
-}
-
-func (o VbInstanceCustomEndpointPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*VbInstanceCustomEndpoint] {
-	return pulumix.Output[*VbInstanceCustomEndpoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o VbInstanceCustomEndpointPtrOutput) Elem() VbInstanceCustomEndpointOutput {
@@ -561,12 +488,6 @@ func (i VbInstanceIdcsInfoArgs) ToVbInstanceIdcsInfoOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(VbInstanceIdcsInfoOutput)
 }
 
-func (i VbInstanceIdcsInfoArgs) ToOutput(ctx context.Context) pulumix.Output[VbInstanceIdcsInfo] {
-	return pulumix.Output[VbInstanceIdcsInfo]{
-		OutputState: i.ToVbInstanceIdcsInfoOutputWithContext(ctx).OutputState,
-	}
-}
-
 // VbInstanceIdcsInfoArrayInput is an input type that accepts VbInstanceIdcsInfoArray and VbInstanceIdcsInfoArrayOutput values.
 // You can construct a concrete instance of `VbInstanceIdcsInfoArrayInput` via:
 //
@@ -592,12 +513,6 @@ func (i VbInstanceIdcsInfoArray) ToVbInstanceIdcsInfoArrayOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(VbInstanceIdcsInfoArrayOutput)
 }
 
-func (i VbInstanceIdcsInfoArray) ToOutput(ctx context.Context) pulumix.Output[[]VbInstanceIdcsInfo] {
-	return pulumix.Output[[]VbInstanceIdcsInfo]{
-		OutputState: i.ToVbInstanceIdcsInfoArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type VbInstanceIdcsInfoOutput struct{ *pulumi.OutputState }
 
 func (VbInstanceIdcsInfoOutput) ElementType() reflect.Type {
@@ -610,12 +525,6 @@ func (o VbInstanceIdcsInfoOutput) ToVbInstanceIdcsInfoOutput() VbInstanceIdcsInf
 
 func (o VbInstanceIdcsInfoOutput) ToVbInstanceIdcsInfoOutputWithContext(ctx context.Context) VbInstanceIdcsInfoOutput {
 	return o
-}
-
-func (o VbInstanceIdcsInfoOutput) ToOutput(ctx context.Context) pulumix.Output[VbInstanceIdcsInfo] {
-	return pulumix.Output[VbInstanceIdcsInfo]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The IDCS application display name associated with the instance
@@ -657,12 +566,6 @@ func (o VbInstanceIdcsInfoArrayOutput) ToVbInstanceIdcsInfoArrayOutputWithContex
 	return o
 }
 
-func (o VbInstanceIdcsInfoArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]VbInstanceIdcsInfo] {
-	return pulumix.Output[[]VbInstanceIdcsInfo]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o VbInstanceIdcsInfoArrayOutput) Index(i pulumi.IntInput) VbInstanceIdcsInfoOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VbInstanceIdcsInfo {
 		return vs[0].([]VbInstanceIdcsInfo)[vs[1].(int)]
@@ -671,11 +574,11 @@ func (o VbInstanceIdcsInfoArrayOutput) Index(i pulumi.IntInput) VbInstanceIdcsIn
 
 type GetVbInstanceAlternateCustomEndpoint struct {
 	// Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname.
-	CertificateSecretId string `pulumi:"certificateSecretId"`
+	CertificateSecretId *string `pulumi:"certificateSecretId"`
 	// The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
-	CertificateSecretVersion int `pulumi:"certificateSecretVersion"`
+	CertificateSecretVersion *int `pulumi:"certificateSecretVersion"`
 	// A custom hostname to be used for the vb instance URL, in FQDN format.
-	Hostname string `pulumi:"hostname"`
+	Hostname *string `pulumi:"hostname"`
 }
 
 // GetVbInstanceAlternateCustomEndpointInput is an input type that accepts GetVbInstanceAlternateCustomEndpointArgs and GetVbInstanceAlternateCustomEndpointOutput values.
@@ -691,11 +594,11 @@ type GetVbInstanceAlternateCustomEndpointInput interface {
 
 type GetVbInstanceAlternateCustomEndpointArgs struct {
 	// Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname.
-	CertificateSecretId pulumi.StringInput `pulumi:"certificateSecretId"`
+	CertificateSecretId pulumi.StringPtrInput `pulumi:"certificateSecretId"`
 	// The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
-	CertificateSecretVersion pulumi.IntInput `pulumi:"certificateSecretVersion"`
+	CertificateSecretVersion pulumi.IntPtrInput `pulumi:"certificateSecretVersion"`
 	// A custom hostname to be used for the vb instance URL, in FQDN format.
-	Hostname pulumi.StringInput `pulumi:"hostname"`
+	Hostname pulumi.StringPtrInput `pulumi:"hostname"`
 }
 
 func (GetVbInstanceAlternateCustomEndpointArgs) ElementType() reflect.Type {
@@ -708,12 +611,6 @@ func (i GetVbInstanceAlternateCustomEndpointArgs) ToGetVbInstanceAlternateCustom
 
 func (i GetVbInstanceAlternateCustomEndpointArgs) ToGetVbInstanceAlternateCustomEndpointOutputWithContext(ctx context.Context) GetVbInstanceAlternateCustomEndpointOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetVbInstanceAlternateCustomEndpointOutput)
-}
-
-func (i GetVbInstanceAlternateCustomEndpointArgs) ToOutput(ctx context.Context) pulumix.Output[GetVbInstanceAlternateCustomEndpoint] {
-	return pulumix.Output[GetVbInstanceAlternateCustomEndpoint]{
-		OutputState: i.ToGetVbInstanceAlternateCustomEndpointOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetVbInstanceAlternateCustomEndpointArrayInput is an input type that accepts GetVbInstanceAlternateCustomEndpointArray and GetVbInstanceAlternateCustomEndpointArrayOutput values.
@@ -741,12 +638,6 @@ func (i GetVbInstanceAlternateCustomEndpointArray) ToGetVbInstanceAlternateCusto
 	return pulumi.ToOutputWithContext(ctx, i).(GetVbInstanceAlternateCustomEndpointArrayOutput)
 }
 
-func (i GetVbInstanceAlternateCustomEndpointArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVbInstanceAlternateCustomEndpoint] {
-	return pulumix.Output[[]GetVbInstanceAlternateCustomEndpoint]{
-		OutputState: i.ToGetVbInstanceAlternateCustomEndpointArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVbInstanceAlternateCustomEndpointOutput struct{ *pulumi.OutputState }
 
 func (GetVbInstanceAlternateCustomEndpointOutput) ElementType() reflect.Type {
@@ -761,25 +652,19 @@ func (o GetVbInstanceAlternateCustomEndpointOutput) ToGetVbInstanceAlternateCust
 	return o
 }
 
-func (o GetVbInstanceAlternateCustomEndpointOutput) ToOutput(ctx context.Context) pulumix.Output[GetVbInstanceAlternateCustomEndpoint] {
-	return pulumix.Output[GetVbInstanceAlternateCustomEndpoint]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname.
-func (o GetVbInstanceAlternateCustomEndpointOutput) CertificateSecretId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVbInstanceAlternateCustomEndpoint) string { return v.CertificateSecretId }).(pulumi.StringOutput)
+func (o GetVbInstanceAlternateCustomEndpointOutput) CertificateSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVbInstanceAlternateCustomEndpoint) *string { return v.CertificateSecretId }).(pulumi.StringPtrOutput)
 }
 
 // The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
-func (o GetVbInstanceAlternateCustomEndpointOutput) CertificateSecretVersion() pulumi.IntOutput {
-	return o.ApplyT(func(v GetVbInstanceAlternateCustomEndpoint) int { return v.CertificateSecretVersion }).(pulumi.IntOutput)
+func (o GetVbInstanceAlternateCustomEndpointOutput) CertificateSecretVersion() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetVbInstanceAlternateCustomEndpoint) *int { return v.CertificateSecretVersion }).(pulumi.IntPtrOutput)
 }
 
 // A custom hostname to be used for the vb instance URL, in FQDN format.
-func (o GetVbInstanceAlternateCustomEndpointOutput) Hostname() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVbInstanceAlternateCustomEndpoint) string { return v.Hostname }).(pulumi.StringOutput)
+func (o GetVbInstanceAlternateCustomEndpointOutput) Hostname() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVbInstanceAlternateCustomEndpoint) *string { return v.Hostname }).(pulumi.StringPtrOutput)
 }
 
 type GetVbInstanceAlternateCustomEndpointArrayOutput struct{ *pulumi.OutputState }
@@ -794,12 +679,6 @@ func (o GetVbInstanceAlternateCustomEndpointArrayOutput) ToGetVbInstanceAlternat
 
 func (o GetVbInstanceAlternateCustomEndpointArrayOutput) ToGetVbInstanceAlternateCustomEndpointArrayOutputWithContext(ctx context.Context) GetVbInstanceAlternateCustomEndpointArrayOutput {
 	return o
-}
-
-func (o GetVbInstanceAlternateCustomEndpointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVbInstanceAlternateCustomEndpoint] {
-	return pulumix.Output[[]GetVbInstanceAlternateCustomEndpoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVbInstanceAlternateCustomEndpointArrayOutput) Index(i pulumi.IntInput) GetVbInstanceAlternateCustomEndpointOutput {
@@ -839,12 +718,6 @@ func (i GetVbInstanceApplicationsApplicationSummaryCollectionArgs) ToGetVbInstan
 	return pulumi.ToOutputWithContext(ctx, i).(GetVbInstanceApplicationsApplicationSummaryCollectionOutput)
 }
 
-func (i GetVbInstanceApplicationsApplicationSummaryCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetVbInstanceApplicationsApplicationSummaryCollection] {
-	return pulumix.Output[GetVbInstanceApplicationsApplicationSummaryCollection]{
-		OutputState: i.ToGetVbInstanceApplicationsApplicationSummaryCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVbInstanceApplicationsApplicationSummaryCollectionArrayInput is an input type that accepts GetVbInstanceApplicationsApplicationSummaryCollectionArray and GetVbInstanceApplicationsApplicationSummaryCollectionArrayOutput values.
 // You can construct a concrete instance of `GetVbInstanceApplicationsApplicationSummaryCollectionArrayInput` via:
 //
@@ -870,12 +743,6 @@ func (i GetVbInstanceApplicationsApplicationSummaryCollectionArray) ToGetVbInsta
 	return pulumi.ToOutputWithContext(ctx, i).(GetVbInstanceApplicationsApplicationSummaryCollectionArrayOutput)
 }
 
-func (i GetVbInstanceApplicationsApplicationSummaryCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVbInstanceApplicationsApplicationSummaryCollection] {
-	return pulumix.Output[[]GetVbInstanceApplicationsApplicationSummaryCollection]{
-		OutputState: i.ToGetVbInstanceApplicationsApplicationSummaryCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVbInstanceApplicationsApplicationSummaryCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetVbInstanceApplicationsApplicationSummaryCollectionOutput) ElementType() reflect.Type {
@@ -888,12 +755,6 @@ func (o GetVbInstanceApplicationsApplicationSummaryCollectionOutput) ToGetVbInst
 
 func (o GetVbInstanceApplicationsApplicationSummaryCollectionOutput) ToGetVbInstanceApplicationsApplicationSummaryCollectionOutputWithContext(ctx context.Context) GetVbInstanceApplicationsApplicationSummaryCollectionOutput {
 	return o
-}
-
-func (o GetVbInstanceApplicationsApplicationSummaryCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetVbInstanceApplicationsApplicationSummaryCollection] {
-	return pulumix.Output[GetVbInstanceApplicationsApplicationSummaryCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVbInstanceApplicationsApplicationSummaryCollectionOutput) Items() GetVbInstanceApplicationsApplicationSummaryCollectionItemArrayOutput {
@@ -914,12 +775,6 @@ func (o GetVbInstanceApplicationsApplicationSummaryCollectionArrayOutput) ToGetV
 
 func (o GetVbInstanceApplicationsApplicationSummaryCollectionArrayOutput) ToGetVbInstanceApplicationsApplicationSummaryCollectionArrayOutputWithContext(ctx context.Context) GetVbInstanceApplicationsApplicationSummaryCollectionArrayOutput {
 	return o
-}
-
-func (o GetVbInstanceApplicationsApplicationSummaryCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVbInstanceApplicationsApplicationSummaryCollection] {
-	return pulumix.Output[[]GetVbInstanceApplicationsApplicationSummaryCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVbInstanceApplicationsApplicationSummaryCollectionArrayOutput) Index(i pulumi.IntInput) GetVbInstanceApplicationsApplicationSummaryCollectionOutput {
@@ -973,12 +828,6 @@ func (i GetVbInstanceApplicationsApplicationSummaryCollectionItemArgs) ToGetVbIn
 	return pulumi.ToOutputWithContext(ctx, i).(GetVbInstanceApplicationsApplicationSummaryCollectionItemOutput)
 }
 
-func (i GetVbInstanceApplicationsApplicationSummaryCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetVbInstanceApplicationsApplicationSummaryCollectionItem] {
-	return pulumix.Output[GetVbInstanceApplicationsApplicationSummaryCollectionItem]{
-		OutputState: i.ToGetVbInstanceApplicationsApplicationSummaryCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVbInstanceApplicationsApplicationSummaryCollectionItemArrayInput is an input type that accepts GetVbInstanceApplicationsApplicationSummaryCollectionItemArray and GetVbInstanceApplicationsApplicationSummaryCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetVbInstanceApplicationsApplicationSummaryCollectionItemArrayInput` via:
 //
@@ -1004,12 +853,6 @@ func (i GetVbInstanceApplicationsApplicationSummaryCollectionItemArray) ToGetVbI
 	return pulumi.ToOutputWithContext(ctx, i).(GetVbInstanceApplicationsApplicationSummaryCollectionItemArrayOutput)
 }
 
-func (i GetVbInstanceApplicationsApplicationSummaryCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVbInstanceApplicationsApplicationSummaryCollectionItem] {
-	return pulumix.Output[[]GetVbInstanceApplicationsApplicationSummaryCollectionItem]{
-		OutputState: i.ToGetVbInstanceApplicationsApplicationSummaryCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVbInstanceApplicationsApplicationSummaryCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetVbInstanceApplicationsApplicationSummaryCollectionItemOutput) ElementType() reflect.Type {
@@ -1022,12 +865,6 @@ func (o GetVbInstanceApplicationsApplicationSummaryCollectionItemOutput) ToGetVb
 
 func (o GetVbInstanceApplicationsApplicationSummaryCollectionItemOutput) ToGetVbInstanceApplicationsApplicationSummaryCollectionItemOutputWithContext(ctx context.Context) GetVbInstanceApplicationsApplicationSummaryCollectionItemOutput {
 	return o
-}
-
-func (o GetVbInstanceApplicationsApplicationSummaryCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetVbInstanceApplicationsApplicationSummaryCollectionItem] {
-	return pulumix.Output[GetVbInstanceApplicationsApplicationSummaryCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The Visual Builder application identifier.
@@ -1064,12 +901,6 @@ func (o GetVbInstanceApplicationsApplicationSummaryCollectionItemArrayOutput) To
 	return o
 }
 
-func (o GetVbInstanceApplicationsApplicationSummaryCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVbInstanceApplicationsApplicationSummaryCollectionItem] {
-	return pulumix.Output[[]GetVbInstanceApplicationsApplicationSummaryCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetVbInstanceApplicationsApplicationSummaryCollectionItemArrayOutput) Index(i pulumi.IntInput) GetVbInstanceApplicationsApplicationSummaryCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVbInstanceApplicationsApplicationSummaryCollectionItem {
 		return vs[0].([]GetVbInstanceApplicationsApplicationSummaryCollectionItem)[vs[1].(int)]
@@ -1079,15 +910,15 @@ func (o GetVbInstanceApplicationsApplicationSummaryCollectionItemArrayOutput) In
 type GetVbInstanceAttachment struct {
 	// * If role == `PARENT`, the attached instance was created by this service instance
 	// * If role == `CHILD`, this instance was created from attached instance on behalf of a user
-	IsImplicit bool `pulumi:"isImplicit"`
+	IsImplicit *bool `pulumi:"isImplicit"`
 	// The OCID of the target instance (which could be any other Oracle Cloud Infrastructure PaaS/SaaS resource), to which this instance is attached.
-	TargetId string `pulumi:"targetId"`
+	TargetId *string `pulumi:"targetId"`
 	// The dataplane instance URL of the attached instance
-	TargetInstanceUrl string `pulumi:"targetInstanceUrl"`
+	TargetInstanceUrl *string `pulumi:"targetInstanceUrl"`
 	// The role of the target attachment.
-	TargetRole string `pulumi:"targetRole"`
+	TargetRole *string `pulumi:"targetRole"`
 	// The type of the target instance, such as "FUSION".
-	TargetServiceType string `pulumi:"targetServiceType"`
+	TargetServiceType *string `pulumi:"targetServiceType"`
 }
 
 // GetVbInstanceAttachmentInput is an input type that accepts GetVbInstanceAttachmentArgs and GetVbInstanceAttachmentOutput values.
@@ -1104,15 +935,15 @@ type GetVbInstanceAttachmentInput interface {
 type GetVbInstanceAttachmentArgs struct {
 	// * If role == `PARENT`, the attached instance was created by this service instance
 	// * If role == `CHILD`, this instance was created from attached instance on behalf of a user
-	IsImplicit pulumi.BoolInput `pulumi:"isImplicit"`
+	IsImplicit pulumi.BoolPtrInput `pulumi:"isImplicit"`
 	// The OCID of the target instance (which could be any other Oracle Cloud Infrastructure PaaS/SaaS resource), to which this instance is attached.
-	TargetId pulumi.StringInput `pulumi:"targetId"`
+	TargetId pulumi.StringPtrInput `pulumi:"targetId"`
 	// The dataplane instance URL of the attached instance
-	TargetInstanceUrl pulumi.StringInput `pulumi:"targetInstanceUrl"`
+	TargetInstanceUrl pulumi.StringPtrInput `pulumi:"targetInstanceUrl"`
 	// The role of the target attachment.
-	TargetRole pulumi.StringInput `pulumi:"targetRole"`
+	TargetRole pulumi.StringPtrInput `pulumi:"targetRole"`
 	// The type of the target instance, such as "FUSION".
-	TargetServiceType pulumi.StringInput `pulumi:"targetServiceType"`
+	TargetServiceType pulumi.StringPtrInput `pulumi:"targetServiceType"`
 }
 
 func (GetVbInstanceAttachmentArgs) ElementType() reflect.Type {
@@ -1125,12 +956,6 @@ func (i GetVbInstanceAttachmentArgs) ToGetVbInstanceAttachmentOutput() GetVbInst
 
 func (i GetVbInstanceAttachmentArgs) ToGetVbInstanceAttachmentOutputWithContext(ctx context.Context) GetVbInstanceAttachmentOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetVbInstanceAttachmentOutput)
-}
-
-func (i GetVbInstanceAttachmentArgs) ToOutput(ctx context.Context) pulumix.Output[GetVbInstanceAttachment] {
-	return pulumix.Output[GetVbInstanceAttachment]{
-		OutputState: i.ToGetVbInstanceAttachmentOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetVbInstanceAttachmentArrayInput is an input type that accepts GetVbInstanceAttachmentArray and GetVbInstanceAttachmentArrayOutput values.
@@ -1158,12 +983,6 @@ func (i GetVbInstanceAttachmentArray) ToGetVbInstanceAttachmentArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetVbInstanceAttachmentArrayOutput)
 }
 
-func (i GetVbInstanceAttachmentArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVbInstanceAttachment] {
-	return pulumix.Output[[]GetVbInstanceAttachment]{
-		OutputState: i.ToGetVbInstanceAttachmentArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVbInstanceAttachmentOutput struct{ *pulumi.OutputState }
 
 func (GetVbInstanceAttachmentOutput) ElementType() reflect.Type {
@@ -1178,36 +997,30 @@ func (o GetVbInstanceAttachmentOutput) ToGetVbInstanceAttachmentOutputWithContex
 	return o
 }
 
-func (o GetVbInstanceAttachmentOutput) ToOutput(ctx context.Context) pulumix.Output[GetVbInstanceAttachment] {
-	return pulumix.Output[GetVbInstanceAttachment]{
-		OutputState: o.OutputState,
-	}
-}
-
 // * If role == `PARENT`, the attached instance was created by this service instance
 // * If role == `CHILD`, this instance was created from attached instance on behalf of a user
-func (o GetVbInstanceAttachmentOutput) IsImplicit() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetVbInstanceAttachment) bool { return v.IsImplicit }).(pulumi.BoolOutput)
+func (o GetVbInstanceAttachmentOutput) IsImplicit() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetVbInstanceAttachment) *bool { return v.IsImplicit }).(pulumi.BoolPtrOutput)
 }
 
 // The OCID of the target instance (which could be any other Oracle Cloud Infrastructure PaaS/SaaS resource), to which this instance is attached.
-func (o GetVbInstanceAttachmentOutput) TargetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVbInstanceAttachment) string { return v.TargetId }).(pulumi.StringOutput)
+func (o GetVbInstanceAttachmentOutput) TargetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVbInstanceAttachment) *string { return v.TargetId }).(pulumi.StringPtrOutput)
 }
 
 // The dataplane instance URL of the attached instance
-func (o GetVbInstanceAttachmentOutput) TargetInstanceUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVbInstanceAttachment) string { return v.TargetInstanceUrl }).(pulumi.StringOutput)
+func (o GetVbInstanceAttachmentOutput) TargetInstanceUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVbInstanceAttachment) *string { return v.TargetInstanceUrl }).(pulumi.StringPtrOutput)
 }
 
 // The role of the target attachment.
-func (o GetVbInstanceAttachmentOutput) TargetRole() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVbInstanceAttachment) string { return v.TargetRole }).(pulumi.StringOutput)
+func (o GetVbInstanceAttachmentOutput) TargetRole() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVbInstanceAttachment) *string { return v.TargetRole }).(pulumi.StringPtrOutput)
 }
 
 // The type of the target instance, such as "FUSION".
-func (o GetVbInstanceAttachmentOutput) TargetServiceType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVbInstanceAttachment) string { return v.TargetServiceType }).(pulumi.StringOutput)
+func (o GetVbInstanceAttachmentOutput) TargetServiceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVbInstanceAttachment) *string { return v.TargetServiceType }).(pulumi.StringPtrOutput)
 }
 
 type GetVbInstanceAttachmentArrayOutput struct{ *pulumi.OutputState }
@@ -1224,12 +1037,6 @@ func (o GetVbInstanceAttachmentArrayOutput) ToGetVbInstanceAttachmentArrayOutput
 	return o
 }
 
-func (o GetVbInstanceAttachmentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVbInstanceAttachment] {
-	return pulumix.Output[[]GetVbInstanceAttachment]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetVbInstanceAttachmentArrayOutput) Index(i pulumi.IntInput) GetVbInstanceAttachmentOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVbInstanceAttachment {
 		return vs[0].([]GetVbInstanceAttachment)[vs[1].(int)]
@@ -1238,11 +1045,11 @@ func (o GetVbInstanceAttachmentArrayOutput) Index(i pulumi.IntInput) GetVbInstan
 
 type GetVbInstanceCustomEndpoint struct {
 	// Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname.
-	CertificateSecretId string `pulumi:"certificateSecretId"`
+	CertificateSecretId *string `pulumi:"certificateSecretId"`
 	// The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
-	CertificateSecretVersion int `pulumi:"certificateSecretVersion"`
+	CertificateSecretVersion *int `pulumi:"certificateSecretVersion"`
 	// A custom hostname to be used for the vb instance URL, in FQDN format.
-	Hostname string `pulumi:"hostname"`
+	Hostname *string `pulumi:"hostname"`
 }
 
 // GetVbInstanceCustomEndpointInput is an input type that accepts GetVbInstanceCustomEndpointArgs and GetVbInstanceCustomEndpointOutput values.
@@ -1258,11 +1065,11 @@ type GetVbInstanceCustomEndpointInput interface {
 
 type GetVbInstanceCustomEndpointArgs struct {
 	// Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname.
-	CertificateSecretId pulumi.StringInput `pulumi:"certificateSecretId"`
+	CertificateSecretId pulumi.StringPtrInput `pulumi:"certificateSecretId"`
 	// The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
-	CertificateSecretVersion pulumi.IntInput `pulumi:"certificateSecretVersion"`
+	CertificateSecretVersion pulumi.IntPtrInput `pulumi:"certificateSecretVersion"`
 	// A custom hostname to be used for the vb instance URL, in FQDN format.
-	Hostname pulumi.StringInput `pulumi:"hostname"`
+	Hostname pulumi.StringPtrInput `pulumi:"hostname"`
 }
 
 func (GetVbInstanceCustomEndpointArgs) ElementType() reflect.Type {
@@ -1275,12 +1082,6 @@ func (i GetVbInstanceCustomEndpointArgs) ToGetVbInstanceCustomEndpointOutput() G
 
 func (i GetVbInstanceCustomEndpointArgs) ToGetVbInstanceCustomEndpointOutputWithContext(ctx context.Context) GetVbInstanceCustomEndpointOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetVbInstanceCustomEndpointOutput)
-}
-
-func (i GetVbInstanceCustomEndpointArgs) ToOutput(ctx context.Context) pulumix.Output[GetVbInstanceCustomEndpoint] {
-	return pulumix.Output[GetVbInstanceCustomEndpoint]{
-		OutputState: i.ToGetVbInstanceCustomEndpointOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetVbInstanceCustomEndpointArrayInput is an input type that accepts GetVbInstanceCustomEndpointArray and GetVbInstanceCustomEndpointArrayOutput values.
@@ -1308,12 +1109,6 @@ func (i GetVbInstanceCustomEndpointArray) ToGetVbInstanceCustomEndpointArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetVbInstanceCustomEndpointArrayOutput)
 }
 
-func (i GetVbInstanceCustomEndpointArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVbInstanceCustomEndpoint] {
-	return pulumix.Output[[]GetVbInstanceCustomEndpoint]{
-		OutputState: i.ToGetVbInstanceCustomEndpointArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVbInstanceCustomEndpointOutput struct{ *pulumi.OutputState }
 
 func (GetVbInstanceCustomEndpointOutput) ElementType() reflect.Type {
@@ -1328,25 +1123,19 @@ func (o GetVbInstanceCustomEndpointOutput) ToGetVbInstanceCustomEndpointOutputWi
 	return o
 }
 
-func (o GetVbInstanceCustomEndpointOutput) ToOutput(ctx context.Context) pulumix.Output[GetVbInstanceCustomEndpoint] {
-	return pulumix.Output[GetVbInstanceCustomEndpoint]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname.
-func (o GetVbInstanceCustomEndpointOutput) CertificateSecretId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVbInstanceCustomEndpoint) string { return v.CertificateSecretId }).(pulumi.StringOutput)
+func (o GetVbInstanceCustomEndpointOutput) CertificateSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVbInstanceCustomEndpoint) *string { return v.CertificateSecretId }).(pulumi.StringPtrOutput)
 }
 
 // The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
-func (o GetVbInstanceCustomEndpointOutput) CertificateSecretVersion() pulumi.IntOutput {
-	return o.ApplyT(func(v GetVbInstanceCustomEndpoint) int { return v.CertificateSecretVersion }).(pulumi.IntOutput)
+func (o GetVbInstanceCustomEndpointOutput) CertificateSecretVersion() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetVbInstanceCustomEndpoint) *int { return v.CertificateSecretVersion }).(pulumi.IntPtrOutput)
 }
 
 // A custom hostname to be used for the vb instance URL, in FQDN format.
-func (o GetVbInstanceCustomEndpointOutput) Hostname() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVbInstanceCustomEndpoint) string { return v.Hostname }).(pulumi.StringOutput)
+func (o GetVbInstanceCustomEndpointOutput) Hostname() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVbInstanceCustomEndpoint) *string { return v.Hostname }).(pulumi.StringPtrOutput)
 }
 
 type GetVbInstanceCustomEndpointArrayOutput struct{ *pulumi.OutputState }
@@ -1363,12 +1152,6 @@ func (o GetVbInstanceCustomEndpointArrayOutput) ToGetVbInstanceCustomEndpointArr
 	return o
 }
 
-func (o GetVbInstanceCustomEndpointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVbInstanceCustomEndpoint] {
-	return pulumix.Output[[]GetVbInstanceCustomEndpoint]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetVbInstanceCustomEndpointArrayOutput) Index(i pulumi.IntInput) GetVbInstanceCustomEndpointOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVbInstanceCustomEndpoint {
 		return vs[0].([]GetVbInstanceCustomEndpoint)[vs[1].(int)]
@@ -1377,15 +1160,15 @@ func (o GetVbInstanceCustomEndpointArrayOutput) Index(i pulumi.IntInput) GetVbIn
 
 type GetVbInstanceIdcsInfo struct {
 	// The IDCS application display name associated with the instance
-	IdcsAppDisplayName string `pulumi:"idcsAppDisplayName"`
+	IdcsAppDisplayName *string `pulumi:"idcsAppDisplayName"`
 	// The IDCS application ID associated with the instance
-	IdcsAppId string `pulumi:"idcsAppId"`
+	IdcsAppId *string `pulumi:"idcsAppId"`
 	// URL for the location of the IDCS Application (used by IDCS APIs)
-	IdcsAppLocationUrl string `pulumi:"idcsAppLocationUrl"`
+	IdcsAppLocationUrl *string `pulumi:"idcsAppLocationUrl"`
 	// The IDCS application name associated with the instance
-	IdcsAppName string `pulumi:"idcsAppName"`
+	IdcsAppName *string `pulumi:"idcsAppName"`
 	// The URL used as the primary audience for visual builder flows in this instance type: string
-	InstancePrimaryAudienceUrl string `pulumi:"instancePrimaryAudienceUrl"`
+	InstancePrimaryAudienceUrl *string `pulumi:"instancePrimaryAudienceUrl"`
 }
 
 // GetVbInstanceIdcsInfoInput is an input type that accepts GetVbInstanceIdcsInfoArgs and GetVbInstanceIdcsInfoOutput values.
@@ -1401,15 +1184,15 @@ type GetVbInstanceIdcsInfoInput interface {
 
 type GetVbInstanceIdcsInfoArgs struct {
 	// The IDCS application display name associated with the instance
-	IdcsAppDisplayName pulumi.StringInput `pulumi:"idcsAppDisplayName"`
+	IdcsAppDisplayName pulumi.StringPtrInput `pulumi:"idcsAppDisplayName"`
 	// The IDCS application ID associated with the instance
-	IdcsAppId pulumi.StringInput `pulumi:"idcsAppId"`
+	IdcsAppId pulumi.StringPtrInput `pulumi:"idcsAppId"`
 	// URL for the location of the IDCS Application (used by IDCS APIs)
-	IdcsAppLocationUrl pulumi.StringInput `pulumi:"idcsAppLocationUrl"`
+	IdcsAppLocationUrl pulumi.StringPtrInput `pulumi:"idcsAppLocationUrl"`
 	// The IDCS application name associated with the instance
-	IdcsAppName pulumi.StringInput `pulumi:"idcsAppName"`
+	IdcsAppName pulumi.StringPtrInput `pulumi:"idcsAppName"`
 	// The URL used as the primary audience for visual builder flows in this instance type: string
-	InstancePrimaryAudienceUrl pulumi.StringInput `pulumi:"instancePrimaryAudienceUrl"`
+	InstancePrimaryAudienceUrl pulumi.StringPtrInput `pulumi:"instancePrimaryAudienceUrl"`
 }
 
 func (GetVbInstanceIdcsInfoArgs) ElementType() reflect.Type {
@@ -1422,12 +1205,6 @@ func (i GetVbInstanceIdcsInfoArgs) ToGetVbInstanceIdcsInfoOutput() GetVbInstance
 
 func (i GetVbInstanceIdcsInfoArgs) ToGetVbInstanceIdcsInfoOutputWithContext(ctx context.Context) GetVbInstanceIdcsInfoOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetVbInstanceIdcsInfoOutput)
-}
-
-func (i GetVbInstanceIdcsInfoArgs) ToOutput(ctx context.Context) pulumix.Output[GetVbInstanceIdcsInfo] {
-	return pulumix.Output[GetVbInstanceIdcsInfo]{
-		OutputState: i.ToGetVbInstanceIdcsInfoOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetVbInstanceIdcsInfoArrayInput is an input type that accepts GetVbInstanceIdcsInfoArray and GetVbInstanceIdcsInfoArrayOutput values.
@@ -1455,12 +1232,6 @@ func (i GetVbInstanceIdcsInfoArray) ToGetVbInstanceIdcsInfoArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetVbInstanceIdcsInfoArrayOutput)
 }
 
-func (i GetVbInstanceIdcsInfoArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVbInstanceIdcsInfo] {
-	return pulumix.Output[[]GetVbInstanceIdcsInfo]{
-		OutputState: i.ToGetVbInstanceIdcsInfoArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVbInstanceIdcsInfoOutput struct{ *pulumi.OutputState }
 
 func (GetVbInstanceIdcsInfoOutput) ElementType() reflect.Type {
@@ -1475,35 +1246,29 @@ func (o GetVbInstanceIdcsInfoOutput) ToGetVbInstanceIdcsInfoOutputWithContext(ct
 	return o
 }
 
-func (o GetVbInstanceIdcsInfoOutput) ToOutput(ctx context.Context) pulumix.Output[GetVbInstanceIdcsInfo] {
-	return pulumix.Output[GetVbInstanceIdcsInfo]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The IDCS application display name associated with the instance
-func (o GetVbInstanceIdcsInfoOutput) IdcsAppDisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVbInstanceIdcsInfo) string { return v.IdcsAppDisplayName }).(pulumi.StringOutput)
+func (o GetVbInstanceIdcsInfoOutput) IdcsAppDisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVbInstanceIdcsInfo) *string { return v.IdcsAppDisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The IDCS application ID associated with the instance
-func (o GetVbInstanceIdcsInfoOutput) IdcsAppId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVbInstanceIdcsInfo) string { return v.IdcsAppId }).(pulumi.StringOutput)
+func (o GetVbInstanceIdcsInfoOutput) IdcsAppId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVbInstanceIdcsInfo) *string { return v.IdcsAppId }).(pulumi.StringPtrOutput)
 }
 
 // URL for the location of the IDCS Application (used by IDCS APIs)
-func (o GetVbInstanceIdcsInfoOutput) IdcsAppLocationUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVbInstanceIdcsInfo) string { return v.IdcsAppLocationUrl }).(pulumi.StringOutput)
+func (o GetVbInstanceIdcsInfoOutput) IdcsAppLocationUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVbInstanceIdcsInfo) *string { return v.IdcsAppLocationUrl }).(pulumi.StringPtrOutput)
 }
 
 // The IDCS application name associated with the instance
-func (o GetVbInstanceIdcsInfoOutput) IdcsAppName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVbInstanceIdcsInfo) string { return v.IdcsAppName }).(pulumi.StringOutput)
+func (o GetVbInstanceIdcsInfoOutput) IdcsAppName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVbInstanceIdcsInfo) *string { return v.IdcsAppName }).(pulumi.StringPtrOutput)
 }
 
 // The URL used as the primary audience for visual builder flows in this instance type: string
-func (o GetVbInstanceIdcsInfoOutput) InstancePrimaryAudienceUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVbInstanceIdcsInfo) string { return v.InstancePrimaryAudienceUrl }).(pulumi.StringOutput)
+func (o GetVbInstanceIdcsInfoOutput) InstancePrimaryAudienceUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVbInstanceIdcsInfo) *string { return v.InstancePrimaryAudienceUrl }).(pulumi.StringPtrOutput)
 }
 
 type GetVbInstanceIdcsInfoArrayOutput struct{ *pulumi.OutputState }
@@ -1518,12 +1283,6 @@ func (o GetVbInstanceIdcsInfoArrayOutput) ToGetVbInstanceIdcsInfoArrayOutput() G
 
 func (o GetVbInstanceIdcsInfoArrayOutput) ToGetVbInstanceIdcsInfoArrayOutputWithContext(ctx context.Context) GetVbInstanceIdcsInfoArrayOutput {
 	return o
-}
-
-func (o GetVbInstanceIdcsInfoArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVbInstanceIdcsInfo] {
-	return pulumix.Output[[]GetVbInstanceIdcsInfo]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVbInstanceIdcsInfoArrayOutput) Index(i pulumi.IntInput) GetVbInstanceIdcsInfoOutput {
@@ -1567,12 +1326,6 @@ func (i GetVbInstancesFilterArgs) ToGetVbInstancesFilterOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GetVbInstancesFilterOutput)
 }
 
-func (i GetVbInstancesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetVbInstancesFilter] {
-	return pulumix.Output[GetVbInstancesFilter]{
-		OutputState: i.ToGetVbInstancesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVbInstancesFilterArrayInput is an input type that accepts GetVbInstancesFilterArray and GetVbInstancesFilterArrayOutput values.
 // You can construct a concrete instance of `GetVbInstancesFilterArrayInput` via:
 //
@@ -1598,12 +1351,6 @@ func (i GetVbInstancesFilterArray) ToGetVbInstancesFilterArrayOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetVbInstancesFilterArrayOutput)
 }
 
-func (i GetVbInstancesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVbInstancesFilter] {
-	return pulumix.Output[[]GetVbInstancesFilter]{
-		OutputState: i.ToGetVbInstancesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVbInstancesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetVbInstancesFilterOutput) ElementType() reflect.Type {
@@ -1616,12 +1363,6 @@ func (o GetVbInstancesFilterOutput) ToGetVbInstancesFilterOutput() GetVbInstance
 
 func (o GetVbInstancesFilterOutput) ToGetVbInstancesFilterOutputWithContext(ctx context.Context) GetVbInstancesFilterOutput {
 	return o
-}
-
-func (o GetVbInstancesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetVbInstancesFilter] {
-	return pulumix.Output[GetVbInstancesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVbInstancesFilterOutput) Name() pulumi.StringOutput {
@@ -1648,12 +1389,6 @@ func (o GetVbInstancesFilterArrayOutput) ToGetVbInstancesFilterArrayOutput() Get
 
 func (o GetVbInstancesFilterArrayOutput) ToGetVbInstancesFilterArrayOutputWithContext(ctx context.Context) GetVbInstancesFilterArrayOutput {
 	return o
-}
-
-func (o GetVbInstancesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVbInstancesFilter] {
-	return pulumix.Output[[]GetVbInstancesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVbInstancesFilterArrayOutput) Index(i pulumi.IntInput) GetVbInstancesFilterOutput {
@@ -1693,12 +1428,6 @@ func (i GetVbInstancesVbInstanceSummaryCollectionArgs) ToGetVbInstancesVbInstanc
 	return pulumi.ToOutputWithContext(ctx, i).(GetVbInstancesVbInstanceSummaryCollectionOutput)
 }
 
-func (i GetVbInstancesVbInstanceSummaryCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetVbInstancesVbInstanceSummaryCollection] {
-	return pulumix.Output[GetVbInstancesVbInstanceSummaryCollection]{
-		OutputState: i.ToGetVbInstancesVbInstanceSummaryCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVbInstancesVbInstanceSummaryCollectionArrayInput is an input type that accepts GetVbInstancesVbInstanceSummaryCollectionArray and GetVbInstancesVbInstanceSummaryCollectionArrayOutput values.
 // You can construct a concrete instance of `GetVbInstancesVbInstanceSummaryCollectionArrayInput` via:
 //
@@ -1724,12 +1453,6 @@ func (i GetVbInstancesVbInstanceSummaryCollectionArray) ToGetVbInstancesVbInstan
 	return pulumi.ToOutputWithContext(ctx, i).(GetVbInstancesVbInstanceSummaryCollectionArrayOutput)
 }
 
-func (i GetVbInstancesVbInstanceSummaryCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVbInstancesVbInstanceSummaryCollection] {
-	return pulumix.Output[[]GetVbInstancesVbInstanceSummaryCollection]{
-		OutputState: i.ToGetVbInstancesVbInstanceSummaryCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVbInstancesVbInstanceSummaryCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetVbInstancesVbInstanceSummaryCollectionOutput) ElementType() reflect.Type {
@@ -1742,12 +1465,6 @@ func (o GetVbInstancesVbInstanceSummaryCollectionOutput) ToGetVbInstancesVbInsta
 
 func (o GetVbInstancesVbInstanceSummaryCollectionOutput) ToGetVbInstancesVbInstanceSummaryCollectionOutputWithContext(ctx context.Context) GetVbInstancesVbInstanceSummaryCollectionOutput {
 	return o
-}
-
-func (o GetVbInstancesVbInstanceSummaryCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetVbInstancesVbInstanceSummaryCollection] {
-	return pulumix.Output[GetVbInstancesVbInstanceSummaryCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVbInstancesVbInstanceSummaryCollectionOutput) Items() GetVbInstancesVbInstanceSummaryCollectionItemArrayOutput {
@@ -1770,12 +1487,6 @@ func (o GetVbInstancesVbInstanceSummaryCollectionArrayOutput) ToGetVbInstancesVb
 	return o
 }
 
-func (o GetVbInstancesVbInstanceSummaryCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVbInstancesVbInstanceSummaryCollection] {
-	return pulumix.Output[[]GetVbInstancesVbInstanceSummaryCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetVbInstancesVbInstanceSummaryCollectionArrayOutput) Index(i pulumi.IntInput) GetVbInstancesVbInstanceSummaryCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVbInstancesVbInstanceSummaryCollection {
 		return vs[0].([]GetVbInstancesVbInstanceSummaryCollection)[vs[1].(int)]
@@ -1788,46 +1499,46 @@ type GetVbInstancesVbInstanceSummaryCollectionItem struct {
 	// A list of associated attachments to other services
 	Attachments []GetVbInstancesVbInstanceSummaryCollectionItemAttachment `pulumi:"attachments"`
 	// The ID of the compartment in which to list resources.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The entitlement used for billing purposes.
-	ConsumptionModel string `pulumi:"consumptionModel"`
+	ConsumptionModel *string `pulumi:"consumptionModel"`
 	// Details for a custom endpoint for the vb instance.
 	CustomEndpoints []GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpoint `pulumi:"customEndpoints"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Unique identifier that is immutable on creation.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Information for IDCS access
 	IdcsInfos  []GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfo `pulumi:"idcsInfos"`
-	IdcsOpenId string                                                  `pulumi:"idcsOpenId"`
+	IdcsOpenId *string                                                 `pulumi:"idcsOpenId"`
 	// The Vb Instance URL.
-	InstanceUrl string `pulumi:"instanceUrl"`
+	InstanceUrl *string `pulumi:"instanceUrl"`
 	// Visual Builder is enabled or not.
-	IsVisualBuilderEnabled bool `pulumi:"isVisualBuilderEnabled"`
+	IsVisualBuilderEnabled *bool `pulumi:"isVisualBuilderEnabled"`
 	// The NAT gateway IP address for the VB management VCN
-	ManagementNatGatewayIp string `pulumi:"managementNatGatewayIp"`
+	ManagementNatGatewayIp *string `pulumi:"managementNatGatewayIp"`
 	// The Oracle Cloud ID (OCID) of the Visual Builder management VCN
-	ManagementVcnId string `pulumi:"managementVcnId"`
+	ManagementVcnId *string `pulumi:"managementVcnId"`
 	// The number of Nodes
-	NodeCount int `pulumi:"nodeCount"`
+	NodeCount *int `pulumi:"nodeCount"`
 	// The NAT gateway IP address for the VB service VCN
-	ServiceNatGatewayIp string `pulumi:"serviceNatGatewayIp"`
+	ServiceNatGatewayIp *string `pulumi:"serviceNatGatewayIp"`
 	// The Oracle Cloud ID (OCID) of the Visual Builder service VCN
-	ServiceVcnId string `pulumi:"serviceVcnId"`
+	ServiceVcnId *string `pulumi:"serviceVcnId"`
 	// Life cycle state to query on.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	StateMessage string `pulumi:"stateMessage"`
+	StateMessage *string `pulumi:"stateMessage"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time the the VbInstance was created. An RFC3339 formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the VbInstance was updated. An RFC3339 formatted datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 // GetVbInstancesVbInstanceSummaryCollectionItemInput is an input type that accepts GetVbInstancesVbInstanceSummaryCollectionItemArgs and GetVbInstancesVbInstanceSummaryCollectionItemOutput values.
@@ -1847,46 +1558,46 @@ type GetVbInstancesVbInstanceSummaryCollectionItemArgs struct {
 	// A list of associated attachments to other services
 	Attachments GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArrayInput `pulumi:"attachments"`
 	// The ID of the compartment in which to list resources.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// The entitlement used for billing purposes.
-	ConsumptionModel pulumi.StringInput `pulumi:"consumptionModel"`
+	ConsumptionModel pulumi.StringPtrInput `pulumi:"consumptionModel"`
 	// Details for a custom endpoint for the vb instance.
 	CustomEndpoints GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointArrayInput `pulumi:"customEndpoints"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// Unique identifier that is immutable on creation.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Information for IDCS access
 	IdcsInfos  GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArrayInput `pulumi:"idcsInfos"`
-	IdcsOpenId pulumi.StringInput                                              `pulumi:"idcsOpenId"`
+	IdcsOpenId pulumi.StringPtrInput                                           `pulumi:"idcsOpenId"`
 	// The Vb Instance URL.
-	InstanceUrl pulumi.StringInput `pulumi:"instanceUrl"`
+	InstanceUrl pulumi.StringPtrInput `pulumi:"instanceUrl"`
 	// Visual Builder is enabled or not.
-	IsVisualBuilderEnabled pulumi.BoolInput `pulumi:"isVisualBuilderEnabled"`
+	IsVisualBuilderEnabled pulumi.BoolPtrInput `pulumi:"isVisualBuilderEnabled"`
 	// The NAT gateway IP address for the VB management VCN
-	ManagementNatGatewayIp pulumi.StringInput `pulumi:"managementNatGatewayIp"`
+	ManagementNatGatewayIp pulumi.StringPtrInput `pulumi:"managementNatGatewayIp"`
 	// The Oracle Cloud ID (OCID) of the Visual Builder management VCN
-	ManagementVcnId pulumi.StringInput `pulumi:"managementVcnId"`
+	ManagementVcnId pulumi.StringPtrInput `pulumi:"managementVcnId"`
 	// The number of Nodes
-	NodeCount pulumi.IntInput `pulumi:"nodeCount"`
+	NodeCount pulumi.IntPtrInput `pulumi:"nodeCount"`
 	// The NAT gateway IP address for the VB service VCN
-	ServiceNatGatewayIp pulumi.StringInput `pulumi:"serviceNatGatewayIp"`
+	ServiceNatGatewayIp pulumi.StringPtrInput `pulumi:"serviceNatGatewayIp"`
 	// The Oracle Cloud ID (OCID) of the Visual Builder service VCN
-	ServiceVcnId pulumi.StringInput `pulumi:"serviceVcnId"`
+	ServiceVcnId pulumi.StringPtrInput `pulumi:"serviceVcnId"`
 	// Life cycle state to query on.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	StateMessage pulumi.StringInput `pulumi:"stateMessage"`
+	StateMessage pulumi.StringPtrInput `pulumi:"stateMessage"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// The time the the VbInstance was created. An RFC3339 formatted datetime string.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The time the VbInstance was updated. An RFC3339 formatted datetime string.
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 }
 
 func (GetVbInstancesVbInstanceSummaryCollectionItemArgs) ElementType() reflect.Type {
@@ -1899,12 +1610,6 @@ func (i GetVbInstancesVbInstanceSummaryCollectionItemArgs) ToGetVbInstancesVbIns
 
 func (i GetVbInstancesVbInstanceSummaryCollectionItemArgs) ToGetVbInstancesVbInstanceSummaryCollectionItemOutputWithContext(ctx context.Context) GetVbInstancesVbInstanceSummaryCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetVbInstancesVbInstanceSummaryCollectionItemOutput)
-}
-
-func (i GetVbInstancesVbInstanceSummaryCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetVbInstancesVbInstanceSummaryCollectionItem] {
-	return pulumix.Output[GetVbInstancesVbInstanceSummaryCollectionItem]{
-		OutputState: i.ToGetVbInstancesVbInstanceSummaryCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetVbInstancesVbInstanceSummaryCollectionItemArrayInput is an input type that accepts GetVbInstancesVbInstanceSummaryCollectionItemArray and GetVbInstancesVbInstanceSummaryCollectionItemArrayOutput values.
@@ -1932,12 +1637,6 @@ func (i GetVbInstancesVbInstanceSummaryCollectionItemArray) ToGetVbInstancesVbIn
 	return pulumi.ToOutputWithContext(ctx, i).(GetVbInstancesVbInstanceSummaryCollectionItemArrayOutput)
 }
 
-func (i GetVbInstancesVbInstanceSummaryCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVbInstancesVbInstanceSummaryCollectionItem] {
-	return pulumix.Output[[]GetVbInstancesVbInstanceSummaryCollectionItem]{
-		OutputState: i.ToGetVbInstancesVbInstanceSummaryCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVbInstancesVbInstanceSummaryCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetVbInstancesVbInstanceSummaryCollectionItemOutput) ElementType() reflect.Type {
@@ -1950,12 +1649,6 @@ func (o GetVbInstancesVbInstanceSummaryCollectionItemOutput) ToGetVbInstancesVbI
 
 func (o GetVbInstancesVbInstanceSummaryCollectionItemOutput) ToGetVbInstancesVbInstanceSummaryCollectionItemOutputWithContext(ctx context.Context) GetVbInstancesVbInstanceSummaryCollectionItemOutput {
 	return o
-}
-
-func (o GetVbInstancesVbInstanceSummaryCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetVbInstancesVbInstanceSummaryCollectionItem] {
-	return pulumix.Output[GetVbInstancesVbInstanceSummaryCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A list of alternate custom endpoints used for the vb instance URL.
@@ -1973,13 +1666,13 @@ func (o GetVbInstancesVbInstanceSummaryCollectionItemOutput) Attachments() GetVb
 }
 
 // The ID of the compartment in which to list resources.
-func (o GetVbInstancesVbInstanceSummaryCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetVbInstancesVbInstanceSummaryCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The entitlement used for billing purposes.
-func (o GetVbInstancesVbInstanceSummaryCollectionItemOutput) ConsumptionModel() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItem) string { return v.ConsumptionModel }).(pulumi.StringOutput)
+func (o GetVbInstancesVbInstanceSummaryCollectionItemOutput) ConsumptionModel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItem) *string { return v.ConsumptionModel }).(pulumi.StringPtrOutput)
 }
 
 // Details for a custom endpoint for the vb instance.
@@ -1995,8 +1688,8 @@ func (o GetVbInstancesVbInstanceSummaryCollectionItemOutput) DefinedTags() pulum
 }
 
 // A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
-func (o GetVbInstancesVbInstanceSummaryCollectionItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetVbInstancesVbInstanceSummaryCollectionItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItem) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -2005,8 +1698,8 @@ func (o GetVbInstancesVbInstanceSummaryCollectionItemOutput) FreeformTags() pulu
 }
 
 // Unique identifier that is immutable on creation.
-func (o GetVbInstancesVbInstanceSummaryCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetVbInstancesVbInstanceSummaryCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Information for IDCS access
@@ -2016,53 +1709,53 @@ func (o GetVbInstancesVbInstanceSummaryCollectionItemOutput) IdcsInfos() GetVbIn
 	}).(GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArrayOutput)
 }
 
-func (o GetVbInstancesVbInstanceSummaryCollectionItemOutput) IdcsOpenId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItem) string { return v.IdcsOpenId }).(pulumi.StringOutput)
+func (o GetVbInstancesVbInstanceSummaryCollectionItemOutput) IdcsOpenId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItem) *string { return v.IdcsOpenId }).(pulumi.StringPtrOutput)
 }
 
 // The Vb Instance URL.
-func (o GetVbInstancesVbInstanceSummaryCollectionItemOutput) InstanceUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItem) string { return v.InstanceUrl }).(pulumi.StringOutput)
+func (o GetVbInstancesVbInstanceSummaryCollectionItemOutput) InstanceUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItem) *string { return v.InstanceUrl }).(pulumi.StringPtrOutput)
 }
 
 // Visual Builder is enabled or not.
-func (o GetVbInstancesVbInstanceSummaryCollectionItemOutput) IsVisualBuilderEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItem) bool { return v.IsVisualBuilderEnabled }).(pulumi.BoolOutput)
+func (o GetVbInstancesVbInstanceSummaryCollectionItemOutput) IsVisualBuilderEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItem) *bool { return v.IsVisualBuilderEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // The NAT gateway IP address for the VB management VCN
-func (o GetVbInstancesVbInstanceSummaryCollectionItemOutput) ManagementNatGatewayIp() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItem) string { return v.ManagementNatGatewayIp }).(pulumi.StringOutput)
+func (o GetVbInstancesVbInstanceSummaryCollectionItemOutput) ManagementNatGatewayIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItem) *string { return v.ManagementNatGatewayIp }).(pulumi.StringPtrOutput)
 }
 
 // The Oracle Cloud ID (OCID) of the Visual Builder management VCN
-func (o GetVbInstancesVbInstanceSummaryCollectionItemOutput) ManagementVcnId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItem) string { return v.ManagementVcnId }).(pulumi.StringOutput)
+func (o GetVbInstancesVbInstanceSummaryCollectionItemOutput) ManagementVcnId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItem) *string { return v.ManagementVcnId }).(pulumi.StringPtrOutput)
 }
 
 // The number of Nodes
-func (o GetVbInstancesVbInstanceSummaryCollectionItemOutput) NodeCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItem) int { return v.NodeCount }).(pulumi.IntOutput)
+func (o GetVbInstancesVbInstanceSummaryCollectionItemOutput) NodeCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItem) *int { return v.NodeCount }).(pulumi.IntPtrOutput)
 }
 
 // The NAT gateway IP address for the VB service VCN
-func (o GetVbInstancesVbInstanceSummaryCollectionItemOutput) ServiceNatGatewayIp() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItem) string { return v.ServiceNatGatewayIp }).(pulumi.StringOutput)
+func (o GetVbInstancesVbInstanceSummaryCollectionItemOutput) ServiceNatGatewayIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItem) *string { return v.ServiceNatGatewayIp }).(pulumi.StringPtrOutput)
 }
 
 // The Oracle Cloud ID (OCID) of the Visual Builder service VCN
-func (o GetVbInstancesVbInstanceSummaryCollectionItemOutput) ServiceVcnId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItem) string { return v.ServiceVcnId }).(pulumi.StringOutput)
+func (o GetVbInstancesVbInstanceSummaryCollectionItemOutput) ServiceVcnId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItem) *string { return v.ServiceVcnId }).(pulumi.StringPtrOutput)
 }
 
 // Life cycle state to query on.
-func (o GetVbInstancesVbInstanceSummaryCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetVbInstancesVbInstanceSummaryCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o GetVbInstancesVbInstanceSummaryCollectionItemOutput) StateMessage() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItem) string { return v.StateMessage }).(pulumi.StringOutput)
+func (o GetVbInstancesVbInstanceSummaryCollectionItemOutput) StateMessage() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItem) *string { return v.StateMessage }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -2071,13 +1764,13 @@ func (o GetVbInstancesVbInstanceSummaryCollectionItemOutput) SystemTags() pulumi
 }
 
 // The time the the VbInstance was created. An RFC3339 formatted datetime string.
-func (o GetVbInstancesVbInstanceSummaryCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetVbInstancesVbInstanceSummaryCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the VbInstance was updated. An RFC3339 formatted datetime string.
-func (o GetVbInstancesVbInstanceSummaryCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetVbInstancesVbInstanceSummaryCollectionItemOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItem) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type GetVbInstancesVbInstanceSummaryCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -2094,12 +1787,6 @@ func (o GetVbInstancesVbInstanceSummaryCollectionItemArrayOutput) ToGetVbInstanc
 	return o
 }
 
-func (o GetVbInstancesVbInstanceSummaryCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVbInstancesVbInstanceSummaryCollectionItem] {
-	return pulumix.Output[[]GetVbInstancesVbInstanceSummaryCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetVbInstancesVbInstanceSummaryCollectionItemArrayOutput) Index(i pulumi.IntInput) GetVbInstancesVbInstanceSummaryCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVbInstancesVbInstanceSummaryCollectionItem {
 		return vs[0].([]GetVbInstancesVbInstanceSummaryCollectionItem)[vs[1].(int)]
@@ -2108,11 +1795,11 @@ func (o GetVbInstancesVbInstanceSummaryCollectionItemArrayOutput) Index(i pulumi
 
 type GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpoint struct {
 	// Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname.
-	CertificateSecretId string `pulumi:"certificateSecretId"`
+	CertificateSecretId *string `pulumi:"certificateSecretId"`
 	// The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
-	CertificateSecretVersion int `pulumi:"certificateSecretVersion"`
+	CertificateSecretVersion *int `pulumi:"certificateSecretVersion"`
 	// A custom hostname to be used for the vb instance URL, in FQDN format.
-	Hostname string `pulumi:"hostname"`
+	Hostname *string `pulumi:"hostname"`
 }
 
 // GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointInput is an input type that accepts GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointArgs and GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointOutput values.
@@ -2128,11 +1815,11 @@ type GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointInput i
 
 type GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointArgs struct {
 	// Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname.
-	CertificateSecretId pulumi.StringInput `pulumi:"certificateSecretId"`
+	CertificateSecretId pulumi.StringPtrInput `pulumi:"certificateSecretId"`
 	// The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
-	CertificateSecretVersion pulumi.IntInput `pulumi:"certificateSecretVersion"`
+	CertificateSecretVersion pulumi.IntPtrInput `pulumi:"certificateSecretVersion"`
 	// A custom hostname to be used for the vb instance URL, in FQDN format.
-	Hostname pulumi.StringInput `pulumi:"hostname"`
+	Hostname pulumi.StringPtrInput `pulumi:"hostname"`
 }
 
 func (GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointArgs) ElementType() reflect.Type {
@@ -2145,12 +1832,6 @@ func (i GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointArgs
 
 func (i GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointArgs) ToGetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointOutputWithContext(ctx context.Context) GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointOutput)
-}
-
-func (i GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointArgs) ToOutput(ctx context.Context) pulumix.Output[GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpoint] {
-	return pulumix.Output[GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpoint]{
-		OutputState: i.ToGetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointArrayInput is an input type that accepts GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointArray and GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointArrayOutput values.
@@ -2178,12 +1859,6 @@ func (i GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointArra
 	return pulumi.ToOutputWithContext(ctx, i).(GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointArrayOutput)
 }
 
-func (i GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpoint] {
-	return pulumix.Output[[]GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpoint]{
-		OutputState: i.ToGetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointOutput struct{ *pulumi.OutputState }
 
 func (GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointOutput) ElementType() reflect.Type {
@@ -2198,29 +1873,25 @@ func (o GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointOutp
 	return o
 }
 
-func (o GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointOutput) ToOutput(ctx context.Context) pulumix.Output[GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpoint] {
-	return pulumix.Output[GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpoint]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname.
-func (o GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointOutput) CertificateSecretId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpoint) string {
+func (o GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointOutput) CertificateSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpoint) *string {
 		return v.CertificateSecretId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
-func (o GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointOutput) CertificateSecretVersion() pulumi.IntOutput {
-	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpoint) int {
+func (o GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointOutput) CertificateSecretVersion() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpoint) *int {
 		return v.CertificateSecretVersion
-	}).(pulumi.IntOutput)
+	}).(pulumi.IntPtrOutput)
 }
 
 // A custom hostname to be used for the vb instance URL, in FQDN format.
-func (o GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointOutput) Hostname() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpoint) string { return v.Hostname }).(pulumi.StringOutput)
+func (o GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointOutput) Hostname() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpoint) *string {
+		return v.Hostname
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointArrayOutput struct{ *pulumi.OutputState }
@@ -2237,12 +1908,6 @@ func (o GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointArra
 	return o
 }
 
-func (o GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpoint] {
-	return pulumix.Output[[]GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpoint]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointArrayOutput) Index(i pulumi.IntInput) GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpoint {
 		return vs[0].([]GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpoint)[vs[1].(int)]
@@ -2252,15 +1917,15 @@ func (o GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointArra
 type GetVbInstancesVbInstanceSummaryCollectionItemAttachment struct {
 	// * If role == `PARENT`, the attached instance was created by this service instance
 	// * If role == `CHILD`, this instance was created from attached instance on behalf of a user
-	IsImplicit bool `pulumi:"isImplicit"`
+	IsImplicit *bool `pulumi:"isImplicit"`
 	// The OCID of the target instance (which could be any other Oracle Cloud Infrastructure PaaS/SaaS resource), to which this instance is attached.
-	TargetId string `pulumi:"targetId"`
+	TargetId *string `pulumi:"targetId"`
 	// The dataplane instance URL of the attached instance
-	TargetInstanceUrl string `pulumi:"targetInstanceUrl"`
+	TargetInstanceUrl *string `pulumi:"targetInstanceUrl"`
 	// The role of the target attachment.
-	TargetRole string `pulumi:"targetRole"`
+	TargetRole *string `pulumi:"targetRole"`
 	// The type of the target instance, such as "FUSION".
-	TargetServiceType string `pulumi:"targetServiceType"`
+	TargetServiceType *string `pulumi:"targetServiceType"`
 }
 
 // GetVbInstancesVbInstanceSummaryCollectionItemAttachmentInput is an input type that accepts GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArgs and GetVbInstancesVbInstanceSummaryCollectionItemAttachmentOutput values.
@@ -2277,15 +1942,15 @@ type GetVbInstancesVbInstanceSummaryCollectionItemAttachmentInput interface {
 type GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArgs struct {
 	// * If role == `PARENT`, the attached instance was created by this service instance
 	// * If role == `CHILD`, this instance was created from attached instance on behalf of a user
-	IsImplicit pulumi.BoolInput `pulumi:"isImplicit"`
+	IsImplicit pulumi.BoolPtrInput `pulumi:"isImplicit"`
 	// The OCID of the target instance (which could be any other Oracle Cloud Infrastructure PaaS/SaaS resource), to which this instance is attached.
-	TargetId pulumi.StringInput `pulumi:"targetId"`
+	TargetId pulumi.StringPtrInput `pulumi:"targetId"`
 	// The dataplane instance URL of the attached instance
-	TargetInstanceUrl pulumi.StringInput `pulumi:"targetInstanceUrl"`
+	TargetInstanceUrl pulumi.StringPtrInput `pulumi:"targetInstanceUrl"`
 	// The role of the target attachment.
-	TargetRole pulumi.StringInput `pulumi:"targetRole"`
+	TargetRole pulumi.StringPtrInput `pulumi:"targetRole"`
 	// The type of the target instance, such as "FUSION".
-	TargetServiceType pulumi.StringInput `pulumi:"targetServiceType"`
+	TargetServiceType pulumi.StringPtrInput `pulumi:"targetServiceType"`
 }
 
 func (GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArgs) ElementType() reflect.Type {
@@ -2298,12 +1963,6 @@ func (i GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArgs) ToGetVbInst
 
 func (i GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArgs) ToGetVbInstancesVbInstanceSummaryCollectionItemAttachmentOutputWithContext(ctx context.Context) GetVbInstancesVbInstanceSummaryCollectionItemAttachmentOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetVbInstancesVbInstanceSummaryCollectionItemAttachmentOutput)
-}
-
-func (i GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArgs) ToOutput(ctx context.Context) pulumix.Output[GetVbInstancesVbInstanceSummaryCollectionItemAttachment] {
-	return pulumix.Output[GetVbInstancesVbInstanceSummaryCollectionItemAttachment]{
-		OutputState: i.ToGetVbInstancesVbInstanceSummaryCollectionItemAttachmentOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArrayInput is an input type that accepts GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArray and GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArrayOutput values.
@@ -2331,12 +1990,6 @@ func (i GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArray) ToGetVbIns
 	return pulumi.ToOutputWithContext(ctx, i).(GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArrayOutput)
 }
 
-func (i GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVbInstancesVbInstanceSummaryCollectionItemAttachment] {
-	return pulumix.Output[[]GetVbInstancesVbInstanceSummaryCollectionItemAttachment]{
-		OutputState: i.ToGetVbInstancesVbInstanceSummaryCollectionItemAttachmentArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVbInstancesVbInstanceSummaryCollectionItemAttachmentOutput struct{ *pulumi.OutputState }
 
 func (GetVbInstancesVbInstanceSummaryCollectionItemAttachmentOutput) ElementType() reflect.Type {
@@ -2351,36 +2004,30 @@ func (o GetVbInstancesVbInstanceSummaryCollectionItemAttachmentOutput) ToGetVbIn
 	return o
 }
 
-func (o GetVbInstancesVbInstanceSummaryCollectionItemAttachmentOutput) ToOutput(ctx context.Context) pulumix.Output[GetVbInstancesVbInstanceSummaryCollectionItemAttachment] {
-	return pulumix.Output[GetVbInstancesVbInstanceSummaryCollectionItemAttachment]{
-		OutputState: o.OutputState,
-	}
-}
-
 // * If role == `PARENT`, the attached instance was created by this service instance
 // * If role == `CHILD`, this instance was created from attached instance on behalf of a user
-func (o GetVbInstancesVbInstanceSummaryCollectionItemAttachmentOutput) IsImplicit() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItemAttachment) bool { return v.IsImplicit }).(pulumi.BoolOutput)
+func (o GetVbInstancesVbInstanceSummaryCollectionItemAttachmentOutput) IsImplicit() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItemAttachment) *bool { return v.IsImplicit }).(pulumi.BoolPtrOutput)
 }
 
 // The OCID of the target instance (which could be any other Oracle Cloud Infrastructure PaaS/SaaS resource), to which this instance is attached.
-func (o GetVbInstancesVbInstanceSummaryCollectionItemAttachmentOutput) TargetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItemAttachment) string { return v.TargetId }).(pulumi.StringOutput)
+func (o GetVbInstancesVbInstanceSummaryCollectionItemAttachmentOutput) TargetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItemAttachment) *string { return v.TargetId }).(pulumi.StringPtrOutput)
 }
 
 // The dataplane instance URL of the attached instance
-func (o GetVbInstancesVbInstanceSummaryCollectionItemAttachmentOutput) TargetInstanceUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItemAttachment) string { return v.TargetInstanceUrl }).(pulumi.StringOutput)
+func (o GetVbInstancesVbInstanceSummaryCollectionItemAttachmentOutput) TargetInstanceUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItemAttachment) *string { return v.TargetInstanceUrl }).(pulumi.StringPtrOutput)
 }
 
 // The role of the target attachment.
-func (o GetVbInstancesVbInstanceSummaryCollectionItemAttachmentOutput) TargetRole() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItemAttachment) string { return v.TargetRole }).(pulumi.StringOutput)
+func (o GetVbInstancesVbInstanceSummaryCollectionItemAttachmentOutput) TargetRole() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItemAttachment) *string { return v.TargetRole }).(pulumi.StringPtrOutput)
 }
 
 // The type of the target instance, such as "FUSION".
-func (o GetVbInstancesVbInstanceSummaryCollectionItemAttachmentOutput) TargetServiceType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItemAttachment) string { return v.TargetServiceType }).(pulumi.StringOutput)
+func (o GetVbInstancesVbInstanceSummaryCollectionItemAttachmentOutput) TargetServiceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItemAttachment) *string { return v.TargetServiceType }).(pulumi.StringPtrOutput)
 }
 
 type GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArrayOutput struct{ *pulumi.OutputState }
@@ -2397,12 +2044,6 @@ func (o GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArrayOutput) ToGe
 	return o
 }
 
-func (o GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVbInstancesVbInstanceSummaryCollectionItemAttachment] {
-	return pulumix.Output[[]GetVbInstancesVbInstanceSummaryCollectionItemAttachment]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArrayOutput) Index(i pulumi.IntInput) GetVbInstancesVbInstanceSummaryCollectionItemAttachmentOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVbInstancesVbInstanceSummaryCollectionItemAttachment {
 		return vs[0].([]GetVbInstancesVbInstanceSummaryCollectionItemAttachment)[vs[1].(int)]
@@ -2411,11 +2052,11 @@ func (o GetVbInstancesVbInstanceSummaryCollectionItemAttachmentArrayOutput) Inde
 
 type GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpoint struct {
 	// Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname.
-	CertificateSecretId string `pulumi:"certificateSecretId"`
+	CertificateSecretId *string `pulumi:"certificateSecretId"`
 	// The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
-	CertificateSecretVersion int `pulumi:"certificateSecretVersion"`
+	CertificateSecretVersion *int `pulumi:"certificateSecretVersion"`
 	// A custom hostname to be used for the vb instance URL, in FQDN format.
-	Hostname string `pulumi:"hostname"`
+	Hostname *string `pulumi:"hostname"`
 }
 
 // GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointInput is an input type that accepts GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointArgs and GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointOutput values.
@@ -2431,11 +2072,11 @@ type GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointInput interface 
 
 type GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointArgs struct {
 	// Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname.
-	CertificateSecretId pulumi.StringInput `pulumi:"certificateSecretId"`
+	CertificateSecretId pulumi.StringPtrInput `pulumi:"certificateSecretId"`
 	// The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
-	CertificateSecretVersion pulumi.IntInput `pulumi:"certificateSecretVersion"`
+	CertificateSecretVersion pulumi.IntPtrInput `pulumi:"certificateSecretVersion"`
 	// A custom hostname to be used for the vb instance URL, in FQDN format.
-	Hostname pulumi.StringInput `pulumi:"hostname"`
+	Hostname pulumi.StringPtrInput `pulumi:"hostname"`
 }
 
 func (GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointArgs) ElementType() reflect.Type {
@@ -2448,12 +2089,6 @@ func (i GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointArgs) ToGetVb
 
 func (i GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointArgs) ToGetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointOutputWithContext(ctx context.Context) GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointOutput)
-}
-
-func (i GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointArgs) ToOutput(ctx context.Context) pulumix.Output[GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpoint] {
-	return pulumix.Output[GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpoint]{
-		OutputState: i.ToGetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointArrayInput is an input type that accepts GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointArray and GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointArrayOutput values.
@@ -2481,12 +2116,6 @@ func (i GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointArray) ToGetV
 	return pulumi.ToOutputWithContext(ctx, i).(GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointArrayOutput)
 }
 
-func (i GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpoint] {
-	return pulumix.Output[[]GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpoint]{
-		OutputState: i.ToGetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointOutput struct{ *pulumi.OutputState }
 
 func (GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointOutput) ElementType() reflect.Type {
@@ -2501,29 +2130,23 @@ func (o GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointOutput) ToGet
 	return o
 }
 
-func (o GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointOutput) ToOutput(ctx context.Context) pulumix.Output[GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpoint] {
-	return pulumix.Output[GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpoint]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname.
-func (o GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointOutput) CertificateSecretId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpoint) string {
+func (o GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointOutput) CertificateSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpoint) *string {
 		return v.CertificateSecretId
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
-func (o GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointOutput) CertificateSecretVersion() pulumi.IntOutput {
-	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpoint) int {
+func (o GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointOutput) CertificateSecretVersion() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpoint) *int {
 		return v.CertificateSecretVersion
-	}).(pulumi.IntOutput)
+	}).(pulumi.IntPtrOutput)
 }
 
 // A custom hostname to be used for the vb instance URL, in FQDN format.
-func (o GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointOutput) Hostname() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpoint) string { return v.Hostname }).(pulumi.StringOutput)
+func (o GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointOutput) Hostname() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpoint) *string { return v.Hostname }).(pulumi.StringPtrOutput)
 }
 
 type GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointArrayOutput struct{ *pulumi.OutputState }
@@ -2540,12 +2163,6 @@ func (o GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointArrayOutput) 
 	return o
 }
 
-func (o GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpoint] {
-	return pulumix.Output[[]GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpoint]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointArrayOutput) Index(i pulumi.IntInput) GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpoint {
 		return vs[0].([]GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpoint)[vs[1].(int)]
@@ -2554,15 +2171,15 @@ func (o GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointArrayOutput) 
 
 type GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfo struct {
 	// The IDCS application display name associated with the instance
-	IdcsAppDisplayName string `pulumi:"idcsAppDisplayName"`
+	IdcsAppDisplayName *string `pulumi:"idcsAppDisplayName"`
 	// The IDCS application ID associated with the instance
-	IdcsAppId string `pulumi:"idcsAppId"`
+	IdcsAppId *string `pulumi:"idcsAppId"`
 	// URL for the location of the IDCS Application (used by IDCS APIs)
-	IdcsAppLocationUrl string `pulumi:"idcsAppLocationUrl"`
+	IdcsAppLocationUrl *string `pulumi:"idcsAppLocationUrl"`
 	// The IDCS application name associated with the instance
-	IdcsAppName string `pulumi:"idcsAppName"`
+	IdcsAppName *string `pulumi:"idcsAppName"`
 	// The URL used as the primary audience for visual builder flows in this instance type: string
-	InstancePrimaryAudienceUrl string `pulumi:"instancePrimaryAudienceUrl"`
+	InstancePrimaryAudienceUrl *string `pulumi:"instancePrimaryAudienceUrl"`
 }
 
 // GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoInput is an input type that accepts GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArgs and GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoOutput values.
@@ -2578,15 +2195,15 @@ type GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoInput interface {
 
 type GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArgs struct {
 	// The IDCS application display name associated with the instance
-	IdcsAppDisplayName pulumi.StringInput `pulumi:"idcsAppDisplayName"`
+	IdcsAppDisplayName pulumi.StringPtrInput `pulumi:"idcsAppDisplayName"`
 	// The IDCS application ID associated with the instance
-	IdcsAppId pulumi.StringInput `pulumi:"idcsAppId"`
+	IdcsAppId pulumi.StringPtrInput `pulumi:"idcsAppId"`
 	// URL for the location of the IDCS Application (used by IDCS APIs)
-	IdcsAppLocationUrl pulumi.StringInput `pulumi:"idcsAppLocationUrl"`
+	IdcsAppLocationUrl pulumi.StringPtrInput `pulumi:"idcsAppLocationUrl"`
 	// The IDCS application name associated with the instance
-	IdcsAppName pulumi.StringInput `pulumi:"idcsAppName"`
+	IdcsAppName pulumi.StringPtrInput `pulumi:"idcsAppName"`
 	// The URL used as the primary audience for visual builder flows in this instance type: string
-	InstancePrimaryAudienceUrl pulumi.StringInput `pulumi:"instancePrimaryAudienceUrl"`
+	InstancePrimaryAudienceUrl pulumi.StringPtrInput `pulumi:"instancePrimaryAudienceUrl"`
 }
 
 func (GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArgs) ElementType() reflect.Type {
@@ -2599,12 +2216,6 @@ func (i GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArgs) ToGetVbInstan
 
 func (i GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArgs) ToGetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoOutputWithContext(ctx context.Context) GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoOutput)
-}
-
-func (i GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArgs) ToOutput(ctx context.Context) pulumix.Output[GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfo] {
-	return pulumix.Output[GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfo]{
-		OutputState: i.ToGetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArrayInput is an input type that accepts GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArray and GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArrayOutput values.
@@ -2632,12 +2243,6 @@ func (i GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArray) ToGetVbInsta
 	return pulumi.ToOutputWithContext(ctx, i).(GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArrayOutput)
 }
 
-func (i GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfo] {
-	return pulumix.Output[[]GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfo]{
-		OutputState: i.ToGetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoOutput struct{ *pulumi.OutputState }
 
 func (GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoOutput) ElementType() reflect.Type {
@@ -2652,37 +2257,31 @@ func (o GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoOutput) ToGetVbInst
 	return o
 }
 
-func (o GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoOutput) ToOutput(ctx context.Context) pulumix.Output[GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfo] {
-	return pulumix.Output[GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfo]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The IDCS application display name associated with the instance
-func (o GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoOutput) IdcsAppDisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfo) string { return v.IdcsAppDisplayName }).(pulumi.StringOutput)
+func (o GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoOutput) IdcsAppDisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfo) *string { return v.IdcsAppDisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The IDCS application ID associated with the instance
-func (o GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoOutput) IdcsAppId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfo) string { return v.IdcsAppId }).(pulumi.StringOutput)
+func (o GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoOutput) IdcsAppId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfo) *string { return v.IdcsAppId }).(pulumi.StringPtrOutput)
 }
 
 // URL for the location of the IDCS Application (used by IDCS APIs)
-func (o GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoOutput) IdcsAppLocationUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfo) string { return v.IdcsAppLocationUrl }).(pulumi.StringOutput)
+func (o GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoOutput) IdcsAppLocationUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfo) *string { return v.IdcsAppLocationUrl }).(pulumi.StringPtrOutput)
 }
 
 // The IDCS application name associated with the instance
-func (o GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoOutput) IdcsAppName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfo) string { return v.IdcsAppName }).(pulumi.StringOutput)
+func (o GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoOutput) IdcsAppName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfo) *string { return v.IdcsAppName }).(pulumi.StringPtrOutput)
 }
 
 // The URL used as the primary audience for visual builder flows in this instance type: string
-func (o GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoOutput) InstancePrimaryAudienceUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfo) string {
+func (o GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoOutput) InstancePrimaryAudienceUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfo) *string {
 		return v.InstancePrimaryAudienceUrl
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArrayOutput struct{ *pulumi.OutputState }
@@ -2697,12 +2296,6 @@ func (o GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArrayOutput) ToGetV
 
 func (o GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArrayOutput) ToGetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArrayOutputWithContext(ctx context.Context) GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArrayOutput {
 	return o
-}
-
-func (o GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfo] {
-	return pulumix.Output[[]GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfo]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoArrayOutput) Index(i pulumi.IntInput) GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoOutput {

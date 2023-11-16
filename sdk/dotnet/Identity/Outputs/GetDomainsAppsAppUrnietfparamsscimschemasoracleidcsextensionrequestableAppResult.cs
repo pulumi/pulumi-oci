@@ -16,10 +16,10 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// Flag controlling whether resource can be request by user through self service console.
         /// </summary>
-        public readonly bool Requestable;
+        public readonly bool? Requestable;
 
         [OutputConstructor]
-        private GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionrequestableAppResult(bool requestable)
+        private GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionrequestableAppResult(bool? requestable)
         {
             Requestable = requestable;
         }

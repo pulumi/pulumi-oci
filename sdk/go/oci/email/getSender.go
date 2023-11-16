@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Sender resource in Oracle Cloud Infrastructure Email service.
@@ -60,24 +59,24 @@ type LookupSenderArgs struct {
 // A collection of values returned by getSender.
 type LookupSenderResult struct {
 	// The OCID for the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The email address of the sender.
-	EmailAddress string `pulumi:"emailAddress"`
+	EmailAddress *string `pulumi:"emailAddress"`
 	// The email domain used to assert responsibility for emails sent from this sender.
-	EmailDomainId string `pulumi:"emailDomainId"`
+	EmailDomainId *string `pulumi:"emailDomainId"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The unique OCID of the sender.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Value of the SPF field. For more information about SPF, please see [SPF Authentication](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
-	IsSpf    bool   `pulumi:"isSpf"`
+	IsSpf    *bool  `pulumi:"isSpf"`
 	SenderId string `pulumi:"senderId"`
 	// The current status of the approved sender.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the approved sender was added in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 }
 
 func LookupSenderOutput(ctx *pulumi.Context, args LookupSenderOutputArgs, opts ...pulumi.InvokeOption) LookupSenderResultOutput {
@@ -118,15 +117,9 @@ func (o LookupSenderResultOutput) ToLookupSenderResultOutputWithContext(ctx cont
 	return o
 }
 
-func (o LookupSenderResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupSenderResult] {
-	return pulumix.Output[LookupSenderResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID for the compartment.
-func (o LookupSenderResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSenderResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupSenderResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSenderResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -135,13 +128,13 @@ func (o LookupSenderResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // The email address of the sender.
-func (o LookupSenderResultOutput) EmailAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSenderResult) string { return v.EmailAddress }).(pulumi.StringOutput)
+func (o LookupSenderResultOutput) EmailAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSenderResult) *string { return v.EmailAddress }).(pulumi.StringPtrOutput)
 }
 
 // The email domain used to assert responsibility for emails sent from this sender.
-func (o LookupSenderResultOutput) EmailDomainId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSenderResult) string { return v.EmailDomainId }).(pulumi.StringOutput)
+func (o LookupSenderResultOutput) EmailDomainId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSenderResult) *string { return v.EmailDomainId }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -150,13 +143,13 @@ func (o LookupSenderResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The unique OCID of the sender.
-func (o LookupSenderResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSenderResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupSenderResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSenderResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Value of the SPF field. For more information about SPF, please see [SPF Authentication](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
-func (o LookupSenderResultOutput) IsSpf() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupSenderResult) bool { return v.IsSpf }).(pulumi.BoolOutput)
+func (o LookupSenderResultOutput) IsSpf() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupSenderResult) *bool { return v.IsSpf }).(pulumi.BoolPtrOutput)
 }
 
 func (o LookupSenderResultOutput) SenderId() pulumi.StringOutput {
@@ -164,13 +157,13 @@ func (o LookupSenderResultOutput) SenderId() pulumi.StringOutput {
 }
 
 // The current status of the approved sender.
-func (o LookupSenderResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSenderResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupSenderResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSenderResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the approved sender was added in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
-func (o LookupSenderResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSenderResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupSenderResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSenderResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

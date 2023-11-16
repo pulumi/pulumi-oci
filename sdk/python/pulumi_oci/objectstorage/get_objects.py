@@ -80,7 +80,7 @@ class GetObjectsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -93,10 +93,7 @@ class GetObjectsResult:
 
     @property
     @pulumi.getter
-    def objects(self) -> Sequence['outputs.GetObjectsObjectResult']:
-        """
-        The list of list_objects.
-        """
+    def objects(self) -> Optional[Sequence['outputs.GetObjectsObjectResult']]:
         return pulumi.get(self, "objects")
 
     @property
@@ -106,7 +103,7 @@ class GetObjectsResult:
 
     @property
     @pulumi.getter
-    def prefixes(self) -> Sequence[str]:
+    def prefixes(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "prefixes")
 
     @property
@@ -149,27 +146,7 @@ def get_objects(bucket: Optional[str] = None,
                 start_after: Optional[str] = None,
                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetObjectsResult:
     """
-    This data source provides the list of Objects in Oracle Cloud Infrastructure Object Storage service.
-
-    Lists the objects in a bucket. By default, ListObjects returns object names only. See the `fields`
-    parameter for other fields that you can optionally include in ListObjects response.
-
-    ListObjects returns at most 1000 objects. To paginate through more objects, use the returned 'nextStartWith'
-    value with the 'start' parameter. To filter which objects ListObjects returns, use the 'start' and 'end'
-    parameters.
-
-    To use this and other API operations, you must be authorized in an IAM policy. If you are not authorized,
-    talk to an administrator. If you are an administrator who needs to write policies to give users access, see
-    [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
-
-
-    :param str bucket: The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
-    :param str delimiter: When this parameter is set, only objects whose names do not contain the delimiter character (after an optionally specified prefix) are returned in the objects key of the response body. Scanned objects whose names contain the delimiter have the part of their name up to the first occurrence of the delimiter (including the optional prefix) returned as a set of prefixes. Note that only '/' is a supported delimiter character at this time.
-    :param str end: Object names returned by a list query must be strictly less than this parameter.
-    :param str namespace: The Object Storage namespace used for the request.
-    :param str prefix: The string to use for matching against the start of object names in a list query.
-    :param str start: Object names returned by a list query must be greater or equal to this parameter.
-    :param str start_after: Object names returned by a list query must be greater than this parameter.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['bucket'] = bucket
@@ -208,26 +185,6 @@ def get_objects_output(bucket: Optional[pulumi.Input[str]] = None,
                        start_after: Optional[pulumi.Input[Optional[str]]] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetObjectsResult]:
     """
-    This data source provides the list of Objects in Oracle Cloud Infrastructure Object Storage service.
-
-    Lists the objects in a bucket. By default, ListObjects returns object names only. See the `fields`
-    parameter for other fields that you can optionally include in ListObjects response.
-
-    ListObjects returns at most 1000 objects. To paginate through more objects, use the returned 'nextStartWith'
-    value with the 'start' parameter. To filter which objects ListObjects returns, use the 'start' and 'end'
-    parameters.
-
-    To use this and other API operations, you must be authorized in an IAM policy. If you are not authorized,
-    talk to an administrator. If you are an administrator who needs to write policies to give users access, see
-    [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
-
-
-    :param str bucket: The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
-    :param str delimiter: When this parameter is set, only objects whose names do not contain the delimiter character (after an optionally specified prefix) are returned in the objects key of the response body. Scanned objects whose names contain the delimiter have the part of their name up to the first occurrence of the delimiter (including the optional prefix) returned as a set of prefixes. Note that only '/' is a supported delimiter character at this time.
-    :param str end: Object names returned by a list query must be strictly less than this parameter.
-    :param str namespace: The Object Storage namespace used for the request.
-    :param str prefix: The string to use for matching against the start of object names in a list query.
-    :param str start: Object names returned by a list query must be greater or equal to this parameter.
-    :param str start_after: Object names returned by a list query must be greater than this parameter.
+    Use this data source to access information about an existing resource.
     """
     ...

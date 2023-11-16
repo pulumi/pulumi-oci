@@ -16,23 +16,23 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// Mapped Attribute Direction
         /// </summary>
-        public readonly string Direction;
+        public readonly string? Direction;
         /// <summary>
         /// URI of the AppRole.
         /// </summary>
-        public readonly string Ref;
+        public readonly string? Ref;
         /// <summary>
         /// ID of the AppRole.
         /// </summary>
-        public readonly string Value;
+        public readonly string? Value;
 
         [OutputConstructor]
         private GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppOutboundAssertionAttributeResult(
-            string direction,
+            string? direction,
 
-            string @ref,
+            string? @ref,
 
-            string value)
+            string? value)
         {
             Direction = direction;
             Ref = @ref;

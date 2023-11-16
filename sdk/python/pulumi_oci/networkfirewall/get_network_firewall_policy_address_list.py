@@ -46,23 +46,17 @@ class GetNetworkFirewallPolicyAddressListResult:
 
     @property
     @pulumi.getter
-    def addresses(self) -> Sequence[str]:
-        """
-        List of addresses.
-        """
+    def addresses(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "addresses")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Unique name to identify the group of addresses to be used in the policy rules.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -72,26 +66,17 @@ class GetNetworkFirewallPolicyAddressListResult:
 
     @property
     @pulumi.getter(name="parentResourceId")
-    def parent_resource_id(self) -> str:
-        """
-        OCID of the Network Firewall Policy this Address List belongs to.
-        """
+    def parent_resource_id(self) -> Optional[str]:
         return pulumi.get(self, "parent_resource_id")
 
     @property
     @pulumi.getter(name="totalAddresses")
-    def total_addresses(self) -> int:
-        """
-        Count of total Addresses in the AddressList
-        """
+    def total_addresses(self) -> Optional[int]:
         return pulumi.get(self, "total_addresses")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        Type of address List.
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
 
@@ -114,13 +99,7 @@ def get_network_firewall_policy_address_list(name: Optional[str] = None,
                                              network_firewall_policy_id: Optional[str] = None,
                                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNetworkFirewallPolicyAddressListResult:
     """
-    This data source provides details about a specific Network Firewall Policy Address List resource in Oracle Cloud Infrastructure Network Firewall service.
-
-    Get Address List by the given name in the context of network firewall policy.
-
-
-    :param str name: Unique name to identify the group of addresses to be used in the policy rules.
-    :param str network_firewall_policy_id: Unique Network Firewall Policy identifier
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['name'] = name
@@ -143,12 +122,6 @@ def get_network_firewall_policy_address_list_output(name: Optional[pulumi.Input[
                                                     network_firewall_policy_id: Optional[pulumi.Input[str]] = None,
                                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNetworkFirewallPolicyAddressListResult]:
     """
-    This data source provides details about a specific Network Firewall Policy Address List resource in Oracle Cloud Infrastructure Network Firewall service.
-
-    Get Address List by the given name in the context of network firewall policy.
-
-
-    :param str name: Unique name to identify the group of addresses to be used in the policy rules.
-    :param str network_firewall_policy_id: Unique Network Firewall Policy identifier
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Subscription Redeemable User resource in Oracle Cloud Infrastructure Usage Proxy service.
@@ -62,12 +61,12 @@ type LookupSubscriptionRedeemableUserArgs struct {
 
 // A collection of values returned by getSubscriptionRedeemableUser.
 type LookupSubscriptionRedeemableUserResult struct {
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of user summary that can redeem rewards.
 	Items          []GetSubscriptionRedeemableUserItem `pulumi:"items"`
 	SubscriptionId string                              `pulumi:"subscriptionId"`
 	TenancyId      string                              `pulumi:"tenancyId"`
-	UserId         string                              `pulumi:"userId"`
+	UserId         *string                             `pulumi:"userId"`
 }
 
 func LookupSubscriptionRedeemableUserOutput(ctx *pulumi.Context, args LookupSubscriptionRedeemableUserOutputArgs, opts ...pulumi.InvokeOption) LookupSubscriptionRedeemableUserResultOutput {
@@ -110,14 +109,8 @@ func (o LookupSubscriptionRedeemableUserResultOutput) ToLookupSubscriptionRedeem
 	return o
 }
 
-func (o LookupSubscriptionRedeemableUserResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupSubscriptionRedeemableUserResult] {
-	return pulumix.Output[LookupSubscriptionRedeemableUserResult]{
-		OutputState: o.OutputState,
-	}
-}
-
-func (o LookupSubscriptionRedeemableUserResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSubscriptionRedeemableUserResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupSubscriptionRedeemableUserResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSubscriptionRedeemableUserResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of user summary that can redeem rewards.
@@ -133,8 +126,8 @@ func (o LookupSubscriptionRedeemableUserResultOutput) TenancyId() pulumi.StringO
 	return o.ApplyT(func(v LookupSubscriptionRedeemableUserResult) string { return v.TenancyId }).(pulumi.StringOutput)
 }
 
-func (o LookupSubscriptionRedeemableUserResultOutput) UserId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSubscriptionRedeemableUserResult) string { return v.UserId }).(pulumi.StringOutput)
+func (o LookupSubscriptionRedeemableUserResultOutput) UserId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSubscriptionRedeemableUserResult) *string { return v.UserId }).(pulumi.StringPtrOutput)
 }
 
 func init() {

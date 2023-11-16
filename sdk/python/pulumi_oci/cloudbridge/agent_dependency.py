@@ -27,21 +27,6 @@ class AgentDependencyArgs:
                  system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None):
         """
         The set of arguments for constructing a AgentDependency resource.
-        :param pulumi.Input[str] bucket: (Updatable) Object storage bucket where the dependency is uploaded.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment identifier.
-        :param pulumi.Input[str] dependency_name: (Updatable) Name of the dependency type. This should match the whitelisted enum of dependency names.
-        :param pulumi.Input[str] display_name: (Updatable) Display name of the Agent dependency.
-        :param pulumi.Input[str] namespace: (Updatable) Object storage namespace associated with the customer's tenancy.
-        :param pulumi.Input[str] object: (Updatable) Name of the dependency object uploaded by the customer.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] dependency_version: (Updatable) Version of the Agent dependency.
-        :param pulumi.Input[str] description: (Updatable) Description about the Agent dependency.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Mapping[str, Any]] system_tags: (Updatable) The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}` 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "bucket", bucket)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -63,9 +48,6 @@ class AgentDependencyArgs:
     @property
     @pulumi.getter
     def bucket(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Object storage bucket where the dependency is uploaded.
-        """
         return pulumi.get(self, "bucket")
 
     @bucket.setter
@@ -75,9 +57,6 @@ class AgentDependencyArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Compartment identifier.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -87,9 +66,6 @@ class AgentDependencyArgs:
     @property
     @pulumi.getter(name="dependencyName")
     def dependency_name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Name of the dependency type. This should match the whitelisted enum of dependency names.
-        """
         return pulumi.get(self, "dependency_name")
 
     @dependency_name.setter
@@ -99,9 +75,6 @@ class AgentDependencyArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Display name of the Agent dependency.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -111,9 +84,6 @@ class AgentDependencyArgs:
     @property
     @pulumi.getter
     def namespace(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Object storage namespace associated with the customer's tenancy.
-        """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
@@ -123,9 +93,6 @@ class AgentDependencyArgs:
     @property
     @pulumi.getter
     def object(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Name of the dependency object uploaded by the customer.
-        """
         return pulumi.get(self, "object")
 
     @object.setter
@@ -135,9 +102,6 @@ class AgentDependencyArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -147,9 +111,6 @@ class AgentDependencyArgs:
     @property
     @pulumi.getter(name="dependencyVersion")
     def dependency_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Version of the Agent dependency.
-        """
         return pulumi.get(self, "dependency_version")
 
     @dependency_version.setter
@@ -159,9 +120,6 @@ class AgentDependencyArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Description about the Agent dependency.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -171,9 +129,6 @@ class AgentDependencyArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -183,13 +138,6 @@ class AgentDependencyArgs:
     @property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}` 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
@@ -218,26 +166,6 @@ class _AgentDependencyState:
                  time_created: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering AgentDependency resources.
-        :param pulumi.Input[str] bucket: (Updatable) Object storage bucket where the dependency is uploaded.
-        :param pulumi.Input[str] checksum: The checksum associated with the dependency object returned by Object Storage.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment identifier.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] dependency_name: (Updatable) Name of the dependency type. This should match the whitelisted enum of dependency names.
-        :param pulumi.Input[str] dependency_version: (Updatable) Version of the Agent dependency.
-        :param pulumi.Input[str] description: (Updatable) Description about the Agent dependency.
-        :param pulumi.Input[str] display_name: (Updatable) Display name of the Agent dependency.
-        :param pulumi.Input[str] e_tag: The eTag associated with the dependency object returned by Object Storage.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[str] namespace: (Updatable) Object storage namespace associated with the customer's tenancy.
-        :param pulumi.Input[str] object: (Updatable) Name of the dependency object uploaded by the customer.
-        :param pulumi.Input[str] state: The current state of AgentDependency.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: (Updatable) The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}` 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] time_created: The time when the AgentDependency was created. An RFC3339 formatted datetime string.
         """
         if bucket is not None:
             pulumi.set(__self__, "bucket", bucket)
@@ -275,9 +203,6 @@ class _AgentDependencyState:
     @property
     @pulumi.getter
     def bucket(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Object storage bucket where the dependency is uploaded.
-        """
         return pulumi.get(self, "bucket")
 
     @bucket.setter
@@ -287,9 +212,6 @@ class _AgentDependencyState:
     @property
     @pulumi.getter
     def checksum(self) -> Optional[pulumi.Input[str]]:
-        """
-        The checksum associated with the dependency object returned by Object Storage.
-        """
         return pulumi.get(self, "checksum")
 
     @checksum.setter
@@ -299,9 +221,6 @@ class _AgentDependencyState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Compartment identifier.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -311,9 +230,6 @@ class _AgentDependencyState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -323,9 +239,6 @@ class _AgentDependencyState:
     @property
     @pulumi.getter(name="dependencyName")
     def dependency_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Name of the dependency type. This should match the whitelisted enum of dependency names.
-        """
         return pulumi.get(self, "dependency_name")
 
     @dependency_name.setter
@@ -335,9 +248,6 @@ class _AgentDependencyState:
     @property
     @pulumi.getter(name="dependencyVersion")
     def dependency_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Version of the Agent dependency.
-        """
         return pulumi.get(self, "dependency_version")
 
     @dependency_version.setter
@@ -347,9 +257,6 @@ class _AgentDependencyState:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Description about the Agent dependency.
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -359,9 +266,6 @@ class _AgentDependencyState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Display name of the Agent dependency.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -371,9 +275,6 @@ class _AgentDependencyState:
     @property
     @pulumi.getter(name="eTag")
     def e_tag(self) -> Optional[pulumi.Input[str]]:
-        """
-        The eTag associated with the dependency object returned by Object Storage.
-        """
         return pulumi.get(self, "e_tag")
 
     @e_tag.setter
@@ -383,9 +284,6 @@ class _AgentDependencyState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -395,9 +293,6 @@ class _AgentDependencyState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -407,9 +302,6 @@ class _AgentDependencyState:
     @property
     @pulumi.getter
     def namespace(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Object storage namespace associated with the customer's tenancy.
-        """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
@@ -419,9 +311,6 @@ class _AgentDependencyState:
     @property
     @pulumi.getter
     def object(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Name of the dependency object uploaded by the customer.
-        """
         return pulumi.get(self, "object")
 
     @object.setter
@@ -431,9 +320,6 @@ class _AgentDependencyState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of AgentDependency.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -443,13 +329,6 @@ class _AgentDependencyState:
     @property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}` 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
@@ -459,9 +338,6 @@ class _AgentDependencyState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time when the AgentDependency was created. An RFC3339 formatted datetime string.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -487,59 +363,9 @@ class AgentDependency(pulumi.CustomResource):
                  system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  __props__=None):
         """
-        This resource provides the Agent Dependency resource in Oracle Cloud Infrastructure Cloud Bridge service.
-
-        Creates an AgentDependency.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_agent_dependency = oci.cloud_bridge.AgentDependency("testAgentDependency",
-            bucket=var["agent_dependency_bucket"],
-            compartment_id=var["compartment_id"],
-            dependency_name=var["agent_dependency_dependency_name"],
-            display_name=var["agent_dependency_display_name"],
-            namespace=var["agent_dependency_namespace"],
-            object=var["agent_dependency_object"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            dependency_version=var["agent_dependency_dependency_version"],
-            description=var["agent_dependency_description"],
-            freeform_tags={
-                "Department": "Finance",
-            },
-            system_tags=var["agent_dependency_system_tags"])
-        ```
-
-        ## Import
-
-        AgentDependencies can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:CloudBridge/agentDependency:AgentDependency test_agent_dependency "id"
-        ```
-
+        Create a AgentDependency resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] bucket: (Updatable) Object storage bucket where the dependency is uploaded.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment identifier.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] dependency_name: (Updatable) Name of the dependency type. This should match the whitelisted enum of dependency names.
-        :param pulumi.Input[str] dependency_version: (Updatable) Version of the Agent dependency.
-        :param pulumi.Input[str] description: (Updatable) Description about the Agent dependency.
-        :param pulumi.Input[str] display_name: (Updatable) Display name of the Agent dependency.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] namespace: (Updatable) Object storage namespace associated with the customer's tenancy.
-        :param pulumi.Input[str] object: (Updatable) Name of the dependency object uploaded by the customer.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: (Updatable) The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}` 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -548,42 +374,7 @@ class AgentDependency(pulumi.CustomResource):
                  args: AgentDependencyArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Agent Dependency resource in Oracle Cloud Infrastructure Cloud Bridge service.
-
-        Creates an AgentDependency.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_agent_dependency = oci.cloud_bridge.AgentDependency("testAgentDependency",
-            bucket=var["agent_dependency_bucket"],
-            compartment_id=var["compartment_id"],
-            dependency_name=var["agent_dependency_dependency_name"],
-            display_name=var["agent_dependency_display_name"],
-            namespace=var["agent_dependency_namespace"],
-            object=var["agent_dependency_object"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            dependency_version=var["agent_dependency_dependency_version"],
-            description=var["agent_dependency_description"],
-            freeform_tags={
-                "Department": "Finance",
-            },
-            system_tags=var["agent_dependency_system_tags"])
-        ```
-
-        ## Import
-
-        AgentDependencies can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:CloudBridge/agentDependency:AgentDependency test_agent_dependency "id"
-        ```
-
+        Create a AgentDependency resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param AgentDependencyArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -680,26 +471,6 @@ class AgentDependency(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] bucket: (Updatable) Object storage bucket where the dependency is uploaded.
-        :param pulumi.Input[str] checksum: The checksum associated with the dependency object returned by Object Storage.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment identifier.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] dependency_name: (Updatable) Name of the dependency type. This should match the whitelisted enum of dependency names.
-        :param pulumi.Input[str] dependency_version: (Updatable) Version of the Agent dependency.
-        :param pulumi.Input[str] description: (Updatable) Description about the Agent dependency.
-        :param pulumi.Input[str] display_name: (Updatable) Display name of the Agent dependency.
-        :param pulumi.Input[str] e_tag: The eTag associated with the dependency object returned by Object Storage.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[str] namespace: (Updatable) Object storage namespace associated with the customer's tenancy.
-        :param pulumi.Input[str] object: (Updatable) Name of the dependency object uploaded by the customer.
-        :param pulumi.Input[str] state: The current state of AgentDependency.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: (Updatable) The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}` 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] time_created: The time when the AgentDependency was created. An RFC3339 formatted datetime string.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -726,132 +497,80 @@ class AgentDependency(pulumi.CustomResource):
     @property
     @pulumi.getter
     def bucket(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Object storage bucket where the dependency is uploaded.
-        """
         return pulumi.get(self, "bucket")
 
     @property
     @pulumi.getter
-    def checksum(self) -> pulumi.Output[str]:
-        """
-        The checksum associated with the dependency object returned by Object Storage.
-        """
+    def checksum(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "checksum")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Compartment identifier.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="dependencyName")
     def dependency_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Name of the dependency type. This should match the whitelisted enum of dependency names.
-        """
         return pulumi.get(self, "dependency_name")
 
     @property
     @pulumi.getter(name="dependencyVersion")
-    def dependency_version(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Version of the Agent dependency.
-        """
+    def dependency_version(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "dependency_version")
 
     @property
     @pulumi.getter
-    def description(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Description about the Agent dependency.
-        """
+    def description(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Display name of the Agent dependency.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="eTag")
-    def e_tag(self) -> pulumi.Output[str]:
-        """
-        The eTag associated with the dependency object returned by Object Storage.
-        """
+    def e_tag(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "e_tag")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
     def namespace(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Object storage namespace associated with the customer's tenancy.
-        """
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter
     def object(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Name of the dependency object uploaded by the customer.
-        """
         return pulumi.get(self, "object")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of AgentDependency.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}` 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
+    def system_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The time when the AgentDependency was created. An RFC3339 formatted datetime string.
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 

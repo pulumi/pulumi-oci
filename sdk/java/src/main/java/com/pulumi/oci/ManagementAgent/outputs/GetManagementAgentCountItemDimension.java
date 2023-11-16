@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetManagementAgentCountItemDimension {
@@ -14,63 +16,63 @@ public final class GetManagementAgentCountItemDimension {
      * @return The availability status of managementAgent
      * 
      */
-    private String availabilityStatus;
+    private @Nullable String availabilityStatus;
     /**
      * @return When set to true then agents that have at least one plugin deployed will be returned. When set to false only agents that have no plugins deployed will be returned.
      * 
      */
-    private Boolean hasPlugins;
+    private @Nullable Boolean hasPlugins;
     /**
      * @return A filter to return either agents or gateway types depending upon install type selected by user. By default both install type will be returned.
      * 
      */
-    private String installType;
+    private @Nullable String installType;
     /**
      * @return Platform Type
      * 
      */
-    private String platformType;
+    private @Nullable String platformType;
     /**
      * @return Agent image version
      * 
      */
-    private String version;
+    private @Nullable String version;
 
     private GetManagementAgentCountItemDimension() {}
     /**
      * @return The availability status of managementAgent
      * 
      */
-    public String availabilityStatus() {
-        return this.availabilityStatus;
+    public Optional<String> availabilityStatus() {
+        return Optional.ofNullable(this.availabilityStatus);
     }
     /**
      * @return When set to true then agents that have at least one plugin deployed will be returned. When set to false only agents that have no plugins deployed will be returned.
      * 
      */
-    public Boolean hasPlugins() {
-        return this.hasPlugins;
+    public Optional<Boolean> hasPlugins() {
+        return Optional.ofNullable(this.hasPlugins);
     }
     /**
      * @return A filter to return either agents or gateway types depending upon install type selected by user. By default both install type will be returned.
      * 
      */
-    public String installType() {
-        return this.installType;
+    public Optional<String> installType() {
+        return Optional.ofNullable(this.installType);
     }
     /**
      * @return Platform Type
      * 
      */
-    public String platformType() {
-        return this.platformType;
+    public Optional<String> platformType() {
+        return Optional.ofNullable(this.platformType);
     }
     /**
      * @return Agent image version
      * 
      */
-    public String version() {
-        return this.version;
+    public Optional<String> version() {
+        return Optional.ofNullable(this.version);
     }
 
     public static Builder builder() {
@@ -82,11 +84,11 @@ public final class GetManagementAgentCountItemDimension {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String availabilityStatus;
-        private Boolean hasPlugins;
-        private String installType;
-        private String platformType;
-        private String version;
+        private @Nullable String availabilityStatus;
+        private @Nullable Boolean hasPlugins;
+        private @Nullable String installType;
+        private @Nullable String platformType;
+        private @Nullable String version;
         public Builder() {}
         public Builder(GetManagementAgentCountItemDimension defaults) {
     	      Objects.requireNonNull(defaults);
@@ -98,28 +100,28 @@ public final class GetManagementAgentCountItemDimension {
         }
 
         @CustomType.Setter
-        public Builder availabilityStatus(String availabilityStatus) {
-            this.availabilityStatus = Objects.requireNonNull(availabilityStatus);
+        public Builder availabilityStatus(@Nullable String availabilityStatus) {
+            this.availabilityStatus = availabilityStatus;
             return this;
         }
         @CustomType.Setter
-        public Builder hasPlugins(Boolean hasPlugins) {
-            this.hasPlugins = Objects.requireNonNull(hasPlugins);
+        public Builder hasPlugins(@Nullable Boolean hasPlugins) {
+            this.hasPlugins = hasPlugins;
             return this;
         }
         @CustomType.Setter
-        public Builder installType(String installType) {
-            this.installType = Objects.requireNonNull(installType);
+        public Builder installType(@Nullable String installType) {
+            this.installType = installType;
             return this;
         }
         @CustomType.Setter
-        public Builder platformType(String platformType) {
-            this.platformType = Objects.requireNonNull(platformType);
+        public Builder platformType(@Nullable String platformType) {
+            this.platformType = platformType;
             return this;
         }
         @CustomType.Setter
-        public Builder version(String version) {
-            this.version = Objects.requireNonNull(version);
+        public Builder version(@Nullable String version) {
+            this.version = version;
             return this;
         }
         public GetManagementAgentCountItemDimension build() {

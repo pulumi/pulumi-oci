@@ -16,19 +16,19 @@ namespace Pulumi.Oci.Waas.Outputs
         /// <summary>
         /// The data of the SSL certificate.
         /// </summary>
-        public readonly string CertificateData;
+        public readonly string? CertificateData;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This number is generated when the compartment is created.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// The user-friendly name of the SSL certificate.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Additional attributes associated with users or public keys for managing relationships between Certificate Authorities.
         /// </summary>
@@ -36,21 +36,21 @@ namespace Pulumi.Oci.Waas.Outputs
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SSL certificate.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// This indicates whether trust verification was disabled during the creation of SSL certificate. If `true` SSL certificate trust verification was disabled and this SSL certificate is most likely self-signed.
         /// </summary>
-        public readonly bool IsTrustVerificationDisabled;
-        public readonly string IssuedBy;
+        public readonly bool? IsTrustVerificationDisabled;
+        public readonly string? IssuedBy;
         /// <summary>
         /// The issuer of the certificate.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetCertificatesCertificateIssuerNameResult> IssuerNames;
-        public readonly string PrivateKeyData;
+        public readonly string? PrivateKeyData;
         /// <summary>
         /// Information about the public key and the algorithm used by the public key.
         /// </summary>
@@ -58,15 +58,15 @@ namespace Pulumi.Oci.Waas.Outputs
         /// <summary>
         /// A unique, positive integer assigned by the Certificate Authority (CA). The issuer name and serial number identify a unique certificate.
         /// </summary>
-        public readonly string SerialNumber;
+        public readonly string? SerialNumber;
         /// <summary>
         /// The identifier for the cryptographic algorithm used by the Certificate Authority (CA) to sign this certificate.
         /// </summary>
-        public readonly string SignatureAlgorithm;
+        public readonly string? SignatureAlgorithm;
         /// <summary>
         /// The current lifecycle state of the SSL certificate.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The entity to be secured by the certificate.
         /// </summary>
@@ -74,61 +74,61 @@ namespace Pulumi.Oci.Waas.Outputs
         /// <summary>
         /// The date and time the certificate was created, expressed in RFC 3339 timestamp format.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The date and time the certificate will expire, expressed in RFC 3339 timestamp format.
         /// </summary>
-        public readonly string TimeNotValidAfter;
+        public readonly string? TimeNotValidAfter;
         /// <summary>
         /// The date and time the certificate will become valid, expressed in RFC 3339 timestamp format.
         /// </summary>
-        public readonly string TimeNotValidBefore;
+        public readonly string? TimeNotValidBefore;
         /// <summary>
         /// The version of the encoded certificate.
         /// </summary>
-        public readonly int Version;
+        public readonly int? Version;
 
         [OutputConstructor]
         private GetCertificatesCertificateResult(
-            string certificateData,
+            string? certificateData,
 
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string displayName,
+            string? displayName,
 
             ImmutableArray<Outputs.GetCertificatesCertificateExtensionResult> extensions,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            bool isTrustVerificationDisabled,
+            bool? isTrustVerificationDisabled,
 
-            string issuedBy,
+            string? issuedBy,
 
             ImmutableArray<Outputs.GetCertificatesCertificateIssuerNameResult> issuerNames,
 
-            string privateKeyData,
+            string? privateKeyData,
 
             ImmutableArray<Outputs.GetCertificatesCertificatePublicKeyInfoResult> publicKeyInfos,
 
-            string serialNumber,
+            string? serialNumber,
 
-            string signatureAlgorithm,
+            string? signatureAlgorithm,
 
-            string state,
+            string? state,
 
             ImmutableArray<Outputs.GetCertificatesCertificateSubjectNameResult> subjectNames,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeNotValidAfter,
+            string? timeNotValidAfter,
 
-            string timeNotValidBefore,
+            string? timeNotValidBefore,
 
-            int version)
+            int? version)
         {
             CertificateData = certificateData;
             CompartmentId = compartmentId;

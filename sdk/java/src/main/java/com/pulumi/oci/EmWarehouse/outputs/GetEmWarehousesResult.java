@@ -28,7 +28,7 @@ public final class GetEmWarehousesResult {
      * @return The list of em_warehouse_collection.
      * 
      */
-    private List<GetEmWarehousesEmWarehouseCollection> emWarehouseCollections;
+    private @Nullable List<GetEmWarehousesEmWarehouseCollection> emWarehouseCollections;
     private @Nullable List<GetEmWarehousesFilter> filters;
     /**
      * @return Unique identifier that is immutable on creation
@@ -66,7 +66,7 @@ public final class GetEmWarehousesResult {
      * 
      */
     public List<GetEmWarehousesEmWarehouseCollection> emWarehouseCollections() {
-        return this.emWarehouseCollections;
+        return this.emWarehouseCollections == null ? List.of() : this.emWarehouseCollections;
     }
     public List<GetEmWarehousesFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -104,7 +104,7 @@ public final class GetEmWarehousesResult {
     public static final class Builder {
         private @Nullable String compartmentId;
         private @Nullable String displayName;
-        private List<GetEmWarehousesEmWarehouseCollection> emWarehouseCollections;
+        private @Nullable List<GetEmWarehousesEmWarehouseCollection> emWarehouseCollections;
         private @Nullable List<GetEmWarehousesFilter> filters;
         private @Nullable String id;
         private @Nullable String operationsInsightsWarehouseId;
@@ -132,8 +132,8 @@ public final class GetEmWarehousesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder emWarehouseCollections(List<GetEmWarehousesEmWarehouseCollection> emWarehouseCollections) {
-            this.emWarehouseCollections = Objects.requireNonNull(emWarehouseCollections);
+        public Builder emWarehouseCollections(@Nullable List<GetEmWarehousesEmWarehouseCollection> emWarehouseCollections) {
+            this.emWarehouseCollections = emWarehouseCollections;
             return this;
         }
         public Builder emWarehouseCollections(GetEmWarehousesEmWarehouseCollection... emWarehouseCollections) {

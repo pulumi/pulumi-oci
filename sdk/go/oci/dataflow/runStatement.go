@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Run Statement resource in Oracle Cloud Infrastructure Data Flow service.
@@ -61,18 +60,18 @@ type RunStatement struct {
 	// The execution output of a statement.
 	Outputs RunStatementOutputTypeArrayOutput `pulumi:"outputs"`
 	// The execution progress.
-	Progress pulumi.Float64Output `pulumi:"progress"`
+	Progress pulumi.Float64PtrOutput `pulumi:"progress"`
 	// The unique ID for the run
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	RunId pulumi.StringOutput `pulumi:"runId"`
 	// The current state of this statement.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The date and time a statement execution was completed, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2022-05-31T21:10:29.600Z`
-	TimeCompleted pulumi.StringOutput `pulumi:"timeCompleted"`
+	TimeCompleted pulumi.StringPtrOutput `pulumi:"timeCompleted"`
 	// The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 }
 
 // NewRunStatement registers a new resource with the given unique name, arguments, and options.
@@ -198,12 +197,6 @@ func (i *RunStatement) ToRunStatementOutputWithContext(ctx context.Context) RunS
 	return pulumi.ToOutputWithContext(ctx, i).(RunStatementOutput)
 }
 
-func (i *RunStatement) ToOutput(ctx context.Context) pulumix.Output[*RunStatement] {
-	return pulumix.Output[*RunStatement]{
-		OutputState: i.ToRunStatementOutputWithContext(ctx).OutputState,
-	}
-}
-
 // RunStatementArrayInput is an input type that accepts RunStatementArray and RunStatementArrayOutput values.
 // You can construct a concrete instance of `RunStatementArrayInput` via:
 //
@@ -227,12 +220,6 @@ func (i RunStatementArray) ToRunStatementArrayOutput() RunStatementArrayOutput {
 
 func (i RunStatementArray) ToRunStatementArrayOutputWithContext(ctx context.Context) RunStatementArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(RunStatementArrayOutput)
-}
-
-func (i RunStatementArray) ToOutput(ctx context.Context) pulumix.Output[[]*RunStatement] {
-	return pulumix.Output[[]*RunStatement]{
-		OutputState: i.ToRunStatementArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // RunStatementMapInput is an input type that accepts RunStatementMap and RunStatementMapOutput values.
@@ -260,12 +247,6 @@ func (i RunStatementMap) ToRunStatementMapOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(RunStatementMapOutput)
 }
 
-func (i RunStatementMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*RunStatement] {
-	return pulumix.Output[map[string]*RunStatement]{
-		OutputState: i.ToRunStatementMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type RunStatementOutput struct{ *pulumi.OutputState }
 
 func (RunStatementOutput) ElementType() reflect.Type {
@@ -280,12 +261,6 @@ func (o RunStatementOutput) ToRunStatementOutputWithContext(ctx context.Context)
 	return o
 }
 
-func (o RunStatementOutput) ToOutput(ctx context.Context) pulumix.Output[*RunStatement] {
-	return pulumix.Output[*RunStatement]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The statement code to execute. Example: `println(sc.version)`
 func (o RunStatementOutput) Code() pulumi.StringOutput {
 	return o.ApplyT(func(v *RunStatement) pulumi.StringOutput { return v.Code }).(pulumi.StringOutput)
@@ -297,8 +272,8 @@ func (o RunStatementOutput) Outputs() RunStatementOutputTypeArrayOutput {
 }
 
 // The execution progress.
-func (o RunStatementOutput) Progress() pulumi.Float64Output {
-	return o.ApplyT(func(v *RunStatement) pulumi.Float64Output { return v.Progress }).(pulumi.Float64Output)
+func (o RunStatementOutput) Progress() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *RunStatement) pulumi.Float64PtrOutput { return v.Progress }).(pulumi.Float64PtrOutput)
 }
 
 // The unique ID for the run
@@ -310,18 +285,18 @@ func (o RunStatementOutput) RunId() pulumi.StringOutput {
 }
 
 // The current state of this statement.
-func (o RunStatementOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *RunStatement) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o RunStatementOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RunStatement) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time a statement execution was completed, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2022-05-31T21:10:29.600Z`
-func (o RunStatementOutput) TimeCompleted() pulumi.StringOutput {
-	return o.ApplyT(func(v *RunStatement) pulumi.StringOutput { return v.TimeCompleted }).(pulumi.StringOutput)
+func (o RunStatementOutput) TimeCompleted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RunStatement) pulumi.StringPtrOutput { return v.TimeCompleted }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-func (o RunStatementOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *RunStatement) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o RunStatementOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RunStatement) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 type RunStatementArrayOutput struct{ *pulumi.OutputState }
@@ -336,12 +311,6 @@ func (o RunStatementArrayOutput) ToRunStatementArrayOutput() RunStatementArrayOu
 
 func (o RunStatementArrayOutput) ToRunStatementArrayOutputWithContext(ctx context.Context) RunStatementArrayOutput {
 	return o
-}
-
-func (o RunStatementArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*RunStatement] {
-	return pulumix.Output[[]*RunStatement]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o RunStatementArrayOutput) Index(i pulumi.IntInput) RunStatementOutput {
@@ -362,12 +331,6 @@ func (o RunStatementMapOutput) ToRunStatementMapOutput() RunStatementMapOutput {
 
 func (o RunStatementMapOutput) ToRunStatementMapOutputWithContext(ctx context.Context) RunStatementMapOutput {
 	return o
-}
-
-func (o RunStatementMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*RunStatement] {
-	return pulumix.Output[map[string]*RunStatement]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o RunStatementMapOutput) MapIndex(k pulumi.StringInput) RunStatementOutput {

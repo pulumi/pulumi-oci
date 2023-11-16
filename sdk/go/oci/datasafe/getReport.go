@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Report resource in Oracle Cloud Infrastructure Data Safe service.
@@ -60,30 +59,30 @@ type GetReportArgs struct {
 // A collection of values returned by getReport.
 type GetReportResult struct {
 	// The OCID of the compartment containing the report.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Specifies a description of the report.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Name of the report.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Specifies the format of report to be excel or pdf
-	MimeType string `pulumi:"mimeType"`
+	MimeType *string `pulumi:"mimeType"`
 	// The OCID of the report definition.
-	ReportDefinitionId string `pulumi:"reportDefinitionId"`
-	ReportId           string `pulumi:"reportId"`
+	ReportDefinitionId *string `pulumi:"reportDefinitionId"`
+	ReportId           string  `pulumi:"reportId"`
 	// The current state of the audit report.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// Specifies the date and time the report was generated.
-	TimeGenerated string `pulumi:"timeGenerated"`
+	TimeGenerated *string `pulumi:"timeGenerated"`
 	// The type of the audit report.
-	Type string `pulumi:"type"`
+	Type *string `pulumi:"type"`
 }
 
 func GetReportOutput(ctx *pulumi.Context, args GetReportOutputArgs, opts ...pulumi.InvokeOption) GetReportResultOutput {
@@ -124,15 +123,9 @@ func (o GetReportResultOutput) ToGetReportResultOutputWithContext(ctx context.Co
 	return o
 }
 
-func (o GetReportResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetReportResult] {
-	return pulumix.Output[GetReportResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the compartment containing the report.
-func (o GetReportResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetReportResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetReportResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetReportResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
@@ -141,13 +134,13 @@ func (o GetReportResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // Specifies a description of the report.
-func (o GetReportResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetReportResult) string { return v.Description }).(pulumi.StringOutput)
+func (o GetReportResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetReportResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Name of the report.
-func (o GetReportResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetReportResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetReportResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetReportResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
@@ -156,18 +149,18 @@ func (o GetReportResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetReportResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetReportResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetReportResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetReportResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Specifies the format of report to be excel or pdf
-func (o GetReportResultOutput) MimeType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetReportResult) string { return v.MimeType }).(pulumi.StringOutput)
+func (o GetReportResultOutput) MimeType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetReportResult) *string { return v.MimeType }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the report definition.
-func (o GetReportResultOutput) ReportDefinitionId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetReportResult) string { return v.ReportDefinitionId }).(pulumi.StringOutput)
+func (o GetReportResultOutput) ReportDefinitionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetReportResult) *string { return v.ReportDefinitionId }).(pulumi.StringPtrOutput)
 }
 
 func (o GetReportResultOutput) ReportId() pulumi.StringOutput {
@@ -175,8 +168,8 @@ func (o GetReportResultOutput) ReportId() pulumi.StringOutput {
 }
 
 // The current state of the audit report.
-func (o GetReportResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetReportResult) string { return v.State }).(pulumi.StringOutput)
+func (o GetReportResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetReportResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -185,13 +178,13 @@ func (o GetReportResultOutput) SystemTags() pulumi.MapOutput {
 }
 
 // Specifies the date and time the report was generated.
-func (o GetReportResultOutput) TimeGenerated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetReportResult) string { return v.TimeGenerated }).(pulumi.StringOutput)
+func (o GetReportResultOutput) TimeGenerated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetReportResult) *string { return v.TimeGenerated }).(pulumi.StringPtrOutput)
 }
 
 // The type of the audit report.
-func (o GetReportResultOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetReportResult) string { return v.Type }).(pulumi.StringOutput)
+func (o GetReportResultOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetReportResult) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 func init() {

@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Data Source resource in Oracle Cloud Infrastructure Cloud Guard service.
@@ -84,7 +83,7 @@ type CloudGuardDataSource struct {
 	// (Updatable) CompartmentId of Data Source.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Details specific to the data source type.
-	DataSourceDetails CloudGuardDataSourceDataSourceDetailsOutput `pulumi:"dataSourceDetails"`
+	DataSourceDetails CloudGuardDataSourceDataSourceDetailsPtrOutput `pulumi:"dataSourceDetails"`
 	// Information about the detector recipe and rule attached
 	DataSourceDetectorMappingInfos CloudGuardDataSourceDataSourceDetectorMappingInfoArrayOutput `pulumi:"dataSourceDetectorMappingInfos"`
 	// Possible type of dataSourceFeed Provider(LoggingQuery)
@@ -103,15 +102,15 @@ type CloudGuardDataSource struct {
 	// Information about the region and status of query replication
 	RegionStatusDetails CloudGuardDataSourceRegionStatusDetailArrayOutput `pulumi:"regionStatusDetails"`
 	// The current state of the resource.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// Status of data Source
-	Status pulumi.StringOutput `pulumi:"status"`
+	Status pulumi.StringPtrOutput `pulumi:"status"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The date and time the Data source was created. Format defined by RFC3339.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The date and time the Data source was updated. Format defined by RFC3339.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewCloudGuardDataSource registers a new resource with the given unique name, arguments, and options.
@@ -288,12 +287,6 @@ func (i *CloudGuardDataSource) ToCloudGuardDataSourceOutputWithContext(ctx conte
 	return pulumi.ToOutputWithContext(ctx, i).(CloudGuardDataSourceOutput)
 }
 
-func (i *CloudGuardDataSource) ToOutput(ctx context.Context) pulumix.Output[*CloudGuardDataSource] {
-	return pulumix.Output[*CloudGuardDataSource]{
-		OutputState: i.ToCloudGuardDataSourceOutputWithContext(ctx).OutputState,
-	}
-}
-
 // CloudGuardDataSourceArrayInput is an input type that accepts CloudGuardDataSourceArray and CloudGuardDataSourceArrayOutput values.
 // You can construct a concrete instance of `CloudGuardDataSourceArrayInput` via:
 //
@@ -317,12 +310,6 @@ func (i CloudGuardDataSourceArray) ToCloudGuardDataSourceArrayOutput() CloudGuar
 
 func (i CloudGuardDataSourceArray) ToCloudGuardDataSourceArrayOutputWithContext(ctx context.Context) CloudGuardDataSourceArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(CloudGuardDataSourceArrayOutput)
-}
-
-func (i CloudGuardDataSourceArray) ToOutput(ctx context.Context) pulumix.Output[[]*CloudGuardDataSource] {
-	return pulumix.Output[[]*CloudGuardDataSource]{
-		OutputState: i.ToCloudGuardDataSourceArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // CloudGuardDataSourceMapInput is an input type that accepts CloudGuardDataSourceMap and CloudGuardDataSourceMapOutput values.
@@ -350,12 +337,6 @@ func (i CloudGuardDataSourceMap) ToCloudGuardDataSourceMapOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(CloudGuardDataSourceMapOutput)
 }
 
-func (i CloudGuardDataSourceMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*CloudGuardDataSource] {
-	return pulumix.Output[map[string]*CloudGuardDataSource]{
-		OutputState: i.ToCloudGuardDataSourceMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type CloudGuardDataSourceOutput struct{ *pulumi.OutputState }
 
 func (CloudGuardDataSourceOutput) ElementType() reflect.Type {
@@ -370,20 +351,16 @@ func (o CloudGuardDataSourceOutput) ToCloudGuardDataSourceOutputWithContext(ctx 
 	return o
 }
 
-func (o CloudGuardDataSourceOutput) ToOutput(ctx context.Context) pulumix.Output[*CloudGuardDataSource] {
-	return pulumix.Output[*CloudGuardDataSource]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) CompartmentId of Data Source.
 func (o CloudGuardDataSourceOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *CloudGuardDataSource) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
 // (Updatable) Details specific to the data source type.
-func (o CloudGuardDataSourceOutput) DataSourceDetails() CloudGuardDataSourceDataSourceDetailsOutput {
-	return o.ApplyT(func(v *CloudGuardDataSource) CloudGuardDataSourceDataSourceDetailsOutput { return v.DataSourceDetails }).(CloudGuardDataSourceDataSourceDetailsOutput)
+func (o CloudGuardDataSourceOutput) DataSourceDetails() CloudGuardDataSourceDataSourceDetailsPtrOutput {
+	return o.ApplyT(func(v *CloudGuardDataSource) CloudGuardDataSourceDataSourceDetailsPtrOutput {
+		return v.DataSourceDetails
+	}).(CloudGuardDataSourceDataSourceDetailsPtrOutput)
 }
 
 // Information about the detector recipe and rule attached
@@ -426,13 +403,13 @@ func (o CloudGuardDataSourceOutput) RegionStatusDetails() CloudGuardDataSourceRe
 }
 
 // The current state of the resource.
-func (o CloudGuardDataSourceOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *CloudGuardDataSource) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o CloudGuardDataSourceOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CloudGuardDataSource) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Status of data Source
-func (o CloudGuardDataSourceOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v *CloudGuardDataSource) pulumi.StringOutput { return v.Status }).(pulumi.StringOutput)
+func (o CloudGuardDataSourceOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CloudGuardDataSource) pulumi.StringPtrOutput { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -441,13 +418,13 @@ func (o CloudGuardDataSourceOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The date and time the Data source was created. Format defined by RFC3339.
-func (o CloudGuardDataSourceOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *CloudGuardDataSource) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o CloudGuardDataSourceOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CloudGuardDataSource) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the Data source was updated. Format defined by RFC3339.
-func (o CloudGuardDataSourceOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *CloudGuardDataSource) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o CloudGuardDataSourceOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CloudGuardDataSource) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type CloudGuardDataSourceArrayOutput struct{ *pulumi.OutputState }
@@ -462,12 +439,6 @@ func (o CloudGuardDataSourceArrayOutput) ToCloudGuardDataSourceArrayOutput() Clo
 
 func (o CloudGuardDataSourceArrayOutput) ToCloudGuardDataSourceArrayOutputWithContext(ctx context.Context) CloudGuardDataSourceArrayOutput {
 	return o
-}
-
-func (o CloudGuardDataSourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*CloudGuardDataSource] {
-	return pulumix.Output[[]*CloudGuardDataSource]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o CloudGuardDataSourceArrayOutput) Index(i pulumi.IntInput) CloudGuardDataSourceOutput {
@@ -488,12 +459,6 @@ func (o CloudGuardDataSourceMapOutput) ToCloudGuardDataSourceMapOutput() CloudGu
 
 func (o CloudGuardDataSourceMapOutput) ToCloudGuardDataSourceMapOutputWithContext(ctx context.Context) CloudGuardDataSourceMapOutput {
 	return o
-}
-
-func (o CloudGuardDataSourceMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*CloudGuardDataSource] {
-	return pulumix.Output[map[string]*CloudGuardDataSource]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o CloudGuardDataSourceMapOutput) MapIndex(k pulumi.StringInput) CloudGuardDataSourceOutput {

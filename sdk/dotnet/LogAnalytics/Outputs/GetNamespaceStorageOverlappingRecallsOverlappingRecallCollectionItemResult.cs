@@ -16,53 +16,53 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
         /// <summary>
         /// This is the user who initiated the recall request
         /// </summary>
-        public readonly string CreatedBy;
+        public readonly string? CreatedBy;
         /// <summary>
         /// This is the list of logsets associated with this recall
         /// </summary>
-        public readonly string LogSets;
+        public readonly string? LogSets;
         /// <summary>
         /// This is the purpose of the recall
         /// </summary>
-        public readonly string Purpose;
+        public readonly string? Purpose;
         /// <summary>
         /// This is the query associated with the recall
         /// </summary>
-        public readonly string QueryString;
+        public readonly string? QueryString;
         /// <summary>
         /// This is the status of the recall
         /// </summary>
-        public readonly string Status;
+        public readonly string? Status;
         /// <summary>
         /// This is the end of the time range for recalled data
         /// </summary>
-        public readonly string TimeDataEnded;
+        public readonly string? TimeDataEnded;
         /// <summary>
         /// This is the start of the time range for recalled data
         /// </summary>
-        public readonly string TimeDataStarted;
+        public readonly string? TimeDataStarted;
         /// <summary>
         /// This is the time when the recall operation was started for this recall request
         /// </summary>
-        public readonly string TimeStarted;
+        public readonly string? TimeStarted;
 
         [OutputConstructor]
         private GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItemResult(
-            string createdBy,
+            string? createdBy,
 
-            string logSets,
+            string? logSets,
 
-            string purpose,
+            string? purpose,
 
-            string queryString,
+            string? queryString,
 
-            string status,
+            string? status,
 
-            string timeDataEnded,
+            string? timeDataEnded,
 
-            string timeDataStarted,
+            string? timeDataStarted,
 
-            string timeStarted)
+            string? timeStarted)
         {
             CreatedBy = createdBy;
             LogSets = logSets;

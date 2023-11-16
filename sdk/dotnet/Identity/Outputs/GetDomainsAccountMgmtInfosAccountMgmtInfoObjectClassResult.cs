@@ -16,23 +16,23 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// Resource Type display name
         /// </summary>
-        public readonly string Display;
+        public readonly string? Display;
         /// <summary>
         /// UserWalletArtifact URI
         /// </summary>
-        public readonly string Ref;
+        public readonly string? Ref;
         /// <summary>
         /// UserWalletArtifact identifier
         /// </summary>
-        public readonly string Value;
+        public readonly string? Value;
 
         [OutputConstructor]
         private GetDomainsAccountMgmtInfosAccountMgmtInfoObjectClassResult(
-            string display,
+            string? display,
 
-            string @ref,
+            string? @ref,
 
-            string value)
+            string? value)
         {
             Display = display;
             Ref = @ref;

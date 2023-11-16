@@ -44,7 +44,7 @@ class GetManagedDatabaseTableStatisticsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -57,10 +57,7 @@ class GetManagedDatabaseTableStatisticsResult:
 
     @property
     @pulumi.getter(name="tableStatisticsCollections")
-    def table_statistics_collections(self) -> Sequence['outputs.GetManagedDatabaseTableStatisticsTableStatisticsCollectionResult']:
-        """
-        The list of table_statistics_collection.
-        """
+    def table_statistics_collections(self) -> Optional[Sequence['outputs.GetManagedDatabaseTableStatisticsTableStatisticsCollectionResult']]:
         return pulumi.get(self, "table_statistics_collections")
 
 
@@ -80,22 +77,7 @@ def get_managed_database_table_statistics(filters: Optional[Sequence[pulumi.Inpu
                                           managed_database_id: Optional[str] = None,
                                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagedDatabaseTableStatisticsResult:
     """
-    This data source provides the list of Managed Database Table Statistics in Oracle Cloud Infrastructure Database Management service.
-
-    Gets the number of database table objects grouped by different statuses such as
-    Not Stale Stats, Stale Stats, and No Stats. This also includes the percentage of each status.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_database_table_statistics = oci.DatabaseManagement.get_managed_database_table_statistics(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"])
-    ```
-
-
-    :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -115,21 +97,6 @@ def get_managed_database_table_statistics_output(filters: Optional[pulumi.Input[
                                                  managed_database_id: Optional[pulumi.Input[str]] = None,
                                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedDatabaseTableStatisticsResult]:
     """
-    This data source provides the list of Managed Database Table Statistics in Oracle Cloud Infrastructure Database Management service.
-
-    Gets the number of database table objects grouped by different statuses such as
-    Not Stale Stats, Stale Stats, and No Stats. This also includes the percentage of each status.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_database_table_statistics = oci.DatabaseManagement.get_managed_database_table_statistics(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"])
-    ```
-
-
-    :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
+    Use this data source to access information about an existing resource.
     """
     ...

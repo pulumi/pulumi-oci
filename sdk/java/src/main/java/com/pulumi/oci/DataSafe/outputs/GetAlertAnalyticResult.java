@@ -26,12 +26,12 @@ public final class GetAlertAnalyticResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The aggregated data point items.
      * 
      */
-    private List<GetAlertAnalyticItem> items;
+    private @Nullable List<GetAlertAnalyticItem> items;
     private @Nullable String queryTimeZone;
     private @Nullable String scimQuery;
     private @Nullable List<String> summaryFields;
@@ -67,15 +67,15 @@ public final class GetAlertAnalyticResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The aggregated data point items.
      * 
      */
     public List<GetAlertAnalyticItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
     public Optional<String> queryTimeZone() {
         return Optional.ofNullable(this.queryTimeZone);
@@ -114,8 +114,8 @@ public final class GetAlertAnalyticResult {
         private String compartmentId;
         private @Nullable Boolean compartmentIdInSubtree;
         private @Nullable List<String> groupBies;
-        private String id;
-        private List<GetAlertAnalyticItem> items;
+        private @Nullable String id;
+        private @Nullable List<GetAlertAnalyticItem> items;
         private @Nullable String queryTimeZone;
         private @Nullable String scimQuery;
         private @Nullable List<String> summaryFields;
@@ -161,13 +161,13 @@ public final class GetAlertAnalyticResult {
             return groupBies(List.of(groupBies));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder items(List<GetAlertAnalyticItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetAlertAnalyticItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetAlertAnalyticItem... items) {

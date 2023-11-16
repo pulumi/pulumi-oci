@@ -16,19 +16,19 @@ namespace Pulumi.Oci.AiLanguage.Outputs
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// For CSV format location is rowId(1 is header) and for JSONL location is jsonL line sequence(1 is metadata)
         /// </summary>
-        public readonly string Location;
+        public readonly string? Location;
         /// <summary>
         /// Model type
         /// </summary>
-        public readonly string ModelType;
+        public readonly string? ModelType;
         /// <summary>
         /// List of true(actual) entities in test data for NER model
         /// </summary>
@@ -40,7 +40,7 @@ namespace Pulumi.Oci.AiLanguage.Outputs
         /// <summary>
         /// For CSV format location is rowId(1 is header) and for JSONL location is jsonL line sequence(1 is metadata)
         /// </summary>
-        public readonly string Record;
+        public readonly string? Record;
         /// <summary>
         /// List of true(actual) entities in test data for NER model
         /// </summary>
@@ -52,19 +52,19 @@ namespace Pulumi.Oci.AiLanguage.Outputs
 
         [OutputConstructor]
         private GetModelEvaluationResultsEvaluationResultCollectionItemResult(
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string location,
+            string? location,
 
-            string modelType,
+            string? modelType,
 
             ImmutableArray<Outputs.GetModelEvaluationResultsEvaluationResultCollectionItemPredictedEntityResult> predictedEntities,
 
             ImmutableArray<string> predictedLabels,
 
-            string record,
+            string? record,
 
             ImmutableArray<Outputs.GetModelEvaluationResultsEvaluationResultCollectionItemTrueEntityResult> trueEntities,
 

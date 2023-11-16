@@ -28,20 +28,6 @@ class NamespaceScheduledTaskArgs:
                  saved_search_id: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a NamespaceScheduledTask resource.
-        :param pulumi.Input['NamespaceScheduledTaskActionArgs'] action: Action for scheduled task.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[str] kind: (Updatable) Discriminator.
-        :param pulumi.Input[str] namespace: The Logging Analytics namespace used for the request.
-        :param pulumi.Input['NamespaceScheduledTaskSchedulesArgs'] schedules: (Updatable) Schedules, typically a single schedule. Note there may only be a single schedule for SAVED_SEARCH and PURGE scheduled tasks.
-        :param pulumi.Input[str] task_type: Task type.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name that is changeable and that does not have to be unique. Format: a leading alphanumeric, followed by zero or more alphanumerics, underscores, spaces, backslashes, or hyphens in any order). No trailing spaces allowed.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] saved_search_id: The ManagementSavedSearch id [OCID] to be accelerated.
         """
         pulumi.set(__self__, "action", action)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -61,9 +47,6 @@ class NamespaceScheduledTaskArgs:
     @property
     @pulumi.getter
     def action(self) -> pulumi.Input['NamespaceScheduledTaskActionArgs']:
-        """
-        Action for scheduled task.
-        """
         return pulumi.get(self, "action")
 
     @action.setter
@@ -73,9 +56,6 @@ class NamespaceScheduledTaskArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -85,9 +65,6 @@ class NamespaceScheduledTaskArgs:
     @property
     @pulumi.getter
     def kind(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Discriminator.
-        """
         return pulumi.get(self, "kind")
 
     @kind.setter
@@ -97,9 +74,6 @@ class NamespaceScheduledTaskArgs:
     @property
     @pulumi.getter
     def namespace(self) -> pulumi.Input[str]:
-        """
-        The Logging Analytics namespace used for the request.
-        """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
@@ -109,9 +83,6 @@ class NamespaceScheduledTaskArgs:
     @property
     @pulumi.getter
     def schedules(self) -> pulumi.Input['NamespaceScheduledTaskSchedulesArgs']:
-        """
-        (Updatable) Schedules, typically a single schedule. Note there may only be a single schedule for SAVED_SEARCH and PURGE scheduled tasks.
-        """
         return pulumi.get(self, "schedules")
 
     @schedules.setter
@@ -121,13 +92,6 @@ class NamespaceScheduledTaskArgs:
     @property
     @pulumi.getter(name="taskType")
     def task_type(self) -> pulumi.Input[str]:
-        """
-        Task type.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "task_type")
 
     @task_type.setter
@@ -137,9 +101,6 @@ class NamespaceScheduledTaskArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -149,9 +110,6 @@ class NamespaceScheduledTaskArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly name that is changeable and that does not have to be unique. Format: a leading alphanumeric, followed by zero or more alphanumerics, underscores, spaces, backslashes, or hyphens in any order). No trailing spaces allowed.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -161,9 +119,6 @@ class NamespaceScheduledTaskArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -173,9 +128,6 @@ class NamespaceScheduledTaskArgs:
     @property
     @pulumi.getter(name="savedSearchId")
     def saved_search_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The ManagementSavedSearch id [OCID] to be accelerated.
-        """
         return pulumi.get(self, "saved_search_id")
 
     @saved_search_id.setter
@@ -205,26 +157,6 @@ class _NamespaceScheduledTaskState:
                  work_request_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering NamespaceScheduledTask resources.
-        :param pulumi.Input['NamespaceScheduledTaskActionArgs'] action: Action for scheduled task.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name that is changeable and that does not have to be unique. Format: a leading alphanumeric, followed by zero or more alphanumerics, underscores, spaces, backslashes, or hyphens in any order). No trailing spaces allowed.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] kind: (Updatable) Discriminator.
-        :param pulumi.Input[str] namespace: The Logging Analytics namespace used for the request.
-        :param pulumi.Input[str] num_occurrences: Number of execution occurrences.
-        :param pulumi.Input[str] saved_search_id: The ManagementSavedSearch id [OCID] to be accelerated.
-        :param pulumi.Input['NamespaceScheduledTaskSchedulesArgs'] schedules: (Updatable) Schedules, typically a single schedule. Note there may only be a single schedule for SAVED_SEARCH and PURGE scheduled tasks.
-        :param pulumi.Input[str] state: The current state of the scheduled task.
-        :param pulumi.Input[str] task_status: Status of the scheduled task. - PURGE_RESOURCE_NOT_FOUND
-        :param pulumi.Input[str] task_type: Task type.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] time_created: The date and time the scheduled task was created, in the format defined by RFC3339.
-        :param pulumi.Input[str] time_updated: The date and time the scheduled task was last updated, in the format defined by RFC3339.
-        :param pulumi.Input[str] work_request_id: most recent Work Request Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
         """
         if action is not None:
             pulumi.set(__self__, "action", action)
@@ -264,9 +196,6 @@ class _NamespaceScheduledTaskState:
     @property
     @pulumi.getter
     def action(self) -> Optional[pulumi.Input['NamespaceScheduledTaskActionArgs']]:
-        """
-        Action for scheduled task.
-        """
         return pulumi.get(self, "action")
 
     @action.setter
@@ -276,9 +205,6 @@ class _NamespaceScheduledTaskState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -288,9 +214,6 @@ class _NamespaceScheduledTaskState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -300,9 +223,6 @@ class _NamespaceScheduledTaskState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A user-friendly name that is changeable and that does not have to be unique. Format: a leading alphanumeric, followed by zero or more alphanumerics, underscores, spaces, backslashes, or hyphens in any order). No trailing spaces allowed.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -312,9 +232,6 @@ class _NamespaceScheduledTaskState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -324,9 +241,6 @@ class _NamespaceScheduledTaskState:
     @property
     @pulumi.getter
     def kind(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Discriminator.
-        """
         return pulumi.get(self, "kind")
 
     @kind.setter
@@ -336,9 +250,6 @@ class _NamespaceScheduledTaskState:
     @property
     @pulumi.getter
     def namespace(self) -> Optional[pulumi.Input[str]]:
-        """
-        The Logging Analytics namespace used for the request.
-        """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
@@ -348,9 +259,6 @@ class _NamespaceScheduledTaskState:
     @property
     @pulumi.getter(name="numOccurrences")
     def num_occurrences(self) -> Optional[pulumi.Input[str]]:
-        """
-        Number of execution occurrences.
-        """
         return pulumi.get(self, "num_occurrences")
 
     @num_occurrences.setter
@@ -360,9 +268,6 @@ class _NamespaceScheduledTaskState:
     @property
     @pulumi.getter(name="savedSearchId")
     def saved_search_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The ManagementSavedSearch id [OCID] to be accelerated.
-        """
         return pulumi.get(self, "saved_search_id")
 
     @saved_search_id.setter
@@ -381,9 +286,6 @@ class _NamespaceScheduledTaskState:
     @property
     @pulumi.getter
     def schedules(self) -> Optional[pulumi.Input['NamespaceScheduledTaskSchedulesArgs']]:
-        """
-        (Updatable) Schedules, typically a single schedule. Note there may only be a single schedule for SAVED_SEARCH and PURGE scheduled tasks.
-        """
         return pulumi.get(self, "schedules")
 
     @schedules.setter
@@ -393,9 +295,6 @@ class _NamespaceScheduledTaskState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the scheduled task.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -405,9 +304,6 @@ class _NamespaceScheduledTaskState:
     @property
     @pulumi.getter(name="taskStatus")
     def task_status(self) -> Optional[pulumi.Input[str]]:
-        """
-        Status of the scheduled task. - PURGE_RESOURCE_NOT_FOUND
-        """
         return pulumi.get(self, "task_status")
 
     @task_status.setter
@@ -417,13 +313,6 @@ class _NamespaceScheduledTaskState:
     @property
     @pulumi.getter(name="taskType")
     def task_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        Task type.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "task_type")
 
     @task_type.setter
@@ -433,9 +322,6 @@ class _NamespaceScheduledTaskState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the scheduled task was created, in the format defined by RFC3339.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -445,9 +331,6 @@ class _NamespaceScheduledTaskState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the scheduled task was last updated, in the format defined by RFC3339.
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -457,9 +340,6 @@ class _NamespaceScheduledTaskState:
     @property
     @pulumi.getter(name="workRequestId")
     def work_request_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        most recent Work Request Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
-        """
         return pulumi.get(self, "work_request_id")
 
     @work_request_id.setter
@@ -484,34 +364,9 @@ class NamespaceScheduledTask(pulumi.CustomResource):
                  task_type: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Namespace Scheduled Task resource in Oracle Cloud Infrastructure Log Analytics service.
-
-        Schedule a task as specified and return task info.
-
-        ## Import
-
-        NamespaceScheduledTasks can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:LogAnalytics/namespaceScheduledTask:NamespaceScheduledTask test_namespace_scheduled_task "namespaces/{namespaceName}/scheduledTasks/{scheduledTaskId}"
-        ```
-
+        Create a NamespaceScheduledTask resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['NamespaceScheduledTaskActionArgs']] action: Action for scheduled task.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name that is changeable and that does not have to be unique. Format: a leading alphanumeric, followed by zero or more alphanumerics, underscores, spaces, backslashes, or hyphens in any order). No trailing spaces allowed.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] kind: (Updatable) Discriminator.
-        :param pulumi.Input[str] namespace: The Logging Analytics namespace used for the request.
-        :param pulumi.Input[str] saved_search_id: The ManagementSavedSearch id [OCID] to be accelerated.
-        :param pulumi.Input[pulumi.InputType['NamespaceScheduledTaskSchedulesArgs']] schedules: (Updatable) Schedules, typically a single schedule. Note there may only be a single schedule for SAVED_SEARCH and PURGE scheduled tasks.
-        :param pulumi.Input[str] task_type: Task type.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -520,18 +375,7 @@ class NamespaceScheduledTask(pulumi.CustomResource):
                  args: NamespaceScheduledTaskArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Namespace Scheduled Task resource in Oracle Cloud Infrastructure Log Analytics service.
-
-        Schedule a task as specified and return task info.
-
-        ## Import
-
-        NamespaceScheduledTasks can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:LogAnalytics/namespaceScheduledTask:NamespaceScheduledTask test_namespace_scheduled_task "namespaces/{namespaceName}/scheduledTasks/{scheduledTaskId}"
-        ```
-
+        Create a NamespaceScheduledTask resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param NamespaceScheduledTaskArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -629,26 +473,6 @@ class NamespaceScheduledTask(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['NamespaceScheduledTaskActionArgs']] action: Action for scheduled task.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name that is changeable and that does not have to be unique. Format: a leading alphanumeric, followed by zero or more alphanumerics, underscores, spaces, backslashes, or hyphens in any order). No trailing spaces allowed.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] kind: (Updatable) Discriminator.
-        :param pulumi.Input[str] namespace: The Logging Analytics namespace used for the request.
-        :param pulumi.Input[str] num_occurrences: Number of execution occurrences.
-        :param pulumi.Input[str] saved_search_id: The ManagementSavedSearch id [OCID] to be accelerated.
-        :param pulumi.Input[pulumi.InputType['NamespaceScheduledTaskSchedulesArgs']] schedules: (Updatable) Schedules, typically a single schedule. Note there may only be a single schedule for SAVED_SEARCH and PURGE scheduled tasks.
-        :param pulumi.Input[str] state: The current state of the scheduled task.
-        :param pulumi.Input[str] task_status: Status of the scheduled task. - PURGE_RESOURCE_NOT_FOUND
-        :param pulumi.Input[str] task_type: Task type.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] time_created: The date and time the scheduled task was created, in the format defined by RFC3339.
-        :param pulumi.Input[str] time_updated: The date and time the scheduled task was last updated, in the format defined by RFC3339.
-        :param pulumi.Input[str] work_request_id: most recent Work Request Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -676,137 +500,85 @@ class NamespaceScheduledTask(pulumi.CustomResource):
     @property
     @pulumi.getter
     def action(self) -> pulumi.Output['outputs.NamespaceScheduledTaskAction']:
-        """
-        Action for scheduled task.
-        """
         return pulumi.get(self, "action")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) A user-friendly name that is changeable and that does not have to be unique. Format: a leading alphanumeric, followed by zero or more alphanumerics, underscores, spaces, backslashes, or hyphens in any order). No trailing spaces allowed.
-        """
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
     def kind(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Discriminator.
-        """
         return pulumi.get(self, "kind")
 
     @property
     @pulumi.getter
     def namespace(self) -> pulumi.Output[str]:
-        """
-        The Logging Analytics namespace used for the request.
-        """
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter(name="numOccurrences")
-    def num_occurrences(self) -> pulumi.Output[str]:
-        """
-        Number of execution occurrences.
-        """
+    def num_occurrences(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "num_occurrences")
 
     @property
     @pulumi.getter(name="savedSearchId")
-    def saved_search_id(self) -> pulumi.Output[str]:
-        """
-        The ManagementSavedSearch id [OCID] to be accelerated.
-        """
+    def saved_search_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "saved_search_id")
 
     @property
     @pulumi.getter(name="scheduledTaskId")
-    def scheduled_task_id(self) -> pulumi.Output[str]:
+    def scheduled_task_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "scheduled_task_id")
 
     @property
     @pulumi.getter
     def schedules(self) -> pulumi.Output['outputs.NamespaceScheduledTaskSchedules']:
-        """
-        (Updatable) Schedules, typically a single schedule. Note there may only be a single schedule for SAVED_SEARCH and PURGE scheduled tasks.
-        """
         return pulumi.get(self, "schedules")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the scheduled task.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="taskStatus")
-    def task_status(self) -> pulumi.Output[str]:
-        """
-        Status of the scheduled task. - PURGE_RESOURCE_NOT_FOUND
-        """
+    def task_status(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "task_status")
 
     @property
     @pulumi.getter(name="taskType")
     def task_type(self) -> pulumi.Output[str]:
-        """
-        Task type.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "task_type")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The date and time the scheduled task was created, in the format defined by RFC3339.
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The date and time the scheduled task was last updated, in the format defined by RFC3339.
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="workRequestId")
-    def work_request_id(self) -> pulumi.Output[str]:
-        """
-        most recent Work Request Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
-        """
+    def work_request_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "work_request_id")
 

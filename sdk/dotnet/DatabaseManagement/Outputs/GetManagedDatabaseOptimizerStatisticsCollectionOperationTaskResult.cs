@@ -16,35 +16,35 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// The status of the Optimizer Statistics Collection task.
         /// </summary>
-        public readonly string Status;
+        public readonly string? Status;
         /// <summary>
         /// The name of the target object for which statistics are gathered.
         /// </summary>
-        public readonly string Target;
+        public readonly string? Target;
         /// <summary>
         /// The type of target object.
         /// </summary>
-        public readonly string TargetType;
+        public readonly string? TargetType;
         /// <summary>
         /// The end time of the Optimizer Statistics Collection task.
         /// </summary>
-        public readonly string TimeEnd;
+        public readonly string? TimeEnd;
         /// <summary>
         /// The start time of the Optimizer Statistics Collection task.
         /// </summary>
-        public readonly string TimeStart;
+        public readonly string? TimeStart;
 
         [OutputConstructor]
         private GetManagedDatabaseOptimizerStatisticsCollectionOperationTaskResult(
-            string status,
+            string? status,
 
-            string target,
+            string? target,
 
-            string targetType,
+            string? targetType,
 
-            string timeEnd,
+            string? timeEnd,
 
-            string timeStart)
+            string? timeStart)
         {
             Status = status;
             Target = target;

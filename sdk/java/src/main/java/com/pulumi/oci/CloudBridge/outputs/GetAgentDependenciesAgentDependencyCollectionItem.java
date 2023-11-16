@@ -8,6 +8,8 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAgentDependenciesAgentDependencyCollectionItem {
@@ -15,207 +17,207 @@ public final class GetAgentDependenciesAgentDependencyCollectionItem {
      * @return Object storage bucket where the Agent dependency is uploaded.
      * 
      */
-    private String bucket;
+    private @Nullable String bucket;
     /**
      * @return The checksum associated with the dependency object returned by Object Storage.
      * 
      */
-    private String checksum;
+    private @Nullable String checksum;
     /**
      * @return The ID of the compartment in which to list resources.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return Name of the dependency type. This should match the whitelisted enum of dependency names.
      * 
      */
-    private String dependencyName;
+    private @Nullable String dependencyName;
     /**
      * @return Version of the Agent dependency.
      * 
      */
-    private String dependencyVersion;
+    private @Nullable String dependencyVersion;
     /**
      * @return Description about the Agent dependency.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return A filter to return only resources that match the entire display name given.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return The eTag associated with the dependency object returned by Object Storage.
      * 
      */
-    private String eTag;
+    private @Nullable String eTag;
     /**
      * @return The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return Unique identifier that is immutable on creation.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return Object storage namespace associated with the customer&#39;s tenancy.
      * 
      */
-    private String namespace;
+    private @Nullable String namespace;
     /**
      * @return Name of the dependency object uploaded by the customer.
      * 
      */
-    private String object;
+    private @Nullable String object;
     /**
      * @return A filter to return only resources their lifecycleState matches the given lifecycleState.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private @Nullable Map<String,Object> systemTags;
     /**
      * @return The time when the AgentDependency was created. An RFC3339 formatted datetime string.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
 
     private GetAgentDependenciesAgentDependencyCollectionItem() {}
     /**
      * @return Object storage bucket where the Agent dependency is uploaded.
      * 
      */
-    public String bucket() {
-        return this.bucket;
+    public Optional<String> bucket() {
+        return Optional.ofNullable(this.bucket);
     }
     /**
      * @return The checksum associated with the dependency object returned by Object Storage.
      * 
      */
-    public String checksum() {
-        return this.checksum;
+    public Optional<String> checksum() {
+        return Optional.ofNullable(this.checksum);
     }
     /**
      * @return The ID of the compartment in which to list resources.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return Name of the dependency type. This should match the whitelisted enum of dependency names.
      * 
      */
-    public String dependencyName() {
-        return this.dependencyName;
+    public Optional<String> dependencyName() {
+        return Optional.ofNullable(this.dependencyName);
     }
     /**
      * @return Version of the Agent dependency.
      * 
      */
-    public String dependencyVersion() {
-        return this.dependencyVersion;
+    public Optional<String> dependencyVersion() {
+        return Optional.ofNullable(this.dependencyVersion);
     }
     /**
      * @return Description about the Agent dependency.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return A filter to return only resources that match the entire display name given.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return The eTag associated with the dependency object returned by Object Storage.
      * 
      */
-    public String eTag() {
-        return this.eTag;
+    public Optional<String> eTag() {
+        return Optional.ofNullable(this.eTag);
     }
     /**
      * @return The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return Unique identifier that is immutable on creation.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return Object storage namespace associated with the customer&#39;s tenancy.
      * 
      */
-    public String namespace() {
-        return this.namespace;
+    public Optional<String> namespace() {
+        return Optional.ofNullable(this.namespace);
     }
     /**
      * @return Name of the dependency object uploaded by the customer.
      * 
      */
-    public String object() {
-        return this.object;
+    public Optional<String> object() {
+        return Optional.ofNullable(this.object);
     }
     /**
      * @return A filter to return only resources their lifecycleState matches the given lifecycleState.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
      * 
      */
     public Map<String,Object> systemTags() {
-        return this.systemTags;
+        return this.systemTags == null ? Map.of() : this.systemTags;
     }
     /**
      * @return The time when the AgentDependency was created. An RFC3339 formatted datetime string.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
 
     public static Builder builder() {
@@ -227,23 +229,23 @@ public final class GetAgentDependenciesAgentDependencyCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String bucket;
-        private String checksum;
-        private String compartmentId;
-        private Map<String,Object> definedTags;
-        private String dependencyName;
-        private String dependencyVersion;
-        private String description;
-        private String displayName;
-        private String eTag;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private String lifecycleDetails;
-        private String namespace;
-        private String object;
-        private String state;
-        private Map<String,Object> systemTags;
-        private String timeCreated;
+        private @Nullable String bucket;
+        private @Nullable String checksum;
+        private @Nullable String compartmentId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String dependencyName;
+        private @Nullable String dependencyVersion;
+        private @Nullable String description;
+        private @Nullable String displayName;
+        private @Nullable String eTag;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable String lifecycleDetails;
+        private @Nullable String namespace;
+        private @Nullable String object;
+        private @Nullable String state;
+        private @Nullable Map<String,Object> systemTags;
+        private @Nullable String timeCreated;
         public Builder() {}
         public Builder(GetAgentDependenciesAgentDependencyCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -267,88 +269,88 @@ public final class GetAgentDependenciesAgentDependencyCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder bucket(String bucket) {
-            this.bucket = Objects.requireNonNull(bucket);
+        public Builder bucket(@Nullable String bucket) {
+            this.bucket = bucket;
             return this;
         }
         @CustomType.Setter
-        public Builder checksum(String checksum) {
-            this.checksum = Objects.requireNonNull(checksum);
+        public Builder checksum(@Nullable String checksum) {
+            this.checksum = checksum;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder dependencyName(String dependencyName) {
-            this.dependencyName = Objects.requireNonNull(dependencyName);
+        public Builder dependencyName(@Nullable String dependencyName) {
+            this.dependencyName = dependencyName;
             return this;
         }
         @CustomType.Setter
-        public Builder dependencyVersion(String dependencyVersion) {
-            this.dependencyVersion = Objects.requireNonNull(dependencyVersion);
+        public Builder dependencyVersion(@Nullable String dependencyVersion) {
+            this.dependencyVersion = dependencyVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder eTag(String eTag) {
-            this.eTag = Objects.requireNonNull(eTag);
+        public Builder eTag(@Nullable String eTag) {
+            this.eTag = eTag;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+        public Builder namespace(@Nullable String namespace) {
+            this.namespace = namespace;
             return this;
         }
         @CustomType.Setter
-        public Builder object(String object) {
-            this.object = Objects.requireNonNull(object);
+        public Builder object(@Nullable String object) {
+            this.object = object;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+        public Builder systemTags(@Nullable Map<String,Object> systemTags) {
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetAgentDependenciesAgentDependencyCollectionItem build() {

@@ -6,22 +6,24 @@ package com.pulumi.oci.Identity.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetUiPasswordResult {
-    private String id;
-    private String inactiveStatus;
-    private String password;
+    private @Nullable String id;
+    private @Nullable String inactiveStatus;
+    private @Nullable String password;
     /**
      * @return The password&#39;s current state.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return Date and time the password was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The OCID of the user.
      * 
@@ -29,28 +31,28 @@ public final class GetUiPasswordResult {
     private String userId;
 
     private GetUiPasswordResult() {}
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
-    public String inactiveStatus() {
-        return this.inactiveStatus;
+    public Optional<String> inactiveStatus() {
+        return Optional.ofNullable(this.inactiveStatus);
     }
-    public String password() {
-        return this.password;
+    public Optional<String> password() {
+        return Optional.ofNullable(this.password);
     }
     /**
      * @return The password&#39;s current state.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return Date and time the password was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The OCID of the user.
@@ -69,11 +71,11 @@ public final class GetUiPasswordResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String id;
-        private String inactiveStatus;
-        private String password;
-        private String state;
-        private String timeCreated;
+        private @Nullable String id;
+        private @Nullable String inactiveStatus;
+        private @Nullable String password;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
         private String userId;
         public Builder() {}
         public Builder(GetUiPasswordResult defaults) {
@@ -87,28 +89,28 @@ public final class GetUiPasswordResult {
         }
 
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder inactiveStatus(String inactiveStatus) {
-            this.inactiveStatus = Objects.requireNonNull(inactiveStatus);
+        public Builder inactiveStatus(@Nullable String inactiveStatus) {
+            this.inactiveStatus = inactiveStatus;
             return this;
         }
         @CustomType.Setter
-        public Builder password(String password) {
-            this.password = Objects.requireNonNull(password);
+        public Builder password(@Nullable String password) {
+            this.password = password;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter

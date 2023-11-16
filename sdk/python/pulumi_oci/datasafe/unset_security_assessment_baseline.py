@@ -17,24 +17,12 @@ class UnsetSecurityAssessmentBaselineArgs:
                  security_assessment_id: pulumi.Input[str]):
         """
         The set of arguments for constructing a UnsetSecurityAssessmentBaseline resource.
-        :param pulumi.Input[str] security_assessment_id: The OCID of the security assessment.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "security_assessment_id", security_assessment_id)
 
     @property
     @pulumi.getter(name="securityAssessmentId")
     def security_assessment_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of the security assessment.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "security_assessment_id")
 
     @security_assessment_id.setter
@@ -48,11 +36,6 @@ class _UnsetSecurityAssessmentBaselineState:
                  security_assessment_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering UnsetSecurityAssessmentBaseline resources.
-        :param pulumi.Input[str] security_assessment_id: The OCID of the security assessment.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if security_assessment_id is not None:
             pulumi.set(__self__, "security_assessment_id", security_assessment_id)
@@ -60,13 +43,6 @@ class _UnsetSecurityAssessmentBaselineState:
     @property
     @pulumi.getter(name="securityAssessmentId")
     def security_assessment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the security assessment.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "security_assessment_id")
 
     @security_assessment_id.setter
@@ -82,35 +58,9 @@ class UnsetSecurityAssessmentBaseline(pulumi.CustomResource):
                  security_assessment_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Unset Security Assessment Baseline resource in Oracle Cloud Infrastructure Data Safe service.
-
-        Removes the baseline setting for the saved security assessment. The saved security assessment is no longer considered a baseline.
-        Sets the if-match parameter to the value of the etag from a previous GET or POST response for that resource.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_unset_security_assessment_baseline = oci.data_safe.UnsetSecurityAssessmentBaseline("testUnsetSecurityAssessmentBaseline", security_assessment_id=oci_data_safe_security_assessment["test_security_assessment"]["id"])
-        ```
-
-        ## Import
-
-        UnsetSecurityAssessmentBaseline can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:DataSafe/unsetSecurityAssessmentBaseline:UnsetSecurityAssessmentBaseline test_unset_security_assessment_baseline "id"
-        ```
-
+        Create a UnsetSecurityAssessmentBaseline resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] security_assessment_id: The OCID of the security assessment.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -119,28 +69,7 @@ class UnsetSecurityAssessmentBaseline(pulumi.CustomResource):
                  args: UnsetSecurityAssessmentBaselineArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Unset Security Assessment Baseline resource in Oracle Cloud Infrastructure Data Safe service.
-
-        Removes the baseline setting for the saved security assessment. The saved security assessment is no longer considered a baseline.
-        Sets the if-match parameter to the value of the etag from a previous GET or POST response for that resource.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_unset_security_assessment_baseline = oci.data_safe.UnsetSecurityAssessmentBaseline("testUnsetSecurityAssessmentBaseline", security_assessment_id=oci_data_safe_security_assessment["test_security_assessment"]["id"])
-        ```
-
-        ## Import
-
-        UnsetSecurityAssessmentBaseline can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:DataSafe/unsetSecurityAssessmentBaseline:UnsetSecurityAssessmentBaseline test_unset_security_assessment_baseline "id"
-        ```
-
+        Create a UnsetSecurityAssessmentBaseline resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param UnsetSecurityAssessmentBaselineArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -187,11 +116,6 @@ class UnsetSecurityAssessmentBaseline(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] security_assessment_id: The OCID of the security assessment.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -203,12 +127,5 @@ class UnsetSecurityAssessmentBaseline(pulumi.CustomResource):
     @property
     @pulumi.getter(name="securityAssessmentId")
     def security_assessment_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the security assessment.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "security_assessment_id")
 

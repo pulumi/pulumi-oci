@@ -150,7 +150,7 @@ export interface GetSecurityAssessmentsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Indicates whether or not the security assessment is set as a baseline. This is applicable only for saved security assessments.
      */
@@ -160,7 +160,7 @@ export interface GetSecurityAssessmentsResult {
     /**
      * The list of security_assessments.
      */
-    readonly securityAssessments: outputs.DataSafe.GetSecurityAssessmentsSecurityAssessment[];
+    readonly securityAssessments?: outputs.DataSafe.GetSecurityAssessmentsSecurityAssessment[];
     /**
      * The current state of the security assessment.
      */

@@ -16,7 +16,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// The node host name.
         /// </summary>
-        public readonly string Hostname;
+        public readonly string? Hostname;
         /// <summary>
         /// The list of SCAN IP addresses. Three addresses should be provided.
         /// </summary>
@@ -24,27 +24,27 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// **Deprecated.** This field is deprecated. You may use 'scanListenerPortTcp' to specify the port. The SCAN TCPIP port. Default is 1521.
         /// </summary>
-        public readonly int Port;
+        public readonly int? Port;
         /// <summary>
         /// The SCAN TCPIP port. Default is 1521.
         /// </summary>
-        public readonly int ScanListenerPortTcp;
+        public readonly int? ScanListenerPortTcp;
         /// <summary>
         /// The SCAN TCPIP SSL port. Default is 2484.
         /// </summary>
-        public readonly int ScanListenerPortTcpSsl;
+        public readonly int? ScanListenerPortTcpSsl;
 
         [OutputConstructor]
         private GetVmClusterNetworksVmClusterNetworkScanResult(
-            string hostname,
+            string? hostname,
 
             ImmutableArray<string> ips,
 
-            int port,
+            int? port,
 
-            int scanListenerPortTcp,
+            int? scanListenerPortTcp,
 
-            int scanListenerPortTcpSsl)
+            int? scanListenerPortTcpSsl)
         {
             Hostname = hostname;
             Ips = ips;

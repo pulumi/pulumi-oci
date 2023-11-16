@@ -51,11 +51,11 @@ export interface GetFusionEnvironmentTimeAvailableForRefreshsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of time_available_for_refresh_collection.
      */
-    readonly timeAvailableForRefreshCollections: outputs.Functions.GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollection[];
+    readonly timeAvailableForRefreshCollections?: outputs.Functions.GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollection[];
 }
 /**
  * This data source provides the list of Fusion Environment Time Available For Refreshs in Oracle Cloud Infrastructure Fusion Apps service.

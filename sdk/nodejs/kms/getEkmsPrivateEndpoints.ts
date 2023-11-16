@@ -53,12 +53,12 @@ export interface GetEkmsPrivateEndpointsResult {
     /**
      * The list of ekms_private_endpoints.
      */
-    readonly ekmsPrivateEndpoints: outputs.Kms.GetEkmsPrivateEndpointsEkmsPrivateEndpoint[];
+    readonly ekmsPrivateEndpoints?: outputs.Kms.GetEkmsPrivateEndpointsEkmsPrivateEndpoint[];
     readonly filters?: outputs.Kms.GetEkmsPrivateEndpointsFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
 }
 /**
  * This data source provides the list of Ekms Private Endpoints in Oracle Cloud Infrastructure Kms service.

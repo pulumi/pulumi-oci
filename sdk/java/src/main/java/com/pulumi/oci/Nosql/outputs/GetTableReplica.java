@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetTableReplica {
@@ -14,75 +16,75 @@ public final class GetTableReplica {
      * @return The capacity mode of the table.  If capacityMode = ON_DEMAND, maxReadUnits and maxWriteUnits are not used, and both will have the value of zero.
      * 
      */
-    private String capacityMode;
+    private @Nullable String capacityMode;
     /**
      * @return A message describing the current state in more detail.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return Maximum sustained write throughput limit for the table.
      * 
      */
-    private Integer maxWriteUnits;
+    private @Nullable Integer maxWriteUnits;
     /**
      * @return A customer-facing region identifier
      * 
      */
-    private String region;
+    private @Nullable String region;
     /**
      * @return The state of a table.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The OCID of the replica table
      * 
      */
-    private String tableId;
+    private @Nullable String tableId;
 
     private GetTableReplica() {}
     /**
      * @return The capacity mode of the table.  If capacityMode = ON_DEMAND, maxReadUnits and maxWriteUnits are not used, and both will have the value of zero.
      * 
      */
-    public String capacityMode() {
-        return this.capacityMode;
+    public Optional<String> capacityMode() {
+        return Optional.ofNullable(this.capacityMode);
     }
     /**
      * @return A message describing the current state in more detail.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return Maximum sustained write throughput limit for the table.
      * 
      */
-    public Integer maxWriteUnits() {
-        return this.maxWriteUnits;
+    public Optional<Integer> maxWriteUnits() {
+        return Optional.ofNullable(this.maxWriteUnits);
     }
     /**
      * @return A customer-facing region identifier
      * 
      */
-    public String region() {
-        return this.region;
+    public Optional<String> region() {
+        return Optional.ofNullable(this.region);
     }
     /**
      * @return The state of a table.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The OCID of the replica table
      * 
      */
-    public String tableId() {
-        return this.tableId;
+    public Optional<String> tableId() {
+        return Optional.ofNullable(this.tableId);
     }
 
     public static Builder builder() {
@@ -94,12 +96,12 @@ public final class GetTableReplica {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String capacityMode;
-        private String lifecycleDetails;
-        private Integer maxWriteUnits;
-        private String region;
-        private String state;
-        private String tableId;
+        private @Nullable String capacityMode;
+        private @Nullable String lifecycleDetails;
+        private @Nullable Integer maxWriteUnits;
+        private @Nullable String region;
+        private @Nullable String state;
+        private @Nullable String tableId;
         public Builder() {}
         public Builder(GetTableReplica defaults) {
     	      Objects.requireNonNull(defaults);
@@ -112,33 +114,33 @@ public final class GetTableReplica {
         }
 
         @CustomType.Setter
-        public Builder capacityMode(String capacityMode) {
-            this.capacityMode = Objects.requireNonNull(capacityMode);
+        public Builder capacityMode(@Nullable String capacityMode) {
+            this.capacityMode = capacityMode;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder maxWriteUnits(Integer maxWriteUnits) {
-            this.maxWriteUnits = Objects.requireNonNull(maxWriteUnits);
+        public Builder maxWriteUnits(@Nullable Integer maxWriteUnits) {
+            this.maxWriteUnits = maxWriteUnits;
             return this;
         }
         @CustomType.Setter
-        public Builder region(String region) {
-            this.region = Objects.requireNonNull(region);
+        public Builder region(@Nullable String region) {
+            this.region = region;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder tableId(String tableId) {
-            this.tableId = Objects.requireNonNull(tableId);
+        public Builder tableId(@Nullable String tableId) {
+            this.tableId = tableId;
             return this;
         }
         public GetTableReplica build() {

@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildRunnerShapeConfig {
@@ -19,12 +21,12 @@ public final class GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildRu
      * @return The total amount of memory set for the instance in gigabytes.
      * 
      */
-    private Integer memoryInGbs;
+    private @Nullable Integer memoryInGbs;
     /**
      * @return The total number of OCPUs set for the instance.
      * 
      */
-    private Integer ocpus;
+    private @Nullable Integer ocpus;
 
     private GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildRunnerShapeConfig() {}
     /**
@@ -38,15 +40,15 @@ public final class GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildRu
      * @return The total amount of memory set for the instance in gigabytes.
      * 
      */
-    public Integer memoryInGbs() {
-        return this.memoryInGbs;
+    public Optional<Integer> memoryInGbs() {
+        return Optional.ofNullable(this.memoryInGbs);
     }
     /**
      * @return The total number of OCPUs set for the instance.
      * 
      */
-    public Integer ocpus() {
-        return this.ocpus;
+    public Optional<Integer> ocpus() {
+        return Optional.ofNullable(this.ocpus);
     }
 
     public static Builder builder() {
@@ -59,8 +61,8 @@ public final class GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildRu
     @CustomType.Builder
     public static final class Builder {
         private String buildRunnerType;
-        private Integer memoryInGbs;
-        private Integer ocpus;
+        private @Nullable Integer memoryInGbs;
+        private @Nullable Integer ocpus;
         public Builder() {}
         public Builder(GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildRunnerShapeConfig defaults) {
     	      Objects.requireNonNull(defaults);
@@ -75,13 +77,13 @@ public final class GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildRu
             return this;
         }
         @CustomType.Setter
-        public Builder memoryInGbs(Integer memoryInGbs) {
-            this.memoryInGbs = Objects.requireNonNull(memoryInGbs);
+        public Builder memoryInGbs(@Nullable Integer memoryInGbs) {
+            this.memoryInGbs = memoryInGbs;
             return this;
         }
         @CustomType.Setter
-        public Builder ocpus(Integer ocpus) {
-            this.ocpus = Objects.requireNonNull(ocpus);
+        public Builder ocpus(@Nullable Integer ocpus) {
+            this.ocpus = ocpus;
             return this;
         }
         public GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildRunnerShapeConfig build() {

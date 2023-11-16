@@ -77,13 +77,13 @@ namespace Pulumi.Oci.OsManagementHub
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Details about the managed instance group.
         /// </summary>
         [Output("description")]
-        public Output<string> Description { get; private set; } = null!;
+        public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A user-friendly name for the managed instance group. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -95,13 +95,13 @@ namespace Pulumi.Oci.OsManagementHub
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// The number of Managed Instances in the managed instance group.
         /// </summary>
         [Output("managedInstanceCount")]
-        public Output<int> ManagedInstanceCount { get; private set; } = null!;
+        public Output<int?> ManagedInstanceCount { get; private set; } = null!;
 
         /// <summary>
         /// The list of managed instance OCIDs to be added to the managed instance group.
@@ -119,7 +119,7 @@ namespace Pulumi.Oci.OsManagementHub
         /// The number of scheduled jobs pending against the managed instance group.
         /// </summary>
         [Output("pendingJobCount")]
-        public Output<int> PendingJobCount { get; private set; } = null!;
+        public Output<int?> PendingJobCount { get; private set; } = null!;
 
         /// <summary>
         /// The list of software source OCIDs available to the managed instances in the managed instance group.
@@ -137,25 +137,25 @@ namespace Pulumi.Oci.OsManagementHub
         /// The current state of the managed instance group.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
         [Output("systemTags")]
-        public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// The time the managed instance group was created. An RFC3339 formatted datetime string.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The time the managed instance group was last modified. An RFC3339 formatted datetime string.
         /// </summary>
         [Output("timeModified")]
-        public Output<string> TimeModified { get; private set; } = null!;
+        public Output<string?> TimeModified { get; private set; } = null!;
 
         /// <summary>
         /// The software source vendor name.

@@ -34,7 +34,7 @@ public final class GetVmClustersResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The current state of the VM cluster.
      * 
@@ -44,7 +44,7 @@ public final class GetVmClustersResult {
      * @return The list of vm_clusters.
      * 
      */
-    private List<GetVmClustersVmCluster> vmClusters;
+    private @Nullable List<GetVmClustersVmCluster> vmClusters;
 
     private GetVmClustersResult() {}
     /**
@@ -75,8 +75,8 @@ public final class GetVmClustersResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The current state of the VM cluster.
@@ -90,7 +90,7 @@ public final class GetVmClustersResult {
      * 
      */
     public List<GetVmClustersVmCluster> vmClusters() {
-        return this.vmClusters;
+        return this.vmClusters == null ? List.of() : this.vmClusters;
     }
 
     public static Builder builder() {
@@ -106,9 +106,9 @@ public final class GetVmClustersResult {
         private @Nullable String displayName;
         private @Nullable String exadataInfrastructureId;
         private @Nullable List<GetVmClustersFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String state;
-        private List<GetVmClustersVmCluster> vmClusters;
+        private @Nullable List<GetVmClustersVmCluster> vmClusters;
         public Builder() {}
         public Builder(GetVmClustersResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -145,8 +145,8 @@ public final class GetVmClustersResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -155,8 +155,8 @@ public final class GetVmClustersResult {
             return this;
         }
         @CustomType.Setter
-        public Builder vmClusters(List<GetVmClustersVmCluster> vmClusters) {
-            this.vmClusters = Objects.requireNonNull(vmClusters);
+        public Builder vmClusters(@Nullable List<GetVmClustersVmCluster> vmClusters) {
+            this.vmClusters = vmClusters;
             return this;
         }
         public Builder vmClusters(GetVmClustersVmCluster... vmClusters) {

@@ -24,7 +24,7 @@ public final class GetQuotasResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The name you assign to the quota during creation. The name must be unique across all quotas in the tenancy and cannot be changed.
      * 
@@ -34,7 +34,7 @@ public final class GetQuotasResult {
      * @return The list of quotas.
      * 
      */
-    private List<GetQuotasQuota> quotas;
+    private @Nullable List<GetQuotasQuota> quotas;
     /**
      * @return The quota&#39;s current state.
      * 
@@ -56,8 +56,8 @@ public final class GetQuotasResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The name you assign to the quota during creation. The name must be unique across all quotas in the tenancy and cannot be changed.
@@ -71,7 +71,7 @@ public final class GetQuotasResult {
      * 
      */
     public List<GetQuotasQuota> quotas() {
-        return this.quotas;
+        return this.quotas == null ? List.of() : this.quotas;
     }
     /**
      * @return The quota&#39;s current state.
@@ -92,9 +92,9 @@ public final class GetQuotasResult {
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetQuotasFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String name;
-        private List<GetQuotasQuota> quotas;
+        private @Nullable List<GetQuotasQuota> quotas;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetQuotasResult defaults) {
@@ -121,8 +121,8 @@ public final class GetQuotasResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -131,8 +131,8 @@ public final class GetQuotasResult {
             return this;
         }
         @CustomType.Setter
-        public Builder quotas(List<GetQuotasQuota> quotas) {
-            this.quotas = Objects.requireNonNull(quotas);
+        public Builder quotas(@Nullable List<GetQuotasQuota> quotas) {
+            this.quotas = quotas;
             return this;
         }
         public Builder quotas(GetQuotasQuota... quotas) {

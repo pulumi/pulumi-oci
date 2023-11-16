@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Compute Global Image Capability Schemas Version resource in Oracle Cloud Infrastructure Core service.
@@ -66,15 +65,15 @@ type GetComputeGlobalImageCapabilitySchemasVersionResult struct {
 	ComputeGlobalImageCapabilitySchemaId          string `pulumi:"computeGlobalImageCapabilitySchemaId"`
 	ComputeGlobalImageCapabilitySchemaVersionName string `pulumi:"computeGlobalImageCapabilitySchemaVersionName"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The name of the compute global image capability schema version
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The map of each capability name to its ImageCapabilityDescriptor.
 	SchemaData map[string]interface{} `pulumi:"schemaData"`
 	// The date and time the compute global image capability schema version was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 }
 
 func GetComputeGlobalImageCapabilitySchemasVersionOutput(ctx *pulumi.Context, args GetComputeGlobalImageCapabilitySchemasVersionOutputArgs, opts ...pulumi.InvokeOption) GetComputeGlobalImageCapabilitySchemasVersionResultOutput {
@@ -117,12 +116,6 @@ func (o GetComputeGlobalImageCapabilitySchemasVersionResultOutput) ToGetComputeG
 	return o
 }
 
-func (o GetComputeGlobalImageCapabilitySchemasVersionResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetComputeGlobalImageCapabilitySchemasVersionResult] {
-	return pulumix.Output[GetComputeGlobalImageCapabilitySchemasVersionResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The ocid of the compute global image capability schema
 func (o GetComputeGlobalImageCapabilitySchemasVersionResultOutput) ComputeGlobalImageCapabilitySchemaId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetComputeGlobalImageCapabilitySchemasVersionResult) string {
@@ -137,18 +130,18 @@ func (o GetComputeGlobalImageCapabilitySchemasVersionResultOutput) ComputeGlobal
 }
 
 // A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-func (o GetComputeGlobalImageCapabilitySchemasVersionResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputeGlobalImageCapabilitySchemasVersionResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetComputeGlobalImageCapabilitySchemasVersionResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputeGlobalImageCapabilitySchemasVersionResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetComputeGlobalImageCapabilitySchemasVersionResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputeGlobalImageCapabilitySchemasVersionResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetComputeGlobalImageCapabilitySchemasVersionResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputeGlobalImageCapabilitySchemasVersionResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The name of the compute global image capability schema version
-func (o GetComputeGlobalImageCapabilitySchemasVersionResultOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputeGlobalImageCapabilitySchemasVersionResult) string { return v.Name }).(pulumi.StringOutput)
+func (o GetComputeGlobalImageCapabilitySchemasVersionResultOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputeGlobalImageCapabilitySchemasVersionResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The map of each capability name to its ImageCapabilityDescriptor.
@@ -159,8 +152,8 @@ func (o GetComputeGlobalImageCapabilitySchemasVersionResultOutput) SchemaData() 
 }
 
 // The date and time the compute global image capability schema version was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-func (o GetComputeGlobalImageCapabilitySchemasVersionResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputeGlobalImageCapabilitySchemasVersionResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetComputeGlobalImageCapabilitySchemasVersionResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputeGlobalImageCapabilitySchemasVersionResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

@@ -93,17 +93,11 @@ class GetSensitiveDataModelsSensitiveColumnsResult:
     @property
     @pulumi.getter(name="columnNames")
     def column_names(self) -> Optional[Sequence[str]]:
-        """
-        The name of the sensitive column.
-        """
         return pulumi.get(self, "column_names")
 
     @property
     @pulumi.getter(name="dataTypes")
     def data_types(self) -> Optional[Sequence[str]]:
-        """
-        The data type of the sensitive column.
-        """
         return pulumi.get(self, "data_types")
 
     @property
@@ -113,7 +107,7 @@ class GetSensitiveDataModelsSensitiveColumnsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -127,17 +121,11 @@ class GetSensitiveDataModelsSensitiveColumnsResult:
     @property
     @pulumi.getter(name="objectTypes")
     def object_types(self) -> Optional[Sequence[str]]:
-        """
-        The type of the database object that contains the sensitive column.
-        """
         return pulumi.get(self, "object_types")
 
     @property
     @pulumi.getter
     def objects(self) -> Optional[Sequence[str]]:
-        """
-        The database object that contains the sensitive column.
-        """
         return pulumi.get(self, "objects")
 
     @property
@@ -148,25 +136,16 @@ class GetSensitiveDataModelsSensitiveColumnsResult:
     @property
     @pulumi.getter(name="relationTypes")
     def relation_types(self) -> Optional[Sequence[str]]:
-        """
-        The type of referential relationship the sensitive column has with its parent. NONE indicates that the sensitive column does not have a parent. DB_DEFINED indicates that the relationship is defined in the database dictionary. APP_DEFINED indicates that the relationship is defined at the application level and not in the database dictionary.
-        """
         return pulumi.get(self, "relation_types")
 
     @property
     @pulumi.getter(name="schemaNames")
     def schema_names(self) -> Optional[Sequence[str]]:
-        """
-        The database schema that contains the sensitive column.
-        """
         return pulumi.get(self, "schema_names")
 
     @property
     @pulumi.getter(name="sensitiveColumnCollections")
-    def sensitive_column_collections(self) -> Sequence['outputs.GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionResult']:
-        """
-        The list of sensitive_column_collection.
-        """
+    def sensitive_column_collections(self) -> Optional[Sequence['outputs.GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionResult']]:
         return pulumi.get(self, "sensitive_column_collections")
 
     @property
@@ -177,25 +156,16 @@ class GetSensitiveDataModelsSensitiveColumnsResult:
     @property
     @pulumi.getter(name="sensitiveDataModelId")
     def sensitive_data_model_id(self) -> str:
-        """
-        The OCID of the sensitive data model that contains the sensitive column.
-        """
         return pulumi.get(self, "sensitive_data_model_id")
 
     @property
     @pulumi.getter(name="sensitiveTypeIds")
     def sensitive_type_ids(self) -> Optional[Sequence[str]]:
-        """
-        The OCID of the sensitive type associated with the sensitive column.
-        """
         return pulumi.get(self, "sensitive_type_ids")
 
     @property
     @pulumi.getter
     def statuses(self) -> Optional[Sequence[str]]:
-        """
-        The status of the sensitive column. VALID means the column is considered sensitive. INVALID means the column is not considered sensitive. Tracking invalid columns in a sensitive data model helps ensure that an incremental data discovery job does not identify these columns as sensitive again.
-        """
         return pulumi.get(self, "statuses")
 
     @property
@@ -267,57 +237,7 @@ def get_sensitive_data_models_sensitive_columns(column_group: Optional[str] = No
                                                 time_updated_less_than: Optional[str] = None,
                                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSensitiveDataModelsSensitiveColumnsResult:
     """
-    This data source provides the list of Sensitive Data Models Sensitive Columns in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets a list of sensitive columns present in the specified sensitive data model based on the specified query parameters.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_sensitive_data_models_sensitive_columns = oci.DataSafe.get_sensitive_data_models_sensitive_columns(sensitive_data_model_id=oci_data_safe_sensitive_data_model["test_sensitive_data_model"]["id"],
-        column_group=var["sensitive_data_models_sensitive_column_column_group"],
-        column_names=var["sensitive_data_models_sensitive_column_column_name"],
-        data_types=var["sensitive_data_models_sensitive_column_data_type"],
-        is_case_in_sensitive=var["sensitive_data_models_sensitive_column_is_case_in_sensitive"],
-        objects=var["sensitive_data_models_sensitive_column_object"],
-        object_types=var["sensitive_data_models_sensitive_column_object_type"],
-        parent_column_keys=var["sensitive_data_models_sensitive_column_parent_column_key"],
-        relation_types=var["sensitive_data_models_sensitive_column_relation_type"],
-        schema_names=var["sensitive_data_models_sensitive_column_schema_name"],
-        sensitive_column_lifecycle_state=var["sensitive_data_models_sensitive_column_sensitive_column_lifecycle_state"],
-        sensitive_type_ids=oci_data_safe_sensitive_type["test_sensitive_type"]["id"],
-        statuses=var["sensitive_data_models_sensitive_column_status"],
-        time_created_greater_than_or_equal_to=var["sensitive_data_models_sensitive_column_time_created_greater_than_or_equal_to"],
-        time_created_less_than=var["sensitive_data_models_sensitive_column_time_created_less_than"],
-        time_updated_greater_than_or_equal_to=var["sensitive_data_models_sensitive_column_time_updated_greater_than_or_equal_to"],
-        time_updated_less_than=var["sensitive_data_models_sensitive_column_time_updated_less_than"])
-    ```
-
-
-    :param str column_group: A filter to return only the sensitive columns that belong to the specified column group.
-    :param Sequence[str] column_names: A filter to return only a specific column based on column name.
-    :param Sequence[str] data_types: A filter to return only the resources that match the specified data types.
-    :param bool is_case_in_sensitive: A boolean flag indicating whether the search should be case-insensitive. The search is case-sensitive by default. Set this parameter to true to do case-insensitive search.
-    :param Sequence[str] object_types: A filter to return only items related to a specific object type.
-    :param Sequence[str] objects: A filter to return only items related to a specific object name.
-    :param Sequence[str] parent_column_keys: A filter to return only the sensitive columns that are children of one of the columns identified by the specified keys.
-    :param Sequence[str] relation_types: A filter to return sensitive columns based on their relationship with their parent columns. If set to NONE, it returns the sensitive columns that do not have any parent. The response includes the parent columns as well as the independent columns that are not in any relationship. If set to APP_DEFINED, it returns all the child columns that have application-level (non-dictionary) relationship with their parents. If set to DB_DEFINED, it returns all the child columns that have database-level (dictionary-defined) relationship with their parents.
-    :param Sequence[str] schema_names: A filter to return only items related to specific schema name.
-    :param str sensitive_column_lifecycle_state: Filters the sensitive column resources with the given lifecycle state values.
-    :param str sensitive_data_model_id: The OCID of the sensitive data model.
-    :param Sequence[str] sensitive_type_ids: A filter to return only the sensitive columns that are associated with one of the sensitive types identified by the specified OCIDs.
-    :param Sequence[str] statuses: A filter to return only the sensitive columns that match the specified status.
-    :param str time_created_greater_than_or_equal_to: A filter to return only the resources that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after that date.
-           
-           **Example:** 2016-12-19T16:39:57.600Z
-    :param str time_created_less_than: Search for resources that were created before a specific date. Specifying this parameter corresponding `timeCreatedLessThan` parameter will retrieve all resources created before the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
-           
-           **Example:** 2016-12-19T16:39:57.600Z
-    :param str time_updated_greater_than_or_equal_to: Search for resources that were updated after a specific date. Specifying this parameter corresponding `timeUpdatedGreaterThanOrEqualTo` parameter will retrieve all resources updated after the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
-    :param str time_updated_less_than: Search for resources that were updated before a specific date. Specifying this parameter corresponding `timeUpdatedLessThan` parameter will retrieve all resources updated before the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['columnGroup'] = column_group
@@ -385,56 +305,6 @@ def get_sensitive_data_models_sensitive_columns_output(column_group: Optional[pu
                                                        time_updated_less_than: Optional[pulumi.Input[Optional[str]]] = None,
                                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSensitiveDataModelsSensitiveColumnsResult]:
     """
-    This data source provides the list of Sensitive Data Models Sensitive Columns in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets a list of sensitive columns present in the specified sensitive data model based on the specified query parameters.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_sensitive_data_models_sensitive_columns = oci.DataSafe.get_sensitive_data_models_sensitive_columns(sensitive_data_model_id=oci_data_safe_sensitive_data_model["test_sensitive_data_model"]["id"],
-        column_group=var["sensitive_data_models_sensitive_column_column_group"],
-        column_names=var["sensitive_data_models_sensitive_column_column_name"],
-        data_types=var["sensitive_data_models_sensitive_column_data_type"],
-        is_case_in_sensitive=var["sensitive_data_models_sensitive_column_is_case_in_sensitive"],
-        objects=var["sensitive_data_models_sensitive_column_object"],
-        object_types=var["sensitive_data_models_sensitive_column_object_type"],
-        parent_column_keys=var["sensitive_data_models_sensitive_column_parent_column_key"],
-        relation_types=var["sensitive_data_models_sensitive_column_relation_type"],
-        schema_names=var["sensitive_data_models_sensitive_column_schema_name"],
-        sensitive_column_lifecycle_state=var["sensitive_data_models_sensitive_column_sensitive_column_lifecycle_state"],
-        sensitive_type_ids=oci_data_safe_sensitive_type["test_sensitive_type"]["id"],
-        statuses=var["sensitive_data_models_sensitive_column_status"],
-        time_created_greater_than_or_equal_to=var["sensitive_data_models_sensitive_column_time_created_greater_than_or_equal_to"],
-        time_created_less_than=var["sensitive_data_models_sensitive_column_time_created_less_than"],
-        time_updated_greater_than_or_equal_to=var["sensitive_data_models_sensitive_column_time_updated_greater_than_or_equal_to"],
-        time_updated_less_than=var["sensitive_data_models_sensitive_column_time_updated_less_than"])
-    ```
-
-
-    :param str column_group: A filter to return only the sensitive columns that belong to the specified column group.
-    :param Sequence[str] column_names: A filter to return only a specific column based on column name.
-    :param Sequence[str] data_types: A filter to return only the resources that match the specified data types.
-    :param bool is_case_in_sensitive: A boolean flag indicating whether the search should be case-insensitive. The search is case-sensitive by default. Set this parameter to true to do case-insensitive search.
-    :param Sequence[str] object_types: A filter to return only items related to a specific object type.
-    :param Sequence[str] objects: A filter to return only items related to a specific object name.
-    :param Sequence[str] parent_column_keys: A filter to return only the sensitive columns that are children of one of the columns identified by the specified keys.
-    :param Sequence[str] relation_types: A filter to return sensitive columns based on their relationship with their parent columns. If set to NONE, it returns the sensitive columns that do not have any parent. The response includes the parent columns as well as the independent columns that are not in any relationship. If set to APP_DEFINED, it returns all the child columns that have application-level (non-dictionary) relationship with their parents. If set to DB_DEFINED, it returns all the child columns that have database-level (dictionary-defined) relationship with their parents.
-    :param Sequence[str] schema_names: A filter to return only items related to specific schema name.
-    :param str sensitive_column_lifecycle_state: Filters the sensitive column resources with the given lifecycle state values.
-    :param str sensitive_data_model_id: The OCID of the sensitive data model.
-    :param Sequence[str] sensitive_type_ids: A filter to return only the sensitive columns that are associated with one of the sensitive types identified by the specified OCIDs.
-    :param Sequence[str] statuses: A filter to return only the sensitive columns that match the specified status.
-    :param str time_created_greater_than_or_equal_to: A filter to return only the resources that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after that date.
-           
-           **Example:** 2016-12-19T16:39:57.600Z
-    :param str time_created_less_than: Search for resources that were created before a specific date. Specifying this parameter corresponding `timeCreatedLessThan` parameter will retrieve all resources created before the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
-           
-           **Example:** 2016-12-19T16:39:57.600Z
-    :param str time_updated_greater_than_or_equal_to: Search for resources that were updated after a specific date. Specifying this parameter corresponding `timeUpdatedGreaterThanOrEqualTo` parameter will retrieve all resources updated after the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
-    :param str time_updated_less_than: Search for resources that were updated before a specific date. Specifying this parameter corresponding `timeUpdatedLessThan` parameter will retrieve all resources updated before the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
+    Use this data source to access information about an existing resource.
     """
     ...

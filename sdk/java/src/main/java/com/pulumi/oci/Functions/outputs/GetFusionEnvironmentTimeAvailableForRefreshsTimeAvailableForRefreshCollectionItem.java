@@ -6,6 +6,8 @@ package com.pulumi.oci.Functions.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItem {
@@ -13,15 +15,15 @@ public final class GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForR
      * @return refresh time.
      * 
      */
-    private String timeAvailableForRefresh;
+    private @Nullable String timeAvailableForRefresh;
 
     private GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItem() {}
     /**
      * @return refresh time.
      * 
      */
-    public String timeAvailableForRefresh() {
-        return this.timeAvailableForRefresh;
+    public Optional<String> timeAvailableForRefresh() {
+        return Optional.ofNullable(this.timeAvailableForRefresh);
     }
 
     public static Builder builder() {
@@ -33,7 +35,7 @@ public final class GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForR
     }
     @CustomType.Builder
     public static final class Builder {
-        private String timeAvailableForRefresh;
+        private @Nullable String timeAvailableForRefresh;
         public Builder() {}
         public Builder(GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -41,8 +43,8 @@ public final class GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForR
         }
 
         @CustomType.Setter
-        public Builder timeAvailableForRefresh(String timeAvailableForRefresh) {
-            this.timeAvailableForRefresh = Objects.requireNonNull(timeAvailableForRefresh);
+        public Builder timeAvailableForRefresh(@Nullable String timeAvailableForRefresh) {
+            this.timeAvailableForRefresh = timeAvailableForRefresh;
             return this;
         }
         public GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItem build() {

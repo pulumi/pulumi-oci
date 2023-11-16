@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Optimizer.outputs.GetRecommendationsRecommendationCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetRecommendationsRecommendationCollection {
@@ -14,7 +15,7 @@ public final class GetRecommendationsRecommendationCollection {
      * @return The list of supported levels.
      * 
      */
-    private List<GetRecommendationsRecommendationCollectionItem> items;
+    private @Nullable List<GetRecommendationsRecommendationCollectionItem> items;
 
     private GetRecommendationsRecommendationCollection() {}
     /**
@@ -22,7 +23,7 @@ public final class GetRecommendationsRecommendationCollection {
      * 
      */
     public List<GetRecommendationsRecommendationCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetRecommendationsRecommendationCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetRecommendationsRecommendationCollectionItem> items;
+        private @Nullable List<GetRecommendationsRecommendationCollectionItem> items;
         public Builder() {}
         public Builder(GetRecommendationsRecommendationCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetRecommendationsRecommendationCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetRecommendationsRecommendationCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetRecommendationsRecommendationCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetRecommendationsRecommendationCollectionItem... items) {

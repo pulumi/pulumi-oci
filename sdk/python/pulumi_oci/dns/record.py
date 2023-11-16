@@ -22,16 +22,6 @@ class RecordArgs:
                  ttl: Optional[pulumi.Input[int]] = None):
         """
         The set of arguments for constructing a Record resource.
-        :param pulumi.Input[str] domain: The fully qualified domain name where the record can be located. Domain value is case insensitive.
-        :param pulumi.Input[str] rtype: The canonical name for the record's type, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
-        :param pulumi.Input[str] zone_name_or_id: The name or OCID of the target zone.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment the resource belongs to. If supplied, it must match the Zone's compartment ocid.
-        :param pulumi.Input[str] rdata: (Updatable) The record's data, as whitespace-delimited tokens in type-specific presentation format. All RDATA is normalized and the returned presentation of your RDATA may differ from its initial input. For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
-        :param pulumi.Input[int] ttl: (Updatable) The Time To Live for the record, in seconds.
         """
         if domain is not None:
             warnings.warn("""The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.""", DeprecationWarning)
@@ -55,9 +45,6 @@ class RecordArgs:
     @property
     @pulumi.getter
     def domain(self) -> pulumi.Input[str]:
-        """
-        The fully qualified domain name where the record can be located. Domain value is case insensitive.
-        """
         warnings.warn("""The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.""", DeprecationWarning)
         pulumi.log.warn("""domain is deprecated: The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.""")
 
@@ -70,9 +57,6 @@ class RecordArgs:
     @property
     @pulumi.getter
     def rtype(self) -> pulumi.Input[str]:
-        """
-        The canonical name for the record's type, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
-        """
         warnings.warn("""The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.""", DeprecationWarning)
         pulumi.log.warn("""rtype is deprecated: The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.""")
 
@@ -85,13 +69,6 @@ class RecordArgs:
     @property
     @pulumi.getter(name="zoneNameOrId")
     def zone_name_or_id(self) -> pulumi.Input[str]:
-        """
-        The name or OCID of the target zone.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         warnings.warn("""The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.""", DeprecationWarning)
         pulumi.log.warn("""zone_name_or_id is deprecated: The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.""")
 
@@ -104,9 +81,6 @@ class RecordArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the compartment the resource belongs to. If supplied, it must match the Zone's compartment ocid.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -116,9 +90,6 @@ class RecordArgs:
     @property
     @pulumi.getter
     def rdata(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The record's data, as whitespace-delimited tokens in type-specific presentation format. All RDATA is normalized and the returned presentation of your RDATA may differ from its initial input. For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
-        """
         return pulumi.get(self, "rdata")
 
     @rdata.setter
@@ -128,9 +99,6 @@ class RecordArgs:
     @property
     @pulumi.getter
     def ttl(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The Time To Live for the record, in seconds.
-        """
         return pulumi.get(self, "ttl")
 
     @ttl.setter
@@ -152,19 +120,6 @@ class _RecordState:
                  zone_name_or_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering Record resources.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment the resource belongs to. If supplied, it must match the Zone's compartment ocid.
-        :param pulumi.Input[str] domain: The fully qualified domain name where the record can be located. Domain value is case insensitive.
-        :param pulumi.Input[bool] is_protected: A Boolean flag indicating whether or not parts of the record are unable to be explicitly managed.
-        :param pulumi.Input[str] rdata: (Updatable) The record's data, as whitespace-delimited tokens in type-specific presentation format. All RDATA is normalized and the returned presentation of your RDATA may differ from its initial input. For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
-        :param pulumi.Input[str] record_hash: A unique identifier for the record within its zone.
-        :param pulumi.Input[str] rrset_version: The latest version of the record's zone in which its RRSet differs from the preceding version.
-        :param pulumi.Input[str] rtype: The canonical name for the record's type, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
-        :param pulumi.Input[int] ttl: (Updatable) The Time To Live for the record, in seconds.
-        :param pulumi.Input[str] zone_name_or_id: The name or OCID of the target zone.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -197,9 +152,6 @@ class _RecordState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the compartment the resource belongs to. If supplied, it must match the Zone's compartment ocid.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -209,9 +161,6 @@ class _RecordState:
     @property
     @pulumi.getter
     def domain(self) -> Optional[pulumi.Input[str]]:
-        """
-        The fully qualified domain name where the record can be located. Domain value is case insensitive.
-        """
         warnings.warn("""The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.""", DeprecationWarning)
         pulumi.log.warn("""domain is deprecated: The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.""")
 
@@ -224,9 +173,6 @@ class _RecordState:
     @property
     @pulumi.getter(name="isProtected")
     def is_protected(self) -> Optional[pulumi.Input[bool]]:
-        """
-        A Boolean flag indicating whether or not parts of the record are unable to be explicitly managed.
-        """
         return pulumi.get(self, "is_protected")
 
     @is_protected.setter
@@ -236,9 +182,6 @@ class _RecordState:
     @property
     @pulumi.getter
     def rdata(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The record's data, as whitespace-delimited tokens in type-specific presentation format. All RDATA is normalized and the returned presentation of your RDATA may differ from its initial input. For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
-        """
         return pulumi.get(self, "rdata")
 
     @rdata.setter
@@ -248,9 +191,6 @@ class _RecordState:
     @property
     @pulumi.getter(name="recordHash")
     def record_hash(self) -> Optional[pulumi.Input[str]]:
-        """
-        A unique identifier for the record within its zone.
-        """
         return pulumi.get(self, "record_hash")
 
     @record_hash.setter
@@ -260,9 +200,6 @@ class _RecordState:
     @property
     @pulumi.getter(name="rrsetVersion")
     def rrset_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        The latest version of the record's zone in which its RRSet differs from the preceding version.
-        """
         return pulumi.get(self, "rrset_version")
 
     @rrset_version.setter
@@ -272,9 +209,6 @@ class _RecordState:
     @property
     @pulumi.getter
     def rtype(self) -> Optional[pulumi.Input[str]]:
-        """
-        The canonical name for the record's type, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
-        """
         warnings.warn("""The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.""", DeprecationWarning)
         pulumi.log.warn("""rtype is deprecated: The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.""")
 
@@ -287,9 +221,6 @@ class _RecordState:
     @property
     @pulumi.getter
     def ttl(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The Time To Live for the record, in seconds.
-        """
         return pulumi.get(self, "ttl")
 
     @ttl.setter
@@ -299,13 +230,6 @@ class _RecordState:
     @property
     @pulumi.getter(name="zoneNameOrId")
     def zone_name_or_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name or OCID of the target zone.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         warnings.warn("""The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.""", DeprecationWarning)
         pulumi.log.warn("""zone_name_or_id is deprecated: The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.""")
 
@@ -329,47 +253,9 @@ class Record(pulumi.CustomResource):
                  zone_name_or_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        **Deprecated. Use Dns.Rrset instead.**
-
-        This resource provides the Record resource in Oracle Cloud Infrastructure DNS service.
-
-        Replaces records in the specified zone with the records specified in the
-        request body. If a specified record does not exist, it will be created.
-        If the record exists, then it will be updated to represent the record in
-        the body of the request. If a record in the zone does not exist in the
-        request body, the record will be removed from the zone.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_record = oci.dns.Record("testRecord",
-            zone_name_or_id=oci_dns_zone_name_or["test_zone_name_or"]["id"],
-            domain=var["record_items_domain"],
-            rtype=var["record_items_rtype"],
-            compartment_id=var["compartment_id"],
-            rdata=var["record_items_rdata"],
-            ttl=var["record_items_ttl"])
-        ```
-
-        ## Import
-
-        Import is not supported for this resource.
-
+        Create a Record resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment the resource belongs to. If supplied, it must match the Zone's compartment ocid.
-        :param pulumi.Input[str] domain: The fully qualified domain name where the record can be located. Domain value is case insensitive.
-        :param pulumi.Input[str] rdata: (Updatable) The record's data, as whitespace-delimited tokens in type-specific presentation format. All RDATA is normalized and the returned presentation of your RDATA may differ from its initial input. For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
-        :param pulumi.Input[str] rtype: The canonical name for the record's type, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
-        :param pulumi.Input[int] ttl: (Updatable) The Time To Live for the record, in seconds.
-        :param pulumi.Input[str] zone_name_or_id: The name or OCID of the target zone.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -378,35 +264,7 @@ class Record(pulumi.CustomResource):
                  args: RecordArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        **Deprecated. Use Dns.Rrset instead.**
-
-        This resource provides the Record resource in Oracle Cloud Infrastructure DNS service.
-
-        Replaces records in the specified zone with the records specified in the
-        request body. If a specified record does not exist, it will be created.
-        If the record exists, then it will be updated to represent the record in
-        the body of the request. If a record in the zone does not exist in the
-        request body, the record will be removed from the zone.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_record = oci.dns.Record("testRecord",
-            zone_name_or_id=oci_dns_zone_name_or["test_zone_name_or"]["id"],
-            domain=var["record_items_domain"],
-            rtype=var["record_items_rtype"],
-            compartment_id=var["compartment_id"],
-            rdata=var["record_items_rdata"],
-            ttl=var["record_items_ttl"])
-        ```
-
-        ## Import
-
-        Import is not supported for this resource.
-
+        Create a Record resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param RecordArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -478,19 +336,6 @@ class Record(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment the resource belongs to. If supplied, it must match the Zone's compartment ocid.
-        :param pulumi.Input[str] domain: The fully qualified domain name where the record can be located. Domain value is case insensitive.
-        :param pulumi.Input[bool] is_protected: A Boolean flag indicating whether or not parts of the record are unable to be explicitly managed.
-        :param pulumi.Input[str] rdata: (Updatable) The record's data, as whitespace-delimited tokens in type-specific presentation format. All RDATA is normalized and the returned presentation of your RDATA may differ from its initial input. For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
-        :param pulumi.Input[str] record_hash: A unique identifier for the record within its zone.
-        :param pulumi.Input[str] rrset_version: The latest version of the record's zone in which its RRSet differs from the preceding version.
-        :param pulumi.Input[str] rtype: The canonical name for the record's type, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
-        :param pulumi.Input[int] ttl: (Updatable) The Time To Live for the record, in seconds.
-        :param pulumi.Input[str] zone_name_or_id: The name or OCID of the target zone.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -510,17 +355,11 @@ class Record(pulumi.CustomResource):
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[Optional[str]]:
-        """
-        (Updatable) The OCID of the compartment the resource belongs to. If supplied, it must match the Zone's compartment ocid.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter
     def domain(self) -> pulumi.Output[str]:
-        """
-        The fully qualified domain name where the record can be located. Domain value is case insensitive.
-        """
         warnings.warn("""The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.""", DeprecationWarning)
         pulumi.log.warn("""domain is deprecated: The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.""")
 
@@ -528,42 +367,27 @@ class Record(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="isProtected")
-    def is_protected(self) -> pulumi.Output[bool]:
-        """
-        A Boolean flag indicating whether or not parts of the record are unable to be explicitly managed.
-        """
+    def is_protected(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_protected")
 
     @property
     @pulumi.getter
     def rdata(self) -> pulumi.Output[Optional[str]]:
-        """
-        (Updatable) The record's data, as whitespace-delimited tokens in type-specific presentation format. All RDATA is normalized and the returned presentation of your RDATA may differ from its initial input. For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
-        """
         return pulumi.get(self, "rdata")
 
     @property
     @pulumi.getter(name="recordHash")
-    def record_hash(self) -> pulumi.Output[str]:
-        """
-        A unique identifier for the record within its zone.
-        """
+    def record_hash(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "record_hash")
 
     @property
     @pulumi.getter(name="rrsetVersion")
-    def rrset_version(self) -> pulumi.Output[str]:
-        """
-        The latest version of the record's zone in which its RRSet differs from the preceding version.
-        """
+    def rrset_version(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "rrset_version")
 
     @property
     @pulumi.getter
     def rtype(self) -> pulumi.Output[str]:
-        """
-        The canonical name for the record's type, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
-        """
         warnings.warn("""The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.""", DeprecationWarning)
         pulumi.log.warn("""rtype is deprecated: The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.""")
 
@@ -572,21 +396,11 @@ class Record(pulumi.CustomResource):
     @property
     @pulumi.getter
     def ttl(self) -> pulumi.Output[Optional[int]]:
-        """
-        (Updatable) The Time To Live for the record, in seconds.
-        """
         return pulumi.get(self, "ttl")
 
     @property
     @pulumi.getter(name="zoneNameOrId")
     def zone_name_or_id(self) -> pulumi.Output[str]:
-        """
-        The name or OCID of the target zone.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         warnings.warn("""The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.""", DeprecationWarning)
         pulumi.log.warn("""zone_name_or_id is deprecated: The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.""")
 

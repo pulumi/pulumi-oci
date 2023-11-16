@@ -43,39 +43,27 @@ class GetLogAnalyticsEntitiesSummaryResult:
 
     @property
     @pulumi.getter(name="activeEntitiesCount")
-    def active_entities_count(self) -> int:
-        """
-        Total number of ACTIVE entities
-        """
+    def active_entities_count(self) -> Optional[int]:
         return pulumi.get(self, "active_entities_count")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="entitiesWithHasLogsCollectedCount")
-    def entities_with_has_logs_collected_count(self) -> int:
-        """
-        Entities with log collection enabled
-        """
+    def entities_with_has_logs_collected_count(self) -> Optional[int]:
         return pulumi.get(self, "entities_with_has_logs_collected_count")
 
     @property
     @pulumi.getter(name="entitiesWithManagementAgentCount")
-    def entities_with_management_agent_count(self) -> int:
-        """
-        Entities with management agent
-        """
+    def entities_with_management_agent_count(self) -> Optional[int]:
         return pulumi.get(self, "entities_with_management_agent_count")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -105,23 +93,7 @@ def get_log_analytics_entities_summary(compartment_id: Optional[str] = None,
                                        namespace: Optional[str] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetLogAnalyticsEntitiesSummaryResult:
     """
-    This data source provides details about a specific Log Analytics Entities Summary resource in Oracle Cloud Infrastructure Log Analytics service.
-
-    Returns log analytics entities count summary report.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_log_analytics_entities_summary = oci.LogAnalytics.get_log_analytics_entities_summary(compartment_id=var["compartment_id"],
-        namespace=var["log_analytics_entities_summary_namespace"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str namespace: The Logging Analytics namespace used for the request.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -143,22 +115,6 @@ def get_log_analytics_entities_summary_output(compartment_id: Optional[pulumi.In
                                               namespace: Optional[pulumi.Input[str]] = None,
                                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetLogAnalyticsEntitiesSummaryResult]:
     """
-    This data source provides details about a specific Log Analytics Entities Summary resource in Oracle Cloud Infrastructure Log Analytics service.
-
-    Returns log analytics entities count summary report.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_log_analytics_entities_summary = oci.LogAnalytics.get_log_analytics_entities_summary(compartment_id=var["compartment_id"],
-        namespace=var["log_analytics_entities_summary_namespace"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str namespace: The Logging Analytics namespace used for the request.
+    Use this data source to access information about an existing resource.
     """
     ...

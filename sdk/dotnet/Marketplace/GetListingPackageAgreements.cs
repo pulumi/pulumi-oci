@@ -163,7 +163,7 @@ namespace Pulumi.Oci.Marketplace
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string ListingId;
         public readonly string PackageVersion;
 
@@ -175,7 +175,7 @@ namespace Pulumi.Oci.Marketplace
 
             ImmutableArray<Outputs.GetListingPackageAgreementsFilterResult> filters,
 
-            string id,
+            string? id,
 
             string listingId,
 

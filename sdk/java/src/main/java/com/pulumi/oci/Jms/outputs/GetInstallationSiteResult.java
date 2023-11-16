@@ -19,13 +19,13 @@ public final class GetInstallationSiteResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private @Nullable String installationPath;
     /**
      * @return A list of Java installation sites.
      * 
      */
-    private List<GetInstallationSiteItem> items;
+    private @Nullable List<GetInstallationSiteItem> items;
     private @Nullable String jreDistribution;
     private @Nullable String jreSecurityStatus;
     private @Nullable String jreVendor;
@@ -51,8 +51,8 @@ public final class GetInstallationSiteResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public Optional<String> installationPath() {
         return Optional.ofNullable(this.installationPath);
@@ -62,7 +62,7 @@ public final class GetInstallationSiteResult {
      * 
      */
     public List<GetInstallationSiteItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
     public Optional<String> jreDistribution() {
         return Optional.ofNullable(this.jreDistribution);
@@ -107,9 +107,9 @@ public final class GetInstallationSiteResult {
     public static final class Builder {
         private @Nullable String applicationId;
         private String fleetId;
-        private String id;
+        private @Nullable String id;
         private @Nullable String installationPath;
-        private List<GetInstallationSiteItem> items;
+        private @Nullable List<GetInstallationSiteItem> items;
         private @Nullable String jreDistribution;
         private @Nullable String jreSecurityStatus;
         private @Nullable String jreVendor;
@@ -149,8 +149,8 @@ public final class GetInstallationSiteResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -159,8 +159,8 @@ public final class GetInstallationSiteResult {
             return this;
         }
         @CustomType.Setter
-        public Builder items(List<GetInstallationSiteItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetInstallationSiteItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetInstallationSiteItem... items) {

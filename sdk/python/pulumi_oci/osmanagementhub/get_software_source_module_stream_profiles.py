@@ -53,7 +53,7 @@ class GetSoftwareSourceModuleStreamProfilesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -62,25 +62,16 @@ class GetSoftwareSourceModuleStreamProfilesResult:
     @property
     @pulumi.getter(name="moduleName")
     def module_name(self) -> Optional[str]:
-        """
-        The name of the module that contains the stream profile.
-        """
         return pulumi.get(self, "module_name")
 
     @property
     @pulumi.getter(name="moduleStreamProfileCollections")
-    def module_stream_profile_collections(self) -> Sequence['outputs.GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionResult']:
-        """
-        The list of module_stream_profile_collection.
-        """
+    def module_stream_profile_collections(self) -> Optional[Sequence['outputs.GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionResult']]:
         return pulumi.get(self, "module_stream_profile_collections")
 
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        The name of the profile.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -91,9 +82,6 @@ class GetSoftwareSourceModuleStreamProfilesResult:
     @property
     @pulumi.getter(name="streamName")
     def stream_name(self) -> Optional[str]:
-        """
-        The name of the stream that contains the profile.
-        """
         return pulumi.get(self, "stream_name")
 
 
@@ -119,28 +107,7 @@ def get_software_source_module_stream_profiles(filters: Optional[Sequence[pulumi
                                                stream_name: Optional[str] = None,
                                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSoftwareSourceModuleStreamProfilesResult:
     """
-    This data source provides the list of Software Source Module Stream Profiles in Oracle Cloud Infrastructure Os Management Hub service.
-
-    Lists module stream profiles from the specified software source OCID. Filter the list against a variety of
-    criteria including but not limited to its module name, stream name, and (profile) name.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_software_source_module_stream_profiles = oci.OsManagementHub.get_software_source_module_stream_profiles(software_source_id=oci_os_management_hub_software_source["test_software_source"]["id"],
-        module_name=var["software_source_module_stream_profile_module_name"],
-        name=var["software_source_module_stream_profile_name"],
-        stream_name=oci_streaming_stream["test_stream"]["name"])
-    ```
-
-
-    :param str module_name: The name of a module. This parameter is required if a streamName is specified.
-    :param str name: The name of the entity to be queried.
-    :param str software_source_id: The software source OCID.
-    :param str stream_name: The name of the stream of the containing module.  This parameter is required if a profileName is specified.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -169,27 +136,6 @@ def get_software_source_module_stream_profiles_output(filters: Optional[pulumi.I
                                                       stream_name: Optional[pulumi.Input[Optional[str]]] = None,
                                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSoftwareSourceModuleStreamProfilesResult]:
     """
-    This data source provides the list of Software Source Module Stream Profiles in Oracle Cloud Infrastructure Os Management Hub service.
-
-    Lists module stream profiles from the specified software source OCID. Filter the list against a variety of
-    criteria including but not limited to its module name, stream name, and (profile) name.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_software_source_module_stream_profiles = oci.OsManagementHub.get_software_source_module_stream_profiles(software_source_id=oci_os_management_hub_software_source["test_software_source"]["id"],
-        module_name=var["software_source_module_stream_profile_module_name"],
-        name=var["software_source_module_stream_profile_name"],
-        stream_name=oci_streaming_stream["test_stream"]["name"])
-    ```
-
-
-    :param str module_name: The name of a module. This parameter is required if a streamName is specified.
-    :param str name: The name of the entity to be queried.
-    :param str software_source_id: The software source OCID.
-    :param str stream_name: The name of the stream of the containing module.  This parameter is required if a profileName is specified.
+    Use this data source to access information about an existing resource.
     """
     ...

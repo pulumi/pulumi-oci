@@ -44,10 +44,7 @@ class GetAlertPolicyRulesResult:
 
     @property
     @pulumi.getter(name="alertPolicyRuleCollections")
-    def alert_policy_rule_collections(self) -> Sequence['outputs.GetAlertPolicyRulesAlertPolicyRuleCollectionResult']:
-        """
-        The list of alert_policy_rule_collection.
-        """
+    def alert_policy_rule_collections(self) -> Optional[Sequence['outputs.GetAlertPolicyRulesAlertPolicyRuleCollectionResult']]:
         return pulumi.get(self, "alert_policy_rule_collections")
 
     @property
@@ -57,7 +54,7 @@ class GetAlertPolicyRulesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -80,22 +77,7 @@ def get_alert_policy_rules(alert_policy_id: Optional[str] = None,
                            filters: Optional[Sequence[pulumi.InputType['GetAlertPolicyRulesFilterArgs']]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAlertPolicyRulesResult:
     """
-    This data source provides the list of Alert Policy Rules in Oracle Cloud Infrastructure Data Safe service.
-
-    Lists the rules of the specified alert policy. The alert policy is said to be satisfied when all rules in the policy evaulate to true.
-    If there are three rules: rule1,rule2 and rule3, the policy is satisfied if rule1 AND rule2 AND rule3 is True.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_alert_policy_rules = oci.DataSafe.get_alert_policy_rules(alert_policy_id=oci_data_safe_alert_policy["test_alert_policy"]["id"])
-    ```
-
-
-    :param str alert_policy_id: The OCID of the alert policy.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['alertPolicyId'] = alert_policy_id
@@ -115,21 +97,6 @@ def get_alert_policy_rules_output(alert_policy_id: Optional[pulumi.Input[str]] =
                                   filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetAlertPolicyRulesFilterArgs']]]]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAlertPolicyRulesResult]:
     """
-    This data source provides the list of Alert Policy Rules in Oracle Cloud Infrastructure Data Safe service.
-
-    Lists the rules of the specified alert policy. The alert policy is said to be satisfied when all rules in the policy evaulate to true.
-    If there are three rules: rule1,rule2 and rule3, the policy is satisfied if rule1 AND rule2 AND rule3 is True.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_alert_policy_rules = oci.DataSafe.get_alert_policy_rules(alert_policy_id=oci_data_safe_alert_policy["test_alert_policy"]["id"])
-    ```
-
-
-    :param str alert_policy_id: The OCID of the alert policy.
+    Use this data source to access information about an existing resource.
     """
     ...

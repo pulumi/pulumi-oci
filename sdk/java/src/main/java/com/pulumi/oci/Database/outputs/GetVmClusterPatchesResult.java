@@ -9,6 +9,7 @@ import com.pulumi.oci.Database.outputs.GetVmClusterPatchesPatch;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -18,12 +19,12 @@ public final class GetVmClusterPatchesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of patches.
      * 
      */
-    private List<GetVmClusterPatchesPatch> patches;
+    private @Nullable List<GetVmClusterPatchesPatch> patches;
     private String vmClusterId;
 
     private GetVmClusterPatchesResult() {}
@@ -34,15 +35,15 @@ public final class GetVmClusterPatchesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of patches.
      * 
      */
     public List<GetVmClusterPatchesPatch> patches() {
-        return this.patches;
+        return this.patches == null ? List.of() : this.patches;
     }
     public String vmClusterId() {
         return this.vmClusterId;
@@ -58,8 +59,8 @@ public final class GetVmClusterPatchesResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetVmClusterPatchesFilter> filters;
-        private String id;
-        private List<GetVmClusterPatchesPatch> patches;
+        private @Nullable String id;
+        private @Nullable List<GetVmClusterPatchesPatch> patches;
         private String vmClusterId;
         public Builder() {}
         public Builder(GetVmClusterPatchesResult defaults) {
@@ -79,13 +80,13 @@ public final class GetVmClusterPatchesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder patches(List<GetVmClusterPatchesPatch> patches) {
-            this.patches = Objects.requireNonNull(patches);
+        public Builder patches(@Nullable List<GetVmClusterPatchesPatch> patches) {
+            this.patches = patches;
             return this;
         }
         public Builder patches(GetVmClusterPatchesPatch... patches) {

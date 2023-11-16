@@ -16,7 +16,7 @@ namespace Pulumi.Oci.Waf.Outputs
         /// <summary>
         /// The default collaborative action threshold for OCI-managed collaborative protection capability. Collaborative protection capabilities are made of several simple, non-collaborative protection capabilities (referred to as `contributing capabilities` later on) which have weights assigned to them. These weights can be found in the `collaborativeWeights` array. For incoming/outgoing HTTP messages, all contributing capabilities are executed and the sum of all triggered contributing capabilities weights is calculated. Only if this sum is greater than or equal to `collaborativeActionThreshold` is the incoming/outgoing HTTP message marked as malicious.
         /// </summary>
-        public readonly int CollaborativeActionThreshold;
+        public readonly int? CollaborativeActionThreshold;
         /// <summary>
         /// The weights of contributing capabilities. Defines how much each contributing capability contributes towards the action threshold of a collaborative protection capability.
         /// </summary>
@@ -24,11 +24,11 @@ namespace Pulumi.Oci.Waf.Outputs
         /// <summary>
         /// The description of protection capability.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// A filter to return only resources that match the entire display name given.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// The list of unique names protection capability group tags that are associated with this capability. Example: ["PCI", "Recommended"]
         /// </summary>
@@ -36,39 +36,39 @@ namespace Pulumi.Oci.Waf.Outputs
         /// <summary>
         /// A filter to return only resources that matches given isLatestVersion.
         /// </summary>
-        public readonly bool IsLatestVersion;
+        public readonly bool? IsLatestVersion;
         /// <summary>
         /// The unique key of protection capability to filter by.
         /// </summary>
-        public readonly string Key;
+        public readonly string? Key;
         /// <summary>
         /// A filter to return only resources that matches given type.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
         /// <summary>
         /// The version of protection capability.
         /// </summary>
-        public readonly int Version;
+        public readonly int? Version;
 
         [OutputConstructor]
         private GetProtectionCapabilitiesProtectionCapabilityCollectionItemResult(
-            int collaborativeActionThreshold,
+            int? collaborativeActionThreshold,
 
             ImmutableArray<Outputs.GetProtectionCapabilitiesProtectionCapabilityCollectionItemCollaborativeWeightResult> collaborativeWeights,
 
-            string description,
+            string? description,
 
-            string displayName,
+            string? displayName,
 
             ImmutableArray<string> groupTags,
 
-            bool isLatestVersion,
+            bool? isLatestVersion,
 
-            string key,
+            string? key,
 
-            string type,
+            string? type,
 
-            int version)
+            int? version)
         {
             CollaborativeActionThreshold = collaborativeActionThreshold;
             CollaborativeWeights = collaborativeWeights;

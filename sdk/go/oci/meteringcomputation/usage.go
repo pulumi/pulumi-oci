@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Usage resource in Oracle Cloud Infrastructure Metering Computation service.
@@ -70,11 +69,11 @@ type Usage struct {
 	pulumi.CustomResourceState
 
 	// The compartment depth level.
-	CompartmentDepth pulumi.Float64Output `pulumi:"compartmentDepth"`
+	CompartmentDepth pulumi.Float64PtrOutput `pulumi:"compartmentDepth"`
 	// The filter object for query usage.
 	Filter pulumi.StringPtrOutput `pulumi:"filter"`
 	// Forecast configuration of usage/cost.
-	Forecast UsageForecastOutput `pulumi:"forecast"`
+	Forecast UsageForecastPtrOutput `pulumi:"forecast"`
 	// The usage granularity. HOURLY - Hourly data aggregation. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. TOTAL - Not yet supported.
 	Granularity pulumi.StringOutput `pulumi:"granularity"`
 	// Aggregate the result by. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
@@ -82,11 +81,11 @@ type Usage struct {
 	// GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: `[{"namespace":"oracle", "key":"createdBy"]`
 	GroupByTags UsageGroupByTagArrayOutput `pulumi:"groupByTags"`
 	// Whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
-	IsAggregateByTime pulumi.BoolOutput `pulumi:"isAggregateByTime"`
+	IsAggregateByTime pulumi.BoolPtrOutput `pulumi:"isAggregateByTime"`
 	// A list of usage items.
 	Items UsageItemArrayOutput `pulumi:"items"`
 	// The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data. AllCredit - Query the credit adjustments and expired credit.
-	QueryType pulumi.StringOutput `pulumi:"queryType"`
+	QueryType pulumi.StringPtrOutput `pulumi:"queryType"`
 	// Tenant ID.
 	TenantId pulumi.StringOutput `pulumi:"tenantId"`
 	// The usage end time.
@@ -283,12 +282,6 @@ func (i *Usage) ToUsageOutputWithContext(ctx context.Context) UsageOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(UsageOutput)
 }
 
-func (i *Usage) ToOutput(ctx context.Context) pulumix.Output[*Usage] {
-	return pulumix.Output[*Usage]{
-		OutputState: i.ToUsageOutputWithContext(ctx).OutputState,
-	}
-}
-
 // UsageArrayInput is an input type that accepts UsageArray and UsageArrayOutput values.
 // You can construct a concrete instance of `UsageArrayInput` via:
 //
@@ -312,12 +305,6 @@ func (i UsageArray) ToUsageArrayOutput() UsageArrayOutput {
 
 func (i UsageArray) ToUsageArrayOutputWithContext(ctx context.Context) UsageArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(UsageArrayOutput)
-}
-
-func (i UsageArray) ToOutput(ctx context.Context) pulumix.Output[[]*Usage] {
-	return pulumix.Output[[]*Usage]{
-		OutputState: i.ToUsageArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // UsageMapInput is an input type that accepts UsageMap and UsageMapOutput values.
@@ -345,12 +332,6 @@ func (i UsageMap) ToUsageMapOutputWithContext(ctx context.Context) UsageMapOutpu
 	return pulumi.ToOutputWithContext(ctx, i).(UsageMapOutput)
 }
 
-func (i UsageMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Usage] {
-	return pulumix.Output[map[string]*Usage]{
-		OutputState: i.ToUsageMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type UsageOutput struct{ *pulumi.OutputState }
 
 func (UsageOutput) ElementType() reflect.Type {
@@ -365,15 +346,9 @@ func (o UsageOutput) ToUsageOutputWithContext(ctx context.Context) UsageOutput {
 	return o
 }
 
-func (o UsageOutput) ToOutput(ctx context.Context) pulumix.Output[*Usage] {
-	return pulumix.Output[*Usage]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The compartment depth level.
-func (o UsageOutput) CompartmentDepth() pulumi.Float64Output {
-	return o.ApplyT(func(v *Usage) pulumi.Float64Output { return v.CompartmentDepth }).(pulumi.Float64Output)
+func (o UsageOutput) CompartmentDepth() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *Usage) pulumi.Float64PtrOutput { return v.CompartmentDepth }).(pulumi.Float64PtrOutput)
 }
 
 // The filter object for query usage.
@@ -382,8 +357,8 @@ func (o UsageOutput) Filter() pulumi.StringPtrOutput {
 }
 
 // Forecast configuration of usage/cost.
-func (o UsageOutput) Forecast() UsageForecastOutput {
-	return o.ApplyT(func(v *Usage) UsageForecastOutput { return v.Forecast }).(UsageForecastOutput)
+func (o UsageOutput) Forecast() UsageForecastPtrOutput {
+	return o.ApplyT(func(v *Usage) UsageForecastPtrOutput { return v.Forecast }).(UsageForecastPtrOutput)
 }
 
 // The usage granularity. HOURLY - Hourly data aggregation. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. TOTAL - Not yet supported.
@@ -402,8 +377,8 @@ func (o UsageOutput) GroupByTags() UsageGroupByTagArrayOutput {
 }
 
 // Whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
-func (o UsageOutput) IsAggregateByTime() pulumi.BoolOutput {
-	return o.ApplyT(func(v *Usage) pulumi.BoolOutput { return v.IsAggregateByTime }).(pulumi.BoolOutput)
+func (o UsageOutput) IsAggregateByTime() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *Usage) pulumi.BoolPtrOutput { return v.IsAggregateByTime }).(pulumi.BoolPtrOutput)
 }
 
 // A list of usage items.
@@ -412,8 +387,8 @@ func (o UsageOutput) Items() UsageItemArrayOutput {
 }
 
 // The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data. AllCredit - Query the credit adjustments and expired credit.
-func (o UsageOutput) QueryType() pulumi.StringOutput {
-	return o.ApplyT(func(v *Usage) pulumi.StringOutput { return v.QueryType }).(pulumi.StringOutput)
+func (o UsageOutput) QueryType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Usage) pulumi.StringPtrOutput { return v.QueryType }).(pulumi.StringPtrOutput)
 }
 
 // Tenant ID.
@@ -448,12 +423,6 @@ func (o UsageArrayOutput) ToUsageArrayOutputWithContext(ctx context.Context) Usa
 	return o
 }
 
-func (o UsageArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Usage] {
-	return pulumix.Output[[]*Usage]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o UsageArrayOutput) Index(i pulumi.IntInput) UsageOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *Usage {
 		return vs[0].([]*Usage)[vs[1].(int)]
@@ -472,12 +441,6 @@ func (o UsageMapOutput) ToUsageMapOutput() UsageMapOutput {
 
 func (o UsageMapOutput) ToUsageMapOutputWithContext(ctx context.Context) UsageMapOutput {
 	return o
-}
-
-func (o UsageMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Usage] {
-	return pulumix.Output[map[string]*Usage]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o UsageMapOutput) MapIndex(k pulumi.StringInput) UsageOutput {

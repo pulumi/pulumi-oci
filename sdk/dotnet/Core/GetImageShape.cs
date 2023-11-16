@@ -122,7 +122,7 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
@@ -138,12 +138,12 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// The shape name.
         /// </summary>
-        public readonly string Shape;
+        public readonly string? Shape;
         public readonly string ShapeName;
 
         [OutputConstructor]
         private GetImageShapeResult(
-            string id,
+            string? id,
 
             string imageId,
 
@@ -151,7 +151,7 @@ namespace Pulumi.Oci.Core
 
             ImmutableArray<Outputs.GetImageShapeOcpuConstraintResult> ocpuConstraints,
 
-            string shape,
+            string? shape,
 
             string shapeName)
         {

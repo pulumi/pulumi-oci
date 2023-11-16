@@ -47,89 +47,89 @@ export interface GetVolumeResult {
     /**
      * The number of Volume Performance Units per GB that this volume is effectively tuned to.
      */
-    readonly autoTunedVpusPerGb: string;
+    readonly autoTunedVpusPerGb?: string;
     /**
      * The list of autotune policies enabled for this volume.
      */
-    readonly autotunePolicies: outputs.Core.GetVolumeAutotunePolicy[];
+    readonly autotunePolicies?: outputs.Core.GetVolumeAutotunePolicy[];
     /**
      * The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`
      */
-    readonly availabilityDomain: string;
+    readonly availabilityDomain?: string;
     /**
      * @deprecated The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.
      */
-    readonly backupPolicyId: string;
+    readonly backupPolicyId?: string;
     /**
      * The list of block volume replicas of this volume.
      */
-    readonly blockVolumeReplicas: outputs.Core.GetVolumeBlockVolumeReplica[];
-    readonly blockVolumeReplicasDeletion: boolean;
+    readonly blockVolumeReplicas?: outputs.Core.GetVolumeBlockVolumeReplica[];
+    readonly blockVolumeReplicasDeletion?: boolean;
     /**
      * The OCID of the compartment that contains the volume.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The OCID of the block volume replica.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Specifies whether the auto-tune performance is enabled for this volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
      */
-    readonly isAutoTuneEnabled: boolean;
+    readonly isAutoTuneEnabled?: boolean;
     /**
      * Specifies whether the cloned volume's data has finished copying from the source volume or backup.
      */
-    readonly isHydrated: boolean;
+    readonly isHydrated?: boolean;
     /**
      * The OCID of the Vault service key which is the master encryption key for the volume.
      */
-    readonly kmsKeyId: string;
+    readonly kmsKeyId?: string;
     /**
      * The size of the volume in GBs.
      */
-    readonly sizeInGbs: string;
+    readonly sizeInGbs?: string;
     /**
      * The size of the volume in MBs. This field is deprecated. Use sizeInGBs instead.
      *
      * @deprecated The 'size_in_mbs' field has been deprecated. Please use 'size_in_gbs' instead.
      */
-    readonly sizeInMbs: string;
-    readonly sourceDetails: outputs.Core.GetVolumeSourceDetail[];
+    readonly sizeInMbs?: string;
+    readonly sourceDetails?: outputs.Core.GetVolumeSourceDetail[];
     /**
      * The current state of a volume.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * The date and time the volume was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    readonly timeCreated: string;
-    readonly volumeBackupId: string;
+    readonly timeCreated?: string;
+    readonly volumeBackupId?: string;
     /**
      * The OCID of the source volume group.
      */
-    readonly volumeGroupId: string;
+    readonly volumeGroupId?: string;
     readonly volumeId: string;
     /**
      * The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
      */
-    readonly vpusPerGb: string;
+    readonly vpusPerGb?: string;
 }
 /**
  * This data source provides details about a specific Volume resource in Oracle Cloud Infrastructure Core service.

@@ -47,76 +47,76 @@ export interface GetDatabaseToolsConnectionResult {
     /**
      * The advanced connection properties key-value pair (for example, `oracle.net.ssl_server_dn_match`).
      */
-    readonly advancedProperties: {[key: string]: any};
+    readonly advancedProperties?: {[key: string]: any};
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools connection.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * The connect descriptor or Easy Connect Naming method used to connect to the database.
      */
-    readonly connectionString: string;
+    readonly connectionString?: string;
     readonly databaseToolsConnectionId: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools connection.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The Oracle wallet or Java Keystores containing trusted certificates for authenticating the server's public certificate and the client private key and associated certificates required for client authentication.
      */
-    readonly keyStores: outputs.DatabaseTools.GetDatabaseToolsConnectionKeyStore[];
+    readonly keyStores?: outputs.DatabaseTools.GetDatabaseToolsConnectionKeyStore[];
     /**
      * A message describing the current state in more detail. For example, this message can be used to provide actionable information for a resource in the Failed state.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint used to access the database in the customer VCN.
      */
-    readonly privateEndpointId: string;
+    readonly privateEndpointId?: string;
     /**
      * A related resource
      */
-    readonly relatedResources: outputs.DatabaseTools.GetDatabaseToolsConnectionRelatedResource[];
+    readonly relatedResources?: outputs.DatabaseTools.GetDatabaseToolsConnectionRelatedResource[];
     /**
      * The current state of the Database Tools connection.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * The time the Database Tools connection was created. An RFC3339 formatted datetime string.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
     /**
      * The Database Tools connection type.
      */
-    readonly type: string;
+    readonly type?: string;
     /**
      * The database user name.
      */
-    readonly userName: string;
+    readonly userName?: string;
     /**
      * The user password.
      */
-    readonly userPasswords: outputs.DatabaseTools.GetDatabaseToolsConnectionUserPassword[];
+    readonly userPasswords?: outputs.DatabaseTools.GetDatabaseToolsConnectionUserPassword[];
 }
 /**
  * This data source provides details about a specific Database Tools Connection resource in Oracle Cloud Infrastructure Database Tools service.

@@ -83,7 +83,7 @@ export interface GetDatabaseSoftwareImagesResult {
     /**
      * The list of database_software_images.
      */
-    readonly databaseSoftwareImages: outputs.Database.GetDatabaseSoftwareImagesDatabaseSoftwareImage[];
+    readonly databaseSoftwareImages?: outputs.Database.GetDatabaseSoftwareImagesDatabaseSoftwareImage[];
     /**
      * The user-friendly name for the database software image. The name does not have to be unique.
      */
@@ -92,7 +92,7 @@ export interface GetDatabaseSoftwareImagesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * To what shape the image is meant for.
      */

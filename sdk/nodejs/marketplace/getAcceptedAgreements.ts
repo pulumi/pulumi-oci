@@ -75,7 +75,7 @@ export interface GetAcceptedAgreementsResult {
     /**
      * The list of accepted_agreements.
      */
-    readonly acceptedAgreements: outputs.Marketplace.GetAcceptedAgreementsAcceptedAgreement[];
+    readonly acceptedAgreements?: outputs.Marketplace.GetAcceptedAgreementsAcceptedAgreement[];
     /**
      * The unique identifier for the compartment where the agreement was accepted.
      */
@@ -88,7 +88,7 @@ export interface GetAcceptedAgreementsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The unique identifier for the listing associated with the agreement.
      */

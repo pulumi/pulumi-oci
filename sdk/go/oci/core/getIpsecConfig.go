@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Ip Sec Connection Device Config resource in Oracle Cloud Infrastructure Core service.
@@ -64,13 +63,13 @@ type GetIpsecConfigArgs struct {
 // A collection of values returned by getIpsecConfig.
 type GetIpsecConfigResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the IPSec connection.
-	CompartmentId string                 `pulumi:"compartmentId"`
+	CompartmentId *string                `pulumi:"compartmentId"`
 	Filters       []GetIpsecConfigFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id      string `pulumi:"id"`
-	IpsecId string `pulumi:"ipsecId"`
+	Id      *string `pulumi:"id"`
+	IpsecId string  `pulumi:"ipsecId"`
 	// The date and time the IPSec connection was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// Two [TunnelConfig](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/TunnelConfig/) objects.
 	Tunnels []GetIpsecConfigTunnel `pulumi:"tunnels"`
 }
@@ -114,15 +113,9 @@ func (o GetIpsecConfigResultOutput) ToGetIpsecConfigResultOutputWithContext(ctx 
 	return o
 }
 
-func (o GetIpsecConfigResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetIpsecConfigResult] {
-	return pulumix.Output[GetIpsecConfigResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the IPSec connection.
-func (o GetIpsecConfigResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIpsecConfigResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetIpsecConfigResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIpsecConfigResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 func (o GetIpsecConfigResultOutput) Filters() GetIpsecConfigFilterArrayOutput {
@@ -130,8 +123,8 @@ func (o GetIpsecConfigResultOutput) Filters() GetIpsecConfigFilterArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetIpsecConfigResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIpsecConfigResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetIpsecConfigResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIpsecConfigResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetIpsecConfigResultOutput) IpsecId() pulumi.StringOutput {
@@ -139,8 +132,8 @@ func (o GetIpsecConfigResultOutput) IpsecId() pulumi.StringOutput {
 }
 
 // The date and time the IPSec connection was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-func (o GetIpsecConfigResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIpsecConfigResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetIpsecConfigResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIpsecConfigResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // Two [TunnelConfig](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/TunnelConfig/) objects.

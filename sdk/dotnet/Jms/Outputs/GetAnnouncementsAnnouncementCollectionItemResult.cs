@@ -16,29 +16,29 @@ namespace Pulumi.Oci.Jms.Outputs
         /// <summary>
         /// Unique id of the announcement
         /// </summary>
-        public readonly int Key;
+        public readonly int? Key;
         /// <summary>
         /// Summary text of the announcement
         /// </summary>
-        public readonly string Summary;
+        public readonly string? Summary;
         /// <summary>
         /// Date time on which the announcement was released
         /// </summary>
-        public readonly string TimeReleased;
+        public readonly string? TimeReleased;
         /// <summary>
         /// URL to the announcement web page
         /// </summary>
-        public readonly string Url;
+        public readonly string? Url;
 
         [OutputConstructor]
         private GetAnnouncementsAnnouncementCollectionItemResult(
-            int key,
+            int? key,
 
-            string summary,
+            string? summary,
 
-            string timeReleased,
+            string? timeReleased,
 
-            string url)
+            string? url)
         {
             Key = key;
             Summary = summary;

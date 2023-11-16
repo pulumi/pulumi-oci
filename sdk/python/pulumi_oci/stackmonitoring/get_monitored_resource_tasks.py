@@ -43,9 +43,6 @@ class GetMonitoredResourceTasksResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment identifier.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -55,7 +52,7 @@ class GetMonitoredResourceTasksResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -63,10 +60,7 @@ class GetMonitoredResourceTasksResult:
 
     @property
     @pulumi.getter(name="monitoredResourceTasksCollections")
-    def monitored_resource_tasks_collections(self) -> Sequence['outputs.GetMonitoredResourceTasksMonitoredResourceTasksCollectionResult']:
-        """
-        The list of monitored_resource_tasks_collection.
-        """
+    def monitored_resource_tasks_collections(self) -> Optional[Sequence['outputs.GetMonitoredResourceTasksMonitoredResourceTasksCollectionResult']]:
         return pulumi.get(self, "monitored_resource_tasks_collections")
 
     @property
@@ -93,23 +87,7 @@ def get_monitored_resource_tasks(compartment_id: Optional[str] = None,
                                  status: Optional[str] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMonitoredResourceTasksResult:
     """
-    This data source provides the list of Monitored Resource Tasks in Oracle Cloud Infrastructure Stack Monitoring service.
-
-    Returns a list of stack monitoring resource tasks in the compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_monitored_resource_tasks = oci.StackMonitoring.get_monitored_resource_tasks(compartment_id=var["compartment_id"],
-        status=var["monitored_resource_task_status"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for which  stack monitoring resource tasks should be listed.
-    :param str status: A filter to return only resources that matches with lifecycleState given.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -132,22 +110,6 @@ def get_monitored_resource_tasks_output(compartment_id: Optional[pulumi.Input[st
                                         status: Optional[pulumi.Input[Optional[str]]] = None,
                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMonitoredResourceTasksResult]:
     """
-    This data source provides the list of Monitored Resource Tasks in Oracle Cloud Infrastructure Stack Monitoring service.
-
-    Returns a list of stack monitoring resource tasks in the compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_monitored_resource_tasks = oci.StackMonitoring.get_monitored_resource_tasks(compartment_id=var["compartment_id"],
-        status=var["monitored_resource_task_status"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for which  stack monitoring resource tasks should be listed.
-    :param str status: A filter to return only resources that matches with lifecycleState given.
+    Use this data source to access information about an existing resource.
     """
     ...

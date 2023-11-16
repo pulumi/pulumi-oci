@@ -75,11 +75,11 @@ export class WorkspaceImportRequest extends pulumi.CustomResource {
     /**
      * Name of the user who initiated import request.
      */
-    public /*out*/ readonly createdBy!: pulumi.Output<string>;
+    public /*out*/ readonly createdBy!: pulumi.Output<string | undefined>;
     /**
      * Contains key of the error
      */
-    public /*out*/ readonly errorMessages!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly errorMessages!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * Name of the zip file to be imported.
      */
@@ -87,47 +87,47 @@ export class WorkspaceImportRequest extends pulumi.CustomResource {
     /**
      * Import Objects Conflict resolution.
      */
-    public readonly importConflictResolution!: pulumi.Output<outputs.DataIntegration.WorkspaceImportRequestImportConflictResolution>;
+    public readonly importConflictResolution!: pulumi.Output<outputs.DataIntegration.WorkspaceImportRequestImportConflictResolution | undefined>;
     /**
      * The array of imported object details.
      */
-    public /*out*/ readonly importedObjects!: pulumi.Output<outputs.DataIntegration.WorkspaceImportRequestImportedObject[]>;
+    public /*out*/ readonly importedObjects!: pulumi.Output<outputs.DataIntegration.WorkspaceImportRequestImportedObject[] | undefined>;
     /**
      * Import object request key
      */
-    public /*out*/ readonly key!: pulumi.Output<string>;
+    public /*out*/ readonly key!: pulumi.Output<string | undefined>;
     /**
      * Name of the import request.
      */
-    public /*out*/ readonly name!: pulumi.Output<string>;
+    public /*out*/ readonly name!: pulumi.Output<string | undefined>;
     /**
      * Key of the object inside which all the objects will be imported
      */
-    public readonly objectKeyForImport!: pulumi.Output<string>;
+    public readonly objectKeyForImport!: pulumi.Output<string | undefined>;
     /**
      * Region of the object storage (if using object storage of different region)
      */
-    public readonly objectStorageRegion!: pulumi.Output<string>;
+    public readonly objectStorageRegion!: pulumi.Output<string | undefined>;
     /**
      * Optional parameter to point to object storage tenancy (if using Object Storage of different tenancy)
      */
-    public readonly objectStorageTenancyId!: pulumi.Output<string>;
+    public readonly objectStorageTenancyId!: pulumi.Output<string | undefined>;
     /**
      * Import Objects request status.
      */
-    public /*out*/ readonly status!: pulumi.Output<string>;
+    public /*out*/ readonly status!: pulumi.Output<string | undefined>;
     /**
      * Time at which the request was completely processed.
      */
-    public /*out*/ readonly timeEndedInMillis!: pulumi.Output<string>;
+    public /*out*/ readonly timeEndedInMillis!: pulumi.Output<string | undefined>;
     /**
      * Time at which the request started getting processed.
      */
-    public /*out*/ readonly timeStartedInMillis!: pulumi.Output<string>;
+    public /*out*/ readonly timeStartedInMillis!: pulumi.Output<string | undefined>;
     /**
      * Number of objects that are imported.
      */
-    public /*out*/ readonly totalImportedObjectCount!: pulumi.Output<number>;
+    public /*out*/ readonly totalImportedObjectCount!: pulumi.Output<number | undefined>;
     /**
      * The workspace ID.
      *

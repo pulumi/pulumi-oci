@@ -84,7 +84,7 @@ export interface GetAppAccelerationPoliciesResult {
     /**
      * The list of web_app_acceleration_policy_collection.
      */
-    readonly webAppAccelerationPolicyCollections: outputs.Waa.GetAppAccelerationPoliciesWebAppAccelerationPolicyCollection[];
+    readonly webAppAccelerationPolicyCollections?: outputs.Waa.GetAppAccelerationPoliciesWebAppAccelerationPolicyCollection[];
 }
 /**
  * This data source provides the list of Web App Acceleration Policies in Oracle Cloud Infrastructure Waa service.

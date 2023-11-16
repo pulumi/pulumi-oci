@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentScanConfiguration {
@@ -14,51 +16,51 @@ public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollec
      * @return The network number from which VIPs are obtained.
      * 
      */
-    private Integer networkNumber;
+    private @Nullable Integer networkNumber;
     /**
      * @return The name of the SCAN listener.
      * 
      */
-    private String scanName;
+    private @Nullable String scanName;
     /**
      * @return The port number of the SCAN listener.
      * 
      */
-    private Integer scanPort;
+    private @Nullable Integer scanPort;
     /**
      * @return The protocol of the SCAN listener.
      * 
      */
-    private String scanProtocol;
+    private @Nullable String scanProtocol;
 
     private GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentScanConfiguration() {}
     /**
      * @return The network number from which VIPs are obtained.
      * 
      */
-    public Integer networkNumber() {
-        return this.networkNumber;
+    public Optional<Integer> networkNumber() {
+        return Optional.ofNullable(this.networkNumber);
     }
     /**
      * @return The name of the SCAN listener.
      * 
      */
-    public String scanName() {
-        return this.scanName;
+    public Optional<String> scanName() {
+        return Optional.ofNullable(this.scanName);
     }
     /**
      * @return The port number of the SCAN listener.
      * 
      */
-    public Integer scanPort() {
-        return this.scanPort;
+    public Optional<Integer> scanPort() {
+        return Optional.ofNullable(this.scanPort);
     }
     /**
      * @return The protocol of the SCAN listener.
      * 
      */
-    public String scanProtocol() {
-        return this.scanProtocol;
+    public Optional<String> scanProtocol() {
+        return Optional.ofNullable(this.scanProtocol);
     }
 
     public static Builder builder() {
@@ -70,10 +72,10 @@ public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollec
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer networkNumber;
-        private String scanName;
-        private Integer scanPort;
-        private String scanProtocol;
+        private @Nullable Integer networkNumber;
+        private @Nullable String scanName;
+        private @Nullable Integer scanPort;
+        private @Nullable String scanProtocol;
         public Builder() {}
         public Builder(GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentScanConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
@@ -84,23 +86,23 @@ public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollec
         }
 
         @CustomType.Setter
-        public Builder networkNumber(Integer networkNumber) {
-            this.networkNumber = Objects.requireNonNull(networkNumber);
+        public Builder networkNumber(@Nullable Integer networkNumber) {
+            this.networkNumber = networkNumber;
             return this;
         }
         @CustomType.Setter
-        public Builder scanName(String scanName) {
-            this.scanName = Objects.requireNonNull(scanName);
+        public Builder scanName(@Nullable String scanName) {
+            this.scanName = scanName;
             return this;
         }
         @CustomType.Setter
-        public Builder scanPort(Integer scanPort) {
-            this.scanPort = Objects.requireNonNull(scanPort);
+        public Builder scanPort(@Nullable Integer scanPort) {
+            this.scanPort = scanPort;
             return this;
         }
         @CustomType.Setter
-        public Builder scanProtocol(String scanProtocol) {
-            this.scanProtocol = Objects.requireNonNull(scanProtocol);
+        public Builder scanProtocol(@Nullable String scanProtocol) {
+            this.scanProtocol = scanProtocol;
             return this;
         }
         public GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentScanConfiguration build() {

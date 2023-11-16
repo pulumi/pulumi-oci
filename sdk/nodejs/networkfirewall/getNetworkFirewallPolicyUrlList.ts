@@ -38,7 +38,7 @@ export interface GetNetworkFirewallPolicyUrlListArgs {
  * A collection of values returned by getNetworkFirewallPolicyUrlList.
  */
 export interface GetNetworkFirewallPolicyUrlListResult {
-    readonly id: string;
+    readonly id?: string;
     /**
      * Unique name identifier for the URL list.
      */
@@ -47,15 +47,15 @@ export interface GetNetworkFirewallPolicyUrlListResult {
     /**
      * OCID of the Network Firewall Policy this URL List belongs to.
      */
-    readonly parentResourceId: string;
+    readonly parentResourceId?: string;
     /**
      * Total count of URLs in the URL List
      */
-    readonly totalUrls: number;
+    readonly totalUrls?: number;
     /**
      * List of urls.
      */
-    readonly urls: outputs.NetworkFirewall.GetNetworkFirewallPolicyUrlListUrl[];
+    readonly urls?: outputs.NetworkFirewall.GetNetworkFirewallPolicyUrlListUrl[];
 }
 /**
  * This data source provides details about a specific Network Firewall Policy Url List resource in Oracle Cloud Infrastructure Network Firewall service.

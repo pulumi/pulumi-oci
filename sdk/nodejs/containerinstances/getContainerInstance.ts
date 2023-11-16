@@ -47,96 +47,96 @@ export interface GetContainerInstanceResult {
     /**
      * The availability domain to place the container instance.
      */
-    readonly availabilityDomain: string;
+    readonly availabilityDomain?: string;
     /**
      * The OCID of the compartment.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * The number of containers on the container instance.
      */
-    readonly containerCount: number;
+    readonly containerCount?: number;
     readonly containerInstanceId: string;
     /**
      * The container restart policy is applied for all containers in container instance.
      */
-    readonly containerRestartPolicy: string;
+    readonly containerRestartPolicy?: string;
     /**
      * The containers on the container instance.
      */
-    readonly containers: outputs.ContainerInstances.GetContainerInstanceContainer[];
+    readonly containers?: outputs.ContainerInstances.GetContainerInstanceContainer[];
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * DNS settings for containers.
      */
-    readonly dnsConfigs: outputs.ContainerInstances.GetContainerInstanceDnsConfig[];
+    readonly dnsConfigs?: outputs.ContainerInstances.GetContainerInstanceDnsConfig[];
     /**
      * The fault domain to place the container instance.
      */
-    readonly faultDomain: string;
+    readonly faultDomain?: string;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
      */
-    readonly gracefulShutdownTimeoutInSeconds: string;
+    readonly gracefulShutdownTimeoutInSeconds?: string;
     /**
      * An OCID that cannot be changed.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The image pulls secrets so you can access private registry to pull container images.
      */
-    readonly imagePullSecrets: outputs.ContainerInstances.GetContainerInstanceImagePullSecret[];
+    readonly imagePullSecrets?: outputs.ContainerInstances.GetContainerInstanceImagePullSecret[];
     /**
      * A message that describes the current state of the container in more detail. Can be used to provide actionable information.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * The shape of the container instance. The shape determines the number of OCPUs, amount of memory, and other resources that are allocated to a container instance.
      */
-    readonly shape: string;
+    readonly shape?: string;
     /**
      * The shape configuration for a container instance. The shape configuration determines the resources thats are available to the container instance and its containers.
      */
-    readonly shapeConfigs: outputs.ContainerInstances.GetContainerInstanceShapeConfig[];
+    readonly shapeConfigs?: outputs.ContainerInstances.GetContainerInstanceShapeConfig[];
     /**
      * The current state of the container instance.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
     /**
      * The virtual networks available to the containers in the container instance.
      */
-    readonly vnics: outputs.ContainerInstances.GetContainerInstanceVnic[];
+    readonly vnics?: outputs.ContainerInstances.GetContainerInstanceVnic[];
     /**
      * The number of volumes that are attached to the container instance.
      */
-    readonly volumeCount: number;
+    readonly volumeCount?: number;
     /**
      * A volume is a directory with data that is accessible across multiple containers in a container instance.
      */
-    readonly volumes: outputs.ContainerInstances.GetContainerInstanceVolume[];
+    readonly volumes?: outputs.ContainerInstances.GetContainerInstanceVolume[];
 }
 /**
  * This data source provides details about a specific Container Instance resource in Oracle Cloud Infrastructure Container Instances service.

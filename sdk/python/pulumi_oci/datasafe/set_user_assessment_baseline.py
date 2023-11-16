@@ -18,12 +18,6 @@ class SetUserAssessmentBaselineArgs:
                  assessment_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         """
         The set of arguments for constructing a SetUserAssessmentBaseline resource.
-        :param pulumi.Input[str] user_assessment_id: The OCID of the user assessment.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] assessment_ids: The list of OCIDs for the user assessments that need to be updated while setting the baseline.
         """
         pulumi.set(__self__, "user_assessment_id", user_assessment_id)
         if assessment_ids is not None:
@@ -32,13 +26,6 @@ class SetUserAssessmentBaselineArgs:
     @property
     @pulumi.getter(name="userAssessmentId")
     def user_assessment_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of the user assessment.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "user_assessment_id")
 
     @user_assessment_id.setter
@@ -48,9 +35,6 @@ class SetUserAssessmentBaselineArgs:
     @property
     @pulumi.getter(name="assessmentIds")
     def assessment_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        The list of OCIDs for the user assessments that need to be updated while setting the baseline.
-        """
         return pulumi.get(self, "assessment_ids")
 
     @assessment_ids.setter
@@ -65,12 +49,6 @@ class _SetUserAssessmentBaselineState:
                  user_assessment_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering SetUserAssessmentBaseline resources.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] assessment_ids: The list of OCIDs for the user assessments that need to be updated while setting the baseline.
-        :param pulumi.Input[str] user_assessment_id: The OCID of the user assessment.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if assessment_ids is not None:
             pulumi.set(__self__, "assessment_ids", assessment_ids)
@@ -80,9 +58,6 @@ class _SetUserAssessmentBaselineState:
     @property
     @pulumi.getter(name="assessmentIds")
     def assessment_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        The list of OCIDs for the user assessments that need to be updated while setting the baseline.
-        """
         return pulumi.get(self, "assessment_ids")
 
     @assessment_ids.setter
@@ -92,13 +67,6 @@ class _SetUserAssessmentBaselineState:
     @property
     @pulumi.getter(name="userAssessmentId")
     def user_assessment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the user assessment.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "user_assessment_id")
 
     @user_assessment_id.setter
@@ -115,37 +83,9 @@ class SetUserAssessmentBaseline(pulumi.CustomResource):
                  user_assessment_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Set User Assessment Baseline resource in Oracle Cloud Infrastructure Data Safe service.
-
-        Sets the saved user assessment as the baseline in the compartment where the specified assessment resides. The user assessment needs to be of type 'SAVED'.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_set_user_assessment_baseline = oci.data_safe.SetUserAssessmentBaseline("testSetUserAssessmentBaseline",
-            user_assessment_id=oci_data_safe_user_assessment["test_user_assessment"]["id"],
-            assessment_ids=var["set_user_assessment_baseline_assessment_ids"])
-        ```
-
-        ## Import
-
-        SetUserAssessmentBaseline can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:DataSafe/setUserAssessmentBaseline:SetUserAssessmentBaseline test_set_user_assessment_baseline "id"
-        ```
-
+        Create a SetUserAssessmentBaseline resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] assessment_ids: The list of OCIDs for the user assessments that need to be updated while setting the baseline.
-        :param pulumi.Input[str] user_assessment_id: The OCID of the user assessment.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -154,29 +94,7 @@ class SetUserAssessmentBaseline(pulumi.CustomResource):
                  args: SetUserAssessmentBaselineArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Set User Assessment Baseline resource in Oracle Cloud Infrastructure Data Safe service.
-
-        Sets the saved user assessment as the baseline in the compartment where the specified assessment resides. The user assessment needs to be of type 'SAVED'.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_set_user_assessment_baseline = oci.data_safe.SetUserAssessmentBaseline("testSetUserAssessmentBaseline",
-            user_assessment_id=oci_data_safe_user_assessment["test_user_assessment"]["id"],
-            assessment_ids=var["set_user_assessment_baseline_assessment_ids"])
-        ```
-
-        ## Import
-
-        SetUserAssessmentBaseline can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:DataSafe/setUserAssessmentBaseline:SetUserAssessmentBaseline test_set_user_assessment_baseline "id"
-        ```
-
+        Create a SetUserAssessmentBaseline resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param SetUserAssessmentBaselineArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -226,12 +144,6 @@ class SetUserAssessmentBaseline(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] assessment_ids: The list of OCIDs for the user assessments that need to be updated while setting the baseline.
-        :param pulumi.Input[str] user_assessment_id: The OCID of the user assessment.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -243,21 +155,11 @@ class SetUserAssessmentBaseline(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="assessmentIds")
-    def assessment_ids(self) -> pulumi.Output[Sequence[str]]:
-        """
-        The list of OCIDs for the user assessments that need to be updated while setting the baseline.
-        """
+    def assessment_ids(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "assessment_ids")
 
     @property
     @pulumi.getter(name="userAssessmentId")
     def user_assessment_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the user assessment.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "user_assessment_id")
 

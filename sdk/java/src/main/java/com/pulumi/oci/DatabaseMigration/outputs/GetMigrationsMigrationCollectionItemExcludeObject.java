@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMigrationsMigrationCollectionItemExcludeObject {
@@ -14,51 +16,51 @@ public final class GetMigrationsMigrationCollectionItemExcludeObject {
      * @return Whether an excluded table should be omitted from replication. Only valid for database objects that have are of type TABLE and that are included in the exludeObjects.
      * 
      */
-    private Boolean isOmitExcludedTableFromReplication;
+    private @Nullable Boolean isOmitExcludedTableFromReplication;
     /**
      * @return Name of the object (regular expression is allowed)
      * 
      */
-    private String object;
+    private @Nullable String object;
     /**
      * @return Owner of the object (regular expression is allowed)
      * 
      */
-    private String owner;
+    private @Nullable String owner;
     /**
      * @return Migration type.
      * 
      */
-    private String type;
+    private @Nullable String type;
 
     private GetMigrationsMigrationCollectionItemExcludeObject() {}
     /**
      * @return Whether an excluded table should be omitted from replication. Only valid for database objects that have are of type TABLE and that are included in the exludeObjects.
      * 
      */
-    public Boolean isOmitExcludedTableFromReplication() {
-        return this.isOmitExcludedTableFromReplication;
+    public Optional<Boolean> isOmitExcludedTableFromReplication() {
+        return Optional.ofNullable(this.isOmitExcludedTableFromReplication);
     }
     /**
      * @return Name of the object (regular expression is allowed)
      * 
      */
-    public String object() {
-        return this.object;
+    public Optional<String> object() {
+        return Optional.ofNullable(this.object);
     }
     /**
      * @return Owner of the object (regular expression is allowed)
      * 
      */
-    public String owner() {
-        return this.owner;
+    public Optional<String> owner() {
+        return Optional.ofNullable(this.owner);
     }
     /**
      * @return Migration type.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
 
     public static Builder builder() {
@@ -70,10 +72,10 @@ public final class GetMigrationsMigrationCollectionItemExcludeObject {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Boolean isOmitExcludedTableFromReplication;
-        private String object;
-        private String owner;
-        private String type;
+        private @Nullable Boolean isOmitExcludedTableFromReplication;
+        private @Nullable String object;
+        private @Nullable String owner;
+        private @Nullable String type;
         public Builder() {}
         public Builder(GetMigrationsMigrationCollectionItemExcludeObject defaults) {
     	      Objects.requireNonNull(defaults);
@@ -84,23 +86,23 @@ public final class GetMigrationsMigrationCollectionItemExcludeObject {
         }
 
         @CustomType.Setter
-        public Builder isOmitExcludedTableFromReplication(Boolean isOmitExcludedTableFromReplication) {
-            this.isOmitExcludedTableFromReplication = Objects.requireNonNull(isOmitExcludedTableFromReplication);
+        public Builder isOmitExcludedTableFromReplication(@Nullable Boolean isOmitExcludedTableFromReplication) {
+            this.isOmitExcludedTableFromReplication = isOmitExcludedTableFromReplication;
             return this;
         }
         @CustomType.Setter
-        public Builder object(String object) {
-            this.object = Objects.requireNonNull(object);
+        public Builder object(@Nullable String object) {
+            this.object = object;
             return this;
         }
         @CustomType.Setter
-        public Builder owner(String owner) {
-            this.owner = Objects.requireNonNull(owner);
+        public Builder owner(@Nullable String owner) {
+            this.owner = owner;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         public GetMigrationsMigrationCollectionItemExcludeObject build() {

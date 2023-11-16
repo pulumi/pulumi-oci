@@ -60,9 +60,6 @@ class GetOnpremConnectorsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment that contains the on-premises connector.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -73,9 +70,6 @@ class GetOnpremConnectorsResult:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        The display name of the on-premises connector.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -85,7 +79,7 @@ class GetOnpremConnectorsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -103,10 +97,7 @@ class GetOnpremConnectorsResult:
 
     @property
     @pulumi.getter(name="onPremConnectors")
-    def on_prem_connectors(self) -> Sequence['outputs.GetOnpremConnectorsOnPremConnectorResult']:
-        """
-        The list of on_prem_connectors.
-        """
+    def on_prem_connectors(self) -> Optional[Sequence['outputs.GetOnpremConnectorsOnPremConnectorResult']]:
         return pulumi.get(self, "on_prem_connectors")
 
 
@@ -136,31 +127,7 @@ def get_onprem_connectors(access_level: Optional[str] = None,
                           on_prem_connector_lifecycle_state: Optional[str] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetOnpremConnectorsResult:
     """
-    This data source provides the list of On Prem Connectors in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets a list of on-premises connectors.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_on_prem_connectors = oci.DataSafe.get_onprem_connectors(compartment_id=var["compartment_id"],
-        access_level=var["on_prem_connector_access_level"],
-        compartment_id_in_subtree=var["on_prem_connector_compartment_id_in_subtree"],
-        display_name=var["on_prem_connector_display_name"],
-        on_prem_connector_id=oci_data_safe_on_prem_connector["test_on_prem_connector"]["id"],
-        on_prem_connector_lifecycle_state=var["on_prem_connector_on_prem_connector_lifecycle_state"])
-    ```
-
-
-    :param str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
-    :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
-    :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
-    :param str display_name: A filter to return only resources that match the specified display name.
-    :param str on_prem_connector_id: A filter to return only the on-premises connector that matches the specified id.
-    :param str on_prem_connector_lifecycle_state: A filter to return only on-premises connector resources that match the specified lifecycle state.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['accessLevel'] = access_level
@@ -195,30 +162,6 @@ def get_onprem_connectors_output(access_level: Optional[pulumi.Input[Optional[st
                                  on_prem_connector_lifecycle_state: Optional[pulumi.Input[Optional[str]]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetOnpremConnectorsResult]:
     """
-    This data source provides the list of On Prem Connectors in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets a list of on-premises connectors.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_on_prem_connectors = oci.DataSafe.get_onprem_connectors(compartment_id=var["compartment_id"],
-        access_level=var["on_prem_connector_access_level"],
-        compartment_id_in_subtree=var["on_prem_connector_compartment_id_in_subtree"],
-        display_name=var["on_prem_connector_display_name"],
-        on_prem_connector_id=oci_data_safe_on_prem_connector["test_on_prem_connector"]["id"],
-        on_prem_connector_lifecycle_state=var["on_prem_connector_on_prem_connector_lifecycle_state"])
-    ```
-
-
-    :param str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
-    :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
-    :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
-    :param str display_name: A filter to return only resources that match the specified display name.
-    :param str on_prem_connector_id: A filter to return only the on-premises connector that matches the specified id.
-    :param str on_prem_connector_lifecycle_state: A filter to return only on-premises connector resources that match the specified lifecycle state.
+    Use this data source to access information about an existing resource.
     """
     ...

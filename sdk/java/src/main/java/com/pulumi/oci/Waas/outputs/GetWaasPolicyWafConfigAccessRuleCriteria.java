@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetWaasPolicyWafConfigAccessRuleCriteria {
@@ -35,7 +37,7 @@ public final class GetWaasPolicyWafConfigAccessRuleCriteria {
      * @return When enabled, the condition will be matched with case-sensitive rules.
      * 
      */
-    private Boolean isCaseSensitive;
+    private @Nullable Boolean isCaseSensitive;
     /**
      * @return The value of the header.
      * 
@@ -70,8 +72,8 @@ public final class GetWaasPolicyWafConfigAccessRuleCriteria {
      * @return When enabled, the condition will be matched with case-sensitive rules.
      * 
      */
-    public Boolean isCaseSensitive() {
-        return this.isCaseSensitive;
+    public Optional<Boolean> isCaseSensitive() {
+        return Optional.ofNullable(this.isCaseSensitive);
     }
     /**
      * @return The value of the header.
@@ -91,7 +93,7 @@ public final class GetWaasPolicyWafConfigAccessRuleCriteria {
     @CustomType.Builder
     public static final class Builder {
         private String condition;
-        private Boolean isCaseSensitive;
+        private @Nullable Boolean isCaseSensitive;
         private String value;
         public Builder() {}
         public Builder(GetWaasPolicyWafConfigAccessRuleCriteria defaults) {
@@ -107,8 +109,8 @@ public final class GetWaasPolicyWafConfigAccessRuleCriteria {
             return this;
         }
         @CustomType.Setter
-        public Builder isCaseSensitive(Boolean isCaseSensitive) {
-            this.isCaseSensitive = Objects.requireNonNull(isCaseSensitive);
+        public Builder isCaseSensitive(@Nullable Boolean isCaseSensitive) {
+            this.isCaseSensitive = isCaseSensitive;
             return this;
         }
         @CustomType.Setter

@@ -17,12 +17,12 @@ public final class GetManagedDatabaseUserConsumerGroupPrivilegeResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return An array of consumer group privileges.
      * 
      */
-    private List<GetManagedDatabaseUserConsumerGroupPrivilegeItem> items;
+    private @Nullable List<GetManagedDatabaseUserConsumerGroupPrivilegeItem> items;
     private String managedDatabaseId;
     /**
      * @return The name of the granted consumer group privilege.
@@ -36,15 +36,15 @@ public final class GetManagedDatabaseUserConsumerGroupPrivilegeResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return An array of consumer group privileges.
      * 
      */
     public List<GetManagedDatabaseUserConsumerGroupPrivilegeItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
     public String managedDatabaseId() {
         return this.managedDatabaseId;
@@ -69,8 +69,8 @@ public final class GetManagedDatabaseUserConsumerGroupPrivilegeResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String id;
-        private List<GetManagedDatabaseUserConsumerGroupPrivilegeItem> items;
+        private @Nullable String id;
+        private @Nullable List<GetManagedDatabaseUserConsumerGroupPrivilegeItem> items;
         private String managedDatabaseId;
         private @Nullable String name;
         private String userName;
@@ -85,13 +85,13 @@ public final class GetManagedDatabaseUserConsumerGroupPrivilegeResult {
         }
 
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder items(List<GetManagedDatabaseUserConsumerGroupPrivilegeItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetManagedDatabaseUserConsumerGroupPrivilegeItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetManagedDatabaseUserConsumerGroupPrivilegeItem... items) {

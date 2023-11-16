@@ -156,28 +156,28 @@ public class NetworkFirewallPolicyDecryptionRule extends com.pulumi.resources.Cu
      * 
      */
     @Export(name="parentResourceId", refs={String.class}, tree="[0]")
-    private Output<String> parentResourceId;
+    private Output</* @Nullable */ String> parentResourceId;
 
     /**
      * @return OCID of the Network Firewall Policy this decryption rule belongs to.
      * 
      */
-    public Output<String> parentResourceId() {
-        return this.parentResourceId;
+    public Output<Optional<String>> parentResourceId() {
+        return Codegen.optional(this.parentResourceId);
     }
     /**
      * (Updatable) An object which defines the position of the rule. Only one of `after_rule` or `before_rule` should be provided.
      * 
      */
     @Export(name="position", refs={NetworkFirewallPolicyDecryptionRulePosition.class}, tree="[0]")
-    private Output<NetworkFirewallPolicyDecryptionRulePosition> position;
+    private Output</* @Nullable */ NetworkFirewallPolicyDecryptionRulePosition> position;
 
     /**
      * @return (Updatable) An object which defines the position of the rule. Only one of `after_rule` or `before_rule` should be provided.
      * 
      */
-    public Output<NetworkFirewallPolicyDecryptionRulePosition> position() {
-        return this.position;
+    public Output<Optional<NetworkFirewallPolicyDecryptionRulePosition>> position() {
+        return Codegen.optional(this.position);
     }
     @Export(name="priorityOrder", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> priorityOrder;

@@ -70,74 +70,47 @@ class GetPrivateEndpointResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this private endpoint details.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Description of the private endpoint. Avoid entering confidential information.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="dnsZones")
-    def dns_zones(self) -> Sequence[str]:
-        """
-        DNS Proxy forwards any DNS FQDN queries over into the consumer DNS resolver if the DNS FQDN is included in the dns zones list otherwise it goes to service provider VCN resolver.
-        """
+    def dns_zones(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "dns_zones")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags associated with the resource. Each tag is a key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        Unique identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the private endpoint details.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isUsedWithConfigurationSourceProvider")
-    def is_used_with_configuration_source_provider(self) -> bool:
-        """
-        When `true`, allows the private endpoint to be used with a configuration source provider.
-        """
+    def is_used_with_configuration_source_provider(self) -> Optional[bool]:
         return pulumi.get(self, "is_used_with_configuration_source_provider")
 
     @property
     @pulumi.getter(name="nsgIdLists")
-    def nsg_id_lists(self) -> Sequence[str]:
-        """
-        An array of network security groups (NSG) that the customer can optionally provide.
-        """
+    def nsg_id_lists(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "nsg_id_lists")
 
     @property
@@ -147,42 +120,27 @@ class GetPrivateEndpointResult:
 
     @property
     @pulumi.getter(name="sourceIps")
-    def source_ips(self) -> Sequence[str]:
-        """
-        The source IPs which resource manager service will use to connect to customer's network. Automatically assigned by Resource Manager Service.
-        """
+    def source_ips(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "source_ips")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current lifecycle state of the private endpoint.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet within the VCN for the private endpoint.
-        """
+    def subnet_id(self) -> Optional[str]:
         return pulumi.get(self, "subnet_id")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time at which the private endpoint was created. Format is defined by RFC3339. Example: `2020-11-25T21:10:29.600Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="vcnId")
-    def vcn_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN for the private endpoint.
-        """
+    def vcn_id(self) -> Optional[str]:
         return pulumi.get(self, "vcn_id")
 
 
@@ -212,21 +170,7 @@ class AwaitableGetPrivateEndpointResult(GetPrivateEndpointResult):
 def get_private_endpoint(private_endpoint_id: Optional[str] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPrivateEndpointResult:
     """
-    This data source provides details about a specific Private Endpoint resource in Oracle Cloud Infrastructure Resource Manager service.
-
-    Gets the specified private endpoint.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_private_endpoint = oci.ResourceManager.get_private_endpoint(private_endpoint_id=oci_resourcemanager_private_endpoint["test_private_endpoint"]["id"])
-    ```
-
-
-    :param str private_endpoint_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['privateEndpointId'] = private_endpoint_id
@@ -255,20 +199,6 @@ def get_private_endpoint(private_endpoint_id: Optional[str] = None,
 def get_private_endpoint_output(private_endpoint_id: Optional[pulumi.Input[str]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPrivateEndpointResult]:
     """
-    This data source provides details about a specific Private Endpoint resource in Oracle Cloud Infrastructure Resource Manager service.
-
-    Gets the specified private endpoint.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_private_endpoint = oci.ResourceManager.get_private_endpoint(private_endpoint_id=oci_resourcemanager_private_endpoint["test_private_endpoint"]["id"])
-    ```
-
-
-    :param str private_endpoint_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -11,6 +11,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMysqlBackupResult {
@@ -19,97 +21,97 @@ public final class GetMysqlBackupResult {
      * @return The size of the backup in base-2 (IEC) gibibytes. (GiB).
      * 
      */
-    private Integer backupSizeInGbs;
+    private @Nullable Integer backupSizeInGbs;
     /**
      * @return The type of backup.
      * 
      */
-    private String backupType;
+    private @Nullable String backupType;
     /**
      * @return The OCID of the compartment the DB System belongs in.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Indicates how the backup was created: manually, automatic, or by an Operator.
      * 
      */
-    private String creationType;
+    private @Nullable String creationType;
     /**
      * @return Initial size of the data volume in GiBs that will be created and attached.
      * 
      */
-    private Integer dataStorageSizeInGb;
+    private @Nullable Integer dataStorageSizeInGb;
     /**
      * @return The OCID of the DB System the backup is associated with.
      * 
      */
-    private String dbSystemId;
+    private @Nullable String dbSystemId;
     /**
      * @return Snapshot of the DbSystem details at the time of the backup
      * 
      */
-    private List<GetMysqlBackupDbSystemSnapshot> dbSystemSnapshots;
+    private @Nullable List<GetMysqlBackupDbSystemSnapshot> dbSystemSnapshots;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return A user-supplied description for the backup.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return A user-supplied display name for the backup.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return OCID of the backup itself
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Additional information about the current lifecycleState.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return The MySQL server version of the DB System used for backup.
      * 
      */
-    private String mysqlVersion;
+    private @Nullable String mysqlVersion;
     /**
      * @return Number of days to retain this backup.
      * 
      */
-    private Integer retentionInDays;
+    private @Nullable Integer retentionInDays;
     /**
      * @return The shape of the DB System instance used for backup.
      * 
      */
-    private String shapeName;
+    private @Nullable String shapeName;
     /**
      * @return The state of the backup.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The time the backup record was created.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The time at which the backup was updated.
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
 
     private GetMysqlBackupResult() {}
     public String backupId() {
@@ -119,134 +121,134 @@ public final class GetMysqlBackupResult {
      * @return The size of the backup in base-2 (IEC) gibibytes. (GiB).
      * 
      */
-    public Integer backupSizeInGbs() {
-        return this.backupSizeInGbs;
+    public Optional<Integer> backupSizeInGbs() {
+        return Optional.ofNullable(this.backupSizeInGbs);
     }
     /**
      * @return The type of backup.
      * 
      */
-    public String backupType() {
-        return this.backupType;
+    public Optional<String> backupType() {
+        return Optional.ofNullable(this.backupType);
     }
     /**
      * @return The OCID of the compartment the DB System belongs in.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Indicates how the backup was created: manually, automatic, or by an Operator.
      * 
      */
-    public String creationType() {
-        return this.creationType;
+    public Optional<String> creationType() {
+        return Optional.ofNullable(this.creationType);
     }
     /**
      * @return Initial size of the data volume in GiBs that will be created and attached.
      * 
      */
-    public Integer dataStorageSizeInGb() {
-        return this.dataStorageSizeInGb;
+    public Optional<Integer> dataStorageSizeInGb() {
+        return Optional.ofNullable(this.dataStorageSizeInGb);
     }
     /**
      * @return The OCID of the DB System the backup is associated with.
      * 
      */
-    public String dbSystemId() {
-        return this.dbSystemId;
+    public Optional<String> dbSystemId() {
+        return Optional.ofNullable(this.dbSystemId);
     }
     /**
      * @return Snapshot of the DbSystem details at the time of the backup
      * 
      */
     public List<GetMysqlBackupDbSystemSnapshot> dbSystemSnapshots() {
-        return this.dbSystemSnapshots;
+        return this.dbSystemSnapshots == null ? List.of() : this.dbSystemSnapshots;
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return A user-supplied description for the backup.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return A user-supplied display name for the backup.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return OCID of the backup itself
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Additional information about the current lifecycleState.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return The MySQL server version of the DB System used for backup.
      * 
      */
-    public String mysqlVersion() {
-        return this.mysqlVersion;
+    public Optional<String> mysqlVersion() {
+        return Optional.ofNullable(this.mysqlVersion);
     }
     /**
      * @return Number of days to retain this backup.
      * 
      */
-    public Integer retentionInDays() {
-        return this.retentionInDays;
+    public Optional<Integer> retentionInDays() {
+        return Optional.ofNullable(this.retentionInDays);
     }
     /**
      * @return The shape of the DB System instance used for backup.
      * 
      */
-    public String shapeName() {
-        return this.shapeName;
+    public Optional<String> shapeName() {
+        return Optional.ofNullable(this.shapeName);
     }
     /**
      * @return The state of the backup.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The time the backup record was created.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The time at which the backup was updated.
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
 
     public static Builder builder() {
@@ -259,25 +261,25 @@ public final class GetMysqlBackupResult {
     @CustomType.Builder
     public static final class Builder {
         private String backupId;
-        private Integer backupSizeInGbs;
-        private String backupType;
-        private String compartmentId;
-        private String creationType;
-        private Integer dataStorageSizeInGb;
-        private String dbSystemId;
-        private List<GetMysqlBackupDbSystemSnapshot> dbSystemSnapshots;
-        private Map<String,Object> definedTags;
-        private String description;
-        private String displayName;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private String lifecycleDetails;
-        private String mysqlVersion;
-        private Integer retentionInDays;
-        private String shapeName;
-        private String state;
-        private String timeCreated;
-        private String timeUpdated;
+        private @Nullable Integer backupSizeInGbs;
+        private @Nullable String backupType;
+        private @Nullable String compartmentId;
+        private @Nullable String creationType;
+        private @Nullable Integer dataStorageSizeInGb;
+        private @Nullable String dbSystemId;
+        private @Nullable List<GetMysqlBackupDbSystemSnapshot> dbSystemSnapshots;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String description;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable String lifecycleDetails;
+        private @Nullable String mysqlVersion;
+        private @Nullable Integer retentionInDays;
+        private @Nullable String shapeName;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
         public Builder() {}
         public Builder(GetMysqlBackupResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -309,101 +311,101 @@ public final class GetMysqlBackupResult {
             return this;
         }
         @CustomType.Setter
-        public Builder backupSizeInGbs(Integer backupSizeInGbs) {
-            this.backupSizeInGbs = Objects.requireNonNull(backupSizeInGbs);
+        public Builder backupSizeInGbs(@Nullable Integer backupSizeInGbs) {
+            this.backupSizeInGbs = backupSizeInGbs;
             return this;
         }
         @CustomType.Setter
-        public Builder backupType(String backupType) {
-            this.backupType = Objects.requireNonNull(backupType);
+        public Builder backupType(@Nullable String backupType) {
+            this.backupType = backupType;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder creationType(String creationType) {
-            this.creationType = Objects.requireNonNull(creationType);
+        public Builder creationType(@Nullable String creationType) {
+            this.creationType = creationType;
             return this;
         }
         @CustomType.Setter
-        public Builder dataStorageSizeInGb(Integer dataStorageSizeInGb) {
-            this.dataStorageSizeInGb = Objects.requireNonNull(dataStorageSizeInGb);
+        public Builder dataStorageSizeInGb(@Nullable Integer dataStorageSizeInGb) {
+            this.dataStorageSizeInGb = dataStorageSizeInGb;
             return this;
         }
         @CustomType.Setter
-        public Builder dbSystemId(String dbSystemId) {
-            this.dbSystemId = Objects.requireNonNull(dbSystemId);
+        public Builder dbSystemId(@Nullable String dbSystemId) {
+            this.dbSystemId = dbSystemId;
             return this;
         }
         @CustomType.Setter
-        public Builder dbSystemSnapshots(List<GetMysqlBackupDbSystemSnapshot> dbSystemSnapshots) {
-            this.dbSystemSnapshots = Objects.requireNonNull(dbSystemSnapshots);
+        public Builder dbSystemSnapshots(@Nullable List<GetMysqlBackupDbSystemSnapshot> dbSystemSnapshots) {
+            this.dbSystemSnapshots = dbSystemSnapshots;
             return this;
         }
         public Builder dbSystemSnapshots(GetMysqlBackupDbSystemSnapshot... dbSystemSnapshots) {
             return dbSystemSnapshots(List.of(dbSystemSnapshots));
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder mysqlVersion(String mysqlVersion) {
-            this.mysqlVersion = Objects.requireNonNull(mysqlVersion);
+        public Builder mysqlVersion(@Nullable String mysqlVersion) {
+            this.mysqlVersion = mysqlVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder retentionInDays(Integer retentionInDays) {
-            this.retentionInDays = Objects.requireNonNull(retentionInDays);
+        public Builder retentionInDays(@Nullable Integer retentionInDays) {
+            this.retentionInDays = retentionInDays;
             return this;
         }
         @CustomType.Setter
-        public Builder shapeName(String shapeName) {
-            this.shapeName = Objects.requireNonNull(shapeName);
+        public Builder shapeName(@Nullable String shapeName) {
+            this.shapeName = shapeName;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetMysqlBackupResult build() {

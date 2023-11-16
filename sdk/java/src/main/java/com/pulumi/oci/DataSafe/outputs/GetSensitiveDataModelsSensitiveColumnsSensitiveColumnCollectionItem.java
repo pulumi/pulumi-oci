@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItem {
@@ -14,17 +16,17 @@ public final class GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollecti
      * @return Unique keys identifying the columns that are application-level (non-dictionary) children of the sensitive column.
      * 
      */
-    private List<String> appDefinedChildColumnKeys;
+    private @Nullable List<String> appDefinedChildColumnKeys;
     /**
      * @return The name of the application associated with the sensitive column. It&#39;s useful when the application name is different from the schema name. Otherwise, it can be ignored.
      * 
      */
-    private String appName;
+    private @Nullable String appName;
     /**
      * @return The composite key groups to which the sensitive column belongs. If the column is part of a composite key, it&#39;s assigned a column group. It helps identify and manage referential relationships that involve composite keys.
      * 
      */
-    private List<String> columnGroups;
+    private @Nullable List<String> columnGroups;
     /**
      * @return A filter to return only a specific column based on column name.
      * 
@@ -34,27 +36,27 @@ public final class GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollecti
      * @return A filter to return only the resources that match the specified data types.
      * 
      */
-    private String dataType;
+    private @Nullable String dataType;
     /**
      * @return Unique keys identifying the columns that are database-level (dictionary-defined) children of the sensitive column.
      * 
      */
-    private List<String> dbDefinedChildColumnKeys;
+    private @Nullable List<String> dbDefinedChildColumnKeys;
     /**
      * @return The estimated number of data values the column has in the associated database.
      * 
      */
-    private String estimatedDataValueCount;
+    private @Nullable String estimatedDataValueCount;
     /**
      * @return The unique key that identifies the sensitive column. It&#39;s numeric and unique within a sensitive data model.
      * 
      */
-    private String key;
+    private @Nullable String key;
     /**
      * @return Details about the current state of the sensitive column.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return A filter to return only items related to a specific object name.
      * 
@@ -64,22 +66,22 @@ public final class GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollecti
      * @return A filter to return only items related to a specific object type.
      * 
      */
-    private String objectType;
+    private @Nullable String objectType;
     /**
      * @return Unique keys identifying the columns that are parents of the sensitive column. At present, it tracks a single parent only.
      * 
      */
-    private List<String> parentColumnKeys;
+    private @Nullable List<String> parentColumnKeys;
     /**
      * @return A filter to return sensitive columns based on their relationship with their parent columns. If set to NONE, it returns the sensitive columns that do not have any parent. The response includes the parent columns as well as the independent columns that are not in any relationship. If set to APP_DEFINED, it returns all the child columns that have application-level (non-dictionary) relationship with their parents. If set to DB_DEFINED, it returns all the child columns that have database-level (dictionary-defined) relationship with their parents.
      * 
      */
-    private String relationType;
+    private @Nullable String relationType;
     /**
      * @return Original data values collected for the sensitive column from the associated database. Sample data helps review the column and ensure that it actually contains sensitive data. Note that sample data is retrieved by a data discovery job only if the isSampleDataCollectionEnabled attribute is set to true. At present, only one data value is collected per sensitive column.
      * 
      */
-    private List<String> sampleDataValues;
+    private @Nullable List<String> sampleDataValues;
     /**
      * @return A filter to return only items related to specific schema name.
      * 
@@ -94,32 +96,32 @@ public final class GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollecti
      * @return A filter to return only the sensitive columns that are associated with one of the sensitive types identified by the specified OCIDs.
      * 
      */
-    private String sensitiveTypeId;
+    private @Nullable String sensitiveTypeId;
     /**
      * @return The source of the sensitive column. DISCOVERY indicates that the column was added to the sensitive data model using a data discovery job. MANUAL indicates that the column was added manually.
      * 
      */
-    private String source;
+    private @Nullable String source;
     /**
      * @return The current state of the sensitive column.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return A filter to return only the sensitive columns that match the specified status.
      * 
      */
-    private String status;
+    private @Nullable String status;
     /**
      * @return The date and time, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339), the sensitive column was created in the sensitive data model.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The date and time, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339), the sensitive column was last updated in the sensitive data model.
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
 
     private GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItem() {}
     /**
@@ -127,21 +129,21 @@ public final class GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollecti
      * 
      */
     public List<String> appDefinedChildColumnKeys() {
-        return this.appDefinedChildColumnKeys;
+        return this.appDefinedChildColumnKeys == null ? List.of() : this.appDefinedChildColumnKeys;
     }
     /**
      * @return The name of the application associated with the sensitive column. It&#39;s useful when the application name is different from the schema name. Otherwise, it can be ignored.
      * 
      */
-    public String appName() {
-        return this.appName;
+    public Optional<String> appName() {
+        return Optional.ofNullable(this.appName);
     }
     /**
      * @return The composite key groups to which the sensitive column belongs. If the column is part of a composite key, it&#39;s assigned a column group. It helps identify and manage referential relationships that involve composite keys.
      * 
      */
     public List<String> columnGroups() {
-        return this.columnGroups;
+        return this.columnGroups == null ? List.of() : this.columnGroups;
     }
     /**
      * @return A filter to return only a specific column based on column name.
@@ -154,36 +156,36 @@ public final class GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollecti
      * @return A filter to return only the resources that match the specified data types.
      * 
      */
-    public String dataType() {
-        return this.dataType;
+    public Optional<String> dataType() {
+        return Optional.ofNullable(this.dataType);
     }
     /**
      * @return Unique keys identifying the columns that are database-level (dictionary-defined) children of the sensitive column.
      * 
      */
     public List<String> dbDefinedChildColumnKeys() {
-        return this.dbDefinedChildColumnKeys;
+        return this.dbDefinedChildColumnKeys == null ? List.of() : this.dbDefinedChildColumnKeys;
     }
     /**
      * @return The estimated number of data values the column has in the associated database.
      * 
      */
-    public String estimatedDataValueCount() {
-        return this.estimatedDataValueCount;
+    public Optional<String> estimatedDataValueCount() {
+        return Optional.ofNullable(this.estimatedDataValueCount);
     }
     /**
      * @return The unique key that identifies the sensitive column. It&#39;s numeric and unique within a sensitive data model.
      * 
      */
-    public String key() {
-        return this.key;
+    public Optional<String> key() {
+        return Optional.ofNullable(this.key);
     }
     /**
      * @return Details about the current state of the sensitive column.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return A filter to return only items related to a specific object name.
@@ -196,29 +198,29 @@ public final class GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollecti
      * @return A filter to return only items related to a specific object type.
      * 
      */
-    public String objectType() {
-        return this.objectType;
+    public Optional<String> objectType() {
+        return Optional.ofNullable(this.objectType);
     }
     /**
      * @return Unique keys identifying the columns that are parents of the sensitive column. At present, it tracks a single parent only.
      * 
      */
     public List<String> parentColumnKeys() {
-        return this.parentColumnKeys;
+        return this.parentColumnKeys == null ? List.of() : this.parentColumnKeys;
     }
     /**
      * @return A filter to return sensitive columns based on their relationship with their parent columns. If set to NONE, it returns the sensitive columns that do not have any parent. The response includes the parent columns as well as the independent columns that are not in any relationship. If set to APP_DEFINED, it returns all the child columns that have application-level (non-dictionary) relationship with their parents. If set to DB_DEFINED, it returns all the child columns that have database-level (dictionary-defined) relationship with their parents.
      * 
      */
-    public String relationType() {
-        return this.relationType;
+    public Optional<String> relationType() {
+        return Optional.ofNullable(this.relationType);
     }
     /**
      * @return Original data values collected for the sensitive column from the associated database. Sample data helps review the column and ensure that it actually contains sensitive data. Note that sample data is retrieved by a data discovery job only if the isSampleDataCollectionEnabled attribute is set to true. At present, only one data value is collected per sensitive column.
      * 
      */
     public List<String> sampleDataValues() {
-        return this.sampleDataValues;
+        return this.sampleDataValues == null ? List.of() : this.sampleDataValues;
     }
     /**
      * @return A filter to return only items related to specific schema name.
@@ -238,43 +240,43 @@ public final class GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollecti
      * @return A filter to return only the sensitive columns that are associated with one of the sensitive types identified by the specified OCIDs.
      * 
      */
-    public String sensitiveTypeId() {
-        return this.sensitiveTypeId;
+    public Optional<String> sensitiveTypeId() {
+        return Optional.ofNullable(this.sensitiveTypeId);
     }
     /**
      * @return The source of the sensitive column. DISCOVERY indicates that the column was added to the sensitive data model using a data discovery job. MANUAL indicates that the column was added manually.
      * 
      */
-    public String source() {
-        return this.source;
+    public Optional<String> source() {
+        return Optional.ofNullable(this.source);
     }
     /**
      * @return The current state of the sensitive column.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return A filter to return only the sensitive columns that match the specified status.
      * 
      */
-    public String status() {
-        return this.status;
+    public Optional<String> status() {
+        return Optional.ofNullable(this.status);
     }
     /**
      * @return The date and time, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339), the sensitive column was created in the sensitive data model.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The date and time, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339), the sensitive column was last updated in the sensitive data model.
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
 
     public static Builder builder() {
@@ -286,28 +288,28 @@ public final class GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollecti
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> appDefinedChildColumnKeys;
-        private String appName;
-        private List<String> columnGroups;
+        private @Nullable List<String> appDefinedChildColumnKeys;
+        private @Nullable String appName;
+        private @Nullable List<String> columnGroups;
         private String columnName;
-        private String dataType;
-        private List<String> dbDefinedChildColumnKeys;
-        private String estimatedDataValueCount;
-        private String key;
-        private String lifecycleDetails;
+        private @Nullable String dataType;
+        private @Nullable List<String> dbDefinedChildColumnKeys;
+        private @Nullable String estimatedDataValueCount;
+        private @Nullable String key;
+        private @Nullable String lifecycleDetails;
         private String object;
-        private String objectType;
-        private List<String> parentColumnKeys;
-        private String relationType;
-        private List<String> sampleDataValues;
+        private @Nullable String objectType;
+        private @Nullable List<String> parentColumnKeys;
+        private @Nullable String relationType;
+        private @Nullable List<String> sampleDataValues;
         private String schemaName;
         private String sensitiveDataModelId;
-        private String sensitiveTypeId;
-        private String source;
-        private String state;
-        private String status;
-        private String timeCreated;
-        private String timeUpdated;
+        private @Nullable String sensitiveTypeId;
+        private @Nullable String source;
+        private @Nullable String state;
+        private @Nullable String status;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
         public Builder() {}
         public Builder(GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -336,21 +338,21 @@ public final class GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollecti
         }
 
         @CustomType.Setter
-        public Builder appDefinedChildColumnKeys(List<String> appDefinedChildColumnKeys) {
-            this.appDefinedChildColumnKeys = Objects.requireNonNull(appDefinedChildColumnKeys);
+        public Builder appDefinedChildColumnKeys(@Nullable List<String> appDefinedChildColumnKeys) {
+            this.appDefinedChildColumnKeys = appDefinedChildColumnKeys;
             return this;
         }
         public Builder appDefinedChildColumnKeys(String... appDefinedChildColumnKeys) {
             return appDefinedChildColumnKeys(List.of(appDefinedChildColumnKeys));
         }
         @CustomType.Setter
-        public Builder appName(String appName) {
-            this.appName = Objects.requireNonNull(appName);
+        public Builder appName(@Nullable String appName) {
+            this.appName = appName;
             return this;
         }
         @CustomType.Setter
-        public Builder columnGroups(List<String> columnGroups) {
-            this.columnGroups = Objects.requireNonNull(columnGroups);
+        public Builder columnGroups(@Nullable List<String> columnGroups) {
+            this.columnGroups = columnGroups;
             return this;
         }
         public Builder columnGroups(String... columnGroups) {
@@ -362,31 +364,31 @@ public final class GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollecti
             return this;
         }
         @CustomType.Setter
-        public Builder dataType(String dataType) {
-            this.dataType = Objects.requireNonNull(dataType);
+        public Builder dataType(@Nullable String dataType) {
+            this.dataType = dataType;
             return this;
         }
         @CustomType.Setter
-        public Builder dbDefinedChildColumnKeys(List<String> dbDefinedChildColumnKeys) {
-            this.dbDefinedChildColumnKeys = Objects.requireNonNull(dbDefinedChildColumnKeys);
+        public Builder dbDefinedChildColumnKeys(@Nullable List<String> dbDefinedChildColumnKeys) {
+            this.dbDefinedChildColumnKeys = dbDefinedChildColumnKeys;
             return this;
         }
         public Builder dbDefinedChildColumnKeys(String... dbDefinedChildColumnKeys) {
             return dbDefinedChildColumnKeys(List.of(dbDefinedChildColumnKeys));
         }
         @CustomType.Setter
-        public Builder estimatedDataValueCount(String estimatedDataValueCount) {
-            this.estimatedDataValueCount = Objects.requireNonNull(estimatedDataValueCount);
+        public Builder estimatedDataValueCount(@Nullable String estimatedDataValueCount) {
+            this.estimatedDataValueCount = estimatedDataValueCount;
             return this;
         }
         @CustomType.Setter
-        public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
+        public Builder key(@Nullable String key) {
+            this.key = key;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
@@ -395,26 +397,26 @@ public final class GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollecti
             return this;
         }
         @CustomType.Setter
-        public Builder objectType(String objectType) {
-            this.objectType = Objects.requireNonNull(objectType);
+        public Builder objectType(@Nullable String objectType) {
+            this.objectType = objectType;
             return this;
         }
         @CustomType.Setter
-        public Builder parentColumnKeys(List<String> parentColumnKeys) {
-            this.parentColumnKeys = Objects.requireNonNull(parentColumnKeys);
+        public Builder parentColumnKeys(@Nullable List<String> parentColumnKeys) {
+            this.parentColumnKeys = parentColumnKeys;
             return this;
         }
         public Builder parentColumnKeys(String... parentColumnKeys) {
             return parentColumnKeys(List.of(parentColumnKeys));
         }
         @CustomType.Setter
-        public Builder relationType(String relationType) {
-            this.relationType = Objects.requireNonNull(relationType);
+        public Builder relationType(@Nullable String relationType) {
+            this.relationType = relationType;
             return this;
         }
         @CustomType.Setter
-        public Builder sampleDataValues(List<String> sampleDataValues) {
-            this.sampleDataValues = Objects.requireNonNull(sampleDataValues);
+        public Builder sampleDataValues(@Nullable List<String> sampleDataValues) {
+            this.sampleDataValues = sampleDataValues;
             return this;
         }
         public Builder sampleDataValues(String... sampleDataValues) {
@@ -431,33 +433,33 @@ public final class GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollecti
             return this;
         }
         @CustomType.Setter
-        public Builder sensitiveTypeId(String sensitiveTypeId) {
-            this.sensitiveTypeId = Objects.requireNonNull(sensitiveTypeId);
+        public Builder sensitiveTypeId(@Nullable String sensitiveTypeId) {
+            this.sensitiveTypeId = sensitiveTypeId;
             return this;
         }
         @CustomType.Setter
-        public Builder source(String source) {
-            this.source = Objects.requireNonNull(source);
+        public Builder source(@Nullable String source) {
+            this.source = source;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+        public Builder status(@Nullable String status) {
+            this.status = status;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItem build() {

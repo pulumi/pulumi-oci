@@ -145,7 +145,7 @@ namespace Pulumi.Oci.StackMonitoring
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The list of monitored_resource_tasks_collection.
         /// </summary>
@@ -158,7 +158,7 @@ namespace Pulumi.Oci.StackMonitoring
 
             ImmutableArray<Outputs.GetMonitoredResourceTasksFilterResult> filters,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetMonitoredResourceTasksMonitoredResourceTasksCollectionResult> monitoredResourceTasksCollections,
 

@@ -116,10 +116,6 @@ class ConfigAvailabilityConfiguration(dict):
     def __init__(__self__, *,
                  max_allowed_failures_per_interval: Optional[int] = None,
                  min_allowed_runs_per_interval: Optional[int] = None):
-        """
-        :param int max_allowed_failures_per_interval: (Updatable) Intervals with failed runs more than this value will be classified as UNAVAILABLE.
-        :param int min_allowed_runs_per_interval: (Updatable) Intervals with runs less than this value will be classified as UNKNOWN and excluded from the availability calculations.
-        """
         if max_allowed_failures_per_interval is not None:
             pulumi.set(__self__, "max_allowed_failures_per_interval", max_allowed_failures_per_interval)
         if min_allowed_runs_per_interval is not None:
@@ -128,17 +124,11 @@ class ConfigAvailabilityConfiguration(dict):
     @property
     @pulumi.getter(name="maxAllowedFailuresPerInterval")
     def max_allowed_failures_per_interval(self) -> Optional[int]:
-        """
-        (Updatable) Intervals with failed runs more than this value will be classified as UNAVAILABLE.
-        """
         return pulumi.get(self, "max_allowed_failures_per_interval")
 
     @property
     @pulumi.getter(name="minAllowedRunsPerInterval")
     def min_allowed_runs_per_interval(self) -> Optional[int]:
-        """
-        (Updatable) Intervals with runs less than this value will be classified as UNKNOWN and excluded from the availability calculations.
-        """
         return pulumi.get(self, "min_allowed_runs_per_interval")
 
 
@@ -211,25 +201,6 @@ class ConfigConfiguration(dict):
                  verify_response_codes: Optional[Sequence[str]] = None,
                  verify_response_content: Optional[str] = None,
                  verify_texts: Optional[Sequence['outputs.ConfigConfigurationVerifyText']] = None):
-        """
-        :param 'ConfigConfigurationClientCertificateDetailsArgs' client_certificate_details: (Updatable) Details for client certificate.
-        :param str config_type: (Updatable) Type of configuration.
-        :param 'ConfigConfigurationDnsConfigurationArgs' dns_configuration: (Updatable) Information about the DNS settings.
-        :param bool is_certificate_validation_enabled: (Updatable) If certificate validation is enabled, then the call will fail in case of certification errors.
-        :param bool is_default_snapshot_enabled: (Updatable) If disabled, auto snapshots are not collected.
-        :param bool is_failure_retried: (Updatable) If isFailureRetried is enabled, then a failed call will be retried.
-        :param bool is_redirection_enabled: (Updatable) If redirection is enabled, then redirects will be allowed while accessing target URL.
-        :param 'ConfigConfigurationNetworkConfigurationArgs' network_configuration: (Updatable) Details of the network configuration.
-        :param 'ConfigConfigurationReqAuthenticationDetailsArgs' req_authentication_details: (Updatable) Details for request HTTP authentication.
-        :param str req_authentication_scheme: (Updatable) Request HTTP authentication scheme.
-        :param Sequence['ConfigConfigurationRequestHeaderArgs'] request_headers: (Updatable) List of request headers. Example: `[{"headerName": "content-type", "headerValue":"json"}]`
-        :param str request_method: (Updatable) Request HTTP method.
-        :param str request_post_body: (Updatable) Request post body content.
-        :param Sequence['ConfigConfigurationRequestQueryParamArgs'] request_query_params: (Updatable) List of request query params. Example: `[{"paramName": "sortOrder", "paramValue": "asc"}]`
-        :param Sequence[str] verify_response_codes: (Updatable) Expected HTTP response codes. For status code range, set values such as 2xx, 3xx.
-        :param str verify_response_content: (Updatable) Verify response content against regular expression based string. If response content does not match the verifyResponseContent value, then it will be considered a failure.
-        :param Sequence['ConfigConfigurationVerifyTextArgs'] verify_texts: (Updatable) Verifies all the search strings present in the response. If any search string is not present in the response, then it will be considered as a failure.
-        """
         if client_certificate_details is not None:
             pulumi.set(__self__, "client_certificate_details", client_certificate_details)
         if config_type is not None:
@@ -268,137 +239,86 @@ class ConfigConfiguration(dict):
     @property
     @pulumi.getter(name="clientCertificateDetails")
     def client_certificate_details(self) -> Optional['outputs.ConfigConfigurationClientCertificateDetails']:
-        """
-        (Updatable) Details for client certificate.
-        """
         return pulumi.get(self, "client_certificate_details")
 
     @property
     @pulumi.getter(name="configType")
     def config_type(self) -> Optional[str]:
-        """
-        (Updatable) Type of configuration.
-        """
         return pulumi.get(self, "config_type")
 
     @property
     @pulumi.getter(name="dnsConfiguration")
     def dns_configuration(self) -> Optional['outputs.ConfigConfigurationDnsConfiguration']:
-        """
-        (Updatable) Information about the DNS settings.
-        """
         return pulumi.get(self, "dns_configuration")
 
     @property
     @pulumi.getter(name="isCertificateValidationEnabled")
     def is_certificate_validation_enabled(self) -> Optional[bool]:
-        """
-        (Updatable) If certificate validation is enabled, then the call will fail in case of certification errors.
-        """
         return pulumi.get(self, "is_certificate_validation_enabled")
 
     @property
     @pulumi.getter(name="isDefaultSnapshotEnabled")
     def is_default_snapshot_enabled(self) -> Optional[bool]:
-        """
-        (Updatable) If disabled, auto snapshots are not collected.
-        """
         return pulumi.get(self, "is_default_snapshot_enabled")
 
     @property
     @pulumi.getter(name="isFailureRetried")
     def is_failure_retried(self) -> Optional[bool]:
-        """
-        (Updatable) If isFailureRetried is enabled, then a failed call will be retried.
-        """
         return pulumi.get(self, "is_failure_retried")
 
     @property
     @pulumi.getter(name="isRedirectionEnabled")
     def is_redirection_enabled(self) -> Optional[bool]:
-        """
-        (Updatable) If redirection is enabled, then redirects will be allowed while accessing target URL.
-        """
         return pulumi.get(self, "is_redirection_enabled")
 
     @property
     @pulumi.getter(name="networkConfiguration")
     def network_configuration(self) -> Optional['outputs.ConfigConfigurationNetworkConfiguration']:
-        """
-        (Updatable) Details of the network configuration.
-        """
         return pulumi.get(self, "network_configuration")
 
     @property
     @pulumi.getter(name="reqAuthenticationDetails")
     def req_authentication_details(self) -> Optional['outputs.ConfigConfigurationReqAuthenticationDetails']:
-        """
-        (Updatable) Details for request HTTP authentication.
-        """
         return pulumi.get(self, "req_authentication_details")
 
     @property
     @pulumi.getter(name="reqAuthenticationScheme")
     def req_authentication_scheme(self) -> Optional[str]:
-        """
-        (Updatable) Request HTTP authentication scheme.
-        """
         return pulumi.get(self, "req_authentication_scheme")
 
     @property
     @pulumi.getter(name="requestHeaders")
     def request_headers(self) -> Optional[Sequence['outputs.ConfigConfigurationRequestHeader']]:
-        """
-        (Updatable) List of request headers. Example: `[{"headerName": "content-type", "headerValue":"json"}]`
-        """
         return pulumi.get(self, "request_headers")
 
     @property
     @pulumi.getter(name="requestMethod")
     def request_method(self) -> Optional[str]:
-        """
-        (Updatable) Request HTTP method.
-        """
         return pulumi.get(self, "request_method")
 
     @property
     @pulumi.getter(name="requestPostBody")
     def request_post_body(self) -> Optional[str]:
-        """
-        (Updatable) Request post body content.
-        """
         return pulumi.get(self, "request_post_body")
 
     @property
     @pulumi.getter(name="requestQueryParams")
     def request_query_params(self) -> Optional[Sequence['outputs.ConfigConfigurationRequestQueryParam']]:
-        """
-        (Updatable) List of request query params. Example: `[{"paramName": "sortOrder", "paramValue": "asc"}]`
-        """
         return pulumi.get(self, "request_query_params")
 
     @property
     @pulumi.getter(name="verifyResponseCodes")
     def verify_response_codes(self) -> Optional[Sequence[str]]:
-        """
-        (Updatable) Expected HTTP response codes. For status code range, set values such as 2xx, 3xx.
-        """
         return pulumi.get(self, "verify_response_codes")
 
     @property
     @pulumi.getter(name="verifyResponseContent")
     def verify_response_content(self) -> Optional[str]:
-        """
-        (Updatable) Verify response content against regular expression based string. If response content does not match the verifyResponseContent value, then it will be considered a failure.
-        """
         return pulumi.get(self, "verify_response_content")
 
     @property
     @pulumi.getter(name="verifyTexts")
     def verify_texts(self) -> Optional[Sequence['outputs.ConfigConfigurationVerifyText']]:
-        """
-        (Updatable) Verifies all the search strings present in the response. If any search string is not present in the response, then it will be considered as a failure.
-        """
         return pulumi.get(self, "verify_texts")
 
 
@@ -426,10 +346,6 @@ class ConfigConfigurationClientCertificateDetails(dict):
     def __init__(__self__, *,
                  client_certificate: Optional['outputs.ConfigConfigurationClientCertificateDetailsClientCertificate'] = None,
                  private_key: Optional['outputs.ConfigConfigurationClientCertificateDetailsPrivateKey'] = None):
-        """
-        :param 'ConfigConfigurationClientCertificateDetailsClientCertificateArgs' client_certificate: (Updatable) Client certificate in PEM format.
-        :param 'ConfigConfigurationClientCertificateDetailsPrivateKeyArgs' private_key: (Updatable) The private key associated with the client certificate in PEM format.
-        """
         if client_certificate is not None:
             pulumi.set(__self__, "client_certificate", client_certificate)
         if private_key is not None:
@@ -438,17 +354,11 @@ class ConfigConfigurationClientCertificateDetails(dict):
     @property
     @pulumi.getter(name="clientCertificate")
     def client_certificate(self) -> Optional['outputs.ConfigConfigurationClientCertificateDetailsClientCertificate']:
-        """
-        (Updatable) Client certificate in PEM format.
-        """
         return pulumi.get(self, "client_certificate")
 
     @property
     @pulumi.getter(name="privateKey")
     def private_key(self) -> Optional['outputs.ConfigConfigurationClientCertificateDetailsPrivateKey']:
-        """
-        (Updatable) The private key associated with the client certificate in PEM format.
-        """
         return pulumi.get(self, "private_key")
 
 
@@ -474,10 +384,6 @@ class ConfigConfigurationClientCertificateDetailsClientCertificate(dict):
     def __init__(__self__, *,
                  content: Optional[str] = None,
                  file_name: Optional[str] = None):
-        """
-        :param str content: (Updatable) Content of the private key file.
-        :param str file_name: (Updatable) Name of the private key file.
-        """
         if content is not None:
             pulumi.set(__self__, "content", content)
         if file_name is not None:
@@ -486,17 +392,11 @@ class ConfigConfigurationClientCertificateDetailsClientCertificate(dict):
     @property
     @pulumi.getter
     def content(self) -> Optional[str]:
-        """
-        (Updatable) Content of the private key file.
-        """
         return pulumi.get(self, "content")
 
     @property
     @pulumi.getter(name="fileName")
     def file_name(self) -> Optional[str]:
-        """
-        (Updatable) Name of the private key file.
-        """
         return pulumi.get(self, "file_name")
 
 
@@ -522,10 +422,6 @@ class ConfigConfigurationClientCertificateDetailsPrivateKey(dict):
     def __init__(__self__, *,
                  content: Optional[str] = None,
                  file_name: Optional[str] = None):
-        """
-        :param str content: (Updatable) Content of the private key file.
-        :param str file_name: (Updatable) Name of the private key file.
-        """
         if content is not None:
             pulumi.set(__self__, "content", content)
         if file_name is not None:
@@ -534,17 +430,11 @@ class ConfigConfigurationClientCertificateDetailsPrivateKey(dict):
     @property
     @pulumi.getter
     def content(self) -> Optional[str]:
-        """
-        (Updatable) Content of the private key file.
-        """
         return pulumi.get(self, "content")
 
     @property
     @pulumi.getter(name="fileName")
     def file_name(self) -> Optional[str]:
-        """
-        (Updatable) Name of the private key file.
-        """
         return pulumi.get(self, "file_name")
 
 
@@ -572,10 +462,6 @@ class ConfigConfigurationDnsConfiguration(dict):
     def __init__(__self__, *,
                  is_override_dns: Optional[bool] = None,
                  override_dns_ip: Optional[str] = None):
-        """
-        :param bool is_override_dns: (Updatable) If isOverrideDns is true, then DNS settings will be overridden.
-        :param str override_dns_ip: (Updatable) Attribute to override the DNS IP value. This value will be honored only if isOverrideDns is set to true.
-        """
         if is_override_dns is not None:
             pulumi.set(__self__, "is_override_dns", is_override_dns)
         if override_dns_ip is not None:
@@ -584,17 +470,11 @@ class ConfigConfigurationDnsConfiguration(dict):
     @property
     @pulumi.getter(name="isOverrideDns")
     def is_override_dns(self) -> Optional[bool]:
-        """
-        (Updatable) If isOverrideDns is true, then DNS settings will be overridden.
-        """
         return pulumi.get(self, "is_override_dns")
 
     @property
     @pulumi.getter(name="overrideDnsIp")
     def override_dns_ip(self) -> Optional[str]:
-        """
-        (Updatable) Attribute to override the DNS IP value. This value will be honored only if isOverrideDns is set to true.
-        """
         return pulumi.get(self, "override_dns_ip")
 
 
@@ -629,13 +509,6 @@ class ConfigConfigurationNetworkConfiguration(dict):
                  probe_per_hop: Optional[int] = None,
                  protocol: Optional[str] = None,
                  transmission_rate: Optional[int] = None):
-        """
-        :param int number_of_hops: (Updatable) Number of hops.
-        :param str probe_mode: (Updatable) Type of probe mode when TCP protocol is selected.
-        :param int probe_per_hop: (Updatable) Number of probes per hop.
-        :param str protocol: (Updatable) Type of protocol.
-        :param int transmission_rate: (Updatable) Number of probe packets sent out simultaneously.
-        """
         if number_of_hops is not None:
             pulumi.set(__self__, "number_of_hops", number_of_hops)
         if probe_mode is not None:
@@ -650,41 +523,26 @@ class ConfigConfigurationNetworkConfiguration(dict):
     @property
     @pulumi.getter(name="numberOfHops")
     def number_of_hops(self) -> Optional[int]:
-        """
-        (Updatable) Number of hops.
-        """
         return pulumi.get(self, "number_of_hops")
 
     @property
     @pulumi.getter(name="probeMode")
     def probe_mode(self) -> Optional[str]:
-        """
-        (Updatable) Type of probe mode when TCP protocol is selected.
-        """
         return pulumi.get(self, "probe_mode")
 
     @property
     @pulumi.getter(name="probePerHop")
     def probe_per_hop(self) -> Optional[int]:
-        """
-        (Updatable) Number of probes per hop.
-        """
         return pulumi.get(self, "probe_per_hop")
 
     @property
     @pulumi.getter
     def protocol(self) -> Optional[str]:
-        """
-        (Updatable) Type of protocol.
-        """
         return pulumi.get(self, "protocol")
 
     @property
     @pulumi.getter(name="transmissionRate")
     def transmission_rate(self) -> Optional[int]:
-        """
-        (Updatable) Number of probe packets sent out simultaneously.
-        """
         return pulumi.get(self, "transmission_rate")
 
 
@@ -730,16 +588,6 @@ class ConfigConfigurationReqAuthenticationDetails(dict):
                  auth_user_name: Optional[str] = None,
                  auth_user_password: Optional[str] = None,
                  oauth_scheme: Optional[str] = None):
-        """
-        :param Sequence['ConfigConfigurationReqAuthenticationDetailsAuthHeaderArgs'] auth_headers: (Updatable) List of authentication headers. Example: `[{"headerName": "content-type", "headerValue":"json"}]`
-        :param str auth_request_method: (Updatable) Request method.
-        :param str auth_request_post_body: (Updatable) Request post body.
-        :param str auth_token: (Updatable) Authentication token.
-        :param str auth_url: (Updatable) URL to get authentication token.
-        :param str auth_user_name: (Updatable) User name for authentication.
-        :param str auth_user_password: (Updatable) User password for authentication.
-        :param str oauth_scheme: (Updatable) Request HTTP OAuth scheme.
-        """
         if auth_headers is not None:
             pulumi.set(__self__, "auth_headers", auth_headers)
         if auth_request_method is not None:
@@ -760,65 +608,41 @@ class ConfigConfigurationReqAuthenticationDetails(dict):
     @property
     @pulumi.getter(name="authHeaders")
     def auth_headers(self) -> Optional[Sequence['outputs.ConfigConfigurationReqAuthenticationDetailsAuthHeader']]:
-        """
-        (Updatable) List of authentication headers. Example: `[{"headerName": "content-type", "headerValue":"json"}]`
-        """
         return pulumi.get(self, "auth_headers")
 
     @property
     @pulumi.getter(name="authRequestMethod")
     def auth_request_method(self) -> Optional[str]:
-        """
-        (Updatable) Request method.
-        """
         return pulumi.get(self, "auth_request_method")
 
     @property
     @pulumi.getter(name="authRequestPostBody")
     def auth_request_post_body(self) -> Optional[str]:
-        """
-        (Updatable) Request post body.
-        """
         return pulumi.get(self, "auth_request_post_body")
 
     @property
     @pulumi.getter(name="authToken")
     def auth_token(self) -> Optional[str]:
-        """
-        (Updatable) Authentication token.
-        """
         return pulumi.get(self, "auth_token")
 
     @property
     @pulumi.getter(name="authUrl")
     def auth_url(self) -> Optional[str]:
-        """
-        (Updatable) URL to get authentication token.
-        """
         return pulumi.get(self, "auth_url")
 
     @property
     @pulumi.getter(name="authUserName")
     def auth_user_name(self) -> Optional[str]:
-        """
-        (Updatable) User name for authentication.
-        """
         return pulumi.get(self, "auth_user_name")
 
     @property
     @pulumi.getter(name="authUserPassword")
     def auth_user_password(self) -> Optional[str]:
-        """
-        (Updatable) User password for authentication.
-        """
         return pulumi.get(self, "auth_user_password")
 
     @property
     @pulumi.getter(name="oauthScheme")
     def oauth_scheme(self) -> Optional[str]:
-        """
-        (Updatable) Request HTTP OAuth scheme.
-        """
         return pulumi.get(self, "oauth_scheme")
 
 
@@ -846,10 +670,6 @@ class ConfigConfigurationReqAuthenticationDetailsAuthHeader(dict):
     def __init__(__self__, *,
                  header_name: Optional[str] = None,
                  header_value: Optional[str] = None):
-        """
-        :param str header_name: (Updatable) Name of the header.
-        :param str header_value: (Updatable) Value of the header.
-        """
         if header_name is not None:
             pulumi.set(__self__, "header_name", header_name)
         if header_value is not None:
@@ -858,17 +678,11 @@ class ConfigConfigurationReqAuthenticationDetailsAuthHeader(dict):
     @property
     @pulumi.getter(name="headerName")
     def header_name(self) -> Optional[str]:
-        """
-        (Updatable) Name of the header.
-        """
         return pulumi.get(self, "header_name")
 
     @property
     @pulumi.getter(name="headerValue")
     def header_value(self) -> Optional[str]:
-        """
-        (Updatable) Value of the header.
-        """
         return pulumi.get(self, "header_value")
 
 
@@ -896,10 +710,6 @@ class ConfigConfigurationRequestHeader(dict):
     def __init__(__self__, *,
                  header_name: Optional[str] = None,
                  header_value: Optional[str] = None):
-        """
-        :param str header_name: (Updatable) Name of the header.
-        :param str header_value: (Updatable) Value of the header.
-        """
         if header_name is not None:
             pulumi.set(__self__, "header_name", header_name)
         if header_value is not None:
@@ -908,17 +718,11 @@ class ConfigConfigurationRequestHeader(dict):
     @property
     @pulumi.getter(name="headerName")
     def header_name(self) -> Optional[str]:
-        """
-        (Updatable) Name of the header.
-        """
         return pulumi.get(self, "header_name")
 
     @property
     @pulumi.getter(name="headerValue")
     def header_value(self) -> Optional[str]:
-        """
-        (Updatable) Value of the header.
-        """
         return pulumi.get(self, "header_value")
 
 
@@ -946,10 +750,6 @@ class ConfigConfigurationRequestQueryParam(dict):
     def __init__(__self__, *,
                  param_name: Optional[str] = None,
                  param_value: Optional[str] = None):
-        """
-        :param str param_name: (Updatable) Name of the parameter.
-        :param str param_value: (Updatable) Value of the parameter.
-        """
         if param_name is not None:
             pulumi.set(__self__, "param_name", param_name)
         if param_value is not None:
@@ -958,17 +758,11 @@ class ConfigConfigurationRequestQueryParam(dict):
     @property
     @pulumi.getter(name="paramName")
     def param_name(self) -> Optional[str]:
-        """
-        (Updatable) Name of the parameter.
-        """
         return pulumi.get(self, "param_name")
 
     @property
     @pulumi.getter(name="paramValue")
     def param_value(self) -> Optional[str]:
-        """
-        (Updatable) Value of the parameter.
-        """
         return pulumi.get(self, "param_value")
 
 
@@ -976,18 +770,12 @@ class ConfigConfigurationRequestQueryParam(dict):
 class ConfigConfigurationVerifyText(dict):
     def __init__(__self__, *,
                  text: Optional[str] = None):
-        """
-        :param str text: (Updatable) Verification text in the response.
-        """
         if text is not None:
             pulumi.set(__self__, "text", text)
 
     @property
     @pulumi.getter
     def text(self) -> Optional[str]:
-        """
-        (Updatable) Verification text in the response.
-        """
         return pulumi.get(self, "text")
 
 
@@ -1015,10 +803,6 @@ class ConfigMaintenanceWindowSchedule(dict):
     def __init__(__self__, *,
                  time_ended: Optional[str] = None,
                  time_started: Optional[str] = None):
-        """
-        :param str time_ended: (Updatable) End time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
-        :param str time_started: (Updatable) Start time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
-        """
         if time_ended is not None:
             pulumi.set(__self__, "time_ended", time_ended)
         if time_started is not None:
@@ -1027,17 +811,11 @@ class ConfigMaintenanceWindowSchedule(dict):
     @property
     @pulumi.getter(name="timeEnded")
     def time_ended(self) -> Optional[str]:
-        """
-        (Updatable) End time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
-        """
         return pulumi.get(self, "time_ended")
 
     @property
     @pulumi.getter(name="timeStarted")
     def time_started(self) -> Optional[str]:
-        """
-        (Updatable) Start time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
-        """
         return pulumi.get(self, "time_started")
 
 
@@ -1074,13 +852,6 @@ class ConfigScriptParameter(dict):
                  is_overwritten: Optional[bool] = None,
                  is_secret: Optional[bool] = None,
                  monitor_script_parameters: Optional[Sequence['outputs.ConfigScriptParameterMonitorScriptParameter']] = None):
-        """
-        :param str param_name: (Updatable) Name of the parameter.
-        :param str param_value: (Updatable) Value of the parameter.
-        :param bool is_overwritten: If parameter value is default or overwritten.
-        :param bool is_secret: Describes if  the parameter value is secret and should be kept confidential. isSecret is specified in either CreateScript or UpdateScript API.
-        :param Sequence['ConfigScriptParameterMonitorScriptParameterArgs'] monitor_script_parameters: Details of the script parameter that can be used to overwrite the parameter present in the script.
-        """
         pulumi.set(__self__, "param_name", param_name)
         pulumi.set(__self__, "param_value", param_value)
         if is_overwritten is not None:
@@ -1093,41 +864,26 @@ class ConfigScriptParameter(dict):
     @property
     @pulumi.getter(name="paramName")
     def param_name(self) -> str:
-        """
-        (Updatable) Name of the parameter.
-        """
         return pulumi.get(self, "param_name")
 
     @property
     @pulumi.getter(name="paramValue")
     def param_value(self) -> str:
-        """
-        (Updatable) Value of the parameter.
-        """
         return pulumi.get(self, "param_value")
 
     @property
     @pulumi.getter(name="isOverwritten")
     def is_overwritten(self) -> Optional[bool]:
-        """
-        If parameter value is default or overwritten.
-        """
         return pulumi.get(self, "is_overwritten")
 
     @property
     @pulumi.getter(name="isSecret")
     def is_secret(self) -> Optional[bool]:
-        """
-        Describes if  the parameter value is secret and should be kept confidential. isSecret is specified in either CreateScript or UpdateScript API.
-        """
         return pulumi.get(self, "is_secret")
 
     @property
     @pulumi.getter(name="monitorScriptParameters")
     def monitor_script_parameters(self) -> Optional[Sequence['outputs.ConfigScriptParameterMonitorScriptParameter']]:
-        """
-        Details of the script parameter that can be used to overwrite the parameter present in the script.
-        """
         return pulumi.get(self, "monitor_script_parameters")
 
 
@@ -1155,10 +911,6 @@ class ConfigScriptParameterMonitorScriptParameter(dict):
     def __init__(__self__, *,
                  param_name: Optional[str] = None,
                  param_value: Optional[str] = None):
-        """
-        :param str param_name: (Updatable) Name of the parameter.
-        :param str param_value: (Updatable) Value of the parameter.
-        """
         if param_name is not None:
             pulumi.set(__self__, "param_name", param_name)
         if param_value is not None:
@@ -1167,17 +919,11 @@ class ConfigScriptParameterMonitorScriptParameter(dict):
     @property
     @pulumi.getter(name="paramName")
     def param_name(self) -> Optional[str]:
-        """
-        (Updatable) Name of the parameter.
-        """
         return pulumi.get(self, "param_name")
 
     @property
     @pulumi.getter(name="paramValue")
     def param_value(self) -> Optional[str]:
-        """
-        (Updatable) Value of the parameter.
-        """
         return pulumi.get(self, "param_value")
 
 
@@ -1203,10 +949,6 @@ class ConfigVantagePoint(dict):
     def __init__(__self__, *,
                  name: str,
                  display_name: Optional[str] = None):
-        """
-        :param str name: Name of the vantage point.
-        :param str display_name: Unique name that can be edited. The name should not contain any confidential information.
-        """
         pulumi.set(__self__, "name", name)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
@@ -1214,17 +956,11 @@ class ConfigVantagePoint(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Name of the vantage point.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        Unique name that can be edited. The name should not contain any confidential information.
-        """
         return pulumi.get(self, "display_name")
 
 
@@ -1258,12 +994,6 @@ class DedicatedVantagePointDvpStackDetails(dict):
                  dvp_stack_type: str,
                  dvp_stream_id: str,
                  dvp_version: str):
-        """
-        :param str dvp_stack_id: (Updatable) Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
-        :param str dvp_stack_type: (Updatable) Type of stack.
-        :param str dvp_stream_id: (Updatable) Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
-        :param str dvp_version: (Updatable) Version of the dedicated vantage point.
-        """
         pulumi.set(__self__, "dvp_stack_id", dvp_stack_id)
         pulumi.set(__self__, "dvp_stack_type", dvp_stack_type)
         pulumi.set(__self__, "dvp_stream_id", dvp_stream_id)
@@ -1272,33 +1002,21 @@ class DedicatedVantagePointDvpStackDetails(dict):
     @property
     @pulumi.getter(name="dvpStackId")
     def dvp_stack_id(self) -> str:
-        """
-        (Updatable) Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
-        """
         return pulumi.get(self, "dvp_stack_id")
 
     @property
     @pulumi.getter(name="dvpStackType")
     def dvp_stack_type(self) -> str:
-        """
-        (Updatable) Type of stack.
-        """
         return pulumi.get(self, "dvp_stack_type")
 
     @property
     @pulumi.getter(name="dvpStreamId")
     def dvp_stream_id(self) -> str:
-        """
-        (Updatable) Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
-        """
         return pulumi.get(self, "dvp_stream_id")
 
     @property
     @pulumi.getter(name="dvpVersion")
     def dvp_version(self) -> str:
-        """
-        (Updatable) Version of the dedicated vantage point.
-        """
         return pulumi.get(self, "dvp_version")
 
 
@@ -1309,12 +1027,6 @@ class DedicatedVantagePointMonitorStatusCountMap(dict):
                  enabled: Optional[int] = None,
                  invalid: Optional[int] = None,
                  total: Optional[int] = None):
-        """
-        :param int disabled: Number of disabled monitors using the script.
-        :param int enabled: Number of enabled monitors using the script.
-        :param int invalid: Number of invalid monitors using the script.
-        :param int total: Total number of monitors using the script.
-        """
         if disabled is not None:
             pulumi.set(__self__, "disabled", disabled)
         if enabled is not None:
@@ -1327,33 +1039,21 @@ class DedicatedVantagePointMonitorStatusCountMap(dict):
     @property
     @pulumi.getter
     def disabled(self) -> Optional[int]:
-        """
-        Number of disabled monitors using the script.
-        """
         return pulumi.get(self, "disabled")
 
     @property
     @pulumi.getter
     def enabled(self) -> Optional[int]:
-        """
-        Number of enabled monitors using the script.
-        """
         return pulumi.get(self, "enabled")
 
     @property
     @pulumi.getter
     def invalid(self) -> Optional[int]:
-        """
-        Number of invalid monitors using the script.
-        """
         return pulumi.get(self, "invalid")
 
     @property
     @pulumi.getter
     def total(self) -> Optional[int]:
-        """
-        Total number of monitors using the script.
-        """
         return pulumi.get(self, "total")
 
 
@@ -1364,12 +1064,6 @@ class ScriptMonitorStatusCountMap(dict):
                  enabled: Optional[int] = None,
                  invalid: Optional[int] = None,
                  total: Optional[int] = None):
-        """
-        :param int disabled: Number of disabled monitors using the script.
-        :param int enabled: Number of enabled monitors using the script.
-        :param int invalid: Number of invalid monitors using the script.
-        :param int total: Total number of monitors using the script.
-        """
         if disabled is not None:
             pulumi.set(__self__, "disabled", disabled)
         if enabled is not None:
@@ -1382,33 +1076,21 @@ class ScriptMonitorStatusCountMap(dict):
     @property
     @pulumi.getter
     def disabled(self) -> Optional[int]:
-        """
-        Number of disabled monitors using the script.
-        """
         return pulumi.get(self, "disabled")
 
     @property
     @pulumi.getter
     def enabled(self) -> Optional[int]:
-        """
-        Number of enabled monitors using the script.
-        """
         return pulumi.get(self, "enabled")
 
     @property
     @pulumi.getter
     def invalid(self) -> Optional[int]:
-        """
-        Number of invalid monitors using the script.
-        """
         return pulumi.get(self, "invalid")
 
     @property
     @pulumi.getter
     def total(self) -> Optional[int]:
-        """
-        Total number of monitors using the script.
-        """
         return pulumi.get(self, "total")
 
 
@@ -1445,17 +1127,6 @@ class ScriptParameter(dict):
                  is_secret: Optional[bool] = None,
                  param_value: Optional[str] = None,
                  script_parameters: Optional[Sequence['outputs.ScriptParameterScriptParameter']] = None):
-        """
-        :param str param_name: (Updatable) Name of the parameter.
-        :param bool is_overwritten: If parameter value is default or overwritten.
-        :param bool is_secret: (Updatable) If the parameter value is secret and should be kept confidential, then set isSecret to true.
-        :param str param_value: (Updatable) Value of the parameter.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param Sequence['ScriptParameterScriptParameterArgs'] script_parameters: Details of the script parameters, paramName must be from the script content and these details can be used to overwrite the default parameter present in the script content.
-        """
         pulumi.set(__self__, "param_name", param_name)
         if is_overwritten is not None:
             pulumi.set(__self__, "is_overwritten", is_overwritten)
@@ -1469,45 +1140,26 @@ class ScriptParameter(dict):
     @property
     @pulumi.getter(name="paramName")
     def param_name(self) -> str:
-        """
-        (Updatable) Name of the parameter.
-        """
         return pulumi.get(self, "param_name")
 
     @property
     @pulumi.getter(name="isOverwritten")
     def is_overwritten(self) -> Optional[bool]:
-        """
-        If parameter value is default or overwritten.
-        """
         return pulumi.get(self, "is_overwritten")
 
     @property
     @pulumi.getter(name="isSecret")
     def is_secret(self) -> Optional[bool]:
-        """
-        (Updatable) If the parameter value is secret and should be kept confidential, then set isSecret to true.
-        """
         return pulumi.get(self, "is_secret")
 
     @property
     @pulumi.getter(name="paramValue")
     def param_value(self) -> Optional[str]:
-        """
-        (Updatable) Value of the parameter.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "param_value")
 
     @property
     @pulumi.getter(name="scriptParameters")
     def script_parameters(self) -> Optional[Sequence['outputs.ScriptParameterScriptParameter']]:
-        """
-        Details of the script parameters, paramName must be from the script content and these details can be used to overwrite the default parameter present in the script content.
-        """
         return pulumi.get(self, "script_parameters")
 
 
@@ -1538,15 +1190,6 @@ class ScriptParameterScriptParameter(dict):
                  is_secret: Optional[bool] = None,
                  param_name: Optional[str] = None,
                  param_value: Optional[str] = None):
-        """
-        :param bool is_secret: (Updatable) If the parameter value is secret and should be kept confidential, then set isSecret to true.
-        :param str param_name: (Updatable) Name of the parameter.
-        :param str param_value: (Updatable) Value of the parameter.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         if is_secret is not None:
             pulumi.set(__self__, "is_secret", is_secret)
         if param_name is not None:
@@ -1557,384 +1200,278 @@ class ScriptParameterScriptParameter(dict):
     @property
     @pulumi.getter(name="isSecret")
     def is_secret(self) -> Optional[bool]:
-        """
-        (Updatable) If the parameter value is secret and should be kept confidential, then set isSecret to true.
-        """
         return pulumi.get(self, "is_secret")
 
     @property
     @pulumi.getter(name="paramName")
     def param_name(self) -> Optional[str]:
-        """
-        (Updatable) Name of the parameter.
-        """
         return pulumi.get(self, "param_name")
 
     @property
     @pulumi.getter(name="paramValue")
     def param_value(self) -> Optional[str]:
-        """
-        (Updatable) Value of the parameter.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "param_value")
 
 
 @pulumi.output_type
 class GetDedicatedVantagePointDvpStackDetailResult(dict):
     def __init__(__self__, *,
-                 dvp_stack_id: str,
-                 dvp_stack_type: str,
-                 dvp_stream_id: str,
-                 dvp_version: str):
-        """
-        :param str dvp_stack_id: Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
-        :param str dvp_stack_type: Type of stack.
-        :param str dvp_stream_id: Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
-        :param str dvp_version: Version of the dedicated vantage point.
-        """
-        pulumi.set(__self__, "dvp_stack_id", dvp_stack_id)
-        pulumi.set(__self__, "dvp_stack_type", dvp_stack_type)
-        pulumi.set(__self__, "dvp_stream_id", dvp_stream_id)
-        pulumi.set(__self__, "dvp_version", dvp_version)
+                 dvp_stack_id: Optional[str] = None,
+                 dvp_stack_type: Optional[str] = None,
+                 dvp_stream_id: Optional[str] = None,
+                 dvp_version: Optional[str] = None):
+        if dvp_stack_id is not None:
+            pulumi.set(__self__, "dvp_stack_id", dvp_stack_id)
+        if dvp_stack_type is not None:
+            pulumi.set(__self__, "dvp_stack_type", dvp_stack_type)
+        if dvp_stream_id is not None:
+            pulumi.set(__self__, "dvp_stream_id", dvp_stream_id)
+        if dvp_version is not None:
+            pulumi.set(__self__, "dvp_version", dvp_version)
 
     @property
     @pulumi.getter(name="dvpStackId")
-    def dvp_stack_id(self) -> str:
-        """
-        Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
-        """
+    def dvp_stack_id(self) -> Optional[str]:
         return pulumi.get(self, "dvp_stack_id")
 
     @property
     @pulumi.getter(name="dvpStackType")
-    def dvp_stack_type(self) -> str:
-        """
-        Type of stack.
-        """
+    def dvp_stack_type(self) -> Optional[str]:
         return pulumi.get(self, "dvp_stack_type")
 
     @property
     @pulumi.getter(name="dvpStreamId")
-    def dvp_stream_id(self) -> str:
-        """
-        Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
-        """
+    def dvp_stream_id(self) -> Optional[str]:
         return pulumi.get(self, "dvp_stream_id")
 
     @property
     @pulumi.getter(name="dvpVersion")
-    def dvp_version(self) -> str:
-        """
-        Version of the dedicated vantage point.
-        """
+    def dvp_version(self) -> Optional[str]:
         return pulumi.get(self, "dvp_version")
 
 
 @pulumi.output_type
 class GetDedicatedVantagePointMonitorStatusCountMapResult(dict):
     def __init__(__self__, *,
-                 disabled: int,
-                 enabled: int,
-                 invalid: int,
-                 total: int):
-        """
-        :param int disabled: Number of disabled monitors using the script.
-        :param int enabled: Number of enabled monitors using the script.
-        :param int invalid: Number of invalid monitors using the script.
-        :param int total: Total number of monitors using the script.
-        """
-        pulumi.set(__self__, "disabled", disabled)
-        pulumi.set(__self__, "enabled", enabled)
-        pulumi.set(__self__, "invalid", invalid)
-        pulumi.set(__self__, "total", total)
+                 disabled: Optional[int] = None,
+                 enabled: Optional[int] = None,
+                 invalid: Optional[int] = None,
+                 total: Optional[int] = None):
+        if disabled is not None:
+            pulumi.set(__self__, "disabled", disabled)
+        if enabled is not None:
+            pulumi.set(__self__, "enabled", enabled)
+        if invalid is not None:
+            pulumi.set(__self__, "invalid", invalid)
+        if total is not None:
+            pulumi.set(__self__, "total", total)
 
     @property
     @pulumi.getter
-    def disabled(self) -> int:
-        """
-        Number of disabled monitors using the script.
-        """
+    def disabled(self) -> Optional[int]:
         return pulumi.get(self, "disabled")
 
     @property
     @pulumi.getter
-    def enabled(self) -> int:
-        """
-        Number of enabled monitors using the script.
-        """
+    def enabled(self) -> Optional[int]:
         return pulumi.get(self, "enabled")
 
     @property
     @pulumi.getter
-    def invalid(self) -> int:
-        """
-        Number of invalid monitors using the script.
-        """
+    def invalid(self) -> Optional[int]:
         return pulumi.get(self, "invalid")
 
     @property
     @pulumi.getter
-    def total(self) -> int:
-        """
-        Total number of monitors using the script.
-        """
+    def total(self) -> Optional[int]:
         return pulumi.get(self, "total")
 
 
 @pulumi.output_type
 class GetDedicatedVantagePointsDedicatedVantagePointCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetDedicatedVantagePointsDedicatedVantagePointCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetDedicatedVantagePointsDedicatedVantagePointCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetDedicatedVantagePointsDedicatedVantagePointCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetDedicatedVantagePointsDedicatedVantagePointCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetDedicatedVantagePointsDedicatedVantagePointCollectionItemResult(dict):
     def __init__(__self__, *,
-                 apm_domain_id: str,
-                 defined_tags: Mapping[str, Any],
-                 display_name: str,
-                 dvp_stack_details: Sequence['outputs.GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailResult'],
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 monitor_status_count_maps: Sequence['outputs.GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapResult'],
-                 name: str,
-                 region: str,
-                 status: str,
-                 time_created: str,
-                 time_updated: str):
-        """
-        :param str apm_domain_id: The APM domain ID the request is intended for.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param str display_name: A filter to return only the resources that match the entire display name.
-        :param Sequence['GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailArgs'] dvp_stack_details: Details of a Dedicated Vantage Point (DVP) stack in Resource Manager.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated vantage point.
-        :param Sequence['GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapArgs'] monitor_status_count_maps: Details of the monitor count per state. Example: `{ "total" : 5, "enabled" : 3 , "disabled" : 2, "invalid" : 0 }`
-        :param str name: A filter to return only the resources that match the entire name.
-        :param str region: Name of the region.
-        :param str status: A filter to return only the dedicated vantage points that match a given status.
-        :param str time_created: The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
-        :param str time_updated: The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
-        """
-        pulumi.set(__self__, "apm_domain_id", apm_domain_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "dvp_stack_details", dvp_stack_details)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "monitor_status_count_maps", monitor_status_count_maps)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "region", region)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+                 apm_domain_id: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 display_name: Optional[str] = None,
+                 dvp_stack_details: Optional[Sequence['outputs.GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailResult']] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 monitor_status_count_maps: Optional[Sequence['outputs.GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapResult']] = None,
+                 name: Optional[str] = None,
+                 region: Optional[str] = None,
+                 status: Optional[str] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None):
+        if apm_domain_id is not None:
+            pulumi.set(__self__, "apm_domain_id", apm_domain_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if dvp_stack_details is not None:
+            pulumi.set(__self__, "dvp_stack_details", dvp_stack_details)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if monitor_status_count_maps is not None:
+            pulumi.set(__self__, "monitor_status_count_maps", monitor_status_count_maps)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if region is not None:
+            pulumi.set(__self__, "region", region)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
 
     @property
     @pulumi.getter(name="apmDomainId")
-    def apm_domain_id(self) -> str:
-        """
-        The APM domain ID the request is intended for.
-        """
+    def apm_domain_id(self) -> Optional[str]:
         return pulumi.get(self, "apm_domain_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return only the resources that match the entire display name.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="dvpStackDetails")
-    def dvp_stack_details(self) -> Sequence['outputs.GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailResult']:
-        """
-        Details of a Dedicated Vantage Point (DVP) stack in Resource Manager.
-        """
+    def dvp_stack_details(self) -> Optional[Sequence['outputs.GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailResult']]:
         return pulumi.get(self, "dvp_stack_details")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated vantage point.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="monitorStatusCountMaps")
-    def monitor_status_count_maps(self) -> Sequence['outputs.GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapResult']:
-        """
-        Details of the monitor count per state. Example: `{ "total" : 5, "enabled" : 3 , "disabled" : 2, "invalid" : 0 }`
-        """
+    def monitor_status_count_maps(self) -> Optional[Sequence['outputs.GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapResult']]:
         return pulumi.get(self, "monitor_status_count_maps")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        A filter to return only the resources that match the entire name.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def region(self) -> str:
-        """
-        Name of the region.
-        """
+    def region(self) -> Optional[str]:
         return pulumi.get(self, "region")
 
     @property
     @pulumi.getter
-    def status(self) -> str:
-        """
-        A filter to return only the dedicated vantage points that match a given status.
-        """
+    def status(self) -> Optional[str]:
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
 @pulumi.output_type
 class GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailResult(dict):
     def __init__(__self__, *,
-                 dvp_stack_id: str,
-                 dvp_stack_type: str,
-                 dvp_stream_id: str,
-                 dvp_version: str):
-        """
-        :param str dvp_stack_id: Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
-        :param str dvp_stack_type: Type of stack.
-        :param str dvp_stream_id: Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
-        :param str dvp_version: Version of the dedicated vantage point.
-        """
-        pulumi.set(__self__, "dvp_stack_id", dvp_stack_id)
-        pulumi.set(__self__, "dvp_stack_type", dvp_stack_type)
-        pulumi.set(__self__, "dvp_stream_id", dvp_stream_id)
-        pulumi.set(__self__, "dvp_version", dvp_version)
+                 dvp_stack_id: Optional[str] = None,
+                 dvp_stack_type: Optional[str] = None,
+                 dvp_stream_id: Optional[str] = None,
+                 dvp_version: Optional[str] = None):
+        if dvp_stack_id is not None:
+            pulumi.set(__self__, "dvp_stack_id", dvp_stack_id)
+        if dvp_stack_type is not None:
+            pulumi.set(__self__, "dvp_stack_type", dvp_stack_type)
+        if dvp_stream_id is not None:
+            pulumi.set(__self__, "dvp_stream_id", dvp_stream_id)
+        if dvp_version is not None:
+            pulumi.set(__self__, "dvp_version", dvp_version)
 
     @property
     @pulumi.getter(name="dvpStackId")
-    def dvp_stack_id(self) -> str:
-        """
-        Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
-        """
+    def dvp_stack_id(self) -> Optional[str]:
         return pulumi.get(self, "dvp_stack_id")
 
     @property
     @pulumi.getter(name="dvpStackType")
-    def dvp_stack_type(self) -> str:
-        """
-        Type of stack.
-        """
+    def dvp_stack_type(self) -> Optional[str]:
         return pulumi.get(self, "dvp_stack_type")
 
     @property
     @pulumi.getter(name="dvpStreamId")
-    def dvp_stream_id(self) -> str:
-        """
-        Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
-        """
+    def dvp_stream_id(self) -> Optional[str]:
         return pulumi.get(self, "dvp_stream_id")
 
     @property
     @pulumi.getter(name="dvpVersion")
-    def dvp_version(self) -> str:
-        """
-        Version of the dedicated vantage point.
-        """
+    def dvp_version(self) -> Optional[str]:
         return pulumi.get(self, "dvp_version")
 
 
 @pulumi.output_type
 class GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapResult(dict):
     def __init__(__self__, *,
-                 disabled: int,
-                 enabled: int,
-                 invalid: int,
-                 total: int):
-        """
-        :param int disabled: Number of disabled monitors using the script.
-        :param int enabled: Number of enabled monitors using the script.
-        :param int invalid: Number of invalid monitors using the script.
-        :param int total: Total number of monitors using the script.
-        """
-        pulumi.set(__self__, "disabled", disabled)
-        pulumi.set(__self__, "enabled", enabled)
-        pulumi.set(__self__, "invalid", invalid)
-        pulumi.set(__self__, "total", total)
+                 disabled: Optional[int] = None,
+                 enabled: Optional[int] = None,
+                 invalid: Optional[int] = None,
+                 total: Optional[int] = None):
+        if disabled is not None:
+            pulumi.set(__self__, "disabled", disabled)
+        if enabled is not None:
+            pulumi.set(__self__, "enabled", enabled)
+        if invalid is not None:
+            pulumi.set(__self__, "invalid", invalid)
+        if total is not None:
+            pulumi.set(__self__, "total", total)
 
     @property
     @pulumi.getter
-    def disabled(self) -> int:
-        """
-        Number of disabled monitors using the script.
-        """
+    def disabled(self) -> Optional[int]:
         return pulumi.get(self, "disabled")
 
     @property
     @pulumi.getter
-    def enabled(self) -> int:
-        """
-        Number of enabled monitors using the script.
-        """
+    def enabled(self) -> Optional[int]:
         return pulumi.get(self, "enabled")
 
     @property
     @pulumi.getter
-    def invalid(self) -> int:
-        """
-        Number of invalid monitors using the script.
-        """
+    def invalid(self) -> Optional[int]:
         return pulumi.get(self, "invalid")
 
     @property
     @pulumi.getter
-    def total(self) -> int:
-        """
-        Total number of monitors using the script.
-        """
+    def total(self) -> Optional[int]:
         return pulumi.get(self, "total")
 
 
@@ -1944,9 +1481,6 @@ class GetDedicatedVantagePointsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: A filter to return only the resources that match the entire name.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -1955,9 +1489,6 @@ class GetDedicatedVantagePointsFilterResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        A filter to return only the resources that match the entire name.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -1974,750 +1505,544 @@ class GetDedicatedVantagePointsFilterResult(dict):
 @pulumi.output_type
 class GetMonitorAvailabilityConfigurationResult(dict):
     def __init__(__self__, *,
-                 max_allowed_failures_per_interval: int,
-                 min_allowed_runs_per_interval: int):
-        """
-        :param int max_allowed_failures_per_interval: Maximum number of failed runs allowed in an interval. If an interval has more failed runs than the specified value, then the interval will be classified as UNAVAILABLE.
-        :param int min_allowed_runs_per_interval: Minimum number of runs allowed in an interval. If an interval has fewer runs than the specified value, then the interval will be classified as UNKNOWN and will be excluded from the availability calculations.
-        """
-        pulumi.set(__self__, "max_allowed_failures_per_interval", max_allowed_failures_per_interval)
-        pulumi.set(__self__, "min_allowed_runs_per_interval", min_allowed_runs_per_interval)
+                 max_allowed_failures_per_interval: Optional[int] = None,
+                 min_allowed_runs_per_interval: Optional[int] = None):
+        if max_allowed_failures_per_interval is not None:
+            pulumi.set(__self__, "max_allowed_failures_per_interval", max_allowed_failures_per_interval)
+        if min_allowed_runs_per_interval is not None:
+            pulumi.set(__self__, "min_allowed_runs_per_interval", min_allowed_runs_per_interval)
 
     @property
     @pulumi.getter(name="maxAllowedFailuresPerInterval")
-    def max_allowed_failures_per_interval(self) -> int:
-        """
-        Maximum number of failed runs allowed in an interval. If an interval has more failed runs than the specified value, then the interval will be classified as UNAVAILABLE.
-        """
+    def max_allowed_failures_per_interval(self) -> Optional[int]:
         return pulumi.get(self, "max_allowed_failures_per_interval")
 
     @property
     @pulumi.getter(name="minAllowedRunsPerInterval")
-    def min_allowed_runs_per_interval(self) -> int:
-        """
-        Minimum number of runs allowed in an interval. If an interval has fewer runs than the specified value, then the interval will be classified as UNKNOWN and will be excluded from the availability calculations.
-        """
+    def min_allowed_runs_per_interval(self) -> Optional[int]:
         return pulumi.get(self, "min_allowed_runs_per_interval")
 
 
 @pulumi.output_type
 class GetMonitorConfigurationResult(dict):
     def __init__(__self__, *,
-                 client_certificate_details: Sequence['outputs.GetMonitorConfigurationClientCertificateDetailResult'],
-                 config_type: str,
-                 dns_configurations: Sequence['outputs.GetMonitorConfigurationDnsConfigurationResult'],
-                 is_certificate_validation_enabled: bool,
-                 is_default_snapshot_enabled: bool,
-                 is_failure_retried: bool,
-                 is_redirection_enabled: bool,
-                 network_configurations: Sequence['outputs.GetMonitorConfigurationNetworkConfigurationResult'],
-                 req_authentication_details: Sequence['outputs.GetMonitorConfigurationReqAuthenticationDetailResult'],
-                 req_authentication_scheme: str,
-                 request_headers: Sequence['outputs.GetMonitorConfigurationRequestHeaderResult'],
-                 request_method: str,
-                 request_post_body: str,
-                 request_query_params: Sequence['outputs.GetMonitorConfigurationRequestQueryParamResult'],
-                 verify_response_codes: Sequence[str],
-                 verify_response_content: str,
-                 verify_texts: Sequence['outputs.GetMonitorConfigurationVerifyTextResult']):
-        """
-        :param Sequence['GetMonitorConfigurationClientCertificateDetailArgs'] client_certificate_details: Details for client certificate.
-        :param str config_type: Type of configuration.
-        :param Sequence['GetMonitorConfigurationDnsConfigurationArgs'] dns_configurations: Information about the DNS settings.
-        :param bool is_certificate_validation_enabled: If certificate validation is enabled, then the call will fail in case of certification errors.
-        :param bool is_default_snapshot_enabled: If disabled, auto snapshots are not collected.
-        :param bool is_failure_retried: If isFailureRetried is enabled, then a failed call will be retried.
-        :param bool is_redirection_enabled: If redirection is enabled, then redirects will be allowed while accessing target URL.
-        :param Sequence['GetMonitorConfigurationNetworkConfigurationArgs'] network_configurations: Details of the network configuration.
-        :param Sequence['GetMonitorConfigurationReqAuthenticationDetailArgs'] req_authentication_details: Details for request HTTP authentication.
-        :param str req_authentication_scheme: Request HTTP authentication scheme.
-        :param Sequence['GetMonitorConfigurationRequestHeaderArgs'] request_headers: List of request headers. Example: `[{"headerName": "content-type", "headerValue":"json"}]`
-        :param str request_method: Request HTTP method.
-        :param str request_post_body: Request post body content.
-        :param Sequence['GetMonitorConfigurationRequestQueryParamArgs'] request_query_params: List of request query params. Example: `[{"paramName": "sortOrder", "paramValue": "asc"}]`
-        :param Sequence[str] verify_response_codes: Expected HTTP response codes. For status code range, set values such as 2xx, 3xx.
-        :param str verify_response_content: Verify response content against regular expression based string. If response content does not match the verifyResponseContent value, then it will be considered a failure.
-        :param Sequence['GetMonitorConfigurationVerifyTextArgs'] verify_texts: Verifies all the search strings present in the response. If any search string is not present in the response, then it will be considered as a failure.
-        """
-        pulumi.set(__self__, "client_certificate_details", client_certificate_details)
-        pulumi.set(__self__, "config_type", config_type)
-        pulumi.set(__self__, "dns_configurations", dns_configurations)
-        pulumi.set(__self__, "is_certificate_validation_enabled", is_certificate_validation_enabled)
-        pulumi.set(__self__, "is_default_snapshot_enabled", is_default_snapshot_enabled)
-        pulumi.set(__self__, "is_failure_retried", is_failure_retried)
-        pulumi.set(__self__, "is_redirection_enabled", is_redirection_enabled)
-        pulumi.set(__self__, "network_configurations", network_configurations)
-        pulumi.set(__self__, "req_authentication_details", req_authentication_details)
-        pulumi.set(__self__, "req_authentication_scheme", req_authentication_scheme)
-        pulumi.set(__self__, "request_headers", request_headers)
-        pulumi.set(__self__, "request_method", request_method)
-        pulumi.set(__self__, "request_post_body", request_post_body)
-        pulumi.set(__self__, "request_query_params", request_query_params)
-        pulumi.set(__self__, "verify_response_codes", verify_response_codes)
-        pulumi.set(__self__, "verify_response_content", verify_response_content)
-        pulumi.set(__self__, "verify_texts", verify_texts)
+                 client_certificate_details: Optional[Sequence['outputs.GetMonitorConfigurationClientCertificateDetailResult']] = None,
+                 config_type: Optional[str] = None,
+                 dns_configurations: Optional[Sequence['outputs.GetMonitorConfigurationDnsConfigurationResult']] = None,
+                 is_certificate_validation_enabled: Optional[bool] = None,
+                 is_default_snapshot_enabled: Optional[bool] = None,
+                 is_failure_retried: Optional[bool] = None,
+                 is_redirection_enabled: Optional[bool] = None,
+                 network_configurations: Optional[Sequence['outputs.GetMonitorConfigurationNetworkConfigurationResult']] = None,
+                 req_authentication_details: Optional[Sequence['outputs.GetMonitorConfigurationReqAuthenticationDetailResult']] = None,
+                 req_authentication_scheme: Optional[str] = None,
+                 request_headers: Optional[Sequence['outputs.GetMonitorConfigurationRequestHeaderResult']] = None,
+                 request_method: Optional[str] = None,
+                 request_post_body: Optional[str] = None,
+                 request_query_params: Optional[Sequence['outputs.GetMonitorConfigurationRequestQueryParamResult']] = None,
+                 verify_response_codes: Optional[Sequence[str]] = None,
+                 verify_response_content: Optional[str] = None,
+                 verify_texts: Optional[Sequence['outputs.GetMonitorConfigurationVerifyTextResult']] = None):
+        if client_certificate_details is not None:
+            pulumi.set(__self__, "client_certificate_details", client_certificate_details)
+        if config_type is not None:
+            pulumi.set(__self__, "config_type", config_type)
+        if dns_configurations is not None:
+            pulumi.set(__self__, "dns_configurations", dns_configurations)
+        if is_certificate_validation_enabled is not None:
+            pulumi.set(__self__, "is_certificate_validation_enabled", is_certificate_validation_enabled)
+        if is_default_snapshot_enabled is not None:
+            pulumi.set(__self__, "is_default_snapshot_enabled", is_default_snapshot_enabled)
+        if is_failure_retried is not None:
+            pulumi.set(__self__, "is_failure_retried", is_failure_retried)
+        if is_redirection_enabled is not None:
+            pulumi.set(__self__, "is_redirection_enabled", is_redirection_enabled)
+        if network_configurations is not None:
+            pulumi.set(__self__, "network_configurations", network_configurations)
+        if req_authentication_details is not None:
+            pulumi.set(__self__, "req_authentication_details", req_authentication_details)
+        if req_authentication_scheme is not None:
+            pulumi.set(__self__, "req_authentication_scheme", req_authentication_scheme)
+        if request_headers is not None:
+            pulumi.set(__self__, "request_headers", request_headers)
+        if request_method is not None:
+            pulumi.set(__self__, "request_method", request_method)
+        if request_post_body is not None:
+            pulumi.set(__self__, "request_post_body", request_post_body)
+        if request_query_params is not None:
+            pulumi.set(__self__, "request_query_params", request_query_params)
+        if verify_response_codes is not None:
+            pulumi.set(__self__, "verify_response_codes", verify_response_codes)
+        if verify_response_content is not None:
+            pulumi.set(__self__, "verify_response_content", verify_response_content)
+        if verify_texts is not None:
+            pulumi.set(__self__, "verify_texts", verify_texts)
 
     @property
     @pulumi.getter(name="clientCertificateDetails")
-    def client_certificate_details(self) -> Sequence['outputs.GetMonitorConfigurationClientCertificateDetailResult']:
-        """
-        Details for client certificate.
-        """
+    def client_certificate_details(self) -> Optional[Sequence['outputs.GetMonitorConfigurationClientCertificateDetailResult']]:
         return pulumi.get(self, "client_certificate_details")
 
     @property
     @pulumi.getter(name="configType")
-    def config_type(self) -> str:
-        """
-        Type of configuration.
-        """
+    def config_type(self) -> Optional[str]:
         return pulumi.get(self, "config_type")
 
     @property
     @pulumi.getter(name="dnsConfigurations")
-    def dns_configurations(self) -> Sequence['outputs.GetMonitorConfigurationDnsConfigurationResult']:
-        """
-        Information about the DNS settings.
-        """
+    def dns_configurations(self) -> Optional[Sequence['outputs.GetMonitorConfigurationDnsConfigurationResult']]:
         return pulumi.get(self, "dns_configurations")
 
     @property
     @pulumi.getter(name="isCertificateValidationEnabled")
-    def is_certificate_validation_enabled(self) -> bool:
-        """
-        If certificate validation is enabled, then the call will fail in case of certification errors.
-        """
+    def is_certificate_validation_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_certificate_validation_enabled")
 
     @property
     @pulumi.getter(name="isDefaultSnapshotEnabled")
-    def is_default_snapshot_enabled(self) -> bool:
-        """
-        If disabled, auto snapshots are not collected.
-        """
+    def is_default_snapshot_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_default_snapshot_enabled")
 
     @property
     @pulumi.getter(name="isFailureRetried")
-    def is_failure_retried(self) -> bool:
-        """
-        If isFailureRetried is enabled, then a failed call will be retried.
-        """
+    def is_failure_retried(self) -> Optional[bool]:
         return pulumi.get(self, "is_failure_retried")
 
     @property
     @pulumi.getter(name="isRedirectionEnabled")
-    def is_redirection_enabled(self) -> bool:
-        """
-        If redirection is enabled, then redirects will be allowed while accessing target URL.
-        """
+    def is_redirection_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_redirection_enabled")
 
     @property
     @pulumi.getter(name="networkConfigurations")
-    def network_configurations(self) -> Sequence['outputs.GetMonitorConfigurationNetworkConfigurationResult']:
-        """
-        Details of the network configuration.
-        """
+    def network_configurations(self) -> Optional[Sequence['outputs.GetMonitorConfigurationNetworkConfigurationResult']]:
         return pulumi.get(self, "network_configurations")
 
     @property
     @pulumi.getter(name="reqAuthenticationDetails")
-    def req_authentication_details(self) -> Sequence['outputs.GetMonitorConfigurationReqAuthenticationDetailResult']:
-        """
-        Details for request HTTP authentication.
-        """
+    def req_authentication_details(self) -> Optional[Sequence['outputs.GetMonitorConfigurationReqAuthenticationDetailResult']]:
         return pulumi.get(self, "req_authentication_details")
 
     @property
     @pulumi.getter(name="reqAuthenticationScheme")
-    def req_authentication_scheme(self) -> str:
-        """
-        Request HTTP authentication scheme.
-        """
+    def req_authentication_scheme(self) -> Optional[str]:
         return pulumi.get(self, "req_authentication_scheme")
 
     @property
     @pulumi.getter(name="requestHeaders")
-    def request_headers(self) -> Sequence['outputs.GetMonitorConfigurationRequestHeaderResult']:
-        """
-        List of request headers. Example: `[{"headerName": "content-type", "headerValue":"json"}]`
-        """
+    def request_headers(self) -> Optional[Sequence['outputs.GetMonitorConfigurationRequestHeaderResult']]:
         return pulumi.get(self, "request_headers")
 
     @property
     @pulumi.getter(name="requestMethod")
-    def request_method(self) -> str:
-        """
-        Request HTTP method.
-        """
+    def request_method(self) -> Optional[str]:
         return pulumi.get(self, "request_method")
 
     @property
     @pulumi.getter(name="requestPostBody")
-    def request_post_body(self) -> str:
-        """
-        Request post body content.
-        """
+    def request_post_body(self) -> Optional[str]:
         return pulumi.get(self, "request_post_body")
 
     @property
     @pulumi.getter(name="requestQueryParams")
-    def request_query_params(self) -> Sequence['outputs.GetMonitorConfigurationRequestQueryParamResult']:
-        """
-        List of request query params. Example: `[{"paramName": "sortOrder", "paramValue": "asc"}]`
-        """
+    def request_query_params(self) -> Optional[Sequence['outputs.GetMonitorConfigurationRequestQueryParamResult']]:
         return pulumi.get(self, "request_query_params")
 
     @property
     @pulumi.getter(name="verifyResponseCodes")
-    def verify_response_codes(self) -> Sequence[str]:
-        """
-        Expected HTTP response codes. For status code range, set values such as 2xx, 3xx.
-        """
+    def verify_response_codes(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "verify_response_codes")
 
     @property
     @pulumi.getter(name="verifyResponseContent")
-    def verify_response_content(self) -> str:
-        """
-        Verify response content against regular expression based string. If response content does not match the verifyResponseContent value, then it will be considered a failure.
-        """
+    def verify_response_content(self) -> Optional[str]:
         return pulumi.get(self, "verify_response_content")
 
     @property
     @pulumi.getter(name="verifyTexts")
-    def verify_texts(self) -> Sequence['outputs.GetMonitorConfigurationVerifyTextResult']:
-        """
-        Verifies all the search strings present in the response. If any search string is not present in the response, then it will be considered as a failure.
-        """
+    def verify_texts(self) -> Optional[Sequence['outputs.GetMonitorConfigurationVerifyTextResult']]:
         return pulumi.get(self, "verify_texts")
 
 
 @pulumi.output_type
 class GetMonitorConfigurationClientCertificateDetailResult(dict):
     def __init__(__self__, *,
-                 client_certificates: Sequence['outputs.GetMonitorConfigurationClientCertificateDetailClientCertificateResult'],
-                 private_keys: Sequence['outputs.GetMonitorConfigurationClientCertificateDetailPrivateKeyResult']):
-        """
-        :param Sequence['GetMonitorConfigurationClientCertificateDetailClientCertificateArgs'] client_certificates: Client certificate in PEM format.
-        :param Sequence['GetMonitorConfigurationClientCertificateDetailPrivateKeyArgs'] private_keys: The private key associated with the client certificate in PEM format.
-        """
-        pulumi.set(__self__, "client_certificates", client_certificates)
-        pulumi.set(__self__, "private_keys", private_keys)
+                 client_certificates: Optional[Sequence['outputs.GetMonitorConfigurationClientCertificateDetailClientCertificateResult']] = None,
+                 private_keys: Optional[Sequence['outputs.GetMonitorConfigurationClientCertificateDetailPrivateKeyResult']] = None):
+        if client_certificates is not None:
+            pulumi.set(__self__, "client_certificates", client_certificates)
+        if private_keys is not None:
+            pulumi.set(__self__, "private_keys", private_keys)
 
     @property
     @pulumi.getter(name="clientCertificates")
-    def client_certificates(self) -> Sequence['outputs.GetMonitorConfigurationClientCertificateDetailClientCertificateResult']:
-        """
-        Client certificate in PEM format.
-        """
+    def client_certificates(self) -> Optional[Sequence['outputs.GetMonitorConfigurationClientCertificateDetailClientCertificateResult']]:
         return pulumi.get(self, "client_certificates")
 
     @property
     @pulumi.getter(name="privateKeys")
-    def private_keys(self) -> Sequence['outputs.GetMonitorConfigurationClientCertificateDetailPrivateKeyResult']:
-        """
-        The private key associated with the client certificate in PEM format.
-        """
+    def private_keys(self) -> Optional[Sequence['outputs.GetMonitorConfigurationClientCertificateDetailPrivateKeyResult']]:
         return pulumi.get(self, "private_keys")
 
 
 @pulumi.output_type
 class GetMonitorConfigurationClientCertificateDetailClientCertificateResult(dict):
     def __init__(__self__, *,
-                 content: str,
-                 file_name: str):
-        """
-        :param str content: Content of the private key file.
-        :param str file_name: Name of the private key file.
-        """
-        pulumi.set(__self__, "content", content)
-        pulumi.set(__self__, "file_name", file_name)
+                 content: Optional[str] = None,
+                 file_name: Optional[str] = None):
+        if content is not None:
+            pulumi.set(__self__, "content", content)
+        if file_name is not None:
+            pulumi.set(__self__, "file_name", file_name)
 
     @property
     @pulumi.getter
-    def content(self) -> str:
-        """
-        Content of the private key file.
-        """
+    def content(self) -> Optional[str]:
         return pulumi.get(self, "content")
 
     @property
     @pulumi.getter(name="fileName")
-    def file_name(self) -> str:
-        """
-        Name of the private key file.
-        """
+    def file_name(self) -> Optional[str]:
         return pulumi.get(self, "file_name")
 
 
 @pulumi.output_type
 class GetMonitorConfigurationClientCertificateDetailPrivateKeyResult(dict):
     def __init__(__self__, *,
-                 content: str,
-                 file_name: str):
-        """
-        :param str content: Content of the private key file.
-        :param str file_name: Name of the private key file.
-        """
-        pulumi.set(__self__, "content", content)
-        pulumi.set(__self__, "file_name", file_name)
+                 content: Optional[str] = None,
+                 file_name: Optional[str] = None):
+        if content is not None:
+            pulumi.set(__self__, "content", content)
+        if file_name is not None:
+            pulumi.set(__self__, "file_name", file_name)
 
     @property
     @pulumi.getter
-    def content(self) -> str:
-        """
-        Content of the private key file.
-        """
+    def content(self) -> Optional[str]:
         return pulumi.get(self, "content")
 
     @property
     @pulumi.getter(name="fileName")
-    def file_name(self) -> str:
-        """
-        Name of the private key file.
-        """
+    def file_name(self) -> Optional[str]:
         return pulumi.get(self, "file_name")
 
 
 @pulumi.output_type
 class GetMonitorConfigurationDnsConfigurationResult(dict):
     def __init__(__self__, *,
-                 is_override_dns: bool,
-                 override_dns_ip: str):
-        """
-        :param bool is_override_dns: If isOverrideDns is true, then DNS settings will be overridden.
-        :param str override_dns_ip: Attribute to override the DNS IP value. This value will be honored only if isOverrideDns is set to true.
-        """
-        pulumi.set(__self__, "is_override_dns", is_override_dns)
-        pulumi.set(__self__, "override_dns_ip", override_dns_ip)
+                 is_override_dns: Optional[bool] = None,
+                 override_dns_ip: Optional[str] = None):
+        if is_override_dns is not None:
+            pulumi.set(__self__, "is_override_dns", is_override_dns)
+        if override_dns_ip is not None:
+            pulumi.set(__self__, "override_dns_ip", override_dns_ip)
 
     @property
     @pulumi.getter(name="isOverrideDns")
-    def is_override_dns(self) -> bool:
-        """
-        If isOverrideDns is true, then DNS settings will be overridden.
-        """
+    def is_override_dns(self) -> Optional[bool]:
         return pulumi.get(self, "is_override_dns")
 
     @property
     @pulumi.getter(name="overrideDnsIp")
-    def override_dns_ip(self) -> str:
-        """
-        Attribute to override the DNS IP value. This value will be honored only if isOverrideDns is set to true.
-        """
+    def override_dns_ip(self) -> Optional[str]:
         return pulumi.get(self, "override_dns_ip")
 
 
 @pulumi.output_type
 class GetMonitorConfigurationNetworkConfigurationResult(dict):
     def __init__(__self__, *,
-                 number_of_hops: int,
-                 probe_mode: str,
-                 probe_per_hop: int,
-                 protocol: str,
-                 transmission_rate: int):
-        """
-        :param int number_of_hops: Number of hops.
-        :param str probe_mode: Type of probe mode when TCP protocol is selected.
-        :param int probe_per_hop: Number of probes per hop.
-        :param str protocol: Type of protocol.
-        :param int transmission_rate: Number of probe packets sent out simultaneously.
-        """
-        pulumi.set(__self__, "number_of_hops", number_of_hops)
-        pulumi.set(__self__, "probe_mode", probe_mode)
-        pulumi.set(__self__, "probe_per_hop", probe_per_hop)
-        pulumi.set(__self__, "protocol", protocol)
-        pulumi.set(__self__, "transmission_rate", transmission_rate)
+                 number_of_hops: Optional[int] = None,
+                 probe_mode: Optional[str] = None,
+                 probe_per_hop: Optional[int] = None,
+                 protocol: Optional[str] = None,
+                 transmission_rate: Optional[int] = None):
+        if number_of_hops is not None:
+            pulumi.set(__self__, "number_of_hops", number_of_hops)
+        if probe_mode is not None:
+            pulumi.set(__self__, "probe_mode", probe_mode)
+        if probe_per_hop is not None:
+            pulumi.set(__self__, "probe_per_hop", probe_per_hop)
+        if protocol is not None:
+            pulumi.set(__self__, "protocol", protocol)
+        if transmission_rate is not None:
+            pulumi.set(__self__, "transmission_rate", transmission_rate)
 
     @property
     @pulumi.getter(name="numberOfHops")
-    def number_of_hops(self) -> int:
-        """
-        Number of hops.
-        """
+    def number_of_hops(self) -> Optional[int]:
         return pulumi.get(self, "number_of_hops")
 
     @property
     @pulumi.getter(name="probeMode")
-    def probe_mode(self) -> str:
-        """
-        Type of probe mode when TCP protocol is selected.
-        """
+    def probe_mode(self) -> Optional[str]:
         return pulumi.get(self, "probe_mode")
 
     @property
     @pulumi.getter(name="probePerHop")
-    def probe_per_hop(self) -> int:
-        """
-        Number of probes per hop.
-        """
+    def probe_per_hop(self) -> Optional[int]:
         return pulumi.get(self, "probe_per_hop")
 
     @property
     @pulumi.getter
-    def protocol(self) -> str:
-        """
-        Type of protocol.
-        """
+    def protocol(self) -> Optional[str]:
         return pulumi.get(self, "protocol")
 
     @property
     @pulumi.getter(name="transmissionRate")
-    def transmission_rate(self) -> int:
-        """
-        Number of probe packets sent out simultaneously.
-        """
+    def transmission_rate(self) -> Optional[int]:
         return pulumi.get(self, "transmission_rate")
 
 
 @pulumi.output_type
 class GetMonitorConfigurationReqAuthenticationDetailResult(dict):
     def __init__(__self__, *,
-                 auth_headers: Sequence['outputs.GetMonitorConfigurationReqAuthenticationDetailAuthHeaderResult'],
-                 auth_request_method: str,
-                 auth_request_post_body: str,
-                 auth_token: str,
-                 auth_url: str,
-                 auth_user_name: str,
-                 auth_user_password: str,
-                 oauth_scheme: str):
-        """
-        :param Sequence['GetMonitorConfigurationReqAuthenticationDetailAuthHeaderArgs'] auth_headers: List of authentication headers. Example: `[{"headerName": "content-type", "headerValue":"json"}]`
-        :param str auth_request_method: Request method.
-        :param str auth_request_post_body: Request post body.
-        :param str auth_token: Authentication token.
-        :param str auth_url: URL to get authentication token.
-        :param str auth_user_name: User name for authentication.
-        :param str auth_user_password: User password for authentication.
-        :param str oauth_scheme: Request HTTP OAuth scheme.
-        """
-        pulumi.set(__self__, "auth_headers", auth_headers)
-        pulumi.set(__self__, "auth_request_method", auth_request_method)
-        pulumi.set(__self__, "auth_request_post_body", auth_request_post_body)
-        pulumi.set(__self__, "auth_token", auth_token)
-        pulumi.set(__self__, "auth_url", auth_url)
-        pulumi.set(__self__, "auth_user_name", auth_user_name)
-        pulumi.set(__self__, "auth_user_password", auth_user_password)
-        pulumi.set(__self__, "oauth_scheme", oauth_scheme)
+                 auth_headers: Optional[Sequence['outputs.GetMonitorConfigurationReqAuthenticationDetailAuthHeaderResult']] = None,
+                 auth_request_method: Optional[str] = None,
+                 auth_request_post_body: Optional[str] = None,
+                 auth_token: Optional[str] = None,
+                 auth_url: Optional[str] = None,
+                 auth_user_name: Optional[str] = None,
+                 auth_user_password: Optional[str] = None,
+                 oauth_scheme: Optional[str] = None):
+        if auth_headers is not None:
+            pulumi.set(__self__, "auth_headers", auth_headers)
+        if auth_request_method is not None:
+            pulumi.set(__self__, "auth_request_method", auth_request_method)
+        if auth_request_post_body is not None:
+            pulumi.set(__self__, "auth_request_post_body", auth_request_post_body)
+        if auth_token is not None:
+            pulumi.set(__self__, "auth_token", auth_token)
+        if auth_url is not None:
+            pulumi.set(__self__, "auth_url", auth_url)
+        if auth_user_name is not None:
+            pulumi.set(__self__, "auth_user_name", auth_user_name)
+        if auth_user_password is not None:
+            pulumi.set(__self__, "auth_user_password", auth_user_password)
+        if oauth_scheme is not None:
+            pulumi.set(__self__, "oauth_scheme", oauth_scheme)
 
     @property
     @pulumi.getter(name="authHeaders")
-    def auth_headers(self) -> Sequence['outputs.GetMonitorConfigurationReqAuthenticationDetailAuthHeaderResult']:
-        """
-        List of authentication headers. Example: `[{"headerName": "content-type", "headerValue":"json"}]`
-        """
+    def auth_headers(self) -> Optional[Sequence['outputs.GetMonitorConfigurationReqAuthenticationDetailAuthHeaderResult']]:
         return pulumi.get(self, "auth_headers")
 
     @property
     @pulumi.getter(name="authRequestMethod")
-    def auth_request_method(self) -> str:
-        """
-        Request method.
-        """
+    def auth_request_method(self) -> Optional[str]:
         return pulumi.get(self, "auth_request_method")
 
     @property
     @pulumi.getter(name="authRequestPostBody")
-    def auth_request_post_body(self) -> str:
-        """
-        Request post body.
-        """
+    def auth_request_post_body(self) -> Optional[str]:
         return pulumi.get(self, "auth_request_post_body")
 
     @property
     @pulumi.getter(name="authToken")
-    def auth_token(self) -> str:
-        """
-        Authentication token.
-        """
+    def auth_token(self) -> Optional[str]:
         return pulumi.get(self, "auth_token")
 
     @property
     @pulumi.getter(name="authUrl")
-    def auth_url(self) -> str:
-        """
-        URL to get authentication token.
-        """
+    def auth_url(self) -> Optional[str]:
         return pulumi.get(self, "auth_url")
 
     @property
     @pulumi.getter(name="authUserName")
-    def auth_user_name(self) -> str:
-        """
-        User name for authentication.
-        """
+    def auth_user_name(self) -> Optional[str]:
         return pulumi.get(self, "auth_user_name")
 
     @property
     @pulumi.getter(name="authUserPassword")
-    def auth_user_password(self) -> str:
-        """
-        User password for authentication.
-        """
+    def auth_user_password(self) -> Optional[str]:
         return pulumi.get(self, "auth_user_password")
 
     @property
     @pulumi.getter(name="oauthScheme")
-    def oauth_scheme(self) -> str:
-        """
-        Request HTTP OAuth scheme.
-        """
+    def oauth_scheme(self) -> Optional[str]:
         return pulumi.get(self, "oauth_scheme")
 
 
 @pulumi.output_type
 class GetMonitorConfigurationReqAuthenticationDetailAuthHeaderResult(dict):
     def __init__(__self__, *,
-                 header_name: str,
-                 header_value: str):
-        """
-        :param str header_name: Name of the header.
-        :param str header_value: Value of the header.
-        """
-        pulumi.set(__self__, "header_name", header_name)
-        pulumi.set(__self__, "header_value", header_value)
+                 header_name: Optional[str] = None,
+                 header_value: Optional[str] = None):
+        if header_name is not None:
+            pulumi.set(__self__, "header_name", header_name)
+        if header_value is not None:
+            pulumi.set(__self__, "header_value", header_value)
 
     @property
     @pulumi.getter(name="headerName")
-    def header_name(self) -> str:
-        """
-        Name of the header.
-        """
+    def header_name(self) -> Optional[str]:
         return pulumi.get(self, "header_name")
 
     @property
     @pulumi.getter(name="headerValue")
-    def header_value(self) -> str:
-        """
-        Value of the header.
-        """
+    def header_value(self) -> Optional[str]:
         return pulumi.get(self, "header_value")
 
 
 @pulumi.output_type
 class GetMonitorConfigurationRequestHeaderResult(dict):
     def __init__(__self__, *,
-                 header_name: str,
-                 header_value: str):
-        """
-        :param str header_name: Name of the header.
-        :param str header_value: Value of the header.
-        """
-        pulumi.set(__self__, "header_name", header_name)
-        pulumi.set(__self__, "header_value", header_value)
+                 header_name: Optional[str] = None,
+                 header_value: Optional[str] = None):
+        if header_name is not None:
+            pulumi.set(__self__, "header_name", header_name)
+        if header_value is not None:
+            pulumi.set(__self__, "header_value", header_value)
 
     @property
     @pulumi.getter(name="headerName")
-    def header_name(self) -> str:
-        """
-        Name of the header.
-        """
+    def header_name(self) -> Optional[str]:
         return pulumi.get(self, "header_name")
 
     @property
     @pulumi.getter(name="headerValue")
-    def header_value(self) -> str:
-        """
-        Value of the header.
-        """
+    def header_value(self) -> Optional[str]:
         return pulumi.get(self, "header_value")
 
 
 @pulumi.output_type
 class GetMonitorConfigurationRequestQueryParamResult(dict):
     def __init__(__self__, *,
-                 param_name: str,
-                 param_value: str):
-        """
-        :param str param_name: Name of the parameter.
-        :param str param_value: Value of the parameter.
-        """
-        pulumi.set(__self__, "param_name", param_name)
-        pulumi.set(__self__, "param_value", param_value)
+                 param_name: Optional[str] = None,
+                 param_value: Optional[str] = None):
+        if param_name is not None:
+            pulumi.set(__self__, "param_name", param_name)
+        if param_value is not None:
+            pulumi.set(__self__, "param_value", param_value)
 
     @property
     @pulumi.getter(name="paramName")
-    def param_name(self) -> str:
-        """
-        Name of the parameter.
-        """
+    def param_name(self) -> Optional[str]:
         return pulumi.get(self, "param_name")
 
     @property
     @pulumi.getter(name="paramValue")
-    def param_value(self) -> str:
-        """
-        Value of the parameter.
-        """
+    def param_value(self) -> Optional[str]:
         return pulumi.get(self, "param_value")
 
 
 @pulumi.output_type
 class GetMonitorConfigurationVerifyTextResult(dict):
     def __init__(__self__, *,
-                 text: str):
-        """
-        :param str text: Verification text in the response.
-        """
-        pulumi.set(__self__, "text", text)
+                 text: Optional[str] = None):
+        if text is not None:
+            pulumi.set(__self__, "text", text)
 
     @property
     @pulumi.getter
-    def text(self) -> str:
-        """
-        Verification text in the response.
-        """
+    def text(self) -> Optional[str]:
         return pulumi.get(self, "text")
 
 
 @pulumi.output_type
 class GetMonitorMaintenanceWindowScheduleResult(dict):
     def __init__(__self__, *,
-                 time_ended: str,
-                 time_started: str):
-        """
-        :param str time_ended: End time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
-        :param str time_started: Start time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
-        """
-        pulumi.set(__self__, "time_ended", time_ended)
-        pulumi.set(__self__, "time_started", time_started)
+                 time_ended: Optional[str] = None,
+                 time_started: Optional[str] = None):
+        if time_ended is not None:
+            pulumi.set(__self__, "time_ended", time_ended)
+        if time_started is not None:
+            pulumi.set(__self__, "time_started", time_started)
 
     @property
     @pulumi.getter(name="timeEnded")
-    def time_ended(self) -> str:
-        """
-        End time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
-        """
+    def time_ended(self) -> Optional[str]:
         return pulumi.get(self, "time_ended")
 
     @property
     @pulumi.getter(name="timeStarted")
-    def time_started(self) -> str:
-        """
-        Start time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
-        """
+    def time_started(self) -> Optional[str]:
         return pulumi.get(self, "time_started")
 
 
 @pulumi.output_type
 class GetMonitorScriptParameterResult(dict):
     def __init__(__self__, *,
-                 is_overwritten: bool,
-                 is_secret: bool,
-                 monitor_script_parameters: Sequence['outputs.GetMonitorScriptParameterMonitorScriptParameterResult'],
-                 param_name: str,
-                 param_value: str):
-        """
-        :param bool is_overwritten: If parameter value is default or overwritten.
-        :param bool is_secret: Describes if  the parameter value is secret and should be kept confidential. isSecret is specified in either CreateScript or UpdateScript API.
-        :param Sequence['GetMonitorScriptParameterMonitorScriptParameterArgs'] monitor_script_parameters: Details of the script parameter that can be used to overwrite the parameter present in the script.
-        :param str param_name: Name of the parameter.
-        :param str param_value: Value of the parameter.
-        """
-        pulumi.set(__self__, "is_overwritten", is_overwritten)
-        pulumi.set(__self__, "is_secret", is_secret)
-        pulumi.set(__self__, "monitor_script_parameters", monitor_script_parameters)
-        pulumi.set(__self__, "param_name", param_name)
-        pulumi.set(__self__, "param_value", param_value)
+                 is_overwritten: Optional[bool] = None,
+                 is_secret: Optional[bool] = None,
+                 monitor_script_parameters: Optional[Sequence['outputs.GetMonitorScriptParameterMonitorScriptParameterResult']] = None,
+                 param_name: Optional[str] = None,
+                 param_value: Optional[str] = None):
+        if is_overwritten is not None:
+            pulumi.set(__self__, "is_overwritten", is_overwritten)
+        if is_secret is not None:
+            pulumi.set(__self__, "is_secret", is_secret)
+        if monitor_script_parameters is not None:
+            pulumi.set(__self__, "monitor_script_parameters", monitor_script_parameters)
+        if param_name is not None:
+            pulumi.set(__self__, "param_name", param_name)
+        if param_value is not None:
+            pulumi.set(__self__, "param_value", param_value)
 
     @property
     @pulumi.getter(name="isOverwritten")
-    def is_overwritten(self) -> bool:
-        """
-        If parameter value is default or overwritten.
-        """
+    def is_overwritten(self) -> Optional[bool]:
         return pulumi.get(self, "is_overwritten")
 
     @property
     @pulumi.getter(name="isSecret")
-    def is_secret(self) -> bool:
-        """
-        Describes if  the parameter value is secret and should be kept confidential. isSecret is specified in either CreateScript or UpdateScript API.
-        """
+    def is_secret(self) -> Optional[bool]:
         return pulumi.get(self, "is_secret")
 
     @property
     @pulumi.getter(name="monitorScriptParameters")
-    def monitor_script_parameters(self) -> Sequence['outputs.GetMonitorScriptParameterMonitorScriptParameterResult']:
-        """
-        Details of the script parameter that can be used to overwrite the parameter present in the script.
-        """
+    def monitor_script_parameters(self) -> Optional[Sequence['outputs.GetMonitorScriptParameterMonitorScriptParameterResult']]:
         return pulumi.get(self, "monitor_script_parameters")
 
     @property
     @pulumi.getter(name="paramName")
-    def param_name(self) -> str:
-        """
-        Name of the parameter.
-        """
+    def param_name(self) -> Optional[str]:
         return pulumi.get(self, "param_name")
 
     @property
     @pulumi.getter(name="paramValue")
-    def param_value(self) -> str:
-        """
-        Value of the parameter.
-        """
+    def param_value(self) -> Optional[str]:
         return pulumi.get(self, "param_value")
 
 
 @pulumi.output_type
 class GetMonitorScriptParameterMonitorScriptParameterResult(dict):
     def __init__(__self__, *,
-                 param_name: str,
-                 param_value: str):
-        """
-        :param str param_name: Name of the parameter.
-        :param str param_value: Value of the parameter.
-        """
-        pulumi.set(__self__, "param_name", param_name)
-        pulumi.set(__self__, "param_value", param_value)
+                 param_name: Optional[str] = None,
+                 param_value: Optional[str] = None):
+        if param_name is not None:
+            pulumi.set(__self__, "param_name", param_name)
+        if param_value is not None:
+            pulumi.set(__self__, "param_value", param_value)
 
     @property
     @pulumi.getter(name="paramName")
-    def param_name(self) -> str:
-        """
-        Name of the parameter.
-        """
+    def param_name(self) -> Optional[str]:
         return pulumi.get(self, "param_name")
 
     @property
     @pulumi.getter(name="paramValue")
-    def param_value(self) -> str:
-        """
-        Value of the parameter.
-        """
+    def param_value(self) -> Optional[str]:
         return pulumi.get(self, "param_value")
 
 
 @pulumi.output_type
 class GetMonitorVantagePointResult(dict):
     def __init__(__self__, *,
-                 display_name: str,
-                 name: str):
-        """
-        :param str display_name: Unique name that can be edited. The name should not contain any confidential information.
-        :param str name: Name of the vantage point.
-        """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "name", name)
+                 display_name: Optional[str] = None,
+                 name: Optional[str] = None):
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        Unique name that can be edited. The name should not contain any confidential information.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Name of the vantage point.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
 
@@ -2727,9 +2052,6 @@ class GetMonitorsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: Name of the vantage point.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -2738,9 +2060,6 @@ class GetMonitorsFilterResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Name of the vantage point.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -2757,1237 +2076,902 @@ class GetMonitorsFilterResult(dict):
 @pulumi.output_type
 class GetMonitorsMonitorCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetMonitorsMonitorCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetMonitorsMonitorCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetMonitorsMonitorCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetMonitorsMonitorCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetMonitorsMonitorCollectionItemResult(dict):
     def __init__(__self__, *,
-                 apm_domain_id: str,
-                 availability_configurations: Sequence['outputs.GetMonitorsMonitorCollectionItemAvailabilityConfigurationResult'],
-                 batch_interval_in_seconds: int,
-                 configurations: Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationResult'],
-                 defined_tags: Mapping[str, Any],
-                 display_name: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 is_run_now: bool,
-                 is_run_once: bool,
-                 maintenance_window_schedules: Sequence['outputs.GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleResult'],
-                 monitor_type: str,
-                 repeat_interval_in_seconds: int,
-                 scheduling_policy: str,
-                 script_id: str,
-                 script_name: str,
-                 script_parameters: Sequence['outputs.GetMonitorsMonitorCollectionItemScriptParameterResult'],
-                 status: str,
-                 target: str,
-                 time_created: str,
-                 time_updated: str,
-                 timeout_in_seconds: int,
-                 vantage_point_count: int,
-                 vantage_points: Sequence['outputs.GetMonitorsMonitorCollectionItemVantagePointResult']):
-        """
-        :param str apm_domain_id: The APM domain ID the request is intended for.
-        :param Sequence['GetMonitorsMonitorCollectionItemAvailabilityConfigurationArgs'] availability_configurations: Monitor availability configuration details.
-        :param int batch_interval_in_seconds: Time interval between two runs in round robin batch mode (SchedulingPolicy - BATCHED_ROUND_ROBIN).
-        :param Sequence['GetMonitorsMonitorCollectionItemConfigurationArgs'] configurations: Details of monitor configuration.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param str display_name: A filter to return only the resources that match the entire display name.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitor.
-        :param bool is_run_now: If isRunNow is enabled, then the monitor will run immediately.
-        :param bool is_run_once: If runOnce is enabled, then the monitor will run once.
-        :param Sequence['GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleArgs'] maintenance_window_schedules: Details required to schedule maintenance window.
-        :param str monitor_type: A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST and REST.
-        :param int repeat_interval_in_seconds: Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
-        :param str scheduling_policy: Scheduling policy to decide the distribution of monitor executions on vantage points.
-        :param str script_id: A filter to return only monitors using scriptId.
-        :param str script_name: Name of the script.
-        :param Sequence['GetMonitorsMonitorCollectionItemScriptParameterArgs'] script_parameters: List of script parameters. Example: `[{"monitorScriptParameter": {"paramName": "userid", "paramValue":"testuser"}, "isSecret": false, "isOverwritten": false}]`
-        :param str status: A filter to return only monitors that match the status given.
-        :param str target: Specify the endpoint on which to run the monitor. For BROWSER and REST monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
-        :param str time_created: The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
-        :param str time_updated: The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
-        :param int timeout_in_seconds: Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
-        :param int vantage_point_count: Number of vantage points where monitor is running.
-        :param Sequence['GetMonitorsMonitorCollectionItemVantagePointArgs'] vantage_points: List of public and dedicated vantage points where the monitor is running.
-        """
-        pulumi.set(__self__, "apm_domain_id", apm_domain_id)
-        pulumi.set(__self__, "availability_configurations", availability_configurations)
-        pulumi.set(__self__, "batch_interval_in_seconds", batch_interval_in_seconds)
-        pulumi.set(__self__, "configurations", configurations)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_run_now", is_run_now)
-        pulumi.set(__self__, "is_run_once", is_run_once)
-        pulumi.set(__self__, "maintenance_window_schedules", maintenance_window_schedules)
-        pulumi.set(__self__, "monitor_type", monitor_type)
-        pulumi.set(__self__, "repeat_interval_in_seconds", repeat_interval_in_seconds)
-        pulumi.set(__self__, "scheduling_policy", scheduling_policy)
-        pulumi.set(__self__, "script_id", script_id)
-        pulumi.set(__self__, "script_name", script_name)
-        pulumi.set(__self__, "script_parameters", script_parameters)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "target", target)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "timeout_in_seconds", timeout_in_seconds)
-        pulumi.set(__self__, "vantage_point_count", vantage_point_count)
-        pulumi.set(__self__, "vantage_points", vantage_points)
+                 apm_domain_id: Optional[str] = None,
+                 availability_configurations: Optional[Sequence['outputs.GetMonitorsMonitorCollectionItemAvailabilityConfigurationResult']] = None,
+                 batch_interval_in_seconds: Optional[int] = None,
+                 configurations: Optional[Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationResult']] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 display_name: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 is_run_now: Optional[bool] = None,
+                 is_run_once: Optional[bool] = None,
+                 maintenance_window_schedules: Optional[Sequence['outputs.GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleResult']] = None,
+                 monitor_type: Optional[str] = None,
+                 repeat_interval_in_seconds: Optional[int] = None,
+                 scheduling_policy: Optional[str] = None,
+                 script_id: Optional[str] = None,
+                 script_name: Optional[str] = None,
+                 script_parameters: Optional[Sequence['outputs.GetMonitorsMonitorCollectionItemScriptParameterResult']] = None,
+                 status: Optional[str] = None,
+                 target: Optional[str] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None,
+                 timeout_in_seconds: Optional[int] = None,
+                 vantage_point_count: Optional[int] = None,
+                 vantage_points: Optional[Sequence['outputs.GetMonitorsMonitorCollectionItemVantagePointResult']] = None):
+        if apm_domain_id is not None:
+            pulumi.set(__self__, "apm_domain_id", apm_domain_id)
+        if availability_configurations is not None:
+            pulumi.set(__self__, "availability_configurations", availability_configurations)
+        if batch_interval_in_seconds is not None:
+            pulumi.set(__self__, "batch_interval_in_seconds", batch_interval_in_seconds)
+        if configurations is not None:
+            pulumi.set(__self__, "configurations", configurations)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if is_run_now is not None:
+            pulumi.set(__self__, "is_run_now", is_run_now)
+        if is_run_once is not None:
+            pulumi.set(__self__, "is_run_once", is_run_once)
+        if maintenance_window_schedules is not None:
+            pulumi.set(__self__, "maintenance_window_schedules", maintenance_window_schedules)
+        if monitor_type is not None:
+            pulumi.set(__self__, "monitor_type", monitor_type)
+        if repeat_interval_in_seconds is not None:
+            pulumi.set(__self__, "repeat_interval_in_seconds", repeat_interval_in_seconds)
+        if scheduling_policy is not None:
+            pulumi.set(__self__, "scheduling_policy", scheduling_policy)
+        if script_id is not None:
+            pulumi.set(__self__, "script_id", script_id)
+        if script_name is not None:
+            pulumi.set(__self__, "script_name", script_name)
+        if script_parameters is not None:
+            pulumi.set(__self__, "script_parameters", script_parameters)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if target is not None:
+            pulumi.set(__self__, "target", target)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
+        if timeout_in_seconds is not None:
+            pulumi.set(__self__, "timeout_in_seconds", timeout_in_seconds)
+        if vantage_point_count is not None:
+            pulumi.set(__self__, "vantage_point_count", vantage_point_count)
+        if vantage_points is not None:
+            pulumi.set(__self__, "vantage_points", vantage_points)
 
     @property
     @pulumi.getter(name="apmDomainId")
-    def apm_domain_id(self) -> str:
-        """
-        The APM domain ID the request is intended for.
-        """
+    def apm_domain_id(self) -> Optional[str]:
         return pulumi.get(self, "apm_domain_id")
 
     @property
     @pulumi.getter(name="availabilityConfigurations")
-    def availability_configurations(self) -> Sequence['outputs.GetMonitorsMonitorCollectionItemAvailabilityConfigurationResult']:
-        """
-        Monitor availability configuration details.
-        """
+    def availability_configurations(self) -> Optional[Sequence['outputs.GetMonitorsMonitorCollectionItemAvailabilityConfigurationResult']]:
         return pulumi.get(self, "availability_configurations")
 
     @property
     @pulumi.getter(name="batchIntervalInSeconds")
-    def batch_interval_in_seconds(self) -> int:
-        """
-        Time interval between two runs in round robin batch mode (SchedulingPolicy - BATCHED_ROUND_ROBIN).
-        """
+    def batch_interval_in_seconds(self) -> Optional[int]:
         return pulumi.get(self, "batch_interval_in_seconds")
 
     @property
     @pulumi.getter
-    def configurations(self) -> Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationResult']:
-        """
-        Details of monitor configuration.
-        """
+    def configurations(self) -> Optional[Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationResult']]:
         return pulumi.get(self, "configurations")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return only the resources that match the entire display name.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitor.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isRunNow")
-    def is_run_now(self) -> bool:
-        """
-        If isRunNow is enabled, then the monitor will run immediately.
-        """
+    def is_run_now(self) -> Optional[bool]:
         return pulumi.get(self, "is_run_now")
 
     @property
     @pulumi.getter(name="isRunOnce")
-    def is_run_once(self) -> bool:
-        """
-        If runOnce is enabled, then the monitor will run once.
-        """
+    def is_run_once(self) -> Optional[bool]:
         return pulumi.get(self, "is_run_once")
 
     @property
     @pulumi.getter(name="maintenanceWindowSchedules")
-    def maintenance_window_schedules(self) -> Sequence['outputs.GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleResult']:
-        """
-        Details required to schedule maintenance window.
-        """
+    def maintenance_window_schedules(self) -> Optional[Sequence['outputs.GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleResult']]:
         return pulumi.get(self, "maintenance_window_schedules")
 
     @property
     @pulumi.getter(name="monitorType")
-    def monitor_type(self) -> str:
-        """
-        A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST and REST.
-        """
+    def monitor_type(self) -> Optional[str]:
         return pulumi.get(self, "monitor_type")
 
     @property
     @pulumi.getter(name="repeatIntervalInSeconds")
-    def repeat_interval_in_seconds(self) -> int:
-        """
-        Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
-        """
+    def repeat_interval_in_seconds(self) -> Optional[int]:
         return pulumi.get(self, "repeat_interval_in_seconds")
 
     @property
     @pulumi.getter(name="schedulingPolicy")
-    def scheduling_policy(self) -> str:
-        """
-        Scheduling policy to decide the distribution of monitor executions on vantage points.
-        """
+    def scheduling_policy(self) -> Optional[str]:
         return pulumi.get(self, "scheduling_policy")
 
     @property
     @pulumi.getter(name="scriptId")
-    def script_id(self) -> str:
-        """
-        A filter to return only monitors using scriptId.
-        """
+    def script_id(self) -> Optional[str]:
         return pulumi.get(self, "script_id")
 
     @property
     @pulumi.getter(name="scriptName")
-    def script_name(self) -> str:
-        """
-        Name of the script.
-        """
+    def script_name(self) -> Optional[str]:
         return pulumi.get(self, "script_name")
 
     @property
     @pulumi.getter(name="scriptParameters")
-    def script_parameters(self) -> Sequence['outputs.GetMonitorsMonitorCollectionItemScriptParameterResult']:
-        """
-        List of script parameters. Example: `[{"monitorScriptParameter": {"paramName": "userid", "paramValue":"testuser"}, "isSecret": false, "isOverwritten": false}]`
-        """
+    def script_parameters(self) -> Optional[Sequence['outputs.GetMonitorsMonitorCollectionItemScriptParameterResult']]:
         return pulumi.get(self, "script_parameters")
 
     @property
     @pulumi.getter
-    def status(self) -> str:
-        """
-        A filter to return only monitors that match the status given.
-        """
+    def status(self) -> Optional[str]:
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter
-    def target(self) -> str:
-        """
-        Specify the endpoint on which to run the monitor. For BROWSER and REST monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
-        """
+    def target(self) -> Optional[str]:
         return pulumi.get(self, "target")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="timeoutInSeconds")
-    def timeout_in_seconds(self) -> int:
-        """
-        Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
-        """
+    def timeout_in_seconds(self) -> Optional[int]:
         return pulumi.get(self, "timeout_in_seconds")
 
     @property
     @pulumi.getter(name="vantagePointCount")
-    def vantage_point_count(self) -> int:
-        """
-        Number of vantage points where monitor is running.
-        """
+    def vantage_point_count(self) -> Optional[int]:
         return pulumi.get(self, "vantage_point_count")
 
     @property
     @pulumi.getter(name="vantagePoints")
-    def vantage_points(self) -> Sequence['outputs.GetMonitorsMonitorCollectionItemVantagePointResult']:
-        """
-        List of public and dedicated vantage points where the monitor is running.
-        """
+    def vantage_points(self) -> Optional[Sequence['outputs.GetMonitorsMonitorCollectionItemVantagePointResult']]:
         return pulumi.get(self, "vantage_points")
 
 
 @pulumi.output_type
 class GetMonitorsMonitorCollectionItemAvailabilityConfigurationResult(dict):
     def __init__(__self__, *,
-                 max_allowed_failures_per_interval: int,
-                 min_allowed_runs_per_interval: int):
-        """
-        :param int max_allowed_failures_per_interval: Maximum number of failed runs allowed in an interval. If an interval has more failed runs than the specified value, then the interval will be classified as UNAVAILABLE.
-        :param int min_allowed_runs_per_interval: Minimum number of runs allowed in an interval. If an interval has fewer runs than the specified value, then the interval will be classified as UNKNOWN and will be excluded from the availability calculations.
-        """
-        pulumi.set(__self__, "max_allowed_failures_per_interval", max_allowed_failures_per_interval)
-        pulumi.set(__self__, "min_allowed_runs_per_interval", min_allowed_runs_per_interval)
+                 max_allowed_failures_per_interval: Optional[int] = None,
+                 min_allowed_runs_per_interval: Optional[int] = None):
+        if max_allowed_failures_per_interval is not None:
+            pulumi.set(__self__, "max_allowed_failures_per_interval", max_allowed_failures_per_interval)
+        if min_allowed_runs_per_interval is not None:
+            pulumi.set(__self__, "min_allowed_runs_per_interval", min_allowed_runs_per_interval)
 
     @property
     @pulumi.getter(name="maxAllowedFailuresPerInterval")
-    def max_allowed_failures_per_interval(self) -> int:
-        """
-        Maximum number of failed runs allowed in an interval. If an interval has more failed runs than the specified value, then the interval will be classified as UNAVAILABLE.
-        """
+    def max_allowed_failures_per_interval(self) -> Optional[int]:
         return pulumi.get(self, "max_allowed_failures_per_interval")
 
     @property
     @pulumi.getter(name="minAllowedRunsPerInterval")
-    def min_allowed_runs_per_interval(self) -> int:
-        """
-        Minimum number of runs allowed in an interval. If an interval has fewer runs than the specified value, then the interval will be classified as UNKNOWN and will be excluded from the availability calculations.
-        """
+    def min_allowed_runs_per_interval(self) -> Optional[int]:
         return pulumi.get(self, "min_allowed_runs_per_interval")
 
 
 @pulumi.output_type
 class GetMonitorsMonitorCollectionItemConfigurationResult(dict):
     def __init__(__self__, *,
-                 client_certificate_details: Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailResult'],
-                 config_type: str,
-                 dns_configurations: Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationResult'],
-                 is_certificate_validation_enabled: bool,
-                 is_default_snapshot_enabled: bool,
-                 is_failure_retried: bool,
-                 is_redirection_enabled: bool,
-                 network_configurations: Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationResult'],
-                 req_authentication_details: Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailResult'],
-                 req_authentication_scheme: str,
-                 request_headers: Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationRequestHeaderResult'],
-                 request_method: str,
-                 request_post_body: str,
-                 request_query_params: Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationRequestQueryParamResult'],
-                 verify_response_codes: Sequence[str],
-                 verify_response_content: str,
-                 verify_texts: Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationVerifyTextResult']):
-        """
-        :param Sequence['GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailArgs'] client_certificate_details: Details for client certificate.
-        :param str config_type: Type of configuration.
-        :param Sequence['GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationArgs'] dns_configurations: Information about the DNS settings.
-        :param bool is_certificate_validation_enabled: If certificate validation is enabled, then the call will fail in case of certification errors.
-        :param bool is_default_snapshot_enabled: If disabled, auto snapshots are not collected.
-        :param bool is_failure_retried: If isFailureRetried is enabled, then a failed call will be retried.
-        :param bool is_redirection_enabled: If redirection is enabled, then redirects will be allowed while accessing target URL.
-        :param Sequence['GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationArgs'] network_configurations: Details of the network configuration.
-        :param Sequence['GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailArgs'] req_authentication_details: Details for request HTTP authentication.
-        :param str req_authentication_scheme: Request HTTP authentication scheme.
-        :param Sequence['GetMonitorsMonitorCollectionItemConfigurationRequestHeaderArgs'] request_headers: List of request headers. Example: `[{"headerName": "content-type", "headerValue":"json"}]`
-        :param str request_method: Request HTTP method.
-        :param str request_post_body: Request post body content.
-        :param Sequence['GetMonitorsMonitorCollectionItemConfigurationRequestQueryParamArgs'] request_query_params: List of request query params. Example: `[{"paramName": "sortOrder", "paramValue": "asc"}]`
-        :param Sequence[str] verify_response_codes: Expected HTTP response codes. For status code range, set values such as 2xx, 3xx.
-        :param str verify_response_content: Verify response content against regular expression based string. If response content does not match the verifyResponseContent value, then it will be considered a failure.
-        :param Sequence['GetMonitorsMonitorCollectionItemConfigurationVerifyTextArgs'] verify_texts: Verifies all the search strings present in the response. If any search string is not present in the response, then it will be considered as a failure.
-        """
-        pulumi.set(__self__, "client_certificate_details", client_certificate_details)
-        pulumi.set(__self__, "config_type", config_type)
-        pulumi.set(__self__, "dns_configurations", dns_configurations)
-        pulumi.set(__self__, "is_certificate_validation_enabled", is_certificate_validation_enabled)
-        pulumi.set(__self__, "is_default_snapshot_enabled", is_default_snapshot_enabled)
-        pulumi.set(__self__, "is_failure_retried", is_failure_retried)
-        pulumi.set(__self__, "is_redirection_enabled", is_redirection_enabled)
-        pulumi.set(__self__, "network_configurations", network_configurations)
-        pulumi.set(__self__, "req_authentication_details", req_authentication_details)
-        pulumi.set(__self__, "req_authentication_scheme", req_authentication_scheme)
-        pulumi.set(__self__, "request_headers", request_headers)
-        pulumi.set(__self__, "request_method", request_method)
-        pulumi.set(__self__, "request_post_body", request_post_body)
-        pulumi.set(__self__, "request_query_params", request_query_params)
-        pulumi.set(__self__, "verify_response_codes", verify_response_codes)
-        pulumi.set(__self__, "verify_response_content", verify_response_content)
-        pulumi.set(__self__, "verify_texts", verify_texts)
+                 client_certificate_details: Optional[Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailResult']] = None,
+                 config_type: Optional[str] = None,
+                 dns_configurations: Optional[Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationResult']] = None,
+                 is_certificate_validation_enabled: Optional[bool] = None,
+                 is_default_snapshot_enabled: Optional[bool] = None,
+                 is_failure_retried: Optional[bool] = None,
+                 is_redirection_enabled: Optional[bool] = None,
+                 network_configurations: Optional[Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationResult']] = None,
+                 req_authentication_details: Optional[Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailResult']] = None,
+                 req_authentication_scheme: Optional[str] = None,
+                 request_headers: Optional[Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationRequestHeaderResult']] = None,
+                 request_method: Optional[str] = None,
+                 request_post_body: Optional[str] = None,
+                 request_query_params: Optional[Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationRequestQueryParamResult']] = None,
+                 verify_response_codes: Optional[Sequence[str]] = None,
+                 verify_response_content: Optional[str] = None,
+                 verify_texts: Optional[Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationVerifyTextResult']] = None):
+        if client_certificate_details is not None:
+            pulumi.set(__self__, "client_certificate_details", client_certificate_details)
+        if config_type is not None:
+            pulumi.set(__self__, "config_type", config_type)
+        if dns_configurations is not None:
+            pulumi.set(__self__, "dns_configurations", dns_configurations)
+        if is_certificate_validation_enabled is not None:
+            pulumi.set(__self__, "is_certificate_validation_enabled", is_certificate_validation_enabled)
+        if is_default_snapshot_enabled is not None:
+            pulumi.set(__self__, "is_default_snapshot_enabled", is_default_snapshot_enabled)
+        if is_failure_retried is not None:
+            pulumi.set(__self__, "is_failure_retried", is_failure_retried)
+        if is_redirection_enabled is not None:
+            pulumi.set(__self__, "is_redirection_enabled", is_redirection_enabled)
+        if network_configurations is not None:
+            pulumi.set(__self__, "network_configurations", network_configurations)
+        if req_authentication_details is not None:
+            pulumi.set(__self__, "req_authentication_details", req_authentication_details)
+        if req_authentication_scheme is not None:
+            pulumi.set(__self__, "req_authentication_scheme", req_authentication_scheme)
+        if request_headers is not None:
+            pulumi.set(__self__, "request_headers", request_headers)
+        if request_method is not None:
+            pulumi.set(__self__, "request_method", request_method)
+        if request_post_body is not None:
+            pulumi.set(__self__, "request_post_body", request_post_body)
+        if request_query_params is not None:
+            pulumi.set(__self__, "request_query_params", request_query_params)
+        if verify_response_codes is not None:
+            pulumi.set(__self__, "verify_response_codes", verify_response_codes)
+        if verify_response_content is not None:
+            pulumi.set(__self__, "verify_response_content", verify_response_content)
+        if verify_texts is not None:
+            pulumi.set(__self__, "verify_texts", verify_texts)
 
     @property
     @pulumi.getter(name="clientCertificateDetails")
-    def client_certificate_details(self) -> Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailResult']:
-        """
-        Details for client certificate.
-        """
+    def client_certificate_details(self) -> Optional[Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailResult']]:
         return pulumi.get(self, "client_certificate_details")
 
     @property
     @pulumi.getter(name="configType")
-    def config_type(self) -> str:
-        """
-        Type of configuration.
-        """
+    def config_type(self) -> Optional[str]:
         return pulumi.get(self, "config_type")
 
     @property
     @pulumi.getter(name="dnsConfigurations")
-    def dns_configurations(self) -> Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationResult']:
-        """
-        Information about the DNS settings.
-        """
+    def dns_configurations(self) -> Optional[Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationResult']]:
         return pulumi.get(self, "dns_configurations")
 
     @property
     @pulumi.getter(name="isCertificateValidationEnabled")
-    def is_certificate_validation_enabled(self) -> bool:
-        """
-        If certificate validation is enabled, then the call will fail in case of certification errors.
-        """
+    def is_certificate_validation_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_certificate_validation_enabled")
 
     @property
     @pulumi.getter(name="isDefaultSnapshotEnabled")
-    def is_default_snapshot_enabled(self) -> bool:
-        """
-        If disabled, auto snapshots are not collected.
-        """
+    def is_default_snapshot_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_default_snapshot_enabled")
 
     @property
     @pulumi.getter(name="isFailureRetried")
-    def is_failure_retried(self) -> bool:
-        """
-        If isFailureRetried is enabled, then a failed call will be retried.
-        """
+    def is_failure_retried(self) -> Optional[bool]:
         return pulumi.get(self, "is_failure_retried")
 
     @property
     @pulumi.getter(name="isRedirectionEnabled")
-    def is_redirection_enabled(self) -> bool:
-        """
-        If redirection is enabled, then redirects will be allowed while accessing target URL.
-        """
+    def is_redirection_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_redirection_enabled")
 
     @property
     @pulumi.getter(name="networkConfigurations")
-    def network_configurations(self) -> Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationResult']:
-        """
-        Details of the network configuration.
-        """
+    def network_configurations(self) -> Optional[Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationResult']]:
         return pulumi.get(self, "network_configurations")
 
     @property
     @pulumi.getter(name="reqAuthenticationDetails")
-    def req_authentication_details(self) -> Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailResult']:
-        """
-        Details for request HTTP authentication.
-        """
+    def req_authentication_details(self) -> Optional[Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailResult']]:
         return pulumi.get(self, "req_authentication_details")
 
     @property
     @pulumi.getter(name="reqAuthenticationScheme")
-    def req_authentication_scheme(self) -> str:
-        """
-        Request HTTP authentication scheme.
-        """
+    def req_authentication_scheme(self) -> Optional[str]:
         return pulumi.get(self, "req_authentication_scheme")
 
     @property
     @pulumi.getter(name="requestHeaders")
-    def request_headers(self) -> Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationRequestHeaderResult']:
-        """
-        List of request headers. Example: `[{"headerName": "content-type", "headerValue":"json"}]`
-        """
+    def request_headers(self) -> Optional[Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationRequestHeaderResult']]:
         return pulumi.get(self, "request_headers")
 
     @property
     @pulumi.getter(name="requestMethod")
-    def request_method(self) -> str:
-        """
-        Request HTTP method.
-        """
+    def request_method(self) -> Optional[str]:
         return pulumi.get(self, "request_method")
 
     @property
     @pulumi.getter(name="requestPostBody")
-    def request_post_body(self) -> str:
-        """
-        Request post body content.
-        """
+    def request_post_body(self) -> Optional[str]:
         return pulumi.get(self, "request_post_body")
 
     @property
     @pulumi.getter(name="requestQueryParams")
-    def request_query_params(self) -> Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationRequestQueryParamResult']:
-        """
-        List of request query params. Example: `[{"paramName": "sortOrder", "paramValue": "asc"}]`
-        """
+    def request_query_params(self) -> Optional[Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationRequestQueryParamResult']]:
         return pulumi.get(self, "request_query_params")
 
     @property
     @pulumi.getter(name="verifyResponseCodes")
-    def verify_response_codes(self) -> Sequence[str]:
-        """
-        Expected HTTP response codes. For status code range, set values such as 2xx, 3xx.
-        """
+    def verify_response_codes(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "verify_response_codes")
 
     @property
     @pulumi.getter(name="verifyResponseContent")
-    def verify_response_content(self) -> str:
-        """
-        Verify response content against regular expression based string. If response content does not match the verifyResponseContent value, then it will be considered a failure.
-        """
+    def verify_response_content(self) -> Optional[str]:
         return pulumi.get(self, "verify_response_content")
 
     @property
     @pulumi.getter(name="verifyTexts")
-    def verify_texts(self) -> Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationVerifyTextResult']:
-        """
-        Verifies all the search strings present in the response. If any search string is not present in the response, then it will be considered as a failure.
-        """
+    def verify_texts(self) -> Optional[Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationVerifyTextResult']]:
         return pulumi.get(self, "verify_texts")
 
 
 @pulumi.output_type
 class GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailResult(dict):
     def __init__(__self__, *,
-                 client_certificates: Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateResult'],
-                 private_keys: Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyResult']):
-        """
-        :param Sequence['GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateArgs'] client_certificates: Client certificate in PEM format.
-        :param Sequence['GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyArgs'] private_keys: The private key associated with the client certificate in PEM format.
-        """
-        pulumi.set(__self__, "client_certificates", client_certificates)
-        pulumi.set(__self__, "private_keys", private_keys)
+                 client_certificates: Optional[Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateResult']] = None,
+                 private_keys: Optional[Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyResult']] = None):
+        if client_certificates is not None:
+            pulumi.set(__self__, "client_certificates", client_certificates)
+        if private_keys is not None:
+            pulumi.set(__self__, "private_keys", private_keys)
 
     @property
     @pulumi.getter(name="clientCertificates")
-    def client_certificates(self) -> Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateResult']:
-        """
-        Client certificate in PEM format.
-        """
+    def client_certificates(self) -> Optional[Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateResult']]:
         return pulumi.get(self, "client_certificates")
 
     @property
     @pulumi.getter(name="privateKeys")
-    def private_keys(self) -> Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyResult']:
-        """
-        The private key associated with the client certificate in PEM format.
-        """
+    def private_keys(self) -> Optional[Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyResult']]:
         return pulumi.get(self, "private_keys")
 
 
 @pulumi.output_type
 class GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateResult(dict):
     def __init__(__self__, *,
-                 content: str,
-                 file_name: str):
-        """
-        :param str content: Content of the private key file.
-        :param str file_name: Name of the private key file.
-        """
-        pulumi.set(__self__, "content", content)
-        pulumi.set(__self__, "file_name", file_name)
+                 content: Optional[str] = None,
+                 file_name: Optional[str] = None):
+        if content is not None:
+            pulumi.set(__self__, "content", content)
+        if file_name is not None:
+            pulumi.set(__self__, "file_name", file_name)
 
     @property
     @pulumi.getter
-    def content(self) -> str:
-        """
-        Content of the private key file.
-        """
+    def content(self) -> Optional[str]:
         return pulumi.get(self, "content")
 
     @property
     @pulumi.getter(name="fileName")
-    def file_name(self) -> str:
-        """
-        Name of the private key file.
-        """
+    def file_name(self) -> Optional[str]:
         return pulumi.get(self, "file_name")
 
 
 @pulumi.output_type
 class GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyResult(dict):
     def __init__(__self__, *,
-                 content: str,
-                 file_name: str):
-        """
-        :param str content: Content of the private key file.
-        :param str file_name: Name of the private key file.
-        """
-        pulumi.set(__self__, "content", content)
-        pulumi.set(__self__, "file_name", file_name)
+                 content: Optional[str] = None,
+                 file_name: Optional[str] = None):
+        if content is not None:
+            pulumi.set(__self__, "content", content)
+        if file_name is not None:
+            pulumi.set(__self__, "file_name", file_name)
 
     @property
     @pulumi.getter
-    def content(self) -> str:
-        """
-        Content of the private key file.
-        """
+    def content(self) -> Optional[str]:
         return pulumi.get(self, "content")
 
     @property
     @pulumi.getter(name="fileName")
-    def file_name(self) -> str:
-        """
-        Name of the private key file.
-        """
+    def file_name(self) -> Optional[str]:
         return pulumi.get(self, "file_name")
 
 
 @pulumi.output_type
 class GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationResult(dict):
     def __init__(__self__, *,
-                 is_override_dns: bool,
-                 override_dns_ip: str):
-        """
-        :param bool is_override_dns: If isOverrideDns is true, then DNS settings will be overridden.
-        :param str override_dns_ip: Attribute to override the DNS IP value. This value will be honored only if isOverrideDns is set to true.
-        """
-        pulumi.set(__self__, "is_override_dns", is_override_dns)
-        pulumi.set(__self__, "override_dns_ip", override_dns_ip)
+                 is_override_dns: Optional[bool] = None,
+                 override_dns_ip: Optional[str] = None):
+        if is_override_dns is not None:
+            pulumi.set(__self__, "is_override_dns", is_override_dns)
+        if override_dns_ip is not None:
+            pulumi.set(__self__, "override_dns_ip", override_dns_ip)
 
     @property
     @pulumi.getter(name="isOverrideDns")
-    def is_override_dns(self) -> bool:
-        """
-        If isOverrideDns is true, then DNS settings will be overridden.
-        """
+    def is_override_dns(self) -> Optional[bool]:
         return pulumi.get(self, "is_override_dns")
 
     @property
     @pulumi.getter(name="overrideDnsIp")
-    def override_dns_ip(self) -> str:
-        """
-        Attribute to override the DNS IP value. This value will be honored only if isOverrideDns is set to true.
-        """
+    def override_dns_ip(self) -> Optional[str]:
         return pulumi.get(self, "override_dns_ip")
 
 
 @pulumi.output_type
 class GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationResult(dict):
     def __init__(__self__, *,
-                 number_of_hops: int,
-                 probe_mode: str,
-                 probe_per_hop: int,
-                 protocol: str,
-                 transmission_rate: int):
-        """
-        :param int number_of_hops: Number of hops.
-        :param str probe_mode: Type of probe mode when TCP protocol is selected.
-        :param int probe_per_hop: Number of probes per hop.
-        :param str protocol: Type of protocol.
-        :param int transmission_rate: Number of probe packets sent out simultaneously.
-        """
-        pulumi.set(__self__, "number_of_hops", number_of_hops)
-        pulumi.set(__self__, "probe_mode", probe_mode)
-        pulumi.set(__self__, "probe_per_hop", probe_per_hop)
-        pulumi.set(__self__, "protocol", protocol)
-        pulumi.set(__self__, "transmission_rate", transmission_rate)
+                 number_of_hops: Optional[int] = None,
+                 probe_mode: Optional[str] = None,
+                 probe_per_hop: Optional[int] = None,
+                 protocol: Optional[str] = None,
+                 transmission_rate: Optional[int] = None):
+        if number_of_hops is not None:
+            pulumi.set(__self__, "number_of_hops", number_of_hops)
+        if probe_mode is not None:
+            pulumi.set(__self__, "probe_mode", probe_mode)
+        if probe_per_hop is not None:
+            pulumi.set(__self__, "probe_per_hop", probe_per_hop)
+        if protocol is not None:
+            pulumi.set(__self__, "protocol", protocol)
+        if transmission_rate is not None:
+            pulumi.set(__self__, "transmission_rate", transmission_rate)
 
     @property
     @pulumi.getter(name="numberOfHops")
-    def number_of_hops(self) -> int:
-        """
-        Number of hops.
-        """
+    def number_of_hops(self) -> Optional[int]:
         return pulumi.get(self, "number_of_hops")
 
     @property
     @pulumi.getter(name="probeMode")
-    def probe_mode(self) -> str:
-        """
-        Type of probe mode when TCP protocol is selected.
-        """
+    def probe_mode(self) -> Optional[str]:
         return pulumi.get(self, "probe_mode")
 
     @property
     @pulumi.getter(name="probePerHop")
-    def probe_per_hop(self) -> int:
-        """
-        Number of probes per hop.
-        """
+    def probe_per_hop(self) -> Optional[int]:
         return pulumi.get(self, "probe_per_hop")
 
     @property
     @pulumi.getter
-    def protocol(self) -> str:
-        """
-        Type of protocol.
-        """
+    def protocol(self) -> Optional[str]:
         return pulumi.get(self, "protocol")
 
     @property
     @pulumi.getter(name="transmissionRate")
-    def transmission_rate(self) -> int:
-        """
-        Number of probe packets sent out simultaneously.
-        """
+    def transmission_rate(self) -> Optional[int]:
         return pulumi.get(self, "transmission_rate")
 
 
 @pulumi.output_type
 class GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailResult(dict):
     def __init__(__self__, *,
-                 auth_headers: Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeaderResult'],
-                 auth_request_method: str,
-                 auth_request_post_body: str,
-                 auth_token: str,
-                 auth_url: str,
-                 auth_user_name: str,
-                 auth_user_password: str,
-                 oauth_scheme: str):
-        """
-        :param Sequence['GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeaderArgs'] auth_headers: List of authentication headers. Example: `[{"headerName": "content-type", "headerValue":"json"}]`
-        :param str auth_request_method: Request method.
-        :param str auth_request_post_body: Request post body.
-        :param str auth_token: Authentication token.
-        :param str auth_url: URL to get authentication token.
-        :param str auth_user_name: User name for authentication.
-        :param str auth_user_password: User password for authentication.
-        :param str oauth_scheme: Request HTTP OAuth scheme.
-        """
-        pulumi.set(__self__, "auth_headers", auth_headers)
-        pulumi.set(__self__, "auth_request_method", auth_request_method)
-        pulumi.set(__self__, "auth_request_post_body", auth_request_post_body)
-        pulumi.set(__self__, "auth_token", auth_token)
-        pulumi.set(__self__, "auth_url", auth_url)
-        pulumi.set(__self__, "auth_user_name", auth_user_name)
-        pulumi.set(__self__, "auth_user_password", auth_user_password)
-        pulumi.set(__self__, "oauth_scheme", oauth_scheme)
+                 auth_headers: Optional[Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeaderResult']] = None,
+                 auth_request_method: Optional[str] = None,
+                 auth_request_post_body: Optional[str] = None,
+                 auth_token: Optional[str] = None,
+                 auth_url: Optional[str] = None,
+                 auth_user_name: Optional[str] = None,
+                 auth_user_password: Optional[str] = None,
+                 oauth_scheme: Optional[str] = None):
+        if auth_headers is not None:
+            pulumi.set(__self__, "auth_headers", auth_headers)
+        if auth_request_method is not None:
+            pulumi.set(__self__, "auth_request_method", auth_request_method)
+        if auth_request_post_body is not None:
+            pulumi.set(__self__, "auth_request_post_body", auth_request_post_body)
+        if auth_token is not None:
+            pulumi.set(__self__, "auth_token", auth_token)
+        if auth_url is not None:
+            pulumi.set(__self__, "auth_url", auth_url)
+        if auth_user_name is not None:
+            pulumi.set(__self__, "auth_user_name", auth_user_name)
+        if auth_user_password is not None:
+            pulumi.set(__self__, "auth_user_password", auth_user_password)
+        if oauth_scheme is not None:
+            pulumi.set(__self__, "oauth_scheme", oauth_scheme)
 
     @property
     @pulumi.getter(name="authHeaders")
-    def auth_headers(self) -> Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeaderResult']:
-        """
-        List of authentication headers. Example: `[{"headerName": "content-type", "headerValue":"json"}]`
-        """
+    def auth_headers(self) -> Optional[Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeaderResult']]:
         return pulumi.get(self, "auth_headers")
 
     @property
     @pulumi.getter(name="authRequestMethod")
-    def auth_request_method(self) -> str:
-        """
-        Request method.
-        """
+    def auth_request_method(self) -> Optional[str]:
         return pulumi.get(self, "auth_request_method")
 
     @property
     @pulumi.getter(name="authRequestPostBody")
-    def auth_request_post_body(self) -> str:
-        """
-        Request post body.
-        """
+    def auth_request_post_body(self) -> Optional[str]:
         return pulumi.get(self, "auth_request_post_body")
 
     @property
     @pulumi.getter(name="authToken")
-    def auth_token(self) -> str:
-        """
-        Authentication token.
-        """
+    def auth_token(self) -> Optional[str]:
         return pulumi.get(self, "auth_token")
 
     @property
     @pulumi.getter(name="authUrl")
-    def auth_url(self) -> str:
-        """
-        URL to get authentication token.
-        """
+    def auth_url(self) -> Optional[str]:
         return pulumi.get(self, "auth_url")
 
     @property
     @pulumi.getter(name="authUserName")
-    def auth_user_name(self) -> str:
-        """
-        User name for authentication.
-        """
+    def auth_user_name(self) -> Optional[str]:
         return pulumi.get(self, "auth_user_name")
 
     @property
     @pulumi.getter(name="authUserPassword")
-    def auth_user_password(self) -> str:
-        """
-        User password for authentication.
-        """
+    def auth_user_password(self) -> Optional[str]:
         return pulumi.get(self, "auth_user_password")
 
     @property
     @pulumi.getter(name="oauthScheme")
-    def oauth_scheme(self) -> str:
-        """
-        Request HTTP OAuth scheme.
-        """
+    def oauth_scheme(self) -> Optional[str]:
         return pulumi.get(self, "oauth_scheme")
 
 
 @pulumi.output_type
 class GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeaderResult(dict):
     def __init__(__self__, *,
-                 header_name: str,
-                 header_value: str):
-        """
-        :param str header_name: Name of the header.
-        :param str header_value: Value of the header.
-        """
-        pulumi.set(__self__, "header_name", header_name)
-        pulumi.set(__self__, "header_value", header_value)
+                 header_name: Optional[str] = None,
+                 header_value: Optional[str] = None):
+        if header_name is not None:
+            pulumi.set(__self__, "header_name", header_name)
+        if header_value is not None:
+            pulumi.set(__self__, "header_value", header_value)
 
     @property
     @pulumi.getter(name="headerName")
-    def header_name(self) -> str:
-        """
-        Name of the header.
-        """
+    def header_name(self) -> Optional[str]:
         return pulumi.get(self, "header_name")
 
     @property
     @pulumi.getter(name="headerValue")
-    def header_value(self) -> str:
-        """
-        Value of the header.
-        """
+    def header_value(self) -> Optional[str]:
         return pulumi.get(self, "header_value")
 
 
 @pulumi.output_type
 class GetMonitorsMonitorCollectionItemConfigurationRequestHeaderResult(dict):
     def __init__(__self__, *,
-                 header_name: str,
-                 header_value: str):
-        """
-        :param str header_name: Name of the header.
-        :param str header_value: Value of the header.
-        """
-        pulumi.set(__self__, "header_name", header_name)
-        pulumi.set(__self__, "header_value", header_value)
+                 header_name: Optional[str] = None,
+                 header_value: Optional[str] = None):
+        if header_name is not None:
+            pulumi.set(__self__, "header_name", header_name)
+        if header_value is not None:
+            pulumi.set(__self__, "header_value", header_value)
 
     @property
     @pulumi.getter(name="headerName")
-    def header_name(self) -> str:
-        """
-        Name of the header.
-        """
+    def header_name(self) -> Optional[str]:
         return pulumi.get(self, "header_name")
 
     @property
     @pulumi.getter(name="headerValue")
-    def header_value(self) -> str:
-        """
-        Value of the header.
-        """
+    def header_value(self) -> Optional[str]:
         return pulumi.get(self, "header_value")
 
 
 @pulumi.output_type
 class GetMonitorsMonitorCollectionItemConfigurationRequestQueryParamResult(dict):
     def __init__(__self__, *,
-                 param_name: str,
-                 param_value: str):
-        """
-        :param str param_name: Name of the parameter.
-        :param str param_value: Value of the parameter.
-        """
-        pulumi.set(__self__, "param_name", param_name)
-        pulumi.set(__self__, "param_value", param_value)
+                 param_name: Optional[str] = None,
+                 param_value: Optional[str] = None):
+        if param_name is not None:
+            pulumi.set(__self__, "param_name", param_name)
+        if param_value is not None:
+            pulumi.set(__self__, "param_value", param_value)
 
     @property
     @pulumi.getter(name="paramName")
-    def param_name(self) -> str:
-        """
-        Name of the parameter.
-        """
+    def param_name(self) -> Optional[str]:
         return pulumi.get(self, "param_name")
 
     @property
     @pulumi.getter(name="paramValue")
-    def param_value(self) -> str:
-        """
-        Value of the parameter.
-        """
+    def param_value(self) -> Optional[str]:
         return pulumi.get(self, "param_value")
 
 
 @pulumi.output_type
 class GetMonitorsMonitorCollectionItemConfigurationVerifyTextResult(dict):
     def __init__(__self__, *,
-                 text: str):
-        """
-        :param str text: Verification text in the response.
-        """
-        pulumi.set(__self__, "text", text)
+                 text: Optional[str] = None):
+        if text is not None:
+            pulumi.set(__self__, "text", text)
 
     @property
     @pulumi.getter
-    def text(self) -> str:
-        """
-        Verification text in the response.
-        """
+    def text(self) -> Optional[str]:
         return pulumi.get(self, "text")
 
 
 @pulumi.output_type
 class GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleResult(dict):
     def __init__(__self__, *,
-                 time_ended: str,
-                 time_started: str):
-        """
-        :param str time_ended: End time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
-        :param str time_started: Start time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
-        """
-        pulumi.set(__self__, "time_ended", time_ended)
-        pulumi.set(__self__, "time_started", time_started)
+                 time_ended: Optional[str] = None,
+                 time_started: Optional[str] = None):
+        if time_ended is not None:
+            pulumi.set(__self__, "time_ended", time_ended)
+        if time_started is not None:
+            pulumi.set(__self__, "time_started", time_started)
 
     @property
     @pulumi.getter(name="timeEnded")
-    def time_ended(self) -> str:
-        """
-        End time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
-        """
+    def time_ended(self) -> Optional[str]:
         return pulumi.get(self, "time_ended")
 
     @property
     @pulumi.getter(name="timeStarted")
-    def time_started(self) -> str:
-        """
-        Start time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
-        """
+    def time_started(self) -> Optional[str]:
         return pulumi.get(self, "time_started")
 
 
 @pulumi.output_type
 class GetMonitorsMonitorCollectionItemScriptParameterResult(dict):
     def __init__(__self__, *,
-                 is_overwritten: bool,
-                 is_secret: bool,
-                 monitor_script_parameters: Sequence['outputs.GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameterResult'],
-                 param_name: str,
-                 param_value: str):
-        """
-        :param bool is_overwritten: If parameter value is default or overwritten.
-        :param bool is_secret: Describes if  the parameter value is secret and should be kept confidential. isSecret is specified in either CreateScript or UpdateScript API.
-        :param Sequence['GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameterArgs'] monitor_script_parameters: Details of the script parameter that can be used to overwrite the parameter present in the script.
-        :param str param_name: Name of the parameter.
-        :param str param_value: Value of the parameter.
-        """
-        pulumi.set(__self__, "is_overwritten", is_overwritten)
-        pulumi.set(__self__, "is_secret", is_secret)
-        pulumi.set(__self__, "monitor_script_parameters", monitor_script_parameters)
-        pulumi.set(__self__, "param_name", param_name)
-        pulumi.set(__self__, "param_value", param_value)
+                 is_overwritten: Optional[bool] = None,
+                 is_secret: Optional[bool] = None,
+                 monitor_script_parameters: Optional[Sequence['outputs.GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameterResult']] = None,
+                 param_name: Optional[str] = None,
+                 param_value: Optional[str] = None):
+        if is_overwritten is not None:
+            pulumi.set(__self__, "is_overwritten", is_overwritten)
+        if is_secret is not None:
+            pulumi.set(__self__, "is_secret", is_secret)
+        if monitor_script_parameters is not None:
+            pulumi.set(__self__, "monitor_script_parameters", monitor_script_parameters)
+        if param_name is not None:
+            pulumi.set(__self__, "param_name", param_name)
+        if param_value is not None:
+            pulumi.set(__self__, "param_value", param_value)
 
     @property
     @pulumi.getter(name="isOverwritten")
-    def is_overwritten(self) -> bool:
-        """
-        If parameter value is default or overwritten.
-        """
+    def is_overwritten(self) -> Optional[bool]:
         return pulumi.get(self, "is_overwritten")
 
     @property
     @pulumi.getter(name="isSecret")
-    def is_secret(self) -> bool:
-        """
-        Describes if  the parameter value is secret and should be kept confidential. isSecret is specified in either CreateScript or UpdateScript API.
-        """
+    def is_secret(self) -> Optional[bool]:
         return pulumi.get(self, "is_secret")
 
     @property
     @pulumi.getter(name="monitorScriptParameters")
-    def monitor_script_parameters(self) -> Sequence['outputs.GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameterResult']:
-        """
-        Details of the script parameter that can be used to overwrite the parameter present in the script.
-        """
+    def monitor_script_parameters(self) -> Optional[Sequence['outputs.GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameterResult']]:
         return pulumi.get(self, "monitor_script_parameters")
 
     @property
     @pulumi.getter(name="paramName")
-    def param_name(self) -> str:
-        """
-        Name of the parameter.
-        """
+    def param_name(self) -> Optional[str]:
         return pulumi.get(self, "param_name")
 
     @property
     @pulumi.getter(name="paramValue")
-    def param_value(self) -> str:
-        """
-        Value of the parameter.
-        """
+    def param_value(self) -> Optional[str]:
         return pulumi.get(self, "param_value")
 
 
 @pulumi.output_type
 class GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameterResult(dict):
     def __init__(__self__, *,
-                 param_name: str,
-                 param_value: str):
-        """
-        :param str param_name: Name of the parameter.
-        :param str param_value: Value of the parameter.
-        """
-        pulumi.set(__self__, "param_name", param_name)
-        pulumi.set(__self__, "param_value", param_value)
+                 param_name: Optional[str] = None,
+                 param_value: Optional[str] = None):
+        if param_name is not None:
+            pulumi.set(__self__, "param_name", param_name)
+        if param_value is not None:
+            pulumi.set(__self__, "param_value", param_value)
 
     @property
     @pulumi.getter(name="paramName")
-    def param_name(self) -> str:
-        """
-        Name of the parameter.
-        """
+    def param_name(self) -> Optional[str]:
         return pulumi.get(self, "param_name")
 
     @property
     @pulumi.getter(name="paramValue")
-    def param_value(self) -> str:
-        """
-        Value of the parameter.
-        """
+    def param_value(self) -> Optional[str]:
         return pulumi.get(self, "param_value")
 
 
 @pulumi.output_type
 class GetMonitorsMonitorCollectionItemVantagePointResult(dict):
     def __init__(__self__, *,
-                 display_name: str,
-                 name: str):
-        """
-        :param str display_name: A filter to return only the resources that match the entire display name.
-        :param str name: Name of the vantage point.
-        """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "name", name)
+                 display_name: Optional[str] = None,
+                 name: Optional[str] = None):
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return only the resources that match the entire display name.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Name of the vantage point.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
 
 @pulumi.output_type
 class GetResultResultDataSetResult(dict):
     def __init__(__self__, *,
-                 byte_content: str,
-                 name: str,
-                 string_content: str,
-                 timestamp: str):
-        """
-        :param str byte_content: Data content in byte format. Example: Zip or Screenshot.
-        :param str name: Name of the data.
-        :param str string_content: Data content in string format. Example: HAR.
-        :param str timestamp: The time when the data was generated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
-        """
-        pulumi.set(__self__, "byte_content", byte_content)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "string_content", string_content)
-        pulumi.set(__self__, "timestamp", timestamp)
+                 byte_content: Optional[str] = None,
+                 name: Optional[str] = None,
+                 string_content: Optional[str] = None,
+                 timestamp: Optional[str] = None):
+        if byte_content is not None:
+            pulumi.set(__self__, "byte_content", byte_content)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if string_content is not None:
+            pulumi.set(__self__, "string_content", string_content)
+        if timestamp is not None:
+            pulumi.set(__self__, "timestamp", timestamp)
 
     @property
     @pulumi.getter(name="byteContent")
-    def byte_content(self) -> str:
-        """
-        Data content in byte format. Example: Zip or Screenshot.
-        """
+    def byte_content(self) -> Optional[str]:
         return pulumi.get(self, "byte_content")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Name of the data.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="stringContent")
-    def string_content(self) -> str:
-        """
-        Data content in string format. Example: HAR.
-        """
+    def string_content(self) -> Optional[str]:
         return pulumi.get(self, "string_content")
 
     @property
     @pulumi.getter
-    def timestamp(self) -> str:
-        """
-        The time when the data was generated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
-        """
+    def timestamp(self) -> Optional[str]:
         return pulumi.get(self, "timestamp")
 
 
 @pulumi.output_type
 class GetScriptMonitorStatusCountMapResult(dict):
     def __init__(__self__, *,
-                 disabled: int,
-                 enabled: int,
-                 invalid: int,
-                 total: int):
-        """
-        :param int disabled: Number of disabled monitors using the script.
-        :param int enabled: Number of enabled monitors using the script.
-        :param int invalid: Number of invalid monitors using the script.
-        :param int total: Total number of monitors using the script.
-        """
-        pulumi.set(__self__, "disabled", disabled)
-        pulumi.set(__self__, "enabled", enabled)
-        pulumi.set(__self__, "invalid", invalid)
-        pulumi.set(__self__, "total", total)
+                 disabled: Optional[int] = None,
+                 enabled: Optional[int] = None,
+                 invalid: Optional[int] = None,
+                 total: Optional[int] = None):
+        if disabled is not None:
+            pulumi.set(__self__, "disabled", disabled)
+        if enabled is not None:
+            pulumi.set(__self__, "enabled", enabled)
+        if invalid is not None:
+            pulumi.set(__self__, "invalid", invalid)
+        if total is not None:
+            pulumi.set(__self__, "total", total)
 
     @property
     @pulumi.getter
-    def disabled(self) -> int:
-        """
-        Number of disabled monitors using the script.
-        """
+    def disabled(self) -> Optional[int]:
         return pulumi.get(self, "disabled")
 
     @property
     @pulumi.getter
-    def enabled(self) -> int:
-        """
-        Number of enabled monitors using the script.
-        """
+    def enabled(self) -> Optional[int]:
         return pulumi.get(self, "enabled")
 
     @property
     @pulumi.getter
-    def invalid(self) -> int:
-        """
-        Number of invalid monitors using the script.
-        """
+    def invalid(self) -> Optional[int]:
         return pulumi.get(self, "invalid")
 
     @property
     @pulumi.getter
-    def total(self) -> int:
-        """
-        Total number of monitors using the script.
-        """
+    def total(self) -> Optional[int]:
         return pulumi.get(self, "total")
 
 
 @pulumi.output_type
 class GetScriptParameterResult(dict):
     def __init__(__self__, *,
-                 is_overwritten: bool,
-                 is_secret: bool,
-                 param_name: str,
-                 param_value: str,
-                 script_parameters: Sequence['outputs.GetScriptParameterScriptParameterResult']):
-        """
-        :param bool is_overwritten: If parameter value is default or overwritten.
-        :param bool is_secret: If the parameter value is secret and should be kept confidential, then set isSecret to true.
-        :param str param_name: Name of the parameter.
-        :param str param_value: Value of the parameter.
-        :param Sequence['GetScriptParameterScriptParameterArgs'] script_parameters: Details of the script parameters, paramName must be from the script content and these details can be used to overwrite the default parameter present in the script content.
-        """
-        pulumi.set(__self__, "is_overwritten", is_overwritten)
-        pulumi.set(__self__, "is_secret", is_secret)
-        pulumi.set(__self__, "param_name", param_name)
-        pulumi.set(__self__, "param_value", param_value)
-        pulumi.set(__self__, "script_parameters", script_parameters)
+                 is_overwritten: Optional[bool] = None,
+                 is_secret: Optional[bool] = None,
+                 param_name: Optional[str] = None,
+                 param_value: Optional[str] = None,
+                 script_parameters: Optional[Sequence['outputs.GetScriptParameterScriptParameterResult']] = None):
+        if is_overwritten is not None:
+            pulumi.set(__self__, "is_overwritten", is_overwritten)
+        if is_secret is not None:
+            pulumi.set(__self__, "is_secret", is_secret)
+        if param_name is not None:
+            pulumi.set(__self__, "param_name", param_name)
+        if param_value is not None:
+            pulumi.set(__self__, "param_value", param_value)
+        if script_parameters is not None:
+            pulumi.set(__self__, "script_parameters", script_parameters)
 
     @property
     @pulumi.getter(name="isOverwritten")
-    def is_overwritten(self) -> bool:
-        """
-        If parameter value is default or overwritten.
-        """
+    def is_overwritten(self) -> Optional[bool]:
         return pulumi.get(self, "is_overwritten")
 
     @property
     @pulumi.getter(name="isSecret")
-    def is_secret(self) -> bool:
-        """
-        If the parameter value is secret and should be kept confidential, then set isSecret to true.
-        """
+    def is_secret(self) -> Optional[bool]:
         return pulumi.get(self, "is_secret")
 
     @property
     @pulumi.getter(name="paramName")
-    def param_name(self) -> str:
-        """
-        Name of the parameter.
-        """
+    def param_name(self) -> Optional[str]:
         return pulumi.get(self, "param_name")
 
     @property
     @pulumi.getter(name="paramValue")
-    def param_value(self) -> str:
-        """
-        Value of the parameter.
-        """
+    def param_value(self) -> Optional[str]:
         return pulumi.get(self, "param_value")
 
     @property
     @pulumi.getter(name="scriptParameters")
-    def script_parameters(self) -> Sequence['outputs.GetScriptParameterScriptParameterResult']:
-        """
-        Details of the script parameters, paramName must be from the script content and these details can be used to overwrite the default parameter present in the script content.
-        """
+    def script_parameters(self) -> Optional[Sequence['outputs.GetScriptParameterScriptParameterResult']]:
         return pulumi.get(self, "script_parameters")
 
 
 @pulumi.output_type
 class GetScriptParameterScriptParameterResult(dict):
     def __init__(__self__, *,
-                 is_secret: bool,
-                 param_name: str,
-                 param_value: str):
-        """
-        :param bool is_secret: If the parameter value is secret and should be kept confidential, then set isSecret to true.
-        :param str param_name: Name of the parameter.
-        :param str param_value: Value of the parameter.
-        """
-        pulumi.set(__self__, "is_secret", is_secret)
-        pulumi.set(__self__, "param_name", param_name)
-        pulumi.set(__self__, "param_value", param_value)
+                 is_secret: Optional[bool] = None,
+                 param_name: Optional[str] = None,
+                 param_value: Optional[str] = None):
+        if is_secret is not None:
+            pulumi.set(__self__, "is_secret", is_secret)
+        if param_name is not None:
+            pulumi.set(__self__, "param_name", param_name)
+        if param_value is not None:
+            pulumi.set(__self__, "param_value", param_value)
 
     @property
     @pulumi.getter(name="isSecret")
-    def is_secret(self) -> bool:
-        """
-        If the parameter value is secret and should be kept confidential, then set isSecret to true.
-        """
+    def is_secret(self) -> Optional[bool]:
         return pulumi.get(self, "is_secret")
 
     @property
     @pulumi.getter(name="paramName")
-    def param_name(self) -> str:
-        """
-        Name of the parameter.
-        """
+    def param_name(self) -> Optional[str]:
         return pulumi.get(self, "param_name")
 
     @property
     @pulumi.getter(name="paramValue")
-    def param_value(self) -> str:
-        """
-        Value of the parameter.
-        """
+    def param_value(self) -> Optional[str]:
         return pulumi.get(self, "param_value")
 
 
@@ -4021,439 +3005,323 @@ class GetScriptsFilterResult(dict):
 @pulumi.output_type
 class GetScriptsScriptCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetScriptsScriptCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetScriptsScriptCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetScriptsScriptCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetScriptsScriptCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetScriptsScriptCollectionItemResult(dict):
     def __init__(__self__, *,
-                 apm_domain_id: str,
-                 content: str,
-                 content_file_name: str,
-                 content_size_in_bytes: int,
-                 content_type: str,
-                 defined_tags: Mapping[str, Any],
-                 display_name: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 monitor_status_count_maps: Sequence['outputs.GetScriptsScriptCollectionItemMonitorStatusCountMapResult'],
-                 parameters: Sequence['outputs.GetScriptsScriptCollectionItemParameterResult'],
-                 time_created: str,
-                 time_updated: str,
-                 time_uploaded: str):
-        """
-        :param str apm_domain_id: The APM domain ID the request is intended for.
-        :param str content: The content of the script. It may contain custom-defined tags that can be used for setting dynamic parameters. The format to set dynamic parameters is: `<ORAP><ON>param name</ON><OV>param value</OV><OS>isParamValueSecret(true/false)</OS></ORAP>`. Param value and isParamValueSecret are optional, the default value for isParamValueSecret is false. Examples: With mandatory param name : `<ORAP><ON>param name</ON></ORAP>` With parameter name and value : `<ORAP><ON>param name</ON><OV>param value</OV></ORAP>` Note that the content is valid if it matches the given content type. For example, if the content type is SIDE, then the content should be in Side script format. If the content type is JS, then the content should be in JavaScript format.
-        :param str content_file_name: File name of the uploaded script content.
-        :param int content_size_in_bytes: Size of the script content.
-        :param str content_type: A filter to return only resources that match the content type given.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param str display_name: A filter to return only the resources that match the entire display name.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the script. scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null.
-        :param Sequence['GetScriptsScriptCollectionItemMonitorStatusCountMapArgs'] monitor_status_count_maps: Details of the monitor count per state. Example: `{ "total" : 5, "enabled" : 3 , "disabled" : 2, "invalid" : 0 }`
-        :param Sequence['GetScriptsScriptCollectionItemParameterArgs'] parameters: List of script parameters. Example: `[{"scriptParameter": {"paramName": "userid", "paramValue":"testuser", "isSecret": false}, "isOverwritten": false}]`
-        :param str time_created: The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
-        :param str time_updated: The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
-        :param str time_uploaded: The time the script was uploaded.
-        """
-        pulumi.set(__self__, "apm_domain_id", apm_domain_id)
-        pulumi.set(__self__, "content", content)
-        pulumi.set(__self__, "content_file_name", content_file_name)
-        pulumi.set(__self__, "content_size_in_bytes", content_size_in_bytes)
-        pulumi.set(__self__, "content_type", content_type)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "monitor_status_count_maps", monitor_status_count_maps)
-        pulumi.set(__self__, "parameters", parameters)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "time_uploaded", time_uploaded)
+                 apm_domain_id: Optional[str] = None,
+                 content: Optional[str] = None,
+                 content_file_name: Optional[str] = None,
+                 content_size_in_bytes: Optional[int] = None,
+                 content_type: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 display_name: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 monitor_status_count_maps: Optional[Sequence['outputs.GetScriptsScriptCollectionItemMonitorStatusCountMapResult']] = None,
+                 parameters: Optional[Sequence['outputs.GetScriptsScriptCollectionItemParameterResult']] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None,
+                 time_uploaded: Optional[str] = None):
+        if apm_domain_id is not None:
+            pulumi.set(__self__, "apm_domain_id", apm_domain_id)
+        if content is not None:
+            pulumi.set(__self__, "content", content)
+        if content_file_name is not None:
+            pulumi.set(__self__, "content_file_name", content_file_name)
+        if content_size_in_bytes is not None:
+            pulumi.set(__self__, "content_size_in_bytes", content_size_in_bytes)
+        if content_type is not None:
+            pulumi.set(__self__, "content_type", content_type)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if monitor_status_count_maps is not None:
+            pulumi.set(__self__, "monitor_status_count_maps", monitor_status_count_maps)
+        if parameters is not None:
+            pulumi.set(__self__, "parameters", parameters)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
+        if time_uploaded is not None:
+            pulumi.set(__self__, "time_uploaded", time_uploaded)
 
     @property
     @pulumi.getter(name="apmDomainId")
-    def apm_domain_id(self) -> str:
-        """
-        The APM domain ID the request is intended for.
-        """
+    def apm_domain_id(self) -> Optional[str]:
         return pulumi.get(self, "apm_domain_id")
 
     @property
     @pulumi.getter
-    def content(self) -> str:
-        """
-        The content of the script. It may contain custom-defined tags that can be used for setting dynamic parameters. The format to set dynamic parameters is: `<ORAP><ON>param name</ON><OV>param value</OV><OS>isParamValueSecret(true/false)</OS></ORAP>`. Param value and isParamValueSecret are optional, the default value for isParamValueSecret is false. Examples: With mandatory param name : `<ORAP><ON>param name</ON></ORAP>` With parameter name and value : `<ORAP><ON>param name</ON><OV>param value</OV></ORAP>` Note that the content is valid if it matches the given content type. For example, if the content type is SIDE, then the content should be in Side script format. If the content type is JS, then the content should be in JavaScript format.
-        """
+    def content(self) -> Optional[str]:
         return pulumi.get(self, "content")
 
     @property
     @pulumi.getter(name="contentFileName")
-    def content_file_name(self) -> str:
-        """
-        File name of the uploaded script content.
-        """
+    def content_file_name(self) -> Optional[str]:
         return pulumi.get(self, "content_file_name")
 
     @property
     @pulumi.getter(name="contentSizeInBytes")
-    def content_size_in_bytes(self) -> int:
-        """
-        Size of the script content.
-        """
+    def content_size_in_bytes(self) -> Optional[int]:
         return pulumi.get(self, "content_size_in_bytes")
 
     @property
     @pulumi.getter(name="contentType")
-    def content_type(self) -> str:
-        """
-        A filter to return only resources that match the content type given.
-        """
+    def content_type(self) -> Optional[str]:
         return pulumi.get(self, "content_type")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return only the resources that match the entire display name.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the script. scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="monitorStatusCountMaps")
-    def monitor_status_count_maps(self) -> Sequence['outputs.GetScriptsScriptCollectionItemMonitorStatusCountMapResult']:
-        """
-        Details of the monitor count per state. Example: `{ "total" : 5, "enabled" : 3 , "disabled" : 2, "invalid" : 0 }`
-        """
+    def monitor_status_count_maps(self) -> Optional[Sequence['outputs.GetScriptsScriptCollectionItemMonitorStatusCountMapResult']]:
         return pulumi.get(self, "monitor_status_count_maps")
 
     @property
     @pulumi.getter
-    def parameters(self) -> Sequence['outputs.GetScriptsScriptCollectionItemParameterResult']:
-        """
-        List of script parameters. Example: `[{"scriptParameter": {"paramName": "userid", "paramValue":"testuser", "isSecret": false}, "isOverwritten": false}]`
-        """
+    def parameters(self) -> Optional[Sequence['outputs.GetScriptsScriptCollectionItemParameterResult']]:
         return pulumi.get(self, "parameters")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="timeUploaded")
-    def time_uploaded(self) -> str:
-        """
-        The time the script was uploaded.
-        """
+    def time_uploaded(self) -> Optional[str]:
         return pulumi.get(self, "time_uploaded")
 
 
 @pulumi.output_type
 class GetScriptsScriptCollectionItemMonitorStatusCountMapResult(dict):
     def __init__(__self__, *,
-                 disabled: int,
-                 enabled: int,
-                 invalid: int,
-                 total: int):
-        """
-        :param int disabled: Number of disabled monitors using the script.
-        :param int enabled: Number of enabled monitors using the script.
-        :param int invalid: Number of invalid monitors using the script.
-        :param int total: Total number of monitors using the script.
-        """
-        pulumi.set(__self__, "disabled", disabled)
-        pulumi.set(__self__, "enabled", enabled)
-        pulumi.set(__self__, "invalid", invalid)
-        pulumi.set(__self__, "total", total)
+                 disabled: Optional[int] = None,
+                 enabled: Optional[int] = None,
+                 invalid: Optional[int] = None,
+                 total: Optional[int] = None):
+        if disabled is not None:
+            pulumi.set(__self__, "disabled", disabled)
+        if enabled is not None:
+            pulumi.set(__self__, "enabled", enabled)
+        if invalid is not None:
+            pulumi.set(__self__, "invalid", invalid)
+        if total is not None:
+            pulumi.set(__self__, "total", total)
 
     @property
     @pulumi.getter
-    def disabled(self) -> int:
-        """
-        Number of disabled monitors using the script.
-        """
+    def disabled(self) -> Optional[int]:
         return pulumi.get(self, "disabled")
 
     @property
     @pulumi.getter
-    def enabled(self) -> int:
-        """
-        Number of enabled monitors using the script.
-        """
+    def enabled(self) -> Optional[int]:
         return pulumi.get(self, "enabled")
 
     @property
     @pulumi.getter
-    def invalid(self) -> int:
-        """
-        Number of invalid monitors using the script.
-        """
+    def invalid(self) -> Optional[int]:
         return pulumi.get(self, "invalid")
 
     @property
     @pulumi.getter
-    def total(self) -> int:
-        """
-        Total number of monitors using the script.
-        """
+    def total(self) -> Optional[int]:
         return pulumi.get(self, "total")
 
 
 @pulumi.output_type
 class GetScriptsScriptCollectionItemParameterResult(dict):
     def __init__(__self__, *,
-                 is_overwritten: bool,
-                 is_secret: bool,
-                 param_name: str,
-                 param_value: str,
-                 script_parameters: Sequence['outputs.GetScriptsScriptCollectionItemParameterScriptParameterResult']):
-        """
-        :param bool is_overwritten: If parameter value is default or overwritten.
-        :param bool is_secret: If the parameter value is secret and should be kept confidential, then set isSecret to true.
-        :param str param_name: Name of the parameter.
-        :param str param_value: Value of the parameter.
-        :param Sequence['GetScriptsScriptCollectionItemParameterScriptParameterArgs'] script_parameters: Details of the script parameters, paramName must be from the script content and these details can be used to overwrite the default parameter present in the script content.
-        """
-        pulumi.set(__self__, "is_overwritten", is_overwritten)
-        pulumi.set(__self__, "is_secret", is_secret)
-        pulumi.set(__self__, "param_name", param_name)
-        pulumi.set(__self__, "param_value", param_value)
-        pulumi.set(__self__, "script_parameters", script_parameters)
+                 is_overwritten: Optional[bool] = None,
+                 is_secret: Optional[bool] = None,
+                 param_name: Optional[str] = None,
+                 param_value: Optional[str] = None,
+                 script_parameters: Optional[Sequence['outputs.GetScriptsScriptCollectionItemParameterScriptParameterResult']] = None):
+        if is_overwritten is not None:
+            pulumi.set(__self__, "is_overwritten", is_overwritten)
+        if is_secret is not None:
+            pulumi.set(__self__, "is_secret", is_secret)
+        if param_name is not None:
+            pulumi.set(__self__, "param_name", param_name)
+        if param_value is not None:
+            pulumi.set(__self__, "param_value", param_value)
+        if script_parameters is not None:
+            pulumi.set(__self__, "script_parameters", script_parameters)
 
     @property
     @pulumi.getter(name="isOverwritten")
-    def is_overwritten(self) -> bool:
-        """
-        If parameter value is default or overwritten.
-        """
+    def is_overwritten(self) -> Optional[bool]:
         return pulumi.get(self, "is_overwritten")
 
     @property
     @pulumi.getter(name="isSecret")
-    def is_secret(self) -> bool:
-        """
-        If the parameter value is secret and should be kept confidential, then set isSecret to true.
-        """
+    def is_secret(self) -> Optional[bool]:
         return pulumi.get(self, "is_secret")
 
     @property
     @pulumi.getter(name="paramName")
-    def param_name(self) -> str:
-        """
-        Name of the parameter.
-        """
+    def param_name(self) -> Optional[str]:
         return pulumi.get(self, "param_name")
 
     @property
     @pulumi.getter(name="paramValue")
-    def param_value(self) -> str:
-        """
-        Value of the parameter.
-        """
+    def param_value(self) -> Optional[str]:
         return pulumi.get(self, "param_value")
 
     @property
     @pulumi.getter(name="scriptParameters")
-    def script_parameters(self) -> Sequence['outputs.GetScriptsScriptCollectionItemParameterScriptParameterResult']:
-        """
-        Details of the script parameters, paramName must be from the script content and these details can be used to overwrite the default parameter present in the script content.
-        """
+    def script_parameters(self) -> Optional[Sequence['outputs.GetScriptsScriptCollectionItemParameterScriptParameterResult']]:
         return pulumi.get(self, "script_parameters")
 
 
 @pulumi.output_type
 class GetScriptsScriptCollectionItemParameterScriptParameterResult(dict):
     def __init__(__self__, *,
-                 is_secret: bool,
-                 param_name: str,
-                 param_value: str):
-        """
-        :param bool is_secret: If the parameter value is secret and should be kept confidential, then set isSecret to true.
-        :param str param_name: Name of the parameter.
-        :param str param_value: Value of the parameter.
-        """
-        pulumi.set(__self__, "is_secret", is_secret)
-        pulumi.set(__self__, "param_name", param_name)
-        pulumi.set(__self__, "param_value", param_value)
+                 is_secret: Optional[bool] = None,
+                 param_name: Optional[str] = None,
+                 param_value: Optional[str] = None):
+        if is_secret is not None:
+            pulumi.set(__self__, "is_secret", is_secret)
+        if param_name is not None:
+            pulumi.set(__self__, "param_name", param_name)
+        if param_value is not None:
+            pulumi.set(__self__, "param_value", param_value)
 
     @property
     @pulumi.getter(name="isSecret")
-    def is_secret(self) -> bool:
-        """
-        If the parameter value is secret and should be kept confidential, then set isSecret to true.
-        """
+    def is_secret(self) -> Optional[bool]:
         return pulumi.get(self, "is_secret")
 
     @property
     @pulumi.getter(name="paramName")
-    def param_name(self) -> str:
-        """
-        Name of the parameter.
-        """
+    def param_name(self) -> Optional[str]:
         return pulumi.get(self, "param_name")
 
     @property
     @pulumi.getter(name="paramValue")
-    def param_value(self) -> str:
-        """
-        Value of the parameter.
-        """
+    def param_value(self) -> Optional[str]:
         return pulumi.get(self, "param_value")
 
 
 @pulumi.output_type
 class GetVantagePointItemResult(dict):
     def __init__(__self__, *,
-                 display_name: str,
-                 geos: Sequence['outputs.GetVantagePointItemGeoResult'],
-                 name: str):
-        """
-        :param str display_name: A filter to return only the resources that match the entire display name.
-        :param Sequence['GetVantagePointItemGeoArgs'] geos: Geographic summary of a vantage point.
-        :param str name: A filter to return only the resources that match the entire name.
-        """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "geos", geos)
-        pulumi.set(__self__, "name", name)
+                 display_name: Optional[str] = None,
+                 geos: Optional[Sequence['outputs.GetVantagePointItemGeoResult']] = None,
+                 name: Optional[str] = None):
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if geos is not None:
+            pulumi.set(__self__, "geos", geos)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return only the resources that match the entire display name.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
-    def geos(self) -> Sequence['outputs.GetVantagePointItemGeoResult']:
-        """
-        Geographic summary of a vantage point.
-        """
+    def geos(self) -> Optional[Sequence['outputs.GetVantagePointItemGeoResult']]:
         return pulumi.get(self, "geos")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        A filter to return only the resources that match the entire name.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
 
 @pulumi.output_type
 class GetVantagePointItemGeoResult(dict):
     def __init__(__self__, *,
-                 admin_div_code: str,
-                 city_name: str,
-                 country_code: str,
-                 country_name: str,
-                 latitude: float,
-                 longitude: float):
-        """
-        :param str admin_div_code: The ISO 3166-2 code for this location's first-level administrative division, either a US state or Canadian province. Only included for locations in the US or Canada. For a list of codes, see Country Codes.
-        :param str city_name: Common English-language name for the city.
-        :param str country_code: The ISO 3166-1 alpha-2 country code. For a list of codes, see Country Codes.
-        :param str country_name: The common English-language name for the country.
-        :param float latitude: Degrees north of the Equator.
-        :param float longitude: Degrees east of the prime meridian.
-        """
-        pulumi.set(__self__, "admin_div_code", admin_div_code)
-        pulumi.set(__self__, "city_name", city_name)
-        pulumi.set(__self__, "country_code", country_code)
-        pulumi.set(__self__, "country_name", country_name)
-        pulumi.set(__self__, "latitude", latitude)
-        pulumi.set(__self__, "longitude", longitude)
+                 admin_div_code: Optional[str] = None,
+                 city_name: Optional[str] = None,
+                 country_code: Optional[str] = None,
+                 country_name: Optional[str] = None,
+                 latitude: Optional[float] = None,
+                 longitude: Optional[float] = None):
+        if admin_div_code is not None:
+            pulumi.set(__self__, "admin_div_code", admin_div_code)
+        if city_name is not None:
+            pulumi.set(__self__, "city_name", city_name)
+        if country_code is not None:
+            pulumi.set(__self__, "country_code", country_code)
+        if country_name is not None:
+            pulumi.set(__self__, "country_name", country_name)
+        if latitude is not None:
+            pulumi.set(__self__, "latitude", latitude)
+        if longitude is not None:
+            pulumi.set(__self__, "longitude", longitude)
 
     @property
     @pulumi.getter(name="adminDivCode")
-    def admin_div_code(self) -> str:
-        """
-        The ISO 3166-2 code for this location's first-level administrative division, either a US state or Canadian province. Only included for locations in the US or Canada. For a list of codes, see Country Codes.
-        """
+    def admin_div_code(self) -> Optional[str]:
         return pulumi.get(self, "admin_div_code")
 
     @property
     @pulumi.getter(name="cityName")
-    def city_name(self) -> str:
-        """
-        Common English-language name for the city.
-        """
+    def city_name(self) -> Optional[str]:
         return pulumi.get(self, "city_name")
 
     @property
     @pulumi.getter(name="countryCode")
-    def country_code(self) -> str:
-        """
-        The ISO 3166-1 alpha-2 country code. For a list of codes, see Country Codes.
-        """
+    def country_code(self) -> Optional[str]:
         return pulumi.get(self, "country_code")
 
     @property
     @pulumi.getter(name="countryName")
-    def country_name(self) -> str:
-        """
-        The common English-language name for the country.
-        """
+    def country_name(self) -> Optional[str]:
         return pulumi.get(self, "country_name")
 
     @property
     @pulumi.getter
-    def latitude(self) -> float:
-        """
-        Degrees north of the Equator.
-        """
+    def latitude(self) -> Optional[float]:
         return pulumi.get(self, "latitude")
 
     @property
     @pulumi.getter
-    def longitude(self) -> float:
-        """
-        Degrees east of the prime meridian.
-        """
+    def longitude(self) -> Optional[float]:
         return pulumi.get(self, "longitude")
 
 
@@ -4463,9 +3331,6 @@ class GetVantagePointsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: A filter to return only the resources that match the entire name.
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -4474,9 +3339,6 @@ class GetVantagePointsFilterResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        A filter to return only the resources that match the entire name.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -4493,131 +3355,95 @@ class GetVantagePointsFilterResult(dict):
 @pulumi.output_type
 class GetVantagePointsPublicVantagePointCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetVantagePointsPublicVantagePointCollectionItemResult']):
-        """
-        :param Sequence['GetVantagePointsPublicVantagePointCollectionItemArgs'] items: List of PublicVantagePointSummary items.
-        """
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetVantagePointsPublicVantagePointCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetVantagePointsPublicVantagePointCollectionItemResult']:
-        """
-        List of PublicVantagePointSummary items.
-        """
+    def items(self) -> Optional[Sequence['outputs.GetVantagePointsPublicVantagePointCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetVantagePointsPublicVantagePointCollectionItemResult(dict):
     def __init__(__self__, *,
-                 display_name: str,
-                 geos: Sequence['outputs.GetVantagePointsPublicVantagePointCollectionItemGeoResult'],
-                 name: str):
-        """
-        :param str display_name: A filter to return only the resources that match the entire display name.
-        :param Sequence['GetVantagePointsPublicVantagePointCollectionItemGeoArgs'] geos: Geographic summary of a vantage point.
-        :param str name: A filter to return only the resources that match the entire name.
-        """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "geos", geos)
-        pulumi.set(__self__, "name", name)
+                 display_name: Optional[str] = None,
+                 geos: Optional[Sequence['outputs.GetVantagePointsPublicVantagePointCollectionItemGeoResult']] = None,
+                 name: Optional[str] = None):
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if geos is not None:
+            pulumi.set(__self__, "geos", geos)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A filter to return only the resources that match the entire display name.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
-    def geos(self) -> Sequence['outputs.GetVantagePointsPublicVantagePointCollectionItemGeoResult']:
-        """
-        Geographic summary of a vantage point.
-        """
+    def geos(self) -> Optional[Sequence['outputs.GetVantagePointsPublicVantagePointCollectionItemGeoResult']]:
         return pulumi.get(self, "geos")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        A filter to return only the resources that match the entire name.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
 
 @pulumi.output_type
 class GetVantagePointsPublicVantagePointCollectionItemGeoResult(dict):
     def __init__(__self__, *,
-                 admin_div_code: str,
-                 city_name: str,
-                 country_code: str,
-                 country_name: str,
-                 latitude: float,
-                 longitude: float):
-        """
-        :param str admin_div_code: The ISO 3166-2 code for this location's first-level administrative division, either a US state or Canadian province. Only included for locations in the US or Canada. For a list of codes, see Country Codes.
-        :param str city_name: Common English-language name for the city.
-        :param str country_code: The ISO 3166-1 alpha-2 country code. For a list of codes, see Country Codes.
-        :param str country_name: The common English-language name for the country.
-        :param float latitude: Degrees north of the equator.
-        :param float longitude: Degrees east of the prime meridian.
-        """
-        pulumi.set(__self__, "admin_div_code", admin_div_code)
-        pulumi.set(__self__, "city_name", city_name)
-        pulumi.set(__self__, "country_code", country_code)
-        pulumi.set(__self__, "country_name", country_name)
-        pulumi.set(__self__, "latitude", latitude)
-        pulumi.set(__self__, "longitude", longitude)
+                 admin_div_code: Optional[str] = None,
+                 city_name: Optional[str] = None,
+                 country_code: Optional[str] = None,
+                 country_name: Optional[str] = None,
+                 latitude: Optional[float] = None,
+                 longitude: Optional[float] = None):
+        if admin_div_code is not None:
+            pulumi.set(__self__, "admin_div_code", admin_div_code)
+        if city_name is not None:
+            pulumi.set(__self__, "city_name", city_name)
+        if country_code is not None:
+            pulumi.set(__self__, "country_code", country_code)
+        if country_name is not None:
+            pulumi.set(__self__, "country_name", country_name)
+        if latitude is not None:
+            pulumi.set(__self__, "latitude", latitude)
+        if longitude is not None:
+            pulumi.set(__self__, "longitude", longitude)
 
     @property
     @pulumi.getter(name="adminDivCode")
-    def admin_div_code(self) -> str:
-        """
-        The ISO 3166-2 code for this location's first-level administrative division, either a US state or Canadian province. Only included for locations in the US or Canada. For a list of codes, see Country Codes.
-        """
+    def admin_div_code(self) -> Optional[str]:
         return pulumi.get(self, "admin_div_code")
 
     @property
     @pulumi.getter(name="cityName")
-    def city_name(self) -> str:
-        """
-        Common English-language name for the city.
-        """
+    def city_name(self) -> Optional[str]:
         return pulumi.get(self, "city_name")
 
     @property
     @pulumi.getter(name="countryCode")
-    def country_code(self) -> str:
-        """
-        The ISO 3166-1 alpha-2 country code. For a list of codes, see Country Codes.
-        """
+    def country_code(self) -> Optional[str]:
         return pulumi.get(self, "country_code")
 
     @property
     @pulumi.getter(name="countryName")
-    def country_name(self) -> str:
-        """
-        The common English-language name for the country.
-        """
+    def country_name(self) -> Optional[str]:
         return pulumi.get(self, "country_name")
 
     @property
     @pulumi.getter
-    def latitude(self) -> float:
-        """
-        Degrees north of the equator.
-        """
+    def latitude(self) -> Optional[float]:
         return pulumi.get(self, "latitude")
 
     @property
     @pulumi.getter
-    def longitude(self) -> float:
-        """
-        Degrees east of the prime meridian.
-        """
+    def longitude(self) -> Optional[float]:
         return pulumi.get(self, "longitude")
 
 

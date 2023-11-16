@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetRemediationRecipesRemediationRecipeCollectionItemScmConfiguration {
@@ -14,111 +16,111 @@ public final class GetRemediationRecipesRemediationRecipeCollectionItemScmConfig
      * @return The branch used by ADM to patch vulnerabilities.
      * 
      */
-    private String branch;
+    private @Nullable String branch;
     /**
      * @return The location of the build file relative to the root of the repository. Only Maven build files (POM) are currently supported. If this property is not specified, ADM will use the build file located at the root of the repository.
      * 
      */
-    private String buildFileLocation;
+    private @Nullable String buildFileLocation;
     /**
      * @return The type of External Source Code Management.
      * 
      */
-    private String externalScmType;
+    private @Nullable String externalScmType;
     /**
      * @return If true, the Pull Request (PR) will be merged after the verify stage completes successfully     If false, the PR with the proposed changes must be reviewed and manually merged.
      * 
      */
-    private Boolean isAutomergeEnabled;
+    private @Nullable Boolean isAutomergeEnabled;
     /**
      * @return The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Oracle Cloud Infrastructure DevOps repository.
      * 
      */
-    private String ociCodeRepositoryId;
+    private @Nullable String ociCodeRepositoryId;
     /**
      * @return The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Private Access Token (PAT) Secret. The PAT provides the credentials to access the Jenkins Pipeline.
      * 
      */
-    private String patSecretId;
+    private @Nullable String patSecretId;
     /**
      * @return The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
      * 
      */
-    private String repositoryUrl;
+    private @Nullable String repositoryUrl;
     /**
      * @return The type of Source Code Management.
      * 
      */
-    private String scmType;
+    private @Nullable String scmType;
     /**
      * @return The username that will be used to authenticate with Jenkins.
      * 
      */
-    private String username;
+    private @Nullable String username;
 
     private GetRemediationRecipesRemediationRecipeCollectionItemScmConfiguration() {}
     /**
      * @return The branch used by ADM to patch vulnerabilities.
      * 
      */
-    public String branch() {
-        return this.branch;
+    public Optional<String> branch() {
+        return Optional.ofNullable(this.branch);
     }
     /**
      * @return The location of the build file relative to the root of the repository. Only Maven build files (POM) are currently supported. If this property is not specified, ADM will use the build file located at the root of the repository.
      * 
      */
-    public String buildFileLocation() {
-        return this.buildFileLocation;
+    public Optional<String> buildFileLocation() {
+        return Optional.ofNullable(this.buildFileLocation);
     }
     /**
      * @return The type of External Source Code Management.
      * 
      */
-    public String externalScmType() {
-        return this.externalScmType;
+    public Optional<String> externalScmType() {
+        return Optional.ofNullable(this.externalScmType);
     }
     /**
      * @return If true, the Pull Request (PR) will be merged after the verify stage completes successfully     If false, the PR with the proposed changes must be reviewed and manually merged.
      * 
      */
-    public Boolean isAutomergeEnabled() {
-        return this.isAutomergeEnabled;
+    public Optional<Boolean> isAutomergeEnabled() {
+        return Optional.ofNullable(this.isAutomergeEnabled);
     }
     /**
      * @return The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Oracle Cloud Infrastructure DevOps repository.
      * 
      */
-    public String ociCodeRepositoryId() {
-        return this.ociCodeRepositoryId;
+    public Optional<String> ociCodeRepositoryId() {
+        return Optional.ofNullable(this.ociCodeRepositoryId);
     }
     /**
      * @return The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Private Access Token (PAT) Secret. The PAT provides the credentials to access the Jenkins Pipeline.
      * 
      */
-    public String patSecretId() {
-        return this.patSecretId;
+    public Optional<String> patSecretId() {
+        return Optional.ofNullable(this.patSecretId);
     }
     /**
      * @return The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
      * 
      */
-    public String repositoryUrl() {
-        return this.repositoryUrl;
+    public Optional<String> repositoryUrl() {
+        return Optional.ofNullable(this.repositoryUrl);
     }
     /**
      * @return The type of Source Code Management.
      * 
      */
-    public String scmType() {
-        return this.scmType;
+    public Optional<String> scmType() {
+        return Optional.ofNullable(this.scmType);
     }
     /**
      * @return The username that will be used to authenticate with Jenkins.
      * 
      */
-    public String username() {
-        return this.username;
+    public Optional<String> username() {
+        return Optional.ofNullable(this.username);
     }
 
     public static Builder builder() {
@@ -130,15 +132,15 @@ public final class GetRemediationRecipesRemediationRecipeCollectionItemScmConfig
     }
     @CustomType.Builder
     public static final class Builder {
-        private String branch;
-        private String buildFileLocation;
-        private String externalScmType;
-        private Boolean isAutomergeEnabled;
-        private String ociCodeRepositoryId;
-        private String patSecretId;
-        private String repositoryUrl;
-        private String scmType;
-        private String username;
+        private @Nullable String branch;
+        private @Nullable String buildFileLocation;
+        private @Nullable String externalScmType;
+        private @Nullable Boolean isAutomergeEnabled;
+        private @Nullable String ociCodeRepositoryId;
+        private @Nullable String patSecretId;
+        private @Nullable String repositoryUrl;
+        private @Nullable String scmType;
+        private @Nullable String username;
         public Builder() {}
         public Builder(GetRemediationRecipesRemediationRecipeCollectionItemScmConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
@@ -154,48 +156,48 @@ public final class GetRemediationRecipesRemediationRecipeCollectionItemScmConfig
         }
 
         @CustomType.Setter
-        public Builder branch(String branch) {
-            this.branch = Objects.requireNonNull(branch);
+        public Builder branch(@Nullable String branch) {
+            this.branch = branch;
             return this;
         }
         @CustomType.Setter
-        public Builder buildFileLocation(String buildFileLocation) {
-            this.buildFileLocation = Objects.requireNonNull(buildFileLocation);
+        public Builder buildFileLocation(@Nullable String buildFileLocation) {
+            this.buildFileLocation = buildFileLocation;
             return this;
         }
         @CustomType.Setter
-        public Builder externalScmType(String externalScmType) {
-            this.externalScmType = Objects.requireNonNull(externalScmType);
+        public Builder externalScmType(@Nullable String externalScmType) {
+            this.externalScmType = externalScmType;
             return this;
         }
         @CustomType.Setter
-        public Builder isAutomergeEnabled(Boolean isAutomergeEnabled) {
-            this.isAutomergeEnabled = Objects.requireNonNull(isAutomergeEnabled);
+        public Builder isAutomergeEnabled(@Nullable Boolean isAutomergeEnabled) {
+            this.isAutomergeEnabled = isAutomergeEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder ociCodeRepositoryId(String ociCodeRepositoryId) {
-            this.ociCodeRepositoryId = Objects.requireNonNull(ociCodeRepositoryId);
+        public Builder ociCodeRepositoryId(@Nullable String ociCodeRepositoryId) {
+            this.ociCodeRepositoryId = ociCodeRepositoryId;
             return this;
         }
         @CustomType.Setter
-        public Builder patSecretId(String patSecretId) {
-            this.patSecretId = Objects.requireNonNull(patSecretId);
+        public Builder patSecretId(@Nullable String patSecretId) {
+            this.patSecretId = patSecretId;
             return this;
         }
         @CustomType.Setter
-        public Builder repositoryUrl(String repositoryUrl) {
-            this.repositoryUrl = Objects.requireNonNull(repositoryUrl);
+        public Builder repositoryUrl(@Nullable String repositoryUrl) {
+            this.repositoryUrl = repositoryUrl;
             return this;
         }
         @CustomType.Setter
-        public Builder scmType(String scmType) {
-            this.scmType = Objects.requireNonNull(scmType);
+        public Builder scmType(@Nullable String scmType) {
+            this.scmType = scmType;
             return this;
         }
         @CustomType.Setter
-        public Builder username(String username) {
-            this.username = Objects.requireNonNull(username);
+        public Builder username(@Nullable String username) {
+            this.username = username;
             return this;
         }
         public GetRemediationRecipesRemediationRecipeCollectionItemScmConfiguration build() {

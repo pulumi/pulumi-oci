@@ -98,26 +98,17 @@ class GetContainerInstanceResult:
 
     @property
     @pulumi.getter(name="availabilityDomain")
-    def availability_domain(self) -> str:
-        """
-        The availability domain to place the container instance.
-        """
+    def availability_domain(self) -> Optional[str]:
         return pulumi.get(self, "availability_domain")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="containerCount")
-    def container_count(self) -> int:
-        """
-        The number of containers on the container instance.
-        """
+    def container_count(self) -> Optional[int]:
         return pulumi.get(self, "container_count")
 
     @property
@@ -127,162 +118,102 @@ class GetContainerInstanceResult:
 
     @property
     @pulumi.getter(name="containerRestartPolicy")
-    def container_restart_policy(self) -> str:
-        """
-        The container restart policy is applied for all containers in container instance.
-        """
+    def container_restart_policy(self) -> Optional[str]:
         return pulumi.get(self, "container_restart_policy")
 
     @property
     @pulumi.getter
-    def containers(self) -> Sequence['outputs.GetContainerInstanceContainerResult']:
-        """
-        The containers on the container instance.
-        """
+    def containers(self) -> Optional[Sequence['outputs.GetContainerInstanceContainerResult']]:
         return pulumi.get(self, "containers")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="dnsConfigs")
-    def dns_configs(self) -> Sequence['outputs.GetContainerInstanceDnsConfigResult']:
-        """
-        DNS settings for containers.
-        """
+    def dns_configs(self) -> Optional[Sequence['outputs.GetContainerInstanceDnsConfigResult']]:
         return pulumi.get(self, "dns_configs")
 
     @property
     @pulumi.getter(name="faultDomain")
-    def fault_domain(self) -> str:
-        """
-        The fault domain to place the container instance.
-        """
+    def fault_domain(self) -> Optional[str]:
         return pulumi.get(self, "fault_domain")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="gracefulShutdownTimeoutInSeconds")
-    def graceful_shutdown_timeout_in_seconds(self) -> str:
-        """
-        The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
-        """
+    def graceful_shutdown_timeout_in_seconds(self) -> Optional[str]:
         return pulumi.get(self, "graceful_shutdown_timeout_in_seconds")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        An OCID that cannot be changed.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="imagePullSecrets")
-    def image_pull_secrets(self) -> Sequence['outputs.GetContainerInstanceImagePullSecretResult']:
-        """
-        The image pulls secrets so you can access private registry to pull container images.
-        """
+    def image_pull_secrets(self) -> Optional[Sequence['outputs.GetContainerInstanceImagePullSecretResult']]:
         return pulumi.get(self, "image_pull_secrets")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A message that describes the current state of the container in more detail. Can be used to provide actionable information.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
-    def shape(self) -> str:
-        """
-        The shape of the container instance. The shape determines the number of OCPUs, amount of memory, and other resources that are allocated to a container instance.
-        """
+    def shape(self) -> Optional[str]:
         return pulumi.get(self, "shape")
 
     @property
     @pulumi.getter(name="shapeConfigs")
-    def shape_configs(self) -> Sequence['outputs.GetContainerInstanceShapeConfigResult']:
-        """
-        The shape configuration for a container instance. The shape configuration determines the resources thats are available to the container instance and its containers.
-        """
+    def shape_configs(self) -> Optional[Sequence['outputs.GetContainerInstanceShapeConfigResult']]:
         return pulumi.get(self, "shape_configs")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the container instance.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter
-    def vnics(self) -> Sequence['outputs.GetContainerInstanceVnicResult']:
-        """
-        The virtual networks available to the containers in the container instance.
-        """
+    def vnics(self) -> Optional[Sequence['outputs.GetContainerInstanceVnicResult']]:
         return pulumi.get(self, "vnics")
 
     @property
     @pulumi.getter(name="volumeCount")
-    def volume_count(self) -> int:
-        """
-        The number of volumes that are attached to the container instance.
-        """
+    def volume_count(self) -> Optional[int]:
         return pulumi.get(self, "volume_count")
 
     @property
     @pulumi.getter
-    def volumes(self) -> Sequence['outputs.GetContainerInstanceVolumeResult']:
-        """
-        A volume is a directory with data that is accessible across multiple containers in a container instance.
-        """
+    def volumes(self) -> Optional[Sequence['outputs.GetContainerInstanceVolumeResult']]:
         return pulumi.get(self, "volumes")
 
 
@@ -321,21 +252,7 @@ class AwaitableGetContainerInstanceResult(GetContainerInstanceResult):
 def get_container_instance(container_instance_id: Optional[str] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetContainerInstanceResult:
     """
-    This data source provides details about a specific Container Instance resource in Oracle Cloud Infrastructure Container Instances service.
-
-    Gets information about the specified container instance.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_container_instance = oci.ContainerInstances.get_container_instance(container_instance_id=oci_container_instances_container_instance["test_container_instance"]["id"])
-    ```
-
-
-    :param str container_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container instance.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['containerInstanceId'] = container_instance_id
@@ -373,20 +290,6 @@ def get_container_instance(container_instance_id: Optional[str] = None,
 def get_container_instance_output(container_instance_id: Optional[pulumi.Input[str]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetContainerInstanceResult]:
     """
-    This data source provides details about a specific Container Instance resource in Oracle Cloud Infrastructure Container Instances service.
-
-    Gets information about the specified container instance.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_container_instance = oci.ContainerInstances.get_container_instance(container_instance_id=oci_container_instances_container_instance["test_container_instance"]["id"])
-    ```
-
-
-    :param str container_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container instance.
+    Use this data source to access information about an existing resource.
     """
     ...

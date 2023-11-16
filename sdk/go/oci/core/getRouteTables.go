@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Route Tables in Oracle Cloud Infrastructure Core service.
@@ -78,7 +77,7 @@ type GetRouteTablesResult struct {
 	DisplayName *string                `pulumi:"displayName"`
 	Filters     []GetRouteTablesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of route_tables.
 	RouteTables []GetRouteTablesRouteTable `pulumi:"routeTables"`
 	// The route table's current state.
@@ -132,12 +131,6 @@ func (o GetRouteTablesResultOutput) ToGetRouteTablesResultOutputWithContext(ctx 
 	return o
 }
 
-func (o GetRouteTablesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetRouteTablesResult] {
-	return pulumix.Output[GetRouteTablesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the route table.
 func (o GetRouteTablesResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRouteTablesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -153,8 +146,8 @@ func (o GetRouteTablesResultOutput) Filters() GetRouteTablesFilterArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetRouteTablesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRouteTablesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetRouteTablesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRouteTablesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of route_tables.

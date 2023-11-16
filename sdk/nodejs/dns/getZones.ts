@@ -122,7 +122,7 @@ export interface GetZonesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The name of the zone.
      */
@@ -155,7 +155,7 @@ export interface GetZonesResult {
     /**
      * The list of zones.
      */
-    readonly zones: outputs.Dns.GetZonesZone[];
+    readonly zones?: outputs.Dns.GetZonesZone[];
 }
 /**
  * This data source provides the list of Zones in Oracle Cloud Infrastructure DNS service.

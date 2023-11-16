@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Connection Assignment resource in Oracle Cloud Infrastructure Golden Gate service.
@@ -60,22 +59,22 @@ type LookupConnectionAssignmentArgs struct {
 // A collection of values returned by getConnectionAssignment.
 type LookupConnectionAssignmentResult struct {
 	// Credential store alias.
-	AliasName string `pulumi:"aliasName"`
+	AliasName *string `pulumi:"aliasName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
-	CompartmentId          string `pulumi:"compartmentId"`
-	ConnectionAssignmentId string `pulumi:"connectionAssignmentId"`
+	CompartmentId          *string `pulumi:"compartmentId"`
+	ConnectionAssignmentId string  `pulumi:"connectionAssignmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
-	ConnectionId string `pulumi:"connectionId"`
+	ConnectionId *string `pulumi:"connectionId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
-	DeploymentId string `pulumi:"deploymentId"`
+	DeploymentId *string `pulumi:"deploymentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection assignment being referenced.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Possible lifecycle states for connection assignments.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func LookupConnectionAssignmentOutput(ctx *pulumi.Context, args LookupConnectionAssignmentOutputArgs, opts ...pulumi.InvokeOption) LookupConnectionAssignmentResultOutput {
@@ -116,20 +115,14 @@ func (o LookupConnectionAssignmentResultOutput) ToLookupConnectionAssignmentResu
 	return o
 }
 
-func (o LookupConnectionAssignmentResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupConnectionAssignmentResult] {
-	return pulumix.Output[LookupConnectionAssignmentResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Credential store alias.
-func (o LookupConnectionAssignmentResultOutput) AliasName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupConnectionAssignmentResult) string { return v.AliasName }).(pulumi.StringOutput)
+func (o LookupConnectionAssignmentResultOutput) AliasName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupConnectionAssignmentResult) *string { return v.AliasName }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
-func (o LookupConnectionAssignmentResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupConnectionAssignmentResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupConnectionAssignmentResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupConnectionAssignmentResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupConnectionAssignmentResultOutput) ConnectionAssignmentId() pulumi.StringOutput {
@@ -137,33 +130,33 @@ func (o LookupConnectionAssignmentResultOutput) ConnectionAssignmentId() pulumi.
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
-func (o LookupConnectionAssignmentResultOutput) ConnectionId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupConnectionAssignmentResult) string { return v.ConnectionId }).(pulumi.StringOutput)
+func (o LookupConnectionAssignmentResultOutput) ConnectionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupConnectionAssignmentResult) *string { return v.ConnectionId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
-func (o LookupConnectionAssignmentResultOutput) DeploymentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupConnectionAssignmentResult) string { return v.DeploymentId }).(pulumi.StringOutput)
+func (o LookupConnectionAssignmentResultOutput) DeploymentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupConnectionAssignmentResult) *string { return v.DeploymentId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection assignment being referenced.
-func (o LookupConnectionAssignmentResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupConnectionAssignmentResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupConnectionAssignmentResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupConnectionAssignmentResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Possible lifecycle states for connection assignments.
-func (o LookupConnectionAssignmentResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupConnectionAssignmentResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupConnectionAssignmentResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupConnectionAssignmentResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-func (o LookupConnectionAssignmentResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupConnectionAssignmentResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupConnectionAssignmentResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupConnectionAssignmentResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-func (o LookupConnectionAssignmentResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupConnectionAssignmentResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupConnectionAssignmentResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupConnectionAssignmentResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

@@ -19,13 +19,13 @@ public final class GetProductLicenseConsumersResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private @Nullable Boolean isCompartmentIdInSubtree;
     /**
      * @return Collection of product license consumers.
      * 
      */
-    private List<GetProductLicenseConsumersItem> items;
+    private @Nullable List<GetProductLicenseConsumersItem> items;
     private String productLicenseId;
 
     private GetProductLicenseConsumersResult() {}
@@ -36,8 +36,8 @@ public final class GetProductLicenseConsumersResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public Optional<Boolean> isCompartmentIdInSubtree() {
         return Optional.ofNullable(this.isCompartmentIdInSubtree);
@@ -47,7 +47,7 @@ public final class GetProductLicenseConsumersResult {
      * 
      */
     public List<GetProductLicenseConsumersItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
     public String productLicenseId() {
         return this.productLicenseId;
@@ -63,9 +63,9 @@ public final class GetProductLicenseConsumersResult {
     @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
-        private String id;
+        private @Nullable String id;
         private @Nullable Boolean isCompartmentIdInSubtree;
-        private List<GetProductLicenseConsumersItem> items;
+        private @Nullable List<GetProductLicenseConsumersItem> items;
         private String productLicenseId;
         public Builder() {}
         public Builder(GetProductLicenseConsumersResult defaults) {
@@ -83,8 +83,8 @@ public final class GetProductLicenseConsumersResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -93,8 +93,8 @@ public final class GetProductLicenseConsumersResult {
             return this;
         }
         @CustomType.Setter
-        public Builder items(List<GetProductLicenseConsumersItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetProductLicenseConsumersItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetProductLicenseConsumersItem... items) {

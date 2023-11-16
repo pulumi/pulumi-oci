@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.OspGateway.outputs.GetSubscriptionsSubscriptionCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSubscriptionsSubscriptionCollection {
-    private List<GetSubscriptionsSubscriptionCollectionItem> items;
+    private @Nullable List<GetSubscriptionsSubscriptionCollectionItem> items;
 
     private GetSubscriptionsSubscriptionCollection() {}
     public List<GetSubscriptionsSubscriptionCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetSubscriptionsSubscriptionCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetSubscriptionsSubscriptionCollectionItem> items;
+        private @Nullable List<GetSubscriptionsSubscriptionCollectionItem> items;
         public Builder() {}
         public Builder(GetSubscriptionsSubscriptionCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetSubscriptionsSubscriptionCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetSubscriptionsSubscriptionCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetSubscriptionsSubscriptionCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetSubscriptionsSubscriptionCollectionItem... items) {

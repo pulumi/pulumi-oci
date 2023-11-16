@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Repository Archive Content resource in Oracle Cloud Infrastructure Devops service.
@@ -67,7 +66,7 @@ type GetRepositoryArchiveContentArgs struct {
 type GetRepositoryArchiveContentResult struct {
 	Format *string `pulumi:"format"`
 	// The provider-assigned unique ID for this managed resource.
-	Id           string  `pulumi:"id"`
+	Id           *string `pulumi:"id"`
 	RefName      *string `pulumi:"refName"`
 	RepositoryId string  `pulumi:"repositoryId"`
 }
@@ -114,19 +113,13 @@ func (o GetRepositoryArchiveContentResultOutput) ToGetRepositoryArchiveContentRe
 	return o
 }
 
-func (o GetRepositoryArchiveContentResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetRepositoryArchiveContentResult] {
-	return pulumix.Output[GetRepositoryArchiveContentResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetRepositoryArchiveContentResultOutput) Format() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetRepositoryArchiveContentResult) *string { return v.Format }).(pulumi.StringPtrOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetRepositoryArchiveContentResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRepositoryArchiveContentResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetRepositoryArchiveContentResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRepositoryArchiveContentResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetRepositoryArchiveContentResultOutput) RefName() pulumi.StringPtrOutput {

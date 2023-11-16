@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Opsi.outputs.GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollection {
-    private List<GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItem> items;
+    private @Nullable List<GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItem> items;
 
     private GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollection() {}
     public List<GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollection 
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItem> items;
+        private @Nullable List<GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItem> items;
         public Builder() {}
         public Builder(GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollection 
         }
 
         @CustomType.Setter
-        public Builder items(List<GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItem... items) {

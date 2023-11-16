@@ -46,23 +46,17 @@ class GetAutonomousExadataInfrastructureOcpuResult:
 
     @property
     @pulumi.getter(name="byWorkloadTypes")
-    def by_workload_types(self) -> Sequence['outputs.GetAutonomousExadataInfrastructureOcpuByWorkloadTypeResult']:
-        """
-        The number of consumed OCPUs, by database workload type.
-        """
+    def by_workload_types(self) -> Optional[Sequence['outputs.GetAutonomousExadataInfrastructureOcpuByWorkloadTypeResult']]:
         return pulumi.get(self, "by_workload_types")
 
     @property
     @pulumi.getter(name="consumedCpu")
-    def consumed_cpu(self) -> float:
-        """
-        The total number of consumed OCPUs in the Autonomous Exadata Infrastructure instance.
-        """
+    def consumed_cpu(self) -> Optional[float]:
         return pulumi.get(self, "consumed_cpu")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -70,10 +64,7 @@ class GetAutonomousExadataInfrastructureOcpuResult:
 
     @property
     @pulumi.getter(name="totalCpu")
-    def total_cpu(self) -> float:
-        """
-        The total number of OCPUs in the Autonomous Exadata Infrastructure instance.
-        """
+    def total_cpu(self) -> Optional[float]:
         return pulumi.get(self, "total_cpu")
 
 
@@ -93,21 +84,7 @@ class AwaitableGetAutonomousExadataInfrastructureOcpuResult(GetAutonomousExadata
 def get_autonomous_exadata_infrastructure_ocpu(autonomous_exadata_infrastructure_id: Optional[str] = None,
                                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAutonomousExadataInfrastructureOcpuResult:
     """
-    This data source provides details about a specific Autonomous Exadata Infrastructure Ocpu resource in Oracle Cloud Infrastructure Database service.
-
-    Gets details of the available and consumed OCPUs for the specified Autonomous Exadata Infrastructure resource.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_autonomous_exadata_infrastructure_ocpu = oci.Database.get_autonomous_exadata_infrastructure_ocpu(autonomous_exadata_infrastructure_id=oci_database_autonomous_exadata_infrastructure["test_autonomous_exadata_infrastructure"]["id"])
-    ```
-
-
-    :param str autonomous_exadata_infrastructure_id: The Autonomous Exadata Infrastructure  [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['autonomousExadataInfrastructureId'] = autonomous_exadata_infrastructure_id
@@ -126,20 +103,6 @@ def get_autonomous_exadata_infrastructure_ocpu(autonomous_exadata_infrastructure
 def get_autonomous_exadata_infrastructure_ocpu_output(autonomous_exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
                                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAutonomousExadataInfrastructureOcpuResult]:
     """
-    This data source provides details about a specific Autonomous Exadata Infrastructure Ocpu resource in Oracle Cloud Infrastructure Database service.
-
-    Gets details of the available and consumed OCPUs for the specified Autonomous Exadata Infrastructure resource.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_autonomous_exadata_infrastructure_ocpu = oci.Database.get_autonomous_exadata_infrastructure_ocpu(autonomous_exadata_infrastructure_id=oci_database_autonomous_exadata_infrastructure["test_autonomous_exadata_infrastructure"]["id"])
-    ```
-
-
-    :param str autonomous_exadata_infrastructure_id: The Autonomous Exadata Infrastructure  [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     ...

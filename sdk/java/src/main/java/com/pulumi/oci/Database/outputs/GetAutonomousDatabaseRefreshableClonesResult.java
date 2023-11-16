@@ -9,6 +9,7 @@ import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseRefreshableClonesRef
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -19,12 +20,12 @@ public final class GetAutonomousDatabaseRefreshableClonesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of refreshable_clone_collection.
      * 
      */
-    private List<GetAutonomousDatabaseRefreshableClonesRefreshableCloneCollection> refreshableCloneCollections;
+    private @Nullable List<GetAutonomousDatabaseRefreshableClonesRefreshableCloneCollection> refreshableCloneCollections;
 
     private GetAutonomousDatabaseRefreshableClonesResult() {}
     public String autonomousDatabaseId() {
@@ -37,15 +38,15 @@ public final class GetAutonomousDatabaseRefreshableClonesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of refreshable_clone_collection.
      * 
      */
     public List<GetAutonomousDatabaseRefreshableClonesRefreshableCloneCollection> refreshableCloneCollections() {
-        return this.refreshableCloneCollections;
+        return this.refreshableCloneCollections == null ? List.of() : this.refreshableCloneCollections;
     }
 
     public static Builder builder() {
@@ -59,8 +60,8 @@ public final class GetAutonomousDatabaseRefreshableClonesResult {
     public static final class Builder {
         private String autonomousDatabaseId;
         private @Nullable List<GetAutonomousDatabaseRefreshableClonesFilter> filters;
-        private String id;
-        private List<GetAutonomousDatabaseRefreshableClonesRefreshableCloneCollection> refreshableCloneCollections;
+        private @Nullable String id;
+        private @Nullable List<GetAutonomousDatabaseRefreshableClonesRefreshableCloneCollection> refreshableCloneCollections;
         public Builder() {}
         public Builder(GetAutonomousDatabaseRefreshableClonesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -84,13 +85,13 @@ public final class GetAutonomousDatabaseRefreshableClonesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder refreshableCloneCollections(List<GetAutonomousDatabaseRefreshableClonesRefreshableCloneCollection> refreshableCloneCollections) {
-            this.refreshableCloneCollections = Objects.requireNonNull(refreshableCloneCollections);
+        public Builder refreshableCloneCollections(@Nullable List<GetAutonomousDatabaseRefreshableClonesRefreshableCloneCollection> refreshableCloneCollections) {
+            this.refreshableCloneCollections = refreshableCloneCollections;
             return this;
         }
         public Builder refreshableCloneCollections(GetAutonomousDatabaseRefreshableClonesRefreshableCloneCollection... refreshableCloneCollections) {

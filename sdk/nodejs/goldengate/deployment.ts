@@ -58,15 +58,15 @@ export class Deployment extends pulumi.CustomResource {
     /**
      * (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup being referenced.
      */
-    public readonly deploymentBackupId!: pulumi.Output<string>;
+    public readonly deploymentBackupId!: pulumi.Output<string | undefined>;
     /**
      * Information regarding the deployment diagnostic collection
      */
-    public /*out*/ readonly deploymentDiagnosticDatas!: pulumi.Output<outputs.GoldenGate.DeploymentDeploymentDiagnosticData[]>;
+    public /*out*/ readonly deploymentDiagnosticDatas!: pulumi.Output<outputs.GoldenGate.DeploymentDeploymentDiagnosticData[] | undefined>;
     /**
      * The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
      */
@@ -74,11 +74,11 @@ export class Deployment extends pulumi.CustomResource {
     /**
      * The URL of a resource.
      */
-    public /*out*/ readonly deploymentUrl!: pulumi.Output<string>;
+    public /*out*/ readonly deploymentUrl!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Metadata about this specific object.
      */
-    public readonly description!: pulumi.Output<string>;
+    public readonly description!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) An object's Display Name.
      */
@@ -86,11 +86,11 @@ export class Deployment extends pulumi.CustomResource {
     /**
      * (Updatable) A three-label Fully Qualified Domain Name (FQDN) for a resource.
      */
-    public readonly fqdn!: pulumi.Output<string>;
+    public readonly fqdn!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) Indicates if auto scaling is enabled for the Deployment's CPU core count.
      */
@@ -98,19 +98,19 @@ export class Deployment extends pulumi.CustomResource {
     /**
      * True if all of the aggregate resources are working correctly.
      */
-    public /*out*/ readonly isHealthy!: pulumi.Output<boolean>;
+    public /*out*/ readonly isHealthy!: pulumi.Output<boolean | undefined>;
     /**
      * Indicates if the resource is the the latest available version.
      */
-    public /*out*/ readonly isLatestVersion!: pulumi.Output<boolean>;
+    public /*out*/ readonly isLatestVersion!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) True if this object is publicly available.
      */
-    public readonly isPublic!: pulumi.Output<boolean>;
+    public readonly isPublic!: pulumi.Output<boolean | undefined>;
     /**
      * Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
      */
-    public /*out*/ readonly isStorageUtilizationLimitExceeded!: pulumi.Output<boolean>;
+    public /*out*/ readonly isStorageUtilizationLimitExceeded!: pulumi.Output<boolean | undefined>;
     /**
      * (Updatable) The Oracle license model that applies to a Deployment.
      */
@@ -118,48 +118,48 @@ export class Deployment extends pulumi.CustomResource {
     /**
      * Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * Possible GGS lifecycle sub-states.
      */
-    public /*out*/ readonly lifecycleSubState!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleSubState!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Defines the maintenance configuration for create operation.
      */
-    public readonly maintenanceConfiguration!: pulumi.Output<outputs.GoldenGate.DeploymentMaintenanceConfiguration>;
+    public readonly maintenanceConfiguration!: pulumi.Output<outputs.GoldenGate.DeploymentMaintenanceConfiguration | undefined>;
     /**
      * (Updatable) Defines the maintenance window for create operation, when automatic actions can be performed.
      */
-    public readonly maintenanceWindow!: pulumi.Output<outputs.GoldenGate.DeploymentMaintenanceWindow>;
+    public readonly maintenanceWindow!: pulumi.Output<outputs.GoldenGate.DeploymentMaintenanceWindow | undefined>;
     /**
      * Type of the next maintenance.
      */
-    public /*out*/ readonly nextMaintenanceActionType!: pulumi.Output<string>;
+    public /*out*/ readonly nextMaintenanceActionType!: pulumi.Output<string | undefined>;
     /**
      * Description of the next maintenance.
      */
-    public /*out*/ readonly nextMaintenanceDescription!: pulumi.Output<string>;
+    public /*out*/ readonly nextMaintenanceDescription!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
      */
-    public readonly nsgIds!: pulumi.Output<string[]>;
+    public readonly nsgIds!: pulumi.Output<string[] | undefined>;
     /**
      * (Updatable) Deployment Data for creating an OggDeployment
      */
-    public readonly oggData!: pulumi.Output<outputs.GoldenGate.DeploymentOggData>;
+    public readonly oggData!: pulumi.Output<outputs.GoldenGate.DeploymentOggData | undefined>;
     /**
      * The private IP address in the customer's VCN representing the access point for the associated endpoint service in the GoldenGate service VCN.
      */
-    public /*out*/ readonly privateIpAddress!: pulumi.Output<string>;
+    public /*out*/ readonly privateIpAddress!: pulumi.Output<string | undefined>;
     /**
      * The public IP address representing the access point for the Deployment.
      */
-    public /*out*/ readonly publicIpAddress!: pulumi.Output<string>;
-    public readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly publicIpAddress!: pulumi.Output<string | undefined>;
+    public readonly state!: pulumi.Output<string | undefined>;
     /**
      * The amount of storage being utilized (in bytes)
      */
-    public /*out*/ readonly storageUtilizationInBytes!: pulumi.Output<string>;
+    public /*out*/ readonly storageUtilizationInBytes!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
      */
@@ -167,27 +167,27 @@ export class Deployment extends pulumi.CustomResource {
     /**
      * The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The time of next maintenance schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */
-    public /*out*/ readonly timeOfNextMaintenance!: pulumi.Output<string>;
+    public /*out*/ readonly timeOfNextMaintenance!: pulumi.Output<string | undefined>;
     /**
      * The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */
-    public /*out*/ readonly timeOggVersionSupportedUntil!: pulumi.Output<string>;
+    public /*out*/ readonly timeOggVersionSupportedUntil!: pulumi.Output<string | undefined>;
     /**
      * The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
     /**
      * Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records  to check, when deployment will be forced to upgrade to a newer version. Old description: The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */
-    public /*out*/ readonly timeUpgradeRequired!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpgradeRequired!: pulumi.Output<string | undefined>;
 
     /**
      * Create a Deployment resource with the given unique name, arguments, and options.

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Limit Definitions in Oracle Cloud Infrastructure Limits service.
@@ -71,7 +70,7 @@ type GetLimitDefinitionsResult struct {
 	CompartmentId string                      `pulumi:"compartmentId"`
 	Filters       []GetLimitDefinitionsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of limit_definitions.
 	LimitDefinitions []GetLimitDefinitionsLimitDefinition `pulumi:"limitDefinitions"`
 	// The resource limit name. To be used for writing policies (in case of quotas) or other programmatic calls.
@@ -123,12 +122,6 @@ func (o GetLimitDefinitionsResultOutput) ToGetLimitDefinitionsResultOutputWithCo
 	return o
 }
 
-func (o GetLimitDefinitionsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetLimitDefinitionsResult] {
-	return pulumix.Output[GetLimitDefinitionsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetLimitDefinitionsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLimitDefinitionsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -138,8 +131,8 @@ func (o GetLimitDefinitionsResultOutput) Filters() GetLimitDefinitionsFilterArra
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetLimitDefinitionsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLimitDefinitionsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetLimitDefinitionsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLimitDefinitionsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of limit_definitions.

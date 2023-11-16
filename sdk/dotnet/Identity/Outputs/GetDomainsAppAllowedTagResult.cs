@@ -16,23 +16,23 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// Oracle Cloud Infrastructure Tag key
         /// </summary>
-        public readonly string Key;
+        public readonly string? Key;
         /// <summary>
         /// If true, indicates that this value must be protected.
         /// </summary>
-        public readonly bool ReadOnly;
+        public readonly bool? ReadOnly;
         /// <summary>
         /// ID of the AppRole.
         /// </summary>
-        public readonly string Value;
+        public readonly string? Value;
 
         [OutputConstructor]
         private GetDomainsAppAllowedTagResult(
-            string key,
+            string? key,
 
-            bool readOnly,
+            bool? readOnly,
 
-            string value)
+            string? value)
         {
             Key = key;
             ReadOnly = readOnly;

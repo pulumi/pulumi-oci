@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Drg Route Distribution Statements in Oracle Cloud Infrastructure Core service.
@@ -65,7 +64,7 @@ type GetDrgRouteDistributionStatementsResult struct {
 	DrgRouteDistributionStatements []GetDrgRouteDistributionStatementsDrgRouteDistributionStatement `pulumi:"drgRouteDistributionStatements"`
 	Filters                        []GetDrgRouteDistributionStatementsFilter                        `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 func GetDrgRouteDistributionStatementsOutput(ctx *pulumi.Context, args GetDrgRouteDistributionStatementsOutputArgs, opts ...pulumi.InvokeOption) GetDrgRouteDistributionStatementsResultOutput {
@@ -107,12 +106,6 @@ func (o GetDrgRouteDistributionStatementsResultOutput) ToGetDrgRouteDistribution
 	return o
 }
 
-func (o GetDrgRouteDistributionStatementsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrgRouteDistributionStatementsResult] {
-	return pulumix.Output[GetDrgRouteDistributionStatementsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDrgRouteDistributionStatementsResultOutput) DrgRouteDistributionId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrgRouteDistributionStatementsResult) string { return v.DrgRouteDistributionId }).(pulumi.StringOutput)
 }
@@ -131,8 +124,8 @@ func (o GetDrgRouteDistributionStatementsResultOutput) Filters() GetDrgRouteDist
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetDrgRouteDistributionStatementsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrgRouteDistributionStatementsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDrgRouteDistributionStatementsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrgRouteDistributionStatementsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func init() {

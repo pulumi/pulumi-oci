@@ -23,7 +23,7 @@ public final class GetBootVolumesResult {
      * @return The list of boot_volumes.
      * 
      */
-    private List<GetBootVolumesBootVolume> bootVolumes;
+    private @Nullable List<GetBootVolumesBootVolume> bootVolumes;
     /**
      * @return The OCID of the compartment that contains the boot volume.
      * 
@@ -34,7 +34,7 @@ public final class GetBootVolumesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The OCID of the source volume group.
      * 
@@ -54,7 +54,7 @@ public final class GetBootVolumesResult {
      * 
      */
     public List<GetBootVolumesBootVolume> bootVolumes() {
-        return this.bootVolumes;
+        return this.bootVolumes == null ? List.of() : this.bootVolumes;
     }
     /**
      * @return The OCID of the compartment that contains the boot volume.
@@ -70,8 +70,8 @@ public final class GetBootVolumesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The OCID of the source volume group.
@@ -91,10 +91,10 @@ public final class GetBootVolumesResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String availabilityDomain;
-        private List<GetBootVolumesBootVolume> bootVolumes;
+        private @Nullable List<GetBootVolumesBootVolume> bootVolumes;
         private @Nullable String compartmentId;
         private @Nullable List<GetBootVolumesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String volumeGroupId;
         public Builder() {}
         public Builder(GetBootVolumesResult defaults) {
@@ -113,8 +113,8 @@ public final class GetBootVolumesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder bootVolumes(List<GetBootVolumesBootVolume> bootVolumes) {
-            this.bootVolumes = Objects.requireNonNull(bootVolumes);
+        public Builder bootVolumes(@Nullable List<GetBootVolumesBootVolume> bootVolumes) {
+            this.bootVolumes = bootVolumes;
             return this;
         }
         public Builder bootVolumes(GetBootVolumesBootVolume... bootVolumes) {
@@ -134,8 +134,8 @@ public final class GetBootVolumesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

@@ -16,10 +16,10 @@ namespace Pulumi.Oci.Marketplace.Outputs
         /// <summary>
         /// The name of the operating system.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
 
         [OutputConstructor]
-        private GetPublicationPackageDetailOperatingSystemResult(string name)
+        private GetPublicationPackageDetailOperatingSystemResult(string? name)
         {
             Name = name;
         }

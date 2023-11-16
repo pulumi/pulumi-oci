@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Backup Destination resource in Oracle Cloud Infrastructure Database service.
@@ -83,23 +82,23 @@ type BackupDestination struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// A descriptive text associated with the lifecycleState. Typically contains additional displayable text
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes.
 	//
 	// Deprecated: The 'local_mount_point_path' field has been deprecated. Please use 'local_mount_point_path under mount_type_details' instead.
-	LocalMountPointPath pulumi.StringOutput `pulumi:"localMountPointPath"`
+	LocalMountPointPath pulumi.StringPtrOutput `pulumi:"localMountPointPath"`
 	// Mount type details for backup destination.
-	MountTypeDetails BackupDestinationMountTypeDetailsOutput `pulumi:"mountTypeDetails"`
+	MountTypeDetails BackupDestinationMountTypeDetailsPtrOutput `pulumi:"mountTypeDetails"`
 	// NFS Mount type for backup destination.
-	NfsMountType pulumi.StringOutput `pulumi:"nfsMountType"`
+	NfsMountType pulumi.StringPtrOutput `pulumi:"nfsMountType"`
 	// Specifies the directory on which to mount the file system
-	NfsServerExport pulumi.StringOutput `pulumi:"nfsServerExport"`
+	NfsServerExport pulumi.StringPtrOutput `pulumi:"nfsServerExport"`
 	// IP addresses for NFS Auto mount.
 	NfsServers pulumi.StringArrayOutput `pulumi:"nfsServers"`
 	// The current lifecycle state of the backup destination.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The date and time the backup destination was created.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// Type of the backup destination.
 	Type pulumi.StringOutput `pulumi:"type"`
 	// (Updatable) The Virtual Private Catalog (VPC) users that are used to access the Recovery Appliance.
@@ -307,12 +306,6 @@ func (i *BackupDestination) ToBackupDestinationOutputWithContext(ctx context.Con
 	return pulumi.ToOutputWithContext(ctx, i).(BackupDestinationOutput)
 }
 
-func (i *BackupDestination) ToOutput(ctx context.Context) pulumix.Output[*BackupDestination] {
-	return pulumix.Output[*BackupDestination]{
-		OutputState: i.ToBackupDestinationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // BackupDestinationArrayInput is an input type that accepts BackupDestinationArray and BackupDestinationArrayOutput values.
 // You can construct a concrete instance of `BackupDestinationArrayInput` via:
 //
@@ -336,12 +329,6 @@ func (i BackupDestinationArray) ToBackupDestinationArrayOutput() BackupDestinati
 
 func (i BackupDestinationArray) ToBackupDestinationArrayOutputWithContext(ctx context.Context) BackupDestinationArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(BackupDestinationArrayOutput)
-}
-
-func (i BackupDestinationArray) ToOutput(ctx context.Context) pulumix.Output[[]*BackupDestination] {
-	return pulumix.Output[[]*BackupDestination]{
-		OutputState: i.ToBackupDestinationArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // BackupDestinationMapInput is an input type that accepts BackupDestinationMap and BackupDestinationMapOutput values.
@@ -369,12 +356,6 @@ func (i BackupDestinationMap) ToBackupDestinationMapOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(BackupDestinationMapOutput)
 }
 
-func (i BackupDestinationMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*BackupDestination] {
-	return pulumix.Output[map[string]*BackupDestination]{
-		OutputState: i.ToBackupDestinationMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type BackupDestinationOutput struct{ *pulumi.OutputState }
 
 func (BackupDestinationOutput) ElementType() reflect.Type {
@@ -387,12 +368,6 @@ func (o BackupDestinationOutput) ToBackupDestinationOutput() BackupDestinationOu
 
 func (o BackupDestinationOutput) ToBackupDestinationOutputWithContext(ctx context.Context) BackupDestinationOutput {
 	return o
-}
-
-func (o BackupDestinationOutput) ToOutput(ctx context.Context) pulumix.Output[*BackupDestination] {
-	return pulumix.Output[*BackupDestination]{
-		OutputState: o.OutputState,
-	}
 }
 
 // List of databases associated with the backup destination.
@@ -428,30 +403,30 @@ func (o BackupDestinationOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // A descriptive text associated with the lifecycleState. Typically contains additional displayable text
-func (o BackupDestinationOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *BackupDestination) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o BackupDestinationOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BackupDestination) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes.
 //
 // Deprecated: The 'local_mount_point_path' field has been deprecated. Please use 'local_mount_point_path under mount_type_details' instead.
-func (o BackupDestinationOutput) LocalMountPointPath() pulumi.StringOutput {
-	return o.ApplyT(func(v *BackupDestination) pulumi.StringOutput { return v.LocalMountPointPath }).(pulumi.StringOutput)
+func (o BackupDestinationOutput) LocalMountPointPath() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BackupDestination) pulumi.StringPtrOutput { return v.LocalMountPointPath }).(pulumi.StringPtrOutput)
 }
 
 // Mount type details for backup destination.
-func (o BackupDestinationOutput) MountTypeDetails() BackupDestinationMountTypeDetailsOutput {
-	return o.ApplyT(func(v *BackupDestination) BackupDestinationMountTypeDetailsOutput { return v.MountTypeDetails }).(BackupDestinationMountTypeDetailsOutput)
+func (o BackupDestinationOutput) MountTypeDetails() BackupDestinationMountTypeDetailsPtrOutput {
+	return o.ApplyT(func(v *BackupDestination) BackupDestinationMountTypeDetailsPtrOutput { return v.MountTypeDetails }).(BackupDestinationMountTypeDetailsPtrOutput)
 }
 
 // NFS Mount type for backup destination.
-func (o BackupDestinationOutput) NfsMountType() pulumi.StringOutput {
-	return o.ApplyT(func(v *BackupDestination) pulumi.StringOutput { return v.NfsMountType }).(pulumi.StringOutput)
+func (o BackupDestinationOutput) NfsMountType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BackupDestination) pulumi.StringPtrOutput { return v.NfsMountType }).(pulumi.StringPtrOutput)
 }
 
 // Specifies the directory on which to mount the file system
-func (o BackupDestinationOutput) NfsServerExport() pulumi.StringOutput {
-	return o.ApplyT(func(v *BackupDestination) pulumi.StringOutput { return v.NfsServerExport }).(pulumi.StringOutput)
+func (o BackupDestinationOutput) NfsServerExport() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BackupDestination) pulumi.StringPtrOutput { return v.NfsServerExport }).(pulumi.StringPtrOutput)
 }
 
 // IP addresses for NFS Auto mount.
@@ -460,13 +435,13 @@ func (o BackupDestinationOutput) NfsServers() pulumi.StringArrayOutput {
 }
 
 // The current lifecycle state of the backup destination.
-func (o BackupDestinationOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *BackupDestination) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o BackupDestinationOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BackupDestination) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the backup destination was created.
-func (o BackupDestinationOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *BackupDestination) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o BackupDestinationOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BackupDestination) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // Type of the backup destination.
@@ -496,12 +471,6 @@ func (o BackupDestinationArrayOutput) ToBackupDestinationArrayOutputWithContext(
 	return o
 }
 
-func (o BackupDestinationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*BackupDestination] {
-	return pulumix.Output[[]*BackupDestination]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o BackupDestinationArrayOutput) Index(i pulumi.IntInput) BackupDestinationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *BackupDestination {
 		return vs[0].([]*BackupDestination)[vs[1].(int)]
@@ -520,12 +489,6 @@ func (o BackupDestinationMapOutput) ToBackupDestinationMapOutput() BackupDestina
 
 func (o BackupDestinationMapOutput) ToBackupDestinationMapOutputWithContext(ctx context.Context) BackupDestinationMapOutput {
 	return o
-}
-
-func (o BackupDestinationMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*BackupDestination] {
-	return pulumix.Output[map[string]*BackupDestination]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o BackupDestinationMapOutput) MapIndex(k pulumi.StringInput) BackupDestinationOutput {

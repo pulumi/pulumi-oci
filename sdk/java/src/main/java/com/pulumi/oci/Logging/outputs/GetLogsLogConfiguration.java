@@ -8,6 +8,8 @@ import com.pulumi.oci.Logging.outputs.GetLogsLogConfigurationSource;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetLogsLogConfiguration {
@@ -15,27 +17,27 @@ public final class GetLogsLogConfiguration {
      * @return The OCID of the compartment that the resource belongs to.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The source the log object comes from.
      * 
      */
-    private List<GetLogsLogConfigurationSource> sources;
+    private @Nullable List<GetLogsLogConfigurationSource> sources;
 
     private GetLogsLogConfiguration() {}
     /**
      * @return The OCID of the compartment that the resource belongs to.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The source the log object comes from.
      * 
      */
     public List<GetLogsLogConfigurationSource> sources() {
-        return this.sources;
+        return this.sources == null ? List.of() : this.sources;
     }
 
     public static Builder builder() {
@@ -47,8 +49,8 @@ public final class GetLogsLogConfiguration {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private List<GetLogsLogConfigurationSource> sources;
+        private @Nullable String compartmentId;
+        private @Nullable List<GetLogsLogConfigurationSource> sources;
         public Builder() {}
         public Builder(GetLogsLogConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
@@ -57,13 +59,13 @@ public final class GetLogsLogConfiguration {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder sources(List<GetLogsLogConfigurationSource> sources) {
-            this.sources = Objects.requireNonNull(sources);
+        public Builder sources(@Nullable List<GetLogsLogConfigurationSource> sources) {
+            this.sources = sources;
             return this;
         }
         public Builder sources(GetLogsLogConfigurationSource... sources) {

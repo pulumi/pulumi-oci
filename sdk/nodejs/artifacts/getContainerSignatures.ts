@@ -108,7 +108,7 @@ export interface GetContainerSignaturesResult {
     /**
      * The list of container_image_signature_collection.
      */
-    readonly containerImageSignatureCollections: outputs.Artifacts.GetContainerSignaturesContainerImageSignatureCollection[];
+    readonly containerImageSignatureCollections?: outputs.Artifacts.GetContainerSignaturesContainerImageSignatureCollection[];
     /**
      * The last 10 characters of the kmsKeyId, the last 10 characters of the kmsKeyVersionId, the signingAlgorithm, and the last 10 characters of the signatureId.  Example: `wrmz22sixa::qdwyc2ptun::SHA_256_RSA_PKCS_PSS::2vwmobasva`
      */
@@ -117,7 +117,7 @@ export interface GetContainerSignaturesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly imageDigest?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container image.  Example: `ocid1.containerimage.oc1..exampleuniqueID`

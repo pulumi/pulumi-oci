@@ -14,6 +14,7 @@ import com.pulumi.oci.Analytics.outputs.AnalyticsInstancePrivateAccessChannelPri
 import com.pulumi.oci.Utilities;
 import java.lang.String;
 import java.util.List;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -111,56 +112,56 @@ public class AnalyticsInstancePrivateAccessChannel extends com.pulumi.resources.
      * 
      */
     @Export(name="egressSourceIpAddresses", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> egressSourceIpAddresses;
+    private Output</* @Nullable */ List<String>> egressSourceIpAddresses;
 
     /**
      * @return The list of IP addresses from the customer subnet connected to private access channel, used as a source Ip by Private Access Channel for network traffic from the AnalyticsInstance to Private Sources.
      * 
      */
-    public Output<List<String>> egressSourceIpAddresses() {
-        return this.egressSourceIpAddresses;
+    public Output<Optional<List<String>>> egressSourceIpAddresses() {
+        return Codegen.optional(this.egressSourceIpAddresses);
     }
     /**
      * IP Address of the Private Access channel.
      * 
      */
     @Export(name="ipAddress", refs={String.class}, tree="[0]")
-    private Output<String> ipAddress;
+    private Output</* @Nullable */ String> ipAddress;
 
     /**
      * @return IP Address of the Private Access channel.
      * 
      */
-    public Output<String> ipAddress() {
-        return this.ipAddress;
+    public Output<Optional<String>> ipAddress() {
+        return Codegen.optional(this.ipAddress);
     }
     /**
      * Private Access Channel unique identifier key.
      * 
      */
     @Export(name="key", refs={String.class}, tree="[0]")
-    private Output<String> key;
+    private Output</* @Nullable */ String> key;
 
     /**
      * @return Private Access Channel unique identifier key.
      * 
      */
-    public Output<String> key() {
-        return this.key;
+    public Output<Optional<String>> key() {
+        return Codegen.optional(this.key);
     }
     /**
      * (Updatable) Network Security Group OCIDs for an Analytics instance.
      * 
      */
     @Export(name="networkSecurityGroupIds", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> networkSecurityGroupIds;
+    private Output</* @Nullable */ List<String>> networkSecurityGroupIds;
 
     /**
      * @return (Updatable) Network Security Group OCIDs for an Analytics instance.
      * 
      */
-    public Output<List<String>> networkSecurityGroupIds() {
-        return this.networkSecurityGroupIds;
+    public Output<Optional<List<String>>> networkSecurityGroupIds() {
+        return Codegen.optional(this.networkSecurityGroupIds);
     }
     /**
      * (Updatable) List of Private Source DNS zones registered with Private Access Channel, where datasource hostnames from these dns zones / domains will be resolved in the peered VCN for access from Analytics Instance. Min of 1 is required and Max of 30 Private Source DNS zones can be registered.
@@ -181,14 +182,14 @@ public class AnalyticsInstancePrivateAccessChannel extends com.pulumi.resources.
      * 
      */
     @Export(name="privateSourceScanHosts", refs={List.class,AnalyticsInstancePrivateAccessChannelPrivateSourceScanHost.class}, tree="[0,1]")
-    private Output<List<AnalyticsInstancePrivateAccessChannelPrivateSourceScanHost>> privateSourceScanHosts;
+    private Output</* @Nullable */ List<AnalyticsInstancePrivateAccessChannelPrivateSourceScanHost>> privateSourceScanHosts;
 
     /**
      * @return (Updatable) List of Private Source DB SCAN hosts registered with Private Access Channel for access from Analytics Instance.
      * 
      */
-    public Output<List<AnalyticsInstancePrivateAccessChannelPrivateSourceScanHost>> privateSourceScanHosts() {
-        return this.privateSourceScanHosts;
+    public Output<Optional<List<AnalyticsInstancePrivateAccessChannelPrivateSourceScanHost>>> privateSourceScanHosts() {
+        return Codegen.optional(this.privateSourceScanHosts);
     }
     /**
      * (Updatable) OCID of the customer subnet connected to private access channel.

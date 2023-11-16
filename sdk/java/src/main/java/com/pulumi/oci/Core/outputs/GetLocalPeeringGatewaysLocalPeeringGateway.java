@@ -10,6 +10,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetLocalPeeringGatewaysLocalPeeringGateway {
@@ -17,183 +19,183 @@ public final class GetLocalPeeringGatewaysLocalPeeringGateway {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The LPG&#39;s Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Whether the VCN at the other end of the peering is in a different tenancy.  Example: `false`
      * 
      */
-    private Boolean isCrossTenancyPeering;
+    private @Nullable Boolean isCrossTenancyPeering;
     /**
      * @return The smallest aggregate CIDR that contains all the CIDR routes advertised by the VCN at the other end of the peering from this LPG. See `peerAdvertisedCidrDetails` for the individual CIDRs. The value is `null` if the LPG is not peered.  Example: `192.168.0.0/16`, or if aggregated with `172.16.0.0/24` then `128.0.0.0/1`
      * 
      */
-    private String peerAdvertisedCidr;
+    private @Nullable String peerAdvertisedCidr;
     /**
      * @return The specific ranges of IP addresses available on or via the VCN at the other end of the peering from this LPG. The value is `null` if the LPG is not peered. You can use these as destination CIDRs for route rules to route a subnet&#39;s traffic to this LPG.  Example: [`192.168.0.0/16`, `172.16.0.0/24`]
      * 
      */
-    private List<String> peerAdvertisedCidrDetails;
+    private @Nullable List<String> peerAdvertisedCidrDetails;
     /**
      * @return The OCID of the peered LPG
      * 
      */
-    private String peerId;
+    private @Nullable String peerId;
     /**
      * @return Whether the LPG is peered with another LPG. `NEW` means the LPG has not yet been peered. `PENDING` means the peering is being established. `REVOKED` means the LPG at the other end of the peering has been deleted.
      * 
      */
-    private String peeringStatus;
+    private @Nullable String peeringStatus;
     /**
      * @return Additional information regarding the peering status, if applicable.
      * 
      */
-    private String peeringStatusDetails;
+    private @Nullable String peeringStatusDetails;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the LPG is using.
      * 
      */
-    private String routeTableId;
+    private @Nullable String routeTableId;
     /**
      * @return The LPG&#39;s current lifecycle state.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The date and time the LPG was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
      * 
      */
-    private String vcnId;
+    private @Nullable String vcnId;
 
     private GetLocalPeeringGatewaysLocalPeeringGateway() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The LPG&#39;s Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Whether the VCN at the other end of the peering is in a different tenancy.  Example: `false`
      * 
      */
-    public Boolean isCrossTenancyPeering() {
-        return this.isCrossTenancyPeering;
+    public Optional<Boolean> isCrossTenancyPeering() {
+        return Optional.ofNullable(this.isCrossTenancyPeering);
     }
     /**
      * @return The smallest aggregate CIDR that contains all the CIDR routes advertised by the VCN at the other end of the peering from this LPG. See `peerAdvertisedCidrDetails` for the individual CIDRs. The value is `null` if the LPG is not peered.  Example: `192.168.0.0/16`, or if aggregated with `172.16.0.0/24` then `128.0.0.0/1`
      * 
      */
-    public String peerAdvertisedCidr() {
-        return this.peerAdvertisedCidr;
+    public Optional<String> peerAdvertisedCidr() {
+        return Optional.ofNullable(this.peerAdvertisedCidr);
     }
     /**
      * @return The specific ranges of IP addresses available on or via the VCN at the other end of the peering from this LPG. The value is `null` if the LPG is not peered. You can use these as destination CIDRs for route rules to route a subnet&#39;s traffic to this LPG.  Example: [`192.168.0.0/16`, `172.16.0.0/24`]
      * 
      */
     public List<String> peerAdvertisedCidrDetails() {
-        return this.peerAdvertisedCidrDetails;
+        return this.peerAdvertisedCidrDetails == null ? List.of() : this.peerAdvertisedCidrDetails;
     }
     /**
      * @return The OCID of the peered LPG
      * 
      */
-    public String peerId() {
-        return this.peerId;
+    public Optional<String> peerId() {
+        return Optional.ofNullable(this.peerId);
     }
     /**
      * @return Whether the LPG is peered with another LPG. `NEW` means the LPG has not yet been peered. `PENDING` means the peering is being established. `REVOKED` means the LPG at the other end of the peering has been deleted.
      * 
      */
-    public String peeringStatus() {
-        return this.peeringStatus;
+    public Optional<String> peeringStatus() {
+        return Optional.ofNullable(this.peeringStatus);
     }
     /**
      * @return Additional information regarding the peering status, if applicable.
      * 
      */
-    public String peeringStatusDetails() {
-        return this.peeringStatusDetails;
+    public Optional<String> peeringStatusDetails() {
+        return Optional.ofNullable(this.peeringStatusDetails);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the LPG is using.
      * 
      */
-    public String routeTableId() {
-        return this.routeTableId;
+    public Optional<String> routeTableId() {
+        return Optional.ofNullable(this.routeTableId);
     }
     /**
      * @return The LPG&#39;s current lifecycle state.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The date and time the LPG was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
      * 
      */
-    public String vcnId() {
-        return this.vcnId;
+    public Optional<String> vcnId() {
+        return Optional.ofNullable(this.vcnId);
     }
 
     public static Builder builder() {
@@ -205,21 +207,21 @@ public final class GetLocalPeeringGatewaysLocalPeeringGateway {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private Map<String,Object> definedTags;
-        private String displayName;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private Boolean isCrossTenancyPeering;
-        private String peerAdvertisedCidr;
-        private List<String> peerAdvertisedCidrDetails;
-        private String peerId;
-        private String peeringStatus;
-        private String peeringStatusDetails;
-        private String routeTableId;
-        private String state;
-        private String timeCreated;
-        private String vcnId;
+        private @Nullable String compartmentId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable Boolean isCrossTenancyPeering;
+        private @Nullable String peerAdvertisedCidr;
+        private @Nullable List<String> peerAdvertisedCidrDetails;
+        private @Nullable String peerId;
+        private @Nullable String peeringStatus;
+        private @Nullable String peeringStatusDetails;
+        private @Nullable String routeTableId;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
+        private @Nullable String vcnId;
         public Builder() {}
         public Builder(GetLocalPeeringGatewaysLocalPeeringGateway defaults) {
     	      Objects.requireNonNull(defaults);
@@ -241,81 +243,81 @@ public final class GetLocalPeeringGatewaysLocalPeeringGateway {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder isCrossTenancyPeering(Boolean isCrossTenancyPeering) {
-            this.isCrossTenancyPeering = Objects.requireNonNull(isCrossTenancyPeering);
+        public Builder isCrossTenancyPeering(@Nullable Boolean isCrossTenancyPeering) {
+            this.isCrossTenancyPeering = isCrossTenancyPeering;
             return this;
         }
         @CustomType.Setter
-        public Builder peerAdvertisedCidr(String peerAdvertisedCidr) {
-            this.peerAdvertisedCidr = Objects.requireNonNull(peerAdvertisedCidr);
+        public Builder peerAdvertisedCidr(@Nullable String peerAdvertisedCidr) {
+            this.peerAdvertisedCidr = peerAdvertisedCidr;
             return this;
         }
         @CustomType.Setter
-        public Builder peerAdvertisedCidrDetails(List<String> peerAdvertisedCidrDetails) {
-            this.peerAdvertisedCidrDetails = Objects.requireNonNull(peerAdvertisedCidrDetails);
+        public Builder peerAdvertisedCidrDetails(@Nullable List<String> peerAdvertisedCidrDetails) {
+            this.peerAdvertisedCidrDetails = peerAdvertisedCidrDetails;
             return this;
         }
         public Builder peerAdvertisedCidrDetails(String... peerAdvertisedCidrDetails) {
             return peerAdvertisedCidrDetails(List.of(peerAdvertisedCidrDetails));
         }
         @CustomType.Setter
-        public Builder peerId(String peerId) {
-            this.peerId = Objects.requireNonNull(peerId);
+        public Builder peerId(@Nullable String peerId) {
+            this.peerId = peerId;
             return this;
         }
         @CustomType.Setter
-        public Builder peeringStatus(String peeringStatus) {
-            this.peeringStatus = Objects.requireNonNull(peeringStatus);
+        public Builder peeringStatus(@Nullable String peeringStatus) {
+            this.peeringStatus = peeringStatus;
             return this;
         }
         @CustomType.Setter
-        public Builder peeringStatusDetails(String peeringStatusDetails) {
-            this.peeringStatusDetails = Objects.requireNonNull(peeringStatusDetails);
+        public Builder peeringStatusDetails(@Nullable String peeringStatusDetails) {
+            this.peeringStatusDetails = peeringStatusDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder routeTableId(String routeTableId) {
-            this.routeTableId = Objects.requireNonNull(routeTableId);
+        public Builder routeTableId(@Nullable String routeTableId) {
+            this.routeTableId = routeTableId;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder vcnId(String vcnId) {
-            this.vcnId = Objects.requireNonNull(vcnId);
+        public Builder vcnId(@Nullable String vcnId) {
+            this.vcnId = vcnId;
             return this;
         }
         public GetLocalPeeringGatewaysLocalPeeringGateway build() {

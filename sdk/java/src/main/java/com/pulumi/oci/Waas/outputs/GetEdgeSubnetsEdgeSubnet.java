@@ -6,6 +6,8 @@ package com.pulumi.oci.Waas.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetEdgeSubnetsEdgeSubnet {
@@ -13,39 +15,39 @@ public final class GetEdgeSubnetsEdgeSubnet {
      * @return An edge node subnet. This can include /24 or /8 addresses.
      * 
      */
-    private String cidr;
+    private @Nullable String cidr;
     /**
      * @return The name of the region containing the indicated subnet.
      * 
      */
-    private String region;
+    private @Nullable String region;
     /**
      * @return The date and time the last change was made to the indicated edge node subnet, expressed in RFC 3339 timestamp format.
      * 
      */
-    private String timeModified;
+    private @Nullable String timeModified;
 
     private GetEdgeSubnetsEdgeSubnet() {}
     /**
      * @return An edge node subnet. This can include /24 or /8 addresses.
      * 
      */
-    public String cidr() {
-        return this.cidr;
+    public Optional<String> cidr() {
+        return Optional.ofNullable(this.cidr);
     }
     /**
      * @return The name of the region containing the indicated subnet.
      * 
      */
-    public String region() {
-        return this.region;
+    public Optional<String> region() {
+        return Optional.ofNullable(this.region);
     }
     /**
      * @return The date and time the last change was made to the indicated edge node subnet, expressed in RFC 3339 timestamp format.
      * 
      */
-    public String timeModified() {
-        return this.timeModified;
+    public Optional<String> timeModified() {
+        return Optional.ofNullable(this.timeModified);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetEdgeSubnetsEdgeSubnet {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String cidr;
-        private String region;
-        private String timeModified;
+        private @Nullable String cidr;
+        private @Nullable String region;
+        private @Nullable String timeModified;
         public Builder() {}
         public Builder(GetEdgeSubnetsEdgeSubnet defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetEdgeSubnetsEdgeSubnet {
         }
 
         @CustomType.Setter
-        public Builder cidr(String cidr) {
-            this.cidr = Objects.requireNonNull(cidr);
+        public Builder cidr(@Nullable String cidr) {
+            this.cidr = cidr;
             return this;
         }
         @CustomType.Setter
-        public Builder region(String region) {
-            this.region = Objects.requireNonNull(region);
+        public Builder region(@Nullable String region) {
+            this.region = region;
             return this;
         }
         @CustomType.Setter
-        public Builder timeModified(String timeModified) {
-            this.timeModified = Objects.requireNonNull(timeModified);
+        public Builder timeModified(@Nullable String timeModified) {
+            this.timeModified = timeModified;
             return this;
         }
         public GetEdgeSubnetsEdgeSubnet build() {

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Workspace Folders in Oracle Cloud Infrastructure Data Integration service.
@@ -82,7 +81,7 @@ type GetWorkspaceFoldersResult struct {
 	// The list of folder_summary_collection.
 	FolderSummaryCollections []GetWorkspaceFoldersFolderSummaryCollection `pulumi:"folderSummaryCollections"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The identifier of the aggregator.
 	Identifiers []string `pulumi:"identifiers"`
 	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
@@ -140,12 +139,6 @@ func (o GetWorkspaceFoldersResultOutput) ToGetWorkspaceFoldersResultOutputWithCo
 	return o
 }
 
-func (o GetWorkspaceFoldersResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceFoldersResult] {
-	return pulumix.Output[GetWorkspaceFoldersResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The owning object key for this object.
 func (o GetWorkspaceFoldersResultOutput) AggregatorKey() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetWorkspaceFoldersResult) *string { return v.AggregatorKey }).(pulumi.StringPtrOutput)
@@ -167,8 +160,8 @@ func (o GetWorkspaceFoldersResultOutput) FolderSummaryCollections() GetWorkspace
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetWorkspaceFoldersResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceFoldersResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetWorkspaceFoldersResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceFoldersResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The identifier of the aggregator.

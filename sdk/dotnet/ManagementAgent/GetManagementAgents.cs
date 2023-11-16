@@ -366,7 +366,7 @@ namespace Pulumi.Oci.ManagementAgent
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The install type, either AGENT or GATEWAY
         /// </summary>
@@ -414,7 +414,7 @@ namespace Pulumi.Oci.ManagementAgent
 
             string? hostId,
 
-            string id,
+            string? id,
 
             string? installType,
 

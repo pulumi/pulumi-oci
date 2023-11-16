@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // The `Kms.getDecryptedData` data source provides details about a specific DecryptedData
@@ -72,12 +71,12 @@ type GetDecryptedDataResult struct {
 	Ciphertext     string                 `pulumi:"ciphertext"`
 	CryptoEndpoint string                 `pulumi:"cryptoEndpoint"`
 	// The provider-assigned unique ID for this managed resource.
-	Id    string `pulumi:"id"`
-	KeyId string `pulumi:"keyId"`
+	Id    *string `pulumi:"id"`
+	KeyId string  `pulumi:"keyId"`
 	// The decrypted data, in the form of a base64-encoded value.
-	Plaintext string `pulumi:"plaintext"`
+	Plaintext *string `pulumi:"plaintext"`
 	// Checksum of the decrypted data.
-	PlaintextChecksum string `pulumi:"plaintextChecksum"`
+	PlaintextChecksum *string `pulumi:"plaintextChecksum"`
 }
 
 func GetDecryptedDataOutput(ctx *pulumi.Context, args GetDecryptedDataOutputArgs, opts ...pulumi.InvokeOption) GetDecryptedDataResultOutput {
@@ -124,12 +123,6 @@ func (o GetDecryptedDataResultOutput) ToGetDecryptedDataResultOutputWithContext(
 	return o
 }
 
-func (o GetDecryptedDataResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDecryptedDataResult] {
-	return pulumix.Output[GetDecryptedDataResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDecryptedDataResultOutput) AssociatedData() pulumi.MapOutput {
 	return o.ApplyT(func(v GetDecryptedDataResult) map[string]interface{} { return v.AssociatedData }).(pulumi.MapOutput)
 }
@@ -143,8 +136,8 @@ func (o GetDecryptedDataResultOutput) CryptoEndpoint() pulumi.StringOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetDecryptedDataResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDecryptedDataResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDecryptedDataResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDecryptedDataResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetDecryptedDataResultOutput) KeyId() pulumi.StringOutput {
@@ -152,13 +145,13 @@ func (o GetDecryptedDataResultOutput) KeyId() pulumi.StringOutput {
 }
 
 // The decrypted data, in the form of a base64-encoded value.
-func (o GetDecryptedDataResultOutput) Plaintext() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDecryptedDataResult) string { return v.Plaintext }).(pulumi.StringOutput)
+func (o GetDecryptedDataResultOutput) Plaintext() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDecryptedDataResult) *string { return v.Plaintext }).(pulumi.StringPtrOutput)
 }
 
 // Checksum of the decrypted data.
-func (o GetDecryptedDataResultOutput) PlaintextChecksum() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDecryptedDataResult) string { return v.PlaintextChecksum }).(pulumi.StringOutput)
+func (o GetDecryptedDataResultOutput) PlaintextChecksum() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDecryptedDataResult) *string { return v.PlaintextChecksum }).(pulumi.StringPtrOutput)
 }
 
 func init() {

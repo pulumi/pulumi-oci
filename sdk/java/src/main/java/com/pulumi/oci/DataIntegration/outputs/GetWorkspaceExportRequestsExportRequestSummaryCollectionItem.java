@@ -12,6 +12,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetWorkspaceExportRequestsExportRequestSummaryCollectionItem {
@@ -19,7 +21,7 @@ public final class GetWorkspaceExportRequestsExportRequestSummaryCollectionItem 
      * @return Controls if the references will be exported along with the objects
      * 
      */
-    private Boolean areReferencesIncluded;
+    private @Nullable Boolean areReferencesIncluded;
     /**
      * @return The name of the Object Storage Bucket where the objects will be exported to
      * 
@@ -29,82 +31,82 @@ public final class GetWorkspaceExportRequestsExportRequestSummaryCollectionItem 
      * @return Name of the user who initiated export request.
      * 
      */
-    private String createdBy;
+    private @Nullable String createdBy;
     /**
      * @return Contains key of the error
      * 
      */
-    private Map<String,Object> errorMessages;
+    private @Nullable Map<String,Object> errorMessages;
     /**
      * @return The array of exported object details.
      * 
      */
-    private List<GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItem> exportedItems;
+    private @Nullable List<GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItem> exportedItems;
     /**
      * @return Name of the exported zip file.
      * 
      */
-    private String fileName;
+    private @Nullable String fileName;
     /**
      * @return Export multiple objects based on filters.
      * 
      */
-    private List<String> filters;
+    private @Nullable List<String> filters;
     /**
      * @return Flag to control whether to overwrite the object if it is already present at the provided object storage location.
      * 
      */
-    private Boolean isObjectOverwriteEnabled;
+    private @Nullable Boolean isObjectOverwriteEnabled;
     /**
      * @return Export object request key
      * 
      */
-    private String key;
+    private @Nullable String key;
     /**
      * @return Used to filter by the name of the object.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return The list of the objects to be exported
      * 
      */
-    private List<String> objectKeys;
+    private @Nullable List<String> objectKeys;
     /**
      * @return Region of the object storage (if using object storage of different region)
      * 
      */
-    private String objectStorageRegion;
+    private @Nullable String objectStorageRegion;
     /**
      * @return Optional parameter to point to object storage tenancy (if using Object Storage of different tenancy)
      * 
      */
-    private String objectStorageTenancyId;
+    private @Nullable String objectStorageTenancyId;
     /**
      * @return The array of exported referenced objects.
      * 
      */
-    private String referencedItems;
+    private @Nullable String referencedItems;
     /**
      * @return Export Objects request status.
      * 
      */
-    private String status;
+    private @Nullable String status;
     /**
      * @return Specifies end time of a copy object request.
      * 
      */
-    private String timeEndedInMillis;
+    private @Nullable String timeEndedInMillis;
     /**
      * @return Specifies start time of a copy object request.
      * 
      */
-    private String timeStartedInMillis;
+    private @Nullable String timeStartedInMillis;
     /**
      * @return Number of objects that are exported.
      * 
      */
-    private Integer totalExportedObjectCount;
+    private @Nullable Integer totalExportedObjectCount;
     /**
      * @return The workspace ID.
      * 
@@ -116,8 +118,8 @@ public final class GetWorkspaceExportRequestsExportRequestSummaryCollectionItem 
      * @return Controls if the references will be exported along with the objects
      * 
      */
-    public Boolean areReferencesIncluded() {
-        return this.areReferencesIncluded;
+    public Optional<Boolean> areReferencesIncluded() {
+        return Optional.ofNullable(this.areReferencesIncluded);
     }
     /**
      * @return The name of the Object Storage Bucket where the objects will be exported to
@@ -130,113 +132,113 @@ public final class GetWorkspaceExportRequestsExportRequestSummaryCollectionItem 
      * @return Name of the user who initiated export request.
      * 
      */
-    public String createdBy() {
-        return this.createdBy;
+    public Optional<String> createdBy() {
+        return Optional.ofNullable(this.createdBy);
     }
     /**
      * @return Contains key of the error
      * 
      */
     public Map<String,Object> errorMessages() {
-        return this.errorMessages;
+        return this.errorMessages == null ? Map.of() : this.errorMessages;
     }
     /**
      * @return The array of exported object details.
      * 
      */
     public List<GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItem> exportedItems() {
-        return this.exportedItems;
+        return this.exportedItems == null ? List.of() : this.exportedItems;
     }
     /**
      * @return Name of the exported zip file.
      * 
      */
-    public String fileName() {
-        return this.fileName;
+    public Optional<String> fileName() {
+        return Optional.ofNullable(this.fileName);
     }
     /**
      * @return Export multiple objects based on filters.
      * 
      */
     public List<String> filters() {
-        return this.filters;
+        return this.filters == null ? List.of() : this.filters;
     }
     /**
      * @return Flag to control whether to overwrite the object if it is already present at the provided object storage location.
      * 
      */
-    public Boolean isObjectOverwriteEnabled() {
-        return this.isObjectOverwriteEnabled;
+    public Optional<Boolean> isObjectOverwriteEnabled() {
+        return Optional.ofNullable(this.isObjectOverwriteEnabled);
     }
     /**
      * @return Export object request key
      * 
      */
-    public String key() {
-        return this.key;
+    public Optional<String> key() {
+        return Optional.ofNullable(this.key);
     }
     /**
      * @return Used to filter by the name of the object.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return The list of the objects to be exported
      * 
      */
     public List<String> objectKeys() {
-        return this.objectKeys;
+        return this.objectKeys == null ? List.of() : this.objectKeys;
     }
     /**
      * @return Region of the object storage (if using object storage of different region)
      * 
      */
-    public String objectStorageRegion() {
-        return this.objectStorageRegion;
+    public Optional<String> objectStorageRegion() {
+        return Optional.ofNullable(this.objectStorageRegion);
     }
     /**
      * @return Optional parameter to point to object storage tenancy (if using Object Storage of different tenancy)
      * 
      */
-    public String objectStorageTenancyId() {
-        return this.objectStorageTenancyId;
+    public Optional<String> objectStorageTenancyId() {
+        return Optional.ofNullable(this.objectStorageTenancyId);
     }
     /**
      * @return The array of exported referenced objects.
      * 
      */
-    public String referencedItems() {
-        return this.referencedItems;
+    public Optional<String> referencedItems() {
+        return Optional.ofNullable(this.referencedItems);
     }
     /**
      * @return Export Objects request status.
      * 
      */
-    public String status() {
-        return this.status;
+    public Optional<String> status() {
+        return Optional.ofNullable(this.status);
     }
     /**
      * @return Specifies end time of a copy object request.
      * 
      */
-    public String timeEndedInMillis() {
-        return this.timeEndedInMillis;
+    public Optional<String> timeEndedInMillis() {
+        return Optional.ofNullable(this.timeEndedInMillis);
     }
     /**
      * @return Specifies start time of a copy object request.
      * 
      */
-    public String timeStartedInMillis() {
-        return this.timeStartedInMillis;
+    public Optional<String> timeStartedInMillis() {
+        return Optional.ofNullable(this.timeStartedInMillis);
     }
     /**
      * @return Number of objects that are exported.
      * 
      */
-    public Integer totalExportedObjectCount() {
-        return this.totalExportedObjectCount;
+    public Optional<Integer> totalExportedObjectCount() {
+        return Optional.ofNullable(this.totalExportedObjectCount);
     }
     /**
      * @return The workspace ID.
@@ -255,24 +257,24 @@ public final class GetWorkspaceExportRequestsExportRequestSummaryCollectionItem 
     }
     @CustomType.Builder
     public static final class Builder {
-        private Boolean areReferencesIncluded;
+        private @Nullable Boolean areReferencesIncluded;
         private String bucket;
-        private String createdBy;
-        private Map<String,Object> errorMessages;
-        private List<GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItem> exportedItems;
-        private String fileName;
-        private List<String> filters;
-        private Boolean isObjectOverwriteEnabled;
-        private String key;
-        private String name;
-        private List<String> objectKeys;
-        private String objectStorageRegion;
-        private String objectStorageTenancyId;
-        private String referencedItems;
-        private String status;
-        private String timeEndedInMillis;
-        private String timeStartedInMillis;
-        private Integer totalExportedObjectCount;
+        private @Nullable String createdBy;
+        private @Nullable Map<String,Object> errorMessages;
+        private @Nullable List<GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItem> exportedItems;
+        private @Nullable String fileName;
+        private @Nullable List<String> filters;
+        private @Nullable Boolean isObjectOverwriteEnabled;
+        private @Nullable String key;
+        private @Nullable String name;
+        private @Nullable List<String> objectKeys;
+        private @Nullable String objectStorageRegion;
+        private @Nullable String objectStorageTenancyId;
+        private @Nullable String referencedItems;
+        private @Nullable String status;
+        private @Nullable String timeEndedInMillis;
+        private @Nullable String timeStartedInMillis;
+        private @Nullable Integer totalExportedObjectCount;
         private String workspaceId;
         public Builder() {}
         public Builder(GetWorkspaceExportRequestsExportRequestSummaryCollectionItem defaults) {
@@ -299,8 +301,8 @@ public final class GetWorkspaceExportRequestsExportRequestSummaryCollectionItem 
         }
 
         @CustomType.Setter
-        public Builder areReferencesIncluded(Boolean areReferencesIncluded) {
-            this.areReferencesIncluded = Objects.requireNonNull(areReferencesIncluded);
+        public Builder areReferencesIncluded(@Nullable Boolean areReferencesIncluded) {
+            this.areReferencesIncluded = areReferencesIncluded;
             return this;
         }
         @CustomType.Setter
@@ -309,92 +311,92 @@ public final class GetWorkspaceExportRequestsExportRequestSummaryCollectionItem 
             return this;
         }
         @CustomType.Setter
-        public Builder createdBy(String createdBy) {
-            this.createdBy = Objects.requireNonNull(createdBy);
+        public Builder createdBy(@Nullable String createdBy) {
+            this.createdBy = createdBy;
             return this;
         }
         @CustomType.Setter
-        public Builder errorMessages(Map<String,Object> errorMessages) {
-            this.errorMessages = Objects.requireNonNull(errorMessages);
+        public Builder errorMessages(@Nullable Map<String,Object> errorMessages) {
+            this.errorMessages = errorMessages;
             return this;
         }
         @CustomType.Setter
-        public Builder exportedItems(List<GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItem> exportedItems) {
-            this.exportedItems = Objects.requireNonNull(exportedItems);
+        public Builder exportedItems(@Nullable List<GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItem> exportedItems) {
+            this.exportedItems = exportedItems;
             return this;
         }
         public Builder exportedItems(GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItem... exportedItems) {
             return exportedItems(List.of(exportedItems));
         }
         @CustomType.Setter
-        public Builder fileName(String fileName) {
-            this.fileName = Objects.requireNonNull(fileName);
+        public Builder fileName(@Nullable String fileName) {
+            this.fileName = fileName;
             return this;
         }
         @CustomType.Setter
-        public Builder filters(List<String> filters) {
-            this.filters = Objects.requireNonNull(filters);
+        public Builder filters(@Nullable List<String> filters) {
+            this.filters = filters;
             return this;
         }
         public Builder filters(String... filters) {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder isObjectOverwriteEnabled(Boolean isObjectOverwriteEnabled) {
-            this.isObjectOverwriteEnabled = Objects.requireNonNull(isObjectOverwriteEnabled);
+        public Builder isObjectOverwriteEnabled(@Nullable Boolean isObjectOverwriteEnabled) {
+            this.isObjectOverwriteEnabled = isObjectOverwriteEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
+        public Builder key(@Nullable String key) {
+            this.key = key;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder objectKeys(List<String> objectKeys) {
-            this.objectKeys = Objects.requireNonNull(objectKeys);
+        public Builder objectKeys(@Nullable List<String> objectKeys) {
+            this.objectKeys = objectKeys;
             return this;
         }
         public Builder objectKeys(String... objectKeys) {
             return objectKeys(List.of(objectKeys));
         }
         @CustomType.Setter
-        public Builder objectStorageRegion(String objectStorageRegion) {
-            this.objectStorageRegion = Objects.requireNonNull(objectStorageRegion);
+        public Builder objectStorageRegion(@Nullable String objectStorageRegion) {
+            this.objectStorageRegion = objectStorageRegion;
             return this;
         }
         @CustomType.Setter
-        public Builder objectStorageTenancyId(String objectStorageTenancyId) {
-            this.objectStorageTenancyId = Objects.requireNonNull(objectStorageTenancyId);
+        public Builder objectStorageTenancyId(@Nullable String objectStorageTenancyId) {
+            this.objectStorageTenancyId = objectStorageTenancyId;
             return this;
         }
         @CustomType.Setter
-        public Builder referencedItems(String referencedItems) {
-            this.referencedItems = Objects.requireNonNull(referencedItems);
+        public Builder referencedItems(@Nullable String referencedItems) {
+            this.referencedItems = referencedItems;
             return this;
         }
         @CustomType.Setter
-        public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+        public Builder status(@Nullable String status) {
+            this.status = status;
             return this;
         }
         @CustomType.Setter
-        public Builder timeEndedInMillis(String timeEndedInMillis) {
-            this.timeEndedInMillis = Objects.requireNonNull(timeEndedInMillis);
+        public Builder timeEndedInMillis(@Nullable String timeEndedInMillis) {
+            this.timeEndedInMillis = timeEndedInMillis;
             return this;
         }
         @CustomType.Setter
-        public Builder timeStartedInMillis(String timeStartedInMillis) {
-            this.timeStartedInMillis = Objects.requireNonNull(timeStartedInMillis);
+        public Builder timeStartedInMillis(@Nullable String timeStartedInMillis) {
+            this.timeStartedInMillis = timeStartedInMillis;
             return this;
         }
         @CustomType.Setter
-        public Builder totalExportedObjectCount(Integer totalExportedObjectCount) {
-            this.totalExportedObjectCount = Objects.requireNonNull(totalExportedObjectCount);
+        public Builder totalExportedObjectCount(@Nullable Integer totalExportedObjectCount) {
+            this.totalExportedObjectCount = totalExportedObjectCount;
             return this;
         }
         @CustomType.Setter

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -55,12 +54,6 @@ func (i ManagementAgentManagementAgentPropertyArgs) ToManagementAgentManagementA
 	return pulumi.ToOutputWithContext(ctx, i).(ManagementAgentManagementAgentPropertyOutput)
 }
 
-func (i ManagementAgentManagementAgentPropertyArgs) ToOutput(ctx context.Context) pulumix.Output[ManagementAgentManagementAgentProperty] {
-	return pulumix.Output[ManagementAgentManagementAgentProperty]{
-		OutputState: i.ToManagementAgentManagementAgentPropertyOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ManagementAgentManagementAgentPropertyArrayInput is an input type that accepts ManagementAgentManagementAgentPropertyArray and ManagementAgentManagementAgentPropertyArrayOutput values.
 // You can construct a concrete instance of `ManagementAgentManagementAgentPropertyArrayInput` via:
 //
@@ -86,12 +79,6 @@ func (i ManagementAgentManagementAgentPropertyArray) ToManagementAgentManagement
 	return pulumi.ToOutputWithContext(ctx, i).(ManagementAgentManagementAgentPropertyArrayOutput)
 }
 
-func (i ManagementAgentManagementAgentPropertyArray) ToOutput(ctx context.Context) pulumix.Output[[]ManagementAgentManagementAgentProperty] {
-	return pulumix.Output[[]ManagementAgentManagementAgentProperty]{
-		OutputState: i.ToManagementAgentManagementAgentPropertyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ManagementAgentManagementAgentPropertyOutput struct{ *pulumi.OutputState }
 
 func (ManagementAgentManagementAgentPropertyOutput) ElementType() reflect.Type {
@@ -104,12 +91,6 @@ func (o ManagementAgentManagementAgentPropertyOutput) ToManagementAgentManagemen
 
 func (o ManagementAgentManagementAgentPropertyOutput) ToManagementAgentManagementAgentPropertyOutputWithContext(ctx context.Context) ManagementAgentManagementAgentPropertyOutput {
 	return o
-}
-
-func (o ManagementAgentManagementAgentPropertyOutput) ToOutput(ctx context.Context) pulumix.Output[ManagementAgentManagementAgentProperty] {
-	return pulumix.Output[ManagementAgentManagementAgentProperty]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Name of the property
@@ -139,12 +120,6 @@ func (o ManagementAgentManagementAgentPropertyArrayOutput) ToManagementAgentMana
 
 func (o ManagementAgentManagementAgentPropertyArrayOutput) ToManagementAgentManagementAgentPropertyArrayOutputWithContext(ctx context.Context) ManagementAgentManagementAgentPropertyArrayOutput {
 	return o
-}
-
-func (o ManagementAgentManagementAgentPropertyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ManagementAgentManagementAgentProperty] {
-	return pulumix.Output[[]ManagementAgentManagementAgentProperty]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ManagementAgentManagementAgentPropertyArrayOutput) Index(i pulumi.IntInput) ManagementAgentManagementAgentPropertyOutput {
@@ -210,12 +185,6 @@ func (i ManagementAgentPluginListArgs) ToManagementAgentPluginListOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(ManagementAgentPluginListOutput)
 }
 
-func (i ManagementAgentPluginListArgs) ToOutput(ctx context.Context) pulumix.Output[ManagementAgentPluginList] {
-	return pulumix.Output[ManagementAgentPluginList]{
-		OutputState: i.ToManagementAgentPluginListOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ManagementAgentPluginListArrayInput is an input type that accepts ManagementAgentPluginListArray and ManagementAgentPluginListArrayOutput values.
 // You can construct a concrete instance of `ManagementAgentPluginListArrayInput` via:
 //
@@ -241,12 +210,6 @@ func (i ManagementAgentPluginListArray) ToManagementAgentPluginListArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(ManagementAgentPluginListArrayOutput)
 }
 
-func (i ManagementAgentPluginListArray) ToOutput(ctx context.Context) pulumix.Output[[]ManagementAgentPluginList] {
-	return pulumix.Output[[]ManagementAgentPluginList]{
-		OutputState: i.ToManagementAgentPluginListArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ManagementAgentPluginListOutput struct{ *pulumi.OutputState }
 
 func (ManagementAgentPluginListOutput) ElementType() reflect.Type {
@@ -259,12 +222,6 @@ func (o ManagementAgentPluginListOutput) ToManagementAgentPluginListOutput() Man
 
 func (o ManagementAgentPluginListOutput) ToManagementAgentPluginListOutputWithContext(ctx context.Context) ManagementAgentPluginListOutput {
 	return o
-}
-
-func (o ManagementAgentPluginListOutput) ToOutput(ctx context.Context) pulumix.Output[ManagementAgentPluginList] {
-	return pulumix.Output[ManagementAgentPluginList]{
-		OutputState: o.OutputState,
-	}
 }
 
 // flag indicating whether the plugin is in enabled mode or disabled mode.
@@ -316,12 +273,6 @@ func (o ManagementAgentPluginListArrayOutput) ToManagementAgentPluginListArrayOu
 	return o
 }
 
-func (o ManagementAgentPluginListArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ManagementAgentPluginList] {
-	return pulumix.Output[[]ManagementAgentPluginList]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o ManagementAgentPluginListArrayOutput) Index(i pulumi.IntInput) ManagementAgentPluginListOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ManagementAgentPluginList {
 		return vs[0].([]ManagementAgentPluginList)[vs[1].(int)]
@@ -330,13 +281,13 @@ func (o ManagementAgentPluginListArrayOutput) Index(i pulumi.IntInput) Managemen
 
 type GetManagementAgentAvailableHistoriesAvailabilityHistory struct {
 	// The availability status of managementAgent
-	AvailabilityStatus string `pulumi:"availabilityStatus"`
+	AvailabilityStatus *string `pulumi:"availabilityStatus"`
 	// Unique Management Agent identifier
-	ManagementAgentId string `pulumi:"managementAgentId"`
+	ManagementAgentId *string `pulumi:"managementAgentId"`
 	// The time till which the Management Agent was known to be in the availability status. An RFC3339 formatted datetime string
-	TimeAvailabilityStatusEnded string `pulumi:"timeAvailabilityStatusEnded"`
+	TimeAvailabilityStatusEnded *string `pulumi:"timeAvailabilityStatusEnded"`
 	// The time at which the Management Agent moved to the availability status. An RFC3339 formatted datetime string
-	TimeAvailabilityStatusStarted string `pulumi:"timeAvailabilityStatusStarted"`
+	TimeAvailabilityStatusStarted *string `pulumi:"timeAvailabilityStatusStarted"`
 }
 
 // GetManagementAgentAvailableHistoriesAvailabilityHistoryInput is an input type that accepts GetManagementAgentAvailableHistoriesAvailabilityHistoryArgs and GetManagementAgentAvailableHistoriesAvailabilityHistoryOutput values.
@@ -352,13 +303,13 @@ type GetManagementAgentAvailableHistoriesAvailabilityHistoryInput interface {
 
 type GetManagementAgentAvailableHistoriesAvailabilityHistoryArgs struct {
 	// The availability status of managementAgent
-	AvailabilityStatus pulumi.StringInput `pulumi:"availabilityStatus"`
+	AvailabilityStatus pulumi.StringPtrInput `pulumi:"availabilityStatus"`
 	// Unique Management Agent identifier
-	ManagementAgentId pulumi.StringInput `pulumi:"managementAgentId"`
+	ManagementAgentId pulumi.StringPtrInput `pulumi:"managementAgentId"`
 	// The time till which the Management Agent was known to be in the availability status. An RFC3339 formatted datetime string
-	TimeAvailabilityStatusEnded pulumi.StringInput `pulumi:"timeAvailabilityStatusEnded"`
+	TimeAvailabilityStatusEnded pulumi.StringPtrInput `pulumi:"timeAvailabilityStatusEnded"`
 	// The time at which the Management Agent moved to the availability status. An RFC3339 formatted datetime string
-	TimeAvailabilityStatusStarted pulumi.StringInput `pulumi:"timeAvailabilityStatusStarted"`
+	TimeAvailabilityStatusStarted pulumi.StringPtrInput `pulumi:"timeAvailabilityStatusStarted"`
 }
 
 func (GetManagementAgentAvailableHistoriesAvailabilityHistoryArgs) ElementType() reflect.Type {
@@ -371,12 +322,6 @@ func (i GetManagementAgentAvailableHistoriesAvailabilityHistoryArgs) ToGetManage
 
 func (i GetManagementAgentAvailableHistoriesAvailabilityHistoryArgs) ToGetManagementAgentAvailableHistoriesAvailabilityHistoryOutputWithContext(ctx context.Context) GetManagementAgentAvailableHistoriesAvailabilityHistoryOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentAvailableHistoriesAvailabilityHistoryOutput)
-}
-
-func (i GetManagementAgentAvailableHistoriesAvailabilityHistoryArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagementAgentAvailableHistoriesAvailabilityHistory] {
-	return pulumix.Output[GetManagementAgentAvailableHistoriesAvailabilityHistory]{
-		OutputState: i.ToGetManagementAgentAvailableHistoriesAvailabilityHistoryOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetManagementAgentAvailableHistoriesAvailabilityHistoryArrayInput is an input type that accepts GetManagementAgentAvailableHistoriesAvailabilityHistoryArray and GetManagementAgentAvailableHistoriesAvailabilityHistoryArrayOutput values.
@@ -404,12 +349,6 @@ func (i GetManagementAgentAvailableHistoriesAvailabilityHistoryArray) ToGetManag
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentAvailableHistoriesAvailabilityHistoryArrayOutput)
 }
 
-func (i GetManagementAgentAvailableHistoriesAvailabilityHistoryArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementAgentAvailableHistoriesAvailabilityHistory] {
-	return pulumix.Output[[]GetManagementAgentAvailableHistoriesAvailabilityHistory]{
-		OutputState: i.ToGetManagementAgentAvailableHistoriesAvailabilityHistoryArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetManagementAgentAvailableHistoriesAvailabilityHistoryOutput struct{ *pulumi.OutputState }
 
 func (GetManagementAgentAvailableHistoriesAvailabilityHistoryOutput) ElementType() reflect.Type {
@@ -424,34 +363,28 @@ func (o GetManagementAgentAvailableHistoriesAvailabilityHistoryOutput) ToGetMana
 	return o
 }
 
-func (o GetManagementAgentAvailableHistoriesAvailabilityHistoryOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagementAgentAvailableHistoriesAvailabilityHistory] {
-	return pulumix.Output[GetManagementAgentAvailableHistoriesAvailabilityHistory]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The availability status of managementAgent
-func (o GetManagementAgentAvailableHistoriesAvailabilityHistoryOutput) AvailabilityStatus() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementAgentAvailableHistoriesAvailabilityHistory) string { return v.AvailabilityStatus }).(pulumi.StringOutput)
+func (o GetManagementAgentAvailableHistoriesAvailabilityHistoryOutput) AvailabilityStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentAvailableHistoriesAvailabilityHistory) *string { return v.AvailabilityStatus }).(pulumi.StringPtrOutput)
 }
 
 // Unique Management Agent identifier
-func (o GetManagementAgentAvailableHistoriesAvailabilityHistoryOutput) ManagementAgentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementAgentAvailableHistoriesAvailabilityHistory) string { return v.ManagementAgentId }).(pulumi.StringOutput)
+func (o GetManagementAgentAvailableHistoriesAvailabilityHistoryOutput) ManagementAgentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentAvailableHistoriesAvailabilityHistory) *string { return v.ManagementAgentId }).(pulumi.StringPtrOutput)
 }
 
 // The time till which the Management Agent was known to be in the availability status. An RFC3339 formatted datetime string
-func (o GetManagementAgentAvailableHistoriesAvailabilityHistoryOutput) TimeAvailabilityStatusEnded() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementAgentAvailableHistoriesAvailabilityHistory) string {
+func (o GetManagementAgentAvailableHistoriesAvailabilityHistoryOutput) TimeAvailabilityStatusEnded() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentAvailableHistoriesAvailabilityHistory) *string {
 		return v.TimeAvailabilityStatusEnded
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The time at which the Management Agent moved to the availability status. An RFC3339 formatted datetime string
-func (o GetManagementAgentAvailableHistoriesAvailabilityHistoryOutput) TimeAvailabilityStatusStarted() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementAgentAvailableHistoriesAvailabilityHistory) string {
+func (o GetManagementAgentAvailableHistoriesAvailabilityHistoryOutput) TimeAvailabilityStatusStarted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentAvailableHistoriesAvailabilityHistory) *string {
 		return v.TimeAvailabilityStatusStarted
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetManagementAgentAvailableHistoriesAvailabilityHistoryArrayOutput struct{ *pulumi.OutputState }
@@ -466,12 +399,6 @@ func (o GetManagementAgentAvailableHistoriesAvailabilityHistoryArrayOutput) ToGe
 
 func (o GetManagementAgentAvailableHistoriesAvailabilityHistoryArrayOutput) ToGetManagementAgentAvailableHistoriesAvailabilityHistoryArrayOutputWithContext(ctx context.Context) GetManagementAgentAvailableHistoriesAvailabilityHistoryArrayOutput {
 	return o
-}
-
-func (o GetManagementAgentAvailableHistoriesAvailabilityHistoryArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementAgentAvailableHistoriesAvailabilityHistory] {
-	return pulumix.Output[[]GetManagementAgentAvailableHistoriesAvailabilityHistory]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetManagementAgentAvailableHistoriesAvailabilityHistoryArrayOutput) Index(i pulumi.IntInput) GetManagementAgentAvailableHistoriesAvailabilityHistoryOutput {
@@ -515,12 +442,6 @@ func (i GetManagementAgentAvailableHistoriesFilterArgs) ToGetManagementAgentAvai
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentAvailableHistoriesFilterOutput)
 }
 
-func (i GetManagementAgentAvailableHistoriesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagementAgentAvailableHistoriesFilter] {
-	return pulumix.Output[GetManagementAgentAvailableHistoriesFilter]{
-		OutputState: i.ToGetManagementAgentAvailableHistoriesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetManagementAgentAvailableHistoriesFilterArrayInput is an input type that accepts GetManagementAgentAvailableHistoriesFilterArray and GetManagementAgentAvailableHistoriesFilterArrayOutput values.
 // You can construct a concrete instance of `GetManagementAgentAvailableHistoriesFilterArrayInput` via:
 //
@@ -546,12 +467,6 @@ func (i GetManagementAgentAvailableHistoriesFilterArray) ToGetManagementAgentAva
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentAvailableHistoriesFilterArrayOutput)
 }
 
-func (i GetManagementAgentAvailableHistoriesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementAgentAvailableHistoriesFilter] {
-	return pulumix.Output[[]GetManagementAgentAvailableHistoriesFilter]{
-		OutputState: i.ToGetManagementAgentAvailableHistoriesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetManagementAgentAvailableHistoriesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetManagementAgentAvailableHistoriesFilterOutput) ElementType() reflect.Type {
@@ -564,12 +479,6 @@ func (o GetManagementAgentAvailableHistoriesFilterOutput) ToGetManagementAgentAv
 
 func (o GetManagementAgentAvailableHistoriesFilterOutput) ToGetManagementAgentAvailableHistoriesFilterOutputWithContext(ctx context.Context) GetManagementAgentAvailableHistoriesFilterOutput {
 	return o
-}
-
-func (o GetManagementAgentAvailableHistoriesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagementAgentAvailableHistoriesFilter] {
-	return pulumix.Output[GetManagementAgentAvailableHistoriesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetManagementAgentAvailableHistoriesFilterOutput) Name() pulumi.StringOutput {
@@ -598,12 +507,6 @@ func (o GetManagementAgentAvailableHistoriesFilterArrayOutput) ToGetManagementAg
 	return o
 }
 
-func (o GetManagementAgentAvailableHistoriesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementAgentAvailableHistoriesFilter] {
-	return pulumix.Output[[]GetManagementAgentAvailableHistoriesFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetManagementAgentAvailableHistoriesFilterArrayOutput) Index(i pulumi.IntInput) GetManagementAgentAvailableHistoriesFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagementAgentAvailableHistoriesFilter {
 		return vs[0].([]GetManagementAgentAvailableHistoriesFilter)[vs[1].(int)]
@@ -612,7 +515,7 @@ func (o GetManagementAgentAvailableHistoriesFilterArrayOutput) Index(i pulumi.In
 
 type GetManagementAgentCountItem struct {
 	// The number of Management Agents in this group
-	Count int `pulumi:"count"`
+	Count *int `pulumi:"count"`
 	// The Aggregation of Management Agent Dimensions
 	Dimensions []GetManagementAgentCountItemDimension `pulumi:"dimensions"`
 }
@@ -630,7 +533,7 @@ type GetManagementAgentCountItemInput interface {
 
 type GetManagementAgentCountItemArgs struct {
 	// The number of Management Agents in this group
-	Count pulumi.IntInput `pulumi:"count"`
+	Count pulumi.IntPtrInput `pulumi:"count"`
 	// The Aggregation of Management Agent Dimensions
 	Dimensions GetManagementAgentCountItemDimensionArrayInput `pulumi:"dimensions"`
 }
@@ -645,12 +548,6 @@ func (i GetManagementAgentCountItemArgs) ToGetManagementAgentCountItemOutput() G
 
 func (i GetManagementAgentCountItemArgs) ToGetManagementAgentCountItemOutputWithContext(ctx context.Context) GetManagementAgentCountItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentCountItemOutput)
-}
-
-func (i GetManagementAgentCountItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagementAgentCountItem] {
-	return pulumix.Output[GetManagementAgentCountItem]{
-		OutputState: i.ToGetManagementAgentCountItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetManagementAgentCountItemArrayInput is an input type that accepts GetManagementAgentCountItemArray and GetManagementAgentCountItemArrayOutput values.
@@ -678,12 +575,6 @@ func (i GetManagementAgentCountItemArray) ToGetManagementAgentCountItemArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentCountItemArrayOutput)
 }
 
-func (i GetManagementAgentCountItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementAgentCountItem] {
-	return pulumix.Output[[]GetManagementAgentCountItem]{
-		OutputState: i.ToGetManagementAgentCountItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetManagementAgentCountItemOutput struct{ *pulumi.OutputState }
 
 func (GetManagementAgentCountItemOutput) ElementType() reflect.Type {
@@ -698,15 +589,9 @@ func (o GetManagementAgentCountItemOutput) ToGetManagementAgentCountItemOutputWi
 	return o
 }
 
-func (o GetManagementAgentCountItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagementAgentCountItem] {
-	return pulumix.Output[GetManagementAgentCountItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The number of Management Agents in this group
-func (o GetManagementAgentCountItemOutput) Count() pulumi.IntOutput {
-	return o.ApplyT(func(v GetManagementAgentCountItem) int { return v.Count }).(pulumi.IntOutput)
+func (o GetManagementAgentCountItemOutput) Count() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentCountItem) *int { return v.Count }).(pulumi.IntPtrOutput)
 }
 
 // The Aggregation of Management Agent Dimensions
@@ -728,12 +613,6 @@ func (o GetManagementAgentCountItemArrayOutput) ToGetManagementAgentCountItemArr
 	return o
 }
 
-func (o GetManagementAgentCountItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementAgentCountItem] {
-	return pulumix.Output[[]GetManagementAgentCountItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetManagementAgentCountItemArrayOutput) Index(i pulumi.IntInput) GetManagementAgentCountItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagementAgentCountItem {
 		return vs[0].([]GetManagementAgentCountItem)[vs[1].(int)]
@@ -742,15 +621,15 @@ func (o GetManagementAgentCountItemArrayOutput) Index(i pulumi.IntInput) GetMana
 
 type GetManagementAgentCountItemDimension struct {
 	// The availability status of managementAgent
-	AvailabilityStatus string `pulumi:"availabilityStatus"`
+	AvailabilityStatus *string `pulumi:"availabilityStatus"`
 	// When set to true then agents that have at least one plugin deployed will be returned. When set to false only agents that have no plugins deployed will be returned.
-	HasPlugins bool `pulumi:"hasPlugins"`
+	HasPlugins *bool `pulumi:"hasPlugins"`
 	// A filter to return either agents or gateway types depending upon install type selected by user. By default both install type will be returned.
-	InstallType string `pulumi:"installType"`
+	InstallType *string `pulumi:"installType"`
 	// Platform Type
-	PlatformType string `pulumi:"platformType"`
+	PlatformType *string `pulumi:"platformType"`
 	// Agent image version
-	Version string `pulumi:"version"`
+	Version *string `pulumi:"version"`
 }
 
 // GetManagementAgentCountItemDimensionInput is an input type that accepts GetManagementAgentCountItemDimensionArgs and GetManagementAgentCountItemDimensionOutput values.
@@ -766,15 +645,15 @@ type GetManagementAgentCountItemDimensionInput interface {
 
 type GetManagementAgentCountItemDimensionArgs struct {
 	// The availability status of managementAgent
-	AvailabilityStatus pulumi.StringInput `pulumi:"availabilityStatus"`
+	AvailabilityStatus pulumi.StringPtrInput `pulumi:"availabilityStatus"`
 	// When set to true then agents that have at least one plugin deployed will be returned. When set to false only agents that have no plugins deployed will be returned.
-	HasPlugins pulumi.BoolInput `pulumi:"hasPlugins"`
+	HasPlugins pulumi.BoolPtrInput `pulumi:"hasPlugins"`
 	// A filter to return either agents or gateway types depending upon install type selected by user. By default both install type will be returned.
-	InstallType pulumi.StringInput `pulumi:"installType"`
+	InstallType pulumi.StringPtrInput `pulumi:"installType"`
 	// Platform Type
-	PlatformType pulumi.StringInput `pulumi:"platformType"`
+	PlatformType pulumi.StringPtrInput `pulumi:"platformType"`
 	// Agent image version
-	Version pulumi.StringInput `pulumi:"version"`
+	Version pulumi.StringPtrInput `pulumi:"version"`
 }
 
 func (GetManagementAgentCountItemDimensionArgs) ElementType() reflect.Type {
@@ -787,12 +666,6 @@ func (i GetManagementAgentCountItemDimensionArgs) ToGetManagementAgentCountItemD
 
 func (i GetManagementAgentCountItemDimensionArgs) ToGetManagementAgentCountItemDimensionOutputWithContext(ctx context.Context) GetManagementAgentCountItemDimensionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentCountItemDimensionOutput)
-}
-
-func (i GetManagementAgentCountItemDimensionArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagementAgentCountItemDimension] {
-	return pulumix.Output[GetManagementAgentCountItemDimension]{
-		OutputState: i.ToGetManagementAgentCountItemDimensionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetManagementAgentCountItemDimensionArrayInput is an input type that accepts GetManagementAgentCountItemDimensionArray and GetManagementAgentCountItemDimensionArrayOutput values.
@@ -820,12 +693,6 @@ func (i GetManagementAgentCountItemDimensionArray) ToGetManagementAgentCountItem
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentCountItemDimensionArrayOutput)
 }
 
-func (i GetManagementAgentCountItemDimensionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementAgentCountItemDimension] {
-	return pulumix.Output[[]GetManagementAgentCountItemDimension]{
-		OutputState: i.ToGetManagementAgentCountItemDimensionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetManagementAgentCountItemDimensionOutput struct{ *pulumi.OutputState }
 
 func (GetManagementAgentCountItemDimensionOutput) ElementType() reflect.Type {
@@ -840,35 +707,29 @@ func (o GetManagementAgentCountItemDimensionOutput) ToGetManagementAgentCountIte
 	return o
 }
 
-func (o GetManagementAgentCountItemDimensionOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagementAgentCountItemDimension] {
-	return pulumix.Output[GetManagementAgentCountItemDimension]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The availability status of managementAgent
-func (o GetManagementAgentCountItemDimensionOutput) AvailabilityStatus() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementAgentCountItemDimension) string { return v.AvailabilityStatus }).(pulumi.StringOutput)
+func (o GetManagementAgentCountItemDimensionOutput) AvailabilityStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentCountItemDimension) *string { return v.AvailabilityStatus }).(pulumi.StringPtrOutput)
 }
 
 // When set to true then agents that have at least one plugin deployed will be returned. When set to false only agents that have no plugins deployed will be returned.
-func (o GetManagementAgentCountItemDimensionOutput) HasPlugins() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetManagementAgentCountItemDimension) bool { return v.HasPlugins }).(pulumi.BoolOutput)
+func (o GetManagementAgentCountItemDimensionOutput) HasPlugins() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentCountItemDimension) *bool { return v.HasPlugins }).(pulumi.BoolPtrOutput)
 }
 
 // A filter to return either agents or gateway types depending upon install type selected by user. By default both install type will be returned.
-func (o GetManagementAgentCountItemDimensionOutput) InstallType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementAgentCountItemDimension) string { return v.InstallType }).(pulumi.StringOutput)
+func (o GetManagementAgentCountItemDimensionOutput) InstallType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentCountItemDimension) *string { return v.InstallType }).(pulumi.StringPtrOutput)
 }
 
 // Platform Type
-func (o GetManagementAgentCountItemDimensionOutput) PlatformType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementAgentCountItemDimension) string { return v.PlatformType }).(pulumi.StringOutput)
+func (o GetManagementAgentCountItemDimensionOutput) PlatformType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentCountItemDimension) *string { return v.PlatformType }).(pulumi.StringPtrOutput)
 }
 
 // Agent image version
-func (o GetManagementAgentCountItemDimensionOutput) Version() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementAgentCountItemDimension) string { return v.Version }).(pulumi.StringOutput)
+func (o GetManagementAgentCountItemDimensionOutput) Version() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentCountItemDimension) *string { return v.Version }).(pulumi.StringPtrOutput)
 }
 
 type GetManagementAgentCountItemDimensionArrayOutput struct{ *pulumi.OutputState }
@@ -883,12 +744,6 @@ func (o GetManagementAgentCountItemDimensionArrayOutput) ToGetManagementAgentCou
 
 func (o GetManagementAgentCountItemDimensionArrayOutput) ToGetManagementAgentCountItemDimensionArrayOutputWithContext(ctx context.Context) GetManagementAgentCountItemDimensionArrayOutput {
 	return o
-}
-
-func (o GetManagementAgentCountItemDimensionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementAgentCountItemDimension] {
-	return pulumix.Output[[]GetManagementAgentCountItemDimension]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetManagementAgentCountItemDimensionArrayOutput) Index(i pulumi.IntInput) GetManagementAgentCountItemDimensionOutput {
@@ -934,12 +789,6 @@ func (i GetManagementAgentImagesFilterArgs) ToGetManagementAgentImagesFilterOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentImagesFilterOutput)
 }
 
-func (i GetManagementAgentImagesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagementAgentImagesFilter] {
-	return pulumix.Output[GetManagementAgentImagesFilter]{
-		OutputState: i.ToGetManagementAgentImagesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetManagementAgentImagesFilterArrayInput is an input type that accepts GetManagementAgentImagesFilterArray and GetManagementAgentImagesFilterArrayOutput values.
 // You can construct a concrete instance of `GetManagementAgentImagesFilterArrayInput` via:
 //
@@ -965,12 +814,6 @@ func (i GetManagementAgentImagesFilterArray) ToGetManagementAgentImagesFilterArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentImagesFilterArrayOutput)
 }
 
-func (i GetManagementAgentImagesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementAgentImagesFilter] {
-	return pulumix.Output[[]GetManagementAgentImagesFilter]{
-		OutputState: i.ToGetManagementAgentImagesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetManagementAgentImagesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetManagementAgentImagesFilterOutput) ElementType() reflect.Type {
@@ -983,12 +826,6 @@ func (o GetManagementAgentImagesFilterOutput) ToGetManagementAgentImagesFilterOu
 
 func (o GetManagementAgentImagesFilterOutput) ToGetManagementAgentImagesFilterOutputWithContext(ctx context.Context) GetManagementAgentImagesFilterOutput {
 	return o
-}
-
-func (o GetManagementAgentImagesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagementAgentImagesFilter] {
-	return pulumix.Output[GetManagementAgentImagesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A filter to return only resources that match the entire platform name given.
@@ -1018,12 +855,6 @@ func (o GetManagementAgentImagesFilterArrayOutput) ToGetManagementAgentImagesFil
 	return o
 }
 
-func (o GetManagementAgentImagesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementAgentImagesFilter] {
-	return pulumix.Output[[]GetManagementAgentImagesFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetManagementAgentImagesFilterArrayOutput) Index(i pulumi.IntInput) GetManagementAgentImagesFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagementAgentImagesFilter {
 		return vs[0].([]GetManagementAgentImagesFilter)[vs[1].(int)]
@@ -1032,27 +863,27 @@ func (o GetManagementAgentImagesFilterArrayOutput) Index(i pulumi.IntInput) GetM
 
 type GetManagementAgentImagesManagementAgentImage struct {
 	// Object content SHA256 Hash
-	Checksum string `pulumi:"checksum"`
+	Checksum *string `pulumi:"checksum"`
 	// Agent image resource id
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Details of the Objectstorage object
 	ImageObjectStorageDetails []GetManagementAgentImagesManagementAgentImageImageObjectStorageDetail `pulumi:"imageObjectStorageDetails"`
 	// Object storage URL for download
-	ObjectUrl string `pulumi:"objectUrl"`
+	ObjectUrl *string `pulumi:"objectUrl"`
 	// The installation package target architecture type
-	PackageArchitectureType string `pulumi:"packageArchitectureType"`
+	PackageArchitectureType *string `pulumi:"packageArchitectureType"`
 	// The installation package type
-	PackageType string `pulumi:"packageType"`
+	PackageType *string `pulumi:"packageType"`
 	// Agent image platform display name
-	PlatformName string `pulumi:"platformName"`
+	PlatformName *string `pulumi:"platformName"`
 	// Agent image platform type
-	PlatformType string `pulumi:"platformType"`
+	PlatformType *string `pulumi:"platformType"`
 	// Agent image size in bytes
-	Size float64 `pulumi:"size"`
+	Size *float64 `pulumi:"size"`
 	// Filter to return only Management Agents in the particular lifecycle state.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Agent image version
-	Version string `pulumi:"version"`
+	Version *string `pulumi:"version"`
 }
 
 // GetManagementAgentImagesManagementAgentImageInput is an input type that accepts GetManagementAgentImagesManagementAgentImageArgs and GetManagementAgentImagesManagementAgentImageOutput values.
@@ -1068,27 +899,27 @@ type GetManagementAgentImagesManagementAgentImageInput interface {
 
 type GetManagementAgentImagesManagementAgentImageArgs struct {
 	// Object content SHA256 Hash
-	Checksum pulumi.StringInput `pulumi:"checksum"`
+	Checksum pulumi.StringPtrInput `pulumi:"checksum"`
 	// Agent image resource id
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Details of the Objectstorage object
 	ImageObjectStorageDetails GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailArrayInput `pulumi:"imageObjectStorageDetails"`
 	// Object storage URL for download
-	ObjectUrl pulumi.StringInput `pulumi:"objectUrl"`
+	ObjectUrl pulumi.StringPtrInput `pulumi:"objectUrl"`
 	// The installation package target architecture type
-	PackageArchitectureType pulumi.StringInput `pulumi:"packageArchitectureType"`
+	PackageArchitectureType pulumi.StringPtrInput `pulumi:"packageArchitectureType"`
 	// The installation package type
-	PackageType pulumi.StringInput `pulumi:"packageType"`
+	PackageType pulumi.StringPtrInput `pulumi:"packageType"`
 	// Agent image platform display name
-	PlatformName pulumi.StringInput `pulumi:"platformName"`
+	PlatformName pulumi.StringPtrInput `pulumi:"platformName"`
 	// Agent image platform type
-	PlatformType pulumi.StringInput `pulumi:"platformType"`
+	PlatformType pulumi.StringPtrInput `pulumi:"platformType"`
 	// Agent image size in bytes
-	Size pulumi.Float64Input `pulumi:"size"`
+	Size pulumi.Float64PtrInput `pulumi:"size"`
 	// Filter to return only Management Agents in the particular lifecycle state.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// Agent image version
-	Version pulumi.StringInput `pulumi:"version"`
+	Version pulumi.StringPtrInput `pulumi:"version"`
 }
 
 func (GetManagementAgentImagesManagementAgentImageArgs) ElementType() reflect.Type {
@@ -1101,12 +932,6 @@ func (i GetManagementAgentImagesManagementAgentImageArgs) ToGetManagementAgentIm
 
 func (i GetManagementAgentImagesManagementAgentImageArgs) ToGetManagementAgentImagesManagementAgentImageOutputWithContext(ctx context.Context) GetManagementAgentImagesManagementAgentImageOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentImagesManagementAgentImageOutput)
-}
-
-func (i GetManagementAgentImagesManagementAgentImageArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagementAgentImagesManagementAgentImage] {
-	return pulumix.Output[GetManagementAgentImagesManagementAgentImage]{
-		OutputState: i.ToGetManagementAgentImagesManagementAgentImageOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetManagementAgentImagesManagementAgentImageArrayInput is an input type that accepts GetManagementAgentImagesManagementAgentImageArray and GetManagementAgentImagesManagementAgentImageArrayOutput values.
@@ -1134,12 +959,6 @@ func (i GetManagementAgentImagesManagementAgentImageArray) ToGetManagementAgentI
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentImagesManagementAgentImageArrayOutput)
 }
 
-func (i GetManagementAgentImagesManagementAgentImageArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementAgentImagesManagementAgentImage] {
-	return pulumix.Output[[]GetManagementAgentImagesManagementAgentImage]{
-		OutputState: i.ToGetManagementAgentImagesManagementAgentImageArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetManagementAgentImagesManagementAgentImageOutput struct{ *pulumi.OutputState }
 
 func (GetManagementAgentImagesManagementAgentImageOutput) ElementType() reflect.Type {
@@ -1154,20 +973,14 @@ func (o GetManagementAgentImagesManagementAgentImageOutput) ToGetManagementAgent
 	return o
 }
 
-func (o GetManagementAgentImagesManagementAgentImageOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagementAgentImagesManagementAgentImage] {
-	return pulumix.Output[GetManagementAgentImagesManagementAgentImage]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Object content SHA256 Hash
-func (o GetManagementAgentImagesManagementAgentImageOutput) Checksum() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementAgentImagesManagementAgentImage) string { return v.Checksum }).(pulumi.StringOutput)
+func (o GetManagementAgentImagesManagementAgentImageOutput) Checksum() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentImagesManagementAgentImage) *string { return v.Checksum }).(pulumi.StringPtrOutput)
 }
 
 // Agent image resource id
-func (o GetManagementAgentImagesManagementAgentImageOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementAgentImagesManagementAgentImage) string { return v.Id }).(pulumi.StringOutput)
+func (o GetManagementAgentImagesManagementAgentImageOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentImagesManagementAgentImage) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Details of the Objectstorage object
@@ -1178,43 +991,43 @@ func (o GetManagementAgentImagesManagementAgentImageOutput) ImageObjectStorageDe
 }
 
 // Object storage URL for download
-func (o GetManagementAgentImagesManagementAgentImageOutput) ObjectUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementAgentImagesManagementAgentImage) string { return v.ObjectUrl }).(pulumi.StringOutput)
+func (o GetManagementAgentImagesManagementAgentImageOutput) ObjectUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentImagesManagementAgentImage) *string { return v.ObjectUrl }).(pulumi.StringPtrOutput)
 }
 
 // The installation package target architecture type
-func (o GetManagementAgentImagesManagementAgentImageOutput) PackageArchitectureType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementAgentImagesManagementAgentImage) string { return v.PackageArchitectureType }).(pulumi.StringOutput)
+func (o GetManagementAgentImagesManagementAgentImageOutput) PackageArchitectureType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentImagesManagementAgentImage) *string { return v.PackageArchitectureType }).(pulumi.StringPtrOutput)
 }
 
 // The installation package type
-func (o GetManagementAgentImagesManagementAgentImageOutput) PackageType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementAgentImagesManagementAgentImage) string { return v.PackageType }).(pulumi.StringOutput)
+func (o GetManagementAgentImagesManagementAgentImageOutput) PackageType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentImagesManagementAgentImage) *string { return v.PackageType }).(pulumi.StringPtrOutput)
 }
 
 // Agent image platform display name
-func (o GetManagementAgentImagesManagementAgentImageOutput) PlatformName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementAgentImagesManagementAgentImage) string { return v.PlatformName }).(pulumi.StringOutput)
+func (o GetManagementAgentImagesManagementAgentImageOutput) PlatformName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentImagesManagementAgentImage) *string { return v.PlatformName }).(pulumi.StringPtrOutput)
 }
 
 // Agent image platform type
-func (o GetManagementAgentImagesManagementAgentImageOutput) PlatformType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementAgentImagesManagementAgentImage) string { return v.PlatformType }).(pulumi.StringOutput)
+func (o GetManagementAgentImagesManagementAgentImageOutput) PlatformType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentImagesManagementAgentImage) *string { return v.PlatformType }).(pulumi.StringPtrOutput)
 }
 
 // Agent image size in bytes
-func (o GetManagementAgentImagesManagementAgentImageOutput) Size() pulumi.Float64Output {
-	return o.ApplyT(func(v GetManagementAgentImagesManagementAgentImage) float64 { return v.Size }).(pulumi.Float64Output)
+func (o GetManagementAgentImagesManagementAgentImageOutput) Size() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v GetManagementAgentImagesManagementAgentImage) *float64 { return v.Size }).(pulumi.Float64PtrOutput)
 }
 
 // Filter to return only Management Agents in the particular lifecycle state.
-func (o GetManagementAgentImagesManagementAgentImageOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementAgentImagesManagementAgentImage) string { return v.State }).(pulumi.StringOutput)
+func (o GetManagementAgentImagesManagementAgentImageOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentImagesManagementAgentImage) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Agent image version
-func (o GetManagementAgentImagesManagementAgentImageOutput) Version() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementAgentImagesManagementAgentImage) string { return v.Version }).(pulumi.StringOutput)
+func (o GetManagementAgentImagesManagementAgentImageOutput) Version() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentImagesManagementAgentImage) *string { return v.Version }).(pulumi.StringPtrOutput)
 }
 
 type GetManagementAgentImagesManagementAgentImageArrayOutput struct{ *pulumi.OutputState }
@@ -1231,12 +1044,6 @@ func (o GetManagementAgentImagesManagementAgentImageArrayOutput) ToGetManagement
 	return o
 }
 
-func (o GetManagementAgentImagesManagementAgentImageArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementAgentImagesManagementAgentImage] {
-	return pulumix.Output[[]GetManagementAgentImagesManagementAgentImage]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetManagementAgentImagesManagementAgentImageArrayOutput) Index(i pulumi.IntInput) GetManagementAgentImagesManagementAgentImageOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagementAgentImagesManagementAgentImage {
 		return vs[0].([]GetManagementAgentImagesManagementAgentImage)[vs[1].(int)]
@@ -1245,15 +1052,15 @@ func (o GetManagementAgentImagesManagementAgentImageArrayOutput) Index(i pulumi.
 
 type GetManagementAgentImagesManagementAgentImageImageObjectStorageDetail struct {
 	// Object content SHA256 Hash
-	Checksum string `pulumi:"checksum"`
+	Checksum *string `pulumi:"checksum"`
 	// Objectstorage object name reference providing the original location of this object
-	Object string `pulumi:"object"`
+	Object *string `pulumi:"object"`
 	// Objectstorage bucket reference providing the original location of this object
-	ObjectBucket string `pulumi:"objectBucket"`
+	ObjectBucket *string `pulumi:"objectBucket"`
 	// Objectstorage namespace reference providing the original location of this object
-	ObjectNamespace string `pulumi:"objectNamespace"`
+	ObjectNamespace *string `pulumi:"objectNamespace"`
 	// Object storage URL for download
-	ObjectUrl string `pulumi:"objectUrl"`
+	ObjectUrl *string `pulumi:"objectUrl"`
 }
 
 // GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailInput is an input type that accepts GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailArgs and GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailOutput values.
@@ -1269,15 +1076,15 @@ type GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailInput i
 
 type GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailArgs struct {
 	// Object content SHA256 Hash
-	Checksum pulumi.StringInput `pulumi:"checksum"`
+	Checksum pulumi.StringPtrInput `pulumi:"checksum"`
 	// Objectstorage object name reference providing the original location of this object
-	Object pulumi.StringInput `pulumi:"object"`
+	Object pulumi.StringPtrInput `pulumi:"object"`
 	// Objectstorage bucket reference providing the original location of this object
-	ObjectBucket pulumi.StringInput `pulumi:"objectBucket"`
+	ObjectBucket pulumi.StringPtrInput `pulumi:"objectBucket"`
 	// Objectstorage namespace reference providing the original location of this object
-	ObjectNamespace pulumi.StringInput `pulumi:"objectNamespace"`
+	ObjectNamespace pulumi.StringPtrInput `pulumi:"objectNamespace"`
 	// Object storage URL for download
-	ObjectUrl pulumi.StringInput `pulumi:"objectUrl"`
+	ObjectUrl pulumi.StringPtrInput `pulumi:"objectUrl"`
 }
 
 func (GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailArgs) ElementType() reflect.Type {
@@ -1290,12 +1097,6 @@ func (i GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailArgs
 
 func (i GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailArgs) ToGetManagementAgentImagesManagementAgentImageImageObjectStorageDetailOutputWithContext(ctx context.Context) GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailOutput)
-}
-
-func (i GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagementAgentImagesManagementAgentImageImageObjectStorageDetail] {
-	return pulumix.Output[GetManagementAgentImagesManagementAgentImageImageObjectStorageDetail]{
-		OutputState: i.ToGetManagementAgentImagesManagementAgentImageImageObjectStorageDetailOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailArrayInput is an input type that accepts GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailArray and GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailArrayOutput values.
@@ -1323,12 +1124,6 @@ func (i GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailArra
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailArrayOutput)
 }
 
-func (i GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementAgentImagesManagementAgentImageImageObjectStorageDetail] {
-	return pulumix.Output[[]GetManagementAgentImagesManagementAgentImageImageObjectStorageDetail]{
-		OutputState: i.ToGetManagementAgentImagesManagementAgentImageImageObjectStorageDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailOutput struct{ *pulumi.OutputState }
 
 func (GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailOutput) ElementType() reflect.Type {
@@ -1343,41 +1138,37 @@ func (o GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailOutp
 	return o
 }
 
-func (o GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagementAgentImagesManagementAgentImageImageObjectStorageDetail] {
-	return pulumix.Output[GetManagementAgentImagesManagementAgentImageImageObjectStorageDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Object content SHA256 Hash
-func (o GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailOutput) Checksum() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementAgentImagesManagementAgentImageImageObjectStorageDetail) string { return v.Checksum }).(pulumi.StringOutput)
+func (o GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailOutput) Checksum() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentImagesManagementAgentImageImageObjectStorageDetail) *string {
+		return v.Checksum
+	}).(pulumi.StringPtrOutput)
 }
 
 // Objectstorage object name reference providing the original location of this object
-func (o GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailOutput) Object() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementAgentImagesManagementAgentImageImageObjectStorageDetail) string { return v.Object }).(pulumi.StringOutput)
+func (o GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailOutput) Object() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentImagesManagementAgentImageImageObjectStorageDetail) *string { return v.Object }).(pulumi.StringPtrOutput)
 }
 
 // Objectstorage bucket reference providing the original location of this object
-func (o GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailOutput) ObjectBucket() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementAgentImagesManagementAgentImageImageObjectStorageDetail) string {
+func (o GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailOutput) ObjectBucket() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentImagesManagementAgentImageImageObjectStorageDetail) *string {
 		return v.ObjectBucket
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Objectstorage namespace reference providing the original location of this object
-func (o GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailOutput) ObjectNamespace() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementAgentImagesManagementAgentImageImageObjectStorageDetail) string {
+func (o GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailOutput) ObjectNamespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentImagesManagementAgentImageImageObjectStorageDetail) *string {
 		return v.ObjectNamespace
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Object storage URL for download
-func (o GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailOutput) ObjectUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementAgentImagesManagementAgentImageImageObjectStorageDetail) string {
+func (o GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailOutput) ObjectUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentImagesManagementAgentImageImageObjectStorageDetail) *string {
 		return v.ObjectUrl
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailArrayOutput struct{ *pulumi.OutputState }
@@ -1392,12 +1183,6 @@ func (o GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailArra
 
 func (o GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailArrayOutput) ToGetManagementAgentImagesManagementAgentImageImageObjectStorageDetailArrayOutputWithContext(ctx context.Context) GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailArrayOutput {
 	return o
-}
-
-func (o GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementAgentImagesManagementAgentImageImageObjectStorageDetail] {
-	return pulumix.Output[[]GetManagementAgentImagesManagementAgentImageImageObjectStorageDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailArrayOutput) Index(i pulumi.IntInput) GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailOutput {
@@ -1441,12 +1226,6 @@ func (i GetManagementAgentInstallKeysFilterArgs) ToGetManagementAgentInstallKeys
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentInstallKeysFilterOutput)
 }
 
-func (i GetManagementAgentInstallKeysFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagementAgentInstallKeysFilter] {
-	return pulumix.Output[GetManagementAgentInstallKeysFilter]{
-		OutputState: i.ToGetManagementAgentInstallKeysFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetManagementAgentInstallKeysFilterArrayInput is an input type that accepts GetManagementAgentInstallKeysFilterArray and GetManagementAgentInstallKeysFilterArrayOutput values.
 // You can construct a concrete instance of `GetManagementAgentInstallKeysFilterArrayInput` via:
 //
@@ -1472,12 +1251,6 @@ func (i GetManagementAgentInstallKeysFilterArray) ToGetManagementAgentInstallKey
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentInstallKeysFilterArrayOutput)
 }
 
-func (i GetManagementAgentInstallKeysFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementAgentInstallKeysFilter] {
-	return pulumix.Output[[]GetManagementAgentInstallKeysFilter]{
-		OutputState: i.ToGetManagementAgentInstallKeysFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetManagementAgentInstallKeysFilterOutput struct{ *pulumi.OutputState }
 
 func (GetManagementAgentInstallKeysFilterOutput) ElementType() reflect.Type {
@@ -1490,12 +1263,6 @@ func (o GetManagementAgentInstallKeysFilterOutput) ToGetManagementAgentInstallKe
 
 func (o GetManagementAgentInstallKeysFilterOutput) ToGetManagementAgentInstallKeysFilterOutputWithContext(ctx context.Context) GetManagementAgentInstallKeysFilterOutput {
 	return o
-}
-
-func (o GetManagementAgentInstallKeysFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagementAgentInstallKeysFilter] {
-	return pulumix.Output[GetManagementAgentInstallKeysFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetManagementAgentInstallKeysFilterOutput) Name() pulumi.StringOutput {
@@ -1524,12 +1291,6 @@ func (o GetManagementAgentInstallKeysFilterArrayOutput) ToGetManagementAgentInst
 	return o
 }
 
-func (o GetManagementAgentInstallKeysFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementAgentInstallKeysFilter] {
-	return pulumix.Output[[]GetManagementAgentInstallKeysFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetManagementAgentInstallKeysFilterArrayOutput) Index(i pulumi.IntInput) GetManagementAgentInstallKeysFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagementAgentInstallKeysFilter {
 		return vs[0].([]GetManagementAgentInstallKeysFilter)[vs[1].(int)]
@@ -1538,31 +1299,31 @@ func (o GetManagementAgentInstallKeysFilterArrayOutput) Index(i pulumi.IntInput)
 
 type GetManagementAgentInstallKeysManagementAgentInstallKey struct {
 	// Total number of install for this keys
-	AllowedKeyInstallCount int `pulumi:"allowedKeyInstallCount"`
+	AllowedKeyInstallCount *int `pulumi:"allowedKeyInstallCount"`
 	// The OCID of the compartment to which a request will be scoped.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Principal id of user who created the Agent Install key
-	CreatedByPrincipalId string `pulumi:"createdByPrincipalId"`
+	CreatedByPrincipalId *string `pulumi:"createdByPrincipalId"`
 	// Total number of install for this keys
-	CurrentKeyInstallCount int `pulumi:"currentKeyInstallCount"`
+	CurrentKeyInstallCount *int `pulumi:"currentKeyInstallCount"`
 	// The display name for which the Key needs to be listed.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Agent install Key identifier
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// If set to true, the install key has no expiration date or usage limit. Properties allowedKeyInstallCount and timeExpires are ignored if set to true. Defaults to false.
-	IsUnlimited bool `pulumi:"isUnlimited"`
+	IsUnlimited *bool `pulumi:"isUnlimited"`
 	// Management Agent Install Key
-	Key string `pulumi:"key"`
+	Key *string `pulumi:"key"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Filter to return only Management Agents in the particular lifecycle state.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The time when Management Agent install Key was created. An RFC3339 formatted date time string
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// date after which key would expire after creation
-	TimeExpires string `pulumi:"timeExpires"`
+	TimeExpires *string `pulumi:"timeExpires"`
 	// The time when Management Agent install Key was updated. An RFC3339 formatted date time string
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 // GetManagementAgentInstallKeysManagementAgentInstallKeyInput is an input type that accepts GetManagementAgentInstallKeysManagementAgentInstallKeyArgs and GetManagementAgentInstallKeysManagementAgentInstallKeyOutput values.
@@ -1578,31 +1339,31 @@ type GetManagementAgentInstallKeysManagementAgentInstallKeyInput interface {
 
 type GetManagementAgentInstallKeysManagementAgentInstallKeyArgs struct {
 	// Total number of install for this keys
-	AllowedKeyInstallCount pulumi.IntInput `pulumi:"allowedKeyInstallCount"`
+	AllowedKeyInstallCount pulumi.IntPtrInput `pulumi:"allowedKeyInstallCount"`
 	// The OCID of the compartment to which a request will be scoped.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Principal id of user who created the Agent Install key
-	CreatedByPrincipalId pulumi.StringInput `pulumi:"createdByPrincipalId"`
+	CreatedByPrincipalId pulumi.StringPtrInput `pulumi:"createdByPrincipalId"`
 	// Total number of install for this keys
-	CurrentKeyInstallCount pulumi.IntInput `pulumi:"currentKeyInstallCount"`
+	CurrentKeyInstallCount pulumi.IntPtrInput `pulumi:"currentKeyInstallCount"`
 	// The display name for which the Key needs to be listed.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Agent install Key identifier
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// If set to true, the install key has no expiration date or usage limit. Properties allowedKeyInstallCount and timeExpires are ignored if set to true. Defaults to false.
-	IsUnlimited pulumi.BoolInput `pulumi:"isUnlimited"`
+	IsUnlimited pulumi.BoolPtrInput `pulumi:"isUnlimited"`
 	// Management Agent Install Key
-	Key pulumi.StringInput `pulumi:"key"`
+	Key pulumi.StringPtrInput `pulumi:"key"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// Filter to return only Management Agents in the particular lifecycle state.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The time when Management Agent install Key was created. An RFC3339 formatted date time string
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// date after which key would expire after creation
-	TimeExpires pulumi.StringInput `pulumi:"timeExpires"`
+	TimeExpires pulumi.StringPtrInput `pulumi:"timeExpires"`
 	// The time when Management Agent install Key was updated. An RFC3339 formatted date time string
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 }
 
 func (GetManagementAgentInstallKeysManagementAgentInstallKeyArgs) ElementType() reflect.Type {
@@ -1615,12 +1376,6 @@ func (i GetManagementAgentInstallKeysManagementAgentInstallKeyArgs) ToGetManagem
 
 func (i GetManagementAgentInstallKeysManagementAgentInstallKeyArgs) ToGetManagementAgentInstallKeysManagementAgentInstallKeyOutputWithContext(ctx context.Context) GetManagementAgentInstallKeysManagementAgentInstallKeyOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentInstallKeysManagementAgentInstallKeyOutput)
-}
-
-func (i GetManagementAgentInstallKeysManagementAgentInstallKeyArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagementAgentInstallKeysManagementAgentInstallKey] {
-	return pulumix.Output[GetManagementAgentInstallKeysManagementAgentInstallKey]{
-		OutputState: i.ToGetManagementAgentInstallKeysManagementAgentInstallKeyOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetManagementAgentInstallKeysManagementAgentInstallKeyArrayInput is an input type that accepts GetManagementAgentInstallKeysManagementAgentInstallKeyArray and GetManagementAgentInstallKeysManagementAgentInstallKeyArrayOutput values.
@@ -1648,12 +1403,6 @@ func (i GetManagementAgentInstallKeysManagementAgentInstallKeyArray) ToGetManage
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentInstallKeysManagementAgentInstallKeyArrayOutput)
 }
 
-func (i GetManagementAgentInstallKeysManagementAgentInstallKeyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementAgentInstallKeysManagementAgentInstallKey] {
-	return pulumix.Output[[]GetManagementAgentInstallKeysManagementAgentInstallKey]{
-		OutputState: i.ToGetManagementAgentInstallKeysManagementAgentInstallKeyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetManagementAgentInstallKeysManagementAgentInstallKeyOutput struct{ *pulumi.OutputState }
 
 func (GetManagementAgentInstallKeysManagementAgentInstallKeyOutput) ElementType() reflect.Type {
@@ -1668,75 +1417,69 @@ func (o GetManagementAgentInstallKeysManagementAgentInstallKeyOutput) ToGetManag
 	return o
 }
 
-func (o GetManagementAgentInstallKeysManagementAgentInstallKeyOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagementAgentInstallKeysManagementAgentInstallKey] {
-	return pulumix.Output[GetManagementAgentInstallKeysManagementAgentInstallKey]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Total number of install for this keys
-func (o GetManagementAgentInstallKeysManagementAgentInstallKeyOutput) AllowedKeyInstallCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetManagementAgentInstallKeysManagementAgentInstallKey) int { return v.AllowedKeyInstallCount }).(pulumi.IntOutput)
+func (o GetManagementAgentInstallKeysManagementAgentInstallKeyOutput) AllowedKeyInstallCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentInstallKeysManagementAgentInstallKey) *int { return v.AllowedKeyInstallCount }).(pulumi.IntPtrOutput)
 }
 
 // The OCID of the compartment to which a request will be scoped.
-func (o GetManagementAgentInstallKeysManagementAgentInstallKeyOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementAgentInstallKeysManagementAgentInstallKey) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetManagementAgentInstallKeysManagementAgentInstallKeyOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentInstallKeysManagementAgentInstallKey) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Principal id of user who created the Agent Install key
-func (o GetManagementAgentInstallKeysManagementAgentInstallKeyOutput) CreatedByPrincipalId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementAgentInstallKeysManagementAgentInstallKey) string { return v.CreatedByPrincipalId }).(pulumi.StringOutput)
+func (o GetManagementAgentInstallKeysManagementAgentInstallKeyOutput) CreatedByPrincipalId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentInstallKeysManagementAgentInstallKey) *string { return v.CreatedByPrincipalId }).(pulumi.StringPtrOutput)
 }
 
 // Total number of install for this keys
-func (o GetManagementAgentInstallKeysManagementAgentInstallKeyOutput) CurrentKeyInstallCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetManagementAgentInstallKeysManagementAgentInstallKey) int { return v.CurrentKeyInstallCount }).(pulumi.IntOutput)
+func (o GetManagementAgentInstallKeysManagementAgentInstallKeyOutput) CurrentKeyInstallCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentInstallKeysManagementAgentInstallKey) *int { return v.CurrentKeyInstallCount }).(pulumi.IntPtrOutput)
 }
 
 // The display name for which the Key needs to be listed.
-func (o GetManagementAgentInstallKeysManagementAgentInstallKeyOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementAgentInstallKeysManagementAgentInstallKey) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetManagementAgentInstallKeysManagementAgentInstallKeyOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentInstallKeysManagementAgentInstallKey) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Agent install Key identifier
-func (o GetManagementAgentInstallKeysManagementAgentInstallKeyOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementAgentInstallKeysManagementAgentInstallKey) string { return v.Id }).(pulumi.StringOutput)
+func (o GetManagementAgentInstallKeysManagementAgentInstallKeyOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentInstallKeysManagementAgentInstallKey) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // If set to true, the install key has no expiration date or usage limit. Properties allowedKeyInstallCount and timeExpires are ignored if set to true. Defaults to false.
-func (o GetManagementAgentInstallKeysManagementAgentInstallKeyOutput) IsUnlimited() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetManagementAgentInstallKeysManagementAgentInstallKey) bool { return v.IsUnlimited }).(pulumi.BoolOutput)
+func (o GetManagementAgentInstallKeysManagementAgentInstallKeyOutput) IsUnlimited() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentInstallKeysManagementAgentInstallKey) *bool { return v.IsUnlimited }).(pulumi.BoolPtrOutput)
 }
 
 // Management Agent Install Key
-func (o GetManagementAgentInstallKeysManagementAgentInstallKeyOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementAgentInstallKeysManagementAgentInstallKey) string { return v.Key }).(pulumi.StringOutput)
+func (o GetManagementAgentInstallKeysManagementAgentInstallKeyOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentInstallKeysManagementAgentInstallKey) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o GetManagementAgentInstallKeysManagementAgentInstallKeyOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementAgentInstallKeysManagementAgentInstallKey) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetManagementAgentInstallKeysManagementAgentInstallKeyOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentInstallKeysManagementAgentInstallKey) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // Filter to return only Management Agents in the particular lifecycle state.
-func (o GetManagementAgentInstallKeysManagementAgentInstallKeyOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementAgentInstallKeysManagementAgentInstallKey) string { return v.State }).(pulumi.StringOutput)
+func (o GetManagementAgentInstallKeysManagementAgentInstallKeyOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentInstallKeysManagementAgentInstallKey) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The time when Management Agent install Key was created. An RFC3339 formatted date time string
-func (o GetManagementAgentInstallKeysManagementAgentInstallKeyOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementAgentInstallKeysManagementAgentInstallKey) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetManagementAgentInstallKeysManagementAgentInstallKeyOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentInstallKeysManagementAgentInstallKey) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // date after which key would expire after creation
-func (o GetManagementAgentInstallKeysManagementAgentInstallKeyOutput) TimeExpires() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementAgentInstallKeysManagementAgentInstallKey) string { return v.TimeExpires }).(pulumi.StringOutput)
+func (o GetManagementAgentInstallKeysManagementAgentInstallKeyOutput) TimeExpires() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentInstallKeysManagementAgentInstallKey) *string { return v.TimeExpires }).(pulumi.StringPtrOutput)
 }
 
 // The time when Management Agent install Key was updated. An RFC3339 formatted date time string
-func (o GetManagementAgentInstallKeysManagementAgentInstallKeyOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementAgentInstallKeysManagementAgentInstallKey) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetManagementAgentInstallKeysManagementAgentInstallKeyOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentInstallKeysManagementAgentInstallKey) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type GetManagementAgentInstallKeysManagementAgentInstallKeyArrayOutput struct{ *pulumi.OutputState }
@@ -1753,12 +1496,6 @@ func (o GetManagementAgentInstallKeysManagementAgentInstallKeyArrayOutput) ToGet
 	return o
 }
 
-func (o GetManagementAgentInstallKeysManagementAgentInstallKeyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementAgentInstallKeysManagementAgentInstallKey] {
-	return pulumix.Output[[]GetManagementAgentInstallKeysManagementAgentInstallKey]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetManagementAgentInstallKeysManagementAgentInstallKeyArrayOutput) Index(i pulumi.IntInput) GetManagementAgentInstallKeysManagementAgentInstallKeyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagementAgentInstallKeysManagementAgentInstallKey {
 		return vs[0].([]GetManagementAgentInstallKeysManagementAgentInstallKey)[vs[1].(int)]
@@ -1767,9 +1504,9 @@ func (o GetManagementAgentInstallKeysManagementAgentInstallKeyArrayOutput) Index
 
 type GetManagementAgentManagementAgentProperty struct {
 	// Name of the property
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Unit for the property
-	Units string `pulumi:"units"`
+	Units *string `pulumi:"units"`
 	// Values of the property
 	Values []string `pulumi:"values"`
 }
@@ -1787,9 +1524,9 @@ type GetManagementAgentManagementAgentPropertyInput interface {
 
 type GetManagementAgentManagementAgentPropertyArgs struct {
 	// Name of the property
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Unit for the property
-	Units pulumi.StringInput `pulumi:"units"`
+	Units pulumi.StringPtrInput `pulumi:"units"`
 	// Values of the property
 	Values pulumi.StringArrayInput `pulumi:"values"`
 }
@@ -1804,12 +1541,6 @@ func (i GetManagementAgentManagementAgentPropertyArgs) ToGetManagementAgentManag
 
 func (i GetManagementAgentManagementAgentPropertyArgs) ToGetManagementAgentManagementAgentPropertyOutputWithContext(ctx context.Context) GetManagementAgentManagementAgentPropertyOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentManagementAgentPropertyOutput)
-}
-
-func (i GetManagementAgentManagementAgentPropertyArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagementAgentManagementAgentProperty] {
-	return pulumix.Output[GetManagementAgentManagementAgentProperty]{
-		OutputState: i.ToGetManagementAgentManagementAgentPropertyOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetManagementAgentManagementAgentPropertyArrayInput is an input type that accepts GetManagementAgentManagementAgentPropertyArray and GetManagementAgentManagementAgentPropertyArrayOutput values.
@@ -1837,12 +1568,6 @@ func (i GetManagementAgentManagementAgentPropertyArray) ToGetManagementAgentMana
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentManagementAgentPropertyArrayOutput)
 }
 
-func (i GetManagementAgentManagementAgentPropertyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementAgentManagementAgentProperty] {
-	return pulumix.Output[[]GetManagementAgentManagementAgentProperty]{
-		OutputState: i.ToGetManagementAgentManagementAgentPropertyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetManagementAgentManagementAgentPropertyOutput struct{ *pulumi.OutputState }
 
 func (GetManagementAgentManagementAgentPropertyOutput) ElementType() reflect.Type {
@@ -1857,20 +1582,14 @@ func (o GetManagementAgentManagementAgentPropertyOutput) ToGetManagementAgentMan
 	return o
 }
 
-func (o GetManagementAgentManagementAgentPropertyOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagementAgentManagementAgentProperty] {
-	return pulumix.Output[GetManagementAgentManagementAgentProperty]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Name of the property
-func (o GetManagementAgentManagementAgentPropertyOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementAgentManagementAgentProperty) string { return v.Name }).(pulumi.StringOutput)
+func (o GetManagementAgentManagementAgentPropertyOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentManagementAgentProperty) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Unit for the property
-func (o GetManagementAgentManagementAgentPropertyOutput) Units() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementAgentManagementAgentProperty) string { return v.Units }).(pulumi.StringOutput)
+func (o GetManagementAgentManagementAgentPropertyOutput) Units() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentManagementAgentProperty) *string { return v.Units }).(pulumi.StringPtrOutput)
 }
 
 // Values of the property
@@ -1892,12 +1611,6 @@ func (o GetManagementAgentManagementAgentPropertyArrayOutput) ToGetManagementAge
 	return o
 }
 
-func (o GetManagementAgentManagementAgentPropertyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementAgentManagementAgentProperty] {
-	return pulumix.Output[[]GetManagementAgentManagementAgentProperty]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetManagementAgentManagementAgentPropertyArrayOutput) Index(i pulumi.IntInput) GetManagementAgentManagementAgentPropertyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagementAgentManagementAgentProperty {
 		return vs[0].([]GetManagementAgentManagementAgentProperty)[vs[1].(int)]
@@ -1906,7 +1619,7 @@ func (o GetManagementAgentManagementAgentPropertyArrayOutput) Index(i pulumi.Int
 
 type GetManagementAgentPluginCountItem struct {
 	// The number of Management Agent Plugins in this group
-	Count int `pulumi:"count"`
+	Count *int `pulumi:"count"`
 	// The Aggregation of Management Agent Plugin Dimensions
 	Dimensions []GetManagementAgentPluginCountItemDimension `pulumi:"dimensions"`
 }
@@ -1924,7 +1637,7 @@ type GetManagementAgentPluginCountItemInput interface {
 
 type GetManagementAgentPluginCountItemArgs struct {
 	// The number of Management Agent Plugins in this group
-	Count pulumi.IntInput `pulumi:"count"`
+	Count pulumi.IntPtrInput `pulumi:"count"`
 	// The Aggregation of Management Agent Plugin Dimensions
 	Dimensions GetManagementAgentPluginCountItemDimensionArrayInput `pulumi:"dimensions"`
 }
@@ -1939,12 +1652,6 @@ func (i GetManagementAgentPluginCountItemArgs) ToGetManagementAgentPluginCountIt
 
 func (i GetManagementAgentPluginCountItemArgs) ToGetManagementAgentPluginCountItemOutputWithContext(ctx context.Context) GetManagementAgentPluginCountItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentPluginCountItemOutput)
-}
-
-func (i GetManagementAgentPluginCountItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagementAgentPluginCountItem] {
-	return pulumix.Output[GetManagementAgentPluginCountItem]{
-		OutputState: i.ToGetManagementAgentPluginCountItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetManagementAgentPluginCountItemArrayInput is an input type that accepts GetManagementAgentPluginCountItemArray and GetManagementAgentPluginCountItemArrayOutput values.
@@ -1972,12 +1679,6 @@ func (i GetManagementAgentPluginCountItemArray) ToGetManagementAgentPluginCountI
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentPluginCountItemArrayOutput)
 }
 
-func (i GetManagementAgentPluginCountItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementAgentPluginCountItem] {
-	return pulumix.Output[[]GetManagementAgentPluginCountItem]{
-		OutputState: i.ToGetManagementAgentPluginCountItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetManagementAgentPluginCountItemOutput struct{ *pulumi.OutputState }
 
 func (GetManagementAgentPluginCountItemOutput) ElementType() reflect.Type {
@@ -1992,15 +1693,9 @@ func (o GetManagementAgentPluginCountItemOutput) ToGetManagementAgentPluginCount
 	return o
 }
 
-func (o GetManagementAgentPluginCountItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagementAgentPluginCountItem] {
-	return pulumix.Output[GetManagementAgentPluginCountItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The number of Management Agent Plugins in this group
-func (o GetManagementAgentPluginCountItemOutput) Count() pulumi.IntOutput {
-	return o.ApplyT(func(v GetManagementAgentPluginCountItem) int { return v.Count }).(pulumi.IntOutput)
+func (o GetManagementAgentPluginCountItemOutput) Count() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentPluginCountItem) *int { return v.Count }).(pulumi.IntPtrOutput)
 }
 
 // The Aggregation of Management Agent Plugin Dimensions
@@ -2024,12 +1719,6 @@ func (o GetManagementAgentPluginCountItemArrayOutput) ToGetManagementAgentPlugin
 	return o
 }
 
-func (o GetManagementAgentPluginCountItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementAgentPluginCountItem] {
-	return pulumix.Output[[]GetManagementAgentPluginCountItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetManagementAgentPluginCountItemArrayOutput) Index(i pulumi.IntInput) GetManagementAgentPluginCountItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagementAgentPluginCountItem {
 		return vs[0].([]GetManagementAgentPluginCountItem)[vs[1].(int)]
@@ -2038,9 +1727,9 @@ func (o GetManagementAgentPluginCountItemArrayOutput) Index(i pulumi.IntInput) G
 
 type GetManagementAgentPluginCountItemDimension struct {
 	// Management Agent Plugin Display Name
-	PluginDisplayName string `pulumi:"pluginDisplayName"`
+	PluginDisplayName *string `pulumi:"pluginDisplayName"`
 	// Management Agent Plugin Name
-	PluginName string `pulumi:"pluginName"`
+	PluginName *string `pulumi:"pluginName"`
 }
 
 // GetManagementAgentPluginCountItemDimensionInput is an input type that accepts GetManagementAgentPluginCountItemDimensionArgs and GetManagementAgentPluginCountItemDimensionOutput values.
@@ -2056,9 +1745,9 @@ type GetManagementAgentPluginCountItemDimensionInput interface {
 
 type GetManagementAgentPluginCountItemDimensionArgs struct {
 	// Management Agent Plugin Display Name
-	PluginDisplayName pulumi.StringInput `pulumi:"pluginDisplayName"`
+	PluginDisplayName pulumi.StringPtrInput `pulumi:"pluginDisplayName"`
 	// Management Agent Plugin Name
-	PluginName pulumi.StringInput `pulumi:"pluginName"`
+	PluginName pulumi.StringPtrInput `pulumi:"pluginName"`
 }
 
 func (GetManagementAgentPluginCountItemDimensionArgs) ElementType() reflect.Type {
@@ -2071,12 +1760,6 @@ func (i GetManagementAgentPluginCountItemDimensionArgs) ToGetManagementAgentPlug
 
 func (i GetManagementAgentPluginCountItemDimensionArgs) ToGetManagementAgentPluginCountItemDimensionOutputWithContext(ctx context.Context) GetManagementAgentPluginCountItemDimensionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentPluginCountItemDimensionOutput)
-}
-
-func (i GetManagementAgentPluginCountItemDimensionArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagementAgentPluginCountItemDimension] {
-	return pulumix.Output[GetManagementAgentPluginCountItemDimension]{
-		OutputState: i.ToGetManagementAgentPluginCountItemDimensionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetManagementAgentPluginCountItemDimensionArrayInput is an input type that accepts GetManagementAgentPluginCountItemDimensionArray and GetManagementAgentPluginCountItemDimensionArrayOutput values.
@@ -2104,12 +1787,6 @@ func (i GetManagementAgentPluginCountItemDimensionArray) ToGetManagementAgentPlu
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentPluginCountItemDimensionArrayOutput)
 }
 
-func (i GetManagementAgentPluginCountItemDimensionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementAgentPluginCountItemDimension] {
-	return pulumix.Output[[]GetManagementAgentPluginCountItemDimension]{
-		OutputState: i.ToGetManagementAgentPluginCountItemDimensionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetManagementAgentPluginCountItemDimensionOutput struct{ *pulumi.OutputState }
 
 func (GetManagementAgentPluginCountItemDimensionOutput) ElementType() reflect.Type {
@@ -2124,20 +1801,14 @@ func (o GetManagementAgentPluginCountItemDimensionOutput) ToGetManagementAgentPl
 	return o
 }
 
-func (o GetManagementAgentPluginCountItemDimensionOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagementAgentPluginCountItemDimension] {
-	return pulumix.Output[GetManagementAgentPluginCountItemDimension]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Management Agent Plugin Display Name
-func (o GetManagementAgentPluginCountItemDimensionOutput) PluginDisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementAgentPluginCountItemDimension) string { return v.PluginDisplayName }).(pulumi.StringOutput)
+func (o GetManagementAgentPluginCountItemDimensionOutput) PluginDisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentPluginCountItemDimension) *string { return v.PluginDisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Management Agent Plugin Name
-func (o GetManagementAgentPluginCountItemDimensionOutput) PluginName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementAgentPluginCountItemDimension) string { return v.PluginName }).(pulumi.StringOutput)
+func (o GetManagementAgentPluginCountItemDimensionOutput) PluginName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentPluginCountItemDimension) *string { return v.PluginName }).(pulumi.StringPtrOutput)
 }
 
 type GetManagementAgentPluginCountItemDimensionArrayOutput struct{ *pulumi.OutputState }
@@ -2154,12 +1825,6 @@ func (o GetManagementAgentPluginCountItemDimensionArrayOutput) ToGetManagementAg
 	return o
 }
 
-func (o GetManagementAgentPluginCountItemDimensionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementAgentPluginCountItemDimension] {
-	return pulumix.Output[[]GetManagementAgentPluginCountItemDimension]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetManagementAgentPluginCountItemDimensionArrayOutput) Index(i pulumi.IntInput) GetManagementAgentPluginCountItemDimensionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagementAgentPluginCountItemDimension {
 		return vs[0].([]GetManagementAgentPluginCountItemDimension)[vs[1].(int)]
@@ -2168,19 +1833,19 @@ func (o GetManagementAgentPluginCountItemDimensionArrayOutput) Index(i pulumi.In
 
 type GetManagementAgentPluginList struct {
 	// flag indicating whether the plugin is in enabled mode or disabled mode.
-	IsEnabled bool `pulumi:"isEnabled"`
+	IsEnabled *bool `pulumi:"isEnabled"`
 	// Management Agent Plugin Identifier, can be renamed
-	PluginDisplayName string `pulumi:"pluginDisplayName"`
+	PluginDisplayName *string `pulumi:"pluginDisplayName"`
 	// Plugin Id
-	PluginId string `pulumi:"pluginId"`
+	PluginId *string `pulumi:"pluginId"`
 	// Management Agent Plugin Name
-	PluginName string `pulumi:"pluginName"`
+	PluginName *string `pulumi:"pluginName"`
 	// Plugin Status
-	PluginStatus string `pulumi:"pluginStatus"`
+	PluginStatus *string `pulumi:"pluginStatus"`
 	// Status message of the Plugin
-	PluginStatusMessage string `pulumi:"pluginStatusMessage"`
+	PluginStatusMessage *string `pulumi:"pluginStatusMessage"`
 	// Plugin Version
-	PluginVersion string `pulumi:"pluginVersion"`
+	PluginVersion *string `pulumi:"pluginVersion"`
 }
 
 // GetManagementAgentPluginListInput is an input type that accepts GetManagementAgentPluginListArgs and GetManagementAgentPluginListOutput values.
@@ -2196,19 +1861,19 @@ type GetManagementAgentPluginListInput interface {
 
 type GetManagementAgentPluginListArgs struct {
 	// flag indicating whether the plugin is in enabled mode or disabled mode.
-	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+	IsEnabled pulumi.BoolPtrInput `pulumi:"isEnabled"`
 	// Management Agent Plugin Identifier, can be renamed
-	PluginDisplayName pulumi.StringInput `pulumi:"pluginDisplayName"`
+	PluginDisplayName pulumi.StringPtrInput `pulumi:"pluginDisplayName"`
 	// Plugin Id
-	PluginId pulumi.StringInput `pulumi:"pluginId"`
+	PluginId pulumi.StringPtrInput `pulumi:"pluginId"`
 	// Management Agent Plugin Name
-	PluginName pulumi.StringInput `pulumi:"pluginName"`
+	PluginName pulumi.StringPtrInput `pulumi:"pluginName"`
 	// Plugin Status
-	PluginStatus pulumi.StringInput `pulumi:"pluginStatus"`
+	PluginStatus pulumi.StringPtrInput `pulumi:"pluginStatus"`
 	// Status message of the Plugin
-	PluginStatusMessage pulumi.StringInput `pulumi:"pluginStatusMessage"`
+	PluginStatusMessage pulumi.StringPtrInput `pulumi:"pluginStatusMessage"`
 	// Plugin Version
-	PluginVersion pulumi.StringInput `pulumi:"pluginVersion"`
+	PluginVersion pulumi.StringPtrInput `pulumi:"pluginVersion"`
 }
 
 func (GetManagementAgentPluginListArgs) ElementType() reflect.Type {
@@ -2221,12 +1886,6 @@ func (i GetManagementAgentPluginListArgs) ToGetManagementAgentPluginListOutput()
 
 func (i GetManagementAgentPluginListArgs) ToGetManagementAgentPluginListOutputWithContext(ctx context.Context) GetManagementAgentPluginListOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentPluginListOutput)
-}
-
-func (i GetManagementAgentPluginListArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagementAgentPluginList] {
-	return pulumix.Output[GetManagementAgentPluginList]{
-		OutputState: i.ToGetManagementAgentPluginListOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetManagementAgentPluginListArrayInput is an input type that accepts GetManagementAgentPluginListArray and GetManagementAgentPluginListArrayOutput values.
@@ -2254,12 +1913,6 @@ func (i GetManagementAgentPluginListArray) ToGetManagementAgentPluginListArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentPluginListArrayOutput)
 }
 
-func (i GetManagementAgentPluginListArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementAgentPluginList] {
-	return pulumix.Output[[]GetManagementAgentPluginList]{
-		OutputState: i.ToGetManagementAgentPluginListArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetManagementAgentPluginListOutput struct{ *pulumi.OutputState }
 
 func (GetManagementAgentPluginListOutput) ElementType() reflect.Type {
@@ -2274,45 +1927,39 @@ func (o GetManagementAgentPluginListOutput) ToGetManagementAgentPluginListOutput
 	return o
 }
 
-func (o GetManagementAgentPluginListOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagementAgentPluginList] {
-	return pulumix.Output[GetManagementAgentPluginList]{
-		OutputState: o.OutputState,
-	}
-}
-
 // flag indicating whether the plugin is in enabled mode or disabled mode.
-func (o GetManagementAgentPluginListOutput) IsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetManagementAgentPluginList) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+func (o GetManagementAgentPluginListOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentPluginList) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // Management Agent Plugin Identifier, can be renamed
-func (o GetManagementAgentPluginListOutput) PluginDisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementAgentPluginList) string { return v.PluginDisplayName }).(pulumi.StringOutput)
+func (o GetManagementAgentPluginListOutput) PluginDisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentPluginList) *string { return v.PluginDisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Plugin Id
-func (o GetManagementAgentPluginListOutput) PluginId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementAgentPluginList) string { return v.PluginId }).(pulumi.StringOutput)
+func (o GetManagementAgentPluginListOutput) PluginId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentPluginList) *string { return v.PluginId }).(pulumi.StringPtrOutput)
 }
 
 // Management Agent Plugin Name
-func (o GetManagementAgentPluginListOutput) PluginName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementAgentPluginList) string { return v.PluginName }).(pulumi.StringOutput)
+func (o GetManagementAgentPluginListOutput) PluginName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentPluginList) *string { return v.PluginName }).(pulumi.StringPtrOutput)
 }
 
 // Plugin Status
-func (o GetManagementAgentPluginListOutput) PluginStatus() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementAgentPluginList) string { return v.PluginStatus }).(pulumi.StringOutput)
+func (o GetManagementAgentPluginListOutput) PluginStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentPluginList) *string { return v.PluginStatus }).(pulumi.StringPtrOutput)
 }
 
 // Status message of the Plugin
-func (o GetManagementAgentPluginListOutput) PluginStatusMessage() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementAgentPluginList) string { return v.PluginStatusMessage }).(pulumi.StringOutput)
+func (o GetManagementAgentPluginListOutput) PluginStatusMessage() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentPluginList) *string { return v.PluginStatusMessage }).(pulumi.StringPtrOutput)
 }
 
 // Plugin Version
-func (o GetManagementAgentPluginListOutput) PluginVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementAgentPluginList) string { return v.PluginVersion }).(pulumi.StringOutput)
+func (o GetManagementAgentPluginListOutput) PluginVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentPluginList) *string { return v.PluginVersion }).(pulumi.StringPtrOutput)
 }
 
 type GetManagementAgentPluginListArrayOutput struct{ *pulumi.OutputState }
@@ -2327,12 +1974,6 @@ func (o GetManagementAgentPluginListArrayOutput) ToGetManagementAgentPluginListA
 
 func (o GetManagementAgentPluginListArrayOutput) ToGetManagementAgentPluginListArrayOutputWithContext(ctx context.Context) GetManagementAgentPluginListArrayOutput {
 	return o
-}
-
-func (o GetManagementAgentPluginListArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementAgentPluginList] {
-	return pulumix.Output[[]GetManagementAgentPluginList]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetManagementAgentPluginListArrayOutput) Index(i pulumi.IntInput) GetManagementAgentPluginListOutput {
@@ -2378,12 +2019,6 @@ func (i GetManagementAgentPluginsFilterArgs) ToGetManagementAgentPluginsFilterOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentPluginsFilterOutput)
 }
 
-func (i GetManagementAgentPluginsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagementAgentPluginsFilter] {
-	return pulumix.Output[GetManagementAgentPluginsFilter]{
-		OutputState: i.ToGetManagementAgentPluginsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetManagementAgentPluginsFilterArrayInput is an input type that accepts GetManagementAgentPluginsFilterArray and GetManagementAgentPluginsFilterArrayOutput values.
 // You can construct a concrete instance of `GetManagementAgentPluginsFilterArrayInput` via:
 //
@@ -2409,12 +2044,6 @@ func (i GetManagementAgentPluginsFilterArray) ToGetManagementAgentPluginsFilterA
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentPluginsFilterArrayOutput)
 }
 
-func (i GetManagementAgentPluginsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementAgentPluginsFilter] {
-	return pulumix.Output[[]GetManagementAgentPluginsFilter]{
-		OutputState: i.ToGetManagementAgentPluginsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetManagementAgentPluginsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetManagementAgentPluginsFilterOutput) ElementType() reflect.Type {
@@ -2427,12 +2056,6 @@ func (o GetManagementAgentPluginsFilterOutput) ToGetManagementAgentPluginsFilter
 
 func (o GetManagementAgentPluginsFilterOutput) ToGetManagementAgentPluginsFilterOutputWithContext(ctx context.Context) GetManagementAgentPluginsFilterOutput {
 	return o
-}
-
-func (o GetManagementAgentPluginsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagementAgentPluginsFilter] {
-	return pulumix.Output[GetManagementAgentPluginsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Management Agent Plugin Name
@@ -2462,12 +2085,6 @@ func (o GetManagementAgentPluginsFilterArrayOutput) ToGetManagementAgentPluginsF
 	return o
 }
 
-func (o GetManagementAgentPluginsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementAgentPluginsFilter] {
-	return pulumix.Output[[]GetManagementAgentPluginsFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetManagementAgentPluginsFilterArrayOutput) Index(i pulumi.IntInput) GetManagementAgentPluginsFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagementAgentPluginsFilter {
 		return vs[0].([]GetManagementAgentPluginsFilter)[vs[1].(int)]
@@ -2476,21 +2093,21 @@ func (o GetManagementAgentPluginsFilterArrayOutput) Index(i pulumi.IntInput) Get
 
 type GetManagementAgentPluginsManagementAgentPlugin struct {
 	// Management Agent Plugin description
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Filter to return only Management Agent Plugins having the particular display name.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Management Agent Plugin Id
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A flag to indicate whether a given plugin can be deployed from Agent Console UI or not.
-	IsConsoleDeployable bool `pulumi:"isConsoleDeployable"`
+	IsConsoleDeployable *bool `pulumi:"isConsoleDeployable"`
 	// Management Agent Plugin Name
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Filter to return only Management Agents in the particular lifecycle state.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// Supported Platform Types
 	SupportedPlatformTypes []string `pulumi:"supportedPlatformTypes"`
 	// Management Agent Plugin Version
-	Version int `pulumi:"version"`
+	Version *int `pulumi:"version"`
 }
 
 // GetManagementAgentPluginsManagementAgentPluginInput is an input type that accepts GetManagementAgentPluginsManagementAgentPluginArgs and GetManagementAgentPluginsManagementAgentPluginOutput values.
@@ -2506,21 +2123,21 @@ type GetManagementAgentPluginsManagementAgentPluginInput interface {
 
 type GetManagementAgentPluginsManagementAgentPluginArgs struct {
 	// Management Agent Plugin description
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// Filter to return only Management Agent Plugins having the particular display name.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Management Agent Plugin Id
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// A flag to indicate whether a given plugin can be deployed from Agent Console UI or not.
-	IsConsoleDeployable pulumi.BoolInput `pulumi:"isConsoleDeployable"`
+	IsConsoleDeployable pulumi.BoolPtrInput `pulumi:"isConsoleDeployable"`
 	// Management Agent Plugin Name
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Filter to return only Management Agents in the particular lifecycle state.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// Supported Platform Types
 	SupportedPlatformTypes pulumi.StringArrayInput `pulumi:"supportedPlatformTypes"`
 	// Management Agent Plugin Version
-	Version pulumi.IntInput `pulumi:"version"`
+	Version pulumi.IntPtrInput `pulumi:"version"`
 }
 
 func (GetManagementAgentPluginsManagementAgentPluginArgs) ElementType() reflect.Type {
@@ -2533,12 +2150,6 @@ func (i GetManagementAgentPluginsManagementAgentPluginArgs) ToGetManagementAgent
 
 func (i GetManagementAgentPluginsManagementAgentPluginArgs) ToGetManagementAgentPluginsManagementAgentPluginOutputWithContext(ctx context.Context) GetManagementAgentPluginsManagementAgentPluginOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentPluginsManagementAgentPluginOutput)
-}
-
-func (i GetManagementAgentPluginsManagementAgentPluginArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagementAgentPluginsManagementAgentPlugin] {
-	return pulumix.Output[GetManagementAgentPluginsManagementAgentPlugin]{
-		OutputState: i.ToGetManagementAgentPluginsManagementAgentPluginOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetManagementAgentPluginsManagementAgentPluginArrayInput is an input type that accepts GetManagementAgentPluginsManagementAgentPluginArray and GetManagementAgentPluginsManagementAgentPluginArrayOutput values.
@@ -2566,12 +2177,6 @@ func (i GetManagementAgentPluginsManagementAgentPluginArray) ToGetManagementAgen
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentPluginsManagementAgentPluginArrayOutput)
 }
 
-func (i GetManagementAgentPluginsManagementAgentPluginArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementAgentPluginsManagementAgentPlugin] {
-	return pulumix.Output[[]GetManagementAgentPluginsManagementAgentPlugin]{
-		OutputState: i.ToGetManagementAgentPluginsManagementAgentPluginArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetManagementAgentPluginsManagementAgentPluginOutput struct{ *pulumi.OutputState }
 
 func (GetManagementAgentPluginsManagementAgentPluginOutput) ElementType() reflect.Type {
@@ -2586,40 +2191,34 @@ func (o GetManagementAgentPluginsManagementAgentPluginOutput) ToGetManagementAge
 	return o
 }
 
-func (o GetManagementAgentPluginsManagementAgentPluginOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagementAgentPluginsManagementAgentPlugin] {
-	return pulumix.Output[GetManagementAgentPluginsManagementAgentPlugin]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Management Agent Plugin description
-func (o GetManagementAgentPluginsManagementAgentPluginOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementAgentPluginsManagementAgentPlugin) string { return v.Description }).(pulumi.StringOutput)
+func (o GetManagementAgentPluginsManagementAgentPluginOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentPluginsManagementAgentPlugin) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Filter to return only Management Agent Plugins having the particular display name.
-func (o GetManagementAgentPluginsManagementAgentPluginOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementAgentPluginsManagementAgentPlugin) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetManagementAgentPluginsManagementAgentPluginOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentPluginsManagementAgentPlugin) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Management Agent Plugin Id
-func (o GetManagementAgentPluginsManagementAgentPluginOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementAgentPluginsManagementAgentPlugin) string { return v.Id }).(pulumi.StringOutput)
+func (o GetManagementAgentPluginsManagementAgentPluginOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentPluginsManagementAgentPlugin) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A flag to indicate whether a given plugin can be deployed from Agent Console UI or not.
-func (o GetManagementAgentPluginsManagementAgentPluginOutput) IsConsoleDeployable() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetManagementAgentPluginsManagementAgentPlugin) bool { return v.IsConsoleDeployable }).(pulumi.BoolOutput)
+func (o GetManagementAgentPluginsManagementAgentPluginOutput) IsConsoleDeployable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentPluginsManagementAgentPlugin) *bool { return v.IsConsoleDeployable }).(pulumi.BoolPtrOutput)
 }
 
 // Management Agent Plugin Name
-func (o GetManagementAgentPluginsManagementAgentPluginOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementAgentPluginsManagementAgentPlugin) string { return v.Name }).(pulumi.StringOutput)
+func (o GetManagementAgentPluginsManagementAgentPluginOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentPluginsManagementAgentPlugin) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Filter to return only Management Agents in the particular lifecycle state.
-func (o GetManagementAgentPluginsManagementAgentPluginOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementAgentPluginsManagementAgentPlugin) string { return v.State }).(pulumi.StringOutput)
+func (o GetManagementAgentPluginsManagementAgentPluginOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentPluginsManagementAgentPlugin) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Supported Platform Types
@@ -2628,8 +2227,8 @@ func (o GetManagementAgentPluginsManagementAgentPluginOutput) SupportedPlatformT
 }
 
 // Management Agent Plugin Version
-func (o GetManagementAgentPluginsManagementAgentPluginOutput) Version() pulumi.IntOutput {
-	return o.ApplyT(func(v GetManagementAgentPluginsManagementAgentPlugin) int { return v.Version }).(pulumi.IntOutput)
+func (o GetManagementAgentPluginsManagementAgentPluginOutput) Version() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentPluginsManagementAgentPlugin) *int { return v.Version }).(pulumi.IntPtrOutput)
 }
 
 type GetManagementAgentPluginsManagementAgentPluginArrayOutput struct{ *pulumi.OutputState }
@@ -2644,12 +2243,6 @@ func (o GetManagementAgentPluginsManagementAgentPluginArrayOutput) ToGetManageme
 
 func (o GetManagementAgentPluginsManagementAgentPluginArrayOutput) ToGetManagementAgentPluginsManagementAgentPluginArrayOutputWithContext(ctx context.Context) GetManagementAgentPluginsManagementAgentPluginArrayOutput {
 	return o
-}
-
-func (o GetManagementAgentPluginsManagementAgentPluginArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementAgentPluginsManagementAgentPlugin] {
-	return pulumix.Output[[]GetManagementAgentPluginsManagementAgentPlugin]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetManagementAgentPluginsManagementAgentPluginArrayOutput) Index(i pulumi.IntInput) GetManagementAgentPluginsManagementAgentPluginOutput {
@@ -2697,12 +2290,6 @@ func (i GetManagementAgentsFilterArgs) ToGetManagementAgentsFilterOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentsFilterOutput)
 }
 
-func (i GetManagementAgentsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagementAgentsFilter] {
-	return pulumix.Output[GetManagementAgentsFilter]{
-		OutputState: i.ToGetManagementAgentsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetManagementAgentsFilterArrayInput is an input type that accepts GetManagementAgentsFilterArray and GetManagementAgentsFilterArrayOutput values.
 // You can construct a concrete instance of `GetManagementAgentsFilterArrayInput` via:
 //
@@ -2728,12 +2315,6 @@ func (i GetManagementAgentsFilterArray) ToGetManagementAgentsFilterArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentsFilterArrayOutput)
 }
 
-func (i GetManagementAgentsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementAgentsFilter] {
-	return pulumix.Output[[]GetManagementAgentsFilter]{
-		OutputState: i.ToGetManagementAgentsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetManagementAgentsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetManagementAgentsFilterOutput) ElementType() reflect.Type {
@@ -2746,12 +2327,6 @@ func (o GetManagementAgentsFilterOutput) ToGetManagementAgentsFilterOutput() Get
 
 func (o GetManagementAgentsFilterOutput) ToGetManagementAgentsFilterOutputWithContext(ctx context.Context) GetManagementAgentsFilterOutput {
 	return o
-}
-
-func (o GetManagementAgentsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagementAgentsFilter] {
-	return pulumix.Output[GetManagementAgentsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Name of the property
@@ -2782,12 +2357,6 @@ func (o GetManagementAgentsFilterArrayOutput) ToGetManagementAgentsFilterArrayOu
 	return o
 }
 
-func (o GetManagementAgentsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementAgentsFilter] {
-	return pulumix.Output[[]GetManagementAgentsFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetManagementAgentsFilterArrayOutput) Index(i pulumi.IntInput) GetManagementAgentsFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagementAgentsFilter {
 		return vs[0].([]GetManagementAgentsFilter)[vs[1].(int)]
@@ -2796,57 +2365,57 @@ func (o GetManagementAgentsFilterArrayOutput) Index(i pulumi.IntInput) GetManage
 
 type GetManagementAgentsManagementAgent struct {
 	// Filter to return only Management Agents in the particular availability status.
-	AvailabilityStatus string `pulumi:"availabilityStatus"`
+	AvailabilityStatus *string `pulumi:"availabilityStatus"`
 	// The OCID of the compartment to which a request will be scoped.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags      map[string]interface{} `pulumi:"definedTags"`
 	DeployPluginsIds []string               `pulumi:"deployPluginsIds"`
 	// Filter to return only Management Agents having the particular display name.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Management Agent host machine name
-	Host string `pulumi:"host"`
+	Host *string `pulumi:"host"`
 	// Filter to return only Management Agents having the particular agent host id.
-	HostId string `pulumi:"hostId"`
+	HostId *string `pulumi:"hostId"`
 	// agent identifier
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// agent install key identifier
-	InstallKeyId string `pulumi:"installKeyId"`
+	InstallKeyId *string `pulumi:"installKeyId"`
 	// Path where Management Agent is installed
-	InstallPath string `pulumi:"installPath"`
+	InstallPath *string `pulumi:"installPath"`
 	// A filter to return either agents or gateway types depending upon install type selected by user. By default both install type will be returned.
-	InstallType string `pulumi:"installType"`
+	InstallType *string `pulumi:"installType"`
 	// true if the agent can be upgraded automatically; false if it must be upgraded manually. This flag is derived from the tenancy level auto upgrade preference.
-	IsAgentAutoUpgradable bool `pulumi:"isAgentAutoUpgradable"`
+	IsAgentAutoUpgradable *bool `pulumi:"isAgentAutoUpgradable"`
 	// true, if the agent image is manually downloaded and installed. false, if the agent is deployed as a plugin in Oracle Cloud Agent.
-	IsCustomerDeployed bool `pulumi:"isCustomerDeployed"`
+	IsCustomerDeployed *bool `pulumi:"isCustomerDeployed"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
-	ManagedAgentId   string `pulumi:"managedAgentId"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
+	ManagedAgentId   *string `pulumi:"managedAgentId"`
 	// Additional properties for this Management Agent
 	ManagementAgentProperties []GetManagementAgentsManagementAgentManagementAgentProperty `pulumi:"managementAgentProperties"`
 	// Platform Name
-	PlatformName string `pulumi:"platformName"`
+	PlatformName *string `pulumi:"platformName"`
 	// Array of PlatformTypes to return only results having the particular platform types. Example: ["LINUX"]
-	PlatformType string `pulumi:"platformType"`
+	PlatformType *string `pulumi:"platformType"`
 	// Platform Version
-	PlatformVersion string `pulumi:"platformVersion"`
+	PlatformVersion *string `pulumi:"platformVersion"`
 	// list of managementAgentPlugins associated with the agent
 	PluginLists []GetManagementAgentsManagementAgentPluginList `pulumi:"pluginLists"`
 	// Version of the deployment artifact instantiated by this Management Agent. The format for Standalone resourceMode is YYMMDD.HHMM, and the format for other modes (whose artifacts are based upon Standalone but can advance independently) is YYMMDD.HHMM.VVVVVVVVVVVV. VVVVVVVVVVVV is always a numeric value between 000000000000 and 999999999999
-	ResourceArtifactVersion string `pulumi:"resourceArtifactVersion"`
+	ResourceArtifactVersion *string `pulumi:"resourceArtifactVersion"`
 	// Filter to return only Management Agents in the particular lifecycle state.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The time the Management Agent was created. An RFC3339 formatted datetime string
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the Management Agent has last recorded its health status in telemetry. This value will be null if the agent has not recorded its health status in last 7 days. An RFC3339 formatted datetime string
-	TimeLastHeartbeat string `pulumi:"timeLastHeartbeat"`
+	TimeLastHeartbeat *string `pulumi:"timeLastHeartbeat"`
 	// The time the Management Agent was last updated. An RFC3339 formatted datetime string
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// Array of versions to return only Management Agents having the particular agent versions. Example: ["202020.0101","210201.0513"]
-	Version string `pulumi:"version"`
+	Version *string `pulumi:"version"`
 }
 
 // GetManagementAgentsManagementAgentInput is an input type that accepts GetManagementAgentsManagementAgentArgs and GetManagementAgentsManagementAgentOutput values.
@@ -2862,57 +2431,57 @@ type GetManagementAgentsManagementAgentInput interface {
 
 type GetManagementAgentsManagementAgentArgs struct {
 	// Filter to return only Management Agents in the particular availability status.
-	AvailabilityStatus pulumi.StringInput `pulumi:"availabilityStatus"`
+	AvailabilityStatus pulumi.StringPtrInput `pulumi:"availabilityStatus"`
 	// The OCID of the compartment to which a request will be scoped.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags      pulumi.MapInput         `pulumi:"definedTags"`
 	DeployPluginsIds pulumi.StringArrayInput `pulumi:"deployPluginsIds"`
 	// Filter to return only Management Agents having the particular display name.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// Management Agent host machine name
-	Host pulumi.StringInput `pulumi:"host"`
+	Host pulumi.StringPtrInput `pulumi:"host"`
 	// Filter to return only Management Agents having the particular agent host id.
-	HostId pulumi.StringInput `pulumi:"hostId"`
+	HostId pulumi.StringPtrInput `pulumi:"hostId"`
 	// agent identifier
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// agent install key identifier
-	InstallKeyId pulumi.StringInput `pulumi:"installKeyId"`
+	InstallKeyId pulumi.StringPtrInput `pulumi:"installKeyId"`
 	// Path where Management Agent is installed
-	InstallPath pulumi.StringInput `pulumi:"installPath"`
+	InstallPath pulumi.StringPtrInput `pulumi:"installPath"`
 	// A filter to return either agents or gateway types depending upon install type selected by user. By default both install type will be returned.
-	InstallType pulumi.StringInput `pulumi:"installType"`
+	InstallType pulumi.StringPtrInput `pulumi:"installType"`
 	// true if the agent can be upgraded automatically; false if it must be upgraded manually. This flag is derived from the tenancy level auto upgrade preference.
-	IsAgentAutoUpgradable pulumi.BoolInput `pulumi:"isAgentAutoUpgradable"`
+	IsAgentAutoUpgradable pulumi.BoolPtrInput `pulumi:"isAgentAutoUpgradable"`
 	// true, if the agent image is manually downloaded and installed. false, if the agent is deployed as a plugin in Oracle Cloud Agent.
-	IsCustomerDeployed pulumi.BoolInput `pulumi:"isCustomerDeployed"`
+	IsCustomerDeployed pulumi.BoolPtrInput `pulumi:"isCustomerDeployed"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
-	ManagedAgentId   pulumi.StringInput `pulumi:"managedAgentId"`
+	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
+	ManagedAgentId   pulumi.StringPtrInput `pulumi:"managedAgentId"`
 	// Additional properties for this Management Agent
 	ManagementAgentProperties GetManagementAgentsManagementAgentManagementAgentPropertyArrayInput `pulumi:"managementAgentProperties"`
 	// Platform Name
-	PlatformName pulumi.StringInput `pulumi:"platformName"`
+	PlatformName pulumi.StringPtrInput `pulumi:"platformName"`
 	// Array of PlatformTypes to return only results having the particular platform types. Example: ["LINUX"]
-	PlatformType pulumi.StringInput `pulumi:"platformType"`
+	PlatformType pulumi.StringPtrInput `pulumi:"platformType"`
 	// Platform Version
-	PlatformVersion pulumi.StringInput `pulumi:"platformVersion"`
+	PlatformVersion pulumi.StringPtrInput `pulumi:"platformVersion"`
 	// list of managementAgentPlugins associated with the agent
 	PluginLists GetManagementAgentsManagementAgentPluginListArrayInput `pulumi:"pluginLists"`
 	// Version of the deployment artifact instantiated by this Management Agent. The format for Standalone resourceMode is YYMMDD.HHMM, and the format for other modes (whose artifacts are based upon Standalone but can advance independently) is YYMMDD.HHMM.VVVVVVVVVVVV. VVVVVVVVVVVV is always a numeric value between 000000000000 and 999999999999
-	ResourceArtifactVersion pulumi.StringInput `pulumi:"resourceArtifactVersion"`
+	ResourceArtifactVersion pulumi.StringPtrInput `pulumi:"resourceArtifactVersion"`
 	// Filter to return only Management Agents in the particular lifecycle state.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The time the Management Agent was created. An RFC3339 formatted datetime string
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The time the Management Agent has last recorded its health status in telemetry. This value will be null if the agent has not recorded its health status in last 7 days. An RFC3339 formatted datetime string
-	TimeLastHeartbeat pulumi.StringInput `pulumi:"timeLastHeartbeat"`
+	TimeLastHeartbeat pulumi.StringPtrInput `pulumi:"timeLastHeartbeat"`
 	// The time the Management Agent was last updated. An RFC3339 formatted datetime string
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 	// Array of versions to return only Management Agents having the particular agent versions. Example: ["202020.0101","210201.0513"]
-	Version pulumi.StringInput `pulumi:"version"`
+	Version pulumi.StringPtrInput `pulumi:"version"`
 }
 
 func (GetManagementAgentsManagementAgentArgs) ElementType() reflect.Type {
@@ -2925,12 +2494,6 @@ func (i GetManagementAgentsManagementAgentArgs) ToGetManagementAgentsManagementA
 
 func (i GetManagementAgentsManagementAgentArgs) ToGetManagementAgentsManagementAgentOutputWithContext(ctx context.Context) GetManagementAgentsManagementAgentOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentsManagementAgentOutput)
-}
-
-func (i GetManagementAgentsManagementAgentArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagementAgentsManagementAgent] {
-	return pulumix.Output[GetManagementAgentsManagementAgent]{
-		OutputState: i.ToGetManagementAgentsManagementAgentOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetManagementAgentsManagementAgentArrayInput is an input type that accepts GetManagementAgentsManagementAgentArray and GetManagementAgentsManagementAgentArrayOutput values.
@@ -2958,12 +2521,6 @@ func (i GetManagementAgentsManagementAgentArray) ToGetManagementAgentsManagement
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentsManagementAgentArrayOutput)
 }
 
-func (i GetManagementAgentsManagementAgentArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementAgentsManagementAgent] {
-	return pulumix.Output[[]GetManagementAgentsManagementAgent]{
-		OutputState: i.ToGetManagementAgentsManagementAgentArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetManagementAgentsManagementAgentOutput struct{ *pulumi.OutputState }
 
 func (GetManagementAgentsManagementAgentOutput) ElementType() reflect.Type {
@@ -2978,20 +2535,14 @@ func (o GetManagementAgentsManagementAgentOutput) ToGetManagementAgentsManagemen
 	return o
 }
 
-func (o GetManagementAgentsManagementAgentOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagementAgentsManagementAgent] {
-	return pulumix.Output[GetManagementAgentsManagementAgent]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Filter to return only Management Agents in the particular availability status.
-func (o GetManagementAgentsManagementAgentOutput) AvailabilityStatus() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementAgentsManagementAgent) string { return v.AvailabilityStatus }).(pulumi.StringOutput)
+func (o GetManagementAgentsManagementAgentOutput) AvailabilityStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentsManagementAgent) *string { return v.AvailabilityStatus }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the compartment to which a request will be scoped.
-func (o GetManagementAgentsManagementAgentOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementAgentsManagementAgent) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetManagementAgentsManagementAgentOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentsManagementAgent) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -3004,8 +2555,8 @@ func (o GetManagementAgentsManagementAgentOutput) DeployPluginsIds() pulumi.Stri
 }
 
 // Filter to return only Management Agents having the particular display name.
-func (o GetManagementAgentsManagementAgentOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementAgentsManagementAgent) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetManagementAgentsManagementAgentOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentsManagementAgent) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -3014,52 +2565,52 @@ func (o GetManagementAgentsManagementAgentOutput) FreeformTags() pulumi.MapOutpu
 }
 
 // Management Agent host machine name
-func (o GetManagementAgentsManagementAgentOutput) Host() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementAgentsManagementAgent) string { return v.Host }).(pulumi.StringOutput)
+func (o GetManagementAgentsManagementAgentOutput) Host() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentsManagementAgent) *string { return v.Host }).(pulumi.StringPtrOutput)
 }
 
 // Filter to return only Management Agents having the particular agent host id.
-func (o GetManagementAgentsManagementAgentOutput) HostId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementAgentsManagementAgent) string { return v.HostId }).(pulumi.StringOutput)
+func (o GetManagementAgentsManagementAgentOutput) HostId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentsManagementAgent) *string { return v.HostId }).(pulumi.StringPtrOutput)
 }
 
 // agent identifier
-func (o GetManagementAgentsManagementAgentOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementAgentsManagementAgent) string { return v.Id }).(pulumi.StringOutput)
+func (o GetManagementAgentsManagementAgentOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentsManagementAgent) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // agent install key identifier
-func (o GetManagementAgentsManagementAgentOutput) InstallKeyId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementAgentsManagementAgent) string { return v.InstallKeyId }).(pulumi.StringOutput)
+func (o GetManagementAgentsManagementAgentOutput) InstallKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentsManagementAgent) *string { return v.InstallKeyId }).(pulumi.StringPtrOutput)
 }
 
 // Path where Management Agent is installed
-func (o GetManagementAgentsManagementAgentOutput) InstallPath() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementAgentsManagementAgent) string { return v.InstallPath }).(pulumi.StringOutput)
+func (o GetManagementAgentsManagementAgentOutput) InstallPath() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentsManagementAgent) *string { return v.InstallPath }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return either agents or gateway types depending upon install type selected by user. By default both install type will be returned.
-func (o GetManagementAgentsManagementAgentOutput) InstallType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementAgentsManagementAgent) string { return v.InstallType }).(pulumi.StringOutput)
+func (o GetManagementAgentsManagementAgentOutput) InstallType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentsManagementAgent) *string { return v.InstallType }).(pulumi.StringPtrOutput)
 }
 
 // true if the agent can be upgraded automatically; false if it must be upgraded manually. This flag is derived from the tenancy level auto upgrade preference.
-func (o GetManagementAgentsManagementAgentOutput) IsAgentAutoUpgradable() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetManagementAgentsManagementAgent) bool { return v.IsAgentAutoUpgradable }).(pulumi.BoolOutput)
+func (o GetManagementAgentsManagementAgentOutput) IsAgentAutoUpgradable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentsManagementAgent) *bool { return v.IsAgentAutoUpgradable }).(pulumi.BoolPtrOutput)
 }
 
 // true, if the agent image is manually downloaded and installed. false, if the agent is deployed as a plugin in Oracle Cloud Agent.
-func (o GetManagementAgentsManagementAgentOutput) IsCustomerDeployed() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetManagementAgentsManagementAgent) bool { return v.IsCustomerDeployed }).(pulumi.BoolOutput)
+func (o GetManagementAgentsManagementAgentOutput) IsCustomerDeployed() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentsManagementAgent) *bool { return v.IsCustomerDeployed }).(pulumi.BoolPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o GetManagementAgentsManagementAgentOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementAgentsManagementAgent) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetManagementAgentsManagementAgentOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentsManagementAgent) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
-func (o GetManagementAgentsManagementAgentOutput) ManagedAgentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementAgentsManagementAgent) string { return v.ManagedAgentId }).(pulumi.StringOutput)
+func (o GetManagementAgentsManagementAgentOutput) ManagedAgentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentsManagementAgent) *string { return v.ManagedAgentId }).(pulumi.StringPtrOutput)
 }
 
 // Additional properties for this Management Agent
@@ -3070,18 +2621,18 @@ func (o GetManagementAgentsManagementAgentOutput) ManagementAgentProperties() Ge
 }
 
 // Platform Name
-func (o GetManagementAgentsManagementAgentOutput) PlatformName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementAgentsManagementAgent) string { return v.PlatformName }).(pulumi.StringOutput)
+func (o GetManagementAgentsManagementAgentOutput) PlatformName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentsManagementAgent) *string { return v.PlatformName }).(pulumi.StringPtrOutput)
 }
 
 // Array of PlatformTypes to return only results having the particular platform types. Example: ["LINUX"]
-func (o GetManagementAgentsManagementAgentOutput) PlatformType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementAgentsManagementAgent) string { return v.PlatformType }).(pulumi.StringOutput)
+func (o GetManagementAgentsManagementAgentOutput) PlatformType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentsManagementAgent) *string { return v.PlatformType }).(pulumi.StringPtrOutput)
 }
 
 // Platform Version
-func (o GetManagementAgentsManagementAgentOutput) PlatformVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementAgentsManagementAgent) string { return v.PlatformVersion }).(pulumi.StringOutput)
+func (o GetManagementAgentsManagementAgentOutput) PlatformVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentsManagementAgent) *string { return v.PlatformVersion }).(pulumi.StringPtrOutput)
 }
 
 // list of managementAgentPlugins associated with the agent
@@ -3092,33 +2643,33 @@ func (o GetManagementAgentsManagementAgentOutput) PluginLists() GetManagementAge
 }
 
 // Version of the deployment artifact instantiated by this Management Agent. The format for Standalone resourceMode is YYMMDD.HHMM, and the format for other modes (whose artifacts are based upon Standalone but can advance independently) is YYMMDD.HHMM.VVVVVVVVVVVV. VVVVVVVVVVVV is always a numeric value between 000000000000 and 999999999999
-func (o GetManagementAgentsManagementAgentOutput) ResourceArtifactVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementAgentsManagementAgent) string { return v.ResourceArtifactVersion }).(pulumi.StringOutput)
+func (o GetManagementAgentsManagementAgentOutput) ResourceArtifactVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentsManagementAgent) *string { return v.ResourceArtifactVersion }).(pulumi.StringPtrOutput)
 }
 
 // Filter to return only Management Agents in the particular lifecycle state.
-func (o GetManagementAgentsManagementAgentOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementAgentsManagementAgent) string { return v.State }).(pulumi.StringOutput)
+func (o GetManagementAgentsManagementAgentOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentsManagementAgent) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The time the Management Agent was created. An RFC3339 formatted datetime string
-func (o GetManagementAgentsManagementAgentOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementAgentsManagementAgent) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetManagementAgentsManagementAgentOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentsManagementAgent) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the Management Agent has last recorded its health status in telemetry. This value will be null if the agent has not recorded its health status in last 7 days. An RFC3339 formatted datetime string
-func (o GetManagementAgentsManagementAgentOutput) TimeLastHeartbeat() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementAgentsManagementAgent) string { return v.TimeLastHeartbeat }).(pulumi.StringOutput)
+func (o GetManagementAgentsManagementAgentOutput) TimeLastHeartbeat() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentsManagementAgent) *string { return v.TimeLastHeartbeat }).(pulumi.StringPtrOutput)
 }
 
 // The time the Management Agent was last updated. An RFC3339 formatted datetime string
-func (o GetManagementAgentsManagementAgentOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementAgentsManagementAgent) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetManagementAgentsManagementAgentOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentsManagementAgent) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // Array of versions to return only Management Agents having the particular agent versions. Example: ["202020.0101","210201.0513"]
-func (o GetManagementAgentsManagementAgentOutput) Version() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementAgentsManagementAgent) string { return v.Version }).(pulumi.StringOutput)
+func (o GetManagementAgentsManagementAgentOutput) Version() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentsManagementAgent) *string { return v.Version }).(pulumi.StringPtrOutput)
 }
 
 type GetManagementAgentsManagementAgentArrayOutput struct{ *pulumi.OutputState }
@@ -3135,12 +2686,6 @@ func (o GetManagementAgentsManagementAgentArrayOutput) ToGetManagementAgentsMana
 	return o
 }
 
-func (o GetManagementAgentsManagementAgentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementAgentsManagementAgent] {
-	return pulumix.Output[[]GetManagementAgentsManagementAgent]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetManagementAgentsManagementAgentArrayOutput) Index(i pulumi.IntInput) GetManagementAgentsManagementAgentOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagementAgentsManagementAgent {
 		return vs[0].([]GetManagementAgentsManagementAgent)[vs[1].(int)]
@@ -3149,9 +2694,9 @@ func (o GetManagementAgentsManagementAgentArrayOutput) Index(i pulumi.IntInput) 
 
 type GetManagementAgentsManagementAgentManagementAgentProperty struct {
 	// Name of the property
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Unit for the property
-	Units string `pulumi:"units"`
+	Units *string `pulumi:"units"`
 	// Values of the property
 	Values []string `pulumi:"values"`
 }
@@ -3169,9 +2714,9 @@ type GetManagementAgentsManagementAgentManagementAgentPropertyInput interface {
 
 type GetManagementAgentsManagementAgentManagementAgentPropertyArgs struct {
 	// Name of the property
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Unit for the property
-	Units pulumi.StringInput `pulumi:"units"`
+	Units pulumi.StringPtrInput `pulumi:"units"`
 	// Values of the property
 	Values pulumi.StringArrayInput `pulumi:"values"`
 }
@@ -3186,12 +2731,6 @@ func (i GetManagementAgentsManagementAgentManagementAgentPropertyArgs) ToGetMana
 
 func (i GetManagementAgentsManagementAgentManagementAgentPropertyArgs) ToGetManagementAgentsManagementAgentManagementAgentPropertyOutputWithContext(ctx context.Context) GetManagementAgentsManagementAgentManagementAgentPropertyOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentsManagementAgentManagementAgentPropertyOutput)
-}
-
-func (i GetManagementAgentsManagementAgentManagementAgentPropertyArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagementAgentsManagementAgentManagementAgentProperty] {
-	return pulumix.Output[GetManagementAgentsManagementAgentManagementAgentProperty]{
-		OutputState: i.ToGetManagementAgentsManagementAgentManagementAgentPropertyOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetManagementAgentsManagementAgentManagementAgentPropertyArrayInput is an input type that accepts GetManagementAgentsManagementAgentManagementAgentPropertyArray and GetManagementAgentsManagementAgentManagementAgentPropertyArrayOutput values.
@@ -3219,12 +2758,6 @@ func (i GetManagementAgentsManagementAgentManagementAgentPropertyArray) ToGetMan
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentsManagementAgentManagementAgentPropertyArrayOutput)
 }
 
-func (i GetManagementAgentsManagementAgentManagementAgentPropertyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementAgentsManagementAgentManagementAgentProperty] {
-	return pulumix.Output[[]GetManagementAgentsManagementAgentManagementAgentProperty]{
-		OutputState: i.ToGetManagementAgentsManagementAgentManagementAgentPropertyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetManagementAgentsManagementAgentManagementAgentPropertyOutput struct{ *pulumi.OutputState }
 
 func (GetManagementAgentsManagementAgentManagementAgentPropertyOutput) ElementType() reflect.Type {
@@ -3239,20 +2772,14 @@ func (o GetManagementAgentsManagementAgentManagementAgentPropertyOutput) ToGetMa
 	return o
 }
 
-func (o GetManagementAgentsManagementAgentManagementAgentPropertyOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagementAgentsManagementAgentManagementAgentProperty] {
-	return pulumix.Output[GetManagementAgentsManagementAgentManagementAgentProperty]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Name of the property
-func (o GetManagementAgentsManagementAgentManagementAgentPropertyOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementAgentsManagementAgentManagementAgentProperty) string { return v.Name }).(pulumi.StringOutput)
+func (o GetManagementAgentsManagementAgentManagementAgentPropertyOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentsManagementAgentManagementAgentProperty) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Unit for the property
-func (o GetManagementAgentsManagementAgentManagementAgentPropertyOutput) Units() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementAgentsManagementAgentManagementAgentProperty) string { return v.Units }).(pulumi.StringOutput)
+func (o GetManagementAgentsManagementAgentManagementAgentPropertyOutput) Units() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentsManagementAgentManagementAgentProperty) *string { return v.Units }).(pulumi.StringPtrOutput)
 }
 
 // Values of the property
@@ -3274,12 +2801,6 @@ func (o GetManagementAgentsManagementAgentManagementAgentPropertyArrayOutput) To
 	return o
 }
 
-func (o GetManagementAgentsManagementAgentManagementAgentPropertyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementAgentsManagementAgentManagementAgentProperty] {
-	return pulumix.Output[[]GetManagementAgentsManagementAgentManagementAgentProperty]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetManagementAgentsManagementAgentManagementAgentPropertyArrayOutput) Index(i pulumi.IntInput) GetManagementAgentsManagementAgentManagementAgentPropertyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagementAgentsManagementAgentManagementAgentProperty {
 		return vs[0].([]GetManagementAgentsManagementAgentManagementAgentProperty)[vs[1].(int)]
@@ -3288,19 +2809,19 @@ func (o GetManagementAgentsManagementAgentManagementAgentPropertyArrayOutput) In
 
 type GetManagementAgentsManagementAgentPluginList struct {
 	// flag indicating whether the plugin is in enabled mode or disabled mode.
-	IsEnabled bool `pulumi:"isEnabled"`
+	IsEnabled *bool `pulumi:"isEnabled"`
 	// Management Agent Plugin Identifier, can be renamed
-	PluginDisplayName string `pulumi:"pluginDisplayName"`
+	PluginDisplayName *string `pulumi:"pluginDisplayName"`
 	// Plugin Id
-	PluginId string `pulumi:"pluginId"`
+	PluginId *string `pulumi:"pluginId"`
 	// Array of pluginName to return only Management Agents having the particular Plugins installed. A special pluginName of 'None' can be provided and this will return only Management Agents having no plugin installed. Example: ["PluginA"]
-	PluginName string `pulumi:"pluginName"`
+	PluginName *string `pulumi:"pluginName"`
 	// Plugin Status
-	PluginStatus string `pulumi:"pluginStatus"`
+	PluginStatus *string `pulumi:"pluginStatus"`
 	// Status message of the Plugin
-	PluginStatusMessage string `pulumi:"pluginStatusMessage"`
+	PluginStatusMessage *string `pulumi:"pluginStatusMessage"`
 	// Plugin Version
-	PluginVersion string `pulumi:"pluginVersion"`
+	PluginVersion *string `pulumi:"pluginVersion"`
 }
 
 // GetManagementAgentsManagementAgentPluginListInput is an input type that accepts GetManagementAgentsManagementAgentPluginListArgs and GetManagementAgentsManagementAgentPluginListOutput values.
@@ -3316,19 +2837,19 @@ type GetManagementAgentsManagementAgentPluginListInput interface {
 
 type GetManagementAgentsManagementAgentPluginListArgs struct {
 	// flag indicating whether the plugin is in enabled mode or disabled mode.
-	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+	IsEnabled pulumi.BoolPtrInput `pulumi:"isEnabled"`
 	// Management Agent Plugin Identifier, can be renamed
-	PluginDisplayName pulumi.StringInput `pulumi:"pluginDisplayName"`
+	PluginDisplayName pulumi.StringPtrInput `pulumi:"pluginDisplayName"`
 	// Plugin Id
-	PluginId pulumi.StringInput `pulumi:"pluginId"`
+	PluginId pulumi.StringPtrInput `pulumi:"pluginId"`
 	// Array of pluginName to return only Management Agents having the particular Plugins installed. A special pluginName of 'None' can be provided and this will return only Management Agents having no plugin installed. Example: ["PluginA"]
-	PluginName pulumi.StringInput `pulumi:"pluginName"`
+	PluginName pulumi.StringPtrInput `pulumi:"pluginName"`
 	// Plugin Status
-	PluginStatus pulumi.StringInput `pulumi:"pluginStatus"`
+	PluginStatus pulumi.StringPtrInput `pulumi:"pluginStatus"`
 	// Status message of the Plugin
-	PluginStatusMessage pulumi.StringInput `pulumi:"pluginStatusMessage"`
+	PluginStatusMessage pulumi.StringPtrInput `pulumi:"pluginStatusMessage"`
 	// Plugin Version
-	PluginVersion pulumi.StringInput `pulumi:"pluginVersion"`
+	PluginVersion pulumi.StringPtrInput `pulumi:"pluginVersion"`
 }
 
 func (GetManagementAgentsManagementAgentPluginListArgs) ElementType() reflect.Type {
@@ -3341,12 +2862,6 @@ func (i GetManagementAgentsManagementAgentPluginListArgs) ToGetManagementAgentsM
 
 func (i GetManagementAgentsManagementAgentPluginListArgs) ToGetManagementAgentsManagementAgentPluginListOutputWithContext(ctx context.Context) GetManagementAgentsManagementAgentPluginListOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentsManagementAgentPluginListOutput)
-}
-
-func (i GetManagementAgentsManagementAgentPluginListArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagementAgentsManagementAgentPluginList] {
-	return pulumix.Output[GetManagementAgentsManagementAgentPluginList]{
-		OutputState: i.ToGetManagementAgentsManagementAgentPluginListOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetManagementAgentsManagementAgentPluginListArrayInput is an input type that accepts GetManagementAgentsManagementAgentPluginListArray and GetManagementAgentsManagementAgentPluginListArrayOutput values.
@@ -3374,12 +2889,6 @@ func (i GetManagementAgentsManagementAgentPluginListArray) ToGetManagementAgents
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentsManagementAgentPluginListArrayOutput)
 }
 
-func (i GetManagementAgentsManagementAgentPluginListArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementAgentsManagementAgentPluginList] {
-	return pulumix.Output[[]GetManagementAgentsManagementAgentPluginList]{
-		OutputState: i.ToGetManagementAgentsManagementAgentPluginListArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetManagementAgentsManagementAgentPluginListOutput struct{ *pulumi.OutputState }
 
 func (GetManagementAgentsManagementAgentPluginListOutput) ElementType() reflect.Type {
@@ -3394,45 +2903,39 @@ func (o GetManagementAgentsManagementAgentPluginListOutput) ToGetManagementAgent
 	return o
 }
 
-func (o GetManagementAgentsManagementAgentPluginListOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagementAgentsManagementAgentPluginList] {
-	return pulumix.Output[GetManagementAgentsManagementAgentPluginList]{
-		OutputState: o.OutputState,
-	}
-}
-
 // flag indicating whether the plugin is in enabled mode or disabled mode.
-func (o GetManagementAgentsManagementAgentPluginListOutput) IsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetManagementAgentsManagementAgentPluginList) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+func (o GetManagementAgentsManagementAgentPluginListOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentsManagementAgentPluginList) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // Management Agent Plugin Identifier, can be renamed
-func (o GetManagementAgentsManagementAgentPluginListOutput) PluginDisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementAgentsManagementAgentPluginList) string { return v.PluginDisplayName }).(pulumi.StringOutput)
+func (o GetManagementAgentsManagementAgentPluginListOutput) PluginDisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentsManagementAgentPluginList) *string { return v.PluginDisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Plugin Id
-func (o GetManagementAgentsManagementAgentPluginListOutput) PluginId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementAgentsManagementAgentPluginList) string { return v.PluginId }).(pulumi.StringOutput)
+func (o GetManagementAgentsManagementAgentPluginListOutput) PluginId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentsManagementAgentPluginList) *string { return v.PluginId }).(pulumi.StringPtrOutput)
 }
 
 // Array of pluginName to return only Management Agents having the particular Plugins installed. A special pluginName of 'None' can be provided and this will return only Management Agents having no plugin installed. Example: ["PluginA"]
-func (o GetManagementAgentsManagementAgentPluginListOutput) PluginName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementAgentsManagementAgentPluginList) string { return v.PluginName }).(pulumi.StringOutput)
+func (o GetManagementAgentsManagementAgentPluginListOutput) PluginName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentsManagementAgentPluginList) *string { return v.PluginName }).(pulumi.StringPtrOutput)
 }
 
 // Plugin Status
-func (o GetManagementAgentsManagementAgentPluginListOutput) PluginStatus() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementAgentsManagementAgentPluginList) string { return v.PluginStatus }).(pulumi.StringOutput)
+func (o GetManagementAgentsManagementAgentPluginListOutput) PluginStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentsManagementAgentPluginList) *string { return v.PluginStatus }).(pulumi.StringPtrOutput)
 }
 
 // Status message of the Plugin
-func (o GetManagementAgentsManagementAgentPluginListOutput) PluginStatusMessage() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementAgentsManagementAgentPluginList) string { return v.PluginStatusMessage }).(pulumi.StringOutput)
+func (o GetManagementAgentsManagementAgentPluginListOutput) PluginStatusMessage() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentsManagementAgentPluginList) *string { return v.PluginStatusMessage }).(pulumi.StringPtrOutput)
 }
 
 // Plugin Version
-func (o GetManagementAgentsManagementAgentPluginListOutput) PluginVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagementAgentsManagementAgentPluginList) string { return v.PluginVersion }).(pulumi.StringOutput)
+func (o GetManagementAgentsManagementAgentPluginListOutput) PluginVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentsManagementAgentPluginList) *string { return v.PluginVersion }).(pulumi.StringPtrOutput)
 }
 
 type GetManagementAgentsManagementAgentPluginListArrayOutput struct{ *pulumi.OutputState }
@@ -3447,12 +2950,6 @@ func (o GetManagementAgentsManagementAgentPluginListArrayOutput) ToGetManagement
 
 func (o GetManagementAgentsManagementAgentPluginListArrayOutput) ToGetManagementAgentsManagementAgentPluginListArrayOutputWithContext(ctx context.Context) GetManagementAgentsManagementAgentPluginListArrayOutput {
 	return o
-}
-
-func (o GetManagementAgentsManagementAgentPluginListArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagementAgentsManagementAgentPluginList] {
-	return pulumix.Output[[]GetManagementAgentsManagementAgentPluginList]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetManagementAgentsManagementAgentPluginListArrayOutput) Index(i pulumi.IntInput) GetManagementAgentsManagementAgentPluginListOutput {

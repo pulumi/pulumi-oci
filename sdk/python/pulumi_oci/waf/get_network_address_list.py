@@ -68,58 +68,37 @@ class GetNetworkAddressListResult:
 
     @property
     @pulumi.getter
-    def addresses(self) -> Sequence[str]:
-        """
-        A private IP address or CIDR IP address range.
-        """
+    def addresses(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "addresses")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        NetworkAddressList display name, can be renamed.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the NetworkAddressList.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in FAILED state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
@@ -129,50 +108,32 @@ class GetNetworkAddressListResult:
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the NetworkAddressList.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the NetworkAddressList was created. An RFC3339 formatted datetime string.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the NetworkAddressList was updated. An RFC3339 formatted datetime string.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter
-    def type(self) -> str:
-        """
-        Type of NetworkAddressList.
-        """
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
     @property
     @pulumi.getter(name="vcnAddresses")
-    def vcn_addresses(self) -> Sequence['outputs.GetNetworkAddressListVcnAddressResult']:
-        """
-        A list of private address prefixes, each associated with a particular VCN. To specify all addresses in a VCN, use "0.0.0.0/0" for IPv4 and "::/0" for IPv6.
-        """
+    def vcn_addresses(self) -> Optional[Sequence['outputs.GetNetworkAddressListVcnAddressResult']]:
         return pulumi.get(self, "vcn_addresses")
 
 
@@ -201,21 +162,7 @@ class AwaitableGetNetworkAddressListResult(GetNetworkAddressListResult):
 def get_network_address_list(network_address_list_id: Optional[str] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNetworkAddressListResult:
     """
-    This data source provides details about a specific Network Address List resource in Oracle Cloud Infrastructure Waf service.
-
-    Gets a NetworkAddressList by OCID.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_network_address_list = oci.Waf.get_network_address_list(network_address_list_id=oci_waf_network_address_list["test_network_address_list"]["id"])
-    ```
-
-
-    :param str network_address_list_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the NetworkAddressList.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['networkAddressListId'] = network_address_list_id
@@ -243,20 +190,6 @@ def get_network_address_list(network_address_list_id: Optional[str] = None,
 def get_network_address_list_output(network_address_list_id: Optional[pulumi.Input[str]] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNetworkAddressListResult]:
     """
-    This data source provides details about a specific Network Address List resource in Oracle Cloud Infrastructure Waf service.
-
-    Gets a NetworkAddressList by OCID.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_network_address_list = oci.Waf.get_network_address_list(network_address_list_id=oci_waf_network_address_list["test_network_address_list"]["id"])
-    ```
-
-
-    :param str network_address_list_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the NetworkAddressList.
+    Use this data source to access information about an existing resource.
     """
     ...

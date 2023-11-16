@@ -98,12 +98,12 @@ export interface GetCompartmentsResult {
     /**
      * The list of compartments.
      */
-    readonly compartments: outputs.Identity.GetCompartmentsCompartment[];
+    readonly compartments?: outputs.Identity.GetCompartmentsCompartment[];
     readonly filters?: outputs.Identity.GetCompartmentsFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The name you assign to the compartment during creation. The name must be unique across all compartments in the parent. Avoid entering confidential information.
      */

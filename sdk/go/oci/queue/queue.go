@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Queue resource in Oracle Cloud Infrastructure Queue service.
@@ -69,13 +68,13 @@ type Queue struct {
 	pulumi.CustomResourceState
 
 	// (Updatable) The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue's resources.
-	ChannelConsumptionLimit pulumi.IntOutput `pulumi:"channelConsumptionLimit"`
+	ChannelConsumptionLimit pulumi.IntPtrOutput `pulumi:"channelConsumptionLimit"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the queue.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom encryption key to be used to encrypt messages content.
-	CustomEncryptionKeyId pulumi.StringOutput `pulumi:"customEncryptionKeyId"`
+	CustomEncryptionKeyId pulumi.StringPtrOutput `pulumi:"customEncryptionKeyId"`
 	// (Updatable) The number of times a message can be delivered to a consumer before being moved to the dead letter queue. A value of 0 indicates that the DLQ is not used.
-	DeadLetterQueueDeliveryCount pulumi.IntOutput `pulumi:"deadLetterQueueDeliveryCount"`
+	DeadLetterQueueDeliveryCount pulumi.IntPtrOutput `pulumi:"deadLetterQueueDeliveryCount"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) The user-friendly name of the queue.
@@ -83,25 +82,25 @@ type Queue struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// Any additional details about the current state of the queue.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// The endpoint to use to consume or publish messages in the queue.
-	MessagesEndpoint pulumi.StringOutput    `pulumi:"messagesEndpoint"`
+	MessagesEndpoint pulumi.StringPtrOutput `pulumi:"messagesEndpoint"`
 	PurgeQueue       pulumi.BoolPtrOutput   `pulumi:"purgeQueue"`
 	PurgeType        pulumi.StringPtrOutput `pulumi:"purgeType"`
 	// The retention period of messages in the queue, in seconds.
-	RetentionInSeconds pulumi.IntOutput `pulumi:"retentionInSeconds"`
+	RetentionInSeconds pulumi.IntPtrOutput `pulumi:"retentionInSeconds"`
 	// The current state of the queue.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The time that the queue was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The time that the queue was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 	// (Updatable) The default polling timeout of the messages in the queue, in seconds.
-	TimeoutInSeconds pulumi.IntOutput `pulumi:"timeoutInSeconds"`
+	TimeoutInSeconds pulumi.IntPtrOutput `pulumi:"timeoutInSeconds"`
 	// (Updatable) The default visibility timeout of the messages consumed from the queue, in seconds.
-	VisibilityInSeconds pulumi.IntOutput `pulumi:"visibilityInSeconds"`
+	VisibilityInSeconds pulumi.IntPtrOutput `pulumi:"visibilityInSeconds"`
 }
 
 // NewQueue registers a new resource with the given unique name, arguments, and options.
@@ -291,12 +290,6 @@ func (i *Queue) ToQueueOutputWithContext(ctx context.Context) QueueOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(QueueOutput)
 }
 
-func (i *Queue) ToOutput(ctx context.Context) pulumix.Output[*Queue] {
-	return pulumix.Output[*Queue]{
-		OutputState: i.ToQueueOutputWithContext(ctx).OutputState,
-	}
-}
-
 // QueueArrayInput is an input type that accepts QueueArray and QueueArrayOutput values.
 // You can construct a concrete instance of `QueueArrayInput` via:
 //
@@ -320,12 +313,6 @@ func (i QueueArray) ToQueueArrayOutput() QueueArrayOutput {
 
 func (i QueueArray) ToQueueArrayOutputWithContext(ctx context.Context) QueueArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(QueueArrayOutput)
-}
-
-func (i QueueArray) ToOutput(ctx context.Context) pulumix.Output[[]*Queue] {
-	return pulumix.Output[[]*Queue]{
-		OutputState: i.ToQueueArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // QueueMapInput is an input type that accepts QueueMap and QueueMapOutput values.
@@ -353,12 +340,6 @@ func (i QueueMap) ToQueueMapOutputWithContext(ctx context.Context) QueueMapOutpu
 	return pulumi.ToOutputWithContext(ctx, i).(QueueMapOutput)
 }
 
-func (i QueueMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Queue] {
-	return pulumix.Output[map[string]*Queue]{
-		OutputState: i.ToQueueMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type QueueOutput struct{ *pulumi.OutputState }
 
 func (QueueOutput) ElementType() reflect.Type {
@@ -373,15 +354,9 @@ func (o QueueOutput) ToQueueOutputWithContext(ctx context.Context) QueueOutput {
 	return o
 }
 
-func (o QueueOutput) ToOutput(ctx context.Context) pulumix.Output[*Queue] {
-	return pulumix.Output[*Queue]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue's resources.
-func (o QueueOutput) ChannelConsumptionLimit() pulumi.IntOutput {
-	return o.ApplyT(func(v *Queue) pulumi.IntOutput { return v.ChannelConsumptionLimit }).(pulumi.IntOutput)
+func (o QueueOutput) ChannelConsumptionLimit() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *Queue) pulumi.IntPtrOutput { return v.ChannelConsumptionLimit }).(pulumi.IntPtrOutput)
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the queue.
@@ -390,13 +365,13 @@ func (o QueueOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom encryption key to be used to encrypt messages content.
-func (o QueueOutput) CustomEncryptionKeyId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Queue) pulumi.StringOutput { return v.CustomEncryptionKeyId }).(pulumi.StringOutput)
+func (o QueueOutput) CustomEncryptionKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Queue) pulumi.StringPtrOutput { return v.CustomEncryptionKeyId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The number of times a message can be delivered to a consumer before being moved to the dead letter queue. A value of 0 indicates that the DLQ is not used.
-func (o QueueOutput) DeadLetterQueueDeliveryCount() pulumi.IntOutput {
-	return o.ApplyT(func(v *Queue) pulumi.IntOutput { return v.DeadLetterQueueDeliveryCount }).(pulumi.IntOutput)
+func (o QueueOutput) DeadLetterQueueDeliveryCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *Queue) pulumi.IntPtrOutput { return v.DeadLetterQueueDeliveryCount }).(pulumi.IntPtrOutput)
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -415,13 +390,13 @@ func (o QueueOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Any additional details about the current state of the queue.
-func (o QueueOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *Queue) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o QueueOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Queue) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The endpoint to use to consume or publish messages in the queue.
-func (o QueueOutput) MessagesEndpoint() pulumi.StringOutput {
-	return o.ApplyT(func(v *Queue) pulumi.StringOutput { return v.MessagesEndpoint }).(pulumi.StringOutput)
+func (o QueueOutput) MessagesEndpoint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Queue) pulumi.StringPtrOutput { return v.MessagesEndpoint }).(pulumi.StringPtrOutput)
 }
 
 func (o QueueOutput) PurgeQueue() pulumi.BoolPtrOutput {
@@ -433,13 +408,13 @@ func (o QueueOutput) PurgeType() pulumi.StringPtrOutput {
 }
 
 // The retention period of messages in the queue, in seconds.
-func (o QueueOutput) RetentionInSeconds() pulumi.IntOutput {
-	return o.ApplyT(func(v *Queue) pulumi.IntOutput { return v.RetentionInSeconds }).(pulumi.IntOutput)
+func (o QueueOutput) RetentionInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *Queue) pulumi.IntPtrOutput { return v.RetentionInSeconds }).(pulumi.IntPtrOutput)
 }
 
 // The current state of the queue.
-func (o QueueOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *Queue) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o QueueOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Queue) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -448,23 +423,23 @@ func (o QueueOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time that the queue was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
-func (o QueueOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Queue) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o QueueOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Queue) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time that the queue was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
-func (o QueueOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Queue) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o QueueOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Queue) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The default polling timeout of the messages in the queue, in seconds.
-func (o QueueOutput) TimeoutInSeconds() pulumi.IntOutput {
-	return o.ApplyT(func(v *Queue) pulumi.IntOutput { return v.TimeoutInSeconds }).(pulumi.IntOutput)
+func (o QueueOutput) TimeoutInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *Queue) pulumi.IntPtrOutput { return v.TimeoutInSeconds }).(pulumi.IntPtrOutput)
 }
 
 // (Updatable) The default visibility timeout of the messages consumed from the queue, in seconds.
-func (o QueueOutput) VisibilityInSeconds() pulumi.IntOutput {
-	return o.ApplyT(func(v *Queue) pulumi.IntOutput { return v.VisibilityInSeconds }).(pulumi.IntOutput)
+func (o QueueOutput) VisibilityInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *Queue) pulumi.IntPtrOutput { return v.VisibilityInSeconds }).(pulumi.IntPtrOutput)
 }
 
 type QueueArrayOutput struct{ *pulumi.OutputState }
@@ -479,12 +454,6 @@ func (o QueueArrayOutput) ToQueueArrayOutput() QueueArrayOutput {
 
 func (o QueueArrayOutput) ToQueueArrayOutputWithContext(ctx context.Context) QueueArrayOutput {
 	return o
-}
-
-func (o QueueArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Queue] {
-	return pulumix.Output[[]*Queue]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o QueueArrayOutput) Index(i pulumi.IntInput) QueueOutput {
@@ -505,12 +474,6 @@ func (o QueueMapOutput) ToQueueMapOutput() QueueMapOutput {
 
 func (o QueueMapOutput) ToQueueMapOutputWithContext(ctx context.Context) QueueMapOutput {
 	return o
-}
-
-func (o QueueMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Queue] {
-	return pulumix.Output[map[string]*Queue]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o QueueMapOutput) MapIndex(k pulumi.StringInput) QueueOutput {

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Agent resource in Oracle Cloud Infrastructure Cloud Bridge service.
@@ -62,43 +61,43 @@ type LookupAgentResult struct {
 	// Agent identifier.
 	AgentId string `pulumi:"agentId"`
 	// Resource principal public key.
-	AgentPubKey string `pulumi:"agentPubKey"`
+	AgentPubKey *string `pulumi:"agentPubKey"`
 	// Type of the Agent.
-	AgentType string `pulumi:"agentType"`
+	AgentType *string `pulumi:"agentType"`
 	// Agent identifier.
-	AgentVersion string `pulumi:"agentVersion"`
+	AgentVersion *string `pulumi:"agentVersion"`
 	// Compartment identifier.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Agent identifier, can be renamed.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Environment identifier.
-	EnvironmentId string `pulumi:"environmentId"`
+	EnvironmentId *string `pulumi:"environmentId"`
 	// The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The current heartbeat status of the Agent based on its timeLastSyncReceived value.
-	HeartBeatStatus string `pulumi:"heartBeatStatus"`
+	HeartBeatStatus *string `pulumi:"heartBeatStatus"`
 	// Unique identifier that is immutable on creation.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// OS version.
-	OsVersion string `pulumi:"osVersion"`
+	OsVersion *string `pulumi:"osVersion"`
 	// List of plugins associated with the agent.
 	PluginLists []GetAgentPluginList `pulumi:"pluginLists"`
 	// The current state of the Agent.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time when the Agent was created. An RFC3339 formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time since epoch for when the public key will expire. An RFC3339 formatted datetime string.
-	TimeExpireAgentKeyInMs string `pulumi:"timeExpireAgentKeyInMs"`
+	TimeExpireAgentKeyInMs *string `pulumi:"timeExpireAgentKeyInMs"`
 	// The time when the last heartbeat of the Agent was noted. An RFC3339 formatted datetime string.
-	TimeLastSyncReceived string `pulumi:"timeLastSyncReceived"`
+	TimeLastSyncReceived *string `pulumi:"timeLastSyncReceived"`
 	// The time when the Agent was updated. An RFC3339 formatted datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func LookupAgentOutput(ctx *pulumi.Context, args LookupAgentOutputArgs, opts ...pulumi.InvokeOption) LookupAgentResultOutput {
@@ -139,35 +138,29 @@ func (o LookupAgentResultOutput) ToLookupAgentResultOutputWithContext(ctx contex
 	return o
 }
 
-func (o LookupAgentResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupAgentResult] {
-	return pulumix.Output[LookupAgentResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Agent identifier.
 func (o LookupAgentResultOutput) AgentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAgentResult) string { return v.AgentId }).(pulumi.StringOutput)
 }
 
 // Resource principal public key.
-func (o LookupAgentResultOutput) AgentPubKey() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAgentResult) string { return v.AgentPubKey }).(pulumi.StringOutput)
+func (o LookupAgentResultOutput) AgentPubKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAgentResult) *string { return v.AgentPubKey }).(pulumi.StringPtrOutput)
 }
 
 // Type of the Agent.
-func (o LookupAgentResultOutput) AgentType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAgentResult) string { return v.AgentType }).(pulumi.StringOutput)
+func (o LookupAgentResultOutput) AgentType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAgentResult) *string { return v.AgentType }).(pulumi.StringPtrOutput)
 }
 
 // Agent identifier.
-func (o LookupAgentResultOutput) AgentVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAgentResult) string { return v.AgentVersion }).(pulumi.StringOutput)
+func (o LookupAgentResultOutput) AgentVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAgentResult) *string { return v.AgentVersion }).(pulumi.StringPtrOutput)
 }
 
 // Compartment identifier.
-func (o LookupAgentResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAgentResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupAgentResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAgentResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -176,13 +169,13 @@ func (o LookupAgentResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // Agent identifier, can be renamed.
-func (o LookupAgentResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAgentResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupAgentResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAgentResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Environment identifier.
-func (o LookupAgentResultOutput) EnvironmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAgentResult) string { return v.EnvironmentId }).(pulumi.StringOutput)
+func (o LookupAgentResultOutput) EnvironmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAgentResult) *string { return v.EnvironmentId }).(pulumi.StringPtrOutput)
 }
 
 // The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -191,23 +184,23 @@ func (o LookupAgentResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The current heartbeat status of the Agent based on its timeLastSyncReceived value.
-func (o LookupAgentResultOutput) HeartBeatStatus() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAgentResult) string { return v.HeartBeatStatus }).(pulumi.StringOutput)
+func (o LookupAgentResultOutput) HeartBeatStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAgentResult) *string { return v.HeartBeatStatus }).(pulumi.StringPtrOutput)
 }
 
 // Unique identifier that is immutable on creation.
-func (o LookupAgentResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAgentResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupAgentResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAgentResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
-func (o LookupAgentResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAgentResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupAgentResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAgentResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // OS version.
-func (o LookupAgentResultOutput) OsVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAgentResult) string { return v.OsVersion }).(pulumi.StringOutput)
+func (o LookupAgentResultOutput) OsVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAgentResult) *string { return v.OsVersion }).(pulumi.StringPtrOutput)
 }
 
 // List of plugins associated with the agent.
@@ -216,8 +209,8 @@ func (o LookupAgentResultOutput) PluginLists() GetAgentPluginListArrayOutput {
 }
 
 // The current state of the Agent.
-func (o LookupAgentResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAgentResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupAgentResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAgentResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
@@ -226,23 +219,23 @@ func (o LookupAgentResultOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time when the Agent was created. An RFC3339 formatted datetime string.
-func (o LookupAgentResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAgentResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupAgentResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAgentResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time since epoch for when the public key will expire. An RFC3339 formatted datetime string.
-func (o LookupAgentResultOutput) TimeExpireAgentKeyInMs() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAgentResult) string { return v.TimeExpireAgentKeyInMs }).(pulumi.StringOutput)
+func (o LookupAgentResultOutput) TimeExpireAgentKeyInMs() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAgentResult) *string { return v.TimeExpireAgentKeyInMs }).(pulumi.StringPtrOutput)
 }
 
 // The time when the last heartbeat of the Agent was noted. An RFC3339 formatted datetime string.
-func (o LookupAgentResultOutput) TimeLastSyncReceived() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAgentResult) string { return v.TimeLastSyncReceived }).(pulumi.StringOutput)
+func (o LookupAgentResultOutput) TimeLastSyncReceived() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAgentResult) *string { return v.TimeLastSyncReceived }).(pulumi.StringPtrOutput)
 }
 
 // The time when the Agent was updated. An RFC3339 formatted datetime string.
-func (o LookupAgentResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupAgentResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupAgentResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupAgentResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

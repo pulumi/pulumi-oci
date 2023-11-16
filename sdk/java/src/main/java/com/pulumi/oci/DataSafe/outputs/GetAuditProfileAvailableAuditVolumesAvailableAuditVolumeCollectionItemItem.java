@@ -6,6 +6,8 @@ package com.pulumi.oci.DataSafe.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemItem {
@@ -13,51 +15,51 @@ public final class GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeColle
      * @return The OCID of the audit.
      * 
      */
-    private String auditProfileId;
+    private @Nullable String auditProfileId;
     /**
      * @return Represents the month under consideration for which aggregated audit data volume available at the target is computed. This field will be the UTC start of the day of the first day of the month for which the aggregate count corresponds to, in the format defined by RFC3339.. For instance, the value of 01-01-2021T00:00:00Z represents Jan 2021.
      * 
      */
-    private String monthInConsideration;
+    private @Nullable String monthInConsideration;
     /**
      * @return The audit trail location.
      * 
      */
-    private String trailLocation;
+    private @Nullable String trailLocation;
     /**
      * @return Represents the aggregated audit data volume available in the audit trails on the target database which is yet to be collected by Data Safe for the specified month.
      * 
      */
-    private String volume;
+    private @Nullable String volume;
 
     private GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemItem() {}
     /**
      * @return The OCID of the audit.
      * 
      */
-    public String auditProfileId() {
-        return this.auditProfileId;
+    public Optional<String> auditProfileId() {
+        return Optional.ofNullable(this.auditProfileId);
     }
     /**
      * @return Represents the month under consideration for which aggregated audit data volume available at the target is computed. This field will be the UTC start of the day of the first day of the month for which the aggregate count corresponds to, in the format defined by RFC3339.. For instance, the value of 01-01-2021T00:00:00Z represents Jan 2021.
      * 
      */
-    public String monthInConsideration() {
-        return this.monthInConsideration;
+    public Optional<String> monthInConsideration() {
+        return Optional.ofNullable(this.monthInConsideration);
     }
     /**
      * @return The audit trail location.
      * 
      */
-    public String trailLocation() {
-        return this.trailLocation;
+    public Optional<String> trailLocation() {
+        return Optional.ofNullable(this.trailLocation);
     }
     /**
      * @return Represents the aggregated audit data volume available in the audit trails on the target database which is yet to be collected by Data Safe for the specified month.
      * 
      */
-    public String volume() {
-        return this.volume;
+    public Optional<String> volume() {
+        return Optional.ofNullable(this.volume);
     }
 
     public static Builder builder() {
@@ -69,10 +71,10 @@ public final class GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeColle
     }
     @CustomType.Builder
     public static final class Builder {
-        private String auditProfileId;
-        private String monthInConsideration;
-        private String trailLocation;
-        private String volume;
+        private @Nullable String auditProfileId;
+        private @Nullable String monthInConsideration;
+        private @Nullable String trailLocation;
+        private @Nullable String volume;
         public Builder() {}
         public Builder(GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -83,23 +85,23 @@ public final class GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeColle
         }
 
         @CustomType.Setter
-        public Builder auditProfileId(String auditProfileId) {
-            this.auditProfileId = Objects.requireNonNull(auditProfileId);
+        public Builder auditProfileId(@Nullable String auditProfileId) {
+            this.auditProfileId = auditProfileId;
             return this;
         }
         @CustomType.Setter
-        public Builder monthInConsideration(String monthInConsideration) {
-            this.monthInConsideration = Objects.requireNonNull(monthInConsideration);
+        public Builder monthInConsideration(@Nullable String monthInConsideration) {
+            this.monthInConsideration = monthInConsideration;
             return this;
         }
         @CustomType.Setter
-        public Builder trailLocation(String trailLocation) {
-            this.trailLocation = Objects.requireNonNull(trailLocation);
+        public Builder trailLocation(@Nullable String trailLocation) {
+            this.trailLocation = trailLocation;
             return this;
         }
         @CustomType.Setter
-        public Builder volume(String volume) {
-            this.volume = Objects.requireNonNull(volume);
+        public Builder volume(@Nullable String volume) {
+            this.volume = volume;
             return this;
         }
         public GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemItem build() {

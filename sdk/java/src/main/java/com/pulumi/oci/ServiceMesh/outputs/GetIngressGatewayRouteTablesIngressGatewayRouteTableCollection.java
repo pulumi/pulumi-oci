@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.ServiceMesh.outputs.GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetIngressGatewayRouteTablesIngressGatewayRouteTableCollection {
-    private List<GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItem> items;
+    private @Nullable List<GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItem> items;
 
     private GetIngressGatewayRouteTablesIngressGatewayRouteTableCollection() {}
     public List<GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectio
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItem> items;
+        private @Nullable List<GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItem> items;
         public Builder() {}
         public Builder(GetIngressGatewayRouteTablesIngressGatewayRouteTableCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectio
         }
 
         @CustomType.Setter
-        public Builder items(List<GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItem... items) {

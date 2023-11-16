@@ -55,7 +55,7 @@ class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -68,10 +68,7 @@ class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsResult:
 
     @property
     @pulumi.getter(name="optimizerStatisticsAdvisorExecutionsCollections")
-    def optimizer_statistics_advisor_executions_collections(self) -> Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionResult']:
-        """
-        The list of optimizer_statistics_advisor_executions_collection.
-        """
+    def optimizer_statistics_advisor_executions_collections(self) -> Optional[Sequence['outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionResult']]:
         return pulumi.get(self, "optimizer_statistics_advisor_executions_collections")
 
     @property
@@ -100,27 +97,7 @@ def get_managed_database_optimizer_statistics_advisor_executions(end_time_less_t
                                                                  start_time_greater_than_or_equal_to: Optional[str] = None,
                                                                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagedDatabaseOptimizerStatisticsAdvisorExecutionsResult:
     """
-    This data source provides the list of Managed Database Optimizer Statistics Advisor Executions in Oracle Cloud Infrastructure Database Management service.
-
-    Lists the details of the Optimizer Statistics Advisor task executions, such as their duration, and the number of findings, if any.
-    Optionally, you can specify a date-time range (of seven days) to obtain the list of executions that fall within the specified time range.
-    If the date-time range is not specified, then the executions in the last seven days are listed.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_database_optimizer_statistics_advisor_executions = oci.DatabaseManagement.get_managed_database_optimizer_statistics_advisor_executions(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        end_time_less_than_or_equal_to=var["managed_database_optimizer_statistics_advisor_execution_end_time_less_than_or_equal_to"],
-        start_time_greater_than_or_equal_to=var["managed_database_optimizer_statistics_advisor_execution_start_time_greater_than_or_equal_to"])
-    ```
-
-
-    :param str end_time_less_than_or_equal_to: The end time of the time range to retrieve the optimizer statistics of a Managed Database in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
-    :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
-    :param str start_time_greater_than_or_equal_to: The start time of the time range to retrieve the optimizer statistics of a Managed Database in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['endTimeLessThanOrEqualTo'] = end_time_less_than_or_equal_to
@@ -146,26 +123,6 @@ def get_managed_database_optimizer_statistics_advisor_executions_output(end_time
                                                                         start_time_greater_than_or_equal_to: Optional[pulumi.Input[Optional[str]]] = None,
                                                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsResult]:
     """
-    This data source provides the list of Managed Database Optimizer Statistics Advisor Executions in Oracle Cloud Infrastructure Database Management service.
-
-    Lists the details of the Optimizer Statistics Advisor task executions, such as their duration, and the number of findings, if any.
-    Optionally, you can specify a date-time range (of seven days) to obtain the list of executions that fall within the specified time range.
-    If the date-time range is not specified, then the executions in the last seven days are listed.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_database_optimizer_statistics_advisor_executions = oci.DatabaseManagement.get_managed_database_optimizer_statistics_advisor_executions(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        end_time_less_than_or_equal_to=var["managed_database_optimizer_statistics_advisor_execution_end_time_less_than_or_equal_to"],
-        start_time_greater_than_or_equal_to=var["managed_database_optimizer_statistics_advisor_execution_start_time_greater_than_or_equal_to"])
-    ```
-
-
-    :param str end_time_less_than_or_equal_to: The end time of the time range to retrieve the optimizer statistics of a Managed Database in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
-    :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
-    :param str start_time_greater_than_or_equal_to: The start time of the time range to retrieve the optimizer statistics of a Managed Database in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -12,6 +12,7 @@ import com.pulumi.oci.Blockchain.inputs.OsnState;
 import com.pulumi.oci.Blockchain.outputs.OsnOcpuAllocationParam;
 import com.pulumi.oci.Utilities;
 import java.lang.String;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -98,42 +99,42 @@ public class Osn extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="ocpuAllocationParam", refs={OsnOcpuAllocationParam.class}, tree="[0]")
-    private Output<OsnOcpuAllocationParam> ocpuAllocationParam;
+    private Output</* @Nullable */ OsnOcpuAllocationParam> ocpuAllocationParam;
 
     /**
      * @return (Updatable) OCPU allocation parameter
      * 
      */
-    public Output<OsnOcpuAllocationParam> ocpuAllocationParam() {
-        return this.ocpuAllocationParam;
+    public Output<Optional<OsnOcpuAllocationParam>> ocpuAllocationParam() {
+        return Codegen.optional(this.ocpuAllocationParam);
     }
     /**
      * OSN identifier
      * 
      */
     @Export(name="osnKey", refs={String.class}, tree="[0]")
-    private Output<String> osnKey;
+    private Output</* @Nullable */ String> osnKey;
 
     /**
      * @return OSN identifier
      * 
      */
-    public Output<String> osnKey() {
-        return this.osnKey;
+    public Output<Optional<String>> osnKey() {
+        return Codegen.optional(this.osnKey);
     }
     /**
      * The current state of the OSN.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the OSN.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
 
     /**

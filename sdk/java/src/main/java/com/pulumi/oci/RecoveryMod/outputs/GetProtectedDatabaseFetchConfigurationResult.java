@@ -18,12 +18,12 @@ public final class GetProtectedDatabaseFetchConfigurationResult {
      * @return content of the downloaded config file for recovery service. It is base64 encoded by default. To store the config in plaintext set `base_64_encode_content` to false.
      * 
      */
-    private String content;
+    private @Nullable String content;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String protectedDatabaseId;
 
     private GetProtectedDatabaseFetchConfigurationResult() {}
@@ -37,15 +37,15 @@ public final class GetProtectedDatabaseFetchConfigurationResult {
      * @return content of the downloaded config file for recovery service. It is base64 encoded by default. To store the config in plaintext set `base_64_encode_content` to false.
      * 
      */
-    public String content() {
-        return this.content;
+    public Optional<String> content() {
+        return Optional.ofNullable(this.content);
     }
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String protectedDatabaseId() {
         return this.protectedDatabaseId;
@@ -62,8 +62,8 @@ public final class GetProtectedDatabaseFetchConfigurationResult {
     public static final class Builder {
         private @Nullable Boolean base64EncodeContent;
         private @Nullable String configurationType;
-        private String content;
-        private String id;
+        private @Nullable String content;
+        private @Nullable String id;
         private String protectedDatabaseId;
         public Builder() {}
         public Builder(GetProtectedDatabaseFetchConfigurationResult defaults) {
@@ -86,13 +86,13 @@ public final class GetProtectedDatabaseFetchConfigurationResult {
             return this;
         }
         @CustomType.Setter
-        public Builder content(String content) {
-            this.content = Objects.requireNonNull(content);
+        public Builder content(@Nullable String content) {
+            this.content = content;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

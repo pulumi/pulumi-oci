@@ -21,9 +21,6 @@ class OsnArgs:
                  ocpu_allocation_param: Optional[pulumi.Input['OsnOcpuAllocationParamArgs']] = None):
         """
         The set of arguments for constructing a Osn resource.
-        :param pulumi.Input[str] ad: Availability Domain to place new OSN
-        :param pulumi.Input[str] blockchain_platform_id: Unique service identifier.
-        :param pulumi.Input['OsnOcpuAllocationParamArgs'] ocpu_allocation_param: (Updatable) OCPU allocation parameter
         """
         pulumi.set(__self__, "ad", ad)
         pulumi.set(__self__, "blockchain_platform_id", blockchain_platform_id)
@@ -33,9 +30,6 @@ class OsnArgs:
     @property
     @pulumi.getter
     def ad(self) -> pulumi.Input[str]:
-        """
-        Availability Domain to place new OSN
-        """
         return pulumi.get(self, "ad")
 
     @ad.setter
@@ -45,9 +39,6 @@ class OsnArgs:
     @property
     @pulumi.getter(name="blockchainPlatformId")
     def blockchain_platform_id(self) -> pulumi.Input[str]:
-        """
-        Unique service identifier.
-        """
         return pulumi.get(self, "blockchain_platform_id")
 
     @blockchain_platform_id.setter
@@ -57,9 +48,6 @@ class OsnArgs:
     @property
     @pulumi.getter(name="ocpuAllocationParam")
     def ocpu_allocation_param(self) -> Optional[pulumi.Input['OsnOcpuAllocationParamArgs']]:
-        """
-        (Updatable) OCPU allocation parameter
-        """
         return pulumi.get(self, "ocpu_allocation_param")
 
     @ocpu_allocation_param.setter
@@ -77,11 +65,6 @@ class _OsnState:
                  state: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering Osn resources.
-        :param pulumi.Input[str] ad: Availability Domain to place new OSN
-        :param pulumi.Input[str] blockchain_platform_id: Unique service identifier.
-        :param pulumi.Input['OsnOcpuAllocationParamArgs'] ocpu_allocation_param: (Updatable) OCPU allocation parameter
-        :param pulumi.Input[str] osn_key: OSN identifier
-        :param pulumi.Input[str] state: The current state of the OSN.
         """
         if ad is not None:
             pulumi.set(__self__, "ad", ad)
@@ -97,9 +80,6 @@ class _OsnState:
     @property
     @pulumi.getter
     def ad(self) -> Optional[pulumi.Input[str]]:
-        """
-        Availability Domain to place new OSN
-        """
         return pulumi.get(self, "ad")
 
     @ad.setter
@@ -109,9 +89,6 @@ class _OsnState:
     @property
     @pulumi.getter(name="blockchainPlatformId")
     def blockchain_platform_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        Unique service identifier.
-        """
         return pulumi.get(self, "blockchain_platform_id")
 
     @blockchain_platform_id.setter
@@ -121,9 +98,6 @@ class _OsnState:
     @property
     @pulumi.getter(name="ocpuAllocationParam")
     def ocpu_allocation_param(self) -> Optional[pulumi.Input['OsnOcpuAllocationParamArgs']]:
-        """
-        (Updatable) OCPU allocation parameter
-        """
         return pulumi.get(self, "ocpu_allocation_param")
 
     @ocpu_allocation_param.setter
@@ -133,9 +107,6 @@ class _OsnState:
     @property
     @pulumi.getter(name="osnKey")
     def osn_key(self) -> Optional[pulumi.Input[str]]:
-        """
-        OSN identifier
-        """
         return pulumi.get(self, "osn_key")
 
     @osn_key.setter
@@ -145,9 +116,6 @@ class _OsnState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the OSN.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -165,37 +133,9 @@ class Osn(pulumi.CustomResource):
                  ocpu_allocation_param: Optional[pulumi.Input[pulumi.InputType['OsnOcpuAllocationParamArgs']]] = None,
                  __props__=None):
         """
-        This resource provides the Osn resource in Oracle Cloud Infrastructure Blockchain service.
-
-        Create Blockchain Platform Osn
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_osn = oci.blockchain.Osn("testOsn",
-            ad=var["osn_ad"],
-            blockchain_platform_id=oci_blockchain_blockchain_platform["test_blockchain_platform"]["id"],
-            ocpu_allocation_param=oci.blockchain.OsnOcpuAllocationParamArgs(
-                ocpu_allocation_number=var["osn_ocpu_allocation_param_ocpu_allocation_number"],
-            ))
-        ```
-
-        ## Import
-
-        Osns can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Blockchain/osn:Osn test_osn "blockchainPlatforms/{blockchainPlatformId}/osns/{osnId}"
-        ```
-
+        Create a Osn resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] ad: Availability Domain to place new OSN
-        :param pulumi.Input[str] blockchain_platform_id: Unique service identifier.
-        :param pulumi.Input[pulumi.InputType['OsnOcpuAllocationParamArgs']] ocpu_allocation_param: (Updatable) OCPU allocation parameter
         """
         ...
     @overload
@@ -204,32 +144,7 @@ class Osn(pulumi.CustomResource):
                  args: OsnArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Osn resource in Oracle Cloud Infrastructure Blockchain service.
-
-        Create Blockchain Platform Osn
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_osn = oci.blockchain.Osn("testOsn",
-            ad=var["osn_ad"],
-            blockchain_platform_id=oci_blockchain_blockchain_platform["test_blockchain_platform"]["id"],
-            ocpu_allocation_param=oci.blockchain.OsnOcpuAllocationParamArgs(
-                ocpu_allocation_number=var["osn_ocpu_allocation_param_ocpu_allocation_number"],
-            ))
-        ```
-
-        ## Import
-
-        Osns can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Blockchain/osn:Osn test_osn "blockchainPlatforms/{blockchainPlatformId}/osns/{osnId}"
-        ```
-
+        Create a Osn resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param OsnArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -288,11 +203,6 @@ class Osn(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] ad: Availability Domain to place new OSN
-        :param pulumi.Input[str] blockchain_platform_id: Unique service identifier.
-        :param pulumi.Input[pulumi.InputType['OsnOcpuAllocationParamArgs']] ocpu_allocation_param: (Updatable) OCPU allocation parameter
-        :param pulumi.Input[str] osn_key: OSN identifier
-        :param pulumi.Input[str] state: The current state of the OSN.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -308,40 +218,25 @@ class Osn(pulumi.CustomResource):
     @property
     @pulumi.getter
     def ad(self) -> pulumi.Output[str]:
-        """
-        Availability Domain to place new OSN
-        """
         return pulumi.get(self, "ad")
 
     @property
     @pulumi.getter(name="blockchainPlatformId")
     def blockchain_platform_id(self) -> pulumi.Output[str]:
-        """
-        Unique service identifier.
-        """
         return pulumi.get(self, "blockchain_platform_id")
 
     @property
     @pulumi.getter(name="ocpuAllocationParam")
-    def ocpu_allocation_param(self) -> pulumi.Output['outputs.OsnOcpuAllocationParam']:
-        """
-        (Updatable) OCPU allocation parameter
-        """
+    def ocpu_allocation_param(self) -> pulumi.Output[Optional['outputs.OsnOcpuAllocationParam']]:
         return pulumi.get(self, "ocpu_allocation_param")
 
     @property
     @pulumi.getter(name="osnKey")
-    def osn_key(self) -> pulumi.Output[str]:
-        """
-        OSN identifier
-        """
+    def osn_key(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "osn_key")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the OSN.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 

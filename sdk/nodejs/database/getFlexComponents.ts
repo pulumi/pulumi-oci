@@ -57,11 +57,11 @@ export interface GetFlexComponentsResult {
     /**
      * The list of flex_component_collection.
      */
-    readonly flexComponentCollections: outputs.Database.GetFlexComponentsFlexComponentCollection[];
+    readonly flexComponentCollections?: outputs.Database.GetFlexComponentsFlexComponentCollection[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The name of the Flex Component used for the DB system.
      */

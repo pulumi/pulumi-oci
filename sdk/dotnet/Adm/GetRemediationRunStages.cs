@@ -153,7 +153,7 @@ namespace Pulumi.Oci.Adm
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The Oracle Cloud identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the remediation run.
         /// </summary>
@@ -175,7 +175,7 @@ namespace Pulumi.Oci.Adm
         private GetRemediationRunStagesResult(
             ImmutableArray<Outputs.GetRemediationRunStagesFilterResult> filters,
 
-            string id,
+            string? id,
 
             string remediationRunId,
 

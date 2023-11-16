@@ -6,6 +6,8 @@ package com.pulumi.oci.DevOps.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetConnectionTlsVerifyConfig {
@@ -13,27 +15,27 @@ public final class GetConnectionTlsVerifyConfig {
      * @return The OCID of Oracle Cloud Infrastructure certificate service CA bundle.
      * 
      */
-    private String caCertificateBundleId;
+    private @Nullable String caCertificateBundleId;
     /**
      * @return The type of TLS verification.
      * 
      */
-    private String tlsVerifyMode;
+    private @Nullable String tlsVerifyMode;
 
     private GetConnectionTlsVerifyConfig() {}
     /**
      * @return The OCID of Oracle Cloud Infrastructure certificate service CA bundle.
      * 
      */
-    public String caCertificateBundleId() {
-        return this.caCertificateBundleId;
+    public Optional<String> caCertificateBundleId() {
+        return Optional.ofNullable(this.caCertificateBundleId);
     }
     /**
      * @return The type of TLS verification.
      * 
      */
-    public String tlsVerifyMode() {
-        return this.tlsVerifyMode;
+    public Optional<String> tlsVerifyMode() {
+        return Optional.ofNullable(this.tlsVerifyMode);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetConnectionTlsVerifyConfig {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String caCertificateBundleId;
-        private String tlsVerifyMode;
+        private @Nullable String caCertificateBundleId;
+        private @Nullable String tlsVerifyMode;
         public Builder() {}
         public Builder(GetConnectionTlsVerifyConfig defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetConnectionTlsVerifyConfig {
         }
 
         @CustomType.Setter
-        public Builder caCertificateBundleId(String caCertificateBundleId) {
-            this.caCertificateBundleId = Objects.requireNonNull(caCertificateBundleId);
+        public Builder caCertificateBundleId(@Nullable String caCertificateBundleId) {
+            this.caCertificateBundleId = caCertificateBundleId;
             return this;
         }
         @CustomType.Setter
-        public Builder tlsVerifyMode(String tlsVerifyMode) {
-            this.tlsVerifyMode = Objects.requireNonNull(tlsVerifyMode);
+        public Builder tlsVerifyMode(@Nullable String tlsVerifyMode) {
+            this.tlsVerifyMode = tlsVerifyMode;
             return this;
         }
         public GetConnectionTlsVerifyConfig build() {

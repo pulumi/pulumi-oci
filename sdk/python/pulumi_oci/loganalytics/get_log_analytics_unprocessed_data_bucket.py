@@ -43,15 +43,12 @@ class GetLogAnalyticsUnprocessedDataBucketResult:
 
     @property
     @pulumi.getter
-    def bucket(self) -> str:
-        """
-        Name of the Object Storage bucket.
-        """
+    def bucket(self) -> Optional[str]:
         return pulumi.get(self, "bucket")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -59,34 +56,22 @@ class GetLogAnalyticsUnprocessedDataBucketResult:
 
     @property
     @pulumi.getter(name="isEnabled")
-    def is_enabled(self) -> bool:
-        """
-        Flag that specifies if this configuration is enabled or not.
-        """
+    def is_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_enabled")
 
     @property
     @pulumi.getter
     def namespace(self) -> str:
-        """
-        Object Storage namespace.
-        """
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time when this record is created. An RFC3339 formatted datetime string.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The latest time when this record is updated. An RFC3339 formatted datetime string.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -107,21 +92,7 @@ class AwaitableGetLogAnalyticsUnprocessedDataBucketResult(GetLogAnalyticsUnproce
 def get_log_analytics_unprocessed_data_bucket(namespace: Optional[str] = None,
                                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetLogAnalyticsUnprocessedDataBucketResult:
     """
-    This data source provides details about a specific Log Analytics Unprocessed Data Bucket resource in Oracle Cloud Infrastructure Log Analytics service.
-
-    This API retrieves details of the configured bucket that stores unprocessed payloads.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_log_analytics_unprocessed_data_bucket = oci.LogAnalytics.get_log_analytics_unprocessed_data_bucket(namespace=var["log_analytics_unprocessed_data_bucket_namespace"])
-    ```
-
-
-    :param str namespace: The Logging Analytics namespace used for the request.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['namespace'] = namespace
@@ -141,20 +112,6 @@ def get_log_analytics_unprocessed_data_bucket(namespace: Optional[str] = None,
 def get_log_analytics_unprocessed_data_bucket_output(namespace: Optional[pulumi.Input[str]] = None,
                                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetLogAnalyticsUnprocessedDataBucketResult]:
     """
-    This data source provides details about a specific Log Analytics Unprocessed Data Bucket resource in Oracle Cloud Infrastructure Log Analytics service.
-
-    This API retrieves details of the configured bucket that stores unprocessed payloads.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_log_analytics_unprocessed_data_bucket = oci.LogAnalytics.get_log_analytics_unprocessed_data_bucket(namespace=var["log_analytics_unprocessed_data_bucket_namespace"])
-    ```
-
-
-    :param str namespace: The Logging Analytics namespace used for the request.
+    Use this data source to access information about an existing resource.
     """
     ...

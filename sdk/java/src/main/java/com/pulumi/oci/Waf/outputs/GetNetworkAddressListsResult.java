@@ -34,7 +34,7 @@ public final class GetNetworkAddressListsResult {
      * @return The list of network_address_list_collection.
      * 
      */
-    private List<GetNetworkAddressListsNetworkAddressListCollection> networkAddressListCollections;
+    private @Nullable List<GetNetworkAddressListsNetworkAddressListCollection> networkAddressListCollections;
     /**
      * @return The current state of the NetworkAddressList.
      * 
@@ -71,7 +71,7 @@ public final class GetNetworkAddressListsResult {
      * 
      */
     public List<GetNetworkAddressListsNetworkAddressListCollection> networkAddressListCollections() {
-        return this.networkAddressListCollections;
+        return this.networkAddressListCollections == null ? List.of() : this.networkAddressListCollections;
     }
     /**
      * @return The current state of the NetworkAddressList.
@@ -94,7 +94,7 @@ public final class GetNetworkAddressListsResult {
         private @Nullable String displayName;
         private @Nullable List<GetNetworkAddressListsFilter> filters;
         private @Nullable String id;
-        private List<GetNetworkAddressListsNetworkAddressListCollection> networkAddressListCollections;
+        private @Nullable List<GetNetworkAddressListsNetworkAddressListCollection> networkAddressListCollections;
         private @Nullable List<String> states;
         public Builder() {}
         public Builder(GetNetworkAddressListsResult defaults) {
@@ -131,8 +131,8 @@ public final class GetNetworkAddressListsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder networkAddressListCollections(List<GetNetworkAddressListsNetworkAddressListCollection> networkAddressListCollections) {
-            this.networkAddressListCollections = Objects.requireNonNull(networkAddressListCollections);
+        public Builder networkAddressListCollections(@Nullable List<GetNetworkAddressListsNetworkAddressListCollection> networkAddressListCollections) {
+            this.networkAddressListCollections = networkAddressListCollections;
             return this;
         }
         public Builder networkAddressListCollections(GetNetworkAddressListsNetworkAddressListCollection... networkAddressListCollections) {

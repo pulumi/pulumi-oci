@@ -43,15 +43,12 @@ class GetNetworkFirewallPolicyServiceListResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Name of the service Group.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -61,26 +58,17 @@ class GetNetworkFirewallPolicyServiceListResult:
 
     @property
     @pulumi.getter(name="parentResourceId")
-    def parent_resource_id(self) -> str:
-        """
-        OCID of the Network Firewall Policy this serviceList belongs to.
-        """
+    def parent_resource_id(self) -> Optional[str]:
         return pulumi.get(self, "parent_resource_id")
 
     @property
     @pulumi.getter
-    def services(self) -> Sequence[str]:
-        """
-        List of services in the group.
-        """
+    def services(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "services")
 
     @property
     @pulumi.getter(name="totalServices")
-    def total_services(self) -> int:
-        """
-        Count of total services in the given service List.
-        """
+    def total_services(self) -> Optional[int]:
         return pulumi.get(self, "total_services")
 
 
@@ -102,13 +90,7 @@ def get_network_firewall_policy_service_list(name: Optional[str] = None,
                                              network_firewall_policy_id: Optional[str] = None,
                                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNetworkFirewallPolicyServiceListResult:
     """
-    This data source provides details about a specific Network Firewall Policy Service List resource in Oracle Cloud Infrastructure Network Firewall service.
-
-    Get ServiceList by the given name in the context of network firewall policy.
-
-
-    :param str name: Name of the service Group.
-    :param str network_firewall_policy_id: Unique Network Firewall Policy identifier
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['name'] = name
@@ -130,12 +112,6 @@ def get_network_firewall_policy_service_list_output(name: Optional[pulumi.Input[
                                                     network_firewall_policy_id: Optional[pulumi.Input[str]] = None,
                                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNetworkFirewallPolicyServiceListResult]:
     """
-    This data source provides details about a specific Network Firewall Policy Service List resource in Oracle Cloud Infrastructure Network Firewall service.
-
-    Get ServiceList by the given name in the context of network firewall policy.
-
-
-    :param str name: Name of the service Group.
-    :param str network_firewall_policy_id: Unique Network Firewall Policy identifier
+    Use this data source to access information about an existing resource.
     """
     ...

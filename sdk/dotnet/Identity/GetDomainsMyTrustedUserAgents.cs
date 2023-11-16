@@ -240,9 +240,9 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string IdcsEndpoint;
-        public readonly int ItemsPerPage;
+        public readonly int? ItemsPerPage;
         public readonly int? MyTrustedUserAgentCount;
         public readonly string? MyTrustedUserAgentFilter;
         /// <summary>
@@ -257,7 +257,7 @@ namespace Pulumi.Oci.Identity
         public readonly string? SortBy;
         public readonly string? SortOrder;
         public readonly int? StartIndex;
-        public readonly int TotalResults;
+        public readonly int? TotalResults;
 
         [OutputConstructor]
         private GetDomainsMyTrustedUserAgentsResult(
@@ -269,11 +269,11 @@ namespace Pulumi.Oci.Identity
 
             string? compartmentId,
 
-            string id,
+            string? id,
 
             string idcsEndpoint,
 
-            int itemsPerPage,
+            int? itemsPerPage,
 
             int? myTrustedUserAgentCount,
 
@@ -291,7 +291,7 @@ namespace Pulumi.Oci.Identity
 
             int? startIndex,
 
-            int totalResults)
+            int? totalResults)
         {
             AttributeSets = attributeSets;
             Attributes = attributes;

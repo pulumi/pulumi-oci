@@ -58,25 +58,16 @@ class GetGenericArtifactsResult:
     @property
     @pulumi.getter(name="artifactPath")
     def artifact_path(self) -> Optional[str]:
-        """
-        A user-defined path to describe the location of an artifact. Slashes do not create a directory structure, but you can use slashes to organize the repository. An artifact path does not include an artifact version.  Example: `project01/my-web-app/artifact-abc`
-        """
         return pulumi.get(self, "artifact_path")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the repository's compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        The artifact name with the format of `<artifact-path>:<artifact-version>`. The artifact name is truncated to a maximum length of 255.  Example: `project01/my-web-app/artifact-abc:1.0.0`
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -86,50 +77,32 @@ class GetGenericArtifactsResult:
 
     @property
     @pulumi.getter(name="genericArtifactCollections")
-    def generic_artifact_collections(self) -> Sequence['outputs.GetGenericArtifactsGenericArtifactCollectionResult']:
-        """
-        The list of generic_artifact_collection.
-        """
+    def generic_artifact_collections(self) -> Optional[Sequence['outputs.GetGenericArtifactsGenericArtifactCollectionResult']]:
         return pulumi.get(self, "generic_artifact_collections")
 
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the artifact.  Example: `ocid1.genericartifact.oc1..exampleuniqueID`
-        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="repositoryId")
     def repository_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the repository.
-        """
         return pulumi.get(self, "repository_id")
 
     @property
     @pulumi.getter
     def sha256(self) -> Optional[str]:
-        """
-        The SHA256 digest for the artifact. When you upload an artifact to the repository, a SHA256 digest is calculated and added to the artifact properties.
-        """
         return pulumi.get(self, "sha256")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the artifact.
-        """
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter
     def version(self) -> Optional[str]:
-        """
-        A user-defined string to describe the artifact version.  Example: `1.1.0` or `1.2-beta-2`
-        """
         return pulumi.get(self, "version")
 
 
@@ -162,35 +135,7 @@ def get_generic_artifacts(artifact_path: Optional[str] = None,
                           version: Optional[str] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetGenericArtifactsResult:
     """
-    This data source provides the list of Generic Artifacts in Oracle Cloud Infrastructure Artifacts service.
-
-    Lists artifacts in the specified repository.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_generic_artifacts = oci.Artifacts.get_generic_artifacts(compartment_id=var["compartment_id"],
-        repository_id=oci_artifacts_repository["test_repository"]["id"],
-        artifact_path=var["generic_artifact_artifact_path"],
-        display_name=var["generic_artifact_display_name"],
-        id=var["generic_artifact_id"],
-        sha256=var["generic_artifact_sha256"],
-        state=var["generic_artifact_state"],
-        version=var["generic_artifact_version"])
-    ```
-
-
-    :param str artifact_path: Filter results by a prefix for the `artifactPath` and and return artifacts that begin with the specified prefix in their path.
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str display_name: A filter to return only resources that match the given display name exactly.
-    :param str id: A filter to return the resources for the specified OCID.
-    :param str repository_id: A filter to return the artifacts only for the specified repository OCID.
-    :param str sha256: Filter results by a specified SHA256 digest for the artifact.
-    :param str state: A filter to return only resources that match the given lifecycle state name exactly.
-    :param str version: Filter results by a prefix for `version` and return artifacts that that begin with the specified prefix in their version.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['artifactPath'] = artifact_path
@@ -230,34 +175,6 @@ def get_generic_artifacts_output(artifact_path: Optional[pulumi.Input[Optional[s
                                  version: Optional[pulumi.Input[Optional[str]]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetGenericArtifactsResult]:
     """
-    This data source provides the list of Generic Artifacts in Oracle Cloud Infrastructure Artifacts service.
-
-    Lists artifacts in the specified repository.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_generic_artifacts = oci.Artifacts.get_generic_artifacts(compartment_id=var["compartment_id"],
-        repository_id=oci_artifacts_repository["test_repository"]["id"],
-        artifact_path=var["generic_artifact_artifact_path"],
-        display_name=var["generic_artifact_display_name"],
-        id=var["generic_artifact_id"],
-        sha256=var["generic_artifact_sha256"],
-        state=var["generic_artifact_state"],
-        version=var["generic_artifact_version"])
-    ```
-
-
-    :param str artifact_path: Filter results by a prefix for the `artifactPath` and and return artifacts that begin with the specified prefix in their path.
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str display_name: A filter to return only resources that match the given display name exactly.
-    :param str id: A filter to return the resources for the specified OCID.
-    :param str repository_id: A filter to return the artifacts only for the specified repository OCID.
-    :param str sha256: Filter results by a specified SHA256 digest for the artifact.
-    :param str state: A filter to return only resources that match the given lifecycle state name exactly.
-    :param str version: Filter results by a prefix for `version` and return artifacts that that begin with the specified prefix in their version.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -102,7 +102,7 @@ namespace Pulumi.Oci.StackMonitoring
         /// (Updatable) Type of possible collection methods.
         /// </summary>
         [Output("collectionMethod")]
-        public Output<string> CollectionMethod { get; private set; } = null!;
+        public Output<string?> CollectionMethod { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Schedule of metric extension should use RFC 5545 format i.e. recur-rule-part = "FREQ";INTERVAL where FREQ rule part identifies the type of recurrence rule. Valid values are "MINUTELY","HOURLY","DAILY" to specify repeating events based on an interval of a minute, an hour and a day or more. Example- FREQ=DAILY;INTERVAL=1
@@ -120,13 +120,13 @@ namespace Pulumi.Oci.StackMonitoring
         /// Created by user
         /// </summary>
         [Output("createdBy")]
-        public Output<string> CreatedBy { get; private set; } = null!;
+        public Output<string?> CreatedBy { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Description of the metric extension.
         /// </summary>
         [Output("description")]
-        public Output<string> Description { get; private set; } = null!;
+        public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Display name of the metric.
@@ -144,13 +144,13 @@ namespace Pulumi.Oci.StackMonitoring
         /// Count of resources on which this metric extension is enabled.
         /// </summary>
         [Output("enabledOnResourcesCount")]
-        public Output<int> EnabledOnResourcesCount { get; private set; } = null!;
+        public Output<int?> EnabledOnResourcesCount { get; private set; } = null!;
 
         /// <summary>
         /// Last updated by user
         /// </summary>
         [Output("lastUpdatedBy")]
-        public Output<string> LastUpdatedBy { get; private set; } = null!;
+        public Output<string?> LastUpdatedBy { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) List of metrics which are part of this metric extension
@@ -190,37 +190,37 @@ namespace Pulumi.Oci.StackMonitoring
         /// The URI path that the user can do a GET on to access the metric extension metadata
         /// </summary>
         [Output("resourceUri")]
-        public Output<string> ResourceUri { get; private set; } = null!;
+        public Output<string?> ResourceUri { get; private set; } = null!;
 
         /// <summary>
         /// The current lifecycle state of the metric extension
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The current status of the metric extension i.e. whether it is Draft or Published
         /// </summary>
         [Output("status")]
-        public Output<string> Status { get; private set; } = null!;
+        public Output<string?> Status { get; private set; } = null!;
 
         /// <summary>
         /// Tenant Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
         /// </summary>
         [Output("tenantId")]
-        public Output<string> TenantId { get; private set; } = null!;
+        public Output<string?> TenantId { get; private set; } = null!;
 
         /// <summary>
         /// Metric Extension creation time. An RFC3339 formatted datetime string.
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// Metric Extension update time. An RFC3339 formatted datetime string.
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
 
         /// <summary>

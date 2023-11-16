@@ -62,10 +62,7 @@ class GetCommitmentAggregatedsResult:
 
     @property
     @pulumi.getter(name="computedUsageAggregateds")
-    def computed_usage_aggregateds(self) -> Sequence['outputs.GetCommitmentAggregatedsComputedUsageAggregatedResult']:
-        """
-        The list of computed_usage_aggregateds.
-        """
+    def computed_usage_aggregateds(self) -> Optional[Sequence['outputs.GetCommitmentAggregatedsComputedUsageAggregatedResult']]:
         return pulumi.get(self, "computed_usage_aggregateds")
 
     @property
@@ -80,7 +77,7 @@ class GetCommitmentAggregatedsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -89,17 +86,11 @@ class GetCommitmentAggregatedsResult:
     @property
     @pulumi.getter(name="parentProduct")
     def parent_product(self) -> Optional[str]:
-        """
-        Product description
-        """
         return pulumi.get(self, "parent_product")
 
     @property
     @pulumi.getter(name="subscriptionId")
     def subscription_id(self) -> str:
-        """
-        Subscription Id is an identifier associated to the service used for filter the Computed Usage in SPM
-        """
         return pulumi.get(self, "subscription_id")
 
     @property
@@ -146,18 +137,7 @@ def get_commitment_aggregateds(compartment_id: Optional[str] = None,
                                x_one_origin_region: Optional[str] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCommitmentAggregatedsResult:
     """
-    This data source provides the list of Computed Usage Aggregateds in Oracle Cloud Infrastructure Osub Usage service.
-
-    This is a collection API which returns a list of aggregated computed usage details (there can be multiple Parent Products under a given SubID each of which is represented under Subscription Service Line # in SPM).
-
-
-    :param str compartment_id: The OCID of the root compartment.
-    :param str grouping: Grouping criteria to use for aggregate the computed Usage, either hourly (`HOURLY`), daily (`DAILY`), monthly(`MONTHLY`) or none (`NONE`) to not follow a grouping criteria by date.
-    :param str parent_product: Product part number for subscribed service line, called parent product.
-    :param str subscription_id: Subscription Id is an identifier associated to the service used for filter the Computed Usage in SPM.
-    :param str time_from: Initial date to filter Computed Usage data in SPM. In the case of non aggregated data the time period between of fromDate and toDate , expressed in RFC 3339 timestamp format.
-    :param str time_to: Final date to filter Computed Usage data in SPM, expressed in RFC 3339 timestamp format.
-    :param str x_one_origin_region: The Oracle Cloud Infrastructure home region name in case home region is not us-ashburn-1 (IAD), e.g. ap-mumbai-1, us-phoenix-1 etc.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -195,17 +175,6 @@ def get_commitment_aggregateds_output(compartment_id: Optional[pulumi.Input[str]
                                       x_one_origin_region: Optional[pulumi.Input[Optional[str]]] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCommitmentAggregatedsResult]:
     """
-    This data source provides the list of Computed Usage Aggregateds in Oracle Cloud Infrastructure Osub Usage service.
-
-    This is a collection API which returns a list of aggregated computed usage details (there can be multiple Parent Products under a given SubID each of which is represented under Subscription Service Line # in SPM).
-
-
-    :param str compartment_id: The OCID of the root compartment.
-    :param str grouping: Grouping criteria to use for aggregate the computed Usage, either hourly (`HOURLY`), daily (`DAILY`), monthly(`MONTHLY`) or none (`NONE`) to not follow a grouping criteria by date.
-    :param str parent_product: Product part number for subscribed service line, called parent product.
-    :param str subscription_id: Subscription Id is an identifier associated to the service used for filter the Computed Usage in SPM.
-    :param str time_from: Initial date to filter Computed Usage data in SPM. In the case of non aggregated data the time period between of fromDate and toDate , expressed in RFC 3339 timestamp format.
-    :param str time_to: Final date to filter Computed Usage data in SPM, expressed in RFC 3339 timestamp format.
-    :param str x_one_origin_region: The Oracle Cloud Infrastructure home region name in case home region is not us-ashburn-1 (IAD), e.g. ap-mumbai-1, us-phoenix-1 etc.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -6,6 +6,8 @@ package com.pulumi.oci.Functions.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsList {
@@ -13,15 +15,15 @@ public final class GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectio
      * @return Detail reasons of refresh failure or validation failure that needs to be shown to customer.
      * 
      */
-    private String refreshIssues;
+    private @Nullable String refreshIssues;
 
     private GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsList() {}
     /**
      * @return Detail reasons of refresh failure or validation failure that needs to be shown to customer.
      * 
      */
-    public String refreshIssues() {
-        return this.refreshIssues;
+    public Optional<String> refreshIssues() {
+        return Optional.ofNullable(this.refreshIssues);
     }
 
     public static Builder builder() {
@@ -33,7 +35,7 @@ public final class GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectio
     }
     @CustomType.Builder
     public static final class Builder {
-        private String refreshIssues;
+        private @Nullable String refreshIssues;
         public Builder() {}
         public Builder(GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsList defaults) {
     	      Objects.requireNonNull(defaults);
@@ -41,8 +43,8 @@ public final class GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectio
         }
 
         @CustomType.Setter
-        public Builder refreshIssues(String refreshIssues) {
-            this.refreshIssues = Objects.requireNonNull(refreshIssues);
+        public Builder refreshIssues(@Nullable String refreshIssues) {
+            this.refreshIssues = refreshIssues;
             return this;
         }
         public GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsList build() {

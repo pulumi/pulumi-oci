@@ -74,7 +74,7 @@ export interface GetPluggableDatabasesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The name for the pluggable database (PDB). The name is unique in the context of a [container database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/Database/). The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
      */
@@ -82,7 +82,7 @@ export interface GetPluggableDatabasesResult {
     /**
      * The list of pluggable_databases.
      */
-    readonly pluggableDatabases: outputs.Database.GetPluggableDatabasesPluggableDatabase[];
+    readonly pluggableDatabases?: outputs.Database.GetPluggableDatabasesPluggableDatabase[];
     /**
      * The current state of the pluggable database.
      */

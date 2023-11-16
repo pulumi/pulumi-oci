@@ -23,7 +23,7 @@ public final class GetDatabaseRegistrationsResult {
      * @return The list of database_registration_collection.
      * 
      */
-    private List<GetDatabaseRegistrationsDatabaseRegistrationCollection> databaseRegistrationCollections;
+    private @Nullable List<GetDatabaseRegistrationsDatabaseRegistrationCollection> databaseRegistrationCollections;
     /**
      * @return An object&#39;s Display Name.
      * 
@@ -34,7 +34,7 @@ public final class GetDatabaseRegistrationsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Possible lifecycle states.
      * 
@@ -54,7 +54,7 @@ public final class GetDatabaseRegistrationsResult {
      * 
      */
     public List<GetDatabaseRegistrationsDatabaseRegistrationCollection> databaseRegistrationCollections() {
-        return this.databaseRegistrationCollections;
+        return this.databaseRegistrationCollections == null ? List.of() : this.databaseRegistrationCollections;
     }
     /**
      * @return An object&#39;s Display Name.
@@ -70,8 +70,8 @@ public final class GetDatabaseRegistrationsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Possible lifecycle states.
@@ -91,10 +91,10 @@ public final class GetDatabaseRegistrationsResult {
     @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
-        private List<GetDatabaseRegistrationsDatabaseRegistrationCollection> databaseRegistrationCollections;
+        private @Nullable List<GetDatabaseRegistrationsDatabaseRegistrationCollection> databaseRegistrationCollections;
         private @Nullable String displayName;
         private @Nullable List<GetDatabaseRegistrationsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetDatabaseRegistrationsResult defaults) {
@@ -113,8 +113,8 @@ public final class GetDatabaseRegistrationsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder databaseRegistrationCollections(List<GetDatabaseRegistrationsDatabaseRegistrationCollection> databaseRegistrationCollections) {
-            this.databaseRegistrationCollections = Objects.requireNonNull(databaseRegistrationCollections);
+        public Builder databaseRegistrationCollections(@Nullable List<GetDatabaseRegistrationsDatabaseRegistrationCollection> databaseRegistrationCollections) {
+            this.databaseRegistrationCollections = databaseRegistrationCollections;
             return this;
         }
         public Builder databaseRegistrationCollections(GetDatabaseRegistrationsDatabaseRegistrationCollection... databaseRegistrationCollections) {
@@ -134,8 +134,8 @@ public final class GetDatabaseRegistrationsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

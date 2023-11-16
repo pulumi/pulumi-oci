@@ -43,15 +43,15 @@ export interface GetContainerConfigurationArgs {
  */
 export interface GetContainerConfigurationResult {
     readonly compartmentId: string;
-    readonly id: string;
+    readonly id?: string;
     /**
      * Whether to create a new container repository when a container is pushed to a new repository path. Repositories created in this way belong to the root compartment.
      */
-    readonly isRepositoryCreatedOnFirstPush: boolean;
+    readonly isRepositoryCreatedOnFirstPush?: boolean;
     /**
      * The tenancy namespace used in the container repository path.
      */
-    readonly namespace: string;
+    readonly namespace?: string;
 }
 /**
  * This data source provides details about a specific Container Configuration resource in Oracle Cloud Infrastructure Artifacts service.

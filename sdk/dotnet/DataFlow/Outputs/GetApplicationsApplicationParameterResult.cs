@@ -16,17 +16,17 @@ namespace Pulumi.Oci.DataFlow.Outputs
         /// <summary>
         /// The name of the parameter.  It must be a string of one or more word characters (a-z, A-Z, 0-9, _). Examples: "iterations", "input_file"
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The value of the parameter. It must be a string of 0 or more characters of any kind. Examples: "" (empty string), "10", "mydata.xml", "${x}"
         /// </summary>
-        public readonly string Value;
+        public readonly string? Value;
 
         [OutputConstructor]
         private GetApplicationsApplicationParameterResult(
-            string name,
+            string? name,
 
-            string value)
+            string? value)
         {
             Name = name;
             Value = value;

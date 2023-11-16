@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Repository resource in Oracle Cloud Infrastructure Artifacts service.
@@ -60,26 +59,26 @@ type LookupRepositoryArgs struct {
 // A collection of values returned by getRepository.
 type LookupRepositoryResult struct {
 	// The OCID of the repository's compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The repository description.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// The repository name.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the repository.  Example: `ocid1.artifactrepository.oc1..exampleuniqueID`
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Whether the repository is immutable. The artifacts of an immutable repository cannot be overwritten.
-	IsImmutable  bool   `pulumi:"isImmutable"`
+	IsImmutable  *bool  `pulumi:"isImmutable"`
 	RepositoryId string `pulumi:"repositoryId"`
 	// The repository's supported artifact type.
-	RepositoryType string `pulumi:"repositoryType"`
+	RepositoryType *string `pulumi:"repositoryType"`
 	// The current state of the repository.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// An RFC 3339 timestamp indicating when the repository was created.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 }
 
 func LookupRepositoryOutput(ctx *pulumi.Context, args LookupRepositoryOutputArgs, opts ...pulumi.InvokeOption) LookupRepositoryResultOutput {
@@ -120,15 +119,9 @@ func (o LookupRepositoryResultOutput) ToLookupRepositoryResultOutputWithContext(
 	return o
 }
 
-func (o LookupRepositoryResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupRepositoryResult] {
-	return pulumix.Output[LookupRepositoryResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the repository's compartment.
-func (o LookupRepositoryResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupRepositoryResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupRepositoryResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupRepositoryResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -137,13 +130,13 @@ func (o LookupRepositoryResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // The repository description.
-func (o LookupRepositoryResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupRepositoryResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupRepositoryResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupRepositoryResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // The repository name.
-func (o LookupRepositoryResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupRepositoryResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupRepositoryResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupRepositoryResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -152,13 +145,13 @@ func (o LookupRepositoryResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the repository.  Example: `ocid1.artifactrepository.oc1..exampleuniqueID`
-func (o LookupRepositoryResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupRepositoryResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupRepositoryResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupRepositoryResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Whether the repository is immutable. The artifacts of an immutable repository cannot be overwritten.
-func (o LookupRepositoryResultOutput) IsImmutable() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupRepositoryResult) bool { return v.IsImmutable }).(pulumi.BoolOutput)
+func (o LookupRepositoryResultOutput) IsImmutable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupRepositoryResult) *bool { return v.IsImmutable }).(pulumi.BoolPtrOutput)
 }
 
 func (o LookupRepositoryResultOutput) RepositoryId() pulumi.StringOutput {
@@ -166,18 +159,18 @@ func (o LookupRepositoryResultOutput) RepositoryId() pulumi.StringOutput {
 }
 
 // The repository's supported artifact type.
-func (o LookupRepositoryResultOutput) RepositoryType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupRepositoryResult) string { return v.RepositoryType }).(pulumi.StringOutput)
+func (o LookupRepositoryResultOutput) RepositoryType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupRepositoryResult) *string { return v.RepositoryType }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the repository.
-func (o LookupRepositoryResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupRepositoryResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupRepositoryResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupRepositoryResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // An RFC 3339 timestamp indicating when the repository was created.
-func (o LookupRepositoryResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupRepositoryResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupRepositoryResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupRepositoryResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

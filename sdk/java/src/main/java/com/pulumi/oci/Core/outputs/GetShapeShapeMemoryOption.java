@@ -6,34 +6,36 @@ package com.pulumi.oci.Core.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Double;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetShapeShapeMemoryOption {
-    private Double defaultPerOcpuInGbs;
-    private Double maxInGbs;
-    private Double maxPerNumaNodeInGbs;
-    private Double maxPerOcpuInGbs;
-    private Double minInGbs;
-    private Double minPerOcpuInGbs;
+    private @Nullable Double defaultPerOcpuInGbs;
+    private @Nullable Double maxInGbs;
+    private @Nullable Double maxPerNumaNodeInGbs;
+    private @Nullable Double maxPerOcpuInGbs;
+    private @Nullable Double minInGbs;
+    private @Nullable Double minPerOcpuInGbs;
 
     private GetShapeShapeMemoryOption() {}
-    public Double defaultPerOcpuInGbs() {
-        return this.defaultPerOcpuInGbs;
+    public Optional<Double> defaultPerOcpuInGbs() {
+        return Optional.ofNullable(this.defaultPerOcpuInGbs);
     }
-    public Double maxInGbs() {
-        return this.maxInGbs;
+    public Optional<Double> maxInGbs() {
+        return Optional.ofNullable(this.maxInGbs);
     }
-    public Double maxPerNumaNodeInGbs() {
-        return this.maxPerNumaNodeInGbs;
+    public Optional<Double> maxPerNumaNodeInGbs() {
+        return Optional.ofNullable(this.maxPerNumaNodeInGbs);
     }
-    public Double maxPerOcpuInGbs() {
-        return this.maxPerOcpuInGbs;
+    public Optional<Double> maxPerOcpuInGbs() {
+        return Optional.ofNullable(this.maxPerOcpuInGbs);
     }
-    public Double minInGbs() {
-        return this.minInGbs;
+    public Optional<Double> minInGbs() {
+        return Optional.ofNullable(this.minInGbs);
     }
-    public Double minPerOcpuInGbs() {
-        return this.minPerOcpuInGbs;
+    public Optional<Double> minPerOcpuInGbs() {
+        return Optional.ofNullable(this.minPerOcpuInGbs);
     }
 
     public static Builder builder() {
@@ -45,12 +47,12 @@ public final class GetShapeShapeMemoryOption {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Double defaultPerOcpuInGbs;
-        private Double maxInGbs;
-        private Double maxPerNumaNodeInGbs;
-        private Double maxPerOcpuInGbs;
-        private Double minInGbs;
-        private Double minPerOcpuInGbs;
+        private @Nullable Double defaultPerOcpuInGbs;
+        private @Nullable Double maxInGbs;
+        private @Nullable Double maxPerNumaNodeInGbs;
+        private @Nullable Double maxPerOcpuInGbs;
+        private @Nullable Double minInGbs;
+        private @Nullable Double minPerOcpuInGbs;
         public Builder() {}
         public Builder(GetShapeShapeMemoryOption defaults) {
     	      Objects.requireNonNull(defaults);
@@ -63,33 +65,33 @@ public final class GetShapeShapeMemoryOption {
         }
 
         @CustomType.Setter
-        public Builder defaultPerOcpuInGbs(Double defaultPerOcpuInGbs) {
-            this.defaultPerOcpuInGbs = Objects.requireNonNull(defaultPerOcpuInGbs);
+        public Builder defaultPerOcpuInGbs(@Nullable Double defaultPerOcpuInGbs) {
+            this.defaultPerOcpuInGbs = defaultPerOcpuInGbs;
             return this;
         }
         @CustomType.Setter
-        public Builder maxInGbs(Double maxInGbs) {
-            this.maxInGbs = Objects.requireNonNull(maxInGbs);
+        public Builder maxInGbs(@Nullable Double maxInGbs) {
+            this.maxInGbs = maxInGbs;
             return this;
         }
         @CustomType.Setter
-        public Builder maxPerNumaNodeInGbs(Double maxPerNumaNodeInGbs) {
-            this.maxPerNumaNodeInGbs = Objects.requireNonNull(maxPerNumaNodeInGbs);
+        public Builder maxPerNumaNodeInGbs(@Nullable Double maxPerNumaNodeInGbs) {
+            this.maxPerNumaNodeInGbs = maxPerNumaNodeInGbs;
             return this;
         }
         @CustomType.Setter
-        public Builder maxPerOcpuInGbs(Double maxPerOcpuInGbs) {
-            this.maxPerOcpuInGbs = Objects.requireNonNull(maxPerOcpuInGbs);
+        public Builder maxPerOcpuInGbs(@Nullable Double maxPerOcpuInGbs) {
+            this.maxPerOcpuInGbs = maxPerOcpuInGbs;
             return this;
         }
         @CustomType.Setter
-        public Builder minInGbs(Double minInGbs) {
-            this.minInGbs = Objects.requireNonNull(minInGbs);
+        public Builder minInGbs(@Nullable Double minInGbs) {
+            this.minInGbs = minInGbs;
             return this;
         }
         @CustomType.Setter
-        public Builder minPerOcpuInGbs(Double minPerOcpuInGbs) {
-            this.minPerOcpuInGbs = Objects.requireNonNull(minPerOcpuInGbs);
+        public Builder minPerOcpuInGbs(@Nullable Double minPerOcpuInGbs) {
+            this.minPerOcpuInGbs = minPerOcpuInGbs;
             return this;
         }
         public GetShapeShapeMemoryOption build() {

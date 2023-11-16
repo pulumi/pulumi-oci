@@ -146,7 +146,7 @@ namespace Pulumi.Oci.StackMonitoring
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Type of log (INFO, WARNING, ERROR or SUCCESS)
         /// </summary>
@@ -160,7 +160,7 @@ namespace Pulumi.Oci.StackMonitoring
 
             ImmutableArray<Outputs.GetDiscoveryJobLogsFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? logType)
         {

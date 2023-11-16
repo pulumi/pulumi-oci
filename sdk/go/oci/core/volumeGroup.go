@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // ## Example Usage
@@ -75,7 +74,7 @@ type VolumeGroup struct {
 	// (Updatable) The availability domain of the volume group replica.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain pulumi.StringOutput `pulumi:"availabilityDomain"`
 	// If provided, specifies the ID of the volume backup policy to assign to the newly created volume group. If omitted, no policy will be assigned.
-	BackupPolicyId pulumi.StringOutput `pulumi:"backupPolicyId"`
+	BackupPolicyId pulumi.StringPtrOutput `pulumi:"backupPolicyId"`
 	// (Updatable) The OCID of the compartment that contains the volume group.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -84,22 +83,22 @@ type VolumeGroup struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// Specifies whether the newly created cloned volume group's data has finished copying from the source volume group or backup.
-	IsHydrated            pulumi.BoolOutput    `pulumi:"isHydrated"`
+	IsHydrated            pulumi.BoolPtrOutput `pulumi:"isHydrated"`
 	PreserveVolumeReplica pulumi.BoolPtrOutput `pulumi:"preserveVolumeReplica"`
 	// The aggregate size of the volume group in GBs.
-	SizeInGbs pulumi.StringOutput `pulumi:"sizeInGbs"`
+	SizeInGbs pulumi.StringPtrOutput `pulumi:"sizeInGbs"`
 	// The aggregate size of the volume group in MBs.
-	SizeInMbs pulumi.StringOutput `pulumi:"sizeInMbs"`
+	SizeInMbs pulumi.StringPtrOutput `pulumi:"sizeInMbs"`
 	// Specifies the source for a volume group.
 	SourceDetails VolumeGroupSourceDetailsOutput `pulumi:"sourceDetails"`
 	// The current state of a volume group.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The date and time the volume group was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// (Updatable) The list of volume group replicas that this volume group will be enabled to have in the specified destination availability domains.
 	VolumeGroupReplicas         VolumeGroupVolumeGroupReplicaArrayOutput `pulumi:"volumeGroupReplicas"`
 	VolumeGroupReplicasDeletion pulumi.BoolPtrOutput                     `pulumi:"volumeGroupReplicasDeletion"`
@@ -297,12 +296,6 @@ func (i *VolumeGroup) ToVolumeGroupOutputWithContext(ctx context.Context) Volume
 	return pulumi.ToOutputWithContext(ctx, i).(VolumeGroupOutput)
 }
 
-func (i *VolumeGroup) ToOutput(ctx context.Context) pulumix.Output[*VolumeGroup] {
-	return pulumix.Output[*VolumeGroup]{
-		OutputState: i.ToVolumeGroupOutputWithContext(ctx).OutputState,
-	}
-}
-
 // VolumeGroupArrayInput is an input type that accepts VolumeGroupArray and VolumeGroupArrayOutput values.
 // You can construct a concrete instance of `VolumeGroupArrayInput` via:
 //
@@ -326,12 +319,6 @@ func (i VolumeGroupArray) ToVolumeGroupArrayOutput() VolumeGroupArrayOutput {
 
 func (i VolumeGroupArray) ToVolumeGroupArrayOutputWithContext(ctx context.Context) VolumeGroupArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(VolumeGroupArrayOutput)
-}
-
-func (i VolumeGroupArray) ToOutput(ctx context.Context) pulumix.Output[[]*VolumeGroup] {
-	return pulumix.Output[[]*VolumeGroup]{
-		OutputState: i.ToVolumeGroupArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // VolumeGroupMapInput is an input type that accepts VolumeGroupMap and VolumeGroupMapOutput values.
@@ -359,12 +346,6 @@ func (i VolumeGroupMap) ToVolumeGroupMapOutputWithContext(ctx context.Context) V
 	return pulumi.ToOutputWithContext(ctx, i).(VolumeGroupMapOutput)
 }
 
-func (i VolumeGroupMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*VolumeGroup] {
-	return pulumix.Output[map[string]*VolumeGroup]{
-		OutputState: i.ToVolumeGroupMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type VolumeGroupOutput struct{ *pulumi.OutputState }
 
 func (VolumeGroupOutput) ElementType() reflect.Type {
@@ -379,20 +360,14 @@ func (o VolumeGroupOutput) ToVolumeGroupOutputWithContext(ctx context.Context) V
 	return o
 }
 
-func (o VolumeGroupOutput) ToOutput(ctx context.Context) pulumix.Output[*VolumeGroup] {
-	return pulumix.Output[*VolumeGroup]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The availability domain of the volume group replica.  Example: `Uocm:PHX-AD-1`
 func (o VolumeGroupOutput) AvailabilityDomain() pulumi.StringOutput {
 	return o.ApplyT(func(v *VolumeGroup) pulumi.StringOutput { return v.AvailabilityDomain }).(pulumi.StringOutput)
 }
 
 // If provided, specifies the ID of the volume backup policy to assign to the newly created volume group. If omitted, no policy will be assigned.
-func (o VolumeGroupOutput) BackupPolicyId() pulumi.StringOutput {
-	return o.ApplyT(func(v *VolumeGroup) pulumi.StringOutput { return v.BackupPolicyId }).(pulumi.StringOutput)
+func (o VolumeGroupOutput) BackupPolicyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VolumeGroup) pulumi.StringPtrOutput { return v.BackupPolicyId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The OCID of the compartment that contains the volume group.
@@ -409,8 +384,8 @@ func (o VolumeGroupOutput) DefinedTags() pulumi.MapOutput {
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o VolumeGroupOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *VolumeGroup) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o VolumeGroupOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VolumeGroup) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -419,8 +394,8 @@ func (o VolumeGroupOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Specifies whether the newly created cloned volume group's data has finished copying from the source volume group or backup.
-func (o VolumeGroupOutput) IsHydrated() pulumi.BoolOutput {
-	return o.ApplyT(func(v *VolumeGroup) pulumi.BoolOutput { return v.IsHydrated }).(pulumi.BoolOutput)
+func (o VolumeGroupOutput) IsHydrated() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *VolumeGroup) pulumi.BoolPtrOutput { return v.IsHydrated }).(pulumi.BoolPtrOutput)
 }
 
 func (o VolumeGroupOutput) PreserveVolumeReplica() pulumi.BoolPtrOutput {
@@ -428,13 +403,13 @@ func (o VolumeGroupOutput) PreserveVolumeReplica() pulumi.BoolPtrOutput {
 }
 
 // The aggregate size of the volume group in GBs.
-func (o VolumeGroupOutput) SizeInGbs() pulumi.StringOutput {
-	return o.ApplyT(func(v *VolumeGroup) pulumi.StringOutput { return v.SizeInGbs }).(pulumi.StringOutput)
+func (o VolumeGroupOutput) SizeInGbs() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VolumeGroup) pulumi.StringPtrOutput { return v.SizeInGbs }).(pulumi.StringPtrOutput)
 }
 
 // The aggregate size of the volume group in MBs.
-func (o VolumeGroupOutput) SizeInMbs() pulumi.StringOutput {
-	return o.ApplyT(func(v *VolumeGroup) pulumi.StringOutput { return v.SizeInMbs }).(pulumi.StringOutput)
+func (o VolumeGroupOutput) SizeInMbs() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VolumeGroup) pulumi.StringPtrOutput { return v.SizeInMbs }).(pulumi.StringPtrOutput)
 }
 
 // Specifies the source for a volume group.
@@ -443,13 +418,13 @@ func (o VolumeGroupOutput) SourceDetails() VolumeGroupSourceDetailsOutput {
 }
 
 // The current state of a volume group.
-func (o VolumeGroupOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *VolumeGroup) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o VolumeGroupOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VolumeGroup) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the volume group was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-func (o VolumeGroupOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *VolumeGroup) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o VolumeGroupOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VolumeGroup) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The list of volume group replicas that this volume group will be enabled to have in the specified destination availability domains.
@@ -480,12 +455,6 @@ func (o VolumeGroupArrayOutput) ToVolumeGroupArrayOutputWithContext(ctx context.
 	return o
 }
 
-func (o VolumeGroupArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*VolumeGroup] {
-	return pulumix.Output[[]*VolumeGroup]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o VolumeGroupArrayOutput) Index(i pulumi.IntInput) VolumeGroupOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *VolumeGroup {
 		return vs[0].([]*VolumeGroup)[vs[1].(int)]
@@ -504,12 +473,6 @@ func (o VolumeGroupMapOutput) ToVolumeGroupMapOutput() VolumeGroupMapOutput {
 
 func (o VolumeGroupMapOutput) ToVolumeGroupMapOutputWithContext(ctx context.Context) VolumeGroupMapOutput {
 	return o
-}
-
-func (o VolumeGroupMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*VolumeGroup] {
-	return pulumix.Output[map[string]*VolumeGroup]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o VolumeGroupMapOutput) MapIndex(k pulumi.StringInput) VolumeGroupOutput {

@@ -151,7 +151,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly int? Limit;
         public readonly string ManagedDatabaseId;
         /// <summary>
@@ -165,7 +165,7 @@ namespace Pulumi.Oci.DatabaseManagement
 
             ImmutableArray<Outputs.GetManagedDatabaseCursorCacheStatementsFilterResult> filters,
 
-            string id,
+            string? id,
 
             int? limit,
 

@@ -28,12 +28,12 @@ public final class GetEtlRunResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return List of runs
      * 
      */
-    private List<GetEtlRunItem> items;
+    private @Nullable List<GetEtlRunItem> items;
 
     private GetEtlRunResult() {}
     /**
@@ -57,15 +57,15 @@ public final class GetEtlRunResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return List of runs
      * 
      */
     public List<GetEtlRunItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -80,8 +80,8 @@ public final class GetEtlRunResult {
         private @Nullable String compartmentId;
         private @Nullable String displayName;
         private String emWarehouseId;
-        private String id;
-        private List<GetEtlRunItem> items;
+        private @Nullable String id;
+        private @Nullable List<GetEtlRunItem> items;
         public Builder() {}
         public Builder(GetEtlRunResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -108,13 +108,13 @@ public final class GetEtlRunResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder items(List<GetEtlRunItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetEtlRunItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetEtlRunItem... items) {

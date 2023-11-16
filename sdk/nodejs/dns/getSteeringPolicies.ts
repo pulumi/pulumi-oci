@@ -119,7 +119,7 @@ export interface GetSteeringPoliciesResult {
     /**
      * The list of steering_policies.
      */
-    readonly steeringPolicies: outputs.Dns.GetSteeringPoliciesSteeringPolicy[];
+    readonly steeringPolicies?: outputs.Dns.GetSteeringPoliciesSteeringPolicy[];
     /**
      * A set of predefined rules based on the desired purpose of the steering policy. Each template utilizes Traffic Management's rules in a different order to produce the desired results when answering DNS queries.
      */

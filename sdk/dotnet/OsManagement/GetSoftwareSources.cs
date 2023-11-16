@@ -163,7 +163,7 @@ namespace Pulumi.Oci.OsManagement
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The list of software_sources.
         /// </summary>
@@ -181,7 +181,7 @@ namespace Pulumi.Oci.OsManagement
 
             ImmutableArray<Outputs.GetSoftwareSourcesFilterResult> filters,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetSoftwareSourcesSoftwareSourceResult> softwareSources,
 

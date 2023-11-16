@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Categories in Oracle Cloud Infrastructure Optimizer service.
@@ -95,8 +94,8 @@ type GetCategoriesResult struct {
 	CompartmentIdInSubtree bool                  `pulumi:"compartmentIdInSubtree"`
 	Filters                []GetCategoriesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                  string `pulumi:"id"`
-	IncludeOrganization *bool  `pulumi:"includeOrganization"`
+	Id                  *string `pulumi:"id"`
+	IncludeOrganization *bool   `pulumi:"includeOrganization"`
 	// The name assigned to the category.
 	Name *string `pulumi:"name"`
 	// The category's current state.
@@ -164,12 +163,6 @@ func (o GetCategoriesResultOutput) ToGetCategoriesResultOutputWithContext(ctx co
 	return o
 }
 
-func (o GetCategoriesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetCategoriesResult] {
-	return pulumix.Output[GetCategoriesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The list of category_collection.
 func (o GetCategoriesResultOutput) CategoryCollections() GetCategoriesCategoryCollectionArrayOutput {
 	return o.ApplyT(func(v GetCategoriesResult) []GetCategoriesCategoryCollection { return v.CategoryCollections }).(GetCategoriesCategoryCollectionArrayOutput)
@@ -193,8 +186,8 @@ func (o GetCategoriesResultOutput) Filters() GetCategoriesFilterArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetCategoriesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCategoriesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetCategoriesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCategoriesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetCategoriesResultOutput) IncludeOrganization() pulumi.BoolPtrOutput {

@@ -8,6 +8,8 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetEmWarehouseResult {
@@ -15,112 +17,112 @@ public final class GetEmWarehouseResult {
      * @return Compartment Identifier
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return EmWarehouse Identifier, can be renamed
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return EMBridge Identifier
      * 
      */
-    private String emBridgeId;
+    private @Nullable String emBridgeId;
     private String emWarehouseId;
     /**
      * @return Type of the EmWarehouse.
      * 
      */
-    private String emWarehouseType;
+    private @Nullable String emWarehouseType;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return Unique identifier that is immutable on creation
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Data Flow Run Status Message
      * 
      */
-    private String latestEtlRunMessage;
+    private @Nullable String latestEtlRunMessage;
     /**
      * @return Data Flow Run Status
      * 
      */
-    private String latestEtlRunStatus;
+    private @Nullable String latestEtlRunStatus;
     /**
      * @return Data Flow Run Total Time
      * 
      */
-    private String latestEtlRunTime;
+    private @Nullable String latestEtlRunTime;
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return operations Insights Warehouse Identifier
      * 
      */
-    private String operationsInsightsWarehouseId;
+    private @Nullable String operationsInsightsWarehouseId;
     /**
      * @return The current state of the EmWarehouse.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private @Nullable Map<String,Object> systemTags;
     /**
      * @return The time the the EmWarehouse was created. An RFC3339 formatted datetime string
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The time the EmWarehouse was updated. An RFC3339 formatted datetime string
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
 
     private GetEmWarehouseResult() {}
     /**
      * @return Compartment Identifier
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return EmWarehouse Identifier, can be renamed
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return EMBridge Identifier
      * 
      */
-    public String emBridgeId() {
-        return this.emBridgeId;
+    public Optional<String> emBridgeId() {
+        return Optional.ofNullable(this.emBridgeId);
     }
     public String emWarehouseId() {
         return this.emWarehouseId;
@@ -129,85 +131,85 @@ public final class GetEmWarehouseResult {
      * @return Type of the EmWarehouse.
      * 
      */
-    public String emWarehouseType() {
-        return this.emWarehouseType;
+    public Optional<String> emWarehouseType() {
+        return Optional.ofNullable(this.emWarehouseType);
     }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return Unique identifier that is immutable on creation
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Data Flow Run Status Message
      * 
      */
-    public String latestEtlRunMessage() {
-        return this.latestEtlRunMessage;
+    public Optional<String> latestEtlRunMessage() {
+        return Optional.ofNullable(this.latestEtlRunMessage);
     }
     /**
      * @return Data Flow Run Status
      * 
      */
-    public String latestEtlRunStatus() {
-        return this.latestEtlRunStatus;
+    public Optional<String> latestEtlRunStatus() {
+        return Optional.ofNullable(this.latestEtlRunStatus);
     }
     /**
      * @return Data Flow Run Total Time
      * 
      */
-    public String latestEtlRunTime() {
-        return this.latestEtlRunTime;
+    public Optional<String> latestEtlRunTime() {
+        return Optional.ofNullable(this.latestEtlRunTime);
     }
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return operations Insights Warehouse Identifier
      * 
      */
-    public String operationsInsightsWarehouseId() {
-        return this.operationsInsightsWarehouseId;
+    public Optional<String> operationsInsightsWarehouseId() {
+        return Optional.ofNullable(this.operationsInsightsWarehouseId);
     }
     /**
      * @return The current state of the EmWarehouse.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     public Map<String,Object> systemTags() {
-        return this.systemTags;
+        return this.systemTags == null ? Map.of() : this.systemTags;
     }
     /**
      * @return The time the the EmWarehouse was created. An RFC3339 formatted datetime string
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The time the EmWarehouse was updated. An RFC3339 formatted datetime string
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
 
     public static Builder builder() {
@@ -219,23 +221,23 @@ public final class GetEmWarehouseResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private Map<String,Object> definedTags;
-        private String displayName;
-        private String emBridgeId;
+        private @Nullable String compartmentId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String displayName;
+        private @Nullable String emBridgeId;
         private String emWarehouseId;
-        private String emWarehouseType;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private String latestEtlRunMessage;
-        private String latestEtlRunStatus;
-        private String latestEtlRunTime;
-        private String lifecycleDetails;
-        private String operationsInsightsWarehouseId;
-        private String state;
-        private Map<String,Object> systemTags;
-        private String timeCreated;
-        private String timeUpdated;
+        private @Nullable String emWarehouseType;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable String latestEtlRunMessage;
+        private @Nullable String latestEtlRunStatus;
+        private @Nullable String latestEtlRunTime;
+        private @Nullable String lifecycleDetails;
+        private @Nullable String operationsInsightsWarehouseId;
+        private @Nullable String state;
+        private @Nullable Map<String,Object> systemTags;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
         public Builder() {}
         public Builder(GetEmWarehouseResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -259,23 +261,23 @@ public final class GetEmWarehouseResult {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder emBridgeId(String emBridgeId) {
-            this.emBridgeId = Objects.requireNonNull(emBridgeId);
+        public Builder emBridgeId(@Nullable String emBridgeId) {
+            this.emBridgeId = emBridgeId;
             return this;
         }
         @CustomType.Setter
@@ -284,63 +286,63 @@ public final class GetEmWarehouseResult {
             return this;
         }
         @CustomType.Setter
-        public Builder emWarehouseType(String emWarehouseType) {
-            this.emWarehouseType = Objects.requireNonNull(emWarehouseType);
+        public Builder emWarehouseType(@Nullable String emWarehouseType) {
+            this.emWarehouseType = emWarehouseType;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder latestEtlRunMessage(String latestEtlRunMessage) {
-            this.latestEtlRunMessage = Objects.requireNonNull(latestEtlRunMessage);
+        public Builder latestEtlRunMessage(@Nullable String latestEtlRunMessage) {
+            this.latestEtlRunMessage = latestEtlRunMessage;
             return this;
         }
         @CustomType.Setter
-        public Builder latestEtlRunStatus(String latestEtlRunStatus) {
-            this.latestEtlRunStatus = Objects.requireNonNull(latestEtlRunStatus);
+        public Builder latestEtlRunStatus(@Nullable String latestEtlRunStatus) {
+            this.latestEtlRunStatus = latestEtlRunStatus;
             return this;
         }
         @CustomType.Setter
-        public Builder latestEtlRunTime(String latestEtlRunTime) {
-            this.latestEtlRunTime = Objects.requireNonNull(latestEtlRunTime);
+        public Builder latestEtlRunTime(@Nullable String latestEtlRunTime) {
+            this.latestEtlRunTime = latestEtlRunTime;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder operationsInsightsWarehouseId(String operationsInsightsWarehouseId) {
-            this.operationsInsightsWarehouseId = Objects.requireNonNull(operationsInsightsWarehouseId);
+        public Builder operationsInsightsWarehouseId(@Nullable String operationsInsightsWarehouseId) {
+            this.operationsInsightsWarehouseId = operationsInsightsWarehouseId;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+        public Builder systemTags(@Nullable Map<String,Object> systemTags) {
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetEmWarehouseResult build() {

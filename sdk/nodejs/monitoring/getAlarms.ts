@@ -75,7 +75,7 @@ export interface GetAlarmsResult {
     /**
      * The list of alarms.
      */
-    readonly alarms: outputs.Monitoring.GetAlarmsAlarm[];
+    readonly alarms?: outputs.Monitoring.GetAlarmsAlarm[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the alarm.
      */
@@ -89,7 +89,7 @@ export interface GetAlarmsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The current lifecycle state of the alarm.  Example: `DELETED`
      */

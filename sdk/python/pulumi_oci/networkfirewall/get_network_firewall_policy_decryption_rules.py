@@ -50,10 +50,7 @@ class GetNetworkFirewallPolicyDecryptionRulesResult:
 
     @property
     @pulumi.getter(name="decryptionRuleSummaryCollections")
-    def decryption_rule_summary_collections(self) -> Sequence['outputs.GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionResult']:
-        """
-        The list of decryption_rule_summary_collection.
-        """
+    def decryption_rule_summary_collections(self) -> Optional[Sequence['outputs.GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionResult']]:
         return pulumi.get(self, "decryption_rule_summary_collections")
 
     @property
@@ -68,7 +65,7 @@ class GetNetworkFirewallPolicyDecryptionRulesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -100,25 +97,7 @@ def get_network_firewall_policy_decryption_rules(decryption_rule_priority_order:
                                                  network_firewall_policy_id: Optional[str] = None,
                                                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNetworkFirewallPolicyDecryptionRulesResult:
     """
-    This data source provides the list of Network Firewall Policy Decryption Rules in Oracle Cloud Infrastructure Network Firewall service.
-
-    Returns a list of Decryption Rule for the Network Firewall Policy.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_network_firewall_policy_decryption_rules = oci.NetworkFirewall.get_network_firewall_policy_decryption_rules(network_firewall_policy_id=oci_network_firewall_network_firewall_policy["test_network_firewall_policy"]["id"],
-        decryption_rule_priority_order=var["network_firewall_policy_decryption_rule_decryption_rule_priority_order"],
-        display_name=var["network_firewall_policy_decryption_rule_display_name"])
-    ```
-
-
-    :param int decryption_rule_priority_order: Unique priority order for Decryption Rules in the network firewall policy.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str network_firewall_policy_id: Unique Network Firewall Policy identifier
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['decryptionRulePriorityOrder'] = decryption_rule_priority_order
@@ -144,24 +123,6 @@ def get_network_firewall_policy_decryption_rules_output(decryption_rule_priority
                                                         network_firewall_policy_id: Optional[pulumi.Input[str]] = None,
                                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNetworkFirewallPolicyDecryptionRulesResult]:
     """
-    This data source provides the list of Network Firewall Policy Decryption Rules in Oracle Cloud Infrastructure Network Firewall service.
-
-    Returns a list of Decryption Rule for the Network Firewall Policy.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_network_firewall_policy_decryption_rules = oci.NetworkFirewall.get_network_firewall_policy_decryption_rules(network_firewall_policy_id=oci_network_firewall_network_firewall_policy["test_network_firewall_policy"]["id"],
-        decryption_rule_priority_order=var["network_firewall_policy_decryption_rule_decryption_rule_priority_order"],
-        display_name=var["network_firewall_policy_decryption_rule_display_name"])
-    ```
-
-
-    :param int decryption_rule_priority_order: Unique priority order for Decryption Rules in the network firewall policy.
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str network_firewall_policy_id: Unique Network Firewall Policy identifier
+    Use this data source to access information about an existing resource.
     """
     ...

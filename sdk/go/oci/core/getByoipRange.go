@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Byoip Range resource in Oracle Cloud Infrastructure Core service.
@@ -64,33 +63,33 @@ type GetByoipRangeResult struct {
 	// A list of `ByoipRangeVcnIpv6AllocationSummary` objects.
 	ByoipRangeVcnIpv6allocations []GetByoipRangeByoipRangeVcnIpv6allocation `pulumi:"byoipRangeVcnIpv6allocations"`
 	// The public IPv4 CIDR block being imported from on-premises to the Oracle cloud.
-	CidrBlock string `pulumi:"cidrBlock"`
+	CidrBlock *string `pulumi:"cidrBlock"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the BYOIP CIDR block.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The IPv6 prefix being imported to the Oracle cloud. This prefix must be /48 or larger, and can be subdivided into sub-ranges used across multiple VCNs. A BYOIPv6 prefix can be also assigned across multiple VCNs, and each VCN must be /64 or larger. You may specify a ULA or private IPv6 prefix of /64 or larger to use in the VCN. IPv6-enabled subnets will remain a fixed /64 in size.
-	Ipv6cidrBlock string `pulumi:"ipv6cidrBlock"`
+	Ipv6cidrBlock *string `pulumi:"ipv6cidrBlock"`
 	// The `ByoipRange` resource's current status.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The `ByoipRange` resource's current state.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the `ByoipRange` resource was advertised to the internet by BGP, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeAdvertised string `pulumi:"timeAdvertised"`
+	TimeAdvertised *string `pulumi:"timeAdvertised"`
 	// The date and time the `ByoipRange` resource was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the `ByoipRange` resource was validated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeValidated string `pulumi:"timeValidated"`
+	TimeValidated *string `pulumi:"timeValidated"`
 	// The date and time the `ByoipRange` resource was withdrawn from advertisement by BGP to the internet, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeWithdrawn string `pulumi:"timeWithdrawn"`
+	TimeWithdrawn *string `pulumi:"timeWithdrawn"`
 	// The validation token is an internally-generated ASCII string used in the validation process. See [Importing a CIDR block](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/BYOIP.htm#import_cidr) for details.
-	ValidationToken string `pulumi:"validationToken"`
+	ValidationToken *string `pulumi:"validationToken"`
 }
 
 func GetByoipRangeOutput(ctx *pulumi.Context, args GetByoipRangeOutputArgs, opts ...pulumi.InvokeOption) GetByoipRangeResultOutput {
@@ -131,12 +130,6 @@ func (o GetByoipRangeResultOutput) ToGetByoipRangeResultOutputWithContext(ctx co
 	return o
 }
 
-func (o GetByoipRangeResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetByoipRangeResult] {
-	return pulumix.Output[GetByoipRangeResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `ByoipRange` resource to which the CIDR block belongs.
 func (o GetByoipRangeResultOutput) ByoipRangeId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetByoipRangeResult) string { return v.ByoipRangeId }).(pulumi.StringOutput)
@@ -150,13 +143,13 @@ func (o GetByoipRangeResultOutput) ByoipRangeVcnIpv6allocations() GetByoipRangeB
 }
 
 // The public IPv4 CIDR block being imported from on-premises to the Oracle cloud.
-func (o GetByoipRangeResultOutput) CidrBlock() pulumi.StringOutput {
-	return o.ApplyT(func(v GetByoipRangeResult) string { return v.CidrBlock }).(pulumi.StringOutput)
+func (o GetByoipRangeResultOutput) CidrBlock() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetByoipRangeResult) *string { return v.CidrBlock }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the BYOIP CIDR block.
-func (o GetByoipRangeResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetByoipRangeResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetByoipRangeResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetByoipRangeResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -165,8 +158,8 @@ func (o GetByoipRangeResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-func (o GetByoipRangeResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetByoipRangeResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetByoipRangeResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetByoipRangeResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -175,48 +168,48 @@ func (o GetByoipRangeResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetByoipRangeResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetByoipRangeResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetByoipRangeResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetByoipRangeResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The IPv6 prefix being imported to the Oracle cloud. This prefix must be /48 or larger, and can be subdivided into sub-ranges used across multiple VCNs. A BYOIPv6 prefix can be also assigned across multiple VCNs, and each VCN must be /64 or larger. You may specify a ULA or private IPv6 prefix of /64 or larger to use in the VCN. IPv6-enabled subnets will remain a fixed /64 in size.
-func (o GetByoipRangeResultOutput) Ipv6cidrBlock() pulumi.StringOutput {
-	return o.ApplyT(func(v GetByoipRangeResult) string { return v.Ipv6cidrBlock }).(pulumi.StringOutput)
+func (o GetByoipRangeResultOutput) Ipv6cidrBlock() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetByoipRangeResult) *string { return v.Ipv6cidrBlock }).(pulumi.StringPtrOutput)
 }
 
 // The `ByoipRange` resource's current status.
-func (o GetByoipRangeResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetByoipRangeResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetByoipRangeResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetByoipRangeResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The `ByoipRange` resource's current state.
-func (o GetByoipRangeResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetByoipRangeResult) string { return v.State }).(pulumi.StringOutput)
+func (o GetByoipRangeResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetByoipRangeResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the `ByoipRange` resource was advertised to the internet by BGP, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-func (o GetByoipRangeResultOutput) TimeAdvertised() pulumi.StringOutput {
-	return o.ApplyT(func(v GetByoipRangeResult) string { return v.TimeAdvertised }).(pulumi.StringOutput)
+func (o GetByoipRangeResultOutput) TimeAdvertised() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetByoipRangeResult) *string { return v.TimeAdvertised }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the `ByoipRange` resource was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-func (o GetByoipRangeResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetByoipRangeResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetByoipRangeResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetByoipRangeResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the `ByoipRange` resource was validated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-func (o GetByoipRangeResultOutput) TimeValidated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetByoipRangeResult) string { return v.TimeValidated }).(pulumi.StringOutput)
+func (o GetByoipRangeResultOutput) TimeValidated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetByoipRangeResult) *string { return v.TimeValidated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the `ByoipRange` resource was withdrawn from advertisement by BGP to the internet, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-func (o GetByoipRangeResultOutput) TimeWithdrawn() pulumi.StringOutput {
-	return o.ApplyT(func(v GetByoipRangeResult) string { return v.TimeWithdrawn }).(pulumi.StringOutput)
+func (o GetByoipRangeResultOutput) TimeWithdrawn() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetByoipRangeResult) *string { return v.TimeWithdrawn }).(pulumi.StringPtrOutput)
 }
 
 // The validation token is an internally-generated ASCII string used in the validation process. See [Importing a CIDR block](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/BYOIP.htm#import_cidr) for details.
-func (o GetByoipRangeResultOutput) ValidationToken() pulumi.StringOutput {
-	return o.ApplyT(func(v GetByoipRangeResult) string { return v.ValidationToken }).(pulumi.StringOutput)
+func (o GetByoipRangeResultOutput) ValidationToken() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetByoipRangeResult) *string { return v.ValidationToken }).(pulumi.StringPtrOutput)
 }
 
 func init() {

@@ -61,7 +61,7 @@ class GetTraceSnapshotDataResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -74,10 +74,7 @@ class GetTraceSnapshotDataResult:
 
     @property
     @pulumi.getter
-    def key(self) -> str:
-        """
-        Name of the property.
-        """
+    def key(self) -> Optional[str]:
         return pulumi.get(self, "key")
 
     @property
@@ -92,18 +89,12 @@ class GetTraceSnapshotDataResult:
 
     @property
     @pulumi.getter(name="timeEnded")
-    def time_ended(self) -> str:
-        """
-        End time of the trace.
-        """
+    def time_ended(self) -> Optional[str]:
         return pulumi.get(self, "time_ended")
 
     @property
     @pulumi.getter(name="timeStarted")
-    def time_started(self) -> str:
-        """
-        Start time of the trace.
-        """
+    def time_started(self) -> Optional[str]:
         return pulumi.get(self, "time_started")
 
     @property
@@ -113,10 +104,7 @@ class GetTraceSnapshotDataResult:
 
     @property
     @pulumi.getter(name="traceSnapshotDetails")
-    def trace_snapshot_details(self) -> Sequence['outputs.GetTraceSnapshotDataTraceSnapshotDetailResult']:
-        """
-        Trace snapshots properties.
-        """
+    def trace_snapshot_details(self) -> Optional[Sequence['outputs.GetTraceSnapshotDataTraceSnapshotDetailResult']]:
         return pulumi.get(self, "trace_snapshot_details")
 
 
@@ -145,29 +133,7 @@ def get_trace_snapshot_data(apm_domain_id: Optional[str] = None,
                             trace_key: Optional[str] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetTraceSnapshotDataResult:
     """
-    This data source provides details about a specific Trace Snapshot Data resource in Oracle Cloud Infrastructure Apm Traces service.
-
-    Gets the trace snapshots data identified by trace ID.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_trace_snapshot_data = oci.ApmTraces.get_trace_snapshot_data(apm_domain_id=oci_apm_apm_domain["test_apm_domain"]["id"],
-        trace_key=var["trace_snapshot_data_trace_key"],
-        is_summarized=var["trace_snapshot_data_is_summarized"],
-        snapshot_time=var["trace_snapshot_data_snapshot_time"],
-        thread_id=oci_apm_traces_thread["test_thread"]["id"])
-    ```
-
-
-    :param str apm_domain_id: The APM Domain ID the request is intended for.
-    :param bool is_summarized: If enabled, then only span level details will be sent.
-    :param str snapshot_time: Epoch time of snapshot.
-    :param str thread_id: Thread id for which snapshots needs to be retrieved. This is an identifier of a thread, and is a positive long number generated when when a thread is created.
-    :param str trace_key: Unique Application Performance Monitoring trace identifier (traceId).
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['apmDomainId'] = apm_domain_id
@@ -199,28 +165,6 @@ def get_trace_snapshot_data_output(apm_domain_id: Optional[pulumi.Input[str]] = 
                                    trace_key: Optional[pulumi.Input[str]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetTraceSnapshotDataResult]:
     """
-    This data source provides details about a specific Trace Snapshot Data resource in Oracle Cloud Infrastructure Apm Traces service.
-
-    Gets the trace snapshots data identified by trace ID.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_trace_snapshot_data = oci.ApmTraces.get_trace_snapshot_data(apm_domain_id=oci_apm_apm_domain["test_apm_domain"]["id"],
-        trace_key=var["trace_snapshot_data_trace_key"],
-        is_summarized=var["trace_snapshot_data_is_summarized"],
-        snapshot_time=var["trace_snapshot_data_snapshot_time"],
-        thread_id=oci_apm_traces_thread["test_thread"]["id"])
-    ```
-
-
-    :param str apm_domain_id: The APM Domain ID the request is intended for.
-    :param bool is_summarized: If enabled, then only span level details will be sent.
-    :param str snapshot_time: Epoch time of snapshot.
-    :param str thread_id: Thread id for which snapshots needs to be retrieved. This is an identifier of a thread, and is a positive long number generated when when a thread is created.
-    :param str trace_key: Unique Application Performance Monitoring trace identifier (traceId).
+    Use this data source to access information about an existing resource.
     """
     ...

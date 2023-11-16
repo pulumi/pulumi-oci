@@ -64,15 +64,15 @@ export interface GetTrailFileResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * An array of TrailFiles.
      */
-    readonly items: outputs.GoldenGate.GetTrailFileItem[];
+    readonly items?: outputs.GoldenGate.GetTrailFileItem[];
     /**
      * The time the data was last fetched from the deployment. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */
-    readonly timeLastFetched: string;
+    readonly timeLastFetched?: string;
     /**
      * The TrailFile Id.
      */

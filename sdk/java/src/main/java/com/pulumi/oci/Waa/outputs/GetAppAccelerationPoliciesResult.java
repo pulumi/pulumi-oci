@@ -39,7 +39,7 @@ public final class GetAppAccelerationPoliciesResult {
      * @return The list of web_app_acceleration_policy_collection.
      * 
      */
-    private List<GetAppAccelerationPoliciesWebAppAccelerationPolicyCollection> webAppAccelerationPolicyCollections;
+    private @Nullable List<GetAppAccelerationPoliciesWebAppAccelerationPolicyCollection> webAppAccelerationPolicyCollections;
 
     private GetAppAccelerationPoliciesResult() {}
     /**
@@ -78,7 +78,7 @@ public final class GetAppAccelerationPoliciesResult {
      * 
      */
     public List<GetAppAccelerationPoliciesWebAppAccelerationPolicyCollection> webAppAccelerationPolicyCollections() {
-        return this.webAppAccelerationPolicyCollections;
+        return this.webAppAccelerationPolicyCollections == null ? List.of() : this.webAppAccelerationPolicyCollections;
     }
 
     public static Builder builder() {
@@ -95,7 +95,7 @@ public final class GetAppAccelerationPoliciesResult {
         private @Nullable List<GetAppAccelerationPoliciesFilter> filters;
         private @Nullable String id;
         private @Nullable List<String> states;
-        private List<GetAppAccelerationPoliciesWebAppAccelerationPolicyCollection> webAppAccelerationPolicyCollections;
+        private @Nullable List<GetAppAccelerationPoliciesWebAppAccelerationPolicyCollection> webAppAccelerationPolicyCollections;
         public Builder() {}
         public Builder(GetAppAccelerationPoliciesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -139,8 +139,8 @@ public final class GetAppAccelerationPoliciesResult {
             return states(List.of(states));
         }
         @CustomType.Setter
-        public Builder webAppAccelerationPolicyCollections(List<GetAppAccelerationPoliciesWebAppAccelerationPolicyCollection> webAppAccelerationPolicyCollections) {
-            this.webAppAccelerationPolicyCollections = Objects.requireNonNull(webAppAccelerationPolicyCollections);
+        public Builder webAppAccelerationPolicyCollections(@Nullable List<GetAppAccelerationPoliciesWebAppAccelerationPolicyCollection> webAppAccelerationPolicyCollections) {
+            this.webAppAccelerationPolicyCollections = webAppAccelerationPolicyCollections;
             return this;
         }
         public Builder webAppAccelerationPolicyCollections(GetAppAccelerationPoliciesWebAppAccelerationPolicyCollection... webAppAccelerationPolicyCollections) {

@@ -16,15 +16,15 @@ namespace Pulumi.Oci.DataIntegration.Outputs
         /// <summary>
         /// The source application version of the application.
         /// </summary>
-        public readonly int ApplicationVersion;
+        public readonly int? ApplicationVersion;
         /// <summary>
         /// OCID of the compartment that this resource belongs to. Defaults to compartment of the Workspace.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// A list of dependent objects in this patch.
         /// </summary>
@@ -32,31 +32,31 @@ namespace Pulumi.Oci.DataIntegration.Outputs
         /// <summary>
         /// The description of the aggregator.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// OCID of the resource that is used to uniquely identify the application
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Used to filter by the identifier of the published object.
         /// </summary>
-        public readonly string Identifier;
+        public readonly string? Identifier;
         /// <summary>
         /// The key of the object.
         /// </summary>
-        public readonly string Key;
+        public readonly string? Key;
         /// <summary>
         /// A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
         /// </summary>
-        public readonly ImmutableDictionary<string, object> KeyMap;
+        public readonly ImmutableDictionary<string, object>? KeyMap;
         /// <summary>
         /// A summary type containing information about the object including its key, name and when/who created/updated it.
         /// </summary>
@@ -64,23 +64,23 @@ namespace Pulumi.Oci.DataIntegration.Outputs
         /// <summary>
         /// The object type.
         /// </summary>
-        public readonly string ModelType;
+        public readonly string? ModelType;
         /// <summary>
         /// The object's model version.
         /// </summary>
-        public readonly string ModelVersion;
+        public readonly string? ModelVersion;
         /// <summary>
         /// Used to filter by the name of the object.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
         /// </summary>
-        public readonly int ObjectStatus;
+        public readonly int? ObjectStatus;
         /// <summary>
         /// The object version.
         /// </summary>
-        public readonly int ObjectVersion;
+        public readonly int? ObjectVersion;
         /// <summary>
         /// A reference to the object's parent.
         /// </summary>
@@ -97,59 +97,59 @@ namespace Pulumi.Oci.DataIntegration.Outputs
         /// <summary>
         /// The current state of the workspace.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The date and time the application was created, in the timestamp format defined by RFC3339.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The date and time the application was patched, in the timestamp format defined by RFC3339.
         /// </summary>
-        public readonly string TimePatched;
+        public readonly string? TimePatched;
         /// <summary>
         /// The date and time the application was updated, in the timestamp format defined by RFC3339. example: 2019-08-25T21:10:29.41Z
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
         /// <summary>
         /// The workspace ID.
         /// </summary>
-        public readonly string WorkspaceId;
+        public readonly string? WorkspaceId;
 
         [OutputConstructor]
         private GetWorkspaceApplicationsApplicationSummaryCollectionItemResult(
-            int applicationVersion,
+            int? applicationVersion,
 
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
             ImmutableArray<Outputs.GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMetadataResult> dependentObjectMetadatas,
 
-            string description,
+            string? description,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            string identifier,
+            string? identifier,
 
-            string key,
+            string? key,
 
-            ImmutableDictionary<string, object> keyMap,
+            ImmutableDictionary<string, object>? keyMap,
 
             ImmutableArray<Outputs.GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataResult> metadatas,
 
-            string modelType,
+            string? modelType,
 
-            string modelVersion,
+            string? modelVersion,
 
-            string name,
+            string? name,
 
-            int objectStatus,
+            int? objectStatus,
 
-            int objectVersion,
+            int? objectVersion,
 
             ImmutableArray<Outputs.GetWorkspaceApplicationsApplicationSummaryCollectionItemParentRefResult> parentReves,
 
@@ -159,15 +159,15 @@ namespace Pulumi.Oci.DataIntegration.Outputs
 
             ImmutableArray<Outputs.GetWorkspaceApplicationsApplicationSummaryCollectionItemSourceApplicationInfoResult> sourceApplicationInfos,
 
-            string state,
+            string? state,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timePatched,
+            string? timePatched,
 
-            string timeUpdated,
+            string? timeUpdated,
 
-            string workspaceId)
+            string? workspaceId)
         {
             ApplicationVersion = applicationVersion;
             CompartmentId = compartmentId;

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Security Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
@@ -60,30 +59,30 @@ type LookupSecurityRecipeArgs struct {
 // A collection of values returned by getSecurityRecipe.
 type LookupSecurityRecipeResult struct {
 	// The id of the compartment that contains the recipe
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The recipe's description
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// The recipe's name
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Unique identifier that is immutable on creation
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, this can be used to provide actionable information for a recipe in the `Failed` state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The owner of the recipe
-	Owner string `pulumi:"owner"`
+	Owner *string `pulumi:"owner"`
 	// The list of `SecurityPolicy` ids that are included in the recipe
 	SecurityPolicies []string `pulumi:"securityPolicies"`
 	SecurityRecipeId string   `pulumi:"securityRecipeId"`
 	// The current state of the recipe
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The time the recipe was created. An RFC3339 formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the recipe was last updated. An RFC3339 formatted datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func LookupSecurityRecipeOutput(ctx *pulumi.Context, args LookupSecurityRecipeOutputArgs, opts ...pulumi.InvokeOption) LookupSecurityRecipeResultOutput {
@@ -124,15 +123,9 @@ func (o LookupSecurityRecipeResultOutput) ToLookupSecurityRecipeResultOutputWith
 	return o
 }
 
-func (o LookupSecurityRecipeResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupSecurityRecipeResult] {
-	return pulumix.Output[LookupSecurityRecipeResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The id of the compartment that contains the recipe
-func (o LookupSecurityRecipeResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSecurityRecipeResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupSecurityRecipeResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSecurityRecipeResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -141,13 +134,13 @@ func (o LookupSecurityRecipeResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // The recipe's description
-func (o LookupSecurityRecipeResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSecurityRecipeResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupSecurityRecipeResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSecurityRecipeResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // The recipe's name
-func (o LookupSecurityRecipeResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSecurityRecipeResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupSecurityRecipeResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSecurityRecipeResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -156,18 +149,18 @@ func (o LookupSecurityRecipeResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Unique identifier that is immutable on creation
-func (o LookupSecurityRecipeResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSecurityRecipeResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupSecurityRecipeResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSecurityRecipeResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, this can be used to provide actionable information for a recipe in the `Failed` state.
-func (o LookupSecurityRecipeResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSecurityRecipeResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupSecurityRecipeResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSecurityRecipeResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The owner of the recipe
-func (o LookupSecurityRecipeResultOutput) Owner() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSecurityRecipeResult) string { return v.Owner }).(pulumi.StringOutput)
+func (o LookupSecurityRecipeResultOutput) Owner() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSecurityRecipeResult) *string { return v.Owner }).(pulumi.StringPtrOutput)
 }
 
 // The list of `SecurityPolicy` ids that are included in the recipe
@@ -180,18 +173,18 @@ func (o LookupSecurityRecipeResultOutput) SecurityRecipeId() pulumi.StringOutput
 }
 
 // The current state of the recipe
-func (o LookupSecurityRecipeResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSecurityRecipeResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupSecurityRecipeResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSecurityRecipeResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The time the recipe was created. An RFC3339 formatted datetime string.
-func (o LookupSecurityRecipeResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSecurityRecipeResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupSecurityRecipeResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSecurityRecipeResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the recipe was last updated. An RFC3339 formatted datetime string.
-func (o LookupSecurityRecipeResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSecurityRecipeResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupSecurityRecipeResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSecurityRecipeResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Bds Instance Api Key resource in Oracle Cloud Infrastructure Big Data Service service.
@@ -62,21 +61,21 @@ type BdsInstanceApiKey struct {
 	// The OCID of the cluster.
 	BdsInstanceId pulumi.StringOutput `pulumi:"bdsInstanceId"`
 	// The name of the region to establish the Object Storage endpoint. See https://docs.oracle.com/en-us/iaas/api/#/en/identity/20160918/Region/ for additional information.
-	DefaultRegion pulumi.StringOutput `pulumi:"defaultRegion"`
+	DefaultRegion pulumi.StringPtrOutput `pulumi:"defaultRegion"`
 	// The fingerprint that corresponds to the public API key requested.
-	Fingerprint pulumi.StringOutput `pulumi:"fingerprint"`
+	Fingerprint pulumi.StringPtrOutput `pulumi:"fingerprint"`
 	// User friendly identifier used to uniquely differentiate between different API keys associated with this Big Data Service cluster. Only ASCII alphanumeric characters with no spaces allowed.
 	KeyAlias pulumi.StringOutput `pulumi:"keyAlias"`
 	// Base64 passphrase used to secure the private key which will be created on user behalf.
 	Passphrase pulumi.StringOutput `pulumi:"passphrase"`
 	// The full path and file name of the private key used for authentication. This location will be automatically selected on the BDS local file system.
-	Pemfilepath pulumi.StringOutput `pulumi:"pemfilepath"`
+	Pemfilepath pulumi.StringPtrOutput `pulumi:"pemfilepath"`
 	// The current status of the API key.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The OCID of your tenancy.
-	TenantId pulumi.StringOutput `pulumi:"tenantId"`
+	TenantId pulumi.StringPtrOutput `pulumi:"tenantId"`
 	// The time the API key was created, shown as an RFC 3339 formatted datetime string.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The OCID of the user for whom this new generated API key pair will be created.
 	//
 	// ** IMPORTANT **
@@ -244,12 +243,6 @@ func (i *BdsInstanceApiKey) ToBdsInstanceApiKeyOutputWithContext(ctx context.Con
 	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceApiKeyOutput)
 }
 
-func (i *BdsInstanceApiKey) ToOutput(ctx context.Context) pulumix.Output[*BdsInstanceApiKey] {
-	return pulumix.Output[*BdsInstanceApiKey]{
-		OutputState: i.ToBdsInstanceApiKeyOutputWithContext(ctx).OutputState,
-	}
-}
-
 // BdsInstanceApiKeyArrayInput is an input type that accepts BdsInstanceApiKeyArray and BdsInstanceApiKeyArrayOutput values.
 // You can construct a concrete instance of `BdsInstanceApiKeyArrayInput` via:
 //
@@ -273,12 +266,6 @@ func (i BdsInstanceApiKeyArray) ToBdsInstanceApiKeyArrayOutput() BdsInstanceApiK
 
 func (i BdsInstanceApiKeyArray) ToBdsInstanceApiKeyArrayOutputWithContext(ctx context.Context) BdsInstanceApiKeyArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceApiKeyArrayOutput)
-}
-
-func (i BdsInstanceApiKeyArray) ToOutput(ctx context.Context) pulumix.Output[[]*BdsInstanceApiKey] {
-	return pulumix.Output[[]*BdsInstanceApiKey]{
-		OutputState: i.ToBdsInstanceApiKeyArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // BdsInstanceApiKeyMapInput is an input type that accepts BdsInstanceApiKeyMap and BdsInstanceApiKeyMapOutput values.
@@ -306,12 +293,6 @@ func (i BdsInstanceApiKeyMap) ToBdsInstanceApiKeyMapOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceApiKeyMapOutput)
 }
 
-func (i BdsInstanceApiKeyMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*BdsInstanceApiKey] {
-	return pulumix.Output[map[string]*BdsInstanceApiKey]{
-		OutputState: i.ToBdsInstanceApiKeyMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type BdsInstanceApiKeyOutput struct{ *pulumi.OutputState }
 
 func (BdsInstanceApiKeyOutput) ElementType() reflect.Type {
@@ -326,25 +307,19 @@ func (o BdsInstanceApiKeyOutput) ToBdsInstanceApiKeyOutputWithContext(ctx contex
 	return o
 }
 
-func (o BdsInstanceApiKeyOutput) ToOutput(ctx context.Context) pulumix.Output[*BdsInstanceApiKey] {
-	return pulumix.Output[*BdsInstanceApiKey]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the cluster.
 func (o BdsInstanceApiKeyOutput) BdsInstanceId() pulumi.StringOutput {
 	return o.ApplyT(func(v *BdsInstanceApiKey) pulumi.StringOutput { return v.BdsInstanceId }).(pulumi.StringOutput)
 }
 
 // The name of the region to establish the Object Storage endpoint. See https://docs.oracle.com/en-us/iaas/api/#/en/identity/20160918/Region/ for additional information.
-func (o BdsInstanceApiKeyOutput) DefaultRegion() pulumi.StringOutput {
-	return o.ApplyT(func(v *BdsInstanceApiKey) pulumi.StringOutput { return v.DefaultRegion }).(pulumi.StringOutput)
+func (o BdsInstanceApiKeyOutput) DefaultRegion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BdsInstanceApiKey) pulumi.StringPtrOutput { return v.DefaultRegion }).(pulumi.StringPtrOutput)
 }
 
 // The fingerprint that corresponds to the public API key requested.
-func (o BdsInstanceApiKeyOutput) Fingerprint() pulumi.StringOutput {
-	return o.ApplyT(func(v *BdsInstanceApiKey) pulumi.StringOutput { return v.Fingerprint }).(pulumi.StringOutput)
+func (o BdsInstanceApiKeyOutput) Fingerprint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BdsInstanceApiKey) pulumi.StringPtrOutput { return v.Fingerprint }).(pulumi.StringPtrOutput)
 }
 
 // User friendly identifier used to uniquely differentiate between different API keys associated with this Big Data Service cluster. Only ASCII alphanumeric characters with no spaces allowed.
@@ -358,23 +333,23 @@ func (o BdsInstanceApiKeyOutput) Passphrase() pulumi.StringOutput {
 }
 
 // The full path and file name of the private key used for authentication. This location will be automatically selected on the BDS local file system.
-func (o BdsInstanceApiKeyOutput) Pemfilepath() pulumi.StringOutput {
-	return o.ApplyT(func(v *BdsInstanceApiKey) pulumi.StringOutput { return v.Pemfilepath }).(pulumi.StringOutput)
+func (o BdsInstanceApiKeyOutput) Pemfilepath() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BdsInstanceApiKey) pulumi.StringPtrOutput { return v.Pemfilepath }).(pulumi.StringPtrOutput)
 }
 
 // The current status of the API key.
-func (o BdsInstanceApiKeyOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *BdsInstanceApiKey) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o BdsInstanceApiKeyOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BdsInstanceApiKey) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of your tenancy.
-func (o BdsInstanceApiKeyOutput) TenantId() pulumi.StringOutput {
-	return o.ApplyT(func(v *BdsInstanceApiKey) pulumi.StringOutput { return v.TenantId }).(pulumi.StringOutput)
+func (o BdsInstanceApiKeyOutput) TenantId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BdsInstanceApiKey) pulumi.StringPtrOutput { return v.TenantId }).(pulumi.StringPtrOutput)
 }
 
 // The time the API key was created, shown as an RFC 3339 formatted datetime string.
-func (o BdsInstanceApiKeyOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *BdsInstanceApiKey) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o BdsInstanceApiKeyOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BdsInstanceApiKey) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the user for whom this new generated API key pair will be created.
@@ -399,12 +374,6 @@ func (o BdsInstanceApiKeyArrayOutput) ToBdsInstanceApiKeyArrayOutputWithContext(
 	return o
 }
 
-func (o BdsInstanceApiKeyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*BdsInstanceApiKey] {
-	return pulumix.Output[[]*BdsInstanceApiKey]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o BdsInstanceApiKeyArrayOutput) Index(i pulumi.IntInput) BdsInstanceApiKeyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *BdsInstanceApiKey {
 		return vs[0].([]*BdsInstanceApiKey)[vs[1].(int)]
@@ -423,12 +392,6 @@ func (o BdsInstanceApiKeyMapOutput) ToBdsInstanceApiKeyMapOutput() BdsInstanceAp
 
 func (o BdsInstanceApiKeyMapOutput) ToBdsInstanceApiKeyMapOutputWithContext(ctx context.Context) BdsInstanceApiKeyMapOutput {
 	return o
-}
-
-func (o BdsInstanceApiKeyMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*BdsInstanceApiKey] {
-	return pulumix.Output[map[string]*BdsInstanceApiKey]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o BdsInstanceApiKeyMapOutput) MapIndex(k pulumi.StringInput) BdsInstanceApiKeyOutput {

@@ -23,14 +23,14 @@ public final class GetCustomProtectionRulesResult {
      * @return The list of custom_protection_rules.
      * 
      */
-    private List<GetCustomProtectionRulesCustomProtectionRule> customProtectionRules;
+    private @Nullable List<GetCustomProtectionRulesCustomProtectionRule> customProtectionRules;
     private @Nullable List<String> displayNames;
     private @Nullable List<GetCustomProtectionRulesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private @Nullable List<String> ids;
     private @Nullable List<String> states;
     private @Nullable String timeCreatedGreaterThanOrEqualTo;
@@ -49,7 +49,7 @@ public final class GetCustomProtectionRulesResult {
      * 
      */
     public List<GetCustomProtectionRulesCustomProtectionRule> customProtectionRules() {
-        return this.customProtectionRules;
+        return this.customProtectionRules == null ? List.of() : this.customProtectionRules;
     }
     public List<String> displayNames() {
         return this.displayNames == null ? List.of() : this.displayNames;
@@ -61,8 +61,8 @@ public final class GetCustomProtectionRulesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public List<String> ids() {
         return this.ids == null ? List.of() : this.ids;
@@ -87,10 +87,10 @@ public final class GetCustomProtectionRulesResult {
     @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
-        private List<GetCustomProtectionRulesCustomProtectionRule> customProtectionRules;
+        private @Nullable List<GetCustomProtectionRulesCustomProtectionRule> customProtectionRules;
         private @Nullable List<String> displayNames;
         private @Nullable List<GetCustomProtectionRulesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable List<String> ids;
         private @Nullable List<String> states;
         private @Nullable String timeCreatedGreaterThanOrEqualTo;
@@ -115,8 +115,8 @@ public final class GetCustomProtectionRulesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder customProtectionRules(List<GetCustomProtectionRulesCustomProtectionRule> customProtectionRules) {
-            this.customProtectionRules = Objects.requireNonNull(customProtectionRules);
+        public Builder customProtectionRules(@Nullable List<GetCustomProtectionRulesCustomProtectionRule> customProtectionRules) {
+            this.customProtectionRules = customProtectionRules;
             return this;
         }
         public Builder customProtectionRules(GetCustomProtectionRulesCustomProtectionRule... customProtectionRules) {
@@ -139,8 +139,8 @@ public final class GetCustomProtectionRulesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

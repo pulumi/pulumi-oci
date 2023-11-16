@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DatabaseManagement.outputs.GetExternalAsmUsersExternalAsmUserCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetExternalAsmUsersExternalAsmUserCollection {
@@ -14,7 +15,7 @@ public final class GetExternalAsmUsersExternalAsmUserCollection {
      * @return An array of external ASM users.
      * 
      */
-    private List<GetExternalAsmUsersExternalAsmUserCollectionItem> items;
+    private @Nullable List<GetExternalAsmUsersExternalAsmUserCollectionItem> items;
 
     private GetExternalAsmUsersExternalAsmUserCollection() {}
     /**
@@ -22,7 +23,7 @@ public final class GetExternalAsmUsersExternalAsmUserCollection {
      * 
      */
     public List<GetExternalAsmUsersExternalAsmUserCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetExternalAsmUsersExternalAsmUserCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetExternalAsmUsersExternalAsmUserCollectionItem> items;
+        private @Nullable List<GetExternalAsmUsersExternalAsmUserCollectionItem> items;
         public Builder() {}
         public Builder(GetExternalAsmUsersExternalAsmUserCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetExternalAsmUsersExternalAsmUserCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetExternalAsmUsersExternalAsmUserCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetExternalAsmUsersExternalAsmUserCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetExternalAsmUsersExternalAsmUserCollectionItem... items) {

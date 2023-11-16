@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Tag Namespace resource in Oracle Cloud Infrastructure Identity service.
@@ -88,13 +87,13 @@ type TagNamespace struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	IsRetired pulumi.BoolOutput `pulumi:"isRetired"`
+	IsRetired pulumi.BoolPtrOutput `pulumi:"isRetired"`
 	// The name you assign to the tag namespace during creation. It must be unique across all tag namespaces in the tenancy and cannot be changed.
 	Name pulumi.StringOutput `pulumi:"name"`
 	// The tagnamespace's current state. After creating a tagnamespace, make sure its `lifecycleState` is ACTIVE before using it. After retiring a tagnamespace, make sure its `lifecycleState` is INACTIVE before using it.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// Date and time the tag namespace was created, in the format defined by RFC3339. Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 }
 
 // NewTagNamespace registers a new resource with the given unique name, arguments, and options.
@@ -240,12 +239,6 @@ func (i *TagNamespace) ToTagNamespaceOutputWithContext(ctx context.Context) TagN
 	return pulumi.ToOutputWithContext(ctx, i).(TagNamespaceOutput)
 }
 
-func (i *TagNamespace) ToOutput(ctx context.Context) pulumix.Output[*TagNamespace] {
-	return pulumix.Output[*TagNamespace]{
-		OutputState: i.ToTagNamespaceOutputWithContext(ctx).OutputState,
-	}
-}
-
 // TagNamespaceArrayInput is an input type that accepts TagNamespaceArray and TagNamespaceArrayOutput values.
 // You can construct a concrete instance of `TagNamespaceArrayInput` via:
 //
@@ -269,12 +262,6 @@ func (i TagNamespaceArray) ToTagNamespaceArrayOutput() TagNamespaceArrayOutput {
 
 func (i TagNamespaceArray) ToTagNamespaceArrayOutputWithContext(ctx context.Context) TagNamespaceArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(TagNamespaceArrayOutput)
-}
-
-func (i TagNamespaceArray) ToOutput(ctx context.Context) pulumix.Output[[]*TagNamespace] {
-	return pulumix.Output[[]*TagNamespace]{
-		OutputState: i.ToTagNamespaceArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // TagNamespaceMapInput is an input type that accepts TagNamespaceMap and TagNamespaceMapOutput values.
@@ -302,12 +289,6 @@ func (i TagNamespaceMap) ToTagNamespaceMapOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(TagNamespaceMapOutput)
 }
 
-func (i TagNamespaceMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*TagNamespace] {
-	return pulumix.Output[map[string]*TagNamespace]{
-		OutputState: i.ToTagNamespaceMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type TagNamespaceOutput struct{ *pulumi.OutputState }
 
 func (TagNamespaceOutput) ElementType() reflect.Type {
@@ -320,12 +301,6 @@ func (o TagNamespaceOutput) ToTagNamespaceOutput() TagNamespaceOutput {
 
 func (o TagNamespaceOutput) ToTagNamespaceOutputWithContext(ctx context.Context) TagNamespaceOutput {
 	return o
-}
-
-func (o TagNamespaceOutput) ToOutput(ctx context.Context) pulumix.Output[*TagNamespace] {
-	return pulumix.Output[*TagNamespace]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The OCID of the tenancy containing the tag namespace.
@@ -352,8 +327,8 @@ func (o TagNamespaceOutput) FreeformTags() pulumi.MapOutput {
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o TagNamespaceOutput) IsRetired() pulumi.BoolOutput {
-	return o.ApplyT(func(v *TagNamespace) pulumi.BoolOutput { return v.IsRetired }).(pulumi.BoolOutput)
+func (o TagNamespaceOutput) IsRetired() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *TagNamespace) pulumi.BoolPtrOutput { return v.IsRetired }).(pulumi.BoolPtrOutput)
 }
 
 // The name you assign to the tag namespace during creation. It must be unique across all tag namespaces in the tenancy and cannot be changed.
@@ -362,13 +337,13 @@ func (o TagNamespaceOutput) Name() pulumi.StringOutput {
 }
 
 // The tagnamespace's current state. After creating a tagnamespace, make sure its `lifecycleState` is ACTIVE before using it. After retiring a tagnamespace, make sure its `lifecycleState` is INACTIVE before using it.
-func (o TagNamespaceOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *TagNamespace) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o TagNamespaceOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *TagNamespace) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Date and time the tag namespace was created, in the format defined by RFC3339. Example: `2016-08-25T21:10:29.600Z`
-func (o TagNamespaceOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *TagNamespace) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o TagNamespaceOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *TagNamespace) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 type TagNamespaceArrayOutput struct{ *pulumi.OutputState }
@@ -383,12 +358,6 @@ func (o TagNamespaceArrayOutput) ToTagNamespaceArrayOutput() TagNamespaceArrayOu
 
 func (o TagNamespaceArrayOutput) ToTagNamespaceArrayOutputWithContext(ctx context.Context) TagNamespaceArrayOutput {
 	return o
-}
-
-func (o TagNamespaceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*TagNamespace] {
-	return pulumix.Output[[]*TagNamespace]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o TagNamespaceArrayOutput) Index(i pulumi.IntInput) TagNamespaceOutput {
@@ -409,12 +378,6 @@ func (o TagNamespaceMapOutput) ToTagNamespaceMapOutput() TagNamespaceMapOutput {
 
 func (o TagNamespaceMapOutput) ToTagNamespaceMapOutputWithContext(ctx context.Context) TagNamespaceMapOutput {
 	return o
-}
-
-func (o TagNamespaceMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*TagNamespace] {
-	return pulumix.Output[map[string]*TagNamespace]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o TagNamespaceMapOutput) MapIndex(k pulumi.StringInput) TagNamespaceOutput {

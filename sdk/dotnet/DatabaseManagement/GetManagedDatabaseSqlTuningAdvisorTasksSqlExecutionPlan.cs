@@ -156,7 +156,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string ManagedDatabaseId;
         /// <summary>
         /// A SQL execution plan as a list of steps.
@@ -169,7 +169,7 @@ namespace Pulumi.Oci.DatabaseManagement
         private GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanResult(
             string attribute,
 
-            string id,
+            string? id,
 
             string managedDatabaseId,
 

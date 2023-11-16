@@ -29,7 +29,7 @@ public final class GetVolumeBackupsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The OCID of the source volume backup.
      * 
@@ -44,7 +44,7 @@ public final class GetVolumeBackupsResult {
      * @return The list of volume_backups.
      * 
      */
-    private List<GetVolumeBackupsVolumeBackup> volumeBackups;
+    private @Nullable List<GetVolumeBackupsVolumeBackup> volumeBackups;
     /**
      * @return The OCID of the volume.
      * 
@@ -73,8 +73,8 @@ public final class GetVolumeBackupsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The OCID of the source volume backup.
@@ -95,7 +95,7 @@ public final class GetVolumeBackupsResult {
      * 
      */
     public List<GetVolumeBackupsVolumeBackup> volumeBackups() {
-        return this.volumeBackups;
+        return this.volumeBackups == null ? List.of() : this.volumeBackups;
     }
     /**
      * @return The OCID of the volume.
@@ -117,10 +117,10 @@ public final class GetVolumeBackupsResult {
         private String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetVolumeBackupsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String sourceVolumeBackupId;
         private @Nullable String state;
-        private List<GetVolumeBackupsVolumeBackup> volumeBackups;
+        private @Nullable List<GetVolumeBackupsVolumeBackup> volumeBackups;
         private @Nullable String volumeId;
         public Builder() {}
         public Builder(GetVolumeBackupsResult defaults) {
@@ -154,8 +154,8 @@ public final class GetVolumeBackupsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -169,8 +169,8 @@ public final class GetVolumeBackupsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder volumeBackups(List<GetVolumeBackupsVolumeBackup> volumeBackups) {
-            this.volumeBackups = Objects.requireNonNull(volumeBackups);
+        public Builder volumeBackups(@Nullable List<GetVolumeBackupsVolumeBackup> volumeBackups) {
+            this.volumeBackups = volumeBackups;
             return this;
         }
         public Builder volumeBackups(GetVolumeBackupsVolumeBackup... volumeBackups) {

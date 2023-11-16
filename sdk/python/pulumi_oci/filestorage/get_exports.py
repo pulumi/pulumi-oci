@@ -54,25 +54,16 @@ class GetExportsResult:
     @property
     @pulumi.getter(name="exportSetId")
     def export_set_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this export's export set.
-        """
         return pulumi.get(self, "export_set_id")
 
     @property
     @pulumi.getter
-    def exports(self) -> Sequence['outputs.GetExportsExportResult']:
-        """
-        The list of exports.
-        """
+    def exports(self) -> Optional[Sequence['outputs.GetExportsExportResult']]:
         return pulumi.get(self, "exports")
 
     @property
     @pulumi.getter(name="fileSystemId")
     def file_system_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this export's file system.
-        """
         return pulumi.get(self, "file_system_id")
 
     @property
@@ -83,17 +74,11 @@ class GetExportsResult:
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this export.
-        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of this export.
-        """
         return pulumi.get(self, "state")
 
 
@@ -120,31 +105,7 @@ def get_exports(compartment_id: Optional[str] = None,
                 state: Optional[str] = None,
                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetExportsResult:
     """
-    This data source provides the list of Exports in Oracle Cloud Infrastructure File Storage service.
-
-    Lists export resources by compartment, file system, or export
-    set. You must specify an export set ID, a file system ID, and
-    / or a compartment ID.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_exports = oci.FileStorage.get_exports(compartment_id=var["compartment_id"],
-        export_set_id=oci_file_storage_export_set["test_export_set"]["id"],
-        file_system_id=oci_file_storage_file_system["test_file_system"]["id"],
-        id=var["export_id"],
-        state=var["export_state"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str export_set_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export set.
-    :param str file_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system.
-    :param str id: Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
-    :param str state: Filter results by the specified lifecycle state. Must be a valid state for the resource type.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -175,30 +136,6 @@ def get_exports_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = N
                        state: Optional[pulumi.Input[Optional[str]]] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExportsResult]:
     """
-    This data source provides the list of Exports in Oracle Cloud Infrastructure File Storage service.
-
-    Lists export resources by compartment, file system, or export
-    set. You must specify an export set ID, a file system ID, and
-    / or a compartment ID.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_exports = oci.FileStorage.get_exports(compartment_id=var["compartment_id"],
-        export_set_id=oci_file_storage_export_set["test_export_set"]["id"],
-        file_system_id=oci_file_storage_file_system["test_file_system"]["id"],
-        id=var["export_id"],
-        state=var["export_state"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str export_set_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export set.
-    :param str file_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system.
-    :param str id: Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
-    :param str state: Filter results by the specified lifecycle state. Must be a valid state for the resource type.
+    Use this data source to access information about an existing resource.
     """
     ...

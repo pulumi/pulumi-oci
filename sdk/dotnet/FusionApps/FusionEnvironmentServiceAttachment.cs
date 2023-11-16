@@ -49,25 +49,25 @@ namespace Pulumi.Oci.FusionApps
         /// Compartment Identifier
         /// </summary>
         [Output("compartmentId")]
-        public Output<string> CompartmentId { get; private set; } = null!;
+        public Output<string?> CompartmentId { get; private set; } = null!;
 
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// Service Attachment Display name, can be renamed
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// unique FusionEnvironment identifier
@@ -79,7 +79,7 @@ namespace Pulumi.Oci.FusionApps
         /// Whether this service is provisioned due to the customer being subscribed to a specific SKU
         /// </summary>
         [Output("isSkuBased")]
-        public Output<bool> IsSkuBased { get; private set; } = null!;
+        public Output<bool?> IsSkuBased { get; private set; } = null!;
 
         /// <summary>
         /// The service instance OCID of the instance being attached
@@ -101,25 +101,25 @@ namespace Pulumi.Oci.FusionApps
         /// Public URL
         /// </summary>
         [Output("serviceUrl")]
-        public Output<string> ServiceUrl { get; private set; } = null!;
+        public Output<string?> ServiceUrl { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the ServiceInstance.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The time the the ServiceInstance was created. An RFC3339 formatted datetime string
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The time the ServiceInstance was updated. An RFC3339 formatted datetime string
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
 
         /// <summary>

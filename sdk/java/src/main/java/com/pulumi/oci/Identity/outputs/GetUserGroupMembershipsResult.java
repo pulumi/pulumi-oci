@@ -29,12 +29,12 @@ public final class GetUserGroupMembershipsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of memberships.
      * 
      */
-    private List<GetUserGroupMembershipsMembership> memberships;
+    private @Nullable List<GetUserGroupMembershipsMembership> memberships;
     /**
      * @return The OCID of the user.
      * 
@@ -63,15 +63,15 @@ public final class GetUserGroupMembershipsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of memberships.
      * 
      */
     public List<GetUserGroupMembershipsMembership> memberships() {
-        return this.memberships;
+        return this.memberships == null ? List.of() : this.memberships;
     }
     /**
      * @return The OCID of the user.
@@ -93,8 +93,8 @@ public final class GetUserGroupMembershipsResult {
         private String compartmentId;
         private @Nullable List<GetUserGroupMembershipsFilter> filters;
         private @Nullable String groupId;
-        private String id;
-        private List<GetUserGroupMembershipsMembership> memberships;
+        private @Nullable String id;
+        private @Nullable List<GetUserGroupMembershipsMembership> memberships;
         private @Nullable String userId;
         public Builder() {}
         public Builder(GetUserGroupMembershipsResult defaults) {
@@ -126,13 +126,13 @@ public final class GetUserGroupMembershipsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder memberships(List<GetUserGroupMembershipsMembership> memberships) {
-            this.memberships = Objects.requireNonNull(memberships);
+        public Builder memberships(@Nullable List<GetUserGroupMembershipsMembership> memberships) {
+            this.memberships = memberships;
             return this;
         }
         public Builder memberships(GetUserGroupMembershipsMembership... memberships) {

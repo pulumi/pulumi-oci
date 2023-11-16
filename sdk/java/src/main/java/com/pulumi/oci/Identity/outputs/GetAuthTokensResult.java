@@ -9,6 +9,7 @@ import com.pulumi.oci.Identity.outputs.GetAuthTokensToken;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -18,12 +19,12 @@ public final class GetAuthTokensResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of tokens.
      * 
      */
-    private List<GetAuthTokensToken> tokens;
+    private @Nullable List<GetAuthTokensToken> tokens;
     /**
      * @return The OCID of the user the auth token belongs to.
      * 
@@ -38,15 +39,15 @@ public final class GetAuthTokensResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of tokens.
      * 
      */
     public List<GetAuthTokensToken> tokens() {
-        return this.tokens;
+        return this.tokens == null ? List.of() : this.tokens;
     }
     /**
      * @return The OCID of the user the auth token belongs to.
@@ -66,8 +67,8 @@ public final class GetAuthTokensResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetAuthTokensFilter> filters;
-        private String id;
-        private List<GetAuthTokensToken> tokens;
+        private @Nullable String id;
+        private @Nullable List<GetAuthTokensToken> tokens;
         private String userId;
         public Builder() {}
         public Builder(GetAuthTokensResult defaults) {
@@ -87,13 +88,13 @@ public final class GetAuthTokensResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder tokens(List<GetAuthTokensToken> tokens) {
-            this.tokens = Objects.requireNonNull(tokens);
+        public Builder tokens(@Nullable List<GetAuthTokensToken> tokens) {
+            this.tokens = tokens;
             return this;
         }
         public Builder tokens(GetAuthTokensToken... tokens) {

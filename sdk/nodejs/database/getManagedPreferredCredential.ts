@@ -55,32 +55,32 @@ export interface GetManagedPreferredCredentialResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Indicates whether the preferred credential is accessible.
      */
-    readonly isAccessible: boolean;
+    readonly isAccessible?: boolean;
     readonly managedDatabaseId: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Vault service secret that contains the database user password.
      */
-    readonly passwordSecretId: string;
+    readonly passwordSecretId?: string;
     /**
      * The role of the database user.
      */
-    readonly role: string;
+    readonly role?: string;
     /**
      * The status of the preferred credential.
      */
-    readonly status: string;
+    readonly status?: string;
     /**
      * The type of preferred credential. Only 'BASIC' is supported currently.
      */
-    readonly type: string;
+    readonly type?: string;
     /**
      * The user name used to connect to the database.
      */
-    readonly userName: string;
+    readonly userName?: string;
 }
 /**
  * This data source provides details about a specific Managed Database Preferred Credential resource in Oracle Cloud Infrastructure Database Management service.

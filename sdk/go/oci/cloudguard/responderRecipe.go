@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Responder Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
@@ -36,7 +35,7 @@ type ResponderRecipe struct {
 	// (Updatable) Responder recipe description.
 	//
 	// Avoid entering confidential information.
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) Responder recipe display name.
 	//
 	// Avoid entering confidential information.
@@ -48,9 +47,9 @@ type ResponderRecipe struct {
 	// Avoid entering confidential information.
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// Owner of ResponderRecipe
-	Owner pulumi.StringOutput `pulumi:"owner"`
+	Owner pulumi.StringPtrOutput `pulumi:"owner"`
 	// (Updatable) Responder Rules to override from source responder recipe
 	ResponderRules ResponderRecipeResponderRuleArrayOutput `pulumi:"responderRules"`
 	// The id of the source responder recipe.
@@ -59,13 +58,13 @@ type ResponderRecipe struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SourceResponderRecipeId pulumi.StringOutput `pulumi:"sourceResponderRecipeId"`
 	// The current state of the Example.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The date and time the responder recipe was created. Format defined by RFC3339.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The date and time the responder recipe was updated. Format defined by RFC3339.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewResponderRecipe registers a new resource with the given unique name, arguments, and options.
@@ -266,12 +265,6 @@ func (i *ResponderRecipe) ToResponderRecipeOutputWithContext(ctx context.Context
 	return pulumi.ToOutputWithContext(ctx, i).(ResponderRecipeOutput)
 }
 
-func (i *ResponderRecipe) ToOutput(ctx context.Context) pulumix.Output[*ResponderRecipe] {
-	return pulumix.Output[*ResponderRecipe]{
-		OutputState: i.ToResponderRecipeOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ResponderRecipeArrayInput is an input type that accepts ResponderRecipeArray and ResponderRecipeArrayOutput values.
 // You can construct a concrete instance of `ResponderRecipeArrayInput` via:
 //
@@ -295,12 +288,6 @@ func (i ResponderRecipeArray) ToResponderRecipeArrayOutput() ResponderRecipeArra
 
 func (i ResponderRecipeArray) ToResponderRecipeArrayOutputWithContext(ctx context.Context) ResponderRecipeArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ResponderRecipeArrayOutput)
-}
-
-func (i ResponderRecipeArray) ToOutput(ctx context.Context) pulumix.Output[[]*ResponderRecipe] {
-	return pulumix.Output[[]*ResponderRecipe]{
-		OutputState: i.ToResponderRecipeArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ResponderRecipeMapInput is an input type that accepts ResponderRecipeMap and ResponderRecipeMapOutput values.
@@ -328,12 +315,6 @@ func (i ResponderRecipeMap) ToResponderRecipeMapOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(ResponderRecipeMapOutput)
 }
 
-func (i ResponderRecipeMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ResponderRecipe] {
-	return pulumix.Output[map[string]*ResponderRecipe]{
-		OutputState: i.ToResponderRecipeMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ResponderRecipeOutput struct{ *pulumi.OutputState }
 
 func (ResponderRecipeOutput) ElementType() reflect.Type {
@@ -346,12 +327,6 @@ func (o ResponderRecipeOutput) ToResponderRecipeOutput() ResponderRecipeOutput {
 
 func (o ResponderRecipeOutput) ToResponderRecipeOutputWithContext(ctx context.Context) ResponderRecipeOutput {
 	return o
-}
-
-func (o ResponderRecipeOutput) ToOutput(ctx context.Context) pulumix.Output[*ResponderRecipe] {
-	return pulumix.Output[*ResponderRecipe]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Compartment Identifier
@@ -367,8 +342,8 @@ func (o ResponderRecipeOutput) DefinedTags() pulumi.MapOutput {
 // (Updatable) Responder recipe description.
 //
 // Avoid entering confidential information.
-func (o ResponderRecipeOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *ResponderRecipe) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o ResponderRecipeOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ResponderRecipe) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Responder recipe display name.
@@ -393,13 +368,13 @@ func (o ResponderRecipeOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o ResponderRecipeOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *ResponderRecipe) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o ResponderRecipeOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ResponderRecipe) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // Owner of ResponderRecipe
-func (o ResponderRecipeOutput) Owner() pulumi.StringOutput {
-	return o.ApplyT(func(v *ResponderRecipe) pulumi.StringOutput { return v.Owner }).(pulumi.StringOutput)
+func (o ResponderRecipeOutput) Owner() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ResponderRecipe) pulumi.StringPtrOutput { return v.Owner }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Responder Rules to override from source responder recipe
@@ -416,8 +391,8 @@ func (o ResponderRecipeOutput) SourceResponderRecipeId() pulumi.StringOutput {
 }
 
 // The current state of the Example.
-func (o ResponderRecipeOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *ResponderRecipe) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o ResponderRecipeOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ResponderRecipe) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -426,13 +401,13 @@ func (o ResponderRecipeOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The date and time the responder recipe was created. Format defined by RFC3339.
-func (o ResponderRecipeOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *ResponderRecipe) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o ResponderRecipeOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ResponderRecipe) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the responder recipe was updated. Format defined by RFC3339.
-func (o ResponderRecipeOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *ResponderRecipe) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o ResponderRecipeOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ResponderRecipe) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type ResponderRecipeArrayOutput struct{ *pulumi.OutputState }
@@ -447,12 +422,6 @@ func (o ResponderRecipeArrayOutput) ToResponderRecipeArrayOutput() ResponderReci
 
 func (o ResponderRecipeArrayOutput) ToResponderRecipeArrayOutputWithContext(ctx context.Context) ResponderRecipeArrayOutput {
 	return o
-}
-
-func (o ResponderRecipeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ResponderRecipe] {
-	return pulumix.Output[[]*ResponderRecipe]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ResponderRecipeArrayOutput) Index(i pulumi.IntInput) ResponderRecipeOutput {
@@ -473,12 +442,6 @@ func (o ResponderRecipeMapOutput) ToResponderRecipeMapOutput() ResponderRecipeMa
 
 func (o ResponderRecipeMapOutput) ToResponderRecipeMapOutputWithContext(ctx context.Context) ResponderRecipeMapOutput {
 	return o
-}
-
-func (o ResponderRecipeMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ResponderRecipe] {
-	return pulumix.Output[map[string]*ResponderRecipe]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ResponderRecipeMapOutput) MapIndex(k pulumi.StringInput) ResponderRecipeOutput {

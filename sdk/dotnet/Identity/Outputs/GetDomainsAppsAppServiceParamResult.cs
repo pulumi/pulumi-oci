@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// ID of the AppRole.
         /// </summary>
-        public readonly string Value;
+        public readonly string? Value;
 
         [OutputConstructor]
         private GetDomainsAppsAppServiceParamResult(
-            string name,
+            string? name,
 
-            string value)
+            string? value)
         {
             Name = name;
             Value = value;

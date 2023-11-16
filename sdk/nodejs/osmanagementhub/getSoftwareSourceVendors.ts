@@ -58,7 +58,7 @@ export interface GetSoftwareSourceVendorsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Name of the vendor providing the software source.
      */
@@ -66,7 +66,7 @@ export interface GetSoftwareSourceVendorsResult {
     /**
      * The list of software_source_vendor_collection.
      */
-    readonly softwareSourceVendorCollections: outputs.OsManagementHub.GetSoftwareSourceVendorsSoftwareSourceVendorCollection[];
+    readonly softwareSourceVendorCollections?: outputs.OsManagementHub.GetSoftwareSourceVendorsSoftwareSourceVendorCollection[];
 }
 /**
  * This data source provides the list of Software Source Vendors in Oracle Cloud Infrastructure Os Management Hub service.

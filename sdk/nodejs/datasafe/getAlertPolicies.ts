@@ -108,7 +108,7 @@ export interface GetAlertPoliciesResult {
     /**
      * The list of alert_policy_collection.
      */
-    readonly alertPolicyCollections: outputs.DataSafe.GetAlertPoliciesAlertPolicyCollection[];
+    readonly alertPolicyCollections?: outputs.DataSafe.GetAlertPoliciesAlertPolicyCollection[];
     readonly alertPolicyId?: string;
     /**
      * The OCID of the compartment that contains the alert policy.
@@ -123,7 +123,7 @@ export interface GetAlertPoliciesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Indicates if the alert policy is user-defined (true) or pre-defined (false).
      */

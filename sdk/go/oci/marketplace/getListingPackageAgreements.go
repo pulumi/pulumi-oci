@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Listing Package Agreements in Oracle Cloud Infrastructure Marketplace service.
@@ -72,9 +71,9 @@ type GetListingPackageAgreementsResult struct {
 	CompartmentId *string                             `pulumi:"compartmentId"`
 	Filters       []GetListingPackageAgreementsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id             string `pulumi:"id"`
-	ListingId      string `pulumi:"listingId"`
-	PackageVersion string `pulumi:"packageVersion"`
+	Id             *string `pulumi:"id"`
+	ListingId      string  `pulumi:"listingId"`
+	PackageVersion string  `pulumi:"packageVersion"`
 }
 
 func GetListingPackageAgreementsOutput(ctx *pulumi.Context, args GetListingPackageAgreementsOutputArgs, opts ...pulumi.InvokeOption) GetListingPackageAgreementsResultOutput {
@@ -120,12 +119,6 @@ func (o GetListingPackageAgreementsResultOutput) ToGetListingPackageAgreementsRe
 	return o
 }
 
-func (o GetListingPackageAgreementsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetListingPackageAgreementsResult] {
-	return pulumix.Output[GetListingPackageAgreementsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The list of agreements.
 func (o GetListingPackageAgreementsResultOutput) Agreements() GetListingPackageAgreementsAgreementArrayOutput {
 	return o.ApplyT(func(v GetListingPackageAgreementsResult) []GetListingPackageAgreementsAgreement { return v.Agreements }).(GetListingPackageAgreementsAgreementArrayOutput)
@@ -141,8 +134,8 @@ func (o GetListingPackageAgreementsResultOutput) Filters() GetListingPackageAgre
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetListingPackageAgreementsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetListingPackageAgreementsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetListingPackageAgreementsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetListingPackageAgreementsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetListingPackageAgreementsResultOutput) ListingId() pulumi.StringOutput {

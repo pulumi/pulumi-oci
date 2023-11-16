@@ -6,6 +6,8 @@ package com.pulumi.oci.DatabaseMigration.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAgentImagesAgentImageCollectionItem {
@@ -13,27 +15,27 @@ public final class GetAgentImagesAgentImageCollectionItem {
      * @return URL to download Agent Image of the ODMS Agent.
      * 
      */
-    private String downloadUrl;
+    private @Nullable String downloadUrl;
     /**
      * @return ODMS Agent Image version.
      * 
      */
-    private String version;
+    private @Nullable String version;
 
     private GetAgentImagesAgentImageCollectionItem() {}
     /**
      * @return URL to download Agent Image of the ODMS Agent.
      * 
      */
-    public String downloadUrl() {
-        return this.downloadUrl;
+    public Optional<String> downloadUrl() {
+        return Optional.ofNullable(this.downloadUrl);
     }
     /**
      * @return ODMS Agent Image version.
      * 
      */
-    public String version() {
-        return this.version;
+    public Optional<String> version() {
+        return Optional.ofNullable(this.version);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetAgentImagesAgentImageCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String downloadUrl;
-        private String version;
+        private @Nullable String downloadUrl;
+        private @Nullable String version;
         public Builder() {}
         public Builder(GetAgentImagesAgentImageCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetAgentImagesAgentImageCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder downloadUrl(String downloadUrl) {
-            this.downloadUrl = Objects.requireNonNull(downloadUrl);
+        public Builder downloadUrl(@Nullable String downloadUrl) {
+            this.downloadUrl = downloadUrl;
             return this;
         }
         @CustomType.Setter
-        public Builder version(String version) {
-            this.version = Objects.requireNonNull(version);
+        public Builder version(@Nullable String version) {
+            this.version = version;
             return this;
         }
         public GetAgentImagesAgentImageCollectionItem build() {

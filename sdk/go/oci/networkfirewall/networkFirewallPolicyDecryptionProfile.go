@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Network Firewall Policy Decryption Profile resource in Oracle Cloud Infrastructure Network Firewall service.
@@ -66,23 +65,23 @@ type NetworkFirewallPolicyDecryptionProfile struct {
 	pulumi.CustomResourceState
 
 	// (Updatable) Whether to block sessions if the server's certificate uses extensions other than key usage and/or extended key usage.
-	AreCertificateExtensionsRestricted pulumi.BoolOutput `pulumi:"areCertificateExtensionsRestricted"`
+	AreCertificateExtensionsRestricted pulumi.BoolPtrOutput `pulumi:"areCertificateExtensionsRestricted"`
 	// (Updatable) Whether to automatically append SAN to impersonating certificate if server certificate is missing SAN.
-	IsAutoIncludeAltName pulumi.BoolOutput `pulumi:"isAutoIncludeAltName"`
+	IsAutoIncludeAltName pulumi.BoolPtrOutput `pulumi:"isAutoIncludeAltName"`
 	// (Updatable) Whether to block sessions if server's certificate is expired.
-	IsExpiredCertificateBlocked pulumi.BoolOutput `pulumi:"isExpiredCertificateBlocked"`
+	IsExpiredCertificateBlocked pulumi.BoolPtrOutput `pulumi:"isExpiredCertificateBlocked"`
 	// (Updatable) Whether to block sessions if the firewall is temporarily unable to decrypt their traffic.
-	IsOutOfCapacityBlocked pulumi.BoolOutput `pulumi:"isOutOfCapacityBlocked"`
+	IsOutOfCapacityBlocked pulumi.BoolPtrOutput `pulumi:"isOutOfCapacityBlocked"`
 	// (Updatable) Whether to block sessions if the revocation status check for server's certificate does not succeed within the maximum allowed time (defaulting to 5 seconds).
-	IsRevocationStatusTimeoutBlocked pulumi.BoolOutput `pulumi:"isRevocationStatusTimeoutBlocked"`
+	IsRevocationStatusTimeoutBlocked pulumi.BoolPtrOutput `pulumi:"isRevocationStatusTimeoutBlocked"`
 	// (Updatable) Whether to block sessions if the revocation status check for server's certificate results in "unknown".
-	IsUnknownRevocationStatusBlocked pulumi.BoolOutput `pulumi:"isUnknownRevocationStatusBlocked"`
+	IsUnknownRevocationStatusBlocked pulumi.BoolPtrOutput `pulumi:"isUnknownRevocationStatusBlocked"`
 	// (Updatable) Whether to block sessions if SSL cipher suite is not supported.
-	IsUnsupportedCipherBlocked pulumi.BoolOutput `pulumi:"isUnsupportedCipherBlocked"`
+	IsUnsupportedCipherBlocked pulumi.BoolPtrOutput `pulumi:"isUnsupportedCipherBlocked"`
 	// (Updatable) Whether to block sessions if SSL version is not supported.
-	IsUnsupportedVersionBlocked pulumi.BoolOutput `pulumi:"isUnsupportedVersionBlocked"`
+	IsUnsupportedVersionBlocked pulumi.BoolPtrOutput `pulumi:"isUnsupportedVersionBlocked"`
 	// (Updatable) Whether to block sessions if server's certificate is issued by an untrusted certificate authority (CA).
-	IsUntrustedIssuerBlocked pulumi.BoolOutput `pulumi:"isUntrustedIssuerBlocked"`
+	IsUntrustedIssuerBlocked pulumi.BoolPtrOutput `pulumi:"isUntrustedIssuerBlocked"`
 	// Name of the decryption profile.
 	Name pulumi.StringOutput `pulumi:"name"`
 	// Unique Network Firewall Policy identifier
@@ -91,7 +90,7 @@ type NetworkFirewallPolicyDecryptionProfile struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	NetworkFirewallPolicyId pulumi.StringOutput `pulumi:"networkFirewallPolicyId"`
 	// OCID of the Network Firewall Policy this decryption profile belongs to.
-	ParentResourceId pulumi.StringOutput `pulumi:"parentResourceId"`
+	ParentResourceId pulumi.StringPtrOutput `pulumi:"parentResourceId"`
 	// Describes the type of decryption profile. The accepted values are - * SSL_FORWARD_PROXY * SSL_INBOUND_INSPECTION
 	Type pulumi.StringOutput `pulumi:"type"`
 }
@@ -283,12 +282,6 @@ func (i *NetworkFirewallPolicyDecryptionProfile) ToNetworkFirewallPolicyDecrypti
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkFirewallPolicyDecryptionProfileOutput)
 }
 
-func (i *NetworkFirewallPolicyDecryptionProfile) ToOutput(ctx context.Context) pulumix.Output[*NetworkFirewallPolicyDecryptionProfile] {
-	return pulumix.Output[*NetworkFirewallPolicyDecryptionProfile]{
-		OutputState: i.ToNetworkFirewallPolicyDecryptionProfileOutputWithContext(ctx).OutputState,
-	}
-}
-
 // NetworkFirewallPolicyDecryptionProfileArrayInput is an input type that accepts NetworkFirewallPolicyDecryptionProfileArray and NetworkFirewallPolicyDecryptionProfileArrayOutput values.
 // You can construct a concrete instance of `NetworkFirewallPolicyDecryptionProfileArrayInput` via:
 //
@@ -312,12 +305,6 @@ func (i NetworkFirewallPolicyDecryptionProfileArray) ToNetworkFirewallPolicyDecr
 
 func (i NetworkFirewallPolicyDecryptionProfileArray) ToNetworkFirewallPolicyDecryptionProfileArrayOutputWithContext(ctx context.Context) NetworkFirewallPolicyDecryptionProfileArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkFirewallPolicyDecryptionProfileArrayOutput)
-}
-
-func (i NetworkFirewallPolicyDecryptionProfileArray) ToOutput(ctx context.Context) pulumix.Output[[]*NetworkFirewallPolicyDecryptionProfile] {
-	return pulumix.Output[[]*NetworkFirewallPolicyDecryptionProfile]{
-		OutputState: i.ToNetworkFirewallPolicyDecryptionProfileArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // NetworkFirewallPolicyDecryptionProfileMapInput is an input type that accepts NetworkFirewallPolicyDecryptionProfileMap and NetworkFirewallPolicyDecryptionProfileMapOutput values.
@@ -345,12 +332,6 @@ func (i NetworkFirewallPolicyDecryptionProfileMap) ToNetworkFirewallPolicyDecryp
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkFirewallPolicyDecryptionProfileMapOutput)
 }
 
-func (i NetworkFirewallPolicyDecryptionProfileMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*NetworkFirewallPolicyDecryptionProfile] {
-	return pulumix.Output[map[string]*NetworkFirewallPolicyDecryptionProfile]{
-		OutputState: i.ToNetworkFirewallPolicyDecryptionProfileMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type NetworkFirewallPolicyDecryptionProfileOutput struct{ *pulumi.OutputState }
 
 func (NetworkFirewallPolicyDecryptionProfileOutput) ElementType() reflect.Type {
@@ -365,65 +346,63 @@ func (o NetworkFirewallPolicyDecryptionProfileOutput) ToNetworkFirewallPolicyDec
 	return o
 }
 
-func (o NetworkFirewallPolicyDecryptionProfileOutput) ToOutput(ctx context.Context) pulumix.Output[*NetworkFirewallPolicyDecryptionProfile] {
-	return pulumix.Output[*NetworkFirewallPolicyDecryptionProfile]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) Whether to block sessions if the server's certificate uses extensions other than key usage and/or extended key usage.
-func (o NetworkFirewallPolicyDecryptionProfileOutput) AreCertificateExtensionsRestricted() pulumi.BoolOutput {
-	return o.ApplyT(func(v *NetworkFirewallPolicyDecryptionProfile) pulumi.BoolOutput {
+func (o NetworkFirewallPolicyDecryptionProfileOutput) AreCertificateExtensionsRestricted() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *NetworkFirewallPolicyDecryptionProfile) pulumi.BoolPtrOutput {
 		return v.AreCertificateExtensionsRestricted
-	}).(pulumi.BoolOutput)
+	}).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) Whether to automatically append SAN to impersonating certificate if server certificate is missing SAN.
-func (o NetworkFirewallPolicyDecryptionProfileOutput) IsAutoIncludeAltName() pulumi.BoolOutput {
-	return o.ApplyT(func(v *NetworkFirewallPolicyDecryptionProfile) pulumi.BoolOutput { return v.IsAutoIncludeAltName }).(pulumi.BoolOutput)
+func (o NetworkFirewallPolicyDecryptionProfileOutput) IsAutoIncludeAltName() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *NetworkFirewallPolicyDecryptionProfile) pulumi.BoolPtrOutput { return v.IsAutoIncludeAltName }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) Whether to block sessions if server's certificate is expired.
-func (o NetworkFirewallPolicyDecryptionProfileOutput) IsExpiredCertificateBlocked() pulumi.BoolOutput {
-	return o.ApplyT(func(v *NetworkFirewallPolicyDecryptionProfile) pulumi.BoolOutput {
+func (o NetworkFirewallPolicyDecryptionProfileOutput) IsExpiredCertificateBlocked() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *NetworkFirewallPolicyDecryptionProfile) pulumi.BoolPtrOutput {
 		return v.IsExpiredCertificateBlocked
-	}).(pulumi.BoolOutput)
+	}).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) Whether to block sessions if the firewall is temporarily unable to decrypt their traffic.
-func (o NetworkFirewallPolicyDecryptionProfileOutput) IsOutOfCapacityBlocked() pulumi.BoolOutput {
-	return o.ApplyT(func(v *NetworkFirewallPolicyDecryptionProfile) pulumi.BoolOutput { return v.IsOutOfCapacityBlocked }).(pulumi.BoolOutput)
+func (o NetworkFirewallPolicyDecryptionProfileOutput) IsOutOfCapacityBlocked() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *NetworkFirewallPolicyDecryptionProfile) pulumi.BoolPtrOutput { return v.IsOutOfCapacityBlocked }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) Whether to block sessions if the revocation status check for server's certificate does not succeed within the maximum allowed time (defaulting to 5 seconds).
-func (o NetworkFirewallPolicyDecryptionProfileOutput) IsRevocationStatusTimeoutBlocked() pulumi.BoolOutput {
-	return o.ApplyT(func(v *NetworkFirewallPolicyDecryptionProfile) pulumi.BoolOutput {
+func (o NetworkFirewallPolicyDecryptionProfileOutput) IsRevocationStatusTimeoutBlocked() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *NetworkFirewallPolicyDecryptionProfile) pulumi.BoolPtrOutput {
 		return v.IsRevocationStatusTimeoutBlocked
-	}).(pulumi.BoolOutput)
+	}).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) Whether to block sessions if the revocation status check for server's certificate results in "unknown".
-func (o NetworkFirewallPolicyDecryptionProfileOutput) IsUnknownRevocationStatusBlocked() pulumi.BoolOutput {
-	return o.ApplyT(func(v *NetworkFirewallPolicyDecryptionProfile) pulumi.BoolOutput {
+func (o NetworkFirewallPolicyDecryptionProfileOutput) IsUnknownRevocationStatusBlocked() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *NetworkFirewallPolicyDecryptionProfile) pulumi.BoolPtrOutput {
 		return v.IsUnknownRevocationStatusBlocked
-	}).(pulumi.BoolOutput)
+	}).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) Whether to block sessions if SSL cipher suite is not supported.
-func (o NetworkFirewallPolicyDecryptionProfileOutput) IsUnsupportedCipherBlocked() pulumi.BoolOutput {
-	return o.ApplyT(func(v *NetworkFirewallPolicyDecryptionProfile) pulumi.BoolOutput { return v.IsUnsupportedCipherBlocked }).(pulumi.BoolOutput)
+func (o NetworkFirewallPolicyDecryptionProfileOutput) IsUnsupportedCipherBlocked() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *NetworkFirewallPolicyDecryptionProfile) pulumi.BoolPtrOutput {
+		return v.IsUnsupportedCipherBlocked
+	}).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) Whether to block sessions if SSL version is not supported.
-func (o NetworkFirewallPolicyDecryptionProfileOutput) IsUnsupportedVersionBlocked() pulumi.BoolOutput {
-	return o.ApplyT(func(v *NetworkFirewallPolicyDecryptionProfile) pulumi.BoolOutput {
+func (o NetworkFirewallPolicyDecryptionProfileOutput) IsUnsupportedVersionBlocked() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *NetworkFirewallPolicyDecryptionProfile) pulumi.BoolPtrOutput {
 		return v.IsUnsupportedVersionBlocked
-	}).(pulumi.BoolOutput)
+	}).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) Whether to block sessions if server's certificate is issued by an untrusted certificate authority (CA).
-func (o NetworkFirewallPolicyDecryptionProfileOutput) IsUntrustedIssuerBlocked() pulumi.BoolOutput {
-	return o.ApplyT(func(v *NetworkFirewallPolicyDecryptionProfile) pulumi.BoolOutput { return v.IsUntrustedIssuerBlocked }).(pulumi.BoolOutput)
+func (o NetworkFirewallPolicyDecryptionProfileOutput) IsUntrustedIssuerBlocked() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *NetworkFirewallPolicyDecryptionProfile) pulumi.BoolPtrOutput {
+		return v.IsUntrustedIssuerBlocked
+	}).(pulumi.BoolPtrOutput)
 }
 
 // Name of the decryption profile.
@@ -440,8 +419,8 @@ func (o NetworkFirewallPolicyDecryptionProfileOutput) NetworkFirewallPolicyId() 
 }
 
 // OCID of the Network Firewall Policy this decryption profile belongs to.
-func (o NetworkFirewallPolicyDecryptionProfileOutput) ParentResourceId() pulumi.StringOutput {
-	return o.ApplyT(func(v *NetworkFirewallPolicyDecryptionProfile) pulumi.StringOutput { return v.ParentResourceId }).(pulumi.StringOutput)
+func (o NetworkFirewallPolicyDecryptionProfileOutput) ParentResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NetworkFirewallPolicyDecryptionProfile) pulumi.StringPtrOutput { return v.ParentResourceId }).(pulumi.StringPtrOutput)
 }
 
 // Describes the type of decryption profile. The accepted values are - * SSL_FORWARD_PROXY * SSL_INBOUND_INSPECTION
@@ -463,12 +442,6 @@ func (o NetworkFirewallPolicyDecryptionProfileArrayOutput) ToNetworkFirewallPoli
 	return o
 }
 
-func (o NetworkFirewallPolicyDecryptionProfileArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*NetworkFirewallPolicyDecryptionProfile] {
-	return pulumix.Output[[]*NetworkFirewallPolicyDecryptionProfile]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o NetworkFirewallPolicyDecryptionProfileArrayOutput) Index(i pulumi.IntInput) NetworkFirewallPolicyDecryptionProfileOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *NetworkFirewallPolicyDecryptionProfile {
 		return vs[0].([]*NetworkFirewallPolicyDecryptionProfile)[vs[1].(int)]
@@ -487,12 +460,6 @@ func (o NetworkFirewallPolicyDecryptionProfileMapOutput) ToNetworkFirewallPolicy
 
 func (o NetworkFirewallPolicyDecryptionProfileMapOutput) ToNetworkFirewallPolicyDecryptionProfileMapOutputWithContext(ctx context.Context) NetworkFirewallPolicyDecryptionProfileMapOutput {
 	return o
-}
-
-func (o NetworkFirewallPolicyDecryptionProfileMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*NetworkFirewallPolicyDecryptionProfile] {
-	return pulumix.Output[map[string]*NetworkFirewallPolicyDecryptionProfile]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o NetworkFirewallPolicyDecryptionProfileMapOutput) MapIndex(k pulumi.StringInput) NetworkFirewallPolicyDecryptionProfileOutput {

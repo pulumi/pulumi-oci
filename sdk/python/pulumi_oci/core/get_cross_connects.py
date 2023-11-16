@@ -49,33 +49,21 @@ class GetCrossConnectsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the cross-connect group.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="crossConnectGroupId")
     def cross_connect_group_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect group this cross-connect belongs to (if any).
-        """
         return pulumi.get(self, "cross_connect_group_id")
 
     @property
     @pulumi.getter(name="crossConnects")
-    def cross_connects(self) -> Sequence['outputs.GetCrossConnectsCrossConnectResult']:
-        """
-        The list of cross_connects.
-        """
+    def cross_connects(self) -> Optional[Sequence['outputs.GetCrossConnectsCrossConnectResult']]:
         return pulumi.get(self, "cross_connects")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -85,7 +73,7 @@ class GetCrossConnectsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -94,9 +82,6 @@ class GetCrossConnectsResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The cross-connect's current state.
-        """
         return pulumi.get(self, "state")
 
 
@@ -122,28 +107,7 @@ def get_cross_connects(compartment_id: Optional[str] = None,
                        state: Optional[str] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCrossConnectsResult:
     """
-    This data source provides the list of Cross Connects in Oracle Cloud Infrastructure Core service.
-
-    Lists the cross-connects in the specified compartment. You can filter the list
-    by specifying the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a cross-connect group.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_cross_connects = oci.Core.get_cross_connects(compartment_id=var["compartment_id"],
-        cross_connect_group_id=oci_core_cross_connect_group["test_cross_connect_group"]["id"],
-        display_name=var["cross_connect_display_name"],
-        state=var["cross_connect_state"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str cross_connect_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect group.
-    :param str display_name: A filter to return only resources that match the given display name exactly.
-    :param str state: A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -172,27 +136,6 @@ def get_cross_connects_output(compartment_id: Optional[pulumi.Input[str]] = None
                               state: Optional[pulumi.Input[Optional[str]]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCrossConnectsResult]:
     """
-    This data source provides the list of Cross Connects in Oracle Cloud Infrastructure Core service.
-
-    Lists the cross-connects in the specified compartment. You can filter the list
-    by specifying the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a cross-connect group.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_cross_connects = oci.Core.get_cross_connects(compartment_id=var["compartment_id"],
-        cross_connect_group_id=oci_core_cross_connect_group["test_cross_connect_group"]["id"],
-        display_name=var["cross_connect_display_name"],
-        state=var["cross_connect_state"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str cross_connect_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect group.
-    :param str display_name: A filter to return only resources that match the given display name exactly.
-    :param str state: A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -19,7 +19,7 @@ public final class GetPrivateIpsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The private IP address of the `privateIp` object. The address is within the CIDR of the VNIC&#39;s subnet.
      * 
@@ -29,7 +29,7 @@ public final class GetPrivateIpsResult {
      * @return The list of private_ips.
      * 
      */
-    private List<GetPrivateIpsPrivateIp> privateIps;
+    private @Nullable List<GetPrivateIpsPrivateIp> privateIps;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
      * 
@@ -54,8 +54,8 @@ public final class GetPrivateIpsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The private IP address of the `privateIp` object. The address is within the CIDR of the VNIC&#39;s subnet.
@@ -69,7 +69,7 @@ public final class GetPrivateIpsResult {
      * 
      */
     public List<GetPrivateIpsPrivateIp> privateIps() {
-        return this.privateIps;
+        return this.privateIps == null ? List.of() : this.privateIps;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
@@ -103,9 +103,9 @@ public final class GetPrivateIpsResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable List<GetPrivateIpsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String ipAddress;
-        private List<GetPrivateIpsPrivateIp> privateIps;
+        private @Nullable List<GetPrivateIpsPrivateIp> privateIps;
         private @Nullable String subnetId;
         private @Nullable String vlanId;
         private @Nullable String vnicId;
@@ -130,8 +130,8 @@ public final class GetPrivateIpsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -140,8 +140,8 @@ public final class GetPrivateIpsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder privateIps(List<GetPrivateIpsPrivateIp> privateIps) {
-            this.privateIps = Objects.requireNonNull(privateIps);
+        public Builder privateIps(@Nullable List<GetPrivateIpsPrivateIp> privateIps) {
+            this.privateIps = privateIps;
             return this;
         }
         public Builder privateIps(GetPrivateIpsPrivateIp... privateIps) {

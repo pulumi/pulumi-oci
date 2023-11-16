@@ -34,22 +34,6 @@ class ConnectionArgs:
                  tls_wallet: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a Connection resource.
-        :param pulumi.Input['ConnectionAdminCredentialsArgs'] admin_credentials: (Updatable) Database Administrator Credentials details.
-        :param pulumi.Input[str] compartment_id: (Updatable) OCID of the compartment where the secret containing the credentials will be created.
-        :param pulumi.Input[str] database_type: Database connection type.
-        :param pulumi.Input['ConnectionVaultDetailsArgs'] vault_details: (Updatable) Oracle Cloud Infrastructure Vault details to store migration and connection credentials secrets
-        :param pulumi.Input[str] certificate_tdn: (Updatable) This name is the distinguished name used while creating the certificate on target database. Requires a TLS wallet to be specified. Not required for source container database connections.
-        :param pulumi.Input['ConnectionConnectDescriptorArgs'] connect_descriptor: (Updatable) Connect Descriptor details. Required for Manual and UserManagerOci connection types. If a Private Endpoint was specified for the Connection, the host should contain a valid IP address.
-        :param pulumi.Input[str] database_id: (Updatable) The OCID of the cloud database. Required if the database connection type is Autonomous.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) Database Connection display name identifier.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) An array of Network Security Group OCIDs used to define network access for Connections.
-        :param pulumi.Input['ConnectionPrivateEndpointArgs'] private_endpoint: (Updatable) Oracle Cloud Infrastructure Private Endpoint configuration details. Not required for source container database connections, it will default to the specified Source Database Connection Private Endpoint.
-        :param pulumi.Input['ConnectionReplicationCredentialsArgs'] replication_credentials: (Updatable) Database Administrator Credentials details.
-        :param pulumi.Input['ConnectionSshDetailsArgs'] ssh_details: (Updatable) Details of the SSH key that will be used. Required for source database Manual and UserManagerOci connection types. Not required for source container database connections.
-        :param pulumi.Input[str] tls_keystore: (Updatable) keystore.jks file contents; base64 encoded String. Requires a TLS wallet to be specified. Not required for source container database connections.
-        :param pulumi.Input[str] tls_wallet: (Updatable) cwallet.sso containing containing the TCPS/SSL certificate; base64 encoded String. Not required for source container database connections.
         """
         pulumi.set(__self__, "admin_credentials", admin_credentials)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -83,9 +67,6 @@ class ConnectionArgs:
     @property
     @pulumi.getter(name="adminCredentials")
     def admin_credentials(self) -> pulumi.Input['ConnectionAdminCredentialsArgs']:
-        """
-        (Updatable) Database Administrator Credentials details.
-        """
         return pulumi.get(self, "admin_credentials")
 
     @admin_credentials.setter
@@ -95,9 +76,6 @@ class ConnectionArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) OCID of the compartment where the secret containing the credentials will be created.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -107,9 +85,6 @@ class ConnectionArgs:
     @property
     @pulumi.getter(name="databaseType")
     def database_type(self) -> pulumi.Input[str]:
-        """
-        Database connection type.
-        """
         return pulumi.get(self, "database_type")
 
     @database_type.setter
@@ -119,9 +94,6 @@ class ConnectionArgs:
     @property
     @pulumi.getter(name="vaultDetails")
     def vault_details(self) -> pulumi.Input['ConnectionVaultDetailsArgs']:
-        """
-        (Updatable) Oracle Cloud Infrastructure Vault details to store migration and connection credentials secrets
-        """
         return pulumi.get(self, "vault_details")
 
     @vault_details.setter
@@ -131,9 +103,6 @@ class ConnectionArgs:
     @property
     @pulumi.getter(name="certificateTdn")
     def certificate_tdn(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) This name is the distinguished name used while creating the certificate on target database. Requires a TLS wallet to be specified. Not required for source container database connections.
-        """
         return pulumi.get(self, "certificate_tdn")
 
     @certificate_tdn.setter
@@ -143,9 +112,6 @@ class ConnectionArgs:
     @property
     @pulumi.getter(name="connectDescriptor")
     def connect_descriptor(self) -> Optional[pulumi.Input['ConnectionConnectDescriptorArgs']]:
-        """
-        (Updatable) Connect Descriptor details. Required for Manual and UserManagerOci connection types. If a Private Endpoint was specified for the Connection, the host should contain a valid IP address.
-        """
         return pulumi.get(self, "connect_descriptor")
 
     @connect_descriptor.setter
@@ -155,9 +121,6 @@ class ConnectionArgs:
     @property
     @pulumi.getter(name="databaseId")
     def database_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the cloud database. Required if the database connection type is Autonomous.
-        """
         return pulumi.get(self, "database_id")
 
     @database_id.setter
@@ -167,9 +130,6 @@ class ConnectionArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -179,9 +139,6 @@ class ConnectionArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Database Connection display name identifier.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -191,9 +148,6 @@ class ConnectionArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -203,9 +157,6 @@ class ConnectionArgs:
     @property
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) An array of Network Security Group OCIDs used to define network access for Connections.
-        """
         return pulumi.get(self, "nsg_ids")
 
     @nsg_ids.setter
@@ -215,9 +166,6 @@ class ConnectionArgs:
     @property
     @pulumi.getter(name="privateEndpoint")
     def private_endpoint(self) -> Optional[pulumi.Input['ConnectionPrivateEndpointArgs']]:
-        """
-        (Updatable) Oracle Cloud Infrastructure Private Endpoint configuration details. Not required for source container database connections, it will default to the specified Source Database Connection Private Endpoint.
-        """
         return pulumi.get(self, "private_endpoint")
 
     @private_endpoint.setter
@@ -227,9 +175,6 @@ class ConnectionArgs:
     @property
     @pulumi.getter(name="replicationCredentials")
     def replication_credentials(self) -> Optional[pulumi.Input['ConnectionReplicationCredentialsArgs']]:
-        """
-        (Updatable) Database Administrator Credentials details.
-        """
         return pulumi.get(self, "replication_credentials")
 
     @replication_credentials.setter
@@ -239,9 +184,6 @@ class ConnectionArgs:
     @property
     @pulumi.getter(name="sshDetails")
     def ssh_details(self) -> Optional[pulumi.Input['ConnectionSshDetailsArgs']]:
-        """
-        (Updatable) Details of the SSH key that will be used. Required for source database Manual and UserManagerOci connection types. Not required for source container database connections.
-        """
         return pulumi.get(self, "ssh_details")
 
     @ssh_details.setter
@@ -251,9 +193,6 @@ class ConnectionArgs:
     @property
     @pulumi.getter(name="tlsKeystore")
     def tls_keystore(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) keystore.jks file contents; base64 encoded String. Requires a TLS wallet to be specified. Not required for source container database connections.
-        """
         return pulumi.get(self, "tls_keystore")
 
     @tls_keystore.setter
@@ -263,9 +202,6 @@ class ConnectionArgs:
     @property
     @pulumi.getter(name="tlsWallet")
     def tls_wallet(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) cwallet.sso containing containing the TCPS/SSL certificate; base64 encoded String. Not required for source container database connections.
-        """
         return pulumi.get(self, "tls_wallet")
 
     @tls_wallet.setter
@@ -300,28 +236,6 @@ class _ConnectionState:
                  vault_details: Optional[pulumi.Input['ConnectionVaultDetailsArgs']] = None):
         """
         Input properties used for looking up and filtering Connection resources.
-        :param pulumi.Input['ConnectionAdminCredentialsArgs'] admin_credentials: (Updatable) Database Administrator Credentials details.
-        :param pulumi.Input[str] certificate_tdn: (Updatable) This name is the distinguished name used while creating the certificate on target database. Requires a TLS wallet to be specified. Not required for source container database connections.
-        :param pulumi.Input[str] compartment_id: (Updatable) OCID of the compartment where the secret containing the credentials will be created.
-        :param pulumi.Input['ConnectionConnectDescriptorArgs'] connect_descriptor: (Updatable) Connect Descriptor details. Required for Manual and UserManagerOci connection types. If a Private Endpoint was specified for the Connection, the host should contain a valid IP address.
-        :param pulumi.Input[str] credentials_secret_id: OCID of the Secret in the Oracle Cloud Infrastructure vault containing the Database Connection credentials.
-        :param pulumi.Input[str] database_id: (Updatable) The OCID of the cloud database. Required if the database connection type is Autonomous.
-        :param pulumi.Input[str] database_type: Database connection type.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) Database Connection display name identifier.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) An array of Network Security Group OCIDs used to define network access for Connections.
-        :param pulumi.Input['ConnectionPrivateEndpointArgs'] private_endpoint: (Updatable) Oracle Cloud Infrastructure Private Endpoint configuration details. Not required for source container database connections, it will default to the specified Source Database Connection Private Endpoint.
-        :param pulumi.Input['ConnectionReplicationCredentialsArgs'] replication_credentials: (Updatable) Database Administrator Credentials details.
-        :param pulumi.Input['ConnectionSshDetailsArgs'] ssh_details: (Updatable) Details of the SSH key that will be used. Required for source database Manual and UserManagerOci connection types. Not required for source container database connections.
-        :param pulumi.Input[str] state: The current state of the Connection resource.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: The time the Connection resource was created. An RFC3339 formatted datetime string.
-        :param pulumi.Input[str] time_updated: The time of the last Connection resource details update. An RFC3339 formatted datetime string.
-        :param pulumi.Input[str] tls_keystore: (Updatable) keystore.jks file contents; base64 encoded String. Requires a TLS wallet to be specified. Not required for source container database connections.
-        :param pulumi.Input[str] tls_wallet: (Updatable) cwallet.sso containing containing the TCPS/SSL certificate; base64 encoded String. Not required for source container database connections.
-        :param pulumi.Input['ConnectionVaultDetailsArgs'] vault_details: (Updatable) Oracle Cloud Infrastructure Vault details to store migration and connection credentials secrets
         """
         if admin_credentials is not None:
             pulumi.set(__self__, "admin_credentials", admin_credentials)
@@ -371,9 +285,6 @@ class _ConnectionState:
     @property
     @pulumi.getter(name="adminCredentials")
     def admin_credentials(self) -> Optional[pulumi.Input['ConnectionAdminCredentialsArgs']]:
-        """
-        (Updatable) Database Administrator Credentials details.
-        """
         return pulumi.get(self, "admin_credentials")
 
     @admin_credentials.setter
@@ -383,9 +294,6 @@ class _ConnectionState:
     @property
     @pulumi.getter(name="certificateTdn")
     def certificate_tdn(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) This name is the distinguished name used while creating the certificate on target database. Requires a TLS wallet to be specified. Not required for source container database connections.
-        """
         return pulumi.get(self, "certificate_tdn")
 
     @certificate_tdn.setter
@@ -395,9 +303,6 @@ class _ConnectionState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) OCID of the compartment where the secret containing the credentials will be created.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -407,9 +312,6 @@ class _ConnectionState:
     @property
     @pulumi.getter(name="connectDescriptor")
     def connect_descriptor(self) -> Optional[pulumi.Input['ConnectionConnectDescriptorArgs']]:
-        """
-        (Updatable) Connect Descriptor details. Required for Manual and UserManagerOci connection types. If a Private Endpoint was specified for the Connection, the host should contain a valid IP address.
-        """
         return pulumi.get(self, "connect_descriptor")
 
     @connect_descriptor.setter
@@ -419,9 +321,6 @@ class _ConnectionState:
     @property
     @pulumi.getter(name="credentialsSecretId")
     def credentials_secret_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        OCID of the Secret in the Oracle Cloud Infrastructure vault containing the Database Connection credentials.
-        """
         return pulumi.get(self, "credentials_secret_id")
 
     @credentials_secret_id.setter
@@ -431,9 +330,6 @@ class _ConnectionState:
     @property
     @pulumi.getter(name="databaseId")
     def database_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The OCID of the cloud database. Required if the database connection type is Autonomous.
-        """
         return pulumi.get(self, "database_id")
 
     @database_id.setter
@@ -443,9 +339,6 @@ class _ConnectionState:
     @property
     @pulumi.getter(name="databaseType")
     def database_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        Database connection type.
-        """
         return pulumi.get(self, "database_type")
 
     @database_type.setter
@@ -455,9 +348,6 @@ class _ConnectionState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -467,9 +357,6 @@ class _ConnectionState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Database Connection display name identifier.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -479,9 +366,6 @@ class _ConnectionState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -491,9 +375,6 @@ class _ConnectionState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -503,9 +384,6 @@ class _ConnectionState:
     @property
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) An array of Network Security Group OCIDs used to define network access for Connections.
-        """
         return pulumi.get(self, "nsg_ids")
 
     @nsg_ids.setter
@@ -515,9 +393,6 @@ class _ConnectionState:
     @property
     @pulumi.getter(name="privateEndpoint")
     def private_endpoint(self) -> Optional[pulumi.Input['ConnectionPrivateEndpointArgs']]:
-        """
-        (Updatable) Oracle Cloud Infrastructure Private Endpoint configuration details. Not required for source container database connections, it will default to the specified Source Database Connection Private Endpoint.
-        """
         return pulumi.get(self, "private_endpoint")
 
     @private_endpoint.setter
@@ -527,9 +402,6 @@ class _ConnectionState:
     @property
     @pulumi.getter(name="replicationCredentials")
     def replication_credentials(self) -> Optional[pulumi.Input['ConnectionReplicationCredentialsArgs']]:
-        """
-        (Updatable) Database Administrator Credentials details.
-        """
         return pulumi.get(self, "replication_credentials")
 
     @replication_credentials.setter
@@ -539,9 +411,6 @@ class _ConnectionState:
     @property
     @pulumi.getter(name="sshDetails")
     def ssh_details(self) -> Optional[pulumi.Input['ConnectionSshDetailsArgs']]:
-        """
-        (Updatable) Details of the SSH key that will be used. Required for source database Manual and UserManagerOci connection types. Not required for source container database connections.
-        """
         return pulumi.get(self, "ssh_details")
 
     @ssh_details.setter
@@ -551,9 +420,6 @@ class _ConnectionState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the Connection resource.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -563,9 +429,6 @@ class _ConnectionState:
     @property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
@@ -575,9 +438,6 @@ class _ConnectionState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time the Connection resource was created. An RFC3339 formatted datetime string.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -587,9 +447,6 @@ class _ConnectionState:
     @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time of the last Connection resource details update. An RFC3339 formatted datetime string.
-        """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
@@ -599,9 +456,6 @@ class _ConnectionState:
     @property
     @pulumi.getter(name="tlsKeystore")
     def tls_keystore(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) keystore.jks file contents; base64 encoded String. Requires a TLS wallet to be specified. Not required for source container database connections.
-        """
         return pulumi.get(self, "tls_keystore")
 
     @tls_keystore.setter
@@ -611,9 +465,6 @@ class _ConnectionState:
     @property
     @pulumi.getter(name="tlsWallet")
     def tls_wallet(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) cwallet.sso containing containing the TCPS/SSL certificate; base64 encoded String. Not required for source container database connections.
-        """
         return pulumi.get(self, "tls_wallet")
 
     @tls_wallet.setter
@@ -623,9 +474,6 @@ class _ConnectionState:
     @property
     @pulumi.getter(name="vaultDetails")
     def vault_details(self) -> Optional[pulumi.Input['ConnectionVaultDetailsArgs']]:
-        """
-        (Updatable) Oracle Cloud Infrastructure Vault details to store migration and connection credentials secrets
-        """
         return pulumi.get(self, "vault_details")
 
     @vault_details.setter
@@ -656,90 +504,9 @@ class Connection(pulumi.CustomResource):
                  vault_details: Optional[pulumi.Input[pulumi.InputType['ConnectionVaultDetailsArgs']]] = None,
                  __props__=None):
         """
-        This resource provides the Connection resource in Oracle Cloud Infrastructure Database Migration service.
-
-        Create a Database Connection resource that contains the details to connect to either a Source or Target Database
-        in the migration.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_connection = oci.database_migration.Connection("testConnection",
-            admin_credentials=oci.database_migration.ConnectionAdminCredentialsArgs(
-                password=var["connection_admin_credentials_password"],
-                username=var["connection_admin_credentials_username"],
-            ),
-            compartment_id=var["compartment_id"],
-            database_type=var["connection_database_type"],
-            vault_details=oci.database_migration.ConnectionVaultDetailsArgs(
-                compartment_id=var["compartment_id"],
-                key_id=oci_kms_key["test_key"]["id"],
-                vault_id=oci_kms_vault["test_vault"]["id"],
-            ),
-            certificate_tdn=var["connection_certificate_tdn"],
-            connect_descriptor=oci.database_migration.ConnectionConnectDescriptorArgs(
-                connect_string=var["connection_connect_descriptor_connect_string"],
-                database_service_name=oci_core_service["test_service"]["name"],
-                host=var["connection_connect_descriptor_host"],
-                port=var["connection_connect_descriptor_port"],
-            ),
-            database_id=oci_database_database["test_database"]["id"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            display_name=var["connection_display_name"],
-            freeform_tags={
-                "bar-key": "value",
-            },
-            nsg_ids=var["connection_nsg_ids"],
-            private_endpoint=oci.database_migration.ConnectionPrivateEndpointArgs(
-                compartment_id=var["compartment_id"],
-                subnet_id=oci_core_subnet["test_subnet"]["id"],
-                vcn_id=oci_core_vcn["test_vcn"]["id"],
-            ),
-            replication_credentials=oci.database_migration.ConnectionReplicationCredentialsArgs(
-                password=var["connection_replication_credentials_password"],
-                username=var["connection_replication_credentials_username"],
-            ),
-            ssh_details=oci.database_migration.ConnectionSshDetailsArgs(
-                host=var["connection_ssh_details_host"],
-                sshkey=var["connection_ssh_details_sshkey"],
-                user=var["connection_ssh_details_user"],
-                sudo_location=var["connection_ssh_details_sudo_location"],
-            ),
-            tls_keystore=var["connection_tls_keystore"],
-            tls_wallet=var["connection_tls_wallet"])
-        ```
-
-        ## Import
-
-        Connections can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:DatabaseMigration/connection:Connection test_connection "id"
-        ```
-
+        Create a Connection resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['ConnectionAdminCredentialsArgs']] admin_credentials: (Updatable) Database Administrator Credentials details.
-        :param pulumi.Input[str] certificate_tdn: (Updatable) This name is the distinguished name used while creating the certificate on target database. Requires a TLS wallet to be specified. Not required for source container database connections.
-        :param pulumi.Input[str] compartment_id: (Updatable) OCID of the compartment where the secret containing the credentials will be created.
-        :param pulumi.Input[pulumi.InputType['ConnectionConnectDescriptorArgs']] connect_descriptor: (Updatable) Connect Descriptor details. Required for Manual and UserManagerOci connection types. If a Private Endpoint was specified for the Connection, the host should contain a valid IP address.
-        :param pulumi.Input[str] database_id: (Updatable) The OCID of the cloud database. Required if the database connection type is Autonomous.
-        :param pulumi.Input[str] database_type: Database connection type.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) Database Connection display name identifier.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) An array of Network Security Group OCIDs used to define network access for Connections.
-        :param pulumi.Input[pulumi.InputType['ConnectionPrivateEndpointArgs']] private_endpoint: (Updatable) Oracle Cloud Infrastructure Private Endpoint configuration details. Not required for source container database connections, it will default to the specified Source Database Connection Private Endpoint.
-        :param pulumi.Input[pulumi.InputType['ConnectionReplicationCredentialsArgs']] replication_credentials: (Updatable) Database Administrator Credentials details.
-        :param pulumi.Input[pulumi.InputType['ConnectionSshDetailsArgs']] ssh_details: (Updatable) Details of the SSH key that will be used. Required for source database Manual and UserManagerOci connection types. Not required for source container database connections.
-        :param pulumi.Input[str] tls_keystore: (Updatable) keystore.jks file contents; base64 encoded String. Requires a TLS wallet to be specified. Not required for source container database connections.
-        :param pulumi.Input[str] tls_wallet: (Updatable) cwallet.sso containing containing the TCPS/SSL certificate; base64 encoded String. Not required for source container database connections.
-        :param pulumi.Input[pulumi.InputType['ConnectionVaultDetailsArgs']] vault_details: (Updatable) Oracle Cloud Infrastructure Vault details to store migration and connection credentials secrets
         """
         ...
     @overload
@@ -748,72 +515,7 @@ class Connection(pulumi.CustomResource):
                  args: ConnectionArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Connection resource in Oracle Cloud Infrastructure Database Migration service.
-
-        Create a Database Connection resource that contains the details to connect to either a Source or Target Database
-        in the migration.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_connection = oci.database_migration.Connection("testConnection",
-            admin_credentials=oci.database_migration.ConnectionAdminCredentialsArgs(
-                password=var["connection_admin_credentials_password"],
-                username=var["connection_admin_credentials_username"],
-            ),
-            compartment_id=var["compartment_id"],
-            database_type=var["connection_database_type"],
-            vault_details=oci.database_migration.ConnectionVaultDetailsArgs(
-                compartment_id=var["compartment_id"],
-                key_id=oci_kms_key["test_key"]["id"],
-                vault_id=oci_kms_vault["test_vault"]["id"],
-            ),
-            certificate_tdn=var["connection_certificate_tdn"],
-            connect_descriptor=oci.database_migration.ConnectionConnectDescriptorArgs(
-                connect_string=var["connection_connect_descriptor_connect_string"],
-                database_service_name=oci_core_service["test_service"]["name"],
-                host=var["connection_connect_descriptor_host"],
-                port=var["connection_connect_descriptor_port"],
-            ),
-            database_id=oci_database_database["test_database"]["id"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            display_name=var["connection_display_name"],
-            freeform_tags={
-                "bar-key": "value",
-            },
-            nsg_ids=var["connection_nsg_ids"],
-            private_endpoint=oci.database_migration.ConnectionPrivateEndpointArgs(
-                compartment_id=var["compartment_id"],
-                subnet_id=oci_core_subnet["test_subnet"]["id"],
-                vcn_id=oci_core_vcn["test_vcn"]["id"],
-            ),
-            replication_credentials=oci.database_migration.ConnectionReplicationCredentialsArgs(
-                password=var["connection_replication_credentials_password"],
-                username=var["connection_replication_credentials_username"],
-            ),
-            ssh_details=oci.database_migration.ConnectionSshDetailsArgs(
-                host=var["connection_ssh_details_host"],
-                sshkey=var["connection_ssh_details_sshkey"],
-                user=var["connection_ssh_details_user"],
-                sudo_location=var["connection_ssh_details_sudo_location"],
-            ),
-            tls_keystore=var["connection_tls_keystore"],
-            tls_wallet=var["connection_tls_wallet"])
-        ```
-
-        ## Import
-
-        Connections can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:DatabaseMigration/connection:Connection test_connection "id"
-        ```
-
+        Create a Connection resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param ConnectionArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -923,28 +625,6 @@ class Connection(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['ConnectionAdminCredentialsArgs']] admin_credentials: (Updatable) Database Administrator Credentials details.
-        :param pulumi.Input[str] certificate_tdn: (Updatable) This name is the distinguished name used while creating the certificate on target database. Requires a TLS wallet to be specified. Not required for source container database connections.
-        :param pulumi.Input[str] compartment_id: (Updatable) OCID of the compartment where the secret containing the credentials will be created.
-        :param pulumi.Input[pulumi.InputType['ConnectionConnectDescriptorArgs']] connect_descriptor: (Updatable) Connect Descriptor details. Required for Manual and UserManagerOci connection types. If a Private Endpoint was specified for the Connection, the host should contain a valid IP address.
-        :param pulumi.Input[str] credentials_secret_id: OCID of the Secret in the Oracle Cloud Infrastructure vault containing the Database Connection credentials.
-        :param pulumi.Input[str] database_id: (Updatable) The OCID of the cloud database. Required if the database connection type is Autonomous.
-        :param pulumi.Input[str] database_type: Database connection type.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) Database Connection display name identifier.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) An array of Network Security Group OCIDs used to define network access for Connections.
-        :param pulumi.Input[pulumi.InputType['ConnectionPrivateEndpointArgs']] private_endpoint: (Updatable) Oracle Cloud Infrastructure Private Endpoint configuration details. Not required for source container database connections, it will default to the specified Source Database Connection Private Endpoint.
-        :param pulumi.Input[pulumi.InputType['ConnectionReplicationCredentialsArgs']] replication_credentials: (Updatable) Database Administrator Credentials details.
-        :param pulumi.Input[pulumi.InputType['ConnectionSshDetailsArgs']] ssh_details: (Updatable) Details of the SSH key that will be used. Required for source database Manual and UserManagerOci connection types. Not required for source container database connections.
-        :param pulumi.Input[str] state: The current state of the Connection resource.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: The time the Connection resource was created. An RFC3339 formatted datetime string.
-        :param pulumi.Input[str] time_updated: The time of the last Connection resource details update. An RFC3339 formatted datetime string.
-        :param pulumi.Input[str] tls_keystore: (Updatable) keystore.jks file contents; base64 encoded String. Requires a TLS wallet to be specified. Not required for source container database connections.
-        :param pulumi.Input[str] tls_wallet: (Updatable) cwallet.sso containing containing the TCPS/SSL certificate; base64 encoded String. Not required for source container database connections.
-        :param pulumi.Input[pulumi.InputType['ConnectionVaultDetailsArgs']] vault_details: (Updatable) Oracle Cloud Infrastructure Vault details to store migration and connection credentials secrets
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -977,176 +657,110 @@ class Connection(pulumi.CustomResource):
     @property
     @pulumi.getter(name="adminCredentials")
     def admin_credentials(self) -> pulumi.Output['outputs.ConnectionAdminCredentials']:
-        """
-        (Updatable) Database Administrator Credentials details.
-        """
         return pulumi.get(self, "admin_credentials")
 
     @property
     @pulumi.getter(name="certificateTdn")
-    def certificate_tdn(self) -> pulumi.Output[str]:
-        """
-        (Updatable) This name is the distinguished name used while creating the certificate on target database. Requires a TLS wallet to be specified. Not required for source container database connections.
-        """
+    def certificate_tdn(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "certificate_tdn")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) OCID of the compartment where the secret containing the credentials will be created.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="connectDescriptor")
-    def connect_descriptor(self) -> pulumi.Output['outputs.ConnectionConnectDescriptor']:
-        """
-        (Updatable) Connect Descriptor details. Required for Manual and UserManagerOci connection types. If a Private Endpoint was specified for the Connection, the host should contain a valid IP address.
-        """
+    def connect_descriptor(self) -> pulumi.Output[Optional['outputs.ConnectionConnectDescriptor']]:
         return pulumi.get(self, "connect_descriptor")
 
     @property
     @pulumi.getter(name="credentialsSecretId")
-    def credentials_secret_id(self) -> pulumi.Output[str]:
-        """
-        OCID of the Secret in the Oracle Cloud Infrastructure vault containing the Database Connection credentials.
-        """
+    def credentials_secret_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "credentials_secret_id")
 
     @property
     @pulumi.getter(name="databaseId")
-    def database_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The OCID of the cloud database. Required if the database connection type is Autonomous.
-        """
+    def database_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "database_id")
 
     @property
     @pulumi.getter(name="databaseType")
     def database_type(self) -> pulumi.Output[str]:
-        """
-        Database connection type.
-        """
         return pulumi.get(self, "database_type")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Database Connection display name identifier.
-        """
+    def display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="nsgIds")
-    def nsg_ids(self) -> pulumi.Output[Sequence[str]]:
-        """
-        (Updatable) An array of Network Security Group OCIDs used to define network access for Connections.
-        """
+    def nsg_ids(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "nsg_ids")
 
     @property
     @pulumi.getter(name="privateEndpoint")
-    def private_endpoint(self) -> pulumi.Output['outputs.ConnectionPrivateEndpoint']:
-        """
-        (Updatable) Oracle Cloud Infrastructure Private Endpoint configuration details. Not required for source container database connections, it will default to the specified Source Database Connection Private Endpoint.
-        """
+    def private_endpoint(self) -> pulumi.Output[Optional['outputs.ConnectionPrivateEndpoint']]:
         return pulumi.get(self, "private_endpoint")
 
     @property
     @pulumi.getter(name="replicationCredentials")
-    def replication_credentials(self) -> pulumi.Output['outputs.ConnectionReplicationCredentials']:
-        """
-        (Updatable) Database Administrator Credentials details.
-        """
+    def replication_credentials(self) -> pulumi.Output[Optional['outputs.ConnectionReplicationCredentials']]:
         return pulumi.get(self, "replication_credentials")
 
     @property
     @pulumi.getter(name="sshDetails")
-    def ssh_details(self) -> pulumi.Output['outputs.ConnectionSshDetails']:
-        """
-        (Updatable) Details of the SSH key that will be used. Required for source database Manual and UserManagerOci connection types. Not required for source container database connections.
-        """
+    def ssh_details(self) -> pulumi.Output[Optional['outputs.ConnectionSshDetails']]:
         return pulumi.get(self, "ssh_details")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the Connection resource.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The time the Connection resource was created. An RFC3339 formatted datetime string.
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> pulumi.Output[str]:
-        """
-        The time of the last Connection resource details update. An RFC3339 formatted datetime string.
-        """
+    def time_updated(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="tlsKeystore")
-    def tls_keystore(self) -> pulumi.Output[str]:
-        """
-        (Updatable) keystore.jks file contents; base64 encoded String. Requires a TLS wallet to be specified. Not required for source container database connections.
-        """
+    def tls_keystore(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "tls_keystore")
 
     @property
     @pulumi.getter(name="tlsWallet")
-    def tls_wallet(self) -> pulumi.Output[str]:
-        """
-        (Updatable) cwallet.sso containing containing the TCPS/SSL certificate; base64 encoded String. Not required for source container database connections.
-        """
+    def tls_wallet(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "tls_wallet")
 
     @property
     @pulumi.getter(name="vaultDetails")
     def vault_details(self) -> pulumi.Output['outputs.ConnectionVaultDetails']:
-        """
-        (Updatable) Oracle Cloud Infrastructure Vault details to store migration and connection credentials secrets
-        """
         return pulumi.get(self, "vault_details")
 

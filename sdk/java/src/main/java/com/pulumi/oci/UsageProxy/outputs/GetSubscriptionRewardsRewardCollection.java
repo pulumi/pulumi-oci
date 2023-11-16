@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.UsageProxy.outputs.GetSubscriptionRewardsRewardCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSubscriptionRewardsRewardCollection {
@@ -14,7 +15,7 @@ public final class GetSubscriptionRewardsRewardCollection {
      * @return The monthly summary of rewards.
      * 
      */
-    private List<GetSubscriptionRewardsRewardCollectionItem> items;
+    private @Nullable List<GetSubscriptionRewardsRewardCollectionItem> items;
 
     private GetSubscriptionRewardsRewardCollection() {}
     /**
@@ -22,7 +23,7 @@ public final class GetSubscriptionRewardsRewardCollection {
      * 
      */
     public List<GetSubscriptionRewardsRewardCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetSubscriptionRewardsRewardCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetSubscriptionRewardsRewardCollectionItem> items;
+        private @Nullable List<GetSubscriptionRewardsRewardCollectionItem> items;
         public Builder() {}
         public Builder(GetSubscriptionRewardsRewardCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetSubscriptionRewardsRewardCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetSubscriptionRewardsRewardCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetSubscriptionRewardsRewardCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetSubscriptionRewardsRewardCollectionItem... items) {

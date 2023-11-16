@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Model resource in Oracle Cloud Infrastructure Ai Document service.
@@ -38,48 +37,48 @@ type Model struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) An optional description of the model.
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) A human-friendly name for the model, which can be changed.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// Set to true when the model is created by using multiple key value extraction models.
-	IsComposedModel pulumi.BoolOutput `pulumi:"isComposedModel"`
+	IsComposedModel pulumi.BoolPtrOutput `pulumi:"isComposedModel"`
 	// Set to true when experimenting with a new model type or dataset, so the model training is quick, with a predefined low number of passes through the training data.
-	IsQuickMode pulumi.BoolOutput `pulumi:"isQuickMode"`
+	IsQuickMode pulumi.BoolPtrOutput `pulumi:"isQuickMode"`
 	// The collection of labels used to train the custom model.
 	Labels pulumi.StringArrayOutput `pulumi:"labels"`
 	// A message describing the current state in more detail, that can provide actionable information if training failed.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// The maximum model training time in hours, expressed as a decimal fraction.
-	MaxTrainingTimeInHours pulumi.Float64Output `pulumi:"maxTrainingTimeInHours"`
+	MaxTrainingTimeInHours pulumi.Float64PtrOutput `pulumi:"maxTrainingTimeInHours"`
 	// Trained Model Metrics.
 	Metrics ModelMetricArrayOutput `pulumi:"metrics"`
 	ModelId pulumi.StringPtrOutput `pulumi:"modelId"`
 	// The type of the Document model.
 	ModelType pulumi.StringOutput `pulumi:"modelType"`
 	// The model version
-	ModelVersion pulumi.StringOutput `pulumi:"modelVersion"`
+	ModelVersion pulumi.StringPtrOutput `pulumi:"modelVersion"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project that contains the model.
 	ProjectId pulumi.StringOutput `pulumi:"projectId"`
 	// The current state of the model.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The tenancy id of the model.
-	TenancyId pulumi.StringOutput `pulumi:"tenancyId"`
+	TenancyId pulumi.StringPtrOutput `pulumi:"tenancyId"`
 	// The base entity which is the input for creating and training a model.
-	TestingDataset ModelTestingDatasetOutput `pulumi:"testingDataset"`
+	TestingDataset ModelTestingDatasetPtrOutput `pulumi:"testingDataset"`
 	// When the model was created, as an RFC3339 datetime string.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// When the model was updated, as an RFC3339 datetime string.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 	// The total hours actually used for model training.
-	TrainedTimeInHours pulumi.Float64Output `pulumi:"trainedTimeInHours"`
+	TrainedTimeInHours pulumi.Float64PtrOutput `pulumi:"trainedTimeInHours"`
 	// The base entity which is the input for creating and training a model.
-	TrainingDataset ModelTrainingDatasetOutput `pulumi:"trainingDataset"`
+	TrainingDataset ModelTrainingDatasetPtrOutput `pulumi:"trainingDataset"`
 	// The base entity which is the input for creating and training a model.
-	ValidationDataset ModelValidationDatasetOutput `pulumi:"validationDataset"`
+	ValidationDataset ModelValidationDatasetPtrOutput `pulumi:"validationDataset"`
 }
 
 // NewModel registers a new resource with the given unique name, arguments, and options.
@@ -316,12 +315,6 @@ func (i *Model) ToModelOutputWithContext(ctx context.Context) ModelOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ModelOutput)
 }
 
-func (i *Model) ToOutput(ctx context.Context) pulumix.Output[*Model] {
-	return pulumix.Output[*Model]{
-		OutputState: i.ToModelOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ModelArrayInput is an input type that accepts ModelArray and ModelArrayOutput values.
 // You can construct a concrete instance of `ModelArrayInput` via:
 //
@@ -345,12 +338,6 @@ func (i ModelArray) ToModelArrayOutput() ModelArrayOutput {
 
 func (i ModelArray) ToModelArrayOutputWithContext(ctx context.Context) ModelArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ModelArrayOutput)
-}
-
-func (i ModelArray) ToOutput(ctx context.Context) pulumix.Output[[]*Model] {
-	return pulumix.Output[[]*Model]{
-		OutputState: i.ToModelArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ModelMapInput is an input type that accepts ModelMap and ModelMapOutput values.
@@ -378,12 +365,6 @@ func (i ModelMap) ToModelMapOutputWithContext(ctx context.Context) ModelMapOutpu
 	return pulumi.ToOutputWithContext(ctx, i).(ModelMapOutput)
 }
 
-func (i ModelMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Model] {
-	return pulumix.Output[map[string]*Model]{
-		OutputState: i.ToModelMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ModelOutput struct{ *pulumi.OutputState }
 
 func (ModelOutput) ElementType() reflect.Type {
@@ -396,12 +377,6 @@ func (o ModelOutput) ToModelOutput() ModelOutput {
 
 func (o ModelOutput) ToModelOutputWithContext(ctx context.Context) ModelOutput {
 	return o
-}
-
-func (o ModelOutput) ToOutput(ctx context.Context) pulumix.Output[*Model] {
-	return pulumix.Output[*Model]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The compartment identifier.
@@ -420,13 +395,13 @@ func (o ModelOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) An optional description of the model.
-func (o ModelOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *Model) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o ModelOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Model) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A human-friendly name for the model, which can be changed.
-func (o ModelOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *Model) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o ModelOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Model) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
@@ -435,13 +410,13 @@ func (o ModelOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Set to true when the model is created by using multiple key value extraction models.
-func (o ModelOutput) IsComposedModel() pulumi.BoolOutput {
-	return o.ApplyT(func(v *Model) pulumi.BoolOutput { return v.IsComposedModel }).(pulumi.BoolOutput)
+func (o ModelOutput) IsComposedModel() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *Model) pulumi.BoolPtrOutput { return v.IsComposedModel }).(pulumi.BoolPtrOutput)
 }
 
 // Set to true when experimenting with a new model type or dataset, so the model training is quick, with a predefined low number of passes through the training data.
-func (o ModelOutput) IsQuickMode() pulumi.BoolOutput {
-	return o.ApplyT(func(v *Model) pulumi.BoolOutput { return v.IsQuickMode }).(pulumi.BoolOutput)
+func (o ModelOutput) IsQuickMode() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *Model) pulumi.BoolPtrOutput { return v.IsQuickMode }).(pulumi.BoolPtrOutput)
 }
 
 // The collection of labels used to train the custom model.
@@ -450,13 +425,13 @@ func (o ModelOutput) Labels() pulumi.StringArrayOutput {
 }
 
 // A message describing the current state in more detail, that can provide actionable information if training failed.
-func (o ModelOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *Model) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o ModelOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Model) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The maximum model training time in hours, expressed as a decimal fraction.
-func (o ModelOutput) MaxTrainingTimeInHours() pulumi.Float64Output {
-	return o.ApplyT(func(v *Model) pulumi.Float64Output { return v.MaxTrainingTimeInHours }).(pulumi.Float64Output)
+func (o ModelOutput) MaxTrainingTimeInHours() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *Model) pulumi.Float64PtrOutput { return v.MaxTrainingTimeInHours }).(pulumi.Float64PtrOutput)
 }
 
 // Trained Model Metrics.
@@ -474,8 +449,8 @@ func (o ModelOutput) ModelType() pulumi.StringOutput {
 }
 
 // The model version
-func (o ModelOutput) ModelVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v *Model) pulumi.StringOutput { return v.ModelVersion }).(pulumi.StringOutput)
+func (o ModelOutput) ModelVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Model) pulumi.StringPtrOutput { return v.ModelVersion }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project that contains the model.
@@ -484,8 +459,8 @@ func (o ModelOutput) ProjectId() pulumi.StringOutput {
 }
 
 // The current state of the model.
-func (o ModelOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *Model) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o ModelOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Model) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
@@ -494,38 +469,38 @@ func (o ModelOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The tenancy id of the model.
-func (o ModelOutput) TenancyId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Model) pulumi.StringOutput { return v.TenancyId }).(pulumi.StringOutput)
+func (o ModelOutput) TenancyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Model) pulumi.StringPtrOutput { return v.TenancyId }).(pulumi.StringPtrOutput)
 }
 
 // The base entity which is the input for creating and training a model.
-func (o ModelOutput) TestingDataset() ModelTestingDatasetOutput {
-	return o.ApplyT(func(v *Model) ModelTestingDatasetOutput { return v.TestingDataset }).(ModelTestingDatasetOutput)
+func (o ModelOutput) TestingDataset() ModelTestingDatasetPtrOutput {
+	return o.ApplyT(func(v *Model) ModelTestingDatasetPtrOutput { return v.TestingDataset }).(ModelTestingDatasetPtrOutput)
 }
 
 // When the model was created, as an RFC3339 datetime string.
-func (o ModelOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Model) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o ModelOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Model) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // When the model was updated, as an RFC3339 datetime string.
-func (o ModelOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Model) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o ModelOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Model) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // The total hours actually used for model training.
-func (o ModelOutput) TrainedTimeInHours() pulumi.Float64Output {
-	return o.ApplyT(func(v *Model) pulumi.Float64Output { return v.TrainedTimeInHours }).(pulumi.Float64Output)
+func (o ModelOutput) TrainedTimeInHours() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *Model) pulumi.Float64PtrOutput { return v.TrainedTimeInHours }).(pulumi.Float64PtrOutput)
 }
 
 // The base entity which is the input for creating and training a model.
-func (o ModelOutput) TrainingDataset() ModelTrainingDatasetOutput {
-	return o.ApplyT(func(v *Model) ModelTrainingDatasetOutput { return v.TrainingDataset }).(ModelTrainingDatasetOutput)
+func (o ModelOutput) TrainingDataset() ModelTrainingDatasetPtrOutput {
+	return o.ApplyT(func(v *Model) ModelTrainingDatasetPtrOutput { return v.TrainingDataset }).(ModelTrainingDatasetPtrOutput)
 }
 
 // The base entity which is the input for creating and training a model.
-func (o ModelOutput) ValidationDataset() ModelValidationDatasetOutput {
-	return o.ApplyT(func(v *Model) ModelValidationDatasetOutput { return v.ValidationDataset }).(ModelValidationDatasetOutput)
+func (o ModelOutput) ValidationDataset() ModelValidationDatasetPtrOutput {
+	return o.ApplyT(func(v *Model) ModelValidationDatasetPtrOutput { return v.ValidationDataset }).(ModelValidationDatasetPtrOutput)
 }
 
 type ModelArrayOutput struct{ *pulumi.OutputState }
@@ -540,12 +515,6 @@ func (o ModelArrayOutput) ToModelArrayOutput() ModelArrayOutput {
 
 func (o ModelArrayOutput) ToModelArrayOutputWithContext(ctx context.Context) ModelArrayOutput {
 	return o
-}
-
-func (o ModelArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Model] {
-	return pulumix.Output[[]*Model]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ModelArrayOutput) Index(i pulumi.IntInput) ModelOutput {
@@ -566,12 +535,6 @@ func (o ModelMapOutput) ToModelMapOutput() ModelMapOutput {
 
 func (o ModelMapOutput) ToModelMapOutputWithContext(ctx context.Context) ModelMapOutput {
 	return o
-}
-
-func (o ModelMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Model] {
-	return pulumix.Output[map[string]*Model]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ModelMapOutput) MapIndex(k pulumi.StringInput) ModelOutput {

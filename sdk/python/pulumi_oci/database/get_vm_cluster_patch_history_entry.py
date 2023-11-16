@@ -52,15 +52,12 @@ class GetVmClusterPatchHistoryEntryResult:
 
     @property
     @pulumi.getter
-    def action(self) -> str:
-        """
-        The action being performed or was completed.
-        """
+    def action(self) -> Optional[str]:
         return pulumi.get(self, "action")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -68,10 +65,7 @@ class GetVmClusterPatchHistoryEntryResult:
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A descriptive text associated with the lifecycleState. Typically contains additional displayable text.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
@@ -81,34 +75,22 @@ class GetVmClusterPatchHistoryEntryResult:
 
     @property
     @pulumi.getter(name="patchId")
-    def patch_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch.
-        """
+    def patch_id(self) -> Optional[str]:
         return pulumi.get(self, "patch_id")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the action.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeEnded")
-    def time_ended(self) -> str:
-        """
-        The date and time when the patch action completed
-        """
+    def time_ended(self) -> Optional[str]:
         return pulumi.get(self, "time_ended")
 
     @property
     @pulumi.getter(name="timeStarted")
-    def time_started(self) -> str:
-        """
-        The date and time when the patch action started.
-        """
+    def time_started(self) -> Optional[str]:
         return pulumi.get(self, "time_started")
 
     @property
@@ -138,23 +120,7 @@ def get_vm_cluster_patch_history_entry(patch_history_entry_id: Optional[str] = N
                                        vm_cluster_id: Optional[str] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetVmClusterPatchHistoryEntryResult:
     """
-    This data source provides details about a specific Vm Cluster Patch History Entry resource in Oracle Cloud Infrastructure Database service.
-
-    Gets the patch history details for the specified patch history entry.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_vm_cluster_patch_history_entry = oci.Database.get_vm_cluster_patch_history_entry(patch_history_entry_id=oci_database_patch_history_entry["test_patch_history_entry"]["id"],
-        vm_cluster_id=oci_database_vm_cluster["test_vm_cluster"]["id"])
-    ```
-
-
-    :param str patch_history_entry_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch history entry.
-    :param str vm_cluster_id: The VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['patchHistoryEntryId'] = patch_history_entry_id
@@ -179,22 +145,6 @@ def get_vm_cluster_patch_history_entry_output(patch_history_entry_id: Optional[p
                                               vm_cluster_id: Optional[pulumi.Input[str]] = None,
                                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVmClusterPatchHistoryEntryResult]:
     """
-    This data source provides details about a specific Vm Cluster Patch History Entry resource in Oracle Cloud Infrastructure Database service.
-
-    Gets the patch history details for the specified patch history entry.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_vm_cluster_patch_history_entry = oci.Database.get_vm_cluster_patch_history_entry(patch_history_entry_id=oci_database_patch_history_entry["test_patch_history_entry"]["id"],
-        vm_cluster_id=oci_database_vm_cluster["test_vm_cluster"]["id"])
-    ```
-
-
-    :param str patch_history_entry_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch history entry.
-    :param str vm_cluster_id: The VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     ...

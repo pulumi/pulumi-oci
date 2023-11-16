@@ -16,10 +16,10 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// Flag controlling whether group membership can be request by user through self service console.
         /// </summary>
-        public readonly bool Requestable;
+        public readonly bool? Requestable;
 
         [OutputConstructor]
-        private GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroupResult(bool requestable)
+        private GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroupResult(bool? requestable)
         {
             Requestable = requestable;
         }

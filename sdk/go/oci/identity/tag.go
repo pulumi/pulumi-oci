@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Tag resource in Oracle Cloud Infrastructure Identity service.
@@ -96,20 +95,20 @@ type Tag struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// (Updatable) Indicates whether the tag is enabled for cost tracking.
-	IsCostTracking pulumi.BoolOutput `pulumi:"isCostTracking"`
+	IsCostTracking pulumi.BoolPtrOutput `pulumi:"isCostTracking"`
 	// (Updatable) Indicates whether the tag is retired. See [Retiring Key Definitions and Namespace Definitions](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/taggingoverview.htm#Retiring).
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	IsRetired pulumi.BoolOutput `pulumi:"isRetired"`
+	IsRetired pulumi.BoolPtrOutput `pulumi:"isRetired"`
 	// The name you assign to the tag during creation. This is the tag key definition. The name must be unique within the tag namespace and cannot be changed.
 	Name pulumi.StringOutput `pulumi:"name"`
 	// The tag's current state. After creating a tag, make sure its `lifecycleState` is ACTIVE before using it. After retiring a tag, make sure its `lifecycleState` is INACTIVE before using it. If you delete a tag, you cannot delete another tag until the deleted tag's `lifecycleState` changes from DELETING to DELETED.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The OCID of the tag namespace.
 	TagNamespaceId pulumi.StringOutput `pulumi:"tagNamespaceId"`
 	// Date and time the tag was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// (Updatable) Validates a definedTag value. Each validator performs validation steps in addition to the standard validation for definedTag values. For more information, see [Limits on Tags](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/taggingoverview.htm#Limits).
 	//
 	// If you define a validator after a value has been set for a defined tag, then any updates that attempt to change the value must pass the additional validation defined by the current rule. Previously set values (even those that would fail the current validation) are not updated. You can still update other attributes to resources that contain a non-valid defined tag.
@@ -293,12 +292,6 @@ func (i *Tag) ToTagOutputWithContext(ctx context.Context) TagOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(TagOutput)
 }
 
-func (i *Tag) ToOutput(ctx context.Context) pulumix.Output[*Tag] {
-	return pulumix.Output[*Tag]{
-		OutputState: i.ToTagOutputWithContext(ctx).OutputState,
-	}
-}
-
 // TagArrayInput is an input type that accepts TagArray and TagArrayOutput values.
 // You can construct a concrete instance of `TagArrayInput` via:
 //
@@ -322,12 +315,6 @@ func (i TagArray) ToTagArrayOutput() TagArrayOutput {
 
 func (i TagArray) ToTagArrayOutputWithContext(ctx context.Context) TagArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(TagArrayOutput)
-}
-
-func (i TagArray) ToOutput(ctx context.Context) pulumix.Output[[]*Tag] {
-	return pulumix.Output[[]*Tag]{
-		OutputState: i.ToTagArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // TagMapInput is an input type that accepts TagMap and TagMapOutput values.
@@ -355,12 +342,6 @@ func (i TagMap) ToTagMapOutputWithContext(ctx context.Context) TagMapOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(TagMapOutput)
 }
 
-func (i TagMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Tag] {
-	return pulumix.Output[map[string]*Tag]{
-		OutputState: i.ToTagMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type TagOutput struct{ *pulumi.OutputState }
 
 func (TagOutput) ElementType() reflect.Type {
@@ -373,12 +354,6 @@ func (o TagOutput) ToTagOutput() TagOutput {
 
 func (o TagOutput) ToTagOutputWithContext(ctx context.Context) TagOutput {
 	return o
-}
-
-func (o TagOutput) ToOutput(ctx context.Context) pulumix.Output[*Tag] {
-	return pulumix.Output[*Tag]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -397,16 +372,16 @@ func (o TagOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // (Updatable) Indicates whether the tag is enabled for cost tracking.
-func (o TagOutput) IsCostTracking() pulumi.BoolOutput {
-	return o.ApplyT(func(v *Tag) pulumi.BoolOutput { return v.IsCostTracking }).(pulumi.BoolOutput)
+func (o TagOutput) IsCostTracking() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *Tag) pulumi.BoolPtrOutput { return v.IsCostTracking }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) Indicates whether the tag is retired. See [Retiring Key Definitions and Namespace Definitions](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/taggingoverview.htm#Retiring).
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o TagOutput) IsRetired() pulumi.BoolOutput {
-	return o.ApplyT(func(v *Tag) pulumi.BoolOutput { return v.IsRetired }).(pulumi.BoolOutput)
+func (o TagOutput) IsRetired() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *Tag) pulumi.BoolPtrOutput { return v.IsRetired }).(pulumi.BoolPtrOutput)
 }
 
 // The name you assign to the tag during creation. This is the tag key definition. The name must be unique within the tag namespace and cannot be changed.
@@ -415,8 +390,8 @@ func (o TagOutput) Name() pulumi.StringOutput {
 }
 
 // The tag's current state. After creating a tag, make sure its `lifecycleState` is ACTIVE before using it. After retiring a tag, make sure its `lifecycleState` is INACTIVE before using it. If you delete a tag, you cannot delete another tag until the deleted tag's `lifecycleState` changes from DELETING to DELETED.
-func (o TagOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *Tag) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o TagOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Tag) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the tag namespace.
@@ -425,8 +400,8 @@ func (o TagOutput) TagNamespaceId() pulumi.StringOutput {
 }
 
 // Date and time the tag was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-func (o TagOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Tag) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o TagOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Tag) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Validates a definedTag value. Each validator performs validation steps in addition to the standard validation for definedTag values. For more information, see [Limits on Tags](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/taggingoverview.htm#Limits).
@@ -452,12 +427,6 @@ func (o TagArrayOutput) ToTagArrayOutputWithContext(ctx context.Context) TagArra
 	return o
 }
 
-func (o TagArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Tag] {
-	return pulumix.Output[[]*Tag]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o TagArrayOutput) Index(i pulumi.IntInput) TagOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *Tag {
 		return vs[0].([]*Tag)[vs[1].(int)]
@@ -476,12 +445,6 @@ func (o TagMapOutput) ToTagMapOutput() TagMapOutput {
 
 func (o TagMapOutput) ToTagMapOutputWithContext(ctx context.Context) TagMapOutput {
 	return o
-}
-
-func (o TagMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Tag] {
-	return pulumix.Output[map[string]*Tag]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o TagMapOutput) MapIndex(k pulumi.StringInput) TagOutput {

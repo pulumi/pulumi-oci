@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Bds Instance Api Key resource in Oracle Cloud Infrastructure Big Data Service service.
@@ -65,24 +64,24 @@ type LookupBdsInstanceApiKeyResult struct {
 	ApiKeyId      string `pulumi:"apiKeyId"`
 	BdsInstanceId string `pulumi:"bdsInstanceId"`
 	// The name of the region to establish the Object Storage endpoint which was set as part of key creation operation. If no region was provided this will be set to be the same region where the cluster lives. Example us-phoenix-1 .
-	DefaultRegion string `pulumi:"defaultRegion"`
+	DefaultRegion *string `pulumi:"defaultRegion"`
 	// The fingerprint that corresponds to the public API key requested.
-	Fingerprint string `pulumi:"fingerprint"`
+	Fingerprint *string `pulumi:"fingerprint"`
 	// Identifier of the user's API key.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// User friendly identifier used to uniquely differentiate between different API keys. Only ASCII alphanumeric characters with no spaces allowed.
-	KeyAlias   string `pulumi:"keyAlias"`
-	Passphrase string `pulumi:"passphrase"`
+	KeyAlias   *string `pulumi:"keyAlias"`
+	Passphrase *string `pulumi:"passphrase"`
 	// The full path and file name of the private key used for authentication. This location will be automatically selected on the BDS local file system.
-	Pemfilepath string `pulumi:"pemfilepath"`
+	Pemfilepath *string `pulumi:"pemfilepath"`
 	// The current status of the API key.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The OCID of your tenancy.
-	TenantId string `pulumi:"tenantId"`
+	TenantId *string `pulumi:"tenantId"`
 	// The time the API key was created, shown as an RFC 3339 formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The user OCID for which this API key was created.
-	UserId string `pulumi:"userId"`
+	UserId *string `pulumi:"userId"`
 }
 
 func LookupBdsInstanceApiKeyOutput(ctx *pulumi.Context, args LookupBdsInstanceApiKeyOutputArgs, opts ...pulumi.InvokeOption) LookupBdsInstanceApiKeyResultOutput {
@@ -125,12 +124,6 @@ func (o LookupBdsInstanceApiKeyResultOutput) ToLookupBdsInstanceApiKeyResultOutp
 	return o
 }
 
-func (o LookupBdsInstanceApiKeyResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupBdsInstanceApiKeyResult] {
-	return pulumix.Output[LookupBdsInstanceApiKeyResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o LookupBdsInstanceApiKeyResultOutput) ApiKeyId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupBdsInstanceApiKeyResult) string { return v.ApiKeyId }).(pulumi.StringOutput)
 }
@@ -140,52 +133,52 @@ func (o LookupBdsInstanceApiKeyResultOutput) BdsInstanceId() pulumi.StringOutput
 }
 
 // The name of the region to establish the Object Storage endpoint which was set as part of key creation operation. If no region was provided this will be set to be the same region where the cluster lives. Example us-phoenix-1 .
-func (o LookupBdsInstanceApiKeyResultOutput) DefaultRegion() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupBdsInstanceApiKeyResult) string { return v.DefaultRegion }).(pulumi.StringOutput)
+func (o LookupBdsInstanceApiKeyResultOutput) DefaultRegion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupBdsInstanceApiKeyResult) *string { return v.DefaultRegion }).(pulumi.StringPtrOutput)
 }
 
 // The fingerprint that corresponds to the public API key requested.
-func (o LookupBdsInstanceApiKeyResultOutput) Fingerprint() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupBdsInstanceApiKeyResult) string { return v.Fingerprint }).(pulumi.StringOutput)
+func (o LookupBdsInstanceApiKeyResultOutput) Fingerprint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupBdsInstanceApiKeyResult) *string { return v.Fingerprint }).(pulumi.StringPtrOutput)
 }
 
 // Identifier of the user's API key.
-func (o LookupBdsInstanceApiKeyResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupBdsInstanceApiKeyResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupBdsInstanceApiKeyResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupBdsInstanceApiKeyResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // User friendly identifier used to uniquely differentiate between different API keys. Only ASCII alphanumeric characters with no spaces allowed.
-func (o LookupBdsInstanceApiKeyResultOutput) KeyAlias() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupBdsInstanceApiKeyResult) string { return v.KeyAlias }).(pulumi.StringOutput)
+func (o LookupBdsInstanceApiKeyResultOutput) KeyAlias() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupBdsInstanceApiKeyResult) *string { return v.KeyAlias }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupBdsInstanceApiKeyResultOutput) Passphrase() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupBdsInstanceApiKeyResult) string { return v.Passphrase }).(pulumi.StringOutput)
+func (o LookupBdsInstanceApiKeyResultOutput) Passphrase() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupBdsInstanceApiKeyResult) *string { return v.Passphrase }).(pulumi.StringPtrOutput)
 }
 
 // The full path and file name of the private key used for authentication. This location will be automatically selected on the BDS local file system.
-func (o LookupBdsInstanceApiKeyResultOutput) Pemfilepath() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupBdsInstanceApiKeyResult) string { return v.Pemfilepath }).(pulumi.StringOutput)
+func (o LookupBdsInstanceApiKeyResultOutput) Pemfilepath() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupBdsInstanceApiKeyResult) *string { return v.Pemfilepath }).(pulumi.StringPtrOutput)
 }
 
 // The current status of the API key.
-func (o LookupBdsInstanceApiKeyResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupBdsInstanceApiKeyResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupBdsInstanceApiKeyResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupBdsInstanceApiKeyResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of your tenancy.
-func (o LookupBdsInstanceApiKeyResultOutput) TenantId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupBdsInstanceApiKeyResult) string { return v.TenantId }).(pulumi.StringOutput)
+func (o LookupBdsInstanceApiKeyResultOutput) TenantId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupBdsInstanceApiKeyResult) *string { return v.TenantId }).(pulumi.StringPtrOutput)
 }
 
 // The time the API key was created, shown as an RFC 3339 formatted datetime string.
-func (o LookupBdsInstanceApiKeyResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupBdsInstanceApiKeyResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupBdsInstanceApiKeyResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupBdsInstanceApiKeyResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The user OCID for which this API key was created.
-func (o LookupBdsInstanceApiKeyResultOutput) UserId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupBdsInstanceApiKeyResult) string { return v.UserId }).(pulumi.StringOutput)
+func (o LookupBdsInstanceApiKeyResultOutput) UserId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupBdsInstanceApiKeyResult) *string { return v.UserId }).(pulumi.StringPtrOutput)
 }
 
 func init() {

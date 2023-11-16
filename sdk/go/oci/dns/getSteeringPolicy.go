@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Steering Policy resource in Oracle Cloud Infrastructure DNS service.
@@ -62,30 +61,30 @@ type LookupSteeringPolicyResult struct {
 	// The set of all answers that can potentially issue from the steering policy.
 	Answers []GetSteeringPolicyAnswer `pulumi:"answers"`
 	// The OCID of the compartment containing the steering policy.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A user-friendly name for the steering policy. Does not have to be unique and can be changed. Avoid entering confidential information.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the health check monitor providing health data about the answers of the steering policy. A steering policy answer with `rdata` matching a monitored endpoint will use the health data of that endpoint. A steering policy answer with `rdata` not matching any monitored endpoint will be assumed healthy.
-	HealthCheckMonitorId string `pulumi:"healthCheckMonitorId"`
+	HealthCheckMonitorId *string `pulumi:"healthCheckMonitorId"`
 	// The OCID of the resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The series of rules that will be processed in sequence to reduce the pool of answers to a response for any given request.
 	Rules []GetSteeringPolicyRule `pulumi:"rules"`
 	// The canonical absolute URL of the resource.
-	Self string `pulumi:"self"`
+	Self *string `pulumi:"self"`
 	// The current state of the resource.
-	State            string `pulumi:"state"`
-	SteeringPolicyId string `pulumi:"steeringPolicyId"`
+	State            *string `pulumi:"state"`
+	SteeringPolicyId string  `pulumi:"steeringPolicyId"`
 	// A set of predefined rules based on the desired purpose of the steering policy. Each template utilizes Traffic Management's rules in a different order to produce the desired results when answering DNS queries.
-	Template string `pulumi:"template"`
+	Template *string `pulumi:"template"`
 	// The date and time the resource was created, expressed in RFC 3339 timestamp format.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The Time To Live (TTL) for responses from the steering policy, in seconds. If not specified during creation, a value of 30 seconds will be used.
-	Ttl int `pulumi:"ttl"`
+	Ttl *int `pulumi:"ttl"`
 }
 
 func LookupSteeringPolicyOutput(ctx *pulumi.Context, args LookupSteeringPolicyOutputArgs, opts ...pulumi.InvokeOption) LookupSteeringPolicyResultOutput {
@@ -126,20 +125,14 @@ func (o LookupSteeringPolicyResultOutput) ToLookupSteeringPolicyResultOutputWith
 	return o
 }
 
-func (o LookupSteeringPolicyResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupSteeringPolicyResult] {
-	return pulumix.Output[LookupSteeringPolicyResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The set of all answers that can potentially issue from the steering policy.
 func (o LookupSteeringPolicyResultOutput) Answers() GetSteeringPolicyAnswerArrayOutput {
 	return o.ApplyT(func(v LookupSteeringPolicyResult) []GetSteeringPolicyAnswer { return v.Answers }).(GetSteeringPolicyAnswerArrayOutput)
 }
 
 // The OCID of the compartment containing the steering policy.
-func (o LookupSteeringPolicyResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSteeringPolicyResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupSteeringPolicyResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSteeringPolicyResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -148,8 +141,8 @@ func (o LookupSteeringPolicyResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // A user-friendly name for the steering policy. Does not have to be unique and can be changed. Avoid entering confidential information.
-func (o LookupSteeringPolicyResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSteeringPolicyResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupSteeringPolicyResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSteeringPolicyResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -158,13 +151,13 @@ func (o LookupSteeringPolicyResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The OCID of the health check monitor providing health data about the answers of the steering policy. A steering policy answer with `rdata` matching a monitored endpoint will use the health data of that endpoint. A steering policy answer with `rdata` not matching any monitored endpoint will be assumed healthy.
-func (o LookupSteeringPolicyResultOutput) HealthCheckMonitorId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSteeringPolicyResult) string { return v.HealthCheckMonitorId }).(pulumi.StringOutput)
+func (o LookupSteeringPolicyResultOutput) HealthCheckMonitorId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSteeringPolicyResult) *string { return v.HealthCheckMonitorId }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the resource.
-func (o LookupSteeringPolicyResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSteeringPolicyResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupSteeringPolicyResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSteeringPolicyResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The series of rules that will be processed in sequence to reduce the pool of answers to a response for any given request.
@@ -173,13 +166,13 @@ func (o LookupSteeringPolicyResultOutput) Rules() GetSteeringPolicyRuleArrayOutp
 }
 
 // The canonical absolute URL of the resource.
-func (o LookupSteeringPolicyResultOutput) Self() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSteeringPolicyResult) string { return v.Self }).(pulumi.StringOutput)
+func (o LookupSteeringPolicyResultOutput) Self() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSteeringPolicyResult) *string { return v.Self }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the resource.
-func (o LookupSteeringPolicyResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSteeringPolicyResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupSteeringPolicyResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSteeringPolicyResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupSteeringPolicyResultOutput) SteeringPolicyId() pulumi.StringOutput {
@@ -187,18 +180,18 @@ func (o LookupSteeringPolicyResultOutput) SteeringPolicyId() pulumi.StringOutput
 }
 
 // A set of predefined rules based on the desired purpose of the steering policy. Each template utilizes Traffic Management's rules in a different order to produce the desired results when answering DNS queries.
-func (o LookupSteeringPolicyResultOutput) Template() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSteeringPolicyResult) string { return v.Template }).(pulumi.StringOutput)
+func (o LookupSteeringPolicyResultOutput) Template() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSteeringPolicyResult) *string { return v.Template }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the resource was created, expressed in RFC 3339 timestamp format.
-func (o LookupSteeringPolicyResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupSteeringPolicyResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupSteeringPolicyResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSteeringPolicyResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The Time To Live (TTL) for responses from the steering policy, in seconds. If not specified during creation, a value of 30 seconds will be used.
-func (o LookupSteeringPolicyResultOutput) Ttl() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupSteeringPolicyResult) int { return v.Ttl }).(pulumi.IntOutput)
+func (o LookupSteeringPolicyResultOutput) Ttl() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupSteeringPolicyResult) *int { return v.Ttl }).(pulumi.IntPtrOutput)
 }
 
 func init() {

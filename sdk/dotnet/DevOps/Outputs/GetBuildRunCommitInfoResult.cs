@@ -16,23 +16,23 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// <summary>
         /// Commit hash pertinent to the repository URL and the specified branch.
         /// </summary>
-        public readonly string CommitHash;
+        public readonly string? CommitHash;
         /// <summary>
         /// Name of the repository branch.
         /// </summary>
-        public readonly string RepositoryBranch;
+        public readonly string? RepositoryBranch;
         /// <summary>
         /// Repository URL.
         /// </summary>
-        public readonly string RepositoryUrl;
+        public readonly string? RepositoryUrl;
 
         [OutputConstructor]
         private GetBuildRunCommitInfoResult(
-            string commitHash,
+            string? commitHash,
 
-            string repositoryBranch,
+            string? repositoryBranch,
 
-            string repositoryUrl)
+            string? repositoryUrl)
         {
             CommitHash = commitHash;
             RepositoryBranch = repositoryBranch;

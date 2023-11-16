@@ -109,31 +109,31 @@ namespace Pulumi.Oci.Core
         /// (Updatable) The provisioned data rate of the connection. To get a list of the available bandwidth levels (that is, shapes), see [ListFastConnectProviderServiceVirtualCircuitBandwidthShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderVirtualCircuitBandwidthShapes).  Example: `10 Gbps`
         /// </summary>
         [Output("bandwidthShapeName")]
-        public Output<string> BandwidthShapeName { get; private set; } = null!;
+        public Output<string?> BandwidthShapeName { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Set to `ENABLED` (the default) to activate the BGP session of the virtual circuit, set to `DISABLED` to deactivate the virtual circuit.
         /// </summary>
         [Output("bgpAdminState")]
-        public Output<string> BgpAdminState { get; private set; } = null!;
+        public Output<string?> BgpAdminState { get; private set; } = null!;
 
         /// <summary>
         /// The state of the Ipv6 BGP session associated with the virtual circuit.
         /// </summary>
         [Output("bgpIpv6sessionState")]
-        public Output<string> BgpIpv6sessionState { get; private set; } = null!;
+        public Output<string?> BgpIpv6sessionState { get; private set; } = null!;
 
         /// <summary>
         /// Deprecated. Instead use the information in [FastConnectProviderService](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/).
         /// </summary>
         [Output("bgpManagement")]
-        public Output<string> BgpManagement { get; private set; } = null!;
+        public Output<string?> BgpManagement { get; private set; } = null!;
 
         /// <summary>
         /// The state of the Ipv4 BGP session associated with the virtual circuit.
         /// </summary>
         [Output("bgpSessionState")]
-        public Output<string> BgpSessionState { get; private set; } = null!;
+        public Output<string?> BgpSessionState { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the virtual circuit.
@@ -151,79 +151,79 @@ namespace Pulumi.Oci.Core
         /// (Updatable) Your BGP ASN (either public or private). Provide this value only if there's a BGP session that goes from your edge router to Oracle. Otherwise, leave this empty or null. Can be a 2-byte or 4-byte ASN. Uses "asplain" format.  Example: `12345` (2-byte) or `1587232876` (4-byte)
         /// </summary>
         [Output("customerAsn")]
-        public Output<string> CustomerAsn { get; private set; } = null!;
+        public Output<string?> CustomerAsn { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Deprecated. Instead use `customerAsn`. If you specify values for both, the request will be rejected.
         /// </summary>
         [Output("customerBgpAsn")]
-        public Output<int> CustomerBgpAsn { get; private set; } = null!;
+        public Output<int?> CustomerBgpAsn { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) For private virtual circuits only. The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [dynamic routing gateway (DRG)](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Drg) that this virtual circuit uses.
         /// </summary>
         [Output("gatewayId")]
-        public Output<string> GatewayId { get; private set; } = null!;
+        public Output<string?> GatewayId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The layer 3 IP MTU to use with this virtual circuit.
         /// </summary>
         [Output("ipMtu")]
-        public Output<string> IpMtu { get; private set; } = null!;
+        public Output<string?> IpMtu { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Set to `true` to enable BFD for IPv4 BGP peering, or set to `false` to disable BFD. If this is not set, the default is `false`.
         /// </summary>
         [Output("isBfdEnabled")]
-        public Output<bool> IsBfdEnabled { get; private set; } = null!;
+        public Output<bool?> IsBfdEnabled { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Set to `true` for the virtual circuit to carry only encrypted traffic, or set to `false` for the virtual circuit to carry unencrypted traffic. If this is not set, the default is `false`.
         /// </summary>
         [Output("isTransportMode")]
-        public Output<bool> IsTransportMode { get; private set; } = null!;
+        public Output<bool?> IsTransportMode { get; private set; } = null!;
 
         /// <summary>
         /// The Oracle BGP ASN.
         /// </summary>
         [Output("oracleBgpAsn")]
-        public Output<int> OracleBgpAsn { get; private set; } = null!;
+        public Output<int?> OracleBgpAsn { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service offered by the provider (if you're connecting via a provider). To get a list of the available service offerings, see [ListFastConnectProviderServices](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderServices).
         /// </summary>
         [Output("providerServiceId")]
-        public Output<string> ProviderServiceId { get; private set; } = null!;
+        public Output<string?> ProviderServiceId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The service key name offered by the provider (if the customer is connecting via a provider).
         /// </summary>
         [Output("providerServiceKeyName")]
-        public Output<string> ProviderServiceKeyName { get; private set; } = null!;
+        public Output<string?> ProviderServiceKeyName { get; private set; } = null!;
 
         /// <summary>
         /// The provider's state in relation to this virtual circuit (if the customer is connecting via a provider). ACTIVE means the provider has provisioned the virtual circuit from their end. INACTIVE means the provider has not yet provisioned the virtual circuit, or has de-provisioned it.
         /// </summary>
         [Output("providerState")]
-        public Output<string> ProviderState { get; private set; } = null!;
+        public Output<string?> ProviderState { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) For a public virtual circuit. The public IP prefixes (CIDRs) the customer wants to advertise across the connection.
@@ -235,13 +235,13 @@ namespace Pulumi.Oci.Core
         /// Provider-supplied reference information about this virtual circuit (if the customer is connecting via a provider).
         /// </summary>
         [Output("referenceComment")]
-        public Output<string> ReferenceComment { get; private set; } = null!;
+        public Output<string?> ReferenceComment { get; private set; } = null!;
 
         /// <summary>
         /// The Oracle Cloud Infrastructure region where this virtual circuit is located. Example: `phx`
         /// </summary>
         [Output("region")]
-        public Output<string> Region { get; private set; } = null!;
+        public Output<string?> Region { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The routing policy sets how routing information about the Oracle cloud is shared over a public virtual circuit. Policies available are: `ORACLE_SERVICE_NETWORK`, `REGIONAL`, `MARKET_LEVEL`, and `GLOBAL`. See [Route Filtering](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/routingonprem.htm#route_filtering) for details. By default, routing information is shared for all routes in the same market.
@@ -253,19 +253,19 @@ namespace Pulumi.Oci.Core
         /// Provider service type.
         /// </summary>
         [Output("serviceType")]
-        public Output<string> ServiceType { get; private set; } = null!;
+        public Output<string?> ServiceType { get; private set; } = null!;
 
         /// <summary>
         /// The virtual circuit's current state. For information about the different states, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the virtual circuit was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The type of IP addresses used in this virtual circuit. PRIVATE means [RFC 1918](https://tools.ietf.org/html/rfc1918) addresses (10.0.0.0/8, 172.16/12, and 192.168/16). 

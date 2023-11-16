@@ -113,7 +113,7 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Array of alert policy rules summary
         /// </summary>
@@ -123,7 +123,7 @@ namespace Pulumi.Oci.DataSafe
         private GetAlertPolicyRuleResult(
             string alertPolicyId,
 
-            string id,
+            string? id,
 
             ImmutableArray<Outputs.GetAlertPolicyRuleItemResult> items)
         {

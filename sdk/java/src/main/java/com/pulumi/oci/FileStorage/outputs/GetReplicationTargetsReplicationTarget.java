@@ -8,6 +8,8 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetReplicationTargetsReplicationTarget {
@@ -15,195 +17,195 @@ public final class GetReplicationTargetsReplicationTarget {
      * @return The name of the availability domain.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    private String availabilityDomain;
+    private @Nullable String availabilityDomain;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return Percentage progress of the current replication cycle.
      * 
      */
-    private String deltaProgress;
+    private @Nullable String deltaProgress;
     /**
      * @return The current state of the snapshot during replication operations.
      * 
      */
-    private String deltaStatus;
+    private @Nullable String deltaStatus;
     /**
      * @return A user-friendly name. It does not have to be unique, and it is changeable.  Example: `My resource`
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last snapshot snapshot which was completely applied to the target file system. Empty while the initial snapshot is being applied.
      * 
      */
-    private String lastSnapshotId;
+    private @Nullable String lastSnapshotId;
     /**
      * @return Additional information about the current `lifecycleState`.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return The snapshotTime of the most recent recoverable replication snapshot in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Example: `2021-04-04T20:01:29.100Z`
      * 
      */
-    private String recoveryPointTime;
+    private @Nullable String recoveryPointTime;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of replication.
      * 
      */
-    private String replicationId;
+    private @Nullable String replicationId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of source filesystem.
      * 
      */
-    private String sourceId;
+    private @Nullable String sourceId;
     /**
      * @return Filter results by the specified lifecycle state. Must be a valid state for the resource type.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of target filesystem.
      * 
      */
-    private String targetId;
+    private @Nullable String targetId;
     /**
      * @return The date and time the replication target was created in target region. in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Example: `2021-01-04T20:01:29.100Z`
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
 
     private GetReplicationTargetsReplicationTarget() {}
     /**
      * @return The name of the availability domain.  Example: `Uocm:PHX-AD-1`
      * 
      */
-    public String availabilityDomain() {
-        return this.availabilityDomain;
+    public Optional<String> availabilityDomain() {
+        return Optional.ofNullable(this.availabilityDomain);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return Percentage progress of the current replication cycle.
      * 
      */
-    public String deltaProgress() {
-        return this.deltaProgress;
+    public Optional<String> deltaProgress() {
+        return Optional.ofNullable(this.deltaProgress);
     }
     /**
      * @return The current state of the snapshot during replication operations.
      * 
      */
-    public String deltaStatus() {
-        return this.deltaStatus;
+    public Optional<String> deltaStatus() {
+        return Optional.ofNullable(this.deltaStatus);
     }
     /**
      * @return A user-friendly name. It does not have to be unique, and it is changeable.  Example: `My resource`
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last snapshot snapshot which was completely applied to the target file system. Empty while the initial snapshot is being applied.
      * 
      */
-    public String lastSnapshotId() {
-        return this.lastSnapshotId;
+    public Optional<String> lastSnapshotId() {
+        return Optional.ofNullable(this.lastSnapshotId);
     }
     /**
      * @return Additional information about the current `lifecycleState`.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return The snapshotTime of the most recent recoverable replication snapshot in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Example: `2021-04-04T20:01:29.100Z`
      * 
      */
-    public String recoveryPointTime() {
-        return this.recoveryPointTime;
+    public Optional<String> recoveryPointTime() {
+        return Optional.ofNullable(this.recoveryPointTime);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of replication.
      * 
      */
-    public String replicationId() {
-        return this.replicationId;
+    public Optional<String> replicationId() {
+        return Optional.ofNullable(this.replicationId);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of source filesystem.
      * 
      */
-    public String sourceId() {
-        return this.sourceId;
+    public Optional<String> sourceId() {
+        return Optional.ofNullable(this.sourceId);
     }
     /**
      * @return Filter results by the specified lifecycle state. Must be a valid state for the resource type.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of target filesystem.
      * 
      */
-    public String targetId() {
-        return this.targetId;
+    public Optional<String> targetId() {
+        return Optional.ofNullable(this.targetId);
     }
     /**
      * @return The date and time the replication target was created in target region. in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Example: `2021-01-04T20:01:29.100Z`
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
 
     public static Builder builder() {
@@ -215,22 +217,22 @@ public final class GetReplicationTargetsReplicationTarget {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String availabilityDomain;
-        private String compartmentId;
-        private Map<String,Object> definedTags;
-        private String deltaProgress;
-        private String deltaStatus;
-        private String displayName;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private String lastSnapshotId;
-        private String lifecycleDetails;
-        private String recoveryPointTime;
-        private String replicationId;
-        private String sourceId;
-        private String state;
-        private String targetId;
-        private String timeCreated;
+        private @Nullable String availabilityDomain;
+        private @Nullable String compartmentId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String deltaProgress;
+        private @Nullable String deltaStatus;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable String lastSnapshotId;
+        private @Nullable String lifecycleDetails;
+        private @Nullable String recoveryPointTime;
+        private @Nullable String replicationId;
+        private @Nullable String sourceId;
+        private @Nullable String state;
+        private @Nullable String targetId;
+        private @Nullable String timeCreated;
         public Builder() {}
         public Builder(GetReplicationTargetsReplicationTarget defaults) {
     	      Objects.requireNonNull(defaults);
@@ -253,83 +255,83 @@ public final class GetReplicationTargetsReplicationTarget {
         }
 
         @CustomType.Setter
-        public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+        public Builder availabilityDomain(@Nullable String availabilityDomain) {
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder deltaProgress(String deltaProgress) {
-            this.deltaProgress = Objects.requireNonNull(deltaProgress);
+        public Builder deltaProgress(@Nullable String deltaProgress) {
+            this.deltaProgress = deltaProgress;
             return this;
         }
         @CustomType.Setter
-        public Builder deltaStatus(String deltaStatus) {
-            this.deltaStatus = Objects.requireNonNull(deltaStatus);
+        public Builder deltaStatus(@Nullable String deltaStatus) {
+            this.deltaStatus = deltaStatus;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder lastSnapshotId(String lastSnapshotId) {
-            this.lastSnapshotId = Objects.requireNonNull(lastSnapshotId);
+        public Builder lastSnapshotId(@Nullable String lastSnapshotId) {
+            this.lastSnapshotId = lastSnapshotId;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder recoveryPointTime(String recoveryPointTime) {
-            this.recoveryPointTime = Objects.requireNonNull(recoveryPointTime);
+        public Builder recoveryPointTime(@Nullable String recoveryPointTime) {
+            this.recoveryPointTime = recoveryPointTime;
             return this;
         }
         @CustomType.Setter
-        public Builder replicationId(String replicationId) {
-            this.replicationId = Objects.requireNonNull(replicationId);
+        public Builder replicationId(@Nullable String replicationId) {
+            this.replicationId = replicationId;
             return this;
         }
         @CustomType.Setter
-        public Builder sourceId(String sourceId) {
-            this.sourceId = Objects.requireNonNull(sourceId);
+        public Builder sourceId(@Nullable String sourceId) {
+            this.sourceId = sourceId;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder targetId(String targetId) {
-            this.targetId = Objects.requireNonNull(targetId);
+        public Builder targetId(@Nullable String targetId) {
+            this.targetId = targetId;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetReplicationTargetsReplicationTarget build() {

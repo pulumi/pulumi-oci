@@ -50,7 +50,7 @@ class GetJobAdvisorReportResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -63,50 +63,32 @@ class GetJobAdvisorReportResult:
 
     @property
     @pulumi.getter(name="numberOfFatal")
-    def number_of_fatal(self) -> int:
-        """
-        Number of Fatal results in the advisor report.
-        """
+    def number_of_fatal(self) -> Optional[int]:
         return pulumi.get(self, "number_of_fatal")
 
     @property
     @pulumi.getter(name="numberOfFatalBlockers")
-    def number_of_fatal_blockers(self) -> int:
-        """
-        Number of Fatal Blocker results in the advisor report.
-        """
+    def number_of_fatal_blockers(self) -> Optional[int]:
         return pulumi.get(self, "number_of_fatal_blockers")
 
     @property
     @pulumi.getter(name="numberOfInformationalResults")
-    def number_of_informational_results(self) -> int:
-        """
-        Number of Informational results in the advisor report.
-        """
+    def number_of_informational_results(self) -> Optional[int]:
         return pulumi.get(self, "number_of_informational_results")
 
     @property
     @pulumi.getter(name="numberOfWarnings")
-    def number_of_warnings(self) -> int:
-        """
-        Number of Warning results in the advisor report.
-        """
+    def number_of_warnings(self) -> Optional[int]:
         return pulumi.get(self, "number_of_warnings")
 
     @property
     @pulumi.getter(name="reportLocationDetails")
-    def report_location_details(self) -> Sequence['outputs.GetJobAdvisorReportReportLocationDetailResult']:
-        """
-        Details to access Pre-Migration Advisor report.
-        """
+    def report_location_details(self) -> Optional[Sequence['outputs.GetJobAdvisorReportReportLocationDetailResult']]:
         return pulumi.get(self, "report_location_details")
 
     @property
     @pulumi.getter
-    def result(self) -> str:
-        """
-        Pre-Migration advisor result.
-        """
+    def result(self) -> Optional[str]:
         return pulumi.get(self, "result")
 
 
@@ -129,21 +111,7 @@ class AwaitableGetJobAdvisorReportResult(GetJobAdvisorReportResult):
 def get_job_advisor_report(job_id: Optional[str] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetJobAdvisorReportResult:
     """
-    This data source provides details about a specific Job Advisor Report resource in Oracle Cloud Infrastructure Database Migration service.
-
-    Get the Pre-Migration Advisor report details
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_job_advisor_report = oci.DatabaseMigration.get_job_advisor_report(job_id=oci_database_migration_job["test_job"]["id"])
-    ```
-
-
-    :param str job_id: The OCID of the job
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['jobId'] = job_id
@@ -165,20 +133,6 @@ def get_job_advisor_report(job_id: Optional[str] = None,
 def get_job_advisor_report_output(job_id: Optional[pulumi.Input[str]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetJobAdvisorReportResult]:
     """
-    This data source provides details about a specific Job Advisor Report resource in Oracle Cloud Infrastructure Database Migration service.
-
-    Get the Pre-Migration Advisor report details
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_job_advisor_report = oci.DatabaseMigration.get_job_advisor_report(job_id=oci_database_migration_job["test_job"]["id"])
-    ```
-
-
-    :param str job_id: The OCID of the job
+    Use this data source to access information about an existing resource.
     """
     ...

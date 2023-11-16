@@ -17,12 +17,12 @@ public final class GetInfrastructureTargetVersionResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The history entry of the target system software version for the database server patching operation.
      * 
      */
-    private List<String> targetDbVersionHistoryEntries;
+    private @Nullable List<String> targetDbVersionHistoryEntries;
     /**
      * @return The OCID of the target Exadata Infrastructure resource that will receive the maintenance update.
      * 
@@ -37,7 +37,7 @@ public final class GetInfrastructureTargetVersionResult {
      * @return The history entry of the target storage cell system software version for the storage cell patching operation.
      * 
      */
-    private List<String> targetStorageVersionHistoryEntries;
+    private @Nullable List<String> targetStorageVersionHistoryEntries;
 
     private GetInfrastructureTargetVersionResult() {}
     public String compartmentId() {
@@ -47,15 +47,15 @@ public final class GetInfrastructureTargetVersionResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The history entry of the target system software version for the database server patching operation.
      * 
      */
     public List<String> targetDbVersionHistoryEntries() {
-        return this.targetDbVersionHistoryEntries;
+        return this.targetDbVersionHistoryEntries == null ? List.of() : this.targetDbVersionHistoryEntries;
     }
     /**
      * @return The OCID of the target Exadata Infrastructure resource that will receive the maintenance update.
@@ -76,7 +76,7 @@ public final class GetInfrastructureTargetVersionResult {
      * 
      */
     public List<String> targetStorageVersionHistoryEntries() {
-        return this.targetStorageVersionHistoryEntries;
+        return this.targetStorageVersionHistoryEntries == null ? List.of() : this.targetStorageVersionHistoryEntries;
     }
 
     public static Builder builder() {
@@ -89,11 +89,11 @@ public final class GetInfrastructureTargetVersionResult {
     @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
-        private String id;
-        private List<String> targetDbVersionHistoryEntries;
+        private @Nullable String id;
+        private @Nullable List<String> targetDbVersionHistoryEntries;
         private @Nullable String targetResourceId;
         private @Nullable String targetResourceType;
-        private List<String> targetStorageVersionHistoryEntries;
+        private @Nullable List<String> targetStorageVersionHistoryEntries;
         public Builder() {}
         public Builder(GetInfrastructureTargetVersionResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -111,13 +111,13 @@ public final class GetInfrastructureTargetVersionResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder targetDbVersionHistoryEntries(List<String> targetDbVersionHistoryEntries) {
-            this.targetDbVersionHistoryEntries = Objects.requireNonNull(targetDbVersionHistoryEntries);
+        public Builder targetDbVersionHistoryEntries(@Nullable List<String> targetDbVersionHistoryEntries) {
+            this.targetDbVersionHistoryEntries = targetDbVersionHistoryEntries;
             return this;
         }
         public Builder targetDbVersionHistoryEntries(String... targetDbVersionHistoryEntries) {
@@ -134,8 +134,8 @@ public final class GetInfrastructureTargetVersionResult {
             return this;
         }
         @CustomType.Setter
-        public Builder targetStorageVersionHistoryEntries(List<String> targetStorageVersionHistoryEntries) {
-            this.targetStorageVersionHistoryEntries = Objects.requireNonNull(targetStorageVersionHistoryEntries);
+        public Builder targetStorageVersionHistoryEntries(@Nullable List<String> targetStorageVersionHistoryEntries) {
+            this.targetStorageVersionHistoryEntries = targetStorageVersionHistoryEntries;
             return this;
         }
         public Builder targetStorageVersionHistoryEntries(String... targetStorageVersionHistoryEntries) {

@@ -53,15 +53,15 @@ export interface GetSecurityPolicyDeploymentSecurityPolicyEntryStateResult {
     /**
      * The current deployment status of the security policy deployment and the security policy entry associated.
      */
-    readonly deploymentStatus: string;
+    readonly deploymentStatus?: string;
     /**
      * Details specific to the security policy entry.
      */
-    readonly entryDetails: outputs.DataSafe.GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetail[];
+    readonly entryDetails?: outputs.DataSafe.GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetail[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The OCID of the security policy deployment associated.
      */
@@ -69,7 +69,7 @@ export interface GetSecurityPolicyDeploymentSecurityPolicyEntryStateResult {
     /**
      * The OCID of the security policy entry type associated.
      */
-    readonly securityPolicyEntryId: string;
+    readonly securityPolicyEntryId?: string;
     readonly securityPolicyEntryStateId: string;
 }
 /**

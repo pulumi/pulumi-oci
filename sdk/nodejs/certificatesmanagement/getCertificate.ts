@@ -44,7 +44,7 @@ export interface GetCertificateArgs {
  * A collection of values returned by getCertificate.
  */
 export interface GetCertificateResult {
-    readonly certificateConfigs: outputs.CertificatesManagement.GetCertificateCertificateConfig[];
+    readonly certificateConfigs?: outputs.CertificatesManagement.GetCertificateCertificateConfig[];
     /**
      * The OCID of the certificate.
      */
@@ -52,79 +52,79 @@ export interface GetCertificateResult {
     /**
      * The name of the profile used to create the certificate, which depends on the type of certificate you need.
      */
-    readonly certificateProfileType: string;
+    readonly certificateProfileType?: string;
     /**
      * The details of the certificate revocation list (CRL).
      */
-    readonly certificateRevocationListDetails: outputs.CertificatesManagement.GetCertificateCertificateRevocationListDetail[];
+    readonly certificateRevocationListDetails?: outputs.CertificatesManagement.GetCertificateCertificateRevocationListDetail[];
     /**
      * A list of rules that control how the certificate is used and managed.
      */
-    readonly certificateRules: outputs.CertificatesManagement.GetCertificateCertificateRule[];
+    readonly certificateRules?: outputs.CertificatesManagement.GetCertificateCertificateRule[];
     /**
      * The OCID of the compartment where you want to create the certificate.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * The origin of the certificate.
      */
-    readonly configType: string;
+    readonly configType?: string;
     /**
      * The details of the certificate version. This object does not contain the certificate contents.
      */
-    readonly currentVersions: outputs.CertificatesManagement.GetCertificateCurrentVersion[];
+    readonly currentVersions?: outputs.CertificatesManagement.GetCertificateCurrentVersion[];
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * A brief description of the certificate. Avoid entering confidential information.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The OCID of the certificate.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The OCID of the certificate authority (CA) that issued the certificate.
      */
-    readonly issuerCertificateAuthorityId: string;
+    readonly issuerCertificateAuthorityId?: string;
     /**
      * The algorithm used to create key pairs.
      */
-    readonly keyAlgorithm: string;
+    readonly keyAlgorithm?: string;
     /**
      * Additional information about the current lifecycle state of the certificate.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * A user-friendly name for the certificate. Names are unique within a compartment. Avoid entering confidential information. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
      */
-    readonly name: string;
+    readonly name?: string;
     /**
      * The algorithm used to sign the public key certificate.
      */
-    readonly signatureAlgorithm: string;
+    readonly signatureAlgorithm?: string;
     /**
      * The current lifecycle state of the certificate.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.
      */
-    readonly subjects: outputs.CertificatesManagement.GetCertificateSubject[];
+    readonly subjects?: outputs.CertificatesManagement.GetCertificateSubject[];
     /**
      * A property indicating when the certificate was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * An optional property indicating when to delete the certificate version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      */
-    readonly timeOfDeletion: string;
+    readonly timeOfDeletion?: string;
 }
 /**
  * This data source provides details about a specific Certificate resource in Oracle Cloud Infrastructure Certificates Management service.

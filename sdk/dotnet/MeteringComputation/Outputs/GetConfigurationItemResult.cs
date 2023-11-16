@@ -16,7 +16,7 @@ namespace Pulumi.Oci.MeteringComputation.Outputs
         /// <summary>
         /// The configuration key.
         /// </summary>
-        public readonly string Key;
+        public readonly string? Key;
         /// <summary>
         /// The configuration value.
         /// </summary>
@@ -24,7 +24,7 @@ namespace Pulumi.Oci.MeteringComputation.Outputs
 
         [OutputConstructor]
         private GetConfigurationItemResult(
-            string key,
+            string? key,
 
             ImmutableArray<string> values)
         {

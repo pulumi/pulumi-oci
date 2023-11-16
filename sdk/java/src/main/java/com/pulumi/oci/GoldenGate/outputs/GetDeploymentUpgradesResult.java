@@ -28,7 +28,7 @@ public final class GetDeploymentUpgradesResult {
      * @return The list of deployment_upgrade_collection.
      * 
      */
-    private List<GetDeploymentUpgradesDeploymentUpgradeCollection> deploymentUpgradeCollections;
+    private @Nullable List<GetDeploymentUpgradesDeploymentUpgradeCollection> deploymentUpgradeCollections;
     /**
      * @return An object&#39;s Display Name.
      * 
@@ -39,7 +39,7 @@ public final class GetDeploymentUpgradesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Possible lifecycle states.
      * 
@@ -66,7 +66,7 @@ public final class GetDeploymentUpgradesResult {
      * 
      */
     public List<GetDeploymentUpgradesDeploymentUpgradeCollection> deploymentUpgradeCollections() {
-        return this.deploymentUpgradeCollections;
+        return this.deploymentUpgradeCollections == null ? List.of() : this.deploymentUpgradeCollections;
     }
     /**
      * @return An object&#39;s Display Name.
@@ -82,8 +82,8 @@ public final class GetDeploymentUpgradesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Possible lifecycle states.
@@ -104,10 +104,10 @@ public final class GetDeploymentUpgradesResult {
     public static final class Builder {
         private String compartmentId;
         private @Nullable String deploymentId;
-        private List<GetDeploymentUpgradesDeploymentUpgradeCollection> deploymentUpgradeCollections;
+        private @Nullable List<GetDeploymentUpgradesDeploymentUpgradeCollection> deploymentUpgradeCollections;
         private @Nullable String displayName;
         private @Nullable List<GetDeploymentUpgradesFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetDeploymentUpgradesResult defaults) {
@@ -132,8 +132,8 @@ public final class GetDeploymentUpgradesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder deploymentUpgradeCollections(List<GetDeploymentUpgradesDeploymentUpgradeCollection> deploymentUpgradeCollections) {
-            this.deploymentUpgradeCollections = Objects.requireNonNull(deploymentUpgradeCollections);
+        public Builder deploymentUpgradeCollections(@Nullable List<GetDeploymentUpgradesDeploymentUpgradeCollection> deploymentUpgradeCollections) {
+            this.deploymentUpgradeCollections = deploymentUpgradeCollections;
             return this;
         }
         public Builder deploymentUpgradeCollections(GetDeploymentUpgradesDeploymentUpgradeCollection... deploymentUpgradeCollections) {
@@ -153,8 +153,8 @@ public final class GetDeploymentUpgradesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

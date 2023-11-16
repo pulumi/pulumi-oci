@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -47,12 +46,6 @@ func (i ManagedInstanceAutonomouseArgs) ToManagedInstanceAutonomouseOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(ManagedInstanceAutonomouseOutput)
 }
 
-func (i ManagedInstanceAutonomouseArgs) ToOutput(ctx context.Context) pulumix.Output[ManagedInstanceAutonomouse] {
-	return pulumix.Output[ManagedInstanceAutonomouse]{
-		OutputState: i.ToManagedInstanceAutonomouseOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ManagedInstanceAutonomouseArrayInput is an input type that accepts ManagedInstanceAutonomouseArray and ManagedInstanceAutonomouseArrayOutput values.
 // You can construct a concrete instance of `ManagedInstanceAutonomouseArrayInput` via:
 //
@@ -78,12 +71,6 @@ func (i ManagedInstanceAutonomouseArray) ToManagedInstanceAutonomouseArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(ManagedInstanceAutonomouseArrayOutput)
 }
 
-func (i ManagedInstanceAutonomouseArray) ToOutput(ctx context.Context) pulumix.Output[[]ManagedInstanceAutonomouse] {
-	return pulumix.Output[[]ManagedInstanceAutonomouse]{
-		OutputState: i.ToManagedInstanceAutonomouseArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ManagedInstanceAutonomouseOutput struct{ *pulumi.OutputState }
 
 func (ManagedInstanceAutonomouseOutput) ElementType() reflect.Type {
@@ -96,12 +83,6 @@ func (o ManagedInstanceAutonomouseOutput) ToManagedInstanceAutonomouseOutput() M
 
 func (o ManagedInstanceAutonomouseOutput) ToManagedInstanceAutonomouseOutputWithContext(ctx context.Context) ManagedInstanceAutonomouseOutput {
 	return o
-}
-
-func (o ManagedInstanceAutonomouseOutput) ToOutput(ctx context.Context) pulumix.Output[ManagedInstanceAutonomouse] {
-	return pulumix.Output[ManagedInstanceAutonomouse]{
-		OutputState: o.OutputState,
-	}
 }
 
 // True if daily updates are enabled
@@ -121,12 +102,6 @@ func (o ManagedInstanceAutonomouseArrayOutput) ToManagedInstanceAutonomouseArray
 
 func (o ManagedInstanceAutonomouseArrayOutput) ToManagedInstanceAutonomouseArrayOutputWithContext(ctx context.Context) ManagedInstanceAutonomouseArrayOutput {
 	return o
-}
-
-func (o ManagedInstanceAutonomouseArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ManagedInstanceAutonomouse] {
-	return pulumix.Output[[]ManagedInstanceAutonomouse]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ManagedInstanceAutonomouseArrayOutput) Index(i pulumi.IntInput) ManagedInstanceAutonomouseOutput {
@@ -172,12 +147,6 @@ func (i ManagedInstanceChildSoftwareSourceArgs) ToManagedInstanceChildSoftwareSo
 	return pulumi.ToOutputWithContext(ctx, i).(ManagedInstanceChildSoftwareSourceOutput)
 }
 
-func (i ManagedInstanceChildSoftwareSourceArgs) ToOutput(ctx context.Context) pulumix.Output[ManagedInstanceChildSoftwareSource] {
-	return pulumix.Output[ManagedInstanceChildSoftwareSource]{
-		OutputState: i.ToManagedInstanceChildSoftwareSourceOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ManagedInstanceChildSoftwareSourceArrayInput is an input type that accepts ManagedInstanceChildSoftwareSourceArray and ManagedInstanceChildSoftwareSourceArrayOutput values.
 // You can construct a concrete instance of `ManagedInstanceChildSoftwareSourceArrayInput` via:
 //
@@ -203,12 +172,6 @@ func (i ManagedInstanceChildSoftwareSourceArray) ToManagedInstanceChildSoftwareS
 	return pulumi.ToOutputWithContext(ctx, i).(ManagedInstanceChildSoftwareSourceArrayOutput)
 }
 
-func (i ManagedInstanceChildSoftwareSourceArray) ToOutput(ctx context.Context) pulumix.Output[[]ManagedInstanceChildSoftwareSource] {
-	return pulumix.Output[[]ManagedInstanceChildSoftwareSource]{
-		OutputState: i.ToManagedInstanceChildSoftwareSourceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ManagedInstanceChildSoftwareSourceOutput struct{ *pulumi.OutputState }
 
 func (ManagedInstanceChildSoftwareSourceOutput) ElementType() reflect.Type {
@@ -221,12 +184,6 @@ func (o ManagedInstanceChildSoftwareSourceOutput) ToManagedInstanceChildSoftware
 
 func (o ManagedInstanceChildSoftwareSourceOutput) ToManagedInstanceChildSoftwareSourceOutputWithContext(ctx context.Context) ManagedInstanceChildSoftwareSourceOutput {
 	return o
-}
-
-func (o ManagedInstanceChildSoftwareSourceOutput) ToOutput(ctx context.Context) pulumix.Output[ManagedInstanceChildSoftwareSource] {
-	return pulumix.Output[ManagedInstanceChildSoftwareSource]{
-		OutputState: o.OutputState,
-	}
 }
 
 // software source identifier
@@ -251,12 +208,6 @@ func (o ManagedInstanceChildSoftwareSourceArrayOutput) ToManagedInstanceChildSof
 
 func (o ManagedInstanceChildSoftwareSourceArrayOutput) ToManagedInstanceChildSoftwareSourceArrayOutputWithContext(ctx context.Context) ManagedInstanceChildSoftwareSourceArrayOutput {
 	return o
-}
-
-func (o ManagedInstanceChildSoftwareSourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ManagedInstanceChildSoftwareSource] {
-	return pulumix.Output[[]ManagedInstanceChildSoftwareSource]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ManagedInstanceChildSoftwareSourceArrayOutput) Index(i pulumi.IntInput) ManagedInstanceChildSoftwareSourceOutput {
@@ -302,12 +253,6 @@ func (i ManagedInstanceGroupManagedInstanceArgs) ToManagedInstanceGroupManagedIn
 	return pulumi.ToOutputWithContext(ctx, i).(ManagedInstanceGroupManagedInstanceOutput)
 }
 
-func (i ManagedInstanceGroupManagedInstanceArgs) ToOutput(ctx context.Context) pulumix.Output[ManagedInstanceGroupManagedInstance] {
-	return pulumix.Output[ManagedInstanceGroupManagedInstance]{
-		OutputState: i.ToManagedInstanceGroupManagedInstanceOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ManagedInstanceGroupManagedInstanceArrayInput is an input type that accepts ManagedInstanceGroupManagedInstanceArray and ManagedInstanceGroupManagedInstanceArrayOutput values.
 // You can construct a concrete instance of `ManagedInstanceGroupManagedInstanceArrayInput` via:
 //
@@ -333,12 +278,6 @@ func (i ManagedInstanceGroupManagedInstanceArray) ToManagedInstanceGroupManagedI
 	return pulumi.ToOutputWithContext(ctx, i).(ManagedInstanceGroupManagedInstanceArrayOutput)
 }
 
-func (i ManagedInstanceGroupManagedInstanceArray) ToOutput(ctx context.Context) pulumix.Output[[]ManagedInstanceGroupManagedInstance] {
-	return pulumix.Output[[]ManagedInstanceGroupManagedInstance]{
-		OutputState: i.ToManagedInstanceGroupManagedInstanceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ManagedInstanceGroupManagedInstanceOutput struct{ *pulumi.OutputState }
 
 func (ManagedInstanceGroupManagedInstanceOutput) ElementType() reflect.Type {
@@ -351,12 +290,6 @@ func (o ManagedInstanceGroupManagedInstanceOutput) ToManagedInstanceGroupManaged
 
 func (o ManagedInstanceGroupManagedInstanceOutput) ToManagedInstanceGroupManagedInstanceOutputWithContext(ctx context.Context) ManagedInstanceGroupManagedInstanceOutput {
 	return o
-}
-
-func (o ManagedInstanceGroupManagedInstanceOutput) ToOutput(ctx context.Context) pulumix.Output[ManagedInstanceGroupManagedInstance] {
-	return pulumix.Output[ManagedInstanceGroupManagedInstance]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Managed Instance Group identifier
@@ -381,12 +314,6 @@ func (o ManagedInstanceGroupManagedInstanceArrayOutput) ToManagedInstanceGroupMa
 
 func (o ManagedInstanceGroupManagedInstanceArrayOutput) ToManagedInstanceGroupManagedInstanceArrayOutputWithContext(ctx context.Context) ManagedInstanceGroupManagedInstanceArrayOutput {
 	return o
-}
-
-func (o ManagedInstanceGroupManagedInstanceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ManagedInstanceGroupManagedInstance] {
-	return pulumix.Output[[]ManagedInstanceGroupManagedInstance]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ManagedInstanceGroupManagedInstanceArrayOutput) Index(i pulumi.IntInput) ManagedInstanceGroupManagedInstanceOutput {
@@ -432,12 +359,6 @@ func (i ManagedInstanceManagedInstanceGroupArgs) ToManagedInstanceManagedInstanc
 	return pulumi.ToOutputWithContext(ctx, i).(ManagedInstanceManagedInstanceGroupOutput)
 }
 
-func (i ManagedInstanceManagedInstanceGroupArgs) ToOutput(ctx context.Context) pulumix.Output[ManagedInstanceManagedInstanceGroup] {
-	return pulumix.Output[ManagedInstanceManagedInstanceGroup]{
-		OutputState: i.ToManagedInstanceManagedInstanceGroupOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ManagedInstanceManagedInstanceGroupArrayInput is an input type that accepts ManagedInstanceManagedInstanceGroupArray and ManagedInstanceManagedInstanceGroupArrayOutput values.
 // You can construct a concrete instance of `ManagedInstanceManagedInstanceGroupArrayInput` via:
 //
@@ -463,12 +384,6 @@ func (i ManagedInstanceManagedInstanceGroupArray) ToManagedInstanceManagedInstan
 	return pulumi.ToOutputWithContext(ctx, i).(ManagedInstanceManagedInstanceGroupArrayOutput)
 }
 
-func (i ManagedInstanceManagedInstanceGroupArray) ToOutput(ctx context.Context) pulumix.Output[[]ManagedInstanceManagedInstanceGroup] {
-	return pulumix.Output[[]ManagedInstanceManagedInstanceGroup]{
-		OutputState: i.ToManagedInstanceManagedInstanceGroupArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ManagedInstanceManagedInstanceGroupOutput struct{ *pulumi.OutputState }
 
 func (ManagedInstanceManagedInstanceGroupOutput) ElementType() reflect.Type {
@@ -481,12 +396,6 @@ func (o ManagedInstanceManagedInstanceGroupOutput) ToManagedInstanceManagedInsta
 
 func (o ManagedInstanceManagedInstanceGroupOutput) ToManagedInstanceManagedInstanceGroupOutputWithContext(ctx context.Context) ManagedInstanceManagedInstanceGroupOutput {
 	return o
-}
-
-func (o ManagedInstanceManagedInstanceGroupOutput) ToOutput(ctx context.Context) pulumix.Output[ManagedInstanceManagedInstanceGroup] {
-	return pulumix.Output[ManagedInstanceManagedInstanceGroup]{
-		OutputState: o.OutputState,
-	}
 }
 
 // User friendly name
@@ -511,12 +420,6 @@ func (o ManagedInstanceManagedInstanceGroupArrayOutput) ToManagedInstanceManaged
 
 func (o ManagedInstanceManagedInstanceGroupArrayOutput) ToManagedInstanceManagedInstanceGroupArrayOutputWithContext(ctx context.Context) ManagedInstanceManagedInstanceGroupArrayOutput {
 	return o
-}
-
-func (o ManagedInstanceManagedInstanceGroupArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ManagedInstanceManagedInstanceGroup] {
-	return pulumix.Output[[]ManagedInstanceManagedInstanceGroup]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ManagedInstanceManagedInstanceGroupArrayOutput) Index(i pulumi.IntInput) ManagedInstanceManagedInstanceGroupOutput {
@@ -568,12 +471,6 @@ func (i ManagedInstanceManagementChildSoftwareSourceArgs) ToManagedInstanceManag
 	return pulumi.ToOutputWithContext(ctx, i).(ManagedInstanceManagementChildSoftwareSourceOutput)
 }
 
-func (i ManagedInstanceManagementChildSoftwareSourceArgs) ToOutput(ctx context.Context) pulumix.Output[ManagedInstanceManagementChildSoftwareSource] {
-	return pulumix.Output[ManagedInstanceManagementChildSoftwareSource]{
-		OutputState: i.ToManagedInstanceManagementChildSoftwareSourceOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ManagedInstanceManagementChildSoftwareSourceArrayInput is an input type that accepts ManagedInstanceManagementChildSoftwareSourceArray and ManagedInstanceManagementChildSoftwareSourceArrayOutput values.
 // You can construct a concrete instance of `ManagedInstanceManagementChildSoftwareSourceArrayInput` via:
 //
@@ -599,12 +496,6 @@ func (i ManagedInstanceManagementChildSoftwareSourceArray) ToManagedInstanceMana
 	return pulumi.ToOutputWithContext(ctx, i).(ManagedInstanceManagementChildSoftwareSourceArrayOutput)
 }
 
-func (i ManagedInstanceManagementChildSoftwareSourceArray) ToOutput(ctx context.Context) pulumix.Output[[]ManagedInstanceManagementChildSoftwareSource] {
-	return pulumix.Output[[]ManagedInstanceManagementChildSoftwareSource]{
-		OutputState: i.ToManagedInstanceManagementChildSoftwareSourceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ManagedInstanceManagementChildSoftwareSourceOutput struct{ *pulumi.OutputState }
 
 func (ManagedInstanceManagementChildSoftwareSourceOutput) ElementType() reflect.Type {
@@ -617,12 +508,6 @@ func (o ManagedInstanceManagementChildSoftwareSourceOutput) ToManagedInstanceMan
 
 func (o ManagedInstanceManagementChildSoftwareSourceOutput) ToManagedInstanceManagementChildSoftwareSourceOutputWithContext(ctx context.Context) ManagedInstanceManagementChildSoftwareSourceOutput {
 	return o
-}
-
-func (o ManagedInstanceManagementChildSoftwareSourceOutput) ToOutput(ctx context.Context) pulumix.Output[ManagedInstanceManagementChildSoftwareSource] {
-	return pulumix.Output[ManagedInstanceManagementChildSoftwareSource]{
-		OutputState: o.OutputState,
-	}
 }
 
 // software source identifier
@@ -650,12 +535,6 @@ func (o ManagedInstanceManagementChildSoftwareSourceArrayOutput) ToManagedInstan
 
 func (o ManagedInstanceManagementChildSoftwareSourceArrayOutput) ToManagedInstanceManagementChildSoftwareSourceArrayOutputWithContext(ctx context.Context) ManagedInstanceManagementChildSoftwareSourceArrayOutput {
 	return o
-}
-
-func (o ManagedInstanceManagementChildSoftwareSourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ManagedInstanceManagementChildSoftwareSource] {
-	return pulumix.Output[[]ManagedInstanceManagementChildSoftwareSource]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ManagedInstanceManagementChildSoftwareSourceArrayOutput) Index(i pulumi.IntInput) ManagedInstanceManagementChildSoftwareSourceOutput {
@@ -701,12 +580,6 @@ func (i ManagedInstanceManagementManagedInstanceGroupArgs) ToManagedInstanceMana
 	return pulumi.ToOutputWithContext(ctx, i).(ManagedInstanceManagementManagedInstanceGroupOutput)
 }
 
-func (i ManagedInstanceManagementManagedInstanceGroupArgs) ToOutput(ctx context.Context) pulumix.Output[ManagedInstanceManagementManagedInstanceGroup] {
-	return pulumix.Output[ManagedInstanceManagementManagedInstanceGroup]{
-		OutputState: i.ToManagedInstanceManagementManagedInstanceGroupOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ManagedInstanceManagementManagedInstanceGroupArrayInput is an input type that accepts ManagedInstanceManagementManagedInstanceGroupArray and ManagedInstanceManagementManagedInstanceGroupArrayOutput values.
 // You can construct a concrete instance of `ManagedInstanceManagementManagedInstanceGroupArrayInput` via:
 //
@@ -732,12 +605,6 @@ func (i ManagedInstanceManagementManagedInstanceGroupArray) ToManagedInstanceMan
 	return pulumi.ToOutputWithContext(ctx, i).(ManagedInstanceManagementManagedInstanceGroupArrayOutput)
 }
 
-func (i ManagedInstanceManagementManagedInstanceGroupArray) ToOutput(ctx context.Context) pulumix.Output[[]ManagedInstanceManagementManagedInstanceGroup] {
-	return pulumix.Output[[]ManagedInstanceManagementManagedInstanceGroup]{
-		OutputState: i.ToManagedInstanceManagementManagedInstanceGroupArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ManagedInstanceManagementManagedInstanceGroupOutput struct{ *pulumi.OutputState }
 
 func (ManagedInstanceManagementManagedInstanceGroupOutput) ElementType() reflect.Type {
@@ -750,12 +617,6 @@ func (o ManagedInstanceManagementManagedInstanceGroupOutput) ToManagedInstanceMa
 
 func (o ManagedInstanceManagementManagedInstanceGroupOutput) ToManagedInstanceManagementManagedInstanceGroupOutputWithContext(ctx context.Context) ManagedInstanceManagementManagedInstanceGroupOutput {
 	return o
-}
-
-func (o ManagedInstanceManagementManagedInstanceGroupOutput) ToOutput(ctx context.Context) pulumix.Output[ManagedInstanceManagementManagedInstanceGroup] {
-	return pulumix.Output[ManagedInstanceManagementManagedInstanceGroup]{
-		OutputState: o.OutputState,
-	}
 }
 
 // User friendly name
@@ -780,12 +641,6 @@ func (o ManagedInstanceManagementManagedInstanceGroupArrayOutput) ToManagedInsta
 
 func (o ManagedInstanceManagementManagedInstanceGroupArrayOutput) ToManagedInstanceManagementManagedInstanceGroupArrayOutputWithContext(ctx context.Context) ManagedInstanceManagementManagedInstanceGroupArrayOutput {
 	return o
-}
-
-func (o ManagedInstanceManagementManagedInstanceGroupArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ManagedInstanceManagementManagedInstanceGroup] {
-	return pulumix.Output[[]ManagedInstanceManagementManagedInstanceGroup]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ManagedInstanceManagementManagedInstanceGroupArrayOutput) Index(i pulumi.IntInput) ManagedInstanceManagementManagedInstanceGroupOutput {
@@ -837,12 +692,6 @@ func (i ManagedInstanceManagementParentSoftwareSourceArgs) ToManagedInstanceMana
 	return pulumi.ToOutputWithContext(ctx, i).(ManagedInstanceManagementParentSoftwareSourceOutput)
 }
 
-func (i ManagedInstanceManagementParentSoftwareSourceArgs) ToOutput(ctx context.Context) pulumix.Output[ManagedInstanceManagementParentSoftwareSource] {
-	return pulumix.Output[ManagedInstanceManagementParentSoftwareSource]{
-		OutputState: i.ToManagedInstanceManagementParentSoftwareSourceOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i ManagedInstanceManagementParentSoftwareSourceArgs) ToManagedInstanceManagementParentSoftwareSourcePtrOutput() ManagedInstanceManagementParentSoftwareSourcePtrOutput {
 	return i.ToManagedInstanceManagementParentSoftwareSourcePtrOutputWithContext(context.Background())
 }
@@ -884,12 +733,6 @@ func (i *managedInstanceManagementParentSoftwareSourcePtrType) ToManagedInstance
 	return pulumi.ToOutputWithContext(ctx, i).(ManagedInstanceManagementParentSoftwareSourcePtrOutput)
 }
 
-func (i *managedInstanceManagementParentSoftwareSourcePtrType) ToOutput(ctx context.Context) pulumix.Output[*ManagedInstanceManagementParentSoftwareSource] {
-	return pulumix.Output[*ManagedInstanceManagementParentSoftwareSource]{
-		OutputState: i.ToManagedInstanceManagementParentSoftwareSourcePtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ManagedInstanceManagementParentSoftwareSourceOutput struct{ *pulumi.OutputState }
 
 func (ManagedInstanceManagementParentSoftwareSourceOutput) ElementType() reflect.Type {
@@ -912,12 +755,6 @@ func (o ManagedInstanceManagementParentSoftwareSourceOutput) ToManagedInstanceMa
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v ManagedInstanceManagementParentSoftwareSource) *ManagedInstanceManagementParentSoftwareSource {
 		return &v
 	}).(ManagedInstanceManagementParentSoftwareSourcePtrOutput)
-}
-
-func (o ManagedInstanceManagementParentSoftwareSourceOutput) ToOutput(ctx context.Context) pulumix.Output[ManagedInstanceManagementParentSoftwareSource] {
-	return pulumix.Output[ManagedInstanceManagementParentSoftwareSource]{
-		OutputState: o.OutputState,
-	}
 }
 
 // software source identifier
@@ -945,12 +782,6 @@ func (o ManagedInstanceManagementParentSoftwareSourcePtrOutput) ToManagedInstanc
 
 func (o ManagedInstanceManagementParentSoftwareSourcePtrOutput) ToManagedInstanceManagementParentSoftwareSourcePtrOutputWithContext(ctx context.Context) ManagedInstanceManagementParentSoftwareSourcePtrOutput {
 	return o
-}
-
-func (o ManagedInstanceManagementParentSoftwareSourcePtrOutput) ToOutput(ctx context.Context) pulumix.Output[*ManagedInstanceManagementParentSoftwareSource] {
-	return pulumix.Output[*ManagedInstanceManagementParentSoftwareSource]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ManagedInstanceManagementParentSoftwareSourcePtrOutput) Elem() ManagedInstanceManagementParentSoftwareSourceOutput {
@@ -1023,12 +854,6 @@ func (i ManagedInstanceParentSoftwareSourceArgs) ToManagedInstanceParentSoftware
 	return pulumi.ToOutputWithContext(ctx, i).(ManagedInstanceParentSoftwareSourceOutput)
 }
 
-func (i ManagedInstanceParentSoftwareSourceArgs) ToOutput(ctx context.Context) pulumix.Output[ManagedInstanceParentSoftwareSource] {
-	return pulumix.Output[ManagedInstanceParentSoftwareSource]{
-		OutputState: i.ToManagedInstanceParentSoftwareSourceOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ManagedInstanceParentSoftwareSourceArrayInput is an input type that accepts ManagedInstanceParentSoftwareSourceArray and ManagedInstanceParentSoftwareSourceArrayOutput values.
 // You can construct a concrete instance of `ManagedInstanceParentSoftwareSourceArrayInput` via:
 //
@@ -1054,12 +879,6 @@ func (i ManagedInstanceParentSoftwareSourceArray) ToManagedInstanceParentSoftwar
 	return pulumi.ToOutputWithContext(ctx, i).(ManagedInstanceParentSoftwareSourceArrayOutput)
 }
 
-func (i ManagedInstanceParentSoftwareSourceArray) ToOutput(ctx context.Context) pulumix.Output[[]ManagedInstanceParentSoftwareSource] {
-	return pulumix.Output[[]ManagedInstanceParentSoftwareSource]{
-		OutputState: i.ToManagedInstanceParentSoftwareSourceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ManagedInstanceParentSoftwareSourceOutput struct{ *pulumi.OutputState }
 
 func (ManagedInstanceParentSoftwareSourceOutput) ElementType() reflect.Type {
@@ -1072,12 +891,6 @@ func (o ManagedInstanceParentSoftwareSourceOutput) ToManagedInstanceParentSoftwa
 
 func (o ManagedInstanceParentSoftwareSourceOutput) ToManagedInstanceParentSoftwareSourceOutputWithContext(ctx context.Context) ManagedInstanceParentSoftwareSourceOutput {
 	return o
-}
-
-func (o ManagedInstanceParentSoftwareSourceOutput) ToOutput(ctx context.Context) pulumix.Output[ManagedInstanceParentSoftwareSource] {
-	return pulumix.Output[ManagedInstanceParentSoftwareSource]{
-		OutputState: o.OutputState,
-	}
 }
 
 // software source identifier
@@ -1102,12 +915,6 @@ func (o ManagedInstanceParentSoftwareSourceArrayOutput) ToManagedInstanceParentS
 
 func (o ManagedInstanceParentSoftwareSourceArrayOutput) ToManagedInstanceParentSoftwareSourceArrayOutputWithContext(ctx context.Context) ManagedInstanceParentSoftwareSourceArrayOutput {
 	return o
-}
-
-func (o ManagedInstanceParentSoftwareSourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ManagedInstanceParentSoftwareSource] {
-	return pulumix.Output[[]ManagedInstanceParentSoftwareSource]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ManagedInstanceParentSoftwareSourceArrayOutput) Index(i pulumi.IntInput) ManagedInstanceParentSoftwareSourceOutput {
@@ -1153,12 +960,6 @@ func (i SoftwareSourceAssociatedManagedInstanceArgs) ToSoftwareSourceAssociatedM
 	return pulumi.ToOutputWithContext(ctx, i).(SoftwareSourceAssociatedManagedInstanceOutput)
 }
 
-func (i SoftwareSourceAssociatedManagedInstanceArgs) ToOutput(ctx context.Context) pulumix.Output[SoftwareSourceAssociatedManagedInstance] {
-	return pulumix.Output[SoftwareSourceAssociatedManagedInstance]{
-		OutputState: i.ToSoftwareSourceAssociatedManagedInstanceOutputWithContext(ctx).OutputState,
-	}
-}
-
 // SoftwareSourceAssociatedManagedInstanceArrayInput is an input type that accepts SoftwareSourceAssociatedManagedInstanceArray and SoftwareSourceAssociatedManagedInstanceArrayOutput values.
 // You can construct a concrete instance of `SoftwareSourceAssociatedManagedInstanceArrayInput` via:
 //
@@ -1184,12 +985,6 @@ func (i SoftwareSourceAssociatedManagedInstanceArray) ToSoftwareSourceAssociated
 	return pulumi.ToOutputWithContext(ctx, i).(SoftwareSourceAssociatedManagedInstanceArrayOutput)
 }
 
-func (i SoftwareSourceAssociatedManagedInstanceArray) ToOutput(ctx context.Context) pulumix.Output[[]SoftwareSourceAssociatedManagedInstance] {
-	return pulumix.Output[[]SoftwareSourceAssociatedManagedInstance]{
-		OutputState: i.ToSoftwareSourceAssociatedManagedInstanceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type SoftwareSourceAssociatedManagedInstanceOutput struct{ *pulumi.OutputState }
 
 func (SoftwareSourceAssociatedManagedInstanceOutput) ElementType() reflect.Type {
@@ -1202,12 +997,6 @@ func (o SoftwareSourceAssociatedManagedInstanceOutput) ToSoftwareSourceAssociate
 
 func (o SoftwareSourceAssociatedManagedInstanceOutput) ToSoftwareSourceAssociatedManagedInstanceOutputWithContext(ctx context.Context) SoftwareSourceAssociatedManagedInstanceOutput {
 	return o
-}
-
-func (o SoftwareSourceAssociatedManagedInstanceOutput) ToOutput(ctx context.Context) pulumix.Output[SoftwareSourceAssociatedManagedInstance] {
-	return pulumix.Output[SoftwareSourceAssociatedManagedInstance]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) User friendly name for the software source
@@ -1234,12 +1023,6 @@ func (o SoftwareSourceAssociatedManagedInstanceArrayOutput) ToSoftwareSourceAsso
 	return o
 }
 
-func (o SoftwareSourceAssociatedManagedInstanceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]SoftwareSourceAssociatedManagedInstance] {
-	return pulumix.Output[[]SoftwareSourceAssociatedManagedInstance]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o SoftwareSourceAssociatedManagedInstanceArrayOutput) Index(i pulumi.IntInput) SoftwareSourceAssociatedManagedInstanceOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) SoftwareSourceAssociatedManagedInstance {
 		return vs[0].([]SoftwareSourceAssociatedManagedInstance)[vs[1].(int)]
@@ -1248,7 +1031,7 @@ func (o SoftwareSourceAssociatedManagedInstanceArrayOutput) Index(i pulumi.IntIn
 
 type GetManagedInstanceAutonomouse struct {
 	// True if daily updates are enabled
-	IsAutoUpdateEnabled bool `pulumi:"isAutoUpdateEnabled"`
+	IsAutoUpdateEnabled *bool `pulumi:"isAutoUpdateEnabled"`
 }
 
 // GetManagedInstanceAutonomouseInput is an input type that accepts GetManagedInstanceAutonomouseArgs and GetManagedInstanceAutonomouseOutput values.
@@ -1264,7 +1047,7 @@ type GetManagedInstanceAutonomouseInput interface {
 
 type GetManagedInstanceAutonomouseArgs struct {
 	// True if daily updates are enabled
-	IsAutoUpdateEnabled pulumi.BoolInput `pulumi:"isAutoUpdateEnabled"`
+	IsAutoUpdateEnabled pulumi.BoolPtrInput `pulumi:"isAutoUpdateEnabled"`
 }
 
 func (GetManagedInstanceAutonomouseArgs) ElementType() reflect.Type {
@@ -1277,12 +1060,6 @@ func (i GetManagedInstanceAutonomouseArgs) ToGetManagedInstanceAutonomouseOutput
 
 func (i GetManagedInstanceAutonomouseArgs) ToGetManagedInstanceAutonomouseOutputWithContext(ctx context.Context) GetManagedInstanceAutonomouseOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceAutonomouseOutput)
-}
-
-func (i GetManagedInstanceAutonomouseArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstanceAutonomouse] {
-	return pulumix.Output[GetManagedInstanceAutonomouse]{
-		OutputState: i.ToGetManagedInstanceAutonomouseOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetManagedInstanceAutonomouseArrayInput is an input type that accepts GetManagedInstanceAutonomouseArray and GetManagedInstanceAutonomouseArrayOutput values.
@@ -1310,12 +1087,6 @@ func (i GetManagedInstanceAutonomouseArray) ToGetManagedInstanceAutonomouseArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceAutonomouseArrayOutput)
 }
 
-func (i GetManagedInstanceAutonomouseArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstanceAutonomouse] {
-	return pulumix.Output[[]GetManagedInstanceAutonomouse]{
-		OutputState: i.ToGetManagedInstanceAutonomouseArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetManagedInstanceAutonomouseOutput struct{ *pulumi.OutputState }
 
 func (GetManagedInstanceAutonomouseOutput) ElementType() reflect.Type {
@@ -1330,15 +1101,9 @@ func (o GetManagedInstanceAutonomouseOutput) ToGetManagedInstanceAutonomouseOutp
 	return o
 }
 
-func (o GetManagedInstanceAutonomouseOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstanceAutonomouse] {
-	return pulumix.Output[GetManagedInstanceAutonomouse]{
-		OutputState: o.OutputState,
-	}
-}
-
 // True if daily updates are enabled
-func (o GetManagedInstanceAutonomouseOutput) IsAutoUpdateEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetManagedInstanceAutonomouse) bool { return v.IsAutoUpdateEnabled }).(pulumi.BoolOutput)
+func (o GetManagedInstanceAutonomouseOutput) IsAutoUpdateEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetManagedInstanceAutonomouse) *bool { return v.IsAutoUpdateEnabled }).(pulumi.BoolPtrOutput)
 }
 
 type GetManagedInstanceAutonomouseArrayOutput struct{ *pulumi.OutputState }
@@ -1355,12 +1120,6 @@ func (o GetManagedInstanceAutonomouseArrayOutput) ToGetManagedInstanceAutonomous
 	return o
 }
 
-func (o GetManagedInstanceAutonomouseArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstanceAutonomouse] {
-	return pulumix.Output[[]GetManagedInstanceAutonomouse]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetManagedInstanceAutonomouseArrayOutput) Index(i pulumi.IntInput) GetManagedInstanceAutonomouseOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedInstanceAutonomouse {
 		return vs[0].([]GetManagedInstanceAutonomouse)[vs[1].(int)]
@@ -1369,9 +1128,9 @@ func (o GetManagedInstanceAutonomouseArrayOutput) Index(i pulumi.IntInput) GetMa
 
 type GetManagedInstanceChildSoftwareSource struct {
 	// software source identifier
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// software source name
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 }
 
 // GetManagedInstanceChildSoftwareSourceInput is an input type that accepts GetManagedInstanceChildSoftwareSourceArgs and GetManagedInstanceChildSoftwareSourceOutput values.
@@ -1387,9 +1146,9 @@ type GetManagedInstanceChildSoftwareSourceInput interface {
 
 type GetManagedInstanceChildSoftwareSourceArgs struct {
 	// software source identifier
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// software source name
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 }
 
 func (GetManagedInstanceChildSoftwareSourceArgs) ElementType() reflect.Type {
@@ -1402,12 +1161,6 @@ func (i GetManagedInstanceChildSoftwareSourceArgs) ToGetManagedInstanceChildSoft
 
 func (i GetManagedInstanceChildSoftwareSourceArgs) ToGetManagedInstanceChildSoftwareSourceOutputWithContext(ctx context.Context) GetManagedInstanceChildSoftwareSourceOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceChildSoftwareSourceOutput)
-}
-
-func (i GetManagedInstanceChildSoftwareSourceArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstanceChildSoftwareSource] {
-	return pulumix.Output[GetManagedInstanceChildSoftwareSource]{
-		OutputState: i.ToGetManagedInstanceChildSoftwareSourceOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetManagedInstanceChildSoftwareSourceArrayInput is an input type that accepts GetManagedInstanceChildSoftwareSourceArray and GetManagedInstanceChildSoftwareSourceArrayOutput values.
@@ -1435,12 +1188,6 @@ func (i GetManagedInstanceChildSoftwareSourceArray) ToGetManagedInstanceChildSof
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceChildSoftwareSourceArrayOutput)
 }
 
-func (i GetManagedInstanceChildSoftwareSourceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstanceChildSoftwareSource] {
-	return pulumix.Output[[]GetManagedInstanceChildSoftwareSource]{
-		OutputState: i.ToGetManagedInstanceChildSoftwareSourceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetManagedInstanceChildSoftwareSourceOutput struct{ *pulumi.OutputState }
 
 func (GetManagedInstanceChildSoftwareSourceOutput) ElementType() reflect.Type {
@@ -1455,20 +1202,14 @@ func (o GetManagedInstanceChildSoftwareSourceOutput) ToGetManagedInstanceChildSo
 	return o
 }
 
-func (o GetManagedInstanceChildSoftwareSourceOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstanceChildSoftwareSource] {
-	return pulumix.Output[GetManagedInstanceChildSoftwareSource]{
-		OutputState: o.OutputState,
-	}
-}
-
 // software source identifier
-func (o GetManagedInstanceChildSoftwareSourceOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedInstanceChildSoftwareSource) string { return v.Id }).(pulumi.StringOutput)
+func (o GetManagedInstanceChildSoftwareSourceOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedInstanceChildSoftwareSource) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // software source name
-func (o GetManagedInstanceChildSoftwareSourceOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedInstanceChildSoftwareSource) string { return v.Name }).(pulumi.StringOutput)
+func (o GetManagedInstanceChildSoftwareSourceOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedInstanceChildSoftwareSource) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 type GetManagedInstanceChildSoftwareSourceArrayOutput struct{ *pulumi.OutputState }
@@ -1485,12 +1226,6 @@ func (o GetManagedInstanceChildSoftwareSourceArrayOutput) ToGetManagedInstanceCh
 	return o
 }
 
-func (o GetManagedInstanceChildSoftwareSourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstanceChildSoftwareSource] {
-	return pulumix.Output[[]GetManagedInstanceChildSoftwareSource]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetManagedInstanceChildSoftwareSourceArrayOutput) Index(i pulumi.IntInput) GetManagedInstanceChildSoftwareSourceOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedInstanceChildSoftwareSource {
 		return vs[0].([]GetManagedInstanceChildSoftwareSource)[vs[1].(int)]
@@ -1499,9 +1234,9 @@ func (o GetManagedInstanceChildSoftwareSourceArrayOutput) Index(i pulumi.IntInpu
 
 type GetManagedInstanceGroupManagedInstance struct {
 	// User friendly name
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// unique identifier that is immutable on creation
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 // GetManagedInstanceGroupManagedInstanceInput is an input type that accepts GetManagedInstanceGroupManagedInstanceArgs and GetManagedInstanceGroupManagedInstanceOutput values.
@@ -1517,9 +1252,9 @@ type GetManagedInstanceGroupManagedInstanceInput interface {
 
 type GetManagedInstanceGroupManagedInstanceArgs struct {
 	// User friendly name
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// unique identifier that is immutable on creation
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 }
 
 func (GetManagedInstanceGroupManagedInstanceArgs) ElementType() reflect.Type {
@@ -1532,12 +1267,6 @@ func (i GetManagedInstanceGroupManagedInstanceArgs) ToGetManagedInstanceGroupMan
 
 func (i GetManagedInstanceGroupManagedInstanceArgs) ToGetManagedInstanceGroupManagedInstanceOutputWithContext(ctx context.Context) GetManagedInstanceGroupManagedInstanceOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceGroupManagedInstanceOutput)
-}
-
-func (i GetManagedInstanceGroupManagedInstanceArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstanceGroupManagedInstance] {
-	return pulumix.Output[GetManagedInstanceGroupManagedInstance]{
-		OutputState: i.ToGetManagedInstanceGroupManagedInstanceOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetManagedInstanceGroupManagedInstanceArrayInput is an input type that accepts GetManagedInstanceGroupManagedInstanceArray and GetManagedInstanceGroupManagedInstanceArrayOutput values.
@@ -1565,12 +1294,6 @@ func (i GetManagedInstanceGroupManagedInstanceArray) ToGetManagedInstanceGroupMa
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceGroupManagedInstanceArrayOutput)
 }
 
-func (i GetManagedInstanceGroupManagedInstanceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstanceGroupManagedInstance] {
-	return pulumix.Output[[]GetManagedInstanceGroupManagedInstance]{
-		OutputState: i.ToGetManagedInstanceGroupManagedInstanceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetManagedInstanceGroupManagedInstanceOutput struct{ *pulumi.OutputState }
 
 func (GetManagedInstanceGroupManagedInstanceOutput) ElementType() reflect.Type {
@@ -1585,20 +1308,14 @@ func (o GetManagedInstanceGroupManagedInstanceOutput) ToGetManagedInstanceGroupM
 	return o
 }
 
-func (o GetManagedInstanceGroupManagedInstanceOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstanceGroupManagedInstance] {
-	return pulumix.Output[GetManagedInstanceGroupManagedInstance]{
-		OutputState: o.OutputState,
-	}
-}
-
 // User friendly name
-func (o GetManagedInstanceGroupManagedInstanceOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedInstanceGroupManagedInstance) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetManagedInstanceGroupManagedInstanceOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedInstanceGroupManagedInstance) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // unique identifier that is immutable on creation
-func (o GetManagedInstanceGroupManagedInstanceOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedInstanceGroupManagedInstance) string { return v.Id }).(pulumi.StringOutput)
+func (o GetManagedInstanceGroupManagedInstanceOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedInstanceGroupManagedInstance) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 type GetManagedInstanceGroupManagedInstanceArrayOutput struct{ *pulumi.OutputState }
@@ -1613,12 +1330,6 @@ func (o GetManagedInstanceGroupManagedInstanceArrayOutput) ToGetManagedInstanceG
 
 func (o GetManagedInstanceGroupManagedInstanceArrayOutput) ToGetManagedInstanceGroupManagedInstanceArrayOutputWithContext(ctx context.Context) GetManagedInstanceGroupManagedInstanceArrayOutput {
 	return o
-}
-
-func (o GetManagedInstanceGroupManagedInstanceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstanceGroupManagedInstance] {
-	return pulumix.Output[[]GetManagedInstanceGroupManagedInstance]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetManagedInstanceGroupManagedInstanceArrayOutput) Index(i pulumi.IntInput) GetManagedInstanceGroupManagedInstanceOutput {
@@ -1662,12 +1373,6 @@ func (i GetManagedInstanceGroupsFilterArgs) ToGetManagedInstanceGroupsFilterOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceGroupsFilterOutput)
 }
 
-func (i GetManagedInstanceGroupsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstanceGroupsFilter] {
-	return pulumix.Output[GetManagedInstanceGroupsFilter]{
-		OutputState: i.ToGetManagedInstanceGroupsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetManagedInstanceGroupsFilterArrayInput is an input type that accepts GetManagedInstanceGroupsFilterArray and GetManagedInstanceGroupsFilterArrayOutput values.
 // You can construct a concrete instance of `GetManagedInstanceGroupsFilterArrayInput` via:
 //
@@ -1693,12 +1398,6 @@ func (i GetManagedInstanceGroupsFilterArray) ToGetManagedInstanceGroupsFilterArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceGroupsFilterArrayOutput)
 }
 
-func (i GetManagedInstanceGroupsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstanceGroupsFilter] {
-	return pulumix.Output[[]GetManagedInstanceGroupsFilter]{
-		OutputState: i.ToGetManagedInstanceGroupsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetManagedInstanceGroupsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetManagedInstanceGroupsFilterOutput) ElementType() reflect.Type {
@@ -1711,12 +1410,6 @@ func (o GetManagedInstanceGroupsFilterOutput) ToGetManagedInstanceGroupsFilterOu
 
 func (o GetManagedInstanceGroupsFilterOutput) ToGetManagedInstanceGroupsFilterOutputWithContext(ctx context.Context) GetManagedInstanceGroupsFilterOutput {
 	return o
-}
-
-func (o GetManagedInstanceGroupsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstanceGroupsFilter] {
-	return pulumix.Output[GetManagedInstanceGroupsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetManagedInstanceGroupsFilterOutput) Name() pulumi.StringOutput {
@@ -1745,12 +1438,6 @@ func (o GetManagedInstanceGroupsFilterArrayOutput) ToGetManagedInstanceGroupsFil
 	return o
 }
 
-func (o GetManagedInstanceGroupsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstanceGroupsFilter] {
-	return pulumix.Output[[]GetManagedInstanceGroupsFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetManagedInstanceGroupsFilterArrayOutput) Index(i pulumi.IntInput) GetManagedInstanceGroupsFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedInstanceGroupsFilter {
 		return vs[0].([]GetManagedInstanceGroupsFilter)[vs[1].(int)]
@@ -1759,24 +1446,24 @@ func (o GetManagedInstanceGroupsFilterArrayOutput) Index(i pulumi.IntInput) GetM
 
 type GetManagedInstanceGroupsManagedInstanceGroup struct {
 	// The ID of the compartment in which to list resources.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Information specified by the user about the managed instance group
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// unique identifier that is immutable on creation
-	Id                   string `pulumi:"id"`
-	ManagedInstanceCount int    `pulumi:"managedInstanceCount"`
+	Id                   *string `pulumi:"id"`
+	ManagedInstanceCount *int    `pulumi:"managedInstanceCount"`
 	// list of Managed Instances in the group
 	ManagedInstances []GetManagedInstanceGroupsManagedInstanceGroupManagedInstance `pulumi:"managedInstances"`
 	// The OS family for which to list resources.
-	OsFamily string `pulumi:"osFamily"`
+	OsFamily *string `pulumi:"osFamily"`
 	// The current lifecycle state for the object.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 }
 
 // GetManagedInstanceGroupsManagedInstanceGroupInput is an input type that accepts GetManagedInstanceGroupsManagedInstanceGroupArgs and GetManagedInstanceGroupsManagedInstanceGroupOutput values.
@@ -1792,24 +1479,24 @@ type GetManagedInstanceGroupsManagedInstanceGroupInput interface {
 
 type GetManagedInstanceGroupsManagedInstanceGroupArgs struct {
 	// The ID of the compartment in which to list resources.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// Information specified by the user about the managed instance group
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// unique identifier that is immutable on creation
-	Id                   pulumi.StringInput `pulumi:"id"`
-	ManagedInstanceCount pulumi.IntInput    `pulumi:"managedInstanceCount"`
+	Id                   pulumi.StringPtrInput `pulumi:"id"`
+	ManagedInstanceCount pulumi.IntPtrInput    `pulumi:"managedInstanceCount"`
 	// list of Managed Instances in the group
 	ManagedInstances GetManagedInstanceGroupsManagedInstanceGroupManagedInstanceArrayInput `pulumi:"managedInstances"`
 	// The OS family for which to list resources.
-	OsFamily pulumi.StringInput `pulumi:"osFamily"`
+	OsFamily pulumi.StringPtrInput `pulumi:"osFamily"`
 	// The current lifecycle state for the object.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 }
 
 func (GetManagedInstanceGroupsManagedInstanceGroupArgs) ElementType() reflect.Type {
@@ -1822,12 +1509,6 @@ func (i GetManagedInstanceGroupsManagedInstanceGroupArgs) ToGetManagedInstanceGr
 
 func (i GetManagedInstanceGroupsManagedInstanceGroupArgs) ToGetManagedInstanceGroupsManagedInstanceGroupOutputWithContext(ctx context.Context) GetManagedInstanceGroupsManagedInstanceGroupOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceGroupsManagedInstanceGroupOutput)
-}
-
-func (i GetManagedInstanceGroupsManagedInstanceGroupArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstanceGroupsManagedInstanceGroup] {
-	return pulumix.Output[GetManagedInstanceGroupsManagedInstanceGroup]{
-		OutputState: i.ToGetManagedInstanceGroupsManagedInstanceGroupOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetManagedInstanceGroupsManagedInstanceGroupArrayInput is an input type that accepts GetManagedInstanceGroupsManagedInstanceGroupArray and GetManagedInstanceGroupsManagedInstanceGroupArrayOutput values.
@@ -1855,12 +1536,6 @@ func (i GetManagedInstanceGroupsManagedInstanceGroupArray) ToGetManagedInstanceG
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceGroupsManagedInstanceGroupArrayOutput)
 }
 
-func (i GetManagedInstanceGroupsManagedInstanceGroupArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstanceGroupsManagedInstanceGroup] {
-	return pulumix.Output[[]GetManagedInstanceGroupsManagedInstanceGroup]{
-		OutputState: i.ToGetManagedInstanceGroupsManagedInstanceGroupArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetManagedInstanceGroupsManagedInstanceGroupOutput struct{ *pulumi.OutputState }
 
 func (GetManagedInstanceGroupsManagedInstanceGroupOutput) ElementType() reflect.Type {
@@ -1875,15 +1550,9 @@ func (o GetManagedInstanceGroupsManagedInstanceGroupOutput) ToGetManagedInstance
 	return o
 }
 
-func (o GetManagedInstanceGroupsManagedInstanceGroupOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstanceGroupsManagedInstanceGroup] {
-	return pulumix.Output[GetManagedInstanceGroupsManagedInstanceGroup]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The ID of the compartment in which to list resources.
-func (o GetManagedInstanceGroupsManagedInstanceGroupOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedInstanceGroupsManagedInstanceGroup) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetManagedInstanceGroupsManagedInstanceGroupOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedInstanceGroupsManagedInstanceGroup) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -1892,13 +1561,13 @@ func (o GetManagedInstanceGroupsManagedInstanceGroupOutput) DefinedTags() pulumi
 }
 
 // Information specified by the user about the managed instance group
-func (o GetManagedInstanceGroupsManagedInstanceGroupOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedInstanceGroupsManagedInstanceGroup) string { return v.Description }).(pulumi.StringOutput)
+func (o GetManagedInstanceGroupsManagedInstanceGroupOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedInstanceGroupsManagedInstanceGroup) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
-func (o GetManagedInstanceGroupsManagedInstanceGroupOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedInstanceGroupsManagedInstanceGroup) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetManagedInstanceGroupsManagedInstanceGroupOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedInstanceGroupsManagedInstanceGroup) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -1907,12 +1576,12 @@ func (o GetManagedInstanceGroupsManagedInstanceGroupOutput) FreeformTags() pulum
 }
 
 // unique identifier that is immutable on creation
-func (o GetManagedInstanceGroupsManagedInstanceGroupOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedInstanceGroupsManagedInstanceGroup) string { return v.Id }).(pulumi.StringOutput)
+func (o GetManagedInstanceGroupsManagedInstanceGroupOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedInstanceGroupsManagedInstanceGroup) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
-func (o GetManagedInstanceGroupsManagedInstanceGroupOutput) ManagedInstanceCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetManagedInstanceGroupsManagedInstanceGroup) int { return v.ManagedInstanceCount }).(pulumi.IntOutput)
+func (o GetManagedInstanceGroupsManagedInstanceGroupOutput) ManagedInstanceCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetManagedInstanceGroupsManagedInstanceGroup) *int { return v.ManagedInstanceCount }).(pulumi.IntPtrOutput)
 }
 
 // list of Managed Instances in the group
@@ -1923,13 +1592,13 @@ func (o GetManagedInstanceGroupsManagedInstanceGroupOutput) ManagedInstances() G
 }
 
 // The OS family for which to list resources.
-func (o GetManagedInstanceGroupsManagedInstanceGroupOutput) OsFamily() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedInstanceGroupsManagedInstanceGroup) string { return v.OsFamily }).(pulumi.StringOutput)
+func (o GetManagedInstanceGroupsManagedInstanceGroupOutput) OsFamily() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedInstanceGroupsManagedInstanceGroup) *string { return v.OsFamily }).(pulumi.StringPtrOutput)
 }
 
 // The current lifecycle state for the object.
-func (o GetManagedInstanceGroupsManagedInstanceGroupOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedInstanceGroupsManagedInstanceGroup) string { return v.State }).(pulumi.StringOutput)
+func (o GetManagedInstanceGroupsManagedInstanceGroupOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedInstanceGroupsManagedInstanceGroup) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 type GetManagedInstanceGroupsManagedInstanceGroupArrayOutput struct{ *pulumi.OutputState }
@@ -1946,12 +1615,6 @@ func (o GetManagedInstanceGroupsManagedInstanceGroupArrayOutput) ToGetManagedIns
 	return o
 }
 
-func (o GetManagedInstanceGroupsManagedInstanceGroupArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstanceGroupsManagedInstanceGroup] {
-	return pulumix.Output[[]GetManagedInstanceGroupsManagedInstanceGroup]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetManagedInstanceGroupsManagedInstanceGroupArrayOutput) Index(i pulumi.IntInput) GetManagedInstanceGroupsManagedInstanceGroupOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedInstanceGroupsManagedInstanceGroup {
 		return vs[0].([]GetManagedInstanceGroupsManagedInstanceGroup)[vs[1].(int)]
@@ -1960,9 +1623,9 @@ func (o GetManagedInstanceGroupsManagedInstanceGroupArrayOutput) Index(i pulumi.
 
 type GetManagedInstanceGroupsManagedInstanceGroupManagedInstance struct {
 	// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// unique identifier that is immutable on creation
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 // GetManagedInstanceGroupsManagedInstanceGroupManagedInstanceInput is an input type that accepts GetManagedInstanceGroupsManagedInstanceGroupManagedInstanceArgs and GetManagedInstanceGroupsManagedInstanceGroupManagedInstanceOutput values.
@@ -1978,9 +1641,9 @@ type GetManagedInstanceGroupsManagedInstanceGroupManagedInstanceInput interface 
 
 type GetManagedInstanceGroupsManagedInstanceGroupManagedInstanceArgs struct {
 	// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// unique identifier that is immutable on creation
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 }
 
 func (GetManagedInstanceGroupsManagedInstanceGroupManagedInstanceArgs) ElementType() reflect.Type {
@@ -1993,12 +1656,6 @@ func (i GetManagedInstanceGroupsManagedInstanceGroupManagedInstanceArgs) ToGetMa
 
 func (i GetManagedInstanceGroupsManagedInstanceGroupManagedInstanceArgs) ToGetManagedInstanceGroupsManagedInstanceGroupManagedInstanceOutputWithContext(ctx context.Context) GetManagedInstanceGroupsManagedInstanceGroupManagedInstanceOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceGroupsManagedInstanceGroupManagedInstanceOutput)
-}
-
-func (i GetManagedInstanceGroupsManagedInstanceGroupManagedInstanceArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstanceGroupsManagedInstanceGroupManagedInstance] {
-	return pulumix.Output[GetManagedInstanceGroupsManagedInstanceGroupManagedInstance]{
-		OutputState: i.ToGetManagedInstanceGroupsManagedInstanceGroupManagedInstanceOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetManagedInstanceGroupsManagedInstanceGroupManagedInstanceArrayInput is an input type that accepts GetManagedInstanceGroupsManagedInstanceGroupManagedInstanceArray and GetManagedInstanceGroupsManagedInstanceGroupManagedInstanceArrayOutput values.
@@ -2026,12 +1683,6 @@ func (i GetManagedInstanceGroupsManagedInstanceGroupManagedInstanceArray) ToGetM
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceGroupsManagedInstanceGroupManagedInstanceArrayOutput)
 }
 
-func (i GetManagedInstanceGroupsManagedInstanceGroupManagedInstanceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstanceGroupsManagedInstanceGroupManagedInstance] {
-	return pulumix.Output[[]GetManagedInstanceGroupsManagedInstanceGroupManagedInstance]{
-		OutputState: i.ToGetManagedInstanceGroupsManagedInstanceGroupManagedInstanceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetManagedInstanceGroupsManagedInstanceGroupManagedInstanceOutput struct{ *pulumi.OutputState }
 
 func (GetManagedInstanceGroupsManagedInstanceGroupManagedInstanceOutput) ElementType() reflect.Type {
@@ -2046,20 +1697,14 @@ func (o GetManagedInstanceGroupsManagedInstanceGroupManagedInstanceOutput) ToGet
 	return o
 }
 
-func (o GetManagedInstanceGroupsManagedInstanceGroupManagedInstanceOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstanceGroupsManagedInstanceGroupManagedInstance] {
-	return pulumix.Output[GetManagedInstanceGroupsManagedInstanceGroupManagedInstance]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
-func (o GetManagedInstanceGroupsManagedInstanceGroupManagedInstanceOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedInstanceGroupsManagedInstanceGroupManagedInstance) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetManagedInstanceGroupsManagedInstanceGroupManagedInstanceOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedInstanceGroupsManagedInstanceGroupManagedInstance) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // unique identifier that is immutable on creation
-func (o GetManagedInstanceGroupsManagedInstanceGroupManagedInstanceOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedInstanceGroupsManagedInstanceGroupManagedInstance) string { return v.Id }).(pulumi.StringOutput)
+func (o GetManagedInstanceGroupsManagedInstanceGroupManagedInstanceOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedInstanceGroupsManagedInstanceGroupManagedInstance) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 type GetManagedInstanceGroupsManagedInstanceGroupManagedInstanceArrayOutput struct{ *pulumi.OutputState }
@@ -2076,12 +1721,6 @@ func (o GetManagedInstanceGroupsManagedInstanceGroupManagedInstanceArrayOutput) 
 	return o
 }
 
-func (o GetManagedInstanceGroupsManagedInstanceGroupManagedInstanceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstanceGroupsManagedInstanceGroupManagedInstance] {
-	return pulumix.Output[[]GetManagedInstanceGroupsManagedInstanceGroupManagedInstance]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetManagedInstanceGroupsManagedInstanceGroupManagedInstanceArrayOutput) Index(i pulumi.IntInput) GetManagedInstanceGroupsManagedInstanceGroupManagedInstanceOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedInstanceGroupsManagedInstanceGroupManagedInstance {
 		return vs[0].([]GetManagedInstanceGroupsManagedInstanceGroupManagedInstance)[vs[1].(int)]
@@ -2090,9 +1729,9 @@ func (o GetManagedInstanceGroupsManagedInstanceGroupManagedInstanceArrayOutput) 
 
 type GetManagedInstanceManagedInstanceGroup struct {
 	// User friendly name
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// software source identifier
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 // GetManagedInstanceManagedInstanceGroupInput is an input type that accepts GetManagedInstanceManagedInstanceGroupArgs and GetManagedInstanceManagedInstanceGroupOutput values.
@@ -2108,9 +1747,9 @@ type GetManagedInstanceManagedInstanceGroupInput interface {
 
 type GetManagedInstanceManagedInstanceGroupArgs struct {
 	// User friendly name
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// software source identifier
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 }
 
 func (GetManagedInstanceManagedInstanceGroupArgs) ElementType() reflect.Type {
@@ -2123,12 +1762,6 @@ func (i GetManagedInstanceManagedInstanceGroupArgs) ToGetManagedInstanceManagedI
 
 func (i GetManagedInstanceManagedInstanceGroupArgs) ToGetManagedInstanceManagedInstanceGroupOutputWithContext(ctx context.Context) GetManagedInstanceManagedInstanceGroupOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceManagedInstanceGroupOutput)
-}
-
-func (i GetManagedInstanceManagedInstanceGroupArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstanceManagedInstanceGroup] {
-	return pulumix.Output[GetManagedInstanceManagedInstanceGroup]{
-		OutputState: i.ToGetManagedInstanceManagedInstanceGroupOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetManagedInstanceManagedInstanceGroupArrayInput is an input type that accepts GetManagedInstanceManagedInstanceGroupArray and GetManagedInstanceManagedInstanceGroupArrayOutput values.
@@ -2156,12 +1789,6 @@ func (i GetManagedInstanceManagedInstanceGroupArray) ToGetManagedInstanceManaged
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceManagedInstanceGroupArrayOutput)
 }
 
-func (i GetManagedInstanceManagedInstanceGroupArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstanceManagedInstanceGroup] {
-	return pulumix.Output[[]GetManagedInstanceManagedInstanceGroup]{
-		OutputState: i.ToGetManagedInstanceManagedInstanceGroupArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetManagedInstanceManagedInstanceGroupOutput struct{ *pulumi.OutputState }
 
 func (GetManagedInstanceManagedInstanceGroupOutput) ElementType() reflect.Type {
@@ -2176,20 +1803,14 @@ func (o GetManagedInstanceManagedInstanceGroupOutput) ToGetManagedInstanceManage
 	return o
 }
 
-func (o GetManagedInstanceManagedInstanceGroupOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstanceManagedInstanceGroup] {
-	return pulumix.Output[GetManagedInstanceManagedInstanceGroup]{
-		OutputState: o.OutputState,
-	}
-}
-
 // User friendly name
-func (o GetManagedInstanceManagedInstanceGroupOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedInstanceManagedInstanceGroup) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetManagedInstanceManagedInstanceGroupOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedInstanceManagedInstanceGroup) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // software source identifier
-func (o GetManagedInstanceManagedInstanceGroupOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedInstanceManagedInstanceGroup) string { return v.Id }).(pulumi.StringOutput)
+func (o GetManagedInstanceManagedInstanceGroupOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedInstanceManagedInstanceGroup) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 type GetManagedInstanceManagedInstanceGroupArrayOutput struct{ *pulumi.OutputState }
@@ -2204,12 +1825,6 @@ func (o GetManagedInstanceManagedInstanceGroupArrayOutput) ToGetManagedInstanceM
 
 func (o GetManagedInstanceManagedInstanceGroupArrayOutput) ToGetManagedInstanceManagedInstanceGroupArrayOutputWithContext(ctx context.Context) GetManagedInstanceManagedInstanceGroupArrayOutput {
 	return o
-}
-
-func (o GetManagedInstanceManagedInstanceGroupArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstanceManagedInstanceGroup] {
-	return pulumix.Output[[]GetManagedInstanceManagedInstanceGroup]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetManagedInstanceManagedInstanceGroupArrayOutput) Index(i pulumi.IntInput) GetManagedInstanceManagedInstanceGroupOutput {
@@ -2253,12 +1868,6 @@ func (i GetManagedInstanceModuleStreamsFilterArgs) ToGetManagedInstanceModuleStr
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceModuleStreamsFilterOutput)
 }
 
-func (i GetManagedInstanceModuleStreamsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstanceModuleStreamsFilter] {
-	return pulumix.Output[GetManagedInstanceModuleStreamsFilter]{
-		OutputState: i.ToGetManagedInstanceModuleStreamsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetManagedInstanceModuleStreamsFilterArrayInput is an input type that accepts GetManagedInstanceModuleStreamsFilterArray and GetManagedInstanceModuleStreamsFilterArrayOutput values.
 // You can construct a concrete instance of `GetManagedInstanceModuleStreamsFilterArrayInput` via:
 //
@@ -2284,12 +1893,6 @@ func (i GetManagedInstanceModuleStreamsFilterArray) ToGetManagedInstanceModuleSt
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceModuleStreamsFilterArrayOutput)
 }
 
-func (i GetManagedInstanceModuleStreamsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstanceModuleStreamsFilter] {
-	return pulumix.Output[[]GetManagedInstanceModuleStreamsFilter]{
-		OutputState: i.ToGetManagedInstanceModuleStreamsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetManagedInstanceModuleStreamsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetManagedInstanceModuleStreamsFilterOutput) ElementType() reflect.Type {
@@ -2302,12 +1905,6 @@ func (o GetManagedInstanceModuleStreamsFilterOutput) ToGetManagedInstanceModuleS
 
 func (o GetManagedInstanceModuleStreamsFilterOutput) ToGetManagedInstanceModuleStreamsFilterOutputWithContext(ctx context.Context) GetManagedInstanceModuleStreamsFilterOutput {
 	return o
-}
-
-func (o GetManagedInstanceModuleStreamsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstanceModuleStreamsFilter] {
-	return pulumix.Output[GetManagedInstanceModuleStreamsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetManagedInstanceModuleStreamsFilterOutput) Name() pulumi.StringOutput {
@@ -2336,12 +1933,6 @@ func (o GetManagedInstanceModuleStreamsFilterArrayOutput) ToGetManagedInstanceMo
 	return o
 }
 
-func (o GetManagedInstanceModuleStreamsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstanceModuleStreamsFilter] {
-	return pulumix.Output[[]GetManagedInstanceModuleStreamsFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetManagedInstanceModuleStreamsFilterArrayOutput) Index(i pulumi.IntInput) GetManagedInstanceModuleStreamsFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedInstanceModuleStreamsFilter {
 		return vs[0].([]GetManagedInstanceModuleStreamsFilter)[vs[1].(int)]
@@ -2350,17 +1941,17 @@ func (o GetManagedInstanceModuleStreamsFilterArrayOutput) Index(i pulumi.IntInpu
 
 type GetManagedInstanceModuleStreamsModuleStreamOnManagedInstance struct {
 	// The name of a module.  This parameter is required if a streamName is specified.
-	ModuleName string `pulumi:"moduleName"`
+	ModuleName *string `pulumi:"moduleName"`
 	// The set of profiles that the module stream contains.
 	Profiles []GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfile `pulumi:"profiles"`
 	// The OCID of the software source that provides this module stream.
-	SoftwareSourceId string `pulumi:"softwareSourceId"`
+	SoftwareSourceId *string `pulumi:"softwareSourceId"`
 	// The status of the stream
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 	// The name of the stream of the containing module.  This parameter is required if a profileName is specified.
-	StreamName string `pulumi:"streamName"`
+	StreamName *string `pulumi:"streamName"`
 	// The date and time of the last status change for this profile, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-	TimeModified string `pulumi:"timeModified"`
+	TimeModified *string `pulumi:"timeModified"`
 }
 
 // GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceInput is an input type that accepts GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceArgs and GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceOutput values.
@@ -2376,17 +1967,17 @@ type GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceInput interface
 
 type GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceArgs struct {
 	// The name of a module.  This parameter is required if a streamName is specified.
-	ModuleName pulumi.StringInput `pulumi:"moduleName"`
+	ModuleName pulumi.StringPtrInput `pulumi:"moduleName"`
 	// The set of profiles that the module stream contains.
 	Profiles GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileArrayInput `pulumi:"profiles"`
 	// The OCID of the software source that provides this module stream.
-	SoftwareSourceId pulumi.StringInput `pulumi:"softwareSourceId"`
+	SoftwareSourceId pulumi.StringPtrInput `pulumi:"softwareSourceId"`
 	// The status of the stream
-	Status pulumi.StringInput `pulumi:"status"`
+	Status pulumi.StringPtrInput `pulumi:"status"`
 	// The name of the stream of the containing module.  This parameter is required if a profileName is specified.
-	StreamName pulumi.StringInput `pulumi:"streamName"`
+	StreamName pulumi.StringPtrInput `pulumi:"streamName"`
 	// The date and time of the last status change for this profile, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-	TimeModified pulumi.StringInput `pulumi:"timeModified"`
+	TimeModified pulumi.StringPtrInput `pulumi:"timeModified"`
 }
 
 func (GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceArgs) ElementType() reflect.Type {
@@ -2399,12 +1990,6 @@ func (i GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceArgs) ToGetM
 
 func (i GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceArgs) ToGetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceOutputWithContext(ctx context.Context) GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceOutput)
-}
-
-func (i GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstanceModuleStreamsModuleStreamOnManagedInstance] {
-	return pulumix.Output[GetManagedInstanceModuleStreamsModuleStreamOnManagedInstance]{
-		OutputState: i.ToGetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceArrayInput is an input type that accepts GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceArray and GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceArrayOutput values.
@@ -2432,12 +2017,6 @@ func (i GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceArray) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceArrayOutput)
 }
 
-func (i GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstanceModuleStreamsModuleStreamOnManagedInstance] {
-	return pulumix.Output[[]GetManagedInstanceModuleStreamsModuleStreamOnManagedInstance]{
-		OutputState: i.ToGetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceOutput struct{ *pulumi.OutputState }
 
 func (GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceOutput) ElementType() reflect.Type {
@@ -2452,15 +2031,9 @@ func (o GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceOutput) ToGe
 	return o
 }
 
-func (o GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstanceModuleStreamsModuleStreamOnManagedInstance] {
-	return pulumix.Output[GetManagedInstanceModuleStreamsModuleStreamOnManagedInstance]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The name of a module.  This parameter is required if a streamName is specified.
-func (o GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceOutput) ModuleName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedInstanceModuleStreamsModuleStreamOnManagedInstance) string { return v.ModuleName }).(pulumi.StringOutput)
+func (o GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceOutput) ModuleName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedInstanceModuleStreamsModuleStreamOnManagedInstance) *string { return v.ModuleName }).(pulumi.StringPtrOutput)
 }
 
 // The set of profiles that the module stream contains.
@@ -2471,23 +2044,25 @@ func (o GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceOutput) Prof
 }
 
 // The OCID of the software source that provides this module stream.
-func (o GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceOutput) SoftwareSourceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedInstanceModuleStreamsModuleStreamOnManagedInstance) string { return v.SoftwareSourceId }).(pulumi.StringOutput)
+func (o GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceOutput) SoftwareSourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedInstanceModuleStreamsModuleStreamOnManagedInstance) *string {
+		return v.SoftwareSourceId
+	}).(pulumi.StringPtrOutput)
 }
 
 // The status of the stream
-func (o GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedInstanceModuleStreamsModuleStreamOnManagedInstance) string { return v.Status }).(pulumi.StringOutput)
+func (o GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedInstanceModuleStreamsModuleStreamOnManagedInstance) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // The name of the stream of the containing module.  This parameter is required if a profileName is specified.
-func (o GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceOutput) StreamName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedInstanceModuleStreamsModuleStreamOnManagedInstance) string { return v.StreamName }).(pulumi.StringOutput)
+func (o GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceOutput) StreamName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedInstanceModuleStreamsModuleStreamOnManagedInstance) *string { return v.StreamName }).(pulumi.StringPtrOutput)
 }
 
 // The date and time of the last status change for this profile, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-func (o GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceOutput) TimeModified() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedInstanceModuleStreamsModuleStreamOnManagedInstance) string { return v.TimeModified }).(pulumi.StringOutput)
+func (o GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceOutput) TimeModified() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedInstanceModuleStreamsModuleStreamOnManagedInstance) *string { return v.TimeModified }).(pulumi.StringPtrOutput)
 }
 
 type GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceArrayOutput struct{ *pulumi.OutputState }
@@ -2504,12 +2079,6 @@ func (o GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceArrayOutput)
 	return o
 }
 
-func (o GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstanceModuleStreamsModuleStreamOnManagedInstance] {
-	return pulumix.Output[[]GetManagedInstanceModuleStreamsModuleStreamOnManagedInstance]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceArrayOutput) Index(i pulumi.IntInput) GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedInstanceModuleStreamsModuleStreamOnManagedInstance {
 		return vs[0].([]GetManagedInstanceModuleStreamsModuleStreamOnManagedInstance)[vs[1].(int)]
@@ -2518,15 +2087,15 @@ func (o GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceArrayOutput)
 
 type GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfile struct {
 	// The name of a module.  This parameter is required if a streamName is specified.
-	ModuleName string `pulumi:"moduleName"`
+	ModuleName *string `pulumi:"moduleName"`
 	// The name of the profile
-	ProfileName string `pulumi:"profileName"`
+	ProfileName *string `pulumi:"profileName"`
 	// The status of the stream
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 	// The name of the stream of the containing module.  This parameter is required if a profileName is specified.
-	StreamName string `pulumi:"streamName"`
+	StreamName *string `pulumi:"streamName"`
 	// The date and time of the last status change for this profile, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-	TimeModified string `pulumi:"timeModified"`
+	TimeModified *string `pulumi:"timeModified"`
 }
 
 // GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileInput is an input type that accepts GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileArgs and GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileOutput values.
@@ -2542,15 +2111,15 @@ type GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileInput in
 
 type GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileArgs struct {
 	// The name of a module.  This parameter is required if a streamName is specified.
-	ModuleName pulumi.StringInput `pulumi:"moduleName"`
+	ModuleName pulumi.StringPtrInput `pulumi:"moduleName"`
 	// The name of the profile
-	ProfileName pulumi.StringInput `pulumi:"profileName"`
+	ProfileName pulumi.StringPtrInput `pulumi:"profileName"`
 	// The status of the stream
-	Status pulumi.StringInput `pulumi:"status"`
+	Status pulumi.StringPtrInput `pulumi:"status"`
 	// The name of the stream of the containing module.  This parameter is required if a profileName is specified.
-	StreamName pulumi.StringInput `pulumi:"streamName"`
+	StreamName pulumi.StringPtrInput `pulumi:"streamName"`
 	// The date and time of the last status change for this profile, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-	TimeModified pulumi.StringInput `pulumi:"timeModified"`
+	TimeModified pulumi.StringPtrInput `pulumi:"timeModified"`
 }
 
 func (GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileArgs) ElementType() reflect.Type {
@@ -2563,12 +2132,6 @@ func (i GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileArgs)
 
 func (i GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileArgs) ToGetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileOutputWithContext(ctx context.Context) GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileOutput)
-}
-
-func (i GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfile] {
-	return pulumix.Output[GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfile]{
-		OutputState: i.ToGetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileArrayInput is an input type that accepts GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileArray and GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileArrayOutput values.
@@ -2596,12 +2159,6 @@ func (i GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileArrayOutput)
 }
 
-func (i GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfile] {
-	return pulumix.Output[[]GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfile]{
-		OutputState: i.ToGetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileOutput struct{ *pulumi.OutputState }
 
 func (GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileOutput) ElementType() reflect.Type {
@@ -2616,43 +2173,37 @@ func (o GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileOutpu
 	return o
 }
 
-func (o GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfile] {
-	return pulumix.Output[GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfile]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The name of a module.  This parameter is required if a streamName is specified.
-func (o GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileOutput) ModuleName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfile) string {
+func (o GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileOutput) ModuleName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfile) *string {
 		return v.ModuleName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The name of the profile
-func (o GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileOutput) ProfileName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfile) string {
+func (o GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileOutput) ProfileName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfile) *string {
 		return v.ProfileName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The status of the stream
-func (o GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfile) string { return v.Status }).(pulumi.StringOutput)
+func (o GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfile) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // The name of the stream of the containing module.  This parameter is required if a profileName is specified.
-func (o GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileOutput) StreamName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfile) string {
+func (o GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileOutput) StreamName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfile) *string {
 		return v.StreamName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The date and time of the last status change for this profile, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-func (o GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileOutput) TimeModified() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfile) string {
+func (o GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileOutput) TimeModified() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfile) *string {
 		return v.TimeModified
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileArrayOutput struct{ *pulumi.OutputState }
@@ -2669,12 +2220,6 @@ func (o GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileArray
 	return o
 }
 
-func (o GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfile] {
-	return pulumix.Output[[]GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfile]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileArrayOutput) Index(i pulumi.IntInput) GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfile {
 		return vs[0].([]GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfile)[vs[1].(int)]
@@ -2683,9 +2228,9 @@ func (o GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileArray
 
 type GetManagedInstanceParentSoftwareSource struct {
 	// software source identifier
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// software source name
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 }
 
 // GetManagedInstanceParentSoftwareSourceInput is an input type that accepts GetManagedInstanceParentSoftwareSourceArgs and GetManagedInstanceParentSoftwareSourceOutput values.
@@ -2701,9 +2246,9 @@ type GetManagedInstanceParentSoftwareSourceInput interface {
 
 type GetManagedInstanceParentSoftwareSourceArgs struct {
 	// software source identifier
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// software source name
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 }
 
 func (GetManagedInstanceParentSoftwareSourceArgs) ElementType() reflect.Type {
@@ -2716,12 +2261,6 @@ func (i GetManagedInstanceParentSoftwareSourceArgs) ToGetManagedInstanceParentSo
 
 func (i GetManagedInstanceParentSoftwareSourceArgs) ToGetManagedInstanceParentSoftwareSourceOutputWithContext(ctx context.Context) GetManagedInstanceParentSoftwareSourceOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceParentSoftwareSourceOutput)
-}
-
-func (i GetManagedInstanceParentSoftwareSourceArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstanceParentSoftwareSource] {
-	return pulumix.Output[GetManagedInstanceParentSoftwareSource]{
-		OutputState: i.ToGetManagedInstanceParentSoftwareSourceOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetManagedInstanceParentSoftwareSourceArrayInput is an input type that accepts GetManagedInstanceParentSoftwareSourceArray and GetManagedInstanceParentSoftwareSourceArrayOutput values.
@@ -2749,12 +2288,6 @@ func (i GetManagedInstanceParentSoftwareSourceArray) ToGetManagedInstanceParentS
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceParentSoftwareSourceArrayOutput)
 }
 
-func (i GetManagedInstanceParentSoftwareSourceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstanceParentSoftwareSource] {
-	return pulumix.Output[[]GetManagedInstanceParentSoftwareSource]{
-		OutputState: i.ToGetManagedInstanceParentSoftwareSourceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetManagedInstanceParentSoftwareSourceOutput struct{ *pulumi.OutputState }
 
 func (GetManagedInstanceParentSoftwareSourceOutput) ElementType() reflect.Type {
@@ -2769,20 +2302,14 @@ func (o GetManagedInstanceParentSoftwareSourceOutput) ToGetManagedInstanceParent
 	return o
 }
 
-func (o GetManagedInstanceParentSoftwareSourceOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstanceParentSoftwareSource] {
-	return pulumix.Output[GetManagedInstanceParentSoftwareSource]{
-		OutputState: o.OutputState,
-	}
-}
-
 // software source identifier
-func (o GetManagedInstanceParentSoftwareSourceOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedInstanceParentSoftwareSource) string { return v.Id }).(pulumi.StringOutput)
+func (o GetManagedInstanceParentSoftwareSourceOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedInstanceParentSoftwareSource) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // software source name
-func (o GetManagedInstanceParentSoftwareSourceOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedInstanceParentSoftwareSource) string { return v.Name }).(pulumi.StringOutput)
+func (o GetManagedInstanceParentSoftwareSourceOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedInstanceParentSoftwareSource) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 type GetManagedInstanceParentSoftwareSourceArrayOutput struct{ *pulumi.OutputState }
@@ -2797,12 +2324,6 @@ func (o GetManagedInstanceParentSoftwareSourceArrayOutput) ToGetManagedInstanceP
 
 func (o GetManagedInstanceParentSoftwareSourceArrayOutput) ToGetManagedInstanceParentSoftwareSourceArrayOutputWithContext(ctx context.Context) GetManagedInstanceParentSoftwareSourceArrayOutput {
 	return o
-}
-
-func (o GetManagedInstanceParentSoftwareSourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstanceParentSoftwareSource] {
-	return pulumix.Output[[]GetManagedInstanceParentSoftwareSource]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetManagedInstanceParentSoftwareSourceArrayOutput) Index(i pulumi.IntInput) GetManagedInstanceParentSoftwareSourceOutput {
@@ -2846,12 +2367,6 @@ func (i GetManagedInstanceStreamProfileFilterArgs) ToGetManagedInstanceStreamPro
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceStreamProfileFilterOutput)
 }
 
-func (i GetManagedInstanceStreamProfileFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstanceStreamProfileFilter] {
-	return pulumix.Output[GetManagedInstanceStreamProfileFilter]{
-		OutputState: i.ToGetManagedInstanceStreamProfileFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetManagedInstanceStreamProfileFilterArrayInput is an input type that accepts GetManagedInstanceStreamProfileFilterArray and GetManagedInstanceStreamProfileFilterArrayOutput values.
 // You can construct a concrete instance of `GetManagedInstanceStreamProfileFilterArrayInput` via:
 //
@@ -2877,12 +2392,6 @@ func (i GetManagedInstanceStreamProfileFilterArray) ToGetManagedInstanceStreamPr
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceStreamProfileFilterArrayOutput)
 }
 
-func (i GetManagedInstanceStreamProfileFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstanceStreamProfileFilter] {
-	return pulumix.Output[[]GetManagedInstanceStreamProfileFilter]{
-		OutputState: i.ToGetManagedInstanceStreamProfileFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetManagedInstanceStreamProfileFilterOutput struct{ *pulumi.OutputState }
 
 func (GetManagedInstanceStreamProfileFilterOutput) ElementType() reflect.Type {
@@ -2895,12 +2404,6 @@ func (o GetManagedInstanceStreamProfileFilterOutput) ToGetManagedInstanceStreamP
 
 func (o GetManagedInstanceStreamProfileFilterOutput) ToGetManagedInstanceStreamProfileFilterOutputWithContext(ctx context.Context) GetManagedInstanceStreamProfileFilterOutput {
 	return o
-}
-
-func (o GetManagedInstanceStreamProfileFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstanceStreamProfileFilter] {
-	return pulumix.Output[GetManagedInstanceStreamProfileFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetManagedInstanceStreamProfileFilterOutput) Name() pulumi.StringOutput {
@@ -2929,12 +2432,6 @@ func (o GetManagedInstanceStreamProfileFilterArrayOutput) ToGetManagedInstanceSt
 	return o
 }
 
-func (o GetManagedInstanceStreamProfileFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstanceStreamProfileFilter] {
-	return pulumix.Output[[]GetManagedInstanceStreamProfileFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetManagedInstanceStreamProfileFilterArrayOutput) Index(i pulumi.IntInput) GetManagedInstanceStreamProfileFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedInstanceStreamProfileFilter {
 		return vs[0].([]GetManagedInstanceStreamProfileFilter)[vs[1].(int)]
@@ -2943,15 +2440,15 @@ func (o GetManagedInstanceStreamProfileFilterArrayOutput) Index(i pulumi.IntInpu
 
 type GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstance struct {
 	// The name of a module.  This parameter is required if a streamName is specified.
-	ModuleName string `pulumi:"moduleName"`
+	ModuleName *string `pulumi:"moduleName"`
 	// The name of the profile of the containing module stream
-	ProfileName string `pulumi:"profileName"`
+	ProfileName *string `pulumi:"profileName"`
 	// The status of the profile.
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 	// The name of the stream of the containing module.  This parameter is required if a profileName is specified.
-	StreamName string `pulumi:"streamName"`
+	StreamName *string `pulumi:"streamName"`
 	// The date and time of the last status change for this profile, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-	TimeModified string `pulumi:"timeModified"`
+	TimeModified *string `pulumi:"timeModified"`
 }
 
 // GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceInput is an input type that accepts GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceArgs and GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceOutput values.
@@ -2967,15 +2464,15 @@ type GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceInput in
 
 type GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceArgs struct {
 	// The name of a module.  This parameter is required if a streamName is specified.
-	ModuleName pulumi.StringInput `pulumi:"moduleName"`
+	ModuleName pulumi.StringPtrInput `pulumi:"moduleName"`
 	// The name of the profile of the containing module stream
-	ProfileName pulumi.StringInput `pulumi:"profileName"`
+	ProfileName pulumi.StringPtrInput `pulumi:"profileName"`
 	// The status of the profile.
-	Status pulumi.StringInput `pulumi:"status"`
+	Status pulumi.StringPtrInput `pulumi:"status"`
 	// The name of the stream of the containing module.  This parameter is required if a profileName is specified.
-	StreamName pulumi.StringInput `pulumi:"streamName"`
+	StreamName pulumi.StringPtrInput `pulumi:"streamName"`
 	// The date and time of the last status change for this profile, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-	TimeModified pulumi.StringInput `pulumi:"timeModified"`
+	TimeModified pulumi.StringPtrInput `pulumi:"timeModified"`
 }
 
 func (GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceArgs) ElementType() reflect.Type {
@@ -2988,12 +2485,6 @@ func (i GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceArgs)
 
 func (i GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceArgs) ToGetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceOutputWithContext(ctx context.Context) GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceOutput)
-}
-
-func (i GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstance] {
-	return pulumix.Output[GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstance]{
-		OutputState: i.ToGetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceArrayInput is an input type that accepts GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceArray and GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceArrayOutput values.
@@ -3021,12 +2512,6 @@ func (i GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceArrayOutput)
 }
 
-func (i GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstance] {
-	return pulumix.Output[[]GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstance]{
-		OutputState: i.ToGetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceOutput struct{ *pulumi.OutputState }
 
 func (GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceOutput) ElementType() reflect.Type {
@@ -3041,43 +2526,37 @@ func (o GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceOutpu
 	return o
 }
 
-func (o GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstance] {
-	return pulumix.Output[GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstance]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The name of a module.  This parameter is required if a streamName is specified.
-func (o GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceOutput) ModuleName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstance) string {
+func (o GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceOutput) ModuleName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstance) *string {
 		return v.ModuleName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The name of the profile of the containing module stream
-func (o GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceOutput) ProfileName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstance) string {
+func (o GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceOutput) ProfileName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstance) *string {
 		return v.ProfileName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The status of the profile.
-func (o GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstance) string { return v.Status }).(pulumi.StringOutput)
+func (o GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstance) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // The name of the stream of the containing module.  This parameter is required if a profileName is specified.
-func (o GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceOutput) StreamName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstance) string {
+func (o GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceOutput) StreamName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstance) *string {
 		return v.StreamName
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // The date and time of the last status change for this profile, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-func (o GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceOutput) TimeModified() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstance) string {
+func (o GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceOutput) TimeModified() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstance) *string {
 		return v.TimeModified
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceArrayOutput struct{ *pulumi.OutputState }
@@ -3092,12 +2571,6 @@ func (o GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceArray
 
 func (o GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceArrayOutput) ToGetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceArrayOutputWithContext(ctx context.Context) GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceArrayOutput {
 	return o
-}
-
-func (o GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstance] {
-	return pulumix.Output[[]GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstance]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceArrayOutput) Index(i pulumi.IntInput) GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceOutput {
@@ -3143,12 +2616,6 @@ func (i GetManagedInstancesFilterArgs) ToGetManagedInstancesFilterOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstancesFilterOutput)
 }
 
-func (i GetManagedInstancesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstancesFilter] {
-	return pulumix.Output[GetManagedInstancesFilter]{
-		OutputState: i.ToGetManagedInstancesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetManagedInstancesFilterArrayInput is an input type that accepts GetManagedInstancesFilterArray and GetManagedInstancesFilterArrayOutput values.
 // You can construct a concrete instance of `GetManagedInstancesFilterArrayInput` via:
 //
@@ -3174,12 +2641,6 @@ func (i GetManagedInstancesFilterArray) ToGetManagedInstancesFilterArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstancesFilterArrayOutput)
 }
 
-func (i GetManagedInstancesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstancesFilter] {
-	return pulumix.Output[[]GetManagedInstancesFilter]{
-		OutputState: i.ToGetManagedInstancesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetManagedInstancesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetManagedInstancesFilterOutput) ElementType() reflect.Type {
@@ -3192,12 +2653,6 @@ func (o GetManagedInstancesFilterOutput) ToGetManagedInstancesFilterOutput() Get
 
 func (o GetManagedInstancesFilterOutput) ToGetManagedInstancesFilterOutputWithContext(ctx context.Context) GetManagedInstancesFilterOutput {
 	return o
-}
-
-func (o GetManagedInstancesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstancesFilter] {
-	return pulumix.Output[GetManagedInstancesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // software source name
@@ -3227,12 +2682,6 @@ func (o GetManagedInstancesFilterArrayOutput) ToGetManagedInstancesFilterArrayOu
 	return o
 }
 
-func (o GetManagedInstancesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstancesFilter] {
-	return pulumix.Output[[]GetManagedInstancesFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetManagedInstancesFilterArrayOutput) Index(i pulumi.IntInput) GetManagedInstancesFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedInstancesFilter {
 		return vs[0].([]GetManagedInstancesFilter)[vs[1].(int)]
@@ -3243,56 +2692,56 @@ type GetManagedInstancesManagedInstance struct {
 	// if present, indicates the Managed Instance is an autonomous instance. Holds all the Autonomous specific information
 	Autonomouses []GetManagedInstancesManagedInstanceAutonomouse `pulumi:"autonomouses"`
 	// Number of bug fix type updates available to be installed
-	BugUpdatesAvailable int `pulumi:"bugUpdatesAvailable"`
+	BugUpdatesAvailable *int `pulumi:"bugUpdatesAvailable"`
 	// list of child Software Sources attached to the Managed Instance
 	ChildSoftwareSources []GetManagedInstancesManagedInstanceChildSoftwareSource `pulumi:"childSoftwareSources"`
 	// The ID of the compartment in which to list resources.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Information specified by the user about the managed instance
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Number of enhancement type updates available to be installed
-	EnhancementUpdatesAvailable int `pulumi:"enhancementUpdatesAvailable"`
+	EnhancementUpdatesAvailable *int `pulumi:"enhancementUpdatesAvailable"`
 	// software source identifier
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// True if user allow data collection for this instance
-	IsDataCollectionAuthorized bool `pulumi:"isDataCollectionAuthorized"`
+	IsDataCollectionAuthorized *bool `pulumi:"isDataCollectionAuthorized"`
 	// Indicates whether a reboot is required to complete installation of updates.
-	IsRebootRequired bool `pulumi:"isRebootRequired"`
+	IsRebootRequired *bool `pulumi:"isRebootRequired"`
 	// The ksplice effective kernel version
-	KspliceEffectiveKernelVersion string `pulumi:"kspliceEffectiveKernelVersion"`
+	KspliceEffectiveKernelVersion *string `pulumi:"kspliceEffectiveKernelVersion"`
 	// Time at which the instance last booted
-	LastBoot string `pulumi:"lastBoot"`
+	LastBoot *string `pulumi:"lastBoot"`
 	// Time at which the instance last checked in
-	LastCheckin string `pulumi:"lastCheckin"`
+	LastCheckin *string `pulumi:"lastCheckin"`
 	// The ids of the managed instance groups of which this instance is a member.
 	ManagedInstanceGroups []GetManagedInstancesManagedInstanceManagedInstanceGroup `pulumi:"managedInstanceGroups"`
-	ManagedInstanceId     string                                                   `pulumi:"managedInstanceId"`
+	ManagedInstanceId     *string                                                  `pulumi:"managedInstanceId"`
 	// OCID of the ONS topic used to send notification to users
-	NotificationTopicId string `pulumi:"notificationTopicId"`
+	NotificationTopicId *string `pulumi:"notificationTopicId"`
 	// The OS family for which to list resources.
-	OsFamily string `pulumi:"osFamily"`
+	OsFamily *string `pulumi:"osFamily"`
 	// Operating System Kernel Version
-	OsKernelVersion string `pulumi:"osKernelVersion"`
+	OsKernelVersion *string `pulumi:"osKernelVersion"`
 	// Operating System Name
-	OsName string `pulumi:"osName"`
+	OsName *string `pulumi:"osName"`
 	// Operating System Version
-	OsVersion string `pulumi:"osVersion"`
+	OsVersion *string `pulumi:"osVersion"`
 	// Number of non-classified updates available to be installed
-	OtherUpdatesAvailable int `pulumi:"otherUpdatesAvailable"`
+	OtherUpdatesAvailable *int `pulumi:"otherUpdatesAvailable"`
 	// the parent (base) Software Source attached to the Managed Instance
 	ParentSoftwareSources []GetManagedInstancesManagedInstanceParentSoftwareSource `pulumi:"parentSoftwareSources"`
 	// Number of scheduled jobs associated with this instance
-	ScheduledJobCount int `pulumi:"scheduledJobCount"`
+	ScheduledJobCount *int `pulumi:"scheduledJobCount"`
 	// Number of security type updates available to be installed
-	SecurityUpdatesAvailable int `pulumi:"securityUpdatesAvailable"`
+	SecurityUpdatesAvailable *int `pulumi:"securityUpdatesAvailable"`
 	// status of the managed instance.
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 	// Number of updates available to be installed
-	UpdatesAvailable int `pulumi:"updatesAvailable"`
+	UpdatesAvailable *int `pulumi:"updatesAvailable"`
 	// Number of work requests associated with this instance
-	WorkRequestCount int `pulumi:"workRequestCount"`
+	WorkRequestCount *int `pulumi:"workRequestCount"`
 }
 
 // GetManagedInstancesManagedInstanceInput is an input type that accepts GetManagedInstancesManagedInstanceArgs and GetManagedInstancesManagedInstanceOutput values.
@@ -3310,56 +2759,56 @@ type GetManagedInstancesManagedInstanceArgs struct {
 	// if present, indicates the Managed Instance is an autonomous instance. Holds all the Autonomous specific information
 	Autonomouses GetManagedInstancesManagedInstanceAutonomouseArrayInput `pulumi:"autonomouses"`
 	// Number of bug fix type updates available to be installed
-	BugUpdatesAvailable pulumi.IntInput `pulumi:"bugUpdatesAvailable"`
+	BugUpdatesAvailable pulumi.IntPtrInput `pulumi:"bugUpdatesAvailable"`
 	// list of child Software Sources attached to the Managed Instance
 	ChildSoftwareSources GetManagedInstancesManagedInstanceChildSoftwareSourceArrayInput `pulumi:"childSoftwareSources"`
 	// The ID of the compartment in which to list resources.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Information specified by the user about the managed instance
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Number of enhancement type updates available to be installed
-	EnhancementUpdatesAvailable pulumi.IntInput `pulumi:"enhancementUpdatesAvailable"`
+	EnhancementUpdatesAvailable pulumi.IntPtrInput `pulumi:"enhancementUpdatesAvailable"`
 	// software source identifier
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// True if user allow data collection for this instance
-	IsDataCollectionAuthorized pulumi.BoolInput `pulumi:"isDataCollectionAuthorized"`
+	IsDataCollectionAuthorized pulumi.BoolPtrInput `pulumi:"isDataCollectionAuthorized"`
 	// Indicates whether a reboot is required to complete installation of updates.
-	IsRebootRequired pulumi.BoolInput `pulumi:"isRebootRequired"`
+	IsRebootRequired pulumi.BoolPtrInput `pulumi:"isRebootRequired"`
 	// The ksplice effective kernel version
-	KspliceEffectiveKernelVersion pulumi.StringInput `pulumi:"kspliceEffectiveKernelVersion"`
+	KspliceEffectiveKernelVersion pulumi.StringPtrInput `pulumi:"kspliceEffectiveKernelVersion"`
 	// Time at which the instance last booted
-	LastBoot pulumi.StringInput `pulumi:"lastBoot"`
+	LastBoot pulumi.StringPtrInput `pulumi:"lastBoot"`
 	// Time at which the instance last checked in
-	LastCheckin pulumi.StringInput `pulumi:"lastCheckin"`
+	LastCheckin pulumi.StringPtrInput `pulumi:"lastCheckin"`
 	// The ids of the managed instance groups of which this instance is a member.
 	ManagedInstanceGroups GetManagedInstancesManagedInstanceManagedInstanceGroupArrayInput `pulumi:"managedInstanceGroups"`
-	ManagedInstanceId     pulumi.StringInput                                               `pulumi:"managedInstanceId"`
+	ManagedInstanceId     pulumi.StringPtrInput                                            `pulumi:"managedInstanceId"`
 	// OCID of the ONS topic used to send notification to users
-	NotificationTopicId pulumi.StringInput `pulumi:"notificationTopicId"`
+	NotificationTopicId pulumi.StringPtrInput `pulumi:"notificationTopicId"`
 	// The OS family for which to list resources.
-	OsFamily pulumi.StringInput `pulumi:"osFamily"`
+	OsFamily pulumi.StringPtrInput `pulumi:"osFamily"`
 	// Operating System Kernel Version
-	OsKernelVersion pulumi.StringInput `pulumi:"osKernelVersion"`
+	OsKernelVersion pulumi.StringPtrInput `pulumi:"osKernelVersion"`
 	// Operating System Name
-	OsName pulumi.StringInput `pulumi:"osName"`
+	OsName pulumi.StringPtrInput `pulumi:"osName"`
 	// Operating System Version
-	OsVersion pulumi.StringInput `pulumi:"osVersion"`
+	OsVersion pulumi.StringPtrInput `pulumi:"osVersion"`
 	// Number of non-classified updates available to be installed
-	OtherUpdatesAvailable pulumi.IntInput `pulumi:"otherUpdatesAvailable"`
+	OtherUpdatesAvailable pulumi.IntPtrInput `pulumi:"otherUpdatesAvailable"`
 	// the parent (base) Software Source attached to the Managed Instance
 	ParentSoftwareSources GetManagedInstancesManagedInstanceParentSoftwareSourceArrayInput `pulumi:"parentSoftwareSources"`
 	// Number of scheduled jobs associated with this instance
-	ScheduledJobCount pulumi.IntInput `pulumi:"scheduledJobCount"`
+	ScheduledJobCount pulumi.IntPtrInput `pulumi:"scheduledJobCount"`
 	// Number of security type updates available to be installed
-	SecurityUpdatesAvailable pulumi.IntInput `pulumi:"securityUpdatesAvailable"`
+	SecurityUpdatesAvailable pulumi.IntPtrInput `pulumi:"securityUpdatesAvailable"`
 	// status of the managed instance.
-	Status pulumi.StringInput `pulumi:"status"`
+	Status pulumi.StringPtrInput `pulumi:"status"`
 	// Number of updates available to be installed
-	UpdatesAvailable pulumi.IntInput `pulumi:"updatesAvailable"`
+	UpdatesAvailable pulumi.IntPtrInput `pulumi:"updatesAvailable"`
 	// Number of work requests associated with this instance
-	WorkRequestCount pulumi.IntInput `pulumi:"workRequestCount"`
+	WorkRequestCount pulumi.IntPtrInput `pulumi:"workRequestCount"`
 }
 
 func (GetManagedInstancesManagedInstanceArgs) ElementType() reflect.Type {
@@ -3372,12 +2821,6 @@ func (i GetManagedInstancesManagedInstanceArgs) ToGetManagedInstancesManagedInst
 
 func (i GetManagedInstancesManagedInstanceArgs) ToGetManagedInstancesManagedInstanceOutputWithContext(ctx context.Context) GetManagedInstancesManagedInstanceOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstancesManagedInstanceOutput)
-}
-
-func (i GetManagedInstancesManagedInstanceArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstancesManagedInstance] {
-	return pulumix.Output[GetManagedInstancesManagedInstance]{
-		OutputState: i.ToGetManagedInstancesManagedInstanceOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetManagedInstancesManagedInstanceArrayInput is an input type that accepts GetManagedInstancesManagedInstanceArray and GetManagedInstancesManagedInstanceArrayOutput values.
@@ -3405,12 +2848,6 @@ func (i GetManagedInstancesManagedInstanceArray) ToGetManagedInstancesManagedIns
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstancesManagedInstanceArrayOutput)
 }
 
-func (i GetManagedInstancesManagedInstanceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstancesManagedInstance] {
-	return pulumix.Output[[]GetManagedInstancesManagedInstance]{
-		OutputState: i.ToGetManagedInstancesManagedInstanceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetManagedInstancesManagedInstanceOutput struct{ *pulumi.OutputState }
 
 func (GetManagedInstancesManagedInstanceOutput) ElementType() reflect.Type {
@@ -3425,12 +2862,6 @@ func (o GetManagedInstancesManagedInstanceOutput) ToGetManagedInstancesManagedIn
 	return o
 }
 
-func (o GetManagedInstancesManagedInstanceOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstancesManagedInstance] {
-	return pulumix.Output[GetManagedInstancesManagedInstance]{
-		OutputState: o.OutputState,
-	}
-}
-
 // if present, indicates the Managed Instance is an autonomous instance. Holds all the Autonomous specific information
 func (o GetManagedInstancesManagedInstanceOutput) Autonomouses() GetManagedInstancesManagedInstanceAutonomouseArrayOutput {
 	return o.ApplyT(func(v GetManagedInstancesManagedInstance) []GetManagedInstancesManagedInstanceAutonomouse {
@@ -3439,8 +2870,8 @@ func (o GetManagedInstancesManagedInstanceOutput) Autonomouses() GetManagedInsta
 }
 
 // Number of bug fix type updates available to be installed
-func (o GetManagedInstancesManagedInstanceOutput) BugUpdatesAvailable() pulumi.IntOutput {
-	return o.ApplyT(func(v GetManagedInstancesManagedInstance) int { return v.BugUpdatesAvailable }).(pulumi.IntOutput)
+func (o GetManagedInstancesManagedInstanceOutput) BugUpdatesAvailable() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetManagedInstancesManagedInstance) *int { return v.BugUpdatesAvailable }).(pulumi.IntPtrOutput)
 }
 
 // list of child Software Sources attached to the Managed Instance
@@ -3451,53 +2882,53 @@ func (o GetManagedInstancesManagedInstanceOutput) ChildSoftwareSources() GetMana
 }
 
 // The ID of the compartment in which to list resources.
-func (o GetManagedInstancesManagedInstanceOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedInstancesManagedInstance) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetManagedInstancesManagedInstanceOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedInstancesManagedInstance) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Information specified by the user about the managed instance
-func (o GetManagedInstancesManagedInstanceOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedInstancesManagedInstance) string { return v.Description }).(pulumi.StringOutput)
+func (o GetManagedInstancesManagedInstanceOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedInstancesManagedInstance) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
-func (o GetManagedInstancesManagedInstanceOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedInstancesManagedInstance) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetManagedInstancesManagedInstanceOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedInstancesManagedInstance) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Number of enhancement type updates available to be installed
-func (o GetManagedInstancesManagedInstanceOutput) EnhancementUpdatesAvailable() pulumi.IntOutput {
-	return o.ApplyT(func(v GetManagedInstancesManagedInstance) int { return v.EnhancementUpdatesAvailable }).(pulumi.IntOutput)
+func (o GetManagedInstancesManagedInstanceOutput) EnhancementUpdatesAvailable() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetManagedInstancesManagedInstance) *int { return v.EnhancementUpdatesAvailable }).(pulumi.IntPtrOutput)
 }
 
 // software source identifier
-func (o GetManagedInstancesManagedInstanceOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedInstancesManagedInstance) string { return v.Id }).(pulumi.StringOutput)
+func (o GetManagedInstancesManagedInstanceOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedInstancesManagedInstance) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // True if user allow data collection for this instance
-func (o GetManagedInstancesManagedInstanceOutput) IsDataCollectionAuthorized() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetManagedInstancesManagedInstance) bool { return v.IsDataCollectionAuthorized }).(pulumi.BoolOutput)
+func (o GetManagedInstancesManagedInstanceOutput) IsDataCollectionAuthorized() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetManagedInstancesManagedInstance) *bool { return v.IsDataCollectionAuthorized }).(pulumi.BoolPtrOutput)
 }
 
 // Indicates whether a reboot is required to complete installation of updates.
-func (o GetManagedInstancesManagedInstanceOutput) IsRebootRequired() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetManagedInstancesManagedInstance) bool { return v.IsRebootRequired }).(pulumi.BoolOutput)
+func (o GetManagedInstancesManagedInstanceOutput) IsRebootRequired() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetManagedInstancesManagedInstance) *bool { return v.IsRebootRequired }).(pulumi.BoolPtrOutput)
 }
 
 // The ksplice effective kernel version
-func (o GetManagedInstancesManagedInstanceOutput) KspliceEffectiveKernelVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedInstancesManagedInstance) string { return v.KspliceEffectiveKernelVersion }).(pulumi.StringOutput)
+func (o GetManagedInstancesManagedInstanceOutput) KspliceEffectiveKernelVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedInstancesManagedInstance) *string { return v.KspliceEffectiveKernelVersion }).(pulumi.StringPtrOutput)
 }
 
 // Time at which the instance last booted
-func (o GetManagedInstancesManagedInstanceOutput) LastBoot() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedInstancesManagedInstance) string { return v.LastBoot }).(pulumi.StringOutput)
+func (o GetManagedInstancesManagedInstanceOutput) LastBoot() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedInstancesManagedInstance) *string { return v.LastBoot }).(pulumi.StringPtrOutput)
 }
 
 // Time at which the instance last checked in
-func (o GetManagedInstancesManagedInstanceOutput) LastCheckin() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedInstancesManagedInstance) string { return v.LastCheckin }).(pulumi.StringOutput)
+func (o GetManagedInstancesManagedInstanceOutput) LastCheckin() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedInstancesManagedInstance) *string { return v.LastCheckin }).(pulumi.StringPtrOutput)
 }
 
 // The ids of the managed instance groups of which this instance is a member.
@@ -3507,38 +2938,38 @@ func (o GetManagedInstancesManagedInstanceOutput) ManagedInstanceGroups() GetMan
 	}).(GetManagedInstancesManagedInstanceManagedInstanceGroupArrayOutput)
 }
 
-func (o GetManagedInstancesManagedInstanceOutput) ManagedInstanceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedInstancesManagedInstance) string { return v.ManagedInstanceId }).(pulumi.StringOutput)
+func (o GetManagedInstancesManagedInstanceOutput) ManagedInstanceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedInstancesManagedInstance) *string { return v.ManagedInstanceId }).(pulumi.StringPtrOutput)
 }
 
 // OCID of the ONS topic used to send notification to users
-func (o GetManagedInstancesManagedInstanceOutput) NotificationTopicId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedInstancesManagedInstance) string { return v.NotificationTopicId }).(pulumi.StringOutput)
+func (o GetManagedInstancesManagedInstanceOutput) NotificationTopicId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedInstancesManagedInstance) *string { return v.NotificationTopicId }).(pulumi.StringPtrOutput)
 }
 
 // The OS family for which to list resources.
-func (o GetManagedInstancesManagedInstanceOutput) OsFamily() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedInstancesManagedInstance) string { return v.OsFamily }).(pulumi.StringOutput)
+func (o GetManagedInstancesManagedInstanceOutput) OsFamily() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedInstancesManagedInstance) *string { return v.OsFamily }).(pulumi.StringPtrOutput)
 }
 
 // Operating System Kernel Version
-func (o GetManagedInstancesManagedInstanceOutput) OsKernelVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedInstancesManagedInstance) string { return v.OsKernelVersion }).(pulumi.StringOutput)
+func (o GetManagedInstancesManagedInstanceOutput) OsKernelVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedInstancesManagedInstance) *string { return v.OsKernelVersion }).(pulumi.StringPtrOutput)
 }
 
 // Operating System Name
-func (o GetManagedInstancesManagedInstanceOutput) OsName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedInstancesManagedInstance) string { return v.OsName }).(pulumi.StringOutput)
+func (o GetManagedInstancesManagedInstanceOutput) OsName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedInstancesManagedInstance) *string { return v.OsName }).(pulumi.StringPtrOutput)
 }
 
 // Operating System Version
-func (o GetManagedInstancesManagedInstanceOutput) OsVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedInstancesManagedInstance) string { return v.OsVersion }).(pulumi.StringOutput)
+func (o GetManagedInstancesManagedInstanceOutput) OsVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedInstancesManagedInstance) *string { return v.OsVersion }).(pulumi.StringPtrOutput)
 }
 
 // Number of non-classified updates available to be installed
-func (o GetManagedInstancesManagedInstanceOutput) OtherUpdatesAvailable() pulumi.IntOutput {
-	return o.ApplyT(func(v GetManagedInstancesManagedInstance) int { return v.OtherUpdatesAvailable }).(pulumi.IntOutput)
+func (o GetManagedInstancesManagedInstanceOutput) OtherUpdatesAvailable() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetManagedInstancesManagedInstance) *int { return v.OtherUpdatesAvailable }).(pulumi.IntPtrOutput)
 }
 
 // the parent (base) Software Source attached to the Managed Instance
@@ -3549,28 +2980,28 @@ func (o GetManagedInstancesManagedInstanceOutput) ParentSoftwareSources() GetMan
 }
 
 // Number of scheduled jobs associated with this instance
-func (o GetManagedInstancesManagedInstanceOutput) ScheduledJobCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetManagedInstancesManagedInstance) int { return v.ScheduledJobCount }).(pulumi.IntOutput)
+func (o GetManagedInstancesManagedInstanceOutput) ScheduledJobCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetManagedInstancesManagedInstance) *int { return v.ScheduledJobCount }).(pulumi.IntPtrOutput)
 }
 
 // Number of security type updates available to be installed
-func (o GetManagedInstancesManagedInstanceOutput) SecurityUpdatesAvailable() pulumi.IntOutput {
-	return o.ApplyT(func(v GetManagedInstancesManagedInstance) int { return v.SecurityUpdatesAvailable }).(pulumi.IntOutput)
+func (o GetManagedInstancesManagedInstanceOutput) SecurityUpdatesAvailable() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetManagedInstancesManagedInstance) *int { return v.SecurityUpdatesAvailable }).(pulumi.IntPtrOutput)
 }
 
 // status of the managed instance.
-func (o GetManagedInstancesManagedInstanceOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedInstancesManagedInstance) string { return v.Status }).(pulumi.StringOutput)
+func (o GetManagedInstancesManagedInstanceOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedInstancesManagedInstance) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // Number of updates available to be installed
-func (o GetManagedInstancesManagedInstanceOutput) UpdatesAvailable() pulumi.IntOutput {
-	return o.ApplyT(func(v GetManagedInstancesManagedInstance) int { return v.UpdatesAvailable }).(pulumi.IntOutput)
+func (o GetManagedInstancesManagedInstanceOutput) UpdatesAvailable() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetManagedInstancesManagedInstance) *int { return v.UpdatesAvailable }).(pulumi.IntPtrOutput)
 }
 
 // Number of work requests associated with this instance
-func (o GetManagedInstancesManagedInstanceOutput) WorkRequestCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetManagedInstancesManagedInstance) int { return v.WorkRequestCount }).(pulumi.IntOutput)
+func (o GetManagedInstancesManagedInstanceOutput) WorkRequestCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetManagedInstancesManagedInstance) *int { return v.WorkRequestCount }).(pulumi.IntPtrOutput)
 }
 
 type GetManagedInstancesManagedInstanceArrayOutput struct{ *pulumi.OutputState }
@@ -3587,12 +3018,6 @@ func (o GetManagedInstancesManagedInstanceArrayOutput) ToGetManagedInstancesMana
 	return o
 }
 
-func (o GetManagedInstancesManagedInstanceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstancesManagedInstance] {
-	return pulumix.Output[[]GetManagedInstancesManagedInstance]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetManagedInstancesManagedInstanceArrayOutput) Index(i pulumi.IntInput) GetManagedInstancesManagedInstanceOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedInstancesManagedInstance {
 		return vs[0].([]GetManagedInstancesManagedInstance)[vs[1].(int)]
@@ -3601,7 +3026,7 @@ func (o GetManagedInstancesManagedInstanceArrayOutput) Index(i pulumi.IntInput) 
 
 type GetManagedInstancesManagedInstanceAutonomouse struct {
 	// True if daily updates are enabled
-	IsAutoUpdateEnabled bool `pulumi:"isAutoUpdateEnabled"`
+	IsAutoUpdateEnabled *bool `pulumi:"isAutoUpdateEnabled"`
 }
 
 // GetManagedInstancesManagedInstanceAutonomouseInput is an input type that accepts GetManagedInstancesManagedInstanceAutonomouseArgs and GetManagedInstancesManagedInstanceAutonomouseOutput values.
@@ -3617,7 +3042,7 @@ type GetManagedInstancesManagedInstanceAutonomouseInput interface {
 
 type GetManagedInstancesManagedInstanceAutonomouseArgs struct {
 	// True if daily updates are enabled
-	IsAutoUpdateEnabled pulumi.BoolInput `pulumi:"isAutoUpdateEnabled"`
+	IsAutoUpdateEnabled pulumi.BoolPtrInput `pulumi:"isAutoUpdateEnabled"`
 }
 
 func (GetManagedInstancesManagedInstanceAutonomouseArgs) ElementType() reflect.Type {
@@ -3630,12 +3055,6 @@ func (i GetManagedInstancesManagedInstanceAutonomouseArgs) ToGetManagedInstances
 
 func (i GetManagedInstancesManagedInstanceAutonomouseArgs) ToGetManagedInstancesManagedInstanceAutonomouseOutputWithContext(ctx context.Context) GetManagedInstancesManagedInstanceAutonomouseOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstancesManagedInstanceAutonomouseOutput)
-}
-
-func (i GetManagedInstancesManagedInstanceAutonomouseArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstancesManagedInstanceAutonomouse] {
-	return pulumix.Output[GetManagedInstancesManagedInstanceAutonomouse]{
-		OutputState: i.ToGetManagedInstancesManagedInstanceAutonomouseOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetManagedInstancesManagedInstanceAutonomouseArrayInput is an input type that accepts GetManagedInstancesManagedInstanceAutonomouseArray and GetManagedInstancesManagedInstanceAutonomouseArrayOutput values.
@@ -3663,12 +3082,6 @@ func (i GetManagedInstancesManagedInstanceAutonomouseArray) ToGetManagedInstance
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstancesManagedInstanceAutonomouseArrayOutput)
 }
 
-func (i GetManagedInstancesManagedInstanceAutonomouseArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstancesManagedInstanceAutonomouse] {
-	return pulumix.Output[[]GetManagedInstancesManagedInstanceAutonomouse]{
-		OutputState: i.ToGetManagedInstancesManagedInstanceAutonomouseArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetManagedInstancesManagedInstanceAutonomouseOutput struct{ *pulumi.OutputState }
 
 func (GetManagedInstancesManagedInstanceAutonomouseOutput) ElementType() reflect.Type {
@@ -3683,15 +3096,9 @@ func (o GetManagedInstancesManagedInstanceAutonomouseOutput) ToGetManagedInstanc
 	return o
 }
 
-func (o GetManagedInstancesManagedInstanceAutonomouseOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstancesManagedInstanceAutonomouse] {
-	return pulumix.Output[GetManagedInstancesManagedInstanceAutonomouse]{
-		OutputState: o.OutputState,
-	}
-}
-
 // True if daily updates are enabled
-func (o GetManagedInstancesManagedInstanceAutonomouseOutput) IsAutoUpdateEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetManagedInstancesManagedInstanceAutonomouse) bool { return v.IsAutoUpdateEnabled }).(pulumi.BoolOutput)
+func (o GetManagedInstancesManagedInstanceAutonomouseOutput) IsAutoUpdateEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetManagedInstancesManagedInstanceAutonomouse) *bool { return v.IsAutoUpdateEnabled }).(pulumi.BoolPtrOutput)
 }
 
 type GetManagedInstancesManagedInstanceAutonomouseArrayOutput struct{ *pulumi.OutputState }
@@ -3708,12 +3115,6 @@ func (o GetManagedInstancesManagedInstanceAutonomouseArrayOutput) ToGetManagedIn
 	return o
 }
 
-func (o GetManagedInstancesManagedInstanceAutonomouseArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstancesManagedInstanceAutonomouse] {
-	return pulumix.Output[[]GetManagedInstancesManagedInstanceAutonomouse]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetManagedInstancesManagedInstanceAutonomouseArrayOutput) Index(i pulumi.IntInput) GetManagedInstancesManagedInstanceAutonomouseOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedInstancesManagedInstanceAutonomouse {
 		return vs[0].([]GetManagedInstancesManagedInstanceAutonomouse)[vs[1].(int)]
@@ -3722,9 +3123,9 @@ func (o GetManagedInstancesManagedInstanceAutonomouseArrayOutput) Index(i pulumi
 
 type GetManagedInstancesManagedInstanceChildSoftwareSource struct {
 	// software source identifier
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// software source name
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 }
 
 // GetManagedInstancesManagedInstanceChildSoftwareSourceInput is an input type that accepts GetManagedInstancesManagedInstanceChildSoftwareSourceArgs and GetManagedInstancesManagedInstanceChildSoftwareSourceOutput values.
@@ -3740,9 +3141,9 @@ type GetManagedInstancesManagedInstanceChildSoftwareSourceInput interface {
 
 type GetManagedInstancesManagedInstanceChildSoftwareSourceArgs struct {
 	// software source identifier
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// software source name
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 }
 
 func (GetManagedInstancesManagedInstanceChildSoftwareSourceArgs) ElementType() reflect.Type {
@@ -3755,12 +3156,6 @@ func (i GetManagedInstancesManagedInstanceChildSoftwareSourceArgs) ToGetManagedI
 
 func (i GetManagedInstancesManagedInstanceChildSoftwareSourceArgs) ToGetManagedInstancesManagedInstanceChildSoftwareSourceOutputWithContext(ctx context.Context) GetManagedInstancesManagedInstanceChildSoftwareSourceOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstancesManagedInstanceChildSoftwareSourceOutput)
-}
-
-func (i GetManagedInstancesManagedInstanceChildSoftwareSourceArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstancesManagedInstanceChildSoftwareSource] {
-	return pulumix.Output[GetManagedInstancesManagedInstanceChildSoftwareSource]{
-		OutputState: i.ToGetManagedInstancesManagedInstanceChildSoftwareSourceOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetManagedInstancesManagedInstanceChildSoftwareSourceArrayInput is an input type that accepts GetManagedInstancesManagedInstanceChildSoftwareSourceArray and GetManagedInstancesManagedInstanceChildSoftwareSourceArrayOutput values.
@@ -3788,12 +3183,6 @@ func (i GetManagedInstancesManagedInstanceChildSoftwareSourceArray) ToGetManaged
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstancesManagedInstanceChildSoftwareSourceArrayOutput)
 }
 
-func (i GetManagedInstancesManagedInstanceChildSoftwareSourceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstancesManagedInstanceChildSoftwareSource] {
-	return pulumix.Output[[]GetManagedInstancesManagedInstanceChildSoftwareSource]{
-		OutputState: i.ToGetManagedInstancesManagedInstanceChildSoftwareSourceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetManagedInstancesManagedInstanceChildSoftwareSourceOutput struct{ *pulumi.OutputState }
 
 func (GetManagedInstancesManagedInstanceChildSoftwareSourceOutput) ElementType() reflect.Type {
@@ -3808,20 +3197,14 @@ func (o GetManagedInstancesManagedInstanceChildSoftwareSourceOutput) ToGetManage
 	return o
 }
 
-func (o GetManagedInstancesManagedInstanceChildSoftwareSourceOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstancesManagedInstanceChildSoftwareSource] {
-	return pulumix.Output[GetManagedInstancesManagedInstanceChildSoftwareSource]{
-		OutputState: o.OutputState,
-	}
-}
-
 // software source identifier
-func (o GetManagedInstancesManagedInstanceChildSoftwareSourceOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedInstancesManagedInstanceChildSoftwareSource) string { return v.Id }).(pulumi.StringOutput)
+func (o GetManagedInstancesManagedInstanceChildSoftwareSourceOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedInstancesManagedInstanceChildSoftwareSource) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // software source name
-func (o GetManagedInstancesManagedInstanceChildSoftwareSourceOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedInstancesManagedInstanceChildSoftwareSource) string { return v.Name }).(pulumi.StringOutput)
+func (o GetManagedInstancesManagedInstanceChildSoftwareSourceOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedInstancesManagedInstanceChildSoftwareSource) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 type GetManagedInstancesManagedInstanceChildSoftwareSourceArrayOutput struct{ *pulumi.OutputState }
@@ -3838,12 +3221,6 @@ func (o GetManagedInstancesManagedInstanceChildSoftwareSourceArrayOutput) ToGetM
 	return o
 }
 
-func (o GetManagedInstancesManagedInstanceChildSoftwareSourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstancesManagedInstanceChildSoftwareSource] {
-	return pulumix.Output[[]GetManagedInstancesManagedInstanceChildSoftwareSource]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetManagedInstancesManagedInstanceChildSoftwareSourceArrayOutput) Index(i pulumi.IntInput) GetManagedInstancesManagedInstanceChildSoftwareSourceOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedInstancesManagedInstanceChildSoftwareSource {
 		return vs[0].([]GetManagedInstancesManagedInstanceChildSoftwareSource)[vs[1].(int)]
@@ -3852,9 +3229,9 @@ func (o GetManagedInstancesManagedInstanceChildSoftwareSourceArrayOutput) Index(
 
 type GetManagedInstancesManagedInstanceManagedInstanceGroup struct {
 	// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// software source identifier
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 // GetManagedInstancesManagedInstanceManagedInstanceGroupInput is an input type that accepts GetManagedInstancesManagedInstanceManagedInstanceGroupArgs and GetManagedInstancesManagedInstanceManagedInstanceGroupOutput values.
@@ -3870,9 +3247,9 @@ type GetManagedInstancesManagedInstanceManagedInstanceGroupInput interface {
 
 type GetManagedInstancesManagedInstanceManagedInstanceGroupArgs struct {
 	// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// software source identifier
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 }
 
 func (GetManagedInstancesManagedInstanceManagedInstanceGroupArgs) ElementType() reflect.Type {
@@ -3885,12 +3262,6 @@ func (i GetManagedInstancesManagedInstanceManagedInstanceGroupArgs) ToGetManaged
 
 func (i GetManagedInstancesManagedInstanceManagedInstanceGroupArgs) ToGetManagedInstancesManagedInstanceManagedInstanceGroupOutputWithContext(ctx context.Context) GetManagedInstancesManagedInstanceManagedInstanceGroupOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstancesManagedInstanceManagedInstanceGroupOutput)
-}
-
-func (i GetManagedInstancesManagedInstanceManagedInstanceGroupArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstancesManagedInstanceManagedInstanceGroup] {
-	return pulumix.Output[GetManagedInstancesManagedInstanceManagedInstanceGroup]{
-		OutputState: i.ToGetManagedInstancesManagedInstanceManagedInstanceGroupOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetManagedInstancesManagedInstanceManagedInstanceGroupArrayInput is an input type that accepts GetManagedInstancesManagedInstanceManagedInstanceGroupArray and GetManagedInstancesManagedInstanceManagedInstanceGroupArrayOutput values.
@@ -3918,12 +3289,6 @@ func (i GetManagedInstancesManagedInstanceManagedInstanceGroupArray) ToGetManage
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstancesManagedInstanceManagedInstanceGroupArrayOutput)
 }
 
-func (i GetManagedInstancesManagedInstanceManagedInstanceGroupArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstancesManagedInstanceManagedInstanceGroup] {
-	return pulumix.Output[[]GetManagedInstancesManagedInstanceManagedInstanceGroup]{
-		OutputState: i.ToGetManagedInstancesManagedInstanceManagedInstanceGroupArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetManagedInstancesManagedInstanceManagedInstanceGroupOutput struct{ *pulumi.OutputState }
 
 func (GetManagedInstancesManagedInstanceManagedInstanceGroupOutput) ElementType() reflect.Type {
@@ -3938,20 +3303,14 @@ func (o GetManagedInstancesManagedInstanceManagedInstanceGroupOutput) ToGetManag
 	return o
 }
 
-func (o GetManagedInstancesManagedInstanceManagedInstanceGroupOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstancesManagedInstanceManagedInstanceGroup] {
-	return pulumix.Output[GetManagedInstancesManagedInstanceManagedInstanceGroup]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
-func (o GetManagedInstancesManagedInstanceManagedInstanceGroupOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedInstancesManagedInstanceManagedInstanceGroup) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetManagedInstancesManagedInstanceManagedInstanceGroupOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedInstancesManagedInstanceManagedInstanceGroup) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // software source identifier
-func (o GetManagedInstancesManagedInstanceManagedInstanceGroupOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedInstancesManagedInstanceManagedInstanceGroup) string { return v.Id }).(pulumi.StringOutput)
+func (o GetManagedInstancesManagedInstanceManagedInstanceGroupOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedInstancesManagedInstanceManagedInstanceGroup) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 type GetManagedInstancesManagedInstanceManagedInstanceGroupArrayOutput struct{ *pulumi.OutputState }
@@ -3968,12 +3327,6 @@ func (o GetManagedInstancesManagedInstanceManagedInstanceGroupArrayOutput) ToGet
 	return o
 }
 
-func (o GetManagedInstancesManagedInstanceManagedInstanceGroupArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstancesManagedInstanceManagedInstanceGroup] {
-	return pulumix.Output[[]GetManagedInstancesManagedInstanceManagedInstanceGroup]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetManagedInstancesManagedInstanceManagedInstanceGroupArrayOutput) Index(i pulumi.IntInput) GetManagedInstancesManagedInstanceManagedInstanceGroupOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedInstancesManagedInstanceManagedInstanceGroup {
 		return vs[0].([]GetManagedInstancesManagedInstanceManagedInstanceGroup)[vs[1].(int)]
@@ -3982,9 +3335,9 @@ func (o GetManagedInstancesManagedInstanceManagedInstanceGroupArrayOutput) Index
 
 type GetManagedInstancesManagedInstanceParentSoftwareSource struct {
 	// software source identifier
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// software source name
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 }
 
 // GetManagedInstancesManagedInstanceParentSoftwareSourceInput is an input type that accepts GetManagedInstancesManagedInstanceParentSoftwareSourceArgs and GetManagedInstancesManagedInstanceParentSoftwareSourceOutput values.
@@ -4000,9 +3353,9 @@ type GetManagedInstancesManagedInstanceParentSoftwareSourceInput interface {
 
 type GetManagedInstancesManagedInstanceParentSoftwareSourceArgs struct {
 	// software source identifier
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// software source name
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 }
 
 func (GetManagedInstancesManagedInstanceParentSoftwareSourceArgs) ElementType() reflect.Type {
@@ -4015,12 +3368,6 @@ func (i GetManagedInstancesManagedInstanceParentSoftwareSourceArgs) ToGetManaged
 
 func (i GetManagedInstancesManagedInstanceParentSoftwareSourceArgs) ToGetManagedInstancesManagedInstanceParentSoftwareSourceOutputWithContext(ctx context.Context) GetManagedInstancesManagedInstanceParentSoftwareSourceOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstancesManagedInstanceParentSoftwareSourceOutput)
-}
-
-func (i GetManagedInstancesManagedInstanceParentSoftwareSourceArgs) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstancesManagedInstanceParentSoftwareSource] {
-	return pulumix.Output[GetManagedInstancesManagedInstanceParentSoftwareSource]{
-		OutputState: i.ToGetManagedInstancesManagedInstanceParentSoftwareSourceOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetManagedInstancesManagedInstanceParentSoftwareSourceArrayInput is an input type that accepts GetManagedInstancesManagedInstanceParentSoftwareSourceArray and GetManagedInstancesManagedInstanceParentSoftwareSourceArrayOutput values.
@@ -4048,12 +3395,6 @@ func (i GetManagedInstancesManagedInstanceParentSoftwareSourceArray) ToGetManage
 	return pulumi.ToOutputWithContext(ctx, i).(GetManagedInstancesManagedInstanceParentSoftwareSourceArrayOutput)
 }
 
-func (i GetManagedInstancesManagedInstanceParentSoftwareSourceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstancesManagedInstanceParentSoftwareSource] {
-	return pulumix.Output[[]GetManagedInstancesManagedInstanceParentSoftwareSource]{
-		OutputState: i.ToGetManagedInstancesManagedInstanceParentSoftwareSourceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetManagedInstancesManagedInstanceParentSoftwareSourceOutput struct{ *pulumi.OutputState }
 
 func (GetManagedInstancesManagedInstanceParentSoftwareSourceOutput) ElementType() reflect.Type {
@@ -4068,20 +3409,14 @@ func (o GetManagedInstancesManagedInstanceParentSoftwareSourceOutput) ToGetManag
 	return o
 }
 
-func (o GetManagedInstancesManagedInstanceParentSoftwareSourceOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstancesManagedInstanceParentSoftwareSource] {
-	return pulumix.Output[GetManagedInstancesManagedInstanceParentSoftwareSource]{
-		OutputState: o.OutputState,
-	}
-}
-
 // software source identifier
-func (o GetManagedInstancesManagedInstanceParentSoftwareSourceOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedInstancesManagedInstanceParentSoftwareSource) string { return v.Id }).(pulumi.StringOutput)
+func (o GetManagedInstancesManagedInstanceParentSoftwareSourceOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedInstancesManagedInstanceParentSoftwareSource) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // software source name
-func (o GetManagedInstancesManagedInstanceParentSoftwareSourceOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedInstancesManagedInstanceParentSoftwareSource) string { return v.Name }).(pulumi.StringOutput)
+func (o GetManagedInstancesManagedInstanceParentSoftwareSourceOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedInstancesManagedInstanceParentSoftwareSource) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 type GetManagedInstancesManagedInstanceParentSoftwareSourceArrayOutput struct{ *pulumi.OutputState }
@@ -4098,12 +3433,6 @@ func (o GetManagedInstancesManagedInstanceParentSoftwareSourceArrayOutput) ToGet
 	return o
 }
 
-func (o GetManagedInstancesManagedInstanceParentSoftwareSourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetManagedInstancesManagedInstanceParentSoftwareSource] {
-	return pulumix.Output[[]GetManagedInstancesManagedInstanceParentSoftwareSource]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetManagedInstancesManagedInstanceParentSoftwareSourceArrayOutput) Index(i pulumi.IntInput) GetManagedInstancesManagedInstanceParentSoftwareSourceOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedInstancesManagedInstanceParentSoftwareSource {
 		return vs[0].([]GetManagedInstancesManagedInstanceParentSoftwareSource)[vs[1].(int)]
@@ -4112,9 +3441,9 @@ func (o GetManagedInstancesManagedInstanceParentSoftwareSourceArrayOutput) Index
 
 type GetSoftwareSourceAssociatedManagedInstance struct {
 	// User friendly name for the software source
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// OCID for the Software Source
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 // GetSoftwareSourceAssociatedManagedInstanceInput is an input type that accepts GetSoftwareSourceAssociatedManagedInstanceArgs and GetSoftwareSourceAssociatedManagedInstanceOutput values.
@@ -4130,9 +3459,9 @@ type GetSoftwareSourceAssociatedManagedInstanceInput interface {
 
 type GetSoftwareSourceAssociatedManagedInstanceArgs struct {
 	// User friendly name for the software source
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// OCID for the Software Source
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 }
 
 func (GetSoftwareSourceAssociatedManagedInstanceArgs) ElementType() reflect.Type {
@@ -4145,12 +3474,6 @@ func (i GetSoftwareSourceAssociatedManagedInstanceArgs) ToGetSoftwareSourceAssoc
 
 func (i GetSoftwareSourceAssociatedManagedInstanceArgs) ToGetSoftwareSourceAssociatedManagedInstanceOutputWithContext(ctx context.Context) GetSoftwareSourceAssociatedManagedInstanceOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourceAssociatedManagedInstanceOutput)
-}
-
-func (i GetSoftwareSourceAssociatedManagedInstanceArgs) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourceAssociatedManagedInstance] {
-	return pulumix.Output[GetSoftwareSourceAssociatedManagedInstance]{
-		OutputState: i.ToGetSoftwareSourceAssociatedManagedInstanceOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSoftwareSourceAssociatedManagedInstanceArrayInput is an input type that accepts GetSoftwareSourceAssociatedManagedInstanceArray and GetSoftwareSourceAssociatedManagedInstanceArrayOutput values.
@@ -4178,12 +3501,6 @@ func (i GetSoftwareSourceAssociatedManagedInstanceArray) ToGetSoftwareSourceAsso
 	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourceAssociatedManagedInstanceArrayOutput)
 }
 
-func (i GetSoftwareSourceAssociatedManagedInstanceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSoftwareSourceAssociatedManagedInstance] {
-	return pulumix.Output[[]GetSoftwareSourceAssociatedManagedInstance]{
-		OutputState: i.ToGetSoftwareSourceAssociatedManagedInstanceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSoftwareSourceAssociatedManagedInstanceOutput struct{ *pulumi.OutputState }
 
 func (GetSoftwareSourceAssociatedManagedInstanceOutput) ElementType() reflect.Type {
@@ -4198,20 +3515,14 @@ func (o GetSoftwareSourceAssociatedManagedInstanceOutput) ToGetSoftwareSourceAss
 	return o
 }
 
-func (o GetSoftwareSourceAssociatedManagedInstanceOutput) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourceAssociatedManagedInstance] {
-	return pulumix.Output[GetSoftwareSourceAssociatedManagedInstance]{
-		OutputState: o.OutputState,
-	}
-}
-
 // User friendly name for the software source
-func (o GetSoftwareSourceAssociatedManagedInstanceOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourceAssociatedManagedInstance) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetSoftwareSourceAssociatedManagedInstanceOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourceAssociatedManagedInstance) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // OCID for the Software Source
-func (o GetSoftwareSourceAssociatedManagedInstanceOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourceAssociatedManagedInstance) string { return v.Id }).(pulumi.StringOutput)
+func (o GetSoftwareSourceAssociatedManagedInstanceOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourceAssociatedManagedInstance) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 type GetSoftwareSourceAssociatedManagedInstanceArrayOutput struct{ *pulumi.OutputState }
@@ -4226,12 +3537,6 @@ func (o GetSoftwareSourceAssociatedManagedInstanceArrayOutput) ToGetSoftwareSour
 
 func (o GetSoftwareSourceAssociatedManagedInstanceArrayOutput) ToGetSoftwareSourceAssociatedManagedInstanceArrayOutputWithContext(ctx context.Context) GetSoftwareSourceAssociatedManagedInstanceArrayOutput {
 	return o
-}
-
-func (o GetSoftwareSourceAssociatedManagedInstanceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSoftwareSourceAssociatedManagedInstance] {
-	return pulumix.Output[[]GetSoftwareSourceAssociatedManagedInstance]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSoftwareSourceAssociatedManagedInstanceArrayOutput) Index(i pulumi.IntInput) GetSoftwareSourceAssociatedManagedInstanceOutput {
@@ -4275,12 +3580,6 @@ func (i GetSoftwareSourceStreamProfileFilterArgs) ToGetSoftwareSourceStreamProfi
 	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourceStreamProfileFilterOutput)
 }
 
-func (i GetSoftwareSourceStreamProfileFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourceStreamProfileFilter] {
-	return pulumix.Output[GetSoftwareSourceStreamProfileFilter]{
-		OutputState: i.ToGetSoftwareSourceStreamProfileFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetSoftwareSourceStreamProfileFilterArrayInput is an input type that accepts GetSoftwareSourceStreamProfileFilterArray and GetSoftwareSourceStreamProfileFilterArrayOutput values.
 // You can construct a concrete instance of `GetSoftwareSourceStreamProfileFilterArrayInput` via:
 //
@@ -4306,12 +3605,6 @@ func (i GetSoftwareSourceStreamProfileFilterArray) ToGetSoftwareSourceStreamProf
 	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourceStreamProfileFilterArrayOutput)
 }
 
-func (i GetSoftwareSourceStreamProfileFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSoftwareSourceStreamProfileFilter] {
-	return pulumix.Output[[]GetSoftwareSourceStreamProfileFilter]{
-		OutputState: i.ToGetSoftwareSourceStreamProfileFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSoftwareSourceStreamProfileFilterOutput struct{ *pulumi.OutputState }
 
 func (GetSoftwareSourceStreamProfileFilterOutput) ElementType() reflect.Type {
@@ -4324,12 +3617,6 @@ func (o GetSoftwareSourceStreamProfileFilterOutput) ToGetSoftwareSourceStreamPro
 
 func (o GetSoftwareSourceStreamProfileFilterOutput) ToGetSoftwareSourceStreamProfileFilterOutputWithContext(ctx context.Context) GetSoftwareSourceStreamProfileFilterOutput {
 	return o
-}
-
-func (o GetSoftwareSourceStreamProfileFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourceStreamProfileFilter] {
-	return pulumix.Output[GetSoftwareSourceStreamProfileFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSoftwareSourceStreamProfileFilterOutput) Name() pulumi.StringOutput {
@@ -4358,12 +3645,6 @@ func (o GetSoftwareSourceStreamProfileFilterArrayOutput) ToGetSoftwareSourceStre
 	return o
 }
 
-func (o GetSoftwareSourceStreamProfileFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSoftwareSourceStreamProfileFilter] {
-	return pulumix.Output[[]GetSoftwareSourceStreamProfileFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSoftwareSourceStreamProfileFilterArrayOutput) Index(i pulumi.IntInput) GetSoftwareSourceStreamProfileFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSoftwareSourceStreamProfileFilter {
 		return vs[0].([]GetSoftwareSourceStreamProfileFilter)[vs[1].(int)]
@@ -4372,11 +3653,11 @@ func (o GetSoftwareSourceStreamProfileFilterArrayOutput) Index(i pulumi.IntInput
 
 type GetSoftwareSourceStreamProfileModuleStreamProfile struct {
 	// The name of a module.  This parameter is required if a streamName is specified.
-	ModuleName string `pulumi:"moduleName"`
+	ModuleName *string `pulumi:"moduleName"`
 	// The name of the profile of the containing module stream
-	ProfileName string `pulumi:"profileName"`
+	ProfileName *string `pulumi:"profileName"`
 	// The name of the stream of the containing module.  This parameter is required if a profileName is specified.
-	StreamName string `pulumi:"streamName"`
+	StreamName *string `pulumi:"streamName"`
 }
 
 // GetSoftwareSourceStreamProfileModuleStreamProfileInput is an input type that accepts GetSoftwareSourceStreamProfileModuleStreamProfileArgs and GetSoftwareSourceStreamProfileModuleStreamProfileOutput values.
@@ -4392,11 +3673,11 @@ type GetSoftwareSourceStreamProfileModuleStreamProfileInput interface {
 
 type GetSoftwareSourceStreamProfileModuleStreamProfileArgs struct {
 	// The name of a module.  This parameter is required if a streamName is specified.
-	ModuleName pulumi.StringInput `pulumi:"moduleName"`
+	ModuleName pulumi.StringPtrInput `pulumi:"moduleName"`
 	// The name of the profile of the containing module stream
-	ProfileName pulumi.StringInput `pulumi:"profileName"`
+	ProfileName pulumi.StringPtrInput `pulumi:"profileName"`
 	// The name of the stream of the containing module.  This parameter is required if a profileName is specified.
-	StreamName pulumi.StringInput `pulumi:"streamName"`
+	StreamName pulumi.StringPtrInput `pulumi:"streamName"`
 }
 
 func (GetSoftwareSourceStreamProfileModuleStreamProfileArgs) ElementType() reflect.Type {
@@ -4409,12 +3690,6 @@ func (i GetSoftwareSourceStreamProfileModuleStreamProfileArgs) ToGetSoftwareSour
 
 func (i GetSoftwareSourceStreamProfileModuleStreamProfileArgs) ToGetSoftwareSourceStreamProfileModuleStreamProfileOutputWithContext(ctx context.Context) GetSoftwareSourceStreamProfileModuleStreamProfileOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourceStreamProfileModuleStreamProfileOutput)
-}
-
-func (i GetSoftwareSourceStreamProfileModuleStreamProfileArgs) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourceStreamProfileModuleStreamProfile] {
-	return pulumix.Output[GetSoftwareSourceStreamProfileModuleStreamProfile]{
-		OutputState: i.ToGetSoftwareSourceStreamProfileModuleStreamProfileOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSoftwareSourceStreamProfileModuleStreamProfileArrayInput is an input type that accepts GetSoftwareSourceStreamProfileModuleStreamProfileArray and GetSoftwareSourceStreamProfileModuleStreamProfileArrayOutput values.
@@ -4442,12 +3717,6 @@ func (i GetSoftwareSourceStreamProfileModuleStreamProfileArray) ToGetSoftwareSou
 	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourceStreamProfileModuleStreamProfileArrayOutput)
 }
 
-func (i GetSoftwareSourceStreamProfileModuleStreamProfileArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSoftwareSourceStreamProfileModuleStreamProfile] {
-	return pulumix.Output[[]GetSoftwareSourceStreamProfileModuleStreamProfile]{
-		OutputState: i.ToGetSoftwareSourceStreamProfileModuleStreamProfileArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSoftwareSourceStreamProfileModuleStreamProfileOutput struct{ *pulumi.OutputState }
 
 func (GetSoftwareSourceStreamProfileModuleStreamProfileOutput) ElementType() reflect.Type {
@@ -4462,25 +3731,19 @@ func (o GetSoftwareSourceStreamProfileModuleStreamProfileOutput) ToGetSoftwareSo
 	return o
 }
 
-func (o GetSoftwareSourceStreamProfileModuleStreamProfileOutput) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourceStreamProfileModuleStreamProfile] {
-	return pulumix.Output[GetSoftwareSourceStreamProfileModuleStreamProfile]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The name of a module.  This parameter is required if a streamName is specified.
-func (o GetSoftwareSourceStreamProfileModuleStreamProfileOutput) ModuleName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourceStreamProfileModuleStreamProfile) string { return v.ModuleName }).(pulumi.StringOutput)
+func (o GetSoftwareSourceStreamProfileModuleStreamProfileOutput) ModuleName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourceStreamProfileModuleStreamProfile) *string { return v.ModuleName }).(pulumi.StringPtrOutput)
 }
 
 // The name of the profile of the containing module stream
-func (o GetSoftwareSourceStreamProfileModuleStreamProfileOutput) ProfileName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourceStreamProfileModuleStreamProfile) string { return v.ProfileName }).(pulumi.StringOutput)
+func (o GetSoftwareSourceStreamProfileModuleStreamProfileOutput) ProfileName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourceStreamProfileModuleStreamProfile) *string { return v.ProfileName }).(pulumi.StringPtrOutput)
 }
 
 // The name of the stream of the containing module.  This parameter is required if a profileName is specified.
-func (o GetSoftwareSourceStreamProfileModuleStreamProfileOutput) StreamName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourceStreamProfileModuleStreamProfile) string { return v.StreamName }).(pulumi.StringOutput)
+func (o GetSoftwareSourceStreamProfileModuleStreamProfileOutput) StreamName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourceStreamProfileModuleStreamProfile) *string { return v.StreamName }).(pulumi.StringPtrOutput)
 }
 
 type GetSoftwareSourceStreamProfileModuleStreamProfileArrayOutput struct{ *pulumi.OutputState }
@@ -4495,12 +3758,6 @@ func (o GetSoftwareSourceStreamProfileModuleStreamProfileArrayOutput) ToGetSoftw
 
 func (o GetSoftwareSourceStreamProfileModuleStreamProfileArrayOutput) ToGetSoftwareSourceStreamProfileModuleStreamProfileArrayOutputWithContext(ctx context.Context) GetSoftwareSourceStreamProfileModuleStreamProfileArrayOutput {
 	return o
-}
-
-func (o GetSoftwareSourceStreamProfileModuleStreamProfileArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSoftwareSourceStreamProfileModuleStreamProfile] {
-	return pulumix.Output[[]GetSoftwareSourceStreamProfileModuleStreamProfile]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSoftwareSourceStreamProfileModuleStreamProfileArrayOutput) Index(i pulumi.IntInput) GetSoftwareSourceStreamProfileModuleStreamProfileOutput {
@@ -4544,12 +3801,6 @@ func (i GetSoftwareSourcesFilterArgs) ToGetSoftwareSourcesFilterOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourcesFilterOutput)
 }
 
-func (i GetSoftwareSourcesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourcesFilter] {
-	return pulumix.Output[GetSoftwareSourcesFilter]{
-		OutputState: i.ToGetSoftwareSourcesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetSoftwareSourcesFilterArrayInput is an input type that accepts GetSoftwareSourcesFilterArray and GetSoftwareSourcesFilterArrayOutput values.
 // You can construct a concrete instance of `GetSoftwareSourcesFilterArrayInput` via:
 //
@@ -4575,12 +3826,6 @@ func (i GetSoftwareSourcesFilterArray) ToGetSoftwareSourcesFilterArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourcesFilterArrayOutput)
 }
 
-func (i GetSoftwareSourcesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSoftwareSourcesFilter] {
-	return pulumix.Output[[]GetSoftwareSourcesFilter]{
-		OutputState: i.ToGetSoftwareSourcesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSoftwareSourcesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetSoftwareSourcesFilterOutput) ElementType() reflect.Type {
@@ -4593,12 +3838,6 @@ func (o GetSoftwareSourcesFilterOutput) ToGetSoftwareSourcesFilterOutput() GetSo
 
 func (o GetSoftwareSourcesFilterOutput) ToGetSoftwareSourcesFilterOutputWithContext(ctx context.Context) GetSoftwareSourcesFilterOutput {
 	return o
-}
-
-func (o GetSoftwareSourcesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourcesFilter] {
-	return pulumix.Output[GetSoftwareSourcesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSoftwareSourcesFilterOutput) Name() pulumi.StringOutput {
@@ -4627,12 +3866,6 @@ func (o GetSoftwareSourcesFilterArrayOutput) ToGetSoftwareSourcesFilterArrayOutp
 	return o
 }
 
-func (o GetSoftwareSourcesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSoftwareSourcesFilter] {
-	return pulumix.Output[[]GetSoftwareSourcesFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSoftwareSourcesFilterArrayOutput) Index(i pulumi.IntInput) GetSoftwareSourcesFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSoftwareSourcesFilter {
 		return vs[0].([]GetSoftwareSourcesFilter)[vs[1].(int)]
@@ -4641,49 +3874,49 @@ func (o GetSoftwareSourcesFilterArrayOutput) Index(i pulumi.IntInput) GetSoftwar
 
 type GetSoftwareSourcesSoftwareSource struct {
 	// The architecture type supported by the Software Source
-	ArchType string `pulumi:"archType"`
+	ArchType *string `pulumi:"archType"`
 	// list of the Managed Instances associated with this Software Sources
 	AssociatedManagedInstances []GetSoftwareSourcesSoftwareSourceAssociatedManagedInstance `pulumi:"associatedManagedInstances"`
 	// The yum repository checksum type used by this software source
-	ChecksumType string `pulumi:"checksumType"`
+	ChecksumType *string `pulumi:"checksumType"`
 	// The ID of the compartment in which to list resources.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Information specified by the user about the software source
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Fingerprint of the GPG key for this software source
-	GpgKeyFingerprint string `pulumi:"gpgKeyFingerprint"`
+	GpgKeyFingerprint *string `pulumi:"gpgKeyFingerprint"`
 	// ID of the GPG key for this software source
-	GpgKeyId string `pulumi:"gpgKeyId"`
+	GpgKeyId *string `pulumi:"gpgKeyId"`
 	// URL of the GPG key for this software source
-	GpgKeyUrl string `pulumi:"gpgKeyUrl"`
+	GpgKeyUrl *string `pulumi:"gpgKeyUrl"`
 	// OCID for the Software Source
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Email address of the person maintaining this software source
-	MaintainerEmail string `pulumi:"maintainerEmail"`
+	MaintainerEmail *string `pulumi:"maintainerEmail"`
 	// Name of the person maintaining this software source
-	MaintainerName string `pulumi:"maintainerName"`
+	MaintainerName *string `pulumi:"maintainerName"`
 	// Phone number of the person maintaining this software source
-	MaintainerPhone string `pulumi:"maintainerPhone"`
+	MaintainerPhone *string `pulumi:"maintainerPhone"`
 	// Number of packages
-	Packages int `pulumi:"packages"`
+	Packages *int `pulumi:"packages"`
 	// OCID for the parent software source, if there is one
-	ParentId string `pulumi:"parentId"`
+	ParentId *string `pulumi:"parentId"`
 	// Display name the parent software source, if there is one
-	ParentName string `pulumi:"parentName"`
+	ParentName *string `pulumi:"parentName"`
 	// Type of the Software Source
-	RepoType string `pulumi:"repoType"`
+	RepoType *string `pulumi:"repoType"`
 	// The current lifecycle state for the object.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// status of the software source.
-	Status string `pulumi:"status"`
+	Status *string `pulumi:"status"`
 	// URL for the repostiory
-	Url string `pulumi:"url"`
+	Url *string `pulumi:"url"`
 }
 
 // GetSoftwareSourcesSoftwareSourceInput is an input type that accepts GetSoftwareSourcesSoftwareSourceArgs and GetSoftwareSourcesSoftwareSourceOutput values.
@@ -4699,49 +3932,49 @@ type GetSoftwareSourcesSoftwareSourceInput interface {
 
 type GetSoftwareSourcesSoftwareSourceArgs struct {
 	// The architecture type supported by the Software Source
-	ArchType pulumi.StringInput `pulumi:"archType"`
+	ArchType pulumi.StringPtrInput `pulumi:"archType"`
 	// list of the Managed Instances associated with this Software Sources
 	AssociatedManagedInstances GetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceArrayInput `pulumi:"associatedManagedInstances"`
 	// The yum repository checksum type used by this software source
-	ChecksumType pulumi.StringInput `pulumi:"checksumType"`
+	ChecksumType pulumi.StringPtrInput `pulumi:"checksumType"`
 	// The ID of the compartment in which to list resources.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// Information specified by the user about the software source
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// Fingerprint of the GPG key for this software source
-	GpgKeyFingerprint pulumi.StringInput `pulumi:"gpgKeyFingerprint"`
+	GpgKeyFingerprint pulumi.StringPtrInput `pulumi:"gpgKeyFingerprint"`
 	// ID of the GPG key for this software source
-	GpgKeyId pulumi.StringInput `pulumi:"gpgKeyId"`
+	GpgKeyId pulumi.StringPtrInput `pulumi:"gpgKeyId"`
 	// URL of the GPG key for this software source
-	GpgKeyUrl pulumi.StringInput `pulumi:"gpgKeyUrl"`
+	GpgKeyUrl pulumi.StringPtrInput `pulumi:"gpgKeyUrl"`
 	// OCID for the Software Source
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Email address of the person maintaining this software source
-	MaintainerEmail pulumi.StringInput `pulumi:"maintainerEmail"`
+	MaintainerEmail pulumi.StringPtrInput `pulumi:"maintainerEmail"`
 	// Name of the person maintaining this software source
-	MaintainerName pulumi.StringInput `pulumi:"maintainerName"`
+	MaintainerName pulumi.StringPtrInput `pulumi:"maintainerName"`
 	// Phone number of the person maintaining this software source
-	MaintainerPhone pulumi.StringInput `pulumi:"maintainerPhone"`
+	MaintainerPhone pulumi.StringPtrInput `pulumi:"maintainerPhone"`
 	// Number of packages
-	Packages pulumi.IntInput `pulumi:"packages"`
+	Packages pulumi.IntPtrInput `pulumi:"packages"`
 	// OCID for the parent software source, if there is one
-	ParentId pulumi.StringInput `pulumi:"parentId"`
+	ParentId pulumi.StringPtrInput `pulumi:"parentId"`
 	// Display name the parent software source, if there is one
-	ParentName pulumi.StringInput `pulumi:"parentName"`
+	ParentName pulumi.StringPtrInput `pulumi:"parentName"`
 	// Type of the Software Source
-	RepoType pulumi.StringInput `pulumi:"repoType"`
+	RepoType pulumi.StringPtrInput `pulumi:"repoType"`
 	// The current lifecycle state for the object.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// status of the software source.
-	Status pulumi.StringInput `pulumi:"status"`
+	Status pulumi.StringPtrInput `pulumi:"status"`
 	// URL for the repostiory
-	Url pulumi.StringInput `pulumi:"url"`
+	Url pulumi.StringPtrInput `pulumi:"url"`
 }
 
 func (GetSoftwareSourcesSoftwareSourceArgs) ElementType() reflect.Type {
@@ -4754,12 +3987,6 @@ func (i GetSoftwareSourcesSoftwareSourceArgs) ToGetSoftwareSourcesSoftwareSource
 
 func (i GetSoftwareSourcesSoftwareSourceArgs) ToGetSoftwareSourcesSoftwareSourceOutputWithContext(ctx context.Context) GetSoftwareSourcesSoftwareSourceOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourcesSoftwareSourceOutput)
-}
-
-func (i GetSoftwareSourcesSoftwareSourceArgs) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourcesSoftwareSource] {
-	return pulumix.Output[GetSoftwareSourcesSoftwareSource]{
-		OutputState: i.ToGetSoftwareSourcesSoftwareSourceOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSoftwareSourcesSoftwareSourceArrayInput is an input type that accepts GetSoftwareSourcesSoftwareSourceArray and GetSoftwareSourcesSoftwareSourceArrayOutput values.
@@ -4787,12 +4014,6 @@ func (i GetSoftwareSourcesSoftwareSourceArray) ToGetSoftwareSourcesSoftwareSourc
 	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourcesSoftwareSourceArrayOutput)
 }
 
-func (i GetSoftwareSourcesSoftwareSourceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSoftwareSourcesSoftwareSource] {
-	return pulumix.Output[[]GetSoftwareSourcesSoftwareSource]{
-		OutputState: i.ToGetSoftwareSourcesSoftwareSourceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSoftwareSourcesSoftwareSourceOutput struct{ *pulumi.OutputState }
 
 func (GetSoftwareSourcesSoftwareSourceOutput) ElementType() reflect.Type {
@@ -4807,15 +4028,9 @@ func (o GetSoftwareSourcesSoftwareSourceOutput) ToGetSoftwareSourcesSoftwareSour
 	return o
 }
 
-func (o GetSoftwareSourcesSoftwareSourceOutput) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourcesSoftwareSource] {
-	return pulumix.Output[GetSoftwareSourcesSoftwareSource]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The architecture type supported by the Software Source
-func (o GetSoftwareSourcesSoftwareSourceOutput) ArchType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSource) string { return v.ArchType }).(pulumi.StringOutput)
+func (o GetSoftwareSourcesSoftwareSourceOutput) ArchType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSource) *string { return v.ArchType }).(pulumi.StringPtrOutput)
 }
 
 // list of the Managed Instances associated with this Software Sources
@@ -4826,13 +4041,13 @@ func (o GetSoftwareSourcesSoftwareSourceOutput) AssociatedManagedInstances() Get
 }
 
 // The yum repository checksum type used by this software source
-func (o GetSoftwareSourcesSoftwareSourceOutput) ChecksumType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSource) string { return v.ChecksumType }).(pulumi.StringOutput)
+func (o GetSoftwareSourcesSoftwareSourceOutput) ChecksumType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSource) *string { return v.ChecksumType }).(pulumi.StringPtrOutput)
 }
 
 // The ID of the compartment in which to list resources.
-func (o GetSoftwareSourcesSoftwareSourceOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSource) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetSoftwareSourcesSoftwareSourceOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSource) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -4841,13 +4056,13 @@ func (o GetSoftwareSourcesSoftwareSourceOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // Information specified by the user about the software source
-func (o GetSoftwareSourcesSoftwareSourceOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSource) string { return v.Description }).(pulumi.StringOutput)
+func (o GetSoftwareSourcesSoftwareSourceOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSource) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
-func (o GetSoftwareSourcesSoftwareSourceOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSource) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetSoftwareSourcesSoftwareSourceOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSource) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -4856,73 +4071,73 @@ func (o GetSoftwareSourcesSoftwareSourceOutput) FreeformTags() pulumi.MapOutput 
 }
 
 // Fingerprint of the GPG key for this software source
-func (o GetSoftwareSourcesSoftwareSourceOutput) GpgKeyFingerprint() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSource) string { return v.GpgKeyFingerprint }).(pulumi.StringOutput)
+func (o GetSoftwareSourcesSoftwareSourceOutput) GpgKeyFingerprint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSource) *string { return v.GpgKeyFingerprint }).(pulumi.StringPtrOutput)
 }
 
 // ID of the GPG key for this software source
-func (o GetSoftwareSourcesSoftwareSourceOutput) GpgKeyId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSource) string { return v.GpgKeyId }).(pulumi.StringOutput)
+func (o GetSoftwareSourcesSoftwareSourceOutput) GpgKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSource) *string { return v.GpgKeyId }).(pulumi.StringPtrOutput)
 }
 
 // URL of the GPG key for this software source
-func (o GetSoftwareSourcesSoftwareSourceOutput) GpgKeyUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSource) string { return v.GpgKeyUrl }).(pulumi.StringOutput)
+func (o GetSoftwareSourcesSoftwareSourceOutput) GpgKeyUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSource) *string { return v.GpgKeyUrl }).(pulumi.StringPtrOutput)
 }
 
 // OCID for the Software Source
-func (o GetSoftwareSourcesSoftwareSourceOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSource) string { return v.Id }).(pulumi.StringOutput)
+func (o GetSoftwareSourcesSoftwareSourceOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSource) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Email address of the person maintaining this software source
-func (o GetSoftwareSourcesSoftwareSourceOutput) MaintainerEmail() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSource) string { return v.MaintainerEmail }).(pulumi.StringOutput)
+func (o GetSoftwareSourcesSoftwareSourceOutput) MaintainerEmail() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSource) *string { return v.MaintainerEmail }).(pulumi.StringPtrOutput)
 }
 
 // Name of the person maintaining this software source
-func (o GetSoftwareSourcesSoftwareSourceOutput) MaintainerName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSource) string { return v.MaintainerName }).(pulumi.StringOutput)
+func (o GetSoftwareSourcesSoftwareSourceOutput) MaintainerName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSource) *string { return v.MaintainerName }).(pulumi.StringPtrOutput)
 }
 
 // Phone number of the person maintaining this software source
-func (o GetSoftwareSourcesSoftwareSourceOutput) MaintainerPhone() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSource) string { return v.MaintainerPhone }).(pulumi.StringOutput)
+func (o GetSoftwareSourcesSoftwareSourceOutput) MaintainerPhone() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSource) *string { return v.MaintainerPhone }).(pulumi.StringPtrOutput)
 }
 
 // Number of packages
-func (o GetSoftwareSourcesSoftwareSourceOutput) Packages() pulumi.IntOutput {
-	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSource) int { return v.Packages }).(pulumi.IntOutput)
+func (o GetSoftwareSourcesSoftwareSourceOutput) Packages() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSource) *int { return v.Packages }).(pulumi.IntPtrOutput)
 }
 
 // OCID for the parent software source, if there is one
-func (o GetSoftwareSourcesSoftwareSourceOutput) ParentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSource) string { return v.ParentId }).(pulumi.StringOutput)
+func (o GetSoftwareSourcesSoftwareSourceOutput) ParentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSource) *string { return v.ParentId }).(pulumi.StringPtrOutput)
 }
 
 // Display name the parent software source, if there is one
-func (o GetSoftwareSourcesSoftwareSourceOutput) ParentName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSource) string { return v.ParentName }).(pulumi.StringOutput)
+func (o GetSoftwareSourcesSoftwareSourceOutput) ParentName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSource) *string { return v.ParentName }).(pulumi.StringPtrOutput)
 }
 
 // Type of the Software Source
-func (o GetSoftwareSourcesSoftwareSourceOutput) RepoType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSource) string { return v.RepoType }).(pulumi.StringOutput)
+func (o GetSoftwareSourcesSoftwareSourceOutput) RepoType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSource) *string { return v.RepoType }).(pulumi.StringPtrOutput)
 }
 
 // The current lifecycle state for the object.
-func (o GetSoftwareSourcesSoftwareSourceOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSource) string { return v.State }).(pulumi.StringOutput)
+func (o GetSoftwareSourcesSoftwareSourceOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSource) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // status of the software source.
-func (o GetSoftwareSourcesSoftwareSourceOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSource) string { return v.Status }).(pulumi.StringOutput)
+func (o GetSoftwareSourcesSoftwareSourceOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSource) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 // URL for the repostiory
-func (o GetSoftwareSourcesSoftwareSourceOutput) Url() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSource) string { return v.Url }).(pulumi.StringOutput)
+func (o GetSoftwareSourcesSoftwareSourceOutput) Url() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSource) *string { return v.Url }).(pulumi.StringPtrOutput)
 }
 
 type GetSoftwareSourcesSoftwareSourceArrayOutput struct{ *pulumi.OutputState }
@@ -4939,12 +4154,6 @@ func (o GetSoftwareSourcesSoftwareSourceArrayOutput) ToGetSoftwareSourcesSoftwar
 	return o
 }
 
-func (o GetSoftwareSourcesSoftwareSourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSoftwareSourcesSoftwareSource] {
-	return pulumix.Output[[]GetSoftwareSourcesSoftwareSource]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSoftwareSourcesSoftwareSourceArrayOutput) Index(i pulumi.IntInput) GetSoftwareSourcesSoftwareSourceOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSoftwareSourcesSoftwareSource {
 		return vs[0].([]GetSoftwareSourcesSoftwareSource)[vs[1].(int)]
@@ -4953,9 +4162,9 @@ func (o GetSoftwareSourcesSoftwareSourceArrayOutput) Index(i pulumi.IntInput) Ge
 
 type GetSoftwareSourcesSoftwareSourceAssociatedManagedInstance struct {
 	// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// OCID for the Software Source
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 }
 
 // GetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceInput is an input type that accepts GetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceArgs and GetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceOutput values.
@@ -4971,9 +4180,9 @@ type GetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceInput interface {
 
 type GetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceArgs struct {
 	// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// OCID for the Software Source
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 }
 
 func (GetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceArgs) ElementType() reflect.Type {
@@ -4986,12 +4195,6 @@ func (i GetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceArgs) ToGetSoft
 
 func (i GetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceArgs) ToGetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceOutputWithContext(ctx context.Context) GetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceOutput)
-}
-
-func (i GetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceArgs) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourcesSoftwareSourceAssociatedManagedInstance] {
-	return pulumix.Output[GetSoftwareSourcesSoftwareSourceAssociatedManagedInstance]{
-		OutputState: i.ToGetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceArrayInput is an input type that accepts GetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceArray and GetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceArrayOutput values.
@@ -5019,12 +4222,6 @@ func (i GetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceArray) ToGetSof
 	return pulumi.ToOutputWithContext(ctx, i).(GetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceArrayOutput)
 }
 
-func (i GetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetSoftwareSourcesSoftwareSourceAssociatedManagedInstance] {
-	return pulumix.Output[[]GetSoftwareSourcesSoftwareSourceAssociatedManagedInstance]{
-		OutputState: i.ToGetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceOutput struct{ *pulumi.OutputState }
 
 func (GetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceOutput) ElementType() reflect.Type {
@@ -5039,20 +4236,14 @@ func (o GetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceOutput) ToGetSo
 	return o
 }
 
-func (o GetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceOutput) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourcesSoftwareSourceAssociatedManagedInstance] {
-	return pulumix.Output[GetSoftwareSourcesSoftwareSourceAssociatedManagedInstance]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
-func (o GetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSourceAssociatedManagedInstance) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSourceAssociatedManagedInstance) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // OCID for the Software Source
-func (o GetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSourceAssociatedManagedInstance) string { return v.Id }).(pulumi.StringOutput)
+func (o GetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSourceAssociatedManagedInstance) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 type GetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceArrayOutput struct{ *pulumi.OutputState }
@@ -5067,12 +4258,6 @@ func (o GetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceArrayOutput) To
 
 func (o GetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceArrayOutput) ToGetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceArrayOutputWithContext(ctx context.Context) GetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceArrayOutput {
 	return o
-}
-
-func (o GetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetSoftwareSourcesSoftwareSourceAssociatedManagedInstance] {
-	return pulumix.Output[[]GetSoftwareSourcesSoftwareSourceAssociatedManagedInstance]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceArrayOutput) Index(i pulumi.IntInput) GetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceOutput {

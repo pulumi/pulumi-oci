@@ -73,7 +73,7 @@ export class MonitoredResourcesAssociateMonitoredResource extends pulumi.CustomR
      * * User created using API (USER_API)
      * * User created using tags (USER_TAG_ASSOC).
      */
-    public /*out*/ readonly category!: pulumi.Output<string>;
+    public /*out*/ readonly category!: pulumi.Output<string | undefined>;
     /**
      * Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
@@ -81,7 +81,7 @@ export class MonitoredResourcesAssociateMonitoredResource extends pulumi.CustomR
     /**
      * Association Resource Details.
      */
-    public /*out*/ readonly destinationResourceDetails!: pulumi.Output<outputs.StackMonitoring.MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetail[]>;
+    public /*out*/ readonly destinationResourceDetails!: pulumi.Output<outputs.StackMonitoring.MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetail[] | undefined>;
     /**
      * Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
@@ -89,7 +89,7 @@ export class MonitoredResourcesAssociateMonitoredResource extends pulumi.CustomR
     /**
      * Association Resource Details.
      */
-    public /*out*/ readonly sourceResourceDetails!: pulumi.Output<outputs.StackMonitoring.MonitoredResourcesAssociateMonitoredResourceSourceResourceDetail[]>;
+    public /*out*/ readonly sourceResourceDetails!: pulumi.Output<outputs.StackMonitoring.MonitoredResourcesAssociateMonitoredResourceSourceResourceDetail[] | undefined>;
     /**
      * Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). 
      *
@@ -101,11 +101,11 @@ export class MonitoredResourcesAssociateMonitoredResource extends pulumi.CustomR
     /**
      * Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    public /*out*/ readonly tenantId!: pulumi.Output<string>;
+    public /*out*/ readonly tenantId!: pulumi.Output<string | undefined>;
     /**
      * The time when the association was created. An RFC3339 formatted datetime string.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a MonitoredResourcesAssociateMonitoredResource resource with the given unique name, arguments, and options.

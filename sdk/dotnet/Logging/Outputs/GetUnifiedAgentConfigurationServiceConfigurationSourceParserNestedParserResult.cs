@@ -16,29 +16,29 @@ namespace Pulumi.Oci.Logging.Outputs
         /// <summary>
         /// Specify the time field for the event time. If the event doesn't have this field, the current time is used.
         /// </summary>
-        public readonly string FieldTimeKey;
+        public readonly string? FieldTimeKey;
         /// <summary>
         /// If true, keep the time field in the record.
         /// </summary>
-        public readonly bool IsKeepTimeKey;
+        public readonly bool? IsKeepTimeKey;
         /// <summary>
         /// Process time value using the specified format.
         /// </summary>
-        public readonly string TimeFormat;
+        public readonly string? TimeFormat;
         /// <summary>
         /// JSON parser time type.
         /// </summary>
-        public readonly string TimeType;
+        public readonly string? TimeType;
 
         [OutputConstructor]
         private GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserResult(
-            string fieldTimeKey,
+            string? fieldTimeKey,
 
-            bool isKeepTimeKey,
+            bool? isKeepTimeKey,
 
-            string timeFormat,
+            string? timeFormat,
 
-            string timeType)
+            string? timeType)
         {
             FieldTimeKey = fieldTimeKey;
             IsKeepTimeKey = isKeepTimeKey;

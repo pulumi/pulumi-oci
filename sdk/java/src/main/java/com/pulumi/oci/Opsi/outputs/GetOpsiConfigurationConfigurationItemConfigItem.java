@@ -8,6 +8,8 @@ import com.pulumi.oci.Opsi.outputs.GetOpsiConfigurationConfigurationItemConfigIt
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetOpsiConfigurationConfigurationItemConfigItem {
@@ -15,37 +17,37 @@ public final class GetOpsiConfigurationConfigurationItemConfigItem {
      * @return List of contexts in Operations Insights where this configuration item is applicable.
      * 
      */
-    private List<String> applicableContexts;
+    private @Nullable List<String> applicableContexts;
     /**
      * @return Type of configuration item.
      * 
      */
-    private String configItemType;
+    private @Nullable String configItemType;
     /**
      * @return Value of configuration item.
      * 
      */
-    private String defaultValue;
+    private @Nullable String defaultValue;
     /**
      * @return Configuration item metadata.
      * 
      */
-    private List<GetOpsiConfigurationConfigurationItemConfigItemMetadata> metadatas;
+    private @Nullable List<GetOpsiConfigurationConfigurationItemConfigItemMetadata> metadatas;
     /**
      * @return A filter to return only configuration items that match the entire name.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return Value of configuration item.
      * 
      */
-    private String value;
+    private @Nullable String value;
     /**
      * @return Source configuration from where the value is taken for a configuration item.
      * 
      */
-    private String valueSourceConfig;
+    private @Nullable String valueSourceConfig;
 
     private GetOpsiConfigurationConfigurationItemConfigItem() {}
     /**
@@ -53,49 +55,49 @@ public final class GetOpsiConfigurationConfigurationItemConfigItem {
      * 
      */
     public List<String> applicableContexts() {
-        return this.applicableContexts;
+        return this.applicableContexts == null ? List.of() : this.applicableContexts;
     }
     /**
      * @return Type of configuration item.
      * 
      */
-    public String configItemType() {
-        return this.configItemType;
+    public Optional<String> configItemType() {
+        return Optional.ofNullable(this.configItemType);
     }
     /**
      * @return Value of configuration item.
      * 
      */
-    public String defaultValue() {
-        return this.defaultValue;
+    public Optional<String> defaultValue() {
+        return Optional.ofNullable(this.defaultValue);
     }
     /**
      * @return Configuration item metadata.
      * 
      */
     public List<GetOpsiConfigurationConfigurationItemConfigItemMetadata> metadatas() {
-        return this.metadatas;
+        return this.metadatas == null ? List.of() : this.metadatas;
     }
     /**
      * @return A filter to return only configuration items that match the entire name.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return Value of configuration item.
      * 
      */
-    public String value() {
-        return this.value;
+    public Optional<String> value() {
+        return Optional.ofNullable(this.value);
     }
     /**
      * @return Source configuration from where the value is taken for a configuration item.
      * 
      */
-    public String valueSourceConfig() {
-        return this.valueSourceConfig;
+    public Optional<String> valueSourceConfig() {
+        return Optional.ofNullable(this.valueSourceConfig);
     }
 
     public static Builder builder() {
@@ -107,13 +109,13 @@ public final class GetOpsiConfigurationConfigurationItemConfigItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> applicableContexts;
-        private String configItemType;
-        private String defaultValue;
-        private List<GetOpsiConfigurationConfigurationItemConfigItemMetadata> metadatas;
-        private String name;
-        private String value;
-        private String valueSourceConfig;
+        private @Nullable List<String> applicableContexts;
+        private @Nullable String configItemType;
+        private @Nullable String defaultValue;
+        private @Nullable List<GetOpsiConfigurationConfigurationItemConfigItemMetadata> metadatas;
+        private @Nullable String name;
+        private @Nullable String value;
+        private @Nullable String valueSourceConfig;
         public Builder() {}
         public Builder(GetOpsiConfigurationConfigurationItemConfigItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -127,44 +129,44 @@ public final class GetOpsiConfigurationConfigurationItemConfigItem {
         }
 
         @CustomType.Setter
-        public Builder applicableContexts(List<String> applicableContexts) {
-            this.applicableContexts = Objects.requireNonNull(applicableContexts);
+        public Builder applicableContexts(@Nullable List<String> applicableContexts) {
+            this.applicableContexts = applicableContexts;
             return this;
         }
         public Builder applicableContexts(String... applicableContexts) {
             return applicableContexts(List.of(applicableContexts));
         }
         @CustomType.Setter
-        public Builder configItemType(String configItemType) {
-            this.configItemType = Objects.requireNonNull(configItemType);
+        public Builder configItemType(@Nullable String configItemType) {
+            this.configItemType = configItemType;
             return this;
         }
         @CustomType.Setter
-        public Builder defaultValue(String defaultValue) {
-            this.defaultValue = Objects.requireNonNull(defaultValue);
+        public Builder defaultValue(@Nullable String defaultValue) {
+            this.defaultValue = defaultValue;
             return this;
         }
         @CustomType.Setter
-        public Builder metadatas(List<GetOpsiConfigurationConfigurationItemConfigItemMetadata> metadatas) {
-            this.metadatas = Objects.requireNonNull(metadatas);
+        public Builder metadatas(@Nullable List<GetOpsiConfigurationConfigurationItemConfigItemMetadata> metadatas) {
+            this.metadatas = metadatas;
             return this;
         }
         public Builder metadatas(GetOpsiConfigurationConfigurationItemConfigItemMetadata... metadatas) {
             return metadatas(List.of(metadatas));
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+        public Builder value(@Nullable String value) {
+            this.value = value;
             return this;
         }
         @CustomType.Setter
-        public Builder valueSourceConfig(String valueSourceConfig) {
-            this.valueSourceConfig = Objects.requireNonNull(valueSourceConfig);
+        public Builder valueSourceConfig(@Nullable String valueSourceConfig) {
+            this.valueSourceConfig = valueSourceConfig;
             return this;
         }
         public GetOpsiConfigurationConfigurationItemConfigItem build() {

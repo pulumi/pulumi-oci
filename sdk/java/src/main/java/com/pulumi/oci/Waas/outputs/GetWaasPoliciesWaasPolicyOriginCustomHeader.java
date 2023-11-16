@@ -6,6 +6,8 @@ package com.pulumi.oci.Waas.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetWaasPoliciesWaasPolicyOriginCustomHeader {
@@ -13,27 +15,27 @@ public final class GetWaasPoliciesWaasPolicyOriginCustomHeader {
      * @return The unique name of the whitelist.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return The value of the header.
      * 
      */
-    private String value;
+    private @Nullable String value;
 
     private GetWaasPoliciesWaasPolicyOriginCustomHeader() {}
     /**
      * @return The unique name of the whitelist.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return The value of the header.
      * 
      */
-    public String value() {
-        return this.value;
+    public Optional<String> value() {
+        return Optional.ofNullable(this.value);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetWaasPoliciesWaasPolicyOriginCustomHeader {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String name;
-        private String value;
+        private @Nullable String name;
+        private @Nullable String value;
         public Builder() {}
         public Builder(GetWaasPoliciesWaasPolicyOriginCustomHeader defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetWaasPoliciesWaasPolicyOriginCustomHeader {
         }
 
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+        public Builder value(@Nullable String value) {
+            this.value = value;
             return this;
         }
         public GetWaasPoliciesWaasPolicyOriginCustomHeader build() {

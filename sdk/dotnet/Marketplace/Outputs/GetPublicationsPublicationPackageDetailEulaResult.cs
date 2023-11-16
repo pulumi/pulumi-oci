@@ -13,14 +13,14 @@ namespace Pulumi.Oci.Marketplace.Outputs
     [OutputType]
     public sealed class GetPublicationsPublicationPackageDetailEulaResult
     {
-        public readonly string EulaType;
-        public readonly string LicenseText;
+        public readonly string? EulaType;
+        public readonly string? LicenseText;
 
         [OutputConstructor]
         private GetPublicationsPublicationPackageDetailEulaResult(
-            string eulaType,
+            string? eulaType,
 
-            string licenseText)
+            string? licenseText)
         {
             EulaType = eulaType;
             LicenseText = licenseText;
